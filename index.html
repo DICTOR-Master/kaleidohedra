@@ -1,0 +1,1090 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Rhombiverse — Geometry Builder from 1D to 6D: Lattices, 4D Polytopes and Quasicrystals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A free geometry builder in your browser, from 1D to 6D: a 1D Morse trajectory and 1D+ Construct (square to tesseract, Kagome to hyper-pyrochlore, rhombus to rhombic dodecahedron to 24-cell), 2D tilings, a kaleidoscope and nets that fold into solids, 3D crystal lattices of rhombic dodecahedra and their relatives, 4D worlds of tesseracts and 24-cells, 5D and 6D quasicrystals (Penrose and icosahedral), and Shells, hulls built in colour bands and cut flat into cubes, octahedra and tetrahedra. Touch-first, 7 languages, no install." />
+  <meta name="theme-color" content="#05050a" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Rhombiverse" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Build with space-filling shapes from 1D to 6D, cell by cell: crystal lattices, 4D polytope slices, Penrose and icosahedral quasicrystals, and colour-banded Shells hulls, right in your browser." />
+  <meta property="og:url" content="https://rhombiverse.vercel.app" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="canonical" href="https://rhombiverse.vercel.app/" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Rhombiverse", "url": "https://rhombiverse.vercel.app/", "description": "A free geometry builder in your browser, from 1D to 6D: a 1D Morse trajectory and 1D+ Construct (square to tesseract, Kagome to hyper-pyrochlore, rhombus to rhombic dodecahedron to 24-cell), 2D tilings, a kaleidoscope and nets that fold into solids, 3D crystal lattices of rhombic dodecahedra and their relatives, 4D worlds of tesseracts and 24-cells, 5D and 6D quasicrystals (Penrose and icosahedral), and Shells, hulls built in colour bands and cut flat into cubes, octahedra and tetrahedra. Touch-first, 7 languages, no install.", "applicationCategory": "EducationalApplication", "operatingSystem": "Any (web browser)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "inLanguage": ["en", "ja", "es", "fr", "ko", "zh", "ru"], "featureList": ["1D Signal: a one-dimensional trajectory carrying Morse code, seen from outside or inside, with Play", "1D Construct: a construction microscope where a square emerges from 1D cells, axis by axis, and opens in 2D", "2D tilings: parallelograms, triangles, hexagons, kites and Kagome on four lattice angles", "2D Kaleidoscope: Penrose rhombi, pentagons, triangles, hexagons and squares reflected by a ring of mirrors or a mirror triangle, with Turn, Spin and Shake", "3D crystal lattices: FCC rhombic dodecahedra, BCC truncated octahedra, pyrochlore (3D Kagome), elongated dodecahedra, hexagonal prisms and rhombohedra", "4D worlds: tesseract (Z4), 24-cell and 16-cell (D4) and hyper-pyrochlore, seen as 3D slices or projections", "5D decagonal and 6D icosahedral quasicrystals by cut and project, with phason and approximant sliders and a Window View", "A catalogue of 155 quasicrystal items: zonohedra up to the rhombic triacontahedron, vertex stars, polytope shadows and hyperprism bridges", "Connect any two quasicrystal items with the shortest chain of real tiles", "Shells: hulls of rhombic dodecahedra in colour bands, counted as a cuboctahedron, a sphere, or a chosen tetrahedron, cube, octahedron, rhombic dodecahedron or truncated octahedron", "Break any rhombic dodecahedron into its symmetric parts, from halves to all 48 wedges", "Trim a hull exactly flat into its target shape", "Golden Rhombohedra: build freely with the two pieces of the 3D Penrose tiling and check your build against the true aperiodic tiling", "Paint: recolour any placed piece in every dimension", "Almanac of the maths behind every piece, and a User Guide in 7 languages"], "sameAs": ["https://polyhedraverse.vercel.app"]}</script>
+  <meta name="twitter:title" content="Rhombiverse" />
+  <meta name="twitter:description" content="Build with space-filling shapes from 1D to 6D, cell by cell: crystal lattices, 4D polytope slices, Penrose and icosahedral quasicrystals, and colour-banded Shells hulls, right in your browser." />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <style>
+    html, body {
+      margin: 0; height: 100%; background: #05050a; overflow: hidden;
+      /* Real bug reported live (2026-08-28, iPhone/iPad): touching the
+         screen brought up iOS's native text-selection/Copy callout,
+         since nothing here ever disabled it -- this is an app you touch
+         to build in, not a page of text. -webkit-touch-callout is the
+         iOS-specific property (user-select alone doesn't suppress the
+         callout menu there); the -webkit-/plain user-select pair
+         covers the general "don't let text selection start" case
+         everywhere else touch-and-drag already means something else
+         (orbiting the camera, building, the wheel). Real inputs
+         (import/export) get selection back explicitly below. */
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    input, textarea, select {
+      -webkit-user-select: text; user-select: text;
+      -webkit-touch-callout: default;
+    }
+    canvas { display: block; }
+
+    /* --- Minimal HUD ---
+       Default screen: wordmark, a small contextual indicator, a bottom
+       contextual prompt shown only when non-empty. No sidebar, no paragraph status
+       text, no visible mode list -- everything else lives behind the
+       Rhombic Wheel (wheel.js) or the explicit Lab entry point below. */
+    #hud-wordmark {
+      position: fixed; top: 14px; left: 16px; z-index: 900;
+      color: #dfefff; font: 600 15px/1.2 system-ui, sans-serif;
+      letter-spacing: 0.04em; user-select: none; opacity: 0.9;
+      pointer-events: none;
+    }
+    /* Performance guardrail (reframe Stage 6): optional, off by default
+       (setting-fps-meter) -- the auto-degrade safety net it's attached to
+       runs regardless of whether this is shown. */
+    #fps-meter {
+      display: none;
+      position: fixed; top: 34px; right: 206px; z-index: 900;
+      color: #9de0ff; font: 11px/1.4 ui-monospace, monospace;
+      text-align: right; user-select: none; pointer-events: none;
+    }
+    #fps-meter.visible { display: block; }
+    #hud-prompt {
+      position: fixed; left: 50%; bottom: 54px; transform: translateX(-50%);
+      z-index: 900;
+      display: none;
+      color: #eaf6ff; font: 13px/1.4 system-ui, sans-serif;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(124, 204, 255, 0.35);
+      border-radius: 6px;
+      padding: 6px 14px;
+      max-width: 80vw;
+      text-align: center;
+      user-select: none;
+    }
+    #hud-prompt.visible { display: block; }
+    /* Menu and Wizard: boxed like the quick-select buttons beside Menu. */
+    #hud-wheel-cue, #hud-wizard-cue {
+      box-sizing: border-box; height: 36px; padding: 0 10px;
+      display: flex; align-items: center;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 6px;
+      color: #9cd; font: 11px system-ui, sans-serif; white-space: nowrap;
+      user-select: none; cursor: pointer;
+    }
+    #hud-wheel-cue:hover, #hud-wizard-cue:hover { background: rgba(255, 255, 255, 0.15); }
+    #hud-wheel-cue { position: fixed; bottom: 8px; left: 16px; z-index: 900; }
+    /* Dimension wizard cue: top-left, mirroring #hud-wheel-cue's own
+       bottom-left styling -- direct instruction, "top left for
+       wireframe wizard" -- a second, parallel entry point alongside the
+       bottom-left menu wheel, same "wheel + browser" split polyhedraverse
+       already uses, just both reachable from inside a dimension's own
+       sandbox rather than forced open (that's the dedicated dimension-
+       select wheel's own job now, on load). Positioned just below
+       #hud-wordmark (top:14px/left:16px) to avoid overlapping it. */
+    #hud-wizard-row {
+      position: fixed; top: 38px; left: 16px; z-index: 900;
+      display: flex; align-items: center; gap: 12px;
+    }
+    /* The dimension you're in, beside Wizard: orange, twice the
+       wordmark's height. Empty (hidden) until a dimension is open. */
+    #hud-dim {
+      color: #f59e0b; font: 700 30px/1 system-ui, sans-serif;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      user-select: none; pointer-events: none;
+    }
+    #hud-dim:empty { display: none; }
+    /* 1D's two worlds, one tap apart (direct request: "a Signal/Construct
+       toggle also"). */
+    #hud-1d-toggle {
+      position: fixed; top: 86px; left: 16px; z-index: 900; display: flex;
+      border: 1px solid rgba(34, 195, 230, 0.55); border-radius: 8px; overflow: hidden;
+    }
+    #hud-1d-toggle[hidden] { display: none; }
+    #hud-1d-toggle button {
+      background: transparent; color: #9fb3c8; border: 0; padding: 6px 12px; min-height: 36px;
+      font: 600 14px system-ui, sans-serif; cursor: pointer; touch-action: manipulation;
+    }
+    #hud-1d-toggle button.active { background: rgba(34, 195, 230, 0.28); color: #e6fbff; }
+    #hud-dim .hud-dim-built { color: #9fb3c8; font-size: 0.6em; letter-spacing: 0.02em; } /* smaller: 1D+/2D/3D/4D fits beside the wheel */
+    /* 2D lattice toggle panel (Phase 4, direct instruction: "a four
+       position toggle... to see transformations" -- a persistent, always-
+       reachable live control while building in 2D, not a one-shot pick
+       from the Wizard's own list). Hidden by default; render.js shows it
+       only while activeDimension === '2D'. Top-center, clear of the
+       top-left wordmark/wizard-cue and top-right corner-wheel icons. */
+    #lattice2d-toggle-panel {
+      display: none;
+      position: fixed; top: 14px; left: 50%; transform: translateX(-50%);
+      z-index: 900;
+      flex-direction: column; align-items: center; gap: 4px;
+    }
+    #lattice2d-toggle-panel.visible { display: flex; }
+    .lattice2d-toggle-row { display: flex; gap: 4px; }
+    /* Phones: top-center collides with the wordmark and corner wheel
+       (direct report, iPhone: "kagome toggle is obscuring HUD") -- move
+       it to the bottom, just above the Menu/quick-select row (36px tall
+       at bottom: 8px), and let rows wrap instead of overflowing. */
+    @media (max-width: 600px) {
+      #lattice2d-toggle-panel {
+        top: auto; bottom: calc(52px + env(safe-area-inset-bottom, 0px));
+        width: calc(100vw - 16px);
+      }
+      .lattice2d-toggle-row { flex-wrap: wrap; justify-content: center; }
+    }
+    .lattice2d-toggle-row button {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #9cd; font: 11px system-ui, sans-serif;
+      border-radius: 6px; padding: 5px 9px; cursor: pointer; min-height: 36px;
+    }
+    .lattice2d-toggle-row button:hover { background: rgba(255, 255, 255, 0.15); }
+    /* Signature blue (#9de0ff/#7cf), matching this app's own accent
+       color everywhere else (wordmark, active toggles like #xray-toggle/
+       #cyborg-toggle above) -- direct correction: an earlier pass used a
+       green highlight that didn't match anything else in Rhombiverse's
+       own chrome. */
+    .lattice2d-toggle-row button.active { background: rgba(120, 190, 255, 0.4); border-color: #7cf; color: #fff; }
+    /* 4D panel (src/app/world-4d.js): one geared slider plus the
+       W-depth | XW | YW | ZW toggle, and Slice/Projection, Parallel/
+       Perspective (Projection only), Reset 4D. Only shown in 4D. Bottom-
+       center above the quick-select row, full width on phones, big touch
+       targets. The 5D/6D panels (src/app/world-quasicrystal.js) are the
+       same, with Phason 1-3 | Approximant. */
+    #world4d-panel, .qc-panel {
+      display: none;
+      position: fixed; left: 50%; transform: translateX(-50%);
+      bottom: calc(52px + env(safe-area-inset-bottom, 0px));
+      width: min(460px, calc(100vw - 16px));
+      z-index: 900;
+      flex-direction: column; align-items: stretch; gap: 6px;
+    }
+    #world4d-panel.visible, .qc-panel.visible { display: flex; }
+    /* 4D Info (Info button in the 4D panel): top-left under the title,
+       read-only, so taps pass straight through to the scene. */
+    #world4d-info, .qc-info {
+      display: none;
+      position: fixed; top: 96px; left: 16px; z-index: 900;
+      max-width: min(320px, calc(100vw - 32px));
+      padding: 8px 10px;
+      background: rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      color: #cde; font: 12px/1.5 system-ui, sans-serif;
+      pointer-events: none;
+    }
+    #world4d-info.visible, .qc-info.visible { display: block; }
+    /* Summon rows in 5D/6D Info: the only part of the box that takes taps
+       (tap one to slide back to its settings). */
+    .qc-info .qc-summon-row {
+      display: block; width: 100%; text-align: left; pointer-events: auto; cursor: pointer;
+      margin-top: 3px; padding: 5px 7px; min-height: 30px;
+      background: rgba(255, 200, 87, 0.08); border: 1px solid rgba(255, 200, 87, 0.35); border-radius: 6px;
+      color: #fde6b0; font: 12px system-ui, sans-serif;
+    }
+    .qc-info .qc-summon-set { color: #b9a37a; }
+    #world4d-info .w4d-info-k, .qc-info .w4d-info-k { color: #7cf; font-weight: 600; margin-right: 4px; }
+    /* Toasts sit just above the 4D panel while it's showing, instead of
+       on top of its buttons -- which puts them over the scene, so taps
+       pass straight through them (toasts are text only). */
+    body.world4d-on #hud-prompt, body.qc-world-on #hud-prompt { bottom: calc(190px + env(safe-area-inset-bottom, 0px)); pointer-events: none; }
+    .w4d-row { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; }
+    .w4d-row button {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #9cd; font: 12px system-ui, sans-serif;
+      border-radius: 6px; padding: 7px 11px; cursor: pointer; min-height: 36px; min-width: 36px;
+    }
+    .w4d-row button.active { background: rgba(120, 190, 255, 0.4); border-color: #7cf; color: #fff; }
+    /* 1D Signal: the message field and the chain read back as text. */
+    .sig-message-row { align-items: center; flex-wrap: nowrap; }
+    .sig-decoded { text-align: center; color: #bfefff; font: 600 18px/1.3 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: 0.16em; margin-bottom: 6px; overflow-wrap: anywhere; }
+    .sig-decoded[hidden] { display: none; }
+    .sig-message {
+      flex: 1; min-width: 0; min-height: 36px; box-sizing: border-box;
+      background: rgba(0, 0, 0, 0.55); border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #eaf6ff; font: 14px system-ui, sans-serif; border-radius: 6px; padding: 6px 10px;
+    }
+    .sig-sym { min-width: 44px; font-size: 18px !important; line-height: 1; }
+    .sig-sym svg { display: block; margin: 0 auto; }
+    .sig-send { white-space: nowrap; font-weight: 600; color: #f59e0b !important; border-color: #f59e0b !important; }
+    .sig-send[hidden], .sig-sym[hidden] { display: none !important; }
+    /* Nets: its solids row, and the fold slider once a net is complete. */
+    .nets-fold-row[hidden] { display: none !important; }
+    .nets-fold-row { align-items: center; gap: 10px; }
+    .nets-fold { flex: 1; min-width: 0; max-width: 320px; accent-color: #22c3e6; height: 32px; touch-action: none; }
+    .nets-solids .w4d-row { align-items: center; margin-bottom: 4px; flex-wrap: nowrap; }
+    .nets-solids .w4d-row button { padding: 7px 8px; }
+    .nets-group { text-align: right; font-size: 11px !important; line-height: 1.1; max-width: 70px; }
+    .nets-group { color: #9fb3c8; font: 600 12px system-ui, sans-serif; margin-right: 4px; }
+    .nets-solids button.active { background: rgba(34, 195, 230, 0.28) !important; border-color: #22c3e6 !important; color: #fff !important; }
+    /* Signal's pulse key: held down, it lights up. */
+    .sig-pulse { touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+    .sig-pulse.down { background: rgba(34, 195, 230, 0.4) !important; border-color: #22c3e6 !important; color: #fff !important; }
+    /* The message read out as it arrives, at the top where the line fades. */
+    #sig-arrivals {
+      position: fixed; top: 150px; left: 16px; right: 16px; z-index: 850; display: none;
+      text-align: center; color: #bfefff; font: 600 22px/1.3 ui-monospace, "SF Mono", Menlo, monospace;
+      letter-spacing: 0.18em; text-shadow: 0 0 12px rgba(34, 195, 230, 0.6); pointer-events: none;
+      overflow-wrap: anywhere;
+    }
+    #sig-arrivals.visible { display: block; }
+    /* The Morse glossary: a script button beside Send, the code book at
+       the right. */
+    #sig-gloss-btn.active { background: rgba(34, 195, 230, 0.28) !important; border-color: #22c3e6 !important; color: #fff !important; }
+    #sig-gloss {
+      position: fixed; right: 16px; top: 160px; bottom: 130px; z-index: 860; display: none;
+      width: 168px; overflow-y: auto; padding: 6px; box-sizing: border-box;
+      background: rgba(5, 5, 10, 0.88); border: 1px solid rgba(34, 195, 230, 0.4); border-radius: 10px;
+      grid-template-columns: 1fr 1fr; gap: 3px;
+    }
+    #sig-gloss.visible { display: grid; }
+    #sig-gloss button {
+      display: flex; align-items: center; gap: 5px; padding: 5px 4px; border: 0; border-radius: 6px;
+      background: transparent; color: #eaf6ff; cursor: pointer; font: 600 14px system-ui, sans-serif;
+    }
+    #sig-gloss button:active { background: rgba(34, 195, 230, 0.3); }
+    #sig-gloss b { min-width: 12px; text-align: center; }
+    #sig-gloss span { display: flex; align-items: center; gap: 2px; }
+    #sig-gloss i { display: block; height: 4px; border-radius: 2px; background: #22c3e6; }
+    #sig-gloss i.d { width: 4px; }
+    #sig-gloss i.l { width: 8px; }
+        .sig-send.active { color: #fff !important; background: rgba(245, 158, 11, 0.35) !important; }
+    /* Kaleidoscope: more buttons per row, so a little tighter on phones. */
+    #worldkaleido-panel .w4d-row button { padding: 6px 8px; }
+    .hull-pick { color: #9cd; font: 12px system-ui, sans-serif; display: flex; align-items: center; gap: 6px; }
+    /* The Info box passes taps through to the scene; these take them. */
+    .qc-info .hull-rings circle, .qc-info .hull-palette select, .qc-info .hull-shell-row button { pointer-events: auto; }
+    .qc-info .hull-rings { display: block; margin: 6px auto; }
+    .qc-info .hull-ring-hint { opacity: 0.75; font-size: 11px; margin-top: 4px; }
+    .qc-info .hull-palette { display: block; margin: 2px 0 6px; }
+    .qc-info .hull-palette select { background: rgba(0,0,0,0.45); color: #cde; border: 1px solid rgba(255,255,255,0.25); border-radius: 5px; font: 12px system-ui, sans-serif; }
+    .qc-info .hull-shell-row { display: flex; align-items: center; gap: 5px; }
+    .qc-info .hull-shell-row button { background: rgba(0,0,0,0.4); color: #9cd; border: 1px solid rgba(255,255,255,0.2); border-radius: 5px; font: 11px system-ui, sans-serif; padding: 2px 7px; min-height: 26px; cursor: pointer; }
+    .qc-info .hull-swatch { width: 10px; height: 10px; border-radius: 2px; flex: 0 0 auto; }
+    .hull-select {
+      background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); color: #cde;
+      font: 13px system-ui, sans-serif; border-radius: 6px; padding: 6px 8px; min-height: 36px;
+    }
+    .w4d-track {
+      position: relative; height: 34px; touch-action: none; cursor: ew-resize;
+      background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 17px;
+    }
+    .w4d-ticks { position: absolute; inset: 0 17px; pointer-events: none; }
+    .w4d-tick {
+      position: absolute; top: 4px; bottom: 4px; width: 1px; background: rgba(157, 224, 255, 0.35);
+      font: 10px system-ui, sans-serif; color: #9de0ff; text-indent: 16px; line-height: 26px; white-space: nowrap;
+    }
+    /* Hyper-pyrochlore's "Pyrochlore" click-stop sits just left of the FCC
+       one -- its label reads leftward so the two never overlap. */
+    .w4d-tick-below { direction: rtl; }
+    .w4d-thumb {
+      position: absolute; top: 4px; width: 24px; height: 24px; transform: translateX(-50%);
+      border-radius: 50%; background: #7cf; box-shadow: 0 0 6px rgba(124, 204, 255, 0.8); pointer-events: none;
+    }
+    /* Quick-select: the CURRENTLY active Piece/Color, always visible
+       next to Menu rather than only shown as a fading toast -- direct
+       request 2026-08-29 ("a little hexagon icon of each... stay open
+       at bottom next to menu"). Tapping either reopens straight to
+       where that value gets changed (Piece wheel / Color picker),
+       not back through Home -- see render.js's updateQuickSelect(). */
+    #hud-quick-shape, #hud-quick-color, #hud-quick-lattice-view, #hud-quick-attach {
+      position: fixed; bottom: 8px; z-index: 900;
+      width: 36px; height: 36px;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 6px;
+      color: #9cd;
+      display: flex; align-items: center; justify-content: center;
+      padding: 0; cursor: pointer;
+    }
+    #hud-quick-shape svg, #hud-quick-color svg, #hud-quick-lattice-view svg, #hud-quick-attach svg { width: 24px; height: 24px; }
+    #hud-quick-shape:hover, #hud-quick-color:hover, #hud-quick-lattice-view:hover, #hud-quick-attach:hover { background: rgba(255, 255, 255, 0.15); }
+    /* --quick-x: where the row starts, just right of the Menu box
+       (render.js measures it, since Menu's width depends on language). */
+    #hud-quick-shape { left: var(--quick-x, 64px); }
+    #hud-quick-color { left: calc(var(--quick-x, 64px) + 42px); }
+    /* Lattice View quick-select: third bottom-left icon, direct request
+       2026-08-29 ("a third square at the bottom left going through all
+       options including off") -- cycles the SAME underlying state as
+       the corner HUD wheel's own Lattice View face (render.js's
+       cycleLatticeQuickView), just a second, more-visible access point. */
+    #hud-quick-lattice-view { left: calc(var(--quick-x, 64px) + 84px); }
+    #hud-quick-lattice-view.active { border-color: #39ff88; background: rgba(57, 255, 136, 0.18); }
+    /* Rhombohedra Copy | Mirror attach toggle: 4th bottom-left icon,
+       direct request ("put it in row at bottom with other 3"), shown only
+       while Rhombohedra is the 3D piece (render.js updateRhomboAttachButton). */
+    #hud-quick-attach { left: calc(var(--quick-x, 64px) + 126px); }
+    #hud-quick-attach.hidden { display: none; }
+    #hud-quick-color.painting { border-color: #7cf; box-shadow: 0 0 8px rgba(120, 190, 255, 0.6); }
+    #hud-quick-attach.active { border-color: #7cf; background: rgba(120, 190, 255, 0.4); color: #fff; }
+    /* Paint, when the attach toggle holds its slot (4D's 24-cell, 16-cell
+       and 5-cells, 3D's Rhombohedra and Pyrochlore): just above it (direct
+       request: "add paint button to 4D etc"; the row is full on a phone).
+       4D shows it in its own panel instead. */
+    #hud-quick-paint {
+      position: fixed; bottom: 50px; left: calc(var(--quick-x, 64px) + 126px); z-index: 900;
+      width: 36px; height: 36px; padding: 0; background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 6px; color: #9cd; cursor: pointer;
+    }
+    #hud-quick-paint svg { width: 24px; height: 24px; }
+    #hud-quick-paint.hidden { display: none; }
+    #hud-quick-paint.active { border-color: #7cf; background: rgba(120, 190, 255, 0.4); color: #fff; }
+
+    #lab-toggle {
+      position: fixed; top: 12px; right: 12px; z-index: 900;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      color: #ddd;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font: 14px system-ui, sans-serif;
+      cursor: pointer;
+    }
+    #lab-toggle:hover { background: rgba(255, 255, 255, 0.15); }
+    #xray-toggle {
+      position: fixed; top: 12px; right: 50px; z-index: 900;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      color: #ddd;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font: 15px system-ui, sans-serif;
+      cursor: pointer;
+    }
+    #xray-toggle:hover { background: rgba(255, 255, 255, 0.15); }
+    #xray-toggle.active { background: rgba(120, 190, 255, 0.4); border-color: #7cf; color: #fff; }
+    #duality-toggle {
+      position: fixed; top: 12px; right: 164px; z-index: 900;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      color: #ddd;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font: 15px system-ui, sans-serif;
+      cursor: pointer;
+    }
+    #duality-toggle:hover { background: rgba(255, 255, 255, 0.15); }
+    #duality-toggle.active { background: rgba(200, 140, 255, 0.4); border-color: #c88cff; color: #fff; }
+    #spherical-toggle {
+      position: fixed; top: 12px; right: 354px; z-index: 900;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      color: #ddd;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font: 15px system-ui, sans-serif;
+      cursor: pointer;
+    }
+    #spherical-toggle:hover { background: rgba(255, 255, 255, 0.15); }
+    #spherical-toggle.active { background: rgba(120, 220, 255, 0.4); border-color: #78dcff; color: #fff; }
+    #bcc-toggle {
+      position: fixed; top: 12px; right: 202px; z-index: 900;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      color: #ddd;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font: 15px system-ui, sans-serif;
+      cursor: pointer;
+    }
+    #bcc-toggle:hover { background: rgba(255, 255, 255, 0.15); }
+    #bcc-toggle.active { background: rgba(57, 255, 136, 0.35); border-color: #39ff88; color: #fff; }
+    #clear-world-toggle, #reload-toggle {
+      position: fixed; top: 12px; z-index: 900;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      color: #ddd;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font: 15px system-ui, sans-serif;
+      cursor: pointer;
+    }
+    #clear-world-toggle { right: 240px; }
+    #reload-toggle { right: 278px; }
+    #clear-world-toggle:hover, #reload-toggle:hover { background: rgba(255, 255, 255, 0.15); }
+    #clear-world-toggle:hover { border-color: #ff6b6b; }
+    #rhombic-wheel-3d-toggle {
+      position: fixed; top: 12px; right: 316px; z-index: 900;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      color: #ddd;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font: 13px system-ui, sans-serif;
+      cursor: pointer;
+    }
+    #rhombic-wheel-3d-toggle:hover { background: rgba(255, 255, 255, 0.15); }
+    #rhombic-wheel-3d-toggle.active { background: rgba(77, 208, 225, 0.35); border-color: #4DD0E1; color: #fff; }
+
+    /* Replaced by the persistent HUD Wheel (hud-wheel-3d.js), 2026-08-25
+       -- hidden, not removed, so every real click handler these buttons
+       already own keeps working exactly as before; the new wheel just
+       calls .click() on them programmatically, same reuse pattern as
+       every other real action in this app. */
+    #xray-toggle, #duality-toggle,
+    #spherical-toggle, #bcc-toggle, #rhombic-wheel-3d-toggle, #clear-world-toggle,
+    #reload-toggle, #lab-toggle, #world-view-toggle {
+      display: none;
+    }
+    /* ◯ Spherical's size slider, shown while it's on. */
+    #packing-panel .pack-row { display: flex; align-items: center; gap: 10px; justify-content: center; }
+    #packing-panel label { color: #9fb3c8; font: 600 12px system-ui, sans-serif; white-space: nowrap; }
+    #packing-panel input { flex: 1; min-width: 0; max-width: 300px; accent-color: #22c3e6; height: 32px; touch-action: none; }
+
+    /* Ghost block preview -- a translucent single-cell (or two-cell,
+       while "holding") outline shown at the next valid FCC position on
+       hover in Build mode (build.js's onHover). */
+    .ghost-cell {
+      position: absolute;
+      pointer-events: none;
+    }
+
+    /* --- Advanced/Lab view ---
+       Everything that used to be the always-visible sidebar now lives
+       here, reachable only via #lab-toggle, never shown by default. The
+       inner #controls/#shells-panel sections below keep their ORIGINAL
+       ids and (mostly) original CSS -- only their outer positioning
+       changes, since they're no longer independently-fixed sidebars,
+       just scrollable sections inside one panel. */
+    #lab-panel {
+      position: fixed;
+      top: 54px; right: 12px; bottom: 12px;
+      width: 320px;
+      max-width: calc(100vw - 24px);
+      background: rgba(6, 6, 12, 0.94);
+      border: 1px solid rgba(124, 204, 255, 0.3);
+      border-radius: 8px;
+      z-index: 970;
+      overflow-y: auto;
+      box-sizing: border-box;
+      padding: 10px 12px 16px;
+      /* B2's "geometric menu transitions": a diamond-shaped reveal
+         (clip-path grows from a point at the panel's own corner, the
+         corner nearest #lab-toggle) instead of an instant display swap.
+         visibility+opacity (not display) so the clip-path transition can
+         actually play; pointer-events off while closed so the invisible-
+         but-still-laid-out panel never intercepts clicks meant for the
+         canvas underneath. */
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      clip-path: polygon(100% 0%, 100% 0%, 100% 0%, 100% 0%);
+      transition: clip-path 0.32s ease, opacity 0.22s ease;
+    }
+    #lab-panel.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      clip-path: polygon(-40% 0%, 100% -60%, 140% 100%, 0% 160%);
+    }
+    #lab-header {
+      display: flex; align-items: center; justify-content: space-between;
+      font: 700 13px system-ui, sans-serif;
+      color: #9de0ff;
+      margin-bottom: 6px;
+    }
+    #lab-close { background: none; border: none; color: #9de0ff; cursor: pointer; font: 13px system-ui, sans-serif; opacity: 0.8; }
+    #lab-close:hover { opacity: 1; }
+    #lab-panel h2 {
+      margin: 4px 0 8px;
+      font: 700 13px system-ui, sans-serif;
+      color: #9de0ff;
+      letter-spacing: 0.03em;
+    }
+    #lab-panel h2:not(:first-child) { margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.12); }
+    #lab-settings-section .row { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 6px; color: #ddd; font: 12px system-ui, sans-serif; }
+    #lab-settings-section input[type="range"] { width: 130px; }
+
+    /* B2 rhombic grammar, applied across the remaining (Lab panel) UI
+       surfaces the Rhombic Wheel itself doesn't cover. A literal 45deg-
+       rotated square reads fine for the wheel's short one/two-word
+       labels (B1) but goes illegible for this panel's longer button/
+       label text at this font size, so buttons here use a PARALLELOGRAM
+       (clip-path with slanted verticals) instead -- same diagonal-
+       symmetry family as a rhombus, keeps text upright and readable.
+       Every element below keeps its real underlying <button>/<select>/
+       <input> semantics; only the paint layer changes, matching B2's own
+       "presentation and interaction feel only" scope. */
+    #controls {
+      color: #ddd;
+      font: 13px/1.4 system-ui, sans-serif;
+      user-select: none;
+      box-sizing: border-box;
+    }
+    #controls input[type="number"] { width: 3em; }
+    #controls select {
+      font: inherit;
+      color: inherit;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(124, 204, 255, 0.35);
+      border-radius: 2px;
+      /* A small diamond notch on the left edge of every selector, so a
+         <select> reads as part of the same rhombic-grammar family as the
+         buttons even though clip-path on a native select risks clipping
+         its own dropdown arrow -- this is a safer, still-real touch. */
+      border-left: 10px solid transparent;
+      border-image: linear-gradient(135deg, #9de0ff 0 4px, transparent 4px) 1;
+      padding: 2px 4px;
+    }
+    #controls .row { display: flex; align-items: center; gap: 10px; margin-top: 6px; }
+    #controls .hint { opacity: 0.7; margin: 6px 0 0; max-width: 26em; }
+    #controls .buttons { display: flex; gap: 6px; margin-top: 6px; }
+    #controls button, #controls .file-btn {
+      font: inherit;
+      color: inherit;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 5px 12px;
+      cursor: pointer;
+      /* Parallelogram, not a rectangle -- see the comment above
+         #lab-settings-section for why this shape family over a literal
+         rotated square here. */
+      clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+    }
+    #controls button:hover, #controls .file-btn:hover {
+      /* Tessellating diamond/argyle highlight (B2's own literal
+         requirement) instead of a flat hover color. */
+      background-color: rgba(60, 110, 160, 0.5);
+      background-image:
+        repeating-linear-gradient(45deg, rgba(157,224,255,0.22) 0 5px, transparent 5px 12px),
+        repeating-linear-gradient(-45deg, rgba(157,224,255,0.22) 0 5px, transparent 5px 12px);
+      border-color: #9de0ff;
+    }
+    #controls button.mode-btn.active {
+      background-color: rgba(120, 190, 255, 0.4);
+      background-image:
+        repeating-linear-gradient(45deg, rgba(157,224,255,0.28) 0 5px, transparent 5px 12px),
+        repeating-linear-gradient(-45deg, rgba(157,224,255,0.28) 0 5px, transparent 5px 12px);
+      border-color: #7cf;
+    }
+
+    /* Diamond-shaped checkboxes (Invert Y, Section view, Flip, claim
+       destructible toggles) -- a real custom-rendered rhombus, not the
+       browser default square/rounded-square. */
+    #controls input[type="checkbox"], #lab-settings-section input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 15px; height: 15px;
+      margin: 0;
+      border: 1.5px solid rgba(124, 204, 255, 0.6);
+      background: rgba(255,255,255,0.06);
+      transform: rotate(45deg);
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+    }
+    #controls input[type="checkbox"]:checked, #lab-settings-section input[type="checkbox"]:checked {
+      background: #7cf;
+      border-color: #9de0ff;
+      box-shadow: 0 0 6px rgba(124, 204, 255, 0.7);
+    }
+
+    /* Narrow viewports: full-height sidebars (top:54 to bottom:12,
+       ~300px wide) are fine on a desktop monitor, but on a phone that's
+       most of the screen's width AND height, leaving only a sliver of
+       tappable canvas. Dock them as a bottom sheet instead so the
+       canvas stays reachable for touch. */
+    @media (max-width: 640px) {
+      #lab-panel {
+        left: 12px; right: 12px; width: auto; max-width: none;
+        top: auto; bottom: 12px; max-height: 42vh;
+      }
+    }
+    .panel-hint { opacity: 0.7; margin-top: 6px; font-size: 12px; }
+    #rhombis-settings-link { margin: 0 0 14px; opacity: 0.85; }
+    #rhombis-settings-link a { color: #9de0ff; text-decoration: none; }
+    #rhombis-settings-link a:hover { text-decoration: underline; }
+ 
+    /* Lab panel is already a single scrollable overlay at any viewport
+       size (see #lab-panel above) -- on a narrow/touch viewport it just
+       widens toward full-screen rather than needing a separate two-
+       screen navigation scheme. Real touch target sizing (Apple HIG /
+       Material both recommend ~44-48px minimum) still applies whenever
+       it's open on a touch device. B7 covers the rest of mobile/touch
+       (bottom toolbar, on-screen joystick, etc.) -- out of scope here. */
+    @media (pointer: coarse), (max-width: 700px) {
+      #lab-panel { width: calc(100vw - 24px); }
+      #controls button, #controls .file-btn, #controls select, #controls input,
+      .color-mode-group { display: inline-flex; border: 1px solid rgba(157,224,255,.35); border-radius: 999px; overflow: hidden; }
+      .color-mode-btn { background: transparent; color: inherit; border: 0; padding: 4px 12px; font: inherit; cursor: pointer; }
+      .color-mode-btn.active { background: #22c3e6; color: #001018; }
+      .ring-recolor, .ring-remove {
+        min-height: 40px;
+        font-size: 15px;
+      }
+    }
+
+    /* B2: "replace any numeric Undo readout with a held-icon (up arrow
+       with a rotate icon) miniature scrub-timeline of past world
+       states." A quick click still undoes one step (same underlying
+       action as before); holding it down reveals #undo-scrub-strip, a
+       row of small rhombus ticks (oldest at the icon, most recent at
+       the far end -- see render.js), each jumping straight to that
+       state on click. */
+    /* Fixed bottom-right, just left of What's New and About, same size
+       and style as the bottom-left quick buttons. */
+    #undo-widget { position: fixed; bottom: 8px; right: 88px; z-index: 900; }
+    /* 1D's Clear, beside Undo (direct request: "clear next to undo"). */
+    #oned-clear {
+      position: fixed; bottom: 8px; right: 132px; z-index: 900;
+      width: 36px; height: 36px; padding: 0; font: 20px system-ui, sans-serif; color: #9cd;
+      background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 6px; cursor: pointer;
+    }
+    #oned-clear[hidden] { display: none; }
+    #oned-clear:hover:not(:disabled) { border-color: #ff6b6b; }
+    #oned-clear:disabled { opacity: 0.35; cursor: default; }
+    #undo-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px;
+      padding: 0;
+      font: 20px system-ui, sans-serif;
+      color: #9cd;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 6px;
+      cursor: pointer;
+      touch-action: none;
+    }
+    #undo-btn:hover:not(:disabled) { background: rgba(255, 255, 255, 0.15); }
+    #undo-btn:disabled { opacity: 0.35; cursor: default; }
+    /* The narrowest phones (320px): the quick row reaches Undo, so Undo
+       (and 1D's Clear) sit a row up. */
+    @media (max-width: 359px) { #undo-widget, #oned-clear { bottom: 50px; } }
+    .w4d-paint svg { width: 18px; height: 18px; display: block; }
+    #undo-scrub-strip {
+      display: none;
+      position: absolute;
+      right: 0;
+      bottom: 44px;
+      background: rgba(6, 6, 12, 0.96);
+      border: 1px solid rgba(124, 204, 255, 0.4);
+      border-radius: 6px;
+      padding: 8px;
+      z-index: 20;
+      max-width: 280px;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    #undo-scrub-strip.visible { display: flex; }
+    #undo-scrub-strip .scrub-tick {
+      width: 16px; height: 16px;
+      background: rgba(180, 83, 9, 0.6);
+      border: 1px solid rgba(245, 158, 11, 0.7);
+      transform: rotate(45deg);
+      cursor: pointer;
+      flex: none;
+    }
+    #undo-scrub-strip .scrub-tick:hover {
+      background: #f59e0b;
+      box-shadow: 0 0 6px rgba(245, 158, 11, 0.8);
+    }
+    #undo-scrub-strip .scrub-label {
+      width: 100%; text-align: center;
+      color: #bcd; font: 10px system-ui, sans-serif; opacity: 0.75;
+      margin-bottom: 2px;
+    }
+
+    #welcome-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(5, 5, 10, 0.88);
+      backdrop-filter: blur(2px);
+      overflow-y: auto;
+      padding: 24px 12px;
+      box-sizing: border-box;
+    }
+    #welcome-card {
+      max-width: 380px;
+      width: 100%;
+      color: #ddd;
+      font: 14px/1.5 system-ui, sans-serif;
+      background: rgba(15, 15, 25, 0.96);
+      border: 1px solid rgba(124, 204, 255, 0.35);
+      border-radius: 10px;
+      padding: 20px 26px 24px;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+    }
+    #welcome-card .welcome-lang { margin: 0 0 10px; }
+    #welcome-card svg { display: block; margin: 4px auto 18px; }
+    #welcome-card h1 { margin: 0; font-size: 26px; color: #fff; }
+    #welcome-card .overview { margin: 6px 0 0; font-size: 13px; opacity: 0.85; font-style: italic; }
+    #welcome-card .dim-link {
+      font: inherit; font-style: normal; font-weight: 600; color: #9de0ff; background: rgba(124, 204, 255, 0.12);
+      border: 1px solid rgba(124, 204, 255, 0.45); border-radius: 6px; padding: 2px 7px; margin: 2px 1px; cursor: pointer;
+    }
+    /* The dimension buttons: their own line, one row, never split. */
+    #welcome-card .dim-links { display: flex; flex-wrap: nowrap; justify-content: center; gap: 6px; margin-top: 8px; }
+    #welcome-card .dim-links .dim-link { margin: 0; padding: 4px 10px; min-height: 32px; }
+    #welcome-card .dim-link:hover, #welcome-card .dim-link:focus-visible { background: rgba(124, 204, 255, 0.3); color: #fff; }
+    #welcome-card .how-to-link {
+      margin-top: 6px; min-height: 36px; padding: 4px 14px;
+      background: none; border: 1px solid rgba(124, 204, 255, 0.45); border-radius: 18px;
+      color: #9de0ff; font: 13px system-ui, sans-serif; cursor: pointer;
+    }
+    #welcome-card .how-to-link:hover { background: rgba(124, 204, 255, 0.1); }
+    #welcome-card .rhombis-link {
+      /* Now sits directly under the h1 (moved up from below the ENTER
+         logo/checkbox, per direct feedback) -- the changelog tagline that
+         used to sit here was cut instead of relocated, see welcome.js's
+         own overlayHtml() comment. */
+      margin-top: 8px;
+      font-size: 12px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    /* The real finished RHOMBIS logo (2026-09-04) -- small and
+       secondary here on purpose, since the big central wireframe RD
+       above (#welcome-logo-svg) is Rhombiverse's own primary mark, not
+       this sub-feature's. */
+    #welcome-card .rhombis-link img {
+      width: 28px; height: 28px; border-radius: 6px; flex-shrink: 0;
+    }
+    #welcome-card .rhombis-link a { color: #9de0ff; text-decoration: none; }
+    #welcome-card .rhombis-link a:hover { text-decoration: underline; }
+    /* Cross-link to Polyhedraverse, our twin project -- mirrors
+       .rhombis-link's own layout exactly (small icon + text, centered
+       row), since Polyhedraverse's own welcome page already has the
+       reciprocal link back to Rhombiverse in this same style. */
+    #welcome-card .polyhedraverse-link {
+      /* Tighter than .rhombis-link above (6px vs 8px gap, closer margin-
+         top) per direct feedback -- the badge read as too far from its
+         own text. */
+      margin-top: 6px;
+      font-size: 12px;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    #welcome-card .polyhedraverse-link img {
+      width: 28px; height: 28px; border-radius: 6px; flex-shrink: 0;
+    }
+    #welcome-card .polyhedraverse-link a { color: #9de0ff; text-decoration: none; }
+    #welcome-card .polyhedraverse-link a:hover { text-decoration: underline; }
+    #welcome-card .legal-links {
+      margin-top: 14px;
+      font-size: 11px;
+      opacity: 0.6;
+    }
+    #welcome-card .legal-links a { color: #9cd; text-decoration: none; }
+    #welcome-card .legal-links a:hover { text-decoration: underline; }
+    #about-btn {
+      position: fixed;
+      bottom: 8px;
+      right: 8px;
+      z-index: 900;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      color: #ddd;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font: bold 14px system-ui, sans-serif;
+      cursor: pointer;
+    }
+    #about-btn:hover { background: rgba(255, 255, 255, 0.15); }
+
+    /* B7: "Replace 'Under Construction' branding with a versioned
+       'What's new' changelog panel" -- reuses #about-btn's exact shape/
+       position language, one slot to its left (the old construction-tag
+       badge used to sit here). .has-news is a small dot, not a color-only
+       signal replacement for the icon itself -- the button is always the
+       same 🕘, just gets a marker when there's something unread. */
+    #changelog-btn {
+      position: fixed;
+      bottom: 8px;
+      right: 48px;
+      z-index: 900;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      color: #ddd;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font: 13px system-ui, sans-serif;
+      cursor: pointer;
+    }
+    #changelog-btn:hover { background: rgba(255, 255, 255, 0.15); }
+    #changelog-btn.has-news::after {
+      content: "";
+      position: absolute;
+      top: -2px; right: -2px;
+      width: 8px; height: 8px;
+      background: #7cf;
+      border-radius: 50%;
+      box-shadow: 0 0 4px rgba(124, 204, 255, 0.9);
+    }
+    #changelog-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 990;
+      align-items: center; justify-content: center;
+      background: rgba(5, 5, 10, 0.88);
+      backdrop-filter: blur(2px);
+      padding: 24px 12px;
+      box-sizing: border-box;
+    }
+    #changelog-overlay.open { display: flex; }
+    #changelog-card {
+      width: 100%; max-width: 520px; max-height: 84vh;
+      overflow-y: auto;
+      color: #ddd; font: 14px/1.5 system-ui, sans-serif;
+      background: rgba(15, 15, 25, 0.96);
+      border: 1px solid rgba(124, 204, 255, 0.35);
+      border-radius: 10px;
+      padding: 18px 22px 22px;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+    }
+    #changelog-header {
+      display: flex; align-items: center; justify-content: space-between;
+      font: 700 16px system-ui, sans-serif;
+      color: #9de0ff;
+      margin-bottom: 12px;
+    }
+    #changelog-close { background: none; border: none; color: #9de0ff; cursor: pointer; font: 15px system-ui, sans-serif; }
+    .changelog-entry { margin-bottom: 18px; }
+    .changelog-entry:last-child { margin-bottom: 0; }
+    .changelog-date { font: 700 11px system-ui, sans-serif; color: #9de0ff; letter-spacing: 0.03em; }
+    .changelog-title { font: 700 15px system-ui, sans-serif; color: #fff; margin: 2px 0 6px; }
+    .changelog-entry ul { margin: 0; padding-left: 20px; font-size: 13px; opacity: 0.9; }
+    .changelog-entry li { margin-bottom: 3px; }
+    #sync-warning {
+      display: none;
+      position: fixed;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 950;
+      max-width: 90vw;
+      color: #1a1400;
+      background: #f59e0b;
+      border: 1px solid #1a1400;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font: 12px system-ui, sans-serif;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+  <!--
+    Plain ES modules + an import map -- no bundling, ever (scripts/build.mjs,
+    added 2026-08-24, only minifies each src/**/*.js file in place for
+    production; the module graph/import structure is completely untouched).
+    Local dev (README.md's "Running locally") stays zero-build-step: any
+    static file server directly over this repo, exactly as before.
+  -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.185.1/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.185.1/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- B1 minimal HUD -->
+  <div id="hud-wordmark">RHOMBIVERSE</div>
+  <div id="fps-meter"></div>
+  <div id="hud-prompt"></div>
+  <div id="hud-wheel-cue" title="Tab / Space also opens this" data-i18n="hud.menu">Menu</div>
+  <div id="hud-wizard-row">
+    <div id="hud-wizard-cue" data-i18n-title="wiz.cueTitle" title="Browse dimensions, lattices and pieces">Wizard</div>
+    <div id="hud-dim"></div>
+  </div>
+  <div id="hud-1d-toggle" hidden><button type="button" data-world="signal">Signal</button><button type="button" data-world="construct">Construct</button></div>
+  <button id="hud-quick-shape" type="button" title="Shape (tap to change)"></button>
+  <button id="hud-quick-color" type="button" title="Color (tap to change)"></button>
+  <button id="hud-quick-lattice-view" type="button" title="Lattice View (tap to cycle)"></button>
+  <button id="hud-quick-attach" type="button" class="hidden" title="Rhombohedra attach: Copy / Mirror (tap to switch)"></button>
+  <button id="hud-quick-paint" type="button" class="hidden" title="Paint"></button>
+  <button id="xray-toggle" type="button" title="X-Ray: drag a cutaway plane through the structure">⛶</button>
+  <button id="world-view-toggle" type="button" title="World View: Color / Translucent / Skeleton (tap to cycle)"></button>
+  <button id="duality-toggle" type="button" title="Duality: view this structure's aperiodic shadow">◐</button>
+  <button id="spherical-toggle" type="button" title="Spherical: off, spheres, voids">◯</button>
+  <button id="bcc-toggle" type="button" title="Lattice View (tap to cycle)">⬡</button>
+  <button id="rhombic-wheel-3d-toggle" type="button" title="Menu (Tab / Space): navigate departments via the real RD mesh">◈</button>
+  <button id="clear-world-toggle" type="button" title="Clear World: erase everything and start fresh">⊘</button>
+  <button id="reload-toggle" type="button" title="Reload: hard-refresh the app (use if something looks stuck/stale)">↻</button>
+  <button id="lab-toggle" type="button" title="Settings" data-i18n-title="hud.settings">⚙</button>
+  <!-- Undo: on the main screen in every dimension (moved out of Settings
+       2026-09-25). Tap undoes one step; hold for the scrub strip. -->
+  <button id="oned-clear" type="button" hidden>⊘</button>
+  <div id="undo-widget">
+    <button id="undo-btn" type="button" disabled title="Tap: undo one step. Hold: scrub back further." data-i18n-title="shells.undoTitle" aria-label="Undo">↶</button>
+    <div id="undo-scrub-strip"></div>
+  </div>
+
+  <div id="lab-panel">
+    <div id="lab-header"><span data-i18n="hud.settings">Settings</span><button id="lab-close" type="button" title="Close" data-i18n-title="lab.close">✕</button></div>
+    <div class="panel-hint" id="rhombis-settings-link" data-i18n-html="lab.rhombisLinkHint">New here, or just want a quick puzzle? <a href="./rhombis.html">Try RHOMBIS</a> any time.</div>
+    <h2 data-i18n="hud.settings">Settings</h2>
+    <div id="lab-settings-section">
+      <div class="row"><label for="setting-sensitivity" data-i18n="setting.sensitivity">Look sensitivity</label><input id="setting-sensitivity" type="range" min="0.25" max="2.5" step="0.05" value="1" /></div>
+      <div class="row"><label for="setting-invert-y" data-i18n="setting.invertY">Invert Y</label><input id="setting-invert-y" type="checkbox" /></div>
+      <div class="row"><label for="setting-fov" data-i18n="setting.fov">Field of view</label><input id="setting-fov" type="range" min="40" max="90" step="1" value="50" /></div>
+      <div class="row"><label for="setting-quality" data-i18n="setting.quality">Graphics quality</label>
+        <select id="setting-quality">
+          <option value="low" data-i18n="setting.quality.low">Low</option>
+          <option value="medium" data-i18n="setting.quality.medium">Medium</option>
+          <option value="high" selected data-i18n="setting.quality.high">High</option>
+        </select>
+      </div>
+      <div class="row"><label for="setting-fps-meter" data-i18n="setting.fpsMeter">Show FPS meter</label><input id="setting-fps-meter" type="checkbox" /></div>
+      <div class="row"><label for="setting-volume" data-i18n="setting.volume">Volume</label><input id="setting-volume" type="range" min="0" max="1" step="0.05" value="0.5" /></div>
+      <div class="row"><label for="setting-language" data-i18n="setting.language">Language</label>
+        <select id="setting-language"></select>
+      </div>
+      <div class="row" id="dualize-row">
+        <button id="dualize-toggle" class="mode-btn" data-mode="dualize" type="button">Dualize Preview</button>
+      </div>
+    </div>
+    <h2>Advanced Building &amp; World (technical names)</h2>
+    <div id="controls">
+    <div class="row" style="display:none;">
+      <button class="mode-btn active" data-mode="build" type="button">Build</button>
+      <!-- Menu → Piece → CO clicks this hidden mode button. -->
+      <button id="cubocta-build-toggle" class="mode-btn" data-mode="cubocta" type="button">Build Cuboctahedron</button>
+    </div>
+    <div id="color-mode-row" class="row">
+      <span data-i18n="color.mode">Colours:</span>
+      <span class="color-mode-group" role="group">
+        <button type="button" class="color-mode-btn" data-color-mode="cyan" data-i18n="color.modeCyan">Cyan</button>
+        <button type="button" class="color-mode-btn" data-color-mode="type" data-i18n="color.modeType">Type</button>
+        <button type="button" class="color-mode-btn" data-color-mode="pick" data-i18n="color.modePick">Pick</button>
+      </span>
+    </div>
+    <div id="color-row" class="row">
+      <label><span data-i18n="color.label">Color:</span>
+        <select id="color-select">
+          <option value="cyan">Cyan</option>
+          <option value="base">Default</option>
+          <option value="garnet">Red</option>
+          <option value="ferrostone">Gray</option>
+          <option value="glassite">Sky Blue</option>
+          <option value="star-glassite">White</option>
+          <option value="blackstar-glassite">Black</option>
+          <option value="ice99">Pale Blue</option>
+          <option value="water">Blue</option>
+          <option value="emerald">Green</option>
+          <option value="gold">Amber</option>
+          <option value="amethyst">Purple</option>
+          <option value="rose-quartz">Pink</option>
+          <option value="citrine">Orange</option>
+          <option value="turquoise">Teal</option>
+          <option value="zome-blue">Zome Blue</option>
+        </select>
+      </label>
+    </div>
+    <div id="auto-assign-colors-row" class="row" style="display: none; flex-direction: column; align-items: stretch; gap: 4px;"></div>
+    <div id="piece-type-row" class="row">
+      <label><span data-i18n="piece.label">Piece:</span>
+        <select id="piece-type-select">
+          <option value="rd">RD (full block)</option>
+          <option value="cube">Cube (bare)</option>
+          <option value="pyramid">Pyramid</option>
+          <option value="to" id="piece-type-to-option">Truncated Octahedron (BCC)</option>
+          <option value="ioct" id="piece-type-ioct-option">Flattened Octahedron (BCC interstitial)</option>
+          <option value="octahedron" id="piece-type-octahedron-option">Octahedron (click a Cuboctahedron corner)</option>
+          <option value="idis" id="piece-type-idis-option">Disphenoid (BCC interstitial)</option>
+          <option value="halfrd" id="piece-type-halfrd-option">Hemi RD (click a face to add the neighbor's near half)</option>
+          <option value="hourglass" id="piece-type-hourglass-option">Hourglass (click a face to bridge it and its neighbor)</option>
+          <option value="elongdodeca">Elongated Dodecahedron</option>
+          <option value="rdquarter">RD Quarter (rhombohedron: tap an RD to fill a corner, tap a quarter to mirror it)</option>
+          <option value="rhombohedra">Rhombohedra (free-standing lattice, own separate)</option>
+          <option value="hexprism">Hex Prism (own separate lattice)</option>
+          <option value="dictoblock">DICTO Blocks (the skewed RD's four blocks)</option>
+          <option value="dictofcc">DICTO FCC (DICTO's skewed RD, sheared FCC lattice)</option>
+          <option value="pyrochlore">Pyrochlore (3D Kagome)</option>
+          <option value="tesseract">Tesseract</option>
+          <option value="cell24">24-cell</option>
+          <option value="cell16">16-cell</option>
+          <option value="a4trunc">Truncated 5-cell</option>
+          <option value="a4bitrunc">Bitruncated 5-cell</option>
+          <option value="a4cell5">5-cell</option>
+          <!-- 2D lattice tier (Phase 3+4) options are injected here at
+               startup by render.js, one per LATTICE_2D_COMBINATIONS entry
+               (id="lattice2d-piece-options") -- NOT hand-listed like every
+               option above, so a value like "lattice2d:parallelogram:square"
+               always has a real matching <option> a plain `select.value =`
+               assignment can find. Real bug this replaces, caught live
+               (direct report, "silhouettes just sit there, pieces cant be
+               generated"): setting a <select>'s .value to a string with NO
+               matching <option> silently no-ops in the DOM (the select's
+               value stays whatever it was), so the old hardcoded
+               square2d/hexagon2d/triangle2d trio here left every one of the
+               12 new combo ids with nothing to match -- the toggle panel's
+               own UI state (dot matrix, highlighted button, HUD toast) all
+               updated correctly, the ACTUAL piece type never did. -->
+        </select>
+      </label>
+    </div>
+    <div id="piece-try-hint" class="hint" data-i18n="piece.tryHint">Try placing 6 pyramids on a cube. Then 12. Then remove the outer 6.</div>
+    <div id="mode-hint" class="hint"></div>
+    <h2>World, Import &amp; Export</h2>
+    <hr style="border-color: rgba(255,255,255,0.15); margin: 8px 0;" />
+    <div class="row">
+      <label><span data-i18n="world.view">World view:</span>
+        <select id="world-view-select">
+          <option value="color" data-i18n="world.view.color">Color</option>
+          <option value="translucent" data-i18n="world.view.translucent">Translucent</option>
+          <option value="skeleton" data-i18n="world.view.skeleton">Skeleton</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <label><input id="section-enable" type="checkbox" /> <span data-i18n="world.sectionView">Section view</span></label>
+    </div>
+    <div id="section-controls-row" class="row" style="display: none">
+      <select id="section-axis">
+        <option value="x">X</option>
+        <option value="y">Y</option>
+        <option value="z">Z</option>
+        <!-- Angled X-Ray (2026-09-24): the 4 cube body-diagonals -- a cut
+             along any of them slices Pyrochlore (3D Kagome) into its own
+             Kagome layers. -->
+        <option value="d111">Diagonal 1</option>
+        <option value="d1mm">Diagonal 2</option>
+        <option value="dm1m">Diagonal 3</option>
+        <option value="dmm1">Diagonal 4</option>
+      </select>
+      <input id="section-pos" type="range" min="-20" max="20" step="0.5" value="0" />
+      <label><input id="section-flip" type="checkbox" /> <span data-i18n="world.flip">Flip</span></label>
+    </div>
+    <div class="hint" data-i18n="world.rightClickHint">
+      Long-press (or right-click) removes a piece.
+    </div>
+    <div class="buttons">
+      <button id="export-json" type="button" data-i18n="world.exportJson">Export World</button>
+      <label class="file-btn">
+        <span data-i18n="world.import">Import World</span>
+        <input id="import-json" type="file" accept="application/json" hidden />
+      </label>
+    </div>
+    <div class="hint">Your World saves automatically in this browser. Export World saves every dimension to a file; Import World opens one.</div>
+  </div>
+  </div>
+
+
+  <script type="module" src="./src/render.js"></script>
+  <script type="module" src="./src/app/welcome.js"></script>
+  <script type="module" src="./src/app/changelog.js"></script>
+</body>
+</html>

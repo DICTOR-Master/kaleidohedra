@@ -1,0 +1,204 @@
+// Color/generator/species picker overlays + the drag-placement
+// ("Repeat") toggle -- real, independent functionality extracted out
+// of the old 2D wheel.js (removed 2026-08-25) so the Rhombic Wheel 3D -- now
+// the sole navigation surface -- doesn't depend on a second UI's
+// internals for real features. These overlays were always independent
+// DOM (their own fixed-position elements, never part of the old
+// radial menu's own visuals), so extracting them changes nothing about
+// how they look or behave, only where the code that drives them lives.
+
+function positionsFor(count, radius) {
+  const positions = [];
+  for (let i = 0; i < count; i++) {
+    const angle = (i / count) * Math.PI * 2 - Math.PI / 2;
+    positions.push({ x: Math.cos(angle) * radius, y: Math.sin(angle) * radius });
+  }
+  return positions;
+}
+
+function readSelectOptions(selectEl) {
+  const out = [];
+  for (const child of selectEl.children) {
+    if (child.tagName === 'OPTGROUP') {
+      for (const opt of child.children) {
+        out.push({ group: child.label, value: opt.value, label: opt.textContent });
+      }
+    } else if (child.tagName === 'OPTION') {
+      out.push({ group: null, value: child.value, label: child.textContent });
+    }
+  }
+  return out;
+}
+
+const CSS = `
+#color-wheel-overlay {
+  position: fixed; inset: 0; z-index: 986;
+  display: none;
+  align-items: center; justify-content: center;
+  background: rgba(2, 2, 6, 0.35);
+}
+#color-wheel-overlay.open { display: flex; }
+#color-wheel-root { position: relative; width: 1px; height: 1px; }
+.color-wheel-item {
+  position: absolute;
+  width: 48px; height: 48px;
+  margin: -24px 0 0 -24px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  transform: rotate(45deg);
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+.color-wheel-item:hover, .color-wheel-item.current {
+  transform: rotate(45deg) scale(1.25);
+  box-shadow: 0 0 12px rgba(255,255,255,0.6);
+  border-color: #fff;
+  z-index: 2;
+}
+#color-wheel-paint {
+  position: absolute; top: 34px; left: 0; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 5px;
+  background: rgba(0, 0, 0, 0.55); border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #9cd; font: 12px system-ui, sans-serif; border-radius: 14px;
+  padding: 5px 10px; cursor: pointer; z-index: 3; white-space: nowrap;
+}
+#color-wheel-paint svg { width: 16px; height: 16px; }
+#color-wheel-paint.active { background: rgba(120, 190, 255, 0.4); border-color: #7cf; color: #fff; }
+#color-wheel-hint {
+  position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%);
+  color: #eaf6ff; font: 13px system-ui, sans-serif;
+  white-space: nowrap;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.95), 0 0 8px rgba(0,0,0,0.95);
+  z-index: 3;
+}
+
+/* Piece picker: no CSS/overlay of its own here at all, as of 2026-08-28 --
+   Piece is a real WHEEL_PIECE layer on the main Rhombic Wheel itself
+   (rhombic-wheel-3d-core.js), navigated to and picked from the same way
+   as every other department. Went through two earlier standalone
+   attempts first (a flat SVG, then a real WebGL mini-render in the
+   now-deleted app/piece-cluster-3d.js) before landing here -- both read
+   as a second, lesser navigation surface once actually compared
+   against the real wheel. */
+`;
+
+export const PAINT_ICON = '<svg viewBox="-30 -30 60 60"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"><path d="M-4,4 L16,-16 a5,5 0 0 1 7,7 L3,11 Z"/><path d="M-4,4 C-12,4 -14,10 -14,14 C-14,20 -20,22 -24,22 C-16,26 -2,24 3,11"/></g></svg>';
+
+function injectCssOnce() {
+  if (document.getElementById('wheel-pickers-style')) return;
+  const style = document.createElement('style');
+  style.id = 'wheel-pickers-style';
+  style.textContent = CSS;
+  document.head.appendChild(style);
+}
+
+export function createWheelPickers({
+  materialSelectId = 'color-select',
+  onMenuSound = () => {},
+  onSelectionChange = () => {},
+  getMaterialColor = () => '#8899aa',
+  onMaterialHoverPreview = () => {},
+  onMaterialHoverEnd = () => {},
+} = {}) {
+  injectCssOnce();
+
+  const materialWheelOverlay = document.createElement('div');
+  materialWheelOverlay.id = 'color-wheel-overlay';
+  const materialWheelRoot = document.createElement('div');
+  materialWheelRoot.id = 'color-wheel-root';
+  const materialWheelHint = document.createElement('div');
+  materialWheelHint.id = 'color-wheel-hint';
+  materialWheelRoot.appendChild(materialWheelHint);
+  materialWheelOverlay.appendChild(materialWheelRoot);
+  document.body.appendChild(materialWheelOverlay);
+
+  function closeMaterialWheel() {
+    materialWheelOverlay.classList.remove('open');
+    onMaterialHoverEnd();
+  }
+
+  function openMaterialWheel(options, onPick, currentValue, paint) {
+    materialWheelRoot.innerHTML = '';
+    materialWheelRoot.appendChild(materialWheelHint);
+    // Paint switch in the middle of the wheel (where the world has
+    // per-piece colours): on, tapping a placed piece recolours it.
+    if (paint) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.id = 'color-wheel-paint';
+      btn.className = paint.on ? 'active' : '';
+      btn.innerHTML = `${PAINT_ICON}<span>Paint</span>`;
+      btn.title = 'Paint: tap a placed piece to give it the picked colour';
+      btn.addEventListener('click', () => { onMenuSound(); paint.toggle(); btn.classList.toggle('active', paint.isOn()); });
+      materialWheelRoot.appendChild(btn);
+    }
+    materialWheelHint.textContent = 'Hover to preview · click to select';
+    const positions = positionsFor(options.length, 100);
+    options.forEach((opt, i) => {
+      const item = document.createElement('div');
+      item.className = 'color-wheel-item';
+      if (opt.value === currentValue) item.classList.add('current');
+      item.style.left = `${positions[i].x}px`;
+      item.style.top = `${positions[i].y}px`;
+      item.style.background = getMaterialColor(opt.value);
+      item.title = opt.label;
+      item.addEventListener('mouseenter', () => {
+        materialWheelHint.textContent = opt.label;
+        onMaterialHoverPreview(opt.value);
+      });
+      item.addEventListener('mouseleave', () => {
+        materialWheelHint.textContent = 'Hover to preview · click to select';
+        onMaterialHoverEnd();
+      });
+      item.addEventListener('click', () => {
+        onMenuSound();
+        onPick(opt.value, opt.label);
+        closeMaterialWheel();
+        onSelectionChange();
+      });
+      materialWheelRoot.appendChild(item);
+    });
+    materialWheelOverlay.classList.add('open');
+  }
+  materialWheelOverlay.addEventListener('click', (e) => {
+    if (e.target === materialWheelOverlay) closeMaterialWheel();
+  });
+
+  // Own Escape handling for these overlays -- independent of whatever
+  // else (the 3D wheel, a panel) might also listen for Escape.
+  window.addEventListener('keydown', (e) => {
+    if (e.code !== 'Escape') return;
+    if (materialWheelOverlay.classList.contains('open')) closeMaterialWheel();
+  });
+
+  // Renamed from openMaterialPicker (2026-09-23, direct instruction: "it
+  // should be color picker/color... etc") -- the underlying DOM/CSS
+  // (#color-wheel-*) and every user-visible label already say Color;
+  // this export is the one piece of the public surface every caller
+  // actually names, so it's renamed too rather than left as the one
+  // remaining "Material" in an otherwise fully-Color-named feature. The
+  // helpers this calls (openMaterialWheel/closeMaterialWheel) and the
+  // `materialSelectId`/`getMaterialColor`/`onMaterialHoverPreview`/
+  // `onMaterialHoverEnd` params stay as-is -- purely internal to this
+  // module, never shown to a user, and the underlying `cell.material`
+  // data concept they ultimately front-end for isn't being renamed (see
+  // MATERIAL_COLORS' own header in render.js for why).
+  function openColorPicker(onPick, paint) {
+    const select = document.getElementById(materialSelectId);
+    const options = readSelectOptions(select);
+    // Fire 'change' so a wheel pick behaves exactly like a dropdown pick --
+    // render.js's change listener writes the per-piece auto-assign
+    // override. Setting .value alone doesn't fire it, so with auto-assign
+    // on (the default) the RD stayed grey whatever colour was picked
+    // (direct report 2026-09-25).
+    openMaterialWheel(options, (value, label) => { select.value = value; select.dispatchEvent(new Event('change')); onPick?.(value, label); }, select.value, paint);
+  }
+  return {
+    openColorPicker,
+    // For a caller (the 3D wheel's Tab/Space/HUD-cue handling) that
+    // wants to close whichever of these is open before doing anything
+    // else, same UX the old 2D wheel had for its own Tab/Space handler.
+    isAnyPickerOpen: () => materialWheelOverlay.classList.contains('open'),
+    closeAnyPicker: () => closeMaterialWheel(),
+  };
+}

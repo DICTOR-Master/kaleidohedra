@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>RHOMBIS -- 3D Puzzle Game from Rhombiverse</title>
+  <!-- Disambiguation, not just SEO copy -- direct instruction
+       (2026-09-04): an old, unrelated, defunct 2D Windows game also
+       used the name "Rhombis" (no copyright found on it anywhere, and
+       the word itself is fairly generic, so keeping the name -- just
+       making this one clearly distinct and separately searchable
+       rather than picking a new name). -->
+  <meta name="description" content="RHOMBIS: the 3D geometric-packing puzzle game from Rhombiverse. Fit rhombic dodecahedron pieces together in your browser -- not the old 2D Windows game of the same name." />
+  <link rel="canonical" href="https://rhombiverse.vercel.app/rhombis.html" />
+  <!-- Own distinct favicon from the rest of Rhombiverse, reinforcing
+       the same disambiguation the title/meta above already carry --
+       the real finished logo (2026-09-04), not the parent app's own
+       wireframe-RD favicon.svg. -->
+  <link rel="icon" type="image/png" href="./assets/rhombis-favicon-64.png" />
+  <link rel="apple-touch-icon" href="./assets/rhombis-apple-touch.png" />
+  <style>
+    html, body {
+      margin: 0; height: 100%; background: #05050a; overflow: hidden;
+      overscroll-behavior: none; touch-action: manipulation;
+      -webkit-user-select: none; user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    #app { position: fixed; inset: 0; }
+    #app canvas { display: block; touch-action: none; }
+    #rhombis-topbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: calc(0.75rem + env(safe-area-inset-top)) calc(1rem + env(safe-area-inset-right))
+               0.75rem calc(1rem + env(safe-area-inset-left));
+      font-family: system-ui, sans-serif; color: #e8f4ff;
+      pointer-events: none;
+    }
+    #rhombis-topbar a {
+      color: #9be3ff; pointer-events: auto; text-decoration: none;
+      padding: 0.4rem 0.2rem; /* bigger tap target than the text alone */
+    }
+    #rhombis-topbar a:hover { text-decoration: underline; }
+    #rhombis-title { font-weight: 600; letter-spacing: 0.08em; }
+    #rhombis-title-mark {
+      width: 22px; height: 22px; border-radius: 5px; vertical-align: -6px; margin-right: 0.4rem;
+    }
+    /* Disambiguates from an old, unrelated 2D Windows game of the same
+       name -- direct instruction 2026-09-04. Hidden below 600px so it
+       doesn't crowd the stage name out on a phone-width topbar; the
+       page <title>/meta description (search results, browser tab)
+       carry the same disambiguation regardless of screen size. */
+    #rhombis-subtitle { font-size: 0.7rem; opacity: 0.55; margin-left: 0.5rem; font-weight: 400; letter-spacing: 0.02em; }
+    @media (max-width: 600px) { #rhombis-subtitle { display: none; } }
+    #rhombis-stage { font-size: 0.85rem; opacity: 0.75; margin-left: 0.75rem; }
+    #rhombis-topbar > span:last-child { white-space: nowrap; flex-shrink: 0; }
+    /* Phones: two rows (direct decision 2026-09-30) -- the logo and title
+       with EN, Stages and the back link on one line, the stage number and
+       name full width below. The title span's children join the grid
+       directly (display: contents). */
+    @media (max-width: 600px) {
+      #rhombis-topbar {
+        display: grid; grid-template-columns: auto 1fr auto; align-items: center; row-gap: 0.15rem;
+        padding-top: calc(0.4rem + env(safe-area-inset-top)); padding-bottom: 0.3rem;
+      }
+      #rhombis-topbar > span:first-child { display: contents; }
+      #rhombis-title-mark { grid-column: 1; grid-row: 1; }
+      #rhombis-title { grid-column: 2; grid-row: 1; }
+      #rhombis-topbar > span:last-child { grid-column: 3; grid-row: 1; }
+      #rhombis-stage { grid-column: 1 / -1; grid-row: 2; margin-left: 0; }
+      #rhombis-topbar a, #rhombis-lang-toggle, #rhombis-stage-picker-toggle { display: inline-block; min-height: 36px; line-height: 36px; padding-top: 0; padding-bottom: 0; }
+    }
+    /* Visual frame ONLY -- pointer-events stays none, real interaction
+       is the canvas's own WebGL raycasting underneath (main.js's
+       trayViewportRect(), kept in sync via JS so this never drifts from
+       the actual scissored render region it's meant to frame). */
+    #rhombis-tray-panel {
+      position: fixed; z-index: 5; pointer-events: none;
+      background: rgba(8, 10, 16, 0.35);
+      border-radius: 14px;
+      /* Direct instruction (2026-09-04, "can we make the boundary
+         around the picker invisible please") -- the visible border line
+         is gone; the background tint alone still reads as a distinct
+         region without a hard outline. The soft drop-shadow that used
+         to sit alongside it is gone too (2026-09-04, "can the picker
+         tray be on a clear background so shadow isnt cast on target?")
+         -- it extended past the panel's own edges and visibly darkened
+         the target shape showing through just outside the tray corner. */
+    }
+    /* Direct instruction (2026-09-04, "success message in picker tray
+       box" -- a real live report of a player repeatedly tapping the
+       tray because nothing confirmed a placement actually registered)
+       -- feedback shown right where attention already is (the tray
+       itself), not just the bottom HUD text that's easy to miss mid-
+       play. Sits INSIDE the panel div so it inherits its position
+       automatically; own opacity transition rather than toggling
+       `hidden`, so `flashTrayPlaced()` can retrigger the animation on a
+       rapid second placement without it looking stuck. */
+    #rhombis-tray-flash {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      font-family: system-ui, sans-serif; font-weight: 700; font-size: 1.1rem; color: #9be3ff;
+      text-shadow: 0 0 12px rgba(155, 227, 255, 0.8);
+      opacity: 0; transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+    #rhombis-tray-flash.show { opacity: 1; transition: opacity 0.1s ease; }
+    #rhombis-hud {
+      position: fixed; left: 50%; transform: translateX(-50%);
+      bottom: calc(1.5rem + env(safe-area-inset-bottom));
+      z-index: 10; font-family: system-ui, sans-serif; color: #cfe9ff;
+      background: rgba(5, 5, 10, 0.6); padding: 0.5rem 1rem; border-radius: 999px;
+      pointer-events: none; font-size: 0.95rem;
+      max-width: calc(100vw - 2rem); text-align: center;
+    }
+    #rhombis-solved {
+      position: fixed; top: 40%; left: 50%; transform: translate(-50%, -50%);
+      z-index: 11; font-family: system-ui, sans-serif; font-size: 2.5rem; font-weight: 700;
+      color: #9be3ff; text-shadow: 0 0 20px rgba(155, 227, 255, 0.7);
+      pointer-events: none; text-align: center; max-width: 90vw;
+    }
+    @media (max-width: 480px) {
+      #rhombis-solved { font-size: 1.8rem; }
+    }
+    #rhombis-undo {
+      position: fixed; z-index: 10;
+      left: calc(1rem + env(safe-area-inset-left));
+      bottom: calc(1.5rem + env(safe-area-inset-bottom));
+      font-family: system-ui, sans-serif; font-size: 0.9rem; color: #cfe9ff;
+      background: rgba(5, 5, 10, 0.6); border: 1px solid #3a4a5a;
+      border-radius: 999px; padding: 0.5rem 1rem;
+      min-width: 2.75rem; min-height: 2.75rem; /* comfortable touch target */
+    }
+    #rhombis-undo:disabled { opacity: 0.35; }
+    #rhombis-undo:not(:disabled):active { background: rgba(155, 227, 255, 0.15); }
+
+    /* Stage picker -- direct instruction (2026-09-04), a returning
+       player shouldn't have to replay every earlier stage just to jump
+       back to one they want; "shortcut from welcome didnt give me
+       options just threw me into last few puzzles" confirmed a fixed
+       jump-in link alone doesn't cover this. */
+    #rhombis-stage-picker-toggle {
+      pointer-events: auto; background: none; border: none; color: #9be3ff;
+      font: 600 0.85rem system-ui, sans-serif; letter-spacing: 0.04em;
+      padding: 0.4rem 0.6rem; cursor: pointer;
+    }
+    #rhombis-stage-picker-toggle:hover { text-decoration: underline; }
+    /* Real bug caught by an actual click test (headless browser, not
+       just a DOM-presence check): #rhombis-topbar's own base rule is
+       `pointer-events: none` (line ~38), and every OTHER interactive
+       child (the stage-picker toggle above, the back-link) has its own
+       explicit `pointer-events: auto` override -- this button was added
+       without one, so the canvas beneath it silently absorbed every
+       click. A user could see "EN" sitting there and never be able to
+       tap it. */
+    #rhombis-lang-toggle {
+      pointer-events: auto; background: none; border: none; color: #9be3ff;
+      font: 600 0.85rem system-ui, sans-serif; letter-spacing: 0.04em;
+      padding: 0.4rem 0.6rem; cursor: pointer;
+    }
+    #rhombis-lang-toggle:hover { text-decoration: underline; }
+    #rhombis-stage-picker {
+      position: fixed; inset: 0; z-index: 20;
+      background: rgba(2, 2, 6, 0.85); backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      font-family: system-ui, sans-serif;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
+    #rhombis-stage-picker[hidden] { display: none; }
+    #rhombis-stage-picker-panel {
+      background: #0c0f16; border: 1px solid #2a3a4a; border-radius: 16px;
+      padding: 1.25rem; width: min(420px, 92vw); max-height: 82vh;
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    #rhombis-stage-picker-header {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    #rhombis-stage-picker-header h2 {
+      margin: 0; font-size: 1.1rem; color: #e8f4ff; font-weight: 700;
+    }
+    #rhombis-stage-picker-close {
+      background: none; border: none; color: #9be3ff; font-size: 1.2rem;
+      cursor: pointer; padding: 0.25rem 0.5rem; line-height: 1;
+    }
+    #rhombis-stage-list {
+      overflow-y: auto; display: flex; flex-direction: column; gap: 0.35rem;
+    }
+    .rhombis-stage-option {
+      display: flex; align-items: baseline; gap: 0.6rem;
+      background: rgba(155, 227, 255, 0.06); border: 1px solid #24313e;
+      border-radius: 10px; padding: 0.6rem 0.8rem; color: #cfe9ff;
+      font-size: 0.95rem; text-align: left; cursor: pointer;
+    }
+    .rhombis-stage-option:active { background: rgba(155, 227, 255, 0.15); }
+    .rhombis-stage-option.current {
+      border-color: #6ad0ff; background: rgba(106, 208, 255, 0.14);
+    }
+    .rhombis-stage-option .stage-num {
+      color: #6ad0ff; font-weight: 700; min-width: 1.6rem;
+    }
+    .rhombis-stage-option .stage-name-wrap {
+      display: flex; flex-direction: column; gap: 0.1rem;
+    }
+    /* Section headings (direct decision 2026-09-30: grouped, solved
+       stages ticked, full screen on phones). */
+    .rhombis-stage-section {
+      margin: 0.6rem 0 0.1rem; color: #6ad0ff; font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .rhombis-stage-section:first-child { margin-top: 0; }
+    .rhombis-stage-option .stage-name-wrap { flex: 1; }
+    .rhombis-stage-option .stage-tick { color: #6ad0ff; font-weight: 700; }
+    #rhombis-stage-picker-close { min-width: 44px; min-height: 44px; }
+    @media (max-width: 600px) {
+      #rhombis-stage-picker { align-items: stretch; }
+      #rhombis-stage-picker-panel { width: 100%; max-height: none; border-radius: 0; border: 0; padding: 1rem; }
+    }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.185.1/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.185.1/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <div id="rhombis-tray-panel"><div id="rhombis-tray-flash"></div></div>
+  <div id="rhombis-topbar">
+    <span><img id="rhombis-title-mark" src="./assets/rhombis-favicon-64.png" alt="" /><span id="rhombis-title">RHOMBIS</span><span id="rhombis-subtitle" data-i18n="topbar.subtitle">3D puzzle from Rhombiverse</span><span id="rhombis-stage"></span></span>
+    <span>
+      <button id="rhombis-lang-toggle" type="button" title="Language" data-i18n-title="topbar.language">EN</button>
+      <button id="rhombis-stage-picker-toggle" type="button" data-i18n="topbar.stages">Stages</button>
+      <a href="./index.html" data-i18n="topbar.backToRhombiverse">&larr; Rhombiverse</a>
+    </span>
+  </div>
+  <div id="rhombis-hud"></div>
+  <button id="rhombis-undo" type="button" disabled data-i18n="undo.button">Undo</button>
+  <div id="rhombis-solved" hidden data-i18n="solved.hud">Solved!</div>
+  <div id="rhombis-stage-picker" hidden>
+    <div id="rhombis-stage-picker-panel">
+      <div id="rhombis-stage-picker-header">
+        <h2 data-i18n="picker.title">Choose a Stage</h2>
+        <button id="rhombis-stage-picker-close" type="button" title="Close" data-i18n-title="picker.close">&times;</button>
+      </div>
+      <div id="rhombis-stage-list"></div>
+    </div>
+  </div>
+  <script type="module" src="./src/rhombis/main.js"></script>
+</body>
+</html>

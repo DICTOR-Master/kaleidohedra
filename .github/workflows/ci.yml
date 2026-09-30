@@ -1,0 +1,147 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  unit-tests:
+    # Pure math/logic tests (lattice.js, worldstate.js, regions.js) --
+    # zero npm dependencies, src/package.json's "type": "module" is the
+    # only thing making plain `node --test` treat these as ESM. Scoped
+    # to src/ specifically, not the repo root -- independent of the root
+    # package.json's own devDependencies (esbuild, for scripts/build.mjs).
+    runs-on: ubuntu-latest
+    timeout-minutes: 5 # normally ~1min -- a real hang should fail fast, not sit for GitHub's 360min default
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+      - run: node --test tests/unit/
+      # 5D/6D cut-and-project engine against the known tiling facts.
+      - run: node scripts/verify-quasicrystal.mjs
+      # Shells scene: RD splits, the scale ladder and shell sizes.
+      - run: node scripts/verify-shells.mjs
+      # Kaleidoscope: shapes, mirrors, clipping, Penrose Safe rule.
+      - run: node scripts/verify-kaleidoscope.mjs
+      # 1D Signal: Morse timing, one signal for every view, the embedding.
+      - run: node scripts/verify-trajectory.mjs
+      # 1D Construct: cell/instance/direction model, grids, junction rules.
+      - run: node scripts/verify-construction.mjs
+      # Nets: flat without overlaps, folding closed into the solid.
+      - run: node scripts/verify-nets.mjs
+      # Packed spheres: tangency, enclosed voids, bulk FCC counts.
+      - run: node scripts/verify-packing.mjs
+      # 2D lattices: edge lengths, angles, tile placement rules.
+      - run: node scripts/verify-lattice-2d.mjs
+      # Pyrochlore (3D Kagome): the quarter-cubic geometry.
+      - run: node scripts/verify-pyrochlore.mjs
+      # Rhombohedra: copy/mirror attach on the rhombohedral lattice.
+      - run: node scripts/verify-rhombohedra.mjs
+      # DICTO FCC: DICTO's blue-strut skewed RD tiles as a sheared FCC.
+      - run: node scripts/verify-dicto-fcc.mjs
+      # 4D worlds: Z4, D4 and hyper-pyrochlore cells, slices and steps.
+      - run: node scripts/verify-4d.mjs
+      # Translations: every key in all 7 languages, main app and RHOMBIS.
+      - run: node scripts/verify-i18n.mjs
+      - run: node scripts/verify-rhombis-i18n.mjs
+      # The repo's About text (outside the repo, so it drifts): warns only.
+      - run: node scripts/verify-about.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+  catalogue:
+    # Every 5D/6D catalogue entry really occurs and lands, at 9 phason and
+    # position probes (about 6 min on the Pi; its own job so the unit-test
+    # job keeps its fast-fail limit).
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+      - run: node scripts/verify-catalogue.mjs
+
+  browser-smoke-test:
+    # Real-browser check (Playwright) -- the actual app, served exactly
+    # as README.md's own local-dev instructions describe (plain
+    # `python3 -m http.server` directly over raw src/, no build step),
+    # driven the same way a real player would use it. build-check below
+    # runs this exact same test again against the minified dist/ output
+    # Vercel actually deploys -- this job is the dev-parity one.
+    runs-on: ubuntu-latest
+    # Normally ~1-5min end to end; this job has hung indefinitely on
+    # GitHub's shared runners more than once (unrelated to app changes --
+    # confirmed by two consecutive hangs on a commit smoke.mjs never
+    # touches the code path of) -- fail fast instead of sitting
+    # "in_progress" for hours against GitHub's 360min default.
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+      - name: Install Playwright
+        working-directory: tests/browser
+        run: |
+          npm install
+          npx playwright install --with-deps chromium
+      - name: Serve app
+        run: python3 -m http.server 8000 &
+      - name: Wait for server
+        run: |
+          for i in $(seq 1 20); do
+            curl -sf http://localhost:8000/index.html > /dev/null && exit 0
+            sleep 0.5
+          done
+          echo "server never came up" >&2
+          exit 1
+      - name: Run smoke test
+        working-directory: tests/browser
+        run: node smoke.mjs
+
+  build-check:
+    # Verifies the ACTUAL production artifact (scripts/build.mjs's
+    # minified dist/ -- what vercel.json's buildCommand produces and
+    # Vercel actually deploys), not just that esbuild's minifier didn't
+    # throw. Runs the exact same smoke test as browser-smoke-test above,
+    # against dist/ instead of raw src/, so a minification-introduced
+    # regression (unlikely, but esbuild does rename/reorder things) is
+    # caught here, before a real deploy, not after.
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+      - name: Install build deps and run the build
+        run: |
+          npm install
+          npm run build
+      # Stale-wording guard (scripts/verify-copy.mjs): fails if retired
+      # world-building/game terms reach any user-visible text again.
+      - name: Check user-visible text for stale terms
+        run: npm run verify:copy
+      - name: Install Playwright
+        working-directory: tests/browser
+        run: |
+          npm install
+          npx playwright install --with-deps chromium
+      - name: Serve dist/
+        run: cd dist && python3 -m http.server 8000 &
+      - name: Wait for server
+        run: |
+          for i in $(seq 1 20); do
+            curl -sf http://localhost:8000/index.html > /dev/null && exit 0
+            sleep 0.5
+          done
+          echo "server never came up" >&2
+          exit 1
+      - name: Run smoke test against the built dist/ output
+        working-directory: tests/browser
+        run: node smoke.mjs
