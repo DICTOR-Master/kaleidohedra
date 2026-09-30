@@ -28,6 +28,17 @@ shear (Rhombiverse `dicto-fcc.js`).
 | 4 | 0.60 |
 | 6 | 0.21 |
 
+## Two controls: lattice and cell
+
+1. **Lattice** (where the cells sit): the path slider above, plus the six
+   advanced sliders.
+2. **Cell** (what shape each cell is, in that same arrangement): 0 = the
+   lattice's own cell simply sheared; 1 = DICTO's equal-edged skewed RD. DICTO's
+   RD is not a shear of the regular RD (the RD's four edge directions sum to
+   zero; DICTO's don't), but both tile the same sheared lattice. Morphing one
+   into the other keeps all 12 neighbour translations identical at every step,
+   so every in-between cell tiles exactly. Pure shear is simply Cell = 0.
+
 ## Other sliders: one slider, many paths
 
 A lattice's shape (ignoring turning and resizing) has 5 independent
