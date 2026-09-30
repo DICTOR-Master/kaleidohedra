@@ -4,7 +4,7 @@
 // between every pair of corners); every point on the path is a real cell.
 import { rdRawVerts } from '../src/core/lattice.js';
 import { dictoCellVerts } from '../src/geometry-extensions/dicto-fcc.js';
-import { FCC_PARAMS, DICTO_PARAMS, PATH_RANGE, PATH_STOPS, paramsOnPath, paramsValid, shearMatrix, det3, cellDirections, cellCorners, cellQuality, pathTargets, RD_DIRECTIONS } from '../src/geometry-extensions/kaleido-lattice.js';
+import { FCC_PARAMS, DICTO_PARAMS, PATH_RANGE, PATH_STOPS, paramsOnPath, paramsValid, shearMatrix, det3, cellDirections, cellCorners, cellQuality, pathTargets, RD_DIRECTIONS, BAIN_PARAMS, disphenoidQuality, pathRange, pathStops } from '../src/geometry-extensions/kaleido-lattice.js';
 import { NEIGHBOR_OFFSETS } from '../src/core/lattice.js';
 import { dictoMatrix, DICTO_DIRECTIONS } from '../src/geometry-extensions/dicto-fcc.js';
 
@@ -40,6 +40,19 @@ check(`volume at stop 2 is 0.8502 of FCC's (${det3(S).toFixed(4)})`, Math.abs(de
 check(`every point on the path from ${PATH_RANGE[0]} to ${PATH_RANGE[1]} is a real cell`, Array.from({ length: 200 }, (_, i) => PATH_RANGE[0] + (i / 199) * (PATH_RANGE[1] - PATH_RANGE[0])).every((s) => paramsValid(paramsOnPath(s)) && det3(shearMatrix(paramsOnPath(s))) > 0));
 check('just past the end of the path the cells collapse', !paramsValid(paramsOnPath(PATH_RANGE[1] + 0.2)));
 check('the shear never spins the scene (symmetric matrix)', [paramsOnPath(2), paramsOnPath(-3), { a: 1.3, b: 0.8, c: 1.1, alpha: 80, beta: 50, gamma: 70 }].every((p) => { const M = shearMatrix(p); return M.every((r, i) => r.every((x, j) => Math.abs(x - M[j][i]) < 1e-9)); }));
+
+// Towards Bain: BCC stretched sqrt2 along z is FCC; its disphenoids go regular.
+{
+  const B = shearMatrix(paramsOnPath(2, 'bain'));
+  check('Bain stop 2 is exactly the stretch diag(1, 1, sqrt2)', pathStops('bain')[2].name === 'Bain' && B.every((r, i) => r.every((x, j) => Math.abs(x - (i === j ? (i === 2 ? Math.SQRT2 : 1) : 0)) < 1e-9)) && KEYS_OK());
+  function KEYS_OK() { return Object.keys(BAIN_PARAMS).every((k) => Math.abs(paramsOnPath(2, 'bain')[k] - BAIN_PARAMS[k]) < 1e-9); }
+  const d0 = disphenoidQuality(paramsOnPath(0, 'bain')), d2 = disphenoidQuality(paramsOnPath(2, 'bain'));
+  check(`plain BCC disphenoids: short/long edge ${d0.best.toFixed(4)} = sqrt3/2, none regular`, Math.abs(d0.best - Math.sqrt(3) / 2) < 1e-9 && d0.regular === 0);
+  check('at Bain, 2 of the 6 disphenoid orientations are regular tetrahedra and the other 4 are quarter-octahedra (edges 1 x5, sqrt2 x1)', d2.regular === 2 && d2.ratios.filter((r) => Math.abs(r - Math.SQRT1_2) < 1e-9).length === 4);
+  const T = pathTargets(1, 0.6, pathRange('bain'), 0.02, 'bain');
+  check(`Find on the Bain path reaches the regular tetrahedra at 2 (${T.length} targets)`, T.some((e) => e.kind === 'regular tetrahedra' && Math.abs(e.at - 2) < 1e-3));
+  check('the DICTO path has no regular-tetrahedra targets (disphenoids only get less regular there)', !pathTargets(1).some((e) => e.kind === 'regular tetrahedra'));
+}
 
 console.log(failures === 0 ? '\nAll checks passed (0 failures).' : `\n${failures} check(s) FAILED.`);
 process.exit(failures === 0 ? 0 : 1);

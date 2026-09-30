@@ -8,12 +8,13 @@
 // and raycasting follows the group's transform.
 //
 // One "path" slider moves all six along a straight line from FCC (0)
-// through a halfway stop (1) to DICTO FCC (2) and beyond, stopping before
-// the cells would collapse. The six sliders give full control. Export
+// through a halfway stop (1) to the "Towards" target (2: DICTO FCC, or
+// Bain, where BCC becomes FCC) and beyond, stopping before the cells
+// would collapse. The six sliders give full control. Export
 // saves the current state as a named "population member".
 import * as THREE from 'three';
 
-import { KEYS, FCC_PARAMS, PATH_STOPS, PATH_RANGE, paramsOnPath, paramsValid, shearMatrix, cellDirections, cellDirectionsPreShear, cellQuality, pathTargets } from '../geometry-extensions/kaleido-lattice.js';
+import { KEYS, FCC_PARAMS, TOWARDS, pathStops, pathRange, paramsOnPath, paramsValid, shearMatrix, cellDirections, cellDirectionsPreShear, cellQuality, disphenoidQuality, pathTargets } from '../geometry-extensions/kaleido-lattice.js';
 
 const STORAGE_KEY = 'kaleidoverse-shear';
 
@@ -37,6 +38,7 @@ export function installShear({ scene, camera, onChange = () => {}, onCell = () =
   try { state = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); } catch { state = null; }
   if (!state || !KEYS.every((k) => typeof state.params?.[k] === 'number')) state = { path: 0, params: { ...FCC_PARAMS }, cell: 1 };
   if (typeof state.cell !== 'number') state.cell = 1;
+  if (!TOWARDS[state.towards]) state.towards = 'dicto';
 
   const apply = () => {
     const S = shearMatrix(state.params); // rows
@@ -59,11 +61,14 @@ function buildPanel(state, apply) {
   panel.innerHTML = `
     <button type="button" id="kaleido-toggle" aria-expanded="false" title="Shear the lattice">⟋ Shear</button>
     <div id="kaleido-body" hidden>
-      <label class="kaleido-row">Path <span id="kaleido-path-val"></span>
-        <input type="range" id="kaleido-path" min="${PATH_RANGE[0]}" max="${PATH_RANGE[1]}" step="0.01" list="kaleido-stops">
+      <label class="kaleido-row">Towards
+        <select id="kaleido-towards">${Object.entries(TOWARDS).map(([id, t]) => `<option value="${id}">${t.name}</option>`).join('')}</select>
       </label>
-      <datalist id="kaleido-stops">${PATH_STOPS.map((s) => `<option value="${s.at}" label="${s.name}"></option>`).join('')}</datalist>
-      <div class="kaleido-stops">${PATH_STOPS.map((s) => `<button type="button" data-stop="${s.at}">${s.name}</button>`).join('')}</div>
+      <label class="kaleido-row">Path <span id="kaleido-path-val"></span>
+        <input type="range" id="kaleido-path" step="0.01" list="kaleido-stops">
+      </label>
+      <datalist id="kaleido-stops"></datalist>
+      <div class="kaleido-stops" id="kaleido-stop-buttons"></div>
       <label class="kaleido-row">Cell <span id="kaleido-cell-val"></span>
         <input type="range" id="kaleido-cell" min="0" max="1" step="0.01"></label>
       <div id="kaleido-meter" title="How regular the cell is: 1 = every angle special (36, 45, 60, 70.5, 72 or 90 degrees)"></div>
@@ -85,38 +90,56 @@ function buildPanel(state, apply) {
     #kaleido-body { margin-top: 6px; padding: 10px; background: rgba(5, 12, 20, .92); border: 1px solid #2c5a70; border-radius: 10px; display: grid; gap: 8px; }
     #kaleido-body[hidden] { display: none; }
     .kaleido-row { display: grid; grid-template-columns: auto 1fr; gap: 2px 8px; align-items: center; }
-    .kaleido-row input { grid-column: 1 / -1; width: 100%; min-height: 28px; }
+    .kaleido-row input, .kaleido-row select { grid-column: 1 / -1; width: 100%; min-height: 28px; }
+    #kaleido-towards { min-height: 36px; background: rgba(8, 20, 30, .85); color: #9de0ff; border: 1px solid #2c5a70; border-radius: 8px; }
     .kaleido-stops { display: flex; gap: 6px; flex-wrap: wrap; }
     #kaleido-note { font-size: 12px; color: #9de0ff; min-height: 1em; }`;
   panel.appendChild(style);
   const $ = (sel) => panel.querySelector(sel);
   const path = $('#kaleido-path');
+  const towards = $('#kaleido-towards');
+  // Stops and range belong to the chosen target.
+  const layoutPath = () => {
+    const [lo, hi] = pathRange(state.towards);
+    path.min = lo; path.max = hi;
+    const stops = pathStops(state.towards);
+    $('#kaleido-stops').innerHTML = stops.map((s) => `<option value="${s.at}" label="${s.name}"></option>`).join('');
+    $('#kaleido-stop-buttons').innerHTML = stops.map((s) => `<button type="button" data-stop="${s.at}">${s.name}</button>`).join('');
+    $('#kaleido-stop-buttons').querySelectorAll('[data-stop]').forEach((b) => b.addEventListener('click', () => setPath(Number(b.dataset.stop))));
+  };
   const refresh = () => {
+    towards.value = state.towards;
     path.value = state.path ?? 0;
     $('#kaleido-cell').value = state.cell;
     $('#kaleido-cell-val').textContent = state.cell >= 0.995 ? '1 (equal edges)' : state.cell <= 0.005 ? '0 (sheared)' : state.cell.toFixed(2);
     const q = cellQuality(cellDirections(state.params, state.cell));
     $('#kaleido-meter').innerHTML = `Regularity <b>${q.score.toFixed(2)}</b> <span style="opacity:.75">· angles ${q.angles.map((a) => a.toFixed(1)).sort((x, y) => x - y).join(', ')}°</span>`;
+    if (state.towards === 'bain') {
+      // The BCC disphenoids: shortest / longest edge, 1 = regular tetrahedron.
+      const d = disphenoidQuality(state.params);
+      $('#kaleido-meter').innerHTML += `<br>Disphenoids <b>${d.best.toFixed(3)}</b> <span style="opacity:.75">· ${d.regular} of 6 regular tetrahedra</span>`;
+    }
     $('#kaleido-path-val').textContent = state.path === null ? '(off path)' : Number(state.path).toFixed(2);
     for (const k of KEYS) {
       panel.querySelector(`[data-key="${k}"]`).value = state.params[k];
       panel.querySelector(`[data-val="${k}"]`).textContent = k.length > 1 ? `${state.params[k].toFixed(1)}°` : state.params[k].toFixed(3);
     }
   };
-  const setPath = (s) => { state.path = s; state.params = paramsOnPath(s); refresh(); apply(); };
+  const setPath = (s) => { state.path = s; state.params = paramsOnPath(s, state.towards); refresh(); apply(); };
   const cell = $('#kaleido-cell');
   cell.addEventListener('input', () => { state.cell = Number(cell.value); refresh(); apply(); });
   // Find previous / next: the path's quality peaks and hexagon events for the current Cell value.
   const targetsFor = new Map();
   const find = (dir) => {
     if (state.path === null) { $('#kaleido-note').textContent = 'Find works along the path: tap a stop first.'; return; }
-    const key = state.cell.toFixed(2);
-    if (!targetsFor.has(key)) targetsFor.set(key, pathTargets(state.cell));
+    const key = `${state.towards} ${state.cell.toFixed(2)}`;
+    if (!targetsFor.has(key)) targetsFor.set(key, pathTargets(state.cell, 0.6, pathRange(state.towards), 0.02, state.towards));
     const list = targetsFor.get(key);
     const next = dir > 0 ? list.find((e) => e.at > state.path + 1e-3) : [...list].reverse().find((e) => e.at < state.path - 1e-3);
     if (!next) { $('#kaleido-note').textContent = 'Nothing further that way.'; return; }
     setPath(Math.round(next.at * 10000) / 10000);
-    $('#kaleido-note').textContent = `${next.kind === 'hexagons' ? 'Hexagons: three edge directions in a plane' : 'Regular cell'} at ${next.at.toFixed(3)}.`;
+    const what = { hexagons: 'Hexagons: three edge directions in a plane', 'regular tetrahedra': 'Disphenoids become regular tetrahedra (BCC is now FCC)' }[next.kind] || 'Regular cell';
+    $('#kaleido-note').textContent = `${what} at ${next.at.toFixed(3)}.`;
   };
   $('#kaleido-prev').addEventListener('click', () => find(-1));
   $('#kaleido-next').addEventListener('click', () => find(1));
@@ -126,7 +149,7 @@ function buildPanel(state, apply) {
     $('#kaleido-toggle').setAttribute('aria-expanded', String(!body.hidden));
   });
   path.addEventListener('input', () => setPath(Number(path.value)));
-  panel.querySelectorAll('[data-stop]').forEach((b) => b.addEventListener('click', () => setPath(Number(b.dataset.stop))));
+  towards.addEventListener('change', () => { state.towards = towards.value; layoutPath(); setPath(0); });
   panel.querySelectorAll('[data-key]').forEach((input) => input.addEventListener('input', () => {
     const next = { ...state.params, [input.dataset.key]: Number(input.value) };
     if (!paramsValid(next)) { $('#kaleido-note').textContent = 'That would flatten the cells to nothing.'; refresh(); return; }
@@ -139,7 +162,7 @@ function buildPanel(state, apply) {
   $('#kaleido-export').addEventListener('click', () => {
     const name = prompt('Name this population member:', state.path === null ? 'member' : `path ${Number(state.path).toFixed(2)}`);
     if (!name) return;
-    const member = { name, credit: 'Kaleidoverse by DICTO', created: new Date().toISOString(), path: state.path, params: state.params, cell: state.cell, matrix: shearMatrix(state.params), cellDirections: cellDirections(state.params, state.cell), regularity: cellQuality(cellDirections(state.params, state.cell)).score };
+    const member = { name, credit: 'Kaleidoverse by DICTO', created: new Date().toISOString(), towards: state.towards, path: state.path, params: state.params, cell: state.cell, matrix: shearMatrix(state.params), cellDirections: cellDirections(state.params, state.cell), regularity: cellQuality(cellDirections(state.params, state.cell)).score };
     const blob = new Blob([JSON.stringify(member, null, 2)], { type: 'application/json' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
@@ -148,6 +171,7 @@ function buildPanel(state, apply) {
     URL.revokeObjectURL(a.href);
     $('#kaleido-note').textContent = `Exported "${name}".`;
   });
+  layoutPath();
   refresh();
   return panel;
 }

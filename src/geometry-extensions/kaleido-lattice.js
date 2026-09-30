@@ -75,26 +75,67 @@ export const DICTO_PARAMS = (() => {
   return paramsOf(FCC_BASIS.map(apply));
 })();
 
-// The path slider's stops (rejig freely: one table).
-export const PATH_STOPS = [
-  { at: 0, name: 'FCC' },
-  { at: 1, name: 'halfway' },
-  { at: 2, name: 'DICTO FCC' },
-];
+// "Towards": each target is a straight path from plain FCC parameters (0)
+// through a halfway stop (1) to the target (2) and on. DICTO FCC is
+// DICTO's lattice; Bain is the classic BCC -> FCC stretch: BCC stretched
+// by sqrt2 along z is FCC, so the BCC disphenoids whose long edges lie
+// across z become regular tetrahedra (the other four become quarters of
+// regular octahedra).
+export const BAIN_PARAMS = paramsOf(FCC_BASIS.map(([x, y, z]) => [x, y, z * Math.SQRT2]));
+export const TOWARDS = {
+  dicto: { name: 'DICTO FCC', params: DICTO_PARAMS, stops: ['FCC', 'halfway', 'DICTO FCC'] },
+  bain: { name: 'Bain (BCC → FCC)', params: BAIN_PARAMS, stops: ['start', 'halfway', 'Bain'] },
+};
 
-/** Parameters on the path: a straight line from FCC (0) to DICTO FCC (2) and on. */
-export function paramsOnPath(s) {
-  const t = s / 2;
-  return Object.fromEntries(KEYS.map((k) => [k, FCC_PARAMS[k] + t * (DICTO_PARAMS[k] - FCC_PARAMS[k])]));
+/** The path's stops for a target (rejig freely: one table). */
+export const pathStops = (towards = 'dicto') => TOWARDS[towards].stops.map((name, at) => ({ at, name }));
+export const PATH_STOPS = pathStops('dicto');
+
+/** Parameters on the path: a straight line from FCC (0) to the target (2) and on. */
+export function paramsOnPath(s, towards = 'dicto') {
+  const t = s / 2, target = TOWARDS[towards].params;
+  return Object.fromEntries(KEYS.map((k) => [k, FCC_PARAMS[k] + t * (target[k] - FCC_PARAMS[k])]));
 }
 
-/** The path's usable range: as far each way as the cells stay real. */
-export const PATH_RANGE = (() => {
+/** A path's usable range: as far each way as the cells stay real. */
+export function pathRange(towards = 'dicto') {
   let hi = 0, lo = 0;
-  while (hi < 20 && paramsValid(paramsOnPath(hi + 0.01))) hi += 0.01;
-  while (lo > -20 && paramsValid(paramsOnPath(lo - 0.01))) lo -= 0.01;
+  while (hi < 20 && paramsValid(paramsOnPath(hi + 0.01, towards))) hi += 0.01;
+  while (lo > -20 && paramsValid(paramsOnPath(lo - 0.01, towards))) lo -= 0.01;
   return [Math.ceil(lo * 10) / 10, Math.floor(hi * 10) / 10];
+}
+export const PATH_RANGE = pathRange('dicto');
+
+// ---- BCC disphenoids ---------------------------------------------------
+// The six orientations of the BCC Delaunay disphenoid (interstitial-
+// lattice.js's cells, at half scale): two opposite edges along cube axes
+// a and b, separated along the third axis.
+export const BCC_DISPHENOIDS = (() => {
+  const out = [];
+  for (let a = 0; a < 3; a++) for (let b = 0; b < 3; b++) if (a !== b) {
+    const c = 3 - a - b;
+    const e = (i, x) => { const v = [0, 0, 0]; v[i] = x; return v; };
+    const q = (sb) => [0, 1, 2].map((i) => e(a, 0.5)[i] + e(b, sb)[i] + e(c, 0.5)[i]);
+    out.push([[0, 0, 0], e(a, 1), q(0.5), q(-0.5)]);
+  }
+  return out;
 })();
+
+/**
+ * How regular the sheared disphenoids are: for each orientation, shortest
+ * edge / longest edge (1 = regular tetrahedron; plain BCC is 0.866).
+ * Returns the best ratio and how many of the six are regular.
+ */
+export function disphenoidQuality(p) {
+  const S = shearMatrix(p);
+  const ratios = BCC_DISPHENOIDS.map((T) => {
+    const w = T.map((v) => S.map((r) => dot(r, v)));
+    const L = [];
+    for (let i = 0; i < 4; i++) for (let j = i + 1; j < 4; j++) L.push(len(w[i].map((x, k) => x - w[j][k])));
+    return Math.min(...L) / Math.max(...L);
+  });
+  return { best: Math.max(...ratios), regular: ratios.filter((r) => r > 1 - 1e-6).length, ratios };
+}
 
 export { det as det3, mul as mul3 };
 
@@ -168,10 +209,10 @@ export function cellQuality(dirs) {
  * crosses a special value, or three directions become coplanar (hexagons),
  * each refined by bisection. Sorted by position.
  */
-export function pathEvents(t, range = PATH_RANGE, step = 0.01) {
+export function pathEvents(t, range = PATH_RANGE, step = 0.01, towards = 'dicto') {
   const events = [];
-  const anglesAt = (s) => cellQuality(cellDirections(paramsOnPath(s), t)).angles;
-  const flatAt = (s) => { const d = cellDirections(paramsOnPath(s), t); return [[0, 1, 2], [0, 1, 3], [0, 2, 3], [1, 2, 3]].map(([i, j, k]) => det([d[i], d[j], d[k]])); };
+  const anglesAt = (s) => cellQuality(cellDirections(paramsOnPath(s, towards), t)).angles;
+  const flatAt = (s) => { const d = cellDirections(paramsOnPath(s, towards), t); return [[0, 1, 2], [0, 1, 3], [0, 2, 3], [1, 2, 3]].map(([i, j, k]) => det([d[i], d[j], d[k]])); };
   const bisect = (f, a, b) => { let fa = f(a); for (let i = 0; i < 50; i++) { const m = (a + b) / 2, fm = f(m); if (Math.sign(fm) === Math.sign(fa)) { a = m; fa = fm; } else b = m; } return (a + b) / 2; };
   for (let s = range[0]; s < range[1] - 1e-9; s += step) {
     const s2 = Math.min(range[1], s + step);
@@ -194,8 +235,8 @@ export function pathEvents(t, range = PATH_RANGE, step = 0.01) {
  * minScore, located by golden-section search) and the hexagon events
  * (three directions in a plane). Sorted by position.
  */
-export function pathTargets(t, minScore = 0.6, range = PATH_RANGE, step = 0.02) {
-  const q = (s) => cellQuality(cellDirections(paramsOnPath(s), t)).score;
+export function pathTargets(t, minScore = 0.6, range = PATH_RANGE, step = 0.02, towards = 'dicto') {
+  const q = (s) => cellQuality(cellDirections(paramsOnPath(s, towards), t)).score;
   const out = [];
   const xs = [];
   for (let s = range[0]; s <= range[1] + 1e-9; s += step) xs.push(Math.min(s, range[1]));
@@ -213,6 +254,19 @@ export function pathTargets(t, minScore = 0.6, range = PATH_RANGE, step = 0.02) 
   }
   // Drop shoulders: a peak within 0.15 of a better one is part of that one.
   for (let i = out.length - 1; i >= 0; i--) if (out.some((o) => o !== out[i] && Math.abs(o.at - out[i].at) < 0.15 && o.score > out[i].score)) out.splice(i, 1);
-  for (const e of pathEvents(t, range)) if (e.kind.startsWith('hexagons') && !out.some((o) => Math.abs(o.at - e.at) < 1e-4)) out.push({ at: e.at, kind: 'hexagons', score: q(e.at) });
+  for (const e of pathEvents(t, range, 0.01, towards)) if (e.kind.startsWith('hexagons') && !out.some((o) => Math.abs(o.at - e.at) < 1e-4)) out.push({ at: e.at, kind: 'hexagons', score: q(e.at) });
+  // Where a disphenoid becomes a regular tetrahedron (e.g. the Bain stop).
+  const dq = (s) => disphenoidQuality(paramsOnPath(s, towards)).best;
+  for (let i = 1; i < xs.length - 1; i++) {
+    const [y0, y1, y2] = [dq(xs[i - 1]), dq(xs[i]), dq(xs[i + 1])];
+    if (!(y1 >= y0 && y1 >= y2)) continue;
+    let a = xs[i - 1], b = xs[i + 1];
+    const g = (Math.sqrt(5) - 1) / 2;
+    for (let k = 0; k < 60; k++) { const c = b - g * (b - a), d = a + g * (b - a); if (dq(c) > dq(d)) b = d; else a = c; }
+    const at = (a + b) / 2;
+    if (!(dq(at) > 1 - 1e-6)) continue;
+    const same = out.find((o) => Math.abs(o.at - at) < 1e-4);
+    if (same) same.kind = 'regular tetrahedra'; else out.push({ at, kind: 'regular tetrahedra', score: q(at) });
+  }
   return out.sort((x, y) => x.at - y.at);
 }
