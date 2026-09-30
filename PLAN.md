@@ -28,6 +28,16 @@ shear (Rhombiverse `dicto-fcc.js`).
 | 4 | 0.60 |
 | 6 | 0.21 |
 
+## Other sliders: one slider, many paths
+
+A lattice's shape (ignoring turning and resizing) has 5 independent
+directions of change. Kaleidoverse keeps **one slider** and adds a small
+**"towards…" picker** that chooses its destination: DICTO FCC first, then any
+target from `TARGETS.md` (such as the 14 other RD-type cells, all sheared
+FCCs). Each target gives its own straight path from the start lattice, with
+its own stops and wall. Later, a hidden **advanced panel** gives full freedom
+(five sliders, or the six lattice parameters).
+
 ## Population members
 
 At any slider value, **Export** saves a named member: the slider value, the
@@ -40,9 +50,9 @@ export carries a check that it tiles.
 1. Engine: fork Rhombiverse's 3D engine (FCC world, lattice view, saving) into
    this private repo; apply A(s) as a scene transform, so building stays exactly
    as in Rhombiverse.
-2. The slider with its stops, and the wall.
+2. The slider with its stops, and the wall; the "towards…" picker (DICTO FCC first, then the TARGETS.md cells).
 3. Export of members.
 4. More starting lattices (BCC, simple cubic, hexagonal, ED) on the same
    slider idea; then 2D; 4D later.
-5. Later: a "natural cell" mode showing where the lattice's own cell changes
+5. Later: the hidden advanced panel (full freedom), a "natural cell" mode showing where the lattice's own cell changes
    type, and the targets in `TARGETS.md` as stops to find.
