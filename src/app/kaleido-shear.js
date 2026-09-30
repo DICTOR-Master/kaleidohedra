@@ -13,7 +13,7 @@
 // saves the current state as a named "population member".
 import * as THREE from 'three';
 
-import { KEYS, FCC_PARAMS, PATH_STOPS, PATH_RANGE, paramsOnPath, paramsValid, shearMatrix } from '../geometry-extensions/kaleido-lattice.js';
+import { KEYS, FCC_PARAMS, PATH_STOPS, PATH_RANGE, paramsOnPath, paramsValid, shearMatrix, cellDirections, cellDirectionsPreShear, cellQuality, pathTargets } from '../geometry-extensions/kaleido-lattice.js';
 
 const STORAGE_KEY = 'kaleidoverse-shear';
 
@@ -21,7 +21,7 @@ const STORAGE_KEY = 'kaleidoverse-shear';
  * Installs the shear: routes everything added to the scene (except the
  * camera) into one group, and builds the slider panel.
  */
-export function installShear({ scene, camera, onChange = () => {} }) {
+export function installShear({ scene, camera, onChange = () => {}, onCell = () => {} }) {
   const group = new THREE.Group();
   group.name = 'kaleidoverse-shear';
   group.matrixAutoUpdate = false;
@@ -35,12 +35,14 @@ export function installShear({ scene, camera, onChange = () => {} }) {
 
   let state;
   try { state = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); } catch { state = null; }
-  if (!state || !KEYS.every((k) => typeof state.params?.[k] === 'number')) state = { path: 0, params: { ...FCC_PARAMS } };
+  if (!state || !KEYS.every((k) => typeof state.params?.[k] === 'number')) state = { path: 0, params: { ...FCC_PARAMS }, cell: 1 };
+  if (typeof state.cell !== 'number') state.cell = 1;
 
   const apply = () => {
     const S = shearMatrix(state.params); // rows
     group.matrix.set(S[0][0], S[0][1], S[0][2], 0, S[1][0], S[1][1], S[1][2], 0, S[2][0], S[2][1], S[2][2], 0, 0, 0, 0, 1);
     group.matrixWorldNeedsUpdate = true;
+    onCell(cellDirectionsPreShear(state.params, state.cell));
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch { /* private mode */ }
     onChange(state);
   };
@@ -62,6 +64,10 @@ function buildPanel(state, apply) {
       </label>
       <datalist id="kaleido-stops">${PATH_STOPS.map((s) => `<option value="${s.at}" label="${s.name}"></option>`).join('')}</datalist>
       <div class="kaleido-stops">${PATH_STOPS.map((s) => `<button type="button" data-stop="${s.at}">${s.name}</button>`).join('')}</div>
+      <label class="kaleido-row">Cell <span id="kaleido-cell-val"></span>
+        <input type="range" id="kaleido-cell" min="0" max="1" step="0.01"></label>
+      <div id="kaleido-meter" title="How regular the cell is: 1 = every angle special (36, 45, 60, 70.5, 72 or 90 degrees)"></div>
+      <div class="kaleido-stops"><button type="button" id="kaleido-prev">◀ Find</button><button type="button" id="kaleido-next">Find ▶</button></div>
       <details><summary>Six sliders</summary>
         ${KEYS.map((k) => {
           const isAngle = k.length > 1;
@@ -86,7 +92,11 @@ function buildPanel(state, apply) {
   const $ = (sel) => panel.querySelector(sel);
   const path = $('#kaleido-path');
   const refresh = () => {
-    path.value = state.path;
+    path.value = state.path ?? 0;
+    $('#kaleido-cell').value = state.cell;
+    $('#kaleido-cell-val').textContent = state.cell >= 0.995 ? '1 (equal edges)' : state.cell <= 0.005 ? '0 (sheared)' : state.cell.toFixed(2);
+    const q = cellQuality(cellDirections(state.params, state.cell));
+    $('#kaleido-meter').innerHTML = `Regularity <b>${q.score.toFixed(2)}</b> <span style="opacity:.75">· angles ${q.angles.map((a) => a.toFixed(1)).sort((x, y) => x - y).join(', ')}°</span>`;
     $('#kaleido-path-val').textContent = state.path === null ? '(off path)' : Number(state.path).toFixed(2);
     for (const k of KEYS) {
       panel.querySelector(`[data-key="${k}"]`).value = state.params[k];
@@ -94,6 +104,22 @@ function buildPanel(state, apply) {
     }
   };
   const setPath = (s) => { state.path = s; state.params = paramsOnPath(s); refresh(); apply(); };
+  const cell = $('#kaleido-cell');
+  cell.addEventListener('input', () => { state.cell = Number(cell.value); refresh(); apply(); });
+  // Find previous / next: the path's quality peaks and hexagon events for the current Cell value.
+  const targetsFor = new Map();
+  const find = (dir) => {
+    if (state.path === null) { $('#kaleido-note').textContent = 'Find works along the path: tap a stop first.'; return; }
+    const key = state.cell.toFixed(2);
+    if (!targetsFor.has(key)) targetsFor.set(key, pathTargets(state.cell));
+    const list = targetsFor.get(key);
+    const next = dir > 0 ? list.find((e) => e.at > state.path + 1e-3) : [...list].reverse().find((e) => e.at < state.path - 1e-3);
+    if (!next) { $('#kaleido-note').textContent = 'Nothing further that way.'; return; }
+    setPath(Math.round(next.at * 10000) / 10000);
+    $('#kaleido-note').textContent = `${next.kind === 'hexagons' ? 'Hexagons: three edge directions in a plane' : 'Regular cell'} at ${next.at.toFixed(3)}.`;
+  };
+  $('#kaleido-prev').addEventListener('click', () => find(-1));
+  $('#kaleido-next').addEventListener('click', () => find(1));
   $('#kaleido-toggle').addEventListener('click', () => {
     const body = $('#kaleido-body');
     body.hidden = !body.hidden;
@@ -113,7 +139,7 @@ function buildPanel(state, apply) {
   $('#kaleido-export').addEventListener('click', () => {
     const name = prompt('Name this population member:', state.path === null ? 'member' : `path ${Number(state.path).toFixed(2)}`);
     if (!name) return;
-    const member = { name, credit: 'Kaleidoverse by DICTO', created: new Date().toISOString(), path: state.path, params: state.params, matrix: shearMatrix(state.params) };
+    const member = { name, credit: 'Kaleidoverse by DICTO', created: new Date().toISOString(), path: state.path, params: state.params, cell: state.cell, matrix: shearMatrix(state.params), cellDirections: cellDirections(state.params, state.cell), regularity: cellQuality(cellDirections(state.params, state.cell)).score };
     const blob = new Blob([JSON.stringify(member, null, 2)], { type: 'application/json' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);

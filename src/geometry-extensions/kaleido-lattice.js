@@ -97,3 +97,122 @@ export const PATH_RANGE = (() => {
 })();
 
 export { det as det3, mul as mul3 };
+
+// ---- The cell (the Cell slider) ------------------------------------------
+// The rhombic-dodecahedron-type cells that tile a sheared FCC lattice are
+// exactly: the sheared RD's four edge directions, each shifted by one common
+// vector w (any w keeps all 12 neighbour translations). Exactly one w makes
+// all four edges equal: the circumcentre of the four negated directions.
+// That equal-edge cell is the regular RD for plain FCC, and DICTO's skewed
+// RD at the DICTO lattice (verify-kaleido.mjs checks both).
+
+/** The regular RD's four edge directions (rdRawVerts(1)): the cube's body diagonals / 2, summing to zero. */
+export const RD_DIRECTIONS = [[1, 1, 1], [1, -1, -1], [-1, 1, -1], [-1, -1, 1]].map((v) => v.map((x) => x / 2));
+
+const applyRows = (S, v) => S.map((r) => r[0] * v[0] + r[1] * v[1] + r[2] * v[2]);
+
+/** The point equidistant from four points (circumcentre of the tetrahedron). */
+function circumcentre(P) {
+  const A = [1, 2, 3].map((i) => P[i].map((x, q) => 2 * (x - P[0][q])));
+  const b = [1, 2, 3].map((i) => dot(P[i], P[i]) - dot(P[0], P[0]));
+  const D = det(A);
+  return [0, 1, 2].map((k) => det(A.map((r, i) => r.map((x, j) => (j === k ? b[i] : x)))) / D);
+}
+
+/**
+ * The cell's four edge directions in world space, for lattice parameters p
+ * and Cell slider t (0 = the RD sheared, 1 = the lattice's equal-edge cell).
+ */
+export function cellDirections(p, t) {
+  const S = shearMatrix(p);
+  const sheared = RD_DIRECTIONS.map((h) => applyRows(S, h));
+  const w = circumcentre(sheared.map((g) => g.map((x) => -x)));
+  return sheared.map((g) => g.map((x, q) => x + t * w[q]));
+}
+
+/** The same directions in the lattice's own (pre-shear) frame, for geometry drawn inside the sheared group. */
+export function cellDirectionsPreShear(p, t) {
+  const Sinv = inverse(shearMatrix(p));
+  return cellDirections(p, t).map((g) => applyRows(Sinv, g));
+}
+
+/** The cell's 14 corners from its four edge directions, centred on the origin. */
+export function cellCorners(dirs) {
+  const pts = [];
+  for (let m = 0; m < 16; m++) pts.push(dirs.reduce((acc, g, k) => acc.map((x, q) => x + ((m >> k) & 1 ? 0.5 : -0.5) * g[q]), [0, 0, 0]));
+  // The 2 of 16 sums that lie inside are dropped by the renderer's convex hull; keep all 16 here.
+  return pts;
+}
+
+const SPECIAL_ANGLES = [36, 45, 60, 70.5288, 72, 90];
+
+/**
+ * How recognisable a cell is: its line angles, the nearest special angle to
+ * each, whether three directions lie in a plane (hexagon faces), and a score
+ * from 0 to 1 (1 = every angle exactly special).
+ */
+export function cellQuality(dirs) {
+  const angles = [];
+  for (let i = 0; i < 4; i++) for (let j = i + 1; j < 4; j++) {
+    const c = Math.abs(dot(dirs[i], dirs[j])) / (len(dirs[i]) * len(dirs[j]));
+    angles.push((Math.acos(Math.min(1, c)) * 180) / Math.PI);
+  }
+  const off = angles.map((a) => Math.min(...SPECIAL_ANGLES.map((s) => Math.abs(a - s))));
+  const triples = [[0, 1, 2], [0, 1, 3], [0, 2, 3], [1, 2, 3]].map(([i, j, k]) => Math.abs(det([dirs[i], dirs[j], dirs[k]])) / (len(dirs[i]) * len(dirs[j]) * len(dirs[k])));
+  const score = off.reduce((s, d) => s + Math.exp(-(d * d) / 2), 0) / off.length;
+  return { angles, off, flatness: Math.min(...triples), score };
+}
+
+/**
+ * Events along the path, for Cell slider t: slider values where a line angle
+ * crosses a special value, or three directions become coplanar (hexagons),
+ * each refined by bisection. Sorted by position.
+ */
+export function pathEvents(t, range = PATH_RANGE, step = 0.01) {
+  const events = [];
+  const anglesAt = (s) => cellQuality(cellDirections(paramsOnPath(s), t)).angles;
+  const flatAt = (s) => { const d = cellDirections(paramsOnPath(s), t); return [[0, 1, 2], [0, 1, 3], [0, 2, 3], [1, 2, 3]].map(([i, j, k]) => det([d[i], d[j], d[k]])); };
+  const bisect = (f, a, b) => { let fa = f(a); for (let i = 0; i < 50; i++) { const m = (a + b) / 2, fm = f(m); if (Math.sign(fm) === Math.sign(fa)) { a = m; fa = fm; } else b = m; } return (a + b) / 2; };
+  for (let s = range[0]; s < range[1] - 1e-9; s += step) {
+    const s2 = Math.min(range[1], s + step);
+    const [a0, a1] = [anglesAt(s), anglesAt(s2)];
+    for (let k = 0; k < 6; k++) for (const sp of SPECIAL_ANGLES) {
+      if ((a0[k] - sp) * (a1[k] - sp) < 0) {
+        const at = bisect((x) => anglesAt(x)[k] - sp, s, s2);
+        events.push({ at, kind: sp === 90 ? 'square face' : `${sp === 70.5288 ? '70.5' : sp}° rhombus`, angle: sp });
+      }
+    }
+    const [f0, f1] = [flatAt(s), flatAt(s2)];
+    for (let k = 0; k < 4; k++) if (f0[k] * f1[k] < 0) events.push({ at: bisect((x) => flatAt(x)[k], s, s2), kind: 'hexagons (three directions in a plane)' });
+  }
+  return events.sort((x, y) => x.at - y.at);
+}
+
+/**
+ * "Find next" targets along the path, for Cell slider t: the points where
+ * the cell's quality peaks (several angles special at once, score at least
+ * minScore, located by golden-section search) and the hexagon events
+ * (three directions in a plane). Sorted by position.
+ */
+export function pathTargets(t, minScore = 0.6, range = PATH_RANGE, step = 0.02) {
+  const q = (s) => cellQuality(cellDirections(paramsOnPath(s), t)).score;
+  const out = [];
+  const xs = [];
+  for (let s = range[0]; s <= range[1] + 1e-9; s += step) xs.push(Math.min(s, range[1]));
+  const ys = xs.map(q);
+  for (let i = 1; i < xs.length - 1; i++) {
+    if (!(ys[i] >= ys[i - 1] && ys[i] >= ys[i + 1])) continue;
+    let a = xs[i - 1], b = xs[i + 1];
+    const g = (Math.sqrt(5) - 1) / 2;
+    for (let k = 0; k < 60; k++) {
+      const c = b - g * (b - a), d = a + g * (b - a);
+      if (q(c) > q(d)) b = d; else a = c;
+    }
+    const at = (a + b) / 2, score = q(at);
+    if (score >= minScore && !out.some((o) => Math.abs(o.at - at) < 1e-4)) out.push({ at, kind: 'regular cell', score });
+  }
+  // Drop shoulders: a peak within 0.15 of a better one is part of that one.
+  for (let i = out.length - 1; i >= 0; i--) if (out.some((o) => o !== out[i] && Math.abs(o.at - out[i].at) < 0.15 && o.score > out[i].score)) out.splice(i, 1);
+  for (const e of pathEvents(t, range)) if (e.kind.startsWith('hexagons') && !out.some((o) => Math.abs(o.at - e.at) < 1e-4)) out.push({ at: e.at, kind: 'hexagons', score: q(e.at) });
+  return out.sort((x, y) => x.at - y.at);
+}

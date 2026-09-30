@@ -68,6 +68,8 @@ import {
   PYROCHLORE_STORAGE_KEY,
 } from './core/persistence.js';
 import { VALID_TRIPLES, unitTileVertices } from './geometry-extensions/growth.js';
+import { installShear } from './app/kaleido-shear.js';
+import { cellCorners } from './geometry-extensions/kaleido-lattice.js';
 
 const SCALE = 1;
 // Hex Prism: no special proportion is required for a plain hex-prism
@@ -1733,6 +1735,19 @@ async function init() {
   const mesh = new THREE.InstancedMesh(geometry, material, MAX_CELLS);
   mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
   scene.add(mesh);
+
+  // Kaleidoverse by DICTO: everything from here on lives in the sheared
+  // group (Lattice slider); the RD cell takes the Cell slider's shape.
+  installShear({
+    scene,
+    camera,
+    onCell: (dirs) => {
+      const g = new ConvexGeometry(cellCorners(dirs).map(([x, y, z]) => new THREE.Vector3(x, y, z)));
+      g.computeVertexNormals();
+      if (mesh.geometry !== geometry) mesh.geometry.dispose();
+      mesh.geometry = g;
+    },
+  });
 
   // BCC dual-lattice build: its own InstancedMesh (truncated-octahedron
   // geometry, not RD) and own material clone -- same MATERIAL_COLORS
