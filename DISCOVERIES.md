@@ -16,7 +16,7 @@ priority.
 
 | # | Finding | Credit | Verified | Status |
 |---|---|---|---|---|
-| 1 | DICTO skewed rhombic dodecahedron | DICTO (built in Zometool) | yes | **not found** — candidate |
+| 1 | DICTO skewed rhombic dodecahedron | DICTO (found by building it) | yes | **not found** — candidate |
 | 2 | Equal-edge rule for sheared FCC | Kaleidoverse | yes | general idea known; this form not found |
 | 3 | Bain disphenoids become regular tetrahedra | — | yes | **known** (Bain, 1924) |
 | 4 | Bain rhombic dodecahedron (squares + 60° rhombi) | — | yes | **known** |
@@ -24,9 +24,8 @@ priority.
 
 ## 1. DICTO skewed rhombic dodecahedron
 
-A rhombic-dodecahedron-type space-filler whose four edge directions are
-Zometool blue (icosahedral two-fold) lines meeting at **60° three times and
-72° three times**, all edges equal. Its faces are 60° rhombi and 72° rhombi.
+A rhombic-dodecahedron-type space-filler whose four equal edge directions
+meet at **60° three times and 72° three times**. Its faces are 60° rhombi and 72° rhombi.
 It splits into DICTO's two all-rhombus blocks (volume φ/2 each) and two
 flattened rhombohedra (½ each), so its volume is exactly
 **2·φ/2 + 2·½ = φ²** (the golden ratio's identity φ² = φ + 1 as a volume).
@@ -35,9 +34,9 @@ It tiles a sheared FCC lattice, DICTO FCC.
 - Verified: Polyhedraverse `verify-zome-parallelohedra`, Rhombiverse
   `verify-dicto-fcc`, and here (path stop 2 with Cell = 1 is exactly this cell).
 - Nearest known relative: the **Bilinski dodecahedron** (1960), also an
-  RD-type space-filler with icosahedral edges, but its twelve faces are
-  congruent golden rhombi (63.43°) and its edges lie on five-fold lines.
-  DICTO's has two kinds of face (60° and 72°) on two-fold lines.
+  RD-type space-filler with golden-ratio geometry, but its twelve faces are
+  congruent golden rhombi (63.43°). DICTO's has two kinds of face, 60° and
+  72° rhombi.
 - Full write-up: Polyhedraverse `docs/dicto-zometool-discoveries.md`.
 
 ## 2. The equal-edge rule
