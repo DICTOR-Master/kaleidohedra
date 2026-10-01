@@ -196,9 +196,9 @@ Volumes are at edge 1. **Line angles** are the angles between the edge direction
 | 13 | 4 rhombus 60, 4 square, 2 hexagon 144/108/108, 2 hexagon 144/144/108 | 36, 36, 36, 60, 60, 72, 72, 72, 90, 90 | 4.23607 | to find |
 | 14 | 4 hexagon 144/108/108, 4 square, 2 rhombus 36, 2 rhombus 60 | 36, 36, 36, 60, 72, 72, 72, 72, 90, 90 | 4.73607 | to find |
 | 15 | 4 regular hexagon, 4 rhombus 36, 4 rhombus 72 | 36, 36, 60, 60, 60, 60, 60, 60, 72, 72 | 4 | to find |
-| 16 | 4 rhombus 60, 4 rhombus 72, 2 hexagon 144/144/108, 2 regular hexagon | 36, 36, 60, 60, 60, 60, 60, 72, 72, 72 | 4.61803 | to find |
+| 16 | 4 rhombus 60, 4 rhombus 72, 2 hexagon 144/144/108, 2 regular hexagon | 36, 36, 60, 60, 60, 60, 60, 72, 72, 72 | 4.61803 | built: DICTO_SKEWED_ED_16 |
 | 17 | 4 rhombus 72, 2 hexagon 144/144/108, 2 regular hexagon, 2 rhombus 60, 2 square | 36, 36, 60, 60, 60, 60, 72, 72, 72, 90 | 4.92705 | to find |
-| 18 | 6 rhombus 60, 4 hexagon 144/108/108, 2 rhombus 72 | 36, 36, 60, 60, 60, 72, 72, 72, 72, 72 | 4.73607 | to find |
+| 18 | 6 rhombus 60, 4 hexagon 144/108/108, 2 rhombus 72 | 36, 36, 60, 60, 60, 72, 72, 72, 72, 72 | 4.73607 | built: DICTO_SKEWED_ED_18 |
 | 19 | 4 hexagon 144/108/108, 4 rhombus 60, 4 rhombus 72 | 36, 36, 60, 60, 72, 72, 72, 72, 72, 72 | 5.23607 | to find |
 | 20 | 4 hexagon 144/108/108, 4 rhombus 60, 2 rhombus 72, 2 square | 36, 36, 60, 60, 72, 72, 72, 72, 72, 90 | 5.04509 | to find |
 | 21 | 4 rhombus 72, 2 hexagon 144/108/108, 2 regular hexagon, 2 rhombus 60, 2 square | 36, 60, 60, 60, 60, 72, 72, 72, 72, 90 | 5.54509 | to find |

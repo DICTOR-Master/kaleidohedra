@@ -94,6 +94,18 @@ export const DICTO_DIRECTIONS = (() => {
   return best.r;
 })();
 
+/**
+ * DICTO's skewed ED: the two equal-edge elongated-dodecahedron-type cells
+ * (Kaleidoverse TARGETS.md #16 and #18) that extend DICTO's skewed RD by a
+ * fifth edge direction, the same way DISCOVERIES.md #5 extends the Bain RD.
+ * Found by matching DICTO_DIRECTIONS' Gram matrix against a 4-direction
+ * sub-set of every already-catalogued equal-edge ED cell; the two that
+ * contain it exactly are these. Volumes at this edge length: #16 is
+ * phi^2 + 2, #18 is phi^3 + 1/2 (phi = the golden ratio).
+ */
+export const DICTO_SKEWED_ED_16 = [...DICTO_DIRECTIONS, [0.9957819157121088, -0.06487825599394878, -0.06487825599394875]];
+export const DICTO_SKEWED_ED_18 = [...DICTO_DIRECTIONS, [-0.08571191093022315, -0.4054619947563372, -0.9100846326592276]];
+
 const RD_EDGE = Math.sqrt(3) / 2; // rdRawVerts(1): (1/2,1/2,1/2) to (1,0,0)
 
 /** The cell's 14 corners at scale s (edge = the RD's), centred on the origin. */

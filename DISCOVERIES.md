@@ -22,6 +22,7 @@ priority.
 | 4 | Bain rhombic dodecahedron (squares + 60° rhombi) | — | yes | **known** |
 | 5 | Regular-hexagon elongated dodecahedron | DICTO (from the "hexagons and rhombi" hunch) | yes | **not found** — candidate |
 | 6 | Exactly 9 "most regular" space-fillers | Kaleidoverse two-way search | yes | not yet searched |
+| 7 | DICTO skewed ED (two forms) | Kaleidoverse (extending #1) | yes | not yet searched |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -117,6 +118,33 @@ one leaning with 60° rhombi), the Bain RD (#4), the regular-hexagon ED
   exactly, so the list is complete.
 - Status: not yet searched. It says #4 and #5 are the *only* RD and ED
   forms of this kind.
+
+## 7. DICTO skewed ED
+
+Add a fifth edge direction to DICTO's skewed RD (#1), the same recipe #5 used
+on the Bain RD. Unlike the Bain RD, DICTO's RD has no 90° relationships at
+all, so the new direction can't join it at 60° or 90° the way #5's did — it
+meets the existing four at 36° twice and 60° or 72° twice, and the belt test
+(Venkov) allows exactly two space-filling choices, both already present in
+TARGETS.md's search:
+
+| | Faces | Volume |
+|---|---|---|
+| **ED #16** | 4 rhombi of 60°, 4 rhombi of 72°, 2 hexagons (36°/36°/72° corners), 2 regular hexagons | **φ² + 2** |
+| **ED #18** | 6 rhombi of 60°, 2 rhombi of 72°, 4 hexagons (36°/72°/72° corners) | **φ³ + ½** |
+
+Both keep DICTO's skewed RD's own four directions unchanged as a sub-set —
+found by matching `DICTO_DIRECTIONS`' Gram matrix against every ED cell's
+4-direction sub-sets in `geometry-targets.json`; exactly these two contain it.
+Neither has a square face, consistent with DICTO's RD having none.
+
+- Verified here (`DICTO_SKEWED_ED_16`, `DICTO_SKEWED_ED_18` in
+  `src/geometry-extensions/dicto-fcc.js`): equal edges, the face counts above,
+  the exact volumes, and that both keep DICTO's four directions unchanged.
+- `TARGETS.md` rows 16 and 18 (elongated dodecahedron section) updated from
+  "to find" to built.
+- Status: not yet searched (same caveat as #1 — a specialist parallelohedra
+  literature search would be needed to claim priority).
 
 ## Sources
 

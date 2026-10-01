@@ -6,12 +6,38 @@ import { rdRawVerts } from '../src/core/lattice.js';
 import { dictoCellVerts } from '../src/geometry-extensions/dicto-fcc.js';
 import { FCC_PARAMS, DICTO_PARAMS, PATH_RANGE, PATH_STOPS, paramsOnPath, paramsValid, shearMatrix, det3, cellDirections, cellCorners, cellQuality, pathTargets, RD_DIRECTIONS, BAIN_PARAMS, disphenoidQuality, pathRange, pathStops } from '../src/geometry-extensions/kaleido-lattice.js';
 import { NEIGHBOR_OFFSETS } from '../src/core/lattice.js';
-import { dictoMatrix, DICTO_DIRECTIONS } from '../src/geometry-extensions/dicto-fcc.js';
+import { dictoMatrix, DICTO_DIRECTIONS, DICTO_SKEWED_ED_16, DICTO_SKEWED_ED_18 } from '../src/geometry-extensions/dicto-fcc.js';
 
 let failures = 0;
 const check = (label, ok) => { console.log(`${ok ? 'OK  ' : 'FAIL'} ${label}`); if (!ok) failures++; };
 const apply = (S, v) => S.map((r) => r[0] * v[0] + r[1] * v[1] + r[2] * v[2]);
 const dists = (vs) => { const d = []; for (let i = 0; i < vs.length; i++) for (let j = i + 1; j < vs.length; j++) d.push(Math.hypot(vs[i][0] - vs[j][0], vs[i][1] - vs[j][1], vs[i][2] - vs[j][2])); return d.sort((a, b) => a - b); };
+const dotp = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+const lineAngle = (a, b) => (Math.acos(Math.min(1, Math.abs(dotp(a, b)) / Math.hypot(...a) / Math.hypot(...b))) * 180) / Math.PI;
+const coplanar = (a, b, c) => Math.abs(det3([a, b, c])) < 1e-9;
+// Faces as sorted labels, each counted twice (opposite faces).
+const faces = (g) => {
+  const out = [];
+  for (let i = 0; i < g.length; i++) for (let j = i + 1; j < g.length; j++) {
+    const third = g.findIndex((v, k) => k !== i && k !== j && coplanar(g[i], g[j], v));
+    if (third >= 0) {
+      if (third < j) continue; // each hexagon once, from its lowest pair
+      const angs = [lineAngle(g[i], g[j]), lineAngle(g[i], g[third]), lineAngle(g[j], g[third])].map((a) => Math.round(a * 1000) / 1000).sort((a, b) => a - b);
+      const lens = [g[i], g[j], g[third]].map((v) => Math.hypot(...v));
+      const regular = angs.every((a) => a === 60) && lens.every((l) => Math.abs(l - lens[0]) < 1e-9);
+      out.push(regular ? 'regular hexagon' : `hexagon ${angs.join('/')}`, regular ? 'regular hexagon' : `hexagon ${angs.join('/')}`);
+    } else {
+      const a = Math.round(lineAngle(g[i], g[j]) * 1000) / 1000;
+      const sq = Math.abs(Math.hypot(...g[i]) - Math.hypot(...g[j])) < 1e-9;
+      const label = a === 90 && sq ? 'square' : sq ? `rhombus ${a}` : `parallelogram ${a}`;
+      out.push(label, label);
+    }
+  }
+  const count = {};
+  for (const f of out) count[f] = (count[f] || 0) + 1;
+  return JSON.stringify(Object.fromEntries(Object.entries(count).sort()));
+};
+const zonoVolume = (S) => { let v = 0; for (let i = 0; i < S.length; i++) for (let j = i + 1; j < S.length; j++) for (let k = j + 1; k < S.length; k++) v += Math.abs(det3([S[i], S[j], S[k]])); return v; };
 
 const I = shearMatrix(FCC_PARAMS);
 check('plain FCC (slider 0) is the identity', I.every((r, i) => r.every((x, j) => Math.abs(x - (i === j ? 1 : 0)) < 1e-9)));
@@ -60,31 +86,6 @@ check('the shear never spins the scene (symmetric matrix)', [paramsOnPath(2), pa
 {
   const B = shearMatrix(paramsOnPath(2, 'bain'));
   const rd = RD_DIRECTIONS.map((v) => apply(B, v));
-  const dotp = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
-  const lineAngle = (a, b) => (Math.acos(Math.min(1, Math.abs(dotp(a, b)) / Math.hypot(...a) / Math.hypot(...b))) * 180) / Math.PI;
-  const coplanar = (a, b, c) => Math.abs(det3([a, b, c])) < 1e-9;
-  // Faces as sorted labels, each counted twice (opposite faces).
-  const faces = (g) => {
-    const out = [];
-    for (let i = 0; i < g.length; i++) for (let j = i + 1; j < g.length; j++) {
-      const third = g.findIndex((v, k) => k !== i && k !== j && coplanar(g[i], g[j], v));
-      if (third >= 0) {
-        if (third < j) continue; // each hexagon once, from its lowest pair
-        const angs = [lineAngle(g[i], g[j]), lineAngle(g[i], g[third]), lineAngle(g[j], g[third])].map((a) => Math.round(a * 1000) / 1000).sort((a, b) => a - b);
-        const lens = [g[i], g[j], g[third]].map((v) => Math.hypot(...v));
-        const regular = angs.every((a) => a === 60) && lens.every((l) => Math.abs(l - lens[0]) < 1e-9);
-        out.push(regular ? 'regular hexagon' : `hexagon ${angs.join('/')}`, regular ? 'regular hexagon' : `hexagon ${angs.join('/')}`);
-      } else {
-        const a = Math.round(lineAngle(g[i], g[j]) * 1000) / 1000;
-        const sq = Math.abs(Math.hypot(...g[i]) - Math.hypot(...g[j])) < 1e-9;
-        const label = a === 90 && sq ? 'square' : sq ? `rhombus ${a}` : `parallelogram ${a}`;
-        out.push(label, label);
-      }
-    }
-    const count = {};
-    for (const f of out) count[f] = (count[f] || 0) + 1;
-    return JSON.stringify(Object.fromEntries(Object.entries(count).sort()));
-  };
   check('Bain RD: equal edges, 4 squares and 8 rhombi of 60 degrees', rd.every((v) => Math.abs(Math.hypot(...v) - 1) < 1e-9) && faces(rd) === JSON.stringify({ 'rhombus 60': 8, square: 4 }));
   // Elongated dodecahedron: the RD's four directions plus one more, length 1.
   const edX = [...rd, apply(B, [1, 0, 0])];
@@ -94,6 +95,19 @@ check('the shear never spins the scene (symmetric matrix)', [paramsOnPath(2), pa
   // The Polyhedraverse ED (elongation = the RD's edge, sqrt3/2, before the
   // shear) is NOT the regular-hexagon one: its x edge stays sqrt3/2.
   check('the standard ED sheared has hexagon edges 1, 1, 0.866 (not regular)', Math.abs(Math.hypot(...apply(B, [Math.sqrt(3) / 2, 0, 0])) - Math.sqrt(3) / 2) < 1e-9);
+}
+
+// DICTO's skewed ED (TARGETS.md #16, #18): extends DICTO's skewed RD
+// (DISCOVERIES.md #1) by a fifth edge direction, the same way DISCOVERIES.md
+// #5 extends the Bain RD. Found by matching DICTO_DIRECTIONS' Gram matrix
+// against every already-catalogued equal-edge ED cell's 4-direction sub-sets;
+// exactly two contain it exactly, #16 and #18.
+{
+  const PHI = (1 + Math.sqrt(5)) / 2;
+  check('DICTO skewed ED #16: equal edges, 4 rhombus 60, 4 rhombus 72, 2 hexagon 36/36/72, 2 regular hexagon, volume phi^2 + 2', DICTO_SKEWED_ED_16.every((v) => Math.abs(Math.hypot(...v) - 1) < 1e-9) && faces(DICTO_SKEWED_ED_16) === JSON.stringify({ 'hexagon 36/36/72': 2, 'regular hexagon': 2, 'rhombus 60': 4, 'rhombus 72': 4 }) && Math.abs(zonoVolume(DICTO_SKEWED_ED_16) - (PHI * PHI + 2)) < 1e-9);
+  check('DICTO skewed ED #18: equal edges, 6 rhombus 60, 2 rhombus 72, 4 hexagon 36/72/72, volume phi^3 + 1/2', DICTO_SKEWED_ED_18.every((v) => Math.abs(Math.hypot(...v) - 1) < 1e-9) && faces(DICTO_SKEWED_ED_18) === JSON.stringify({ 'hexagon 36/72/72': 4, 'rhombus 60': 6, 'rhombus 72': 2 }) && Math.abs(zonoVolume(DICTO_SKEWED_ED_18) - (PHI * PHI * PHI + 0.5)) < 1e-9);
+  // Both contain DICTO's skewed RD's four directions exactly (its first 4 entries, unchanged).
+  check('both skewed EDs keep DICTO_DIRECTIONS exactly as their first four directions', DICTO_DIRECTIONS.every((v, i) => DICTO_SKEWED_ED_16[i].every((x, k) => x === v[k]) && DICTO_SKEWED_ED_18[i].every((x, k) => x === v[k])));
 }
 
 console.log(failures === 0 ? '\nAll checks passed (0 failures).' : `\n${failures} check(s) FAILED.`);
