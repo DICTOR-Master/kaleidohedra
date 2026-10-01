@@ -6,33 +6,38 @@ nothing in this file is history.
 
 ## What this project is
 
-Rhombiverse is a browser-based, Three.js spatial editor for real
-space-filling lattices in **2D, 3D and 4D**, plus the 5D (Penrose
-layers) and 6D (icosahedral) quasicrystals. It's the *landscape* view:
-the lattice exists first, and you place one piece at a time wherever it
-has room. Tap to add a piece, long-press (or right-click) to remove one,
-and look at the build through several views (Lattice View, X-Ray,
-Spherical, Duality, BCC Lattice, section view, 4D slice/projection).
+Kaleidoverse is the third sibling of
+[Rhombiverse](https://github.com/DICTOR-Master/rhombiverse) and
+[Polyhedraverse](https://github.com/DICTOR-Master/polyhedraverse):
+lattices you can shear and slide continuously, where every piece of
+geometry moves with the lattice as one slider moves it along an exact
+space-filling path (see `PLAN.md`), rather than Rhombiverse's one piece
+at a time on a fixed lattice. Chosen states ("population members") are
+exported to the two sibling apps — as a lattice world in Rhombiverse, as
+pieces in Polyhedraverse.
 
-Twin project: [Polyhedraverse](https://github.com/DICTOR-Master/polyhedraverse),
-the *portrait gallery*, where shapes connect face to face or vertex to
-vertex with no lattice at all.
+It grew from shapes DICTO found in Zometool — a golden leaning hexagonal
+prism and a skewed rhombic dodecahedron that tiles as a sheared FCC (see
+`DISCOVERIES.md` and Polyhedraverse's
+`docs/dicto-zometool-discoveries.md`) — and goes on from there, no
+longer tied to Zometool.
 
-The same repo also ships **RHOMBIS** (`rhombis.html`, `src/rhombis/`),
-a standalone packing-puzzle game.
+GitHub: https://github.com/DICTOR-Master/kaleidoverse (`gh` is authenticated).
 
-This is **not** `~/rhombispheres/` (an unrelated pygame arcade game that
-used to be called rhombiverse). Don't cross-reference the two.
-
-GitHub: https://github.com/DICTOR-Master/rhombiverse (`gh` is authenticated).
-Live: https://rhombiverse.vercel.app
-
-Shipped in full: the Shells scene (plan closed 2026-09-26) and 5D/6D (plan closed 2026-09-26).
+The 3D engine (`index.html`, `src/`, `data/`) is forked from
+Rhombiverse's own code (FCC world, lattice view, saving), so building
+stays exactly as in Rhombiverse while Kaleidoverse's own controls (the
+shear slider, "towards…" picker, Export of population members) are
+layered on top. See `PLAN.md`'s "Build order" for what stage that is at
+— until noted otherwise there, titles, meta tags and in-app copy on the
+forked engine files still describe Rhombiverse and haven't been
+rebranded yet; don't assume they describe Kaleidoverse-specific
+behavior.
 
 ## Scope guardrails
 
-Rhombiverse is pure, deterministic geometry. Do not add, even partially,
-without an explicit decision from the user:
+Same discipline as Rhombiverse — pure, deterministic geometry. Do not
+add, even partially, without an explicit decision from the user:
 
 - simulation of any kind: physics, gravity, growth, evolution, anything
   that changes over elapsed time rather than on user action;
@@ -48,13 +53,19 @@ UI rule: hide controls that don't apply; don't grey them out.
 
 ## Layout
 
-See README.md → Structure. In short: `index.html` (the app),
-`src/render.js` (scene, render loop, most UI wiring), `src/core/`
-(lattice math, placement/removal input in `build.js`, world state,
-persistence), `src/app/` (wheels, Wizard, 4D and 5D/6D worlds, Almanac, settings,
-i18n, welcome, guide, language picker), `src/geometry-extensions/` (every
-lattice beyond FCC), `data/` (starter world, changelog), `docs/guide*.md`
-(the user guide).
+See README.md for the top-level files. Kaleidoverse's own work:
+`DISCOVERIES.md` (findings and how each is verified), `TARGETS.md` +
+`geometry-targets.json` (the 160-cell target list, from `discover.py` /
+`discover_run.py`), `enumerate.py` + `targets.json` (the earlier,
+smaller list), `PLAN.md` (the current design), `assets/brand/` (the
+logo). The forked engine: `index.html` (the app), `src/render.js`
+(scene, render loop, most UI wiring), `src/core/` (lattice math,
+placement/removal input in `build.js`, world state, persistence),
+`src/app/` (wheels, Wizard, 4D and 5D/6D worlds, Almanac, settings,
+i18n, welcome, guide, language picker), `src/geometry-extensions/`
+(every lattice beyond FCC), `data/` (starter world, changelog),
+`docs/guide*.md` (the user guide) — all inherited from Rhombiverse, not
+yet diverged for Kaleidoverse's own slider/export model.
 
 ## Running and checking
 
@@ -70,7 +81,9 @@ lattice beyond FCC), `data/` (starter world, changelog), `docs/guide*.md`
   copy, raw source and `dist/` both, in CI.
 - **Checks:** `npm run verify:i18n | verify:rhombis-i18n | verify:copy |
   verify:lattice-2d | verify:pyrochlore | verify:rhombohedra | verify:4d |
-  verify:quasicrystal | verify:catalogue`.
+  verify:quasicrystal | verify:catalogue | verify:kaleido | verify:shells |
+  verify:kaleidoscope | verify:trajectory | verify:construction |
+  verify:nets | verify:packing | verify:dicto-fcc`.
 - **Browser automation:** run Playwright on `dicto-node` (192.168.0.7,
   SSH), not the dev Pi. Sync first, with `--delete` for tests. Headless
   Chromium there can starve timers, so hold simulated long-presses 1.5 s+.
@@ -94,25 +107,18 @@ lattice beyond FCC), `data/` (starter world, changelog), `docs/guide*.md`
   `t(key, lang)` for dynamic text. Every key needs all 7 languages
   (`verify:i18n`). Language is one setting (`updateSettings({ language })`),
   shared by Settings and the 🌐 picker (`src/app/language-picker.js`).
-- **User guide:** `docs/guide.md` (English) plus `docs/guide.<lang>.md`,
-  served in-app (`src/app/guide.js`) and at `/guide?lang=`. Button names
-  in a translation must match what the app shows in that language;
-  untranslated UI stays in English. Change all 7 together.
-  `src/app/markdown.js` is kept identical to Polyhedraverse's
-  `app/lib/markdown.ts`.
 - **What's New** (`data/changelog.json`): user-facing features only,
   newest first, added in the same push. No entries for fixes to things
   that should already have worked.
 - **Touch first.** Every interaction must work by touch on iPhone/iPad.
   Long-press is 500 ms (`build.js`), with a guard against the click that
   iOS synthesizes afterwards. Mouse-only tests don't prove touch works.
-- **Wheel labels move every frame**, which defeats Playwright's stability
-  checks. In tests, drive the underlying control (e.g.
-  `.mode-btn[data-mode=build]`), the keyboard, or raw touch/mouse events,
-  not clicks on wheel labels.
+- **Every geometric claim is checked numerically**, not by eye — see
+  `scripts/verify-kaleido.mjs` and the `DISCOVERIES.md` table of which
+  script backs which finding.
 - **Removing a feature means deleting it**: code, UI, strings, tests,
   docs. Git history is the archive. Don't leave comments that narrate
   what used to be there.
-- **Design law** (`docs/RHOMBIVERSE_PRINCIPLES.md`): prefer real,
+- **Design law** (`docs/KALEIDOVERSE_PRINCIPLES.md`): prefer real,
   established geometry over anything invented, and the simplest version
   that works.

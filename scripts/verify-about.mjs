@@ -6,7 +6,7 @@
 // the fix is a Settings edit (or `gh repo edit --description`), not code.
 import { readFileSync } from 'node:fs';
 
-const repo = process.env.GITHUB_REPOSITORY ?? 'DICTOR-Master/rhombiverse';
+const repo = process.env.GITHUB_REPOSITORY ?? 'DICTOR-Master/kaleidoverse';
 const headers = { Accept: 'application/vnd.github+json', ...(process.env.GH_TOKEN ? { Authorization: `Bearer ${process.env.GH_TOKEN}` } : {}) };
 let about = '';
 try {

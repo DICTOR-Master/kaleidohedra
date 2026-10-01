@@ -2,11 +2,11 @@
 
 This is a minimal terms document for a small hobby project. It will get
 real legal review before the project ever takes on accounts, payments or
-a larger user base (see `docs/RHOMBIVERSE_COMPLIANCE.md`).
+a larger user base (see `docs/KALEIDOVERSE_COMPLIANCE.md`).
 
 ## What this is
 
-Rhombiverse is a free, browser-based geometry builder. There is no
+Kaleidoverse is a free, browser-based geometry builder. There is no
 account system and no server-side storage: everything you build is saved
 only in your own browser's local storage, or in a file you export.
 Nothing you build is visible to anyone else unless you share that file

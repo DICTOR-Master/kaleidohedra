@@ -1,4 +1,4 @@
-# Rhombiverse — Principles
+# Kaleidoverse — Principles
 
 The design law behind every decision in this repo. Short on purpose.
 
