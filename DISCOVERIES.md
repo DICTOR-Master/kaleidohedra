@@ -21,6 +21,7 @@ priority.
 | 3 | Bain disphenoids become regular tetrahedra | — | yes | **known** (Bain, 1924) |
 | 4 | Bain rhombic dodecahedron (squares + 60° rhombi) | — | yes | **known** |
 | 5 | Regular-hexagon elongated dodecahedron | DICTO (from the "hexagons and rhombi" hunch) | yes | **not found** — candidate |
+| 6 | Exactly 9 "most regular" space-fillers | Kaleidoverse two-way search | yes | not yet searched |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -100,6 +101,22 @@ hexagons with corners 135°, 135°, 90° (a square with two corners cut at 45°)
   rhombi, equilateral hexagons with 131.8° corners), the contracted truncated
   octahedron (60° rhombi, no squares), and cube-volume and concave variants.
   None has regular hexagons with squares.
+
+## 6. The nine most regular space-fillers
+
+Every space-filling zonohedron with all edges equal whose faces are only
+squares, regular hexagons and 60° rhombi (each two equilateral triangles):
+there are **exactly 9** — four parallelepipeds (the cube, the 60°
+rhombohedron, and two mixed), two hexagonal prisms (the regular one, and
+one leaning with 60° rhombi), the Bain RD (#4), the regular-hexagon ED
+(#5) and the regular truncated octahedron.
+
+- Verified: `discover.py` builds every candidate exactly (top-down) and an
+  independent random search over all cell shapes agrees (TARGETS.md).
+  Such faces need only 60° and 90° angles, which the search covers
+  exactly, so the list is complete.
+- Status: not yet searched. It says #4 and #5 are the *only* RD and ED
+  forms of this kind.
 
 ## Sources
 
