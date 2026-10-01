@@ -54,5 +54,47 @@ check('the shear never spins the scene (symmetric matrix)', [paramsOnPath(2), pa
   check('the DICTO path has no regular-tetrahedra targets (disphenoids only get less regular there)', !pathTargets(1).some((e) => e.kind === 'regular tetrahedra'));
 }
 
+// The Bain shear's cells (DISCOVERIES.md #4, #5). A zonohedron's faces come
+// from pairs of edge directions (a parallelogram) or coplanar triples (a
+// hexagon); each face polygon is classified from its directions.
+{
+  const B = shearMatrix(paramsOnPath(2, 'bain'));
+  const rd = RD_DIRECTIONS.map((v) => apply(B, v));
+  const dotp = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+  const lineAngle = (a, b) => (Math.acos(Math.min(1, Math.abs(dotp(a, b)) / Math.hypot(...a) / Math.hypot(...b))) * 180) / Math.PI;
+  const coplanar = (a, b, c) => Math.abs(det3([a, b, c])) < 1e-9;
+  // Faces as sorted labels, each counted twice (opposite faces).
+  const faces = (g) => {
+    const out = [];
+    for (let i = 0; i < g.length; i++) for (let j = i + 1; j < g.length; j++) {
+      const third = g.findIndex((v, k) => k !== i && k !== j && coplanar(g[i], g[j], v));
+      if (third >= 0) {
+        if (third < j) continue; // each hexagon once, from its lowest pair
+        const angs = [lineAngle(g[i], g[j]), lineAngle(g[i], g[third]), lineAngle(g[j], g[third])].map((a) => Math.round(a * 1000) / 1000).sort((a, b) => a - b);
+        const lens = [g[i], g[j], g[third]].map((v) => Math.hypot(...v));
+        const regular = angs.every((a) => a === 60) && lens.every((l) => Math.abs(l - lens[0]) < 1e-9);
+        out.push(regular ? 'regular hexagon' : `hexagon ${angs.join('/')}`, regular ? 'regular hexagon' : `hexagon ${angs.join('/')}`);
+      } else {
+        const a = Math.round(lineAngle(g[i], g[j]) * 1000) / 1000;
+        const sq = Math.abs(Math.hypot(...g[i]) - Math.hypot(...g[j])) < 1e-9;
+        const label = a === 90 && sq ? 'square' : sq ? `rhombus ${a}` : `parallelogram ${a}`;
+        out.push(label, label);
+      }
+    }
+    const count = {};
+    for (const f of out) count[f] = (count[f] || 0) + 1;
+    return JSON.stringify(Object.fromEntries(Object.entries(count).sort()));
+  };
+  check('Bain RD: equal edges, 4 squares and 8 rhombi of 60 degrees', rd.every((v) => Math.abs(Math.hypot(...v) - 1) < 1e-9) && faces(rd) === JSON.stringify({ 'rhombus 60': 8, square: 4 }));
+  // Elongated dodecahedron: the RD's four directions plus one more, length 1.
+  const edX = [...rd, apply(B, [1, 0, 0])];
+  check(`Bain ED along x: equal edges, 4 regular hexagons, 4 squares, 4 rhombi of 60 degrees (${faces(edX)})`, edX.every((v) => Math.abs(Math.hypot(...v) - 1) < 1e-9) && faces(edX) === JSON.stringify({ 'regular hexagon': 4, 'rhombus 60': 4, square: 4 }));
+  const edZ = [...rd, [0, 0, 1]];
+  check(`Bain ED along z: 8 rhombi of 60 degrees, 4 equal-edged hexagons with 135/135/90 corners (${faces(edZ)})`, faces(edZ) === JSON.stringify({ 'hexagon 45/45/90': 4, 'rhombus 60': 8 }));
+  // The Polyhedraverse ED (elongation = the RD's edge, sqrt3/2, before the
+  // shear) is NOT the regular-hexagon one: its x edge stays sqrt3/2.
+  check('the standard ED sheared has hexagon edges 1, 1, 0.866 (not regular)', Math.abs(Math.hypot(...apply(B, [Math.sqrt(3) / 2, 0, 0])) - Math.sqrt(3) / 2) < 1e-9);
+}
+
 console.log(failures === 0 ? '\nAll checks passed (0 failures).' : `\n${failures} check(s) FAILED.`);
 process.exit(failures === 0 ? 0 : 1);
