@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/brand/kaleidohedra-logo.jpg" alt="Kaleidohedra logo: a glowing elongated dodecahedron with regular hexagon, square and rhombus faces" width="360"></p>
+<p align="center"><img src="assets/brand/kaleidohedra-logo.jpg" alt="Kaleidohedra logo: a glowing many-coloured polyhedron with a square face at its centre, on a starfield" width="360"></p>
 
 # KALEIDOHEDRA by DICTO
 
@@ -9,7 +9,7 @@ It grew from shapes DICTO found in Zometool, a golden leaning hexagonal prism an
 - `DISCOVERIES.md` — what has been found so far, how each is verified, and whether it is known.
 - `TARGETS.md` — the target list: the 160 equal-edge space-filling cells whose edges meet only at special angles, searched both ways (`discover.py`, `discover_run.py`, output `geometry-targets.json`).
 - `enumerate.py` — the earlier, smaller list (`targets.json`), all included in the new one.
-- `assets/brand/` — the logo, with the name (`kaleidohedra-logo.jpg`) and without (`kaleidohedra-mark.jpg`). It shows the regular-hexagon elongated dodecahedron (DISCOVERIES.md #5) in its face colours.
+- `assets/brand/` — the logo, with the name (`kaleidohedra-logo.jpg`) and without (`kaleidohedra-mark.jpg`).
 
 ## Findings and attribution
 
