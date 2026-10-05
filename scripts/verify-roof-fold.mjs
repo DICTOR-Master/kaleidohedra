@@ -9,7 +9,12 @@
 //     the 20 tips are the dodecahedron's vertices, apex 36 degrees;
 //   - the node set's symmetry is the 24 operations of m-3 about the origin,
 //     with only lattice translations: Pm-3, nodes on 1b and 12j (0, y, z).
-import { PHI, ROOF_FOLD_PERIOD as P, roofFoldCell } from '../src/geometry-extensions/roof-fold.js';
+//   - the four placeable solids (cube, dodecahedron, icosahedron, 20-point
+//     star) are closed and outward with exact volumes, and nest;
+//   - face neighbours' dodecahedra overlap, edge neighbours only touch;
+//   - the merged-dodecahedra surface encloses exactly the union;
+//   - colouring sites by parity leaves only even translations: Fm-3.
+import { PHI, ROOF_FOLD_PERIOD as P, ROOF_FOLD_KINDS, roofFoldCell, roofFoldSolids, mergedDodecaSurface, siteParity } from '../src/geometry-extensions/roof-fold.js';
 
 let failures = 0;
 function check(label, condition) {
@@ -114,6 +119,68 @@ check('each works with a lattice translation only (symmorphic, origin on the ico
 const stab = (v) => ops.filter((op) => key(op.f(v)) === key(v)).length;
 check(`corner node is fixed by all 24 (Wyckoff 1b); each icosahedron vertex by 2, a mirror (12j, (0, y, z), y = ${(1 / (2 * PHI)).toFixed(4)}, z = ${(1 / (2 * PHI ** 2)).toFixed(4)} in cell units)`,
   ops.filter((op) => op.even).every((op) => key(op.f([1, 1, 1])) === key([1, 1, 1])) && C.ico.every((v) => ops.filter((op) => op.even && key(op.f(v)) === key(v)).length === 2) && C.ico.every((v) => v.some((c) => Math.abs(c) < EPS)) && stab([1, 1, 1]) === 48);
+
+// 6. The four placeable solids: closed, outward, with their exact volumes.
+const S = roofFoldSolids();
+const volumeOf = (polys) => polys.reduce((v, P) => { for (let i = 1; i + 1 < P.length; i++) v += dot(P[0], cross(P[i], P[i + 1])) / 6; return v; }, 0);
+const rawKey = (v) => v.map((c) => c.toFixed(7)).join();
+const closed = (polys) => {
+  const half = new Map();
+  for (const P of polys) for (let i = 0; i < P.length; i++) { const k = `${rawKey(P[i])}>${rawKey(P[(i + 1) % P.length])}`; half.set(k, (half.get(k) ?? 0) + 1); }
+  return [...half.keys()].every((k) => { const [a, b] = k.split('>'); return half.get(`${b}>${a}`) === 1 && half.get(k) === 1; });
+};
+const V = { cube: 8, dodeca: 10 + 2 * Math.sqrt(5), ico: (5 / 12) * (3 + Math.sqrt(5)) * (2 / PHI ** 2) ** 3 };
+const spike = (Math.sqrt(3) / 4) * (2 / PHI ** 2) ** 2 * (2 / Math.sqrt(3)) / 3; // base area x height / 3, height 2/sqrt3
+V.star = V.ico + 20 * spike;
+for (const k of ROOF_FOLD_KINDS) {
+  const f = S[k].faces;
+  check(`${k}: ${f.length} faces, closed, outward, volume ${volumeOf(f).toFixed(6)} = ${V[k].toFixed(6)}`, closed(f) && Math.abs(volumeOf(f) - V[k]) < 1e-9);
+}
+check('star: 60 triangles and 90 edges, spike height 2/sqrt3', S.star.faces.length === 60 && S.star.edges.length === 90 && Math.abs(norm(sub(S.star.faces[0][2], S.ico.faces[0].reduce(add).map((c) => c / 3))) - 2 / Math.sqrt(3)) < 1e-9);
+check('icosahedron, star and dodecahedron nest: star inside dodecahedron, icosahedron inside star',
+  S.star.faces.flat().every(inside) && Math.abs(V.dodeca - V.star) > 0.1);
+
+// 7. Neighbouring dodecahedra: face neighbours overlap, edge neighbours only touch along a cube edge.
+const sharedCorners = (t) => C.dodeca.filter((p) => C.dodeca.some((q) => norm(sub(add(p, t), q)) < EPS)).length;
+check('face neighbours share a cube face\'s 4 corners, edge neighbours a cube edge (2), corner neighbours a corner (1)',
+  sharedCorners([2, 0, 0]) === 4 && sharedCorners([0, 2, 2]) === 2 && sharedCorners([2, 2, 2]) === 1);
+
+// 8. Merged dodecahedra: the outer surface encloses exactly the union.
+function sampledUnion(sites, n = 40) {
+  const lo = [0, 1, 2].map((a) => Math.min(...sites.map((s) => 2 * s[a])) - 1.8);
+  const hi = [0, 1, 2].map((a) => Math.max(...sites.map((s) => 2 * s[a])) + 1.8);
+  let hits = 0;
+  for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) for (let k = 0; k < n; k++) {
+    const p = [i, j, k].map((c, a) => lo[a] + ((c + 0.5 + 0.011 * (a + 1)) / n) * (hi[a] - lo[a]));
+    if (sites.some((s) => inside(sub(p, s.map((c) => 2 * c))))) hits++;
+  }
+  return (hits / n ** 3) * (hi[0] - lo[0]) * (hi[1] - lo[1]) * (hi[2] - lo[2]);
+}
+for (const [label, sites] of [
+  ['one site', [[0, 0, 0]]],
+  ['two face neighbours', [[0, 0, 0], [1, 0, 0]]],
+  ['two edge neighbours', [[0, 0, 0], [0, 1, 1]]],
+  ['a 2x2x2 block', [0, 1].flatMap((x) => [0, 1].flatMap((y) => [0, 1].map((z) => [x, y, z])))],
+  ['an L of four', [[0, 0, 0], [1, 0, 0], [2, 0, 0], [2, 1, 0]]],
+]) {
+  const surf = mergedDodecaSurface(sites);
+  const vol = volumeOf(surf.map((p) => p.polygon));
+  const sampled = sampledUnion(sites);
+  const deep = surf.every(({ polygon, site }) => { const c = polygon.reduce(add).map((x) => x / polygon.length); return sites.every((s) => s === site || !faceNormals.every((n) => dot(sub(c, s.map((v) => 2 * v)), n) < faceDist - 1e-7)); });
+  check(`merged surface, ${label}: encloses ${vol.toFixed(3)} (sampled union ${sampled.toFixed(3)}), no piece inside another dodecahedron`, Math.abs(vol - sampled) / sampled < 0.01 && deep);
+}
+check('merged surface of one site is the whole dodecahedron', Math.abs(volumeOf(mergedDodecaSurface([[0, 0, 0]]).map((p) => p.polygon)) - V.dodeca) < 1e-9);
+check('merged surface of two edge neighbours encloses exactly twice the dodecahedron (they touch, no overlap)', Math.abs(volumeOf(mergedDodecaSurface([[0, 0, 0], [0, 1, 1]]).map((p) => p.polygon)) - 2 * V.dodeca) < 1e-9);
+
+// 9. Alternating views: colouring sites by parity keeps the 24 point operations but halves the
+// translations to the even ones (an FCC lattice), so the alternated structure is Fm-3.
+const sites3 = [];
+for (let x = -1; x <= 2; x++) for (let y = -1; y <= 2; y++) for (let z = -1; z <= 2; z++) sites3.push([x, y, z]);
+const mod4 = (p) => p.map((c) => (((c % 4) + 4) % 4).toFixed(6)).join();
+const coloured = new Set(sites3.flatMap((s) => C.ico.map((v) => `${mod4(add(v, s.map((c) => 2 * c)))}|${siteParity(...s)}`)));
+const keeps = (f, t) => sites3.every((s) => C.ico.every((v) => coloured.has(`${mod4(add(f(add(v, s.map((c) => 2 * c))), t))}|${siteParity(...s)}`)));
+check('parity colouring: all 24 m-3 operations kept, odd translations (2,0,0) swap colours, even ones (2,2,0) keep them',
+  ops.filter((op) => op.even).every((op) => keeps(op.f, [0, 0, 0])) && !keeps((v) => v, [2, 0, 0]) && keeps((v) => v, [2, 2, 0]) && keeps((v) => v, [0, 2, -2]));
 
 console.log(failures === 0 ? '\nAll checks passed (0 failures).' : `\n${failures} check(s) FAILED.`);
 process.exit(failures === 0 ? 0 : 1);
