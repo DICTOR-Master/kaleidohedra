@@ -10,3 +10,18 @@ It grew from shapes DICTO found in Zometool, a golden leaning hexagonal prism an
 - `TARGETS.md` — the target list: the 160 equal-edge space-filling cells whose edges meet only at special angles, searched both ways (`discover.py`, `discover_run.py`, output `geometry-targets.json`).
 - `enumerate.py` — the earlier, smaller list (`targets.json`), all included in the new one.
 - `assets/brand/` — the logo, with the name (`kaleidohedra-logo.jpg`) and without (`kaleidohedra-mark.jpg`). It shows the regular-hexagon elongated dodecahedron (DISCOVERIES.md #5) in its face colours.
+
+## Findings and attribution
+
+Geometry found by **DICTO** in this project, each checked numerically by a script in CI and dated by
+the commit that first recorded it (full list, verification and literature status in `DISCOVERIES.md`):
+
+| Finding | First recorded | Literature status |
+|---|---|---|
+| DICTO skewed rhombic dodecahedron (60° and 72° rhombi, tiles as a sheared FCC) | 2026-10-01 | not found — candidate |
+| Regular-hexagon elongated dodecahedron (4 regular hexagons, 4 squares, 4 60° rhombi) | 2026-10-01 | not found — candidate |
+| DICTO skewed elongated dodecahedra (two forms) | 2026-10-01 | not yet searched |
+| Roof-fold cell: cube, dodecahedron and folded icosahedron, 13 nodes, Pm-3 | 2026-10-06 | not yet searched |
+
+"Not found" means a web-level search turned up nothing, not proof of novelty. Cite as
+*DICTO, Kaleidohedra discoveries, #N (first recorded date), github.com/DICTOR-Master/kaleidohedra*.

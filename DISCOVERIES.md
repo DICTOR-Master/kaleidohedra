@@ -14,16 +14,16 @@ in Polyhedraverse; `verify-dicto-fcc` in Rhombiverse).
 Delone / Štogrin parallelohedra literature) is still needed before claiming
 priority.
 
-| # | Finding | Credit | Verified | Status |
-|---|---|---|---|---|
-| 1 | DICTO skewed rhombic dodecahedron | DICTO (found by building it) | yes | **not found** — candidate |
-| 2 | Equal-edge rule for sheared FCC | Kaleidohedra | yes | general idea known; this form not found |
-| 3 | Bain disphenoids become regular tetrahedra | — | yes | **known** (Bain, 1924) |
-| 4 | Bain rhombic dodecahedron (squares + 60° rhombi) | — | yes | **known** |
-| 5 | Regular-hexagon elongated dodecahedron | DICTO (from the "hexagons and rhombi" hunch) | yes | **not found** — candidate |
-| 6 | Exactly 9 "most regular" space-fillers | Kaleidohedra two-way search | yes | not yet searched |
-| 7 | DICTO skewed ED (two forms) | Kaleidohedra (extending #1) | yes | not yet searched |
-| 8 | Roof-fold cell: cube, dodecahedron and folded icosahedron (Pm-3) | DICTO (built a physical cell) | yes | not yet searched; same space group as known icosahedral approximants |
+| # | Finding | Credit | Verified | Status | First recorded |
+|---|---|---|---|---|---|
+| 1 | DICTO skewed rhombic dodecahedron | DICTO (found by building it) | yes | **not found** — candidate | 2026-10-01 (8420a51) |
+| 2 | Equal-edge rule for sheared FCC | Kaleidohedra | yes | general idea known; this form not found | 2026-10-01 (8420a51) |
+| 3 | Bain disphenoids become regular tetrahedra | — | yes | **known** (Bain, 1924) | 2026-10-01 (8420a51) |
+| 4 | Bain rhombic dodecahedron (squares + 60° rhombi) | — | yes | **known** | 2026-10-01 (8420a51) |
+| 5 | Regular-hexagon elongated dodecahedron | DICTO (from the "hexagons and rhombi" hunch) | yes | **not found** — candidate | 2026-10-01 (8420a51) |
+| 6 | Exactly 9 "most regular" space-fillers | Kaleidohedra two-way search | yes | not yet searched | 2026-10-01 (547aac9) |
+| 7 | DICTO skewed ED (two forms) | Kaleidohedra (extending #1) | yes | not yet searched | 2026-10-01 (e97193f) |
+| 8 | Roof-fold cell: cube, dodecahedron and folded icosahedron (Pm-3) | DICTO (built a physical cell) | yes | not yet searched; same space group as known icosahedral approximants | 2026-10-06 (6636342) |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -179,6 +179,22 @@ mirror, which is 12j in the International Tables' list for Pm-3.
   the icosahedral phase, 138 atoms per cell built from Mackay icosahedra)
   shares the space group and an icosahedral motif; whether its positions
   match this 13-node set has not been checked.
+
+## Attribution and dates
+
+All findings above credited to DICTO are the work of the artist **DICTO**
+(Japan), made while building physical models and playing in Rhombiverse,
+Polyhedraverse and Kaleidohedra; "Kaleidohedra" credits mean found by this
+project's own search, under DICTO's direction. "First recorded" is the date and
+commit that first put the finding in this repository; the git history is the
+timestamped record. A physical model may predate it (#1 was built in Zometool
+before it was written up; #8's physical cell was built before 2026-10-06).
+
+Please cite as: *DICTO, Kaleidohedra discoveries, #N (first recorded
+YYYY-MM-DD), github.com/DICTOR-Master/kaleidohedra.*
+
+This repository is private, so these dates are not yet a public priority record.
+A public, dated archive (e.g. a Zenodo DOI, as for RHOMBITURE) would make them one.
 
 ## Sources
 
