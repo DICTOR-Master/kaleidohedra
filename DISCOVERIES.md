@@ -24,7 +24,7 @@ priority.
 | 6 | Exactly 9 "most regular" space-fillers | Kaleidohedra two-way search | yes | not yet searched | 2026-10-01 (547aac9) |
 | 7 | DICTO skewed ED (two forms) | Kaleidohedra (extending #1) | yes | not yet searched | 2026-10-01 (e97193f) |
 | 8 | Roof-fold cell: cube, dodecahedron and folded icosahedron (Pm-3) | DICTO (built a physical cell) | yes | **not found** — candidate; a periodic approximant-type structure like α-AlMnSi (no fivefold axis) | 2026-10-06 (6636342) |
-| 8b | Star–icosahedron corner-sharing network (stars on even cells, icosahedra on odd) | DICTO (from "the overlap belongs to the extraction") | yes | **not found** — candidate | 2026-10-06 |
+| 8b | Corner-sharing network of great stellated dodecahedra (even cells) and icosahedra (odd cells) | DICTO (from "the overlap belongs to the extraction") | yes | **not found** — candidate | 2026-10-06 |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -180,15 +180,14 @@ along x, y and z.
   x+y+z parity gives **Fm-3** (No. 202), x+y gives **Cmmm** (No. 65), z gives
   **Pmmm** (No. 47), and 8 octant colours give **Pmmm** on a doubled cell.
   *(Recorded 2026-10-06.)*
-- **The 20-point star** (icosahedron + 20 golden spikes) has volume
-  ≈ 2.918 at cube edge 2, lies inside the dodecahedron, and its convex hull is
-  the dodecahedron. *(Recorded 2026-10-06.)*
-
-Verified here by `scripts/verify-roof-fold.mjs` (geometry in
-`src/geometry-extensions/roof-fold.js`), and buildable in the Icosahedral/Dodecahedral Transitions world. The original notes labelled the
-icosahedron site 12i; the stabiliser check shows (0, y, z) with a single
-mirror, which is 12j in the International Tables' list for Pm-3.
-
+- **The star is Kepler's great stellated dodecahedron** {5/2, 3} (Kepler
+  1619): the icosahedron with 20 golden-triangle spikes, whose 60 visible
+  triangles lie in 12 planes as 12 regular pentagrams (edge φ³ × the core
+  icosahedron edge) and whose 20 tips are the dodecahedron's vertices. Volume
+  ≈ 2.918 at cube edge 2; its convex hull is the dodecahedron. So one cell
+  holds Euclid's dodecahedron, the icosahedron and Kepler's star, all nested
+  on the same 20 + 12 points. *(Identity known; its place in this cell
+  recorded 2026-10-06.)*
 - **Extractions that don't overlap** (DICTO's point, 2026-10-06: the
   overlap belongs to the solids chosen, not to the vertices). From the same
   13-node set:
@@ -198,11 +197,12 @@ mirror, which is 12j in the International Tables' list for Pm-3.
     dodecahedron (Betke & Henk; Torquato & Jiao 2009 note it contacts 12
     neighbours and its lattice coincides with FCC). **Known**, here
     re-found inside the structure.
-  - **(b)** 20-point stars on the even cells with icosahedra on the odd
+  - **(b)** great stellated dodecahedra on the even cells (an FCC lattice,
+    touching tip to tip at shared cube corners) with icosahedra on the odd
     cells share **only corners**: every star's 12 roof tips are vertices of
     the 6 neighbouring icosahedra, and an exact separating-axis test finds no
-    overlap. A corner-sharing (Kagome-like) star–icosahedron network.
-    **Not found** in the search below — candidate.
+    overlap. A corner-sharing (Kagome-like) network of Kepler stars and
+    icosahedra. **Not found** — candidate (targeted search below).
   - Dodecahedra on even cells with icosahedra on odd cells do overlap; the
     stars are what make (b) corner-sharing.
 - **Literature search (web-level, 2026-10-06).** Status of the parts:
@@ -221,6 +221,14 @@ mirror, which is 12j in the International Tables' list for Pm-3.
     pyritohedral group, pseudoicosahedra and cubic lattices) is the closest
     paper found; its abstract does not describe this, but the full text was
     not read.
+  - **Targeted search for (b)** (2026-10-06): great stellated dodecahedron
+    packings, Kepler–Poinsot polyhedra in lattices, corner-sharing icosahedral
+    frameworks. The only packing work found is de Graaf, van Roij & Dijkstra
+    (PRL 107, 155501, 2011), whose densest-known packing of great stellated
+    dodecahedra is a **dimer lattice of two orientations with interlocking
+    spikes**, and has no icosahedra. (b) is a different arrangement (one
+    orientation, FCC, corner contacts only, icosahedra in the other cells)
+    and was not found.
   - Before claiming priority: check Koca et al. in full, approximant and
     skutterudite structure databases (Bilbao, ICSD) for a 1b + 12j set with
     y = 1/(2φ), z = 1/(2φ²), and stellated-icosahedron framework literature.
@@ -252,6 +260,8 @@ An archived, citable snapshot (e.g. a Zenodo DOI, as for RHOMBITURE) would make 
 - [Dense packings of the Platonic and Archimedean solids — Torquato & Jiao (2009)](https://arxiv.org/abs/0909.0940)
 - [Quaternionic representations of the pyritohedral group, related polyhedra and lattices — Koca et al.](https://arxiv.org/abs/1506.04600)
 - [Pyritohedral icosahedron — Polytope Wiki](https://polytope.miraheze.org/wiki/Pyritohedral_icosahedron)
+- [Dense regular packings of irregular nonconvex particles — de Graaf, van Roij & Dijkstra, PRL 107, 155501 (2011)](https://doi.org/10.1103/PhysRevLett.107.155501)
+- [Great stellated dodecahedron — Wikipedia](https://en.wikipedia.org/wiki/Great_stellated_dodecahedron)
 - [Icosahedral tiling with dodecahedral structures — Koca et al. (2020)](https://arxiv.org/abs/2008.00862) (aperiodic; not this structure)
 - [Zonohedron — Wikipedia](https://en.wikipedia.org/wiki/Zonohedron)
 - [Zonohedrification — George Hart](https://www.georgehart.com/zonohedra/zonohedrification.html)
