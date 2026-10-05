@@ -21,7 +21,8 @@ the commit that first recorded it (full list, verification and literature status
 | DICTO skewed rhombic dodecahedron (60° and 72° rhombi, tiles as a sheared FCC) | 2026-10-01 | not found — candidate |
 | Regular-hexagon elongated dodecahedron (4 regular hexagons, 4 squares, 4 60° rhombi) | 2026-10-01 | not found — candidate |
 | DICTO skewed elongated dodecahedra (two forms) | 2026-10-01 | not yet searched |
-| Roof-fold cell: cube, dodecahedron and folded icosahedron, 13 nodes, Pm-3 | 2026-10-06 | not yet searched |
+| Roof-fold cell: cube, dodecahedron and folded icosahedron, 13 nodes, Pm-3 | 2026-10-06 | not found — candidate |
+| Star–icosahedron corner-sharing network from the same cell | 2026-10-06 | not found — candidate |
 
 "Not found" means a web-level search turned up nothing, not proof of novelty. Cite as
 *DICTO, Kaleidohedra discoveries, #N (first recorded date), github.com/DICTOR-Master/kaleidohedra*.

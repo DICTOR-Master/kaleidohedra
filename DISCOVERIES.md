@@ -23,7 +23,8 @@ priority.
 | 5 | Regular-hexagon elongated dodecahedron | DICTO (from the "hexagons and rhombi" hunch) | yes | **not found** — candidate | 2026-10-01 (8420a51) |
 | 6 | Exactly 9 "most regular" space-fillers | Kaleidohedra two-way search | yes | not yet searched | 2026-10-01 (547aac9) |
 | 7 | DICTO skewed ED (two forms) | Kaleidohedra (extending #1) | yes | not yet searched | 2026-10-01 (e97193f) |
-| 8 | Roof-fold cell: cube, dodecahedron and folded icosahedron (Pm-3) | DICTO (built a physical cell) | yes | not yet searched; same space group as known icosahedral approximants | 2026-10-06 (6636342) |
+| 8 | Roof-fold cell: cube, dodecahedron and folded icosahedron (Pm-3) | DICTO (built a physical cell) | yes | **not found** — candidate; a periodic approximant-type structure like α-AlMnSi (no fivefold axis) | 2026-10-06 (6636342) |
+| 8b | Star–icosahedron corner-sharing network (stars on even cells, icosahedra on odd) | DICTO (from "the overlap belongs to the extraction") | yes | **not found** — candidate | 2026-10-06 |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -188,10 +189,42 @@ Verified here by `scripts/verify-roof-fold.mjs` (geometry in
 icosahedron site 12i; the stabiliser check shows (0, y, z) with a single
 mirror, which is 12j in the International Tables' list for Pm-3.
 
-- Status: not yet searched. α-AlMnSi (Pm-3, the 1/1 cubic approximant of
-  the icosahedral phase, 138 atoms per cell built from Mackay icosahedra)
-  shares the space group and an icosahedral motif; whether its positions
-  match this 13-node set has not been checked.
+- **Extractions that don't overlap** (DICTO's point, 2026-10-06: the
+  overlap belongs to the solids chosen, not to the vertices). From the same
+  13-node set:
+  - **(a)** dodecahedra on the even cells alone (an FCC lattice) touch their
+    12 nearest neighbours and never overlap, density exactly
+    (5+√5)/8 ≈ 0.9045 — the **optimal lattice packing** of the regular
+    dodecahedron (Betke & Henk; Torquato & Jiao 2009 note it contacts 12
+    neighbours and its lattice coincides with FCC). **Known**, here
+    re-found inside the structure.
+  - **(b)** 20-point stars on the even cells with icosahedra on the odd
+    cells share **only corners**: every star's 12 roof tips are vertices of
+    the 6 neighbouring icosahedra, and an exact separating-axis test finds no
+    overlap. A corner-sharing (Kagome-like) star–icosahedron network.
+    **Not found** in the search below — candidate.
+  - Dodecahedra on even cells with icosahedra on odd cells do overlap; the
+    stars are what make (b) corner-sharing.
+- **Literature search (web-level, 2026-10-06).** Status of the parts:
+  - Euclid's roof construction of the dodecahedron on a cube (Elements
+    XIII) and the pyritohedral icosahedron inscribed in a cube are classical.
+  - Periodic crystals with icosahedral or dodecahedral motifs are well known
+    and do not break the crystallographic restriction: α-AlMnSi (Pm-3, the
+    1/1 cubic approximant, Mackay icosahedra), skutterudites (Im-3,
+    icosahedral cages on 24g (0, y, z)), type-I clathrates (Pm-3n,
+    pentagonal-dodecahedral cages). This structure is of that kind: m-3, no
+    fivefold axis.
+  - **Not found:** the fold itself (roof vertices reflected through the
+    cube faces give the regular icosahedron, each roof vertex landing on a
+    neighbouring cell's icosahedron vertex), the exact φ² : φ : 1 cell as a
+    13-node Pm-3 structure, and extraction (b). Koca et al. (2016,
+    pyritohedral group, pseudoicosahedra and cubic lattices) is the closest
+    paper found; its abstract does not describe this, but the full text was
+    not read.
+  - Before claiming priority: check Koca et al. in full, approximant and
+    skutterudite structure databases (Bilbao, ICSD) for a 1b + 12j set with
+    y = 1/(2φ), z = 1/(2φ²), and stellated-icosahedron framework literature.
+- Status: the cell and (b) **not found** — candidates; (a) **known**.
 
 ## Attribution and dates
 
@@ -216,5 +249,9 @@ An archived, citable snapshot (e.g. a Zenodo DOI, as for RHOMBITURE) would make 
 - [Elongated rhombic dodecahedron — Polytope Wiki](https://polytope.miraheze.org/wiki/Elongated_rhombic_dodecahedron)
 - [Rhombic dodecahedron — Wikipedia](https://en.wikipedia.org/wiki/Rhombic_dodecahedron)
 - [Bilinski dodecahedron — Wikipedia](https://en.wikipedia.org/wiki/Bilinski_dodecahedron)
+- [Dense packings of the Platonic and Archimedean solids — Torquato & Jiao (2009)](https://arxiv.org/abs/0909.0940)
+- [Quaternionic representations of the pyritohedral group, related polyhedra and lattices — Koca et al.](https://arxiv.org/abs/1506.04600)
+- [Pyritohedral icosahedron — Polytope Wiki](https://polytope.miraheze.org/wiki/Pyritohedral_icosahedron)
+- [Icosahedral tiling with dodecahedral structures — Koca et al. (2020)](https://arxiv.org/abs/2008.00862) (aperiodic; not this structure)
 - [Zonohedron — Wikipedia](https://en.wikipedia.org/wiki/Zonohedron)
 - [Zonohedrification — George Hart](https://www.georgehart.com/zonohedra/zonohedrification.html)
