@@ -184,7 +184,7 @@ along x, y and z.
   the dodecahedron. *(Recorded 2026-10-06.)*
 
 Verified here by `scripts/verify-roof-fold.mjs` (geometry in
-`src/geometry-extensions/roof-fold.js`), and buildable in the Roof Fold world. The original notes labelled the
+`src/geometry-extensions/roof-fold.js`), and buildable in the Icosahedral/Dodecahedral Transitions world. The original notes labelled the
 icosahedron site 12i; the stabiliser check shows (0, y, z) with a single
 mirror, which is 12j in the International Tables' list for Pm-3.
 

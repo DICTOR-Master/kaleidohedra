@@ -359,8 +359,8 @@ export const LATTICES_3D = [
   { key: 'golden', label: 'Golden Rhombohedra', pieces: [
     { label: 'Golden Rhombohedra', action: 'tool:goldenWorld' },
   ] },
-  { key: 'roofFold', label: 'Roof Fold', pieces: [
-    { label: 'Roof Fold', action: 'tool:roofFoldWorld' },
+  { key: 'roofFold', label: 'Icosahedral/Dodecahedral Transitions', pieces: [
+    { label: 'Icosahedral/Dodecahedral Transitions', action: 'tool:roofFoldWorld' },
   ] },
 ];
 

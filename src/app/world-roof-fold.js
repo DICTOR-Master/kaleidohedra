@@ -1,4 +1,4 @@
-// Roof Fold: a 3D world of its own on the roof-fold cell (DISCOVERIES.md #8,
+// Icosahedral/Dodecahedral Transitions: a 3D world of its own on the roof-fold cell (DISCOVERIES.md #8,
 // geometry in geometry-extensions/roof-fold.js). Sites are a simple cubic
 // lattice of period phi^2 (icosahedron edge 1). Four solids, one at a time,
 // several per site: cube, dodecahedron, icosahedron, 20-point star. Tap a
