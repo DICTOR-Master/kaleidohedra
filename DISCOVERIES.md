@@ -23,8 +23,8 @@ priority.
 | 5 | Regular-hexagon elongated dodecahedron | DICTO (from the "hexagons and rhombi" hunch) | yes | **not found** — candidate | 2026-10-01 (8420a51) |
 | 6 | Exactly 9 "most regular" space-fillers | Kaleidohedra two-way search | yes | not yet searched | 2026-10-01 (547aac9) |
 | 7 | DICTO skewed ED (two forms) | Kaleidohedra (extending #1) | yes | not yet searched | 2026-10-01 (e97193f) |
-| 8 | Roof-fold cell: cube, dodecahedron and folded icosahedron (Pm-3) | DICTO (built a physical cell) | yes | **not found** — candidate; a periodic approximant-type structure like α-AlMnSi (no fivefold axis) | 2026-10-06 (6636342) |
-| 8b | Corner-sharing network of great stellated dodecahedra (even cells) and icosahedra (odd cells) | DICTO (from "the overlap belongs to the extraction") | yes | **not found** — candidate | 2026-10-06 |
+| 8 | Euclid–Kepler cell: cube, dodecahedron and folded icosahedron (Pm-3) | DICTO (built a physical cell) | yes | **not found** — candidate; a periodic approximant-type structure like α-AlMnSi (no fivefold axis) | 2026-10-06 (6636342) |
+| 8b | Euclid–Kepler network: great stellated dodecahedra (even cells) and icosahedra (odd cells), sharing only corners | DICTO (from "the overlap belongs to the extraction") | yes | **not found** — candidate | 2026-10-06 |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -148,7 +148,11 @@ Neither has a square face, consistent with DICTO's RD having none.
 - Status: not yet searched (same caveat as #1 — a specialist parallelohedra
   literature search would be needed to claim priority).
 
-## 8. Roof-fold cell
+## 8. Euclid–Kepler cell
+
+*Named 2026-10-06 by DICTO: Euclid for the roofs on the cube (Elements XIII), Kepler for the great
+stellated dodecahedron it contains (1619) and his nested Platonic solids (1596). Extraction (b) below
+is the **Euclid–Kepler network**. Code and file names keep the working name "roof-fold".*
 
 Put Euclid's roofs on a cube of edge 2 to make the regular dodecahedron, then
 reflect the 12 roof vertices back through the six cube faces: they land on a
@@ -162,6 +166,15 @@ along x, y and z.
 - **Spikes:** over each of the icosahedron's 20 faces sits exactly one node at
   2/φ from its three corners; the 20 tips are the dodecahedron's vertices and
   the spike faces are golden triangles (36° apex).
+- **Aligned symmetry** (DICTO's point, 2026-10-06: "the symmetries all
+  align in every direction"). Every cell repeats one orientation, so each
+  cell's solids carry the icosahedron's **31 rotation axes** (6 five-fold,
+  10 three-fold, 15 two-fold; 62 directions), all parallel through the whole
+  crystal. Of these, **7** are symmetries of the crystal itself (the 3 cube
+  axes as two-fold, the 4 body diagonals as three-fold); the other 24 are
+  local but aligned (non-crystallographic symmetry). The crystal's group m-3
+  is exactly the cube's symmetries that are also the icosahedron's, the most
+  icosahedral symmetry a periodic crystal can keep. Checked in CI.
 - **Not a tiling:** the dodecahedra overlap. Space is covered once (19%) or
   twice (81%), mean (5+√5)/4 ≈ 1.809, the dodecahedron's volume 10 + 2√5 over
   the cell's 8.
@@ -202,7 +215,8 @@ along x, y and z.
     cells share **only corners**: every star's 12 roof tips are vertices of
     the 6 neighbouring icosahedra, and an exact separating-axis test finds no
     overlap. A corner-sharing (Kagome-like) network of Kepler stars and
-    icosahedra. **Not found** — candidate (targeted search below).
+    icosahedra: the **Euclid–Kepler network**. **Not found** — candidate
+    (targeted search below).
   - Dodecahedra on even cells with icosahedra on odd cells do overlap; the
     stars are what make (b) corner-sharing.
 - **Literature search (web-level, 2026-10-06).** Status of the parts:

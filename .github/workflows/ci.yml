@@ -45,7 +45,7 @@ jobs:
       - run: node scripts/verify-dicto-fcc.mjs
       # Kaleidohedra: the lattice shear, the Cell slider and the regularity meter.
       - run: node scripts/verify-kaleido.mjs
-      # Roof-fold cell: cube, dodecahedron and folded icosahedron, Pm-3.
+      # Euclid–Kepler cell: cube, dodecahedron and folded icosahedron, Pm-3.
       - run: node scripts/verify-roof-fold.mjs
       # 4D worlds: Z4, D4 and hyper-pyrochlore cells, slices and steps.
       - run: node scripts/verify-4d.mjs
