@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use or refer to this work, please cite it as below."
+title: "Kaleidohedra: the Euclid–Kepler cell and the Euclid–Kepler network"
+authors:
+  - name: "DICTO"
+type: software
+license: MIT
+repository-code: "https://github.com/DICTOR-Master/kaleidohedra"
+date-released: "2026-10-06"
+keywords:
+  - "Euclid–Kepler cell"
+  - "Euclid–Kepler network"
+  - "great stellated dodecahedron"
+  - "icosahedron"
+  - "dodecahedron"
+  - "golden ratio"
+abstract: >-
+  Euclid's roofs on a cube make the regular dodecahedron; folding the roof
+  vertices back through the cube faces makes the regular icosahedron, edges
+  φ² : φ : 1, each roof vertex landing on a neighbouring cell's icosahedron.
+  On a simple cubic lattice: 13 nodes per cell, Pm-3, with every cell's 31
+  icosahedral axes aligned. Great stellated dodecahedra on the even cells and
+  icosahedra on the odd cells share only corners (the Euclid–Kepler network).
+  Every claim is checked by scripts/verify-roof-fold.mjs. See DISCOVERIES.md #8.

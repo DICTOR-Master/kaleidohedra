@@ -243,6 +243,15 @@ along x, y and z.
     spikes**, and has no icosahedra. (b) is a different arrangement (one
     orientation, FCC, corner contacts only, icosahedra in the other cells)
     and was not found.
+  - **Construction-kit and maths-art search** (2026-10-06): George Hart's
+    pages and Zome Geometry book, nested-Platonic-solid kit models, and the
+    Bridges archive. Found only single nested objects (an icosahedron in a
+    cube; the five nested Platonic solids with Euclid's roof caps; a stellated
+    dodecahedron inside an icosahedron, Hildebrandt, Bridges 2006) and other
+    periodic structures (Gailiunas, triply periodic links, Bridges 2022). No
+    periodic arrangement of this cell or of the Euclid–Kepler network. The
+    dodecahedral–icosahedral honeycomb that fits these solids face to face
+    exists only in hyperbolic space.
   - Before claiming priority: check Koca et al. in full, approximant and
     skutterudite structure databases (Bilbao, ICSD) for a 1b + 12j set with
     y = 1/(2φ), z = 1/(2φ²), and stellated-icosahedron framework literature.
@@ -275,6 +284,9 @@ An archived, citable snapshot (e.g. a Zenodo DOI, as for RHOMBITURE) would make 
 - [Quaternionic representations of the pyritohedral group, related polyhedra and lattices — Koca et al.](https://arxiv.org/abs/1506.04600)
 - [Pyritohedral icosahedron — Polytope Wiki](https://polytope.miraheze.org/wiki/Pyritohedral_icosahedron)
 - [Dense regular packings of irregular nonconvex particles — de Graaf, van Roij & Dijkstra, PRL 107, 155501 (2011)](https://doi.org/10.1103/PhysRevLett.107.155501)
+- [Zometool icosahedron in cube — George Hart, Zome Geometry](https://www.georgehart.com/zomebook/icosa-cube.html)
+- [Zome-inspired sculpture — Paul Hildebrandt, Bridges 2006](https://archive.bridgesmathart.org/2006/bridges2006-335.pdf)
+- [Dodecahedral-icosahedral honeycomb (hyperbolic) — Wikipedia](https://en.wikipedia.org/wiki/Dodecahedral-icosahedral_honeycomb)
 - [Great stellated dodecahedron — Wikipedia](https://en.wikipedia.org/wiki/Great_stellated_dodecahedron)
 - [Icosahedral tiling with dodecahedral structures — Koca et al. (2020)](https://arxiv.org/abs/2008.00862) (aperiodic; not this structure)
 - [Zonohedron — Wikipedia](https://en.wikipedia.org/wiki/Zonohedron)
