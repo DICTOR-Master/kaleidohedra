@@ -66,7 +66,7 @@ export function saveToLocalStorage(worldJSON, key = STORAGE_KEY) {
   try {
     localStorage.setItem(key, JSON.stringify(worldJSON));
   } catch (err) {
-    console.warn('Rhombiverse: failed to save world to localStorage', err);
+    console.warn('Kaleidohedra: failed to save world to localStorage', err);
   }
 }
 
@@ -76,7 +76,7 @@ export function loadFromLocalStorage(key = STORAGE_KEY) {
   try {
     return JSON.parse(raw);
   } catch (err) {
-    console.warn('Rhombiverse: saved world was corrupt JSON, ignoring', err);
+    console.warn('Kaleidohedra: saved world was corrupt JSON, ignoring', err);
     return null;
   }
 }

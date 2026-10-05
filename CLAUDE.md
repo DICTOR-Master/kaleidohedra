@@ -28,11 +28,13 @@ The 3D engine (`index.html`, `src/`, `data/`) is forked from
 Rhombiverse's own code (FCC world, lattice view, saving), so building
 stays exactly as in Rhombiverse while Kaleidohedra's own controls (the
 shear slider, "towards…" picker, Export of population members) are
-layered on top. See `PLAN.md`'s "Build order" for what stage that is at
-— until noted otherwise there, titles, meta tags and in-app copy on the
-forked engine files still describe Rhombiverse and haven't been
-rebranded yet; don't assume they describe Kaleidohedra-specific
-behavior.
+layered on top. The app is branded Kaleidohedra (title, metadata,
+welcome mark from `assets/brand/`, guide) and deployed at
+https://kaleidohedra.vercel.app. Internal ids stay Rhombiverse's on
+purpose: localStorage keys (`rhombiverse-*`) and the world-bundle
+`app: 'rhombiverse'` field, so saves and exported worlds still load in
+both apps. RHOMBIS is not part of Kaleidohedra; its links open it on
+rhombiverse.vercel.app.
 
 ## Scope guardrails
 
@@ -79,7 +81,7 @@ yet diverged for Kaleidohedra's own slider/export model.
   pass the files, `node --test tests/unit/*.test.mjs`).
 - **Browser smoke test:** `tests/browser/smoke.mjs` against a served
   copy, raw source and `dist/` both, in CI.
-- **Checks:** `npm run verify:i18n | verify:rhombis-i18n | verify:copy |
+- **Checks:** `npm run verify:i18n | verify:copy |
   verify:lattice-2d | verify:pyrochlore | verify:rhombohedra | verify:4d |
   verify:quasicrystal | verify:catalogue | verify:kaleido | verify:shells |
   verify:kaleidoscope | verify:trajectory | verify:construction |

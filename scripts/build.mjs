@@ -44,7 +44,7 @@ async function main() {
   // repo (docs, tests, CI config, api/'s own source) is either not
   // client-servable or handled separately by Vercel (api/ serverless
   // functions deploy independent of the static outputDirectory).
-  const staticEntries = ['index.html', 'rhombis.html', 'guide.html', 'legal.html', 'docs/guide.md', ...['ja', 'es', 'fr', 'ko', 'zh', 'ru'].map((l) => `docs/guide.${l}.md`), 'favicon.svg', 'assets', 'data', 'TERMS.md', 'PRIVACY.md', 'SECURITY.md'];
+  const staticEntries = ['index.html', 'guide.html', 'legal.html', 'docs/guide.md', ...['ja', 'es', 'fr', 'ko', 'zh', 'ru'].map((l) => `docs/guide.${l}.md`), 'assets', 'data', 'TERMS.md', 'PRIVACY.md', 'SECURITY.md'];
   for (const entry of staticEntries) {
     await cp(path.join(root, entry), path.join(dist, entry), { recursive: true });
   }
@@ -58,10 +58,10 @@ async function main() {
   const guideBody = renderMarkdown(await readFile(path.join(root, 'docs/guide.md'), 'utf8'));
   if (!guideHtml.includes('<main class="md-guide">Loading…</main>')) throw new Error('guide.html: <main> placeholder not found');
   await writeFile(guidePath, guideHtml.replace('<main class="md-guide">Loading…</main>', `<main class="md-guide" data-prerendered="en">${guideBody}</main>`));
-  const SITE = 'https://rhombiverse.vercel.app';
+  const SITE = 'https://kaleidohedra.vercel.app';
   const today = new Date().toISOString().slice(0, 10);
   await writeFile(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
-  const pages = ['/', '/guide', ...['ja', 'es', 'fr', 'ko', 'zh', 'ru'].map((l) => `/guide?lang=${l}`), '/rhombis.html', '/terms', '/privacy'];
+  const pages = ['/', '/guide', ...['ja', 'es', 'fr', 'ko', 'zh', 'ru'].map((l) => `/guide?lang=${l}`), '/terms', '/privacy'];
   await writeFile(path.join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map((u) => `  <url><loc>${SITE}${u.replace('&', '&amp;')}</loc><lastmod>${today}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 
   const jsFiles = await findJsFiles(path.join(root, 'src'));

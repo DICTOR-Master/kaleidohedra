@@ -50,7 +50,7 @@ export function updateSettings(partial) {
   try {
     localStorage.setItem(SETTINGS_KEY, JSON.stringify(current));
   } catch (err) {
-    console.warn('Rhombiverse: failed to save settings', err);
+    console.warn('Kaleidohedra: failed to save settings', err);
   }
   listeners.forEach((fn) => fn(current));
 }

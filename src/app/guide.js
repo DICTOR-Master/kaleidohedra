@@ -29,7 +29,7 @@ function loadGuide(lang) {
     .catch(() => (lang === 'en' ? Promise.reject(new Error('no guide')) : get(guideUrl('en'))))
     .then((md) => { if (loadedLang === lang) body.innerHTML = renderMarkdown(md); })
     .catch((err) => {
-      console.warn('Rhombiverse: failed to load guide', err);
+      console.warn('Kaleidohedra: failed to load guide', err);
       if (loadedLang === lang) body.textContent = t('guide.failed', lang);
     });
 }
@@ -49,7 +49,7 @@ function build() {
   overlay = document.createElement('div');
   overlay.id = 'guide-overlay';
   overlay.setAttribute('role', 'dialog');
-  overlay.setAttribute('aria-label', 'Rhombiverse User Guide');
+  overlay.setAttribute('aria-label', 'Kaleidohedra User Guide');
   overlay.innerHTML = `
     <div id="guide-bar">
       <button id="guide-close" type="button" title="Close (Esc)" aria-label="Close">✕</button>

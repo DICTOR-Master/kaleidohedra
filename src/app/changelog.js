@@ -38,7 +38,7 @@ async function init() {
     const res = await fetch('./data/changelog.json');
     entries = await res.json();
   } catch (err) {
-    console.warn('Rhombiverse: failed to load changelog', err);
+    console.warn('Kaleidohedra: failed to load changelog', err);
     return;
   }
   overlay.innerHTML = panelHtml(entries);

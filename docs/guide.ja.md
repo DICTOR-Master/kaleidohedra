@@ -1,12 +1,26 @@
-# Rhombiverse ユーザーガイド
+# Kaleidohedra ユーザーガイド
 
-Rhombiverse とその双子の [Polyhedraverse](https://polyhedraverse.vercel.app) は、同じ幾何学を 2 つの見方で眺めるサイトです。Rhombiverse は**風景**：あらゆる方向へ広がる格子そのもの。Polyhedraverse は**肖像画ギャラリー**：その格子に住む形を、1 つずつ間近で見せます。
+DICTO による Kaleidohedra は、[Rhombiverse](https://rhombiverse.vercel.app) と [Polyhedraverse](https://polyhedraverse.vercel.app) に続く 3 番目の姉妹サイトです。Rhombiverse は**風景**：どの方向にも広がる格子そのもの。Polyhedraverse は**肖像画のギャラリー**：その格子に住む形を、ひとつずつ間近に。Kaleidohedra は**風景を動かします**：格子全体をずらしたり滑らせたりでき、すべてのピースが一緒に動きます。以下で説明する Rhombiverse のすべてのワールドに加え、独自のコントロール（次の節）と「二十面体／十二面体の遷移」ワールドがあります。
 
 ここでは、どのピースも本物の結晶格子の上で空間をすき間なく埋めます。そのため、ピースは格子に空きがある場所にしか置けません。タップでピースを追加し、長押しで取り除き、作ったものを 1D から 6D までのさまざまな表示で眺めてみましょう。
 
 このガイドの前半ではよく使う操作を順に説明し、後半ではすべての操作を一覧にしています。
 
 画面上のボタン名は、アプリに表示されるとおりに書いています（アプリがまだ翻訳していないものは英語のままです）。
+
+## 格子をずらす（シアー）
+
+Kaleidohedra 独自のコントロールは、右上の **⟋ Shear** パネルにあります。格子全体を一度に動かします。作ったものはすべて一緒に滑り、組み立てはいつも通り続けられます。
+
+- **Towards** は格子の行き先を選びます：**DICTO FCC**（ふつうの FCC 格子から DICTO のずれた格子へ）か **Bain (BCC → FCC)**。
+- **Path** はその正確な道筋に沿って滑らせます。停止点ボタン（FCC、halfway、DICTO FCC など）で名前の付いた点へ飛べます。
+- **Cell** は同じ格子のままセルの形を変えます：0 はずれただけのセル、1 はすべての辺が等しいセル（DICTO FCC の停止点では DICTO の歪んだ菱形十二面体）。
+- **Regularity** メーターはセルを角度で採点します（1 はすべての角が特別な角：36・45・60・70.5・72・90°）。Bain の道筋では、二等辺四面体のうち正四面体になっている数も数えます。
+- **◀ Find** と **Find ▶** は、道筋に沿って次に最も規則的なセル、または正六角形が現れる瞬間へ飛びます。先に停止点をタップしてください。
+- **Six sliders** で格子の長さ a・b・c と角度 α・β・γ を直接設定できます。
+- **Export member** は今の状態を、名前を付けて小さな JSON ファイル（集団のメンバー）として保存します。
+
+「二十面体／十二面体の遷移」では、ずらすと二十面体が崩れるため Shear パネルは隠れます。Kaleidohedra の発見と、その検証方法は [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md) にあります。
 
 ## はじめに
 
@@ -177,7 +191,7 @@ FCC で試してみましょう。Pyramid を 6 つ置いて Cube を作りま�
 
 ## RHOMBIS
 
-RHOMBIS は同じピースで作る 3D パズルです。トレイのピースで目標の形を埋めます。ウェルカム画面の「RHOMBIS」のリンクから開きます。トレイのピースをタップし、光っているすき間をタップして置きます。もう一度タップすると裏返るピースもあります。**ステージ**にはすべてのパズルが区分ごとに並び、解いたものに印が付きます。**← Rhombiverse** でここに戻ります。
+同じピースで作る 3D パズル RHOMBIS は、姉妹サイト Rhombiverse にあります：ウェルカム画面（**RHOMBISを試す**）か [rhombiverse.vercel.app/rhombis.html](https://rhombiverse.vercel.app/rhombis.html) から開けます。
 
 ## 作品を保存する
 

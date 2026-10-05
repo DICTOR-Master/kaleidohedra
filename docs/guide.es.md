@@ -1,12 +1,26 @@
-# Guía del usuario de Rhombiverse
+# Guía del usuario de Kaleidohedra
 
-Rhombiverse y su gemelo, [Polyhedraverse](https://polyhedraverse.vercel.app), son dos maneras de mirar la misma geometría. Rhombiverse es el **paisaje**: las propias redes, que se extienden en todas direcciones. Polyhedraverse es la **galería de retratos**: las formas que viven en esas redes, de una en una y de cerca.
+Kaleidohedra, de DICTO, es el tercer hermano de [Rhombiverse](https://rhombiverse.vercel.app) y [Polyhedraverse](https://polyhedraverse.vercel.app). Rhombiverse es el **paisaje**: las redes mismas, extendiéndose en todas direcciones. Polyhedraverse es la **galería de retratos**: las formas que viven en esas redes, una a una, de cerca. Kaleidohedra **mueve el paisaje**: puedes cizallar y deslizar toda la red, y cada pieza se mueve con ella. Tiene todos los mundos de Rhombiverse descritos abajo, más sus propios controles (siguiente sección) y el mundo Transiciones icosaédricas/dodecaédricas.
 
 Aquí cada pieza llena el espacio a la perfección sobre una red cristalina real, así que solo puedes poner una pieza donde la red tenga sitio para ella. Toca para añadir una pieza, mantén pulsado para quitarla y observa lo que has construido con distintas vistas, de 1D a 6D.
 
 La primera parte de esta guía recorre las tareas habituales. La segunda enumera todos los controles.
 
 Los nombres de los botones aparecen tal como se ven en la aplicación (los que la aplicación aún no traduce siguen en inglés).
+
+## Cizallar la red
+
+Los controles propios de Kaleidohedra están en el panel **⟋ Shear**, arriba a la derecha. Mueven toda la red a la vez: todo lo que has construido se desliza con ella, y la construcción sigue como siempre.
+
+- **Towards** elige hacia dónde va la red: **DICTO FCC** (de la red FCC normal a la cizallada de DICTO) o **Bain (BCC → FCC)**.
+- **Path** desliza a lo largo de ese camino exacto; los botones de parada (como FCC, halfway y DICTO FCC) saltan a sus puntos con nombre.
+- **Cell** cambia la forma de la celda sobre la misma red: 0 es la celda simplemente cizallada, 1 la celda con todas las aristas iguales (en la parada DICTO FCC, el dodecaedro rómbico sesgado de DICTO).
+- El medidor **Regularity** puntúa la celda por sus ángulos (1 significa que todos los ángulos son especiales: 36, 45, 60, 70,5, 72 o 90°). En el camino de Bain también cuenta cuántos de sus disfenoides son tetraedros regulares.
+- **◀ Find** y **Find ▶** saltan por el camino a la siguiente celda más regular o al siguiente momento en que aparece un hexágono regular. Toca primero una parada.
+- **Six sliders** fija directamente las longitudes a, b, c y los ángulos α, β, γ de la red.
+- **Export member** guarda el estado actual con el nombre que elijas, como un pequeño archivo JSON (un miembro de la población).
+
+El panel Shear se oculta en Transiciones icosaédricas/dodecaédricas, donde el cizallamiento rompería los icosaedros. Los hallazgos de Kaleidohedra, y cómo se comprueba cada uno, están en [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md).
 
 ## Primeros pasos
 
@@ -177,7 +191,7 @@ La celda de este mundo es la **celda Euclid–Kepler**, y los grandes dodecaedro
 
 ## RHOMBIS
 
-RHOMBIS es un rompecabezas 3D hecho con las mismas piezas: llena la forma objetivo con las piezas de la bandeja. Ábrelo desde la pantalla de bienvenida (**Prueba RHOMBIS**). Toca una pieza de la bandeja y luego un hueco iluminado para colocarla; algunas piezas se voltean si las tocas otra vez. **Etapas** muestra todos los rompecabezas por secciones y marca los que has resuelto. **← Rhombiverse** te trae de vuelta aquí.
+RHOMBIS, un rompecabezas 3D hecho con las mismas piezas, está en el sitio hermano Rhombiverse: ábrelo desde la pantalla de bienvenida (**Prueba RHOMBIS**) o en [rhombiverse.vercel.app/rhombis.html](https://rhombiverse.vercel.app/rhombis.html).
 
 ## Guarda tu trabajo
 

@@ -158,7 +158,7 @@ export const LATTICE_CONCEPT_ENTRIES = [
     kind: 'concept',
     id: 'concept:bccLattice',
     label: 'The BCC Lattice',
-    desc: "Rhombiverse's world grid is a real body-centered cubic (BCC) lattice -- every cell has 8 nearest neighbors (the cube corners) and 6 next-nearest (the face centers), the same coordination real BCC crystals (iron, tungsten) have. The interstitial pieces (Flattened Octahedron, Disphenoid) exist because a BCC lattice's own gaps have real, specific shapes -- they aren't placed arbitrarily.",
+    desc: "The BCC world's grid is a real body-centered cubic (BCC) lattice -- every cell has 8 nearest neighbors (the cube corners) and 6 next-nearest (the face centers), the same coordination real BCC crystals (iron, tungsten) have. The interstitial pieces (Flattened Octahedron, Disphenoid) exist because a BCC lattice's own gaps have real, specific shapes -- they aren't placed arbitrarily.",
     markKey: null,
   },
   {

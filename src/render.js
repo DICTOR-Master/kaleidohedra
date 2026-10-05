@@ -1199,7 +1199,7 @@ function buildHemisphereGeometry(piece, subScale) {
   }
   // 'hourglass': cellA's own positive half (toward cellB) merged with
   // cellB's own negative half (toward cellA) -- same offsetIndex for
-  // both, same reasoning rhombis/geometry.js's buildHourglassStage
+  // both, same reasoning RHOMBIS's buildHourglassStage (in Rhombiverse)
   // already established (a fixed global direction, not a per-cell one).
   const [ax, ay, az] = cellToWorld(...piece.cellA, subScale);
   const [bx, by, bz] = cellToWorld(...piece.cellB, subScale);
@@ -6021,8 +6021,8 @@ async function init() {
         onChange();
       }
     } catch (err) {
-      alert('That file is not valid Rhombiverse world JSON.');
-      console.warn('Rhombiverse: import failed', err);
+      alert('That file is not a valid world file.');
+      console.warn('Kaleidohedra: import failed', err);
     } finally {
       importInput.value = '';
     }

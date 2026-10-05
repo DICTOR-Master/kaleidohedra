@@ -1,10 +1,24 @@
-# Rhombiverse User Guide
+# Kaleidohedra User Guide
 
-Rhombiverse and its twin, [Polyhedraverse](https://polyhedraverse.vercel.app), are two ways of looking at the same geometry. Rhombiverse is the **landscape**: the lattices themselves, stretching out in every direction. Polyhedraverse is the **portrait gallery**: the shapes that live in those lattices, one at a time, up close.
+Kaleidohedra by DICTO is the third sibling of [Rhombiverse](https://rhombiverse.vercel.app) and [Polyhedraverse](https://polyhedraverse.vercel.app). Rhombiverse is the **landscape**: the lattices themselves, stretching out in every direction. Polyhedraverse is the **portrait gallery**: the shapes that live in those lattices, one at a time, up close. Kaleidohedra **moves the landscape**: you can shear and slide the whole lattice, and every piece moves with it. It has every Rhombiverse world described below, plus its own controls (next section) and the Icosahedral/Dodecahedral Transitions world.
 
 Here, every piece fills space perfectly on a real crystal lattice, so you can only put a piece where the lattice has room for it. Tap to add a piece, long-press to remove one, and look at what you've built in different views, from 1D up to 6D.
 
 The first part of this guide walks through common tasks. The second part lists every control.
+
+## Shearing the lattice
+
+Kaleidohedra's own controls are in the **⟋ Shear** panel at the top right. They move the whole lattice at once: everything you've built slides with it, and building carries on as usual.
+
+- **Towards** picks where the lattice is heading: **DICTO FCC** (from the ordinary FCC lattice to DICTO's sheared one) or **Bain (BCC → FCC)**.
+- **Path** slides along that exact route; the stop buttons (such as FCC, halfway and DICTO FCC) jump to its named points.
+- **Cell** changes the cell's shape on the same lattice: 0 is the plain sheared cell, 1 the cell with all edges equal (at the DICTO FCC stop, DICTO's skewed rhombic dodecahedron).
+- The **Regularity** meter scores the cell by its angles (1 means every angle is special: 36, 45, 60, 70.5, 72 or 90°). On the Bain path it also counts how many of its disphenoids are regular tetrahedra.
+- **◀ Find** and **Find ▶** jump along the path to the next most regular cell or the next moment a regular hexagon appears. Tap a stop first.
+- **Six sliders** set the lattice's lengths a, b, c and angles α, β, γ directly.
+- **Export member** saves the current state under a name you choose, as a small JSON file (a population member).
+
+The Shear panel hides in Icosahedral/Dodecahedral Transitions, where shearing would break the icosahedra. The findings behind Kaleidohedra, and how each one is checked, are in [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md).
 
 ## Getting started
 
@@ -175,7 +189,7 @@ The cell behind this world is the **Euclid–Kepler cell**, and great stellated 
 
 ## RHOMBIS
 
-RHOMBIS is a 3D puzzle made from the same pieces: fill the target shape with the pieces in the tray. Open it from the welcome screen (**Try RHOMBIS**). Tap a piece in the tray, then tap a glowing void to place it; some pieces flip when tapped again. **Stages** lists every puzzle in sections and ticks the ones you've solved. **← Rhombiverse** brings you back here.
+RHOMBIS, a 3D puzzle made from the same pieces, lives on the sibling site Rhombiverse: open it from the welcome screen (**Try RHOMBIS**) or at [rhombiverse.vercel.app/rhombis.html](https://rhombiverse.vercel.app/rhombis.html).
 
 ## Saving your work
 

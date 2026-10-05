@@ -10,7 +10,7 @@ export function saveCameraState(position, target) {
       target: [target.x, target.y, target.z],
     }));
   } catch (err) {
-    console.warn('Rhombiverse: failed to save camera position', err);
+    console.warn('Kaleidohedra: failed to save camera position', err);
   }
 }
 

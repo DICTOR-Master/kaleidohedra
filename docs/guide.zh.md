@@ -1,12 +1,26 @@
-# Rhombiverse 用户指南
+# Kaleidohedra 用户指南
 
-Rhombiverse 和它的孪生网站 [Polyhedraverse](https://polyhedraverse.vercel.app) 是观察同一种几何的两种方式。Rhombiverse 是**风景**：向四面八方延伸的晶格本身。Polyhedraverse 是**肖像画廊**：住在这些晶格里的形状，一次一个，近距离展示。
+DICTO 的 Kaleidohedra 是 [Rhombiverse](https://rhombiverse.vercel.app) 和 [Polyhedraverse](https://polyhedraverse.vercel.app) 之后的第三个姊妹站点。Rhombiverse 是**风景**：向各个方向延伸的晶格本身。Polyhedraverse 是**肖像画廊**：住在这些晶格里的形状，一个一个近距离地看。Kaleidohedra **让风景动起来**：你可以剪切、滑动整个晶格，每一块都随之移动。它包含下文介绍的所有 Rhombiverse 世界，另有自己的控件（下一节）和“二十面体/十二面体转变”世界。
 
 在这里，每个部件都在真实的晶体晶格上无缝地填满空间，所以只能把部件放在晶格有空位的地方。轻点添加部件，长按移除部件，再用不同的视图从 1D 到 6D 查看你的作品。
 
 本指南的第一部分介绍常用操作，第二部分列出所有控件。
 
 按钮名称按应用中显示的样子书写（应用尚未翻译的名称保留英文）。
+
+## 剪切晶格
+
+Kaleidohedra 自己的控件在右上角的 **⟋ Shear** 面板里。它们一次移动整个晶格：你搭建的一切都随之滑动，搭建照常继续。
+
+- **Towards** 选择晶格的去向：**DICTO FCC**（从普通 FCC 晶格到 DICTO 的剪切晶格）或 **Bain (BCC → FCC)**。
+- **Path** 沿这条精确路径滑动；停靠点按钮（如 FCC、halfway、DICTO FCC）可跳到有名字的点。
+- **Cell** 在同一晶格上改变胞的形状：0 是单纯剪切的胞，1 是所有棱等长的胞（在 DICTO FCC 停靠点，即 DICTO 的歪斜菱形十二面体）。
+- **Regularity** 计量表按角度给胞打分（1 表示每个角都是特殊角：36、45、60、70.5、72 或 90°）。在 Bain 路径上，它还会数出其双楔体中有几个是正四面体。
+- **◀ Find** 和 **Find ▶** 沿路径跳到下一个最规则的胞，或下一个出现正六边形的时刻。请先点按一个停靠点。
+- **Six sliders** 直接设定晶格的长度 a、b、c 和角度 α、β、γ。
+- **Export member** 把当前状态以你起的名字保存为一个小 JSON 文件（一个群体成员）。
+
+在“二十面体/十二面体转变”中，剪切会破坏二十面体，因此 Shear 面板会隐藏。Kaleidohedra 的发现以及每一项的验证方法见 [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md)。
 
 ## 入门
 
@@ -177,7 +191,7 @@ Rhombiverse 和它的孪生网站 [Polyhedraverse](https://polyhedraverse.vercel
 
 ## RHOMBIS
 
-RHOMBIS 是用同样的块做成的 3D 解谜游戏：用托盘里的块填满目标形状。从欢迎界面的 RHOMBIS 链接打开。点按托盘里的一块，再点按发光的空位把它放进去；有些块再点一次会翻转。**关卡**按分区列出所有谜题，并为你解开的打勾。**← Rhombiverse** 回到这里。
+用同样的块做成的 3D 解谜 RHOMBIS 在姊妹站点 Rhombiverse 上：从欢迎界面（**试试 RHOMBIS**）或在 [rhombiverse.vercel.app/rhombis.html](https://rhombiverse.vercel.app/rhombis.html) 打开。
 
 ## 保存你的作品
 

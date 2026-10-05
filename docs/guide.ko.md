@@ -1,12 +1,26 @@
-# Rhombiverse 사용자 가이드
+# Kaleidohedra 사용자 가이드
 
-Rhombiverse와 그 쌍둥이인 [Polyhedraverse](https://polyhedraverse.vercel.app)는 같은 기하학을 바라보는 두 가지 방법입니다. Rhombiverse는 **풍경**입니다. 사방으로 뻗어 나가는 격자 그 자체를 보여 줍니다. Polyhedraverse는 **초상화 갤러리**입니다. 그 격자에 사는 도형을 하나씩 가까이에서 보여 줍니다.
+DICTO의 Kaleidohedra는 [Rhombiverse](https://rhombiverse.vercel.app)와 [Polyhedraverse](https://polyhedraverse.vercel.app)에 이은 세 번째 자매 사이트입니다. Rhombiverse는 **풍경**입니다: 모든 방향으로 뻗어 나가는 격자 그 자체. Polyhedraverse는 **초상화 갤러리**입니다: 그 격자에 사는 도형을 하나씩 가까이에서. Kaleidohedra는 **풍경을 움직입니다**: 격자 전체를 기울이고 미끄러뜨릴 수 있으며, 모든 조각이 함께 움직입니다. 아래에 설명된 Rhombiverse의 모든 세계와 함께, 고유한 컨트롤(다음 절)과 이십면체/십이면체 전이 세계가 있습니다.
 
 여기서는 모든 조각이 실제 결정 격자 위에서 빈틈없이 공간을 채웁니다. 그래서 격자에 자리가 있는 곳에만 조각을 놓을 수 있습니다. 탭하면 조각이 추가되고, 길게 누르면 제거됩니다. 만든 것을 1D부터 6D까지 여러 보기로 살펴보세요.
 
 이 안내서의 앞부분은 자주 하는 작업을 차례로 설명하고, 뒷부분은 모든 조작을 목록으로 정리합니다.
 
 버튼 이름은 앱에 표시되는 그대로 적었습니다(앱에서 아직 번역되지 않은 이름은 영어로 둡니다).
+
+## 격자 기울이기(시어)
+
+Kaleidohedra의 고유한 컨트롤은 오른쪽 위 **⟋ Shear** 패널에 있습니다. 격자 전체를 한 번에 움직입니다: 만든 것은 모두 함께 미끄러지고, 만들기는 평소처럼 계속됩니다.
+
+- **Towards**는 격자가 향할 곳을 고릅니다: **DICTO FCC**(보통의 FCC 격자에서 DICTO의 기울어진 격자로) 또는 **Bain (BCC → FCC)**.
+- **Path**는 그 정확한 경로를 따라 미끄러뜨립니다. 정지점 버튼(FCC, halfway, DICTO FCC 등)으로 이름 붙은 지점으로 바로 갑니다.
+- **Cell**은 같은 격자에서 셀의 모양을 바꿉니다: 0은 그냥 기울어진 셀, 1은 모든 모서리가 같은 셀(DICTO FCC 정지점에서는 DICTO의 비스듬한 마름모십이면체).
+- **Regularity** 미터는 셀을 각도로 채점합니다(1은 모든 각이 특별한 각: 36, 45, 60, 70.5, 72, 90°). Bain 경로에서는 이등변사면체 중 정사면체가 몇 개인지도 셉니다.
+- **◀ Find**와 **Find ▶**는 경로를 따라 다음으로 가장 규칙적인 셀, 또는 정육각형이 나타나는 다음 순간으로 갑니다. 먼저 정지점을 탭하세요.
+- **Six sliders**로 격자의 길이 a, b, c와 각도 α, β, γ를 직접 정합니다.
+- **Export member**는 현재 상태를 원하는 이름으로 작은 JSON 파일(집단의 구성원)로 저장합니다.
+
+이십면체/십이면체 전이에서는 기울이면 이십면체가 깨지므로 Shear 패널이 숨겨집니다. Kaleidohedra의 발견과 각각을 확인하는 방법은 [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md)에 있습니다.
 
 ## 시작하기
 
@@ -177,7 +191,7 @@ FCC에서 해 보세요. Pyramid 여섯 개를 놓아 Cube를 만듭니다. 그�
 
 ## RHOMBIS
 
-RHOMBIS는 같은 조각으로 만드는 3D 퍼즐입니다. 트레이의 조각으로 목표 모양을 채우세요. 환영 화면의 RHOMBIS 링크에서 열 수 있습니다. 트레이의 조각을 탭한 다음, 빛나는 빈자리를 탭해 놓습니다. 다시 탭하면 뒤집히는 조각도 있습니다. **스테이지**에는 모든 퍼즐이 구역별로 나오고, 푼 퍼즐에는 표시가 붙습니다. **← Rhombiverse**로 여기에 돌아옵니다.
+같은 조각으로 만드는 3D 퍼즐 RHOMBIS는 자매 사이트 Rhombiverse에 있습니다: 시작 화면(**RHOMBIS 해보기**)이나 [rhombiverse.vercel.app/rhombis.html](https://rhombiverse.vercel.app/rhombis.html)에서 여세요.
 
 ## 작품 저장하기
 

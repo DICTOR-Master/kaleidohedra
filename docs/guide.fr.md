@@ -1,12 +1,26 @@
-# Guide de l'utilisateur de Rhombiverse
+# Guide de l'utilisateur de Kaleidohedra
 
-Rhombiverse et son jumeau, [Polyhedraverse](https://polyhedraverse.vercel.app), sont deux façons de regarder la même géométrie. Rhombiverse est le **paysage** : les réseaux eux-mêmes, qui s'étendent dans toutes les directions. Polyhedraverse est la **galerie de portraits** : les formes qui habitent ces réseaux, une à la fois, vues de près.
+Kaleidohedra, par DICTO, est le troisième frère de [Rhombiverse](https://rhombiverse.vercel.app) et [Polyhedraverse](https://polyhedraverse.vercel.app). Rhombiverse est le **paysage** : les réseaux eux-mêmes, qui s'étendent dans toutes les directions. Polyhedraverse est la **galerie de portraits** : les formes qui vivent dans ces réseaux, une à une, de près. Kaleidohedra **fait bouger le paysage** : vous pouvez cisailler et faire glisser tout le réseau, et chaque pièce bouge avec lui. Il contient tous les mondes de Rhombiverse décrits ci-dessous, plus ses propres commandes (section suivante) et le monde Transitions icosaédriques/dodécaédriques.
 
 Ici, chaque pièce remplit parfaitement l'espace sur un vrai réseau cristallin : on ne peut donc poser une pièce que là où le réseau a de la place pour elle. Touchez pour ajouter une pièce, appuyez longuement pour en retirer une, et regardez ce que vous avez construit sous différentes vues, de la 1D à la 6D.
 
 La première partie de ce guide présente les tâches courantes. La seconde liste toutes les commandes.
 
 Les noms des boutons sont écrits tels qu'ils apparaissent dans l'application (ceux que l'application ne traduit pas encore restent en anglais).
+
+## Cisailler le réseau
+
+Les commandes propres à Kaleidohedra sont dans le panneau **⟋ Shear**, en haut à droite. Elles déplacent tout le réseau d'un coup : tout ce que vous avez construit glisse avec lui, et la construction continue comme d'habitude.
+
+- **Towards** choisit où va le réseau : **DICTO FCC** (du réseau FCC ordinaire au réseau cisaillé de DICTO) ou **Bain (BCC → FCC)**.
+- **Path** fait glisser le long de ce chemin exact ; les boutons d'arrêt (comme FCC, halfway et DICTO FCC) sautent à ses points nommés.
+- **Cell** change la forme de la cellule sur le même réseau : 0 est la cellule simplement cisaillée, 1 la cellule aux arêtes toutes égales (à l'arrêt DICTO FCC, le dodécaèdre rhombique incliné de DICTO).
+- La jauge **Regularity** note la cellule par ses angles (1 signifie que tous les angles sont spéciaux : 36, 45, 60, 70,5, 72 ou 90°). Sur le chemin de Bain, elle compte aussi combien de ses disphénoïdes sont des tétraèdres réguliers.
+- **◀ Find** et **Find ▶** sautent le long du chemin vers la cellule la plus régulière suivante, ou le prochain moment où apparaît un hexagone régulier. Touchez d'abord un arrêt.
+- **Six sliders** règle directement les longueurs a, b, c et les angles α, β, γ du réseau.
+- **Export member** enregistre l'état actuel sous le nom de votre choix, en petit fichier JSON (un membre de la population).
+
+Le panneau Shear se masque dans Transitions icosaédriques/dodécaédriques, où le cisaillement casserait les icosaèdres. Les découvertes de Kaleidohedra, et la façon dont chacune est vérifiée, sont dans [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md).
 
 ## Premiers pas
 
@@ -177,7 +191,7 @@ La cellule de ce monde est la **cellule Euclid–Kepler**, et les grands dodéca
 
 ## RHOMBIS
 
-RHOMBIS est un puzzle 3D fait des mêmes pièces : remplissez la forme cible avec les pièces du plateau. Ouvrez-le depuis l'écran d'accueil (**Essayez RHOMBIS**). Touchez une pièce du plateau, puis un vide lumineux pour la poser ; certaines pièces se retournent si on les touche à nouveau. **Étapes** liste tous les puzzles par sections et coche ceux que vous avez résolus. **← Rhombiverse** vous ramène ici.
+RHOMBIS, un puzzle 3D fait des mêmes pièces, se trouve sur le site frère Rhombiverse : ouvrez-le depuis l'écran d'accueil (**Essayez RHOMBIS**) ou sur [rhombiverse.vercel.app/rhombis.html](https://rhombiverse.vercel.app/rhombis.html).
 
 ## Enregistrer votre travail
 

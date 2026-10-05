@@ -1497,7 +1497,7 @@ export function createBuildController({
       if (pieceType === 'halfrd') {
         // The neighbor's own 'negative' half along this same direction is
         // the one flush against the clicked cell -- same reasoning
-        // rhombis/geometry.js's buildHourglassStage already uses for its
+        // RHOMBIS's buildHourglassStage (in Rhombiverse) already uses for its
         // own "far" cell (hemisphereGeometry(scale, fwdIndex, 'negative')).
         const offsetIndex = NEIGHBOR_OFFSETS.findIndex(([x, y, z]) => x === dx && y === dy && z === dz);
         const key = halfRdKey(nx, ny, nz, offsetIndex, 'negative');

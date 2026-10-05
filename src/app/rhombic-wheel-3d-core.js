@@ -349,7 +349,7 @@ export const WHEEL_PIECE = {
 // RD family: reached via WHEEL_PIECE's own "RD" face (navigateTo:rdFamily,
 // see that face's own header comment for why this exists as a sub-wheel
 // rather than more WHEEL_PIECE faces). Hemi RD/Hourglass/the two cluster
-// stamps below all ported from Rhombis 2026-09-06 (src/rhombis/stages.js's
+// stamps below all ported from Rhombis 2026-09-06 (Rhombiverse's src/rhombis/stages.js
 // Hourglass/Hourglass Chain stages and Multi-Cell's hubcap-cluster idea,
 // core/lattice.js's hemisphereSplit -- see core/hemisphere-build.js for
 // the real store/key/cluster-group scheme).
