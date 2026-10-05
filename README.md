@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/brand/kaleidoverse-logo.jpg" alt="Kaleidoverse logo: a glowing elongated dodecahedron with regular hexagon, square and rhombus faces" width="360"></p>
+<p align="center"><img src="assets/brand/kaleidohedra-logo.jpg" alt="Kaleidohedra logo: a glowing elongated dodecahedron with regular hexagon, square and rhombus faces" width="360"></p>
 
 # KALEIDOHEDRA by DICTO
 

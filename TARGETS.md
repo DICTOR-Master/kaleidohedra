@@ -1,6 +1,6 @@
-# Kaleidoverse target list
+# Kaleidohedra target list
 
-*Kaleidoverse by DICTO — private working notes, 2026-10-01.*
+*Kaleidohedra by DICTO — private working notes, 2026-10-01.*
 
 **The target:** every space-filling cell (a zonohedral parallelohedron, Fedorov's five types) with **all edges equal** whose edge directions meet only at **special angles**: 36°, 45°, 60°, arccos(1/3) ≈ 70.53°, 72° and 90° (the regularity meter's set). Its faces are then squares, rhombi of those angles, and equal-edged hexagons, regular when their three angles are all 60°. Shapes are counted exactly, up to congruence; mirror images count once (these solids are centrally symmetric).
 
@@ -232,4 +232,4 @@ Volumes are at edge 1. **Line angles** are the angles between the edge direction
 ## Other quantified targets
 
 - **4D parallelohedra:** 52 combinatorial types (Delone; Štogrin), the 4D counterpart of Fedorov's five.
-- **Natural-cell events:** in Kaleidoverse's natural-cell mode, the exact slider values where a lattice's own cell changes type (truncated octahedron → rhombic dodecahedron → elongated dodecahedron → hexagonal prism → cube) are export points to find.
+- **Natural-cell events:** in Kaleidohedra's natural-cell mode, the exact slider values where a lattice's own cell changes type (truncated octahedron → rhombic dodecahedron → elongated dodecahedron → hexagonal prism → cube) are export points to find.

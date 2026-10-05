@@ -1,4 +1,4 @@
-// Verifies Kaleidoverse's lattice shear (geometry-extensions/kaleido-lattice.js):
+// Verifies Kaleidohedra's lattice shear (geometry-extensions/kaleido-lattice.js):
 // plain FCC is the identity; the path's stop 2 turns the FCC rhombic
 // dodecahedron into exactly DICTO's skewed RD (congruent: same distances
 // between every pair of corners); every point on the path is a real cell.

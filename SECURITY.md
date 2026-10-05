@@ -1,6 +1,6 @@
 # Security Policy
 
-Kaleidoverse is a small, single-developer project. There is no bug
+Kaleidohedra is a small, single-developer project. There is no bug
 bounty and no dedicated security team — reports are handled directly
 by the maintainer.
 
@@ -9,14 +9,14 @@ by the maintainer.
 Please report security issues privately, not as a public GitHub issue:
 
 - **Email:** jamesbaker08@gmail.com
-- **Or:** open a [GitHub private security advisory](https://github.com/DICTOR-Master/kaleidoverse/security/advisories/new) on this repo.
+- **Or:** open a [GitHub private security advisory](https://github.com/DICTOR-Master/kaleidohedra/security/advisories/new) on this repo.
 
 Include what you found, how to reproduce it, and its impact if you can.
 You should get an acknowledgment within a few days.
 
 ## Scope
 
-Kaleidoverse is a static, `localStorage`-only app: no accounts and no
+Kaleidohedra is a static, `localStorage`-only app: no accounts and no
 backend. Client-side issues, such as XSS via an imported World file or
 rendered text, are the main realistic surface.
 

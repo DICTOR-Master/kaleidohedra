@@ -1,8 +1,8 @@
-# Kaleidoverse discoveries
+# Kaleidohedra discoveries
 
-*Kaleidoverse by DICTO — private working notes, 2026-10-01.*
+*Kaleidohedra by DICTO — private working notes, 2026-10-01.*
 
-Findings made while playing in Rhombiverse, Polyhedraverse and Kaleidoverse,
+Findings made while playing in Rhombiverse, Polyhedraverse and Kaleidohedra,
 with how each one is verified and whether it appears to be new.
 Every geometric claim here is checked exactly by a script that runs on every
 push (`scripts/verify-kaleido.mjs` in this repo; `verify-zome-parallelohedra`
@@ -17,12 +17,12 @@ priority.
 | # | Finding | Credit | Verified | Status |
 |---|---|---|---|---|
 | 1 | DICTO skewed rhombic dodecahedron | DICTO (found by building it) | yes | **not found** — candidate |
-| 2 | Equal-edge rule for sheared FCC | Kaleidoverse | yes | general idea known; this form not found |
+| 2 | Equal-edge rule for sheared FCC | Kaleidohedra | yes | general idea known; this form not found |
 | 3 | Bain disphenoids become regular tetrahedra | — | yes | **known** (Bain, 1924) |
 | 4 | Bain rhombic dodecahedron (squares + 60° rhombi) | — | yes | **known** |
 | 5 | Regular-hexagon elongated dodecahedron | DICTO (from the "hexagons and rhombi" hunch) | yes | **not found** — candidate |
-| 6 | Exactly 9 "most regular" space-fillers | Kaleidoverse two-way search | yes | not yet searched |
-| 7 | DICTO skewed ED (two forms) | Kaleidoverse (extending #1) | yes | not yet searched |
+| 6 | Exactly 9 "most regular" space-fillers | Kaleidohedra two-way search | yes | not yet searched |
+| 7 | DICTO skewed ED (two forms) | Kaleidohedra (extending #1) | yes | not yet searched |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -66,7 +66,7 @@ the most regular overall (a regular tetrahedron cannot fill space alone).
 
 - Verified here (Towards → Bain; the Disphenoids meter).
 - Status: **known** — the Bain correspondence (E. C. Bain, 1924), standard in
-  metallurgy. Kaleidoverse makes it something you can slide through and see.
+  metallurgy. Kaleidohedra makes it something you can slide through and see.
 
 ## 4. Bain rhombic dodecahedron
 

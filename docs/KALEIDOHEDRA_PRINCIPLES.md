@@ -1,4 +1,4 @@
-# Kaleidoverse — Principles
+# Kaleidohedra — Principles
 
 The design law behind every decision in this repo. Short on purpose.
 

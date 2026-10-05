@@ -1,8 +1,8 @@
-# Kaleidoverse — Compliance checklist
+# Kaleidohedra — Compliance checklist
 
 ## Where things stand
 
-Kaleidoverse is a static site with no server side: no accounts, no
+Kaleidohedra is a static site with no server side: no accounts, no
 backend, no uploads, no sharing between users. Your builds stay in your
 own browser (`localStorage`) unless you export them to a file.
 

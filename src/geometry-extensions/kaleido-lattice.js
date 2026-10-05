@@ -1,4 +1,4 @@
-// Kaleidoverse by DICTO: the lattice-shear maths, with no three.js
+// Kaleidohedra by DICTO: the lattice-shear maths, with no three.js
 // dependency (plain arrays), so the verify script can run it in Node.
 //
 // Six lattice parameters -- lengths a, b, c relative to FCC's, and the

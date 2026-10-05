@@ -1,6 +1,6 @@
-# Contributing to Kaleidoverse
+# Contributing to Kaleidohedra
 
-Kaleidoverse is a small hobby project, open to improvements from anyone
+Kaleidohedra is a small hobby project, open to improvements from anyone
 who wants to make one — **human or AI**. This repo has actually been
 built collaboratively with an AI coding agent (Claude Code) from the
 start; there's no double standard here between a human PR and a
@@ -12,7 +12,7 @@ tested and clearly described" means in practice.
 1. **`CLAUDE.md`** (repo root) is the technical onboarding doc, for
    humans as much as agents: what the app is, its scope guardrails, how
    to run and check it, and the conventions that matter.
-2. **`docs/KALEIDOVERSE_PRINCIPLES.md`**: the short design law every
+2. **`docs/KALEIDOHEDRA_PRINCIPLES.md`**: the short design law every
    decision here traces back to.
 3. **`docs/guide.md`**: how the app is used, the same text users read.
 
@@ -43,7 +43,7 @@ tested and clearly described" means in practice.
 No build step — serve the directory with any static file server:
 
 ```
-cd kaleidoverse
+cd kaleidohedra
 python3 -m http.server 8000
 ```
 

@@ -96,7 +96,7 @@ export const DICTO_DIRECTIONS = (() => {
 
 /**
  * DICTO's skewed ED: the two equal-edge elongated-dodecahedron-type cells
- * (Kaleidoverse TARGETS.md #16 and #18) that extend DICTO's skewed RD by a
+ * (Kaleidohedra TARGETS.md #16 and #18) that extend DICTO's skewed RD by a
  * fifth edge direction, the same way DISCOVERIES.md #5 extends the Bain RD.
  * Found by matching DICTO_DIRECTIONS' Gram matrix against a 4-direction
  * sub-set of every already-catalogued equal-edge ED cell; the two that

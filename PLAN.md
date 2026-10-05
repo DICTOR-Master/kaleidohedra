@@ -1,4 +1,4 @@
-# Kaleidoverse plan
+# Kaleidohedra plan
 
 *Kept as simple and easy to operate as possible (DICTO, 2026-10-01).*
 
@@ -42,7 +42,7 @@ shear (Rhombiverse `dicto-fcc.js`).
 ## Other sliders: one slider, many paths
 
 A lattice's shape (ignoring turning and resizing) has 5 independent
-directions of change. Kaleidoverse keeps **one slider** and adds a small
+directions of change. Kaleidohedra keeps **one slider** and adds a small
 **"towards…" picker** that chooses its destination: DICTO FCC first, then any
 target from `TARGETS.md` (such as the 14 other RD-type cells, all sheared
 FCCs). Each target gives its own straight path from the start lattice, with

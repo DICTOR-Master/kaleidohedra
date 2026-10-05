@@ -6,7 +6,7 @@ nothing in this file is history.
 
 ## What this project is
 
-Kaleidoverse is the third sibling of
+Kaleidohedra is the third sibling of
 [Rhombiverse](https://github.com/DICTOR-Master/rhombiverse) and
 [Polyhedraverse](https://github.com/DICTOR-Master/polyhedraverse):
 lattices you can shear and slide continuously, where every piece of
@@ -22,16 +22,16 @@ prism and a skewed rhombic dodecahedron that tiles as a sheared FCC (see
 `docs/dicto-zometool-discoveries.md`) — and goes on from there, no
 longer tied to Zometool.
 
-GitHub: https://github.com/DICTOR-Master/kaleidoverse (`gh` is authenticated).
+GitHub: https://github.com/DICTOR-Master/kaleidohedra (`gh` is authenticated).
 
 The 3D engine (`index.html`, `src/`, `data/`) is forked from
 Rhombiverse's own code (FCC world, lattice view, saving), so building
-stays exactly as in Rhombiverse while Kaleidoverse's own controls (the
+stays exactly as in Rhombiverse while Kaleidohedra's own controls (the
 shear slider, "towards…" picker, Export of population members) are
 layered on top. See `PLAN.md`'s "Build order" for what stage that is at
 — until noted otherwise there, titles, meta tags and in-app copy on the
 forked engine files still describe Rhombiverse and haven't been
-rebranded yet; don't assume they describe Kaleidoverse-specific
+rebranded yet; don't assume they describe Kaleidohedra-specific
 behavior.
 
 ## Scope guardrails
@@ -53,7 +53,7 @@ UI rule: hide controls that don't apply; don't grey them out.
 
 ## Layout
 
-See README.md for the top-level files. Kaleidoverse's own work:
+See README.md for the top-level files. Kaleidohedra's own work:
 `DISCOVERIES.md` (findings and how each is verified), `TARGETS.md` +
 `geometry-targets.json` (the 160-cell target list, from `discover.py` /
 `discover_run.py`), `enumerate.py` + `targets.json` (the earlier,
@@ -65,7 +65,7 @@ placement/removal input in `build.js`, world state, persistence),
 i18n, welcome, guide, language picker), `src/geometry-extensions/`
 (every lattice beyond FCC), `data/` (starter world, changelog),
 `docs/guide*.md` (the user guide) — all inherited from Rhombiverse, not
-yet diverged for Kaleidoverse's own slider/export model.
+yet diverged for Kaleidohedra's own slider/export model.
 
 ## Running and checking
 
@@ -119,6 +119,6 @@ yet diverged for Kaleidoverse's own slider/export model.
 - **Removing a feature means deleting it**: code, UI, strings, tests,
   docs. Git history is the archive. Don't leave comments that narrate
   what used to be there.
-- **Design law** (`docs/KALEIDOVERSE_PRINCIPLES.md`): prefer real,
+- **Design law** (`docs/KALEIDOHEDRA_PRINCIPLES.md`): prefer real,
   established geometry over anything invented, and the simplest version
   that works.

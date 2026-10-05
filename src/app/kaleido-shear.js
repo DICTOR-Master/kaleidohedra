@@ -1,4 +1,4 @@
-// Kaleidoverse by DICTO: the lattice shear (direct decisions 2026-10-01).
+// Kaleidohedra by DICTO: the lattice shear (direct decisions 2026-10-01).
 //
 // Every piece of geometry lives in one group whose transform is a linear
 // map A. A comes from six lattice parameters -- the lengths a, b, c
@@ -16,7 +16,7 @@ import * as THREE from 'three';
 
 import { KEYS, FCC_PARAMS, TOWARDS, pathStops, pathRange, paramsOnPath, paramsValid, shearMatrix, cellDirections, cellDirectionsPreShear, cellQuality, disphenoidQuality, pathTargets } from '../geometry-extensions/kaleido-lattice.js';
 
-const STORAGE_KEY = 'kaleidoverse-shear';
+const STORAGE_KEY = 'kaleidohedra-shear';
 
 /**
  * Installs the shear: routes everything added to the scene (except the
@@ -24,7 +24,7 @@ const STORAGE_KEY = 'kaleidoverse-shear';
  */
 export function installShear({ scene, camera, onChange = () => {}, onCell = () => {} }) {
   const group = new THREE.Group();
-  group.name = 'kaleidoverse-shear';
+  group.name = 'kaleidohedra-shear';
   group.matrixAutoUpdate = false;
   const add = scene.add.bind(scene);
   const remove = scene.remove.bind(scene);
@@ -162,11 +162,11 @@ function buildPanel(state, apply) {
   $('#kaleido-export').addEventListener('click', () => {
     const name = prompt('Name this population member:', state.path === null ? 'member' : `path ${Number(state.path).toFixed(2)}`);
     if (!name) return;
-    const member = { name, credit: 'Kaleidoverse by DICTO', created: new Date().toISOString(), towards: state.towards, path: state.path, params: state.params, cell: state.cell, matrix: shearMatrix(state.params), cellDirections: cellDirections(state.params, state.cell), regularity: cellQuality(cellDirections(state.params, state.cell)).score };
+    const member = { name, credit: 'Kaleidohedra by DICTO', created: new Date().toISOString(), towards: state.towards, path: state.path, params: state.params, cell: state.cell, matrix: shearMatrix(state.params), cellDirections: cellDirections(state.params, state.cell), regularity: cellQuality(cellDirections(state.params, state.cell)).score };
     const blob = new Blob([JSON.stringify(member, null, 2)], { type: 'application/json' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = `kaleidoverse-${name.replace(/[^a-z0-9-]+/gi, '-')}.json`;
+    a.download = `kaleidohedra-${name.replace(/[^a-z0-9-]+/gi, '-')}.json`;
     a.click();
     URL.revokeObjectURL(a.href);
     $('#kaleido-note').textContent = `Exported "${name}".`;

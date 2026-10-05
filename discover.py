@@ -1,4 +1,4 @@
-"""Kaleidoverse target search, both ways (2026-10-01).
+"""Kaleidohedra target search, both ways (2026-10-01).
 
 Target: every equal-edge space-filling zonohedron (Fedorov's five types)
 whose edge directions meet only at special angles -- the regularity

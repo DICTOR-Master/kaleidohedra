@@ -1736,7 +1736,7 @@ async function init() {
   mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
   scene.add(mesh);
 
-  // Kaleidoverse by DICTO: everything from here on lives in the sheared
+  // Kaleidohedra by DICTO: everything from here on lives in the sheared
   // group (Lattice slider); the RD cell takes the Cell slider's shape.
   installShear({
     scene,

@@ -2,7 +2,7 @@
 
 ## Short version
 
-Kaleidoverse has no accounts, no analytics, no tracking and no cookies.
+Kaleidohedra has no accounts, no analytics, no tracking and no cookies.
 Everything you build stays in your own browser. Nothing you type or
 build ever leaves your device, except in a file you choose to export.
 
