@@ -1,6 +1,6 @@
 # Kaleidohedra discoveries
 
-*Kaleidohedra by DICTO — private working notes, 2026-10-01.*
+*Kaleidohedra by DICTO — working notes, started 2026-10-01.*
 
 Findings made while playing in Rhombiverse, Polyhedraverse and Kaleidohedra,
 with how each one is verified and whether it appears to be new.
@@ -193,8 +193,8 @@ before it was written up; #8's physical cell was built before 2026-10-06).
 Please cite as: *DICTO, Kaleidohedra discoveries, #N (first recorded
 YYYY-MM-DD), github.com/DICTOR-Master/kaleidohedra.*
 
-This repository is private, so these dates are not yet a public priority record.
-A public, dated archive (e.g. a Zenodo DOI, as for RHOMBITURE) would make them one.
+The repository is public, so its commit history is a public timestamped record.
+An archived, citable snapshot (e.g. a Zenodo DOI, as for RHOMBITURE) would make it permanent.
 
 ## Sources
 
