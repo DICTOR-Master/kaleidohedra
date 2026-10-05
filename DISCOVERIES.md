@@ -23,6 +23,7 @@ priority.
 | 5 | Regular-hexagon elongated dodecahedron | DICTO (from the "hexagons and rhombi" hunch) | yes | **not found** — candidate |
 | 6 | Exactly 9 "most regular" space-fillers | Kaleidohedra two-way search | yes | not yet searched |
 | 7 | DICTO skewed ED (two forms) | Kaleidohedra (extending #1) | yes | not yet searched |
+| 8 | Roof-fold cell: cube, dodecahedron and folded icosahedron (Pm-3) | DICTO (built a physical cell) | yes | not yet searched; same space group as known icosahedral approximants |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -145,6 +146,39 @@ Neither has a square face, consistent with DICTO's RD having none.
   "to find" to built.
 - Status: not yet searched (same caveat as #1 — a specialist parallelohedra
   literature search would be needed to claim priority).
+
+## 8. Roof-fold cell
+
+Put Euclid's roofs on a cube of edge 2 to make the regular dodecahedron, then
+reflect the 12 roof vertices back through the six cube faces: they land on a
+regular icosahedron inside the cube. Repeat the cell by translations of 2
+along x, y and z.
+
+- **Edges:** cube 2, dodecahedron 2/φ, icosahedron 2/φ² — a φ² : φ : 1 chain,
+  every edge along one of the 15 two-fold axes of the icosahedron.
+- **Nodes:** 13 per cell — one cube corner and the 12 icosahedron vertices.
+  Every roof vertex is a vertex of a neighbouring cell's icosahedron.
+- **Spikes:** over each of the icosahedron's 20 faces sits exactly one node at
+  2/φ from its three corners; the 20 tips are the dodecahedron's vertices and
+  the spike faces are golden triangles (36° apex).
+- **Not a tiling:** the dodecahedra overlap. Space is covered once (19%) or
+  twice (81%), mean (5+√5)/4 ≈ 1.809, the dodecahedron's volume 10 + 2√5 over
+  the cell's 8.
+- **Symmetry:** exactly the 24 operations of m-3 keep the node set, each
+  with a lattice translation only, so the space group is **Pm-3 (No. 200)**,
+  primitive cubic — not FCC, not aperiodic, no fivefold axis. With the origin
+  at the icosahedron centre the nodes are on Wyckoff **1b** (the corner) and
+  **12j** (0, y, z), y = 1/(2φ) ≈ 0.309, z = 1/(2φ²) ≈ 0.191.
+
+Verified here by `scripts/verify-roof-fold.mjs` (geometry in
+`src/geometry-extensions/roof-fold.js`). The original notes labelled the
+icosahedron site 12i; the stabiliser check shows (0, y, z) with a single
+mirror, which is 12j in the International Tables' list for Pm-3.
+
+- Status: not yet searched. α-AlMnSi (Pm-3, the 1/1 cubic approximant of
+  the icosahedral phase, 138 atoms per cell built from Mackay icosahedra)
+  shares the space group and an icosahedral motif; whether its positions
+  match this 13-node set has not been checked.
 
 ## Sources
 

@@ -83,7 +83,7 @@ yet diverged for Kaleidohedra's own slider/export model.
   verify:lattice-2d | verify:pyrochlore | verify:rhombohedra | verify:4d |
   verify:quasicrystal | verify:catalogue | verify:kaleido | verify:shells |
   verify:kaleidoscope | verify:trajectory | verify:construction |
-  verify:nets | verify:packing | verify:dicto-fcc`.
+  verify:nets | verify:packing | verify:dicto-fcc | verify:roof-fold`.
 - **Browser automation:** run Playwright on `dicto-node` (192.168.0.7,
   SSH), not the dev Pi. Sync first, with `--delete` for tests. Headless
   Chromium there can starve timers, so hold simulated long-presses 1.5 s+.
