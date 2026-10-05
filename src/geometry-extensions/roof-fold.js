@@ -34,6 +34,15 @@ export const ROOF_FOLD_KINDS = ['cube', 'dodeca', 'ico', 'star'];
 // World units: icosahedron edge 1, dodecahedron phi, cube phi^2.
 export const ROOF_FOLD_WORLD_SCALE = PHI ** 2 / 2;
 export const siteParity = (x, y, z) => (((x + y + z) % 2) + 2) % 2;
+const mod2 = (n) => ((n % 2) + 2) % 2;
+// Site colourings for the alternating and checkerboard views, and the space
+// group each leaves (checked in scripts/verify-roof-fold.mjs).
+export const ROOF_FOLD_PATTERNS = {
+  xyz: { colours: 2, of: (x, y, z) => mod2(x + y + z), group: 'Fm-3 (No. 202)' },
+  columns: { colours: 2, of: (x, y) => mod2(x + y), group: 'Cmmm (No. 65)' },
+  layers: { colours: 2, of: (x, y, z) => mod2(z), group: 'Pmmm (No. 47)' },
+  octants: { colours: 8, of: (x, y, z) => mod2(x) + 2 * mod2(y) + 4 * mod2(z), group: 'Pmmm (No. 47), cell doubled' },
+};
 
 const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
 const add = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
@@ -97,8 +106,10 @@ function splitPolygon(P, n, d) {
       below.push(x);
     }
   }
-  const ok = (Q) => Q.length >= 3 && polygonArea(Q) > 1e-10;
-  return { above: ok(above) ? above : null, below: ok(below) ? below : null };
+  const clean = (Q) => Q.filter((p, i) => Math.hypot(...sub(p, Q[(i + 1) % Q.length])) > 1e-9);
+  const ok = (Q) => Q.length >= 3 && polygonArea(Q) > 1e-7; // slivers have no visible area but would add false edges
+  const A = clean(above), B = clean(below);
+  return { above: ok(A) ? A : null, below: ok(B) ? B : null };
 }
 function polygonArea(P) {
   let s = [0, 0, 0];
@@ -107,7 +118,7 @@ function polygonArea(P) {
 }
 
 // The exact outer surface of the union of dodecahedra at the given sites
-// ([x, y, z] integers; centres at 2 * site). Returns { site, polygon } pieces.
+// ([x, y, z] integers; centres at 2 * site). Returns { site, polygon, normal } pieces.
 // Where a neighbour's face lies in the same plane, an opposite-facing one
 // counts as touching (interior where they meet) and a same-facing one is
 // kept once, by the lower site key, so no face is drawn twice.
@@ -150,7 +161,73 @@ export function mergedDodecaSurface(sites) {
         pieces = next;
         if (!pieces.length) break;
       }
-      for (const polygon of pieces) out.push({ site: s, polygon });
+      for (const polygon of pieces) out.push({ site: s, polygon, normal: face.n });
+    }
+  }
+  return out;
+}
+
+// The visible edges of a merged surface: outline and creases only. An edge
+// is a seam (dropped) when the union is flat across it: on both sides, just
+// below the piece's plane is inside a dodecahedron and just above is not.
+// Edges shared by several pieces are drawn once.
+export function mergedDodecaEdges(pieces, sites) {
+  const { dodeca } = roofFoldSolids();
+  const planes = dodeca.faces.map((f) => { const n = unit(cross(sub(f[1], f[0]), sub(f[2], f[0]))); return { n, d: dot(f[0], n) }; });
+  // Only dodecahedra centred within one cell of a point can contain it.
+  const occupied = new Set(sites.map((st) => st.join()));
+  const inUnion = (p) => {
+    const c = p.map((x) => Math.round(x / 2));
+    for (const dx of [-1, 0, 1]) for (const dy of [-1, 0, 1]) for (const dz of [-1, 0, 1]) {
+      const st = [c[0] + dx, c[1] + dy, c[2] + dz];
+      if (occupied.has(st.join()) && planes.every(({ n, d }) => dot(sub(p, st.map((x) => 2 * x)), n) < d - 1e-12)) return true;
+    }
+    return false;
+  };
+  const raw = [];
+  for (const { polygon: P, normal: n } of pieces) {
+    for (let i = 0; i < P.length; i++) if (Math.hypot(...sub(P[(i + 1) % P.length], P[i])) > 1e-9) raw.push({ a: P[i], b: P[(i + 1) % P.length], n });
+  }
+  // Split every edge at any endpoint lying inside it, so each sub-segment is judged on its own.
+  const CELL = 0.5;
+  const grid = new Map();
+  const cellOf = (p) => p.map((c) => Math.floor(c / CELL));
+  for (const e of raw) for (const p of [e.a, e.b]) {
+    const k = cellOf(p).join();
+    if (!grid.has(k)) grid.set(k, []);
+    grid.get(k).push(p);
+  }
+  const pointsNear = (a, b) => {
+    const lo = cellOf(a.map((c, i) => Math.min(c, b[i]) - 1e-6)), hi = cellOf(a.map((c, i) => Math.max(c, b[i]) + 1e-6));
+    const found = [];
+    for (let x = lo[0]; x <= hi[0]; x++) for (let y = lo[1]; y <= hi[1]; y++) for (let z = lo[2]; z <= hi[2]; z++) found.push(...(grid.get(`${x},${y},${z}`) ?? []));
+    return found;
+  };
+  const flat = (a, b, n) => {
+    const mid = a.map((c, j) => (c + b[j]) / 2);
+    const v = unit(cross(sub(b, a), n));
+    return [1, -1].every((side) => {
+      const q = add(mid, v.map((c) => c * side * 1e-4));
+      return inUnion(add(q, n.map((c) => -c * 1e-6))) && !inUnion(add(q, n.map((c) => c * 1e-6)));
+    });
+  };
+  const seen = new Set();
+  const out = [];
+  for (const { a, b, n } of raw) {
+    const ab = sub(b, a), L2 = dot(ab, ab);
+    const cuts = [0, 1];
+    for (const p of pointsNear(a, b)) {
+      const t = dot(sub(p, a), ab) / L2;
+      if (t > 1e-9 && t < 1 - 1e-9 && Math.hypot(...sub(add(a, ab.map((c) => c * t)), p)) < 1e-9) cuts.push(t);
+    }
+    cuts.sort((x, y) => x - y);
+    for (let i = 0; i + 1 < cuts.length; i++) {
+      if (cuts[i + 1] - cuts[i] < 1e-9) continue;
+      const p = add(a, ab.map((c) => c * cuts[i])), q = add(a, ab.map((c) => c * cuts[i + 1]));
+      const key = [p, q].map((x) => x.map((c) => (Math.round(c * 1e6) / 1e6 + 0).toFixed(6)).join()).sort().join('|');
+      if (seen.has(key) || flat(p, q, n)) continue;
+      seen.add(key);
+      out.push([p, q]);
     }
   }
   return out;

@@ -170,8 +170,21 @@ along x, y and z.
   at the icosahedron centre the nodes are on Wyckoff **1b** (the corner) and
   **12j** (0, y, z), y = 1/(2φ) ≈ 0.309, z = 1/(2φ²) ≈ 0.191.
 
+- **Neighbours:** face-neighbour dodecahedra overlap; edge-neighbour ones don't
+  overlap but share a cube edge and touch over a small coplanar patch of
+  opposite pentagons; corner neighbours share one vertex. Adding dodecahedra
+  across their own faces only reaches cells of one parity, i.e. an FCC
+  sublattice. *(Recorded 2026-10-06.)*
+- **Colourings:** colouring the cells breaks the symmetry in exact steps:
+  x+y+z parity gives **Fm-3** (No. 202), x+y gives **Cmmm** (No. 65), z gives
+  **Pmmm** (No. 47), and 8 octant colours give **Pmmm** on a doubled cell.
+  *(Recorded 2026-10-06.)*
+- **The 20-point star** (icosahedron + 20 golden spikes) has volume
+  ≈ 2.918 at cube edge 2, lies inside the dodecahedron, and its convex hull is
+  the dodecahedron. *(Recorded 2026-10-06.)*
+
 Verified here by `scripts/verify-roof-fold.mjs` (geometry in
-`src/geometry-extensions/roof-fold.js`). The original notes labelled the
+`src/geometry-extensions/roof-fold.js`), and buildable in the Roof Fold world. The original notes labelled the
 icosahedron site 12i; the stabiliser check shows (0, y, z) with a single
 mirror, which is 12j in the International Tables' list for Pm-3.
 

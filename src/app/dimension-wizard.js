@@ -359,6 +359,9 @@ export const LATTICES_3D = [
   { key: 'golden', label: 'Golden Rhombohedra', pieces: [
     { label: 'Golden Rhombohedra', action: 'tool:goldenWorld' },
   ] },
+  { key: 'roofFold', label: 'Roof Fold', pieces: [
+    { label: 'Roof Fold', action: 'tool:roofFoldWorld' },
+  ] },
 ];
 
 // 4D thumbnails (direct decision, option B): each cell's 4D edges turned

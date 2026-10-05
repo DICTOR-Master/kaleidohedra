@@ -12,9 +12,10 @@
 //   - the four placeable solids (cube, dodecahedron, icosahedron, 20-point
 //     star) are closed and outward with exact volumes, and nest;
 //   - face neighbours' dodecahedra overlap, edge neighbours only touch;
-//   - the merged-dodecahedra surface encloses exactly the union;
-//   - colouring sites by parity leaves only even translations: Fm-3.
-import { PHI, ROOF_FOLD_PERIOD as P, ROOF_FOLD_KINDS, roofFoldCell, roofFoldSolids, mergedDodecaSurface, siteParity } from '../src/geometry-extensions/roof-fold.js';
+//   - the merged-dodecahedra surface encloses exactly the union, edges without seams;
+//   - colouring sites by parity leaves only even translations: Fm-3; columns,
+//     layers and octants give Cmmm, Pmmm and a doubled Pmmm.
+import { PHI, ROOF_FOLD_PERIOD as P, ROOF_FOLD_KINDS, roofFoldCell, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, siteParity, ROOF_FOLD_PATTERNS } from '../src/geometry-extensions/roof-fold.js';
 
 let failures = 0;
 function check(label, condition) {
@@ -172,6 +173,41 @@ for (const [label, sites] of [
 check('merged surface of one site is the whole dodecahedron', Math.abs(volumeOf(mergedDodecaSurface([[0, 0, 0]]).map((p) => p.polygon)) - V.dodeca) < 1e-9);
 check('merged surface of two edge neighbours encloses exactly twice the dodecahedron (they touch, no overlap)', Math.abs(volumeOf(mergedDodecaSurface([[0, 0, 0], [0, 1, 1]]).map((p) => p.polygon)) - 2 * V.dodeca) < 1e-9);
 
+const edgeLength = (E) => E.reduce((t, [a, b]) => t + norm(sub(a, b)), 0);
+const oneEdges = mergedDodecaEdges(mergedDodecaSurface([[0, 0, 0]]), [[0, 0, 0]]);
+check(`merged edges of one site are its 30 edges (${oneEdges.length})`, oneEdges.length === 30 && oneEdges.every(([a, b]) => Math.abs(norm(sub(a, b)) - 2 / PHI) < EPS));
+// Every drawn edge is a real crease or outline (the union is not flat across it), every original
+// dodecahedron edge still on the surface is drawn, and no edge is drawn twice.
+const inUnion = (sites) => (p) => sites.some((st) => faceNormals.every((n) => dot(sub(p, st.map((c) => 2 * c)), n) < faceDist - 1e-12));
+const notFlatAround = (inside, a, b) => {
+  const mid = a.map((c, i) => (c + b[i]) / 2);
+  const t = sub(b, a).map((c) => c / norm(sub(b, a)));
+  const u0 = Math.abs(t[0]) < 0.9 ? [1, 0, 0] : [0, 1, 0];
+  const u = cross(t, u0).map((c, _, v) => c / norm(cross(t, u0)));
+  const w = cross(t, u);
+  const ring = [];
+  for (let k = 0; k < 360; k++) { const th = (k * Math.PI) / 180; ring.push(inside(add(mid, add(u.map((c) => c * 1e-4 * Math.cos(th)), w.map((c) => c * 1e-4 * Math.sin(th)))))); }
+  const n = ring.filter(Boolean).length;
+  return n > 0 && n < 360 && Math.abs(n - 180) > 2; // some solid, some empty, and not a straight half-plane
+};
+for (const [label, sites] of [['two face neighbours', [[0, 0, 0], [1, 0, 0]]], ['two edge neighbours', [[0, 0, 0], [0, 1, 1]]], ['a 2x2x2 block', [0, 1].flatMap((x) => [0, 1].flatMap((y) => [0, 1].map((z) => [x, y, z])))]]) {
+  const inside = inUnion(sites);
+  const E = mergedDodecaEdges(mergedDodecaSurface(sites), sites);
+  const creases = E.every(([a, b]) => notFlatAround(inside, a, b));
+  let overlaps = 0;
+  for (let i = 0; i < E.length; i++) for (let j = i + 1; j < E.length; j++) {
+    const [a, b] = E[i], [c, d] = E[j];
+    const ab = sub(b, a);
+    const on = (p) => { const t = dot(sub(p, a), ab) / dot(ab, ab); return t > -1e-9 && t < 1 + 1e-9 && norm(sub(add(a, ab.map((x) => x * t)), p)) < 1e-7; };
+    if (on(c) && on(d) && on(c.map((x, k) => (x + d[k]) / 2))) overlaps++;
+  }
+  // Original dodecahedron edges whose midpoint is on the union's surface and is a crease must be drawn.
+  const drawnAt = (p) => E.some(([a, b]) => { const ab = sub(b, a); const t = dot(sub(p, a), ab) / dot(ab, ab); return t > -1e-9 && t < 1 + 1e-9 && norm(sub(add(a, ab.map((x) => x * t)), p)) < 1e-7; });
+  const missing = sites.flatMap((st) => S.dodeca.edges.map(([a, b]) => [add(a, st.map((c) => 2 * c)), add(b, st.map((c) => 2 * c))]))
+    .filter(([a, b]) => notFlatAround(inside, a, b) && !drawnAt(a.map((c, i) => (c + b[i]) / 2))).length;
+  check(`merged edges, ${label}: ${E.length} edges, all creases or outline, none twice, no crease missing`, creases && overlaps === 0 && missing === 0);
+}
+
 // 9. Alternating views: colouring sites by parity keeps the 24 point operations but halves the
 // translations to the even ones (an FCC lattice), so the alternated structure is Fm-3.
 const sites3 = [];
@@ -181,6 +217,28 @@ const coloured = new Set(sites3.flatMap((s) => C.ico.map((v) => `${mod4(add(v, s
 const keeps = (f, t) => sites3.every((s) => C.ico.every((v) => coloured.has(`${mod4(add(f(add(v, s.map((c) => 2 * c))), t))}|${siteParity(...s)}`)));
 check('parity colouring: all 24 m-3 operations kept, odd translations (2,0,0) swap colours, even ones (2,2,0) keep them',
   ops.filter((op) => op.even).every((op) => keeps(op.f, [0, 0, 0])) && !keeps((v) => v, [2, 0, 0]) && keeps((v) => v, [2, 2, 0]) && keeps((v) => v, [0, 2, -2]));
+
+// 10. Every pattern: which of the 24 m-3 operations and which translations keep its colouring.
+// Conventional settings: x+y keeps mmm with lattice (1,1,0),(1,-1,0),(0,0,1) -> C-centred on a
+// (2,2,1) cell, Cmmm; z keeps mmm with (1,0,0),(0,1,0),(0,0,2), Pmmm; octants keep only mmm with a
+// doubled primitive cell, Pmmm (its 8 colours tell the axes apart).
+const sitesP = [];
+for (let x = -2; x <= 3; x++) for (let y = -2; y <= 3; y++) for (let z = -2; z <= 3; z++) sitesP.push([x, y, z]);
+const mod8 = (p) => p.map((c) => (((c % 8) + 8) % 8).toFixed(6)).join();
+const EXPECT = {
+  xyz: { ops: 24, keep: [[2, 2, 0], [0, 2, 2], [2, 0, 2]], lose: [[2, 0, 0]] },
+  columns: { ops: 8, keep: [[2, 2, 0], [2, -2, 0], [0, 0, 2]], lose: [[2, 0, 0], [0, 2, 0]] },
+  layers: { ops: 8, keep: [[2, 0, 0], [0, 2, 0], [0, 0, 4]], lose: [[0, 0, 2], [2, 2, 2]] },
+  octants: { ops: 8, keep: [[4, 0, 0], [0, 4, 0], [0, 0, 4]], lose: [[2, 0, 0], [2, 2, 0], [2, 2, 2]] },
+};
+for (const [name, pat] of Object.entries(ROOF_FOLD_PATTERNS)) {
+  const col = new Set(sitesP.flatMap((st) => C.ico.map((v) => `${mod8(add(v, st.map((c) => 2 * c)))}|${pat.of(...st)}`)));
+  const keepsP = (f, t) => sitesP.every((st) => C.ico.every((v) => col.has(`${mod8(add(f(add(v, st.map((c) => 2 * c))), t))}|${pat.of(...st)}`)));
+  const opsKept = ops.filter((op) => op.even && keepsP(op.f, [0, 0, 0])).length;
+  const e = EXPECT[name];
+  check(`pattern ${name}: ${opsKept} point operations kept, translations ${e.keep.map((t) => `(${t})`).join(' ')} keep it, ${e.lose.map((t) => `(${t})`).join(' ')} don't -> ${pat.group}`,
+    opsKept === e.ops && e.keep.every((t) => keepsP((v) => v, t)) && e.lose.every((t) => !keepsP((v) => v, t)));
+}
 
 console.log(failures === 0 ? '\nAll checks passed (0 failures).' : `\n${failures} check(s) FAILED.`);
 process.exit(failures === 0 ? 0 : 1);
