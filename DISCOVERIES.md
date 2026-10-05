@@ -268,10 +268,12 @@ timestamped record. A physical model may predate it (#1 was built in Zometool
 before it was written up; #8's physical cell was built before 2026-10-06).
 
 Please cite as: *DICTO, Kaleidohedra discoveries, #N (first recorded
-YYYY-MM-DD), github.com/DICTOR-Master/kaleidohedra.*
+YYYY-MM-DD), https://doi.org/10.5281/zenodo.23173809.*
 
-The repository is public, so its commit history is a public timestamped record.
-An archived, citable snapshot (e.g. a Zenodo DOI, as for RHOMBITURE) would make it permanent.
+The repository is public, so its commit history is a public timestamped record,
+and it is archived on Zenodo: **DOI [10.5281/zenodo.23173809](https://doi.org/10.5281/zenodo.23173809)** (all versions);
+finding #8, the Euclid–Kepler cell and network, is version v2026.10.06,
+**DOI [10.5281/zenodo.23173810](https://doi.org/10.5281/zenodo.23173810)**, published 2026-10-06.
 
 ## Sources
 

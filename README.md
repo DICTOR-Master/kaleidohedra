@@ -2,6 +2,8 @@
 
 # KALEIDOHEDRA by DICTO
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23173809.svg)](https://doi.org/10.5281/zenodo.23173809)
+
 *In development.* The third sibling of [Rhombiverse](https://rhombiverse.vercel.app) and [Polyhedraverse](https://polyhedraverse.vercel.app): lattices you can shear and slide continuously, where every piece of geometry moves with the lattice, and chosen states ("population members") are exported to the two sibling apps.
 
 It grew from shapes DICTO found in Zometool, a golden leaning hexagonal prism and a skewed rhombic dodecahedron that tiles as a sheared FCC (see Polyhedraverse's `docs/dicto-zometool-discoveries.md`), and goes on from there, no longer tied to Zometool.
@@ -25,4 +27,4 @@ the commit that first recorded it (full list, verification and literature status
 | Euclid–Kepler network: Kepler's great stellated dodecahedra and icosahedra sharing only corners | 2026-10-06 | not found — candidate |
 
 "Not found" means a web-level search turned up nothing, not proof of novelty. Cite as
-*DICTO, Kaleidohedra discoveries, #N (first recorded date), github.com/DICTOR-Master/kaleidohedra*.
+*DICTO, Kaleidohedra discoveries, #N (first recorded date), https://doi.org/10.5281/zenodo.23173809*. The Euclid–Kepler cell and network are archived as [v2026.10.06](https://doi.org/10.5281/zenodo.23173810).
