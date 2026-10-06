@@ -15,6 +15,9 @@
 //     star, which is the great stellated dodecahedron) are closed and outward
 //     with exact volumes, and nest;
 //   - face neighbours' dodecahedra overlap, edge neighbours only touch;
+//   - crossings are the same in every direction: each face crossing is
+//     exactly two roofs, edge and corner neighbours only touch, and the
+//     cell's symmetry makes all crossings of a kind congruent;
 //   - the merged-dodecahedra surface encloses exactly the union, edges without seams;
 //   - colouring sites by parity leaves only even translations: Fm-3; columns,
 //     layers and octants give Cmmm, Pmmm and a doubled Pmmm;
@@ -222,6 +225,71 @@ check('icosahedron, star and dodecahedron nest: star inside dodecahedron, icosah
 const sharedCorners = (t) => C.dodeca.filter((p) => C.dodeca.some((q) => norm(sub(add(p, t), q)) < EPS)).length;
 check('face neighbours share a cube face\'s 4 corners, edge neighbours a cube edge (2), corner neighbours a corner (1)',
   sharedCorners([2, 0, 0]) === 4 && sharedCorners([0, 2, 2]) === 2 && sharedCorners([2, 2, 2]) === 1);
+
+// 7b. Crossings: the same in every direction. Exact overlap of two dodecahedra (vertices of the
+// 24-plane intersection, volume by pyramids from its centroid), for all 26 neighbours.
+{
+  const halfspaces = S.dodeca.faces.map((f) => { const n = cross(sub(f[1], f[0]), sub(f[2], f[0])); const u = n.map((c) => c / norm(n)); return { n: u, d: dot(f[0], u) }; });
+  function overlap(t) {
+    const H = [...halfspaces, ...halfspaces.map(({ n, d }) => ({ n, d: d + dot(n, t) }))];
+    const pts = new Map();
+    for (let i = 0; i < H.length; i++) for (let j = i + 1; j < H.length; j++) for (let k = j + 1; k < H.length; k++) {
+      const [a, b, c] = [H[i], H[j], H[k]], det = dot(a.n, cross(b.n, c.n));
+      if (Math.abs(det) < EPS) continue;
+      const p = add(add(cross(b.n, c.n).map((x) => (x * a.d) / det), cross(c.n, a.n).map((x) => (x * b.d) / det)), cross(a.n, b.n).map((x) => (x * c.d) / det));
+      if (H.every(({ n, d }) => dot(n, p) <= d + 1e-9)) pts.set(rawKey(p), p);
+    }
+    const U = [...pts.values()];
+    if (U.length < 4) return 0;
+    const g = U.reduce(add).map((c) => c / U.length);
+    let vol = 0;
+    const seen = new Set();
+    for (const { n, d } of H) {
+      const k = rawKey([...n, d]);
+      if (seen.has(k)) continue;
+      seen.add(k);
+      const F = U.filter((p) => Math.abs(dot(n, p) - d) < 1e-7);
+      if (F.length < 3) continue;
+      const c = F.reduce(add).map((x) => x / F.length), u = sub(F[0], c), w = cross(n, u);
+      F.sort((p, q) => Math.atan2(dot(sub(p, c), w), dot(sub(p, c), u)) - Math.atan2(dot(sub(q, c), w), dot(sub(q, c), u)));
+      let area = 0;
+      for (let i = 0; i < F.length; i++) area += dot(cross(sub(F[i], c), sub(F[(i + 1) % F.length], c)), n) / 2;
+      vol += (Math.abs(area) * Math.abs(dot(n, c) - dot(n, g))) / 3;
+    }
+    return vol;
+  }
+  const dirs = [];
+  for (const x of [-1, 0, 1]) for (const y of [-1, 0, 1]) for (const z of [-1, 0, 1]) if (x || y || z) dirs.push([x, y, z]);
+  const kind = (d) => d.filter(Boolean).length;
+  const twoRoofs = (2 * (V.dodeca - V.cube)) / 6;
+  const vols = dirs.map((d) => overlap(d.map((c) => 2 * c)));
+  check(`crossings: all 6 face neighbours overlap by exactly two roofs, 2(dodecahedron - cube)/6 = ${twoRoofs.toFixed(9)}; all 12 edge and 8 corner neighbours overlap by 0`,
+    dirs.every((d, i) => Math.abs(vols[i] - (kind(d) === 1 ? twoRoofs : 0)) < 1e-9));
+  const roof = C.dodeca.slice(8);
+  const faceDirs = dirs.filter((d) => kind(d) === 1);
+  const landing = (d) => { const nb = new Set(C.ico.map((v) => rawKey(add(v, d.map((c) => 2 * c))))); return roof.filter((r) => nb.has(rawKey(r))).length; };
+  const received = C.ico.map((v) => faceDirs.reduce((n, d) => n + roof.filter((r) => rawKey(add(r, d.map((c) => 2 * c))) === rawKey(v)).length, 0));
+  check('crossings: every face crossing puts exactly 2 roof vertices on the neighbour\'s icosahedron, and each of a cell\'s 12 icosahedron vertices receives exactly one',
+    faceDirs.every((d) => landing(d) === 2) && received.every((n) => n === 1));
+  // Ridge directions: along z over the x-faces, x over the y-faces, y over the z-faces (fixed by the cell).
+  const ridgeAxis = (a) => { const r = roof.filter((v) => v[a] > 1.5); return sub(r[0], r[1]).findIndex((c) => Math.abs(c) > EPS); };
+  // The cell's 24 symmetries split the 26 neighbours into exactly 3 classes (6 face, 12 edge, 8 corner),
+  // so every crossing of a kind is congruent to every other: the same crossing, turned.
+  const cellPts = [...C.dodeca, ...C.ico];
+  const cellKeys = new Set(cellPts.map(rawKey));
+  const cellOps = ops.filter((op) => cellPts.every((v) => cellKeys.has(rawKey(op.f(v).map((c) => c + 0)))));
+  const orbits = [];
+  const placed = new Set();
+  for (const d of dirs) {
+    if (placed.has(rawKey(d))) continue;
+    const orbit = new Set(cellOps.map((op) => rawKey(op.f(d).map((c) => c + 0))));
+    orbit.forEach((k) => placed.add(k));
+    orbits.push(orbit.size);
+  }
+  orbits.sort((a, b) => a - b);
+  check(`crossings: ridges run z, x, y over the x, y, z faces, and the cell's ${cellOps.length} symmetries make all crossings of a kind congruent (classes ${orbits.join(', ')})`,
+    ridgeAxis(0) === 2 && ridgeAxis(1) === 0 && ridgeAxis(2) === 1 && cellOps.length === 24 && orbits.join() === '6,8,12');
+}
 
 // 8. Merged dodecahedra: the outer surface encloses exactly the union.
 function sampledUnion(sites, n = 40) {
