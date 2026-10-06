@@ -18,16 +18,32 @@ const LEGACY_SKIP_KEY = 'rhombiverse-skip-intro';
 // its livery colours. Plain SVG, no second WebGL context.
 const ED_FACES = buildWheelFaces();
 const LOGO_SCALE = 30;
-const LOGO_TILT = 0.42;
-const SPIN_SPEED = 0.42; // rad per second
+const LOGO_TILT = 0.08;
+// Sway: back and forth about the vertical, never end-on, so it always lies horizontal.
+const SWAY = 0.38; // radians each way (about 22 degrees)
+const SWAY_SPEED = 0.75; // radians of phase per second (one sway in about 8 seconds)
 const rotX = ([x, y, z], a) => [x, y * Math.cos(a) - z * Math.sin(a), y * Math.sin(a) + z * Math.cos(a)];
 const rotY = ([x, y, z], a) => [x * Math.cos(a) + z * Math.sin(a), y, -x * Math.sin(a) + z * Math.cos(a)];
-// Lying on its side like the logo (its long axis, z in the wheel frame, laid
-// along screen x), turning about the vertical like a turntable (direct
-// request: "cycle horizontally, not roll like a slot machine").
+// As in the logo (direct request): lying level, its long axis (z in the wheel
+// frame) exactly left to right and side-on, a belt hexagon facing the viewer so
+// the view is symmetric. (The logo also shows a square face-on, which the true
+// shape can't do at the same time: its squares sit at 45 degrees to the long
+// axis.) The frame comes from the geometry: toward the viewer = that hexagon's
+// centre direction, screen right = the long axis, up = right x toward. It sways
+// gently about the vertical, never turning end-on.
+const dot3 = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+const unit3 = (a) => { const l = Math.hypot(...a); return a.map((c) => c / l); };
+const VIEW = (() => {
+  const sq = ED_FACES.find((f) => f.type === 'hexagon');
+  const toward = unit3(sq.verts.reduce((acc, v) => acc.map((c, i) => c + v[i]), [0, 0, 0]));
+  const along = dot3([0, 0, 1], toward);
+  const right = unit3([0, 0, 1].map((c, i) => c - along * toward[i]));
+  const up = [right[1] * toward[2] - right[2] * toward[1], right[2] * toward[0] - right[0] * toward[2], right[0] * toward[1] - right[1] * toward[0]];
+  return { right, up, toward };
+})();
 function place(v, angle) {
-  const [x, y, z] = v;
-  return rotX(rotY([z, y, -x], angle), LOGO_TILT); // lay it down, turn about the vertical, tip slightly toward the viewer
+  const view = [dot3(v, VIEW.right), dot3(v, VIEW.up), dot3(v, VIEW.toward)];
+  return rotX(rotY(view, angle), LOGO_TILT);
 }
 function shade(hex, k) {
   const n = parseInt(hex.slice(1), 16);
@@ -57,15 +73,15 @@ function startLogoSpin() {
   const svg = document.getElementById('welcome-logo-svg');
   if (!svg) return () => {};
   const still = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-  let angle = 0.5, lastT = null, raf = null;
+  let phase = 0, lastT = null, raf = null;
   const frame = (t) => {
     const dt = lastT === null ? 0 : Math.min(0.1, (t - lastT) / 1000);
     lastT = t;
-    angle += SPIN_SPEED * dt;
-    drawLogo(svg, angle);
+    phase += SWAY_SPEED * dt;
+    drawLogo(svg, SWAY * Math.sin(phase));
     raf = requestAnimationFrame(frame);
   };
-  drawLogo(svg, angle);
+  drawLogo(svg, 0);
   if (!still) raf = requestAnimationFrame(frame);
   return () => { if (raf !== null) cancelAnimationFrame(raf); };
 }
