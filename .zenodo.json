@@ -1,13 +1,20 @@
 {
-  "title": "Kaleidohedra: the Euclid–Kepler cell and the Euclid–Kepler network",
+  "title": "Kaleidohedra: the Euclid–Kepler–Pacioli (EKP) cell and network, by DICTO",
   "upload_type": "software",
   "creators": [
-    { "name": "DICTO" }
+    {
+      "name": "DICTO"
+    }
   ],
-  "description": "<p>Kaleidohedra by DICTO: working notes, verification scripts and a browser app for lattices and the polyhedra on them. This snapshot records finding #8 of DISCOVERIES.md, first recorded 2026-10-06.</p><p><b>Euclid–Kepler cell.</b> Euclid's roofs on a cube of edge 2 make the regular dodecahedron; reflecting the 12 roof vertices back through the cube faces makes the regular icosahedron. Cube, dodecahedron and icosahedron edges are φ² : φ : 1, and every roof vertex is a vertex of a neighbouring cell's icosahedron. Repeated on a simple cubic lattice: 13 nodes per cell, space group Pm-3 (No. 200), nodes on Wyckoff 1b and 12j with y = 1/(2φ), z = 1/(2φ²). Every cell carries the icosahedron's 31 rotation axes, parallel throughout the crystal; 7 of them are crystal symmetries, and m-3 is exactly the cube's symmetries that are also the icosahedron's. The cell also contains Kepler's great stellated dodecahedron (the icosahedron with 20 golden-triangle spikes reaching the dodecahedron's vertices).</p><p><b>Euclid–Kepler network.</b> Great stellated dodecahedra on the even cells (an FCC lattice) and icosahedra on the odd cells share only corners: each star's 12 roof tips are vertices of the six neighbouring icosahedra, with no overlap (exact separating-axis test). Dodecahedra on the even cells alone form the known optimal lattice packing of the regular dodecahedron, density (5+√5)/8.</p><p>Every claim is checked numerically by scripts/verify-roof-fold.mjs on each push. A web-level literature search (2026-10-06, recorded in DISCOVERIES.md) did not find the cell or the network; the individual solids, Euclid's construction and the optimal packing are classical. Names chosen by DICTO.</p>",
+  "description": "<p>Kaleidohedra by DICTO: working notes, verification scripts and a browser app for lattices and the polyhedra on them. This snapshot records finding #8 of DISCOVERIES.md, first recorded 2026-10-06.</p><p><b>Euclid–Kepler–Pacioli cell.</b> Euclid's roofs on a cube of edge 2 make the regular dodecahedron; reflecting the 12 roof vertices back through the cube faces makes the regular icosahedron. Cube, dodecahedron and icosahedron edges are φ² : φ : 1, and every roof vertex is a vertex of a neighbouring cell's icosahedron. Repeated on a simple cubic lattice: 13 nodes per cell, space group Pm-3 (No. 200), nodes on Wyckoff 1b and 12j with y = 1/(2φ), z = 1/(2φ²). Every cell carries the icosahedron's 31 rotation axes, parallel throughout the crystal; 7 of them are crystal symmetries, and m-3 is exactly the cube's symmetries that are also the icosahedron's. The cell also contains Kepler's great stellated dodecahedron (the icosahedron with 20 golden-triangle spikes reaching the dodecahedron's vertices).</p><p><b>All five Platonic solids in one cell.</b> The six neighbours' roof ridges meet inside each cube as Pacioli's three interlocking golden rectangles, whose corners are the icosahedron. The icosahedron's vertices lie on the edges of the octahedron on the cube-face centres at the golden section; that octahedron is the overlap of Kepler's stella octangula (two regular tetrahedra on alternate cube corners). So icosahedron ⊂ octahedron ⊂ tetrahedra ⊂ cube ⊂ dodecahedron nest exactly in one cell.</p><p><b>Euclid–Kepler–Pacioli network.</b> Great stellated dodecahedra on the even cells (an FCC lattice) and icosahedra on the odd cells share only corners: each star's 12 roof tips are vertices of the six neighbouring icosahedra, with no overlap (exact separating-axis test). Dodecahedra on the even cells alone form the known optimal lattice packing of the regular dodecahedron, density (5+√5)/8.</p><p>Every claim is checked numerically by scripts/verify-roof-fold.mjs on each push. A web-level literature search (2026-10-06, recorded in DISCOVERIES.md) did not find the cell or the network; the individual solids, Euclid's construction and the optimal packing are classical. Names chosen by DICTO.</p>",
   "keywords": [
-    "Euclid–Kepler cell",
-    "Euclid–Kepler network",
+    "Euclid–Kepler–Pacioli cell",
+    "EKP",
+    "Euclid–Kepler–Pacioli network",
+    "Platonic solids",
+    "stella octangula",
+    "golden rectangles",
+    "Pacioli",
     "icosahedron",
     "dodecahedron",
     "great stellated dodecahedron",
@@ -23,7 +30,15 @@
   "access_right": "open",
   "language": "eng",
   "related_identifiers": [
-    { "identifier": "https://github.com/DICTOR-Master/kaleidohedra", "relation": "isSupplementTo", "scheme": "url" },
-    { "identifier": "https://github.com/DICTOR-Master/rhombiverse", "relation": "isSupplementedBy", "scheme": "url" }
+    {
+      "identifier": "https://github.com/DICTOR-Master/kaleidohedra",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/DICTOR-Master/rhombiverse",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    }
   ]
 }

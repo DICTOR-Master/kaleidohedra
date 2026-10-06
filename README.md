@@ -23,8 +23,8 @@ the commit that first recorded it (full list, verification and literature status
 | DICTO skewed rhombic dodecahedron (60° and 72° rhombi, tiles as a sheared FCC) | 2026-10-01 | not found — candidate |
 | Regular-hexagon elongated dodecahedron (4 regular hexagons, 4 squares, 4 60° rhombi) | 2026-10-01 | not found — candidate |
 | DICTO skewed elongated dodecahedra (two forms) | 2026-10-01 | not yet searched |
-| Euclid–Kepler cell: cube, dodecahedron and folded icosahedron, 13 nodes, Pm-3 | 2026-10-06 | not found — candidate |
-| Euclid–Kepler network: Kepler's great stellated dodecahedra and icosahedra sharing only corners | 2026-10-06 | not found — candidate |
+| Euclid–Kepler–Pacioli cell: cube, dodecahedron and folded icosahedron, 13 nodes, Pm-3 | 2026-10-06 | not found — candidate |
+| Euclid–Kepler–Pacioli network: Kepler's great stellated dodecahedra and icosahedra sharing only corners | 2026-10-06 | not found — candidate |
 
 "Not found" means a web-level search turned up nothing, not proof of novelty. Cite as
-*DICTO, Kaleidohedra discoveries, #N (first recorded date), https://doi.org/10.5281/zenodo.23173809*. The Euclid–Kepler cell and network are archived as [v2026.10.06](https://doi.org/10.5281/zenodo.23173810).
+*DICTO, Kaleidohedra discoveries, #N (first recorded date), https://doi.org/10.5281/zenodo.23173809*. The Euclid–Kepler–Pacioli cell and network are archived as [v2026.10.06](https://doi.org/10.5281/zenodo.23173810).

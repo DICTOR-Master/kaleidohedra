@@ -23,8 +23,8 @@ priority.
 | 5 | Regular-hexagon elongated dodecahedron | DICTO (from the "hexagons and rhombi" hunch) | yes | **not found** — candidate | 2026-10-01 (8420a51) |
 | 6 | Exactly 9 "most regular" space-fillers | Kaleidohedra two-way search | yes | not yet searched | 2026-10-01 (547aac9) |
 | 7 | DICTO skewed ED (two forms) | Kaleidohedra (extending #1) | yes | not yet searched | 2026-10-01 (e97193f) |
-| 8 | Euclid–Kepler cell: cube, dodecahedron and folded icosahedron (Pm-3) | DICTO (built a physical cell) | yes | **not found** — candidate; a periodic approximant-type structure like α-AlMnSi (no fivefold axis) | 2026-10-06 (6636342) |
-| 8b | Euclid–Kepler network: great stellated dodecahedra (even cells) and icosahedra (odd cells), sharing only corners | DICTO (from "the overlap belongs to the extraction") | yes | **not found** — candidate | 2026-10-06 |
+| 8 | Euclid–Kepler–Pacioli (EKP) cell: all five Platonic solids nested in one cubic cell, with Kepler's star and Pacioli's rectangles (Pm-3) | DICTO (built a physical cell) | yes | **not found** — candidate; a periodic approximant-type structure like α-AlMnSi (no fivefold axis) | 2026-10-06 (6636342) |
+| 8b | Euclid–Kepler–Pacioli network: great stellated dodecahedra (even cells) and icosahedra (odd cells), sharing only corners | DICTO (from "the overlap belongs to the extraction") | yes | **not found** — candidate | 2026-10-06 |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -148,11 +148,15 @@ Neither has a square face, consistent with DICTO's RD having none.
 - Status: not yet searched (same caveat as #1 — a specialist parallelohedra
   literature search would be needed to claim priority).
 
-## 8. Euclid–Kepler cell
+## 8. Euclid–Kepler–Pacioli (EKP) cell
 
-*Named 2026-10-06 by DICTO: Euclid for the roofs on the cube (Elements XIII), Kepler for the great
-stellated dodecahedron it contains (1619) and his nested Platonic solids (1596). Extraction (b) below
-is the **Euclid–Kepler network**. Code and file names keep the working name "roof-fold".*
+*Named 2026-10-06 by DICTO, whose artist name stands for Euclid's five Platonic
+solids, all of which now nest in this one cell: **Euclid** for the roofs on the
+cube (Elements XIII), **Kepler** for his great stellated dodecahedron, his
+stella octangula and his nested solids, **Pacioli** for the three golden
+rectangles the neighbouring roofs form. Short name **EKP by DICTO**. Extraction
+(b) below is the **Euclid–Kepler–Pacioli network**. Code and file names keep the
+working name "roof-fold".*
 
 Put Euclid's roofs on a cube of edge 2 to make the regular dodecahedron, then
 reflect the 12 roof vertices back through the six cube faces: they land on a
@@ -175,6 +179,27 @@ along x, y and z.
   local but aligned (non-crystallographic symmetry). The crystal's group m-3
   is exactly the cube's symmetries that are also the icosahedron's, the most
   icosahedral symmetry a periodic crystal can keep. Checked in CI.
+- **Pacioli's golden rectangles are the neighbours' roofs** (DICTO,
+  2026-10-06: "four elements of roofing structure overlap, making golden
+  section rectangles"). Each roof ridge, seen from the neighbouring cell it
+  pokes into, is the long side of a golden rectangle (2/φ × 2/φ²); the six
+  neighbours' ridges make, inside every cube, the three mutually
+  perpendicular interlocking (Borromean) golden rectangles of Pacioli's *De
+  divina proportione* (1509), whose 12 corners are the icosahedron. So the
+  fold is literally the neighbours' roofs meeting in the middle.
+- **Kepler's chain in one cell** (DICTO, 2026-10-06, as a homage to
+  Kepler's nested solids). The two regular tetrahedra on alternate cube
+  corners (the stella octangula, Kepler's name) overlap in the octahedron on
+  the six cube-face centres, and the icosahedron's 12 vertices lie one on
+  each of the octahedron's 12 edges at the golden section (and 8 of its faces
+  lie in the octahedron's 8 face planes). So all five
+  Platonic solids nest exactly in one cell, **icosahedron ⊂ octahedron ⊂
+  tetrahedra ⊂ cube ⊂ dodecahedron**, with Kepler's great stellated
+  dodecahedron around the icosahedron. Each step is classical; the chain as
+  one periodic cell has not been searched. The stella octangula keeps all
+  of m-3 (one tetrahedron alone keeps only the 12 rotations, 23). The
+  tetrahedra and octahedron edges lie along cube face diagonals (√2, 2√2),
+  not the icosahedral axes, so a physical build needs a second rod family.
 - **Not a tiling:** the dodecahedra overlap. Space is covered once (19%) or
   twice (81%), mean (5+√5)/4 ≈ 1.809, the dodecahedron's volume 10 + 2√5 over
   the cell's 8.
@@ -215,7 +240,7 @@ along x, y and z.
     cells share **only corners**: every star's 12 roof tips are vertices of
     the 6 neighbouring icosahedra, and an exact separating-axis test finds no
     overlap. A corner-sharing (Kagome-like) network of Kepler stars and
-    icosahedra: the **Euclid–Kepler network**. **Not found** — candidate
+    icosahedra: the **Euclid–Kepler–Pacioli network**. **Not found** — candidate
     (targeted search below).
   - Dodecahedra on even cells with icosahedra on odd cells do overlap; the
     stars are what make (b) corner-sharing.
@@ -249,7 +274,7 @@ along x, y and z.
     cube; the five nested Platonic solids with Euclid's roof caps; a stellated
     dodecahedron inside an icosahedron, Hildebrandt, Bridges 2006) and other
     periodic structures (Gailiunas, triply periodic links, Bridges 2022). No
-    periodic arrangement of this cell or of the Euclid–Kepler network. The
+    periodic arrangement of this cell or of the Euclid–Kepler–Pacioli network. The
     dodecahedral–icosahedral honeycomb that fits these solids face to face
     exists only in hyperbolic space.
   - Before claiming priority: check Koca et al. in full, approximant and
@@ -272,7 +297,7 @@ YYYY-MM-DD), https://doi.org/10.5281/zenodo.23173809.*
 
 The repository is public, so its commit history is a public timestamped record,
 and it is archived on Zenodo: **DOI [10.5281/zenodo.23173809](https://doi.org/10.5281/zenodo.23173809)** (all versions);
-finding #8, the Euclid–Kepler cell and network, is version v2026.10.06,
+finding #8, the Euclid–Kepler–Pacioli cell and network, is version v2026.10.06,
 **DOI [10.5281/zenodo.23173810](https://doi.org/10.5281/zenodo.23173810)**, published 2026-10-06.
 
 ## Sources
