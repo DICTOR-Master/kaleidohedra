@@ -32,7 +32,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 7 | DICTO skewed ED (two forms) | Kaleidohedra (extending #1) | yes | not yet searched | 2026-10-01 (e97193f) |
 | 8 | Euclid–Kepler–Pacioli (EKP) cell: all five Platonic solids nested in one cubic cell, with Kepler's star and Pacioli's rectangles (Pm-3) | DICTO (built a physical cell) | yes | **not found** — candidate; a periodic approximant-type structure like α-AlMnSi (no fivefold axis) | 2026-10-06 (6636342) |
 | 8b | Euclid–Kepler–Pacioli network: great stellated dodecahedra (even cells) and icosahedra (odd cells), sharing only corners | DICTO (from "the overlap belongs to the extraction") | yes | **not found** — candidate | 2026-10-06 |
-| 9 | Rhombic dodecahedron sub-family: 24 sheared-FCC cells from TARGETS.md, each built from four edge directions with volume matching the table | Kaleidohedra (predicted); verified by building in Polyhedraverse (9599e14) | yes (by construction) | **candidates** — literature not yet checked against Grünbaum 2010 tables; two web searches inconclusive | 2026-10-06 |
+| 9 | Rhombic dodecahedron sub-family: 24 sheared-FCC cells from TARGETS.md, each built from four edge directions with volume matching the table | Kaleidohedra (predicted); verified by building in Polyhedraverse (9599e14) | yes (by construction) | **candidates** — combinatorial type is Fedorov's rhombic dodecahedron (Grünbaum 2010, Fig. 2(c)); none is in Grünbaum's monohedral enumeration (Figs. 3, 10: only Kepler's K and Bilinski's B), and the paper doesn't list mixed-angle cells like these | 2026-10-06 |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -302,6 +302,11 @@ along x, y and z.
 ## 9. Rhombic dodecahedron sub-family (candidates)
 
 Targets 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24 and 26 of the rhombic-dodecahedron table in TARGETS.md. Each is a zonohedron of four unit edge directions (edge 1), built in Polyhedraverse as RD_TARGET_N and checked against the table's volume. Verified by building, not by literature. Listed here as candidates until the Grünbaum 2010 tables are checked for each. Any that turn out not to appear there move to the table above as not found.
+
+**Provenance (Grünbaum 2010, read in full):**
+- Combinatorial type: each is a zonohedron of four directions, so it has the combinatorial type of Fedorov's rhombic dodecahedron (Fig. 2(c), Kepler's K). Fedorov's list of the five parallelohedron types covers this type, so no new type is involved.
+- Monohedral (all faces congruent): Grünbaum's enumeration of monohedral rhombic dodecahedra (Figs. 3 and 10) gives only Kepler's K and Bilinski's B. None of the 24 is monohedral: each has two or more rhombus kinds (for example #4 has 36°, 60° and 72° rhombi), so none is one of those two.
+- So the paper neither lists nor rules out these specific cells. They stay candidates until someone checks mixed-angle sheared rhombic dodecahedra in the literature.
 
 ## Attribution and dates
 
