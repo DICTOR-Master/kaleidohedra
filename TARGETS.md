@@ -113,18 +113,18 @@ Volumes are at edge 1. **Line angles** are the angles between the edge direction
 
 | # | Faces | Line angles | Volume | Status |
 |---|---|---|---|---|
-| 1 | 4 rhombus 36, 2 hexagon 144/144/108, 2 rhombus 60 | 36, 36, 36, 36, 60, 72 | 1.11803 | tentative: built as HEX_TARGET_1 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
-| 2 | 2 hexagon 144/144/108, 2 rhombus 36, 2 rhombus 60, 2 square | 36, 36, 36, 60, 72, 90 | 1.11803 | tentative: built as HEX_TARGET_2 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
+| 1 | 4 rhombus 36, 2 hexagon 144/144/72, 2 rhombus 60 | 36, 36, 36, 36, 60, 72 | 1.11803 | tentative: built as HEX_TARGET_1 (Polyhedraverse 63e00ac; corners measured 144/144/72, label corrected) |
+| 2 | 2 hexagon 144/144/72, 2 rhombus 36, 2 rhombus 60, 2 square | 36, 36, 36, 60, 72, 90 | 1.11803 | tentative: built as HEX_TARGET_2 (Polyhedraverse 63e00ac; corners measured 144/144/72, label corrected) |
 | 3 | 4 rhombus 36, 2 hexagon 144/108/108, 2 square | 36, 36, 36, 72, 72, 90 | 1.30902 | confirmed: built as HEX_TARGET_3 (Polyhedraverse 98f529c) |
 | 4 | 4 rhombus 36, 2 regular hexagon, 2 square | 36, 36, 60, 60, 60, 90 | 0.927051 | confirmed: built as HEX_TARGET_4 (Polyhedraverse 98f529c) |
 | 5 | 4 rhombus 60, 2 hexagon 144/108/108, 2 rhombus 36 | 36, 36, 60, 60, 72, 72 | 1.30902 | confirmed: built as HEX_TARGET_5 (Polyhedraverse 98f529c) |
-| 6 | 4 rhombus 60, 2 hexagon 144/144/108, 2 rhombus 72 | 36, 36, 60, 60, 72, 72 | 1.80902 | tentative: built as HEX_TARGET_6 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
-| 7 | 4 rhombus 60, 2 hexagon 144/144/108, 2 square | 36, 36, 60, 60, 72, 90 | 1.11803 | tentative: built as HEX_TARGET_7 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
+| 6 | 4 rhombus 60, 2 hexagon 144/144/72, 2 rhombus 72 | 36, 36, 60, 60, 72, 72 | 1.80902 | tentative: built as HEX_TARGET_6 (Polyhedraverse 63e00ac; corners measured 144/144/72, label corrected) |
+| 7 | 4 rhombus 60, 2 hexagon 144/144/72, 2 square | 36, 36, 60, 60, 72, 90 | 1.11803 | tentative: built as HEX_TARGET_7 (Polyhedraverse 63e00ac; corners measured 144/144/72, label corrected) |
 | 8 | 2 hexagon 144/108/108, 2 rhombus 36, 2 rhombus 60, 2 square | 36, 36, 60, 72, 72, 90 | 1.30902 | confirmed: built as HEX_TARGET_8 (Polyhedraverse 98f529c) |
-| 9 | 2 hexagon 144/144/108, 2 rhombus 60, 2 rhombus 72, 2 square | 36, 36, 60, 72, 72, 90 | 1.80902 | tentative: built as HEX_TARGET_9 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
-| 10 | 4 rhombus 70.53, 2 hexagon 144/144/108, 2 square | 36, 36, 70.53, 70.53, 72, 90 | 1.75159 | tentative: built as HEX_TARGET_10 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
-| 11 | 4 rhombus 72, 2 hexagon 144/144/108, 2 square | 36, 36, 72, 72, 72, 90 | 1.80902 | tentative: built as HEX_TARGET_11 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
-| 12 | 6 square, 2 hexagon 144/144/108 | 36, 36, 72, 90, 90, 90 | 2.12663 | tentative: built as HEX_TARGET_12 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
+| 9 | 2 hexagon 144/144/72, 2 rhombus 60, 2 rhombus 72, 2 square | 36, 36, 60, 72, 72, 90 | 1.80902 | tentative: built as HEX_TARGET_9 (Polyhedraverse 63e00ac; corners measured 144/144/72, label corrected) |
+| 10 | 4 rhombus 70.53, 2 hexagon 144/144/72, 2 square | 36, 36, 70.53, 70.53, 72, 90 | 1.75159 | tentative: built as HEX_TARGET_10 (Polyhedraverse 63e00ac; corners measured 144/144/72, label corrected) |
+| 11 | 4 rhombus 72, 2 hexagon 144/144/72, 2 square | 36, 36, 72, 72, 72, 90 | 1.80902 | tentative: built as HEX_TARGET_11 (Polyhedraverse 63e00ac; corners measured 144/144/72, label corrected) |
+| 12 | 6 square, 2 hexagon 144/144/72 | 36, 36, 72, 90, 90, 90 | 2.12663 | tentative: built as HEX_TARGET_12 (Polyhedraverse 63e00ac; corners measured 144/144/72, label corrected) |
 | 13 | 4 rhombus 45, 2 hexagon 144/108/108, 2 square | 36, 45, 45, 72, 72, 90 | 1.66509 | confirmed: built as HEX_TARGET_13 (Polyhedraverse 98f529c) |
 | 14 | 2 regular hexagon, 2 rhombus 36, 2 rhombus 60, 2 rhombus 72 | 36, 60, 60, 60, 60, 72 | 1.5 | confirmed: built as HEX_TARGET_14 (Polyhedraverse 98f529c) |
 | 15 | 4 rhombus 60, 2 hexagon 144/108/108, 2 square | 36, 60, 60, 72, 72, 90 | 2.11803 | confirmed: built as HEX_TARGET_15 (Polyhedraverse 98f529c) |
@@ -145,7 +145,7 @@ Volumes are at edge 1. **Line angles** are the angles between the edge direction
 | 30 | 4 rhombus 72, 2 regular hexagon, 2 square | 60, 60, 60, 72, 72, 90 | 2.42705 | built: DICTO_LEANING_HEX_PRISM |
 | 31 | 6 square, 2 regular hexagon | 60, 60, 60, 90, 90, 90 | 2.59808 | built: PRISM_6 |
 
-**Tentative builds (to investigate):** rows 1, 2, 6, 7, 9, 10, 11 and 12 are listed as "hexagon 144/144/108". Those corners cannot form a convex hexagon, since six corners of 144, 144 and 108 (repeated) sum to 792°, not 720°. The four-direction shape that matches their angles, edges, volume and counts has corners 144/144/72 (repeated), which sum to 720°. The likely cause is a typo, 108 for 72, in the table. Built tentatively as 144/144/72 (Polyhedraverse 63e00ac) to test that; confirm by checking the source table before treating them as settled.
+**Tentative builds (to investigate):** rows 1, 2, 6, 7, 9, 10, 11 and 12 were listed as "hexagon 144/144/108". That label came from a formula that read the wrap-around corner as 180 minus its angle, which is wrong for that corner. Measured on the built polygons, the corners are 144/144/72 (repeated), which sum to 720°, as the table requires. The label is now computed from the directions (discover.py and targets.js, `hex_corners`), and the 26 rows that carried the old label are relabelled. The rows stay tentative until the source table is checked: the table itself may still carry the 108.
 
 ## Rhombic dodecahedron — sheared FCC (27)
 
@@ -185,23 +185,23 @@ Status: *to find* means predicted by the enumeration, not yet built or checked. 
 
 | # | Faces | Line angles | Volume | Status |
 |---|---|---|---|---|
-| 1 | 4 hexagon 144/144/108, 4 rhombus 36, 4 rhombus 60 | 36, 36, 36, 36, 36, 36, 60, 60, 72, 72 | 3.23607 | to find |
-| 2 | 6 rhombus 60, 4 hexagon 144/144/108, 2 rhombus 36 | 36, 36, 36, 36, 36, 60, 60, 60, 72, 72 | 3.73607 | to find |
-| 3 | 4 hexagon 144/144/108, 4 rhombus 60, 2 rhombus 36, 2 square | 36, 36, 36, 36, 36, 60, 60, 72, 72, 90 | 3.54508 | to find |
-| 4 | 4 rhombus 36, 2 hexagon 144/144/108, 2 regular hexagon, 2 rhombus 60, 2 square | 36, 36, 36, 36, 60, 60, 60, 60, 72, 90 | 3.04508 | to find |
-| 5 | 4 rhombus 36, 4 square, 2 hexagon 144/144/108, 2 regular hexagon | 36, 36, 36, 36, 60, 60, 60, 72, 90, 90 | 2.8541 | to find |
-| 6 | 4 rhombus 60, 2 hexagon 144/108/108, 2 hexagon 144/144/108, 2 rhombus 36, 2 square | 36, 36, 36, 36, 60, 60, 72, 72, 72, 90 | 3.92705 | to find |
-| 7 | 2 hexagon 144/108/108, 2 hexagon 144/144/108, 2 rhombus 36, 2 rhombus 60, 2 rhombus 72, 2 square | 36, 36, 36, 36, 60, 72, 72, 72, 72, 90 | 4.23607 | to find |
-| 8 | 4 hexagon 144/144/108, 4 square, 2 rhombus 60, 2 rhombus 72 | 36, 36, 36, 36, 60, 72, 72, 72, 90, 90 | 3.73607 | to find |
+| 1 | 4 hexagon 144/144/72, 4 rhombus 36, 4 rhombus 60 | 36, 36, 36, 36, 36, 36, 60, 60, 72, 72 | 3.23607 | to find |
+| 2 | 6 rhombus 60, 4 hexagon 144/144/72, 2 rhombus 36 | 36, 36, 36, 36, 36, 60, 60, 60, 72, 72 | 3.73607 | to find |
+| 3 | 4 hexagon 144/144/72, 4 rhombus 60, 2 rhombus 36, 2 square | 36, 36, 36, 36, 36, 60, 60, 72, 72, 90 | 3.54508 | to find |
+| 4 | 4 rhombus 36, 2 hexagon 144/144/72, 2 regular hexagon, 2 rhombus 60, 2 square | 36, 36, 36, 36, 60, 60, 60, 60, 72, 90 | 3.04508 | to find |
+| 5 | 4 rhombus 36, 4 square, 2 hexagon 144/144/72, 2 regular hexagon | 36, 36, 36, 36, 60, 60, 60, 72, 90, 90 | 2.8541 | to find |
+| 6 | 4 rhombus 60, 2 hexagon 144/108/108, 2 hexagon 144/144/72, 2 rhombus 36, 2 square | 36, 36, 36, 36, 60, 60, 72, 72, 72, 90 | 3.92705 | to find |
+| 7 | 2 hexagon 144/108/108, 2 hexagon 144/144/72, 2 rhombus 36, 2 rhombus 60, 2 rhombus 72, 2 square | 36, 36, 36, 36, 60, 72, 72, 72, 72, 90 | 4.23607 | to find |
+| 8 | 4 hexagon 144/144/72, 4 square, 2 rhombus 60, 2 rhombus 72 | 36, 36, 36, 36, 60, 72, 72, 72, 90, 90 | 3.73607 | to find |
 | 9 | 4 rhombus 36, 4 rhombus 60, 2 hexagon 144/108/108, 2 regular hexagon | 36, 36, 36, 60, 60, 60, 60, 60, 72, 72 | 3.61803 | to find |
 | 10 | 4 rhombus 36, 2 hexagon 144/108/108, 2 regular hexagon, 2 rhombus 60, 2 square | 36, 36, 36, 60, 60, 60, 60, 72, 72, 90 | 3.42705 | to find |
-| 11 | 6 rhombus 60, 2 hexagon 144/108/108, 2 hexagon 144/144/108, 2 square | 36, 36, 36, 60, 60, 60, 72, 72, 72, 90 | 4.23607 | to find |
-| 12 | 4 rhombus 60, 2 hexagon 144/108/108, 2 hexagon 144/144/108, 2 rhombus 72, 2 square | 36, 36, 36, 60, 60, 72, 72, 72, 72, 90 | 4.42705 | to find |
-| 13 | 4 rhombus 60, 4 square, 2 hexagon 144/108/108, 2 hexagon 144/144/108 | 36, 36, 36, 60, 60, 72, 72, 72, 90, 90 | 4.23607 | to find |
+| 11 | 6 rhombus 60, 2 hexagon 144/108/108, 2 hexagon 144/144/72, 2 square | 36, 36, 36, 60, 60, 60, 72, 72, 72, 90 | 4.23607 | to find |
+| 12 | 4 rhombus 60, 2 hexagon 144/108/108, 2 hexagon 144/144/72, 2 rhombus 72, 2 square | 36, 36, 36, 60, 60, 72, 72, 72, 72, 90 | 4.42705 | to find |
+| 13 | 4 rhombus 60, 4 square, 2 hexagon 144/108/108, 2 hexagon 144/144/72 | 36, 36, 36, 60, 60, 72, 72, 72, 90, 90 | 4.23607 | to find |
 | 14 | 4 hexagon 144/108/108, 4 square, 2 rhombus 36, 2 rhombus 60 | 36, 36, 36, 60, 72, 72, 72, 72, 90, 90 | 4.73607 | to find |
 | 15 | 4 regular hexagon, 4 rhombus 36, 4 rhombus 72 | 36, 36, 60, 60, 60, 60, 60, 60, 72, 72 | 4 | to find |
-| 16 | 4 rhombus 60, 4 rhombus 72, 2 hexagon 144/144/108, 2 regular hexagon | 36, 36, 60, 60, 60, 60, 60, 72, 72, 72 | 4.61803 | built: DICTO_SKEWED_ED_16 |
-| 17 | 4 rhombus 72, 2 hexagon 144/144/108, 2 regular hexagon, 2 rhombus 60, 2 square | 36, 36, 60, 60, 60, 60, 72, 72, 72, 90 | 4.92705 | to find |
+| 16 | 4 rhombus 60, 4 rhombus 72, 2 hexagon 144/144/72, 2 regular hexagon | 36, 36, 60, 60, 60, 60, 60, 72, 72, 72 | 4.61803 | built: DICTO_SKEWED_ED_16 |
+| 17 | 4 rhombus 72, 2 hexagon 144/144/72, 2 regular hexagon, 2 rhombus 60, 2 square | 36, 36, 60, 60, 60, 60, 72, 72, 72, 90 | 4.92705 | to find |
 | 18 | 6 rhombus 60, 4 hexagon 144/108/108, 2 rhombus 72 | 36, 36, 60, 60, 60, 72, 72, 72, 72, 72 | 4.73607 | built: DICTO_SKEWED_ED_18 |
 | 19 | 4 hexagon 144/108/108, 4 rhombus 60, 4 rhombus 72 | 36, 36, 60, 60, 72, 72, 72, 72, 72, 72 | 5.23607 | to find |
 | 20 | 4 hexagon 144/108/108, 4 rhombus 60, 2 rhombus 72, 2 square | 36, 36, 60, 60, 72, 72, 72, 72, 72, 90 | 5.04509 | to find |
@@ -218,11 +218,11 @@ Status: *to find* means predicted by the enumeration, not yet built or checked. 
 
 | # | Faces | Line angles | Volume | Status |
 |---|---|---|---|---|
-| 1 | 4 hexagon 144/144/108, 4 regular hexagon, 4 rhombus 36, 2 square | 36, 36, 36, 36, 36, 36, 60, 60, 60, 60, 60, 60, 72, 72, 90 | 6.47214 | to find |
-| 2 | 6 hexagon 144/144/108, 6 square, 2 regular hexagon | 36, 36, 36, 36, 36, 36, 60, 60, 60, 72, 72, 72, 90, 90, 90 | 6.59017 | to find |
-| 3 | 4 hexagon 144/108/108, 4 hexagon 144/144/108, 4 rhombus 60, 2 square | 36, 36, 36, 36, 36, 36, 60, 60, 72, 72, 72, 72, 72, 72, 90 | 8.47214 | to find |
-| 4 | 4 hexagon 144/144/108, 4 rhombus 60, 2 hexagon 144/108/108, 2 regular hexagon, 2 square | 36, 36, 36, 36, 36, 60, 60, 60, 60, 60, 72, 72, 72, 72, 90 | 8.3541 | to find |
-| 5 | 4 hexagon 144/108/108, 4 rhombus 60, 2 hexagon 144/144/108, 2 regular hexagon, 2 square | 36, 36, 36, 36, 60, 60, 60, 60, 60, 72, 72, 72, 72, 72, 90 | 8.3541 | to find |
+| 1 | 4 hexagon 144/144/72, 4 regular hexagon, 4 rhombus 36, 2 square | 36, 36, 36, 36, 36, 36, 60, 60, 60, 60, 60, 60, 72, 72, 90 | 6.47214 | to find |
+| 2 | 6 hexagon 144/144/72, 6 square, 2 regular hexagon | 36, 36, 36, 36, 36, 36, 60, 60, 60, 72, 72, 72, 90, 90, 90 | 6.59017 | to find |
+| 3 | 4 hexagon 144/108/108, 4 hexagon 144/144/72, 4 rhombus 60, 2 square | 36, 36, 36, 36, 36, 36, 60, 60, 72, 72, 72, 72, 72, 72, 90 | 8.47214 | to find |
+| 4 | 4 hexagon 144/144/72, 4 rhombus 60, 2 hexagon 144/108/108, 2 regular hexagon, 2 square | 36, 36, 36, 36, 36, 60, 60, 60, 60, 60, 72, 72, 72, 72, 90 | 8.3541 | to find |
+| 5 | 4 hexagon 144/108/108, 4 rhombus 60, 2 hexagon 144/144/72, 2 regular hexagon, 2 square | 36, 36, 36, 36, 60, 60, 60, 60, 60, 72, 72, 72, 72, 72, 90 | 8.3541 | to find |
 | 6 | 6 hexagon 144/108/108, 6 square, 2 regular hexagon | 36, 36, 36, 60, 60, 60, 72, 72, 72, 72, 72, 72, 90, 90, 90 | 10.5902 | to find |
 | 7 | 4 hexagon 144/108/108, 4 regular hexagon, 4 rhombus 72, 2 square | 36, 36, 60, 60, 60, 60, 60, 60, 72, 72, 72, 72, 72, 72, 90 | 10.4721 | to find |
 | 8 | 6 hexagon 135/135/90, 6 square, 2 regular hexagon | 45, 45, 45, 45, 45, 45, 60, 60, 60, 90, 90, 90, 90, 90, 90 | 9.74264 | to find |

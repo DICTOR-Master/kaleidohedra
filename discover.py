@@ -44,9 +44,24 @@ def faces(S):
         if len(inplane) == 2:
             kind = 'square' if angs[0] == 90 else f'rhombus {angs[0]:g}'
         else:
-            kind = 'regular hexagon' if all(a == 60 for a in angs) else 'hexagon ' + '/'.join(f'{180 - a:g}' for a in angs)
+            kind = 'regular hexagon' if all(a == 60 for a in angs) else 'hexagon ' + '/'.join(f'{c:g}' for c in hex_corners([S[i] for i in inplane]))
         out[kind] = out.get(kind, 0) + 2
     return dict(sorted(out.items()))
+
+def hex_corners(zone):
+    """Interior corners of the zonogon of three directions in one plane, each twice, largest first.
+
+    Lines sorted by their angle in the plane (theta1 < theta2 < theta3, in [0, 180)): the edges turn
+    by theta2 - theta1, theta3 - theta2 and 180 - (theta3 - theta1), so the corners are
+    180 - (theta2 - theta1), 180 - (theta3 - theta2) and theta3 - theta1 (their sum is 360).
+    """
+    a, b = zone[0], zone[1]
+    n = np.cross(a, b)
+    e2 = np.cross(n, a)
+    e2 = e2 / np.linalg.norm(e2)
+    th = sorted((math.atan2(float(g @ e2), float(g @ a)) % math.pi) for g in zone)
+    deg = lambda r: round(math.degrees(r), 6)
+    return sorted([180 - deg(th[1] - th[0]), 180 - deg(th[2] - th[1]), deg(th[2] - th[0])], reverse=True)
 
 def record(S):
     S = [np.array(g) / np.linalg.norm(g) for g in S]

@@ -66,7 +66,21 @@ function kindOf(zone) {
   for (let i = 0; i < zone.length; i++) for (let j = i + 1; j < zone.length; j++) angs.push(Math.round(lineAngle(zone[i], zone[j]) * 100) / 100);
   angs.sort((a, b) => a - b);
   if (zone.length === 2) return angs[0] === 90 ? 'square' : `rhombus ${label(angs[0])}`;
-  return angs.every((a) => a === 60) ? 'regular hexagon' : `hexagon ${angs.map((a) => label(180 - a)).join('/')}`;
+  return angs.every((a) => a === 60) ? 'regular hexagon' : `hexagon ${hexCorners(zone).map(label).join('/')}`;
+}
+
+// The interior corners of the zonogon of three directions in one plane, each corner twice, largest first.
+// Sort the lines by their angle in the plane (theta1 < theta2 < theta3, in [0, 180)): the edges turn by
+// theta2 - theta1, theta3 - theta2 and 180 - (theta3 - theta1), so the corners are 180 - (theta2 - theta1),
+// 180 - (theta3 - theta2) and theta3 - theta1. Their sum is always 360, so the hexagon's six corners sum to 720.
+function hexCorners(zone) {
+  const [a, b] = zone;
+  const n = cross(a, b);
+  const e2 = cross(n, a);
+  const len = Math.hypot(...e2);
+  const th = zone.map((g) => { let t = Math.atan2(dot(g, e2) / len, dot(g, a)); if (t < 0) t += Math.PI; if (t >= Math.PI) t -= Math.PI; return t; }).sort((x, y) => x - y);
+  const deg = (r) => (r * 180) / Math.PI;
+  return [180 - deg(th[1] - th[0]), 180 - deg(th[2] - th[1]), deg(th[2] - th[0])].sort((x, y) => y - x);
 }
 
 // The zonohedron of unit directions D, centred at the origin: every face is the
