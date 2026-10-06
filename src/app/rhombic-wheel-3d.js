@@ -10,7 +10,7 @@
 // the camera happens to be in the world when it's opened.
 import * as THREE from 'three';
 import {
-  buildWheelFaces, faceKey, ensureOutwardWinding,
+  buildWheelFaces, screenHorizontalAxis, faceKey, ensureOutwardWinding,
   SKELETON_COLOR, FACE_STYLE, computeLabelVisibility, LABEL_STYLE,
   resolveWheelFaces, ALL_WHEELS,
   ACTION_TO_MARK,
@@ -245,7 +245,7 @@ export function createRhombicWheel3D({
     clearFaces();
     currentWheelId = wheelId;
     const resolved = resolveWheelFaces(wheelConfig);
-    for (const face of buildWheelFaces()) {
+    for (const face of buildWheelFaces(screenHorizontalAxis(DEFAULT_OPEN_ROTATION))) {
       const key = faceKey(face);
       const data = resolved[key];
       let verts = face.verts.map(([x, y, z]) => new THREE.Vector3(x, y, z));

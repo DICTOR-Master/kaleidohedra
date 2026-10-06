@@ -22,8 +22,13 @@ const LOGO_TILT = 0.42;
 const SPIN_SPEED = 0.42; // rad per second
 const rotX = ([x, y, z], a) => [x, y * Math.cos(a) - z * Math.sin(a), y * Math.sin(a) + z * Math.cos(a)];
 const rotY = ([x, y, z], a) => [x * Math.cos(a) + z * Math.sin(a), y, -x * Math.sin(a) + z * Math.cos(a)];
-// Shape upright: its elongation axis (z in the wheel frame) becomes screen-vertical.
-const place = ([x, y, z], angle) => rotX(rotY([x, z, -y], angle), LOGO_TILT);
+// Lying on its side like the logo: the long axis (z in the wheel frame) is screen-horizontal,
+// and the shape rolls about it, tipped a little so its ends show.
+const rotZ = ([x, y, z], a) => [x * Math.cos(a) - y * Math.sin(a), x * Math.sin(a) + y * Math.cos(a), z];
+function place(v, angle) {
+  const [x, y, z] = rotZ(v, angle); // roll about the long axis
+  return rotY(rotX([z, y, -x], LOGO_TILT), 0.32); // long axis to screen x, then a slight tip
+}
 function shade(hex, k) {
   const n = parseInt(hex.slice(1), 16);
   const c = [n >> 16, (n >> 8) & 255, n & 255].map((v) => Math.round(v * k));

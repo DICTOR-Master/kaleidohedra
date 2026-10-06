@@ -111,7 +111,27 @@ export function buildEDFaces() {
   }
   return faces;
 }
-export const buildWheelFaces = buildEDFaces;
+// The wheel's ED, its long axis (z above) turned onto `axis`. A renderer passes the local
+// direction that its opening rotation shows as screen-horizontal, so the ED lies flat on
+// screen, as in the logo (direct request: "I wanted the ED horizontal").
+export function buildWheelFaces(axis = [0, 0, 1]) {
+  const faces = buildEDFaces();
+  const l = Math.hypot(...axis), d = axis.map((c) => c / l);
+  // Rotate z onto d (Rodrigues about z x d).
+  const k = [-d[1], d[0], 0], s = Math.hypot(...k), c = d[2];
+  if (s < 1e-12) return c > 0 ? faces : faces.map((f) => ({ ...f, verts: f.verts.map(([x, y, z]) => [x, -y, -z]) }));
+  const u = k.map((x) => x / s);
+  const rot = (v) => {
+    const cr = [u[1] * v[2] - u[2] * v[1], u[2] * v[0] - u[0] * v[2], u[0] * v[1] - u[1] * v[0]];
+    const ud = u[0] * v[0] + u[1] * v[1] + u[2] * v[2];
+    return v.map((x, i) => x * c + cr[i] * s + u[i] * ud * (1 - c));
+  };
+  return faces.map((f) => ({ ...f, verts: f.verts.map(rot) }));
+}
+// The local direction an Euler (XYZ) rotation shows as screen-horizontal: R^T (1, 0, 0).
+export function screenHorizontalAxis({ y, z }) {
+  return [Math.cos(z) * Math.cos(y), -Math.sin(z) * Math.cos(y), Math.sin(y)];
+}
 
 // Deterministic key per face -- the config system below keys off this,
 // so every wheel config and the shared universal-ring constant address

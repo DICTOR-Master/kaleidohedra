@@ -11,7 +11,7 @@ It grew from shapes DICTO found in Zometool, a golden leaning hexagonal prism an
 - `DISCOVERIES.md` — what has been found so far, how each is verified, and whether it is known.
 - `TARGETS.md` — the target list: the 160 equal-edge space-filling cells whose edges meet only at special angles, searched both ways (`discover.py`, `discover_run.py`, output `geometry-targets.json`).
 - `enumerate.py` — the earlier, smaller list (`targets.json`), all included in the new one.
-- `assets/brand/` — the logo, with the name (`kaleidohedra-logo.jpg`) and without (`kaleidohedra-mark.jpg`).
+- `assets/brand/` — the logo, with the name (`kaleidohedra-logo.jpg`) and without (`kaleidohedra-mark.jpg`), plus the site icons and preview image cut from it. The logo shows the regular-hexagon elongated dodecahedron (DISCOVERIES.md #5), which is also the app's live symbol: it rolls on the welcome screen and the menu wheels are built on its 12 faces.
 
 ## Findings and attribution
 
@@ -27,4 +27,4 @@ the commit that first recorded it (full list, verification and literature status
 | Euclid–Kepler–Pacioli network: Kepler's great stellated dodecahedra and icosahedra sharing only corners | 2026-10-06 | not found — candidate |
 
 "Not found" means a web-level search turned up nothing, not proof of novelty. Cite as
-*DICTO, Kaleidohedra discoveries, #N (first recorded date), https://doi.org/10.5281/zenodo.23173809*. The Euclid–Kepler–Pacioli cell and network are archived as [v2026.10.06](https://doi.org/10.5281/zenodo.23173810).
+*DICTO, Kaleidohedra discoveries, #N (first recorded date), https://doi.org/10.5281/zenodo.23173809*. Each release is archived on Zenodo under that DOI; the latest, [v2026.10.06-all](https://doi.org/10.5281/zenodo.23176716), lists every finding below.
