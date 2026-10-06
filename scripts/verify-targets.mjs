@@ -80,6 +80,12 @@ check('TARGETS.md rows match the data in order: number, faces, volume',
 check('TARGETS.md status: "built: ID" exactly where the data names a Polyhedraverse piece',
   TARGET_TYPES.every((type) => byType(type).every((t, i) => { const s = sections[type].rows[i].status; return t.in_polyhedraverse.length ? s.startsWith(`built: ${t.in_polyhedraverse[0]}`) : s === 'to find'; })));
 
+// An equal-edged hexagon with corners a, b, c (each twice) closes only if a + b + c = 360 (six corners sum to 720).
+// A row whose label fails this must be one TARGETS.md marks tentative, and every tentative row must fail it.
+const hexBad = (label) => { const m = /^hexagon (\d+)\/(\d+)\/(\d+)$/.exec(label); return m ? +m[1] + +m[2] + +m[3] !== 360 : false; };
+check('hexagon labels: a + b + c = 360 exactly where TARGETS.md marks the row tentative',
+  TARGET_TYPES.every((type) => byType(type).every((t, i) => { const bad = Object.keys(t.faces).some(hexBad); return bad === sections[type].rows[i].status.startsWith('tentative'); })));
+
 const summary = Object.fromEntries([...md.matchAll(/^\| ([a-z ]+) \| sheared [^|]+\| (\d+) \| (\d+) \| (\d+) \|$/gm)].map((m) => [m[1], +m[4]]));
 const total = md.match(/^\| \*\*total\*\* \|.*\*\*(\d+)\*\* \|$/m);
 check('TARGETS.md summary: "In Polyhedraverse" per type and in total agree with the data',

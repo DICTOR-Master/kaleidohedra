@@ -103,6 +103,10 @@ function overlayHtml() {
       <h1>Kaleidohedra</h1>
       <p class="overview">${overviewHtml(lang)}</p>
       <button type="button" class="how-to-link" id="welcome-how-to" data-i18n-html="welcome.howTo">${t('welcome.howTo', lang)}</button>
+      <div class="rhombiverse-link">
+        <img src="./assets/rhombiverse-favicon-64.png" alt="" width="28" height="28" />
+        <a href="https://rhombiverse.vercel.app" target="_blank" rel="noopener" data-i18n-html="welcome.rhombiverseLink">${t('welcome.rhombiverseLink', lang)}</a>
+      </div>
       ${logoHtml()}
       <div class="polyhedraverse-link">
         <img src="./assets/polyhedraverse-favicon-64.png" alt="" width="28" height="28" />
