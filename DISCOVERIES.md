@@ -32,6 +32,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 7 | DICTO skewed ED (two forms) | Kaleidohedra (extending #1) | yes | not yet searched | 2026-10-01 (e97193f) |
 | 8 | Euclid–Kepler–Pacioli (EKP) cell: all five Platonic solids nested in one cubic cell, with Kepler's star and Pacioli's rectangles (Pm-3) | DICTO (built a physical cell) | yes | **not found** — candidate; a periodic approximant-type structure like α-AlMnSi (no fivefold axis) | 2026-10-06 (6636342) |
 | 8b | Euclid–Kepler–Pacioli network: great stellated dodecahedra (even cells) and icosahedra (odd cells), sharing only corners | DICTO (from "the overlap belongs to the extraction") | yes | **not found** — candidate | 2026-10-06 |
+| 9 | Rhombic dodecahedron sub-family: 24 sheared-FCC cells from TARGETS.md, each built from four edge directions with volume matching the table | Kaleidohedra (predicted); verified by building in Polyhedraverse (9599e14) | yes (by construction) | **candidates** — literature not yet checked against Grünbaum 2010 tables; two web searches inconclusive | 2026-10-06 |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -297,6 +298,10 @@ along x, y and z.
     skutterudite structure databases (Bilbao, ICSD) for a 1b + 12j set with
     y = 1/(2φ), z = 1/(2φ²), and stellated-icosahedron framework literature.
 - Status: the cell and (b) **not found** — candidates; (a) **known**.
+
+## 9. Rhombic dodecahedron sub-family (candidates)
+
+Targets 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24 and 26 of the rhombic-dodecahedron table in TARGETS.md. Each is a zonohedron of four unit edge directions (edge 1), built in Polyhedraverse as RD_TARGET_N and checked against the table's volume. Verified by building, not by literature. Listed here as candidates until the Grünbaum 2010 tables are checked for each. Any that turn out not to appear there move to the table above as not found.
 
 ## Attribution and dates
 
