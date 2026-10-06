@@ -14,11 +14,11 @@ The two agree: bottom-up found **158 of the 160** and **nothing outside them**. 
 | Type (Fedorov) | Tiles as | Count | Found bottom-up | In Polyhedraverse |
 |---|---|---|---|---|
 | parallelepiped | sheared simple-cubic | 64 | 64 | 8 |
-| hexagonal prism | sheared hexagonal | 31 | 31 | 3 |
-| rhombic dodecahedron | sheared FCC | 27 | 25 | 3 |
+| hexagonal prism | sheared hexagonal | 31 | 31 | 31 |
+| rhombic dodecahedron | sheared FCC | 27 | 25 | 27 |
 | elongated dodecahedron | sheared ED lattice | 28 | 28 | 4 |
 | truncated octahedron | sheared BCC | 10 | 10 | 1 |
-| **total** | | **160** | **158** | **19** |
+| **total** | | **160** | **158** | **71** |
 
 ## The most regular: 9 cells
 

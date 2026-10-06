@@ -77,8 +77,11 @@ const byType = (type) => targets.filter((t) => t.type === type);
 check('TARGETS.md has a section per type with the right count', TARGET_TYPES.every((type) => sections[type]?.count === byType(type).length && sections[type].rows.length === byType(type).length));
 check('TARGETS.md rows match the data in order: number, faces, volume',
   TARGET_TYPES.every((type) => byType(type).every((t, i) => { const r = sections[type].rows[i]; return r.n === t.number && sameCounts(r.faces, t.faces) && r.volume === Number(t.volume.toPrecision(6)); })));
-check('TARGETS.md status: "built: ID" exactly where the data names a Polyhedraverse piece',
-  TARGET_TYPES.every((type) => byType(type).every((t, i) => { const s = sections[type].rows[i].status; return t.in_polyhedraverse.length ? s.startsWith(`built: ${t.in_polyhedraverse[0]}`) : s === 'to find'; })));
+// TARGETS.md's status names the Polyhedraverse piece ("confirmed: built as X", "tentative: built as X", "built: X")
+// exactly where the data lists one; "to find" rows have none.
+const statusId = (st) => { const m = /(?:built as |built: )([A-Z][A-Z0-9_]*)/.exec(st); return m ? m[1] : null; };
+check('TARGETS.md status names the Polyhedraverse piece exactly where the data lists one',
+  TARGET_TYPES.every((type) => byType(type).every((t, i) => { const st = sections[type].rows[i].status; const id = statusId(st); return id ? t.in_polyhedraverse[0] === id : (st === 'to find' && t.in_polyhedraverse.length === 0); })));
 
 // Each built hexagon's label names its corners; measure them on the polygon itself (not from the label).
 // The six corners must sum to 720 and match the label, each corner value twice.
