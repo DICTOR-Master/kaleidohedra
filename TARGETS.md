@@ -115,35 +115,37 @@ Volumes are at edge 1. **Line angles** are the angles between the edge direction
 |---|---|---|---|---|
 | 1 | 4 rhombus 36, 2 hexagon 144/144/108, 2 rhombus 60 | 36, 36, 36, 36, 60, 72 | 1.11803 | to find |
 | 2 | 2 hexagon 144/144/108, 2 rhombus 36, 2 rhombus 60, 2 square | 36, 36, 36, 60, 72, 90 | 1.11803 | to find |
-| 3 | 4 rhombus 36, 2 hexagon 144/108/108, 2 square | 36, 36, 36, 72, 72, 90 | 1.30902 | to find |
-| 4 | 4 rhombus 36, 2 regular hexagon, 2 square | 36, 36, 60, 60, 60, 90 | 0.927051 | to find |
-| 5 | 4 rhombus 60, 2 hexagon 144/108/108, 2 rhombus 36 | 36, 36, 60, 60, 72, 72 | 1.30902 | to find |
+| 3 | 4 rhombus 36, 2 hexagon 144/108/108, 2 square | 36, 36, 36, 72, 72, 90 | 1.30902 | confirmed: built as HEX_TARGET_3 (Polyhedraverse 98f529c) |
+| 4 | 4 rhombus 36, 2 regular hexagon, 2 square | 36, 36, 60, 60, 60, 90 | 0.927051 | confirmed: built as HEX_TARGET_4 (Polyhedraverse 98f529c) |
+| 5 | 4 rhombus 60, 2 hexagon 144/108/108, 2 rhombus 36 | 36, 36, 60, 60, 72, 72 | 1.30902 | confirmed: built as HEX_TARGET_5 (Polyhedraverse 98f529c) |
 | 6 | 4 rhombus 60, 2 hexagon 144/144/108, 2 rhombus 72 | 36, 36, 60, 60, 72, 72 | 1.80902 | to find |
 | 7 | 4 rhombus 60, 2 hexagon 144/144/108, 2 square | 36, 36, 60, 60, 72, 90 | 1.11803 | to find |
-| 8 | 2 hexagon 144/108/108, 2 rhombus 36, 2 rhombus 60, 2 square | 36, 36, 60, 72, 72, 90 | 1.30902 | to find |
+| 8 | 2 hexagon 144/108/108, 2 rhombus 36, 2 rhombus 60, 2 square | 36, 36, 60, 72, 72, 90 | 1.30902 | confirmed: built as HEX_TARGET_8 (Polyhedraverse 98f529c) |
 | 9 | 2 hexagon 144/144/108, 2 rhombus 60, 2 rhombus 72, 2 square | 36, 36, 60, 72, 72, 90 | 1.80902 | to find |
 | 10 | 4 rhombus 70.53, 2 hexagon 144/144/108, 2 square | 36, 36, 70.53, 70.53, 72, 90 | 1.75159 | to find |
 | 11 | 4 rhombus 72, 2 hexagon 144/144/108, 2 square | 36, 36, 72, 72, 72, 90 | 1.80902 | to find |
 | 12 | 6 square, 2 hexagon 144/144/108 | 36, 36, 72, 90, 90, 90 | 2.12663 | to find |
-| 13 | 4 rhombus 45, 2 hexagon 144/108/108, 2 square | 36, 45, 45, 72, 72, 90 | 1.66509 | to find |
-| 14 | 2 regular hexagon, 2 rhombus 36, 2 rhombus 60, 2 rhombus 72 | 36, 60, 60, 60, 60, 72 | 1.5 | to find |
-| 15 | 4 rhombus 60, 2 hexagon 144/108/108, 2 square | 36, 60, 60, 72, 72, 90 | 2.11803 | to find |
-| 16 | 4 rhombus 72, 2 hexagon 144/108/108, 2 rhombus 60 | 36, 60, 72, 72, 72, 72 | 2.11803 | to find |
-| 17 | 2 hexagon 144/108/108, 2 rhombus 60, 2 rhombus 72, 2 square | 36, 60, 72, 72, 72, 90 | 2.11803 | to find |
-| 18 | 4 rhombus 70.53, 2 hexagon 144/108/108, 2 square | 36, 70.53, 70.53, 72, 72, 90 | 2.33196 | to find |
-| 19 | 4 rhombus 72, 2 hexagon 144/108/108, 2 square | 36, 72, 72, 72, 72, 90 | 2.3548 | to find |
-| 20 | 6 square, 2 hexagon 144/108/108 | 36, 72, 72, 90, 90, 90 | 2.4899 | to find |
-| 21 | 4 rhombus 60, 2 hexagon 135/135/90, 2 rhombus 45 | 45, 45, 45, 60, 60, 90 | 1.70711 | to find |
-| 22 | 2 hexagon 135/135/90, 2 rhombus 45, 2 rhombus 60, 2 square | 45, 45, 45, 60, 90, 90 | 1.70711 | to find |
-| 23 | 4 rhombus 45, 2 regular hexagon, 2 square | 45, 45, 60, 60, 60, 90 | 1.5 | to find |
-| 24 | 4 rhombus 60, 2 hexagon 135/135/90, 2 square | 45, 45, 60, 60, 90, 90 | 1.70711 | to find |
-| 25 | 4 rhombus 70.53, 2 hexagon 135/135/90, 2 square | 45, 45, 70.53, 70.53, 90, 90 | 2.12914 | to find |
-| 26 | 4 rhombus 72, 2 hexagon 135/135/90, 2 square | 45, 45, 72, 72, 90, 90 | 2.17147 | to find |
-| 27 | 6 square, 2 hexagon 135/135/90 | 45, 45, 90, 90, 90, 90 | 2.41421 | to find |
+| 13 | 4 rhombus 45, 2 hexagon 144/108/108, 2 square | 36, 45, 45, 72, 72, 90 | 1.66509 | confirmed: built as HEX_TARGET_13 (Polyhedraverse 98f529c) |
+| 14 | 2 regular hexagon, 2 rhombus 36, 2 rhombus 60, 2 rhombus 72 | 36, 60, 60, 60, 60, 72 | 1.5 | confirmed: built as HEX_TARGET_14 (Polyhedraverse 98f529c) |
+| 15 | 4 rhombus 60, 2 hexagon 144/108/108, 2 square | 36, 60, 60, 72, 72, 90 | 2.11803 | confirmed: built as HEX_TARGET_15 (Polyhedraverse 98f529c) |
+| 16 | 4 rhombus 72, 2 hexagon 144/108/108, 2 rhombus 60 | 36, 60, 72, 72, 72, 72 | 2.11803 | confirmed: built as HEX_TARGET_16 (Polyhedraverse 98f529c) |
+| 17 | 2 hexagon 144/108/108, 2 rhombus 60, 2 rhombus 72, 2 square | 36, 60, 72, 72, 72, 90 | 2.11803 | confirmed: built as HEX_TARGET_17 (Polyhedraverse 98f529c) |
+| 18 | 4 rhombus 70.53, 2 hexagon 144/108/108, 2 square | 36, 70.53, 70.53, 72, 72, 90 | 2.33196 | confirmed: built as HEX_TARGET_18 (Polyhedraverse 98f529c) |
+| 19 | 4 rhombus 72, 2 hexagon 144/108/108, 2 square | 36, 72, 72, 72, 72, 90 | 2.3548 | confirmed: built as HEX_TARGET_19 (Polyhedraverse 98f529c) |
+| 20 | 6 square, 2 hexagon 144/108/108 | 36, 72, 72, 90, 90, 90 | 2.4899 | confirmed: built as HEX_TARGET_20 (Polyhedraverse 98f529c) |
+| 21 | 4 rhombus 60, 2 hexagon 135/135/90, 2 rhombus 45 | 45, 45, 45, 60, 60, 90 | 1.70711 | confirmed: built as HEX_TARGET_21 (Polyhedraverse 98f529c) |
+| 22 | 2 hexagon 135/135/90, 2 rhombus 45, 2 rhombus 60, 2 square | 45, 45, 45, 60, 90, 90 | 1.70711 | confirmed: built as HEX_TARGET_22 (Polyhedraverse 98f529c) |
+| 23 | 4 rhombus 45, 2 regular hexagon, 2 square | 45, 45, 60, 60, 60, 90 | 1.5 | confirmed: built as HEX_TARGET_23 (Polyhedraverse 98f529c) |
+| 24 | 4 rhombus 60, 2 hexagon 135/135/90, 2 square | 45, 45, 60, 60, 90, 90 | 1.70711 | confirmed: built as HEX_TARGET_24 (Polyhedraverse 98f529c) |
+| 25 | 4 rhombus 70.53, 2 hexagon 135/135/90, 2 square | 45, 45, 70.53, 70.53, 90, 90 | 2.12914 | confirmed: built as HEX_TARGET_25 (Polyhedraverse 98f529c) |
+| 26 | 4 rhombus 72, 2 hexagon 135/135/90, 2 square | 45, 45, 72, 72, 90, 90 | 2.17147 | confirmed: built as HEX_TARGET_26 (Polyhedraverse 98f529c) |
+| 27 | 6 square, 2 hexagon 135/135/90 | 45, 45, 90, 90, 90, 90 | 2.41421 | confirmed: built as HEX_TARGET_27 (Polyhedraverse 98f529c) |
 | 28 | 4 rhombus 60, 2 regular hexagon, 2 square | 60, 60, 60, 60, 60, 90 | 2.12132 | built: LEANING_HEX_PRISM_60 |
-| 29 | 4 rhombus 70.53, 2 regular hexagon, 2 square | 60, 60, 60, 70.53, 70.53, 90 | 2.39792 | to find |
+| 29 | 4 rhombus 70.53, 2 regular hexagon, 2 square | 60, 60, 60, 70.53, 70.53, 90 | 2.39792 | confirmed: built as HEX_TARGET_29 (Polyhedraverse 98f529c) |
 | 30 | 4 rhombus 72, 2 regular hexagon, 2 square | 60, 60, 60, 72, 72, 90 | 2.42705 | built: DICTO_LEANING_HEX_PRISM |
 | 31 | 6 square, 2 regular hexagon | 60, 60, 60, 90, 90, 90 | 2.59808 | built: PRISM_6 |
+
+**Non-builds (to investigate):** rows 1, 2, 6, 7, 9, 10, 11 and 12 are listed as "hexagon 144/144/108". Those corners cannot form a convex hexagon, since six corners of 144, 144 and 108 (repeated) sum to 792°, not 720°. The four-direction shape that matches their angles, edges, volume and counts has corners 144/144/72 (repeated), which sum to 720°. The likely cause is a typo, 108 for 72, in the table. Not yet confirmed; the eight stay unbuilt until it is.
 
 ## Rhombic dodecahedron — sheared FCC (27)
 
