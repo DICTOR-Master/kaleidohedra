@@ -147,7 +147,7 @@ Volumes are at edge 1. **Line angles** are the angles between the edge direction
 
 ## Rhombic dodecahedron — sheared FCC (27)
 
-Status: *to find* means predicted by the enumeration, not yet built or checked. *confirmed* means constructed from four edge directions, with volumes matching this table.
+Status: *to find* means predicted by the enumeration, not yet built or checked. *confirmed* means verified by construction: built from four edge directions, with volumes matching this table. Whether a confirmed shape is new or already known is a separate question, not settled by building it.
 
 | # | Faces | Line angles | Volume | Status |
 |---|---|---|---|---|
