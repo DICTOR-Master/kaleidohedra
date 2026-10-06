@@ -44,18 +44,18 @@ Volumes are at edge 1. **Line angles** are the angles between the edge direction
 
 | # | Faces | Line angles | Volume | Status |
 |---|---|---|---|---|
-| 1 | 6 rhombus 36 | 36, 36, 36 | 0.309017 | to find |
-| 2 | 4 rhombus 36, 2 rhombus 45 | 36, 36, 45 | 0.341464 | to find |
+| 1 | 6 rhombus 36 | 36, 36, 36 | 0.309017 | tentative: built as HEX_TARGET_1 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
+| 2 | 4 rhombus 36, 2 rhombus 45 | 36, 36, 45 | 0.341464 | tentative: built as HEX_TARGET_2 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
 | 3 | 4 rhombus 36, 2 rhombus 60 | 36, 36, 60 | 0.309017 | to find |
 | 4 | 4 rhombus 36, 2 rhombus 70.53 | 36, 36, 70.53 | 0.127322 | to find |
 | 5 | 4 rhombus 45, 2 rhombus 36 | 36, 45, 45 | 0.393076 | to find |
-| 6 | 2 rhombus 36, 2 rhombus 45, 2 rhombus 60 | 36, 45, 60 | 0.409332 | to find |
-| 7 | 2 rhombus 36, 2 rhombus 45, 2 rhombus 70.53 | 36, 45, 70.53 | 0.340227 | to find |
+| 6 | 2 rhombus 36, 2 rhombus 45, 2 rhombus 60 | 36, 45, 60 | 0.409332 | tentative: built as HEX_TARGET_6 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
+| 7 | 2 rhombus 36, 2 rhombus 45, 2 rhombus 70.53 | 36, 45, 70.53 | 0.340227 | tentative: built as HEX_TARGET_7 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
 | 8 | 2 rhombus 36, 2 rhombus 45, 2 rhombus 72 | 36, 45, 72 | 0.321797 | to find |
-| 9 | 4 rhombus 60, 2 rhombus 36 | 36, 60, 60 | 0.5 | to find |
-| 10 | 2 rhombus 36, 2 rhombus 60, 2 rhombus 70.53 | 36, 60, 70.53 | 0.504036 | to find |
-| 11 | 2 rhombus 36, 2 rhombus 60, 2 rhombus 72 | 36, 60, 72 | 0.5 | to find |
-| 12 | 2 rhombus 36, 2 rhombus 60, 2 square | 36, 60, 90 | 0.309017 | to find |
+| 9 | 4 rhombus 60, 2 rhombus 36 | 36, 60, 60 | 0.5 | tentative: built as HEX_TARGET_9 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
+| 10 | 2 rhombus 36, 2 rhombus 60, 2 rhombus 70.53 | 36, 60, 70.53 | 0.504036 | tentative: built as HEX_TARGET_10 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
+| 11 | 2 rhombus 36, 2 rhombus 60, 2 rhombus 72 | 36, 60, 72 | 0.5 | tentative: built as HEX_TARGET_11 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
+| 12 | 2 rhombus 36, 2 rhombus 60, 2 square | 36, 60, 90 | 0.309017 | tentative: built as HEX_TARGET_12 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
 | 13 | 4 rhombus 70.53, 2 rhombus 36 | 36, 70.53, 70.53 | 0.550501 | to find |
 | 14 | 2 rhombus 36, 2 rhombus 70.53, 2 rhombus 72 | 36, 70.53, 72 | 0.552771 | to find |
 | 15 | 2 rhombus 36, 2 rhombus 70.53, 2 square | 36, 70.53, 90 | 0.484128 | to find |
@@ -145,7 +145,7 @@ Volumes are at edge 1. **Line angles** are the angles between the edge direction
 | 30 | 4 rhombus 72, 2 regular hexagon, 2 square | 60, 60, 60, 72, 72, 90 | 2.42705 | built: DICTO_LEANING_HEX_PRISM |
 | 31 | 6 square, 2 regular hexagon | 60, 60, 60, 90, 90, 90 | 2.59808 | built: PRISM_6 |
 
-**Non-builds (to investigate):** rows 1, 2, 6, 7, 9, 10, 11 and 12 are listed as "hexagon 144/144/108". Those corners cannot form a convex hexagon, since six corners of 144, 144 and 108 (repeated) sum to 792°, not 720°. The four-direction shape that matches their angles, edges, volume and counts has corners 144/144/72 (repeated), which sum to 720°. The likely cause is a typo, 108 for 72, in the table. Not yet confirmed; the eight stay unbuilt until it is.
+**Tentative builds (to investigate):** rows 1, 2, 6, 7, 9, 10, 11 and 12 are listed as "hexagon 144/144/108". Those corners cannot form a convex hexagon, since six corners of 144, 144 and 108 (repeated) sum to 792°, not 720°. The four-direction shape that matches their angles, edges, volume and counts has corners 144/144/72 (repeated), which sum to 720°. The likely cause is a typo, 108 for 72, in the table. Built tentatively as 144/144/72 (Polyhedraverse 63e00ac) to test that; confirm by checking the source table before treating them as settled.
 
 ## Rhombic dodecahedron — sheared FCC (27)
 
