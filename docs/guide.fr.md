@@ -196,10 +196,6 @@ La cellule de ce monde est la **cellule Euclid–Kepler–Pacioli**, et les gran
 
 Une galerie 3D des 160 cellules cibles : toute cellule qui remplit l'espace, à arêtes toutes égales, dont les arêtes ne se rencontrent qu'à des angles particuliers (36°, 45°, 60°, 70,53°, 72° et 90°), trouvées par une recherche exacte menée de deux façons (voir [TARGETS.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/TARGETS.md)). Choisissez-le dans l'écran 3D+ de l'Assistant. Choisissez un **Type** (parallélépipède, prisme hexagonal, dodécaèdre rhombique, dodécaèdre allongé ou octaèdre tronqué) et une cellule, ou parcourez-les avec ◀ ▶. Chacune est nommée par son type, son numéro dans TARGETS.md et ses angles ; ✓ marque celles déjà dans Polyhedraverse. **Afficher** dessine la cellule seule, avec ses voisines par les faces, ou en bloc 3×3×3 de son réseau, pour la voir remplir l'espace. Les faces sont colorées par sorte : carrés en bleu, losanges en rose, hexagones réguliers en or, autres hexagones en violet. **Info** donne ses faces, les angles entre ses directions d'arêtes, son volume (arête 1), le réseau selon lequel elle pave, et si elle est déjà dans Polyhedraverse. Rien ne se construit ici, et le panneau Shear se cache pour que les angles restent exacts.
 
-## RHOMBIS
-
-RHOMBIS, un puzzle 3D fait des mêmes pièces, se trouve sur le site frère Rhombiverse : ouvrez-le depuis l'écran d'accueil (**Essayez RHOMBIS**) ou sur [rhombiverse.vercel.app/rhombis.html](https://rhombiverse.vercel.app/rhombis.html).
-
 ## Enregistrer votre travail
 
 Votre monde est enregistré automatiquement dans ce navigateur, pour toutes les dimensions, après chaque modification. Il revient quand vous rouvrez le site sur le même appareil et le même navigateur.

@@ -194,10 +194,6 @@ The cell behind this world is the **Euclid–Kepler–Pacioli cell**, and great 
 
 A 3D gallery of the 160 target cells: every space-filling cell with all edges equal whose edges meet only at special angles (36°, 45°, 60°, 70.53°, 72° and 90°), found by an exact search done two ways (see [TARGETS.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/TARGETS.md)). Choose it in the Wizard's 3D+ screen. Pick a **Type** (parallelepiped, hexagonal prism, rhombic dodecahedron, elongated dodecahedron or truncated octahedron) and a cell, or step through them with ◀ ▶. Each is named by its type, its number in TARGETS.md and its angles; ✓ marks the ones already in Polyhedraverse. **Show** draws the cell alone, with its face neighbours, or as a 3×3×3 block of its lattice, so you can see it fill space. Faces are coloured by kind: squares blue, rhombi pink, regular hexagons gold, other hexagons purple. **Info** lists its faces, the angles between its edge directions, its volume (edge 1), the lattice it tiles as, and whether it is in Polyhedraverse yet. Nothing is built here, and the Shear panel hides, so the angles stay exact.
 
-## RHOMBIS
-
-RHOMBIS, a 3D puzzle made from the same pieces, lives on the sibling site Rhombiverse: open it from the welcome screen (**Try RHOMBIS**) or at [rhombiverse.vercel.app/rhombis.html](https://rhombiverse.vercel.app/rhombis.html).
-
 ## Saving your work
 
 Your World saves automatically in this browser, every dimension, after each change. It comes back when you reopen the site on the same device and browser.

@@ -196,10 +196,6 @@ La celda de este mundo es la **celda Euclid–Kepler–Pacioli**, y los grandes 
 
 Una galería 3D de las 160 celdas objetivo: toda celda que llena el espacio con todas las aristas iguales y cuyas aristas solo se encuentran en ángulos especiales (36°, 45°, 60°, 70,53°, 72° y 90°), halladas con una búsqueda exacta hecha de dos maneras (véase [TARGETS.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/TARGETS.md)). Elígelo en la pantalla 3D+ del Asistente. Escoge un **Tipo** (paralelepípedo, prisma hexagonal, dodecaedro rómbico, dodecaedro alargado u octaedro truncado) y una celda, o recórrelas con ◀ ▶. Cada una se nombra por su tipo, su número en TARGETS.md y sus ángulos; ✓ marca las que ya están en Polyhedraverse. **Mostrar** dibuja la celda sola, con sus vecinas de cara o como un bloque 3×3×3 de su red, para verla llenar el espacio. Las caras se colorean por tipo: cuadrados en azul, rombos en rosa, hexágonos regulares en dorado y otros hexágonos en morado. **Info** muestra sus caras, los ángulos entre las direcciones de sus aristas, su volumen (arista 1), la red con la que tesela y si ya está en Polyhedraverse. Aquí no se construye nada, y el panel Shear se oculta para que los ángulos sigan siendo exactos.
 
-## RHOMBIS
-
-RHOMBIS, un rompecabezas 3D hecho con las mismas piezas, está en el sitio hermano Rhombiverse: ábrelo desde la pantalla de bienvenida (**Prueba RHOMBIS**) o en [rhombiverse.vercel.app/rhombis.html](https://rhombiverse.vercel.app/rhombis.html).
-
 ## Guarda tu trabajo
 
 Tu mundo se guarda automáticamente en este navegador, en todas las dimensiones, después de cada cambio. Vuelve a aparecer cuando abres el sitio en el mismo dispositivo y navegador.

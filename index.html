@@ -612,9 +612,6 @@
       }
     }
     .panel-hint { opacity: 0.7; margin-top: 6px; font-size: 12px; }
-    #rhombis-settings-link { margin: 0 0 14px; opacity: 0.85; }
-    #rhombis-settings-link a { color: #9de0ff; text-decoration: none; }
-    #rhombis-settings-link a:hover { text-decoration: underline; }
  
     /* Lab panel is already a single scrollable overlay at any viewport
        size (see #lab-panel above) -- on a narrow/touch viewport it just
@@ -746,42 +743,16 @@
     @media (prefers-reduced-motion: reduce) { #static-enter-label { animation: none; } }
     #welcome-card h1 { margin: 0; font-size: 26px; color: #fff; }
     #welcome-card .overview { margin: 6px 0 0; font-size: 13px; opacity: 0.85; font-style: italic; }
-    #welcome-card .dim-link {
-      font: inherit; font-style: normal; font-weight: 600; color: #9de0ff; background: rgba(124, 204, 255, 0.12);
-      border: 1px solid rgba(124, 204, 255, 0.45); border-radius: 6px; padding: 2px 7px; margin: 2px 1px; cursor: pointer;
-    }
-    /* The dimension buttons: their own line, one row, never split. */
-    #welcome-card .dim-links { display: flex; flex-wrap: nowrap; justify-content: center; gap: 6px; margin-top: 8px; }
-    #welcome-card .dim-links .dim-link { margin: 0; padding: 4px 10px; min-height: 32px; }
-    #welcome-card .dim-link:hover, #welcome-card .dim-link:focus-visible { background: rgba(124, 204, 255, 0.3); color: #fff; }
     #welcome-card .how-to-link {
       margin-top: 6px; min-height: 36px; padding: 4px 14px;
       background: none; border: 1px solid rgba(124, 204, 255, 0.45); border-radius: 18px;
       color: #9de0ff; font: 13px system-ui, sans-serif; cursor: pointer;
     }
     #welcome-card .how-to-link:hover { background: rgba(124, 204, 255, 0.1); }
-    #welcome-card .rhombis-link {
-      /* Now sits directly under the h1 (moved up from below the ENTER
-         logo/checkbox, per direct feedback) -- the changelog tagline that
-         used to sit here was cut instead of relocated, see welcome.js's
-         own overlayHtml() comment. */
-      margin-top: 8px;
-      font-size: 12px;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-    }
-    /* RHOMBIS lives on Rhombiverse; this row links there, its icon smaller
-       than the Kaleidohedra mark above. */
-    #welcome-card .rhombis-link img {
-      width: 28px; height: 28px; border-radius: 6px; flex-shrink: 0;
-    }
-    #welcome-card .rhombis-link a { color: #9de0ff; text-decoration: none; }
-    #welcome-card .rhombis-link a:hover { text-decoration: underline; }
-    /* Cross-link to Polyhedraverse, a sibling project -- the same layout as
-       .rhombis-link (small icon + text, centred row). */
+    /* Cross-link to Polyhedraverse, a sibling project: small icon + text, centred row. */
     #welcome-card .polyhedraverse-link {
-      /* Tighter than .rhombis-link above (6px vs 8px gap, closer margin-
-         top) per direct feedback -- the badge read as too far from its
-         own text. */
+      /* Small gap between the badge and its text, per direct feedback --
+         the badge read as too far from its own text. */
       margin-top: 6px;
       font-size: 12px;
       display: flex; align-items: center; justify-content: center; gap: 6px;
@@ -948,7 +919,6 @@
 
   <div id="lab-panel">
     <div id="lab-header"><span data-i18n="hud.settings">Settings</span><button id="lab-close" type="button" title="Close" data-i18n-title="lab.close">✕</button></div>
-    <div class="panel-hint" id="rhombis-settings-link" data-i18n-html="lab.rhombisLinkHint">New here, or just want a quick puzzle? <a href="https://rhombiverse.vercel.app/rhombis.html" target="_blank" rel="noopener">Try RHOMBIS</a> any time.</div>
     <h2 data-i18n="hud.settings">Settings</h2>
     <div id="lab-settings-section">
       <div class="row"><label for="setting-sensitivity" data-i18n="setting.sensitivity">Look sensitivity</label><input id="setting-sensitivity" type="range" min="0.25" max="2.5" step="0.05" value="1" /></div>

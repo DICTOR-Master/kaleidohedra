@@ -196,10 +196,6 @@ Kaleidohedra 自己的控件在右上角的 **⟋ Shear** 面板里。它们一�
 
 160 个目标单元的 3D 图库：所有棱长相等、棱只以特殊角度（36°、45°、60°、70.53°、72° 和 90°）相交的空间填充单元，由两种方式的精确搜索找到（见 [TARGETS.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/TARGETS.md)）。在向导的 3D+ 页面中选择它。选一个**类型**（平行六面体、六棱柱、菱形十二面体、长菱形十二面体或截角八面体）和一个单元，或用 ◀ ▶ 逐个浏览。每个单元以类型、在 TARGETS.md 中的编号和角度命名；✓ 表示已收入 Polyhedraverse。**显示**可单独画出单元、连同面相邻的单元，或画出其晶格的 3×3×3 块，看它如何填满空间。面按种类着色：正方形蓝色、菱形粉色、正六边形金色、其他六边形紫色。**Info** 列出它的面、棱方向之间的角、体积（棱长 1）、铺满所用的晶格，以及是否已收入 Polyhedraverse。这里不搭建任何东西，剪切面板也会隐藏，使角度保持精确。
 
-## RHOMBIS
-
-用同样的块做成的 3D 解谜 RHOMBIS 在姊妹站点 Rhombiverse 上：从欢迎界面（**试试 RHOMBIS**）或在 [rhombiverse.vercel.app/rhombis.html](https://rhombiverse.vercel.app/rhombis.html) 打开。
-
 ## 保存你的作品
 
 每次更改后，你的世界（所有维度）都会自动保存在这个浏览器中。在同一台设备、同一个浏览器上重新打开网站，它就会回来。

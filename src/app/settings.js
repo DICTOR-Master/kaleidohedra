@@ -19,7 +19,7 @@ const DEFAULTS = {
   fov: 50,
   quality: 'high',
   volume: 0.5,
-  // UI-chrome language (src/app/i18n.js) -- shared with RHOMBIS via this
+  // UI-chrome language (src/app/i18n.js) -- shared with the sibling apps via this
   // same SETTINGS_KEY, so a choice made in either app is honored in both.
   language: 'en',
   // Performance guardrail (reframe Stage 6): the meter itself is opt-in
