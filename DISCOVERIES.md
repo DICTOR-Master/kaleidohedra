@@ -28,7 +28,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 3 | Bain disphenoids become regular tetrahedra | — | yes | **known** (Bain, 1924) | 2026-10-01 (8420a51) |
 | 4 | Bain rhombic dodecahedron (squares + 60° rhombi) | — | yes | **known** | 2026-10-01 (8420a51) |
 | 5 | Regular-hexagon elongated dodecahedron | DICTO, independently (from the "hexagons and rhombi" hunch) | yes | **known** — the truncated octahedron with one zone removed (Fedorov's ED as drawn by Grünbaum 2010); DICTO's route, the Bain stretch, is new | 2026-10-01 (8420a51) |
-| 6 | Exactly 9 "most regular" space-fillers | Kaleidohedra two-way search | yes | not yet searched as a set; its regular-hexagon elongated dodecahedron member is known (Grünbaum 2010, Fig. 2(b); see #5) | 2026-10-01 (547aac9) |
+| 6 | Exactly 9 "most regular" space-fillers | Kaleidohedra two-way search (its regular-hexagon elongated dodecahedron member: DICTO, independently, by lattice shearing) | yes | not yet searched as a set; that member is **known** (Grünbaum 2010, Fig. 2(b); see #5) | 2026-10-01 (547aac9) |
 | 7 | DICTO skewed ED (two forms) | Kaleidohedra (extending #1) | yes | not yet searched | 2026-10-01 (e97193f) |
 | 8 | Euclid–Kepler–Pacioli (EKP) cell: all five Platonic solids nested in one cubic cell, with Kepler's star and Pacioli's rectangles (Pm-3) | DICTO (built a physical cell) | yes | **not found** — candidate; a periodic approximant-type structure like α-AlMnSi (no fivefold axis) | 2026-10-06 (6636342) |
 | 8b | Euclid–Kepler–Pacioli network: great stellated dodecahedra (even cells) and icosahedra (odd cells), sharing only corners | DICTO (from "the overlap belongs to the extraction") | yes | **not found** — candidate | 2026-10-06 |
