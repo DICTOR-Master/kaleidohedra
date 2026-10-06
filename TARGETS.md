@@ -4,7 +4,7 @@
 
 **The target:** every space-filling cell (a zonohedral parallelohedron, Fedorov's five types) with **all edges equal** whose edge directions meet only at **special angles**: 36°, 45°, 60°, arccos(1/3) ≈ 70.53°, 72° and 90° (the regularity meter's set). Its faces are then squares, rhombi of those angles, and equal-edged hexagons, regular when their three angles are all 60°. Shapes are counted exactly, up to congruence; mirror images count once (these solids are centrally symmetric).
 
-**Searched both ways** (`discover.py`, `discover_run.py`, output `geometry-targets.json`):
+**Searched both ways** (`discover.py`, `discover_run.py`, output `data/geometry-targets.json`):
 
 - **Top-down:** every direction set built exactly from its angles: three independent directions fixed by their three angles, every further one by its angles to those three, then kept if it fills space (every direction in belts of 4 or 6 faces).
 - **Bottom-up:** an independent continuous search over every cell shape of each type (the space the sliders move through), 6,000 random starts per type, each polished until its angles land on the special set.
@@ -13,12 +13,12 @@ The two agree: bottom-up found **158 of the 160** and **nothing outside them**. 
 
 | Type (Fedorov) | Tiles as | Count | Found bottom-up | In Polyhedraverse |
 |---|---|---|---|---|
-| parallelepiped | sheared simple-cubic | 64 | 64 | 5 |
-| hexagonal prism | sheared hexagonal | 31 | 31 | 2 |
+| parallelepiped | sheared simple-cubic | 64 | 64 | 8 |
+| hexagonal prism | sheared hexagonal | 31 | 31 | 3 |
 | rhombic dodecahedron | sheared FCC | 27 | 25 | 3 |
-| elongated dodecahedron | sheared ED lattice | 28 | 28 | 2 |
+| elongated dodecahedron | sheared ED lattice | 28 | 28 | 4 |
 | truncated octahedron | sheared BCC | 10 | 10 | 1 |
-| **total** | | **160** | **158** | **13** |
+| **total** | | **160** | **158** | **19** |
 
 ## The most regular: 9 cells
 
@@ -26,11 +26,11 @@ Every equal-edge space-filler whose faces are only **squares, regular hexagons a
 
 | Type | Faces | Volume (edge 1) | In Polyhedraverse |
 |---|---|---|---|
-| parallelepiped | 6 rhombus 60 | 0.707107 | — |
-| parallelepiped | 4 rhombus 60, 2 square | 0.707107 | — |
-| parallelepiped | 4 square, 2 rhombus 60 | 0.866025 | — |
+| parallelepiped | 6 rhombus 60 | 0.707107 | RHOMBOHEDRON_60 |
+| parallelepiped | 4 rhombus 60, 2 square | 0.707107 | LEANING_SQUARE_PRISM |
+| parallelepiped | 4 square, 2 rhombus 60 | 0.866025 | RHOMBIC_PRISM_60 |
 | parallelepiped | 6 square | 1 | CUBE |
-| hexagonal prism | 4 rhombus 60, 2 regular hexagon, 2 square | 2.12132 | — |
+| hexagonal prism | 4 rhombus 60, 2 regular hexagon, 2 square | 2.12132 | LEANING_HEX_PRISM_60 |
 | hexagonal prism | 6 square, 2 regular hexagon | 2.59808 | PRISM_6 |
 | rhombic dodecahedron | 8 rhombus 60, 4 square | 2.82843 | BAIN_RD |
 | elongated dodecahedron | 4 regular hexagon, 4 rhombus 60, 4 square | 5.65685 | REGULAR_HEX_ED |
@@ -79,12 +79,12 @@ Volumes are at edge 1. **Line angles** are the angles between the edge direction
 | 33 | 4 rhombus 72, 2 rhombus 45 | 45, 72, 72 | 0.66638 | to find |
 | 34 | 2 rhombus 45, 2 rhombus 72, 2 square | 45, 72, 90 | 0.63601 | to find |
 | 35 | 4 square, 2 rhombus 45 | 45, 90, 90 | 0.707107 | to find |
-| 36 | 6 rhombus 60 | 60, 60, 60 | 0.707107 | to find |
+| 36 | 6 rhombus 60 | 60, 60, 60 | 0.707107 | built: RHOMBOHEDRON_60 |
 | 37 | 4 rhombus 60, 2 rhombus 70.53 | 60, 60, 70.53 | 0.471405 | to find |
 | 38 | 4 rhombus 60, 2 rhombus 70.53 | 60, 60, 70.53 | 0.745356 | to find |
 | 39 | 4 rhombus 60, 2 rhombus 72 | 60, 60, 72 | 0.5 | built: DICTO_FLATTENED_RHOMBOHEDRON |
 | 40 | 4 rhombus 60, 2 rhombus 72 | 60, 60, 72 | 0.747674 | to find |
-| 41 | 4 rhombus 60, 2 square | 60, 60, 90 | 0.707107 | to find |
+| 41 | 4 rhombus 60, 2 square | 60, 60, 90 | 0.707107 | built: LEANING_SQUARE_PRISM |
 | 42 | 4 rhombus 70.53, 2 rhombus 60 | 60, 70.53, 70.53 | 0.645497 | to find |
 | 43 | 4 rhombus 70.53, 2 rhombus 60 | 60, 70.53, 70.53 | 0.799305 | to find |
 | 44 | 2 rhombus 60, 2 rhombus 70.53, 2 rhombus 72 | 60, 70.53, 72 | 0.66362 | to find |
@@ -93,7 +93,7 @@ Volumes are at edge 1. **Line angles** are the angles between the edge direction
 | 47 | 4 rhombus 72, 2 rhombus 60 | 60, 72, 72 | 0.680827 | to find |
 | 48 | 4 rhombus 72, 2 rhombus 60 | 60, 72, 72 | 0.809017 | built: DICTO_ALL_RHOMBUS_BLOCK |
 | 49 | 2 rhombus 60, 2 rhombus 72, 2 square | 60, 72, 90 | 0.809017 | built: DICTO_SQUARE_FACED_BLOCK |
-| 50 | 4 square, 2 rhombus 60 | 60, 90, 90 | 0.866025 | to find |
+| 50 | 4 square, 2 rhombus 60 | 60, 90, 90 | 0.866025 | built: RHOMBIC_PRISM_60 |
 | 51 | 6 rhombus 70.53 | 70.53, 70.53, 70.53 | 0.7698 | built: RHOMBOHEDRON |
 | 52 | 6 rhombus 70.53 | 70.53, 70.53, 70.53 | 0.860663 | to find |
 | 53 | 4 rhombus 70.53, 2 rhombus 72 | 70.53, 70.53, 72 | 0.783336 | to find |
@@ -140,7 +140,7 @@ Volumes are at edge 1. **Line angles** are the angles between the edge direction
 | 25 | 4 rhombus 70.53, 2 hexagon 135/135/90, 2 square | 45, 45, 70.53, 70.53, 90, 90 | 2.12914 | to find |
 | 26 | 4 rhombus 72, 2 hexagon 135/135/90, 2 square | 45, 45, 72, 72, 90, 90 | 2.17147 | to find |
 | 27 | 6 square, 2 hexagon 135/135/90 | 45, 45, 90, 90, 90, 90 | 2.41421 | to find |
-| 28 | 4 rhombus 60, 2 regular hexagon, 2 square | 60, 60, 60, 60, 60, 90 | 2.12132 | to find |
+| 28 | 4 rhombus 60, 2 regular hexagon, 2 square | 60, 60, 60, 60, 60, 90 | 2.12132 | built: LEANING_HEX_PRISM_60 |
 | 29 | 4 rhombus 70.53, 2 regular hexagon, 2 square | 60, 60, 60, 70.53, 70.53, 90 | 2.39792 | to find |
 | 30 | 4 rhombus 72, 2 regular hexagon, 2 square | 60, 60, 60, 72, 72, 90 | 2.42705 | built: DICTO_LEANING_HEX_PRISM |
 | 31 | 6 square, 2 regular hexagon | 60, 60, 60, 90, 90, 90 | 2.59808 | built: PRISM_6 |

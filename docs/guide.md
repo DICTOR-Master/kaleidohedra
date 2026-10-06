@@ -1,6 +1,6 @@
 # Kaleidohedra User Guide
 
-Kaleidohedra by DICTO is the third sibling of [Rhombiverse](https://rhombiverse.vercel.app) and [Polyhedraverse](https://polyhedraverse.vercel.app). Rhombiverse is the **landscape**: the lattices themselves, stretching out in every direction. Polyhedraverse is the **portrait gallery**: the shapes that live in those lattices, one at a time, up close. Kaleidohedra **moves the landscape**: you can shear and slide the whole lattice, and every piece moves with it. It has every Rhombiverse world described below, plus its own controls (next section) and the Icosahedral/Dodecahedral Transitions world.
+Kaleidohedra by DICTO is the third sibling of [Rhombiverse](https://rhombiverse.vercel.app) and [Polyhedraverse](https://polyhedraverse.vercel.app). Rhombiverse is the **landscape**: the lattices themselves, stretching out in every direction. Polyhedraverse is the **portrait gallery**: the shapes that live in those lattices, one at a time, up close. Kaleidohedra **moves the landscape**: you can shear and slide the whole lattice, and every piece moves with it. It has every Rhombiverse world described below, plus its own controls (next section) and two worlds of its own: Icosahedral/Dodecahedral Transitions and Targets.
 
 Here, every piece fills space perfectly on a real crystal lattice, so you can only put a piece where the lattice has room for it. Tap to add a piece, long-press to remove one, and look at what you've built in different views, from 1D up to 6D.
 
@@ -189,6 +189,10 @@ A 3D world on one exact cell. Put Euclid's roofs on a cube and you get a regular
 Three of those pieces complete a homage to Kepler: the **octahedron** on the cube's face centres, with the icosahedron's corners on its edges at the golden section; the **stella octangula**, two regular tetrahedra on alternate cube corners that overlap in that octahedron; and Pacioli's three interlocking **golden rectangles**, which are exactly where the neighbouring cells' roof ridges meet. Together all five Platonic solids nest in one cell: icosahedron, octahedron, tetrahedra, cube, dodecahedron.
 
 The cell behind this world is the **Euclid–Kepler–Pacioli cell**, and great stellated dodecahedra and icosahedra touching only at corners form the **Euclid–Kepler–Pacioli network**, both by DICTO. Cite them as [doi:10.5281/zenodo.23173809](https://doi.org/10.5281/zenodo.23173809).
+
+## Targets
+
+A 3D gallery of the 160 target cells: every space-filling cell with all edges equal whose edges meet only at special angles (36°, 45°, 60°, 70.53°, 72° and 90°), found by an exact search done two ways (see [TARGETS.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/TARGETS.md)). Choose it in the Wizard's 3D+ screen. Pick a **Type** (parallelepiped, hexagonal prism, rhombic dodecahedron, elongated dodecahedron or truncated octahedron) and a cell, or step through them with ◀ ▶. Each is named by its type, its number in TARGETS.md and its angles; ✓ marks the ones already in Polyhedraverse. **Show** draws the cell alone, with its face neighbours, or as a 3×3×3 block of its lattice, so you can see it fill space. Faces are coloured by kind: squares blue, rhombi pink, regular hexagons gold, other hexagons purple. **Info** lists its faces, the angles between its edge directions, its volume (edge 1), the lattice it tiles as, and whether it is in Polyhedraverse yet. Nothing is built here, and the Shear panel hides, so the angles stay exact.
 
 ## RHOMBIS
 

@@ -186,7 +186,7 @@ if __name__ == '__main__':
         r = record(S); r['bottom_up_also_found'] = canon(S) in bu_keys; recs.append(r)
     recs.sort(key=lambda r: (r['directions'], r['type'], r['line_angles'], r['volume']))
     extra = [record(S) for S in flatten(bu) if canon(S) not in keys_td]
-    json.dump({'special_angles': [round(s, 4) for s in SPECIAL], 'targets': recs, 'bottom_up_only': extra}, open('geometry-targets.json', 'w'), indent=1)
+    json.dump({'special_angles': [round(s, 4) for s in SPECIAL], 'targets': recs, 'bottom_up_only': extra}, open('data/geometry-targets.json', 'w'), indent=1)
     from collections import Counter
     print(Counter(r['type'] for r in recs))
     print('found both ways:', sum(r['bottom_up_also_found'] for r in recs), 'of', len(recs))

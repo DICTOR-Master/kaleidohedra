@@ -28,6 +28,8 @@ import { createQuasicrystalWorld } from './app/world-quasicrystal.js';
 import { createShellsWorld } from './app/world-shells.js';
 import { createGoldenWorld } from './app/world-golden.js';
 import { createRoofFoldWorld } from './app/world-roof-fold.js';
+import { createTargetsWorld } from './app/world-targets.js';
+import { zonohedron as targetZonohedron, EMBLEM_DIRECTIONS } from './geometry-extensions/targets.js';
 import { roofFoldSolids } from './geometry-extensions/roof-fold.js';
 import { createKaleidoWorld } from './app/world-kaleidoscope.js';
 import { createNetsWorld } from './app/world-nets.js';
@@ -154,13 +156,14 @@ const qcWorlds = new Map();
 let shellsWorld = null;
 let goldenWorld = null;
 let roofFoldWorld = null;
+let targetsWorld = null;
 let kaleidoWorld = null;
 let netsWorld = null;
 let signalWorld = null;
 let constructWorld = null;
 let own3D = null;
-const OWN_WORLD_DIMENSION = { shells: '3D', golden: '3D', roofFold: '3D', kaleido: '2D', nets: '2D', signal: '1D', construct: '1D' };
-const own3DWorld = () => ({ shells: shellsWorld, golden: goldenWorld, roofFold: roofFoldWorld, kaleido: kaleidoWorld, nets: netsWorld, signal: signalWorld, construct: constructWorld })[own3D] ?? null;
+const OWN_WORLD_DIMENSION = { shells: '3D', golden: '3D', roofFold: '3D', targets: '3D', kaleido: '2D', nets: '2D', signal: '1D', construct: '1D' };
+const own3DWorld = () => ({ shells: shellsWorld, golden: goldenWorld, roofFold: roofFoldWorld, targets: targetsWorld, kaleido: kaleidoWorld, nets: netsWorld, signal: signalWorld, construct: constructWorld })[own3D] ?? null;
 const own3DActive = () => !!own3DWorld() && activeDimension === OWN_WORLD_DIMENSION[own3D];
 // 4D, 5D, 6D and the own 3D worlds each own their scene, taps, Lattice View and Skeleton.
 const isOwnWorldDimension = () => activeDimension === '4D' || qcWorlds.has(activeDimension) || own3DActive();
@@ -2058,7 +2061,7 @@ async function init() {
   // this bottom-row slot whenever no attach toggle needs it.
   let paintOn = false;
   // 1D has no colours to paint (Signal is cyan, Construct shows each axis).
-  const paintAvailable = () => !!activeDimension && activeDimension !== '1D' && !(own3DActive() && ['shells', 'golden', 'roofFold', 'nets'].includes(own3D));
+  const paintAvailable = () => !!activeDimension && activeDimension !== '1D' && !(own3DActive() && ['shells', 'golden', 'roofFold', 'targets', 'nets'].includes(own3D));
   const attachNeeded = () => (activeDimension === '4D' ? ['cell24', 'cell16', ...A4_CYCLE] : activeDimension !== '2D' && !isOwnWorldDimension() ? ['rhombohedra', 'pyrochlore'] : []).includes(attachPiece());
   const paintInSlot = () => paintAvailable() && !attachNeeded();
   function setPaint(on) {
@@ -2934,9 +2937,11 @@ async function init() {
     shellsWorld?.setActive(own3DActive() && own3D === 'shells');
     goldenWorld?.setActive(own3DActive() && own3D === 'golden');
     roofFoldWorld?.setActive(own3DActive() && own3D === 'roofFold');
-    // Icosahedral/Dodecahedral Transitions stays exact: no shear panel while it's on (shearing would break its icosahedra).
+    targetsWorld?.setActive(own3DActive() && own3D === 'targets');
+    // Icosahedral/Dodecahedral Transitions and Targets stay exact: no shear panel while they're on
+    // (shearing would break the icosahedra, and change the targets' angles).
     const shearPanel = document.getElementById('kaleido-panel');
-    if (shearPanel) shearPanel.hidden = own3DActive() && own3D === 'roofFold';
+    if (shearPanel) shearPanel.hidden = own3DActive() && (own3D === 'roofFold' || own3D === 'targets');
     kaleidoWorld?.setActive(own3DActive() && own3D === 'kaleido');
     netsWorld?.setActive(own3DActive() && own3D === 'nets');
     signalWorld?.setActive(own3DActive() && own3D === 'signal');
@@ -3154,12 +3159,14 @@ async function init() {
     shellsWorld?.setSkeleton(worldViewMode === 'skeleton');
     goldenWorld?.setSkeleton(worldViewMode === 'skeleton');
     roofFoldWorld?.setSkeleton(worldViewMode === 'skeleton');
+    targetsWorld?.setSkeleton(worldViewMode === 'skeleton');
     // Translucent too, at the same opacity as the 3D worlds.
     world4d?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     for (const w of qcWorlds.values()) w.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     shellsWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     goldenWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     roofFoldWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
+    targetsWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     document.getElementById('world-view-toggle')?.classList.toggle('active', worldViewMode !== 'color');
   }
   const worldViewSelect = document.getElementById('world-view-select');
@@ -3689,7 +3696,7 @@ async function init() {
         // 2026-08-29 -- X-Ray stays reachable via the corner HUD wheel's
         // own #xray-toggle face and the Lab panel, so no wheel face
         // routes to it here any more.)
-        const OWN_WORLD_ACTIONS = { 'tool:shellsWorld': 'shells', 'tool:goldenWorld': 'golden', 'tool:roofFoldWorld': 'roofFold', 'tool:kaleidoWorld': 'kaleido', 'tool:netsWorld': 'nets', 'tool:signalWorld': 'signal', 'tool:constructWorld': 'construct' };
+        const OWN_WORLD_ACTIONS = { 'tool:shellsWorld': 'shells', 'tool:goldenWorld': 'golden', 'tool:roofFoldWorld': 'roofFold', 'tool:targetsWorld': 'targets', 'tool:kaleidoWorld': 'kaleido', 'tool:netsWorld': 'nets', 'tool:signalWorld': 'signal', 'tool:constructWorld': 'construct' };
         // Construct's families: tool:constructWorld:<family> (square, kagome, rd).
         if (action?.startsWith('tool:constructWorld:')) {
           constructWorld?.setFamily(action.slice('tool:constructWorld:'.length));
@@ -3700,7 +3707,7 @@ async function init() {
           wheel3D.close();
           applyDimensionVisibility();
           updateQuickSelect();
-          showHudPrompt({ shells: 'Shells', golden: 'Golden Rhombohedra', roofFold: 'IDT', kaleido: 'Kaleidoscope', nets: 'Nets', signal: 'Signal', construct: 'Construct' }[own3D], 2500);
+          showHudPrompt({ shells: 'Shells', golden: 'Golden Rhombohedra', roofFold: 'IDT', targets: 'Targets', kaleido: 'Kaleidoscope', nets: 'Nets', signal: 'Signal', construct: 'Construct' }[own3D], 2500);
           return;
         }
         if (own3D && (action?.startsWith('tool:pieceType:') || action === 'tool:cuboctaBuild')) {
@@ -4026,6 +4033,7 @@ async function init() {
       if (action === 'tool:cuboctaBuild') return cuboctaGeometry;
       if (action === 'tool:shellsWorld') return wizardPieceGeometry('tool:pieceType:rd');
       if (action === 'tool:roofFoldWorld') return convex(roofFoldSolids().dodeca.faces.flat());
+      if (action === 'tool:targetsWorld') return convex(targetZonohedron(EMBLEM_DIRECTIONS).flatMap((f) => f.polygon));
       if (action === 'tool:goldenWorld') {
         const e6 = qcEngines['6d'];
         return convex(e6.tileVertices([0, 0, 0, 0, 0, 0], [0, 1, 2]));
@@ -4870,7 +4878,7 @@ async function init() {
       if (qcWorlds.has(activeDimension)) {
         quickShapeEl.innerHTML = iconFrame(MARKS.pieceRhombohedron, { title: t('cat.button', getSettings().language) });
       } else if (own3DActive()) {
-        quickShapeEl.innerHTML = iconFrame(({ shells: MARKS.pieceRD, roofFold: MARKS.pieceDodeca })[own3D] ?? MARKS.pieceRhombohedron, { title: ({ shells: 'Shells', roofFold: 'IDT' })[own3D] ?? 'Golden Rhombohedra' });
+        quickShapeEl.innerHTML = iconFrame(({ shells: MARKS.pieceRD, roofFold: MARKS.pieceDodeca })[own3D] ?? MARKS.pieceRhombohedron, { title: ({ shells: 'Shells', roofFold: 'IDT', targets: 'Targets' })[own3D] ?? 'Golden Rhombohedra' });
       } else if (currentMode === 'cubocta') {
         quickShapeEl.innerHTML = iconFrame(MARKS.cuboctahedron, { title: 'Shape' });
       } else {
@@ -5268,6 +5276,11 @@ async function init() {
     showHudPrompt,
     fitView: fitCameraTo,
     onChange: () => { if (historyRestorers.has('worldrooffold')) recordHistory('worldrooffold', roofFoldWorld.snapshot()); },
+  });
+  targetsWorld = createTargetsWorld({
+    // Added to the real scene, not the shear group.
+    scene: { add: (o) => THREE.Object3D.prototype.add.call(scene, o) },
+    fitView: fitCameraTo,
   });
   signalWorld = createSignalWorld({
     scene,

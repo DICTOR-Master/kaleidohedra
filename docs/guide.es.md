@@ -1,6 +1,6 @@
 # Guía del usuario de Kaleidohedra
 
-Kaleidohedra, de DICTO, es el tercer hermano de [Rhombiverse](https://rhombiverse.vercel.app) y [Polyhedraverse](https://polyhedraverse.vercel.app). Rhombiverse es el **paisaje**: las redes mismas, extendiéndose en todas direcciones. Polyhedraverse es la **galería de retratos**: las formas que viven en esas redes, una a una, de cerca. Kaleidohedra **mueve el paisaje**: puedes cizallar y deslizar toda la red, y cada pieza se mueve con ella. Tiene todos los mundos de Rhombiverse descritos abajo, más sus propios controles (siguiente sección) y el mundo Transiciones icosaédricas/dodecaédricas.
+Kaleidohedra, de DICTO, es el tercer hermano de [Rhombiverse](https://rhombiverse.vercel.app) y [Polyhedraverse](https://polyhedraverse.vercel.app). Rhombiverse es el **paisaje**: las redes mismas, extendiéndose en todas direcciones. Polyhedraverse es la **galería de retratos**: las formas que viven en esas redes, una a una, de cerca. Kaleidohedra **mueve el paisaje**: puedes cizallar y deslizar toda la red, y cada pieza se mueve con ella. Tiene todos los mundos de Rhombiverse descritos abajo, más sus propios controles (siguiente sección) y dos mundos propios: Transiciones icosaédricas/dodecaédricas y Targets.
 
 Aquí cada pieza llena el espacio a la perfección sobre una red cristalina real, así que solo puedes poner una pieza donde la red tenga sitio para ella. Toca para añadir una pieza, mantén pulsado para quitarla y observa lo que has construido con distintas vistas, de 1D a 6D.
 
@@ -191,6 +191,10 @@ Un mundo 3D sobre una única celda exacta. Pon los tejados de Euclides sobre un 
 Tres de esas piezas completan un homenaje a Kepler: el **octaedro** sobre los centros de las caras del cubo, con los vértices del icosaedro en sus aristas en la sección áurea; la **stella octangula**, dos tetraedros regulares en vértices alternos del cubo que se solapan en ese octaedro; y los tres **rectángulos áureos** entrelazados de Pacioli, que son justo donde se encuentran las cumbreras de los tejados de las celdas vecinas. Juntos, los cinco sólidos platónicos se anidan en una celda: icosaedro, octaedro, tetraedros, cubo, dodecaedro.
 
 La celda de este mundo es la **celda Euclid–Kepler–Pacioli**, y los grandes dodecaedros estrellados e icosaedros que solo se tocan por los vértices forman la **red Euclid–Kepler–Pacioli**, ambas de DICTO. Cítalas como [doi:10.5281/zenodo.23173809](https://doi.org/10.5281/zenodo.23173809).
+
+## Targets
+
+Una galería 3D de las 160 celdas objetivo: toda celda que llena el espacio con todas las aristas iguales y cuyas aristas solo se encuentran en ángulos especiales (36°, 45°, 60°, 70,53°, 72° y 90°), halladas con una búsqueda exacta hecha de dos maneras (véase [TARGETS.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/TARGETS.md)). Elígelo en la pantalla 3D+ del Asistente. Escoge un **Tipo** (paralelepípedo, prisma hexagonal, dodecaedro rómbico, dodecaedro alargado u octaedro truncado) y una celda, o recórrelas con ◀ ▶. Cada una se nombra por su tipo, su número en TARGETS.md y sus ángulos; ✓ marca las que ya están en Polyhedraverse. **Mostrar** dibuja la celda sola, con sus vecinas de cara o como un bloque 3×3×3 de su red, para verla llenar el espacio. Las caras se colorean por tipo: cuadrados en azul, rombos en rosa, hexágonos regulares en dorado y otros hexágonos en morado. **Info** muestra sus caras, los ángulos entre las direcciones de sus aristas, su volumen (arista 1), la red con la que tesela y si ya está en Polyhedraverse. Aquí no se construye nada, y el panel Shear se oculta para que los ángulos sigan siendo exactos.
 
 ## RHOMBIS
 

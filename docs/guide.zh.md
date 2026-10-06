@@ -1,6 +1,6 @@
 # Kaleidohedra 用户指南
 
-DICTO 的 Kaleidohedra 是 [Rhombiverse](https://rhombiverse.vercel.app) 和 [Polyhedraverse](https://polyhedraverse.vercel.app) 之后的第三个姊妹站点。Rhombiverse 是**风景**：向各个方向延伸的晶格本身。Polyhedraverse 是**肖像画廊**：住在这些晶格里的形状，一个一个近距离地看。Kaleidohedra **让风景动起来**：你可以剪切、滑动整个晶格，每一块都随之移动。它包含下文介绍的所有 Rhombiverse 世界，另有自己的控件（下一节）和“二十面体/十二面体转变”世界。
+DICTO 的 Kaleidohedra 是 [Rhombiverse](https://rhombiverse.vercel.app) 和 [Polyhedraverse](https://polyhedraverse.vercel.app) 之后的第三个姊妹站点。Rhombiverse 是**风景**：向各个方向延伸的晶格本身。Polyhedraverse 是**肖像画廊**：住在这些晶格里的形状，一个一个近距离地看。Kaleidohedra **让风景动起来**：你可以剪切、滑动整个晶格，每一块都随之移动。它包含下文介绍的所有 Rhombiverse 世界，另有自己的控件（下一节）和两个自己的世界：“二十面体/十二面体转变”和 Targets。
 
 在这里，每个部件都在真实的晶体晶格上无缝地填满空间，所以只能把部件放在晶格有空位的地方。轻点添加部件，长按移除部件，再用不同的视图从 1D 到 6D 查看你的作品。
 
@@ -191,6 +191,10 @@ Kaleidohedra 自己的控件在右上角的 **⟋ Shear** 面板里。它们一�
 其中三种块是对开普勒的致敬：顶点在立方体各面中心的**八面体**（二十面体的顶点以黄金分割落在它的棱上）；在立方体相间顶点上的两个正四面体、二者重叠于那个八面体的**星形八面体**；以及帕乔利三个相互扣合的**黄金矩形**，它们正是相邻胞屋顶屋脊相交之处。于是五种正多面体全部嵌套在一个胞里：二十面体、八面体、四面体、立方体、十二面体。
 
 这个世界所基于的胞是 **Euclid–Kepler–Pacioli 胞**，只在顶点相接的大星形十二面体与二十面体构成 **Euclid–Kepler–Pacioli 网络**，二者均出自 DICTO。引用：[doi:10.5281/zenodo.23173809](https://doi.org/10.5281/zenodo.23173809)。
+
+## Targets
+
+160 个目标单元的 3D 图库：所有棱长相等、棱只以特殊角度（36°、45°、60°、70.53°、72° 和 90°）相交的空间填充单元，由两种方式的精确搜索找到（见 [TARGETS.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/TARGETS.md)）。在向导的 3D+ 页面中选择它。选一个**类型**（平行六面体、六棱柱、菱形十二面体、长菱形十二面体或截角八面体）和一个单元，或用 ◀ ▶ 逐个浏览。每个单元以类型、在 TARGETS.md 中的编号和角度命名；✓ 表示已收入 Polyhedraverse。**显示**可单独画出单元、连同面相邻的单元，或画出其晶格的 3×3×3 块，看它如何填满空间。面按种类着色：正方形蓝色、菱形粉色、正六边形金色、其他六边形紫色。**Info** 列出它的面、棱方向之间的角、体积（棱长 1）、铺满所用的晶格，以及是否已收入 Polyhedraverse。这里不搭建任何东西，剪切面板也会隐藏，使角度保持精确。
 
 ## RHOMBIS
 

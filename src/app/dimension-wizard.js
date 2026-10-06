@@ -364,6 +364,9 @@ export const LATTICES_3D = [
   { key: 'roofFold', label: 'Icosahedral/Dodecahedral Transitions', pieces: [
     { label: 'Icosahedral/Dodecahedral Transitions', action: 'tool:roofFoldWorld' },
   ] },
+  { key: 'targets', label: 'Targets', pieces: [
+    { label: 'Targets', action: 'tool:targetsWorld' },
+  ] },
 ];
 
 // 4D thumbnails (direct decision, option B): each cell's 4D edges turned

@@ -47,6 +47,8 @@ jobs:
       - run: node scripts/verify-kaleido.mjs
       # Euclid–Kepler–Pacioli cell: cube, dodecahedron and folded icosahedron, Pm-3.
       - run: node scripts/verify-roof-fold.mjs
+      # The 160 target cells: rebuilt from their Gram matrices, each tiles space; TARGETS.md agrees.
+      - run: node scripts/verify-targets.mjs
       # 4D worlds: Z4, D4 and hyper-pyrochlore cells, slices and steps.
       - run: node scripts/verify-4d.mjs
       # Translations: every key in all 7 languages.

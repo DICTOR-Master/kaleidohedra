@@ -32,7 +32,7 @@ if __name__ == '__main__':
         r = D.record(S); r['found_bottom_up'] = k in bu_keys; recs.append(r)
     recs.sort(key=lambda r: (r['directions'], r['type'], r['line_angles'], r['volume']))
     extra = [D.record(S) for k, S in bu_keys.items() if k not in td_keys]
-    json.dump({'special_angles': [round(s, 4) for s in D.SPECIAL], 'targets': recs, 'bottom_up_only': extra}, open('geometry-targets.json', 'w'), indent=1)
+    json.dump({'special_angles': [round(s, 4) for s in D.SPECIAL], 'targets': recs, 'bottom_up_only': extra}, open('data/geometry-targets.json', 'w'), indent=1)
     from collections import Counter
     c_all = Counter(r['type'] for r in recs); c_bu = Counter(r['type'] for r in recs if r['found_bottom_up'])
     for typ in D.PARAMS: print(f'{typ}: {c_all[typ]} top-down, {c_bu[typ]} also bottom-up')

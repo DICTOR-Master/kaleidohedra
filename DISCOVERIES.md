@@ -137,7 +137,7 @@ TARGETS.md's search:
 
 Both keep DICTO's skewed RD's own four directions unchanged as a sub-set —
 found by matching `DICTO_DIRECTIONS`' Gram matrix against every ED cell's
-4-direction sub-sets in `geometry-targets.json`; exactly these two contain it.
+4-direction sub-sets in `data/geometry-targets.json`; exactly these two contain it.
 Neither has a square face, consistent with DICTO's RD having none.
 
 - Verified here (`DICTO_SKEWED_ED_16`, `DICTO_SKEWED_ED_18` in

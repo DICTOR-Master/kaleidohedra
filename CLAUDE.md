@@ -57,7 +57,7 @@ UI rule: hide controls that don't apply; don't grey them out.
 
 See README.md for the top-level files. Kaleidohedra's own work:
 `DISCOVERIES.md` (findings and how each is verified), `TARGETS.md` +
-`geometry-targets.json` (the 160-cell target list, from `discover.py` /
+`data/geometry-targets.json` (the 160-cell target list, from `discover.py` /
 `discover_run.py`), `enumerate.py` + `targets.json` (the earlier,
 smaller list), `PLAN.md` (the current design), `assets/brand/` (the
 logo). The forked engine: `index.html` (the app), `src/render.js`
