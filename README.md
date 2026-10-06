@@ -27,4 +27,4 @@ the commit that first recorded it (full list, verification and literature status
 | Euclid–Kepler–Pacioli network: Kepler's great stellated dodecahedra and icosahedra sharing only corners | 2026-10-06 | not found — candidate |
 
 "Not found" means a web-level search turned up nothing, not proof of novelty. Cite as
-*DICTO, Kaleidohedra discoveries, #N (first recorded date), https://doi.org/10.5281/zenodo.23173809*. Each release is archived on Zenodo under that DOI; the latest, [v2026.10.06-all](https://doi.org/10.5281/zenodo.23176716), lists every finding below.
+*DICTO, Kaleidohedra discoveries, #N (first recorded date), https://doi.org/10.5281/zenodo.23173809*. Each release is archived on Zenodo under that DOI; the latest, [v2026.10.06-targets](https://doi.org/10.5281/zenodo.23185820), lists every finding below, with #5 corrected and the Targets gallery.
