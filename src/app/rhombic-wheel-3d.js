@@ -10,7 +10,7 @@
 // the camera happens to be in the world when it's opened.
 import * as THREE from 'three';
 import {
-  buildRDFaces, faceKey, ensureOutwardWinding,
+  buildWheelFaces, faceKey, ensureOutwardWinding,
   SKELETON_COLOR, FACE_STYLE, computeLabelVisibility, LABEL_STYLE,
   resolveWheelFaces, ALL_WHEELS,
   ACTION_TO_MARK,
@@ -245,7 +245,7 @@ export function createRhombicWheel3D({
     clearFaces();
     currentWheelId = wheelId;
     const resolved = resolveWheelFaces(wheelConfig);
-    for (const face of buildRDFaces()) {
+    for (const face of buildWheelFaces()) {
       const key = faceKey(face);
       const data = resolved[key];
       let verts = face.verts.map(([x, y, z]) => new THREE.Vector3(x, y, z));
@@ -254,14 +254,12 @@ export function createRhombicWheel3D({
       const normal = verts[1].clone().sub(verts[0]).cross(verts[3].clone().sub(verts[0])).normalize();
 
       const geom = new THREE.BufferGeometry();
-      const posAttr = new Float32Array([
-        ...verts[0].toArray(), ...verts[1].toArray(), ...verts[2].toArray(),
-        ...verts[0].toArray(), ...verts[2].toArray(), ...verts[3].toArray(),
-      ]);
+      // Fan triangulation: the faces are hexagons, squares and rhombi.
+      const posAttr = new Float32Array(verts.slice(1, -1).flatMap((v, i) => [...verts[0].toArray(), ...v.toArray(), ...verts[i + 2].toArray()]));
       geom.setAttribute('position', new THREE.BufferAttribute(posAttr, 3));
       geom.computeVertexNormals();
       const mat = new THREE.MeshBasicMaterial({
-        color: SKELETON_COLOR, transparent: true, opacity: FACE_STYLE.fillOpacityBase,
+        color: face.color ?? SKELETON_COLOR, transparent: true, opacity: FACE_STYLE.fillOpacityBase,
         side: THREE.DoubleSide, depthWrite: false,
       });
       const mesh = new THREE.Mesh(geom, mat);

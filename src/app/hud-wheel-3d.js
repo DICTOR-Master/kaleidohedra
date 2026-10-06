@@ -8,7 +8,7 @@
 // replacing the whole row rather than sitting alongside it.
 //
 // Reuses the same RD face geometry as the full Rhombic Wheel 3D
-// (buildRDFaces/ensureOutwardWinding/faceKey from
+// (buildWheelFaces/ensureOutwardWinding/faceKey from
 // rhombic-wheel-3d-core.js) but is a genuinely separate, much smaller
 // component with its own material style and interaction model -- not
 // a scaled-down instance of that wheel's own renderer/state machine.
@@ -35,7 +35,7 @@
 // keep symbols floating... make a note to see if we can have them
 // fixed at some point") rather than keep guessing blind.
 import * as THREE from 'three';
-import { buildRDFaces, faceKey, ensureOutwardWinding } from './rhombic-wheel-3d-core.js';
+import { buildWheelFaces, faceKey, ensureOutwardWinding } from './rhombic-wheel-3d-core.js';
 
 // Metallic gold, not silver -- deliberately distinct from "regular"
 // RD material colors used elsewhere (Base Rhomb etc.), per direct
@@ -206,7 +206,7 @@ export function createHudWheel3D(renderer, { size = 144, margin = 12 } = {}) {
   labelsLayer.id = 'hud-wheel-3d-labels';
   document.body.appendChild(labelsLayer);
 
-  for (const face of buildRDFaces()) {
+  for (const face of buildWheelFaces()) {
     const k = faceKey(face);
     const data = HUD_FACES[k];
     let verts = face.verts.map(([x, y, z]) => new THREE.Vector3(x, y, z));
@@ -214,10 +214,7 @@ export function createHudWheel3D(renderer, { size = 144, margin = 12 } = {}) {
     verts = ensureOutwardWinding(verts, centroid);
 
     const geom = new THREE.BufferGeometry();
-    const pos = new Float32Array([
-      ...verts[0].toArray(), ...verts[1].toArray(), ...verts[2].toArray(),
-      ...verts[0].toArray(), ...verts[2].toArray(), ...verts[3].toArray(),
-    ]);
+    const pos = new Float32Array(verts.slice(1, -1).flatMap((v, i) => [...verts[0].toArray(), ...v.toArray(), ...verts[i + 2].toArray()]));
     geom.setAttribute('position', new THREE.BufferAttribute(pos, 3));
     geom.computeVertexNormals();
     // Solid, opaque, silver-grey -- deliberately the opposite of the
@@ -225,7 +222,7 @@ export function createHudWheel3D(renderer, { size = 144, margin = 12 } = {}) {
     // read as a real small object sitting in the HUD, not a
     // see-through overlay.
     const mesh = new THREE.Mesh(geom, new THREE.MeshStandardMaterial({
-      color: GOLD, metalness: 0.75, roughness: 0.28, side: THREE.DoubleSide,
+      color: face.color ?? GOLD, metalness: 0.45, roughness: 0.32, side: THREE.DoubleSide,
     }));
     mesh.userData.faceKey = k;
     group.add(mesh);

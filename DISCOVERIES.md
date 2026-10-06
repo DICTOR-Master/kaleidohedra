@@ -299,6 +299,8 @@ The repository is public, so its commit history is a public timestamped record,
 and it is archived on Zenodo: **DOI [10.5281/zenodo.23173809](https://doi.org/10.5281/zenodo.23173809)** (all versions);
 finding #8, the Euclid–Kepler–Pacioli cell and network, is version v2026.10.06,
 **DOI [10.5281/zenodo.23173810](https://doi.org/10.5281/zenodo.23173810)**, published 2026-10-06.
+Renamed the Euclid–Kepler–Pacioli (EKP) cell, with Kepler's chain and Pacioli's
+rectangles, as version v2026.10.06-ekp, **DOI [10.5281/zenodo.23176568](https://doi.org/10.5281/zenodo.23176568)**.
 
 ## Sources
 

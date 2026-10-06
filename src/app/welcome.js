@@ -1,6 +1,7 @@
-// First-run welcome/entry overlay: the Kaleidohedra mark with an ENTER
-// button centred on it, links to the sibling sites, legal-doc links.
+// First-run welcome/entry overlay: Kaleidohedra's symbol (the regular-hexagon
+// ED, turning) with an ENTER button centred on it, links to the sibling sites, legal-doc links.
 // Purely a DOM/localStorage concern, independent of render.js/world state.
+import { buildWheelFaces } from './rhombic-wheel-3d-core.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { t } from './i18n.js';
 import { dimensionLabel } from './dimension-label.js';
@@ -12,12 +13,56 @@ import { createLanguagePicker } from './language-picker.js';
 // opt-out used to store; it's cleared on load so it can't linger.
 const LEGACY_SKIP_KEY = 'rhombiverse-skip-intro';
 
+// The welcome symbol: Kaleidohedra's own shape, the regular-hexagon elongated
+// dodecahedron (the wheel's geometry, DISCOVERIES.md #5), turning slowly in
+// its livery colours. Plain SVG, no second WebGL context.
+const ED_FACES = buildWheelFaces();
+const LOGO_SCALE = 30;
+const LOGO_TILT = 0.42;
+const SPIN_SPEED = 0.42; // rad per second
+const rotX = ([x, y, z], a) => [x, y * Math.cos(a) - z * Math.sin(a), y * Math.sin(a) + z * Math.cos(a)];
+const rotY = ([x, y, z], a) => [x * Math.cos(a) + z * Math.sin(a), y, -x * Math.sin(a) + z * Math.cos(a)];
+// Shape upright: its elongation axis (z in the wheel frame) becomes screen-vertical.
+const place = ([x, y, z], angle) => rotX(rotY([x, z, -y], angle), LOGO_TILT);
+function shade(hex, k) {
+  const n = parseInt(hex.slice(1), 16);
+  const c = [n >> 16, (n >> 8) & 255, n & 255].map((v) => Math.round(v * k));
+  return `rgb(${c.join(',')})`;
+}
+function drawLogo(svg, angle) {
+  const polys = ED_FACES.map((f) => {
+    const p = f.verts.map((v) => place(v, angle));
+    const c = p.reduce((a, v) => [a[0] + v[0], a[1] + v[1], a[2] + v[2]], [0, 0, 0]).map((v) => v / p.length);
+    const len = Math.hypot(...c);
+    return { f, p, facing: c[2] / len, depth: c[2] };
+  }).filter((q) => q.facing > 0).sort((a, b) => a.depth - b.depth);
+  svg.querySelector('g.ed').innerHTML = polys.map(({ f, p, facing }) =>
+    `<polygon points="${p.map(([x, y]) => `${(x * LOGO_SCALE).toFixed(1)},${(-y * LOGO_SCALE).toFixed(1)}`).join(' ')}" fill="${shade(f.color, 0.55 + 0.45 * facing)}" />`).join('');
+}
 function logoHtml() {
   return `
     <div id="welcome-logo">
-      <img src="./assets/brand/kaleidohedra-mark-480.jpg" width="480" height="354" alt="Kaleidohedra logo: a glowing many-coloured polyhedron on a starfield" />
+      <svg id="welcome-logo-svg" viewBox="-75 -75 150 150" role="img" aria-label="Kaleidohedra symbol: the regular-hexagon elongated dodecahedron, turning slowly">
+        <g class="ed" stroke="rgba(234, 252, 255, 0.85)" stroke-width="1.2" stroke-linejoin="round"></g>
+      </svg>
       <button type="button" id="static-enter-label">ENTER</button>
     </div>`;
+}
+function startLogoSpin() {
+  const svg = document.getElementById('welcome-logo-svg');
+  if (!svg) return () => {};
+  const still = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  let angle = 0.5, lastT = null, raf = null;
+  const frame = (t) => {
+    const dt = lastT === null ? 0 : Math.min(0.1, (t - lastT) / 1000);
+    lastT = t;
+    angle += SPIN_SPEED * dt;
+    drawLogo(svg, angle);
+    raf = requestAnimationFrame(frame);
+  };
+  drawLogo(svg, angle);
+  if (!still) raf = requestAnimationFrame(frame);
+  return () => { if (raf !== null) cancelAnimationFrame(raf); };
 }
 
 // Real user feedback (2026-09-10): the welcome card had grown to three
@@ -91,11 +136,15 @@ function init() {
   aboutBtn.textContent = 'ℹ';
   document.body.appendChild(aboutBtn);
 
+  let stopLogoSpin = () => {};
   function show() {
     overlay.style.display = 'flex';
+    stopLogoSpin();
+    stopLogoSpin = startLogoSpin();
   }
   function hide() {
     overlay.style.display = 'none';
+    stopLogoSpin();
   }
 
 

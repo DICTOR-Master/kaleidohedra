@@ -54,6 +54,65 @@ export function buildRDFaces() {
   return faces; // 12 faces: 4 equator, 4 top, 4 bottom
 }
 
+// Kaleidohedra's wheel shape: the regular-hexagon elongated dodecahedron
+// (DISCOVERIES.md #5, the shape in the logo), 4 regular hexagons, 4 squares
+// and 4 rhombi of 60 degrees. The zonohedron of the four Bain directions
+// (1, +-1, +-sqrt2)/2 plus (1, 0, 0), as Polyhedraverse's REGULAR_HEX_ED,
+// turned so its elongation axis is vertical: the hexagons make the equator
+// belt and the squares and rhombi the top and bottom rings. Each face takes
+// the key (ring, sx, sy, sz) of the RD face it most nearly faces, so every
+// wheel config below addresses it unchanged.
+// Livery (sampled from the logo): warm hexagons alternating round the belt, blue squares, green
+// rhombi on top and violet below.
+export const ED_LIVERY = { hexagon: ['#f0843c', '#e0475f'], square: ['#65b9ee', '#65b9ee'], rhombus: ['#4fbf6a', '#7a6cf0'] };
+const liveryOf = (type, f) => ED_LIVERY[type][type === 'hexagon' ? (f.sx * f.sy > 0 ? 0 : 1) : type === 'rhombus' ? (f.sz > 0 ? 0 : 1) : 0];
+export function buildEDFaces() {
+  const R2 = Math.SQRT2;
+  const turn = ([x, y, z]) => [y, z, x]; // the old x (elongation) becomes vertical
+  const dirs = [[1, 1, R2], [1, -1, -R2], [-1, 1, -R2], [-1, -1, R2]].map((v) => v.map((c) => c / 2)).concat([[1, 0, 0]]).map(turn);
+  const add = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
+  const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
+  const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+  const cross = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+  const pts = [];
+  for (let m = 0; m < 32; m++) pts.push(dirs.reduce((acc, d, i) => add(acc, d.map((c) => (m >> i & 1 ? 0.5 : -0.5) * c)), [0, 0, 0]));
+  const scale = 2 / Math.max(...pts.map((p) => Math.hypot(...p)));
+  const raw = new Map();
+  for (let i = 0; i < 5; i++) for (let j = i + 1; j < 5; j++) for (const sgn of [1, -1]) {
+    const n0 = cross(dirs[i], dirs[j]).map((c) => c * sgn), l = Math.hypot(...n0), n = n0.map((c) => c / l);
+    const top = Math.max(...pts.map((p) => dot(p, n)));
+    const k = n.map((c) => (Math.round(c * 1e6) / 1e6 + 0).toFixed(6)).join();
+    if (raw.has(k)) continue;
+    const onFace = pts.filter((p) => dot(p, n) > top - 1e-9);
+    const uniq = []; for (const p of onFace) if (!uniq.some((q) => Math.hypot(...sub(p, q)) < 1e-9)) uniq.push(p);
+    // A hexagon's three directions also give interior sums: keep only the convex outline.
+    const c = uniq.reduce(add).map((x) => x / uniq.length);
+    const far = uniq.reduce((a, b) => (Math.hypot(...sub(b, c)) > Math.hypot(...sub(a, c)) ? b : a));
+    const u = sub(far, c), w = cross(n, u);
+    const q = uniq.map((p) => ({ p, x: dot(sub(p, c), u), y: dot(sub(p, c), w) })).sort((a, b) => a.x - b.x || a.y - b.y);
+    const turnZ = (o, a, b) => (a.x - o.x) * (b.y - o.y) - (a.y - o.y) * (b.x - o.x);
+    const half = (list) => { const h = []; for (const r of list) { while (h.length >= 2 && turnZ(h[h.length - 2], h[h.length - 1], r) <= 1e-9) h.pop(); h.push(r); } h.pop(); return h; };
+    const ring = [...half(q), ...half([...q].reverse())].map((r) => r.p); // counter-clockwise about n
+    const type = ring.length === 6 ? 'hexagon' : Math.abs(dot(sub(ring[1], ring[0]), sub(ring[3], ring[0]))) < 1e-9 ? 'square' : 'rhombus';
+    raw.set(k, { verts: ring.map((p) => p.map((x) => x * scale)), normal: n, type });
+  }
+  const ed = [...raw.values()];
+  // Greedy best-facing match to the RD faces' keys (each RD face's normal is its centroid direction).
+  const rd = buildRDFaces().map((f) => { const c = f.verts.reduce(add).map((x) => x / 4); const l = Math.hypot(...c); return { f, n: c.map((x) => x / l) }; });
+  const pairs = [];
+  ed.forEach((e, a) => rd.forEach((r, b) => pairs.push([dot(e.n ?? e.normal, r.n), a, b])));
+  pairs.sort((x, y) => y[0] - x[0]);
+  const usedE = new Set(), usedR = new Set(), faces = [];
+  for (const [, a, b] of pairs) {
+    if (usedE.has(a) || usedR.has(b)) continue;
+    usedE.add(a); usedR.add(b);
+    const { ring, sx, sy, sz } = rd[b].f, e = ed[a];
+    faces.push({ verts: e.verts, ring, sx, sy, sz, type: e.type, color: liveryOf(e.type, rd[b].f) });
+  }
+  return faces;
+}
+export const buildWheelFaces = buildEDFaces;
+
 // Deterministic key per face -- the config system below keys off this,
 // so every wheel config and the shared universal-ring constant address
 // the *same* geometric slot the same way. Must match buildRDFaces()'s
@@ -93,7 +152,7 @@ export const SKELETON_COLOR = "#4DD0E1";
 // bump fill to ~0.15 and outline opacity by ~+0.35; on select, ~0.60
 // fade further out to 0.4 base and boost similarly.
 export const FACE_STYLE = {
-  fillOpacityBase: 0.05, fillOpacityHoverBump: 0.10, fillOpacitySelectBump: 0.10,
+  fillOpacityBase: 0.18, fillOpacityHoverBump: 0.12, fillOpacitySelectBump: 0.12,
   outlineOpacityBase: 0.65, outlineOpacityBaseSpare: 0.4, outlineOpacityBump: 0.35,
   popOutHover: 0.12, popOutSelect: 0.22
 };
