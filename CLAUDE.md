@@ -52,6 +52,7 @@ add, even partially, without an explicit decision from the user:
 verify:copy` (in CI) fails if any of it reaches user-visible text.
 
 UI rule: hide controls that don't apply; don't grey them out.
+Every control panel must have a minimise chevron so it can be folded away from the scene. Rhombiverse's `addPanelMinimiser` (`src/app/panel-minimiser.js`) is the reference pattern.
 
 ## Layout
 

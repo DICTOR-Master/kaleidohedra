@@ -147,34 +147,36 @@ Volumes are at edge 1. **Line angles** are the angles between the edge direction
 
 ## Rhombic dodecahedron — sheared FCC (27)
 
+Status: *to find* means predicted by the enumeration, not yet built or checked. *confirmed* means constructed from four edge directions, with volumes matching this table.
+
 | # | Faces | Line angles | Volume | Status |
 |---|---|---|---|---|
-| 1 | 6 rhombus 36, 6 rhombus 60 | 36, 36, 36, 60, 60, 60 | 1.61803 | to find |
-| 2 | 6 rhombus 36, 4 rhombus 60, 2 square | 36, 36, 36, 60, 60, 90 | 1.42705 | to find |
-| 3 | 6 rhombus 60, 4 rhombus 36, 2 rhombus 70.53 | 36, 36, 60, 60, 60, 70.53 | 1.87268 | to find |
-| 4 | 4 rhombus 36, 4 rhombus 60, 4 rhombus 72 | 36, 36, 60, 60, 72, 72 | 2 | to find |
-| 5 | 4 rhombus 36, 4 rhombus 60, 2 rhombus 72, 2 square | 36, 36, 60, 60, 72, 90 | 1.80902 | to find |
-| 6 | 4 rhombus 36, 4 rhombus 60, 2 rhombus 72, 2 square | 36, 36, 60, 60, 72, 90 | 1.92705 | to find |
-| 7 | 4 rhombus 36, 4 rhombus 72, 2 rhombus 60, 2 rhombus 70.53 | 36, 36, 60, 70.53, 72, 72 | 2 | to find |
-| 8 | 4 rhombus 36, 4 rhombus 72, 2 rhombus 60, 2 square | 36, 36, 60, 72, 72, 90 | 2.11803 | to find |
-| 9 | 4 rhombus 36, 4 square, 2 rhombus 60, 2 rhombus 72 | 36, 36, 60, 72, 90, 90 | 1.61803 | to find |
-| 10 | 6 rhombus 60, 2 rhombus 36, 2 rhombus 72, 2 square | 36, 60, 60, 60, 72, 90 | 2.11803 | to find |
-| 11 | 4 rhombus 60, 4 rhombus 72, 2 rhombus 36, 2 square | 36, 60, 60, 72, 72, 90 | 2.30902 | to find |
-| 12 | 4 rhombus 60, 4 rhombus 72, 2 rhombus 36, 2 square | 36, 60, 60, 72, 72, 90 | 2.42705 | to find |
-| 13 | 4 rhombus 60, 4 square, 2 rhombus 36, 2 rhombus 72 | 36, 60, 60, 72, 90, 90 | 2.23607 | to find |
-| 14 | 4 rhombus 72, 4 square, 2 rhombus 36, 2 rhombus 60 | 36, 60, 72, 72, 90, 90 | 2.61803 | to find |
-| 15 | 6 square, 2 rhombus 36, 2 rhombus 60, 2 rhombus 72 | 36, 60, 72, 90, 90, 90 | 2.61803 | to find |
-| 16 | 8 rhombus 45, 2 rhombus 60, 2 rhombus 70.53 | 45, 45, 45, 45, 60, 70.53 | 1.94281 | to find |
-| 17 | 6 rhombus 60, 4 rhombus 45, 2 square | 45, 45, 60, 60, 60, 90 | 2.20711 | to find |
-| 18 | 4 rhombus 45, 4 square, 2 rhombus 60, 2 rhombus 70.53 | 45, 45, 60, 70.53, 90, 90 | 2.41421 | to find |
-| 19 | 6 square, 4 rhombus 45, 2 rhombus 60 | 45, 45, 60, 90, 90, 90 | 2.41421 | to find |
-| 20 | 6 square, 4 rhombus 60, 2 rhombus 45 | 45, 60, 60, 90, 90, 90 | 2.70711 | to find |
-| 21 | 10 rhombus 60, 2 rhombus 70.53 | 60, 60, 60, 60, 60, 70.53 | 2.35702 | to find |
+| 1 | 6 rhombus 36, 6 rhombus 60 | 36, 36, 36, 60, 60, 60 | 1.61803 | confirmed: built as RD_TARGET_1 (Polyhedraverse 9599e14) |
+| 2 | 6 rhombus 36, 4 rhombus 60, 2 square | 36, 36, 36, 60, 60, 90 | 1.42705 | confirmed: built as RD_TARGET_2 (Polyhedraverse 9599e14) |
+| 3 | 6 rhombus 60, 4 rhombus 36, 2 rhombus 70.53 | 36, 36, 60, 60, 60, 70.53 | 1.87268 | confirmed: built as RD_TARGET_3 (Polyhedraverse 9599e14) |
+| 4 | 4 rhombus 36, 4 rhombus 60, 4 rhombus 72 | 36, 36, 60, 60, 72, 72 | 2 | confirmed: built as RD_TARGET_4 (Polyhedraverse 9599e14) |
+| 5 | 4 rhombus 36, 4 rhombus 60, 2 rhombus 72, 2 square | 36, 36, 60, 60, 72, 90 | 1.80902 | confirmed: built as RD_TARGET_5 (Polyhedraverse 9599e14) |
+| 6 | 4 rhombus 36, 4 rhombus 60, 2 rhombus 72, 2 square | 36, 36, 60, 60, 72, 90 | 1.92705 | confirmed: built as RD_TARGET_6 (Polyhedraverse 9599e14) |
+| 7 | 4 rhombus 36, 4 rhombus 72, 2 rhombus 60, 2 rhombus 70.53 | 36, 36, 60, 70.53, 72, 72 | 2 | confirmed: built as RD_TARGET_7 (Polyhedraverse 9599e14) |
+| 8 | 4 rhombus 36, 4 rhombus 72, 2 rhombus 60, 2 square | 36, 36, 60, 72, 72, 90 | 2.11803 | confirmed: built as RD_TARGET_8 (Polyhedraverse 9599e14) |
+| 9 | 4 rhombus 36, 4 square, 2 rhombus 60, 2 rhombus 72 | 36, 36, 60, 72, 90, 90 | 1.61803 | confirmed: built as RD_TARGET_9 (Polyhedraverse 9599e14) |
+| 10 | 6 rhombus 60, 2 rhombus 36, 2 rhombus 72, 2 square | 36, 60, 60, 60, 72, 90 | 2.11803 | confirmed: built as RD_TARGET_10 (Polyhedraverse 9599e14) |
+| 11 | 4 rhombus 60, 4 rhombus 72, 2 rhombus 36, 2 square | 36, 60, 60, 72, 72, 90 | 2.30902 | confirmed: built as RD_TARGET_11 (Polyhedraverse 9599e14) |
+| 12 | 4 rhombus 60, 4 rhombus 72, 2 rhombus 36, 2 square | 36, 60, 60, 72, 72, 90 | 2.42705 | confirmed: built as RD_TARGET_12 (Polyhedraverse 9599e14) |
+| 13 | 4 rhombus 60, 4 square, 2 rhombus 36, 2 rhombus 72 | 36, 60, 60, 72, 90, 90 | 2.23607 | confirmed: built as RD_TARGET_13 (Polyhedraverse 9599e14) |
+| 14 | 4 rhombus 72, 4 square, 2 rhombus 36, 2 rhombus 60 | 36, 60, 72, 72, 90, 90 | 2.61803 | confirmed: built as RD_TARGET_14 (Polyhedraverse 9599e14) |
+| 15 | 6 square, 2 rhombus 36, 2 rhombus 60, 2 rhombus 72 | 36, 60, 72, 90, 90, 90 | 2.61803 | confirmed: built as RD_TARGET_15 (Polyhedraverse 9599e14) |
+| 16 | 8 rhombus 45, 2 rhombus 60, 2 rhombus 70.53 | 45, 45, 45, 45, 60, 70.53 | 1.94281 | confirmed: built as RD_TARGET_16 (Polyhedraverse 9599e14) |
+| 17 | 6 rhombus 60, 4 rhombus 45, 2 square | 45, 45, 60, 60, 60, 90 | 2.20711 | confirmed: built as RD_TARGET_17 (Polyhedraverse 9599e14) |
+| 18 | 4 rhombus 45, 4 square, 2 rhombus 60, 2 rhombus 70.53 | 45, 45, 60, 70.53, 90, 90 | 2.41421 | confirmed: built as RD_TARGET_18 (Polyhedraverse 9599e14) |
+| 19 | 6 square, 4 rhombus 45, 2 rhombus 60 | 45, 45, 60, 90, 90, 90 | 2.41421 | confirmed: built as RD_TARGET_19 (Polyhedraverse 9599e14) |
+| 20 | 6 square, 4 rhombus 60, 2 rhombus 45 | 45, 60, 60, 90, 90, 90 | 2.70711 | confirmed: built as RD_TARGET_20 (Polyhedraverse 9599e14) |
+| 21 | 10 rhombus 60, 2 rhombus 70.53 | 60, 60, 60, 60, 60, 70.53 | 2.35702 | confirmed: built as RD_TARGET_21 (Polyhedraverse 9599e14) |
 | 22 | 8 rhombus 60, 4 square | 60, 60, 60, 60, 90, 90 | 2.82843 | built: BAIN_RD (top-down only) |
-| 23 | 6 rhombus 60, 4 rhombus 72, 2 rhombus 70.53 | 60, 60, 60, 70.53, 72, 72 | 2.61803 | to find |
-| 24 | 6 rhombus 60, 4 square, 2 rhombus 70.53 | 60, 60, 60, 70.53, 90, 90 | 2.82843 | to find |
+| 23 | 6 rhombus 60, 4 rhombus 72, 2 rhombus 70.53 | 60, 60, 60, 70.53, 72, 72 | 2.61803 | confirmed: built as RD_TARGET_23 (Polyhedraverse 9599e14) |
+| 24 | 6 rhombus 60, 4 square, 2 rhombus 70.53 | 60, 60, 60, 70.53, 90, 90 | 2.82843 | confirmed: built as RD_TARGET_24 (Polyhedraverse 9599e14) |
 | 25 | 6 rhombus 60, 6 rhombus 72 | 60, 60, 60, 72, 72, 72 | 2.61803 | built: DICTO_SKEWED_RD |
-| 26 | 6 rhombus 72, 4 rhombus 60, 2 square | 60, 60, 72, 72, 72, 90 | 2.92705 | to find |
+| 26 | 6 rhombus 72, 4 rhombus 60, 2 square | 60, 60, 72, 72, 72, 90 | 2.92705 | confirmed: built as RD_TARGET_26 (Polyhedraverse 9599e14) |
 | 27 | 12 rhombus 70.53 | 70.53, 70.53, 70.53, 70.53, 70.53, 70.53 | 3.0792 | built: RHOMBIC_DODECAHEDRON (top-down only) |
 
 ## Elongated dodecahedron — sheared ED lattice (28)
