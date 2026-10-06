@@ -61,6 +61,7 @@ function buildPanel(state, apply) {
   panel.innerHTML = `
     <button type="button" id="kaleido-toggle" aria-expanded="false" title="Shear the lattice">⟋ Shear</button>
     <div id="kaleido-body" hidden>
+      <button type="button" id="kaleido-reset" title="Back to the ordinary FCC lattice and its regular rhombic dodecahedron">↺ Reset to FCC</button>
       <label class="kaleido-row">Towards
         <select id="kaleido-towards">${Object.entries(TOWARDS).map(([id, t]) => `<option value="${id}">${t.name}</option>`).join('')}</select>
       </label>
@@ -150,6 +151,16 @@ function buildPanel(state, apply) {
   });
   path.addEventListener('input', () => setPath(Number(path.value)));
   towards.addEventListener('change', () => { state.towards = towards.value; layoutPath(); setPath(0); });
+  // Reset (direct request: "I got lost and couldn't figure where normal was"): the
+  // starting state, the ordinary FCC lattice with its regular RD. Towards goes back
+  // to DICTO FCC too, since on the Bain path 0 is BCC, not FCC.
+  $('#kaleido-reset').addEventListener('click', () => {
+    state.towards = 'dicto';
+    state.cell = 1;
+    layoutPath();
+    setPath(0);
+    $('#kaleido-note').textContent = 'Back to the ordinary FCC lattice.';
+  });
   panel.querySelectorAll('[data-key]').forEach((input) => input.addEventListener('input', () => {
     const next = { ...state.params, [input.dataset.key]: Number(input.value) };
     if (!paramsValid(next)) { $('#kaleido-note').textContent = 'That would flatten the cells to nothing.'; refresh(); return; }

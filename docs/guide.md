@@ -10,6 +10,7 @@ The first part of this guide walks through common tasks. The second part lists e
 
 Kaleidohedra's own controls are in the **⟋ Shear** panel at the top right. They move the whole lattice at once: everything you've built slides with it, and building carries on as usual.
 
+- **↺ Reset to FCC** takes everything back to the ordinary FCC lattice with its regular rhombic dodecahedron, if you lose your way.
 - **Towards** picks where the lattice is heading: **DICTO FCC** (from the ordinary FCC lattice to DICTO's sheared one) or **Bain (BCC → FCC)**.
 - **Path** slides along that exact route; the stop buttons (such as FCC, halfway and DICTO FCC) jump to its named points.
 - **Cell** changes the cell's shape on the same lattice: 0 is the plain sheared cell, 1 the cell with all edges equal (at the DICTO FCC stop, DICTO's skewed rhombic dodecahedron).

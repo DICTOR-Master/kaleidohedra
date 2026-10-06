@@ -12,6 +12,7 @@ DICTO의 Kaleidohedra는 [Rhombiverse](https://rhombiverse.vercel.app)와 [Polyh
 
 Kaleidohedra의 고유한 컨트롤은 오른쪽 위 **⟋ Shear** 패널에 있습니다. 격자 전체를 한 번에 움직입니다: 만든 것은 모두 함께 미끄러지고, 만들기는 평소처럼 계속됩니다.
 
+- **↺ Reset to FCC**는 길을 잃었을 때 모든 것을 보통의 FCC 격자와 그 정규 마름모십이면체로 되돌립니다.
 - **Towards**는 격자가 향할 곳을 고릅니다: **DICTO FCC**(보통의 FCC 격자에서 DICTO의 기울어진 격자로) 또는 **Bain (BCC → FCC)**.
 - **Path**는 그 정확한 경로를 따라 미끄러뜨립니다. 정지점 버튼(FCC, halfway, DICTO FCC 등)으로 이름 붙은 지점으로 바로 갑니다.
 - **Cell**은 같은 격자에서 셀의 모양을 바꿉니다: 0은 그냥 기울어진 셀, 1은 모든 모서리가 같은 셀(DICTO FCC 정지점에서는 DICTO의 비스듬한 마름모십이면체).

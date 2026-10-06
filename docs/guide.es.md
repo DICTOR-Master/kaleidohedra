@@ -12,6 +12,7 @@ Los nombres de los botones aparecen tal como se ven en la aplicación (los que l
 
 Los controles propios de Kaleidohedra están en el panel **⟋ Shear**, arriba a la derecha. Mueven toda la red a la vez: todo lo que has construido se desliza con ella, y la construcción sigue como siempre.
 
+- **↺ Reset to FCC** devuelve todo a la red FCC normal con su dodecaedro rómbico regular, si te pierdes.
 - **Towards** elige hacia dónde va la red: **DICTO FCC** (de la red FCC normal a la cizallada de DICTO) o **Bain (BCC → FCC)**.
 - **Path** desliza a lo largo de ese camino exacto; los botones de parada (como FCC, halfway y DICTO FCC) saltan a sus puntos con nombre.
 - **Cell** cambia la forma de la celda sobre la misma red: 0 es la celda simplemente cizallada, 1 la celda con todas las aristas iguales (en la parada DICTO FCC, el dodecaedro rómbico sesgado de DICTO).

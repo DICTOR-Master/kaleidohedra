@@ -12,6 +12,7 @@ DICTO 的 Kaleidohedra 是 [Rhombiverse](https://rhombiverse.vercel.app) 和 [Po
 
 Kaleidohedra 自己的控件在右上角的 **⟋ Shear** 面板里。它们一次移动整个晶格：你搭建的一切都随之滑动，搭建照常继续。
 
+- 迷路时，**↺ Reset to FCC** 会把一切恢复为普通的 FCC 晶格及其正规菱形十二面体。
 - **Towards** 选择晶格的去向：**DICTO FCC**（从普通 FCC 晶格到 DICTO 的剪切晶格）或 **Bain (BCC → FCC)**。
 - **Path** 沿这条精确路径滑动；停靠点按钮（如 FCC、halfway、DICTO FCC）可跳到有名字的点。
 - **Cell** 在同一晶格上改变胞的形状：0 是单纯剪切的胞，1 是所有棱等长的胞（在 DICTO FCC 停靠点，即 DICTO 的歪斜菱形十二面体）。

@@ -12,6 +12,7 @@ DICTO による Kaleidohedra は、[Rhombiverse](https://rhombiverse.vercel.app)
 
 Kaleidohedra 独自のコントロールは、右上の **⟋ Shear** パネルにあります。格子全体を一度に動かします。作ったものはすべて一緒に滑り、組み立てはいつも通り続けられます。
 
+- **↺ Reset to FCC** は、迷ったときにすべてをふつうの FCC 格子と正則な菱形十二面体に戻します。
 - **Towards** は格子の行き先を選びます：**DICTO FCC**（ふつうの FCC 格子から DICTO のずれた格子へ）か **Bain (BCC → FCC)**。
 - **Path** はその正確な道筋に沿って滑らせます。停止点ボタン（FCC、halfway、DICTO FCC など）で名前の付いた点へ飛べます。
 - **Cell** は同じ格子のままセルの形を変えます：0 はずれただけのセル、1 はすべての辺が等しいセル（DICTO FCC の停止点では DICTO の歪んだ菱形十二面体）。

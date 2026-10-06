@@ -12,6 +12,7 @@ Les noms des boutons sont écrits tels qu'ils apparaissent dans l'application (c
 
 Les commandes propres à Kaleidohedra sont dans le panneau **⟋ Shear**, en haut à droite. Elles déplacent tout le réseau d'un coup : tout ce que vous avez construit glisse avec lui, et la construction continue comme d'habitude.
 
+- **↺ Reset to FCC** ramène tout au réseau FCC ordinaire et à son dodécaèdre rhombique régulier, si vous vous perdez.
 - **Towards** choisit où va le réseau : **DICTO FCC** (du réseau FCC ordinaire au réseau cisaillé de DICTO) ou **Bain (BCC → FCC)**.
 - **Path** fait glisser le long de ce chemin exact ; les boutons d'arrêt (comme FCC, halfway et DICTO FCC) sautent à ses points nommés.
 - **Cell** change la forme de la cellule sur le même réseau : 0 est la cellule simplement cisaillée, 1 la cellule aux arêtes toutes égales (à l'arrêt DICTO FCC, le dodécaèdre rhombique incliné de DICTO).
