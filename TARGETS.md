@@ -44,18 +44,18 @@ Volumes are at edge 1. **Line angles** are the angles between the edge direction
 
 | # | Faces | Line angles | Volume | Status |
 |---|---|---|---|---|
-| 1 | 6 rhombus 36 | 36, 36, 36 | 0.309017 | tentative: built as HEX_TARGET_1 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
-| 2 | 4 rhombus 36, 2 rhombus 45 | 36, 36, 45 | 0.341464 | tentative: built as HEX_TARGET_2 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
+| 1 | 6 rhombus 36 | 36, 36, 36 | 0.309017 | to find |
+| 2 | 4 rhombus 36, 2 rhombus 45 | 36, 36, 45 | 0.341464 | to find |
 | 3 | 4 rhombus 36, 2 rhombus 60 | 36, 36, 60 | 0.309017 | to find |
 | 4 | 4 rhombus 36, 2 rhombus 70.53 | 36, 36, 70.53 | 0.127322 | to find |
 | 5 | 4 rhombus 45, 2 rhombus 36 | 36, 45, 45 | 0.393076 | to find |
-| 6 | 2 rhombus 36, 2 rhombus 45, 2 rhombus 60 | 36, 45, 60 | 0.409332 | tentative: built as HEX_TARGET_6 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
-| 7 | 2 rhombus 36, 2 rhombus 45, 2 rhombus 70.53 | 36, 45, 70.53 | 0.340227 | tentative: built as HEX_TARGET_7 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
+| 6 | 2 rhombus 36, 2 rhombus 45, 2 rhombus 60 | 36, 45, 60 | 0.409332 | to find |
+| 7 | 2 rhombus 36, 2 rhombus 45, 2 rhombus 70.53 | 36, 45, 70.53 | 0.340227 | to find |
 | 8 | 2 rhombus 36, 2 rhombus 45, 2 rhombus 72 | 36, 45, 72 | 0.321797 | to find |
-| 9 | 4 rhombus 60, 2 rhombus 36 | 36, 60, 60 | 0.5 | tentative: built as HEX_TARGET_9 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
-| 10 | 2 rhombus 36, 2 rhombus 60, 2 rhombus 70.53 | 36, 60, 70.53 | 0.504036 | tentative: built as HEX_TARGET_10 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
-| 11 | 2 rhombus 36, 2 rhombus 60, 2 rhombus 72 | 36, 60, 72 | 0.5 | tentative: built as HEX_TARGET_11 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
-| 12 | 2 rhombus 36, 2 rhombus 60, 2 square | 36, 60, 90 | 0.309017 | tentative: built as HEX_TARGET_12 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
+| 9 | 4 rhombus 60, 2 rhombus 36 | 36, 60, 60 | 0.5 | to find |
+| 10 | 2 rhombus 36, 2 rhombus 60, 2 rhombus 70.53 | 36, 60, 70.53 | 0.504036 | to find |
+| 11 | 2 rhombus 36, 2 rhombus 60, 2 rhombus 72 | 36, 60, 72 | 0.5 | to find |
+| 12 | 2 rhombus 36, 2 rhombus 60, 2 square | 36, 60, 90 | 0.309017 | to find |
 | 13 | 4 rhombus 70.53, 2 rhombus 36 | 36, 70.53, 70.53 | 0.550501 | to find |
 | 14 | 2 rhombus 36, 2 rhombus 70.53, 2 rhombus 72 | 36, 70.53, 72 | 0.552771 | to find |
 | 15 | 2 rhombus 36, 2 rhombus 70.53, 2 square | 36, 70.53, 90 | 0.484128 | to find |
@@ -113,18 +113,18 @@ Volumes are at edge 1. **Line angles** are the angles between the edge direction
 
 | # | Faces | Line angles | Volume | Status |
 |---|---|---|---|---|
-| 1 | 4 rhombus 36, 2 hexagon 144/144/108, 2 rhombus 60 | 36, 36, 36, 36, 60, 72 | 1.11803 | to find |
-| 2 | 2 hexagon 144/144/108, 2 rhombus 36, 2 rhombus 60, 2 square | 36, 36, 36, 60, 72, 90 | 1.11803 | to find |
+| 1 | 4 rhombus 36, 2 hexagon 144/144/108, 2 rhombus 60 | 36, 36, 36, 36, 60, 72 | 1.11803 | tentative: built as HEX_TARGET_1 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
+| 2 | 2 hexagon 144/144/108, 2 rhombus 36, 2 rhombus 60, 2 square | 36, 36, 36, 60, 72, 90 | 1.11803 | tentative: built as HEX_TARGET_2 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
 | 3 | 4 rhombus 36, 2 hexagon 144/108/108, 2 square | 36, 36, 36, 72, 72, 90 | 1.30902 | confirmed: built as HEX_TARGET_3 (Polyhedraverse 98f529c) |
 | 4 | 4 rhombus 36, 2 regular hexagon, 2 square | 36, 36, 60, 60, 60, 90 | 0.927051 | confirmed: built as HEX_TARGET_4 (Polyhedraverse 98f529c) |
 | 5 | 4 rhombus 60, 2 hexagon 144/108/108, 2 rhombus 36 | 36, 36, 60, 60, 72, 72 | 1.30902 | confirmed: built as HEX_TARGET_5 (Polyhedraverse 98f529c) |
-| 6 | 4 rhombus 60, 2 hexagon 144/144/108, 2 rhombus 72 | 36, 36, 60, 60, 72, 72 | 1.80902 | to find |
-| 7 | 4 rhombus 60, 2 hexagon 144/144/108, 2 square | 36, 36, 60, 60, 72, 90 | 1.11803 | to find |
+| 6 | 4 rhombus 60, 2 hexagon 144/144/108, 2 rhombus 72 | 36, 36, 60, 60, 72, 72 | 1.80902 | tentative: built as HEX_TARGET_6 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
+| 7 | 4 rhombus 60, 2 hexagon 144/144/108, 2 square | 36, 36, 60, 60, 72, 90 | 1.11803 | tentative: built as HEX_TARGET_7 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
 | 8 | 2 hexagon 144/108/108, 2 rhombus 36, 2 rhombus 60, 2 square | 36, 36, 60, 72, 72, 90 | 1.30902 | confirmed: built as HEX_TARGET_8 (Polyhedraverse 98f529c) |
-| 9 | 2 hexagon 144/144/108, 2 rhombus 60, 2 rhombus 72, 2 square | 36, 36, 60, 72, 72, 90 | 1.80902 | to find |
-| 10 | 4 rhombus 70.53, 2 hexagon 144/144/108, 2 square | 36, 36, 70.53, 70.53, 72, 90 | 1.75159 | to find |
-| 11 | 4 rhombus 72, 2 hexagon 144/144/108, 2 square | 36, 36, 72, 72, 72, 90 | 1.80902 | to find |
-| 12 | 6 square, 2 hexagon 144/144/108 | 36, 36, 72, 90, 90, 90 | 2.12663 | to find |
+| 9 | 2 hexagon 144/144/108, 2 rhombus 60, 2 rhombus 72, 2 square | 36, 36, 60, 72, 72, 90 | 1.80902 | tentative: built as HEX_TARGET_9 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
+| 10 | 4 rhombus 70.53, 2 hexagon 144/144/108, 2 square | 36, 36, 70.53, 70.53, 72, 90 | 1.75159 | tentative: built as HEX_TARGET_10 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
+| 11 | 4 rhombus 72, 2 hexagon 144/144/108, 2 square | 36, 36, 72, 72, 72, 90 | 1.80902 | tentative: built as HEX_TARGET_11 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
+| 12 | 6 square, 2 hexagon 144/144/108 | 36, 36, 72, 90, 90, 90 | 2.12663 | tentative: built as HEX_TARGET_12 with the hexagon read as 144/144/72 (Polyhedraverse 63e00ac) |
 | 13 | 4 rhombus 45, 2 hexagon 144/108/108, 2 square | 36, 45, 45, 72, 72, 90 | 1.66509 | confirmed: built as HEX_TARGET_13 (Polyhedraverse 98f529c) |
 | 14 | 2 regular hexagon, 2 rhombus 36, 2 rhombus 60, 2 rhombus 72 | 36, 60, 60, 60, 60, 72 | 1.5 | confirmed: built as HEX_TARGET_14 (Polyhedraverse 98f529c) |
 | 15 | 4 rhombus 60, 2 hexagon 144/108/108, 2 square | 36, 60, 60, 72, 72, 90 | 2.11803 | confirmed: built as HEX_TARGET_15 (Polyhedraverse 98f529c) |
