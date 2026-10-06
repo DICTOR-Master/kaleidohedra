@@ -14,13 +14,20 @@ in Polyhedraverse; `verify-dicto-fcc` in Rhombiverse).
 Delone / Štogrin parallelohedra literature) is still needed before claiming
 priority.
 
+A deeper search on 2026-10-06 for #1 and #5 (Grünbaum's 2010 survey of
+parallelohedra and zonohedra, Lalvani's zonohedra patents, the icosahedral
+tiling literature, the contents of Hart & Picciotto's *Zome Geometry*) found
+#5 known (see #5) and did not find #1. Not yet checked, as they are not
+online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
+(1982) and the printed chapters 14 and 16 of *Zome Geometry*.
+
 | # | Finding | Credit | Verified | Status | First recorded |
 |---|---|---|---|---|---|
 | 1 | DICTO skewed rhombic dodecahedron | DICTO (found by building it) | yes | **not found** — candidate | 2026-10-01 (8420a51) |
 | 2 | Equal-edge rule for sheared FCC | Kaleidohedra | yes | general idea known; this form not found | 2026-10-01 (8420a51) |
 | 3 | Bain disphenoids become regular tetrahedra | — | yes | **known** (Bain, 1924) | 2026-10-01 (8420a51) |
 | 4 | Bain rhombic dodecahedron (squares + 60° rhombi) | — | yes | **known** | 2026-10-01 (8420a51) |
-| 5 | Regular-hexagon elongated dodecahedron | DICTO (from the "hexagons and rhombi" hunch) | yes | **not found** — candidate | 2026-10-01 (8420a51) |
+| 5 | Regular-hexagon elongated dodecahedron | DICTO, independently (from the "hexagons and rhombi" hunch) | yes | **known** — the truncated octahedron with one zone removed (Fedorov's ED as drawn by Grünbaum 2010); DICTO's route, the Bain stretch, is new | 2026-10-01 (8420a51) |
 | 6 | Exactly 9 "most regular" space-fillers | Kaleidohedra two-way search | yes | not yet searched | 2026-10-01 (547aac9) |
 | 7 | DICTO skewed ED (two forms) | Kaleidohedra (extending #1) | yes | not yet searched | 2026-10-01 (e97193f) |
 | 8 | Euclid–Kepler–Pacioli (EKP) cell: all five Platonic solids nested in one cubic cell, with Kepler's star and Pacioli's rectangles (Pm-3) | DICTO (built a physical cell) | yes | **not found** — candidate; a periodic approximant-type structure like α-AlMnSi (no fivefold axis) | 2026-10-06 (6636342) |
@@ -100,10 +107,19 @@ hexagons with corners 135°, 135°, 90° (a square with two corners cut at 45°)
 - Not the Polyhedraverse ED sheared: that one's elongation is the RD's edge
   √3/2 before the shear, giving hexagon edges 1, 1, 0.866. The regular-hexagon
   form needs the elongation 2/√3 times longer.
-- Status: **not found.** Known ED forms: the standard one (MathWorld: 80.4°
-  rhombi, equilateral hexagons with 131.8° corners), the contracted truncated
-  octahedron (60° rhombi, no squares), and cube-volume and concave variants.
-  None has regular hexagons with squares.
+- Status: **known; reached independently by DICTO by a different route.**
+  It is the truncated octahedron with one of its six zones removed: the two
+  squares containing that edge direction shrink to edges, the four hexagons
+  containing it shrink to 60° rhombi, and 4 regular hexagons, 4 squares and
+  4 60° rhombi remain. Wikipedia and the Polytope Wiki describe it as the
+  "contraction of a uniform truncated octahedron" (an earlier reading here
+  wrongly took that form to have no squares), and Grünbaum (2010, Fig. 2(b))
+  draws it as Fedorov's representative elongated dodecahedron, "with regular
+  faces". DICTO arrived at it on 2026-10-01 from the other side: the Bain
+  stretch's equal-edge RD plus one unstretched cube axis. `verify-targets`
+  checks that the two routes give the same cell (same edge-direction angles,
+  faces and volume 4√2). The construction route is DICTO's; the shape is not
+  new. It remains Kaleidohedra's symbol.
 
 ## 6. The nine most regular space-fillers
 
@@ -304,6 +320,7 @@ rectangles, as version v2026.10.06-ekp, **DOI [10.5281/zenodo.23176568](https://
 
 ## Sources
 
+- [The Bilinski dodecahedron and assorted parallelohedra, zonohedra, monohedra, isozonohedra and otherhedra — Grünbaum, Math. Intelligencer 32 (2010)](https://faculty.washington.edu/moishe/branko/BG285%20Bilinski%20dodecahedron.pdf) (#5 is its Fig. 2(b))
 - [Elongated dodecahedron — Wikipedia](https://en.wikipedia.org/wiki/Elongated_dodecahedron)
 - [Elongated Dodecahedron — MathWorld](https://mathworld.wolfram.com/ElongatedDodecahedron.html)
 - [Elongated rhombic dodecahedron — Polytope Wiki](https://polytope.miraheze.org/wiki/Elongated_rhombic_dodecahedron)
