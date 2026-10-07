@@ -373,6 +373,8 @@ finding #8, the Euclid–Kepler–Pacioli cell and network, is version v2026.10.
 **DOI [10.5281/zenodo.23173810](https://doi.org/10.5281/zenodo.23173810)**, published 2026-10-06.
 Renamed the Euclid–Kepler–Pacioli (EKP) cell, with Kepler's chain and Pacioli's
 rectangles, as version v2026.10.06-ekp, **DOI [10.5281/zenodo.23176568](https://doi.org/10.5281/zenodo.23176568)**.
+Findings #10 and #11 are version v2026.10.08, **DOI [10.5281/zenodo.23220273](https://doi.org/10.5281/zenodo.23220273)**
+(published 2026-10-08 Japan time; Zenodo shows 2026-10-07, UTC).
 
 ## Sources
 
