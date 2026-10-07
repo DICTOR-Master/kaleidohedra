@@ -10,13 +10,17 @@
 // of the dodecahedra. Lives outside the shear
 // group: shearing would break the icosahedra.
 import * as THREE from 'three';
-import { ROOF_FOLD_KINDS, ROOF_FOLD_COLOURS, ROOF_FOLD_WORLD_SCALE as WS, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, ROOF_FOLD_PATTERNS, siteParity, turnPoint } from '../geometry-extensions/roof-fold.js';
+import { ekpWindowsSolid, neighbourStellas, stretchedDodeca, PHI, ROOF_FOLD_KINDS, ROOF_FOLD_COLOURS, ROOF_FOLD_WORLD_SCALE as WS, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, ROOF_FOLD_PATTERNS, siteParity, turnPoint } from '../geometry-extensions/roof-fold.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 
 const STORAGE_KEY = 'kaleidohedra-roof-fold-world';
 const VIEWS = ['built', 'starIco', 'dodecaStar', 'checker', 'merged'];
+// Studies of the cell (DICTO, 2026-10-08): shapes shown on their own, building paused.
+const STUDIES = ['off', 'windows', 'windowsStellas', 'stretch'];
+const STRETCH_MAX = 2.6;
+const STRETCH_SNAPS = [2 / PHI, 2]; // one edge (squares), the lattice spacing
 const KIND_COLOR = ROOF_FOLD_COLOURS;
 const PARITY_COLOR = [0xffc857, 0x7cc4ff];
 const OCTANT_COLOR = [0xffc857, 0x7cc4ff, 0xff7a59, 0x5fd38a, 0xc792ea, 0x4dd0e1, 0xf06292, 0xe8eef7];
@@ -47,7 +51,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
 
   // ---- state ----
   const solids = new Map(); // solidKey -> { site: [x, y, z], kind }
-  const view = { piece: 'dodeca', mode: 'built', parity: false, vertices: 'off', pattern: 'xyz', xray: false, turnOdd: false };
+  const view = { piece: 'dodeca', mode: 'built', parity: false, vertices: 'off', pattern: 'xyz', xray: false, turnOdd: false, study: 'off', stretch: STRETCH_SNAPS[0] };
   let active = false;
   let skeleton = false;
   let opacity = 1;
@@ -73,6 +77,8 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
       if (PATTERNS.includes(data.view?.pattern)) view.pattern = data.view.pattern;
       view.xray = data.view?.xray === true;
       view.turnOdd = data.view?.turnOdd === true;
+      if (STUDIES.includes(data.view?.study)) view.study = data.view.study;
+      if (Number.isFinite(data.view?.stretch)) view.stretch = Math.max(0, Math.min(STRETCH_MAX, data.view.stretch));
     }
   } catch { /* corrupt or blocked storage: start empty */ }
   function save() {
@@ -210,10 +216,41 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     }
     return [...out.values()];
   }
+  function drawStudy() {
+    const polys = [], edges = [];
+    const o = [0, 0, 0];
+    const put = (polygon, hex) => {
+      polys.push({ polygon, offset: o, colour: new THREE.Color(hex), record: null });
+      polygon.forEach((p, i) => edges.push({ a: p, b: polygon[(i + 1) % polygon.length], offset: o }));
+    };
+    if (view.study === 'stretch') {
+      for (const f of stretchedDodeca(view.stretch)) put(f, f.length === 5 ? KIND_COLOR.dodeca : f.length === 6 ? KIND_COLOR.star : KIND_COLOR.cube);
+    } else {
+      const { rhombi, walls } = ekpWindowsSolid();
+      rhombi.forEach((f) => put(f, KIND_COLOR.dodeca));
+      walls.forEach((f) => put(f, KIND_COLOR.stella));
+    }
+    const [mesh, lines] = meshOf(polys, edges, pieceMaterial, EDGE_COLOR, 'study');
+    group.add(mesh, lines);
+    // Context, faint: the six stellas round the windows, or the two dodecahedra the stretch joins.
+    const ghost = [];
+    if (view.study === 'windowsStellas') for (const tet of neighbourStellas()) for (const f of tet) f.forEach((p, i) => ghost.push(...p.map((c) => c * WS), ...f[(i + 1) % f.length].map((c) => c * WS)));
+    if (view.study === 'stretch') for (const dx of [-view.stretch / 2, view.stretch / 2]) for (const [a, b] of SOLIDS.dodeca.edges) ghost.push(...[a, b].flatMap((p) => [(p[0] + dx) * WS, p[1] * WS, p[2] * WS]));
+    if (ghost.length) {
+      const g = new THREE.BufferGeometry();
+      g.setAttribute('position', new THREE.Float32BufferAttribute(ghost, 3));
+      group.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: view.study === 'stretch' ? GHOST_COLOR : KIND_COLOR.stella, transparent: true, opacity: 0.55 })));
+    }
+  }
+  function fitStudy() {
+    const r = view.study === 'windowsStellas' ? 3.4 : view.study === 'stretch' ? view.stretch / 2 + 1.8 : 1.8;
+    fitView([0, 0, 0], r * WS);
+  }
   function rebuild() {
     renderInfo();
     clearGroup();
     if (!active) return;
+    if (view.study !== 'off') { drawStudy(); renderPanel(); return; }
     pieceMaterial.transparent = opacity < 1;
     pieceMaterial.opacity = opacity;
     pieceMaterial.depthWrite = opacity >= 1;
@@ -294,6 +331,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     return site.map((c, i) => c + best[i]);
   }
   function handleTap(hit, mode) {
+    if (view.study !== 'off') return false;
     const tag = hit.object.userData.roofFold;
     const record = hit.object.userData.records?.[hit.faceIndex];
     if (!tag || !record) return false;
@@ -347,8 +385,11 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
   panel.id = 'worldrooffold-panel';
   panel.className = 'qc-panel';
   panel.innerHTML = `
-    <div class="w4d-row"><label class="hull-pick"><span class="rf-piece-label"></span> <select class="hull-select" data-select="piece"></select></label></div>
-    <div class="w4d-row"><label class="hull-pick"><span class="rf-view-label"></span> <select class="hull-select" data-select="mode"></select></label></div>
+    <div class="w4d-row"><label class="hull-pick"><span class="rf-study-label"></span> <select class="hull-select" data-select="study"></select></label></div>
+    <div class="w4d-row rf-stretch-row"><label class="hull-pick"><span class="rf-stretch-label"></span> <input type="range" class="rf-stretch" min="0" max="${STRETCH_MAX * 1000}" step="1"> <span class="rf-stretch-val"></span></label></div>
+    <div class="w4d-row rf-study-note"></div>
+    <div class="w4d-row rf-build-row"><label class="hull-pick"><span class="rf-piece-label"></span> <select class="hull-select" data-select="piece"></select></label></div>
+    <div class="w4d-row rf-build-row"><label class="hull-pick"><span class="rf-view-label"></span> <select class="hull-select" data-select="mode"></select></label></div>
     <div class="w4d-row rf-pattern-row"><label class="hull-pick"><span class="rf-pattern-label"></span> <select class="hull-select" data-select="pattern"></select></label></div>
     <div class="w4d-row w4d-options"></div>`;
   document.body.appendChild(panel);
@@ -358,10 +399,28 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
   const optionsRow = panel.querySelector('.w4d-options');
   const patternRow = panel.querySelector('.rf-pattern-row');
   const patternSelect = panel.querySelector('[data-select="pattern"]');
+  const studySelect = panel.querySelector('[data-select="study"]');
+  const stretchRow = panel.querySelector('.rf-stretch-row');
+  const stretchInput = panel.querySelector('.rf-stretch');
+  const stretchVal = panel.querySelector('.rf-stretch-val');
+  const studyNote = panel.querySelector('.rf-study-note');
   function renderPanel() {
     panel.classList.toggle('visible', active);
     if (!active) return;
     const L = lang();
+    panel.querySelector('.rf-study-label').textContent = t('roofFold.study', L);
+    studySelect.innerHTML = STUDIES.map((k) => `<option value="${k}"${k === view.study ? ' selected' : ''}>${t(`roofFold.study.${k}`, L)}</option>`).join('');
+    const studying = view.study !== 'off';
+    // Nothing unnecessary: a study hides the build controls, the build hides the study's.
+    for (const r of panel.querySelectorAll('.rf-build-row')) r.style.display = studying ? 'none' : '';
+    optionsRow.style.display = studying ? 'none' : '';
+    stretchRow.style.display = view.study === 'stretch' ? '' : 'none';
+    panel.querySelector('.rf-stretch-label').textContent = t('roofFold.stretch', L);
+    stretchInput.value = String(Math.round(view.stretch * 1000));
+    stretchVal.textContent = view.stretch.toFixed(3);
+    studyNote.style.display = studying ? '' : 'none';
+    studyNote.textContent = studying ? t(view.study === 'stretch' ? 'roofFold.study.note.stretch' : 'roofFold.study.note.windows', L) : '';
+    if (studying) { patternRow.style.display = 'none'; return; }
     panel.querySelector('.rf-piece-label').textContent = t('hull.piece', L);
     panel.querySelector('.rf-view-label').textContent = t('roofFold.view', L);
     pieceSelect.innerHTML = ROOF_FOLD_KINDS.map((k) => `<option value="${k}"${k === view.piece ? ' selected' : ''}>${t(`roofFold.${k}`, L)}</option>`).join('');
@@ -379,6 +438,22 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
       `<button type="button" data-opt="info" class="${infoOpen ? 'active' : ''}">${t('hyper.info', L)}</button>`,
     ].join('');
   }
+  studySelect.addEventListener('change', () => {
+    if (!STUDIES.includes(studySelect.value)) return;
+    view.study = studySelect.value;
+    save();
+    rebuild();
+    if (view.study !== 'off') fitStudy(); else fitBuild();
+  });
+  stretchInput.addEventListener('input', () => {
+    let v = Number(stretchInput.value) / 1000;
+    const snap = STRETCH_SNAPS.find((x) => Math.abs(x - v) < 0.03);
+    if (snap !== undefined) v = snap;
+    view.stretch = v;
+    save();
+    rebuild();
+  });
+  stretchInput.addEventListener('change', fitStudy);
   pieceSelect.addEventListener('change', () => {
     if (!ROOF_FOLD_KINDS.includes(pieceSelect.value)) return;
     view.piece = pieceSelect.value;
@@ -422,7 +497,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
       group.visible = on;
       if (!on) { panel.classList.remove('visible'); info.classList.remove('visible'); }
       rebuild();
-      if (on) fitBuild();
+      if (on) { if (view.study !== 'off') fitStudy(); else fitBuild(); }
     },
     setSkeleton(on) { skeleton = on; if (active) rebuild(); },
     setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) rebuild(); } },

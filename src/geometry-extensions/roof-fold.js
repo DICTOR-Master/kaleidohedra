@@ -295,3 +295,110 @@ export function edgesOfLength(verts, length, tol = 1e-9) {
   }
   return out;
 }
+
+// ---- Studies of the cell (DICTO, 2026-10-08), checked in verify-roof-fold.mjs ----
+
+// Convex hull of points as outward polygons, collinear corners dropped.
+export function convexHullFaces(points) {
+  const P = [];
+  for (const p of points) if (!P.some((q) => Math.hypot(...sub(p, q)) < 1e-9)) P.push(p);
+  const seen = new Set(), faces = [];
+  for (let i = 0; i < P.length; i++) for (let j = i + 1; j < P.length; j++) for (let k = j + 1; k < P.length; k++) {
+    let n = cross(sub(P[j], P[i]), sub(P[k], P[i]));
+    const l = Math.hypot(...n);
+    if (l < 1e-9) continue;
+    n = n.map((c) => c / l);
+    const d = dot(n, P[i]);
+    const side = P.map((p) => dot(n, p) - d);
+    const below = side.every((x) => x <= 1e-9), above = side.every((x) => x >= -1e-9);
+    if (!below && !above) continue;
+    const on = P.filter((_, q) => Math.abs(side[q]) < 1e-9);
+    const key = on.map((p) => P.indexOf(p)).sort((a, b) => a - b).join();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    // The face's outline: the 2D hull of its points (some lie inside it), counter-clockwise from outside.
+    const out = below ? n : n.map((c) => -c);
+    const u = unit(sub(on[1], on[0])), w = cross(out, u);
+    const q2 = on.map((p) => [dot(p, u), dot(p, w), p]).sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+    const turn = (o, a, b) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+    const lo = [], hi = [];
+    for (const p of q2) { while (lo.length >= 2 && turn(lo[lo.length - 2], lo[lo.length - 1], p) <= 1e-12) lo.pop(); lo.push(p); }
+    for (const p of [...q2].reverse()) { while (hi.length >= 2 && turn(hi[hi.length - 2], hi[hi.length - 1], p) <= 1e-12) hi.pop(); hi.push(p); }
+    faces.push([...lo.slice(0, -1), ...hi.slice(0, -1)].map((x) => x[2]));
+  }
+  return faces;
+}
+
+// The dodecahedron stretched by s along a 2-fold axis (x, a cube-face axis): the hull of it and
+// its copy s along, centred on the origin. Any s > 0 gives 8 regular pentagons (4 at each end),
+// 4 hexagons (angles 108, 108, 108, 108, 144, 144) and 2 rectangles; at s = 2/phi, one edge,
+// the rectangles are squares. At s = 2, the lattice spacing, it is the hull of two
+// face-neighbour dodecahedra.
+export function stretchedDodeca(s) {
+  const D = roofFoldCell().dodeca;
+  return convexHullFaces([...D.map((p) => [p[0] - s / 2, p[1], p[2]]), ...D.map((p) => [p[0] + s / 2, p[1], p[2]])]);
+}
+
+const clipBelow = (P, n, d) => splitPolygon(P, n, d).below;
+const clipAbove = (P, n, d) => splitPolygon(P, n, d).above;
+const FACE_DIRS = [[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1]];
+
+// The six face-neighbour cells' stella octangulas, as 12 tetrahedra (face polygons, centred on
+// their own cells at 2 * direction).
+export function neighbourStellas() {
+  const { stella } = roofFoldSolids();
+  return FACE_DIRS.flatMap((d) => [0, 4].map((k) => stella.faces.slice(k, k + 4).map((f) => f.map((p) => add(p, d.map((c) => 2 * c))))));
+}
+
+// The dodecahedron with its six face-neighbours' stellas carved out. Its outside is 12 rhombi,
+// one on each cube edge, at the dodecahedron's own face angles (72 and 108 degrees, edge 2/phi);
+// the cut-away is walled by the stellas' faces, in triangles meeting at the cube-face centres.
+export function ekpWindowsSolid() {
+  const { dodeca } = roofFoldSolids();
+  const isCorner = (p) => p.every((c) => Math.abs(Math.abs(c) - 1) < 1e-9);
+  const rhombi = dodeca.faces.map((f) => {
+    const [A, B] = f.filter(isCorner);
+    const Z = f.find((p) => !isCorner(p) && [A, B].every((c) => Math.abs(Math.hypot(...sub(p, c)) - 2 / PHI) < 1e-9));
+    const X = A.map((c, i) => c + B[i] - Z[i]);
+    const R = [A, X, B, Z];
+    return dot(cross(sub(R[1], R[0]), sub(R[2], R[0])), centroid(f)) < 0 ? R.reverse() : R;
+  });
+  const planesOf = (faces) => faces.map((f) => { const n = unit(cross(sub(f[1], f[0]), sub(f[2], f[0]))); return { n, d: dot(n, f[0]) }; });
+  const D = planesOf(dodeca.faces);
+  const tets = neighbourStellas().map((faces) => ({ faces, planes: planesOf(faces) }));
+  // Walls: on every stella face plane, the part of the dodecahedron cut into cells by every other
+  // plane, kept where the carved solid lies on exactly one side, facing away from it.
+  const inside = (p) => D.every(({ n, d }) => dot(n, p) < d - 1e-12) && !tets.some((T) => T.planes.every(({ n, d }) => dot(n, p) < d + 1e-12));
+  const keyOf = ({ n, d }) => [...n, d].map((c) => (Math.round(c * 1e7) / 1e7 + 0).toFixed(7)).join();
+  const planes = new Map();
+  for (const T of tets) for (const pl of T.planes) {
+    const flip = pl.n.find((c) => Math.abs(c) > 1e-9) < 0;
+    const q = flip ? { n: pl.n.map((c) => -c), d: -pl.d } : pl;
+    planes.set(keyOf(q), q);
+  }
+  const splitters = [...planes.values()];
+  const boundary = [];
+  for (const pl of splitters) {
+    // A large square in the plane, cut down to the dodecahedron.
+    const u = unit(cross(pl.n, Math.abs(pl.n[0]) < 0.9 ? [1, 0, 0] : [0, 1, 0])), v = cross(pl.n, u);
+    const o = pl.n.map((c) => c * pl.d);
+    let Q = [[-9, -9], [9, -9], [9, 9], [-9, 9]].map(([a, b]) => o.map((c, i) => c + a * u[i] + b * v[i]));
+    for (const { n, d } of D) { Q = Q && clipBelow(Q, n, d); }
+    if (!Q) continue;
+    let cells = [Q];
+    for (const sp of splitters) {
+      if (Math.abs(Math.abs(dot(sp.n, pl.n)) - 1) < 1e-9) continue;
+      cells = cells.flatMap((C) => { const { above, below } = splitPolygon(C, sp.n, sp.d); return [above, below].filter(Boolean); });
+    }
+    for (const C of cells) {
+      if (polygonArea(C) < 1e-9) continue;
+      const c = centroid(C);
+      const back = inside(add(c, pl.n.map((x) => -x * 1e-6))), front = inside(add(c, pl.n.map((x) => x * 1e-6)));
+      if (back === front) continue;
+      // Outward: away from the side the solid is on.
+      const out = back ? pl.n : pl.n.map((x) => -x);
+      boundary.push(dot(cross(sub(C[1], C[0]), sub(C[2], C[0])), out) < 0 ? [...C].reverse() : C);
+    }
+  }
+  return { rhombi, walls: boundary };
+}

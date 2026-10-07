@@ -27,7 +27,7 @@
 //   - two extractions that don't overlap: even-cell dodecahedra (the optimal
 //     lattice packing, (5+sqrt5)/8) and even-cell stars with odd-cell
 //     icosahedra, sharing only corners.
-import { PHI, ROOF_FOLD_PERIOD as P, ROOF_FOLD_KINDS, roofFoldCell, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, siteParity, ROOF_FOLD_PATTERNS, goldenRectangles } from '../src/geometry-extensions/roof-fold.js';
+import { PHI, ROOF_FOLD_PERIOD as P, ROOF_FOLD_KINDS, roofFoldCell, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, siteParity, ROOF_FOLD_PATTERNS, goldenRectangles, ekpWindowsSolid, stretchedDodeca } from '../src/geometry-extensions/roof-fold.js';
 
 let failures = 0;
 function check(label, condition) {
@@ -557,6 +557,56 @@ check(`stars on even cells and icosahedra on odd cells share only corners: ${pai
   check(`wrap order ${ROOF_FOLD_KINDS.join(' → ')}: ${chain.join(' ⊂ ')}; ico ⊂ star ⊂ dodeca; the star crosses oct, stella and cube`,
     chained && within('ico', 'star') && within('star', 'dodeca') && ['oct', 'stella', 'cube'].every(crosses)
     && ROOF_FOLD_KINDS.indexOf('star') === ROOF_FOLD_KINDS.indexOf('dodeca') - 1);
+}
+
+// 13. Studies (DICTO, 2026-10-08).
+// (a) Windows: the dodecahedron with its six face-neighbours' stellas carved out. Outside: 12
+// rhombi (72/108 degrees, edge 2/phi), each in a dodecahedron face plane on a cube edge. The
+// cut-away is walled by 48 triangles in the stellas' face planes; the surface closes (zero
+// vector area) and encloses exactly 12, the cube's 8 plus two thirds of each roof.
+{
+  const W = ekpWindowsSolid();
+  const polyVol = (faces) => faces.reduce((v, f) => { for (let i = 1; i + 1 < f.length; i++) v += dot(f[0], cross(f[i], f[i + 1])) / 6; return v; }, 0);
+  const vecArea = (faces) => faces.reduce((acc, f) => { for (let i = 1; i + 1 < f.length; i++) acc = add(acc, cross(sub(f[i], f[0]), sub(f[i + 1], f[0])).map((c) => c / 2)); return acc; }, [0, 0, 0]);
+  const dodecaPlanes = new Set(S.dodeca.faces.map((f) => { const n = cross(sub(f[1], f[0]), sub(f[2], f[0])).map((c, _, a) => c / Math.hypot(...a)); return [...n, dot(n, f[0])].map((c) => (Math.round(c * 1e6) / 1e6 + 0).toFixed(6)).join(); }));
+  const rhombiOk = W.rhombi.every((R) => {
+    const sides = R.map((p, i) => norm(sub(p, R[(i + 1) % 4])));
+    const ang = Math.acos(dot(sub(R[1], R[0]), sub(R[3], R[0])) / (norm(sub(R[1], R[0])) * norm(sub(R[3], R[0])))) * 180 / Math.PI;
+    const n = cross(sub(R[1], R[0]), sub(R[2], R[0])).map((c, _, a) => c / Math.hypot(...a));
+    return sides.every((x) => Math.abs(x - 2 / PHI) < EPS) && Math.abs(Math.min(ang, 180 - ang) - 72) < 1e-9 && dodecaPlanes.has([...n, dot(n, R[0])].map((c) => (Math.round(c * 1e6) / 1e6 + 0).toFixed(6)).join())
+      && [norm(sub(R[0], R[2])), norm(sub(R[1], R[3]))].some((x) => Math.abs(x - 2) < EPS);
+  });
+  const tri = (f) => f.map((p, i) => norm(sub(p, f[(i + 1) % f.length]))).sort((a, b) => a - b);
+  // Two kinds, 24 each: shortest side sqrt2/phi (corner, roof vertex, face centre) or sqrt2/phi^2 (face centre, rhombus corner, corner).
+  const kindOf = (f) => (Math.abs(tri(f)[1] - 2 / PHI) < EPS && Math.abs(tri(f)[2] - Math.SQRT2) < EPS ? [Math.SQRT2 / PHI, Math.SQRT2 / PHI ** 2].findIndex((x) => Math.abs(tri(f)[0] - x) < EPS) : -1);
+  const kindA = W.walls.filter((f) => f.length === 3 && kindOf(f) === 0).length, kindB = W.walls.filter((f) => f.length === 3 && kindOf(f) === 1).length;
+  const vol = polyVol([...W.rhombi, ...W.walls]);
+  check(`windows: 12 rhombi (72°, edge 2/phi, short diagonal a cube edge, in the dodecahedron's own face planes), ${W.walls.length} triangular walls (${kindA} + ${kindB}: sides sqrt2/phi or sqrt2/phi^2, 2/phi, sqrt2), closed, volume ${vol.toFixed(9)} = 12`,
+    W.rhombi.length === 12 && rhombiOk && W.walls.length === 48 && kindA === 24 && kindB === 24
+    && norm(vecArea([...W.rhombi, ...W.walls])) < 1e-9 && Math.abs(vol - 12) < 1e-9);
+}
+// (b) The dodecahedron stretched by s along a cube-face (2-fold) axis: 4 regular pentagons at each
+// end, 4 hexagons (angles 108 x 4, 144 x 2) and 2 rectangles round the middle, squares at s = 2/phi.
+// Volume = dodecahedron + s x its shadow on the plane across the axis (a segment's Minkowski sum).
+{
+  const tally = (F) => { const t = {}; F.forEach((f) => { t[f.length] = (t[f.length] || 0) + 1; }); return JSON.stringify(t); };
+  const polyVol = (faces) => faces.reduce((v, f) => { for (let i = 1; i + 1 < f.length; i++) v += dot(f[0], cross(f[i], f[i + 1])) / 6; return v; }, 0);
+  const pts = C.dodeca.map((p) => [p[1], p[2]]).sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+  const cr2 = (o, a, b) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+  const lo = [], hi = [];
+  for (const p of pts) { while (lo.length >= 2 && cr2(lo[lo.length - 2], lo[lo.length - 1], p) <= 1e-12) lo.pop(); lo.push(p); }
+  for (const p of [...pts].reverse()) { while (hi.length >= 2 && cr2(hi[hi.length - 2], hi[hi.length - 1], p) <= 1e-12) hi.pop(); hi.push(p); }
+  const H = [...lo.slice(0, -1), ...hi.slice(0, -1)];
+  const shadow = Math.abs(H.reduce((a, p, i) => a + p[0] * H[(i + 1) % H.length][1] - H[(i + 1) % H.length][0] * p[1], 0)) / 2;
+  const angles = (f) => f.map((p, i) => { const a = sub(f[(i + f.length - 1) % f.length], p), b = sub(f[(i + 1) % f.length], p); return Math.round(Math.acos(dot(a, b) / (norm(a) * norm(b))) * 180 / Math.PI); }).sort((a, b) => a - b).join();
+  const ok = [0.5, 2 / PHI, 2, PHI ** 2].every((s) => {
+    const F = stretchedDodeca(s);
+    return tally(F) === '{"4":2,"5":8,"6":4}' && F.filter((f) => f.length === 6).every((f) => angles(f) === '108,108,108,108,144,144')
+      && F.filter((f) => f.length === 5).every((f) => f.every((p, i) => Math.abs(norm(sub(p, f[(i + 1) % 5])) - 2 / PHI) < EPS))
+      && Math.abs(polyVol(F) - (V.dodeca + s * shadow)) < 1e-9;
+  });
+  const squares = stretchedDodeca(2 / PHI).filter((f) => f.length === 4).every((f) => f.every((p, i) => Math.abs(norm(sub(p, f[(i + 1) % 4])) - 2 / PHI) < EPS));
+  check(`stretched dodecahedron (cube-face axis): any s gives 8 regular pentagons, 4 hexagons (108 x 4, 144 x 2), 2 rectangles, volume V + s x ${shadow.toFixed(6)}; squares at s = 2/phi`, ok && squares);
 }
 
 console.log(failures === 0 ? '\nAll checks passed (0 failures).' : `\n${failures} check(s) FAILED.`);
