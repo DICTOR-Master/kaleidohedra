@@ -51,7 +51,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
 
   // ---- state ----
   const solids = new Map(); // solidKey -> { site: [x, y, z], kind }
-  const view = { piece: 'dodeca', mode: 'built', parity: false, vertices: 'off', pattern: 'xyz', xray: false, turnOdd: false, study: 'off', stretch: STRETCH_SNAPS[0] };
+  const view = { piece: 'dodeca', mode: 'built', parity: false, vertices: 'off', pattern: 'xyz', xray: false, turnOdd: false, study: 'off', stretch: STRETCH_SNAPS[0], studyShear: 'copies' };
   let active = false;
   let skeleton = false;
   let opacity = 1;
@@ -78,6 +78,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
       view.xray = data.view?.xray === true;
       view.turnOdd = data.view?.turnOdd === true;
       if (STUDIES.includes(data.view?.study)) view.study = data.view.study;
+      if (['copies', 'solid'].includes(data.view?.studyShear)) view.studyShear = data.view.studyShear;
       if (Number.isFinite(data.view?.stretch)) view.stretch = Math.max(0, Math.min(STRETCH_MAX, data.view.stretch));
     }
   } catch { /* corrupt or blocked storage: start empty */ }
@@ -216,26 +217,40 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     }
     return [...out.values()];
   }
+  // A study shears both ways (direct request): as copies on a 2 x 2 x 2 block of cells, each
+  // placed through the shear and left exact, or as one solid put through the shear itself.
+  const STUDY_BLOCK = [0, 1].flatMap((x) => [0, 1].flatMap((y) => [0, 1].map((z) => [x, y, z])));
+  const studyCopies = () => view.studyShear === 'copies';
+  function studyPlacements() {
+    if (!studyCopies()) return [{ offset: [0, 0, 0], map: (p) => { const A = shear(); return A ? A.map((r) => r[0] * p[0] + r[1] * p[1] + r[2] * p[2]) : p; } }];
+    const C = STUDY_BLOCK.map(centreOf);
+    const mid = [0, 1, 2].map((a) => C.reduce((t, c) => t + c[a], 0) / C.length);
+    return C.map((c) => ({ offset: c.map((v, a) => v - mid[a]), map: (p) => p }));
+  }
   function drawStudy() {
-    const polys = [], edges = [];
-    const o = [0, 0, 0];
-    const put = (polygon, hex) => {
-      polys.push({ polygon, offset: o, colour: new THREE.Color(hex), record: null });
-      polygon.forEach((p, i) => edges.push({ a: p, b: polygon[(i + 1) % polygon.length], offset: o }));
-    };
+    const polys = [], edges = [], ghost = [];
+    const faces = [];
     if (view.study === 'stretch') {
-      for (const f of stretchedDodeca(view.stretch)) put(f, f.length === 5 ? KIND_COLOR.dodeca : f.length === 6 ? KIND_COLOR.star : KIND_COLOR.cube);
+      for (const f of stretchedDodeca(view.stretch)) faces.push([f, f.length === 5 ? KIND_COLOR.dodeca : f.length === 6 ? KIND_COLOR.star : KIND_COLOR.cube]);
     } else {
       const { rhombi, walls } = ekpWindowsSolid();
-      rhombi.forEach((f) => put(f, KIND_COLOR.dodeca));
-      walls.forEach((f) => put(f, KIND_COLOR.stella));
+      rhombi.forEach((f) => faces.push([f, KIND_COLOR.dodeca]));
+      walls.forEach((f) => faces.push([f, KIND_COLOR.stella]));
+    }
+    // Context, faint: the six stellas round the windows, or the two dodecahedra the stretch joins.
+    const context = [];
+    if (view.study === 'windowsStellas') for (const tet of neighbourStellas()) for (const f of tet) f.forEach((p, i) => context.push([p, f[(i + 1) % f.length]]));
+    if (view.study === 'stretch') for (const dx of [-view.stretch / 2, view.stretch / 2]) for (const [a, b] of SOLIDS.dodeca.edges) context.push([[a[0] + dx, a[1], a[2]], [b[0] + dx, b[1], b[2]]]);
+    for (const { offset, map } of studyPlacements()) {
+      for (const [f, hex] of faces) {
+        const polygon = f.map(map);
+        polys.push({ polygon, offset, colour: new THREE.Color(hex), record: null });
+        polygon.forEach((p, i) => edges.push({ a: p, b: polygon[(i + 1) % polygon.length], offset }));
+      }
+      for (const [a, b] of context) ghost.push(...map(a).map((c, i) => c * WS + offset[i]), ...map(b).map((c, i) => c * WS + offset[i]));
     }
     const [mesh, lines] = meshOf(polys, edges, pieceMaterial, EDGE_COLOR, 'study');
     group.add(mesh, lines);
-    // Context, faint: the six stellas round the windows, or the two dodecahedra the stretch joins.
-    const ghost = [];
-    if (view.study === 'windowsStellas') for (const tet of neighbourStellas()) for (const f of tet) f.forEach((p, i) => ghost.push(...p.map((c) => c * WS), ...f[(i + 1) % f.length].map((c) => c * WS)));
-    if (view.study === 'stretch') for (const dx of [-view.stretch / 2, view.stretch / 2]) for (const [a, b] of SOLIDS.dodeca.edges) ghost.push(...[a, b].flatMap((p) => [(p[0] + dx) * WS, p[1] * WS, p[2] * WS]));
     if (ghost.length) {
       const g = new THREE.BufferGeometry();
       g.setAttribute('position', new THREE.Float32BufferAttribute(ghost, 3));
@@ -244,7 +259,8 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
   }
   function fitStudy() {
     const r = view.study === 'windowsStellas' ? 3.4 : view.study === 'stretch' ? view.stretch / 2 + 1.8 : 1.8;
-    fitView([0, 0, 0], r * WS);
+    const spread = studyCopies() ? Math.max(...studyPlacements().map(({ offset }) => Math.hypot(...offset))) : 0;
+    fitView([0, 0, 0], r * WS + spread);
   }
   function rebuild() {
     renderInfo();
@@ -388,6 +404,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     <div class="w4d-row"><label class="hull-pick"><span class="rf-study-label"></span> <select class="hull-select" data-select="study"></select></label></div>
     <div class="w4d-row rf-stretch-row"><label class="hull-pick"><span class="rf-stretch-label"></span> <input type="range" class="rf-stretch" min="0" max="${STRETCH_MAX * 1000}" step="1"> <span class="rf-stretch-val"></span></label></div>
     <div class="w4d-row rf-study-note"></div>
+    <div class="w4d-row w4d-options rf-study-opts"><button type="button" data-study-shear></button></div>
     <div class="w4d-row rf-build-row"><label class="hull-pick"><span class="rf-piece-label"></span> <select class="hull-select" data-select="piece"></select></label></div>
     <div class="w4d-row rf-build-row"><label class="hull-pick"><span class="rf-view-label"></span> <select class="hull-select" data-select="mode"></select></label></div>
     <div class="w4d-row rf-pattern-row"><label class="hull-pick"><span class="rf-pattern-label"></span> <select class="hull-select" data-select="pattern"></select></label></div>
@@ -404,6 +421,8 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
   const stretchInput = panel.querySelector('.rf-stretch');
   const stretchVal = panel.querySelector('.rf-stretch-val');
   const studyNote = panel.querySelector('.rf-study-note');
+  const studyOpts = panel.querySelector('.rf-study-opts');
+  const studyShearBtn = panel.querySelector('[data-study-shear]');
   function renderPanel() {
     panel.classList.toggle('visible', active);
     if (!active) return;
@@ -419,6 +438,8 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     stretchInput.value = String(Math.round(view.stretch * 1000));
     stretchVal.textContent = view.stretch.toFixed(3);
     studyNote.style.display = studying ? '' : 'none';
+    studyOpts.style.display = studying ? '' : 'none';
+    studyShearBtn.textContent = t(`roofFold.studyShear.${view.studyShear}`, L);
     studyNote.textContent = studying ? t(view.study === 'stretch' ? 'roofFold.study.note.stretch' : 'roofFold.study.note.windows', L) : '';
     if (studying) { patternRow.style.display = 'none'; return; }
     panel.querySelector('.rf-piece-label').textContent = t('hull.piece', L);
@@ -454,6 +475,12 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     rebuild();
   });
   stretchInput.addEventListener('change', fitStudy);
+  studyShearBtn.addEventListener('click', () => {
+    view.studyShear = studyCopies() ? 'solid' : 'copies';
+    save();
+    rebuild();
+    fitStudy();
+  });
   pieceSelect.addEventListener('change', () => {
     if (!ROOF_FOLD_KINDS.includes(pieceSelect.value)) return;
     view.piece = pieceSelect.value;
