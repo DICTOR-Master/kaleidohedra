@@ -138,9 +138,9 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     return [mesh, new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: edgeColor }))];
   }
   const centreOf = (site) => site.map((c) => c * 2 * WS);
-  // Odd sites are turned a quarter about z when the view asks for it. The merged surface is built from
-  // unturned dodecahedra, so the turn doesn't apply there (its control is hidden).
-  const turnFor = (site) => (view.turnOdd && view.mode !== 'merged' && siteParity(...site) === 1 ? turnPoint : (p) => p);
+  // Odd sites are turned a quarter about z when the view asks for it, the merged outer surface included.
+  const turnedSite = (site) => view.turnOdd && siteParity(...site) === 1;
+  const turnFor = (site) => (turnedSite(site) ? turnPoint : (p) => p);
   // Faces of one kind lying in a face plane of another (same outward side): 8 icosahedron faces lie
   // in the octahedron's planes, and the octahedron's in the tetrahedra's. In the opaque view such an
   // inner face is hidden by the outer piece in the same cell, so it isn't drawn (it would flicker).
@@ -170,13 +170,13 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
   }
   function mergedPolys() {
     const polys = [], edges = [];
-    const surface = mergedDodecaSurface(sites());
+    const surface = mergedDodecaSurface(sites(), turnedSite);
     for (const { site, polygon } of surface) {
       const colour = view.mode === 'merged' && view.parity ? shade(KIND_COLOR.dodeca, site) : new THREE.Color(KIND_COLOR.dodeca);
       // Surface pieces are already in cell units around the origin of site 0 (centre 2 * site).
       polys.push({ polygon, offset: [0, 0, 0], colour, record: { site, kind: 'dodeca' } });
     }
-    for (const [a, b] of mergedDodecaEdges(surface, sites())) edges.push({ a, b, offset: [0, 0, 0] });
+    for (const [a, b] of mergedDodecaEdges(surface, sites(), turnedSite)) edges.push({ a, b, offset: [0, 0, 0] });
     return { polys, edges };
   }
   // Cube vertices of every occupied cell, or every vertex of every drawn solid.
@@ -366,7 +366,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     optionsRow.innerHTML = [
       view.mode === 'checker' ? '' : `<button type="button" data-opt="parity" class="${view.parity ? 'active' : ''}">${t('roofFold.parity', L)}</button>`,
       view.mode === 'merged' ? '' : `<button type="button" data-opt="xray" class="${view.xray ? 'active' : ''}">${t('roofFold.xray', L)}</button>`,
-      view.mode === 'merged' ? '' : `<button type="button" data-opt="turnOdd" class="${view.turnOdd ? 'active' : ''}">${t('roofFold.turnOdd', L)}</button>`,
+      `<button type="button" data-opt="turnOdd" class="${view.turnOdd ? 'active' : ''}">${t('roofFold.turnOdd', L)}</button>`,
       `<button type="button" data-opt="vertices" class="${view.vertices !== 'off' ? 'active' : ''}">${t('roofFold.vertices', L)}: ${t(`roofFold.vertices.${view.vertices}`, L)}</button>`,
       `<button type="button" data-opt="info" class="${infoOpen ? 'active' : ''}">${t('hyper.info', L)}</button>`,
     ].join('');
