@@ -84,14 +84,14 @@ for (const id of Object.keys(SOLIDS)) {
   check(`${net.label}: the build follows the net, first face by sides then a face a tap (${steps.length} taps), every edge n`, steps.length === net.faces[net.tree.order[0]].pts.length + F - 1 && edges.length === sides - (F - 1) && edges.every(([a, b]) => isRealEdge(a, b)));
 }
 check(`EKP wrap order ${EKP_ORDER.join(', ')} follows ROOF_FOLD_KINDS`, EKP_ORDER.length === Object.keys(EKP_PIECES).length && EKP_ORDER.every((id, i) => i === 0 || ROOF_FOLD_KINDS.indexOf(EKP_PIECES[EKP_ORDER[i - 1]].kind) <= ROOF_FOLD_KINDS.indexOf(EKP_PIECES[id].kind)) && EKP_ORDER[0] === 'pacioli1' && EKP_ORDER.at(-1) === 'dodeca');
-// Buildable (#12): the expanded windows at the golden push unfold into a flat net, no two faces overlapping.
+// Buildable (study 10a): the expanded windows at the golden push unfold into a flat net, no two faces overlapping.
 {
   const V = [];
   for (const f of expandedWindows(EXPANDED_WINDOWS_GOLDEN)) for (const p of f) if (!V.some((q) => dist(p, q) < 1e-9)) V.push(p);
   const net = netOf({ label: 'Expanded windows', make: () => hullOf(V) }, 5);
   const T1 = net.at(1), M0 = T1[net.tree.order[0]];
   const closes = net.faces.every((f, i) => f.pts.every((p) => dist(apply(T1[i], p), apply(M0, p)) < 1e-6));
-  check(`expanded windows (#12): a flat net of all ${net.faces.length} faces, no overlaps, folds closed (${netSteps(net).length} taps)`, net.faces.length === 74 && net.overlapCount === 0 && closes);
+  check(`expanded windows (study 10a): a flat net of all ${net.faces.length} faces, no overlaps, folds closed (${netSteps(net).length} taps)`, net.faces.length === 74 && net.overlapCount === 0 && closes);
 }
 console.log(`\n${failures} failure${failures === 1 ? '' : 's'}.`);
 process.exit(failures ? 1 : 0);

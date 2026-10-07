@@ -27,7 +27,8 @@ the commit that first recorded it (full list, verification and literature status
 | Euclid–Kepler–Pacioli network: Kepler's great stellated dodecahedra and icosahedra sharing only corners | 2026-10-06 | not found — candidate |
 | EKP windows: carving the six neighbouring stella octangulas out of the dodecahedron leaves 12 Penrose thick rhombi (72°) at its own face angles | 2026-10-08 | not found — candidate |
 | Stretched dodecahedron: 8 regular pentagons, 4 hexagons and 2 rectangles at any stretch, squares at one edge | 2026-10-08 | not found — candidate |
-| The windows made convex: pushed out by √(7 − 4φ), a 74-face solid of 12 Penrose thick rhombi, 6 golden rhombi, 8 equilateral triangles and 48 triangles; buildable from a flat net | 2026-10-08 | not found — candidate |
+| Study of the windows (10a): pushed out by √(7 − 4φ), a convex 74-face solid of 12 Penrose thick rhombi, 6 golden rhombi, 8 equilateral triangles and 48 triangles; buildable from a flat net | 2026-10-08 | study of the windows, not a separate claim |
+| Study of the windows (10b): the rhombi kept in place, each notch closed by a flat golden rhombus and 8 triangles, 66 faces | 2026-10-08 | study of the windows, not a separate claim |
 
 "Not found" means a web-level search turned up nothing, not proof of novelty. Cite as
-*DICTO, Kaleidohedra discoveries, #N (first recorded date), https://doi.org/10.5281/zenodo.23173809*. Each release is archived on Zenodo under that DOI; the latest, [v2026.10.08-convex](https://doi.org/10.5281/zenodo.23220833), adds #12 (the windows made convex, 74 faces); [v2026.10.08](https://doi.org/10.5281/zenodo.23220273) added #10 and #11.
+*DICTO, Kaleidohedra discoveries, #N (first recorded date), https://doi.org/10.5281/zenodo.23173809*. Each release is archived on Zenodo under that DOI; the latest, [v2026.10.08-convex](https://doi.org/10.5281/zenodo.23220833), adds the windows made convex (recorded there as #12, now study 10a); [v2026.10.08](https://doi.org/10.5281/zenodo.23220273) added #10 and #11.

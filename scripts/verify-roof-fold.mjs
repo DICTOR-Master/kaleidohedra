@@ -610,7 +610,7 @@ check(`stars on even cells and icosahedra on odd cells share only corners: ${pai
   check(`stretched dodecahedron (cube-face axis): any s gives 8 regular pentagons, 4 hexagons (108 x 4, 144 x 2), 2 rectangles, volume V + s x ${shadow.toFixed(6)}; squares at s = 2/phi`, ok && squares);
 }
 
-// (c) The windows made convex (#12): the 12 rhombi pushed out by t along their own normals, hulled.
+// (c) The windows made convex (study 10a of #10): the 12 rhombi pushed out by t along their own normals, hulled.
 // At t = sqrt(7 - 4 phi) (half their long diagonal): 12 thick rhombi as they were, 6 golden rhombi
 // (63.43/116.57, diagonals in ratio phi) square on the cube faces, 8 equilateral triangles (edge
 // 2/phi^2) at the cube corners, 24 + 24 triangles; three edge lengths 2/phi^2, 2/phi, 2t. Other t: 80.
@@ -636,7 +636,7 @@ check(`stars on even cells and icosahedra on odd cells share only corners: ${pai
     && [...lengths].every((x) => S2.has(x)) && norm(vecArea) < 1e-9 && [0.3, 0.6, 1, 1.5].every((u) => expandedWindows(u).length === 80));
 }
 
-// (d) The windows with flat notches: the 12 rhombi kept in place, each notch closed by a flat golden
+// (d) The windows with flat notches (study 10b of #10): the 12 rhombi kept in place, each notch closed by a flat golden
 // rhombus (edge sqrt(7 - 4 phi), diagonals 2/phi^2 and 2/phi) sunk to the windows' inner corners and
 // 8 triangles: 66 planar faces, closed and consistently wound, volume exactly V - 8/phi^4.
 {
