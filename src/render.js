@@ -156,6 +156,7 @@ const qcWorlds = new Map();
 let shellsWorld = null;
 let goldenWorld = null;
 let roofFoldWorld = null;
+let shear = null; // the Kaleidohedra lattice shear (installShear)
 let targetsWorld = null;
 let kaleidoWorld = null;
 let netsWorld = null;
@@ -1745,9 +1746,10 @@ async function init() {
 
   // Kaleidohedra by DICTO: everything from here on lives in the sheared
   // group (Lattice slider); the RD cell takes the Cell slider's shape.
-  installShear({
+  shear = installShear({
     scene,
     camera,
+    onChange: () => roofFoldWorld?.shearChanged(),
     onCell: (dirs) => {
       const g = new ConvexGeometry(cellCorners(dirs).map(([x, y, z]) => new THREE.Vector3(x, y, z)));
       g.computeVertexNormals();
@@ -2938,10 +2940,10 @@ async function init() {
     goldenWorld?.setActive(own3DActive() && own3D === 'golden');
     roofFoldWorld?.setActive(own3DActive() && own3D === 'roofFold');
     targetsWorld?.setActive(own3DActive() && own3D === 'targets');
-    // Euclid–Kepler–Pacioli Cell Network and Targets stay exact: no shear panel while they're on
-    // (shearing would break the icosahedra, and change the targets' angles).
+    // Targets stay exact: no shear panel there (shearing would change the targets' angles).
+    // The EKP world keeps it: there the shear moves the cell centres and the pieces stay regular.
     const shearPanel = document.getElementById('kaleido-panel');
-    if (shearPanel) shearPanel.hidden = own3DActive() && (own3D === 'roofFold' || own3D === 'targets');
+    if (shearPanel) shearPanel.hidden = own3DActive() && own3D === 'targets';
     kaleidoWorld?.setActive(own3DActive() && own3D === 'kaleido');
     netsWorld?.setActive(own3DActive() && own3D === 'nets');
     signalWorld?.setActive(own3DActive() && own3D === 'signal');
@@ -5271,8 +5273,15 @@ async function init() {
     onChange: () => { if (historyRestorers.has('worldgolden')) recordHistory('worldgolden', goldenWorld.snapshot()); },
   });
   roofFoldWorld = createRoofFoldWorld({
-    // Added to the real scene, not the shear group.
+    // Added to the real scene, not the shear group: the shear moves its
+    // cell centres only, so every piece stays regular.
     scene: { add: (o) => THREE.Object3D.prototype.add.call(scene, o) },
+    shear: () => {
+      const e = shear?.group.matrix.elements;
+      if (!e) return null;
+      const A = [[e[0], e[4], e[8]], [e[1], e[5], e[9]], [e[2], e[6], e[10]]];
+      return A.every((row, i) => row.every((v, j) => Math.abs(v - (i === j ? 1 : 0)) < 1e-12)) ? null : A;
+    },
     showHudPrompt,
     fitView: fitCameraTo,
     onChange: () => { if (historyRestorers.has('worldrooffold')) recordHistory('worldrooffold', roofFoldWorld.snapshot()); },

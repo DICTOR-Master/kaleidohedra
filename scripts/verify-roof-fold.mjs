@@ -353,6 +353,29 @@ for (const [label, sites] of [['two face neighbours', [[0, 0, 0], [1, 0, 0]]], [
   check(`merged edges, ${label}: ${E.length} edges, all creases or outline, none twice, no crease missing`, creases && overlaps === 0 && missing === 0);
 }
 
+// Sheared lattice (the Shear panel moves cell centres; pieces stay regular): the merged surface
+// takes the sheared centres and still encloses exactly the union, edges included.
+{
+  const A = [[1, 0.35, 0.2], [0, 1, 0.3], [0.15, 0, 0.9]];
+  const centre = (s) => A.map((row) => row.reduce((t, a, i) => t + a * 2 * s[i], 0));
+  const sites = [0, 1].flatMap((x) => [0, 1].flatMap((y) => [0, 1].map((z) => [x, y, z])));
+  const C2 = sites.map(centre);
+  const lo = [0, 1, 2].map((a) => Math.min(...C2.map((c) => c[a])) - 1.8), hi = [0, 1, 2].map((a) => Math.max(...C2.map((c) => c[a])) + 1.8);
+  const n = 40;
+  let hits = 0;
+  for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) for (let k = 0; k < n; k++) {
+    const p = [i, j, k].map((c, a) => lo[a] + ((c + 0.5 + 0.011 * (a + 1)) / n) * (hi[a] - lo[a]));
+    if (C2.some((c) => inside(sub(p, c)))) hits++;
+  }
+  const sampled = (hits / n ** 3) * (hi[0] - lo[0]) * (hi[1] - lo[1]) * (hi[2] - lo[2]);
+  const surf = mergedDodecaSurface(sites, () => false, centre, 2);
+  const vol = volumeOf(surf.map((p) => p.polygon));
+  const E = mergedDodecaEdges(surf, sites, () => false, centre);
+  const inU = (p) => C2.some((c) => faceNormals.every((nn) => dot(sub(p, c), nn) < faceDist - 1e-12));
+  check(`merged surface, sheared 2x2x2 block: encloses ${vol.toFixed(3)} (sampled union ${sampled.toFixed(3)}); ${E.length} edges, all creases or outline`,
+    Math.abs(vol - sampled) / sampled < 0.01 && E.every(([a, b]) => notFlatAround(inU, a, b)));
+}
+
 // 9. Alternating views: colouring sites by parity keeps the 24 point operations but halves the
 // translations to the even ones (an FCC lattice), so the alternated structure is Fm-3.
 const sites3 = [];

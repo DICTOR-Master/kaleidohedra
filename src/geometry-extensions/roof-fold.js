@@ -151,11 +151,13 @@ function polygonArea(P) {
 }
 
 // The exact outer surface of the union of dodecahedra at the given sites
-// ([x, y, z] integers; centres at 2 * site). Returns { site, polygon, normal } pieces.
+// ([x, y, z] integers; centres at 2 * site, or wherever `centre` puts them,
+// e.g. a sheared lattice, whose sites up to `reach` apart may then touch).
+// Returns { site, polygon, normal } pieces.
 // Where a neighbour's face lies in the same plane, an opposite-facing one
 // counts as touching (interior where they meet) and a same-facing one is
 // kept once, by the lower site key, so no face is drawn twice.
-export function mergedDodecaSurface(sites, turned = () => false) {
+export function mergedDodecaSurface(sites, turned = () => false, centre = (s) => s.map((c) => 2 * c), reach = 1) {
   const { dodeca } = roofFoldSolids();
   const plain = dodeca.faces.map((f) => { const n = unit(cross(sub(f[1], f[0]), sub(f[2], f[0]))); return { f, n, d: dot(f[0], n) }; });
   // A turned site's dodecahedron is the plain one turned a quarter about z: its polygons and normals turn with it.
@@ -165,9 +167,11 @@ export function mergedDodecaSurface(sites, turned = () => false) {
   const occupied = new Map(sites.map((s) => [keyOf(s), s]));
   const out = [];
   for (const s of occupied.values()) {
-    const o = s.map((c) => 2 * c);
+    const o = centre(s);
     const neighbours = [];
-    for (const dx of [-1, 0, 1]) for (const dy of [-1, 0, 1]) for (const dz of [-1, 0, 1]) {
+    const span = [];
+    for (let d = -reach; d <= reach; d++) span.push(d);
+    for (const dx of span) for (const dy of span) for (const dz of span) {
       const t = [s[0] + dx, s[1] + dy, s[2] + dz];
       if ((dx || dy || dz) && occupied.has(keyOf(t))) neighbours.push(t);
     }
@@ -175,7 +179,7 @@ export function mergedDodecaSurface(sites, turned = () => false) {
       let pieces = [face.f.map((p) => add(p, o))];
       const faceD = face.d + dot(face.n, o);
       for (const t of neighbours) {
-        const ot = t.map((c) => 2 * c);
+        const ot = centre(t);
         const nf = facesOf(t);
         const next = [];
         for (const piece of pieces) {
@@ -208,14 +212,23 @@ export function mergedDodecaSurface(sites, turned = () => false) {
 // is a seam (dropped) when the union is flat across it: on both sides, just
 // below the piece's plane is inside a dodecahedron and just above is not.
 // Edges shared by several pieces are drawn once.
-export function mergedDodecaEdges(pieces, sites, turned = () => false) {
+export function mergedDodecaEdges(pieces, sites, turned = () => false, centre = null) {
   const { dodeca } = roofFoldSolids();
   const planes = dodeca.faces.map((f) => { const n = unit(cross(sub(f[1], f[0]), sub(f[2], f[0]))); return { n, d: dot(f[0], n) }; });
   // Turning a dodecahedron turns its planes' normals; the offsets are unchanged (the turn is about its centre).
   const turnedPlanes = planes.map(({ n, d }) => ({ n: turnPoint(n), d }));
   // Only dodecahedra centred within one cell of a point can contain it.
   const occupied = new Set(sites.map((st) => st.join()));
+  const placed = centre ? sites.map((st) => ({ st, o: centre(st) })) : null;
+  const R = Math.sqrt(3) + 1e-9; // circumradius
   const inUnion = (p) => {
+    if (placed) {
+      return placed.some(({ st, o }) => {
+        const q = sub(p, o);
+        if (Math.hypot(...q) > R) return false;
+        return (turned(st) ? turnedPlanes : planes).every(({ n, d }) => dot(q, n) < d - 1e-12);
+      });
+    }
     const c = p.map((x) => Math.round(x / 2));
     for (const dx of [-1, 0, 1]) for (const dy of [-1, 0, 1]) for (const dz of [-1, 0, 1]) {
       const st = [c[0] + dx, c[1] + dy, c[2] + dz];

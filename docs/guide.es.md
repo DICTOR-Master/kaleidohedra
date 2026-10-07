@@ -1,6 +1,6 @@
 # Guía del usuario de Kaleidohedra
 
-Kaleidohedra, de DICTO, es el tercer hermano de [Rhombiverse](https://rhombiverse.vercel.app) y [Polyhedraverse](https://polyhedraverse.vercel.app). Rhombiverse es el **paisaje**: las redes mismas, extendiéndose en todas direcciones. Polyhedraverse es la **galería de retratos**: las formas que viven en esas redes, una a una, de cerca. Kaleidohedra **mueve el paisaje**: puedes cizallar y deslizar toda la red, y cada pieza se mueve con ella. Tiene todos los mundos de Rhombiverse descritos abajo, más sus propios controles (siguiente sección) y dos mundos propios: Transiciones icosaédricas/dodecaédricas y Targets.
+Kaleidohedra, de DICTO, es el tercer hermano de [Rhombiverse](https://rhombiverse.vercel.app) y [Polyhedraverse](https://polyhedraverse.vercel.app). Rhombiverse es el **paisaje**: las redes mismas, extendiéndose en todas direcciones. Polyhedraverse es la **galería de retratos**: las formas que viven en esas redes, una a una, de cerca. Kaleidohedra **mueve el paisaje**: puedes cizallar y deslizar toda la red, y cada pieza se mueve con ella. Tiene todos los mundos de Rhombiverse descritos abajo, más sus propios controles (siguiente sección) y dos mundos propios: Euclid–Kepler–Pacioli Cell Network y Targets.
 
 Aquí cada pieza llena el espacio a la perfección sobre una red cristalina real, así que solo puedes poner una pieza donde la red tenga sitio para ella. Toca para añadir una pieza, mantén pulsado para quitarla y observa lo que has construido con distintas vistas, de 1D a 6D.
 
@@ -21,7 +21,7 @@ Los controles propios de Kaleidohedra están en el panel **⟋ Shear**, arriba a
 - **Six sliders** fija directamente las longitudes a, b, c y los ángulos α, β, γ de la red.
 - **Export member** guarda el estado actual con el nombre que elijas, como un pequeño archivo JSON (un miembro de la población).
 
-El panel Shear se oculta en Transiciones icosaédricas/dodecaédricas, donde el cizallamiento rompería los icosaedros. Los hallazgos de Kaleidohedra, y cómo se comprueba cada uno, están en [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md).
+En Euclid–Kepler–Pacioli Cell Network el panel Shear mueve solo la red: los centros de las celdas se deslizan y cada pieza sigue siendo un sólido regular. Se oculta en Targets, donde el cizallamiento cambiaría los ángulos. Los hallazgos de Kaleidohedra, y cómo se comprueba cada uno, están en [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md).
 
 ## Primeros pasos
 

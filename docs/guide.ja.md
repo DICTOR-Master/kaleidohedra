@@ -1,6 +1,6 @@
 # Kaleidohedra ユーザーガイド
 
-DICTO による Kaleidohedra は、[Rhombiverse](https://rhombiverse.vercel.app) と [Polyhedraverse](https://polyhedraverse.vercel.app) に続く 3 番目の姉妹サイトです。Rhombiverse は**風景**：どの方向にも広がる格子そのもの。Polyhedraverse は**肖像画のギャラリー**：その格子に住む形を、ひとつずつ間近に。Kaleidohedra は**風景を動かします**：格子全体をずらしたり滑らせたりでき、すべてのピースが一緒に動きます。以下で説明する Rhombiverse のすべてのワールドに加え、独自のコントロール（次の節）と、独自の2つのワールド「二十面体／十二面体の遷移」と「Targets」があります。
+DICTO による Kaleidohedra は、[Rhombiverse](https://rhombiverse.vercel.app) と [Polyhedraverse](https://polyhedraverse.vercel.app) に続く 3 番目の姉妹サイトです。Rhombiverse は**風景**：どの方向にも広がる格子そのもの。Polyhedraverse は**肖像画のギャラリー**：その格子に住む形を、ひとつずつ間近に。Kaleidohedra は**風景を動かします**：格子全体をずらしたり滑らせたりでき、すべてのピースが一緒に動きます。以下で説明する Rhombiverse のすべてのワールドに加え、独自のコントロール（次の節）と、独自の2つのワールドEuclid–Kepler–Pacioli Cell Networkと「Targets」があります。
 
 ここでは、どのピースも本物の結晶格子の上で空間をすき間なく埋めます。そのため、ピースは格子に空きがある場所にしか置けません。タップでピースを追加し、長押しで取り除き、作ったものを 1D から 6D までのさまざまな表示で眺めてみましょう。
 
@@ -21,7 +21,7 @@ Kaleidohedra 独自のコントロールは、右上の **⟋ Shear** パネル�
 - **Six sliders** で格子の長さ a・b・c と角度 α・β・γ を直接設定できます。
 - **Export member** は今の状態を、名前を付けて小さな JSON ファイル（集団のメンバー）として保存します。
 
-「二十面体／十二面体の遷移」では、ずらすと二十面体が崩れるため Shear パネルは隠れます。Kaleidohedra の発見と、その検証方法は [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md) にあります。
+Euclid–Kepler–Pacioli Cell Network では、Shear パネルは格子だけを動かします。セルの中心がずれ、各ピースは正多面体のままです。Targets では角度が変わってしまうため隠れます。Kaleidohedra の発見と、その検証方法は [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md) にあります。
 
 ## はじめに
 

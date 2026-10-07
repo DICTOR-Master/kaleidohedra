@@ -1,6 +1,6 @@
 # Kaleidohedra 사용자 가이드
 
-DICTO의 Kaleidohedra는 [Rhombiverse](https://rhombiverse.vercel.app)와 [Polyhedraverse](https://polyhedraverse.vercel.app)에 이은 세 번째 자매 사이트입니다. Rhombiverse는 **풍경**입니다: 모든 방향으로 뻗어 나가는 격자 그 자체. Polyhedraverse는 **초상화 갤러리**입니다: 그 격자에 사는 도형을 하나씩 가까이에서. Kaleidohedra는 **풍경을 움직입니다**: 격자 전체를 기울이고 미끄러뜨릴 수 있으며, 모든 조각이 함께 움직입니다. 아래에 설명된 Rhombiverse의 모든 세계와 함께, 고유한 컨트롤(다음 절)과 두 개의 고유 세계, 이십면체/십이면체 전이와 Targets가 있습니다.
+DICTO의 Kaleidohedra는 [Rhombiverse](https://rhombiverse.vercel.app)와 [Polyhedraverse](https://polyhedraverse.vercel.app)에 이은 세 번째 자매 사이트입니다. Rhombiverse는 **풍경**입니다: 모든 방향으로 뻗어 나가는 격자 그 자체. Polyhedraverse는 **초상화 갤러리**입니다: 그 격자에 사는 도형을 하나씩 가까이에서. Kaleidohedra는 **풍경을 움직입니다**: 격자 전체를 기울이고 미끄러뜨릴 수 있으며, 모든 조각이 함께 움직입니다. 아래에 설명된 Rhombiverse의 모든 세계와 함께, 고유한 컨트롤(다음 절)과 두 개의 고유 세계, Euclid–Kepler–Pacioli Cell Network와 Targets가 있습니다.
 
 여기서는 모든 조각이 실제 결정 격자 위에서 빈틈없이 공간을 채웁니다. 그래서 격자에 자리가 있는 곳에만 조각을 놓을 수 있습니다. 탭하면 조각이 추가되고, 길게 누르면 제거됩니다. 만든 것을 1D부터 6D까지 여러 보기로 살펴보세요.
 
@@ -21,7 +21,7 @@ Kaleidohedra의 고유한 컨트롤은 오른쪽 위 **⟋ Shear** 패널에 있
 - **Six sliders**로 격자의 길이 a, b, c와 각도 α, β, γ를 직접 정합니다.
 - **Export member**는 현재 상태를 원하는 이름으로 작은 JSON 파일(집단의 구성원)로 저장합니다.
 
-이십면체/십이면체 전이에서는 기울이면 이십면체가 깨지므로 Shear 패널이 숨겨집니다. Kaleidohedra의 발견과 각각을 확인하는 방법은 [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md)에 있습니다.
+Euclid–Kepler–Pacioli Cell Network에서는 Shear 패널이 격자만 움직입니다. 셀 중심이 미끄러지고, 각 조각은 정다면체 그대로입니다. Targets에서는 각도가 바뀌므로 숨겨집니다. Kaleidohedra의 발견과 각각을 확인하는 방법은 [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md)에 있습니다.
 
 ## 시작하기
 

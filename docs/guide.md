@@ -19,7 +19,7 @@ Kaleidohedra's own controls are in the **⟋ Shear** panel at the top right. The
 - **Six sliders** set the lattice's lengths a, b, c and angles α, β, γ directly.
 - **Export member** saves the current state under a name you choose, as a small JSON file (a population member).
 
-The Shear panel hides in Euclid–Kepler–Pacioli Cell Network, where shearing would break the icosahedra. The findings behind Kaleidohedra, and how each one is checked, are in [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md).
+In Euclid–Kepler–Pacioli Cell Network the Shear panel moves the lattice only: the cell centres slide, and every piece stays a true regular solid. It hides in Targets, where shearing would change the angles. The findings behind Kaleidohedra, and how each one is checked, are in [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md).
 
 ## Getting started
 

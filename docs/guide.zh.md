@@ -1,6 +1,6 @@
 # Kaleidohedra 用户指南
 
-DICTO 的 Kaleidohedra 是 [Rhombiverse](https://rhombiverse.vercel.app) 和 [Polyhedraverse](https://polyhedraverse.vercel.app) 之后的第三个姊妹站点。Rhombiverse 是**风景**：向各个方向延伸的晶格本身。Polyhedraverse 是**肖像画廊**：住在这些晶格里的形状，一个一个近距离地看。Kaleidohedra **让风景动起来**：你可以剪切、滑动整个晶格，每一块都随之移动。它包含下文介绍的所有 Rhombiverse 世界，另有自己的控件（下一节）和两个自己的世界：“二十面体/十二面体转变”和 Targets。
+DICTO 的 Kaleidohedra 是 [Rhombiverse](https://rhombiverse.vercel.app) 和 [Polyhedraverse](https://polyhedraverse.vercel.app) 之后的第三个姊妹站点。Rhombiverse 是**风景**：向各个方向延伸的晶格本身。Polyhedraverse 是**肖像画廊**：住在这些晶格里的形状，一个一个近距离地看。Kaleidohedra **让风景动起来**：你可以剪切、滑动整个晶格，每一块都随之移动。它包含下文介绍的所有 Rhombiverse 世界，另有自己的控件（下一节）和两个自己的世界：Euclid–Kepler–Pacioli Cell Network和 Targets。
 
 在这里，每个部件都在真实的晶体晶格上无缝地填满空间，所以只能把部件放在晶格有空位的地方。轻点添加部件，长按移除部件，再用不同的视图从 1D 到 6D 查看你的作品。
 
@@ -21,7 +21,7 @@ Kaleidohedra 自己的控件在右上角的 **⟋ Shear** 面板里。它们一�
 - **Six sliders** 直接设定晶格的长度 a、b、c 和角度 α、β、γ。
 - **Export member** 把当前状态以你起的名字保存为一个小 JSON 文件（一个群体成员）。
 
-在“二十面体/十二面体转变”中，剪切会破坏二十面体，因此 Shear 面板会隐藏。Kaleidohedra 的发现以及每一项的验证方法见 [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md)。
+在 Euclid–Kepler–Pacioli Cell Network 中，Shear 面板只移动晶格：晶胞中心滑动，每个部件仍是正多面体。在 Targets 中它会隐藏，因为剪切会改变角度。Kaleidohedra 的发现以及每一项的验证方法见 [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md)。
 
 ## 入门
 

@@ -37,7 +37,7 @@ const solidKey = (s, kind) => `${s.join()},${kind}`;
 const DIRECTIONS = [];
 for (const x of [-1, 0, 1]) for (const y of [-1, 0, 1]) for (const z of [-1, 0, 1]) if (x || y || z) DIRECTIONS.push([x, y, z]);
 
-export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt = () => {}, fitView = () => {} }) {
+export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt = () => {}, fitView = () => {}, shear = () => null }) {
   const SOLIDS = roofFoldSolids();
   const storageKey = STORAGE_KEY;
   const group = new THREE.Group();
@@ -137,7 +137,11 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
     return [mesh, new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: edgeColor }))];
   }
-  const centreOf = (site) => site.map((c) => c * 2 * WS);
+  // The Shear panel moves the lattice, not the pieces: each cell centre goes
+  // through the shear (3×3 rows, or null when there is none) and every piece
+  // stays a true regular solid.
+  const centreCell = (site) => { const A = shear(); const c = site.map((x) => 2 * x); return A ? A.map((row) => row[0] * c[0] + row[1] * c[1] + row[2] * c[2]) : c; };
+  const centreOf = (site) => centreCell(site).map((c) => c * WS);
   // Odd sites are turned a quarter about z when the view asks for it, the merged outer surface included.
   const turnedSite = (site) => view.turnOdd && siteParity(...site) === 1;
   const turnFor = (site) => (turnedSite(site) ? turnPoint : (p) => p);
@@ -170,13 +174,14 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
   }
   function mergedPolys() {
     const polys = [], edges = [];
-    const surface = mergedDodecaSurface(sites(), turnedSite);
+    const sheared = Boolean(shear());
+    const surface = mergedDodecaSurface(sites(), turnedSite, centreCell, sheared ? 2 : 1);
     for (const { site, polygon } of surface) {
       const colour = view.mode === 'merged' && view.parity ? shade(KIND_COLOR.dodeca, site) : new THREE.Color(KIND_COLOR.dodeca);
-      // Surface pieces are already in cell units around the origin of site 0 (centre 2 * site).
+      // Surface pieces are already in cell units, each around its own cell centre.
       polys.push({ polygon, offset: [0, 0, 0], colour, record: { site, kind: 'dodeca' } });
     }
-    for (const [a, b] of mergedDodecaEdges(surface, sites(), turnedSite)) edges.push({ a, b, offset: [0, 0, 0] });
+    for (const [a, b] of mergedDodecaEdges(surface, sites(), turnedSite, sheared ? centreCell : null)) edges.push({ a, b, offset: [0, 0, 0] });
     return { polys, edges };
   }
   // Cube vertices of every occupied cell, or every vertex of every drawn solid.
@@ -184,7 +189,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     const corners = new Map();
     const put = (p) => corners.set(p.map((c) => c.toFixed(4)).join(), p);
     if (view.vertices === 'cube') {
-      for (const s of sites()) for (const dx of [-1, 1]) for (const dy of [-1, 1]) for (const dz of [-1, 1]) put([(2 * s[0] + dx) * WS, (2 * s[1] + dy) * WS, (2 * s[2] + dz) * WS]);
+      for (const s of sites()) for (const dx of [-1, 1]) for (const dy of [-1, 1]) for (const dz of [-1, 1]) { const o = centreOf(s); put([o[0] + dx * WS, o[1] + dy * WS, o[2] + dz * WS]); }
     } else {
       for (const { site, kind } of items) { const turn = turnFor(site); for (const f of SOLIDS[kind].faces) for (const v of f) put(turn(v).map((c, a) => c * WS + centreOf(site)[a])); }
     }
@@ -264,8 +269,9 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
   function fitBuild() {
     const S = sites();
     if (!S.length) { fitView([0, 0, 0], 2.2 * WS); return; }
-    const c = [0, 1, 2].map((a) => S.reduce((t, s) => t + s[a], 0) / S.length * 2 * WS);
-    const r = Math.max(...S.map((s) => Math.hypot(...s.map((v, a) => v * 2 * WS - c[a])))) + 1.8 * WS;
+    const C = S.map(centreOf);
+    const c = [0, 1, 2].map((a) => C.reduce((t, o) => t + o[a], 0) / C.length);
+    const r = Math.max(...C.map((o) => Math.hypot(...o.map((v, a) => v - c[a])))) + 1.8 * WS;
     fitView(c, r);
   }
   const pieceName = (kind) => t(`roofFold.${kind}`, lang());
@@ -419,6 +425,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     setSkeleton(on) { skeleton = on; if (active) rebuild(); },
     setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) rebuild(); } },
     setLatticeView(on) { latticeView = on; if (active) rebuild(); },
+    shearChanged() { if (active) rebuild(); },
     get isEmpty() { return solids.size === 0; },
     clear() { solids.clear(); commit(); },
     snapshot: toJSON,
