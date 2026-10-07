@@ -42,7 +42,7 @@ import { buildWheelFaces, faceKey, ensureOutwardWinding } from './rhombic-wheel-
 // user request 2026-08-25, so the HUD wheel reads as its own special
 // object at a glance, not just another buildable material sample.
 const GOLD = 0xd4af37;
-const RELIEF_LINE_COLOR = 0x0a0a0c;
+const RELIEF_LINE_COLOR = 0x9de0ff;
 
 const CSS = `
 #hud-wheel-3d-labels {
@@ -50,7 +50,7 @@ const CSS = `
 }
 .hud-wheel-3d-symbol {
   position: absolute; transform: translate(-50%, -50%) scale(var(--hw-scale, 1));
-  color: #0a0a0c;
+  color: #eafcff;
   font: 700 30px/1 system-ui, sans-serif;
   /* Legibility pass, 2026-09-02 (direct user request: "black and white
      on all symbols"). First attempt used a crisp multi-layer outline;
@@ -71,7 +71,7 @@ const CSS = `
      visibly bolds the thin ones without over-thickening the already-
      solid ones already carrying plenty of ink. */
   -webkit-text-stroke: 1.4px currentColor;
-  filter: drop-shadow(0 0 4px rgba(255,255,255,0.8));
+  filter: drop-shadow(0 0 4px rgba(0,0,0,0.95));
   pointer-events: none;
   user-select: none;
 }
@@ -199,7 +199,23 @@ export function createHudWheel3D(renderer, { size = 144, margin = 12 } = {}) {
   // coverage first -- two alternatives show all 4 real (no blank
   // face), but mix in less-central actions (Clear World, BCC); this
   // trio reads as the clearer "important" set even with one blank.
-  group.rotation.set(0.35, -Math.PI / 2, 0);
+  // A wheel on a level axle (direct report: it didn't stay horizontal):
+  // its long axis lies left to right on screen; a vertical drag rolls it
+  // about that axle, a sideways drag swings it a little, never end-on.
+  const BASE = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), -Math.PI / 2);
+  const SWING = 0.38; // radians each way, as the welcome symbol sways
+  let roll = 0.35, swing = 0;
+  function applyTurn() {
+    group.quaternion.setFromAxisAngle(new THREE.Vector3(0, 1, 0), swing)
+      .multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), roll))
+      .multiply(BASE);
+  }
+  function turn(dx, dy) {
+    roll += dy * 0.012;
+    swing = Math.max(-SWING, Math.min(SWING, swing + dx * 0.012));
+    applyTurn();
+  }
+  applyTurn();
 
   const faceEntries = [];
   const labelsLayer = document.createElement('div');
@@ -221,8 +237,10 @@ export function createHudWheel3D(renderer, { size = 144, margin = 12 } = {}) {
     // full wheel's near-invisible glass fill; this one is meant to
     // read as a real small object sitting in the HUD, not a
     // see-through overlay.
-    const mesh = new THREE.Mesh(geom, new THREE.MeshStandardMaterial({
-      color: face.color ?? GOLD, metalness: 0.45, roughness: 0.32, side: THREE.DoubleSide,
+    // Wireframe, like the welcome symbol: a faint fill in the face's own
+    // colour (still the tap target) under bright edges.
+    const mesh = new THREE.Mesh(geom, new THREE.MeshBasicMaterial({
+      color: face.color ?? GOLD, transparent: true, opacity: 0.16, depthWrite: false, side: THREE.DoubleSide,
     }));
     mesh.userData.faceKey = k;
     group.add(mesh);
@@ -346,5 +364,5 @@ export function createHudWheel3D(renderer, { size = 144, margin = 12 } = {}) {
     for (const e of faceEntries) if (e.data?.elId === elId) e.hidden = hidden;
   }
 
-  return { scene, camera, group, faceEntries, render, pickFace, setFaceHidden, getRect: () => rect };
+  return { scene, camera, group, faceEntries, render, pickFace, setFaceHidden, turn, getRect: () => rect };
 }

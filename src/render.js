@@ -234,9 +234,7 @@ const hudWheel = createHudWheel3D(renderer);
     const dy = ev.clientY - hudLastPointer.y;
     hudDragDistance += Math.hypot(dx, dy);
     hudLastPointer = { x: ev.clientX, y: ev.clientY };
-    const qx = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), dx * 0.012);
-    const qy = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), dy * 0.012);
-    hudWheel.group.quaternion.premultiply(qx).premultiply(qy);
+    hudWheel.turn(dx, dy);
   });
   window.addEventListener('pointerup', () => {
     if (hudDragging) controls.enabled = controlsEnabledBeforeHudDrag;
