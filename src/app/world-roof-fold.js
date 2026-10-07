@@ -13,6 +13,7 @@ import * as THREE from 'three';
 import { ROOF_FOLD_KINDS, ROOF_FOLD_COLOURS, ROOF_FOLD_WORLD_SCALE as WS, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, ROOF_FOLD_PATTERNS, siteParity, turnPoint } from '../geometry-extensions/roof-fold.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
+import { addPanelMinimiser } from './panel-minimiser.js';
 
 const STORAGE_KEY = 'kaleidohedra-roof-fold-world';
 const VIEWS = ['built', 'starIco', 'dodecaStar', 'checker', 'merged'];
@@ -351,6 +352,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     <div class="w4d-row rf-pattern-row"><label class="hull-pick"><span class="rf-pattern-label"></span> <select class="hull-select" data-select="pattern"></select></label></div>
     <div class="w4d-row w4d-options"></div>`;
   document.body.appendChild(panel);
+  addPanelMinimiser(panel, 'roof-fold');
   const pieceSelect = panel.querySelector('[data-select="piece"]');
   const modeSelect = panel.querySelector('[data-select="mode"]');
   const optionsRow = panel.querySelector('.w4d-options');

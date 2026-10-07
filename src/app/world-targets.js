@@ -8,6 +8,7 @@ import * as THREE from 'three';
 import { TARGET_TYPES, buildTarget, loadTargets, targetAngles } from '../geometry-extensions/targets.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
+import { addPanelMinimiser } from './panel-minimiser.js';
 
 const STORAGE_KEY = 'kaleidohedra-targets-world';
 const SHOWS = ['cell', 'neighbours', 'block'];
@@ -147,6 +148,7 @@ export function createTargetsWorld({ scene, fitView = () => {} }) {
     <div class="w4d-row"><label class="hull-pick"><span class="tg-show-label"></span> <select class="hull-select" data-select="show"></select></label></div>
     <div class="w4d-row w4d-options"></div>`;
   document.body.appendChild(panel);
+  addPanelMinimiser(panel, 'targets');
   const typeSelect = panel.querySelector('[data-select="type"]');
   const cellSelect = panel.querySelector('[data-select="cell"]');
   const showSelect = panel.querySelector('[data-select="show"]');
