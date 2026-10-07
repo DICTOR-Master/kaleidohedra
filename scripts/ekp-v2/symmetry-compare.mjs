@@ -1,13 +1,13 @@
 // Symmetry of three structures on the cubic cell lattice, with the contents held fixed:
-//   original: the seven pieces in every cube, unturned (the EKP cell as built in the app);
+//   original: the seven pieces in every cube, unturned (the EKP cell, DISCOVERIES #8);
 //   network:  stars on even cubes, icosahedra on odd cubes, unturned (DISCOVERIES #8b);
-//   v2:       the seven pieces in every cube, odd cubes turned 90 degrees about z.
-// An operation is (O, t): a cube symmetry O (signed permutation) with a cube translation t (cell units).
+//   v2:       the seven pieces in every cube, odd cubes turned 90 degrees about z (checkerboard turn).
+// An operation is (O, t): a cube symmetry O (signed permutation) with a cube translation t (cell units),
+// with t one representative per class mod 2. The operations are written to ops.json for space-group.mjs.
+import { writeFileSync } from 'node:fs';
 import { roofFoldSolids } from '../../src/geometry-extensions/roof-fold.js';
 const S = roofFoldSolids();
 const apply = (M, v) => [0, 1, 2].map(i => M[i][0]*v[0] + M[i][1]*v[1] + M[i][2]*v[2]);
-const mul = (A, B) => A.map(r => [0, 1, 2].map(j => r[0]*B[0][j] + r[1]*B[1][j] + r[2]*B[2][j]));
-const det = M => M[0][0]*(M[1][1]*M[2][2]-M[1][2]*M[2][1]) - M[0][1]*(M[1][0]*M[2][2]-M[1][2]*M[2][0]) + M[0][2]*(M[1][0]*M[2][1]-M[1][1]*M[2][0]);
 const Oh = [];
 for (const p of [[0,1,2],[0,2,1],[1,0,2],[1,2,0],[2,0,1],[2,1,0]]) for (let s = 0; s < 8; s++) {
   const M = [[0,0,0],[0,0,0],[0,0,0]];
@@ -27,7 +27,7 @@ const W = 2, cells = [];
 for (let i = -W; i <= W; i++) for (let j = -W; j <= W; j++) for (let k = -W; k <= W; k++) cells.push([i, j, k]);
 const inWin = c => c.every(x => Math.abs(x) <= W);
 const T8 = [[0,0,0],[1,0,0],[0,1,0],[0,0,1],[1,1,0],[1,0,1],[0,1,1],[1,1,1]];
-// Content of a cube, given its parity and rotation: the set of face keys at the origin.
+// Operations (O, t) that map the contents of the window onto themselves.
 function structure(name) {
   const cache = new Map();
   const content = (c) => {
@@ -44,8 +44,7 @@ function structure(name) {
       const g = apply(O, c).map((x, k) => x + t[k]);
       if (!inWin(g)) continue;
       checked++;
-      const img = keysOf({}, O); // placeholder, replaced below
-      // image of content(c) under O, compared with content(g)
+      // image of the contents of cube c under O, compared with the contents of cube g
       const mapped = new Set();
       for (const k2 of content(c)) { const i = k2.indexOf('|'); const type = k2.slice(0, i); const pts = k2.slice(i + 1).split('|').map(s => s.split(',').map(Number)); mapped.add(fk(type, pts.map(p => apply(O, p)))); }
       if (!eq(mapped, content(g))) { ok = false; break; }
@@ -54,41 +53,18 @@ function structure(name) {
   }
   return ops;
 }
-// Lattice of pure translations: even-sum cube vectors (face-centred) or all cube vectors (primitive)
-const inLattice = (v, lattice) => v.every(Number.isInteger) && (lattice === 'F' ? ((v[0]+v[1]+v[2]) % 2 === 0) : true);
-function symmorphicAbout(ops, p, lattice) {
-  return ops.every(({ O, t }) => { const Op = apply(O, p); const v = [0,1,2].map(i => t[i] - (p[i] - Op[i])); return inLattice(v, lattice); });
-}
-// Glide vectors of the reflections: translation parallel to the mirror plane, in cell units.
-function reflectionGlides(ops) {
-  const out = [];
-  for (const { O, t } of ops) {
-    if (det(O) > 0) continue;
-    const cand = []; for (const a of [-1,0,1]) for (const b of [-1,0,1]) for (const c of [-1,0,1]) if (a||b||c) cand.push([a,b,c]);
-    const n = cand.find(v => { const Ov = apply(O, v); return Ov.every((x, i) => Math.abs(x + v[i]) < 1e-9); });
-    if (!n) continue;
-    const nn = n.map(x => x / Math.hypot(...n));
-    const tn = t[0]*nn[0] + t[1]*nn[1] + t[2]*nn[2];
-    const tpar = t.map((x, i) => +(x - tn * nn[i]).toFixed(3));
-    out.push({ normal: n.join(','), glide: tpar.join(','), offset: +tn.toFixed(3) });
-  }
-  return out;
-}
-const structures = [['original (identical, unturned)', 'original'], ['network (stars even, icosahedra odd)', 'network'], ['v2 (identical, odd turned)', 'v2']];
+const structures = [['original (identical, unturned)', 'original'], ['network (stars even, icosahedra odd)', 'network'], ['v2 (checkerboard: odd cubes turned)', 'v2']];
+const dump = {};
 for (const [label, name] of structures) {
   const ops = structure(name);
+  dump[name] = ops;
   const points = new Set(ops.map(o => key(o.O)));
-  const lattice = name === 'original' ? 'P' : 'F';
   const transl = [...new Set(ops.filter(o => key(o.O) === key(I3)).map(o => o.t.join(',')))];
+  const swaps = ops.filter(o => (o.t[0] + o.t[1] + o.t[2]) % 2 === 1);
   console.log(`== ${label}`);
-  console.log(`   operations (O, t) with t in the 8 cube classes: ${ops.length}; point operations: ${points.size}; pure translations (mod 2): [${transl.join(' | ')}]`);
-  console.log(`   lattice of translations: ${lattice === 'P' ? 'primitive (all integer cube vectors)' : 'face-centred (even-sum cube vectors)'}`);
-  const cs = [[0,0,0],[0.5,0.5,0.5]];
-  console.log(`   fixed point common to all operations: ${cs.some(p => symmorphicAbout(ops, p, lattice)) ? 'yes (symmorphic)' : 'no (non-symmorphic)'}`);
-  const swaps = ops.filter(o => (o.t[0]+o.t[1]+o.t[2]) % 2 === 1);
+  console.log(`   operations: ${ops.length}; point operations: ${points.size}; pure translations (mod 2): [${transl.join(' | ')}]`);
+  console.log(`   translation lattice: ${name === 'original' ? 'primitive (all integer cube vectors)' : 'face-centred (even-sum cube vectors)'}`);
   console.log(`   operations exchanging even and odd cubes: ${swaps.length}`);
-  const g = reflectionGlides(ops);
-  const kinds = {};
-  for (const r of g) kinds[r.glide] = (kinds[r.glide] || 0) + 1;
-  console.log(`   reflections: ${g.length}; glide vectors parallel to the mirror (cell units; 1 cell = half a conventional cube): ${JSON.stringify(kinds)}`);
 }
+writeFileSync(new URL('./ops.json', import.meta.url), JSON.stringify(dump));
+console.log('wrote ops.json');

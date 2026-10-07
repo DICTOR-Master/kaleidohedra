@@ -22,56 +22,48 @@ function planesOf(V){
   }
   return [...seen.values()];
 }
-// Convex hull volume from points: facets identified by their point sets (robust to near-degenerate normals).
-function isFlat(P){
-  for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++)for(let k=j+1;k<P.length;k++){
-    const n=cross(sub(P[j],P[i]),sub(P[k],P[i])); const l=len(n); if(l<1e-6)continue;
-    const nn=scl(n,1/l); return P.every(p=>Math.abs(dot(nn,sub(p,P[i])))<1e-6)?true:false;
-  }
-  return true;
-}
-function hullVolume(pts){
-  const P=uniq(pts); if(P.length<4||isFlat(P))return 0;
-  const ctr=scl(P.reduce(add),1/P.length);
-  const keys=new Set(); let V=0;
-  for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++)for(let k=j+1;k<P.length;k++){
-    let n0=cross(sub(P[j],P[i]),sub(P[k],P[i])); const l=len(n0); if(l<1e-9)continue; n0=scl(n0,1/l);
-    for(const sg of [1,-1]){
-      const n=scl(n0,sg); const d=dot(n,P[i]);
-      if(P.some(p=>dot(n,p)-d>EPS))continue;
-      if(dot(n,ctr)-d>EPS)continue;
-      const on=[];P.forEach((p,idx)=>{if(Math.abs(dot(n,p)-d)<1e-6)on.push(idx);});
-      if(on.length<3)continue;
-      const key=on.join(','); if(keys.has(key))continue; keys.add(key);
-      const pl=on.map(idx=>P[idx]);
-      const dd=pl.reduce((s,p)=>s+dot(n,p),0)/pl.length;
-      const u=unit(Math.abs(n[0])<0.9?cross(n,[1,0,0]):cross(n,[0,1,0])); const w=cross(n,u);
-      const h=convex2d(pl.map(p=>[dot(p,u),dot(p,w)])); let A=0;
-      for(let q=0;q<h.length;q++){const a=h[q],b=h[(q+1)%h.length];A+=a[0]*b[1]-a[1]*b[0];} A=Math.abs(A)/2;
-      V+=A*dd/3;
-    }
-  }
-  return V;
-}
-function convex2d(pts){
-  const p=[...pts].sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
-  const cr=(o,a,b)=>(a[0]-o[0])*(b[1]-o[1])-(a[1]-o[1])*(b[0]-o[0]);
-  const lo=[],up=[];
-  for(const q of p){while(lo.length>=2&&cr(lo[lo.length-2],lo[lo.length-1],q)<=1e-12)lo.pop();lo.push(q);}
-  for(let i=p.length-1;i>=0;i--){const q=p[i];while(up.length>=2&&cr(up[up.length-2],up[up.length-1],q)<=1e-12)up.pop();up.push(q);}
-  return lo.slice(0,-1).concat(up.slice(0,-1));
-}
 // Convex polytope from vertices and edges: planes, edges.
 function poly(V,E){return {V,E,P:planesOf(V)};}
-const inside=(Q,x)=>Q.P.every(({n,d})=>dot(n,x)-d<=EPS);
-// Exact intersection volume of two convex polytopes.
+// Exact intersection volume of two convex polytopes. Each boundary face of one is clipped to the other, so the
+// boundary of A∩B is the part of A's boundary inside B plus the part of B's boundary inside A. A face of B that
+// lies in the same plane, with the same outward normal, as a face of A is counted once.
+const TOL=1e-9;
+function facesOf(Q){
+  return Q.P.map(({n,d})=>{
+    const on=uniq(Q.V.filter(v=>Math.abs(dot(n,v)-d)<1e-6));
+    const c=scl(on.reduce(add),1/on.length);
+    const u=unit(Math.abs(n[0])<0.9?cross(n,[1,0,0]):cross(n,[0,1,0])), w=cross(n,u);
+    const ang=v=>Math.atan2(dot(sub(v,c),w),dot(sub(v,c),u));
+    return {n,d,poly:on.sort((a,b)=>ang(a)-ang(b))};
+  }).filter(f=>f.poly.length>=3);
+}
+function clipPoly(poly,m,e){
+  const out=[], s=poly.map(p=>dot(m,p)-e);
+  for(let i=0;i<poly.length;i++){
+    const j=(i+1)%poly.length, p=poly[i], q=poly[j], sp=s[i], sq=s[j];
+    if(sp<=TOL)out.push(p);
+    if((sp<-TOL&&sq>TOL)||(sp>TOL&&sq<-TOL))out.push(add(p,scl(sub(q,p),sp/(sp-sq))));
+  }
+  return out;
+}
+function polyArea(poly,n){
+  let s=[0,0,0];
+  for(let i=0;i<poly.length;i++)s=add(s,cross(poly[i],poly[(i+1)%poly.length]));
+  return Math.abs(dot(s,n))/2;
+}
 function interVol(A,B){
-  const pts=[];
-  for(const v of A.V)if(inside(B,v))pts.push(v);
-  for(const v of B.V)if(inside(A,v))pts.push(v);
-  for(const [p,q] of A.E)for(const {n,d} of B.P){const sp=dot(n,p)-d,sq=dot(n,q)-d;if(sp*sq>0)continue;const t=sp/(sp-sq);const x=add(p,scl(sub(q,p),t));if(inside(B,x))pts.push(x);}
-  for(const [p,q] of B.E)for(const {n,d} of A.P){const sp=dot(n,p)-d,sq=dot(n,q)-d;if(sp*sq>0)continue;const t=sp/(sp-sq);const x=add(p,scl(sub(q,p),t));if(inside(A,x))pts.push(x);}
-  return hullVolume(pts);
+  const FA=facesOf(A), FB=facesOf(B);
+  let v=0;
+  for(const f of FA){
+    let poly=f.poly; for(const g of B.P)poly=clipPoly(poly,g.n,g.d);
+    if(poly.length>=3)v+=f.d*polyArea(poly,f.n)/3;
+  }
+  for(const g of FB){
+    if(FA.some(f=>dot(f.n,g.n)>1-1e-9&&Math.abs(f.d-g.d)<1e-7))continue;
+    let poly=g.poly; for(const f of A.P)poly=clipPoly(poly,f.n,f.d);
+    if(poly.length>=3)v+=g.d*polyArea(poly,g.n)/3;
+  }
+  return v;
 }
 // Dodecahedron and its world placement
 const dodVerts=[...new Map(S.dodeca.faces.flat().map(p=>[p.map(c=>c.toFixed(9)).join(),p])).values()];

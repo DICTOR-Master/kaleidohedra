@@ -43,10 +43,3 @@ const pointOps = new Set(ops.map(o => key(o.O)));
 const swaps = ops.filter(o => (o.t[0]+o.t[1]+o.t[2]) % 2 === 1);
 console.log('six contents, checkerboard: operations', ops.length, '| point operations', pointOps.size, '| swap operations (odd translation)', swaps.length);
 console.log('translations (mod 2):', JSON.stringify([...new Set(ops.filter(o => key(o.O) === key(I3)).map(o => o.t.join(',')))]));
-const isF = v => v.every(Number.isInteger) && ((v[0] + v[1] + v[2]) % 2 === 0);
-let symmorphic = false;
-for (const p of [[0,0,0],[0.5,0.5,0.5]]) {
-  let ok = true; for (const { O, t } of ops) { const Op = apply(O, p); if (!isF([0,1,2].map(i => t[i] - (p[i] - Op[i])))) { ok = false; break; } }
-  if (ok) symmorphic = true;
-}
-console.log('symmorphic about a common point:', symmorphic);

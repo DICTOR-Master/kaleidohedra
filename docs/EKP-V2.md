@@ -1,76 +1,145 @@
-# Euclid–Kepler–Pacioli Cell Network (v2): symmetry and overlap checks
+# Euclid–Kepler–Pacioli (EKP) cell by DICTO: two variations, symmetry and overlap
 
-*Statement for the Zenodo record of the alternative version 2, by DICTO. Draft, 2026-10-07. Not yet released.*
+*Statement for the Zenodo record, by DICTO. Draft dated 2026-10-07; not released.*
 
 ## Summary
 
-Version 2 of the Euclid–Kepler–Pacioli (EKP) network (DISCOVERIES.md #8, #8b). Every cube of a cubic lattice holds the same seven pieces: the cube, the regular dodecahedron, the regular icosahedron, the great stellated dodecahedron (the star), the octahedron, the stella octangula and Pacioli's golden rectangles. Odd cubes are turned a quarter (90°) about the vertical axis as a whole, so neighbouring cubes alternate. In the app this is the world **Euclid–Kepler–Pacioli Cell Network (v2)** (Wizard → 3D+). The first version, the Icosahedral/Dodecahedral Transitions world, is unchanged.
+The EKP cell (DISCOVERIES.md #8) fills a cubic lattice of cubes with the same seven pieces in every cube: the cube, the regular dodecahedron, the regular icosahedron, the great stellated dodecahedron (the star), the octahedron, the stella octangula and three Pacioli golden rectangles (planar, so they have no volume).
 
-## Definition
+This record defines two variations and gives their exact symmetry and overlap:
 
-- Cube (i, j, k) is centred at 2(i, j, k) with edge 2 (the roof-fold units of `src/geometry-extensions/roof-fold.js`).
-- Even cubes (i + j + k even) are unturned. Odd cubes are turned 90° about z, with all their pieces.
-- The contents of every cube are identical up to that turn.
+- **A, identical cells.** Every cube is the same and unturned. This is the cell as first recorded (DISCOVERIES #8). In the app it is the Euclid–Kepler–Pacioli Cell Network world, with the turn off.
+- **B, checkerboard turn.** Odd cubes (i + j + k odd) are turned 90° about the z axis, with all their pieces. In the app it is the Turn odd cubes option of the Euclid–Kepler–Pacioli Cell Network world, switched on for this variation.
 
-## Results
+Both variations are kept; neither replaces the other. The EKP network (DISCOVERIES #8b), which puts stars on even cubes and icosahedra on odd cubes, is included for comparison.
 
-Each result is produced by a script in `scripts/ekp-v2/`. The outputs of one run are in `scripts/ekp-v2/RESULTS.txt`.
+The repeat rule of DISCOVERIES #8 is that the cell repeats by translations of 2 along x, y and z (`ROOF_FOLD_PERIOD = 2`). Variation A keeps that rule. Variation B does not: its odd cubes are rotated copies, so a one-cube translation swaps even and odd cubes. Within each cube the roof rules still hold in both variations: roofs on the cube, then reflection through its six faces. The turn rotates each odd cube as a whole, so the construction inside it is unchanged, only turned. Between cubes, B breaks the roof node rule of DISCOVERIES #8: no roof vertex of a cube meets an icosahedron vertex of a neighbour (section 5). B also has two cube orientations where DISCOVERIES #8 has one.
 
-1. **Symmetry.** The structure has 48 point operations, the full cube group. Half of them (24) exchange even and odd cubes, and the translations form the face-centred lattice of even-sum cube vectors. The operations cannot all be taken about one common point, so the group is non-symmorphic.
-2. **Mechanism.** The 24 exchanging operations are exactly the 90°-rotated pyritohedral operations. The turn moves the icosahedral fivefold axes: none of the six fivefold lines of the icosahedron coincides with an unturned line, so odd cubes realign their icosahedral axes.
-3. **Per solid.** The octahedron and the stella octangula are unchanged by the quarter turn. The dodecahedron, the icosahedron, the great star and the Pacioli rectangles are realigned, but their cube-symmetry subgroup of 24 operations is the same before and after. The shared symmetry of all six is 24 operations in both cases.
-4. **Overlap, per lattice cube (volume 8).** Exact convex intersections give a total of 18.10, which is 226% of the cube's volume. The six faces of every cube carry the same overlap (6.03 per face contact). The largest contributions per lattice cube are dodecahedron with dodecahedron 6.47, cube with dodecahedron 3.24, dodecahedron with stella 1.24 and dodecahedron with great star 0.81. Cubes do not overlap one another, and there is no overlap at FCC neighbours or at corners. The star with star across a face gives 0.0077 per lattice cube.
-5. **Merged outer surface.** The turned merged surface is closed: its enclosed volume is the same from two reference points, to within 10⁻¹². All 1945 faces point outward, and their windings agree with their normals. The enclosed volume is 274.25, which agrees with a Monte Carlo estimate of the union (272.99 ± 0.89 turned; 274.62 ± 0.89 unturned).
+## Definitions
 
-## Caveats
+- Cube (i, j, k) has its centre at 2(i, j, k) and edge 2, in the units of `src/geometry-extensions/roof-fold.js`. One lattice step is one cube.
+- Even cubes have i + j + k even; odd cubes have it odd.
+- Variation A: each cube holds the seven pieces, unturned.
+- Variation B: as A, but each odd cube is rotated 90° about z together with its pieces.
+- Placement: the app places any of the seven pieces in any cube. Section 4 gives the exact fit for chosen pairs.
 
-- The overlap values are exact convex intersections, cross-checked by Monte Carlo (dodecahedron with icosahedron: 0.04350 exact, 0.04378 Monte Carlo). Two earlier faults in the routine are fixed: touching-only intersections were counted as volume, and an edge-plane test accepted spurious vertices. The figures here come from the fixed code.
-- The structure is not a tiling. The solids overlap by design, and the totals measure that overlap.
-- The symmetry check holds the contents fixed and uses cube symmetries and cube translations. A cubic lattice admits no other point group.
-- Pacioli's golden rectangles are planar, so they have no volume and are left out of the volume totals. They are included in the symmetry check.
-- The star with star face overlap, 0.0026 per contact, is small but not zero.
+## 1. Symmetry
 
-## Reproduce
+Each operation is a cube symmetry (signed permutation) with a cube translation, checked against the full contents of a 5 × 5 × 5 window of cubes. Counts are per 2 × 2 × 2 supercell.
 
-```
-node scripts/ekp-v2/symmetry-seven.mjs
-node scripts/ekp-v2/content-symmetry.mjs
-node scripts/ekp-v2/contents-totals.mjs
-node scripts/ekp-v2/merged-orientation.mjs
-```
-
-The Monte Carlo lines change slightly from run to run, because they use random samples.
-
-## Relation to the existing record
-
-- Version 1 is the Icosahedral/Dodecahedral Transitions world and the EKP cell and network findings (DISCOVERIES.md #8 and #8b).
-- Concept DOI of the Kaleidohedra record: 10.5281/zenodo.23173809.
-- Credit: DICTO (the artist name).
-
-## Suggested Zenodo fields
-
-- **Title:** Euclid–Kepler–Pacioli Cell Network (v2): symmetry and overlap checks
-- **Version:** v2026.10.07-alt2 (proposed)
-- **Description:** Alternative version 2 of the EKP network. Every cube holds the same seven pieces, and odd cubes are turned 90° about the vertical axis. The checks give 48 point operations (half of them exchanging even and odd cubes), a non-symmorphic space group on a face-centred lattice, and exact per-cube overlaps. The merged outer surface is closed, with outward normals.
-- **Keywords:** Euclid–Kepler–Pacioli cell; icosahedral symmetry; space-filling; non-symmorphic symmetry; stellated dodecahedron; stella octangula
-- **Related identifiers:** 10.5281/zenodo.23173809 (Kaleidohedra concept DOI)
-
-## Comparison with the original EKP (symmetry)
-
-Output: `scripts/ekp-v2/RESULTS-compare.txt` (`node scripts/ekp-v2/symmetry-compare.mjs`).
-
-| | Original (identical, unturned) | Network (stars and icosahedra) | v2 |
+| | A identical | Network (#8b) | B checkerboard |
 |---|---|---|---|
+| Operations | 192 | 96 | 192 |
 | Point operations | 24 (m-3) | 24 (m-3) | 48 (m-3m) |
-| Translations (cube vectors) | all integer (primitive) | even-sum (face-centred) | even-sum (face-centred) |
-| Operations per 2×2×2 supercell | 192 | 96 | 192 |
-| Fixed point common to all operations | yes | yes | no (non-symmorphic) |
-| Operations exchanging even and odd cubes | 96 (odd translations) | 0 | 96 |
+| Translation lattice | primitive (all cube vectors) | face-centred | face-centred |
+| Operations exchanging even and odd cubes | 96 | 0 | 96 |
+| Space group | Pm-3 (No. 200) | Fm-3 (No. 202) | Fm-3c (No. 226) |
+| Symmorphic | yes | yes | no |
 
-- v2 has the full cube group as its point symmetry. The original has its pyritohedral subgroup.
-- The total per supercell is the same (192): the symmetry moves from translations into point operations.
-- The reflections of v2 include glide translations of quarter-cell size, which suggests diamond-type glides. The space-group symbol needs checking against the International Tables before publication.
+- Space groups come from the reflections of the operation set (determinant −1, trace 1), classed by glide type (`scripts/ekp-v2/space-group.mjs`). In A and in the network, the mirrors perpendicular to the cube axes are pure mirrors. In B those mirrors remain, and the reflections perpendicular to face diagonals are c-glides and diagonal glides, with no pure mirror.
+- Repeat rule: A repeats by one cube along each axis. B and the network (#8b) do not: their translations are the face-centred ones only, so a one-cube translation is not a symmetry of either.
+- B is not symmorphic. The operation R90·diag(−1, 1, 1) exchanges even and odd cubes, so every one of its translations has odd cube-sum. Moving the origin by s changes the translation by (I − O)s = (s_x + s_y, s_x + s_y, 0), which has even cube-sum. No origin makes all translations lattice vectors.
+- In B the 96 exchanging operations are exactly the 90° rotation composed with the 24 pyritohedral operations.
+- Under the quarter turn R90, the octahedron and the stella octangula are each mapped onto themselves (48 operations each). For the dodecahedron, icosahedron, great star and Pacioli rectangles, the original and the rotated copy share 24 operations. The 24 operations common to all six solids are unchanged by the turn.
 
-## Roof construction
+## 2. Overlap per lattice cube (exact; volume 8)
 
-Against the roof construction, v1 matches more directly: its cells repeat by translation alone, as Euclid's roofs do on the cube. In v2 the odd cells are turned copies.
+| Pair | A | B |
+|---|---|---|
+| dodecahedron–dodecahedron | 6.4721 | 6.4721 |
+| dodecahedron–cube | 3.2361 | 3.2361 |
+| dodecahedron–stella octangula | 1.2361 | 1.2361 |
+| dodecahedron–great star | 0.6950 | 0.8053 |
+| dodecahedron–octahedron | 0.2918 | 0.2918 |
+| dodecahedron–icosahedron | 0.1115 | 0.1305 |
+| cube–great star | 0.1115 | 0.1115 |
+| great star–great star | 0.2229 | 0.0077 |
+| all other pairs | 0 | 0 |
+| **Total** | **18.0588** (225.7% of cube volume) | **18.1021** (226.3%) |
+
+- Per face contact: A 6.01961, B 6.03403, equal on all six faces in each variation.
+- Edge neighbours (12) and corner neighbours (8) of each cube give zero overlap for every pair, in both variations. At the corners the pieces meet at most at a point: each large piece reaches circumradius √3 in the cube-corner directions, and corner neighbours sit at distance 2√3.
+- Cubes two steps away are at least 4 apart, beyond 2√3 ≈ 3.46, so all overlap lies within the first shell.
+
+## 3. Merged outer surface (3 × 3 × 3 cubes; app function `mergedDodecaSurface`)
+
+| | A | B |
+|---|---|---|
+| Faces | 731 | 1945 |
+| Winding or normal mismatches / faces not outward | 0 / 0 | 0 / 0 |
+| Closure difference (two reference points) | 6.8 × 10⁻¹³ | 3.4 × 10⁻¹³ |
+| Enclosed volume (exact, from the surface) | 274.249 | 274.249 |
+| Monte Carlo estimate of the union | 272.79 ± 0.89 | 274.07 ± 0.89 |
+
+The enclosed volume is the same to the printed precision in both variations. The Monte Carlo estimates agree with it within about two standard errors.
+
+## 4. Alternating pieces (variation B)
+
+A cube holds one piece in a given placement. Two pieces placed on even and odd cubes are checked exactly for every neighbour direction (6 faces, 8 corners, 12 edges):
+
+| Even cube | Odd cube | Face | Corner | Edge |
+|---|---|---|---|---|
+| great star | icosahedron | 0 | 0 | 0 |
+| dodecahedron | icosahedron | 0.0435 | 0 | 0 |
+| stella octangula | dodecahedron | 0.412 | 0 | 0 |
+
+So the great star and the icosahedron fit exactly when alternated. The stella octangula and the dodecahedron do not fit across faces.
+
+## 5. Roof rules (DISCOVERIES #8)
+
+DISCOVERIES #8 records that every roof vertex of a cube is an icosahedron vertex of a neighbouring cube. A cube has 12 roof vertices (the dodecahedron's vertices outside the cube). Counting those that coincide with an icosahedron vertex of one of the 26 neighbouring cubes:
+
+| Cube | A identical | B checkerboard |
+|---|---|---|
+| even (0, 0, 0) | 12 of 12 | 0 of 12 |
+| odd (1, 0, 0) | 12 of 12 | 0 of 12 |
+
+Every even cube is a translate of (0, 0, 0) and every odd cube of (1, 0, 0), so these two cases cover all cubes. Variation B therefore has no roof node shared with a neighbour. Section 2 gives its overlaps. The construction inside each cube (roofs on the cube, reflection through its faces) holds in both variations. DISCOVERIES #8 also says every cube repeats one orientation; B has two. Script: `scripts/ekp-v2/roof-nodes.mjs`, output `RESULTS-roof-nodes.txt`.
+
+## 6. Checks on the method
+
+- Overlaps are exact convex intersections: each boundary face of one piece is clipped against the other. The face totals printed by the script agree in all six directions in each variation.
+- Monte Carlo: the great star with the great star across a face (+y), exact 0.07430 against Monte Carlo 0.07446 ± 0.00022 (2 × 10⁷ samples).
+- The two tetrahedra of the stella octangula intersect in the octahedron (volume 4/3, checked).
+- Corrections since the first draft: (1) an earlier hull-based intersection depended on point order for pairs of star spikes. The identical-cell great star–great star term was 0.2018 and is now 0.2229, so the variation A total moves from 18.0377 to 18.0588. Variation B (18.1021) is unchanged. (2) The earlier glide note counted improper operations too; the classification in section 1 counts only reflections. (3) A two-origin symmorphic test is replaced by the argument in section 1.
+
+## 7. Limits
+
+- The pieces overlap by design. The arrangement is not a tiling; the totals measure the overlap and say nothing about physical assembly.
+- Space-group symbols are derived from the glide classification above. They have not yet been compared with the printed International Tables.
+- Monte Carlo values are estimates with stated standard errors; repeated runs vary within those errors.
+
+## 8. Reproduce
+
+From the repository root:
+
+```
+node scripts/ekp-v2/symmetry-compare.mjs      # operations (writes ops.json)
+node scripts/ekp-v2/space-group.mjs           # space-group symbols
+node scripts/ekp-v2/symmetry-seven.mjs        # per-solid symmetry under the quarter turn
+node scripts/ekp-v2/content-symmetry.mjs      # shared subgroup
+node scripts/ekp-v2/contents-totals.mjs       # overlap per lattice cube, variation B
+node scripts/ekp-v2/contents-totals.mjs --unturned --mc   # variation A, corners, Monte Carlo pair check
+node scripts/ekp-v2/alternate-fit.mjs         # alternating pieces
+node scripts/ekp-v2/merged-orientation.mjs    # merged outer surface
+node scripts/ekp-v2/roof-nodes.mjs            # roof vertices on neighbouring icosahedra
+```
+
+Outputs are in `scripts/ekp-v2/RESULTS-*.txt`.
+
+## 9. Context
+
+- Variation A: DISCOVERIES.md #8 (cell) and #8b (network). The v2026.10.07 release, DOI 10.5281/zenodo.23197596, already archives variation A.
+- Concept DOI of the Kaleidohedra record: 10.5281/zenodo.23173809.
+- Source: github.com/DICTOR-Master/kaleidohedra (MIT licence).
+- Credit: DICTO.
+
+## Suggested Zenodo fields (not released)
+
+- **Title:** Euclid–Kepler–Pacioli (EKP) cell by DICTO: two variations, symmetry and overlap
+- **Creator:** DICTO
+- **Version:** v2026.10.07-alt2 (proposed; to be decided)
+- **Licence:** MIT, as the repository. To confirm: whether the text should carry CC BY 4.0 instead.
+- **Keywords:** Euclid–Kepler–Pacioli cell; icosahedral symmetry; space filling; space group Fm-3c; stellated dodecahedron; stella octangula
+- **Related identifiers:** 10.5281/zenodo.23173809 (concept); 10.5281/zenodo.23197596 (v2026.10.07, variation A)
+- **Description:** Two variations of the Euclid–Kepler–Pacioli cell, each cube holding the same seven pieces. Variation A (identical cells, space group Pm-3) and variation B (odd cubes turned 90°, space group Fm-3c, not symmorphic) are both kept. Variation B does not repeat by translation alone and breaks the roof node rule between cubes; each cube still follows the roof rules. Exact symmetry and per-cube overlaps, the closed merged outer surface and the alternating-piece fits are given with scripts that reproduce every number.

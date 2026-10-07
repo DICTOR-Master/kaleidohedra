@@ -1,0 +1,16 @@
+variation: identical cells, unturned
+check: stella T1 cap T2 volume 1.333333 (octahedron 4/3 = 1.333333)
+computed in 0.5 s
+face totals per direction (+x,-x,+y,-y,+z,-z): 6.01961 6.01961 6.01961 6.01961 6.01961 6.01961
+fcc even per direction: -0.00000 0.00000 0.00000 -0.00000 -0.00000 -0.00000 0.00000 -0.00000 -0.00000 0.00000 0.00000 0.00000
+fcc odd per direction: 0.00000 0.00000 0.00000 -0.00000 -0.00000 0.00000 0.00000 0.00000 -0.00000 0.00000 0.00000 0.00000
+per lattice cube (volume 8), total overlap: 18.0588
+per-type-pair density per lattice cube:
+  cube           0.0000   3.2361   0.0000   0.1115   0.0000   0.0000
+  dodecahedron   3.2361   6.4721   0.1115   0.6950   0.2918   1.2361
+  icosahedron    0.0000   0.1115   0.0000   0.0000   0.0000   0.0000
+  star           0.1115   0.6950   0.0000   0.2229   0.0000  -0.0000
+  octahedron     0.0000   0.2918   0.0000   0.0000   0.0000   0.0000
+  stella         0.0000   1.2361   0.0000   0.0000   0.0000   0.0000
+corner neighbours, total over the 8 directions: 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+star with star across a face (+y): exact 0.07430; Monte Carlo 0.07446 +/- 0.00022 (2e+7 samples)

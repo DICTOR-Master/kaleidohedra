@@ -1,5 +1,8 @@
 import { roofFoldSolids } from '../../src/geometry-extensions/roof-fold.js';
 const S = roofFoldSolids();
+// --unturned: the identical-cells variation (no turn). Default: odd cubes turned 90 degrees about z.
+const UNTURNED = process.argv.includes('--unturned');
+console.log(UNTURNED ? 'variation: identical cells, unturned' : 'variation: odd cubes turned 90 degrees about z');
 const dot=(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2];
 const sub=(a,b)=>[a[0]-b[0],a[1]-b[1],a[2]-b[2]], add=(a,b)=>[a[0]+b[0],a[1]+b[1],a[2]+b[2]];
 const scl=(a,s)=>[a[0]*s,a[1]*s,a[2]*s], cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
@@ -22,56 +25,48 @@ function planesOf(V){
   }
   return [...seen.values()];
 }
-// Convex hull volume from points: facets identified by their point sets (robust to near-degenerate normals).
-function isFlat(P){
-  for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++)for(let k=j+1;k<P.length;k++){
-    const n=cross(sub(P[j],P[i]),sub(P[k],P[i])); const l=len(n); if(l<1e-6)continue;
-    const nn=scl(n,1/l); return P.every(p=>Math.abs(dot(nn,sub(p,P[i])))<1e-6)?true:false;
-  }
-  return true;
-}
-function hullVolume(pts){
-  const P=uniq(pts); if(P.length<4||isFlat(P))return 0;
-  const ctr=scl(P.reduce(add),1/P.length);
-  const keys=new Set(); let V=0;
-  for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++)for(let k=j+1;k<P.length;k++){
-    let n0=cross(sub(P[j],P[i]),sub(P[k],P[i])); const l=len(n0); if(l<1e-9)continue; n0=scl(n0,1/l);
-    for(const sg of [1,-1]){
-      const n=scl(n0,sg); const d=dot(n,P[i]);
-      if(P.some(p=>dot(n,p)-d>EPS))continue;
-      if(dot(n,ctr)-d>EPS)continue;
-      const on=[];P.forEach((p,idx)=>{if(Math.abs(dot(n,p)-d)<1e-6)on.push(idx);});
-      if(on.length<3)continue;
-      const key=on.join(','); if(keys.has(key))continue; keys.add(key);
-      const pl=on.map(idx=>P[idx]);
-      const dd=pl.reduce((s,p)=>s+dot(n,p),0)/pl.length;
-      const u=unit(Math.abs(n[0])<0.9?cross(n,[1,0,0]):cross(n,[0,1,0])); const w=cross(n,u);
-      const h=convex2d(pl.map(p=>[dot(p,u),dot(p,w)])); let A=0;
-      for(let q=0;q<h.length;q++){const a=h[q],b=h[(q+1)%h.length];A+=a[0]*b[1]-a[1]*b[0];} A=Math.abs(A)/2;
-      V+=A*dd/3;
-    }
-  }
-  return V;
-}
-function convex2d(pts){
-  const p=[...pts].sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
-  const cr=(o,a,b)=>(a[0]-o[0])*(b[1]-o[1])-(a[1]-o[1])*(b[0]-o[0]);
-  const lo=[],up=[];
-  for(const q of p){while(lo.length>=2&&cr(lo[lo.length-2],lo[lo.length-1],q)<=1e-12)lo.pop();lo.push(q);}
-  for(let i=p.length-1;i>=0;i--){const q=p[i];while(up.length>=2&&cr(up[up.length-2],up[up.length-1],q)<=1e-12)up.pop();up.push(q);}
-  return lo.slice(0,-1).concat(up.slice(0,-1));
-}
 // Convex polytope from vertices and edges: planes, edges.
 function poly(V,E){return {V,E,P:planesOf(V)};}
-const inside=(Q,x)=>Q.P.every(({n,d})=>dot(n,x)-d<=EPS);
-// Exact intersection volume of two convex polytopes.
+// Exact intersection volume of two convex polytopes. Each boundary face of one is clipped to the other, so the
+// boundary of A∩B is the part of A's boundary inside B plus the part of B's boundary inside A. A face of B that
+// lies in the same plane, with the same outward normal, as a face of A is counted once.
+const TOL=1e-9;
+function facesOf(Q){
+  return Q.P.map(({n,d})=>{
+    const on=uniq(Q.V.filter(v=>Math.abs(dot(n,v)-d)<1e-6));
+    const c=scl(on.reduce(add),1/on.length);
+    const u=unit(Math.abs(n[0])<0.9?cross(n,[1,0,0]):cross(n,[0,1,0])), w=cross(n,u);
+    const ang=v=>Math.atan2(dot(sub(v,c),w),dot(sub(v,c),u));
+    return {n,d,poly:on.sort((a,b)=>ang(a)-ang(b))};
+  }).filter(f=>f.poly.length>=3);
+}
+function clipPoly(poly,m,e){
+  const out=[], s=poly.map(p=>dot(m,p)-e);
+  for(let i=0;i<poly.length;i++){
+    const j=(i+1)%poly.length, p=poly[i], q=poly[j], sp=s[i], sq=s[j];
+    if(sp<=TOL)out.push(p);
+    if((sp<-TOL&&sq>TOL)||(sp>TOL&&sq<-TOL))out.push(add(p,scl(sub(q,p),sp/(sp-sq))));
+  }
+  return out;
+}
+function polyArea(poly,n){
+  let s=[0,0,0];
+  for(let i=0;i<poly.length;i++)s=add(s,cross(poly[i],poly[(i+1)%poly.length]));
+  return Math.abs(dot(s,n))/2;
+}
 function interVol(A,B){
-  const pts=[];
-  for(const v of A.V)if(inside(B,v))pts.push(v);
-  for(const v of B.V)if(inside(A,v))pts.push(v);
-  for(const [p,q] of A.E)for(const {n,d} of B.P){const sp=dot(n,p)-d,sq=dot(n,q)-d;if(sp*sq>0)continue;const t=sp/(sp-sq);const x=add(p,scl(sub(q,p),t));if(inside(B,x))pts.push(x);}
-  for(const [p,q] of B.E)for(const {n,d} of A.P){const sp=dot(n,p)-d,sq=dot(n,q)-d;if(sp*sq>0)continue;const t=sp/(sp-sq);const x=add(p,scl(sub(q,p),t));if(inside(A,x))pts.push(x);}
-  return hullVolume(pts);
+  const FA=facesOf(A), FB=facesOf(B);
+  let v=0;
+  for(const f of FA){
+    let poly=f.poly; for(const g of B.P)poly=clipPoly(poly,g.n,g.d);
+    if(poly.length>=3)v+=f.d*polyArea(poly,f.n)/3;
+  }
+  for(const g of FB){
+    if(FA.some(f=>dot(f.n,g.n)>1-1e-9&&Math.abs(f.d-g.d)<1e-7))continue;
+    let poly=g.poly; for(const f of A.P)poly=clipPoly(poly,f.n,f.d);
+    if(poly.length>=3)v+=g.d*polyArea(poly,g.n)/3;
+  }
+  return v;
 }
 // Dodecahedron and its world placement
 const dodVerts=[...new Map(S.dodeca.faces.flat().map(p=>[p.map(c=>c.toFixed(9)).join(),p])).values()];
@@ -118,7 +113,7 @@ const pieces = (name, R, T) => {
 };
 const NAMES = ['cube', 'dodecahedron', 'icosahedron', 'star', 'octahedron', 'stella'];
 const baseCube = poly(S.cube.faces.flat().filter((p, i, a) => a.findIndex(q => len(sub(q, p)) < 1e-9) === i), (() => { const V = S.cube.faces.flat().filter((p, i, a) => a.findIndex(q => len(sub(q, p)) < 1e-9) === i); const E = []; for (let a = 0; a < V.length; a++) for (let b = a + 1; b < V.length; b++) if (Math.abs(len(sub(V[a], V[b])) - 2) < 1e-9) E.push([V[a], V[b]]); return E; })());
-const rotOf = c => (((c[0] + c[1] + c[2]) % 2) + 2) % 2 === 1 ? R90 : (p => p);
+const rotOf = c => !UNTURNED && (((c[0] + c[1] + c[2]) % 2) + 2) % 2 === 1 ? R90 : (p => p);
 const cellPieces = (c) => { const R = rotOf(c), T = c.map(x => 2 * x); const out = {}; for (const n of NAMES) out[n] = pieces(n, R, T); return out; };
 const bsph = P => { const c = scl(P.V.reduce(add), 1 / P.V.length); return { c, r: Math.max(...P.V.map(v => len(sub(v, c)))) }; };
 function overlapSolids(A, B) { // A, B: lists of [poly, sign]; exact via signed pieces
@@ -149,3 +144,22 @@ const densTotal = addM(addM(dens(avg(faceM), 3), dens(avg(fccEM), 3)), dens(avg(
 console.log('per lattice cube (volume 8), total overlap:', total(densTotal).toFixed(4));
 console.log('per-type-pair density per lattice cube:');
 NAMES.forEach((X, i) => console.log('  ' + X.padEnd(12), densTotal[i].map(x => x.toFixed(4).padStart(8)).join(' ')), '  (columns:', NAMES.join(', ') + ')');
+// Corner neighbours (odd offsets, one step along each axis): the large pieces touch there, so the total should be zero.
+const CORNER = []; for (const a of [-1, 1]) for (const b of [-1, 1]) for (const c of [-1, 1]) CORNER.push([a, b, c]);
+console.log('corner neighbours, total over the 8 directions:', CORNER.map(d => total(matrix([0,0,0], d))).map(x => x.toFixed(6)).join(' '));
+// Monte Carlo check of one pair of pieces: the star with the star across a face (+y), by sampling points.
+if (process.argv.includes('--mc')) {
+  const inStar = (pieces, x) => pieces.some(([P]) => P.P.every(({ n, d }) => dot(n, x) - d <= 1e-12));
+  const A = cellPieces([0,0,0]).star, B = cellPieces([0,1,0]).star, N = 2e7;
+  const bbox = pcs => [0,1,2].map(i => [Math.min(...pcs.flatMap(([P]) => P.V.map(v => v[i]))), Math.max(...pcs.flatMap(([P]) => P.V.map(v => v[i])))]);
+  const a = bbox(A), b = bbox(B);
+  const lo = [0,1,2].map(i => Math.max(a[i][0], b[i][0])), hi = [0,1,2].map(i => Math.min(a[i][1], b[i][1]));
+  const box = (hi[0]-lo[0])*(hi[1]-lo[1])*(hi[2]-lo[2]);
+  let hit = 0;
+  for (let k = 0; k < N; k++) {
+    const x = [lo[0]+Math.random()*(hi[0]-lo[0]), lo[1]+Math.random()*(hi[1]-lo[1]), lo[2]+Math.random()*(hi[2]-lo[2])];
+    if (inStar(A, x) && inStar(B, x)) hit++;
+  }
+  const exact = (() => { let s = 0; for (const [P] of A) for (const [Q] of B) s += interVol(P, Q); return s; })();
+  console.log(`star with star across a face (+y): exact ${exact.toFixed(5)}; Monte Carlo ${(box*hit/N).toFixed(5)} +/- ${(box*Math.sqrt((hit/N)*(1-hit/N)/N)).toFixed(5)} (${N.toExponential(0)} samples)`);
+}

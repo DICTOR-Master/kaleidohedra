@@ -1,0 +1,32 @@
+computed in 0.5 s
+face totals per direction (+x,-x,+y,-y,+z,-z): 6.03403 6.03403 6.03403 6.03403 6.03403 6.03403
+fcc even per direction: -0.00000 0.00000 0.00000 -0.00000 -0.00000 -0.00000 0.00000 -0.00000 -0.00000 0.00000 0.00000 0.00000
+fcc odd per direction: -0.00000 -0.00000 -0.00000 0.00000 -0.00000 -0.00000 0.00000 0.00000 -0.00000 -0.00000 0.00000 0.00000
+per lattice cube (volume 8), total overlap: 18.1021
+per-type-pair density per lattice cube:
+  cube           0.0000   3.2361   0.0000   0.1115   0.0000   0.0000
+  dodecahedron   3.2361   6.4721   0.1305   0.8053   0.2918   1.2361
+  icosahedron    0.0000   0.1305   0.0000   0.0000   0.0000   0.0000
+  star           0.1115   0.8053   0.0000   0.0077   0.0000  -0.0000
+  octahedron     0.0000   0.2918   0.0000   0.0000   0.0000   0.0000
+  stella         0.0000   1.2361   0.0000   0.0000   0.0000   0.0000
+== star (even) with icosahedron (odd)
+   face      largest overlap 0.00e+0 over 6 directions
+   corner    largest overlap 0.00e+0 over 8 directions
+   edgeEven  largest overlap 0.00e+0 over 12 directions
+   edgeOdd   largest overlap 0.00e+0 over 12 directions
+== dodecahedron (even) with icosahedron (odd)
+   face      largest overlap 4.35e-2 over 6 directions
+   corner    largest overlap 0.00e+0 over 8 directions
+   edgeEven  largest overlap 3.33e-16 over 12 directions
+   edgeOdd   largest overlap 0.00e+0 over 12 directions
+== star with icosahedra at the 12 edge neighbours (even, unturned)
+   largest overlap 0.00e+0 over 12 directions
+== stella (even) with dodecahedron (odd, turned)
+   face      largest overlap 4.12e-1 over 6 directions
+   corner    largest overlap 0.00e+0 over 8 directions
+   edgeEven  largest overlap 0.00e+0 over 12 directions
+== dodecahedron (even) with stella (odd, turned)
+   face      largest overlap 4.12e-1 over 6 directions
+   corner    largest overlap 0.00e+0 over 8 directions
+   edgeEven  largest overlap 3.33e-16 over 12 directions
