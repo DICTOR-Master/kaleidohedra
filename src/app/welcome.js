@@ -107,7 +107,7 @@ function overlayHtml() {
   return `
     <div id="welcome-card">
       <div class="welcome-lang"></div>
-      <h1>Kaleidohedra</h1>
+      <h1>Kaleido<span>hedra</span></h1>
       <p class="overview">${overviewHtml(lang)}</p>
       <button type="button" class="how-to-link" id="welcome-how-to" data-i18n-html="welcome.howTo">${t('welcome.howTo', lang)}</button>
       <div class="rhombiverse-link">
