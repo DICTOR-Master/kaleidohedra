@@ -113,6 +113,14 @@
       user-select: none; pointer-events: none;
     }
     #hud-dim:empty { display: none; }
+    /* The world you're in, under Wizard and the dimension (direct request:
+       "always clear signage of world you are in"). */
+    #hud-world {
+      position: fixed; top: 80px; left: 16px; z-index: 900;
+      color: #f5c06b; font: 700 15px/1.2 system-ui, sans-serif; letter-spacing: 0.04em;
+      user-select: none; pointer-events: none; max-width: 60vw;
+    }
+    #hud-world:empty { display: none; }
     /* 1D's two worlds, one tap apart (direct request: "a Signal/Construct
        toggle also"). */
     #hud-1d-toggle {
@@ -752,6 +760,14 @@
     @media (prefers-reduced-motion: reduce) { #static-enter-label { animation: none; } }
     #welcome-card h1 { margin: 0; font-size: 26px; color: #fff; }
     #welcome-card .overview { margin: 6px 0 0; font-size: 13px; opacity: 0.85; font-style: italic; }
+    #welcome-card .dim-link {
+      font: inherit; font-style: normal; font-weight: 600; color: #9de0ff; background: rgba(124, 204, 255, 0.12);
+      border: 1px solid rgba(124, 204, 255, 0.45); border-radius: 6px; padding: 2px 7px; margin: 2px 1px; cursor: pointer;
+    }
+    /* The dimension buttons: their own line, one row, never split. */
+    #welcome-card .dim-links { display: flex; flex-wrap: nowrap; justify-content: center; gap: 6px; margin-top: 8px; }
+    #welcome-card .dim-links .dim-link { margin: 0; padding: 4px 10px; min-height: 32px; }
+    #welcome-card .dim-link:hover, #welcome-card .dim-link:focus-visible { background: rgba(124, 204, 255, 0.3); color: #fff; }
     #welcome-card .how-to-link {
       margin-top: 6px; min-height: 36px; padding: 4px 14px;
       background: none; border: 1px solid rgba(124, 204, 255, 0.45); border-radius: 18px;
@@ -903,6 +919,7 @@
     <div id="hud-wizard-cue" data-i18n-title="wiz.cueTitle" title="Browse dimensions, lattices and pieces">Wizard</div>
     <div id="hud-dim"></div>
   </div>
+  <div id="hud-world"></div>
   <div id="hud-1d-toggle" hidden><button type="button" data-world="signal">Signal</button><button type="button" data-world="construct">Construct</button></div>
   <button id="hud-quick-shape" type="button" title="Shape (tap to change)"></button>
   <button id="hud-quick-color" type="button" title="Color (tap to change)"></button>

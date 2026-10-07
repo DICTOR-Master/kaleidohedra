@@ -4111,7 +4111,9 @@ async function init() {
       // applyDimensionVisibility's own dimension-scoped mesh toggling.
       // dimension-wizard.js's own showLattice2D/showLattice3D now pass
       // the real dimension alongside the action.
-      onSelectFamily: (dimension, action) => {
+      onSelectFamily: (dimension, action) => enterFamily(dimension, action),
+    });
+    function enterFamily(dimension, action) {
         dimensionWheel3D.close(); // chosen from the Wizard: the dimension picker is done
         if (qcWorlds.has(dimension)) { enterQuasicrystal(dimension, action); return; }
         activeDimension = dimension;
@@ -4122,8 +4124,9 @@ async function init() {
         // the first-placement outline (it caught the first tap -- direct
         // report, 2026-09-26). The Colour button is still one tap away.
         handleWheelAction(action, { quiet: true });
-      },
-    });
+    }
+    // The welcome screen's own worlds (EKP, Targets) go straight in.
+    window.addEventListener('kaleidohedra:open-world', (e) => enterFamily('3D', e.detail));
     document.getElementById('hud-wizard-cue')?.addEventListener('click', () => dimensionWizard.open());
     // The welcome screen's 2D, 3D, 4D, 5D & 6D links open the Wizard there.
     window.addEventListener('rhombiverse:open-wizard', (e) => dimensionWizard.openDimension(e.detail));
@@ -6081,6 +6084,8 @@ let lowFPSSampleStreak = 0;
 let lastDegradeAt = 0;
 
 const hudDimEl = document.getElementById('hud-dim');
+const hudWorldEl = document.getElementById('hud-world');
+const OWN_WORLD_NAMES = { shells: 'Shells', golden: 'Golden Rhombohedra', roofFold: 'EKP', targets: 'Targets', kaleido: 'Kaleidoscope', nets: 'Nets' };
 const hud1dToggleEl = document.getElementById('hud-1d-toggle');
 const onedClearEl = document.getElementById('oned-clear');
 function animate() {
@@ -6098,6 +6103,9 @@ function animate() {
     : own3D === 'nets' && own3DActive() ? (netsWorld.folded ? '2D+/3D+' : '2D+')
     : dimensionLabel(activeDimension ?? '3D');
   const oneD = (own3D === 'signal' || own3D === 'construct') && own3DActive();
+  // The world's name under Wizard and the dimension (1D+ names its two worlds in its toggle).
+  const worldText = own3DActive() ? (OWN_WORLD_NAMES[own3D] ?? '') : '';
+  if (hudWorldEl && hudWorldEl.textContent !== worldText) hudWorldEl.textContent = worldText;
   if (hud1dToggleEl && hud1dToggleEl.hidden === oneD) hud1dToggleEl.hidden = !oneD;
   if (onedClearEl) {
     // 1D+'s worlds, and Nets.

@@ -4,6 +4,7 @@
 import { buildWheelFaces } from './rhombic-wheel-3d-core.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { t } from './i18n.js';
+import { dimensionLabel } from './dimension-label.js';
 import { openGuide } from './guide.js';
 import { createLanguagePicker } from './language-picker.js';
 
@@ -13,9 +14,19 @@ import { createLanguagePicker } from './language-picker.js';
 const LEGACY_SKIP_KEY = 'rhombiverse-skip-intro';
 
 // The welcome symbol: Kaleidohedra's own shape, the regular-hexagon elongated
-// dodecahedron (the wheel's geometry, DISCOVERIES.md #5), turning slowly in
-// its livery colours. Plain SVG, no second WebGL context.
+// dodecahedron (the wheel's geometry, DISCOVERIES.md #5), as a turning
+// wireframe like Rhombiverse's and Polyhedraverse's logos. Plain SVG, no
+// second WebGL context; each frame only moves its edges' end points.
 const ED_FACES = buildWheelFaces();
+const ED_EDGES = (() => {
+  const seen = new Map();
+  for (const { verts } of ED_FACES) verts.forEach((a, i) => {
+    const b = verts[(i + 1) % verts.length];
+    const key = [a, b].map((v) => v.map((c) => c.toFixed(5)).join()).sort().join('|');
+    if (!seen.has(key)) seen.set(key, [a, b]);
+  });
+  return [...seen.values()];
+})();
 const LOGO_SCALE = 30;
 const LOGO_TILT = 0.08;
 // Sway: back and forth about the vertical, never end-on, so it always lies horizontal.
@@ -44,26 +55,20 @@ function place(v, angle) {
   const view = [dot3(v, VIEW.right), dot3(v, VIEW.up), dot3(v, VIEW.toward)];
   return rotX(rotY(view, angle), LOGO_TILT);
 }
-function shade(hex, k) {
-  const n = parseInt(hex.slice(1), 16);
-  const c = [n >> 16, (n >> 8) & 255, n & 255].map((v) => Math.round(v * k));
-  return `rgb(${c.join(',')})`;
-}
 function drawLogo(svg, angle) {
-  const polys = ED_FACES.map((f) => {
-    const p = f.verts.map((v) => place(v, angle));
-    const c = p.reduce((a, v) => [a[0] + v[0], a[1] + v[1], a[2] + v[2]], [0, 0, 0]).map((v) => v / p.length);
-    const len = Math.hypot(...c);
-    return { f, p, facing: c[2] / len, depth: c[2] };
-  }).filter((q) => q.facing > 0).sort((a, b) => a.depth - b.depth);
-  svg.querySelector('g.ed').innerHTML = polys.map(({ f, p, facing }) =>
-    `<polygon points="${p.map(([x, y]) => `${(x * LOGO_SCALE).toFixed(1)},${(-y * LOGO_SCALE).toFixed(1)}`).join(' ')}" fill="${shade(f.color, 0.55 + 0.45 * facing)}" />`).join('');
+  svg.querySelectorAll('.ed-edge').forEach((el, i) => {
+    const [a, b] = ED_EDGES[i].map((v) => place(v, angle));
+    el.setAttribute('x1', (a[0] * LOGO_SCALE).toFixed(1));
+    el.setAttribute('y1', (-a[1] * LOGO_SCALE).toFixed(1));
+    el.setAttribute('x2', (b[0] * LOGO_SCALE).toFixed(1));
+    el.setAttribute('y2', (-b[1] * LOGO_SCALE).toFixed(1));
+  });
 }
 function logoHtml() {
   return `
     <div id="welcome-logo">
-      <svg id="welcome-logo-svg" viewBox="-75 -75 150 150" role="img" aria-label="Kaleidohedra symbol: the regular-hexagon elongated dodecahedron, turning slowly">
-        <g class="ed" stroke="rgba(234, 252, 255, 0.85)" stroke-width="1.2" stroke-linejoin="round"></g>
+      <svg id="welcome-logo-svg" viewBox="-75 -75 150 150" role="img" aria-label="Kaleidohedra symbol: a wireframe regular-hexagon elongated dodecahedron, turning slowly">
+        <g stroke="#9de0ff" stroke-width="1.5" stroke-linecap="round" fill="none">${ED_EDGES.map(() => '<line class="ed-edge" />').join('')}</g>
       </svg>
       <button type="button" id="static-enter-label">ENTER</button>
     </div>`;
@@ -85,14 +90,16 @@ function startLogoSpin() {
   return () => { if (raf !== null) cancelAnimationFrame(raf); };
 }
 
-// Real user feedback (2026-09-10): the welcome card had grown to three
-// pieces of "extra info" below the title/logo (the changelog-derived
-// tagline, the Polyhedraverse cross-link) -- "two bits of extra info
-// [is] enough on welcome." The changelog tagline (previously right under
-// the h1, its own loadLatestUpdate() fetch) was cut; the "What's New"
-// changelog panel (src/app/changelog.js) is the real place for that content.
+// The overview line, then Kaleidohedra's own worlds, where the shear
+// means something: 3D+ (the Wizard's sheared lattices), EKP and Targets.
+// Redrawn on a language change.
+const OWN_WORLDS = [
+  { label: () => dimensionLabel('3D'), dim: '3D' },
+  { label: () => 'EKP', world: 'tool:roofFoldWorld' },
+  { label: () => 'Targets', world: 'tool:targetsWorld' },
+];
 function overviewHtml(lang) {
-  return t('welcome.overview', lang);
+  return `${t('welcome.overview', lang)}<span class="dim-links">${OWN_WORLDS.map((w) => `<button type="button" class="dim-link" ${w.dim ? `data-dim="${w.dim}"` : `data-world="${w.world}"`}>${w.label()}</button>`).join('')}</span>`;
 }
 
 function overlayHtml() {
@@ -131,6 +138,12 @@ function init() {
   overlay.addEventListener('click', (e) => {
     if (e.target.closest('#static-enter-label')) { enterWorld(); return; }
     if (e.target.closest('#welcome-how-to')) openGuide();
+    const link = e.target.closest('.dim-link');
+    if (link) {
+      hide();
+      if (link.dataset.dim) window.dispatchEvent(new CustomEvent('rhombiverse:open-wizard', { detail: link.dataset.dim }));
+      else window.dispatchEvent(new CustomEvent('kaleidohedra:open-world', { detail: link.dataset.world }));
+    }
   });
   onSettingsChange((s) => { const p = overlay.querySelector('.overview'); if (p) p.innerHTML = overviewHtml(s.language); });
 
