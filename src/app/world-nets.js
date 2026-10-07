@@ -356,7 +356,17 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
     if (!active) return;
     // Each group named, its solids short (full names on hover).
     const SHORT = { rd: 'RD', to: 'TO', tetra: 'Tetra', octa: 'Octa', icosa: 'Icosa', dodeca: 'Dodeca', stella1: 'Stella A', stella2: 'Stella B', starSpike: 'Star spike', pacioli1: 'Pacioli A', pacioli2: 'Pacioli B', pacioli3: 'Pacioli C' };
-    solidsRow.innerHTML = SOLID_GROUPS.map((g) => `<div class="w4d-row w4d-options"><span class="nets-group">${t(`nets.group.${g.id}`, lang())}</span>${Object.entries(SOLIDS).filter(([, s]) => s.groups.includes(g.id)).map(([id, s]) => `<button type="button" data-solid="${id}" class="${id === solid ? 'active' : ''}" title="${s.label}">${SHORT[id] ?? s.label}</button>`).join('')}</div>`).join('');
+    // The EKP cell's own listing follows the wrap sequence (direct
+    // decision, 2026-10-07: "inside out progress each wraps around the
+    // previous"), not SOLIDS' declaration order: the icosahedron first,
+    // then the octahedron and the stella octangula inside it, the cube
+    // around that, the dodecahedron grown from the cube's roofs, the
+    // star's spike through a dodecahedron vertex, and Pacioli's
+    // rectangles last, cornered on the icosahedron's own vertices but
+    // only meaningful once everything inside them is there.
+    const EKP_ORDER = ['icosa', 'octa', 'stella1', 'stella2', 'cube', 'dodeca', 'starSpike', 'pacioli1', 'pacioli2', 'pacioli3'];
+    const orderOf = (g, id) => (g === 'ekp' ? EKP_ORDER.indexOf(id) : 0);
+    solidsRow.innerHTML = SOLID_GROUPS.map((g) => `<div class="w4d-row w4d-options"><span class="nets-group">${t(`nets.group.${g.id}`, lang())}</span>${Object.entries(SOLIDS).filter(([, s]) => s.groups.includes(g.id)).sort(([a], [b]) => orderOf(g.id, a) - orderOf(g.id, b)).map(([id, s]) => `<button type="button" data-solid="${id}" class="${id === solid ? 'active' : ''}" title="${s.label}">${SHORT[id] ?? s.label}</button>`).join('')}</div>`).join('');
     foldRow.hidden = !complete();
     // The slider always shows this net's own fold (direct report: "the
     // slider doesn't reset between builds").
