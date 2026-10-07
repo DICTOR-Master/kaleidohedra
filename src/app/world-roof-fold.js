@@ -1,4 +1,4 @@
-// Icosahedral/Dodecahedral Transitions: a 3D world of its own on the Euclid–Kepler–Pacioli cell (DISCOVERIES.md #8,
+// Euclid–Kepler–Pacioli Cell Network: a 3D world of its own on the Euclid–Kepler–Pacioli cell (DISCOVERIES.md #8,
 // geometry in geometry-extensions/roof-fold.js). Sites are a simple cubic
 // lattice of period phi^2 (icosahedron edge 1). Seven pieces, one at a time,
 // several per site: cube, dodecahedron, icosahedron, great stellated dodecahedron (the star),
@@ -15,7 +15,6 @@ import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 
 const STORAGE_KEY = 'kaleidohedra-roof-fold-world';
-const V2_STORAGE_KEY = 'kaleidohedra-ekp-network-v2-world';
 const VIEWS = ['built', 'starIco', 'dodecaStar', 'checker', 'merged'];
 const KIND_COLOR = { cube: 0x9fb4c8, dodeca: 0xffc857, ico: 0x5fd38a, star: 0xff7a59, oct: 0x4dd0e1, stella: 0xc792ea, rects: 0xffe082 };
 const PARITY_COLOR = [0xffc857, 0x7cc4ff];
@@ -39,18 +38,16 @@ const solidKey = (s, kind) => `${s.join()},${kind}`;
 const DIRECTIONS = [];
 for (const x of [-1, 0, 1]) for (const y of [-1, 0, 1]) for (const z of [-1, 0, 1]) if (x || y || z) DIRECTIONS.push([x, y, z]);
 
-export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt = () => {}, fitView = () => {}, variant = 'idt' }) {
+export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt = () => {}, fitView = () => {} }) {
   const SOLIDS = roofFoldSolids();
-  // The v2 network always turns odd cubes and keeps its own saved build.
-  const alwaysTurn = variant === 'v2';
-  const storageKey = alwaysTurn ? V2_STORAGE_KEY : STORAGE_KEY;
+  const storageKey = STORAGE_KEY;
   const group = new THREE.Group();
   group.visible = false;
   scene.add(group);
 
   // ---- state ----
   const solids = new Map(); // solidKey -> { site: [x, y, z], kind }
-  const view = { piece: 'dodeca', mode: 'built', parity: false, vertices: 'off', pattern: 'xyz', xray: false, turnOdd: alwaysTurn };
+  const view = { piece: 'dodeca', mode: 'built', parity: false, vertices: 'off', pattern: 'xyz', xray: false, turnOdd: false };
   let active = false;
   let skeleton = false;
   let opacity = 1;
@@ -75,7 +72,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
       if (VERTICES.includes(data.view?.vertices)) view.vertices = data.view.vertices;
       if (PATTERNS.includes(data.view?.pattern)) view.pattern = data.view.pattern;
       view.xray = data.view?.xray === true;
-      view.turnOdd = alwaysTurn || data.view?.turnOdd === true;
+      view.turnOdd = data.view?.turnOdd === true;
     }
   } catch { /* corrupt or blocked storage: start empty */ }
   function save() {
@@ -370,7 +367,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     optionsRow.innerHTML = [
       view.mode === 'checker' ? '' : `<button type="button" data-opt="parity" class="${view.parity ? 'active' : ''}">${t('roofFold.parity', L)}</button>`,
       view.mode === 'merged' ? '' : `<button type="button" data-opt="xray" class="${view.xray ? 'active' : ''}">${t('roofFold.xray', L)}</button>`,
-      alwaysTurn ? '' : `<button type="button" data-opt="turnOdd" class="${view.turnOdd ? 'active' : ''}">${t('roofFold.turnOdd', L)}</button>`,
+      `<button type="button" data-opt="turnOdd" class="${view.turnOdd ? 'active' : ''}">${t('roofFold.turnOdd', L)}</button>`,
       `<button type="button" data-opt="vertices" class="${view.vertices !== 'off' ? 'active' : ''}">${t('roofFold.vertices', L)}: ${t(`roofFold.vertices.${view.vertices}`, L)}</button>`,
       `<button type="button" data-opt="info" class="${infoOpen ? 'active' : ''}">${t('hyper.info', L)}</button>`,
     ].join('');
