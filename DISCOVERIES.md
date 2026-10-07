@@ -33,6 +33,8 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 8 | Euclid–Kepler–Pacioli (EKP) cell: all five Platonic solids nested in one cubic cell, with Kepler's star and Pacioli's rectangles (Pm-3) | DICTO (built a physical cell) | yes | **not found** — candidate; a periodic approximant-type structure like α-AlMnSi (no fivefold axis) | 2026-10-06 (6636342) |
 | 8b | Euclid–Kepler–Pacioli network: great stellated dodecahedra (even cells) and icosahedra (odd cells), sharing only corners | DICTO (from "the overlap belongs to the extraction") | yes | **not found** — candidate | 2026-10-06 |
 | 9 | Rhombic dodecahedron sub-family: 24 sheared-FCC cells from TARGETS.md, each built from four edge directions with volume matching the table | Kaleidohedra (predicted); verified by building in Polyhedraverse (9599e14) | yes (by construction) | **candidates** — combinatorial type is Fedorov's rhombic dodecahedron (Grünbaum 2010, Fig. 2(c)); none is in Grünbaum's monohedral enumeration (Figs. 3, 10: only Kepler's K and Bilinski's B), and the paper doesn't list mixed-angle cells like these | 2026-10-06 |
+| 10 | EKP windows: the dodecahedron with its six face-neighbours' stella octangulas carved out shows exactly 12 Penrose thick rhombi (72°/108°, edge 2/φ), one on each cube edge, at the dodecahedron's own face angles; 48 triangles wall the cut-away; volume exactly 12 | DICTO (spotted 12 diamond windows between six stellas and the dodecahedron) | yes | **not found** — candidate (web-level search) | 2026-10-08 (fb9de6b) |
+| 11 | Dodecahedron stretched along a cube-face axis: 8 regular pentagons, 4 hexagons (108° × 4, 144° × 2), 2 rectangles at any stretch; squares at one edge (2/φ); at the lattice spacing 2 it is the hull of two EKP face-neighbour dodecahedra | DICTO (the "pentagon caps and hexagons" hunch, from overlapped dodecahedra) | yes | **not found** — candidate (web-level search; a simple construction, so likely to appear somewhere, e.g. crystal habits) | 2026-10-08 (fb9de6b) |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -308,6 +310,50 @@ Targets 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 2
 - Monohedral (all faces congruent): Grünbaum's enumeration of monohedral rhombic dodecahedra (Figs. 3 and 10) gives only Kepler's K and Bilinski's B. None of the 24 is monohedral: each has two or more rhombus kinds (for example #4 has 36°, 60° and 72° rhombi), so none is one of those two.
 - So the paper neither lists nor rules out these specific cells. They stay candidates until someone checks mixed-angle sheared rhombic dodecahedra in the literature.
 
+## 10. EKP windows (DICTO, 2026-10-08)
+
+Take the EKP cell's dodecahedron (cube edge 2) and the stella octangula in each of its six
+face-neighbour cells, and carve the twelve tetrahedra out of the dodecahedron.
+
+- What remains of the dodecahedron's surface is exactly **12 rhombi**, one on each edge of the
+  cube, each lying in one of the dodecahedron's own face planes (the face whose diagonal is that
+  cube edge). Each rhombus has edge 2/φ (the dodecahedron's edge), short diagonal 2 (the cube
+  edge), long diagonal 2·0.7265 and angles **72° and 108°: Penrose's thick rhombus**. Two of its
+  sides are dodecahedron edges; the other two are where the neighbour's two tetrahedra cut the face.
+- The rhombic dodecahedron's 12 rhombi sit on the same cube edges with the cube edge as short
+  diagonal too, but at 70.53° and turned about 13° about that edge: the windows are its
+  icosahedral near-twin.
+- The cut-away is walled by **48 triangles** in the stellas' face planes, 24 with sides
+  √2/φ, 2/φ, √2 (cube corner, roof vertex, cube-face centre) and 24 with sides √2/φ², 2/φ, √2
+  (cube-face centre, a rhombus's inner corner, cube corner); the 8 over each cube face meet at its
+  centre, an octahedron vertex. The cube itself is untouched.
+- The carved solid closes and encloses exactly **12**: the cube's 8 plus 2/3 from each of the six
+  roofs. A roof is 2φ/3, so each roof keeps exactly **1/φ** of itself.
+- Any convex solid that keeps all 12 rhombi in their planes is the dodecahedron itself (the rhombi's
+  corners are its vertices and points on its faces), so these windows only appear by carving.
+- Why it matters: an aperiodic tile (the thick rhombus) appearing, at its icosahedral orientation,
+  on a periodic cubic lattice — a bridge between the two.
+- Verified: `scripts/verify-roof-fold.mjs` §13(a), every push. Shown in the EKP world, Study → Windows.
+- Status: **not found** at web level (2026-10-08); not yet searched in the faceting/compound literature.
+
+## 11. The stretched dodecahedron (DICTO, 2026-10-08)
+
+The hull of the dodecahedron and a copy moved s along a cube-face axis (one of its 2-fold axes,
+the same axis along which the rhombic dodecahedron stretches into the elongated dodecahedron).
+
+- For **every** s > 0: 8 regular pentagons (4 at each end), 4 hexagons with angles 108°, 108°,
+  108°, 108°, 144°, 144°, and 2 rectangles: 14 faces. At s = 2/φ, one edge, the rectangles are
+  **squares**; at s = 2, the EKP lattice spacing, it is the hull of two face-neighbour dodecahedra.
+- Volume = the dodecahedron's + s × 7.236068 (its shadow across the axis), as for any segment
+  sweep.
+- The dodecahedral counterpart of the elongated (rhombic) dodecahedron: 4 pentagons at each end where
+  that has 4 rhombi, and a hexagon belt, plus the two rectangles that the dodecahedron's own roof
+  ridges force. A pentagon-capped, hexagon-belted solid without them needs another construction.
+- Verified: `scripts/verify-roof-fold.mjs` §13(b), every push. Shown in the EKP world, Study →
+  Stretched dodecahedron, with a stretch slider.
+- Status: **not found** at web level (2026-10-08). Simple enough that it probably appears somewhere
+  (crystal habits, Minkowski sums); a targeted search is still needed before claiming priority.
+
 ## Attribution and dates
 
 All findings above credited to DICTO are the work of the artist **DICTO**
@@ -347,3 +393,5 @@ rectangles, as version v2026.10.06-ekp, **DOI [10.5281/zenodo.23176568](https://
 - [Icosahedral tiling with dodecahedral structures — Koca et al. (2020)](https://arxiv.org/abs/2008.00862) (aperiodic; not this structure)
 - [Zonohedron — Wikipedia](https://en.wikipedia.org/wiki/Zonohedron)
 - [Zonohedrification — George Hart](https://www.georgehart.com/zonohedra/zonohedrification.html)
+- [Stella octangula — MathWorld](https://mathworld.wolfram.com/StellaOctangula.html) (#10 search)
+- [Compound polyhedra — George Hart](https://www.georgehart.com/virtual-polyhedra/compounds-info.html) (#10 search)

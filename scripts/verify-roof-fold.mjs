@@ -581,9 +581,10 @@ check(`stars on even cells and icosahedra on odd cells share only corners: ${pai
   const kindOf = (f) => (Math.abs(tri(f)[1] - 2 / PHI) < EPS && Math.abs(tri(f)[2] - Math.SQRT2) < EPS ? [Math.SQRT2 / PHI, Math.SQRT2 / PHI ** 2].findIndex((x) => Math.abs(tri(f)[0] - x) < EPS) : -1);
   const kindA = W.walls.filter((f) => f.length === 3 && kindOf(f) === 0).length, kindB = W.walls.filter((f) => f.length === 3 && kindOf(f) === 1).length;
   const vol = polyVol([...W.rhombi, ...W.walls]);
-  check(`windows: 12 rhombi (72°, edge 2/phi, short diagonal a cube edge, in the dodecahedron's own face planes), ${W.walls.length} triangular walls (${kindA} + ${kindB}: sides sqrt2/phi or sqrt2/phi^2, 2/phi, sqrt2), closed, volume ${vol.toFixed(9)} = 12`,
+  check(`windows: 12 rhombi (72°, edge 2/phi, short diagonal a cube edge, in the dodecahedron's own face planes), ${W.walls.length} triangular walls (${kindA} + ${kindB}: sides sqrt2/phi or sqrt2/phi^2, 2/phi, sqrt2), closed, volume ${vol.toFixed(9)} = 12 (each roof keeps 1/phi)`,
     W.rhombi.length === 12 && rhombiOk && W.walls.length === 48 && kindA === 24 && kindB === 24
-    && norm(vecArea([...W.rhombi, ...W.walls])) < 1e-9 && Math.abs(vol - 12) < 1e-9);
+    && norm(vecArea([...W.rhombi, ...W.walls])) < 1e-9 && Math.abs(vol - 12) < 1e-9
+    && Math.abs((vol - 8) / 6 / ((V.dodeca - 8) / 6) - 1 / PHI) < 1e-12); // each roof keeps 1/phi of itself
 }
 // (b) The dodecahedron stretched by s along a cube-face (2-fold) axis: 4 regular pentagons at each
 // end, 4 hexagons (angles 108 x 4, 144 x 2) and 2 rectangles round the middle, squares at s = 2/phi.
