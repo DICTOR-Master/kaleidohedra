@@ -56,8 +56,8 @@ import { addPanelMinimiser } from './panel-minimiser.js';
 
 const PHASON_LIMIT = 1; // window widths
 const PHASON_SNAP = 0.04;
-const FIRST_COLOR = 0x00e5ff;
-const SLOT_COLOR = 0x9de0ff;
+const FIRST_COLOR = 0xff6a00;
+const SLOT_COLOR = 0xff9a52;
 const WINDOW_COLOR = 0x77ccff;
 const CORNER_IN = 0xf2f8ff;
 const CORNER_OUT = 0xff4d5e;
@@ -427,7 +427,7 @@ export function createQuasicrystalWorld({ tier, scene, materialColor, getMateria
     return geometries.get(key);
   };
   const edgeMaterial = new THREE.LineBasicMaterial({ color: 0x0b0b12 });
-  const skeletonEdgeMaterial = new THREE.LineBasicMaterial({ color: 0x9de0ff });
+  const skeletonEdgeMaterial = new THREE.LineBasicMaterial({ color: 0xff9a52 });
   function clearGroup() {
     for (const child of [...group.children]) {
       group.remove(child);

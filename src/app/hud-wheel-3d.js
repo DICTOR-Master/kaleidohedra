@@ -42,7 +42,7 @@ import { buildWheelFaces, faceKey, ensureOutwardWinding } from './rhombic-wheel-
 // user request 2026-08-25, so the HUD wheel reads as its own special
 // object at a glance, not just another buildable material sample.
 const GOLD = 0xd4af37;
-const RELIEF_LINE_COLOR = 0x9de0ff;
+const RELIEF_LINE_COLOR = 0xff6a00;
 
 const CSS = `
 #hud-wheel-3d-labels {

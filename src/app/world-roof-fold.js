@@ -31,8 +31,8 @@ const ALTERNATING = ['starIco', 'dodecaStar', 'checker'];
 // build stays solid; each one further out fades more.
 const NESTING = ROOF_FOLD_KINDS;
 const xrayOpacity = (rank) => (rank === 0 ? 1 : Math.max(0.14, 0.5 - 0.08 * (rank - 1)));
-const FIRST_COLOR = 0x00e5ff;
-const GHOST_COLOR = 0x9de0ff;
+const FIRST_COLOR = 0xff6a00;
+const GHOST_COLOR = 0xff9a52;
 const EDGE_COLOR = 0x0b1220;
 const NODE_COLOR = 0xe8eef7;
 const ODD_SHADE = 0.62;

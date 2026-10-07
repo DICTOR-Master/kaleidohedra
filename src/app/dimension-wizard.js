@@ -64,7 +64,7 @@ const CSS = `
   overflow-y: auto;
   color: #ddd; font: 14px/1.5 system-ui, sans-serif;
   background: rgba(15, 15, 25, 0.97);
-  border: 1px solid rgba(124, 204, 255, 0.35);
+  border: 1px solid rgba(255, 106, 0, 0.35);
   border-radius: 10px;
   padding: 18px 22px 22px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
@@ -72,12 +72,12 @@ const CSS = `
 .dim-wizard-header {
   display: flex; align-items: center; justify-content: space-between;
   font: 700 16px system-ui, sans-serif;
-  color: #9de0ff;
+  color: #ff9a52;
   margin-bottom: 4px;
 }
-.dim-wizard-close { background: none; border: none; color: #9de0ff; cursor: pointer; font: 15px system-ui, sans-serif; }
+.dim-wizard-close { background: none; border: none; color: #ff9a52; cursor: pointer; font: 15px system-ui, sans-serif; }
 .dim-wizard-back {
-  background: none; border: none; color: #9de0ff; cursor: pointer;
+  background: none; border: none; color: #ff9a52; cursor: pointer;
   font: 13px system-ui, sans-serif; padding: 0; margin-bottom: 10px;
 }
 .dim-wizard-sub { color: #99a; font-size: 12px; margin-bottom: 14px; }
@@ -93,7 +93,7 @@ const CSS = `
 .dim-wizard-card-btn {
   display: flex; flex-direction: row; align-items: center; gap: 12px;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(124, 204, 255, 0.3);
+  border: 1px solid rgba(255, 106, 0, 0.3);
   border-radius: 8px;
   padding: 8px 12px;
   color: #eee;
@@ -101,7 +101,7 @@ const CSS = `
   text-align: left;
   width: 100%;
 }
-.dim-wizard-card-btn:hover { background: rgba(124, 204, 255, 0.1); border-color: rgba(124, 204, 255, 0.6); }
+.dim-wizard-card-btn:hover { background: rgba(255, 106, 0, 0.1); border-color: rgba(255, 106, 0, 0.6); }
 .dim-wizard-preview { width: 40px; height: 40px; flex: 0 0 auto; }
 .dim-wizard-section { display: flex; flex-direction: column; gap: 2px; margin: 10px 0 2px; }
 .dim-wizard-section:first-child { margin-top: 0; }
@@ -112,11 +112,11 @@ const CSS = `
 .dim-wizard-serial-row { display: flex; gap: 6px; margin-bottom: 4px; }
 .dim-wizard-serial-row input {
   flex: 1; min-width: 0; font: 16px system-ui, sans-serif; color: #eee;
-  background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(124, 204, 255, 0.35); border-radius: 8px; padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 106, 0, 0.35); border-radius: 8px; padding: 8px 10px;
 }
 .dim-wizard-serial-row button {
-  font: 600 14px system-ui, sans-serif; color: #9de0ff; background: rgba(124, 204, 255, 0.12);
-  border: 1px solid rgba(124, 204, 255, 0.45); border-radius: 8px; padding: 8px 16px; cursor: pointer;
+  font: 600 14px system-ui, sans-serif; color: #ff9a52; background: rgba(255, 106, 0, 0.12);
+  border: 1px solid rgba(255, 106, 0, 0.45); border-radius: 8px; padding: 8px 16px; cursor: pointer;
 }
 .dim-wizard-fold {
   background: none; border: none; padding: 6px 0 2px; text-align: left; cursor: pointer; color: inherit; font: inherit; width: 100%;

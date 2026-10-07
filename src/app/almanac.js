@@ -32,7 +32,7 @@ const CSS = `
   overflow-y: auto;
   color: #ddd; font: 14px/1.5 system-ui, sans-serif;
   background: rgba(15, 15, 25, 0.96);
-  border: 1px solid rgba(124, 204, 255, 0.35);
+  border: 1px solid rgba(255, 106, 0, 0.35);
   border-radius: 10px;
   padding: 18px 22px 22px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
@@ -40,10 +40,10 @@ const CSS = `
 .almanac-header {
   display: flex; align-items: center; justify-content: space-between;
   font: 700 16px system-ui, sans-serif;
-  color: #9de0ff;
+  color: #ff9a52;
   margin-bottom: 12px;
 }
-.almanac-close { background: none; border: none; color: #9de0ff; cursor: pointer; font: 15px system-ui, sans-serif; }
+.almanac-close { background: none; border: none; color: #ff9a52; cursor: pointer; font: 15px system-ui, sans-serif; }
 .almanac-list { display: flex; flex-direction: column; gap: 4px; }
 .almanac-entry {
   display: flex; align-items: center; gap: 10px;
@@ -57,8 +57,8 @@ const CSS = `
   text-align: left;
   cursor: pointer;
 }
-.almanac-entry:hover { background: rgba(124, 204, 255, 0.12); border-color: rgba(124, 204, 255, 0.4); }
-.almanac-entry-icon { flex: 0 0 auto; font-size: 22px; color: #9de0ff; line-height: 0; }
+.almanac-entry:hover { background: rgba(255, 106, 0, 0.12); border-color: rgba(255, 106, 0, 0.4); }
+.almanac-entry-icon { flex: 0 0 auto; font-size: 22px; color: #ff9a52; line-height: 0; }
 .almanac-entry-icon:empty { display: none; }
 .almanac-entry-label { flex: 1 1 auto; }
 .almanac-kind {
@@ -70,15 +70,15 @@ const CSS = `
 .almanac-kind:first-child { margin-top: 0; }
 .almanac-detail { display: none; }
 .almanac-back {
-  background: none; border: none; color: #9de0ff; cursor: pointer;
+  background: none; border: none; color: #ff9a52; cursor: pointer;
   font: 13px system-ui, sans-serif; padding: 0; margin-bottom: 12px;
 }
-.almanac-detail-icon { font-size: 48px; color: #9de0ff; text-align: center; margin-bottom: 8px; line-height: 0; }
+.almanac-detail-icon { font-size: 48px; color: #ff9a52; text-align: center; margin-bottom: 8px; line-height: 0; }
 .almanac-detail-icon:empty { display: none; }
 .almanac-detail-title { font: 700 17px system-ui, sans-serif; color: #fff; margin-bottom: 8px; text-align: center; }
 .almanac-detail-stats {
   text-align: center;
-  color: #9de0ff;
+  color: #ff9a52;
   font: 700 11px system-ui, sans-serif;
   letter-spacing: 0.03em;
   margin-bottom: 10px;

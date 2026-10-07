@@ -58,8 +58,8 @@ const U = 1; // world units per cell
 // Slender, more like an axis than a fat tube (direct request).
 const R = 0.055;
 const PAD = 0.004;
-const CYAN = 0x22c3e6;
-const NEXT = 0xf59e0b; // the 1D worlds' orange "tap here"
+const CYAN = 0xff6a00; // built: Kaleidohedra's orange
+const NEXT = 0x22c3e6; // "tap here": cyan, against the orange
 const GOLD = 0xd4af37; // a family's second colour (Kagome's limbs): the app's own gold
 const W_TURN = 0.3; // radians per second through W, once the tesseract closes
 const lang = () => getSettings().language;

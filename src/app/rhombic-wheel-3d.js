@@ -138,7 +138,7 @@ const CSS = `
 .rhombic-wheel-3d-panel {
   position: absolute; right: 24px; top: 50%; transform: translateY(-50%);
   width: 260px; padding: 16px;
-  background: rgba(10, 12, 20, 0.85); border: 1px solid rgba(77, 208, 225, 0.5);
+  background: rgba(10, 12, 20, 0.85); border: 1px solid rgba(255, 106, 0, 0.5);
   color: #eaf6ff; font: 13px system-ui, sans-serif;
   display: none;
   /* Real bug, caught live 2026-08-29: on a narrow/mobile viewport this

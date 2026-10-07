@@ -37,8 +37,8 @@ const STORAGE_KEY = 'rhombiverse-1d-signal-world';
 const S = 0.35; // world units per unit of s
 const R = 0.1; // cell radius (world)
 const PAD = 0.003; // a hair between nose and cup: flush joins (direct report: "an obvious ridge where they aren't joining cleanly"), without the two surfaces flickering
-const NEXT_COLOR = 0xf59e0b; // the HUD's orange
-const GHOST_COLOR = 0x9de0ff;
+const NEXT_COLOR = 0x22c3e6; // "tap here": cyan, against the orange livery
+const GHOST_COLOR = 0xff9a52;
 const TYPES = ['dot', 'dash', 'gap'];
 const SPEED = 4; // units per second
 // Inside, each cell fills the view as it passes, so it moves slower there
@@ -117,7 +117,7 @@ export function createSignalWorld({ scene, camera, controls, resetView = () => {
   // The next cell a tap places, in orange ("tap here"; everything else
   // is cyan).
   const nextMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, color: NEXT_COLOR, emissive: NEXT_COLOR, emissiveIntensity: 0.35 }); // opaque: no nested nose showing through
-  const gapMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, color: 0x9de0ff, transparent: true, opacity: 0.1, depthWrite: false, side: THREE.DoubleSide });
+  const gapMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, color: 0xff9a52, transparent: true, opacity: 0.1, depthWrite: false, side: THREE.DoubleSide });
   const solidMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.8, metalness: 0.05, side: THREE.DoubleSide }); // matte: no bright glint in the tail's hollow
   const catchPlane = new THREE.Mesh(new THREE.PlaneGeometry(4000, 4000), new THREE.MeshBasicMaterial({ colorWrite: false, depthWrite: false }));
   catchPlane.position.z = -0.2;
@@ -141,7 +141,7 @@ export function createSignalWorld({ scene, camera, controls, resetView = () => {
   // within 1e-4 of it (the tube was 96k triangles, half Signal's frame).
   const TUBE_SIDES = 16;
   const TUBE_R = (R * 1.005) / Math.cos(Math.PI / TUBE_SIDES);
-  const tubeMaterial = new THREE.MeshStandardMaterial({ color: 0x9de0ff, transparent: true, opacity: 0.06, depthWrite: false, side: THREE.FrontSide });
+  const tubeMaterial = new THREE.MeshStandardMaterial({ color: 0xff9a52, transparent: true, opacity: 0.06, depthWrite: false, side: THREE.FrontSide });
   class TrajectoryCurve extends THREE.Curve {
     constructor(lo, hi) { super(); this.lo = lo; this.hi = hi; }
     getPoint(u, target = new THREE.Vector3()) { return target.copy(place(this.lo + u * (this.hi - this.lo))); }

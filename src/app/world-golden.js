@@ -21,8 +21,8 @@ import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 
 const STORAGE_KEY = 'rhombiverse-golden-world';
-const FIRST_COLOR = 0x00e5ff;
-const GHOST_COLOR = 0x9de0ff;
+const FIRST_COLOR = 0xff6a00;
+const GHOST_COLOR = 0xff9a52;
 const EDGE_COLOR = 0x0b1220;
 const TYPE_COLOR = { prolate: 0xffc857, oblate: 0x7cc4ff };
 const MATCH_COLOR = 0x5fd38a;
@@ -184,7 +184,7 @@ export function createGoldenWorld({ scene, onChange = () => {}, showHudPrompt = 
       tris = [];
       const [mesh, lines] = meshOf([...tiles.values()], pieceMaterial, colorOf, EDGE_COLOR, 'piece', tris);
       mesh.visible = !skeleton;
-      if (skeleton) lines.material.color.setHex(0x9de0ff);
+      if (skeleton) lines.material.color.setHex(0xff9a52);
       group.add(mesh, lines);
       pickTargets.push(mesh);
       if (latticeView) {

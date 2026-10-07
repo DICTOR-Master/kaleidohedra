@@ -12,7 +12,7 @@
   <meta property="og:description" content="Shear and slide lattices with every piece moving with them, and build the Euclid–Kepler–Pacioli cell: cube, dodecahedron, icosahedron, Kepler's great stellated dodecahedron, octahedron, stella octangula and Pacioli's golden rectangles, all nested in one cell. In your browser, by DICTO." />
   <meta property="og:url" content="https://kaleidohedra.vercel.app/" />
   <meta property="og:image" content="https://kaleidohedra.vercel.app/assets/brand/kaleidohedra-og.jpg" />
-  <meta property="og:image:alt" content="Kaleidohedra logo: a glowing many-coloured polyhedron on a starfield" />
+  <meta property="og:image:alt" content="Kaleidohedra by DICTO: an orange wireframe elongated dodecahedron beside the outlined name" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://kaleidohedra.vercel.app/" />
@@ -54,8 +54,9 @@
        Rhombic Wheel (wheel.js) or the explicit Lab entry point below. */
     #hud-wordmark {
       position: fixed; top: 14px; left: 16px; z-index: 900;
-      color: #dfefff; font: 600 15px/1.2 system-ui, sans-serif;
-      letter-spacing: 0.04em; user-select: none; opacity: 0.9;
+      /* Outlined lettering in the livery orange, like the wireframe symbol. */
+      color: transparent; -webkit-text-stroke: 1px #ff6a00; font: 800 16px/1.2 system-ui, sans-serif;
+      letter-spacing: 0.08em; user-select: none;
       pointer-events: none;
     }
     /* Performance guardrail (reframe Stage 6): optional, off by default
@@ -64,7 +65,7 @@
     #fps-meter {
       display: none;
       position: fixed; top: 34px; right: 206px; z-index: 900;
-      color: #9de0ff; font: 11px/1.4 ui-monospace, monospace;
+      color: #ff9a52; font: 11px/1.4 ui-monospace, monospace;
       text-align: right; user-select: none; pointer-events: none;
     }
     #fps-meter.visible { display: block; }
@@ -74,7 +75,7 @@
       display: none;
       color: #eaf6ff; font: 13px/1.4 system-ui, sans-serif;
       background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(124, 204, 255, 0.35);
+      border: 1px solid rgba(255, 106, 0, 0.35);
       border-radius: 6px;
       padding: 6px 14px;
       max-width: 80vw;
@@ -88,7 +89,7 @@
       display: flex; align-items: center;
       background: rgba(0, 0, 0, 0.45);
       border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 6px;
-      color: #9cd; font: 11px system-ui, sans-serif; white-space: nowrap;
+      color: #ff9a52; font: 11px system-ui, sans-serif; white-space: nowrap;
       user-select: none; cursor: pointer;
     }
     #hud-wheel-cue:hover, #hud-wizard-cue:hover { background: rgba(255, 255, 255, 0.15); }
@@ -108,7 +109,7 @@
     /* The dimension you're in, beside Wizard: orange, twice the
        wordmark's height. Empty (hidden) until a dimension is open. */
     #hud-dim {
-      color: #f59e0b; font: 700 30px/1 system-ui, sans-serif;
+      color: #ff6a00; font: 700 30px/1 system-ui, sans-serif;
       letter-spacing: 0.04em; text-transform: uppercase;
       user-select: none; pointer-events: none;
     }
@@ -125,14 +126,14 @@
        toggle also"). */
     #hud-1d-toggle {
       position: fixed; top: 86px; left: 16px; z-index: 900; display: flex;
-      border: 1px solid rgba(34, 195, 230, 0.55); border-radius: 8px; overflow: hidden;
+      border: 1px solid rgba(255, 106, 0, 0.55); border-radius: 8px; overflow: hidden;
     }
     #hud-1d-toggle[hidden] { display: none; }
     #hud-1d-toggle button {
       background: transparent; color: #9fb3c8; border: 0; padding: 6px 12px; min-height: 36px;
       font: 600 14px system-ui, sans-serif; cursor: pointer; touch-action: manipulation;
     }
-    #hud-1d-toggle button.active { background: rgba(34, 195, 230, 0.28); color: #e6fbff; }
+    #hud-1d-toggle button.active { background: rgba(255, 106, 0, 0.28); color: #fff3ea; }
     #hud-dim .hud-dim-built { color: #9fb3c8; font-size: 0.6em; letter-spacing: 0.02em; } /* smaller: 1D+/2D/3D/4D fits beside the wheel */
     /* 2D lattice toggle panel (Phase 4, direct instruction: "a four
        position toggle... to see transformations" -- a persistent, always-
@@ -162,16 +163,16 @@
     .lattice2d-toggle-row button {
       background: rgba(0, 0, 0, 0.45);
       border: 1px solid rgba(255, 255, 255, 0.25);
-      color: #9cd; font: 11px system-ui, sans-serif;
+      color: #ff9a52; font: 11px system-ui, sans-serif;
       border-radius: 6px; padding: 5px 9px; cursor: pointer; min-height: 36px;
     }
     .lattice2d-toggle-row button:hover { background: rgba(255, 255, 255, 0.15); }
-    /* Signature blue (#9de0ff/#7cf), matching this app's own accent
+    /* Signature blue (#ff9a52/#ff6a00), matching this app's own accent
        color everywhere else (wordmark, active toggles like #xray-toggle/
        #cyborg-toggle above) -- direct correction: an earlier pass used a
        green highlight that didn't match anything else in Rhombiverse's
        own chrome. */
-    .lattice2d-toggle-row button.active { background: rgba(120, 190, 255, 0.4); border-color: #7cf; color: #fff; }
+    .lattice2d-toggle-row button.active { background: rgba(255, 106, 0, 0.4); border-color: #ff6a00; color: #fff; }
     /* 4D panel (src/app/world-4d.js): one geared slider plus the
        W-depth | XW | YW | ZW toggle, and Slice/Projection, Parallel/
        Perspective (Projection only), Reset 4D. Only shown in 4D. Bottom-
@@ -192,7 +193,7 @@
     .panel-min {
       align-self: center; min-width: 44px; min-height: 26px; padding: 2px 10px;
       background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 6px; color: #9cd; cursor: pointer; display: flex; justify-content: center;
+      border-radius: 6px; color: #ff9a52; cursor: pointer; display: flex; justify-content: center;
     }
     #world4d-panel.minimised > :not(.panel-min), .qc-panel.minimised > :not(.panel-min) { display: none; }
     /* 4D Info (Info button in the 4D panel): top-left under the title,
@@ -218,7 +219,7 @@
       color: #fde6b0; font: 12px system-ui, sans-serif;
     }
     .qc-info .qc-summon-set { color: #b9a37a; }
-    #world4d-info .w4d-info-k, .qc-info .w4d-info-k { color: #7cf; font-weight: 600; margin-right: 4px; }
+    #world4d-info .w4d-info-k, .qc-info .w4d-info-k { color: #ff6a00; font-weight: 600; margin-right: 4px; }
     /* Toasts sit just above the 4D panel while it's showing, instead of
        on top of its buttons -- which puts them over the scene, so taps
        pass straight through them (toasts are text only). */
@@ -227,10 +228,10 @@
     .w4d-row button {
       background: rgba(0, 0, 0, 0.45);
       border: 1px solid rgba(255, 255, 255, 0.25);
-      color: #9cd; font: 12px system-ui, sans-serif;
+      color: #ff9a52; font: 12px system-ui, sans-serif;
       border-radius: 6px; padding: 7px 11px; cursor: pointer; min-height: 36px; min-width: 36px;
     }
-    .w4d-row button.active { background: rgba(120, 190, 255, 0.4); border-color: #7cf; color: #fff; }
+    .w4d-row button.active { background: rgba(255, 106, 0, 0.4); border-color: #ff6a00; color: #fff; }
     /* 1D Signal: the message field and the chain read back as text. */
     .sig-message-row { align-items: center; flex-wrap: nowrap; }
     .sig-decoded { text-align: center; color: #bfefff; font: 600 18px/1.3 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: 0.16em; margin-bottom: 6px; overflow-wrap: anywhere; }
@@ -242,36 +243,36 @@
     }
     .sig-sym { min-width: 44px; font-size: 18px !important; line-height: 1; }
     .sig-sym svg { display: block; margin: 0 auto; }
-    .sig-send { white-space: nowrap; font-weight: 600; color: #f59e0b !important; border-color: #f59e0b !important; }
+    .sig-send { white-space: nowrap; font-weight: 600; color: #ff6a00 !important; border-color: #ff6a00 !important; }
     .sig-send[hidden], .sig-sym[hidden] { display: none !important; }
     /* Nets: its solids row, and the fold slider once a net is complete. */
     .nets-fold-row[hidden], .nets-cell-row[hidden], .nets-next-row[hidden] { display: none !important; }
     .nets-cell-row, .nets-next-row { justify-content: center; }
     .nets-fold-row { align-items: center; gap: 10px; }
-    .nets-fold { flex: 1; min-width: 0; max-width: 320px; accent-color: #22c3e6; height: 32px; touch-action: none; }
+    .nets-fold { flex: 1; min-width: 0; max-width: 320px; accent-color: #ff6a00; height: 32px; touch-action: none; }
     .nets-solids .w4d-row { align-items: center; margin-bottom: 4px; flex-wrap: nowrap; }
     .nets-solids .w4d-row button { padding: 7px 8px; }
     .nets-group { text-align: right; font-size: 11px !important; line-height: 1.1; max-width: 70px; }
     .nets-group { color: #9fb3c8; font: 600 12px system-ui, sans-serif; margin-right: 4px; }
-    .nets-solids button.active { background: rgba(34, 195, 230, 0.28) !important; border-color: #22c3e6 !important; color: #fff !important; }
+    .nets-solids button.active { background: rgba(255, 106, 0, 0.28) !important; border-color: #ff6a00 !important; color: #fff !important; }
     /* Signal's pulse key: held down, it lights up. */
     .sig-pulse { touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
-    .sig-pulse.down { background: rgba(34, 195, 230, 0.4) !important; border-color: #22c3e6 !important; color: #fff !important; }
+    .sig-pulse.down { background: rgba(255, 106, 0, 0.4) !important; border-color: #ff6a00 !important; color: #fff !important; }
     /* The message read out as it arrives, at the top where the line fades. */
     #sig-arrivals {
       position: fixed; top: 150px; left: 16px; right: 16px; z-index: 850; display: none;
       text-align: center; color: #bfefff; font: 600 22px/1.3 ui-monospace, "SF Mono", Menlo, monospace;
-      letter-spacing: 0.18em; text-shadow: 0 0 12px rgba(34, 195, 230, 0.6); pointer-events: none;
+      letter-spacing: 0.18em; text-shadow: 0 0 12px rgba(255, 106, 0, 0.6); pointer-events: none;
       overflow-wrap: anywhere;
     }
     #sig-arrivals.visible { display: block; }
     /* The Morse glossary: a script button beside Send, the code book at
        the right. */
-    #sig-gloss-btn.active { background: rgba(34, 195, 230, 0.28) !important; border-color: #22c3e6 !important; color: #fff !important; }
+    #sig-gloss-btn.active { background: rgba(255, 106, 0, 0.28) !important; border-color: #ff6a00 !important; color: #fff !important; }
     #sig-gloss {
       position: fixed; right: 16px; top: 160px; bottom: 130px; z-index: 860; display: none;
       width: 168px; overflow-y: auto; padding: 6px; box-sizing: border-box;
-      background: rgba(5, 5, 10, 0.88); border: 1px solid rgba(34, 195, 230, 0.4); border-radius: 10px;
+      background: rgba(5, 5, 10, 0.88); border: 1px solid rgba(255, 106, 0, 0.4); border-radius: 10px;
       grid-template-columns: 1fr 1fr; gap: 3px;
     }
     #sig-gloss.visible { display: grid; }
@@ -279,16 +280,16 @@
       display: flex; align-items: center; gap: 5px; padding: 5px 4px; border: 0; border-radius: 6px;
       background: transparent; color: #eaf6ff; cursor: pointer; font: 600 14px system-ui, sans-serif;
     }
-    #sig-gloss button:active { background: rgba(34, 195, 230, 0.3); }
+    #sig-gloss button:active { background: rgba(255, 106, 0, 0.3); }
     #sig-gloss b { min-width: 12px; text-align: center; }
     #sig-gloss span { display: flex; align-items: center; gap: 2px; }
-    #sig-gloss i { display: block; height: 4px; border-radius: 2px; background: #22c3e6; }
+    #sig-gloss i { display: block; height: 4px; border-radius: 2px; background: #ff6a00; }
     #sig-gloss i.d { width: 4px; }
     #sig-gloss i.l { width: 8px; }
-        .sig-send.active { color: #fff !important; background: rgba(245, 158, 11, 0.35) !important; }
+        .sig-send.active { color: #fff !important; background: rgba(255, 106, 0, 0.35) !important; }
     /* Kaleidoscope: more buttons per row, so a little tighter on phones. */
     #worldkaleido-panel .w4d-row button { padding: 6px 8px; }
-    .hull-pick { color: #9cd; font: 12px system-ui, sans-serif; display: flex; align-items: center; gap: 6px; }
+    .hull-pick { color: #ff9a52; font: 12px system-ui, sans-serif; display: flex; align-items: center; gap: 6px; }
     /* The Info box passes taps through to the scene; these take them. */
     .qc-info .hull-rings circle, .qc-info .hull-palette select, .qc-info .hull-shell-row button { pointer-events: auto; }
     .qc-info .hull-rings { display: block; margin: 6px auto; }
@@ -296,7 +297,7 @@
     .qc-info .hull-palette { display: block; margin: 2px 0 6px; }
     .qc-info .hull-palette select { background: rgba(0,0,0,0.45); color: #cde; border: 1px solid rgba(255,255,255,0.25); border-radius: 5px; font: 12px system-ui, sans-serif; }
     .qc-info .hull-shell-row { display: flex; align-items: center; gap: 5px; }
-    .qc-info .hull-shell-row button { background: rgba(0,0,0,0.4); color: #9cd; border: 1px solid rgba(255,255,255,0.2); border-radius: 5px; font: 11px system-ui, sans-serif; padding: 2px 7px; min-height: 26px; cursor: pointer; }
+    .qc-info .hull-shell-row button { background: rgba(0,0,0,0.4); color: #ff9a52; border: 1px solid rgba(255,255,255,0.2); border-radius: 5px; font: 11px system-ui, sans-serif; padding: 2px 7px; min-height: 26px; cursor: pointer; }
     .qc-info .hull-swatch { width: 10px; height: 10px; border-radius: 2px; flex: 0 0 auto; }
     .hull-select {
       background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); color: #cde;
@@ -308,15 +309,15 @@
     }
     .w4d-ticks { position: absolute; inset: 0 17px; pointer-events: none; }
     .w4d-tick {
-      position: absolute; top: 4px; bottom: 4px; width: 1px; background: rgba(157, 224, 255, 0.35);
-      font: 10px system-ui, sans-serif; color: #9de0ff; text-indent: 16px; line-height: 26px; white-space: nowrap;
+      position: absolute; top: 4px; bottom: 4px; width: 1px; background: rgba(255, 106, 0, 0.35);
+      font: 10px system-ui, sans-serif; color: #ff9a52; text-indent: 16px; line-height: 26px; white-space: nowrap;
     }
     /* Hyper-pyrochlore's "Pyrochlore" click-stop sits just left of the FCC
        one -- its label reads leftward so the two never overlap. */
     .w4d-tick-below { direction: rtl; }
     .w4d-thumb {
       position: absolute; top: 4px; width: 24px; height: 24px; transform: translateX(-50%);
-      border-radius: 50%; background: #7cf; box-shadow: 0 0 6px rgba(124, 204, 255, 0.8); pointer-events: none;
+      border-radius: 50%; background: #ff6a00; box-shadow: 0 0 6px rgba(255, 106, 0, 0.8); pointer-events: none;
     }
     /* Quick-select: the CURRENTLY active Piece/Color, always visible
        next to Menu rather than only shown as a fading toast -- direct
@@ -330,7 +331,7 @@
       background: rgba(0, 0, 0, 0.45);
       border: 1px solid rgba(255, 255, 255, 0.25);
       border-radius: 6px;
-      color: #9cd;
+      color: #ff9a52;
       display: flex; align-items: center; justify-content: center;
       padding: 0; cursor: pointer;
     }
@@ -352,8 +353,8 @@
        while Rhombohedra is the 3D piece (render.js updateRhomboAttachButton). */
     #hud-quick-attach { left: calc(var(--quick-x, 64px) + 126px); }
     #hud-quick-attach.hidden { display: none; }
-    #hud-quick-color.painting { border-color: #7cf; box-shadow: 0 0 8px rgba(120, 190, 255, 0.6); }
-    #hud-quick-attach.active { border-color: #7cf; background: rgba(120, 190, 255, 0.4); color: #fff; }
+    #hud-quick-color.painting { border-color: #ff6a00; box-shadow: 0 0 8px rgba(255, 106, 0, 0.6); }
+    #hud-quick-attach.active { border-color: #ff6a00; background: rgba(255, 106, 0, 0.4); color: #fff; }
     /* Paint, when the attach toggle holds its slot (4D's 24-cell, 16-cell
        and 5-cells, 3D's Rhombohedra and Pyrochlore): just above it (direct
        request: "add paint button to 4D etc"; the row is full on a phone).
@@ -361,11 +362,11 @@
     #hud-quick-paint {
       position: fixed; bottom: 50px; left: calc(var(--quick-x, 64px) + 126px); z-index: 900;
       width: 36px; height: 36px; padding: 0; background: rgba(0, 0, 0, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 6px; color: #9cd; cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 6px; color: #ff9a52; cursor: pointer;
     }
     #hud-quick-paint svg { width: 24px; height: 24px; }
     #hud-quick-paint.hidden { display: none; }
-    #hud-quick-paint.active { border-color: #7cf; background: rgba(120, 190, 255, 0.4); color: #fff; }
+    #hud-quick-paint.active { border-color: #ff6a00; background: rgba(255, 106, 0, 0.4); color: #fff; }
 
     #lab-toggle {
       position: fixed; top: 12px; right: 12px; z-index: 900;
@@ -389,7 +390,7 @@
       cursor: pointer;
     }
     #xray-toggle:hover { background: rgba(255, 255, 255, 0.15); }
-    #xray-toggle.active { background: rgba(120, 190, 255, 0.4); border-color: #7cf; color: #fff; }
+    #xray-toggle.active { background: rgba(255, 106, 0, 0.4); border-color: #ff6a00; color: #fff; }
     #duality-toggle {
       position: fixed; top: 12px; right: 164px; z-index: 900;
       width: 30px; height: 30px;
@@ -413,7 +414,7 @@
       cursor: pointer;
     }
     #spherical-toggle:hover { background: rgba(255, 255, 255, 0.15); }
-    #spherical-toggle.active { background: rgba(120, 220, 255, 0.4); border-color: #78dcff; color: #fff; }
+    #spherical-toggle.active { background: rgba(255, 106, 0, 0.4); border-color: #78dcff; color: #fff; }
     #bcc-toggle {
       position: fixed; top: 12px; right: 202px; z-index: 900;
       width: 30px; height: 30px;
@@ -451,7 +452,7 @@
       cursor: pointer;
     }
     #rhombic-wheel-3d-toggle:hover { background: rgba(255, 255, 255, 0.15); }
-    #rhombic-wheel-3d-toggle.active { background: rgba(77, 208, 225, 0.35); border-color: #4DD0E1; color: #fff; }
+    #rhombic-wheel-3d-toggle.active { background: rgba(255, 106, 0, 0.35); border-color: #4DD0E1; color: #fff; }
 
     /* Replaced by the persistent HUD Wheel (hud-wheel-3d.js), 2026-08-25
        -- hidden, not removed, so every real click handler these buttons
@@ -466,7 +467,7 @@
     /* ◯ Spherical's size slider, shown while it's on. */
     #packing-panel .pack-row { display: flex; align-items: center; gap: 10px; justify-content: center; }
     #packing-panel label { color: #9fb3c8; font: 600 12px system-ui, sans-serif; white-space: nowrap; }
-    #packing-panel input { flex: 1; min-width: 0; max-width: 300px; accent-color: #22c3e6; height: 32px; touch-action: none; }
+    #packing-panel input { flex: 1; min-width: 0; max-width: 300px; accent-color: #ff6a00; height: 32px; touch-action: none; }
 
     /* Ghost block preview -- a translucent single-cell (or two-cell,
        while "holding") outline shown at the next valid FCC position on
@@ -489,7 +490,7 @@
       width: 320px;
       max-width: calc(100vw - 24px);
       background: rgba(6, 6, 12, 0.94);
-      border: 1px solid rgba(124, 204, 255, 0.3);
+      border: 1px solid rgba(255, 106, 0, 0.3);
       border-radius: 8px;
       z-index: 970;
       overflow-y: auto;
@@ -517,15 +518,15 @@
     #lab-header {
       display: flex; align-items: center; justify-content: space-between;
       font: 700 13px system-ui, sans-serif;
-      color: #9de0ff;
+      color: #ff9a52;
       margin-bottom: 6px;
     }
-    #lab-close { background: none; border: none; color: #9de0ff; cursor: pointer; font: 13px system-ui, sans-serif; opacity: 0.8; }
+    #lab-close { background: none; border: none; color: #ff9a52; cursor: pointer; font: 13px system-ui, sans-serif; opacity: 0.8; }
     #lab-close:hover { opacity: 1; }
     #lab-panel h2 {
       margin: 4px 0 8px;
       font: 700 13px system-ui, sans-serif;
-      color: #9de0ff;
+      color: #ff9a52;
       letter-spacing: 0.03em;
     }
     #lab-panel h2:not(:first-child) { margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.12); }
@@ -553,14 +554,14 @@
       font: inherit;
       color: inherit;
       background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(124, 204, 255, 0.35);
+      border: 1px solid rgba(255, 106, 0, 0.35);
       border-radius: 2px;
       /* A small diamond notch on the left edge of every selector, so a
          <select> reads as part of the same rhombic-grammar family as the
          buttons even though clip-path on a native select risks clipping
          its own dropdown arrow -- this is a safer, still-real touch. */
       border-left: 10px solid transparent;
-      border-image: linear-gradient(135deg, #9de0ff 0 4px, transparent 4px) 1;
+      border-image: linear-gradient(135deg, #ff9a52 0 4px, transparent 4px) 1;
       padding: 2px 4px;
     }
     #controls .row { display: flex; align-items: center; gap: 10px; margin-top: 6px; }
@@ -583,16 +584,16 @@
          requirement) instead of a flat hover color. */
       background-color: rgba(60, 110, 160, 0.5);
       background-image:
-        repeating-linear-gradient(45deg, rgba(157,224,255,0.22) 0 5px, transparent 5px 12px),
-        repeating-linear-gradient(-45deg, rgba(157,224,255,0.22) 0 5px, transparent 5px 12px);
-      border-color: #9de0ff;
+        repeating-linear-gradient(45deg, rgba(255, 106, 0,0.22) 0 5px, transparent 5px 12px),
+        repeating-linear-gradient(-45deg, rgba(255, 106, 0,0.22) 0 5px, transparent 5px 12px);
+      border-color: #ff9a52;
     }
     #controls button.mode-btn.active {
-      background-color: rgba(120, 190, 255, 0.4);
+      background-color: rgba(255, 106, 0, 0.4);
       background-image:
-        repeating-linear-gradient(45deg, rgba(157,224,255,0.28) 0 5px, transparent 5px 12px),
-        repeating-linear-gradient(-45deg, rgba(157,224,255,0.28) 0 5px, transparent 5px 12px);
-      border-color: #7cf;
+        repeating-linear-gradient(45deg, rgba(255, 106, 0,0.28) 0 5px, transparent 5px 12px),
+        repeating-linear-gradient(-45deg, rgba(255, 106, 0,0.28) 0 5px, transparent 5px 12px);
+      border-color: #ff6a00;
     }
 
     /* Diamond-shaped checkboxes (Invert Y, Section view, Flip, claim
@@ -603,7 +604,7 @@
       -webkit-appearance: none;
       width: 15px; height: 15px;
       margin: 0;
-      border: 1.5px solid rgba(124, 204, 255, 0.6);
+      border: 1.5px solid rgba(255, 106, 0, 0.6);
       background: rgba(255,255,255,0.06);
       transform: rotate(45deg);
       cursor: pointer;
@@ -612,9 +613,9 @@
       vertical-align: middle;
     }
     #controls input[type="checkbox"]:checked, #lab-settings-section input[type="checkbox"]:checked {
-      background: #7cf;
-      border-color: #9de0ff;
-      box-shadow: 0 0 6px rgba(124, 204, 255, 0.7);
+      background: #ff6a00;
+      border-color: #ff9a52;
+      box-shadow: 0 0 6px rgba(255, 106, 0, 0.7);
     }
 
     /* Narrow viewports: full-height sidebars (top:54 to bottom:12,
@@ -640,9 +641,9 @@
     @media (pointer: coarse), (max-width: 700px) {
       #lab-panel { width: calc(100vw - 24px); }
       #controls button, #controls .file-btn, #controls select, #controls input,
-      .color-mode-group { display: inline-flex; border: 1px solid rgba(157,224,255,.35); border-radius: 999px; overflow: hidden; }
+      .color-mode-group { display: inline-flex; border: 1px solid rgba(255, 106, 0,.35); border-radius: 999px; overflow: hidden; }
       .color-mode-btn { background: transparent; color: inherit; border: 0; padding: 4px 12px; font: inherit; cursor: pointer; }
-      .color-mode-btn.active { background: #22c3e6; color: #001018; }
+      .color-mode-btn.active { background: #ff6a00; color: #001018; }
       .ring-recolor, .ring-remove {
         min-height: 40px;
         font-size: 15px;
@@ -662,7 +663,7 @@
     /* 1D's Clear, beside Undo (direct request: "clear next to undo"). */
     #oned-clear {
       position: fixed; bottom: 8px; right: 132px; z-index: 900;
-      width: 36px; height: 36px; padding: 0; font: 20px system-ui, sans-serif; color: #9cd;
+      width: 36px; height: 36px; padding: 0; font: 20px system-ui, sans-serif; color: #ff9a52;
       background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 6px; cursor: pointer;
     }
     #oned-clear[hidden] { display: none; }
@@ -673,7 +674,7 @@
       width: 36px; height: 36px;
       padding: 0;
       font: 20px system-ui, sans-serif;
-      color: #9cd;
+      color: #ff9a52;
       background: rgba(0, 0, 0, 0.45);
       border: 1px solid rgba(255, 255, 255, 0.25);
       border-radius: 6px;
@@ -692,7 +693,7 @@
       right: 0;
       bottom: 44px;
       background: rgba(6, 6, 12, 0.96);
-      border: 1px solid rgba(124, 204, 255, 0.4);
+      border: 1px solid rgba(255, 106, 0, 0.4);
       border-radius: 6px;
       padding: 8px;
       z-index: 20;
@@ -704,14 +705,14 @@
     #undo-scrub-strip .scrub-tick {
       width: 16px; height: 16px;
       background: rgba(180, 83, 9, 0.6);
-      border: 1px solid rgba(245, 158, 11, 0.7);
+      border: 1px solid rgba(255, 106, 0, 0.7);
       transform: rotate(45deg);
       cursor: pointer;
       flex: none;
     }
     #undo-scrub-strip .scrub-tick:hover {
-      background: #f59e0b;
-      box-shadow: 0 0 6px rgba(245, 158, 11, 0.8);
+      background: #ff6a00;
+      box-shadow: 0 0 6px rgba(255, 106, 0, 0.8);
     }
     #undo-scrub-strip .scrub-label {
       width: 100%; text-align: center;
@@ -738,7 +739,7 @@
       color: #ddd;
       font: 14px/1.5 system-ui, sans-serif;
       background: rgba(15, 15, 25, 0.96);
-      border: 1px solid rgba(124, 204, 255, 0.35);
+      border: 1px solid rgba(255, 106, 0, 0.35);
       border-radius: 10px;
       padding: 20px 26px 24px;
       text-align: center;
@@ -746,34 +747,34 @@
     }
     #welcome-card .welcome-lang { margin: 0 0 10px; }
     #welcome-logo { position: relative; width: min(220px, 62vw); margin: 6px auto 14px; }
-    #welcome-logo svg { display: block; width: 100%; height: auto; filter: drop-shadow(0 0 14px rgba(124, 204, 255, 0.25)); }
+    #welcome-logo svg { display: block; width: 100%; height: auto; filter: drop-shadow(0 0 14px rgba(255, 106, 0, 0.25)); }
     #static-enter-label {
       position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
       min-height: 44px; padding: 6px 18px; cursor: pointer;
-      font: 800 19px system-ui, sans-serif; letter-spacing: 1.5px; color: #eafcff;
-      background: rgba(4, 20, 28, 0.55); border: 1px solid rgba(157, 224, 255, 0.65); border-radius: 12px;
-      text-shadow: 0 0 6px #04141c;
+      font: 900 21px system-ui, sans-serif; letter-spacing: 2px;
+      color: transparent; -webkit-text-stroke: 1.2px #ff6a00;
+      background: rgba(20, 8, 2, 0.6); border: 1px solid rgba(255, 106, 0, 0.65); border-radius: 12px;
       animation: enter-breathe 2.1s ease-in-out infinite;
     }
-    #static-enter-label:hover, #static-enter-label:focus-visible { background: rgba(4, 20, 28, 0.8); }
+    #static-enter-label:hover, #static-enter-label:focus-visible { background: rgba(20, 8, 2, 0.85); }
     @keyframes enter-breathe { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
     @media (prefers-reduced-motion: reduce) { #static-enter-label { animation: none; } }
-    #welcome-card h1 { margin: 0; font-size: 26px; color: #fff; }
+    #welcome-card h1 { margin: 0; font-size: 30px; font-weight: 900; letter-spacing: 0.04em; color: transparent; -webkit-text-stroke: 1.2px #ff6a00; }
     #welcome-card .overview { margin: 6px 0 0; font-size: 13px; opacity: 0.85; font-style: italic; }
     #welcome-card .dim-link {
-      font: inherit; font-style: normal; font-weight: 600; color: #9de0ff; background: rgba(124, 204, 255, 0.12);
-      border: 1px solid rgba(124, 204, 255, 0.45); border-radius: 6px; padding: 2px 7px; margin: 2px 1px; cursor: pointer;
+      font: inherit; font-style: normal; font-weight: 600; color: #ff9a52; background: rgba(255, 106, 0, 0.12);
+      border: 1px solid rgba(255, 106, 0, 0.45); border-radius: 6px; padding: 2px 7px; margin: 2px 1px; cursor: pointer;
     }
     /* The dimension buttons: their own line, one row, never split. */
     #welcome-card .dim-links { display: flex; flex-wrap: nowrap; justify-content: center; gap: 6px; margin-top: 8px; }
     #welcome-card .dim-links .dim-link { margin: 0; padding: 4px 10px; min-height: 32px; }
-    #welcome-card .dim-link:hover, #welcome-card .dim-link:focus-visible { background: rgba(124, 204, 255, 0.3); color: #fff; }
+    #welcome-card .dim-link:hover, #welcome-card .dim-link:focus-visible { background: rgba(255, 106, 0, 0.3); color: #fff; }
     #welcome-card .how-to-link {
       margin-top: 6px; min-height: 36px; padding: 4px 14px;
-      background: none; border: 1px solid rgba(124, 204, 255, 0.45); border-radius: 18px;
-      color: #9de0ff; font: 13px system-ui, sans-serif; cursor: pointer;
+      background: none; border: 1px solid rgba(255, 106, 0, 0.45); border-radius: 18px;
+      color: #ff9a52; font: 13px system-ui, sans-serif; cursor: pointer;
     }
-    #welcome-card .how-to-link:hover { background: rgba(124, 204, 255, 0.1); }
+    #welcome-card .how-to-link:hover { background: rgba(255, 106, 0, 0.1); }
     /* Cross-links to the sibling projects: small icon + text, centred row. */
     #welcome-card .polyhedraverse-link, #welcome-card .rhombiverse-link {
       /* Small gap between the badge and its text, per direct feedback --
@@ -785,14 +786,14 @@
     #welcome-card .polyhedraverse-link img, #welcome-card .rhombiverse-link img {
       width: 28px; height: 28px; border-radius: 6px; flex-shrink: 0;
     }
-    #welcome-card .polyhedraverse-link a, #welcome-card .rhombiverse-link a { color: #9de0ff; text-decoration: none; }
+    #welcome-card .polyhedraverse-link a, #welcome-card .rhombiverse-link a { color: #ff9a52; text-decoration: none; }
     #welcome-card .polyhedraverse-link a:hover, #welcome-card .rhombiverse-link a:hover { text-decoration: underline; }
     #welcome-card .legal-links {
       margin-top: 14px;
       font-size: 11px;
       opacity: 0.6;
     }
-    #welcome-card .legal-links a { color: #9cd; text-decoration: none; }
+    #welcome-card .legal-links a { color: #ff9a52; text-decoration: none; }
     #welcome-card .legal-links a:hover { text-decoration: underline; }
     #about-btn {
       position: fixed;
@@ -836,9 +837,9 @@
       position: absolute;
       top: -2px; right: -2px;
       width: 8px; height: 8px;
-      background: #7cf;
+      background: #ff6a00;
       border-radius: 50%;
-      box-shadow: 0 0 4px rgba(124, 204, 255, 0.9);
+      box-shadow: 0 0 4px rgba(255, 106, 0, 0.9);
     }
     #changelog-overlay {
       display: none;
@@ -855,7 +856,7 @@
       overflow-y: auto;
       color: #ddd; font: 14px/1.5 system-ui, sans-serif;
       background: rgba(15, 15, 25, 0.96);
-      border: 1px solid rgba(124, 204, 255, 0.35);
+      border: 1px solid rgba(255, 106, 0, 0.35);
       border-radius: 10px;
       padding: 18px 22px 22px;
       box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
@@ -863,13 +864,13 @@
     #changelog-header {
       display: flex; align-items: center; justify-content: space-between;
       font: 700 16px system-ui, sans-serif;
-      color: #9de0ff;
+      color: #ff9a52;
       margin-bottom: 12px;
     }
-    #changelog-close { background: none; border: none; color: #9de0ff; cursor: pointer; font: 15px system-ui, sans-serif; }
+    #changelog-close { background: none; border: none; color: #ff9a52; cursor: pointer; font: 15px system-ui, sans-serif; }
     .changelog-entry { margin-bottom: 18px; }
     .changelog-entry:last-child { margin-bottom: 0; }
-    .changelog-date { font: 700 11px system-ui, sans-serif; color: #9de0ff; letter-spacing: 0.03em; }
+    .changelog-date { font: 700 11px system-ui, sans-serif; color: #ff9a52; letter-spacing: 0.03em; }
     .changelog-title { font: 700 15px system-ui, sans-serif; color: #fff; margin: 2px 0 6px; }
     .changelog-entry ul { margin: 0; padding-left: 20px; font-size: 13px; opacity: 0.9; }
     .changelog-entry li { margin-bottom: 3px; }
@@ -882,7 +883,7 @@
       z-index: 950;
       max-width: 90vw;
       color: #1a1400;
-      background: #f59e0b;
+      background: #ff6a00;
       border: 1px solid #1a1400;
       border-radius: 6px;
       padding: 6px 12px;

@@ -40,9 +40,9 @@ function build() {
 #guide-overlay { position: fixed; inset: 0; z-index: 1100; display: none; flex-direction: column; background: #0a0c14; }
 #guide-overlay.open { display: flex; }
 #guide-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #2c3444; font: 13px system-ui, sans-serif; }
-#guide-bar a { color: #9de0ff; }
+#guide-bar a { color: #ff9a52; }
 #guide-bar .lang-picker { margin-left: auto; }
-#guide-close { min-width: 44px; min-height: 44px; background: none; border: 1px solid rgba(124, 204, 255, 0.35); border-radius: 8px; color: #ddd; font-size: 18px; cursor: pointer; }
+#guide-close { min-width: 44px; min-height: 44px; background: none; border: 1px solid rgba(255, 106, 0, 0.35); border-radius: 8px; color: #ddd; font-size: 18px; cursor: pointer; }
 #guide-body { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 20px 16px 48px; }`;
   document.head.appendChild(style);
 

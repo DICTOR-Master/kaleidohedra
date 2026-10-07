@@ -88,7 +88,7 @@ export const GUIDE_CSS = `
 .md-guide p, .md-guide ul, .md-guide ol { margin: .5em 0; }
 .md-guide ul, .md-guide ol { padding-left: 1.4em; }
 .md-guide li { margin: .25em 0; }
-.md-guide a { color: #7cc4ff; }
+.md-guide a { color: #ff9a52; }
 .md-guide code { background: #1d2330; padding: 0 .3em; border-radius: 4px; }
 .md-guide hr { border: 0; border-top: 1px solid #2c3444; margin: 2em 0; }
 .md-guide .md-table { overflow-x: auto; margin: .6em 0; }

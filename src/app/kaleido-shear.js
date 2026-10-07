@@ -87,14 +87,14 @@ function buildPanel(state, apply) {
   const style = document.createElement('style');
   style.textContent = `
     #kaleido-panel { position: fixed; right: 12px; top: 150px; z-index: 50; max-width: min(300px, calc(100vw - 24px)); font: 13px system-ui, sans-serif; color: #d8f0ff; }
-    #kaleido-panel button { min-height: 36px; background: rgba(8, 20, 30, .85); color: #9de0ff; border: 1px solid #2c5a70; border-radius: 8px; padding: 4px 10px; cursor: pointer; }
-    #kaleido-body { margin-top: 6px; padding: 10px; background: rgba(5, 12, 20, .92); border: 1px solid #2c5a70; border-radius: 10px; display: grid; gap: 8px; }
+    #kaleido-panel button { min-height: 36px; background: rgba(30, 14, 4, .85); color: #ff9a52; border: 1px solid #7a3300; border-radius: 8px; padding: 4px 10px; cursor: pointer; }
+    #kaleido-body { margin-top: 6px; padding: 10px; background: rgba(18, 8, 2, .92); border: 1px solid #7a3300; border-radius: 10px; display: grid; gap: 8px; }
     #kaleido-body[hidden] { display: none; }
     .kaleido-row { display: grid; grid-template-columns: auto 1fr; gap: 2px 8px; align-items: center; }
     .kaleido-row input, .kaleido-row select { grid-column: 1 / -1; width: 100%; min-height: 28px; }
-    #kaleido-towards { min-height: 36px; background: rgba(8, 20, 30, .85); color: #9de0ff; border: 1px solid #2c5a70; border-radius: 8px; }
+    #kaleido-towards { min-height: 36px; background: rgba(30, 14, 4, .85); color: #ff9a52; border: 1px solid #7a3300; border-radius: 8px; }
     .kaleido-stops { display: flex; gap: 6px; flex-wrap: wrap; }
-    #kaleido-note { font-size: 12px; color: #9de0ff; min-height: 1em; }`;
+    #kaleido-note { font-size: 12px; color: #ff9a52; min-height: 1em; }`;
   panel.appendChild(style);
   const $ = (sel) => panel.querySelector(sel);
   const path = $('#kaleido-path');

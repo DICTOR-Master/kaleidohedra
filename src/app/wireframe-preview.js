@@ -19,8 +19,8 @@
 // a coin instead: no tilt, turning about the vertical axis, so it
 // narrows to its edge and back, with no depth dimming.
 
-const LINE_COLOR = '#7cf';
-const LINE_COLOR_DIM = 'rgba(124, 204, 255, 0.35)';
+const LINE_COLOR = '#ff6a00';
+const LINE_COLOR_DIM = 'rgba(255, 106, 0, 0.35)';
 const SPIN_PER_FRAME = 0.008;
 const TILT = 0.5;
 

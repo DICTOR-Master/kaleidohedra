@@ -1924,7 +1924,7 @@ async function init() {
     g.fillRect(0, 0, 64, 64);
     return new THREE.CanvasTexture(c);
   })();
-  // Signature blue (#9de0ff), same accent color as everything else in
+  // Signature blue (#ff9a52), same accent color as everything else in
   // this app's own HUD chrome -- fully opaque (not the original 0.85)
   // for max contrast against the scene's own dark starfield background,
   // direct instruction ("contrast against star background"). Real
@@ -1937,7 +1937,7 @@ async function init() {
   // face (see updateDotMatrix's own z below) lets the opaque tile
   // correctly occlude the dots underneath it, while dots elsewhere
   // (nothing in front of them) still render normally.
-  const dotMatrixMaterial = new THREE.PointsMaterial({ color: 0x9de0ff, map: dotSprite, transparent: true, alphaTest: 0.02, depthWrite: false, sizeAttenuation: true });
+  const dotMatrixMaterial = new THREE.PointsMaterial({ color: 0xff9a52, map: dotSprite, transparent: true, alphaTest: 0.02, depthWrite: false, sizeAttenuation: true });
   const dotMatrixMesh = new THREE.Points(dotMatrixGeometry, dotMatrixMaterial);
   // THREE sizes an attenuated point as size * (canvas height / 2) / depth;
   // a sphere of diameter d shows as d * (height / 2) / (depth * tan(fov/2)),
@@ -2515,7 +2515,7 @@ async function init() {
     }
     return null;
   }
-  const FIRST_PLACEMENT_COLOR = 0x00e5ff;
+  const FIRST_PLACEMENT_COLOR = 0xff6a00;
   const firstPlacementMesh = new THREE.Mesh(new THREE.BufferGeometry(), new THREE.MeshBasicMaterial({ color: FIRST_PLACEMENT_COLOR, transparent: true, opacity: 0.12, depthWrite: false }));
   const firstPlacementEdges = new THREE.LineSegments(new THREE.BufferGeometry(), new THREE.LineBasicMaterial({ color: FIRST_PLACEMENT_COLOR }));
   firstPlacementMesh.visible = false;
@@ -3190,7 +3190,7 @@ async function init() {
 
   const xrayHandleGeometry = new THREE.PlaneGeometry(40, 40);
   const xrayHandleMaterial = new THREE.MeshBasicMaterial({
-    color: 0x9de0ff,
+    color: 0xff9a52,
     transparent: true,
     opacity: 0.16,
     side: THREE.DoubleSide,
@@ -3544,8 +3544,8 @@ async function init() {
   const packSphereGeo = new THREE.SphereGeometry(1, 40, 20);
   const octaVoidMat = new THREE.MeshStandardMaterial({ color: 0xf5c542, emissive: 0xf5c542, emissiveIntensity: 0.25, roughness: 0.4 });
   const tetraVoidMat = new THREE.MeshStandardMaterial({ color: 0xff7aa8, emissive: 0xff7aa8, emissiveIntensity: 0.25, roughness: 0.4 });
-  const packWireMat = new THREE.LineBasicMaterial({ color: 0x22c3e6, transparent: true, opacity: 0.35 });
-  const packSlotMat = new THREE.MeshBasicMaterial({ color: 0x22c3e6, transparent: true, opacity: 0.1, depthWrite: false });
+  const packWireMat = new THREE.LineBasicMaterial({ color: 0xff6a00, transparent: true, opacity: 0.35 });
+  const packSlotMat = new THREE.MeshBasicMaterial({ color: 0xff6a00, transparent: true, opacity: 0.1, depthWrite: false });
   const rdEdgePairs = (() => {
     const v = rdRawVerts(SCALE);
     const d = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
@@ -5131,7 +5131,7 @@ async function init() {
   // confirmation to retire rather than keep both.
 
   const ghostMaterial = new THREE.MeshBasicMaterial({
-    color: 0x9de0ff,
+    color: 0xff9a52,
     transparent: true,
     opacity: 0.35,
     depthWrite: false,
@@ -5155,7 +5155,7 @@ async function init() {
       const [wx, wy, wz] = cellToWorld(cell.x, cell.y, cell.z);
       m.position.set(wx, wy, wz);
       m.visible = true;
-      ghostMaterial.color.set(materialPreviewColor ?? (cell.occupied ? 0xff8866 : 0x9de0ff));
+      ghostMaterial.color.set(materialPreviewColor ?? (cell.occupied ? 0xff8866 : 0xff9a52));
     });
   }
   function hideGhost() {
@@ -5462,7 +5462,7 @@ async function init() {
     },
     onHoverEnd: hideGhost,
     onPlaced: (cell) => {
-      flashAt(cell, 0x9de0ff);
+      flashAt(cell, 0xff9a52);
       playPlaceSound();
       // Hemi RD cluster stamps ('hemi3'/'hemi4', core/build.js's own
       // addHemisphereCluster) attach a real label naming which of the 8

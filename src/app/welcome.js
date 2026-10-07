@@ -68,7 +68,7 @@ function logoHtml() {
   return `
     <div id="welcome-logo">
       <svg id="welcome-logo-svg" viewBox="-75 -75 150 150" role="img" aria-label="Kaleidohedra symbol: a wireframe regular-hexagon elongated dodecahedron, turning slowly">
-        <g stroke="#9de0ff" stroke-width="1.5" stroke-linecap="round" fill="none">${ED_EDGES.map(() => '<line class="ed-edge" />').join('')}</g>
+        <g stroke="#ff6a00" stroke-width="1.5" stroke-linecap="round" fill="none">${ED_EDGES.map(() => '<line class="ed-edge" />').join('')}</g>
       </svg>
       <button type="button" id="static-enter-label">ENTER</button>
     </div>`;
@@ -111,7 +111,7 @@ function overlayHtml() {
       <p class="overview">${overviewHtml(lang)}</p>
       <button type="button" class="how-to-link" id="welcome-how-to" data-i18n-html="welcome.howTo">${t('welcome.howTo', lang)}</button>
       <div class="rhombiverse-link">
-        <img src="./assets/rhombiverse-favicon-64.png" alt="" width="28" height="28" />
+        <img src="./assets/rhombiverse-icon.svg" alt="" width="28" height="28" />
         <a href="https://rhombiverse.vercel.app" target="_blank" rel="noopener" data-i18n-html="welcome.rhombiverseLink">${t('welcome.rhombiverseLink', lang)}</a>
       </div>
       ${logoHtml()}

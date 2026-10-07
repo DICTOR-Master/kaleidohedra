@@ -19,8 +19,8 @@ const STORAGE_KEY = 'rhombiverse-nets-world';
 const L = 5; // edge length; five cells an edge, as in Construct
 const R = 0.055;
 const PAD = 0.004;
-const CYAN = 0x22c3e6;
-const NEXT = 0xf59e0b; // the orange "tap here"
+const CYAN = 0xff6a00; // built: Kaleidohedra's orange
+const NEXT = 0x22c3e6; // "tap here": cyan, against the orange
 const FOLD_SECONDS = 1.6;
 const lang = () => getSettings().language;
 

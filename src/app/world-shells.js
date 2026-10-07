@@ -25,8 +25,8 @@ import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 
 const STORAGE_KEY = 'rhombiverse-shells-world';
-const FIRST_COLOR = 0x00e5ff;
-const SLOT_COLOR = 0x9de0ff;
+const FIRST_COLOR = 0xff6a00;
+const SLOT_COLOR = 0xff9a52;
 const EDGE_COLOR = 0x0b1220;
 const TARGET_COLOR = 0xffc857;
 // The largest hull + Shell will build (with the fused skin, frame rate

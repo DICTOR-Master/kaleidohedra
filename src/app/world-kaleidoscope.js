@@ -41,10 +41,10 @@ import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 
 const STORAGE_KEY = 'rhombiverse-kaleidoscope-world';
-const FIRST_COLOR = 0x00e5ff;
+const FIRST_COLOR = 0xff6a00;
 const OUTLINE_COLOR = 0x05070c;
-const GUIDE_COLOR = 0x9de0ff;
-const GHOST_COLOR = 0x9de0ff;
+const GUIDE_COLOR = 0xff9a52;
+const GHOST_COLOR = 0xff9a52;
 const OUTLINE_WIDTH = 0.035; // edge lengths
 const SETTLE_MS = 700;
 const SPIN_PER_SEC = 0.25; // radians

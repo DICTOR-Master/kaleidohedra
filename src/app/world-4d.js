@@ -43,8 +43,8 @@ const W_LIMIT = 3;
 const ANGLE_DETENTS = [-45 * DEG, 0, 45 * DEG];
 const ANGLE_SNAP = 3 * DEG;
 const W_SNAP = 0.06;
-const FIRST_COLOR = 0x00e5ff;
-const SLOT_COLOR = 0x9de0ff;
+const FIRST_COLOR = 0xff6a00;
+const SLOT_COLOR = 0xff9a52;
 
 // First placement per kind: the cell whose slice shows at the rest
 // position (w = 0): a tesseract on the origin (its slice is the unit
@@ -199,7 +199,7 @@ export function createWorld4D({ scene, materialColor, getMaterial, onChange = ()
     pickTargets.length = 0;
   }
   const edgeMaterial = new THREE.LineBasicMaterial({ color: 0x0b0b12 });
-  const skeletonEdgeMaterial = new THREE.LineBasicMaterial({ color: 0x9de0ff });
+  const skeletonEdgeMaterial = new THREE.LineBasicMaterial({ color: 0xff9a52 });
   const toVec3 = (pts) => pts.map(([x, y, z]) => new THREE.Vector3(x, y, z));
 
   function addSolid(pts, { color, opacity = 1, userData, outline = true, pickable = true, lineMaterial = edgeMaterial }) {
