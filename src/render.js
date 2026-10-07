@@ -156,14 +156,15 @@ const qcWorlds = new Map();
 let shellsWorld = null;
 let goldenWorld = null;
 let roofFoldWorld = null;
+let roofFoldV2World = null;
 let targetsWorld = null;
 let kaleidoWorld = null;
 let netsWorld = null;
 let signalWorld = null;
 let constructWorld = null;
 let own3D = null;
-const OWN_WORLD_DIMENSION = { shells: '3D', golden: '3D', roofFold: '3D', targets: '3D', kaleido: '2D', nets: '2D', signal: '1D', construct: '1D' };
-const own3DWorld = () => ({ shells: shellsWorld, golden: goldenWorld, roofFold: roofFoldWorld, targets: targetsWorld, kaleido: kaleidoWorld, nets: netsWorld, signal: signalWorld, construct: constructWorld })[own3D] ?? null;
+const OWN_WORLD_DIMENSION = { shells: '3D', golden: '3D', roofFold: '3D', roofFoldV2: '3D', targets: '3D', kaleido: '2D', nets: '2D', signal: '1D', construct: '1D' };
+const own3DWorld = () => ({ shells: shellsWorld, golden: goldenWorld, roofFold: roofFoldWorld, roofFoldV2: roofFoldV2World, targets: targetsWorld, kaleido: kaleidoWorld, nets: netsWorld, signal: signalWorld, construct: constructWorld })[own3D] ?? null;
 const own3DActive = () => !!own3DWorld() && activeDimension === OWN_WORLD_DIMENSION[own3D];
 // 4D, 5D, 6D and the own 3D worlds each own their scene, taps, Lattice View and Skeleton.
 const isOwnWorldDimension = () => activeDimension === '4D' || qcWorlds.has(activeDimension) || own3DActive();
@@ -2061,7 +2062,7 @@ async function init() {
   // this bottom-row slot whenever no attach toggle needs it.
   let paintOn = false;
   // 1D has no colours to paint (Signal is cyan, Construct shows each axis).
-  const paintAvailable = () => !!activeDimension && activeDimension !== '1D' && !(own3DActive() && ['shells', 'golden', 'roofFold', 'targets', 'nets'].includes(own3D));
+  const paintAvailable = () => !!activeDimension && activeDimension !== '1D' && !(own3DActive() && ['shells', 'golden', 'roofFold', 'roofFoldV2', 'targets', 'nets'].includes(own3D));
   const attachNeeded = () => (activeDimension === '4D' ? ['cell24', 'cell16', ...A4_CYCLE] : activeDimension !== '2D' && !isOwnWorldDimension() ? ['rhombohedra', 'pyrochlore'] : []).includes(attachPiece());
   const paintInSlot = () => paintAvailable() && !attachNeeded();
   function setPaint(on) {
@@ -2691,6 +2692,7 @@ async function init() {
     reg('worldshells', '3D', () => shellsWorld.snapshot(), (j) => shellsWorld.restore(j));
     reg('worldgolden', '3D', () => goldenWorld.snapshot(), (j) => goldenWorld.restore(j));
     reg('worldrooffold', '3D', () => roofFoldWorld.snapshot(), (j) => roofFoldWorld.restore(j));
+    reg('worldrooffoldv2', '3D', () => roofFoldV2World.snapshot(), (j) => roofFoldV2World.restore(j));
     reg('worldkaleido', '2D', () => kaleidoWorld.snapshot(), (j) => kaleidoWorld.restore(j));
     reg('worldnets', '2D', () => netsWorld.snapshot(), (j) => netsWorld.restore(j));
     reg('world1dsignal', '1D', () => signalWorld.snapshot(), (j) => signalWorld.restore(j));
@@ -2937,11 +2939,12 @@ async function init() {
     shellsWorld?.setActive(own3DActive() && own3D === 'shells');
     goldenWorld?.setActive(own3DActive() && own3D === 'golden');
     roofFoldWorld?.setActive(own3DActive() && own3D === 'roofFold');
+    roofFoldV2World?.setActive(own3DActive() && own3D === 'roofFoldV2');
     targetsWorld?.setActive(own3DActive() && own3D === 'targets');
     // Icosahedral/Dodecahedral Transitions and Targets stay exact: no shear panel while they're on
     // (shearing would break the icosahedra, and change the targets' angles).
     const shearPanel = document.getElementById('kaleido-panel');
-    if (shearPanel) shearPanel.hidden = own3DActive() && (own3D === 'roofFold' || own3D === 'targets');
+    if (shearPanel) shearPanel.hidden = own3DActive() && (own3D === 'roofFold' || own3D === 'roofFoldV2' || own3D === 'targets');
     kaleidoWorld?.setActive(own3DActive() && own3D === 'kaleido');
     netsWorld?.setActive(own3DActive() && own3D === 'nets');
     signalWorld?.setActive(own3DActive() && own3D === 'signal');
@@ -3159,6 +3162,7 @@ async function init() {
     shellsWorld?.setSkeleton(worldViewMode === 'skeleton');
     goldenWorld?.setSkeleton(worldViewMode === 'skeleton');
     roofFoldWorld?.setSkeleton(worldViewMode === 'skeleton');
+    roofFoldV2World?.setSkeleton(worldViewMode === 'skeleton');
     targetsWorld?.setSkeleton(worldViewMode === 'skeleton');
     // Translucent too, at the same opacity as the 3D worlds.
     world4d?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
@@ -3166,6 +3170,7 @@ async function init() {
     shellsWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     goldenWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     roofFoldWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
+    roofFoldV2World?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     targetsWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     document.getElementById('world-view-toggle')?.classList.toggle('active', worldViewMode !== 'color');
   }
@@ -3696,7 +3701,7 @@ async function init() {
         // 2026-08-29 -- X-Ray stays reachable via the corner HUD wheel's
         // own #xray-toggle face and the Lab panel, so no wheel face
         // routes to it here any more.)
-        const OWN_WORLD_ACTIONS = { 'tool:shellsWorld': 'shells', 'tool:goldenWorld': 'golden', 'tool:roofFoldWorld': 'roofFold', 'tool:targetsWorld': 'targets', 'tool:kaleidoWorld': 'kaleido', 'tool:netsWorld': 'nets', 'tool:signalWorld': 'signal', 'tool:constructWorld': 'construct' };
+        const OWN_WORLD_ACTIONS = { 'tool:shellsWorld': 'shells', 'tool:goldenWorld': 'golden', 'tool:roofFoldWorld': 'roofFold', 'tool:roofFoldV2World': 'roofFoldV2', 'tool:targetsWorld': 'targets', 'tool:kaleidoWorld': 'kaleido', 'tool:netsWorld': 'nets', 'tool:signalWorld': 'signal', 'tool:constructWorld': 'construct' };
         // Construct's families: tool:constructWorld:<family> (square, kagome, rd).
         if (action?.startsWith('tool:constructWorld:')) {
           constructWorld?.setFamily(action.slice('tool:constructWorld:'.length));
@@ -3707,7 +3712,7 @@ async function init() {
           wheel3D.close();
           applyDimensionVisibility();
           updateQuickSelect();
-          showHudPrompt({ shells: 'Shells', golden: 'Golden Rhombohedra', roofFold: 'IDT', targets: 'Targets', kaleido: 'Kaleidoscope', nets: 'Nets', signal: 'Signal', construct: 'Construct' }[own3D], 2500);
+          showHudPrompt({ shells: 'Shells', golden: 'Golden Rhombohedra', roofFold: 'IDT', roofFoldV2: 'Euclid–Kepler–Pacioli Cell Network (v2)', targets: 'Targets', kaleido: 'Kaleidoscope', nets: 'Nets', signal: 'Signal', construct: 'Construct' }[own3D], 2500);
           return;
         }
         if (own3D && (action?.startsWith('tool:pieceType:') || action === 'tool:cuboctaBuild')) {
@@ -4032,7 +4037,7 @@ async function init() {
       const piece = action.replace('tool:pieceType:', '');
       if (action === 'tool:cuboctaBuild') return cuboctaGeometry;
       if (action === 'tool:shellsWorld') return wizardPieceGeometry('tool:pieceType:rd');
-      if (action === 'tool:roofFoldWorld') return convex(roofFoldSolids().dodeca.faces.flat());
+      if (action === 'tool:roofFoldWorld' || action === 'tool:roofFoldV2World') return convex(roofFoldSolids().dodeca.faces.flat());
       if (action === 'tool:targetsWorld') return convex(targetZonohedron(EMBLEM_DIRECTIONS).flatMap((f) => f.polygon));
       if (action === 'tool:goldenWorld') {
         const e6 = qcEngines['6d'];
@@ -4707,6 +4712,7 @@ async function init() {
     shellsWorld?.setLatticeView(latticeQuickViewMode !== 'off');
     goldenWorld?.setLatticeView(latticeQuickViewMode !== 'off');
     roofFoldWorld?.setLatticeView(latticeQuickViewMode !== 'off');
+    roofFoldV2World?.setLatticeView(latticeQuickViewMode !== 'off');
     kaleidoWorld?.setLatticeView(latticeQuickViewMode !== 'off');
     showHudPrompt(isOwnWorldDimension() ? `Lattice View: ${latticeQuickViewMode === 'off' ? 'Off.' : `every open slot one step past your ${activeDimension} build.`}` : `Lattice View: ${LATTICE_QUICK_VIEW_LABELS[latticeQuickViewMode]}`, 4500);
     await rebuildLatticeQuickView(); // also syncs the toggle buttons' own 'active' state -- see syncLatticeQuickViewActiveState
@@ -4878,7 +4884,7 @@ async function init() {
       if (qcWorlds.has(activeDimension)) {
         quickShapeEl.innerHTML = iconFrame(MARKS.pieceRhombohedron, { title: t('cat.button', getSettings().language) });
       } else if (own3DActive()) {
-        quickShapeEl.innerHTML = iconFrame(({ shells: MARKS.pieceRD, roofFold: MARKS.pieceDodeca })[own3D] ?? MARKS.pieceRhombohedron, { title: ({ shells: 'Shells', roofFold: 'IDT', targets: 'Targets' })[own3D] ?? 'Golden Rhombohedra' });
+        quickShapeEl.innerHTML = iconFrame(({ shells: MARKS.pieceRD, roofFold: MARKS.pieceDodeca, roofFoldV2: MARKS.pieceDodeca })[own3D] ?? MARKS.pieceRhombohedron, { title: ({ shells: 'Shells', roofFold: 'IDT', roofFoldV2: 'Euclid–Kepler–Pacioli Cell Network (v2)', targets: 'Targets' })[own3D] ?? 'Golden Rhombohedra' });
       } else if (currentMode === 'cubocta') {
         quickShapeEl.innerHTML = iconFrame(MARKS.cuboctahedron, { title: 'Shape' });
       } else {
@@ -5276,6 +5282,14 @@ async function init() {
     showHudPrompt,
     fitView: fitCameraTo,
     onChange: () => { if (historyRestorers.has('worldrooffold')) recordHistory('worldrooffold', roofFoldWorld.snapshot()); },
+  });
+  roofFoldV2World = createRoofFoldWorld({
+    // Added to the real scene, not the shear group.
+    scene: { add: (o) => THREE.Object3D.prototype.add.call(scene, o) },
+    showHudPrompt,
+    fitView: fitCameraTo,
+    variant: 'v2',
+    onChange: () => { if (historyRestorers.has('worldrooffoldv2')) recordHistory('worldrooffoldv2', roofFoldV2World.snapshot()); },
   });
   targetsWorld = createTargetsWorld({
     // Added to the real scene, not the shear group.
@@ -5992,6 +6006,7 @@ async function init() {
     shellsWorld?.clear();
     goldenWorld?.clear();
     roofFoldWorld?.clear();
+    roofFoldV2World?.clear();
     kaleidoWorld?.clear();
     netsWorld?.clear();
     signalWorld?.clear();

@@ -364,6 +364,9 @@ export const LATTICES_3D = [
   { key: 'roofFold', label: 'Icosahedral/Dodecahedral Transitions', pieces: [
     { label: 'Icosahedral/Dodecahedral Transitions', action: 'tool:roofFoldWorld' },
   ] },
+  { key: 'roofFoldV2', label: 'Euclid–Kepler–Pacioli Cell Network (v2)', pieces: [
+    { label: 'Euclid–Kepler–Pacioli Cell Network (v2)', action: 'tool:roofFoldV2World' },
+  ] },
   { key: 'targets', label: 'Targets', pieces: [
     { label: 'Targets', action: 'tool:targetsWorld' },
   ] },
