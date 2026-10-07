@@ -478,3 +478,21 @@ export function flatNotchedWindows() {
   const vol = faces.reduce((v, f) => { for (let i = 1; i + 1 < f.length; i++) v += dot(f[0], cross(f[i], f[i + 1])) / 6; return v; }, 0);
   return vol < 0 ? faces.map((f) => [...f].reverse()) : faces;
 }
+
+// The windows morphing into the icosidodecahedron (study of #10, 2026-10-08): each rhombus pushed
+// out along its normal by s T and slid in its own plane by 2 s T, keeping size, 72 degree shape and
+// orientation, T = 1 / (phi sqrt(2 + phi)). At s = 1 its 48 corners meet in pairs at the 30 vertices
+// of an icosidodecahedron (radius 2, edge 2/phi), each rhombus lying in one of its regular pentagons
+// (a pentagon is a 72 degree rhombus plus a golden triangle).
+export const ICOSIDODECA_PUSH = 1 / (PHI * Math.sqrt(2 + PHI));
+export function morphedWindowRhombi(s) {
+  const t = s * ICOSIDODECA_PUSH;
+  return ekpWindowRhombi().map((R) => {
+    const n = unit(cross(sub(R[1], R[0]), sub(R[2], R[0])));
+    const c = centroid(R);
+    // The inner corner: the one nearest the centre of the cell.
+    const X = R.reduce((best, p) => (Math.hypot(...p) < Math.hypot(...best) ? p : best));
+    const slide = unit(sub(X, c));
+    return R.map((p) => add(add(p, n.map((x) => x * t)), slide.map((x) => x * 2 * t)));
+  });
+}

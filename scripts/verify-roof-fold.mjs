@@ -27,7 +27,7 @@
 //   - two extractions that don't overlap: even-cell dodecahedra (the optimal
 //     lattice packing, (5+sqrt5)/8) and even-cell stars with odd-cell
 //     icosahedra, sharing only corners.
-import { PHI, ROOF_FOLD_PERIOD as P, ROOF_FOLD_KINDS, roofFoldCell, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, siteParity, ROOF_FOLD_PATTERNS, goldenRectangles, ekpWindowsSolid, stretchedDodeca, expandedWindows, EXPANDED_WINDOWS_GOLDEN, flatNotchedWindows } from '../src/geometry-extensions/roof-fold.js';
+import { PHI, ROOF_FOLD_PERIOD as P, ROOF_FOLD_KINDS, roofFoldCell, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, siteParity, ROOF_FOLD_PATTERNS, goldenRectangles, ekpWindowsSolid, stretchedDodeca, expandedWindows, EXPANDED_WINDOWS_GOLDEN, flatNotchedWindows, morphedWindowRhombi, convexHullFaces } from '../src/geometry-extensions/roof-fold.js';
 
 let failures = 0;
 function check(label, condition) {
@@ -652,6 +652,24 @@ check(`stars on even cells and icosahedra on odd cells share only corners: ${pai
   const vol = F.reduce((v, f) => { for (let i = 1; i + 1 < f.length; i++) v += dot(f[0], cross(f[i], f[i + 1])) / 6; return v; }, 0);
   check(`windows with flat notches: ${F.length} faces (12 thick rhombi + ${golden.length} flat golden rhombi + 48 triangles), closed, volume ${vol.toFixed(9)} = V - 8/phi^4`,
     F.length === 66 && F.filter((f) => f.length === 3).length === 48 && golden.length === 6 && goldenOk && planar && closed && Math.abs(vol - (V.dodeca - 8 / PHI ** 4)) < 1e-9);
+}
+
+// (e) The windows into the icosidodecahedron (a study of #10): each rhombus pushed out by T and slid
+// 2T toward its inner corner, T = 1/(phi sqrt(2 + phi)), size and shape kept. Their hull is the
+// icosidodecahedron: 12 regular pentagons, 20 equilateral triangles, edge 2/phi, vertices at
+// radius 2; each rhombus lies in a pentagon with 3 corners on its vertices.
+{
+  const R = morphedWindowRhombi(1);
+  const H = convexHullFaces(R.flat());
+  const sides = (f) => f.map((p, i) => norm(sub(p, f[(i + 1) % f.length])));
+  const pents = H.filter((f) => f.length === 5), tris = H.filter((f) => f.length === 3);
+  const regular = H.every((f) => sides(f).every((x) => Math.abs(x - 2 / PHI) < 1e-9)) && pents.every((f) => f.every((p, i) => {
+    const a = sub(f[(i + 4) % 5], p), b = sub(f[(i + 1) % 5], p); return Math.abs(Math.acos(dot(a, b) / (norm(a) * norm(b))) * 180 / Math.PI - 108) < 1e-6; }));
+  const verts = H.flat();
+  const sphere = verts.every((p) => Math.abs(norm(p) - 2) < 1e-9);
+  const inPent = R.every((r) => pents.some((f) => { const n = cross(sub(f[1], f[0]), sub(f[2], f[0])); return r.every((p) => Math.abs(dot(n, sub(p, f[0]))) < 1e-9) && r.filter((p) => f.some((q) => norm(sub(p, q)) < 1e-9)).length === 3; }));
+  check(`windows into the icosidodecahedron: hull ${pents.length} regular pentagons + ${tris.length} equilateral triangles, edge 2/phi, vertices at radius 2; every rhombus lies in a pentagon, 3 corners on its vertices`,
+    pents.length === 12 && tris.length === 20 && regular && sphere && inPent);
 }
 
 console.log(failures === 0 ? '\nAll checks passed (0 failures).' : `\n${failures} check(s) FAILED.`);
