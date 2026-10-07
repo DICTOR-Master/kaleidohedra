@@ -669,5 +669,41 @@ check(`stars on even cells and icosahedra on odd cells share only corners: ${pai
   check('windows into the rhombic dodecahedron: starts at the windows, keeps each cube edge, passes through 12 squares, ends exactly as the RD (12 rhombi of edge sqrt3)', start && rd && squares && edgeKept);
 }
 
+// (f) Windows and stellas, checkerboard (a study of #10; direct question, 2026-10-08: "a male
+// counterpart to window"): windows in the even cells, a stella octangula in the odd ones, fill
+// space. Each odd cube must be exactly its stella plus its six even neighbours' roofs with the
+// stella carved out, no gap or overlap: checked on a 40^3 grid of points in the cube, and by
+// volume (6 carved roofs = cube - stella = 4; windows 12 + stella 4 = two cubes).
+{
+  const cr = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+  const halfSpaces = (V) => {
+    const H = [];
+    for (let i = 0; i < V.length; i++) for (let j = i + 1; j < V.length; j++) for (let k = j + 1; k < V.length; k++) {
+      const n0 = cr(sub(V[j], V[i]), sub(V[k], V[i])), L = norm(n0);
+      if (L < 1e-9) continue;
+      const n = n0.map((x) => x / L), d = dot(n, V[i]), side = V.map((q) => dot(n, q) - d);
+      if (side.every((x) => x <= 1e-9)) H.push([n, d]); else if (side.every((x) => x >= -1e-9)) H.push([n.map((x) => -x), -d]);
+    }
+    return H;
+  };
+  const inside = (H, q) => H.every(([n, d]) => dot(n, q) <= d);
+  const tets = [[[1, 1, 1], [1, -1, -1], [-1, 1, -1], [-1, -1, 1]], [[-1, -1, -1], [-1, 1, 1], [1, -1, 1], [1, 1, -1]]].map(halfSpaces);
+  const dv = [];
+  for (const f of roofFoldSolids().dodeca.faces) for (const q of f) if (!dv.some((r) => norm(sub(q, r)) < 1e-9)) dv.push(q);
+  const roofs = [];
+  for (let a = 0; a < 3; a++) for (const sg of [1, -1]) roofs.push(halfSpaces(dv.filter((q) => sg * q[a] >= 1 - 1e-9).map((q) => q.map((c, i) => (i === a ? c - 2 * sg : c)))));
+  const N = 40;
+  let bad = 0, inStella = 0;
+  for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) for (let k = 0; k < N; k++) {
+    const q = [i, j, k].map((t, ax) => -1 + (2 * (t + 0.5)) / N + 1e-7 * (ax + 1));
+    const st = tets.some((H) => inside(H, q));
+    const r = roofs.filter((H) => inside(H, q)).length;
+    if (st) inStella++;
+    if (!st && r !== 1) bad++;
+  }
+  const a = 2 / PHI, dodecaVol = ((15 + 7 * Math.sqrt(5)) / 4) * a ** 3, roof = (dodecaVol - 8) / 6, carved = (dodecaVol - 12) / 6;
+  check(`windows and stellas, checkerboard: each odd cube is its stella + six carved roofs (${N ** 3} points, ${bad} uncovered or doubled); 6 x ${(roof - carved).toFixed(4)} = cube - stella = 4`, bad === 0 && Math.abs(6 * (roof - carved) - 4) < 1e-12 && Math.abs(inStella / N ** 3 - 0.5) < 0.01);
+}
+
 console.log(failures === 0 ? '\nAll checks passed (0 failures).' : `\n${failures} check(s) FAILED.`);
 process.exit(failures === 0 ? 0 : 1);

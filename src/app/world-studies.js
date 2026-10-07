@@ -16,7 +16,7 @@ import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 
 const STORAGE_KEY = 'kaleidohedra-studies';
-const STUDIES = ['windows', 'windowsStellas', 'expanded', 'icosido', 'rdMorph', 'stretch'];
+const STUDIES = ['windows', 'windowsStellas', 'checker', 'expanded', 'icosido', 'rdMorph', 'stretch'];
 const C = ROOF_FOLD_COLOURS;
 const GHOST_COLOR = 0xff9a52;
 const EDGE_COLOR = 0x0b1220;
@@ -26,6 +26,7 @@ const SLIDERS = {
   expanded: { key: 'push', max: 1.6, snaps: [EXPANDED_WINDOWS_GOLDEN], label: 'studies.push' }, // the golden rhombi
   icosido: { key: 'morph', max: 1, snaps: [0, 1], label: 'studies.morph' },
   rdMorph: { key: 'rdMorph', max: 1, snaps: [0, RD_MORPH_SQUARE, 1], label: 'studies.morph' }, // squares on the way
+  checker: { key: 'apart', max: 1, snaps: [0], label: 'studies.apart' }, // packed tight
 };
 const lang = () => getSettings().language;
 const sideOf = (f) => Math.hypot(...f[0].map((c, k) => c - f[1][k]));
@@ -36,7 +37,7 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
   scene.add(group);
   const DODECA = roofFoldSolids().dodeca;
 
-  const view = { study: 'windows', stretch: SLIDERS.stretch.snaps[0], push: EXPANDED_WINDOWS_GOLDEN, morph: 1, rdMorph: 1, studyShear: 'copies' };
+  const view = { study: 'windows', stretch: SLIDERS.stretch.snaps[0], push: EXPANDED_WINDOWS_GOLDEN, morph: 1, rdMorph: 1, apart: 0.35, studyShear: 'copies' };
   try {
     const data = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (STUDIES.includes(data?.study)) view.study = data.study;
@@ -84,6 +85,27 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
     const mid = [0, 1, 2].map((a) => centres.reduce((t0, c) => t0 + c[a], 0) / centres.length);
     return centres.map((c) => ({ offset: c.map((v, a) => v - mid[a]), map: (p) => p }));
   }
+  // Windows and stellas in a checkerboard (direct question, 2026-10-08: "a male counterpart
+  // to window"): the stella octangula is it. Even cells hold the windows, odd cells a stella;
+  // each odd cube is its stella plus its six neighbours' carved roofs, exactly (12 + 4 = two
+  // cubes). Pulled `apart` to see them mate; the Shear moves the cell centres (copies) or
+  // bends the whole packing (solid).
+  const STELLA = roofFoldSolids().stella.faces;
+  function checkerPlacements() {
+    const k = 1 + view.apart;
+    const cells = BLOCK.map((s) => ({ s, c: s.map((x) => 2 * x * k) }));
+    const mid = [0, 1, 2].map((a) => cells.reduce((t0, { c }) => t0 + shearMap(c)[a], 0) / cells.length * WS);
+    return cells.map(({ s, c }) => {
+      const even = (s[0] + s[1] + s[2]) % 2 === 0;
+      if (copies()) return { even, offset: shearMap(c).map((v, a) => v * WS - mid[a]), map: (p) => p };
+      return { even, offset: mid.map((m) => -m), map: (p) => shearMap(p.map((x, a) => x + c[a])) };
+    });
+  }
+  function checkerFaces(even) {
+    if (!even) return STELLA.map((f) => [f, C.stella]);
+    const { rhombi, walls } = ekpWindowsSolid();
+    return [...rhombi.map((f) => [f, C.dodeca]), ...walls.map((f) => [f, C.stella])];
+  }
   // The faces a study shows, [polygon, colour] in cell units.
   function studyFaces() {
     const out = [];
@@ -111,7 +133,9 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
     if (!active) return;
     const where = placements();
     const polys = [];
-    for (const { offset, map } of where) for (const [f, hex] of studyFaces()) polys.push({ polygon: f.map(map), offset, colour: new THREE.Color(hex) });
+    if (view.study === 'checker') {
+      for (const { even, offset, map } of checkerPlacements()) for (const [f, hex] of checkerFaces(even)) polys.push({ polygon: f.map(map), offset, colour: new THREE.Color(hex) });
+    } else for (const { offset, map } of where) for (const [f, hex] of studyFaces()) polys.push({ polygon: f.map(map), offset, colour: new THREE.Color(hex) });
     group.add(...meshOf(polys, solidMaterial));
     if (view.study === 'icosido' || view.study === 'rdMorph') {
       // The rhombi: inlaid where they lie on the hull; mid-morph they're inside it, so their
@@ -140,6 +164,7 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
     renderPanel();
   }
   function fit() {
+    if (view.study === 'checker') { fitView([0, 0, 0], (Math.sqrt(3) * (1 + view.apart) + 1.8) * WS * 1.15); return; }
     const r = view.study === 'windowsStellas' ? 3.4 : view.study === 'stretch' ? view.stretch / 2 + 1.8 : view.study === 'expanded' ? 1.9 + view.push : view.study === 'icosido' || view.study === 'rdMorph' ? 2.1 : 1.8;
     const spread = copies() ? Math.max(...placements().map(({ offset }) => Math.hypot(...offset))) : 0;
     fitView([0, 0, 0], r * WS + spread);
