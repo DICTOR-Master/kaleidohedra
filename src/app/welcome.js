@@ -29,9 +29,8 @@ const ED_EDGES = (() => {
 })();
 const LOGO_SCALE = 30;
 const LOGO_TILT = 0.08;
-// Sway: back and forth about the vertical, never end-on, so it always lies horizontal.
-const SWAY = 0.38; // radians each way (about 22 degrees)
-const SWAY_SPEED = 0.75; // radians of phase per second (one sway in about 8 seconds)
+// Revolves about the vertical, like Rhombiverse's logo (direct request: it rocked, it should turn).
+const SPIN_SPEED = 0.48; // radians per second (about 13 s a turn)
 const rotX = ([x, y, z], a) => [x, y * Math.cos(a) - z * Math.sin(a), y * Math.sin(a) + z * Math.cos(a)];
 const rotY = ([x, y, z], a) => [x * Math.cos(a) + z * Math.sin(a), y, -x * Math.sin(a) + z * Math.cos(a)];
 // As in the logo (direct request): lying level, its long axis (z in the wheel
@@ -39,8 +38,8 @@ const rotY = ([x, y, z], a) => [x * Math.cos(a) + z * Math.sin(a), y, -x * Math.
 // the view is symmetric. (The logo also shows a square face-on, which the true
 // shape can't do at the same time: its squares sit at 45 degrees to the long
 // axis.) The frame comes from the geometry: toward the viewer = that hexagon's
-// centre direction, screen right = the long axis, up = right x toward. It sways
-// gently about the vertical, never turning end-on.
+// centre direction, screen right = the long axis, up = right x toward. It turns
+// about the vertical from there.
 const dot3 = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
 const unit3 = (a) => { const l = Math.hypot(...a); return a.map((c) => c / l); };
 const VIEW = (() => {
@@ -77,12 +76,12 @@ function startLogoSpin() {
   const svg = document.getElementById('welcome-logo-svg');
   if (!svg) return () => {};
   const still = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-  let phase = 0, lastT = null, raf = null;
+  let angle = 0, lastT = null, raf = null;
   const frame = (t) => {
     const dt = lastT === null ? 0 : Math.min(0.1, (t - lastT) / 1000);
     lastT = t;
-    phase += SWAY_SPEED * dt;
-    drawLogo(svg, SWAY * Math.sin(phase));
+    angle += SPIN_SPEED * dt;
+    drawLogo(svg, angle);
     raf = requestAnimationFrame(frame);
   };
   drawLogo(svg, 0);

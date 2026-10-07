@@ -203,7 +203,7 @@ export function createHudWheel3D(renderer, { size = 144, margin = 12 } = {}) {
   // its long axis lies left to right on screen; a vertical drag rolls it
   // about that axle, a sideways drag swings it a little, never end-on.
   const BASE = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), -Math.PI / 2);
-  const SWING = 0.38; // radians each way, as the welcome symbol sways
+  const SWING = 0.38; // radians each way
   let roll = 0.35, swing = 0;
   function applyTurn() {
     group.quaternion.setFromAxisAngle(new THREE.Vector3(0, 1, 0), swing)
