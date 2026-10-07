@@ -35,6 +35,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 9 | Rhombic dodecahedron sub-family: 24 sheared-FCC cells from TARGETS.md, each built from four edge directions with volume matching the table | Kaleidohedra (predicted); verified by building in Polyhedraverse (9599e14) | yes (by construction) | **candidates** — combinatorial type is Fedorov's rhombic dodecahedron (Grünbaum 2010, Fig. 2(c)); none is in Grünbaum's monohedral enumeration (Figs. 3, 10: only Kepler's K and Bilinski's B), and the paper doesn't list mixed-angle cells like these | 2026-10-06 |
 | 10 | EKP windows: the dodecahedron with its six face-neighbours' stella octangulas carved out shows exactly 12 Penrose thick rhombi (72°/108°, edge 2/φ), one on each cube edge, at the dodecahedron's own face angles; 48 triangles wall the cut-away; volume exactly 12 | DICTO (spotted 12 diamond windows between six stellas and the dodecahedron) | yes | **not found** — candidate (web-level search) | 2026-10-08 (fb9de6b) |
 | 10a | Study of #10, the windows made convex: the 12 window rhombi pushed straight out by √(7 − 4φ), keeping size and orientation, hull into a 74-face solid with 12 Penrose thick rhombi, 6 golden rhombi on the cube faces, 8 equilateral triangles and 48 triangles; three edge lengths; has a flat net (recorded as #12 in Zenodo v2026.10.08-convex) | DICTO (asked to make the windows convex by expanding from the centre) | yes | study of #10, not a separate claim | 2026-10-08 |
+| 10b | Study of #10, windows and stellas in a checkerboard: the windows (even cells) and stella octangulas (odd cells) fill space exactly, each odd cube being its stella plus its six neighbours' carved roofs; volumes 12 + 4 = two cubes | DICTO (asked for "a male counterpart to window" fitting the faces the stellas leave) | yes | study of #10, not a separate claim | 2026-10-08 (ac203df) |
 | 11 | Dodecahedron stretched along a cube-face axis: 8 regular pentagons, 4 hexagons (108° × 4, 144° × 2), 2 rectangles at any stretch; squares at one edge (2/φ); at the lattice spacing 2 it is the hull of two EKP face-neighbour dodecahedra | DICTO (the "pentagon caps and hexagons" hunch, from overlapped dodecahedra) | yes | **not found** — candidate (web-level search; a simple construction, so likely to appear somewhere, e.g. crystal habits) | 2026-10-08 (fb9de6b) |
 
 ## 1. DICTO skewed rhombic dodecahedron
@@ -368,6 +369,33 @@ normal by t, keeping its size, angles and orientation, and take the convex hull.
   80-face case elsewhere) and `scripts/verify-nets.mjs` (the net), every push. Shown in the Studies world, Windows made convex, with a push slider that snaps at the golden point.
 - Status: a study of #10, not a separate claim (not found at web level, 2026-10-08).
 
+### 10b. Study: windows and stellas fill space (DICTO, 2026-10-08)
+
+DICTO's question: is there a "male counterpart to window", with stars pushing out to fit the faces
+the stella octangulas leave? There is, and it is the stella octangula itself.
+
+- Put the windows solid (#10) in every even cell of the cubic lattice (cell parity, x + y + z
+  even) and the cell's own stella octangula in every odd cell. Every neighbour of an even cell is
+  odd, so each windows solid keeps its whole cube, and its six roofs reach into six odd cubes.
+- Each odd cube is then exactly its stella octangula plus the six carved roofs reaching into it,
+  with **no gap and no overlap**: the six inward roofs never overlap one another (each roof's
+  trapezoid lies in the same plane as the next roof's triangle), and what each roof loses to the
+  stella is exactly what the windows carve away.
+- Exact volumes, cube edge 2: dodecahedron 14.472136, each roof 2φ/3 = 1.078689, each roof's carved
+  part 0.412023, so each roof keeps 2/3 and six of them fill 4 = cube − stella. The windows (12) and
+  the stella (4) make 16, two cubes.
+- So the windows tile space together with the stella octangula in the rock-salt arrangement: a
+  periodic packing whose even pieces carry 12 Penrose thick rhombi at their icosahedral orientation.
+- Prior art checked: Lalvani, US 4,723,382 (1988), the closest system found (polygons and polyhedra
+  filling space periodically or not), requires every edge to lie along the 15 icosahedral two-fold
+  axes. The windows' rhombi meet that (all 48 edges), but 96 of the windows' 144 wall edges and every
+  stella edge (the cube-face diagonals) do not; nor does it describe a cube, a stella octangula or
+  these windows.
+- Verified: `scripts/verify-roof-fold.mjs` §13(f): the volumes exactly, and a 40³ grid of points in
+  an odd cube, every one in exactly one piece (a 60³ grid, 216,000 points, was also checked by hand).
+  Shown in the Studies world, Windows and stellas, checkerboard, with an Apart slider.
+- Status: a study of #10, not a separate claim (not found at web level, 2026-10-08).
+
 ## 11. The stretched dodecahedron (DICTO, 2026-10-08)
 
 The hull of the dodecahedron and a copy moved s along a cube-face axis (one of its 2-fold axes,
@@ -408,6 +436,7 @@ rectangles, as version v2026.10.06-ekp, **DOI [10.5281/zenodo.23176568](https://
 Findings #10 and #11 are version v2026.10.08, **DOI [10.5281/zenodo.23220273](https://doi.org/10.5281/zenodo.23220273)**
 (published 2026-10-08 Japan time; Zenodo shows 2026-10-07, UTC).
 Study 10a (recorded there as #12) is version v2026.10.08-convex, **DOI [10.5281/zenodo.23220833](https://doi.org/10.5281/zenodo.23220833)**.
+Study 10b, and 10a under its new label, are version v2026.10.08-checkerboard.
 
 ## Sources
 
