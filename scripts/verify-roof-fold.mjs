@@ -27,7 +27,7 @@
 //   - two extractions that don't overlap: even-cell dodecahedra (the optimal
 //     lattice packing, (5+sqrt5)/8) and even-cell stars with odd-cell
 //     icosahedra, sharing only corners.
-import { PHI, ROOF_FOLD_PERIOD as P, ROOF_FOLD_KINDS, roofFoldCell, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, siteParity, ROOF_FOLD_PATTERNS, goldenRectangles, ekpWindowsSolid, stretchedDodeca, expandedWindows, EXPANDED_WINDOWS_GOLDEN } from '../src/geometry-extensions/roof-fold.js';
+import { PHI, ROOF_FOLD_PERIOD as P, ROOF_FOLD_KINDS, roofFoldCell, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, siteParity, ROOF_FOLD_PATTERNS, goldenRectangles, ekpWindowsSolid, stretchedDodeca, expandedWindows, EXPANDED_WINDOWS_GOLDEN, flatNotchedWindows } from '../src/geometry-extensions/roof-fold.js';
 
 let failures = 0;
 function check(label, condition) {
@@ -634,6 +634,24 @@ check(`stars on even cells and icosahedra on odd cells share only corners: ${pai
   check(`expanded windows at t = sqrt(7 - 4 phi) = ${t.toFixed(9)}: ${F.length} faces = 12 thick rhombi + 6 golden rhombi (ratio phi, on the cube faces) + 8 equilateral triangles + 48 triangles; edges 2/phi^2, 2/phi, 2t only; closed; 80 faces at other t`,
     F.length === 74 && thick.length === 12 && golden.length === 6 && goldenOk && equi.length === 8 && F.filter((f) => f.length === 3).length === 56
     && [...lengths].every((x) => S2.has(x)) && norm(vecArea) < 1e-9 && [0.3, 0.6, 1, 1.5].every((u) => expandedWindows(u).length === 80));
+}
+
+// (d) The windows with flat notches: the 12 rhombi kept in place, each notch closed by a flat golden
+// rhombus (edge sqrt(7 - 4 phi), diagonals 2/phi^2 and 2/phi) sunk to the windows' inner corners and
+// 8 triangles: 66 planar faces, closed and consistently wound, volume exactly V - 8/phi^4.
+{
+  const F = flatNotchedWindows();
+  const sides = (f) => f.map((p, i) => norm(sub(p, f[(i + 1) % f.length])));
+  const key = (p) => p.map((c) => c.toFixed(6)).join();
+  const E = new Map();
+  F.forEach((f) => f.forEach((p, j) => { const e = `${key(p)}>${key(f[(j + 1) % f.length])}`; E.set(e, (E.get(e) || 0) + 1); }));
+  const closed = [...E].every(([e, n]) => { const [a, b] = e.split('>'); return n === 1 && E.get(`${b}>${a}`) === 1; });
+  const planar = F.filter((f) => f.length === 4).every((f) => Math.abs(dot(cross(sub(f[1], f[0]), sub(f[2], f[0])), sub(f[3], f[0]))) < 1e-9);
+  const golden = F.filter((f) => f.length === 4 && sides(f).every((x) => Math.abs(x - Math.sqrt(7 - 4 * PHI)) < 1e-9));
+  const goldenOk = golden.every((f) => { const d1 = norm(sub(f[0], f[2])), d2 = norm(sub(f[1], f[3])); return Math.abs(Math.max(d1, d2) / Math.min(d1, d2) - PHI) < 1e-9; });
+  const vol = F.reduce((v, f) => { for (let i = 1; i + 1 < f.length; i++) v += dot(f[0], cross(f[i], f[i + 1])) / 6; return v; }, 0);
+  check(`windows with flat notches: ${F.length} faces (12 thick rhombi + ${golden.length} flat golden rhombi + 48 triangles), closed, volume ${vol.toFixed(9)} = V - 8/phi^4`,
+    F.length === 66 && F.filter((f) => f.length === 3).length === 48 && golden.length === 6 && goldenOk && planar && closed && Math.abs(vol - (V.dodeca - 8 / PHI ** 4)) < 1e-9);
 }
 
 console.log(failures === 0 ? '\nAll checks passed (0 failures).' : `\n${failures} check(s) FAILED.`);

@@ -197,7 +197,9 @@ export const SOLID_GROUPS = [{ id: 'voronoi', label: 'Voronoi cells' }, { id: 'p
 const solidOf = (id) => (typeof id === 'string' ? SOLIDS[id] : id);
 function solidScale(id, L) { return L / solidOf(id).make().edge; }
 function solidFaces(id, L) {
-  const { v, faces, edge } = solidOf(id).make();
+  // `wound`: the maker's faces already run counter-clockwise from outside
+  // (a dented solid, where "away from the centre" isn't always outward).
+  const { v, faces, edge, wound } = solidOf(id).make();
   const k = L / edge;
   // Outward from the solid's own centre, not the origin: the star's spike
   // sits out on an icosahedron face, the origin outside it.
@@ -210,7 +212,7 @@ function solidFaces(id, L) {
     // out of step, so a face's hinge was taken as the wrong side and that
     // side never drawn; direct report: "the RD net doesn't fully enclose
     // all sides").
-    const flip = dot(n, c) < 0;
+    const flip = !wound && dot(n, c) < 0;
     return { pts: flip ? [...pts].reverse() : pts, keys: flip ? [...f].reverse() : [...f] };
   });
 }

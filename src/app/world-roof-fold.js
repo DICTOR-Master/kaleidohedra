@@ -10,7 +10,7 @@
 // of the dodecahedra. Lives outside the shear
 // group: shearing would break the icosahedra.
 import * as THREE from 'three';
-import { ekpWindowsSolid, neighbourStellas, stretchedDodeca, expandedWindows, EXPANDED_WINDOWS_GOLDEN, PHI, ROOF_FOLD_KINDS, ROOF_FOLD_COLOURS, ROOF_FOLD_WORLD_SCALE as WS, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, ROOF_FOLD_PATTERNS, siteParity, turnPoint } from '../geometry-extensions/roof-fold.js';
+import { ekpWindowsSolid, neighbourStellas, stretchedDodeca, expandedWindows, flatNotchedWindows, EXPANDED_WINDOWS_GOLDEN, PHI, ROOF_FOLD_KINDS, ROOF_FOLD_COLOURS, ROOF_FOLD_WORLD_SCALE as WS, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, ROOF_FOLD_PATTERNS, siteParity, turnPoint } from '../geometry-extensions/roof-fold.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
@@ -18,7 +18,7 @@ import { addPanelMinimiser } from './panel-minimiser.js';
 const STORAGE_KEY = 'kaleidohedra-roof-fold-world';
 const VIEWS = ['built', 'starIco', 'dodecaStar', 'checker', 'merged'];
 // Studies of the cell (DICTO, 2026-10-08): shapes shown on their own, building paused.
-const STUDIES = ['off', 'windows', 'windowsStellas', 'expanded', 'stretch'];
+const STUDIES = ['off', 'windows', 'windowsStellas', 'notched', 'expanded', 'stretch'];
 const STRETCH_MAX = 2.6;
 const STRETCH_SNAPS = [2 / PHI, 2]; // one edge (squares), the lattice spacing
 // The expanded windows' push: snaps where the cube-face gaps flatten into golden rhombi.
@@ -241,6 +241,12 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     const faces = [];
     if (view.study === 'stretch') {
       for (const f of stretchedDodeca(view.stretch)) faces.push([f, f.length === 5 ? KIND_COLOR.dodeca : f.length === 6 ? KIND_COLOR.star : KIND_COLOR.cube]);
+    } else if (view.study === 'notched') {
+      // Windows gold, the sunk golden rhombi coral, the notch triangles purple.
+      for (const f of flatNotchedWindows()) {
+        const side = Math.hypot(...f[0].map((c, k) => c - f[1][k]));
+        faces.push([f, f.length === 3 ? KIND_COLOR.stella : Math.abs(side - 2 / PHI) < 1e-6 ? KIND_COLOR.dodeca : KIND_COLOR.star]);
+      }
     } else if (view.study === 'expanded') {
       // Thick rhombi gold as in the windows, golden rhombi coral, the cube-corner triangles grey,
       // the joining triangles the stellas' purple.
@@ -463,7 +469,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     studyNote.style.display = studying ? '' : 'none';
     studyOpts.style.display = studying ? '' : 'none';
     studyShearBtn.textContent = t(`roofFold.studyShear.${view.studyShear}`, L);
-    studyNote.textContent = studying ? t(view.study === 'stretch' ? 'roofFold.study.note.stretch' : view.study === 'expanded' ? 'roofFold.study.note.expanded' : 'roofFold.study.note.windows', L) : '';
+    studyNote.textContent = studying ? t(view.study === 'stretch' ? 'roofFold.study.note.stretch' : view.study === 'expanded' ? 'roofFold.study.note.expanded' : view.study === 'notched' ? 'roofFold.study.note.notched' : 'roofFold.study.note.windows', L) : '';
     if (studying) { patternRow.style.display = 'none'; return; }
     panel.querySelector('.rf-piece-label').textContent = t('hull.piece', L);
     panel.querySelector('.rf-view-label').textContent = t('roofFold.view', L);

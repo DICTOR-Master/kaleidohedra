@@ -421,3 +421,60 @@ export function expandedWindows(t) {
     return R.map((p) => add(p, n.map((c) => c * t)));
   }));
 }
+
+// The windows with flat notches (DICTO, 2026-10-08): the 12 window rhombi kept exactly in place,
+// and each cube face's notch closed by a flat golden rhombus sunk to the windows' inner corners
+// (x = 1 + 1/phi^2 over the +x face) plus 8 triangles to the rim. The diamond's corners are the
+// two inner corners X and the two points Z straight below the roof vertices R. 66 faces:
+// 12 thick rhombi, 6 golden rhombi, 48 triangles; dented, not convex (with the windows fixed,
+// only the dodecahedron itself is convex). Faces wound outward.
+export function flatNotchedWindows() {
+  const { dodeca } = roofFoldSolids();
+  const rhombi = ekpWindowRhombi();
+  const inner = 1 + 1 / PHI ** 2;
+  const near = (p, q) => Math.hypot(...sub(p, q)) < 1e-9;
+  const edge = 2 / PHI;
+  const isCorner = (p) => p.every((c) => Math.abs(Math.abs(c) - 1) < 1e-9);
+  const corners = dodeca.faces.flat().filter((p, i, all) => isCorner(p) && all.findIndex((q) => near(p, q)) === i);
+  const roofs = dodeca.faces.flat().filter((p, i, all) => !isCorner(p) && all.findIndex((q) => near(p, q)) === i);
+  const inners = rhombi.map((R) => R.find((p) => !isCorner(p) && !roofs.some((q) => near(p, q))));
+  const faces = rhombi.map((R) => [...R]);
+  for (let a = 0; a < 3; a++) for (const s of [1, -1]) {
+    const C = corners.filter((p) => p[a] === s);
+    const Rs = roofs.filter((p) => Math.abs(p[a] - s * PHI) < 1e-9);
+    const Xs = inners.filter((p) => Math.abs(p[a] - s * inner) < 1e-9);
+    const zOf = (r) => r.map((c, i) => (i === a ? s * inner : c));
+    const axis = [0, 0, 0]; axis[a] = s;
+    faces.push(ringAround([...Xs, ...Rs.map(zOf)], axis));
+    for (const c of C) {
+      const x = Xs.find((p) => Math.abs(Math.hypot(...sub(p, c)) - edge) < 1e-9);
+      const r = Rs.find((p) => Math.abs(Math.hypot(...sub(p, c)) - edge) < 1e-9);
+      faces.push([x, c, zOf(r)], [c, r, zOf(r)]);
+    }
+  }
+  // Wind every face consistently (each shared edge run both ways), then outward (positive volume).
+  const key = (p) => p.map((c) => c.toFixed(6)).join();
+  const edgeKey = (p, q) => `${key(p)}>${key(q)}`;
+  const done = new Array(faces.length).fill(false);
+  const owner = new Map();
+  const index = () => { owner.clear(); faces.forEach((f, i) => f.forEach((p, j) => owner.set(edgeKey(p, f[(j + 1) % f.length]), i))); };
+  index();
+  const queue = [0]; done[0] = true;
+  while (queue.length) {
+    const i = queue.shift();
+    const f = faces[i];
+    f.forEach((p, j) => {
+      const q = f[(j + 1) % f.length];
+      // The neighbour across p-q should run q->p; if it runs p->q too, flip it.
+      for (const [k, g] of faces.entries()) {
+        if (done[k] || k === i) continue;
+        const has = g.some((u, m) => near(u, p) && near(g[(m + 1) % g.length], q));
+        const rev = g.some((u, m) => near(u, q) && near(g[(m + 1) % g.length], p));
+        if (has) faces[k] = [...g].reverse();
+        if (has || rev) { done[k] = true; queue.push(k); }
+      }
+    });
+  }
+  const vol = faces.reduce((v, f) => { for (let i = 1; i + 1 < f.length; i++) v += dot(f[0], cross(f[i], f[i + 1])) / 6; return v; }, 0);
+  return vol < 0 ? faces.map((f) => [...f].reverse()) : faces;
+}
