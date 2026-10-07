@@ -30,4 +30,4 @@ the commit that first recorded it (full list, verification and literature status
 | The windows made convex: pushed out by √(7 − 4φ), a 74-face solid of 12 Penrose thick rhombi, 6 golden rhombi, 8 equilateral triangles and 48 triangles; buildable from a flat net | 2026-10-08 | not found — candidate |
 
 "Not found" means a web-level search turned up nothing, not proof of novelty. Cite as
-*DICTO, Kaleidohedra discoveries, #N (first recorded date), https://doi.org/10.5281/zenodo.23173809*. Each release is archived on Zenodo under that DOI; the latest, [v2026.10.08](https://doi.org/10.5281/zenodo.23220273), adds #10 (EKP windows) and #11 (the stretched dodecahedron).
+*DICTO, Kaleidohedra discoveries, #N (first recorded date), https://doi.org/10.5281/zenodo.23173809*. Each release is archived on Zenodo under that DOI; the latest, [v2026.10.08-convex](https://doi.org/10.5281/zenodo.23220833), adds #12 (the windows made convex, 74 faces); [v2026.10.08](https://doi.org/10.5281/zenodo.23220273) added #10 and #11.

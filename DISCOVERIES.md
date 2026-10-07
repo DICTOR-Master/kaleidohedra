@@ -403,6 +403,7 @@ Renamed the Euclid–Kepler–Pacioli (EKP) cell, with Kepler's chain and Paciol
 rectangles, as version v2026.10.06-ekp, **DOI [10.5281/zenodo.23176568](https://doi.org/10.5281/zenodo.23176568)**.
 Findings #10 and #11 are version v2026.10.08, **DOI [10.5281/zenodo.23220273](https://doi.org/10.5281/zenodo.23220273)**
 (published 2026-10-08 Japan time; Zenodo shows 2026-10-07, UTC).
+Finding #12 is version v2026.10.08-convex, **DOI [10.5281/zenodo.23220833](https://doi.org/10.5281/zenodo.23220833)**.
 
 ## Sources
 
