@@ -27,7 +27,7 @@
 //   - two extractions that don't overlap: even-cell dodecahedra (the optimal
 //     lattice packing, (5+sqrt5)/8) and even-cell stars with odd-cell
 //     icosahedra, sharing only corners.
-import { PHI, ROOF_FOLD_PERIOD as P, ROOF_FOLD_KINDS, roofFoldCell, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, siteParity, ROOF_FOLD_PATTERNS, goldenRectangles, ekpWindowsSolid, stretchedDodeca } from '../src/geometry-extensions/roof-fold.js';
+import { PHI, ROOF_FOLD_PERIOD as P, ROOF_FOLD_KINDS, roofFoldCell, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, siteParity, ROOF_FOLD_PATTERNS, goldenRectangles, ekpWindowsSolid, stretchedDodeca, expandedWindows, EXPANDED_WINDOWS_GOLDEN } from '../src/geometry-extensions/roof-fold.js';
 
 let failures = 0;
 function check(label, condition) {
@@ -608,6 +608,32 @@ check(`stars on even cells and icosahedra on odd cells share only corners: ${pai
   });
   const squares = stretchedDodeca(2 / PHI).filter((f) => f.length === 4).every((f) => f.every((p, i) => Math.abs(norm(sub(p, f[(i + 1) % 4])) - 2 / PHI) < EPS));
   check(`stretched dodecahedron (cube-face axis): any s gives 8 regular pentagons, 4 hexagons (108 x 4, 144 x 2), 2 rectangles, volume V + s x ${shadow.toFixed(6)}; squares at s = 2/phi`, ok && squares);
+}
+
+// (c) The windows made convex (#12): the 12 rhombi pushed out by t along their own normals, hulled.
+// At t = sqrt(7 - 4 phi) (half their long diagonal): 12 thick rhombi as they were, 6 golden rhombi
+// (63.43/116.57, diagonals in ratio phi) square on the cube faces, 8 equilateral triangles (edge
+// 2/phi^2) at the cube corners, 24 + 24 triangles; three edge lengths 2/phi^2, 2/phi, 2t. Other t: 80.
+{
+  const t = EXPANDED_WINDOWS_GOLDEN;
+  const F = expandedWindows(t);
+  const sides = (f) => f.map((p, i) => norm(sub(p, f[(i + 1) % f.length])));
+  const nOf = (f) => cross(sub(f[1], f[0]), sub(f[2], f[0])).map((c, _, a) => c / Math.hypot(...a));
+  const is = (x, y) => Math.abs(x - y) < 1e-9;
+  const thick = F.filter((f) => f.length === 4 && sides(f).every((x) => is(x, 2 / PHI)));
+  const golden = F.filter((f) => f.length === 4 && sides(f).every((x) => is(x, 2 * t)));
+  const goldenOk = golden.every((f) => {
+    const d1 = norm(sub(f[0], f[2])), d2 = norm(sub(f[1], f[3]));
+    const n = nOf(f);
+    return is(Math.max(d1, d2) / Math.min(d1, d2), PHI) && n.filter((c) => is(Math.abs(c), 1)).length === 1;
+  });
+  const equi = F.filter((f) => f.length === 3 && sides(f).every((x) => is(x, 2 / PHI ** 2)));
+  const lengths = new Set(F.flatMap(sides).map((x) => x.toFixed(9)));
+  const vecArea = F.reduce((acc, f) => { for (let i = 1; i + 1 < f.length; i++) acc = add(acc, cross(sub(f[i], f[0]), sub(f[i + 1], f[0]))); return acc; }, [0, 0, 0]);
+  const S2 = new Set([2 / PHI ** 2, 2 / PHI, 2 * t].map((x) => x.toFixed(9)));
+  check(`expanded windows at t = sqrt(7 - 4 phi) = ${t.toFixed(9)}: ${F.length} faces = 12 thick rhombi + 6 golden rhombi (ratio phi, on the cube faces) + 8 equilateral triangles + 48 triangles; edges 2/phi^2, 2/phi, 2t only; closed; 80 faces at other t`,
+    F.length === 74 && thick.length === 12 && golden.length === 6 && goldenOk && equi.length === 8 && F.filter((f) => f.length === 3).length === 56
+    && [...lengths].every((x) => S2.has(x)) && norm(vecArea) < 1e-9 && [0.3, 0.6, 1, 1.5].every((u) => expandedWindows(u).length === 80));
 }
 
 console.log(failures === 0 ? '\nAll checks passed (0 failures).' : `\n${failures} check(s) FAILED.`);

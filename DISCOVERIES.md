@@ -35,6 +35,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 9 | Rhombic dodecahedron sub-family: 24 sheared-FCC cells from TARGETS.md, each built from four edge directions with volume matching the table | Kaleidohedra (predicted); verified by building in Polyhedraverse (9599e14) | yes (by construction) | **candidates** — combinatorial type is Fedorov's rhombic dodecahedron (Grünbaum 2010, Fig. 2(c)); none is in Grünbaum's monohedral enumeration (Figs. 3, 10: only Kepler's K and Bilinski's B), and the paper doesn't list mixed-angle cells like these | 2026-10-06 |
 | 10 | EKP windows: the dodecahedron with its six face-neighbours' stella octangulas carved out shows exactly 12 Penrose thick rhombi (72°/108°, edge 2/φ), one on each cube edge, at the dodecahedron's own face angles; 48 triangles wall the cut-away; volume exactly 12 | DICTO (spotted 12 diamond windows between six stellas and the dodecahedron) | yes | **not found** — candidate (web-level search) | 2026-10-08 (fb9de6b) |
 | 11 | Dodecahedron stretched along a cube-face axis: 8 regular pentagons, 4 hexagons (108° × 4, 144° × 2), 2 rectangles at any stretch; squares at one edge (2/φ); at the lattice spacing 2 it is the hull of two EKP face-neighbour dodecahedra | DICTO (the "pentagon caps and hexagons" hunch, from overlapped dodecahedra) | yes | **not found** — candidate (web-level search; a simple construction, so likely to appear somewhere, e.g. crystal habits) | 2026-10-08 (fb9de6b) |
+| 12 | The windows made convex: the 12 window rhombi pushed straight out by √(7 − 4φ), keeping size and orientation, hull into a 74-face solid with 12 Penrose thick rhombi, 6 golden rhombi on the cube faces, 8 equilateral triangles and 48 triangles; three edge lengths; has a flat net | DICTO (asked to make the windows convex by expanding from the centre) | yes | **not found** — candidate (web-level search) | 2026-10-08 |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -353,6 +354,33 @@ the same axis along which the rhombic dodecahedron stretches into the elongated 
   Stretched dodecahedron, with a stretch slider.
 - Status: **not found** at web level (2026-10-08). Simple enough that it probably appears somewhere
   (crystal habits, Minkowski sums); a targeted search is still needed before claiming priority.
+
+## 12. The windows made convex (DICTO, 2026-10-08)
+
+Any convex solid that keeps the 12 window rhombi (#10) where they are is the dodecahedron itself.
+DICTO's question: expand from the centre instead. Push each rhombus straight out along its own
+normal by t, keeping its size, angles and orientation, and take the convex hull.
+
+- For every t > 0 the hull has 80 faces: the 12 rhombi, 8 equilateral triangles where the cube
+  corners open, and 60 joining triangles (each gap between rhombi is twisted, so it splits in two).
+- At exactly **t = √(7 − 4φ) ≈ 0.7265** (half the rhombi's long diagonal), and nowhere else on
+  0 < t ≤ 3 (scanned), the six gaps over the cube faces flatten. Each becomes a **golden rhombus**
+  (angles 63.43° and 116.57°, diagonals in ratio exactly φ), square on a cube face. The solid has
+  **74 faces**:
+  - 12 Penrose thick rhombi (72°/108°, edge 2/φ), the windows, unchanged;
+  - 6 golden rhombi (edge 2√(7 − 4φ), the windows' long diagonal);
+  - 8 equilateral triangles (edge 2/φ²) at the cube corners;
+  - 24 isosceles triangles (2/φ, 2t, 2t) and 24 triangles (2/φ², 2/φ, 2t).
+  Only three edge lengths occur: 2/φ², 2/φ and 2√(7 − 4φ).
+- It carries the 2D aperiodic rhombus (Penrose's thick rhombus) and the 3D one (the golden rhombus,
+  the face of Ammann's golden rhombohedra and of the rhombic triacontahedron) together, on cubic
+  symmetry: a convex bridge between periodic and aperiodic.
+- **Buildable:** it unfolds into a flat net of all 74 faces with no two faces overlapping, which
+  folds closed (found by the Nets code, 76 taps).
+- Verified: `scripts/verify-roof-fold.mjs` §13(c) (faces, golden ratio, edge lengths, closure, the
+  80-face case elsewhere) and `scripts/verify-nets.mjs` (the net), every push. Shown in the EKP
+  world, Study → Windows made convex, with a push slider that snaps at the golden point.
+- Status: **not found** at web level (2026-10-08).
 
 ## Attribution and dates
 

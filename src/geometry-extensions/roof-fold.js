@@ -353,16 +353,22 @@ export function neighbourStellas() {
 // The dodecahedron with its six face-neighbours' stellas carved out. Its outside is 12 rhombi,
 // one on each cube edge, at the dodecahedron's own face angles (72 and 108 degrees, edge 2/phi);
 // the cut-away is walled by the stellas' faces, in triangles meeting at the cube-face centres.
-export function ekpWindowsSolid() {
+// The 12 window rhombi (see ekpWindowsSolid), each wound outward.
+export function ekpWindowRhombi() {
   const { dodeca } = roofFoldSolids();
   const isCorner = (p) => p.every((c) => Math.abs(Math.abs(c) - 1) < 1e-9);
-  const rhombi = dodeca.faces.map((f) => {
+  return dodeca.faces.map((f) => {
     const [A, B] = f.filter(isCorner);
     const Z = f.find((p) => !isCorner(p) && [A, B].every((c) => Math.abs(Math.hypot(...sub(p, c)) - 2 / PHI) < 1e-9));
     const X = A.map((c, i) => c + B[i] - Z[i]);
     const R = [A, X, B, Z];
     return dot(cross(sub(R[1], R[0]), sub(R[2], R[0])), centroid(f)) < 0 ? R.reverse() : R;
   });
+}
+
+export function ekpWindowsSolid() {
+  const { dodeca } = roofFoldSolids();
+  const rhombi = ekpWindowRhombi();
   const planesOf = (faces) => faces.map((f) => { const n = unit(cross(sub(f[1], f[0]), sub(f[2], f[0]))); return { n, d: dot(n, f[0]) }; });
   const D = planesOf(dodeca.faces);
   const tets = neighbourStellas().map((faces) => ({ faces, planes: planesOf(faces) }));
@@ -401,4 +407,17 @@ export function ekpWindowsSolid() {
     }
   }
   return { rhombi, walls: boundary };
+}
+
+// The windows made convex (DICTO, 2026-10-08): each of the 12 rhombi pushed straight out by t
+// along its own normal, keeping its size and orientation, and the convex hull taken. Any t > 0
+// gives 80 faces; at t = sqrt(7 - 4 phi), half the rhombi's long diagonal, the six gaps over the
+// cube faces flatten into golden rhombi: 12 thick rhombi, 6 golden rhombi, 8 equilateral
+// triangles and 48 triangles, 74 faces.
+export const EXPANDED_WINDOWS_GOLDEN = Math.sqrt(7 - 4 * PHI);
+export function expandedWindows(t) {
+  return convexHullFaces(ekpWindowRhombi().flatMap((R) => {
+    const n = unit(cross(sub(R[1], R[0]), sub(R[2], R[0])));
+    return R.map((p) => add(p, n.map((c) => c * t)));
+  }));
 }

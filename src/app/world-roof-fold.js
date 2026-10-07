@@ -10,7 +10,7 @@
 // of the dodecahedra. Lives outside the shear
 // group: shearing would break the icosahedra.
 import * as THREE from 'three';
-import { ekpWindowsSolid, neighbourStellas, stretchedDodeca, PHI, ROOF_FOLD_KINDS, ROOF_FOLD_COLOURS, ROOF_FOLD_WORLD_SCALE as WS, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, ROOF_FOLD_PATTERNS, siteParity, turnPoint } from '../geometry-extensions/roof-fold.js';
+import { ekpWindowsSolid, neighbourStellas, stretchedDodeca, expandedWindows, EXPANDED_WINDOWS_GOLDEN, PHI, ROOF_FOLD_KINDS, ROOF_FOLD_COLOURS, ROOF_FOLD_WORLD_SCALE as WS, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, ROOF_FOLD_PATTERNS, siteParity, turnPoint } from '../geometry-extensions/roof-fold.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
@@ -18,9 +18,17 @@ import { addPanelMinimiser } from './panel-minimiser.js';
 const STORAGE_KEY = 'kaleidohedra-roof-fold-world';
 const VIEWS = ['built', 'starIco', 'dodecaStar', 'checker', 'merged'];
 // Studies of the cell (DICTO, 2026-10-08): shapes shown on their own, building paused.
-const STUDIES = ['off', 'windows', 'windowsStellas', 'stretch'];
+const STUDIES = ['off', 'windows', 'windowsStellas', 'expanded', 'stretch'];
 const STRETCH_MAX = 2.6;
 const STRETCH_SNAPS = [2 / PHI, 2]; // one edge (squares), the lattice spacing
+// The expanded windows' push: snaps where the cube-face gaps flatten into golden rhombi.
+const PUSH_MAX = 1.6;
+const PUSH_SNAPS = [EXPANDED_WINDOWS_GOLDEN];
+// Each slider study: its value in view, range, snaps and label.
+const SLIDERS = {
+  stretch: { key: 'stretch', max: STRETCH_MAX, snaps: STRETCH_SNAPS, label: 'roofFold.stretch' },
+  expanded: { key: 'push', max: PUSH_MAX, snaps: PUSH_SNAPS, label: 'roofFold.push' },
+};
 const KIND_COLOR = ROOF_FOLD_COLOURS;
 const PARITY_COLOR = [0xffc857, 0x7cc4ff];
 const OCTANT_COLOR = [0xffc857, 0x7cc4ff, 0xff7a59, 0x5fd38a, 0xc792ea, 0x4dd0e1, 0xf06292, 0xe8eef7];
@@ -51,7 +59,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
 
   // ---- state ----
   const solids = new Map(); // solidKey -> { site: [x, y, z], kind }
-  const view = { piece: 'dodeca', mode: 'built', parity: false, vertices: 'off', pattern: 'xyz', xray: false, turnOdd: false, study: 'off', stretch: STRETCH_SNAPS[0], studyShear: 'copies' };
+  const view = { piece: 'dodeca', mode: 'built', parity: false, vertices: 'off', pattern: 'xyz', xray: false, turnOdd: false, study: 'off', stretch: STRETCH_SNAPS[0], push: PUSH_SNAPS[0], studyShear: 'copies' };
   let active = false;
   let skeleton = false;
   let opacity = 1;
@@ -80,6 +88,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
       if (STUDIES.includes(data.view?.study)) view.study = data.view.study;
       if (['copies', 'solid'].includes(data.view?.studyShear)) view.studyShear = data.view.studyShear;
       if (Number.isFinite(data.view?.stretch)) view.stretch = Math.max(0, Math.min(STRETCH_MAX, data.view.stretch));
+      if (Number.isFinite(data.view?.push)) view.push = Math.max(0, Math.min(PUSH_MAX, data.view.push));
     }
   } catch { /* corrupt or blocked storage: start empty */ }
   function save() {
@@ -232,6 +241,16 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     const faces = [];
     if (view.study === 'stretch') {
       for (const f of stretchedDodeca(view.stretch)) faces.push([f, f.length === 5 ? KIND_COLOR.dodeca : f.length === 6 ? KIND_COLOR.star : KIND_COLOR.cube]);
+    } else if (view.study === 'expanded') {
+      // Thick rhombi gold as in the windows, golden rhombi coral, the cube-corner triangles grey,
+      // the joining triangles the stellas' purple.
+      const sides = (f) => f.map((p, i) => Math.hypot(...p.map((c, k) => c - f[(i + 1) % f.length][k])));
+      const equal = (f) => { const e = sides(f); return e.every((x) => Math.abs(x - e[0]) < 1e-6); };
+      for (const f of expandedWindows(view.push)) {
+        const hex = f.length === 4 ? (Math.abs(sides(f)[0] - 2 / PHI) < 1e-6 ? KIND_COLOR.dodeca : KIND_COLOR.star)
+          : equal(f) ? KIND_COLOR.cube : KIND_COLOR.stella;
+        faces.push([f, hex]);
+      }
     } else {
       const { rhombi, walls } = ekpWindowsSolid();
       rhombi.forEach((f) => faces.push([f, KIND_COLOR.dodeca]));
@@ -258,7 +277,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     }
   }
   function fitStudy() {
-    const r = view.study === 'windowsStellas' ? 3.4 : view.study === 'stretch' ? view.stretch / 2 + 1.8 : 1.8;
+    const r = view.study === 'windowsStellas' ? 3.4 : view.study === 'stretch' ? view.stretch / 2 + 1.8 : view.study === 'expanded' ? 1.9 + view.push : 1.8;
     const spread = studyCopies() ? Math.max(...studyPlacements().map(({ offset }) => Math.hypot(...offset))) : 0;
     fitView([0, 0, 0], r * WS + spread);
   }
@@ -433,14 +452,18 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     // Nothing unnecessary: a study hides the build controls, the build hides the study's.
     for (const r of panel.querySelectorAll('.rf-build-row')) r.style.display = studying ? 'none' : '';
     optionsRow.style.display = studying ? 'none' : '';
-    stretchRow.style.display = view.study === 'stretch' ? '' : 'none';
-    panel.querySelector('.rf-stretch-label').textContent = t('roofFold.stretch', L);
-    stretchInput.value = String(Math.round(view.stretch * 1000));
-    stretchVal.textContent = view.stretch.toFixed(3);
+    const slider = SLIDERS[view.study];
+    stretchRow.style.display = slider ? '' : 'none';
+    if (slider) {
+      panel.querySelector('.rf-stretch-label').textContent = t(slider.label, L);
+      stretchInput.max = String(slider.max * 1000);
+      stretchInput.value = String(Math.round(view[slider.key] * 1000));
+      stretchVal.textContent = view[slider.key].toFixed(3);
+    }
     studyNote.style.display = studying ? '' : 'none';
     studyOpts.style.display = studying ? '' : 'none';
     studyShearBtn.textContent = t(`roofFold.studyShear.${view.studyShear}`, L);
-    studyNote.textContent = studying ? t(view.study === 'stretch' ? 'roofFold.study.note.stretch' : 'roofFold.study.note.windows', L) : '';
+    studyNote.textContent = studying ? t(view.study === 'stretch' ? 'roofFold.study.note.stretch' : view.study === 'expanded' ? 'roofFold.study.note.expanded' : 'roofFold.study.note.windows', L) : '';
     if (studying) { patternRow.style.display = 'none'; return; }
     panel.querySelector('.rf-piece-label').textContent = t('hull.piece', L);
     panel.querySelector('.rf-view-label').textContent = t('roofFold.view', L);
@@ -467,10 +490,12 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
     if (view.study !== 'off') fitStudy(); else fitBuild();
   });
   stretchInput.addEventListener('input', () => {
+    const slider = SLIDERS[view.study];
+    if (!slider) return;
     let v = Number(stretchInput.value) / 1000;
-    const snap = STRETCH_SNAPS.find((x) => Math.abs(x - v) < 0.03);
+    const snap = slider.snaps.find((x) => Math.abs(x - v) < 0.03);
     if (snap !== undefined) v = snap;
-    view.stretch = v;
+    view[slider.key] = v;
     save();
     rebuild();
   });

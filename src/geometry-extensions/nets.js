@@ -193,9 +193,11 @@ export const SOLID_GROUPS = [{ id: 'voronoi', label: 'Voronoi cells' }, { id: 'p
 // ---- nets ----
 // Faces as corner coordinates, scaled to edge L, each wound so its normal
 // points outward.
-function solidScale(id, L) { return L / SOLIDS[id].make().edge; }
+// A solid by its SOLIDS id, or any { label, make } (make returns { v, faces, edge }).
+const solidOf = (id) => (typeof id === 'string' ? SOLIDS[id] : id);
+function solidScale(id, L) { return L / solidOf(id).make().edge; }
 function solidFaces(id, L) {
-  const { v, faces, edge } = SOLIDS[id].make();
+  const { v, faces, edge } = solidOf(id).make();
   const k = L / edge;
   // Outward from the solid's own centre, not the origin: the star's spike
   // sits out on an icosahedron face, the origin outside it.
@@ -324,7 +326,7 @@ export function netOf(id, L = 5) {
     if (!best || rank < best.rank - 1e-9 || (Math.abs(rank - best.rank) <= 1e-9 && overlapCount < best.overlapCount)) best = { tree, M0, flat, area, overlapCount, rank };
   }
   if (!best) throw new Error(`no flat net found for ${id}`);
-  if (best.overlapCount > 0) console.warn(`${SOLIDS[id].label}: no flat net is free of overlap; using the least-overlapping one (${best.overlapCount} pair(s))`);
+  if (best.overlapCount > 0) console.warn(`${solidOf(id).label}: no flat net is free of overlap; using the least-overlapping one (${best.overlapCount} pair(s))`);
   const { tree, M0, flat, overlapCount } = best;
   // Edges: each face owns its sides but the hinge to its parent (the
   // parent's), so a finished net has every edge once, and the edges that
@@ -352,7 +354,7 @@ export function netOf(id, L = 5) {
   const rootPts = faces[tree.order[0]].pts;
   const align = rigidAlign(rootPts.slice(0, 3).map((p) => apply(M0, p)), rootPts.slice(0, 3));
   return {
-    id, label: SOLIDS[id].label, L, faces, tree, M0, flat, owned, align, scale: solidScale(id, L), overlapCount,
+    id, label: solidOf(id).label, L, faces, tree, M0, flat, owned, align, scale: solidScale(id, L), overlapCount,
     at: (t) => transforms(faces, tree, M0, t),
   };
 }
@@ -363,4 +365,4 @@ export function netSteps(net) {
   const [root, ...rest] = net.tree.order;
   return [...net.owned[root].map((e) => ({ face: root, edges: [e] })), ...rest.map((f) => ({ face: f, edges: net.owned[f] }))];
 }
-export { IDENTITY, mul, rigidAlign };
+export { IDENTITY, mul, rigidAlign, hullOf };

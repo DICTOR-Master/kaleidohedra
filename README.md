@@ -27,6 +27,7 @@ the commit that first recorded it (full list, verification and literature status
 | Euclid–Kepler–Pacioli network: Kepler's great stellated dodecahedra and icosahedra sharing only corners | 2026-10-06 | not found — candidate |
 | EKP windows: carving the six neighbouring stella octangulas out of the dodecahedron leaves 12 Penrose thick rhombi (72°) at its own face angles | 2026-10-08 | not found — candidate |
 | Stretched dodecahedron: 8 regular pentagons, 4 hexagons and 2 rectangles at any stretch, squares at one edge | 2026-10-08 | not found — candidate |
+| The windows made convex: pushed out by √(7 − 4φ), a 74-face solid of 12 Penrose thick rhombi, 6 golden rhombi, 8 equilateral triangles and 48 triangles; buildable from a flat net | 2026-10-08 | not found — candidate |
 
 "Not found" means a web-level search turned up nothing, not proof of novelty. Cite as
 *DICTO, Kaleidohedra discoveries, #N (first recorded date), https://doi.org/10.5281/zenodo.23173809*. Each release is archived on Zenodo under that DOI; the latest, [v2026.10.08](https://doi.org/10.5281/zenodo.23220273), adds #10 (EKP windows) and #11 (the stretched dodecahedron).
