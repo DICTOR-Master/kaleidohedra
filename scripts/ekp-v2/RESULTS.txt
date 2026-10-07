@@ -1,0 +1,33 @@
+== symmetry (seven contents, checkerboard) ==
+six contents, checkerboard: operations 192 | point operations 48 | swap operations (odd translation) 96
+translations (mod 2): ["0,0,0","1,1,0","1,0,1","0,1,1"]
+symmorphic about a common point: false
+
+== per-solid symmetry and realignment ==
+solid                |G| in Oh   R90 keeps it?   |G ∩ R90 G R90^-1|   axes realigned?
+dodecahedron               24            false                   24    no (same group)
+icosahedron                24            false                   24    no (same group)
+great star                 24            false                   24    no (same group)
+octahedron                 48             true                   48    no
+stella octangula           48             true                   48    no
+Pacioli rectangles         24            false                   24    no (same group)
+shared by all six (unrotated): 24 | after 90 deg: 24 | same set: true
+
+== overlap totals per lattice cube (exact) ==
+check: stella T1 cap T2 volume 1.333333 (octahedron 4/3 = 1.333333)
+computed in 0.3 s
+face totals per direction (+x,-x,+y,-y,+z,-z): 6.03403 6.03403 6.03403 6.03403 6.03403 6.03403
+fcc even per direction: 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000
+fcc odd per direction: 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000
+per lattice cube (volume 8), total overlap: 18.1021
+per-type-pair density per lattice cube:
+  cube           0.0000   3.2361   0.0000   0.1115   0.0000   0.0000
+  dodecahedron   3.2361   6.4721   0.1305   0.8053   0.2918   1.2361
+  icosahedron    0.0000   0.1305   0.0000   0.0000   0.0000   0.0000
+  star           0.1115   0.8053   0.0000   0.0077   0.0000   0.0000
+  octahedron     0.0000   0.2918   0.0000   0.0000   0.0000   0.0000
+  stella         0.0000   1.2361   0.0000   0.0000   0.0000   0.0000
+
+== merged outer surface orientation and closure ==
+unturned: faces 731; winding/normal mismatches 0; not outward 0; closure difference 6.8e-13; surface volume 274.249; union (Monte Carlo) 274.62 +/- 0.89
+v2 (odd cubes turned): faces 1945; winding/normal mismatches 0; not outward 0; closure difference 3.4e-13; surface volume 274.249; union (Monte Carlo) 272.99 +/- 0.89
