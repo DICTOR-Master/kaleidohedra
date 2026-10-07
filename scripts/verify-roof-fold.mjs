@@ -27,7 +27,7 @@
 //   - two extractions that don't overlap: even-cell dodecahedra (the optimal
 //     lattice packing, (5+sqrt5)/8) and even-cell stars with odd-cell
 //     icosahedra, sharing only corners.
-import { PHI, ROOF_FOLD_PERIOD as P, ROOF_FOLD_KINDS, roofFoldCell, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, siteParity, ROOF_FOLD_PATTERNS, goldenRectangles, ekpWindowsSolid, stretchedDodeca, expandedWindows, EXPANDED_WINDOWS_GOLDEN, flatNotchedWindows, morphedWindowRhombi, convexHullFaces } from '../src/geometry-extensions/roof-fold.js';
+import { PHI, ROOF_FOLD_PERIOD as P, ROOF_FOLD_KINDS, roofFoldCell, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, siteParity, ROOF_FOLD_PATTERNS, goldenRectangles, ekpWindowsSolid, stretchedDodeca, expandedWindows, EXPANDED_WINDOWS_GOLDEN, morphedWindowRhombi, rdMorphRhombi, RD_MORPH_SQUARE, convexHullFaces, ekpWindowRhombi } from '../src/geometry-extensions/roof-fold.js';
 
 let failures = 0;
 function check(label, condition) {
@@ -581,7 +581,7 @@ check(`stars on even cells and icosahedra on odd cells share only corners: ${pai
   const kindOf = (f) => (Math.abs(tri(f)[1] - 2 / PHI) < EPS && Math.abs(tri(f)[2] - Math.SQRT2) < EPS ? [Math.SQRT2 / PHI, Math.SQRT2 / PHI ** 2].findIndex((x) => Math.abs(tri(f)[0] - x) < EPS) : -1);
   const kindA = W.walls.filter((f) => f.length === 3 && kindOf(f) === 0).length, kindB = W.walls.filter((f) => f.length === 3 && kindOf(f) === 1).length;
   const vol = polyVol([...W.rhombi, ...W.walls]);
-  check(`windows: 12 rhombi (72°, edge 2/phi, short diagonal a cube edge, in the dodecahedron's own face planes), ${W.walls.length} triangular walls (${kindA} + ${kindB}: sides sqrt2/phi or sqrt2/phi^2, 2/phi, sqrt2), closed, volume ${vol.toFixed(9)} = 12 (each roof keeps 1/phi)`,
+  check(`windows: 12 rhombi (72°, edge 2/phi, long diagonal a cube edge, in the dodecahedron's own face planes), ${W.walls.length} triangular walls (${kindA} + ${kindB}: sides sqrt2/phi or sqrt2/phi^2, 2/phi, sqrt2), closed, volume ${vol.toFixed(9)} = 12 (each roof keeps 1/phi)`,
     W.rhombi.length === 12 && rhombiOk && W.walls.length === 48 && kindA === 24 && kindB === 24
     && norm(vecArea([...W.rhombi, ...W.walls])) < 1e-9 && Math.abs(vol - 12) < 1e-9
     && Math.abs((vol - 8) / 6 / ((V.dodeca - 8) / 6) - 1 / PHI) < 1e-12); // each roof keeps 1/phi of itself
@@ -611,7 +611,7 @@ check(`stars on even cells and icosahedra on odd cells share only corners: ${pai
 }
 
 // (c) The windows made convex (study 10a of #10): the 12 rhombi pushed out by t along their own normals, hulled.
-// At t = sqrt(7 - 4 phi) (half their long diagonal): 12 thick rhombi as they were, 6 golden rhombi
+// At t = sqrt(7 - 4 phi) (half their short diagonal): 12 thick rhombi as they were, 6 golden rhombi
 // (63.43/116.57, diagonals in ratio phi) square on the cube faces, 8 equilateral triangles (edge
 // 2/phi^2) at the cube corners, 24 + 24 triangles; three edge lengths 2/phi^2, 2/phi, 2t. Other t: 80.
 {
@@ -636,25 +636,7 @@ check(`stars on even cells and icosahedra on odd cells share only corners: ${pai
     && [...lengths].every((x) => S2.has(x)) && norm(vecArea) < 1e-9 && [0.3, 0.6, 1, 1.5].every((u) => expandedWindows(u).length === 80));
 }
 
-// (d) The windows with flat notches (study 10b of #10): the 12 rhombi kept in place, each notch closed by a flat golden
-// rhombus (edge sqrt(7 - 4 phi), diagonals 2/phi^2 and 2/phi) sunk to the windows' inner corners and
-// 8 triangles: 66 planar faces, closed and consistently wound, volume exactly V - 8/phi^4.
-{
-  const F = flatNotchedWindows();
-  const sides = (f) => f.map((p, i) => norm(sub(p, f[(i + 1) % f.length])));
-  const key = (p) => p.map((c) => c.toFixed(6)).join();
-  const E = new Map();
-  F.forEach((f) => f.forEach((p, j) => { const e = `${key(p)}>${key(f[(j + 1) % f.length])}`; E.set(e, (E.get(e) || 0) + 1); }));
-  const closed = [...E].every(([e, n]) => { const [a, b] = e.split('>'); return n === 1 && E.get(`${b}>${a}`) === 1; });
-  const planar = F.filter((f) => f.length === 4).every((f) => Math.abs(dot(cross(sub(f[1], f[0]), sub(f[2], f[0])), sub(f[3], f[0]))) < 1e-9);
-  const golden = F.filter((f) => f.length === 4 && sides(f).every((x) => Math.abs(x - Math.sqrt(7 - 4 * PHI)) < 1e-9));
-  const goldenOk = golden.every((f) => { const d1 = norm(sub(f[0], f[2])), d2 = norm(sub(f[1], f[3])); return Math.abs(Math.max(d1, d2) / Math.min(d1, d2) - PHI) < 1e-9; });
-  const vol = F.reduce((v, f) => { for (let i = 1; i + 1 < f.length; i++) v += dot(f[0], cross(f[i], f[i + 1])) / 6; return v; }, 0);
-  check(`windows with flat notches: ${F.length} faces (12 thick rhombi + ${golden.length} flat golden rhombi + 48 triangles), closed, volume ${vol.toFixed(9)} = V - 8/phi^4`,
-    F.length === 66 && F.filter((f) => f.length === 3).length === 48 && golden.length === 6 && goldenOk && planar && closed && Math.abs(vol - (V.dodeca - 8 / PHI ** 4)) < 1e-9);
-}
-
-// (e) The windows into the icosidodecahedron (a study of #10): each rhombus pushed out by T and slid
+// (d) The windows into the icosidodecahedron (a study of #10): each rhombus pushed out by T and slid
 // 2T toward its inner corner, T = 1/(phi sqrt(2 + phi)), size and shape kept. Their hull is the
 // icosidodecahedron: 12 regular pentagons, 20 equilateral triangles, edge 2/phi, vertices at
 // radius 2; each rhombus lies in a pentagon with 3 corners on its vertices.
@@ -670,6 +652,21 @@ check(`stars on even cells and icosahedra on odd cells share only corners: ${pai
   const inPent = R.every((r) => pents.some((f) => { const n = cross(sub(f[1], f[0]), sub(f[2], f[0])); return r.every((p) => Math.abs(dot(n, sub(p, f[0]))) < 1e-9) && r.filter((p) => f.some((q) => norm(sub(p, q)) < 1e-9)).length === 3; }));
   check(`windows into the icosidodecahedron: hull ${pents.length} regular pentagons + ${tris.length} equilateral triangles, edge 2/phi, vertices at radius 2; every rhombus lies in a pentagon, 3 corners on its vertices`,
     pents.length === 12 && tris.length === 20 && regular && sphere && inPent);
+}
+
+// (e) The windows into the rhombic dodecahedron (a study of #10): each window keeps its cube edge
+// (its long diagonal, 2) and swings and stretches its other diagonal about it; at s = 1 the 12 are
+// exactly the RD's faces (edge sqrt3, 70.53/109.47, the cube edge now the short diagonal), and at
+// RD_MORPH_SQUARE all 12 are squares. At s = 0 they are the windows themselves.
+{
+  const W = ekpWindowRhombi(), R0 = rdMorphRhombi(0), R1 = rdMorphRhombi(1), RS = rdMorphRhombi(RD_MORPH_SQUARE);
+  const start = W.every((w, i) => w.every((p, j) => norm(sub(p, R0[i][j])) < 1e-12));
+  const H = convexHullFaces(R1.flat());
+  const rd = H.length === 12 && H.every((f) => f.length === 4) && R1.every((r) => H.some((f) => r.every((p) => f.some((q) => norm(sub(p, q)) < 1e-9))))
+    && R1.every((r) => r.every((p, i) => Math.abs(norm(sub(p, r[(i + 1) % 4])) - Math.sqrt(3)) < 1e-9));
+  const squares = RS.every((r) => r.every((p, i) => { const a = sub(r[(i + 3) % 4], p), b = sub(r[(i + 1) % 4], p); return Math.abs(dot(a, b)) < 1e-9; }));
+  const edgeKept = [0, RD_MORPH_SQUARE, 0.5, 1].every((s) => rdMorphRhombi(s).every((r, i) => W[i].filter((p) => r.some((q) => norm(sub(p, q)) < 1e-12)).length >= 2));
+  check('windows into the rhombic dodecahedron: starts at the windows, keeps each cube edge, passes through 12 squares, ends exactly as the RD (12 rhombi of edge sqrt3)', start && rd && squares && edgeKept);
 }
 
 console.log(failures === 0 ? '\nAll checks passed (0 failures).' : `\n${failures} check(s) FAILED.`);

@@ -35,7 +35,6 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 9 | Rhombic dodecahedron sub-family: 24 sheared-FCC cells from TARGETS.md, each built from four edge directions with volume matching the table | Kaleidohedra (predicted); verified by building in Polyhedraverse (9599e14) | yes (by construction) | **candidates** — combinatorial type is Fedorov's rhombic dodecahedron (Grünbaum 2010, Fig. 2(c)); none is in Grünbaum's monohedral enumeration (Figs. 3, 10: only Kepler's K and Bilinski's B), and the paper doesn't list mixed-angle cells like these | 2026-10-06 |
 | 10 | EKP windows: the dodecahedron with its six face-neighbours' stella octangulas carved out shows exactly 12 Penrose thick rhombi (72°/108°, edge 2/φ), one on each cube edge, at the dodecahedron's own face angles; 48 triangles wall the cut-away; volume exactly 12 | DICTO (spotted 12 diamond windows between six stellas and the dodecahedron) | yes | **not found** — candidate (web-level search) | 2026-10-08 (fb9de6b) |
 | 10a | Study of #10, the windows made convex: the 12 window rhombi pushed straight out by √(7 − 4φ), keeping size and orientation, hull into a 74-face solid with 12 Penrose thick rhombi, 6 golden rhombi on the cube faces, 8 equilateral triangles and 48 triangles; three edge lengths; has a flat net (recorded as #12 in Zenodo v2026.10.08-convex) | DICTO (asked to make the windows convex by expanding from the centre) | yes | study of #10, not a separate claim | 2026-10-08 |
-| 10b | Study of #10, the windows with flat notches: the 12 rhombi kept in place, each notch closed by a flat golden rhombus sunk to the windows' inner corners and 8 triangles; 66 faces, dented, volume V − 8/φ⁴ | DICTO (asked for a flat diamond in each notch) | yes | study of #10, not a separate claim | 2026-10-08 |
 | 11 | Dodecahedron stretched along a cube-face axis: 8 regular pentagons, 4 hexagons (108° × 4, 144° × 2), 2 rectangles at any stretch; squares at one edge (2/φ); at the lattice spacing 2 it is the hull of two EKP face-neighbour dodecahedra | DICTO (the "pentagon caps and hexagons" hunch, from overlapped dodecahedra) | yes | **not found** — candidate (web-level search; a simple construction, so likely to appear somewhere, e.g. crystal habits) | 2026-10-08 (fb9de6b) |
 
 ## 1. DICTO skewed rhombic dodecahedron
@@ -314,19 +313,20 @@ Targets 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 2
 
 ## 10. EKP windows (DICTO, 2026-10-08)
 
-*Its studies, 10a and 10b, are constructions on these windows, recorded with their exact results but not claimed as separate findings.*
+*Its study 10a is a construction on these windows, recorded with its exact results but not claimed as a separate finding.*
 
 Take the EKP cell's dodecahedron (cube edge 2) and the stella octangula in each of its six
 face-neighbour cells, and carve the twelve tetrahedra out of the dodecahedron.
 
 - What remains of the dodecahedron's surface is exactly **12 rhombi**, one on each edge of the
   cube, each lying in one of the dodecahedron's own face planes (the face whose diagonal is that
-  cube edge). Each rhombus has edge 2/φ (the dodecahedron's edge), short diagonal 2 (the cube
-  edge), long diagonal 2·0.7265 and angles **72° and 108°: Penrose's thick rhombus**. Two of its
+  cube edge). Each rhombus has edge 2/φ (the dodecahedron's edge), long diagonal 2 (the cube
+  edge), short diagonal 2·0.7265 and angles **72° and 108°: Penrose's thick rhombus**. Two of its
   sides are dodecahedron edges; the other two are where the neighbour's two tetrahedra cut the face.
-- The rhombic dodecahedron's 12 rhombi sit on the same cube edges with the cube edge as short
-  diagonal too, but at 70.53° and turned about 13° about that edge: the windows are its
-  icosahedral near-twin.
+- The rhombic dodecahedron's 12 rhombi sit on the same cube edges, but there the cube edge is the
+  short diagonal (angles 70.53°/109.47°), and they are turned about 13° about that edge: the windows
+  are its icosahedral near-twin. (Corrected 2026-10-08: an earlier wording said the cube edge was the
+  windows' short diagonal; it is their long one.) The EKP Study picker morphs one into the other.
 - The cut-away is walled by **48 triangles** in the stellas' face planes, 24 with sides
   √2/φ, 2/φ, √2 (cube corner, roof vertex, cube-face centre) and 24 with sides √2/φ², 2/φ, √2
   (cube-face centre, a rhombus's inner corner, cube corner); the 8 over each cube face meet at its
@@ -350,12 +350,12 @@ normal by t, keeping its size, angles and orientation, and take the convex hull.
 
 - For every t > 0 the hull has 80 faces: the 12 rhombi, 8 equilateral triangles where the cube
   corners open, and 60 joining triangles (each gap between rhombi is twisted, so it splits in two).
-- At exactly **t = √(7 − 4φ) ≈ 0.7265** (half the rhombi's long diagonal), and nowhere else on
+- At exactly **t = √(7 − 4φ) ≈ 0.7265** (half the rhombi's short diagonal), and nowhere else on
   0 < t ≤ 3 (scanned), the six gaps over the cube faces flatten. Each becomes a **golden rhombus**
   (angles 63.43° and 116.57°, diagonals in ratio exactly φ), square on a cube face. The solid has
   **74 faces**:
   - 12 Penrose thick rhombi (72°/108°, edge 2/φ), the windows, unchanged;
-  - 6 golden rhombi (edge 2√(7 − 4φ), the windows' long diagonal);
+  - 6 golden rhombi (edge 2√(7 − 4φ), the windows' short diagonal);
   - 8 equilateral triangles (edge 2/φ²) at the cube corners;
   - 24 isosceles triangles (2/φ, 2t, 2t) and 24 triangles (2/φ², 2/φ, 2t).
   Only three edge lengths occur: 2/φ², 2/φ and 2√(7 − 4φ).
@@ -368,27 +368,6 @@ normal by t, keeping its size, angles and orientation, and take the convex hull.
   80-face case elsewhere) and `scripts/verify-nets.mjs` (the net), every push. Shown in the EKP
   world, Study → Windows made convex, with a push slider that snaps at the golden point.
 - Status: a study of #10, not a separate claim (not found at web level, 2026-10-08).
-
-### 10b. Study: the windows with flat notches (DICTO, 2026-10-08)
-
-DICTO asked for each notch of #10 to be closed by a flat diamond and triangles, keeping the
-12 window rhombi exactly in place. With the windows fixed, the only convex closure is the
-dodecahedron itself, so the notch is a shallow pit.
-
-- A diamond on the notch rim's own points cannot be flat (they lie off one plane by 1/φ³).
-  A flat one is sunk to the windows' inner corners X (the plane x = 1 + 1/φ² over the +x face),
-  with its other two corners Z straight below the two roof vertices R, 1/φ³ down. It is a
-  **golden rhombus**: edge √(7 − 4φ), diagonals 2/φ² and 2/φ (ratio φ), #10a's golden rhombus at half
-  size. Eight triangles join it to the rim: 4 of sides √(7 − 4φ), 1.1366, 2/φ and 4 of sides
-  1/φ³, 1.1366, 2/φ.
-- The solid has **66 planar faces** (12 thick rhombi, 6 golden rhombi, 48 triangles), closed and
-  consistently wound, volume exactly V − 8/φ⁴ = 13.304952 (Monte Carlo 13.297).
-- It is one of a family: at the same depth the diamond can also be a 72° rhombus or a square; the
-  golden one is the one whose new corners sit under the roof vertices. A two-piece paper net
-  builds it (the best one-piece net found has a single overlapping pair).
-- Verified: `scripts/verify-roof-fold.mjs` §13(d). Shown in the EKP world, Study → Windows with
-  flat notches.
-- Status: a study of #10, not a separate claim.
 
 ## 11. The stretched dodecahedron (DICTO, 2026-10-08)
 
