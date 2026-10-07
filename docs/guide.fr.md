@@ -114,9 +114,11 @@ Un monde 3D sur une seule cellule exacte. Posez les toits d'Euclide sur un cube 
 
 Trois de ces pièces complètent un hommage à Kepler : l'**octaèdre** sur les centres des faces du cube, avec les sommets de l'icosaèdre sur ses arêtes à la section dorée ; la **stella octangula**, deux tétraèdres réguliers sur des sommets alternés du cube qui se recouvrent dans cet octaèdre ; et les trois **rectangles d'or** entrelacés de Pacioli, qui sont exactement là où se rencontrent les faîtes des toits des cellules voisines. Ensemble, les cinq solides de Platon s'emboîtent dans une seule cellule : icosaèdre, octaèdre, tétraèdres, cube, dodécaèdre.
 
-**Étude** montre une forme seule, la construction en pause : **Fenêtres** (le dodécaèdre creusé des stellas octangulas de ses six voisins par une face, ce qui laisse 12 losanges épais de Penrose aux angles des faces du dodécaèdre lui-même), **Fenêtres, avec les six stellas**, **Fenêtres rendues convexes** (chaque losange poussé vers l'extérieur ; le curseur **Poussée** s'arrête au point d'or, où apparaissent 6 losanges d'or, 74 faces en tout) et **Dodécaèdre étiré** (8 pentagones, 4 hexagones et 2 rectangles ; le curseur **Étirer** s'arrête à une arête, où les rectangles sont des carrés, et à l'espacement du réseau). Les études se cisaillent aussi : en copies exactes sur le réseau ou, d'une touche, comme le solide lui-même.
-
 La cellule de ce monde est la **cellule Euclid–Kepler–Pacioli**, et les grands dodécaèdres étoilés et icosaèdres qui ne se touchent que par les sommets forment le **réseau Euclid–Kepler–Pacioli**, tous deux de DICTO. À citer comme [doi:10.5281/zenodo.23173809](https://doi.org/10.5281/zenodo.23173809).
+
+## Études
+
+Un monde 3D+ de constructions exactes sur la cellule Euclid–Kepler–Pacioli, une à la fois (Wizard → 3D+ → Studies). Choisissez une **Étude** : **Fenêtres** (le dodécaèdre creusé des stellas octangulas de ses six voisins par une face, ce qui laisse 12 losanges épais de Penrose aux angles mêmes des faces du dodécaèdre), **Fenêtres, avec les six stellas**, **Fenêtres rendues convexes** (chaque losange poussé droit vers l'extérieur ; le curseur **Poussée** s'arrête au point doré, où 6 losanges d'or apparaissent, 74 faces en tout), **Des fenêtres à l'icosidodécaèdre** et **Des fenêtres au dodécaèdre rhombique** (le curseur **Métamorphose** amène les losanges à chacun ; l'enveloppe est dessinée opaque, les losanges incrustés, leurs contours visibles à travers elle en chemin) et **Dodécaèdre étiré** (8 pentagones, 4 hexagones et 2 rectangles ; le curseur **Étirer** s'arrête à une arête, où les rectangles sont des carrés, et au pas du réseau). Les études se cisaillent aussi : en copies exactes sur le réseau ou, d'une touche, comme le solide lui-même.
 
 ## Targets
 

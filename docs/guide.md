@@ -112,9 +112,11 @@ A 3D world on one exact cell. Put Euclid's roofs on a cube and you get a regular
 
 Three of those pieces complete a homage to Kepler: the **octahedron** on the cube's face centres, with the icosahedron's corners on its edges at the golden section; the **stella octangula**, two regular tetrahedra on alternate cube corners that overlap in that octahedron; and Pacioli's three interlocking **golden rectangles**, which are exactly where the neighbouring cells' roof ridges meet. Together all five Platonic solids nest in one cell: icosahedron, octahedron, tetrahedra, cube, dodecahedron.
 
-**Study** shows a shape on its own, with building paused: **Windows** (the dodecahedron with its six face-neighbours' stella octangulas carved out, leaving 12 Penrose thick rhombi at the dodecahedron's own face angles), **Windows, with the six stellas**, **Windows made convex** (each rhombus pushed straight out; the **Push** slider snaps at the golden point, where 6 golden rhombi appear, 74 faces in all) and **Stretched dodecahedron** (8 pentagons, 4 hexagons and 2 rectangles; the **Stretch** slider snaps at one edge, where the rectangles are squares, and at the lattice spacing). Studies shear too: as exact copies on the lattice or, one tap away, as the solid itself.
-
 The cell behind this world is the **Euclid–Kepler–Pacioli cell**, and great stellated dodecahedra and icosahedra touching only at corners form the **Euclid–Kepler–Pacioli network**, both by DICTO. Cite them as [doi:10.5281/zenodo.23173809](https://doi.org/10.5281/zenodo.23173809).
+
+## Studies
+
+A 3D+ world of exact constructions on the Euclid–Kepler–Pacioli cell, shown one at a time (Wizard → 3D+ → Studies). Pick a **Study**: **Windows** (the dodecahedron with its six face-neighbours' stella octangulas carved out, leaving 12 Penrose thick rhombi at the dodecahedron's own face angles), **Windows, with the six stellas**, **Windows made convex** (each rhombus pushed straight out; the **Push** slider snaps at the golden point, where 6 golden rhombi appear, 74 faces in all), **Windows into the icosidodecahedron** and **Windows into the rhombic dodecahedron** (the **Morph** slider moves the rhombi into each; the hull is drawn solid with the rhombi inlaid, their outlines showing through it on the way), and **Stretched dodecahedron** (8 pentagons, 4 hexagons and 2 rectangles; the **Stretch** slider snaps at one edge, where the rectangles are squares, and at the lattice spacing). Studies shear too: as exact copies on the lattice or, one tap away, as the solid itself.
 
 ## Targets
 

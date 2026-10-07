@@ -326,7 +326,7 @@ face-neighbour cells, and carve the twelve tetrahedra out of the dodecahedron.
 - The rhombic dodecahedron's 12 rhombi sit on the same cube edges, but there the cube edge is the
   short diagonal (angles 70.53°/109.47°), and they are turned about 13° about that edge: the windows
   are its icosahedral near-twin. (Corrected 2026-10-08: an earlier wording said the cube edge was the
-  windows' short diagonal; it is their long one.) The EKP Study picker morphs one into the other.
+  windows' short diagonal; it is their long one.) The Studies world morphs one into the other.
 - The cut-away is walled by **48 triangles** in the stellas' face planes, 24 with sides
   √2/φ, 2/φ, √2 (cube corner, roof vertex, cube-face centre) and 24 with sides √2/φ², 2/φ, √2
   (cube-face centre, a rhombus's inner corner, cube corner); the 8 over each cube face meet at its
@@ -337,7 +337,7 @@ face-neighbour cells, and carve the twelve tetrahedra out of the dodecahedron.
   corners are its vertices and points on its faces), so these windows only appear by carving.
 - Why it matters: an aperiodic tile (the thick rhombus) appearing, at its icosahedral orientation,
   on a periodic cubic lattice — a bridge between the two.
-- Verified: `scripts/verify-roof-fold.mjs` §13(a), every push. Shown in the EKP world, Study → Windows.
+- Verified: `scripts/verify-roof-fold.mjs` §13(a), every push. Shown in the Studies world (Wizard → 3D+ → Studies), Windows.
 - Status: **not found** at web level (2026-10-08); not yet searched in the faceting/compound literature.
 
 ### 10a. Study: the windows made convex (DICTO, 2026-10-08)
@@ -365,8 +365,7 @@ normal by t, keeping its size, angles and orientation, and take the convex hull.
 - **Buildable:** it unfolds into a flat net of all 74 faces with no two faces overlapping, which
   folds closed (found by the Nets code, 76 taps).
 - Verified: `scripts/verify-roof-fold.mjs` §13(c) (faces, golden ratio, edge lengths, closure, the
-  80-face case elsewhere) and `scripts/verify-nets.mjs` (the net), every push. Shown in the EKP
-  world, Study → Windows made convex, with a push slider that snaps at the golden point.
+  80-face case elsewhere) and `scripts/verify-nets.mjs` (the net), every push. Shown in the Studies world, Windows made convex, with a push slider that snaps at the golden point.
 - Status: a study of #10, not a separate claim (not found at web level, 2026-10-08).
 
 ## 11. The stretched dodecahedron (DICTO, 2026-10-08)
@@ -382,7 +381,7 @@ the same axis along which the rhombic dodecahedron stretches into the elongated 
 - The dodecahedral counterpart of the elongated (rhombic) dodecahedron: 4 pentagons at each end where
   that has 4 rhombi, and a hexagon belt, plus the two rectangles that the dodecahedron's own roof
   ridges force. A pentagon-capped, hexagon-belted solid without them needs another construction.
-- Verified: `scripts/verify-roof-fold.mjs` §13(b), every push. Shown in the EKP world, Study →
+- Verified: `scripts/verify-roof-fold.mjs` §13(b), every push. Shown in the Studies world,
   Stretched dodecahedron, with a stretch slider.
 - Status: **not found** at web level (2026-10-08). Simple enough that it probably appears somewhere
   (crystal habits, Minkowski sums); a targeted search is still needed before claiming priority.

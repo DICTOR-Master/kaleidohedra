@@ -162,6 +162,10 @@ export const LATTICES_3D = [
   { key: 'roofFold', label: 'Euclid–Kepler–Pacioli Cell Network', pieces: [
     { label: 'Euclid–Kepler–Pacioli Cell Network', action: 'tool:roofFoldWorld' },
   ] },
+  // Studies (direct decision, 2026-10-08): the EKP cell's exact constructions, a world of their own.
+  { key: 'studies', label: 'Studies', pieces: [
+    { label: 'Studies', action: 'tool:studiesWorld' },
+  ] },
   { key: 'fcc', label: 'FCC', pieces: [
     { label: 'RD', action: 'tool:pieceType:rd' },
     { label: 'Hemi RD', action: 'tool:pieceType:halfrd' },

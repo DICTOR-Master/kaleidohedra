@@ -28,7 +28,7 @@ import { createGoldenWorld } from './app/world-golden.js';
 import { createRoofFoldWorld } from './app/world-roof-fold.js';
 import { createTargetsWorld } from './app/world-targets.js';
 import { zonohedron as targetZonohedron, EMBLEM_DIRECTIONS } from './geometry-extensions/targets.js';
-import { roofFoldSolids } from './geometry-extensions/roof-fold.js';
+import { roofFoldSolids, expandedWindows, EXPANDED_WINDOWS_GOLDEN } from './geometry-extensions/roof-fold.js';
 import { createNetsWorld } from './app/world-nets.js';
 import { makeQuasicrystal, PRISM_HEIGHT } from './geometry-extensions/quasicrystal.js';
 import { elongatedDodecahedronVerts, elongDodecaCellToWorld } from './geometry-extensions/elongated-dodecahedron.js';
@@ -66,6 +66,7 @@ import {
 } from './core/persistence.js';
 import { VALID_TRIPLES, unitTileVertices } from './geometry-extensions/growth.js';
 import { installShear } from './app/kaleido-shear.js';
+import { createStudiesWorld } from './app/world-studies.js';
 import { cellCorners } from './geometry-extensions/kaleido-lattice.js';
 
 const SCALE = 1;
@@ -117,12 +118,13 @@ let activeDimension = null;
 let shellsWorld = null;
 let goldenWorld = null;
 let roofFoldWorld = null;
+let studiesWorld = null;
 let shear = null; // the Kaleidohedra lattice shear (installShear)
 let targetsWorld = null;
 let netsWorld = null;
 let own3D = null;
-const OWN_WORLD_DIMENSION = { shells: '3D', golden: '3D', roofFold: '3D', targets: '3D', nets: '2D' };
-const own3DWorld = () => ({ shells: shellsWorld, golden: goldenWorld, roofFold: roofFoldWorld, targets: targetsWorld, nets: netsWorld })[own3D] ?? null;
+const OWN_WORLD_DIMENSION = { shells: '3D', golden: '3D', roofFold: '3D', studies: '3D', targets: '3D', nets: '2D' };
+const own3DWorld = () => ({ shells: shellsWorld, golden: goldenWorld, roofFold: roofFoldWorld, studies: studiesWorld, targets: targetsWorld, nets: netsWorld })[own3D] ?? null;
 const own3DActive = () => !!own3DWorld() && activeDimension === OWN_WORLD_DIMENSION[own3D];
 // The own worlds each own their scene, taps, Lattice View and Skeleton.
 const isOwnWorldDimension = () => own3DActive();
@@ -1470,7 +1472,7 @@ async function init() {
   shear = installShear({
     scene,
     camera,
-    onChange: () => roofFoldWorld?.shearChanged(),
+    onChange: () => { roofFoldWorld?.shearChanged(); studiesWorld?.shearChanged(); },
     onCell: (dirs) => {
       const g = new ConvexGeometry(cellCorners(dirs).map(([x, y, z]) => new THREE.Vector3(x, y, z)));
       g.computeVertexNormals();
@@ -1568,7 +1570,7 @@ async function init() {
   // types) it's hidden. Reached from the colour wheel's middle, and from
   // this bottom-row slot whenever no attach toggle needs it.
   let paintOn = false;
-  const paintAvailable = () => !!activeDimension && !(own3DActive() && ['shells', 'golden', 'roofFold', 'targets', 'nets'].includes(own3D));
+  const paintAvailable = () => !!activeDimension && !(own3DActive() && ['shells', 'golden', 'roofFold', 'studies', 'targets', 'nets'].includes(own3D));
   const attachNeeded = () => (!isOwnWorldDimension() ? ['rhombohedra', 'pyrochlore'] : []).includes(attachPiece());
   const paintInSlot = () => paintAvailable() && !attachNeeded();
   function setPaint(on) {
@@ -2192,6 +2194,7 @@ async function init() {
     shellsWorld?.setActive(own3DActive() && own3D === 'shells');
     goldenWorld?.setActive(own3DActive() && own3D === 'golden');
     roofFoldWorld?.setActive(own3DActive() && own3D === 'roofFold');
+    studiesWorld?.setActive(own3DActive() && own3D === 'studies');
     targetsWorld?.setActive(own3DActive() && own3D === 'targets');
     // Targets stay exact: no shear panel there (shearing would change the targets' angles).
     // The EKP world keeps it: there the shear moves the cell centres and the pieces stay regular.
@@ -2916,13 +2919,13 @@ async function init() {
         // 2026-08-29 -- X-Ray stays reachable via the corner HUD wheel's
         // own #xray-toggle face and the Lab panel, so no wheel face
         // routes to it here any more.)
-        const OWN_WORLD_ACTIONS = { 'tool:shellsWorld': 'shells', 'tool:goldenWorld': 'golden', 'tool:roofFoldWorld': 'roofFold', 'tool:targetsWorld': 'targets', 'tool:netsWorld': 'nets' };
+        const OWN_WORLD_ACTIONS = { 'tool:shellsWorld': 'shells', 'tool:goldenWorld': 'golden', 'tool:roofFoldWorld': 'roofFold', 'tool:studiesWorld': 'studies', 'tool:targetsWorld': 'targets', 'tool:netsWorld': 'nets' };
         if (OWN_WORLD_ACTIONS[action]) {
           own3D = OWN_WORLD_ACTIONS[action];
           wheel3D.close();
           applyDimensionVisibility();
           updateQuickSelect();
-          showHudPrompt({ shells: 'Shells', golden: 'Golden Rhombohedra', roofFold: 'EKP', targets: 'Targets', nets: 'Nets' }[own3D], 2500);
+          showHudPrompt({ shells: 'Shells', golden: 'Golden Rhombohedra', roofFold: 'EKP', studies: 'Studies', targets: 'Targets', nets: 'Nets' }[own3D], 2500);
           return;
         }
         if (own3D && (action?.startsWith('tool:pieceType:') || action === 'tool:cuboctaBuild')) {
@@ -3185,6 +3188,7 @@ async function init() {
       if (action === 'tool:cuboctaBuild') return cuboctaGeometry;
       if (action === 'tool:shellsWorld') return wizardPieceGeometry('tool:pieceType:rd');
       if (action === 'tool:roofFoldWorld') return convex(roofFoldSolids().dodeca.faces.flat());
+      if (action === 'tool:studiesWorld') return convex(expandedWindows(EXPANDED_WINDOWS_GOLDEN).flat());
       if (action === 'tool:targetsWorld') return convex(targetZonohedron(EMBLEM_DIRECTIONS).flatMap((f) => f.polygon));
       if (action === 'tool:goldenWorld') return convex(goldenEngine.tileVertices([0, 0, 0, 0, 0, 0], [0, 1, 2]));
       switch (piece) {
@@ -3982,7 +3986,7 @@ async function init() {
       // report 2026-08-29 ("the picker symbol at bottom doesnt change").
       // Checked first, ahead of the plain piece-type lookup below.
       if (own3DActive()) {
-        quickShapeEl.innerHTML = iconFrame(({ shells: MARKS.pieceRD, roofFold: MARKS.pieceDodeca })[own3D] ?? MARKS.pieceRhombohedron, { title: ({ shells: 'Shells', roofFold: 'EKP', targets: 'Targets' })[own3D] ?? 'Golden Rhombohedra' });
+        quickShapeEl.innerHTML = iconFrame(({ shells: MARKS.pieceRD, roofFold: MARKS.pieceDodeca, studies: MARKS.pieceDodeca })[own3D] ?? MARKS.pieceRhombohedron, { title: ({ shells: 'Shells', roofFold: 'EKP', studies: 'Studies', targets: 'Targets' })[own3D] ?? 'Golden Rhombohedra' });
       } else if (currentMode === 'cubocta') {
         quickShapeEl.innerHTML = iconFrame(MARKS.cuboctahedron, { title: 'Shape' });
       } else {
@@ -4337,6 +4341,17 @@ async function init() {
     showHudPrompt,
     fitView: fitCameraTo,
     onChange: () => { if (historyRestorers.has('worldrooffold')) recordHistory('worldrooffold', roofFoldWorld.snapshot()); },
+  });
+  studiesWorld = createStudiesWorld({
+    // The real scene, like the EKP world: the shear moves copies, or bends the solid on request.
+    scene: { add: (o) => THREE.Object3D.prototype.add.call(scene, o) },
+    fitView: fitCameraTo,
+    shear: () => {
+      const e = shear?.group.matrix.elements;
+      if (!e) return null;
+      const A = [[e[0], e[4], e[8]], [e[1], e[5], e[9]], [e[2], e[6], e[10]]];
+      return A.every((row, i) => row.every((v, j) => Math.abs(v - (i === j ? 1 : 0)) < 1e-12)) ? null : A;
+    },
   });
   targetsWorld = createTargetsWorld({
     // Added to the real scene, not the shear group.
@@ -4979,7 +4994,7 @@ let lastDegradeAt = 0;
 
 const hudDimEl = document.getElementById('hud-dim');
 const hudWorldEl = document.getElementById('hud-world');
-const OWN_WORLD_NAMES = { shells: 'Shells', golden: 'Golden Rhombohedra', roofFold: 'EKP', targets: 'Targets', nets: 'Nets' };
+const OWN_WORLD_NAMES = { shells: 'Shells', golden: 'Golden Rhombohedra', roofFold: 'EKP', studies: 'Studies', targets: 'Targets', nets: 'Nets' };
 const onedClearEl = document.getElementById('oned-clear');
 function animate() {
   requestAnimationFrame(animate);

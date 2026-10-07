@@ -114,9 +114,11 @@ Un mundo 3D sobre una única celda exacta. Pon los tejados de Euclides sobre un 
 
 Tres de esas piezas completan un homenaje a Kepler: el **octaedro** sobre los centros de las caras del cubo, con los vértices del icosaedro en sus aristas en la sección áurea; la **stella octangula**, dos tetraedros regulares en vértices alternos del cubo que se solapan en ese octaedro; y los tres **rectángulos áureos** entrelazados de Pacioli, que son justo donde se encuentran las cumbreras de los tejados de las celdas vecinas. Juntos, los cinco sólidos platónicos se anidan en una celda: icosaedro, octaedro, tetraedros, cubo, dodecaedro.
 
-**Estudio** muestra una forma sola, con la construcción en pausa: **Ventanas** (el dodecaedro con las stellas octangulas de sus seis vecinos de cara talladas, que deja 12 rombos gruesos de Penrose en los ángulos de las caras del propio dodecaedro), **Ventanas, con las seis stellas**, **Ventanas convexas** (cada rombo empujado hacia fuera; el deslizador **Empuje** se detiene en el punto áureo, donde aparecen 6 rombos áureos, 74 caras en total) y **Dodecaedro estirado** (8 pentágonos, 4 hexágonos y 2 rectángulos; el deslizador **Estirar** se detiene a una arista, donde los rectángulos son cuadrados, y en el espaciado de la red). Los estudios también se cizallan: como copias exactas en la red o, con un toque, como el propio sólido.
-
 La celda de este mundo es la **celda Euclid–Kepler–Pacioli**, y los grandes dodecaedros estrellados e icosaedros que solo se tocan por los vértices forman la **red Euclid–Kepler–Pacioli**, ambas de DICTO. Cítalas como [doi:10.5281/zenodo.23173809](https://doi.org/10.5281/zenodo.23173809).
+
+## Estudios
+
+Un mundo 3D+ de construcciones exactas sobre la celda Euclid–Kepler–Pacioli, una a una (Wizard → 3D+ → Studies). Elige un **Estudio**: **Ventanas** (el dodecaedro con las stellas octangulas de sus seis vecinos de cara talladas, que deja 12 rombos gruesos de Penrose en los propios ángulos de cara del dodecaedro), **Ventanas, con las seis stellas**, **Ventanas convexas** (cada rombo empujado hacia fuera; el deslizador **Empuje** se detiene en el punto áureo, donde aparecen 6 rombos áureos, 74 caras en total), **De las ventanas al icosidodecaedro** y **De las ventanas al dodecaedro rómbico** (el deslizador **Transformar** lleva los rombos a cada uno; la envolvente se dibuja opaca con los rombos incrustados, y sus contornos se ven a través de ella durante el camino) y **Dodecaedro estirado** (8 pentágonos, 4 hexágonos y 2 rectángulos; el deslizador **Estirar** se detiene a una arista, donde los rectángulos son cuadrados, y en el espaciado de la red). Los estudios también se cizallan: como copias exactas en la red o, con un toque, como el propio sólido.
 
 ## Targets
 
