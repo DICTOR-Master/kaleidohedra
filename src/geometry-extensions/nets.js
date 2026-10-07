@@ -36,6 +36,23 @@ function rotationAbout(a, d, angle) {
   const Ti = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -a[0], -a[1], -a[2], 1];
   return mul(T, mul(R, Ti));
 }
+// The rigid transform (rotation + translation) taking triangle S onto the
+// congruent triangle D, point for point: a proper orthonormal frame on
+// each (its first edge, its normal, the third axis to complete it), then
+// the rotation between the two frames.
+function rigidAlign(S, D) {
+  const frame = (P) => {
+    const u = norm(sub(P[1], P[0]));
+    const n = norm(cross(u, sub(P[2], P[0])));
+    const v = cross(n, u);
+    return [u[0], u[1], u[2], 0, v[0], v[1], v[2], 0, n[0], n[1], n[2], 0, 0, 0, 0, 1];
+  };
+  const transpose3 = (M) => [M[0], M[4], M[8], 0, M[1], M[5], M[9], 0, M[2], M[6], M[10], 0, 0, 0, 0, 1];
+  const Fs = frame(S), Fd = frame(D);
+  const R = mul(Fd, transpose3(Fs)); // Fs is orthonormal: its transpose is its inverse.
+  const t = sub(D[0], apply(R, S[0]));
+  return [R[0], R[1], R[2], 0, R[4], R[5], R[6], 0, R[8], R[9], R[10], 0, t[0], t[1], t[2], 1];
+}
 
 // ---- the solids: vertices and faces (each face its corners in order) ----
 function cube() {
@@ -124,6 +141,44 @@ const tetrahedron = () => hullOf([[1, 1, 1], [1, -1, -1], [-1, 1, -1], [-1, -1, 
 const octahedron = () => hullOf([[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1]]);
 const icosahedron = () => hullOf(cyclic(signs([0, 1, PHI])));
 const dodecahedron = () => hullOf([...signs([1, 1, 1]), ...cyclic(signs([0, 1 / PHI, PHI]))]);
+// The EKP cell's three pieces that don't net as one plain solid (direct
+// decision, 2026-10-07: "the stella octangula could be two tetra nets
+// interlaced that jump together and pacioli could slot together like
+// metal plates with slots"). Each is built, each on its own, straight in
+// its true position relative to a shared centre, so showing the built
+// ones together needs no extra placement: they already interlock.
+// The stella octangula's two tetrahedra: the same shape as `tetrahedron`,
+// and its mirror image on the cube's other four corners.
+const STELLA_A = [[1, 1, 1], [1, -1, -1], [-1, 1, -1], [-1, -1, 1]];
+const STELLA_B = [[-1, -1, -1], [-1, 1, 1], [1, -1, 1], [1, 1, -1]];
+// Each of the icosahedron's 20 faces, with its spike's tip as the fourth
+// corner: the great stellated dodecahedron's vertex over that face. It
+// lies along the same direction as the dual dodecahedron's vertex there,
+// scaled by phi^2 (the standard stellation ratio from one regular star
+// polyhedron to the next), which is exactly what puts the tip at the
+// golden-triangle distance (phi times the base edge) from each corner.
+function starSpikes() {
+  const { v: iv, faces: ifaces } = icosahedron();
+  const { v: dv } = dodecahedron();
+  const dot3 = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+  return ifaces.map((f) => {
+    const pts = f.map((i) => iv[i]);
+    const c = pts.reduce((s, p) => s.map((x, d) => x + p[d] / 3), [0, 0, 0]);
+    const dodecaVertex = dv.reduce((best, p) => (dot3(p, c) > dot3(best, c) ? p : best));
+    return [...pts, dodecaVertex.map((x) => x * PHI * PHI)];
+  });
+}
+// Pacioli's three golden rectangles, cornered on the icosahedron: its 12
+// vertices group into three sets of four that each share a zero
+// coordinate, so each set is a flat rectangle in one of the three
+// coordinate planes, edge to edge in the golden ratio (2 to 2φ).
+function pacioliRects() {
+  return [
+    [[0, 1, PHI], [0, 1, -PHI], [0, -1, -PHI], [0, -1, PHI]],
+    [[1, PHI, 0], [1, -PHI, 0], [-1, -PHI, 0], [-1, PHI, 0]],
+    [[PHI, 0, 1], [PHI, 0, -1], [-PHI, 0, -1], [-PHI, 0, 1]],
+  ];
+}
 // Grouped as the panel shows them. The Voronoi cells (direct decision,
 // 2026-09-29: "Voronoi in the name if valid and relevant"): the cube, the
 // RD and the truncated octahedron are exactly the Voronoi cells of the
@@ -133,15 +188,21 @@ const dodecahedron = () => hullOf([...signs([1, 1, 1]), ...cyclic(signs([0, 1 / 
 // regulars"), the cube among them too. `piece`: its 3D piece, where
 // the 3D world has one (Open in 3D).
 export const SOLIDS = {
-  cube: { label: 'Cube', groups: ['voronoi', 'platonic'], make: cube, piece: 'cube' },
+  cube: { label: 'Cube', groups: ['voronoi', 'platonic', 'ekp'], make: cube, piece: 'cube' },
   rd: { label: 'Rhombic dodecahedron', groups: ['voronoi'], make: rd, piece: 'rd' },
   to: { label: 'Truncated octahedron', groups: ['voronoi'], make: truncatedOctahedron, piece: 'to' },
   tetra: { label: 'Tetrahedron', groups: ['platonic'], make: tetrahedron },
-  octa: { label: 'Octahedron', groups: ['platonic'], make: octahedron, piece: 'octahedron' },
-  icosa: { label: 'Icosahedron', groups: ['platonic'], make: icosahedron },
-  dodeca: { label: 'Dodecahedron', groups: ['platonic'], make: dodecahedron },
+  octa: { label: 'Octahedron', groups: ['platonic', 'ekp'], make: octahedron, piece: 'octahedron' },
+  icosa: { label: 'Icosahedron', groups: ['platonic', 'ekp'], make: icosahedron },
+  dodeca: { label: 'Dodecahedron', groups: ['platonic', 'ekp'], make: dodecahedron },
+  stella1: { label: 'Stella octangula · A', groups: ['ekp'], assembly: 'stella', make: () => hullOf(STELLA_A) },
+  stella2: { label: 'Stella octangula · B', groups: ['ekp'], assembly: 'stella', make: () => hullOf(STELLA_B) },
+  starSpike: { label: 'Great star · one spike', groups: ['ekp'], assembly: 'star', assemblyWith: ['icosa'], make: () => hullOf(starSpikes()[0]) },
+  pacioli1: { label: "Pacioli's rectangle · A", groups: ['ekp'], assembly: 'pacioli', make: () => hullOf(pacioliRects()[0]) },
+  pacioli2: { label: "Pacioli's rectangle · B", groups: ['ekp'], assembly: 'pacioli', make: () => hullOf(pacioliRects()[1]) },
+  pacioli3: { label: "Pacioli's rectangle · C", groups: ['ekp'], assembly: 'pacioli', make: () => hullOf(pacioliRects()[2]) },
 };
-export const SOLID_GROUPS = [{ id: 'voronoi', label: 'Voronoi cells' }, { id: 'platonic', label: 'Platonic solids' }];
+export const SOLID_GROUPS = [{ id: 'voronoi', label: 'Voronoi cells' }, { id: 'platonic', label: 'Platonic solids' }, { id: 'ekp', label: 'Euclid–Kepler–Pacioli cell' }];
 
 // ---- nets ----
 // Faces as corner coordinates, scaled to edge L, each wound so its normal
@@ -262,13 +323,21 @@ export function netOf(id, L = 5) {
     const T = transforms(faces, tree, M0, 0);
     const flat = faces.map((f, i) => f.pts.map((p) => apply(T[i], p)));
     let ok = flat.every((P) => P.every((p) => Math.abs(p[2]) < 1e-6));
-    for (let i = 0; ok && i < flat.length; i++) for (let j = i + 1; ok && j < flat.length; j++) if (overlap(flat[i], flat[j])) ok = false;
+    let overlapCount = 0;
+    for (let i = 0; i < flat.length; i++) for (let j = i + 1; j < flat.length; j++) if (overlap(flat[i], flat[j])) overlapCount++;
     if (!ok) continue;
     const xs = flat.flat().map((p) => p[0]), ys = flat.flat().map((p) => p[1]);
     const area = (Math.max(...xs) - Math.min(...xs)) * (Math.max(...ys) - Math.min(...ys));
-    if (!best || area < best.area - 1e-9) best = { tree, M0, flat, area };
+    // A perfect (no-overlap) net beats any imperfect one; among equals, the
+    // smaller area, and among those, the fewest overlapping pairs (some
+    // shapes, their base corners wider than the solid's own, have no
+    // perfect flat net at all: direct finding, 2026-10-07, the great
+    // star's spike, 36 degree apex against a 60 degree equilateral base).
+    const rank = (overlapCount > 0 ? 1 : 0) * 1e6 + area;
+    if (!best || rank < best.rank - 1e-9 || (Math.abs(rank - best.rank) <= 1e-9 && overlapCount < best.overlapCount)) best = { tree, M0, flat, area, overlapCount, rank };
   }
   if (!best) throw new Error(`no flat net found for ${id}`);
+  if (best.overlapCount > 0) console.warn(`${SOLIDS[id].label}: no flat net is free of overlap; using the least-overlapping one (${best.overlapCount} pair(s))`);
   const { tree, M0, flat } = best;
   // Edges: each face owns its sides but the hinge to its parent (the
   // parent's), so a finished net has every edge once, and the edges that
@@ -282,8 +351,21 @@ export function netOf(id, L = 5) {
     });
     return out;
   });
+  // The net's own fold (at()) places the closed solid at an arbitrary
+  // position and turn, fixed only by the root face's own canonical
+  // flattening (flatten() above): fine alone, but two different solids
+  // (the stella octangula's two tetrahedra, say) each pick their own, so
+  // folded side by side they don't land in their true relative position
+  // (direct finding, 2026-10-07: they rendered as one coincident shape,
+  // not an interlocking pair). `align` is the rigid correction back onto
+  // the solid's own true vertices (solidFaces() below, still in its
+  // maker's coordinates): identity for a lone solid's own frame, but
+  // composed with at(t) it gives every piece of a multi-piece assembly a
+  // shared, consistent frame to fold into.
+  const rootPts = faces[tree.order[0]].pts;
+  const align = rigidAlign(rootPts.slice(0, 3).map((p) => apply(M0, p)), rootPts.slice(0, 3));
   return {
-    id, label: SOLIDS[id].label, L, faces, tree, M0, flat, owned,
+    id, label: SOLIDS[id].label, L, faces, tree, M0, flat, owned, align,
     at: (t) => transforms(faces, tree, M0, t),
   };
 }
@@ -294,4 +376,4 @@ export function netSteps(net) {
   const [root, ...rest] = net.tree.order;
   return [...net.owned[root].map((e) => ({ face: root, edges: [e] })), ...rest.map((f) => ({ face: f, edges: net.owned[f] }))];
 }
-export { IDENTITY };
+export { IDENTITY, starSpikes, pacioliRects, mul };

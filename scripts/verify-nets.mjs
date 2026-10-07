@@ -2,7 +2,18 @@
 // with no two faces overlapping, each face hinged to its parent on a
 // shared edge, and folding it all the way closes it back into the solid
 // exactly; half-folded, every face keeps its shape (a rigid turn).
-import { netOf, netSteps, SOLIDS, apply } from '../src/geometry-extensions/nets.js';
+import { netOf, netSteps, SOLIDS, apply, mul } from '../src/geometry-extensions/nets.js';
+
+// A solid with assembly siblings (the EKP cell's stella octangula, star
+// spike + icosahedron, Pacioli's rectangles): true if another SOLIDS
+// entry shares its `assembly` tag or either names the other in
+// `assemblyWith` (direct finding, 2026-10-07: two different solids each
+// land their net's own fold at their own canonical placement, so without
+// a correction, two congruent pieces — stella's two tetrahedra — folded
+// identically and rendered as one coincident shape, not an interlocking
+// pair).
+const hasSiblings = (id) => Object.keys(SOLIDS).some((o) => o !== id
+  && ((SOLIDS[id].assembly && SOLIDS[o].assembly === SOLIDS[id].assembly) || (SOLIDS[id].assemblyWith ?? []).includes(o) || (SOLIDS[o].assemblyWith ?? []).includes(id)));
 
 let failures = 0;
 function check(label, ok, extra = '') {
@@ -22,6 +33,14 @@ for (const id of Object.keys(SOLIDS)) {
   const M0 = T1[net.tree.order[0]];
   const closed = net.faces.every((f, i) => f.pts.every((p) => dist(apply(T1[i], p), apply(M0, p)) < 1e-6));
   check(`${net.label}: folded (t = 1) it closes into the solid`, closed);
+  if (hasSiblings(id)) {
+    // Composed with net.align, folded (t = 1) must land back on this
+    // solid's own true vertices exactly (not just some congruent copy of
+    // them), the property an assembly's pieces share a frame by.
+    const trueT = T1.map((Ti) => mul(net.align, Ti));
+    const onTrueVerts = net.faces.every((f, i) => f.pts.every((p) => dist(apply(trueT[i], p), p) < 1e-6));
+    check(`${net.label}: aligned, it folds onto its own true vertices (an assembly sibling)`, onTrueVerts);
+  }
   const T5 = net.at(0.5);
   const rigid = net.faces.every((f, i) => f.pts.every((p, j) => f.pts.every((q, k) => near(dist(apply(T5[i], p), apply(T5[i], q)), dist(p, q)))));
   const hinged = net.tree.order.slice(1).every((i) => {
@@ -43,7 +62,12 @@ for (const id of Object.keys(SOLIDS)) {
   const steps = netSteps(net);
   const edges = steps.flatMap((s) => s.edges);
   const sides = net.faces.reduce((s, f) => s + f.pts.length, 0);
-  check(`${net.label}: the build follows the net, first face by sides then a face a tap (${steps.length} taps), every edge n`, steps.length === net.faces[net.tree.order[0]].pts.length + F - 1 && edges.length === sides - (F - 1) && edges.every(([a, b]) => near(dist(a, b), 5)));
+  // Every step's edge is a real edge of the solid: its length matches one
+  // of the lengths the solid's own faces actually have (most solids have
+  // only one; the EKP assembly pieces have two, a short and a long).
+  const realLengths = [...new Set(net.faces.flatMap((f) => f.pts.map((p, i) => dist(p, f.pts[(i + 1) % f.pts.length]))).map((d) => Math.round(d * 1e6)))];
+  const isRealEdge = (a, b) => realLengths.some((d) => near(dist(a, b), d / 1e6));
+  check(`${net.label}: the build follows the net, first face by sides then a face a tap (${steps.length} taps), every edge n`, steps.length === net.faces[net.tree.order[0]].pts.length + F - 1 && edges.length === sides - (F - 1) && edges.every(([a, b]) => isRealEdge(a, b)));
 }
 console.log(`\n${failures} failure${failures === 1 ? '' : 's'}.`);
 process.exit(failures ? 1 : 0);

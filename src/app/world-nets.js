@@ -7,7 +7,7 @@
 // ("tap it and it folds into the solid"), and a slider folds and unfolds
 // it by hand ("fold slider"). The geometry is geometry-extensions/nets.js.
 import * as THREE from 'three';
-import { netOf, netSteps, SOLIDS, SOLID_GROUPS, apply } from '../geometry-extensions/nets.js';
+import { netOf, netSteps, SOLIDS, SOLID_GROUPS, apply, mul } from '../geometry-extensions/nets.js';
 import { bulletGeometry, plainCellGeometry } from './bullet-cell.js';
 import { t } from './i18n.js';
 import { dimensionLabel } from './dimension-label.js';
@@ -31,16 +31,38 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
   const stepsOf = Object.fromEntries(Object.entries(nets).map(([id, net]) => [id, netSteps(net)]));
   let solid = 'cube';
   const progress = Object.fromEntries(Object.keys(SOLIDS).map((id) => [id, 0]));
-  let fold = 0; // 0 flat … 1 closed
+  let fold = 0; // 0 flat … 1 closed, for the solid you're on
+  // Folded all the way, kept once reached: an assembly piece (direct
+  // decision, 2026-10-07: "stella octangula ... jump together") needs
+  // this to show its already-done siblings while you build the next one.
+  const foldDone = Object.fromEntries(Object.keys(SOLIDS).map((id) => [id, false]));
+  // Other solids that join this one into one assembled whole: the same
+  // `assembly` tag, or named either way in `assemblyWith`.
+  function siblingsOf(id) {
+    const a = SOLIDS[id].assembly;
+    return Object.keys(SOLIDS).filter((o) => o !== id
+      && ((a && SOLIDS[o].assembly === a) || (SOLIDS[id].assemblyWith ?? []).includes(o) || (SOLIDS[o].assemblyWith ?? []).includes(id)));
+  }
+  // A net's own fold lands the closed solid at a placement fixed only by
+  // its own root face (nets.js's flatten()): fine alone, but two
+  // different solids each pick their own, so folded side by side they
+  // don't land in their true relative position (direct finding,
+  // 2026-10-07: the stella octangula's two tetrahedra rendered as one
+  // coincident shape, not an interlocking pair, even once given two
+  // colours). For a piece with assembly siblings, `net.align` (computed
+  // in nets.js) corrects every face's transform back onto its maker's
+  // own true vertices, a shared frame every sibling also aligns to.
+  const trueT = (id, T) => (siblingsOf(id).length ? T.map((Ti) => mul(nets[id].align, Ti)) : T);
   const clampP = (id, v) => (Number.isInteger(v) ? Math.max(0, Math.min(stepsOf[id].length, v)) : 0);
   function read(data) {
     if (data?.version !== 1) return;
     for (const id of Object.keys(SOLIDS)) progress[id] = clampP(id, data.progress?.[id]);
+    for (const id of Object.keys(SOLIDS)) foldDone[id] = data.foldDone?.[id] === true && progress[id] === stepsOf[id].length;
     if (SOLIDS[data.solid]) solid = data.solid;
-    fold = data.fold === 1 && progress[solid] === stepsOf[solid].length ? 1 : 0;
+    fold = foldDone[solid] ? 1 : 0;
   }
   try { read(JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null')); } catch { /* start empty */ }
-  const toJSON = () => ({ version: 1, solid, progress: { ...progress }, fold: fold === 1 ? 1 : 0 });
+  const toJSON = () => ({ version: 1, solid, progress: { ...progress }, foldDone: { ...foldDone } });
   function save() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(toJSON())); } catch { /* best-effort */ } }
   let active = false;
   const net = () => nets[solid];
@@ -54,6 +76,28 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
   const filledMat = new THREE.MeshStandardMaterial({ color: CYAN, vertexColors: true, roughness: 0.8, metalness: 0.05 });
   const nextMat = new THREE.MeshStandardMaterial({ color: NEXT, emissive: NEXT, emissiveIntensity: 0.35, vertexColors: true });
   const faceMat = new THREE.MeshBasicMaterial({ color: CYAN, transparent: true, opacity: 0.14, depthWrite: false, side: THREE.DoubleSide });
+  // The EKP assembly pieces, one colour each (direct requests, 2026-10-07:
+  // "two colors one for each tet", "different colors for spikes too?",
+  // "max contrast", "cant do pacioli gold?"). The icosahedron, the star's
+  // spike, and Pacioli's rectangles take the same colours world-roof-
+  // fold.js already gives them (KIND_COLOR), so a piece's colour means
+  // the same thing in both worlds. Stella's two tetrahedra needed their
+  // own pair instead: as far apart as two colours get, a vivid magenta
+  // and a vivid cyan, near-complementary and both bright enough to read
+  // under the scene's lighting (two shades of one purple, tried first,
+  // read too close together) — and not dodecahedron's own gold, which
+  // sits in this same group.
+  const PIECE_COLOR = {
+    stella1: 0xff3b9e, stella2: 0x27d0e0, icosa: 0x5fd38a, starSpike: 0xff7a59,
+    pacioli1: 0xffe082, pacioli2: 0xffe082, pacioli3: 0xffe082,
+  };
+  const tintedMats = new Map();
+  function matFor(id, base) {
+    if (PIECE_COLOR[id] === undefined) return base;
+    const key = id + '\u0000' + base.uuid;
+    if (!tintedMats.has(key)) { const m = base.clone(); m.color.set(PIECE_COLOR[id]); tintedMats.set(key, m); }
+    return tintedMats.get(key);
+  }
   const ghostMat = new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.28 });
   const catchPlane = new THREE.Mesh(new THREE.PlaneGeometry(4000, 4000), new THREE.MeshBasicMaterial({ colorWrite: false, depthWrite: false }));
   catchPlane.position.z = -0.5;
@@ -67,10 +111,16 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
   function edgeCells(a, b, mat, into) {
     const A = new THREE.Vector3(...a), B = new THREE.Vector3(...b);
     const dir = B.clone().sub(A).normalize();
+    // 1 for every solid whose edges are all the same length; the EKP
+    // assembly pieces (the spike, Pacioli's rectangle) are not, so their
+    // longer edges stretch the same cell rather than leaving it short of
+    // the edge (direct finding, 2026-10-07).
+    const segLen = A.distanceTo(B) / L;
     for (let i = 0; i < L; i++) {
       const m = new THREE.Mesh(geo, mat);
       m.position.copy(A).lerp(B, (i + 0.5) / L);
       m.quaternion.setFromUnitVectors(up, dir);
+      m.scale.y = segLen;
       into.add(m);
     }
   }
@@ -91,9 +141,10 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
       // show their cells.
       if (builtEdges.has(e)) {
         const A = new THREE.Vector3(...e[0]), B = new THREE.Vector3(...e[1]);
-        const m = new THREE.Mesh(rodGeo, filledMat);
+        const m = new THREE.Mesh(rodGeo, matFor(solid, filledMat));
         m.position.copy(A).add(B).multiplyScalar(0.5);
         m.quaternion.setFromUnitVectors(up, B.clone().sub(A).normalize());
+        m.scale.y = A.distanceTo(B) / L;
         faceGroups[st.face].add(m);
       }
       else if (next && next.edges.includes(e)) edgeCells(e[0], e[1], nextMat, faceGroups[st.face]);
@@ -109,32 +160,69 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
       const idx = [];
       for (let j = 1; j + 1 < f.pts.length; j++) idx.push(0, j, j + 1);
       g.setIndex(idx);
-      const m = new THREE.Mesh(g, faceMat);
+      const m = new THREE.Mesh(g, matFor(solid, faceMat));
       m.userData.own = true;
       faceGroups[i].add(m);
     });
     // The ghost net: every face's outline, flat, while it's still flat.
+    // n.flat is precomputed at t = 0 outside place()'s own transform, so
+    // an assembly piece's ghost needs the same true-frame correction by
+    // hand (trueT works on a net's at() output, not this fixed array).
     if (fold === 0 && !complete()) {
+      const align = siblingsOf(solid).length ? nets[solid].align : null;
+      const xform = (p) => (align ? apply(align, p) : p);
       const pts = [];
-      n.flat.forEach((P) => P.forEach((p, j) => { const q = P[(j + 1) % P.length]; pts.push(new THREE.Vector3(...p), new THREE.Vector3(...q)); }));
+      n.flat.forEach((P) => P.forEach((p, j) => { const q = P[(j + 1) % P.length]; pts.push(new THREE.Vector3(...xform(p)), new THREE.Vector3(...xform(q))); }));
       const ghost = new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(pts), ghostMat);
       ghost.userData.own = true;
       layer.add(ghost);
+    }
+    // Assembly siblings already folded, shown together, each aligned onto
+    // its own true vertices (trueT above) so they share one frame and
+    // genuinely interlock. The star's icosahedron shows through (Xray)
+    // while you're on its spike, so the spike's placement over a face
+    // reads clearly.
+    for (const sib of siblingsOf(solid)) {
+      if (!foldDone[sib]) continue;
+      const sn = nets[sib];
+      const T = trueT(sib, sn.at(1));
+      const mat = solid === 'starSpike' && sib === 'icosa' ? matFor(sib, faceMat) : matFor(sib, filledMat);
+      sn.faces.forEach((f, i) => {
+        const g = new THREE.BufferGeometry().setFromPoints(f.pts.map((p) => new THREE.Vector3(...apply(T[i], p))));
+        const idx = []; for (let j = 1; j + 1 < f.pts.length; j++) idx.push(0, j, j + 1);
+        g.setIndex(idx);
+        g.computeVertexNormals();
+        // filledMat reads vertexColors (plainCellGeometry's rods carry a
+        // white one, a no-op multiplier onto its own tint); this geometry
+        // has none, which left every sibling fill black regardless of its
+        // material colour (direct finding, 2026-10-07).
+        g.setAttribute('color', new THREE.BufferAttribute(new Float32Array(g.attributes.position.count * 3).fill(1), 3));
+        const m = new THREE.Mesh(g, mat);
+        m.userData.own = true;
+        layer.add(m);
+      });
     }
     place();
     renderPanel();
   }
   const near = (a, b) => a.every((v, i) => Math.abs(v - b[i]) < 1e-6);
   function place() {
-    const T = net().at(fold);
+    const T = trueT(solid, net().at(fold));
     faceGroups.forEach((g, i) => { g.matrix.fromArray(T[i]); g.matrixWorldNeedsUpdate = true; });
   }
 
   // ---- the view: straight on while flat; turning to three-quarters as it folds ----
   function box(t) {
-    const T = net().at(t);
+    const T = trueT(solid, net().at(t));
     const b = new THREE.Box3();
     net().faces.forEach((f, i) => f.pts.forEach((p) => b.expandByPoint(new THREE.Vector3(...apply(T[i], p)))));
+    // Frame the whole assembly, not just the solid you're on, once its
+    // already-done siblings are standing beside it.
+    for (const sib of siblingsOf(solid)) {
+      if (!foldDone[sib]) continue;
+      const sn = nets[sib], ST = trueT(sib, sn.at(1));
+      sn.faces.forEach((f, i) => f.pts.forEach((p) => b.expandByPoint(new THREE.Vector3(...apply(ST[i], p)))));
+    }
     return b;
   }
   function pose() {
@@ -197,10 +285,13 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
   // ---- folding ----
   let foldRaf = 0;
   function setFold(v, { record = true } = {}) {
-    const wasFlat = fold === 0;
+    const wasFlat = fold === 0, wasDone = fold === 1;
     fold = Math.max(0, Math.min(1, v));
+    foldDone[solid] = fold === 1;
     place();
-    if (wasFlat !== (fold === 0)) { draw(); frame(true); } else follow();
+    // Redraw crossing either edge: flat/folding as before, and done/not
+    // done, since an assembly sibling only appears once this is done.
+    if (wasFlat !== (fold === 0) || wasDone !== (fold === 1)) { draw(); frame(true); } else follow();
     slider.value = String(Math.round(fold * 100));
     renderPanel();
     if (record) { save(); onChange(); }
@@ -255,7 +346,7 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
     const id = e.target.closest('[data-solid]')?.dataset.solid;
     if (!id || id === solid) return;
     cancelAnimationFrame(foldRaf);
-    solid = id; fold = 0;
+    solid = id; fold = foldDone[id] ? 1 : 0;
     save(); draw(); frame(true); onChange();
     if (!done()) showHudPrompt(t('nets.prompt.start', lang()), 5000);
   });
@@ -264,7 +355,7 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
     panel.classList.toggle('visible', active);
     if (!active) return;
     // Each group named, its solids short (full names on hover).
-    const SHORT = { rd: 'RD', to: 'TO', tetra: 'Tetra', octa: 'Octa', icosa: 'Icosa', dodeca: 'Dodeca' };
+    const SHORT = { rd: 'RD', to: 'TO', tetra: 'Tetra', octa: 'Octa', icosa: 'Icosa', dodeca: 'Dodeca', stella1: 'Stella A', stella2: 'Stella B', starSpike: 'Star spike', pacioli1: 'Pacioli A', pacioli2: 'Pacioli B', pacioli3: 'Pacioli C' };
     solidsRow.innerHTML = SOLID_GROUPS.map((g) => `<div class="w4d-row w4d-options"><span class="nets-group">${t(`nets.group.${g.id}`, lang())}</span>${Object.entries(SOLIDS).filter(([, s]) => s.groups.includes(g.id)).map(([id, s]) => `<button type="button" data-solid="${id}" class="${id === solid ? 'active' : ''}" title="${s.label}">${SHORT[id] ?? s.label}</button>`).join('')}</div>`).join('');
     foldRow.hidden = !complete();
     // The slider always shows this net's own fold (direct report: "the
@@ -300,11 +391,11 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
      * the solid you're on, back to its ghost net; Undo brings it back. */
     clearCurrent() {
       cancelAnimationFrame(foldRaf);
-      progress[solid] = 0; fold = 0;
+      progress[solid] = 0; fold = 0; foldDone[solid] = false;
       save(); draw(); if (active) { frame(true); showHudPrompt(t('nets.prompt.start', lang()), 5000); }
       onChange();
     },
-    clear() { for (const id of Object.keys(progress)) progress[id] = 0; fold = 0; save(); draw(); if (active) frame(true); onChange(); },
+    clear() { for (const id of Object.keys(progress)) { progress[id] = 0; foldDone[id] = false; } fold = 0; save(); draw(); if (active) frame(true); onChange(); },
     snapshot: toJSON,
     restore(json) { read(json); save(); draw(); if (active) frame(true); },
     toJSON,
