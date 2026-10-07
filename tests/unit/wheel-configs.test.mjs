@@ -8,6 +8,6 @@ import * as core from '../../src/app/rhombic-wheel-3d-core.js';
 
 test('every exported wheel config resolves without a face-key clash', () => {
   const wheels = Object.entries(core).filter(([name, v]) => name.startsWith('WHEEL_') && v && typeof v === 'object' && v.faces);
-  assert.ok(wheels.length >= 5, `found ${wheels.length} wheels`);
+  assert.ok(wheels.length >= 4, `found ${wheels.length} wheels`);
   for (const [name, config] of wheels) assert.doesNotThrow(() => core.resolveWheelFaces(config), name);
 });

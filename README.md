@@ -4,14 +4,14 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23173809.svg)](https://doi.org/10.5281/zenodo.23173809)
 
-*In development* — live at **[kaleidohedra.vercel.app](https://kaleidohedra.vercel.app)**. The third sibling of [Rhombiverse](https://rhombiverse.vercel.app) and [Polyhedraverse](https://polyhedraverse.vercel.app): lattices you can shear and slide continuously, where every piece of geometry moves with the lattice, and chosen states ("population members") are exported to the two sibling apps.
+*In development* — live at **[kaleidohedra.vercel.app](https://kaleidohedra.vercel.app)**. The third sibling of [Rhombiverse](https://rhombiverse.vercel.app) and [Polyhedraverse](https://polyhedraverse.vercel.app): lattices you can shear and slide continuously, where every piece of geometry moves with the lattice, and chosen states ("population members") are exported to the two sibling apps. It keeps to the worlds where the shear means something: the 3D+ lattices, the Euclid–Kepler–Pacioli Cell Network (with its Study picker), Targets, Shells, Golden Rhombohedra, and Nets (2D+), the way from flat nets into 3D. The 1D and 4D–6D worlds live in Rhombiverse.
 
 It grew from shapes DICTO found in Zometool, a golden leaning hexagonal prism and a skewed rhombic dodecahedron that tiles as a sheared FCC (see Polyhedraverse's `docs/dicto-zometool-discoveries.md`), and goes on from there, no longer tied to Zometool.
 
 - `DISCOVERIES.md` — what has been found so far, how each is verified, and whether it is known.
 - `TARGETS.md` — the target list: the 160 equal-edge space-filling cells whose edges meet only at special angles, searched both ways (`discover.py`, `discover_run.py`, output `data/geometry-targets.json`). All 160 can be seen in the app's **Targets** world (Wizard → 3D+), alone, with their face neighbours or as a 3×3×3 block; `scripts/verify-targets.mjs` rebuilds each from its data and checks it tiles space.
 - `enumerate.py` — the earlier, smaller list (`targets.json`), all included in the new one.
-- `assets/brand/` — the logo, with the name (`kaleidohedra-logo.jpg`) and without (`kaleidohedra-mark.jpg`), plus the site icons and preview image cut from it. The logo shows the regular-hexagon elongated dodecahedron (DISCOVERIES.md #5), which is also the app's live symbol: it rolls on the welcome screen and the menu wheels are built on its 12 faces.
+- `assets/brand/` — the logo, with the name (`kaleidohedra-logo.jpg`) and without (`kaleidohedra-mark.jpg`), plus the site icons and preview image, drawn as an orange wireframe of the same shape. The logo shows the regular-hexagon elongated dodecahedron (DISCOVERIES.md #5), which is also the app's live symbol: it turns as a wireframe on the welcome screen and the menu wheels are built on its 12 faces.
 
 ## Findings and attribution
 

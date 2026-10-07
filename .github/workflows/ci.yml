@@ -21,22 +21,14 @@ jobs:
         with:
           node-version: 20
       - run: node --test tests/unit/
-      # 5D/6D cut-and-project engine against the known tiling facts.
+      # Cut-and-project engine (Golden Rhombohedra's tiles) against the known tiling facts.
       - run: node scripts/verify-quasicrystal.mjs
       # Shells scene: RD splits, the scale ladder and shell sizes.
       - run: node scripts/verify-shells.mjs
-      # Kaleidoscope: shapes, mirrors, clipping, Penrose Safe rule.
-      - run: node scripts/verify-kaleidoscope.mjs
-      # 1D Signal: Morse timing, one signal for every view, the embedding.
-      - run: node scripts/verify-trajectory.mjs
-      # 1D Construct: cell/instance/direction model, grids, junction rules.
-      - run: node scripts/verify-construction.mjs
       # Nets: flat without overlaps, folding closed into the solid.
       - run: node scripts/verify-nets.mjs
       # Packed spheres: tangency, enclosed voids, bulk FCC counts.
       - run: node scripts/verify-packing.mjs
-      # 2D lattices: edge lengths, angles, tile placement rules.
-      - run: node scripts/verify-lattice-2d.mjs
       # Pyrochlore (3D Kagome): the quarter-cubic geometry.
       - run: node scripts/verify-pyrochlore.mjs
       # Rhombohedra: copy/mirror attach on the rhombohedral lattice.
@@ -49,27 +41,12 @@ jobs:
       - run: node scripts/verify-roof-fold.mjs
       # The 160 target cells: rebuilt from their Gram matrices, each tiles space; TARGETS.md agrees.
       - run: node scripts/verify-targets.mjs
-      # 4D worlds: Z4, D4 and hyper-pyrochlore cells, slices and steps.
-      - run: node scripts/verify-4d.mjs
       # Translations: every key in all 7 languages.
       - run: node scripts/verify-i18n.mjs
       # The repo's About text (outside the repo, so it drifts): warns only.
       - run: node scripts/verify-about.mjs
         env:
           GH_TOKEN: ${{ github.token }}
-
-  catalogue:
-    # Every 5D/6D catalogue entry really occurs and lands, at 9 phason and
-    # position probes (about 6 min on the Pi; its own job so the unit-test
-    # job keeps its fast-fail limit).
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 20
-      - run: node scripts/verify-catalogue.mjs
 
   browser-smoke-test:
     # Real-browser check (Playwright) -- the actual app, served exactly

@@ -358,7 +358,7 @@ export function createHudWheel3D(renderer, { size = 144, margin = 12 } = {}) {
   }
 
   // Hides a face's symbol and makes it untappable (the face itself stays,
-  // blank) -- e.g. X-Ray and Spherical in 4D, where they don't apply
+  // blank) -- e.g. X-Ray and Spherical in the own worlds, where they don't apply
   // ("nothing unnecessary is shown").
   function setFaceHidden(elId, hidden) {
     for (const e of faceEntries) if (e.data?.elId === elId) e.hidden = hidden;

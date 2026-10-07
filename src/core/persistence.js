@@ -45,16 +45,6 @@ export const HEXPRISM_STORAGE_KEY = 'rhombiverse-hexprism-world';
 export const DICTOFCC_STORAGE_KEY = 'rhombiverse-dicto-fcc-world';
 export const DICTOBLOCK_STORAGE_KEY = 'rhombiverse-dicto-block-world';
 
-// 2D tier (Phase 3): one store PER (angle, primitive) combination from
-// lattice-2d.js's own LATTICE_2D_COMBINATIONS, each flat layer pinned
-// to z=0 in the SAME scene 3D already uses -- same "adopted family
-// member" reasoning as every other store on this page, generalized off
-// the earlier Phase 2 design's 3 separately-named keys (Square/Hexagon/
-// Triangle) into one keyed function so a new named angle or primitive
-// never needs a new hand-added constant here.
-export function lattice2dStorageKey(comboId) {
-  return `rhombiverse-lattice2d-${comboId}-world`;
-}
 
 // Rhombohedra (free lattice): own store, own coordinate frame (3 real
 // edge vectors of one of RD Quarter's own 4 congruent orientations --

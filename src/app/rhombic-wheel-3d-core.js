@@ -318,9 +318,9 @@ export const WHEEL_HOME = {
   faces: {
     "equator|sx1sy1":   { kind: "dept", label: "Color", action: "tool:color", desc: "Pick a build color." },
     "equator|sx1sy-1":  { kind: "dept", label: "Change Dimension", action: "tool:changeDimension", temporary: true,
-      desc: "Switch between 2D, 3D and 4D. Duplicated here for quick access from a spare slot." },
+      desc: "Switch between 2D+ (Nets) and 3D+. Duplicated here for quick access from a spare slot." },
     "equator|sx-1sy1":  { kind: "dept", label: "Change Dimension", action: "tool:changeDimension",
-      desc: "Switch between 2D, 3D and 4D." },
+      desc: "Switch between 2D+ (Nets) and 3D+." },
     "equator|sx-1sy-1": { kind: "dept", label: "Color", action: "tool:color", temporary: true,
       desc: "Pick a build color. Duplicated here for quick access from a spare slot." },
     "bottom|sy1sz-1":   { kind: "spare", label: "Spare", action: null, desc: "Reserved — not yet needed." },
@@ -508,108 +508,28 @@ export const WHEEL_RD_FAMILY = {
   }
 };
 
-// Dimension-select wheel (2026-09-22, 3rd iteration): two earlier
-// drafts tried and reverted, both real, both worth keeping on record.
-// (1) A flat HTML/CSS card overlay -- replaced because "UI wheel should
-// display 2D 3D 4D 5D 6D" asked for a real rotating wheel. (2) Put
-// directly ON this shared department wheel (WHEEL_DIMENSION/
-// WHEEL_LATTICE_3D configs right here) -- reverted because "as in
-// polyhedraverse one list two routes"/"the wheel has breakdown family
-// shapes as in 3D currently" clarified this shared wheel's real job
-// stays exactly what it already does for 3D (Piece -> RD Family), not
-// dimension-select too; replaced with a separate wireframe-card wizard
-// (src/app/dimension-wizard.js).
-//
-// THIS is the 3rd iteration, direct instruction: "one moving rhombic
-// wheel with all dimensions selectable" -- but confirmed as "a
-// dedicated rotating wheel just for dimensions... NOT reusing/merging
-// with the shared Build/Piece navigation wheel." So: a SEPARATE
-// createRhombicWheel3D() instance (its own scene/overlay, see
-// render.js's own dimensionWheel3D), reusing this exact config system
-// (resolveWheelFaces/ALL_WHEELS) since it's already proven, just never
-// reached via navigateTo: from any other wheel and never navigated away
-// from. dimension-wizard.js is retired (archived, not deleted --
-// an old dimension-wizard.js, since deleted) now that this wheel
-// replaces it as the actual dimension picker.
-//
-// 4th iteration, direct correction: "on first view of wheel only
-// dimensions should show[,] all dimensions doubled on opposite poles" +
-// "not all almanac and everything else." resolveWheelFaces' own
-// noUniversalRing flag (see that function's own header) is what makes
-// this possible -- with the 3 fixed universal-ring faces and the 5th-
-// slot Home no longer injected, ALL 12 face keys are free, which
-// resolve into exactly 6 true antipodal pairs (verified via this file's
-// own established face-normal-direction math): the 2 equator pairs
-// already used for 3D/4D, plus 4 more cross-ring pairs (a top face at
-// (0,sy,1)/(sx,0,1) has its true antipode at (0,-sy,-1)/(-sx,0,-1) on
-// the bottom ring) that were previously unreachable because their
-// antipodes were fixed universal-ring faces. That's exactly enough for
-// every dimension, 1D through 6D, to get a TRUE doubled pair: all 12
-// slots are real. (The last pair was Almanac's until 1D arrived,
-// 2026-09-29; the Almanac is on the main wheel's universal ring.)
+// Dimension-select wheel: its own createRhombicWheel3D() instance
+// (render.js's dimensionWheel3D), never navigated to or from, no
+// universal ring, so all 12 faces are free and each choice is doubled on
+// an antipodal pair (direct correction: "all dimensions doubled on
+// opposite poles"). Kaleidohedra has two dimensions (direct decision,
+// 2026-10-08): 3D+, the shear's own home, on the four equator faces and
+// one cross-ring pair; 2D+, Nets (flat nets folding into 3D), on the
+// other three cross-ring pairs. 1D and 4D-6D live in Rhombiverse.
+const DIM_3D = { kind: "dept", label: "3D+", action: "tool:selectDimension:3D",
+  desc: "Every lattice the Shear moves, the Euclid–Kepler–Pacioli cell, Targets, Shells and Golden Rhombohedra." };
+const DIM_2D = { kind: "dept", label: "2D+", action: "tool:selectDimension:2D",
+  desc: "Nets: build a solid's net flat, then fold it up into 3D." };
 export const WHEEL_DIMENSION = {
   id: "dimension",
   noUniversalRing: true,
   faces: {
-    "equator|sx1sy1":   { kind: "dept", label: "3D+", action: "tool:selectDimension:3D",
-      desc: "FCC (Rhombic Dodecahedron) and BCC (Truncated Octahedron) -- this app's existing lattice core." },
-    "equator|sx-1sy-1": { kind: "dept", label: "3D+", action: "tool:selectDimension:3D",
-      desc: "FCC (Rhombic Dodecahedron) and BCC (Truncated Octahedron) -- this app's existing lattice core." },
-    "equator|sx1sy-1":  { kind: "dept", label: "4D", action: "tool:selectDimension:4D",
-      desc: "Tesseract, D4 (24-cell, 16-cell) and Hyper-pyrochlore (4D Kagome)." },
-    "equator|sx-1sy1":  { kind: "dept", label: "4D", action: "tool:selectDimension:4D",
-      desc: "Tesseract, D4 (24-cell, 16-cell) and Hyper-pyrochlore (4D Kagome)." },
-    // Phase 2 (2026-09-22): Square shipped (flat layer, own store, same
-    // FCC-world scene) -- 2D goes from spare to real, matching 3D's own
-    // dual-antipode-doubled treatment now that a second dimension is
-    // actually buildable. Briefly renamed to a 70-degree Rhombus same
-    // session ("why square for 2D[,] all rhombi should be derived from
-    // same basic shape"), then reverted just as directly ("dont call
-    // square rhombus when its familiar name is square") -- a real,
-    // separate Rhombus family is still planned, after Triangular.
-    // Hexagon shipped next. Triangular still planned.
-    "top|sy1sz1":       { kind: "dept", label: "2D+", action: "tool:selectDimension:2D",
-      desc: "Square, Hexagon, and Triangle (shipped) -- a real (non-square) Rhombi family still planned." },
-    "bottom|sy-1sz-1":  { kind: "dept", label: "2D+", action: "tool:selectDimension:2D",
-      desc: "Square, Hexagon, and Triangle (shipped) -- a real (non-square) Rhombi family still planned." },
-    "top|sy-1sz1":      { kind: "dept", label: "5D", action: "tool:selectDimension:5D",
-      desc: "Decagonal quasicrystal -- Penrose rhombus layers sliced from Z5." },
-    "bottom|sy1sz-1":   { kind: "dept", label: "5D", action: "tool:selectDimension:5D",
-      desc: "Decagonal quasicrystal -- Penrose rhombus layers sliced from Z5." },
-    // 1D (2026-09-29) takes the pair Almanac had; the Almanac stays on
-    // the main wheel's universal ring.
-    "top|sx-1sz1":      { kind: "dept", label: "1D+", action: "tool:selectDimension:1D",
-      desc: "Signal -- a one-dimensional trajectory carrying Morse code." },
-    "bottom|sx1sz-1":   { kind: "dept", label: "1D+", action: "tool:selectDimension:1D",
-      desc: "Signal -- a one-dimensional trajectory carrying Morse code." },
-    "top|sx1sz1":       { kind: "dept", label: "6D", action: "tool:selectDimension:6D",
-      desc: "Icosahedral quasicrystal -- golden rhombohedra sliced from Z6." },
-    "bottom|sx-1sz-1":  { kind: "dept", label: "6D", action: "tool:selectDimension:6D",
-      desc: "Icosahedral quasicrystal -- golden rhombohedra sliced from Z6." },
-  }
-};
-
-// WHEEL_PIECE_4D (2026-09-24 design): the separate 4D picker wheel,
-// opened from the Dimension wheel's 4D face and from the bottom-left
-// quick-select while in 4D. Six cells, each doubled on an antipodal pair
-// (every face reachable from either side), no universal ring -- same
-// layout rule as WHEEL_DIMENSION.
-export const WHEEL_PIECE_4D = {
-  id: "piece4d",
-  noUniversalRing: true,
-  faces: {
-    "equator|sx1sy1":   { kind: "dept", label: "24-cell", action: "tool:pieceType:cell24", desc: "D4's own space-filling cell -- the 4D RD. Its w = 0 slice is the RD world." },
-    "equator|sx-1sy-1": { kind: "dept", label: "24-cell", action: "tool:pieceType:cell24", desc: "D4's own space-filling cell -- the 4D RD. Its w = 0 slice is the RD world." },
-    "equator|sx1sy-1":  { kind: "dept", label: "16-cell", action: "tool:pieceType:cell16", desc: "D4's other cell -- 16-cells fill the gaps between D4 points." },
-    "equator|sx-1sy1":  { kind: "dept", label: "16-cell", action: "tool:pieceType:cell16", desc: "D4's other cell -- 16-cells fill the gaps between D4 points." },
-    "top|sy1sz1":       { kind: "dept", label: "Tesseract", action: "tool:pieceType:tesseract", desc: "Z4 (Hypercubic) -- the 4D cube. Its w = 0 slice is the RD world's own unit cube." },
-    "bottom|sy-1sz-1":  { kind: "dept", label: "Tesseract", action: "tool:pieceType:tesseract", desc: "Z4 (Hypercubic) -- the 4D cube. Its w = 0 slice is the RD world's own unit cube." },
-    "top|sy-1sz1":      { kind: "dept", label: "Truncated 5-cell", action: "tool:pieceType:a4trunc", desc: "Hyper-pyrochlore (4D Kagome): the main piece -- its corner-sharing 5-cells appear on their own." },
-    "bottom|sy1sz-1":   { kind: "dept", label: "Truncated 5-cell", action: "tool:pieceType:a4trunc", desc: "Hyper-pyrochlore (4D Kagome): the main piece -- its corner-sharing 5-cells appear on their own." },
-    "top|sx-1sz1":      { kind: "dept", label: "Bitruncated 5-cell", action: "tool:pieceType:a4bitrunc", desc: "Hyper-pyrochlore (4D Kagome): fills the gaps between truncated 5-cells." },
-    "bottom|sx1sz-1":   { kind: "dept", label: "Bitruncated 5-cell", action: "tool:pieceType:a4bitrunc", desc: "Hyper-pyrochlore (4D Kagome): fills the gaps between truncated 5-cells." },
-    "top|sx1sz1":       { kind: "dept", label: "5-cell", action: "tool:pieceType:a4cell5", desc: "Hyper-pyrochlore (4D Kagome): single 5-cells, sharing corners in pairs." },
-    "bottom|sx-1sz-1":  { kind: "dept", label: "5-cell", action: "tool:pieceType:a4cell5", desc: "Hyper-pyrochlore (4D Kagome): single 5-cells, sharing corners in pairs." },
+    "equator|sx1sy1": DIM_3D, "equator|sx-1sy-1": DIM_3D,
+    "equator|sx1sy-1": DIM_3D, "equator|sx-1sy1": DIM_3D,
+    "top|sx1sz1": DIM_3D, "bottom|sx-1sz-1": DIM_3D,
+    "top|sy1sz1": DIM_2D, "bottom|sy-1sz-1": DIM_2D,
+    "top|sy-1sz1": DIM_2D, "bottom|sy1sz-1": DIM_2D,
+    "top|sx-1sz1": DIM_2D, "bottom|sx1sz-1": DIM_2D,
   }
 };
 
@@ -617,7 +537,6 @@ export const ALL_WHEELS = {
   home: WHEEL_HOME,
   dimension: WHEEL_DIMENSION,
   piece: WHEEL_PIECE, rdFamily: WHEEL_RD_FAMILY,
-  piece4d: WHEEL_PIECE_4D,
 };
 
 // Icon System (RHOMBIVERSE_SPEC_ICON_SYSTEM.md): only actions the spec's
@@ -687,24 +606,6 @@ export const ACTION_TO_MARK = {
   'tool:pieceType:rdquarter': 'pieceRDQuarter',
   'tool:pieceType:rhombohedra': 'pieceRhombohedron',
   'tool:pieceType:pyrochlore': 'piecePyrochlore',
-  'tool:pieceType:tesseract': 'pieceTesseract',
-  'tool:pieceType:cell24': 'piece24Cell',
-  'tool:pieceType:cell16': 'piece16Cell',
-  'tool:pieceType:a4trunc': 'pieceTrunc5Cell',
-  'tool:pieceType:a4bitrunc': 'pieceBitrunc5Cell',
-  'tool:pieceType:a4cell5': 'piece5Cell',
-  // 2D lattice tier: one entry per lattice-2d.js's own LATTICE_PRIMITIVES
-  // (Phase 6: primitive id alone -- angle is a live, in-scene toggle now,
-  // not part of the piece-type value at all; see render.js's own
-  // lattice2dSeedCell header for the full incident that drove this),
-  // spelled out by hand rather than generated -- this file's own header
-  // is explicit that it stays at "zero imports of its own" (a real prior
-  // failure importing into a file in this same wheel-config layer, see
-  // that header), so these ids are kept in sync with lattice-2d.js by
-  // hand instead.
-  'tool:pieceType:lattice2d:parallelogram': 'piece2dParallelogram',
-  'tool:pieceType:lattice2d:triangle': 'piece2dTriangle',
-  'tool:pieceType:lattice2d:hexagon': 'piece2dHexagon',
   openAlmanac: 'almanac',
   // 2026-08-26 second pass -- see wheel-icons.js for full design notes
   // on each of these (not in the spec's own table, resolved here).
