@@ -39,9 +39,11 @@ dimension choice. Reason before code."
    - *Shapes*: Polyhedraverse's 13 families (then a family's shapes, as now).
 3. **Entering**: the app's space, its colours and tools, as now.
 
-## Open questions (ask before code)
+## Settled (DICTO, 2026-10-09)
 
-- The lattice overlap above (3D+ lattices are in both apps).
-- Where the app switch lives once DICTO is dimension-first (do the three app buttons stay, e.g. as a
-  filter, or go?).
-- 2D+: Nets is shared (Kaleidohedra), tilings and Kaleidoscope are Rhombiverse's: one section or two?
+- **Principle: never land in one app with little choice.** The dimension screen always shows every
+  app's entries; nothing hides another app's work unless you ask it to.
+- **3D lattices: once per app.** Kaleidohedra's (sheared) and Rhombiverse's lattices are both listed,
+  each tagged with its app.
+- **App buttons stay, as a filter**: optional, to show one app's entries only; off by default.
+- **2D+: one list** (Nets, the tilings, Kaleidoscope).
