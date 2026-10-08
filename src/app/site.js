@@ -11,6 +11,9 @@ export const SITES = {
   // inside: whether its worlds run in this app (Polyhedraverse's since step D2); door: whether this
   // build can open as that app (?site=, SITE). Polyhedraverse becomes a door with step D6.
   polyhedraverse: { name: 'Polyhedraverse', wordmark: ['POLYHEDRA', 'VERSE'], colour: '#5ee233', url: 'https://polyhedraverse.vercel.app', netsGroups: null, shear: false, inside: true, door: false },
+  // DICTO's own space (DICTO 2026-10-09): 1D+ and 2D+ belong to no app, an easier way in; silver.
+  // Going up to 3D+ from there lands in the door's app.
+  dicto: { name: 'DICTO', wordmark: ['DIC', 'TO'], colour: '#d8dce6', url: '', netsGroups: null, shear: false, inside: true, door: false },
   rhombiverse: { name: 'Rhombiverse', wordmark: ['RHOMBI', 'VERSE'], colour: '#22c3e6', url: 'https://rhombiverse.vercel.app', netsGroups: null, shear: false, inside: true, door: true, analytics: false },
 };
 
@@ -50,10 +53,11 @@ adoptLegacyKeys();
 // accent: text and outlines; strong: first placements, highlights; piece: the default piece colour;
 // contrast: a "tap here" that stands out against the accent (cyan on orange, amber on cyan);
 // highlight: the dimension label, Send, the undo strip (Rhombiverse amber, Kaleidohedra orange).
-// Rhombiverse cyan, Kaleidohedra orange (Polyhedraverse green joins with step D).
+// Rhombiverse cyan, Kaleidohedra orange, Polyhedraverse green, DICTO's own space silver.
 const THEMES = {
   kaleidohedra: { pale: '#ffc9a0', highlight: '#ff6a00', highlightRgb: '255, 106, 0', accent: '#ff9a52', accentRgb: '255, 106, 0', strong: '#ff6a00', piece: '#ff6a00', pieceRgb: '255, 106, 0', contrast: '#22c3e6', contrastRgb: '34, 195, 230', accentHex: 0xff9a52, strongHex: 0xff6a00, pieceHex: 0xff6a00, contrastHex: 0x22c3e6 },
   polyhedraverse: { pale: '#d8ffcc', highlight: '#5ee233', highlightRgb: '94, 226, 51', accent: '#a9f795', accentRgb: '94, 226, 51', strong: '#5ee233', piece: '#5ee233', pieceRgb: '94, 226, 51', contrast: '#ff9a52', contrastRgb: '255, 154, 82', accentHex: 0xa9f795, strongHex: 0x5ee233, pieceHex: 0x5ee233, contrastHex: 0xff9a52 },
+  dicto: { pale: '#f2f4f8', highlight: '#e6e9ef', highlightRgb: '230, 233, 239', accent: '#d8dce6', accentRgb: '200, 205, 220', strong: '#ffffff', piece: '#c9ced8', pieceRgb: '201, 206, 216', contrast: '#22c3e6', contrastRgb: '34, 195, 230', accentHex: 0xd8dce6, strongHex: 0xffffff, pieceHex: 0xc9ced8, contrastHex: 0x22c3e6 },
   rhombiverse: { pale: '#dfefff', highlight: '#f59e0b', highlightRgb: '245, 158, 11', accent: '#9de0ff', accentRgb: '124, 204, 255', strong: '#7cf', piece: '#22c3e6', pieceRgb: '34, 195, 230', contrast: '#f59e0b', contrastRgb: '245, 158, 11', accentHex: 0x9de0ff, strongHex: 0x00e5ff, pieceHex: 0x22c3e6, contrastHex: 0xf59e0b },
 };
 let active = SITE;
@@ -80,7 +84,7 @@ function applyTheme() {
   const mark = globalThis.document.getElementById('hud-wordmark');
   if (mark) { const [a, b] = SITES[active].wordmark; mark.replaceChildren(a, Object.assign(globalThis.document.createElement('span'), { textContent: b })); }
 }
-/** Enter another app's space (its worlds opened from its wizard tab): its colours take over. */
+/** Enter another app's space (or DICTO's own, 1D+ and 2D+): its colours take over. */
 export function setActiveSite(site) {
   if (!SITES[site]?.inside || site === active) return;
   active = site;

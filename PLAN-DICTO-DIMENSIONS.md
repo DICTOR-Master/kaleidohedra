@@ -48,3 +48,7 @@ dimension choice. Reason before code."
   earlier block is not listed again.
 - **App buttons stay, as a filter**: optional, to show one app's entries only; off by default.
 - **2D+: one list** (Nets, the tilings, Kaleidoscope).
+- **1D+ and 2D+ are DICTO's own** (DICTO, later the same day: "they don't belong to anyone… because they
+  are an easier entry point"): listed in one silver DICTO block, whatever the filter; their worlds open
+  in DICTO's silver space; going up to 3D+ lands in the door's app.
+- **One screen**: plain dimension buttons, the open one's content under it; 3D+ open to start.

@@ -465,8 +465,9 @@ const APP_ORDER = ['kaleidohedra', 'rhombiverse', 'polyhedraverse'];
 // its pieces), 'family' (a 1D/2D world or tile row), 'shapes' (a Polyhedraverse family).
 function dimensionEntries(dim) {
   const R = 'rhombiverse', K = 'kaleidohedra', P = 'polyhedraverse';
-  if (dim === '1D') return FAMILIES_1D.map((fam) => ({ app: R, kind: 'family', fam }));
-  if (dim === '2D') return LATTICE_FAMILIES_2D.map((fam) => ({ app: fam.id === 'nets' ? K : R, kind: 'family', fam }));
+  // 1D+ and 2D+ are DICTO's own (DICTO 2026-10-09: "they don't belong to anyone", the easier way in).
+  if (dim === '1D') return FAMILIES_1D.map((fam) => ({ app: 'dicto', kind: 'family', fam }));
+  if (dim === '2D') return LATTICE_FAMILIES_2D.map((fam) => ({ app: 'dicto', kind: 'family', fam }));
   if (dim === '3D') return [
     ...K_LATTICES.map((lat) => ({ app: K, kind: 'lattice', lat })),
     ...R_LATTICES.map((lat) => ({ app: R, kind: 'lattice', lat })),
@@ -476,7 +477,9 @@ function dimensionEntries(dim) {
   if (dim === '4D') return LATTICES_4D.map((lat) => ({ app: R, kind: 'lattice', lat }));
   return [{ app: R, kind: 'catalogue' }]; // 5D, 6D
 }
-const appsOf = (dim) => APP_ORDER.filter((a) => dimensionEntries(dim).some((e) => e.app === a));
+const appsOf = (dim) => [...new Set(dimensionEntries(dim).map((e) => e.app))];
+// DICTO's own entries show whatever app the filter picks.
+const passes = (app, filter) => !filter || app === filter || app === 'dicto';
 // The kinds inside an app's block, new work first.
 const KINDS = [['world', 'wiz.kind.worlds'], ['lattice', 'wiz.kind.lattices'], ['shapes', 'wiz.kind.shapes'], ['family', 'wiz.kind.worlds']];
 
@@ -533,7 +536,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
   const blockStyle = (a) => { const th = themeOf(a); return `--pale: ${th.pale}; --accent: ${th.accent}; --accent-rgb: ${th.pieceRgb}; --accent-strong: ${th.strong}`; };
   const tag = (a) => `<span class="dicto-tag" style="${appStyle(a)}">${SITES[a].name}</span>`;
   const doorFirst = (list) => [...list].sort((x, y) => (x.app === SITE ? 0 : 1) - (y.app === SITE ? 0 : 1));
-  const shownEntries = (dim) => doorFirst(dimensionEntries(dim).filter((e) => !filter || e.app === filter));
+  const shownEntries = (dim) => doorFirst(dimensionEntries(dim).filter((e) => passes(e.app, filter)));
   function paintApps() {
     const th = themeOf(filter ?? SITE);
     for (const [k, v] of [['--pale', th.pale], ['--accent', th.accent], ['--accent-rgb', th.accentRgb], ['--accent-strong', th.strong]]) overlay.style.setProperty(k, v);
@@ -564,10 +567,10 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     titleEl.textContent = 'DICTO';
     let grid = '';
     for (const dim of DIMENSIONS) {
-      const apps = appsOf(dim.id).filter((a) => !filter || a === filter);
+      const apps = appsOf(dim.id).filter((a) => passes(a, filter));
       if (!apps.length) continue; // filtered to an app with nothing here
       const isOpen = openDim === dim.id && !['5D', '6D'].includes(dim.id);
-      const desc = filter ? tFor(filter, `wiz.dim.${dim.id}`, L) : t(['2D', '3D'].includes(dim.id) ? `wiz.dimAll.${dim.id}` : `wiz.dim.${dim.id}`, L);
+      const desc = filter && apps.includes(filter) ? tFor(filter, `wiz.dim.${dim.id}`, L) : t(['2D', '3D'].includes(dim.id) ? `wiz.dimAll.${dim.id}` : `wiz.dim.${dim.id}`, L);
       grid += `
         <button type="button" class="dim-wizard-card-btn dicto-dim" data-dim="${dim.id}" aria-expanded="${isOpen}">
           ${previewSlot(dim.previewAction ? () => pieceEdges(dim.previewAction) : dim.preview)}

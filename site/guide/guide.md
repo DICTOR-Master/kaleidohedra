@@ -10,7 +10,7 @@ This guide starts with what Kaleidohedra and Rhombiverse share, then has a chapt
 
 ### Pick a dimension
 
-After **ENTER**, **DICTO** opens on the dimensions, **1D+** to **6D**, each showing the apps it holds. **3D+** is open to start with; tap another dimension to open it in place instead, or the open one to close it. **5D** and **6D** open their catalogues. An open dimension's content is listed in blocks, one per app in that app's colours, the app you came in by first, and nothing is listed twice. Tap a lattice, world or shape, each shown as a turning wireframe, to enter that app's space. The three app buttons at the top show one app only; tap it again to show all. **DICTO** (top left), **Menu** (bottom left), Tab or Space bring it back at any time.
+After **ENTER**, **DICTO** opens on the dimensions, **1D+** to **6D**, each showing the apps it holds. **3D+** is open to start with; tap another dimension to open it in place instead, or the open one to close it. **5D** and **6D** open their catalogues. **1D+** and **2D+** belong to no app: they are DICTO's own, in silver, the easier way in, and going up from them to **3D+** takes you into the app you came in by. An open dimension's content is listed in blocks, one per app in that app's colours, the app you came in by first, and nothing is listed twice. Tap a lattice, world or shape, each shown as a turning wireframe, to enter that app's space. The three app buttons at the top show one app only; tap it again to show all. **DICTO** (top left), **Menu** (bottom left), Tab or Space bring it back at any time.
 
 ### Place your first piece
 
@@ -283,7 +283,7 @@ A column of buttons in the top right corner, in the colour of the app whose spac
 
 ## DICTO wizard
 
-**DICTO** (top left) opens the wizard over the whole screen, in the colours of the app you came in by. **3D+** is open to start with; tap another dimension to open it in place instead, or the open one to close it. **5D** and **6D** open their catalogues. It starts on the dimensions, **1D+** to **6D**, each showing the apps it holds. In a dimension, each app has its own block in its own colours, the app you came in by first, and anything already listed is not repeated. Choosing anything takes you into that app's space: its colours, and its tools (Kaleidohedra's Shear appears only there). The three app buttons at the top are a filter: tap one to show only that app, tap it again to show all.
+**DICTO** (top left) opens the wizard over the whole screen, in the colours of the app you came in by. **3D+** is open to start with; tap another dimension to open it in place instead, or the open one to close it. **5D** and **6D** open their catalogues. **1D+** and **2D+** belong to no app: they are DICTO's own, in silver, the easier way in, and going up from them to **3D+** takes you into the app you came in by. It starts on the dimensions, **1D+** to **6D**, each showing the apps it holds. In a dimension, each app has its own block in its own colours, the app you came in by first, and anything already listed is not repeated. Choosing anything takes you into that app's space: its colours, and its tools (Kaleidohedra's Shear appears only there). The three app buttons at the top are a filter: tap one to show only that app, tap it again to show all.
 
 ## Settings
 

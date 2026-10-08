@@ -75,7 +75,7 @@ import {
   PYROCHLORE_STORAGE_KEY,
 } from './core/persistence.js';
 import { VALID_TRIPLES, unitTileVertices } from './krp-core/src/geometry-extensions/growth.js';
-import { SITE, SITES, storageKey, theme, activeSite } from './app/site.js';
+import { SITE, SITES, storageKey, theme, activeSite, setActiveSite } from './app/site.js';
 import { installShear } from './app/kaleido-shear.js';
 import { createStudiesWorld } from './app/world-studies.js';
 import { createTargetsWorld } from './app/world-targets.js';
@@ -5274,6 +5274,8 @@ async function init() {
   });
   // A finished shape opens in its own dimension (Construct's and Nets').
   const openInDimension = (dim, piece, angle) => {
+      // Up from DICTO's own 1D+/2D+ into 3D+ and beyond: the door's app (DICTO 2026-10-09).
+      if (dim !== '2D' && activeSite() === 'dicto') setActiveSite(SITE);
       // Nets' golden rhombohedra open in the Golden Rhombohedra world.
       if (dim === 'golden') {
         own3D = 'golden';
