@@ -508,7 +508,8 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     overlay.querySelector('.dicto-shown').innerHTML = wordmark(shown);
     overlay.querySelectorAll('.dicto-app').forEach((b) => b.addEventListener('click', () => {
       const app = b.dataset.app;
-      if (!SITES[app].inside) { location.href = SITES[app].url; return; }
+      // Not inside yet (Polyhedraverse until step D): its site, straight into its shape browser.
+      if (!SITES[app].inside) { location.href = `${SITES[app].url}/?from=dicto`; return; }
       shown = app;
       paintApps();
       showDimensions();
