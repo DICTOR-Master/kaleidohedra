@@ -430,7 +430,7 @@ the same axis along which the rhombic dodecahedron stretches into the elongated 
 Regular dodecahedra on the even cells of the EKP cubic lattice (cube edge 2) are the dodecahedron's
 densest lattice packing (density (5 + √5)/8; Betke–Henk 2000). Each odd cell's hole is a **Dogstar**
 (DICTO's name): the solid George W. Hart listed in 1996 as stellation 8 of the dodecahedron, noting
-that it fills space alternated with regular dodecahedra (credit: Hart; also Polyhedra-World). New
+that it fills space alternated with regular dodecahedra (credit: Hart; also Polyhedra-World, and Hans Walser, whose “semi-regular dodecahedron” is this solid as a cube with its six hip roofs cut away, checkerboarded with regular dodecahedra). New
 here is where it sits and what nests in it:
 
 - The Dogstar is a partial stellation of a regular dodecahedron 1/φ³ the size of the lattice's,
@@ -466,7 +466,7 @@ here is where it sits and what nests in it:
   Space-Filling Pairs (a dodecahedron seamed where Dogstars meet it, and the Dogstar).
 - Status: the nesting chain was **not found** in a web-level search on 2026-10-08 (Hart's
   stellation pages, Polyhedra-World, Torquato–Jiao and Betke–Henk on the packing, Koca et al. on
-  icosahedral inflation). The Dogstar solid and its tiling with dodecahedra are known (Hart 1996),
+  icosahedral inflation). The Dogstar solid and its tiling with dodecahedra are known (Hart 1996; Walser),
   and credited as such. Not proof of novelty; a specialist search (stellation and quasicrystal
   cluster literature) is still worth doing before claiming priority.
 
@@ -538,3 +538,4 @@ Finding #12, the Star Chain Reaction, and its study 12a are version v2026.10.08-
 - [Zonohedrification — George Hart](https://www.georgehart.com/zonohedra/zonohedrification.html)
 - [Stella octangula — MathWorld](https://mathworld.wolfram.com/StellaOctangula.html) (#10 search)
 - [Compound polyhedra — George Hart](https://www.georgehart.com/virtual-polyhedra/compounds-info.html) (#10 search)
+- [Regular and semi-regular dodecahedra fill space — Hans Walser](https://walser-h-m.ch/hans/Vortraege/20170627/script.htm) (the Dogstar as the cube minus its hip roofs)
