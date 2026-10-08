@@ -508,6 +508,7 @@ Findings #10 and #11 are version v2026.10.08, **DOI [10.5281/zenodo.23220273](ht
 (published 2026-10-08 Japan time; Zenodo shows 2026-10-07, UTC).
 Study 10a (recorded there as #12) is version v2026.10.08-convex, **DOI [10.5281/zenodo.23220833](https://doi.org/10.5281/zenodo.23220833)**.
 Study 10b, and 10a under its new label, are version v2026.10.08-checkerboard, **DOI [10.5281/zenodo.23223555](https://doi.org/10.5281/zenodo.23223555)**.
+Finding #12, the Star Chain Reaction, and its study 12a are version v2026.10.08-star-chain.
 
 ## Sources
 
