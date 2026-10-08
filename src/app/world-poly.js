@@ -9,7 +9,8 @@ import { POLYHEDRA } from '../krp-core/src/polyhedra/index.js';
 import { familiesFor } from '../krp-core/src/polyhedra/families.js';
 import { FAMILY_COLORS } from '../krp-core/src/assembly/pieceColors.js';
 import { getSettings, onSettingsChange } from './settings.js';
-import { storageKey, theme } from './site.js';
+import { storageKey, theme, SITES } from './site.js';
+import { t } from './i18n.js';
 import { polyShapeName } from './poly-shapes.js';
 
 export { polyShapeEdges, polyShapeName } from './poly-shapes.js';
@@ -164,11 +165,26 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       if (n.material === m) return false;
       n.material = m; commit(); return true;
     }
+    pulseNote();
     return false;
   }
 
+  // Until D3 (DICTO 2026-10-09): attaching is not here yet, so a note links to the old site, where
+  // it works. A tap on a placed shape makes the note pulse. Delete with D3.
+  const note = document.createElement('div');
+  note.className = 'poly-build-note';
+  note.style.cssText = 'position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom));z-index:50;display:none;'
+    + 'width:min(360px, calc(100% - 32px));box-sizing:border-box;padding:8px 14px 0;border-radius:12px;background:rgba(15,15,25,0.92);'
+    + 'border:1px solid rgba(var(--accent-rgb),0.5);color:#ddd;font:var(--text-s)/1.4 var(--font-ui);text-align:center;';
+  document.body.appendChild(note);
+  function paintNote() {
+    note.innerHTML = `${t('poly.buildSoon', lang())} <a href="${SITES.polyhedraverse.url}/?from=dicto" target="_blank" rel="noopener" style="color:var(--accent-strong);font-weight:700;display:flex;align-items:center;justify-content:center;min-height:44px;white-space:nowrap">${t('poly.buildThere', lang())}</a>`;
+  }
+  function pulseNote() { note.animate?.([{ transform: 'translateX(-50%) scale(1.06)' }, { transform: 'translateX(-50%) scale(1)' }], { duration: 400 }); }
+
   let shownLang = lang();
-  onSettingsChange((st) => { if (st.language !== shownLang) { shownLang = st.language; if (active) rebuild(); } });
+  onSettingsChange((st) => { if (st.language !== shownLang) { shownLang = st.language; paintNote(); if (active) rebuild(); } });
+  paintNote();
 
   return {
     group,
@@ -178,6 +194,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       if (on === active) return;
       active = on;
       group.visible = on;
+      note.style.display = on ? 'block' : 'none';
       rebuild();
     },
     setSkeleton(on) { skeleton = on; if (active) rebuild(); },
