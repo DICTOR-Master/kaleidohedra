@@ -552,6 +552,13 @@ leave 360° − 3 × 116.565° = **10.3048°**. The gaps are exactly two kinds o
   each 12-faced site cell (EKP orientation, the body site turned 90°) fills 85.4% of it, leaving thin
   fins; the six 14-faced cages per cube take 75.6% of space, so regular dodecahedra fill only 20.9%,
   with no face contacts: tidy, periodic, but essentially the known clathrate structure.
+  Grown fins: the filled cluster's densest translation-only packing (searched over 54 406 lattices
+  from its contact distances, the winner checked independently) is **body-centred cubic**, its 8
+  nearest neighbours along its 3-fold axes, density 0.7154. So one block shape, the cluster plus its
+  share of the leftover 28.5% as grown fins, fills space by bcc translations; the cluster pokes up to
+  0.23 (dodecahedron edge √5 − 1) outside its truncated-octahedron cell at 48 corners, so the units'
+  boundaries zigzag around the truncated octahedron's faces and interlock. Exact, but the fins are
+  chunky, not slim stars.
 - Verified: `src/krp-core/scripts/verify-dodeca-cluster.mjs` (krp-core v0.7.2), every push:
   congruence, exact volumes, no overlap among the 63 solids (separating axes), every gap face
   accounted for, and the halving and thirds.
