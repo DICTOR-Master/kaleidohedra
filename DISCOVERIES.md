@@ -548,6 +548,10 @@ leave 360° − 3 × 116.565° = **10.3048°**. The gaps are exactly two kinds o
   1.356, just under the inradius 1.376, so no further dodecahedron fits in any orientation). Shared
   out by nearest centre it gives dozens of unit shapes, since the approximant's sites all differ:
   clean finned units need a truly periodic arrangement, not an approximant.
+  For comparison, the A15 (Weaire–Phelan, clathrate I) pattern: the largest regular dodecahedron in
+  each 12-faced site cell (EKP orientation, the body site turned 90°) fills 85.4% of it, leaving thin
+  fins; the six 14-faced cages per cube take 75.6% of space, so regular dodecahedra fill only 20.9%,
+  with no face contacts: tidy, periodic, but essentially the known clathrate structure.
 - Verified: `src/krp-core/scripts/verify-dodeca-cluster.mjs` (krp-core v0.7.2), every push:
   congruence, exact volumes, no overlap among the 63 solids (separating axes), every gap face
   accounted for, and the halving and thirds.
