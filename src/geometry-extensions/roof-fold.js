@@ -543,6 +543,9 @@ export function fiveFoldAxes() {
 }
 
 // ---- The Dogstar (DICTO, 2026-10-08: "reverse engineer from gap"; DICTO's names) ----
+// Known: it is George W. Hart's stellation 8 of the dodecahedron ("Tetrahedral Stellations of the
+// Dodecahedron", 1996), which he noted fills space alternated with regular dodecahedra; Polyhedra-World
+// also shows it ("a curious equifacial dodecahedron"). DICTO's names: Dogstar, Sunstar.
 // Regular dodecahedra on the even cells (the densest lattice packing of the dodecahedron) leave one
 // hole in each odd cell. The hole is exactly a partial stellation of a regular dodecahedron 1/phi^3
 // the size of the cell's, sharing its orientation: its core, all 12 first-layer pyramids, 24 of the

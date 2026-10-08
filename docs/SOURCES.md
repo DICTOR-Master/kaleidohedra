@@ -19,6 +19,21 @@ E. S. Fedorov, "Elements of the Theory of Figures" (Russian), *Zapiski Mineralog
 - Covers: the original classification of parallelohedra into five types, and the figure definitions Grünbaum uses.
 - Cited in DISCOVERIES.md, finding #9.
 
+## Hart (1996): the Dogstar is stellation 8 of the dodecahedron
+
+George W. Hart, "Tetrahedral Stellations of the Dodecahedron", *Virtual Polyhedra* (©1996).
+
+- Read: https://www.georgehart.com/virtual-polyhedra/stellations-dodecahedron-tetrahedral.html
+- Covers: the dodecahedron's stellations with tetrahedral symmetry; stellation 8, "the only one in which the face planes consist of only one piece", "can fill space if you alternate it with a regular dodecahedron". That is the solid DICTO named the Dogstar (the hole regular dodecahedra leave in their densest lattice packing), and its space-filling with regular dodecahedra.
+- Credited in the Studies world (Dodecahedra and their Dogstars), the Sunstar Lattice world and their guides.
+
+## Polyhedra-World: the curious equifacial dodecahedron
+
+*A walk in the polyhedra world* (Polyhedra-World), non-convex polyhedra, "two curious equifacial dodecahedra" (section from 2004, updated 2012).
+
+- Read: http://www.polyhedra-world.nc/no_convEx_.htm (and its list of space fillers: http://www.polyhedra-world.nc/space_fill_.htm)
+- Covers: the same solid as Hart's stellation 8, its 12 identical non-convex pentagonal faces ("piece of a pentagram") and its space-filling alternated with a regular dodecahedron.
+
 ## Other sources named in DISCOVERIES.md
 
 - Delone and Štogrin: later Russian work on parallelohedra (needs a library).
