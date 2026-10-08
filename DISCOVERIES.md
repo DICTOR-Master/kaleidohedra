@@ -573,7 +573,8 @@ leave 360° − 3 × 116.565° = **10.3048°**. The gaps are exactly two kinds o
 
 ## 14. DICTO-Star (2026-10-09)
 
-*DICTO built it before this search, from PET bottle caps and their security rings, as a 3D analogue of
+*DICTO built it before this search, in Polyhedraverse and from PET bottle caps and their security
+rings, as a 3D analogue of
 the 4D fold of the 13-dodecahedron cluster (#13: in the 120-cell the 12 outer dodecahedra fold round
 the centre and close the gaps; in 3D the J63s close them instead). Not yet fully resolved outward; Kaleidohedra's search,
 testing DICTO's idea that bi- and tri-diminished icosahedra (J62, J63) could close the gaps between
