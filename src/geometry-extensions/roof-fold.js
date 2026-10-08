@@ -541,3 +541,45 @@ export function fiveFoldAxes() {
   }
   return out;
 }
+
+// ---- The gap star (DICTO, 2026-10-08: "reverse engineer from gap") ----
+// Regular dodecahedra on the even cells (the densest lattice packing of the dodecahedron) leave one
+// hole in each odd cell. The hole is exactly a partial stellation of a regular dodecahedron 1/phi^3
+// the size of the cell's, sharing its orientation: its core, all 12 first-layer pyramids, 24 of the
+// 30 second-layer wedges and the 8 great-stellated spikes that point at the cube corners (whose tips
+// are the cube corners). So dodecahedra and gap stars fill space. Built as the boundary of the hole:
+// on each of the 12 planes bounding it, the cells of the plane (cut by the other 11) that have the
+// hole on one side and a dodecahedron on the other. Returns its faces (cube edge 2, centred).
+export function gapStarSolid() {
+  const { dodeca } = roofFoldSolids();
+  const D = dodeca.faces.map((f) => { const n = unit(cross(sub(f[1], f[0]), sub(f[2], f[0]))); return { n, d: dot(n, f[0]) }; });
+  const centres = [];
+  for (let x = -1; x <= 1; x++) for (let y = -1; y <= 1; y++) for (let z = -1; z <= 1; z++) if ((x + y + z) % 2 !== 0) centres.push([2 * x, 2 * y, 2 * z]);
+  const inDodeca = (p) => centres.some((c) => D.every(({ n, d }) => dot(n, sub(p, c)) < d + 1e-12));
+  const inHole = (p) => p.every((c) => Math.abs(c) <= 1 + 1e-9) && !inDodeca(p);
+  // The 12 planes: the dodecahedron's face planes pulled in to 1/phi^3 of its inradius.
+  const r = D[0].d / PHI ** 3;
+  const planes = D.map(({ n }) => ({ n, d: r }));
+  const faces = [];
+  for (const pl of planes) {
+    const u = unit(cross(pl.n, Math.abs(pl.n[0]) < 0.9 ? [1, 0, 0] : [0, 1, 0])), v = cross(pl.n, u);
+    const o = pl.n.map((c) => c * pl.d);
+    let Q = [[-9, -9], [9, -9], [9, 9], [-9, 9]].map(([a, b]) => o.map((c, i) => c + a * u[i] + b * v[i]));
+    for (let a = 0; a < 3 && Q; a++) for (const s of [1, -1]) { const n = [0, 0, 0]; n[a] = s; Q = Q && clipBelow(Q, n, 1); }
+    if (!Q) continue;
+    let cells = [Q];
+    for (const sp of planes) {
+      if (sp === pl) continue;
+      cells = cells.flatMap((C) => { const { above, below } = splitPolygon(C, sp.n, sp.d); return [above, below].filter(Boolean); });
+    }
+    for (const C of cells) {
+      if (polygonArea(C) < 1e-9) continue;
+      const c = centroid(C);
+      const back = inHole(add(c, pl.n.map((x) => -x * 1e-6))), front = inHole(add(c, pl.n.map((x) => x * 1e-6)));
+      if (back === front) continue;
+      const out = back ? pl.n : pl.n.map((x) => -x);
+      faces.push(dot(cross(sub(C[1], C[0]), sub(C[2], C[0])), out) < 0 ? [...C].reverse() : C);
+    }
+  }
+  return faces;
+}

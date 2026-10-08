@@ -27,7 +27,7 @@
 //   - two extractions that don't overlap: even-cell dodecahedra (the optimal
 //     lattice packing, (5+sqrt5)/8) and even-cell stars with odd-cell
 //     icosahedra, sharing only corners.
-import { PHI, ROOF_FOLD_PERIOD as P, ROOF_FOLD_KINDS, roofFoldCell, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, siteParity, ROOF_FOLD_PATTERNS, goldenRectangles, ekpWindowsSolid, stretchedDodeca, expandedWindows, EXPANDED_WINDOWS_GOLDEN, morphedWindowRhombi, rdMorphRhombi, RD_MORPH_SQUARE, convexHullFaces, ekpWindowRhombi, insideDragonJewel, insideStella, DJ_NEIGHBOURS, fiveWindowPositions, fiveFoldAxes } from '../src/geometry-extensions/roof-fold.js';
+import { PHI, ROOF_FOLD_PERIOD as P, ROOF_FOLD_KINDS, roofFoldCell, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, siteParity, ROOF_FOLD_PATTERNS, goldenRectangles, ekpWindowsSolid, stretchedDodeca, expandedWindows, EXPANDED_WINDOWS_GOLDEN, morphedWindowRhombi, rdMorphRhombi, RD_MORPH_SQUARE, convexHullFaces, ekpWindowRhombi, insideDragonJewel, insideStella, DJ_NEIGHBOURS, fiveWindowPositions, fiveFoldAxes, gapStarSolid } from '../src/geometry-extensions/roof-fold.js';
 
 let failures = 0;
 function check(label, condition) {
@@ -731,6 +731,38 @@ check(`stars on even cells and icosahedra on odd cells share only corners: ${pai
     if ((st ? 1 : 0) + dj !== 1) bad++;
   }
   check(`Stella–Jewel Lattice point tests: each point of an odd cube is in its stella octangula or exactly one neighbouring Dragon Jewel (${N ** 3} points, ${bad} wrong)`, bad === 0);
+}
+
+// (h) The gap star (DICTO, 2026-10-08): the hole left in each odd cell by regular dodecahedra on the
+// even cells (their densest lattice packing). A closed surface of 60 triangles on the 12 face planes of
+// a dodecahedron 1/phi^3 the cell's, edges only 2/phi^4, 2/phi^3, 2/phi^2 and 2/phi, volume exactly
+// 16 minus the dodecahedron; dodecahedra and gap stars fill space (point grid, ray casting).
+{
+  const F = gapStarSolid();
+  const vol = F.reduce((t, f) => { for (let m = 1; m + 1 < f.length; m++) t += dot(f[0], cross(f[m], f[m + 1])); return t; }, 0) / 6;
+  const dodecaVol = ((15 + 7 * Math.sqrt(5)) / 4) * (2 / PHI) ** 3;
+  const dir = new Map();
+  const vkey = (p) => p.map((c) => (Math.round(c * 1e7) / 1e7 + 0).toFixed(7)).join();
+  for (const f of F) f.forEach((p, i) => { const k = `${vkey(p)}>${vkey(f[(i + 1) % f.length])}`; dir.set(k, (dir.get(k) ?? 0) + 1); });
+  const closed = [...dir.entries()].every(([k, n]) => { const [a, b] = k.split('>'); return n === 1 && dir.get(`${b}>${a}`) === 1; });
+  const golden = [4, 3, 2, 1].map((k) => 2 / PHI ** k);
+  const edgesGolden = F.every((f) => f.every((p, i) => golden.some((g) => Math.abs(norm(sub(f[(i + 1) % f.length], p)) - g) < 1e-9)));
+  const r = roofFoldSolids().dodeca.faces.map((f) => Math.abs(dot(f[0], (() => { const n = cross(sub(f[1], f[0]), sub(f[2], f[0])); return n.map((c) => c / norm(n)); })())))[0] / PHI ** 3;
+  const onPlanes = F.every((f) => { const n = cross(sub(f[1], f[0]), sub(f[2], f[0])); const u = n.map((c) => c / norm(n)); return Math.abs(Math.abs(dot(u, f[0])) - r) < 1e-9; });
+  // Fill: points of an odd cube are in the gap star or in exactly one neighbouring dodecahedron.
+  const D = roofFoldSolids().dodeca.faces.map((f) => { const n = cross(sub(f[1], f[0]), sub(f[2], f[0])); const u = n.map((c) => c / norm(n)); return [u, dot(u, f[0])]; });
+  const inDodecaAt = (p, c) => D.every(([n, d]) => dot(n, sub(p, c)) <= d + 1e-12);
+  const inGap = (p) => { let hits = 0; const d = [0.5773, 0.6123, 0.5401]; for (const f of F) for (let m = 1; m + 1 < f.length; m++) { const a = sub(f[0], p), e1 = sub(f[m], f[0]), e2 = sub(f[m + 1], f[0]); const h = cross(d, e2), det = dot(e1, h); if (Math.abs(det) < 1e-12) continue; const sv = a.map((c) => -c); const u = dot(sv, h) / det; if (u < 0 || u > 1) continue; const q = cross(sv, e1), v = dot(d, q) / det; if (v < 0 || u + v > 1) continue; if (dot(e2, q) / det > 0) hits++; } return hits % 2 === 1; };
+  const N = 20;
+  let bad = 0;
+  const evens = [];
+  for (let x = -1; x <= 1; x++) for (let y = -1; y <= 1; y++) for (let z = -1; z <= 1; z++) if ((x + y + z) % 2 !== 0) evens.push([2 * x, 2 * y, 2 * z]);
+  for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) for (let k = 0; k < N; k++) {
+    const q = [i, j, k].map((t, ax) => -1 + (2 * (t + 0.5)) / N + 1e-7 * (ax + 1));
+    const count = (inGap(q) ? 1 : 0) + evens.filter((c) => inDodecaAt(q, c)).length;
+    if (count !== 1) bad++;
+  }
+  check(`gap star: closed, ${F.length} triangles on the 12 face planes of a dodecahedron 1/phi^3 the cell's, edges only 2/phi^4..2/phi, volume ${vol.toFixed(6)} = 16 - dodecahedron; with dodecahedra it fills space (${N ** 3} points, ${bad} wrong)`, closed && F.length === 60 && onPlanes && edgesGolden && Math.abs(vol - (16 - dodecaVol)) < 1e-9 && bad === 0);
 }
 
 console.log(failures === 0 ? '\nAll checks passed (0 failures).' : `\n${failures} check(s) FAILED.`);

@@ -7,7 +7,7 @@
 // scripts/verify-roof-fold.mjs.
 import * as THREE from 'three';
 import {
-  ekpWindowsSolid, neighbourStellas, stretchedDodeca, expandedWindows, morphedWindowRhombi, rdMorphRhombi,
+  ekpWindowsSolid, gapStarSolid, neighbourStellas, stretchedDodeca, expandedWindows, morphedWindowRhombi, rdMorphRhombi,
   RD_MORPH_SQUARE, EXPANDED_WINDOWS_GOLDEN, convexHullFaces, roofFoldSolids, ROOF_FOLD_COLOURS,
   ROOF_FOLD_WORLD_SCALE as WS, PHI,
 } from '../geometry-extensions/roof-fold.js';
@@ -16,7 +16,7 @@ import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 
 const STORAGE_KEY = 'kaleidohedra-studies';
-const STUDIES = ['windows', 'windowsStellas', 'checker', 'expanded', 'icosido', 'rdMorph', 'stretch'];
+const STUDIES = ['windows', 'windowsStellas', 'checker', 'gapStar', 'expanded', 'icosido', 'rdMorph', 'stretch'];
 const C = ROOF_FOLD_COLOURS;
 const GHOST_COLOR = 0xff9a52;
 const EDGE_COLOR = 0x0b1220;
@@ -27,6 +27,7 @@ const SLIDERS = {
   icosido: { key: 'morph', max: 1, snaps: [0, 1], label: 'studies.morph' },
   rdMorph: { key: 'rdMorph', max: 1, snaps: [0, RD_MORPH_SQUARE, 1], label: 'studies.morph' }, // squares on the way
   checker: { key: 'apart', max: 1, snaps: [0], label: 'studies.apart' }, // packed tight
+  gapStar: { key: 'apart', max: 1, snaps: [0], label: 'studies.apart' },
 };
 const lang = () => getSettings().language;
 const sideOf = (f) => Math.hypot(...f[0].map((c, k) => c - f[1][k]));
@@ -91,6 +92,9 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
   // cubes). Pulled `apart` to see them mate; the Shear moves the cell centres (copies) or
   // bends the whole packing (solid).
   const STELLA = roofFoldSolids().stella.faces;
+  // Dodecahedra and gap stars (DICTO, 2026-10-08: "reverse engineer from gap"): the same
+  // checkerboard, with regular dodecahedra on the even cells and the holes they leave on the odd.
+  const GAP_STAR = gapStarSolid();
   function checkerPlacements() {
     const k = 1 + view.apart;
     const cells = BLOCK.map((s) => ({ s, c: s.map((x) => 2 * x * k) }));
@@ -102,6 +106,7 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
     });
   }
   function checkerFaces(even) {
+    if (view.study === 'gapStar') return even ? DODECA.faces.map((f) => [f, C.dodeca]) : GAP_STAR.map((f) => [f, C.star]);
     if (!even) return STELLA.map((f) => [f, C.stella]);
     const { rhombi, walls } = ekpWindowsSolid();
     return [...rhombi.map((f) => [f, C.dodeca]), ...walls.map((f) => [f, C.stella])];
@@ -133,7 +138,7 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
     if (!active) return;
     const where = placements();
     const polys = [];
-    if (view.study === 'checker') {
+    if (view.study === 'checker' || view.study === 'gapStar') {
       for (const { even, offset, map } of checkerPlacements()) for (const [f, hex] of checkerFaces(even)) polys.push({ polygon: f.map(map), offset, colour: new THREE.Color(hex) });
     } else for (const { offset, map } of where) for (const [f, hex] of studyFaces()) polys.push({ polygon: f.map(map), offset, colour: new THREE.Color(hex) });
     group.add(...meshOf(polys, solidMaterial));
@@ -164,7 +169,7 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
     renderPanel();
   }
   function fit() {
-    if (view.study === 'checker') { fitView([0, 0, 0], (Math.sqrt(3) * (1 + view.apart) + 1.8) * WS * 1.15); return; }
+    if (view.study === 'checker' || view.study === 'gapStar') { fitView([0, 0, 0], (Math.sqrt(3) * (1 + view.apart) + 1.8) * WS * 1.15); return; }
     const r = view.study === 'windowsStellas' ? 3.4 : view.study === 'stretch' ? view.stretch / 2 + 1.8 : view.study === 'expanded' ? 1.9 + view.push : view.study === 'icosido' || view.study === 'rdMorph' ? 2.1 : 1.8;
     const spread = copies() ? Math.max(...placements().map(({ offset }) => Math.hypot(...offset))) : 0;
     fitView([0, 0, 0], r * WS + spread);
