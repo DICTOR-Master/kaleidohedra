@@ -151,14 +151,6 @@ const QUICK = {
 function overviewHtml(lang) {
   return `${t('welcome.overview', lang)}<span class="dim-links">${QUICK[SITE].map((q) => `<button type="button" class="dim-link" ${q.dim ? `data-dim="${q.dim}"` : `data-world="${q.world}"`}>${q.label()}</button>`).join('')}</span>`;
 }
-// The other apps, each with its icon and its own line of text.
-const ICONS = { kaleidohedra: './assets/kaleidohedra-favicon-64.png', rhombiverse: './favicon.svg', polyhedraverse: './assets/polyhedraverse-favicon-64.png' };
-const siblingsHtml = (lang) => Object.keys(SITES).filter((a) => a !== SITE).map((a) => `
-      <div class="polyhedraverse-link">
-        <img src="${ICONS[a]}" alt="" width="28" height="28" />
-        <a href="${SITES[a].url}" target="_blank" rel="noopener" data-i18n-html="welcome.${a}Link">${t(`welcome.${a}Link`, lang)}</a>
-      </div>`).join('');
-
 function overlayHtml() {
   const lang = getSettings().language;
   return `
@@ -172,7 +164,6 @@ function overlayHtml() {
         <a href="./rhombis.html" data-i18n-html="welcome.rhombisLink">${t('welcome.rhombisLink', lang)}</a>
       </div>` : ''}
       ${logoSvg()}
-      ${siblingsHtml(lang)}
       <div class="legal-links">
         <a href="./legal.html?doc=terms" target="_blank" rel="noopener">Terms</a>
         · <a href="./legal.html?doc=privacy" target="_blank" rel="noopener">Privacy</a>
