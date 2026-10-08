@@ -220,6 +220,17 @@ function init() {
   } catch (err) {
     // localStorage unavailable -- nothing to clear.
   }
+  // A direct link to DICTO (?dicto, DICTO 2026-10-08: "direct link from linktree"): no welcome, so the
+  // DICTO wizard (which opens on every load) is the first thing seen. The parameter is then dropped,
+  // so a reload is an ordinary visit. ℹ still opens the welcome.
+  const params = new URLSearchParams(location.search);
+  if (params.has('dicto')) {
+    params.delete('dicto');
+    const rest = params.toString();
+    history.replaceState(null, '', `${location.pathname}${rest ? `?${rest}` : ''}${location.hash}`);
+    hide();
+    return;
+  }
   show();
 }
 
