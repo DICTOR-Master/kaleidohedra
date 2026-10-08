@@ -46,6 +46,7 @@ import { PRISM_HEIGHT } from '../krp-core/src/geometry-extensions/quasicrystal.j
 import { loadCatalogue, findBySerial, pieceCount } from '../geometry-extensions/quasicrystal-catalogue.js';
 import { t, tn, tFor } from './i18n.js';
 import { SITES, activeSite, setActiveSite, themeOf } from './site.js';
+import { countDicto } from './analytics.js';
 import { dimensionLabel } from './dimension-label.js';
 import { getSettings } from './settings.js';
 
@@ -715,6 +716,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
   });
 
   function open() {
+    countDicto();
     shown = activeSite(); // opens on the app whose space you're in
     paintApps();
     showDimensions(); // always reset to the top-level dimension list on (re)open
