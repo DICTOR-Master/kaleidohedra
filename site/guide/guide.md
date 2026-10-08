@@ -244,7 +244,7 @@ RHOMBIS is a 3D puzzle made from the same pieces: fill the target shape with the
 
 # Polyhedraverse {#polyhedraverse}
 
-Polyhedraverse is the portrait gallery: every shape in its families, one at a time, up close. Turn it, compare it, attach shapes face to face or vertex to vertex, and print any shape's net to fold. It has its own site for now: DICTO's Polyhedraverse button opens it, straight into its shape browser. Its own guide: [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
+Polyhedraverse is the portrait gallery: every shape in its families, one at a time, up close. Turn it, compare it, attach shapes face to face or vertex to vertex, and print any shape's net to fold. Its space is now inside DICTO: choose 3D, a family and a shape, then tap the green outline to place it. Building on faces and vertices, the shape browser and 4D follow step by step; until then the full site stays at [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app). Its own guide: [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
 
 ---
 
@@ -283,7 +283,7 @@ A column of buttons in the top right corner, in the colour of the app whose spac
 
 ## DICTO wizard
 
-**DICTO** (top left) opens the wizard over the whole screen. It starts on the app you came in by, with its dimensions and worlds in its colour. The other two apps are the two big buttons at the top: tap one to browse its list, in its colour. Choosing anything takes you into that app's space: its colours, and its tools (Kaleidohedra's Shear appears only there). Polyhedraverse opens its own site for now.
+**DICTO** (top left) opens the wizard over the whole screen. It starts on the app you came in by, with its dimensions and worlds in its colour. The other two apps are the two big buttons at the top: tap one to browse its list, in its colour. Choosing anything takes you into that app's space: its colours, and its tools (Kaleidohedra's Shear appears only there). Polyhedraverse lists its shapes by family under 3D.
 
 ## Settings
 

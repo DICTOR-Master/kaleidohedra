@@ -26,6 +26,8 @@ import { createWorld4D } from './app/world-4d.js';
 import { createQuasicrystalWorld } from './app/world-quasicrystal.js';
 import { createShellsWorld } from './app/world-shells.js';
 import { createGoldenWorld } from './app/world-golden.js';
+import { createPolyWorld, polyShapeName } from './app/world-poly.js';
+import { FAMILY_COLORS } from './krp-core/src/assembly/pieceColors.js';
 import { createRoofFoldWorld } from './app/world-roof-fold.js';
 import { createSunstarWorld } from './app/world-sunstar.js';
 import { createStellaJewelWorld } from './app/world-stella-jewel.js';
@@ -159,6 +161,7 @@ const qcWorlds = new Map();
 // active and one is the chosen piece ('shells' | 'golden' | 'kaleido').
 let shellsWorld = null;
 let goldenWorld = null;
+let polyWorld = null; // Polyhedraverse's space (step D2)
 let roofFoldWorld = null;
 let sunstarWorld = null;
 let studiesWorld = null; // Kaleidohedra's Studies
@@ -170,8 +173,8 @@ let netsWorld = null;
 let signalWorld = null;
 let constructWorld = null;
 let own3D = null;
-const OWN_WORLD_DIMENSION = { shells: '3D', golden: '3D', roofFold: '3D', sunstar: '3D', stellaJewel: '3D', studies: '3D', targets: '3D', kaleido: '2D', nets: '2D', signal: '1D', construct: '1D' };
-const own3DWorld = () => ({ shells: shellsWorld, golden: goldenWorld, roofFold: roofFoldWorld, sunstar: sunstarWorld, stellaJewel: stellaJewelWorld, studies: studiesWorld, targets: targetsWorld, kaleido: kaleidoWorld, nets: netsWorld, signal: signalWorld, construct: constructWorld })[own3D] ?? null;
+const OWN_WORLD_DIMENSION = { poly: '3D', shells: '3D', golden: '3D', roofFold: '3D', sunstar: '3D', stellaJewel: '3D', studies: '3D', targets: '3D', kaleido: '2D', nets: '2D', signal: '1D', construct: '1D' };
+const own3DWorld = () => ({ poly: polyWorld, shells: shellsWorld, golden: goldenWorld, roofFold: roofFoldWorld, sunstar: sunstarWorld, stellaJewel: stellaJewelWorld, studies: studiesWorld, targets: targetsWorld, kaleido: kaleidoWorld, nets: netsWorld, signal: signalWorld, construct: constructWorld })[own3D] ?? null;
 const own3DActive = () => !!own3DWorld() && activeDimension === OWN_WORLD_DIMENSION[own3D];
 // 4D, 5D, 6D and the own 3D worlds each own their scene, taps, Lattice View and Skeleton.
 const isOwnWorldDimension = () => activeDimension === '4D' || qcWorlds.has(activeDimension) || own3DActive();
@@ -2728,6 +2731,7 @@ async function init() {
     for (const [dim, w] of qcWorlds) reg(`world${dim.toLowerCase()}`, dim, () => w.snapshot(), (j) => w.restore(j));
     reg('worldshells', '3D', () => shellsWorld.snapshot(), (j) => shellsWorld.restore(j));
     reg('worldgolden', '3D', () => goldenWorld.snapshot(), (j) => goldenWorld.restore(j));
+    reg('worldpoly', '3D', () => polyWorld.snapshot(), (j) => polyWorld.restore(j));
     reg('worldrooffold', '3D', () => roofFoldWorld.snapshot(), (j) => roofFoldWorld.restore(j));
     reg('worldsunstar', '3D', () => sunstarWorld.snapshot(), (j) => sunstarWorld.restore(j));
     reg('worldstellajewel', '3D', () => stellaJewelWorld.snapshot(), (j) => stellaJewelWorld.restore(j));
@@ -2978,6 +2982,7 @@ async function init() {
     qcWorlds.get(activeDimension)?.setActive(true);
     shellsWorld?.setActive(own3DActive() && own3D === 'shells');
     goldenWorld?.setActive(own3DActive() && own3D === 'golden');
+    polyWorld?.setActive(own3DActive() && own3D === 'poly');
     roofFoldWorld?.setActive(own3DActive() && own3D === 'roofFold');
     studiesWorld?.setActive(own3DActive() && own3D === 'studies');
     targetsWorld?.setActive(own3DActive() && own3D === 'targets');
@@ -2994,6 +2999,8 @@ async function init() {
     // 4D/6D: X-Ray and Spherical don't apply (the slider IS the X-Ray),
     // so their HUD faces go blank and untappable (direct decision).
     for (const id of ['xray-toggle', 'spherical-toggle']) { const b = document.getElementById(id); if (b) b.hidden = isOwnWorldDimension(); }
+    // Polyhedraverse's space: no aperiodic shadow to show (DICTO 2026-10-09: X-Ray, Section and Duality hidden there).
+    { const b = document.getElementById('duality-toggle'); if (b) b.hidden = own3DActive() && own3D === 'poly'; }
     refreshSphereOverlayIfOn?.();
     lattice2dPanel.classList.toggle('visible', activeDimension === '2D' && !own3DActive());
     updateRhomboAttachPanel();
@@ -3028,6 +3035,8 @@ async function init() {
     // Nets likewise: the solid is picked in its panel, colours are its own.
     const netsOn = own3DActive() && own3D === 'nets';
     for (const id of ['hud-quick-color', 'hud-quick-lattice-view']) document.getElementById(id).style.display = activeDimension === '1D' || netsOn ? 'none' : '';
+    // Polyhedraverse's space has no lattice to view (its shapes are placed freely).
+    if (own3DActive() && own3D === 'poly') document.getElementById('hud-quick-lattice-view').style.display = 'none';
   }
   // Re-applies the same visibility rule whenever activeDimension itself
   // changes (not just when World View mode changes, which is
@@ -3203,6 +3212,7 @@ async function init() {
     for (const w of qcWorlds.values()) w.setSkeleton(worldViewMode === 'skeleton');
     shellsWorld?.setSkeleton(worldViewMode === 'skeleton');
     goldenWorld?.setSkeleton(worldViewMode === 'skeleton');
+    polyWorld?.setSkeleton(worldViewMode === 'skeleton');
     roofFoldWorld?.setSkeleton(worldViewMode === 'skeleton');
     sunstarWorld?.setSkeleton(worldViewMode === 'skeleton');
     stellaJewelWorld?.setSkeleton(worldViewMode === 'skeleton');
@@ -3212,6 +3222,7 @@ async function init() {
     for (const w of qcWorlds.values()) w.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     shellsWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     goldenWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
+    polyWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     roofFoldWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     sunstarWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     stellaJewelWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
@@ -3743,6 +3754,15 @@ async function init() {
         // own #xray-toggle face and the Lab panel, so no wheel face
         // routes to it here any more.)
         const OWN_WORLD_ACTIONS = { 'tool:shellsWorld': 'shells', 'tool:goldenWorld': 'golden', 'tool:roofFoldWorld': 'roofFold', 'tool:sunstarWorld': 'sunstar', 'tool:stellaJewelWorld': 'stellaJewel', 'tool:studiesWorld': 'studies', 'tool:targetsWorld': 'targets', 'tool:kaleidoWorld': 'kaleido', 'tool:netsWorld': 'nets', 'tool:signalWorld': 'signal', 'tool:constructWorld': 'construct' };
+        // Polyhedraverse's shapes from DICTO (step D2): tool:polyShape:<ID> builds with that shape.
+        if (action?.startsWith('tool:polyShape:')) {
+          own3D = 'poly';
+          applyDimensionVisibility();
+          updateQuickSelect();
+          polyWorld?.startWith(action.slice('tool:polyShape:'.length));
+          updateQuickSelect();
+          return;
+        }
         // Construct's families: tool:constructWorld:<family> (square, kagome, rd).
         if (action?.startsWith('tool:constructWorld:')) {
           constructWorld?.setFamily(action.slice('tool:constructWorld:'.length));
@@ -4788,7 +4808,7 @@ async function init() {
       if (qcWorlds.has(activeDimension)) {
         quickShapeEl.innerHTML = iconFrame(MARKS.pieceRhombohedron, { title: t('cat.button', getSettings().language) });
       } else if (own3DActive()) {
-        quickShapeEl.innerHTML = iconFrame(({ shells: MARKS.pieceRD, roofFold: MARKS.pieceDodeca, studies: MARKS.pieceDodeca, sunstar: MARKS.pieceDodeca, stellaJewel: MARKS.pieceDodeca })[own3D] ?? MARKS.pieceRhombohedron, { title: ({ shells: 'Shells', roofFold: 'EKP', studies: 'Studies', sunstar: 'Sunstar Lattice', stellaJewel: 'Stella–Jewel Lattice', targets: 'Targets' })[own3D] ?? 'Golden Rhombohedra' });
+        quickShapeEl.innerHTML = iconFrame(({ poly: MARKS.pieceDodeca, shells: MARKS.pieceRD, roofFold: MARKS.pieceDodeca, studies: MARKS.pieceDodeca, sunstar: MARKS.pieceDodeca, stellaJewel: MARKS.pieceDodeca })[own3D] ?? MARKS.pieceRhombohedron, { title: ({ poly: polyShapeName(polyWorld?.shape ?? '').replaceAll('_', ' '), shells: 'Shells', roofFold: 'EKP', studies: 'Studies', sunstar: 'Sunstar Lattice', stellaJewel: 'Stella–Jewel Lattice', targets: 'Targets' })[own3D] ?? 'Golden Rhombohedra' });
       } else if (currentMode === 'cubocta') {
         quickShapeEl.innerHTML = iconFrame(MARKS.cuboctahedron, { title: 'Shape' });
       } else {
@@ -5172,6 +5192,17 @@ async function init() {
     showHudPrompt,
     fitView: fitCameraTo,
     onChange: () => { if (historyRestorers.has('worldshells')) recordHistory('worldshells', shellsWorld.snapshot()); },
+  });
+  // Polyhedraverse's space: colours follow the shared setting (the app's own colour, its family
+  // colours as Type, or each piece's picked colour), the picked colour paints.
+  polyWorld = createPolyWorld({
+    scene,
+    showHudPrompt,
+    fitView: (radius) => fitCameraTo([0, 0, 0], radius),
+    getMaterial: () => materialSelect.value,
+    colorOf: (shape, material, family) => (colorView.mode === 'type' ? new THREE.Color(FAMILY_COLORS[family] ?? theme().pieceHex)
+      : colorView.mode === 'pick' && material ? materialColor(material) : new THREE.Color(theme().pieceHex)),
+    onChange: () => { if (historyRestorers.has('worldpoly')) recordHistory('worldpoly', polyWorld.snapshot()); },
   });
   goldenWorld = createGoldenWorld({
     scene,
@@ -5950,6 +5981,7 @@ async function init() {
     for (const w of qcWorlds.values()) w.clear();
     shellsWorld?.clear();
     goldenWorld?.clear();
+    polyWorld?.clear();
     roofFoldWorld?.clear();
     sunstarWorld?.clear();
     stellaJewelWorld?.clear();

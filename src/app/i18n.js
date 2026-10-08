@@ -482,6 +482,11 @@ const en = {
   'welcome.overview@kaleidohedra': "Moving the landscape: shear and slide whole lattices, every piece moving with them, in its own worlds.",
   'wiz.dim.2D@kaleidohedra': "Nets: build a solid's net flat, then fold it up into 3D.",
   'wiz.dim.3D@kaleidohedra': "Every lattice the Shear moves, plus the Euclid–Kepler–Pacioli cell, Targets, Shells and Golden Rhombohedra.",
+  'wiz.dim.3D@polyhedraverse': "Every shape in its families, one at a time, up close: Platonic to Johnson, stellations, space-filling pairs and DICTO's pieces.",
+  'wiz.poly.families': "Pick a family.",
+  'wiz.poly.shapes': "Tap a shape to build with it.",
+  'wiz.poly.count.one': "{n} shape",
+  'wiz.poly.count.other': "{n} shapes",
 };
 
 const ja = {
@@ -929,6 +934,11 @@ const ja = {
   'welcome.overview@kaleidohedra': "風景を動かす：格子全体をずらし、滑らせる。どのピースも一緒に動きます。独自の世界で。",
   'wiz.dim.2D@kaleidohedra': "展開図：立体の展開図を平らに作り、折りたたんで 3D にします。",
   'wiz.dim.3D@kaleidohedra': "シアーが動かすすべての格子に加え、Euclid–Kepler–Pacioli のセル、Targets、Shells、Golden Rhombohedra。",
+  'wiz.dim.3D@polyhedraverse': "ファミリーごとのすべての形を、ひとつずつ間近で：プラトンの立体からジョンソンの立体、星形、空間充填ペア、DICTO のピースまで。",
+  'wiz.poly.families': "ファミリーを選んでください。",
+  'wiz.poly.shapes': "形をタップすると、その形で組み立てられます。",
+  'wiz.poly.count.one': "{n} 個の形",
+  'wiz.poly.count.other': "{n} 個の形",
 };
 
 const es = {
@@ -1376,6 +1386,11 @@ const es = {
   'welcome.overview@kaleidohedra': "El paisaje en movimiento: cizalla y desliza redes enteras, con cada pieza moviéndose con ellas, en sus propios mundos.",
   'wiz.dim.2D@kaleidohedra': "Desarrollos: construye el desarrollo plano de un sólido y pliégalo en 3D.",
   'wiz.dim.3D@kaleidohedra': "Todas las redes que mueve la cizalla, más la celda Euclid–Kepler–Pacioli, Targets, Shells y Golden Rhombohedra.",
+  'wiz.dim.3D@polyhedraverse': "Todas las formas por familias, una a una, de cerca: de los platónicos a los de Johnson, estrelladas, pares que llenan el espacio y las piezas de DICTO.",
+  'wiz.poly.families': "Elige una familia.",
+  'wiz.poly.shapes': "Toca una forma para construir con ella.",
+  'wiz.poly.count.one': "{n} forma",
+  'wiz.poly.count.other': "{n} formas",
 };
 
 const fr = {
@@ -1823,6 +1838,11 @@ const fr = {
   'welcome.overview@kaleidohedra': "Le paysage en mouvement : cisaillez et faites glisser des réseaux entiers, chaque pièce bougeant avec eux, dans ses propres mondes.",
   'wiz.dim.2D@kaleidohedra': "Patrons : construisez à plat le patron d'un solide, puis pliez-le en 3D.",
   'wiz.dim.3D@kaleidohedra': "Tous les réseaux que déplace le cisaillement, plus la cellule Euclid–Kepler–Pacioli, Targets, Shells et Golden Rhombohedra.",
+  'wiz.dim.3D@polyhedraverse': "Toutes les formes par familles, une à une, de près : des platoniciens aux solides de Johnson, stellations, paires qui remplissent l'espace et pièces de DICTO.",
+  'wiz.poly.families': "Choisissez une famille.",
+  'wiz.poly.shapes': "Touchez une forme pour construire avec elle.",
+  'wiz.poly.count.one': "{n} forme",
+  'wiz.poly.count.other': "{n} formes",
 };
 
 const ko = {
@@ -2270,6 +2290,11 @@ const ko = {
   'welcome.overview@kaleidohedra': "풍경을 움직이다: 격자 전체를 기울이고 미끄러뜨리면 모든 조각이 함께 움직입니다. 고유한 세계에서.",
   'wiz.dim.2D@kaleidohedra': "전개도: 입체의 전개도를 평평하게 만든 뒤 접어서 3D로 만듭니다.",
   'wiz.dim.3D@kaleidohedra': "시어가 움직이는 모든 격자와 Euclid–Kepler–Pacioli 셀, Targets, Shells, Golden Rhombohedra.",
+  'wiz.dim.3D@polyhedraverse': "가족별 모든 도형을 하나씩 가까이에서: 플라톤 다면체부터 존슨 다면체, 별모양, 공간을 채우는 짝, DICTO의 조각까지.",
+  'wiz.poly.families': "가족을 고르세요.",
+  'wiz.poly.shapes': "도형을 탭하면 그 도형으로 만들 수 있습니다.",
+  'wiz.poly.count.one': "도형 {n}개",
+  'wiz.poly.count.other': "도형 {n}개",
 };
 
 const zh = {
@@ -2717,6 +2742,11 @@ const zh = {
   'welcome.overview@kaleidohedra': "让风景动起来：剪切、滑动整个晶格，每一块都随之移动，在它自己的世界里。",
   'wiz.dim.2D@kaleidohedra': "展开图：平铺搭建立体的展开图，再折叠成 3D。",
   'wiz.dim.3D@kaleidohedra': "剪切所移动的每个晶格，以及 Euclid–Kepler–Pacioli 晶胞、Targets、Shells 和 Golden Rhombohedra。",
+  'wiz.dim.3D@polyhedraverse': "按家族排列的每个形状，一个一个近距离看：从柏拉图立体到约翰逊立体、星形、填满空间的组合和 DICTO 的部件。",
+  'wiz.poly.families': "选择一个家族。",
+  'wiz.poly.shapes': "轻点一个形状即可用它搭建。",
+  'wiz.poly.count.one': "{n} 个形状",
+  'wiz.poly.count.other': "{n} 个形状",
 };
 
 const ru = {
@@ -3164,6 +3194,11 @@ const ru = {
   'welcome.overview@kaleidohedra': "Пейзаж в движении: сдвигайте и скользите целые решётки, и каждая деталь движется вместе с ними, в своих собственных мирах.",
   'wiz.dim.2D@kaleidohedra': "Развёртки: соберите развёртку тела на плоскости, затем сложите её в 3D.",
   'wiz.dim.3D@kaleidohedra': "Все решётки, которые сдвигает Shear, а также ячейка Euclid–Kepler–Pacioli, Targets, Shells и Golden Rhombohedra.",
+  'wiz.dim.3D@polyhedraverse': "Все формы по семействам, по одной, вблизи: от платоновых тел до многогранников Джонсона, звёздчатые формы, пары, заполняющие пространство, и детали DICTO.",
+  'wiz.poly.families': "Выберите семейство.",
+  'wiz.poly.shapes': "Коснитесь формы, чтобы строить с ней.",
+  'wiz.poly.count.one': "Форм: {n}",
+  'wiz.poly.count.other': "Форм: {n}",
 };
 
 const I18N = { en, ja, es, fr, ko, zh, ru };

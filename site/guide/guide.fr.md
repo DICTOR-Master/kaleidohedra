@@ -246,7 +246,7 @@ RHOMBIS est un puzzle 3D fait des mêmes pièces : remplissez la forme cible ave
 
 # Polyhedraverse {#polyhedraverse}
 
-Polyhedraverse est la galerie de portraits : chaque forme de ses familles, une à une, de près. Faites-la tourner, comparez-la, assemblez des formes face contre face ou sommet contre sommet, et imprimez le patron de n'importe quelle forme pour le plier. Il a pour l'instant son propre site : le bouton Polyhedraverse de DICTO l'ouvre, directement dans son navigateur de formes. Son propre guide : [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
+Polyhedraverse est la galerie de portraits : chaque forme de ses familles, une à une, de près. Faites-la tourner, comparez-la, assemblez des formes face contre face ou sommet contre sommet, et imprimez le patron de n'importe quelle forme pour le plier. Son espace est désormais dans DICTO : choisissez 3D, une famille et une forme, puis touchez le contour vert pour la poser. La construction sur les faces et les sommets, le navigateur de formes et la 4D arrivent pas à pas ; d'ici là, le site complet reste à [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app). Son propre guide : [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
 
 ---
 
@@ -285,7 +285,7 @@ Une colonne de boutons dans le coin supérieur droit, de la couleur de l'appli d
 
 ## Assistant DICTO
 
-**DICTO** (en haut à gauche) ouvre l'assistant en plein écran. Il s'ouvre sur l'appli par laquelle vous êtes entré, avec ses dimensions et ses mondes dans sa couleur. Les deux autres applis sont les deux grands boutons en haut : touchez-en un pour parcourir sa liste, dans sa couleur. Choisir quoi que ce soit vous fait entrer dans l'espace de cette appli : ses couleurs et ses outils (le Shear de Kaleidohedra n'apparaît que là). Polyhedraverse ouvre pour l'instant son propre site.
+**DICTO** (en haut à gauche) ouvre l'assistant en plein écran. Il s'ouvre sur l'appli par laquelle vous êtes entré, avec ses dimensions et ses mondes dans sa couleur. Les deux autres applis sont les deux grands boutons en haut : touchez-en un pour parcourir sa liste, dans sa couleur. Choisir quoi que ce soit vous fait entrer dans l'espace de cette appli : ses couleurs et ses outils (le Shear de Kaleidohedra n'apparaît que là). Polyhedraverse range ses formes par familles sous 3D.
 
 ## Paramètres
 

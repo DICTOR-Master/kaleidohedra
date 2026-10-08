@@ -824,9 +824,10 @@
       cursor: pointer;
     }
     #changelog-btn:hover { background: rgba(255, 255, 255, 0.15); }
-    /* 📖 Almanac, left of Undo (right: 88px), the same shape. */
+    /* 📖 Almanac, above About: the bottom row's left part holds the quick buttons and, on a phone,
+       the paint / attach slot reaches this far right. */
     #almanac-btn {
-      position: fixed; bottom: 8px; right: 128px; z-index: 900;
+      position: fixed; bottom: 52px; right: 8px; z-index: 900;
       width: 36px; height: 36px; border-radius: 50%;
       color: #ddd; background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25);
       font: var(--text-m) var(--font-ui); cursor: pointer;

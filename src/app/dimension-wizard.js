@@ -45,6 +45,8 @@ import { VALID_TRIPLES, unitTileVertices } from '../krp-core/src/geometry-extens
 import { PRISM_HEIGHT } from '../krp-core/src/geometry-extensions/quasicrystal.js';
 import { loadCatalogue, findBySerial, pieceCount } from '../geometry-extensions/quasicrystal-catalogue.js';
 import { t, tn, tFor } from './i18n.js';
+import { polyShapeEdges, polyShapeName } from './poly-shapes.js';
+import { FAMILY_META, familyIds } from '../krp-core/src/polyhedra/families.js';
 import { SITES, activeSite, setActiveSite, themeOf } from './site.js';
 import { countDicto } from './analytics.js';
 import { dimensionLabel } from './dimension-label.js';
@@ -453,6 +455,12 @@ const APP_MENUS = {
     families2D: LATTICE_FAMILIES_2D.filter((f) => f.id === 'nets'),
   },
 };
+// Polyhedraverse's families in DICTO (step D2, DICTO 2026-10-09): DICTO's new work first, the
+// classical families after, Miscellaneous last; 4D Polytopes waits for D5.
+const POLY_FAMILIES = ['SPACE_FILLING_PAIRS', 'STELLATIONS', 'PARALLELOHEDRA', 'BRIDGES_3D', 'APERIODIC', 'PLATONIC', 'ARCHIMEDEAN', 'CATALAN', 'JOHNSON', 'DELTAHEDRA', 'PRISMS', 'ANTIPRISMS', 'MISCELLANEOUS'];
+APP_MENUS.polyhedraverse = {
+  dims: [{ id: '3D', label: dimensionLabel('3D'), preview: () => polyShapeEdges('DODECAHEDRON') }],
+};
 const APP_ORDER = ['kaleidohedra', 'rhombiverse', 'polyhedraverse'];
 
 export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
@@ -539,7 +547,8 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     bodyEl.querySelectorAll('.dim-wizard-card-btn').forEach((el) => {
       el.addEventListener('click', () => {
         const dim = el.dataset.dim;
-        if (dim === '3D') showLattice3D();
+        if (dim === '3D' && shown === 'polyhedraverse') showPolyFamilies();
+        else if (dim === '3D') showLattice3D();
         // A dimension with one world only goes straight in (Kaleidohedra's 2D+: Nets).
         else if (dim === '2D' && menu().families2D.length === 1) choose('2D', menu().families2D[0].action);
         else if (dim === '2D') showLattice2D();
@@ -700,6 +709,65 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     input.addEventListener('keydown', (e) => { if (e.key === 'Enter') go(); });
   }
 
+  // ---- Polyhedraverse: families, then a family's shapes (step D2) ----
+  // Long lists (Johnson's 92): a preview turns only while its card is on screen.
+  function mountPreviewsWhenSeen() {
+    const root = overlay.querySelector('.dim-wizard-card');
+    const live = new Map();
+    const io = new IntersectionObserver((entries) => {
+      for (const en of entries) {
+        const c = en.target;
+        if (en.isIntersecting && !live.has(c)) live.set(c, mountWireframePreview(c, previewSources[Number(c.dataset.preview)](), 40));
+        else if (!en.isIntersecting && live.has(c)) { live.get(c)(); live.delete(c); }
+      }
+    }, { root, rootMargin: '120px' });
+    bodyEl.querySelectorAll('canvas[data-preview]').forEach((c) => io.observe(c));
+    previewDisposers.push(() => { io.disconnect(); live.forEach((d) => d()); live.clear(); });
+  }
+  function showPolyFamilies() {
+    resetPreviews();
+    const L = getSettings().language;
+    let grid = '';
+    for (const key of POLY_FAMILIES) {
+      const ids = familyIds(key);
+      if (!ids.length) continue;
+      grid += `
+        <button type="button" class="dim-wizard-card-btn" data-family="${key}">
+          ${previewSlot(() => polyShapeEdges(ids[0]))}
+          <span class="dim-wizard-row-text">
+            <span class="dim-wizard-label">${FAMILY_META[key].label}</span>
+            <span class="dim-wizard-desc">${tn('wiz.poly.count', L, ids.length)}</span>
+          </span>
+        </button>`;
+    }
+    bodyEl.innerHTML = `
+      <button type="button" class="dim-wizard-back">${t('wiz.back', L)}</button>
+      <div class="dim-wizard-sub">${t('wiz.poly.families', L)}</div>
+      <div class="dim-wizard-grid">${grid}</div>`;
+    mountPreviewsWhenSeen();
+    bodyEl.querySelector('.dim-wizard-back').addEventListener('click', showDimensions);
+    bodyEl.querySelectorAll('[data-family]').forEach((el) => el.addEventListener('click', () => showPolyFamily(el.dataset.family)));
+  }
+  function showPolyFamily(key) {
+    resetPreviews();
+    const L = getSettings().language;
+    let grid = '';
+    for (const id of familyIds(key)) {
+      grid += `
+        <button type="button" class="dim-wizard-card-btn dim-wizard-piece" data-action="tool:polyShape:${id}">
+          ${previewSlot(() => polyShapeEdges(id))}
+          <span class="dim-wizard-row-text"><span class="dim-wizard-label">${polyShapeName(id).replaceAll('_', ' ')}</span></span>
+        </button>`;
+    }
+    bodyEl.innerHTML = `
+      <button type="button" class="dim-wizard-back">${t('wiz.back', L)}</button>
+      <div class="dim-wizard-sub"><b>${FAMILY_META[key].label}</b> · ${t('wiz.poly.shapes', L)}</div>
+      <div class="dim-wizard-grid">${grid}</div>`;
+    mountPreviewsWhenSeen();
+    bodyEl.querySelector('.dim-wizard-back').addEventListener('click', showPolyFamilies);
+    bodyEl.querySelectorAll('[data-action]').forEach((el) => el.addEventListener('click', () => choose('3D', el.dataset.action)));
+  }
+
   function showLattice3D() {
     showLatticeSections('3D', menu().lattices3D, (piece) => pieceEdges(piece.action));
   }
@@ -742,6 +810,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     titleEl.textContent = t('wiz.title', getSettings().language); // the lattice screens keep the list's title
     if (dim === '1D') showLattice1D();
     else if (dim === '2D') showLattice2D();
+    else if (dim === '3D' && shown === 'polyhedraverse') showPolyFamilies();
     else if (dim === '3D') showLattice3D();
     else if (dim === '4D') showLattice4D();
     else if (dim === '5D' || dim === '6D') showCatalogue(dim);

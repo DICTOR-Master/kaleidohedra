@@ -246,7 +246,7 @@ RHOMBIS es un rompecabezas 3D hecho con las mismas piezas: llena la forma objeti
 
 # Polyhedraverse {#polyhedraverse}
 
-Polyhedraverse es la galería de retratos: cada forma de sus familias, una a una, de cerca. Gírala, compárala, une formas cara con cara o vértice con vértice, e imprime el desarrollo de cualquier forma para plegarlo. Por ahora tiene su propio sitio: el botón Polyhedraverse de DICTO lo abre, directamente en su explorador de formas. Su propia guía: [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
+Polyhedraverse es la galería de retratos: cada forma de sus familias, una a una, de cerca. Gírala, compárala, une formas cara con cara o vértice con vértice, e imprime el desarrollo de cualquier forma para plegarlo. Su espacio ya está dentro de DICTO: elige 3D, una familia y una forma, y toca el contorno verde para colocarla. Construir sobre caras y vértices, el explorador de formas y el 4D llegan paso a paso; mientras tanto, el sitio completo sigue en [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app). Su propia guía: [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
 
 ---
 
@@ -285,7 +285,7 @@ Una columna de botones en la esquina superior derecha, del color de la app en cu
 
 ## Asistente DICTO
 
-**DICTO** (arriba a la izquierda) abre el asistente a pantalla completa. Empieza en la app por la que entraste, con sus dimensiones y mundos en su color. Las otras dos apps son los dos botones grandes de arriba: toca uno para ver su lista, en su color. Al elegir algo entras en el espacio de esa app: sus colores y sus herramientas (el Shear de Kaleidohedra solo aparece allí). Polyhedraverse abre por ahora su propio sitio.
+**DICTO** (arriba a la izquierda) abre el asistente a pantalla completa. Empieza en la app por la que entraste, con sus dimensiones y mundos en su color. Las otras dos apps son los dos botones grandes de arriba: toca uno para ver su lista, en su color. Al elegir algo entras en el espacio de esa app: sus colores y sus herramientas (el Shear de Kaleidohedra solo aparece allí). Polyhedraverse muestra sus formas por familias en 3D.
 
 ## Ajustes
 

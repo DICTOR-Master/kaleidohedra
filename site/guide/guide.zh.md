@@ -246,7 +246,7 @@ RHOMBIS 是用同样的块做成的 3D 解谜游戏：用托盘里的块填满�
 
 # Polyhedraverse {#polyhedraverse}
 
-Polyhedraverse 是肖像画廊：各个家族中的每个形状，一个一个，近距离观看。旋转它、比较它，把形状面对面或顶点对顶点连接起来，还可以打印任意形状的展开图来折叠。它目前有自己的网站：DICTO 中的 Polyhedraverse 按钮会打开它，直接进入形状浏览器。它自己的指南：[polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide)。
+Polyhedraverse 是肖像画廊：各个家族中的每个形状，一个一个，近距离观看。旋转它、比较它，把形状面对面或顶点对顶点连接起来，还可以打印任意形状的展开图来折叠。它的空间现在就在 DICTO 中：依次选择 3D、一个家族和一个形状，然后轻点绿色轮廓放置它。在面和顶点上搭建、形状浏览器和 4D 会逐步加入；在此之前，完整的网站仍在 [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app)。它自己的指南：[polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide)。
 
 ---
 
@@ -285,7 +285,7 @@ Polyhedraverse 是肖像画廊：各个家族中的每个形状，一个一个�
 
 ## DICTO 向导
 
-左上角的 **DICTO** 会全屏打开向导。它先显示你进入的应用，用该应用的颜色列出其维度和世界。另外两个应用是顶部的两个大按钮：点按一个即可浏览它的列表，显示为它的颜色。选择任何内容都会进入该应用的空间：它的颜色和它的工具（Kaleidohedra 的 Shear 只在那里出现）。Polyhedraverse 目前会打开它自己的网站。
+左上角的 **DICTO** 会全屏打开向导。它先显示你进入的应用，用该应用的颜色列出其维度和世界。另外两个应用是顶部的两个大按钮：点按一个即可浏览它的列表，显示为它的颜色。选择任何内容都会进入该应用的空间：它的颜色和它的工具（Kaleidohedra 的 Shear 只在那里出现）。Polyhedraverse 在 3D 下按家族列出它的形状。
 
 ## 设置
 

@@ -246,7 +246,7 @@ RHOMBIS は同じピースで作る 3D パズルです。トレイのピース�
 
 # Polyhedraverse {#polyhedraverse}
 
-Polyhedraverse は肖像画のギャラリーです：ファミリーごとのすべての形を、ひとつずつ間近で。回して、比べて、面と面、頂点と頂点で形をつなぎ、どの形の展開図も印刷して組み立てられます。今のところ独自のサイトです：DICTO の Polyhedraverse ボタンで開き、すぐに形のブラウザが表示されます。専用のガイド：[polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide)。
+Polyhedraverse は肖像画のギャラリーです：ファミリーごとのすべての形を、ひとつずつ間近で。回して、比べて、面と面、頂点と頂点で形をつなぎ、どの形の展開図も印刷して組み立てられます。その空間はいま DICTO の中にあります：3D、ファミリー、形の順に選び、緑の輪郭をタップして置きます。面や頂点への接続、形のブラウザ、4D は順に加わります。それまでは完全なサイトが [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app) にあります。専用のガイド：[polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide)。
 
 ---
 
@@ -285,7 +285,7 @@ Polyhedraverse は肖像画のギャラリーです：ファミリーごとの�
 
 ## DICTO ウィザード
 
-左上の **DICTO** で、ウィザードが画面いっぱいに開きます。最初は入ってきたアプリの次元とワールドを、そのアプリの色で表示します。ほかの 2 つのアプリは上の大きなボタンです。タップするとそのアプリの一覧に、その色で切り替わります。何かを選ぶと、そのアプリの空間に入ります：その色と、そのツール（Kaleidohedra の Shear はそこだけに出ます）。Polyhedraverse は、いまはそのサイトが開きます。
+左上の **DICTO** で、ウィザードが画面いっぱいに開きます。最初は入ってきたアプリの次元とワールドを、そのアプリの色で表示します。ほかの 2 つのアプリは上の大きなボタンです。タップするとそのアプリの一覧に、その色で切り替わります。何かを選ぶと、そのアプリの空間に入ります：その色と、そのツール（Kaleidohedra の Shear はそこだけに出ます）。Polyhedraverse は 3D の下に形をファミリーごとに並べます。
 
 ## 設定
 

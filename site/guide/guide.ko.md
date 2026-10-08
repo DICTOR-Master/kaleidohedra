@@ -246,7 +246,7 @@ RHOMBIS는 같은 조각으로 만드는 3D 퍼즐입니다. 트레이의 조각
 
 # Polyhedraverse {#polyhedraverse}
 
-Polyhedraverse는 초상화 갤러리입니다: 각 가족의 모든 도형을 하나씩 가까이에서. 돌려 보고, 비교하고, 면과 면 또는 꼭짓점과 꼭짓점으로 도형을 붙이고, 어떤 도형이든 전개도를 인쇄해 접을 수 있습니다. 지금은 자체 사이트에 있습니다: DICTO의 Polyhedraverse 버튼으로 열리며, 바로 도형 브라우저가 나옵니다. 전용 가이드: [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
+Polyhedraverse는 초상화 갤러리입니다: 각 가족의 모든 도형을 하나씩 가까이에서. 돌려 보고, 비교하고, 면과 면 또는 꼭짓점과 꼭짓점으로 도형을 붙이고, 어떤 도형이든 전개도를 인쇄해 접을 수 있습니다. 이제 그 공간은 DICTO 안에 있습니다: 3D, 가족, 도형 순으로 고르고 초록 윤곽을 탭해 놓으세요. 면과 꼭짓점에 붙이기, 도형 브라우저, 4D는 차례로 추가됩니다. 그때까지 전체 사이트는 [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app)에 있습니다. 전용 가이드: [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
 
 ---
 
@@ -285,7 +285,7 @@ Polyhedraverse는 초상화 갤러리입니다: 각 가족의 모든 도형을 �
 
 ## DICTO 마법사
 
-왼쪽 위의 **DICTO**는 마법사를 화면 가득 엽니다. 처음에는 들어온 앱의 차원과 월드를 그 앱의 색으로 보여 줍니다. 다른 두 앱은 위쪽의 큰 버튼 두 개입니다. 하나를 탭하면 그 앱의 목록이 그 색으로 나옵니다. 무엇이든 고르면 그 앱의 공간으로 들어갑니다: 그 색과 그 도구(Kaleidohedra의 Shear는 그곳에서만 나타남). Polyhedraverse는 지금은 자기 사이트가 열립니다.
+왼쪽 위의 **DICTO**는 마법사를 화면 가득 엽니다. 처음에는 들어온 앱의 차원과 월드를 그 앱의 색으로 보여 줍니다. 다른 두 앱은 위쪽의 큰 버튼 두 개입니다. 하나를 탭하면 그 앱의 목록이 그 색으로 나옵니다. 무엇이든 고르면 그 앱의 공간으로 들어갑니다: 그 색과 그 도구(Kaleidohedra의 Shear는 그곳에서만 나타남). Polyhedraverse는 3D 아래에 도형을 가족별로 보여 줍니다.
 
 ## 설정
 
