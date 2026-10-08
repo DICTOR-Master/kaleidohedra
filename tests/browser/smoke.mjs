@@ -118,20 +118,13 @@ async function main() {
   await page.waitForTimeout(400);
   assert.ok(!(await wizardOpen()), 'Tab again should close the DICTO wizard');
 
-  // Almanac (docs/RHOMBIVERSE_SPEC_ALMANAC.md, Stage 1): exercises the real
-  // createAlmanac() module directly (the
-  // same function render.js's own init calls once for real; this makes
-  // a second, independent instance for the test, which is fine -- the
-  // module has no singleton state to collide with). Queries are scoped
-  // to the overlay THIS call appends (the last '.almanac-overlay' in
-  // DOM order), not an unscoped selector, since render.js's own real
-  // instance is also present in the page by this point.
+  // Almanac (docs/RHOMBIVERSE_SPEC_ALMANAC.md): opened the way a user does, by its 📖 button
+  // (it once had only a wheel face, and went unreachable when the wheels went while this test,
+  // opening it from code, still passed).
+  await page.click('#almanac-btn');
   const almanacResult = await page.evaluate(async () => {
-    const { createAlmanac } = await import('./src/app/almanac.js');
     const { ALMANAC_ENTRIES } = await import('./src/app/almanac-data.js');
-    createAlmanac().open();
-    const overlays = document.querySelectorAll('.almanac-overlay');
-    const overlay = overlays[overlays.length - 1];
+    const overlay = document.querySelector('.almanac-overlay');
     const opened = overlay.classList.contains('open');
     const entryCount = overlay.querySelectorAll('.almanac-entry').length;
     overlay.querySelector('.almanac-entry')?.click();

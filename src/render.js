@@ -1611,7 +1611,7 @@ async function init() {
   wireFirstUseHint('reload-toggle', 'Reload: hard-refresh the app if anything looks stuck or stale.');
   wireFirstUseHint('xray-toggle', 'X-Ray: drag a cutaway plane through the structure to see inside it.');
   wireFirstUseHint('lab-toggle', 'Settings: camera, graphics, sound, language, colors, and Export / Import World.');
-  wireFirstUseHint('hud-wheel-cue', 'Tab / Space (or tap Menu) opens the menu wheel.');
+  wireFirstUseHint('hud-wheel-cue', 'Tab / Space (or tap Menu) opens DICTO.');
   // The quick-select row starts just right of the Menu box, whose width
   // changes with the language.
   const menuCueEl = document.getElementById('hud-wheel-cue');
@@ -3714,6 +3714,16 @@ async function init() {
   // its open/closed state internally (open()/close()/toggle()), this
   // scope just needs a stable reference to call into from onAction.
   const almanac = createAlmanac();
+  // 📖 beside 🕘 What's New and ℹ About: the Almanac's own button, since the wheel face that opened
+  // it went with the wheels (DICTO 2026-10-08).
+  const almanacBtn = document.createElement('button');
+  almanacBtn.id = 'almanac-btn';
+  almanacBtn.type = 'button';
+  almanacBtn.textContent = '📖';
+  almanacBtn.dataset.i18nTitle = 'almanac.open';
+  almanacBtn.title = t('almanac.open', getSettings().language);
+  almanacBtn.addEventListener('click', () => almanac.open());
+  document.body.appendChild(almanacBtn);
   // The menu's action path, for callers outside the block below
   // (Construct's "Open in 4D").
   let runWheelAction = () => {};
