@@ -40,7 +40,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 12 | Star Chain Reaction: the EKP great star is exactly the great stellated dodecahedron of the Dogstar's core (a dodecahedron 1/φ³ the cell's), and a whole Sunstar 1/φ³ the size fits inside it with no room to grow, so dodecahedron ⊃ great star ⊃ Sunstar(1/φ³) ⊃ great star(1/φ³) ⊃ … nests forever, each step touching, scale ratio φ³ | DICTO (asked for a Sunstar cell network and to search nestings; named it); found by Kaleidohedra's search under DICTO's direction. The Dogstar itself is George W. Hart's stellation 8 of the dodecahedron (1996) | yes | **not found** — candidate (web-level search, 2026-10-08) | 2026-10-08 (79448e3) |
 | 12a | Study of #12, the Dragon chain: Dragon Jewel ⊃ cube ⊃ stella octangula ⊃ Dogstar ⊃ dodecahedron(1/φ³) ⊃ Dragon Jewel(1/φ³) ⊃ …, every step touching; the EKP cell recurs inside its own stella, through the Dogstar | DICTO (asked whether "another cell network" was buried in the Dragon Jewel); found by Kaleidohedra's search | yes | study of #12, not a separate claim | 2026-10-08 |
 | 13 | The 13-dodecahedron cluster made solid: a regular dodecahedron with one on each face leaves gaps of exactly two kinds, 30 wedges (two pentagons hinged at 10.3048°, volume φ³/20) and 20 needles (volume (45 − 19√5)/600), and the filled cluster comes apart into 12 finned units | DICTO (designed the cluster; asked for its gaps as pieces, separable once built) | yes | **not found** — candidate (the 10.3° gap itself is well known) | 2026-10-09 |
-| 14 | The icosidodecahedral star: an icosidodecahedron with a regular dodecahedron on each pentagon and a tridiminished icosahedron (J63) on each triangle; 33 regular-faced pieces, every contact a whole face, every edge and corner closed, no filler, volume (195 + 89√5)/3 | DICTO (built it, 2026); made exact and checked by Kaleidohedra's search | yes | **not found** — candidate (the version with whole icosahedra, which overlaps, is Robert Austin's 2014 model) | 2026-10-09 |
+| 14 | DICTO-Star: an icosidodecahedron with a regular dodecahedron on each pentagon and a tridiminished icosahedron (J63) on each triangle; 33 regular-faced pieces, every contact a whole face, every edge and corner closed, no filler, volume (195 + 89√5)/3 | DICTO (built it, 2026); made exact and checked by Kaleidohedra's search | yes | **not found** — candidate (the version with whole icosahedra, which overlaps, is Robert Austin's 2014 model) | 2026-10-09 |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -571,13 +571,13 @@ leave 360° − 3 × 116.565° = **10.3048°**. The gaps are exactly two kinds o
   icosahedron-based binders. The cluster's gaps as two exact solid pieces, and the separable finned
   units, were **not found** in a web-level search on 2026-10-09. Not proof of novelty.
 
-## 14. The icosidodecahedral star (2026-10-09)
+## 14. DICTO-Star (2026-10-09)
 
 *DICTO built it before this search, from PET bottle caps and their security rings, as a 3D analogue of
 the 4D fold of the 13-dodecahedron cluster (#13: in the 120-cell the 12 outer dodecahedra fold round
 the centre and close the gaps; in 3D the J63s close them instead). Not yet fully resolved outward; Kaleidohedra's search,
 testing DICTO's idea that bi- and tri-diminished icosahedra (J62, J63) could close the gaps between
-dodecahedra, found the same object and made it exact. (Working name; DICTO to name it.)*
+dodecahedra, found the same object and made it exact.*
 
 An **icosidodecahedron** with a regular **dodecahedron** on each of its 12 pentagons and a
 **tridiminished icosahedron** (Johnson solid J63) on each of its 20 triangles, each J63 by its one
@@ -606,7 +606,7 @@ triangle that borders only pentagons. 33 regular-faced pieces, edge 1:
   dodecahedra and dodecahedral and triangular stellation pieces meeting one another. Those pieces
   are not regular-faced, so the result above (no closure with regular pieces) does not rule it out;
   it is the next thing to resolve.
-- Verified: `src/krp-core/scripts/verify-id-star.mjs` (krp-core v0.7.3), every push: no overlap
+- Verified: `src/krp-core/scripts/verify-id-star.mjs` (krp-core v0.7.4), every push: no overlap
   among the 33 solids (separating axes), all 60 edges closed, every corner filled, exact volumes, and
   that whole icosahedra overlap.
 - Status: **not found** in a web-level and reading-library search on 2026-10-09. Closest: Robert
