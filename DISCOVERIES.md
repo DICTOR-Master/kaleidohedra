@@ -39,6 +39,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 11 | Dodecahedron stretched along a cube-face axis: 8 regular pentagons, 4 hexagons (108° × 4, 144° × 2), 2 rectangles at any stretch; squares at one edge (2/φ); at the lattice spacing 2 it is the hull of two EKP face-neighbour dodecahedra | DICTO (the "pentagon caps and hexagons" hunch, from overlapped dodecahedra) | yes | **not found** — candidate (web-level search; a simple construction, so likely to appear somewhere, e.g. crystal habits) | 2026-10-08 (fb9de6b) |
 | 12 | Star Chain Reaction: the EKP great star is exactly the great stellated dodecahedron of the Dogstar's core (a dodecahedron 1/φ³ the cell's), and a whole Sunstar 1/φ³ the size fits inside it with no room to grow, so dodecahedron ⊃ great star ⊃ Sunstar(1/φ³) ⊃ great star(1/φ³) ⊃ … nests forever, each step touching, scale ratio φ³ | DICTO (asked for a Sunstar cell network and to search nestings; named it); found by Kaleidohedra's search under DICTO's direction. The Dogstar itself is George W. Hart's stellation 8 of the dodecahedron (1996) | yes | **not found** — candidate (web-level search, 2026-10-08) | 2026-10-08 (79448e3) |
 | 12a | Study of #12, the Dragon chain: Dragon Jewel ⊃ cube ⊃ stella octangula ⊃ Dogstar ⊃ dodecahedron(1/φ³) ⊃ Dragon Jewel(1/φ³) ⊃ …, every step touching; the EKP cell recurs inside its own stella, through the Dogstar | DICTO (asked whether "another cell network" was buried in the Dragon Jewel); found by Kaleidohedra's search | yes | study of #12, not a separate claim | 2026-10-08 |
+| 13 | The 13-dodecahedron cluster made solid: a regular dodecahedron with one on each face leaves gaps of exactly two kinds, 30 wedges (two pentagons hinged at 10.3048°, volume φ³/20) and 20 needles (volume (45 − 19√5)/600), and the filled cluster comes apart into 12 finned units | DICTO (designed the cluster; asked for its gaps as pieces, separable once built) | yes | **not found** — candidate (the 10.3° gap itself is well known) | 2026-10-09 |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -489,6 +490,46 @@ grow (the largest scale at which each fits inside the one before is exactly 1):
   (Kaleidohedra and Rhombiverse), view Dragon chain.
 - Status: a study of #12, not a separate claim (not found at web level, 2026-10-08).
 
+## 13. The 13-dodecahedron cluster made solid (DICTO, 2026-10-09)
+
+*DICTO's cluster: "one dodecahedron at the center of a cluster", built in layers down a 3-fold axis:
+a snowflake belt of six, three in the dimples on top, turned over, three more.*
+
+A regular dodecahedron with a regular dodecahedron on **each of its 12 faces**. A dodecahedron that
+shares a whole face with another is its mirror image across that face (opposite faces are turned
+36°, so no shift fits), so the cluster is unique: the first shell of the 120-cell, laid flat. The
+12 never overlap; they touch each other only along the centre's 30 edges, where three dodecahedra
+leave 360° − 3 × 116.565° = **10.3048°**. The gaps are exactly two kinds of piece (edge 1):
+
+- **Wedge** (30, one on each edge of the centre, congruent): two regular pentagons, the two
+  neighbours' faces, hinged on the centre's edge at 10.3048°, closed by two end triangles and two
+  outer trapezoids (sides 1, 1/(φ²√5), 1, 1/(φ√5)). Volume exactly **φ³/20**.
+- **Needle** (20, one at each corner of the centre, congruent): a tetrahedron whose three long edges
+  are the three neighbours' outer edges (length 1) and whose base is an equilateral triangle of
+  side 1/(φ²√5). Volume exactly **(45 − 19√5)/600**. Its three sides are the end triangles of the
+  three wedges at that corner: three wedges and a needle lock into a three-armed **star**.
+- Together, 13 dodecahedra, 30 wedges and 20 needles are one closed solid with no gap inside,
+  volume 13(15 + 7√5)/4 + 30φ³/20 + 20(45 − 19√5)/600; outside, 72 pentagons, 60 thin trapezoids
+  and 20 small triangles.
+- **Separable once built** (DICTO's requirement): each wedge is symmetric across the mirror plane
+  through the centre's edge, and each needle 3-fold about the line through its corner, so the
+  wedges halve and the needles split in thirds along the same planes. Every outer dodecahedron
+  carries 5 half-wedges and 5 needle-thirds as fins and lifts straight out; the centre carries none.
+- Beyond the cluster (studied, not claimed): a second shell puts 12 copies of the centre, same
+  orientation, at 4 × the inradius along the six 5-fold axes, the projected basis of the 6D cubic
+  lattice, so the centres follow the golden-rhombohedron (Ammann–Kramer) tiling with that edge.
+  Decorated with dodecahedra at its corners and edge midpoints it fills about 68% at most while
+  keeping every contact a whole face (the oblate rhombohedron's short diagonal is where it must
+  split); the rest are cage-sized voids, not stars.
+- Verified: `src/krp-core/scripts/verify-dodeca-cluster.mjs` (krp-core v0.7.2), every push:
+  congruence, exact volumes, no overlap among the 63 solids (separating axes), every gap face
+  accounted for, and the halving and thirds.
+- Status: the 10.3° gap of three dodecahedra round an edge is well known (the 120-cell and
+  frustration literature, which closes it by curving space or twisting, e.g. Sadoc and Mosseri;
+  Fang, Irwin et al. 2018), and Jenczyk (2024) builds networks of regular dodecahedra joined by
+  icosahedron-based binders. The cluster's gaps as two exact solid pieces, and the separable finned
+  units, were **not found** in a web-level search on 2026-10-09. Not proof of novelty.
+
 Since 2026-10-08 the geometry and its checks live in [krp-core](https://github.com/DICTOR-Master/krp-core),
 the geometry shared by Kaleidohedra and Rhombiverse, pinned here at `src/krp-core`.
 
@@ -519,6 +560,9 @@ Finding #12, the Star Chain Reaction, and its study 12a are version v2026.10.08-
 
 ## Sources
 
+- [Regular Dodecahedron-Based Network Structures — J. Jenczyk, Symmetry 16 (2024) 1509](https://doi.org/10.3390/sym16111509) (#13)
+- [Closing gaps in geometrically frustrated symmetric clusters — Fang, Irwin et al., Mathematics 6 (2018) 89](https://doi.org/10.3390/math6060089) (#13)
+- [Tetrahedral cluster of dodecahedra (120-cell) — S. Vorthmann, vZome, 2014](https://www.vzome.com/geometry/2014/10/04/dodecTetra-11-09-35.html) (#13)
 - [The Bilinski dodecahedron and assorted parallelohedra, zonohedra, monohedra, isozonohedra and otherhedra — Grünbaum, Math. Intelligencer 32 (2010)](https://faculty.washington.edu/moishe/branko/BG285%20Bilinski%20dodecahedron.pdf) (#5 is its Fig. 2(b))
 - [Elongated dodecahedron — Wikipedia](https://en.wikipedia.org/wiki/Elongated_dodecahedron)
 - [Elongated Dodecahedron — MathWorld](https://mathworld.wolfram.com/ElongatedDodecahedron.html)
