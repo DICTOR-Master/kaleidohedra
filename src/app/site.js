@@ -47,12 +47,13 @@ adoptLegacyKeys();
 
 // ---- Colour: which app's space you are in (DICTO, 2026-10-08: "colour scheme orients you") ----
 // accent: text and outlines; strong: first placements, highlights; piece: the default piece colour;
-// contrast: a "tap here" that stands out against the accent (cyan on orange, amber on cyan).
+// contrast: a "tap here" that stands out against the accent (cyan on orange, amber on cyan);
+// highlight: the dimension label, Send, the undo strip (Rhombiverse amber, Kaleidohedra orange).
 // Rhombiverse cyan, Kaleidohedra orange (Polyhedraverse green joins with step D).
 const THEMES = {
-  kaleidohedra: { pale: '#ffc9a0', accent: '#ff9a52', accentRgb: '255, 106, 0', strong: '#ff6a00', piece: '#ff6a00', pieceRgb: '255, 106, 0', contrast: '#22c3e6', contrastRgb: '34, 195, 230', accentHex: 0xff9a52, strongHex: 0xff6a00, pieceHex: 0xff6a00, contrastHex: 0x22c3e6 },
-  polyhedraverse: { pale: '#d8ffcc', accent: '#a9f795', accentRgb: '94, 226, 51', strong: '#5ee233', piece: '#5ee233', pieceRgb: '94, 226, 51', contrast: '#ff9a52', contrastRgb: '255, 154, 82', accentHex: 0xa9f795, strongHex: 0x5ee233, pieceHex: 0x5ee233, contrastHex: 0xff9a52 },
-  rhombiverse: { pale: '#dfefff', accent: '#9de0ff', accentRgb: '124, 204, 255', strong: '#7cf', piece: '#22c3e6', pieceRgb: '34, 195, 230', contrast: '#f59e0b', contrastRgb: '245, 158, 11', accentHex: 0x9de0ff, strongHex: 0x00e5ff, pieceHex: 0x22c3e6, contrastHex: 0xf59e0b },
+  kaleidohedra: { pale: '#ffc9a0', highlight: '#ff6a00', highlightRgb: '255, 106, 0', accent: '#ff9a52', accentRgb: '255, 106, 0', strong: '#ff6a00', piece: '#ff6a00', pieceRgb: '255, 106, 0', contrast: '#22c3e6', contrastRgb: '34, 195, 230', accentHex: 0xff9a52, strongHex: 0xff6a00, pieceHex: 0xff6a00, contrastHex: 0x22c3e6 },
+  polyhedraverse: { pale: '#d8ffcc', highlight: '#5ee233', highlightRgb: '94, 226, 51', accent: '#a9f795', accentRgb: '94, 226, 51', strong: '#5ee233', piece: '#5ee233', pieceRgb: '94, 226, 51', contrast: '#ff9a52', contrastRgb: '255, 154, 82', accentHex: 0xa9f795, strongHex: 0x5ee233, pieceHex: 0x5ee233, contrastHex: 0xff9a52 },
+  rhombiverse: { pale: '#dfefff', highlight: '#f59e0b', highlightRgb: '245, 158, 11', accent: '#9de0ff', accentRgb: '124, 204, 255', strong: '#7cf', piece: '#22c3e6', pieceRgb: '34, 195, 230', contrast: '#f59e0b', contrastRgb: '245, 158, 11', accentHex: 0x9de0ff, strongHex: 0x00e5ff, pieceHex: 0x22c3e6, contrastHex: 0xf59e0b },
 };
 let active = SITE;
 /** The colours of the app whose space you are in now (read when drawing, not once at start). */
@@ -71,6 +72,8 @@ function applyTheme() {
   root.style.setProperty('--piece', t.piece);
   root.style.setProperty('--piece-rgb', t.pieceRgb);
   root.style.setProperty('--contrast', t.contrast);
+  root.style.setProperty('--highlight', t.highlight);
+  root.style.setProperty('--highlight-rgb', t.highlightRgb);
   root.style.setProperty('--contrast-rgb', t.contrastRgb);
   root.dataset.activeSite = active;
   const mark = globalThis.document.getElementById('hud-wordmark');

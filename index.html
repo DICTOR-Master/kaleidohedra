@@ -114,7 +114,7 @@
     /* The dimension you're in, beside Wizard: orange, twice the
        wordmark's height. Empty (hidden) until a dimension is open. */
     #hud-dim {
-      color: var(--contrast); font: 700 var(--text-3xl)/1 var(--font-ui);
+      color: var(--highlight); font: 700 var(--text-3xl)/1 var(--font-ui);
       letter-spacing: 0.04em; text-transform: uppercase;
       user-select: none; pointer-events: none;
     }
@@ -240,7 +240,7 @@
     }
     .sig-sym { min-width: 44px; font-size: var(--text-xl) !important; line-height: 1; }
     .sig-sym svg { display: block; margin: 0 auto; }
-    .sig-send { white-space: nowrap; font-weight: 600; color: var(--contrast) !important; border-color: var(--contrast) !important; }
+    .sig-send { white-space: nowrap; font-weight: 600; color: var(--highlight) !important; border-color: var(--highlight) !important; }
     .sig-send[hidden], .sig-sym[hidden] { display: none !important; }
     /* Nets: its solids row, and the fold slider once a net is complete. */
     .nets-fold-row[hidden], .nets-cell-row[hidden], .nets-next-row[hidden] { display: none !important; }
@@ -285,7 +285,7 @@
     #sig-gloss i { display: block; height: 4px; border-radius: 2px; background: var(--piece); }
     #sig-gloss i.d { width: 4px; }
     #sig-gloss i.l { width: 8px; }
-        .sig-send.active { color: #fff !important; background: rgba(var(--contrast-rgb), 0.35) !important; }
+        .sig-send.active { color: #fff !important; background: rgba(var(--highlight-rgb), 0.35) !important; }
     /* Kaleidoscope: more buttons per row, so a little tighter on phones. */
     #worldkaleido-panel .w4d-row button { padding: 6px 8px; }
     .hull-pick { color: var(--accent); font: var(--text-s) var(--font-ui); display: flex; align-items: center; gap: 6px; }
@@ -709,14 +709,14 @@
     #undo-scrub-strip .scrub-tick {
       width: 16px; height: 16px;
       background: rgba(180, 83, 9, 0.6);
-      border: 1px solid rgba(var(--contrast-rgb), 0.7);
+      border: 1px solid rgba(var(--highlight-rgb), 0.7);
       transform: rotate(45deg);
       cursor: pointer;
       flex: none;
     }
     #undo-scrub-strip .scrub-tick:hover {
-      background: var(--contrast);
-      box-shadow: 0 0 6px rgba(var(--contrast-rgb), 0.8);
+      background: var(--highlight);
+      box-shadow: 0 0 6px rgba(var(--highlight-rgb), 0.8);
     }
     #undo-scrub-strip .scrub-label {
       width: 100%; text-align: center;
@@ -897,7 +897,7 @@
       z-index: 950;
       max-width: 90vw;
       color: #1a1400;
-      background: var(--contrast);
+      background: var(--highlight);
       border: 1px solid #1a1400;
       border-radius: var(--radius-s);
       padding: 6px 12px;

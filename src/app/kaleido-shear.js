@@ -123,7 +123,8 @@ function buildPanel(state, apply) {
     </div>`;
   const style = document.createElement('style');
   style.textContent = `
-    #kaleido-panel { position: fixed; right: 12px; top: 150px; z-index: 50; max-width: min(300px, calc(100vw - 24px)); font: var(--text-m) var(--font-ui); color: #d8f0ff; }
+    /* Beside the tools column (top right), never under it: the column's width plus a gap from the edge. */
+    #kaleido-panel { position: fixed; right: calc(12px + var(--touch) + 8px); top: 150px; z-index: 50; max-width: min(300px, calc(100vw - 88px)); font: var(--text-m) var(--font-ui); color: #d8f0ff; }
     #kaleido-panel button { min-height: var(--touch-compact); background: rgba(30, 14, 4, .85); color: var(--accent); border: 1px solid #7a3300; border-radius: var(--radius-m); padding: 4px 10px; cursor: pointer; }
     #kaleido-body { margin-top: 6px; padding: 10px; background: rgba(18, 8, 2, .92); border: 1px solid #7a3300; border-radius: var(--radius-l); display: grid; gap: 8px;
       max-height: calc(100dvh - 280px); overflow-y: auto; overscroll-behavior: contain; } /* phones: the Kept list or the six sliders must stay reachable */
