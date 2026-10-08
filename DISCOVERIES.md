@@ -358,6 +358,12 @@ face-neighbour cells, and carve the twelve tetrahedra out of the dodecahedron.
   on a periodic cubic lattice — a bridge between the two.
 - Verified: `src/krp-core/scripts/verify-roof-fold.mjs` §13(a), every push. Shown in the Studies world (Wizard → 3D+ → Studies), Windows.
 - Status: **not found** at web level (2026-10-08); not yet searched in the faceting/compound literature.
+- Checked against Lalvani, US 4,723,382 (1988), on 2026-10-09: his building system has every edge on
+  the 15 icosahedral 2-fold axes, and his ten pieces include the 72°/108° rhombus, so the window
+  rhombus itself is one of his pieces. The windows solid is not: its 48 walls lie in the stella
+  octangulas' planes, and all their edges run along the cube's face diagonals, 22.24° off every
+  icosahedral 2-fold axis (checked from the solid's 165 edges). The patent has no stella octangula,
+  no carving and no cube–dodecahedron construction. Not prior art for #10.
 
 ### 10a. Study: the windows made convex (DICTO, 2026-10-08)
 
@@ -578,11 +584,12 @@ Findings #10 and #11 are version v2026.10.08, **DOI [10.5281/zenodo.23220273](ht
 Study 10a (recorded there as #12) is version v2026.10.08-convex, **DOI [10.5281/zenodo.23220833](https://doi.org/10.5281/zenodo.23220833)**.
 Study 10b, and 10a under its new label, are version v2026.10.08-checkerboard, **DOI [10.5281/zenodo.23223555](https://doi.org/10.5281/zenodo.23223555)**.
 Finding #12, the Star Chain Reaction, and its study 12a are version v2026.10.08-star-chain, **DOI [10.5281/zenodo.23226716](https://doi.org/10.5281/zenodo.23226716)**.
+Finding #13, the 13-dodecahedron cluster made solid, is version v2026.10.09-cluster, **DOI [10.5281/zenodo.23247392](https://doi.org/10.5281/zenodo.23247392)** (published 2026-10-09 Japan time; Zenodo shows 2026-10-08, UTC).
 
 ## Sources
 
 - [Building systems with non-regular polyhedra based on subdivisions of zonohedra — H. Lalvani, US 5,623,790 (1997)](https://patents.google.com/patent/US5623790A/en) (#1, #7)
-- [Building structures based on polygonal members and icosahedral symmetry — H. Lalvani, US 4,723,382 (1988)](https://patents.google.com/patent/US4723382A/en) (#1)
+- [Building structures based on polygonal members and icosahedral symmetry — H. Lalvani, US 4,723,382 (1988)](https://patents.google.com/patent/US4723382A/en) (#1, #10)
 - [Regular Dodecahedron-Based Network Structures — J. Jenczyk, Symmetry 16 (2024) 1509](https://doi.org/10.3390/sym16111509) (#13)
 - [Closing gaps in geometrically frustrated symmetric clusters — Fang, Irwin et al., Mathematics 6 (2018) 89](https://doi.org/10.3390/math6060089) (#13)
 - [Tetrahedral cluster of dodecahedra (120-cell) — S. Vorthmann, vZome, 2014](https://www.vzome.com/geometry/2014/10/04/dodecTetra-11-09-35.html) (#13)
