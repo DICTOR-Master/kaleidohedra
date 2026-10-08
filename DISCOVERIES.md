@@ -23,13 +23,13 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 
 | # | Finding | Credit | Verified | Status | First recorded |
 |---|---|---|---|---|---|
-| 1 | DICTO skewed rhombic dodecahedron | DICTO (found by building it) | yes | **not found** — candidate | 2026-10-01 (8420a51) |
+| 1 | DICTO skewed rhombic dodecahedron | DICTO (found by building it) | yes | **not found** as this member — the family (skewed RD parallelohedra) is known (Fedorov; Lalvani 1997) | 2026-10-01 (8420a51) |
 | 2 | Equal-edge rule for sheared FCC | Kaleidohedra | yes | general idea known; this form not found | 2026-10-01 (8420a51) |
 | 3 | Bain disphenoids become regular tetrahedra | — | yes | **known** (Bain, 1924) | 2026-10-01 (8420a51) |
 | 4 | Bain rhombic dodecahedron (squares + 60° rhombi) | — | yes | **known** | 2026-10-01 (8420a51) |
 | 5 | Regular-hexagon elongated dodecahedron | DICTO, independently (from the "hexagons and rhombi" hunch) | yes | **known** — the truncated octahedron with one zone removed (Fedorov's ED as drawn by Grünbaum 2010); DICTO's route, the Bain stretch, is new | 2026-10-01 (8420a51) |
 | 6 | Exactly 9 "most regular" space-fillers | Kaleidohedra two-way search (its regular-hexagon elongated dodecahedron member: DICTO, independently, by lattice shearing) | yes | not yet searched as a set; that member is **known** (Grünbaum 2010, Fig. 2(b); see #5) | 2026-10-01 (547aac9) |
-| 7 | DICTO skewed ED (two forms) | Kaleidohedra (extending #1) | yes | not yet searched | 2026-10-01 (e97193f) |
+| 7 | DICTO skewed ED (two forms) | Kaleidohedra (extending #1) | yes | **not found** as these members — the family is known (Fedorov; Lalvani 1997) | 2026-10-01 (e97193f) |
 | 8 | Euclid–Kepler–Pacioli (EKP) cell: all five Platonic solids nested in one cubic cell, with Kepler's star and Pacioli's rectangles (Pm-3) | DICTO (built a physical cell) | yes | **not found** — candidate; a periodic approximant-type structure like α-AlMnSi (no fivefold axis) | 2026-10-06 (6636342) |
 | 8b | Euclid–Kepler–Pacioli network: great stellated dodecahedra (even cells) and icosahedra (odd cells), sharing only corners | DICTO (from "the overlap belongs to the extraction") | yes | **not found** — candidate | 2026-10-06 |
 | 9 | Rhombic dodecahedron sub-family: 24 sheared-FCC cells from TARGETS.md, each built from four edge directions with volume matching the table | Kaleidohedra (predicted); verified by building in Polyhedraverse (9599e14) | yes (by construction) | **candidates** — combinatorial type is Fedorov's rhombic dodecahedron (Grünbaum 2010, Fig. 2(c)); none is in Grünbaum's monohedral enumeration (Figs. 3, 10: only Kepler's K and Bilinski's B), and the paper doesn't list mixed-angle cells like these | 2026-10-06 |
@@ -57,6 +57,18 @@ It tiles a sheared FCC lattice, DICTO FCC.
   congruent golden rhombi (63.43°). DICTO's has two kinds of face, 60° and
   72° rhombi.
 - Full write-up: Polyhedraverse `docs/dicto-zometool-discoveries.md`.
+- Literature check (2026-10-09, using the reading library): the **family** is known. Any rhombic
+  dodecahedron spanned by four directions tiles space (Fedorov's parallelohedra), and Lalvani's
+  US 5,623,790 (1997) draws a "4-zonohedron … a rhombic dodecahedron" of three kinds of
+  parallelogram and a periodic space-filling of "tilted rhombic dodecahedra". Lalvani's
+  US 4,723,382 (1988) builds space-fillers whose edges all run along the 15 icosahedral 2-fold axes,
+  DICTO's directions, from pieces that also make DICTO's faces (two equilateral triangles make a 60°
+  rhombus; two 36°–108°–36° triangles a 72° one) and from rhombohedra and parallelepipeds like
+  DICTO's blocks; it names sheared truncated octahedra and cuboctahedra, but no rhombic
+  dodecahedron. Grünbaum (2010) classifies only the rhombic monohedra (all faces congruent:
+  Kepler's, Bilinski's, …), so a two-faced equilateral one is outside it. This **member**, equal
+  edges, 60° and 72° rhombi, volume exactly φ², splitting into two all-rhombus blocks and two
+  flattened rhombohedra, was **not found**: a new member of a known family.
 
 ## 2. The equal-edge rule
 
@@ -169,8 +181,11 @@ Neither has a square face, consistent with DICTO's RD having none.
   the exact volumes, and that both keep DICTO's four directions unchanged.
 - `TARGETS.md` rows 16 and 18 (elongated dodecahedron section) updated from
   "to find" to built.
-- Status: not yet searched (same caveat as #1 — a specialist parallelohedra
-  literature search would be needed to claim priority).
+- Literature check (2026-10-09): elongated dodecahedra spanned by five directions are Fedorov's
+  fifth parallelohedron type, and Lalvani (US 5,623,790) treats skewed 5-zonohedra in general;
+  equilateral regular-hexagon versions are known (#5, Grünbaum 2010). These two equal-edge members on
+  DICTO's directions (36°, 60° and 72° relations; volumes φ² + 2 and φ³ + ½) were **not found**:
+  new members of a known family, like #1.
 
 ## 8. Euclid–Kepler–Pacioli (EKP) cell
 
@@ -560,6 +575,8 @@ Finding #12, the Star Chain Reaction, and its study 12a are version v2026.10.08-
 
 ## Sources
 
+- [Building systems with non-regular polyhedra based on subdivisions of zonohedra — H. Lalvani, US 5,623,790 (1997)](https://patents.google.com/patent/US5623790A/en) (#1, #7)
+- [Building structures based on polygonal members and icosahedral symmetry — H. Lalvani, US 4,723,382 (1988)](https://patents.google.com/patent/US4723382A/en) (#1)
 - [Regular Dodecahedron-Based Network Structures — J. Jenczyk, Symmetry 16 (2024) 1509](https://doi.org/10.3390/sym16111509) (#13)
 - [Closing gaps in geometrically frustrated symmetric clusters — Fang, Irwin et al., Mathematics 6 (2018) 89](https://doi.org/10.3390/math6060089) (#13)
 - [Tetrahedral cluster of dodecahedra (120-cell) — S. Vorthmann, vZome, 2014](https://www.vzome.com/geometry/2014/10/04/dodecTetra-11-09-35.html) (#13)
