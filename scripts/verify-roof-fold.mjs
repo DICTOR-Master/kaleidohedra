@@ -762,7 +762,7 @@ check(`stars on even cells and icosahedra on odd cells share only corners: ${pai
     const count = (inGap(q) ? 1 : 0) + evens.filter((c) => inDodecaAt(q, c)).length;
     if (count !== 1) bad++;
   }
-  check(`Dogstar: closed, ${F.length} triangles on the 12 face planes of a dodecahedron 1/phi^3 the cell's, edges only 2/phi^4..2/phi, volume ${vol.toFixed(6)} = 16 - dodecahedron; with dodecahedra it fills space (the Sun Dog Lattice) (${N ** 3} points, ${bad} wrong)`, closed && F.length === 60 && onPlanes && edgesGolden && Math.abs(vol - (16 - dodecaVol)) < 1e-9 && bad === 0);
+  check(`Dogstar: closed, ${F.length} triangles on the 12 face planes of a dodecahedron 1/phi^3 the cell's, edges only 2/phi^4..2/phi, volume ${vol.toFixed(6)} = 16 - dodecahedron; with dodecahedra it fills space (the Sunstar Lattice) (${N ** 3} points, ${bad} wrong)`, closed && F.length === 60 && onPlanes && edgesGolden && Math.abs(vol - (16 - dodecaVol)) < 1e-9 && bad === 0);
 }
 
 // (i) The Sunstar Lattice world's point tests: each point of an odd cube is in its Dogstar or in
