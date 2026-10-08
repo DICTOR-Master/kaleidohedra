@@ -13,7 +13,7 @@ Kaleidohedra's own controls are in the **⟋ Shear** panel at the top right. The
 - **↺ Reset to FCC** takes everything back to the ordinary FCC lattice with its regular rhombic dodecahedron, if you lose your way.
 - **Towards** picks where the lattice is heading: **DICTO FCC** (from the ordinary FCC lattice to DICTO's sheared one) or **Bain (BCC → FCC)**.
 - **Path** slides along that exact route; the stop buttons (such as FCC, halfway and DICTO FCC) jump to its named points.
-- **Cell** changes the cell's shape on the same lattice: 0 is the plain sheared cell, 1 the cell with all edges equal (at the DICTO FCC stop, DICTO's skewed rhombic dodecahedron).
+- **Cell** changes the cell's shape on the same lattice: 0 is the plain sheared cell, 1 the cell with all edges equal (at the DICTO FCC stop, DICTO's skewed rhombic dodecahedron). A **red band** under the Path slider marks where, at this Cell value, the cell no longer fills space (near the path's ends); there the readout says so too. Cell 0 always fills space.
 - The **Regularity** meter scores the cell by its angles (1 means every angle is special: 36, 45, 60, 70.5, 72 or 90°). On the Bain path it also counts how many of its disphenoids are regular tetrahedra.
 - **◀ Find** and **Find ▶** jump along the path to the next most regular cell or the next moment a regular hexagon appears. Tap a stop first.
 - **Six sliders** set the lattice's lengths a, b, c and angles α, β, γ directly.

@@ -14,7 +14,7 @@
 // saves the current state as a named "population member".
 import * as THREE from 'three';
 
-import { KEYS, FCC_PARAMS, TOWARDS, pathStops, pathRange, paramsOnPath, paramsValid, shearMatrix, cellDirections, cellDirectionsPreShear, cellQuality, disphenoidQuality, pathTargets } from '../krp-core/src/geometry-extensions/kaleido-lattice.js';
+import { KEYS, FCC_PARAMS, TOWARDS, pathStops, pathRange, paramsOnPath, paramsValid, shearMatrix, cellDirections, cellDirectionsPreShear, cellQuality, disphenoidQuality, pathTargets, pathGaps, cellFillsSpace } from '../krp-core/src/geometry-extensions/kaleido-lattice.js';
 
 import { objectId, parseObjectId } from '../krp-core/src/vocabulary.js';
 import { keepEntry, checkKept, isKeptEntry } from '../krp-core/src/retention.js';
@@ -80,6 +80,7 @@ function buildPanel(state, apply) {
       </label>
       <label class="kaleido-row">Path <span id="kaleido-path-val"></span>
         <input type="range" id="kaleido-path" step="0.01" list="kaleido-stops">
+        <span id="kaleido-band" aria-hidden="true"></span>
       </label>
       <datalist id="kaleido-stops"></datalist>
       <div class="kaleido-stops" id="kaleido-stop-buttons"></div>
@@ -110,6 +111,10 @@ function buildPanel(state, apply) {
     .kaleido-row input, .kaleido-row select { grid-column: 1 / -1; width: 100%; min-height: 28px; }
     #kaleido-towards { min-height: 36px; background: rgba(30, 14, 4, .85); color: #ff9a52; border: 1px solid #7a3300; border-radius: 8px; }
     .kaleido-stops { display: flex; gap: 6px; flex-wrap: wrap; }
+    /* The red band (DICTO, 2026-10-08): where on the path the cell stops filling space, for this Cell value.
+       Inset by half a thumb so it lines up with the slider's travel. */
+    #kaleido-band { grid-column: 1 / -1; height: 5px; margin: -2px 9px 0; border-radius: 3px; }
+    .kaleido-gap { color: #ff6b6b; }
     #kaleido-note { font-size: 12px; color: #ff9a52; min-height: 1em; overflow-wrap: anywhere; }
     #kaleido-kept-list { display: grid; gap: 6px; margin-top: 6px; }
     .kept-row { display: grid; grid-template-columns: 1fr auto; gap: 4px 6px; align-items: center; padding: 6px; border: 1px solid #4a2000; border-radius: 8px; }
@@ -143,14 +148,31 @@ function buildPanel(state, apply) {
       $('#kaleido-meter').innerHTML += `<br>Disphenoids <b>${d.best.toFixed(3)}</b> <span style="opacity:.75">· ${d.regular} of 6 regular tetrahedra</span>`;
     }
     $('#kaleido-path-val').textContent = state.path === null ? '(off path)' : Number(state.path).toFixed(2);
+    if (!cellFillsSpace(state.params, state.cell)) $('#kaleido-meter').innerHTML += `<br><span class="kaleido-gap">${t('shear.gap', lang())}</span>`;
+    paintBand();
     for (const k of KEYS) {
       panel.querySelector(`[data-key="${k}"]`).value = state.params[k];
       panel.querySelector(`[data-val="${k}"]`).textContent = k.length > 1 ? `${state.params[k].toFixed(1)}°` : state.params[k].toFixed(3);
     }
   };
+  // Recomputed for each Cell value (about 0.2 s), cached; while the Cell slider moves, the last band stays.
+  const gapsFor = new Map();
+  const paintBand = (force = false) => {
+    const key = `${state.towards} ${state.cell.toFixed(2)}`;
+    if (!gapsFor.has(key) && !force && cellDragging) return;
+    if (!gapsFor.has(key)) gapsFor.set(key, pathGaps(state.cell, state.towards));
+    const [lo, hi] = pathRange(state.towards);
+    const at = (x) => `${(((x - lo) / (hi - lo)) * 100).toFixed(2)}%`;
+    const red = 'rgba(255, 70, 70, .85)';
+    const stops = gapsFor.get(key).flatMap(([a, b]) => [`transparent ${at(a)}`, `${red} ${at(a)}`, `${red} ${at(b)}`, `transparent ${at(b)}`]);
+    $('#kaleido-band').style.background = stops.length ? `linear-gradient(to right, ${stops.join(', ')})` : 'none';
+    $('#kaleido-band').title = gapsFor.get(key).length ? t('shear.gap', lang()) : '';
+  };
+  let cellDragging = false;
   const setPath = (s) => { state.path = s; state.params = paramsOnPath(s, state.towards); refresh(); apply(); };
   const cell = $('#kaleido-cell');
-  cell.addEventListener('input', () => { state.cell = Number(cell.value); refresh(); apply(); });
+  cell.addEventListener('input', () => { cellDragging = true; state.cell = Number(cell.value); refresh(); apply(); });
+  cell.addEventListener('change', () => { cellDragging = false; paintBand(true); });
   // Find previous / next: the path's quality peaks and hexagon events for the current Cell value.
   const targetsFor = new Map();
   const find = (dir) => {

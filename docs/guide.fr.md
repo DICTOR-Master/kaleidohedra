@@ -15,7 +15,7 @@ Les commandes propres à Kaleidohedra sont dans le panneau **⟋ Shear**, en hau
 - **↺ Reset to FCC** ramène tout au réseau FCC ordinaire et à son dodécaèdre rhombique régulier, si vous vous perdez.
 - **Towards** choisit où va le réseau : **DICTO FCC** (du réseau FCC ordinaire au réseau cisaillé de DICTO) ou **Bain (BCC → FCC)**.
 - **Path** fait glisser le long de ce chemin exact ; les boutons d'arrêt (comme FCC, halfway et DICTO FCC) sautent à ses points nommés.
-- **Cell** change la forme de la cellule sur le même réseau : 0 est la cellule simplement cisaillée, 1 la cellule aux arêtes toutes égales (à l'arrêt DICTO FCC, le dodécaèdre rhombique incliné de DICTO).
+- **Cell** change la forme de la cellule sur le même réseau : 0 est la cellule simplement cisaillée, 1 la cellule aux arêtes toutes égales (à l'arrêt DICTO FCC, le dodécaèdre rhombique incliné de DICTO). Une **bande rouge** sous le curseur Path marque où, pour cette valeur de Cell, la cellule ne remplit plus l'espace (près des extrémités du chemin) ; l'affichage l'indique aussi. Cell 0 remplit toujours l'espace.
 - La jauge **Regularity** note la cellule par ses angles (1 signifie que tous les angles sont spéciaux : 36, 45, 60, 70,5, 72 ou 90°). Sur le chemin de Bain, elle compte aussi combien de ses disphénoïdes sont des tétraèdres réguliers.
 - **◀ Find** et **Find ▶** sautent le long du chemin vers la cellule la plus régulière suivante, ou le prochain moment où apparaît un hexagone régulier. Touchez d'abord un arrêt.
 - **Six sliders** règle directement les longueurs a, b, c et les angles α, β, γ du réseau.
