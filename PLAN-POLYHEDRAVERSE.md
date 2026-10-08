@@ -59,6 +59,11 @@ dicto-node, phone first. Until D6 the new space is reached from DICTO in the oth
 2. **D2 Space.** Polyhedraverse inside DICTO: 3D / 4D cards, families with wireframes; its world:
    start with a shape, World View, colours (app colour / Type / Pick) and Paint, Spherical, undo,
    autosave, Export/Import; the welcome's dodecahedron.
+   *D2 decisions (DICTO, 2026-10-09):* picking a family in DICTO lists its shapes there as turning
+   wireframes (tap one to build with it) until D4's browser; an empty space shows the chosen
+   shape's green outline to tap, like the other worlds; the 4D card stays hidden until D5; all
+   families listed, DICTO's new work first (Space-Filling Pairs, Kaleidohedra verified,
+   Stellations, Parallelohedra, 3D+ Bridges), then the classical ones, Miscellaneous last.
 3. **D3 Building.** Selecting faces and vertices; face attach (all matching faces × turns, drag to
    cycle, best fits first), vertex attach with twist, duoprism attach, Transform to…, Delete; running
    build name; Golden helper bar.
