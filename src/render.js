@@ -4041,10 +4041,6 @@ async function init() {
       },
     });
     document.getElementById('hud-wizard-cue')?.addEventListener('click', () => dimensionWizard.open());
-    // The welcome screen's 2D, 3D, 4D, 5D & 6D links open the Wizard there.
-    window.addEventListener('rhombiverse:open-wizard', (e) => dimensionWizard.openDimension(e.detail));
-    // ... and its world links (Kaleidohedra's EKP, Targets) go straight in.
-    window.addEventListener('krp:open-world', (e) => dimensionWizard.openWorld('3D', e.detail));
     // Menu, Tab and Space open the DICTO wizard (the wheels are gone, DICTO 2026-10-08).
     function toggleMenu() {
       if (pickers.isAnyPickerOpen()) { pickers.closeAnyPicker(); return; }

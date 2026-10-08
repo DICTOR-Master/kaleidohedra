@@ -56,7 +56,7 @@ function transform(p, angle) { return LOGO.spinFirst ? rotateX(rotateY(p, angle)
 function logoSvg() {
   const lines = LOGO.edges.map((_, i) => `<line class="rd-edge" data-i="${i}" />`).join('');
   return `
-    <svg id="welcome-logo-svg" viewBox="-75 -75 150 150" width="180" height="180" role="img" aria-label="${SITES[SITE].name} logo: ${LOGO.label}. Click ENTER, centered on the logo, to begin.">
+    <svg id="welcome-logo-svg" viewBox="-75 -75 150 150" role="img" aria-label="${SITES[SITE].name} logo: ${LOGO.label}. Click ENTER, centered on the logo, to begin.">
       <g style="stroke: var(--accent-strong)" stroke-width="1.5" stroke-linecap="round" fill="none">${lines}</g>
       <!-- Static ENTER label: fixed at the SVG's own center, outside the
            rotating group above, so it never turns or tilts with the RD.
@@ -138,19 +138,10 @@ function startLogoSpin(onEnterHit) {
 // (direct request: no '&', the row never splitting across lines), named
 // as everywhere else (dimensionLabel: 1D+, 2D+, 3D+, 4D, 5D, 6D).
 // Redrawn here on a language change (data-i18n would drop the buttons).
-// Each app's quick links: Rhombiverse its dimensions (each opens the DICTO wizard there);
-// Kaleidohedra 3D+ and its own worlds, where the shear means something (each straight in).
-const QUICK = {
-  rhombiverse: ['1D', '2D', '3D', '4D', '5D', '6D'].map((d) => ({ dim: d, label: () => dimensionLabel(d) })),
-  kaleidohedra: [
-    { dim: '3D', label: () => dimensionLabel('3D') },
-    { world: 'tool:roofFoldWorld', label: () => 'EKP' },
-    { world: 'tool:targetsWorld', label: () => 'Targets' },
-  ],
-};
 function overviewHtml(lang) {
-  return `${t('welcome.overview', lang)}<span class="dim-links">${QUICK[SITE].map((q) => `<button type="button" class="dim-link" ${q.dim ? `data-dim="${q.dim}"` : `data-world="${q.world}"`}>${q.label()}</button>`).join('')}</span>`;
+  return t('welcome.overview', lang);
 }
+
 function overlayHtml() {
   const lang = getSettings().language;
   return `
@@ -182,12 +173,6 @@ function init() {
   // Delegated, so it survives overlayHtml() being re-rendered.
   overlay.addEventListener('click', (e) => {
     if (e.target.closest('#welcome-how-to')) openGuide();
-    const link = e.target.closest('.dim-link');
-    if (link) {
-      hide();
-      if (link.dataset.dim) window.dispatchEvent(new CustomEvent('rhombiverse:open-wizard', { detail: link.dataset.dim }));
-      else window.dispatchEvent(new CustomEvent('krp:open-world', { detail: link.dataset.world }));
-    }
   });
   onSettingsChange((s) => { const p = overlay.querySelector('.overview'); if (p) p.innerHTML = overviewHtml(s.language); });
 

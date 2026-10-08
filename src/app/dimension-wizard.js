@@ -748,8 +748,5 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     else showDimensions();
   }
 
-  // Straight into a world of the app whose space you're in (the welcome screen's world links).
-  function openWorld(dim, action) { shown = activeSite(); choose(dim, action); }
-
-  return { open, openCatalogue, openDimension, openWorld, close, get isOpen() { return overlay.classList.contains('open'); } };
+  return { open, openCatalogue, openDimension, close, get isOpen() { return overlay.classList.contains('open'); } };
 }

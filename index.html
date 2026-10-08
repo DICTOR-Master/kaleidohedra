@@ -63,7 +63,9 @@
       pointer-events: none;
     }
     #hud-wordmark span { color: var(--accent-strong); }
-    #welcome-card h1 span { color: var(--accent-strong); } /* the wordmark's second half, as in the HUD */
+    #welcome-card h1 span { color: var(--accent-strong); }
+    /* The welcome logo, larger now the card is clear (DICTO 2026-10-08): with the screen, up to 240px. */
+    #welcome-logo-svg { width: min(240px, 62vw); height: auto; aspect-ratio: 1; } /* the wordmark's second half, as in the HUD */
     /* Performance guardrail (reframe Stage 6): optional, off by default
        (setting-fps-meter) -- the auto-degrade safety net it's attached to
        runs regardless of whether this is shown. */
@@ -753,14 +755,7 @@
     #welcome-card svg { display: block; margin: 4px auto 18px; }
     #welcome-card h1 { margin: 0; font-size: var(--text-2xl); color: #fff; }
     #welcome-card .overview { margin: 6px 0 0; font-size: var(--text-m); opacity: 0.85; font-style: italic; }
-    #welcome-card .dim-link {
-      font: inherit; font-style: normal; font-weight: 600; color: var(--accent); background: rgba(var(--accent-rgb), 0.12);
-      border: 1px solid rgba(var(--accent-rgb), 0.45); border-radius: var(--radius-s); padding: 2px 7px; margin: 2px 1px; cursor: pointer;
-    }
     /* The dimension buttons: their own line, one row, never split. */
-    #welcome-card .dim-links { display: flex; flex-wrap: nowrap; justify-content: center; gap: 6px; margin-top: 8px; }
-    #welcome-card .dim-links .dim-link { margin: 0; padding: 4px 10px; min-height: 32px; }
-    #welcome-card .dim-link:hover, #welcome-card .dim-link:focus-visible { background: rgba(var(--accent-rgb), 0.3); color: #fff; }
     #welcome-card .how-to-link {
       margin-top: 6px; min-height: var(--touch-compact); padding: 4px 14px;
       background: none; border: 1px solid rgba(var(--accent-rgb), 0.45); border-radius: 18px;
