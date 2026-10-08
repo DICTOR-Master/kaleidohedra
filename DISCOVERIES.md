@@ -37,6 +37,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 10a | Study of #10, the windows made convex: the 12 window rhombi pushed straight out by √(7 − 4φ), keeping size and orientation, hull into a 74-face solid with 12 Penrose thick rhombi, 6 golden rhombi on the cube faces, 8 equilateral triangles and 48 triangles; three edge lengths; has a flat net (recorded as #12 in Zenodo v2026.10.08-convex) | DICTO (asked to make the windows convex by expanding from the centre) | yes | study of #10, not a separate claim | 2026-10-08 |
 | 10b | Study of #10, windows and stellas in a checkerboard: the windows (even cells) and stella octangulas (odd cells) fill space exactly, each odd cube being its stella plus its six neighbours' carved roofs; volumes 12 + 4 = two cubes | DICTO (asked for "a male counterpart to window" fitting the faces the stellas leave) | yes | study of #10, not a separate claim | 2026-10-08 (ac203df) |
 | 11 | Dodecahedron stretched along a cube-face axis: 8 regular pentagons, 4 hexagons (108° × 4, 144° × 2), 2 rectangles at any stretch; squares at one edge (2/φ); at the lattice spacing 2 it is the hull of two EKP face-neighbour dodecahedra | DICTO (the "pentagon caps and hexagons" hunch, from overlapped dodecahedra) | yes | **not found** — candidate (web-level search; a simple construction, so likely to appear somewhere, e.g. crystal habits) | 2026-10-08 (fb9de6b) |
+| 12 | Star Chain Reaction: the EKP great star is exactly the great stellated dodecahedron of the Dogstar's core (a dodecahedron 1/φ³ the cell's), and a whole Sunstar 1/φ³ the size fits inside it with no room to grow, so dodecahedron ⊃ great star ⊃ Sunstar(1/φ³) ⊃ great star(1/φ³) ⊃ … nests forever, each step touching, scale ratio φ³ | DICTO (asked for a Sunstar cell network and to search nestings; named it); found by Kaleidohedra's search under DICTO's direction. The Dogstar itself is George W. Hart's stellation 8 of the dodecahedron (1996) | yes | **not found** — candidate (web-level search, 2026-10-08) | 2026-10-08 (79448e3) |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -420,6 +421,49 @@ the same axis along which the rhombic dodecahedron stretches into the elongated 
   Stretched dodecahedron, with a stretch slider.
 - Status: **not found** at web level (2026-10-08). Simple enough that it probably appears somewhere
   (crystal habits, Minkowski sums); a targeted search is still needed before claiming priority.
+
+## 12. Star Chain Reaction (DICTO, 2026-10-08)
+
+*Named by DICTO, "like solar radiation": each star sets off the next, smaller one inside it.*
+
+Regular dodecahedra on the even cells of the EKP cubic lattice (cube edge 2) are the dodecahedron's
+densest lattice packing (density (5 + √5)/8; Betke–Henk 2000). Each odd cell's hole is a **Dogstar**
+(DICTO's name): the solid George W. Hart listed in 1996 as stellation 8 of the dodecahedron, noting
+that it fills space alternated with regular dodecahedra (credit: Hart; also Polyhedra-World). New
+here is where it sits and what nests in it:
+
+- The Dogstar is a partial stellation of a regular dodecahedron 1/φ³ the size of the lattice's,
+  same centre and orientation: its core, all 12 first-layer pyramids, 24 of the 30 second-layer
+  wedges (all but the 6 on the cube axes) and the 8 great-stellated spikes aimed at the cube
+  corners, whose tips are the cube corners. Its edges are only 2/φ⁴, 2/φ³, 2/φ² and 2/φ, and its
+  volume is 16 − (the dodecahedron) = 1.527864, exactly **φ/2 at dodecahedron edge 1**.
+- A dodecahedron with the 6 Dogstars on its faces is a **Sunstar** (DICTO's name: the sun with its
+  sun dogs).
+- **The chain.** The EKP cell's great star (Kepler's great stellated dodecahedron, the icosahedron
+  with 20 spikes to the dodecahedron's vertices) is *exactly* the great stellated dodecahedron of
+  the Dogstar's 1/φ³ core: all 60 of its faces lie on the core's 12 face planes. So the Dogstar is
+  that great star trimmed to the cube (12 spikes and 6 wedges removed).
+- Inside the great star sits a **whole Sunstar 1/φ³ the size** (the core with its own 6 Dogstars
+  at 1/φ³), with no room to grow: the largest scale at which it fits is exactly 1/φ³. Its
+  dodecahedron is the core, which holds the next great star (1/φ³), which holds the next Sunstar
+  (1/φ⁶), and so on: dodecahedron ⊃ great star ⊃ Sunstar(1/φ³) ⊃ great star(1/φ³) ⊃ Sunstar(1/φ⁶) ⊃
+  …, each step touching. The ratio φ³ is the inflation factor of icosahedral quasicrystals, so the
+  chain joins the periodic packing to an aperiodic, self-similar one.
+- Related, on the same cell (verified, not separate claims): a Dogstar also fits wholly inside its
+  own cell's dodecahedron (Dogstar ⊂ stella octangula ⊂ cube ⊂ dodecahedron), so Dogstars can fill
+  every cell, eight tips meeting at each cube corner; and a Sunstar fits a cube exactly 1/3 its
+  size (it spans 3 lattice cells).
+- Verified: `scripts/verify-roof-fold.mjs` §13(h) (the Dogstar: closure, golden edges, volume,
+  fill with the dodecahedra), §13(i) (the lattice's point tests), §13(j) (Dogstars in every cell)
+  and §13(k) (the chain: the great star on the core's planes, and the zero-slack fit, largest
+  scale 1.000000000 of the 1/φ³ Sunstar), every push. Shown in the Sunstar Lattice world (in
+  Kaleidohedra and Rhombiverse), view Star Chain Reaction; the pieces are in Polyhedraverse's
+  Space-Filling Pairs (a dodecahedron seamed where Dogstars meet it, and the Dogstar).
+- Status: the nesting chain was **not found** in a web-level search on 2026-10-08 (Hart's
+  stellation pages, Polyhedra-World, Torquato–Jiao and Betke–Henk on the packing, Koca et al. on
+  icosahedral inflation). The Dogstar solid and its tiling with dodecahedra are known (Hart 1996),
+  and credited as such. Not proof of novelty; a specialist search (stellation and quasicrystal
+  cluster literature) is still worth doing before claiming priority.
 
 ## Attribution and dates
 
