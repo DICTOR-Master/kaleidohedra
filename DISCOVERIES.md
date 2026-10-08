@@ -340,7 +340,7 @@ face-neighbour cells, and carve the twelve tetrahedra out of the dodecahedron.
   corners are its vertices and points on its faces), so these windows only appear by carving.
 - Why it matters: an aperiodic tile (the thick rhombus) appearing, at its icosahedral orientation,
   on a periodic cubic lattice — a bridge between the two.
-- Verified: `scripts/verify-roof-fold.mjs` §13(a), every push. Shown in the Studies world (Wizard → 3D+ → Studies), Windows.
+- Verified: `src/krp-core/scripts/verify-roof-fold.mjs` §13(a), every push. Shown in the Studies world (Wizard → 3D+ → Studies), Windows.
 - Status: **not found** at web level (2026-10-08); not yet searched in the faceting/compound literature.
 
 ### 10a. Study: the windows made convex (DICTO, 2026-10-08)
@@ -367,8 +367,8 @@ normal by t, keeping its size, angles and orientation, and take the convex hull.
   symmetry: a convex bridge between periodic and aperiodic.
 - **Buildable:** it unfolds into a flat net of all 74 faces with no two faces overlapping, which
   folds closed (found by the Nets code, 76 taps).
-- Verified: `scripts/verify-roof-fold.mjs` §13(c) (faces, golden ratio, edge lengths, closure, the
-  80-face case elsewhere) and `scripts/verify-nets.mjs` (the net), every push. Shown in the Studies world, Windows made convex, with a push slider that snaps at the golden point.
+- Verified: `src/krp-core/scripts/verify-roof-fold.mjs` §13(c) (faces, golden ratio, edge lengths, closure, the
+  80-face case elsewhere) and `src/krp-core/scripts/verify-nets.mjs` (the net), every push. Shown in the Studies world, Windows made convex, with a push slider that snaps at the golden point.
 - Status: a study of #10, not a separate claim (not found at web level, 2026-10-08).
 
 ### 10b. Study: windows and stellas fill space (DICTO, 2026-10-08)
@@ -393,7 +393,7 @@ the stella octangulas leave? There is, and it is the stella octangula itself.
   axes. The windows' rhombi meet that (all 48 edges), but 96 of the windows' 144 wall edges and every
   stella edge (the cube-face diagonals) do not; nor does it describe a cube, a stella octangula or
   these windows.
-- Verified: `scripts/verify-roof-fold.mjs` §13(f): the volumes exactly, and a 40³ grid of points in
+- Verified: `src/krp-core/scripts/verify-roof-fold.mjs` §13(f): the volumes exactly, and a 40³ grid of points in
   an odd cube, every one in exactly one piece (a 60³ grid, 216,000 points, was also checked by hand).
   Shown in the Studies world, Windows and stellas, checkerboard, with an Apart slider.
 - Named by DICTO (2026-10-08): the windows solid on its own is the **Dragon Jewel** (DJ); the
@@ -402,7 +402,7 @@ the stella octangulas leave? There is, and it is the stella octangula itself.
   face on all 12 rhombi (each rhombus is coplanar with, and the same as, a neighbour's), leaving
   stella-shaped holes. Five-fold: each window lies in a dodecahedron face, facing a five-fold axis;
   each face has five window positions, one per pentagon diagonal, and the cube picks the one on a
-  cube edge. Verified: `scripts/verify-roof-fold.mjs` §13(g).
+  cube edge. Verified: `src/krp-core/scripts/verify-roof-fold.mjs` §13(g).
 - Status: a study of #10, not a separate claim (not found at web level, 2026-10-08).
 
 ## 11. The stretched dodecahedron (DICTO, 2026-10-08)
@@ -418,7 +418,7 @@ the same axis along which the rhombic dodecahedron stretches into the elongated 
 - The dodecahedral counterpart of the elongated (rhombic) dodecahedron: 4 pentagons at each end where
   that has 4 rhombi, and a hexagon belt, plus the two rectangles that the dodecahedron's own roof
   ridges force. A pentagon-capped, hexagon-belted solid without them needs another construction.
-- Verified: `scripts/verify-roof-fold.mjs` §13(b), every push. Shown in the Studies world,
+- Verified: `src/krp-core/scripts/verify-roof-fold.mjs` §13(b), every push. Shown in the Studies world,
   Stretched dodecahedron, with a stretch slider.
 - Status: **not found** at web level (2026-10-08). Simple enough that it probably appears somewhere
   (crystal habits, Minkowski sums); a targeted search is still needed before claiming priority.
@@ -458,7 +458,7 @@ here is where it sits and what nests in it:
   which the tiling does not give: so Dogstars can fill every cell, **eight** sharing each cube corner
   (this nesting is also the step into study 12a). And a Sunstar fits a cube exactly 1/3 its size (it
   spans 3 lattice cells).
-- Verified: `scripts/verify-roof-fold.mjs` §13(h) (the Dogstar: closure, golden edges, volume,
+- Verified: `src/krp-core/scripts/verify-roof-fold.mjs` §13(h) (the Dogstar: closure, golden edges, volume,
   fill with the dodecahedra), §13(i) (the lattice's point tests), §13(j) (Dogstars in every cell)
   and §13(k) (the chain: the great star on the core's planes, and the zero-slack fit, largest
   scale 1.000000000 of the 1/φ³ Sunstar), every push. Shown in the Sunstar Lattice world (in
@@ -485,9 +485,12 @@ grow (the largest scale at which each fits inside the one before is exactly 1):
   chain and #12's.
 - Several steps touch only at the shared cube corners, which the cube, the stella and the Dogstar
   all reach; the link that is not obvious is the Dogstar touching its own core.
-- Verified: `scripts/verify-roof-fold.mjs` §13(l), every push. Shown in the Stella–Jewel Lattice
+- Verified: `src/krp-core/scripts/verify-roof-fold.mjs` §13(l), every push. Shown in the Stella–Jewel Lattice
   (Kaleidohedra and Rhombiverse), view Dragon chain.
 - Status: a study of #12, not a separate claim (not found at web level, 2026-10-08).
+
+Since 2026-10-08 the geometry and its checks live in [krp-core](https://github.com/DICTOR-Master/krp-core),
+the geometry shared by Kaleidohedra and Rhombiverse, pinned here at `src/krp-core`.
 
 ## Attribution and dates
 

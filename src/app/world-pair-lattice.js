@@ -5,10 +5,10 @@
 // centres and keeps every piece exact (copies), or bends the whole packing (solid). The five-fold
 // toggle overlays each even piece's five-fold axes (and, where given, more lines per piece).
 // Each world is a config: the Stella–Jewel Lattice (world-stella-jewel.js) and the Sunstar
-// Lattice (world-sunstar.js). Geometry in geometry-extensions/roof-fold.js, checked in
+// Lattice (world-sunstar.js). Geometry in krp-core/src/geometry-extensions/roof-fold.js, checked in
 // scripts/verify-roof-fold.mjs.
 import * as THREE from 'three';
-import { ROOF_FOLD_WORLD_SCALE as WS, DJ_NEIGHBOURS, fiveFoldAxes } from '../geometry-extensions/roof-fold.js';
+import { ROOF_FOLD_WORLD_SCALE as WS, DJ_NEIGHBOURS, fiveFoldAxes } from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';

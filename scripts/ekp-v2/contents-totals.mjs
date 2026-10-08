@@ -1,4 +1,4 @@
-import { roofFoldSolids } from '../../src/geometry-extensions/roof-fold.js';
+import { roofFoldSolids } from '../../src/krp-core/src/geometry-extensions/roof-fold.js';
 const S = roofFoldSolids();
 // --unturned: the identical-cells variation (no turn). Default: odd cubes turned 90 degrees about z.
 const UNTURNED = process.argv.includes('--unturned');

@@ -2,7 +2,7 @@
 // each face's stored normal agrees with its winding and points outward; the surface is closed
 // (the enclosed volume is the same from two reference points); the volume matches a Monte Carlo
 // estimate of the union.
-import { roofFoldSolids, turnPoint, mergedDodecaSurface } from '../../src/geometry-extensions/roof-fold.js';
+import { roofFoldSolids, turnPoint, mergedDodecaSurface } from '../../src/krp-core/src/geometry-extensions/roof-fold.js';
 const S = roofFoldSolids();
 const dot = (a, b) => a[0]*b[0] + a[1]*b[1] + a[2]*b[2];
 const sub = (a, b) => [a[0]-b[0], a[1]-b[1], a[2]-b[2]];

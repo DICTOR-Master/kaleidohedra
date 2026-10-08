@@ -5,7 +5,7 @@
 // face, the cube's choice bright. The world itself is world-pair-lattice.js.
 import {
   ekpWindowsSolid, roofFoldSolids, ROOF_FOLD_COLOURS as C, insideDragonJewel, insideStella, fiveWindowPositions, dogstarSolid, PHI,
-} from '../geometry-extensions/roof-fold.js';
+} from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { createPairLatticeWorld } from './world-pair-lattice.js';
 
 function dragonChain(DJ) {

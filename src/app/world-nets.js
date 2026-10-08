@@ -5,10 +5,15 @@
 // side by side (a tap per side), then a face a tap, in 1D cells like
 // Construct's; when it's complete, a tap folds it up into the solid
 // ("tap it and it folds into the solid"), and a slider folds and unfolds
-// it by hand ("fold slider"). The geometry is geometry-extensions/nets.js.
+// it by hand ("fold slider"). The geometry is krp-core/src/geometry-extensions/nets.js.
 import * as THREE from 'three';
-import { netOf, netSteps, SOLIDS, SOLID_GROUPS, EKP_PIECES, EKP_ORDER, IDENTITY, apply, mul, rigidAlign } from '../geometry-extensions/nets.js';
-import { roofFoldSolids, ROOF_FOLD_COLOURS, PHI } from '../geometry-extensions/roof-fold.js';
+import { netOf, netSteps, SOLIDS, SOLID_GROUPS, EKP_PIECES, EKP_ORDER, IDENTITY, apply, mul, rigidAlign } from '../krp-core/src/geometry-extensions/nets.js';
+// The shared nets (krp-core) also hold Rhombiverse's golden zonohedra and Archimedean solids;
+// Kaleidohedra shows its own three groups.
+const GROUPS = SOLID_GROUPS.filter((g) => ['voronoi', 'platonic', 'ekp'].includes(g.id));
+const shownHere = (id) => SOLIDS[id]?.groups.some((g) => GROUPS.some((G) => G.id === g));
+const IDS = Object.keys(SOLIDS).filter(shownHere);
+import { roofFoldSolids, ROOF_FOLD_COLOURS, PHI } from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { bulletGeometry, plainCellGeometry } from './bullet-cell.js';
 import { t } from './i18n.js';
 import { dimensionLabel } from './dimension-label.js';
@@ -29,22 +34,22 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
   group.visible = false;
   scene.add(group);
 
-  const nets = Object.fromEntries(Object.keys(SOLIDS).map((id) => [id, netOf(id, L)]));
+  const nets = Object.fromEntries(IDS.map((id) => [id, netOf(id, L)]));
   const stepsOf = Object.fromEntries(Object.entries(nets).map(([id, net]) => [id, netSteps(net)]));
   let solid = 'cube';
-  const progress = Object.fromEntries(Object.keys(SOLIDS).map((id) => [id, 0]));
+  const progress = Object.fromEntries(IDS.map((id) => [id, 0]));
   let fold = 0; // 0 flat … 1 closed, for the solid you're on
   let cellView = false; // the whole EKP cell instead of one net
   let wrap = 0; // whole cell: shells shown inside out, 0 … pieces folded; a fraction is the next one folding
   // Folded all the way, kept once reached: an assembly piece (direct
   // decision, 2026-10-07: "stella octangula ... jump together") needs
   // this to show its already-done siblings while you build the next one.
-  const foldDone = Object.fromEntries(Object.keys(SOLIDS).map((id) => [id, false]));
+  const foldDone = Object.fromEntries(IDS.map((id) => [id, false]));
   // Other solids that join this one into one assembled whole: the same
   // `assembly` tag, or named either way in `assemblyWith`.
   function siblingsOf(id) {
     const a = SOLIDS[id].assembly;
-    return Object.keys(SOLIDS).filter((o) => o !== id
+    return IDS.filter((o) => o !== id
       && ((a && SOLIDS[o].assembly === a) || (SOLIDS[id].assemblyWith ?? []).includes(o) || (SOLIDS[o].assemblyWith ?? []).includes(id)));
   }
   // A net folds about its own root face, flat on the screen; `net.align`
@@ -70,9 +75,9 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
   const clampP = (id, v) => (Number.isInteger(v) ? Math.max(0, Math.min(stepsOf[id].length, v)) : 0);
   function read(data) {
     if (data?.version !== 1) return;
-    for (const id of Object.keys(SOLIDS)) progress[id] = clampP(id, data.progress?.[id]);
-    for (const id of Object.keys(SOLIDS)) foldDone[id] = data.foldDone?.[id] === true && progress[id] === stepsOf[id].length;
-    if (SOLIDS[data.solid]) solid = data.solid;
+    for (const id of IDS) progress[id] = clampP(id, data.progress?.[id]);
+    for (const id of IDS) foldDone[id] = data.foldDone?.[id] === true && progress[id] === stepsOf[id].length;
+    if (shownHere(data.solid)) solid = data.solid;
     fold = foldDone[solid] ? 1 : 0;
     cellView = data.cell === true;
     wrap = Infinity; // fully wrapped; drawCell clamps it
@@ -518,7 +523,7 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
     const SHORT = { rd: 'RD', to: 'TO', tetra: 'Tetra', octa: 'Octa', icosa: 'Icosa', dodeca: 'Dodeca', dogstar: 'Dogstar', stella1: 'Stella A', stella2: 'Stella B', starSpike: 'Star spike', pacioli1: 'Pacioli A', pacioli2: 'Pacioli B', pacioli3: 'Pacioli C' };
     const orderOf = (g, id) => (g === 'ekp' ? EKP_ORDER.indexOf(id) : 0);
     const button = (id, s) => `<button type="button" data-solid="${id}" class="${id === solid && !cellView ? 'active' : ''}" title="${s.label}">${SHORT[id] ?? s.label}</button>`;
-    solidsRow.innerHTML = SOLID_GROUPS.map((g) => `<div class="w4d-row w4d-options"><span class="nets-group">${t(`nets.group.${g.id}`, lang())}</span>${Object.entries(SOLIDS).filter(([, s]) => s.groups.includes(g.id)).sort(([a], [b]) => orderOf(g.id, a) - orderOf(g.id, b)).map(([id, s]) => button(id, s)).join('')}${g.id === 'ekp' ? `<button type="button" data-cell class="${cellView ? 'active' : ''}">${t('nets.cell', lang())}</button>` : ''}</div>`).join('');
+    solidsRow.innerHTML = GROUPS.map((g) => `<div class="w4d-row w4d-options"><span class="nets-group">${t(`nets.group.${g.id}`, lang())}</span>${Object.entries(SOLIDS).filter(([, s]) => s.groups.includes(g.id)).sort(([a], [b]) => orderOf(g.id, a) - orderOf(g.id, b)).map(([id, s]) => button(id, s)).join('')}${g.id === 'ekp' ? `<button type="button" data-cell class="${cellView ? 'active' : ''}">${t('nets.cell', lang())}</button>` : ''}</div>`).join('');
     // Next, inside out: from a folded EKP piece, or from the whole cell.
     const next = nextPiece();
     nextRow.hidden = !(cellView ? next : EKP_PIECES[solid] && fold === 1);

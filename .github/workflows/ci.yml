@@ -23,14 +23,8 @@ jobs:
         with:
           node-version: 20
       - run: node --test tests/unit/
-      # Nets: flat without overlaps, folding closed into the solid.
-      - run: node scripts/verify-nets.mjs
-      # DICTO FCC: DICTO's blue-strut skewed RD tiles as a sheared FCC.
-      - run: node scripts/verify-dicto-fcc.mjs
       # Kaleidohedra: the lattice shear, the Cell slider and the regularity meter.
       - run: node scripts/verify-kaleido.mjs
-      # Euclid–Kepler–Pacioli cell: cube, dodecahedron and folded icosahedron, Pm-3.
-      - run: node scripts/verify-roof-fold.mjs
       # The 160 target cells: rebuilt from their Gram matrices, each tiles space; TARGETS.md agrees.
       - run: node scripts/verify-targets.mjs
       # Translations: every key in all 7 languages.

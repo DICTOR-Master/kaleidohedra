@@ -6,7 +6,7 @@
 // (60 degrees for plain FCC) -- define a basis; the shear is the linear
 // map taking FCC's basis to it, with its rotation removed, so the scene
 // shears and stretches but never spins.
-import { dictoMatrix } from './dicto-fcc.js';
+import { dictoMatrix } from '../krp-core/src/geometry-extensions/dicto-fcc.js';
 
 export const FCC_BASIS = [[1, 1, 0], [1, 0, 1], [0, 1, 1]];
 const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];

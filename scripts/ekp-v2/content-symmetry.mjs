@@ -1,4 +1,4 @@
-import { roofFoldSolids } from '../../src/geometry-extensions/roof-fold.js';
+import { roofFoldSolids } from '../../src/krp-core/src/geometry-extensions/roof-fold.js';
 const S = roofFoldSolids();
 const apply = (M, v) => [0, 1, 2].map(i => M[i][0] * v[0] + M[i][1] * v[1] + M[i][2] * v[2]);
 const mul = (A, B) => A.map((r, i) => [0, 1, 2].map(j => r[0] * B[0][j] + r[1] * B[1][j] + r[2] * B[2][j]));

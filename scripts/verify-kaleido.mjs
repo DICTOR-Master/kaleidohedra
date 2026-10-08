@@ -3,10 +3,10 @@
 // dodecahedron into exactly DICTO's skewed RD (congruent: same distances
 // between every pair of corners); every point on the path is a real cell.
 import { rdRawVerts } from '../src/krp-core/src/core/lattice.js';
-import { dictoCellVerts } from '../src/geometry-extensions/dicto-fcc.js';
+import { dictoCellVerts } from '../src/krp-core/src/geometry-extensions/dicto-fcc.js';
 import { FCC_PARAMS, DICTO_PARAMS, PATH_RANGE, PATH_STOPS, paramsOnPath, paramsValid, shearMatrix, det3, cellDirections, cellCorners, cellQuality, pathTargets, RD_DIRECTIONS, BAIN_PARAMS, disphenoidQuality, pathRange, pathStops } from '../src/geometry-extensions/kaleido-lattice.js';
 import { NEIGHBOR_OFFSETS } from '../src/krp-core/src/core/lattice.js';
-import { dictoMatrix, DICTO_DIRECTIONS, DICTO_SKEWED_ED_16, DICTO_SKEWED_ED_18 } from '../src/geometry-extensions/dicto-fcc.js';
+import { dictoMatrix, DICTO_DIRECTIONS, DICTO_SKEWED_ED_16, DICTO_SKEWED_ED_18 } from '../src/krp-core/src/geometry-extensions/dicto-fcc.js';
 
 let failures = 0;
 const check = (label, ok) => { console.log(`${ok ? 'OK  ' : 'FAIL'} ${label}`); if (!ok) failures++; };

@@ -5,7 +5,7 @@
 // An operation is (O, t): a cube symmetry O (signed permutation) with a cube translation t (cell units),
 // with t one representative per class mod 2. The operations are written to ops.json for space-group.mjs.
 import { writeFileSync } from 'node:fs';
-import { roofFoldSolids } from '../../src/geometry-extensions/roof-fold.js';
+import { roofFoldSolids } from '../../src/krp-core/src/geometry-extensions/roof-fold.js';
 const S = roofFoldSolids();
 const apply = (M, v) => [0, 1, 2].map(i => M[i][0]*v[0] + M[i][1]*v[1] + M[i][2]*v[2]);
 const Oh = [];

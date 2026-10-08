@@ -1,5 +1,5 @@
 // Euclid–Kepler–Pacioli Cell Network: a 3D world of its own on the Euclid–Kepler–Pacioli cell (DISCOVERIES.md #8,
-// geometry in geometry-extensions/roof-fold.js). Sites are a simple cubic
+// geometry in krp-core/src/geometry-extensions/roof-fold.js). Sites are a simple cubic
 // lattice of period phi^2 (icosahedron edge 1). Seven pieces, one at a time,
 // several per site: cube, dodecahedron, icosahedron, great stellated dodecahedron (the star),
 // octahedron, stella octangula and Pacioli's golden rectangles. Tap a
@@ -10,7 +10,7 @@
 // of the dodecahedra. Lives outside the shear
 // group: shearing would break the icosahedra.
 import * as THREE from 'three';
-import { ROOF_FOLD_KINDS, ROOF_FOLD_COLOURS, ROOF_FOLD_WORLD_SCALE as WS, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, ROOF_FOLD_PATTERNS, siteParity, turnPoint } from '../geometry-extensions/roof-fold.js';
+import { ROOF_FOLD_KINDS, ROOF_FOLD_COLOURS, ROOF_FOLD_WORLD_SCALE as WS, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, ROOF_FOLD_PATTERNS, siteParity, turnPoint } from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';

@@ -1,7 +1,7 @@
 // Roof node rule (DISCOVERIES #8): every roof vertex of a cube is an icosahedron vertex of a neighbouring cube.
 // Counts, for a representative even and odd cube, the roof vertices that coincide with an icosahedron vertex of one
 // of the 26 neighbouring cubes: variation A (unturned) and variation B (odd cubes turned by the app's turnPoint).
-import { roofFoldSolids, turnPoint, siteParity } from '../../src/geometry-extensions/roof-fold.js';
+import { roofFoldSolids, turnPoint, siteParity } from '../../src/krp-core/src/geometry-extensions/roof-fold.js';
 const S = roofFoldSolids();
 const uniq = P => { const m = new Map(); for (const p of P) m.set(p.map(c => c.toFixed(6)).join(), p); return [...m.values()]; };
 const DV = uniq(S.dodeca.faces.flat()), IV = uniq(S.ico.faces.flat());

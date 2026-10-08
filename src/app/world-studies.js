@@ -3,14 +3,14 @@
 // in the Wizard. Exact constructions on the EKP cell (DISCOVERIES.md #10 and
 // its study 10a, #11), one at a time, with a slider where the study has one
 // and the Shear either moving exact copies on the lattice or bending the
-// solid itself. Geometry in geometry-extensions/roof-fold.js, checked in
+// solid itself. Geometry in krp-core/src/geometry-extensions/roof-fold.js, checked in
 // scripts/verify-roof-fold.mjs.
 import * as THREE from 'three';
 import {
   ekpWindowsSolid, dogstarSolid, neighbourStellas, stretchedDodeca, expandedWindows, morphedWindowRhombi, rdMorphRhombi,
   RD_MORPH_SQUARE, EXPANDED_WINDOWS_GOLDEN, convexHullFaces, roofFoldSolids, ROOF_FOLD_COLOURS,
   ROOF_FOLD_WORLD_SCALE as WS, PHI,
-} from '../geometry-extensions/roof-fold.js';
+} from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
