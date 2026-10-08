@@ -515,7 +515,7 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
     if (!active) return;
     // Each group named, its solids short (full names on hover); the EKP
     // cell's in its wrap order, inside out, then the whole cell.
-    const SHORT = { rd: 'RD', to: 'TO', tetra: 'Tetra', octa: 'Octa', icosa: 'Icosa', dodeca: 'Dodeca', stella1: 'Stella A', stella2: 'Stella B', starSpike: 'Star spike', pacioli1: 'Pacioli A', pacioli2: 'Pacioli B', pacioli3: 'Pacioli C' };
+    const SHORT = { rd: 'RD', to: 'TO', tetra: 'Tetra', octa: 'Octa', icosa: 'Icosa', dodeca: 'Dodeca', dogstar: 'Dogstar', stella1: 'Stella A', stella2: 'Stella B', starSpike: 'Star spike', pacioli1: 'Pacioli A', pacioli2: 'Pacioli B', pacioli3: 'Pacioli C' };
     const orderOf = (g, id) => (g === 'ekp' ? EKP_ORDER.indexOf(id) : 0);
     const button = (id, s) => `<button type="button" data-solid="${id}" class="${id === solid && !cellView ? 'active' : ''}" title="${s.label}">${SHORT[id] ?? s.label}</button>`;
     solidsRow.innerHTML = SOLID_GROUPS.map((g) => `<div class="w4d-row w4d-options"><span class="nets-group">${t(`nets.group.${g.id}`, lang())}</span>${Object.entries(SOLIDS).filter(([, s]) => s.groups.includes(g.id)).sort(([a], [b]) => orderOf(g.id, a) - orderOf(g.id, b)).map(([id, s]) => button(id, s)).join('')}${g.id === 'ekp' ? `<button type="button" data-cell class="${cellView ? 'active' : ''}">${t('nets.cell', lang())}</button>` : ''}</div>`).join('');
