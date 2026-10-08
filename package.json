@@ -6,17 +6,12 @@
     "build": "node scripts/build.mjs",
     "verify:i18n": "node scripts/verify-i18n.mjs",
     "verify:kaleido": "node scripts/verify-kaleido.mjs",
-    "verify:pyrochlore": "node scripts/verify-pyrochlore.mjs",
-    "verify:rhombohedra": "node scripts/verify-rhombohedra.mjs",
     "verify:dicto-fcc": "node scripts/verify-dicto-fcc.mjs",
     "verify:roof-fold": "node scripts/verify-roof-fold.mjs",
     "verify:targets": "node scripts/verify-targets.mjs",
-    "verify:quasicrystal": "node scripts/verify-quasicrystal.mjs",
-    "verify:shells": "node scripts/verify-shells.mjs",
     "verify:copy": "node scripts/verify-copy.mjs",
     "verify:about": "node scripts/verify-about.mjs",
-    "verify:nets": "node scripts/verify-nets.mjs",
-    "verify:packing": "node scripts/verify-packing.mjs"
+    "verify:nets": "node scripts/verify-nets.mjs"
   },
   "devDependencies": {
     "esbuild": "^0.28.2"

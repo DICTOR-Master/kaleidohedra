@@ -30,4 +30,15 @@ the commit that first recorded it (full list, verification and literature status
 | Study of the windows (10a): pushed out by √(7 − 4φ), a convex 74-face solid of 12 Penrose thick rhombi, 6 golden rhombi, 8 equilateral triangles and 48 triangles; buildable from a flat net | 2026-10-08 | study of the windows, not a separate claim |
 
 "Not found" means a web-level search turned up nothing, not proof of novelty. Cite as
-*DICTO, Kaleidohedra discoveries, #N (first recorded date), https://doi.org/10.5281/zenodo.23173809*. Each release is archived on Zenodo under that DOI; the latest, [v2026.10.08-convex](https://doi.org/10.5281/zenodo.23220833), adds the windows made convex (recorded there as #12, now study 10a); [v2026.10.08](https://doi.org/10.5281/zenodo.23220273) added #10 and #11.
+*DICTO, Kaleidohedra discoveries, #N (first recorded date), https://doi.org/10.5281/zenodo.23173809*. Each release is archived on Zenodo under that DOI; the latest, [v2026.10.08-star-chain](https://doi.org/10.5281/zenodo.23226716), adds #12, the Star Chain Reaction, and study 12a, the Dragon chain; [v2026.10.08-checkerboard](https://doi.org/10.5281/zenodo.23223555) added study 10b; [v2026.10.08-convex](https://doi.org/10.5281/zenodo.23220833) the windows made convex (now study 10a); [v2026.10.08](https://doi.org/10.5281/zenodo.23220273) #10 and #11.
+
+## Shared geometry
+
+The shared geometry (lattices, cells, quasicrystals, rhombic dodecahedron pieces) lives in
+[krp-core](https://github.com/DICTOR-Master/krp-core), shared with Rhombiverse and pinned here as a git
+submodule at `src/krp-core`. Clone with it:
+
+```
+git clone --recurse-submodules https://github.com/DICTOR-Master/kaleidohedra
+# or, in an existing clone: git submodule update --init
+```

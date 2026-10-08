@@ -2,10 +2,10 @@
 // plain FCC is the identity; the path's stop 2 turns the FCC rhombic
 // dodecahedron into exactly DICTO's skewed RD (congruent: same distances
 // between every pair of corners); every point on the path is a real cell.
-import { rdRawVerts } from '../src/core/lattice.js';
+import { rdRawVerts } from '../src/krp-core/src/core/lattice.js';
 import { dictoCellVerts } from '../src/geometry-extensions/dicto-fcc.js';
 import { FCC_PARAMS, DICTO_PARAMS, PATH_RANGE, PATH_STOPS, paramsOnPath, paramsValid, shearMatrix, det3, cellDirections, cellCorners, cellQuality, pathTargets, RD_DIRECTIONS, BAIN_PARAMS, disphenoidQuality, pathRange, pathStops } from '../src/geometry-extensions/kaleido-lattice.js';
-import { NEIGHBOR_OFFSETS } from '../src/core/lattice.js';
+import { NEIGHBOR_OFFSETS } from '../src/krp-core/src/core/lattice.js';
 import { dictoMatrix, DICTO_DIRECTIONS, DICTO_SKEWED_ED_16, DICTO_SKEWED_ED_18 } from '../src/geometry-extensions/dicto-fcc.js';
 
 let failures = 0;
