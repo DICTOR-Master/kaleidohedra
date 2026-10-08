@@ -4,7 +4,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23173809.svg)](https://doi.org/10.5281/zenodo.23173809)
 
-*In development* — live at **[kaleidohedra.vercel.app](https://kaleidohedra.vercel.app)**. The third sibling of [Rhombiverse](https://rhombiverse.vercel.app) and [Polyhedraverse](https://polyhedraverse.vercel.app): lattices you can shear and slide continuously, where every piece of geometry moves with the lattice, and chosen states ("population members") are exported to the two sibling apps. It keeps to the worlds where the shear means something: the 3D+ lattices, the Euclid–Kepler–Pacioli Cell Network and its Studies, Targets, Shells, Golden Rhombohedra, and Nets (2D+), the way from flat nets into 3D. The 1D and 4D–6D worlds live in Rhombiverse.
+*In development* — live at **[kaleidohedra.vercel.app](https://kaleidohedra.vercel.app)**. The third sibling of [Rhombiverse](https://rhombiverse.vercel.app) and [Polyhedraverse](https://polyhedraverse.vercel.app): lattices you can shear and slide continuously, where every piece of geometry moves with the lattice, and chosen states ("population members") are exported to the two sibling apps. It keeps to the worlds where the shear means something: the 3D+ lattices, the Euclid–Kepler–Pacioli Cell Network, its Studies and the Stella–Jewel Lattice, Targets, Shells, Golden Rhombohedra, and Nets (2D+), the way from flat nets into 3D. The 1D and 4D–6D worlds live in Rhombiverse.
 
 It grew from shapes DICTO found in Zometool, a golden leaning hexagonal prism and a skewed rhombic dodecahedron that tiles as a sheared FCC (see Polyhedraverse's `docs/dicto-zometool-discoveries.md`), and goes on from there, no longer tied to Zometool.
 

@@ -394,6 +394,13 @@ the stella octangulas leave? There is, and it is the stella octangula itself.
 - Verified: `scripts/verify-roof-fold.mjs` §13(f): the volumes exactly, and a 40³ grid of points in
   an odd cube, every one in exactly one piece (a 60³ grid, 216,000 points, was also checked by hand).
   Shown in the Studies world, Windows and stellas, checkerboard, with an Apart slider.
+- Named by DICTO (2026-10-08): the windows solid on its own is the **Dragon Jewel** (DJ); the
+  checkerboard is the **Stella–Jewel Lattice** (the face-centred cubic lattice with two pieces per
+  point), a world of its own in the app. On its own, the Dragon Jewels on the even cells meet face to
+  face on all 12 rhombi (each rhombus is coplanar with, and the same as, a neighbour's), leaving
+  stella-shaped holes. Five-fold: each window lies in a dodecahedron face, facing a five-fold axis;
+  each face has five window positions, one per pentagon diagonal, and the cube picks the one on a
+  cube edge. Verified: `scripts/verify-roof-fold.mjs` §13(g).
 - Status: a study of #10, not a separate claim (not found at web level, 2026-10-08).
 
 ## 11. The stretched dodecahedron (DICTO, 2026-10-08)

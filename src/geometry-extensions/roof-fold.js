@@ -472,3 +472,72 @@ export function rdMorphRhombi(s) {
     return out;
   });
 }
+
+// ---- The Dragon Jewel (DJ) and the Stella–Jewel Lattice (DICTO, 2026-10-08) ----
+// The Dragon Jewel is DICTO's name for the windows solid (ekpWindowsSolid, DISCOVERIES #10)
+// on its own. Dragon Jewels on the even cells and stella octangulas on the odd cells fill
+// space (study 10b); the Dragon Jewels alone sit on the even cells (an FCC lattice) and
+// meet face to face on all 12 rhombi, leaving stella-shaped holes.
+
+/** Half-spaces [n, d] (n . p <= d) of a convex solid given by its outward-wound faces. */
+function halfSpacesOf(faces) {
+  return faces.map((f) => {
+    const n = unit(cross(sub(f[1], f[0]), sub(f[2], f[0])));
+    return [n, dot(n, f[0])];
+  });
+}
+const insideAll = (H, p, eps = 1e-9) => H.every(([n, d]) => dot(n, p) <= d + eps);
+let djCache = null;
+function djParts() {
+  if (djCache) return djCache;
+  const { dodeca, stella } = roofFoldSolids();
+  const tetra = [stella.faces.slice(0, 4), stella.faces.slice(4, 8)].map(halfSpacesOf);
+  const dodecaH = halfSpacesOf(dodeca.faces);
+  const neighbourTetra = FACE_DIRS.flatMap((d) => tetra.map((H) => H.map(([n, k]) => [n, k + 2 * dot(n, d)])));
+  djCache = { tetra, dodecaH, neighbourTetra };
+  return djCache;
+}
+/** Is p (cell units, centred on the cell) inside the Dragon Jewel? */
+export function insideDragonJewel(p) {
+  const { dodecaH, neighbourTetra } = djParts();
+  return insideAll(dodecaH, p) && !neighbourTetra.some((H) => insideAll(H, p, -1e-9));
+}
+/** Is p inside the cell's stella octangula? */
+export function insideStella(p) {
+  return djParts().tetra.some((H) => insideAll(H, p));
+}
+/** The cell offsets a piece can touch: the 6 face neighbours and the 12 FCC neighbours. */
+export const DJ_NEIGHBOURS = [
+  ...FACE_DIRS,
+  ...[[1, 1, 0], [1, -1, 0], [-1, 1, 0], [-1, -1, 0], [1, 0, 1], [1, 0, -1], [-1, 0, 1], [-1, 0, -1], [0, 1, 1], [0, 1, -1], [0, -1, 1], [0, -1, -1]],
+];
+/**
+ * The five window positions on each of the dodecahedron's 12 faces: for each of the
+ * pentagon's five diagonals AB (V the corner between A and B), the thick rhombus A V B V'
+ * (V' is V reflected across AB). The cube picks one per face, the diagonal that is a cube
+ * edge: `chosen`. Returned as { face, rhombus, chosen }.
+ */
+export function fiveWindowPositions() {
+  const { dodeca } = roofFoldSolids();
+  const out = [];
+  dodeca.faces.forEach((f, fi) => {
+    for (let k = 0; k < 5; k++) {
+      const A = f[k], V = f[(k + 1) % 5], B = f[(k + 2) % 5];
+      const m = add(A, B).map((c) => c / 2);
+      const Vr = sub(m.map((c) => 2 * c), V);
+      const isCubeEdge = A.every((c) => Math.abs(Math.abs(c) - 1) < 1e-9) && B.every((c) => Math.abs(Math.abs(c) - 1) < 1e-9);
+      out.push({ face: fi, rhombus: [A, V, B, Vr], chosen: isCubeEdge });
+    }
+  });
+  return out;
+}
+/** The dodecahedron's six five-fold axes, unit vectors (its face normals, one per opposite pair). */
+export function fiveFoldAxes() {
+  const { dodeca } = roofFoldSolids();
+  const out = [];
+  for (const f of dodeca.faces) {
+    const c = unit(f.reduce((s, p) => add(s, p), [0, 0, 0]));
+    if (!out.some((a) => Math.abs(dot(a, c)) > 1 - 1e-9)) out.push(c);
+  }
+  return out;
+}

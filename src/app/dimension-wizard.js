@@ -166,6 +166,10 @@ export const LATTICES_3D = [
   { key: 'studies', label: 'Studies', pieces: [
     { label: 'Studies', action: 'tool:studiesWorld' },
   ] },
+  // Stella–Jewel Lattice (direct request, 2026-10-08): Dragon Jewels and stella octangulas.
+  { key: 'stellaJewel', label: 'Stella–Jewel Lattice', pieces: [
+    { label: 'Stella–Jewel Lattice', action: 'tool:stellaJewelWorld' },
+  ] },
   { key: 'fcc', label: 'FCC', pieces: [
     { label: 'RD', action: 'tool:pieceType:rd' },
     { label: 'Hemi RD', action: 'tool:pieceType:halfrd' },

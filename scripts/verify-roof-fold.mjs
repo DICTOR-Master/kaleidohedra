@@ -27,7 +27,7 @@
 //   - two extractions that don't overlap: even-cell dodecahedra (the optimal
 //     lattice packing, (5+sqrt5)/8) and even-cell stars with odd-cell
 //     icosahedra, sharing only corners.
-import { PHI, ROOF_FOLD_PERIOD as P, ROOF_FOLD_KINDS, roofFoldCell, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, siteParity, ROOF_FOLD_PATTERNS, goldenRectangles, ekpWindowsSolid, stretchedDodeca, expandedWindows, EXPANDED_WINDOWS_GOLDEN, morphedWindowRhombi, rdMorphRhombi, RD_MORPH_SQUARE, convexHullFaces, ekpWindowRhombi } from '../src/geometry-extensions/roof-fold.js';
+import { PHI, ROOF_FOLD_PERIOD as P, ROOF_FOLD_KINDS, roofFoldCell, roofFoldSolids, mergedDodecaSurface, mergedDodecaEdges, siteParity, ROOF_FOLD_PATTERNS, goldenRectangles, ekpWindowsSolid, stretchedDodeca, expandedWindows, EXPANDED_WINDOWS_GOLDEN, morphedWindowRhombi, rdMorphRhombi, RD_MORPH_SQUARE, convexHullFaces, ekpWindowRhombi, insideDragonJewel, insideStella, DJ_NEIGHBOURS, fiveWindowPositions, fiveFoldAxes } from '../src/geometry-extensions/roof-fold.js';
 
 let failures = 0;
 function check(label, condition) {
@@ -703,6 +703,34 @@ check(`stars on even cells and icosahedra on odd cells share only corners: ${pai
   }
   const a = 2 / PHI, dodecaVol = ((15 + 7 * Math.sqrt(5)) / 4) * a ** 3, roof = (dodecaVol - 8) / 6, carved = (dodecaVol - 12) / 6;
   check(`windows and stellas, checkerboard: each odd cube is its stella + six carved roofs (${N ** 3} points, ${bad} uncovered or doubled); 6 x ${(roof - carved).toFixed(4)} = cube - stella = 4`, bad === 0 && Math.abs(6 * (roof - carved) - 4) < 1e-12 && Math.abs(inStella / N ** 3 - 0.5) < 0.01);
+}
+
+// (g) The Dragon Jewel (DICTO's name for the windows solid on its own, 2026-10-08) and the
+// Stella–Jewel Lattice. Five-fold: each window lies in a dodecahedron face (its normal one of the
+// six five-fold axes); each face has five window positions (one per pentagon diagonal), and the
+// cube picks the one whose diagonal is a cube edge. Dragon Jewels alone on the even cells (FCC)
+// meet face to face on all 12 rhombi. The world's point tests agree with the checkerboard (10b).
+{
+  const W = ekpWindowRhombi(), P5 = fiveWindowPositions(), axes = fiveFoldAxes();
+  const sameSet = (A, B) => A.length === B.length && A.every((p) => B.some((q) => norm(sub(p, q)) < 1e-9));
+  const chosen = P5.filter((x) => x.chosen).map((x) => x.rhombus);
+  const picks = P5.length === 60 && chosen.length === 12 && chosen.every((r) => W.some((w) => sameSet(r, w)));
+  const nrm = (r) => { const n = cross(sub(r[1], r[0]), sub(r[2], r[0])); return n.map((c) => c / norm(n)); };
+  const onAxes = axes.length === 6 && W.every((r) => axes.some((a) => Math.abs(Math.abs(dot(a, nrm(r))) - 1) < 1e-9));
+  const thick = P5.every(({ rhombus: [A, V, B] }) => Math.abs(Math.acos(dot(sub(A, V), sub(B, V)) / (norm(sub(A, V)) * norm(sub(B, V)))) * 180 / Math.PI - 108) < 1e-9);
+  check('Dragon Jewel, five-fold: 6 five-fold axes; each face has 5 window positions (thick rhombi on its diagonals), and the cube picks exactly the 12 windows, each facing a five-fold axis', picks && onAxes && thick);
+  const FCC = DJ_NEIGHBOURS.slice(6);
+  const faceToFace = W.every((r) => FCC.some((s) => W.some((w) => sameSet(r, w.map((p) => p.map((c, i) => c + 2 * s[i]))))));
+  check('Dragon Jewels alone on the even cells (FCC) meet face to face on all 12 rhombi', faceToFace);
+  const N = 24;
+  let bad = 0;
+  for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) for (let k = 0; k < N; k++) {
+    const q = [i, j, k].map((t, ax) => -1 + (2 * (t + 0.5)) / N + 1e-7 * (ax + 1));
+    const st = insideStella(q);
+    const dj = [[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1]].filter((d) => insideDragonJewel(q.map((c, a) => c - 2 * d[a]))).length;
+    if ((st ? 1 : 0) + dj !== 1) bad++;
+  }
+  check(`Stella–Jewel Lattice point tests: each point of an odd cube is in its stella octangula or exactly one neighbouring Dragon Jewel (${N ** 3} points, ${bad} wrong)`, bad === 0);
 }
 
 console.log(failures === 0 ? '\nAll checks passed (0 failures).' : `\n${failures} check(s) FAILED.`);
