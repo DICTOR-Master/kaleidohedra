@@ -10,7 +10,7 @@ This guide starts with what Kaleidohedra and Rhombiverse share, then has a chapt
 
 ### Pick a dimension
 
-After **ENTER**, **DICTO** opens on the app you came in by, with its dimensions: **1D+** to **6D** in Rhombiverse, **2D+** and **3D+** in Kaleidohedra. Tap a dimension, then a lattice or world, each shown as a turning wireframe. The other two apps are the big buttons at the top: tap one to see its list instead. **DICTO** (top left), **Menu** (bottom left), Tab or Space bring it back at any time.
+After **ENTER**, **DICTO** opens on the dimensions, **1D+** to **6D**, each showing the apps it holds. Tap one: its content is listed in blocks, one per app in that app's colours, the app you came in by first, and nothing is listed twice. Tap a lattice, world or shape, each shown as a turning wireframe, to enter that app's space. The three app buttons at the top show one app only; tap it again to show all. **DICTO** (top left), **Menu** (bottom left), Tab or Space bring it back at any time.
 
 ### Place your first piece
 
@@ -76,7 +76,7 @@ Settings also has a **Section view**: pick an axis, drag the slider to move the 
 
 ## Worlds in both apps
 
-These 3D+ worlds are in both apps, in DICTO's 3D+ list.
+These 3D+ worlds are listed once in DICTO's 3D+, in Kaleidohedra's block, and open in Kaleidohedra's space.
 
 ### Euclid–Kepler–Pacioli Cell Network (EKP)
 
@@ -244,7 +244,7 @@ RHOMBIS is a 3D puzzle made from the same pieces: fill the target shape with the
 
 # Polyhedraverse {#polyhedraverse}
 
-Polyhedraverse is the portrait gallery: every shape in its families, one at a time, up close. Turn it, compare it, attach shapes face to face or vertex to vertex, and print any shape's net to fold. Its space is now inside DICTO: choose 3D, a family and a shape, then tap the green outline to place it. Building on faces and vertices, the shape browser and 4D follow step by step; until then the full site stays at [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app). Its own guide: [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
+Polyhedraverse is the portrait gallery: every shape in its families, one at a time, up close. Turn it, compare it, attach shapes face to face or vertex to vertex, and print any shape's net to fold. Its space is now inside DICTO: choose **3D+**, then a family in Polyhedraverse's green block, then a shape, and tap the green outline to place it. Attaching shapes, the shape browser and 4D follow step by step; until then a note in its space links to the full site at [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app), where they work. Its own guide: [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
 
 ---
 
@@ -254,7 +254,7 @@ Polyhedraverse is the portrait gallery: every shape in its families, one at a ti
 
 | Control | What it does |
 |---|---|
-| DICTO (top left) | The wizard: the app you came in by, with the other two (Kaleidohedra, Rhombiverse, Polyhedraverse) a big button away. The large label beside it shows the dimension you're in |
+| DICTO (top left) | The wizard: the dimensions, then everything in each, in blocks by app. The large label beside it shows the dimension you're in |
 | Shape (bottom left) | The piece you're placing. Tap to change it |
 | Colour (bottom left) | Build colour. Tap to change it |
 | Lattice View | Cycles through Off and a view for each piece |
@@ -283,7 +283,7 @@ A column of buttons in the top right corner, in the colour of the app whose spac
 
 ## DICTO wizard
 
-**DICTO** (top left) opens the wizard over the whole screen. It starts on the app you came in by, with its dimensions and worlds in its colour. The other two apps are the two big buttons at the top: tap one to browse its list, in its colour. Choosing anything takes you into that app's space: its colours, and its tools (Kaleidohedra's Shear appears only there). Polyhedraverse lists its shapes by family under 3D.
+**DICTO** (top left) opens the wizard over the whole screen, in the colours of the app you came in by. It starts on the dimensions, **1D+** to **6D**, each showing the apps it holds. In a dimension, each app has its own block in its own colours, the app you came in by first, and anything already listed is not repeated. Choosing anything takes you into that app's space: its colours, and its tools (Kaleidohedra's Shear appears only there). The three app buttons at the top are a filter: tap one to show only that app, tap it again to show all.
 
 ## Settings
 

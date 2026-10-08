@@ -12,7 +12,7 @@ DICTO 是 DICTO 的三个应用，共用同一套几何。**Rhombiverse** 是**�
 
 ### 选择维度
 
-按下 **ENTER** 后，**DICTO** 会打开你进入的那个应用及其维度：Rhombiverse 为 **1D+** 到 **6D**，Kaleidohedra 为 **2D+** 和 **3D+**。先轻点一个维度，再轻点一个晶格或世界，每个都以旋转的线框显示。另外两个应用是顶部的大按钮：轻点一个即可查看它的列表。随时可用 **DICTO**（左上）、**菜单**（左下）、Tab 或空格键再次打开。
+按下 **ENTER** 后，**DICTO** 打开维度列表 **1D+** 至 **6D**，每个维度显示其中包含哪些应用的内容。点一个维度：其内容按应用分块列出，每块使用该应用的颜色，你进入的应用排在最前，同一项不会出现两次。点一个晶格、世界或形状（每个都显示为旋转的线框），即可进入该应用的空间。顶部的三个应用按钮只显示一个应用；再点一次显示全部。**DICTO**（左上）、**Menu**（左下）、Tab 或空格键随时可以重新打开它。
 
 ### 放置第一个部件
 
@@ -78,7 +78,7 @@ DICTO 是 DICTO 的三个应用，共用同一套几何。**Rhombiverse** 是**�
 
 ## 两个应用都有的世界
 
-这些 3D+ 世界在两个应用中都有，位于 DICTO 的 3D+ 列表里。
+这些 3D+ 世界在 DICTO 的 3D+ 中只在 Kaleidohedra 的区块里列出一次，并在 Kaleidohedra 的空间中打开。
 
 ### Euclid–Kepler–Pacioli Cell Network (EKP)
 
@@ -246,7 +246,7 @@ RHOMBIS 是用同样的块做成的 3D 解谜游戏：用托盘里的块填满�
 
 # Polyhedraverse {#polyhedraverse}
 
-Polyhedraverse 是肖像画廊：各个家族中的每个形状，一个一个，近距离观看。旋转它、比较它，把形状面对面或顶点对顶点连接起来，还可以打印任意形状的展开图来折叠。它的空间现在就在 DICTO 中：依次选择 3D、一个家族和一个形状，然后轻点绿色轮廓放置它。在面和顶点上搭建、形状浏览器和 4D 会逐步加入；在此之前，完整的网站仍在 [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app)。它自己的指南：[polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide)。
+Polyhedraverse 是肖像画廊：按家族排列的每一个形状，一次一个，近距离观看。旋转它、比较它、把形状面对面或顶点对顶点拼接，并打印任何形状的展开图来折叠。它的空间现在已在 DICTO 中：选择 **3D+**，在 Polyhedraverse 的绿色区块中选一个家族，再选一个形状，然后点绿色轮廓放置。拼接形状、形状浏览器和 4D 将逐步加入；在此之前，其空间中的提示会链接到可以使用这些功能的完整网站 [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app)。它自己的指南：[polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide)。
 
 ---
 
@@ -256,7 +256,7 @@ Polyhedraverse 是肖像画廊：各个家族中的每个形状，一个一个�
 
 | 控件 | 作用 |
 |---|---|
-| DICTO（左上） | 向导：显示你进入的应用，另外两个（Kaleidohedra、Rhombiverse、Polyhedraverse）只需点一个大按钮。旁边的大字显示你所在的维度 |
+| DICTO（左上） | 向导：维度列表，以及每个维度中按应用分块的全部内容。旁边的大标签显示你所在的维度 |
 | Shape（左下） | 当前要放置的部件。轻点更换 |
 | 颜色（左下） | 搭建颜色。轻点更换 |
 | Lattice View | 在 Off 和每种部件的视图之间循环 |
@@ -285,7 +285,7 @@ Polyhedraverse 是肖像画廊：各个家族中的每个形状，一个一个�
 
 ## DICTO 向导
 
-左上角的 **DICTO** 会全屏打开向导。它先显示你进入的应用，用该应用的颜色列出其维度和世界。另外两个应用是顶部的两个大按钮：点按一个即可浏览它的列表，显示为它的颜色。选择任何内容都会进入该应用的空间：它的颜色和它的工具（Kaleidohedra 的 Shear 只在那里出现）。Polyhedraverse 在 3D 下按家族列出它的形状。
+**DICTO**（左上）以你进入的应用的颜色全屏打开向导。它从维度列表 **1D+** 至 **6D** 开始，每个维度显示其中包含哪些应用的内容。在一个维度里，每个应用都有自己颜色的区块，你进入的应用排在最前，已经列出的内容不会重复。选择任何内容都会把你带入该应用的空间：它的颜色和工具（Kaleidohedra 的剪切只在那里出现）。顶部的三个应用按钮是筛选器：点一个只显示该应用，再点一次显示全部。
 
 ## 设置
 

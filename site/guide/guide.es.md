@@ -12,7 +12,7 @@ Los nombres de los botones aparecen tal como se ven en la aplicación (los que l
 
 ### Elige una dimensión
 
-Tras **ENTER** se abre **DICTO** en la app por la que entraste, con sus dimensiones: de **1D+** a **6D** en Rhombiverse, **2D+** y **3D+** en Kaleidohedra. Toca una dimensión y luego una red o un mundo, cada uno mostrado como una estructura de alambre que gira. Las otras dos apps son los botones grandes de arriba: toca una para ver su lista. **DICTO** (arriba a la izquierda), **Menú** (abajo a la izquierda), Tab o Espacio lo vuelven a abrir en cualquier momento.
+Tras **ENTER**, **DICTO** se abre en las dimensiones, de **1D+** a **6D**, cada una con las apps que contiene. Toca una: su contenido aparece en bloques, uno por app con los colores de esa app, primero la app por la que entraste, y nada se repite. Toca una red, un mundo o una forma, cada uno mostrado como un alambre que gira, para entrar en el espacio de esa app. Los tres botones de apps de arriba muestran una sola app; tócalo otra vez para mostrarlas todas. **DICTO** (arriba a la izquierda), **Menu** (abajo a la izquierda), Tab o Espacio lo vuelven a abrir en cualquier momento.
 
 ### Coloca tu primera pieza
 
@@ -78,7 +78,7 @@ Ajustes también tiene una **Vista de sección**: elige un eje, arrastra el desl
 
 ## Mundos en ambas apps
 
-Estos mundos 3D+ están en ambas apps, en la lista 3D+ de DICTO.
+Estos mundos 3D+ aparecen una sola vez en el 3D+ de DICTO, en el bloque de Kaleidohedra, y se abren en el espacio de Kaleidohedra.
 
 ### Euclid–Kepler–Pacioli Cell Network (EKP)
 
@@ -246,7 +246,7 @@ RHOMBIS es un rompecabezas 3D hecho con las mismas piezas: llena la forma objeti
 
 # Polyhedraverse {#polyhedraverse}
 
-Polyhedraverse es la galería de retratos: cada forma de sus familias, una a una, de cerca. Gírala, compárala, une formas cara con cara o vértice con vértice, e imprime el desarrollo de cualquier forma para plegarlo. Su espacio ya está dentro de DICTO: elige 3D, una familia y una forma, y toca el contorno verde para colocarla. Construir sobre caras y vértices, el explorador de formas y el 4D llegan paso a paso; mientras tanto, el sitio completo sigue en [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app). Su propia guía: [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
+Polyhedraverse es la galería de retratos: todas las formas por familias, una a una, de cerca. Gírala, compárala, une formas cara con cara o vértice con vértice e imprime el desarrollo de cualquier forma para plegarlo. Su espacio ya está dentro de DICTO: elige **3D+**, luego una familia en el bloque verde de Polyhedraverse y luego una forma, y toca el contorno verde para colocarla. Unir formas, el explorador de formas y el 4D llegarán paso a paso; hasta entonces, una nota en su espacio enlaza al sitio completo en [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app), donde funcionan. Su propia guía: [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
 
 ---
 
@@ -256,7 +256,7 @@ Polyhedraverse es la galería de retratos: cada forma de sus familias, una a una
 
 | Control | Qué hace |
 |---|---|
-| DICTO (arriba a la izquierda) | El asistente: la app por la que entraste, con las otras dos (Kaleidohedra, Rhombiverse, Polyhedraverse) a un botón grande de distancia. La etiqueta grande al lado muestra la dimensión en la que estás |
+| DICTO (arriba a la izquierda) | El asistente: las dimensiones y, en cada una, todo su contenido en bloques por app. La etiqueta grande de al lado muestra la dimensión en la que estás |
 | Shape (abajo a la izquierda) | La pieza que colocas. Tócalo para cambiarla |
 | Color (abajo a la izquierda) | Color de construcción. Tócalo para cambiarlo |
 | Lattice View | Alterna entre Off y una vista para cada pieza |
@@ -285,7 +285,7 @@ Una columna de botones en la esquina superior derecha, del color de la app en cu
 
 ## Asistente DICTO
 
-**DICTO** (arriba a la izquierda) abre el asistente a pantalla completa. Empieza en la app por la que entraste, con sus dimensiones y mundos en su color. Las otras dos apps son los dos botones grandes de arriba: toca uno para ver su lista, en su color. Al elegir algo entras en el espacio de esa app: sus colores y sus herramientas (el Shear de Kaleidohedra solo aparece allí). Polyhedraverse muestra sus formas por familias en 3D.
+**DICTO** (arriba a la izquierda) abre el asistente a pantalla completa, con los colores de la app por la que entraste. Empieza en las dimensiones, de **1D+** a **6D**, cada una con las apps que contiene. Dentro de una dimensión, cada app tiene su propio bloque con sus colores, primero la app por la que entraste, y lo que ya aparece no se repite. Elegir cualquier cosa te lleva al espacio de esa app: sus colores y sus herramientas (la cizalla de Kaleidohedra solo aparece allí). Los tres botones de apps de arriba son un filtro: toca uno para ver solo esa app y tócalo otra vez para verlas todas.
 
 ## Ajustes
 

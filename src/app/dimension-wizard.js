@@ -47,7 +47,7 @@ import { loadCatalogue, findBySerial, pieceCount } from '../geometry-extensions/
 import { t, tn, tFor } from './i18n.js';
 import { polyShapeEdges, polyShapeName } from './poly-shapes.js';
 import { FAMILY_META, familyIds } from '../krp-core/src/polyhedra/families.js';
-import { SITES, activeSite, setActiveSite, themeOf } from './site.js';
+import { SITE, SITES, setActiveSite, themeOf } from './site.js';
 import { countDicto } from './analytics.js';
 import { dimensionLabel } from './dimension-label.js';
 import { getSettings } from './settings.js';
@@ -80,21 +80,29 @@ const CSS = `
   margin-bottom: 4px;
 }
 .dim-wizard-close { background: none; border: none; color: var(--accent); cursor: pointer; font: var(--text-xl) var(--font-ui); min-width: var(--touch); min-height: var(--touch); }
-/* DICTO: the three apps' names, the other two as big buttons in their own colours, then the browsed
-   app's name over its list. Wordmarks two-tone like everywhere else. */
-.dicto-apps-line { color: #99a; font-size: var(--text-s); margin-bottom: 12px; }
-.dicto-apps { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+/* DICTO: the three apps as an optional filter (DICTO 2026-10-09: off by default; tap one to show
+   only its entries, tap it again for all). Wordmarks two-tone like everywhere else. */
+.dicto-apps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 16px; }
 .dicto-app {
-  min-height: 72px; padding: 10px 8px; cursor: pointer; touch-action: manipulation;
+  min-height: var(--touch); padding: 6px 4px; cursor: pointer; touch-action: manipulation;
   /* The whole name on one line at any width (POLYHEDRAVERSE is the longest). */
-  font: 800 clamp(12px, 3.4vw, var(--text-xl))/1.2 var(--font-ui); letter-spacing: 0.05em; white-space: nowrap;
-  color: var(--app-pale); background: rgba(var(--app-rgb), 0.14);
-  border: 2px solid var(--app); border-radius: var(--radius-l);
+  font: 800 clamp(9px, 2.6vw, var(--text-m))/1.2 var(--font-ui); letter-spacing: 0.03em; white-space: nowrap;
+  color: var(--app-pale); background: rgba(var(--app-rgb), 0.06);
+  border: 1px solid rgba(var(--app-rgb), 0.45); border-radius: var(--radius-m);
 }
 .dicto-app span { color: var(--app); }
-.dicto-app:active { background: rgba(var(--app-rgb), 0.3); }
-.dicto-shown { font: 800 var(--text-xl)/1.2 var(--font-ui); letter-spacing: 0.06em; color: var(--pale); margin-bottom: 10px; }
-.dicto-shown span { color: var(--accent-strong); }
+.dicto-app[aria-pressed="true"] { background: rgba(var(--app-rgb), 0.3); border: 2px solid var(--app); }
+/* Each entry's app, in its colour. */
+.dicto-tags { display: flex; flex-wrap: wrap; gap: 4px 8px; margin-top: 2px; }
+.dicto-tag { font: 700 var(--text-xs) var(--font-ui); color: var(--app); white-space: nowrap; }
+.dicto-tag::before { content: '● '; }
+.dim-wizard-kind { font: 800 var(--text-s) var(--font-ui); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 10px 0 0; }
+/* An app's block: its name, then its entries, all in its colours. */
+.dicto-block { display: flex; flex-direction: column; gap: 6px; padding: 10px 10px 12px; border-left: 3px solid var(--accent-strong); background: rgba(var(--accent-rgb), 0.05); border-radius: var(--radius-m); }
+.dicto-block + .dicto-block { margin-top: 14px; }
+.dicto-block-name { font: 800 var(--text-xl)/1.2 var(--font-ui); letter-spacing: 0.06em; color: var(--pale); }
+.dicto-block-name span { color: var(--accent-strong); }
+.dicto-block .dim-wizard-section .dim-wizard-label { color: var(--pale); }
 .dim-wizard-back {
   background: none; border: none; color: var(--accent); cursor: pointer;
   font: var(--text-m) var(--font-ui); padding: 0; margin-bottom: 10px;
@@ -429,47 +437,50 @@ export const LATTICES_4D = [
   ] },
 ];
 
-// Kaleidohedra's 3D+ list (its own order: new work first, DICTO 2026-10-08).
-const K_LATTICES_3D = [
+// ---- DICTO by dimension (DICTO 2026-10-09, PLAN-DICTO-DIMENSIONS.md) ----
+// DICTO opens on the dimensions; inside one, every app's entries are listed together, grouped by
+// kind and tagged with their app, so you never land in one app with little choice. Choosing an entry
+// enters that app's space. Worlds Kaleidohedra and Rhombiverse share are listed once, in
+// Kaleidohedra's; each app's lattices are listed once per app.
+const SHARED_WORLDS = ['roofFold', 'sunstar', 'stellaJewel', 'shells', 'golden'];
+const K_WORLDS = [
   { key: 'roofFold', label: 'Euclid–Kepler–Pacioli Cell Network', pieces: [{ label: 'Euclid–Kepler–Pacioli Cell Network', action: 'tool:roofFoldWorld' }] },
   { key: 'studies', label: 'Studies', pieces: [{ label: 'Studies', action: 'tool:studiesWorld' }] },
-  { key: 'stellaJewel', label: 'Stella–Jewel Lattice', pieces: [{ label: 'Stella–Jewel Lattice', action: 'tool:stellaJewelWorld' }] },
-  { key: 'sunstar', label: 'Sunstar Lattice', pieces: [{ label: 'Sunstar Lattice', action: 'tool:sunstarWorld' }] },
-  ...LATTICES_3D.filter((l) => ['fcc', 'dictofcc', 'rdDual', 'bcc', 'bccGaps', 'ed'].includes(l.key)),
-  { key: 'hex', label: 'Hexagonal', pieces: [{ label: 'Hex Prism', action: 'tool:pieceType:hexprism' }] },
-  ...LATTICES_3D.filter((l) => ['rhombohedral', 'pyrochlore', 'shells', 'golden'].includes(l.key)),
+  ...['stellaJewel', 'sunstar', 'shells', 'golden'].map((k) => LATTICES_3D.find((l) => l.key === k)),
   { key: 'targets', label: 'Targets', pieces: [{ label: 'Targets', action: 'tool:targetsWorld' }] },
 ];
-
-// Each app's menu in the DICTO wizard (DICTO 2026-10-08: one wizard, the app you entered by first,
-// the other two a button away). dims: the dimension screen; lattices3D / families2D: what 3D+ and
-// 2D+ list. Polyhedraverse runs inside from KRP step D; until then its button opens its site.
-const APP_MENUS = {
-  rhombiverse: { dims: DIMENSIONS, lattices3D: LATTICES_3D, families2D: LATTICE_FAMILIES_2D },
-  kaleidohedra: {
-    dims: [
-      { id: '2D', label: dimensionLabel('2D'), preview: () => netsCrossEdges() },
-      { id: '3D', label: dimensionLabel('3D'), previewAction: 'tool:pieceType:rd' },
-    ],
-    lattices3D: K_LATTICES_3D,
-    families2D: LATTICE_FAMILIES_2D.filter((f) => f.id === 'nets'),
-  },
-};
-// Polyhedraverse's families in DICTO (step D2, DICTO 2026-10-09): DICTO's new work first, the
-// classical families after, Miscellaneous last; 4D Polytopes waits for D5.
+const K_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key))
+  .map((l) => (l.key === 'hex' ? { ...l, pieces: l.pieces.filter((pc) => pc.action === 'tool:pieceType:hexprism') } : l));
+const R_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key));
+// Polyhedraverse's families (step D2): DICTO's new work first, the classical families after,
+// Miscellaneous last; 4D Polytopes waits for D5.
 const POLY_FAMILIES = ['SPACE_FILLING_PAIRS', 'STELLATIONS', 'PARALLELOHEDRA', 'BRIDGES_3D', 'APERIODIC', 'PLATONIC', 'ARCHIMEDEAN', 'CATALAN', 'JOHNSON', 'DELTAHEDRA', 'PRISMS', 'ANTIPRISMS', 'MISCELLANEOUS'];
-APP_MENUS.polyhedraverse = {
-  dims: [{ id: '3D', label: dimensionLabel('3D'), preview: () => polyShapeEdges('DODECAHEDRON') }],
-};
 const APP_ORDER = ['kaleidohedra', 'rhombiverse', 'polyhedraverse'];
+
+// Every entry of a dimension: { app, kind, ... }. kind: 'lattice' and 'world' (a lattice section with
+// its pieces), 'family' (a 1D/2D world or tile row), 'shapes' (a Polyhedraverse family).
+function dimensionEntries(dim) {
+  const R = 'rhombiverse', K = 'kaleidohedra', P = 'polyhedraverse';
+  if (dim === '1D') return FAMILIES_1D.map((fam) => ({ app: R, kind: 'family', fam }));
+  if (dim === '2D') return LATTICE_FAMILIES_2D.map((fam) => ({ app: fam.id === 'nets' ? K : R, kind: 'family', fam }));
+  if (dim === '3D') return [
+    ...K_LATTICES.map((lat) => ({ app: K, kind: 'lattice', lat })),
+    ...R_LATTICES.map((lat) => ({ app: R, kind: 'lattice', lat })),
+    ...K_WORLDS.map((lat) => ({ app: K, kind: 'world', lat })),
+    ...POLY_FAMILIES.filter((key) => familyIds(key).length).map((key) => ({ app: P, kind: 'shapes', key })),
+  ];
+  if (dim === '4D') return LATTICES_4D.map((lat) => ({ app: R, kind: 'lattice', lat }));
+  return [{ app: R, kind: 'catalogue' }]; // 5D, 6D
+}
+const appsOf = (dim) => APP_ORDER.filter((a) => dimensionEntries(dim).some((e) => e.app === a));
+// The kinds inside an app's block, new work first.
+const KINDS = [['world', 'wiz.kind.worlds'], ['lattice', 'wiz.kind.lattices'], ['shapes', 'wiz.kind.shapes'], ['family', 'wiz.kind.worlds']];
 
 export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
   injectCssOnce();
 
-  // Rotating previews (wireframe-preview.js): each rendered screen
-  // registers its canvases' edge sources here, mounts them after its
-  // innerHTML lands, and every screen change / close disposes them so
-  // the shared animation loop only ever ticks canvases actually shown.
+  // Rotating previews (wireframe-preview.js): each rendered screen registers its canvases' edge
+  // sources here; a preview turns only while its row is on screen (the 3D+ list is long).
   let previewSources = [];
   let previewDisposers = [];
   function previewSlot(getEdges) {
@@ -482,9 +493,17 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     previewSources = [];
   }
   function mountPreviews() {
-    bodyEl.querySelectorAll('canvas[data-preview]').forEach((canvas) => {
-      previewDisposers.push(mountWireframePreview(canvas, previewSources[Number(canvas.dataset.preview)](), 40));
-    });
+    const root = overlay.querySelector('.dim-wizard-card');
+    const live = new Map();
+    const io = new IntersectionObserver((entries) => {
+      for (const en of entries) {
+        const c = en.target;
+        if (en.isIntersecting && !live.has(c)) live.set(c, mountWireframePreview(c, previewSources[Number(c.dataset.preview)](), 40));
+        else if (!en.isIntersecting && live.has(c)) { live.get(c)(); live.delete(c); }
+      }
+    }, { root, rootMargin: '120px' });
+    bodyEl.querySelectorAll('canvas[data-preview]').forEach((c) => io.observe(c));
+    previewDisposers.push(() => { io.disconnect(); live.forEach((d) => d()); live.clear(); });
   }
 
   const overlay = document.createElement('div');
@@ -492,134 +511,139 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
   overlay.innerHTML = `
     <div class="dim-wizard-card">
       <div class="dim-wizard-header"><span class="dim-wizard-title"></span><button type="button" class="dim-wizard-close">✕</button></div>
-      <div class="dicto-apps-line"></div>
       <div class="dicto-apps"></div>
-      <div class="dicto-shown"></div>
       <div class="dim-wizard-body"></div>
     </div>`;
   document.body.appendChild(overlay);
   const bodyEl = overlay.querySelector('.dim-wizard-body');
   const titleEl = overlay.querySelector('.dim-wizard-title');
 
-  // ---- DICTO: the app being browsed, its colours, the other two apps' buttons ----
-  let shown = activeSite();
-  const menu = () => APP_MENUS[shown];
+  // ---- the door, the filter, the colours ----
+  // The door (the address you came in by) sets the colours and puts its own app's entries first; the
+  // filter, off by default, shows one app's entries only (and wears its colours).
+  let filter = null;
+  let current = showDimensions; // the screen shown, redrawn when the filter changes
   const wordmark = (site) => { const [a, b] = SITES[site].wordmark; return `${a}<span>${b}</span>`; };
+  const appStyle = (a) => { const th = themeOf(a); return `--app: ${th.strong}; --app-rgb: ${th.pieceRgb}; --app-pale: ${th.pale}`; };
+  // An app's block wears its colours: rows, outlines and turning previews (wireframe-preview.js reads them).
+  const blockStyle = (a) => { const th = themeOf(a); return `--pale: ${th.pale}; --accent: ${th.accent}; --accent-rgb: ${th.pieceRgb}; --accent-strong: ${th.strong}`; };
+  const tag = (a) => `<span class="dicto-tag" style="${appStyle(a)}">${SITES[a].name}</span>`;
+  const doorFirst = (list) => [...list].sort((x, y) => (x.app === SITE ? 0 : 1) - (y.app === SITE ? 0 : 1));
+  const shownEntries = (dim) => doorFirst(dimensionEntries(dim).filter((e) => !filter || e.app === filter));
   function paintApps() {
-    // The wizard wears the browsed app's colours (only here, until you choose something).
-    const th = themeOf(shown);
+    const th = themeOf(filter ?? SITE);
     for (const [k, v] of [['--pale', th.pale], ['--accent', th.accent], ['--accent-rgb', th.accentRgb], ['--accent-strong', th.strong]]) overlay.style.setProperty(k, v);
-    overlay.querySelector('.dicto-apps-line').textContent = APP_ORDER.map((a) => SITES[a].name).join(' · ');
-    overlay.querySelector('.dicto-apps').innerHTML = APP_ORDER.filter((a) => a !== shown).map((a) => {
-      const t2 = themeOf(a);
-      return `<button type="button" class="dicto-app" data-app="${a}" style="--app: ${t2.strong}; --app-rgb: ${t2.pieceRgb}; --app-pale: ${t2.pale}">${wordmark(a)}</button>`;
-    }).join('');
-    overlay.querySelector('.dicto-shown').innerHTML = wordmark(shown);
-    overlay.querySelectorAll('.dicto-app').forEach((b) => b.addEventListener('click', () => {
-      const app = b.dataset.app;
-      // Not inside yet (Polyhedraverse until step D): its site, straight into its shape browser.
-      if (!SITES[app].inside) { location.href = `${SITES[app].url}/?from=dicto`; return; }
-      shown = app;
+    overlay.dataset.door = SITE;
+    const L = getSettings().language;
+    const box = overlay.querySelector('.dicto-apps');
+    box.setAttribute('aria-label', t('wiz.filter', L));
+    box.innerHTML = APP_ORDER.map((a) => `<button type="button" class="dicto-app" data-app="${a}" aria-pressed="${filter === a}" style="${appStyle(a)}">${wordmark(a)}</button>`).join('');
+    box.querySelectorAll('.dicto-app').forEach((b) => b.addEventListener('click', () => {
+      filter = filter === b.dataset.app ? null : b.dataset.app;
       paintApps();
-      showDimensions();
+      current();
     }));
   }
-  // Choosing something enters that app's space (its colours, its tools), then opens it.
-  const choose = (dim, action) => { close(); setActiveSite(shown); onSelectFamily(dim, action); };
+  // Choosing an entry enters its app's space (its colours, its tools), then opens it.
+  const choose = (dim, action, app) => { close(); setActiveSite(app); onSelectFamily(dim, action); };
+  const back = (L) => `<button type="button" class="dim-wizard-back">${t('wiz.back', L)}</button>`;
 
+  // ---- DICTO: the dimensions ----
   function showDimensions() {
+    current = showDimensions;
     resetPreviews();
     const L = getSettings().language;
     titleEl.textContent = 'DICTO';
     let grid = '';
-    for (const dim of menu().dims) {
+    for (const dim of DIMENSIONS) {
+      const apps = appsOf(dim.id).filter((a) => !filter || a === filter);
+      if (!apps.length) continue; // filtered to an app with nothing here
+      const desc = filter ? tFor(filter, `wiz.dim.${dim.id}`, L) : t(['2D', '3D'].includes(dim.id) ? `wiz.dimAll.${dim.id}` : `wiz.dim.${dim.id}`, L);
       grid += `
         <button type="button" class="dim-wizard-card-btn" data-dim="${dim.id}">
           ${previewSlot(dim.previewAction ? () => pieceEdges(dim.previewAction) : dim.preview)}
           <span class="dim-wizard-row-text">
             <span class="dim-wizard-label">${dim.label}</span>
-            <span class="dim-wizard-desc">${tFor(shown, `wiz.dim.${dim.id}`, L)}</span>
+            <span class="dim-wizard-desc">${desc}</span>
+            <span class="dicto-tags">${doorFirst(apps.map((app) => ({ app }))).map((e) => tag(e.app)).join('')}</span>
           </span>
         </button>`;
     }
     bodyEl.innerHTML = `<div class="dim-wizard-sub">${t('wiz.sub', L)}</div><div class="dim-wizard-grid">${grid}</div>`;
     mountPreviews();
-    bodyEl.querySelectorAll('.dim-wizard-card-btn').forEach((el) => {
-      el.addEventListener('click', () => {
-        const dim = el.dataset.dim;
-        if (dim === '3D' && shown === 'polyhedraverse') showPolyFamilies();
-        else if (dim === '3D') showLattice3D();
-        // A dimension with one world only goes straight in (Kaleidohedra's 2D+: Nets).
-        else if (dim === '2D' && menu().families2D.length === 1) choose('2D', menu().families2D[0].action);
-        else if (dim === '2D') showLattice2D();
-        else if (dim === '1D') showLattice1D();
-        else if (dim === '4D') showLattice4D();
-        else if (dim === '5D' || dim === '6D') showCatalogue(dim);
-      });
-    });
+    bodyEl.querySelectorAll('.dim-wizard-card-btn').forEach((el) => el.addEventListener('click', () => showDimension(el.dataset.dim)));
   }
 
-  // A dimension's card screen (1D, 2D): one card per world or tile,
-  // descriptions 'wiz.<1d|2d>.<id>'.
-  const showLattice1D = () => showFamilies('1D', FAMILIES_1D);
-  const showLattice2D = () => showFamilies('2D', menu().families2D);
-  function showFamilies(dim, families) {
+  // ---- one dimension: every app's entries ----
+  function showDimension(dim) {
+    if (dim === '5D' || dim === '6D') { showCatalogue(dim); return; }
+    current = () => showDimension(dim);
     resetPreviews();
     const L = getSettings().language;
     const d = dim.toLowerCase();
-    let grid = '';
-    for (const fam of families) {
-      grid += `
-        <button type="button" class="dim-wizard-card-btn" data-action="${fam.action}">
-          ${previewSlot(fam.preview)}
+    // No repeats (DICTO 2026-10-09): a piece already listed by an earlier app (the door's first) is
+    // left out of the later ones, and a lattice left with no pieces goes too.
+    const seen = new Set();
+    const entries = shownEntries(dim).map((e) => {
+      if (!e.lat) return e;
+      const pieces = e.lat.pieces.filter((pc) => !seen.has(pc.action));
+      pieces.forEach((pc) => seen.add(pc.action));
+      return pieces.length ? { ...e, lat: { ...e.lat, pieces } } : null;
+    }).filter(Boolean);
+    const row = (e) => {
+      if (e.kind === 'family') return `
+        <button type="button" class="dim-wizard-card-btn" data-action="${e.fam.action}" data-app="${e.app}">
+          ${previewSlot(e.fam.preview)}
           <span class="dim-wizard-row-text">
-            <span class="dim-wizard-label">${fam.label}</span>
-            <span class="dim-wizard-desc">${t(`wiz.${d}.${fam.id}`, L)}</span>
+            <span class="dim-wizard-label">${e.fam.label}</span>
+            <span class="dim-wizard-desc">${tFor(e.app, `wiz.${d}.${e.fam.id}`, L)}</span>
           </span>
         </button>`;
-    }
-    bodyEl.innerHTML = `
-      <button type="button" class="dim-wizard-back">${t('wiz.back', L)}</button>
-      <div class="dim-wizard-sub">${t(`wiz.${d}.sub`, L)}</div>
-      <div class="dim-wizard-grid">${grid}</div>`;
-    mountPreviews();
-    bodyEl.querySelector('.dim-wizard-back').addEventListener('click', showDimensions);
-    bodyEl.querySelectorAll('.dim-wizard-card-btn[data-action]').forEach((el) => {
-      el.addEventListener('click', () => choose(dim, el.dataset.action));
-    });
-  }
-
-  function showLatticeSections(dimension, lattices, edgesFor) {
-    resetPreviews();
-    const L = getSettings().language;
-    const d = dimension.toLowerCase();
-    let grid = '';
-    for (const lat of lattices) {
-      grid += `
-        <div class="dim-wizard-section">
-          <span class="dim-wizard-label">${lat.label}</span>
-          <span class="dim-wizard-desc">${t(`wiz.${d}.${lat.key}`, L)}</span>
-        </div>`;
-      for (const piece of lat.pieces) {
-        grid += `
-        <button type="button" class="dim-wizard-card-btn dim-wizard-piece" data-action="${piece.action}">
-          ${previewSlot(() => edgesFor(piece))}
+      if (e.kind === 'shapes') {
+        const ids = familyIds(e.key);
+        return `
+        <button type="button" class="dim-wizard-card-btn" data-family="${e.key}">
+          ${previewSlot(() => polyShapeEdges(ids[0]))}
           <span class="dim-wizard-row-text">
-            <span class="dim-wizard-label">${piece.label}</span>
+            <span class="dim-wizard-label">${FAMILY_META[e.key].label}</span>
+            <span class="dim-wizard-desc">${tn('wiz.poly.count', L, ids.length)}</span>
           </span>
         </button>`;
       }
+      // A lattice or world: its heading, then its pieces.
+      return `
+        <div class="dim-wizard-section">
+          <span class="dim-wizard-label">${e.lat.label}</span>
+          <span class="dim-wizard-desc">${tFor(e.app, `wiz.${d}.${e.lat.key}`, L)}</span>
+        </div>${e.lat.pieces.map((piece) => `
+        <button type="button" class="dim-wizard-card-btn dim-wizard-piece" data-action="${piece.action}" data-app="${e.app}">
+          ${previewSlot(() => (piece.preview ? piece.preview() : pieceEdges(piece.action)))}
+          <span class="dim-wizard-row-text"><span class="dim-wizard-label">${piece.label}</span></span>
+        </button>`).join('')}`;
+    };
+    // One block per app, in its own colours (DICTO 2026-10-09: "divided in each app's colours"), the
+    // door's app first; inside a block, its kinds (new work first).
+    let grid = '';
+    for (const app of [...new Set(entries.map((e) => e.app))]) {
+      const mine = entries.filter((e) => e.app === app);
+      const kinds = KINDS.filter(([kind]) => mine.some((e) => e.kind === kind));
+      grid += `<div class="dicto-block" style="${blockStyle(app)}"><div class="dicto-block-name">${wordmark(app)}</div>`;
+      for (const [kind, label] of kinds) {
+        if (kinds.length > 1) grid += `<div class="dim-wizard-kind">${t(label, L)}</div>`;
+        grid += mine.filter((e) => e.kind === kind).map(row).join('');
+      }
+      grid += '</div>';
     }
     bodyEl.innerHTML = `
-      <button type="button" class="dim-wizard-back">${t('wiz.back', L)}</button>
+      ${back(L)}
       <div class="dim-wizard-sub">${t(`wiz.${d}.sub`, L)}</div>
       <div class="dim-wizard-grid">${grid}</div>`;
     mountPreviews();
     bodyEl.querySelector('.dim-wizard-back').addEventListener('click', showDimensions);
-    bodyEl.querySelectorAll('.dim-wizard-card-btn[data-action]').forEach((el) => {
-      el.addEventListener('click', () => choose(dimension, el.dataset.action));
-    });
+    bodyEl.querySelectorAll('[data-action]').forEach((el) => el.addEventListener('click', () => choose(dim, el.dataset.action, el.dataset.app)));
+    bodyEl.querySelectorAll('[data-family]').forEach((el) => el.addEventListener('click', () => showPolyFamily(el.dataset.family)));
   }
+
   // 5D/6D: one world each (the tiling picks every piece's shape), so the
   // screen is the catalogue: build freely, or summon an item, from the list
   // or by serial number (any tier's serial works from either screen).
@@ -627,6 +651,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
   // (each open row runs a rotating preview, too many at once for a phone).
   const openSections = new Set(['zonohedron']);
   async function showCatalogue(dim) {
+    current = () => showCatalogue(dim);
     resetPreviews();
     const L = getSettings().language;
     titleEl.textContent = t('cat.title', L, { dim });
@@ -636,7 +661,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     const mine = entries.filter((x) => x.tier === tier);
     const buildRow = `
         <button type="button" class="dim-wizard-card-btn" data-action="build">
-          ${previewSlot(APP_MENUS.rhombiverse.dims.find((x) => x.id === dim).preview)}
+          ${previewSlot(DIMENSIONS.find((x) => x.id === dim).preview)}
           <span class="dim-wizard-row-text">
             <span class="dim-wizard-label">${t('cat.buildFreely', L)}</span>
             <span class="dim-wizard-desc">${t('cat.buildFreelyDesc', L)}</span>
@@ -673,14 +698,14 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
         </button>${open ? sec.items.map(row).join('') : ''}`;
     }).join('');
     bodyEl.innerHTML = `
-      <button type="button" class="dim-wizard-back">${t('wiz.back', L)}</button>
+      ${back(L)}
       <div class="dim-wizard-sub">${t('cat.sub', L, { dim })}</div>
       <div class="dim-wizard-serial-row">
         <input type="number" inputmode="numeric" min="1" placeholder="${t('cat.serial', L)}" aria-label="${t('cat.serial', L)}">
         <button type="button" class="dim-wizard-serial-go">${t('cat.summon', L)}</button>
       </div>
       <div class="dim-wizard-serial-msg" aria-live="polite"></div>
-      <div class="dim-wizard-grid">
+      <div class="dim-wizard-grid dicto-block" style="${blockStyle('rhombiverse')}">
         ${buildRow}
         ${rows}
       </div>`;
@@ -695,7 +720,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
       });
     });
     bodyEl.querySelectorAll('.dim-wizard-card-btn[data-action]').forEach((el) => {
-      el.addEventListener('click', () => choose(dim, el.dataset.action === 'build' ? null : el.dataset.action));
+      el.addEventListener('click', () => choose(dim, el.dataset.action === 'build' ? null : el.dataset.action, 'rhombiverse'));
     });
     const input = bodyEl.querySelector('.dim-wizard-serial-row input');
     const msg = bodyEl.querySelector('.dim-wizard-serial-msg');
@@ -703,52 +728,15 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
       const serial = Number(input.value);
       const entry = Number.isInteger(serial) ? findBySerial(entries, serial) : null;
       if (!entry) { msg.textContent = input.value ? t('cat.noSerial', L, { serial: input.value }) : t('cat.typeSerial', L); return; }
-      choose(entry.tier.toUpperCase(), `summon:${entry.serial}`);
+      choose(entry.tier.toUpperCase(), `summon:${entry.serial}`, 'rhombiverse');
     };
     bodyEl.querySelector('.dim-wizard-serial-go').addEventListener('click', go);
     input.addEventListener('keydown', (e) => { if (e.key === 'Enter') go(); });
   }
 
-  // ---- Polyhedraverse: families, then a family's shapes (step D2) ----
-  // Long lists (Johnson's 92): a preview turns only while its card is on screen.
-  function mountPreviewsWhenSeen() {
-    const root = overlay.querySelector('.dim-wizard-card');
-    const live = new Map();
-    const io = new IntersectionObserver((entries) => {
-      for (const en of entries) {
-        const c = en.target;
-        if (en.isIntersecting && !live.has(c)) live.set(c, mountWireframePreview(c, previewSources[Number(c.dataset.preview)](), 40));
-        else if (!en.isIntersecting && live.has(c)) { live.get(c)(); live.delete(c); }
-      }
-    }, { root, rootMargin: '120px' });
-    bodyEl.querySelectorAll('canvas[data-preview]').forEach((c) => io.observe(c));
-    previewDisposers.push(() => { io.disconnect(); live.forEach((d) => d()); live.clear(); });
-  }
-  function showPolyFamilies() {
-    resetPreviews();
-    const L = getSettings().language;
-    let grid = '';
-    for (const key of POLY_FAMILIES) {
-      const ids = familyIds(key);
-      if (!ids.length) continue;
-      grid += `
-        <button type="button" class="dim-wizard-card-btn" data-family="${key}">
-          ${previewSlot(() => polyShapeEdges(ids[0]))}
-          <span class="dim-wizard-row-text">
-            <span class="dim-wizard-label">${FAMILY_META[key].label}</span>
-            <span class="dim-wizard-desc">${tn('wiz.poly.count', L, ids.length)}</span>
-          </span>
-        </button>`;
-    }
-    bodyEl.innerHTML = `
-      <button type="button" class="dim-wizard-back">${t('wiz.back', L)}</button>
-      <div class="dim-wizard-sub">${t('wiz.poly.families', L)}</div>
-      <div class="dim-wizard-grid">${grid}</div>`;
-    mountPreviewsWhenSeen();
-    bodyEl.querySelector('.dim-wizard-back').addEventListener('click', showDimensions);
-    bodyEl.querySelectorAll('[data-family]').forEach((el) => el.addEventListener('click', () => showPolyFamily(el.dataset.family)));
-  }
+  // ---- a Polyhedraverse family's shapes (from 3D+'s Shapes) ----
   function showPolyFamily(key) {
+    current = () => showPolyFamily(key);
     resetPreviews();
     const L = getSettings().language;
     let grid = '';
@@ -760,19 +748,12 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
         </button>`;
     }
     bodyEl.innerHTML = `
-      <button type="button" class="dim-wizard-back">${t('wiz.back', L)}</button>
+      ${back(L)}
       <div class="dim-wizard-sub"><b>${FAMILY_META[key].label}</b> · ${t('wiz.poly.shapes', L)}</div>
-      <div class="dim-wizard-grid">${grid}</div>`;
-    mountPreviewsWhenSeen();
-    bodyEl.querySelector('.dim-wizard-back').addEventListener('click', showPolyFamilies);
-    bodyEl.querySelectorAll('[data-action]').forEach((el) => el.addEventListener('click', () => choose('3D', el.dataset.action)));
-  }
-
-  function showLattice3D() {
-    showLatticeSections('3D', menu().lattices3D, (piece) => pieceEdges(piece.action));
-  }
-  function showLattice4D() {
-    showLatticeSections('4D', LATTICES_4D, (piece) => piece.preview());
+      <div class="dim-wizard-grid dicto-block" style="${blockStyle('polyhedraverse')}">${grid}</div>`;
+    mountPreviews();
+    bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => showDimension('3D'));
+    bodyEl.querySelectorAll('[data-action]').forEach((el) => el.addEventListener('click', () => choose('3D', el.dataset.action, 'polyhedraverse')));
   }
 
   overlay.querySelector('.dim-wizard-close').addEventListener('click', () => close());
@@ -783,39 +764,24 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     if (e.key === 'Escape' && overlay.classList.contains('open')) close();
   });
 
+  function openOn(screen) {
+    filter = null;
+    paintApps();
+    screen();
+    overlay.classList.add('open');
+  }
   function open() {
     countDicto();
-    shown = activeSite(); // opens on the app whose space you're in
-    paintApps();
-    showDimensions(); // always reset to the top-level dimension list on (re)open
-    overlay.classList.add('open');
+    openOn(showDimensions); // always the dimensions on (re)open
   }
   function close() {
     resetPreviews();
     overlay.classList.remove('open');
   }
-
   // Straight to a 5D/6D catalogue (the in-world Catalogue button).
-  function openCatalogue(dim) {
-    shown = activeSite();
-    paintApps();
-    overlay.classList.add('open');
-    showCatalogue(dim);
-  }
-  // Straight to one dimension's screen (the welcome screen's 2D ... 6D).
-  function openDimension(dim) {
-    shown = activeSite();
-    paintApps();
-    overlay.classList.add('open');
-    titleEl.textContent = t('wiz.title', getSettings().language); // the lattice screens keep the list's title
-    if (dim === '1D') showLattice1D();
-    else if (dim === '2D') showLattice2D();
-    else if (dim === '3D' && shown === 'polyhedraverse') showPolyFamilies();
-    else if (dim === '3D') showLattice3D();
-    else if (dim === '4D') showLattice4D();
-    else if (dim === '5D' || dim === '6D') showCatalogue(dim);
-    else showDimensions();
-  }
+  const openCatalogue = (dim) => openOn(() => showCatalogue(dim));
+  // Straight to one dimension's screen (from inside a world).
+  const openDimension = (dim) => openOn(() => (DIMENSIONS.some((x) => x.id === dim) ? showDimension(dim) : showDimensions()));
 
   return { open, openCatalogue, openDimension, close, get isOpen() { return overlay.classList.contains('open'); } };
 }

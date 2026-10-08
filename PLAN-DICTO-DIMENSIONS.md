@@ -43,7 +43,8 @@ dimension choice. Reason before code."
 
 - **Principle: never land in one app with little choice.** The dimension screen always shows every
   app's entries; nothing hides another app's work unless you ask it to.
-- **3D lattices: once per app.** Kaleidohedra's (sheared) and Rhombiverse's lattices are both listed,
-  each tagged with its app.
+- **No repeats** (DICTO, later the same day, replacing "once per app"): each dimension is divided into
+  app blocks in their own colours, the door's app first; a lattice or piece already listed by an
+  earlier block is not listed again.
 - **App buttons stay, as a filter**: optional, to show one app's entries only; off by default.
 - **2D+: one list** (Nets, the tilings, Kaleidoscope).

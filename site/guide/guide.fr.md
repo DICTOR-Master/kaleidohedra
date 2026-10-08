@@ -12,7 +12,7 @@ Les noms des boutons sont écrits tels qu'ils apparaissent dans l'application (c
 
 ### Choisir une dimension
 
-Après **ENTER**, **DICTO** s'ouvre sur l'application par laquelle vous êtes entré, avec ses dimensions : de **1D+** à **6D** dans Rhombiverse, **2D+** et **3D+** dans Kaleidohedra. Touchez une dimension, puis un réseau ou un monde, chacun montré en fil de fer qui tourne. Les deux autres applications sont les grands boutons en haut : touchez-en une pour voir sa liste. **DICTO** (en haut à gauche), **Menu** (en bas à gauche), Tab ou Espace le rouvrent à tout moment.
+Après **ENTER**, **DICTO** s'ouvre sur les dimensions, de **1D+** à **6D**, chacune avec les applis qu'elle contient. Touchez-en une : son contenu s'affiche en blocs, un par appli dans les couleurs de cette appli, d'abord l'appli par laquelle vous êtes entré, et rien n'apparaît deux fois. Touchez un réseau, un monde ou une forme, chacun montré en fil de fer qui tourne, pour entrer dans l'espace de cette appli. Les trois boutons d'applis en haut n'affichent qu'une appli ; touchez-le de nouveau pour tout afficher. **DICTO** (en haut à gauche), **Menu** (en bas à gauche), Tab ou Espace le rouvrent à tout moment.
 
 ### Poser votre première pièce
 
@@ -78,7 +78,7 @@ Paramètres propose aussi une **Vue en coupe** : choisissez un axe, faites gliss
 
 ## Mondes communs aux deux applications
 
-Ces mondes 3D+ se trouvent dans les deux applications, dans la liste 3D+ de DICTO.
+Ces mondes 3D+ figurent une seule fois dans le 3D+ de DICTO, dans le bloc de Kaleidohedra, et s'ouvrent dans l'espace de Kaleidohedra.
 
 ### Euclid–Kepler–Pacioli Cell Network (EKP)
 
@@ -246,7 +246,7 @@ RHOMBIS est un puzzle 3D fait des mêmes pièces : remplissez la forme cible ave
 
 # Polyhedraverse {#polyhedraverse}
 
-Polyhedraverse est la galerie de portraits : chaque forme de ses familles, une à une, de près. Faites-la tourner, comparez-la, assemblez des formes face contre face ou sommet contre sommet, et imprimez le patron de n'importe quelle forme pour le plier. Son espace est désormais dans DICTO : choisissez 3D, une famille et une forme, puis touchez le contour vert pour la poser. La construction sur les faces et les sommets, le navigateur de formes et la 4D arrivent pas à pas ; d'ici là, le site complet reste à [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app). Son propre guide : [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
+Polyhedraverse est la galerie de portraits : toutes les formes par famille, une à une, de près. Faites-la tourner, comparez-la, assemblez des formes face contre face ou sommet contre sommet, et imprimez le patron de n'importe quelle forme pour le plier. Son espace est désormais dans DICTO : choisissez **3D+**, puis une famille dans le bloc vert de Polyhedraverse, puis une forme, et touchez le contour vert pour la poser. L'assemblage des formes, le navigateur de formes et la 4D arrivent étape par étape ; d'ici là, une note dans son espace renvoie au site complet [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app), où ils fonctionnent. Son propre guide : [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
 
 ---
 
@@ -256,7 +256,7 @@ Polyhedraverse est la galerie de portraits : chaque forme de ses familles, une �
 
 | Commande | Ce qu'elle fait |
 |---|---|
-| DICTO (en haut à gauche) | L'assistant : l'appli par laquelle vous êtes entré, les deux autres (Kaleidohedra, Rhombiverse, Polyhedraverse) à un grand bouton près. Le grand libellé à côté indique la dimension où vous êtes |
+| DICTO (en haut à gauche) | L'assistant : les dimensions, puis tout ce que chacune contient, en blocs par appli. La grande étiquette à côté indique la dimension où vous êtes |
 | Shape (en bas à gauche) | La pièce que vous posez. Touchez pour la changer |
 | Couleur (en bas à gauche) | Couleur de construction. Touchez pour la changer |
 | Lattice View | Alterne entre Off et une vue pour chaque pièce |
@@ -285,7 +285,7 @@ Une colonne de boutons dans le coin supérieur droit, de la couleur de l'appli d
 
 ## Assistant DICTO
 
-**DICTO** (en haut à gauche) ouvre l'assistant en plein écran. Il s'ouvre sur l'appli par laquelle vous êtes entré, avec ses dimensions et ses mondes dans sa couleur. Les deux autres applis sont les deux grands boutons en haut : touchez-en un pour parcourir sa liste, dans sa couleur. Choisir quoi que ce soit vous fait entrer dans l'espace de cette appli : ses couleurs et ses outils (le Shear de Kaleidohedra n'apparaît que là). Polyhedraverse range ses formes par familles sous 3D.
+**DICTO** (en haut à gauche) ouvre l'assistant en plein écran, aux couleurs de l'appli par laquelle vous êtes entré. Il commence par les dimensions, de **1D+** à **6D**, chacune avec les applis qu'elle contient. Dans une dimension, chaque appli a son propre bloc à ses couleurs, d'abord l'appli par laquelle vous êtes entré, et ce qui figure déjà n'est pas répété. Choisir quoi que ce soit vous fait entrer dans l'espace de cette appli : ses couleurs et ses outils (le cisaillement de Kaleidohedra n'apparaît que là). Les trois boutons d'applis en haut sont un filtre : touchez-en un pour n'afficher que cette appli, touchez-le de nouveau pour tout afficher.
 
 ## Paramètres
 

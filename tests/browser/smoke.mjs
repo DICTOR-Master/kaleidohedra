@@ -55,11 +55,24 @@ async function main() {
   const overlayDisplay = await page.$eval('#welcome-overlay', (el) => getComputedStyle(el).display);
   assert.equal(overlayDisplay, 'none', 'welcome overlay should hide after Enter');
 
-  // The DICTO wizard opens on every load (the wheels are gone, 2026-10-08), on this door's app;
-  // Escape closes it, leaving the default 3D+ world.
-  const wizard = await page.evaluate(() => ({ open: document.querySelector('.dim-wizard-overlay')?.classList.contains('open'), shown: document.querySelector('.dicto-shown')?.textContent }));
+  // The DICTO wizard opens on every load (the wheels are gone, 2026-10-08), on the dimensions, every
+  // app's entries listed (DICTO by dimension, 2026-10-09); Escape closes it, leaving the default 3D+ world.
+  const wizard = await page.evaluate(() => ({
+    open: document.querySelector('.dim-wizard-overlay')?.classList.contains('open'),
+    door: document.querySelector('.dim-wizard-overlay')?.dataset.door,
+    dims: [...document.querySelectorAll('.dim-wizard-card-btn[data-dim]')].map((b) => b.dataset.dim).join(' '),
+  }));
   assert.ok(wizard.open, 'the DICTO wizard should open on load');
-  assert.equal(wizard.shown, DOOR.toUpperCase(), `the wizard should open on ${DOOR}`);
+  assert.equal(wizard.door, DOOR, `the wizard should wear ${DOOR}'s colours`);
+  assert.equal(wizard.dims, '1D 2D 3D 4D 5D 6D', 'DICTO should open on all six dimensions');
+  await page.click('.dim-wizard-card-btn[data-dim="3D"]');
+  const blocks = () => page.evaluate(() => [...document.querySelectorAll('.dim-wizard-body .dicto-block-name')].map((b) => b.textContent));
+  const apps3D = await blocks();
+  assert.equal(apps3D[0], DOOR.toUpperCase(), "3D+ should start with the door's own app");
+  assert.equal([...apps3D].sort().join(' '), 'KALEIDOHEDRA POLYHEDRAVERSE RHOMBIVERSE', '3D+ should list all three apps, one block each');
+  await page.click('.dicto-app[data-app="polyhedraverse"]');
+  assert.equal((await blocks()).join(' '), 'POLYHEDRAVERSE', 'the app filter should show one app only');
+  await page.click('.dicto-app[data-app="polyhedraverse"]');
   await page.keyboard.press('Escape');
   await page.waitForTimeout(300);
 
