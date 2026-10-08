@@ -170,6 +170,10 @@ export const LATTICES_3D = [
   { key: 'stellaJewel', label: 'Stella–Jewel Lattice', pieces: [
     { label: 'Stella–Jewel Lattice', action: 'tool:stellaJewelWorld' },
   ] },
+  // Sunstar Lattice (direct request, 2026-10-08): dodecahedra and Dogstars.
+  { key: 'sunstar', label: 'Sunstar Lattice', pieces: [
+    { label: 'Sunstar Lattice', action: 'tool:sunstarWorld' },
+  ] },
   { key: 'fcc', label: 'FCC', pieces: [
     { label: 'RD', action: 'tool:pieceType:rd' },
     { label: 'Hemi RD', action: 'tool:pieceType:halfrd' },

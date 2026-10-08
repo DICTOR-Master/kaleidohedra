@@ -542,15 +542,17 @@ export function fiveFoldAxes() {
   return out;
 }
 
-// ---- The gap star (DICTO, 2026-10-08: "reverse engineer from gap") ----
+// ---- The Dogstar (DICTO, 2026-10-08: "reverse engineer from gap"; DICTO's names) ----
 // Regular dodecahedra on the even cells (the densest lattice packing of the dodecahedron) leave one
 // hole in each odd cell. The hole is exactly a partial stellation of a regular dodecahedron 1/phi^3
 // the size of the cell's, sharing its orientation: its core, all 12 first-layer pyramids, 24 of the
 // 30 second-layer wedges and the 8 great-stellated spikes that point at the cube corners (whose tips
-// are the cube corners). So dodecahedra and gap stars fill space. Built as the boundary of the hole:
+// are the cube corners). So dodecahedra and Dogstars fill space. A dodecahedron with the Dogstars
+// round it is a Sunstar, the sun with its sun dogs; together they make the Sunstar Lattice. Dogstars
+// alone share corners, four at each cube corner. Built as the boundary of the hole:
 // on each of the 12 planes bounding it, the cells of the plane (cut by the other 11) that have the
 // hole on one side and a dodecahedron on the other. Returns its faces (cube edge 2, centred).
-export function gapStarSolid() {
+export function dogstarSolid() {
   const { dodeca } = roofFoldSolids();
   const D = dodeca.faces.map((f) => { const n = unit(cross(sub(f[1], f[0]), sub(f[2], f[0]))); return { n, d: dot(n, f[0]) }; });
   const centres = [];
@@ -582,4 +584,17 @@ export function gapStarSolid() {
     }
   }
   return faces;
+}
+
+/** Is p (cell units, centred on the cell) inside the cell's regular dodecahedron? */
+export function insideDodecahedron(p) {
+  const { dodecaH } = djParts();
+  return insideAll(dodecaH, p);
+}
+const DOGSTAR_NEIGHBOURS = [[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1],
+  [1, 1, 1], [1, 1, -1], [1, -1, 1], [1, -1, -1], [-1, 1, 1], [-1, 1, -1], [-1, -1, 1], [-1, -1, -1]];
+/** Is p inside the cell's Dogstar: in its cube, and in none of the neighbouring dodecahedra? */
+export function insideDogstar(p) {
+  if (p.some((c) => Math.abs(c) > 1 + 1e-9)) return false;
+  return !DOGSTAR_NEIGHBOURS.some((d) => insideDodecahedron(p.map((c, i) => c - 2 * d[i])));
 }
