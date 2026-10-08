@@ -188,7 +188,7 @@ Then the tesseract: when the cube closes (**Open in 3D+** takes it to 3D+'s Cube
 
 A 4D panel appears at the bottom of the screen.
 
-- **Slice / Projection** switches how you see 4D. **Slice** (the default) shows the 3D cross-section at the current depth. **Projection** shows whole 4D cells as shadows; tap a shadow's face to build across it. In Projection you can also switch between **Parallel** and **Perspective**.
+- **Slice / Projection** switches how you see 4D. **Slice** (the default) shows the 3D cross-section at the current depth. **Projection** shows whole 4D cells as shadows; tap a shadow's face to build across it. In Projection, **W: flat** and **W: deep** switch how the fourth dimension is drawn (flat, or with depth); the 3D / ∥ / ISO button in the tools column sets the camera, as everywhere.
 - **The slider** does what the button above it says: **W-depth** moves the slice through the fourth dimension, and **XW**, **YW** and **ZW** turn it into the fourth dimension. It clicks into place at useful stops. The one labelled **FCC** is the ordinary 3D RD world, and the one labelled **Pyrochlore** is the 3D Pyrochlore world.
 - **Reset 4D** puts everything back to the starting position.
 - **Paint** (the brush) appears in this panel for the 24-cell, 16-cell and Hyper-pyrochlore pieces, whose attach toggle takes the bottom row's paint slot.

@@ -885,6 +885,21 @@
       text-align: center;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     }
+    /* Tablets (DICTO 2026-10-09, iPad: "top bar and right side difficult to access"): iPadOS keeps the
+       top edge and corners for Notification and Control Centre and the right edge for Slide Over, so
+       on a touch tablet the controls stand well clear of those edges. */
+    @media (pointer: coarse) and (min-width: 700px) and (min-height: 600px) {
+      #hud-tools { top: max(30px, env(safe-area-inset-top)); right: max(28px, env(safe-area-inset-right)); }
+      #about-btn { right: 28px; bottom: 20px; }
+      #changelog-btn { right: 70px; bottom: 20px; }
+      #undo-widget { right: 112px; bottom: 20px; }
+      #lab-panel { top: 72px; right: 28px; }
+      #hud-wordmark { top: 30px; left: 24px; }
+      #hud-wizard-row { top: 54px; left: 24px; }
+      #hud-1d-toggle { top: 102px; left: 24px; }
+      #lattice2d-toggle-panel { top: 30px; }
+      #world4d-info, .qc-info { top: 112px; left: 24px; }
+    }
   </style>
   <!--
     Plain ES modules + an import map -- no bundling, ever (scripts/build.mjs,

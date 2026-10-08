@@ -190,7 +190,7 @@ Después, el teseracto: al cerrarse el cubo (**Abrir en 3D+** lo lleva a la piez
 
 Aparece un panel 4D en la parte inferior de la pantalla.
 
-- **Corte / Proyección** cambia cómo ves el 4D. **Corte** (por defecto) muestra la sección 3D a la profundidad actual. **Proyección** muestra celdas 4D completas como sombras; toca una cara de una sombra para construir a través de ella. En Proyección también puedes alternar entre **Paralela** y **Perspectiva**.
+- **Corte / Proyección** cambia cómo ves el 4D. **Corte** (por defecto) muestra la sección 3D a la profundidad actual. **Proyección** muestra celdas 4D completas como sombras; toca una cara de una sombra para construir a través de ella. En Proyección, **W: plano** y **W: profundo** cambian cómo se dibuja la cuarta dimensión (plana o con profundidad); el botón 3D / ∥ / ISO de la columna de herramientas ajusta la cámara, como en todas partes.
 - **El deslizador** hace lo que indica el botón que tiene encima: **Profundidad W** mueve el corte a través de la cuarta dimensión, y **XW**, **YW** y **ZW** lo giran hacia la cuarta dimensión. Se ajusta en posiciones útiles. La marcada **FCC** es el mundo RD 3D normal, y la marcada **Pyrochlore** es el mundo Pyrochlore 3D.
 - **Restablecer 4D** devuelve todo a la posición inicial.
 - **Paint** (el pincel) aparece en este panel con las piezas 24-celda, 16-celda e hiperpirocloro, cuyo cambio de unión ocupa el hueco de pintura de la fila inferior.

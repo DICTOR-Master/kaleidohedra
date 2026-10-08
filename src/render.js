@@ -291,6 +291,9 @@ const PROJECTIONS = ['perspective', 'orthographic', 'isometric'];
 const PARALLEL_FOV = 1;
 const PROJECTION_MARK = { perspective: '3D', orthographic: '∥', isometric: 'ISO' };
 let projection = 'perspective';
+// Remembered on this device, one setting for every app and dimension (DICTO 2026-10-09).
+const PROJECTION_KEY = storageKey('projection');
+const ISO_DIR = new THREE.Vector3(1, 1, 1).normalize();
 const NEAR0 = camera.near, FAR0 = camera.far;
 const halfTan = (fov) => Math.tan(THREE.MathUtils.degToRad(fov) / 2);
 function perspectiveEquivalentPosition() {
@@ -318,6 +321,7 @@ function setProjection(mode) {
   fitDepthRange();
   controls.update();
   renderProjectionButton();
+  try { localStorage.setItem(PROJECTION_KEY, mode); } catch { /* best-effort */ }
 }
 function renderProjectionButton() {
   const b = document.getElementById('projection-toggle');
@@ -331,8 +335,18 @@ function renderProjectionButton() {
 document.getElementById('projection-toggle')?.addEventListener('click', () => {
   setProjection(PROJECTIONS[(PROJECTIONS.indexOf(projection) + 1) % PROJECTIONS.length]);
 });
-controls.addEventListener('change', () => { if (projection !== 'perspective') fitDepthRange(); });
+controls.addEventListener('change', () => {
+  if (projection === 'perspective') return;
+  fitDepthRange();
+  // ISO is a direction: once you turn away from it the view is simply parallel, so the button says ∥.
+  if (projection === 'isometric' && camera.position.clone().sub(controls.target).normalize().dot(ISO_DIR) < Math.cos(THREE.MathUtils.degToRad(0.5))) {
+    projection = 'orthographic';
+    renderProjectionButton();
+    try { localStorage.setItem(PROJECTION_KEY, projection); } catch { /* best-effort */ }
+  }
+});
 renderProjectionButton();
+try { const saved = localStorage.getItem(PROJECTION_KEY); if (PROJECTIONS.includes(saved) && saved !== 'perspective') setProjection(saved); } catch { /* storage blocked */ }
 controls.addEventListener('end', persistCameraState);
 window.addEventListener('beforeunload', persistCameraState);
 setInterval(persistCameraState, 3000);

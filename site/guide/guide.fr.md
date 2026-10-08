@@ -190,7 +190,7 @@ Puis le tesseract : quand le cube se ferme (**Ouvrir en 3D+** l'emmène vers la 
 
 Un panneau 4D apparaît en bas de l'écran.
 
-- **Coupe / Projection** change votre façon de voir la 4D. **Coupe** (par défaut) montre la coupe 3D à la profondeur actuelle. **Projection** montre des cellules 4D entières comme des ombres ; touchez la face d'une ombre pour construire au travers. En Projection, vous pouvez aussi basculer entre **Parallèle** et **Perspective**.
+- **Coupe / Projection** change votre façon de voir la 4D. **Coupe** (par défaut) montre la coupe 3D à la profondeur actuelle. **Projection** montre des cellules 4D entières comme des ombres ; touchez la face d'une ombre pour construire au travers. En Projection, **W : plat** et **W : profond** changent la façon de dessiner la quatrième dimension (à plat, ou avec profondeur) ; le bouton 3D / ∥ / ISO de la colonne d'outils règle la caméra, comme partout.
 - **Le curseur** fait ce qu'indique le bouton au-dessus : **Profondeur W** déplace la coupe à travers la quatrième dimension, et **XW**, **YW** et **ZW** la font tourner vers la quatrième dimension. Il s'enclenche à des positions utiles. Celle marquée **FCC** est le monde RD 3D ordinaire, et celle marquée **Pyrochlore** est le monde Pyrochlore 3D.
 - **Réinitialiser 4D** remet tout dans la position de départ.
 - **Paint** (le pinceau) apparaît dans ce panneau pour les pièces 24-cellule, 16-cellule et hyperpyrochlore, dont le choix d'assemblage prend la place du pinceau dans la rangée du bas.
