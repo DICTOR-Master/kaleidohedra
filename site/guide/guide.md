@@ -123,7 +123,7 @@ In **Settings**:
 
 ## Learning the maths
 
-- **Almanac** (📖, bottom right): the maths and geometry behind every piece and lattice.
+- **Almanac** (📖, top right): the maths and geometry behind every piece and lattice.
 - **What's New** (🕘) lists recent changes, and **About** (ℹ) shows the welcome screen again.
 
 # Kaleidohedra {#kaleidohedra}
@@ -264,7 +264,7 @@ Polyhedraverse is the portrait gallery: every shape in its families, one at a ti
 | Signal \| Construct (under Wizard, 1D+ only) | Switches between the two 1D+ worlds |
 | ⊘ Clear (beside Undo, 1D+ and Nets) | Clears the 1D+ world you're in to start again (in Nets, the net you're on); Undo brings it back |
 | Menu | Opens the DICTO wizard (keyboard: Tab or Space) |
-| 📖 Almanac (bottom right) | The maths and geometry behind every piece and lattice |
+| 📖 Almanac (top right) | The maths and geometry behind every piece and lattice |
 | 🕘 What's New · ℹ About (bottom right) | Recent changes · the welcome screen again |
 
 ## Tools (top right)

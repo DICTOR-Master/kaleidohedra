@@ -28,6 +28,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   let nodes = []; // { id, shape, transform: { position, quaternion }, material }
   const view = { shape: DEFAULT_SHAPE };
   let active = false, skeleton = false, opacity = 1;
+  let spherical = false, sphereScale = 1;
   let nextId = 1;
 
   const validNode = (n) => n && POLYHEDRA[n.shape] && Array.isArray(n.transform?.position) && n.transform.position.length === 3
@@ -54,7 +55,12 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   const pickTargets = [];
   let faceOwner = []; // triangle index -> node
   function clearGroup() {
-    for (const child of [...group.children]) { group.remove(child); child.geometry.dispose(); if (child.isLineSegments) child.material.dispose(); }
+    for (const child of [...group.children]) {
+      group.remove(child);
+      if (child.userData.poly === 'sphere') { child.material.dispose(); continue; }
+      child.geometry.dispose();
+      if (child.isLineSegments) child.material.dispose();
+    }
     pickTargets.length = 0;
   }
   const worldPoints = (n) => {
@@ -83,11 +89,43 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     lg.setAttribute('position', new THREE.Float32BufferAttribute(edge, 3));
     return [new THREE.Mesh(g, material), new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: edgeColor }))];
   }
+  // Spherical (◯), as in the lattice worlds: each shape as a sphere of its own volume, capped at its
+  // inradius (so it stays inside the shape), centred on the shape; the slider scales them all.
+  const sphereCache = new Map();
+  function sphereOf(shape) {
+    if (sphereCache.has(shape)) return sphereCache.get(shape);
+    const s = POLYHEDRA[shape], V = s.vertices.map((v) => new THREE.Vector3(...v));
+    const c = V.reduce((a, v) => a.add(v), new THREE.Vector3()).divideScalar(V.length);
+    let vol = 0, ceiling = Infinity;
+    for (const f of s.faces) {
+      const a = V[f[0]].clone().sub(c);
+      for (let i = 1; i < f.length - 1; i++) vol += a.dot(V[f[i]].clone().sub(c).cross(V[f[i + 1]].clone().sub(c))) / 6;
+      const n = V[f[1]].clone().sub(V[f[0]]).cross(V[f[2]].clone().sub(V[f[0]])).normalize();
+      ceiling = Math.min(ceiling, Math.abs(n.dot(V[f[0]].clone().sub(c))));
+    }
+    const out = { centre: c, R: Math.min(Math.cbrt((3 * Math.abs(vol)) / (4 * Math.PI)), ceiling) };
+    sphereCache.set(shape, out);
+    return out;
+  }
+  const sphereGeometry = new THREE.SphereGeometry(1, 32, 20);
   const outlineNode = () => ({ id: 'outline', shape: view.shape, transform: { position: [0, 0, 0], quaternion: [0, 0, 0, 1] } });
   function rebuild() {
     clearGroup();
     if (!active) return;
-    if (nodes.length) {
+    if (nodes.length && spherical) {
+      for (const n of nodes) {
+        const { centre, R } = sphereOf(n.shape);
+        const m = new THREE.MeshStandardMaterial({ color: colorOf(n.shape, n.material, familiesFor(n.shape)[0]), transparent: opacity < 1, opacity, depthWrite: opacity >= 1 });
+        const mesh = new THREE.Mesh(sphereGeometry, m);
+        mesh.scale.setScalar(Math.max(1e-3, R * sphereScale));
+        mesh.position.copy(centre.clone().applyQuaternion(new THREE.Quaternion(...n.transform.quaternion)).add(new THREE.Vector3(...n.transform.position)));
+        mesh.userData.poly = 'sphere';
+        mesh.userData.node = n;
+        mesh.userData.ownMaterial = true;
+        group.add(mesh);
+        pickTargets.push(mesh);
+      }
+    } else if (nodes.length) {
       pieceMaterial.transparent = opacity < 1;
       pieceMaterial.opacity = opacity;
       pieceMaterial.depthWrite = opacity >= 1;
@@ -117,8 +155,8 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       commit();
       return true;
     }
-    if (kind !== 'piece') return false;
-    const n = faceOwner[hit.faceIndex];
+    if (kind !== 'piece' && kind !== 'sphere') return false;
+    const n = kind === 'sphere' ? hit.object.userData.node : faceOwner[hit.faceIndex];
     if (!n) return false;
     if (mode === 'chisel') { nodes = nodes.filter((x) => x !== n); commit(); return true; }
     if (mode === 'paint') {
@@ -146,6 +184,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) rebuild(); } },
     setLatticeView() { /* no lattice here: shapes are placed freely */ },
     refresh() { if (active) rebuild(); },
+    setSpherical(on, scale = 1) { if (on === spherical && scale === sphereScale) return; spherical = on; sphereScale = scale; if (active) rebuild(); },
     /** DICTO's shape list: build with this shape. An empty world shows its outline; a world holding
      *  only one placed shape starts over with the new one (until D3 there is nothing else to keep). */
     startWith(id) {

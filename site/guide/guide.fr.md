@@ -125,7 +125,7 @@ Dans **Paramètres** :
 
 ## Découvrir les mathématiques
 
-- **Almanac** (📖, en bas à droite) : les mathématiques et la géométrie derrière chaque pièce et chaque réseau.
+- **Almanac** (📖, en haut à droite) : les mathématiques et la géométrie derrière chaque pièce et chaque réseau.
 - **What's New** (🕘) liste les changements récents, et **About** (ℹ) affiche à nouveau l'écran d'accueil.
 
 # Kaleidohedra {#kaleidohedra}
@@ -266,7 +266,7 @@ Polyhedraverse est la galerie de portraits : chaque forme de ses familles, une �
 | Signal \| Construct (sous Wizard, 1D+ seulement) | Passe d'un monde 1D+ à l'autre |
 | ⊘ Effacer (à côté d'Undo, 1D+ et Nets) | Efface le monde 1D+ où vous êtes pour recommencer (dans Nets, le patron en cours) ; Undo le rétablit |
 | Menu | Ouvre l'assistant DICTO (clavier : Tab ou Espace) |
-| 📖 Almanac (en bas à droite) | Les mathématiques et la géométrie derrière chaque pièce et chaque réseau |
+| 📖 Almanac (en haut à droite) | Les mathématiques et la géométrie derrière chaque pièce et chaque réseau |
 | 🕘 What's New · ℹ About (en bas à droite) | Changements récents · l'écran d'accueil à nouveau |
 
 ## Outils (en haut à droite)

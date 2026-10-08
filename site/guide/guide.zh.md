@@ -125,7 +125,7 @@ DICTO 是 DICTO 的三个应用，共用同一套几何。**Rhombiverse** 是**�
 
 ## 学习数学
 
-- **Almanac**（📖，右下）：每种部件和晶格背后的数学与几何。
+- **Almanac**（📖，右上）：每种部件和晶格背后的数学与几何。
 - **What's New**（🕘）列出最近的更改，**About**（ℹ）会再次显示欢迎界面。
 
 # Kaleidohedra {#kaleidohedra}
@@ -266,7 +266,7 @@ Polyhedraverse 是肖像画廊：各个家族中的每个形状，一个一个�
 | Signal \| Construct（Wizard 下方，仅 1D+） | 在两个 1D+ 世界之间切换 |
 | ⊘ 清除（Undo 旁，1D+ 和 Nets） | 清空当前 1D+ 世界重新开始（在 Nets 中为当前展开图）；Undo 可恢复 |
 | 菜单 | 打开 DICTO 向导（键盘：Tab 或空格） |
-| 📖 Almanac（右下） | 每种部件和晶格背后的数学与几何 |
+| 📖 Almanac（右上） | 每种部件和晶格背后的数学与几何 |
 | 🕘 What's New · ℹ About（右下） | 最近的更改 · 再次显示欢迎界面 |
 
 ## 工具（右上）

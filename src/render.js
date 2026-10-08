@@ -48,7 +48,7 @@ import { pyrochloreSiteOrientation, pyrochloreCellToWorld, truncatedTetrahedronV
 import { loadWorld, createWorldStore } from './core/worldstate-core.js';
 import { createBuildController } from './core/build.js';
 import { getSettings, updateSettings, onSettingsChange, QUALITY_PIXEL_RATIO_FACTOR, QUALITY_LEVELS_ASCENDING } from './app/settings.js';
-import { t, LANG_ORDER, LANG_META } from './app/i18n.js';
+import { t, tFor, LANG_ORDER, LANG_META } from './app/i18n.js';
 import { playPlaceSound, playRemoveSound, playMenuSound } from './app/sfx.js';
 import { createWheelPickers, PAINT_ICON } from './app/wheel-pickers.js';
 import { MARKS, iconFrame, swatchMark, PACKING_ICONS } from './app/wheel-icons.js';
@@ -2998,7 +2998,8 @@ async function init() {
     document.body.classList.toggle('qc-world-on', qcWorlds.has(activeDimension) || own3DActive());
     // 4D/6D: X-Ray and Spherical don't apply (the slider IS the X-Ray),
     // so their HUD faces go blank and untappable (direct decision).
-    for (const id of ['xray-toggle', 'spherical-toggle']) { const b = document.getElementById(id); if (b) b.hidden = isOwnWorldDimension(); }
+    const polySpace = own3DActive() && own3D === 'poly';
+    for (const id of ['xray-toggle', 'spherical-toggle']) { const b = document.getElementById(id); if (b) b.hidden = isOwnWorldDimension() && !(id === 'spherical-toggle' && polySpace); }
     // Polyhedraverse's space: no aperiodic shadow to show (DICTO 2026-10-09: X-Ray, Section and Duality hidden there).
     { const b = document.getElementById('duality-toggle'); if (b) b.hidden = own3DActive() && own3D === 'poly'; }
     refreshSphereOverlayIfOn?.();
@@ -3622,7 +3623,9 @@ async function init() {
   let sphereOverlayShown = false;
   function refreshSphereOverlay() {
     for (const c of [...packGroup.children]) { packGroup.remove(c); if (c.isInstancedMesh) c.dispose(); else c.geometry?.dispose(); }
-    spherePanel.classList.toggle('visible', sphericalState !== 'off' && !isOwnWorldDimension());
+    const polySpace = own3DActive() && own3D === 'poly';
+    spherePanel.classList.toggle('visible', sphericalState !== 'off' && (!isOwnWorldDimension() || polySpace));
+    polyWorld?.setSpherical(sphericalState !== 'off', sphereScale);
     const on = sphericalState !== 'off' && sphereOverlayApplies();
     const latticeLayer = on && latticeQuickViewMode !== 'off';
     for (const g of [latticeQuickViewMesh, latticeQuickViewEdges]) if (g) g.visible = !latticeLayer;
@@ -3691,6 +3694,8 @@ async function init() {
   }
   document.getElementById('spherical-toggle')?.addEventListener('click', () => {
     sphericalState = SPHERICAL_STATES[(SPHERICAL_STATES.indexOf(sphericalState) + 1) % SPHERICAL_STATES.length];
+    // Polyhedraverse's space: off and spheres only (its shapes sit freely, so there are no lattice voids).
+    if (sphericalState === 'voids' && own3DActive() && own3D === 'poly') sphericalState = 'off';
     sphericalModeActive = sphericalState !== 'off';
     document.getElementById('spherical-toggle').classList.toggle('active', sphericalModeActive);
     applySphericalGeometries();
@@ -3699,7 +3704,7 @@ async function init() {
     refreshSphereOverlay();
     const L = getSettings().language;
     if (sphericalState === 'voids' && sphereOverlayApplies() && !visibleCells(world).length) showHudPrompt(t('pack.none', L), 4000);
-    else showHudPrompt(t(`pack.${sphericalState}`, L), 5500);
+    else showHudPrompt(tFor(activeSite(), `pack.${sphericalState}`, L), 5500);
   });
   renderSphericalControl();
   onSettingsChange(() => renderSphericalControl());
@@ -3725,8 +3730,8 @@ async function init() {
   // its open/closed state internally (open()/close()/toggle()), this
   // scope just needs a stable reference to call into from onAction.
   const almanac = createAlmanac();
-  // 📖 beside 🕘 What's New and ℹ About: the Almanac's own button, since the wheel face that opened
-  // it went with the wheels (DICTO 2026-10-08).
+  // 📖 the Almanac's own button (its wheel face went with the wheels, DICTO 2026-10-08), last in the
+  // tools column: at the bottom it met the world panels and, on a phone, the paint slot.
   const almanacBtn = document.createElement('button');
   almanacBtn.id = 'almanac-btn';
   almanacBtn.type = 'button';
@@ -3734,7 +3739,7 @@ async function init() {
   almanacBtn.dataset.i18nTitle = 'almanac.open';
   almanacBtn.title = t('almanac.open', getSettings().language);
   almanacBtn.addEventListener('click', () => almanac.open());
-  document.body.appendChild(almanacBtn);
+  (document.getElementById('hud-tools') ?? document.body).appendChild(almanacBtn);
   // The menu's action path, for callers outside the block below
   // (Construct's "Open in 4D").
   let runWheelAction = () => {};
@@ -3761,6 +3766,7 @@ async function init() {
           updateQuickSelect();
           polyWorld?.startWith(action.slice('tool:polyShape:'.length));
           updateQuickSelect();
+          refreshSphereOverlayIfOn?.();
           return;
         }
         // Construct's families: tool:constructWorld:<family> (square, kagome, rd).

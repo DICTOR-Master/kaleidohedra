@@ -125,7 +125,7 @@ En **Ajustes**:
 
 ## Aprende las matemáticas
 
-- **Almanac** (📖, abajo a la derecha): las matemáticas y la geometría detrás de cada pieza y cada red.
+- **Almanac** (📖, arriba a la derecha): las matemáticas y la geometría detrás de cada pieza y cada red.
 - **What's New** (🕘) muestra los cambios recientes, y **About** (ℹ) vuelve a mostrar la pantalla de bienvenida.
 
 # Kaleidohedra {#kaleidohedra}
@@ -266,7 +266,7 @@ Polyhedraverse es la galería de retratos: cada forma de sus familias, una a una
 | Signal \| Construct (bajo Wizard, solo 1D+) | Cambia entre los dos mundos 1D+ |
 | ⊘ Borrar (junto a Undo, 1D+ y Nets) | Borra el mundo 1D+ en el que estás para empezar de nuevo (en Nets, el desarrollo en el que estás); Undo lo recupera |
 | Menú | Abre el asistente DICTO (teclado: Tab o Espacio) |
-| 📖 Almanac (abajo a la derecha) | Las matemáticas y la geometría detrás de cada pieza y cada red |
+| 📖 Almanac (arriba a la derecha) | Las matemáticas y la geometría detrás de cada pieza y cada red |
 | 🕘 What's New · ℹ About (abajo a la derecha) | Cambios recientes · de nuevo la pantalla de bienvenida |
 
 ## Herramientas (arriba a la derecha)
