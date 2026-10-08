@@ -118,7 +118,7 @@ yet diverged for Kaleidohedra's own slider/export model.
   Long-press is 500 ms (`build.js`), with a guard against the click that
   iOS synthesizes afterwards. Mouse-only tests don't prove touch works.
 - **Every geometric claim is checked numerically**, not by eye — see
-  `scripts/verify-kaleido.mjs` and the `DISCOVERIES.md` table of which
+  `src/krp-core/scripts/verify-kaleido.mjs` (krp-core) and the `DISCOVERIES.md` table of which
   script backs which finding.
 - **Removing a feature means deleting it**: code, UI, strings, tests,
   docs. Git history is the archive. Don't leave comments that narrate

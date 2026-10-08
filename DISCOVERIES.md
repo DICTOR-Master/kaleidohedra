@@ -5,7 +5,7 @@
 Findings made while playing in Rhombiverse, Polyhedraverse and Kaleidohedra,
 with how each one is verified and whether it appears to be new.
 Every geometric claim here is checked exactly by a script that runs on every
-push (`scripts/verify-kaleido.mjs` in this repo; `verify-zome-parallelohedra`
+push (`src/krp-core/scripts/verify-kaleido.mjs`, krp-core; `verify-zome-parallelohedra`
 in Polyhedraverse; `verify-dicto-fcc` in Rhombiverse).
 
 **Status** means only what a literature search on 2026-10-01 turned up

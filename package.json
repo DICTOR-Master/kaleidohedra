@@ -5,7 +5,6 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "verify:i18n": "node scripts/verify-i18n.mjs",
-    "verify:kaleido": "node scripts/verify-kaleido.mjs",
     "verify:targets": "node scripts/verify-targets.mjs",
     "verify:copy": "node scripts/verify-copy.mjs",
     "verify:about": "node scripts/verify-about.mjs"

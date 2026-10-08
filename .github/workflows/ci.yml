@@ -23,8 +23,6 @@ jobs:
         with:
           node-version: 20
       - run: node --test tests/unit/
-      # Kaleidohedra: the lattice shear, the Cell slider and the regularity meter.
-      - run: node scripts/verify-kaleido.mjs
       # The 160 target cells: rebuilt from their Gram matrices, each tiles space; TARGETS.md agrees.
       - run: node scripts/verify-targets.mjs
       # Translations: every key in all 7 languages.

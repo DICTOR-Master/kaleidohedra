@@ -20,6 +20,7 @@ Kaleidohedra의 고유한 컨트롤은 오른쪽 위 **⟋ Shear** 패널에 있
 - **◀ Find**와 **Find ▶**는 경로를 따라 다음으로 가장 규칙적인 셀, 또는 정육각형이 나타나는 다음 순간으로 갑니다. 먼저 정지점을 탭하세요.
 - **Six sliders**로 격자의 길이 a, b, c와 각도 α, β, γ를 직접 정합니다.
 - **Export member**는 현재 상태를 원하는 이름으로 작은 JSON 파일(집단의 구성원)로 저장합니다.
+- **☆ 보관**은 현재 상태를 이 브라우저에만 있는 나만의 **보관함** 목록에 넣습니다. 형태 자체가 아니라 상태의 ID와 지문을 기록합니다. **열기**는 ID로 다시 생성하고, 같은 형태로 돌아왔는지(✓), 앱이 이제 이 상태에서 다른 형태를 만드는지(⚠), 더 이상 만들 수 없는지(✗)를 표시합니다. **ID 복사**로 ID를 복사해 기록에 들어갈 만하다고 생각되면 DICTO에게 보낼 수 있습니다.
 
 Euclid–Kepler–Pacioli Cell Network에서는 Shear 패널이 격자만 움직입니다. 셀 중심이 미끄러지고, 각 조각은 정다면체 그대로입니다. Targets에서는 각도가 바뀌므로 숨겨집니다. Kaleidohedra의 발견과 각각을 확인하는 방법은 [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md)에 있습니다.
 

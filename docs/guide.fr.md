@@ -20,6 +20,7 @@ Les commandes propres à Kaleidohedra sont dans le panneau **⟋ Shear**, en hau
 - **◀ Find** et **Find ▶** sautent le long du chemin vers la cellule la plus régulière suivante, ou le prochain moment où apparaît un hexagone régulier. Touchez d'abord un arrêt.
 - **Six sliders** règle directement les longueurs a, b, c et les angles α, β, γ du réseau.
 - **Export member** enregistre l'état actuel sous le nom de votre choix, en petit fichier JSON (un membre de la population).
+- **☆ Garder** garde l'état actuel dans votre propre liste **Gardés**, dans ce navigateur seulement. Elle enregistre l'ID de l'état et une empreinte, jamais la forme elle-même : **Ouvrir** la régénère à partir de l'ID, et une marque indique si elle est revenue identique (✓), si l'appli fait maintenant une autre forme pour cet état (⚠) ou si elle ne peut plus être faite (✗). **Copier l'ID** copie l'ID, à envoyer à DICTO si vous pensez qu'il a sa place dans le registre.
 
 Dans Euclid–Kepler–Pacioli Cell Network, le panneau Shear ne déplace que le réseau : les centres des cellules glissent, et chaque pièce reste un solide régulier. Il se masque dans Targets, où le cisaillement changerait les angles. Les découvertes de Kaleidohedra, et la façon dont chacune est vérifiée, sont dans [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md).
 

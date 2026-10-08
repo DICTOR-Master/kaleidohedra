@@ -18,6 +18,7 @@ Kaleidohedra's own controls are in the **⟋ Shear** panel at the top right. The
 - **◀ Find** and **Find ▶** jump along the path to the next most regular cell or the next moment a regular hexagon appears. Tap a stop first.
 - **Six sliders** set the lattice's lengths a, b, c and angles α, β, γ directly.
 - **Export member** saves the current state under a name you choose, as a small JSON file (a population member).
+- **☆ Keep** keeps the current state in your own **Kept** list, in this browser only. It stores the state's ID and a fingerprint, never the shape itself: **Open** regenerates it from the ID, and a mark shows whether it came back the same (✓), the app now makes a different shape for it (⚠), or it can't be made any more (✗). **Copy ID** copies the ID, to send to DICTO if you think it belongs in the record.
 
 In Euclid–Kepler–Pacioli Cell Network the Shear panel moves the lattice only: the cell centres slide, and every piece stays a true regular solid. It hides in Targets, where shearing would change the angles. The findings behind Kaleidohedra, and how each one is checked, are in [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md).
 

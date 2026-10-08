@@ -69,7 +69,7 @@ import { installShear } from './app/kaleido-shear.js';
 import { createStudiesWorld } from './app/world-studies.js';
 import { createStellaJewelWorld } from './app/world-stella-jewel.js';
 import { createSunstarWorld } from './app/world-sunstar.js';
-import { cellCorners } from './geometry-extensions/kaleido-lattice.js';
+import { cellCorners } from './krp-core/src/geometry-extensions/kaleido-lattice.js';
 
 const SCALE = 1;
 // Hex Prism: no special proportion is required for a plain hex-prism

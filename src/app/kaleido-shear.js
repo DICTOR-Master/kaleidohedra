@@ -14,9 +14,22 @@
 // saves the current state as a named "population member".
 import * as THREE from 'three';
 
-import { KEYS, FCC_PARAMS, TOWARDS, pathStops, pathRange, paramsOnPath, paramsValid, shearMatrix, cellDirections, cellDirectionsPreShear, cellQuality, disphenoidQuality, pathTargets } from '../geometry-extensions/kaleido-lattice.js';
+import { KEYS, FCC_PARAMS, TOWARDS, pathStops, pathRange, paramsOnPath, paramsValid, shearMatrix, cellDirections, cellDirectionsPreShear, cellQuality, disphenoidQuality, pathTargets } from '../krp-core/src/geometry-extensions/kaleido-lattice.js';
+
+import { objectId, parseObjectId } from '../krp-core/src/vocabulary.js';
+import { keepEntry, checkKept, isKeptEntry } from '../krp-core/src/retention.js';
+import { t } from './i18n.js';
+import { getSettings, onSettingsChange } from './settings.js';
 
 const STORAGE_KEY = 'kaleidohedra-shear';
+// Kept states (KRP stage 4, DICTO's decisions 2026-10-08): each visitor's own list, in this browser
+// only, of { id, fingerprint, kept, name }; never coordinates. DICTO curates.
+const KEPT_KEY = 'kaleidohedra-kept';
+const lang = () => getSettings().language;
+const readKept = () => { try { const a = JSON.parse(localStorage.getItem(KEPT_KEY) || '[]'); return Array.isArray(a) ? a.filter(isKeptEntry) : []; } catch { return []; } };
+const writeKept = (list) => { try { localStorage.setItem(KEPT_KEY, JSON.stringify(list)); } catch { /* private mode: this session only */ } };
+/** The current slider state's object ID in krp-core. */
+export const shearId = (state) => objectId('kaleido/cell', { ...state.params, t: state.cell });
 
 /**
  * Installs the shear: routes everything added to the scene (except the
@@ -82,19 +95,28 @@ function buildPanel(state, apply) {
         }).join('')}
       </details>
       <button type="button" id="kaleido-export">Export member</button>
+      <div class="kaleido-stops"><button type="button" id="kaleido-keep"></button></div>
+      <details id="kaleido-kept"><summary></summary><div id="kaleido-kept-list"></div></details>
       <div id="kaleido-note" aria-live="polite"></div>
     </div>`;
   const style = document.createElement('style');
   style.textContent = `
     #kaleido-panel { position: fixed; right: 12px; top: 150px; z-index: 50; max-width: min(300px, calc(100vw - 24px)); font: 13px system-ui, sans-serif; color: #d8f0ff; }
     #kaleido-panel button { min-height: 36px; background: rgba(30, 14, 4, .85); color: #ff9a52; border: 1px solid #7a3300; border-radius: 8px; padding: 4px 10px; cursor: pointer; }
-    #kaleido-body { margin-top: 6px; padding: 10px; background: rgba(18, 8, 2, .92); border: 1px solid #7a3300; border-radius: 10px; display: grid; gap: 8px; }
+    #kaleido-body { margin-top: 6px; padding: 10px; background: rgba(18, 8, 2, .92); border: 1px solid #7a3300; border-radius: 10px; display: grid; gap: 8px;
+      max-height: calc(100dvh - 280px); overflow-y: auto; overscroll-behavior: contain; } /* phones: the Kept list or the six sliders must stay reachable */
     #kaleido-body[hidden] { display: none; }
     .kaleido-row { display: grid; grid-template-columns: auto 1fr; gap: 2px 8px; align-items: center; }
     .kaleido-row input, .kaleido-row select { grid-column: 1 / -1; width: 100%; min-height: 28px; }
     #kaleido-towards { min-height: 36px; background: rgba(30, 14, 4, .85); color: #ff9a52; border: 1px solid #7a3300; border-radius: 8px; }
     .kaleido-stops { display: flex; gap: 6px; flex-wrap: wrap; }
-    #kaleido-note { font-size: 12px; color: #ff9a52; min-height: 1em; }`;
+    #kaleido-note { font-size: 12px; color: #ff9a52; min-height: 1em; overflow-wrap: anywhere; }
+    #kaleido-kept-list { display: grid; gap: 6px; margin-top: 6px; }
+    .kept-row { display: grid; grid-template-columns: 1fr auto; gap: 4px 6px; align-items: center; padding: 6px; border: 1px solid #4a2000; border-radius: 8px; }
+    .kept-row .kept-name { overflow-wrap: anywhere; }
+    .kept-row .kept-when { grid-column: 1 / -1; font-size: 11px; opacity: .75; }
+    .kept-row .kept-actions { grid-column: 1 / -1; display: flex; gap: 6px; flex-wrap: wrap; }
+    .kept-row .kept-actions button { min-height: 36px; }`;
   panel.appendChild(style);
   const $ = (sel) => panel.querySelector(sel);
   const path = $('#kaleido-path');
@@ -182,7 +204,75 @@ function buildPanel(state, apply) {
     URL.revokeObjectURL(a.href);
     $('#kaleido-note').textContent = `Exported "${name}".`;
   });
+  // ---- Keep (KRP stage 4) ----
+  const note = (text) => { $('#kaleido-note').textContent = text; };
+  const MARK = { same: '✓', changed: '⚠', unavailable: '✗' };
+  const renderKept = () => {
+    const L = lang();
+    const list = readKept();
+    $('#kaleido-keep').textContent = `☆ ${t('kept.keep', L)}`;
+    $('#kaleido-kept').hidden = !list.length;
+    $('#kaleido-kept summary').textContent = t('kept.list', L, { n: list.length });
+    $('#kaleido-kept-list').innerHTML = list.map((e, i) => {
+      const c = checkKept(e);
+      return `<div class="kept-row" data-i="${i}">
+        <span class="kept-name">${escapeHtml(e.name || t('kept.unnamed', L))}</span>
+        <span title="${escapeHtml(t(`kept.check.${c.result}`, L, { version: c.madeWith ?? '' }))}">${MARK[c.result]}</span>
+        <span class="kept-when">${escapeHtml(new Date(e.kept).toLocaleString(L))}${c.madeWith ? ` · krp-core ${escapeHtml(c.madeWith)}` : ''}</span>
+        <span class="kept-actions">
+          <button type="button" data-act="open"${c.result === 'unavailable' ? ' hidden' : ''}>${t('kept.open', L)}</button>
+          <button type="button" data-act="copy">${t('kept.copy', L)}</button>
+          <button type="button" data-act="remove" aria-label="${escapeHtml(t('kept.remove', L))}">✕</button>
+        </span></div>`;
+    }).join('');
+  };
+  $('#kaleido-keep').addEventListener('click', () => {
+    const L = lang();
+    const suggested = state.path === null ? '' : `${t('kept.path', L)} ${Number(state.path).toFixed(2)} · ${t('kept.cell', L)} ${state.cell.toFixed(2)}`;
+    const name = prompt(t('kept.name', L), suggested);
+    if (name === null) return;
+    let entry;
+    try { entry = keepEntry(shearId(state), name.trim()); } catch (e) { note(e.message); return; }
+    writeKept([entry, ...readKept().filter((k) => k.id !== entry.id)]);
+    renderKept();
+    $('#kaleido-kept').open = true;
+    note(t('kept.done', L));
+  });
+  $('#kaleido-kept-list').addEventListener('click', (ev) => {
+    const b = ev.target.closest('button[data-act]');
+    if (!b) return;
+    const L = lang();
+    const list = readKept();
+    const e = list[Number(b.closest('.kept-row').dataset.i)];
+    if (!e) return;
+    if (b.dataset.act === 'open') {
+      const c = checkKept(e);
+      if (c.result === 'unavailable') { note(t('kept.check.unavailable', L)); return; }
+      const { t: cellT, ...params } = parseObjectId(e.id).params;
+      state.params = Object.fromEntries(KEYS.map((k) => [k, params[k]]));
+      state.cell = cellT;
+      state.path = null;
+      refresh();
+      apply();
+      note(`${e.name || t('kept.unnamed', L)}: ${t(`kept.check.${c.result}`, L, { version: c.madeWith ?? '' })}`);
+    } else if (b.dataset.act === 'copy') {
+      const done = () => note(t('kept.copied', L));
+      if (navigator.clipboard?.writeText) navigator.clipboard.writeText(e.id).then(done, () => note(e.id));
+      else note(e.id);
+    } else if (b.dataset.act === 'remove') {
+      if (!confirm(t('kept.removeAsk', L, { name: e.name || t('kept.unnamed', L) }))) return;
+      writeKept(list.filter((k) => k !== e));
+      renderKept();
+    }
+  });
+  onSettingsChange(renderKept);
+
   layoutPath();
   refresh();
+  renderKept();
   return panel;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 }

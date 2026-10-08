@@ -20,6 +20,7 @@ Kaleidohedra 独自のコントロールは、右上の **⟋ Shear** パネル�
 - **◀ Find** と **Find ▶** は、道筋に沿って次に最も規則的なセル、または正六角形が現れる瞬間へ飛びます。先に停止点をタップしてください。
 - **Six sliders** で格子の長さ a・b・c と角度 α・β・γ を直接設定できます。
 - **Export member** は今の状態を、名前を付けて小さな JSON ファイル（集団のメンバー）として保存します。
+- **☆ 保存**は今の状態を、このブラウザだけの**保存済み**リストに入れます。形そのものではなく状態のIDとフィンガープリントを記録します。**開く**とIDから再生成し、同じ形に戻ったか（✓）、アプリがこの状態から別の形を作るようになったか（⚠）、もう作れないか（✗）を印で示します。**IDをコピー**でIDをコピーでき、記録に加えるべきだと思えば DICTO へ送れます。
 
 Euclid–Kepler–Pacioli Cell Network では、Shear パネルは格子だけを動かします。セルの中心がずれ、各ピースは正多面体のままです。Targets では角度が変わってしまうため隠れます。Kaleidohedra の発見と、その検証方法は [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md) にあります。
 

@@ -20,6 +20,7 @@ Kaleidohedra 自己的控件在右上角的 **⟋ Shear** 面板里。它们一�
 - **◀ Find** 和 **Find ▶** 沿路径跳到下一个最规则的胞，或下一个出现正六边形的时刻。请先点按一个停靠点。
 - **Six sliders** 直接设定晶格的长度 a、b、c 和角度 α、β、γ。
 - **Export member** 把当前状态以你起的名字保存为一个小 JSON 文件（一个群体成员）。
+- **☆ 保留**把当前状态放进你自己的**已保留**列表，仅在此浏览器中。它记录状态的 ID 和指纹，而不是形状本身：**打开**会根据 ID 重新生成，并用标记显示它是否原样回来（✓）、应用现在是否为该状态生成不同的形状（⚠），或已无法生成（✗）。**复制 ID** 复制 ID，如果你认为它应收录，可以发送给 DICTO。
 
 在 Euclid–Kepler–Pacioli Cell Network 中，Shear 面板只移动晶格：晶胞中心滑动，每个部件仍是正多面体。在 Targets 中它会隐藏，因为剪切会改变角度。Kaleidohedra 的发现以及每一项的验证方法见 [DISCOVERIES.md](https://github.com/DICTOR-Master/kaleidohedra/blob/master/DISCOVERIES.md)。
 
