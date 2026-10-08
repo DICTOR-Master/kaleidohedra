@@ -573,7 +573,9 @@ leave 360° − 3 × 116.565° = **10.3048°**. The gaps are exactly two kinds o
 
 ## 14. The icosidodecahedral star (2026-10-09)
 
-*DICTO built it before this search (2026, not yet fully resolved outward); Kaleidohedra's search,
+*DICTO built it before this search, from PET bottle caps and their security rings, as a 3D analogue of
+the 4D fold of the 13-dodecahedron cluster (#13: in the 120-cell the 12 outer dodecahedra fold round
+the centre and close the gaps; in 3D the J63s close them instead). Not yet fully resolved outward; Kaleidohedra's search,
 testing DICTO's idea that bi- and tri-diminished icosahedra (J62, J63) could close the gaps between
 dodecahedra, found the same object and made it exact. (Working name; DICTO to name it.)*
 
@@ -611,7 +613,9 @@ triangle that borders only pentagons. 33 regular-faced pieces, edge 1:
   Austin's *Icosidodecahedra, Icosahedra, and Dodecahedra* (2014), the same arrangement with whole
   icosahedra, built in Stella 4D as a virtual model in which the pieces overlap; the
   dodecahedral-icosahedral honeycomb of hyperbolic space; J63 as the vertex figure of the snub
-  24-cell (Koca et al., in the library). Not proof of novelty.
+  24-cell (Koca et al., in the library); Klitzing's 4D segmentochora (e.g. dodecahedron atop
+  icosidodecahedron, K-4.77) use the same pieces as cells but not this cluster. Simple enough that it
+  may be known somewhere unindexed; not proof of novelty.
 
 Since 2026-10-08 the geometry and its checks live in [krp-core](https://github.com/DICTOR-Master/krp-core),
 the geometry shared by Kaleidohedra and Rhombiverse, pinned here at `src/krp-core`.
