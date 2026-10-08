@@ -6,7 +6,7 @@
 
 *In development* — live at **[kaleidohedra.vercel.app](https://kaleidohedra.vercel.app)** and **[rhombiverse.vercel.app](https://rhombiverse.vercel.app)**. Since 2026-10-08 this repository is one app with two front doors: **Kaleidohedra** (orange), lattices you can shear and slide continuously, every piece moving with the lattice, and **Rhombiverse** (cyan), lattices of space-filling shapes from 1D to 6D. Each door has its own address, welcome, colours, guide and saved worlds; behind them the worlds, typography and controls are shared. The **DICTO** wizard (top left) opens on the app you came in by, with the others a button away; [Polyhedraverse](https://polyhedraverse.vercel.app) joins it next (KRP, DICTO's plan for the three). The geometry all three share is [krp-core](https://github.com/DICTOR-Master/krp-core).
 
-- Per-app content (head, guide, changelog, icons): `site/<app>/`. The apps' table (names, colours, which tools each has): `src/app/site.js`; one type scale for all: `src/app/tokens.css`.
+- Per-app content (head, changelog, icons): `site/<app>/`; the one DICTO User Guide (shared sections, a chapter per app, 7 languages): `site/guide/`. The apps' table (names, colours, which tools each has): `src/app/site.js`; one type scale for all: `src/app/tokens.css`.
 - Building a front door: `SITE=kaleidohedra npm run build` or `SITE=rhombiverse npm run build` (each Vercel project sets its own). Locally, `index.html?site=rhombiverse` opens Rhombiverse's door.
 
 It grew from shapes DICTO found in Zometool, a golden leaning hexagonal prism and a skewed rhombic dodecahedron that tiles as a sheared FCC (see Polyhedraverse's `docs/dicto-zometool-discoveries.md`), and goes on from there, no longer tied to Zometool.

@@ -1,18 +1,21 @@
-// In-app User Guide: renders site/<app>/guide.md (the same file
-// guide.html serves as the shareable /guide page) in a full-screen
-// overlay. English only for now -- the guide itself isn't translated.
+// In-app User Guide: the one DICTO User Guide (site/guide/guide.md, the same file guide.html serves
+// as the shareable /guide page) in a full-screen overlay, opened at the chapter of the app whose
+// space you're in. Shared sections are written once; each app has a chapter.
 import { renderMarkdown, GUIDE_CSS } from './markdown.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { t } from './i18n.js';
 import { createLanguagePicker } from './language-picker.js';
-import { SITE, SITES } from './site.js';
+import { SITES, activeSite } from './site.js';
 
-// site/<app>/guide.md is English; each other language has guide.<lang>.md beside it.
+// site/guide/guide.md is English; each other language has guide.<lang>.md beside it.
 // A missing translation falls back to English.
 export function guideUrl(lang) {
-  // Each app's own guide, in its site folder (site/<app>/guide.md, guide.<lang>.md).
-  return lang === 'en' ? `./site/${SITE}/guide.md` : `./site/${SITE}/guide.${lang}.md`;
+  return lang === 'en' ? './site/guide/guide.md' : `./site/guide/guide.${lang}.md`;
 }
+
+// The chapter to open at: the app whose space you're in (its heading has that id).
+const chapter = () => activeSite();
+const scrollToChapter = () => overlay.querySelector(`[id="${chapter()}"]`)?.scrollIntoView();
 
 let overlay = null;
 let loadedLang = null;
@@ -21,7 +24,7 @@ function loadGuide(lang) {
   loadedLang = lang;
   const body = overlay.querySelector('.md-guide');
   const share = overlay.querySelector('#guide-share');
-  share.href = lang === 'en' ? './guide.html' : `./guide.html?lang=${lang}`;
+  share.href = `./guide.html${lang === 'en' ? '' : `?lang=${lang}`}#${chapter()}`;
   share.innerHTML = t('guide.openPage', lang);
   overlay.querySelector('#guide-close').title = t('guide.close', lang);
   overlay.setAttribute('lang', lang);
@@ -29,9 +32,13 @@ function loadGuide(lang) {
   const get = (url) => fetch(url).then((r) => (r.ok ? r.text() : Promise.reject(new Error(`HTTP ${r.status}`))));
   get(guideUrl(lang))
     .catch(() => (lang === 'en' ? Promise.reject(new Error('no guide')) : get(guideUrl('en'))))
-    .then((md) => { if (loadedLang === lang) body.innerHTML = renderMarkdown(md); })
+    .then((md) => {
+      if (loadedLang !== lang) return;
+      body.innerHTML = renderMarkdown(md);
+      if (overlay.classList.contains('open')) scrollToChapter();
+    })
     .catch((err) => {
-      console.warn(`${SITES[SITE].name}: failed to load guide`, err);
+      console.warn(`${SITES[activeSite()].name}: failed to load guide`, err);
       if (loadedLang === lang) body.textContent = t('guide.failed', lang);
     });
 }
@@ -51,7 +58,7 @@ function build() {
   overlay = document.createElement('div');
   overlay.id = 'guide-overlay';
   overlay.setAttribute('role', 'dialog');
-  overlay.setAttribute('aria-label', `${SITES[SITE].name} User Guide`);
+  overlay.setAttribute('aria-label', 'DICTO User Guide');
   overlay.innerHTML = `
     <div id="guide-bar">
       <button id="guide-close" type="button" title="Close (Esc)" aria-label="Close">✕</button>
@@ -85,6 +92,7 @@ export function openGuide() {
   if (!overlay) build();
   overlay.classList.add('open');
   overlay.querySelector('#guide-body').scrollTop = 0;
+  scrollToChapter();
 }
 
 export function closeGuide() {

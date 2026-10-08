@@ -82,9 +82,9 @@ for (const f of fs.readdirSync(root).filter((n) => n.endsWith('.html'))) {
 
 // README, the User Guide, and the published legal/security pages
 // (scripts/build.mjs ships them).
-// Each app's guides live in its site folder (site/<app>/), as do its changelogs below.
-const SITE_DIRS = fs.readdirSync(path.join(root, 'site')).filter((d) => fs.statSync(path.join(root, 'site', d)).isDirectory());
-for (const f of ['README.md', ...SITE_DIRS.flatMap((d) => ['guide.md', ...['ja', 'es', 'fr', 'ko', 'zh', 'ru'].map((l) => `guide.${l}.md`)].map((g) => `site/${d}/${g}`)), 'TERMS.md', 'PRIVACY.md', 'SECURITY.md']) {
+// The one DICTO guide (site/guide/); each app's changelog lives in its own site folder (below).
+const SITE_DIRS = fs.readdirSync(path.join(root, 'site')).filter((d) => fs.existsSync(path.join(root, 'site', d, 'changelog.json')));
+for (const f of ['README.md', ...['guide.md', ...['ja', 'es', 'fr', 'ko', 'zh', 'ru'].map((l) => `guide.${l}.md`)].map((g) => `site/guide/${g}`), 'TERMS.md', 'PRIVACY.md', 'SECURITY.md']) {
   if (!fs.existsSync(path.join(root, f))) continue;
   fs.readFileSync(path.join(root, f), 'utf8').split('\n').forEach((line, i) => check(path.join(root, f), line, `line ${i + 1}`));
 }

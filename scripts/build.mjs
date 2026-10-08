@@ -41,8 +41,8 @@ async function main() {
   await mkdir(dist, { recursive: true });
 
   // One code, two front doors (KRP): SITE picks which app this build is (Vercel sets it per project;
-  // default Kaleidohedra, this repo's own). Each site's head, guide, changelog and icons are in
-  // site/<site>/; everything else is shared.
+  // default Kaleidohedra, this repo's own). Each site's head, changelog and icons are in
+  // site/<site>/; everything else is shared (the one guide is site/guide/).
   const SITE_ID = process.env.SITE || 'kaleidohedra';
   const { SITES } = await import(pathToFileURL(path.join(root, 'src/app/site.js')).href);
   const site = SITES[SITE_ID];
@@ -77,7 +77,7 @@ async function main() {
   const { renderMarkdown } = await import(pathToFileURL(path.join(root, 'src/app/markdown.js')).href);
   const guidePath = path.join(dist, 'guide.html');
   const guideHtml = await readFile(guidePath, 'utf8');
-  const guideBody = renderMarkdown(await siteFile('guide.md'));
+  const guideBody = renderMarkdown(await readFile(path.join(root, 'site/guide/guide.md'), 'utf8')); // the one DICTO guide
   if (!guideHtml.includes('<main class="md-guide">Loading…</main>')) throw new Error('guide.html: <main> placeholder not found');
   await writeFile(guidePath, guideHtml.replace('<main class="md-guide">Loading…</main>', `<main class="md-guide" data-prerendered="en">${guideBody}</main>`));
   const URL_ = site.url;

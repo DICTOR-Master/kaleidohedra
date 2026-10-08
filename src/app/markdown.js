@@ -34,7 +34,10 @@ export function renderMarkdown(md) {
     const h = line.match(/^(#{1,4})\s+(.*)$/);
     if (h) {
       const n = h[1].length;
-      out.push(`<h${n} id="${slugify(h[2])}">${inline(h[2])}</h${n}>`);
+      // "# Title {#id}" gives the heading a fixed id (the guide's chapters, the same in every language).
+      const fixed = h[2].match(/^(.*?)\s*\{#([\w-]+)\}\s*$/);
+      const text = fixed ? fixed[1] : h[2];
+      out.push(`<h${n} id="${fixed ? fixed[2] : slugify(text)}">${inline(text)}</h${n}>`);
       i++; continue;
     }
     if (/^---+\s*$/.test(line)) { out.push('<hr>'); i++; continue; }
