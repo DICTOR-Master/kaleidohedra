@@ -1,7 +1,8 @@
 // Persists the orbit camera's position/look-at target across reloads, so
 // the view resumes where you left off instead of resetting to the fixed
 // default spawn every load.
-const CAMERA_KEY = 'rhombiverse-camera';
+import { SITE, SITES, storageKey } from './site.js';
+const CAMERA_KEY = storageKey('camera');
 
 export function saveCameraState(position, target) {
   try {
@@ -10,7 +11,7 @@ export function saveCameraState(position, target) {
       target: [target.x, target.y, target.z],
     }));
   } catch (err) {
-    console.warn('Kaleidohedra: failed to save camera position', err);
+    console.warn(`${SITES[SITE].name}: failed to save camera position`, err);
   }
 }
 

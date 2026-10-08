@@ -14,11 +14,12 @@ import {
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
+import { storageKey, theme } from './site.js';
 
-const STORAGE_KEY = 'kaleidohedra-studies';
+const STORAGE_KEY = storageKey('studies');
 const STUDIES = ['windows', 'windowsStellas', 'checker', 'dogstar', 'expanded', 'icosido', 'rdMorph', 'stretch'];
 const C = ROOF_FOLD_COLOURS;
-const GHOST_COLOR = 0xff9a52;
+const GHOST_COLOR = () => theme().accentHex; // read when drawing: follows the app whose space you're in
 const EDGE_COLOR = 0x0b1220;
 // Each slider study: its value in view, range, snaps and label.
 const SLIDERS = {
@@ -164,7 +165,7 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
       for (const { offset, map } of where) for (const [a, b] of context) ghost.push(...map(a).map((c, i) => c * WS + offset[i]), ...map(b).map((c, i) => c * WS + offset[i]));
       const g = new THREE.BufferGeometry();
       g.setAttribute('position', new THREE.Float32BufferAttribute(ghost, 3));
-      group.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: view.study === 'stretch' ? GHOST_COLOR : C.stella, transparent: true, opacity: 0.55 })));
+      group.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: view.study === 'stretch' ? GHOST_COLOR() : C.stella, transparent: true, opacity: 0.55 })));
     }
     renderPanel();
   }

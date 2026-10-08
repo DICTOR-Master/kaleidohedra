@@ -8,24 +8,23 @@
 // it by hand ("fold slider"). The geometry is krp-core/src/geometry-extensions/nets.js.
 import * as THREE from 'three';
 import { netOf, netSteps, SOLIDS, SOLID_GROUPS, EKP_PIECES, EKP_ORDER, IDENTITY, apply, mul, rigidAlign } from '../krp-core/src/geometry-extensions/nets.js';
-// The shared nets (krp-core) also hold Rhombiverse's golden zonohedra and Archimedean solids;
-// Kaleidohedra shows its own three groups.
-const GROUPS = SOLID_GROUPS.filter((g) => ['voronoi', 'platonic', 'ekp'].includes(g.id));
-const shownHere = (id) => SOLIDS[id]?.groups.some((g) => GROUPS.some((G) => G.id === g));
-const IDS = Object.keys(SOLIDS).filter(shownHere);
 import { roofFoldSolids, ROOF_FOLD_COLOURS, PHI } from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { bulletGeometry, plainCellGeometry } from './bullet-cell.js';
 import { t } from './i18n.js';
 import { dimensionLabel } from './dimension-label.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
+import { storageKey, theme, SITES, activeSite } from './site.js';
 
-const STORAGE_KEY = 'rhombiverse-nets-world';
+const STORAGE_KEY = storageKey('nets-world');
 const L = 5; // edge length; five cells an edge, as in Construct
 const R = 0.055;
 const PAD = 0.004;
-const CYAN = 0xff6a00; // built: Kaleidohedra's orange
-const NEXT = 0x22c3e6; // "tap here": cyan, against the orange
+// The app whose space you're in sets the colours (its piece colour; a contrasting "tap here") and
+// which groups of solids show (site.js netsGroups: Kaleidohedra its three, Rhombiverse all).
+const PIECE = () => theme().pieceHex;
+const NEXT = () => theme().contrastHex;
+const groupsHere = () => { const g = SITES[activeSite()].netsGroups; return g ? SOLID_GROUPS.filter((x) => g.includes(x.id)) : SOLID_GROUPS; };
 const FOLD_SECONDS = 1.6;
 const lang = () => getSettings().language;
 
@@ -34,22 +33,22 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
   group.visible = false;
   scene.add(group);
 
-  const nets = Object.fromEntries(IDS.map((id) => [id, netOf(id, L)]));
+  const nets = Object.fromEntries(Object.keys(SOLIDS).map((id) => [id, netOf(id, L)]));
   const stepsOf = Object.fromEntries(Object.entries(nets).map(([id, net]) => [id, netSteps(net)]));
   let solid = 'cube';
-  const progress = Object.fromEntries(IDS.map((id) => [id, 0]));
+  const progress = Object.fromEntries(Object.keys(SOLIDS).map((id) => [id, 0]));
   let fold = 0; // 0 flat … 1 closed, for the solid you're on
   let cellView = false; // the whole EKP cell instead of one net
   let wrap = 0; // whole cell: shells shown inside out, 0 … pieces folded; a fraction is the next one folding
   // Folded all the way, kept once reached: an assembly piece (direct
   // decision, 2026-10-07: "stella octangula ... jump together") needs
   // this to show its already-done siblings while you build the next one.
-  const foldDone = Object.fromEntries(IDS.map((id) => [id, false]));
+  const foldDone = Object.fromEntries(Object.keys(SOLIDS).map((id) => [id, false]));
   // Other solids that join this one into one assembled whole: the same
   // `assembly` tag, or named either way in `assemblyWith`.
   function siblingsOf(id) {
     const a = SOLIDS[id].assembly;
-    return IDS.filter((o) => o !== id
+    return Object.keys(SOLIDS).filter((o) => o !== id
       && ((a && SOLIDS[o].assembly === a) || (SOLIDS[id].assemblyWith ?? []).includes(o) || (SOLIDS[o].assemblyWith ?? []).includes(id)));
   }
   // A net folds about its own root face, flat on the screen; `net.align`
@@ -75,9 +74,11 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
   const clampP = (id, v) => (Number.isInteger(v) ? Math.max(0, Math.min(stepsOf[id].length, v)) : 0);
   function read(data) {
     if (data?.version !== 1) return;
-    for (const id of IDS) progress[id] = clampP(id, data.progress?.[id]);
-    for (const id of IDS) foldDone[id] = data.foldDone?.[id] === true && progress[id] === stepsOf[id].length;
-    if (shownHere(data.solid)) solid = data.solid;
+    for (const id of Object.keys(SOLIDS)) progress[id] = clampP(id, data.progress?.[id]);
+    for (const id of Object.keys(SOLIDS)) foldDone[id] = data.foldDone?.[id] === true && progress[id] === stepsOf[id].length;
+    if (SOLIDS[data.solid]) solid = data.solid;
+    // Saves from before foldDone kept only the current solid's fold.
+    if (data.fold === 1 && progress[solid] === stepsOf[solid].length) foldDone[solid] = true;
     fold = foldDone[solid] ? 1 : 0;
     cellView = data.cell === true;
     wrap = Infinity; // fully wrapped; drawCell clamps it
@@ -94,9 +95,9 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
   // ---- drawing ----
   const geo = bulletGeometry(1, R, PAD); // full detail: only the edges being built show their cells
   const rodGeo = plainCellGeometry(L, R, 20); // a built edge, fused into one
-  const filledMat = new THREE.MeshStandardMaterial({ color: CYAN, vertexColors: true, roughness: 0.8, metalness: 0.05 });
-  const nextMat = new THREE.MeshStandardMaterial({ color: NEXT, emissive: NEXT, emissiveIntensity: 0.35, vertexColors: true });
-  const faceMat = new THREE.MeshBasicMaterial({ color: CYAN, transparent: true, opacity: 0.14, depthWrite: false, side: THREE.DoubleSide });
+  const filledMat = new THREE.MeshStandardMaterial({ color: PIECE(), vertexColors: true, roughness: 0.8, metalness: 0.05 });
+  const nextMat = new THREE.MeshStandardMaterial({ color: NEXT(), emissive: NEXT(), emissiveIntensity: 0.35, vertexColors: true });
+  const faceMat = new THREE.MeshBasicMaterial({ color: PIECE(), transparent: true, opacity: 0.14, depthWrite: false, side: THREE.DoubleSide });
   // Every EKP piece in full colour, the EKP world's own (roof-fold.js), so
   // a colour means the same piece in both worlds; stella's two tetrahedra
   // take a vivid magenta and cyan so the pair reads as two.
@@ -112,8 +113,8 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
     return tintedMats.get(key);
   }
   // Both sides: a Pacioli rectangle is one face, seen from either side.
-  const siblingMat = new THREE.MeshStandardMaterial({ color: CYAN, vertexColors: true, roughness: 0.8, metalness: 0.05, side: THREE.DoubleSide });
-  const ghostMat = new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.28 });
+  const siblingMat = new THREE.MeshStandardMaterial({ color: PIECE(), vertexColors: true, roughness: 0.8, metalness: 0.05, side: THREE.DoubleSide });
+  const ghostMat = new THREE.LineBasicMaterial({ color: PIECE(), transparent: true, opacity: 0.28 });
   const catchPlane = new THREE.Mesh(new THREE.PlaneGeometry(4000, 4000), new THREE.MeshBasicMaterial({ colorWrite: false, depthWrite: false }));
   catchPlane.position.z = -0.5;
   group.add(catchPlane);
@@ -139,7 +140,17 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
       into.add(m);
     }
   }
+  // Materials made once take the current app's colours each time they draw.
+  const recolour = () => {
+    for (const m of [filledMat, faceMat, siblingMat, ghostMat]) m.color.setHex(PIECE());
+    nextMat.color.setHex(NEXT()); nextMat.emissive.setHex(NEXT());
+  };
   function draw() {
+    recolour();
+    // Each solid's own colour where it has one (the golden zonohedra), cyan otherwise.
+    const tint = SOLIDS[solid].color ?? PIECE();
+    filledMat.color.setHex(tint);
+    faceMat.color.setHex(tint);
     for (const c of [...layer.children]) { layer.remove(c); c.traverse((o) => { if (o.userData.own) o.geometry.dispose(); }); }
     faceGroups = [];
     folding = null;
@@ -267,6 +278,7 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
     into.add(m);
   }
   function drawCell() {
+    recolour();
     const shown = built();
     wrap = Math.max(0, Math.min(wrap, shown.length));
     const whole = Math.floor(wrap), frac = wrap - whole;
@@ -514,16 +526,18 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
     if (!id || (id === solid && !cellView)) return;
     choose(id);
   });
-  openBtn.addEventListener('click', () => onOpenIn('3D', SOLIDS[solid].piece));
+  openBtn.addEventListener('click', () => (SOLIDS[solid].golden ? onOpenIn('golden', SOLIDS[solid].golden) : onOpenIn('3D', SOLIDS[solid].piece)));
   function renderPanel() {
     panel.classList.toggle('visible', active);
     if (!active) return;
     // Each group named, its solids short (full names on hover); the EKP
     // cell's in its wrap order, inside out, then the whole cell.
-    const SHORT = { rd: 'RD', to: 'TO', tetra: 'Tetra', octa: 'Octa', icosa: 'Icosa', dodeca: 'Dodeca', dogstar: 'Dogstar', stella1: 'Stella A', stella2: 'Stella B', starSpike: 'Star spike', pacioli1: 'Pacioli A', pacioli2: 'Pacioli B', pacioli3: 'Pacioli C' };
+    const SHORT = { rd: 'RD', to: 'TO', tetra: 'Tetra', octa: 'Octa', icosa: 'Icosa', dodeca: 'Dodeca', dogstar: 'Dogstar', stella1: 'Stella A', stella2: 'Stella B', starSpike: 'Star spike', pacioli1: 'Pacioli A', pacioli2: 'Pacioli B', pacioli3: 'Pacioli C', tt: 'Trunc. tetra', prolate: 'Prolate', oblate: 'Oblate', bilinski: 'Bilinski', ricosa: 'Rh. icosa', rtriac: 'Triaconta' };
     const orderOf = (g, id) => (g === 'ekp' ? EKP_ORDER.indexOf(id) : 0);
     const button = (id, s) => `<button type="button" data-solid="${id}" class="${id === solid && !cellView ? 'active' : ''}" title="${s.label}">${SHORT[id] ?? s.label}</button>`;
-    solidsRow.innerHTML = GROUPS.map((g) => `<div class="w4d-row w4d-options"><span class="nets-group">${t(`nets.group.${g.id}`, lang())}</span>${Object.entries(SOLIDS).filter(([, s]) => s.groups.includes(g.id)).sort(([a], [b]) => orderOf(g.id, a) - orderOf(g.id, b)).map(([id, s]) => button(id, s)).join('')}${g.id === 'ekp' ? `<button type="button" data-cell class="${cellView ? 'active' : ''}">${t('nets.cell', lang())}</button>` : ''}</div>`).join('');
+    // A long group (the EKP cell's ten pieces and Whole cell) takes its own lines: its name above, its buttons wrapping, so none is cut off on a phone.
+    const LONG = 7;
+    solidsRow.innerHTML = groupsHere().map((g) => `<div class="w4d-row w4d-options${Object.values(SOLIDS).filter((s) => s.groups.includes(g.id)).length >= LONG ? ' nets-long' : ''}"><span class="nets-group">${t(`nets.group.${g.id}`, lang())}</span>${Object.entries(SOLIDS).filter(([, s]) => s.groups.includes(g.id)).sort(([a], [b]) => orderOf(g.id, a) - orderOf(g.id, b)).map(([id, s]) => button(id, s)).join('')}${g.id === 'ekp' ? `<button type="button" data-cell class="${cellView ? 'active' : ''}">${t('nets.cell', lang())}</button>` : ''}</div>`).join('');
     // Next, inside out: from a folded EKP piece, or from the whole cell.
     const next = nextPiece();
     nextRow.hidden = !(cellView ? next : EKP_PIECES[solid] && fold === 1);
@@ -539,7 +553,7 @@ export function createNetsWorld({ scene, camera, controls, onOpenIn = () => {}, 
     slider.title = t('nets.fold', lang());
     slider.setAttribute('aria-label', slider.title);
     // Open in 3D where the 3D world has this solid as a piece.
-    openBtn.hidden = fold < 1 || !SOLIDS[solid].piece;
+    openBtn.hidden = fold < 1 || !(SOLIDS[solid].piece || SOLIDS[solid].golden);
     openBtn.textContent = t('con.open', lang(), { dim: dimensionLabel('3D') });
   }
   let shownLang = lang();

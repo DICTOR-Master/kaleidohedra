@@ -4,7 +4,7 @@
 // almanac-data.test.mjs's coverage guarantee.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { WHEEL_PIECE, WHEEL_RD_FAMILY } from '../../src/app/rhombic-wheel-3d-core.js';
+import { WHEEL_PIECE, WHEEL_RD_FAMILY } from '../../src/app/pieces.js';
 import { LATTICES_3D } from '../../src/app/dimension-wizard.js';
 
 const wizardActions = LATTICES_3D.flatMap((lat) => lat.pieces.map((p) => p.action));
@@ -17,7 +17,7 @@ test('every wheel piece appears in the wizard exactly once', () => {
     assert.equal(wizardActions.filter((w) => w === a).length, 1, `${a} listed once`);
   }
   assert.equal(new Set(wizardActions).size, wizardActions.length, 'no duplicates');
-  // Shells, Golden Rhombohedra, Euclid–Kepler–Pacioli Cell Network, Studies, Targets and DICTO FCC are Wizard-only (the wheels have no free face).
-  const WIZARD_ONLY = ['tool:shellsWorld', 'tool:goldenWorld', 'tool:roofFoldWorld', 'tool:studiesWorld', 'tool:stellaJewelWorld', 'tool:sunstarWorld', 'tool:targetsWorld', 'tool:pieceType:dictofcc', 'tool:pieceType:dictoblock'];
+  // Shells, Golden Rhombohedra, Euclid–Kepler–Pacioli Cell Network and DICTO FCC are Wizard-only (the wheels have no free face).
+  const WIZARD_ONLY = ['tool:shellsWorld', 'tool:goldenWorld', 'tool:roofFoldWorld', 'tool:sunstarWorld', 'tool:stellaJewelWorld', 'tool:pieceType:dictofcc', 'tool:pieceType:dictoblock', 'tool:pieceType:dictohex'];
   for (const a of wizardActions.filter((w) => !WIZARD_ONLY.includes(w))) assert.ok(wheelActions.includes(a), `${a} is a real wheel action`);
 });

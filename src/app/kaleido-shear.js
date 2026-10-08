@@ -20,11 +20,12 @@ import { objectId, parseObjectId } from '../krp-core/src/vocabulary.js';
 import { keepEntry, checkKept, isKeptEntry } from '../krp-core/src/retention.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
+import { storageKey } from './site.js';
 
-const STORAGE_KEY = 'kaleidohedra-shear';
+const STORAGE_KEY = storageKey('shear');
 // Kept states (KRP stage 4, DICTO's decisions 2026-10-08): each visitor's own list, in this browser
 // only, of { id, fingerprint, kept, name }; never coordinates. DICTO curates.
-const KEPT_KEY = 'kaleidohedra-kept';
+const KEPT_KEY = storageKey('kept');
 const lang = () => getSettings().language;
 const readKept = () => { try { const a = JSON.parse(localStorage.getItem(KEPT_KEY) || '[]'); return Array.isArray(a) ? a.filter(isKeptEntry) : []; } catch { return []; } };
 const writeKept = (list) => { try { localStorage.setItem(KEPT_KEY, JSON.stringify(list)); } catch { /* private mode: this session only */ } };
@@ -53,7 +54,17 @@ export function installShear({ scene, camera, onChange = () => {}, onCell = () =
   if (typeof state.cell !== 'number') state.cell = 1;
   if (!TOWARDS[state.towards]) state.towards = 'dicto';
 
+  // Off (another app's space, which has no shear): the lattice unsheared and the cell the regular
+  // rhombic dodecahedron, without touching the saved state; on again, the saved shear returns.
+  let enabled = true;
   const apply = () => {
+    if (!enabled) {
+      group.matrix.identity();
+      group.matrixWorldNeedsUpdate = true;
+      onCell(cellDirectionsPreShear(FCC_PARAMS, 1));
+      onChange(state);
+      return;
+    }
     const S = shearMatrix(state.params); // rows
     group.matrix.set(S[0][0], S[0][1], S[0][2], 0, S[1][0], S[1][1], S[1][2], 0, S[2][0], S[2][1], S[2][2], 0, 0, 0, 0, 1);
     group.matrixWorldNeedsUpdate = true;
@@ -65,7 +76,17 @@ export function installShear({ scene, camera, onChange = () => {}, onCell = () =
   const panel = buildPanel(state, apply);
   document.body.appendChild(panel);
   apply();
-  return { group, getState: () => state };
+  return {
+    group,
+    getState: () => state,
+    setEnabled(on) {
+      if (on === enabled) return;
+      enabled = on;
+      panel.hidden = !on;
+      apply();
+    },
+    isEnabled: () => enabled,
+  };
 }
 
 function buildPanel(state, apply) {
@@ -102,26 +123,26 @@ function buildPanel(state, apply) {
     </div>`;
   const style = document.createElement('style');
   style.textContent = `
-    #kaleido-panel { position: fixed; right: 12px; top: 150px; z-index: 50; max-width: min(300px, calc(100vw - 24px)); font: 13px system-ui, sans-serif; color: #d8f0ff; }
-    #kaleido-panel button { min-height: 36px; background: rgba(30, 14, 4, .85); color: #ff9a52; border: 1px solid #7a3300; border-radius: 8px; padding: 4px 10px; cursor: pointer; }
-    #kaleido-body { margin-top: 6px; padding: 10px; background: rgba(18, 8, 2, .92); border: 1px solid #7a3300; border-radius: 10px; display: grid; gap: 8px;
+    #kaleido-panel { position: fixed; right: 12px; top: 150px; z-index: 50; max-width: min(300px, calc(100vw - 24px)); font: var(--text-m) var(--font-ui); color: #d8f0ff; }
+    #kaleido-panel button { min-height: var(--touch-compact); background: rgba(30, 14, 4, .85); color: var(--accent); border: 1px solid #7a3300; border-radius: var(--radius-m); padding: 4px 10px; cursor: pointer; }
+    #kaleido-body { margin-top: 6px; padding: 10px; background: rgba(18, 8, 2, .92); border: 1px solid #7a3300; border-radius: var(--radius-l); display: grid; gap: 8px;
       max-height: calc(100dvh - 280px); overflow-y: auto; overscroll-behavior: contain; } /* phones: the Kept list or the six sliders must stay reachable */
     #kaleido-body[hidden] { display: none; }
     .kaleido-row { display: grid; grid-template-columns: auto 1fr; gap: 2px 8px; align-items: center; }
     .kaleido-row input, .kaleido-row select { grid-column: 1 / -1; width: 100%; min-height: 28px; }
-    #kaleido-towards { min-height: 36px; background: rgba(30, 14, 4, .85); color: #ff9a52; border: 1px solid #7a3300; border-radius: 8px; }
+    #kaleido-towards { min-height: var(--touch-compact); background: rgba(30, 14, 4, .85); color: var(--accent); border: 1px solid #7a3300; border-radius: var(--radius-m); }
     .kaleido-stops { display: flex; gap: 6px; flex-wrap: wrap; }
     /* The red band (DICTO, 2026-10-08): where on the path the cell stops filling space, for this Cell value.
        Inset by half a thumb so it lines up with the slider's travel. */
     #kaleido-band { grid-column: 1 / -1; height: 5px; margin: -2px 9px 0; border-radius: 3px; }
     .kaleido-gap { color: #ff6b6b; }
-    #kaleido-note { font-size: 12px; color: #ff9a52; min-height: 1em; overflow-wrap: anywhere; }
+    #kaleido-note { font-size: var(--text-s); color: var(--accent); min-height: 1em; overflow-wrap: anywhere; }
     #kaleido-kept-list { display: grid; gap: 6px; margin-top: 6px; }
-    .kept-row { display: grid; grid-template-columns: 1fr auto; gap: 4px 6px; align-items: center; padding: 6px; border: 1px solid #4a2000; border-radius: 8px; }
+    .kept-row { display: grid; grid-template-columns: 1fr auto; gap: 4px 6px; align-items: center; padding: 6px; border: 1px solid #4a2000; border-radius: var(--radius-m); }
     .kept-row .kept-name { overflow-wrap: anywhere; }
-    .kept-row .kept-when { grid-column: 1 / -1; font-size: 11px; opacity: .75; }
+    .kept-row .kept-when { grid-column: 1 / -1; font-size: var(--text-xs); opacity: .75; }
     .kept-row .kept-actions { grid-column: 1 / -1; display: flex; gap: 6px; flex-wrap: wrap; }
-    .kept-row .kept-actions button { min-height: 36px; }`;
+    .kept-row .kept-actions button { min-height: var(--touch-compact); }`;
   panel.appendChild(style);
   const $ = (sel) => panel.querySelector(sel);
   const path = $('#kaleido-path');

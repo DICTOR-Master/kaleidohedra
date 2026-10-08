@@ -1,123 +1,178 @@
-// First-run welcome/entry overlay: Kaleidohedra's symbol (the regular-hexagon
-// ED, turning) with an ENTER button centred on it, links to the sibling sites, legal-doc links.
-// Purely a DOM/localStorage concern, independent of render.js/world state.
-import { buildWheelFaces } from './rhombic-wheel-3d-core.js';
+// First-run welcome/entry overlay: rotating RD logo with a static
+// integrated "ENTER" label, legal-doc links. Purely a DOM/localStorage
+// concern, independent of render.js/world state.
 import { getSettings, onSettingsChange } from './settings.js';
 import { t } from './i18n.js';
 import { dimensionLabel } from './dimension-label.js';
 import { openGuide } from './guide.js';
 import { createLanguagePicker } from './language-picker.js';
+import { SITE, SITES, storageKey } from './site.js';
+import { LOGOS } from './logos.js';
 
-// The welcome screen shows on every visit (direct decision 2026-09-25:
-// the "Don't show this again" opt-out was removed). This is the key that
-// opt-out used to store; it's cleared on load so it can't linger.
-const LEGACY_SKIP_KEY = 'rhombiverse-skip-intro';
+const LEGACY_SKIP_KEY = storageKey('skip-intro');
+// The welcome screen is the same for every app; what differs comes from the site table and here.
+const LOGO = LOGOS[SITE];
+const [W1, W2] = SITES[SITE].wordmark;
 
-// The welcome symbol: Kaleidohedra's own shape, the regular-hexagon elongated
-// dodecahedron (the wheel's geometry, DISCOVERIES.md #5), as a turning
-// wireframe like Rhombiverse's and Polyhedraverse's logos. Plain SVG, no
-// second WebGL context; each frame only moves its edges' end points.
-const ED_FACES = buildWheelFaces();
-const ED_EDGES = (() => {
-  const seen = new Map();
-  for (const { verts } of ED_FACES) verts.forEach((a, i) => {
-    const b = verts[(i + 1) % verts.length];
-    const key = [a, b].map((v) => v.map((c) => c.toFixed(5)).join()).sort().join('|');
-    if (!seen.has(key)) seen.set(key, [a, b]);
-  });
-  return [...seen.values()];
-})();
-const LOGO_SCALE = 30;
-const LOGO_TILT = 0.08;
-// Revolves about the vertical, like Rhombiverse's logo (direct request: it rocked, it should turn).
-const SPIN_SPEED = 0.48; // radians per second (about 13 s a turn)
-const rotX = ([x, y, z], a) => [x, y * Math.cos(a) - z * Math.sin(a), y * Math.sin(a) + z * Math.cos(a)];
-const rotY = ([x, y, z], a) => [x * Math.cos(a) + z * Math.sin(a), y, -x * Math.sin(a) + z * Math.cos(a)];
-// As in the logo (direct request): lying level, its long axis (z in the wheel
-// frame) exactly left to right and side-on, a belt hexagon facing the viewer so
-// the view is symmetric. (The logo also shows a square face-on, which the true
-// shape can't do at the same time: its squares sit at 45 degrees to the long
-// axis.) The frame comes from the geometry: toward the viewer = that hexagon's
-// centre direction, screen right = the long axis, up = right x toward. It turns
-// about the vertical from there.
-const dot3 = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
-const unit3 = (a) => { const l = Math.hypot(...a); return a.map((c) => c / l); };
-const VIEW = (() => {
-  const sq = ED_FACES.find((f) => f.type === 'hexagon');
-  const toward = unit3(sq.verts.reduce((acc, v) => acc.map((c, i) => c + v[i]), [0, 0, 0]));
-  const along = dot3([0, 0, 1], toward);
-  const right = unit3([0, 0, 1].map((c, i) => c - along * toward[i]));
-  const up = [right[1] * toward[2] - right[2] * toward[1], right[2] * toward[0] - right[0] * toward[2], right[0] * toward[1] - right[1] * toward[0]];
-  return { right, up, toward };
-})();
-function place(v, angle) {
-  const view = [dot3(v, VIEW.right), dot3(v, VIEW.up), dot3(v, VIEW.toward)];
-  return rotX(rotY(view, angle), LOGO_TILT);
+// ENTER: history of how this got here, briefly --
+//  - Originally a fixed button below the logo; direct feedback
+//    2026-08-26 said that read "too similar to the old version," so it
+//    became two antipodal faces on the rotating RD itself that lit up
+//    (an opalescent glow fill) as they swung toward the viewer.
+//  - Entry-flow audit 2026-09-02 found that real: those faces were only
+//    clickable while actually facing the viewer, with no visible hint
+//    that a plain Enter keypress worked at any time. Fixed by adding a
+//    second, large, POSITION-STATIC "ENTER" label centered over the
+//    logo -- always visible, always clickable, no facing/timing gate.
+//  - Direct follow-up feedback, same day: the swinging opalescent glow
+//    faces were no longer needed once the static label became the real
+//    entry point, so they're gone entirely now -- the RD just rotates
+//    as a plain wireframe logo, and the static label is the only ENTER
+//    affordance. This keeps ENTER "on the shape" in spirit (it's
+//    centered on the logo, not a separately-positioned button) without
+//    any per-face geometry/winding/normal-facing machinery at all.
+
+const LOGO_SCALE = 30; // RD vertices have max norm 2 -- 30 keeps the whole shape inside the viewBox below with margin
+// rad/SECOND, not rad/frame -- driven by real elapsed time in startLogoSpin
+// below, not a frame counter. This Pi doesn't hold 60fps once render.js's
+// own WebGL scene is also live behind the overlay; a fixed rad/frame step
+// (the first version of this code) made the spin track actual frame rate
+// instead of wall-clock time -- confirmed via a real Playwright probe.
+// rad/second keeps the spin's real-world pace correct regardless of how
+// many frames the machine actually manages.
+const SPIN_SPEED = 0.48; // ~13s/revolution
+const PULSE_SPEED = 3.0; // ~2.1s breathing cycle, independent of spin -- an attention cue on the static ENTER label
+
+function rotateX([x, y, z], a) {
+  const c = Math.cos(a), s = Math.sin(a);
+  return [x, y * c - z * s, y * s + z * c];
 }
-function drawLogo(svg, angle) {
-  svg.querySelectorAll('.ed-edge').forEach((el, i) => {
-    const [a, b] = ED_EDGES[i].map((v) => place(v, angle));
-    el.setAttribute('x1', (a[0] * LOGO_SCALE).toFixed(1));
-    el.setAttribute('y1', (-a[1] * LOGO_SCALE).toFixed(1));
-    el.setAttribute('x2', (b[0] * LOGO_SCALE).toFixed(1));
-    el.setAttribute('y2', (-b[1] * LOGO_SCALE).toFixed(1));
-  });
+function rotateY([x, y, z], a) {
+  const c = Math.cos(a), s = Math.sin(a);
+  return [x * c + z * s, y, -x * s + z * c];
 }
-function logoHtml() {
+function transform(p, angle) { return LOGO.spinFirst ? rotateX(rotateY(p, angle), LOGO.tilt) : rotateY(rotateX(p, LOGO.tilt), angle); }
+
+function logoSvg() {
+  const lines = LOGO.edges.map((_, i) => `<line class="rd-edge" data-i="${i}" />`).join('');
   return `
-    <div id="welcome-logo">
-      <svg id="welcome-logo-svg" viewBox="-75 -75 150 150" role="img" aria-label="Kaleidohedra symbol: a wireframe regular-hexagon elongated dodecahedron, turning slowly">
-        <g stroke="#ff6a00" stroke-width="1.5" stroke-linecap="round" fill="none">${ED_EDGES.map(() => '<line class="ed-edge" />').join('')}</g>
-      </svg>
-      <button type="button" id="static-enter-label">ENTER</button>
-    </div>`;
+    <svg id="welcome-logo-svg" viewBox="-75 -75 150 150" width="180" height="180" role="img" aria-label="${SITES[SITE].name} logo: ${LOGO.label}. Click ENTER, centered on the logo, to begin.">
+      <g style="stroke: var(--accent-strong)" stroke-width="1.5" stroke-linecap="round" fill="none">${lines}</g>
+      <!-- Static ENTER label: fixed at the SVG's own center, outside the
+           rotating group above, so it never turns or tilts with the RD.
+           Always full pointer-events -- clicking it never depends on
+           rotation phase. A gentle opacity breathe (driven by pulsePhase
+           in startLogoSpin) is the only animation it gets. -->
+      <text id="static-enter-label" x="0" y="1" text-anchor="middle" dominant-baseline="central"
+            font-family="system-ui, sans-serif" font-weight="800" font-size="19" letter-spacing="1.5"
+            fill="#eafcff" style="cursor:pointer"
+            stroke="#04141c" stroke-width="2.5" paint-order="stroke">ENTER</text>
+    </svg>`;
 }
-function startLogoSpin() {
+
+// Recomputed every animation frame while the overlay is visible; started/
+// stopped by show()/hide() below rather than left running once dismissed.
+// `onEnterHit` fires on a click of the static center label -- always,
+// regardless of rotation phase. See the module header for ENTER's history.
+function startLogoSpin(onEnterHit) {
   const svg = document.getElementById('welcome-logo-svg');
   if (!svg) return () => {};
-  const still = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-  let angle = 0, lastT = null, raf = null;
-  const frame = (t) => {
+  const edgeEls = svg.querySelectorAll('.rd-edge');
+  const staticLabel = document.getElementById('static-enter-label');
+  let raf = null;
+  let angle = 0;
+  let pulsePhase = 0;
+  let lastT = null;
+
+  function frame(t) {
+    // Clamp dt: a tab-switch/GC pause shouldn't make the shape jump --
+    // just resume the same real-time pace from wherever it left off.
     const dt = lastT === null ? 0 : Math.min(0.1, (t - lastT) / 1000);
     lastT = t;
     angle += SPIN_SPEED * dt;
-    drawLogo(svg, angle);
+    pulsePhase += PULSE_SPEED * dt;
+
+    edgeEls.forEach((el, i) => {
+      const [a, b] = LOGO.edges[i];
+      const [ax, ay] = transform(a, angle);
+      const [bx, by] = transform(b, angle);
+      el.setAttribute('x1', ax * LOGO_SCALE);
+      el.setAttribute('y1', ay * LOGO_SCALE);
+      el.setAttribute('x2', bx * LOGO_SCALE);
+      el.setAttribute('y2', by * LOGO_SCALE);
+    });
+
+    // Static label: fixed position (set once, never touched here), just
+    // a gentle always-substantially-visible breathe for attention --
+    // never drops low enough to read as "off", and pointer-events stays
+    // 'auto' unconditionally (set once below, not per frame).
+    if (staticLabel) staticLabel.setAttribute('fill-opacity', String(0.82 + 0.18 * Math.sin(pulsePhase)));
+
     raf = requestAnimationFrame(frame);
+  }
+  const listeners = [];
+  if (staticLabel) {
+    staticLabel.style.pointerEvents = 'auto';
+    const onStaticClick = () => onEnterHit();
+    staticLabel.addEventListener('click', onStaticClick);
+    listeners.push({ el: staticLabel, onClick: onStaticClick });
+  }
+  raf = requestAnimationFrame(frame);
+  return () => {
+    if (raf !== null) cancelAnimationFrame(raf);
+    listeners.forEach(({ el, onClick }) => el.removeEventListener('click', onClick));
   };
-  drawLogo(svg, 0);
-  if (!still) raf = requestAnimationFrame(frame);
-  return () => { if (raf !== null) cancelAnimationFrame(raf); };
 }
 
-// The overview line, then Kaleidohedra's own worlds, where the shear
-// means something: 3D+ (the Wizard's sheared lattices), EKP and Targets.
-// Redrawn on a language change.
-const OWN_WORLDS = [
-  { label: () => dimensionLabel('3D'), dim: '3D' },
-  { label: () => 'EKP', world: 'tool:roofFoldWorld' },
-  { label: () => 'Targets', world: 'tool:targetsWorld' },
-];
+// Real user feedback (2026-09-10): the welcome card had grown to three
+// pieces of "extra info" below the title/logo (the changelog-derived
+// tagline, the RHOMBIS cross-link, the Polyhedraverse cross-link) --
+// "two bits of extra info [is] enough on welcome." The changelog tagline
+// (previously right under the h1, its own loadLatestUpdate() fetch) is
+// the one that was cut, in favor of the RHOMBIS link taking that top
+// spot instead -- the "What's New" changelog panel (src/app/changelog.js)
+// is still the real place for that content, this was always a secondary
+// teaser of it.
+// The overview line, then every dimension (1D ... 6D) as a button that
+// opens the Wizard at that dimension, all on one row of their own
+// (direct request: no '&', the row never splitting across lines), named
+// as everywhere else (dimensionLabel: 1D+, 2D+, 3D+, 4D, 5D, 6D).
+// Redrawn here on a language change (data-i18n would drop the buttons).
+// Each app's quick links: Rhombiverse its dimensions (each opens the DICTO wizard there);
+// Kaleidohedra 3D+ and its own worlds, where the shear means something (each straight in).
+const QUICK = {
+  rhombiverse: ['1D', '2D', '3D', '4D', '5D', '6D'].map((d) => ({ dim: d, label: () => dimensionLabel(d) })),
+  kaleidohedra: [
+    { dim: '3D', label: () => dimensionLabel('3D') },
+    { world: 'tool:roofFoldWorld', label: () => 'EKP' },
+    { world: 'tool:targetsWorld', label: () => 'Targets' },
+  ],
+};
 function overviewHtml(lang) {
-  return `${t('welcome.overview', lang)}<span class="dim-links">${OWN_WORLDS.map((w) => `<button type="button" class="dim-link" ${w.dim ? `data-dim="${w.dim}"` : `data-world="${w.world}"`}>${w.label()}</button>`).join('')}</span>`;
+  return `${t('welcome.overview', lang)}<span class="dim-links">${QUICK[SITE].map((q) => `<button type="button" class="dim-link" ${q.dim ? `data-dim="${q.dim}"` : `data-world="${q.world}"`}>${q.label()}</button>`).join('')}</span>`;
 }
+// The other apps, each with its icon and its own line of text.
+const ICONS = { kaleidohedra: './assets/kaleidohedra-favicon-64.png', rhombiverse: './favicon.svg', polyhedraverse: './assets/polyhedraverse-favicon-64.png' };
+const siblingsHtml = (lang) => Object.keys(SITES).filter((a) => a !== SITE).map((a) => `
+      <div class="polyhedraverse-link">
+        <img src="${ICONS[a]}" alt="" width="28" height="28" />
+        <a href="${SITES[a].url}" target="_blank" rel="noopener" data-i18n-html="welcome.${a}Link">${t(`welcome.${a}Link`, lang)}</a>
+      </div>`).join('');
 
 function overlayHtml() {
   const lang = getSettings().language;
   return `
     <div id="welcome-card">
       <div class="welcome-lang"></div>
-      <h1>Kaleido<span>hedra</span></h1>
+      <h1>${W1}<span>${W2}</span></h1>
       <p class="overview">${overviewHtml(lang)}</p>
       <button type="button" class="how-to-link" id="welcome-how-to" data-i18n-html="welcome.howTo">${t('welcome.howTo', lang)}</button>
-      <div class="rhombiverse-link">
-        <img src="./assets/rhombiverse-icon.svg" alt="" width="28" height="28" />
-        <a href="https://rhombiverse.vercel.app" target="_blank" rel="noopener" data-i18n-html="welcome.rhombiverseLink">${t('welcome.rhombiverseLink', lang)}</a>
-      </div>
-      ${logoHtml()}
-      <div class="polyhedraverse-link">
-        <img src="./assets/polyhedraverse-favicon-64.png" alt="" width="28" height="28" />
-        <a href="https://polyhedraverse.vercel.app" target="_blank" rel="noopener" data-i18n-html="welcome.polyhedraverseLink">${t('welcome.polyhedraverseLink', lang)}</a>
-      </div>
+      ${SITE === 'rhombiverse' ? `<div class="rhombis-link">
+        <img src="./assets/rhombis-favicon-64.png" alt="" width="28" height="28" />
+        <a href="./rhombis.html" data-i18n-html="welcome.rhombisLink">${t('welcome.rhombisLink', lang)}</a>
+      </div>` : ''}
+      ${logoSvg()}
+      ${siblingsHtml(lang)}
       <div class="legal-links">
         <a href="./legal.html?doc=terms" target="_blank" rel="noopener">Terms</a>
         · <a href="./legal.html?doc=privacy" target="_blank" rel="noopener">Privacy</a>
@@ -135,16 +190,17 @@ function init() {
   overlay.querySelector('.welcome-lang').appendChild(createLanguagePicker());
   // Delegated, so it survives overlayHtml() being re-rendered.
   overlay.addEventListener('click', (e) => {
-    if (e.target.closest('#static-enter-label')) { enterWorld(); return; }
     if (e.target.closest('#welcome-how-to')) openGuide();
     const link = e.target.closest('.dim-link');
     if (link) {
       hide();
       if (link.dataset.dim) window.dispatchEvent(new CustomEvent('rhombiverse:open-wizard', { detail: link.dataset.dim }));
-      else window.dispatchEvent(new CustomEvent('kaleidohedra:open-world', { detail: link.dataset.world }));
+      else window.dispatchEvent(new CustomEvent('krp:open-world', { detail: link.dataset.world }));
     }
   });
   onSettingsChange((s) => { const p = overlay.querySelector('.overview'); if (p) p.innerHTML = overviewHtml(s.language); });
+
+  let stopLogoSpin = () => {};
 
   const aboutBtn = document.createElement('button');
   aboutBtn.id = 'about-btn';
@@ -154,11 +210,10 @@ function init() {
   aboutBtn.textContent = 'ℹ';
   document.body.appendChild(aboutBtn);
 
-  let stopLogoSpin = () => {};
   function show() {
     overlay.style.display = 'flex';
     stopLogoSpin();
-    stopLogoSpin = startLogoSpin();
+    stopLogoSpin = startLogoSpin(enterWorld);
   }
   function hide() {
     overlay.style.display = 'none';
@@ -170,7 +225,7 @@ function init() {
     hide();
   }
 
-  // Keyboard fallback -- the ENTER button is always clickable, but
+  // Keyboard fallback -- the static ENTER label is always clickable, but
   // a literal Enter keypress works too, for anyone who reaches for the
   // keyboard instead of the mouse/touch. Only acts while the overlay is
   // actually shown.

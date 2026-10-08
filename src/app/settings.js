@@ -1,6 +1,7 @@
 // Single source of truth for the B1 Settings panel, a tiny pub/sub
 // store.
-const SETTINGS_KEY = 'rhombiverse-settings';
+import { SITE, SITES, storageKey } from './site.js';
+const SETTINGS_KEY = storageKey('settings');
 
 export const QUALITY_PIXEL_RATIO_FACTOR = {
   low: 0.5,
@@ -19,7 +20,7 @@ const DEFAULTS = {
   fov: 50,
   quality: 'high',
   volume: 0.5,
-  // UI-chrome language (src/app/i18n.js) -- shared with the sibling apps via this
+  // UI-chrome language (src/app/i18n.js) -- shared with RHOMBIS via this
   // same SETTINGS_KEY, so a choice made in either app is honored in both.
   language: 'en',
   // Performance guardrail (reframe Stage 6): the meter itself is opt-in
@@ -50,7 +51,7 @@ export function updateSettings(partial) {
   try {
     localStorage.setItem(SETTINGS_KEY, JSON.stringify(current));
   } catch (err) {
-    console.warn('Kaleidohedra: failed to save settings', err);
+    console.warn(`${SITES[SITE].name}: failed to save settings`, err);
   }
   listeners.forEach((fn) => fn(current));
 }

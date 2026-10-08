@@ -1,6 +1,7 @@
 // World-state persistence backend (localStorage for now, swappable later).
 //
-const STORAGE_KEY = 'rhombiverse-world';
+import { SITE, SITES, storageKey } from '../app/site.js';
+const STORAGE_KEY = storageKey('world');
 
 // The BCC dual-lattice build (geometry-extensions/bcc-build.md) is a
 // second, independent world store -- its own localStorage key rather
@@ -8,27 +9,27 @@ const STORAGE_KEY = 'rhombiverse-world';
 // existing `saveToLocalStorage(world.toJSON())` call sites (undo, Shared
 // World sync, Clear World, ...) need to change to also carry BCC data,
 // and none of them can accidentally clobber it either.
-export const BCC_STORAGE_KEY = 'rhombiverse-bcc-world';
+export const BCC_STORAGE_KEY = storageKey('bcc-world');
 
 // Interstitial-lattice build (geometry-extensions/interstitial-lattice.md):
 // same reasoning as BCC_STORAGE_KEY above -- a third, independent store,
 // own key, untouched by every existing FCC/BCC save/load/clear call site.
-export const INTERSTITIAL_STORAGE_KEY = 'rhombiverse-interstitial-world';
+export const INTERSTITIAL_STORAGE_KEY = storageKey('interstitial-world');
 
 // Cuboctahedron build (core/cubocta-build.js): same reasoning again -- a
 // fourth independent store, own key, untouched by every existing
 // FCC/BCC/interstitial save/load/clear call site.
-export const CUBOCTA_STORAGE_KEY = 'rhombiverse-cubocta-world';
+export const CUBOCTA_STORAGE_KEY = storageKey('cubocta-world');
 
 // Cuboctahedron gap-octahedron build (core/cubocta-gap-build.js): same
 // reasoning again -- a fifth independent store, own key, own coordinate
 // frame (offset cube-center addressing, not the main integer grid).
-export const CUBOCTA_GAP_STORAGE_KEY = 'rhombiverse-cubocta-gap-world';
+export const CUBOCTA_GAP_STORAGE_KEY = storageKey('cubocta-gap-world');
 
 // Hemisphere pieces (core/hemisphere-build.js): same reasoning again -- a
 // sixth independent store, own key. Half RD/Hourglass ported from Rhombis,
 // direct instruction 2026-09-06.
-export const HEMISPHERE_STORAGE_KEY = 'rhombiverse-hemisphere-world';
+export const HEMISPHERE_STORAGE_KEY = storageKey('hemisphere-world');
 
 // Elongated Dodecahedron build ('elongdodeca' piece tier, core/build.js's
 // own handleElongDodecaClick): same reasoning again -- a seventh
@@ -36,27 +37,38 @@ export const HEMISPHERE_STORAGE_KEY = 'rhombiverse-hemisphere-world';
 // main World (see krp-core/src/geometry-extensions/elongated-dodecahedron.js's own
 // header for why), just a different own key so its saves never mix
 // with the main world's.
-export const ELONGDODECA_STORAGE_KEY = 'rhombiverse-elongdodeca-world';
+export const ELONGDODECA_STORAGE_KEY = storageKey('elongdodeca-world');
 
 // Hexagonal Prism build ('hexprism' piece tier): the 5th "adopted family
 // member" store -- own axial-hex coordinate frame (geometry-extensions/
 // hex-prism.js), genuinely separate from FCC's own grid.
-export const HEXPRISM_STORAGE_KEY = 'rhombiverse-hexprism-world';
-export const DICTOFCC_STORAGE_KEY = 'rhombiverse-dicto-fcc-world';
-export const DICTOBLOCK_STORAGE_KEY = 'rhombiverse-dicto-block-world';
+export const HEXPRISM_STORAGE_KEY = storageKey('hexprism-world');
+export const DICTOFCC_STORAGE_KEY = storageKey('dicto-fcc-world');
+export const DICTOHEX_STORAGE_KEY = storageKey('dicto-hex-world');
+export const DICTOBLOCK_STORAGE_KEY = storageKey('dicto-block-world');
 
+// 2D tier (Phase 3): one store PER (angle, primitive) combination from
+// lattice-2d.js's own LATTICE_2D_COMBINATIONS, each flat layer pinned
+// to z=0 in the SAME scene 3D already uses -- same "adopted family
+// member" reasoning as every other store on this page, generalized off
+// the earlier Phase 2 design's 3 separately-named keys (Square/Hexagon/
+// Triangle) into one keyed function so a new named angle or primitive
+// never needs a new hand-added constant here.
+export function lattice2dStorageKey(comboId) {
+  return storageKey(`lattice2d-${comboId}-world`);
+}
 
 // Rhombohedra (free lattice): own store, own coordinate frame (3 real
 // edge vectors of one of RD Quarter's own 4 congruent orientations --
 // see krp-core/src/geometry-extensions/rhombohedra-lattice.js's own header for why
 // RD Quarter itself can't be freely placed/removed in open space).
-export const RHOMBOHEDRA_STORAGE_KEY = 'rhombiverse-rhombohedra-world';
+export const RHOMBOHEDRA_STORAGE_KEY = storageKey('rhombohedra-world');
 
 export function saveToLocalStorage(worldJSON, key = STORAGE_KEY) {
   try {
     localStorage.setItem(key, JSON.stringify(worldJSON));
   } catch (err) {
-    console.warn('Kaleidohedra: failed to save world to localStorage', err);
+    console.warn(`${SITES[SITE].name}: failed to save world to localStorage`, err);
   }
 }
 
@@ -66,7 +78,7 @@ export function loadFromLocalStorage(key = STORAGE_KEY) {
   try {
     return JSON.parse(raw);
   } catch (err) {
-    console.warn('Kaleidohedra: saved world was corrupt JSON, ignoring', err);
+    console.warn(`${SITES[SITE].name}: saved world was corrupt JSON, ignoring`, err);
     return null;
   }
 }
@@ -94,4 +106,4 @@ export async function importWorldFile(file) {
 // separate world of truncated tetrahedra, in geometry-extensions/
 // pyrochlore-lattice.js's own doubled-coordinate frame (registered to the
 // main RD world's units). Cap tetrahedra are derived, never stored.
-export const PYROCHLORE_STORAGE_KEY = 'rhombiverse-pyrochlore-world';
+export const PYROCHLORE_STORAGE_KEY = storageKey('pyrochlore-world');

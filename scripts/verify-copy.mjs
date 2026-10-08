@@ -82,13 +82,15 @@ for (const f of fs.readdirSync(root).filter((n) => n.endsWith('.html'))) {
 
 // README, the User Guide, and the published legal/security pages
 // (scripts/build.mjs ships them).
-for (const f of ['README.md', 'docs/guide.md', ...['ja', 'es', 'fr', 'ko', 'zh', 'ru'].map((l) => `docs/guide.${l}.md`), 'TERMS.md', 'PRIVACY.md', 'SECURITY.md']) {
+// Each app's guides live in its site folder (site/<app>/), as do its changelogs below.
+const SITE_DIRS = fs.readdirSync(path.join(root, 'site')).filter((d) => fs.statSync(path.join(root, 'site', d)).isDirectory());
+for (const f of ['README.md', ...SITE_DIRS.flatMap((d) => ['guide.md', ...['ja', 'es', 'fr', 'ko', 'zh', 'ru'].map((l) => `guide.${l}.md`)].map((g) => `site/${d}/${g}`)), 'TERMS.md', 'PRIVACY.md', 'SECURITY.md']) {
   if (!fs.existsSync(path.join(root, f))) continue;
   fs.readFileSync(path.join(root, f), 'utf8').split('\n').forEach((line, i) => check(path.join(root, f), line, `line ${i + 1}`));
 }
 
-for (const [i, e] of JSON.parse(fs.readFileSync(path.join(root, 'data/changelog.json'), 'utf8')).entries()) {
-  for (const t of [e.title, ...(e.items ?? [])]) check(path.join(root, 'data/changelog.json'), t, `entry ${i}: ${e.date}`, historyRe);
+for (const d of SITE_DIRS) for (const [i, e] of JSON.parse(fs.readFileSync(path.join(root, 'site', d, 'changelog.json'), 'utf8')).entries()) {
+  for (const t of [e.title, ...(e.items ?? [])]) check(path.join(root, 'site', d, 'changelog.json'), t, `entry ${i}: ${e.date}`, historyRe);
 }
 
 if (hits.length) {

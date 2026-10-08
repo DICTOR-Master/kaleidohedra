@@ -7,7 +7,7 @@
 // not just an assumption baked into almanac-data.js's own comments).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { WHEEL_PIECE, WHEEL_RD_FAMILY } from '../../src/app/rhombic-wheel-3d-core.js';
+import { WHEEL_PIECE, WHEEL_RD_FAMILY } from '../../src/app/pieces.js';
 import {
   PIECE_ENTRIES,
   ALMANAC_ENTRIES,

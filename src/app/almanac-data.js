@@ -11,7 +11,7 @@
 // tests/unit/almanac-data.test.mjs for the coverage check this promises
 // -- every real piece action appears in Almanac exactly once, no silent
 // gaps.
-import { WHEEL_PIECE, WHEEL_RD_FAMILY, ACTION_TO_MARK } from './rhombic-wheel-3d-core.js';
+import { WHEEL_PIECE, WHEEL_RD_FAMILY, ACTION_TO_MARK } from './pieces.js';
 import { computeConvexStats } from '../krp-core/src/core/polyhedron-stats.js';
 import { CUBE_VERTS, rdRawVerts, pyramidPieces, cuboctahedronVertices, octGapVertices, hemisphereSplit } from '../krp-core/src/core/lattice.js';
 import { truncatedOctahedronVertices } from '../krp-core/src/geometry-extensions/dual-lattice.js';
@@ -21,6 +21,7 @@ import { rdQuarterPieces } from '../krp-core/src/core/lattice.js';
 import { elongatedDodecahedronVerts } from '../krp-core/src/geometry-extensions/elongated-dodecahedron.js';
 import { dictoCellVerts } from '../krp-core/src/geometry-extensions/dicto-fcc.js';
 import { hexPrismVerts } from '../krp-core/src/geometry-extensions/hex-prism.js';
+import { dictoHexCellVerts } from '../geometry-extensions/dicto-hex.js';
 import { rhombohedraTileVerts } from '../krp-core/src/geometry-extensions/rhombohedra-lattice.js';
 import { truncatedTetrahedronVerts } from '../krp-core/src/geometry-extensions/pyrochlore-lattice.js';
 
@@ -72,6 +73,7 @@ function convexPieceVerts(action) {
     case 'tool:pieceType:elongdodeca': return elongatedDodecahedronVerts(1);
     case 'tool:pieceType:hexprism': return hexPrismVerts(1);
     case 'tool:pieceType:dictofcc': return dictoCellVerts(1);
+    case 'tool:pieceType:dictohex': return dictoHexCellVerts(1);
     case 'tool:pieceType:pyrochlore': return truncatedTetrahedronVerts(1);
     default: return null; // not a single-cell convex piece -- see compositionForAction below
   }
@@ -158,7 +160,7 @@ export const LATTICE_CONCEPT_ENTRIES = [
     kind: 'concept',
     id: 'concept:bccLattice',
     label: 'The BCC Lattice',
-    desc: "The BCC world's grid is a real body-centered cubic (BCC) lattice -- every cell has 8 nearest neighbors (the cube corners) and 6 next-nearest (the face centers), the same coordination real BCC crystals (iron, tungsten) have. The interstitial pieces (Flattened Octahedron, Disphenoid) exist because a BCC lattice's own gaps have real, specific shapes -- they aren't placed arbitrarily.",
+    desc: "Rhombiverse's world grid is a real body-centered cubic (BCC) lattice -- every cell has 8 nearest neighbors (the cube corners) and 6 next-nearest (the face centers), the same coordination real BCC crystals (iron, tungsten) have. The interstitial pieces (Flattened Octahedron, Disphenoid) exist because a BCC lattice's own gaps have real, specific shapes -- they aren't placed arbitrarily.",
     markKey: null,
   },
   {
@@ -168,12 +170,33 @@ export const LATTICE_CONCEPT_ENTRIES = [
     desc: "The rhombic dodecahedron (RD) is the real Voronoi cell of a face-centered cubic (FCC) lattice -- the same reason honeybees' hexagonal cells and closest-sphere-packing both relate to this shape. RD tiles 3D space with zero gaps, which is why it -- not a cube -- is Rhombiverse's own base building cell.",
     markKey: null,
   },
-  // Golden Rhombohedra.
+  // 5D/6D quasicrystals.
+  {
+    kind: 'concept',
+    id: 'concept:cutAndProject',
+    label: 'Cut and Project',
+    desc: "The 5D and 6D worlds are quasicrystals made by cut and project (de Bruijn's method). Take the cube lattice Z⁵ or Z⁶, pass a 3D slice through it at an irrational angle, and keep only the lattice points that lie within a set distance of the slice: the ones whose shadow in the hidden dimensions falls inside the acceptance window. Joining them gives a tiling that fills space with no gaps but never repeats. The window is a rhombic triacontahedron in 6D and a set of pentagons in 5D; Window View shows it, with your pieces' corners as points.",
+    markKey: null,
+  },
+  {
+    kind: 'concept',
+    id: 'concept:phasonApproximant',
+    label: 'Phasons and Approximants',
+    desc: "A phason slides the slice sideways through the hidden dimensions. Corners cross the edge of the window, so pieces flip in small local rearrangements while the tiling stays a perfect quasicrystal: that's why the Phason sliders make pieces appear and disappear. An approximant tilts the slice to a rational slope instead, such as 3/2 or 8/5 (ratios of Fibonacci numbers), so the tiling repeats and becomes an ordinary periodic crystal. The ratios approach the golden ratio τ, and at τ the true quasicrystal returns. Real approximant crystals exist beside many quasicrystalline alloys.",
+    markKey: null,
+  },
   {
     kind: 'concept',
     id: 'concept:quasicrystalPieces',
     label: 'Golden Rhombohedra and Penrose Prisms',
-    desc: "The golden rhombohedra are the two pieces of the 3D Penrose tiling (the Ammann–Kramer tiling): rhombohedra whose faces are rhombi with diagonals in the golden ratio, one prolate (tall) and one oblate (flat). It is cut from the cube lattice Z⁶ at an irrational angle (de Bruijn's cut and project), a model for real icosahedral quasicrystals such as the Al–Mn alloy Dan Shechtman found in 1982. In the Golden Rhombohedra world you can place both pieces freely: the Penrose check shows green where your build belongs to the true aperiodic tiling and red where it has drifted, since face-to-face matching alone never forces aperiodicity.",
+    desc: "The 6D icosahedral quasicrystal is built from two golden rhombohedra, whose faces are rhombi with diagonals in the golden ratio: the prolate one (tall) and the oblate one (flat). This is the Ammann–Kramer tiling, a model for real icosahedral quasicrystals such as the Al–Mn alloy Dan Shechtman found in 1982. The 5D decagonal quasicrystal is the Penrose rhombus tiling stacked in layers, built from thick (72°) and thin (36°) rhombus prisms, like real decagonal quasicrystals that are quasiperiodic in a plane and periodic along one axis. In the 3D Golden Rhombohedra world you can place both pieces freely: the Penrose check shows green where your build belongs to the true aperiodic tiling and red where it has drifted, since face-to-face matching alone never forces aperiodicity.",
+    markKey: null,
+  },
+  {
+    kind: 'concept',
+    id: 'concept:catalogueKinds',
+    label: 'The 5D/6D Catalogue',
+    desc: "Four kinds of item. Zonohedra are convex shapes whose faces come in parallel pairs; the ones here are made entirely of the tiling's own pieces, up to the rhombic triacontahedron (20 golden rhombohedra). Polytopes are higher-dimensional shapes with corners on the lattice (orthoplexes, demicubes and simplex corners), shown as their shadows: the 6-orthoplex casts an icosahedron. Bridges are hyperprisms: a polytope carried one step through a further dimension, such as the 5-orthoplex prism, also shown as its shadow. Vertex stars are the ways pieces can meet at a corner: 7 in the Penrose layers and 24 in the icosahedral tiling. Every item lands where it really occurs, and Connect joins two items with the shortest chain of real tiles.",
     markKey: null,
   },
   // Shells.

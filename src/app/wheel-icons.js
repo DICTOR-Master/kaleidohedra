@@ -185,6 +185,8 @@ export const MARKS = {
   pieceHexPrism: `<polygon points="${hexPts(20)}" ${THIN}/><path d="M-17,-10 V10 M17,-10 V10" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>`,
   // DICTO FCC: pieceRD's hexagon, sheared -- the skewed rhombic dodecahedron.
   pieceDictoFcc: `<polygon points="${hexPts(20).split(' ').map((p) => { const [x, y] = p.split(',').map(Number); return `${(x + y * 0.3).toFixed(2)},${(y * 0.9).toFixed(2)}`; }).join(' ')}" ${THIN}/>`,
+  // DICTO Hex Prism: pieceHexPrism with its sides leaning -- the prism slid along its lean.
+  pieceDictoHex: `<polygon points="${hexPts(20)}" ${THIN}/><path d="M-17,-10 L-11,10 M17,-10 L23,10" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>`,
   // Rhombohedra: a real skewed parallelogram (not the symmetric kite
   // rhombusPts() draws elsewhere), matching a rhombohedron's own
   // non-orthogonal silhouette.
@@ -194,11 +196,64 @@ export const MARKS = {
   // RD Quarter: shared pieceRhombohedron's mark until 2026-09-24, direct
   // request for its own -- a hexagon outline with a "Mercedes" Y whose
   // 3 spokes run to 3 alternate corners.
+  // 4D cells (2026-09-24, provisional marks pending the user's own
+  // sign-off): 24-cell = hexagon (its RD-outline shadow) with a filled
+  // inner triangle; 16-cell = the cross-polytope's square-with-cross.
+  piece24Cell: `<polygon points="${hexPts(20)}" ${THIN}/><polygon points="0,-10 8.66,5 -8.66,5" fill="currentColor" opacity="0.5"/>`,
+  // Tesseract: the classic cube-in-a-cube shadow.
+  pieceTesseract: `<polygon points="-22,-22 22,-22 22,22 -22,22" ${THIN}/><polygon points="-10,-10 10,-10 10,10 -10,10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M-22,-22 L-10,-10 M22,-22 L10,-10 M22,22 L10,10 M-22,22 L-10,10" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>`,
+  // Hyper-pyrochlore (A4): the 5-cell's own shadow is a pentagon with its
+  // pentagram (every corner joined to every other); truncated = the
+  // pentagon with its corners cut; bitruncated = cut pentagon inside a
+  // cut pentagon.
+  piece5Cell: `<polygon points="0,-22 20.9,-6.8 12.9,17.8 -12.9,17.8 -20.9,-6.8" ${THIN}/><path d="M0,-22 L12.9,17.8 L-20.9,-6.8 L20.9,-6.8 L-12.9,17.8 Z" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.6"/>`,
+  pieceTrunc5Cell: `<polygon points="-6.5,-17.3 6.5,-17.3 16.9,-9.8 20.9,2.5 16.9,14.7 6.5,17.8 -6.5,17.8 -16.9,14.7 -20.9,2.5 -16.9,-9.8" ${THIN}/><polygon points="0,-8 7.6,5 -7.6,5" fill="currentColor" opacity="0.45"/>`,
+  pieceBitrunc5Cell: `<polygon points="-6.5,-17.3 6.5,-17.3 16.9,-9.8 20.9,2.5 16.9,14.7 6.5,17.8 -6.5,17.8 -16.9,14.7 -20.9,2.5 -16.9,-9.8" ${THIN}/><polygon points="-3.2,-8.6 3.2,-8.6 8.4,-4.9 10.4,1.2 8.4,7.3 3.2,8.9 -3.2,8.9 -8.4,7.3 -10.4,1.2 -8.4,-4.9" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>`,
+  piece16Cell: `<polygon points="0,-22 22,0 0,22 -22,0" ${THIN}/><path d="M0,-22 V22 M-22,0 H22" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>`,
   pieceRDQuarter: `<polygon points="${hexPts(20)}" ${THIN}/><path d="M0,0 V-20 M0,0 L17.32,10 M0,0 L-17.32,10" stroke="currentColor" stroke-width="1.5"/>`,
   // Pyrochlore (3D Kagome): the truncated tetrahedron's own silhouette --
   // a tetrahedron (faint outer triangle) with its corners cut off at the
   // real 1/3 points, leaving the hexagon face that makes it Kagome-like.
   piecePyrochlore: `<polygon points="0,-24 20.78,12 -20.78,12" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4"/><polygon points="-6.93,-12 6.93,-12 13.86,0 6.93,12 -6.93,12 -13.86,0" ${THIN}/>`,
+  // 2D lattice tier (Phase 3): one icon PER PRIMITIVE, shared across
+  // every named angle that primitive can appear at (this glyph shows
+  // which primitive construction is active, not the exact angle -- a
+  // full per-angle icon set for all combinations wasn't asked for and
+  // would mostly just be minor skew variations of these same shapes;
+  // every LATTICE_PRIMITIVES entry reaches every named angle now --
+  // Rhombille, the one exception, isn't a primitive of its own at all,
+  // just a contextual arrangement toggle under Parallelogram, so it
+  // never needed its own icon here; see lattice-2d.js's own
+  // RHOMBILLE_ANGLE_ID). Replaces the old pieceSquare2D/pieceHexagon2D/
+  // pieceTriangle2D keys (formerly hardcoded to exactly 90/some-hex/60
+  // degrees) with primitive-named ones matching lattice-2d.js's own
+  // LATTICE_PRIMITIVES ids.
+  //
+  // Parallelogram: a plain square outline, PLUS a horizontal midline --
+  // reads as "a flat tile," distinct from pieceCube's own bare square
+  // (a real 3D solid) and pieceOctahedron's crossed square.
+  piece2dParallelogram: `<polygon points="-22,-22 22,-22 22,22 -22,22" ${THIN}/><path d="M-22,0 H22" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>`,
+  // Hexagon (the lattice's own Voronoi cell): a flatter (wider than
+  // tall) hexagon outline -- deliberately the opposite proportion from
+  // Elongated Dodecahedron's own stretched-tall one, and undecorated
+  // unlike Hex Prism's.
+  piece2dHexagon: `<polygon points="${hexPts(20, 0, 0, 0).split(' ').map((p) => { const [x, y] = p.split(',').map(Number); return `${x.toFixed(2)},${(y * 0.8).toFixed(2)}`; }).join(' ')}" ${THIN}/>`,
+  // Triangle: a plain flat equilateral triangle outline -- deliberately
+  // undecorated/symmetric, distinct from piecePyramid's own taller
+  // "peaked" triangle (a real 3D apex, not a flat 2D tile).
+  piece2dTriangle: `<polygon points="0,-24 21,12 -21,12" ${THIN}/>`,
+  // Kite: a classic 4-point kite silhouette (short top, wide middle, long
+  // bottom "tail") -- readable at a glance, not a literal render of the
+  // actual construction (center/edge-midpoint/vertex/edge-midpoint --
+  // same simplification piece2dHexagon's own "flatter than the real
+  // Voronoi cell" already takes).
+  piece2dKite: `<polygon points="0,-24 14,-2 0,24 -14,-2" ${THIN}/>`,
+  // Kagome: the Star of David -- a hexagon with all 6 of its triangles,
+  // exactly what one placed Kagome hexagon renders as since the 2026-09-24
+  // fix (the old icon, a hexagon with 2 flanking triangles, drew the
+  // broken model that fused into a plain rhombus). Two overlapping
+  // triangles, with the central hexagon they share lightly filled.
+  piece2dKagome: `<polygon points="-6.93,-12 6.93,-12 13.86,0 6.93,12 -6.93,12 -13.86,0" fill="currentColor" opacity="0.25"/><polygon points="0,-24 20.78,12 -20.78,12" ${THIN}/><polygon points="0,24 20.78,-12 -20.78,-12" ${THIN}/>`,
   // Lattice View: Off -- a plain bold hexagon, real content instead of
   // a blank frame. Direct report 2026-09-02 ("lattice view symbols are
   // still feint on HUD"): the corner HUD wheel's own BCC Lattice face
@@ -340,3 +395,16 @@ export const MARKS = {
 export function swatchMark(hexColor) {
   return `<polygon points="${hexPts(28)}" fill="${hexColor}" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.5"/>`;
 }
+
+// ◯ Spherical's symbol while it's on (render.js swaps it in; off is ◯):
+// three packed white spheres, and for voids the three as rings round a
+// white sphere in their gap.
+export const PACKING_ICONS = (() => {
+  const C = [[-0.62, 0.36], [0.62, 0.36], [0, -0.72]];
+  const ring = (fill, op) => C.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="0.7" fill="${fill}" stroke="currentColor" stroke-width="0.16" opacity="${op}"/>`).join('');
+  const wrap = (inner) => `<svg viewBox="-2.6 -2.6 5.2 5.2" width="1em" height="1em">${inner}</svg>`;
+  return {
+    spheres: wrap(ring('#ffffff', 1)),
+    voids: wrap(`${ring('none', 1)}<circle cx="0" cy="0" r="0.28" fill="#ffffff"/>`),
+  };
+})();

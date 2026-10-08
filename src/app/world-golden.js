@@ -19,10 +19,11 @@ import { solidFromPlanes } from '../krp-core/src/geometry-extensions/rd-pieces.j
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
+import { storageKey, theme } from './site.js';
 
-const STORAGE_KEY = 'rhombiverse-golden-world';
-const FIRST_COLOR = 0xff6a00;
-const GHOST_COLOR = 0xff9a52;
+const STORAGE_KEY = storageKey('golden-world');
+const FIRST_COLOR = () => theme().strongHex; // read when drawing: follows the app whose space you're in
+const GHOST_COLOR = () => theme().accentHex; // read when drawing: follows the app whose space you're in
 const EDGE_COLOR = 0x0b1220;
 const TYPE_COLOR = { prolate: 0xffc857, oblate: 0x7cc4ff };
 const MATCH_COLOR = 0x5fd38a;
@@ -120,8 +121,8 @@ export function createGoldenWorld({ scene, onChange = () => {}, showHudPrompt = 
 
   // ---- drawing ----
   const pieceMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
-  const ghostMaterial = new THREE.MeshStandardMaterial({ color: GHOST_COLOR, transparent: true, opacity: 0.18, depthWrite: false, side: THREE.DoubleSide });
-  const firstMaterial = new THREE.MeshStandardMaterial({ color: FIRST_COLOR, transparent: true, opacity: 0.14, depthWrite: false, side: THREE.DoubleSide });
+  const ghostMaterial = new THREE.MeshStandardMaterial({ color: GHOST_COLOR(), transparent: true, opacity: 0.18, depthWrite: false, side: THREE.DoubleSide });
+  const firstMaterial = new THREE.MeshStandardMaterial({ color: FIRST_COLOR(), transparent: true, opacity: 0.14, depthWrite: false, side: THREE.DoubleSide });
   let tris = [], ghostTris = [];
   const pickTargets = [];
   function clearGroup() {
@@ -184,14 +185,14 @@ export function createGoldenWorld({ scene, onChange = () => {}, showHudPrompt = 
       tris = [];
       const [mesh, lines] = meshOf([...tiles.values()], pieceMaterial, colorOf, EDGE_COLOR, 'piece', tris);
       mesh.visible = !skeleton;
-      if (skeleton) lines.material.color.setHex(0xff9a52);
+      if (skeleton) lines.material.color.setHex(theme().accentHex);
       group.add(mesh, lines);
       pickTargets.push(mesh);
       if (latticeView) {
         ghostTris = [];
         const slots = trueSlots();
         if (slots.length) {
-          const [gm, gl] = meshOf(slots, ghostMaterial, (x, c) => c.setHex(GHOST_COLOR), GHOST_COLOR, 'ghost', ghostTris);
+          const [gm, gl] = meshOf(slots, ghostMaterial, (x, c) => c.setHex(GHOST_COLOR()), GHOST_COLOR(), 'ghost', ghostTris);
           group.add(gm, gl);
           pickTargets.push(gm);
         }
@@ -199,7 +200,7 @@ export function createGoldenWorld({ scene, onChange = () => {}, showHudPrompt = 
     } else {
       const seed = e.seedTile(offset);
       const rec = [];
-      const [mesh, lines] = meshOf([seed], firstMaterial, (x, c) => c.setHex(FIRST_COLOR), FIRST_COLOR, 'first', rec);
+      const [mesh, lines] = meshOf([seed], firstMaterial, (x, c) => c.setHex(FIRST_COLOR()), FIRST_COLOR(), 'first', rec);
       mesh.userData.seed = seed;
       group.add(mesh, lines);
       pickTargets.push(mesh);
@@ -304,6 +305,23 @@ export function createGoldenWorld({ scene, onChange = () => {}, showHudPrompt = 
     setSkeleton(on) { skeleton = on; if (active) rebuild(); },
     setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) rebuild(); } },
     setLatticeView(on) { latticeView = on; if (active) rebuild(); },
+    // Nets' Open in 3D+: choose the piece and, in an empty world, start with the true
+    // tiling's own tile of that type nearest the seed.
+    startWith(type) {
+      if (!['prolate', 'oblate'].includes(type)) return;
+      view.piece = type;
+      if (!tiles.size) {
+        const seen = new Set(), queue = [e.seedTile(offset)];
+        while (queue.length) {
+          const x = queue.shift();
+          if (seen.has(keyOf(x)) || seen.size > 60) continue;
+          seen.add(keyOf(x));
+          if (e.tileType(x.I) === type) { tiles.set(keyOf(x), { n: [...x.n], I: [...x.I] }); break; }
+          for (const f of e.tileFaces(x.n, x.I)) { const u = e.neighbourAcross(x.n, x.I, f, offset); if (u) queue.push(u); }
+        }
+      }
+      commit();
+    },
     get isEmpty() { return tiles.size === 0; },
     clear() { tiles.clear(); commit(); },
     snapshot: toJSON,

@@ -1,7 +1,8 @@
 // Versioned "What's New" changelog panel (B7). Self-contained like
 // welcome.js -- a DOM/localStorage concern only, independent of
 // render.js/world state.
-const SEEN_KEY = 'rhombiverse-changelog-seen';
+import { SITE, SITES, storageKey } from './site.js';
+const SEEN_KEY = storageKey('changelog-seen');
 
 function panelHtml(entries) {
   const body = entries
@@ -35,10 +36,10 @@ async function init() {
 
   let entries = [];
   try {
-    const res = await fetch('./data/changelog.json');
+    const res = await fetch(`./site/${SITE}/changelog.json`); // each app's own changelog
     entries = await res.json();
   } catch (err) {
-    console.warn('Kaleidohedra: failed to load changelog', err);
+    console.warn(`${SITES[SITE].name}: failed to load changelog`, err);
     return;
   }
   overlay.innerHTML = panelHtml(entries);

@@ -1,3 +1,4 @@
+import { theme } from './site.js';
 // Rotating wireframe thumbnails (2026-09-24, direct request: wizard
 // previews "rotating like polyhedraverse"). A plain-JS port of
 // polyhedraverse's app/components/browser/ShapePreview.tsx: a 2D <canvas>
@@ -19,8 +20,11 @@
 // a coin instead: no tilt, turning about the vertical axis, so it
 // narrows to its edge and back, with no depth dimming.
 
-const LINE_COLOR = '#ff6a00';
-const LINE_COLOR_DIM = 'rgba(255, 106, 0, 0.35)';
+// Canvas strokes can't use CSS variables, so read them from the canvas's own CSS context when drawing
+// (the DICTO wizard shows each app in its colours), falling back to the current theme.
+const cssVar = (el, name) => (el ? getComputedStyle(el).getPropertyValue(name).trim() : '');
+const lineColour = (el) => cssVar(el, '--accent-strong') || theme().strong;
+const lineColourDim = (el) => `rgba(${cssVar(el, '--accent-rgb') || theme().accentRgb}, 0.35)`;
 const SPIN_PER_FRAME = 0.008;
 const TILT = 0.5;
 
@@ -82,8 +86,9 @@ export function mountWireframePreview(canvas, edges, size) {
       .map(([a, b]) => ({ a, b, avgZ: (a[2] + b[2]) / 2 }))
       .sort((e1, e2) => e1.avgZ - e2.avgZ);
     ctx.lineWidth = Math.max(1, dpr);
+    const near = lineColour(canvas), far = lineColourDim(canvas); // once per frame
     for (const { a, b, avgZ } of byDepth) {
-      ctx.strokeStyle = edges.coin || (avgZ - minZ) / zRange > 0.5 ? LINE_COLOR : LINE_COLOR_DIM;
+      ctx.strokeStyle = edges.coin || (avgZ - minZ) / zRange > 0.5 ? near : far;
       ctx.beginPath();
       ctx.moveTo(half + a[0] * scale, half - a[1] * scale);
       ctx.lineTo(half + b[0] * scale, half - b[1] * scale);

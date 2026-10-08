@@ -9,13 +9,14 @@ import { TARGET_TYPES, buildTarget, loadTargets, targetAngles } from '../geometr
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
+import { storageKey, theme } from './site.js';
 
-const STORAGE_KEY = 'kaleidohedra-targets-world';
+const STORAGE_KEY = storageKey('targets-world');
 const SHOWS = ['cell', 'neighbours', 'block'];
 // One colour per face kind, as Polyhedraverse's Kaleidohedra-verified pieces.
 const KIND_COLOR = { square: 0x5b8def, rhombus: 0xf06292, 'regular hexagon': 0xffc857, hexagon: 0xa77bf3 };
 const EDGE_COLOR = 0x0b1220;
-const GHOST_COLOR = 0xff9a52;
+const GHOST_COLOR = () => theme().accentHex; // read when drawing: follows the app whose space you're in
 const NEIGHBOUR_SHADE = 0.72;
 const lang = () => getSettings().language;
 const kindBase = (kind) => (kind.startsWith('rhombus') ? 'rhombus' : kind.startsWith('hexagon') ? 'hexagon' : kind);
@@ -104,7 +105,7 @@ export function createTargetsWorld({ scene, fitView = () => {} }) {
     mesh.visible = !skeleton;
     const lg = new THREE.BufferGeometry();
     lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
-    const lines = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: skeleton ? GHOST_COLOR : EDGE_COLOR }));
+    const lines = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: skeleton ? GHOST_COLOR() : EDGE_COLOR }));
     group.add(mesh, lines);
   }
   function fit() {

@@ -80,7 +80,7 @@ export function renderMarkdown(md) {
 // Shared styling for both the in-app overlay and guide.html, scoped
 // under .md-guide so it never leaks into the app's own UI.
 export const GUIDE_CSS = `
-.md-guide { font: 15px/1.6 system-ui, -apple-system, 'Segoe UI', sans-serif; color: #e6e9ef; max-width: 760px; margin: 0 auto; }
+.md-guide { font: var(--text-l)/1.6 system-ui, -apple-system, 'Segoe UI', sans-serif; color: #e6e9ef; max-width: 760px; margin: 0 auto; }
 .md-guide h1 { font-size: 1.7em; margin: 1.2em 0 .5em; line-height: 1.25; }
 .md-guide h1:first-child { margin-top: 0; }
 .md-guide h2 { font-size: 1.3em; margin: 1.6em 0 .4em; border-bottom: 1px solid #2c3444; padding-bottom: .2em; }
@@ -88,7 +88,7 @@ export const GUIDE_CSS = `
 .md-guide p, .md-guide ul, .md-guide ol { margin: .5em 0; }
 .md-guide ul, .md-guide ol { padding-left: 1.4em; }
 .md-guide li { margin: .25em 0; }
-.md-guide a { color: #ff9a52; }
+.md-guide a { color: var(--accent); }
 .md-guide code { background: #1d2330; padding: 0 .3em; border-radius: 4px; }
 .md-guide hr { border: 0; border-top: 1px solid #2c3444; margin: 2em 0; }
 .md-guide .md-table { overflow-x: auto; margin: .6em 0; }

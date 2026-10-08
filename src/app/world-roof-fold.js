@@ -16,8 +16,9 @@ import { objectId } from '../krp-core/src/vocabulary.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
+import { theme, storageKey } from './site.js';
 
-const STORAGE_KEY = 'kaleidohedra-roof-fold-world';
+const STORAGE_KEY = storageKey('roof-fold-world');
 const VIEWS = ['built', 'starIco', 'dodecaStar', 'dodecaDogstar', 'checker', 'merged'];
 const KIND_COLOR = ROOF_FOLD_COLOURS;
 const PARITY_COLOR = [0xffc857, 0x7cc4ff];
@@ -40,8 +41,8 @@ export function recordLine(kind, L) {
   return `${d.id} · ${t(`krp.status.${d.status}`, L)} · ${novelty}`;
 }
 const xrayOpacity = (rank) => (rank === 0 ? 1 : Math.max(0.14, 0.5 - 0.08 * (rank - 1)));
-const FIRST_COLOR = 0xff6a00;
-const GHOST_COLOR = 0xff9a52;
+const FIRST_COLOR = () => theme().strongHex; // read when drawing: follows the app whose space you're in
+const GHOST_COLOR = () => theme().accentHex; // read when drawing: follows the app whose space you're in
 const EDGE_COLOR = 0x0b1220;
 const NODE_COLOR = 0xe8eef7;
 const ODD_SHADE = 0.62;
@@ -116,8 +117,8 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
 
   // ---- drawing ----
   const pieceMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
-  const ghostMaterial = new THREE.MeshStandardMaterial({ color: GHOST_COLOR, transparent: true, opacity: 0.18, depthWrite: false, side: THREE.DoubleSide });
-  const firstMaterial = new THREE.MeshStandardMaterial({ color: FIRST_COLOR, transparent: true, opacity: 0.14, depthWrite: false, side: THREE.DoubleSide });
+  const ghostMaterial = new THREE.MeshStandardMaterial({ color: GHOST_COLOR(), transparent: true, opacity: 0.18, depthWrite: false, side: THREE.DoubleSide });
+  const firstMaterial = new THREE.MeshStandardMaterial({ color: FIRST_COLOR(), transparent: true, opacity: 0.14, depthWrite: false, side: THREE.DoubleSide });
   const nodeGeometry = new THREE.SphereGeometry(0.07, 12, 8);
   const nodeMaterial = new THREE.MeshStandardMaterial({ color: NODE_COLOR });
   const pickTargets = [];
@@ -257,7 +258,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
         if (material !== pieceMaterial) mesh.userData.ownMaterial = true;
         mesh.renderOrder = order;
         mesh.visible = !skeleton;
-        if (skeleton) lines.material.color.setHex(GHOST_COLOR);
+        if (skeleton) lines.material.color.setHex(GHOST_COLOR());
         group.add(mesh, lines);
         pickTargets.push(mesh);
       }
@@ -265,15 +266,15 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
       if (latticeView) {
         const ghosts = emptyNeighbourSites().map((site) => ({ site, kind: view.piece }));
         if (ghosts.length) {
-          const g = solidPolys(ghosts, () => new THREE.Color(GHOST_COLOR));
-          const [gm, gl] = meshOf(g.polys, g.edges, ghostMaterial, GHOST_COLOR, 'ghost');
+          const g = solidPolys(ghosts, () => new THREE.Color(GHOST_COLOR()));
+          const [gm, gl] = meshOf(g.polys, g.edges, ghostMaterial, GHOST_COLOR(), 'ghost');
           group.add(gm, gl);
           pickTargets.push(gm);
         }
       }
     } else {
-      const f = solidPolys([{ site: [0, 0, 0], kind: view.piece }], () => new THREE.Color(FIRST_COLOR));
-      const [mesh, lines] = meshOf(f.polys, f.edges, firstMaterial, FIRST_COLOR, 'first');
+      const f = solidPolys([{ site: [0, 0, 0], kind: view.piece }], () => new THREE.Color(FIRST_COLOR()));
+      const [mesh, lines] = meshOf(f.polys, f.edges, firstMaterial, FIRST_COLOR(), 'first');
       group.add(mesh, lines);
       pickTargets.push(mesh);
     }

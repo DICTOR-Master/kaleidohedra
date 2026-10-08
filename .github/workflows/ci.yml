@@ -23,14 +23,38 @@ jobs:
         with:
           node-version: 20
       - run: node --test tests/unit/
+      # Kaleidohedra and Rhombiverse are one app (KRP, 2026-10-08): both apps' own checks run here; the
+      # shared geometry's (krp-core) run in its own repo.
       # The 160 target cells: rebuilt from their Gram matrices, each tiles space; TARGETS.md agrees.
       - run: node scripts/verify-targets.mjs
-      # Translations: every key in all 7 languages.
+      - run: node scripts/verify-kaleidoscope.mjs
+      - run: node scripts/verify-trajectory.mjs
+      - run: node scripts/verify-construction.mjs
+      - run: node scripts/verify-lattice-2d.mjs
+      - run: node scripts/verify-dicto-hex.mjs
+      - run: node scripts/verify-4d.mjs
+      # Translations: every key in all 7 languages (the app's and Rhombis's).
       - run: node scripts/verify-i18n.mjs
+      - run: node scripts/verify-rhombis-i18n.mjs
       # The repo's About text (outside the repo, so it drifts): warns only.
       - run: node scripts/verify-about.mjs
         env:
           GH_TOKEN: ${{ github.token }}
+
+  catalogue:
+    # Every 5D/6D catalogue entry really occurs and lands, at 9 phason and
+    # position probes (about 6 min on the Pi; its own job so the unit-test
+    # job keeps its fast-fail limit).
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: true # krp-core, the shared geometry (src/krp-core)
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+      - run: node scripts/verify-catalogue.mjs
 
   browser-smoke-test:
     # Real-browser check (Playwright) -- the actual app, served exactly
@@ -69,9 +93,11 @@ jobs:
           done
           echo "server never came up" >&2
           exit 1
-      - name: Run smoke test
+      - name: Run smoke test through both front doors
         working-directory: tests/browser
-        run: node smoke.mjs
+        run: |
+          DOOR=kaleidohedra node smoke.mjs
+          DOOR=rhombiverse node smoke.mjs
 
   build-check:
     # Verifies the ACTUAL production artifact (scripts/build.mjs's
@@ -90,30 +116,27 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 20
-      - name: Install build deps and run the build
-        run: |
-          npm install
-          npm run build
-      # Stale-wording guard (scripts/verify-copy.mjs): fails if retired
-      # world-building/game terms reach any user-visible text again.
-      - name: Check user-visible text for stale terms
-        run: npm run verify:copy
+      - name: Install build deps
+        run: npm install
       - name: Install Playwright
         working-directory: tests/browser
         run: |
           npm install
           # GitHub runners sometimes hang in this download: give each try 5 minutes, up to 3 tries; a killed try leaves apt locked, so clear that first.
           for i in 1 2 3; do timeout 300 npx playwright install --with-deps chromium && break; [ "$i" = 3 ] && exit 1; echo "Playwright install hung or failed (try $i), clearing apt and retrying"; sudo pkill -9 -f "apt-get|dpkg" || true; sudo rm -f /var/lib/dpkg/lock-frontend /var/lib/dpkg/lock /var/lib/apt/lists/lock /var/cache/apt/archives/lock; sudo dpkg --configure -a || true; sleep 5; done
-      - name: Serve dist/
-        run: cd dist && python3 -m http.server 8000 &
-      - name: Wait for server
+      # Each front door's own build (SITE picks it, as each Vercel project does), smoke-tested.
+      - name: Build and smoke-test each front door
         run: |
-          for i in $(seq 1 20); do
-            curl -sf http://localhost:8000/index.html > /dev/null && exit 0
-            sleep 0.5
+          for site in kaleidohedra rhombiverse; do
+            SITE=$site npm run build
+            (cd dist && python3 -m http.server 8000 >/dev/null 2>&1 &)
+            for i in $(seq 1 20); do curl -sf http://localhost:8000/index.html > /dev/null && break; sleep 0.5; done
+            grep -q "data-site=\"$site\"" dist/index.html
+            (cd tests/browser && DOOR=$site node smoke.mjs)
+            pkill -f "http.server 8000" || true
+            sleep 1
           done
-          echo "server never came up" >&2
-          exit 1
-      - name: Run smoke test against the built dist/ output
-        working-directory: tests/browser
-        run: node smoke.mjs
+      # Stale-wording guard (scripts/verify-copy.mjs): fails if retired
+      # world-building/game terms reach any user-visible text again.
+      - name: Check user-visible text for stale terms
+        run: npm run verify:copy

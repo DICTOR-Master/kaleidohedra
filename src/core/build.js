@@ -31,6 +31,7 @@ import {
 import { nearestBCCCell, matchBCCNeighborOffset } from '../krp-core/src/geometry-extensions/dual-lattice.js';
 import { matchHexNeighborOffset } from '../krp-core/src/geometry-extensions/hex-prism.js';
 import { matchDictoNeighborOffset, matchDictoBlockNeighbour, dictoBlockFromKey, dictoBlockKey } from '../krp-core/src/geometry-extensions/dicto-fcc.js';
+import { matchDictoHexNeighborOffset } from '../geometry-extensions/dicto-hex.js';
 import { rhombohedraAttachOptions, rhombohedraOverlap } from '../krp-core/src/geometry-extensions/rhombohedra-lattice.js';
 import { pyrochloreSiteOrientation, pyrochloreNeighborForTTFace, pyrochloreNeighborForTetFace, pyrochloreCapForTTFace, pyrochloreTetCornerPartner, pyrochloreCapTetsOf, pyrochloreCellToWorld } from '../krp-core/src/geometry-extensions/pyrochlore-lattice.js';
 import { elongDodecaCellToWorld } from '../krp-core/src/geometry-extensions/elongated-dodecahedron.js';
@@ -197,6 +198,26 @@ export function createBuildController({
   dictoFccMesh = null,
   dictoFccCellAt = () => null,
   onDictoFccChange = () => {},
+  // DICTO Hex Prism ('dictohex'): the leaning hexagonal prism on its slid
+  // hexagonal lattice (geometry-extensions/dicto-hex.js), hex axial coordinates.
+  dictoHexWorld = null,
+  dictoHexMesh = null,
+  dictoHexCellAt = () => null,
+  onDictoHexChange = () => {},
+  // 2D lattice tier (replaces the old separate Square/Hexagon/Triangle
+  // params): one generic "adopted family member" store PER PRIMITIVE
+  // from lattice-2d.js's own LATTICE_PRIMITIVES, all sharing this
+  // single param instead of one hand-written trio of params each.
+  // `stores` maps a primitive's own `id` (e.g. "parallelogram") to
+  // { world, mesh, cellAt }; `s` is the shared real-world scale every
+  // primitive's basis vectors use; `getAngleDeg()` returns the
+  // CURRENTLY toggled angle live (Phase 6 -- angle is a shared,
+  // mutable rendering parameter now, not baked into which store is
+  // active; see render.js's own lattice2dSeedCell header for why an
+  // earlier per-(angle,primitive)-store design was a real mistake, not
+  // just a different valid choice); `onChange(primitiveId)` fires
+  // after any add/remove on that primitive's own store.
+  lattice2d = null,
   // Rhombohedra (free lattice): same "adopted family member" reasoning
   // again -- own store, own coordinate frame (geometry-extensions/
   // rhombohedra-lattice.js), grows freely in any of 6 real directions
@@ -307,7 +328,25 @@ export function createBuildController({
     const elongDodecaTargets = elongDodecaMesh && (getPieceType() === 'elongdodeca' || getPieceType() === 'rd' || getPieceType() === 'cube') ? [elongDodecaMesh] : [];
     const hexPrismTargets = hexPrismMesh && getPieceType() === 'hexprism' ? [hexPrismMesh] : [];
     const dictoFccTargets = dictoFccMesh && getPieceType() === 'dictofcc' ? [dictoFccMesh] : [];
+    const dictoHexTargets = dictoHexMesh && getPieceType() === 'dictohex' ? [dictoHexMesh] : [];
     const dictoBlockTargets = getPieceType() === 'dictoblock' ? dictoBlockMeshes : [];
+    // Same reasoning as every other "adopted family member" above, for
+    // whichever single (angle, primitive) combination is currently
+    // active -- see lattice-2d.js's own header and this param's own
+    // comment (createBuildController's `lattice2d` param) for why one
+    // generic lookup replaces the old square2dTargets/hexagon2dTargets/
+    // triangle2dTargets trio.
+    const activeLattice2dStore = lattice2d && getPieceType().startsWith('lattice2d:') ? lattice2d.stores.get(getPieceType().slice('lattice2d:'.length)) : null;
+    // Real bug, found investigating a separate "long touch isnt erasing"
+    // report: this used to include ONLY `.mesh`, never `.classMeshes`
+    // (Kite's own extra clickable class meshes at RD Rhombus/Golden
+    // Rhombus, see render.js's own rebuildLattice2dInstances) or
+    // `.companionMeshes` (Kagome's own triangle companions, made real
+    // click targets the same session for the same reason) -- so a hit on
+    // any of those silently missed every raycast, always. Both are
+    // undefined for every primitive that doesn't have them, so this stays
+    // a no-op (just `[activeLattice2dStore.mesh]`) everywhere else.
+    const lattice2dTargets = activeLattice2dStore ? [activeLattice2dStore.mesh, ...(activeLattice2dStore.classMeshes ?? []), ...(activeLattice2dStore.companionMeshes ?? [])] : [];
     const rhombohedraTargets = rhombohedraMesh && getPieceType() === 'rhombohedra' ? [rhombohedraMesh] : [];
     const pyrochloreTargets = pyrochlore && getPieceType() === 'pyrochlore' ? pyrochlore.meshes : [];
     const firstPlacementTargets = firstPlacementTarget?.mesh.visible ? [firstPlacementTarget.mesh] : [];
@@ -350,7 +389,7 @@ export function createBuildController({
       return own.length > 0 ? own[0] : null;
     }
     const meshTargets = getMeshPickable() ? [mesh] : [];
-    const hits = raycaster.intersectObjects([...meshTargets, ...extraPickTargets, ...bccTargets, ...elongDodecaTargets, ...hexPrismTargets, ...dictoFccTargets, ...dictoBlockTargets, ...rhombohedraTargets, ...pyrochloreTargets, ...firstPlacementTargets, ...interstitialTargets, ...hemisphereTargets], true);
+    const hits = raycaster.intersectObjects([...meshTargets, ...extraPickTargets, ...bccTargets, ...elongDodecaTargets, ...hexPrismTargets, ...dictoFccTargets, ...dictoHexTargets, ...dictoBlockTargets, ...lattice2dTargets, ...rhombohedraTargets, ...pyrochloreTargets, ...firstPlacementTargets, ...interstitialTargets, ...hemisphereTargets], true);
     return hits.length > 0 ? hits[0] : null;
   }
 
@@ -581,6 +620,170 @@ export function createBuildController({
     }
     dictoFccWorld.removeCell(cell.x, cell.y, cell.z);
     onDictoFccChange();
+    if (onRemoved) onRemoved(cell);
+  }
+
+  // DICTO Hex Prism piece tier: the same pattern again; the clicked face's
+  // normal picks one of the prism's 8 face neighbours.
+  function handleDictoHexClick(hit, mode) {
+    const action = mode === 'build' ? 'add' : 'remove';
+    if (hit.object !== dictoHexMesh || hit.instanceId === undefined) { if (onPieceNoOp) onPieceNoOp(action); return; }
+    const cell = dictoHexCellAt(hit.instanceId);
+    if (!cell) { if (onPieceNoOp) onPieceNoOp(action); return; }
+    if (mode === 'build') {
+      const offset = matchDictoHexNeighborOffset(hit.face.normal);
+      if (!offset) { if (onPieceNoOp) onPieceNoOp(action); return; }
+      const nx = cell.x + offset[0], ny = cell.y + offset[1], nz = cell.z + offset[2];
+      if (dictoHexWorld.has(nx, ny, nz)) { if (onPieceNoOp) onPieceNoOp(action); return; }
+      const material = getMaterial();
+      dictoHexWorld.addCell(nx, ny, nz, { material });
+      onDictoHexChange();
+      if (onPlaced) onPlaced({ x: nx, y: ny, z: nz, material });
+      return;
+    }
+    dictoHexWorld.removeCell(cell.x, cell.y, cell.z);
+    onDictoHexChange();
+    if (onRemoved) onRemoved(cell);
+  }
+
+  // 2D lattice tier: ONE generic handler for every primitive in
+  // lattice-2d.js's own LATTICE_PRIMITIVES, replacing the old
+  // handleSquare2dClick/handleHexagon2dClick/handleTriangle2dClick trio
+  // -- see this file's own `lattice2d` param comment and lattice-2d.js's
+  // header for why one parametrized handler is correct in place of 3
+  // hand-copied ones. Phase 6: the angle a click resolves against is
+  // read LIVE via `lattice2d.getAngleDeg()` at click time, not baked
+  // into a fixed per-store value -- this is what makes an
+  // already-built structure's own neighbor directions stay correct
+  // after the angle toggle has reshaped it (see render.js's own
+  // lattice2dSeedCell header for the full incident this replaces: a
+  // store used to be keyed by (angle, primitive) together, so toggling
+  // angle silently switched to an unrelated store instead of
+  // reshaping the one you'd actually built).
+  //
+  // Always matches the click's own hit-point direction against each
+  // neighbor candidate's own REAL WORLD offset (impl.cellToWorld(cell+
+  // offset) - impl.cellToWorld(cell)), never a raw index offset dotted
+  // directly -- the general, always-correct technique Triangle's own
+  // pre-Phase-3 handler already used. This matters more now than it did
+  // before: the old Square-specific shortcut (dotting the RAW index
+  // offset against the hit direction) only ever worked because Square
+  // was hardcoded to a 90-degree (orthogonal) basis, where raw index
+  // offsets happen to already point along real world axes -- at any of
+  // the OTHER 3 named angles a Parallelogram's own basis vectors aren't
+  // perpendicular, so that shortcut would silently pick the wrong
+  // neighbor. Also handles a flat tile's own real "top face has zero
+  // dot product with any in-plane offset" problem the same way every
+  // 2D family already had to (see the old handleSquare2dClick's own
+  // removed comment): hit-point-direction, never face-normal matching.
+  function handleLattice2dClick(hit, mode, pieceType) {
+    const action = mode === 'build' ? 'add' : 'remove';
+    const primitiveId = pieceType.slice('lattice2d:'.length);
+    const store = lattice2d?.stores.get(primitiveId);
+    // Routed through lattice2d.getImpl (render.js's own resolveLattice2dImpl)
+    // rather than a direct LATTICE_PRIMITIVE_IMPLS lookup, so a click
+    // always agrees with whatever's actually rendered -- see that
+    // accessor's own header for the real Rhombille-arrangement mismatch
+    // this replaces.
+    const impl = lattice2d?.getImpl(primitiveId);
+    // Kagome remove: resolved purely from WHERE the press landed, not
+    // from which mesh/instance the raycast reported -- direct report
+    // (iPhone, 13 hexagons placed): long-press on a hexagon said "no
+    // Kagome there to remove". The nearest lattice point to the hit is
+    // the only hexagon that can contain it (each hexagon sits inside its
+    // own point's Voronoi cell); delete it iff the point is inside.
+    if (primitiveId === 'kagome' && mode !== 'build' && store && impl && hit?.point) {
+      const angleDeg = lattice2d.getAngleDeg();
+      const s = lattice2d.s;
+      const [ox, oy] = impl.cellToWorld(0, 0, 0, angleDeg, s, 0);
+      const [e0x, e0y] = impl.cellToWorld(1, 0, 0, angleDeg, s, 0);
+      const [e1x, e1y] = impl.cellToWorld(0, 1, 0, angleDeg, s, 0);
+      const v0 = [e0x - ox, e0y - oy], v1 = [e1x - ox, e1y - oy];
+      const px = hit.point.x - ox, py = hit.point.y - oy;
+      const det = v0[0] * v1[1] - v0[1] * v1[0];
+      const a = (px * v1[1] - py * v1[0]) / det;
+      const b = (v0[0] * py - v0[1] * px) / det;
+      let best = null, bestD = Infinity;
+      for (const x of [Math.floor(a), Math.floor(a) + 1]) {
+        for (const y of [Math.floor(b), Math.floor(b) + 1]) {
+          const [cx, cy] = impl.cellToWorld(x, y, 0, angleDeg, s, 0);
+          const d = Math.hypot(hit.point.x - cx, hit.point.y - cy);
+          if (d < bestD) { bestD = d; best = { x, y, cx, cy }; }
+        }
+      }
+      const poly = impl.tileVerts(angleDeg, s, 0).slice(0, 6).map(([vx, vy]) => [vx + best.cx, vy + best.cy]);
+      const inside = poly.every(([ax, ay], i) => {
+        const [bx, by] = poly[(i + 1) % poly.length];
+        return (bx - ax) * (hit.point.y - ay) - (by - ay) * (hit.point.x - ax) >= -1e-9;
+      }) || poly.every(([ax, ay], i) => {
+        const [bx, by] = poly[(i + 1) % poly.length];
+        return (bx - ax) * (hit.point.y - ay) - (by - ay) * (hit.point.x - ax) <= 1e-9;
+      });
+      const cell = inside && store.world.has(best.x, best.y, 0) ? store.world.entries().find((c) => c.x === best.x && c.y === best.y && c.z === 0) : null;
+      if (!cell) { if (onPieceNoOp) onPieceNoOp(action); return; }
+      store.world.removeCell(best.x, best.y, 0);
+      lattice2d.onChange(primitiveId);
+      if (onRemoved) onRemoved(cell);
+      return;
+    }
+    // Kite: store.classMeshes lists ALL of its real click targets (one
+    // per distinct kite shape at the current angle), not just the
+    // primary -- see render.js's own rebuildLattice2dInstances header for
+    // why a hit can land on any of them. Kagome: store.companionMeshes
+    // (its 2 triangle companions) are now real click targets too -- real
+    // bug, direct report ("long touch isnt erasing"): they used to be
+    // render-only, making roughly half of every Kagome cell's own
+    // visible area an invisible dead zone for both add and remove, with
+    // no way to tell hexagon from triangle by looking. Both fields are
+    // undefined for every primitive that doesn't have them, so this
+    // falls back to the plain single-mesh check everywhere else.
+    // cellAt gets hit.object too: Kagome's companion (triangle) meshes
+    // no longer share the primary mesh's per-cell instance index (see
+    // render.js's own lattice2d store cellAt), every other mesh here
+    // still does.
+    const isRealClickTarget = !!store && (hit.object === store.mesh || store.classMeshes?.includes(hit.object) || store.companionMeshes?.includes(hit.object));
+    if (!store || !impl || !isRealClickTarget || hit.instanceId === undefined) { if (onPieceNoOp) onPieceNoOp(action); return; }
+    // Kagome: a triangle is shared by up to 3 hexagons, so removing via a
+    // triangle hit deleted an arbitrary (first-placed) hexagon while the
+    // pressed triangle often stayed visible. Direct decision: only
+    // hexagons delete; a long-press on a triangle is a no-op.
+    if (mode !== 'build' && store.companionMeshes?.includes(hit.object)) { if (onPieceNoOp) onPieceNoOp(action); return; }
+    const cell = store.cellAt(hit.instanceId, hit.object);
+    if (!cell) { if (onPieceNoOp) onPieceNoOp(action); return; }
+    // Paint: recolour the tapped tile. A Kagome triangle is shared by up
+    // to 3 hexagons, so (as with removing) only a hexagon tap counts.
+    if (mode === 'build' && lattice2d.isPainting?.()) {
+      const { x, y, z, ...data } = cell;
+      const material = getMaterial();
+      if (store.companionMeshes?.includes(hit.object) || data.material === material) { if (onPieceNoOp) onPieceNoOp(action); return; }
+      store.world.addCell(x, y, z, { ...data, material });
+      lattice2d.onChange(primitiveId);
+      return;
+    }
+    const angleDeg = lattice2d.getAngleDeg();
+    if (mode === 'build') {
+      const s = lattice2d.s;
+      const [cx, cy] = impl.cellToWorld(cell.x, cell.y, cell.z, angleDeg, s, 0);
+      const dirX = hit.point.x - cx;
+      const dirY = hit.point.y - cy;
+      const offsets = impl.neighborOffsets(angleDeg, cell.z);
+      let bestIdx = 0, bestDot = -Infinity;
+      offsets.forEach(([ox, oy, oz], i) => {
+        const [nwx, nwy] = impl.cellToWorld(cell.x + ox, cell.y + oy, oz, angleDeg, s, 0);
+        const dot = (nwx - cx) * dirX + (nwy - cy) * dirY;
+        if (dot > bestDot) { bestDot = dot; bestIdx = i; }
+      });
+      const [dx, dy, dz] = offsets[bestIdx];
+      const nx = cell.x + dx, ny = cell.y + dy, nz = dz ?? 0; // no orientation = z 0 (see kagomeNeighborOffsets)
+      if (store.world.has(nx, ny, nz)) { if (onPieceNoOp) onPieceNoOp(action); return; }
+      const material = getMaterial();
+      store.world.addCell(nx, ny, nz, { material });
+      lattice2d.onChange(primitiveId);
+      if (onPlaced) onPlaced({ x: nx, y: ny, z: nz, material });
+      return;
+    }
+    store.world.removeCell(cell.x, cell.y, cell.z);
+    lattice2d.onChange(primitiveId);
     if (onRemoved) onRemoved(cell);
   }
 
@@ -1325,7 +1528,7 @@ export function createBuildController({
       if (pieceType === 'halfrd') {
         // The neighbor's own 'negative' half along this same direction is
         // the one flush against the clicked cell -- same reasoning
-        // RHOMBIS's buildHourglassStage (in Rhombiverse) already uses for its
+        // rhombis/geometry.js's buildHourglassStage already uses for its
         // own "far" cell (hemisphereGeometry(scale, fwdIndex, 'negative')).
         const offsetIndex = NEIGHBOR_OFFSETS.findIndex(([x, y, z]) => x === dx && y === dy && z === dz);
         const key = halfRdKey(nx, ny, nz, offsetIndex, 'negative');
@@ -1379,7 +1582,9 @@ export function createBuildController({
 
     const mode = getMode();
     if (!mode) return; // no editing mode active
-    if (mode === 'build' && paint?.isOn()) {
+    // 2D tiles paint in their own handler (and the Kaleidoscope's taps
+    // there), everything else here.
+    if (mode === 'build' && paint?.isOn() && !getPieceType().startsWith('lattice2d:')) {
       if (!paint.apply(hit) && onPieceNoOp) onPieceNoOp('paint');
       return;
     }
@@ -1429,6 +1634,14 @@ export function createBuildController({
     }
     if ((mode === 'build' || mode === 'chisel') && getPieceType() === 'dictofcc' && dictoFccWorld && dictoFccMesh) {
       handleDictoFccClick(hit, mode);
+      return;
+    }
+    if ((mode === 'build' || mode === 'chisel') && getPieceType() === 'dictohex' && dictoHexWorld && dictoHexMesh) {
+      handleDictoHexClick(hit, mode);
+      return;
+    }
+    if ((mode === 'build' || mode === 'chisel') && getPieceType().startsWith('lattice2d:') && lattice2d) {
+      handleLattice2dClick(hit, mode, getPieceType());
       return;
     }
     if ((mode === 'build' || mode === 'chisel') && getPieceType() === 'rhombohedra' && rhombohedraWorld && rhombohedraMesh) {
@@ -1756,6 +1969,14 @@ export function createBuildController({
       handleDictoFccClick(hit, 'chisel');
       return;
     }
+    if (mode === 'build' && pieceTypeForInterstitialRemove === 'dictohex' && dictoHexWorld && dictoHexMesh) {
+      handleDictoHexClick(hit, 'chisel');
+      return;
+    }
+    if (mode === 'build' && pieceTypeForInterstitialRemove.startsWith('lattice2d:') && lattice2d) {
+      handleLattice2dClick(hit, 'chisel', pieceTypeForInterstitialRemove);
+      return;
+    }
     if (mode === 'build' && pieceTypeForInterstitialRemove === 'rhombohedra' && rhombohedraWorld && rhombohedraMesh) {
       handleRhombohedraClick(hit, 'chisel');
       return;
@@ -1824,7 +2045,7 @@ export function createBuildController({
   // hold-for-a-two-cell-preview were removed.
   function onPointerMove(event) {
     const mode = getMode();
-    if (mode !== 'build' || ['pyramid', 'to', 'ioct', 'idis', 'pyrochlore', ...HEMISPHERE_PIECE_TYPES].includes(getPieceType())) {
+    if (mode !== 'build' || getPieceType().startsWith('lattice2d:') || ['pyramid', 'to', 'ioct', 'idis', 'pyrochlore', ...HEMISPHERE_PIECE_TYPES].includes(getPieceType())) {
       if (onHoverEnd) onHoverEnd();
       return;
     }

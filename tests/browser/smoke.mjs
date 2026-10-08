@@ -7,6 +7,8 @@ import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 
 const BASE_URL = process.env.BASE_URL ?? 'http://localhost:8000';
+// Which front door (KRP: Kaleidohedra and Rhombiverse are one app); CI runs both.
+const DOOR = process.env.DOOR ?? 'kaleidohedra';
 
 async function main() {
   const browser = await chromium.launch();
@@ -29,7 +31,7 @@ async function main() {
   });
   page.on('dialog', (dialog) => dialog.accept());
 
-  await page.goto(`${BASE_URL}/index.html`);
+  await page.goto(`${BASE_URL}/index.html?site=${DOOR}`);
 
   // Welcome overlay shows on first load and can be dismissed. Timeout
   // recalibrated 2026-08-19: render.js's own module graph has grown
@@ -53,18 +55,11 @@ async function main() {
   const overlayDisplay = await page.$eval('#welcome-overlay', (el) => getComputedStyle(el).display);
   assert.equal(overlayDisplay, 'none', 'welcome overlay should hide after Enter');
 
-  // Dimension-select wheel (2026-09-22, 3rd iteration): init() now
-  // force-opens a SEPARATE, dedicated createRhombicWheel3D() instance
-  // (render.js's own dimensionWheel3D, DOM id "rhombic-wheel-3d-overlay-
-  // dimension" -- see that factory's own instanceId param) on every
-  // load, in place of the old default of landing straight in the 3D FCC
-  // sandbox with nothing open. Its faces are raycast-driven, same
-  // reliability caveat as the shared Rhombic Wheel (see the Tab-open/
-  // close check further down) -- confirm the gate, then Escape past it
-  // (a known, deliberate gap while only 3D is real, same reasoning as
-  // the shared wheel's own) to reach this test's real target below.
-  const dimensionWheelOpenOnLoad = await page.$eval('#rhombic-wheel-3d-overlay-dimension', (el) => el.classList.contains('open'));
-  assert.ok(dimensionWheelOpenOnLoad, 'the dedicated dimension wheel should force-open on load');
+  // The DICTO wizard opens on every load (the wheels are gone, 2026-10-08), on this door's app;
+  // Escape closes it, leaving the default 3D+ world.
+  const wizard = await page.evaluate(() => ({ open: document.querySelector('.dim-wizard-overlay')?.classList.contains('open'), shown: document.querySelector('.dicto-shown')?.textContent }));
+  assert.ok(wizard.open, 'the DICTO wizard should open on load');
+  assert.equal(wizard.shown, DOOR.toUpperCase(), `the wizard should open on ${DOOR}`);
   await page.keyboard.press('Escape');
   await page.waitForTimeout(300);
 
@@ -74,7 +69,7 @@ async function main() {
   // DELTA from one build action, not an absolute count -- the only thing
   // actually worth asserting here.
   const cellCount = async () => {
-    const raw = await page.evaluate(() => localStorage.getItem('rhombiverse-world'));
+    const raw = await page.evaluate((door) => localStorage.getItem(`${door}-world`), DOOR);
     return raw ? Object.keys(JSON.parse(raw).cells).length : 0;
   };
 
@@ -95,17 +90,7 @@ async function main() {
   const afterSecondClick = await cellCount();
   assert.equal(afterSecondClick, afterFirstClick + 1, 'expected exactly one new cell from the second build click');
 
-  // The 2D wheel.js was removed 2026-08-25 -- the Rhombic Wheel 3D is
-  // the sole navigation surface now. Its own labels are continuously
-  // repositioned every frame by a live render loop, which reproducibly
-  // defeats Playwright's actionability/stability polling (see
-  // CLAUDE.md) -- clicking
-  // through the 3D wheel's own faces is not a reliable CI interaction.
-  // Mode switching itself is tested directly against the real
-  // underlying primitive instead (.mode-btn[data-mode=...], the same
-  // element the 3D wheel's own onAction handler drives via .click()),
-  // which is both more reliable here and a more direct test of the
-  // actual state-changing behavior, not UI theater on top of it.
+  // Mode switching is tested directly against the real primitive (.mode-btn[data-mode=...]).
   async function clickMode(modeName) {
     const clicked = await page.evaluate((mode) => {
       const el = document.querySelector(`.mode-btn[data-mode="${mode}"]`);
@@ -124,22 +109,17 @@ async function main() {
     assert.equal(await page.$(`.mode-btn[data-mode="${gone}"]`), null, `${gone} mode should be gone`);
   }
 
-  // Tab now opens the Rhombic Wheel 3D directly (reclaimed from the
-  // old 2D wheel) -- just confirm the overlay opens/closes, not any
-  // specific face click, for the reliability reason above.
+  // Tab opens and closes the DICTO wizard (Menu and Space do too).
+  const wizardOpen = () => page.evaluate(() => document.querySelector('.dim-wizard-overlay').classList.contains('open'));
   await page.keyboard.press('Tab');
   await page.waitForTimeout(400);
-  const wheel3DOpen = await page.$eval('#rhombic-wheel-3d-overlay', (el) => el.classList.contains('open'));
-  assert.ok(wheel3DOpen, 'Tab should open the Rhombic Wheel 3D');
+  assert.ok(await wizardOpen(), 'Tab should open the DICTO wizard');
   await page.keyboard.press('Tab');
   await page.waitForTimeout(400);
-  const wheel3DClosed = await page.$eval('#rhombic-wheel-3d-overlay', (el) => !el.classList.contains('open'));
-  assert.ok(wheel3DClosed, 'Tab again should close the Rhombic Wheel 3D');
+  assert.ok(!(await wizardOpen()), 'Tab again should close the DICTO wizard');
 
-  // Almanac (docs/RHOMBIVERSE_SPEC_ALMANAC.md, Stage 1): same reliability
-  // reasoning as the mode-switching check above -- driving the real
-  // wheel to its Almanac face isn't a stable CI interaction, so this
-  // exercises the real createAlmanac() module directly instead (the
+  // Almanac (docs/RHOMBIVERSE_SPEC_ALMANAC.md, Stage 1): exercises the real
+  // createAlmanac() module directly (the
   // same function render.js's own init calls once for real; this makes
   // a second, independent instance for the test, which is fine -- the
   // module has no singleton state to collide with). Queries are scoped
@@ -170,7 +150,7 @@ async function main() {
   }
 
   await browser.close();
-  console.log('smoke test passed: welcome overlay, build, mode switching, and Almanac, zero console errors');
+  console.log(`smoke test passed (${DOOR}): welcome overlay, DICTO wizard, build, mode switching, and Almanac, zero console errors`);
 }
 
 main().catch((err) => {

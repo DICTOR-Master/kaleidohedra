@@ -12,9 +12,9 @@ function addStyle() {
   styled = true;
   const style = document.createElement('style');
   style.textContent = `
-.lang-picker { display: inline-flex; align-items: center; gap: 6px; font: 14px system-ui, sans-serif; color: #cfe8ff; }
-.lang-picker .globe { font-size: 18px; line-height: 1; }
-.lang-picker select { min-height: 44px; padding: 0 10px; background: rgba(10, 14, 24, 0.85); color: #e8f4ff; border: 1px solid rgba(255, 106, 0, 0.45); border-radius: 8px; font: inherit; cursor: pointer; }`;
+.lang-picker { display: inline-flex; align-items: center; gap: 6px; font: var(--text-m) var(--font-ui); color: #cfe8ff; }
+.lang-picker .globe { font-size: var(--text-xl); line-height: 1; }
+.lang-picker select { min-height: var(--touch); padding: 0 10px; background: rgba(10, 14, 24, 0.85); color: #e8f4ff; border: 1px solid rgba(var(--accent-rgb), 0.45); border-radius: var(--radius-m); font: inherit; cursor: pointer; }`;
   document.head.appendChild(style);
 }
 
