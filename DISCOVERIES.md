@@ -450,10 +450,14 @@ here is where it sits and what nests in it:
   (1/φ⁶), and so on: dodecahedron ⊃ great star ⊃ Sunstar(1/φ³) ⊃ great star(1/φ³) ⊃ Sunstar(1/φ⁶) ⊃
   …, each step touching. The ratio φ³ is the inflation factor of icosahedral quasicrystals, so the
   chain joins the periodic packing to an aperiodic, self-similar one.
-- Related, on the same cell (verified, not separate claims): a Dogstar also fits wholly inside its
-  own cell's dodecahedron (Dogstar ⊂ stella octangula ⊂ cube ⊂ dodecahedron), so Dogstars can fill
-  every cell, eight tips meeting at each cube corner; and a Sunstar fits a cube exactly 1/3 its
-  size (it spans 3 lattice cells).
+- Related, on the same cell (verified, not separate claims): the Dogstars alone form a
+  corner-sharing network in the spirit of the Kagome and pyrochlore lattices, but **four** Dogstars
+  share each cube corner (pyrochlore's tetrahedra share theirs in pairs); this is the known tiling with
+  the dodecahedra hidden, framed by DICTO as a corner-sharing lattice. A Dogstar also fits wholly
+  inside its own cell's dodecahedron, touching (Dogstar ⊂ stella octangula ⊂ cube ⊂ dodecahedron),
+  which the tiling does not give: so Dogstars can fill every cell, **eight** sharing each cube corner
+  (this nesting is also the step into study 12a). And a Sunstar fits a cube exactly 1/3 its size (it
+  spans 3 lattice cells).
 - Verified: `scripts/verify-roof-fold.mjs` §13(h) (the Dogstar: closure, golden edges, volume,
   fill with the dodecahedra), §13(i) (the lattice's point tests), §13(j) (Dogstars in every cell)
   and §13(k) (the chain: the great star on the core's planes, and the zero-slack fit, largest
