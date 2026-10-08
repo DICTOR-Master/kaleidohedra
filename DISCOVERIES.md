@@ -559,6 +559,8 @@ leave 360° − 3 × 116.565° = **10.3048°**. The gaps are exactly two kinds o
   0.23 (dodecahedron edge √5 − 1) outside its truncated-octahedron cell at 48 corners, so the units'
   boundaries zigzag around the truncated octahedron's faces and interlock. Exact, but the fins are
   chunky, not slim stars.
+- Build plan: [BUILD-13-BLOCK.md](BUILD-13-BLOCK.md) (pieces with dimensions, the separable units,
+  DICTO's assembly order, and the tentative bcc stacking with grown fins).
 - Verified: `src/krp-core/scripts/verify-dodeca-cluster.mjs` (krp-core v0.7.2), every push:
   congruence, exact volumes, no overlap among the 63 solids (separating axes), every gap face
   accounted for, and the halving and thirds.
