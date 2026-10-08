@@ -47,7 +47,8 @@ async function main() {
   const { SITES } = await import(pathToFileURL(path.join(root, 'src/app/site.js')).href);
   const site = SITES[SITE_ID];
   if (!site) throw new Error(`unknown SITE '${SITE_ID}' (one of ${Object.keys(SITES).join(', ')})`);
-  const staticEntries = ['index.html', 'rhombis.html', 'guide.html', 'legal.html', `site/${SITE_ID}`, 'favicon.svg', 'assets', 'data', 'TERMS.md', 'PRIVACY.md', 'SECURITY.md'];
+  // Every app's site folder ships in every build, so ?site=<app> opens any door from either address.
+  const staticEntries = ['index.html', 'rhombis.html', 'guide.html', 'legal.html', 'site', 'favicon.svg', 'assets', 'data', 'TERMS.md', 'PRIVACY.md', 'SECURITY.md'];
   if (SITE_ID === 'rhombiverse') staticEntries.push('googlec4db6e568a2c28ac.html'); // its search-console verification
   for (const entry of staticEntries) {
     await cp(path.join(root, entry), path.join(dist, entry), { recursive: true });
