@@ -5,11 +5,12 @@
 export const SITES = {
   // netsGroups: the Nets world's groups shown in this app's space (null: all of them).
   // shear: whether this app's space has Kaleidohedra's lattice shear.
+  // analytics: Vercel Web Analytics is switched on for this site's project (analytics.js counts DICTO).
   // wordmark: the name in two tones, the second part in the app's accent (as Polyhedraverse's name).
-  kaleidohedra: { name: 'Kaleidohedra', wordmark: ['KALEIDO', 'HEDRA'], colour: '#ff9a52', url: 'https://kaleidohedra.vercel.app', netsGroups: ['voronoi', 'platonic', 'ekp'], shear: true, inside: true },
+  kaleidohedra: { name: 'Kaleidohedra', wordmark: ['KALEIDO', 'HEDRA'], colour: '#ff9a52', url: 'https://kaleidohedra.vercel.app', netsGroups: ['voronoi', 'platonic', 'ekp'], shear: true, inside: true, analytics: false },
   // inside: whether its worlds run in this app yet (Polyhedraverse opens its own site until KRP step D).
   polyhedraverse: { name: 'Polyhedraverse', wordmark: ['POLYHEDRA', 'VERSE'], colour: '#5ee233', url: 'https://polyhedraverse.vercel.app', netsGroups: null, shear: false, inside: false },
-  rhombiverse: { name: 'Rhombiverse', wordmark: ['RHOMBI', 'VERSE'], colour: '#22c3e6', url: 'https://rhombiverse.vercel.app', netsGroups: null, shear: false, inside: true },
+  rhombiverse: { name: 'Rhombiverse', wordmark: ['RHOMBI', 'VERSE'], colour: '#22c3e6', url: 'https://rhombiverse.vercel.app', netsGroups: null, shear: false, inside: true, analytics: false },
 };
 
 function detect() {
