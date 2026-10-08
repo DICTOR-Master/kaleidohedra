@@ -124,7 +124,7 @@ A 3D+ world (Wizard → 3D+ → Stella–Jewel Lattice) of two pieces that fill 
 
 ## Sunstar Lattice
 
-A 3D+ world (Wizard → 3D+ → Sunstar Lattice) of regular dodecahedra in their densest lattice packing on the even cells and, in each hole they leave on the odd cells, a **Dogstar**: an 8-pointed star, exactly a partial stellation of a dodecahedron 1/φ³ their size, with only golden edge lengths. A dodecahedron with the Dogstars round it is a **Sunstar**, the sun with its sun dogs (DICTO's names). Tap the cyan dodecahedron to place it, then tap any face to add the piece across it; long-press to remove. **View** shows both, the **Dogstars alone** (they share corners, four at each cube corner, like a 3D Kagome; a tap adds the nearest Dogstar sharing a point) or the **dodecahedra alone**. **Shear** and **Five-fold axes** work as in the Stella–Jewel Lattice.
+A 3D+ world (Wizard → 3D+ → Sunstar Lattice) of regular dodecahedra in their densest lattice packing on the even cells and, in each hole they leave on the odd cells, a **Dogstar**: an 8-pointed star, exactly a partial stellation of a dodecahedron 1/φ³ their size, with only golden edge lengths. A dodecahedron with the Dogstars round it is a **Sunstar**, the sun with its sun dogs (DICTO's names). Tap the cyan dodecahedron to place it, then tap any face to add the piece across it; long-press to remove. **View** shows both, the **Dogstars alone** (they share corners, four at each cube corner, like a 3D Kagome; a tap adds the nearest Dogstar sharing a point) or the **dodecahedra alone**. **Shear** and **Five-fold axes** work as in the Stella–Jewel Lattice. **Whole Sunstars** adds and removes a dodecahedron together with the 6 Dogstars on its faces (a Dogstar another Sunstar still has stays).
 
 ## Targets
 
