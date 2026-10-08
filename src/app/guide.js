@@ -1,15 +1,17 @@
-// In-app User Guide: renders docs/guide.md (the same file
+// In-app User Guide: renders site/<app>/guide.md (the same file
 // guide.html serves as the shareable /guide page) in a full-screen
 // overlay. English only for now -- the guide itself isn't translated.
 import { renderMarkdown, GUIDE_CSS } from './markdown.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { t } from './i18n.js';
 import { createLanguagePicker } from './language-picker.js';
+import { SITE, SITES } from './site.js';
 
-// docs/guide.md is English; each other language has docs/guide.<lang>.md.
+// site/<app>/guide.md is English; each other language has guide.<lang>.md beside it.
 // A missing translation falls back to English.
 export function guideUrl(lang) {
-  return lang === 'en' ? './docs/guide.md' : `./docs/guide.${lang}.md`;
+  // Each app's own guide, in its site folder (site/<app>/guide.md, guide.<lang>.md).
+  return lang === 'en' ? `./site/${SITE}/guide.md` : `./site/${SITE}/guide.${lang}.md`;
 }
 
 let overlay = null;
@@ -29,7 +31,7 @@ function loadGuide(lang) {
     .catch(() => (lang === 'en' ? Promise.reject(new Error('no guide')) : get(guideUrl('en'))))
     .then((md) => { if (loadedLang === lang) body.innerHTML = renderMarkdown(md); })
     .catch((err) => {
-      console.warn('Kaleidohedra: failed to load guide', err);
+      console.warn(`${SITES[SITE].name}: failed to load guide`, err);
       if (loadedLang === lang) body.textContent = t('guide.failed', lang);
     });
 }
@@ -39,17 +41,17 @@ function build() {
   style.textContent = `${GUIDE_CSS}
 #guide-overlay { position: fixed; inset: 0; z-index: 1100; display: none; flex-direction: column; background: #0a0c14; }
 #guide-overlay.open { display: flex; }
-#guide-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #2c3444; font: 13px system-ui, sans-serif; }
-#guide-bar a { color: #ff9a52; }
+#guide-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #2c3444; font: var(--text-m) var(--font-ui); }
+#guide-bar a { color: var(--accent); }
 #guide-bar .lang-picker { margin-left: auto; }
-#guide-close { min-width: 44px; min-height: 44px; background: none; border: 1px solid rgba(255, 106, 0, 0.35); border-radius: 8px; color: #ddd; font-size: 18px; cursor: pointer; }
+#guide-close { min-width: 44px; min-height: var(--touch); background: none; border: 1px solid rgba(var(--accent-rgb), 0.35); border-radius: var(--radius-m); color: #ddd; font-size: var(--text-xl); cursor: pointer; }
 #guide-body { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 20px 16px 48px; }`;
   document.head.appendChild(style);
 
   overlay = document.createElement('div');
   overlay.id = 'guide-overlay';
   overlay.setAttribute('role', 'dialog');
-  overlay.setAttribute('aria-label', 'Kaleidohedra User Guide');
+  overlay.setAttribute('aria-label', `${SITES[SITE].name} User Guide`);
   overlay.innerHTML = `
     <div id="guide-bar">
       <button id="guide-close" type="button" title="Close (Esc)" aria-label="Close">✕</button>

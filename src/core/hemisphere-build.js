@@ -1,6 +1,6 @@
 // Hemisphere-piece store: Half RD (one real hemisphereSplit() half, sitting
 // in a single cell) and Hourglass (two matching halves from adjacent cells,
-// bridging them) -- ported from Rhombis (Rhombiverse's src/rhombis/stages.js Hourglass/
+// bridging them) -- ported from Rhombis (src/rhombis/stages.js's Hourglass/
 // Hourglass Chain stages), direct instruction 2026-09-06 ("ship two pieces
 // to rhombiverse"). Same "own small store, not core/worldstate-core.js's
 // createWorldStore" reasoning core/interstitial-build.js already gives:

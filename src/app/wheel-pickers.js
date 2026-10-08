@@ -58,14 +58,14 @@ const CSS = `
   position: absolute; top: 34px; left: 0; transform: translateX(-50%);
   display: flex; align-items: center; gap: 5px;
   background: rgba(0, 0, 0, 0.55); border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #ff9a52; font: 12px system-ui, sans-serif; border-radius: 14px;
+  color: var(--accent); font: var(--text-s) var(--font-ui); border-radius: 14px;
   padding: 5px 10px; cursor: pointer; z-index: 3; white-space: nowrap;
 }
 #color-wheel-paint svg { width: 16px; height: 16px; }
-#color-wheel-paint.active { background: rgba(255, 106, 0, 0.4); border-color: #ff6a00; color: #fff; }
+#color-wheel-paint.active { background: rgba(var(--accent-rgb), 0.4); border-color: var(--accent-strong); color: #fff; }
 #color-wheel-hint {
   position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%);
-  color: #eaf6ff; font: 13px system-ui, sans-serif;
+  color: #eaf6ff; font: var(--text-m) var(--font-ui);
   white-space: nowrap;
   text-align: center;
   text-shadow: 0 1px 4px rgba(0,0,0,0.95), 0 0 8px rgba(0,0,0,0.95);

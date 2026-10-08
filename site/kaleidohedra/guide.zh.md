@@ -86,7 +86,7 @@ Kaleidohedra 自己的控件在右上角的 **⟋ Shear** 面板里。它们一�
 | 视图 | 显示内容 | 如何打开 |
 |---|---|---|
 | World View | 彩色、半透明或骨架 | 轻点 World View 按钮循环切换 |
-| Lattice View | 你的作品，以及所选部件向外一步的所有空位 | 轻点 Lattice View 按钮（或角落轮盘上的 ⬡）循环切换部件 |
+| Lattice View | 你的作品，以及所选部件向外一步的所有空位 | 轻点 Lattice View 按钮循环切换部件 |
 | X-Ray | 剖切。可以把切面拖过结构，也可以斜着拖 | X-Ray 按钮（⛶） |
 | Spherical | 点按切换：每个部件显示为球（完整的 RD 与周围十二个相切），然后显示完整 RD 之间的空隙（八面体空隙金色，四面体空隙玫瑰色，只在完全封闭处），所有球变淡。滑块调节所有球的大小（在每种形状本来的大小处停住，更小则分开，更大则重叠）。打开 Lattice View 时，每个空着的格点显示为淡淡的球。仅为视图 | Spherical 按钮（◯）：关 → 球 → 空隙 |
 | Duality | 这种晶体结构投射出的非周期镶嵌 | Duality 按钮（◐） |
@@ -143,7 +143,7 @@ Kaleidohedra 自己的控件在右上角的 **⟋ Shear** 面板里。它们一�
 
 - **导出世界** 把一切——每种 3D+ 晶格和世界以及你的展开图——保存到一个文件。可用来备份，或把你的世界搬到另一台设备。
 - **导入世界** 打开导出的文件。**Undo** 可以撤销导入。
-- 角落轮盘上的 **Clear World**（⊘）用空世界重新开始。Undo 可以恢复。
+- 右上角的 **Clear World**（⊘）用空世界重新开始。Undo 可以恢复。
 
 ## 学习数学
 
@@ -158,7 +158,7 @@ Kaleidohedra 自己的控件在右上角的 **⟋ Shear** 面板里。它们一�
 
 | 控件 | 作用 |
 |---|---|
-| Wizard（左上） | 浏览各个维度和晶格及其部件。旁边的橙色大字显示你所在的维度 |
+| DICTO（左上） | 向导：显示你进入的应用，另外两个（Kaleidohedra、Rhombiverse、Polyhedraverse）只需点一个大按钮。旁边的大字显示你所在的维度 |
 | Shape（左下） | 当前要放置的部件。轻点更换 |
 | 颜色（左下） | 搭建颜色。轻点更换 |
 | Lattice View | 在 Off 和每种部件的视图之间循环 |
@@ -166,34 +166,25 @@ Kaleidohedra 自己的控件在右上角的 **⟋ Shear** 面板里。它们一�
 | Undo（↶，右下） | 轻点撤销当前维度的一步。按住可继续回退 |
 | Paint（画笔） | 给已放置的部件换颜色：打开，选颜色，轻点部件。位于底行连接切换按钮的位置；需要该按钮时，它就在其上方 |
 | ⊘ 清除（Undo 旁，展开图） | 清除当前展开图重新开始；Undo 可恢复 |
-| 菜单 | 打开菜单轮盘（键盘：Tab 或空格） |
+| 菜单 | 打开 DICTO 向导（键盘：Tab 或空格） |
 
-## 角落轮盘
+## 工具（右上）
 
-拖动角落里的小轮盘来转动它，轻点一个面来使用。
+右上角一列按钮，颜色是你所在应用的颜色。
 
-| 符号 | 控件 |
+| 按钮 | 功能 |
 |---|---|
 | ⚙ | 设置 |
+| 3D / ∥ / ISO | 投影：透视、平行（正投影）或等轴（点按切换） |
 | ⛶ | X-Ray |
 | ◐ | Duality |
-| ⬡ | Lattice View |
-| ◇ | 菜单 |
-| ⊘ | Clear World |
-| ↻ | Reload（看起来卡住时使用） |
 | ◯ | Spherical（关 → 球 → 空隙） |
-| — | World View |
+| ⊘ | Clear World |
+| ↻ | 重新加载（看起来卡住时使用） |
 
-## 菜单轮盘
+## DICTO 向导
 
-菜单是一个菱形十二面体。每个面是一个分区：轻点一个面打开它，用 **Home** 返回。**Almanac** 总在顶部的一个面上。
-
-| 分区 | 内容 |
-|---|---|
-| Home | Piece、Color、Change Dimension |
-| Piece | RD family、Cube、Pyramid、TO、Flattened Octahedron、Disphenoid、CO、Octahedron |
-| RD family | RD、Hemi RD、Hourglass、RD Quarter、ED、Hex Prism、Rhombohedra、Pyrochlore |
-| Change Dimension | 2D+, 3D+ |
+左上角的 **DICTO** 会全屏打开向导。它先显示你进入的应用，用该应用的颜色列出其维度和世界。另外两个应用是顶部的两个大按钮：点按一个即可浏览它的列表，显示为它的颜色。选择任何内容都会进入该应用的空间：它的颜色和它的工具（Kaleidohedra 的 Shear 只在那里出现）。Polyhedraverse 目前会打开它自己的网站。
 
 ## 设置
 
@@ -219,7 +210,7 @@ Kaleidohedra 自己的控件在右上角的 **⟋ Shear** 面板里。它们一�
 | 右键点击部件 | 移除它 |
 | 左键拖动 | 旋转镜头 |
 | 滚轮 | 缩放 |
-| Tab 或空格 | 打开菜单轮盘 |
+| Tab 或空格 | 打开 DICTO 向导 |
 | Escape | 关闭菜单、Wizard 或 Almanac |
 | Enter | 从欢迎界面进入 |
 

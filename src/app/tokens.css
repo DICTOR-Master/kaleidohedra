@@ -1,0 +1,19 @@
+/* KRP design tokens (DICTO, 2026-10-08: "best get them all as generic as possible ... script size
+   etc."): one scale of type, radii and touch sizes for every app. The apps differ only by colour,
+   which site.js sets (--accent, --accent-rgb, --accent-strong) for the app whose space you're in. */
+:root {
+  --font-ui: system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+  --text-xs: 11px;  /* small print: dates, hints */
+  --text-s: 12px;   /* panel labels, notes */
+  --text-m: 13px;   /* panel text, buttons */
+  --text-l: 15px;   /* headings in panels, close buttons */
+  --text-xl: 20px;  /* panel titles, small headings */
+  --text-2xl: 26px; /* screen headings */
+  --text-3xl: 30px; /* the welcome title */
+  --radius-s: 6px;
+  --radius-m: 8px;
+  --radius-l: 10px;
+  --touch: 44px;         /* a full touch target */
+  --touch-compact: 36px; /* buttons in dense panels */
+}

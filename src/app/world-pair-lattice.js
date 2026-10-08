@@ -12,10 +12,13 @@ import { ROOF_FOLD_WORLD_SCALE as WS, DJ_NEIGHBOURS, fiveFoldAxes } from '../krp
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
+import { theme, storageKey } from './site.js';
 
 const EDGE_COLOR = 0x0b1220;
-const GHOST_COLOR = 0xff9a52;
-const FIRST_COLOR = 0x22c3e6; // "tap here first": cyan, against the orange livery
+const GHOST_COLOR = () => theme().accentHex; // read when drawing: follows the app whose space you're in
+// "Tap here first": the theme's contrast colour (cyan against Kaleidohedra's orange, amber against
+// Rhombiverse's cyan), read when drawing so it follows the app whose space you're in.
+const firstColour = () => theme().contrastHex;
 const AXIS_COLOR = 0xffffff;
 const lang = () => getSettings().language;
 const key = (s) => s.join(',');
@@ -90,8 +93,8 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     return layerMaterials.get(op);
   };
   const seeThroughMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, transparent: true, opacity: 0.28, depthWrite: false, side: THREE.DoubleSide });
-  const ghostMaterial = new THREE.MeshStandardMaterial({ color: GHOST_COLOR, transparent: true, opacity: 0.16, depthWrite: false, side: THREE.DoubleSide });
-  const firstMaterial = new THREE.MeshStandardMaterial({ color: FIRST_COLOR, transparent: true, opacity: 0.16, depthWrite: false, side: THREE.DoubleSide });
+  const ghostMaterial = new THREE.MeshStandardMaterial({ color: GHOST_COLOR(), transparent: true, opacity: 0.16, depthWrite: false, side: THREE.DoubleSide });
+  const firstMaterial = new THREE.MeshStandardMaterial({ color: firstColour(), transparent: true, opacity: 0.16, depthWrite: false, side: THREE.DoubleSide });
   const pickTargets = [];
   function clearGroup() {
     for (const child of [...group.children]) {
@@ -141,7 +144,8 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     if (!active) return;
     const S = shown();
     if (!S.length) {
-      const [m, l] = meshOf([modeOf().even ? [0, 0, 0] : [1, 0, 0]], firstMaterial, 'first', FIRST_COLOR, FIRST_COLOR);
+      firstMaterial.color.setHex(firstColour());
+      const [m, l] = meshOf([modeOf().even ? [0, 0, 0] : [1, 0, 0]], firstMaterial, 'first', firstColour(), firstColour());
       group.add(m, l);
       pickTargets.push(m);
     } else {
@@ -156,7 +160,7 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
       // to be missing between the cells") are see-through, so the chains inside stay visible.
       const [m, l] = meshOf(solidSites, modeOf().chain ? seeThroughMaterial : pieceMaterial, 'piece');
       m.visible = !skeleton;
-      if (skeleton) l.material.color.setHex(GHOST_COLOR);
+      if (skeleton) l.material.color.setHex(GHOST_COLOR());
       group.add(m, l);
       pickTargets.push(m);
       if (nested) {
@@ -182,7 +186,7 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
       if (latticeView) {
         const ghosts = emptyNeighbours();
         if (ghosts.length) {
-          const [gm, gl] = meshOf(ghosts, ghostMaterial, 'ghost', GHOST_COLOR, GHOST_COLOR);
+          const [gm, gl] = meshOf(ghosts, ghostMaterial, 'ghost', GHOST_COLOR(), GHOST_COLOR());
           gl.material.transparent = true;
           gl.material.opacity = 0.4;
           group.add(gm, gl);
@@ -208,7 +212,7 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
       ls.renderOrder = 3;
       return ls;
     };
-    return [lines(axis, AXIS_COLOR, 0.7), lines(faint, FIRST_COLOR, 0.35), lines(bright, config.brightColor ?? AXIS_COLOR, 1)];
+    return [lines(axis, AXIS_COLOR, 0.7), lines(faint, firstColour(), 0.35), lines(bright, config.brightColor ?? AXIS_COLOR, 1)];
   }
   function fit() {
     const S = shown();
@@ -334,14 +338,16 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     panel.classList.toggle('visible', active);
     if (!active) return;
     const L = lang();
-    panel.querySelector('.sj-view-label').textContent = t('dj.view', L);
+    panel.querySelector('.sj-view-label').textContent = t(`${S_}.view`, L);
     modeSelect.innerHTML = MODES.map((m) => `<option value="${m}"${m === view.mode ? ' selected' : ''}>${t(`${S_}.view.${m}`, L)}</option>`).join('');
     const all = [...cells.values()];
     panel.querySelector('.sj-count').textContent = t(`${S_}.count`, L, { even: all.filter(isEven).length, odd: all.filter((s) => !isEven(s)).length });
     const shearBtn = panel.querySelector('[data-sj="shear"]');
     shearBtn.textContent = t(`studies.shear.${view.shear}`, L);
+    // Only where there is a shear to follow (Kaleidohedra's space): elsewhere it would do nothing.
+    shearBtn.hidden = !shear();
     const axesBtn = panel.querySelector('[data-sj="axes"]');
-    axesBtn.textContent = t('dj.axes', L);
+    axesBtn.textContent = t(`${S_}.axes`, L);
     axesBtn.classList.toggle('active', view.axes);
   }
   modeSelect.addEventListener('change', () => {

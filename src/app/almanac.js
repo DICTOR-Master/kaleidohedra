@@ -30,39 +30,39 @@ const CSS = `
 .almanac-card {
   width: 100%; max-width: 520px; max-height: 84vh;
   overflow-y: auto;
-  color: #ddd; font: 14px/1.5 system-ui, sans-serif;
+  color: #ddd; font: var(--text-m)/1.5 var(--font-ui);
   background: rgba(15, 15, 25, 0.96);
-  border: 1px solid rgba(255, 106, 0, 0.35);
-  border-radius: 10px;
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
+  border-radius: var(--radius-l);
   padding: 18px 22px 22px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
 }
 .almanac-header {
   display: flex; align-items: center; justify-content: space-between;
-  font: 700 16px system-ui, sans-serif;
-  color: #ff9a52;
+  font: 700 var(--text-l) var(--font-ui);
+  color: var(--accent);
   margin-bottom: 12px;
 }
-.almanac-close { background: none; border: none; color: #ff9a52; cursor: pointer; font: 15px system-ui, sans-serif; }
+.almanac-close { background: none; border: none; color: var(--accent); cursor: pointer; font: var(--text-l) var(--font-ui); }
 .almanac-list { display: flex; flex-direction: column; gap: 4px; }
 .almanac-entry {
   display: flex; align-items: center; gap: 10px;
   width: 100%;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 6px;
+  border-radius: var(--radius-s);
   padding: 8px 10px;
   color: #eee;
-  font: 13px system-ui, sans-serif;
+  font: var(--text-m) var(--font-ui);
   text-align: left;
   cursor: pointer;
 }
-.almanac-entry:hover { background: rgba(255, 106, 0, 0.12); border-color: rgba(255, 106, 0, 0.4); }
-.almanac-entry-icon { flex: 0 0 auto; font-size: 22px; color: #ff9a52; line-height: 0; }
+.almanac-entry:hover { background: rgba(var(--accent-rgb), 0.12); border-color: rgba(var(--accent-rgb), 0.4); }
+.almanac-entry-icon { flex: 0 0 auto; font-size: 22px; color: var(--accent); line-height: 0; }
 .almanac-entry-icon:empty { display: none; }
 .almanac-entry-label { flex: 1 1 auto; }
 .almanac-kind {
-  font: 700 10px system-ui, sans-serif;
+  font: 700 var(--text-xs) var(--font-ui);
   letter-spacing: 0.04em; text-transform: uppercase;
   color: #789;
   margin: 14px 0 4px;
@@ -70,20 +70,20 @@ const CSS = `
 .almanac-kind:first-child { margin-top: 0; }
 .almanac-detail { display: none; }
 .almanac-back {
-  background: none; border: none; color: #ff9a52; cursor: pointer;
-  font: 13px system-ui, sans-serif; padding: 0; margin-bottom: 12px;
+  background: none; border: none; color: var(--accent); cursor: pointer;
+  font: var(--text-m) var(--font-ui); padding: 0; margin-bottom: 12px;
 }
-.almanac-detail-icon { font-size: 48px; color: #ff9a52; text-align: center; margin-bottom: 8px; line-height: 0; }
+.almanac-detail-icon { font-size: 48px; color: var(--accent); text-align: center; margin-bottom: 8px; line-height: 0; }
 .almanac-detail-icon:empty { display: none; }
-.almanac-detail-title { font: 700 17px system-ui, sans-serif; color: #fff; margin-bottom: 8px; text-align: center; }
+.almanac-detail-title { font: 700 var(--text-xl) system-ui, sans-serif; color: #fff; margin-bottom: 8px; text-align: center; }
 .almanac-detail-stats {
   text-align: center;
-  color: #ff9a52;
-  font: 700 11px system-ui, sans-serif;
+  color: var(--accent);
+  font: 700 var(--text-xs) var(--font-ui);
   letter-spacing: 0.03em;
   margin-bottom: 10px;
 }
-.almanac-detail-desc { color: #ccd; font-size: 13px; }
+.almanac-detail-desc { color: #ccd; font-size: var(--text-m); }
 `;
 
 function injectCssOnce() {

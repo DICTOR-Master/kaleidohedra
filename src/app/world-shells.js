@@ -23,10 +23,11 @@ import { HULL_IDS, hullShell, hullShellOf, SPLITS, SPLIT_BY_ID, pieceSolid, spli
 import { t, tn } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
+import { storageKey, theme } from './site.js';
 
-const STORAGE_KEY = 'rhombiverse-shells-world';
-const FIRST_COLOR = 0xff6a00;
-const SLOT_COLOR = 0xff9a52;
+const STORAGE_KEY = storageKey('shells-world');
+const FIRST_COLOR = () => theme().strongHex; // read when drawing: follows the app whose space you're in
+const SLOT_COLOR = () => theme().accentHex; // read when drawing: follows the app whose space you're in
 const EDGE_COLOR = 0x0b1220;
 const TARGET_COLOR = 0xffc857;
 // The largest hull + Shell will build (with the fused skin, frame rate
@@ -145,8 +146,8 @@ export function createShellsWorld({ scene, onChange = () => {}, showHudPrompt = 
   // RD face i is the one shared with the neighbour at NEIGHBOR_OFFSETS[i].
   const FACES = facePieces(1).map((f) => f.base);
   const pieceMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
-  const slotMaterial = new THREE.MeshStandardMaterial({ color: SLOT_COLOR, transparent: true, opacity: 0.18, depthWrite: false, side: THREE.DoubleSide });
-  const firstMaterial = new THREE.MeshStandardMaterial({ color: FIRST_COLOR, transparent: true, opacity: 0.12, depthWrite: false });
+  const slotMaterial = new THREE.MeshStandardMaterial({ color: SLOT_COLOR(), transparent: true, opacity: 0.18, depthWrite: false, side: THREE.DoubleSide });
+  const firstMaterial = new THREE.MeshStandardMaterial({ color: FIRST_COLOR(), transparent: true, opacity: 0.12, depthWrite: false });
   let slotCells = [], skinTris = [], partTris = [], ghostParts = [];
   const pickTargets = [];
 
@@ -291,7 +292,7 @@ export function createShellsWorld({ scene, onChange = () => {}, showHudPrompt = 
   function buildGhostParts() {
     const b = meshBuilder();
     ghostParts = [];
-    const c = new THREE.Color(SLOT_COLOR), e = new THREE.Color(SLOT_COLOR);
+    const c = new THREE.Color(SLOT_COLOR()), e = new THREE.Color(SLOT_COLOR());
     for (const [k, { c: cell, parts }] of cells) {
       const o = orientationOf(parts);
       if (o < 0) continue;
@@ -355,7 +356,7 @@ export function createShellsWorld({ scene, onChange = () => {}, showHudPrompt = 
       // An empty world: the cyan outline where the centre goes.
       const first = new THREE.Mesh(rdGeometry.clone(), firstMaterial);
       first.userData.shells = 'first';
-      group.add(first, rdOutlines([[0, 0, 0]], FIRST_COLOR));
+      group.add(first, rdOutlines([[0, 0, 0]], FIRST_COLOR()));
       pickTargets.push(first);
     }
     if (view.mode === 'fragment' && target && cells.has(target)) group.add(rdOutlines([cells.get(target).c], TARGET_COLOR));
@@ -364,7 +365,7 @@ export function createShellsWorld({ scene, onChange = () => {}, showHudPrompt = 
       // The big RD's outline, and the small pieces it still needs as ghosts.
       group.add(solidOutline(pieceSolid('whole', 0, pendingMerge.c, pendingMerge.k), TARGET_COLOR));
       const b = meshBuilder();
-      const gc = new THREE.Color(SLOT_COLOR);
+      const gc = new THREE.Color(SLOT_COLOR());
       for (const x of mergeMissing(pendingMerge)) {
         const solid = pieceSolid(x.split, x.g, x.cell);
         for (const loop of solid.faces) b.face(loop.map((i) => solid.verts[i]), gc, gc);

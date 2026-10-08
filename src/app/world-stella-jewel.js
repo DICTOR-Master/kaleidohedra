@@ -2,11 +2,13 @@
 // windows solid, DISCOVERIES #10) on the even cells and stella octangulas on the odd cells, filling
 // space (study 10b). Views: both, or the Dragon Jewels alone (they meet face to face on all 12
 // rhombi, leaving stella-shaped holes). The five-fold overlay adds the five window positions on each
-// face, the cube's choice bright. The world itself is world-pair-lattice.js.
+// face, the cube's choice bright. The world itself is world-pair-lattice.js. Ported from
+// Kaleidohedra (direct request, 2026-10-08), beside the Sunstar Lattice.
 import {
   ekpWindowsSolid, roofFoldSolids, ROOF_FOLD_COLOURS as C, insideDragonJewel, insideStella, fiveWindowPositions, dogstarSolid, PHI,
 } from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { createPairLatticeWorld } from './world-pair-lattice.js';
+import { storageKey } from './site.js';
 
 function dragonChain(DJ) {
   const k = 1 / PHI ** 3, S = roofFoldSolids();
@@ -24,7 +26,7 @@ export function createStellaJewelWorld(opts) {
   const DJ = ekpWindowsSolid();
   const five = fiveWindowPositions();
   return createPairLatticeWorld(opts, {
-    storageKey: 'kaleidohedra-stella-jewel',
+    storageKey: storageKey('stella-jewel'),
     panelId: 'worldstellajewel-panel',
     minimiser: 'stella-jewel',
     strings: 'dj',

@@ -3,9 +3,11 @@
 // Dogstar (an 8-pointed partial stellation of a dodecahedron 1/phi^3 their size). A dodecahedron with
 // the Dogstars round it is a Sunstar, the sun with its sun dogs. Views: both, the Dogstars alone (they
 // share corners, four at each cube corner: a Kagome-style 3D lattice), or the dodecahedra alone. The
-// world itself is world-pair-lattice.js.
+// world itself is world-pair-lattice.js. Ported from Kaleidohedra; here it sits beside Pyrochlore,
+// the other corner-sharing lattice (direct request, 2026-10-08).
 import { roofFoldSolids, ROOF_FOLD_COLOURS as C, dogstarSolid, insideDodecahedron, insideDogstar, PHI } from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { createPairLatticeWorld } from './world-pair-lattice.js';
+import { storageKey } from './site.js';
 
 const GREAT_STAR = 0x7cc4ff;
 function chain() {
@@ -24,7 +26,7 @@ function chain() {
 
 export function createSunstarWorld(opts) {
   return createPairLatticeWorld(opts, {
-    storageKey: 'kaleidohedra-sunstar',
+    storageKey: storageKey('sunstar'),
     panelId: 'worldsunstar-panel',
     minimiser: 'sunstar',
     strings: 'ss',
