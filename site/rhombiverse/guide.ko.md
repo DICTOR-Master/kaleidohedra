@@ -98,7 +98,7 @@ FCC에서 해 보세요. Pyramid 여섯 개를 놓아 Cube를 만듭니다. 그�
 | 보기 | 보이는 것 | 켜는 방법 |
 |---|---|---|
 | World View | 컬러, 반투명, 스켈레톤 | World View 버튼을 탭해 전환 |
-| Lattice View | 작품과, 고른 조각을 한 칸 바깥에 놓을 수 있는 모든 빈자리 | Lattice View 버튼(또는 모서리 휠의 ⬡)을 탭해 조각을 전환 |
+| Lattice View | 작품과, 고른 조각을 한 칸 바깥에 놓을 수 있는 모든 빈자리 | Lattice View 버튼을 탭해 조각을 전환 |
 | X-Ray | 단면. 평면을 구조 속으로 드래그할 수 있습니다(대각선으로도) | X-Ray 버튼(⛶) |
 | Spherical | 탭해서 바꾸기: 각 조각을 구로 표시(온전한 RD는 이웃 열둘과 닿음), 다음은 온전한 RD 사이의 빈틈(팔면체는 금색, 사면체는 장밋빛, 완전히 둘러싸인 곳만)을 모든 구를 흐리게 하여 표시. 슬라이더로 모든 구의 크기를 조절(각 모양 본래 크기에서 멈춤, 작게 하면 떨어지고 크게 하면 겹침). Lattice View가 켜져 있으면 비어 있는 격자 자리가 흐린 구로 보입니다. 보기 전용 | Spherical 버튼(◯): 끔 → 구 → 빈틈 |
 | Duality | 이 결정 구조가 드리우는 비주기 타일링 | Duality 버튼(◐) |
@@ -193,7 +193,7 @@ RHOMBIS는 같은 조각으로 만드는 3D 퍼즐입니다. 트레이의 조각
 
 - **월드 내보내기**는 모든 것(3D의 모든 격자, 2D 타일, 4D·5D·6D 작품)을 파일 하나에 저장합니다. 백업하거나 다른 기기로 옮길 때 쓰세요.
 - **월드 가져오기**는 내보낸 파일을 엽니다. **Undo**로 가져오기를 되돌릴 수 있습니다.
-- 모서리 휠의 **Clear World**(⊘)는 빈 월드로 다시 시작합니다. Undo로 되살릴 수 있습니다.
+- 오른쪽 위의 **Clear World** (⊘)는 빈 월드로 다시 시작합니다. Undo로 되살릴 수 있습니다.
 
 ## 수학 배우기
 
@@ -208,7 +208,7 @@ RHOMBIS는 같은 조각으로 만드는 3D 퍼즐입니다. 트레이의 조각
 
 | 조작 | 하는 일 |
 |---|---|
-| Wizard(왼쪽 위) | 차원과 격자를 조각과 함께 둘러보기. 옆의 큰 주황색 글자는 지금 있는 차원 |
+| DICTO(왼쪽 위) | 마법사: 들어온 앱을 보여 주고, 다른 두 앱(Kaleidohedra, Rhombiverse, Polyhedraverse)은 큰 버튼 하나로 이동. 옆의 큰 글자는 지금 있는 차원 |
 | Shape(왼쪽 아래) | 지금 놓을 조각. 탭해서 바꾸기 |
 | 색상(왼쪽 아래) | 만들 때의 색. 탭해서 바꾸기 |
 | Lattice View | Off와 조각별 보기를 차례로 전환 |
@@ -217,35 +217,25 @@ RHOMBIS는 같은 조각으로 만드는 3D 퍼즐입니다. 트레이의 조각
 | Paint(붓) | 놓은 조각의 색 바꾸기: 켜고, 색을 고르고, 조각을 탭. 아래 줄에서 붙이기 전환 자리에 있고, 그 전환이 필요할 때는 바로 위에(4D에서는 4D 패널에) |
 | Signal \| Construct(Wizard 아래, 1D+ 전용) | 두 1D+ 세계를 전환 |
 | ⊘ 지우기(Undo 옆, 1D+와 Nets) | 지금 1D+ 세계를 지워 처음부터(Nets에서는 지금 전개도). Undo로 되돌릴 수 있음 |
-| 메뉴 | 메뉴 휠 열기(키보드: Tab 또는 Space) |
+| 메뉴 | DICTO 마법사 열기(키보드: Tab 또는 Space) |
 
-## 모서리 휠
+## 도구(오른쪽 위)
 
-모서리의 작은 휠을 드래그해서 돌리고, 면을 탭해서 씁니다.
+오른쪽 위 모서리에 버튼이 세로로 놓입니다. 색은 지금 있는 앱의 색입니다.
 
-| 기호 | 조작 |
+| 버튼 | 기능 |
 |---|---|
 | ⚙ | 설정 |
+| 3D / ∥ / ISO | 투영: 원근, 평행(정사영), 등각(탭하여 전환) |
 | ⛶ | X-Ray |
 | ◐ | Duality |
-| ⬡ | Lattice View |
-| ◇ | 메뉴 |
-| ⊘ | Clear World |
-| ↻ | Reload(무언가 멈춘 것 같을 때 사용) |
 | ◯ | Spherical(끔 → 구 → 빈틈) |
-| — | World View |
+| ⊘ | Clear World |
+| ↻ | 새로고침(무언가 멈춘 것 같을 때) |
 
-## 메뉴 휠
+## DICTO 마법사
 
-메뉴는 마름모 십이면체입니다. 면마다 하나의 섹션이며, 면을 탭하면 열리고 **Home**으로 돌아갑니다. **Almanac**은 언제나 위쪽 면에 있습니다.
-
-| 섹션 | 내용 |
-|---|---|
-| Home | Piece, Color, Change Dimension |
-| Piece | RD family, Cube, Pyramid, TO, Flattened Octahedron, Disphenoid, CO, Octahedron |
-| RD family | RD, Hemi RD, Hourglass, RD Quarter, ED, Hex Prism, Rhombohedra, Pyrochlore |
-| Change Dimension | 1D+, 2D+, 3D+, 4D, 5D, 6D |
-| Piece(4D) | Tesseract, 24-cell, 16-cell, 5-cell, Truncated 5-cell, Bitruncated 5-cell |
+왼쪽 위의 **DICTO**는 마법사를 화면 가득 엽니다. 처음에는 들어온 앱의 차원과 월드를 그 앱의 색으로 보여 줍니다. 다른 두 앱은 위쪽의 큰 버튼 두 개입니다. 하나를 탭하면 그 앱의 목록이 그 색으로 나옵니다. 무엇이든 고르면 그 앱의 공간으로 들어갑니다: 그 색과 그 도구(Kaleidohedra의 Shear는 그곳에서만 나타남). Polyhedraverse는 지금은 자기 사이트가 열립니다.
 
 ## 설정
 
@@ -271,7 +261,7 @@ RHOMBIS는 같은 조각으로 만드는 3D 퍼즐입니다. 트레이의 조각
 | 조각을 오른쪽 클릭 | 제거 |
 | 왼쪽 드래그 | 카메라 회전 |
 | 스크롤 휠 | 확대/축소 |
-| Tab 또는 Space | 메뉴 휠 열기 |
+| Tab 또는 Space | DICTO 마법사 열기 |
 | Escape | 메뉴, Wizard, Almanac 닫기 |
 | Enter | 시작 화면에서 들어가기 |
 

@@ -86,7 +86,7 @@ Les pièces sont colorées selon le réglage **Couleurs** (dans Réglages) : **C
 | Vue | Ce qu'elle montre | Comment l'activer |
 |---|---|---|
 | World View | Couleur, Translucide ou Squelette | Touchez le bouton World View pour alterner |
-| Lattice View | Votre construction et chaque emplacement libre un cran plus loin, pour la pièce choisie | Touchez le bouton Lattice View (ou ⬡ sur la roue du coin) pour parcourir les pièces |
+| Lattice View | Votre construction et chaque emplacement libre un cran plus loin, pour la pièce choisie | Touchez le bouton Lattice View pour parcourir les pièces |
 | X-Ray | Une coupe. Faites glisser le plan à travers la structure, y compris en diagonale | Bouton X-Ray (⛶) |
 | Spherical | Touchez pour alterner : chaque pièce en sphère (les RD entiers touchent leurs douze voisins), puis les vides entre RD entiers (octaédriques en or, tétraédriques en rose, seulement là où ils sont fermés), toutes les sphères rendues pâles. Un curseur règle la taille de toutes les sphères (cran à la taille propre de chaque forme ; en dessous = écartées, au-delà = qui se chevauchent). Avec Lattice View activé, chaque place libre du réseau apparaît comme une sphère pâle. Une vue seulement | Bouton Spherical (◯) : éteint → sphères → vides |
 | Duality | Le pavage apériodique que projette cette structure cristalline | Bouton Duality (◐) |
@@ -143,7 +143,7 @@ Dans **Paramètres** :
 
 - **Exporter le Monde** enregistre tout, chaque réseau et monde 3D+ et vos patrons, dans un seul fichier. Utilisez-le pour garder une sauvegarde ou transférer votre monde sur un autre appareil.
 - **Importer un Monde** ouvre un fichier exporté. **Undo** annule une importation.
-- **Clear World** (⊘ sur la roue du coin) recommence avec un monde vide. Undo peut le rétablir.
+- **Clear World** (⊘, en haut à droite) recommence avec un monde vide. Undo peut le rétablir.
 
 ## Découvrir les mathématiques
 
@@ -158,7 +158,7 @@ Dans **Paramètres** :
 
 | Commande | Ce qu'elle fait |
 |---|---|
-| Wizard (en haut à gauche) | Parcourir les dimensions et les réseaux, chacun avec ses pièces. La grande étiquette orange à côté indique la dimension où vous êtes |
+| DICTO (en haut à gauche) | L'assistant : l'appli par laquelle vous êtes entré, les deux autres (Kaleidohedra, Rhombiverse, Polyhedraverse) à un grand bouton près. Le grand libellé à côté indique la dimension où vous êtes |
 | Shape (en bas à gauche) | La pièce que vous posez. Touchez pour la changer |
 | Couleur (en bas à gauche) | Couleur de construction. Touchez pour la changer |
 | Lattice View | Alterne entre Off et une vue pour chaque pièce |
@@ -166,34 +166,25 @@ Dans **Paramètres** :
 | Undo (↶, en bas à droite) | Touchez pour annuler une étape dans la dimension actuelle. Maintenez pour remonter plus loin |
 | Paint (pinceau) | Recolorer des pièces posées : activez, choisissez une couleur, touchez une pièce. À la place du sélecteur d'assemblage dans la rangée du bas ; quand ce sélecteur est nécessaire, il se place juste au-dessus |
 | ⊘ Effacer (à côté d'Undo, Patrons) | Efface le patron en cours pour recommencer ; Undo le rétablit |
-| Menu | Ouvre la roue du menu (clavier : Tab ou Espace) |
+| Menu | Ouvre l'assistant DICTO (clavier : Tab ou Espace) |
 
-## Roue du coin
+## Outils (en haut à droite)
 
-Faites glisser la petite roue du coin pour la tourner. Touchez une face pour l'utiliser.
+Une colonne de boutons dans le coin supérieur droit, de la couleur de l'appli dans l'espace de laquelle vous êtes.
 
-| Symbole | Commande |
+| Bouton | Commande |
 |---|---|
-| ⚙ | Paramètres |
+| ⚙ | Réglages |
+| 3D / ∥ / ISO | Projection : perspective, parallèle (orthographique) ou isométrique (touchez pour changer) |
 | ⛶ | X-Ray |
 | ◐ | Duality |
-| ⬡ | Lattice View |
-| ◇ | Menu |
-| ⊘ | Clear World |
-| ↻ | Reload (à utiliser si quelque chose semble bloqué) |
 | ◯ | Spherical (éteint → sphères → vides) |
-| — | World View |
+| ⊘ | Clear World |
+| ↻ | Recharger (si quelque chose semble bloqué) |
 
-## Roue du menu
+## Assistant DICTO
 
-Le menu est un dodécaèdre rhombique. Chaque face est une section : touchez une face pour l'ouvrir, et utilisez **Home** pour revenir. **Almanac** est toujours sur une face du haut.
-
-| Section | Contenu |
-|---|---|
-| Home | Piece, Color, Change Dimension |
-| Piece | RD family, Cube, Pyramid, TO, Flattened Octahedron, Disphenoid, CO, Octahedron |
-| RD family | RD, Hemi RD, Hourglass, RD Quarter, ED, Hex Prism, Rhombohedra, Pyrochlore |
-| Change Dimension | 2D+, 3D+ |
+**DICTO** (en haut à gauche) ouvre l'assistant en plein écran. Il s'ouvre sur l'appli par laquelle vous êtes entré, avec ses dimensions et ses mondes dans sa couleur. Les deux autres applis sont les deux grands boutons en haut : touchez-en un pour parcourir sa liste, dans sa couleur. Choisir quoi que ce soit vous fait entrer dans l'espace de cette appli : ses couleurs et ses outils (le Shear de Kaleidohedra n'apparaît que là). Polyhedraverse ouvre pour l'instant son propre site.
 
 ## Paramètres
 
@@ -219,7 +210,7 @@ Le menu est un dodécaèdre rhombique. Chaque face est une section : touchez une
 | Clic droit sur une pièce | La retirer |
 | Glisser avec le bouton gauche | Tourner la caméra |
 | Molette | Zoomer |
-| Tab ou Espace | Ouvrir la roue du menu |
+| Tab ou Espace | Ouvrir l'assistant DICTO |
 | Échap | Fermer le menu, le Wizard ou l'Almanac |
 | Entrée | Entrer depuis l'écran d'accueil |
 

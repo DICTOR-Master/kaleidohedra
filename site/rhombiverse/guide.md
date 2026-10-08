@@ -96,7 +96,7 @@ Pieces are coloured by the **Colours** setting (in Settings): **Cyan** (every pi
 | View | What it shows | How to turn it on |
 |---|---|---|
 | World View | Colour, Translucent or Skeleton | Tap the World View button to cycle |
-| Lattice View | Your build plus every open slot one step out, for the chosen piece | Tap the Lattice View button (or ⬡ on the corner wheel) to cycle through the pieces |
+| Lattice View | Your build plus every open slot one step out, for the chosen piece | Tap the Lattice View button to cycle through the pieces |
 | X-Ray | A cutaway. Drag the plane through the structure, including on a diagonal | X-Ray button (⛶) |
 | Spherical | Tap to cycle: each piece as a sphere (whole RDs touch their twelve neighbours), then the voids between whole RDs (octahedral gold, tetrahedral rose, where fully enclosed) with every sphere made faint. A slider sizes every sphere (a click-stop at each shape's own size; below = apart, beyond = overlapping). With Lattice View on, every open lattice slot shows as a faint sphere. View only | Spherical button (◯): off → spheres → voids |
 | Duality | The aperiodic tiling that this crystal structure casts | Duality button (◐) |
@@ -191,7 +191,7 @@ In **Settings**:
 
 - **Export World** saves everything, every 3D lattice, your 2D tiles and your 4D, 5D and 6D builds, to one file. Use it to keep a backup or move your World to another device.
 - **Import World** opens an exported file. **Undo** takes an import back.
-- **Clear World** (⊘ on the corner wheel) starts again with an empty world. Undo can bring it back.
+- **Clear World** (⊘, top right) starts again with an empty world. Undo can bring it back.
 
 ## Learning the maths
 
@@ -206,7 +206,7 @@ In **Settings**:
 
 | Control | What it does |
 |---|---|
-| Wizard (top left) | Browse dimensions and lattices, each with its pieces. The large orange label beside it shows the dimension you're in |
+| DICTO (top left) | The wizard: the app you came in by, with the other two (Kaleidohedra, Rhombiverse, Polyhedraverse) a big button away. The large label beside it shows the dimension you're in |
 | Shape (bottom left) | The piece you're placing. Tap to change it |
 | Colour (bottom left) | Build colour. Tap to change it |
 | Lattice View | Cycles through Off and a view for each piece |
@@ -215,35 +215,25 @@ In **Settings**:
 | Paint (brush) | Recolour placed pieces: turn on, pick a colour, tap a piece. In the attach toggle's place on the bottom row; when that toggle is needed it sits just above it (in 4D, in the 4D panel) |
 | Signal \| Construct (under Wizard, 1D+ only) | Switches between the two 1D+ worlds |
 | ⊘ Clear (beside Undo, 1D+ and Nets) | Clears the 1D+ world you're in to start again (in Nets, the net you're on); Undo brings it back |
-| Menu | Opens the menu wheel (keyboard: Tab or Space) |
+| Menu | Opens the DICTO wizard (keyboard: Tab or Space) |
 
-## Corner wheel
+## Tools (top right)
 
-Drag the small wheel in the corner to turn it. Tap a face to use it.
+A column of buttons in the top right corner, in the colour of the app whose space you're in.
 
-| Symbol | Control |
+| Button | Control |
 |---|---|
 | ⚙ | Settings |
+| 3D / ∥ / ISO | Projection: Perspective, Parallel (orthographic) or Isometric (tap to cycle) |
 | ⛶ | X-Ray |
 | ◐ | Duality |
-| ⬡ | Lattice View |
-| ◇ | Menu |
+| ◯ | Spherical (off → spheres → voids) |
 | ⊘ | Clear World |
 | ↻ | Reload (use it if something looks stuck) |
-| ◯ | Spherical (off → spheres → voids) |
-| — | World View |
 
-## Menu wheel
+## DICTO wizard
 
-The menu is a rhombic dodecahedron. Each face is a section: tap a face to open it, and use **Home** to go back. **Almanac** is always on a top face.
-
-| Section | Contents |
-|---|---|
-| Home | Piece, Colour, Change Dimension |
-| Piece | RD family, Cube, Pyramid, TO, Flattened Octahedron, Disphenoid, CO, Octahedron |
-| RD family | RD, Hemi RD, Hourglass, RD Quarter, ED, Hex Prism, Rhombohedra, Pyrochlore |
-| Change Dimension | 1D+, 2D+, 3D+, 4D, 5D, 6D |
-| Piece (in 4D) | Tesseract, 24-cell, 16-cell, 5-cell, Truncated 5-cell, Bitruncated 5-cell |
+**DICTO** (top left) opens the wizard over the whole screen. It starts on the app you came in by, with its dimensions and worlds in its colour. The other two apps are the two big buttons at the top: tap one to browse its list, in its colour. Choosing anything takes you into that app's space: its colours, and its tools (Kaleidohedra's Shear appears only there). Polyhedraverse opens its own site for now.
 
 ## Settings
 
@@ -269,7 +259,7 @@ The menu is a rhombic dodecahedron. Each face is a section: tap a face to open i
 | Right-click a piece | Remove it |
 | Left-drag | Rotate the camera |
 | Scroll wheel | Zoom |
-| Tab or Space | Open the menu wheel |
+| Tab or Space | Open the DICTO wizard |
 | Escape | Close the menu, Wizard or Almanac |
 | Enter | Enter from the welcome screen |
 
