@@ -27,6 +27,10 @@ Then polyhedraverse.vercel.app becomes the third front door of this repo.
   already"; X-Ray, Section and Duality hidden there unless DICTO says otherwise.)
 - **Colours**: one setting for all apps: app colour (cyan / orange / green) / Type (Polyhedraverse's
   family colours there) / Pick, with Paint.
+- **Build queue** (DICTO, 2026-10-08, new): every shape you add joins a queue of the shapes you're
+  building with, so adding it (or the one before) again is one tap, not a trip back down a long
+  family list (the Stellations especially). Shapes in the queue that fit the selected face are offered
+  first when attaching. Comes with D3 (adding) and D4 (shown in the browser's attach mode).
 - **Switchover**: the Next.js site keeps serving polyhedraverse.vercel.app until the rewrite does
   everything above; then DICTO re-points that Vercel project here (`SITE=polyhedraverse`).
 
@@ -69,6 +73,9 @@ dicto-node, phone first. Until D6 the new space is reached from DICTO in the oth
    `SITE=polyhedraverse` build; DICTO re-points the Vercel project; the old repo's README points here.
 
 ## Open (ask before the stage that needs it)
+
+- D3: the build queue: where it sits (a strip above the bottom row?), how long it is, whether it's
+  saved with the build, and whether a shape can be pinned to it.
 
 - D3: on a phone, how a face vs a vertex is selected when they're close (P uses hover tooltips on
   desktop).
