@@ -12,7 +12,7 @@ Les noms des boutons sont écrits tels qu'ils apparaissent dans l'application (c
 
 ### Choisir une dimension
 
-Après **ENTER**, **DICTO** s'ouvre sur les dimensions, de **1D+** à **6D**, chacune avec les applis qu'elle contient. Touchez-en une : son contenu s'affiche en blocs, un par appli dans les couleurs de cette appli, d'abord l'appli par laquelle vous êtes entré, et rien n'apparaît deux fois. Touchez un réseau, un monde ou une forme, chacun montré en fil de fer qui tourne, pour entrer dans l'espace de cette appli. Les trois boutons d'applis en haut n'affichent qu'une appli ; touchez-le de nouveau pour tout afficher. **DICTO** (en haut à gauche), **Menu** (en bas à gauche), Tab ou Espace le rouvrent à tout moment.
+Après **ENTER**, **DICTO** s'ouvre sur les dimensions, de **1D+** à **6D**, chacune avec les applis qu'elle contient. **3D+** est ouverte au départ ; touchez une autre dimension pour l'ouvrir à sa place, ou celle qui est ouverte pour la fermer. **5D** et **6D** ouvrent leurs catalogues. Touchez-en une : son contenu s'affiche en blocs, un par appli dans les couleurs de cette appli, d'abord l'appli par laquelle vous êtes entré, et rien n'apparaît deux fois. Touchez un réseau, un monde ou une forme, chacun montré en fil de fer qui tourne, pour entrer dans l'espace de cette appli. Les trois boutons d'applis en haut n'affichent qu'une appli ; touchez-le de nouveau pour tout afficher. **DICTO** (en haut à gauche), **Menu** (en bas à gauche), Tab ou Espace le rouvrent à tout moment.
 
 ### Poser votre première pièce
 
@@ -285,7 +285,7 @@ Une colonne de boutons dans le coin supérieur droit, de la couleur de l'appli d
 
 ## Assistant DICTO
 
-**DICTO** (en haut à gauche) ouvre l'assistant en plein écran, aux couleurs de l'appli par laquelle vous êtes entré. Il commence par les dimensions, de **1D+** à **6D**, chacune avec les applis qu'elle contient. Dans une dimension, chaque appli a son propre bloc à ses couleurs, d'abord l'appli par laquelle vous êtes entré, et ce qui figure déjà n'est pas répété. Choisir quoi que ce soit vous fait entrer dans l'espace de cette appli : ses couleurs et ses outils (le cisaillement de Kaleidohedra n'apparaît que là). Les trois boutons d'applis en haut sont un filtre : touchez-en un pour n'afficher que cette appli, touchez-le de nouveau pour tout afficher.
+**DICTO** (en haut à gauche) ouvre l'assistant en plein écran, aux couleurs de l'appli par laquelle vous êtes entré. **3D+** est ouverte au départ ; touchez une autre dimension pour l'ouvrir à sa place, ou celle qui est ouverte pour la fermer. **5D** et **6D** ouvrent leurs catalogues. Il commence par les dimensions, de **1D+** à **6D**, chacune avec les applis qu'elle contient. Dans une dimension, chaque appli a son propre bloc à ses couleurs, d'abord l'appli par laquelle vous êtes entré, et ce qui figure déjà n'est pas répété. Choisir quoi que ce soit vous fait entrer dans l'espace de cette appli : ses couleurs et ses outils (le cisaillement de Kaleidohedra n'apparaît que là). Les trois boutons d'applis en haut sont un filtre : touchez-en un pour n'afficher que cette appli, touchez-le de nouveau pour tout afficher.
 
 ## Paramètres
 

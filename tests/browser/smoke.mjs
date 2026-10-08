@@ -56,7 +56,7 @@ async function main() {
   assert.equal(overlayDisplay, 'none', 'welcome overlay should hide after Enter');
 
   // The DICTO wizard opens on every load (the wheels are gone, 2026-10-08), on the dimensions, every
-  // app's entries listed (DICTO by dimension, 2026-10-09); Escape closes it, leaving the default 3D+ world.
+  // app's entries listed, 3D+ open (DICTO by dimension, 2026-10-09); Escape closes it, leaving the default 3D+ world.
   const wizard = await page.evaluate(() => ({
     open: document.querySelector('.dim-wizard-overlay')?.classList.contains('open'),
     door: document.querySelector('.dim-wizard-overlay')?.dataset.door,
@@ -65,7 +65,7 @@ async function main() {
   assert.ok(wizard.open, 'the DICTO wizard should open on load');
   assert.equal(wizard.door, DOOR, `the wizard should wear ${DOOR}'s colours`);
   assert.equal(wizard.dims, '1D 2D 3D 4D 5D 6D', 'DICTO should open on all six dimensions');
-  await page.click('.dim-wizard-card-btn[data-dim="3D"]');
+  // 3D+ is open to start with, its content in app blocks.
   const blocks = () => page.evaluate(() => [...document.querySelectorAll('.dim-wizard-body .dicto-block-name')].map((b) => b.textContent));
   const apps3D = await blocks();
   assert.equal(apps3D[0], DOOR.toUpperCase(), "3D+ should start with the door's own app");

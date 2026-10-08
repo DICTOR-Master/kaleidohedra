@@ -12,7 +12,7 @@ Los nombres de los botones aparecen tal como se ven en la aplicación (los que l
 
 ### Elige una dimensión
 
-Tras **ENTER**, **DICTO** se abre en las dimensiones, de **1D+** a **6D**, cada una con las apps que contiene. Toca una: su contenido aparece en bloques, uno por app con los colores de esa app, primero la app por la que entraste, y nada se repite. Toca una red, un mundo o una forma, cada uno mostrado como un alambre que gira, para entrar en el espacio de esa app. Los tres botones de apps de arriba muestran una sola app; tócalo otra vez para mostrarlas todas. **DICTO** (arriba a la izquierda), **Menu** (abajo a la izquierda), Tab o Espacio lo vuelven a abrir en cualquier momento.
+Tras **ENTER**, **DICTO** se abre en las dimensiones, de **1D+** a **6D**, cada una con las apps que contiene. **3D+** empieza abierta; toca otra dimensión para abrirla en su lugar, o la abierta para cerrarla. **5D** y **6D** abren sus catálogos. Toca una: su contenido aparece en bloques, uno por app con los colores de esa app, primero la app por la que entraste, y nada se repite. Toca una red, un mundo o una forma, cada uno mostrado como un alambre que gira, para entrar en el espacio de esa app. Los tres botones de apps de arriba muestran una sola app; tócalo otra vez para mostrarlas todas. **DICTO** (arriba a la izquierda), **Menu** (abajo a la izquierda), Tab o Espacio lo vuelven a abrir en cualquier momento.
 
 ### Coloca tu primera pieza
 
@@ -285,7 +285,7 @@ Una columna de botones en la esquina superior derecha, del color de la app en cu
 
 ## Asistente DICTO
 
-**DICTO** (arriba a la izquierda) abre el asistente a pantalla completa, con los colores de la app por la que entraste. Empieza en las dimensiones, de **1D+** a **6D**, cada una con las apps que contiene. Dentro de una dimensión, cada app tiene su propio bloque con sus colores, primero la app por la que entraste, y lo que ya aparece no se repite. Elegir cualquier cosa te lleva al espacio de esa app: sus colores y sus herramientas (la cizalla de Kaleidohedra solo aparece allí). Los tres botones de apps de arriba son un filtro: toca uno para ver solo esa app y tócalo otra vez para verlas todas.
+**DICTO** (arriba a la izquierda) abre el asistente a pantalla completa, con los colores de la app por la que entraste. **3D+** empieza abierta; toca otra dimensión para abrirla en su lugar, o la abierta para cerrarla. **5D** y **6D** abren sus catálogos. Empieza en las dimensiones, de **1D+** a **6D**, cada una con las apps que contiene. Dentro de una dimensión, cada app tiene su propio bloque con sus colores, primero la app por la que entraste, y lo que ya aparece no se repite. Elegir cualquier cosa te lleva al espacio de esa app: sus colores y sus herramientas (la cizalla de Kaleidohedra solo aparece allí). Los tres botones de apps de arriba son un filtro: toca uno para ver solo esa app y tócalo otra vez para verlas todas.
 
 ## Ajustes
 
