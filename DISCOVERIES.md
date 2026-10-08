@@ -40,6 +40,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 12 | Star Chain Reaction: the EKP great star is exactly the great stellated dodecahedron of the Dogstar's core (a dodecahedron 1/φ³ the cell's), and a whole Sunstar 1/φ³ the size fits inside it with no room to grow, so dodecahedron ⊃ great star ⊃ Sunstar(1/φ³) ⊃ great star(1/φ³) ⊃ … nests forever, each step touching, scale ratio φ³ | DICTO (asked for a Sunstar cell network and to search nestings; named it); found by Kaleidohedra's search under DICTO's direction. The Dogstar itself is George W. Hart's stellation 8 of the dodecahedron (1996) | yes | **not found** — candidate (web-level search, 2026-10-08) | 2026-10-08 (79448e3) |
 | 12a | Study of #12, the Dragon chain: Dragon Jewel ⊃ cube ⊃ stella octangula ⊃ Dogstar ⊃ dodecahedron(1/φ³) ⊃ Dragon Jewel(1/φ³) ⊃ …, every step touching; the EKP cell recurs inside its own stella, through the Dogstar | DICTO (asked whether "another cell network" was buried in the Dragon Jewel); found by Kaleidohedra's search | yes | study of #12, not a separate claim | 2026-10-08 |
 | 13 | The 13-dodecahedron cluster made solid: a regular dodecahedron with one on each face leaves gaps of exactly two kinds, 30 wedges (two pentagons hinged at 10.3048°, volume φ³/20) and 20 needles (volume (45 − 19√5)/600), and the filled cluster comes apart into 12 finned units | DICTO (designed the cluster; asked for its gaps as pieces, separable once built) | yes | **not found** — candidate (the 10.3° gap itself is well known) | 2026-10-09 |
+| 14 | The icosidodecahedral star: an icosidodecahedron with a regular dodecahedron on each pentagon and a tridiminished icosahedron (J63) on each triangle; 33 regular-faced pieces, every contact a whole face, every edge and corner closed, no filler, volume (195 + 89√5)/3 | Kaleidohedra's search, following DICTO's idea of diminished icosahedra beside dodecahedra | yes | **not found** — candidate (the version with whole icosahedra, which overlaps, is Robert Austin's 2014 model) | 2026-10-09 |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -570,6 +571,43 @@ leave 360° − 3 × 116.565° = **10.3048°**. The gaps are exactly two kinds o
   icosahedron-based binders. The cluster's gaps as two exact solid pieces, and the separable finned
   units, were **not found** in a web-level search on 2026-10-09. Not proof of novelty.
 
+## 14. The icosidodecahedral star (2026-10-09)
+
+*Found while testing DICTO's idea: could bi- and tri-diminished icosahedra (J62, J63) close the gaps
+between dodecahedra? (Working name; DICTO to name it.)*
+
+An **icosidodecahedron** with a regular **dodecahedron** on each of its 12 pentagons and a
+**tridiminished icosahedron** (Johnson solid J63) on each of its 20 triangles, each J63 by its one
+triangle that borders only pentagons. 33 regular-faced pieces, edge 1:
+
+- **Every contact is a whole face and nothing overlaps.** At each of the icosidodecahedron's 60 edges
+  142.6226° + 116.5651° + 100.8123° = 360° exactly (icosidodecahedron, dodecahedron, J63), and the
+  dodecahedron's face there is exactly a pentagon of the J63: the edge is closed with no gap. Every
+  corner of the icosidodecahedron is filled.
+- **No filler is needed**, unlike the 13-dodecahedron cluster (#13). The J63s sit like caps in the 20
+  three-fold dimples between the dodecahedra.
+- Volume exactly **(195 + 89√5)/3** ≈ 131.3367 (icosidodecahedron (45 + 17√5)/6, 12 dodecahedra,
+  20 J63 of 5(3 + √5)/12 − (5 + √5)/8 each).
+- **Why J63 and not the whole icosahedron:** with whole icosahedra on the triangles (Robert Austin's
+  2014 virtual model) each icosahedron's three pentagonal pyramids run into the neighbouring
+  dodecahedra; J63 is the icosahedron with exactly those three removed. In curved (hyperbolic) space
+  the whole-icosahedron version is a cell of the dodecahedral-icosahedral honeycomb; J63 is what lets
+  it exist, exactly, in ordinary space.
+- **What it does not do (studied, not claimed):** it does not continue into a space-filling of these
+  pieces. Each edge of an icosidodecahedron closes only with a dodecahedron and a J63, which forces
+  the star round every icosidodecahedron, and each J63 keeps a cap of four triangles that no regular
+  piece closes; the pockets over the caps widen outward, so in packings the gaps join into one
+  labyrinth (about 26%). Two stars can share a dodecahedron along a 5-fold axis (centres 4.97980
+  apart), which gives columns, but no lattice of them fits.
+- Verified: `src/krp-core/scripts/verify-id-star.mjs` (krp-core v0.7.3), every push: no overlap
+  among the 33 solids (separating axes), all 60 edges closed, every corner filled, exact volumes, and
+  that whole icosahedra overlap.
+- Status: **not found** in a web-level and reading-library search on 2026-10-09. Closest: Robert
+  Austin's *Icosidodecahedra, Icosahedra, and Dodecahedra* (2014), the same arrangement with whole
+  icosahedra, built in Stella 4D as a virtual model in which the pieces overlap; the
+  dodecahedral-icosahedral honeycomb of hyperbolic space; J63 as the vertex figure of the snub
+  24-cell (Koca et al., in the library). Not proof of novelty.
+
 Since 2026-10-08 the geometry and its checks live in [krp-core](https://github.com/DICTOR-Master/krp-core),
 the geometry shared by Kaleidohedra and Rhombiverse, pinned here at `src/krp-core`.
 
@@ -601,6 +639,8 @@ Finding #13, the 13-dodecahedron cluster made solid, is version v2026.10.09-clus
 
 ## Sources
 
+- [Icosidodecahedra, Icosahedra, and Dodecahedra — R. Austin (RobertLovesPi), 2014](https://web.archive.org/web/2020/https://robertlovespi.net/2014/11/13/icosidodecahedra-icosahedra-and-dodecahedra/) (#14)
+- [Dodecahedral-icosahedral honeycomb (hyperbolic) — Wikipedia](https://en.wikipedia.org/wiki/Dodecahedral-icosahedral_honeycomb) (#14)
 - [Building systems with non-regular polyhedra based on subdivisions of zonohedra — H. Lalvani, US 5,623,790 (1997)](https://patents.google.com/patent/US5623790A/en) (#1, #7)
 - [Building structures based on polygonal members and icosahedral symmetry — H. Lalvani, US 4,723,382 (1988)](https://patents.google.com/patent/US4723382A/en) (#1, #10)
 - [Regular Dodecahedron-Based Network Structures — J. Jenczyk, Symmetry 16 (2024) 1509](https://doi.org/10.3390/sym16111509) (#13)
