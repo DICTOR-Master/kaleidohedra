@@ -535,7 +535,13 @@ leave 360° − 3 × 116.565° = **10.3048°**. The gaps are exactly two kinds o
   lattice, so the centres follow the golden-rhombohedron (Ammann–Kramer) tiling with that edge.
   Decorated with dodecahedra at its corners and edge midpoints it fills about 68% at most while
   keeping every contact a whole face (the oblate rhombohedron's short diagonal is where it must
-  split); the rest are cage-sized voids, not stars.
+  split); the rest are cage-sized voids, not stars. In the cubic 1/1 approximant (exact golden tiles,
+  period 15.155 at dodecahedron edge √5 − 1) the decoration is 32 corner + 96 edge dodecahedra per
+  cell, 8 corners dropped on the oblate short diagonals; filled face to face as far as it goes it
+  saturates at 162 per cell, 67.35%, and what is left is one connected, thin labyrinth (deepest point
+  1.356, just under the inradius 1.376, so no further dodecahedron fits in any orientation). Shared
+  out by nearest centre it gives dozens of unit shapes, since the approximant's sites all differ:
+  clean finned units need a truly periodic arrangement, not an approximant.
 - Verified: `src/krp-core/scripts/verify-dodeca-cluster.mjs` (krp-core v0.7.2), every push:
   congruence, exact volumes, no overlap among the 63 solids (separating axes), every gap face
   accounted for, and the halving and thirds.
