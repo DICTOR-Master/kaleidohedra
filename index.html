@@ -49,6 +49,11 @@
       -webkit-touch-callout: default;
     }
     canvas { display: block; }
+    /* The 3D view always fills the screen (DICTO 2026-10-09, iPad: the frame stayed at an old size after
+       Safari resized the page, so touches outside it reached nothing): pinned by CSS, not only by the
+       pixel size set on resize; and the page itself never zooms (pinch zooms the 3D view instead). */
+    #scene-canvas { position: fixed; inset: 0; width: 100% !important; height: 100% !important; touch-action: none; }
+    html { touch-action: manipulation; }
 
     /* --- Minimal HUD ---
        Default screen: wordmark, a small contextual indicator, a bottom

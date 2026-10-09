@@ -193,6 +193,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio * QUALITY_PIXEL_RATIO_FACTOR[getSettings().quality]);
 document.getElementById('fps-meter')?.classList.toggle('visible', getSettings().showFPSMeter);
 renderer.localClippingEnabled = true; // required once, globally, for any clippingPlanes to take effect
+renderer.domElement.id = 'scene-canvas';
 document.getElementById('app').appendChild(renderer.domElement);
 
 // Section view: a single cutaway clipping plane through the whole scene
@@ -6151,12 +6152,22 @@ async function init() {
 
 }
 
+// Re-measure on every way the viewport changes (iPad Safari: rotation, the toolbar sliding, the keyboard
+// closing; a resize event can arrive before the new size is known, so measure again once it settles).
 function onResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
+  const w = document.documentElement.clientWidth || window.innerWidth, h = window.innerHeight;
+  if (!w || !h) return;
+  camera.aspect = w / h;
   camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(w, h, false); // CSS keeps the canvas filling the screen (#scene-canvas)
 }
-window.addEventListener('resize', onResize);
+let settleTimer = 0;
+const onViewportChange = () => { onResize(); clearTimeout(settleTimer); settleTimer = setTimeout(onResize, 350); };
+window.addEventListener('resize', onViewportChange);
+window.addEventListener('orientationchange', onViewportChange);
+window.visualViewport?.addEventListener('resize', onViewportChange);
+// Safari's own page pinch-zoom (it ignores user-scalable): the page stays put, controls stay reachable.
+document.addEventListener('gesturestart', (e) => e.preventDefault());
 
 let lastFrameTime = performance.now();
 
