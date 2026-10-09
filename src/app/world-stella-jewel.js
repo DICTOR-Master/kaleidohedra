@@ -24,6 +24,10 @@ function dragonChain(DJ) {
   ];
 }
 
+// The DICTO Hexa diamond network: a Hexa's block starts at a on the diamond pattern (period 4).
+const HEXA_ANCHORS = new Set(['0,0,0', '0,2,2', '2,0,2', '2,2,0', '1,1,1', '1,3,3', '3,1,3', '3,3,1']);
+const isHexaAnchor = (a) => HEXA_ANCHORS.has(a.map((v) => ((v % 4) + 4) % 4).join(','));
+
 export function createStellaJewelWorld(opts) {
   const DJ = ekpWindowsSolid();
   const five = fiveWindowPositions();
@@ -34,14 +38,15 @@ export function createStellaJewelWorld(opts) {
     strings: 'dj',
     // Arrangements (arrangement: true) open from their own DICTO entries, each its colour scheme;
     // the rest are views of the lattice, offered in its panel.
-    modes: [{ id: 'both', even: true, odd: true }, { id: 'jewels', even: true, odd: false }, { id: 'tetra', even: true, odd: false, cluster: 'tetra', arrangement: true, pieceColour: 0xd9a520, edgeColour: 0xfff0a0 }, { id: 'octa', even: true, odd: true, cluster: 'octa', arrangement: true, pieceColour: 0x8c5a2b }, { id: 'octet', even: true, odd: false, network: true, arrangement: true, pieceColour: 0xa9c4e8 }, { id: 'kagome', even: true, odd: false, cluster: 'kagome', network: 'kagome', arrangement: true, pieceColour: 0xd9a520 }, { id: 'chain', even: true, odd: false, chain: true }],
+    modes: [{ id: 'both', even: true, odd: true }, { id: 'jewels', even: true, odd: false }, { id: 'tetra', even: true, odd: false, cluster: 'tetra', arrangement: true, pieceColour: 0xd9a520, edgeColour: 0xfff0a0 }, { id: 'octa', even: true, odd: true, cluster: 'octa', arrangement: true, pieceColour: 0x8c5a2b }, { id: 'octet', even: true, odd: false, network: true, arrangement: true, pieceColour: 0xa9c4e8 }, { id: 'kagome', even: true, odd: false, cluster: 'kagome', network: 'kagome', arrangement: true, pieceColour: 0xd9a520 }, { id: 'hexa', even: true, odd: true, cluster: 'hexa', arrangement: true, pieceColour: 0xd9a520 }, { id: 'chain', even: true, odd: false, chain: true }],
     // DICTO's clusters of DICTO Jewels (DICTO, 2026-10-09; krp-core DJ_TETRAHEDRAL_CLUSTER and
     // DJ_OCTAHEDRAL_CLUSTER), each placed whole (octet-cells.js).
     networkCells: octetNetworkCells,
     kagomeNeighbours: kagomeNeighbourClusters,
     // Each cluster drawn whole, as its krp-core shape (DICTO 2026-10-09: cohesive blocks).
-    clusterBlocks: { tetra: POLYHEDRA.DJ_TETRAHEDRAL_CLUSTER, kagome: POLYHEDRA.DJ_TETRAHEDRAL_CLUSTER, octa: POLYHEDRA.DJ_OCTAHEDRAL_CLUSTER },
-    clusters: OCTET_CLUSTERS,
+    clusterBlocks: { tetra: POLYHEDRA.DJ_TETRAHEDRAL_CLUSTER, kagome: POLYHEDRA.DJ_TETRAHEDRAL_CLUSTER, octa: POLYHEDRA.DJ_OCTAHEDRAL_CLUSTER, hexa: POLYHEDRA.DICTO_HEXA },
+    clusters: { ...OCTET_CLUSTERS, hexa: (s) => { const a = [0, 1].flatMap((x) => [0, 1].flatMap((y) => [0, 1].map((z) => s.map((v, i) => v - [x, y, z][i])))).find(isHexaAnchor); return a ? [0, 1].flatMap((x) => [0, 1].flatMap((y) => [0, 1].map((z) => [a[0] + x, a[1] + y, a[2] + z]))) : null; } },
+    isHexaAnchor,
     evenFaces: [...DJ.rhombi.map((f) => [f, C.dodeca]), ...DJ.walls.map((f) => [f, 0xb8892a])],
     oddFaces: roofFoldSolids().stella.faces.map((f) => [f, C.stella]),
     insideEven: insideDragonJewel,

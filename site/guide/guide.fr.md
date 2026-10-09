@@ -252,6 +252,8 @@ Quand une construction a deux pièces ou plus, son nom s'affiche sous 3D+ (les c
 
 Touchez près d'un coin plutôt que d'une face et un point marque le coin : toute forme s'y pose, coin contre coin, pointée vers l'extérieur, tournée d'elle-même au meilleur ajustement. Avec une face touchée, **Prisme 4D** (sur les formes qui le permettent) ajoute la même forme poussée vers l'extérieur, reliée par une cellule prismatique transparente, et **Transformer en…** change un deltaèdre à 10 ou 12 faces en l'autre sur place. Une construction de rhomboèdres dorés affiche l'**aide dorée** : combien de pièces sont dans le vrai pavage de Penrose 3D, **Pièce sûre suivante**, et les zonoèdres dorés **pas à pas**.
 
+Les pièces de DICTO commencent par la famille **DICTO Hexa** : la DICTO Hexa (huit DICTO Jewels en cube, qui se traversent à l'intérieur, un seul solide), la **DICTO Hexa-Key** (le vide entre les Hexas : Hexas et Hexa-Keys remplissent l'espace ensemble), deux amas de huit Hexas (rhomboédrique, avec une Hexa-Key scellée dedans, et diamant, partageant des Jewels de coin), et le Jewel rogné et le toit en lesquels elles se divisent. Avec l'une d'elles dans la construction, **Parties** la montre en ses Jewels, ou divisée en pièces qui ne se chevauchent pas : A (cubes et toits) ou B (Jewels entiers et rognés).
+
 ---
 
 # Référence des commandes

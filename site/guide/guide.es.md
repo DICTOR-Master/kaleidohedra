@@ -252,6 +252,8 @@ Cuando una construcción tiene dos piezas o más, su nombre aparece bajo 3D+ (se
 
 Toca cerca de una esquina en vez de una cara y un punto la marca: cualquier forma se coloca ahí, esquina con esquina, apuntando hacia fuera, girada sola al mejor encaje. Con una cara tocada, **Prisma 4D** (en las formas que lo admiten) añade la misma forma empujada hacia fuera, unida por una celda prismática transparente, y **Transformar en…** convierte un deltaedro de 10 o 12 caras en el otro en su sitio. Una construcción de romboedros áureos muestra el **ayudante áureo**: cuántas piezas están en el verdadero teselado de Penrose 3D, **Siguiente pieza segura** y los zonoedros áureos **paso a paso**.
 
+Las piezas de DICTO empiezan con la familia **DICTO Hexa**: la DICTO Hexa (ocho DICTO Jewels en un cubo, que se atraviesan por dentro, un solo sólido), la **DICTO Hexa-Key** (el hueco entre Hexas: Hexas y Hexa-Keys llenan el espacio juntas), dos racimos de ocho Hexas (romboédrico, con una Hexa-Key sellada dentro, y diamante, que comparten Jewels de esquina), y el Jewel recortado y el tejado en que se dividen. Con una en la construcción, **Partes** la muestra como sus Jewels, o dividida en piezas que no se solapan: A (cubos y tejados) o B (Jewels enteros y recortados).
+
 ---
 
 # Referencia de controles

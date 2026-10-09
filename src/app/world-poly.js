@@ -6,7 +6,7 @@
 // Saved in Polyhedraverse's own form (krp-core assembly: nodes with a shape and a transform), so a
 // build moves between this world and the old site by Export/Import.
 import * as THREE from 'three';
-import { POLYHEDRA, isFaceEligibleForAttach } from '../krp-core/src/polyhedra/index.js';
+import { POLYHEDRA, isFaceEligibleForAttach, HEXA_PARTS } from '../krp-core/src/polyhedra/index.js';
 import { facesCongruent } from '../krp-core/src/polyhedra/core.js';
 import { faceAttachOptions } from '../krp-core/src/assembly/faceAttach.js';
 import { rankFaceAttachOptions, isConvex, convexOverlap } from '../krp-core/src/assembly/faceRegistration.js';
@@ -33,6 +33,15 @@ const STORAGE_KEY = storageKey('poly-world');
 const EDGE_COLOR = 0x0b1220;
 const DEFAULT_SHAPE = 'DODECAHEDRON';
 const lang = () => getSettings().language;
+// Parts views of the DICTO Hexa family (krp-core HEXA_PARTS): which of a shape's views each choice shows.
+const PART_VIEWS = ['solid', 'jewels', 'piecesA', 'piecesB'];
+const PART_PICK = {
+  DICTO_HEXA: { jewels: 'jewels', piecesA: 'cubesAndRoofs', piecesB: 'wholeAndTrimmed' },
+  DICTO_HEXA_KEY: { jewels: 'stellasAndRoofs', piecesA: 'stellasAndRoofs', piecesB: 'stellasAndRoofs' },
+  DICTO_HEXA_RHOMBO_CLUSTER: { jewels: 'jewels', piecesA: 'hexas', piecesB: 'hexas' },
+  DICTO_HEXA_DIAMOND_CLUSTER: { jewels: 'jewels', piecesA: 'hexas', piecesB: 'hexas' },
+};
+const PART_COLOURS = { jewel: 0xd9a520, shared: 0xffe27a, trimmed: 0x8f5bd8, cube: 0x9aa4b8, roof: 0xb8892a, stella: 0x8f5bd8, hexa: 0xd9a520, key: 0x8f5bd8 };
 
 export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => {}, showHudPrompt = () => {}, fitView = () => {}, pickShape = () => {} }) {
   const group = new THREE.Group();
@@ -43,7 +52,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   let nodes = []; // { id, shape, transform: { position, quaternion }, material }
   let connections = []; // { nodeA, vertexA, nodeB, vertexB, kind: 'face' } (face indices for a face join)
   // queue: the shapes used lately, newest first (8); pins: the ones always offered (D3b, DICTO's build queue).
-  const view = { shape: DEFAULT_SHAPE, queue: [], pins: [] };
+  const view = { shape: DEFAULT_SHAPE, queue: [], pins: [], parts: 'solid' };
   let active = false, skeleton = false, opacity = 1;
   let spherical = false, sphereScale = 1;
   let nextId = 1;
@@ -69,6 +78,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       if (POLYHEDRA[data.view?.shape]) view.shape = data.view.shape;
       view.queue = (Array.isArray(data.view?.queue) ? data.view.queue : []).filter((id) => POLYHEDRA[id]).slice(0, 8);
       view.pins = (Array.isArray(data.view?.pins) ? data.view.pins : []).filter((id) => POLYHEDRA[id]);
+      if (PART_VIEWS.includes(data.view?.parts)) view.parts = data.view.parts;
     }
   } catch { /* corrupt or blocked storage: start empty */ }
   function save() {
@@ -77,6 +87,46 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
 
   // ---- drawing ----
   const pieceMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
+  const hiddenPickMaterial = new THREE.MeshBasicMaterial({ visible: false, side: THREE.DoubleSide });
+  const partsMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
+  // Each part of each parted node, in the node's place: solid parts for the splits; the overlapping
+  // Jewels views see-through, so the overlap reads.
+  function partsMeshes(list) {
+    const pos = [], col = [], edge = [], c = new THREE.Color();
+    let overlapping = false;
+    for (const n of list) {
+      const which = PART_PICK[n.shape][view.parts];
+      const parts = HEXA_PARTS[n.shape]?.[which] ?? [];
+      if (which === 'jewels') overlapping = true;
+      const q = new THREE.Quaternion(...n.transform.quaternion), p = new THREE.Vector3(...n.transform.position);
+      // The splits stand a little apart (each part pushed out from the shape's centre) so they read
+      // as pieces; the overlapping Jewels stay in place.
+      const apart = which === 'jewels' ? 0 : 0.12;
+      for (const part of parts) {
+        c.setHex(PART_COLOURS[part.role] ?? 0xd9a520);
+        const mid = part.vertices.reduce((t, v) => t.add(new THREE.Vector3(...v)), new THREE.Vector3()).divideScalar(part.vertices.length).multiplyScalar(apart);
+        const P = part.vertices.map((v) => new THREE.Vector3(...v).add(mid).applyQuaternion(q).add(p));
+        for (const f of part.faces) {
+          for (let i = 1; i + 1 < f.length; i++) for (const k of [f[0], f[i], f[i + 1]]) { pos.push(P[k].x, P[k].y, P[k].z); col.push(c.r, c.g, c.b); }
+          f.forEach((a, i) => { const b = f[(i + 1) % f.length]; edge.push(P[a].x, P[a].y, P[a].z, P[b].x, P[b].y, P[b].z); });
+        }
+      }
+    }
+    partsMaterial.transparent = overlapping || opacity < 1;
+    partsMaterial.opacity = overlapping ? Math.min(opacity, 0.45) : opacity;
+    partsMaterial.depthWrite = !partsMaterial.transparent;
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+    g.computeVertexNormals();
+    const lg = new THREE.BufferGeometry();
+    lg.setAttribute('position', new THREE.Float32BufferAttribute(edge, 3));
+    const m = new THREE.Mesh(g, partsMaterial);
+    m.userData.poly = 'parts';
+    m.visible = !skeleton;
+    const l = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: skeleton ? theme().accentHex : EDGE_COLOR, transparent: true, opacity: 0.7 }));
+    return [m, l];
+  }
   const outlineMaterial = new THREE.MeshStandardMaterial({ transparent: true, opacity: 0.16, depthWrite: false, side: THREE.DoubleSide });
   const pickTargets = [];
   let faceOwner = []; // triangle index -> { node, face }
@@ -156,9 +206,18 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       pieceMaterial.opacity = opacity;
       pieceMaterial.depthWrite = opacity >= 1;
       faceOwner = [];
+      const inParts = (n) => view.parts !== 'solid' && PART_PICK[n.shape];
+      const shown = nodes.filter((n) => !inParts(n)), parted = nodes.filter(inParts);
       const [mesh, lines] = meshOf(nodes, pieceMaterial, (n, c) => c.copy(colorOf(n.shape, n.material, familiesFor(n.shape)[0])), EDGE_COLOR, faceOwner);
       mesh.userData.poly = 'piece';
       mesh.visible = !skeleton;
+      if (parted.length) {
+        // Parts drawn in place of their solids; the solids stay underneath, unseen, for taps.
+        mesh.material = hiddenPickMaterial;
+        lines.visible = false;
+        if (shown.length) { const [m2, l2] = meshOf(shown, pieceMaterial, (n, c) => c.copy(colorOf(n.shape, n.material, familiesFor(n.shape)[0])), EDGE_COLOR); m2.visible = !skeleton; if (skeleton) l2.material.color.setHex(theme().accentHex); group.add(m2, l2); }
+        group.add(...partsMeshes(parted));
+      }
       if (skeleton) lines.material.color.setHex(theme().accentHex);
       group.add(mesh, lines);
       pickTargets.push(mesh);
@@ -433,7 +492,8 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   function renderPanel() {
     disposers.forEach((d) => d()); disposers = [];
     const isGolden = active && !spherical && golden();
-    const show = active && !spherical && (selection || chosen || isGolden);
+    const hasParts = active && !spherical && nodes.some((n) => PART_PICK[n.shape]);
+    const show = active && !spherical && (selection || chosen || isGolden || hasParts);
     panel.hidden = !show;
     if (!show) return;
     const L = lang();
@@ -442,10 +502,13 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       ${selection ? `<button type="button" class="poly-more" data-more>${t('poly.more', L)}</button>` : ''}
       ${selection && selection.face != null && FOURD.has(selection.node.shape) ? `<button type="button" class="poly-more" data-duoprism>${t('poly.duoprism', L)}</button>` : ''}
       ${selection && REWRITE_TARGET[selection.node.shape] ? `<button type="button" class="poly-more" data-transform>${t('poly.transform', L, { name: polyShapeName(REWRITE_TARGET[selection.node.shape]).replaceAll('_', ' ') })}</button>` : ''}
-      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}`;
+      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}`;
     panel.querySelectorAll('.poly-shape canvas').forEach((cv) => disposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 34)));
   }
-  panel.addEventListener('change', (e) => { if (e.target.matches('[data-golden-recipe]')) recipe = Number(e.target.value); });
+  panel.addEventListener('change', (e) => {
+    if (e.target.matches('[data-golden-recipe]')) recipe = Number(e.target.value);
+    if (e.target.matches('[data-parts]')) { view.parts = e.target.value; save(); rebuild(); }
+  });
   // Long-press a shape in the strip to pin it (always offered) or unpin it.
   let pressTimer = 0, pressed = false;
   panel.addEventListener('pointerdown', (e) => {

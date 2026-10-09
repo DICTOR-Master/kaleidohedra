@@ -250,6 +250,8 @@ When a build has two or more pieces, its name shows under 3D+ (named builds such
 
 Tap near a corner instead of a face and a dot marks the corner: any shape then goes on there, corner to corner, pointing straight out, turned by itself to the best fit. With a face tapped, **4D Prism** (on shapes that have one) adds the same shape pushed straight out, joined by a see-through prism cell, and **Transform to…** turns a 10- or 12-face deltahedron into the other in place. A build of golden rhombohedra shows the **Golden helper**: how many pieces sit in the true 3D Penrose tiling, **Next safe piece**, and the golden zonohedra built **step by step**.
 
+DICTO's pieces start with the **DICTO Hexa** family: the DICTO Hexa (eight DICTO Jewels in a cube, passing through each other inside, one solid), the **DICTO Hexa-Key** (the gap between Hexas: Hexas and Hexa-Keys fill space together), two clusters of eight Hexas (rhombohedral, with a Hexa-Key sealed inside, and diamond, sharing corner Jewels), and the trimmed Jewel and roof they split into. With one in the build, **Parts** shows it as its Jewels, or split into pieces that don't overlap: A (cubes and roofs) or B (whole and trimmed Jewels).
+
 ---
 
 # Control reference

@@ -166,7 +166,7 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
       firstMaterial.color.setHex(firstColour());
       // The first placement: the piece, or in a cluster mode the whole cluster.
       const firstSites = clustered() ? clusterOf([0, 0, 0]) : [modeOf().even ? [0, 0, 0] : [1, 0, 0]];
-      const [m, l] = meshOf(firstSites, firstMaterial, 'first', firstColour(), firstColour());
+      const [m, l] = meshOf(firstSites, firstMaterial, 'first', firstColour(), firstColour(), modeOf().cluster === 'hexa' ? () => config.evenFaces : facesOf);
       group.add(m, l);
       pickTargets.push(m);
     } else if (clustered()) {
@@ -232,7 +232,7 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
   // clusters fill by themselves: the odd pieces (stellas, Dogstars), and in the Kagome network the
   // single even pieces (violet), so a build is solid with no gaps. A tap places the free cluster
   // nearest the tap; the octahedral clusters' blocks stay a little see-through for their fire.
-  const BLOCK_COLOURS = { tetra: 0xd9a520, kagome: 0xd9a520, octa: 0x8c5a2b };
+  const BLOCK_COLOURS = { tetra: 0xd9a520, kagome: 0xd9a520, octa: 0x8c5a2b, hexa: 0xd9a520 };
   const SINGLE_VIOLET = 0x8f5bd8;
   const NEAR12 = [[1, 1, 0], [1, -1, 0], [-1, 1, 0], [-1, -1, 0], [1, 0, 1], [1, 0, -1], [-1, 0, 1], [-1, 0, -1], [0, 1, 1], [0, 1, -1], [0, -1, 1], [0, -1, -1]];
   const AXES6 = [[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1]];
@@ -275,7 +275,8 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     const evens = S.filter(isEven);
     // each cluster once, keyed by its first site (the centre, for an octahedral cluster)
     const clusters = new Map();
-    for (const e of evens) { const cl = config.clusters[kind](e); if (cl) clusters.set(key(cl[0]), cl); }
+    if (kind === 'hexa') for (const cl of heldHexas(S)) clusters.set(key(cl[0]), cl);
+    else for (const e of evens) { const cl = config.clusters[kind](e); if (cl) clusters.set(key(cl[0]), cl); }
     const centres = kind === 'octa' ? [...clusters.values()].map((cl) => cl[0]) : [];
     const spec = config.clusterBlocks[kind], edges = edgesOf(spec);
     const colour = new THREE.Color(BLOCK_COLOURS[kind]);
@@ -312,14 +313,59 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     const l = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: skeleton ? GHOST_COLOR() : EDGE_COLOR }));
     group.add(m, l);
     pickTargets.push(m);
-    const { singles, odds } = clusterFill(kind, evens, centres);
+    const { singles, odds } = kind === 'hexa' ? { singles: [], odds: hexaFill(S) } : clusterFill(kind, evens, centres);
     pieceMaterial.transparent = opacity < 1; pieceMaterial.opacity = opacity; pieceMaterial.depthWrite = opacity >= 1;
     if (singles.length) { const [sm, sl] = meshOf(singles, pieceMaterial, 'fill', SINGLE_VIOLET); sm.visible = !skeleton; group.add(sm, sl); pickTargets.push(sm); }
-    if (odds.length) { const [om, ol] = meshOf(odds, pieceMaterial, 'fill'); om.visible = !skeleton; group.add(om, ol); pickTargets.push(om); }
+    if (odds.length) { const [om, ol] = meshOf(odds, pieceMaterial, 'fill', null, EDGE_COLOR, () => config.oddFaces); om.visible = !skeleton; group.add(om, ol); pickTargets.push(om); }
     if (centres.length) {
       group.add(...flames(centres, fireMaterial, fireHalo));
       if (!flickerRaf) flickerRaf = requestAnimationFrame(flicker);
     }
+  }
+  // The DICTO Hexa diamond network (DICTO 2026-10-09): Hexas (8 Jewels on a 2 x 2 x 2 block, any
+  // parity) on the diamond pattern, each sharing 4 of its corner Jewels with 4 neighbours; the cells
+  // no Hexa covers are stellas, filled in by themselves once surrounded.
+  const BLOCK8 = [0, 1].flatMap((x) => [0, 1].flatMap((y) => [0, 1].map((z) => [x, y, z])));
+  const hexaCells = (a) => BLOCK8.map((d) => a.map((v, i) => v + d[i]));
+  const anchorsOf = (c) => BLOCK8.map((d) => c.map((v, i) => v - d[i])).filter(config.isHexaAnchor);
+  function heldHexas(S) {
+    const out = new Map();
+    for (const c of S) for (const a of anchorsOf(c)) if (!out.has(key(a)) && hexaCells(a).every((x) => cells.has(key(x)))) out.set(key(a), hexaCells(a));
+    return [...out.values()];
+  }
+  function hexaFill(S) {
+    const held = new Set(S.map(key)), odds = new Map();
+    for (const c of S) for (const d of AXES6) {
+      const o = c.map((v, i) => v + d[i]), k = key(o);
+      if (held.has(k) || odds.has(k) || anchorsOf(o).length) continue; // only cells no Hexa covers
+      if (AXES6.filter((d2) => held.has(key(o.map((v, i) => v + d2[i])))).length >= 4) odds.set(k, o);
+    }
+    return [...odds.values()];
+  }
+  function hexaPlace(site, point) {
+    const tap = [point.x, point.y, point.z], seen = new Set(), options = [];
+    for (const dx of [-2, -1, 0, 1]) for (const dy of [-2, -1, 0, 1]) for (const dz of [-2, -1, 0, 1]) {
+      const a = [site[0] + dx, site[1] + dy, site[2] + dz];
+      if (!config.isHexaAnchor(a) || seen.has(key(a))) continue;
+      seen.add(key(a));
+      if (hexaCells(a).some((x) => !cells.has(key(x)))) options.push(a);
+    }
+    const centre = (a) => toWorld(a, [1, 1, 1]);
+    options.sort((a, b) => Math.hypot(...centre(a).map((v, i) => v - tap[i])) - Math.hypot(...centre(b).map((v, i) => v - tap[i])));
+    return options.length ? addCluster(options[0]) : false;
+  }
+  // Long-press on a Hexa: it goes, but Jewels another whole Hexa shares stay.
+  function removeHexa(s, point) {
+    const tap = [point.x, point.y, point.z];
+    const mine = anchorsOf(s).filter((a) => hexaCells(a).every((x) => cells.has(key(x))));
+    if (!mine.length) return false;
+    const a = mine.sort((p, q) => Math.hypot(...toWorld(p, [1, 1, 1]).map((v, i) => v - tap[i])) - Math.hypot(...toWorld(q, [1, 1, 1]).map((v, i) => v - tap[i])))[0];
+    const others = heldHexas([...cells.values()]).filter((cl) => key(cl[0]) !== key(a));
+    const keep = new Set(others.flat().map(key));
+    const gone = hexaCells(a).filter((x) => !keep.has(key(x)) && cells.delete(key(x)));
+    if (!gone.length) return false;
+    commit();
+    return true;
   }
   // Placement: the free cluster nearest the tap among those beside the tapped site.
   function clusterPlace(kind, site, point) {
@@ -489,7 +535,12 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
       // or a filled piece places the free cluster nearest the tap; a long-press on a block removes it.
       {
         const kind = modeOf().cluster;
-        if (chisel) return tag === 'piece' ? removeCluster(s) : false;
+        if (chisel) return tag === 'piece' ? (kind === 'hexa' ? removeHexa(s, hit.point) : removeCluster(s)) : false;
+        if (kind === 'hexa') {
+          if (hexaPlace(s, hit.point)) return true;
+          showHudPrompt(t(`${S_}.prompt.taken`, lang()), 2000);
+          return false;
+        }
         // On a block, the piece actually tapped: the cluster member nearest the tap.
         const p = [hit.point.x, hit.point.y, hit.point.z];
         const members = tag === 'piece' ? (config.clusters[kind](s) ?? [s]) : [s];
@@ -562,7 +613,9 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     panel.querySelector('.sj-view-label').textContent = arrangement ? t(`${S_}.view.${view.mode}`, L) : t(`${S_}.view`, L);
     modeSelect.innerHTML = MODE_LIST.filter((m) => !m.arrangement).map(({ id: m }) => `<option value="${m}"${m === view.mode ? ' selected' : ''}>${t(`${S_}.view.${m}`, L)}</option>`).join('');
     const all = [...cells.values()];
-    panel.querySelector('.sj-count').textContent = t(`${S_}.count`, L, { even: all.filter(isEven).length, odd: all.filter((s) => !isEven(s)).length });
+    panel.querySelector('.sj-count').textContent = modeOf().cluster === 'hexa'
+      ? t(`${S_}.count`, L, { even: all.length, odd: hexaFill(all).length })
+      : t(`${S_}.count`, L, { even: all.filter(isEven).length, odd: all.filter((s) => !isEven(s)).length });
     const shearBtn = panel.querySelector('[data-sj="shear"]');
     shearBtn.textContent = t(`studies.shear.${view.shear}`, L);
     // Only where there is a shear to follow (Kaleidohedra's space): elsewhere it would do nothing.
