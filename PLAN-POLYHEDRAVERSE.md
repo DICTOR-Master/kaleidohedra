@@ -84,6 +84,9 @@ dicto-node, phone first. Until D6 the new space is reached from DICTO in the oth
    - **Delete:** long-press, as in every other world (and the chisel tool); undo restores.
    - **Build name:** one shortened line under the dimension label (3D+), tap it for the full
      assembly list; curated names recognised, plus **DICTO-Star** when the build is exactly it.
+   - *Done:* tap attach with the queue strip (D3a, f559a98), automatic best fit (no arrows), build
+     name and saved queue with pins (D3b, fb5dcfe). *Left (D3c):* corner attach with twist,
+     Transform to…, Golden helper bar, duoprism attach.
    - **All the old tools come with D3:** Transform to…, the Golden helper bar, duoprism attach, and
      vertex attach with twist.
    - The interim note linking to the old site goes when D3 ships.
