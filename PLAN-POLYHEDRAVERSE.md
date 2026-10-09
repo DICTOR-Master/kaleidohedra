@@ -90,7 +90,7 @@ dicto-node, phone first. Until D6 the new space is reached from DICTO in the oth
    - **All the old tools come with D3:** Transform to…, the Golden helper bar, duoprism attach, and
      vertex attach with twist.
    - The interim note linking to the old site goes when D3 ships.
-4. **D4 Shape browser** (D4a done 2026-10-09: search, Favourites and Recent, details with Build and Favourite; D4b: Net + PDF; D4c: Compare; next: the star / radial / duoprism viewers). Home (families, Recent, Favourites), Search (name, family, face shape,
+4. **D4 Shape browser** (D4a done 2026-10-09: search, Favourites and Recent, details with Build and Favourite; D4b: Net + PDF; D4c: Compare; D4d: the star, 4D prism and Extend into 4D viewers. **D4 done.**) Home (families, Recent, Favourites), Search (name, family, face shape,
    face count), Scene, Favourites, Full Catalog with its sections and pairs; details (stats, preview,
    Add to Scene, Favourite, Compare, Net + PDF, star / radial / duoprism viewers, View 4D); Compare;
    the fit-filtered attach mode.

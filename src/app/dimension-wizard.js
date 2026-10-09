@@ -51,6 +51,9 @@ import { POLYHEDRA } from '../krp-core/src/polyhedra/index.js';
 import { isConvex } from '../krp-core/src/assembly/faceRegistration.js';
 import { favourites, recent, isFavourite, toggleFavourite } from './poly-prefs.js';
 import { netEligible, mountNetViewer } from './net-viewer.js';
+import { mountStarView, mountDuoprismView, mountRadialView } from './shape-views.js';
+import { STAR_POLYHEDRON_IDS, STAR_POLYHEDRON_META, STAR_POLYHEDRA } from '../krp-core/src/polyhedra/starPolyhedra.js';
+import { FOURD_CAPABLE_IDS } from '../krp-core/src/polyhedra/fourD.js';
 import { SITE, SITES, setActiveSite, activeSite, themeOf } from './site.js';
 import { countDicto } from './analytics.js';
 import { dimensionLabel } from './dimension-label.js';
@@ -114,6 +117,9 @@ const CSS = `
 .poly-compare-shared { margin: 8px 4px; color: #ccd; font: var(--text-s, 13px) var(--font-ui, sans-serif); }
 .poly-detail-netbox { width: 100%; display: flex; flex-direction: column; gap: 8px; align-items: center; }
 .poly-detail-netbox[hidden] { display: none; }
+.poly-detail-stage { width: 100%; height: 280px; border-radius: var(--radius-m, 10px); overflow: hidden; background: #0a0a10; }
+.poly-detail-4dbox { width: 100%; display: flex; flex-direction: column; gap: 6px; }
+.poly-detail-4dbox[hidden] { display: none; }
 .net-stage { width: 100%; height: 300px; border-radius: var(--radius-m, 10px); overflow: hidden; background: #0a0a10; display: flex; align-items: center; justify-content: center; color: var(--pale); font: var(--text-s, 13px) var(--font-ui, sans-serif); }
 .net-controls { display: flex; gap: 10px; align-items: center; width: 100%; flex-wrap: wrap; justify-content: center; color: var(--pale); font: var(--text-s, 13px) var(--font-ui, sans-serif); }
 .net-controls[hidden], .net-note[hidden] { display: none; }
@@ -545,20 +551,21 @@ const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
 const DICTO_ORDER = ['roofFold', 'stellaJewel', 'sunstar', 'studies', 'targets', 'dictofcc', 'hex', 'shells', 'golden'];
 const dictoRank = (e) => { const i = DICTO_ORDER.indexOf(e.lat?.key); return i < 0 ? DICTO_ORDER.length : i; };
 const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER'] };
-const polyIds = (key) => (key === DICTO_POLY.key ? DICTO_POLY.ids.filter((id) => polyShapeName(id) !== id) : key === 'FAVOURITES' ? favourites() : key === 'RECENT' ? recent() : familyIds(key));
-const polyLabel = (key) => (key === DICTO_POLY.key ? DICTO_POLY.label : key === 'FAVOURITES' ? t('wiz.poly.favourites', getSettings().language) : key === 'RECENT' ? t('wiz.poly.recent', getSettings().language) : FAMILY_META[key].label);
+const polyIds = (key) => (key === DICTO_POLY.key ? DICTO_POLY.ids.filter((id) => polyShapeName(id) !== id) : key === 'FAVOURITES' ? favourites() : key === 'RECENT' ? recent() : key === 'STARS' ? STAR_POLYHEDRON_IDS : familyIds(key));
+const polyLabel = (key) => (key === DICTO_POLY.key ? DICTO_POLY.label : key === 'FAVOURITES' ? t('wiz.poly.favourites', getSettings().language) : key === 'RECENT' ? t('wiz.poly.recent', getSettings().language) : key === 'STARS' ? 'Kepler–Poinsot' : FAMILY_META[key].label);
 // ---- the shape browser (step D4, DICTO 2026-10-09: inside DICTO) ----
 // A shape's faces by kind, each { kind, count, regular }: what its details list and search reads.
 const faceKindCache = new Map();
 function faceKindsOf(id) {
   if (faceKindCache.has(id)) return faceKindCache.get(id);
-  const s = POLYHEDRA[id], V = s.vertices, kinds = new Map();
+  const s = POLYHEDRA[id] ?? STAR_POLYHEDRA[id], V = s.vertices, kinds = new Map();
   const d = (a, b) => Math.hypot(...V[a].map((x, i) => x - V[b][i]));
   const ang = (a, b, c) => { const u = V[a].map((x, i) => x - V[b][i]), w = V[c].map((x, i) => x - V[b][i]); return Math.acos(Math.max(-1, Math.min(1, (u[0] * w[0] + u[1] * w[1] + u[2] * w[2]) / (Math.hypot(...u) * Math.hypot(...w))))); };
   for (const f of s.faces) {
     const n = f.length, sides = f.map((v, i) => d(v, f[(i + 1) % n])), angles = f.map((v, i) => ang(f[(i + n - 1) % n], v, f[(i + 1) % n]));
     const eqS = sides.every((x) => Math.abs(x - sides[0]) < 1e-6 * sides[0]), eqA = angles.every((x) => Math.abs(x - angles[0]) < 1e-6);
-    let kind = n === 3 ? 'triangle' : n === 5 ? 'pentagon' : n === 6 ? 'hexagon' : n === 8 ? 'octagon' : n === 10 ? 'decagon' : n === 4 ? null : 'polygon';
+    // a regular five-sided face whose corners turn by 36° is a pentagram (the star polyhedra's)
+    let kind = n === 3 ? 'triangle' : n === 5 ? (eqA && Math.abs(angles[0] - Math.PI / 5) < 1e-6 ? 'pentagram' : 'pentagon') : n === 6 ? 'hexagon' : n === 8 ? 'octagon' : n === 10 ? 'decagon' : n === 4 ? null : 'polygon';
     if (n === 4) kind = eqS && eqA ? 'square' : eqS ? 'rhombus' : eqA ? 'rectangle' : (Math.abs(sides[0] - sides[1]) < 1e-6 && Math.abs(sides[2] - sides[3]) < 1e-6) || (Math.abs(sides[1] - sides[2]) < 1e-6 && Math.abs(sides[3] - sides[0]) < 1e-6) ? 'kite' : 'quadrilateral';
     const regular = n !== 4 && eqS && eqA, k = `${kind}|${regular}|${n}`;
     kinds.set(k, { kind, regular, n, count: (kinds.get(k)?.count ?? 0) + 1 });
@@ -569,16 +576,16 @@ function faceKindsOf(id) {
 }
 const faceWord = (k, L) => (k.kind === 'polygon' ? t('poly.face.polygon', L, { n: k.n }) : t(`poly.face.${k.kind}`, L));
 // Every shape the browser knows: DICTO's, then each family's.
-const browsable = () => [...new Set([...DICTO_POLY.ids, ...POLY_FAMILIES.flatMap((k) => familyIds(k))])].filter((id) => POLYHEDRA[id] && polyShapeName(id) !== id);
+const browsable = () => [...new Set([...DICTO_POLY.ids, ...POLY_FAMILIES.flatMap((k) => familyIds(k)), ...STAR_POLYHEDRON_IDS])].filter((id) => (POLYHEDRA[id] || STAR_POLYHEDRA[id]) && polyShapeName(id) !== id);
 // Search: every word must match the name, a family, a face kind (in this language or English) or,
 // as a number, the face count.
 function searchShapes(q, L) {
   const words = q.toLowerCase().trim().split(/\s+/).filter(Boolean);
   if (!words.length) return [];
   return browsable().filter((id) => {
-    const hay = [polyShapeName(id), ...familiesFor(id).map((f) => FAMILY_META[f]?.label ?? f),
+    const hay = [polyShapeName(id), ...(STAR_POLYHEDRA[id] ? ['Kepler–Poinsot', 'star'] : familiesFor(id).map((f) => FAMILY_META[f]?.label ?? f)),
       ...faceKindsOf(id).flatMap((k) => [faceWord(k, L), faceWord(k, 'en'), k.kind])].join(' ').toLowerCase().replaceAll('_', ' ');
-    const faces = POLYHEDRA[id].faces.length;
+    const faces = (POLYHEDRA[id] ?? STAR_POLYHEDRA[id]).faces.length;
     return words.every((w) => (/^\d+$/.test(w) ? faces === Number(w) : hay.includes(w)));
   }).slice(0, 60);
 }
@@ -612,6 +619,7 @@ function dimensionEntries(dim) {
     { app: P, kind: 'shapes', key: 'RECENT' },
     { app: P, kind: 'shapes', key: DICTO_POLY.key, dicto: true },
     POLY_FAMILIES.filter((key) => familyIds(key).length).map((key) => ({ app: P, kind: 'shapes', key })),
+    { app: P, kind: 'shapes', key: 'STARS' },
   );
   if (dim === '4D') return LATTICES_4D.map((lat) => ({ app: R, kind: 'lattice', lat }));
   return [{ app: R, kind: 'catalogue' }]; // 5D, 6D
@@ -1021,34 +1029,49 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
   function showShapeDetail(id, backTo) {
     current = () => showShapeDetail(id, backTo);
     resetPreviews();
-    const L = getSettings().language, s = POLYHEDRA[id];
-    const fams = familiesFor(id).map((f) => FAMILY_META[f]?.label ?? f);
-    const pairs = pairPartners(id).filter((x) => POLYHEDRA[x]);
+    const L = getSettings().language, star = !POLYHEDRA[id] && STAR_POLYHEDRA[id], s = POLYHEDRA[id] ?? star;
+    if (!s) return;
+    const fams = star ? ['Kepler–Poinsot'] : familiesFor(id).map((f) => FAMILY_META[f]?.label ?? f);
+    const pairs = star ? [] : pairPartners(id).filter((x) => POLYHEDRA[x]);
     const fav = isFavourite(id);
     bodyEl.innerHTML = `
       ${back(L)}
       <div class="poly-detail dicto-block" style="${blockStyle('polyhedraverse')}">
-        <canvas class="poly-detail-preview" width="200" height="200"></canvas>
+        ${star ? '<div class="poly-detail-stage"></div>' : '<canvas class="poly-detail-preview" width="200" height="200"></canvas>'}
         <div class="poly-detail-name">${polyShapeName(id).replaceAll('_', ' ')}</div>
         <div class="dim-wizard-desc">${fams.join(' · ')}</div>
         <div class="poly-detail-actions">
-          <button type="button" class="poly-detail-build">${t('poly.d.build', L)}</button>
+          ${star ? '' : `<button type="button" class="poly-detail-build">${t('poly.d.build', L)}</button>`}
           <button type="button" class="poly-detail-fav" aria-pressed="${fav}">${fav ? '★' : '☆'} ${t('poly.d.fav', L)}</button>
           <button type="button" class="poly-detail-net" hidden aria-expanded="false">${t('poly.net.button', L)}</button>
-          <button type="button" class="poly-detail-compare">${t('poly.d.compare', L)}</button>
+          ${star ? '' : `<button type="button" class="poly-detail-compare">${t('poly.d.compare', L)}</button>
+          <button type="button" class="poly-detail-4d" aria-expanded="false">${t(FOURD_CAPABLE_IDS.includes(id) ? 'poly.d.extend4d' : 'poly.d.prism4d', L)}</button>`}
         </div>
+        <div class="poly-detail-4dbox" hidden><div class="poly-detail-stage"></div><div class="dim-wizard-desc">${t(FOURD_CAPABLE_IDS.includes(id) ? 'poly.d.extend4dNote' : 'poly.d.prism4dNote', L)}</div></div>
         <div class="poly-detail-netbox" hidden></div>
         <dl class="poly-detail-stats">
           <dt>${t('poly.d.faces', L)}</dt><dd>${s.faces.length}: ${faceKindsOf(id).map((k) => `${k.count} × ${k.regular ? t('poly.d.regular', L) + ' ' : ''}${faceWord(k, L)}`).join(', ')}</dd>
           <dt>${t('poly.d.edges', L)}</dt><dd>${s.edges.length}</dd>
           <dt>${t('poly.d.vertices', L)}</dt><dd>${s.vertices.length}</dd>
           <dt>${t('poly.d.shape', L)}</dt><dd>${isConvex(s) ? t('poly.d.convex', L) : t('poly.d.notConvex', L)}</dd>
+          ${star ? `<dt>Schläfli</dt><dd>${STAR_POLYHEDRON_META[id].schlafli}</dd><dt>${t('poly.d.density', L)}</dt><dd>${STAR_POLYHEDRON_META[id].density}</dd>` : ''}
           ${pairs.length ? `<dt>${t('poly.d.pairs', L)}</dt><dd>${pairs.map((x) => `<button type="button" class="poly-detail-pair" data-shape="${x}">${polyShapeName(x).replaceAll('_', ' ')}</button>`).join(' ')}</dd>` : ''}
         </dl>
       </div>`;
-    previewDisposers.push(mountWireframePreview(bodyEl.querySelector('.poly-detail-preview'), polyShapeEdges(id), 200));
+    if (star) previewDisposers.push(mountStarView(bodyEl.querySelector('.poly-detail-stage'), id));
+    else previewDisposers.push(mountWireframePreview(bodyEl.querySelector('.poly-detail-preview'), polyShapeEdges(id), 200));
     bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => backTo());
+    if (star) return; // reference only: no building with a star solid
     bodyEl.querySelector('.poly-detail-build').addEventListener('click', () => choose('3D', `tool:polyShape:${id}`, 'polyhedraverse'));
+    // 4D: the shape's 4D prism, or (4D-capable shapes) the whole 4D polytope it extends to.
+    const b4 = bodyEl.querySelector('.poly-detail-4d'), box4 = bodyEl.querySelector('.poly-detail-4dbox');
+    let dispose4 = null;
+    b4.addEventListener('click', () => {
+      const open = box4.hidden;
+      box4.hidden = !open; b4.setAttribute('aria-expanded', String(open));
+      if (open) { dispose4 = (FOURD_CAPABLE_IDS.includes(id) ? mountRadialView : mountDuoprismView)(box4.querySelector('.poly-detail-stage'), id); previewDisposers.push(() => dispose4?.()); }
+      else { dispose4?.(); dispose4 = null; }
+    });
     bodyEl.querySelector('.poly-detail-fav').addEventListener('click', () => { toggleFavourite(id); showShapeDetail(id, backTo); });
     // Compare: pick a second shape (Favourites and Recent first), then the two side by side.
     bodyEl.querySelector('.poly-detail-compare').addEventListener('click', () => {
