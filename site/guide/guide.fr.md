@@ -12,7 +12,7 @@ Les noms des boutons sont écrits tels qu'ils apparaissent dans l'application (c
 
 ### Choisir une dimension
 
-Après **ENTER**, **DICTO** s'ouvre sur les dimensions, de **1D+** à **6D**, chacune avec les applis qu'elle contient. **3D+** est ouverte au départ ; touchez une autre dimension pour l'ouvrir à sa place, ou celle qui est ouverte pour la fermer. **5D** et **6D** ouvrent leurs catalogues. **1D+** et **2D+** n'appartiennent à aucune appli : elles sont à DICTO, en argent, l'entrée la plus simple, et en montant de là vers **3D+** vous entrez dans l'appli par laquelle vous êtes venu. Touchez-en une : son contenu s'affiche en blocs, un par appli dans les couleurs de cette appli, d'abord l'appli par laquelle vous êtes entré, et rien n'apparaît deux fois. Touchez un réseau, un monde ou une forme, chacun montré en fil de fer qui tourne, pour entrer dans l'espace de cette appli. Les trois boutons d'applis en haut n'affichent qu'une appli ; touchez-le de nouveau pour tout afficher. **DICTO** (en haut à gauche), **Menu** (en bas à gauche), Tab ou Espace le rouvrent à tout moment.
+Après **ENTER**, **DICTO** s'ouvre sur les dimensions, de **1D+** à **6D**, chacune avec les applis qu'elle contient. **3D+** est ouverte au départ ; touchez une autre dimension pour l'ouvrir à sa place, ou celle qui est ouverte pour la fermer. **5D** et **6D** ouvrent leurs catalogues. **1D+** et **2D+** n'appartiennent à aucune appli : elles sont à DICTO, en argent, l'entrée la plus simple, et en montant de là vers **3D+** vous entrez dans l'appli par laquelle vous êtes venu. Touchez-en une : son contenu s'affiche en blocs, un par appli dans les couleurs de cette appli, d'abord l'appli par laquelle vous êtes entré, et rien n'apparaît deux fois. Touchez un réseau, un monde ou une forme, chacun montré en fil de fer qui tourne, pour entrer dans l'espace de cette appli. Les trois boutons d'applis en haut n'affichent qu'une appli ; touchez-le de nouveau pour tout afficher. **DICTO** (en haut à gauche), Tab ou Espace le rouvrent à tout moment.
 
 ### Poser votre première pièce
 
@@ -271,7 +271,6 @@ Les pièces de DICTO commencent par la famille **DICTO Hexa** : la DICTO Hexa (h
 | Paint (pinceau) | Recolore les pièces posées : activez-le, choisissez une couleur, touchez une pièce. À la place du choix d'assemblage dans la rangée du bas ; quand ce choix est nécessaire, juste au-dessus (en 4D, dans le panneau 4D) |
 | Signal \| Construct (sous DICTO, 1D+ seulement) | Passe d'un monde 1D+ à l'autre |
 | ⊘ Effacer (à côté d'Undo, 1D+ et Nets) | Efface le monde 1D+ où vous êtes pour recommencer (dans Nets, le patron en cours) ; Undo le rétablit |
-| Menu | Ouvre l'assistant DICTO (clavier : Tab ou Espace) |
 | 📖 Almanac (en haut à droite) | Les mathématiques et la géométrie derrière chaque pièce et chaque réseau |
 | 🕘 What's New · ℹ About (en bas à droite) | Changements récents · l'écran d'accueil à nouveau |
 

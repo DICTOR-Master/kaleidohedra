@@ -12,7 +12,7 @@ Los nombres de los botones aparecen tal como se ven en la aplicación (los que l
 
 ### Elige una dimensión
 
-Tras **ENTER**, **DICTO** se abre en las dimensiones, de **1D+** a **6D**, cada una con las apps que contiene. **3D+** empieza abierta; toca otra dimensión para abrirla en su lugar, o la abierta para cerrarla. **5D** y **6D** abren sus catálogos. **1D+** y **2D+** no son de ninguna app: son de DICTO, en plata, la entrada más sencilla, y al subir desde ellas a **3D+** entras en la app por la que llegaste. Toca una: su contenido aparece en bloques, uno por app con los colores de esa app, primero la app por la que entraste, y nada se repite. Toca una red, un mundo o una forma, cada uno mostrado como un alambre que gira, para entrar en el espacio de esa app. Los tres botones de apps de arriba muestran una sola app; tócalo otra vez para mostrarlas todas. **DICTO** (arriba a la izquierda), **Menu** (abajo a la izquierda), Tab o Espacio lo vuelven a abrir en cualquier momento.
+Tras **ENTER**, **DICTO** se abre en las dimensiones, de **1D+** a **6D**, cada una con las apps que contiene. **3D+** empieza abierta; toca otra dimensión para abrirla en su lugar, o la abierta para cerrarla. **5D** y **6D** abren sus catálogos. **1D+** y **2D+** no son de ninguna app: son de DICTO, en plata, la entrada más sencilla, y al subir desde ellas a **3D+** entras en la app por la que llegaste. Toca una: su contenido aparece en bloques, uno por app con los colores de esa app, primero la app por la que entraste, y nada se repite. Toca una red, un mundo o una forma, cada uno mostrado como un alambre que gira, para entrar en el espacio de esa app. Los tres botones de apps de arriba muestran una sola app; tócalo otra vez para mostrarlas todas. **DICTO** (arriba a la izquierda), Tab o Espacio lo vuelven a abrir en cualquier momento.
 
 ### Coloca tu primera pieza
 
@@ -271,7 +271,6 @@ Las piezas de DICTO empiezan con la familia **DICTO Hexa**: la DICTO Hexa (ocho 
 | Paint (pincel) | Cambia el color de piezas ya colocadas: actívalo, elige un color y toca una pieza. Ocupa el lugar del cambio de unión en la fila inferior; cuando ese cambio hace falta, queda justo encima (en 4D, en el panel 4D) |
 | Signal \| Construct (bajo DICTO, solo 1D+) | Cambia entre los dos mundos 1D+ |
 | ⊘ Borrar (junto a Undo, 1D+ y Nets) | Borra el mundo 1D+ en el que estás para empezar de nuevo (en Nets, el desarrollo en el que estás); Undo lo recupera |
-| Menú | Abre el asistente DICTO (teclado: Tab o Espacio) |
 | 📖 Almanac (arriba a la derecha) | Las matemáticas y la geometría detrás de cada pieza y cada red |
 | 🕘 What's New · ℹ About (abajo a la derecha) | Cambios recientes · de nuevo la pantalla de bienvenida |
 

@@ -126,13 +126,13 @@ function buildPanel(state, apply) {
     /* Beside the tools column (top right), never under it: the column's width plus a gap from the edge. */
     #kaleido-panel { position: fixed; right: calc(12px + var(--touch) + 8px); top: 150px; z-index: 50; max-width: min(300px, calc(100vw - 88px)); font: var(--text-m) var(--font-ui); color: #d8f0ff; }
     @media (pointer: coarse) and (min-width: 700px) and (min-height: 600px) { #kaleido-panel { right: calc(28px + var(--touch) + 14px); top: 166px; } } /* tablets: clear of the tools column, which moves in from the iPad's edges */
-    #kaleido-panel button { min-height: var(--touch-compact); background: rgba(30, 14, 4, .85); color: var(--accent); border: 1px solid #7a3300; border-radius: var(--radius-m); padding: 4px 10px; cursor: pointer; }
-    #kaleido-body { margin-top: 6px; padding: 10px; background: rgba(18, 8, 2, .92); border: 1px solid #7a3300; border-radius: var(--radius-l); display: grid; gap: 8px;
+    #kaleido-panel button { min-height: var(--touch-compact); background: rgba(0, 0, 0, 0.45); color: var(--accent); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: var(--radius-s); padding: 4px 10px; cursor: pointer; } /* the shared button look */
+    #kaleido-body { margin-top: 6px; padding: 10px; background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: var(--radius-m); display: grid; gap: 8px;
       max-height: calc(100dvh - 280px); overflow-y: auto; overscroll-behavior: contain; } /* phones: the Kept list or the six sliders must stay reachable */
     #kaleido-body[hidden] { display: none; }
     .kaleido-row { display: grid; grid-template-columns: auto 1fr; gap: 2px 8px; align-items: center; }
     .kaleido-row input, .kaleido-row select { grid-column: 1 / -1; width: 100%; min-height: 28px; }
-    #kaleido-towards { min-height: var(--touch-compact); background: rgba(30, 14, 4, .85); color: var(--accent); border: 1px solid #7a3300; border-radius: var(--radius-m); }
+    #kaleido-towards { min-height: var(--touch-compact); background: rgba(0, 0, 0, 0.45); color: var(--accent); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: var(--radius-s); }
     .kaleido-stops { display: flex; gap: 6px; flex-wrap: wrap; }
     /* The red band (DICTO, 2026-10-08): where on the path the cell stops filling space, for this Cell value.
        Inset by half a thumb so it lines up with the slider's travel. */

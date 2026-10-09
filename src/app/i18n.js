@@ -38,7 +38,6 @@ export const LANG_META = {
 };
 
 const en = {
-  'hud.menu': 'Menu',
   'hud.settings': 'Settings',
   'lab.close': 'Close',
   'lab.rhombisLinkHint': 'New here, or just want a quick puzzle? <a href="./rhombis.html">Try RHOMBIS</a> any time.',
@@ -541,7 +540,6 @@ const en = {
 };
 
 const ja = {
-  'hud.menu': 'メニュー',
   'hud.settings': '設定',
   'lab.close': '閉じる',
   'lab.rhombisLinkHint': '初めての方、またはちょっとしたパズルをお探しなら？ <a href="./rhombis.html">RHOMBISを試す</a> をいつでもどうぞ。',
@@ -1044,7 +1042,6 @@ const ja = {
 };
 
 const es = {
-  'hud.menu': 'Menú',
   'hud.settings': 'Ajustes',
   'lab.close': 'Cerrar',
   'lab.rhombisLinkHint': '¿Eres nuevo, o solo quieres un rompecabezas rápido? <a href="./rhombis.html">Prueba RHOMBIS</a> cuando quieras.',
@@ -1547,7 +1544,6 @@ const es = {
 };
 
 const fr = {
-  'hud.menu': 'Menu',
   'hud.settings': 'Paramètres',
   'lab.close': 'Fermer',
   'lab.rhombisLinkHint': 'Nouveau ici, ou juste envie d\'un puzzle rapide ? <a href="./rhombis.html">Essayez RHOMBIS</a> à tout moment.',
@@ -2050,7 +2046,6 @@ const fr = {
 };
 
 const ko = {
-  'hud.menu': '메뉴',
   'hud.settings': '설정',
   'lab.close': '닫기',
   'lab.rhombisLinkHint': '처음이신가요, 아니면 간단한 퍼즐을 원하시나요? 언제든 <a href="./rhombis.html">RHOMBIS 해보기</a>.',
@@ -2553,7 +2548,6 @@ const ko = {
 };
 
 const zh = {
-  'hud.menu': '菜单',
   'hud.settings': '设置',
   'lab.close': '关闭',
   'lab.rhombisLinkHint': '初次来访，或只想玩个快速解谜？随时<a href="./rhombis.html">试试 RHOMBIS</a>。',
@@ -3056,7 +3050,6 @@ const zh = {
 };
 
 const ru = {
-  'hud.menu': 'Меню',
   'hud.settings': 'Настройки',
   'lab.close': 'Закрыть',
   'lab.rhombisLinkHint': 'Вы здесь впервые или просто хотите быструю головоломку? В любое время <a href="./rhombis.html">попробуйте RHOMBIS</a>.',

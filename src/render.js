@@ -1630,15 +1630,7 @@ async function init() {
   wireFirstUseHint('reload-toggle', 'Reload: hard-refresh the app if anything looks stuck or stale.');
   wireFirstUseHint('xray-toggle', 'X-ray: drag a cutaway plane through the structure to see inside it.');
   wireFirstUseHint('lab-toggle', 'Settings: camera, graphics, sound, language, colours, and Export / Import World.');
-  wireFirstUseHint('hud-wheel-cue', 'Tab / Space (or tap Menu) opens DICTO.');
-  // The quick-select row starts just right of the Menu box, whose width
-  // changes with the language.
-  const menuCueEl = document.getElementById('hud-wheel-cue');
-  if (menuCueEl && 'ResizeObserver' in window) {
-    new ResizeObserver(() => {
-      document.documentElement.style.setProperty('--quick-x', `${Math.round(menuCueEl.getBoundingClientRect().right + 8)}px`);
-    }).observe(menuCueEl);
-  }
+  wireFirstUseHint('hud-wizard-cue', 'DICTO: what to build. Tab / Space open it too.');
   wireFirstUseHint('export-json', 'Export World saves every dimension to one file -- Import World opens it again.');
 
   // The saved World (this browser), or the empty starter on a first visit.
@@ -4123,7 +4115,6 @@ async function init() {
     // The app's entry gate: every load opens the DICTO wizard on the app you came in by.
     dimensionWizard.open();
 
-    document.getElementById('hud-wheel-cue')?.addEventListener('click', toggleMenu);
     window.addEventListener('keydown', (e) => {
       if (e.code !== 'Tab' && e.code !== 'Space' && e.code !== 'Escape') return;
       // Don't hijack these when typing into a real form control (the

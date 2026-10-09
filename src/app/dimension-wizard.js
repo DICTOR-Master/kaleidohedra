@@ -47,7 +47,7 @@ import { loadCatalogue, findBySerial, pieceCount } from '../geometry-extensions/
 import { t, tn, tFor } from './i18n.js';
 import { polyShapeEdges, polyShapeName } from './poly-shapes.js';
 import { FAMILY_META, familyIds } from '../krp-core/src/polyhedra/families.js';
-import { SITE, SITES, setActiveSite, themeOf } from './site.js';
+import { SITE, SITES, setActiveSite, activeSite, themeOf } from './site.js';
 import { countDicto } from './analytics.js';
 import { dimensionLabel } from './dimension-label.js';
 import { getSettings } from './settings.js';
@@ -585,7 +585,8 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
   const doorFirst = (list) => [...list].sort((x, y) => rank(x.app) - rank(y.app));
   const shownEntries = (dim) => doorFirst(dimensionEntries(dim).filter((e) => passes(e.app, filter)));
   function paintApps() {
-    const th = themeOf(filter ?? SITE);
+    // The colours of the space you are in (copy audit 2026-10-09: green inside Polyhedraverse), or the filter's.
+    const th = themeOf(filter ?? activeSite());
     for (const [k, v] of [['--pale', th.pale], ['--accent', th.accent], ['--accent-rgb', th.accentRgb], ['--accent-strong', th.strong]]) overlay.style.setProperty(k, v);
     overlay.dataset.door = SITE;
     const L = getSettings().language;

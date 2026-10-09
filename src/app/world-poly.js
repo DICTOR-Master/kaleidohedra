@@ -19,6 +19,7 @@ import { buildWallPrism, duoprismBuildDepth } from '../krp-core/src/polyhedra/du
 import { FOURD_CAPABLE_IDS } from '../krp-core/src/polyhedra/fourD.js';
 import { buildFaceConnectors } from '../krp-core/src/polyhedra/core.js';
 import { mountWireframePreview } from './wireframe-preview.js';
+import { addPanelMinimiser } from './panel-minimiser.js';
 import { polyShapeEdges } from './poly-shapes.js';
 import { familiesFor } from '../krp-core/src/polyhedra/families.js';
 import { FAMILY_COLORS } from '../krp-core/src/assembly/pieceColors.js';
@@ -464,8 +465,12 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   // Remember a shape used, newest first; saved with the build.
   function remember(id) { view.queue = [id, ...view.queue.filter((x) => x !== id)].slice(0, 8); }
   const panel = document.createElement('div');
-  panel.className = 'poly-strip';
+  panel.className = 'qc-panel poly-strip';
+  const stripBody = document.createElement('div');
+  stripBody.className = 'poly-strip-body';
+  panel.appendChild(stripBody);
   document.body.appendChild(panel);
+  addPanelMinimiser(panel, 'poly');
   let disposers = [];
   // The Golden helper (D3c), for a build of golden rhombohedra only: how many pieces sit in the true
   // 3D Penrose tiling (a build inside it can always go on), the next piece that keeps it there, and
@@ -494,16 +499,16 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     const isGolden = active && !spherical && golden();
     const hasParts = active && !spherical && nodes.some((n) => PART_PICK[n.shape]);
     const show = active && !spherical && (selection || chosen || isGolden || hasParts);
-    panel.hidden = !show;
+    panel.classList.toggle('visible', Boolean(show));
     if (!show) return;
     const L = lang();
     const offer = selection ? queue().filter((id) => fitsAt(id, selection)) : chosen ? [chosen] : [];
-    panel.innerHTML = `<div class="poly-shapes">${offer.map((id) => { const pinned = view.pins.includes(id); return `<button type="button" class="poly-shape${id === chosen ? ' chosen' : ''}${pinned ? ' pinned' : ''}" data-shape="${id}" title="${polyShapeName(id).replaceAll('_', ' ')} · ${t(pinned ? 'poly.unpinHint' : 'poly.pinHint', L)}"><canvas></canvas></button>`; }).join('')}
+    stripBody.innerHTML = `<div class="poly-shapes">${offer.map((id) => { const pinned = view.pins.includes(id); return `<button type="button" class="poly-shape${id === chosen ? ' chosen' : ''}${pinned ? ' pinned' : ''}" data-shape="${id}" title="${polyShapeName(id).replaceAll('_', ' ')} · ${t(pinned ? 'poly.unpinHint' : 'poly.pinHint', L)}"><canvas></canvas></button>`; }).join('')}
       ${selection ? `<button type="button" class="poly-more" data-more>${t('poly.more', L)}</button>` : ''}
       ${selection && selection.face != null && FOURD.has(selection.node.shape) ? `<button type="button" class="poly-more" data-duoprism>${t('poly.duoprism', L)}</button>` : ''}
       ${selection && REWRITE_TARGET[selection.node.shape] ? `<button type="button" class="poly-more" data-transform>${t('poly.transform', L, { name: polyShapeName(REWRITE_TARGET[selection.node.shape]).replaceAll('_', ' ') })}</button>` : ''}
       ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}`;
-    panel.querySelectorAll('.poly-shape canvas').forEach((cv) => disposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 34)));
+    stripBody.querySelectorAll('.poly-shape canvas').forEach((cv) => disposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 34)));
   }
   panel.addEventListener('change', (e) => {
     if (e.target.matches('[data-golden-recipe]')) recipe = Number(e.target.value);

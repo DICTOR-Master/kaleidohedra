@@ -10,7 +10,7 @@ This guide starts with what Kaleidohedra and Rhombiverse share, then has a chapt
 
 ### Pick a dimension
 
-After **ENTER**, **DICTO** opens on the dimensions, **1D+** to **6D**, each showing the apps it holds. **3D+** is open to start with; tap another dimension to open it in place instead, or the open one to close it. **5D** and **6D** open their catalogues. **1D+** and **2D+** belong to no app: they are DICTO's own, in silver, the easier way in, and going up from them to **3D+** takes you into the app you came in by. An open dimension's content is listed in blocks, one per app in that app's colours, the app you came in by first, and nothing is listed twice. Tap a lattice, world or shape, each shown as a turning wireframe, to enter that app's space. The three app buttons at the top show one app only; tap it again to show all. **DICTO** (top left), **Menu** (bottom left), Tab or Space bring it back at any time.
+After **ENTER**, **DICTO** opens on the dimensions, **1D+** to **6D**, each showing the apps it holds. **3D+** is open to start with; tap another dimension to open it in place instead, or the open one to close it. **5D** and **6D** open their catalogues. **1D+** and **2D+** belong to no app: they are DICTO's own, in silver, the easier way in, and going up from them to **3D+** takes you into the app you came in by. An open dimension's content is listed in blocks, one per app in that app's colours, the app you came in by first, and nothing is listed twice. Tap a lattice, world or shape, each shown as a turning wireframe, to enter that app's space. The three app buttons at the top show one app only; tap it again to show all. **DICTO** (top left), Tab or Space bring it back at any time.
 
 ### Place your first piece
 
@@ -269,7 +269,6 @@ DICTO's pieces start with the **DICTO Hexa** family: the DICTO Hexa (eight DICTO
 | Paint (brush) | Recolour placed pieces: turn on, pick a colour, tap a piece. In the attach toggle's place on the bottom row; when that toggle is needed it sits just above it (in 4D, in the 4D panel) |
 | Signal \| Construct (under DICTO, 1D+ only) | Switches between the two 1D+ worlds |
 | ⊘ Clear (beside Undo, 1D+ and Nets) | Clears the 1D+ world you're in to start again (in Nets, the net you're on); Undo brings it back |
-| Menu | Opens the DICTO wizard (keyboard: Tab or Space) |
 | 📖 Almanac (top right) | The maths and geometry behind every piece and lattice |
 | 🕘 What's New · ℹ About (bottom right) | Recent changes · the welcome screen again |
 

@@ -90,8 +90,9 @@
       user-select: none;
     }
     #hud-prompt.visible { display: block; }
-    /* Menu and Wizard: boxed like the quick-select buttons beside Menu. */
-    #hud-wheel-cue, #hud-wizard-cue {
+    /* DICTO (top left): boxed like the quick-select buttons. One button opens DICTO (the bottom-left
+       Menu that did the same went, copy audit 2026-10-09; Tab / Space still open it). */
+    #hud-wizard-cue {
       box-sizing: border-box; height: 36px; padding: 0 10px;
       display: flex; align-items: center;
       background: rgba(0, 0, 0, 0.45);
@@ -99,16 +100,8 @@
       color: var(--accent); font: var(--text-xs) var(--font-ui); white-space: nowrap;
       user-select: none; cursor: pointer;
     }
-    #hud-wheel-cue:hover, #hud-wizard-cue:hover { background: rgba(255, 255, 255, 0.15); }
-    #hud-wheel-cue { position: fixed; bottom: 8px; left: 16px; z-index: 900; }
-    /* Dimension wizard cue: top-left, mirroring #hud-wheel-cue's own
-       bottom-left styling -- direct instruction, "top left for
-       wireframe wizard" -- a second, parallel entry point alongside the
-       bottom-left menu wheel, same "wheel + browser" split polyhedraverse
-       already uses, just both reachable from inside a dimension's own
-       sandbox rather than forced open (that's the dedicated dimension-
-       select wheel's own job now, on load). Positioned just below
-       #hud-wordmark (top:14px/left:16px) to avoid overlapping it. */
+    #hud-wizard-cue:hover { background: rgba(255, 255, 255, 0.15); }
+    /* DICTO, top left, just below #hud-wordmark (top:14px/left:16px). */
     #hud-wizard-row {
       position: fixed; top: 38px; left: 16px; z-index: 900;
       display: flex; align-items: center; gap: 12px;
@@ -343,21 +336,20 @@
     }
     #hud-quick-shape svg, #hud-quick-color svg, #hud-quick-lattice-view svg, #hud-quick-attach svg { width: 24px; height: 24px; }
     #hud-quick-shape:hover, #hud-quick-color:hover, #hud-quick-lattice-view:hover, #hud-quick-attach:hover { background: rgba(255, 255, 255, 0.15); }
-    /* --quick-x: where the row starts, just right of the Menu box
-       (render.js measures it, since Menu's width depends on language). */
-    #hud-quick-shape { left: var(--quick-x, 64px); }
-    #hud-quick-color { left: calc(var(--quick-x, 64px) + 42px); }
+    /* --quick-x: where the bottom-left row starts. */
+    #hud-quick-shape { left: var(--quick-x, 16px); }
+    #hud-quick-color { left: calc(var(--quick-x, 16px) + 42px); }
     /* Lattice View quick-select: third bottom-left icon, direct request
        2026-08-29 ("a third square at the bottom left going through all
        options including off") -- cycles the SAME underlying state as
        the corner HUD wheel's own Lattice View face (render.js's
        cycleLatticeQuickView), just a second, more-visible access point. */
-    #hud-quick-lattice-view { left: calc(var(--quick-x, 64px) + 84px); }
+    #hud-quick-lattice-view { left: calc(var(--quick-x, 16px) + 84px); }
     #hud-quick-lattice-view.active { border-color: #39ff88; background: rgba(57, 255, 136, 0.18); }
     /* Rhombohedra Copy | Mirror attach toggle: 4th bottom-left icon,
        direct request ("put it in row at bottom with other 3"), shown only
        while Rhombohedra is the 3D piece (render.js updateRhomboAttachButton). */
-    #hud-quick-attach { left: calc(var(--quick-x, 64px) + 126px); }
+    #hud-quick-attach { left: calc(var(--quick-x, 16px) + 126px); }
     #hud-quick-attach.hidden { display: none; }
     #hud-quick-color.painting { border-color: var(--accent-strong); box-shadow: 0 0 8px rgba(var(--accent-rgb), 0.6); }
     #hud-quick-attach.active { border-color: var(--accent-strong); background: rgba(var(--accent-rgb), 0.4); color: #fff; }
@@ -366,7 +358,7 @@
        request: "add paint button to 4D etc"; the row is full on a phone).
        4D shows it in its own panel instead. */
     #hud-quick-paint {
-      position: fixed; bottom: 50px; left: calc(var(--quick-x, 64px) + 126px); z-index: 900;
+      position: fixed; bottom: 50px; left: calc(var(--quick-x, 16px) + 126px); z-index: 900;
       width: 36px; height: 36px; padding: 0; background: rgba(0, 0, 0, 0.45);
       border: 1px solid rgba(255, 255, 255, 0.25); border-radius: var(--radius-s); color: var(--accent); cursor: pointer;
     }
@@ -795,18 +787,16 @@
     #welcome-card .legal-links a:hover { text-decoration: underline; }
     /* Polyhedraverse tap attach (D3): the shapes that fit the tapped face, above the bottom row, clear of
        the screen's edges; every button a full touch target. */
-    .poly-strip { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(84px + env(safe-area-inset-bottom)); z-index: 50;
-      max-width: calc(100% - 32px); box-sizing: border-box; padding: 6px 8px; border-radius: 12px; background: rgba(15, 15, 25, 0.92);
-      border: 1px solid rgba(var(--accent-rgb), 0.5); display: flex; flex-direction: column; gap: 6px; align-items: center; }
-    .poly-strip[hidden] { display: none; }
+    /* Polyhedraverse's strip: a standard bottom panel (.qc-panel, with its ⌄), its rows centred. */
+    .poly-strip .poly-strip-body { display: flex; flex-direction: column; gap: 6px; align-items: center; }
     .poly-golden { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center; color: var(--accent); font: 600 var(--text-s) var(--font-ui); }
-    .poly-golden button, .poly-golden select { min-height: var(--touch-compact); padding: 4px 10px; border-radius: var(--radius-m); background: transparent;
-      border: 1px solid rgba(var(--accent-rgb), 0.55); color: var(--accent); font: inherit; touch-action: manipulation; }
+    .poly-golden button, .poly-golden select { min-height: var(--touch-compact); padding: 4px 10px; border-radius: var(--radius-s); background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.25); color: var(--accent); font: inherit; touch-action: manipulation; }
     .poly-shapes { display: flex; gap: 6px; overflow-x: auto; max-width: 100%; align-items: center; }
     .poly-shapes button { min-width: var(--touch); min-height: var(--touch); flex: none; cursor: pointer; touch-action: manipulation;
-      background: rgba(var(--accent-rgb), 0.1); border: 1px solid rgba(var(--accent-rgb), 0.45); border-radius: 10px; color: var(--accent); font: var(--text-s) var(--font-ui); }
+      background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: var(--radius-s); color: var(--accent); font: var(--text-s) var(--font-ui); }
     .poly-shape canvas { display: block; width: 34px; height: 34px; }
-    .poly-shape.chosen { background: rgba(var(--accent-rgb), 0.35); border: 2px solid var(--accent-strong); }
+    .poly-shape.chosen { background: rgba(var(--accent-rgb), 0.4); border-color: var(--accent-strong); }
     .poly-more { padding: 0 12px; }
     .poly-shape.pinned { box-shadow: inset 0 -3px 0 var(--accent-strong); }
     /* The running build name (D3b), where 1D's toggle sits (never shown together): one line, a tap for
@@ -958,7 +948,6 @@
   <div id="hud-wordmark">KALEIDO<span>HEDRA</span></div>
   <div id="fps-meter"></div>
   <div id="hud-prompt"></div>
-  <div id="hud-wheel-cue" title="Tab / Space also opens this" data-i18n="hud.menu">Menu</div>
   <div id="hud-wizard-row">
     <div id="hud-wizard-cue" data-i18n-title="wiz.cueTitle" title="Browse dimensions, lattices and pieces">DICTO</div>
     <div id="hud-dim"></div>
