@@ -716,7 +716,11 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     const net = netOf(modeOf().cluster);
     panel.querySelector('.sj-count').textContent = net
       ? (() => { const f = netFill(net, all), keys = netKeys(net, all).length * 8, jewels = net.allJewels ? all : all.filter(isEven); return t(`${S_}.count`, L, { even: jewels.length + f.singles.length, odd: all.length - jewels.length + f.odds.length + keys }); })()
-      : t(`${S_}.count`, L, { even: all.filter(isEven).length, odd: all.filter((s) => !isEven(s)).length });
+      : clustered()
+        // the cluster arrangements count what fills in by itself too: single pieces and stellas or Dogstars
+        ? (() => { const evens = all.filter(isEven), odd = all.filter((x) => !isEven(x)), f = clusterFill(modeOf().cluster, evens, modeOf().cluster === 'octa' ? odd : []);
+          return t(`${S_}.count`, L, { even: evens.length + f.singles.length, odd: odd.length + f.odds.length }); })()
+        : t(`${S_}.count`, L, { even: all.filter(isEven).length, odd: all.filter((s) => !isEven(s)).length });
     const shearBtn = panel.querySelector('[data-sj="shear"]');
     shearBtn.textContent = t(`studies.shear.${view.shear}`, L);
     // Only where there is a shear to follow (Kaleidohedra's space): elsewhere it would do nothing.
