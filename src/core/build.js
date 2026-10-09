@@ -1606,6 +1606,19 @@ export function createBuildController({
       return;
     }
 
+    // An RD Quarter ghost slot (DICTO 2026-10-10: "can we place in an alternate order"): a tap places
+    // that quarter there, whichever of the free spots it is.
+    if (hit.object.userData.quarterGhost) {
+      if (mode !== 'build' || !hemisphereStore) return;
+      const { cell, cornerIndex } = hit.object.userData.quarterGhost;
+      const key = rdQuarterKey(cell[0], cell[1], cell[2], cornerIndex);
+      if (hemisphereStore.has(key) || world.has(cell[0], cell[1], cell[2])) { if (onPieceNoOp) onPieceNoOp('add'); return; }
+      hemisphereStore.set(key, { type: 'rdquarter', cell, cornerIndex, material: getMaterial() });
+      onHemisphereChange();
+      if (onPlaced) onPlaced({ x: cell[0], y: cell[1], z: cell[2], material: getMaterial() });
+      return;
+    }
+
     // First-placement target: a tap on the cyan outline places the
     // selected piece's first piece there (Add mode only).
     if (firstPlacementTarget && hit.object === firstPlacementTarget.mesh) {

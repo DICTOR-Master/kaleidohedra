@@ -57,7 +57,7 @@ DICTO 是 DICTO 的三个应用，共用同一套几何。**Rhombiverse** 是**�
 
 在 FCC 上试试：放六个 Pyramid 组成一个 Cube。然后在 Cube 的每个面上各加一个 Pyramid，它就变成了 RD。再把这六个移除，就回到 Cube。
 
-**RD Quarter** 是 RD 分割成的 4 个菱面体之一。在 RD 的某个角附近轻点，就会填上那个角；再轻点某个 Quarter 的面，就会在那个面的另一侧放上它的镜像。镜像总是落回 RD 晶格上，所以你可以让 Quarter 一格一格地生长。如果想要既能 Mirror（镜像）也能 Copy（复制）的自由菱面体晶格，请使用 **Rhombohedra**。
+**RD Quarter** 是 RD 分割成的 4 个菱面体之一。可以从一个 Quarter 开始，或者轻点一个完整 RD 的面，在那个面上加上紧贴它的 Quarter。作品旁边每个可以放 Quarter 的空位都会显示为淡淡的影子：按你喜欢的顺序轻点任意一个，就放到那里。轻点 Quarter 自己的面，会在那个面的另一侧放上它的镜像。镜像总是落回 RD 晶格上，所以你可以让 Quarter 一格一格地生长。如果想要既能 Mirror（镜像）也能 Copy（复制）的自由菱面体晶格，请使用 **Rhombohedra**。
 
 ### 颜色
 

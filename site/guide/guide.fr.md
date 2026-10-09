@@ -57,7 +57,7 @@ Pour annuler votre dernière modification, touchez **Undo** (↶, en bas à droi
 
 Essayez ceci en FCC : posez six Pyramid pour former un Cube. Ajoutez ensuite une Pyramid sur chaque face du Cube : il devient un RD. Retirez de nouveau ces six-là pour revenir à un Cube.
 
-**RD Quarter** est l'un des 4 rhomboèdres en lesquels se découpe un RD. Touchez un RD près d'un de ses coins pour remplir ce coin, puis touchez une face d'un quart pour poser son image miroir de l'autre côté de cette face. L'image miroir retombe toujours sur le réseau RD : vous pouvez donc faire croître les quarts de cellule en cellule. Pour un réseau libre de rhomboèdres avec Copy (copie) en plus de Mirror (miroir), utilisez **Rhombohedra**.
+**RD Quarter** est l'un des 4 rhomboèdres en lesquels se découpe un RD. Commencez par un quart, ou touchez une face d'un RD entier pour y poser le quart contre elle. Chaque place libre pour un quart à côté de votre construction apparaît en fantôme pâle : touchez celui que vous voulez pour l'y poser, dans l'ordre de votre choix. Toucher une face du quart lui-même pose son image miroir de l'autre côté de cette face. L'image miroir retombe toujours sur le réseau RD : vous pouvez donc faire croître les quarts de cellule en cellule. Pour un réseau libre de rhomboèdres avec Copy (copie) en plus de Mirror (miroir), utilisez **Rhombohedra**.
 
 ### Couleurs
 

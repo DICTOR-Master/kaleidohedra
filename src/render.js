@@ -15,7 +15,7 @@ import { truncatedOctahedronVertices, nearestBCCPoints, nearestFCCPoints, BCC_NE
 import { createCuboctaBuildController, AXIS_OFFSETS as CUBOCTA_AXIS_OFFSETS } from './core/cubocta-build.js';
 import { createCuboctaGapBuildController, octGapCellToWorld, octGapCellForCOCell } from './core/cubocta-gap-build.js';
 import { createInterstitialStore } from './core/interstitial-build.js';
-import { createHemisphereStore, rdQuarterKey } from './core/hemisphere-build.js';
+import { createHemisphereStore, rdQuarterKey, RD_QUARTER_ANCHORS } from './core/hemisphere-build.js';
 import { bootstrapDisphenoid, disphenoidVertsToWorld, octahedronDisphenoids, disphenoidKey } from './krp-core/src/geometry-extensions/interstitial-lattice.js';
 import { sampleSuperellipsoidGrid, volumeMatchedRadius } from './krp-core/src/geometry-extensions/spherical-toggle.js';
 import { packing, voidSphereRadius, TANGENT_R, RADIUS_MAX } from './krp-core/src/geometry-extensions/sphere-packing.js';
@@ -2690,6 +2690,67 @@ async function init() {
   const hemisphereSavedJSON = loadFromLocalStorage(HEMISPHERE_STORAGE_KEY);
   const hemisphereStore = createHemisphereStore(hemisphereSavedJSON);
   rebuildHemisphereMeshes(hemisphereStore);
+  // RD Quarter ghost slots (DICTO 2026-10-10: "can we place in an alternate order"; chose ghost slots):
+  // while RD Quarter is the piece, every free quarter spot touching the build shows as a faint ghost:
+  // a built quarter's cell's other quarters, its mirror image across each face, and the quarter
+  // against each face of a whole RD. The 12 nearest the last quarter placed; a tap places that one.
+  const quarterGhostGroup = new THREE.Group();
+  scene.add(quarterGhostGroup);
+  const quarterGhostMaterial = new THREE.MeshStandardMaterial({ transparent: true, opacity: 0.12, depthWrite: false, side: THREE.DoubleSide });
+  const QUARTER_C4 = rdQuarterPieces(1).map((v) => [0, 1, 2].map((a) => Math.round((v.reduce((t, p) => t + p[a], 0) / 8) * 4)));
+  const QUARTER_NORMALS = rdQuarterPieces(1).map((v) => {
+    const g = new ConvexGeometry(v.map(([x, y, z]) => new THREE.Vector3(x, y, z))), out = [], pos = g.attributes.position;
+    for (let i = 0; i < pos.count; i += 3) {
+      const a = new THREE.Vector3().fromBufferAttribute(pos, i), b = new THREE.Vector3().fromBufferAttribute(pos, i + 1), c = new THREE.Vector3().fromBufferAttribute(pos, i + 2);
+      const n = b.sub(a).cross(c.sub(a)).normalize();
+      if (!out.some((m) => m.dot(n) > 0.999)) out.push(n);
+    }
+    g.dispose();
+    return out;
+  });
+  function quarterSlots() {
+    const quarters = hemisphereStore.entries().filter((p) => p.type === 'rdquarter');
+    const free = (cell, o) => !hemisphereStore.has(rdQuarterKey(cell[0], cell[1], cell[2], o)) && !world.has(cell[0], cell[1], cell[2]);
+    const slots = new Map();
+    const add = (cell, o) => { if (free(cell, o)) slots.set(rdQuarterKey(cell[0], cell[1], cell[2], o), { cell, cornerIndex: o }); };
+    for (const q of quarters) {
+      for (let o = 0; o < 4; o++) add(q.cell, o);
+      const c4 = q.cell.map((v, a) => v * 4 + QUARTER_C4[q.cornerIndex][a]);
+      for (const n of QUARTER_NORMALS[q.cornerIndex]) for (const opt of rhombohedraAttachOptions(q.cornerIndex, c4, [n.x, n.y, n.z])) {
+        if (opt.o === q.cornerIndex) continue;
+        const cell = opt.c4.map((v, a) => (v - QUARTER_C4[opt.o][a]) / 4);
+        if (cell.every(Number.isInteger)) add(cell, opt.o);
+      }
+    }
+    for (const c of world.entries()) for (const off of NEIGHBOR_OFFSETS) {
+      const cell = [c.x + off[0], c.y + off[1], c.z + off[2]], d = new THREE.Vector3(...off).normalize().negate();
+      let best = 0;
+      RD_QUARTER_ANCHORS.forEach((a, o) => { if (new THREE.Vector3(...a).normalize().dot(d) > new THREE.Vector3(...RD_QUARTER_ANCHORS[best]).normalize().dot(d)) best = o; });
+      add(cell, best);
+    }
+    const last = quarters.at(-1)?.cell ?? (() => { const e = world.entries().at(-1); return e ? [e.x, e.y, e.z] : [0, 0, 0]; })();
+    return [...slots.values()].sort((p, q) => Math.hypot(...p.cell.map((v, i) => v - last[i])) - Math.hypot(...q.cell.map((v, i) => v - last[i]))).slice(0, 12);
+  }
+  let quarterGhostSig = '';
+  function rebuildQuarterGhosts() {
+    const on = activeDimension === '3D' && !isOwnWorldDimension() && document.getElementById('piece-type-select')?.value === 'rdquarter';
+    const sig = on ? `${hemisphereStore.entries().length}|${world.entries().length}|${JSON.stringify(hemisphereStore.entries().at(-1) ?? '')}` : 'off';
+    if (sig === quarterGhostSig) return;
+    quarterGhostSig = sig;
+    for (const ch of [...quarterGhostGroup.children]) { quarterGhostGroup.remove(ch); ch.geometry.dispose(); if (ch.isLineSegments) ch.material.dispose(); }
+    if (!on || (!hemisphereStore.entries().length && !world.entries().length)) return;
+    quarterGhostMaterial.color.setHex(theme().accentHex);
+    for (const slot of quarterSlots()) {
+      const g = buildHemisphereGeometry({ type: 'rdquarter', cell: slot.cell, cornerIndex: slot.cornerIndex }, SCALE);
+      const m = new THREE.Mesh(g, quarterGhostMaterial);
+      m.userData.quarterGhost = slot;
+      const l = new THREE.LineSegments(new THREE.EdgesGeometry(g), new THREE.LineBasicMaterial({ color: theme().accentHex, transparent: true, opacity: 0.35, depthWrite: false }));
+      l.raycast = () => {};
+      quarterGhostGroup.add(m, l);
+    }
+  }
+  // Kept current every frame (cheap: only redrawn when the build or the chosen piece changes).
+  (function quarterGhostTick() { rebuildQuarterGhosts(); requestAnimationFrame(quarterGhostTick); })();
 
 
   // (Lattice Zoom -- the orange sub-lattice that faded in when the
@@ -5641,7 +5702,7 @@ async function init() {
     renderer,
     camera,
     mesh,
-    extraPickTargets: [partialCellGroup],
+    extraPickTargets: [partialCellGroup, quarterGhostGroup],
     // Pyramid Sub-Cell: a hit on a partial cell's own individual Mesh has
     // no instanceId (that's InstancedMesh-only) -- resolve it via the
     // hit object's own userData.cellKey instead. See core/pyramid.md.

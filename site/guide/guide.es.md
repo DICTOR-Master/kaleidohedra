@@ -57,7 +57,7 @@ Para deshacer tu último cambio, toca **Undo** (↶, abajo a la derecha). Manten
 
 Prueba esto en FCC: coloca seis Pyramid para formar un Cube. Después añade una Pyramid en cada cara del Cube y se convierte en un RD. Quita esas seis de nuevo para volver a un Cube.
 
-**RD Quarter** es uno de los 4 romboedros en los que se divide un RD. Toca un RD cerca de una de sus esquinas para rellenar esa esquina y luego toca una cara de un cuarto para colocar su imagen especular al otro lado de esa cara. La imagen especular siempre cae de nuevo en la red RD, así que puedes hacer crecer los cuartos de celda en celda. Para una red libre de romboedros con Copy (copia) además de Mirror (espejo), usa **Rhombohedra**.
+**RD Quarter** es uno de los 4 romboedros en los que se divide un RD. Empieza con un cuarto, o toca una cara de un RD entero para añadir el cuarto apoyado en ella. Cada hueco libre para un cuarto junto a tu construcción aparece como un fantasma tenue: toca cualquiera para colocarlo allí, en el orden que quieras. Tocar una cara del propio cuarto coloca su imagen especular al otro lado de esa cara. La imagen especular siempre cae de nuevo en la red RD, así que puedes hacer crecer los cuartos de celda en celda. Para una red libre de romboedros con Copy (copia) además de Mirror (espejo), usa **Rhombohedra**.
 
 ### Colores
 
