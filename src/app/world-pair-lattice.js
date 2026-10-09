@@ -350,6 +350,62 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
       group.add(...flames(centres, fireMaterial, fireHalo));
       if (!flickerRaf) flickerRaf = requestAnimationFrame(flicker);
     }
+    if (latticeView) group.add(...clusterGhosts(kind, net, spec, S, clusters));
+  }
+  // Lattice View in the cluster arrangements (DICTO 2026-10-10: "still no lattice view on hulls"): the
+  // free cluster spots beside the build, each a faint ghost of its whole block (the lattice-view rule:
+  // fill 0.08, faint accent edges), nearest the build's middle, about 36 cells' worth (2 to 8 clusters). A spot is offered where it joins
+  // the build and shares at most one piece with it (none in the Hexa checkerboard, whose clusters never
+  // share); a tap places that cluster.
+  const clusterGhostMaterial = new THREE.MeshStandardMaterial({ color: GHOST_COLOR(), transparent: true, opacity: 0.08, depthWrite: false, side: THREE.DoubleSide });
+  function clusterGhosts(kind, net, spec, S, clusters) {
+    const held = new Set(S.map(key)), maxShared = net && net.neighbours ? 0 : 1;
+    const cellsOf = (a) => (net ? netCells(net, a) : config.clusters[kind](a));
+    const seen = new Set(), options = [];
+    const heldAnchors = net ? heldNet(net, S).map((o) => o.a) : [...clusters.values()].map((cl) => cl[0]);
+    for (const A of heldAnchors) for (let dx = -4; dx <= 4; dx++) for (let dy = -4; dy <= 4; dy++) for (let dz = -4; dz <= 4; dz++) {
+      const a = [A[0] + dx, A[1] + dy, A[2] + dz];
+      if (net ? !net.isAnchor(a) : !isEven(a)) continue;
+      const cl = cellsOf(a);
+      if (!cl) continue;
+      const k = key(cl[0]);
+      if (seen.has(k)) continue;
+      seen.add(k);
+      const shared = cl.filter((x) => held.has(key(x))).length;
+      if (shared === cl.length || shared > maxShared) continue;
+      const joins = shared > 0 || (net?.neighbours ?? []).some((d) => netHeld(net, a.map((v, i) => v + d[i])))
+        || cl.some((x) => NEAR12.some((d) => held.has(key(x.map((v, i) => v + d[i])))));
+      if (joins) options.push({ a, cl });
+    }
+    if (!options.length) return [];
+    const mid = centreOf(S);
+    const ctr = (cl) => centreOf(net ? cl.filter(isEven) : cl);
+    options.sort((p, q) => Math.hypot(...ctr(p.cl).map((v, i) => v - mid[i])) - Math.hypot(...ctr(q.cl).map((v, i) => v - mid[i])));
+    const pos = [], line = [], records = [], edges = edgesOf(spec);
+    const cap = Math.max(2, Math.min(8, Math.floor(36 / options[0].cl.length)));
+    for (const { a, cl } of options.slice(0, cap)) {
+      const members = kind === 'octa' ? cl.slice(1) : net ? cl.filter(isEven) : cl;
+      const C = members.reduce((t, m) => t.map((v, i) => v + (2 * m[i]) / members.length), [0, 0, 0]);
+      const P = spec.vertices.map((v) => {
+        const r = v.map((c, i) => c / K + C[i]);
+        const m = cl.reduce((best, x) => (Math.hypot(...r.map((c, i) => c - 2 * x[i])) < Math.hypot(...r.map((c, i) => c - 2 * best[i])) ? x : best));
+        return toWorld(m, r.map((c, i) => c - 2 * m[i]));
+      });
+      for (const f of spec.faces) for (let i = 1; i + 1 < f.length; i++) { for (const k of [f[0], f[i], f[i + 1]]) pos.push(...P[k]); records.push(net ? a : cl[0]); }
+      for (const [x, y] of edges) line.push(...P[x], ...P[y]);
+    }
+    clusterGhostMaterial.color.setHex(GHOST_COLOR());
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    g.computeVertexNormals();
+    const m = new THREE.Mesh(g, clusterGhostMaterial);
+    m.userData.stellaJewel = 'clusterGhost';
+    m.userData.records = records;
+    const lg = new THREE.BufferGeometry();
+    lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    const l = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: GHOST_COLOR(), transparent: true, opacity: 0.22, depthWrite: false }));
+    pickTargets.push(m);
+    return [m, l];
   }
   // Networks (DICTO 2026-10-09): clusters on an anchor pattern, sharing single pieces corner to
   // corner, drawn whole as one solid each: the DICTO Hexa diamond network (8 Jewels on a 2 x 2 x 2 block,
@@ -631,6 +687,11 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     if (!tag || !s || mode === 'paint') return false;
     const chisel = mode === 'chisel';
     if (clustered()) {
+      if (tag === 'clusterGhost') {
+        if (chisel) return false;
+        const net = netOf(modeOf().cluster);
+        return net ? addCells(netCells(net, s)) : addCluster(s);
+      }
       if (tag === 'first' || tag === 'ghost') {
         if (chisel) return false;
         const net = netOf(modeOf().cluster);
