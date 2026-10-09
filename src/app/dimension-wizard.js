@@ -36,7 +36,13 @@
 // out of scope steps visible" -- direct instruction. All wording goes
 // through i18n.js ('wiz.*' and 'cat.*'); lattice, piece and tile names
 // stay English.
-import { polytope4D } from '../krp-core/src/polyhedra/polytopes4d.js';
+import { polytope4D, POLYTOPES_4D, SYMMETRIES_4D } from '../krp-core/src/polyhedra/polytopes4d.js';
+import { FEDOROV_FIVE, PARALLELOHEDRON_VARIANTS, KALEIDOHEDRA_VERIFIED, REGULAR_NINE, SPACE_FILLING_PAIR_LIST } from '../krp-core/src/polyhedra/families.js';
+import { BRIDGE_SECTIONS, BRIDGES_3D_IDS } from '../krp-core/src/polyhedra/bridges.js';
+import { STELLATION_IDS, stellationInfo, stellatedSolidName } from '../krp-core/src/polyhedra/stellations/index.js';
+import { ZOME_PARALLELOHEDRA_ADDITION_IDS, DICTO_SKEWED_ED_IDS } from '../krp-core/src/polyhedra/miscellaneous/zome-parallelohedra/index.js';
+import { REGULAR_NINE_ADDITION_IDS } from '../krp-core/src/polyhedra/miscellaneous/regular-nine/index.js';
+import { BAIN_PARALLELOHEDRA_ADDITION_IDS } from '../krp-core/src/polyhedra/miscellaneous/bain-parallelohedra/index.js';
 import { tileOnEdge } from '../geometry-extensions/kaleidoscope.js';
 import { embed } from '../geometry-extensions/trajectory-1d.js';
 import { mountWireframePreview } from './wireframe-preview.js';
@@ -98,6 +104,13 @@ const CSS = `
   background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); color: #eee; font: var(--text-m, 14px) var(--font-ui, sans-serif); }
 .poly-search-results { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; }
 .poly-detail { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px; }
+.poly-section { margin: 0 0 12px; }
+.poly-section-title { font: 700 var(--text-s, 13px) var(--font-ui, sans-serif); color: var(--pale, #d8ffcc); border-bottom: 1px solid rgba(var(--accent-rgb, 94, 226, 51), 0.35); padding: 0 0 4px; margin: 0 0 8px; }
+.poly-pair { grid-template-columns: 1fr auto 1fr; align-items: center; }
+.poly-pair-plus { font: 700 18px var(--font-ui, sans-serif); color: var(--accent, #a9f795); }
+.poly-credit { max-width: 380px; font: var(--text-xs, 12px)/1.45 var(--font-ui, sans-serif); color: var(--accent, #a9f795); text-align: center; }
+.poly-credit b { color: #d946a8; }
+.poly-credit button { background: none; border: 0; padding: 0; color: inherit; text-decoration: underline; font: inherit; cursor: pointer; }
 .poly-detail-preview { width: 200px; height: 200px; max-width: 100%; }
 .poly-detail-name { font: 700 var(--text-l, 18px) var(--font-ui, sans-serif); color: var(--accent); text-align: center; }
 .poly-detail-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
@@ -955,22 +968,39 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
   }
 
   // ---- a Polyhedraverse family's shapes (from 3D+'s Shapes, or the picker) ----
+  // Families shown in sections, as the old site's catalogue did (step D6): Parallelohedra (Fedorov's
+  // five, variants, Kaleidohedra verified, the Regular 9), Stellations (one per solid), 3D+ Bridges
+  // (cells, shadows, slices, corners), 4D Polytopes (by symmetry) and Space-Filling Pairs (a row per
+  // pair: its honeycomb, then both shapes). [{ title, ids, pair }] or null for a plain grid.
+  function familySections(key, L) {
+    if (key === 'PARALLELOHEDRA') return [['fedorov', FEDOROV_FIVE], ['variants', PARALLELOHEDRON_VARIANTS], ['kaleidohedra', KALEIDOHEDRA_VERIFIED], ['regularNine', REGULAR_NINE]].map(([k, ids]) => ({ id: k, title: t(`pv.parallelohedra.section.${k}`, L), ids }));
+    if (key === 'STELLATIONS') return [...new Set(STELLATION_IDS.map((id) => stellationInfo(id).solid))].map((solid) => ({ id: solid, title: stellatedSolidName(solid), ids: STELLATION_IDS.filter((id) => stellationInfo(id).solid === solid) }));
+    if (key === 'BRIDGES_3D') return BRIDGE_SECTIONS.map((sec) => ({ id: sec.id, title: t(`pv.bridges.section.${sec.id}`, L), ids: sec.ids }));
+    if (key === 'POLYTOPES_4D') return SYMMETRIES_4D.map((g) => ({ id: g, title: t('polytope.symmetry', L, { group: g }), ids: POLYTOPES_4D.filter((p) => p.symmetry === g).map((p) => p.id) }));
+    if (key === 'SPACE_FILLING_PAIRS') return SPACE_FILLING_PAIR_LIST.map((p) => ({ id: p.ids.join('+'), title: p.honeycomb, ids: p.ids, pair: true }));
+    return null;
+  }
   function showPolyFamily(key) {
     current = () => showPolyFamily(key);
     resetPreviews();
     const L = getSettings().language;
-    let grid = '';
-    for (const id of polyIds(key).filter((x) => !picker || picker.fits(x))) {
-      grid += `
+    const fits = (x) => !picker || picker.fits(x);
+    const card = (id) => `
         <button type="button" class="dim-wizard-card-btn dim-wizard-piece" data-action="tool:polyShape:${id}">
           ${previewSlot(() => polyShapeEdges(id))}
           <span class="dim-wizard-row-text"><span class="dim-wizard-label">${polyShapeName(id).replaceAll('_', ' ')}</span></span>
         </button>`;
-    }
+    const sections = familySections(key, L);
+    const style = blockStyle(key === DICTO_POLY.key ? 'dicto' : 'polyhedraverse');
+    const blocks = sections
+      ? sections.map((sec) => ({ ...sec, ids: sec.ids.filter((id) => polyIds(key).includes(id) && fits(id)) })).filter((sec) => sec.ids.length)
+        .map((sec) => `<div class="poly-section" data-section="${sec.id}"><div class="poly-section-title">${sec.title}</div>
+          <div class="dim-wizard-grid dicto-block${sec.pair ? ' poly-pair' : ''}" style="${style}">${sec.ids.map(card).join(sec.pair ? '<span class="poly-pair-plus">+</span>' : '')}</div></div>`).join('')
+      : `<div class="dim-wizard-grid dicto-block" style="${style}">${polyIds(key).filter(fits).map(card).join('')}</div>`;
     bodyEl.innerHTML = `
       ${back(L)}
       <div class="dim-wizard-sub"><b>${polyLabel(key)}</b> · ${t('wiz.poly.shapes', L)}</div>
-      <div class="dim-wizard-grid dicto-block" style="${blockStyle(key === DICTO_POLY.key ? 'dicto' : 'polyhedraverse')}">${grid}</div>`;
+      ${blocks}`;
     mountPreviews();
     bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => { if (picker) { showShapePicker(); return; } openDim = '3D'; showDimensions(`[data-family="${key}"]`); });
     bodyEl.querySelectorAll('[data-action]').forEach((el) => el.addEventListener('click', () => {
@@ -1050,6 +1080,21 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     bodyEl.querySelectorAll('.poly-detail-build').forEach((b) => b.addEventListener('click', () => choose('3D', `tool:polytope:${p.seed}|${b.dataset.target}`, 'polyhedraverse')));
   }
 
+  // Where a shape came from or what it bridges to (the old site's details, step D6): the 3D+ Bridges
+  // note, DICTO's Zometool, Kaleidohedra and Bain credits, the Dogstar's prior art, and the EKP pieces'
+  // way into the EKP cell in Kaleidohedra.
+  function creditsOf(id, L) {
+    const out = [];
+    if (BRIDGES_3D_IDS.includes(id)) out.push(`<div class="poly-credit" data-credit="bridge"><b>⤢ ${t('pv.detail.bridges', L)}</b><br>${t(`pv.bridge.${id}`, L)}</div>`);
+    if (ZOME_PARALLELOHEDRA_ADDITION_IDS.includes(id) && !DICTO_SKEWED_ED_IDS.includes(id)) out.push(`<div class="poly-credit" data-credit="zome">${t('pv.detail.zomeCredit', L)}</div>`);
+    if (DICTO_SKEWED_ED_IDS.includes(id)) out.push(`<div class="poly-credit" data-credit="skewed-ed">${t('pv.detail.dictoSkewedEdCredit', L)}</div>`);
+    if (REGULAR_NINE_ADDITION_IDS.includes(id)) out.push(`<div class="poly-credit" data-credit="regular-nine">${t('pv.detail.regularNineCredit', L)}</div>`);
+    if (id === 'DOGSTAR' || id === 'SEAMED_DODECAHEDRON') out.push(`<div class="poly-credit" data-credit="dogstar">${t('pv.detail.dogstarCredit', L)}</div>`);
+    if (id === 'DOGSTAR' || id === 'SEAMED_DODECAHEDRON' || id === 'DRAGON_JEWEL') out.push(`<div class="poly-credit" data-credit="ekp">${t('pv.detail.ekpLink', L)} <button type="button" data-ekp>Kaleidohedra</button></div>`);
+    if (BAIN_PARALLELOHEDRA_ADDITION_IDS.includes(id)) out.push(`<div class="poly-credit" data-credit="bain">${t('pv.detail.bainCredit', L)}</div>`);
+    return out.join('');
+  }
+
   // A shape's details: turning preview, its families, faces by kind, corners and edges, convex or not,
   // its pairs; Build with it, and ☆ Favourite (the same as pinning it in the strip).
   function showShapeDetail(id, backTo) {
@@ -1066,6 +1111,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
         ${star ? '<div class="poly-detail-stage"></div>' : '<canvas class="poly-detail-preview" width="200" height="200"></canvas>'}
         <div class="poly-detail-name">${polyShapeName(id).replaceAll('_', ' ')}</div>
         <div class="dim-wizard-desc">${fams.join(' · ')}</div>
+        ${creditsOf(id, L)}
         <div class="poly-detail-actions">
           ${star ? '' : `<button type="button" class="poly-detail-build">${t('poly.d.build', L)}</button>`}
           <button type="button" class="poly-detail-fav" aria-pressed="${fav}">${fav ? '★' : '☆'} ${t('poly.d.fav', L)}</button>
@@ -1087,6 +1133,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     if (star) previewDisposers.push(mountStarView(bodyEl.querySelector('.poly-detail-stage'), id));
     else previewDisposers.push(mountWireframePreview(bodyEl.querySelector('.poly-detail-preview'), polyShapeEdges(id), 200));
     bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => backTo());
+    bodyEl.querySelector('[data-ekp]')?.addEventListener('click', () => choose('3D', 'tool:roofFoldWorld', 'kaleidohedra'));
     if (star) return; // reference only: no building with a star solid
     bodyEl.querySelector('.poly-detail-build').addEventListener('click', () => choose('3D', `tool:polyShape:${id}`, 'polyhedraverse'));
     // 4D: the shape's 4D prism, or (4D-capable shapes) the whole 4D polytope it extends to.
