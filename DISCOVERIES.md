@@ -603,10 +603,20 @@ triangle that borders only pentagons. 33 regular-faced pieces, edge 1:
   piece closes; the pockets over the caps widen outward, so in packings the gaps join into one
   labyrinth (about 26%). Two stars can share a dodecahedron along a 5-fold axis (centres 4.97980
   apart), which gives columns, but no lattice of them fits.
-- **DICTO's continuation (open):** DICTO's own build grows further outward with an extra stack of
-  dodecahedra and dodecahedral and triangular stellation pieces meeting one another. Those pieces
-  are not regular-faced, so the result above (no closure with regular pieces) does not rule it out;
-  it is the next thing to resolve.
+- **How far DICTO went (DICTO's evidence: Polyhedraverse screenshots, 3–4 October 2026):** DICTO had
+  the star and grew it outward before this search, with stellation pieces, which are not
+  regular-faced, so the result above (no closure with regular pieces) does not rule these out:
+  - 4 October, 20:12: icosidodecahedron + 12 dodecahedra + 20 tridiminished icosahedra (the star),
+    then 72 dodecahedron first stellations (flat: rhombic triacontahedron pieces) + 60 square
+    pyramids + 60 cube first stellations (flat: rhombic dodecahedron pieces) + 20 tetrahedron first
+    stellations (flat: cube pieces), an outer shell that looks closed.
+  - 4 October, 12:44: icosidodecahedron + 24 dodecahedra + 20 tridiminished icosahedra + 120
+    dodecahedron second stellations (small stellated dodecahedron pieces) + 8 tall triangular
+    pyramids + 4 tetrahedra, a second stack of dodecahedra outward.
+  - 3 October: the related "heart", an augmented tridiminished icosahedron + 3 gyroelongated
+    pentagonal pyramids + 52 icosahedron third stellations.
+  DICTO also built the star physically, from PET bottle caps and security rings. Whether the
+  4 October shell closes exactly is not yet checked; it is the next thing to resolve.
 - Verified: `src/krp-core/scripts/verify-id-star.mjs` (krp-core v0.7.4), every push: no overlap
   among the 33 solids (separating axes), all 60 edges closed, every corner filled, exact volumes, and
   that whole icosahedra overlap.
