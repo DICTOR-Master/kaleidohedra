@@ -714,7 +714,7 @@ a whole rhombus, each group a shape of its own (krp-core `DJ_TETRAHEDRAL_CLUSTER
   single shared corners, half the Jewel cells).
 - Status: **not found**, a candidate, resting on #10: the clusters are made only of the DICTO Jewel,
   which itself was not found.
-- Archived: Zenodo [10.5281/zenodo.23256623](https://doi.org/10.5281/zenodo.23256623) (v2026.10.09-octet, 2026-10-09).
+- Archived: Zenodo [10.5281/zenodo.23256623](https://doi.org/10.5281/zenodo.23256623) (v2026.10.09-octet, 2026-10-09). The Kagome network: [10.5281/zenodo.23257393](https://doi.org/10.5281/zenodo.23257393) (v2026.10.09-kagome).
 
 ## 16. Sunstar clusters (DICTO, 2026-10-09)
 
@@ -744,7 +744,7 @@ Sunstar Lattice has the same cells, dodecahedra on the even ones and Dogstars on
   truss (Buckminster Fuller; the tetrahedral-octahedral honeycomb), and new tilings by regular
   tetrahedra and octahedra (MRSEC highlight). The clusters, the Dogstar-with-its-dodecahedra and the
   octet network of dodecahedra are DICTO's.
-- Archived: Zenodo [10.5281/zenodo.23256623](https://doi.org/10.5281/zenodo.23256623) (v2026.10.09-octet, 2026-10-09).
+- Archived: Zenodo [10.5281/zenodo.23256623](https://doi.org/10.5281/zenodo.23256623) (v2026.10.09-octet, 2026-10-09). The Kagome network: [10.5281/zenodo.23257393](https://doi.org/10.5281/zenodo.23257393) (v2026.10.09-kagome).
 
 Since 2026-10-08 the geometry and its checks live in [krp-core](https://github.com/DICTOR-Master/krp-core),
 the geometry shared by Kaleidohedra and Rhombiverse, pinned here at `src/krp-core`.
