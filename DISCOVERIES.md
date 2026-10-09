@@ -718,8 +718,9 @@ a whole rhombus, each group a shape of its own (krp-core `DJ_TETRAHEDRAL_CLUSTER
 
 ## 16. Sunstar clusters (DICTO, 2026-10-09)
 
-*DICTO asked whether the octet network of #15 held for the Sunstars and Dogstars. It does: the
-Sunstar Lattice has the same cells, dodecahedra on the even ones and Dogstars on the odd.*
+*DICTO tested whether the octet network of #15 carries over to the Sunstars and Dogstars, as
+expected. It does: the Sunstar Lattice has the same cells, dodecahedra on the even ones and Dogstars
+on the odd.*
 
 - **Tetrahedral cluster:** four regular dodecahedra round a cell corner, neighbours meeting flat on
   parts of faces (the seamed Sunstar dodecahedra make the contacts whole matching cells); in the
