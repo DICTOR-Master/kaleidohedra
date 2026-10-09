@@ -14,8 +14,8 @@ separating axes, volumes exact. Scale **unit** = icosahedron edge 1 (`data/*-uni
 solids before normalising).
 
 Research scripts (kept with the study's working copy, not in the repo): `arrangements.mjs` (§1),
-`build.mjs` (§2, §3, writes `data/`), `networks.mjs` (§4), `gaps.py` (§5, numpy/scipy, run on a 16 GB machine:
-it peaks well above 8 GB), `render-ico.mjs` (renders). Renders: `renders/*.jpg` (icosahedra in the EKP icosahedron
+`build.mjs` (§2, §3, writes `data/`), `networks.mjs` (§4), `gaps.py` (§5, numpy/scipy, peaks about
+1.3 GB), `render-ico.mjs` (renders). Renders: `renders/*.jpg` (icosahedra in the EKP icosahedron
 green, wedges cyan, pyramids and needles purple, the icosidodecahedron gold).
 
 ## Summary
