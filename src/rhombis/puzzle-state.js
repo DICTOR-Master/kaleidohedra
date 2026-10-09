@@ -90,12 +90,22 @@ function resolveTargetGroupId(state, piece, voidEntry) {
     : piece.fillsGroup;
 }
 
-export function createPuzzleState({ pieces, voids }) {
+// `autoTurn` (RHOMBIS audit, DICTO 2026-10-10: "turn pieces automatically everywhere"): a piece
+// that can take the orientation a void needs takes it as it goes in, so a wrong orientation never
+// rejects; off by default so the stage-by-stage tests below keep the manual flip they were written for.
+export function createPuzzleState({ pieces, voids, autoTurn = false }) {
   return {
     pieces: pieces.map((p) => ({ ...p, placed: false })),
     voids: voids.map((v) => ({ ...v, filled: false, filledBy: null })),
     selectedPieceId: null,
+    autoTurn,
   };
+}
+
+// Whether a piece can go into a void that wants `required` (no requirement, the right orientation
+// already, or one it turns to by itself).
+function fitsOrientation(state, piece, required) {
+  return !required || piece.orientation === required || Boolean(state.autoTurn && piece.orientationOptions?.includes(required));
 }
 
 export function selectPiece(state, pieceId) {
@@ -242,7 +252,7 @@ export function placeSelected(state, voidId) {
     const pieces = state.pieces.map((p) => (p.id === pieceId ? { ...p, placed: true } : p));
     const voids = state.voids.map((v) => (fillSet.has(v.id) ? { ...v, filled: true, filledBy: pieceId } : v));
     return {
-      state: { pieces, voids, selectedPieceId: null },
+      state: { ...state, pieces, voids, selectedPieceId: null },
       placed: true,
       pieceId,
       voidId,
@@ -259,14 +269,15 @@ export function placeSelected(state, voidId) {
   if (voidEntry.filled) {
     return { state, placed: false, pieceId, voidId, reason: 'already-filled' };
   }
-  if (voidEntry.requiredOrientation && piece.orientation !== voidEntry.requiredOrientation) {
+  if (!fitsOrientation(state, piece, voidEntry.requiredOrientation)) {
     return { state, placed: false, pieceId, voidId, reason: 'wrong-orientation' };
   }
 
-  const pieces = state.pieces.map((p) => (p.id === pieceId ? { ...p, placed: true } : p));
+  const turnTo = voidEntry.requiredOrientation ?? piece.orientation;
+  const pieces = state.pieces.map((p) => (p.id === pieceId ? { ...p, placed: true, orientation: turnTo } : p));
   const voids = state.voids.map((v) => (v.id === voidId ? { ...v, filled: true, filledBy: pieceId } : v));
   return {
-    state: { pieces, voids, selectedPieceId: null },
+    state: { ...state, pieces, voids, selectedPieceId: null },
     placed: true,
     pieceId,
     voidId,
@@ -309,8 +320,39 @@ export function voidValidityForPiece(state, pieceId) {
       const inGroup = Boolean(targetGroupId) && v.groupIds.includes(targetGroupId);
       validByVoidId[v.id] = inGroup && state.voids.filter((vv) => vv.groupIds.includes(targetGroupId)).every((vv) => !vv.filled);
     } else {
-      validByVoidId[v.id] = !v.requiredOrientation || v.requiredOrientation === piece.orientation;
+      validByVoidId[v.id] = fitsOrientation(state, piece, v.requiredOrientation);
     }
   }
   return validByVoidId;
+}
+
+// Par (RHOMBIS audit, DICTO 2026-10-10: stars by moves against par): the fewest pieces that fill the
+// whole shape, pieces turning by themselves and the burr order set aside (it changes when a piece can
+// go, not how many). Exact: always fills the first open void, trying every kind of unplaced piece
+// that can cover it (identical pieces tried once), and drops any branch that can't beat the best.
+// null when nothing fills it.
+export function parOf(state) {
+  const start = { ...state, autoTurn: true, selectedPieceId: null, pieces: state.pieces.map((p) => ({ ...p, requiresPlacedFirst: undefined })) };
+  const kind = (p) => `${p.fillsGroup ?? ''}|${(p.orientationOptions ?? []).join(',')}|${p.orientationOptions ? '' : p.orientation ?? ''}`;
+  let best = Infinity;
+  (function search(s, n) {
+    if (n >= best) return;
+    const open = s.voids.find((v) => !v.filled);
+    if (!open) { best = n; return; }
+    const tried = new Set();
+    for (const p of s.pieces) {
+      if (p.placed || tried.has(kind(p))) continue;
+      tried.add(kind(p));
+      const r = placeSelected({ ...s, selectedPieceId: p.id }, open.id);
+      if (r.placed) search(r.state, n + 1);
+    }
+  })(start, 0);
+  return Number.isFinite(best) ? best : null;
+}
+
+// Stars for a solve: three at par, two within half as many again, one otherwise. Moves are the pieces
+// in the finished shape, so Undo and Restart cost nothing (DICTO: "undos free", no timer).
+export function starsFor(moves, par) {
+  if (!par || moves <= par) return 3;
+  return moves <= Math.ceil(par * 1.5) ? 2 : 1;
 }

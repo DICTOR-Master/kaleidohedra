@@ -35,7 +35,7 @@
 import * as THREE from 'three';
 import { quaternionForOrientationKey } from './geometry.js';
 import { STAGES, WIRE_COLOR, GHOST_OPACITY } from './stages.js';
-import { createPuzzleState, selectPiece, deselect, flipPiece, setPieceOrientation, openOrientationOptions, placeSelected, isSolved, voidValidityForPiece, smallestEnclosingGroupId, ANY_SINGLE_CELL_GROUP } from './puzzle-state.js';
+import { createPuzzleState, selectPiece, deselect, flipPiece, setPieceOrientation, openOrientationOptions, placeSelected, isSolved, voidValidityForPiece, smallestEnclosingGroupId, ANY_SINGLE_CELL_GROUP, parOf, starsFor } from './puzzle-state.js';
 import { getSettings, updateSettings, onSettingsChange } from '../app/settings.js';
 import { t, LANG_ORDER } from './i18n.js';
 
@@ -59,7 +59,6 @@ const INVALID_TARGET_COLOR = REJECT_FLASH_COLOR;
 // valid one renders near-opaque so it visually pops out on its own.
 const VALID_GHOST_OPACITY = 0.85;
 const INVALID_GHOST_OPACITY = 0.12;
-const STAGE_ADVANCE_DELAY_MS = 1400;
 const ROTATION_DAMPING = 0.25;
 // Tactile-feel additions (2026-09-05, direct instruction: placement
 // felt flat/lifeless compared to games family members actually play --
@@ -71,20 +70,6 @@ const ROTATION_DAMPING = 0.25;
 // traveling reads better a little more deliberate than a quick spin.
 const POSITION_DAMPING = 0.18;
 const SELECTED_GLOW_SPEED = 0.006; // the selected piece's pulse, radians per ms
-// Friendlier labels for the small, named set of orientations that have
-// one; anything else (Stage 4's 12-way 'axisKey:in'/'axisKey:out') gets
-// a generic fallback from orientationLabel() below instead of an entry
-// here -- see that function's own comment.
-function orientationLabel(key) {
-  const lang = getSettings().language;
-  if (key === 'y+') return t('orientation.apexUp', lang);
-  if (key === 'y-') return t('orientation.apexDown', lang);
-  if (key.includes(':')) {
-    const [axisKey, direction] = key.split(':');
-    return t('orientation.faceDirection', lang, { axis: axisKey, direction: t(direction === 'in' ? 'orientation.inward' : 'orientation.outward', lang) });
-  }
-  return key;
-}
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x05050a);
@@ -381,7 +366,9 @@ window.addEventListener('orientationchange', () => {
 });
 
 const hud = document.getElementById('rhombis-hud');
-const solvedBanner = document.getElementById('rhombis-solved');
+const solvedCard = document.getElementById('rhombis-card');
+const turnButton = document.getElementById('rhombis-turn');
+const dragDot = document.getElementById('rhombis-drag-dot');
 const stageLabel = document.getElementById('rhombis-stage');
 const undoButton = document.getElementById('rhombis-undo');
 const stagePicker = document.getElementById('rhombis-stage-picker');
@@ -407,6 +394,7 @@ function applyRhombisTranslations() {
   if (langToggle) langToggle.textContent = lang.toUpperCase();
   if (current) updateHud();
   if (current) stageLabel.textContent = t('stage.label', lang, { id: STAGES[stageIndex].id, name: STAGES[stageIndex].name }); // was left in the old language until the next stage
+  if (current?.solvedResult) showSolvedCard(current.solvedResult);
   if (stagePicker && !stagePicker.hidden) populateStagePicker();
 }
 if (langToggle) {
@@ -464,11 +452,11 @@ const requestedStageIndex = STAGES.findIndex((s) => s.id === requestedStageId);
 const LAST_STAGE_KEY = 'rhombis-last-stage';
 const lastStageIndex = (() => { try { return STAGES.findIndex((s) => s.id === Number(localStorage.getItem(LAST_STAGE_KEY))); } catch { return -1; } })();
 let stageIndex = requestedStageIndex >= 0 ? requestedStageIndex : lastStageIndex >= 0 ? lastStageIndex : 0;
-let current = null; // { skeletonGroup, pieces, voids, state, targetBox, trayBox, history, advanceTimer }
+let current = null; // { skeletonGroup, pieces, voids, state, targetBox, trayBox, history, par, solvedResult }
 
 function clearCurrentStage() {
   if (!current) return;
-  if (current.advanceTimer) clearTimeout(current.advanceTimer);
+  endPieceDrag();
   scene.remove(current.skeletonGroup);
   // A piece's current parent is whichever group it was actually in
   // (trayGroup if never placed, skeletonGroup if it was) -- removing
@@ -536,12 +524,13 @@ function loadStage(index) {
       requiresPlacedFirst: p.requiresPlacedFirst,
     })),
     voids: built.voids.map((v) => ({ id: v.id, requiredOrientation: v.requiredOrientation, groupIds: v.groupIds })),
+    autoTurn: true, // pieces turn by themselves everywhere (DICTO 2026-10-10)
   });
 
   const targetBox = boundingBoxCenterAndCorners([built.skeletonGroup]);
   const trayBox = boundingBoxCenterAndCorners(built.pieces.map((p) => p.mesh));
-  current = { ...built, groups: built.groups ?? [], state, targetBox, trayBox, history: [], advanceTimer: null };
-  solvedBanner.hidden = true;
+  current = { ...built, groups: built.groups ?? [], state, targetBox, trayBox, history: [], par: parOf(state), solvedResult: null };
+  hideSolvedCard();
   stageLabel.textContent = t('stage.label', getSettings().language, { id: stageDef.id, name: stageDef.name });
   measureTopbar(); // the stage name sets the top bar's height, and so the tray's top
   syncTrayPanel();
@@ -598,23 +587,39 @@ function markSolved(id) {
   solved.add(id);
   try { localStorage.setItem(SOLVED_KEY, JSON.stringify([...solved])); } catch { /* storage full or blocked: the tick just won't persist */ }
 }
+// Best stars per stage, remembered on this device; every stage stays open, the stars are only a
+// gentle goal (DICTO 2026-10-10).
+const STARS_KEY = 'rhombis-stars';
+function loadStars() {
+  try { return JSON.parse(localStorage.getItem(STARS_KEY) ?? '{}') ?? {}; } catch { return {}; }
+}
+function recordStars(id, stars) {
+  const all = loadStars();
+  const best = Math.max(all[id] ?? 0, stars);
+  all[id] = best;
+  try { localStorage.setItem(STARS_KEY, JSON.stringify(all)); } catch { /* the stars just won't persist */ }
+  return best;
+}
+const starText = (n) => '★'.repeat(n) + '☆'.repeat(3 - n);
 function populateStagePicker() {
   stageList.innerHTML = '';
   const lang = getSettings().language;
   const solved = loadSolved();
+  const stars = loadStars();
   for (const [section] of STAGE_SECTIONS) {
     const members = STAGES.map((stageDef, index) => ({ stageDef, index })).filter(({ stageDef }) => stageSection(stageDef) === section);
     if (!members.length) continue;
     const heading = document.createElement('div');
     heading.className = 'rhombis-stage-section';
-    heading.textContent = t(`picker.section.${section}`, lang);
+    const earned = members.reduce((sum, { stageDef }) => sum + (stars[stageDef.id] ?? 0), 0);
+    heading.innerHTML = `<span>${t(`picker.section.${section}`, lang)}</span><span class="section-stars">★ ${earned} / ${members.length * 3}</span>`;
     stageList.appendChild(heading);
     for (const { stageDef, index } of members) {
       const option = document.createElement('button');
       option.type = 'button';
       option.className = 'rhombis-stage-option';
       option.dataset.stageIndex = String(index);
-      option.innerHTML = `<span class="stage-num">${stageDef.id}</span><span class="stage-name-wrap"><span class="stage-name">${stageDef.name}</span></span>${solved.has(stageDef.id) ? '<span class="stage-tick">✓</span>' : ''}`;
+      option.innerHTML = `<span class="stage-num">${stageDef.id}</span><span class="stage-name-wrap"><span class="stage-name">${stageDef.name}</span></span>${stars[stageDef.id] ? `<span class="stage-stars">${starText(stars[stageDef.id])}</span>` : solved.has(stageDef.id) ? '<span class="stage-tick">✓</span>' : ''}`;
       option.addEventListener('click', () => {
         stageIndex = index;
         loadStage(stageIndex);
@@ -728,11 +733,7 @@ function syncVisualsToState() {
 
 function undo() {
   if (!current || current.history.length === 0) return;
-  if (current.advanceTimer) {
-    clearTimeout(current.advanceTimer);
-    current.advanceTimer = null;
-  }
-  solvedBanner.hidden = true;
+  hideSolvedCard();
   current.state = { ...current.history.pop(), selectedPieceId: null };
   syncVisualsToState();
   updateUndoButton();
@@ -814,12 +815,7 @@ function isStuck() {
 
 function updateHud() {
   const selectedId = current.state.selectedPieceId;
-  const flippable = current.pieces.some((p) => p.orientationOptions);
-  // Was mutually exclusive with `flippable` until Stage 4's manual-
-  // orientation prototype made a stage BOTH flippable and 12-void at
-  // once -- the remaining count is still worth showing there, so it's
-  // folded into every branch below as a suffix instead of its own
-  // separate branch.
+  updateTurnButton();
   const multipleVoids = current.voids.length > 1;
   const remaining = remainingCount();
   const lang = getSettings().language;
@@ -828,29 +824,28 @@ function updateHud() {
   const countSuffix = multipleVoids ? t('hud.leftSuffix', lang, { p: filledPct }) : '';
   if (remaining > 0 && isStuck()) { hud.textContent = t('hud.stuck', lang); return; }
 
+  // Pieces turn by themselves, so the HUD names no orientation; drag and drop is the main way in,
+  // tap-tap the second (DICTO 2026-10-10).
   if (!selectedId) {
-    if (flippable) {
-      hud.textContent = t('hud.tapVoidFlip', lang, { suffix: countSuffix });
-    } else if (multipleVoids) {
-      hud.textContent = t('hud.tapVoidPlace', lang, { suffix: countSuffix });
-    } else {
-      hud.textContent = t('hud.tapSkeletonPlace', lang);
-    }
+    hud.textContent = t('hud.idle', lang, { suffix: countSuffix });
     return;
   }
-
-  const selectedPiece = currentStatePiece(selectedId);
-  if (selectedPiece.orientation) {
-    const label = orientationLabel(selectedPiece.orientation);
-    hud.textContent = t('hud.selectedFlipOrPlace', lang, { label, suffix: countSuffix });
-  } else if (selectedPiece.fillsGroup) {
-    hud.textContent = t('hud.selectedFused', lang);
-  } else if (multipleVoids) {
-    hud.textContent = t('hud.selectedPlace', lang, { suffix: countSuffix });
-  } else {
-    hud.textContent = t('hud.selectedPlaceSkeleton', lang);
-  }
+  hud.textContent = currentStatePiece(selectedId).fillsGroup ? t('hud.selectedFused', lang) : t('hud.selected', lang, { suffix: countSuffix });
 }
+
+// One Turn button (no arrows, DICTO 2026-10-10), shown only while a piece that can turn is
+// selected: pieces turn by themselves as they go in, so this is for looking at a piece from round.
+function updateTurnButton() {
+  if (turnButton) turnButton.hidden = !selectedFlippablePiece();
+}
+turnButton?.addEventListener('click', () => {
+  const sp = selectedFlippablePiece();
+  if (!sp) return;
+  current.state = flipPiece(current.state, sp.id);
+  pieceById(sp.id).mesh.userData.targetQuaternion = quaternionForOrientationKey(currentStatePiece(sp.id).orientation);
+  refreshVoidHighlights();
+  updateHud();
+});
 
 function setPieceSelectedVisual(piece, isSelected) {
   if (piece.mesh.material.emissive) {
@@ -1005,20 +1000,44 @@ function refreshVoidHighlights() {
   }
 }
 
-function advanceOrFinish() {
-  const next = STAGES[stageIndex + 1];
-  const lang = getSettings().language;
-  hud.textContent = t('solved.hud', lang);
+// Solved: a card with the stars, the pieces used against par, and Replay / Next, in place of the
+// old 1.4 s jump to the next stage, so the finished shape can be looked at (DICTO 2026-10-10).
+function finishStage() {
+  const moves = current.state.pieces.filter((p) => p.placed).length;
+  const stars = starsFor(moves, current.par);
   markSolved(STAGES[stageIndex].id);
-  solvedBanner.hidden = false;
-  solvedBanner.textContent = next ? t('solved.bannerFinal', lang) : t('solved.bannerMore', lang);
-  if (next) {
-    current.advanceTimer = setTimeout(() => {
-      stageIndex += 1;
-      loadStage(stageIndex);
-    }, STAGE_ADVANCE_DELAY_MS);
-  }
+  const best = recordStars(STAGES[stageIndex].id, stars);
+  current.solvedResult = { moves, par: current.par ?? moves, stars, best };
+  showSolvedCard(current.solvedResult);
 }
+function showSolvedCard({ moves, par, stars, best }) {
+  const lang = getSettings().language;
+  const next = STAGES[stageIndex + 1];
+  hud.textContent = t('solved.hud', lang);
+  solvedCard.querySelector('.card-stars').textContent = starText(stars);
+  solvedCard.querySelector('.card-moves').textContent = t('card.moves', lang, { n: moves, par });
+  const note = stars < 3 ? t('card.fewer', lang) : '';
+  solvedCard.querySelector('.card-note').textContent = note;
+  solvedCard.querySelector('.card-note').hidden = !note;
+  solvedCard.querySelector('.card-best').textContent = best > stars ? t('card.best', lang, { stars: starText(best) }) : '';
+  solvedCard.querySelector('.card-best').hidden = !(best > stars);
+  solvedCard.querySelector('.card-last').hidden = Boolean(next);
+  solvedCard.querySelector('.card-next').hidden = !next;
+  solvedCard.hidden = false;
+  document.body.classList.add('rhombis-solved');
+}
+function hideSolvedCard() {
+  if (current) current.solvedResult = null;
+  solvedCard.hidden = true;
+  document.body.classList.remove('rhombis-solved');
+}
+solvedCard.querySelector('.card-replay').addEventListener('click', () => loadStage(stageIndex));
+solvedCard.querySelector('.card-next').addEventListener('click', () => {
+  if (!STAGES[stageIndex + 1]) return;
+  stageIndex += 1;
+  loadStage(stageIndex);
+});
+solvedCard.querySelector('.card-stages').addEventListener('click', openStagePicker);
 
 // --- Region routing: which viewport (tray vs. target) a pointer event
 // belongs to, decided once per gesture (at pointerdown, or at the
@@ -1073,6 +1092,13 @@ const WHEEL_ZOOM_SPEED = 0.0015;
 // piece, just an indirect one (a viewing aid, not a setter).
 let orientDragPieceId = null;
 
+// Drag and drop (RHOMBIS audit A3, DICTO 2026-10-10: the main way in, tap-tap kept): a drag that
+// starts ON a tray piece carries it; a ghost of it snaps to the nearest void it can fill under the
+// finger, and letting go there places it. Starting on empty tray still turns the tray (or the
+// selected piece), so the two never fight.
+let pieceDrag = null; // { pieceId, active, voidId, ghost }
+const SNAP_RADIUS = 90; // px: how far from a void's centre the finger may be and still snap to it
+
 function selectedFlippablePiece() {
   if (!current || !current.state.selectedPieceId) return null;
   const sp = currentStatePiece(current.state.selectedPieceId);
@@ -1081,6 +1107,7 @@ function selectedFlippablePiece() {
 }
 
 function cancelTapCandidate() {
+  endPieceDrag();
   tapCandidateId = null;
   pointerDownPos = null;
   dragLast = null;
@@ -1100,7 +1127,9 @@ renderer.domElement.addEventListener('pointerdown', (e) => {
     pointerDownPos = { x: e.clientX, y: e.clientY };
     dragLast = { x: e.clientX, y: e.clientY };
     dragRegion = regionAt(e.clientX, e.clientY);
-    orientDragPieceId = dragRegion === 'tray' && selectedFlippablePiece() ? current.state.selectedPieceId : null;
+    const grabbed = dragRegion === 'tray' && current && !current.solvedResult ? trayPieceAt(e.clientX, e.clientY) : null;
+    pieceDrag = grabbed ? { pieceId: grabbed.id, active: false, voidId: null, ghost: null } : null;
+    orientDragPieceId = !grabbed && dragRegion === 'tray' && selectedFlippablePiece() ? current.state.selectedPieceId : null;
   } else {
     cancelTapCandidate();
     if (activePointers.size === 2) {
@@ -1129,6 +1158,19 @@ renderer.domElement.addEventListener('pointermove', (e) => {
   const dx = e.clientX - dragLast.x;
   const dy = e.clientY - dragLast.y;
   dragLast = { x: e.clientX, y: e.clientY };
+  if (pieceDrag) {
+    if (!pieceDrag.active && Math.hypot(e.clientX - pointerDownPos.x, e.clientY - pointerDownPos.y) > TAP_MOVE_THRESHOLD) {
+      pieceDrag.active = true;
+      if (current.state.selectedPieceId !== pieceDrag.pieceId) {
+        current.state = selectPiece(current.state, pieceDrag.pieceId);
+        current.pieces.forEach((p) => setPieceSelectedVisual(p, p.id === current.state.selectedPieceId));
+        refreshVoidHighlights();
+        updateHud();
+      }
+    }
+    if (pieceDrag.active) dragPieceTo(e.clientX, e.clientY);
+    return;
+  }
   if (orientDragPieceId) {
     // Spins the SELECTED PIECE's own mesh, not the tray view -- no
     // pitch clamp (unlike the group-rotation branch below), since a
@@ -1177,7 +1219,14 @@ renderer.domElement.addEventListener('pointerup', (e) => {
   const dy = e.clientY - pointerDownPos.y;
   const moved = Math.hypot(dx, dy) > TAP_MOVE_THRESHOLD;
   const tapRegion = dragRegion;
+  const dropVoidId = pieceDrag?.active ? pieceDrag.voidId : null;
+  const wasPieceDrag = Boolean(pieceDrag?.active);
   cancelTapCandidate();
+  if (wasPieceDrag) {
+    // Dropped on a void it fits: placed. Anywhere else: back in the tray, still selected.
+    if (dropVoidId) placeOnVoid(current.voids.find((v) => v.id === dropVoidId));
+    return;
+  }
   if (moved) return; // was a drag/rotate
   handleTap(e.clientX, e.clientY, tapRegion);
 });
@@ -1239,7 +1288,71 @@ function screenToNDC(clientX, clientY, rect) {
   return pointerNDC;
 }
 
+// The visible, unplaced tray piece under a point, or null.
+function trayPieceAt(clientX, clientY) {
+  raycaster.setFromCamera(screenToNDC(clientX, clientY, trayViewportRect()), trayCamera);
+  const meshes = current.pieces.filter((p) => !currentStatePiece(p.id).placed && p.mesh.visible).map((p) => p.mesh);
+  const hit = raycaster.intersectObjects(meshes, false)[0];
+  return hit ? current.pieces.find((p) => p.mesh === hit.object) : null;
+}
+
+// Where the dragged piece would go from this point: the void under the finger it can fill, else the
+// nearest such void on screen within SNAP_RADIUS; then its ghost shows the piece there, as placed.
+function dragPieceTo(clientX, clientY) {
+  dragDot.hidden = false;
+  dragDot.style.transform = `translate(${clientX}px, ${clientY}px)`;
+  let voidId = null;
+  if (regionAt(clientX, clientY) === 'target') {
+    const validity = voidValidityForPiece(current.state, pieceDrag.pieceId);
+    const usable = current.voids.filter((v) => validity[v.id]);
+    raycaster.setFromCamera(screenToNDC(clientX, clientY, renderer.domElement.getBoundingClientRect()), camera);
+    const hit = raycaster.intersectObjects(usable.map((v) => v.hitTarget), false)[0];
+    if (hit) voidId = usable.find((v) => v.hitTarget === hit.object).id;
+    else {
+      let bestD = SNAP_RADIUS;
+      const p = new THREE.Vector3();
+      for (const v of usable) {
+        p.copy(v.position);
+        current.skeletonGroup.localToWorld(p).project(camera);
+        const d = Math.hypot((p.x + 1) / 2 * window.innerWidth - clientX, (1 - p.y) / 2 * window.innerHeight - clientY);
+        if (d < bestD) { bestD = d; voidId = v.id; }
+      }
+    }
+  }
+  if (voidId === pieceDrag.voidId) return;
+  pieceDrag.voidId = voidId;
+  showDragGhost(voidId);
+}
+
+function showDragGhost(voidId) {
+  if (pieceDrag.ghost) { pieceDrag.ghost.parent?.remove(pieceDrag.ghost); pieceDrag.ghost.material.dispose(); pieceDrag.ghost = null; }
+  if (!voidId) return;
+  // The same placement the drop would make, to know where the piece lands (a fused piece fills its group).
+  const result = placeSelected(current.state, voidId);
+  if (!result.placed) return;
+  const piece = pieceById(pieceDrag.pieceId);
+  const target = piece.fillsGroup ? current.groups.find((g) => g.id === result.targetGroupId) : current.voids.find((v) => v.id === voidId);
+  const ghost = piece.mesh.clone(false);
+  ghost.material = piece.mesh.material.clone();
+  Object.assign(ghost.material, { transparent: true, opacity: 0.55, depthWrite: false, depthTest: false });
+  if (ghost.material.emissive) ghost.material.emissive.setHex(SELECTED_EMISSIVE);
+  ghost.layers.set(0);
+  ghost.position.copy(target.position);
+  ghost.quaternion.copy(target.quaternion);
+  ghost.scale.setScalar(1);
+  ghost.renderOrder = 10;
+  current.skeletonGroup.add(ghost);
+  pieceDrag.ghost = ghost;
+}
+
+function endPieceDrag() {
+  if (pieceDrag?.ghost) { pieceDrag.ghost.parent?.remove(pieceDrag.ghost); pieceDrag.ghost.material.dispose(); }
+  pieceDrag = null;
+  if (dragDot) dragDot.hidden = true;
+}
+
 function handleTrayTap(clientX, clientY) {
+  if (current.solvedResult) return;
   const rect = trayViewportRect();
   raycaster.setFromCamera(screenToNDC(clientX, clientY, rect), trayCamera);
 
@@ -1266,16 +1379,9 @@ function handleTrayTap(clientX, clientY) {
   if (!hitPiece) return;
 
   if (current.state.selectedPieceId === hitPiece.id) {
-    // A piece with no orientationOptions (Stage 3's pieces) has nothing
-    // to flip -- flipPiece() is already a no-op for it, but skip the
-    // rotation-target update too rather than calling
-    // quaternionForOrientationKey(undefined) for a piece with no
-    // orientation.
-    if (hitPiece.orientationOptions) {
-      current.state = flipPiece(current.state, hitPiece.id);
-      hitPiece.orientation = currentStatePiece(hitPiece.id).orientation;
-      hitPiece.mesh.userData.targetQuaternion = quaternionForOrientationKey(hitPiece.orientation);
-    }
+    // Tapping the selected piece again lets go of it; turning is the Turn button's job now.
+    deselectOnEmptyTap();
+    return;
   } else {
     current.state = selectPiece(current.state, hitPiece.id);
     current.pieces.forEach((p) => setPieceSelectedVisual(p, p.id === current.state.selectedPieceId));
@@ -1285,6 +1391,7 @@ function handleTrayTap(clientX, clientY) {
 }
 
 function handleTargetTap(clientX, clientY) {
+  if (current.solvedResult) return;
   const rect = renderer.domElement.getBoundingClientRect();
   raycaster.setFromCamera(screenToNDC(clientX, clientY, rect), camera);
 
@@ -1322,7 +1429,11 @@ function handleTargetTap(clientX, clientY) {
   const bestHit = hits.find((h) => isUsableVoidHit(h.object)) || hits[0];
   const hitVoid = current.voids.find((v) => v.hitTarget === bestHit.object);
   if (!hitVoid) return;
+  placeOnVoid(hitVoid);
+}
 
+// Places the selected piece in a void (a tap on the target, or a drop), with the same feedback either way.
+function placeOnVoid(hitVoid) {
   const previousState = current.state;
   const result = placeSelected(current.state, hitVoid.id);
   current.state = result.state;
@@ -1388,7 +1499,7 @@ function handleTargetTap(clientX, clientY) {
 
   const justSolved = isSolved(current.state);
   if (!justSolved) flashTrayPlaced(); // the "Solved!" banner is already strong enough feedback on its own
-  if (justSolved) advanceOrFinish();
+  if (justSolved) finishStage();
 }
 
 function animate() {

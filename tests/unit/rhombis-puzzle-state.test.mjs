@@ -5,7 +5,7 @@
 // order (Stage 2); 6 identical pieces placeable in any order (Stage 3).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createPuzzleState, selectPiece, deselect, flipPiece, setPieceOrientation, openOrientationOptions, placeSelected, isSolved, voidValidityForPiece, ANY_SINGLE_CELL_GROUP } from '../../src/rhombis/puzzle-state.js';
+import { createPuzzleState, selectPiece, deselect, flipPiece, setPieceOrientation, openOrientationOptions, placeSelected, isSolved, voidValidityForPiece, ANY_SINGLE_CELL_GROUP, parOf, starsFor } from '../../src/rhombis/puzzle-state.js';
 
 function stage1State() {
   return createPuzzleState({
@@ -865,4 +865,65 @@ test('requiresPlacedFirst: voidValidityForPiece reads true once unblocked', () =
   state = placeSelected(state, 'v1').state;
   const validity = voidValidityForPiece(state, 'key');
   assert.equal(validity['v-key'], true);
+});
+
+// Auto-turn (DICTO 2026-10-10): a piece takes the orientation the void needs as it goes in.
+test('autoTurn: a piece goes into a void wanting another orientation, and takes it', () => {
+  const orientationOptions = ['y+', 'y-'];
+  let state = createPuzzleState({
+    pieces: [{ id: 'p0', orientation: 'y+', orientationOptions }, { id: 'p1', orientation: 'y+', orientationOptions }],
+    voids: [{ id: 'v-up', requiredOrientation: 'y+' }, { id: 'v-down', requiredOrientation: 'y-' }],
+    autoTurn: true,
+  });
+  state = selectPiece(state, 'p0');
+  assert.deepEqual(voidValidityForPiece(state, 'p0'), { 'v-up': true, 'v-down': true });
+  const r = placeSelected(state, 'v-down');
+  assert.equal(r.placed, true);
+  assert.equal(r.state.pieces.find((p) => p.id === 'p0').orientation, 'y-');
+  assert.equal(r.state.autoTurn, true, 'the flag survives a placement');
+  const r2 = placeSelected(selectPiece(r.state, 'p1'), 'v-up');
+  assert.equal(isSolved(r2.state), true);
+});
+
+test('autoTurn: an orientation the piece cannot take still rejects', () => {
+  let state = createPuzzleState({
+    pieces: [{ id: 'p0', orientation: 'y+', orientationOptions: ['y+'] }],
+    voids: [{ id: 'v', requiredOrientation: 'y-' }],
+    autoTurn: true,
+  });
+  state = selectPiece(state, 'p0');
+  assert.equal(placeSelected(state, 'v').reason, 'wrong-orientation');
+});
+
+// Par: the fewest pieces that fill the shape.
+test('parOf: a fused whole beats the loose pieces; decoys and burr order do not count', () => {
+  const state = createPuzzleState({
+    pieces: [
+      ...[0, 1, 2].map((i) => ({ id: `l${i}`, fillsGroup: ANY_SINGLE_CELL_GROUP })),
+      { id: 'whole', fillsGroup: 'full', requiresPlacedFirst: ['l0'] },
+      { id: 'decoy', fillsGroup: 'nowhere' },
+    ],
+    voids: [0, 1, 2].map((i) => ({ id: `v${i}`, groupIds: [`cell-${i}`, 'full'] })),
+  });
+  assert.equal(parOf(state), 1);
+});
+
+test('parOf: loose pieces with orientations, and an unfillable shape', () => {
+  const orientationOptions = ['y+', 'y-'];
+  const two = createPuzzleState({
+    pieces: [{ id: 'p0', orientation: 'y+', orientationOptions }, { id: 'p1', orientation: 'y+', orientationOptions }],
+    voids: [{ id: 'a', requiredOrientation: 'y+' }, { id: 'b', requiredOrientation: 'y-' }],
+  });
+  assert.equal(parOf(two), 2);
+  const short = createPuzzleState({ pieces: [{ id: 'p0' }], voids: [{ id: 'a' }, { id: 'b' }] });
+  assert.equal(parOf(short), null);
+});
+
+test('starsFor: three at par, two within half again, one beyond', () => {
+  assert.equal(starsFor(3, 3), 3);
+  assert.equal(starsFor(4, 3), 2);
+  assert.equal(starsFor(5, 3), 2);
+  assert.equal(starsFor(6, 3), 1);
+  assert.equal(starsFor(2, 1), 2);
+  assert.equal(starsFor(12, 1), 1);
 });
