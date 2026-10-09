@@ -104,6 +104,8 @@ const CSS = `
 .poly-search-input { width: 100%; box-sizing: border-box; min-height: var(--touch-compact, 36px); padding: 6px 10px; border-radius: var(--radius-s, 6px);
   background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); color: #eee; font: var(--text-m, 14px) var(--font-ui, sans-serif); }
 .poly-search-results { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; }
+/* Every wireframe in the DICTO menu in DICTOspheres gold (DICTO 2026-10-10); app blocks keep their colours. */
+.dim-wizard-overlay { --wire: #e8c25a; --wire-rgb: 232, 194, 90; }
 .poly-detail { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px; }
 .poly-section { margin: 0 0 12px; }
 .poly-section-title { font: 700 var(--text-s, 13px) var(--font-ui, sans-serif); color: var(--pale, #d8ffcc); border-bottom: 1px solid rgba(var(--accent-rgb, 94, 226, 51), 0.35); padding: 0 0 4px; margin: 0 0 8px; }

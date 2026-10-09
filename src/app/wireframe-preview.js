@@ -23,8 +23,10 @@ import { theme } from './site.js';
 // Canvas strokes can't use CSS variables, so read them from the canvas's own CSS context when drawing
 // (the DICTO wizard shows each app in its colours), falling back to the current theme.
 const cssVar = (el, name) => (el ? getComputedStyle(el).getPropertyValue(name).trim() : '');
-const lineColour = (el) => cssVar(el, '--accent-strong') || theme().strong;
-const lineColourDim = (el) => `rgba(${cssVar(el, '--accent-rgb') || theme().accentRgb}, 0.35)`;
+// A place can set its own wire colour (--wire, --wire-rgb): the DICTO menu draws every wireframe in
+// DICTOspheres gold (DICTO 2026-10-10).
+const lineColour = (el) => cssVar(el, '--wire') || cssVar(el, '--accent-strong') || theme().strong;
+const lineColourDim = (el) => `rgba(${cssVar(el, '--wire-rgb') || cssVar(el, '--accent-rgb') || theme().accentRgb}, 0.35)`;
 const SPIN_PER_FRAME = 0.008;
 const TILT = 0.5;
 
