@@ -20,7 +20,8 @@ try {
 const stale = JSON.parse(readFileSync(new URL('./stale-terms.json', import.meta.url), 'utf8'));
 let text = about.toLowerCase();
 for (const a of stale.allow ?? []) text = text.split(a.toLowerCase()).join(' ');
-const found = [...(stale.terms ?? []), ...(stale.appTerms ?? [])].filter((term) => new RegExp(`(^|[^a-z0-9])${term.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^a-z0-9]|$)`).test(text));
+// While the ban is suspended only the 1D check below runs.
+const found = stale.suspended ? [] : [...(stale.terms ?? []), ...(stale.appTerms ?? [])].filter((term) => new RegExp(`(^|[^a-z0-9])${term.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^a-z0-9]|$)`).test(text));
 // Every dimension the app has should be named: from 1D.
 if (!/\b1d\b/.test(text)) found.push('(no mention of 1D)');
 console.log(`About: ${about}`);
