@@ -248,6 +248,8 @@ RHOMBIS est un puzzle 3D fait des mêmes pièces : remplissez la forme cible ave
 
 Polyhedraverse est la galerie de portraits : toutes les formes par famille, une à une, de près. Faites-la tourner, comparez-la, assemblez des formes face contre face ou sommet contre sommet, et imprimez le patron de n'importe quelle forme pour le plier. Son espace est dans DICTO : choisissez **3D+**, puis une famille dans le bloc vert de Polyhedraverse, puis une forme, et touchez le contour vert pour la poser. **Joindre d'un toucher** : touchez une face, puis une forme dans la bande qui apparaît (**Plus…** liste toutes celles qui vont) ; elle se pose au meilleur ajustement et reste choisie, si bien que chaque face touchée ensuite la reçoit d'un seul toucher (✕ pour arrêter). Un appui long retire une pièce. Le navigateur de formes et la 4D suivront ; d'ici là, le site complet est à [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app). Son propre guide : [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
 
+Quand une construction a deux pièces ou plus, son nom s'affiche sous 3D+ (les constructions nommées comme DICTO-Star ou Stella Octangula sont reconnues) ; touchez-le pour le lire en entier. La bande garde les 8 dernières formes utilisées, enregistrées avec la construction ; un appui long sur une forme l'épingle pour qu'elle soit toujours proposée (encore un appui long pour la détacher).
+
 ---
 
 # Référence des commandes
