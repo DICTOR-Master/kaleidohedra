@@ -515,7 +515,9 @@ grow (the largest scale at which each fits inside the one before is exactly 1):
 ## 13. The 13-dodecahedron cluster made solid (DICTO, 2026-10-09)
 
 *DICTO's cluster: "one dodecahedron at the center of a cluster", built in layers down a 3-fold axis:
-a snowflake belt of six, three in the dimples on top, turned over, three more.*
+a snowflake belt of six, three in the dimples on top, turned over, three more. Its earlier basis is
+DICTO's exhibition piece, a 12-dodecahedron cluster of PET bottle caps and their security rings,
+shown at a sculpture exhibition.*
 
 A regular dodecahedron with a regular dodecahedron on **each of its 12 faces**. A dodecahedron that
 shares a whole face with another is its mirror image across that face (opposite faces are turned
@@ -615,8 +617,9 @@ triangle that borders only pentagons. 33 regular-faced pieces, edge 1:
     pyramids + 4 tetrahedra, a second stack of dodecahedra outward.
   - 3 October: the related "heart", an augmented tridiminished icosahedron + 3 gyroelongated
     pentagonal pyramids + 52 icosahedron third stellations.
-  DICTO also built the star physically, from PET bottle caps and security rings. Whether the
-  4 October shell closes exactly is not yet checked; it is the next thing to resolve.
+  Its precursor is DICTO's physical build: PET bottle caps and security rings with an
+  icosidodecahedron at its centre (DICTO's photos). Whether the 4 October shell closes exactly is
+  not yet checked; it is the next thing to resolve.
 - Verified: `src/krp-core/scripts/verify-id-star.mjs` (krp-core v0.7.4), every push: no overlap
   among the 33 solids (separating axes), all 60 edges closed, every corner filled, exact volumes, and
   that whole icosahedra overlap.
