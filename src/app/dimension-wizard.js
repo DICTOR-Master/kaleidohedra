@@ -104,8 +104,8 @@ const CSS = `
 .poly-search-input { width: 100%; box-sizing: border-box; min-height: var(--touch-compact, 36px); padding: 6px 10px; border-radius: var(--radius-s, 6px);
   background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); color: #eee; font: var(--text-m, 14px) var(--font-ui, sans-serif); }
 .poly-search-results { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; }
-/* Every wireframe in the DICTO menu in DICTOspheres gold (DICTO 2026-10-10); app blocks keep their colours. */
-.dim-wizard-overlay { --wire: #e8c25a; --wire-rgb: 232, 194, 90; }
+/* DICTO's own shapes turn in DICTOspheres gold (DICTO 2026-10-10: "I only wanted dicto shapes"). */
+.dicto-gold { --wire: #e8c25a; --wire-rgb: 232, 194, 90; }
 .poly-detail { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px; }
 .poly-section { margin: 0 0 12px; }
 .poly-section-title { font: 700 var(--text-s, 13px) var(--font-ui, sans-serif); color: var(--pale, #d8ffcc); border-bottom: 1px solid rgba(var(--accent-rgb, 94, 226, 51), 0.35); padding: 0 0 4px; margin: 0 0 8px; }
@@ -573,6 +573,7 @@ const dictoRank = (e) => { const i = DICTO_ORDER.indexOf(e.lat?.key); return i <
 const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER'] };
 // The shape a face was tapped on, while picking: its space-filling partners come first (as the old site).
 let partnerIds = [];
+const gold = (id) => (DICTO_POLY.ids.includes(id) ? ' dicto-gold' : '');
 const polyIds = (key) => (key === 'PARTNERS' ? partnerIds : key === DICTO_POLY.key ? DICTO_POLY.ids.filter((id) => polyShapeName(id) !== id) : key === 'FAVOURITES' ? favourites() : key === 'RECENT' ? recent() : key === 'STARS' ? STAR_POLYHEDRON_IDS : familyIds(key));
 const polyLabel = (key) => (key === 'PARTNERS' ? t('poly.d.pairs', getSettings().language) : key === DICTO_POLY.key ? DICTO_POLY.label : key === 'FAVOURITES' ? t('wiz.poly.favourites', getSettings().language) : key === 'RECENT' ? t('wiz.poly.recent', getSettings().language) : key === 'STARS' ? 'Kepler–Poinsot' : FAMILY_META[key].label);
 // ---- the shape browser (step D4, DICTO 2026-10-09: inside DICTO) ----
@@ -844,10 +845,10 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     let html = '';
     for (const app of [...new Set(entries.map((e) => e.app))]) {
       const mine = entries.filter((e) => e.app === app);
-      html += `<div class="dicto-block" style="${blockStyle(app)}"><div class="dicto-block-name">${wordmark(app)}</div>`;
+      html += `<div class="dicto-block${app === 'dicto' && mine.some((e) => e.lattice3d) ? ' dicto-gold' : ''}" style="${blockStyle(app)}"><div class="dicto-block-name">${wordmark(app)}</div>`;
       // DICTO's own work first, in DICTO's livery.
       const dictoOwn = mine.filter((e) => e.dicto).sort((x, y) => dictoRank(x) - dictoRank(y));
-      if (dictoOwn.length) html += `<div class="dicto-livery" style="${blockStyle('dicto')}"><div class="dicto-livery-name">${wordmark('dicto')}</div>${dictoOwn.map(row).join('')}</div>`;
+      if (dictoOwn.length) html += `<div class="dicto-livery dicto-gold" style="${blockStyle('dicto')}"><div class="dicto-livery-name">${wordmark('dicto')}</div>${dictoOwn.map(row).join('')}</div>`;
       const rest = mine.filter((e) => !e.dicto);
       const restKinds = KINDS.filter(([kind]) => rest.some((e) => e.kind === kind));
       for (const [kind, label] of restKinds) {
@@ -994,7 +995,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     const L = getSettings().language;
     const fits = (x) => !picker || picker.fits(x);
     const card = (id) => `
-        <button type="button" class="dim-wizard-card-btn dim-wizard-piece" data-action="tool:polyShape:${id}">
+        <button type="button" class="dim-wizard-card-btn dim-wizard-piece${gold(id)}" data-action="tool:polyShape:${id}">
           ${previewSlot(() => polyShapeEdges(id))}
           <span class="dim-wizard-row-text"><span class="dim-wizard-label">${polyShapeName(id).replaceAll('_', ' ')}</span></span>
         </button>`;
@@ -1032,7 +1033,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     const kinds = (id) => faceKindsOf(id).map((k) => `${k.count} × ${k.regular ? t('poly.d.regular', L) + ' ' : ''}${faceWord(k, L)}`).join(', ');
     const keyOf = (k) => `${k.kind}|${k.regular}|${k.n}`;
     const shared = faceKindsOf(a).filter((k) => faceKindsOf(b).some((m) => keyOf(m) === keyOf(k))).map((k) => faceWord(k, L));
-    const col = (id, s) => `<div class="poly-compare-col"><canvas class="poly-compare-preview" width="140" height="140" data-shape="${id}"></canvas>
+    const col = (id, s) => `<div class="poly-compare-col"><canvas class="poly-compare-preview${gold(id)}" width="140" height="140" data-shape="${id}"></canvas>
       <div class="poly-detail-name">${polyShapeName(id).replaceAll('_', ' ')}</div>
       <div class="dim-wizard-desc">${familiesFor(id).map((f) => FAMILY_META[f]?.label ?? f).join(' · ')}</div>
       <dl class="poly-detail-stats"><dt>${t('poly.d.faces', L)}</dt><dd>${s.faces.length}: ${kinds(id)}</dd><dt>${t('poly.d.edges', L)}</dt><dd>${s.edges.length}</dd>
@@ -1055,7 +1056,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
       const q = input.value; lastQuery = q;
       const ids = searchShapes(q, L);
       out.innerHTML = !q.trim() ? '' : ids.length
-        ? `<div class="dim-wizard-sub">${tn('wiz.poly.results', L, ids.length)}</div>` + ids.map((id) => `<button type="button" class="dim-wizard-card-btn dim-wizard-piece" data-shape="${id}">
+        ? `<div class="dim-wizard-sub">${tn('wiz.poly.results', L, ids.length)}</div>` + ids.map((id) => `<button type="button" class="dim-wizard-card-btn dim-wizard-piece${gold(id)}" data-shape="${id}">
             <canvas class="dim-wizard-preview" width="40" height="40"></canvas><span class="dim-wizard-row-text"><span class="dim-wizard-label">${polyShapeName(id).replaceAll('_', ' ')}</span>
             <span class="dim-wizard-desc">${faceKindsOf(id).slice(0, 3).map((k) => `${k.count} × ${faceWord(k, L)}`).join(', ')}</span></span></button>`).join('')
         : `<div class="dim-wizard-sub">${t('wiz.poly.noResults', L)}</div>`;
@@ -1124,7 +1125,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     bodyEl.innerHTML = `
       ${back(L)}
       <div class="poly-detail dicto-block" style="${blockStyle('polyhedraverse')}">
-        ${star ? '<div class="poly-detail-stage"></div>' : '<canvas class="poly-detail-preview" width="200" height="200"></canvas>'}
+        ${star ? '<div class="poly-detail-stage"></div>' : `<canvas class="poly-detail-preview${gold(id)}" width="200" height="200"></canvas>`}
         <div class="poly-detail-name">${polyShapeName(id).replaceAll('_', ' ')}</div>
         <div class="dim-wizard-desc">${fams.join(' · ')}</div>
         ${creditsOf(id, L)}
