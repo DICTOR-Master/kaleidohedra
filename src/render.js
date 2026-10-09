@@ -4456,6 +4456,9 @@ async function init() {
       for (const c of own) for (const [dx, dy, dz] of offsets) { const k = `${c.x + dx},${c.y + dy},${c.z + dz}`; if (!built.has(k)) slots.set(k, [c.x + dx, c.y + dy, c.z + dz]); }
       return showRing([...slots.values()].map(([x, y, z]) => geomAt(x, y, z)), mergeGeometries, s);
     }
+    // Pieces without a ring of their own yet (the octahedron, flattened octahedron, disphenoid) show none
+    // rather than another piece's.
+    if (ring && piece && !RING_LENS[piece]) { syncLatticeQuickViewActiveState(false); return; }
     const lens = ring ? (RING_LENS[piece] ?? 'rd') : latticeQuickViewMode;
     const isFccFamily = lens === 'rd' || lens === 'cube' || lens === 'pyramid' || lens === 'rdquarter';
     const pieces = []; // { g, band }
