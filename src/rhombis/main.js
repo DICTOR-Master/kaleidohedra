@@ -35,7 +35,7 @@
 import * as THREE from 'three';
 import { quaternionForOrientationKey } from './geometry.js';
 import { STAGES, WIRE_COLOR, GHOST_OPACITY } from './stages.js';
-import { createPuzzleState, selectPiece, flipPiece, setPieceOrientation, openOrientationOptions, placeSelected, isSolved, voidValidityForPiece, smallestEnclosingGroupId, ANY_SINGLE_CELL_GROUP } from './puzzle-state.js';
+import { createPuzzleState, selectPiece, deselect, flipPiece, setPieceOrientation, openOrientationOptions, placeSelected, isSolved, voidValidityForPiece, smallestEnclosingGroupId, ANY_SINGLE_CELL_GROUP } from './puzzle-state.js';
 import { getSettings, updateSettings, onSettingsChange } from '../app/settings.js';
 import { t, LANG_ORDER } from './i18n.js';
 
@@ -70,7 +70,7 @@ const ROTATION_DAMPING = 0.25;
 // slower than rotation's own damping (0.25) -- a piece physically
 // traveling reads better a little more deliberate than a quick spin.
 const POSITION_DAMPING = 0.18;
-const SELECTED_LIFT = SCALE * 0.8; // relative to a single RD's own size -- tuned up from an initial 0.35 after a real screenshot comparison showed that read as barely perceptible
+const SELECTED_GLOW_SPEED = 0.006; // the selected piece's pulse, radians per ms
 // Friendlier labels for the small, named set of orientations that have
 // one; anything else (Stage 4's 12-way 'axisKey:in'/'axisKey:out') gets
 // a generic fallback from orientationLabel() below instead of an entry
@@ -406,6 +406,7 @@ function applyRhombisTranslations() {
   document.querySelectorAll('[data-i18n-title]').forEach((el) => { el.title = t(el.dataset.i18nTitle, lang); });
   if (langToggle) langToggle.textContent = lang.toUpperCase();
   if (current) updateHud();
+  if (current) stageLabel.textContent = t('stage.label', lang, { id: STAGES[stageIndex].id, name: STAGES[stageIndex].name }); // was left in the old language until the next stage
   if (stagePicker && !stagePicker.hidden) populateStagePicker();
 }
 if (langToggle) {
@@ -448,7 +449,7 @@ function flashTrayMessage(text, durationMs = 700) {
 }
 
 function flashTrayPlaced() {
-  flashTrayMessage('Placed!');
+  flashTrayMessage(t('tray.placed', getSettings().language));
 }
 
 // Dev/testing convenience only, never surfaced in the UI: ?stage=N
@@ -459,7 +460,10 @@ function flashTrayPlaced() {
 // Stage 1 for a missing/invalid value.
 const requestedStageId = Number(new URLSearchParams(window.location.search).get('stage'));
 const requestedStageIndex = STAGES.findIndex((s) => s.id === requestedStageId);
-let stageIndex = requestedStageIndex >= 0 ? requestedStageIndex : 0;
+// Continue where you left off (RHOMBIS audit 2026-10-10: a reload always went back to Stage 1).
+const LAST_STAGE_KEY = 'rhombis-last-stage';
+const lastStageIndex = (() => { try { return STAGES.findIndex((s) => s.id === Number(localStorage.getItem(LAST_STAGE_KEY))); } catch { return -1; } })();
+let stageIndex = requestedStageIndex >= 0 ? requestedStageIndex : lastStageIndex >= 0 ? lastStageIndex : 0;
 let current = null; // { skeletonGroup, pieces, voids, state, targetBox, trayBox, history, advanceTimer }
 
 function clearCurrentStage() {
@@ -474,6 +478,7 @@ function clearCurrentStage() {
 
 function loadStage(index) {
   clearCurrentStage();
+  try { localStorage.setItem(LAST_STAGE_KEY, String(STAGES[index].id)); } catch { /* best-effort */ }
   zoomFactor = 1; // a new stage's own derived framing, not a leftover zoom from whatever was open before
   trayZoomFactor = 1;
   const stageDef = STAGES[index];
@@ -734,6 +739,15 @@ function undo() {
 }
 
 undoButton.addEventListener('click', undo);
+// Restart: the stage as it began. Reset view: both views back to their starting turn and zoom.
+document.getElementById('rhombis-restart')?.addEventListener('click', () => loadStage(stageIndex));
+document.getElementById('rhombis-view')?.addEventListener('click', () => {
+  zoomFactor = 1; trayZoomFactor = 1;
+  trayGroup.rotation.set(0, 0, 0);
+  current?.skeletonGroup.rotation.set(0, 0, 0);
+  applyCameraFraming();
+  applyTrayFraming();
+});
 
 function pieceById(id) {
   return current.pieces.find((p) => p.id === id);
@@ -784,6 +798,20 @@ function revealNextTrayPiece() {
   }
 }
 
+// No piece can go anywhere any more (audit 2.4: a decoy placed first jammed stages 2, 92 and 116 in
+// silence): every unplaced piece, in every orientation it can take, fits no free void.
+function isStuck() {
+  const st = current.state;
+  return st.pieces.filter((p) => !p.placed).every((p) => {
+    const turnable = p.orientationOptions?.length > 0;
+    const options = turnable ? openOrientationOptions(st, p.id) : [p.orientation];
+    return options.every((o) => {
+      const s2 = turnable ? setPieceOrientation(st, p.id, o) : st;
+      return !Object.values(voidValidityForPiece(s2, p.id)).some(Boolean);
+    });
+  });
+}
+
 function updateHud() {
   const selectedId = current.state.selectedPieceId;
   const flippable = current.pieces.some((p) => p.orientationOptions);
@@ -795,7 +823,10 @@ function updateHud() {
   const multipleVoids = current.voids.length > 1;
   const remaining = remainingCount();
   const lang = getSettings().language;
-  const countSuffix = multipleVoids ? t('hud.leftSuffix', lang, { n: remaining }) : '';
+  // Progress as a share filled (audit 2.7: '120 left' on a 6-piece stage read as 120 more taps).
+  const filledPct = Math.round((100 * (current.voids.length - remaining)) / current.voids.length);
+  const countSuffix = multipleVoids ? t('hud.leftSuffix', lang, { p: filledPct }) : '';
+  if (remaining > 0 && isStuck()) { hud.textContent = t('hud.stuck', lang); return; }
 
   if (!selectedId) {
     if (flippable) {
@@ -832,12 +863,11 @@ function setPieceSelectedVisual(piece, isSelected) {
   // is its OLD tray slot, meaningless once it's a real part of the
   // assembled shape (a real live bug would otherwise yank it back
   // toward the tray on every future select/deselect elsewhere).
+  // It stays in its tray slot and glows (animate() pulses it): the old lift carried it out of tightly
+  // framed trays (Fable's RHOMBIS audit, 2026-10-10: Stage 17's piece vanished, so it couldn't be flipped).
   const sp = currentStatePiece(piece.id);
-  if (sp && !sp.placed) {
-    piece.mesh.userData.targetPosition = isSelected
-      ? piece.homePosition.clone().add(new THREE.Vector3(0, SELECTED_LIFT, 0))
-      : piece.homePosition.clone();
-  }
+  if (sp && !sp.placed) piece.mesh.userData.targetPosition = piece.homePosition.clone();
+  piece.mesh.userData.selectedGlow = isSelected;
 }
 
 // Also toggles visibility, not just color -- on a stage where void
@@ -1189,6 +1219,15 @@ const pointerNDC = new THREE.Vector2();
 // only ever live in the target viewport, so a tray tap need only ever
 // test pieces and a target tap need only ever test voids. Simpler than
 // the old single-camera version, not just relocated.
+// Tapping empty space lets go of the selected piece (audit 2.3: it stayed selected).
+function deselectOnEmptyTap() {
+  if (!current?.state.selectedPieceId) return;
+  current.state = deselect(current.state);
+  current.pieces.forEach((p) => setPieceSelectedVisual(p, false));
+  refreshVoidHighlights();
+  updateHud();
+}
+
 function handleTap(clientX, clientY, region) {
   if (region === 'tray') handleTrayTap(clientX, clientY);
   else handleTargetTap(clientX, clientY);
@@ -1222,7 +1261,7 @@ function handleTrayTap(clientX, clientY) {
     .filter((p) => !currentStatePiece(p.id).placed && p.mesh.visible)
     .map((p) => p.mesh);
   const hits = raycaster.intersectObjects(pieceTargets, false);
-  if (hits.length === 0) return;
+  if (hits.length === 0) { deselectOnEmptyTap(); return; }
   const hitPiece = current.pieces.find((p) => p.mesh === hits[0].object);
   if (!hitPiece) return;
 
@@ -1251,7 +1290,7 @@ function handleTargetTap(clientX, clientY) {
 
   const voidTargets = current.voids.map((v) => v.hitTarget);
   const hits = raycaster.intersectObjects(voidTargets, false);
-  if (hits.length === 0) return;
+  if (hits.length === 0) { deselectOnEmptyTap(); return; }
 
   // Real live bug (2026-09-03, "third green inside piece in RD will not
   // accept tapping as it is surrounded by incorrectly oriented pieces
@@ -1296,7 +1335,7 @@ function handleTargetTap(clientX, clientY) {
     if (result.reason === 'blocked') {
       const blockedPiece = currentStatePiece(result.pieceId);
       const stillNeeded = blockedPiece.requiresPlacedFirst.filter((id) => !currentStatePiece(id).placed).length;
-      flashTrayMessage(`Needs ${stillNeeded} other piece${stillNeeded === 1 ? '' : 's'} placed first`, 1800);
+      flashTrayMessage(t(stillNeeded === 1 ? 'tray.needsFirst.one' : 'tray.needsFirst.other', getSettings().language, { n: stillNeeded }), 1800);
     }
     return;
   }
@@ -1377,6 +1416,7 @@ function animate() {
       }
       const targetPosition = p.mesh.userData.targetPosition;
       if (targetPosition) p.mesh.position.lerp(targetPosition, POSITION_DAMPING);
+      if (p.mesh.material.emissive) p.mesh.material.emissiveIntensity = p.mesh.userData.selectedGlow ? 1.4 + 0.9 * Math.sin(performance.now() * SELECTED_GLOW_SPEED) : 1;
     }
   }
 

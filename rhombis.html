@@ -70,7 +70,7 @@
       #rhombis-title { grid-column: 2; grid-row: 1; }
       #rhombis-topbar > span:last-child { grid-column: 3; grid-row: 1; }
       #rhombis-stage { grid-column: 1 / -1; grid-row: 2; margin-left: 0; }
-      #rhombis-topbar a, #rhombis-lang-toggle, #rhombis-stage-picker-toggle { display: inline-block; min-height: 36px; line-height: 36px; padding-top: 0; padding-bottom: 0; }
+      #rhombis-topbar a, #rhombis-lang-toggle, #rhombis-stage-picker-toggle { display: inline-block; min-height: 44px; line-height: 44px; padding-top: 0; padding-bottom: 0; }
     }
     /* Visual frame ONLY -- pointer-events stays none, real interaction
        is the canvas's own WebGL raycasting underneath (main.js's
@@ -123,10 +123,15 @@
     @media (max-width: 480px) {
       #rhombis-solved { font-size: 1.8rem; }
     }
-    #rhombis-undo {
-      position: fixed; z-index: 10;
+    /* Undo, Restart and Reset view together, bottom left (RHOMBIS audit 2026-10-10: there was no
+       restart or way back to the starting view); the HUD sits above them on phones. */
+    #rhombis-actions {
+      position: fixed; z-index: 10; display: flex; gap: 0.5rem; flex-wrap: wrap;
       left: calc(1rem + env(safe-area-inset-left));
       bottom: calc(1.5rem + env(safe-area-inset-bottom));
+    }
+    @media (max-width: 600px) { #rhombis-hud { bottom: calc(5rem + env(safe-area-inset-bottom)); } }
+    #rhombis-undo, #rhombis-restart, #rhombis-view {
       font-family: system-ui, sans-serif; font-size: 0.9rem; color: #cfe9ff;
       background: rgba(5, 5, 10, 0.6); border: 1px solid #3a4a5a;
       border-radius: 999px; padding: 0.5rem 1rem;
@@ -238,7 +243,11 @@
     </span>
   </div>
   <div id="rhombis-hud"></div>
-  <button id="rhombis-undo" type="button" disabled data-i18n="undo.button">Undo</button>
+  <div id="rhombis-actions">
+    <button id="rhombis-undo" type="button" disabled data-i18n="undo.button">Undo</button>
+    <button id="rhombis-restart" type="button" data-i18n="button.restart">Restart</button>
+    <button id="rhombis-view" type="button" data-i18n="button.view">Reset view</button>
+  </div>
   <div id="rhombis-solved" hidden data-i18n="solved.hud">Solved!</div>
   <div id="rhombis-stage-picker" hidden>
     <div id="rhombis-stage-picker-panel">

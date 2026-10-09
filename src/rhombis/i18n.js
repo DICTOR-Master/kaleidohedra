@@ -28,7 +28,7 @@ const en = {
   'picker.section.molecules': 'Molecules',
   'picker.section.crystals': 'Crystals & Alloys',
   'picker.section.burr': 'Burr Puzzles',
-  'hud.leftSuffix': ' ({n} left)',
+  'hud.leftSuffix': ' ({p}% filled)',
   'hud.tapVoidFlip': 'Tap a piece, then tap its void (tap again to flip){suffix}',
   'hud.tapVoidPlace': 'Tap a piece, then tap a void to place it{suffix}',
   'hud.tapSkeletonPlace': 'Tap the piece, then tap the skeleton to place it',
@@ -41,6 +41,12 @@ const en = {
   'orientation.faceDirection': '{axis} face, {direction}',
   'orientation.inward': 'inward',
   'orientation.outward': 'outward',
+  'hud.stuck': 'No piece fits any more. Undo and try another order.',
+  'tray.placed': 'Placed!',
+  'tray.needsFirst.one': '1 other piece must be placed first',
+  'tray.needsFirst.other': '{n} other pieces must be placed first',
+  'button.restart': 'Restart',
+  'button.view': 'Reset view',
 };
 
 const ja = {
@@ -61,7 +67,7 @@ const ja = {
   'picker.section.molecules': '分子',
   'picker.section.crystals': '結晶と合金',
   'picker.section.burr': '組木パズル',
-  'hud.leftSuffix': '（残り{n}個）',
+  'hud.leftSuffix': '（{p}% 完成）',
   'hud.tapVoidFlip': 'ピースをタップし、次にその空間をタップ（再タップで反転）{suffix}',
   'hud.tapVoidPlace': 'ピースをタップし、次に空間をタップして配置{suffix}',
   'hud.tapSkeletonPlace': 'ピースをタップし、次に骨組みをタップして配置',
@@ -74,6 +80,12 @@ const ja = {
   'orientation.faceDirection': '{axis}面、{direction}',
   'orientation.inward': '内向き',
   'orientation.outward': '外向き',
+  'hud.stuck': 'もう入るピースがありません。元に戻して別の順番を試してください。',
+  'tray.placed': '置きました！',
+  'tray.needsFirst.one': '先にほかのピースを1個置いてください',
+  'tray.needsFirst.other': '先にほかのピースを{n}個置いてください',
+  'button.restart': 'やり直す',
+  'button.view': '視点を戻す',
 };
 
 const es = {
@@ -94,7 +106,7 @@ const es = {
   'picker.section.molecules': 'Moléculas',
   'picker.section.crystals': 'Cristales y aleaciones',
   'picker.section.burr': 'Rompecabezas de encaje',
-  'hud.leftSuffix': ' (quedan {n})',
+  'hud.leftSuffix': ' ({p}% lleno)',
   'hud.tapVoidFlip': 'Toca una pieza y luego su hueco (toca de nuevo para voltear){suffix}',
   'hud.tapVoidPlace': 'Toca una pieza y luego un hueco para colocarla{suffix}',
   'hud.tapSkeletonPlace': 'Toca la pieza y luego el esqueleto para colocarla',
@@ -107,6 +119,12 @@ const es = {
   'orientation.faceDirection': 'cara {axis}, hacia {direction}',
   'orientation.inward': 'adentro',
   'orientation.outward': 'afuera',
+  'hud.stuck': 'Ya no cabe ninguna pieza. Deshaz y prueba otro orden.',
+  'tray.placed': '¡Colocada!',
+  'tray.needsFirst.one': 'Primero hay que colocar otra pieza',
+  'tray.needsFirst.other': 'Primero hay que colocar otras {n} piezas',
+  'button.restart': 'Reiniciar',
+  'button.view': 'Restablecer vista',
 };
 
 const fr = {
@@ -127,7 +145,7 @@ const fr = {
   'picker.section.molecules': 'Molécules',
   'picker.section.crystals': 'Cristaux et alliages',
   'picker.section.burr': "Casse-tête d'assemblage",
-  'hud.leftSuffix': ' ({n} restant(s))',
+  'hud.leftSuffix': ' ({p}% rempli)',
   'hud.tapVoidFlip': 'Touchez une pièce, puis son vide (touchez à nouveau pour la retourner){suffix}',
   'hud.tapVoidPlace': 'Touchez une pièce, puis un vide pour la placer{suffix}',
   'hud.tapSkeletonPlace': 'Touchez la pièce, puis le squelette pour la placer',
@@ -140,6 +158,12 @@ const fr = {
   'orientation.faceDirection': 'face {axis}, vers {direction}',
   'orientation.inward': 'l\'intérieur',
   'orientation.outward': 'l\'extérieur',
+  'hud.stuck': 'Plus aucune pièce ne rentre. Annulez et essayez un autre ordre.',
+  'tray.placed': 'Posée !',
+  'tray.needsFirst.one': 'Il faut d’abord poser 1 autre pièce',
+  'tray.needsFirst.other': 'Il faut d’abord poser {n} autres pièces',
+  'button.restart': 'Recommencer',
+  'button.view': 'Réinitialiser la vue',
 };
 
 const ko = {
@@ -160,7 +184,7 @@ const ko = {
   'picker.section.molecules': '분자',
   'picker.section.crystals': '결정과 합금',
   'picker.section.burr': '짜맞추기 퍼즐',
-  'hud.leftSuffix': ' ({n}개 남음)',
+  'hud.leftSuffix': ' ({p}% 채움)',
   'hud.tapVoidFlip': '조각을 탭한 다음 빈 공간을 탭하세요 (다시 탭하면 뒤집기){suffix}',
   'hud.tapVoidPlace': '조각을 탭한 다음 빈 공간을 탭해 배치하세요{suffix}',
   'hud.tapSkeletonPlace': '조각을 탭한 다음 뼈대를 탭해 배치하세요',
@@ -173,6 +197,12 @@ const ko = {
   'orientation.faceDirection': '{axis}면, {direction}',
   'orientation.inward': '안쪽',
   'orientation.outward': '바깥쪽',
+  'hud.stuck': '더 이상 맞는 조각이 없습니다. 되돌린 뒤 다른 순서로 해 보세요.',
+  'tray.placed': '놓았습니다!',
+  'tray.needsFirst.one': '먼저 다른 조각 1개를 놓아야 합니다',
+  'tray.needsFirst.other': '먼저 다른 조각 {n}개를 놓아야 합니다',
+  'button.restart': '다시 시작',
+  'button.view': '시점 초기화',
 };
 
 const zh = {
@@ -193,7 +223,7 @@ const zh = {
   'picker.section.molecules': '分子',
   'picker.section.crystals': '晶体与合金',
   'picker.section.burr': '孔明锁',
-  'hud.leftSuffix': '（还剩 {n} 个）',
+  'hud.leftSuffix': '（已填 {p}%）',
   'hud.tapVoidFlip': '点击一个部件，然后点击它的空位（再次点击可翻转）{suffix}',
   'hud.tapVoidPlace': '点击一个部件，然后点击空位放置{suffix}',
   'hud.tapSkeletonPlace': '点击部件，然后点击骨架以放置',
@@ -206,6 +236,12 @@ const zh = {
   'orientation.faceDirection': '{axis}面，朝{direction}',
   'orientation.inward': '内',
   'orientation.outward': '外',
+  'hud.stuck': '已经没有能放进去的部件了。撤销一步，换个顺序试试。',
+  'tray.placed': '放好了！',
+  'tray.needsFirst.one': '需要先放好另外 1 个部件',
+  'tray.needsFirst.other': '需要先放好另外 {n} 个部件',
+  'button.restart': '重新开始',
+  'button.view': '复位视角',
 };
 
 const ru = {
@@ -226,7 +262,7 @@ const ru = {
   'picker.section.molecules': 'Молекулы',
   'picker.section.crystals': 'Кристаллы и сплавы',
   'picker.section.burr': 'Головоломки-замки',
-  'hud.leftSuffix': ' (осталось: {n})',
+  'hud.leftSuffix': ' (заполнено {p}%)',
   'hud.tapVoidFlip': 'Коснитесь детали, затем её пустоты (коснитесь снова, чтобы перевернуть){suffix}',
   'hud.tapVoidPlace': 'Коснитесь детали, затем пустоты, чтобы разместить её{suffix}',
   'hud.tapSkeletonPlace': 'Коснитесь детали, затем каркаса, чтобы разместить её',
@@ -239,6 +275,12 @@ const ru = {
   'orientation.faceDirection': 'грань {axis}, {direction}',
   'orientation.inward': 'внутрь',
   'orientation.outward': 'наружу',
+  'hud.stuck': 'Больше ни одна деталь не подходит. Отмените и попробуйте другой порядок.',
+  'tray.placed': 'Поставлено!',
+  'tray.needsFirst.one': 'Сначала нужно поставить ещё 1 деталь',
+  'tray.needsFirst.other': 'Сначала нужно поставить другие детали: {n}',
+  'button.restart': 'Заново',
+  'button.view': 'Сбросить вид',
 };
 
 const I18N = { en, ja, es, fr, ko, zh, ru };
