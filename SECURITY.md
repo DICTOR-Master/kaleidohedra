@@ -8,7 +8,7 @@ by the maintainer.
 
 Please report security issues privately, not as a public GitHub issue:
 
-- **Email:** jamesbaker08@gmail.com
+- **Email:** contact@dictospheres.com
 - **Or:** open a [GitHub private security advisory](https://github.com/DICTOR-Master/kaleidohedra/security/advisories/new) on this repo.
 
 Include what you found, how to reproduce it, and its impact if you can.

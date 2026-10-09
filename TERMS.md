@@ -37,4 +37,4 @@ noted in this file's git history.
 
 ## Contact
 
-jamesbaker08@gmail.com
+contact@dictospheres.com

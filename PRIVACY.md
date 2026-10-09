@@ -54,4 +54,4 @@ before that ships. (Visit counting was added this way on 2026-10-08.)
 
 ## Contact
 
-jamesbaker08@gmail.com
+contact@dictospheres.com
