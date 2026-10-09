@@ -3805,6 +3805,16 @@ async function init() {
         // routes to it here any more.)
         const OWN_WORLD_ACTIONS = { 'tool:shellsWorld': 'shells', 'tool:goldenWorld': 'golden', 'tool:roofFoldWorld': 'roofFold', 'tool:sunstarWorld': 'sunstar', 'tool:stellaJewelWorld': 'stellaJewel', 'tool:studiesWorld': 'studies', 'tool:targetsWorld': 'targets', 'tool:kaleidoWorld': 'kaleido', 'tool:netsWorld': 'nets', 'tool:signalWorld': 'signal', 'tool:constructWorld': 'construct' };
         // Polyhedraverse's shapes from DICTO (step D2): tool:polyShape:<ID> builds with that shape.
+        // A 4D polytope's Build (D5): tool:polytope:<seed>|<target>.
+        if (action?.startsWith('tool:polytope:')) {
+          own3D = 'poly';
+          applyDimensionVisibility();
+          updateQuickSelect();
+          const [seed, target] = action.slice('tool:polytope:'.length).split('|');
+          polyWorld?.startPolytope(seed, target);
+          updateQuickSelect();
+          return;
+        }
         if (action?.startsWith('tool:polyShape:')) {
           own3D = 'poly';
           applyDimensionVisibility();

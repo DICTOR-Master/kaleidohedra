@@ -94,7 +94,7 @@ dicto-node, phone first. Until D6 the new space is reached from DICTO in the oth
    face count), Scene, Favourites, Full Catalog with its sections and pairs; details (stats, preview,
    Add to Scene, Favourite, Compare, Net + PDF, star / radial / duoprism viewers, View 4D); Compare;
    the fit-filtered attach mode.
-5. **D5 4D.** RCP-C2B (next cell / shell, remove, Open / Closed, RCP-Coordinates, shell colours) and
+5. **D5 4D.** DONE 2026-10-09. RCP-C2B (next cell / shell, remove, Open / Closed, RCP-Coordinates, shell colours) and
    the 4D Polytopes with Build.
 6. **D6 Front door.** `site/polyhedraverse/` (head, changelog, icons), the Polyhedraverse chapter of
    the DICTO guide (from its 7-language guide), its Playwright specs ported to this repo, a

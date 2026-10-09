@@ -36,6 +36,7 @@
 // out of scope steps visible" -- direct instruction. All wording goes
 // through i18n.js ('wiz.*' and 'cat.*'); lattice, piece and tile names
 // stay English.
+import { polytope4D } from '../krp-core/src/polyhedra/polytopes4d.js';
 import { tileOnEdge } from '../geometry-extensions/kaleidoscope.js';
 import { embed } from '../geometry-extensions/trajectory-1d.js';
 import { mountWireframePreview } from './wireframe-preview.js';
@@ -621,7 +622,7 @@ function dimensionEntries(dim) {
     POLY_FAMILIES.filter((key) => familyIds(key).length).map((key) => ({ app: P, kind: 'shapes', key })),
     { app: P, kind: 'shapes', key: 'STARS' },
   );
-  if (dim === '4D') return LATTICES_4D.map((lat) => ({ app: R, kind: 'lattice', lat }));
+  if (dim === '4D') return [...LATTICES_4D.map((lat) => ({ app: R, kind: 'lattice', lat })), { app: P, kind: 'shapes', key: 'POLYTOPES_4D' }];
   return [{ app: R, kind: 'catalogue' }]; // 5D, 6D
 }
 // Where a DICTO lattice opens: the app whose door you came in by (Rhombiverse: its colours, no Shear;
@@ -978,7 +979,8 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
         onPick(picked);
         return;
       }
-      showShapeDetail(el.dataset.action.replace('tool:polyShape:', ''), () => showPolyFamily(key));
+      const id = el.dataset.action.replace('tool:polyShape:', '');
+      (polytope4D(id) ? showPolytopeDetail : showShapeDetail)(id, () => showPolyFamily(key));
     }));
   }
 
@@ -1022,6 +1024,29 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
       out.querySelectorAll('[data-shape]').forEach((b) => b.addEventListener('click', () => showShapeDetail(b.dataset.shape, () => { showDimensions('.poly-search'); const i = bodyEl.querySelector('.poly-search-input'); if (i) { i.value = lastQuery; i.dispatchEvent(new Event('input')); } })));
     };
     input.addEventListener('input', () => { clearTimeout(searchTimer); searchTimer = setTimeout(run, 180); });
+  }
+
+  // A 4D polytope's details (D5): its finished shadow turning, Schläfli symbol, cells, symmetry, dual;
+  // Build grows it cell by cell from its seed (the 600-cell also from a vertex).
+  function showPolytopeDetail(id, backTo) {
+    current = () => showPolytopeDetail(id, backTo);
+    resetPreviews();
+    const L = getSettings().language, p = polytope4D(id), dual = polytope4D(p.dual);
+    const name = (q) => (q.common ? `${q.name} (${t(`polytope.common.${q.common}`, L)})` : q.name);
+    bodyEl.innerHTML = `
+      ${back(L)}
+      <div class="poly-detail dicto-block" style="${blockStyle('polyhedraverse')}">
+        <canvas class="poly-detail-preview" width="200" height="200"></canvas>
+        <div class="poly-detail-name">${name(p)}</div>
+        <div class="dim-wizard-desc"><span style="font-family:monospace">${p.schlafli}</span> · ${t('polytope.cells', L, { n: p.cells, cell: t(`polytope.cell.${p.seed}`, L) })}<br>${t('polytope.symmetry', L, { group: p.symmetry })} · ${dual.id === p.id ? t('polytope.selfDual', L) : t('polytope.dualOf', L, { name: name(dual) })}</div>
+        <div class="poly-detail-actions">
+          <button type="button" class="poly-detail-build" data-target="${p.target}">${t('polytope.build', L)}</button>
+          ${p.vertexFirstTarget ? `<button type="button" class="poly-detail-build" data-target="${p.vertexFirstTarget}">${t('polytope.buildVertexFirst', L)}</button>` : ''}
+        </div>
+      </div>`;
+    previewDisposers.push(mountWireframePreview(bodyEl.querySelector('.poly-detail-preview'), polyShapeEdges(id), 200));
+    bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => backTo());
+    bodyEl.querySelectorAll('.poly-detail-build').forEach((b) => b.addEventListener('click', () => choose('3D', `tool:polytope:${p.seed}|${b.dataset.target}`, 'polyhedraverse')));
   }
 
   // A shape's details: turning preview, its families, faces by kind, corners and edges, convex or not,

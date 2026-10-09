@@ -17,6 +17,8 @@ import { GOLDEN_BUILDS, withNextRecipePiece } from '../krp-core/src/assembly/gol
 import { matchRewriteVertices, REWRITE_TARGET } from '../krp-core/src/polyhedra/rewrite.js';
 import { buildWallPrism, duoprismBuildDepth } from '../krp-core/src/polyhedra/duoprism.js';
 import { FOURD_CAPABLE_IDS } from '../krp-core/src/polyhedra/fourD.js';
+import { buildRcpComplex, rcpTargetOptions, buildSyntheticCellSpec, maxShell } from '../krp-core/src/polyhedra/rcpBuild.js';
+import { FOUR_D_SHAPE_PARAMS } from '../krp-core/src/polyhedra/radialProjection.js';
 import { buildFaceConnectors } from '../krp-core/src/polyhedra/core.js';
 import { mountWireframePreview } from './wireframe-preview.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
@@ -55,7 +57,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   let connections = []; // { nodeA, vertexA, nodeB, vertexB, kind: 'face' } (face indices for a face join)
   // queue: the shapes used lately, newest first (8); pins: the ones always offered (D3b, DICTO's build queue).
   // Favourites (pins) and Recent (the queue) live in poly-prefs.js, shared with DICTO's browser.
-  const view = { shape: DEFAULT_SHAPE, parts: 'solid' };
+  const view = { shape: DEFAULT_SHAPE, parts: 'solid', rcp: null };
   let active = false, skeleton = false, opacity = 1;
   let spherical = false, sphereScale = 1;
   let nextId = 1;
@@ -81,6 +83,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       if (POLYHEDRA[data.view?.shape]) view.shape = data.view.shape;
       adopt(Array.isArray(data.view?.pins) ? data.view.pins : [], Array.isArray(data.view?.queue) ? data.view.queue : []);
       if (PART_VIEWS.includes(data.view?.parts)) view.parts = data.view.parts;
+      if (data.view?.rcp && typeof data.view.rcp.target === 'string') view.rcp = { target: data.view.rcp.target, n: Math.max(1, data.view.rcp.n | 0), open: data.view.rcp.open !== false, coords: !!data.view.rcp.coords };
     }
   } catch { /* corrupt or blocked storage: start empty */ }
   function save() {
@@ -88,6 +91,9 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   }
 
   // ---- drawing ----
+  const rcpRootMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: true, side: THREE.DoubleSide, transparent: true, opacity: 0.18, depthWrite: false });
+  // Closed cells nest inside one another (a 4D shadow): see-through, so every shell reads.
+  const rcpCellMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: true, side: THREE.DoubleSide, transparent: true, opacity: 0.32, depthWrite: false });
   const pieceMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
   const hiddenPickMaterial = new THREE.MeshBasicMaterial({ visible: false, side: THREE.DoubleSide });
   const partsMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
@@ -223,6 +229,14 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       if (skeleton) lines.material.color.setHex(theme().accentHex);
       group.add(mesh, lines);
       pickTargets.push(mesh);
+      // RCP-C2B cells (D5).
+      if (view.rcp && rcpRoot()) {
+        // Closed: the inner cells project inside the root (the nearest cell in 4D), so the root goes
+        // see-through once any are built; it stays the tap target.
+        const cx = rcpComplex();
+        if (cx && view.rcp.n > 1 && !(view.rcp.open && builtShell(cx) <= 1)) mesh.material = rcpRootMaterial;
+        group.add(...rcpMeshes());
+      }
       // 4D Prism walls: the prism cell joining each face to the far copy, see-through.
       const walls = duoprismWalls();
       if (walls) group.add(...walls);
@@ -456,6 +470,121 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     return true;
   }
 
+  // ---- RCP-C2B, 4D build (step D5, from Polyhedraverse): the first piece, if it is a 4D seed (tetrahedron,
+  // cube, octahedron, dodecahedron), grows cell by cell into a 4D polytope's 3D shadow (krp-core
+  // rcpBuild): shell 1 a cell at a time, then a whole shell per tap; Open shows shell 1 as true copies of
+  // the seed on its faces, Closed their real projected positions (locked once shell 2 is built, which is
+  // anchored there); RCP-Coordinates marks each cell's own 4D coordinate. Shells in their own colours.
+  const rcpRoot = () => (nodes[0] && FOUR_D_SHAPE_PARAMS[nodes[0].shape] ? nodes[0] : null);
+  const rcpTargets = (id) => rcpTargetOptions((FOUR_D_SHAPE_PARAMS[id] ?? []).map((o) => o.name));
+  const complexCache = new Map();
+  function rcpComplex() {
+    const root = rcpRoot();
+    if (!root || !view.rcp) return null;
+    if (!rcpTargets(root.shape).includes(view.rcp.target)) view.rcp.target = rcpTargets(root.shape)[0];
+    const k = `${root.shape}|${view.rcp.target}`;
+    if (!complexCache.has(k)) complexCache.set(k, buildRcpComplex(root.shape, view.rcp.target));
+    return complexCache.get(k);
+  }
+  // The build order: shell by shell, cell by cell; n cells built (cell 0 is the root itself).
+  const rcpOrder = (cx) => [...cx.cells].sort((a, b) => a.shell - b.shell || a.id - b.id);
+  const builtShell = (cx) => rcpOrder(cx)[Math.max(0, (view.rcp?.n ?? 1) - 1)]?.shell ?? 0;
+  const SHELL_COLOURS = [0x5ee233, 0x22c3e6, 0xffc857, 0xc792ea, 0xff8a65, 0x7ae0b8];
+  // Open: a shell-1 cell as a true copy of the seed, flush on the root face it shares, nearest its closed place.
+  function openCellPoints(cx, cell) {
+    const seed = POLYHEDRA[cx.seedSpecId], R = seed.vertices;
+    const shared = cell.vertices3D.map((v) => R.findIndex((r) => Math.hypot(...r.map((x, i) => x - v[i])) < 1e-5)).filter((i) => i >= 0);
+    const fi = seed.faces.findIndex((f) => f.every((v) => shared.includes(v)));
+    if (fi < 0) return cell.vertices3D;
+    const ids = seed.faces.map((_, k) => k).filter((k) => seed.faces[k].length === seed.faces[fi].length);
+    const opts = faceAttachOptions(seed, fi, new THREE.Matrix4(), seed, ids);
+    const target = cell.vertices3D.reduce((t, v) => t.map((x, i) => x + v[i] / cell.vertices3D.length), [0, 0, 0]);
+    let best = null;
+    for (const o of opts) {
+      const pts = seed.vertices.map((v) => new THREE.Vector3(...v).applyQuaternion(o.quaternion).add(o.position).toArray());
+      const c = pts.reduce((t, v) => t.map((x, i) => x + v[i] / pts.length), [0, 0, 0]);
+      const d = Math.hypot(...c.map((x, i) => x - target[i]));
+      if (!best || d < best.d) best = { d, pts };
+    }
+    return best ? best.pts : cell.vertices3D;
+  }
+  function rcpMeshes() {
+    const cx = rcpComplex(), root = rcpRoot();
+    if (!cx || !root) return [];
+    const q = new THREE.Quaternion(...root.transform.quaternion), p0 = new THREE.Vector3(...root.transform.position);
+    const at = (v) => new THREE.Vector3(...v).applyQuaternion(q).add(p0);
+    const seed = POLYHEDRA[cx.seedSpecId], order = rcpOrder(cx), n = Math.min(view.rcp.n, order.length);
+    const open = view.rcp.open && builtShell(cx) <= 1;
+    const pos = [], col = [], edge = [], c = new THREE.Color();
+    for (const cell of order.slice(1, n)) {
+      const pts = open && cell.shell === 1 ? openCellPoints(cx, cell) : cell.vertices3D;
+      const spec = buildSyntheticCellSpec(seed, cell.id, pts);
+      c.setHex(SHELL_COLOURS[cell.shell % SHELL_COLOURS.length]);
+      const P = spec.vertices.map(at);
+      for (const f of spec.faces) for (let i = 1; i + 1 < f.length; i++) for (const k of [f[0], f[i], f[i + 1]]) { pos.push(P[k].x, P[k].y, P[k].z); col.push(c.r, c.g, c.b); }
+      for (const [a, b] of spec.edges) edge.push(P[a].x, P[a].y, P[a].z, P[b].x, P[b].y, P[b].z);
+    }
+    const out = [];
+    if (pos.length) {
+      const g = new THREE.BufferGeometry();
+      g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); g.computeVertexNormals();
+      const m = new THREE.Mesh(g, open ? pieceMaterial : rcpCellMaterial); m.userData.poly = 'rcp'; m.visible = !skeleton;
+      const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(edge, 3));
+      out.push(m, new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: skeleton ? theme().accentHex : EDGE_COLOR })));
+    }
+    if (view.rcp.coords) {
+      // Each built cell's own 4D coordinate, projected: a thin line from the centre and a small cross; the
+      // next shell's dimmed.
+      const nextShell = builtShell(cx) + 1, lines = [], dim = [];
+      const r = 0.06 * Math.max(...seed.vertices.map((v) => Math.hypot(...v)));
+      for (const cell of order) {
+        const built = order.indexOf(cell) < n;
+        if (!built && cell.shell !== nextShell) continue;
+        const into = built ? lines : dim, cp = at(cell.coordPoint3D), o = at([0, 0, 0]);
+        into.push(o.x, o.y, o.z, cp.x, cp.y, cp.z);
+        for (const d of [[r, 0, 0], [0, r, 0], [0, 0, r]]) into.push(cp.x - d[0], cp.y - d[1], cp.z - d[2], cp.x + d[0], cp.y + d[1], cp.z + d[2]);
+      }
+      for (const [list, op] of [[lines, 0.9], [dim, 0.3]]) if (list.length) {
+        const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(list, 3));
+        out.push(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0xc792ea, transparent: true, opacity: op, depthTest: false })));
+      }
+    }
+    return out;
+  }
+  function rcpRow(L) {
+    const root = rcpRoot();
+    if (!root || nodes.length !== 1) return '';
+    const targets = rcpTargets(root.shape);
+    if (!view.rcp) return `<div class="poly-golden"><button type="button" data-rcp-start>${t('poly.rcp.start', L)}</button></div>`;
+    const cx = rcpComplex(), order = rcpOrder(cx), n = Math.min(view.rcp.n, order.length), shell = builtShell(cx), top = maxShell(cx);
+    const shell1 = order.filter((c) => c.shell === 1).length, done = n >= order.length;
+    const next = done ? t('poly.rcp.complete', L) : shell < 1 || (shell === 1 && n - 1 < shell1) ? t('poly.rcp.nextCell', L, { i: n, k: shell1 }) : t('poly.rcp.nextShell', L, { s: shell + 1, m: top });
+    const locked = shell >= 2;
+    return `<div class="poly-golden"><span>${t('poly.rcp.title', L)}</span>
+      <select data-rcp-target aria-label="${t('poly.rcp.target', L)}">${targets.map((x) => `<option value="${x}"${x === view.rcp.target ? ' selected' : ''}>${x}</option>`).join('')}</select>
+      <button type="button" data-rcp-next${done ? ' disabled' : ''}>${next}</button>
+      <button type="button" data-rcp-back${n <= 1 ? ' disabled' : ''}>${t('poly.rcp.remove', L)}</button>
+      <button type="button" data-rcp-open${locked ? ' disabled' : ''} title="${locked ? t('poly.rcp.locked', L) : ''}">${view.rcp.open && !locked ? t('poly.rcp.open', L) : t('poly.rcp.closed', L)}</button>
+      <button type="button" data-rcp-coords aria-pressed="${view.rcp.coords}">${t('poly.rcp.coords', L)}</button></div>`;
+  }
+  function rcpAct(b) {
+    const cx = () => rcpComplex();
+    if ('rcpStart' in b.dataset) { view.rcp = { target: rcpTargets(rcpRoot().shape)[0], n: 1, open: true, coords: false }; }
+    else if ('rcpNext' in b.dataset) {
+      const order = rcpOrder(cx()), n = view.rcp.n, shell = builtShell(cx());
+      const shell1 = order.filter((c) => c.shell === 1).length;
+      if (shell < 1 || (shell === 1 && n - 1 < shell1)) view.rcp.n = n + 1; // shell 1: one cell
+      else { const s2 = shell + 1; view.rcp.n = order.filter((c) => c.shell <= s2).length; view.rcp.open = false; } // a whole shell, anchored Closed
+    } else if ('rcpBack' in b.dataset) {
+      const order = rcpOrder(cx()), shell = builtShell(cx());
+      view.rcp.n = shell >= 2 ? order.filter((c) => c.shell < shell).length : Math.max(1, view.rcp.n - 1);
+    } else if ('rcpOpen' in b.dataset) view.rcp.open = !view.rcp.open;
+    else if ('rcpCoords' in b.dataset) view.rcp.coords = !view.rcp.coords;
+    else return false;
+    save(); rebuild(); renderPanel();
+    return true;
+  }
+
   // ---- the shape strip ----
   // Shapes to offer: the build's own (newest first) and the shape last chosen in DICTO, up to 8.
   function queue() {
@@ -500,7 +629,8 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     disposers.forEach((d) => d()); disposers = [];
     const isGolden = active && !spherical && golden();
     const hasParts = active && !spherical && nodes.some((n) => PART_PICK[n.shape]);
-    const show = active && !spherical && (selection || chosen || isGolden || hasParts);
+    const hasRcp = active && !spherical && rcpRoot() && nodes.length === 1;
+    const show = active && !spherical && (selection || chosen || isGolden || hasParts || hasRcp);
     panel.classList.toggle('visible', Boolean(show));
     if (!show) return;
     const L = lang();
@@ -509,12 +639,13 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       ${selection ? `<button type="button" class="poly-more" data-more>${t('poly.more', L)}</button>` : ''}
       ${selection && selection.face != null && FOURD.has(selection.node.shape) ? `<button type="button" class="poly-more" data-duoprism>${t('poly.duoprism', L)}</button>` : ''}
       ${selection && REWRITE_TARGET[selection.node.shape] ? `<button type="button" class="poly-more" data-transform>${t('poly.transform', L, { name: polyShapeName(REWRITE_TARGET[selection.node.shape]).replaceAll('_', ' ') })}</button>` : ''}
-      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}`;
+      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}`;
     stripBody.querySelectorAll('.poly-shape canvas').forEach((cv) => disposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 34)));
   }
   panel.addEventListener('change', (e) => {
     if (e.target.matches('[data-golden-recipe]')) recipe = Number(e.target.value);
     if (e.target.matches('[data-parts]')) { view.parts = e.target.value; save(); rebuild(); }
+    if (e.target.matches('[data-rcp-target]')) { view.rcp.target = e.target.value; view.rcp.n = 1; view.rcp.open = true; save(); rebuild(); renderPanel(); }
   });
   // Long-press a shape in the strip to pin it (always offered) or unpin it.
   let pressTimer = 0, pressed = false;
@@ -536,6 +667,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     if (!b) return;
     if (pressed) { pressed = false; return; } // that was a long-press (pin), not a tap
     if ('clear' in b.dataset) { chosen = null; renderPanel(); return; }
+    if (rcpAct(b)) return;
     if ('transform' in b.dataset && selection) { transform(selection.node); return; }
     if ('duoprism' in b.dataset && selection) { duoprism(selection.node, selection.face); return; }
     if ('goldenNext' in b.dataset) { if (!takeAssembly(withNextSafePiece({ nodes, connections }))) showHudPrompt(t('poly.golden.none', lang()), 3000); return; }
@@ -602,6 +734,18 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       fittedRadius = Math.max(...POLYHEDRA[id].vertices.map((v) => Math.hypot(...v)));
       fitView?.(fittedRadius);
       showHudPrompt(polyShapeName(id), 2500);
+    },
+    // A 4D polytope's Build (D5): its seed alone, growing into the polytope (RCP-C2B), shell 1 open.
+    startPolytope(seed, target) {
+      if (!POLYHEDRA[seed]) return;
+      if (nodes.length && !confirm(t('polytope.replace', lang()))) return;
+      nodes = [{ ...outlineNode(), shape: seed, id: `n${nextId++}`, material: getMaterial() }];
+      connections = []; selection = null; chosen = null;
+      view.shape = seed;
+      view.rcp = { target, n: 1, open: true, coords: false };
+      commit();
+      fittedRadius = 2.2 * Math.max(...POLYHEDRA[seed].vertices.map((v) => Math.hypot(...v)));
+      fitView?.(fittedRadius);
     },
     get shape() { return view.shape; },
     get isEmpty() { return nodes.length === 0; },
