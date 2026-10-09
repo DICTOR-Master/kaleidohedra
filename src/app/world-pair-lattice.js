@@ -175,6 +175,8 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
       pickTargets.push(m);
     } else if (clustered()) {
       drawClusters(modeOf().cluster, S);
+      // Five-fold axes on every Jewel or dodecahedron held (in the Hexa networks every held cell is one).
+      if (view.axes) group.add(...fiveFoldOverlay(netOf(modeOf().cluster)?.allJewels ? S : S.filter(isEven)));
     } else {
       pieceMaterial.transparent = opacity < 1;
       pieceMaterial.opacity = opacity;
