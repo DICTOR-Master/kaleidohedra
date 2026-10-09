@@ -660,6 +660,7 @@ triangle that borders only pentagons. 33 regular-faced pieces, edge 1:
     the lattice-to-quasicrystal bridge.
   - Not reached: the post before Austin's 2013 cluster (archive offline that day), the Stella forum,
     printed books (Stewart's *Adventures Among the Toroids*), and non-English sources.
+- Archived: Zenodo [10.5281/zenodo.23256623](https://doi.org/10.5281/zenodo.23256623) (v2026.10.09-octet, 2026-10-09).
 
 ## 15. DICTO Jewel clusters (DICTO, 2026-10-09)
 
@@ -705,6 +706,7 @@ a whole rhombus, each group a shape of its own (krp-core `DJ_TETRAHEDRAL_CLUSTER
   inside one octahedral cluster).
 - Status: **not found**, a candidate, resting on #10: the clusters are made only of the DICTO Jewel,
   which itself was not found.
+- Archived: Zenodo [10.5281/zenodo.23256623](https://doi.org/10.5281/zenodo.23256623) (v2026.10.09-octet, 2026-10-09).
 
 ## 16. Sunstar clusters (DICTO, 2026-10-09)
 
@@ -732,6 +734,7 @@ Sunstar Lattice has the same cells, dodecahedra on the even ones and Dogstars on
   truss (Buckminster Fuller; the tetrahedral-octahedral honeycomb), and new tilings by regular
   tetrahedra and octahedra (MRSEC highlight). The clusters, the Dogstar-with-its-dodecahedra and the
   octet network of dodecahedra are DICTO's.
+- Archived: Zenodo [10.5281/zenodo.23256623](https://doi.org/10.5281/zenodo.23256623) (v2026.10.09-octet, 2026-10-09).
 
 Since 2026-10-08 the geometry and its checks live in [krp-core](https://github.com/DICTOR-Master/krp-core),
 the geometry shared by Kaleidohedra and Rhombiverse, pinned here at `src/krp-core`.
