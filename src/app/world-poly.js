@@ -30,7 +30,7 @@ import { getSettings, onSettingsChange } from './settings.js';
 import { SITE, storageKey, theme } from './site.js';
 import { migrateLegacyAssembly, ASSEMBLY_STORAGE_KEY } from '../krp-core/src/assembly/assembly.js';
 import { solidsOverlap, placedSolid, insideSolid } from '../krp-core/src/assembly/overlap.js';
-import { hintSlots, HINT_RULES } from '../krp-core/src/assembly/hints.js';
+import { hintSlots, hasHints as buildHasHints } from '../krp-core/src/assembly/hints.js';
 import { t } from './i18n.js';
 import { polyShapeName } from './poly-shapes.js';
 
@@ -221,14 +221,20 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   // patterning"): for pieces with a known pattern (krp-core HINT_RULES), the free spots next to the
   // build as faint ghosts in the colour of the piece that goes there, and the faces they touch glowing
   // in that colour, so mating faces match. Tap a ghost, or a glowing face, to place that piece there.
-  const HINT_COLOURS = { DICTO_HEXA: 0xd9a520, DICTO_HEXA_KEY: 0x8f5bd8 };
+  // Each kind of piece its own colour, so the two of a pair read apart.
+  const HINT_COLOURS = {
+    DICTO_HEXA: 0xd9a520, DICTO_HEXA_KEY: 0x8f5bd8, DICTO_DODECA13: 0xffc857,
+    DRAGON_JEWEL: 0xd9a520, STELLA_OCTANGULA: 0x8f5bd8, SEAMED_DODECAHEDRON: 0xffc857, DOGSTAR: 0x8f5bd8,
+    D4: 0xff8a65, D8: 0x4dd0e1, TRUNCATED_TETRAHEDRON: 0xffc857, CUBOCTAHEDRON: 0xffc857, TRUNCATED_CUBE: 0xffc857,
+    CUBE: 0xc792ea, PRISM_3: 0x7ae0b8, PRISM_6: 0xffc857, PRISM_8: 0xffc857,
+  };
   let hintCache = { key: '', slots: [], glow: new Map() };
-  const hasHints = () => nodes.some((n) => HINT_RULES[n.shape]);
+  const hasHints = () => buildHasHints(nodes, POLYHEDRA);
   function hints() {
     if (!view.hints || !hasHints()) return { slots: [], glow: new Map() };
     const key = JSON.stringify(nodes.map((n) => [n.shape, n.transform]));
     if (hintCache.key === key) return hintCache;
-    const last = [...nodes].reverse().find((n) => HINT_RULES[n.shape]);
+    const last = nodes.at(-1);
     const slots = hintSlots(nodes, POLYHEDRA, { near: last?.transform.position });
     // A built face glows when the point just outside its middle is inside a slot's piece.
     const glow = new Map();
