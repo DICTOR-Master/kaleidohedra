@@ -781,6 +781,7 @@ clusters of #15 and #16 do. They do, and all six keep to one rule.*
   style (no cell in more than two clusters, no two sharing more than one) with the study's shares.
   The design study also checked overlap, winding and Euler characteristic on a 13³ window.
 - Study files: [studies/2026-10-09-kagome-hulls](studies/2026-10-09-kagome-hulls/).
+- Archived: Zenodo [10.5281/zenodo.23262227](https://doi.org/10.5281/zenodo.23262227) (v2026.10.09-hulls, 2026-10-09).
 - Status: **not found** in a web search on 2026-10-09 for the rhombohedral, cuboctahedral and
   rhombic dodecahedral nets as regroupings of a space filling. Known, and credited: corner-sharing
   octahedra (the ReO₃ and perovskite structures), corner-sharing tetrahedra (the pyrochlore
@@ -827,6 +828,7 @@ carved out of wood", about eight Jewels in volume. Names by DICTO.*
   Jewel 8, roof ⅔), 24 whole Jewel windows and stella-matching walls on the Hexa, and every parts view
   adding up. The network, packing and turning results come from the design study of 2026-10-09.
 - Study files: [studies/2026-10-09-dicto-hexa](studies/2026-10-09-dicto-hexa/).
+- Archived: Zenodo [10.5281/zenodo.23262227](https://doi.org/10.5281/zenodo.23262227) (v2026.10.09-hulls, 2026-10-09).
 - Status: **not found** in a web search on 2026-10-09 for a cube built from carved dodecahedra, or
   this block of eight. Known, and credited: the space filling by stella octangulas and octahedra, the
   cube, octahedron and stella inscribed in the rhombic dodecahedron, and the FCC primitive cell as a
@@ -861,6 +863,7 @@ Study 10a (recorded there as #12) is version v2026.10.08-convex, **DOI [10.5281/
 Study 10b, and 10a under its new label, are version v2026.10.08-checkerboard, **DOI [10.5281/zenodo.23223555](https://doi.org/10.5281/zenodo.23223555)**.
 Finding #12, the Star Chain Reaction, and its study 12a are version v2026.10.08-star-chain, **DOI [10.5281/zenodo.23226716](https://doi.org/10.5281/zenodo.23226716)**.
 Finding #13, the 13-dodecahedron cluster made solid, is version v2026.10.09-cluster, **DOI [10.5281/zenodo.23247392](https://doi.org/10.5281/zenodo.23247392)** (published 2026-10-09 Japan time; Zenodo shows 2026-10-08, UTC).
+Findings #17 (Kagome hulls) and #18 (the DICTO Hexa), with their study files, are version v2026.10.09-hulls, **DOI [10.5281/zenodo.23262227](https://doi.org/10.5281/zenodo.23262227)**.
 
 ## Sources
 
