@@ -104,6 +104,10 @@ const CSS = `
 /* An app's block: its name, then its entries, all in its colours. */
 .dicto-block { display: flex; flex-direction: column; gap: 6px; padding: 10px 10px 12px; border-left: 3px solid var(--accent-strong); background: rgba(var(--accent-rgb), 0.05); border-radius: var(--radius-m); }
 .dicto-block + .dicto-block { margin-top: 14px; }
+/* DICTO's own work inside an app's block: DICTO's silver livery. */
+.dicto-livery { display: flex; flex-direction: column; gap: 6px; padding: 8px 8px 10px; margin: 4px 0 6px; border: 1px solid rgba(var(--accent-rgb), 0.45); border-radius: var(--radius-m); background: rgba(var(--accent-rgb), 0.07); }
+.dicto-livery-name { font: 800 var(--text-s) var(--font-ui); letter-spacing: 0.1em; color: var(--pale); }
+.dicto-livery-name span { color: var(--accent-strong); }
 .dicto-block-name { font: 800 var(--text-xl)/1.2 var(--font-ui); letter-spacing: 0.06em; color: var(--pale); }
 .dicto-block-name span { color: var(--accent-strong); }
 .dicto-block .dim-wizard-section .dim-wizard-label { color: var(--pale); }
@@ -456,9 +460,26 @@ const K_WORLDS = [
 const K_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key))
   .map((l) => (l.key === 'hex' ? { ...l, pieces: l.pieces.filter((pc) => pc.action === 'tool:pieceType:hexprism') } : l));
 const R_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key));
-// Polyhedraverse's families (step D2): DICTO's new work first, the classical families after,
-// Miscellaneous last; 4D Polytopes waits for D5.
-const POLY_FAMILIES = ['SPACE_FILLING_PAIRS', 'STELLATIONS', 'PARALLELOHEDRA', 'BRIDGES_3D', 'APERIODIC', 'PLATONIC', 'ARCHIMEDEAN', 'CATALAN', 'JOHNSON', 'DELTAHEDRA', 'PRISMS', 'ANTIPRISMS', 'MISCELLANEOUS'];
+// Polyhedraverse's families: Platonic at the top as usual (DICTO 2026-10-09: "anyone wanting to
+// start at Platonic solids can do so as normal from the top of the green list"), DICTO's own pieces
+// above them in DICTO's livery; 4D Polytopes waits for D5.
+const POLY_FAMILIES = ['PLATONIC', 'ARCHIMEDEAN', 'CATALAN', 'JOHNSON', 'DELTAHEDRA', 'PRISMS', 'ANTIPRISMS', 'STELLATIONS', 'PARALLELOHEDRA', 'SPACE_FILLING_PAIRS', 'BRIDGES_3D', 'APERIODIC', 'MISCELLANEOUS'];
+// DICTO's own work, shown in DICTO's livery (silver) at the top of its app's block (DICTO 2026-10-09);
+// it still opens in its app. Lattices and worlds by key, single pieces by action, and DICTO's
+// Polyhedraverse pieces gathered from across its families.
+const DICTO_WORK = new Set(['roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc']);
+const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
+const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL'] };
+const polyIds = (key) => (key === DICTO_POLY.key ? DICTO_POLY.ids.filter((id) => polyShapeName(id) !== id) : familyIds(key));
+const polyLabel = (key) => (key === DICTO_POLY.key ? DICTO_POLY.label : FAMILY_META[key].label);
+// A lattice's DICTO pieces split off as their own (DICTO) entry, the rest stay the app's.
+function splitDicto(e) {
+  if (DICTO_WORK.has(e.lat.key)) return [{ ...e, dicto: true }];
+  const mine = e.lat.pieces.filter((pc) => DICTO_PIECE_ACTIONS.has(pc.action));
+  if (!mine.length) return [e];
+  const rest = e.lat.pieces.filter((pc) => !DICTO_PIECE_ACTIONS.has(pc.action));
+  return [{ ...e, dicto: true, lat: { ...e.lat, pieces: mine } }, ...(rest.length ? [{ ...e, lat: { ...e.lat, pieces: rest } }] : [])];
+}
 const APP_ORDER = ['kaleidohedra', 'rhombiverse', 'polyhedraverse'];
 
 // Every entry of a dimension: { app, kind, ... }. kind: 'lattice' and 'world' (a lattice section with
@@ -472,8 +493,10 @@ function dimensionEntries(dim) {
     ...K_LATTICES.map((lat) => ({ app: K, kind: 'lattice', lat })),
     ...R_LATTICES.map((lat) => ({ app: R, kind: 'lattice', lat })),
     ...K_WORLDS.map((lat) => ({ app: K, kind: 'world', lat })),
-    ...POLY_FAMILIES.filter((key) => familyIds(key).length).map((key) => ({ app: P, kind: 'shapes', key })),
-  ];
+  ].flatMap(splitDicto).concat(
+    { app: P, kind: 'shapes', key: DICTO_POLY.key, dicto: true },
+    POLY_FAMILIES.filter((key) => familyIds(key).length).map((key) => ({ app: P, kind: 'shapes', key })),
+  );
   if (dim === '4D') return LATTICES_4D.map((lat) => ({ app: R, kind: 'lattice', lat }));
   return [{ app: R, kind: 'catalogue' }]; // 5D, 6D
 }
@@ -619,12 +642,12 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
           </span>
         </button>`;
       if (e.kind === 'shapes') {
-        const ids = familyIds(e.key);
+        const ids = polyIds(e.key);
         return `
         <button type="button" class="dim-wizard-card-btn" data-family="${e.key}">
           ${previewSlot(() => polyShapeEdges(ids[0]))}
           <span class="dim-wizard-row-text">
-            <span class="dim-wizard-label">${FAMILY_META[e.key].label}</span>
+            <span class="dim-wizard-label">${polyLabel(e.key)}</span>
             <span class="dim-wizard-desc">${tn('wiz.poly.count', L, ids.length)}</span>
           </span>
         </button>`;
@@ -643,11 +666,15 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     let html = '';
     for (const app of [...new Set(entries.map((e) => e.app))]) {
       const mine = entries.filter((e) => e.app === app);
-      const kinds = KINDS.filter(([kind]) => mine.some((e) => e.kind === kind));
       html += `<div class="dicto-block" style="${blockStyle(app)}"><div class="dicto-block-name">${wordmark(app)}</div>`;
-      for (const [kind, label] of kinds) {
-        if (kinds.length > 1) html += `<div class="dim-wizard-kind">${t(label, L)}</div>`;
-        html += mine.filter((e) => e.kind === kind).map(row).join('');
+      // DICTO's own work first, in DICTO's livery.
+      const dictoOwn = mine.filter((e) => e.dicto);
+      if (dictoOwn.length) html += `<div class="dicto-livery" style="${blockStyle('dicto')}"><div class="dicto-livery-name">${wordmark('dicto')}</div>${dictoOwn.map(row).join('')}</div>`;
+      const rest = mine.filter((e) => !e.dicto);
+      const restKinds = KINDS.filter(([kind]) => rest.some((e) => e.kind === kind));
+      for (const [kind, label] of restKinds) {
+        if (restKinds.length > 1) html += `<div class="dim-wizard-kind">${t(label, L)}</div>`;
+        html += rest.filter((e) => e.kind === kind).map(row).join('');
       }
       html += '</div>';
     }
@@ -750,7 +777,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     resetPreviews();
     const L = getSettings().language;
     let grid = '';
-    for (const id of familyIds(key)) {
+    for (const id of polyIds(key)) {
       grid += `
         <button type="button" class="dim-wizard-card-btn dim-wizard-piece" data-action="tool:polyShape:${id}">
           ${previewSlot(() => polyShapeEdges(id))}
@@ -759,8 +786,8 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     }
     bodyEl.innerHTML = `
       ${back(L)}
-      <div class="dim-wizard-sub"><b>${FAMILY_META[key].label}</b> · ${t('wiz.poly.shapes', L)}</div>
-      <div class="dim-wizard-grid dicto-block" style="${blockStyle('polyhedraverse')}">${grid}</div>`;
+      <div class="dim-wizard-sub"><b>${polyLabel(key)}</b> · ${t('wiz.poly.shapes', L)}</div>
+      <div class="dim-wizard-grid dicto-block" style="${blockStyle(key === DICTO_POLY.key ? 'dicto' : 'polyhedraverse')}">${grid}</div>`;
     mountPreviews();
     bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => { openDim = '3D'; showDimensions(`[data-family="${key}"]`); });
     bodyEl.querySelectorAll('[data-action]').forEach((el) => el.addEventListener('click', () => choose('3D', el.dataset.action, 'polyhedraverse')));
