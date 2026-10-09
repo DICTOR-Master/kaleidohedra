@@ -8,11 +8,8 @@ on:
 
 jobs:
   unit-tests:
-    # Pure math/logic tests (lattice.js, worldstate.js, regions.js) --
-    # zero npm dependencies, src/package.json's "type": "module" is the
-    # only thing making plain `node --test` treat these as ESM. Scoped
-    # to src/ specifically, not the repo root -- independent of the root
-    # package.json's own devDependencies (esbuild, for scripts/build.mjs).
+    # Math/logic tests and the apps' own checks. Since the shape browser joined DICTO (D4), the DICTO
+    # screen's imports reach three (krp-core's face registration), so dependencies are installed.
     runs-on: ubuntu-latest
     timeout-minutes: 5 # normally ~1min -- a real hang should fail fast, not sit for GitHub's 360min default
     steps:
@@ -22,6 +19,7 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 20
+      - run: npm install --no-audit --no-fund
       - run: node --test tests/unit/
       # Kaleidohedra and Rhombiverse are one app (KRP, 2026-10-08): both apps' own checks run here; the
       # shared geometry's (krp-core) run in its own repo.
