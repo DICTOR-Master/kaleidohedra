@@ -33,6 +33,7 @@ import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey, theme } from './site.js';
+import { createSignalSound } from './signal-sound.js';
 
 const STORAGE_KEY = storageKey('1d-signal-world');
 const S = 0.35; // world units per unit of s
@@ -416,12 +417,14 @@ export function createSignalWorld({ scene, camera, controls, resetView = () => {
     last = now;
     placeStream();
     renderArrivals();
+    syncSound();
     raf = requestAnimationFrame(tick);
   }
   function setPlaying(on) {
     if (on && !cells.some((c) => c.type !== 'gap')) { showHudPrompt(t('sig.prompt.empty', lang()), 3000); on = false; }
     playing = on;
     if (on) { playT = 0; last = performance.now(); if (!raf) raf = requestAnimationFrame(tick); }
+    else sound.setTone(false);
     draw();
     renderPanel();
     measureArrival();
@@ -531,13 +534,35 @@ export function createSignalWorld({ scene, camera, controls, resetView = () => {
   // dot dash space controls", "type message .... send on the same line";
   // nobody is expected to know Morse): the view, the message, Send.
   panel.innerHTML = `
-    <div class="sig-decoded" aria-live="polite"></div><div class="w4d-row sig-message-row"><button type="button" class="sig-sym" data-view></button><input type="text" class="sig-message" maxlength="400" autocomplete="off" spellcheck="false" enterkeyhint="send"><button type="button" class="sig-sym sig-pulse" data-pulse></button><button type="button" class="sig-send" data-opt="send"></button></div>`;
+    <div class="sig-decoded" aria-live="polite"></div><div class="w4d-row sig-message-row"><button type="button" class="sig-sym" data-view></button><input type="text" class="sig-message" maxlength="400" autocomplete="off" spellcheck="false" enterkeyhint="send"><button type="button" class="sig-sym sig-pulse" data-pulse></button><button type="button" class="sig-sym" data-sound></button><button type="button" class="sig-send" data-opt="send"></button></div>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, 'signal');
   const viewBtn = panel.querySelector('[data-view]');
   const sendBtn = panel.querySelector('[data-opt="send"]');
   const input = panel.querySelector('.sig-message');
   const pulseBtn = panel.querySelector('[data-pulse]');
+  const soundBtn = panel.querySelector('[data-sound]');
+
+  // ---- sound (DICTO 2026-10-09): static, and the dots and dashes as tones as they arrive ----
+  // Off until 🔊; remembered on this device; only while in Signal.
+  const SOUND_KEY = storageKey('signal-sound');
+  const sound = createSignalSound();
+  let soundOn = false;
+  try { soundOn = localStorage.getItem(SOUND_KEY) === 'on'; } catch { /* storage blocked */ }
+  // A dot or dash at the arrival point, where the read-out shows letters arriving.
+  function toneNow() {
+    if (!playing) return false;
+    const P = period();
+    const y = (((playT % P) - uArrive) % P + P) % P;
+    return layout(cells).some(({ cell, s0, s1 }) => cell.type !== 'gap' && y >= s0 && y < s1);
+  }
+  const syncSound = () => { sound.setEnabled(active && soundOn); sound.setTone(active && soundOn && toneNow()); };
+  soundBtn.addEventListener('click', () => {
+    soundOn = !soundOn;
+    try { localStorage.setItem(SOUND_KEY, soundOn ? 'on' : 'off'); } catch { /* best-effort */ }
+    syncSound();
+    renderPanel();
+  });
 
   // ---- the pulse key ----
   // Timing: KEY_MS (trajectory-1d.js).
@@ -644,6 +669,10 @@ export function createSignalWorld({ scene, camera, controls, resetView = () => {
     pulseBtn.title = t('sig.pulse', L);
     pulseBtn.setAttribute('aria-label', pulseBtn.title);
     glossBtn.title = t('sig.glossary', L);
+    soundBtn.textContent = soundOn ? '🔊' : '🔇';
+    soundBtn.title = t(soundOn ? 'sig.soundOff' : 'sig.soundOn', L);
+    soundBtn.setAttribute('aria-label', soundBtn.title);
+    soundBtn.classList.toggle('active', soundOn);
     glossBtn.setAttribute('aria-label', glossBtn.title);
     sendBtn.textContent = playing ? `■ ${t('sig.stop', L)}` : t('sig.send', L);
     sendBtn.classList.toggle('active', playing);
@@ -689,7 +718,7 @@ export function createSignalWorld({ scene, camera, controls, resetView = () => {
     const b = ev.target.closest('button');
     if (!b) return;
     const d = b.dataset;
-    if ('pulse' in d) return;
+    if ('pulse' in d || 'sound' in d) return;
     if (d.view) setInside(d.view === 'inside');
     else if (d.opt === 'send') { if (playing) setPlaying(false); else send(); return; }
     save(); draw(); renderPanel();
@@ -718,6 +747,8 @@ export function createSignalWorld({ scene, camera, controls, resetView = () => {
       }
       renderPanel();
       draw();
+      // Entering Signal needs no tap of its own: a remembered 🔊 starts with the tap that chose it.
+      syncSound();
       if (on) { setFog(true); frameOutside(); }
     },
     get isEmpty() { return cells.length === 0; },
