@@ -806,6 +806,15 @@
     .poly-shape canvas { display: block; width: 34px; height: 34px; }
     .poly-shape.chosen { background: rgba(var(--accent-rgb), 0.35); border: 2px solid var(--accent-strong); }
     .poly-more { padding: 0 12px; }
+    .poly-shape.pinned { box-shadow: inset 0 -3px 0 var(--accent-strong); }
+    /* The running build name (D3b), where 1D's toggle sits (never shown together): one line, a tap for
+       all of it; clear of the tools column on the right. */
+    #poly-build-name { position: fixed; top: 86px; left: 16px; z-index: 900; max-width: calc(100% - 96px); min-height: var(--touch-compact);
+      padding: 4px 10px; border-radius: var(--radius-m); border: 1px solid rgba(var(--accent-rgb), 0.45); background: rgba(10, 12, 20, 0.75);
+      color: var(--accent); font: 600 var(--text-s) var(--font-ui); text-align: left; cursor: pointer; touch-action: manipulation;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    #poly-build-name[hidden] { display: none; }
+    #poly-build-name.open { white-space: normal; max-height: 50vh; overflow-y: auto; }
     /* Zenodo-style DOI badge: grey "DOI", blue number. */
     #welcome-card .doi-badge { display: inline-flex; margin-top: 8px; border-radius: 3px; overflow: hidden; text-decoration: none; font: 600 11px/1 var(--font-ui); }
     #welcome-card .doi-badge span { padding: 9px 8px; color: #fff; } /* about 30px tall, a comfortable tap */
@@ -919,6 +928,7 @@
       #hud-wordmark { top: 30px; left: 24px; }
       #hud-wizard-row { top: 54px; left: 24px; }
       #hud-1d-toggle { top: 102px; left: 24px; }
+      #poly-build-name { top: 102px; left: 24px; max-width: calc(100% - 120px); }
       #lattice2d-toggle-panel { top: 30px; }
       #world4d-info, .qc-info { top: 112px; left: 24px; }
     }

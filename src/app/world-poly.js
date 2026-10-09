@@ -10,6 +10,7 @@ import { facesCongruent } from '../krp-core/src/polyhedra/core.js';
 import { faceAttachOptions } from '../krp-core/src/assembly/faceAttach.js';
 import { rankFaceAttachOptions } from '../krp-core/src/assembly/faceRegistration.js';
 import { familyIds } from '../krp-core/src/polyhedra/families.js';
+import { describeAssembly } from '../krp-core/src/assembly/assemblyNaming.js';
 import { mountWireframePreview } from './wireframe-preview.js';
 import { polyShapeEdges } from './poly-shapes.js';
 import { familiesFor } from '../krp-core/src/polyhedra/families.js';
@@ -34,7 +35,8 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   // ---- state: Polyhedraverse's assembly form ----
   let nodes = []; // { id, shape, transform: { position, quaternion }, material }
   let connections = []; // { nodeA, vertexA, nodeB, vertexB, kind: 'face' } (face indices for a face join)
-  const view = { shape: DEFAULT_SHAPE };
+  // queue: the shapes used lately, newest first (8); pins: the ones always offered (D3b, DICTO's build queue).
+  const view = { shape: DEFAULT_SHAPE, queue: [], pins: [] };
   let active = false, skeleton = false, opacity = 1;
   let spherical = false, sphereScale = 1;
   let nextId = 1;
@@ -54,7 +56,12 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   const toJSON = () => ({ nodes: nodes.map((n) => ({ ...n })), connections: connections.map((c) => ({ ...c })) });
   try {
     const data = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
-    if (data) { setFromJSON(data); if (POLYHEDRA[data.view?.shape]) view.shape = data.view.shape; }
+    if (data) {
+      setFromJSON(data);
+      if (POLYHEDRA[data.view?.shape]) view.shape = data.view.shape;
+      view.queue = (Array.isArray(data.view?.queue) ? data.view.queue : []).filter((id) => POLYHEDRA[id]).slice(0, 8);
+      view.pins = (Array.isArray(data.view?.pins) ? data.view.pins : []).filter((id) => POLYHEDRA[id]);
+    }
   } catch { /* corrupt or blocked storage: start empty */ }
   function save() {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ version: 1, ...toJSON(), view })); } catch { /* best-effort */ }
@@ -199,6 +206,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     const built = nodes.map((x) => ({ spec: POLYHEDRA[x.shape], matrixWorld: matrixOf(x) }));
     const ranked = rankFaceAttachOptions(options, spec, built, nodes.indexOf(n), fi, id === n.shape && PARALLELOHEDRA.has(id));
     const best = ranked[0].option;
+    remember(id);
     const node = { id: `n${nextId++}`, shape: id, transform: { position: best.position.toArray(), quaternion: best.quaternion.toArray() }, material: getMaterial() };
     nodes.push(node);
     connections.push({ nodeA: n.id, vertexA: fi, nodeB: node.id, vertexB: best.incomingFaceIndex, kind: 'face' });
@@ -221,7 +229,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     commit();
   }
 
-  function commit() { save(); rebuild(); onChange(); renderPanel(); }
+  function commit() { save(); rebuild(); onChange(); renderPanel(); renderName(); }
   function handleTap(hit, mode) {
     const kind = hit.object.userData.poly;
     if (kind === 'outline') {
@@ -255,9 +263,11 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   // Shapes to offer: the build's own (newest first) and the shape last chosen in DICTO, up to 8.
   function queue() {
     const out = [];
-    for (const id of [chosen, ...nodes.map((n) => n.shape).reverse(), view.shape]) if (id && POLYHEDRA[id] && !out.includes(id)) out.push(id);
-    return out.slice(0, 8);
+    for (const id of [...view.pins, chosen, ...view.queue, ...nodes.map((n) => n.shape).reverse(), view.shape]) if (id && POLYHEDRA[id] && !out.includes(id)) out.push(id);
+    return out.slice(0, 8 + view.pins.length);
   }
+  // Remember a shape used, newest first; saved with the build.
+  function remember(id) { view.queue = [id, ...view.queue.filter((x) => x !== id)].slice(0, 8); }
   const panel = document.createElement('div');
   panel.className = 'poly-strip';
   document.body.appendChild(panel);
@@ -269,14 +279,30 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     if (!show) return;
     const L = lang();
     const offer = selection ? queue().filter((id) => fits(id, selection.node, selection.face)) : chosen ? [chosen] : [];
-    panel.innerHTML = `<div class="poly-shapes">${offer.map((id) => `<button type="button" class="poly-shape${id === chosen ? ' chosen' : ''}" data-shape="${id}" title="${polyShapeName(id).replaceAll('_', ' ')}"><canvas></canvas></button>`).join('')}
+    panel.innerHTML = `<div class="poly-shapes">${offer.map((id) => { const pinned = view.pins.includes(id); return `<button type="button" class="poly-shape${id === chosen ? ' chosen' : ''}${pinned ? ' pinned' : ''}" data-shape="${id}" title="${polyShapeName(id).replaceAll('_', ' ')} · ${t(pinned ? 'poly.unpinHint' : 'poly.pinHint', L)}"><canvas></canvas></button>`; }).join('')}
       ${selection ? `<button type="button" class="poly-more" data-more>${t('poly.more', L)}</button>` : ''}
       ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>`;
     panel.querySelectorAll('.poly-shape canvas').forEach((cv) => disposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 34)));
   }
+  // Long-press a shape in the strip to pin it (always offered) or unpin it.
+  let pressTimer = 0, pressed = false;
+  panel.addEventListener('pointerdown', (e) => {
+    const b = e.target.closest('.poly-shape');
+    if (!b) return;
+    pressed = false;
+    pressTimer = setTimeout(() => {
+      pressed = true;
+      const id = b.dataset.shape;
+      view.pins = view.pins.includes(id) ? view.pins.filter((x) => x !== id) : [...view.pins, id];
+      save();
+      renderPanel();
+    }, 550);
+  });
+  for (const ev of ['pointerup', 'pointerleave', 'pointercancel']) panel.addEventListener(ev, () => clearTimeout(pressTimer));
   panel.addEventListener('click', (e) => {
     const b = e.target.closest('button');
     if (!b) return;
+    if (pressed) { pressed = false; return; } // that was a long-press (pin), not a tap
     if ('clear' in b.dataset) { chosen = null; renderPanel(); return; }
     if ('more' in b.dataset && selection) {
       const sel = selection;
@@ -289,6 +315,20 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       else { chosen = chosen === id ? null : id; renderPanel(); }
     }
   });
+
+  // ---- the running build name (D3b): one shortened line under the dimension label; a tap shows it
+  // whole. Named builds are recognised (DICTO-Star, Stella Octangula, …), else the pieces listed.
+  const nameEl = document.createElement('button');
+  nameEl.type = 'button';
+  nameEl.id = 'poly-build-name';
+  nameEl.hidden = true;
+  document.body.appendChild(nameEl);
+  nameEl.addEventListener('click', () => nameEl.classList.toggle('open'));
+  function renderName() {
+    const name = active && nodes.length > 1 ? describeAssembly(nodes, connections) : '';
+    nameEl.hidden = !name;
+    if (nameEl.textContent !== name) { nameEl.textContent = name; nameEl.classList.remove('open'); }
+  }
 
   let shownLang = lang();
   onSettingsChange((st) => { if (st.language !== shownLang) { shownLang = st.language; renderPanel(); if (active) rebuild(); } });
@@ -304,6 +344,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       if (!on) selection = null;
       rebuild();
       renderPanel();
+      renderName();
     },
     setSkeleton(on) { skeleton = on; if (active) rebuild(); },
     setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) rebuild(); } },
@@ -315,6 +356,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     startWith(id) {
       if (!POLYHEDRA[id]) return;
       view.shape = id;
+      remember(id);
       if (nodes.length) { chosen = id; commit(); showHudPrompt(t('poly.chosen', lang(), { name: polyShapeName(id).replaceAll('_', ' ') }), 3000); return; }
       commit();
       fittedRadius = Math.max(...POLYHEDRA[id].vertices.map((v) => Math.hypot(...v)));

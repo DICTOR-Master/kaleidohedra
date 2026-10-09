@@ -246,6 +246,8 @@ RHOMBIS is a 3D puzzle made from the same pieces: fill the target shape with the
 
 Polyhedraverse is the portrait gallery: every shape in its families, one at a time, up close. Turn it, compare it, attach shapes face to face or vertex to vertex, and print any shape's net to fold. Its space is inside DICTO: choose **3D+**, then a family in Polyhedraverse's green block, then a shape, and tap the green outline to place it. **Tap attach**: tap a face, then a shape in the strip that appears (**More…** lists every shape that fits); it goes on at its best fit and stays chosen, so each face you tap next gets it in one tap (✕ to stop). Long-press removes a piece. The shape browser and 4D follow; until then the full site is at [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app). Its own guide: [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
 
+When a build has two or more pieces, its name shows under 3D+ (named builds such as DICTO-Star or Stella Octangula are recognised); tap it to read all of it. The strip keeps the last 8 shapes you used, saved with the build; long-press a shape to pin it so it is always offered (long-press again to unpin).
+
 ---
 
 # Control reference
