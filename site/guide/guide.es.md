@@ -250,6 +250,8 @@ Polyhedraverse es la galería de retratos: todas las formas por familias, una a 
 
 Cuando una construcción tiene dos piezas o más, su nombre aparece bajo 3D+ (se reconocen construcciones con nombre como DICTO-Star o Stella Octangula); tócalo para leerlo entero. La tira guarda las últimas 8 formas usadas, junto con la construcción; mantén pulsada una forma para fijarla y que siempre se ofrezca (otra vez para soltarla).
 
+Toca cerca de una esquina en vez de una cara y un punto la marca: cualquier forma se coloca ahí, esquina con esquina, apuntando hacia fuera, girada sola al mejor encaje. Con una cara tocada, **Prisma 4D** (en las formas que lo admiten) añade la misma forma empujada hacia fuera, unida por una celda prismática transparente, y **Transformar en…** convierte un deltaedro de 10 o 12 caras en el otro en su sitio. Una construcción de romboedros áureos muestra el **ayudante áureo**: cuántas piezas están en el verdadero teselado de Penrose 3D, **Siguiente pieza segura** y los zonoedros áureos **paso a paso**.
+
 ---
 
 # Referencia de controles

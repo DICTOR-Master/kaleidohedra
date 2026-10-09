@@ -1,16 +1,23 @@
 // Polyhedraverse inside the joined app (step D2, DICTO 2026-10-09): its own 3D world, the portrait
 // gallery's shapes from krp-core (src/polyhedra). Choose a shape in DICTO (families, then shapes);
 // an empty world shows its outline in the app's colour, tap it to place it; then tap attach (D3):
-// tap a face, then a shape. The shape browser comes with D4 (PLAN-POLYHEDRAVERSE.md).
+// tap a face or a corner, then a shape; 4D Prism, Transform to… and the Golden helper in the strip.
+// The shape browser comes with D4 (PLAN-POLYHEDRAVERSE.md).
 // Saved in Polyhedraverse's own form (krp-core assembly: nodes with a shape and a transform), so a
 // build moves between this world and the old site by Export/Import.
 import * as THREE from 'three';
 import { POLYHEDRA, isFaceEligibleForAttach } from '../krp-core/src/polyhedra/index.js';
 import { facesCongruent } from '../krp-core/src/polyhedra/core.js';
 import { faceAttachOptions } from '../krp-core/src/assembly/faceAttach.js';
-import { rankFaceAttachOptions } from '../krp-core/src/assembly/faceRegistration.js';
+import { rankFaceAttachOptions, isConvex, convexOverlap } from '../krp-core/src/assembly/faceRegistration.js';
 import { familyIds } from '../krp-core/src/polyhedra/families.js';
 import { describeAssembly } from '../krp-core/src/assembly/assemblyNaming.js';
+import { goldenStatus, isGoldenBuild, withNextSafePiece } from '../krp-core/src/assembly/goldenHelper.js';
+import { GOLDEN_BUILDS, withNextRecipePiece } from '../krp-core/src/assembly/goldenBuilds.js';
+import { matchRewriteVertices, REWRITE_TARGET } from '../krp-core/src/polyhedra/rewrite.js';
+import { buildWallPrism, duoprismBuildDepth } from '../krp-core/src/polyhedra/duoprism.js';
+import { FOURD_CAPABLE_IDS } from '../krp-core/src/polyhedra/fourD.js';
+import { buildFaceConnectors } from '../krp-core/src/polyhedra/core.js';
 import { mountWireframePreview } from './wireframe-preview.js';
 import { polyShapeEdges } from './poly-shapes.js';
 import { familiesFor } from '../krp-core/src/polyhedra/families.js';
@@ -50,7 +57,8 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     }));
     const ids = new Set(nodes.map((n) => n.id));
     connections = (Array.isArray(data?.connections) ? data.connections : []).filter((c) => c && ids.has(String(c.nodeA)) && ids.has(String(c.nodeB)) && Number.isInteger(c.vertexA) && Number.isInteger(c.vertexB))
-      .map((c) => ({ nodeA: String(c.nodeA), vertexA: c.vertexA, nodeB: String(c.nodeB), vertexB: c.vertexB, kind: c.kind ?? 'face' }));
+      .map((c) => ({ nodeA: String(c.nodeA), vertexA: c.vertexA, nodeB: String(c.nodeB), vertexB: c.vertexB, kind: c.kind ?? 'face',
+        ...(Array.isArray(c.duoprismExtraFaces) ? { duoprismExtraFaces: c.duoprismExtraFaces.filter(Number.isInteger) } : {}) }));
     nextId = 1 + Math.max(0, ...nodes.map((n) => Number(String(n.id).replace(/\D/g, '')) || 0));
   }
   const toJSON = () => ({ nodes: nodes.map((n) => ({ ...n })), connections: connections.map((c) => ({ ...c })) });
@@ -154,8 +162,11 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       if (skeleton) lines.material.color.setHex(theme().accentHex);
       group.add(mesh, lines);
       pickTargets.push(mesh);
+      // 4D Prism walls: the prism cell joining each face to the far copy, see-through.
+      const walls = duoprismWalls();
+      if (walls) group.add(...walls);
       // The tapped face, waiting for a shape: a bright overlay just off the surface.
-      if (selection && nodes.includes(selection.node)) group.add(faceHighlight(selection.node, selection.face));
+      if (selection && nodes.includes(selection.node)) group.add(selection.corner != null ? cornerDot(selection.node, selection.corner) : faceHighlight(selection.node, selection.face));
     } else {
       outlineMaterial.color.setHex(theme().strongHex);
       const [mesh, lines] = meshOf([outlineNode()], outlineMaterial, (n, c) => c.setHex(theme().strongHex), theme().strongHex);
@@ -169,11 +180,16 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   // Tap a face, then a shape: it attaches at once, at its best fit, placed automatically (DICTO
   // 2026-10-09: "no arrows, just automatic good placement"). That shape stays chosen, so each face
   // tapped next gets it in one tap, until another is picked (or ✕).
-  let selection = null; // { node, face }: a face waiting for a shape
+  let selection = null; // { node, face } or { node, corner }: a face or corner waiting for a shape
   let chosen = null; // the shape that stays chosen
   const PARALLELOHEDRA = new Set(familyIds('PARALLELOHEDRA'));
   const matrixOf = (n) => new THREE.Matrix4().compose(new THREE.Vector3(...n.transform.position), new THREE.Quaternion(...n.transform.quaternion), new THREE.Vector3(1, 1, 1));
-  const faceTaken = (n, fi) => connections.some((c) => (c.nodeA === n.id && c.vertexA === fi) || (c.nodeB === n.id && c.vertexB === fi));
+  const duoFaces = (c) => [c.vertexA, ...(c.duoprismExtraFaces ?? [])];
+  const faceTaken = (n, fi) => connections.some((c) => (c.kind === 'face' && ((c.nodeA === n.id && c.vertexA === fi) || (c.nodeB === n.id && c.vertexB === fi)))
+    || (c.kind === 'duoprism' && (c.nodeA === n.id || c.nodeB === n.id) && duoFaces(c).includes(fi)));
+  const cornerTaken = (n, vi) => connections.some((c) => c.kind === 'vertex' && ((c.nodeA === n.id && c.vertexA === vi) || (c.nodeB === n.id && c.vertexB === vi)));
+  // Does shape `id` go on this face or corner? Any shape goes on a free corner.
+  const fitsAt = (id, sel) => (sel.corner != null ? !!POLYHEDRA[id] : fits(id, sel.node, sel.face));
   // The faces of a shape that can go on this face (eligible and congruent), [] if none.
   function fittingFaces(id, n, fi) {
     const spec = POLYHEDRA[id], target = POLYHEDRA[n.shape];
@@ -196,6 +212,121 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     m.userData.poly = 'highlight';
     return m;
   }
+  // The tapped corner, waiting for a shape: a bright dot on it.
+  const dotGeometry = new THREE.SphereGeometry(1, 16, 10);
+  function cornerDot(n, vi) {
+    const P = worldPoints(n), s = POLYHEDRA[n.shape];
+    const m = new THREE.Mesh(dotGeometry, new THREE.MeshBasicMaterial({ color: theme().contrastHex, depthTest: false, transparent: true, opacity: 0.9 }));
+    m.scale.setScalar(0.12 * edgeLength(s));
+    m.position.copy(P[vi]);
+    m.renderOrder = 10;
+    m.userData.poly = 'highlight';
+    return m;
+  }
+  const edgeLength = (s) => s.edges.reduce((t, [a, b]) => t + Math.hypot(...s.vertices[a].map((x, i) => x - s.vertices[b][i])), 0) / s.edges.length;
+  const centreOf = (s) => s.vertices.reduce((a, v) => a.add(new THREE.Vector3(...v)), new THREE.Vector3()).divideScalar(s.vertices.length);
+  // Corner attach (D3c): the new shape meets corner vi of node n with one of its own corners (one
+  // with as many edges, else its first), pointing straight out, and turns about that line to the
+  // best twist found by itself (DICTO: no arrows): no overlap with the build, then the most room.
+  function attachCorner(id, n, vi) {
+    const spec = POLYHEDRA[id], root = POLYHEDRA[n.shape];
+    const deg = (s, v) => s.edges.filter((e) => e.includes(v)).length;
+    const vInc = Math.max(0, spec.vertices.findIndex((_, k) => deg(spec, k) === deg(root, vi)));
+    const rq = new THREE.Quaternion(...n.transform.quaternion), rp = new THREE.Vector3(...n.transform.position);
+    const corner = new THREE.Vector3(...root.vertices[vi]).applyQuaternion(rq).add(rp);
+    const out = new THREE.Vector3(...root.vertices[vi]).sub(centreOf(root)).applyQuaternion(rq).normalize();
+    const localDir = new THREE.Vector3(...spec.vertices[vInc]).sub(centreOf(spec)).normalize();
+    const base = new THREE.Quaternion().setFromUnitVectors(localDir, out.clone().negate());
+    const others = nodes.map((x) => ({ spec: POLYHEDRA[x.shape], pts: worldPoints(x) }));
+    const allPts = others.flatMap((o) => o.pts);
+    const eps = 1e-6 * edgeLength(spec);
+    let best = null;
+    for (let k = 0; k < 120; k++) {
+      const q = base.clone().multiply(new THREE.Quaternion().setFromAxisAngle(localDir, (k * Math.PI) / 60));
+      const pos = corner.clone().sub(new THREE.Vector3(...spec.vertices[vInc]).applyQuaternion(q));
+      const pts = spec.vertices.map((v) => new THREE.Vector3(...v).applyQuaternion(q).add(pos));
+      const clash = isConvex(spec) && others.some((o) => isConvex(o.spec) && convexOverlap(spec, pts, o.spec, o.pts, eps));
+      let room = Infinity;
+      pts.forEach((p, i) => { if (i !== vInc) for (const r of allPts) room = Math.min(room, p.distanceTo(r)); });
+      const score = (clash ? -1e9 : 0) + room;
+      if (!best || score > best.score + 1e-9) best = { score, q, pos };
+    }
+    remember(id);
+    const node = { id: `n${nextId++}`, shape: id, transform: { position: best.pos.toArray(), quaternion: best.q.toArray() }, material: getMaterial() };
+    nodes.push(node);
+    connections.push({ nodeA: n.id, vertexA: vi, nodeB: node.id, vertexB: vInc, kind: 'vertex' });
+    selection = null;
+    commit();
+    refitIfGrown();
+    if (best.score < 0) showHudPrompt(t('poly.cornerTight', lang()), 3000);
+    return true;
+  }
+  // 4D Prism (duoprism) attach (D3c): the same shape, same turn, pushed straight out from the tapped
+  // face, joined to it by a prism cell. A real duoprism has one far copy, so a second face of the same
+  // piece reuses it and gains its own wall.
+  const wallMaterial = new THREE.MeshStandardMaterial({ color: 0x8fd3ff, transparent: true, opacity: 0.28, depthWrite: false, side: THREE.DoubleSide });
+  function duoprismWalls() {
+    const pos = [], edge = [];
+    for (const c of connections) {
+      if (c.kind !== 'duoprism') continue;
+      const a = nodes.find((x) => x.id === c.nodeA), b = nodes.find((x) => x.id === c.nodeB);
+      if (!a || !b) continue;
+      const P = worldPoints(a), offset = new THREE.Vector3(...b.transform.position).sub(new THREE.Vector3(...a.transform.position)).toArray();
+      for (const fi of duoFaces(c)) {
+        const f = POLYHEDRA[a.shape].faces[fi];
+        if (!f) continue;
+        const w = buildWallPrism(f.map((k) => P[k].toArray()), offset);
+        for (const face of w.faces.slice(2)) for (let i = 1; i + 1 < face.length; i++) for (const k of [face[0], face[i], face[i + 1]]) pos.push(...w.verts[k]);
+        for (const [x, y] of w.edges) edge.push(...w.verts[x], ...w.verts[y]);
+      }
+    }
+    if (!pos.length) return null;
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    g.computeVertexNormals();
+    const lg = new THREE.BufferGeometry();
+    lg.setAttribute('position', new THREE.Float32BufferAttribute(edge, 3));
+    const m = new THREE.Mesh(g, wallMaterial);
+    m.userData.poly = 'wall';
+    return [m, new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x8fd3ff, transparent: true, opacity: 0.6 }))];
+  }
+  const FOURD = new Set(FOURD_CAPABLE_IDS);
+  function duoprism(n, fi) {
+    if (!FOURD.has(n.shape) || faceTaken(n, fi)) return false;
+    const existing = connections.find((c) => c.kind === 'duoprism' && c.nodeA === n.id);
+    if (existing) existing.duoprismExtraFaces = [...(existing.duoprismExtraFaces ?? []), fi];
+    else {
+      const spec = POLYHEDRA[n.shape], q = new THREE.Quaternion(...n.transform.quaternion);
+      const normal = new THREE.Vector3(...buildFaceConnectors(spec)[fi].normal).applyQuaternion(q).normalize();
+      const pos = new THREE.Vector3(...n.transform.position).addScaledVector(normal, duoprismBuildDepth(spec, fi));
+      const far = { id: `n${nextId++}`, shape: n.shape, transform: { position: pos.toArray(), quaternion: [...n.transform.quaternion] }, material: n.material ?? getMaterial() };
+      nodes.push(far);
+      connections.push({ nodeA: n.id, vertexA: fi, nodeB: far.id, vertexB: fi, kind: 'duoprism' });
+    }
+    selection = null;
+    commit();
+    refitIfGrown();
+    return true;
+  }
+  // Transform to… (D3c): a shape with a partner (the 10- and 12-face deltahedra) becomes it in place,
+  // same position and turn; its corner joins move to the nearest matching corners and its face joins
+  // let go (the neighbours never move).
+  function transform(n) {
+    const to = REWRITE_TARGET[n.shape];
+    if (!to) return false;
+    const mine = connections.filter((c) => c.nodeA === n.id || c.nodeB === n.id);
+    const corners = mine.filter((c) => c.kind === 'vertex');
+    const old = corners.map((c) => (c.nodeA === n.id ? c.vertexA : c.vertexB));
+    const match = matchRewriteVertices(n.shape, to, old);
+    connections = connections.filter((c) => !mine.includes(c) || (c.kind === 'vertex' && match[corners.indexOf(c)] !== undefined));
+    corners.forEach((c, i) => { if (match[i] === undefined) return; if (c.nodeA === n.id) c.vertexA = match[i]; else c.vertexB = match[i]; });
+    n.shape = to;
+    selection = null;
+    remember(to);
+    commit();
+    return true;
+  }
+  const attachAt = (id, sel) => (sel.corner != null ? attachCorner(id, sel.node, sel.corner) : attach(id, sel.node, sel.face));
   // Attach shape `id` on face fi of node n, the best fit first; false if it doesn't fit there.
   function attach(id, n, fi) {
     const incoming = fittingFaces(id, n, fi);
@@ -249,13 +380,18 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       n.material = m; commit(); return true;
     }
     if (rec.face == null) return false; // spheres: no faces to attach to
-    if (faceTaken(n, rec.face)) { showHudPrompt(t('poly.taken', lang()), 2000); return false; }
-    // The chosen shape goes straight on when it fits; otherwise the face waits for a shape.
-    if (chosen && attach(chosen, n, rec.face)) return true;
-    selection = { node: n, face: rec.face };
+    // A tap within a finger's reach of a corner picks the corner (a dot shows it), anywhere else the face.
+    const s = POLYHEDRA[n.shape], P = worldPoints(n);
+    let vi = -1, d = Infinity;
+    for (const k of s.faces[rec.face]) { const dk = P[k].distanceTo(hit.point); if (dk < d) { d = dk; vi = k; } }
+    const sel = d < 0.22 * edgeLength(s) ? { node: n, corner: vi } : { node: n, face: rec.face };
+    if (sel.corner != null ? cornerTaken(n, vi) : faceTaken(n, rec.face)) { showHudPrompt(t('poly.taken', lang()), 2000); return false; }
+    // The chosen shape goes straight on when it fits; otherwise the face or corner waits for a shape.
+    if (chosen && fitsAt(chosen, sel) && attachAt(chosen, sel)) return true;
+    selection = sel;
     rebuild();
     renderPanel();
-    if (!queue().some((id) => fits(id, n, rec.face))) showHudPrompt(t('poly.noFit', lang()), 3000);
+    if (!queue().some((id) => fitsAt(id, sel))) showHudPrompt(t('poly.noFit', lang()), 3000);
     return true;
   }
 
@@ -272,18 +408,44 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   panel.className = 'poly-strip';
   document.body.appendChild(panel);
   let disposers = [];
+  // The Golden helper (D3c), for a build of golden rhombohedra only: how many pieces sit in the true
+  // 3D Penrose tiling (a build inside it can always go on), the next piece that keeps it there, and
+  // the golden zonohedra built step by step.
+  let recipe = GOLDEN_BUILDS[2].axes;
+  const golden = () => nodes.length > 0 && isGoldenBuild({ nodes, connections });
+  function goldenRow(L) {
+    const st = goldenStatus({ nodes, connections });
+    if (!st) return '';
+    return `<div class="poly-golden"><span>${t('poly.golden.status', L, { n: st.inTiling, total: st.total })}</span>
+      <button type="button" data-golden-next>${t('poly.golden.next', L)}</button>
+      <select data-golden-recipe aria-label="${t('poly.golden.recipe', L)}">${GOLDEN_BUILDS.map((b) => `<option value="${b.axes}"${b.axes === recipe ? ' selected' : ''}>${b.name}</option>`).join('')}</select>
+      <button type="button" data-golden-step>${t('poly.golden.step', L)}</button></div>`;
+  }
+  function takeAssembly(a) {
+    if (!a) return false;
+    const mat = getMaterial();
+    setFromJSON({ nodes: a.nodes.map((n) => ({ ...n, material: n.material ?? mat })), connections: a.connections });
+    selection = null;
+    commit();
+    refitIfGrown();
+    return true;
+  }
   function renderPanel() {
     disposers.forEach((d) => d()); disposers = [];
-    const show = active && !spherical && (selection || chosen);
+    const isGolden = active && !spherical && golden();
+    const show = active && !spherical && (selection || chosen || isGolden);
     panel.hidden = !show;
     if (!show) return;
     const L = lang();
-    const offer = selection ? queue().filter((id) => fits(id, selection.node, selection.face)) : chosen ? [chosen] : [];
+    const offer = selection ? queue().filter((id) => fitsAt(id, selection)) : chosen ? [chosen] : [];
     panel.innerHTML = `<div class="poly-shapes">${offer.map((id) => { const pinned = view.pins.includes(id); return `<button type="button" class="poly-shape${id === chosen ? ' chosen' : ''}${pinned ? ' pinned' : ''}" data-shape="${id}" title="${polyShapeName(id).replaceAll('_', ' ')} · ${t(pinned ? 'poly.unpinHint' : 'poly.pinHint', L)}"><canvas></canvas></button>`; }).join('')}
       ${selection ? `<button type="button" class="poly-more" data-more>${t('poly.more', L)}</button>` : ''}
-      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>`;
+      ${selection && selection.face != null && FOURD.has(selection.node.shape) ? `<button type="button" class="poly-more" data-duoprism>${t('poly.duoprism', L)}</button>` : ''}
+      ${selection && REWRITE_TARGET[selection.node.shape] ? `<button type="button" class="poly-more" data-transform>${t('poly.transform', L, { name: polyShapeName(REWRITE_TARGET[selection.node.shape]).replaceAll('_', ' ') })}</button>` : ''}
+      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}`;
     panel.querySelectorAll('.poly-shape canvas').forEach((cv) => disposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 34)));
   }
+  panel.addEventListener('change', (e) => { if (e.target.matches('[data-golden-recipe]')) recipe = Number(e.target.value); });
   // Long-press a shape in the strip to pin it (always offered) or unpin it.
   let pressTimer = 0, pressed = false;
   panel.addEventListener('pointerdown', (e) => {
@@ -304,14 +466,22 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     if (!b) return;
     if (pressed) { pressed = false; return; } // that was a long-press (pin), not a tap
     if ('clear' in b.dataset) { chosen = null; renderPanel(); return; }
+    if ('transform' in b.dataset && selection) { transform(selection.node); return; }
+    if ('duoprism' in b.dataset && selection) { duoprism(selection.node, selection.face); return; }
+    if ('goldenNext' in b.dataset) { if (!takeAssembly(withNextSafePiece({ nodes, connections }))) showHudPrompt(t('poly.golden.none', lang()), 3000); return; }
+    if ('goldenStep' in b.dataset) {
+      const r = withNextRecipePiece({ nodes, connections }, recipe);
+      if (takeAssembly(r.assembly)) showHudPrompt(t('poly.golden.stepNote', lang(), { name: GOLDEN_BUILDS.find((x) => x.axes === recipe).name, i: r.step, total: r.total }), 2500);
+      return;
+    }
     if ('more' in b.dataset && selection) {
       const sel = selection;
-      pickShape((id) => fits(id, sel.node, sel.face), (id) => { chosen = id; attach(id, sel.node, sel.face); });
+      pickShape((id) => fitsAt(id, sel), (id) => { chosen = id; attachAt(id, sel); });
       return;
     }
     if (b.dataset.shape) {
       const id = b.dataset.shape;
-      if (selection) { chosen = id; attach(id, selection.node, selection.face); }
+      if (selection) { chosen = id; attachAt(id, selection); }
       else { chosen = chosen === id ? null : id; renderPanel(); }
     }
   });

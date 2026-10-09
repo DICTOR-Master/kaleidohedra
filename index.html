@@ -800,6 +800,9 @@
       max-width: calc(100% - 32px); box-sizing: border-box; padding: 6px 8px; border-radius: 12px; background: rgba(15, 15, 25, 0.92);
       border: 1px solid rgba(var(--accent-rgb), 0.5); display: flex; flex-direction: column; gap: 6px; align-items: center; }
     .poly-strip[hidden] { display: none; }
+    .poly-golden { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center; color: var(--accent); font: 600 var(--text-s) var(--font-ui); }
+    .poly-golden button, .poly-golden select { min-height: var(--touch-compact); padding: 4px 10px; border-radius: var(--radius-m); background: transparent;
+      border: 1px solid rgba(var(--accent-rgb), 0.55); color: var(--accent); font: inherit; touch-action: manipulation; }
     .poly-shapes { display: flex; gap: 6px; overflow-x: auto; max-width: 100%; align-items: center; }
     .poly-shapes button { min-width: var(--touch); min-height: var(--touch); flex: none; cursor: pointer; touch-action: manipulation;
       background: rgba(var(--accent-rgb), 0.1); border: 1px solid rgba(var(--accent-rgb), 0.45); border-radius: 10px; color: var(--accent); font: var(--text-s) var(--font-ui); }

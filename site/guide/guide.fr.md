@@ -250,6 +250,8 @@ Polyhedraverse est la galerie de portraits : toutes les formes par famille, une 
 
 Quand une construction a deux pièces ou plus, son nom s'affiche sous 3D+ (les constructions nommées comme DICTO-Star ou Stella Octangula sont reconnues) ; touchez-le pour le lire en entier. La bande garde les 8 dernières formes utilisées, enregistrées avec la construction ; un appui long sur une forme l'épingle pour qu'elle soit toujours proposée (encore un appui long pour la détacher).
 
+Touchez près d'un coin plutôt que d'une face et un point marque le coin : toute forme s'y pose, coin contre coin, pointée vers l'extérieur, tournée d'elle-même au meilleur ajustement. Avec une face touchée, **Prisme 4D** (sur les formes qui le permettent) ajoute la même forme poussée vers l'extérieur, reliée par une cellule prismatique transparente, et **Transformer en…** change un deltaèdre à 10 ou 12 faces en l'autre sur place. Une construction de rhomboèdres dorés affiche l'**aide dorée** : combien de pièces sont dans le vrai pavage de Penrose 3D, **Pièce sûre suivante**, et les zonoèdres dorés **pas à pas**.
+
 ---
 
 # Référence des commandes

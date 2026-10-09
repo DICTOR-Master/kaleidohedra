@@ -248,6 +248,8 @@ Polyhedraverse is the portrait gallery: every shape in its families, one at a ti
 
 When a build has two or more pieces, its name shows under 3D+ (named builds such as DICTO-Star or Stella Octangula are recognised); tap it to read all of it. The strip keeps the last 8 shapes you used, saved with the build; long-press a shape to pin it so it is always offered (long-press again to unpin).
 
+Tap near a corner instead of a face and a dot marks the corner: any shape then goes on there, corner to corner, pointing straight out, turned by itself to the best fit. With a face tapped, **4D Prism** (on shapes that have one) adds the same shape pushed straight out, joined by a see-through prism cell, and **Transform to…** turns a 10- or 12-face deltahedron into the other in place. A build of golden rhombohedra shows the **Golden helper**: how many pieces sit in the true 3D Penrose tiling, **Next safe piece**, and the golden zonohedra built **step by step**.
+
 ---
 
 # Control reference
