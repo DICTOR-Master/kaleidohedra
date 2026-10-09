@@ -3056,6 +3056,9 @@ async function init() {
     // Polyhedraverse's space has no lattice to view (its shapes are placed freely).
     // No lattice to show in Polyhedraverse, Studies or Targets: no button (nothing unnecessary shown).
     if (own3DActive() && ['poly', 'studies', 'targets'].includes(own3D)) document.getElementById('hud-quick-lattice-view').style.display = 'none';
+    // 2D's plain lattices have no ring of their own yet; the 3D cycle drew 3D ghosts into the flat scene
+    // (lattice-view audit, 2026-10-09). Own 2D worlds (the Kaleidoscope) keep their own view.
+    if (activeDimension === '2D' && !own3DActive()) document.getElementById('hud-quick-lattice-view').style.display = 'none';
   }
   // Re-applies the same visibility rule whenever activeDimension itself
   // changes (not just when World View mode changes, which is
