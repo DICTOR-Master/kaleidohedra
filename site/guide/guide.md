@@ -244,21 +244,56 @@ RHOMBIS is a 3D puzzle made from the same pieces: fill the target shape with the
 
 # Polyhedraverse {#polyhedraverse}
 
-Polyhedraverse is the portrait gallery: every shape in its families, one at a time, up close. Turn it, compare it, attach shapes face to face or vertex to vertex, and print any shape's net to fold. Its space is inside DICTO: choose **3D+**, then a family in Polyhedraverse's green block, then a shape, and tap the green outline to place it. **Tap attach**: tap a face, then a shape in the strip that appears (**More…** lists every shape that fits); it goes on at its best fit and stays chosen, so each face you tap next gets it in one tap (✕ to stop). Long-press removes a piece. The shape browser and 4D follow; until then the full site is at [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app). Its own guide: [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
+## Getting started
+
+Polyhedraverse is the portrait gallery: every shape in its families, one at a time, up close. Turn it, compare it, attach shapes face to face or vertex to vertex, and print any shape's net to fold. Its space is inside DICTO: choose **3D+**, then a family in Polyhedraverse's green block, then a shape, and tap the green outline to place it. **Tap attach**: tap a face, then a shape in the strip that appears (**More…** lists every shape that fits); it goes on at its best fit and stays chosen, so each face you tap next gets it in one tap (✕ to stop). Long-press removes a piece. It opens from DICTO in any of the apps.
+
+## The shape browser
 
 At the top of Polyhedraverse's block in DICTO, **search** finds shapes by name, family, face shape (e.g. pentagon) or number of faces, and **Favourites** and **Recent** list the shapes you've starred or used. Tap a shape for its **details**: a turning preview, its families, its faces by kind, edges, vertices, whether it is convex and what it pairs with, with **Build with it** and ☆ **Favourite** (the same as pinning it in the strip). Shapes with a printable net show **Net** in their details: fold it up with the slider or Fold up, and **Download PDF (A4)**, glue pairs numbered alike, with or without tabs. **Compare** puts two shapes side by side, with the faces they share (where one can go on the other). **4D prism** shows a shape's 4D prism as a 3D shadow, and for the shapes that are cells of a 4D polytope, **Extend into 4D** shows the whole polytope, every cell in perspective. The **Kepler–Poinsot** group has the four star solids with their real star faces, Schläfli symbol and density.
 
-**4D build.** Place a tetrahedron, cube, octahedron or dodecahedron on its own and tap **Grow into 4D**: it grows into a 4D polytope's 3D shadow (the 5-, 16- or 600-cell, the tesseract, the 24-cell or the 120-cell). Shell 1 comes a cell at a time, then a whole shell per tap; **Open** shows shell 1 as true copies on the faces, **Closed** where they really sit (from shell 2 on it stays closed); **RCP-Coordinates** marks each cell's 4D coordinate. DICTO → 4D → **4D Polytopes** shows the six regular polytopes; **Build** starts one from its seed.
+### The families
 
-**DICTO Dodeca-13.** In DICTO's pieces: DICTO's thirteen dodecahedra (one in the centre, one on each face) with the gaps filled, as one solid, plus its **Star**, **Unit**, **Wedge** and **Needle** as pieces of their own. All attach by their faces. With a Dodeca-13 in the build, **Parts** shows it as pieces (13 dodecahedra, 30 cyan wedges, 20 purple needles), as units (the centre and 12 units that lift straight out) or as stars (overlapping, see-through).
+| Family | What's in it |
+|---|---|
+| DICTO's pieces | DICTO's own, first: the DICTO Hexa and DICTO Dodeca-13 families, the DICTO Jewel and its clusters, the Sunstar clusters, DICTO's blocks and skewed cells |
+| Deltahedra | The 8 convex solids made only of equilateral triangles |
+| Platonic | The 5 regular solids |
+| Archimedean | The 13 semi-regular solids |
+| Johnson | The 92 convex solids with regular faces |
+| Catalan | The duals of the Archimedean solids |
+| Stellations | Pieces for the Platonic and Catalan solids, each fitting one face: flat (the pyramids join into a new convex solid, such as the cube from a tetrahedron), then each stellation the solid really has, up to its third. A piece on every face builds that stellation exactly, e.g. the dodecahedron's small stellated, great and great stellated dodecahedra |
+| Prisms, Antiprisms | Two polygons joined by a band of squares or triangles |
+| 4D Polytopes | The six regular 4D polytopes (5-, 8-, 16-, 24-, 120- and 600-cell) by symmetry; open one and Build places its seed cell and starts building it cell by cell |
+| Parallelohedra | Shapes that fill space by translation alone: Fedorov's five, then variants (the rhombohedron, DICTO's leaning hexagonal prism and its two blocks, and DICTO's skewed rhombic dodecahedron and its flattened rhombohedron, found in Zometool), then Kaleidohedra verified (the Bain stretch's equal-edge cells: the Bain rhombic dodecahedron, the regular-hexagon elongated dodecahedron, already known and reached independently by DICTO, and DICTO's Bain elongated dodecahedron), then the Kaleidohedra Regular 9 (every space-filler with equal edges whose faces are only squares, regular hexagons and 60° rhombi: the cube, 60° rhombohedron, leaning square prism, 60° rhombic prism, hexagonal prism, 60° leaning hexagonal prism, Bain rhombic dodecahedron, regular-hexagon elongated dodecahedron and truncated octahedron) |
+| Space-Filling Pairs | Two shapes that fill space together, including DICTO's DICTO Jewel with the stella octangula (from Kaleidohedra), whose faces attach to each other and whose rhombi match the Penrose thick rhombus, and the Sunstar Lattice pair: the Dogstar (the hole dodecahedra leave in their densest packing, an 8-pointed star with only golden edges, volume φ/2) and a dodecahedron seamed where Dogstars meet it, so 6 Dogstars attach to its faces to make a Sunstar |
+| Aperiodic Sets | Two aperiodic pairs: the prolate and oblate golden rhombohedra (the 3D Penrose tiling) and the thick and thin Penrose rhombus prisms (the layered 5D tiling) |
+| 3D+ Bridges | Shapes that are a shadow, slice, cell or corner of a higher-dimensional polytope; each one's details say which |
+| Miscellaneous | Graded pyramids, connector pieces and prism extenders |
 
-**Hints: what comes next.** Build with a piece that has a known pattern and faint ghosts show where the next pieces go, around the piece you placed last, each kind in its own colour; the faces they would touch glow in the same colour, so matching faces share a colour. The patterns: the DICTO Hexa and Hexa-Key checkerboard; the DICTO Dodeca-13's mirror column and bcc stack; and every space-filling pair's honeycomb (the Sunstar and Stella–Jewel Lattices, the octet truss, pyrochlore, rectified and truncated cubic, and the three prism honeycombs). A piece that belongs to several pairs (tetrahedron, octahedron, cube, triangular prism) shows them once its partner is in the build. Tap a ghost or a glowing face to place that piece there. **Hints** in the strip turns them off, for attaching anything else. A piece never goes where it would pass through one already built; if nothing fits, it says so.
+## Attaching
 
 When a build has two or more pieces, its name shows under 3D+ (named builds such as DICTO-Star or Stella Octangula are recognised); tap it to read all of it. The strip keeps the last 8 shapes you used, saved with the build; long-press a shape to pin it so it is always offered (long-press again to unpin).
 
 Tap near a corner instead of a face and a dot marks the corner: any shape then goes on there, corner to corner, pointing straight out, turned by itself to the best fit. With a face tapped, **4D Prism** (on shapes that have one) adds the same shape pushed straight out, joined by a see-through prism cell, and **Transform to…** turns a 10- or 12-face deltahedron into the other in place. A build of golden rhombohedra shows the **Golden helper**: how many pieces sit in the true 3D Penrose tiling, **Next safe piece**, and the golden zonohedra built **step by step**.
 
+## Hints: what comes next
+
+**Hints: what comes next.** Build with a piece that has a known pattern and faint ghosts show where the next pieces go, around the piece you placed last, each kind in its own colour; the faces they would touch glow in the same colour, so matching faces share a colour. The patterns: the DICTO Hexa and Hexa-Key checkerboard; the DICTO Dodeca-13's mirror column and bcc stack; and every space-filling pair's honeycomb (the Sunstar and Stella–Jewel Lattices, the octet truss, pyrochlore, rectified and truncated cubic, and the three prism honeycombs). A piece that belongs to several pairs (tetrahedron, octahedron, cube, triangular prism) shows them once its partner is in the build. Tap a ghost or a glowing face to place that piece there. **Hints** in the strip turns them off, for attaching anything else. A piece never goes where it would pass through one already built; if nothing fits, it says so.
+
+## DICTO's pieces
+
 DICTO's pieces start with the **DICTO Hexa** family: the DICTO Hexa (eight DICTO Jewels in a cube, passing through each other inside, one solid), the **DICTO Hexa-Key** (the gap between Hexas: Hexas and Hexa-Keys fill space together), two clusters of eight Hexas (rhombohedral, with a Hexa-Key sealed inside, and diamond, sharing corner Jewels), and the trimmed Jewel and roof they split into. With one in the build, **Parts** shows it as its Jewels, or split into pieces that don't overlap: A (cubes and roofs) or B (whole and trimmed Jewels).
+
+**DICTO Dodeca-13.** In DICTO's pieces: DICTO's thirteen dodecahedra (one in the centre, one on each face) with the gaps filled, as one solid, plus its **Star**, **Unit**, **Wedge** and **Needle** as pieces of their own. All attach by their faces. With a Dodeca-13 in the build, **Parts** shows it as pieces (13 dodecahedra, 30 cyan wedges, 20 purple needles), as units (the centre and 12 units that lift straight out) or as stars (overlapping, see-through).
+
+## Building in 4D
+
+**4D build.** Place a tetrahedron, cube, octahedron or dodecahedron on its own and tap **Grow into 4D**: it grows into a 4D polytope's 3D shadow (the 5-, 16- or 600-cell, the tesseract, the 24-cell or the 120-cell). Shell 1 comes a cell at a time, then a whole shell per tap; **Open** shows shell 1 as true copies on the faces, **Closed** where they really sit (from shell 2 on it stays closed); **RCP-Coordinates** marks each cell's 4D coordinate. DICTO → 4D → **4D Polytopes** shows the six regular polytopes; **Build** starts one from its seed.
+
+## Saving your work
+
+Your build saves itself as you go, separately for each app's address, and **Undo** (hold to scrub) takes back any step. **Settings → Export / Import World** moves builds between devices and addresses. On polyhedraverse.vercel.app, a build saved by the earlier Polyhedraverse site is brought over the first time you visit.
 
 ---
 

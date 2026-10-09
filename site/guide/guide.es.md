@@ -246,21 +246,56 @@ RHOMBIS es un rompecabezas 3D hecho con las mismas piezas: llena la forma objeti
 
 # Polyhedraverse {#polyhedraverse}
 
-Polyhedraverse es la galería de retratos: todas las formas por familias, una a una, de cerca. Gírala, compárala, une formas cara con cara o vértice con vértice e imprime el desarrollo de cualquier forma para plegarlo. Su espacio está dentro de DICTO: elige **3D+**, luego una familia en el bloque verde de Polyhedraverse y luego una forma, y toca el contorno verde para colocarla. **Unir tocando**: toca una cara y luego una forma en la tira que aparece (**Más…** lista todas las que encajan); se une en su mejor ajuste y queda elegida, así que cada cara que toques después la recibe de un toque (✕ para parar). Una pulsación larga quita una pieza. El explorador de formas y el 4D llegarán; hasta entonces, el sitio completo está en [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app). Su propia guía: [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
+## Primeros pasos
+
+Polyhedraverse es la galería de retratos: todas las formas por familias, una a una, de cerca. Gírala, compárala, une formas cara con cara o vértice con vértice e imprime el desarrollo de cualquier forma para plegarlo. Su espacio está dentro de DICTO: elige **3D+**, luego una familia en el bloque verde de Polyhedraverse y luego una forma, y toca el contorno verde para colocarla. **Unir tocando**: toca una cara y luego una forma en la tira que aparece (**Más…** lista todas las que encajan); se une en su mejor ajuste y queda elegida, así que cada cara que toques después la recibe de un toque (✕ para parar). Una pulsación larga quita una pieza. Se abre desde DICTO en cualquiera de las apps.
+
+## El explorador de formas
 
 Arriba del bloque de Polyhedraverse en DICTO, **buscar** encuentra formas por nombre, familia, forma de cara (p. ej. pentágono) o número de caras, y **Favoritos** y **Recientes** muestran las formas que marcaste o usaste. Toca una forma para ver sus **detalles**: una vista previa que gira, sus familias, sus caras por tipo, aristas, vértices, si es convexa y con qué hace pareja, con **Construir con ella** y ☆ **Favorito** (lo mismo que fijarla en la tira). Las formas con un desarrollo imprimible muestran **Desarrollo** en sus detalles: dóblalo con el control o con Plegar, y **Descargar PDF (A4)**, con los pares que se pegan numerados igual, con o sin pestañas. **Comparar** pone dos formas lado a lado, con las caras que comparten (donde una puede ir sobre la otra). **Prisma 4D** muestra el prisma 4D de una forma como sombra 3D, y para las formas que son celdas de un politopo 4D, **Extender a 4D** muestra el politopo entero, cada celda en perspectiva. El grupo **Kepler–Poinsot** tiene los cuatro sólidos estrellados con sus verdaderas caras estrelladas, símbolo de Schläfli y densidad.
 
-**Construcción 4D.** Coloca un tetraedro, cubo, octaedro o dodecaedro solo y toca **Crecer en 4D**: crece hasta la sombra 3D de un politopo 4D (la 5-, 16- o 600-celda, el teseracto, la 24-celda o la 120-celda). La capa 1 llega celda a celda, luego una capa entera por toque; **Abierto** muestra la capa 1 como copias exactas sobre las caras, **Cerrado** donde de verdad están (desde la capa 2 queda cerrado); **Coordenadas RCP** marca la coordenada 4D de cada celda. DICTO → 4D → **4D Polytopes** muestra los seis politopos regulares; **Construir** empieza uno desde su semilla.
+### Las familias
 
-**DICTO Dodeca-13.** En DICTO's pieces: los trece dodecaedros de DICTO (uno en el centro, uno en cada cara) con los huecos rellenos, como un sólido, y su **Star**, **Unit**, **Wedge** y **Needle** como piezas propias. Todas se unen por sus caras. Con un Dodeca-13 en la construcción, **Partes** lo muestra en piezas (13 dodecaedros, 30 cuñas cian, 20 agujas moradas), en unidades (el centro y 12 unidades que salen en línea recta) o en estrellas (se solapan, translúcidas).
+| Familia | Qué contiene |
+|---|---|
+| DICTO's pieces | Lo propio de DICTO, primero: las familias DICTO Hexa y DICTO Dodeca-13, la joya DICTO y sus racimos, los racimos Sunstar, los bloques de DICTO y sus celdas sesgadas |
+| Deltahedra | Los 8 sólidos convexos hechos solo de triángulos equiláteros |
+| Platonic | Los 5 sólidos regulares |
+| Archimedean | Los 13 sólidos semirregulares |
+| Johnson | Los 92 sólidos convexos de caras regulares |
+| Catalan | Los duales de los sólidos arquimedianos |
+| Stellations | Piezas para los sólidos platónicos y de Catalan, cada una encaja en una cara: plana (las pirámides se unen en un nuevo sólido convexo, como el cubo a partir de un tetraedro) y luego cada estelación que el sólido tiene de verdad, hasta la tercera. Una pieza en cada cara construye esa estelación exactamente, p. ej. los dodecaedros estrellado pequeño, grande y estrellado grande |
+| Prisms, Antiprisms | Dos polígonos unidos por una banda de cuadrados o triángulos |
+| 4D Polytopes | Los seis politopos 4D regulares (5, 8, 16, 24, 120 y 600 celdas) por simetría; abre uno y Constrúyelo coloca su celda semilla y empieza a construirlo celda a celda |
+| Parallelohedra | Formas que llenan el espacio solo por traslación: los cinco de Fedorov y sus variantes (el romboedro, y el prisma hexagonal inclinado de DICTO con sus dos bloques, y su dodecaedro rómbico sesgado con su romboedro aplanado, hallados con Zometool), y luego los verificados en Kaleidohedra (las celdas de aristas iguales del estiramiento de Bain: el dodecaedro rómbico de Bain, el dodecaedro alargado de hexágonos regulares, ya conocido y al que DICTO llegó de forma independiente, y el dodecaedro alargado de Bain, de DICTO), y luego el Kaleidohedra Regular 9 (todas las formas que llenan el espacio con aristas iguales y caras que son solo cuadrados, hexágonos regulares y rombos de 60°) |
+| Space-Filling Pairs | Dos formas que llenan el espacio juntas, entre ellas el DICTO Jewel de DICTO con la stella octangula (de Kaleidohedra), cuyas caras se unen entre sí y cuyos rombos encajan con el rombo grueso de Penrose, y el par del Sunstar Lattice: el Dogstar (el hueco que dejan los dodecaedros en su empaquetado más denso, estrella de 8 puntas con aristas solo áureas, volumen φ/2) y un dodecaedro con costuras donde lo tocan los Dogstars, para que 6 Dogstars se unan a sus caras y formen un Sunstar |
+| Aperiodic Sets | Dos pares aperiódicos: los romboedros áureos alargado y achatado (la teselación de Penrose en 3D) y los prismas de rombo de Penrose grueso y fino (la teselación 5D en capas) |
+| 3D+ Bridges | Formas que son sombra, sección, celda o esquina de un politopo de más dimensiones; sus detalles dicen cuál |
+| Miscellaneous | Pirámides graduadas, piezas conectoras y extensores de prisma |
 
-**Pistas: lo que viene.** Construye con una pieza de patrón conocido y fantasmas tenues muestran dónde van las piezas siguientes, alrededor de la última que colocaste, cada tipo con su color; las caras que tocarían brillan del mismo color, así las caras que encajan comparten color. Los patrones: el tablero del DICTO Hexa y el Hexa-Key; la columna espejo y la pila bcc del DICTO Dodeca-13; y el panal de cada par que llena el espacio (las redes Sunstar y Stella–Jewel, el octet truss, el pirocloro, el cúbico rectificado y el truncado, y los tres panales de prismas). Una pieza que está en varios pares (tetraedro, octaedro, cubo, prisma triangular) los muestra cuando su pareja está en la construcción. Toca un fantasma o una cara brillante para colocar esa pieza allí. **Pistas** en la tira las apaga, para unir cualquier otra cosa. Una pieza nunca va donde atravesaría otra ya puesta; si nada cabe, lo dice.
+## Unir piezas
 
 Cuando una construcción tiene dos piezas o más, su nombre aparece bajo 3D+ (se reconocen construcciones con nombre como DICTO-Star o Stella Octangula); tócalo para leerlo entero. La tira guarda las últimas 8 formas usadas, junto con la construcción; mantén pulsada una forma para fijarla y que siempre se ofrezca (otra vez para soltarla).
 
 Toca cerca de una esquina en vez de una cara y un punto la marca: cualquier forma se coloca ahí, esquina con esquina, apuntando hacia fuera, girada sola al mejor encaje. Con una cara tocada, **Prisma 4D** (en las formas que lo admiten) añade la misma forma empujada hacia fuera, unida por una celda prismática transparente, y **Transformar en…** convierte un deltaedro de 10 o 12 caras en el otro en su sitio. Una construcción de romboedros áureos muestra el **ayudante áureo**: cuántas piezas están en el verdadero teselado de Penrose 3D, **Siguiente pieza segura** y los zonoedros áureos **paso a paso**.
 
+## Pistas: lo que viene
+
+**Pistas: lo que viene.** Construye con una pieza de patrón conocido y fantasmas tenues muestran dónde van las piezas siguientes, alrededor de la última que colocaste, cada tipo con su color; las caras que tocarían brillan del mismo color, así las caras que encajan comparten color. Los patrones: el tablero del DICTO Hexa y el Hexa-Key; la columna espejo y la pila bcc del DICTO Dodeca-13; y el panal de cada par que llena el espacio (las redes Sunstar y Stella–Jewel, el octet truss, el pirocloro, el cúbico rectificado y el truncado, y los tres panales de prismas). Una pieza que está en varios pares (tetraedro, octaedro, cubo, prisma triangular) los muestra cuando su pareja está en la construcción. Toca un fantasma o una cara brillante para colocar esa pieza allí. **Pistas** en la tira las apaga, para unir cualquier otra cosa. Una pieza nunca va donde atravesaría otra ya puesta; si nada cabe, lo dice.
+
+## Las piezas de DICTO
+
 Las piezas de DICTO empiezan con la familia **DICTO Hexa**: la DICTO Hexa (ocho DICTO Jewels en un cubo, que se atraviesan por dentro, un solo sólido), la **DICTO Hexa-Key** (el hueco entre Hexas: Hexas y Hexa-Keys llenan el espacio juntas), dos racimos de ocho Hexas (romboédrico, con una Hexa-Key sellada dentro, y diamante, que comparten Jewels de esquina), y el Jewel recortado y el tejado en que se dividen. Con una en la construcción, **Partes** la muestra como sus Jewels, o dividida en piezas que no se solapan: A (cubos y tejados) o B (Jewels enteros y recortados).
+
+**DICTO Dodeca-13.** En DICTO's pieces: los trece dodecaedros de DICTO (uno en el centro, uno en cada cara) con los huecos rellenos, como un sólido, y su **Star**, **Unit**, **Wedge** y **Needle** como piezas propias. Todas se unen por sus caras. Con un Dodeca-13 en la construcción, **Partes** lo muestra en piezas (13 dodecaedros, 30 cuñas cian, 20 agujas moradas), en unidades (el centro y 12 unidades que salen en línea recta) o en estrellas (se solapan, translúcidas).
+
+## Construir en 4D
+
+**Construcción 4D.** Coloca un tetraedro, cubo, octaedro o dodecaedro solo y toca **Crecer en 4D**: crece hasta la sombra 3D de un politopo 4D (la 5-, 16- o 600-celda, el teseracto, la 24-celda o la 120-celda). La capa 1 llega celda a celda, luego una capa entera por toque; **Abierto** muestra la capa 1 como copias exactas sobre las caras, **Cerrado** donde de verdad están (desde la capa 2 queda cerrado); **Coordenadas RCP** marca la coordenada 4D de cada celda. DICTO → 4D → **4D Polytopes** muestra los seis politopos regulares; **Construir** empieza uno desde su semilla.
+
+## Guardar tu trabajo
+
+Tu construcción se guarda sola, por separado para la dirección de cada app, y **Deshacer** (mantén pulsado para retroceder) quita cualquier paso. **Ajustes → Exportar / Importar mundo** lleva construcciones entre dispositivos y direcciones. En polyhedraverse.vercel.app, una construcción guardada por el sitio anterior de Polyhedraverse se trae la primera vez que entras.
 
 ---
 
