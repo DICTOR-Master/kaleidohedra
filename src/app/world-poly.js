@@ -29,7 +29,8 @@ import { FAMILY_COLORS } from '../krp-core/src/assembly/pieceColors.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { SITE, storageKey, theme } from './site.js';
 import { migrateLegacyAssembly, ASSEMBLY_STORAGE_KEY } from '../krp-core/src/assembly/assembly.js';
-import { solidsOverlap, placedSolid } from '../krp-core/src/assembly/overlap.js';
+import { solidsOverlap, placedSolid, insideSolid } from '../krp-core/src/assembly/overlap.js';
+import { hintSlots, HINT_RULES } from '../krp-core/src/assembly/hints.js';
 import { t } from './i18n.js';
 import { polyShapeName } from './poly-shapes.js';
 
@@ -63,7 +64,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   let connections = []; // { nodeA, vertexA, nodeB, vertexB, kind: 'face' } (face indices for a face join)
   // queue: the shapes used lately, newest first (8); pins: the ones always offered (D3b, DICTO's build queue).
   // Favourites (pins) and Recent (the queue) live in poly-prefs.js, shared with DICTO's browser.
-  const view = { shape: DEFAULT_SHAPE, parts: 'solid', rcp: null };
+  const view = { shape: DEFAULT_SHAPE, parts: 'solid', rcp: null, hints: true };
   let active = false, skeleton = false, opacity = 1;
   let spherical = false, sphereScale = 1;
   let nextId = 1;
@@ -104,6 +105,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       if (POLYHEDRA[data.view?.shape]) view.shape = data.view.shape;
       adopt(Array.isArray(data.view?.pins) ? data.view.pins : [], Array.isArray(data.view?.queue) ? data.view.queue : []);
       if (PART_VIEWS.includes(data.view?.parts)) view.parts = data.view.parts;
+      if (data.view?.hints === false) view.hints = false;
       if (data.view?.rcp && typeof data.view.rcp.target === 'string') view.rcp = { target: data.view.rcp.target, n: Math.max(1, data.view.rcp.n | 0), open: data.view.rcp.open !== false, coords: !!data.view.rcp.coords };
       if (data.version === undefined) save(); // the old site's build, now kept here
     }
@@ -165,7 +167,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       group.remove(child);
       if (child.userData.poly === 'sphere') { child.material.dispose(); continue; }
       child.geometry.dispose();
-      if (child.isLineSegments) child.material.dispose();
+      if (child.isLineSegments || child.userData.ownMat) child.material.dispose();
     }
     pickTargets.length = 0;
   }
@@ -215,6 +217,80 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   }
   const sphereGeometry = new THREE.SphereGeometry(1, 32, 20);
   const outlineNode = () => ({ id: 'outline', shape: view.shape, transform: { position: [0, 0, 0], quaternion: [0, 0, 0, 1] } });
+  // ---- what comes next (DICTO 2026-10-09: "more visual clue help what comes next", "visible
+  // patterning"): for pieces with a known pattern (krp-core HINT_RULES), the free spots next to the
+  // build as faint ghosts in the colour of the piece that goes there, and the faces they touch glowing
+  // in that colour, so mating faces match. Tap a ghost, or a glowing face, to place that piece there.
+  const HINT_COLOURS = { DICTO_HEXA: 0xd9a520, DICTO_HEXA_KEY: 0x8f5bd8 };
+  let hintCache = { key: '', slots: [], glow: new Map() };
+  const hasHints = () => nodes.some((n) => HINT_RULES[n.shape]);
+  function hints() {
+    if (!view.hints || !hasHints()) return { slots: [], glow: new Map() };
+    const key = JSON.stringify(nodes.map((n) => [n.shape, n.transform]));
+    if (hintCache.key === key) return hintCache;
+    const last = [...nodes].reverse().find((n) => HINT_RULES[n.shape]);
+    const slots = hintSlots(nodes, POLYHEDRA, { near: last?.transform.position });
+    // A built face glows when the point just outside its middle is inside a slot's piece.
+    const glow = new Map();
+    slots.forEach((sl, i) => {
+      const ghost = placedSolid(POLYHEDRA[sl.shape], sl.position, sl.quaternion);
+      for (const id of sl.from) {
+        const n = nodes.find((x) => x.id === id);
+        if (!n) continue;
+        const P = worldPoints(n), spec = POLYHEDRA[n.shape];
+        spec.faces.forEach((f, fi) => {
+          const c = f.reduce((a, k) => a.add(P[k]), new THREE.Vector3()).divideScalar(f.length);
+          const nrm = P[f[1]].clone().sub(P[f[0]]).cross(P[f[2]].clone().sub(P[f[0]])).normalize();
+          if (insideSolid(ghost, c.addScaledVector(nrm, 0.02 * edgeLength(spec)).toArray())) glow.set(`${n.id}:${fi}`, i);
+        });
+      }
+    });
+    hintCache = { key, slots, glow };
+    return hintCache;
+  }
+  function hintMeshes() {
+    const { slots, glow } = hints(), out = [];
+    slots.forEach((sl, i) => {
+      const spec = POLYHEDRA[sl.shape], col = HINT_COLOURS[sl.shape] ?? theme().strongHex;
+      const q = new THREE.Quaternion(...sl.quaternion), p = new THREE.Vector3(...sl.position);
+      const P = spec.vertices.map((v) => new THREE.Vector3(...v).applyQuaternion(q).add(p));
+      const pos = [], edge = [];
+      for (const f of spec.faces) {
+        for (let k = 1; k + 1 < f.length; k++) for (const j of [f[0], f[k], f[k + 1]]) pos.push(P[j].x, P[j].y, P[j].z);
+        f.forEach((a, k) => { const b = f[(k + 1) % f.length]; edge.push(P[a].x, P[a].y, P[a].z, P[b].x, P[b].y, P[b].z); });
+      }
+      const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+      const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: 0.1, depthWrite: false, side: THREE.DoubleSide }));
+      m.userData.poly = 'ghost'; m.userData.slot = i; m.userData.ownMat = true;
+      const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(edge, 3));
+      out.push(m, new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: col, transparent: true, opacity: 0.2, depthWrite: false })));
+      pickTargets.push(m);
+    });
+    for (const [k, i] of glow) {
+      const [id, fi] = k.split(':'), n = nodes.find((x) => x.id === id);
+      if (!n) continue;
+      const P = worldPoints(n), f = POLYHEDRA[n.shape].faces[+fi], col = HINT_COLOURS[slots[i].shape] ?? theme().strongHex;
+      const nrm = P[f[1]].clone().sub(P[f[0]]).cross(P[f[2]].clone().sub(P[f[0]])).normalize().multiplyScalar(0.004);
+      const pos = [];
+      for (let j = 1; j + 1 < f.length; j++) for (const v of [f[0], f[j], f[j + 1]]) { const x = P[v].clone().add(nrm); pos.push(x.x, x.y, x.z); }
+      const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+      const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: 0.55, depthWrite: false, side: THREE.DoubleSide }));
+      m.userData.poly = 'glow'; m.userData.ownMat = true;
+      out.push(m);
+    }
+    return out;
+  }
+  function placeSlot(i) {
+    const sl = hints().slots[i];
+    if (!sl) return false;
+    remember(sl.shape);
+    nodes.push({ id: `n${nextId++}`, shape: sl.shape, transform: { position: [...sl.position], quaternion: [...sl.quaternion] }, material: getMaterial() });
+    selection = null;
+    commit();
+    refitIfGrown();
+    return true;
+  }
+
   function rebuild() {
     clearGroup();
     if (!active) return;
@@ -259,6 +335,8 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
         if (cx && view.rcp.n > 1 && !(view.rcp.open && builtShell(cx) <= 1)) mesh.material = rcpRootMaterial;
         group.add(...rcpMeshes());
       }
+      // What comes next: ghosts and glowing faces.
+      if (!spherical) group.add(...hintMeshes());
       // 4D Prism walls: the prism cell joining each face to the far copy, see-through.
       const walls = duoprismWalls();
       if (walls) group.add(...walls);
@@ -467,7 +545,9 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   // every tap, which would jump about).
   let fittedRadius = 0;
   function refitIfGrown() {
-    const r = Math.max(...nodes.flatMap((n) => worldPoints(n).map((v) => v.length())));
+    // The ghosts of what comes next count too, so they stay in view.
+    const ghostR = hints().slots.map((sl) => Math.hypot(...sl.position) + Math.max(...POLYHEDRA[sl.shape].vertices.map((v) => Math.hypot(...v))));
+    const r = Math.max(...nodes.flatMap((n) => worldPoints(n).map((v) => v.length())), ...ghostR);
     if (r > fittedRadius * 1.25) { fittedRadius = r; fitView?.(r); }
   }
   function remove(n) {
@@ -484,8 +564,10 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       if (mode === 'chisel' || mode === 'paint') return false;
       nodes.push({ ...outlineNode(), id: `n${nextId++}`, material: getMaterial() });
       commit();
+      refitIfGrown();
       return true;
     }
+    if (kind === 'ghost') { if (mode === 'chisel' || mode === 'paint') return false; return placeSlot(hit.object.userData.slot); }
     if (kind !== 'piece' && kind !== 'sphere') return false;
     const rec = kind === 'sphere' ? { node: hit.object.userData.node, face: null } : faceOwner[hit.faceIndex];
     const n = rec?.node;
@@ -497,6 +579,9 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       n.material = m; commit(); return true;
     }
     if (rec.face == null) return false; // spheres: no faces to attach to
+    // A glowing face: the piece that goes there, in its place.
+    const glowing = hints().glow.get(`${n.id}:${rec.face}`);
+    if (glowing !== undefined) return placeSlot(glowing);
     // A tap within a finger's reach of a corner picks the corner (a dot shows it), anywhere else the face.
     const s = POLYHEDRA[n.shape], P = worldPoints(n);
     let vi = -1, d = Infinity;
@@ -672,7 +757,8 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     const isGolden = active && !spherical && golden();
     const hasParts = active && !spherical && nodes.some((n) => PART_PICK[n.shape]);
     const hasRcp = active && !spherical && rcpRoot() && nodes.length === 1;
-    const show = active && !spherical && (selection || chosen || isGolden || hasParts || hasRcp);
+    const hasHintRow = active && !spherical && hasHints();
+    const show = active && !spherical && (selection || chosen || isGolden || hasParts || hasRcp || hasHintRow);
     panel.classList.toggle('visible', Boolean(show));
     if (!show) return;
     const L = lang();
@@ -681,7 +767,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       ${selection ? `<button type="button" class="poly-more" data-more>${t('poly.more', L)}</button>` : ''}
       ${selection && selection.face != null && FOURD.has(selection.node.shape) ? `<button type="button" class="poly-more" data-duoprism>${t('poly.duoprism', L)}</button>` : ''}
       ${selection && REWRITE_TARGET[selection.node.shape] ? `<button type="button" class="poly-more" data-transform>${t('poly.transform', L, { name: polyShapeName(REWRITE_TARGET[selection.node.shape]).replaceAll('_', ' ') })}</button>` : ''}
-      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.filter((v) => v === 'solid' || nodes.some((n) => PART_PICK[n.shape]?.[v])).map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}`;
+      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${hasHintRow ? `<div class="poly-golden"><button type="button" data-hints aria-pressed="${view.hints}" title="${t('poly.hints.title', L)}">${t('poly.hints', L)}</button></div>` : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.filter((v) => v === 'solid' || nodes.some((n) => PART_PICK[n.shape]?.[v])).map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}`;
     stripBody.querySelectorAll('.poly-shape canvas').forEach((cv) => disposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 34)));
   }
   panel.addEventListener('change', (e) => {
@@ -710,6 +796,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     if (pressed) { pressed = false; return; } // that was a long-press (pin), not a tap
     if ('clear' in b.dataset) { chosen = null; renderPanel(); return; }
     if (rcpAct(b)) return;
+    if ('hints' in b.dataset) { view.hints = !view.hints; save(); rebuild(); renderPanel(); return; }
     if ('transform' in b.dataset && selection) { transform(selection.node); return; }
     if ('duoprism' in b.dataset && selection) { duoprism(selection.node, selection.face); return; }
     if ('goldenNext' in b.dataset) { if (!takeAssembly(withNextSafePiece({ nodes, connections }))) showHudPrompt(t('poly.golden.none', lang()), 3000); return; }
