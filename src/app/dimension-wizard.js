@@ -61,6 +61,7 @@ import { netEligible, mountNetViewer } from './net-viewer.js';
 import { mountStarView, mountDuoprismView, mountRadialView } from './shape-views.js';
 import { STAR_POLYHEDRON_IDS, STAR_POLYHEDRON_META, STAR_POLYHEDRA } from '../krp-core/src/polyhedra/starPolyhedra.js';
 import { FOURD_CAPABLE_IDS } from '../krp-core/src/polyhedra/fourD.js';
+import { FOUR_D_SHAPE_PARAMS, resolveParamsKey } from '../krp-core/src/polyhedra/radialProjection.js';
 import { SITE, SITES, setActiveSite, activeSite, themeOf } from './site.js';
 import { countDicto } from './analytics.js';
 import { dimensionLabel } from './dimension-label.js';
@@ -110,6 +111,9 @@ const CSS = `
 .poly-pair-plus { font: 700 18px var(--font-ui, sans-serif); color: var(--accent, #a9f795); }
 .poly-credit { max-width: 380px; font: var(--text-xs, 12px)/1.45 var(--font-ui, sans-serif); color: var(--accent, #a9f795); text-align: center; }
 .poly-credit b { color: #d946a8; }
+.poly-star-modes { display: flex; gap: 6px; justify-content: center; }
+.poly-star-modes button { background: none; border: 1px solid rgba(var(--accent-rgb, 94, 226, 51), 0.4); color: var(--accent, #a9f795); border-radius: 999px; padding: 4px 12px; font: var(--text-xs, 12px) var(--font-ui, sans-serif); cursor: pointer; }
+.poly-star-modes button[aria-pressed="true"] { background: rgba(var(--accent-rgb, 94, 226, 51), 0.25); }
 .poly-credit button { background: none; border: 0; padding: 0; color: inherit; text-decoration: underline; font: inherit; cursor: pointer; }
 .poly-detail-preview { width: 200px; height: 200px; max-width: 100%; }
 .poly-detail-name { font: 700 var(--text-l, 18px) var(--font-ui, sans-serif); color: var(--accent); text-align: center; }
@@ -565,8 +569,10 @@ const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
 const DICTO_ORDER = ['roofFold', 'stellaJewel', 'sunstar', 'studies', 'targets', 'dictofcc', 'hex', 'shells', 'golden'];
 const dictoRank = (e) => { const i = DICTO_ORDER.indexOf(e.lat?.key); return i < 0 ? DICTO_ORDER.length : i; };
 const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER'] };
-const polyIds = (key) => (key === DICTO_POLY.key ? DICTO_POLY.ids.filter((id) => polyShapeName(id) !== id) : key === 'FAVOURITES' ? favourites() : key === 'RECENT' ? recent() : key === 'STARS' ? STAR_POLYHEDRON_IDS : familyIds(key));
-const polyLabel = (key) => (key === DICTO_POLY.key ? DICTO_POLY.label : key === 'FAVOURITES' ? t('wiz.poly.favourites', getSettings().language) : key === 'RECENT' ? t('wiz.poly.recent', getSettings().language) : key === 'STARS' ? 'Kepler–Poinsot' : FAMILY_META[key].label);
+// The shape a face was tapped on, while picking: its space-filling partners come first (as the old site).
+let partnerIds = [];
+const polyIds = (key) => (key === 'PARTNERS' ? partnerIds : key === DICTO_POLY.key ? DICTO_POLY.ids.filter((id) => polyShapeName(id) !== id) : key === 'FAVOURITES' ? favourites() : key === 'RECENT' ? recent() : key === 'STARS' ? STAR_POLYHEDRON_IDS : familyIds(key));
+const polyLabel = (key) => (key === 'PARTNERS' ? t('poly.d.pairs', getSettings().language) : key === DICTO_POLY.key ? DICTO_POLY.label : key === 'FAVOURITES' ? t('wiz.poly.favourites', getSettings().language) : key === 'RECENT' ? t('wiz.poly.recent', getSettings().language) : key === 'STARS' ? 'Kepler–Poinsot' : FAMILY_META[key].label);
 // ---- the shape browser (step D4, DICTO 2026-10-09: inside DICTO) ----
 // A shape's faces by kind, each { kind, count, regular }: what its details list and search reads.
 const faceKindCache = new Map();
@@ -949,7 +955,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     const L = getSettings().language;
     titleEl.textContent = picker.title ?? t('poly.pickTitle', L);
     let grid = '';
-    for (const key of [...(picker.keepOpen ? ['FAVOURITES', 'RECENT'] : []), DICTO_POLY.key, ...POLY_FAMILIES]) {
+    for (const key of ['PARTNERS', ...(picker.keepOpen ? ['FAVOURITES', 'RECENT'] : []), DICTO_POLY.key, ...POLY_FAMILIES]) {
       const ids = polyIds(key).filter(picker.fits);
       if (!ids.length) continue;
       grid += `
@@ -1095,6 +1101,14 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     return out.join('');
   }
 
+  // Extend into 4D: the polytope's real cell count first (as the old site's View 4D), e.g. "120
+  // dodecahedron cells".
+  function fourDCells(id, L) {
+    if (!FOURD_CAPABLE_IDS.includes(id)) return '';
+    const key = resolveParamsKey(POLYHEDRA[id]), p = FOUR_D_SHAPE_PARAMS[key]?.[0];
+    return p ? `<b data-cells="${p.cellCount}">${p.name} · ${t('polytope.cells', L, { n: p.cellCount, cell: t(`polytope.cell.${key}`, L) })}</b><br>` : '';
+  }
+
   // A shape's details: turning preview, its families, faces by kind, corners and edges, convex or not,
   // its pairs; Build with it, and ☆ Favourite (the same as pinning it in the strip).
   function showShapeDetail(id, backTo) {
@@ -1119,7 +1133,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
           ${star ? '' : `<button type="button" class="poly-detail-compare">${t('poly.d.compare', L)}</button>
           <button type="button" class="poly-detail-4d" aria-expanded="false">${t(FOURD_CAPABLE_IDS.includes(id) ? 'poly.d.extend4d' : 'poly.d.prism4d', L)}</button>`}
         </div>
-        <div class="poly-detail-4dbox" hidden><div class="poly-detail-stage"></div><div class="dim-wizard-desc">${t(FOURD_CAPABLE_IDS.includes(id) ? 'poly.d.extend4dNote' : 'poly.d.prism4dNote', L)}</div></div>
+        <div class="poly-detail-4dbox" hidden><div class="poly-detail-stage"></div><div class="dim-wizard-desc">${fourDCells(id, L)}${t(FOURD_CAPABLE_IDS.includes(id) ? 'poly.d.extend4dNote' : 'poly.d.prism4dNote', L)}</div></div>
         <div class="poly-detail-netbox" hidden></div>
         <dl class="poly-detail-stats">
           <dt>${t('poly.d.faces', L)}</dt><dd>${s.faces.length}: ${faceKindsOf(id).map((k) => `${k.count} × ${k.regular ? t('poly.d.regular', L) + ' ' : ''}${faceWord(k, L)}`).join(', ')}</dd>
@@ -1130,7 +1144,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
           ${pairs.length ? `<dt>${t('poly.d.pairs', L)}</dt><dd>${pairs.map((x) => `<button type="button" class="poly-detail-pair" data-shape="${x}">${polyShapeName(x).replaceAll('_', ' ')}</button>`).join(' ')}</dd>` : ''}
         </dl>
       </div>`;
-    if (star) previewDisposers.push(mountStarView(bodyEl.querySelector('.poly-detail-stage'), id));
+    if (star) previewDisposers.push(mountStarView(bodyEl.querySelector('.poly-detail-stage'), id, { solid: t('poly.star.solid', L), translucent: t('poly.star.translucent', L), wireframe: t('poly.star.wireframe', L) }));
     else previewDisposers.push(mountWireframePreview(bodyEl.querySelector('.poly-detail-preview'), polyShapeEdges(id), 200));
     bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => backTo());
     bodyEl.querySelector('[data-ekp]')?.addEventListener('click', () => choose('3D', 'tool:roofFoldWorld', 'kaleidohedra'));
@@ -1189,8 +1203,9 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     overlay.classList.remove('open');
   }
   /** D3's More…: the shapes that fit a face, by family; a tap picks one (onPick), ✕ cancels. */
-  function openShapePicker(fits, onPick) {
+  function openShapePicker(fits, onPick, { partners = [] } = {}) {
     picker = { fits, onPick };
+    partnerIds = partners;
     paintApps();
     overlay.querySelector('.dicto-apps').hidden = true; // picking a shape, not an app
     showShapePicker();

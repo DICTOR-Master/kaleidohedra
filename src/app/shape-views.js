@@ -56,16 +56,31 @@ function edgesOf(spec, offset = [0, 0, 0], mat) {
   return [new THREE.LineSegments(g, mat), g];
 }
 
-/** A Kepler–Poinsot solid with its real star faces. */
-export function mountStarView(box, id) {
+/** A Kepler–Poinsot solid with its real star faces; Solid, Translucent or Wireframe (as the old site). */
+export function mountStarView(box, id, labels = { solid: 'Solid', translucent: 'Translucent', wireframe: 'Wireframe' }) {
   const s = STAR_POLYHEDRA[id], th = theme();
-  return stage(box, (root) => {
-    const mat = material({ color: th.strongHex }), line = new THREE.LineBasicMaterial({ color: th.accentHex });
+  let mesh = null, mat = null;
+  const dispose = stage(box, (root) => {
+    mat = material({ color: th.strongHex });
+    const line = new THREE.LineBasicMaterial({ color: th.accentHex });
     const tris = s.faces.flatMap((f) => triangulateStarFace(f.map((i) => s.vertices[i])));
     const [m, g] = meshOfTriangles(tris, mat), [l, lg] = edgesOf(s, undefined, line);
+    mesh = m;
     root.add(m, l);
     return [mat, line, g, lg];
   });
+  const bar = document.createElement('div');
+  bar.className = 'poly-star-modes';
+  bar.innerHTML = Object.entries(labels).map(([k, v]) => `<button type="button" data-star-mode="${k}" aria-pressed="${k === 'solid'}">${v}</button>`).join('');
+  bar.addEventListener('click', (e) => {
+    const k = e.target.closest('[data-star-mode]')?.dataset.starMode;
+    if (!k) return;
+    mesh.visible = k !== 'wireframe';
+    mat.transparent = k === 'translucent'; mat.opacity = k === 'translucent' ? 0.35 : 1; mat.depthWrite = k !== 'translucent'; mat.needsUpdate = true;
+    bar.querySelectorAll('[data-star-mode]').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.starMode === k)));
+  });
+  box.after(bar);
+  return () => { dispose(); bar.remove(); };
 }
 /** A shape's 4D prism as a 3D shadow: the shape, its far copy, and a see-through prism cell per face. */
 export function mountDuoprismView(box, id) {

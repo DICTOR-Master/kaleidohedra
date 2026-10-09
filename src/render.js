@@ -27,6 +27,7 @@ import { createQuasicrystalWorld } from './app/world-quasicrystal.js';
 import { createShellsWorld } from './app/world-shells.js';
 import { createGoldenWorld } from './app/world-golden.js';
 import { createPolyWorld, polyShapeName } from './app/world-poly.js';
+import { POLYHEDRA as POLYHEDRA_ALL } from './krp-core/src/polyhedra/index.js';
 import { FAMILY_COLORS } from './krp-core/src/assembly/pieceColors.js';
 import { createRoofFoldWorld } from './app/world-roof-fold.js';
 import { createSunstarWorld } from './app/world-sunstar.js';
@@ -5323,11 +5324,40 @@ async function init() {
     fitView: (radius) => fitCameraTo([0, 0, 0], radius),
     getMaterial: () => materialSelect.value,
     // D3's More…: DICTO's families, only the shapes that fit the tapped face.
-    pickShape: (fits, onPick) => openShapePicker(fits, onPick),
+    pickShape: (fits, onPick, opts) => openShapePicker(fits, onPick, opts),
     colorOf: (shape, material, family) => (colorView.mode === 'type' ? new THREE.Color(FAMILY_COLORS[family] ?? theme().pieceHex)
       : colorView.mode === 'pick' && material ? materialColor(material) : new THREE.Color(theme().pieceHex)),
     onChange: () => { if (historyRestorers.has('worldpoly')) recordHistory('worldpoly', polyWorld.snapshot()); },
   });
+  // A read-only probe for the browser tests (tests/browser/poly), only with ?probe in the address:
+  // Polyhedraverse's build, and where on screen a piece's face or corner is (the faces turned most
+  // towards the camera first), so a test can tap the real canvas.
+  if (new URLSearchParams(location.search).has('probe')) {
+    const toScreen = (v) => { const r = renderer.domElement.getBoundingClientRect(), q = v.clone().project(camera); return { x: r.left + ((q.x + 1) / 2) * r.width, y: r.top + ((1 - q.y) / 2) * r.height }; };
+    const placed = (n) => { const q = new THREE.Quaternion(...n.transform.quaternion), p = new THREE.Vector3(...n.transform.position); return (v) => new THREE.Vector3(...v).applyQuaternion(q).add(p); };
+    window.__polyProbe = {
+      state: () => JSON.parse(JSON.stringify(polyWorld.snapshot())),
+      /** Face indices of node i, most camera-facing first. */
+      faces(i) {
+        const n = polyWorld.snapshot().nodes[i], spec = POLYHEDRA_ALL[n.shape], at = placed(n);
+        return spec.faces.map((f, k) => {
+          const P = f.map((v) => at(spec.vertices[v])), c = P.reduce((t, x) => t.add(x), new THREE.Vector3()).divideScalar(P.length);
+          const nrm = P[1].clone().sub(P[0]).cross(P[2].clone().sub(P[0])).normalize();
+          return { k, facing: nrm.dot(camera.position.clone().sub(c).normalize()) };
+        }).sort((a, b) => b.facing - a.facing).map((x) => x.k);
+      },
+      /** How squarely face f of node i faces the camera (1 straight on, below 0 turned away). */
+      facing(i, f) {
+        const n = polyWorld.snapshot().nodes[i], spec = POLYHEDRA_ALL[n.shape], at = placed(n), P = spec.faces[f].map((v) => at(spec.vertices[v]));
+        const c = P.reduce((t, x) => t.add(x), new THREE.Vector3()).divideScalar(P.length), nrm = P[1].clone().sub(P[0]).cross(P[2].clone().sub(P[0])).normalize();
+        return nrm.dot(camera.position.clone().sub(c).normalize());
+      },
+      /** The screen point inside face f of node i (between its centre and first corner, nearer the centre). */
+      face(i, f) { const n = polyWorld.snapshot().nodes[i], spec = POLYHEDRA_ALL[n.shape], at = placed(n), P = spec.faces[f].map((v) => at(spec.vertices[v])); const c = P.reduce((t, x) => t.add(x), new THREE.Vector3()).divideScalar(P.length); return toScreen(c); },
+      /** The screen point just inside face f near its corner v (within a finger's reach of the corner). */
+      corner(i, f, v) { const n = polyWorld.snapshot().nodes[i], spec = POLYHEDRA_ALL[n.shape], at = placed(n), P = spec.faces[f].map((x) => at(spec.vertices[x])); const c = P.reduce((t, x) => t.add(x), new THREE.Vector3()).divideScalar(P.length); return toScreen(at(spec.vertices[v]).lerp(c, 0.08)); },
+    };
+  }
   goldenWorld = createGoldenWorld({
     scene,
     showHudPrompt,

@@ -106,7 +106,7 @@ jobs:
     # regression (unlikely, but esbuild does rename/reorder things) is
     # caught here, before a real deploy, not after.
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 30 # the Polyhedraverse tests take ~5-10 minutes
     steps:
       - uses: actions/checkout@v7
         with:
@@ -122,15 +122,17 @@ jobs:
           npm install
           # GitHub runners sometimes hang in this download: give each try 5 minutes, up to 3 tries; a killed try leaves apt locked, so clear that first.
           for i in 1 2 3; do timeout 300 npx playwright install --with-deps chromium && break; [ "$i" = 3 ] && exit 1; echo "Playwright install hung or failed (try $i), clearing apt and retrying"; sudo pkill -9 -f "apt-get|dpkg" || true; sudo rm -f /var/lib/dpkg/lock-frontend /var/lib/dpkg/lock /var/lib/apt/lists/lock /var/cache/apt/archives/lock; sudo dpkg --configure -a || true; sleep 5; done
-      # Each front door's own build (SITE picks it, as each Vercel project does), smoke-tested.
-      - name: Build and smoke-test each front door
+      # Each front door's own build (SITE picks it, as each Vercel project does), smoke-tested;
+      # Polyhedraverse's door runs its own browser tests (tests/browser/poly: the old site's 23
+      # Playwright specs, ported in step D6) instead of the lattice smoke test.
+      - name: Build and test each front door
         run: |
-          for site in kaleidohedra rhombiverse; do
+          for site in kaleidohedra rhombiverse polyhedraverse; do
             SITE=$site npm run build
             (cd dist && python3 -m http.server 8000 >/dev/null 2>&1 &)
             for i in $(seq 1 20); do curl -sf http://localhost:8000/index.html > /dev/null && break; sleep 0.5; done
             grep -q "data-site=\"$site\"" dist/index.html
-            (cd tests/browser && DOOR=$site node smoke.mjs)
+            if [ "$site" = polyhedraverse ]; then (cd tests/browser && node poly/run.mjs); else (cd tests/browser && DOOR=$site node smoke.mjs); fi
             pkill -f "http.server 8000" || true
             sleep 1
           done

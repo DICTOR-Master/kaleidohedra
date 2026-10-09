@@ -31,3 +31,19 @@ node smoke.mjs
 ```
 
 Both run automatically on every push/PR via `.github/workflows/ci.yml`.
+
+## Polyhedraverse's browser tests (`browser/poly/`)
+
+The old Polyhedraverse site's 23 Playwright specs, ported to the joined app in step D6: one
+`*.spec.mjs` per old spec, testing the same intent through the joined app's controls (tap attach,
+More…, long-press, Undo, Settings, DICTO). They open the Polyhedraverse door on a phone-sized touch
+screen with `?probe`, a read-only hook (render.js) that says where a piece's faces and corners are on
+screen, so taps land on the real canvas; long-press is a real held touch.
+
+```
+python3 -m http.server 8000 &
+cd tests/browser && node poly/run.mjs        # ONLY=<file or title part> runs some
+```
+
+CI runs them against the built Polyhedraverse door (`SITE=polyhedraverse`).
+

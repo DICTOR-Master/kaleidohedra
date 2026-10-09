@@ -17,6 +17,7 @@ import { GOLDEN_BUILDS, withNextRecipePiece } from '../krp-core/src/assembly/gol
 import { matchRewriteVertices, REWRITE_TARGET } from '../krp-core/src/polyhedra/rewrite.js';
 import { buildWallPrism, duoprismBuildDepth } from '../krp-core/src/polyhedra/duoprism.js';
 import { FOURD_CAPABLE_IDS } from '../krp-core/src/polyhedra/fourD.js';
+import { pairPartners } from '../krp-core/src/polyhedra/families.js';
 import { buildRcpComplex, rcpTargetOptions, buildSyntheticCellSpec, maxShell } from '../krp-core/src/polyhedra/rcpBuild.js';
 import { FOUR_D_SHAPE_PARAMS } from '../krp-core/src/polyhedra/radialProjection.js';
 import { buildFaceConnectors } from '../krp-core/src/polyhedra/core.js';
@@ -339,10 +340,10 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
         // see-through once any are built; it stays the tap target.
         const cx = rcpComplex();
         if (cx && view.rcp.n > 1 && !(view.rcp.open && builtShell(cx) <= 1)) mesh.material = rcpRootMaterial;
-        group.add(...rcpMeshes());
+        const rm = rcpMeshes(); if (rm.length) group.add(...rm);
       }
       // What comes next: ghosts and glowing faces.
-      if (!spherical) group.add(...hintMeshes());
+      if (!spherical) { const hm = hintMeshes(); if (hm.length) group.add(...hm); }
       // 4D Prism walls: the prism cell joining each face to the far copy, see-through.
       const walls = duoprismWalls();
       if (walls) group.add(...walls);
@@ -813,7 +814,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     }
     if ('more' in b.dataset && selection) {
       const sel = selection;
-      pickShape((id) => fitsAt(id, sel), (id) => { chosen = id; attachAt(id, sel); });
+      pickShape((id) => fitsAt(id, sel), (id) => { chosen = id; attachAt(id, sel); }, { partners: pairPartners(sel.node.shape) });
       return;
     }
     if (b.dataset.shape) {
