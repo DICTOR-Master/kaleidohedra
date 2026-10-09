@@ -99,6 +99,8 @@ async function main() {
 
   // tokens.css is the one stylesheet outside <style> blocks: copied with the sources.
   await cp(path.join(root, 'src/app/tokens.css'), path.join(dist, 'src/app/tokens.css'));
+  // The shapes with a printable net, fetched by src/app/net-viewer.js.
+  await cp(path.join(root, 'src/krp-core/src/polyhedra-nets/eligible.json'), path.join(dist, 'src/krp-core/src/polyhedra-nets/eligible.json'));
   console.log(`Built ${site.name}: ${jsFiles.length} JS files into dist/src/, plus static assets, into dist/.`);
 }
 

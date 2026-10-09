@@ -50,6 +50,7 @@ import { FAMILY_META, familyIds, familiesFor, pairPartners } from '../krp-core/s
 import { POLYHEDRA } from '../krp-core/src/polyhedra/index.js';
 import { isConvex } from '../krp-core/src/assembly/faceRegistration.js';
 import { favourites, recent, isFavourite, toggleFavourite } from './poly-prefs.js';
+import { netEligible, mountNetViewer } from './net-viewer.js';
 import { SITE, SITES, setActiveSite, activeSite, themeOf } from './site.js';
 import { countDicto } from './analytics.js';
 import { dimensionLabel } from './dimension-label.js';
@@ -103,6 +104,15 @@ const CSS = `
 .poly-detail-stats { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 4px 0 0; width: 100%; font: var(--text-s, 13px) var(--font-ui, sans-serif); color: #ccd; }
 .poly-detail-stats dt { color: var(--pale); }
 .poly-detail-stats dd { margin: 0; min-width: 0; }
+.poly-detail-netbox { width: 100%; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.poly-detail-netbox[hidden] { display: none; }
+.net-stage { width: 100%; height: 300px; border-radius: var(--radius-m, 10px); overflow: hidden; background: #0a0a10; display: flex; align-items: center; justify-content: center; color: var(--pale); font: var(--text-s, 13px) var(--font-ui, sans-serif); }
+.net-controls { display: flex; gap: 10px; align-items: center; width: 100%; flex-wrap: wrap; justify-content: center; color: var(--pale); font: var(--text-s, 13px) var(--font-ui, sans-serif); }
+.net-controls[hidden], .net-note[hidden] { display: none; }
+.net-controls input[type=range] { flex: 1; accent-color: var(--accent-strong); }
+.net-controls button { min-height: var(--touch-compact, 36px); padding: 4px 12px; border-radius: var(--radius-s, 6px); cursor: pointer; background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); color: var(--accent); font: inherit; }
+.net-download { border-color: var(--accent-strong) !important; background: rgba(var(--accent-rgb), 0.25) !important; color: #fff !important; }
+.net-note { color: var(--pale); opacity: 0.8; font: var(--text-xs, 11px) var(--font-ui, sans-serif); text-align: center; }
 .dicto-app {
   min-height: var(--touch); padding: 6px 4px; cursor: pointer; touch-action: manipulation;
   /* The whole name on one line at any width (POLYHEDRAVERSE is the longest). */
@@ -988,7 +998,9 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
         <div class="poly-detail-actions">
           <button type="button" class="poly-detail-build">${t('poly.d.build', L)}</button>
           <button type="button" class="poly-detail-fav" aria-pressed="${fav}">${fav ? '★' : '☆'} ${t('poly.d.fav', L)}</button>
+          <button type="button" class="poly-detail-net" hidden aria-expanded="false">${t('poly.net.button', L)}</button>
         </div>
+        <div class="poly-detail-netbox" hidden></div>
         <dl class="poly-detail-stats">
           <dt>${t('poly.d.faces', L)}</dt><dd>${s.faces.length}: ${faceKindsOf(id).map((k) => `${k.count} × ${k.regular ? t('poly.d.regular', L) + ' ' : ''}${faceWord(k, L)}`).join(', ')}</dd>
           <dt>${t('poly.d.edges', L)}</dt><dd>${s.edges.length}</dd>
@@ -1001,6 +1013,14 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => backTo());
     bodyEl.querySelector('.poly-detail-build').addEventListener('click', () => choose('3D', `tool:polyShape:${id}`, 'polyhedraverse'));
     bodyEl.querySelector('.poly-detail-fav').addEventListener('click', () => { toggleFavourite(id); showShapeDetail(id, backTo); });
+    // Net + PDF, for the shapes with a printable net.
+    const netBtn = bodyEl.querySelector('.poly-detail-net'), netBox = bodyEl.querySelector('.poly-detail-netbox');
+    netEligible().then((ok) => { if (ok.has(id) && netBtn.isConnected) netBtn.hidden = false; });
+    netBtn.addEventListener('click', () => {
+      const open = netBox.hidden;
+      netBox.hidden = !open; netBtn.setAttribute('aria-expanded', String(open));
+      if (open) previewDisposers.push(mountNetViewer(netBox, id, L));
+    });
     bodyEl.querySelectorAll('.poly-detail-pair').forEach((b) => b.addEventListener('click', () => showShapeDetail(b.dataset.shape, () => showShapeDetail(id, backTo))));
   }
 
