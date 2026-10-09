@@ -1462,11 +1462,24 @@ export function createBuildController({
     // plus rdquarter itself (see hemispherePieceCandidates' own new
     // 'rdquarter' case above) -- one consistent path instead of a
     // narrower bespoke check.
-    const anchorCell = resolveClusterAnchorCell(hit);
-    if (!anchorCell) return null;
-    const cell = [anchorCell.x, anchorCell.y, anchorCell.z];
-    const [wx, wy, wz] = cellToWorld(cell[0], cell[1], cell[2]);
-    const dir = new THREE.Vector3(hit.point.x - wx, hit.point.y - wy, hit.point.z - wz).normalize();
+    // A solid RD (DICTO 2026-10-10, "the quarters won't build"): the quarter goes in the cell across the
+    // tapped face, against that face; before, it went into the RD's own cell, hidden inside it.
+    let cell, dir;
+    if (hit.object.parent !== hemisphereGroup) {
+      const c = cellAt(hit);
+      if (!c) return null;
+      const n = hit.face.normal.clone().transformDirection(hit.object.matrixWorld).normalize();
+      const off = matchNeighborOffset(n);
+      cell = [c.x + off[0], c.y + off[1], c.z + off[2]];
+      if (world.has(cell[0], cell[1], cell[2])) return { added: 0 };
+      dir = n.clone().negate();
+    } else {
+      const anchorCell = resolveClusterAnchorCell(hit);
+      if (!anchorCell) return null;
+      cell = [anchorCell.x, anchorCell.y, anchorCell.z];
+      const [wx, wy, wz] = cellToWorld(cell[0], cell[1], cell[2]);
+      dir = new THREE.Vector3(hit.point.x - wx, hit.point.y - wy, hit.point.z - wz).normalize();
+    }
     let bestIdx = -1;
     let bestDot = -Infinity;
     RD_QUARTER_ANCHORS.forEach((anchor, i) => {

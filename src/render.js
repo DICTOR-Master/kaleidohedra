@@ -15,7 +15,7 @@ import { truncatedOctahedronVertices, nearestBCCPoints, nearestFCCPoints, BCC_NE
 import { createCuboctaBuildController, AXIS_OFFSETS as CUBOCTA_AXIS_OFFSETS } from './core/cubocta-build.js';
 import { createCuboctaGapBuildController, octGapCellToWorld, octGapCellForCOCell } from './core/cubocta-gap-build.js';
 import { createInterstitialStore } from './core/interstitial-build.js';
-import { createHemisphereStore } from './core/hemisphere-build.js';
+import { createHemisphereStore, rdQuarterKey } from './core/hemisphere-build.js';
 import { bootstrapDisphenoid, disphenoidVertsToWorld, octahedronDisphenoids, disphenoidKey } from './krp-core/src/geometry-extensions/interstitial-lattice.js';
 import { sampleSuperellipsoidGrid, volumeMatchedRadius } from './krp-core/src/geometry-extensions/spherical-toggle.js';
 import { packing, voidSphereRadius, TANGENT_R, RADIUS_MAX } from './krp-core/src/geometry-extensions/sphere-packing.js';
@@ -2587,6 +2587,11 @@ async function init() {
     // placed as one (it was outlined and placed as a whole RD).
     if (piece === 'cube') {
       return world.entries().length ? null : { geometry: new ConvexGeometry(pyramidPieces(SCALE).cube.map(([x, y, z]) => new THREE.Vector3(x, y, z))), place: (material) => { world.addCell(0, 0, 0, { material, pyramids: 0 }); onChange(); } };
+    }
+    // RD Quarter starts with a quarter, not a whole RD (DICTO 2026-10-10: "the quarters won't build").
+    if (piece === 'rdquarter') {
+      return world.entries().length || hemisphereStore.entries().length ? null : { geometry: buildHemisphereGeometry({ type: 'rdquarter', cell: [0, 0, 0], cornerIndex: 0 }, SCALE),
+        place: (material) => { hemisphereStore.set(rdQuarterKey(0, 0, 0, 0), { type: 'rdquarter', cell: [0, 0, 0], cornerIndex: 0, material }); onHemisphereChange(); } };
     }
     if (RD_FAMILY_PIECES.includes(piece)) {
       return world.entries().length ? null : { geometry: geometry.clone(), place: (material) => { world.addCell(0, 0, 0, { material }); onChange(); } };
