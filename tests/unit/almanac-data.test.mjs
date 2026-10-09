@@ -13,6 +13,7 @@ import {
   ALMANAC_ENTRIES,
   isRealPieceAction,
 } from '../../src/app/almanac-data.js';
+import { t, LANG_ORDER } from '../../src/app/i18n.js';
 
 function realActionsIn(wheelConfig) {
   return Object.values(wheelConfig.faces)
@@ -39,8 +40,21 @@ test('every real piece action in WHEEL_PIECE/WHEEL_RD_FAMILY appears in Almanac 
 test('every Almanac entry has a real label and description', () => {
   for (const entry of ALMANAC_ENTRIES) {
     assert.ok(entry.id, `entry missing id: ${JSON.stringify(entry)}`);
+    if (entry.kind === 'dicto') continue; // its words are in i18n, checked below in every language
     assert.ok(entry.label && entry.label.trim().length > 0, `entry "${entry.id}" missing a label`);
     assert.ok(entry.desc && entry.desc.trim().length > 0, `entry "${entry.id}" missing a description`);
+  }
+});
+
+test("DICTO's entries have a label, description and how-to in every language", () => {
+  for (const entry of ALMANAC_ENTRIES.filter((e) => e.kind === 'dicto')) {
+    for (const lang of LANG_ORDER) {
+      for (const part of ['label', 'desc', 'how']) {
+        const key = `alm.d.${entry.key}.${part}`;
+        const text = t(key, lang);
+        assert.ok(text && text !== key && text.trim().length > 0, `"${key}" missing in ${lang}`);
+      }
+    }
   }
 });
 

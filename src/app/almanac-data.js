@@ -223,4 +223,24 @@ export const LATTICE_CONCEPT_ENTRIES = [
   },
 ];
 
-export const ALMANAC_ENTRIES = [...PIECE_ENTRIES, ...LATTICE_CONCEPT_ENTRIES];
+// DICTO's discoveries (DICTO 2026-10-09): every piece and world of DICTO's own, first, in 7 languages
+// (i18n alm.d.<key>.label/.desc/.how): what it is, how to build it, its DISCOVERIES number and DOI.
+// shape: the Polyhedraverse shape its preview turns, if any.
+export const DICTO_ENTRIES = [
+  ['ekp', '#8', '10.5281/zenodo.23176568', 'DODECAHEDRON'],
+  ['jewel', '#10', '10.5281/zenodo.23220273', 'DRAGON_JEWEL'],
+  ['sunstar', null, null, 'DOGSTAR'],
+  ['chains', '#12, 12a', '10.5281/zenodo.23226716', 'STELLA_OCTANGULA'],
+  ['c13', '#13', '10.5281/zenodo.23247392', 'DODECAHEDRON'],
+  ['dictoStar', '#14', '10.5281/zenodo.23256623', 'ICOSIDODECAHEDRON'],
+  ['clusters', '#15, #16', '10.5281/zenodo.23256623', 'DJ_OCTAHEDRAL_CLUSTER'],
+  ['networks', '#15, #16', '10.5281/zenodo.23257393', 'DJ_TETRAHEDRAL_CLUSTER'],
+  ['hulls', '#17', '10.5281/zenodo.23262227', null],
+  ['hexa', '#18', '10.5281/zenodo.23262227', 'DICTO_HEXA'],
+  ['hexaKey', '#18', '10.5281/zenodo.23262227', 'DICTO_HEXA_KEY'],
+  ['hexaNets', '#18', '10.5281/zenodo.23262227', 'DICTO_HEXA_RHOMBO_CLUSTER'],
+  ['dictoRd', '#1', '10.5281/zenodo.23173810', 'DICTO_SKEWED_RD'],
+  ['dictoHex', null, null, 'DICTO_LEANING_HEX_PRISM'],
+].map(([key, finding, doi, shape]) => ({ kind: 'dicto', id: `dicto:${key}`, key, finding, doi, shape, markKey: null }));
+
+export const ALMANAC_ENTRIES = [...DICTO_ENTRIES, ...PIECE_ENTRIES, ...LATTICE_CONCEPT_ENTRIES];
