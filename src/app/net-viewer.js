@@ -91,7 +91,7 @@ export function mountNetViewer(box, id, L) {
     box.querySelector('.net-note').textContent = t('poly.net.note', L, { n: net.faces.length, pairs: net.pairs.length });
     box.querySelector('.net-download').addEventListener('click', () => {
       const tabs = box.querySelector('.net-tabs').checked, name = polyShapeName(id).replaceAll('_', ' ');
-      const bytes = printableNetPdf(net, { title: name, tabs, credit: 'Polyhedraverse by DICTO - kaleidohedra.vercel.app' });
+      const bytes = printableNetPdf(net, { title: name, tabs, credit: 'Polyhedraverse by DICTO - polyhedraverse.dictospheres.com' });
       const url = URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' }));
       const a = document.createElement('a'); a.href = url; a.download = `${name.toLowerCase().replaceAll(' ', '-')}-net${tabs ? '-tabs' : ''}.pdf`;
       document.body.appendChild(a); a.click(); a.remove();

@@ -30,11 +30,11 @@ stays exactly as in Rhombiverse while Kaleidohedra's own controls (the
 shear slider, "towards…" picker, Export of population members) are
 layered on top. The app is branded Kaleidohedra (title, metadata,
 welcome mark from `assets/brand/`, guide) and deployed at
-https://kaleidohedra.vercel.app. Internal ids stay Rhombiverse's on
+https://kaleidohedra.dictospheres.com. Internal ids stay Rhombiverse's on
 purpose: localStorage keys (`rhombiverse-*`) and the world-bundle
 `app: 'rhombiverse'` field, so saves and exported worlds still load in
 both apps. RHOMBIS is not part of Kaleidohedra; its links open it on
-rhombiverse.vercel.app.
+rhombiverse.dictospheres.com.
 
 ## Scope guardrails
 

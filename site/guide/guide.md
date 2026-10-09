@@ -1,6 +1,6 @@
 # DICTO User Guide
 
-DICTO is the one menu over three apps by DICTO, built on one shared geometry. **Rhombiverse** is the **landscape**: the lattices themselves, stretching out in every direction, from 1D up to 6D. **Polyhedraverse** is the **portrait gallery**: the shapes that live in those lattices, one at a time, up close. **Kaleidohedra** **moves the landscape**: you can shear and slide the whole lattice, and every piece moves with it. Kaleidohedra and Rhombiverse are one app with two front doors, [kaleidohedra.vercel.app](https://kaleidohedra.vercel.app) and [rhombiverse.vercel.app](https://rhombiverse.vercel.app); [Polyhedraverse](https://polyhedraverse.vercel.app) has its own site for now.
+DICTO is the one menu over three apps by DICTO, built on one shared geometry. **Rhombiverse** is the **landscape**: the lattices themselves, stretching out in every direction, from 1D up to 6D. **Polyhedraverse** is the **portrait gallery**: the shapes that live in those lattices, one at a time, up close. **Kaleidohedra** **moves the landscape**: you can shear and slide the whole lattice, and every piece moves with it. Kaleidohedra and Rhombiverse are one app with two front doors, [kaleidohedra.dictospheres.com](https://kaleidohedra.dictospheres.com) and [rhombiverse.dictospheres.com](https://rhombiverse.dictospheres.com); [Polyhedraverse](https://polyhedraverse.dictospheres.com) has its own site for now.
 
 Here, every piece fills space perfectly on a real crystal lattice, so you can only put a piece where the lattice has room for it. Tap to add a piece, long-press to remove one, and look at what you've built in different views.
 
@@ -293,7 +293,7 @@ DICTO's pieces start with the **DICTO Hexa** family: the DICTO Hexa (eight DICTO
 
 ## Saving your work
 
-Your build saves itself as you go, separately for each app's address, and **Undo** (hold to scrub) takes back any step. **Settings → Export / Import World** moves builds between devices and addresses. On polyhedraverse.vercel.app, a build saved by the earlier Polyhedraverse site is brought over the first time you visit.
+Your build saves itself as you go, separately for each app's address, and **Undo** (hold to scrub) takes back any step. **Settings → Export / Import World** moves builds between devices and addresses. On polyhedraverse.dictospheres.com, a build saved by the earlier Polyhedraverse site is brought over the first time you visit.
 
 ---
 

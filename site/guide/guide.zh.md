@@ -1,6 +1,6 @@
 # DICTO 用户指南
 
-DICTO 是 DICTO 的三个应用，共用同一套几何。**Rhombiverse** 是**风景**：晶格本身，向各个方向延伸，从 1D 到 6D。**Polyhedraverse** 是**肖像画廊**：住在这些晶格里的形状，一个一个，近距离观看。**Kaleidohedra** **让风景动起来**：你可以剪切、滑动整个晶格，每一块都随之移动。Kaleidohedra 和 Rhombiverse 是同一个应用的两扇门：[kaleidohedra.vercel.app](https://kaleidohedra.vercel.app) 和 [rhombiverse.vercel.app](https://rhombiverse.vercel.app)；[Polyhedraverse](https://polyhedraverse.vercel.app) 目前有自己的网站。
+DICTO 是 DICTO 的三个应用，共用同一套几何。**Rhombiverse** 是**风景**：晶格本身，向各个方向延伸，从 1D 到 6D。**Polyhedraverse** 是**肖像画廊**：住在这些晶格里的形状，一个一个，近距离观看。**Kaleidohedra** **让风景动起来**：你可以剪切、滑动整个晶格，每一块都随之移动。Kaleidohedra 和 Rhombiverse 是同一个应用的两扇门：[kaleidohedra.dictospheres.com](https://kaleidohedra.dictospheres.com) 和 [rhombiverse.dictospheres.com](https://rhombiverse.dictospheres.com)；[Polyhedraverse](https://polyhedraverse.dictospheres.com) 目前有自己的网站。
 
 在这里，每个部件都在真实的晶体晶格上无缝地填满空间，所以只能把部件放在晶格有空位的地方。轻点添加部件，长按移除，并用不同的视图查看你的作品。
 
@@ -295,7 +295,7 @@ DICTO 的部件以 **DICTO Hexa** 家族开头：DICTO Hexa（八个 DICTO 宝�
 
 ## 保存作品
 
-作品会自动保存，每个应用地址各自保存；**撤销**（长按可回退）可撤回任何一步。**设置 → 导出 / 导入世界** 可在设备和地址之间移动作品。在 polyhedraverse.vercel.app 上，旧版 Polyhedraverse 网站保存的作品会在第一次访问时带过来。
+作品会自动保存，每个应用地址各自保存；**撤销**（长按可回退）可撤回任何一步。**设置 → 导出 / 导入世界** 可在设备和地址之间移动作品。在 polyhedraverse.dictospheres.com 上，旧版 Polyhedraverse 网站保存的作品会在第一次访问时带过来。
 
 ---
 

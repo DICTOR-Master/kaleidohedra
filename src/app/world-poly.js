@@ -85,7 +85,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   }
   const toJSON = () => ({ nodes: nodes.map((n) => ({ ...n })), connections: connections.map((c) => ({ ...c })) });
   // The old Polyhedraverse site's build (step D6, DICTO 2026-10-09: "bring it over once"): on
-  // polyhedraverse.vercel.app, with nothing saved here yet, its 'polyhedraverse:assembly' is converted
+  // polyhedraverse.dictospheres.com, with nothing saved here yet, its 'polyhedraverse:assembly' is converted
   // once and left untouched. Its 4D cells were pieces joined to the root by 'rcp4d' connections; here
   // a root alone grows by a count (view.rcp), so they become that count.
   function fromOldSite() {

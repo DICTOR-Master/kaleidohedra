@@ -1,6 +1,6 @@
 # Guide d'utilisation de DICTO
 
-DICTO, ce sont trois applications de DICTO sur une même géométrie. **Rhombiverse** est le **paysage** : les réseaux eux-mêmes, qui s'étendent dans toutes les directions, de la 1D à la 6D. **Polyhedraverse** est la **galerie de portraits** : les formes qui habitent ces réseaux, une à une, de près. **Kaleidohedra** **met le paysage en mouvement** : on peut cisailler et faire glisser tout le réseau, et chaque pièce suit. Kaleidohedra et Rhombiverse sont une seule application à deux portes d'entrée, [kaleidohedra.vercel.app](https://kaleidohedra.vercel.app) et [rhombiverse.vercel.app](https://rhombiverse.vercel.app) ; [Polyhedraverse](https://polyhedraverse.vercel.app) a pour l'instant son propre site.
+DICTO, ce sont trois applications de DICTO sur une même géométrie. **Rhombiverse** est le **paysage** : les réseaux eux-mêmes, qui s'étendent dans toutes les directions, de la 1D à la 6D. **Polyhedraverse** est la **galerie de portraits** : les formes qui habitent ces réseaux, une à une, de près. **Kaleidohedra** **met le paysage en mouvement** : on peut cisailler et faire glisser tout le réseau, et chaque pièce suit. Kaleidohedra et Rhombiverse sont une seule application à deux portes d'entrée, [kaleidohedra.dictospheres.com](https://kaleidohedra.dictospheres.com) et [rhombiverse.dictospheres.com](https://rhombiverse.dictospheres.com) ; [Polyhedraverse](https://polyhedraverse.dictospheres.com) a pour l'instant son propre site.
 
 Ici, chaque pièce remplit parfaitement l'espace sur un vrai réseau cristallin : vous ne pouvez donc poser une pièce que là où le réseau a de la place. Touchez pour ajouter une pièce, appuyez longuement pour en retirer une, et regardez votre construction sous différentes vues.
 
@@ -295,7 +295,7 @@ Les pièces de DICTO commencent par la famille **DICTO Hexa** : la DICTO Hexa (h
 
 ## Enregistrer votre travail
 
-Votre construction s'enregistre seule, séparément pour l'adresse de chaque app, et **Annuler** (maintenir pour remonter) reprend n'importe quelle étape. **Réglages → Exporter / Importer le monde** déplace les constructions entre appareils et adresses. Sur polyhedraverse.vercel.app, une construction enregistrée par l'ancien site Polyhedraverse est reprise lors de votre première visite.
+Votre construction s'enregistre seule, séparément pour l'adresse de chaque app, et **Annuler** (maintenir pour remonter) reprend n'importe quelle étape. **Réglages → Exporter / Importer le monde** déplace les constructions entre appareils et adresses. Sur polyhedraverse.dictospheres.com, une construction enregistrée par l'ancien site Polyhedraverse est reprise lors de votre première visite.
 
 ---
 

@@ -7,14 +7,14 @@ export const SITES = {
   // shear: whether this app's space has Kaleidohedra's lattice shear.
   // analytics: Vercel Web Analytics is switched on for this site's project (analytics.js counts DICTO).
   // wordmark: the name in two tones, the second part in the app's accent (as Polyhedraverse's name).
-  kaleidohedra: { name: 'Kaleidohedra', wordmark: ['KALEIDO', 'HEDRA'], colour: '#ff9a52', url: 'https://kaleidohedra.vercel.app', netsGroups: ['voronoi', 'platonic', 'ekp'], shear: true, inside: true, door: true, analytics: false },
+  kaleidohedra: { name: 'Kaleidohedra', wordmark: ['KALEIDO', 'HEDRA'], colour: '#ff9a52', url: 'https://kaleidohedra.dictospheres.com', netsGroups: ['voronoi', 'platonic', 'ekp'], shear: true, inside: true, door: true, analytics: false },
   // inside: whether its worlds run in this app (Polyhedraverse's since step D2); door: whether this
   // build can open as that app (?site=, SITE). Polyhedraverse is a door since step D6.
-  polyhedraverse: { name: 'Polyhedraverse', wordmark: ['POLYHEDRA', 'VERSE'], colour: '#5ee233', url: 'https://polyhedraverse.vercel.app', netsGroups: null, shear: false, inside: true, door: true, analytics: false },
+  polyhedraverse: { name: 'Polyhedraverse', wordmark: ['POLYHEDRA', 'VERSE'], colour: '#5ee233', url: 'https://polyhedraverse.dictospheres.com', netsGroups: null, shear: false, inside: true, door: true, analytics: false },
   // DICTO's own space (DICTO 2026-10-09): 1D+ and 2D+ belong to no app, an easier way in; silver.
   // Going up to 3D+ from there lands in the door's app.
   dicto: { name: 'DICTO', wordmark: ['DIC', 'TO'], colour: '#d8dce6', url: '', netsGroups: null, shear: false, inside: true, door: false },
-  rhombiverse: { name: 'Rhombiverse', wordmark: ['RHOMBI', 'VERSE'], colour: '#22c3e6', url: 'https://rhombiverse.vercel.app', netsGroups: null, shear: false, inside: true, door: true, analytics: false },
+  rhombiverse: { name: 'Rhombiverse', wordmark: ['RHOMBI', 'VERSE'], colour: '#22c3e6', url: 'https://rhombiverse.dictospheres.com', netsGroups: null, shear: false, inside: true, door: true, analytics: false },
 };
 
 function detect() {
@@ -48,6 +48,56 @@ function adoptLegacyKeys() {
   } catch { /* storage blocked: nothing to adopt */ }
 }
 adoptLegacyKeys();
+
+// The new home (DICTO 2026-10-10): each door moved from <app>.vercel.app to <app>.dictospheres.com. A
+// browser keeps saved builds per address, so the old address carries them across once: it packs this
+// browser's saved state into the new address's #fragment (never sent to a server) and goes there; the
+// new address unpacks it, keeping anything it already has, and reloads clean. Later visits to the old
+// address just go to the new one.
+const NEW_HOME = { 'kaleidohedra.vercel.app': 'kaleidohedra.dictospheres.com', 'rhombiverse.vercel.app': 'rhombiverse.dictospheres.com', 'polyhedraverse.vercel.app': 'polyhedraverse.dictospheres.com' };
+const MOVE_TAG = '#krp-move=';
+async function packed(text) {
+  const bytes = new TextEncoder().encode(text);
+  if (!globalThis.CompressionStream) return 'p' + btoa(String.fromCharCode(...bytes));
+  const gz = new Uint8Array(await new Response(new Blob([bytes]).stream().pipeThrough(new CompressionStream('gzip'))).arrayBuffer());
+  let bin = '';
+  for (let i = 0; i < gz.length; i += 0x8000) bin += String.fromCharCode(...gz.subarray(i, i + 0x8000));
+  return 'g' + btoa(bin);
+}
+async function unpacked(data) {
+  const bin = atob(data.slice(1)), bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
+  if (data[0] === 'p') return new TextDecoder().decode(bytes);
+  return new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
+}
+function moveHome() {
+  const loc = globalThis.location;
+  if (!loc || !globalThis.localStorage) return;
+  const target = NEW_HOME[loc.hostname];
+  if (target) {
+    let saved = {};
+    try {
+      if (!localStorage.getItem('krp-moved')) for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); saved[k] = localStorage.getItem(k); }
+    } catch { saved = {}; }
+    const go = (frag) => loc.replace(`${loc.protocol}//${target}${loc.port ? `:${loc.port}` : ""}${loc.pathname}${loc.search}${frag}`);
+    if (!Object.keys(saved).length) { go(''); return; }
+    packed(JSON.stringify(saved)).then((data) => {
+      if (data.length > 1500000) return; // too big to carry in an address: stay here, nothing lost
+      try { localStorage.setItem('krp-moved', '1'); } catch { /* best-effort */ }
+      go(MOVE_TAG + encodeURIComponent(data));
+    }).catch(() => go(''));
+    return;
+  }
+  if (loc.hash.startsWith(MOVE_TAG)) {
+    const data = decodeURIComponent(loc.hash.slice(MOVE_TAG.length));
+    history.replaceState(null, '', loc.pathname + loc.search);
+    unpacked(data).then((text) => {
+      const saved = JSON.parse(text);
+      for (const [k, v] of Object.entries(saved)) if (localStorage.getItem(k) === null) localStorage.setItem(k, v);
+      loc.reload();
+    }).catch(() => { /* a damaged move: start fresh here, the old address still has everything */ });
+  }
+}
+moveHome();
 
 // ---- Colour: which app's space you are in (DICTO, 2026-10-08: "colour scheme orients you") ----
 // accent: text and outlines; strong: first placements, highlights; piece: the default piece colour;

@@ -1,6 +1,6 @@
 # DICTO ユーザーガイド
 
-DICTO は、DICTO による 3 つのアプリで、ひとつの幾何学を共有しています。**Rhombiverse** は**風景**：どの方向にも広がる格子そのもの。1D から 6D まで。**Polyhedraverse** は**肖像画のギャラリー**：その格子に住む形を、ひとつずつ間近で。**Kaleidohedra** は**風景を動かします**：格子全体をずらしたり滑らせたりでき、どのピースも一緒に動きます。Kaleidohedra と Rhombiverse は入口が 2 つあるひとつのアプリです（[kaleidohedra.vercel.app](https://kaleidohedra.vercel.app) と [rhombiverse.vercel.app](https://rhombiverse.vercel.app)）。[Polyhedraverse](https://polyhedraverse.vercel.app) は今のところ独自のサイトです。
+DICTO は、DICTO による 3 つのアプリで、ひとつの幾何学を共有しています。**Rhombiverse** は**風景**：どの方向にも広がる格子そのもの。1D から 6D まで。**Polyhedraverse** は**肖像画のギャラリー**：その格子に住む形を、ひとつずつ間近で。**Kaleidohedra** は**風景を動かします**：格子全体をずらしたり滑らせたりでき、どのピースも一緒に動きます。Kaleidohedra と Rhombiverse は入口が 2 つあるひとつのアプリです（[kaleidohedra.dictospheres.com](https://kaleidohedra.dictospheres.com) と [rhombiverse.dictospheres.com](https://rhombiverse.dictospheres.com)）。[Polyhedraverse](https://polyhedraverse.dictospheres.com) は今のところ独自のサイトです。
 
 ここでは、どのピースも本物の結晶格子の上で空間をすき間なく埋めます。そのため、ピースは格子に空きがある場所にしか置けません。タップでピースを追加し、長押しで取り除き、作ったものをさまざまな表示で眺めてみましょう。
 
@@ -295,7 +295,7 @@ DICTO のピースの先頭は **DICTO ヘキサ** の仲間です：DICTO ヘ�
 
 ## 作品の保存
 
-作品は自動で保存されます（アプリのアドレスごとに別々）。**元に戻す**（長押しで巻き戻し）でどの手順も取り消せます。**設定 → ワールドの書き出し／読み込み** で、端末やアドレスの間で作品を移せます。polyhedraverse.vercel.app では、以前の Polyhedraverse サイトで保存した作品が、最初に開いたときに引き継がれます。
+作品は自動で保存されます（アプリのアドレスごとに別々）。**元に戻す**（長押しで巻き戻し）でどの手順も取り消せます。**設定 → ワールドの書き出し／読み込み** で、端末やアドレスの間で作品を移せます。polyhedraverse.dictospheres.com では、以前の Polyhedraverse サイトで保存した作品が、最初に開いたときに引き継がれます。
 
 ---
 

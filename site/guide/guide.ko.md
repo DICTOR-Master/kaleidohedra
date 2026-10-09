@@ -1,6 +1,6 @@
 # DICTO 사용자 가이드
 
-DICTO는 하나의 기하학을 공유하는 DICTO의 세 앱입니다. **Rhombiverse**는 **풍경**입니다: 모든 방향으로 펼쳐지는 격자 그 자체, 1D부터 6D까지. **Polyhedraverse**는 **초상화 갤러리**입니다: 그 격자에 사는 도형들을 하나씩 가까이에서. **Kaleidohedra**는 **풍경을 움직입니다**: 격자 전체를 기울이고 미끄러뜨릴 수 있고, 모든 조각이 함께 움직입니다. Kaleidohedra와 Rhombiverse는 입구가 둘인 하나의 앱입니다([kaleidohedra.vercel.app](https://kaleidohedra.vercel.app)와 [rhombiverse.vercel.app](https://rhombiverse.vercel.app)). [Polyhedraverse](https://polyhedraverse.vercel.app)는 지금은 자체 사이트에 있습니다.
+DICTO는 하나의 기하학을 공유하는 DICTO의 세 앱입니다. **Rhombiverse**는 **풍경**입니다: 모든 방향으로 펼쳐지는 격자 그 자체, 1D부터 6D까지. **Polyhedraverse**는 **초상화 갤러리**입니다: 그 격자에 사는 도형들을 하나씩 가까이에서. **Kaleidohedra**는 **풍경을 움직입니다**: 격자 전체를 기울이고 미끄러뜨릴 수 있고, 모든 조각이 함께 움직입니다. Kaleidohedra와 Rhombiverse는 입구가 둘인 하나의 앱입니다([kaleidohedra.dictospheres.com](https://kaleidohedra.dictospheres.com)와 [rhombiverse.dictospheres.com](https://rhombiverse.dictospheres.com)). [Polyhedraverse](https://polyhedraverse.dictospheres.com)는 지금은 자체 사이트에 있습니다.
 
 여기서는 모든 조각이 실제 결정 격자 위에서 공간을 빈틈없이 채웁니다. 그래서 격자에 자리가 있는 곳에만 조각을 놓을 수 있습니다. 탭하면 조각이 추가되고, 길게 누르면 제거되며, 만든 것을 여러 보기로 살펴볼 수 있습니다.
 
@@ -295,7 +295,7 @@ DICTO의 조각은 **DICTO 헥사** 가족으로 시작합니다: DICTO 헥사(D
 
 ## 작품 저장
 
-작품은 앱 주소마다 따로 자동 저장되며, **되돌리기**(길게 눌러 되감기)로 어떤 단계든 되돌릴 수 있습니다. **설정 → 월드 내보내기 / 가져오기**로 기기와 주소 사이에서 작품을 옮깁니다. polyhedraverse.vercel.app에서는 예전 Polyhedraverse 사이트에 저장한 작품을 처음 방문할 때 가져옵니다.
+작품은 앱 주소마다 따로 자동 저장되며, **되돌리기**(길게 눌러 되감기)로 어떤 단계든 되돌릴 수 있습니다. **설정 → 월드 내보내기 / 가져오기**로 기기와 주소 사이에서 작품을 옮깁니다. polyhedraverse.dictospheres.com에서는 예전 Polyhedraverse 사이트에 저장한 작품을 처음 방문할 때 가져옵니다.
 
 ---
 

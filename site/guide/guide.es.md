@@ -1,6 +1,6 @@
 # Guía de usuario de DICTO
 
-DICTO son tres apps de DICTO sobre una misma geometría. **Rhombiverse** es el **paisaje**: las redes mismas, extendiéndose en todas direcciones, de 1D a 6D. **Polyhedraverse** es la **galería de retratos**: las formas que viven en esas redes, una a una, de cerca. **Kaleidohedra** **mueve el paisaje**: puedes cizallar y deslizar toda la red, y cada pieza se mueve con ella. Kaleidohedra y Rhombiverse son una sola app con dos puertas, [kaleidohedra.vercel.app](https://kaleidohedra.vercel.app) y [rhombiverse.vercel.app](https://rhombiverse.vercel.app); [Polyhedraverse](https://polyhedraverse.vercel.app) tiene por ahora su propio sitio.
+DICTO son tres apps de DICTO sobre una misma geometría. **Rhombiverse** es el **paisaje**: las redes mismas, extendiéndose en todas direcciones, de 1D a 6D. **Polyhedraverse** es la **galería de retratos**: las formas que viven en esas redes, una a una, de cerca. **Kaleidohedra** **mueve el paisaje**: puedes cizallar y deslizar toda la red, y cada pieza se mueve con ella. Kaleidohedra y Rhombiverse son una sola app con dos puertas, [kaleidohedra.dictospheres.com](https://kaleidohedra.dictospheres.com) y [rhombiverse.dictospheres.com](https://rhombiverse.dictospheres.com); [Polyhedraverse](https://polyhedraverse.dictospheres.com) tiene por ahora su propio sitio.
 
 Aquí cada pieza llena el espacio a la perfección sobre una red cristalina real, así que solo puedes poner una pieza donde la red tenga sitio para ella. Toca para añadir una pieza, mantén pulsado para quitarla y mira lo que has construido en distintas vistas.
 
@@ -295,7 +295,7 @@ Las piezas de DICTO empiezan con la familia **DICTO Hexa**: la DICTO Hexa (ocho 
 
 ## Guardar tu trabajo
 
-Tu construcción se guarda sola, por separado para la dirección de cada app, y **Deshacer** (mantén pulsado para retroceder) quita cualquier paso. **Ajustes → Exportar / Importar mundo** lleva construcciones entre dispositivos y direcciones. En polyhedraverse.vercel.app, una construcción guardada por el sitio anterior de Polyhedraverse se trae la primera vez que entras.
+Tu construcción se guarda sola, por separado para la dirección de cada app, y **Deshacer** (mantén pulsado para retroceder) quita cualquier paso. **Ajustes → Exportar / Importar mundo** lleva construcciones entre dispositivos y direcciones. En polyhedraverse.dictospheres.com, una construcción guardada por el sitio anterior de Polyhedraverse se trae la primera vez que entras.
 
 ---
 

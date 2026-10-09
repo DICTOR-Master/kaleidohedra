@@ -3,13 +3,13 @@
 DICTO, 2026-10-08: "step D next". Polyhedraverse (today a Next.js/React site, ~11,500 lines, repo
 `polyhedraverse`) is rebuilt in the joined app's own plain JavaScript, as a third app beside
 Kaleidohedra and Rhombiverse: same 3D scene, same controls, same DICTO, its own space in green.
-Then polyhedraverse.vercel.app becomes the third front door of this repo.
+Then polyhedraverse.dictospheres.com becomes the third front door of this repo.
 
 ## Decisions (DICTO, 2026-10-08)
 
 - **Full rewrite** into the joined app (not a bundled React island).
 - **Code moves into this repo**; the `polyhedraverse` repo becomes history only (like `rhombiverse`).
-- **Saves stay per door**: polyhedraverse.vercel.app keeps reading its own saved build (same storage
+- **Saves stay per door**: polyhedraverse.dictospheres.com keeps reading its own saved build (same storage
   key); from the other two doors Polyhedraverse starts empty. Export/Import moves builds between them.
 - **Welcome**: the shared one, with Polyhedraverse's turning **dodecahedron** in green.
 - **DICTO list**: **3D** and **4D**, then the families (3D: its families as turning wireframes;
@@ -31,7 +31,7 @@ Then polyhedraverse.vercel.app becomes the third front door of this repo.
   building with, so adding it (or the one before) again is one tap, not a trip back down a long
   family list (the Stellations especially). Shapes in the queue that fit the selected face are offered
   first when attaching. Comes with D3 (adding) and D4 (shown in the browser's attach mode).
-- **Switchover**: the Next.js site keeps serving polyhedraverse.vercel.app until the rewrite does
+- **Switchover**: the Next.js site keeps serving polyhedraverse.dictospheres.com until the rewrite does
   everything above; then DICTO re-points that Vercel project here (`SITE=polyhedraverse`).
 
 ## How it fits
