@@ -748,9 +748,10 @@ Sunstar Lattice has the same cells, dodecahedra on the even ones and Dogstars on
 
 ## 17. Kagome hulls (DICTO, 2026-10-09)
 
-*DICTO asked whether other cluster shapes ("rhombi, cuboctahedra, RD hulls") give Kagome
-configurations with the DICTO Jewel and the Sunstar, as the tetrahedral clusters of #15 and #16 do.
-They do, and they keep to one rule.*
+*DICTO has worked with hulls for months: how they transform, and how they repeat according to how
+they are built. Here DICTO tested whether those hulls (rhombi, cuboctahedra, RD hulls) behave as
+expected with the DICTO Jewel and the Sunstar, giving Kagome configurations as the tetrahedral
+clusters of #15 and #16 do. They do, and all six keep to one rule.*
 
 - Both lattices have the same rock-salt cells (DICTO Jewels or dodecahedra on the even cells,
   stellas or Dogstars on the odd), so a configuration is a cluster of even cells and a lattice of
