@@ -693,17 +693,25 @@ a whole rhombus, each group a shape of its own (krp-core `DJ_TETRAHEDRAL_CLUSTER
   stella is then inside exactly one octahedral cluster, so the network of solid clusters fills all
   of space with no separate Jewels or stellas. (Not a tiling of separate pieces:
   neighbours share Jewels.) Shown in the Stella–Jewel world's Octet network view.
+- **The Kagome network** (DICTO's idea, "Kagome-style reversing tetrahedrons"): up tetrahedral clusters
+  on a face-centred cubic set of anchors (all coordinates even, summing to a multiple of 4), down
+  clusters forming between them. Every Jewel held is in one up and one down cluster, neighbouring
+  clusters share a single Jewel at a corner, as Kagome triangles do, and it holds half the Jewel
+  cells; single Jewels take the other half and stellas the odd cells, so it fills space too. The
+  pyrochlore lattice itself is well known (corner-sharing tetrahedra in frustrated magnets and
+  pyrochlore minerals, stacked Kagome layers); its cells as solid DICTO Jewel clusters were not found.
 - Not a pairing with Dogstars: between clusters the gaps are whole stella octangulas, and a Dogstar
   (0.8090 at this size) fills only 38% of one (2.1180), leaving the spike tips open.
 - In the apps: Stella–Jewel views that place a whole cluster per tap, and DICTO's pieces in
   Polyhedraverse's list. Their nets wait for an unfolding of 228 and 288 faces that does not overlap
   itself (searching).
-- Verified: `src/krp-core/scripts/verify-dicto-jewel-cluster.mjs` (krp-core v0.9.0), every push, 23
+- Verified: `src/krp-core/scripts/verify-dicto-jewel-cluster.mjs` (krp-core v0.9.1), every push, 26
   checks: the shared rhombi, no overlap (point tests), closed and consistently wound surfaces, the
   pinch point, the stella inside the octahedral cluster (fitting face for face, reaching the outside
   only at its 8 spike tips), the volumes, and both space-fillings (every Jewel cell in a box of 3,429 in
-  exactly one cluster), and the octet network (8 and 6 clusters per Jewel, faces of 3, every stella
-  inside one octahedral cluster).
+  exactly one cluster), the octet network (8 and 6 clusters per Jewel, faces of 3, every stella
+  inside one octahedral cluster), and the Kagome network (one up and one down cluster per Jewel held,
+  single shared corners, half the Jewel cells).
 - Status: **not found**, a candidate, resting on #10: the clusters are made only of the DICTO Jewel,
   which itself was not found.
 - Archived: Zenodo [10.5281/zenodo.23256623](https://doi.org/10.5281/zenodo.23256623) (v2026.10.09-octet, 2026-10-09).
@@ -724,6 +732,8 @@ Sunstar Lattice has the same cells, dodecahedra on the even ones and Dogstars on
 - **Both fill space with Dogstars**, on the same packings as #15 (tetrahedral at all-even anchors,
   octahedral on the lattice of 12 cells per cluster), and **shared they form the octet network**,
   every Dogstar inside one octahedral cluster.
+- **The Kagome network** holds for them too, on the same cells: up and down clusters of dodecahedra
+  sharing single dodecahedra at their corners, single dodecahedra and Dogstars filling the rest.
 - In the apps: the Sunstar world's Tetrahedral clusters, Octahedral clusters and Octet network
   views, and both shapes in Polyhedraverse's DICTO's pieces.
 - Verified: `src/krp-core/scripts/verify-sunstar-cluster.mjs` (krp-core v0.9.0), every push, 12 checks:
