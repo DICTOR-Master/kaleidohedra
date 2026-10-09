@@ -221,6 +221,8 @@
        on top of its buttons -- which puts them over the scene, so taps
        pass straight through them (toasts are text only). */
     body.world4d-on #hud-prompt, body.qc-world-on #hud-prompt { bottom: calc(190px + env(safe-area-inset-bottom, 0px)); pointer-events: none; }
+    /* 2D+ on phones: its panel sits at the bottom too, so prompts go above it (2D audit, 2026-10-10). */
+    @media (max-width: 600px) { body.flat-2d #hud-prompt { bottom: calc(170px + env(safe-area-inset-bottom, 0px)); pointer-events: none; } }
     .w4d-row { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; }
     .w4d-row button {
       background: rgba(0, 0, 0, 0.45);

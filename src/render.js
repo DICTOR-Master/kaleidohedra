@@ -76,7 +76,7 @@ import {
   PYROCHLORE_STORAGE_KEY,
 } from './core/persistence.js';
 import { VALID_TRIPLES, unitTileVertices } from './krp-core/src/geometry-extensions/growth.js';
-import { SITE, SITES, storageKey, theme, activeSite, setActiveSite } from './app/site.js';
+import { SITE, SITES, storageKey, theme, themeOf, activeSite, setActiveSite } from './app/site.js';
 import { installShear } from './app/kaleido-shear.js';
 import { createStudiesWorld } from './app/world-studies.js';
 import { createTargetsWorld } from './app/world-targets.js';
@@ -399,7 +399,9 @@ function applyDimensionCameraPerspective(dimension) {
       cameraSavedFor2D = true;
     }
     controls.target.set(0, 0, 0);
-    camera.position.set(0, 0, 12);
+    // About 6 tiles across the screen's shorter side on any device (DICTO 2026-10-10, 2D audit: a fixed
+    // distance made the first tile fill 72% of a phone).
+    camera.position.set(0, 0, flat2DDistance(0));
     controls.enableRotate = false;
     if (controls.mouseButtons.LEFT !== null) controls.mouseButtons.LEFT = THREE.MOUSE.PAN;
     // Real bug, direct report ("still unable to tap and place on
@@ -1422,15 +1424,72 @@ function resolveLattice2dImpl(primitiveId, arrangementId) {
 // cell across every class mesh, letting cellAt stay a single flat lookup
 // with no per-mesh bookkeeping, and a click can only ever register
 // against the ONE mesh actually showing real geometry at that spot.
+// 2D+'s look (DICTO 2026-10-10, 2D audit): each class of tile its own colour (orientations, kite classes,
+// up and down triangles, Kagome's hexagons and triangles) unless colours are picked or by type, and every
+// tile outlined in black like the Kaleidoscope's, so neighbours read apart.
+const LATTICE2D_CLASS_COLOURS = [0x22c3e6, 0xffc857, 0xc792ea, 0x7ae0b8, 0xff8a65, 0x9fb4c8];
+function lattice2dColour(cell, primitiveId, cls) {
+  if (colorView.mode !== 'cyan' || cell.generatedByBlackHole) return instanceColorFor(cell, `lattice2d:${primitiveId}`);
+  const base = new THREE.Color(LATTICE2D_CLASS_COLOURS[((cls % LATTICE2D_CLASS_COLOURS.length) + LATTICE2D_CLASS_COLOURS.length) % LATTICE2D_CLASS_COLOURS.length]);
+  return cell.shell ? base.lerp(shellTint(cell.shell), 0.35) : base;
+}
+const LATTICE2D_OUTLINE_WIDTH = 0.035 * LATTICE2D_S;
+const lattice2dOutlineMaterial = new THREE.MeshBasicMaterial({ color: 0x000000, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
+// A tile's top face, as its corners in order round the middle (tileVerts are a thin prism).
+function lattice2dTopPolygon(verts) {
+  const zTop = Math.max(...verts.map((v) => v[2]));
+  const top = verts.filter((v) => v[2] > zTop - 1e-6);
+  const cx = top.reduce((t, v) => t + v[0], 0) / top.length, cy = top.reduce((t, v) => t + v[1], 0) / top.length;
+  return { z: zTop, pts: top.map((v) => [v[0], v[1]]).sort((a, b) => Math.atan2(a[1] - cy, a[0] - cx) - Math.atan2(b[1] - cy, b[0] - cx)) };
+}
+// One black outline mesh per tile mesh (a child, so it shows and hides with it; never picked): a strip
+// of the outline width along every edge of every placed tile.
+function setLattice2dOutline(owner, polygons, z) {
+  let outline = owner.userData.outline;
+  if (!outline) {
+    outline = new THREE.Mesh(new THREE.BufferGeometry(), lattice2dOutlineMaterial);
+    outline.raycast = () => {};
+    owner.add(outline);
+    owner.userData.outline = outline;
+  }
+  const pos = [], w = LATTICE2D_OUTLINE_WIDTH / 2, zz = z + 0.002;
+  for (const P of polygons) P.forEach((p, i) => {
+    const q = P[(i + 1) % P.length], L = Math.hypot(q[0] - p[0], q[1] - p[1]);
+    if (L < 1e-9) return;
+    const nx = (-(q[1] - p[1]) / L) * w, ny = ((q[0] - p[0]) / L) * w;
+    pos.push(p[0] + nx, p[1] + ny, zz, q[0] + nx, q[1] + ny, zz, q[0] - nx, q[1] - ny, zz, p[0] + nx, p[1] + ny, zz, q[0] - nx, q[1] - ny, zz, p[0] - nx, p[1] - ny, zz);
+  });
+  outline.geometry.dispose();
+  outline.geometry = new THREE.BufferGeometry();
+  outline.geometry.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+}
+const placePolygon = (pts, rot, x, y) => { const c = Math.cos(rot), sn = Math.sin(rot); return pts.map(([px, py]) => [x + c * px - sn * py, y + sn * px + c * py]); };
+
+// 2D+'s camera distance (DICTO 2026-10-10, 2D audit): about 6 tiles (each ~1.5 S wide) across the
+// screen's shorter side, or enough to show a patch of radius `extent` with a margin.
+function flat2DDistance(extent) {
+  const halfShort = Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2) * Math.min(camera.aspect, 1);
+  const want = Math.max(3 * 1.5 * LATTICE2D_S, extent / 0.8);
+  return want / halfShort;
+}
+// Auto-fit as the patch grows: pull the camera back (never in) when the tiles reach near the edge.
+function fit2DToCells(points) {
+  if (activeDimension !== '2D' || !points.length) return;
+  const t = controls.target, r = Math.max(...points.map(([x, y]) => Math.hypot(x - t.x, y - t.y))) + 1.5 * LATTICE2D_S;
+  const d = flat2DDistance(r);
+  if (camera.position.z - t.z < d) { camera.position.z = t.z + d; controls.update(); }
+}
 function rebuildLattice2dInstances(mesh, world, primitiveId, angleDeg, arrangementId = 'translation', companionMeshes = null, classMeshes = null) {
   const impl = resolveLattice2dImpl(primitiveId, arrangementId);
   const cellOrder = world.entries();
   lattice2dCellOrders.set(primitiveId, cellOrder);
   const numClasses = impl.classCount ? impl.classCount(angleDeg) : 1;
+  const fitPoints = [];
 
   if (impl.classCount && classMeshes && numClasses > 1) {
     const m = new THREE.Matrix4();
     classMeshes.forEach((classMesh, c) => {
+      const classTop = c < numClasses ? lattice2dTopPolygon(impl.classTileVerts(angleDeg, c, LATTICE2D_S, LATTICE2D_H)) : null, classPolys = [];
       if (c < numClasses) {
         const classGeometry = new ConvexGeometry(impl.classTileVerts(angleDeg, c, LATTICE2D_S, LATTICE2D_H).map(([x, y, z]) => new THREE.Vector3(x, y, z)));
         classGeometry.computeVertexNormals();
@@ -1442,12 +1501,15 @@ function rebuildLattice2dInstances(mesh, world, primitiveId, angleDeg, arrangeme
           const [wx, wy, wz] = impl.cellToWorld(cell.x, cell.y, cell.z, angleDeg, LATTICE2D_S, 0);
           m.makeRotationZ(impl.classInstanceRotationRad(cell.z, angleDeg));
           m.setPosition(wx, wy, wz);
+          classPolys.push(placePolygon(classTop.pts, impl.classInstanceRotationRad(cell.z, angleDeg), wx, wy));
+          fitPoints.push([wx, wy]);
         } else {
           m.makeScale(0, 0, 0);
         }
         classMesh.setMatrixAt(i, m);
-        classMesh.setColorAt(i, instanceColorFor(cell, `lattice2d:${primitiveId}`));
+        classMesh.setColorAt(i, lattice2dColour(cell, primitiveId, c));
       });
+      setLattice2dOutline(classMesh, classPolys, classTop ? classTop.z : 0);
       classMesh.count = cellOrder.length;
       classMesh.instanceMatrix.needsUpdate = true;
       if (classMesh.instanceColor) classMesh.instanceColor.needsUpdate = true;
@@ -1459,23 +1521,28 @@ function rebuildLattice2dInstances(mesh, world, primitiveId, angleDeg, arrangeme
     // Triangular). Any extra class meshes from a PREVIOUS angle that
     // needed more must be emptied here, or they'd keep showing/blocking
     // clicks on stale geometry after switching back.
-    if (classMeshes) for (let c = 1; c < classMeshes.length; c++) classMeshes[c].count = 0;
+    if (classMeshes) for (let c = 1; c < classMeshes.length; c++) { classMeshes[c].count = 0; setLattice2dOutline(classMeshes[c], [], 0); }
     const newGeometry = new ConvexGeometry(impl.tileVerts(angleDeg, LATTICE2D_S, LATTICE2D_H).map(([x, y, z]) => new THREE.Vector3(x, y, z)));
     newGeometry.computeVertexNormals();
     mesh.geometry.dispose();
     mesh.geometry = newGeometry;
-    const m = new THREE.Matrix4();
+    const m = new THREE.Matrix4(), top = lattice2dTopPolygon(impl.tileVerts(angleDeg, LATTICE2D_S, LATTICE2D_H)), polys = [];
     cellOrder.forEach((cell, i) => {
       const [wx, wy, wz] = impl.cellToWorld(cell.x, cell.y, cell.z, angleDeg, LATTICE2D_S, 0);
+      const rot = impl.hasOrientation ? impl.instanceRotationRad(angleDeg, cell.z) : 0;
       if (impl.hasOrientation) {
-        m.makeRotationZ(impl.instanceRotationRad(angleDeg, cell.z));
+        m.makeRotationZ(rot);
         m.setPosition(wx, wy, wz);
       } else {
         m.makeTranslation(wx, wy, wz);
       }
       mesh.setMatrixAt(i, m);
-      mesh.setColorAt(i, instanceColorFor(cell, `lattice2d:${primitiveId}`));
+      // Class: the orientation for oriented tiles (up/down triangles, kite positions), one class otherwise.
+      mesh.setColorAt(i, lattice2dColour(cell, primitiveId, impl.hasOrientation ? (impl.classOf ? impl.classOf(cell.z, angleDeg) : cell.z) : 0));
+      polys.push(placePolygon(top.pts, rot, wx, wy));
+      fitPoints.push([wx, wy]);
     });
+    setLattice2dOutline(mesh, polys, top.z);
     mesh.count = cellOrder.length;
     mesh.instanceMatrix.needsUpdate = true;
     if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
@@ -1491,18 +1558,25 @@ function rebuildLattice2dInstances(mesh, world, primitiveId, angleDeg, arrangeme
       companionMesh.geometry = companionGeometry;
       const cm = new THREE.Matrix4();
       const instances = companion.instances(cellOrder, angleDeg, LATTICE2D_S);
+      const ctop = lattice2dTopPolygon(companion.tileVerts(angleDeg, LATTICE2D_S, LATTICE2D_H)), cpolys = [];
       instances.forEach(({ world: [wx, wy], owner }, i) => {
         cm.makeTranslation(wx, wy, 0);
         companionMesh.setMatrixAt(i, cm);
-        companionMesh.setColorAt(i, instanceColorFor(cellOrder[owner], `lattice2d:${primitiveId}`).clone().lerp(KAGOME_TRIANGLE_LIGHTEN_TO, KAGOME_TRIANGLE_LIGHTEN));
+        // Kagome's triangles: their own class colour (by default), else lightened from their hexagon's.
+        companionMesh.setColorAt(i, colorView.mode === 'cyan' ? lattice2dColour(cellOrder[owner], primitiveId, 1 + idx) : instanceColorFor(cellOrder[owner], `lattice2d:${primitiveId}`).clone().lerp(KAGOME_TRIANGLE_LIGHTEN_TO, KAGOME_TRIANGLE_LIGHTEN));
+        cpolys.push(placePolygon(ctop.pts, 0, wx, wy));
       });
+      setLattice2dOutline(companionMesh, cpolys, ctop.z);
       lattice2dCompanionOwners.set(companionMesh, instances.map((inst) => inst.owner));
+      instances.forEach(({ world: [wx, wy] }) => fitPoints.push([wx, wy]));
       companionMesh.count = instances.length;
       companionMesh.instanceMatrix.needsUpdate = true;
       if (companionMesh.instanceColor) companionMesh.instanceColor.needsUpdate = true;
       companionMesh.computeBoundingSphere();
     });
   }
+  // The patch on show grows: keep it in view.
+  if (mesh.visible) fit2DToCells(fitPoints);
 }
 
 // Real placed Rhombohedra cells (free lattice) -- same instancing
@@ -1989,7 +2063,8 @@ async function init() {
   // a sphere of diameter d shows as d * (height / 2) / (depth * tan(fov/2)),
   // so size = d / tan(fov/2) matches it, following the Field of view setting
   // (x1.3 for the sprite's soft edge, matched by eye against the spheres).
-  dotMatrixMesh.onBeforeRender = () => { dotMatrixMaterial.size = 1.3 * DOT_DIAMETER / Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2); };
+  // 2D+ is DICTO's own space: its dots in DICTO silver whichever door you came in by (2D audit, 2026-10-10).
+  dotMatrixMesh.onBeforeRender = () => { dotMatrixMaterial.size = 1.3 * DOT_DIAMETER / Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2); dotMatrixMaterial.color.setHex(activeDimension === '2D' ? themeOf('dicto').accentHex : theme().accentHex); };
   // renderOrder no longer needed for draw-order purposes now that real
   // depth testing (not depthTest:false) handles tile-occludes-dots
   // correctly on its own -- left at the default.
@@ -2593,6 +2668,10 @@ async function init() {
     }
     firstPlacementMesh.geometry = spec.geometry;
     firstPlacementEdges.geometry = new THREE.EdgesGeometry(spec.geometry);
+    // The space's own colour, read now (2D+: DICTO silver), not the door's at start.
+    const firstColour = activeDimension === '2D' ? themeOf('dicto').accentHex : theme().strongHex;
+    firstPlacementMesh.material.color.setHex(firstColour);
+    firstPlacementEdges.material.color.setHex(firstColour);
     firstPlacementMesh.visible = true;
     firstPlacementEdges.visible = true;
   }
@@ -3019,6 +3098,12 @@ async function init() {
     for (const id of ['xray-toggle', 'spherical-toggle']) { const b = document.getElementById(id); if (b) b.hidden = isOwnWorldDimension() && !(id === 'spherical-toggle' && polySpace); }
     // Polyhedraverse's space: no aperiodic shadow to show (DICTO 2026-10-09: X-Ray, Section and Duality hidden there).
     { const b = document.getElementById('duality-toggle'); if (b) b.hidden = own3DActive() && own3D === 'poly'; }
+    // 2D+ (DICTO 2026-10-10, 2D audit): the four 3D-only tools hide there (Nets keeps them: it folds
+    // into 3D). A body class lets the phone layout lift the prompts above the 2D panel.
+    const flat2D = activeDimension === '2D' && !(own3DActive() && own3D === 'nets');
+    if (flat2D) for (const id of ['projection-toggle', 'xray-toggle', 'duality-toggle', 'spherical-toggle']) { const b = document.getElementById(id); if (b) b.hidden = true; }
+    else { const b = document.getElementById('projection-toggle'); if (b) b.hidden = false; }
+    document.body.classList.toggle('flat-2d', flat2D);
     refreshSphereOverlayIfOn?.();
     lattice2dPanel.classList.toggle('visible', activeDimension === '2D' && !own3DActive());
     updateRhomboAttachPanel();
@@ -5705,6 +5790,8 @@ async function init() {
       // hand-written trio -- same underlying "grow-only, tap directly on
       // an existing one to remove it" fact for every combination.
       const lattice2dPrimitive = piece?.startsWith('lattice2d:') ? LATTICE_PRIMITIVES.find((p) => `lattice2d:${p.id}` === piece) : null;
+      // Tapping a tile already placed does nothing, silently (DICTO 2026-10-10: no nag; long-press removes).
+      if (lattice2dPrimitive && action === 'add') return;
       const lattice2dMessages = lattice2dPrimitive && {
         add: `A ${lattice2dPrimitive.label} tile is already there.`,
         remove: lattice2dPrimitive.id === 'kagome'
