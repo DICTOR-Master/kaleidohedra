@@ -584,6 +584,7 @@ leave 360° − 3 × 116.565° = **10.3048°**. The gaps are exactly two kinds o
 - Verified: `src/krp-core/scripts/verify-dodeca13.mjs` (krp-core v0.12.0), every push, 10 checks: each
   of the five solids closed, outward, Euler 2, with its exact volume; the 72 pentagons; every parts
   view's sum. Study files: [studies/2026-10-09-dodeca-13](studies/2026-10-09-dodeca-13/).
+- Archived: Zenodo [10.5281/zenodo.23267578](https://doi.org/10.5281/zenodo.23267578) (v2026.10.10-dodeca13, the Dodeca-13 family and the DICTO-Star relation).
 - Verified: `src/krp-core/scripts/verify-dodeca-cluster.mjs` (krp-core v0.7.2), every push:
   congruence, exact volumes, no overlap among the 63 solids (separating axes), every gap face
   accounted for, and the halving and thirds.
@@ -806,6 +807,7 @@ clusters of #15 and #16 do. They do, and all six keep to one rule.*
   Checked in the design study ([studies/2026-10-09-dodeca-13](studies/2026-10-09-dodeca-13/)); not
   found in a web search on 2026-10-09 (the 10.3° frustration and Mackay-type icosahedral clusters
   are known; this exception is not). Not proof of novelty.
+  Archived: Zenodo [10.5281/zenodo.23267578](https://doi.org/10.5281/zenodo.23267578) (v2026.10.10-dodeca13).
 - In the apps: all six, in both the Stella–Jewel and the Sunstar world, each its own arrangement
   (DICTO 2026-10-09: keep all six); each cluster drawn as one solid, the single pieces and stellas or
   Dogstars between them filling in by themselves.
