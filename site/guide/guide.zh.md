@@ -246,7 +246,7 @@ RHOMBIS 是用同样的块做成的 3D 解谜游戏：用托盘里的块填满�
 
 # Polyhedraverse {#polyhedraverse}
 
-Polyhedraverse 是肖像画廊：按家族排列的每一个形状，一次一个，近距离观看。旋转它、比较它、把形状面对面或顶点对顶点拼接，并打印任何形状的展开图来折叠。它的空间现在已在 DICTO 中：选择 **3D+**，在 Polyhedraverse 的绿色区块中选一个家族，再选一个形状，然后点绿色轮廓放置。拼接形状、形状浏览器和 4D 将逐步加入；在此之前，其空间中的提示会链接到可以使用这些功能的完整网站 [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app)。它自己的指南：[polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide)。
+Polyhedraverse 是肖像画廊：按家族排列的每一个形状，一次一个，近距离观看。旋转它、比较它、把形状面对面或顶点对顶点拼接，并打印任何形状的展开图来折叠。它的空间在 DICTO 中：选择 **3D+**，在 Polyhedraverse 的绿色区块中选一个家族，再选一个形状，然后点绿色轮廓放置。**点按连接**：点一个面，再点出现的条带中的形状（**更多…**列出所有适合的形状）；它以最佳适配连上（◀ ▶ 看其他适配），并保持选中，之后每点一个面就一次连上（✕ 停止）。长按移除一个部件。形状浏览器和 4D 随后加入；在此之前，完整网站在 [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app)。它自己的指南：[polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide)。
 
 ---
 

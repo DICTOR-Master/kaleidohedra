@@ -477,6 +477,8 @@ let refreshHudIndicator = () => {};
 // covers the screen -- avoids two simultaneous full-scene WebGL
 // renders every frame for a pass that's provably invisible anyway.
 let isMenuOpen = () => false;
+// D3's More… (the Polyhedraverse world): DICTO's fitting-shape picker, set once the wizard exists.
+let openShapePicker = () => {};
 
 // Module-level (not init()-local) since enterWalk/exitWalk, defined
 // before init() runs, need it too -- has no dependency on any init()
@@ -4109,6 +4111,7 @@ async function init() {
       else dimensionWizard.open();
     }
     isMenuOpen = () => dimensionWizard.isOpen;
+    openShapePicker = dimensionWizard.openShapePicker;
 
     // The app's entry gate: every load opens the DICTO wizard on the app you came in by.
     dimensionWizard.open();
@@ -5231,6 +5234,8 @@ async function init() {
     showHudPrompt,
     fitView: (radius) => fitCameraTo([0, 0, 0], radius),
     getMaterial: () => materialSelect.value,
+    // D3's More…: DICTO's families, only the shapes that fit the tapped face.
+    pickShape: (fits, onPick) => openShapePicker(fits, onPick),
     colorOf: (shape, material, family) => (colorView.mode === 'type' ? new THREE.Color(FAMILY_COLORS[family] ?? theme().pieceHex)
       : colorView.mode === 'pick' && material ? materialColor(material) : new THREE.Color(theme().pieceHex)),
     onChange: () => { if (historyRestorers.has('worldpoly')) recordHistory('worldpoly', polyWorld.snapshot()); },

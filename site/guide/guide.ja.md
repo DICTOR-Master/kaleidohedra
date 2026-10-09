@@ -246,7 +246,7 @@ RHOMBIS は同じピースで作る 3D パズルです。トレイのピース�
 
 # Polyhedraverse {#polyhedraverse}
 
-Polyhedraverse は肖像画ギャラリーです。ファミリーごとのすべての形を、ひとつずつ間近で。回して、比べて、形を面と面、頂点と頂点でつなげ、どの形の展開図も印刷して折れます。その空間は DICTO の中に入りました：**3D+** を選び、Polyhedraverse の緑のブロックでファミリー、次に形を選んで、緑の輪郭をタップして置きます。形をつなげること、形のブラウザ、4D は段階的に加わります。それまでは空間の中の案内から、それらが使えるフルサイト [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app) に行けます。専用ガイド：[polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide)。
+Polyhedraverse は肖像画ギャラリーです。ファミリーごとのすべての形を、ひとつずつ間近で。回して、比べて、形を面と面、頂点と頂点でつなげ、どの形の展開図も印刷して折れます。その空間は DICTO の中にあります：**3D+** を選び、Polyhedraverse の緑のブロックでファミリー、次に形を選んで、緑の輪郭をタップして置きます。**タップでつなげる**：面をタップし、現れる帯から形をタップします（**さらに…** で合う形をすべて表示）。いちばん合う向きでつながり（◀ ▶ でほかの向き）、その形は選ばれたままなので、次にタップする面にはタップ 1 回でつながります（✕ でやめる）。長押しでピースを取り除きます。形のブラウザと 4D はこれから。それまではフルサイト [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app) へ。専用ガイド：[polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide)。
 
 ---
 

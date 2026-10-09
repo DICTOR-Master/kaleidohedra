@@ -796,13 +796,38 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     input.addEventListener('keydown', (e) => { if (e.key === 'Enter') go(); });
   }
 
-  // ---- a Polyhedraverse family's shapes (from 3D+'s Shapes) ----
+  // ---- picking a shape for a face (D3's More…): families with only the shapes that fit ----
+  let picker = null; // { fits(id), onPick(id) } while picking
+  function showShapePicker() {
+    current = showShapePicker;
+    resetPreviews();
+    const L = getSettings().language;
+    titleEl.textContent = t('poly.pickTitle', L);
+    let grid = '';
+    for (const key of [DICTO_POLY.key, ...POLY_FAMILIES]) {
+      const ids = polyIds(key).filter(picker.fits);
+      if (!ids.length) continue;
+      grid += `
+        <button type="button" class="dim-wizard-card-btn" data-family="${key}">
+          ${previewSlot(() => polyShapeEdges(ids[0]))}
+          <span class="dim-wizard-row-text">
+            <span class="dim-wizard-label">${polyLabel(key)}</span>
+            <span class="dim-wizard-desc">${tn('wiz.poly.count', L, ids.length)}</span>
+          </span>
+        </button>`;
+    }
+    bodyEl.innerHTML = `<div class="dim-wizard-sub">${t('poly.pickSub', L)}</div><div class="dim-wizard-grid dicto-block" style="${blockStyle('polyhedraverse')}">${grid}</div>`;
+    mountPreviews();
+    bodyEl.querySelectorAll('[data-family]').forEach((el) => el.addEventListener('click', () => showPolyFamily(el.dataset.family)));
+  }
+
+  // ---- a Polyhedraverse family's shapes (from 3D+'s Shapes, or the picker) ----
   function showPolyFamily(key) {
     current = () => showPolyFamily(key);
     resetPreviews();
     const L = getSettings().language;
     let grid = '';
-    for (const id of polyIds(key)) {
+    for (const id of polyIds(key).filter((x) => !picker || picker.fits(x))) {
       grid += `
         <button type="button" class="dim-wizard-card-btn dim-wizard-piece" data-action="tool:polyShape:${id}">
           ${previewSlot(() => polyShapeEdges(id))}
@@ -814,8 +839,11 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
       <div class="dim-wizard-sub"><b>${polyLabel(key)}</b> · ${t('wiz.poly.shapes', L)}</div>
       <div class="dim-wizard-grid dicto-block" style="${blockStyle(key === DICTO_POLY.key ? 'dicto' : 'polyhedraverse')}">${grid}</div>`;
     mountPreviews();
-    bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => { openDim = '3D'; showDimensions(`[data-family="${key}"]`); });
-    bodyEl.querySelectorAll('[data-action]').forEach((el) => el.addEventListener('click', () => choose('3D', el.dataset.action, 'polyhedraverse')));
+    bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => { if (picker) { showShapePicker(); return; } openDim = '3D'; showDimensions(`[data-family="${key}"]`); });
+    bodyEl.querySelectorAll('[data-action]').forEach((el) => el.addEventListener('click', () => {
+      if (picker) { const { onPick } = picker; close(); onPick(el.dataset.action.replace('tool:polyShape:', '')); return; }
+      choose('3D', el.dataset.action, 'polyhedraverse');
+    }));
   }
 
   overlay.querySelector('.dim-wizard-close').addEventListener('click', () => close());
@@ -839,7 +867,17 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
   }
   function close() {
     resetPreviews();
+    picker = null;
+    overlay.querySelector('.dicto-apps').hidden = false;
     overlay.classList.remove('open');
+  }
+  /** D3's More…: the shapes that fit a face, by family; a tap picks one (onPick), ✕ cancels. */
+  function openShapePicker(fits, onPick) {
+    picker = { fits, onPick };
+    paintApps();
+    overlay.querySelector('.dicto-apps').hidden = true; // picking a shape, not an app
+    showShapePicker();
+    overlay.classList.add('open');
   }
   // Straight to a 5D/6D catalogue (the in-world Catalogue button).
   const openCatalogue = (dim) => openOn(() => showCatalogue(dim));
@@ -850,5 +888,5 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     showDimensions(`[data-dim="${openDim}"]`);
   });
 
-  return { open, openCatalogue, openDimension, close, get isOpen() { return overlay.classList.contains('open'); } };
+  return { open, openCatalogue, openDimension, openShapePicker, close, get isOpen() { return overlay.classList.contains('open'); } };
 }

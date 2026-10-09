@@ -1,15 +1,21 @@
 // Polyhedraverse inside the joined app (step D2, DICTO 2026-10-09): its own 3D world, the portrait
 // gallery's shapes from krp-core (src/polyhedra). Choose a shape in DICTO (families, then shapes);
-// an empty world shows its outline in the app's colour, tap it to place it. Building on faces and
-// vertices comes with D3, the shape browser with D4 (PLAN-POLYHEDRAVERSE.md).
+// an empty world shows its outline in the app's colour, tap it to place it; then tap attach (D3):
+// tap a face, then a shape. The shape browser comes with D4 (PLAN-POLYHEDRAVERSE.md).
 // Saved in Polyhedraverse's own form (krp-core assembly: nodes with a shape and a transform), so a
 // build moves between this world and the old site by Export/Import.
 import * as THREE from 'three';
-import { POLYHEDRA } from '../krp-core/src/polyhedra/index.js';
+import { POLYHEDRA, isFaceEligibleForAttach } from '../krp-core/src/polyhedra/index.js';
+import { facesCongruent } from '../krp-core/src/polyhedra/core.js';
+import { faceAttachOptions } from '../krp-core/src/assembly/faceAttach.js';
+import { rankFaceAttachOptions } from '../krp-core/src/assembly/faceRegistration.js';
+import { familyIds } from '../krp-core/src/polyhedra/families.js';
+import { mountWireframePreview } from './wireframe-preview.js';
+import { polyShapeEdges } from './poly-shapes.js';
 import { familiesFor } from '../krp-core/src/polyhedra/families.js';
 import { FAMILY_COLORS } from '../krp-core/src/assembly/pieceColors.js';
 import { getSettings, onSettingsChange } from './settings.js';
-import { storageKey, theme, SITES } from './site.js';
+import { storageKey, theme } from './site.js';
 import { t } from './i18n.js';
 import { polyShapeName } from './poly-shapes.js';
 
@@ -20,13 +26,14 @@ const EDGE_COLOR = 0x0b1220;
 const DEFAULT_SHAPE = 'DODECAHEDRON';
 const lang = () => getSettings().language;
 
-export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => {}, showHudPrompt = () => {}, fitView = () => {} }) {
+export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => {}, showHudPrompt = () => {}, fitView = () => {}, pickShape = () => {} }) {
   const group = new THREE.Group();
   group.visible = false;
   scene.add(group);
 
   // ---- state: Polyhedraverse's assembly form ----
   let nodes = []; // { id, shape, transform: { position, quaternion }, material }
+  let connections = []; // { nodeA, vertexA, nodeB, vertexB, kind: 'face' } (face indices for a face join)
   const view = { shape: DEFAULT_SHAPE };
   let active = false, skeleton = false, opacity = 1;
   let spherical = false, sphereScale = 1;
@@ -39,9 +46,12 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       id: String(n.id), shape: n.shape, transform: { position: [...n.transform.position], quaternion: [...n.transform.quaternion] },
       ...(typeof n.material === 'string' ? { material: n.material } : {}),
     }));
+    const ids = new Set(nodes.map((n) => n.id));
+    connections = (Array.isArray(data?.connections) ? data.connections : []).filter((c) => c && ids.has(String(c.nodeA)) && ids.has(String(c.nodeB)) && Number.isInteger(c.vertexA) && Number.isInteger(c.vertexB))
+      .map((c) => ({ nodeA: String(c.nodeA), vertexA: c.vertexA, nodeB: String(c.nodeB), vertexB: c.vertexB, kind: c.kind ?? 'face' }));
     nextId = 1 + Math.max(0, ...nodes.map((n) => Number(String(n.id).replace(/\D/g, '')) || 0));
   }
-  const toJSON = () => ({ nodes: nodes.map((n) => ({ ...n })), connections: [] });
+  const toJSON = () => ({ nodes: nodes.map((n) => ({ ...n })), connections: connections.map((c) => ({ ...c })) });
   try {
     const data = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (data) { setFromJSON(data); if (POLYHEDRA[data.view?.shape]) view.shape = data.view.shape; }
@@ -54,7 +64,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   const pieceMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
   const outlineMaterial = new THREE.MeshStandardMaterial({ transparent: true, opacity: 0.16, depthWrite: false, side: THREE.DoubleSide });
   const pickTargets = [];
-  let faceOwner = []; // triangle index -> node
+  let faceOwner = []; // triangle index -> { node, face }
   function clearGroup() {
     for (const child of [...group.children]) {
       group.remove(child);
@@ -74,12 +84,12 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     for (const n of list) {
       colour(n, c);
       const P = worldPoints(n), s = POLYHEDRA[n.shape];
-      for (const f of s.faces) {
+      s.faces.forEach((f, fi) => {
         for (let i = 1; i < f.length - 1; i++) {
           for (const k of [f[0], f[i], f[i + 1]]) { pos.push(P[k].x, P[k].y, P[k].z); col.push(c.r, c.g, c.b); }
-          record?.push(n);
+          record?.push({ node: n, face: fi });
         }
-      }
+      });
       for (const [a, b] of s.edges) edge.push(P[a].x, P[a].y, P[a].z, P[b].x, P[b].y, P[b].z);
     }
     const g = new THREE.BufferGeometry();
@@ -137,6 +147,8 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       if (skeleton) lines.material.color.setHex(theme().accentHex);
       group.add(mesh, lines);
       pickTargets.push(mesh);
+      // The tapped face, waiting for a shape: a bright overlay just off the surface.
+      if (selection && nodes.includes(selection.node)) group.add(faceHighlight(selection.node, selection.face));
     } else {
       outlineMaterial.color.setHex(theme().strongHex);
       const [mesh, lines] = meshOf([outlineNode()], outlineMaterial, (n, c) => c.setHex(theme().strongHex), theme().strongHex);
@@ -146,8 +158,85 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     }
   }
 
-  // ---- building (D2: the first piece; attaching comes with D3) ----
-  function commit() { save(); rebuild(); onChange(); }
+  // ---- building: tap attach (step D3, DICTO 2026-10-09) ----
+  // Tap a face, then a shape: it attaches at once, the best fit first (◀ ▶ for the others). That shape
+  // stays chosen, so each face tapped next gets it in one tap, until another is picked (or ✕).
+  let selection = null; // { node, face }: a face waiting for a shape
+  let chosen = null; // the shape that stays chosen
+  let lastFit = null; // { node, conn, ranked, index }: the piece just attached, for ◀ ▶
+  const PARALLELOHEDRA = new Set(familyIds('PARALLELOHEDRA'));
+  const matrixOf = (n) => new THREE.Matrix4().compose(new THREE.Vector3(...n.transform.position), new THREE.Quaternion(...n.transform.quaternion), new THREE.Vector3(1, 1, 1));
+  const faceTaken = (n, fi) => connections.some((c) => (c.nodeA === n.id && c.vertexA === fi) || (c.nodeB === n.id && c.vertexB === fi));
+  // The faces of a shape that can go on this face (eligible and congruent), [] if none.
+  function fittingFaces(id, n, fi) {
+    const spec = POLYHEDRA[id], target = POLYHEDRA[n.shape];
+    if (!spec) return [];
+    const tf = target.faces[fi];
+    return spec.faces.map((f, k) => k).filter((k) => isFaceEligibleForAttach(spec, k) && spec.faces[k].length === tf.length && facesCongruent(target.vertices, tf, spec.vertices, spec.faces[k]));
+  }
+  const fits = (id, n, fi) => fittingFaces(id, n, fi).length > 0;
+  function faceHighlight(n, fi) {
+    const P = worldPoints(n), f = POLYHEDRA[n.shape].faces[fi];
+    const c = f.reduce((a, k) => a.add(P[k].clone()), new THREE.Vector3()).divideScalar(f.length);
+    const nrm = P[f[1]].clone().sub(P[f[0]]).cross(P[f[2]].clone().sub(P[f[0]])).normalize();
+    if (nrm.dot(c.clone().sub(P.reduce((a, v) => a.add(v.clone()), new THREE.Vector3()).divideScalar(P.length))) < 0) nrm.negate();
+    const lift = nrm.multiplyScalar(0.004);
+    const pos = [];
+    for (let i = 1; i < f.length - 1; i++) for (const k of [f[0], f[i], f[i + 1]]) { const q = P[k].clone().add(lift); pos.push(q.x, q.y, q.z); }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: theme().contrastHex, transparent: true, opacity: 0.75, side: THREE.DoubleSide, depthWrite: false }));
+    m.userData.poly = 'highlight';
+    return m;
+  }
+  // Attach shape `id` on face fi of node n, the best fit first; false if it doesn't fit there.
+  function attach(id, n, fi) {
+    const incoming = fittingFaces(id, n, fi);
+    if (!incoming.length) return false;
+    const spec = POLYHEDRA[id];
+    const options = faceAttachOptions(POLYHEDRA[n.shape], fi, matrixOf(n), spec, incoming);
+    if (!options.length) return false;
+    const built = nodes.map((x) => ({ spec: POLYHEDRA[x.shape], matrixWorld: matrixOf(x) }));
+    const ranked = rankFaceAttachOptions(options, spec, built, nodes.indexOf(n), fi, id === n.shape && PARALLELOHEDRA.has(id));
+    const node = { id: `n${nextId++}`, shape: id, transform: { position: [0, 0, 0], quaternion: [0, 0, 0, 1] }, material: getMaterial() };
+    const conn = { nodeA: n.id, vertexA: fi, nodeB: node.id, vertexB: 0, kind: 'face' };
+    nodes.push(node);
+    connections.push(conn);
+    lastFit = { node, conn, ranked, index: 0 };
+    applyFit();
+    selection = null;
+    commit();
+    refitIfGrown();
+    return true;
+  }
+  // Keep the build in view as it grows: refit when it reaches well past the last fitted size (not on
+  // every tap, which would jump about).
+  let fittedRadius = 0;
+  function refitIfGrown() {
+    const r = Math.max(...nodes.flatMap((n) => worldPoints(n).map((v) => v.length())));
+    if (r > fittedRadius * 1.25) { fittedRadius = r; fitView?.(r); }
+  }
+  function applyFit() {
+    const { node, conn, ranked, index } = lastFit;
+    const o = ranked[index].option;
+    node.transform = { position: o.position.toArray(), quaternion: o.quaternion.toArray() };
+    conn.vertexB = o.incomingFaceIndex;
+  }
+  function cycleFit(step) {
+    if (!lastFit || !nodes.includes(lastFit.node)) return;
+    lastFit.index = (lastFit.index + step + lastFit.ranked.length) % lastFit.ranked.length;
+    applyFit();
+    commit();
+  }
+  function remove(n) {
+    nodes = nodes.filter((x) => x !== n);
+    connections = connections.filter((c) => c.nodeA !== n.id && c.nodeB !== n.id);
+    if (selection?.node === n) selection = null;
+    if (lastFit?.node === n) lastFit = null;
+    commit();
+  }
+
+  function commit() { save(); rebuild(); onChange(); renderPanel(); }
   function handleTap(hit, mode) {
     const kind = hit.object.userData.poly;
     if (kind === 'outline') {
@@ -157,34 +246,70 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       return true;
     }
     if (kind !== 'piece' && kind !== 'sphere') return false;
-    const n = kind === 'sphere' ? hit.object.userData.node : faceOwner[hit.faceIndex];
+    const rec = kind === 'sphere' ? { node: hit.object.userData.node, face: null } : faceOwner[hit.faceIndex];
+    const n = rec?.node;
     if (!n) return false;
-    if (mode === 'chisel') { nodes = nodes.filter((x) => x !== n); commit(); return true; }
+    if (mode === 'chisel') { remove(n); return true; }
     if (mode === 'paint') {
       const m = getMaterial();
       if (n.material === m) return false;
       n.material = m; commit(); return true;
     }
-    pulseNote();
-    return false;
+    if (rec.face == null) return false; // spheres: no faces to attach to
+    if (faceTaken(n, rec.face)) { showHudPrompt(t('poly.taken', lang()), 2000); return false; }
+    // The chosen shape goes straight on when it fits; otherwise the face waits for a shape.
+    if (chosen && attach(chosen, n, rec.face)) return true;
+    selection = { node: n, face: rec.face };
+    rebuild();
+    renderPanel();
+    if (!queue().some((id) => fits(id, n, rec.face))) showHudPrompt(t('poly.noFit', lang()), 3000);
+    return true;
   }
 
-  // Until D3 (DICTO 2026-10-09): attaching is not here yet, so a note links to the old site, where
-  // it works. A tap on a placed shape makes the note pulse. Delete with D3.
-  const note = document.createElement('div');
-  note.className = 'poly-build-note';
-  note.style.cssText = 'position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom));z-index:50;display:none;'
-    + 'width:min(360px, calc(100% - 32px));box-sizing:border-box;padding:8px 14px 0;border-radius:12px;background:rgba(15,15,25,0.92);'
-    + 'border:1px solid rgba(var(--accent-rgb),0.5);color:#ddd;font:var(--text-s)/1.4 var(--font-ui);text-align:center;';
-  document.body.appendChild(note);
-  function paintNote() {
-    note.innerHTML = `${t('poly.buildSoon', lang())} <a href="${SITES.polyhedraverse.url}/?from=dicto" target="_blank" rel="noopener" style="color:var(--accent-strong);font-weight:700;display:flex;align-items:center;justify-content:center;min-height:44px;white-space:nowrap">${t('poly.buildThere', lang())}</a>`;
+  // ---- the shape strip ----
+  // Shapes to offer: the build's own (newest first) and the shape last chosen in DICTO, up to 8.
+  function queue() {
+    const out = [];
+    for (const id of [chosen, ...nodes.map((n) => n.shape).reverse(), view.shape]) if (id && POLYHEDRA[id] && !out.includes(id)) out.push(id);
+    return out.slice(0, 8);
   }
-  function pulseNote() { note.animate?.([{ transform: 'translateX(-50%) scale(1.06)' }, { transform: 'translateX(-50%) scale(1)' }], { duration: 400 }); }
+  const panel = document.createElement('div');
+  panel.className = 'poly-strip';
+  document.body.appendChild(panel);
+  let disposers = [];
+  function renderPanel() {
+    disposers.forEach((d) => d()); disposers = [];
+    const show = active && !spherical && (selection || chosen || lastFit);
+    panel.hidden = !show;
+    if (!show) return;
+    const L = lang();
+    const offer = selection ? queue().filter((id) => fits(id, selection.node, selection.face)) : chosen ? [chosen] : [];
+    const fitBar = lastFit && nodes.includes(lastFit.node) && lastFit.ranked.length > 1
+      ? `<div class="poly-fit"><button type="button" data-fit="-1" aria-label="${t('poly.fitPrev', L)}">◀</button><span>${t('poly.fit', L, { i: lastFit.index + 1, n: lastFit.ranked.length })}</span><button type="button" data-fit="1" aria-label="${t('poly.fitNext', L)}">▶</button></div>` : '';
+    panel.innerHTML = `${fitBar}<div class="poly-shapes">${offer.map((id) => `<button type="button" class="poly-shape${id === chosen ? ' chosen' : ''}" data-shape="${id}" title="${polyShapeName(id).replaceAll('_', ' ')}"><canvas></canvas></button>`).join('')}
+      ${selection ? `<button type="button" class="poly-more" data-more>${t('poly.more', L)}</button>` : ''}
+      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>`;
+    panel.querySelectorAll('.poly-shape canvas').forEach((cv) => disposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 34)));
+  }
+  panel.addEventListener('click', (e) => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    if (b.dataset.fit) { cycleFit(Number(b.dataset.fit)); return; }
+    if ('clear' in b.dataset) { chosen = null; renderPanel(); return; }
+    if ('more' in b.dataset && selection) {
+      const sel = selection;
+      pickShape((id) => fits(id, sel.node, sel.face), (id) => { chosen = id; attach(id, sel.node, sel.face); });
+      return;
+    }
+    if (b.dataset.shape) {
+      const id = b.dataset.shape;
+      if (selection) { chosen = id; attach(id, selection.node, selection.face); }
+      else { chosen = chosen === id ? null : id; renderPanel(); }
+    }
+  });
 
   let shownLang = lang();
-  onSettingsChange((st) => { if (st.language !== shownLang) { shownLang = st.language; paintNote(); if (active) rebuild(); } });
-  paintNote();
+  onSettingsChange((st) => { if (st.language !== shownLang) { shownLang = st.language; renderPanel(); if (active) rebuild(); } });
 
   return {
     group,
@@ -194,29 +319,31 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       if (on === active) return;
       active = on;
       group.visible = on;
-      note.style.display = on ? 'block' : 'none';
+      if (!on) selection = null;
       rebuild();
+      renderPanel();
     },
     setSkeleton(on) { skeleton = on; if (active) rebuild(); },
     setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) rebuild(); } },
     setLatticeView() { /* no lattice here: shapes are placed freely */ },
     refresh() { if (active) rebuild(); },
     setSpherical(on, scale = 1) { if (on === spherical && scale === sphereScale) return; spherical = on; sphereScale = scale; if (active) rebuild(); },
-    /** DICTO's shape list: build with this shape. An empty world shows its outline; a world holding
-     *  only one placed shape starts over with the new one (until D3 there is nothing else to keep). */
+    /** DICTO's shape list: build with this shape. An empty world shows its outline to tap; with a
+     *  build, it becomes the chosen shape, going straight onto each face tapped. */
     startWith(id) {
       if (!POLYHEDRA[id]) return;
       view.shape = id;
-      if (nodes.length === 1) nodes = [];
+      if (nodes.length) { chosen = id; commit(); showHudPrompt(t('poly.chosen', lang(), { name: polyShapeName(id).replaceAll('_', ' ') }), 3000); return; }
       commit();
-      fitView?.(Math.max(...POLYHEDRA[id].vertices.map((v) => Math.hypot(...v))));
+      fittedRadius = Math.max(...POLYHEDRA[id].vertices.map((v) => Math.hypot(...v)));
+      fitView?.(fittedRadius);
       showHudPrompt(polyShapeName(id), 2500);
     },
     get shape() { return view.shape; },
     get isEmpty() { return nodes.length === 0; },
-    clear() { nodes = []; commit(); },
+    clear() { nodes = []; connections = []; selection = null; chosen = null; lastFit = null; commit(); },
     snapshot: toJSON,
-    restore(json) { setFromJSON(json); save(); rebuild(); onChange(); },
+    restore(json) { setFromJSON(json); selection = null; lastFit = null; save(); rebuild(); renderPanel(); onChange(); },
     toJSON,
   };
 }

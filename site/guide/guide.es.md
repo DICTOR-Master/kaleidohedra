@@ -246,7 +246,7 @@ RHOMBIS es un rompecabezas 3D hecho con las mismas piezas: llena la forma objeti
 
 # Polyhedraverse {#polyhedraverse}
 
-Polyhedraverse es la galería de retratos: todas las formas por familias, una a una, de cerca. Gírala, compárala, une formas cara con cara o vértice con vértice e imprime el desarrollo de cualquier forma para plegarlo. Su espacio ya está dentro de DICTO: elige **3D+**, luego una familia en el bloque verde de Polyhedraverse y luego una forma, y toca el contorno verde para colocarla. Unir formas, el explorador de formas y el 4D llegarán paso a paso; hasta entonces, una nota en su espacio enlaza al sitio completo en [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app), donde funcionan. Su propia guía: [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
+Polyhedraverse es la galería de retratos: todas las formas por familias, una a una, de cerca. Gírala, compárala, une formas cara con cara o vértice con vértice e imprime el desarrollo de cualquier forma para plegarlo. Su espacio está dentro de DICTO: elige **3D+**, luego una familia en el bloque verde de Polyhedraverse y luego una forma, y toca el contorno verde para colocarla. **Unir tocando**: toca una cara y luego una forma en la tira que aparece (**Más…** lista todas las que encajan); se une en su mejor ajuste (◀ ▶ para los demás) y queda elegida, así que cada cara que toques después la recibe de un toque (✕ para parar). Una pulsación larga quita una pieza. El explorador de formas y el 4D llegarán; hasta entonces, el sitio completo está en [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app). Su propia guía: [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
 
 ---
 

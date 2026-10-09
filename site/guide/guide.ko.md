@@ -246,7 +246,7 @@ RHOMBIS는 같은 조각으로 만드는 3D 퍼즐입니다. 트레이의 조각
 
 # Polyhedraverse {#polyhedraverse}
 
-Polyhedraverse는 초상화 갤러리입니다. 패밀리별 모든 도형을 하나씩 가까이에서. 돌려 보고, 비교하고, 도형을 면과 면, 꼭짓점과 꼭짓점으로 붙이고, 어떤 도형이든 전개도를 인쇄해 접을 수 있습니다. 그 공간은 이제 DICTO 안에 있습니다: **3D+**를 고르고, Polyhedraverse의 초록 블록에서 패밀리, 그다음 도형을 고른 뒤 초록 윤곽을 탭해 놓습니다. 도형 붙이기, 도형 브라우저, 4D는 단계적으로 추가됩니다. 그때까지는 공간 안의 안내가 그것들이 작동하는 전체 사이트 [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app)로 연결합니다. 전용 가이드: [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
+Polyhedraverse는 초상화 갤러리입니다. 패밀리별 모든 도형을 하나씩 가까이에서. 돌려 보고, 비교하고, 도형을 면과 면, 꼭짓점과 꼭짓점으로 붙이고, 어떤 도형이든 전개도를 인쇄해 접을 수 있습니다. 그 공간은 DICTO 안에 있습니다: **3D+**를 고르고, Polyhedraverse의 초록 블록에서 패밀리, 그다음 도형을 고른 뒤 초록 윤곽을 탭해 놓습니다. **탭으로 붙이기**: 면을 탭하고, 나타나는 띠에서 도형을 탭합니다(**더 보기…**는 맞는 도형을 모두 보여 줍니다). 가장 잘 맞는 방향으로 붙고(◀ ▶로 다른 방향), 그 도형은 선택된 채로 남아 다음에 탭하는 면마다 한 번에 붙습니다(✕로 그만두기). 길게 누르면 조각을 지웁니다. 도형 브라우저와 4D는 곧 추가됩니다. 그때까지 전체 사이트는 [polyhedraverse.vercel.app](https://polyhedraverse.vercel.app). 전용 가이드: [polyhedraverse.vercel.app/guide](https://polyhedraverse.vercel.app/guide).
 
 ---
 
