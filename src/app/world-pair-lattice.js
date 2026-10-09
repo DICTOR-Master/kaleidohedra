@@ -277,7 +277,7 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
   const clustered = () => Boolean(modeOf().cluster);
   const clusterOf = (s) => config.clusters[modeOf().cluster](s);
   function addCluster(s) {
-    const fresh = clusterOf(s).filter((x) => !cells.has(key(x)));
+    const fresh = (clusterOf(s) ?? []).filter((x) => !cells.has(key(x)));
     if (!fresh.length) return false;
     for (const x of fresh) cells.set(key(x), [...x]);
     commit();
@@ -285,7 +285,7 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     return true;
   }
   function removeCluster(s) {
-    const gone = clusterOf(s).filter((x) => cells.delete(key(x)));
+    const gone = (clusterOf(s) ?? [s]).filter((x) => cells.delete(key(x)));
     if (!gone.length) return false;
     commit();
     return true;
@@ -345,7 +345,8 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
       const nb = across(s, hit);
       if (!nb) return false;
       // Across a face into a hidden piece's cell (a stella's, between clusters): say so.
-      if (!showsSite(nb)) { showHudPrompt(t(`${S_}.prompt.hole`, lang()), 2500); return false; }
+      // Into a cell no cluster can take (a hidden piece, or one between clusters): say so.
+      if (!showsSite(nb) || !clusterOf(nb)) { showHudPrompt(t(`${S_}.prompt.hole`, lang()), 2500); return false; }
       if (addCluster(nb)) return true;
       showHudPrompt(t(`${S_}.prompt.taken`, lang()), 2000);
       return false;

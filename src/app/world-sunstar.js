@@ -31,7 +31,7 @@ export function createSunstarWorld(opts) {
     panelId: 'worldsunstar-panel',
     minimiser: 'sunstar',
     strings: 'ss',
-    modes: [{ id: 'both', even: true, odd: true }, { id: 'sunstars', even: true, odd: true, grouped: true }, { id: 'tetra', even: true, odd: false, cluster: 'tetra' }, { id: 'octa', even: true, odd: false, cluster: 'octa' }, { id: 'octet', even: true, odd: false, network: true }, { id: 'every', even: true, odd: true, nested: true }, { id: 'chain', even: true, odd: true, chain: true }, { id: 'dogstars', even: false, odd: true }, { id: 'dodecas', even: true, odd: false }],
+    modes: [{ id: 'both', even: true, odd: true }, { id: 'sunstars', even: true, odd: true, grouped: true }, { id: 'tetra', even: true, odd: false, cluster: 'tetra' }, { id: 'octa', even: true, odd: true, cluster: 'octa' }, { id: 'octet', even: true, odd: false, network: true }, { id: 'every', even: true, odd: true, nested: true }, { id: 'chain', even: true, odd: true, chain: true }, { id: 'dogstars', even: false, odd: true }, { id: 'dodecas', even: true, odd: false }],
     // A Sunstar: the dodecahedron and the 6 Dogstars on its faces (direct decision, 2026-10-08:
     // the 8 at its corners only touch it at a point).
     // DICTO's clusters of the dodecahedra (DICTO, 2026-10-09; krp-core DODECA_TETRAHEDRAL_CLUSTER and

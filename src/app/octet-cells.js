@@ -2,7 +2,7 @@
 // piece and odd cells another (Stella–Jewel: DICTO Jewels and stellas; Sunstar: dodecahedra and
 // Dogstars): the even pieces' clusters, and those clusters as the cells of the octet truss.
 // - Clusters, each placed whole: tetrahedral (the four even cells round a cell corner) and
-//   octahedral (the six round an odd cell, its odd piece then hidden inside). Both fill space with
+//   octahedral (the six round an odd cell, with that odd cell's piece inside: solid). Both fill space with
 //   the odd pieces, so a site's cluster comes from those packings and every even piece is in exactly
 //   one: tetrahedral at all-even anchors, octahedral on krp-core's DJ_OCTA_TILING lattice (checked in
 //   krp-core's verify-dicto-jewel-cluster.mjs and verify-sunstar-cluster.mjs).
@@ -26,9 +26,13 @@ export const OCTET_CLUSTERS = {
     const anchor = s.map((c) => c - (((c % 2) + 2) % 2));
     return DJ_TETRA_OFFSETS.map((d) => anchor.map((c, i) => c + d[i]));
   },
+  // A solid cluster (DICTO): its six even pieces and the odd piece they close round. An odd site that
+  // is no cluster's centre (a piece between clusters) has none: null.
   octa: (s) => {
-    const o = AXES6.map((d) => s.map((c, i) => c + d[i])).find(onOctaLattice);
-    return AXES6.map((d) => o.map((c, i) => c + d[i]));
+    const odd = ((((s[0] + s[1] + s[2]) % 2) + 2) % 2) === 1;
+    const o = odd ? (onOctaLattice(s) ? s : null) : AXES6.map((d) => s.map((c, i) => c + d[i])).find(onOctaLattice);
+    if (!o) return null;
+    return [o, ...AXES6.map((d) => o.map((c, i) => c + d[i]))];
   },
 };
 

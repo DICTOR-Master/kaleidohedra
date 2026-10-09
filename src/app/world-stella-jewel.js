@@ -31,7 +31,7 @@ export function createStellaJewelWorld(opts) {
     panelId: 'worldstellajewel-panel',
     minimiser: 'stella-jewel',
     strings: 'dj',
-    modes: [{ id: 'both', even: true, odd: true }, { id: 'jewels', even: true, odd: false }, { id: 'tetra', even: true, odd: false, cluster: 'tetra' }, { id: 'octa', even: true, odd: false, cluster: 'octa' }, { id: 'octet', even: true, odd: false, network: true }, { id: 'chain', even: true, odd: false, chain: true }],
+    modes: [{ id: 'both', even: true, odd: true }, { id: 'jewels', even: true, odd: false }, { id: 'tetra', even: true, odd: false, cluster: 'tetra' }, { id: 'octa', even: true, odd: true, cluster: 'octa' }, { id: 'octet', even: true, odd: false, network: true }, { id: 'chain', even: true, odd: false, chain: true }],
     // DICTO's clusters of DICTO Jewels (DICTO, 2026-10-09; krp-core DJ_TETRAHEDRAL_CLUSTER and
     // DJ_OCTAHEDRAL_CLUSTER), each placed whole (octet-cells.js).
     networkCells: octetNetworkCells,

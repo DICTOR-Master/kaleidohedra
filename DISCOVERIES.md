@@ -41,8 +41,8 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 12a | Study of #12, the Dragon chain: DICTO Jewel ⊃ cube ⊃ stella octangula ⊃ Dogstar ⊃ dodecahedron(1/φ³) ⊃ DICTO Jewel(1/φ³) ⊃ …, every step touching; the EKP cell recurs inside its own stella, through the Dogstar | DICTO (asked whether "another cell network" was buried in the DICTO Jewel); found by Kaleidohedra's search | yes | study of #12, not a separate claim | 2026-10-08 |
 | 13 | The 13-dodecahedron cluster made solid: a regular dodecahedron with one on each face leaves gaps of exactly two kinds, 30 wedges (two pentagons hinged at 10.3048°, volume φ³/20) and 20 needles (volume (45 − 19√5)/600), and the filled cluster comes apart into 12 finned units | DICTO (designed the cluster; asked for its gaps as pieces, separable once built) | yes | **not found** — candidate (the 10.3° gap itself is well known) | 2026-10-09 |
 | 14 | DICTO-Star: an icosidodecahedron with a regular dodecahedron on each pentagon and a tridiminished icosahedron (J63) on each triangle; 33 regular-faced pieces, every contact a whole face, every edge and corner closed, no filler, volume (195 + 89√5)/3 | DICTO (the centre of DICTO's builds, by 2026-10-04); confirmed exactly by the search DICTO asked for | yes | **not found** — candidate (the version with whole icosahedra, which overlaps, is Robert Austin's 2014 model) | 2026-10-09 |
-| 15 | DICTO Jewel clusters: four DICTO Jewels in a tetrahedron (pairwise face to face, touching at one point in the middle) and six in an octahedron (enclosing a hidden stella octangula-shaped hole); each a shape of its own, and each fills space with stella octangulas | DICTO (built the tetrahedral cluster in the app, asked for the octahedral, saw that both fill space with stellas) | yes | **not found** — candidate (made only of the DICTO Jewel, #10, itself not found) | 2026-10-09 |
-| 16 | Sunstar clusters: the octet structure of #15 in the Sunstar Lattice; four dodecahedra round a cell corner, and six round an odd cell enclosing its Dogstar as a hidden hole (a Dogstar with its 6 dodecahedra: a Sunstar turned inside out); each fills space with Dogstars, and shared they form the octet network | DICTO (asked whether the octet network held for the Sunstars and Dogstars) | yes | **not found** — candidate (the honeycomb itself is Hart's, 1996) | 2026-10-09 |
+| 15 | DICTO Jewel clusters: four DICTO Jewels in a tetrahedron (pairwise face to face, touching at one point in the middle) and six in an octahedron round a stella octangula, which fits them face for face (a solid piece); each a shape of its own, and each fills space with stella octangulas | DICTO (built the tetrahedral cluster in the app, asked for the octahedral, saw that both fill space with stellas) | yes | **not found** — candidate (made only of the DICTO Jewel, #10, itself not found) | 2026-10-09 |
+| 16 | Sunstar clusters: the octet structure of #15 in the Sunstar Lattice; four dodecahedra round a cell corner, and six round an odd cell with its Dogstar inside, a solid piece (a Dogstar with its 6 dodecahedra: a Sunstar turned inside out); each fills space with Dogstars, and shared they form the octet network | DICTO (asked whether the octet network held for the Sunstars and Dogstars) | yes | **not found** — candidate (the honeycomb itself is Hart's, 1996) | 2026-10-09 |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -675,10 +675,11 @@ a whole rhombus, each group a shape of its own (krp-core `DJ_TETRAHEDRAL_CLUSTER
   rhombi. Surface 228 faces (192 triangles, 36 rhombi), closed; the four lobes also touch at **one
   point**, the cell corner in the middle where all four Jewels meet. Volume exactly 4 Jewels.
 - **Octahedral cluster:** the six Jewels round one odd cell, at the corners of an octahedron, 12 shared
-  rhombi. They **enclose a hidden hole exactly the shape of that cell's stella octangula**, sealed but
-  for its 8 spike tips, where the hole's wall touches the outside at a point. Surface 336 faces (288
-  outside, the hole's 48). Volume exactly 6 Jewels; as DICTO put it, as a shape of its own it is
-  solid inside, the hole filled by its stella.
+  rhombi, and **that cell's stella octangula inside**: the six close round exactly a stella's space
+  (sealed but for its 8 spike tips, which reach the outside at a point), and the stella fits them face
+  for face, every one of its 48 faces against a Jewel's. **A solid piece** (DICTO: "it's a solid";
+  else someone could say they don't perfectly fill space). Surface 288 faces. Volume exactly 6 Jewels
+  and a stella.
 - **Both fill space with stella octangulas.** Tetrahedral clusters at every cell with all coordinates
   even take every Jewel exactly once; octahedral clusters round the odd cells (1, 0, 0) + the lattice
   of (2, 1, −1), (2, −1, 1), (1, 2, 1) do too (12 cells per cluster: its 6 Jewels, its own stella and
@@ -688,18 +689,18 @@ a whole rhombus, each group a shape of its own (krp-core `DJ_TETRAHEDRAL_CLUSTER
   the cells of the **octet truss** on the Jewels' lattice: tetrahedral clusters at every cell corner
   (the tetrahedral holes), octahedral ones at every odd cell (the octahedral holes), each Jewel in 8
   of one and 6 of the other as each truss vertex is, neighbours meeting on 3 Jewels (a face). Every
-  stella is then the hidden hole of exactly one octahedral cluster, so with those solid inside the
-  network fills all of space with no separate Jewels or stellas. (Not a tiling of separate pieces:
+  stella is then inside exactly one octahedral cluster, so the network of solid clusters fills all
+  of space with no separate Jewels or stellas. (Not a tiling of separate pieces:
   neighbours share Jewels.) Shown in the Stella–Jewel world's Octet network view.
 - Not a pairing with Dogstars: between clusters the gaps are whole stella octangulas, and a Dogstar
   (0.8090 at this size) fills only 38% of one (2.1180), leaving the spike tips open.
 - In the apps: Stella–Jewel views that place a whole cluster per tap, and DICTO's pieces in
   Polyhedraverse's list. Their nets wait for an unfolding of 228 and 288 faces that does not overlap
   itself (searching).
-- Verified: `src/krp-core/scripts/verify-dicto-jewel-cluster.mjs` (krp-core v0.8.3), every push, 23
+- Verified: `src/krp-core/scripts/verify-dicto-jewel-cluster.mjs` (krp-core v0.9.0), every push, 23
   checks: the shared rhombi, no overlap (point tests), closed and consistently wound surfaces, the
-  pinch point and the hole (its wall exactly the stella's 48 half-triangles, meeting the outside only
-  at the 8 spike tips), the volumes, and both space-fillings (every Jewel cell in a box of 3,429 in
+  pinch point, the stella inside the octahedral cluster (fitting face for face, reaching the outside
+  only at its 8 spike tips), the volumes, and both space-fillings (every Jewel cell in a box of 3,429 in
   exactly one cluster), and the octet network (8 and 6 clusters per Jewel, faces of 3, every stella
   inside one octahedral cluster).
 - Status: **not found**, a candidate, resting on #10: the clusters are made only of the DICTO Jewel,
@@ -713,20 +714,19 @@ Sunstar Lattice has the same cells, dodecahedra on the even ones and Dogstars on
 - **Tetrahedral cluster:** four regular dodecahedra round a cell corner, neighbours meeting flat on
   parts of faces (the seamed Sunstar dodecahedra make the contacts whole matching cells); in the
   middle, where the Jewels touched at a point, four Dogstar tips meet. Volume 4 dodecahedra.
-- **Octahedral cluster:** the six dodecahedra round an odd cell **enclose its Dogstar as a hidden
-  hole**: every point just outside the Dogstar lies in one of the six, none in the 8 corner
-  dodecahedra, and the Dogstar's 8 tips reach the cell corners. Where two of the six meet round the
-  Dogstar they meet along its edges. Volume 6 dodecahedra. **A Sunstar is a dodecahedron with its 6
+- **Octahedral cluster:** the six dodecahedra round an odd cell **and its Dogstar inside**: the six
+  close round exactly the Dogstar's space (every point just outside it lies in one of the six, none
+  in the 8 corner dodecahedra; its 8 tips reach the cell corners), and the Dogstar fits them face for
+  face. A solid piece. Volume 6 dodecahedra and a Dogstar. **A Sunstar is a dodecahedron with its 6
   Dogstars; this is a Dogstar with its 6 dodecahedra**, the Sunstar turned inside out.
 - **Both fill space with Dogstars**, on the same packings as #15 (tetrahedral at all-even anchors,
   octahedral on the lattice of 12 cells per cluster), and **shared they form the octet network**,
-  every Dogstar hidden inside one octahedral cluster.
+  every Dogstar inside one octahedral cluster.
 - In the apps: the Sunstar world's Tetrahedral clusters, Octahedral clusters and Octet network
   views, and both shapes in Polyhedraverse's DICTO's pieces.
-- Verified: `src/krp-core/scripts/verify-sunstar-cluster.mjs` (krp-core v0.8.4), every push, 12 checks:
-  no overlap, closed and consistently wound surfaces, volumes 4 and 6 dodecahedra, the Dogstar
-  enclosed (points inside it outside the cluster, points just outside it inside), and the shared
-  packings.
+- Verified: `src/krp-core/scripts/verify-sunstar-cluster.mjs` (krp-core v0.9.0), every push, 12 checks:
+  no overlap, closed and consistently wound surfaces, volumes 4 dodecahedra and 6 dodecahedra with a
+  Dogstar, the Dogstar inside and walled in, and the shared packings.
 - Status: **not found** in a web search on 2026-10-09 (with #15's). Known, and credited: the
   honeycomb of dodecahedra and Dogstars (George W. Hart's stellation 8, 1996; Hans Walser), the octet
   truss (Buckminster Fuller; the tetrahedral-octahedral honeycomb), and new tilings by regular
