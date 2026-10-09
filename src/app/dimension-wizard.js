@@ -462,13 +462,36 @@ const K_WORLDS = [
       { ...lat.pieces[0], label: base },
       ...[['tetra', 'Tetrahedral clusters', 'TETRAHEDRAL'], ['octa', 'Octahedral clusters', 'OCTAHEDRAL'], ['octet', 'Octet network', 'OCTAHEDRAL'], ['kagome', 'Kagome network', 'TETRAHEDRAL']]
         .map(([mode, label, form]) => ({ label, action: `tool:${world}World:${mode}`, preview: () => polyShapeEdges(`${shape}_${form}_CLUSTER`) })),
-      ...(world === 'stellaJewel' ? [{ label: 'DICTO Hexa diamond network', action: 'tool:stellaJewelWorld:hexa', preview: () => polyShapeEdges('DICTO_HEXA') }] : []),
+      ...(world === 'stellaJewel' ? [{ label: 'DICTO Hexa diamond network', action: 'tool:stellaJewelWorld:hexa', preview: () => polyShapeEdges('DICTO_HEXA') },
+        { label: 'DICTO Hexa and Hexa-Key checkerboard', action: 'tool:stellaJewelWorld:hexaKey', preview: () => polyShapeEdges('DICTO_HEXA_KEY') }] : []),
+      // The Kagome hulls (DISCOVERIES #17); previews: the hull's cell centres, nearest neighbours joined.
+      ...[['hullOcta', 'Octahedral Kagome', 'octa6'], ['hullRhombo', 'Rhombohedral Kagome', 'rhombo8'], ['hullCuboHollow', 'Cuboctahedral Kagome (hollow)', 'cubocta12'],
+        ['hullCuboSolid', 'Cuboctahedral Kagome (solid)', 'cubocta13'], ['hullCube', 'Cubic Kagome', 'cube14'], ['hullRd', 'Rhombic dodecahedral Kagome', 'rd33']]
+        .map(([mode, label, id]) => ({ label, action: `tool:${world}World:${mode}`, preview: () => hullPreview(id) })),
     ] };
   }),
   { key: 'studies', label: 'Studies', pieces: [{ label: 'Studies', action: 'tool:studiesWorld' }] },
   { key: 'targets', label: 'Targets', pieces: [{ label: 'Targets', action: 'tool:targetsWorld' }] },
   ...['shells', 'golden'].map((k) => LATTICES_3D.find((l) => l.key === k)),
 ];
+// A Kagome hull's preview: its even cells' centres, each joined to its nearest neighbours.
+const HULL_EVEN = {
+  octa6: [[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1]],
+  rhombo8: [[0, 0, 0], [1, 1, 0], [1, 0, 1], [2, 1, 1], [0, 1, 1], [1, 2, 1], [1, 1, 2], [2, 2, 2]],
+  cubocta12: [[1, 1, 0], [1, -1, 0], [-1, 1, 0], [-1, -1, 0], [1, 0, 1], [1, 0, -1], [-1, 0, 1], [-1, 0, -1], [0, 1, 1], [0, 1, -1], [0, -1, 1], [0, -1, -1]],
+  cube14: [[1, 1, 1], [1, 1, -1], [1, -1, 1], [1, -1, -1], [-1, 1, 1], [-1, 1, -1], [-1, -1, 1], [-1, -1, -1], [1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1]],
+};
+HULL_EVEN.cubocta13 = [[0, 0, 0], ...HULL_EVEN.cubocta12];
+HULL_EVEN.rd33 = [...HULL_EVEN.cubocta13, [2, 0, 0], [-2, 0, 0], [0, 2, 0], [0, -2, 0], [0, 0, 2], [0, 0, -2]];
+function hullPreview(id) {
+  const P = HULL_EVEN[id], c = P[0].map((_, i) => P.reduce((t, p) => t + p[i], 0) / P.length), Q = P.map((p) => p.map((v, i) => v - c[i]));
+  const d = (a, b) => Math.hypot(...a.map((v, i) => v - b[i]));
+  let min = Infinity;
+  for (let i = 0; i < Q.length; i++) for (let j = i + 1; j < Q.length; j++) min = Math.min(min, d(Q[i], Q[j]));
+  const edges = [];
+  for (let i = 0; i < Q.length; i++) for (let j = i + 1; j < Q.length; j++) if (d(Q[i], Q[j]) < min * 1.01) edges.push([Q[i], Q[j]]);
+  return edges;
+}
 const K_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key))
   .map((l) => (l.key === 'hex' ? { ...l, pieces: l.pieces.filter((pc) => pc.action === 'tool:pieceType:hexprism') } : l));
 const R_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key));

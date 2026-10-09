@@ -8,6 +8,7 @@
 // Lattice (world-sunstar.js). Geometry in krp-core/src/geometry-extensions/roof-fold.js, checked in
 // scripts/verify-roof-fold.mjs.
 import * as THREE from 'three';
+import { KAGOME_HULLS, KAGOME_HULL_IDS, kagomeHullSolids } from '../krp-core/src/polyhedra/kagomeHulls.js';
 import { ROOF_FOLD_WORLD_SCALE as WS, DJ_NEIGHBOURS, fiveFoldAxes } from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
@@ -161,12 +162,15 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
   function draw() {
     clearGroup();
     if (!active) return;
+    // A Kagome hull network draws once its solids are in (loading them redraws).
+    if (modeOf().hull && !netOf(modeOf().cluster)) { loadHulls(); return; }
     const S = shown();
     if (!S.length) {
       firstMaterial.color.setHex(firstColour());
       // The first placement: the piece, or in a cluster mode the whole cluster.
-      const firstSites = clustered() ? clusterOf([0, 0, 0]) : [modeOf().even ? [0, 0, 0] : [1, 0, 0]];
-      const [m, l] = meshOf(firstSites, firstMaterial, 'first', firstColour(), firstColour(), modeOf().cluster === 'hexa' ? () => config.evenFaces : facesOf);
+      const firstNet = netOf(modeOf().cluster);
+      const firstSites = firstNet ? netCells(firstNet, firstAnchor(firstNet)) : clustered() ? clusterOf([0, 0, 0]) : [modeOf().even ? [0, 0, 0] : [1, 0, 0]];
+      const [m, l] = meshOf(firstSites, firstMaterial, 'first', firstColour(), firstColour(), firstNet?.allJewels ? () => config.evenFaces : facesOf);
       group.add(m, l);
       pickTargets.push(m);
     } else if (clustered()) {
@@ -275,14 +279,16 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     const evens = S.filter(isEven);
     // each cluster once, keyed by its first site (the centre, for an octahedral cluster)
     const clusters = new Map();
-    if (kind === 'hexa') for (const cl of heldHexas(S)) clusters.set(key(cl[0]), cl);
+    const net = netOf(kind);
+    if (net) for (const { cells: cl } of heldNet(net, S)) clusters.set(key(cl[0]), cl);
     else for (const e of evens) { const cl = config.clusters[kind](e); if (cl) clusters.set(key(cl[0]), cl); }
     const centres = kind === 'octa' ? [...clusters.values()].map((cl) => cl[0]) : [];
-    const spec = config.clusterBlocks[kind], edges = edgesOf(spec);
-    const colour = new THREE.Color(BLOCK_COLOURS[kind]);
+    const spec = net ? net.spec : config.clusterBlocks[kind], edges = edgesOf(spec);
+    const colour = new THREE.Color(BLOCK_COLOURS[kind] ?? modeOf().pieceColour ?? 0xd9a520);
     const pos = [], col = [], line = [], records = [];
     for (const cl of clusters.values()) {
-      const a = cl[0], members = kind === 'octa' ? cl.slice(1) : cl;
+      // the cells the solid is centred on: an octahedral cluster's six, a network's even cells
+      const a = cl[0], members = kind === 'octa' ? cl.slice(1) : net ? cl.filter(isEven) : cl;
       // the shape is centred on its cells' centre; each corner goes through the shear with the cell it
       // belongs to (the nearest), so with sheared copies every piece sits on its own sheared centre
       const C = members.reduce((t, m) => t.map((v, i) => v + (2 * m[i]) / members.length), [0, 0, 0]);
@@ -296,6 +302,23 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
         records.push(a);
       }
       for (const [x, y] of edges) line.push(...P[x], ...P[y]);
+    }
+    // A network's keys (the Hexa-Keys of the checkerboard), each centred on its block, in its colour.
+    if (net?.keys) {
+      const kc = new THREE.Color(net.keys.colour), kEdges = edgesOf(net.keys.spec);
+      for (const g of netKeys(net, S)) {
+        const kcells = netCells(net, g), C = kcells.filter(isEven).reduce((t, m, _, l) => t.map((v, i) => v + (2 * m[i]) / l.length), [0, 0, 0]);
+        const P = net.keys.spec.vertices.map((v) => {
+          const r = v.map((c, i) => c / K + C[i]);
+          const m = kcells.reduce((best, x) => (Math.hypot(...r.map((c, i) => c - 2 * x[i])) < Math.hypot(...r.map((c, i) => c - 2 * best[i])) ? x : best));
+          return toWorld(m, r.map((c, i) => c - 2 * m[i]));
+        });
+        for (const f of net.keys.spec.faces) for (let i = 1; i + 1 < f.length; i++) {
+          for (const k of [f[0], f[i], f[i + 1]]) { pos.push(...P[k]); col.push(kc.r, kc.g, kc.b); }
+          records.push(kcells[0]);
+        }
+        for (const [x, y] of kEdges) line.push(...P[x], ...P[y]);
+      }
     }
     const g = new THREE.BufferGeometry();
     g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
@@ -313,7 +336,7 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     const l = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: skeleton ? GHOST_COLOR() : EDGE_COLOR }));
     group.add(m, l);
     pickTargets.push(m);
-    const { singles, odds } = kind === 'hexa' ? { singles: [], odds: hexaFill(S) } : clusterFill(kind, evens, centres);
+    const { singles, odds } = net ? netFill(net, S) : clusterFill(kind, evens, centres);
     pieceMaterial.transparent = opacity < 1; pieceMaterial.opacity = opacity; pieceMaterial.depthWrite = opacity >= 1;
     if (singles.length) { const [sm, sl] = meshOf(singles, pieceMaterial, 'fill', SINGLE_VIOLET); sm.visible = !skeleton; group.add(sm, sl); pickTargets.push(sm); }
     if (odds.length) { const [om, ol] = meshOf(odds, pieceMaterial, 'fill', null, EDGE_COLOR, () => config.oddFaces); om.visible = !skeleton; group.add(om, ol); pickTargets.push(om); }
@@ -322,47 +345,119 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
       if (!flickerRaf) flickerRaf = requestAnimationFrame(flicker);
     }
   }
-  // The DICTO Hexa diamond network (DICTO 2026-10-09): Hexas (8 Jewels on a 2 x 2 x 2 block, any
-  // parity) on the diamond pattern, each sharing 4 of its corner Jewels with 4 neighbours; the cells
-  // no Hexa covers are stellas, filled in by themselves once surrounded.
+  // Networks (DICTO 2026-10-09): clusters on an anchor pattern, sharing single pieces corner to
+  // corner, drawn whole as one solid each: the DICTO Hexa diamond network (8 Jewels on a 2 x 2 x 2 block,
+  // any parity) and the Kagome hulls of DISCOVERIES #17 (krp-core kagomeHulls.js, solids loaded on
+  // demand). A network: { offsets (its cells from its anchor), isAnchor, spec (its solid), singles }.
+  // The cells no cluster can cover fill by themselves once surrounded: stellas (or Dogstars), and
+  // single Jewels where the network leaves them.
   const BLOCK8 = [0, 1].flatMap((x) => [0, 1].flatMap((y) => [0, 1].map((z) => [x, y, z])));
-  const hexaCells = (a) => BLOCK8.map((d) => a.map((v, i) => v + d[i]));
-  const anchorsOf = (c) => BLOCK8.map((d) => c.map((v, i) => v - d[i])).filter(config.isHexaAnchor);
-  function heldHexas(S) {
-    const out = new Map();
-    for (const c of S) for (const a of anchorsOf(c)) if (!out.has(key(a)) && hexaCells(a).every((x) => cells.has(key(x)))) out.set(key(a), hexaCells(a));
+  const nets = { hexa: config.isHexaAnchor ? { offsets: BLOCK8, isAnchor: config.isHexaAnchor, spec: config.clusterBlocks?.hexa, singles: false, allJewels: true } : null };
+  // The Hexa checkerboard (DISCOVERIES #18): Hexas window to window on an FCC pattern (anchors all even,
+  // x+y+z = 0 mod 4), never sharing a piece; in every gap a DICTO Hexa-Key (anchors x+y+z = 2 mod 4),
+  // filled in by itself once 4 of its 6 Hexas are there. 5 : 3, the Stella-Jewel Lattice one level up.
+  const FCC2 = [[2, 2, 0], [2, -2, 0], [-2, 2, 0], [-2, -2, 0], [2, 0, 2], [2, 0, -2], [-2, 0, 2], [-2, 0, -2], [0, 2, 2], [0, 2, -2], [0, -2, 2], [0, -2, -2]];
+  const AX2 = [[2, 0, 0], [-2, 0, 0], [0, 2, 0], [0, -2, 0], [0, 0, 2], [0, 0, -2]];
+  const evenAll = (a) => a.every((v) => v % 2 === 0), mod4 = (v) => ((v % 4) + 4) % 4;
+  if (config.clusterBlocks?.hexaKey) nets.hexaKey = { offsets: BLOCK8, isAnchor: (a) => evenAll(a) && mod4(a[0] + a[1] + a[2]) === 0,
+    spec: config.clusterBlocks.hexa, singles: false, fillOdds: false, allJewels: true, neighbours: FCC2,
+    keys: { isAnchor: (a) => evenAll(a) && mod4(a[0] + a[1] + a[2]) === 2, around: AX2, needs: 4, spec: config.clusterBlocks.hexaKey, colour: 0x8f5bd8 } };
+  // A network's keys present: key anchors with enough held clusters round them.
+  function netKeys(net, S) {
+    if (!net.keys) return [];
+    const held = new Set(heldNet(net, S).map((o) => key(o.a))), out = new Map();
+    for (const k of held) {
+      const a = k.split(',').map(Number);
+      for (const d of net.keys.around) {
+        const g = a.map((v, i) => v + d[i]), gk = key(g);
+        if (out.has(gk) || !net.keys.isAnchor(g)) continue;
+        if (net.keys.around.filter((d2) => held.has(key(g.map((v, i) => v - d2[i])))).length >= net.keys.needs) out.set(gk, g);
+      }
+    }
     return [...out.values()];
   }
-  function hexaFill(S) {
-    const held = new Set(S.map(key)), odds = new Map();
-    for (const c of S) for (const d of AXES6) {
+  const netOf = (kind) => nets[kind] ?? null;
+  let hullsLoading = null;
+  // A Kagome hull's network, once its solids are in (they load the first time one is opened).
+  function loadHulls() {
+    hullsLoading ??= kagomeHullSolids().then((data) => {
+      for (const id of KAGOME_HULL_IDS) {
+        const h = data[id], solid = h[config.hullLattice];
+        nets[id] = { offsets: [...h.evenCells, ...h.enclosedOddCells, ...h.cornerOddCells], isAnchor: KAGOME_HULLS[id].isAnchor,
+          spec: { id: `hull-${id}-${config.hullLattice}`, vertices: solid.vertices.map((v) => v.map((c) => c * K)), faces: solid.faces }, singles: true };
+      }
+      if (active) draw();
+    });
+    return hullsLoading;
+  }
+  // The first cluster: the anchor nearest the origin.
+  function firstAnchor(net) {
+    for (let r = 0; r <= 4; r++) for (let x = -r; x <= r; x++) for (let y = -r; y <= r; y++) for (let z = -r; z <= r; z++) if (net.isAnchor([x, y, z])) return [x, y, z];
+    return [0, 0, 0];
+  }
+  const netCells = (net, a) => net.offsets.map((d) => a.map((v, i) => v + d[i]));
+  const netAnchorsOf = (net, c) => net.offsets.map((d) => c.map((v, i) => v - d[i])).filter(net.isAnchor);
+  const netHeld = (net, a) => netCells(net, a).every((x) => cells.has(key(x)));
+  function heldNet(net, S) {
+    const out = new Map();
+    for (const c of S) for (const a of netAnchorsOf(net, c)) if (!out.has(key(a)) && netHeld(net, a)) out.set(key(a), { a, cells: netCells(net, a) });
+    return [...out.values()];
+  }
+  function netFill(net, S) {
+    const held = new Set(S.map(key)), singles = new Map(), odds = new Map();
+    const free = (c) => !held.has(key(c)) && !netAnchorsOf(net, c).length; // no cluster can cover it
+    if (net.singles) for (const c of S) for (const d of NEAR12) {
+      const e = c.map((v, i) => v + d[i]), k = key(e);
+      if (!isEven(e) || singles.has(k) || !free(e)) continue;
+      // a single Jewel once at least half its 12 neighbours are held (in a whole network, all are)
+      if (NEAR12.filter((d2) => held.has(key(e.map((v, i) => v + d2[i])))).length >= 6) singles.set(k, e);
+    }
+    const solid = new Set([...held, ...singles.keys()]);
+    if (net.fillOdds !== false) for (const c of [...S, ...singles.values()]) for (const d of AXES6) {
       const o = c.map((v, i) => v + d[i]), k = key(o);
-      if (held.has(k) || odds.has(k) || anchorsOf(o).length) continue; // only cells no Hexa covers
-      if (AXES6.filter((d2) => held.has(key(o.map((v, i) => v + d2[i])))).length >= 4) odds.set(k, o);
+      if (odds.has(k) || singles.has(k) || !free(o)) continue;
+      if (AXES6.filter((d2) => solid.has(key(o.map((v, i) => v + d2[i])))).length >= 4) odds.set(k, o);
     }
-    return [...odds.values()];
+    return { singles: [...singles.values()], odds: [...odds.values()] };
   }
-  function hexaPlace(site, point) {
+  // Placement: the free cluster nearest the tap among those beside the tapped piece, preferring ones
+  // that join the build (share a piece with it).
+  function netPlace(net, site, point) {
     const tap = [point.x, point.y, point.z], seen = new Set(), options = [];
-    for (const dx of [-2, -1, 0, 1]) for (const dy of [-2, -1, 0, 1]) for (const dz of [-2, -1, 0, 1]) {
+    const R = 4;
+    for (let dx = -R; dx <= R; dx++) for (let dy = -R; dy <= R; dy++) for (let dz = -R; dz <= R; dz++) {
       const a = [site[0] + dx, site[1] + dy, site[2] + dz];
-      if (!config.isHexaAnchor(a) || seen.has(key(a))) continue;
+      if (!net.isAnchor(a) || seen.has(key(a))) continue;
       seen.add(key(a));
-      if (hexaCells(a).some((x) => !cells.has(key(x)))) options.push(a);
+      const cs = netCells(net, a);
+      const joins = cs.some((x) => cells.has(key(x))) || (net.neighbours ?? []).some((d) => netHeld(net, a.map((v, i) => v + d[i])));
+      if (cs.some((x) => !cells.has(key(x)))) options.push({ a, joins, centre: centreOf(cs.filter(isEven)) });
     }
-    const centre = (a) => toWorld(a, [1, 1, 1]);
-    options.sort((a, b) => Math.hypot(...centre(a).map((v, i) => v - tap[i])) - Math.hypot(...centre(b).map((v, i) => v - tap[i])));
-    return options.length ? addCluster(options[0]) : false;
+    // Where a network has neighbours (the checkerboard), the build grows compact: each held neighbour
+    // counts as a third of a step nearer, so gaps close round and their keys fill in.
+    const step = net.neighbours ? Math.hypot(...centreOf(netCells(net, [0, 0, 0])).map((v, i) => v - centreOf(netCells(net, net.neighbours[0]))[i])) : 0;
+    const held = (o) => (net.neighbours ?? []).filter((d) => netHeld(net, o.a.map((v, i) => v + d[i]))).length;
+    const dist = (o) => Math.hypot(...o.centre.map((v, i) => v - tap[i])) + (o.joins || !cells.size ? 0 : 1e3) - held(o) * step / 3;
+    options.sort((p, q) => dist(p) - dist(q));
+    return options.length ? addCells(netCells(net, options[0].a)) : false;
   }
-  // Long-press on a Hexa: it goes, but Jewels another whole Hexa shares stay.
-  function removeHexa(s, point) {
+  const centreOf = (list) => list.map((x) => toWorld(x, [0, 0, 0])).reduce((t, p) => t.map((v, i) => v + p[i] / list.length), [0, 0, 0]);
+  function addCells(list) {
+    const fresh = list.filter((x) => !cells.has(key(x)));
+    if (!fresh.length) return false;
+    for (const x of fresh) cells.set(key(x), [...x]);
+    commit();
+    fit();
+    return true;
+  }
+  // Long-press on a cluster: it goes, but pieces another whole cluster shares stay.
+  function removeNet(net, s, point) {
     const tap = [point.x, point.y, point.z];
-    const mine = anchorsOf(s).filter((a) => hexaCells(a).every((x) => cells.has(key(x))));
+    const mine = netAnchorsOf(net, s).filter((a) => netHeld(net, a));
     if (!mine.length) return false;
-    const a = mine.sort((p, q) => Math.hypot(...toWorld(p, [1, 1, 1]).map((v, i) => v - tap[i])) - Math.hypot(...toWorld(q, [1, 1, 1]).map((v, i) => v - tap[i])))[0];
-    const others = heldHexas([...cells.values()]).filter((cl) => key(cl[0]) !== key(a));
-    const keep = new Set(others.flat().map(key));
-    const gone = hexaCells(a).filter((x) => !keep.has(key(x)) && cells.delete(key(x)));
+    const a = mine.sort((p, q) => Math.hypot(...centreOf(netCells(net, p)).map((v, i) => v - tap[i])) - Math.hypot(...centreOf(netCells(net, q)).map((v, i) => v - tap[i])))[0];
+    const keep = new Set(heldNet(net, [...cells.values()]).filter((o) => key(o.a) !== key(a)).flatMap((o) => o.cells.map(key)));
+    const gone = netCells(net, a).filter((x) => !keep.has(key(x)) && cells.delete(key(x)));
     if (!gone.length) return false;
     commit();
     return true;
@@ -530,14 +625,19 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     if (!tag || !s || mode === 'paint') return false;
     const chisel = mode === 'chisel';
     if (clustered()) {
-      if (tag === 'first' || tag === 'ghost') return chisel ? false : addCluster(s);
+      if (tag === 'first' || tag === 'ghost') {
+        if (chisel) return false;
+        const net = netOf(modeOf().cluster);
+        return net ? addCells(netCells(net, firstAnchor(net))) : addCluster(s);
+      }
       // Every cluster arrangement (DICTO 2026-10-09: "just automatic good placement"): a tap on a block
       // or a filled piece places the free cluster nearest the tap; a long-press on a block removes it.
       {
         const kind = modeOf().cluster;
-        if (chisel) return tag === 'piece' ? (kind === 'hexa' ? removeHexa(s, hit.point) : removeCluster(s)) : false;
-        if (kind === 'hexa') {
-          if (hexaPlace(s, hit.point)) return true;
+        const net = netOf(kind);
+        if (chisel) return tag === 'piece' ? (net ? removeNet(net, s, hit.point) : removeCluster(s)) : false;
+        if (net) {
+          if (netPlace(net, s, hit.point)) return true;
           showHudPrompt(t(`${S_}.prompt.taken`, lang()), 2000);
           return false;
         }
@@ -613,8 +713,9 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     panel.querySelector('.sj-view-label').textContent = arrangement ? t(`${S_}.view.${view.mode}`, L) : t(`${S_}.view`, L);
     modeSelect.innerHTML = MODE_LIST.filter((m) => !m.arrangement).map(({ id: m }) => `<option value="${m}"${m === view.mode ? ' selected' : ''}>${t(`${S_}.view.${m}`, L)}</option>`).join('');
     const all = [...cells.values()];
-    panel.querySelector('.sj-count').textContent = modeOf().cluster === 'hexa'
-      ? t(`${S_}.count`, L, { even: all.length, odd: hexaFill(all).length })
+    const net = netOf(modeOf().cluster);
+    panel.querySelector('.sj-count').textContent = net
+      ? (() => { const f = netFill(net, all), keys = netKeys(net, all).length * 8, jewels = net.allJewels ? all : all.filter(isEven); return t(`${S_}.count`, L, { even: jewels.length + f.singles.length, odd: all.length - jewels.length + f.odds.length + keys }); })()
       : t(`${S_}.count`, L, { even: all.filter(isEven).length, odd: all.filter((s) => !isEven(s)).length });
     const shearBtn = panel.querySelector('[data-sj="shear"]');
     shearBtn.textContent = t(`studies.shear.${view.shear}`, L);

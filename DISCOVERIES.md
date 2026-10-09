@@ -773,9 +773,14 @@ clusters of #15 and #16 do. They do, and all six keep to one rule.*
 - **The rule: a hull with n corners sits on a network where each cluster has n neighbours**
   (tetrahedron and diamond, octahedron and simple cubic, cube and rhombohedron and BCC, cuboctahedron
   and FCC, rhombic dodecahedron and BCC with its second neighbours).
-- Verified in the design study of 2026-10-09 (exact checks on a 13³ window in both lattices: each
-  cluster closed, consistently wound, no overlap, volumes exact, sharing as stated). Not yet in
-  krp-core or the apps (DICTO 2026-10-09: keep all six).
+- In the apps: all six, in both the Stella–Jewel and the Sunstar world, each its own arrangement
+  (DICTO 2026-10-09: keep all six); each cluster drawn as one solid, the single pieces and stellas or
+  Dogstars between them filling in by themselves.
+- Verified: `src/krp-core/scripts/verify-kagome-hulls.mjs` (krp-core v0.11.0), every push, 18 checks:
+  each solid closed with the exact volume of its pieces in both lattices, and each network Kagome
+  style (no cell in more than two clusters, no two sharing more than one) with the study's shares.
+  The design study also checked overlap, winding and Euler characteristic on a 13³ window.
+- Study files: [studies/2026-10-09-kagome-hulls](studies/2026-10-09-kagome-hulls/).
 - Status: **not found** in a web search on 2026-10-09 for the rhombohedral, cuboctahedral and
   rhombic dodecahedral nets as regroupings of a space filling. Known, and credited: corner-sharing
   octahedra (the ReO₃ and perovskite structures), corner-sharing tetrahedra (the pyrochlore
@@ -815,11 +820,13 @@ carved out of wood", about eight Jewels in volume. Names by DICTO.*
 - **Nothing turns:** no join in these packings can be turned by its face's symmetry and still fit;
   turns exist only for a piece hanging on one neighbour (a window: 180° and one flip).
 - In the apps: the whole family heads Polyhedraverse's DICTO's pieces, with a Parts view (as Jewels,
-  or split A or B); the Stella–Jewel world's DICTO Hexa diamond network.
+  or split A or B); in the Stella–Jewel world, the DICTO Hexa diamond network and the DICTO Hexa and
+  Hexa-Key checkerboard (Hexa-Keys filling in once four Hexas surround a gap).
 - Verified: `src/krp-core/scripts/verify-hexa.mjs` (krp-core v0.10.0), every push, 16 checks:
   closed and outward surfaces, exact volumes (Hexa 80, Hexa-Key 48, clusters 688 and 556, trimmed
   Jewel 8, roof ⅔), 24 whole Jewel windows and stella-matching walls on the Hexa, and every parts view
   adding up. The network, packing and turning results come from the design study of 2026-10-09.
+- Study files: [studies/2026-10-09-dicto-hexa](studies/2026-10-09-dicto-hexa/).
 - Status: **not found** in a web search on 2026-10-09 for a cube built from carved dodecahedra, or
   this block of eight. Known, and credited: the space filling by stella octangulas and octahedra, the
   cube, octahedron and stella inscribed in the rhombic dodecahedron, and the FCC primitive cell as a

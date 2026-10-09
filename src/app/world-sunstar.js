@@ -34,12 +34,14 @@ export function createSunstarWorld(opts) {
     strings: 'ss',
     // Arrangements (arrangement: true) open from their own DICTO entries, each its colour scheme;
     // the rest are views of the lattice, offered in its panel.
-    modes: [{ id: 'both', even: true, odd: true }, { id: 'sunstars', even: true, odd: true, grouped: true }, { id: 'tetra', even: true, odd: false, cluster: 'tetra', arrangement: true, pieceColour: 0xd9a520, edgeColour: 0xfff0a0 }, { id: 'octa', even: true, odd: true, cluster: 'octa', arrangement: true, pieceColour: 0x8c5a2b }, { id: 'octet', even: true, odd: false, network: true, arrangement: true, pieceColour: 0xa9c4e8 }, { id: 'kagome', even: true, odd: false, cluster: 'kagome', network: 'kagome', arrangement: true, pieceColour: 0xd9a520 }, { id: 'every', even: true, odd: true, nested: true }, { id: 'chain', even: true, odd: true, chain: true }, { id: 'dogstars', even: false, odd: true }, { id: 'dodecas', even: true, odd: false }],
+    modes: [{ id: 'both', even: true, odd: true }, { id: 'sunstars', even: true, odd: true, grouped: true }, { id: 'tetra', even: true, odd: false, cluster: 'tetra', arrangement: true, pieceColour: 0xd9a520, edgeColour: 0xfff0a0 }, { id: 'octa', even: true, odd: true, cluster: 'octa', arrangement: true, pieceColour: 0x8c5a2b }, { id: 'octet', even: true, odd: false, network: true, arrangement: true, pieceColour: 0xa9c4e8 }, { id: 'kagome', even: true, odd: false, cluster: 'kagome', network: 'kagome', arrangement: true, pieceColour: 0xd9a520 }, { id: 'every', even: true, odd: true, nested: true }, { id: 'chain', even: true, odd: true, chain: true }, { id: 'dogstars', even: false, odd: true }, { id: 'dodecas', even: true, odd: false }, { id: 'hullOcta', even: true, odd: true, cluster: 'octa6', hull: true, arrangement: true, pieceColour: 0xd9a520 }, { id: 'hullRhombo', even: true, odd: true, cluster: 'rhombo8', hull: true, arrangement: true, pieceColour: 0xd9a520 }, { id: 'hullCuboHollow', even: true, odd: true, cluster: 'cubocta12', hull: true, arrangement: true, pieceColour: 0xd9a520 }, { id: 'hullCuboSolid', even: true, odd: true, cluster: 'cubocta13', hull: true, arrangement: true, pieceColour: 0xd9a520 }, { id: 'hullCube', even: true, odd: true, cluster: 'cube14', hull: true, arrangement: true, pieceColour: 0xd9a520 }, { id: 'hullRd', even: true, odd: true, cluster: 'rd33', hull: true, arrangement: true, pieceColour: 0xd9a520 }],
     // A Sunstar: the dodecahedron and the 6 Dogstars on its faces (direct decision, 2026-10-08:
     // the 8 at its corners only touch it at a point).
     // DICTO's clusters of the dodecahedra (DICTO, 2026-10-09; krp-core DODECA_TETRAHEDRAL_CLUSTER and
     // DODECA_OCTAHEDRAL_CLUSTER, the octahedral one a Dogstar with its 6 dodecahedra, a Sunstar turned
     // inside out) and their octet network: the same structure as the DICTO Jewel clusters.
+    // The Kagome hulls (DISCOVERIES #17): this lattice's solids, loaded on demand.
+    hullLattice: 'sunstar',
     clusters: OCTET_CLUSTERS,
     networkCells: octetNetworkCells,
     kagomeNeighbours: kagomeNeighbourClusters,
