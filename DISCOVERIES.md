@@ -38,7 +38,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 10b | Study of #10, windows and stellas in a checkerboard: the windows (even cells) and stella octangulas (odd cells) fill space exactly, each odd cube being its stella plus its six neighbours' carved roofs; volumes 12 + 4 = two cubes | DICTO (asked for "a male counterpart to window" fitting the faces the stellas leave) | yes | study of #10, not a separate claim | 2026-10-08 (ac203df) |
 | 11 | Dodecahedron stretched along a cube-face axis: 8 regular pentagons, 4 hexagons (108° × 4, 144° × 2), 2 rectangles at any stretch; squares at one edge (2/φ); at the lattice spacing 2 it is the hull of two EKP face-neighbour dodecahedra | DICTO (the "pentagon caps and hexagons" hunch, from overlapped dodecahedra) | yes | **not found** — candidate (web-level search; a simple construction, so likely to appear somewhere, e.g. crystal habits) | 2026-10-08 (fb9de6b) |
 | 12 | Star Chain Reaction: the EKP great star is exactly the great stellated dodecahedron of the Dogstar's core (a dodecahedron 1/φ³ the cell's), and a whole Sunstar 1/φ³ the size fits inside it with no room to grow, so dodecahedron ⊃ great star ⊃ Sunstar(1/φ³) ⊃ great star(1/φ³) ⊃ … nests forever, each step touching, scale ratio φ³ | DICTO (asked for a Sunstar cell network and to search nestings; named it); found by Kaleidohedra's search under DICTO's direction. The Dogstar itself is George W. Hart's stellation 8 of the dodecahedron (1996) | yes | **not found** — candidate (web-level search, 2026-10-08) | 2026-10-08 (79448e3) |
-| 12a | Study of #12, the Dragon chain: DICTO Jewel ⊃ cube ⊃ stella octangula ⊃ Dogstar ⊃ dodecahedron(1/φ³) ⊃ DICTO Jewel(1/φ³) ⊃ …, every step touching; the EKP cell recurs inside its own stella, through the Dogstar | DICTO (asked whether "another cell network" was buried in the DICTO Jewel); found by Kaleidohedra's search | yes | study of #12, not a separate claim | 2026-10-08 |
+| 12a | Study of #12, the Jewel chain: DICTO Jewel ⊃ cube ⊃ stella octangula ⊃ Dogstar ⊃ dodecahedron(1/φ³) ⊃ DICTO Jewel(1/φ³) ⊃ …, every step touching; the EKP cell recurs inside its own stella, through the Dogstar | DICTO (asked whether "another cell network" was buried in the DICTO Jewel); found by Kaleidohedra's search | yes | study of #12, not a separate claim | 2026-10-08 |
 | 13 | The 13-dodecahedron cluster made solid: a regular dodecahedron with one on each face leaves gaps of exactly two kinds, 30 wedges (two pentagons hinged at 10.3048°, volume φ³/20) and 20 needles (volume (45 − 19√5)/600), and the filled cluster comes apart into 12 finned units | DICTO (designed the cluster; asked for its gaps as pieces, separable once built) | yes | **not found** — candidate (the 10.3° gap itself is well known) | 2026-10-09 |
 | 14 | DICTO-Star: an icosidodecahedron with a regular dodecahedron on each pentagon and a tridiminished icosahedron (J63) on each triangle; 33 regular-faced pieces, every contact a whole face, every edge and corner closed, no filler, volume (195 + 89√5)/3 | DICTO (the centre of DICTO's builds, by 2026-10-04); confirmed exactly by the search DICTO asked for | yes | **not found** — candidate (the version with whole icosahedra, which overlaps, is Robert Austin's 2014 model) | 2026-10-09 |
 | 15 | DICTO Jewel clusters: four DICTO Jewels in a tetrahedron (pairwise face to face, touching at one point in the middle) and six in an octahedron round a stella octangula, which fits them face for face (a solid piece); each a shape of its own, and each fills space with stella octangulas | DICTO (built the tetrahedral cluster in the app, asked for the octahedral, saw that both fill space with stellas) | yes | **not found** — candidate (made only of the DICTO Jewel, #10, itself not found) | 2026-10-09 |
@@ -495,7 +495,7 @@ here is where it sits and what nests in it:
   and credited as such. Not proof of novelty; a specialist search (stellation and quasicrystal
   cluster literature) is still worth doing before claiming priority.
 
-### 12a. Study: the Dragon chain (DICTO, 2026-10-08)
+### 12a. Study: the Jewel chain (DICTO, 2026-10-08; first called the Dragon chain, renamed by DICTO on 2026-10-09)
 
 DICTO's question: is "another cell network buried in the Dragon's claw"? There is, through the
 same bridge. Inside the DICTO Jewel (#10, the windows solid), every step touching, with no room to
@@ -511,7 +511,7 @@ grow (the largest scale at which each fits inside the one before is exactly 1):
 - Several steps touch only at the shared cube corners, which the cube, the stella and the Dogstar
   all reach; the link that is not obvious is the Dogstar touching its own core.
 - Verified: `src/krp-core/scripts/verify-roof-fold.mjs` §13(l), every push. Shown in the Stella–Jewel Lattice
-  (Kaleidohedra and Rhombiverse), view Dragon chain.
+  (Kaleidohedra and Rhombiverse), view Jewel chain.
 - Status: a study of #12, not a separate claim (not found at web level, 2026-10-08).
 
 ## 13. The 13-dodecahedron cluster made solid (DICTO, 2026-10-09)

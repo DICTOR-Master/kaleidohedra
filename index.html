@@ -740,8 +740,7 @@
       display: none;
       align-items: center;
       justify-content: center;
-      background: rgba(5, 5, 10, 0.88);
-      backdrop-filter: blur(2px);
+      background: rgb(5, 5, 10); /* opaque: one screen at a time, the menu waits behind (copy audit) */
       overflow-y: auto;
       padding: 24px 12px;
       box-sizing: border-box;
@@ -965,8 +964,8 @@
     <div id="hud-dim"></div>
   </div>
   <div id="hud-1d-toggle" hidden><button type="button" data-world="signal">Signal</button><button type="button" data-world="construct">Construct</button></div>
-  <button id="hud-quick-shape" type="button" title="Shape (tap to change)"></button>
-  <button id="hud-quick-color" type="button" title="Color (tap to change)"></button>
+  <button id="hud-quick-shape" type="button" title="Piece (tap to change)"></button>
+  <button id="hud-quick-color" type="button" title="Colour (tap to change)"></button>
   <button id="hud-quick-lattice-view" type="button" title="Lattice View (tap to cycle)"></button>
   <button id="hud-quick-attach" type="button" class="hidden" title="Rhombohedra attach: Copy / Mirror (tap to switch)"></button>
   <button id="hud-quick-paint" type="button" class="hidden" title="Paint"></button>
@@ -975,7 +974,7 @@
   <div id="hud-tools">
     <button id="lab-toggle" type="button" title="Settings" data-i18n-title="hud.settings">⚙</button>
     <button id="projection-toggle" type="button" title="Projection: Perspective, Parallel, Isometric (tap to cycle)">3D</button>
-    <button id="xray-toggle" type="button" title="X-Ray: drag a cutaway plane through the structure">⛶</button>
+    <button id="xray-toggle" type="button" title="X-ray: drag a cutaway plane through the structure">⛶</button>
     <button id="duality-toggle" type="button" title="Duality: view this structure's aperiodic shadow">◐</button>
     <button id="spherical-toggle" type="button" title="Spherical: off, spheres, voids">◯</button>
     <button id="clear-world-toggle" type="button" title="Clear World: erase everything and start fresh">⊘</button>
@@ -1029,7 +1028,7 @@
       </span>
     </div>
     <div id="color-row" class="row">
-      <label><span data-i18n="color.label">Color:</span>
+      <label><span data-i18n="color.label">Colour:</span>
         <select id="color-select">
           <option value="cyan">Cyan</option>
           <option value="base">Default</option>
@@ -1101,7 +1100,7 @@
     <div class="row">
       <label><span data-i18n="world.view">World view:</span>
         <select id="world-view-select">
-          <option value="color" data-i18n="world.view.color">Color</option>
+          <option value="color" data-i18n="world.view.color">Colour</option>
           <option value="translucent" data-i18n="world.view.translucent">Translucent</option>
           <option value="skeleton" data-i18n="world.view.skeleton">Skeleton</option>
         </select>

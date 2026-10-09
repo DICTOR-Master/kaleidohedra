@@ -83,6 +83,7 @@ const CSS = `
 /* DICTO: the three apps as an optional filter (DICTO 2026-10-09: off by default; tap one to show
    only its entries, tap it again for all). Wordmarks two-tone like everywhere else. */
 .dicto-apps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 16px; }
+.dicto-apps-caption { grid-column: 1 / -1; font-size: var(--text-s, 12px); color: var(--pale); opacity: 0.8; letter-spacing: 0.02em; }
 .dicto-app {
   min-height: var(--touch); padding: 6px 4px; cursor: pointer; touch-action: manipulation;
   /* The whole name on one line at any width (POLYHEDRAVERSE is the longest). */
@@ -353,8 +354,8 @@ function kaleidoStarEdges() {
 // Interstitial" reuse the code's own existing descriptions of those
 // lattices; they are placeholders pending the user's own naming.
 export const LATTICES_3D = [
-  { key: 'roofFold', label: 'Euclid–Kepler–Pacioli Cell Network', pieces: [
-    { label: 'Euclid–Kepler–Pacioli Cell Network', action: 'tool:roofFoldWorld' },
+  { key: 'roofFold', label: 'Euclid–Kepler–Pacioli Cell Network (EKP)', pieces: [
+    { label: 'Euclid–Kepler–Pacioli Cell Network (EKP)', action: 'tool:roofFoldWorld' },
   ] },
   // New work near the top (direct request, 2026-10-08: "put new originalish work close to top of
   // App wizards"), right after the EKP cell they grow from (ported from Kaleidohedra).
@@ -366,7 +367,7 @@ export const LATTICES_3D = [
   { key: 'stellaJewel', label: 'Stella–Jewel Lattice', pieces: [
     { label: 'Stella–Jewel Lattice', action: 'tool:stellaJewelWorld' },
   ] },
-  { key: 'fcc', label: 'FCC', pieces: [
+  { key: 'fcc', label: 'FCC · rhombic dodecahedra', pieces: [
     { label: 'RD', action: 'tool:pieceType:rd' },
     { label: 'Hemi RD', action: 'tool:pieceType:halfrd' },
     { label: 'Hourglass', action: 'tool:pieceType:hourglass' },
@@ -380,18 +381,18 @@ export const LATTICES_3D = [
     { label: 'DICTO RD', action: 'tool:pieceType:dictofcc' },
     { label: 'DICTO Blocks', action: 'tool:pieceType:dictoblock' },
   ] },
-  { key: 'rdDual', label: 'RD Dual', pieces: [
+  { key: 'rdDual', label: 'RD Dual · cuboctahedra and octahedra', pieces: [
     { label: 'CO', action: 'tool:cuboctaBuild' },
     { label: 'Octahedron', action: 'tool:pieceType:octahedron' },
   ] },
-  { key: 'bcc', label: 'BCC', pieces: [
+  { key: 'bcc', label: 'BCC · truncated octahedra', pieces: [
     { label: 'TO', action: 'tool:pieceType:to' },
   ] },
-  { key: 'bccGaps', label: 'BCC Interstitial', pieces: [
+  { key: 'bccGaps', label: 'BCC Interstitial · the gaps between truncated octahedra', pieces: [
     { label: 'Flattened Octahedron', action: 'tool:pieceType:ioct' },
     { label: 'Disphenoid', action: 'tool:pieceType:idis' },
   ] },
-  { key: 'ed', label: 'ED', pieces: [
+  { key: 'ed', label: 'ED · elongated dodecahedron', pieces: [
     { label: 'ED', action: 'tool:pieceType:elongdodeca' },
   ] },
   { key: 'hex', label: 'Hexagonal', pieces: [
@@ -434,7 +435,7 @@ export const LATTICES_4D = [
   { key: 'z4', label: 'Z4 (Hypercubic)', pieces: [
     { label: 'Tesseract', action: 'tool:pieceType:tesseract', preview: () => edges4D('tesseract') },
   ] },
-  { key: 'd4', label: 'D4', pieces: [
+  { key: 'd4', label: 'D4 · the 24-cell and 16-cell', pieces: [
     { label: '24-cell', action: 'tool:pieceType:cell24', preview: () => edges4D('cell24') },
     { label: '16-cell', action: 'tool:pieceType:cell16', preview: () => edges4D('cell16') },
   ] },
@@ -452,21 +453,21 @@ export const LATTICES_4D = [
 // Kaleidohedra's; each app's lattices are listed once per app.
 const SHARED_WORLDS = ['roofFold', 'sunstar', 'stellaJewel', 'shells', 'golden'];
 const K_WORLDS = [
-  { key: 'roofFold', label: 'Euclid–Kepler–Pacioli Cell Network', pieces: [{ label: 'Euclid–Kepler–Pacioli Cell Network', action: 'tool:roofFoldWorld' }] },
+  { key: 'roofFold', label: 'Euclid–Kepler–Pacioli Cell Network (EKP)', pieces: [{ label: 'Euclid–Kepler–Pacioli Cell Network (EKP)', action: 'tool:roofFoldWorld' }] },
+  // Each world's arrangements as its pieces, one tap each (DICTO 2026-10-09: separate access, no
+  // drop-downs; listed under their parent so it shows what belongs to what).
+  ...[['stellaJewel', 'Checkerboard', 'DJ'], ['sunstar', 'Dodecahedra and Dogstars', 'DODECA']].map(([world, base, shape]) => {
+    const lat = LATTICES_3D.find((l) => l.key === world);
+    return { ...lat, pieces: [
+      { ...lat.pieces[0], label: base },
+      ...[['tetra', 'Tetrahedral clusters', 'TETRAHEDRAL'], ['octa', 'Octahedral clusters', 'OCTAHEDRAL'], ['octet', 'Octet network', 'OCTAHEDRAL'], ['kagome', 'Kagome network', 'TETRAHEDRAL']]
+        .map(([mode, label, form]) => ({ label, action: `tool:${world}World:${mode}`, preview: () => polyShapeEdges(`${shape}_${form}_CLUSTER`) })),
+      ...(world === 'stellaJewel' ? [{ label: 'DICTO Hexa diamond network', action: 'tool:stellaJewelWorld:hexa', preview: () => polyShapeEdges('DICTO_HEXA') }] : []),
+    ] };
+  }),
   { key: 'studies', label: 'Studies', pieces: [{ label: 'Studies', action: 'tool:studiesWorld' }] },
-  ...['stellaJewel', 'sunstar', 'shells', 'golden'].map((k) => LATTICES_3D.find((l) => l.key === k)),
   { key: 'targets', label: 'Targets', pieces: [{ label: 'Targets', action: 'tool:targetsWorld' }] },
-  // Each genuinely different arrangement its own entry (DICTO 2026-10-09: "separate access ... too many
-  // drop-downs"), opening its world in that arrangement; previews are the clusters themselves.
-  ...[['stellaJewel', 'dj', 'DICTO Jewel', 'DJ'], ['sunstar', 'ss', 'Sunstar', 'DODECA']].flatMap(([world, k, name, shape]) => [
-    ['tetra', 'tetrahedral clusters', 'TETRAHEDRAL'], ['octa', 'octahedral clusters', 'OCTAHEDRAL'],
-    ['octet', 'octet network', 'OCTAHEDRAL'], ['kagome', 'Kagome network', 'TETRAHEDRAL'],
-  ].map(([mode, what, form]) => ({
-    key: `${k}${mode[0].toUpperCase()}${mode.slice(1)}`, label: `${name} ${what}`,
-    pieces: [{ label: `${name} ${what}`, action: `tool:${world}World:${mode}`, preview: () => polyShapeEdges(`${shape}_${form}_CLUSTER`) }],
-  }))),
-  // The DICTO Hexa diamond network (DICTO 2026-10-09): Hexas sharing corner Jewels, stellas between.
-  { key: 'djHexa', label: 'DICTO Hexa diamond network', pieces: [{ label: 'DICTO Hexa diamond network', action: 'tool:stellaJewelWorld:hexa', preview: () => polyShapeEdges('DICTO_HEXA') }] },
+  ...['shells', 'golden'].map((k) => LATTICES_3D.find((l) => l.key === k)),
 ];
 const K_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key))
   .map((l) => (l.key === 'hex' ? { ...l, pieces: l.pieces.filter((pc) => pc.action === 'tool:pieceType:hexprism') } : l));
@@ -480,6 +481,9 @@ const POLY_FAMILIES = ['PLATONIC', 'ARCHIMEDEAN', 'CATALAN', 'JOHNSON', 'DELTAHE
 // Polyhedraverse pieces gathered from across its families.
 const DICTO_WORK = new Set(['roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
 const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
+// DICTO's block, findings first and tools last (copy audit, DICTO 2026-10-09).
+const DICTO_ORDER = ['roofFold', 'stellaJewel', 'sunstar', 'studies', 'targets', 'dictofcc', 'hex', 'shells', 'golden'];
+const dictoRank = (e) => { const i = DICTO_ORDER.indexOf(e.lat?.key); return i < 0 ? DICTO_ORDER.length : i; };
 const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER'] };
 const polyIds = (key) => (key === DICTO_POLY.key ? DICTO_POLY.ids.filter((id) => polyShapeName(id) !== id) : familyIds(key));
 const polyLabel = (key) => (key === DICTO_POLY.key ? DICTO_POLY.label : FAMILY_META[key].label);
@@ -587,7 +591,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     const L = getSettings().language;
     const box = overlay.querySelector('.dicto-apps');
     box.setAttribute('aria-label', t('wiz.filter', L));
-    box.innerHTML = APP_ORDER.map((a) => `<button type="button" class="dicto-app" data-app="${a}" aria-pressed="${filter === a}" style="${appStyle(a)}">${wordmark(a)}</button>`).join('');
+    box.innerHTML = `<div class="dicto-apps-caption">${t('wiz.filter', L)}</div>` + APP_ORDER.map((a) => `<button type="button" class="dicto-app" data-app="${a}" aria-pressed="${filter === a}" style="${appStyle(a)}">${wordmark(a)}</button>`).join('');
     box.querySelectorAll('.dicto-app').forEach((b) => b.addEventListener('click', () => {
       filter = filter === b.dataset.app ? null : b.dataset.app;
       paintApps();
@@ -620,12 +624,13 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
           <span class="dim-wizard-row-text">
             <span class="dim-wizard-label">${['5D', '6D'].includes(dim.id) ? '' : isOpen ? '▾ ' : '▸ '}${dim.label}</span>
             <span class="dim-wizard-desc">${desc}</span>
-            <span class="dicto-tags">${doorFirst(apps.map((app) => ({ app }))).map((e) => tag(e.app)).join('')}</span>
+            ${apps.length > 1 ? `<span class="dicto-tags">${doorFirst(apps.map((app) => ({ app }))).map((e) => tag(e.app)).join('')}</span>` : ''}
           </span>
         </button>`;
-      if (isOpen) grid += `<div class="dicto-dim-content">${dimensionContent(dim.id, L)}</div>`;
     }
-    bodyEl.innerHTML = `<div class="dim-wizard-sub">${t('wiz.sub', L)}</div><div class="dim-wizard-grid">${grid}</div>`;
+    // The dimensions stay together (4D to 6D in sight on a phone); the open one's content follows them.
+    const open = DIMENSIONS.find((x) => x.id === openDim && !['5D', '6D'].includes(x.id) && appsOf(x.id).some((a) => passes(a, filter)));
+    bodyEl.innerHTML = `<div class="dim-wizard-sub">${t('wiz.sub', L)}</div><div class="dim-wizard-grid">${grid}</div>${open ? `<div class="dicto-dim-content">${dimensionContent(open.id, L)}</div>` : ''}`;
     mountPreviews();
     bodyEl.querySelectorAll('[data-dim]').forEach((el) => el.addEventListener('click', () => {
       const dim = el.dataset.dim;
@@ -679,11 +684,23 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
           </span>
         </button>`;
       }
+      // A world or lattice with one piece: one row, the row itself the thing to tap (copy audit).
+      if (e.lat.pieces.length === 1) {
+        const piece = e.lat.pieces[0];
+        return `
+        <button type="button" class="dim-wizard-card-btn" data-action="${piece.action}" data-app="${e.lattice3d ? dictoOpen(piece.action) : e.app}">
+          ${previewSlot(() => (piece.preview ? piece.preview() : pieceEdges(piece.action)))}
+          <span class="dim-wizard-row-text">
+            <span class="dim-wizard-label">${e.lat.label}</span>
+            <span class="dim-wizard-desc">${tFor(e.app, `wiz.${d}.${e.lat.key}${e.dicto && e.lat.key === 'hex' ? 'Dicto' : ''}`, L)}</span>
+          </span>
+        </button>`;
+      }
       // A lattice or world: its heading, then its pieces.
       return `
         <div class="dim-wizard-section">
           <span class="dim-wizard-label">${e.lat.label}</span>
-          <span class="dim-wizard-desc">${tFor(e.app, `wiz.${d}.${e.lat.key}`, L)}</span>
+          <span class="dim-wizard-desc">${tFor(e.app, `wiz.${d}.${e.lat.key}${e.dicto && e.lat.key === 'hex' ? 'Dicto' : ''}`, L)}</span>
         </div>${e.lat.pieces.map((piece) => `
         <button type="button" class="dim-wizard-card-btn dim-wizard-piece" data-action="${piece.action}" data-app="${e.lattice3d ? dictoOpen(piece.action) : e.app}">
           ${previewSlot(() => (piece.preview ? piece.preview() : pieceEdges(piece.action)))}
@@ -695,7 +712,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
       const mine = entries.filter((e) => e.app === app);
       html += `<div class="dicto-block" style="${blockStyle(app)}"><div class="dicto-block-name">${wordmark(app)}</div>`;
       // DICTO's own work first, in DICTO's livery.
-      const dictoOwn = mine.filter((e) => e.dicto);
+      const dictoOwn = mine.filter((e) => e.dicto).sort((x, y) => dictoRank(x) - dictoRank(y));
       if (dictoOwn.length) html += `<div class="dicto-livery" style="${blockStyle('dicto')}"><div class="dicto-livery-name">${wordmark('dicto')}</div>${dictoOwn.map(row).join('')}</div>`;
       const rest = mine.filter((e) => !e.dicto);
       const restKinds = KINDS.filter(([kind]) => rest.some((e) => e.kind === kind));

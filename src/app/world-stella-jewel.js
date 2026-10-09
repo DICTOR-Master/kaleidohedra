@@ -12,7 +12,7 @@ import { POLYHEDRA } from '../krp-core/src/polyhedra/index.js';
 import { createPairLatticeWorld } from './world-pair-lattice.js';
 import { storageKey } from './site.js';
 
-function dragonChain(DJ) {
+function jewelChain(DJ) {
   const k = 1 / PHI ** 3, S = roofFoldSolids();
   const at = (faces, s) => faces.map((f) => f.map((p) => p.map((c) => c * s)));
   return [
@@ -56,9 +56,9 @@ export function createStellaJewelWorld(opts) {
     overlay: { faint: five.filter((x) => !x.chosen).map((x) => x.rhombus), bright: five.filter((x) => x.chosen).map((x) => x.rhombus) },
     brightColor: C.dodeca,
     holePrompt: true,
-    // The Dragon chain (study 12a, direct request 2026-10-08): inside each DICTO Jewel, every step
+    // The Jewel chain (study 12a, direct request 2026-10-08): inside each DICTO Jewel, every step
     // touching, its cube, stella octangula, Dogstar, the Dogstar's 1/phi^3 core dodecahedron and the
     // next DICTO Jewel 1/phi^3 the size.
-    chainLayers: dragonChain(DJ),
+    chainLayers: jewelChain(DJ),
   });
 }

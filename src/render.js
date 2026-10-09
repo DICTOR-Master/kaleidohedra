@@ -1628,8 +1628,8 @@ async function init() {
   wireFirstUseHint('bcc-toggle', 'Lattice View: click to cycle a preview lens through every Piece type -- RD, Cube, Pyramid (shown on your real World), then Cuboctahedron and Octahedron, then BCC/TO, Flattened Octahedron, and Disphenoid (a hypothetical patch near you), then Off.');
   wireFirstUseHint('clear-world-toggle', 'Clear World: erase everything in every dimension and start fresh (Undo can bring it back).');
   wireFirstUseHint('reload-toggle', 'Reload: hard-refresh the app if anything looks stuck or stale.');
-  wireFirstUseHint('xray-toggle', 'X-Ray: drag a cutaway plane through the structure to see inside it.');
-  wireFirstUseHint('lab-toggle', 'Settings: camera, graphics, sound, language, colors, and Export / Import World.');
+  wireFirstUseHint('xray-toggle', 'X-ray: drag a cutaway plane through the structure to see inside it.');
+  wireFirstUseHint('lab-toggle', 'Settings: camera, graphics, sound, language, colours, and Export / Import World.');
   wireFirstUseHint('hud-wheel-cue', 'Tab / Space (or tap Menu) opens DICTO.');
   // The quick-select row starts just right of the Menu box, whose width
   // changes with the language.
@@ -2578,8 +2578,15 @@ async function init() {
   firstPlacementEdges.visible = false;
   scene.add(firstPlacementMesh, firstPlacementEdges);
   let firstPlacementCurrent = null;
+  // The first tap (copy audit, DICTO 2026-10-09): when the glowing outline appears on an empty world,
+  // say what to do with it, after any "Piece: …" line has had its moment; once per outline shown.
+  let firstTapTimer = 0;
   function updateFirstPlacementTarget() {
     const spec = firstPlacementSpec();
+    if (spec && !firstPlacementCurrent) {
+      clearTimeout(firstTapTimer);
+      firstTapTimer = setTimeout(() => { if (firstPlacementCurrent) showHudPrompt(t('hud.firstTap', getSettings().language), 6000); }, 2600);
+    }
     firstPlacementCurrent = spec;
     firstPlacementMesh.geometry.dispose();
     firstPlacementEdges.geometry.dispose();
@@ -3333,7 +3340,7 @@ async function init() {
     if (turningOn) {
       syncXrayHandleToSectionPlane();
       xrayGizmo.attach(xrayHandle);
-      showHudPrompt('X-Ray: drag the translucent plane through the structure.', 4000);
+      showHudPrompt('X-ray: drag the translucent plane through the structure.', 4000);
     } else {
       xrayGizmo.detach();
     }
@@ -3909,7 +3916,7 @@ async function init() {
           if (currentMode !== 'build' && currentMode !== 'chisel') clickMode('build');
           updateHudIndicator();
           showHudPrompt(`Piece: ${PIECE_LABELS[value] ?? value}`, 3000);
-          if (!quiet) pickers.openColorPicker((matValue, matLabel) => showHudPrompt(`Color: ${matLabel}`, 3000), paintPickerOption());
+          if (!quiet) pickers.openColorPicker((matValue, matLabel) => showHudPrompt(`Colour: ${matLabel}`, 3000), paintPickerOption());
           return;
         }
         // Reuses the 2D wheel's own color-picker overlay (a real,
@@ -3921,7 +3928,7 @@ async function init() {
         // should be color picker/color... etc") to match its own
         // WHEEL_PIECE face label, already renamed to "Color".
         if (action === 'tool:color') {
-          pickers.openColorPicker((value, label) => showHudPrompt(`Color: ${label}`, 3000), paintPickerOption());
+          pickers.openColorPicker((value, label) => showHudPrompt(`Colour: ${label}`, 3000), paintPickerOption());
           return;
         }
 
@@ -3976,7 +3983,7 @@ async function init() {
         if (action === 'tool:cuboctaBuild') {
           clickMode('cubocta');
           showHudPrompt('Piece: CO', 3000);
-          if (!quiet) pickers.openColorPicker((value, label) => showHudPrompt(`Color: ${label}`, 3000), paintPickerOption());
+          if (!quiet) pickers.openColorPicker((value, label) => showHudPrompt(`Colour: ${label}`, 3000), paintPickerOption());
           return;
         }
 
@@ -4155,7 +4162,7 @@ async function init() {
       dimensionWizard.openDimension(activeDimension ?? '3D');
     });
     document.getElementById('hud-quick-color')?.addEventListener('click', () => {
-      pickers.openColorPicker((value, label) => showHudPrompt(`Color: ${label}`, 3000), paintPickerOption());
+      pickers.openColorPicker((value, label) => showHudPrompt(`Colour: ${label}`, 3000), paintPickerOption());
     });
   }
 
@@ -4844,7 +4851,7 @@ async function init() {
       } else if (own3DActive()) {
         quickShapeEl.innerHTML = iconFrame(({ poly: MARKS.pieceDodeca, shells: MARKS.pieceRD, roofFold: MARKS.pieceDodeca, studies: MARKS.pieceDodeca, sunstar: MARKS.pieceDodeca, stellaJewel: MARKS.pieceDodeca })[own3D] ?? MARKS.pieceRhombohedron, { title: ({ poly: polyShapeName(polyWorld?.shape ?? '').replaceAll('_', ' '), shells: 'Shells', roofFold: 'EKP', studies: 'Studies', sunstar: 'Sunstar Lattice', stellaJewel: 'Stella–Jewel Lattice', targets: 'Targets' })[own3D] ?? 'Golden Rhombohedra' });
       } else if (currentMode === 'cubocta') {
-        quickShapeEl.innerHTML = iconFrame(MARKS.cuboctahedron, { title: 'Shape' });
+        quickShapeEl.innerHTML = iconFrame(MARKS.cuboctahedron, { title: 'Piece' });
       } else {
         const pieceValue = document.getElementById('piece-type-select').value;
         quickShapeEl.innerHTML = iconFrame(MARKS[PIECE_MARK_KEY[pieceValue]] ?? MARKS.pieceRD, { title: 'Shape' });
