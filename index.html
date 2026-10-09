@@ -794,6 +794,11 @@
     }
     #welcome-card .legal-links a { color: var(--accent); text-decoration: none; }
     #welcome-card .legal-links a:hover { text-decoration: underline; }
+    /* Zenodo-style DOI badge: grey "DOI", blue number. */
+    #welcome-card .doi-badge { display: inline-flex; margin-top: 8px; border-radius: 3px; overflow: hidden; text-decoration: none; font: 600 11px/1 var(--font-ui); }
+    #welcome-card .doi-badge span { padding: 9px 8px; color: #fff; } /* about 30px tall, a comfortable tap */
+    #welcome-card .doi-badge span:first-child { background: #555; }
+    #welcome-card .doi-badge span:last-child { background: #0a7bbc; }
     #about-btn {
       position: fixed;
       bottom: 8px;

@@ -161,6 +161,9 @@ function overlayHtml() {
         · <a href="./legal.html?doc=security" target="_blank" rel="noopener">Security</a>
         · <a href="https://github.com/DICTOR-Master/kaleidohedra" target="_blank" rel="noopener">Source</a>
       </div>
+      <!-- Zenodo DOI badge (DICTO, 2026-10-09: "DOI badging on the websites"): the concept DOI, always
+           the latest archived version of DICTO's findings and this app's code. -->
+      <a class="doi-badge" href="https://doi.org/10.5281/zenodo.23173809" target="_blank" rel="noopener" title="Cite DICTO's findings: Kaleidohedra by DICTO on Zenodo"><span>DOI</span><span>10.5281/zenodo.23173809</span></a>
     </div>`;
 }
 

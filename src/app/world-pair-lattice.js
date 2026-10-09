@@ -95,6 +95,25 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
   const seeThroughMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, transparent: true, opacity: 0.28, depthWrite: false, side: THREE.DoubleSide });
   const ghostMaterial = new THREE.MeshStandardMaterial({ color: GHOST_COLOR(), transparent: true, opacity: 0.16, depthWrite: false, side: THREE.DoubleSide });
   const firstMaterial = new THREE.MeshStandardMaterial({ color: firstColour(), transparent: true, opacity: 0.16, depthWrite: false, side: THREE.DoubleSide });
+  // The solid octahedral clusters' centres burn (DICTO, 2026-10-09: "burn bright like fire at their
+  // centres ... a blue eternal flame might work too"): fire, flickering, in the Octahedral clusters
+  // view; a steady blue eternal flame in the Octet network view. Additive, so they glow through the
+  // see-through pieces round them.
+  const glow = (color, opacity) => new THREE.MeshBasicMaterial({ color, transparent: true, opacity, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide });
+  const fireMaterial = glow(0xff7a1a, 0.95), fireHalo = glow(0xff5a00, 0.28);
+  const eternalMaterial = glow(0x4aa8ff, 0.9), eternalHalo = glow(0x2a6cff, 0.25);
+  let flickerRaf = 0;
+  const FIRE_LOW = new THREE.Color(0xff4a00), FIRE_HIGH = new THREE.Color(0xffd060);
+  function flicker(now) {
+    flickerRaf = 0;
+    if (!active || modeOf().cluster !== 'octa') return;
+    const t = now / 1000;
+    // a few incommensurate waves: a fire's irregular flicker, not a pulse
+    const k = 0.5 + 0.22 * Math.sin(t * 7.3) + 0.16 * Math.sin(t * 13.1 + 1.7) + 0.12 * Math.sin(t * 3.1 + 0.4);
+    fireMaterial.color.copy(FIRE_LOW).lerp(FIRE_HIGH, Math.min(1, Math.max(0, k)));
+    fireHalo.opacity = 0.18 + 0.2 * Math.min(1, Math.max(0, k));
+    flickerRaf = requestAnimationFrame(flicker);
+  }
   const pickTargets = [];
   function clearGroup() {
     for (const child of [...group.children]) {
@@ -161,9 +180,11 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
       // A network view (DICTO, 2026-10-09: the octet network): the pieces see-through, the cells
       // the present pieces complete drawn between their centres.
       const network = modeOf().network === true;
+      // Octahedral clusters: the six round each centre see-through, the centre on fire.
+      const burning = modeOf().cluster === 'octa';
       // In a chain view the odd pieces between the cells (DICTO, 2026-10-08: "the macro dogstars seem
       // to be missing between the cells") are see-through, so the chains inside stay visible.
-      const [m, l] = meshOf(solidSites, modeOf().chain || network ? seeThroughMaterial : pieceMaterial, 'piece');
+      const [m, l] = meshOf(burning ? solidSites.filter(isEven) : solidSites, modeOf().chain || network || burning ? seeThroughMaterial : pieceMaterial, 'piece');
       m.visible = !skeleton;
       if (skeleton) l.material.color.setHex(GHOST_COLOR());
       group.add(m, l);
@@ -199,9 +220,28 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
         }
       }
       if (network) group.add(...networkOverlay(S.filter(isEven)));
+      if (burning) {
+        const centres = S.filter((x) => !isEven(x));
+        if (centres.length) {
+          group.add(...flames(centres, fireMaterial, fireHalo));
+          if (!flickerRaf) flickerRaf = requestAnimationFrame(flicker);
+        }
+      }
       if (view.axes) group.add(...fiveFoldOverlay(S.filter(isEven)));
     }
     renderPanel();
+  }
+  // A flame: the odd piece at each site, glowing, inside a faint larger halo of itself.
+  function flames(sites, core, halo) {
+    const [fm, fl] = meshOf(sites, core, 'piece', core.color.getHex(), EDGE_COLOR, () => config.oddFaces.map(([f]) => [f, 0xffffff]));
+    fl.geometry.dispose(); fl.material.dispose(); // a flame has no outline
+    fm.renderOrder = 5;
+    pickTargets.push(fm);
+    const big = () => config.oddFaces.map(([f]) => [f.map((p) => p.map((c) => c * 1.12)), 0xffffff]);
+    const [hm, hl] = meshOf(sites, halo, 'flame', halo.color.getHex(), EDGE_COLOR, big);
+    hl.geometry.dispose(); hl.material.dispose();
+    hm.renderOrder = 6;
+    return [fm, hm];
   }
   // The network's cells (config.networkCells: triangles of piece sites, with a colour) and the
   // edges between neighbouring centres, drawn through the shear like the pieces.
@@ -223,7 +263,9 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     lg.setAttribute('position', new THREE.Float32BufferAttribute(edges.flatMap(([a, b]) => [...centre(a), ...centre(b)]), 3));
     const lines = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: AXIS_COLOR, transparent: true, opacity: 0.8 }));
     lines.renderOrder = 4;
-    return [cells, lines];
+    // Each octahedral cell's centre piece: a blue eternal flame.
+    const eternal = (config.networkCells(evens).octaCentres ?? []);
+    return [cells, lines, ...(eternal.length ? flames(eternal, eternalMaterial, eternalHalo) : [])];
   }
   // The six five-fold axes through each DICTO Jewel, and on every face the five window
   // positions: faint, with the cube's choice (the window itself) bright.

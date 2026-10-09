@@ -44,7 +44,7 @@ export const OCTET_CLUSTERS = {
 // meet face to face.
 export function octetNetworkCells(evens) {
   const has = new Set(evens.map((s) => s.join()));
-  const triangles = [], seen = new Set();
+  const triangles = [], seen = new Set(), octaCentres = [];
   const add = (k, tris, colour) => { if (seen.has(k)) return; seen.add(k); for (const t of tris) triangles.push({ sites: t, colour }); };
   for (const s of evens) {
     for (const dx of [-1, 0]) for (const dy of [-1, 0]) for (const dz of [-1, 0]) {
@@ -61,6 +61,7 @@ export function octetNetworkCells(evens) {
       const [xp, xm, yp, ym, zp, zm] = six;
       const tris = [];
       for (const X of [xp, xm]) for (const Y of [yp, ym]) for (const Z of [zp, zm]) tris.push([X, Y, Z]);
+      if (!seen.has(`o${o.join()}`)) octaCentres.push(o);
       add(`o${o.join()}`, tris, 0x7cc4ff);
     }
   }
@@ -69,5 +70,5 @@ export function octetNetworkCells(evens) {
     const n = s.map((c, i) => c + d[i]);
     if (has.has(n.join())) edges.push([s, n]);
   }
-  return { triangles, edges };
+  return { triangles, edges, octaCentres };
 }
