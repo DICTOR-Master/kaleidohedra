@@ -46,7 +46,7 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
 
   // ---- state ----
   const cells = new Map(); // key -> [x, y, z]
-  const view = { mode: MODES[0], shear: 'copies', axes: false };
+  const view = { mode: MODES[0], shear: 'solid', axes: false }; // solid by default: sheared pieces stay face to face (DICTO 2026-10-09)
   let active = false, skeleton = false, opacity = 1, latticeView = false;
   function read(data) {
     cells.clear();
@@ -282,9 +282,14 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     const pos = [], col = [], line = [], records = [];
     for (const cl of clusters.values()) {
       const a = cl[0], members = kind === 'octa' ? cl.slice(1) : cl;
-      // the shape is centred on its cells' centre: place it there, through the shear, as one piece
+      // the shape is centred on its cells' centre; each corner goes through the shear with the cell it
+      // belongs to (the nearest), so with sheared copies every piece sits on its own sheared centre
       const C = members.reduce((t, m) => t.map((v, i) => v + (2 * m[i]) / members.length), [0, 0, 0]);
-      const P = spec.vertices.map((v) => toWorld(a, v.map((c, i) => c / K + C[i] - 2 * a[i])));
+      const P = spec.vertices.map((v) => {
+        const r = v.map((c, i) => c / K + C[i]);
+        const m = cl.reduce((best, x) => (Math.hypot(...r.map((c, i) => c - 2 * x[i])) < Math.hypot(...r.map((c, i) => c - 2 * best[i])) ? x : best));
+        return toWorld(m, r.map((c, i) => c - 2 * m[i]));
+      });
       for (const f of spec.faces) for (let i = 1; i + 1 < f.length; i++) {
         for (const k of [f[0], f[i], f[i + 1]]) { pos.push(...P[k]); col.push(colour.r, colour.g, colour.b); }
         records.push(a);
