@@ -109,8 +109,6 @@ A 3D world for building **hulls**: shells of rhombic dodecahedra (RDs), each she
 
 A 3D world for the two pieces of the 3D Penrose tiling. Choose it in DICTO's 3D+ screen. Tap the outline, then tap a face to add the **Prolate** or **Oblate** piece chosen in the Piece menu. **Penrose check** colours pieces green where they belong to the true aperiodic tiling and red where your build has drifted; Lattice View shows the true tiling around you, and tapping a ghost places it.
 
-The same two blocks are the pieces of DICTO's **RHOMBITURE**, an extractable armature system for carving and modelling: [doi:10.5281/zenodo.23173896](https://doi.org/10.5281/zenodo.23173896).
-
 ## Saving your work
 
 Your World saves automatically in this browser, every dimension, after each change. It comes back when you reopen the site on the same device and browser.

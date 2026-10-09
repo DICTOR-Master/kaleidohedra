@@ -111,8 +111,6 @@ Un monde 3D pour construire des **enveloppes** : des couches de dodécaèdres rh
 
 Un monde 3D avec les deux pièces du pavage de Penrose en 3D. Choisissez-le dans l'écran 3D+ de DICTO. Touchez le contour, puis une face pour ajouter la pièce **Allongée** ou **Aplatie** choisie dans le menu Pièce. Le **Contrôle Penrose** colore en vert les pièces qui appartiennent au vrai pavage apériodique et en rouge celles qui s'en écartent ; Lattice View montre le vrai pavage autour, et toucher un fantôme le pose.
 
-Ces deux blocs sont aussi les pièces de **RHOMBITURE** de DICTO, un système d'armature extractible pour la taille et le modelage : [doi:10.5281/zenodo.23173896](https://doi.org/10.5281/zenodo.23173896).
-
 ## Enregistrer votre travail
 
 Votre monde est enregistré automatiquement dans ce navigateur, pour toutes les dimensions, après chaque modification. Il revient quand vous rouvrez le site sur le même appareil et le même navigateur.

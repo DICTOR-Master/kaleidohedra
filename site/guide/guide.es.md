@@ -111,8 +111,6 @@ Un mundo 3D para construir **envolventes**: capas de dodecaedros rómbicos (RD),
 
 Un mundo 3D con las dos piezas del teselado de Penrose en 3D. Elígelo en la pantalla 3D+ de DICTO. Toca el contorno y luego una cara para añadir la pieza **Alargada** o **Achatada** elegida en el menú Pieza. El **Control Penrose** pinta de verde las piezas que pertenecen al verdadero teselado aperiódico y de rojo las que se han desviado; Lattice View muestra el teselado verdadero alrededor, y tocar un fantasma lo coloca.
 
-Los mismos dos bloques son las piezas de **RHOMBITURE** de DICTO, un sistema de armazón extraíble para tallar y modelar: [doi:10.5281/zenodo.23173896](https://doi.org/10.5281/zenodo.23173896).
-
 ## Guarda tu trabajo
 
 Tu mundo se guarda automáticamente en este navegador, en todas las dimensiones, después de cada cambio. Vuelve a aparecer cuando abres el sitio en el mismo dispositivo y navegador.
