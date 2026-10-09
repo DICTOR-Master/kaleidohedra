@@ -68,10 +68,17 @@ async function main() {
   // 3D+ is open to start with, its content in app blocks.
   const blocks = () => page.evaluate(() => [...document.querySelectorAll('.dim-wizard-body .dicto-block-name')].map((b) => b.textContent));
   const apps3D = await blocks();
-  assert.equal(apps3D[0], DOOR.toUpperCase(), "3D+ should start with the door's own app");
-  assert.equal([...apps3D].sort().join(' '), 'KALEIDOHEDRA POLYHEDRAVERSE RHOMBIVERSE', '3D+ should list all three apps, one block each');
+  assert.equal(apps3D[0], 'DICTO', "3D+ should start with DICTO's own block");
+  assert.equal(apps3D[1], DOOR.toUpperCase(), "then the door's own app");
+  assert.equal([...apps3D].sort().join(' '), 'DICTO KALEIDOHEDRA POLYHEDRAVERSE RHOMBIVERSE', '3D+ should list DICTO and all three apps, one block each');
+  // The other door's app keeps one row (its lattices are the door's own, so they aren't repeated).
+  const otherRow = await page.evaluate((door) => document.querySelector(`.dim-wizard-body [data-app="${door === 'kaleidohedra' ? 'rhombiverse' : 'kaleidohedra'}"][data-action="tool:pieceType:rd"]`) !== null, DOOR);
+  assert.ok(otherRow, "the other app's block should keep its one row");
+  // DICTO's lattices open in the door's app (DICTO 2026-10-09): Sunstar's row carries the door.
+  const sunstarApp = await page.evaluate(() => document.querySelector('.dim-wizard-body [data-action="tool:sunstarWorld"]')?.dataset.app);
+  assert.equal(sunstarApp, DOOR, "DICTO's lattices should open in the door's app");
   await page.click('.dicto-app[data-app="polyhedraverse"]');
-  assert.equal((await blocks()).join(' '), 'POLYHEDRAVERSE', 'the app filter should show one app only');
+  assert.equal((await blocks()).join(' '), 'DICTO POLYHEDRAVERSE', "the app filter should show one app only (DICTO's own always)");
   await page.click('.dicto-app[data-app="polyhedraverse"]');
   await page.keyboard.press('Escape');
   await page.waitForTimeout(300);

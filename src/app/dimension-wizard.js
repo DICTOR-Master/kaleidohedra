@@ -493,13 +493,20 @@ function dimensionEntries(dim) {
     ...K_LATTICES.map((lat) => ({ app: K, kind: 'lattice', lat })),
     ...R_LATTICES.map((lat) => ({ app: R, kind: 'lattice', lat })),
     ...K_WORLDS.map((lat) => ({ app: K, kind: 'world', lat })),
-  ].flatMap(splitDicto).concat(
+  ].flatMap(splitDicto)
+    // DICTO's own lattices and worlds (DICTO 2026-10-09: "my lattices available through Rhombiverse"):
+    // their own silver DICTO block, first, opening in the door's app (dictoOpen).
+    .map((e) => (e.dicto ? { ...e, app: 'dicto', dicto: false, lattice3d: true } : e)).concat(
     { app: P, kind: 'shapes', key: DICTO_POLY.key, dicto: true },
     POLY_FAMILIES.filter((key) => familyIds(key).length).map((key) => ({ app: P, kind: 'shapes', key })),
   );
   if (dim === '4D') return LATTICES_4D.map((lat) => ({ app: R, kind: 'lattice', lat }));
   return [{ app: R, kind: 'catalogue' }]; // 5D, 6D
 }
+// Where a DICTO lattice opens: the app whose door you came in by (Rhombiverse: its colours, no Shear;
+// Kaleidohedra: with the Shear); the DICTO Hex Prism always in Rhombiverse, whose hexagonal lattice
+// has it.
+const dictoOpen = (action) => (action === 'tool:pieceType:dictohex' ? 'rhombiverse' : SITE);
 const appsOf = (dim) => [...new Set(dimensionEntries(dim).map((e) => e.app))];
 // DICTO's own entries show whatever app the filter picks.
 const passes = (app, filter) => !filter || app === filter || app === 'dicto';
@@ -558,7 +565,9 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
   // An app's block wears its colours: rows, outlines and turning previews (wireframe-preview.js reads them).
   const blockStyle = (a) => { const th = themeOf(a); return `--pale: ${th.pale}; --accent: ${th.accent}; --accent-rgb: ${th.pieceRgb}; --accent-strong: ${th.strong}`; };
   const tag = (a) => `<span class="dicto-tag" style="${appStyle(a)}">${SITES[a].name}</span>`;
-  const doorFirst = (list) => [...list].sort((x, y) => (x.app === SITE ? 0 : 1) - (y.app === SITE ? 0 : 1));
+  // DICTO's own block first, then the door's app, then the others.
+  const rank = (app) => (app === 'dicto' ? 0 : app === SITE ? 1 : app === 'polyhedraverse' ? 3 : 2);
+  const doorFirst = (list) => [...list].sort((x, y) => rank(x.app) - rank(y.app));
   const shownEntries = (dim) => doorFirst(dimensionEntries(dim).filter((e) => passes(e.app, filter)));
   function paintApps() {
     const th = themeOf(filter ?? SITE);
@@ -632,6 +641,13 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
       pieces.forEach((pc) => seen.add(pc.action));
       return pieces.length ? { ...e, lat: { ...e.lat, pieces } } : null;
     }).filter(Boolean);
+    // The other door's app, whose lattices are the door's own (its difference is the Shear, or its
+    // absence): one row, so each app stays in sight with no list repeated (DICTO 2026-10-09).
+    if (dim === '3D') for (const app of ['kaleidohedra', 'rhombiverse']) {
+      if (app === SITE || !passes(app, filter) || entries.some((e) => e.app === app)) continue;
+      entries.push({ app, kind: 'family', fam: { id: 'otherApp', label: t(`wiz.other.${app}`, L), action: 'tool:pieceType:rd', preview: () => pieceEdges('tool:pieceType:rd') } });
+    }
+    entries.sort((x, y) => rank(x.app) - rank(y.app)); // stable: each block keeps its own order
     const row = (e) => {
       if (e.kind === 'family') return `
         <button type="button" class="dim-wizard-card-btn" data-action="${e.fam.action}" data-app="${e.app}">
@@ -658,7 +674,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
           <span class="dim-wizard-label">${e.lat.label}</span>
           <span class="dim-wizard-desc">${tFor(e.app, `wiz.${d}.${e.lat.key}`, L)}</span>
         </div>${e.lat.pieces.map((piece) => `
-        <button type="button" class="dim-wizard-card-btn dim-wizard-piece" data-action="${piece.action}" data-app="${e.app}">
+        <button type="button" class="dim-wizard-card-btn dim-wizard-piece" data-action="${piece.action}" data-app="${e.lattice3d ? dictoOpen(piece.action) : e.app}">
           ${previewSlot(() => (piece.preview ? piece.preview() : pieceEdges(piece.action)))}
           <span class="dim-wizard-row-text"><span class="dim-wizard-label">${piece.label}</span></span>
         </button>`).join('')}`;
