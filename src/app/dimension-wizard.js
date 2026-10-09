@@ -362,7 +362,7 @@ export const LATTICES_3D = [
   { key: 'sunstar', label: 'Sunstar Lattice', pieces: [
     { label: 'Sunstar Lattice', action: 'tool:sunstarWorld' },
   ] },
-  // Stella–Jewel Lattice: Dragon Jewels and stella octangulas.
+  // Stella–Jewel Lattice: DICTO Jewels and stella octangulas.
   { key: 'stellaJewel', label: 'Stella–Jewel Lattice', pieces: [
     { label: 'Stella–Jewel Lattice', action: 'tool:stellaJewelWorld' },
   ] },

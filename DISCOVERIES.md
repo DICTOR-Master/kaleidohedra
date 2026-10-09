@@ -38,7 +38,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 10b | Study of #10, windows and stellas in a checkerboard: the windows (even cells) and stella octangulas (odd cells) fill space exactly, each odd cube being its stella plus its six neighbours' carved roofs; volumes 12 + 4 = two cubes | DICTO (asked for "a male counterpart to window" fitting the faces the stellas leave) | yes | study of #10, not a separate claim | 2026-10-08 (ac203df) |
 | 11 | Dodecahedron stretched along a cube-face axis: 8 regular pentagons, 4 hexagons (108° × 4, 144° × 2), 2 rectangles at any stretch; squares at one edge (2/φ); at the lattice spacing 2 it is the hull of two EKP face-neighbour dodecahedra | DICTO (the "pentagon caps and hexagons" hunch, from overlapped dodecahedra) | yes | **not found** — candidate (web-level search; a simple construction, so likely to appear somewhere, e.g. crystal habits) | 2026-10-08 (fb9de6b) |
 | 12 | Star Chain Reaction: the EKP great star is exactly the great stellated dodecahedron of the Dogstar's core (a dodecahedron 1/φ³ the cell's), and a whole Sunstar 1/φ³ the size fits inside it with no room to grow, so dodecahedron ⊃ great star ⊃ Sunstar(1/φ³) ⊃ great star(1/φ³) ⊃ … nests forever, each step touching, scale ratio φ³ | DICTO (asked for a Sunstar cell network and to search nestings; named it); found by Kaleidohedra's search under DICTO's direction. The Dogstar itself is George W. Hart's stellation 8 of the dodecahedron (1996) | yes | **not found** — candidate (web-level search, 2026-10-08) | 2026-10-08 (79448e3) |
-| 12a | Study of #12, the Dragon chain: Dragon Jewel ⊃ cube ⊃ stella octangula ⊃ Dogstar ⊃ dodecahedron(1/φ³) ⊃ Dragon Jewel(1/φ³) ⊃ …, every step touching; the EKP cell recurs inside its own stella, through the Dogstar | DICTO (asked whether "another cell network" was buried in the Dragon Jewel); found by Kaleidohedra's search | yes | study of #12, not a separate claim | 2026-10-08 |
+| 12a | Study of #12, the Dragon chain: DICTO Jewel ⊃ cube ⊃ stella octangula ⊃ Dogstar ⊃ dodecahedron(1/φ³) ⊃ DICTO Jewel(1/φ³) ⊃ …, every step touching; the EKP cell recurs inside its own stella, through the Dogstar | DICTO (asked whether "another cell network" was buried in the DICTO Jewel); found by Kaleidohedra's search | yes | study of #12, not a separate claim | 2026-10-08 |
 | 13 | The 13-dodecahedron cluster made solid: a regular dodecahedron with one on each face leaves gaps of exactly two kinds, 30 wedges (two pentagons hinged at 10.3048°, volume φ³/20) and 20 needles (volume (45 − 19√5)/600), and the filled cluster comes apart into 12 finned units | DICTO (designed the cluster; asked for its gaps as pieces, separable once built) | yes | **not found** — candidate (the 10.3° gap itself is well known) | 2026-10-09 |
 | 14 | DICTO-Star: an icosidodecahedron with a regular dodecahedron on each pentagon and a tridiminished icosahedron (J63) on each triangle; 33 regular-faced pieces, every contact a whole face, every edge and corner closed, no filler, volume (195 + 89√5)/3 | DICTO (built it, 2026); made exact and checked by Kaleidohedra's search | yes | **not found** — candidate (the version with whole icosahedra, which overlaps, is Robert Austin's 2014 model) | 2026-10-09 |
 
@@ -419,9 +419,9 @@ the stella octangulas leave? There is, and it is the stella octangula itself.
 - Verified: `src/krp-core/scripts/verify-roof-fold.mjs` §13(f): the volumes exactly, and a 40³ grid of points in
   an odd cube, every one in exactly one piece (a 60³ grid, 216,000 points, was also checked by hand).
   Shown in the Studies world, Windows and stellas, checkerboard, with an Apart slider.
-- Named by DICTO (2026-10-08): the windows solid on its own is the **Dragon Jewel** (DJ); the
+- Named by DICTO (2026-10-08): the windows solid on its own is the **DICTO Jewel** (DJ; first named the Dragon Jewel, renamed by DICTO on 2026-10-09); the
   checkerboard is the **Stella–Jewel Lattice** (the face-centred cubic lattice with two pieces per
-  point), a world of its own in the app. On its own, the Dragon Jewels on the even cells meet face to
+  point), a world of its own in the app. On its own, the DICTO Jewels on the even cells meet face to
   face on all 12 rhombi (each rhombus is coplanar with, and the same as, a neighbour's), leaving
   stella-shaped holes. Five-fold: each window lies in a dodecahedron face, facing a five-fold axis;
   each face has five window positions, one per pentagon diagonal, and the cube picks the one on a
@@ -496,12 +496,12 @@ here is where it sits and what nests in it:
 ### 12a. Study: the Dragon chain (DICTO, 2026-10-08)
 
 DICTO's question: is "another cell network buried in the Dragon's claw"? There is, through the
-same bridge. Inside the Dragon Jewel (#10, the windows solid), every step touching, with no room to
+same bridge. Inside the DICTO Jewel (#10, the windows solid), every step touching, with no room to
 grow (the largest scale at which each fits inside the one before is exactly 1):
 
-- Dragon Jewel ⊃ cube (its cube is untouched by the carving) ⊃ stella octangula (on the cube's
+- DICTO Jewel ⊃ cube (its cube is untouched by the carving) ⊃ stella octangula (on the cube's
   corners) ⊃ Dogstar (its 8 tips are the cube corners) ⊃ the Dogstar's core, a dodecahedron 1/φ³ the
-  cell's (it reaches the Dogstar's surface where the 6 axial wedges are missing) ⊃ Dragon Jewel
+  cell's (it reaches the Dogstar's surface where the 6 axial wedges are missing) ⊃ DICTO Jewel
   1/φ³ the size (its rhombi lie on the core's faces) ⊃ … , ratio φ³ per round.
 - So the EKP cell's own chain (… ⊂ stella ⊂ cube ⊂ dodecahedron) carries on downward through the
   Dogstar into the next cell, 1/φ³ smaller. The Dogstar is the bridge between scales in both this

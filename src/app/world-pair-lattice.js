@@ -127,8 +127,8 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
     return [mesh, new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: edgeColor }))];
   }
-  // Empty cells touching the build: across faces (Dragon Jewel <-> stella), and Dragon Jewel to
-  // Dragon Jewel across the rhombi; in the jewels-alone view, the rhombus neighbours only.
+  // Empty cells touching the build: across faces (DICTO Jewel <-> stella), and DICTO Jewel to
+  // DICTO Jewel across the rhombi; in the jewels-alone view, the rhombus neighbours only.
   function emptyNeighbours() {
     const out = new Map();
     for (const s of shown()) for (const d of DJ_NEIGHBOURS) {
@@ -197,7 +197,7 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     }
     renderPanel();
   }
-  // The six five-fold axes through each Dragon Jewel, and on every face the five window
+  // The six five-fold axes through each DICTO Jewel, and on every face the five window
   // positions: faint, with the cube's choice (the window itself) bright.
   function fiveFoldOverlay(jewels) {
     const axis = [], faint = [], bright = [];
