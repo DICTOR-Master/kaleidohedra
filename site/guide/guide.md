@@ -265,7 +265,7 @@ DICTO's pieces start with the **DICTO Hexa** family: the DICTO Hexa (eight DICTO
 | DICTO (top left) | The wizard: the dimensions, then everything in each, in blocks by app. The large label beside it shows the dimension you're in |
 | Shape (bottom left) | The piece you're placing. Tap to change it |
 | Colour (bottom left) | Build colour. Tap to change it |
-| Lattice View | Cycles through Off and a view for each piece |
+| Lattice View | Cycles: Off → the open cells around your build for the piece you're placing (faint, the 36 nearest) → your build re-drawn as each piece |
 | Attach toggle | Only shown for pieces that attach more than one way (Rhombohedra: Copy / Mirror; Pyrochlore: small / whole tetrahedron; 24-cell / 16-cell; the three Hyper-pyrochlore 5-cells): tap to switch |
 | Undo (↶, bottom right) | Tap to undo one step in the current dimension. Hold to scrub back further |
 | Paint (brush) | Recolour placed pieces: turn on, pick a colour, tap a piece. In the attach toggle's place on the bottom row; when that toggle is needed it sits just above it (in 4D, in the 4D panel) |

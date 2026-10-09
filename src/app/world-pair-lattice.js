@@ -94,7 +94,7 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     return layerMaterials.get(op);
   };
   const seeThroughMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, transparent: true, opacity: 0.28, depthWrite: false, side: THREE.DoubleSide });
-  const ghostMaterial = new THREE.MeshStandardMaterial({ color: GHOST_COLOR(), transparent: true, opacity: 0.16, depthWrite: false, side: THREE.DoubleSide });
+  const ghostMaterial = new THREE.MeshStandardMaterial({ color: GHOST_COLOR(), transparent: true, opacity: 0.08, depthWrite: false, side: THREE.DoubleSide }); // faint: the lattice-view rule
   const firstMaterial = new THREE.MeshStandardMaterial({ color: firstColour(), transparent: true, opacity: 0.16, depthWrite: false, side: THREE.DoubleSide });
   // The solid octahedral clusters' centres burn (DICTO, 2026-10-09: "burn bright like fire at their
   // centres ... a blue eternal flame might work too"): fire, flickering, in the Octahedral clusters
@@ -157,7 +157,11 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
       if (grouped() && !isEven(n)) continue;
       if (!cells.has(key(n))) out.set(key(n), n);
     }
-    return [...out.values()];
+    // At most 36, nearest the build's middle (lattice-view audit 2026-10-09: 18 per piece made a crust).
+    const list = [...out.values()], built = shown();
+    if (list.length <= 36 || !built.length) return list;
+    const mid = [0, 1, 2].map((i) => built.reduce((t, c) => t + c[i], 0) / built.length);
+    return list.sort((a, b) => Math.hypot(...a.map((v, i) => v - mid[i])) - Math.hypot(...b.map((v, i) => v - mid[i]))).slice(0, 36);
   }
   function draw() {
     clearGroup();
@@ -222,7 +226,7 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
         if (ghosts.length) {
           const [gm, gl] = meshOf(ghosts, ghostMaterial, 'ghost', GHOST_COLOR(), GHOST_COLOR());
           gl.material.transparent = true;
-          gl.material.opacity = 0.4;
+          gl.material.opacity = 0.35;
           group.add(gm, gl);
           pickTargets.push(gm);
         }

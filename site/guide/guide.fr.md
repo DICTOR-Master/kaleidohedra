@@ -267,7 +267,7 @@ Les pièces de DICTO commencent par la famille **DICTO Hexa** : la DICTO Hexa (h
 | DICTO (en haut à gauche) | L'assistant : les dimensions, puis tout ce que chacune contient, en blocs par appli. La grande étiquette à côté indique la dimension où vous êtes |
 | Shape (en bas à gauche) | La pièce que vous posez. Touchez pour la changer |
 | Couleur (en bas à gauche) | Couleur de construction. Touchez pour la changer |
-| Lattice View | Alterne entre Off et une vue pour chaque pièce |
+| Lattice View | Alterne : Off → les cellules libres autour de votre construction pour la pièce posée (pâles, les 36 plus proches) → votre construction redessinée comme chaque pièce |
 | Choix d'assemblage | Affiché seulement pour les pièces qui s'assemblent de plusieurs façons (Rhombohedra : Copy / Mirror ; Pyrochlore : petit / grand tétraèdre ; 24-cellule / 16-cellule ; les trois 5-cellules de l'hyperpyrochlore) : touchez pour basculer |
 | Undo (↶, en bas à droite) | Touchez pour annuler une étape dans la dimension actuelle. Maintenez pour remonter plus loin |
 | Paint (pinceau) | Recolore les pièces posées : activez-le, choisissez une couleur, touchez une pièce. À la place du choix d'assemblage dans la rangée du bas ; quand ce choix est nécessaire, juste au-dessus (en 4D, dans le panneau 4D) |

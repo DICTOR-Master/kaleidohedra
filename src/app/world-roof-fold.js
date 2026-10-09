@@ -17,6 +17,12 @@ import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 import { theme, storageKey } from './site.js';
+// The lattice-view rule (audit 2026-10-09): at most 36 open cells shown, nearest the build's middle.
+const nearestCap = (list, built, cap = 36) => {
+  if (list.length <= cap || !built.length) return list;
+  const mid = built[0].map((_, i) => built.reduce((t, c) => t + c[i], 0) / built.length);
+  return list.map((c) => ({ c, d: Math.hypot(...c.map((v, i) => v - mid[i])) })).sort((a, b) => a.d - b.d).slice(0, cap).map((x) => x.c);
+};
 
 const STORAGE_KEY = storageKey('roof-fold-world');
 const VIEWS = ['built', 'starIco', 'dodecaStar', 'dodecaDogstar', 'checker', 'merged'];
@@ -117,7 +123,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
 
   // ---- drawing ----
   const pieceMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
-  const ghostMaterial = new THREE.MeshStandardMaterial({ color: GHOST_COLOR(), transparent: true, opacity: 0.18, depthWrite: false, side: THREE.DoubleSide });
+  const ghostMaterial = new THREE.MeshStandardMaterial({ color: GHOST_COLOR(), transparent: true, opacity: 0.08, depthWrite: false, side: THREE.DoubleSide });
   const firstMaterial = new THREE.MeshStandardMaterial({ color: FIRST_COLOR(), transparent: true, opacity: 0.14, depthWrite: false, side: THREE.DoubleSide });
   const nodeGeometry = new THREE.SphereGeometry(0.07, 12, 8);
   const nodeMaterial = new THREE.MeshStandardMaterial({ color: NODE_COLOR });
@@ -264,7 +270,7 @@ export function createRoofFoldWorld({ scene, onChange = () => {}, showHudPrompt 
       }
       if (view.vertices !== 'off') group.add(nodeMarkers(items));
       if (latticeView) {
-        const ghosts = emptyNeighbourSites().map((site) => ({ site, kind: view.piece }));
+        const ghosts = nearestCap(emptyNeighbourSites(), sites()).map((site) => ({ site, kind: view.piece }));
         if (ghosts.length) {
           const g = solidPolys(ghosts, () => new THREE.Color(GHOST_COLOR()));
           const [gm, gl] = meshOf(g.polys, g.edges, ghostMaterial, GHOST_COLOR(), 'ghost');

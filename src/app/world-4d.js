@@ -30,6 +30,12 @@ import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey, theme } from './site.js';
+// The lattice-view rule (audit 2026-10-09): at most 36 open cells shown, nearest the build's middle.
+const nearestCap = (list, built, cap = 36) => {
+  if (list.length <= cap || !built.length) return list;
+  const mid = built[0].map((_, i) => built.reduce((t, c) => t + c[i], 0) / built.length);
+  return list.map((c) => ({ c, d: Math.hypot(...c.map((v, i) => v - mid[i])) })).sort((a, b) => a.d - b.d).slice(0, cap).map((x) => x.c);
+};
 
 // One store for every 4D kind (the worlds share one frame and coexist,
 // like 3D's); the key name predates the tesseract joining it.
@@ -331,12 +337,12 @@ export function createWorld4D({ scene, materialColor, getMaterial, onChange = ()
       // current slice shows no placed cell (you've slid into an empty
       // layer), in cyan, so there's always something to tap.
       const color = latticeView && slicedAny ? SLOT_COLOR() : FIRST_COLOR();
-      for (const c of openSlots(kind)) {
+      for (const c of latticeView && slicedAny ? nearestCap(openSlots(kind), [...cells.values()].filter((x) => x.kind === kind).map((x) => x.c)) : openSlots(kind)) {
         const pts = sliceCell(cellVertices4(kind, c), cellStructure(kind, c).edges, R, view.w);
-        if (pts) addSolid(pts, { color, opacity: 0.12, userData: { world4d: 'slot', kind, c }, lineMaterial: new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.6 }) });
+        if (pts) addSolid(pts, { color, opacity: 0.12, userData: { world4d: 'slot', kind, c }, lineMaterial: new THREE.LineBasicMaterial({ color, transparent: true, opacity: latticeView && slicedAny ? 0.35 : 0.6 }) });
       }
     } else if (view.mode === 'projection' && latticeView) {
-      for (const c of openSlots(kind)) addProjectedCell(kind, c, { color: SLOT_COLOR(), opacity: 0.06, userDataBase: { world4d: 'slot', kind, c } });
+      for (const c of nearestCap(openSlots(kind), [...cells.values()].filter((x) => x.kind === kind).map((x) => x.c))) addProjectedCell(kind, c, { color: SLOT_COLOR(), opacity: 0.06, userDataBase: { world4d: 'slot', kind, c } });
     }
     renderPanel();
   }

@@ -267,7 +267,7 @@ Las piezas de DICTO empiezan con la familia **DICTO Hexa**: la DICTO Hexa (ocho 
 | DICTO (arriba a la izquierda) | El asistente: las dimensiones y, en cada una, todo su contenido en bloques por app. La etiqueta grande de al lado muestra la dimensión en la que estás |
 | Shape (abajo a la izquierda) | La pieza que colocas. Tócalo para cambiarla |
 | Color (abajo a la izquierda) | Color de construcción. Tócalo para cambiarlo |
-| Lattice View | Alterna entre Off y una vista para cada pieza |
+| Lattice View | Alterna: Off → las celdas libres alrededor de tu construcción para la pieza que colocas (tenues, las 36 más cercanas) → tu construcción redibujada como cada pieza |
 | Cambio de unión | Solo aparece con piezas que se unen de más de una forma (Rhombohedra: Copy / Mirror; Pyrochlore: tetraedro pequeño / entero; 24-celda / 16-celda; las tres 5-celdas del hiperpirocloro): toca para cambiar |
 | Undo (↶, abajo a la derecha) | Toca para deshacer un paso en la dimensión actual. Mantén pulsado para retroceder más |
 | Paint (pincel) | Cambia el color de piezas ya colocadas: actívalo, elige un color y toca una pieza. Ocupa el lugar del cambio de unión en la fila inferior; cuando ese cambio hace falta, queda justo encima (en 4D, en el panel 4D) |

@@ -24,6 +24,12 @@ import { t, tn } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey, theme } from './site.js';
+// The lattice-view rule (audit 2026-10-09): at most 36 open cells shown, nearest the build's middle.
+const nearestCap = (list, built, cap = 36) => {
+  if (list.length <= cap || !built.length) return list;
+  const mid = built[0].map((_, i) => built.reduce((t, c) => t + c[i], 0) / built.length);
+  return list.map((c) => ({ c, d: Math.hypot(...c.map((v, i) => v - mid[i])) })).sort((a, b) => a.d - b.d).slice(0, cap).map((x) => x.c);
+};
 
 const STORAGE_KEY = storageKey('shells-world');
 const FIRST_COLOR = () => theme().strongHex; // read when drawing: follows the app whose space you're in
@@ -146,7 +152,7 @@ export function createShellsWorld({ scene, onChange = () => {}, showHudPrompt = 
   // RD face i is the one shared with the neighbour at NEIGHBOR_OFFSETS[i].
   const FACES = facePieces(1).map((f) => f.base);
   const pieceMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
-  const slotMaterial = new THREE.MeshStandardMaterial({ color: SLOT_COLOR(), transparent: true, opacity: 0.18, depthWrite: false, side: THREE.DoubleSide });
+  const slotMaterial = new THREE.MeshStandardMaterial({ color: SLOT_COLOR(), transparent: true, opacity: 0.1, depthWrite: false, side: THREE.DoubleSide });
   const firstMaterial = new THREE.MeshStandardMaterial({ color: FIRST_COLOR(), transparent: true, opacity: 0.12, depthWrite: false });
   let slotCells = [], skinTris = [], partTris = [], ghostParts = [];
   const pickTargets = [];
@@ -374,7 +380,7 @@ export function createShellsWorld({ scene, onChange = () => {}, showHudPrompt = 
       group.add(ghosts.mesh, ghosts.lines);
     }
     if (latticeView && cells.size) {
-      slotCells = openSlots();
+      slotCells = nearestCap(openSlots(), [...cells.values()].map(({ c }) => c));
       const slots = instanced(slotCells, slotMaterial);
       slots.userData.shells = 'slot';
       group.add(slots);
