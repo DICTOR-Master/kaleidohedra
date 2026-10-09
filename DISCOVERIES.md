@@ -25,9 +25,6 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 |---|---|---|---|---|---|
 | 1 | DICTO skewed rhombic dodecahedron | DICTO (found by building it) | yes | **not found** as this member — the family (skewed RD parallelohedra) is known (Fedorov; Lalvani 1997) | 2026-10-01 (8420a51) |
 | 2 | Equal-edge rule for sheared FCC | Kaleidohedra | yes | general idea known; this form not found | 2026-10-01 (8420a51) |
-| 3 | Bain disphenoids become regular tetrahedra | — | yes | **known** (Bain, 1924) | 2026-10-01 (8420a51) |
-| 4 | Bain rhombic dodecahedron (squares + 60° rhombi) | — | yes | **known** | 2026-10-01 (8420a51) |
-| 5 | Regular-hexagon elongated dodecahedron | DICTO, independently (from the "hexagons and rhombi" hunch) | yes | **known** — the truncated octahedron with one zone removed (Fedorov's ED as drawn by Grünbaum 2010); DICTO's route, the Bain stretch, is new | 2026-10-01 (8420a51) |
 | 6 | Exactly 9 "most regular" space-fillers | Kaleidohedra two-way search (its regular-hexagon elongated dodecahedron member: DICTO, independently, by lattice shearing) | yes | not yet searched as a set; that member is **known** (Grünbaum 2010, Fig. 2(b); see #5) | 2026-10-01 (547aac9) |
 | 7 | DICTO skewed ED (two forms) | Kaleidohedra (extending #1) | yes | **not found** as these members — the family is known (Fedorov; Lalvani 1997) | 2026-10-01 (e97193f) |
 | 8 | Euclid–Kepler–Pacioli (EKP) cell: all five Platonic solids nested in one cubic cell, with Kepler's star and Pacioli's rectangles (Pm-3) | DICTO (built a physical cell) | yes | **not found** — candidate; a periodic approximant-type structure like α-AlMnSi (no fivefold axis) | 2026-10-06 (6636342) |
@@ -43,6 +40,16 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 14 | DICTO-Star: an icosidodecahedron with a regular dodecahedron on each pentagon and a tridiminished icosahedron (J63) on each triangle; 33 regular-faced pieces, every contact a whole face, every edge and corner closed, no filler, volume (195 + 89√5)/3 | DICTO (the centre of DICTO's builds, by 2026-10-04); confirmed exactly by the search DICTO asked for | yes | **not found** — candidate (the version with whole icosahedra, which overlaps, is Robert Austin's 2014 model) | 2026-10-09 |
 | 15 | DICTO Jewel clusters: four DICTO Jewels in a tetrahedron (pairwise face to face, touching at one point in the middle) and six in an octahedron round a stella octangula, which fits them face for face (a solid piece); each a shape of its own, and each fills space with stella octangulas | DICTO (built the tetrahedral cluster in the app, asked for the octahedral, saw that both fill space with stellas) | yes | **not found** — candidate (made only of the DICTO Jewel, #10, itself not found) | 2026-10-09 |
 | 16 | Sunstar clusters: the octet structure of #15 in the Sunstar Lattice; four dodecahedra round a cell corner, and six round an odd cell with its Dogstar inside, a solid piece (a Dogstar with its 6 dodecahedra: a Sunstar turned inside out); each fills space with Dogstars, and shared they form the octet network | DICTO (asked whether the octet network held for the Sunstars and Dogstars) | yes | **not found** — candidate (the honeycomb itself is Hart's, 1996) | 2026-10-09 |
+| 17 | Kagome hulls: six hulls of DICTO Jewels or Sunstar dodecahedra give Kagome networks, clusters sharing single pieces corner to corner; a hull with n corners sits on a network where each cluster has n neighbours (the icosahedral exception: #13) | DICTO | yes | **not found** as networks of these clusters; corner-sharing octahedra and tetrahedra are known (perovskite, pyrochlore) | 2026-10-09 (0bf8909) |
+| 18 | The DICTO Hexa: eight DICTO Jewels as one solid; with its gap, the DICTO Hexa-Key, it fills space like a checkerboard, 5 : 3 | DICTO (names) | yes | **not found** | 2026-10-09 (0bf8909) |
+
+Known results the apps show (kept here, with their numbers, as checks; not DICTO's findings; see the section at the end):
+
+| # | Finding | Credit | Verified | Status | First recorded |
+|---|---|---|---|---|---|
+| 3 | Bain disphenoids become regular tetrahedra | — | yes | **known** (Bain, 1924) | 2026-10-01 (8420a51) |
+| 4 | Bain rhombic dodecahedron (squares + 60° rhombi) | — | yes | **known** | 2026-10-01 (8420a51) |
+| 5 | Regular-hexagon elongated dodecahedron | DICTO, independently (from the "hexagons and rhombi" hunch) | yes | **known** — the truncated octahedron with one zone removed (Fedorov's ED as drawn by Grünbaum 2010); DICTO's route, the Bain stretch, is new | 2026-10-01 (8420a51) |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -87,62 +94,6 @@ FCC, and exactly DICTO's skewed RD for DICTO FCC. This is the Cell slider.
 - Status: equilateral versions of any zonohedron type are well known (Hart;
   Wikipedia "Zonohedron"). The statement for a *fixed* sheared lattice, with
   a unique equal-edge member and the circumcentre construction, was not found.
-
-## 3. Bain disphenoids
-
-Stretch BCC by √2 along one cube axis and it becomes FCC. Of the six BCC
-disphenoid orientations, the two whose long edges lie across that axis become
-**regular tetrahedra**; the other four become quarters of regular octahedra.
-Along the DICTO path the disphenoids only get less regular, and plain BCC is
-the most regular overall (a regular tetrahedron cannot fill space alone).
-
-- Verified here (Towards → Bain; the Disphenoids meter).
-- Status: **known** — the Bain correspondence (E. C. Bain, 1924), standard in
-  metallurgy. Kaleidohedra makes it something you can slide through and see.
-
-## 4. Bain rhombic dodecahedron
-
-At the Bain stop the equal-edge RD cell has edge directions meeting at
-60, 60, 60, 60, 90, 90 degrees: **4 squares and 8 rhombi of 60°**, all edges
-equal.
-
-- Verified here ("Bain RD").
-- Status: **known** — listed on Wikipedia's rhombic dodecahedron page as the
-  D4h form, "a cuboctahedron with square pyramids attached on the top and
-  bottom".
-
-## 5. Regular-hexagon elongated dodecahedron
-
-Add a fifth edge direction to the Bain RD along an unstretched cube axis, of
-the same length. Every edge is 1, and the elongation direction lies at 60° to
-two pairs of RD directions in their planes, so the faces are:
-
-- **4 regular hexagons**
-- **4 squares**
-- **4 rhombi of 60°** (each two equilateral triangles)
-
-It is an elongated-dodecahedron-type zonohedron, so it fills space by
-translation (Fedorov). Every face is made of regular polygons. Elongated
-along the stretched axis instead, it has 8 rhombi of 60° and 4 equal-edged
-hexagons with corners 135°, 135°, 90° (a square with two corners cut at 45°).
-
-- Verified here ("Bain ED along x", "Bain ED along z").
-- Not the Polyhedraverse ED sheared: that one's elongation is the RD's edge
-  √3/2 before the shear, giving hexagon edges 1, 1, 0.866. The regular-hexagon
-  form needs the elongation 2/√3 times longer.
-- Status: **known; reached independently by DICTO by a different route.**
-  It is the truncated octahedron with one of its six zones removed: the two
-  squares containing that edge direction shrink to edges, the four hexagons
-  containing it shrink to 60° rhombi, and 4 regular hexagons, 4 squares and
-  4 60° rhombi remain. Wikipedia and the Polytope Wiki describe it as the
-  "contraction of a uniform truncated octahedron" (an earlier reading here
-  wrongly took that form to have no squares), and Grünbaum (2010, Fig. 2(b))
-  draws it as Fedorov's representative elongated dodecahedron, "with regular
-  faces". DICTO arrived at it on 2026-10-01 from the other side: the Bain
-  stretch's equal-edge RD plus one unstretched cube axis. `verify-targets`
-  checks that the two routes give the same cell (same edge-direction angles,
-  faces and volume 4√2). The construction route is DICTO's; the shape is not
-  new. It remains Kaleidohedra's symbol.
 
 ## 6. The nine most regular space-fillers
 
@@ -872,6 +823,66 @@ carved out of wood", about eight Jewels in volume. Names by DICTO.*
 
 Since 2026-10-08 the geometry and its checks live in [krp-core](https://github.com/DICTOR-Master/krp-core),
 the geometry shared by Kaleidohedra and Rhombiverse, pinned here at `src/krp-core`.
+
+## Known results the apps show
+
+Results the apps were checked against that turned out to be known, each credited to its source. They keep their numbers so links and archived versions still match; they are not DICTO's findings.
+
+### 3. Bain disphenoids
+
+Stretch BCC by √2 along one cube axis and it becomes FCC. Of the six BCC
+disphenoid orientations, the two whose long edges lie across that axis become
+**regular tetrahedra**; the other four become quarters of regular octahedra.
+Along the DICTO path the disphenoids only get less regular, and plain BCC is
+the most regular overall (a regular tetrahedron cannot fill space alone).
+
+- Verified here (Towards → Bain; the Disphenoids meter).
+- Status: **known** — the Bain correspondence (E. C. Bain, 1924), standard in
+  metallurgy. Kaleidohedra makes it something you can slide through and see.
+
+### 4. Bain rhombic dodecahedron
+
+At the Bain stop the equal-edge RD cell has edge directions meeting at
+60, 60, 60, 60, 90, 90 degrees: **4 squares and 8 rhombi of 60°**, all edges
+equal.
+
+- Verified here ("Bain RD").
+- Status: **known** — listed on Wikipedia's rhombic dodecahedron page as the
+  D4h form, "a cuboctahedron with square pyramids attached on the top and
+  bottom".
+
+### 5. Regular-hexagon elongated dodecahedron
+
+Add a fifth edge direction to the Bain RD along an unstretched cube axis, of
+the same length. Every edge is 1, and the elongation direction lies at 60° to
+two pairs of RD directions in their planes, so the faces are:
+
+- **4 regular hexagons**
+- **4 squares**
+- **4 rhombi of 60°** (each two equilateral triangles)
+
+It is an elongated-dodecahedron-type zonohedron, so it fills space by
+translation (Fedorov). Every face is made of regular polygons. Elongated
+along the stretched axis instead, it has 8 rhombi of 60° and 4 equal-edged
+hexagons with corners 135°, 135°, 90° (a square with two corners cut at 45°).
+
+- Verified here ("Bain ED along x", "Bain ED along z").
+- Not the Polyhedraverse ED sheared: that one's elongation is the RD's edge
+  √3/2 before the shear, giving hexagon edges 1, 1, 0.866. The regular-hexagon
+  form needs the elongation 2/√3 times longer.
+- Status: **known; reached independently by DICTO by a different route.**
+  It is the truncated octahedron with one of its six zones removed: the two
+  squares containing that edge direction shrink to edges, the four hexagons
+  containing it shrink to 60° rhombi, and 4 regular hexagons, 4 squares and
+  4 60° rhombi remain. Wikipedia and the Polytope Wiki describe it as the
+  "contraction of a uniform truncated octahedron" (an earlier reading here
+  wrongly took that form to have no squares), and Grünbaum (2010, Fig. 2(b))
+  draws it as Fedorov's representative elongated dodecahedron, "with regular
+  faces". DICTO arrived at it on 2026-10-01 from the other side: the Bain
+  stretch's equal-edge RD plus one unstretched cube axis. `verify-targets`
+  checks that the two routes give the same cell (same edge-direction angles,
+  faces and volume 4√2). The construction route is DICTO's; the shape is not
+  new. It remains Kaleidohedra's symbol.
 
 ## Attribution and dates
 
