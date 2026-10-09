@@ -6,7 +6,7 @@
 // Saved in Polyhedraverse's own form (krp-core assembly: nodes with a shape and a transform), so a
 // build moves between this world and the old site by Export/Import.
 import * as THREE from 'three';
-import { POLYHEDRA, isFaceEligibleForAttach, HEXA_PARTS } from '../krp-core/src/polyhedra/index.js';
+import { POLYHEDRA, isFaceEligibleForAttach, HEXA_PARTS, DODECA13_PARTS } from '../krp-core/src/polyhedra/index.js';
 import { facesCongruent } from '../krp-core/src/polyhedra/core.js';
 import { faceAttachOptions } from '../krp-core/src/assembly/faceAttach.js';
 import { rankFaceAttachOptions, isConvex, convexOverlap } from '../krp-core/src/assembly/faceRegistration.js';
@@ -37,15 +37,19 @@ const STORAGE_KEY = storageKey('poly-world');
 const EDGE_COLOR = 0x0b1220;
 const DEFAULT_SHAPE = 'DODECAHEDRON';
 const lang = () => getSettings().language;
-// Parts views of the DICTO Hexa family (krp-core HEXA_PARTS): which of a shape's views each choice shows.
-const PART_VIEWS = ['solid', 'jewels', 'piecesA', 'piecesB'];
+// Parts views of DICTO's families (krp-core HEXA_PARTS, DODECA13_PARTS): which of a shape's views each
+// choice shows. The menu lists only the choices the shapes in the build have.
+const PART_VIEWS = ['solid', 'jewels', 'piecesA', 'piecesB', 'pieces', 'units', 'stars'];
+const ALL_PARTS = { ...HEXA_PARTS, ...DODECA13_PARTS };
 const PART_PICK = {
+  DICTO_DODECA13: { pieces: 'pieces', units: 'units', stars: 'stars' },
   DICTO_HEXA: { jewels: 'jewels', piecesA: 'cubesAndRoofs', piecesB: 'wholeAndTrimmed' },
   DICTO_HEXA_KEY: { jewels: 'stellasAndRoofs', piecesA: 'stellasAndRoofs', piecesB: 'stellasAndRoofs' },
   DICTO_HEXA_RHOMBO_CLUSTER: { jewels: 'jewels', piecesA: 'hexas', piecesB: 'hexas' },
   DICTO_HEXA_DIAMOND_CLUSTER: { jewels: 'jewels', piecesA: 'hexas', piecesB: 'hexas' },
 };
-const PART_COLOURS = { jewel: 0xd9a520, shared: 0xffe27a, trimmed: 0x8f5bd8, cube: 0x9aa4b8, roof: 0xb8892a, stella: 0x8f5bd8, hexa: 0xd9a520, key: 0x8f5bd8 };
+// The Dodeca-13's gap pieces (DICTO): wedges cyan, needles purple.
+const PART_COLOURS = { dodeca: 0xffc857, centre: 0xffe27a, unit: 0xd9a520, wedge: 0x4dd0e1, needle: 0xc792ea, star: 0x4dd0e1, jewel: 0xd9a520, shared: 0xffe27a, trimmed: 0x8f5bd8, cube: 0x9aa4b8, roof: 0xb8892a, stella: 0x8f5bd8, hexa: 0xd9a520, key: 0x8f5bd8 };
 
 export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => {}, showHudPrompt = () => {}, fitView = () => {}, pickShape = () => {} }) {
   const group = new THREE.Group();
@@ -104,12 +108,12 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     let overlapping = false;
     for (const n of list) {
       const which = PART_PICK[n.shape][view.parts];
-      const parts = HEXA_PARTS[n.shape]?.[which] ?? [];
-      if (which === 'jewels') overlapping = true;
+      const parts = ALL_PARTS[n.shape]?.[which] ?? [];
+      if (which === 'jewels' || which === 'stars') overlapping = true; // these views overlap: see-through
       const q = new THREE.Quaternion(...n.transform.quaternion), p = new THREE.Vector3(...n.transform.position);
       // The splits stand a little apart (each part pushed out from the shape's centre) so they read
       // as pieces; the overlapping Jewels stay in place.
-      const apart = which === 'jewels' ? 0 : 0.12;
+      const apart = which === 'jewels' || which === 'stars' ? 0 : 0.12;
       for (const part of parts) {
         c.setHex(PART_COLOURS[part.role] ?? 0xd9a520);
         const mid = part.vertices.reduce((t, v) => t.add(new THREE.Vector3(...v)), new THREE.Vector3()).divideScalar(part.vertices.length).multiplyScalar(apart);
@@ -214,7 +218,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       pieceMaterial.opacity = opacity;
       pieceMaterial.depthWrite = opacity >= 1;
       faceOwner = [];
-      const inParts = (n) => view.parts !== 'solid' && PART_PICK[n.shape];
+      const inParts = (n) => view.parts !== 'solid' && PART_PICK[n.shape]?.[view.parts];
       const shown = nodes.filter((n) => !inParts(n)), parted = nodes.filter(inParts);
       const [mesh, lines] = meshOf(nodes, pieceMaterial, (n, c) => c.copy(colorOf(n.shape, n.material, familiesFor(n.shape)[0])), EDGE_COLOR, faceOwner);
       mesh.userData.poly = 'piece';
@@ -639,7 +643,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       ${selection ? `<button type="button" class="poly-more" data-more>${t('poly.more', L)}</button>` : ''}
       ${selection && selection.face != null && FOURD.has(selection.node.shape) ? `<button type="button" class="poly-more" data-duoprism>${t('poly.duoprism', L)}</button>` : ''}
       ${selection && REWRITE_TARGET[selection.node.shape] ? `<button type="button" class="poly-more" data-transform>${t('poly.transform', L, { name: polyShapeName(REWRITE_TARGET[selection.node.shape]).replaceAll('_', ' ') })}</button>` : ''}
-      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}`;
+      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.filter((v) => v === 'solid' || nodes.some((n) => PART_PICK[n.shape]?.[v])).map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}`;
     stripBody.querySelectorAll('.poly-shape canvas').forEach((cv) => disposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 34)));
   }
   panel.addEventListener('change', (e) => {
