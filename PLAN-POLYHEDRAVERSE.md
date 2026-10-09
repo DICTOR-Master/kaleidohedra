@@ -90,7 +90,7 @@ dicto-node, phone first. Until D6 the new space is reached from DICTO in the oth
    - **All the old tools come with D3:** Transform to…, the Golden helper bar, duoprism attach, and
      vertex attach with twist.
    - The interim note linking to the old site goes when D3 ships.
-4. **D4 Shape browser.** Home (families, Recent, Favourites), Search (name, family, face shape,
+4. **D4 Shape browser** (D4a done 2026-10-09: search, Favourites and Recent, details with Build and Favourite; next: Net + PDF, Compare, the star / radial / duoprism viewers). Home (families, Recent, Favourites), Search (name, family, face shape,
    face count), Scene, Favourites, Full Catalog with its sections and pairs; details (stats, preview,
    Add to Scene, Favourite, Compare, Net + PDF, star / radial / duoprism viewers, View 4D); Compare;
    the fit-filtered attach mode.
@@ -108,6 +108,9 @@ and tools-column style as D3 lands). Reason before code: audit the differences f
 
 ## Open (ask before the stage that needs it)
 
-- D4: the browser as a full-screen overlay (as now) or a panel beside the scene on wide screens.
+- D4 (decided by DICTO 2026-10-09): the browser lives INSIDE DICTO (the green block grows a search box,
+  Recent and Favourites; a shape opens its details there). Pins = Favourites, Recent = the build
+  queue. Viewers in D4: stats, preview, Add, Favourite; Net + PDF; Compare; star / radial / duoprism.
+  Search: name, family, face shape, face count.
 - D6: whether the old Next.js code is deleted from the `polyhedraverse` repo or the repo is left as is
   with a pointer README.

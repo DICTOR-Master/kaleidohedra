@@ -46,7 +46,10 @@ import { PRISM_HEIGHT } from '../krp-core/src/geometry-extensions/quasicrystal.j
 import { loadCatalogue, findBySerial, pieceCount } from '../geometry-extensions/quasicrystal-catalogue.js';
 import { t, tn, tFor } from './i18n.js';
 import { polyShapeEdges, polyShapeName } from './poly-shapes.js';
-import { FAMILY_META, familyIds } from '../krp-core/src/polyhedra/families.js';
+import { FAMILY_META, familyIds, familiesFor, pairPartners } from '../krp-core/src/polyhedra/families.js';
+import { POLYHEDRA } from '../krp-core/src/polyhedra/index.js';
+import { isConvex } from '../krp-core/src/assembly/faceRegistration.js';
+import { favourites, recent, isFavourite, toggleFavourite } from './poly-prefs.js';
 import { SITE, SITES, setActiveSite, activeSite, themeOf } from './site.js';
 import { countDicto } from './analytics.js';
 import { dimensionLabel } from './dimension-label.js';
@@ -84,6 +87,22 @@ const CSS = `
    only its entries, tap it again for all). Wordmarks two-tone like everywhere else. */
 .dicto-apps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 16px; }
 .dicto-apps-caption { grid-column: 1 / -1; font-size: var(--text-s, 12px); color: var(--pale); opacity: 0.8; letter-spacing: 0.02em; }
+/* The shape browser (D4): search at the top of Polyhedraverse's block; a shape's details card. */
+.poly-search { margin: 4px 0 8px; }
+.poly-search-input { width: 100%; box-sizing: border-box; min-height: var(--touch-compact, 36px); padding: 6px 10px; border-radius: var(--radius-s, 6px);
+  background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); color: #eee; font: var(--text-m, 14px) var(--font-ui, sans-serif); }
+.poly-search-results { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; }
+.poly-detail { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px; }
+.poly-detail-preview { width: 200px; height: 200px; max-width: 100%; }
+.poly-detail-name { font: 700 var(--text-l, 18px) var(--font-ui, sans-serif); color: var(--accent); text-align: center; }
+.poly-detail-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.poly-detail-actions button, .poly-detail-pair { min-height: var(--touch-compact, 36px); padding: 4px 12px; border-radius: var(--radius-s, 6px); cursor: pointer;
+  background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); color: var(--accent); font: var(--text-m, 14px) var(--font-ui, sans-serif); }
+.poly-detail-build { border-color: var(--accent-strong) !important; background: rgba(var(--accent-rgb), 0.25) !important; color: #fff !important; }
+.poly-detail-fav[aria-pressed="true"] { border-color: var(--accent-strong); }
+.poly-detail-stats { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 4px 0 0; width: 100%; font: var(--text-s, 13px) var(--font-ui, sans-serif); color: #ccd; }
+.poly-detail-stats dt { color: var(--pale); }
+.poly-detail-stats dd { margin: 0; min-width: 0; }
 .dicto-app {
   min-height: var(--touch); padding: 6px 4px; cursor: pointer; touch-action: manipulation;
   /* The whole name on one line at any width (POLYHEDRAVERSE is the longest). */
@@ -508,8 +527,43 @@ const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
 const DICTO_ORDER = ['roofFold', 'stellaJewel', 'sunstar', 'studies', 'targets', 'dictofcc', 'hex', 'shells', 'golden'];
 const dictoRank = (e) => { const i = DICTO_ORDER.indexOf(e.lat?.key); return i < 0 ? DICTO_ORDER.length : i; };
 const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER'] };
-const polyIds = (key) => (key === DICTO_POLY.key ? DICTO_POLY.ids.filter((id) => polyShapeName(id) !== id) : familyIds(key));
-const polyLabel = (key) => (key === DICTO_POLY.key ? DICTO_POLY.label : FAMILY_META[key].label);
+const polyIds = (key) => (key === DICTO_POLY.key ? DICTO_POLY.ids.filter((id) => polyShapeName(id) !== id) : key === 'FAVOURITES' ? favourites() : key === 'RECENT' ? recent() : familyIds(key));
+const polyLabel = (key) => (key === DICTO_POLY.key ? DICTO_POLY.label : key === 'FAVOURITES' ? t('wiz.poly.favourites', getSettings().language) : key === 'RECENT' ? t('wiz.poly.recent', getSettings().language) : FAMILY_META[key].label);
+// ---- the shape browser (step D4, DICTO 2026-10-09: inside DICTO) ----
+// A shape's faces by kind, each { kind, count, regular }: what its details list and search reads.
+const faceKindCache = new Map();
+function faceKindsOf(id) {
+  if (faceKindCache.has(id)) return faceKindCache.get(id);
+  const s = POLYHEDRA[id], V = s.vertices, kinds = new Map();
+  const d = (a, b) => Math.hypot(...V[a].map((x, i) => x - V[b][i]));
+  const ang = (a, b, c) => { const u = V[a].map((x, i) => x - V[b][i]), w = V[c].map((x, i) => x - V[b][i]); return Math.acos(Math.max(-1, Math.min(1, (u[0] * w[0] + u[1] * w[1] + u[2] * w[2]) / (Math.hypot(...u) * Math.hypot(...w))))); };
+  for (const f of s.faces) {
+    const n = f.length, sides = f.map((v, i) => d(v, f[(i + 1) % n])), angles = f.map((v, i) => ang(f[(i + n - 1) % n], v, f[(i + 1) % n]));
+    const eqS = sides.every((x) => Math.abs(x - sides[0]) < 1e-6 * sides[0]), eqA = angles.every((x) => Math.abs(x - angles[0]) < 1e-6);
+    let kind = n === 3 ? 'triangle' : n === 5 ? 'pentagon' : n === 6 ? 'hexagon' : n === 8 ? 'octagon' : n === 10 ? 'decagon' : n === 4 ? null : 'polygon';
+    if (n === 4) kind = eqS && eqA ? 'square' : eqS ? 'rhombus' : eqA ? 'rectangle' : (Math.abs(sides[0] - sides[1]) < 1e-6 && Math.abs(sides[2] - sides[3]) < 1e-6) || (Math.abs(sides[1] - sides[2]) < 1e-6 && Math.abs(sides[3] - sides[0]) < 1e-6) ? 'kite' : 'quadrilateral';
+    const regular = n !== 4 && eqS && eqA, k = `${kind}|${regular}|${n}`;
+    kinds.set(k, { kind, regular, n, count: (kinds.get(k)?.count ?? 0) + 1 });
+  }
+  const out = [...kinds.values()].sort((a, b) => b.count - a.count);
+  faceKindCache.set(id, out);
+  return out;
+}
+const faceWord = (k, L) => (k.kind === 'polygon' ? t('poly.face.polygon', L, { n: k.n }) : t(`poly.face.${k.kind}`, L));
+// Every shape the browser knows: DICTO's, then each family's.
+const browsable = () => [...new Set([...DICTO_POLY.ids, ...POLY_FAMILIES.flatMap((k) => familyIds(k))])].filter((id) => POLYHEDRA[id] && polyShapeName(id) !== id);
+// Search: every word must match the name, a family, a face kind (in this language or English) or,
+// as a number, the face count.
+function searchShapes(q, L) {
+  const words = q.toLowerCase().trim().split(/\s+/).filter(Boolean);
+  if (!words.length) return [];
+  return browsable().filter((id) => {
+    const hay = [polyShapeName(id), ...familiesFor(id).map((f) => FAMILY_META[f]?.label ?? f),
+      ...faceKindsOf(id).flatMap((k) => [faceWord(k, L), faceWord(k, 'en'), k.kind])].join(' ').toLowerCase().replaceAll('_', ' ');
+    const faces = POLYHEDRA[id].faces.length;
+    return words.every((w) => (/^\d+$/.test(w) ? faces === Number(w) : hay.includes(w)));
+  }).slice(0, 60);
+}
 // A lattice's DICTO pieces split off as their own (DICTO) entry, the rest stay the app's.
 function splitDicto(e) {
   if (DICTO_WORK.has(e.lat.key)) return [{ ...e, dicto: true }];
@@ -535,6 +589,9 @@ function dimensionEntries(dim) {
     // DICTO's own lattices and worlds (DICTO 2026-10-09: "my lattices available through Rhombiverse"):
     // their own silver DICTO block, first, opening in the door's app (dictoOpen).
     .map((e) => (e.dicto ? { ...e, app: 'dicto', dicto: false, lattice3d: true } : e)).concat(
+    { app: P, kind: 'search' },
+    { app: P, kind: 'shapes', key: 'FAVOURITES' },
+    { app: P, kind: 'shapes', key: 'RECENT' },
     { app: P, kind: 'shapes', key: DICTO_POLY.key, dicto: true },
     POLY_FAMILIES.filter((key) => familyIds(key).length).map((key) => ({ app: P, kind: 'shapes', key })),
   );
@@ -549,7 +606,7 @@ const appsOf = (dim) => [...new Set(dimensionEntries(dim).map((e) => e.app))];
 // DICTO's own entries show whatever app the filter picks.
 const passes = (app, filter) => !filter || app === filter || app === 'dicto';
 // The kinds inside an app's block, new work first.
-const KINDS = [['world', 'wiz.kind.worlds'], ['lattice', 'wiz.kind.lattices'], ['shapes', 'wiz.kind.shapes'], ['family', 'wiz.kind.worlds']];
+const KINDS = [['search', null], ['world', 'wiz.kind.worlds'], ['lattice', 'wiz.kind.lattices'], ['shapes', 'wiz.kind.shapes'], ['family', 'wiz.kind.worlds']];
 
 export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
   injectCssOnce();
@@ -664,6 +721,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     }));
     bodyEl.querySelectorAll('.dicto-dim-content [data-action]').forEach((el) => el.addEventListener('click', () => choose(openDim, el.dataset.action, el.dataset.app)));
     bodyEl.querySelectorAll('[data-family]').forEach((el) => el.addEventListener('click', () => showPolyFamily(el.dataset.family)));
+    wireSearch(L);
     if (scrollTo) bodyEl.querySelector(scrollTo)?.scrollIntoView({ block: 'start' });
   }
 
@@ -697,8 +755,11 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
             <span class="dim-wizard-desc">${tFor(e.app, `wiz.${d}.${e.fam.id}`, L)}</span>
           </span>
         </button>`;
+      if (e.kind === 'search') return `
+        <div class="poly-search"><input type="search" class="poly-search-input" enterkeyhint="search" placeholder="${t('wiz.poly.searchPh', L)}" aria-label="${t('wiz.poly.searchPh', L)}"><div class="poly-search-results"></div></div>`;
       if (e.kind === 'shapes') {
         const ids = polyIds(e.key);
+        if (!ids.length) return '';
         return `
         <button type="button" class="dim-wizard-card-btn" data-family="${e.key}">
           ${previewSlot(() => polyShapeEdges(ids[0]))}
@@ -741,7 +802,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
       const rest = mine.filter((e) => !e.dicto);
       const restKinds = KINDS.filter(([kind]) => rest.some((e) => e.kind === kind));
       for (const [kind, label] of restKinds) {
-        if (restKinds.length > 1) html += `<div class="dim-wizard-kind">${t(label, L)}</div>`;
+        if (restKinds.length > 1 && label) html += `<div class="dim-wizard-kind">${t(label, L)}</div>`;
         html += rest.filter((e) => e.kind === kind).map(row).join('');
       }
       html += '</div>';
@@ -885,8 +946,62 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => { if (picker) { showShapePicker(); return; } openDim = '3D'; showDimensions(`[data-family="${key}"]`); });
     bodyEl.querySelectorAll('[data-action]').forEach((el) => el.addEventListener('click', () => {
       if (picker) { const { onPick } = picker; close(); onPick(el.dataset.action.replace('tool:polyShape:', '')); return; }
-      choose('3D', el.dataset.action, 'polyhedraverse');
+      showShapeDetail(el.dataset.action.replace('tool:polyShape:', ''), () => showPolyFamily(key));
     }));
+  }
+
+  // Search, at the top of Polyhedraverse's block: results as rows, a tap opens the shape's details.
+  let searchTimer = 0, lastQuery = '';
+  function wireSearch(L) {
+    const input = bodyEl.querySelector('.poly-search-input');
+    if (!input) return;
+    const out = bodyEl.querySelector('.poly-search-results');
+    const run = () => {
+      const q = input.value; lastQuery = q;
+      const ids = searchShapes(q, L);
+      out.innerHTML = !q.trim() ? '' : ids.length
+        ? `<div class="dim-wizard-sub">${tn('wiz.poly.results', L, ids.length)}</div>` + ids.map((id) => `<button type="button" class="dim-wizard-card-btn dim-wizard-piece" data-shape="${id}">
+            <canvas class="dim-wizard-preview" width="40" height="40"></canvas><span class="dim-wizard-row-text"><span class="dim-wizard-label">${polyShapeName(id).replaceAll('_', ' ')}</span>
+            <span class="dim-wizard-desc">${faceKindsOf(id).slice(0, 3).map((k) => `${k.count} × ${faceWord(k, L)}`).join(', ')}</span></span></button>`).join('')
+        : `<div class="dim-wizard-sub">${t('wiz.poly.noResults', L)}</div>`;
+      out.querySelectorAll('canvas').forEach((cv) => previewDisposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 40)));
+      out.querySelectorAll('[data-shape]').forEach((b) => b.addEventListener('click', () => showShapeDetail(b.dataset.shape, () => { showDimensions('.poly-search'); const i = bodyEl.querySelector('.poly-search-input'); if (i) { i.value = lastQuery; i.dispatchEvent(new Event('input')); } })));
+    };
+    input.addEventListener('input', () => { clearTimeout(searchTimer); searchTimer = setTimeout(run, 180); });
+  }
+
+  // A shape's details: turning preview, its families, faces by kind, corners and edges, convex or not,
+  // its pairs; Build with it, and ☆ Favourite (the same as pinning it in the strip).
+  function showShapeDetail(id, backTo) {
+    current = () => showShapeDetail(id, backTo);
+    resetPreviews();
+    const L = getSettings().language, s = POLYHEDRA[id];
+    const fams = familiesFor(id).map((f) => FAMILY_META[f]?.label ?? f);
+    const pairs = pairPartners(id).filter((x) => POLYHEDRA[x]);
+    const fav = isFavourite(id);
+    bodyEl.innerHTML = `
+      ${back(L)}
+      <div class="poly-detail dicto-block" style="${blockStyle('polyhedraverse')}">
+        <canvas class="poly-detail-preview" width="200" height="200"></canvas>
+        <div class="poly-detail-name">${polyShapeName(id).replaceAll('_', ' ')}</div>
+        <div class="dim-wizard-desc">${fams.join(' · ')}</div>
+        <div class="poly-detail-actions">
+          <button type="button" class="poly-detail-build">${t('poly.d.build', L)}</button>
+          <button type="button" class="poly-detail-fav" aria-pressed="${fav}">${fav ? '★' : '☆'} ${t('poly.d.fav', L)}</button>
+        </div>
+        <dl class="poly-detail-stats">
+          <dt>${t('poly.d.faces', L)}</dt><dd>${s.faces.length}: ${faceKindsOf(id).map((k) => `${k.count} × ${k.regular ? t('poly.d.regular', L) + ' ' : ''}${faceWord(k, L)}`).join(', ')}</dd>
+          <dt>${t('poly.d.edges', L)}</dt><dd>${s.edges.length}</dd>
+          <dt>${t('poly.d.vertices', L)}</dt><dd>${s.vertices.length}</dd>
+          <dt>${t('poly.d.shape', L)}</dt><dd>${isConvex(s) ? t('poly.d.convex', L) : t('poly.d.notConvex', L)}</dd>
+          ${pairs.length ? `<dt>${t('poly.d.pairs', L)}</dt><dd>${pairs.map((x) => `<button type="button" class="poly-detail-pair" data-shape="${x}">${polyShapeName(x).replaceAll('_', ' ')}</button>`).join(' ')}</dd>` : ''}
+        </dl>
+      </div>`;
+    previewDisposers.push(mountWireframePreview(bodyEl.querySelector('.poly-detail-preview'), polyShapeEdges(id), 200));
+    bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => backTo());
+    bodyEl.querySelector('.poly-detail-build').addEventListener('click', () => choose('3D', `tool:polyShape:${id}`, 'polyhedraverse'));
+    bodyEl.querySelector('.poly-detail-fav').addEventListener('click', () => { toggleFavourite(id); showShapeDetail(id, backTo); });
+    bodyEl.querySelectorAll('.poly-detail-pair').forEach((b) => b.addEventListener('click', () => showShapeDetail(b.dataset.shape, () => showShapeDetail(id, backTo))));
   }
 
   overlay.querySelector('.dim-wizard-close').addEventListener('click', () => close());

@@ -20,6 +20,7 @@ import { FOURD_CAPABLE_IDS } from '../krp-core/src/polyhedra/fourD.js';
 import { buildFaceConnectors } from '../krp-core/src/polyhedra/core.js';
 import { mountWireframePreview } from './wireframe-preview.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
+import { favourites, isFavourite, toggleFavourite, recent, remember as rememberShape, adopt, onPrefsChange } from './poly-prefs.js';
 import { polyShapeEdges } from './poly-shapes.js';
 import { familiesFor } from '../krp-core/src/polyhedra/families.js';
 import { FAMILY_COLORS } from '../krp-core/src/assembly/pieceColors.js';
@@ -53,7 +54,8 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   let nodes = []; // { id, shape, transform: { position, quaternion }, material }
   let connections = []; // { nodeA, vertexA, nodeB, vertexB, kind: 'face' } (face indices for a face join)
   // queue: the shapes used lately, newest first (8); pins: the ones always offered (D3b, DICTO's build queue).
-  const view = { shape: DEFAULT_SHAPE, queue: [], pins: [], parts: 'solid' };
+  // Favourites (pins) and Recent (the queue) live in poly-prefs.js, shared with DICTO's browser.
+  const view = { shape: DEFAULT_SHAPE, parts: 'solid' };
   let active = false, skeleton = false, opacity = 1;
   let spherical = false, sphereScale = 1;
   let nextId = 1;
@@ -77,8 +79,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     if (data) {
       setFromJSON(data);
       if (POLYHEDRA[data.view?.shape]) view.shape = data.view.shape;
-      view.queue = (Array.isArray(data.view?.queue) ? data.view.queue : []).filter((id) => POLYHEDRA[id]).slice(0, 8);
-      view.pins = (Array.isArray(data.view?.pins) ? data.view.pins : []).filter((id) => POLYHEDRA[id]);
+      adopt(Array.isArray(data.view?.pins) ? data.view.pins : [], Array.isArray(data.view?.queue) ? data.view.queue : []);
       if (PART_VIEWS.includes(data.view?.parts)) view.parts = data.view.parts;
     }
   } catch { /* corrupt or blocked storage: start empty */ }
@@ -459,11 +460,12 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   // Shapes to offer: the build's own (newest first) and the shape last chosen in DICTO, up to 8.
   function queue() {
     const out = [];
-    for (const id of [...view.pins, chosen, ...view.queue, ...nodes.map((n) => n.shape).reverse(), view.shape]) if (id && POLYHEDRA[id] && !out.includes(id)) out.push(id);
-    return out.slice(0, 8 + view.pins.length);
+    for (const id of [...favourites(), chosen, ...recent(), ...nodes.map((n) => n.shape).reverse(), view.shape]) if (id && POLYHEDRA[id] && !out.includes(id)) out.push(id);
+    return out.slice(0, 8 + favourites().length);
   }
   // Remember a shape used, newest first; saved with the build.
-  function remember(id) { view.queue = [id, ...view.queue.filter((x) => x !== id)].slice(0, 8); }
+  const remember = rememberShape;
+  onPrefsChange(() => { if (active) renderPanel(); });
   const panel = document.createElement('div');
   panel.className = 'qc-panel poly-strip';
   const stripBody = document.createElement('div');
@@ -503,7 +505,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     if (!show) return;
     const L = lang();
     const offer = selection ? queue().filter((id) => fitsAt(id, selection)) : chosen ? [chosen] : [];
-    stripBody.innerHTML = `<div class="poly-shapes">${offer.map((id) => { const pinned = view.pins.includes(id); return `<button type="button" class="poly-shape${id === chosen ? ' chosen' : ''}${pinned ? ' pinned' : ''}" data-shape="${id}" title="${polyShapeName(id).replaceAll('_', ' ')} · ${t(pinned ? 'poly.unpinHint' : 'poly.pinHint', L)}"><canvas></canvas></button>`; }).join('')}
+    stripBody.innerHTML = `<div class="poly-shapes">${offer.map((id) => { const pinned = isFavourite(id); return `<button type="button" class="poly-shape${id === chosen ? ' chosen' : ''}${pinned ? ' pinned' : ''}" data-shape="${id}" title="${polyShapeName(id).replaceAll('_', ' ')} · ${t(pinned ? 'poly.unpinHint' : 'poly.pinHint', L)}"><canvas></canvas></button>`; }).join('')}
       ${selection ? `<button type="button" class="poly-more" data-more>${t('poly.more', L)}</button>` : ''}
       ${selection && selection.face != null && FOURD.has(selection.node.shape) ? `<button type="button" class="poly-more" data-duoprism>${t('poly.duoprism', L)}</button>` : ''}
       ${selection && REWRITE_TARGET[selection.node.shape] ? `<button type="button" class="poly-more" data-transform>${t('poly.transform', L, { name: polyShapeName(REWRITE_TARGET[selection.node.shape]).replaceAll('_', ' ') })}</button>` : ''}
@@ -523,7 +525,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     pressTimer = setTimeout(() => {
       pressed = true;
       const id = b.dataset.shape;
-      view.pins = view.pins.includes(id) ? view.pins.filter((x) => x !== id) : [...view.pins, id];
+      toggleFavourite(id);
       save();
       renderPanel();
     }, 550);
