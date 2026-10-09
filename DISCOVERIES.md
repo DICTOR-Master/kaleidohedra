@@ -746,6 +746,84 @@ Sunstar Lattice has the same cells, dodecahedra on the even ones and Dogstars on
   octet network of dodecahedra are DICTO's.
 - Archived: Zenodo [10.5281/zenodo.23256623](https://doi.org/10.5281/zenodo.23256623) (v2026.10.09-octet, 2026-10-09). The Kagome network: [10.5281/zenodo.23257393](https://doi.org/10.5281/zenodo.23257393) (v2026.10.09-kagome).
 
+## 17. Kagome hulls (DICTO, 2026-10-09)
+
+*DICTO asked whether other cluster shapes ("rhombi, cuboctahedra, RD hulls") give Kagome
+configurations with the DICTO Jewel and the Sunstar, as the tetrahedral clusters of #15 and #16 do.
+They do, and they keep to one rule.*
+
+- Both lattices have the same rock-salt cells (DICTO Jewels or dodecahedra on the even cells,
+  stellas or Dogstars on the odd), so a configuration is a cluster of even cells and a lattice of
+  anchors in which **any two clusters share at most one piece and every shared piece is in exactly
+  two clusters**, corner to corner as in the Kagome and pyrochlore nets.
+- Six hulls work, each in both lattices:
+  - **Rhombohedron** (8 pieces at the corners of the FCC primitive cell, its odd cell inside),
+    anchors on a BCC pattern: a **perfect Kagome**, every piece in exactly two blocks, none left
+    over; a quarter of the odd cells sealed inside, the rest free. 8⅓ Jewels.
+  - **Cuboctahedron**, hollow (the 12 round an even cell, a cage with a central hole) or solid
+    (13), on the anchors of today's Kagome network (FCC): 12 neighbours each.
+  - **Cube** (the 14 of the FCC conventional cell round an odd cell), on BCC: 8 neighbours; many
+    single pieces and open pockets, the least Kagome-like.
+  - **Rhombic dodecahedron** (19 even pieces and 14 odd, its corners partly stellas), on BCC with
+    its second neighbours: 14 neighbours, no single pieces.
+  - **Octahedron** (the octahedral cluster of #15), on a simple cubic pattern: the corner-sharing
+    octahedra of the perovskite structure.
+- **The rule: a hull with n corners sits on a network where each cluster has n neighbours**
+  (tetrahedron and diamond, octahedron and simple cubic, cube and rhombohedron and BCC, cuboctahedron
+  and FCC, rhombic dodecahedron and BCC with its second neighbours).
+- Verified in the design study of 2026-10-09 (exact checks on a 13³ window in both lattices: each
+  cluster closed, consistently wound, no overlap, volumes exact, sharing as stated). Not yet in
+  krp-core or the apps (DICTO 2026-10-09: keep all six).
+- Status: **not found** in a web search on 2026-10-09 for the rhombohedral, cuboctahedral and
+  rhombic dodecahedral nets as regroupings of a space filling. Known, and credited: corner-sharing
+  octahedra (the ReO₃ and perovskite structures), corner-sharing tetrahedra (the pyrochlore
+  lattice), corner-coalesced cube nets in framework chemistry (Molecules 24(7):1221, 2019), and the
+  FCC primitive cell as a rhombohedron (standard crystallography). The clusters of DICTO Jewels and
+  dodecahedra and the rule across the six are DICTO's.
+
+## 18. The DICTO Hexa (DICTO, 2026-10-09)
+
+*DICTO saw a cube in Kaleidohedra's Studies (Windows, shear as copies) "beautiful and solid, like
+carved out of wood", about eight Jewels in volume. Names by DICTO.*
+
+- **The DICTO Hexa:** eight exact DICTO Jewels on a 2 × 2 × 2 block of cells, unsheared, passing
+  through each other inside. As one solid it is a cube of edge 4 with the 24 outward roofs on its
+  faces (volume **80 = 6⅔ Jewels**; the eight Jewels overlap by 16). Inside, two tetrahedral clusters
+  of #15 interpenetrate.
+- **No shear makes eight exact Jewels meet face to face as a cube**: the shear is symmetric and no
+  symmetric map takes the cube's edges to the Jewels' contact directions (even two of three fail). The
+  Hexa exists only as DICTO saw it. Shearing the Jewels themselves (a 3-fold squash) loses the 72°
+  windows, and was not kept.
+- **The DICTO Hexa-Key:** the gap between Hexas. Hexas mate only window to window (two whole
+  windows per neighbour); at the FCC pattern of spacing 4, each has 12 neighbours and 24 whole
+  windows shared, and the gap is one solid: **8 stella octangulas and 12 double roofs, volume 48 = 4
+  Jewels**. **Hexas and Hexa-Keys fill space like a checkerboard, 5 : 3**, the Stella–Jewel Lattice
+  one level up (there Jewel : stella = 3 : 1). The Hexa is 8 cubes with 24 outward roofs; the
+  Hexa-Key is 8 stellas with the same 24 roofs turned inward.
+- **Parts:** the Hexa splits without overlap into 8 cubes and 24 roofs, or into 4 whole Jewels and
+  4 **trimmed Jewels** (3 roofs gone, 3 dents, volume exactly one cube); the Hexa-Key into 8 stellas
+  and 24 roofs; every part face-matches its neighbours.
+- **Clusters of eight Hexas:** rhombohedral (window to window, 36 whole windows shared, a Hexa-Key
+  sealed inside, **57⅓ Jewels**: the Jewel rhombohedron of #17 one level up) and diamond (Hexas sharing
+  7 corner Jewels).
+- **Hexas Kagome style:** every Jewel in exactly two Hexas is impossible (corner neighbours force
+  overlapping blocks); the best is the **diamond network**, each Hexa sharing 4 of its 8 corner Jewels
+  with 4 neighbours, and **stella octangulas filling every cell between them exactly**: Hexas and
+  stellas fill space with no single Jewels.
+- **Nothing turns:** no join in these packings can be turned by its face's symmetry and still fit;
+  turns exist only for a piece hanging on one neighbour (a window: 180° and one flip).
+- In the apps: the whole family heads Polyhedraverse's DICTO's pieces, with a Parts view (as Jewels,
+  or split A or B); the Stella–Jewel world's DICTO Hexa diamond network.
+- Verified: `src/krp-core/scripts/verify-hexa.mjs` (krp-core v0.10.0), every push, 16 checks:
+  closed and outward surfaces, exact volumes (Hexa 80, Hexa-Key 48, clusters 688 and 556, trimmed
+  Jewel 8, roof ⅔), 24 whole Jewel windows and stella-matching walls on the Hexa, and every parts view
+  adding up. The network, packing and turning results come from the design study of 2026-10-09.
+- Status: **not found** in a web search on 2026-10-09 for a cube built from carved dodecahedra, or
+  this block of eight. Known, and credited: the space filling by stella octangulas and octahedra, the
+  cube, octahedron and stella inscribed in the rhombic dodecahedron, and the FCC primitive cell as a
+  cube squashed along a diagonal. The Hexa, the Hexa-Key, their 5 : 3 filling and the clusters are
+  DICTO's.
+
 Since 2026-10-08 the geometry and its checks live in [krp-core](https://github.com/DICTOR-Master/krp-core),
 the geometry shared by Kaleidohedra and Rhombiverse, pinned here at `src/krp-core`.
 
