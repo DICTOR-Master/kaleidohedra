@@ -456,6 +456,15 @@ const K_WORLDS = [
   { key: 'studies', label: 'Studies', pieces: [{ label: 'Studies', action: 'tool:studiesWorld' }] },
   ...['stellaJewel', 'sunstar', 'shells', 'golden'].map((k) => LATTICES_3D.find((l) => l.key === k)),
   { key: 'targets', label: 'Targets', pieces: [{ label: 'Targets', action: 'tool:targetsWorld' }] },
+  // Each genuinely different arrangement its own entry (DICTO 2026-10-09: "separate access ... too many
+  // drop-downs"), opening its world in that arrangement; previews are the clusters themselves.
+  ...[['stellaJewel', 'dj', 'DICTO Jewel', 'DJ'], ['sunstar', 'ss', 'Sunstar', 'DODECA']].flatMap(([world, k, name, shape]) => [
+    ['tetra', 'tetrahedral clusters', 'TETRAHEDRAL'], ['octa', 'octahedral clusters', 'OCTAHEDRAL'],
+    ['octet', 'octet network', 'OCTAHEDRAL'], ['kagome', 'Kagome network', 'TETRAHEDRAL'],
+  ].map(([mode, what, form]) => ({
+    key: `${k}${mode[0].toUpperCase()}${mode.slice(1)}`, label: `${name} ${what}`,
+    pieces: [{ label: `${name} ${what}`, action: `tool:${world}World:${mode}`, preview: () => polyShapeEdges(`${shape}_${form}_CLUSTER`) }],
+  }))),
 ];
 const K_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key))
   .map((l) => (l.key === 'hex' ? { ...l, pieces: l.pieces.filter((pc) => pc.action === 'tool:pieceType:hexprism') } : l));
@@ -467,7 +476,7 @@ const POLY_FAMILIES = ['PLATONIC', 'ARCHIMEDEAN', 'CATALAN', 'JOHNSON', 'DELTAHE
 // DICTO's own work, shown in DICTO's livery (silver) at the top of its app's block (DICTO 2026-10-09);
 // it still opens in its app. Lattices and worlds by key, single pieces by action, and DICTO's
 // Polyhedraverse pieces gathered from across its families.
-const DICTO_WORK = new Set(['roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc']);
+const DICTO_WORK = new Set(['roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome']);
 const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
 const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER'] };
 const polyIds = (key) => (key === DICTO_POLY.key ? DICTO_POLY.ids.filter((id) => polyShapeName(id) !== id) : familyIds(key));

@@ -97,6 +97,12 @@ dicto-node, phone first. Until D6 the new space is reached from DICTO in the oth
    the DICTO guide (from its 7-language guide), its Playwright specs ported to this repo, a
    `SITE=polyhedraverse` build; DICTO re-points the Vercel project; the old repo's README points here.
 
+## After D3: one DICTO app language (DICTO, 2026-10-09)
+
+One shared look and feel across the three apps, so DICTO feels like one app, not three: the same
+buttons, panels, words and gestures everywhere (Polyhedraverse's tools brought into the shared panel
+and tools-column style as D3 lands). Reason before code: audit the differences first, then ask.
+
 ## Open (ask before the stage that needs it)
 
 - D4: the browser as a full-screen overlay (as now) or a panel beside the scene on wide screens.

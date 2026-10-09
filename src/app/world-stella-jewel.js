@@ -31,7 +31,9 @@ export function createStellaJewelWorld(opts) {
     panelId: 'worldstellajewel-panel',
     minimiser: 'stella-jewel',
     strings: 'dj',
-    modes: [{ id: 'both', even: true, odd: true }, { id: 'jewels', even: true, odd: false }, { id: 'tetra', even: true, odd: false, cluster: 'tetra' }, { id: 'octa', even: true, odd: true, cluster: 'octa' }, { id: 'octet', even: true, odd: false, network: true }, { id: 'chain', even: true, odd: false, chain: true }],
+    // Arrangements (arrangement: true) open from their own DICTO entries, each its colour scheme;
+    // the rest are views of the lattice, offered in its panel.
+    modes: [{ id: 'both', even: true, odd: true }, { id: 'jewels', even: true, odd: false }, { id: 'tetra', even: true, odd: false, cluster: 'tetra', arrangement: true, pieceColour: 0xd9a520, edgeColour: 0xfff0a0 }, { id: 'octa', even: true, odd: true, cluster: 'octa', arrangement: true, pieceColour: 0x8c5a2b }, { id: 'octet', even: true, odd: false, network: true, arrangement: true, pieceColour: 0xa9c4e8 }, { id: 'kagome', even: true, odd: false, cluster: 'kagome', network: 'kagome', arrangement: true, pieceColour: 0xd9a520 }, { id: 'chain', even: true, odd: false, chain: true }],
     // DICTO's clusters of DICTO Jewels (DICTO, 2026-10-09; krp-core DJ_TETRAHEDRAL_CLUSTER and
     // DJ_OCTAHEDRAL_CLUSTER), each placed whole (octet-cells.js).
     networkCells: octetNetworkCells,

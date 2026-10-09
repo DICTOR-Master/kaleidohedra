@@ -102,6 +102,8 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
   const glow = (color, opacity) => new THREE.MeshBasicMaterial({ color, transparent: true, opacity, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide });
   const fireMaterial = glow(0xff7a1a, 0.95), fireHalo = glow(0xff5a00, 0.28);
   const eternalMaterial = glow(0x4aa8ff, 0.9), eternalHalo = glow(0x2a6cff, 0.25);
+  // The Kagome network's single-piece cells, between the clusters: a violet flame.
+  const violetMaterial = glow(0x8a4dff, 0.55), violetHalo = glow(0x6a30ff, 0.1);
   let flickerRaf = 0;
   const FIRE_LOW = new THREE.Color(0xff4a00), FIRE_HIGH = new THREE.Color(0xffd060);
   function flicker(now) {
@@ -179,12 +181,14 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
       const solidSites = nested ? S.filter((s) => !isEven(s)) : S;
       // A network view (DICTO, 2026-10-09: the octet network): the pieces see-through, the cells
       // the present pieces complete drawn between their centres.
-      const network = modeOf().network === true;
+      const network = Boolean(modeOf().network);
       // Octahedral clusters: the six round each centre see-through, the centre on fire.
       const burning = modeOf().cluster === 'octa';
       // In a chain view the odd pieces between the cells (DICTO, 2026-10-08: "the macro dogstars seem
       // to be missing between the cells") are see-through, so the chains inside stay visible.
-      const [m, l] = meshOf(burning ? solidSites.filter(isEven) : solidSites, modeOf().chain || network || burning ? seeThroughMaterial : pieceMaterial, 'piece');
+      // Each arrangement its own colour scheme (DICTO 2026-10-09).
+      const scheme = modeOf();
+      const [m, l] = meshOf(burning ? solidSites.filter(isEven) : solidSites, modeOf().chain || network || burning ? seeThroughMaterial : pieceMaterial, 'piece', scheme.pieceColour, scheme.edgeColour ?? EDGE_COLOR);
       m.visible = !skeleton;
       if (skeleton) l.material.color.setHex(GHOST_COLOR());
       group.add(m, l);
@@ -232,12 +236,12 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     renderPanel();
   }
   // A flame: the odd piece at each site, glowing, inside a faint larger halo of itself.
-  function flames(sites, core, halo) {
-    const [fm, fl] = meshOf(sites, core, 'piece', core.color.getHex(), EDGE_COLOR, () => config.oddFaces.map(([f]) => [f, 0xffffff]));
+  function flames(sites, core, halo, faces = config.oddFaces, size = 1) {
+    const [fm, fl] = meshOf(sites, core, 'piece', core.color.getHex(), EDGE_COLOR, () => faces.map(([f]) => [f.map((p) => p.map((c) => c * size)), 0xffffff]));
     fl.geometry.dispose(); fl.material.dispose(); // a flame has no outline
     fm.renderOrder = 5;
     pickTargets.push(fm);
-    const big = () => config.oddFaces.map(([f]) => [f.map((p) => p.map((c) => c * 1.12)), 0xffffff]);
+    const big = () => faces.map(([f]) => [f.map((p) => p.map((c) => c * 1.12 * size)), 0xffffff]);
     const [hm, hl] = meshOf(sites, halo, 'flame', halo.color.getHex(), EDGE_COLOR, big);
     hl.geometry.dispose(); hl.material.dispose();
     hm.renderOrder = 6;
@@ -247,7 +251,8 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
   // edges between neighbouring centres, drawn through the shear like the pieces.
   function networkOverlay(evens) {
     const centre = (s) => toWorld(s, [0, 0, 0]);
-    const { triangles, edges } = config.networkCells(evens);
+    const kind = modeOf().network === 'kagome' ? 'kagome' : 'octet';
+    const { triangles, edges } = config.networkCells(evens, kind);
     const pos = [], col = [];
     for (const { sites, colour } of triangles) {
       const c = new THREE.Color(colour);
@@ -264,8 +269,24 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     const lines = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: AXIS_COLOR, transparent: true, opacity: 0.8 }));
     lines.renderOrder = 4;
     // Each octahedral cell's centre piece: a blue eternal flame.
-    const eternal = (config.networkCells(evens).octaCentres ?? []);
-    return [cells, lines, ...(eternal.length ? flames(eternal, eternalMaterial, eternalHalo) : [])];
+    const eternal = kind === 'kagome' ? [] : (config.networkCells(evens, kind).octaCentres ?? []);
+    // Kagome: a violet flame in each single-piece cell held in among the clusters (six or more of its
+    // twelve neighbours present), a small glowing copy of the even piece.
+    let singles = [];
+    if (kind === 'kagome') {
+      const has = new Set(evens.map((x) => x.join()));
+      const near = [[1, 1, 0], [1, -1, 0], [-1, 1, 0], [-1, -1, 0], [1, 0, 1], [1, 0, -1], [-1, 0, 1], [-1, 0, -1], [0, 1, 1], [0, 1, -1], [0, -1, 1], [0, -1, -1]];
+      const seen = new Set();
+      for (const e of evens) for (const d of near) {
+        const c = e.map((v, i) => v + d[i]), k = c.join();
+        if (seen.has(k) || has.has(k) || config.clusters.kagome(c)) continue;
+        seen.add(k);
+        if (near.filter((d2) => has.has(c.map((v, i) => v + d2[i]).join())).length >= 6) singles.push(c);
+      }
+    }
+    return [cells, lines,
+      ...(eternal.length ? flames(eternal, eternalMaterial, eternalHalo) : []),
+      ...(singles.length ? flames(singles, violetMaterial, violetHalo, config.evenFaces, 0.45) : [])];
   }
   // The six five-fold axes through each DICTO Jewel, and on every face the five window
   // positions: faint, with the cube's choice (the window itself) bright.
@@ -388,7 +409,9 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
       if (!nb) return false;
       // Across a face into a hidden piece's cell (a stella's, between clusters): say so.
       // Into a cell no cluster can take (a hidden piece, or one between clusters): say so.
-      if (!showsSite(nb) || !clusterOf(nb)) { showHudPrompt(t(`${S_}.prompt.hole`, lang()), 2500); return false; }
+      if (!showsSite(nb)) { showHudPrompt(t(`${S_}.prompt.hole`, lang()), 2500); return false; }
+      // In the Kagome network, half the even cells hold single pieces between the clusters.
+      if (!clusterOf(nb)) { showHudPrompt(t(modeOf().cluster === 'kagome' ? `${S_}.prompt.single` : `${S_}.prompt.hole`, lang()), 2500); return false; }
       if (addCluster(nb)) return true;
       showHudPrompt(t(`${S_}.prompt.taken`, lang()), 2000);
       return false;
@@ -438,8 +461,12 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     panel.classList.toggle('visible', active);
     if (!active) return;
     const L = lang();
-    panel.querySelector('.sj-view-label').textContent = t(`${S_}.view`, L);
-    modeSelect.innerHTML = MODES.map((m) => `<option value="${m}"${m === view.mode ? ' selected' : ''}>${t(`${S_}.view.${m}`, L)}</option>`).join('');
+    // Arrangements (DICTO 2026-10-09: "separate access for each genuinely different arrangement") are
+    // opened from DICTO, each its own entry: in one, the panel names it instead of offering the views.
+    const arrangement = modeOf().arrangement === true;
+    modeSelect.hidden = arrangement;
+    panel.querySelector('.sj-view-label').textContent = arrangement ? t(`${S_}.view.${view.mode}`, L) : t(`${S_}.view`, L);
+    modeSelect.innerHTML = MODE_LIST.filter((m) => !m.arrangement).map(({ id: m }) => `<option value="${m}"${m === view.mode ? ' selected' : ''}>${t(`${S_}.view.${m}`, L)}</option>`).join('');
     const all = [...cells.values()];
     panel.querySelector('.sj-count').textContent = t(`${S_}.count`, L, { even: all.filter(isEven).length, odd: all.filter((s) => !isEven(s)).length });
     const shearBtn = panel.querySelector('[data-sj="shear"]');
@@ -476,6 +503,14 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) draw(); } },
     setLatticeView(on) { latticeView = on; if (active) draw(); },
     shearChanged() { if (active) draw(); },
+    /** Open on an arrangement (its own DICTO entry), or, with none, on the plain lattice's views. */
+    setArrangement(id) {
+      const target = id && MODE_LIST.find((m) => m.id === id && m.arrangement) ? id : (modeOf().arrangement ? MODE_LIST.find((m) => !m.arrangement).id : view.mode);
+      if (target === view.mode) return;
+      view.mode = target;
+      save();
+      if (active) { draw(); fit(); }
+    },
     get isEmpty() { return cells.size === 0; },
     clear() { cells.clear(); commit(); if (active) fit(); },
     snapshot,

@@ -3783,6 +3783,16 @@ async function init() {
           refreshSphereOverlayIfOn?.();
           return;
         }
+        // The pair lattices' arrangements, each its own DICTO entry (DICTO 2026-10-09):
+        // tool:stellaJewelWorld:<arrangement> / tool:sunstarWorld:<arrangement>; without one, the
+        // plain lattice and its views.
+        {
+          const m = action?.match(/^tool:(stellaJewel|sunstar)World(?::(\w+))?$/);
+          if (m) {
+            (m[1] === 'stellaJewel' ? stellaJewelWorld : sunstarWorld)?.setArrangement(m[2] ?? null);
+            action = `tool:${m[1]}World`;
+          }
+        }
         // Construct's families: tool:constructWorld:<family> (square, kagome, rd).
         if (action?.startsWith('tool:constructWorld:')) {
           constructWorld?.setFamily(action.slice('tool:constructWorld:'.length));
