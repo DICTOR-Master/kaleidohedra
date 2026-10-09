@@ -104,6 +104,14 @@ const CSS = `
 .poly-detail-stats { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 4px 0 0; width: 100%; font: var(--text-s, 13px) var(--font-ui, sans-serif); color: #ccd; }
 .poly-detail-stats dt { color: var(--pale); }
 .poly-detail-stats dd { margin: 0; min-width: 0; }
+.dim-wizard-body .poly-compare { display: grid !important; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; align-items: start; }
+.poly-compare .poly-detail-stats { grid-template-columns: 1fr; gap: 0 0; font-size: var(--text-xs, 12px); }
+.poly-compare .poly-detail-stats dd { margin-bottom: 4px; }
+.poly-compare-col button { min-height: var(--touch-compact, 36px); padding: 4px 12px; border-radius: var(--radius-s, 6px); cursor: pointer; border: 1px solid var(--accent-strong); background: rgba(var(--accent-rgb), 0.25); color: #fff; font: var(--text-s, 13px) var(--font-ui, sans-serif); }
+.poly-compare-col { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; }
+.poly-compare-preview { width: 140px; height: 140px; max-width: 100%; aspect-ratio: 1; }
+.poly-compare .poly-detail-name { font-size: var(--text-m, 15px); }
+.poly-compare-shared { margin: 8px 4px; color: #ccd; font: var(--text-s, 13px) var(--font-ui, sans-serif); }
 .poly-detail-netbox { width: 100%; display: flex; flex-direction: column; gap: 8px; align-items: center; }
 .poly-detail-netbox[hidden] { display: none; }
 .net-stage { width: 100%; height: 300px; border-radius: var(--radius-m, 10px); overflow: hidden; background: #0a0a10; display: flex; align-items: center; justify-content: center; color: var(--pale); font: var(--text-s, 13px) var(--font-ui, sans-serif); }
@@ -916,9 +924,9 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     current = showShapePicker;
     resetPreviews();
     const L = getSettings().language;
-    titleEl.textContent = t('poly.pickTitle', L);
+    titleEl.textContent = picker.title ?? t('poly.pickTitle', L);
     let grid = '';
-    for (const key of [DICTO_POLY.key, ...POLY_FAMILIES]) {
+    for (const key of [...(picker.keepOpen ? ['FAVOURITES', 'RECENT'] : []), DICTO_POLY.key, ...POLY_FAMILIES]) {
       const ids = polyIds(key).filter(picker.fits);
       if (!ids.length) continue;
       grid += `
@@ -930,7 +938,8 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
           </span>
         </button>`;
     }
-    bodyEl.innerHTML = `<div class="dim-wizard-sub">${t('poly.pickSub', L)}</div><div class="dim-wizard-grid dicto-block" style="${blockStyle('polyhedraverse')}">${grid}</div>`;
+    bodyEl.innerHTML = `${picker.back ? back(L) : ''}<div class="dim-wizard-sub">${picker.sub ?? t('poly.pickSub', L)}</div><div class="dim-wizard-grid dicto-block" style="${blockStyle('polyhedraverse')}">${grid}</div>`;
+    bodyEl.querySelector('.dim-wizard-back')?.addEventListener('click', () => { const b = picker.back; picker = null; titleEl.textContent = 'DICTO'; b(); });
     mountPreviews();
     bodyEl.querySelectorAll('[data-family]').forEach((el) => el.addEventListener('click', () => showPolyFamily(el.dataset.family)));
   }
@@ -955,9 +964,36 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     mountPreviews();
     bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => { if (picker) { showShapePicker(); return; } openDim = '3D'; showDimensions(`[data-family="${key}"]`); });
     bodyEl.querySelectorAll('[data-action]').forEach((el) => el.addEventListener('click', () => {
-      if (picker) { const { onPick } = picker; close(); onPick(el.dataset.action.replace('tool:polyShape:', '')); return; }
+      if (picker) {
+        const { onPick, keepOpen } = picker, picked = el.dataset.action.replace('tool:polyShape:', '');
+        if (keepOpen) { picker = null; titleEl.textContent = 'DICTO'; } else close();
+        onPick(picked);
+        return;
+      }
       showShapeDetail(el.dataset.action.replace('tool:polyShape:', ''), () => showPolyFamily(key));
     }));
+  }
+
+  // Two shapes side by side (D4): previews, families, faces by kind, edges, vertices, convex or not, and
+  // the face kinds they share (where one can go on the other); Build with either.
+  function showCompare(a, b, backTo) {
+    current = () => showCompare(a, b, backTo);
+    resetPreviews();
+    const L = getSettings().language, A = POLYHEDRA[a], B = POLYHEDRA[b];
+    const kinds = (id) => faceKindsOf(id).map((k) => `${k.count} × ${k.regular ? t('poly.d.regular', L) + ' ' : ''}${faceWord(k, L)}`).join(', ');
+    const keyOf = (k) => `${k.kind}|${k.regular}|${k.n}`;
+    const shared = faceKindsOf(a).filter((k) => faceKindsOf(b).some((m) => keyOf(m) === keyOf(k))).map((k) => faceWord(k, L));
+    const col = (id, s) => `<div class="poly-compare-col"><canvas class="poly-compare-preview" width="140" height="140" data-shape="${id}"></canvas>
+      <div class="poly-detail-name">${polyShapeName(id).replaceAll('_', ' ')}</div>
+      <div class="dim-wizard-desc">${familiesFor(id).map((f) => FAMILY_META[f]?.label ?? f).join(' · ')}</div>
+      <dl class="poly-detail-stats"><dt>${t('poly.d.faces', L)}</dt><dd>${s.faces.length}: ${kinds(id)}</dd><dt>${t('poly.d.edges', L)}</dt><dd>${s.edges.length}</dd>
+      <dt>${t('poly.d.vertices', L)}</dt><dd>${s.vertices.length}</dd><dt>${t('poly.d.shape', L)}</dt><dd>${isConvex(s) ? t('poly.d.convex', L) : t('poly.d.notConvex', L)}</dd></dl>
+      <button type="button" class="poly-detail-build" data-build="${id}">${t('poly.d.build', L)}</button></div>`;
+    bodyEl.innerHTML = `${back(L)}<div class="poly-compare dicto-block" style="${blockStyle('polyhedraverse')}">${col(a, A)}${col(b, B)}</div>
+      <div class="poly-compare-shared"><b>${t('poly.d.common', L)}:</b> ${shared.length ? [...new Set(shared)].join(', ') : t('poly.d.noneShared', L)}</div>`;
+    bodyEl.querySelectorAll('.poly-compare-preview').forEach((cv) => previewDisposers.push(mountWireframePreview(cv, polyShapeEdges(cv.dataset.shape), 140)));
+    bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => backTo());
+    bodyEl.querySelectorAll('[data-build]').forEach((x) => x.addEventListener('click', () => choose('3D', `tool:polyShape:${x.dataset.build}`, 'polyhedraverse')));
   }
 
   // Search, at the top of Polyhedraverse's block: results as rows, a tap opens the shape's details.
@@ -999,6 +1035,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
           <button type="button" class="poly-detail-build">${t('poly.d.build', L)}</button>
           <button type="button" class="poly-detail-fav" aria-pressed="${fav}">${fav ? '★' : '☆'} ${t('poly.d.fav', L)}</button>
           <button type="button" class="poly-detail-net" hidden aria-expanded="false">${t('poly.net.button', L)}</button>
+          <button type="button" class="poly-detail-compare">${t('poly.d.compare', L)}</button>
         </div>
         <div class="poly-detail-netbox" hidden></div>
         <dl class="poly-detail-stats">
@@ -1013,6 +1050,12 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => backTo());
     bodyEl.querySelector('.poly-detail-build').addEventListener('click', () => choose('3D', `tool:polyShape:${id}`, 'polyhedraverse'));
     bodyEl.querySelector('.poly-detail-fav').addEventListener('click', () => { toggleFavourite(id); showShapeDetail(id, backTo); });
+    // Compare: pick a second shape (Favourites and Recent first), then the two side by side.
+    bodyEl.querySelector('.poly-detail-compare').addEventListener('click', () => {
+      picker = { fits: (x) => x !== id, keepOpen: true, title: t('poly.d.compareTitle', L), sub: t('poly.d.compareSub', L, { name: polyShapeName(id).replaceAll('_', ' ') }),
+        back: () => showShapeDetail(id, backTo), onPick: (other) => showCompare(id, other, () => showShapeDetail(id, backTo)) };
+      showShapePicker();
+    });
     // Net + PDF, for the shapes with a printable net.
     const netBtn = bodyEl.querySelector('.poly-detail-net'), netBox = bodyEl.querySelector('.poly-detail-netbox');
     netEligible().then((ok) => { if (ok.has(id) && netBtn.isConnected) netBtn.hidden = false; });
