@@ -4030,6 +4030,7 @@ async function init() {
         case 'hexprism': return hexPrismGeometry;
         case 'dictofcc': return dictoFccGeometry;
         case 'dictohex': return dictoHexGeometry;
+        case 'dictoblock': return dictoBlockGeometries[0].clone().center(); // the first block placed, centred
         case 'rhombohedra': return rhombohedraGeometry;
         case 'pyrochlore': return convex(truncatedTetrahedronVerts(1, PYROCHLORE_S));
         default: return null;
