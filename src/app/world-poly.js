@@ -27,7 +27,9 @@ import { polyShapeEdges } from './poly-shapes.js';
 import { familiesFor } from '../krp-core/src/polyhedra/families.js';
 import { FAMILY_COLORS } from '../krp-core/src/assembly/pieceColors.js';
 import { getSettings, onSettingsChange } from './settings.js';
-import { storageKey, theme } from './site.js';
+import { SITE, storageKey, theme } from './site.js';
+import { migrateLegacyAssembly, ASSEMBLY_STORAGE_KEY } from '../krp-core/src/assembly/assembly.js';
+import { solidsOverlap, placedSolid } from '../krp-core/src/assembly/overlap.js';
 import { t } from './i18n.js';
 import { polyShapeName } from './poly-shapes.js';
 
@@ -80,14 +82,30 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     nextId = 1 + Math.max(0, ...nodes.map((n) => Number(String(n.id).replace(/\D/g, '')) || 0));
   }
   const toJSON = () => ({ nodes: nodes.map((n) => ({ ...n })), connections: connections.map((c) => ({ ...c })) });
+  // The old Polyhedraverse site's build (step D6, DICTO 2026-10-09: "bring it over once"): on
+  // polyhedraverse.vercel.app, with nothing saved here yet, its 'polyhedraverse:assembly' is converted
+  // once and left untouched. Its 4D cells were pieces joined to the root by 'rcp4d' connections; here
+  // a root alone grows by a count (view.rcp), so they become that count.
+  function fromOldSite() {
+    if (SITE !== 'polyhedraverse' || localStorage.getItem(STORAGE_KEY) !== null) return null;
+    const old = migrateLegacyAssembly(JSON.parse(localStorage.getItem(ASSEMBLY_STORAGE_KEY) ?? 'null'));
+    if (!old || !Array.isArray(old.nodes) || !old.nodes.length) return null;
+    const conns = Array.isArray(old.connections) ? old.connections.filter((c) => c && !c.orphaned) : [];
+    const cells = new Set(conns.filter((c) => c.kind === 'rcp4d').map((c) => String(c.nodeB)));
+    const out = { nodes: old.nodes.filter((n) => !cells.has(String(n.id))), connections: conns.filter((c) => c.kind !== 'rcp4d'), view: { shape: DEFAULT_SHAPE } };
+    const root = out.nodes.length === 1 ? out.nodes[0] : null;
+    if (root?.rcpPolytope?.target) out.view.rcp = { target: root.rcpPolytope.target, n: 1 + cells.size, open: root.rcpPolytope.view3D !== false, coords: false };
+    return out;
+  }
   try {
-    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
+    const data = fromOldSite() ?? JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (data) {
       setFromJSON(data);
       if (POLYHEDRA[data.view?.shape]) view.shape = data.view.shape;
       adopt(Array.isArray(data.view?.pins) ? data.view.pins : [], Array.isArray(data.view?.queue) ? data.view.queue : []);
       if (PART_VIEWS.includes(data.view?.parts)) view.parts = data.view.parts;
       if (data.view?.rcp && typeof data.view.rcp.target === 'string') view.rcp = { target: data.view.rcp.target, n: Math.max(1, data.view.rcp.n | 0), open: data.view.rcp.open !== false, coords: !!data.view.rcp.coords };
+      if (data.version === undefined) save(); // the old site's build, now kept here
     }
   } catch { /* corrupt or blocked storage: start empty */ }
   function save() {
@@ -276,7 +294,25 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     const tf = target.faces[fi];
     return spec.faces.map((f, k) => k).filter((k) => isFaceEligibleForAttach(spec, k) && spec.faces[k].length === tf.length && facesCongruent(target.vertices, tf, spec.vertices, spec.faces[k]));
   }
-  const fits = (id, n, fi) => fittingFaces(id, n, fi).length > 0;
+  // No merging (DICTO 2026-10-09: attached Hexas went into each other): a concave piece can sit flush
+  // on a face and still pass through the rest, so every placement is tested against the whole build
+  // (krp-core overlap.js); convex pairs keep the quick test the ranking already does.
+  const placedCache = new Map();
+  const placedOf = (n) => {
+    const k = `${n.id}|${n.shape}|${n.transform.position}|${n.transform.quaternion}`;
+    if (!placedCache.has(k)) placedCache.set(k, placedSolid(POLYHEDRA[n.shape], n.transform.position, n.transform.quaternion));
+    return placedCache.get(k);
+  };
+  const clashes = (id, position, quaternion) => {
+    const spec = POLYHEDRA[id], mine = placedSolid(spec, position, quaternion), convex = isConvex(spec);
+    return nodes.some((x) => !(convex && isConvex(POLYHEDRA[x.shape])) && solidsOverlap(placedOf(x), mine));
+  };
+  const cleanOptions = (id, n, fi) => {
+    const incoming = fittingFaces(id, n, fi);
+    return incoming.length ? faceAttachOptions(POLYHEDRA[n.shape], fi, matrixOf(n), POLYHEDRA[id], incoming).filter((o) => !clashes(id, o.position.toArray(), o.quaternion.toArray())) : [];
+  };
+  // Offered only where at least one turn is clean.
+  const fits = (id, n, fi) => fittingFaces(id, n, fi).length > 0 && cleanOptions(id, n, fi).length > 0;
   function faceHighlight(n, fi) {
     const P = worldPoints(n), f = POLYHEDRA[n.shape].faces[fi];
     const c = f.reduce((a, k) => a.add(P[k].clone()), new THREE.Vector3()).divideScalar(f.length);
@@ -319,17 +355,22 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     const others = nodes.map((x) => ({ spec: POLYHEDRA[x.shape], pts: worldPoints(x) }));
     const allPts = others.flatMap((o) => o.pts);
     const eps = 1e-6 * edgeLength(spec);
-    let best = null;
+    // Every turn about the corner, roomiest first; the first that passes through nothing wins (concave
+    // pieces are tested whole, so only as many as needed).
+    const turns = [];
     for (let k = 0; k < 120; k++) {
       const q = base.clone().multiply(new THREE.Quaternion().setFromAxisAngle(localDir, (k * Math.PI) / 60));
       const pos = corner.clone().sub(new THREE.Vector3(...spec.vertices[vInc]).applyQuaternion(q));
       const pts = spec.vertices.map((v) => new THREE.Vector3(...v).applyQuaternion(q).add(pos));
-      const clash = isConvex(spec) && others.some((o) => isConvex(o.spec) && convexOverlap(spec, pts, o.spec, o.pts, eps));
       let room = Infinity;
       pts.forEach((p, i) => { if (i !== vInc) for (const r of allPts) room = Math.min(room, p.distanceTo(r)); });
-      const score = (clash ? -1e9 : 0) + room;
-      if (!best || score > best.score + 1e-9) best = { score, q, pos };
+      turns.push({ q, pos, pts, room });
     }
+    turns.sort((x, y) => y.room - x.room);
+    const allConvex = isConvex(spec) && others.every((o) => isConvex(o.spec));
+    const clean = turns.find((tn) => (allConvex ? !others.some((o) => convexOverlap(spec, tn.pts, o.spec, o.pts, eps)) : !clashes(id, tn.pos.toArray(), tn.q.toArray())));
+    if (!clean) { showHudPrompt(t('poly.noRoom', lang()), 3000); return false; }
+    const best = { score: clean.room, q: clean.q, pos: clean.pos };
     remember(id);
     const node = { id: `n${nextId++}`, shape: id, transform: { position: best.pos.toArray(), quaternion: best.q.toArray() }, material: getMaterial() };
     nodes.push(node);
@@ -337,7 +378,6 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     selection = null;
     commit();
     refitIfGrown();
-    if (best.score < 0) showHudPrompt(t('poly.cornerTight', lang()), 3000);
     return true;
   }
   // 4D Prism (duoprism) attach (D3c): the same shape, same turn, pushed straight out from the tapped
@@ -408,11 +448,9 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   const attachAt = (id, sel) => (sel.corner != null ? attachCorner(id, sel.node, sel.corner) : attach(id, sel.node, sel.face));
   // Attach shape `id` on face fi of node n, the best fit first; false if it doesn't fit there.
   function attach(id, n, fi) {
-    const incoming = fittingFaces(id, n, fi);
-    if (!incoming.length) return false;
     const spec = POLYHEDRA[id];
-    const options = faceAttachOptions(POLYHEDRA[n.shape], fi, matrixOf(n), spec, incoming);
-    if (!options.length) return false;
+    const options = cleanOptions(id, n, fi);
+    if (!options.length) { if (fittingFaces(id, n, fi).length) showHudPrompt(t('poly.noRoom', lang()), 3000); return false; }
     const built = nodes.map((x) => ({ spec: POLYHEDRA[x.shape], matrixWorld: matrixOf(x) }));
     const ranked = rankFaceAttachOptions(options, spec, built, nodes.indexOf(n), fi, id === n.shape && PARALLELOHEDRA.has(id));
     const best = ranked[0].option;
