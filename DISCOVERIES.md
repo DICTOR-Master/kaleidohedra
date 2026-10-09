@@ -613,11 +613,12 @@ triangle that borders only pentagons. 33 regular-faced pieces, edge 1:
     no stellation pieces, no gaps), then 72 dodecahedron first stellations (flat: rhombic
     triacontahedron pieces) + 60 square pyramids + 60 cube first stellations (flat: rhombic
     dodecahedron pieces) + 20 tetrahedron first stellations (flat: cube pieces): the
-    triangle-covered shell, which looked perfect.
+    triangle-covered shell. It looked good, but DICTO knew small gaps and overlaps were hidden
+    under an accurate-looking outer build.
   - 4 October, 12:44: icosidodecahedron + 24 dodecahedra + 20 tridiminished icosahedra + 120
     dodecahedron second stellations (small stellated dodecahedron pieces) + 8 tall triangular
-    pyramids + 4 tetrahedra, a second stack of dodecahedra outward: closed to the eye but, as DICTO
-    noted, with overlaps and hidden gaps.
+    pyramids + 4 tetrahedra, a second stack of dodecahedra outward, likewise closed to the eye with
+    hidden overlaps and gaps.
   - 3 October: the related "heart", an augmented tridiminished icosahedron + 3 gyroelongated
     pentagonal pyramids + 52 icosahedron third stellations.
   Its precursor is DICTO's physical build: PET bottle caps and security rings with an
@@ -628,7 +629,8 @@ triangle that borders only pentagons. 33 regular-faced pieces, edge 1:
   on its square) fits all 245 pieces without overlap, in every orientation of the square pyramids,
   but no two added pieces meet face to face: they leave hidden gaps 0.0067, 0.046, 0.053, 0.066 and
   0.263 of an edge wide (the smallest, on 120 faces, about 0.3 mm at a 40 mm edge, invisible), and
-  fill 76.2% of the convex hull. So it looks perfect, as DICTO saw, but is not closed exactly.
+  fill 76.2% of the convex hull. So it confirms what DICTO knew: it looks right, but is not closed
+  exactly. (This reading has no overlaps; DICTO's build had some, so its placements differ slightly.)
 - Verified: `src/krp-core/scripts/verify-id-star.mjs` (krp-core v0.7.4), every push: no overlap
   among the 33 solids (separating axes), all 60 edges closed, every corner filled, exact volumes, and
   that whole icosahedra overlap.
