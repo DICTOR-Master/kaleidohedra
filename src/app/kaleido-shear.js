@@ -108,7 +108,7 @@ function buildPanel(state, apply) {
       <label class="kaleido-row">Cell <span id="kaleido-cell-val"></span>
         <input type="range" id="kaleido-cell" min="0" max="1" step="0.01"></label>
       <div id="kaleido-meter" title="How regular the cell is: 1 = every angle special (36, 45, 60, 70.5, 72 or 90 degrees)"></div>
-      <div class="kaleido-stops"><button type="button" id="kaleido-prev">◀ Find</button><button type="button" id="kaleido-next">Find ▶</button></div>
+      <div class="kaleido-stops"><button type="button" id="kaleido-find">Find</button></div>
       <details><summary>Six sliders</summary>
         ${KEYS.map((k) => {
           const isAngle = k.length > 1;
@@ -196,21 +196,21 @@ function buildPanel(state, apply) {
   const cell = $('#kaleido-cell');
   cell.addEventListener('input', () => { cellDragging = true; state.cell = Number(cell.value); refresh(); apply(); });
   cell.addEventListener('change', () => { cellDragging = false; paintBand(true); });
-  // Find previous / next: the path's quality peaks and hexagon events for the current Cell value.
+  // Find (no arrows, DICTO 2026-10-09): the next of the path's quality peaks and hexagon events for the
+  // current Cell value, round to the first after the last.
   const targetsFor = new Map();
-  const find = (dir) => {
+  const find = () => {
     if (state.path === null) { $('#kaleido-note').textContent = 'Find works along the path: tap a stop first.'; return; }
     const key = `${state.towards} ${state.cell.toFixed(2)}`;
     if (!targetsFor.has(key)) targetsFor.set(key, pathTargets(state.cell, 0.6, pathRange(state.towards), 0.02, state.towards));
     const list = targetsFor.get(key);
-    const next = dir > 0 ? list.find((e) => e.at > state.path + 1e-3) : [...list].reverse().find((e) => e.at < state.path - 1e-3);
-    if (!next) { $('#kaleido-note').textContent = 'Nothing further that way.'; return; }
+    const next = list.find((e) => e.at > state.path + 1e-3) ?? list[0];
+    if (!next) { $('#kaleido-note').textContent = 'Nothing to find on this path.'; return; }
     setPath(Math.round(next.at * 10000) / 10000);
     const what = { hexagons: 'Hexagons: three edge directions in a plane', 'regular tetrahedra': 'Disphenoids become regular tetrahedra (BCC is now FCC)' }[next.kind] || 'Regular cell';
     $('#kaleido-note').textContent = `${what} at ${next.at.toFixed(3)}.`;
   };
-  $('#kaleido-prev').addEventListener('click', () => find(-1));
-  $('#kaleido-next').addEventListener('click', () => find(1));
+  $('#kaleido-find').addEventListener('click', find);
   $('#kaleido-toggle').addEventListener('click', () => {
     const body = $('#kaleido-body');
     body.hidden = !body.hidden;

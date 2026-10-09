@@ -102,8 +102,6 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
   const glow = (color, opacity) => new THREE.MeshBasicMaterial({ color, transparent: true, opacity, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide });
   const fireMaterial = glow(0xff7a1a, 0.95), fireHalo = glow(0xff5a00, 0.28);
   const eternalMaterial = glow(0x4aa8ff, 0.9), eternalHalo = glow(0x2a6cff, 0.25);
-  // The Kagome network's single-piece cells, between the clusters: a violet flame.
-  const violetMaterial = glow(0x8a4dff, 0.55), violetHalo = glow(0x6a30ff, 0.1);
   let flickerRaf = 0;
   const FIRE_LOW = new THREE.Color(0xff4a00), FIRE_HIGH = new THREE.Color(0xffd060);
   function flicker(now) {
@@ -171,6 +169,8 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
       const [m, l] = meshOf(firstSites, firstMaterial, 'first', firstColour(), firstColour());
       group.add(m, l);
       pickTargets.push(m);
+    } else if (clustered()) {
+      drawClusters(modeOf().cluster, S);
     } else {
       pieceMaterial.transparent = opacity < 1;
       pieceMaterial.opacity = opacity;
@@ -182,13 +182,11 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
       // A network view (DICTO, 2026-10-09: the octet network): the pieces see-through, the cells
       // the present pieces complete drawn between their centres.
       const network = Boolean(modeOf().network);
-      // Octahedral clusters: the six round each centre see-through, the centre on fire.
-      const burning = modeOf().cluster === 'octa';
       // In a chain view the odd pieces between the cells (DICTO, 2026-10-08: "the macro dogstars seem
       // to be missing between the cells") are see-through, so the chains inside stay visible.
       // Each arrangement its own colour scheme (DICTO 2026-10-09).
       const scheme = modeOf();
-      const [m, l] = meshOf(burning ? solidSites.filter(isEven) : solidSites, modeOf().chain || network || burning ? seeThroughMaterial : pieceMaterial, 'piece', scheme.pieceColour, scheme.edgeColour ?? EDGE_COLOR);
+      const [m, l] = meshOf(solidSites, modeOf().chain || network ? seeThroughMaterial : pieceMaterial, 'piece', scheme.pieceColour, scheme.edgeColour ?? EDGE_COLOR);
       m.visible = !skeleton;
       if (skeleton) l.material.color.setHex(GHOST_COLOR());
       group.add(m, l);
@@ -224,16 +222,111 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
         }
       }
       if (network) group.add(...networkOverlay(S.filter(isEven)));
-      if (burning) {
-        const centres = S.filter((x) => !isEven(x));
-        if (centres.length) {
-          group.add(...flames(centres, fireMaterial, fireHalo));
-          if (!flickerRaf) flickerRaf = requestAnimationFrame(flicker);
-        }
-      }
       if (view.axes) group.add(...fiveFoldOverlay(S.filter(isEven)));
     }
     renderPanel();
+  }
+  // Clusters as cohesive blocks (DICTO 2026-10-09: "they look like separate balloons ... make all
+  // improvements global"): in every cluster arrangement each cluster is drawn whole, as its own solid
+  // (krp-core's cluster shape, outlined only where its faces fold, no seams), and the cells between the
+  // clusters fill by themselves: the odd pieces (stellas, Dogstars), and in the Kagome network the
+  // single even pieces (violet), so a build is solid with no gaps. A tap places the free cluster
+  // nearest the tap; the octahedral clusters' blocks stay a little see-through for their fire.
+  const BLOCK_COLOURS = { tetra: 0xd9a520, kagome: 0xd9a520, octa: 0x8c5a2b };
+  const SINGLE_VIOLET = 0x8f5bd8;
+  const NEAR12 = [[1, 1, 0], [1, -1, 0], [-1, 1, 0], [-1, -1, 0], [1, 0, 1], [1, 0, -1], [-1, 0, 1], [-1, 0, -1], [0, 1, 1], [0, 1, -1], [0, -1, 1], [0, -1, -1]];
+  const AXES6 = [[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1]];
+  const K = (1 + Math.sqrt(5)) / 4; // krp-core's cluster shapes: cube edge 2 scaled by phi/2
+  const blockMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
+  const glassBlockMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, transparent: true, opacity: 0.55, depthWrite: false, side: THREE.DoubleSide });
+  // A cluster shape's feature edges: where its faces fold (seams between faces in one plane left out).
+  const featureEdges = new Map();
+  function edgesOf(spec) {
+    if (featureEdges.has(spec.id)) return featureEdges.get(spec.id);
+    const V = spec.vertices, normal = (f) => { const a = V[f[0]], b = V[f[1]], c = V[f[2]]; const u = b.map((x, i) => x - a[i]), v = c.map((x, i) => x - a[i]); const n = [u[1] * v[2] - u[2] * v[1], u[2] * v[0] - u[0] * v[2], u[0] * v[1] - u[1] * v[0]]; const l = Math.hypot(...n) || 1; return n.map((x) => x / l); };
+    const byEdge = new Map();
+    spec.faces.forEach((f, fi) => f.forEach((x, i) => { const y = f[(i + 1) % f.length]; const k = x < y ? `${x}-${y}` : `${y}-${x}`; byEdge.set(k, [...(byEdge.get(k) ?? []), fi]); }));
+    const out = [];
+    for (const [k, fs] of byEdge) {
+      const ns = fs.map((fi) => normal(spec.faces[fi]));
+      const flat = ns.length === 2 && Math.abs(ns[0][0] * ns[1][0] + ns[0][1] * ns[1][1] + ns[0][2] * ns[1][2]) > 0.9999;
+      if (!flat) out.push(k.split('-').map(Number));
+    }
+    featureEdges.set(spec.id, out);
+    return out;
+  }
+  function clusterFill(kind, evens, centres) {
+    const held = new Set([...evens, ...centres].map(key));
+    const singles = new Map(), odds = new Map();
+    if (kind === 'kagome') for (const e of evens) for (const d of NEAR12) {
+      const c = e.map((v, i) => v + d[i]), k = key(c);
+      if (held.has(k) || singles.has(k) || config.clusters.kagome(c)) continue;
+      if (NEAR12.filter((d2) => held.has(key(c.map((v, i) => v + d2[i])))).length >= 3) singles.set(k, c);
+    }
+    const solid = new Set([...held, ...singles.keys()]);
+    for (const e of [...evens, ...singles.values()]) for (const d of AXES6) {
+      const o = e.map((v, i) => v + d[i]), k = key(o);
+      if (odds.has(k) || held.has(k)) continue;
+      if (AXES6.filter((d2) => solid.has(key(o.map((v, i) => v + d2[i])))).length >= 4) odds.set(k, o);
+    }
+    return { singles: [...singles.values()], odds: [...odds.values()] };
+  }
+  function drawClusters(kind, S) {
+    const evens = S.filter(isEven);
+    // each cluster once, keyed by its first site (the centre, for an octahedral cluster)
+    const clusters = new Map();
+    for (const e of evens) { const cl = config.clusters[kind](e); if (cl) clusters.set(key(cl[0]), cl); }
+    const centres = kind === 'octa' ? [...clusters.values()].map((cl) => cl[0]) : [];
+    const spec = config.clusterBlocks[kind], edges = edgesOf(spec);
+    const colour = new THREE.Color(BLOCK_COLOURS[kind]);
+    const pos = [], col = [], line = [], records = [];
+    for (const cl of clusters.values()) {
+      const a = cl[0], members = kind === 'octa' ? cl.slice(1) : cl;
+      // the shape is centred on its cells' centre: place it there, through the shear, as one piece
+      const C = members.reduce((t, m) => t.map((v, i) => v + (2 * m[i]) / members.length), [0, 0, 0]);
+      const P = spec.vertices.map((v) => toWorld(a, v.map((c, i) => c / K + C[i] - 2 * a[i])));
+      for (const f of spec.faces) for (let i = 1; i + 1 < f.length; i++) {
+        for (const k of [f[0], f[i], f[i + 1]]) { pos.push(...P[k]); col.push(colour.r, colour.g, colour.b); }
+        records.push(a);
+      }
+      for (const [x, y] of edges) line.push(...P[x], ...P[y]);
+    }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+    g.computeVertexNormals();
+    const glass = kind === 'octa';
+    const mat = glass ? glassBlockMaterial : blockMaterial;
+    if (!glass) { mat.transparent = opacity < 1; mat.opacity = opacity; mat.depthWrite = opacity >= 1; }
+    const m = new THREE.Mesh(g, mat);
+    m.userData.stellaJewel = 'piece';
+    m.userData.records = records;
+    m.visible = !skeleton;
+    const lg = new THREE.BufferGeometry();
+    lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    const l = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: skeleton ? GHOST_COLOR() : EDGE_COLOR }));
+    group.add(m, l);
+    pickTargets.push(m);
+    const { singles, odds } = clusterFill(kind, evens, centres);
+    pieceMaterial.transparent = opacity < 1; pieceMaterial.opacity = opacity; pieceMaterial.depthWrite = opacity >= 1;
+    if (singles.length) { const [sm, sl] = meshOf(singles, pieceMaterial, 'fill', SINGLE_VIOLET); sm.visible = !skeleton; group.add(sm, sl); pickTargets.push(sm); }
+    if (odds.length) { const [om, ol] = meshOf(odds, pieceMaterial, 'fill'); om.visible = !skeleton; group.add(om, ol); pickTargets.push(om); }
+    if (centres.length) {
+      group.add(...flames(centres, fireMaterial, fireHalo));
+      if (!flickerRaf) flickerRaf = requestAnimationFrame(flicker);
+    }
+  }
+  // Placement: the free cluster nearest the tap among those beside the tapped site.
+  function clusterPlace(kind, site, point) {
+    const tap = [point.x, point.y, point.z];
+    const centre = (cl) => cl.map((x) => toWorld(x, [0, 0, 0])).reduce((t, p) => t.map((v, i) => v + p[i] / cl.length), [0, 0, 0]);
+    const seen = new Set(), options = [];
+    const consider = (c) => { const cl = config.clusters[kind](c); if (!cl || seen.has(key(cl[0]))) return; seen.add(key(cl[0])); if (cl.some((x) => !cells.has(key(x)))) options.push(cl); };
+    const evensNear = isEven(site) ? [site, ...NEAR12.map((d) => site.map((v, i) => v + d[i]))] : AXES6.map((d) => site.map((v, i) => v + d[i]));
+    for (const e of evensNear) { consider(e); for (const d of NEAR12) consider(e.map((v, i) => v + d[i])); }
+    if (kind === 'kagome' && isEven(site)) config.kagomeNeighbours(site).forEach((cl) => consider(cl[0]));
+    options.sort((a, b) => Math.hypot(...centre(a).map((v, i) => v - tap[i])) - Math.hypot(...centre(b).map((v, i) => v - tap[i])));
+    return options.length ? addCluster(options[0][0]) : false;
   }
   // A flame: the odd piece at each site, glowing, inside a faint larger halo of itself.
   function flames(sites, core, halo, faces = config.oddFaces, size = 1) {
@@ -251,8 +344,7 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
   // edges between neighbouring centres, drawn through the shear like the pieces.
   function networkOverlay(evens) {
     const centre = (s) => toWorld(s, [0, 0, 0]);
-    const kind = modeOf().network === 'kagome' ? 'kagome' : 'octet';
-    const { triangles, edges } = config.networkCells(evens, kind);
+    const { triangles, edges } = config.networkCells(evens);
     const pos = [], col = [];
     for (const { sites, colour } of triangles) {
       const c = new THREE.Color(colour);
@@ -269,24 +361,8 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     const lines = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: AXIS_COLOR, transparent: true, opacity: 0.8 }));
     lines.renderOrder = 4;
     // Each octahedral cell's centre piece: a blue eternal flame.
-    const eternal = kind === 'kagome' ? [] : (config.networkCells(evens, kind).octaCentres ?? []);
-    // Kagome: a violet flame in each single-piece cell held in among the clusters (six or more of its
-    // twelve neighbours present), a small glowing copy of the even piece.
-    let singles = [];
-    if (kind === 'kagome') {
-      const has = new Set(evens.map((x) => x.join()));
-      const near = [[1, 1, 0], [1, -1, 0], [-1, 1, 0], [-1, -1, 0], [1, 0, 1], [1, 0, -1], [-1, 0, 1], [-1, 0, -1], [0, 1, 1], [0, 1, -1], [0, -1, 1], [0, -1, -1]];
-      const seen = new Set();
-      for (const e of evens) for (const d of near) {
-        const c = e.map((v, i) => v + d[i]), k = c.join();
-        if (seen.has(k) || has.has(k) || config.clusters.kagome(c)) continue;
-        seen.add(k);
-        if (near.filter((d2) => has.has(c.map((v, i) => v + d2[i]).join())).length >= 6) singles.push(c);
-      }
-    }
-    return [cells, lines,
-      ...(eternal.length ? flames(eternal, eternalMaterial, eternalHalo) : []),
-      ...(singles.length ? flames(singles, violetMaterial, violetHalo, config.evenFaces, 0.45) : [])];
+    const eternal = config.networkCells(evens).octaCentres ?? [];
+    return [cells, lines, ...(eternal.length ? flames(eternal, eternalMaterial, eternalHalo) : [])];
   }
   // The six five-fold axes through each DICTO Jewel, and on every face the five window
   // positions: faint, with the cube's choice (the window itself) bright.
@@ -398,12 +474,25 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     return best;
   }
   function handleTap(hit, mode) {
-    const tag = hit.object.userData.stellaJewel;
+    const tag = hit.object.userData.stellaJewel === 'fill' ? 'fill' : hit.object.userData.stellaJewel;
     const s = hit.object.userData.records?.[hit.faceIndex];
     if (!tag || !s || mode === 'paint') return false;
     const chisel = mode === 'chisel';
     if (clustered()) {
       if (tag === 'first' || tag === 'ghost') return chisel ? false : addCluster(s);
+      // Every cluster arrangement (DICTO 2026-10-09: "just automatic good placement"): a tap on a block
+      // or a filled piece places the free cluster nearest the tap; a long-press on a block removes it.
+      {
+        const kind = modeOf().cluster;
+        if (chisel) return tag === 'piece' ? removeCluster(s) : false;
+        // On a block, the piece actually tapped: the cluster member nearest the tap.
+        const p = [hit.point.x, hit.point.y, hit.point.z];
+        const members = tag === 'piece' ? (config.clusters[kind](s) ?? [s]) : [s];
+        const at = members.reduce((best, x) => (Math.hypot(...toWorld(x, [0, 0, 0]).map((v, i) => v - p[i])) < Math.hypot(...toWorld(best, [0, 0, 0]).map((v, i) => v - p[i])) ? x : best));
+        if (clusterPlace(kind, at, hit.point)) return true;
+        showHudPrompt(t(`${S_}.prompt.taken`, lang()), 2000);
+        return false;
+      }
       if (chisel) return removeCluster(s);
       const nb = across(s, hit);
       if (!nb) return false;

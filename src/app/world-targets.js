@@ -145,7 +145,7 @@ export function createTargetsWorld({ scene, fitView = () => {} }) {
   panel.className = 'qc-panel';
   panel.innerHTML = `
     <div class="w4d-row"><label class="hull-pick"><span class="tg-type-label"></span> <select class="hull-select" data-select="type"></select></label></div>
-    <div class="w4d-row"><button type="button" data-step="-1" aria-label="◀">◀</button> <select class="hull-select" data-select="cell"></select> <button type="button" data-step="1" aria-label="▶">▶</button></div>
+    <div class="w4d-row"><select class="hull-select" data-select="cell"></select></div>
     <div class="w4d-row"><label class="hull-pick"><span class="tg-show-label"></span> <select class="hull-select" data-select="show"></select></label></div>
     <div class="w4d-row w4d-options"></div>`;
   document.body.appendChild(panel);
@@ -181,14 +181,6 @@ export function createTargetsWorld({ scene, fitView = () => {} }) {
   });
   cellSelect.addEventListener('change', () => { const i = Number(cellSelect.value); if (targets[i]) select(i); });
   panel.addEventListener('click', (ev) => {
-    const step = ev.target.closest('button[data-step]');
-    if (step) {
-      const list = shown();
-      if (!list.length) return;
-      const at = Math.max(0, list.indexOf(view.index));
-      select(list[(at + Number(step.dataset.step) + list.length) % list.length]);
-      return;
-    }
     if (ev.target.closest('button[data-opt="info"]')) { infoOpen = !infoOpen; rebuild(); }
   });
   showSelect.addEventListener('change', () => {

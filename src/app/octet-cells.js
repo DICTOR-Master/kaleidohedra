@@ -43,15 +43,30 @@ export const OCTET_CLUSTERS = {
   },
 };
 
+// The Kagome network's neighbours of the cluster holding Jewel s: the up clusters it shares a corner
+// with, through s's down cluster (the four cells round the cell corner of the other orientation, all
+// in the network). Used to place the next cluster where a tap naturally points.
+export function kagomeNeighbourClusters(s) {
+  const out = [];
+  for (const dx of [-1, 0]) for (const dy of [-1, 0]) for (const dz of [-1, 0]) {
+    const corner = [s[0] + dx, s[1] + dy, s[2] + dz];
+    if (((((corner[0] + corner[1] + corner[2]) % 2) + 2) % 2) === 0) continue; // the up orientation
+    const four = [];
+    for (const a of [0, 1]) for (const b of [0, 1]) for (const c of [0, 1]) { const q = [corner[0] + a, corner[1] + b, corner[2] + c]; if ((((q[0] + q[1] + q[2]) % 2) + 2) % 2 === 0) four.push(q); }
+    if (!four.every((q) => OCTET_CLUSTERS.kagome(q))) continue;
+    for (const q of four) if (q.join() !== s.join()) out.push(OCTET_CLUSTERS.kagome(q));
+  }
+  return out;
+}
+
 // The octet network: a tetrahedral cell wherever the four even pieces round a cell corner are all
 // there, an octahedral one wherever the six round an odd cell are; edges join neighbours.
 // The octet network (DICTO, 2026-10-09): the clusters as the octet truss's cells, sharing Jewels.
 // A tetrahedral cell wherever the four Jewels round a cell corner are all there, an octahedral one
 // wherever the six round an odd cell are (its stella then hidden inside); edges join Jewels that
 // meet face to face.
-// Colours (DICTO 2026-10-09: each arrangement its own scheme): octet, silver tetrahedra and blue
-// octahedra; kind 'kagome', tetrahedral cells only, up gold and down violet.
-export function octetNetworkCells(evens, kind = 'octet') {
+// Colours (DICTO 2026-10-09: each arrangement its own scheme): silver tetrahedra, blue octahedra.
+export function octetNetworkCells(evens) {
   const has = new Set(evens.map((s) => s.join()));
   const triangles = [], seen = new Set(), octaCentres = [];
   const add = (k, tris, colour) => { if (seen.has(k)) return; seen.add(k); for (const t of tris) triangles.push({ sites: t, colour }); };
@@ -61,11 +76,9 @@ export function octetNetworkCells(evens, kind = 'octet') {
       const around = [];
       for (const a of [0, 1]) for (const b of [0, 1]) for (const c of [0, 1]) around.push([corner[0] + a, corner[1] + b, corner[2] + c]);
       const four = around.filter((c) => (((c[0] + c[1] + c[2]) % 2) + 2) % 2 === 0);
-      // which way a tetrahedral cell points: its corner's lower cell has an even or an odd coordinate sum
-      const up = ((((corner[0] + corner[1] + corner[2]) % 2) + 2) % 2) === 0;
-      if (four.every((c) => has.has(c.join()))) add(`t${corner.join()}`, [[0, 1, 2], [0, 1, 3], [0, 2, 3], [1, 2, 3]].map((ix) => ix.map((i) => four[i])), kind === 'kagome' ? (up ? 0xffc857 : 0x9b6bff) : 0xc8d6ea);
+      if (four.every((c) => has.has(c.join()))) add(`t${corner.join()}`, [[0, 1, 2], [0, 1, 3], [0, 2, 3], [1, 2, 3]].map((ix) => ix.map((i) => four[i])), 0xc8d6ea);
     }
-    for (const d of kind === 'kagome' ? [] : AXES6) {
+    for (const d of AXES6) {
       const o = s.map((c, i) => c + d[i]);
       const six = AXES6.map((e) => o.map((c, i) => c + e[i]));
       if (!six.every((c) => has.has(c.join()))) continue;

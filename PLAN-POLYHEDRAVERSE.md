@@ -79,8 +79,8 @@ dicto-node, phone first. Until D6 the new space is reached from DICTO in the oth
      turning wireframes; saved with the build; long-press a shape there to pin it.
    - **Face or corner on a phone:** a tap within a finger's width of a corner picks the corner (a dot
      shows it), anywhere else the face; the pick flashes so you can see which.
-   - **Fits:** ◀ ▶ buttons on a small bar while the new shape is selected, plus drag-to-cycle as on
-     the old site; best fits first.
+   - **Fits:** no arrows (DICTO, later the same day: "I hate those arrows ... lose them everywhere"):
+     the best fit is placed automatically.
    - **Delete:** long-press, as in every other world (and the chisel tool); undo restores.
    - **Build name:** one shortened line under the dimension label (3D+), tap it for the full
      assembly list; curated names recognised, plus **DICTO-Star** when the build is exactly it.

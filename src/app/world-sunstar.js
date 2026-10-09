@@ -7,7 +7,8 @@
 // the other corner-sharing lattice (direct request, 2026-10-08).
 import { roofFoldSolids, ROOF_FOLD_COLOURS as C, dogstarSolid, insideDodecahedron, insideDogstar, PHI } from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { createPairLatticeWorld } from './world-pair-lattice.js';
-import { OCTET_CLUSTERS, octetNetworkCells } from './octet-cells.js';
+import { OCTET_CLUSTERS, octetNetworkCells, kagomeNeighbourClusters } from './octet-cells.js';
+import { POLYHEDRA } from '../krp-core/src/polyhedra/index.js';
 import { storageKey } from './site.js';
 
 const GREAT_STAR = 0x7cc4ff;
@@ -41,6 +42,9 @@ export function createSunstarWorld(opts) {
     // inside out) and their octet network: the same structure as the DICTO Jewel clusters.
     clusters: OCTET_CLUSTERS,
     networkCells: octetNetworkCells,
+    kagomeNeighbours: kagomeNeighbourClusters,
+    // Each cluster drawn whole, as its krp-core shape (DICTO 2026-10-09: cohesive blocks).
+    clusterBlocks: { tetra: POLYHEDRA.DODECA_TETRAHEDRAL_CLUSTER, kagome: POLYHEDRA.DODECA_TETRAHEDRAL_CLUSTER, octa: POLYHEDRA.DODECA_OCTAHEDRAL_CLUSTER },
     group: (e) => [[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1]].map((d) => e.map((c, i) => c + d[i])),
     evenFaces: roofFoldSolids().dodeca.faces.map((f) => [f, C.dodeca]),
     oddFaces: dogstarSolid().map((f) => [f, C.dogstar]),

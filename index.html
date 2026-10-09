@@ -801,12 +801,11 @@
       border: 1px solid rgba(var(--accent-rgb), 0.5); display: flex; flex-direction: column; gap: 6px; align-items: center; }
     .poly-strip[hidden] { display: none; }
     .poly-shapes { display: flex; gap: 6px; overflow-x: auto; max-width: 100%; align-items: center; }
-    .poly-shapes button, .poly-fit button { min-width: var(--touch); min-height: var(--touch); flex: none; cursor: pointer; touch-action: manipulation;
+    .poly-shapes button { min-width: var(--touch); min-height: var(--touch); flex: none; cursor: pointer; touch-action: manipulation;
       background: rgba(var(--accent-rgb), 0.1); border: 1px solid rgba(var(--accent-rgb), 0.45); border-radius: 10px; color: var(--accent); font: var(--text-s) var(--font-ui); }
     .poly-shape canvas { display: block; width: 34px; height: 34px; }
     .poly-shape.chosen { background: rgba(var(--accent-rgb), 0.35); border: 2px solid var(--accent-strong); }
     .poly-more { padding: 0 12px; }
-    .poly-fit { display: flex; gap: 8px; align-items: center; color: var(--accent); font: var(--text-s) var(--font-ui); }
     /* Zenodo-style DOI badge: grey "DOI", blue number. */
     #welcome-card .doi-badge { display: inline-flex; margin-top: 8px; border-radius: 3px; overflow: hidden; text-decoration: none; font: 600 11px/1 var(--font-ui); }
     #welcome-card .doi-badge span { padding: 9px 8px; color: #fff; } /* about 30px tall, a comfortable tap */

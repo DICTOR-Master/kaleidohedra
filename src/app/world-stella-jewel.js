@@ -7,7 +7,8 @@
 import {
   ekpWindowsSolid, roofFoldSolids, ROOF_FOLD_COLOURS as C, insideDragonJewel, insideStella, fiveWindowPositions, dogstarSolid, PHI,
 } from '../krp-core/src/geometry-extensions/roof-fold.js';
-import { OCTET_CLUSTERS, octetNetworkCells } from './octet-cells.js';
+import { OCTET_CLUSTERS, octetNetworkCells, kagomeNeighbourClusters } from './octet-cells.js';
+import { POLYHEDRA } from '../krp-core/src/polyhedra/index.js';
 import { createPairLatticeWorld } from './world-pair-lattice.js';
 import { storageKey } from './site.js';
 
@@ -37,6 +38,9 @@ export function createStellaJewelWorld(opts) {
     // DICTO's clusters of DICTO Jewels (DICTO, 2026-10-09; krp-core DJ_TETRAHEDRAL_CLUSTER and
     // DJ_OCTAHEDRAL_CLUSTER), each placed whole (octet-cells.js).
     networkCells: octetNetworkCells,
+    kagomeNeighbours: kagomeNeighbourClusters,
+    // Each cluster drawn whole, as its krp-core shape (DICTO 2026-10-09: cohesive blocks).
+    clusterBlocks: { tetra: POLYHEDRA.DJ_TETRAHEDRAL_CLUSTER, kagome: POLYHEDRA.DJ_TETRAHEDRAL_CLUSTER, octa: POLYHEDRA.DJ_OCTAHEDRAL_CLUSTER },
     clusters: OCTET_CLUSTERS,
     evenFaces: [...DJ.rhombi.map((f) => [f, C.dodeca]), ...DJ.walls.map((f) => [f, 0xb8892a])],
     oddFaces: roofFoldSolids().stella.faces.map((f) => [f, C.stella]),

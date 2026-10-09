@@ -159,11 +159,11 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   }
 
   // ---- building: tap attach (step D3, DICTO 2026-10-09) ----
-  // Tap a face, then a shape: it attaches at once, the best fit first (◀ ▶ for the others). That shape
-  // stays chosen, so each face tapped next gets it in one tap, until another is picked (or ✕).
+  // Tap a face, then a shape: it attaches at once, at its best fit, placed automatically (DICTO
+  // 2026-10-09: "no arrows, just automatic good placement"). That shape stays chosen, so each face
+  // tapped next gets it in one tap, until another is picked (or ✕).
   let selection = null; // { node, face }: a face waiting for a shape
   let chosen = null; // the shape that stays chosen
-  let lastFit = null; // { node, conn, ranked, index }: the piece just attached, for ◀ ▶
   const PARALLELOHEDRA = new Set(familyIds('PARALLELOHEDRA'));
   const matrixOf = (n) => new THREE.Matrix4().compose(new THREE.Vector3(...n.transform.position), new THREE.Quaternion(...n.transform.quaternion), new THREE.Vector3(1, 1, 1));
   const faceTaken = (n, fi) => connections.some((c) => (c.nodeA === n.id && c.vertexA === fi) || (c.nodeB === n.id && c.vertexB === fi));
@@ -198,12 +198,10 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     if (!options.length) return false;
     const built = nodes.map((x) => ({ spec: POLYHEDRA[x.shape], matrixWorld: matrixOf(x) }));
     const ranked = rankFaceAttachOptions(options, spec, built, nodes.indexOf(n), fi, id === n.shape && PARALLELOHEDRA.has(id));
-    const node = { id: `n${nextId++}`, shape: id, transform: { position: [0, 0, 0], quaternion: [0, 0, 0, 1] }, material: getMaterial() };
-    const conn = { nodeA: n.id, vertexA: fi, nodeB: node.id, vertexB: 0, kind: 'face' };
+    const best = ranked[0].option;
+    const node = { id: `n${nextId++}`, shape: id, transform: { position: best.position.toArray(), quaternion: best.quaternion.toArray() }, material: getMaterial() };
     nodes.push(node);
-    connections.push(conn);
-    lastFit = { node, conn, ranked, index: 0 };
-    applyFit();
+    connections.push({ nodeA: n.id, vertexA: fi, nodeB: node.id, vertexB: best.incomingFaceIndex, kind: 'face' });
     selection = null;
     commit();
     refitIfGrown();
@@ -216,23 +214,10 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     const r = Math.max(...nodes.flatMap((n) => worldPoints(n).map((v) => v.length())));
     if (r > fittedRadius * 1.25) { fittedRadius = r; fitView?.(r); }
   }
-  function applyFit() {
-    const { node, conn, ranked, index } = lastFit;
-    const o = ranked[index].option;
-    node.transform = { position: o.position.toArray(), quaternion: o.quaternion.toArray() };
-    conn.vertexB = o.incomingFaceIndex;
-  }
-  function cycleFit(step) {
-    if (!lastFit || !nodes.includes(lastFit.node)) return;
-    lastFit.index = (lastFit.index + step + lastFit.ranked.length) % lastFit.ranked.length;
-    applyFit();
-    commit();
-  }
   function remove(n) {
     nodes = nodes.filter((x) => x !== n);
     connections = connections.filter((c) => c.nodeA !== n.id && c.nodeB !== n.id);
     if (selection?.node === n) selection = null;
-    if (lastFit?.node === n) lastFit = null;
     commit();
   }
 
@@ -279,14 +264,12 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   let disposers = [];
   function renderPanel() {
     disposers.forEach((d) => d()); disposers = [];
-    const show = active && !spherical && (selection || chosen || lastFit);
+    const show = active && !spherical && (selection || chosen);
     panel.hidden = !show;
     if (!show) return;
     const L = lang();
     const offer = selection ? queue().filter((id) => fits(id, selection.node, selection.face)) : chosen ? [chosen] : [];
-    const fitBar = lastFit && nodes.includes(lastFit.node) && lastFit.ranked.length > 1
-      ? `<div class="poly-fit"><button type="button" data-fit="-1" aria-label="${t('poly.fitPrev', L)}">◀</button><span>${t('poly.fit', L, { i: lastFit.index + 1, n: lastFit.ranked.length })}</span><button type="button" data-fit="1" aria-label="${t('poly.fitNext', L)}">▶</button></div>` : '';
-    panel.innerHTML = `${fitBar}<div class="poly-shapes">${offer.map((id) => `<button type="button" class="poly-shape${id === chosen ? ' chosen' : ''}" data-shape="${id}" title="${polyShapeName(id).replaceAll('_', ' ')}"><canvas></canvas></button>`).join('')}
+    panel.innerHTML = `<div class="poly-shapes">${offer.map((id) => `<button type="button" class="poly-shape${id === chosen ? ' chosen' : ''}" data-shape="${id}" title="${polyShapeName(id).replaceAll('_', ' ')}"><canvas></canvas></button>`).join('')}
       ${selection ? `<button type="button" class="poly-more" data-more>${t('poly.more', L)}</button>` : ''}
       ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>`;
     panel.querySelectorAll('.poly-shape canvas').forEach((cv) => disposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 34)));
@@ -294,7 +277,6 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   panel.addEventListener('click', (e) => {
     const b = e.target.closest('button');
     if (!b) return;
-    if (b.dataset.fit) { cycleFit(Number(b.dataset.fit)); return; }
     if ('clear' in b.dataset) { chosen = null; renderPanel(); return; }
     if ('more' in b.dataset && selection) {
       const sel = selection;
@@ -341,9 +323,9 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     },
     get shape() { return view.shape; },
     get isEmpty() { return nodes.length === 0; },
-    clear() { nodes = []; connections = []; selection = null; chosen = null; lastFit = null; commit(); },
+    clear() { nodes = []; connections = []; selection = null; chosen = null; commit(); },
     snapshot: toJSON,
-    restore(json) { setFromJSON(json); selection = null; lastFit = null; save(); rebuild(); renderPanel(); onChange(); },
+    restore(json) { setFromJSON(json); selection = null; save(); rebuild(); renderPanel(); onChange(); },
     toJSON,
   };
 }
