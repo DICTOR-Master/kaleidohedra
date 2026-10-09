@@ -271,7 +271,7 @@ Les pièces de DICTO commencent par la famille **DICTO Hexa** : la DICTO Hexa (h
 | Paint (pinceau) | Recolore les pièces posées : activez-le, choisissez une couleur, touchez une pièce. À la place du choix d'assemblage dans la rangée du bas ; quand ce choix est nécessaire, juste au-dessus (en 4D, dans le panneau 4D) |
 | Signal \| Construct (sous DICTO, 1D+ seulement) | Passe d'un monde 1D+ à l'autre |
 | ⊘ Effacer (à côté d'Undo, 1D+ et Nets) | Efface le monde 1D+ où vous êtes pour recommencer (dans Nets, le patron en cours) ; Undo le rétablit |
-| 📖 Almanac (en haut à droite) | Les mathématiques et la géométrie derrière chaque pièce et chaque réseau |
+| 📖 Almanac (en haut à droite) | Les mathématiques et la géométrie derrière chaque pièce et chaque réseau, les découvertes de DICTO en premier ; il s'ouvre sur l'entrée de l'endroit où vous êtes (Retour pour la liste) |
 | 🕘 What's New · ℹ About (en bas à droite) | Changements récents · l'écran d'accueil à nouveau |
 
 ## Outils (en haut à droite)

@@ -3753,7 +3753,35 @@ async function init() {
   almanacBtn.textContent = '📖';
   almanacBtn.dataset.i18nTitle = 'almanac.open';
   almanacBtn.title = t('almanac.open', getSettings().language);
-  almanacBtn.addEventListener('click', () => almanac.open());
+  // The Almanac opens on where you are (DICTO 2026-10-09): the entry for this world, arrangement or
+  // piece, with Back for the whole list.
+  function almanacContext() {
+    const w = own3DActive() ? own3D : null;
+    const mode = w ? own3DWorld()?.mode : null;
+    const net = (m) => (/^hull/.test(m) ? 'hulls' : m === 'hexa' ? 'hexaNets' : m === 'hexaKey' ? 'hexaKey' : m === 'chain' ? 'chains'
+      : m === 'tetra' || m === 'octa' ? 'clusters' : m === 'octet' || m === 'kagome' ? 'networks' : null);
+    if (w === 'roofFold') return 'dicto:ekp';
+    if (w === 'golden') return 'concept:quasicrystalPieces';
+    if (w === 'shells') return 'concept:shellsMagicNumbers';
+    if (activeDimension === '5D' || activeDimension === '6D') return 'concept:cutAndProject';
+    if (w === 'stellaJewel') return `dicto:${net(mode) ?? 'jewel'}`;
+    if (w === 'sunstar') return `dicto:${net(mode) ?? 'sunstar'}`;
+    if (w === 'poly') {
+      const id = polyWorld?.shape ?? '';
+      const byShape = { DICTO_HEXA: 'hexa', DICTO_HEXA_KEY: 'hexaKey', DICTO_HEXA_RHOMBO_CLUSTER: 'hexaNets', DICTO_HEXA_DIAMOND_CLUSTER: 'hexaNets',
+        DICTO_HEXA_TRIMMED_JEWEL: 'hexa', DICTO_HEXA_ROOF: 'hexa', DRAGON_JEWEL: 'jewel', STELLA_OCTANGULA: 'jewel', DOGSTAR: 'sunstar',
+        DJ_TETRAHEDRAL_CLUSTER: 'clusters', DJ_OCTAHEDRAL_CLUSTER: 'clusters', DODECA_TETRAHEDRAL_CLUSTER: 'clusters', DODECA_OCTAHEDRAL_CLUSTER: 'clusters',
+        ICOSIDODECAHEDRON: 'dictoStar', J63_TRIDIMINISHED_ICOSAHEDRON: 'dictoStar', DICTO_SKEWED_RD: 'dictoRd', DICTO_SQUARE_FACED_BLOCK: 'dictoRd',
+        DICTO_ALL_RHOMBUS_BLOCK: 'dictoRd', DICTO_FLATTENED_RHOMBOHEDRON: 'dictoRd', DICTO_LEANING_HEX_PRISM: 'dictoHex' };
+      return byShape[id] ? `dicto:${byShape[id]}` : null;
+    }
+    if (w) return null;
+    const piece = document.getElementById('piece-type-select')?.value;
+    if (piece === 'dictofcc' || piece === 'dictoblock') return 'dicto:dictoRd';
+    if (piece === 'dictohex') return 'dicto:dictoHex';
+    return piece ? `tool:pieceType:${piece}` : null;
+  }
+  almanacBtn.addEventListener('click', () => almanac.open(almanacContext()));
   (document.getElementById('hud-tools') ?? document.body).appendChild(almanacBtn);
   // The menu's action path, for callers outside the block below
   // (Construct's "Open in 4D").

@@ -760,6 +760,7 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
       if (active) { draw(); fit(); }
     },
     get isEmpty() { return cells.size === 0; },
+    get mode() { return view.mode; },
     clear() { cells.clear(); commit(); if (active) fit(); },
     snapshot,
     restore(json) { read(json); save(); draw(); },

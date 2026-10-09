@@ -64,6 +64,7 @@ const CSS = `
   text-align: left;
   cursor: pointer;
 }
+.almanac-entry.here { border-color: var(--accent); background: rgba(var(--accent-rgb), 0.16); }
 .almanac-entry:hover { background: rgba(var(--accent-rgb), 0.12); border-color: rgba(var(--accent-rgb), 0.4); }
 .almanac-entry-icon { flex: 0 0 auto; font-size: 22px; color: var(--accent); line-height: 0; }
 .almanac-entry-icon:empty { display: none; }
@@ -180,6 +181,7 @@ export function createAlmanac() {
   function showList() {
     listEl.style.display = 'flex';
     detailEl.style.display = 'none';
+    listEl.querySelector('.almanac-entry.here')?.scrollIntoView({ block: 'center' });
   }
 
   function showDetail(index) {
@@ -221,9 +223,15 @@ export function createAlmanac() {
     if (e.key === 'Escape' && overlay.classList.contains('open')) close();
   });
 
-  function open() {
+  // open(id): straight to that entry when there is one (where you are), its row marked in the list.
+  function open(id = null) {
     renderList(); // in the current language
     showList(); // always reset to the list view on (re)open
+    const i = id ? ALMANAC_ENTRIES.findIndex((e) => e.id === id) : -1;
+    if (i >= 0) {
+      listEl.querySelector(`[data-index="${i}"]`)?.classList.add('here');
+      showDetail(i);
+    }
     overlay.classList.add('open');
   }
   function close() {
