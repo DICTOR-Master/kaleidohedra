@@ -303,7 +303,12 @@
     .hull-select {
       background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); color: #cde;
       font: var(--text-m) var(--font-ui); border-radius: var(--radius-s); padding: 6px 8px; min-height: var(--touch-compact);
+      /* Long view names (e.g. "Octahedral clusters (6 DICTO Jewels)") stay inside a phone's width. */
+      max-width: min(64vw, 360px); text-overflow: ellipsis;
     }
+    .hull-pick { min-width: 0; max-width: 100%; }
+    /* The pair lattices' count line ("4 DICTO Jewels, 0 stella octangulas"). */
+    .sj-count { color: var(--accent); font: var(--text-s) var(--font-ui); }
     .w4d-track {
       position: relative; height: 34px; touch-action: none; cursor: ew-resize;
       background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 17px;

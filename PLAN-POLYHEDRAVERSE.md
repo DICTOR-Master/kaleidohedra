@@ -67,6 +67,26 @@ dicto-node, phone first. Until D6 the new space is reached from DICTO in the oth
 3. **D3 Building.** Selecting faces and vertices; face attach (all matching faces × turns, drag to
    cycle, best fits first), vertex attach with twist, duoprism attach, Transform to…, Delete; running
    build name; Golden helper bar.
+   *D3 decisions (DICTO, 2026-10-09):*
+   - **Tap attach** (DICTO's idea, for every app, Polyhedraverse first): tap a face, tap a candidate
+     shape and it attaches at once, no ✓ step. That candidate then stays chosen: every face tapped
+     next gets it in one tap (best fit), until another candidate is picked. Kaleidohedra and
+     Rhombiverse worlds get the same face → candidate picker as a follow-up after D3.
+   - **Choosing the candidate** (no browser until D4): tapping a face shows a strip of the build
+     queue's shapes that fit it, then **More…**, which opens DICTO's Polyhedraverse families showing
+     only shapes with a matching face.
+   - **Build queue:** a strip above the bottom row, the last 8 shapes used, newest first, as small
+     turning wireframes; saved with the build; long-press a shape there to pin it.
+   - **Face or corner on a phone:** a tap within a finger's width of a corner picks the corner (a dot
+     shows it), anywhere else the face; the pick flashes so you can see which.
+   - **Fits:** ◀ ▶ buttons on a small bar while the new shape is selected, plus drag-to-cycle as on
+     the old site; best fits first.
+   - **Delete:** long-press, as in every other world (and the chisel tool); undo restores.
+   - **Build name:** one shortened line under the dimension label (3D+), tap it for the full
+     assembly list; curated names recognised, plus **DICTO-Star** when the build is exactly it.
+   - **All the old tools come with D3:** Transform to…, the Golden helper bar, duoprism attach, and
+     vertex attach with twist.
+   - The interim note linking to the old site goes when D3 ships.
 4. **D4 Shape browser.** Home (families, Recent, Favourites), Search (name, family, face shape,
    face count), Scene, Favourites, Full Catalog with its sections and pairs; details (stats, preview,
    Add to Scene, Favourite, Compare, Net + PDF, star / radial / duoprism viewers, View 4D); Compare;
@@ -79,11 +99,6 @@ dicto-node, phone first. Until D6 the new space is reached from DICTO in the oth
 
 ## Open (ask before the stage that needs it)
 
-- D3: the build queue: where it sits (a strip above the bottom row?), how long it is, whether it's
-  saved with the build, and whether a shape can be pinned to it.
-
-- D3: on a phone, how a face vs a vertex is selected when they're close (P uses hover tooltips on
-  desktop).
 - D4: the browser as a full-screen overlay (as now) or a panel beside the scene on wide screens.
 - D6: whether the old Next.js code is deleted from the `polyhedraverse` repo or the repo is left as is
   with a pointer README.

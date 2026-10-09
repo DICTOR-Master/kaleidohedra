@@ -145,7 +145,9 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     const S = shown();
     if (!S.length) {
       firstMaterial.color.setHex(firstColour());
-      const [m, l] = meshOf([modeOf().even ? [0, 0, 0] : [1, 0, 0]], firstMaterial, 'first', firstColour(), firstColour());
+      // The first placement: the piece, or in a cluster mode the whole cluster.
+      const firstSites = clustered() ? clusterOf([0, 0, 0]) : [modeOf().even ? [0, 0, 0] : [1, 0, 0]];
+      const [m, l] = meshOf(firstSites, firstMaterial, 'first', firstColour(), firstColour());
       group.add(m, l);
       pickTargets.push(m);
     } else {
@@ -244,6 +246,24 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     fit();
     return true;
   }
+  // Cluster modes (DICTO, 2026-10-09: DICTO's clusters of DICTO Jewels): config.clusters[mode.cluster](s)
+  // is the whole cluster the site belongs to; a tap adds or removes it whole.
+  const clustered = () => Boolean(modeOf().cluster);
+  const clusterOf = (s) => config.clusters[modeOf().cluster](s);
+  function addCluster(s) {
+    const fresh = clusterOf(s).filter((x) => !cells.has(key(x)));
+    if (!fresh.length) return false;
+    for (const x of fresh) cells.set(key(x), [...x]);
+    commit();
+    fit();
+    return true;
+  }
+  function removeCluster(s) {
+    const gone = clusterOf(s).filter((x) => cells.delete(key(x)));
+    if (!gone.length) return false;
+    commit();
+    return true;
+  }
   // Remove an even piece's group: its own odd pieces go too, unless another even piece present still has them.
   function removeGroup(e) {
     if (!cells.delete(key(e))) return false;
@@ -293,6 +313,17 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     const s = hit.object.userData.records?.[hit.faceIndex];
     if (!tag || !s || mode === 'paint') return false;
     const chisel = mode === 'chisel';
+    if (clustered()) {
+      if (tag === 'first' || tag === 'ghost') return chisel ? false : addCluster(s);
+      if (chisel) return removeCluster(s);
+      const nb = across(s, hit);
+      if (!nb) return false;
+      // Across a face into a hidden piece's cell (a stella's, between clusters): say so.
+      if (!showsSite(nb)) { showHudPrompt(t(`${S_}.prompt.hole`, lang()), 2500); return false; }
+      if (addCluster(nb)) return true;
+      showHudPrompt(t(`${S_}.prompt.taken`, lang()), 2000);
+      return false;
+    }
     if (grouped()) {
       if (tag === 'first' || tag === 'ghost') return chisel ? false : addGroup(isEven(s) ? s : evenFor(s) ?? s.map((c, i) => c + (i === 0 ? 1 : 0)));
       if (chisel) {
