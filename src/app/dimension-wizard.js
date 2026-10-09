@@ -628,7 +628,8 @@ function dimensionEntries(dim) {
 // Where a DICTO lattice opens: the app whose door you came in by (Rhombiverse: its colours, no Shear;
 // Kaleidohedra: with the Shear); the DICTO Hex Prism always in Rhombiverse, whose hexagonal lattice
 // has it.
-const dictoOpen = (action) => (action === 'tool:pieceType:dictohex' ? 'rhombiverse' : SITE);
+// From Polyhedraverse's door (no lattices of its own) they open in Rhombiverse's space.
+const dictoOpen = (action) => (action === 'tool:pieceType:dictohex' || SITE === 'polyhedraverse' ? 'rhombiverse' : SITE);
 const appsOf = (dim) => [...new Set(dimensionEntries(dim).map((e) => e.app))];
 // DICTO's own entries show whatever app the filter picks.
 const passes = (app, filter) => !filter || app === filter || app === 'dicto';

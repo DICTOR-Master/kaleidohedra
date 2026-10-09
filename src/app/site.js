@@ -1,5 +1,5 @@
 // Which front door the visitor came in by (KRP, DICTO's decisions 2026-10-08): Kaleidohedra and
-// Rhombiverse are one app from one code, each with its own front door (its own address, name,
+// Rhombiverse are one app from one code (Polyhedraverse too since step D6), each with its own front door (its own address, name,
 // colour and saved state). Each page sets <html data-site>; ?site= overrides it for local work.
 
 export const SITES = {
@@ -9,8 +9,8 @@ export const SITES = {
   // wordmark: the name in two tones, the second part in the app's accent (as Polyhedraverse's name).
   kaleidohedra: { name: 'Kaleidohedra', wordmark: ['KALEIDO', 'HEDRA'], colour: '#ff9a52', url: 'https://kaleidohedra.vercel.app', netsGroups: ['voronoi', 'platonic', 'ekp'], shear: true, inside: true, door: true, analytics: false },
   // inside: whether its worlds run in this app (Polyhedraverse's since step D2); door: whether this
-  // build can open as that app (?site=, SITE). Polyhedraverse becomes a door with step D6.
-  polyhedraverse: { name: 'Polyhedraverse', wordmark: ['POLYHEDRA', 'VERSE'], colour: '#5ee233', url: 'https://polyhedraverse.vercel.app', netsGroups: null, shear: false, inside: true, door: false },
+  // build can open as that app (?site=, SITE). Polyhedraverse is a door since step D6.
+  polyhedraverse: { name: 'Polyhedraverse', wordmark: ['POLYHEDRA', 'VERSE'], colour: '#5ee233', url: 'https://polyhedraverse.vercel.app', netsGroups: null, shear: false, inside: true, door: true, analytics: false },
   // DICTO's own space (DICTO 2026-10-09): 1D+ and 2D+ belong to no app, an easier way in; silver.
   // Going up to 3D+ from there lands in the door's app.
   dicto: { name: 'DICTO', wordmark: ['DIC', 'TO'], colour: '#d8dce6', url: '', netsGroups: null, shear: false, inside: true, door: false },
@@ -24,7 +24,7 @@ function detect() {
   return 'rhombiverse';
 }
 
-/** 'kaleidohedra' or 'rhombiverse'. */
+/** 'kaleidohedra', 'rhombiverse' or 'polyhedraverse'. */
 export const SITE = detect();
 export const IS_KALEIDOHEDRA = SITE === 'kaleidohedra';
 

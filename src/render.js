@@ -6160,6 +6160,16 @@ async function init() {
     }
   });
 
+  // Polyhedraverse's own door (step D6): it opens in its own space, behind DICTO, as the other doors
+  // open on their lattices; an empty build gets the dodecahedron's outline to tap.
+  if (SITE === 'polyhedraverse') {
+    own3D = 'poly';
+    activeDimension = '3D';
+    applyDimensionVisibility();
+    applyDimensionCamera('3D');
+    updateQuickSelect();
+    if (polyWorld?.isEmpty) polyWorld.startWith(polyWorld.shape);
+  }
 }
 
 // Re-measure on every way the viewport changes (iPad Safari: rotation, the toolbar sliding, the keyboard

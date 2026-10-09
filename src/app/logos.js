@@ -1,7 +1,8 @@
 // Each app's logo solid, as wireframe edges for the welcome screen (KRP: one welcome, each app its
 // own symbol; DICTO 2026-10-08, generic over the apps). Rhombiverse: the rhombic dodecahedron.
 // Kaleidohedra: the regular-hexagon elongated dodecahedron (DISCOVERIES.md #5), lying with its long
-// axis horizontal and a hexagon towards you, as in its logo.
+// axis horizontal and a hexagon towards you, as in its logo. Polyhedraverse: the regular dodecahedron
+// (DICTO 2026-10-08: its turning dodecahedron, in green).
 import { convexHullFaces } from '../krp-core/src/geometry-extensions/roof-fold.js';
 
 const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
@@ -40,9 +41,17 @@ const ED_FACES = zonohedronFaces([[1, 1, R2], [1, -1, -R2], [-1, 1, -R2], [-1, -
 const HEX = ED_FACES.find((f) => f.length === 6);
 const ED = inView(edgesOf(ED_FACES), HEX.reduce((a, p) => a.map((c, i) => c + p[i]), [0, 0, 0]), [1, 0, 0]);
 
+// The regular dodecahedron: the cube (+-1, +-1, +-1) and the golden rectangles (0, +-1/phi, +-phi) round it.
+const PHI = (1 + Math.sqrt(5)) / 2;
+const DODECA_PTS = [];
+for (const x of [-1, 1]) for (const y of [-1, 1]) for (const z of [-1, 1]) DODECA_PTS.push([x, y, z]);
+for (const a of [-1, 1]) for (const b of [-1, 1]) DODECA_PTS.push([0, a / PHI, b * PHI], [a / PHI, b * PHI, 0], [b * PHI, 0, a / PHI]);
+const DODECA = edgesOf(convexHullFaces(DODECA_PTS.map((p) => p.map((c) => (c * 2) / Math.sqrt(3)))));
+
 /** edges: [[a, b], ...] (corners within radius 2); tilt (radians); spinFirst: spin about the
  *  screen's vertical, then tilt (Kaleidohedra), or tilt then spin (Rhombiverse). */
 export const LOGOS = {
   rhombiverse: { edges: RD, tilt: 0.5, spinFirst: false, label: 'a rotating wireframe rhombic dodecahedron' },
   kaleidohedra: { edges: ED, tilt: 0.08, spinFirst: true, label: 'a wireframe regular-hexagon elongated dodecahedron, turning slowly' },
+  polyhedraverse: { edges: DODECA, tilt: 0.35, spinFirst: false, label: 'a turning wireframe regular dodecahedron' },
 };

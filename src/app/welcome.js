@@ -8,6 +8,9 @@ import { openGuide } from './guide.js';
 import { createLanguagePicker } from './language-picker.js';
 import { SITE, SITES, storageKey } from './site.js';
 import { LOGOS } from './logos.js';
+import { FAMILY_ORDER, familyIds } from '../krp-core/src/polyhedra/families.js';
+// Polyhedraverse's welcome counts its shapes live.
+const shapeCount = () => new Set(FAMILY_ORDER.flatMap((k) => familyIds(k))).size;
 
 const LEGACY_SKIP_KEY = storageKey('skip-intro');
 // The welcome screen is the same for every app; what differs comes from the site table and here.
@@ -139,7 +142,7 @@ function startLogoSpin(onEnterHit) {
 // as everywhere else (dimensionLabel: 1D+, 2D+, 3D+, 4D, 5D, 6D).
 // Redrawn here on a language change (data-i18n would drop the buttons).
 function overviewHtml(lang) {
-  return t('welcome.overview', lang);
+  return t('welcome.overview', lang, { n: shapeCount() });
 }
 
 function overlayHtml() {
