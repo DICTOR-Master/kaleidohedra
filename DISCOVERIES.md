@@ -42,6 +42,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 13 | The 13-dodecahedron cluster made solid: a regular dodecahedron with one on each face leaves gaps of exactly two kinds, 30 wedges (two pentagons hinged at 10.3048°, volume φ³/20) and 20 needles (volume (45 − 19√5)/600), and the filled cluster comes apart into 12 finned units | DICTO (designed the cluster; asked for its gaps as pieces, separable once built) | yes | **not found** — candidate (the 10.3° gap itself is well known) | 2026-10-09 |
 | 14 | DICTO-Star: an icosidodecahedron with a regular dodecahedron on each pentagon and a tridiminished icosahedron (J63) on each triangle; 33 regular-faced pieces, every contact a whole face, every edge and corner closed, no filler, volume (195 + 89√5)/3 | DICTO (the centre of DICTO's builds, by 2026-10-04); confirmed exactly by the search DICTO asked for | yes | **not found** — candidate (the version with whole icosahedra, which overlaps, is Robert Austin's 2014 model) | 2026-10-09 |
 | 15 | DICTO Jewel clusters: four DICTO Jewels in a tetrahedron (pairwise face to face, touching at one point in the middle) and six in an octahedron (enclosing a hidden stella octangula-shaped hole); each a shape of its own, and each fills space with stella octangulas | DICTO (built the tetrahedral cluster in the app, asked for the octahedral, saw that both fill space with stellas) | yes | **not found** — candidate (made only of the DICTO Jewel, #10, itself not found) | 2026-10-09 |
+| 16 | Sunstar clusters: the octet structure of #15 in the Sunstar Lattice; four dodecahedra round a cell corner, and six round an odd cell enclosing its Dogstar as a hidden hole (a Dogstar with its 6 dodecahedra: a Sunstar turned inside out); each fills space with Dogstars, and shared they form the octet network | DICTO (asked whether the octet network held for the Sunstars and Dogstars) | yes | **not found** — candidate (the honeycomb itself is Hart's, 1996) | 2026-10-09 |
 
 ## 1. DICTO skewed rhombic dodecahedron
 
@@ -703,6 +704,34 @@ a whole rhombus, each group a shape of its own (krp-core `DJ_TETRAHEDRAL_CLUSTER
   inside one octahedral cluster).
 - Status: **not found**, a candidate, resting on #10: the clusters are made only of the DICTO Jewel,
   which itself was not found.
+
+## 16. Sunstar clusters (DICTO, 2026-10-09)
+
+*DICTO asked whether the octet network of #15 held for the Sunstars and Dogstars. It does: the
+Sunstar Lattice has the same cells, dodecahedra on the even ones and Dogstars on the odd.*
+
+- **Tetrahedral cluster:** four regular dodecahedra round a cell corner, neighbours meeting flat on
+  parts of faces (the seamed Sunstar dodecahedra make the contacts whole matching cells); in the
+  middle, where the Jewels touched at a point, four Dogstar tips meet. Volume 4 dodecahedra.
+- **Octahedral cluster:** the six dodecahedra round an odd cell **enclose its Dogstar as a hidden
+  hole**: every point just outside the Dogstar lies in one of the six, none in the 8 corner
+  dodecahedra, and the Dogstar's 8 tips reach the cell corners. Where two of the six meet round the
+  Dogstar they meet along its edges. Volume 6 dodecahedra. **A Sunstar is a dodecahedron with its 6
+  Dogstars; this is a Dogstar with its 6 dodecahedra**, the Sunstar turned inside out.
+- **Both fill space with Dogstars**, on the same packings as #15 (tetrahedral at all-even anchors,
+  octahedral on the lattice of 12 cells per cluster), and **shared they form the octet network**,
+  every Dogstar hidden inside one octahedral cluster.
+- In the apps: the Sunstar world's Tetrahedral clusters, Octahedral clusters and Octet network
+  views, and both shapes in Polyhedraverse's DICTO's pieces.
+- Verified: `src/krp-core/scripts/verify-sunstar-cluster.mjs` (krp-core v0.8.4), every push, 12 checks:
+  no overlap, closed and consistently wound surfaces, volumes 4 and 6 dodecahedra, the Dogstar
+  enclosed (points inside it outside the cluster, points just outside it inside), and the shared
+  packings.
+- Status: **not found** in a web search on 2026-10-09 (with #15's). Known, and credited: the
+  honeycomb of dodecahedra and Dogstars (George W. Hart's stellation 8, 1996; Hans Walser), the octet
+  truss (Buckminster Fuller; the tetrahedral-octahedral honeycomb), and new tilings by regular
+  tetrahedra and octahedra (MRSEC highlight). The clusters, the Dogstar-with-its-dodecahedra and the
+  octet network of dodecahedra are DICTO's.
 
 Since 2026-10-08 the geometry and its checks live in [krp-core](https://github.com/DICTOR-Master/krp-core),
 the geometry shared by Kaleidohedra and Rhombiverse, pinned here at `src/krp-core`.

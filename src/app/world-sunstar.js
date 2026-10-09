@@ -7,6 +7,7 @@
 // the other corner-sharing lattice (direct request, 2026-10-08).
 import { roofFoldSolids, ROOF_FOLD_COLOURS as C, dogstarSolid, insideDodecahedron, insideDogstar, PHI } from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { createPairLatticeWorld } from './world-pair-lattice.js';
+import { OCTET_CLUSTERS, octetNetworkCells } from './octet-cells.js';
 import { storageKey } from './site.js';
 
 const GREAT_STAR = 0x7cc4ff;
@@ -30,9 +31,14 @@ export function createSunstarWorld(opts) {
     panelId: 'worldsunstar-panel',
     minimiser: 'sunstar',
     strings: 'ss',
-    modes: [{ id: 'both', even: true, odd: true }, { id: 'sunstars', even: true, odd: true, grouped: true }, { id: 'every', even: true, odd: true, nested: true }, { id: 'chain', even: true, odd: true, chain: true }, { id: 'dogstars', even: false, odd: true }, { id: 'dodecas', even: true, odd: false }],
+    modes: [{ id: 'both', even: true, odd: true }, { id: 'sunstars', even: true, odd: true, grouped: true }, { id: 'tetra', even: true, odd: false, cluster: 'tetra' }, { id: 'octa', even: true, odd: false, cluster: 'octa' }, { id: 'octet', even: true, odd: false, network: true }, { id: 'every', even: true, odd: true, nested: true }, { id: 'chain', even: true, odd: true, chain: true }, { id: 'dogstars', even: false, odd: true }, { id: 'dodecas', even: true, odd: false }],
     // A Sunstar: the dodecahedron and the 6 Dogstars on its faces (direct decision, 2026-10-08:
     // the 8 at its corners only touch it at a point).
+    // DICTO's clusters of the dodecahedra (DICTO, 2026-10-09; krp-core DODECA_TETRAHEDRAL_CLUSTER and
+    // DODECA_OCTAHEDRAL_CLUSTER, the octahedral one a Dogstar with its 6 dodecahedra, a Sunstar turned
+    // inside out) and their octet network: the same structure as the DICTO Jewel clusters.
+    clusters: OCTET_CLUSTERS,
+    networkCells: octetNetworkCells,
     group: (e) => [[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1]].map((d) => e.map((c, i) => c + d[i])),
     evenFaces: roofFoldSolids().dodeca.faces.map((f) => [f, C.dodeca]),
     oddFaces: dogstarSolid().map((f) => [f, C.dogstar]),
