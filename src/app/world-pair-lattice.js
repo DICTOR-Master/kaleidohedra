@@ -158,9 +158,12 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
       // the nested piece solid inside it.
       const nested = modeOf().nested === true || modeOf().chain === true;
       const solidSites = nested ? S.filter((s) => !isEven(s)) : S;
+      // A network view (DICTO, 2026-10-09: the octet network): the pieces see-through, the cells
+      // the present pieces complete drawn between their centres.
+      const network = modeOf().network === true;
       // In a chain view the odd pieces between the cells (DICTO, 2026-10-08: "the macro dogstars seem
       // to be missing between the cells") are see-through, so the chains inside stay visible.
-      const [m, l] = meshOf(solidSites, modeOf().chain ? seeThroughMaterial : pieceMaterial, 'piece');
+      const [m, l] = meshOf(solidSites, modeOf().chain || network ? seeThroughMaterial : pieceMaterial, 'piece');
       m.visible = !skeleton;
       if (skeleton) l.material.color.setHex(GHOST_COLOR());
       group.add(m, l);
@@ -195,9 +198,32 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
           pickTargets.push(gm);
         }
       }
+      if (network) group.add(...networkOverlay(S.filter(isEven)));
       if (view.axes) group.add(...fiveFoldOverlay(S.filter(isEven)));
     }
     renderPanel();
+  }
+  // The network's cells (config.networkCells: triangles of piece sites, with a colour) and the
+  // edges between neighbouring centres, drawn through the shear like the pieces.
+  function networkOverlay(evens) {
+    const centre = (s) => toWorld(s, [0, 0, 0]);
+    const { triangles, edges } = config.networkCells(evens);
+    const pos = [], col = [];
+    for (const { sites, colour } of triangles) {
+      const c = new THREE.Color(colour);
+      for (const s of sites) { pos.push(...centre(s)); col.push(c.r, c.g, c.b); }
+    }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+    g.computeVertexNormals();
+    const cells = new THREE.Mesh(g, layerMaterial(0.45));
+    cells.renderOrder = 3;
+    const lg = new THREE.BufferGeometry();
+    lg.setAttribute('position', new THREE.Float32BufferAttribute(edges.flatMap(([a, b]) => [...centre(a), ...centre(b)]), 3));
+    const lines = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: AXIS_COLOR, transparent: true, opacity: 0.8 }));
+    lines.renderOrder = 4;
+    return [cells, lines];
   }
   // The six five-fold axes through each DICTO Jewel, and on every face the five window
   // positions: faint, with the cube's choice (the window itself) bright.

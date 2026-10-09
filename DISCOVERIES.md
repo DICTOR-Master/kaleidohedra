@@ -683,16 +683,24 @@ a whole rhombus, each group a shape of its own (krp-core `DJ_TETRAHEDRAL_CLUSTER
   of (2, 1, −1), (2, −1, 1), (1, 2, 1) do too (12 cells per cluster: its 6 Jewels, its own stella and
   5 more), one of 12 such lattices, found by exact cover. Stellas fill the cells between, as in the
   Stella–Jewel Lattice.
+- **The octet network** (DICTO's idea): sharing Jewels instead of keeping them apart, the clusters are
+  the cells of the **octet truss** on the Jewels' lattice: tetrahedral clusters at every cell corner
+  (the tetrahedral holes), octahedral ones at every odd cell (the octahedral holes), each Jewel in 8
+  of one and 6 of the other as each truss vertex is, neighbours meeting on 3 Jewels (a face). Every
+  stella is then the hidden hole of exactly one octahedral cluster, so with those solid inside the
+  network fills all of space with no separate Jewels or stellas. (Not a tiling of separate pieces:
+  neighbours share Jewels.) Shown in the Stella–Jewel world's Octet network view.
 - Not a pairing with Dogstars: between clusters the gaps are whole stella octangulas, and a Dogstar
   (0.8090 at this size) fills only 38% of one (2.1180), leaving the spike tips open.
 - In the apps: Stella–Jewel views that place a whole cluster per tap, and DICTO's pieces in
   Polyhedraverse's list. Their nets wait for an unfolding of 228 and 288 faces that does not overlap
   itself (searching).
-- Verified: `src/krp-core/scripts/verify-dicto-jewel-cluster.mjs` (krp-core v0.8.2), every push, 19
+- Verified: `src/krp-core/scripts/verify-dicto-jewel-cluster.mjs` (krp-core v0.8.3), every push, 23
   checks: the shared rhombi, no overlap (point tests), closed and consistently wound surfaces, the
   pinch point and the hole (its wall exactly the stella's 48 half-triangles, meeting the outside only
   at the 8 spike tips), the volumes, and both space-fillings (every Jewel cell in a box of 3,429 in
-  exactly one cluster).
+  exactly one cluster), and the octet network (8 and 6 clusters per Jewel, faces of 3, every stella
+  inside one octahedral cluster).
 - Status: **not found**, a candidate, resting on #10: the clusters are made only of the DICTO Jewel,
   which itself was not found.
 

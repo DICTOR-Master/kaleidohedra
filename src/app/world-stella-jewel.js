@@ -41,12 +41,45 @@ export function createStellaJewelWorld(opts) {
     panelId: 'worldstellajewel-panel',
     minimiser: 'stella-jewel',
     strings: 'dj',
-    modes: [{ id: 'both', even: true, odd: true }, { id: 'jewels', even: true, odd: false }, { id: 'tetra', even: true, odd: false, cluster: 'tetra' }, { id: 'octa', even: true, odd: false, cluster: 'octa' }, { id: 'chain', even: true, odd: false, chain: true }],
+    modes: [{ id: 'both', even: true, odd: true }, { id: 'jewels', even: true, odd: false }, { id: 'tetra', even: true, odd: false, cluster: 'tetra' }, { id: 'octa', even: true, odd: false, cluster: 'octa' }, { id: 'octet', even: true, odd: false, network: true }, { id: 'chain', even: true, odd: false, chain: true }],
     // DICTO's clusters of DICTO Jewels (DICTO, 2026-10-09; krp-core DJ_TETRAHEDRAL_CLUSTER and
     // DJ_OCTAHEDRAL_CLUSTER), each placed whole. Both fill space with stella octangulas, so the
     // clusters a site can belong to come from those packings and every Jewel is in exactly one:
     // tetrahedral, the four cells at an all-even anchor; octahedral, the six round an odd centre
     // on DJ_OCTA_TILING's lattice.
+    // The octet network (DICTO, 2026-10-09): the clusters as the octet truss's cells, sharing Jewels.
+    // A tetrahedral cell wherever the four Jewels round a cell corner are all there, an octahedral one
+    // wherever the six round an odd cell are (its stella then hidden inside); edges join Jewels that
+    // meet face to face.
+    networkCells: (evens) => {
+      const has = new Set(evens.map((s) => s.join()));
+      const triangles = [], seen = new Set();
+      const add = (k, tris, colour) => { if (seen.has(k)) return; seen.add(k); for (const t of tris) triangles.push({ sites: t, colour }); };
+      for (const s of evens) {
+        for (const dx of [-1, 0]) for (const dy of [-1, 0]) for (const dz of [-1, 0]) {
+          const corner = [s[0] + dx, s[1] + dy, s[2] + dz];
+          const around = [];
+          for (const a of [0, 1]) for (const b of [0, 1]) for (const c of [0, 1]) around.push([corner[0] + a, corner[1] + b, corner[2] + c]);
+          const four = around.filter((c) => (((c[0] + c[1] + c[2]) % 2) + 2) % 2 === 0);
+          if (four.every((c) => has.has(c.join()))) add(`t${corner.join()}`, [[0, 1, 2], [0, 1, 3], [0, 2, 3], [1, 2, 3]].map((ix) => ix.map((i) => four[i])), 0xffc857);
+        }
+        for (const d of AXES6) {
+          const o = s.map((c, i) => c + d[i]);
+          const six = AXES6.map((e) => o.map((c, i) => c + e[i]));
+          if (!six.every((c) => has.has(c.join()))) continue;
+          const [xp, xm, yp, ym, zp, zm] = six;
+          const tris = [];
+          for (const X of [xp, xm]) for (const Y of [yp, ym]) for (const Z of [zp, zm]) tris.push([X, Y, Z]);
+          add(`o${o.join()}`, tris, 0x7cc4ff);
+        }
+      }
+      const edges = [];
+      for (const s of evens) for (const d of [[1, 1, 0], [1, -1, 0], [1, 0, 1], [1, 0, -1], [0, 1, 1], [0, 1, -1]]) {
+        const n = s.map((c, i) => c + d[i]);
+        if (has.has(n.join())) edges.push([s, n]);
+      }
+      return { triangles, edges };
+    },
     clusters: {
       tetra: (s) => {
         const anchor = s.map((c) => c - (((c % 2) + 2) % 2));
