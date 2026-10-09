@@ -631,6 +631,23 @@ triangle that borders only pentagons. 33 regular-faced pieces, edge 1:
   24-cell (Koca et al., in the library); Klitzing's 4D segmentochora (e.g. dodecahedron atop
   icosidodecahedron, K-4.77) use the same pieces as cells but not this cluster. Simple enough that it
   may be known somewhere unindexed; not proof of novelty.
+- Extended search (2026-10-09, at DICTO's request), still **not found**:
+  - **No convex 4D polytope can contain it:** at every edge of the icosidodecahedron the three
+    angles add to exactly 360°, so the star is flat, while a convex 4D polytope's cells need less
+    than 360° round every edge to fold. That rules out all of Klitzing's CRF polychora at once.
+  - Robert Austin's cluster posts (2013 dodecahedral cluster of icosidodecahedra, 2014, 2015
+    greatly augmented icosidodecahedron, 2023 clusters round a dodecahedron): whole icosahedra,
+    great stellations or icosidodecahedra on the faces, never tridiminished icosahedra.
+  - George Hart's polyhedra clusters; Klitzing's tridiminished-icosahedron page (it occurs in the
+    snub 24-cell's vertex figure and related CRF and blends, not in this cluster); a Stewart toroid
+    of genus 11 built from 20 tridiminished icosahedra, 30 metabidiminished icosahedra and 60
+    pentagonal antiprisms (no icosidodecahedron or dodecahedra).
+  - The Elser–Sloane quasicrystal's 3D slice (icosidodecahedron, dodecahedron, icosahedron and
+    golden tetrahedron tiles; Fang et al., arXiv 1311.3994; Baake & Gähler 1998, in the library):
+    whole icosahedra, no tridiminished ones, so not this configuration; a neighbour worth noting for
+    the lattice-to-quasicrystal bridge.
+  - Not reached: the post before Austin's 2013 cluster (archive offline that day), the Stella forum,
+    printed books (Stewart's *Adventures Among the Toroids*), and non-English sources.
 
 Since 2026-10-08 the geometry and its checks live in [krp-core](https://github.com/DICTOR-Master/krp-core),
 the geometry shared by Kaleidohedra and Rhombiverse, pinned here at `src/krp-core`.
