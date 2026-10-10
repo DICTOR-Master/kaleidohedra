@@ -13,3 +13,4 @@ themselves are written up in [DISCOVERIES.md](../DISCOVERIES.md) and archived on
 | [2026-10-10-icosa-13](2026-10-10-icosa-13/) | #19 The DICTO Icosa-13 |
 | [2026-10-10-icosa-networks](2026-10-10-icosa-networks/) | #20 The DICTO Stella-Corona |
 | [2026-10-10-pentagram-growth](2026-10-10-pentagram-growth/) | #20 Growth on the Stella-Corona's pentagrams |
+| [2026-10-10-icosa-networks-2](2026-10-10-icosa-networks-2/) | #20 The MACE network; the icosahedral EKP cell (names pending) |

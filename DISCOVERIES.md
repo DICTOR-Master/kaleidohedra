@@ -869,8 +869,14 @@ pieces. Names by DICTO.*
   **Golden Closure** closes the legs round a small icosidodecahedron exactly with golden pieces (**Hound Tooth**
   and **Tricap**, the Mosseri–Sadoc tiles t2 and t3, with AXE and CLEO); round a small dodecahedron and a Kepler
   star no golden closure exists (gaps of 63.43° and 26.06° that no golden piece can make).
+- **The MACE network** (study 2026-10-10, shapes not yet named): Stella-Coronas bonded through Kepler Stars
+  (two spikes removed) along five-fold axes, period 5.830447. Clean as a 13-cluster (12 bonds, one closed
+  solid, volume (1605 + 650√5)/3), as a periodic lattice on the prolate golden rhombohedron (density 57.06%), and
+  as a quasiperiodic cut-and-project patch of 93 coronas (192 bonds, no overlaps among 23,037 parts): the
+  periodic and the aperiodic network from the same bond. Not found in a search on 2026-10-10.
 - Study files: [studies/2026-10-10-icosa-networks](studies/2026-10-10-icosa-networks/) and
-  [studies/2026-10-10-pentagram-growth](studies/2026-10-10-pentagram-growth/). Same checks as #19.
+  [studies/2026-10-10-pentagram-growth](studies/2026-10-10-pentagram-growth/) and
+  [studies/2026-10-10-icosa-networks-2](studies/2026-10-10-icosa-networks-2/). Same checks as #19.
   Not yet in the apps or in krp-core.
 - Archived: Zenodo [10.5281/zenodo.23272686](https://doi.org/10.5281/zenodo.23272686) (v2026.10.10-icosa, 2026-10-10).
 - Status: **not found** in searches on 2026-10-10. Known, and credited: the 20-icosahedron shell is the Wolfram
