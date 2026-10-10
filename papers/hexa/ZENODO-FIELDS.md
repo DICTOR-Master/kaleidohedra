@@ -2,7 +2,7 @@
 
 Upload: `dicto-hexa.pdf`, everything in `data/` and `renders/`.
 
-- **Title:** The DICTO Hexa: a cube of eight interpenetrating DICTO Jewels, the Hexa-Key, and their 5 : 3 checkerboard filling of space
+- **Title:** The DICTO Hexa: a cube of 8 DICTO Hexa Jewels, the Hexa-Key, and their 5 : 3 checkerboard filling of space
 - **Resource type:** Publication → Preprint
 - **Creator:** DICTO (Type: Personal; Family name: DICTO; leave Given name empty; Affiliation: Independent artist, Osaka, Japan)
 - **Description:** paste the Abstract from the PDF, then add: "Computation and checking were done with Claude (Anthropic) in the open-source library krp-core."
