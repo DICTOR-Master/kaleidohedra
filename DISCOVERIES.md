@@ -873,7 +873,10 @@ pieces. Names by DICTO.*
   (two spikes removed) along five-fold axes, period 5.830447. Clean as a 13-cluster (12 bonds, one closed
   solid, volume (1605 + 650√5)/3), as a periodic lattice on the prolate golden rhombohedron (density 57.06%), and
   as a quasiperiodic cut-and-project patch of 93 coronas (192 bonds, no overlaps among 23,037 parts): the
-  periodic and the aperiodic network from the same bond. Not found in a search on 2026-10-10.
+  periodic and the aperiodic network from the same bond. **The infinite quasiperiodic network is clean:** with a
+  ball window of any radius below √((15 + 6√5)/20) = 1.191982 perpendicular edges (1.19 used), proved by finite local
+  complexity (all 153 possible neighbour vectors, every occurring piece pair tested exactly, 0 overlaps); every
+  corona has 3 to 12 bonds (mean 4.882), solid fraction 37.393%. Not found in a search on 2026-10-10.
 - Study files: [studies/2026-10-10-icosa-networks](studies/2026-10-10-icosa-networks/) and
   [studies/2026-10-10-pentagram-growth](studies/2026-10-10-pentagram-growth/) and
   [studies/2026-10-10-icosa-networks-2](studies/2026-10-10-icosa-networks-2/). Same checks as #19.

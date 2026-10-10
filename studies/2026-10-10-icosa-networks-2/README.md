@@ -270,3 +270,49 @@ Questions:
 `mace-quasi-sites`; each in unit and raw scale with the checks it passed. `renders/`: the JPGs above (icosahedra
 green, icosidodecahedra, dodecahedra and H gold, AXE and roofs cyan, CLEO, Tricaps and tetrahedra purple, Kepler
 spikes orange-red).
+
+## 10. The infinite network
+
+Question: §5 checked a finite patch of 93 coronas. Is the whole infinite model set clean? `infinite.mjs` answers
+this exactly, by finite local complexity, not by sampling. Run on dicto-node, 62 s (`infinite.log`,
+`results-infinite.json`).
+
+**The argument.** Sites are x(n), n ∈ ℤ⁶, kept when the perpendicular image y(n) lies in the closed ball W of radius
+r_W = 1.19 perp edges (perp edge = √(1+τ²) = 1.902113). Objects are a Stella-Corona at every site and a Kepler Star
+(10 spikes) on every pair of sites one five-fold step apart; a bond star is the same solid seen from either end
+(checked), so each star is owned by both its ends. Every piece of an object lies within R_node = 3.857334 (0.661585
+bonds) of an owning site (R_node is the reach of a corona with all 12 bond stars). So two objects can overlap only if
+their owning sites are within 2 R_node = 1.323169 bonds. A set of sites {s_j} occurs somewhere in the model set iff
+the balls W − y(s_j) have a common point, iff the minimal enclosing ball of the points y(s_j) has radius ≤ r_W
+(exact for a ball window; computed as the smallest circumsphere of a subset that holds all the points). Every object
+pair of the infinite network is a translate of a pair whose first object is owned by the origin. So: list every
+difference vector d with |x(d)| < 2 R_node (153 vectors, all with |nᵢ| ≤ 1, found by enumerating |nᵢ| ≤ 3); for
+each, test every object owned by the origin against every object owned by d (corona–corona, corona–star, star–star,
+each star only when both its end sites are in the set); keep the pairs whose site set passes the enclosing-ball test;
+test those for overlap with the separating-axis test over all convex parts. If every occurring pair is clean, the
+infinite network is clean, because any overlap anywhere would be a translate of one of these pairs.
+
+**Result: clean.** 25 766 object pairs in range, 3984 occur in the model set (none within 10⁻⁶ of the window
+boundary, so no boundary ambiguity); 164 886 separating-axis tests; **0 overlaps among the occurring pairs**
+(corona–corona 42 pairs, corona–star 792, star–star 3150). The 1190 overlapping pairs in range are all excluded by the
+window: they sit on the short vectors 0.5628 bonds (the oblate short diagonal, perp length 2.3840 edges), 0.6498
+(perp 2.7528) and 1.1926 (perp 2.9288), and on two star–star pairs at 1.0515 that need a 0.6498 vector among their
+four sites.
+
+**Largest clean window.** The window may grow until the first clashing configuration enters: two coronas 0.5628
+bonds apart, enclosing radius √((15 + 6√5)/20) = **1.191982** perp edges. So every ball window of radius
+< 1.191982 gives a clean infinite network; 1.19 has a margin of 0.002. The next clashes enter at 1.376382 (the
+0.6498 vector) and 1.464386 (star–star at 1.1926).
+
+**Neighbour distances that occur** (|x| < 2 R_node): 1 bond (12 lattice vectors, perp 1.0000, **4.882037 per
+site**) and 1.051462 bonds (30 vectors, perp 1.7013, 3.311571 per site), nothing else. Both are clean (§4, §5). The
+mean number of bonds per site is exact: 12 × lens/vol(W) with lens = π(4r + δ)(2r − δ)²/12 the overlap of two
+window balls at distance δ = one perp edge, = 12 × 0.406836 = 4.882037.
+
+**Coordination numbers** (grid integration over W, 240³ cells, agreeing with 120³ to 0.02%): 3: 12.90%,
+4: 39.85%, 5: 15.13%, 6: 22.41%, 7: 3.36%, 8: 3.48%, 9: 1.56%, 10: 0.39%, 11: 0.42%, 12: 0.51%; 0, 1 and 2 never
+occur. The finite patch's coordination 2 (§5) was its edge. Mean 4.8820, matching the exact value.
+
+**Density.** Sites per unit volume = vol(W)/(6D cell) = π·1.19³/(6·bond³) = 4.451782 × 10⁻³, i.e. 1.133341 bond³ =
+224.6292 per site. Solid per site = corona 75.031732 + 2.441018 stars × 3.672407 = 83.996144. **Solid fraction
+37.393%** (prolate lattice 57.06%, diamond network 49.23%).
