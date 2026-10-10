@@ -254,8 +254,8 @@ above at any scale. **Not finding something is not proof it is new**; a speciali
 | **AXE** (five edges 1, one 1/φ) | **Known.** It is the Mosseri–Sadoc tile *t6* (Mosseri–Sadoc *D*, Kramer *A*), which has five edges τ and one edge 1, scaled by 1/τ (volume τ³/12 → 1/12). Sadoc & Mosseri 1982; Kramer 1982; Koca, Koc, Koca & Al-Siyabi 2020 (arXiv 2009.07048), Table 1. |
 | **CLEO** (equilateral base 1/φ, side edges 1) | **Known.** It is Mosseri–Sadoc *t4* (*F*) scaled by 1/τ (volume τ²/12 → (√5−1)/24). Same sources. |
 | **FUJI** (hexagonal pyramid) | Not found as a named piece. Its volume equals 3 AXE + 1 CLEO + 1 Mosseri–Sadoc *t1* (scaled 1/τ) exactly, but **it cannot be cut into those five pieces in any way**: the Dehn invariants differ (see the note below). The volume match is a coincidence. |
-| **Lotus seed**: the icosahedron of edge φ² cut into 12 icosahedra + I(1/φ) + 60 AXE + 20 FUJI + 20 CLEO | **Not found.** Koca et al. 2020 state that, with the Mosseri–Sadoc tiles alone, the icosahedron cannot be inflated past edge τ. This dissection gets to φ² by using whole icosahedra as pieces, which those tilings don't. Lalvani (US 4,723,382, 1988) builds the icosahedron of edge φ from 20 tetrahedra and 4 octahedra, a different dissection. |
-| **DESHI**, the 12 parallel icosahedra sharing 30 edges round I(1/φ) | Not found. Kabai (Bridges 2010) slides rings of 10 icosahedra along the 5-fold axes until they touch, the same method, but not this cage. Hogan (US 3,953,948, 1976) joins identical icosahedra in rings and helices along shared pentagonal caps, with no 12-around-one cluster and no fillers. |
+| **Lotus seed**: the icosahedron of edge φ² cut into 12 icosahedra + I(1/φ) + 60 AXE + 20 FUJI + 20 CLEO | **Not found** as a dissection (the arrangement inside it is Gray's, above). Koca et al. 2020 state that, with the Mosseri–Sadoc tiles alone, the icosahedron cannot be inflated past edge τ. This dissection gets to φ² by using whole icosahedra as pieces, which those tilings don't. Lalvani (US 4,723,382, 1988) builds the icosahedron of edge φ from 20 tetrahedra and 4 octahedra, a different dissection. |
+| **DESHI**, the 12 parallel icosahedra sharing 30 edges round I(1/φ) | **Known arrangement.** R. W. Gray, "More Icosahedron Scaling and Packing" (web, 2002-01-12) places icosahedra on the 12 pentagons of a dodecahedron, touching a central icosahedron at a vertex, and notes that all 12 define a larger icosahedron: an icosahedron of scale φⁿ holds a centre of scale φⁿ⁻³ and 12 icosahedra of scale φⁿ⁻², which is DESHI inside I(φ²). Gray does not discuss or fill the gaps. Kabai (Bridges 2010) and Hogan (US 3,953,948) have related rings, not this cage. |
 | **UNITY**, icosidodecahedron + 12 J11 on its pentagons | Not found as a named compound. J11 itself (the diminished icosahedron) is a standard Johnson solid. |
 | **Inner Eye** (60 triangles, volume 5φ/2) | Not identified. It may be a known stellation-type solid; not checked further. |
 | 13/27 vertex-to-vertex fill | Not found stated, but the proof (§6) is elementary. Context only. |
@@ -277,8 +277,8 @@ The √5-parts differ by (α + 2δ)/2 = (π − arctan 2)/2. arctan 2 is not a r
 So the invariants differ and no dissection exists. An exhaustive search over tile positions with vertices at FUJI's
 corners and 273 natural interior points agrees: no CLEO fits inside FUJI at all.
 
-**Where this leaves the finding:** the pieces AXE and CLEO must be credited to Mosseri & Sadoc. What has not been
-found is the *assembly*: Lotus seed (whole icosahedra + AXE + FUJI + CLEO filling I(φ²) exactly), its separable
+**Where this leaves the finding:** the pieces AXE and CLEO must be credited to Mosseri & Sadoc, and the DESHI
+arrangement inside I(φ²) to Gray (2002). What has not been found is the *filling*: Lotus seed (whole icosahedra + AXE + FUJI + CLEO filling I(φ²) exactly), its separable
 build into Hasu units, and UNITY as the slid vertex cluster. Added to the library: Koca et al. 2020 (Mosseri–Sadoc
 tiles), Hogan 1976, Kabai 2010 (link).
 
@@ -308,6 +308,14 @@ dodecahedron + 12 J11 (the parallel cage). The same move, "a J11 on every unit p
 also the easiest way to build the Lotus seed by hand: two standard solids, then the two gap pieces.
 
 Data: `ico13-dodeca-j11` (dodecahedron + 12 J11), `ico13-dodeca-j11-parts` (all 63 pieces).
-Literature: not yet searched for a dodecahedron with J11 on all 12 faces.
+Literature (2026-10-10): no named solid "dodecahedron + 12 J11" was found (the Johnson augmented dodecahedra J58-J61
+use plain pentagonal pyramids on at most three faces). The arrangement is Gray's (2002, §9): his icosahedra "just fit
+the pentagon of the dodecahedron", which is the J11 + hidden cap. What is new here is filling it: the 30 AXE + 20 FUJI
+that close it into the Lotus seed, and seeing it as the twin of UNITY.
+
+**Why it looks open.** The 12 J11 meet each other only along 30 edges. Between them are 30 wedge-shaped grooves
+(one per dodecahedron edge, each filled by an AXE) and 20 hexagonal dents, one at each dodecahedron corner, where
+the corner of the dodecahedron itself shows at the bottom (each filled by a FUJI, whose apex is that corner). So the
+build is complete with 12 J11; the openings are the gap pieces' places, not missing J11s.
 
 ![dodecahedron + 12 J11](renders/ico13-dodeca-j11.jpg) ![63 pieces, pulled apart](renders/ico13-dodeca-j11-parts-exploded.jpg)
