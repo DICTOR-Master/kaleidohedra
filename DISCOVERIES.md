@@ -918,6 +918,7 @@ icosahedron; then the one gap left made icosahedral too, and an icosahedron "cla
 - Study files: [studies/2026-10-10-icosa-networks-3](studies/2026-10-10-icosa-networks-3/),
   [studies/2026-10-10-ico-clusters](studies/2026-10-10-ico-clusters/) and
   [studies/2026-10-10-icosa-networks-2](studies/2026-10-10-icosa-networks-2/). Same checks as #19.
+- Archived: Zenodo [10.5281/zenodo.23284390](https://doi.org/10.5281/zenodo.23284390) (v2026.10.11-octet, 2026-10-11).
 - Status: **not found** in searches on 2026-10-10, including Lalvani's US 5,448,868 and NASA TM-102635 (read; the
   icosahedron appears there only as a node). Shapes not yet named by DICTO.
 
@@ -1011,6 +1012,7 @@ Finding #12, the Star Chain Reaction, and its study 12a are version v2026.10.08-
 Finding #13, the 13-dodecahedron cluster made solid, is version v2026.10.09-cluster, **DOI [10.5281/zenodo.23247392](https://doi.org/10.5281/zenodo.23247392)** (published 2026-10-09 Japan time; Zenodo shows 2026-10-08, UTC).
 Findings #17 (Kagome hulls) and #18 (the DICTO Hexa), with their study files, are version v2026.10.09-hulls, **DOI [10.5281/zenodo.23262227](https://doi.org/10.5281/zenodo.23262227)**.
 Findings #19 (the DICTO Icosa-13) and #20 (the DICTO Stella-Corona), with their study files, are version v2026.10.10-icosa, **DOI [10.5281/zenodo.23272686](https://doi.org/10.5281/zenodo.23272686)**.
+Finding #21 (the icosahedral octet), the #20 additions (the MACE network and its infinite quasiperiodic version, growth on the pentagrams), the five papers and their studies are version v2026.10.11-octet, **DOI [10.5281/zenodo.23284390](https://doi.org/10.5281/zenodo.23284390)** (published 2026-10-11 Japan time).
 
 ## Sources
 
