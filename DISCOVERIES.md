@@ -42,6 +42,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 16 | Sunstar clusters: the octet structure of #15 in the Sunstar Lattice; four dodecahedra round a cell corner, and six round an odd cell with its Dogstar inside, a solid piece (a Dogstar with its 6 dodecahedra: a Sunstar turned inside out); each fills space with Dogstars, and shared they form the octet network | DICTO (asked whether the octet network held for the Sunstars and Dogstars) | yes | **not found** — candidate (the honeycomb itself is Hart's, 1996) | 2026-10-09 |
 | 17 | Kagome hulls: six hulls of DICTO Jewels or Sunstar dodecahedra give Kagome networks, clusters sharing single pieces corner to corner; a hull with n corners sits on a network where each cluster has n neighbours (the icosahedral exception: #13) | DICTO | yes | **not found** as networks of these clusters; corner-sharing octahedra and tetrahedra are known (perovskite, pyrochlore) | 2026-10-09 (0bf8909) |
 | 18 | The DICTO Hexa: eight DICTO Jewels as one solid; with its gap, the DICTO Hexa-Key, it fills space like a checkerboard, 5 : 3 | DICTO (names) | yes | **not found** | 2026-10-09 (0bf8909) |
+| 19 | The DICTO Icosa-13 and the DICTO Stella-Corona: icosahedral twins of the Dodeca-13 and the DICTO-Star. The Lotus seed (an icosahedron of edge φ²) is exactly a dodecahedron + 12 J11 + 30 AXE + 20 FUJI; UNITY is an icosidodecahedron + 12 J11; the Stella-Corona is an icosidodecahedron + 20 icosahedra + 12 King of Pentacles (Tarot), closed, every contact a whole face, with a diamond network. Closed result: no icosahedral Dogstar | DICTO (UNITY built physically; dodecahedron + 12 J11 built in Polyhedraverse 2026-10-05; names) | study checks | **not found** as dissections, fillings and networks; the pieces AXE and CLEO are Mosseri–Sadoc tiles, the DESHI arrangement is Gray's (2002), the 20-icosahedron shell is the Wolfram Demonstration "Cluster of 20 Icosahedra" | 2026-10-10 |
 
 Known results the apps show (kept here, with their numbers, as checks; not DICTO's findings; see the section at the end):
 
@@ -820,6 +821,38 @@ carved out of wood", about eight Jewels in volume. Names by DICTO.*
   cube, octahedron and stella inscribed in the rhombic dodecahedron, and the FCC primitive cell as a
   cube squashed along a diagonal. The Hexa, the Hexa-Key, their 5 : 3 filling and the clusters are
   DICTO's.
+
+## 19. The DICTO Icosa-13 and the DICTO Stella-Corona (DICTO, 2026-10-10)
+
+*DICTO asked to try the Dodeca-13 moves with icosahedra, then for icosahedral networks echoing Hart's and his
+own dodecahedral structures. His physical 13-cell (PET caps and cap rings) is UNITY. Names by DICTO.*
+
+- **Lotus seed:** the regular icosahedron of edge φ² cut exactly into 12 icosahedra of edge 1, one of edge 1/φ
+  and 100 gap pieces (60 AXE, 20 FUJI, 20 CLEO). DICTO's simpler build, found in Polyhedraverse on 2026-10-05:
+  **dodecahedron + 12 J11 + 30 AXE + 20 FUJI**, 63 pieces, volume (235 + 105√5)/12. It comes apart into 12
+  **Hasu** units round the centre.
+- **UNITY:** an icosidodecahedron + 12 J11, the vertex-to-vertex cluster turned 36° and slid in; one open gap.
+  Its 20 dimples cannot be closed by regular-faced pieces (the rim edge is (5 + 3√5)/10); the convex **VAJRA**
+  closes each one (**Venus (Fly Trap)**, volume (735 + 301√5)/30).
+- **The DICTO Stella-Corona:** an icosidodecahedron + 20 icosahedra on its triangles (the **12-Star voids**) +
+  12 **King of Pentacles (Tarot)** on its pentagons (each a J2, 10 AXE, 5 CLEO and a small J2, flat pentagram on top).
+  33 pieces like the DICTO-Star (1 + 20 + 12 against 1 + 12 + 20), closed, every contact a whole face, volume
+  (120 + 47√5)/3. Stella-Coronas chain along a 3-fold axis and form a **diamond network** (each shares 4
+  icosahedra), the first periodic network of icosahedral clusters here.
+- **Closed result: there is no icosahedral Dogstar.** In every lattice packing of icosahedra tested (simple
+  cubic, fcc, bcc and the densest known, Betke–Henk 0.836357) the gap is one connected labyrinth, with no
+  sealed hole for a star piece.
+- **Also:** vertex to vertex, 13 icosahedra fill exactly 13/27 of their hull (hull = 3 × the icosahedron,
+  proof in the study); FUJI is not a union of Mosseri–Sadoc tiles at its own scale (proof in the study).
+- Study files: [studies/2026-10-10-icosa-13](studies/2026-10-10-icosa-13/) and
+  [studies/2026-10-10-icosa-networks](studies/2026-10-10-icosa-networks/). Checks: closed, consistently wound,
+  Euler 2, no overlap by separating axes, exact volumes in golden form. Not yet in the apps or in krp-core.
+- Status: **not found** in searches on 2026-10-10 (reference library, arXiv, Bridges, patents, web).
+  Known, and credited: AXE and CLEO are the Mosseri–Sadoc tiles t6 and t4 scaled by 1/τ (Mosseri & Sadoc 1982;
+  Koca et al. 2020); the DESHI arrangement inside I(φ²) is R. W. Gray's (2002), without the gap pieces; the
+  20-icosahedron shell is the Wolfram Demonstration "Cluster of 20 Icosahedra" (in the vein of Kabai); Robert
+  Austin's 2014 model overlaps whole icosahedra with dodecahedra. The fillings, the Stella-Corona, its network
+  and DICTO's 63-piece build are DICTO's.
 
 Since 2026-10-08 the geometry and its checks live in [krp-core](https://github.com/DICTOR-Master/krp-core),
 the geometry shared by Kaleidohedra and Rhombiverse, pinned here at `src/krp-core`.

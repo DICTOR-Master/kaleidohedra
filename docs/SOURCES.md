@@ -87,6 +87,7 @@ Books on structure and space. Mostly in copyright, so listed with links only.
 - Haresh Lalvani (1977). *Structures on Hyper-Structures*. self-published, New York. <https://openlibrary.org/search?q=lalvani+structures+on+hyper-structures>
 - Peter Pearce (1978). *Structure in Nature is a Strategy for Design*. MIT Press. <https://mitpress.mit.edu/>
 - Haresh Lalvani (1988). *Building structures based on polygonal members and icosahedral symmetry*. US 4,723,382, filed 1986-08-15, issued 1988-02-09. <https://patents.google.com/patent/US4723382A>
+- Wolfram Demonstrations Project. *Cluster of 20 Icosahedra*. <https://demonstrations.wolfram.com/ClusterOf20Icosahedra/> (the 20-icosahedron shell of the DICTO Stella-Corona)
 - R. W. Gray (2002). *More Icosahedron Scaling and Packing* (web page, 2002-01-12). <https://rwgrayprojects.com/Lynn/scaling5fold/Icosa/IcosaScaling.html> (prior art for the DICTO Icosa-13 DESHI arrangement)
 - Sándor Kabai (2010). *30 Cubes on a Rhombic Triacontahedron*. Bridges 2010 proceedings, from p. 317. <https://archive.bridgesmathart.org/2010/bridges2010-317.pdf>
 - George W. Hart, Henri Picciotto (2001). *Zome Geometry*. Key Curriculum Press. <https://www.georgehart.com/>
