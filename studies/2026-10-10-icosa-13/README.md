@@ -42,7 +42,8 @@ green, wedges cyan, pyramids and needles purple, the icosidodecahedron gold).
    - **Parallel:** outers parallel to the centre, slid in until they meet. They share 30 whole edges, and their
      inner rings are the 12 faces of a dodecahedron of edge 1. **Filled, it is exactly a regular icosahedron of edge
      φ²**, cut into 12 I(1) + a small centre I(1/φ) + 60 wedges + 20 hexagonal pyramids + 20 needles (113 pieces, no
-     overlap, 100% fill). This is the direct analogue of the DICTO Dodeca-13.
+     overlap, 100% fill). This is the direct analogue of the DICTO Dodeca-13. **DICTO's simpler build (§10):** a
+     dodecahedron with a J11 on each pentagon, then 30 AXE + 20 FUJI, makes the same solid from 63 pieces.
    - **Turned 36° (DICTO's 13-cell):** the outers' inner rings land on the 12 pentagons of an icosidodecahedron of
      edge 1, and the 12 outers touch each other only at its 30 vertices. Built as icosidodecahedron + 12 J11, it fills
      64.26% of its hull, and the rest is **one connected gap, open to the outside**.
@@ -280,3 +281,33 @@ corners and 273 natural interior points agrees: no CLEO fits inside FUJI at all.
 found is the *assembly*: Lotus seed (whole icosahedra + AXE + FUJI + CLEO filling I(φ²) exactly), its separable
 build into Hasu units, and UNITY as the slid vertex cluster. Added to the library: Koca et al. 2020 (Mosseri–Sadoc
 tiles), Hogan 1976, Kabai 2010 (link).
+
+## 10. DICTO's simpler build: dodecahedron + 12 J11
+
+DICTO built this in Polyhedraverse on 2026-10-05, while working on a dodecahedron problem, before this study
+existed. He put a J11 (gyroelongated pentagonal pyramid) on each of the 12 pentagons of a dodecahedron of edge 1. On
+2026-10-10 he recognised it as the Icosa-13.
+
+**Why it is the same cluster.** A J11 is an icosahedron with one pentagonal-pyramid cap removed. On a dodecahedron
+face, each J11 plus the cap hidden inside the dodecahedron is exactly one outer icosahedron of DESHI. §2 already
+showed that the dodecahedron is exactly the 12 caps + Inner Eye. So the dodecahedron + 12 J11 is DESHI with its
+inside filled, and
+
+**Lotus seed = dodecahedron + 12 J11 + 30 AXE + 20 FUJI**: 63 pieces instead of 113. Inner Eye, CLEO, the small
+centre and the 30 inner AXE all merge into the one dodecahedron.
+
+Checks (`ico13-dodeca-j11-parts`, rebuilt from krp-core):
+- each J11's base is a face of the dodecahedron (12/12); J11 has 16 faces and volume (25+9√5)/24;
+- 63 pieces, no overlapping pair (separating axes);
+- joined into one solid: closed, consistently wound, Euler 2, 80 faces (60 triangles + 20 hexagons), the same
+  outer vertices as the Lotus seed file;
+- volume exactly the Lotus seed's: (15+7√5)/4 + 12 · (25+9√5)/24 + 30 · 1/12 + 20 · (1+3√5)/24 = (235+105√5)/12.
+
+**The twin of UNITY.** UNITY is an icosidodecahedron + 12 J11 on its pentagons (the turned cage); this is a
+dodecahedron + 12 J11 (the parallel cage). The same move, "a J11 on every unit pentagon", works on both cores. It is
+also the easiest way to build the Lotus seed by hand: two standard solids, then the two gap pieces.
+
+Data: `ico13-dodeca-j11` (dodecahedron + 12 J11), `ico13-dodeca-j11-parts` (all 63 pieces).
+Literature: not yet searched for a dodecahedron with J11 on all 12 faces.
+
+![dodecahedron + 12 J11](renders/ico13-dodeca-j11.jpg) ![63 pieces, pulled apart](renders/ico13-dodeca-j11-parts-exploded.jpg)
