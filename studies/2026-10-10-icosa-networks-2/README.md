@@ -321,3 +321,45 @@ occur. The finite patch's coordination 2 (§5) was its edge. Mean 4.8820, matchi
 **Density.** Sites per unit volume = vol(W)/(6D cell) = π·1.19³/(6·bond³) = 4.451782 × 10⁻³, i.e. 1.133341 bond³ =
 224.6292 per site. Solid per site = corona 75.031732 + 2.441018 stars × 3.672407 = 83.996144. **Solid fraction
 37.393%** (prolate lattice 57.06%, diamond network 49.23%).
+
+## 11. The two-fold bridge (DICTO's question, 2026-10-11)
+
+Question: two bare coronas at the two-fold distance (15 + 7√5)/5 = 6.130495 (1.051462 bonds) face each other with two
+bare pentagrams each; is there a shared piece that fills or bridges the gap? Scripts `bridge-probe.mjs`,
+`bridge-probe2.mjs`, `bridge-search.mjs`, `bridge-piece.mjs`, `infinite-bridge.mjs` (the last on dicto-node, 82 s);
+data `data/twofold-bridge` (unit + raw), `data/twofold-pair-bridge-parts`, `results-bridge-search.json`,
+`infinite-bridge.log`, `results-infinite-bridge.json`. Credit: DICTO (design study, 2026-10-11).
+
+**The gap is not between the pentagrams.** The pentagrams at 31.717° from the two-fold line reach only 2.618034 (= φ²,
+their points Y) along it; the corona's extent 2.927051 is set by the **top edges of two wall icosahedra**, one edge
+each, 1.618034 apart, meeting at the pentagram point Y in the valley between them. The facing corona is the inversion
+through the midpoint, so its two bottom edges sit exactly over those edges, 0.276393 away: the free region is a
+V-groove under an inverted V-groove, joined by a slab (5 − √5)/10 thick. A's pentagram and the parallel B pentagram
+facing it are 0.760845 apart in plane distance but offset 3.222992 sideways, more than the pentagram diameter
+2 × 1.376382 = 2.752764: they do not overlap in projection, nothing lies between them. The hull of the two parallel
+pentagrams clips 10 icosahedra, the crossed pair likewise, all four pentagrams 86 parts; of 3969 convex hulls of
+subsets of the facing faces (4 icosahedron faces + 2 pentagrams per corona), 15 are clean and **none contains a
+pentagram**. So no convex piece can touch a bare pentagram and the other corona; the pentagrams stay bare.
+
+**The bridge** (working label: *two-fold bridge*; unit scale, icosahedron edge 1): the convex hull of the four inward
+icosahedron faces at the two ridges of each corona (the largest clean hull). A box 1 × φ × (5 − √5)/10 (= 1 × 1.618034 ×
+0.276393) with a pyramid of height (√5 − 1)/4 = 0.309017 on each 1 × φ face, its apex 1 from all four corners (the apex
+is the pentagram point Y of the corona). Vertices (e₁ along the contact edges, e₂ across, s along the two-fold axis,
+origin at the midpoint of the two coronas): (±1/2, ±φ/2, ±(5 − √5)/20) and (0, 0, ±√5/5). 10 vertices, 20 edges
+(0.276393, 1, φ), 12 faces: 4 equilateral triangles (the contacts, whole icosahedron faces), 4 obtuse golden
+triangles 1-1-φ, 2 rectangles 1 × 0.276393, 2 rectangles φ × 0.276393. Volume **(5 + 3√5)/15 = 0.780547** (box √5/5 +
+two pyramids 1/6). Raw scale (× 2/φ): edges 0.341641, 1.236068, 2; volume (40 − 8√5)/15 = 1.474097; two-fold distance
+7.577709. Symmetry D2h, the full symmetry of the pair, so the piece is the same seen from either corona and needs no
+choice of orientation. Checks: no overlap with any of the 450 convex parts of the two coronas (separating axes) nor
+with any of their 24 bond stars; union of the two coronas + bridge closed, Euler 0 (one handle), volume
+(1205 + 473√5)/15 = 150.844010; min distance 0 (touching). It bridges the gap, it does not fill it: the slab 0.276393
+thick between the ridges outside the piece and the pentagram pockets stay open.
+
+**Infinite network with the bridge on every two-fold pair** (`infinite-bridge.mjs`, the §10 argument with a third
+object type owned by every pair of sites 1.051462 bonds apart, 30 vectors, rotated onto each by the icosahedral group,
+checked identical from both ends; reach 3.512461 < R_node): 282 311 object pairs in range, 21 684 occurring, 205 506
+separating-axis tests, **0 overlaps among occurring pairs** (corona–bridge 660 pairs, star–bridge 4980, bridge–bridge
+6420). The 3890 overlapping pairs are all excluded by the window; the first bridge clash (corona–bridge across a
+0.5628 vector) enters at 1.275976 perp edges, above the corona–corona limit 1.191982, so the **largest clean window is
+unchanged**. 1.655785 bridges per site × 0.780547 = 1.292418; solid per site 85.288563, density **37.969%** (37.393%
+without). The 13-cluster's 30 outer two-fold pairs (an occurring configuration) take 30 bridges, all clean.

@@ -877,7 +877,10 @@ pieces. Names by DICTO.*
   periodic and the aperiodic network from the same bond. **The infinite quasiperiodic network is clean:** with a
   ball window of any radius below √((15 + 6√5)/20) = 1.191982 perpendicular edges (1.19 used), proved by finite local
   complexity (all 153 possible neighbour vectors, every occurring piece pair tested exactly, 0 overlaps); every
-  corona has 3 to 12 bonds (mean 4.882), solid fraction 37.393%. Not found in a search on 2026-10-10.
+  corona has 3 to 12 bonds (mean 4.882), solid fraction 37.393%.  Where two coronas face across a two-fold axis, a **two-fold bridge** (study §11, working label until DICTO
+  names it: a 1 × φ × (5 − √5)/10 box with a pyramid on each 1 × φ face, volume (5 + 3√5)/15, its 4 equilateral
+  faces whole icosahedron faces) joins them; with a bridge on every such pair the infinite network is still clean
+  (solid fraction 37.969%). The facing pentagrams themselves stay bare. Not found in a search on 2026-10-10.
 - **A second clean joint** (study 2026-10-10-icosa-networks-3): two Stella-Coronas sharing one icosahedron at
   138.19° are clean; with 109.47° and 180° it gives chains, bent chains and 3-connected nets (to be built).
 - Study files: [studies/2026-10-10-icosa-networks](studies/2026-10-10-icosa-networks/) and
