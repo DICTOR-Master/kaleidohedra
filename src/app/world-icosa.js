@@ -3,7 +3,7 @@
 // the clusters with their parts views and a slider that pulls the pieces apart, the Kepler Star Diadem with its
 // gaps filled by the 120 Shark Teeth or left open, and the single pieces. Geometry in
 // krp-core/src/geometry-extensions/icosa.js, checked in scripts/verify-icosa.mjs.
-// English first; the other languages fall back to it until translated.
+// Words in all 7 languages (i18n icosa.*); DICTO's names stay untranslated.
 import * as THREE from 'three';
 import { ICOSA_SOLIDS, ICOSA_PARTS, ICOSA_NAMES, ICOSA_PIECE_KEYS, ICOSA_CLUSTER_KEYS } from '../krp-core/src/geometry-extensions/icosa.js';
 import { ROOF_FOLD_WORLD_SCALE as WS } from '../krp-core/src/geometry-extensions/roof-fold.js';
