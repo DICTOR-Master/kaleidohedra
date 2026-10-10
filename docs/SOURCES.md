@@ -87,7 +87,7 @@ Books on structure and space. Mostly in copyright, so listed with links only.
 - Haresh Lalvani (1977). *Structures on Hyper-Structures*. self-published, New York. <https://openlibrary.org/search?q=lalvani+structures+on+hyper-structures>
 - Peter Pearce (1978). *Structure in Nature is a Strategy for Design*. MIT Press. <https://mitpress.mit.edu/>
 - Haresh Lalvani (1988). *Building structures based on polygonal members and icosahedral symmetry*. US 4,723,382, filed 1986-08-15, issued 1988-02-09. <https://patents.google.com/patent/US4723382A>
-- Sándor Kabai (2010). *30 Cubes on a Rhombic Triacontahedron*. Bridges 2010, 317-324. <https://archive.bridgesmathart.org/2010/bridges2010-317.pdf>
+- Sándor Kabai (2010). *30 Cubes on a Rhombic Triacontahedron*. Bridges 2010 proceedings, from p. 317. <https://archive.bridgesmathart.org/2010/bridges2010-317.pdf>
 - George W. Hart, Henri Picciotto (2001). *Zome Geometry*. Key Curriculum Press. <https://www.georgehart.com/>
 - John H. Conway, Heidi Burgiel, Chaim Goodman-Strauss (2008). *The Symmetries of Things*. A K Peters. <https://doi.org/10.1201/b21368>
 
