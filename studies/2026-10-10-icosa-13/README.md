@@ -319,6 +319,10 @@ Checks (`ico13-dodeca-j11-parts`, rebuilt from krp-core):
 dodecahedron + 12 J11 (the parallel cage). The same move, "a J11 on every unit pentagon", works on both cores. It is
 also the easiest way to build the Lotus seed by hand: two standard solids, then the two gap pieces.
 
+DICTO also built it (2026-10-10) as a dodecahedron + 12 metabidiminished icosahedra (J62) + 12 pentagonal pyramids
+(J2). It is the same solid: a J62 is an icosahedron with two caps removed, so a J62 with a J2 back on its outer
+pentagon is a J11. The J11 version needs half as many pieces.
+
 Data: `ico13-dodeca-j11` (dodecahedron + 12 J11), `ico13-dodeca-j11-parts` (all 63 pieces).
 Literature (2026-10-10): no named solid "dodecahedron + 12 J11" was found (the Johnson augmented dodecahedra J58-J61
 use plain pentagonal pyramids on at most three faces). The arrangement is Gray's (2002, §9): his icosahedra "just fit
