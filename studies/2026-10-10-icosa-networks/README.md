@@ -208,7 +208,7 @@ The crown star's 12 pentagrams invite the next scale. On the inner pentagon (edg
 
 > **Correction (2026-10-10):** the small UNITY, DESHI and crown-star tests above were wrong: each small solid was
 > placed with its base piece pointing into the crown. The numbers 17, 27 and 575 are superseded. Placed outward,
-> the overlaps that remain are much smaller, and several pieces do grow on the pentagrams (the DICTO Kepler star,
+> the overlaps that remain are much smaller, and several pieces do grow on the pentagrams (the Kepler Star,
 > the Rosebuds, the Golden Closure): see [2026-10-10-pentagram-growth](../2026-10-10-pentagram-growth/).
 
 So the chain stops after one step with these pieces (see the correction above). Not pursued further here; a different second-scale piece

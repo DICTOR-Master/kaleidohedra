@@ -860,7 +860,7 @@ pieces. Names by DICTO.*
 - **Closed result: there is no icosahedral Dogstar.** In every lattice packing of icosahedra tested (simple
   cubic, fcc, bcc and the densest known, Betke–Henk 0.836357) the gap is one connected labyrinth, with no
   sealed hole for a star piece.
-- **Growth on the pentagrams** (names by DICTO): the **DICTO Kepler star** (Kepler's small stellated
+- **Growth on the pentagrams** (names by DICTO): the **Kepler Star** (Kepler's small stellated
   dodecahedron, core 1/φ, minus its base spike) fits each King of Pentacles' flat pentagram along whole faces;
   12 of them make the **Kepler Star Diadem** (volume (165 + 89√5)/3, thin 26.06° crevices remain), and two
   Stella-Coronas join through one as the **KEPLER MACE**. Growth by φ repeats along the 12 axes (**Cosmic Seed**

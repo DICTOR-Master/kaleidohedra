@@ -233,7 +233,7 @@ DICTO named the shapes after seeing them in 3D. The sections above keep the work
 
 | Working label | DICTO's name |
 |---|---|
-| Kepler star | **DICTO Kepler star** |
+| Kepler star | **Kepler Star** |
 | Kepler layer | **Kepler Star Diadem** |
 | Kepler chain | **KEPLER MACE** |
 | G-wedge (Mosseri–Sadoc t2) | **Hound Tooth** |
