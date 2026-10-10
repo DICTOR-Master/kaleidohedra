@@ -24,6 +24,11 @@ piece) and the gaps by periodic voxel flood fills. Scripts (kept with the study'
 > is left out of the repo; it is rebuilt from `mace-quasi-sites` with the working script. Research scripts stay
 > with the study's working copy.
 
+
+**Names (DICTO, 2026-10-10).** H = **Unborn**; edge roof = **Admiral Cap**; roof star = **Caltrop**; Pacioli corner cap =
+**Cutting Corner**; Pacioli edge cap = **Chisel**; MACE 13-cluster = **The Mothership**; prolate MACE lattice =
+**Seven Seeds of Rye**. The sections below keep the working labels.
+
 ## Summary, ranked by the periodic to aperiodic aim
 
 | Rank | Dodecahedral structure | Icosahedral echo | Result |

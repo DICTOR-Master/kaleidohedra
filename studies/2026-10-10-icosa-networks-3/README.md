@@ -17,6 +17,11 @@ dicto-node, 64 s; `quasi.log`, `results-quasi-diamond.json`), `render.mjs`, `ren
 > #20); keep the 2 : 1 sizes; build the bent-chain and 3-connected Stella-Corona networks next. Names for the new
 > shapes are still DICTO's to give. Research scripts stay with the study's working copy.
 
+
+**Names (DICTO, 2026-10-10).** Edge roof = **Admiral Cap**; tetrahedral corner cap = **Weirdstone**; tetrahedral edge
+cap = **Tadpole**; vertex star = **Vertebral Star**; gap star = **Frog Chorus**; clawed icosahedron = **Lotus Jewel**.
+The sections below keep the working labels.
+
 ## Summary
 
 | Item | Result |

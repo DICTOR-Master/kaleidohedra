@@ -44,7 +44,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 18 | The DICTO Hexa: eight Hexa Jewels (DICTO Jewels passing through each other) as one solid; with its gap, the DICTO Hexa-Key, it fills space like a checkerboard, 5 : 3 | DICTO (names) | yes | **not found** | 2026-10-09 (0bf8909) |
 | 19 | The DICTO Icosa-13: the Lotus seed (an icosahedron of edge φ²) is exactly a dodecahedron + 12 J11 + 30 AXE + 20 FUJI; UNITY is an icosidodecahedron + 12 J11, its dimples closed by VAJRA | DICTO (UNITY built physically; dodecahedron + 12 J11 built in Polyhedraverse 2026-10-05; names) | study checks | **not found** as dissections and fillings; the pieces AXE and CLEO are Mosseri–Sadoc tiles, the DESHI arrangement is Gray's (2002) | 2026-10-10 |
 | 20 | The DICTO Stella-Corona: icosidodecahedron + 20 icosahedra + 12 King of Pentacles (Tarot), the DICTO-Star's icosahedral twin, closed, every contact a whole face, with a diamond network. Closed result: no icosahedral Dogstar | DICTO (names) | study checks | **not found**; the 20-icosahedron shell is the Wolfram Demonstration "Cluster of 20 Icosahedra" | 2026-10-10 |
-| 21 | The icosahedral octet: Euclid's roofs moved to the icosahedron. An icosahedron + 6 edge roofs is the regular octahedron; icosahedra (edge 1) with their roofs in the octet's octahedra and icosahedra of edge 1/2 with corner and edge caps in its tetrahedra fill space exactly (icosahedra 60.79%); the clawed icosahedron | DICTO (the idea: "the same principle as the dodecahedron and roofs, but with six"; the tetrahedral gap made icosahedral; clawing like the Jewel) | study checks | **not found** as fillings; the icosahedron in the octahedron at the golden section is classical (Pacioli; Fuller's Jitterbug) | 2026-10-10 |
+| 21 | The icosahedral octet: Euclid's roofs moved to the icosahedron. An icosahedron + 6 edge roofs is the regular octahedron; icosahedra (edge 1) with their roofs in the octet's octahedra and icosahedra of edge 1/2 with corner and edge caps in its tetrahedra fill space exactly (icosahedra 60.79%); the Lotus Jewel (the clawed icosahedron) | DICTO (the idea: "the same principle as the dodecahedron and roofs, but with six"; the tetrahedral gap made icosahedral; clawing like the Jewel) | study checks | **not found** as fillings; the icosahedron in the octahedron at the golden section is classical (Pacioli; Fuller's Jitterbug) | 2026-10-10 |
 
 Known results the apps show (kept here, with their numbers, as checks; not DICTO's findings; see the section at the end):
 
@@ -870,7 +870,7 @@ pieces. Names by DICTO.*
   **Golden Closure** closes the legs round a small icosidodecahedron exactly with golden pieces (**Hound Tooth**
   and **Tricap**, the Mosseri–Sadoc tiles t2 and t3, with AXE and CLEO); round a small dodecahedron and a Kepler
   star no golden closure exists (gaps of 63.43° and 26.06° that no golden piece can make).
-- **The MACE network** (study 2026-10-10, shapes not yet named): Stella-Coronas bonded through Kepler Stars
+- **The MACE network** (names by DICTO: the 13-cluster is **The Mothership**, the prolate lattice **Seven Seeds of Rye**): Stella-Coronas bonded through Kepler Stars
   (two spikes removed) along five-fold axes, period 5.830447. Clean as a 13-cluster (12 bonds, one closed
   solid, volume (1605 + 650√5)/3), as a periodic lattice on the prolate golden rhombohedron (density 57.06%), and
   as a quasiperiodic cut-and-project patch of 93 coronas (192 bonds, no overlaps among 23,037 parts): the
@@ -895,15 +895,15 @@ pieces. Names by DICTO.*
 *DICTO's idea: the EKP cell's principle (a cube + 6 roofs = the dodecahedron, #8) "but with six" on the
 icosahedron; then the one gap left made icosahedral too, and an icosahedron "clawed" like the DICTO Jewel (#10).*
 
-- **Edge roofs:** an icosahedron of edge 1 + 6 edge roofs (each two small tetrahedra over one of its 6 axial edges,
+- **Admiral Caps** (the edge roofs; names by DICTO): an icosahedron of edge 1 + 6 Admiral Caps (each two small tetrahedra over one of its 6 axial edges,
   volume φ/12; in Polyhedraverse's DICTO's pieces) is the regular octahedron of edge φ²/√2. Icosahedra with their
   roofs and regular tetrahedra fill space as the octet truss (symmetry Fm-3, the same m-3 as EKP's Pm-3).
 - **The all-icosahedral octet:** each tetrahedron is also "really an icosahedron": one of edge **1/2** + 4 corner
   caps + 6 edge caps (tetrahedron φ⁶/24). Every cell holds an icosahedron and space is filled exactly (2021 parts,
   no overlaps); the icosahedra fill (175 − 75√5)/12 = 60.79%. Across each shared triangle the small icosahedron's
-  face is the medial triangle of the big one's. The gap round each vertex is one closed **gap star**
+  face is the medial triangle of the big one's. The gap round each vertex is one closed **Frog Chorus** (the gap star)
   ((33 + 23√5)/48); gap stars touch each other, so there is no sealed Dogstar twin.
-- **The clawed icosahedron:** on the simple cubic lattice of icosahedra (spacing φ) the 8 neighbouring void
+- **The Lotus Jewel** (the clawed icosahedron): on the simple cubic lattice of icosahedra (spacing φ) the 8 neighbouring void
   dodecahedra bite into each icosahedron, leaving 36 faces, 8 triangular windows of 3 golden gnomons, volume
   (1 + 3√5)/4 = 88.33%; it fills space with the dodecahedra, gap exactly 1/2.
 - **Classical, credited:** inside the octahedron sits the next icosahedron, φ times smaller, and so on, every step
