@@ -239,7 +239,7 @@ diamond network as views, with the shared icosahedra drawn once.
 2. Credit: plain prior-art lines, as in §8 and in `docs/SOURCES.md`.
 3. The diamond network becomes a world (queued; the design questions come first).
 4. The J11 move goes on every Polyhedraverse solid with unit pentagons (queued).
-5. "No icosahedral Dogstar" is recorded as a closed result (DISCOVERIES #19).
+5. "No icosahedral Dogstar" is recorded as a closed result (DISCOVERIES #20).
 6. The second scale on the pentagrams is pursued in a follow-up study.
 
 ## Files
