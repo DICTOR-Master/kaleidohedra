@@ -83,9 +83,11 @@ Books on structure and space. Mostly in copyright, so listed with links only.
 - Stephen C. Baer (1973). *Structural system*. US 3,722,153, issued 1973-03-27 (assignee Zomeworks Corp.). <https://patents.google.com/patent/US3722153A>
 - Arthur L. Loeb (1976). *Space Structures: Their Harmony and Counterpoint*. Addison-Wesley 1976; Birkhäuser 1991. <https://doi.org/10.1007/978-1-4612-0437-4>
 - Peter J. Pearce (1976). *Minimum inventory maximum diversity building system*. US 3,974,600, issued 1976-08-17. <https://patents.google.com/patent/US3974600A>
+- John P. Hogan (1976). *Homohedral construction employing icosahedron*. US 3,953,948, issued 1976-05-04. <https://patents.google.com/patent/US3953948A>
 - Haresh Lalvani (1977). *Structures on Hyper-Structures*. self-published, New York. <https://openlibrary.org/search?q=lalvani+structures+on+hyper-structures>
 - Peter Pearce (1978). *Structure in Nature is a Strategy for Design*. MIT Press. <https://mitpress.mit.edu/>
 - Haresh Lalvani (1988). *Building structures based on polygonal members and icosahedral symmetry*. US 4,723,382, filed 1986-08-15, issued 1988-02-09. <https://patents.google.com/patent/US4723382A>
+- Sándor Kabai (2010). *30 Cubes on a Rhombic Triacontahedron*. Bridges 2010, 317-324. <https://archive.bridgesmathart.org/2010/bridges2010-317.pdf>
 - George W. Hart, Henri Picciotto (2001). *Zome Geometry*. Key Curriculum Press. <https://www.georgehart.com/>
 - John H. Conway, Heidi Burgiel, Chaim Goodman-Strauss (2008). *The Symmetries of Things*. A K Peters. <https://doi.org/10.1201/b21368>
 
@@ -117,6 +119,7 @@ Penrose rhombi, aperiodic tilings, diffraction.
 - M. Baake, D. Damanik, U. Grimm (2015). *What is aperiodic order?*. <https://arxiv.org/abs/1512.05104>
 - N. O. Koca, M. Koca, A. Al-Mukhaini, A. Al-Qanobi (2015). *Quaternionic representations of the pyritohedral group, related polyhedra and lattices*. <https://arxiv.org/abs/1506.04600>
 - M. Koca, R. Koc, N. O. Koca, A. Al-Siyabi (2020). *Icosahedral tiling with dodecahedral structures*. <https://arxiv.org/abs/2008.00862>
+- N. O. Koca, R. Koc, M. Koca, A. Al-Siyabi (2020). *Dodecahedral structures with Mosseri-Sadoc tiles*. <https://arxiv.org/abs/2009.07048> (prior art for the DICTO Icosa-13 pieces AXE and CLEO)
 - D. Smith, J. S. Myers, C. S. Kaplan, C. Goodman-Strauss (2023). *An aperiodic monotile*. <https://arxiv.org/abs/2303.10798>
 
 ### Bridges: periodic ↔ aperiodic

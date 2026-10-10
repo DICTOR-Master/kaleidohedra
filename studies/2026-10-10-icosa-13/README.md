@@ -1,14 +1,30 @@
 # DICTO Icosa-13 (study, 2026-10-10)
 
-Research only, nothing committed. Study and family name: **DICTO Icosa-13** (DICTO, 2026-10-10). Names of the individual pieces are still DICTO's to give.
+Research only, no app changes. Study and family name: **DICTO Icosa-13** (DICTO, 2026-10-10).
+
+**Names (DICTO, 2026-10-10).** DICTO named each shape after seeing it as a 3D model. The sections below keep the
+study's working labels; this table maps them:
+
+| Working label | DICTO's name |
+|---|---|
+| wedge | **AXE** |
+| hexagonal pyramid | **FUJI** |
+| needle | **CLEO** |
+| outer star (FUJI + 3 AXE) | **Triskelion Hex** |
+| inner star (CLEO + 3 AXE) | **Triskelion** |
+| core | **Inner Eye** |
+| finned unit | **Hasu (lotus)** |
+| filled cluster | **Lotus seed** |
+| parallel cage | **DESHI** |
+| DICTO's 13-cell (icosidodecahedron + 12 J11) | **UNITY** |
 
 DICTO asked to try the Dodeca-13 moves (filled cluster, gap pieces, units, tiling) with regular icosahedra,
 starting at 13 cells. He has built a 13-cell of his own (photos `~/Downloads/KPR-photos/IMG_2572`, `IMG_2573`: an
 icosidodecahedron of PET caps with a mesh of cap security rings). Those materials are flexible, but the connectivity
 is the same as the rigid solid, so the photos were read for topology only.
 
-Design study with Claude (Fable), research only: no app changes, no literature search done
-(novelty: not searched). Geometry comes from krp-core v0.14.0 (`id-star.js`: icosahedron, icosidodecahedron, unit
+Design study with Claude (Fable), research only: no app changes, literature search
+in §9. Geometry comes from krp-core v0.14.0 (`id-star.js`: icosahedron, icosidodecahedron, unit
 dodecahedron). Every solid was rebuilt and checked afresh: closed, consistently wound, Euler 2, no overlap by
 separating axes, volumes exact. Scale **unit** = icosahedron edge 1 (`data/*-unit.json`; `*-raw.json` are the same
 solids before normalising).
@@ -217,11 +233,33 @@ None of these is a stellation the way the Dogstar is a stellation of the dodecah
 A world isn't recommended: neither cluster tiles space (§4).
 
 Questions:
-1. Names for the pieces (wedge, hexagonal pyramid, needle, outer and inner star, finned unit, the 13-cell). The ones
-   above are working labels.
+1. ~~Names~~: answered, see the table at the top.
 2. Which to build in Polyhedraverse, and which are attachable? The filled parallel cluster is a plain icosahedron of
    edge φ², so it attaches wherever an icosahedron of that size does.
 3. Scale: icosahedron edge 1, as built here?
 4. Should the open item in §7 be studied next: what fills DICTO's 13-cell dimples (116.57°)?
 5. Record in DISCOVERIES: the filled parallel cage = I(φ²) dissection, DICTO's 13-cell = slid vertex cluster, and the
-   13/27 fill? No literature search has been done yet.
+   13/27 fill? The literature search is in §9.
+
+## 9. Literature search (2026-10-10)
+
+Searched: the private references library (82 references, full text of every PDF), arXiv, the Bridges archive,
+patents (Lalvani, Hogan), the Polytope Wiki and Wikipedia, and George Hart's pages. Scope: the pieces and clusters
+above at any scale. **Not finding something is not proof it is new**; a specialist check would still be needed.
+
+| Item | Result |
+|---|---|
+| **AXE** (five edges 1, one 1/φ) | **Known.** It is the Mosseri–Sadoc tile *t6* (Mosseri–Sadoc *D*, Kramer *A*), which has five edges τ and one edge 1, scaled by 1/τ (volume τ³/12 → 1/12). Sadoc & Mosseri 1982; Kramer 1982; Koca, Koc, Koca & Al-Siyabi 2020 (arXiv 2009.07048), Table 1. |
+| **CLEO** (equilateral base 1/φ, side edges 1) | **Known.** It is Mosseri–Sadoc *t4* (*F*) scaled by 1/τ (volume τ²/12 → (√5−1)/24). Same sources. |
+| **FUJI** (hexagonal pyramid) | Not found as a named piece. Its volume equals 3 AXE + 1 CLEO + 1 Mosseri–Sadoc *t1* exactly (all at the 1/τ scale), so it may split into those tiles; this is not checked. |
+| **Lotus seed**: the icosahedron of edge φ² cut into 12 icosahedra + I(1/φ) + 60 AXE + 20 FUJI + 20 CLEO | **Not found.** Koca et al. 2020 state that, with the Mosseri–Sadoc tiles alone, the icosahedron cannot be inflated past edge τ. This dissection gets to φ² by using whole icosahedra as pieces, which those tilings don't. Lalvani (US 4,723,382, 1988) builds the icosahedron of edge φ from 20 tetrahedra and 4 octahedra, a different dissection. |
+| **DESHI**, the 12 parallel icosahedra sharing 30 edges round I(1/φ) | Not found. Kabai (Bridges 2010) slides rings of 10 icosahedra along the 5-fold axes until they touch, the same method, but not this cage. Hogan (US 3,953,948, 1976) joins identical icosahedra in rings and helices along shared pentagonal caps, with no 12-around-one cluster and no fillers. |
+| **UNITY**, icosidodecahedron + 12 J11 on its pentagons | Not found as a named compound. J11 itself (the diminished icosahedron) is a standard Johnson solid. |
+| **Inner Eye** (60 triangles, volume 5φ/2) | Not identified. It may be a known stellation-type solid; not checked further. |
+| 13/27 vertex-to-vertex fill | Not found stated, but the proof (§6) is elementary. Context only. |
+| Lattice packings (§4) | Lower bounds only. The densest known lattice packing of icosahedra is 0.836357 (Betke & Henk 2000; Torquato & Jiao 2009). |
+
+**Where this leaves the finding:** the pieces AXE and CLEO must be credited to Mosseri & Sadoc. What has not been
+found is the *assembly*: Lotus seed (whole icosahedra + AXE + FUJI + CLEO filling I(φ²) exactly), its separable
+build into Hasu units, and UNITY as the slid vertex cluster. Added to the library: Koca et al. 2020 (Mosseri–Sadoc
+tiles), Hogan 1976, Kabai 2010 (link).
