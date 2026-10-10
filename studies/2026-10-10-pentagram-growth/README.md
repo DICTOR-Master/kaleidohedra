@@ -224,8 +224,8 @@ Note: §10 found 60 crevices of 26.06° along the Kepler layer's spikes, so its 
 not fully closed; see §10.
 
 **DICTO's decisions (2026-10-10):** names given (table below); keep searching for a golden closure (done, §10);
-correct the icosa-networks §7 (done); a contact covered completely by several faces counts as closed. Still
-open: which growth goes into the apps first, and 12 half-buds or 3 full buds.
+correct the icosa-networks §7 (done); a contact covered completely by several faces counts as closed. Rosebuds:
+the 12-fold version (all 12 pentagrams, 10 icosahedra each). Still open: which growth goes into the apps first.
 
 ## Names and DICTO's rule (2026-10-10)
 
