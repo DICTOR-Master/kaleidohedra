@@ -253,7 +253,7 @@ above at any scale. **Not finding something is not proof it is new**; a speciali
 |---|---|
 | **AXE** (five edges 1, one 1/φ) | **Known.** It is the Mosseri–Sadoc tile *t6* (Mosseri–Sadoc *D*, Kramer *A*), which has five edges τ and one edge 1, scaled by 1/τ (volume τ³/12 → 1/12). Sadoc & Mosseri 1982; Kramer 1982; Koca, Koc, Koca & Al-Siyabi 2020 (arXiv 2009.07048), Table 1. |
 | **CLEO** (equilateral base 1/φ, side edges 1) | **Known.** It is Mosseri–Sadoc *t4* (*F*) scaled by 1/τ (volume τ²/12 → (√5−1)/24). Same sources. |
-| **FUJI** (hexagonal pyramid) | Not found as a named piece. Its volume equals 3 AXE + 1 CLEO + 1 Mosseri–Sadoc *t1* (scaled 1/τ) exactly, but **it cannot be cut into those five pieces in any way**: the Dehn invariants differ (see the note below). The volume match is a coincidence. |
+| **FUJI** (hexagonal pyramid) | Not found as a named piece, and **not a union of Mosseri–Sadoc tiles at the Icosa-13 scale** (proof below). Two tests: the mix 3 AXE + CLEO + t1′ has FUJI's volume but not its Dehn invariant; the mix t1′ + t2′ + 2 CLEO + 2 AXE has both, but fails the base-hexagon argument. Mixes that use smaller tiles (scale τ⁻² and below) are still open. |
 | **Lotus seed**: the icosahedron of edge φ² cut into 12 icosahedra + I(1/φ) + 60 AXE + 20 FUJI + 20 CLEO | **Not found** as a dissection (the arrangement inside it is Gray's, above). Koca et al. 2020 state that, with the Mosseri–Sadoc tiles alone, the icosahedron cannot be inflated past edge τ. This dissection gets to φ² by using whole icosahedra as pieces, which those tilings don't. Lalvani (US 4,723,382, 1988) builds the icosahedron of edge φ from 20 tetrahedra and 4 octahedra, a different dissection. |
 | **DESHI**, the 12 parallel icosahedra sharing 30 edges round I(1/φ) | **Known arrangement.** R. W. Gray, "More Icosahedron Scaling and Packing" (web, 2002-01-12) places icosahedra on the 12 pentagons of a dodecahedron, touching a central icosahedron at a vertex, and notes that all 12 define a larger icosahedron: an icosahedron of scale φⁿ holds a centre of scale φⁿ⁻³ and 12 icosahedra of scale φⁿ⁻², which is DESHI inside I(φ²). Gray does not discuss or fill the gaps. Kabai (Bridges 2010) and Hogan (US 3,953,948) have related rings, not this cage. |
 | **UNITY**, icosidodecahedron + 12 J11 on its pentagons | Not found as a named compound. J11 itself (the diminished icosahedron) is a standard Johnson solid. |
@@ -274,8 +274,20 @@ integer-relation search (PSLQ) and hold to 120 digits. Writing each length as a 
 
 The √5-parts differ by (α + 2δ)/2 = (π − arctan 2)/2. arctan 2 is not a rational multiple of π, because cos²(arctan 2)
 = 1/5, and an angle that is a rational multiple of π with rational cos² must have cos² equal to 0, 1/4, 1/2, 3/4 or 1.
-So the invariants differ and no dissection exists. An exhaustive search over tile positions with vertices at FUJI's
-corners and 273 natural interior points agrees: no CLEO fits inside FUJI at all.
+So the invariants differ and no dissection into those five pieces exists.
+
+**FUJI and all six Mosseri–Sadoc tiles.** An integer linear program over the six tiles at four scales (τ⁰ to τ⁻³)
+finds mixes with FUJI's exact volume and Dehn invariant, e.g. t1′ + t2′ + 2 CLEO + 2 AXE at the Icosa-13 scale, so
+the Dehn invariant alone cannot decide. (CLEO does fit inside FUJI: up to 1.023 × its size, found by optimising over
+rotations.) A face argument settles every mix whose tiles are at the Icosa-13 scale or larger:
+- FUJI's base is a hexagon with all angles 120°. Mosseri–Sadoc faces are triangles with angles 60° (equilateral),
+  36°/72° or 36°/108°, and 120° can only be made as 60° + 60°. So each hexagon corner is the corner of two
+  equilateral tile faces lying in the base, one along each hexagon edge.
+- At these scales the equilateral faces have side 1 or 1/τ. On a long edge (length 1), two triangles started from
+  both ends would overlap unless one face spans the whole edge; a side-1 face cannot start on a short edge (it would
+  stick out). So the base holds an equilateral face of side 1 on each long edge and one of side 1/τ on each short edge.
+- Those six triangles have total area 3·(√3/4) + 3·(√3/4)/τ² = 1.795, more than the hexagon's 1.669, so two of them
+  overlap. Contradiction: no such dissection exists.
 
 **Where this leaves the finding:** the pieces AXE and CLEO must be credited to Mosseri & Sadoc, and the DESHI
 arrangement inside I(φ²) to Gray (2002). What has not been found is the *filling*: Lotus seed (whole icosahedra + AXE + FUJI + CLEO filling I(φ²) exactly), its separable
