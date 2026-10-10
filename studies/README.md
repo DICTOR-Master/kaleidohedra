@@ -12,3 +12,4 @@ themselves are written up in [DISCOVERIES.md](../DISCOVERIES.md) and archived on
 | [2026-10-09-dodeca-13](2026-10-09-dodeca-13/) | #13 The DICTO Dodeca-13 |
 | [2026-10-10-icosa-13](2026-10-10-icosa-13/) | #19 The DICTO Icosa-13 |
 | [2026-10-10-icosa-networks](2026-10-10-icosa-networks/) | #20 The DICTO Stella-Corona |
+| [2026-10-10-pentagram-growth](2026-10-10-pentagram-growth/) | #20 Growth on the Stella-Corona's pentagrams |

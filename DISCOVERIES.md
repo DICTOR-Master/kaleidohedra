@@ -860,7 +860,16 @@ pieces. Names by DICTO.*
 - **Closed result: there is no icosahedral Dogstar.** In every lattice packing of icosahedra tested (simple
   cubic, fcc, bcc and the densest known, Betke–Henk 0.836357) the gap is one connected labyrinth, with no
   sealed hole for a star piece.
-- Study files: [studies/2026-10-10-icosa-networks](studies/2026-10-10-icosa-networks/). Same checks as #19.
+- **Growth on the pentagrams** (names by DICTO): the **DICTO Kepler star** (Kepler's small stellated
+  dodecahedron, core 1/φ, minus its base spike) fits each King of Pentacles' flat pentagram along whole faces;
+  12 of them make the **Kepler Star Diadem** (volume (165 + 89√5)/3, thin 26.06° crevices remain), and two
+  Stella-Coronas join through one as the **KEPLER MACE**. Growth by φ repeats along the 12 axes (**Cosmic Seed**
+  spires of Kings, **Rosebuds** on Rosebuds), converging where the next Stella-Corona of the chain sits. The
+  **Golden Closure** closes the legs round a small icosidodecahedron exactly with golden pieces (**Hound Tooth**
+  and **Tricap**, the Mosseri–Sadoc tiles t2 and t3, with AXE and CLEO); round a small dodecahedron and a Kepler
+  star no golden closure exists (gaps of 63.43° and 26.06° that no golden piece can make).
+- Study files: [studies/2026-10-10-icosa-networks](studies/2026-10-10-icosa-networks/) and
+  [studies/2026-10-10-pentagram-growth](studies/2026-10-10-pentagram-growth/). Same checks as #19.
   Not yet in the apps or in krp-core.
 - Archived: Zenodo [10.5281/zenodo.23272686](https://doi.org/10.5281/zenodo.23272686) (v2026.10.10-icosa, 2026-10-10).
 - Status: **not found** in searches on 2026-10-10. Known, and credited: the 20-icosahedron shell is the Wolfram
