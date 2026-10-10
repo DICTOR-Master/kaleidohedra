@@ -92,7 +92,8 @@ Checks: each dodecahedron vertex is a ring vertex of exactly 3 outers; each dode
   triangles and one hexagonal-pyramid base. Its convex hull is regular (20 triangles of edge 2.618034 at inradius
   1.978609), and the fill is 100.00%. The far tips sit at radius φ²R = 2.489898, the same distance as the DICTO-Star's
   dodecahedra.
-- The wedge's dihedral at the short edge is 41.8103° (cos = √5/3), exactly the gap two icosahedra leave round an edge.
+- The wedge's dihedral at the unit edge opposite its short edge (where its two equilateral faces meet) is 41.8103°
+  (cos = √5/3), exactly the gap two icosahedra leave round a shared edge. Its short edge has 63.4349° (cos = 1/√5).
 - The hexagonal pyramid's base is equiangular (all 120°) with edges 1 and 1/φ alternating. Its area is
   √3(1+3√5)/8 = 1.668875 and its height is 1/√3. (The script printed these two as long rational fits, which are
   wrong; these are the exact forms, and they agree with the volume above.)
@@ -251,13 +252,29 @@ above at any scale. **Not finding something is not proof it is new**; a speciali
 |---|---|
 | **AXE** (five edges 1, one 1/φ) | **Known.** It is the Mosseri–Sadoc tile *t6* (Mosseri–Sadoc *D*, Kramer *A*), which has five edges τ and one edge 1, scaled by 1/τ (volume τ³/12 → 1/12). Sadoc & Mosseri 1982; Kramer 1982; Koca, Koc, Koca & Al-Siyabi 2020 (arXiv 2009.07048), Table 1. |
 | **CLEO** (equilateral base 1/φ, side edges 1) | **Known.** It is Mosseri–Sadoc *t4* (*F*) scaled by 1/τ (volume τ²/12 → (√5−1)/24). Same sources. |
-| **FUJI** (hexagonal pyramid) | Not found as a named piece. Its volume equals 3 AXE + 1 CLEO + 1 Mosseri–Sadoc *t1* exactly (all at the 1/τ scale), so it may split into those tiles; this is not checked. |
+| **FUJI** (hexagonal pyramid) | Not found as a named piece. Its volume equals 3 AXE + 1 CLEO + 1 Mosseri–Sadoc *t1* (scaled 1/τ) exactly, but **it cannot be cut into those five pieces in any way**: the Dehn invariants differ (see the note below). The volume match is a coincidence. |
 | **Lotus seed**: the icosahedron of edge φ² cut into 12 icosahedra + I(1/φ) + 60 AXE + 20 FUJI + 20 CLEO | **Not found.** Koca et al. 2020 state that, with the Mosseri–Sadoc tiles alone, the icosahedron cannot be inflated past edge τ. This dissection gets to φ² by using whole icosahedra as pieces, which those tilings don't. Lalvani (US 4,723,382, 1988) builds the icosahedron of edge φ from 20 tetrahedra and 4 octahedra, a different dissection. |
 | **DESHI**, the 12 parallel icosahedra sharing 30 edges round I(1/φ) | Not found. Kabai (Bridges 2010) slides rings of 10 icosahedra along the 5-fold axes until they touch, the same method, but not this cage. Hogan (US 3,953,948, 1976) joins identical icosahedra in rings and helices along shared pentagonal caps, with no 12-around-one cluster and no fillers. |
 | **UNITY**, icosidodecahedron + 12 J11 on its pentagons | Not found as a named compound. J11 itself (the diminished icosahedron) is a standard Johnson solid. |
 | **Inner Eye** (60 triangles, volume 5φ/2) | Not identified. It may be a known stellation-type solid; not checked further. |
 | 13/27 vertex-to-vertex fill | Not found stated, but the proof (§6) is elementary. Context only. |
 | Lattice packings (§4) | Lower bounds only. The densest known lattice packing of icosahedra is 0.836357 (Betke & Henk 2000; Torquato & Jiao 2009). |
+
+**FUJI and the Dehn invariant.** Two solids of equal volume can be cut into each other only if their Dehn invariants
+(the sum over edges of length ⊗ dihedral angle, angles taken modulo rational multiples of π) are equal. All the
+angles involved reduce to two, α = arccos(√5/3) = 41.81° and δ = 37.38° (FUJI's base angle on its short edges):
+63.43° = π − α − 2δ, 79.19° = α + δ, 116.57° = α + 2δ, 138.19° = π − α, 142.62° = π − δ. These relations were found by
+integer-relation search (PSLQ) and hold to 120 digits. Writing each length as a + b√5:
+
+| | 1-part (α, δ) | √5-part (α, δ) |
+|---|---|---|
+| FUJI | (3, −15/2) | (0, 3/2) |
+| 3 AXE + CLEO + t1′ | (27/2, 15/2) | (−1/2, 1/2) |
+
+The √5-parts differ by (α + 2δ)/2 = (π − arctan 2)/2. arctan 2 is not a rational multiple of π, because cos²(arctan 2)
+= 1/5, and an angle that is a rational multiple of π with rational cos² must have cos² equal to 0, 1/4, 1/2, 3/4 or 1.
+So the invariants differ and no dissection exists. An exhaustive search over tile positions with vertices at FUJI's
+corners and 273 natural interior points agrees: no CLEO fits inside FUJI at all.
 
 **Where this leaves the finding:** the pieces AXE and CLEO must be credited to Mosseri & Sadoc. What has not been
 found is the *assembly*: Lotus seed (whole icosahedra + AXE + FUJI + CLEO filling I(φ²) exactly), its separable
