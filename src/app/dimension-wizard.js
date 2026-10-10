@@ -640,7 +640,8 @@ function dimensionEntries(dim) {
     { app: P, kind: 'search' },
     { app: P, kind: 'shapes', key: 'FAVOURITES' },
     { app: P, kind: 'shapes', key: 'RECENT' },
-    { app: P, kind: 'shapes', key: DICTO_POLY.key, dicto: true },
+    // DICTO's pieces sit at the top of the DICTO block (DICTO 2026-10-11: they were six screens down)
+    { app: 'dicto', kind: 'shapes', key: DICTO_POLY.key },
     POLY_FAMILIES.filter((key) => familyIds(key).length).map((key) => ({ app: P, kind: 'shapes', key })),
     { app: P, kind: 'shapes', key: 'STARS' },
   );
@@ -850,7 +851,8 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
       const dictoOwn = mine.filter((e) => e.dicto).sort((x, y) => dictoRank(x) - dictoRank(y));
       if (dictoOwn.length) html += `<div class="dicto-livery dicto-gold" style="${blockStyle('dicto')}"><div class="dicto-livery-name">${wordmark('dicto')}</div>${dictoOwn.map(row).join('')}</div>`;
       const rest = mine.filter((e) => !e.dicto);
-      const restKinds = KINDS.filter(([kind]) => rest.some((e) => e.kind === kind));
+      const kinds = app === 'dicto' ? [...KINDS.filter(([k]) => k === 'shapes'), ...KINDS.filter(([k]) => k !== 'shapes')] : KINDS;
+      const restKinds = kinds.filter(([kind]) => rest.some((e) => e.kind === kind));
       for (const [kind, label] of restKinds) {
         if (restKinds.length > 1 && label) html += `<div class="dim-wizard-kind">${t(label, L)}</div>`;
         html += rest.filter((e) => e.kind === kind).map(row).join('');
