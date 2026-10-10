@@ -225,7 +225,7 @@ not fully closed; see §10.
 
 **DICTO's decisions (2026-10-10):** names given (table below); keep searching for a golden closure (done, §10);
 correct the icosa-networks §7 (done); a contact covered completely by several faces counts as closed. Rosebuds:
-the 12-fold version (all 12 pentagrams, 10 icosahedra each). Still open: which growth goes into the apps first.
+the 12-fold version (all 12 pentagrams, 10 icosahedra each). Into the apps first: the Kepler Star Diadem.
 
 ## Names and DICTO's rule (2026-10-10)
 
