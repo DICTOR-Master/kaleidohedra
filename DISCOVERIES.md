@@ -41,7 +41,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 15 | DICTO Jewel clusters: four DICTO Jewels in a tetrahedron (pairwise face to face, touching at one point in the middle) and six in an octahedron round a stella octangula, which fits them face for face (a solid piece); each a shape of its own, and each fills space with stella octangulas | DICTO (built the tetrahedral cluster in the app, asked for the octahedral, saw that both fill space with stellas) | yes | **not found** — candidate (made only of the DICTO Jewel, #10, itself not found) | 2026-10-09 |
 | 16 | Sunstar clusters: the octet structure of #15 in the Sunstar Lattice; four dodecahedra round a cell corner, and six round an odd cell with its Dogstar inside, a solid piece (a Dogstar with its 6 dodecahedra: a Sunstar turned inside out); each fills space with Dogstars, and shared they form the octet network | DICTO (asked whether the octet network held for the Sunstars and Dogstars) | yes | **not found** — candidate (the honeycomb itself is Hart's, 1996) | 2026-10-09 |
 | 17 | Kagome hulls: six hulls of DICTO Jewels or Sunstar dodecahedra give Kagome networks, clusters sharing single pieces corner to corner; a hull with n corners sits on a network where each cluster has n neighbours (the icosahedral exception: #13) | DICTO | yes | **not found** as networks of these clusters; corner-sharing octahedra and tetrahedra are known (perovskite, pyrochlore) | 2026-10-09 (0bf8909) |
-| 18 | The DICTO Hexa: eight DICTO Jewels as one solid; with its gap, the DICTO Hexa-Key, it fills space like a checkerboard, 5 : 3 | DICTO (names) | yes | **not found** | 2026-10-09 (0bf8909) |
+| 18 | The DICTO Hexa: eight Hexa Jewels (DICTO Jewels passing through each other) as one solid; with its gap, the DICTO Hexa-Key, it fills space like a checkerboard, 5 : 3 | DICTO (names) | yes | **not found** | 2026-10-09 (0bf8909) |
 | 19 | The DICTO Icosa-13: the Lotus seed (an icosahedron of edge φ²) is exactly a dodecahedron + 12 J11 + 30 AXE + 20 FUJI; UNITY is an icosidodecahedron + 12 J11, its dimples closed by VAJRA | DICTO (UNITY built physically; dodecahedron + 12 J11 built in Polyhedraverse 2026-10-05; names) | study checks | **not found** as dissections and fillings; the pieces AXE and CLEO are Mosseri–Sadoc tiles, the DESHI arrangement is Gray's (2002) | 2026-10-10 |
 | 20 | The DICTO Stella-Corona: icosidodecahedron + 20 icosahedra + 12 King of Pentacles (Tarot), the DICTO-Star's icosahedral twin, closed, every contact a whole face, with a diamond network. Closed result: no icosahedral Dogstar | DICTO (names) | study checks | **not found**; the 20-icosahedron shell is the Wolfram Demonstration "Cluster of 20 Icosahedra" | 2026-10-10 |
 
@@ -782,7 +782,8 @@ clusters of #15 and #16 do. They do, and all six keep to one rule.*
 *DICTO saw a cube in Kaleidohedra's Studies (Windows, shear as copies) "beautiful and solid, like
 carved out of wood", about eight Jewels in volume. Names by DICTO.*
 
-- **The DICTO Hexa:** eight exact DICTO Jewels on a 2 × 2 × 2 block of cells, unsheared, passing
+- **The DICTO Hexa:** eight **Hexa Jewels** (DICTO's name, 2026-10-10: exact DICTO Jewels as they sit in a
+  Hexa, not compatible with free Jewels) on a 2 × 2 × 2 block of cells, unsheared, passing
   through each other inside. As one solid it is a cube of edge 4 with the 24 outward roofs on its
   faces (volume **80 = 6⅔ Jewels**; the eight Jewels overlap by 16). Inside, two tetrahedral clusters
   of #15 interpenetrate.
