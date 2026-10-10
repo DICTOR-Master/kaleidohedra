@@ -840,6 +840,7 @@ UNITY. Names by DICTO.*
 - Study files: [studies/2026-10-10-icosa-13](studies/2026-10-10-icosa-13/) (VAJRA in
   [studies/2026-10-10-icosa-networks](studies/2026-10-10-icosa-networks/)). Checks: closed, consistently wound,
   Euler 2, no overlap by separating axes, exact volumes in golden form. Not yet in the apps or in krp-core.
+- Archived: Zenodo [10.5281/zenodo.23272686](https://doi.org/10.5281/zenodo.23272686) (v2026.10.10-icosa, 2026-10-10).
 - Status: **not found** in searches on 2026-10-10 (reference library, arXiv, Bridges, patents, web).
   Known, and credited: AXE and CLEO are the Mosseri–Sadoc tiles t6 and t4 scaled by 1/τ (Mosseri & Sadoc 1982;
   Koca et al. 2020); the DESHI arrangement inside I(φ²) is R. W. Gray's (2002), without the gap pieces. The
@@ -861,6 +862,7 @@ pieces. Names by DICTO.*
   sealed hole for a star piece.
 - Study files: [studies/2026-10-10-icosa-networks](studies/2026-10-10-icosa-networks/). Same checks as #19.
   Not yet in the apps or in krp-core.
+- Archived: Zenodo [10.5281/zenodo.23272686](https://doi.org/10.5281/zenodo.23272686) (v2026.10.10-icosa, 2026-10-10).
 - Status: **not found** in searches on 2026-10-10. Known, and credited: the 20-icosahedron shell is the Wolfram
   Demonstration "Cluster of 20 Icosahedra" (in the vein of Kabai); Robert Austin's 2014 model overlaps whole
   icosahedra with dodecahedra; the Dogstar and its honeycomb are Hart's (1996). The King of Pentacles, the
@@ -955,6 +957,7 @@ Study 10b, and 10a under its new label, are version v2026.10.08-checkerboard, **
 Finding #12, the Star Chain Reaction, and its study 12a are version v2026.10.08-star-chain, **DOI [10.5281/zenodo.23226716](https://doi.org/10.5281/zenodo.23226716)**.
 Finding #13, the 13-dodecahedron cluster made solid, is version v2026.10.09-cluster, **DOI [10.5281/zenodo.23247392](https://doi.org/10.5281/zenodo.23247392)** (published 2026-10-09 Japan time; Zenodo shows 2026-10-08, UTC).
 Findings #17 (Kagome hulls) and #18 (the DICTO Hexa), with their study files, are version v2026.10.09-hulls, **DOI [10.5281/zenodo.23262227](https://doi.org/10.5281/zenodo.23262227)**.
+Findings #19 (the DICTO Icosa-13) and #20 (the DICTO Stella-Corona), with their study files, are version v2026.10.10-icosa, **DOI [10.5281/zenodo.23272686](https://doi.org/10.5281/zenodo.23272686)**.
 
 ## Sources
 
