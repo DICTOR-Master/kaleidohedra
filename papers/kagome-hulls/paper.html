@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Kagome Hulls</title>
+<link rel="stylesheet" href="../paper.css"></head><body>
+
+<h1>Kagome Hulls</h1>
+<p class="sub">Six corner-sharing networks of solid clusters in two space-filling lattices, one rule, and its icosahedral exception</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Version 2026-10-10 · Licence CC BY 4.0 · Data, renders and checks are included with this record.<br>
+The hulls, the test and the clusters are DICTO's. Design study and checking with Claude (Anthropic) in the open-source library krp-core (github.com/DICTOR-Master/krp-core, v0.14.0).
+</div>
+
+<div class="abstract"><b>Abstract.</b> Two space-filling lattices share the same rock-salt arrangement of cubic cells: the <b>Stella–Jewel Lattice</b> (DICTO Jewels on the even cells, stella octangulas on the odd) and the <b>Sunstar Lattice</b> (regular dodecahedra on the even cells, Dogstars on the odd). Grouping even cells into solid clusters shaped like a convex hull (rhombohedron, cuboctahedron hollow or solid, cube, rhombic dodecahedron, octahedron), we find in both lattices a network in which any two clusters share at most one piece and every shared piece lies in exactly two clusters, corner to corner as in the Kagome and pyrochlore nets. The rhombohedral hull gives a perfect Kagome net, with every piece in exactly two clusters. Across the six hulls one rule holds: <b>a hull with n corners sits on a network where each cluster has n neighbours</b>. The 13-dodecahedron cluster is the exception: its hull has 12 corners, but at most 3 clusters can share corners with it and no lattice exists. The rule breaks where icosahedral symmetry meets periodic space. Corner-sharing octahedra and tetrahedra are known (perovskite, pyrochlore); the clusters of DICTO Jewels and dodecahedra, the rule across six hulls and the exception were not found in a web search (2026-10-09).</div>
+
+<h2>1. The two lattices</h2>
+<p>Both are built on the cubic cells of the Euclid–Kepler–Pacioli (EKP) cell (cube edge 2, cells at integer points, "even" and "odd" by the parity of x + y + z), so the even cells form a face-centred cubic lattice.</p>
+<p><b>DICTO Jewel.</b> Take the EKP cell's regular dodecahedron (Euclid's roofs on the cube) and carve away the stella octangulas of its six face-neighbouring cells. What remains is a solid of volume exactly 12 whose surface keeps 12 rhombi of Penrose's thick 72°/108° shape, one on each cube edge in the dodecahedron's own face planes (the "windows"), walled by 48 triangles in the stellas' planes. <b>Stella–Jewel Lattice:</b> Jewels on the even cells and stella octangulas (volume 4) on the odd cells fill space exactly, 3 : 1 by volume.</p>
+<p><b>Sunstar Lattice.</b> Regular dodecahedra on the even cells are the densest lattice packing of the dodecahedron; the holes between them are <b>Dogstars</b> (George W. Hart's dodecahedron stellation 8, 1996). Dodecahedra and Dogstars fill space; the Dogstar is credited to Hart and to Hans Walser.</p>
+
+<h2>2. The six hulls</h2>
+<p>A configuration is a cluster of even cells (one solid piece, each touching pair meeting face to face) and a lattice of anchors where clusters are placed. Each hull works in both lattices:</p>
+<table>
+<tr><th>Hull</th><th>Pieces</th><th>Anchors</th><th>Neighbours</th><th>Notes</th></tr>
+<tr><td>Rhombohedron</td><td>8, at the corners of the FCC primitive cell, its odd cell inside</td><td>BCC</td><td>8</td><td><b>perfect Kagome</b>: every piece in exactly two blocks, none left over; a quarter of the odd cells sealed inside; 8⅓ Jewels</td></tr>
+<tr><td>Cuboctahedron, hollow</td><td>12 round an even cell</td><td>FCC</td><td>12</td><td>a cage with a central hole</td></tr>
+<tr><td>Cuboctahedron, solid</td><td>13</td><td>FCC</td><td>12</td><td>the periodic twin of the 13-dodecahedron cluster</td></tr>
+<tr><td>Cube</td><td>14, the FCC conventional cell round an odd cell</td><td>BCC</td><td>8</td><td>many single pieces and open pockets; the least Kagome-like</td></tr>
+<tr><td>Rhombic dodecahedron</td><td>19 even + 14 odd</td><td>BCC with second neighbours</td><td>14</td><td>no single pieces</td></tr>
+<tr><td>Octahedron</td><td>6 round an odd cell, with its stella (or Dogstar) inside</td><td>simple cubic</td><td>6</td><td>the corner-sharing octahedra of the perovskite structure</td></tr>
+</table>
+
+<figure><div class="figs"><img src="renders/rhombo8-jewel.jpg"><img src="renders/rhombo8-sunstar.jpg"><img src="renders/rhombo8-network.jpg"></div>
+<figcaption><b>Fig. 1–3.</b> The rhombohedral hull: (1) as DICTO Jewels, (2) as dodecahedra in the Sunstar Lattice, (3) its corner-sharing network (BCC), each hull a colour.</figcaption></figure>
+
+<h2>3. The rule</h2>
+<p><b>A hull with n corners sits on a network where each cluster has n neighbours:</b> tetrahedron and diamond (4), octahedron and simple cubic (6), cube and rhombohedron and BCC (8), cuboctahedron and FCC (12), rhombic dodecahedron and BCC with its second neighbours (14). Each corner piece is the one shared with a neighbour.</p>
+
+<figure><div class="figs four"><img src="renders/cubocta12-network.jpg"><img src="renders/cube14-network.jpg"><img src="renders/octa6-network.jpg"><img src="renders/rd33-jewel.jpg"></div>
+<figcaption><b>Fig. 4–7.</b> (4) Cuboctahedra sharing corners (FCC). (5) Cubes sharing corners (BCC). (6) Octahedra sharing corners (simple cubic, the perovskite net). (7) The rhombic-dodecahedral hull in the Stella–Jewel Lattice, its corner stellas in violet.</figcaption></figure>
+
+<h2>4. The icosahedral exception</h2>
+<p>The 13-dodecahedron cluster (a regular dodecahedron with one on each face, its gaps filled; the DICTO Dodeca-13) has a hull with 12 corners, the outer dodecahedra. Clusters sharing one outer dodecahedron can meet only across opposite faces, by a shift of 4 × the inradius along a five-fold axis. Neighbours on adjacent five-fold axes (63.43° apart) always overlap; on axes 116.57° apart they never do. So <b>a cluster has at most 3 corner-sharing neighbours</b> (20 such sets, one per three-fold direction), and <b>no lattice exists</b>: every lattice generated by three five-fold shifts overlaps, and only the chain along one axis repeats. Face to face, the only repeating structure is a column of mirror-image clusters along a five-fold axis (spacing 6 × the inradius). Twelve corners, at most three neighbours, never a lattice: the rule breaks where icosahedral symmetry meets periodic space. The solid cuboctahedral hull (13 pieces, 12 neighbours, FCC) is its periodic twin. The Dodeca-13's densest stacking is body-centred cubic (density 0.71537, blocks touching only edge to edge), and the gap left is one connected labyrinth.</p>
+
+<figure><div class="figs four"><img src="renders/c13-corner-sharing-3.jpg"><img src="renders/c13-star12-overlapping.jpg"><img src="renders/c13-column.jpg"><img src="renders/c13-bcc-9.jpg"></div>
+<figcaption><b>Fig. 8–11.</b> (8) The most corner-sharing neighbours that fit: three, at mutual 116.57°. (9) All 12 five-fold neighbours at once: adjacent ones overlap. (10) The face-to-face column along a five-fold axis. (11) The densest stacking, bcc.</figcaption></figure>
+
+<h2>5. Relation to known work, and status</h2>
+<p><b>Known and credited:</b> corner-sharing octahedra (the ReO₃ and perovskite structures); corner-sharing tetrahedra (the pyrochlore lattice, stacked Kagome layers); corner-coalesced cube nets in framework chemistry (<i>Molecules</i> 24(7) (2019) 1221); the FCC primitive cell as a rhombohedron (standard crystallography); the honeycomb of dodecahedra and Dogstars (Hart 1996; Walser); the 10.3° frustration of three dodecahedra round an edge and Mackay-type icosahedral clusters. <b>Not found</b> (web search, 2026-10-09): the rhombohedral, cuboctahedral and rhombic-dodecahedral nets as regroupings of a space filling; the clusters of DICTO Jewels and of dodecahedra; the rule across the six hulls; the icosahedral exception. The clusters rest on the DICTO Jewel, which itself was not found. This is not proof of novelty, and this record makes no claim of priority.</p>
+
+<h2>6. Reproducibility</h2>
+<p>Included: <code>data/</code>, each hull in both lattices as a closed solid (vertices, faces, pieces with exact volumes; raw scale, cube edge 2 per cell, and unit scale) and each network's anchors and shares; <code>data/checks-kagome-hulls.txt</code> (18 checks: each solid closed with the exact volume of its pieces in both lattices; each network Kagome-style, no cell in more than two clusters and no two sharing more than one) and <code>data/checks-dicto-jewel-cluster.txt</code> (25 checks on the tetrahedral and octahedral Jewel clusters and their networks), from krp-core v0.14.0. The design study also checked overlap, winding and Euler characteristic on a 13³ window. All six hulls can be explored in the Stella–Jewel and Sunstar worlds of Kaleidohedra (https://kaleidohedra.dictospheres.com), part of DICTO's open-source apps (concept DOI 10.5281/zenodo.23173809; previously archived there as version 10.5281/zenodo.23262227).</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>G. W. Hart, <i>The stellations of the dodecahedron</i>, Virtual Polyhedra (1996): stellation 8 fills space with regular dodecahedra.</li>
+<li>H. Walser, Regular and semi-regular dodecahedra fill space (2017), walser-h-m.ch.</li>
+<li>Corner-coalesced cube nets in framework chemistry, <i>Molecules</i> 24(7) (2019) 1221.</li>
+<li>U. Betke and M. Henk, Densest lattice packings of 3-polytopes, <i>Comput. Geom.</i> 16 (2000) 157–186.</li>
+<li>J.-F. Sadoc and R. Mosseri, <i>Geometrical Frustration</i>, Cambridge University Press (1999).</li>
+</ol>
+</body></html>

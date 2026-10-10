@@ -1,0 +1,50 @@
+OK   cube: 12 edges of 2, 3 at each corner
+OK   dodecahedron: 30 edges of 2/phi, 3 at each of 20 vertices
+OK   icosahedron: 30 edges of 2/phi^2, 5 at each of 12 vertices
+OK   the 30 shortest icosahedron distances are equal, the next is longer
+OK   15 distinct two-fold axes
+OK   every cube, dodecahedron and icosahedron edge is along a two-fold axis
+OK   13 nodes per cell (13), no other points
+OK   every roof vertex is an icosahedron vertex of a neighbouring cell
+OK   all 12 dodecahedron faces are planes through 5 vertices at the same distance
+OK   the icosahedron lies inside its own dodecahedron
+OK   dodecahedron volume (15+7sqrt5)/4 (2/phi)^3 = 10 + 2sqrt5
+OK   every sample point covered once or twice (0.191 once, 0.809 twice)
+OK   sampled mean multiplicity 1.8088 matches (5+sqrt5)/4 = 1.8090
+OK   20 icosahedron faces, each with exactly one tip node
+OK   the 20 tips are exactly the 20 dodecahedron vertices
+OK   spike faces are golden triangles (apex 36.0000 degrees)
+OK   exactly 24 point operations keep the node set (m-3), all with no swap of two axes
+OK   each works with a lattice translation only (symmorphic, origin on the icosahedron centre)
+OK   corner node is fixed by all 24 (Wyckoff 1b); each icosahedron vertex by 2, a mirror (12j, (0, y, z), y = 0.3090, z = 0.1910 in cell units)
+OK   aligned: the 24 operations kept are exactly the cube symmetries of the icosahedron (m-3); cube axes are icosahedral 2-fold axes, body diagonals icosahedral 3-fold axes
+OK   each cell's solids carry 6 + 10 + 15 = 31 icosahedral axes, all parallel across cells; 7 of them are symmetries of the whole crystal
+OK   ico: 20 faces, closed, outward, volume 0.972654 = 0.972654
+OK   oct: 8 faces, closed, outward, volume 1.333333 = 1.333333
+OK   dogstar: 60 faces, volume 1.527864 = 16 - dodecahedron
+OK   stella: two closed tetrahedra (8 faces), volumes 2.666667 + 2.666667 = 2 x 8/3
+OK   cube: 6 faces, closed, outward, volume 8.000000 = 8.000000
+OK   star: 60 faces, closed, outward, volume 2.917961 = 2.917961
+OK   dodeca: 12 faces, closed, outward, volume 14.472136 = 14.472136
+OK   star: 60 triangles and 90 edges, spike height 2/sqrt3
+OK   the star is the great stellated dodecahedron: 12 planes of 5 triangles, each a regular pentagram of edge phi^3 x the core edge
+OK   icosahedron, star and dodecahedron nest: star inside dodecahedron, icosahedron inside star
+OK   face neighbours share a cube face's 4 corners, edge neighbours a cube edge (2), corner neighbours a corner (1)
+OK   crossings: all 6 face neighbours overlap by exactly two roofs, 2(dodecahedron - cube)/6 = 2.157378652; all 12 edge and 8 corner neighbours overlap by 0
+OK   crossings: every face crossing puts exactly 2 roof vertices on the neighbour's icosahedron, and each of a cell's 12 icosahedron vertices receives exactly one
+OK   crossings: ridges run z, x, y over the x, y, z faces, and the cell's 24 symmetries make all crossings of a kind congruent (classes 6, 8, 12)
+OK   parity colouring: all 24 m-3 operations kept, odd translations (2,0,0) swap colours, even ones (2,2,0) keep them
+OK   pattern xyz: 24 point operations kept, translations (2,2,0) (0,2,2) (2,0,2) keep it, (2,0,0) don't -> Fm-3 (No. 202)
+OK   pattern columns: 8 point operations kept, translations (2,2,0) (2,-2,0) (0,0,2) keep it, (2,0,0) (0,2,0) don't -> Cmmm (No. 65)
+OK   pattern layers: 8 point operations kept, translations (2,0,0) (0,2,0) (0,0,4) keep it, (0,0,2) (2,2,2) don't -> Pmmm (No. 47)
+OK   pattern octants: 8 point operations kept, translations (4,0,0) (0,4,0) (0,0,4) keep it, (2,0,0) (2,2,0) (2,2,2) don't -> Pmmm (No. 47), cell doubled
+OK   even-cell dodecahedra: next neighbours 4 apart > 2 circumradii 3.4641; density 0.904508 = (5+sqrt5)/8
+OK   stars on even cells and icosahedra on odd cells share only corners: 294 piece pairs, deepest overlap 0.0e+0; all 12 roof tips are icosahedron vertices
+OK   golden rectangles: 3 of sides 2/phi x 2/phi^2 (ratio phi), corners = the 12 icosahedron vertices; 6 of 6 roof ridges are their long sides in the neighbour; interlocked cyclically (Borromean)
+OK   8 of the icosahedron's faces lie in the octahedron's 8 face planes (8)
+OK   octahedron on the 6 cube-face centres (edge sqrt2, volume 4/3): every icosahedron vertex on its own octahedron edge, at the golden section (12 of 12, 12 edges)
+OK   stella octangula: two regular tetrahedra (edge 2 sqrt2) on alternate cube corners whose 8 face planes are the octahedron's; their edge midpoints are its vertices
+OK   Kepler's chain nests exactly in one cell: icosahedron in octahedron in both tetrahedra in cube in dodecahedron
+OK   symmetry: stella octangula keeps 24 of the 24, one tetrahedron 12, the octahedron 24; their edges are off the icosahedral axes
+
+48 checks, 0 failures (krp-core v0.14.0, scripts/verify-roof-fold.mjs, EKP-cell checks only)

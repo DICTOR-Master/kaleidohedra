@@ -906,9 +906,17 @@ icosahedron; then the one gap left made icosahedral too, and an icosahedron "cla
 - **The Lotus Jewel** (the clawed icosahedron): on the simple cubic lattice of icosahedra (spacing φ) the 8 neighbouring void
   dodecahedra bite into each icosahedron, leaving 36 faces, 8 triangular windows of 3 golden gnomons, volume
   (1 + 3√5)/4 = 88.33%; it fills space with the dodecahedra, gap exactly 1/2.
+- **Clusters of 4 and 6** (study 2026-10-10-ico-clusters; names by DICTO): **ICOSA-TET**, 4 icosahedra on alternate faces
+  of an octahedron sharing corners (diamond network), and **ICOSA-OCT**, 6 icosahedra on the cube axes turned 45° sharing
+  corners round a caged tetrahedron (perovskite network); the **Mirrored ICOSA-NON CUBE**, an icosahedron with 8
+  face-mirrored copies touching corner to corner; Lotus seeds in the Sunstar cluster positions (one FCC lattice, density
+  0.6797) with the **EUCLID Roof Kernel** as the octahedral gap. Face-sharing, octahedral edge-sharing and clusters round a
+  central icosahedron are impossible; the edge-sharing tetrahedron of 4 is known (Wolfram Demonstrations, "Four
+  Icosahedra around a Tetrahedron").
 - **Classical, credited:** inside the octahedron sits the next icosahedron, φ times smaller, and so on, every step
   touching (Pacioli; the Jitterbug). Also: the icosahedron is exactly 1/φ of its cuboctahedron by volume.
-- Study files: [studies/2026-10-10-icosa-networks-3](studies/2026-10-10-icosa-networks-3/) and
+- Study files: [studies/2026-10-10-icosa-networks-3](studies/2026-10-10-icosa-networks-3/),
+  [studies/2026-10-10-ico-clusters](studies/2026-10-10-ico-clusters/) and
   [studies/2026-10-10-icosa-networks-2](studies/2026-10-10-icosa-networks-2/). Same checks as #19.
 - Status: **not found** in searches on 2026-10-10, including Lalvani's US 5,448,868 and NASA TM-102635 (read; the
   icosahedron appears there only as a node). Shapes not yet named by DICTO.

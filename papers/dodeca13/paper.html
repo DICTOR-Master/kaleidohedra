@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>The DICTO Dodeca-13</title>
+<link rel="stylesheet" href="../paper.css"></head><body>
+
+<h1>The DICTO Dodeca-13</h1>
+<p class="sub">The 13-dodecahedron cluster made solid: its gaps as two exact pieces, and separable finned units</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Version 2026-10-10 · Licence CC BY 4.0 · Data, renders and checks are included with this record.<br>
+The cluster, its build order, the requirement that it come apart, and the names are DICTO's. Design study and checking with Claude (Anthropic) in the open-source library krp-core (github.com/DICTOR-Master/krp-core, v0.14.0).
+</div>
+
+<div class="abstract"><b>Abstract.</b> A regular dodecahedron with a regular dodecahedron on each of its 12 faces is unique (each outer one is the centre's mirror image across the shared face) and is the first shell of the 120-cell laid flat. The 12 outer dodecahedra never overlap; they touch only along the centre's 30 edges, where three dodecahedra leave the well-known gap of 360° − 3 × 116.565° = 10.3048°. We show that the gaps are filled exactly by two kinds of congruent piece: 30 <b>wedges</b> (volume φ³/20 at edge 1), one on each edge of the centre, and 20 <b>needles</b> (volume (45 − 19√5)/600), one at each corner. Together the 63 pieces form one closed solid with no inner gap, the <b>DICTO Dodeca-13</b> (volume 106.058472), whose outside is 72 regular pentagons, 60 thin trapezoids and 20 small triangles. Because each wedge is mirror-symmetric and each needle three-fold, the filled solid splits into a bare centre and 12 identical <b>finned units</b> that lift straight out. The cluster's convex hull, its densest translation packing (body-centred cubic, density 0.7154) and its relation to the DICTO-Star are also given. The 10.3° gap is known; the gap as two exact solid pieces, and the separable units, were not found in a literature search (2026-10-09).</div>
+
+<h2>1. Origin</h2>
+<p>DICTO's cluster: "one dodecahedron at the center of a cluster", built in layers down a three-fold axis: a snowflake belt of six, three in the dimples on top, turned over, three more. Its earlier basis is DICTO's exhibition piece, a 12-dodecahedron cluster made of PET bottle caps and their security rings. DICTO asked for the cluster to be made solid, and for the solid to come apart again once built.</p>
+
+<figure><div class="figs"><img src="renders/c13-filled.jpg"><img src="renders/c13-filled-5fold.jpg"><img src="renders/c13-parts-exploded.jpg"></div>
+<figcaption><b>Fig. 1–3.</b> (1) The DICTO Dodeca-13: 13 dodecahedra (gold), 30 wedges (cyan) and 20 needles (purple). (2) Down a five-fold axis. (3) The 63 pieces pulled apart.</figcaption></figure>
+
+<h2>2. The two gap pieces</h2>
+<table>
+<tr><th>Piece</th><th>Number</th><th>Shape (edge 1)</th><th>Volume</th></tr>
+<tr><td>Wedge</td><td>30, one per edge of the centre</td><td>two regular pentagons (the two neighbours' faces) hinged on the centre's edge at 10.3048°, closed by two end triangles and two outer trapezoids (sides 1, 1/(φ²√5), 1, 1/(φ√5))</td><td>φ³/20</td></tr>
+<tr><td>Needle</td><td>20, one per corner of the centre</td><td>a tetrahedron whose three long edges are the three neighbours' outer edges (length 1), on an equilateral base of side 1/(φ²√5)</td><td>(45 − 19√5)/600</td></tr>
+</table>
+<p>The needle's three sides are the end triangles of the three wedges at its corner, so three wedges and a needle lock into a three-armed <b>star</b> (Fig. 6). Total volume: 13(15 + 7√5)/4 + 30·φ³/20 + 20·(45 − 19√5)/600 ≈ 106.058472.</p>
+
+<figure><div class="figs four"><img src="renders/c13-wedge.jpg"><img src="renders/c13-needle.jpg"><img src="renders/c13-star.jpg"><img src="renders/c13-finned-unit.jpg"></div>
+<figcaption><b>Fig. 4–7.</b> (4) A wedge. (5) A needle. (6) The star: three wedges and a needle. (7) A finned unit: an outer dodecahedron with 5 half-wedges and 5 needle-thirds.</figcaption></figure>
+
+<h2>3. Separable once built</h2>
+<p>Each wedge is symmetric across the mirror plane through the centre's edge, and each needle is three-fold about the line through its corner. So the wedges halve and the needles split into thirds along the same planes, and the solid divides into the bare centre and 12 congruent <b>finned units</b>, each an outer dodecahedron carrying 5 half-wedges and 5 needle-thirds as fins, which lifts straight out (Fig. 7–8). The parts views used in Polyhedraverse are: pieces (13 + 30 + 20), units (centre + 12), stars (13 + 20; the stars overlap, each wedge being in two of them).</p>
+
+<figure><div class="figs"><img src="renders/c13-units-exploded.jpg"><img src="renders/c13-convex-hull.jpg"><img src="renders/c13-bcc-9.jpg"></div>
+<figcaption><b>Fig. 8–10.</b> (8) The bare centre and 12 finned units, pulled apart. (9) The convex hull: 12 regular pentagons and 20 hexagons. (10) The densest translation packing: body-centred cubic, a cluster and its 8 nearest neighbours.</figcaption></figure>
+
+<h2>4. Hull, packing and relations</h2>
+<p><b>Hull.</b> The convex hull has the topology of the truncated icosahedron (60 corners, 12 pentagons, 20 hexagons) but is not Archimedean: the pentagons are regular with edge 1 (the outer dodecahedra's far faces), and the hexagons' edges alternate 1 and √((27 + 7√5)/10) ≈ 2.065248. Its volume is 142.955; the filled cluster fills 74.19% of it.</p>
+<p><b>Packing.</b> The filled cluster's densest translation-only packing, searched over 54 406 lattices built from its contact distances and checked independently, is body-centred cubic, with its 8 nearest neighbours along its three-fold axes, at density 0.7154. One block shape (the cluster plus its share of the remaining 28.5% as grown fins) therefore fills space by bcc translations; the fins are exact but chunky.</p>
+<p><b>Relation to the DICTO-Star.</b> The DICTO-Star (icosidodecahedron, 12 dodecahedra and 20 tridiminished icosahedra) is this cluster opened up: its 12 dodecahedra sit on the same 12 five-fold axes, but as parallel copies of the centre rather than mirror images; each outer dodecahedron turns 36° about its axis and moves out 0.262866 (edge 1), the wedges and needles open into the 20 dimples the J63s close, and the centre becomes the icosidodecahedron.</p>
+<p><b>Corner sharing.</b> Clusters sharing an outer dodecahedron can meet only across opposite faces; a cluster has at most 3 corner-sharing neighbours and no lattice of them exists. Face to face, the only repeating structure is a column of mirror-image clusters along a five-fold axis. (This is the icosahedral exception to the Kagome-hull rule, recorded separately.)</p>
+<p><b>Beyond the cluster</b> (studied, not claimed): a second shell along the six five-fold axes follows the golden-rhombohedron (Ammann–Kramer) tiling; decorated with dodecahedra it fills at most about 68% with whole-face contacts, and in the cubic 1/1 approximant it saturates at 162 dodecahedra per cell (67.35%), leaving one thin connected labyrinth.</p>
+
+<h2>5. Relation to known work, and status</h2>
+<p><b>Known and credited:</b> the 10.3° gap of three dodecahedra round an edge is well known from the 120-cell and the geometric-frustration literature, which closes it by curving space or by twisting (e.g. Sadoc and Mosseri; Fang, Irwin et al. 2018). Jenczyk (2024) builds networks of regular dodecahedra joined by icosahedron-based binders. Vorthmann (vZome, 2014) shows a tetrahedral cluster of 120-cell dodecahedra. <b>Not found</b> (web-level search, 2026-10-09): the cluster's gaps as two exact solid pieces, and the separable finned units. This is not proof of novelty, and this record makes no claim of priority.</p>
+
+<h2>6. Reproducibility</h2>
+<p>Included: <code>data/</code>, the study's solids (each with vertices, faces and exact volume, at the raw scale and at edge 1: the filled cluster, wedge, needle, half-wedge, needle-third, star, finned unit, the parts views, the hull, the column, the bcc packing and the grown unit); <code>data/checks-dodeca13.txt</code> (10 checks: each of the five solids closed, outward, Euler characteristic 2, with its exact volume; the 72 pentagons; every parts view's sum) and <code>data/checks-dodeca-cluster.txt</code> (11 checks: congruence, exact volumes, no overlap among the 63 solids by separating axes, every gap face accounted for, the halving and thirds), from krp-core v0.14.0. The Dodeca-13, Star, Unit, Wedge and Needle can be built in Polyhedraverse (https://polyhedraverse.dictospheres.com, DICTO's pieces), part of DICTO's open-source apps (concept DOI 10.5281/zenodo.23173809; previously archived there as version 10.5281/zenodo.23267578).</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>H. S. M. Coxeter, <i>Regular Polytopes</i>, 3rd ed., Dover (1973) (the 120-cell).</li>
+<li>J.-F. Sadoc and R. Mosseri, <i>Geometrical Frustration</i>, Cambridge University Press (1999).</li>
+<li>F. Fang, K. Irwin et al., Closing gaps in geometrically frustrated symmetric clusters, <i>Mathematics</i> 6 (2018) 89, doi:10.3390/math6060089.</li>
+<li>J. Jenczyk, Regular dodecahedron-based network structures, <i>Symmetry</i> 16 (2024) 1509, doi:10.3390/sym16111509.</li>
+<li>S. Vorthmann, Tetrahedral cluster of dodecahedra (120-cell), vzome.com, 2014.</li>
+</ol>
+</body></html>

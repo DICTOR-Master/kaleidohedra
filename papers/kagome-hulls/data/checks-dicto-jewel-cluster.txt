@@ -1,0 +1,27 @@
+OK   the cluster is registered
+OK   the four cells form a regular tetrahedron (all six centre distances equal)
+OK   every pair of Jewels shares exactly one whole rhombus (6 shared)
+OK   no two Jewels overlap (4000 sample points, 0 in two)
+OK   surface: 228 faces (192 triangles, 36 rhombi)
+OK   closed: every edge on exactly two faces
+OK   one pinch point, at the centre, where the four lobes touch (1 found)
+OK   with it split the surface is a sphere (Euler -1 + 3 = 2)
+OK   volume = 4 DICTO Jewels (25.416408 = 4 x 6.354102)
+OK   the octahedral cluster is registered
+OK   the six Jewels: 12 neighbouring pairs (the octahedron's edges) share a whole rhombus (12 shared, 12 pairs)
+OK   no two Jewels overlap (4000 sample points, 0 in two)
+OK   closed and consistently wound: every edge on two faces, run once each way
+OK   solid: its surface is the outside alone (288 faces), the stella inside fitting the six Jewels face for face
+OK   the stella inside reaches the outside only at its 8 spike tips (8)
+OK   volume = 6 DICTO Jewels and a stella octangula (40.242646)
+OK   tetrahedral clusters + stellas fill space: each of 3429 Jewel cells in exactly one cluster
+OK   octahedral clusters + stellas fill space: each of 3429 Jewel cells in exactly one cluster (lattice of 12 cells per cluster: 6 Jewels, its own stella and 5 more)
+OK   each Jewel is in 8 tetrahedral and 6 octahedral clusters, as each octet-truss vertex is in 8 tetrahedra and 6 octahedra
+OK   tetrahedral and octahedral clusters meet as octet cells: sharing 3 Jewels (a face) or 1 (a corner), never 2 (800 face pairs)
+OK   every stella octangula is the hidden hole of exactly one octahedral cluster (its own cell the centre)
+OK   the filled octahedral clusters, sharing Jewels, cover all of space (every Jewel cell and every stella cell)
+OK   Kagome network: every Jewel it holds is in exactly one up and one down tetrahedral cluster
+OK     neighbouring clusters share a single Jewel, a corner, as Kagome triangles do (most shared: 1)
+OK     it holds exactly half the Jewel cells (128 of 256); single Jewels take the rest, stellas the odd cells
+
+All checks passed (0 failures).
