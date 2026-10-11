@@ -2,7 +2,8 @@
 # the 120 icosahedral orientations, translated so one vertex sits on a candidate point and all vertices land on candidate
 # points inside the target. Selection: MILP packing over dense sample points, volume must equal the target's; any
 # solution is then verified exactly (pairwise separating-axis, containment, volume).
-import json, sys, itertools, time, numpy as np
+import json, sys, itertools, time, os, numpy as np
+KTOP = int(os.environ.get('KTOP', '0')); SKIP = set(os.environ.get('SKIP', '').split(','))
 from scipy.spatial import ConvexHull, cKDTree
 from scipy.optimize import milp, LinearConstraint, Bounds
 from scipy.sparse import lil_matrix, csr_matrix
@@ -79,8 +80,9 @@ def clear_of_hole(W):
 # kit shapes (centred), all orientations and sizes, deduplicated
 shapes = []
 for name, p in kit.items():
+    if name in SKIP: continue
     V0 = p['V'] - p['V'].mean(0); E, vol = hull(V0)
-    for k in range(0, -K - 1, -1):
+    for k in range(-KTOP, -K - 1, -1):   # KTOP (env) skips sizes too big for the thin side ring
         if name == TARGET and k >= UP: continue
         seen = set()
         for R in G:

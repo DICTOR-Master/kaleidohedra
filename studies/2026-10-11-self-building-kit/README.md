@@ -43,6 +43,13 @@ sides, and the band is always 1/φ of P's height, so the turned-over P(1/φ) alw
 volume φ³ − 1 − φ⁻³ = **3** times P and Dehn invariant (φ − 1 − 1/φ) D(P) = **0**. (For a point-mirror the turned base must fit
 inside the tip's base; it does for the regular pentagon and FUJI's hexagon.)
 
+**The sloping faces tile (face test, `scripts/face_tiling.py`, `logs/face-tiling.log`).** Each equilateral sloping face of the
+ring is a 60° trapezoid (top 1, bottom φ, legs 1/φ). With the kit's face shapes (equilateral and golden triangles, FUJI's
+hexagon, the pentagon) at sizes φ⁻¹ to φ⁻⁴ it tiles exactly as **2 triangles of side 1/φ + 2 of side 1/φ² + 1 FUJI hexagon of size
+1/φ²** (a triangle 1/φ in each bottom corner; the middle is an upside-down triangle of side 1 with its point cut off = the hexagon +
+2 small triangles). Area 0.7006 both ways. So the face obstacle does not block the pyramid rule, for J2 and for FUJI's three
+equilateral faces; the solid pieces behind the faces are what the 3D searches look for.
+
 **What is proved.** Every piece of the kit regrows one φ-step larger from itself: the icosahedron through the Lotus seed, and
 AXE, CLEO, FUJI and the pentagonal pyramid through DICTO's pyramid rule, each up to sides with Dehn invariant zero. By Sydler's
 theorem such sides can always be cut into finitely many pieces that form a cube: the aperiodic kit regrows itself up to a
