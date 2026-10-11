@@ -105,6 +105,13 @@ network's own turn, each of its 12 corners on an edge of every one of the five o
 octahedra around an icosahedron is classical; its place in the network's core is the point.) Skeleton for an octahedral variant:
 icosahedron 1/φ ⊂ icosahedron 1 ⊂ five octahedra ⊂ icosidodecahedron φ/2 ⊂ dodecahedron 1 ⊂ … Next: fill those layers with pieces.
 
+## A branch into the 3D Penrose tiling (DICTO: "maybe a golden ratio rhombohedron")
+The rhombic triacontahedron is 10 prolate + 10 oblate golden rhombohedra (classical); with edge 1, 10 × 0.760845 + 10 × 0.470228 =
+12.310734, and prolate / oblate = φ. So the network's triacontahedron shell can be filled either by the rest of the network (cage,
+dodecahedron, core, centre icosahedron) or by 20 golden rhombohedra, the tiles of the Ammann–Kowalewski 3D Penrose tiling, which
+continue aperiodically through space. A seeding of another kind (into the quasicrystal tiling rather than into more icosahedra), and a
+direct link to the periodic ↔ aperiodic aim. To study: how the network's other shells meet that tiling.
+
 ## Touching nestings (midsphere screen, after DICTO's ring models)
 `scripts/touch_screen.py`, `logs/touch_screen.log`. DICTO's ring models are canonical (midsphere) polyhedra: rings = faces,
 touches = edges, gaps = vertices (the Koebe–Andreev–Thurston circle packing gives one shape per face pattern). Every pair of forms,
