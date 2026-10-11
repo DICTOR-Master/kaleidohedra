@@ -8,9 +8,9 @@ from 6D shadows (Mosseri–Sadoc).
 | Piece | Rebuilds itself? |
 |---|---|
 | Icosahedron | **Yes**: the Lotus seed, φ²·I = 12 I + I(1/φ) + 60 AXE + 20 FUJI + 20 CLEO (#22) |
-| AXE | **Open.** AXE is Mosseri–Sadoc t6 at scale 1/φ (φ·AXE = t6), but the six basic tetrahedra do *not* rebuild themselves under φ (Papadopolos & Ogievetsky 2000): an equilateral face grown by φ cannot be tiled by the tiles' own smaller faces. Only the glued Mosseri–Sadoc tiles z, h, s, a do |
-| CLEO | **Open, for the same reason.** CLEO is t4 at scale 1/φ and has an equilateral face |
-| FUJI | **Tentative (DICTO's rule, below).** φ·FUJI = FUJI tip + mirrored FUJI(1/φ) + sides with Dehn invariant zero |
+| AXE | **By DICTO's pyramid rule (as FUJI).** A tetrahedron is a pyramid on any face: φ·AXE = AXE + AXE(1/φ) turned over (flat mirror) + sides with Dehn invariant 0 and volume 3·AXE; checked to fit on all four faces. (The six Mosseri–Sadoc tetrahedra alone cannot rebuild themselves, Papadopolos & Ogievetsky 2000, because of their equilateral faces; DICTO's rule is a different route.) |
+| CLEO | **By DICTO's pyramid rule**, the same way (fits on all four faces) |
+| FUJI | **By DICTO's pyramid rule (below).** φ·FUJI = FUJI tip + mirrored FUJI(1/φ) + sides with Dehn invariant zero |
 
 **Correction (literature search, 2026-10-11).** An earlier version of this table said AXE and CLEO rebuild themselves through the
 Mosseri–Sadoc inflation. That was wrong: the volume + Dehn screen passing is necessary only, and the faces block it. Equilateral
@@ -42,6 +42,11 @@ Exact numbers (`scripts/dehn_screen_sides.py`, `logs/dehn_screen_sides.log`):
 sides, and the band is always 1/φ of P's height, so the turned-over P(1/φ) always just touches the floor. The sides always have
 volume φ³ − 1 − φ⁻³ = **3** times P and Dehn invariant (φ − 1 − 1/φ) D(P) = **0**. (For a point-mirror the turned base must fit
 inside the tip's base; it does for the regular pentagon and FUJI's hexagon.)
+
+**What is proved.** Every piece of the kit regrows one φ-step larger from itself: the icosahedron through the Lotus seed, and
+AXE, CLEO, FUJI and the pentagonal pyramid through DICTO's pyramid rule, each up to sides with Dehn invariant zero. By Sydler's
+theorem such sides can always be cut into finitely many pieces that form a cube: the aperiodic kit regrows itself up to a
+periodic (cube-equivalent) remainder. **Not yet proved:** that the sides can be cut into kit pieces (searches running).
 
 ## DICTO's dodecahedral Chain
 DICTO (2026-10-11): start from a smaller dodecahedron tiled with pentagonal pyramids; the pyramid caps mask it while it grows,

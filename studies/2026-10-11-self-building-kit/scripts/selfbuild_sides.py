@@ -38,12 +38,15 @@ DZ = {'A': [(0, 0, 0), (TAU_**3, 0, TAU_**2), (TAU_**2, TAU_**2, TAU_**2), (TAU_
       'C': [(0, 0, 0), (-TAU_, 0, 1), (TAU_**2, TAU_**2, TAU_**2), (0, TAU_**2, 1)],
       'K': [(0, 0, 0), (-1, TAU_, 0), (TAU_, TAU_, TAU_), (-0.5, 0.5 / TAU_, TAU_ / 2)]}
 for _k, _v in DZ.items(): kit[_k] = {'V': np.array(_v, float) / 2, 'faces': [[0, 1, 2], [0, 1, 3], [0, 2, 3], [1, 2, 3]]}
-for _t in ('t1','t2','t3','t4','t5','t6','T2'):
+for _t in ('t1','t2','t3','t4','t5','t6','T2','j2'):
     _p = rep(_t)
     if _p is not None: kit[_t] = _p
 def hull(V):
     H = ConvexHull(V); return H.equations, H.volume
-if TARGET in ('band', 'sides'):   # DICTO 2026-10-11: phi^UP x FUJI minus the FUJI tip at its apex; the band between them
+if TARGET == 'jsides':   # DICTO 2026-10-11: the pentagonal pyramid (J2) by the same tip + mirror rule
+    Fv = kit['j2']['V']; apex = Fv[0]; base = Fv[1:]
+    TV = np.vstack([base, apex + PHI ** UP * (base - apex)])
+elif TARGET in ('band', 'sides'):   # DICTO 2026-10-11: phi^UP x FUJI minus the FUJI tip at its apex; the band between them
     F = kit['fuji']; Fv = F['V']; hexf = [f for f in F['faces'] if len(f) == 6][0]
     apex = Fv[[i for i in range(len(Fv)) if i not in hexf][0]]; base = Fv[hexf]
     TV = np.vstack([base, apex + PHI ** UP * (base - apex)])
