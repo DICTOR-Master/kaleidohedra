@@ -51,6 +51,15 @@ each wedge lies along a pentagon–hexagon edge of the cage (edges 0.567101 ×3,
 lie in the triacontahedron's faces. The pattern resonates with the Lotus seed (20 FUJI on hexagonal bases with apex at a three-fold
 corner, 60 AXE along edges); that link is not yet shown.
 
+## Dodecahedron to fullerene cage (the step linking the two pairs)
+`scripts/d_in_ti.py`, `logs/d_in_ti.log`. The cage of edge 1/φ wraps the dodecahedron of edge 1, its 20 corners on the cage's 20
+hexagon centres. The gap (5.388544, 41.3% of the cage) is filled exactly by
+**12 twisted pentagonal frusta** (each between a cage pentagon, edge 1/φ, and the dodecahedron face below, edge 1, turned 36°:
+2 pentagons + 10 triangles, height 0.324920, volume 0.399864) and **30 edge wedges**, tetrahedra with five edges 1/φ and one edge 1
+(the dodecahedron's edge), i.e. the Mosseri–Sadoc tile t1 at scale 1/φ (volume 0.019672). Total 5.388544.
+So a chain of verified steps now runs: ID core → (+20 triangular pyramids) dodecahedron → (+12 frusta, +30 t1) fullerene cage →
+(+12 + 20 caps, +60 wedges) rhombic triacontahedron. Whether it continues outward at golden steps is the next question.
+
 ## Touching nestings (midsphere screen, after DICTO's ring models)
 `scripts/touch_screen.py`, `logs/touch_screen.log`. DICTO's ring models are canonical (midsphere) polyhedra: rings = faces,
 touches = edges, gaps = vertices (the Koebe–Andreev–Thurston circle packing gives one shape per face pattern). Every pair of forms,
