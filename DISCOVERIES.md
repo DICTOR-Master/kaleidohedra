@@ -913,6 +913,10 @@ as transition figures; "one more missing piece?". Name by DICTO.*
   branches (13 icosahedra per φ² step), while the Spheres of Dharma grow concentrically (one icosahedron per φ³ step).
 - The five cubes of the dodecahedron lie in the network's seams; the five octahedra on the icosidodecahedron hold one icosahedron of
   edge 1 in Pacioli's golden way, all five at once.
+- Names (DICTO, 2026-10-12): **Ritsudō** (律動, rhythm) for the six-beat cycle; **Nenrin** (年輪, tree rings) for its concentric
+  growth, against the Lotus seed's branching; **Bodhi seed** for the second form that multiplies like the Lotus seed: a rhombic
+  triacontahedron of edge φ² holds 12 of edge 1 on its 5-fold axes and one of edge 1/φ at the centre, without overlap
+  (scripts/seeding.py; its gap not yet divided into pieces).
 - Study files: [studies/2026-10-12-network-versions](studies/2026-10-12-network-versions/). Paper: draft, not for release.
 
 ## 22. Chain of Karma (DICTO, 2026-10-11)

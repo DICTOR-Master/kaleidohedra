@@ -1,6 +1,7 @@
 # Network versions (DICTO, 2026-10-12)
 
-The φ³ cycle found here was named **Spheres of Dharma** by DICTO (2026-10-12), discovery #23.
+The φ³ cycle found here was named **Spheres of Dharma** by DICTO (2026-10-12), discovery #23. Its six-beat cycle is **Ritsudō** (律動), its concentric growth **Nenrin** (年輪), and the
+triacontahedron's multiplying seed (see "Which forms multiply?") the **Bodhi seed** (names by DICTO).
 
 DICTO: "at least 3 further versions of Network … any and all possibilities … the real one will stand up, or the false may
 eliminate themselves or reveal further missing pieces"; the icosidodecahedron (ID) as the hybrid "twin" of the two-form version;
