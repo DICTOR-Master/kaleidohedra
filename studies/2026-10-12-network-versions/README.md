@@ -103,7 +103,10 @@ shells; the order differs).
 hold Pacioli's golden icosahedron, and it is one and the same icosahedron for all five: edge exactly 1 (= φ × the centre's 1/φ), in the
 network's own turn, each of its 12 corners on an edge of every one of the five octahedra, and inside the core. (The compound of five
 octahedra around an icosahedron is classical; its place in the network's core is the point.) Skeleton for an octahedral variant:
-icosahedron 1/φ ⊂ icosahedron 1 ⊂ five octahedra ⊂ icosidodecahedron φ/2 ⊂ dodecahedron 1 ⊂ … Next: fill those layers with pieces.
+icosahedron 1/φ ⊂ icosahedron 1 ⊂ five octahedra ⊂ icosidodecahedron φ/2 ⊂ dodecahedron 1 ⊂ … Filled (`scripts/oct_variant.py`, `logs/oct_variant.log`): I(1/φ) → I(1) by 20 triangular frusta (the gap is exactly
+5/3); I(1) → ID(φ/2) by 12 pentagonal pyramids + 20 twisted triangular frusta; both sampled exact covers. So the network refines to
+icosahedron 1/φ → icosahedron 1 → ID → D → cage → RT → icosahedron φ². I(1) is concentric with the centre, so it is a finer layer,
+not a branch: unlike the Lotus seed's 12 corner icosahedra, it starts no new centre.
 
 ## A branch into the 3D Penrose tiling (DICTO: "maybe a golden ratio rhombohedron")
 The rhombic triacontahedron is 10 prolate + 10 oblate golden rhombohedra (classical); with edge 1, 10 × 0.760845 + 10 × 0.470228 =
