@@ -1,5 +1,7 @@
 # Network versions (DICTO, 2026-10-12)
 
+The φ³ cycle found here was named **Spheres of Dharma** by DICTO (2026-10-12), discovery #23.
+
 DICTO: "at least 3 further versions of Network … any and all possibilities … the real one will stand up, or the false may
 eliminate themselves or reveal further missing pieces"; the icosidodecahedron (ID) as the hybrid "twin" of the two-form version;
 fullerene cages as transition figures; the three golden rectangles; the great icosahedron.
@@ -86,10 +88,10 @@ I(φ²) ⊃ RT ⊃ cage ⊃ D ⊃ ID ⊃ I(1/φ), repeating inward and outward w
 
 The icosahedron of edge φ² therefore has two exact inner structures: the Lotus seed (113 pieces) and this five-shell network around
 the icosidodecahedral core. Since the Chain of Karma makes every icosahedron a Lotus seed of its own size, either can be chosen in
-every icosahedron at every scale. The four combinations are exact fillings, but the Lotus seed's 12 corner icosahedra straddle the dodecahedron (a J2 cap inside, a J11 outside), so they are whole only when both halves are the Lotus seed's: only the pure Lotus seed branches (13 icosahedra per φ² step); the twin network grows concentrically (one centre icosahedron per φ³ step). The shells are the family of the Tsai cluster of real quasicrystals (as solid, exactly filled
+every icosahedron at every scale. The four combinations are exact fillings, but the Lotus seed's 12 corner icosahedra straddle the dodecahedron (a J2 cap inside, a J11 outside), so they are whole only when both halves are the Lotus seed's: only the pure Lotus seed branches (13 icosahedra per φ² step); the Spheres of Dharma grow concentrically (one centre icosahedron per φ³ step). The shells are the family of the Tsai cluster of real quasicrystals (as solid, exactly filled
 shells; the order differs).
 
-## The cube family in the twin network (DICTO: "are there missing forms like octahedra?")
+## The cube family in the Spheres of Dharma (DICTO: "are there missing forms like octahedra?")
 `scripts/periodic_forms.py`, `logs/periodic_forms.log`. The cube family enters the icosahedral shells as compounds of five:
 - **5 cubes** on the dodecahedron's 20 corners: all 60 edges lie on piece surfaces (24 along piece edges, 36 across piece faces):
   Euclid's cubes are drawn into the network's seams and cut no piece.
