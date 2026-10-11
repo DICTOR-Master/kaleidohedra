@@ -130,7 +130,7 @@ Penrose rhombi, aperiodic tilings, diffraction.
 - P. Kunnen, S. Schlicker (1998). *Regular Sierpinski polyhedra*. Pi Mu Epsilon Journal 10 (the Sierpinski icosahedron: 12 corner icosahedra at 1/φ²)
 - P. Kramer (1982). *Non-periodic central space filling with icosahedral symmetry using copies of seven elementary cells*. Acta Cryst. A38, 257-264 (the seven tiles = Mosseri-Sadoc t1-t6 + T2)
 - L. Danzer (1989). *Three-dimensional analogs of the planar Penrose tilings and quasicrystals*. Discrete Math. 76, 1-7 (the ABCK tetrahedra)
-- D. Frettlöh. *Icosahedral tilings in R3: the ABCK tilings* (draft). <https://www.math.uni-bielefeld.de/~frettloe/papers/ikosa.pdf> (ABCK coordinates and inflation matrix)
+- D. Frettlöh (c. 2011). *Icosahedral tilings in R3: the ABCK tilings* (draft). <https://www.math.uni-bielefeld.de/~frettloe/papers/ikosa.pdf> (ABCK coordinates and inflation matrix)
 - J.-P. Sydler (1965). *Conditions nécessaires et suffisantes pour l'équivalence des polyèdres de l'espace euclidien à trois dimensions*. Comment. Math. Helv. 40, 43-80 (volume and Dehn invariant decide scissors congruence; the zero-Dehn sides of DICTO's FUJI rule)
 - D. Smith, J. S. Myers, C. S. Kaplan, C. Goodman-Strauss (2023). *An aperiodic monotile*. <https://arxiv.org/abs/2303.10798>
 
