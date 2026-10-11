@@ -128,6 +128,13 @@ kept when they do not overlap, then the largest centred copy. Exact golden close
   triacontahedron on the 3- and 2-fold axes), and at φ³, φ⁴ the centre is √5 or 3φ... (not a power of φ), so no golden cycle.
 So two forms multiply, the icosahedron and the triacontahedron (the earlier statement "only the icosahedron" is corrected).
 
+## Transitional spheres (DICTO: "the transitional ring/sphere structure between the solids")
+`logs/transition_spheres.log` (computed inline with the network_screen forms). Inner (face), mid (edge) and outer (corner) spheres of
+each shell, dodecahedron edge 1. Shared: ID inner = D inner 1.113516; ID outer = D mid 1.309017; D outer = TI inner 1.401259; TI mid
+= RT inner 1.500000 (the cage's hexagon-hexagon edges lie on the RT faces). So ID -> D -> TI -> RT are linked by touching spheres;
+I(1/phi) -> ID and RT -> I(phi^2) share none (the pyramid/frustum and cap layers). Next idea: a ring view, each shared sphere with
+the circles the two solids draw on it (DICTO's ring models).
+
 ## Touching nestings (midsphere screen, after DICTO's ring models)
 `scripts/touch_screen.py`, `logs/touch_screen.log`. DICTO's ring models are canonical (midsphere) polyhedra: rings = faces,
 touches = edges, gaps = vertices (the Koebe–Andreev–Thurston circle packing gives one shape per face pattern). Every pair of forms,

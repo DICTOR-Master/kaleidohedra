@@ -1,0 +1,25 @@
+I(1/phi)   edge 0.618034  inner 0.467086  mid 0.500000  outer 0.587785
+ID(phi/2)  edge 0.809017  inner 1.113516  mid 1.244949  outer 1.309017
+D(1)       edge 1.000000  inner 1.113516  mid 1.309017  outer 1.401259
+TI(1/phi)  edge 0.618034  inner 1.401259  mid 1.500000  outer 1.531500
+RT         edge 1.089814  inner 1.500000  mid 1.595908  outer 1.605699-1.763356
+I(phi^2)   edge 2.618034  inner 1.978609  mid 2.118034  outer 2.489898
+shared spheres:
+  ID(phi/2) inner = D(1) inner = 1.113516
+  ID(phi/2) outer = D(1) mid = 1.309017
+  D(1) outer = TI(1/phi) inner = 1.401259
+  TI(1/phi) mid = RT inner = 1.500000
+golden steps between successive distinct spheres:
+  0.467086 -> 0.500000  ratio 1.070467  (log_phi 0.1415)
+  0.500000 -> 0.587785  ratio 1.175570  (log_phi 0.3361)
+  0.587785 -> 1.113516  ratio 1.894427  (log_phi 1.3277)
+  1.113516 -> 1.244949  ratio 1.118034  (log_phi 0.2319)
+  1.244949 -> 1.309017  ratio 1.051462  (log_phi 0.1043)
+  1.309017 -> 1.401259  ratio 1.070467  (log_phi 0.1415)
+  1.401259 -> 1.500000  ratio 1.070466  (log_phi 0.1415)
+  1.500000 -> 1.531500  ratio 1.021000  (log_phi 0.0432)
+  1.531500 -> 1.595908  ratio 1.042056  (log_phi 0.0856)
+  1.595908 -> 1.605699  ratio 1.006135  (log_phi 0.0127)
+  1.605699 -> 1.978609  ratio 1.232242  (log_phi 0.4340)
+  1.978609 -> 2.118034  ratio 1.070466  (log_phi 0.1415)
+  2.118034 -> 2.489898  ratio 1.175570  (log_phi 0.3361)
