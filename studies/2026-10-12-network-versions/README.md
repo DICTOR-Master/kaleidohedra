@@ -86,7 +86,7 @@ I(φ²) ⊃ RT ⊃ cage ⊃ D ⊃ ID ⊃ I(1/φ), repeating inward and outward w
 
 The icosahedron of edge φ² therefore has two exact inner structures: the Lotus seed (113 pieces) and this five-shell network around
 the icosidodecahedral core. Since the Chain of Karma makes every icosahedron a Lotus seed of its own size, either can be chosen in
-every icosahedron at every scale. The shells are the family of the Tsai cluster of real quasicrystals (as solid, exactly filled
+every icosahedron at every scale. The four combinations are exact fillings, but the Lotus seed's 12 corner icosahedra straddle the dodecahedron (a J2 cap inside, a J11 outside), so they are whole only when both halves are the Lotus seed's: only the pure Lotus seed branches (13 icosahedra per φ² step); the twin network grows concentrically (one centre icosahedron per φ³ step). The shells are the family of the Tsai cluster of real quasicrystals (as solid, exactly filled
 shells; the order differs).
 
 ## The cube family in the twin network (DICTO: "are there missing forms like octahedra?")

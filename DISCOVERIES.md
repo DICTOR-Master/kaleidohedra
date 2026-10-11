@@ -909,7 +909,8 @@ as transition figures; "one more missing piece?". Name to come from DICTO.*
 - The icosahedron and dodecahedron share the icosidodecahedron as their core (12 pentagonal or 20 triangular corner pyramids); with
   I and D in dual position their 30 edge pairs cross at its corners.
 - The twin network and the Lotus seed pass through the same dodecahedron; each half of either fills its side exactly, so all four
-  combinations are exact and the Chain of Karma branches at every icosahedron.
+  combinations are exact fillings; the Lotus seed's corner icosahedra straddle the dodecahedron, so only the pure Lotus seed
+  branches (13 icosahedra per φ² step), while the twin network grows concentrically (one icosahedron per φ³ step).
 - The five cubes of the dodecahedron lie in the network's seams; the five octahedra on the icosidodecahedron hold one icosahedron of
   edge 1 in Pacioli's golden way, all five at once.
 - Study files: [studies/2026-10-12-network-versions](studies/2026-10-12-network-versions/). Paper: draft, not for release.
