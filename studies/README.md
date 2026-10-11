@@ -18,3 +18,4 @@ themselves are written up in [DISCOVERIES.md](../DISCOVERIES.md) and archived on
 | [2026-10-10-ico-clusters](2026-10-10-ico-clusters/) | #21 ICOSA-TET, ICOSA-OCT and the Lotus-seed clusters |
 | [2026-10-11-spheres-and-ripples](2026-10-11-spheres-and-ripples/) | DICTO's sphere and ripple methods on the Lotus seed |
 | [2026-10-11-chain-of-karma](2026-10-11-chain-of-karma/) | Chain of Karma: the Lotus seed nested in itself without end |
+| [2026-10-11-self-building-kit](2026-10-11-self-building-kit/) | A self-building kit: AXE and CLEO via Mosseri–Sadoc tiles; FUJI open |

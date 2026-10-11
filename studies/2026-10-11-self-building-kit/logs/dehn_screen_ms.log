@@ -1,0 +1,84 @@
+dihedral angles (deg) and their coordinates on the angle basis (mod 180):
+angle basis (deg): [37.37737, 41.81031]
+length basis: ['0.027864045', '0.034441854', '0.053000563', '0.078089462', '0.085756713', '0.1263514'] (44 distinct lengths)
+
+Dehn invariant zero? (edge-1 sizes)
+  I     volume 2.181695   Dehn nonzero
+  AXE   volume 0.083333   Dehn nonzero
+  FUJI  volume 0.321175   Dehn nonzero
+  CLEO  volume 0.051503   Dehn nonzero
+  A     volume 0.462090   Dehn ZERO
+  B     volume 0.285588   Dehn ZERO
+  C     volume 0.285588   Dehn ZERO
+  K     volume 0.088251   Dehn ZERO
+  t1    volume 0.083333   Dehn nonzero
+  t2    volume 0.134836   Dehn nonzero
+  t3    volume 0.134836   Dehn nonzero
+  t4    volume 0.218169   Dehn nonzero
+  t5    volume 0.218169   Dehn nonzero
+  t6    volume 0.353006   Dehn nonzero
+  T2    volume 0.353006   Dehn nonzero
+
+Screen: kit sizes phi^0 .. phi^-6
+volumes (x12): {'t1': '1.0', 't2': '1.618034', 't3': '1.618034', 't4': '2.618034', 't5': '2.618034', 't6': '4.236068', 'T2': '4.236068'}
+sanity: phi x t1..t6 from t1..t6 (Mosseri-Sadoc inflation must pass); I from MS at phi^0 (Koca: 7t1+6t2+2t5+t6)
+  phi^1 x t1   from MS six: 
+      2 pieces: {'t3@phi^0': 1, 't5@phi^0': 1}
+  phi^1 x t2   from MS six: 
+      3 pieces: {'t2@phi^0': 1, 't4@phi^0': 1, 't5@phi^0': 1}
+  phi^1 x t3   from MS six: 
+      5 pieces: {'t3@phi^-1': 1, 't3@phi^0': 2, 't4@phi^-1': 1, 't4@phi^0': 1}
+  phi^1 x t4   from MS six: 
+      4 pieces: {'t2@phi^0': 1, 't4@phi^0': 1, 't5@phi^0': 1, 't6@phi^0': 1}
+  phi^1 x t5   from MS six: 
+      6 pieces: {'t1@phi^0': 1, 't3@phi^0': 1, 't4@phi^-1': 1, 't4@phi^0': 2, 't5@phi^0': 1}
+  phi^1 x t6   from MS six: 
+      6 pieces: {'t3@phi^0': 1, 't4@phi^0': 2, 't5@phi^0': 1, 't6@phi^0': 2}
+  phi^0 x I    from Kramer seven, sizes <= own size: 
+      16 pieces: {'t1@phi^0': 7, 't2@phi^0': 3, 't3@phi^-1': 1, 't5@phi^0': 2, 't6@phi^-2': 1, 'T2@phi^0': 2}
+  phi^0 x AXE  from Kramer seven, sizes <= own size: 
+      1 pieces: {'t6@phi^-1': 1}
+  phi^0 x FUJI from Kramer seven, sizes <= own size: 
+      5 pieces: {'t4@phi^-3': 1, 't4@phi^0': 1, 't5@phi^-2': 1, 't6@phi^-3': 1, 't6@phi^-1': 1}
+  phi^0 x CLEO from Kramer seven, sizes <= own size: 
+      1 pieces: {'t4@phi^-1': 1}
+
+up = phi^1
+  phi^1 x I    from our kit + Kramer seven: 
+      17 pieces: {'I@phi^0': 3, 'FUJI@phi^-2': 1, 'FUJI@phi^0': 5, 't1@phi^-3': 1, 't3@phi^-4': 1, 't3@phi^-2': 1, 't6@phi^-5': 1, 't6@phi^-3': 1, 't6@phi^0': 3}
+  phi^1 x AXE  from our kit + Kramer seven: 
+      1 pieces: {'t6@phi^0': 1}
+  phi^1 x FUJI from our kit + Kramer seven: 
+      5 pieces: {'t1@phi^0': 1, 't4@phi^0': 1, 't6@phi^0': 2, 'T2@phi^0': 1}
+  phi^1 x CLEO from our kit + Kramer seven: 
+      1 pieces: {'t4@phi^0': 1}
+
+up = phi^2
+  phi^2 x I    from our kit + Kramer seven: 
+      67 pieces: {'I@phi^-1': 1, 'I@phi^0': 10, 'FUJI@phi^0': 22, 't2@phi^-5': 1, 't3@phi^-6': 1, 't4@phi^-6': 1, 't4@phi^-4': 2, 't4@phi^0': 1, 't6@phi^-5': 1, 't6@phi^0': 26, 'T2@phi^0': 1}
+  phi^2 x AXE  from our kit + Kramer seven: 
+      6 pieces: {'t3@phi^0': 1, 't5@phi^0': 1, 't6@phi^-1': 1, 't6@phi^0': 2, 'T2@phi^0': 1}
+  phi^2 x FUJI from our kit + Kramer seven: 
+      15 pieces: {'I@phi^0': 1, 'FUJI@phi^0': 4, 't3@phi^0': 1, 't4@phi^-2': 2, 't6@phi^0': 5, 'T2@phi^-2': 1, 'T2@phi^0': 1}
+  phi^2 x CLEO from our kit + Kramer seven: 
+      3 pieces: {'t5@phi^0': 1, 't6@phi^0': 1, 'T2@phi^0': 1}
+
+6D lift on the edge-1 icosahedron axes (integers = vertex of Z^6 shadow):
+  I    : ['half-integer']
+  AXE  : ['half-integer']
+  FUJI : ['half-integer']
+  CLEO : ['half-integer']
+  A    : ['half-integer', 'integer, sum even', 'integer, sum odd']
+  B    : ['half-integer', 'integer, sum even', 'integer, sum odd']
+  C    : ['half-integer', 'integer, sum even', 'integer, sum odd']
+  K    : ['half-integer', 'integer, sum even', 'integer, sum odd']
+Traceback (most recent call last):
+  File "/home/dicto/ico13/dehn_screen_ms.py", line 180, in <module>
+    ls = [lift(v) for v in pieces[k][0]]
+          ~~~~^^^
+  File "/home/dicto/ico13/dehn_screen_ms.py", line 169, in lift
+    rhs = mp.matrix([p[0], p[1], p[2], gal(p[0]), gal(p[1]), gal(p[2])]); n = Mi * rhs
+                                                  ~~~^^^^^^
+  File "/home/dicto/ico13/dehn_screen_ms.py", line 163, in gal
+    raise ValueError(x)
+ValueError: 0.58778525229247312916870595463907276859765243764315
