@@ -8,12 +8,19 @@ from 6D shadows (Mosseri–Sadoc).
 | Piece | Rebuilds itself? |
 |---|---|
 | Icosahedron | **Yes**: the Lotus seed, φ²·I = 12 I + I(1/φ) + 60 AXE + 20 FUJI + 20 CLEO (#22) |
-| AXE | **Yes, with Mosseri–Sadoc tiles.** AXE *is* Mosseri–Sadoc t6 at scale 1/φ, so φ·AXE = t6, and the six tiles inflate by φ into each other (Mosseri & Sadoc's Stein inflation) |
-| CLEO | **Yes, the same way.** CLEO is t4 at scale 1/φ |
+| AXE | **Open.** AXE is Mosseri–Sadoc t6 at scale 1/φ (φ·AXE = t6), but the six basic tetrahedra do *not* rebuild themselves under φ (Papadopolos & Ogievetsky 2000): an equilateral face grown by φ cannot be tiled by the tiles' own smaller faces. Only the glued Mosseri–Sadoc tiles z, h, s, a do |
+| CLEO | **Open, for the same reason.** CLEO is t4 at scale 1/φ and has an equilateral face |
 | FUJI | **Tentative (DICTO's rule, below).** φ·FUJI = FUJI tip + mirrored FUJI(1/φ) + sides with Dehn invariant zero |
 
-The icosahedron is itself a union of the tiles: I = 7 t1 + 6 t2 + 2 t5 + t6 (Koca et al. 2020). So if FUJI works, the kit
-{I, FUJI, t1 … t6} rebuilds itself completely: the Chain of Karma joined to the Mosseri–Sadoc inflation.
+**Correction (literature search, 2026-10-11).** An earlier version of this table said AXE and CLEO rebuild themselves through the
+Mosseri–Sadoc inflation. That was wrong: the volume + Dehn screen passing is necessary only, and the faces block it. Equilateral
+faces are the obstacle (Al Raisi, Koca, Koca & Koc 2026 say the same for icosahedra and every tile with three-fold faces).
+
+**FUJI's hexagon is the way past the face obstacle.** FUJI's base is an equilateral triangle with its corners cut off, so an
+equilateral triangle of side φ² = FUJI's hexagon (size 1) + 3 equilateral triangles of side 1 (exactly how each face of the Lotus
+seed is covered), and one of side φ = the hexagon at size 1/φ + 3 triangles of side 1/φ. The tile sets that rule this out (the
+six tetrahedra, Mosseri–Sadoc) have no hexagonal faces. DICTO (2026-10-11): use more tiles than Mosseri–Sadoc, and include them
+all for thoroughness (Kramer's seven, Mosseri–Sadoc's four, Danzer's four, the Lotus kit).
 
 ## DICTO's FUJI rule: tip, mirror, sides
 DICTO's steps (2026-10-11):
@@ -74,6 +81,16 @@ Not checked: the 6D-lattice lift of the vertices in this study depended on the c
   the tiles alone do not inflate the icosahedron past edge τ (the Lotus seed reaches φ² with whole icosahedra).
 - Sydler 1965 (Dehn invariant zero and equal volume is enough for scissors congruence to a cube).
 - Danzer 1989; Frettlöh, *Icosahedral tilings in R³: the ABCK tilings* (coordinates, inflation matrix).
+- R. W. Gray (2002), icosahedron scaling pages: nested icosahedra at every φ-power, "each icosahedron at pⁿ contains a center
+  at pⁿ⁻³ and 12 at pⁿ⁻²" (the Lotus seed's icosahedra and the Chain's hierarchy of icosahedra; the gap filling, the solid
+  replacement rule and the Dehn and face analysis are not there).
+- The Sierpinski icosahedron (n-flake; Kunnen & Schlicker 1998, Bourke): 12 corner icosahedra at 1/φ², gaps left empty.
+- R. Al Raisi, N. O. Koca, M. Koca, R. Koc (2026), *Modified Mosseri–Sadoc tiles from D6*, arXiv:2604.03988: the regular
+  **dodecahedron** grows by τⁿ for every n with whole dodecahedra inside, d(τ²) = 7 d(1) + tiles; they state icosahedra cannot be
+  done with their tiles (equilateral faces). The Chain of Karma is the icosahedral counterpart, done with whole icosahedra and
+  FUJI's hexagons. Closest known work.
+- Papadopolos & Ogievetsky (2000): the six tetrahedra admit no stone inflation (Dehn invariants and faces).
+- Janot and de Boissieu: quasicrystal models built recursively from pseudo-Mackay atomic clusters (clusters of clusters).
 - Credit: AXE = Mosseri–Sadoc t6 and CLEO = t4 (already credited in the Icosa-13 study). Names Lotus seed, AXE, FUJI,
   CLEO and Chain of Karma: DICTO.
 

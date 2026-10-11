@@ -88,7 +88,7 @@ Books on structure and space. Mostly in copyright, so listed with links only.
 - Peter Pearce (1978). *Structure in Nature is a Strategy for Design*. MIT Press. <https://mitpress.mit.edu/>
 - Haresh Lalvani (1988). *Building structures based on polygonal members and icosahedral symmetry*. US 4,723,382, filed 1986-08-15, issued 1988-02-09. <https://patents.google.com/patent/US4723382A>
 - Wolfram Demonstrations Project. *Cluster of 20 Icosahedra*. <https://demonstrations.wolfram.com/ClusterOf20Icosahedra/> (the 20-icosahedron shell of the DICTO Stella-Corona)
-- R. W. Gray (2002). *More Icosahedron Scaling and Packing* (web page, 2002-01-12). <https://rwgrayprojects.com/Lynn/scaling5fold/Icosa/IcosaScaling.html> (prior art for the DICTO Icosa-13 DESHI arrangement)
+- R. W. Gray (2002). *More Icosahedron Scaling and Packing* (web page, 2002-01-12). <https://rwgrayprojects.com/Lynn/scaling5fold/Icosa/IcosaScaling.html> (prior art for the DICTO Icosa-13 DESHI arrangement, and for the Chain of Karma's nested icosahedra at every φ-power)
 - Sándor Kabai (2010). *30 Cubes on a Rhombic Triacontahedron*. Bridges 2010 proceedings, from p. 317. <https://archive.bridgesmathart.org/2010/bridges2010-317.pdf>
 - George W. Hart, Henri Picciotto (2001). *Zome Geometry*. Key Curriculum Press. <https://www.georgehart.com/>
 - John H. Conway, Heidi Burgiel, Chaim Goodman-Strauss (2008). *The Symmetries of Things*. A K Peters. <https://doi.org/10.1201/b21368>
@@ -124,6 +124,8 @@ Penrose rhombi, aperiodic tilings, diffraction.
 - N. O. Koca, R. Koc, M. Koca, A. Al-Siyabi (2020). *Dodecahedral structures with Mosseri-Sadoc tiles*. <https://arxiv.org/abs/2009.07048> (prior art for the DICTO Icosa-13 pieces AXE and CLEO)
 - Z. Papadopolos, O. Ogievetsky (1999). *On inflation rules for Mosseri-Sadoc tilings*. <https://arxiv.org/abs/math-ph/9911005>
 - O. Ogievetsky, Z. Papadopolos (1999). *On quasiperiodic space tilings, inflation and Dehn invariants*. <https://arxiv.org/abs/math-ph/9910006> (the Dehn-invariant method behind the 2026-10-11 self-building kit study)
+- R. Al Raisi, N. O. Koca, M. Koca, R. Koc (2026). *Modified Mosseri-Sadoc tiles from D6*. <https://arxiv.org/abs/2604.03988> (whole dodecahedra in every τⁿ-dodecahedron; the closest known work to the Chain of Karma)
+- P. Kunnen, S. Schlicker (1998). *Regular Sierpinski polyhedra*. Pi Mu Epsilon Journal 10 (the Sierpinski icosahedron: 12 corner icosahedra at 1/φ²)
 - P. Kramer (1982). *Non-periodic central space filling with icosahedral symmetry using copies of seven elementary cells*. Acta Cryst. A38, 257-264 (the seven tiles = Mosseri-Sadoc t1-t6 + T2)
 - L. Danzer (1989). *Three-dimensional analogs of the planar Penrose tilings and quasicrystals*. Discrete Math. 76, 1-7 (the ABCK tetrahedra)
 - D. Frettlöh. *Icosahedral tilings in R3: the ABCK tilings* (draft). <https://www.math.uni-bielefeld.de/~frettloe/papers/ikosa.pdf> (ABCK coordinates and inflation matrix)
