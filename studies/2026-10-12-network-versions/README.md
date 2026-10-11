@@ -115,6 +115,16 @@ dodecahedron, core, centre icosahedron) or by 20 golden rhombohedra, the tiles o
 continue aperiodically through space. A seeding of another kind (into the quasicrystal tiling rather than into more icosahedra), and a
 direct link to the periodic ↔ aperiodic aim. To study: how the network's other shells meet that tiling.
 
+## Which forms multiply? (seeding test)
+`scripts/seeding.py`, `logs/seeding.log`. Copies X(1) pushed out along the 12, 20 or 30 symmetry axes until they touch X(φᵏ), k = 1..4;
+kept when they do not overlap, then the largest centred copy. Exact golden closes (copies fit and the centre is exactly a power of φ):
+- icosahedron, 12 copies on the 5-fold axes, outer φ², centre 1/φ: the Lotus seed (the check).
+- **rhombic triacontahedron, 12 copies on the 5-fold axes, outer φ², centre 1/φ** (copies 147.729 of 220.907): the same pattern and
+  ratios as the Lotus seed, so the same fractal dimension (2.6063). Its gap has not yet been divided into pieces.
+- everything else: copies overlap at φ and φ² (dodecahedron, icosidodecahedron, fullerene cage on every axis; icosahedron and
+  triacontahedron on the 3- and 2-fold axes), and at φ³, φ⁴ the centre is √5 or 3φ... (not a power of φ), so no golden cycle.
+So two forms multiply, the icosahedron and the triacontahedron (the earlier statement "only the icosahedron" is corrected).
+
 ## Touching nestings (midsphere screen, after DICTO's ring models)
 `scripts/touch_screen.py`, `logs/touch_screen.log`. DICTO's ring models are canonical (midsphere) polyhedra: rings = faces,
 touches = edges, gaps = vertices (the Koebe–Andreev–Thurston circle packing gives one shape per face pattern). Every pair of forms,
