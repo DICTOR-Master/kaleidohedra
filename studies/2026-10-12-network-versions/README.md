@@ -67,15 +67,22 @@ the Lotus seed's own D(1)), and the last layer, between the triacontahedron (edg
 (each icosahedron face joined to the three-fold corner below it, volume 0.368922): 23.214379 = the gap, and 40,000 sample points in
 the gap are each covered exactly once.
 
-So the complete network, every layer exact (205 pieces):
+So the complete network, every layer exact (237 pieces per cycle):
 
 | Shell | edge | filled from the one inside by |
 |---|---|---|
-| icosidodecahedron (core) | φ/2 | — |
+| small icosahedron (the Lotus seed's centre) | 1/φ | — |
+| icosidodecahedron | φ/2 | 12 pentagonal pyramids + 20 twisted triangular frusta |
 | dodecahedron | 1 | 20 triangular pyramids |
 | fullerene cage | 1/φ | 12 twisted pentagonal frusta + 30 Mosseri–Sadoc t1 wedges |
 | rhombic triacontahedron | 1.089813 | 12 pentagonal + 20 hexagonal caps + 60 tetrahedral wedges |
 | icosahedron (the Lotus seed's outer) | φ² | 30 edge pieces + 20 face pieces |
+
+**The last missing piece (DICTO: "one more missing piece?")** — `scripts/core_layer.py`, `logs/core_layer.log`: the ID core of
+edge φ/2 is exactly the small icosahedron I(1/φ) + 12 pentagonal pyramids (ID pentagon to the corner below, 0.197336) + 20 twisted
+triangular frusta (ID triangle, edge φ/2, to the icosahedron face below, edge 1/φ, side edges √3/2; 8 triangular faces; 0.222148):
+6.811000 = the gap, sampled exact cover. I(1/φ) is φ³ smaller than I(φ²), so **the network is a complete φ³ cycle of its own,
+I(φ²) ⊃ RT ⊃ cage ⊃ D ⊃ ID ⊃ I(1/φ), repeating inward and outward without end, independent of the Lotus seed.**
 
 The icosahedron of edge φ² therefore has two exact inner structures: the Lotus seed (113 pieces) and this five-shell network around
 the icosidodecahedral core. Since the Chain of Karma makes every icosahedron a Lotus seed of its own size, either can be chosen in
