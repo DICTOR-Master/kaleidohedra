@@ -88,8 +88,8 @@ have the fullerene's pattern, not its regular hexagons.
   triangles folded over one of the 30 big edges, two pairs per edge. Every piece is a triangle, whole or flat-ended: fullerenes
   inside fullerenes, like carbon onions (Ugarte 1992). (Counted as hexagons, step 2 has C180's 80, but it is not a Goldberg
   polyhedron.)
-- DICTO met the same shape building his cuboctahedron spheres: aiming for flat-sided triangles on the faces round the ports, he
-  ended up with flat-ended ones.
+- DICTO met the same shape building his cuboctahedron spheres: he wanted regular flat-sided triangles on the faces round the ports
+  and had to settle for blunt, flat-ended ones.
 - 3D page: Fullerene tab.
 
 ## FUJI cut into simpler pieces
