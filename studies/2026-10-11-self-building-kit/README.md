@@ -63,6 +63,15 @@ and each cycle ends as a dodecahedron, so the other steps are the icosahedron's.
 - Relation: Al Raisi et al. (2026) grow the dodecahedron with whole dodecahedra inside; here the dodecahedron grows round
   icosahedra.
 
+## The 600-cell, flattened
+DICTO (2026-10-11): the graphics look "remarkably similar to a 4D polytope". The 600-cell seen down one vertex (circumradius 1)
+has shells 1, 12 (icosahedron, r 0.587785), 20 (dodecahedron, r 0.866025), 12 (icosahedron, r 0.951057), 30
+(icosidodecahedron, r 1), …, alternating icosahedron and dodecahedron. Exact matches (`scripts/cell600_match.py`,
+`logs/cell600_match.log`): the Lotus seed's small icosahedron = the first shell (edge 1/φ, r 0.587785); the 13 icosahedron
+centres = the centre vertex + its 12 neighbours scaled by φ² (r 1.538842, spacing φ). Reading: the Lotus seed is a flattened
+piece of the 600-cell (Sadoc & Mosseri's geometrical frustration), AXE, FUJI and CLEO filling the gaps that curved 4D space closes;
+the match is in projection only.
+
 ## FUJI cut into simpler pieces
 - Apex fan over alternate base corners: FUJI = **cube corner** (edges 1, 1, 1 at right angles at the apex, volume 1/6) + 3
   pieces each with exactly CLEO's volume (edges 1/φ, 1, 1, 1, 1, √2; not CLEO's shape). The apex is a dodecahedron corner, so

@@ -53,11 +53,13 @@ for rnd in range(ROUNDS):
         Q = np.unique(np.round(np.vstack([P] + new), 7), axis=0); print(f'round {rnd}: placements {len(place)}, points {len(P)} -> {len(Q)}', flush=True); P = Q
 tree = cKDTree(P); keys = [k for k, W in place.items() if np.all(tree.query(W)[0] < 1e-6)]
 print('snug placements', len(keys), flush=True)
-rng = np.random.default_rng(2); S = rng.uniform([0, 0], [PHI, h], (200000, 2)); S = S[inside(S, -1e-9)][:30000]
+rng = np.random.default_rng(2); S = rng.uniform([0, 0], [PHI, h], (200000, 2)); S = S[inside(S, -1e-9)][:8000]
 M = lil_matrix((len(S), len(keys)), dtype=np.int8); areas = np.zeros(len(keys))
 for c, k in enumerate(keys):
-    W = place[k]; areas[c] = shapes[k[0]][2]; E = edges_eq(W)
-    hit = np.where(np.all(np.stack([S @ n + d for n, d in E], -1) < -1e-9, -1))[0]; M[hit, c] = 1
+    W = place[k]; areas[c] = shapes[k[0]][2]; E = edges_eq(W); lo, hi = W.min(0), W.max(0)
+    cand = np.where(np.all((S >= lo) & (S <= hi), 1))[0]
+    if len(cand) == 0: continue
+    sub = S[cand]; hit = cand[np.all(np.stack([sub @ n + d for n, d in E], -1) < -1e-9, -1)]; M[hit, c] = 1
 M = csr_matrix(M); AR = np.sqrt(3) / 4 * (PHI ** 2 - 1)   # trapezoid area = (sqrt3/4)(phi^2 - 1^2)
 res = milp(c=np.ones(len(keys)), constraints=[LinearConstraint(M, 1, 1), LinearConstraint(areas[None, :], AR - 1e-9, AR + 1e-9)],
            integrality=np.ones(len(keys)), bounds=Bounds(0, 1), options={'time_limit': float(sys.argv[3]) if len(sys.argv) > 3 else 1800})
