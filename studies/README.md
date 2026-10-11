@@ -16,3 +16,4 @@ themselves are written up in [DISCOVERIES.md](../DISCOVERIES.md) and archived on
 | [2026-10-10-icosa-networks-2](2026-10-10-icosa-networks-2/) | #20 The MACE network; the icosahedral EKP cell (names pending) |
 | [2026-10-10-icosa-networks-3](2026-10-10-icosa-networks-3/) | #21 The icosahedral octet; #20 the 138.19° joint |
 | [2026-10-10-ico-clusters](2026-10-10-ico-clusters/) | #21 ICOSA-TET, ICOSA-OCT and the Lotus-seed clusters |
+| [2026-10-11-spheres-and-ripples](2026-10-11-spheres-and-ripples/) | DICTO's sphere and ripple methods on the Lotus seed |
