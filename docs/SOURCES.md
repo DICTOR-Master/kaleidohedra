@@ -122,6 +122,12 @@ Penrose rhombi, aperiodic tilings, diffraction.
 - N. O. Koca, M. Koca, A. Al-Mukhaini, A. Al-Qanobi (2015). *Quaternionic representations of the pyritohedral group, related polyhedra and lattices*. <https://arxiv.org/abs/1506.04600>
 - M. Koca, R. Koc, N. O. Koca, A. Al-Siyabi (2020). *Icosahedral tiling with dodecahedral structures*. <https://arxiv.org/abs/2008.00862>
 - N. O. Koca, R. Koc, M. Koca, A. Al-Siyabi (2020). *Dodecahedral structures with Mosseri-Sadoc tiles*. <https://arxiv.org/abs/2009.07048> (prior art for the DICTO Icosa-13 pieces AXE and CLEO)
+- Z. Papadopolos, O. Ogievetsky (1999). *On inflation rules for Mosseri-Sadoc tilings*. <https://arxiv.org/abs/math-ph/9911005>
+- O. Ogievetsky, Z. Papadopolos (1999). *On quasiperiodic space tilings, inflation and Dehn invariants*. <https://arxiv.org/abs/math-ph/9910006> (the Dehn-invariant method behind the 2026-10-11 self-building kit study)
+- P. Kramer (1982). *Non-periodic central space filling with icosahedral symmetry using copies of seven elementary cells*. Acta Cryst. A38, 257-264 (the seven tiles = Mosseri-Sadoc t1-t6 + T2)
+- L. Danzer (1989). *Three-dimensional analogs of the planar Penrose tilings and quasicrystals*. Discrete Math. 76, 1-7 (the ABCK tetrahedra)
+- D. Frettlöh. *Icosahedral tilings in R3: the ABCK tilings* (draft). <https://www.math.uni-bielefeld.de/~frettloe/papers/ikosa.pdf> (ABCK coordinates and inflation matrix)
+- J.-P. Sydler (1965). *Conditions nécessaires et suffisantes pour l'équivalence des polyèdres de l'espace euclidien à trois dimensions*. Comment. Math. Helv. 40, 43-80 (volume and Dehn invariant decide scissors congruence; the zero-Dehn sides of DICTO's FUJI rule)
 - D. Smith, J. S. Myers, C. S. Kaplan, C. Goodman-Strauss (2023). *An aperiodic monotile*. <https://arxiv.org/abs/2303.10798>
 
 ### Bridges: periodic ↔ aperiodic
