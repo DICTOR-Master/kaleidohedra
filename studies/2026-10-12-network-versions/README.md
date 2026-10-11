@@ -30,6 +30,17 @@ All forms are built from one icosahedron so that they share its turn (`scripts/n
   icosidodecahedron shells in a triacontahedral envelope (Takakura et al. 2007); nested icosahedral point arrays model viruses
   (Keef and Twarock 2009; Twarock et al. 2015). See the Chain of Karma paper, section 9.
 
+## The shared core (DICTO's dual arrangement)
+DICTO (2026-10-12): the Lotus shell is an icosahedron that separates into pentagonal elements at its 12 corners; look for the dual,
+a dodecahedron with triangular structures at its 20 corners. `scripts/dual_caps.py`, `logs/dual_caps.log`:
+- Icosahedron (edge 1) = icosidodecahedron (edge 1/2) + 12 pentagonal pyramids (all edges 1/2). Volumes 1.729441 + 0.452254 =
+  2.181695.
+- Dodecahedron (edge 1) = icosidodecahedron (edge φ/2) + 20 triangular pyramids (base φ/2, side edges 1/2). Volumes 7.326029 +
+  0.337090 = 7.663119.
+- So an icosahedron of edge φ and a dodecahedron of edge 1 share one icosidodecahedral core (edge φ/2), and their dual compound is
+  exactly that core + 12 pentagonal pyramids + 20 triangular pyramids. The ID is the body both forms share; only their corner pieces
+  differ. In DICTO's ring models these corner pieces are the vertex gaps (pentagonal or triangular, by the reading).
+
 ## Touching nestings (midsphere screen, after DICTO's ring models)
 `scripts/touch_screen.py`, `logs/touch_screen.log`. DICTO's ring models are canonical (midsphere) polyhedra: rings = faces,
 touches = edges, gaps = vertices (the Koebe–Andreev–Thurston circle packing gives one shape per face pattern). Every pair of forms,
