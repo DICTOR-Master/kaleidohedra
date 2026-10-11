@@ -89,6 +89,15 @@ the icosidodecahedral core. Since the Chain of Karma makes every icosahedron a L
 every icosahedron at every scale. The shells are the family of the Tsai cluster of real quasicrystals (as solid, exactly filled
 shells; the order differs).
 
+## The cube family in the twin network (DICTO: "are there missing forms like octahedra?")
+`scripts/periodic_forms.py`, `logs/periodic_forms.log`. The cube family enters the icosahedral shells as compounds of five:
+- **5 cubes** on the dodecahedron's 20 corners: all 60 edges lie on piece surfaces (24 along piece edges, 36 across piece faces):
+  Euclid's cubes are drawn into the network's seams and cut no piece.
+- **5 octahedra** on the icosidodecahedron's 30 corners (the compound of five octahedra; the raw log counts each octahedron 8 times,
+  once per sign choice): all 60 edges pass through pieces. The octahedra's corners are present, their edges are not seams.
+- 10 tetrahedra on the dodecahedron: the test used here was unreliable; to redo.
+- Elsewhere: icosahedron + 6 Admiral Caps = octahedron (#21, the periodic frame); Pacioli's icosahedron in the octahedron.
+
 ## Touching nestings (midsphere screen, after DICTO's ring models)
 `scripts/touch_screen.py`, `logs/touch_screen.log`. DICTO's ring models are canonical (midsphere) polyhedra: rings = faces,
 touches = edges, gaps = vertices (the Koebe–Andreev–Thurston circle packing gives one shape per face pattern). Every pair of forms,
