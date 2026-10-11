@@ -1,7 +1,7 @@
 // 1D Construct: a world of its own (Wizard → 1D → Construct), the
 // construction microscope of DICTO's Dimensional Construction Interface
 // (docs/DIMENSIONAL_CONSTRUCTION_INTERFACE.md; the model is
-// geometry-extensions/construction.js).
+// krp-core/src/geometry-extensions/construction.js).
 //
 // Redesigned 2026-09-29 (direct feedback on the first version: "horrible
 // and confusing", "I wanted a square, not a grid", "looks like 1960s Open

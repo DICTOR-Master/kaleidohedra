@@ -65,9 +65,10 @@ smaller list), `PLAN.md` (the current design), `assets/brand/` (the
 logo). The forked engine: `index.html` (the app), `src/render.js`
 (scene, render loop, most UI wiring), `src/core/` (lattice math,
 placement/removal input in `build.js`, world state, persistence),
-`src/app/` (wheels, Wizard, 4D and 5D/6D worlds, Almanac, settings,
-i18n, welcome, guide, language picker), `src/geometry-extensions/`
-(every lattice beyond FCC), `data/` (starter world, changelog),
+`src/app/` (Wizard, 4D and 5D/6D worlds, Almanac, settings,
+i18n, welcome, guide, language picker), `src/krp-core/` (the shared
+geometry, a git submodule: every lattice and shape generator, with its
+own tests and verify scripts), `data/` (starter world, changelog),
 `docs/guide*.md` (the user guide) — all inherited from Rhombiverse, not
 yet diverged for Kaleidohedra's own slider/export model.
 
@@ -83,11 +84,9 @@ yet diverged for Kaleidohedra's own slider/export model.
   pass the files, `node --test tests/unit/*.test.mjs`).
 - **Browser smoke test:** `tests/browser/smoke.mjs` against a served
   copy, raw source and `dist/` both, in CI.
-- **Checks:** `npm run verify:i18n | verify:copy |
-  verify:lattice-2d | verify:pyrochlore | verify:rhombohedra | verify:4d |
-  verify:quasicrystal | verify:catalogue | verify:kaleido | verify:shells |
-  verify:kaleidoscope | verify:trajectory | verify:construction |
-  verify:nets | verify:packing | verify:dicto-fcc | verify:roof-fold`.
+- **Checks:** in the app, `npm run verify:i18n | verify:copy | verify:about |
+  verify:targets | verify:catalogue | verify:rhombis-i18n`. The geometry's
+  own checks run in krp-core (`cd src/krp-core && npm test && npm run verify`).
 - **Browser automation:** run Playwright on `dicto-node` (192.168.0.7,
   SSH), not the dev Pi. Sync first, with `--delete` for tests. Headless
   Chromium there can starve timers, so hold simulated long-presses 1.5 s+.

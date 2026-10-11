@@ -134,7 +134,7 @@ found by matching `DICTO_DIRECTIONS`' Gram matrix against every ED cell's
 Neither has a square face, consistent with DICTO's RD having none.
 
 - Verified here (`DICTO_SKEWED_ED_16`, `DICTO_SKEWED_ED_18` in
-  `src/geometry-extensions/dicto-fcc.js`): equal edges, the face counts above,
+  `src/krp-core/src/geometry-extensions/dicto-fcc.js`): equal edges, the face counts above,
   the exact volumes, and that both keep DICTO's four directions unchanged.
 - `TARGETS.md` rows 16 and 18 (elongated dodecahedron section) updated from
   "to find" to built.

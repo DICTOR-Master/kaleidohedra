@@ -1,6 +1,6 @@
 // 1D Signal: a world of its own (Wizard → 1D → Signal), from DICTO's 1D
 // Experience Plan. A strictly one-dimensional trajectory
-// (geometry-extensions/trajectory-1d.js) carrying Morse code.
+// (krp-core/src/geometry-extensions/trajectory-1d.js) carrying Morse code.
 //
 // Decisions this file implements (plan §9 and direct requests, user
 // 2026-09-29):

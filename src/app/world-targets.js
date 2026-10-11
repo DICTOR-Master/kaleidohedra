@@ -1,5 +1,5 @@
 // Targets: a 3D gallery of the 160 target cells (TARGETS.md, geometry in
-// geometry-extensions/targets.js). Pick a type and a cell; it is drawn at
+// krp-core/src/geometry-extensions/targets.js). Pick a type and a cell; it is drawn at
 // edge 1 with its faces coloured by kind, alone, with its face neighbours, or
 // as a 3x3x3 block of its lattice. Info gives its faces, angles, volume and
 // whether it is already a Polyhedraverse piece. Nothing is built here: a

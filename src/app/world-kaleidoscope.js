@@ -1,5 +1,5 @@
 // Kaleidoscope: a 2D world of its own (Wizard → 2D → Kaleidoscope).
-// Build with flat tiles of one edge length (geometry-extensions/
+// Build with flat tiles of one edge length (krp-core/src/geometry-extensions/
 // kaleidoscope.js: Penrose thick/thin rhombi and pentagons, Kagome
 // triangles and hexagons, squares and triangles); the mirrors cut the
 // build to one wedge (or triangle) and reflect it everywhere, like a

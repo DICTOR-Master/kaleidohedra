@@ -2,7 +2,7 @@
 // same machinery). Owns its own store, THREE group, on-screen slider
 // panel and tap handling; render.js only switches it on for the 4D
 // dimension and routes taps to it (core/build.js's world4d hook). All
-// geometry comes from geometry-extensions/lattice-4d.js (verify:4d).
+// geometry comes from krp-core/src/geometry-extensions/lattice-4d.js (verify:4d).
 //
 // Direct decisions this file implements:
 // - Two views: Slice (default) -- the 3D cross-section at depth w -- and

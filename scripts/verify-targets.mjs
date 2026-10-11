@@ -1,4 +1,4 @@
-// Verifies the target cells (geometry-extensions/targets.js, data/geometry-targets.json, TARGETS.md):
+// Verifies the target cells (krp-core/src/geometry-extensions/targets.js, data/geometry-targets.json, TARGETS.md):
 //
 //   - all 160 rebuild from their Gram matrices: unit directions with exactly that Gram matrix;
 //   - each zonohedron is closed and outward, every edge has length 1, and its
