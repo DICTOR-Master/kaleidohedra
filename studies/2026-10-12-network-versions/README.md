@@ -60,6 +60,28 @@ hexagon centres. The gap (5.388544, 41.3% of the cage) is filled exactly by
 So a chain of verified steps now runs: ID core → (+20 triangular pyramids) dodecahedron → (+12 frusta, +30 t1) fullerene cage →
 (+12 + 20 caps, +60 wedges) rhombic triacontahedron. Whether it continues outward at golden steps is the next question.
 
+## The icosidodecahedral network closes inside the Lotus seed (2026-10-12)
+`scripts/relink.py`, `logs/relink.log`. All four shells sit inside the Lotus seed's outer icosahedron I(φ²) (dodecahedron edge 1 =
+the Lotus seed's own D(1)), and the last layer, between the triacontahedron (edge 1.089813) and I(φ²), is filled exactly by
+**30 edge pieces** (each triacontahedron rhombus joined to the icosahedron edge it faces, volume 0.527864) and **20 face pieces**
+(each icosahedron face joined to the three-fold corner below it, volume 0.368922): 23.214379 = the gap, and 40,000 sample points in
+the gap are each covered exactly once.
+
+So the complete network, every layer exact (205 pieces):
+
+| Shell | edge | filled from the one inside by |
+|---|---|---|
+| icosidodecahedron (core) | φ/2 | — |
+| dodecahedron | 1 | 20 triangular pyramids |
+| fullerene cage | 1/φ | 12 twisted pentagonal frusta + 30 Mosseri–Sadoc t1 wedges |
+| rhombic triacontahedron | 1.089813 | 12 pentagonal + 20 hexagonal caps + 60 tetrahedral wedges |
+| icosahedron (the Lotus seed's outer) | φ² | 30 edge pieces + 20 face pieces |
+
+The icosahedron of edge φ² therefore has two exact inner structures: the Lotus seed (113 pieces) and this five-shell network around
+the icosidodecahedral core. Since the Chain of Karma makes every icosahedron a Lotus seed of its own size, either can be chosen in
+every icosahedron at every scale. The shells are the family of the Tsai cluster of real quasicrystals (as solid, exactly filled
+shells; the order differs).
+
 ## Touching nestings (midsphere screen, after DICTO's ring models)
 `scripts/touch_screen.py`, `logs/touch_screen.log`. DICTO's ring models are canonical (midsphere) polyhedra: rings = faces,
 touches = edges, gaps = vertices (the Koebe–Andreev–Thurston circle packing gives one shape per face pattern). Every pair of forms,
