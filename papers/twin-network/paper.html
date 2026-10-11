@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>The Twin Network</title>
+<link rel="stylesheet" href="../paper.css"></head><body>
+
+<h1>The Twin Network</h1>
+<p class="sub">A second endless golden cycle of the icosahedral solids, through the icosidodecahedron, the fullerene cage and the rhombic triacontahedron</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+DRAFT 2026-10-12 · not for release · working title · Licence CC BY 4.0 (on release) · Data and checks: studies/2026-10-12-network-versions.<br>
+The icosidodecahedron as the twin form, the dual triangular structures, the triangles of rhombi, the fullerene transition and the
+last missing layer are DICTO's ideas. Computation and checking with Claude (Anthropic).
+</div>
+
+<div class="abstract"><b>Abstract.</b> We describe an exact, endlessly repeating nesting of six icosahedral solids, each layer filled by a
+few repeated pieces. With the dodecahedron at edge 1: an icosahedron of edge 1/φ, an icosidodecahedron of edge φ/2 (around it 12
+pentagonal pyramids and 20 twisted triangular frusta), the dodecahedron (20 triangular pyramids), a truncated icosahedron of edge 1/φ,
+the fullerene cage (12 twisted pentagonal frusta and 30 Mosseri–Sadoc tetrahedra t1 at scale 1/φ), a rhombic triacontahedron of edge
+1.089813 (12 pentagonal and 20 hexagonal caps and 60 tetrahedral wedges), and an icosahedron of edge φ² (30 edge and 20 face pieces).
+The outer icosahedron is φ³ times the inner one, so the cycle repeats without end in both directions; one cycle has 237 pieces. Every
+layer is checked by volume and by a sampled exact cover. The construction rests on three exact relations: the icosahedron and the
+dodecahedron share the icosidodecahedron as their core, differing only in 12 pentagonal or 20 triangular corner pyramids; the
+fullerene cage wraps the dodecahedron at exactly one golden step, the dodecahedron's corners on the cage's hexagon centres; and the
+rhombic triacontahedron is the cage, with its 60 corners on the triacontahedron's faces, plus caps and wedges. The cycle shares its
+dodecahedron and its two icosahedra with the Lotus seed of the Chain of Karma, and each half of either structure fills its side of
+that dodecahedron exactly, so the two can be exchanged half by half at every scale. The five cubes of the dodecahedron lie in the
+network's seams, and the five octahedra on the icosidodecahedron hold one icosahedron of edge 1 in Pacioli's golden position. The
+shells are the family of the Tsai-type cluster of icosahedral quasicrystals, here solid and exactly filled.</div>
+
+<p class="status"><b>Draft status.</b> To finish before release: figures (from the 3D model), exact closed forms for the triacontahedron's
+edge (1.089813 = (1 + φ⁻⁴) × the triacontahedron of the dual compound) and the piece volumes, a name for the network (DICTO), DICTO's
+approval. Not to be uploaded to Zenodo without DICTO's explicit OK.</p>
+
+<h2>1. The shared core</h2>
+<p>Cut the corners of an icosahedron (edge 1) back to its edge midpoints and an icosidodecahedron of edge 1/2 is left, with 12 pentagonal
+pyramids (all edges 1/2) cut away: 1.729441 + 0.452254 = 2.181695. Do the same to a dodecahedron (edge 1): an icosidodecahedron of edge
+φ/2 and 20 triangular pyramids (base φ/2, side edges 1/2): 7.326029 + 0.337090 = 7.663119. So an icosahedron of edge φ and a dodecahedron
+of edge 1 share one icosidodecahedron, and in their dual compound their 30 edge pairs cross at its corners.</p>
+
+<h2>2. The dodecahedron and the fullerene cage</h2>
+<p>A truncated icosahedron of edge 1/φ contains the dodecahedron of edge 1 with the dodecahedron's 20 corners on its 20 hexagon centres.
+The gap (5.388544) is 12 twisted pentagonal frusta (cage pentagon, edge 1/φ, over the dodecahedron face, edge 1, turned 36°; volume
+0.399864) and 30 tetrahedra with five edges 1/φ and one edge 1 (the Mosseri–Sadoc tile t1 at scale 1/φ; 0.019672).</p>
+
+<h2>3. The fullerene cage and the rhombic triacontahedron</h2>
+<p>With its 60 corners on the faces of a rhombic triacontahedron (cage edge 0.567101 for triacontahedron edge 1), the cage plus 12
+pentagonal caps, 20 hexagonal caps (each made of the three rhombi at a three-fold corner) and 60 tetrahedral wedges along its
+pentagon–hexagon edges fill the triacontahedron exactly: 10.083445 + 1.704813 + 60 × 0.008708 = 12.310734.</p>
+
+<h2>4. Closing the cycle</h2>
+<p>Between the triacontahedron (edge 1.089813) and the icosahedron of edge φ²: 30 edge pieces (each rhombus joined to the icosahedron
+edge it faces, 0.527864) and 20 face pieces (each icosahedron face joined to the three-fold corner below it, 0.368922). Inside the
+icosidodecahedron: the icosahedron of edge 1/φ with 12 pentagonal pyramids (0.197336) and 20 twisted triangular frusta (icosidodecahedron
+triangle over icosahedron face, side edges √3/2; 0.222148).</p>
+<table>
+<tr><th>Shell</th><th>Edge</th><th>Filled from the shell inside by</th></tr>
+<tr><td>icosahedron</td><td>1/φ</td><td>(the centre)</td></tr>
+<tr><td>icosidodecahedron</td><td>φ/2</td><td>12 pentagonal pyramids + 20 twisted triangular frusta</td></tr>
+<tr><td>dodecahedron</td><td>1</td><td>20 triangular pyramids</td></tr>
+<tr><td>truncated icosahedron</td><td>1/φ</td><td>12 twisted pentagonal frusta + 30 t1</td></tr>
+<tr><td>rhombic triacontahedron</td><td>1.089813</td><td>12 + 20 caps + 60 wedges</td></tr>
+<tr><td>icosahedron</td><td>φ²</td><td>30 edge pieces + 20 face pieces</td></tr>
+</table>
+
+<h2>5. The hinge with the Lotus seed</h2>
+<p>The Lotus seed (Chain of Karma, #22) fills the same icosahedron of edge φ² around the same dodecahedron of edge 1 and icosahedron of
+edge 1/φ: inside the dodecahedron with 12 pentagonal pyramids, 30 AXE and 20 CLEO; outside it with 12 J11, 30 AXE and 20 FUJI. Each half
+of either structure fills its side exactly (volumes checked), so the four combinations are all exact and, in the Chain of Karma, every
+icosahedron at every scale can be filled either way.</p>
+
+<h2>6. The cube family</h2>
+<p>The five cubes inscribed in the dodecahedron have all 60 edges in the seams between pieces. The five octahedra on the
+icosidodecahedron's 30 corners (the compound of five octahedra) and the ten tetrahedra of the dodecahedron cut through pieces; but the
+five octahedra hold one icosahedron of edge 1, in the network's own turn, each of its 12 corners on an edge of every octahedron
+(Pacioli's golden position), suggesting an octahedral variant: icosahedron 1/φ ⊂ icosahedron 1 ⊂ five octahedra ⊂ icosidodecahedron.</p>
+
+<h2>7. Relation to known work, and status</h2>
+<p>The dual compound of the icosahedron and dodecahedron, the compound of five octahedra and Pacioli's icosahedron in the octahedron are
+classical. Concentric dodecahedron, icosahedron, icosidodecahedron and triacontahedron shells form the Tsai-type cluster of icosahedral
+quasicrystals, as atom shells (Takakura et al. 2007); nested icosahedral point shells model viruses (Keef and Twarock 2009). We found no
+description of this solid, exactly filled, endlessly repeating cycle; the search is the one recorded for the Chain of Karma and is not
+exhaustive.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>H. Takakura, C. P. Gómez, A. Yamamoto, M. de Boissieu, A. P. Tsai, Atomic structure of the binary icosahedral Yb–Cd quasicrystal, <i>Nature Materials</i> 6 (2007) 58–63.</li>
+<li>T. Keef, R. Twarock, Affine extensions of the icosahedral group with applications to the three-dimensional organisation of simple viruses, <i>J. Math. Biol.</i> 59 (2009) 287–313.</li>
+<li>R. Mosseri, J.-F. Sadoc (1982); P. Kramer, <i>Acta Cryst.</i> A38 (1982) 257–264 (the tile t1).</li>
+<li>L. Pacioli, <i>De divina proportione</i> (1509).</li>
+<li>DICTO, The Chain of Karma (draft, this repository, papers/chain-of-karma).</li>
+</ol>
+</body></html>

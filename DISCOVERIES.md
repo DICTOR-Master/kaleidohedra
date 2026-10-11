@@ -45,6 +45,8 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 19 | The DICTO Icosa-13: the Lotus seed (an icosahedron of edge φ²) is exactly a dodecahedron + 12 J11 + 30 AXE + 20 FUJI; UNITY is an icosidodecahedron + 12 J11, its dimples closed by VAJRA | DICTO (UNITY built physically; dodecahedron + 12 J11 built in Polyhedraverse 2026-10-05; names) | study checks | **not found** as dissections and fillings; the pieces AXE and CLEO are Mosseri–Sadoc tiles, the DESHI arrangement is Gray's (2002) | 2026-10-10 |
 | 20 | The DICTO Stella-Corona: icosidodecahedron + 20 icosahedra + 12 King of Pentacles (Tarot), the DICTO-Star's icosahedral twin, closed, every contact a whole face, with a diamond network. Closed result: no icosahedral Dogstar | DICTO (names) | study checks | **not found**; the 20-icosahedron shell is the Wolfram Demonstration "Cluster of 20 Icosahedra" | 2026-10-10 |
 | 21 | The icosahedral octet: Euclid's roofs moved to the icosahedron. An icosahedron + 6 edge roofs is the regular octahedron; icosahedra (edge 1) with their roofs in the octet's octahedra and icosahedra of edge 1/2 with corner and edge caps in its tetrahedra fill space exactly (icosahedra 60.79%); the Lotus Jewel (the clawed icosahedron) | DICTO (the idea: "the same principle as the dodecahedron and roofs, but with six"; the tetrahedral gap made icosahedral; clawing like the Jewel) | study checks | **not found** as fillings; the icosahedron in the octahedron at the golden section is classical (Pacioli; Fuller's Jitterbug) | 2026-10-10 |
+| 22 | Chain of Karma: the Lotus seed nested in itself without end; the icosahedron and dodecahedron as endless shells of each other; the dodecahedral Chain; every piece regrows by DICTO's pyramid rule up to a Dehn-zero (cube-equivalent) remainder | DICTO (the Chain, the name, the tip + mirror rule, the dodecahedral version) | study checks | **not found** as solid exact fillings; nested icosahedra at golden powers: Gray 2002; nested icosahedral point shells: Tsai clusters, Keef–Twarock (viruses) | 2026-10-11 |
+| 23 | The twin network: a second exact φ³ cycle, icosahedron φ² ⊃ rhombic triacontahedron ⊃ fullerene cage ⊃ dodecahedron ⊃ icosidodecahedron ⊃ icosahedron 1/φ, each layer filled by a few piece types (237 pieces per cycle); it shares the dodecahedron with the Lotus seed, so the two can be exchanged half by half at every scale | DICTO (the icosidodecahedron as the twin form, the dual triangular structures, the triangles of rhombi, the fullerene transition, "one more missing piece") | study checks | **not found** as solid exact fillings; the shells are the Tsai cluster's family (Takakura et al. 2007); the dual compound and the compound of five octahedra are classical | 2026-10-12 |
 
 Known results the apps show (kept here, with their numbers, as checks; not DICTO's findings; see the section at the end):
 
@@ -893,6 +895,25 @@ pieces. Names by DICTO.*
   icosahedra with dodecahedra; the Dogstar and its honeycomb are Hart's (1996). The King of Pentacles, the
   closed Stella-Corona and its network are DICTO's.
 
+## 23. The twin network (working name; DICTO, 2026-10-12)
+
+*DICTO's ideas: the icosidodecahedron as the hybrid "twin" of the two-form version; "the dual of that arrangement, the dodecahedron
+having triangular structures at its vertices"; "the triangles of rhombi mirroring the hexagons of the fullerene cage"; fullerene cages
+as transition figures; "one more missing piece?". Name to come from DICTO.*
+
+- A second exact cycle (dodecahedron edge 1): icosahedron 1/φ → icosidodecahedron φ/2 (+12 pentagonal pyramids, 20 twisted
+  triangular frusta) → dodecahedron 1 (+20 triangular pyramids) → fullerene cage 1/φ (+12 twisted pentagonal frusta, 30
+  Mosseri–Sadoc t1 at 1/φ) → rhombic triacontahedron 1.089813 (+12 pentagonal and 20 hexagonal caps, 60 wedges) → icosahedron φ²
+  (+30 edge and 20 face pieces). The outer icosahedron is φ³ times the inner one: the cycle repeats without end (237 pieces per cycle).
+  Every layer checked by volume and by a sampled exact cover.
+- The icosahedron and dodecahedron share the icosidodecahedron as their core (12 pentagonal or 20 triangular corner pyramids); with
+  I and D in dual position their 30 edge pairs cross at its corners.
+- The twin network and the Lotus seed pass through the same dodecahedron; each half of either fills its side exactly, so all four
+  combinations are exact and the Chain of Karma branches at every icosahedron.
+- The five cubes of the dodecahedron lie in the network's seams; the five octahedra on the icosidodecahedron hold one icosahedron of
+  edge 1 in Pacioli's golden way, all five at once.
+- Study files: [studies/2026-10-12-network-versions](studies/2026-10-12-network-versions/). Paper: draft, not for release.
+
 ## 22. Chain of Karma (DICTO, 2026-10-11)
 
 *DICTO's idea: take the Lotus seed as a core, put "explodable" Lotus seeds in place of its icosahedra, scale up the
@@ -905,7 +926,8 @@ AXE, CLEO and the other parts, "and carry on to infinity". Name by DICTO.*
 - The enlarged gap pieces cannot be cut back into the small ones (Dehn invariant), so the Chain is a hierarchy with
   gap pieces in every size step of φ²; the icosahedra's share falls by 0.6823 each step.
 - Study files: [studies/2026-10-11-chain-of-karma](studies/2026-10-11-chain-of-karma/).
-- Status: literature search not yet done.
+- Self-building kit and prior art: [studies/2026-10-11-self-building-kit](studies/2026-10-11-self-building-kit/); literature search done
+  2026-10-12 (paper section 10).
 
 ## 21. The icosahedral octet (DICTO, 2026-10-10)
 
