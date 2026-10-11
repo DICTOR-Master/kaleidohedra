@@ -80,10 +80,15 @@ piece of the 600-cell (Sadoc & Mosseri's geometrical frustration), AXE, FUJI and
 the match is in projection only.
 
 ## The fullerene chain
-DICTO (2026-10-11). `scripts/fullerene_surface.py`, `logs/fullerene_surface.log`, area checked to 10⁻⁶:
-- **Step 1 (Lotus seed):** 60 triangles (edge 1) in 12 pentagonal caps + 20 hexagons (sides 1, 1/φ) = C60's face pattern.
-- **Step 2:** 180 triangles (60 in the 12 caps), 60 hexagons (1, 1/φ) + 20 hexagons (φ, φ²); still 12 caps. 80 hexagons = C180's
-  count, but not a Goldberg polyhedron (flat triangles remain): fullerenes inside fullerenes, like carbon onions (Ugarte 1992).
+DICTO (2026-10-11). `scripts/fullerene_surface.py`, `logs/fullerene_surface.log`, area checked to 10⁻⁶. The surface "hexagons" are
+**flat-ended triangles** (DICTO's term): triangles with their corners cut flat, sides alternating (the FUJI base). So the surfaces
+have the fullerene's pattern, not its regular hexagons.
+- **Step 1 (Lotus seed):** 60 triangles (edge 1) in 12 pentagonal caps + 20 flat-ended triangles (sides 1, 1/φ) = C60's pattern.
+- **Step 2:** the 12 caps; 60 flat-ended triangles (1, 1/φ) + 20 large ones (φ, φ²); and 60 triangle pairs (edge 1), each pair two
+  triangles folded over one of the 30 big edges, two pairs per edge. Every piece is a triangle, whole or flat-ended: fullerenes
+  inside fullerenes, like carbon onions (Ugarte 1992). (Counted as hexagons, step 2 has C180's 80, but it is not a Goldberg
+  polyhedron.)
+- DICTO met the same shape building his cuboctahedron spheres: only flat-ended triangles on the faces round the ports.
 - 3D page: Fullerene tab.
 
 ## FUJI cut into simpler pieces
