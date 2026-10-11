@@ -893,6 +893,20 @@ pieces. Names by DICTO.*
   icosahedra with dodecahedra; the Dogstar and its honeycomb are Hart's (1996). The King of Pentacles, the
   closed Stella-Corona and its network are DICTO's.
 
+## 22. Chain of Karma (DICTO, 2026-10-11)
+
+*DICTO's idea: take the Lotus seed as a core, put "explodable" Lotus seeds in place of its icosahedra, scale up the
+AXE, CLEO and the other parts, "and carry on to infinity". Name by DICTO.*
+
+- The Lotus seed (#19) is exactly an icosahedron enlarged by φ², so it is a golden inflation rule: icosahedron × φ² =
+  12 icosahedra + 1 small icosahedron + 60 AXE + 20 FUJI + 20 CLEO. Replacing every icosahedron by a Lotus seed and
+  keeping the gap pieces whole fills φ⁴, φ⁶, … icosahedra exactly (steps 1–3 built: 113, 1,569 and 20,497 pieces,
+  volume exact), upward or downward without end.
+- The enlarged gap pieces cannot be cut back into the small ones (Dehn invariant), so the Chain is a hierarchy with
+  gap pieces in every size step of φ²; the icosahedra's share falls by 0.6823 each step.
+- Study files: [studies/2026-10-11-chain-of-karma](studies/2026-10-11-chain-of-karma/).
+- Status: literature search not yet done.
+
 ## 21. The icosahedral octet (DICTO, 2026-10-10)
 
 *DICTO's idea: the EKP cell's principle (a cube + 6 roofs = the dodecahedron, #8) "but with six" on the
