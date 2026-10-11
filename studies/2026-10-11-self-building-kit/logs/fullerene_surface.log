@@ -1,0 +1,13 @@
+
+step 1: outer icosahedron edge phi^2.000, 20 face planes; surface pieces:
+      60 x 3-gon, ico face, side 1.0000
+      20 x hexagon (sides 0.6180/1.0000)
+   covered area / 20 faces = 1.000001; per face min/max = 0.999998 / 1.000004
+   pentagonal caps (corners where 5 faces meet): 12
+
+step 2: outer icosahedron edge phi^4.000, 20 face planes; surface pieces:
+     180 x 3-gon, ico face, side 1.0000
+      60 x hexagon (sides 0.6180/1.0000)
+      20 x hexagon (sides 1.6180/2.6180)
+   covered area / 20 faces = 0.999999; per face min/max = 0.999999 / 1.000000
+   pentagonal caps (corners where 5 faces meet): 12

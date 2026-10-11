@@ -79,6 +79,13 @@ centres = the centre vertex + its 12 neighbours scaled by φ² (r 1.538842, spac
 piece of the 600-cell (Sadoc & Mosseri's geometrical frustration), AXE, FUJI and CLEO filling the gaps that curved 4D space closes;
 the match is in projection only.
 
+## The fullerene chain
+DICTO (2026-10-11). `scripts/fullerene_surface.py`, `logs/fullerene_surface.log`, area checked to 10⁻⁶:
+- **Step 1 (Lotus seed):** 60 triangles (edge 1) in 12 pentagonal caps + 20 hexagons (sides 1, 1/φ) = C60's face pattern.
+- **Step 2:** 180 triangles (60 in the 12 caps), 60 hexagons (1, 1/φ) + 20 hexagons (φ, φ²); still 12 caps. 80 hexagons = C180's
+  count, but not a Goldberg polyhedron (flat triangles remain): fullerenes inside fullerenes, like carbon onions (Ugarte 1992).
+- 3D page: Fullerene tab.
+
 ## FUJI cut into simpler pieces
 - Apex fan over alternate base corners: FUJI = **cube corner** (edges 1, 1, 1 at right angles at the apex, volume 1/6) + 3
   pieces each with exactly CLEO's volume (edges 1/φ, 1, 1, 1, 1, √2; not CLEO's shape). The apex is a dodecahedron corner, so
