@@ -98,6 +98,13 @@ shells; the order differs).
 - So only the cube is woven into the network's seams; the octahedra and tetrahedra are present through their corners only.
 - Elsewhere: icosahedron + 6 Admiral Caps = octahedron (#21, the periodic frame); Pacioli's icosahedron in the octahedron.
 
+## Octahedral variant, first finding (Pacioli in the core)
+`scripts/pacioli_core.py`, `logs/pacioli_core.log`. The five octahedra on the twin core's 30 corners (octahedron edge 1.851230) each
+hold Pacioli's golden icosahedron, and it is one and the same icosahedron for all five: edge exactly 1 (= φ × the centre's 1/φ), in the
+network's own turn, each of its 12 corners on an edge of every one of the five octahedra, and inside the core. (The compound of five
+octahedra around an icosahedron is classical; its place in the network's core is the point.) Skeleton for an octahedral variant:
+icosahedron 1/φ ⊂ icosahedron 1 ⊂ five octahedra ⊂ icosidodecahedron φ/2 ⊂ dodecahedron 1 ⊂ … Next: fill those layers with pieces.
+
 ## Touching nestings (midsphere screen, after DICTO's ring models)
 `scripts/touch_screen.py`, `logs/touch_screen.log`. DICTO's ring models are canonical (midsphere) polyhedra: rings = faces,
 touches = edges, gaps = vertices (the Koebe–Andreev–Thurston circle packing gives one shape per face pattern). Every pair of forms,
