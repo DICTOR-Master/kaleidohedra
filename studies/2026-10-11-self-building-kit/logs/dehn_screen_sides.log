@@ -1,0 +1,41 @@
+dihedral angles (deg) and their coordinates on the angle basis (mod 180):
+    36.00000  ->  ['0.0', '0.0']
+    37.37737  ->  ['1.0', '0.0']
+    41.81031  ->  ['0.0', '1.0']
+    60.00000  ->  ['0.0', '0.0']
+    63.43495  ->  ['-2.0', '-1.0']
+    72.00000  ->  ['0.0', '0.0']
+    79.18768  ->  ['1.0', '1.0']
+    90.00000  ->  ['0.0', '0.0']
+   100.81232  ->  ['-1.0', '-1.0']
+   108.00000  ->  ['0.0', '0.0']
+   116.56505  ->  ['2.0', '1.0']
+   120.00000  ->  ['0.0', '0.0']
+   138.18969  ->  ['0.0', '-1.0']
+   142.62263  ->  ['-1.0', '0.0']
+angle basis (deg): [37.37737, 41.81031]
+length basis: ['0.027864045', '0.034441854', '0.053000563', '0.078089462', '0.085756713', '0.1263514'] (44 distinct lengths)
+
+Dehn invariant zero? (edge-1 sizes)
+  I     volume 2.181695   Dehn nonzero
+  AXE   volume 0.083333   Dehn nonzero
+  FUJI  volume 0.321175   Dehn nonzero
+  CLEO  volume 0.051503   Dehn nonzero
+  A     volume 0.462090   Dehn ZERO
+  B     volume 0.285588   Dehn ZERO
+  C     volume 0.285588   Dehn ZERO
+  K     volume 0.088251   Dehn ZERO
+  t1    volume 0.083333   Dehn nonzero
+  t2    volume 0.134836   Dehn nonzero
+  t3    volume 0.134836   Dehn nonzero
+  t4    volume 0.218169   Dehn nonzero
+  t5    volume 0.218169   Dehn nonzero
+  t6    volume 0.353006   Dehn nonzero
+  T2    volume 0.353006   Dehn nonzero
+sides volume / FUJI = 3.0
+sides Dehn max |coord| = 0.0
+  sides from our kit: 14 pieces: {'I@phi^-1': 1, 'AXE@phi^-1': 6, 'FUJI@phi^-3': 1, 'FUJI@phi^0': 1, 'CLEO@phi^-4': 1, 'CLEO@phi^-3': 3, 'CLEO@phi^-2': 1}
+  sides from Danzer ABCK: 6 pieces: {'A@phi^-4': 1, 'A@phi^0': 2, 'C@phi^-2': 1, 'K@phi^-3': 1, 'K@phi^-1': 1}
+  sides from Kramer seven: 5 pieces: {'t3@phi^-2': 1, 't3@phi^-1': 1, 't5@phi^0': 1, 't6@phi^0': 1, 'T2@phi^0': 1}
+  sides from our kit + Kramer seven: 5 pieces: {'t3@phi^-2': 1, 't3@phi^-1': 1, 't5@phi^0': 1, 't6@phi^0': 1, 'T2@phi^0': 1}
+  sides from everything: 5 pieces: {'t3@phi^-2': 1, 't3@phi^-1': 1, 't5@phi^0': 1, 't6@phi^0': 1, 'T2@phi^0': 1}

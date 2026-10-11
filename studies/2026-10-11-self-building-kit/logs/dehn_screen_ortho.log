@@ -1,0 +1,87 @@
+dihedral angles (deg) and their coordinates on the angle basis (mod 180):
+    22.23876  ->  ['1.0', '0.0', '0.0']
+    36.00000  ->  ['0.0', '0.0', '0.0']
+    37.37737  ->  ['0.0', '1.0', '0.0']
+    37.76124  ->  ['-1.0', '0.0', '0.0']
+    41.81031  ->  ['0.0', '0.0', '1.0']
+    60.00000  ->  ['0.0', '0.0', '0.0']
+    63.43495  ->  ['0.0', '-2.0', '-1.0']
+    65.90516  ->  ['0.0', '0.0', '0.5']
+    72.00000  ->  ['0.0', '0.0', '0.0']
+    76.71747  ->  ['0.0', '-1.0', '-0.5']
+    79.18768  ->  ['0.0', '1.0', '1.0']
+    90.00000  ->  ['0.0', '0.0', '0.0']
+   100.81232  ->  ['0.0', '-1.0', '-1.0']
+   108.00000  ->  ['0.0', '0.0', '0.0']
+   116.56505  ->  ['0.0', '2.0', '1.0']
+   120.00000  ->  ['0.0', '0.0', '0.0']
+   138.18969  ->  ['0.0', '0.0', '-1.0']
+   142.62263  ->  ['0.0', '-1.0', '0.0']
+angle basis (deg): [22.23876, 37.37737, 41.81031]
+length basis: ['0.017220927', '0.027864045', '0.032174628', '0.035972327', '0.045501795', '0.053000563'] (82 distinct lengths)
+
+Dehn invariant zero? (edge-1 sizes)
+  I     volume 2.181695   Dehn nonzero
+  AXE   volume 0.083333   Dehn nonzero
+  FUJI  volume 0.321175   Dehn nonzero
+  CLEO  volume 0.051503   Dehn nonzero
+  A     volume 0.462090   Dehn ZERO
+  B     volume 0.285588   Dehn ZERO
+  C     volume 0.285588   Dehn ZERO
+  K     volume 0.088251   Dehn ZERO
+  t1    volume 0.083333   Dehn nonzero
+  t2    volume 0.134836   Dehn nonzero
+  t3    volume 0.134836   Dehn nonzero
+  t4    volume 0.218169   Dehn nonzero
+  t5    volume 0.218169   Dehn nonzero
+  t6    volume 0.353006   Dehn nonzero
+  T2    volume 0.353006   Dehn nonzero
+  oL    volume 0.031056   Dehn nonzero
+  oS    volume 0.022473   Dehn nonzero
+
+Screen: kit sizes phi^0 .. phi^-6
+right-angled pieces: volumes {'oL': '0.0310565', 'oS': '0.022472694'}
+sanity: FUJI from the 12 pieces at phi^0 (6 oL + 6 oS)
+  phi^0 x FUJI from oL + oS: 
+      12 pieces: {'oL@phi^0': 6, 'oS@phi^0': 6}
+
+up = phi^1
+  phi^1 x oL   from oL + oS only: NONE (volume + Dehn have no whole-number solution)
+  phi^1 x oS   from oL + oS only: NONE (volume + Dehn have no whole-number solution)
+  phi^1 x oL   from oL + oS + our kit: 
+      14 pieces: {'oL@phi^-5': 1, 'oL@phi^-2': 4, 'I@phi^-3': 1, 'AXE@phi^-5': 2, 'AXE@phi^-3': 1, 'AXE@phi^0': 1, 'FUJI@phi^-3': 2, 'CLEO@phi^-5': 1, 'CLEO@phi^-2': 1}
+  phi^1 x oS   from oL + oS + our kit: 
+      18 pieces: {'oS@phi^-5': 1, 'oS@phi^-2': 4, 'I@phi^-6': 1, 'I@phi^-5': 2, 'AXE@phi^-4': 1, 'AXE@phi^0': 1, 'FUJI@phi^-6': 1, 'FUJI@phi^-5': 4, 'FUJI@phi^-4': 2, 'CLEO@phi^-6': 1}
+  phi^1 x oL   from oL + oS + our kit + Kramer seven: 
+      11 pieces: {'oL@phi^-5': 1, 'oL@phi^-2': 4, 'FUJI@phi^-2': 1, 't3@phi^-3': 2, 't4@phi^-1': 1, 't5@phi^-5': 1, 't5@phi^-1': 1}
+  phi^1 x oS   from oL + oS + our kit + Kramer seven: 
+      10 pieces: {'oS@phi^-5': 1, 'oS@phi^-2': 4, 't2@phi^-4': 1, 't2@phi^-3': 1, 't3@phi^-1': 1, 't4@phi^-1': 1, 't6@phi^-3': 1}
+  phi^1 x FUJI from oL + oS only: NONE (volume + Dehn have no whole-number solution)
+
+up = phi^2
+  phi^2 x oL   from oL + oS only: NONE (volume + Dehn have no whole-number solution)
+  phi^2 x oS   from oL + oS only: NONE (volume + Dehn have no whole-number solution)
+  phi^2 x oL   from oL + oS + our kit: 
+      18 pieces: {'oL@phi^-5': 1, 'oL@phi^-4': 1, 'oL@phi^-3': 1, 'oL@phi^-2': 3, 'oL@phi^0': 1, 'I@phi^-3': 1, 'I@phi^-2': 1, 'AXE@phi^0': 3, 'FUJI@phi^-3': 2, 'FUJI@phi^-2': 2, 'FUJI@phi^-1': 1, 'CLEO@phi^-4': 1}
+  phi^2 x oS   from oL + oS + our kit: 
+      19 pieces: {'oS@phi^-4': 1, 'oS@phi^-1': 4, 'I@phi^-3': 1, 'I@phi^-2': 1, 'AXE@phi^-1': 6, 'FUJI@phi^-3': 1, 'FUJI@phi^-2': 1, 'FUJI@phi^-1': 1, 'CLEO@phi^-3': 1, 'CLEO@phi^-2': 1, 'CLEO@phi^-1': 1}
+  phi^2 x oL   from oL + oS + our kit + Kramer seven: 
+      11 pieces: {'oL@phi^-4': 1, 'oL@phi^-1': 4, 't1@phi^0': 1, 't3@phi^-3': 2, 't4@phi^0': 2, 't6@phi^-3': 1}
+  phi^2 x oS   from oL + oS + our kit + Kramer seven: 
+      10 pieces: {'oS@phi^-4': 1, 'oS@phi^-1': 4, 't2@phi^-3': 1, 't2@phi^-2': 1, 't3@phi^0': 1, 't4@phi^0': 1, 't6@phi^-2': 1}
+  phi^2 x FUJI from oL + oS only: NONE (volume + Dehn have no whole-number solution)
+
+up = phi^3
+Traceback (most recent call last):
+  File "/home/dicto/ico13/dehn_screen_ortho.py", line 159, in <module>
+    for t in ORTHO: screen(t, up, ORTHO, 'oL + oS only', sols=1)
+                    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dicto/ico13/dehn_screen_ortho.py", line 134, in screen
+    rhs = np.array([float(vt)] + list(dehn(target, up)))
+                                      ~~~~^^^^^^^^^^^^
+  File "/home/dicto/ico13/dehn_screen_ortho.py", line 127, in dehn
+    D += np.outer([float(x) for x in lc(l * T ** s)], [float(x) for x in acoord[mp.nstr(a, 30)]])
+                                     ~~^^^^^^^^^^^^
+  File "/home/dicto/ico13/dehn_screen_ortho.py", line 122, in lc
+    raise KeyError(x)
+KeyError: mpf('2.4456949871150571574113860275980481149061774043041213')

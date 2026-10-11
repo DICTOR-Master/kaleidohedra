@@ -10,10 +10,35 @@ from 6D shadows (Mosseri–Sadoc).
 | Icosahedron | **Yes**: the Lotus seed, φ²·I = 12 I + I(1/φ) + 60 AXE + 20 FUJI + 20 CLEO (#22) |
 | AXE | **Yes, with Mosseri–Sadoc tiles.** AXE *is* Mosseri–Sadoc t6 at scale 1/φ, so φ·AXE = t6, and the six tiles inflate by φ into each other (Mosseri & Sadoc's Stein inflation) |
 | CLEO | **Yes, the same way.** CLEO is t4 at scale 1/φ |
-| FUJI | **Open, being tested.** Volume and Dehn invariant allow φ·FUJI = t1 + t4 + 2 t6 + T2; the geometric search is running |
+| FUJI | **Tentative (DICTO's rule, below).** φ·FUJI = FUJI tip + mirrored FUJI(1/φ) + sides with Dehn invariant zero |
 
 The icosahedron is itself a union of the tiles: I = 7 t1 + 6 t2 + 2 t5 + t6 (Koca et al. 2020). So if FUJI works, the kit
 {I, FUJI, t1 … t6} rebuilds itself completely: the Chain of Karma joined to the Mosseri–Sadoc inflation.
+
+## DICTO's FUJI rule: tip, mirror, sides
+DICTO's steps (2026-10-11):
+1. **Tip.** Cutting a pyramid parallel to its base leaves a smaller copy, so the whole FUJI is the tip of the next size:
+   φ·FUJI = FUJI + **band**. Only the band has to be built from parts; each larger size is the same recipe scaled.
+2. **Mirror.** Turn a FUJI of size 1/φ upside down in the middle of the band: its base lies centred on the tip's base and its
+   apex just touches the band's floor (the band is 1/φ of FUJI's height, exactly the small FUJI's height).
+3. **Sides.** What is left, a ring round the mirrored FUJI, is filled from parts.
+
+Exact numbers (`scripts/dehn_screen_sides.py`, `logs/dehn_screen_sides.log`):
+- Band volume = (φ³ − 1) FUJI = 2φ FUJI; sides = 2φ − φ⁻³ = **exactly 3 FUJI volumes**.
+- Dehn invariant of the band = (φ − 1) D(FUJI) = D(FUJI)/φ = D(mirrored FUJI(1/φ)), so the sides have **Dehn invariant zero**:
+  the condition for being cut and rearranged into a cube (Sydler), and the kind of region Danzer's ABCK tetrahedra fill.
+- Part mixes that match volume and Dehn of the sides (fewest pieces): Kramer's seven, 5 pieces (t5 + t6 + T2 at φ⁰, t3 at φ⁻¹
+  and φ⁻²); Danzer's ABCK alone, 6 pieces (2 A at φ⁰, K at φ⁻¹, C at φ⁻², K at φ⁻³, A at φ⁻⁴); our kit alone, 14 pieces.
+- Not yet checked: an actual cut of the sides into those parts (geometric search, e.g. one of three equal parts by symmetry).
+
+## FUJI cut into simpler pieces
+- Apex fan over alternate base corners: FUJI = **cube corner** (edges 1, 1, 1 at right angles at the apex, volume 1/6) + 3
+  pieces each with exactly CLEO's volume (edges 1/φ, 1, 1, 1, 1, √2; not CLEO's shape). The apex is a dodecahedron corner, so
+  the cube corner is the cube inside the dodecahedron.
+- DICTO's six tetrahedra (apex, base centre, two neighbouring base corners), halved again into 12 right-angled pieces: two
+  kinds, face slopes exactly **41.81°** (on the long sides) and **37.38°** (on the short sides), the family's two key angles.
+  They bring in a third angle (22.24° at the centre), so on their own they cannot rebuild themselves at sizes φ⁰ … φ⁻⁶
+  (`scripts/dehn_screen_ortho.py`); with Kramer's seven they pass.
 
 ## Checks
 **Volume + Dehn screen** (`scripts/dehn_screen.py`, `scripts/dehn_screen_ms.py`; logs in `logs/`). Every piece at sizes φ⁰ down
@@ -35,8 +60,10 @@ Lotus pieces + one copy of each tile.
   (only icosahedra, i.e. the Lotus seed again): `logs/blockcut.log`.
 - φ·CLEO from our kit only, small placement set: proved infeasible (`logs/selfbuild-cleo.log`). The larger run was stopped
   by DICTO in favour of the Mosseri–Sadoc route.
-- **Running:** φ·FUJI from our kit + Kramer's seven at φ⁰ and φ⁻¹ (36,875 placements, 1-hour limit):
-  `logs/selfbuild-ms-fuji1.log`. Result to be added here.
+- φ·FUJI from our kit + Kramer's seven at φ⁰ and φ⁻¹ (36,875 placements, tip allowed): **no fit** (proved infeasible for
+  these placements, 250 s): `logs/selfbuild-ms-fuji1.log`.
+- The band alone at φ⁰ … φ⁻² (184,558 placements): stopped by DICTO before the solve, once the mirror rule above was found
+  (`scripts/selfbuild_band.py`, `logs/selfbuild-band1.log`).
 
 Not checked: the 6D-lattice lift of the vertices in this study depended on the chosen basis and is not reported.
 
@@ -45,8 +72,9 @@ Not checked: the 6D-lattice lift of the vertices in this study depended on the c
   tilings* (arXiv math-ph/9911005): the Dehn-invariant vector is an eigenvector of the inflation matrix with eigenvalue τ.
 - Koca, Koc, Koca & Al-Siyabi 2020 (arXiv 2009.07048): the tiles' table, the icosahedron from tiles, and the statement that
   the tiles alone do not inflate the icosahedron past edge τ (the Lotus seed reaches φ² with whole icosahedra).
+- Sydler 1965 (Dehn invariant zero and equal volume is enough for scissors congruence to a cube).
 - Danzer 1989; Frettlöh, *Icosahedral tilings in R³: the ABCK tilings* (coordinates, inflation matrix).
 - Credit: AXE = Mosseri–Sadoc t6 and CLEO = t4 (already credited in the Icosa-13 study). Names Lotus seed, AXE, FUJI,
   CLEO and Chain of Karma: DICTO.
 
-Renders: none yet (to follow with the FUJI result).
+Renders: none yet (to follow with a geometric cut of the sides).
