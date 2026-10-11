@@ -125,6 +125,8 @@ Penrose rhombi, aperiodic tilings, diffraction.
 - Z. Papadopolos, O. Ogievetsky (1999). *On inflation rules for Mosseri-Sadoc tilings*. <https://arxiv.org/abs/math-ph/9911005>
 - O. Ogievetsky, Z. Papadopolos (1999). *On quasiperiodic space tilings, inflation and Dehn invariants*. <https://arxiv.org/abs/math-ph/9910006> (the Dehn-invariant method behind the 2026-10-11 self-building kit study)
 - R. Al Raisi, N. O. Koca, M. Koca, R. Koc (2026). *Modified Mosseri-Sadoc tiles from D6*. <https://arxiv.org/abs/2604.03988> (whole dodecahedra in every τⁿ-dodecahedron; the closest known work to the Chain of Karma)
+- B. Solomyak (1998). *Nonperiodicity implies unique composition for self-similar translationally finite tilings*. Discrete Comput. Geom. 20, 265-279 (Chain of Karma paper, section 8)
+- Kyūshindō, the philosophy of Kenshiro Abbe (1915-1985): Banbutsu Ruten (constant motion), Ritsu Do (rhythmic flow), Chowa (harmony), which DICTO relates to the Chain of Karma as Rhythm, Harmony, Change. <https://en.wikipedia.org/wiki/Ky%C5%ABshind%C5%8D>; H. Ellis, *The Theory of Kyu-Shin-Do* <https://cdn14.thrinacia.com/articles/user/5702>
 - P. Kunnen, S. Schlicker (1998). *Regular Sierpinski polyhedra*. Pi Mu Epsilon Journal 10 (the Sierpinski icosahedron: 12 corner icosahedra at 1/φ²)
 - P. Kramer (1982). *Non-periodic central space filling with icosahedral symmetry using copies of seven elementary cells*. Acta Cryst. A38, 257-264 (the seven tiles = Mosseri-Sadoc t1-t6 + T2)
 - L. Danzer (1989). *Three-dimensional analogs of the planar Penrose tilings and quasicrystals*. Discrete Math. 76, 1-7 (the ABCK tetrahedra)
