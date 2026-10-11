@@ -30,6 +30,18 @@ All forms are built from one icosahedron so that they share its turn (`scripts/n
   icosidodecahedron shells in a triacontahedral envelope (Takakura et al. 2007); nested icosahedral point arrays model viruses
   (Keef and Twarock 2009; Twarock et al. 2015). See the Chain of Karma paper, section 9.
 
+## Touching nestings (midsphere screen, after DICTO's ring models)
+`scripts/touch_screen.py`, `logs/touch_screen.log`. DICTO's ring models are canonical (midsphere) polyhedra: rings = faces,
+touches = edges, gaps = vertices (the Koebe–Andreev–Thurston circle packing gives one shape per face pattern). Every pair of forms,
+same turn, at the size where the inner one touches the outer one naturally:
+- **Golden step: the dodecahedron inside the fullerene cage (truncated icosahedron)**, its 20 corners on the cage's 20 hexagon
+  centres, cage edge = dodecahedron edge / φ exactly.
+- Exact but not golden: ID in the icosahedron (corners at edge midpoints, edge ratio 2); ID in the dodecahedron (2/φ); the
+  dodecahedron in the icosahedron, corners on face centres (3/φ); the icosahedron in the dodecahedron, corners on face centres
+  (0.854102).
+- So plain touching does not give golden steps (except the cage round the dodecahedron): the Chain's golden steps come from filled
+  shells, and the gap pieces decide the other versions.
+
 ## Not yet done
 - **The gap pieces of the new Lotus seeds.** Cutting each gap along all extended face planes gives the right volume but far too many
   pieces (1,730 for the icosahedron), and merging them back, even symmetrically, does not recover AXE, FUJI and CLEO; that method is
