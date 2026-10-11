@@ -37,7 +37,10 @@ for i, j, k in itertools.combinations(range(30), 3):
     a, b, c = ID[i], ID[j], ID[k]
     if abs(a @ b) < 1e-9 and abs(a @ c) < 1e-9 and abs(b @ c) < 1e-9: octs.add(tuple(sorted([i, j, k])))
 oct_sets = [np.array([s * ID[x] for x in t for s in (1, -1)]) for t in octs]
-report('Octahedra on the icosidodecahedron (edge phi/2)', oct_sets, 6)
+uniq = []
+for S in oct_sets:
+    if not any(all(np.min(np.linalg.norm(U - p, axis=1)) < 1e-9 for p in S) for U in uniq): uniq.append(S)
+report('Octahedra on the icosidodecahedron (edge phi/2)', uniq, 6)
 # five cubes and ten tetrahedra on the dodecahedron's corners
 dD = min(np.linalg.norm(D[0] - w) for w in D[1:])
 cubes = set()
@@ -50,11 +53,8 @@ for i in range(20):
             idx = tuple(sorted(int(np.argmin(np.linalg.norm(D - p, axis=1))) for p in pts))
             if all(np.min(np.linalg.norm(D - p, axis=1)) < 1e-9 for p in pts): cubes.add(idx)
 report('Cubes on the dodecahedron (edge 1)', [D[list(c)] for c in cubes], 8)
+dt = PHI * dD * np.sqrt(2)
 tets = []
-for cidx in cubes:
-    C = D[list(cidx)]
-    for start in (0,):
-        par = [k for k in range(8) if (np.round(np.sum(np.sign(C[k] - C.mean(0)) > 0)) % 2) == 0]
-        T1 = C[par]; T2 = C[[k for k in range(8) if k not in par]]
-        tets += [T1, T2]
+for q in itertools.combinations(range(20), 4):
+    if all(abs(np.linalg.norm(D[i] - D[j]) - dt) < 1e-9 for i, j in itertools.combinations(q, 2)): tets.append(D[list(q)])
 report('Tetrahedra on the dodecahedron (edge 1)', tets, 4)

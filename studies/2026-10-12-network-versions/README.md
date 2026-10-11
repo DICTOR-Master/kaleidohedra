@@ -93,9 +93,9 @@ shells; the order differs).
 `scripts/periodic_forms.py`, `logs/periodic_forms.log`. The cube family enters the icosahedral shells as compounds of five:
 - **5 cubes** on the dodecahedron's 20 corners: all 60 edges lie on piece surfaces (24 along piece edges, 36 across piece faces):
   Euclid's cubes are drawn into the network's seams and cut no piece.
-- **5 octahedra** on the icosidodecahedron's 30 corners (the compound of five octahedra; the raw log counts each octahedron 8 times,
-  once per sign choice): all 60 edges pass through pieces. The octahedra's corners are present, their edges are not seams.
-- 10 tetrahedra on the dodecahedron: the test used here was unreliable; to redo.
+- **5 octahedra** on the icosidodecahedron's 30 corners (the compound of five octahedra): all 60 edges pass through pieces.
+- **10 tetrahedra** on the dodecahedron's 20 corners (two in each cube): all 60 edges pass through pieces.
+- So only the cube is woven into the network's seams; the octahedra and tetrahedra are present through their corners only.
 - Elsewhere: icosahedron + 6 Admiral Caps = octahedron (#21, the periodic frame); Pacioli's icosahedron in the octahedron.
 
 ## Touching nestings (midsphere screen, after DICTO's ring models)
