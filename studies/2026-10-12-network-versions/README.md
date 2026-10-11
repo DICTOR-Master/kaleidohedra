@@ -42,6 +42,14 @@ same turn, at the size where the inner one touches the outer one naturally:
 - So plain touching does not give golden steps (except the cage round the dodecahedron): the Chain's golden steps come from filled
   shells, and the gap pieces decide the other versions.
 
+## Icosidodecahedral network, test 1: no clean shell inside the Lotus seed
+`scripts/clean_shells.py`, `logs/clean_shells.log` (DICTO: "try both, the geometry will tell"). Scanning the size of a centred ID
+and a fullerene cage (TI), same turn, and sampling inside every Lotus piece: no size at which the shell's surface runs only between
+pieces, either with all 113 pieces whole or with the corner icosahedra allowed to split (the only "clean" sizes are trivial: inside
+the centre icosahedron, or enclosing the whole seed). So an icosidodecahedral network is not a re-reading of the Lotus seed; it needs
+its own pieces. Next: build the ID shell directly at the dual compound's midsphere and look for its gap pieces. (The dodecahedron's
+scan range in this script was too small to reach D(1); D(1) is known to separate the 63-piece build cleanly, study 2026-10-11.)
+
 ## Not yet done
 - **The gap pieces of the new Lotus seeds.** Cutting each gap along all extended face planes gives the right volume but far too many
   pieces (1,730 for the icosahedron), and merging them back, even symmetrically, does not recover AXE, FUJI and CLEO; that method is
