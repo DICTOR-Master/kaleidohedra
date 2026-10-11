@@ -41,6 +41,16 @@ a dodecahedron with triangular structures at its 20 corners. `scripts/dual_caps.
   exactly that core + 12 pentagonal pyramids + 20 triangular pyramids. The ID is the body both forms share; only their corner pieces
   differ. In DICTO's ring models these corner pieces are the vertex gaps (pentagonal or triangular, by the reading).
 
+## The other pair: rhombic triacontahedron and fullerene cage (DICTO: "the triangles of rhombi mirroring the hexagons")
+`scripts/rt_ti.py`, `logs/rt_ti.log`. The cage's 12 pentagons face the triacontahedron's 12 five-fold corners and its 20 hexagons
+the 20 three-fold corners (three rhombi). With the cage at edge 0.567101 (triacontahedron edge 1) all 60 cage corners lie on the
+triacontahedron's faces, and exactly:
+**rhombic triacontahedron = fullerene cage + 12 pentagonal caps + 20 hexagonal caps + 60 tetrahedral wedges**,
+volumes 10.083445 + 1.704813 + 60 × 0.008708 = 12.310734. Each cap has its apex at the triacontahedron corner over its cage face;
+each wedge lies along a pentagon–hexagon edge of the cage (edges 0.567101 ×3, 0.597322 ×2, 1 ×1); the cage's hexagon–hexagon edges
+lie in the triacontahedron's faces. The pattern resonates with the Lotus seed (20 FUJI on hexagonal bases with apex at a three-fold
+corner, 60 AXE along edges); that link is not yet shown.
+
 ## Touching nestings (midsphere screen, after DICTO's ring models)
 `scripts/touch_screen.py`, `logs/touch_screen.log`. DICTO's ring models are canonical (midsphere) polyhedra: rings = faces,
 touches = edges, gaps = vertices (the Koebe–Andreev–Thurston circle packing gives one shape per face pattern). Every pair of forms,

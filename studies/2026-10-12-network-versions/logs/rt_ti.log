@@ -1,0 +1,5 @@
+cage scaled to edge 0.567101 (RT edge 1): 60 of 60 cage corners lie on RT faces
+RT 12.310734 vs cage 10.083445 + 32 caps 1.704813 = 11.788258; caps inside RT: True
+caps: {'5-gon base': 12, '6-gon base': 20}
+30 hexagon-hexagon edges; tetrahedral wedge (edge + the two three-fold corners) volume each 0.000000, all 0.000000; cage + caps + wedges = 11.788258 vs RT 12.310734
+60 pentagon-hexagon edges; wedge = edge + the five-fold and three-fold corners over its two faces: volume each 0.008708, edges [np.float64(0.567101), np.float64(0.567101), np.float64(0.567101), np.float64(0.597322), np.float64(0.597322), np.float64(1.0)]; inside RT True; cage + caps + wedges = 12.310734 vs RT 12.310734
