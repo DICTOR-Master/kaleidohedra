@@ -34,7 +34,7 @@ import {
   KALEIDO_SHAPES, KALEIDO_GROUPS, KALEIDO_SHAPE_LABELS, MIRROR_MODES, RING_MIN, RING_MAX, SIZE_MIN, SIZE_MAX,
   looseTile, firstTile, overlaps, contains, nearestEdge, candidatesAcross, domain, groupMaps, applyMap, fold,
   clipPolygon, clipSegment, centroid, area, rotatePoint, PENROSE_SHAPES, indicesFrom, firstIndices, indicesSafe,
-} from '../geometry-extensions/kaleidoscope.js';
+} from '../krp-core/src/geometry-extensions/kaleidoscope.js';
 import { createGearedSlider } from './geared-slider.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';

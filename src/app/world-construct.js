@@ -44,7 +44,7 @@
 // - Cells are the shared 1D bullet (bullet-cell.js), nose along the way
 //   round, in Signal's cyan, matte, shaded cups.
 import * as THREE from 'three';
-import { PLANS, edgeCells, SQUARE_N } from '../geometry-extensions/construction.js';
+import { PLANS, edgeCells, SQUARE_N } from '../krp-core/src/geometry-extensions/construction.js';
 import { bulletGeometry, plainCellGeometry } from './bullet-cell.js';
 import { t } from './i18n.js';
 import { dimensionLabel } from './dimension-label.js';

@@ -11,7 +11,7 @@
 //   - the emblem (#5) is also the truncated octahedron with one zone removed;
 //   - names: "Type #n · angles" is unique for every cell.
 import { readFileSync } from 'node:fs';
-import { TARGET_TYPES, buildTarget, faceCounts, numberTargets, targetAngles, det3, zonohedron, volumeOf, EMBLEM_DIRECTIONS } from '../src/geometry-extensions/targets.js';
+import { TARGET_TYPES, buildTarget, faceCounts, numberTargets, targetAngles, det3, zonohedron, volumeOf, EMBLEM_DIRECTIONS } from '../src/krp-core/src/geometry-extensions/targets.js';
 
 let failures = 0;
 function check(label, condition) {

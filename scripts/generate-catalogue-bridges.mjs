@@ -9,7 +9,7 @@
 // distances), so every entry is a different shape.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { makeQuasicrystal, subsets } from '../src/krp-core/src/geometry-extensions/quasicrystal.js';
-import { polytopeShape } from '../src/geometry-extensions/quasicrystal-catalogue.js';
+import { polytopeShape } from '../src/krp-core/src/geometry-extensions/quasicrystal-catalogue.js';
 
 const FILE = new URL('../data/catalogue-5d6d.json', import.meta.url);
 const FAMILIES = [['orthoplex', 2], ['demicube', 3], ['simplex', 2]]; // family, smallest k

@@ -5,7 +5,7 @@
 // whether it is already a Polyhedraverse piece. Nothing is built here: a
 // viewer. Lives outside the shear group (shearing would change the angles).
 import * as THREE from 'three';
-import { TARGET_TYPES, buildTarget, loadTargets, targetAngles } from '../geometry-extensions/targets.js';
+import { TARGET_TYPES, buildTarget, loadTargets, targetAngles } from '../krp-core/src/geometry-extensions/targets.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';

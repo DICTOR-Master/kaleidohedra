@@ -7,7 +7,7 @@
 // symmetries, so every entry is a different shadow.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { makeQuasicrystal, subsets } from '../src/krp-core/src/geometry-extensions/quasicrystal.js';
-import { congruentSets } from '../src/geometry-extensions/quasicrystal-catalogue.js';
+import { congruentSets } from '../src/krp-core/src/geometry-extensions/quasicrystal-catalogue.js';
 
 const FILE = new URL('../data/catalogue-5d6d.json', import.meta.url);
 const FAMILIES = ['orthoplex', 'demicube', 'simplex'];

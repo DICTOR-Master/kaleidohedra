@@ -21,7 +21,7 @@ import { rdQuarterPieces } from '../krp-core/src/core/lattice.js';
 import { elongatedDodecahedronVerts } from '../krp-core/src/geometry-extensions/elongated-dodecahedron.js';
 import { dictoCellVerts } from '../krp-core/src/geometry-extensions/dicto-fcc.js';
 import { hexPrismVerts } from '../krp-core/src/geometry-extensions/hex-prism.js';
-import { dictoHexCellVerts } from '../geometry-extensions/dicto-hex.js';
+import { dictoHexCellVerts } from '../krp-core/src/geometry-extensions/dicto-hex.js';
 import { rhombohedraTileVerts } from '../krp-core/src/geometry-extensions/rhombohedra-lattice.js';
 import { truncatedTetrahedronVerts } from '../krp-core/src/geometry-extensions/pyrochlore-lattice.js';
 

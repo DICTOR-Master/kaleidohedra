@@ -24,7 +24,7 @@ import {
   KINDS_4D, cellStructure, cellVertices4, neighborAcrossFacet, rotation4, matVec,
   sliceCell, project4, facetForSliceNormal, toDoubled, fromDoubled, cellKey4,
   cellAcrossFacet, throughGap, cornerPartner, dedupeSections, A4_FIRST, A4_REST_W,
-} from '../geometry-extensions/lattice-4d.js';
+} from '../krp-core/src/geometry-extensions/lattice-4d.js';
 import { createGearedSlider } from './geared-slider.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';

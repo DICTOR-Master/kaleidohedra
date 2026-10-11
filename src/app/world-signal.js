@@ -27,7 +27,7 @@
 //   the message reads out at the top, letter by letter, as it arrives
 //   there ("a sent message viewer where the signal arrives at the top").
 import * as THREE from 'three';
-import { morseSequence, decode, letterEnds, readKeying, keyingThreshold, KEY_FALLBACK_DASH_MS, isCode, toCode, codeSequence, layout, totalUnits, cellUnits, embed, tangentAngle, MORSE } from '../geometry-extensions/trajectory-1d.js';
+import { morseSequence, decode, letterEnds, readKeying, keyingThreshold, KEY_FALLBACK_DASH_MS, isCode, toCode, codeSequence, layout, totalUnits, cellUnits, embed, tangentAngle, MORSE } from '../krp-core/src/geometry-extensions/trajectory-1d.js';
 import { bulletGeometry, plainCellGeometry } from './bullet-cell.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';

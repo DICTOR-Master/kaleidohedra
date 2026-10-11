@@ -51,7 +51,7 @@ import { makeQuasicrystal, BASE_OFFSET, APPROXIMANT_STOPS, TIERS, PRISM_HEIGHT, 
 import { createGearedSlider } from './geared-slider.js';
 import { t, tn } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
-import { findOccurrence, polytopeShape, isShadowEntry } from '../geometry-extensions/quasicrystal-catalogue.js';
+import { findOccurrence, polytopeShape, isShadowEntry } from '../krp-core/src/geometry-extensions/quasicrystal-catalogue.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey, theme } from './site.js';
 

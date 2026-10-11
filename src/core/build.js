@@ -31,7 +31,7 @@ import {
 import { nearestBCCCell, matchBCCNeighborOffset } from '../krp-core/src/geometry-extensions/dual-lattice.js';
 import { matchHexNeighborOffset } from '../krp-core/src/geometry-extensions/hex-prism.js';
 import { matchDictoNeighborOffset, matchDictoBlockNeighbour, dictoBlockFromKey, dictoBlockKey } from '../krp-core/src/geometry-extensions/dicto-fcc.js';
-import { matchDictoHexNeighborOffset } from '../geometry-extensions/dicto-hex.js';
+import { matchDictoHexNeighborOffset } from '../krp-core/src/geometry-extensions/dicto-hex.js';
 import { rhombohedraAttachOptions, rhombohedraOverlap } from '../krp-core/src/geometry-extensions/rhombohedra-lattice.js';
 import { pyrochloreSiteOrientation, pyrochloreNeighborForTTFace, pyrochloreNeighborForTetFace, pyrochloreCapForTTFace, pyrochloreTetCornerPartner, pyrochloreCapTetsOf, pyrochloreCellToWorld } from '../krp-core/src/geometry-extensions/pyrochlore-lattice.js';
 import { elongDodecaCellToWorld } from '../krp-core/src/geometry-extensions/elongated-dodecahedron.js';

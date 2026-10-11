@@ -25,12 +25,6 @@ jobs:
       # shared geometry's (krp-core) run in its own repo.
       # The 160 target cells: rebuilt from their Gram matrices, each tiles space; TARGETS.md agrees.
       - run: node scripts/verify-targets.mjs
-      - run: node scripts/verify-kaleidoscope.mjs
-      - run: node scripts/verify-trajectory.mjs
-      - run: node scripts/verify-construction.mjs
-      - run: node scripts/verify-lattice-2d.mjs
-      - run: node scripts/verify-dicto-hex.mjs
-      - run: node scripts/verify-4d.mjs
       # Translations: every key in all 7 languages (the app's and Rhombis's).
       - run: node scripts/verify-i18n.mjs
       - run: node scripts/verify-rhombis-i18n.mjs
