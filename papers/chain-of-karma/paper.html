@@ -3,38 +3,37 @@
 <link rel="stylesheet" href="../paper.css"></head><body>
 
 <h1>The Chain of Karma</h1>
-<p class="sub">Endless golden growth of the regular icosahedron from whole regular icosahedra, and a self-building kit for its gap pieces</p>
+<p class="sub">The icosahedron and the dodecahedron as endless shells of each other</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
 DRAFT 2026-10-11 · not for release · Licence CC BY 4.0 (on release) · Data, renders and checks to be included with the record.<br>
 The Lotus seed, the Chain of Karma, the FUJI tip + mirror rule and the names Lotus seed, AXE, FUJI and CLEO are DICTO's. Design study and checking with Claude (Anthropic).
 </div>
 
-<div class="abstract"><b>Abstract.</b> A regular icosahedron enlarged by φ² can be filled exactly by twelve regular icosahedra of edge 1, one of
-edge 1/φ at its centre, and three gap pieces: 60 AXE, 20 FUJI and 20 CLEO (the Lotus seed). Every icosahedron inside is again a
-regular icosahedron, so each can be replaced by a Lotus seed of its own size, and the rule repeats without end, upward and
-downward: the Chain of Karma. Steps 1–3 were built and checked (113, 1,569 and 20,497 pieces, volume exact); after n steps there
-are 13ⁿ icosahedra in n + 1 sizes, and their share of the volume falls by (12 + φ⁻³)/φ⁶ ≈ 0.682 per step. Dehn invariants show that
-the gap pieces cannot be rebuilt from copies of the kit at a single size, but that with mixed φ-sizes no such obstruction
-remains. Two gap pieces are known tiles (AXE and CLEO are the Mosseri–Sadoc tetrahedra t6 and t4), which cannot rebuild
-themselves from their own set because an equilateral face grown by φ cannot be tiled by their smaller faces; FUJI, a hexagonal
-pyramid whose apex is a cube corner, supplies the missing face, as on every face of the Lotus seed. We give a growth rule for every
-pyramid, and so for AXE, CLEO and FUJI: φ·P = P + a copy of size 1/φ turned over + a side ring, where the side ring has exactly
-three times P's volume and Dehn invariant zero. By Sydler's theorem the ring can always be cut into pieces that form a cube, so the
-kit regrows itself up to a cube-equivalent, periodic remainder; whether the ring can be cut into kit pieces (search in progress)
-decides whether the kit rebuilds itself outright, giving a hierarchical icosahedral space-filling that keeps whole regular
-icosahedra at every scale. With the same rule the dodecahedron grows too: a
-dodecahedron is a small icosahedron in twelve pentagonal pyramids with 30 AXE and 20 CLEO, and each growth cycle ends as a regular
-dodecahedron round a Chain-grown icosahedron; a different dodecahedral growth, with whole dodecahedra inside, is due to Al Raisi, Koca, Koca and Koc
-(2026), who note that icosahedra cannot be done with their tiles. We relate it to the periodic octet
-frame of the icosahedral octet through pyritohedral symmetry, as a route from periodic approximants to the aperiodic limit.</div>
+<div class="abstract"><b>Abstract.</b> We show that the regular icosahedron and the regular dodecahedron can each be filled exactly as a
+shell around the other, and that the two shells alternate without end. A dodecahedron of edge 1 is an icosahedron of edge 1/φ inside
+a shell of 12 pentagonal pyramids, 30 AXE and 20 CLEO; an icosahedron of edge φ² (the Lotus seed) is that dodecahedron inside a shell
+of 12 J11 (each an icosahedron with one pyramid cap removed), 30 AXE and 20 FUJI. So I(1/φ) ⊂ D(1) ⊂ I(φ²) ⊂ D(φ³) ⊂ … grows by φ³ per cycle, and each
+shell has one piece for every vertex, edge and face of the dual pair (12, 30, 20): the pyramids point at the small icosahedron's
+corners, the dodecahedron's faces cut each outer icosahedron into a pyramid and a J11, AXE lines both shells, CLEO the inner and FUJI
+the outer. Because every icosahedron inside is again whole, each can be replaced by its own Lotus seed: the Chain of Karma, built and
+checked to 20,497 pieces, in which every stage closes as an exact icosahedron or dodecahedron. The gap pieces cannot be rebuilt from
+copies of themselves at one size (Dehn invariant), and AXE and CLEO, which are Mosseri–Sadoc tetrahedra, cannot be rebuilt from that
+tile set alone. We give instead a growth rule for every pyramid, and so for AXE, CLEO, FUJI and the pentagonal pyramid: φ·P = P + a
+copy of size 1/φ turned over + a side ring with three times P's volume and Dehn invariant zero. By Sydler's theorem the ring is
+always equivalent to a cube, so the whole kit regrows itself up to a periodic remainder; whether the ring can be cut into kit pieces
+is being searched. The nesting of the dual pair at golden ratios goes back to Pacioli and Kepler and appears at every φ-power in
+Gray (2002); a different dodecahedral growth, with whole dodecahedra inside, is due to Al Raisi, Koca, Koca and Koc (2026). New
+here are the exact shells and their endless alternation.</div>
 
 <p class="status"><b>Draft status.</b> To finish before release: (1) the cut of FUJI's side ring and whether AXE and CLEO grow
 with the hexagon's help; (2) the rest of the literature search (first pass 2026-10-11: Gray 2002 already has the nested
 icosahedra at every φ-power, the Sierpinski icosahedron the 12 corner ones, Al Raisi et al. 2026 the dodecahedral counterpart); (3) figures; (4) DICTO's approval. Not to be uploaded to Zenodo without DICTO's explicit OK.</p>
 
-<h2>1. The Lotus seed</h2>
-<p>[to write: construction, the arrangement inside I(φ²) credited to Gray 2002, the 113 pieces, exact volumes.]</p>
+<h2>1. Two shells</h2>
+<p>[to write: D(1) = I(1/φ) + 12 J2 + 30 AXE + 20 CLEO and I(φ²) = D(1) + 12 J11 + 30 AXE + 20 FUJI (the Lotus seed, 113 pieces,
+the arrangement of its 13 icosahedra credited to Gray 2002); the counts 12, 30, 20 per shell; J2 + J11 = icosahedron cut by the
+dodecahedron's faces; exact volumes.]</p>
 
 <h2>2. The Chain of Karma</h2>
 <p>[to write: replacement rule, the centre line of ever-smaller seeds, counts 13ⁿ and 100(13ⁿ − 1)/12 of each gap kind in ratio
