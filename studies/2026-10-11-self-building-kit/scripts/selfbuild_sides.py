@@ -89,18 +89,26 @@ print('kit shapes (piece x size x orientation):', len(shapes), flush=True)
 # candidate points: closure from the target's corners
 P = np.vstack([TV, HV])
 place = {}
+# vectorised (2026-10-11): for each shape, all translations putting one of its corners on a candidate point at once
+NB, DB = TE[:, :3], TE[:, 3]; NH, DH = HE[:, :3], HE[:, 3]
 for rnd in range(ROUNDS):
-    tree = cKDTree(P); newpts = []
+    newpts = []
     for si, (nm, V, vol) in enumerate(shapes):
-        for p in P:
-            for j in range(len(V)):
-                t = p - V[j]; W = V + t
-                if not inside(W).all() or not clear_of_hole(W): continue
-                key = (si, tuple(np.round(t, 5)))
-                if key in place: continue
-                place[key] = W; newpts.extend(W)
+        smax = (V @ NB.T).max(0)                          # per band face: farthest corner of the shape
+        hmin = (V @ NH.T).min(0)                          # per hole face: nearest corner of the shape
+        T = (P[:, None, :] - V[None, :, :]).reshape(-1, 3)   # not rounded before the test (points carry ~1e-6 noise)
+        ok = np.all(T @ NB.T + smax + DB <= 5e-6, axis=1)
+        T = T[ok]
+        if not len(T): continue
+        clear = np.any(T @ NH.T + hmin + DH >= -5e-6, axis=1)   # whole piece beyond one hole face
+        for t, c in zip(T, clear):
+            key = (si, tuple(np.round(t, 5)))
+            if key in place: continue
+            W = V + t
+            if not c and overlap(W, HV): continue
+            place[key] = W; newpts.append(W)
     if newpts:
-        Q = np.unique(np.round(np.vstack([P, newpts]), 6), axis=0)
+        Q = np.unique(np.round(np.vstack([P] + newpts), 6), axis=0)
         print(f'round {rnd}: placements {len(place)}, points {len(P)} -> {len(Q)}', flush=True); P = Q
 # keep only placements whose vertices are all candidate points (snug placements)
 tree = cKDTree(P)

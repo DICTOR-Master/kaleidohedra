@@ -38,6 +38,26 @@ Exact numbers (`scripts/dehn_screen_sides.py`, `logs/dehn_screen_sides.log`):
   and φ⁻²); Danzer's ABCK alone, 6 pieces (2 A at φ⁰, K at φ⁻¹, C at φ⁻², K at φ⁻³, A at φ⁻⁴); our kit alone, 14 pieces.
 - Not yet checked: an actual cut of the sides into those parts (geometric search, e.g. one of three equal parts by symmetry).
 
+**The rule works for any pyramid.** Nothing above used FUJI's shape: for any pyramid P, φ·P = P (tip) + P(1/φ) turned over +
+sides, and the band is always 1/φ of P's height, so the turned-over P(1/φ) always just touches the floor. The sides always have
+volume φ³ − 1 − φ⁻³ = **3** times P and Dehn invariant (φ − 1 − 1/φ) D(P) = **0**. (For a point-mirror the turned base must fit
+inside the tip's base; it does for the regular pentagon and FUJI's hexagon.)
+
+## DICTO's dodecahedral Chain
+DICTO (2026-10-11): start from a smaller dodecahedron tiled with pentagonal pyramids; the pyramid caps mask it while it grows,
+and each cycle ends as a dodecahedron, so the other steps are the icosahedron's.
+- **Stage 0** (`scripts/dodeca_chain.py`, `data/dodeca-chain-stage0.json`), taken from the Lotus seed's own pieces:
+  **D(1) = 12 pentagonal pyramids (J2, edge 1) + I(1/φ) + 30 AXE + 20 CLEO.** The pyramids stand on D's 12 faces, points inward,
+  and each point lands exactly on a corner of the small icosahedron (inradius 1.1135 − pyramid height 0.5257 = 0.5878 = the small
+  icosahedron's circumradius). Checks: the 12 bases make a regular dodecahedron (20 corners, all edges 1); 30 AXE and 20 CLEO lie
+  inside it and no Lotus piece crosses its surface; volume 7.663119 both ways. (This is the inside of DICTO's 2026-10-05 build,
+  Lotus seed = dodecahedron + 12 J11 + 30 AXE + 20 FUJI, Icosa-13 study §10.)
+- **Each cycle:** the icosahedron at the core grows by the Chain of Karma (I(1/φ) → Lotus seed of edge φ → …) while the pyramids
+  grow by the pyramid rule above; at the end of the cycle the shape is a regular dodecahedron again:
+  D(φ²ⁿ) = Chain-grown I(φ²ⁿ⁻¹) + 12 J2 + 30 AXE + 20 CLEO at the stage's size (63, 175 and 1,631 pieces for D(1), D(φ²), D(φ⁴)).
+- Relation: Al Raisi et al. (2026) grow the dodecahedron with whole dodecahedra inside; here the dodecahedron grows round
+  icosahedra.
+
 ## FUJI cut into simpler pieces
 - Apex fan over alternate base corners: FUJI = **cube corner** (edges 1, 1, 1 at right angles at the apex, volume 1/6) + 3
   pieces each with exactly CLEO's volume (edges 1/φ, 1, 1, 1, 1, √2; not CLEO's shape). The apex is a dodecahedron corner, so
