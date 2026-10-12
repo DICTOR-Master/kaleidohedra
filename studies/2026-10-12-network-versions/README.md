@@ -65,7 +65,7 @@ So a chain of verified steps now runs: ID core → (+20 triangular pyramids) dod
 
 ## The icosidodecahedral network closes inside the Lotus seed (2026-10-12)
 `scripts/relink.py`, `logs/relink.log`. All four shells sit inside the Lotus seed's outer icosahedron I(φ²) (dodecahedron edge 1 =
-the Lotus seed's own D(1)), and the last layer, between the triacontahedron (edge 1.089813) and I(φ²), is filled exactly by
+the Lotus seed's own D(1)), and the last layer, between the triacontahedron (edge 1.089814) and I(φ²), is filled exactly by
 **30 edge pieces** (each triacontahedron rhombus joined to the icosahedron edge it faces, volume 0.527864) and **20 face pieces**
 (each icosahedron face joined to the three-fold corner below it, volume 0.368922): 23.214379 = the gap, and 40,000 sample points in
 the gap are each covered exactly once.
@@ -78,7 +78,7 @@ So the complete network, every layer exact (237 pieces per cycle):
 | icosidodecahedron | φ/2 | 12 pentagonal pyramids + 20 twisted triangular frusta |
 | dodecahedron | 1 | 20 triangular pyramids |
 | fullerene cage | 1/φ | 12 twisted pentagonal frusta + 30 Mosseri–Sadoc t1 wedges |
-| rhombic triacontahedron | 1.089813 | 12 pentagonal + 20 hexagonal caps + 60 tetrahedral wedges |
+| rhombic triacontahedron | 1.089814 | 12 pentagonal + 20 hexagonal caps + 60 tetrahedral wedges |
 | icosahedron (the Lotus seed's outer) | φ² | 30 edge pieces + 20 face pieces |
 
 **The last missing piece (DICTO: "one more missing piece?")** — `scripts/core_layer.py`, `logs/core_layer.log`: the ID core of
@@ -100,6 +100,12 @@ shells; the order differs).
 - **10 tetrahedra** on the dodecahedron's 20 corners (two in each cube): all 60 edges pass through pieces.
 - So only the cube is woven into the network's seams; the octahedra and tetrahedra are present through their corners only.
 - Elsewhere: icosahedron + 6 Admiral Caps = octahedron (#21, the periodic frame); Pacioli's icosahedron in the octahedron.
+
+## Strict check of the cycle (`scripts/sod_overlap.py`, `logs/sod_overlap.log`)
+All 237 pieces of one cycle: no overlapping pair (separating axes over all face normals and edge-pair cross products), all inside
+I(φ²), total volume = I(φ²) to 1e-12. This check found that the triacontahedron's edge had been used rounded (1.089813, from
+0.5671010), which left overlaps of 1e-6 and a volume excess of 1.7e-5; the exact edge is ½√(45 − 18√5) = 1.0898138, now used in
+gen_twin.py, relink.py and outward.py.
 
 ## Octahedral variant, first finding (Pacioli in the core)
 `scripts/pacioli_core.py`, `logs/pacioli_core.log`. The five octahedra on the twin core's 30 corners (octahedron edge 1.851230) each

@@ -924,7 +924,7 @@ as transition figures; "one more missing piece?". Name by DICTO.*
 
 - A second exact cycle (dodecahedron edge 1): icosahedron 1/φ → icosidodecahedron φ/2 (+12 pentagonal pyramids, 20 twisted
   triangular frusta) → dodecahedron 1 (+20 triangular pyramids) → fullerene cage 1/φ (+12 twisted pentagonal frusta, 30
-  Mosseri–Sadoc t1 at 1/φ) → rhombic triacontahedron 1.089813 (+12 pentagonal and 20 hexagonal caps, 60 wedges) → icosahedron φ²
+  Mosseri–Sadoc t1 at 1/φ) → rhombic triacontahedron 1.089814 (+12 pentagonal and 20 hexagonal caps, 60 wedges) → icosahedron φ²
   (+30 edge and 20 face pieces). The outer icosahedron is φ³ times the inner one: the cycle repeats without end (237 pieces per cycle).
   Every layer checked by volume and by a sampled exact cover.
 - The icosahedron and dodecahedron share the icosidodecahedron as their core (12 pentagonal or 20 triangular corner pyramids); with

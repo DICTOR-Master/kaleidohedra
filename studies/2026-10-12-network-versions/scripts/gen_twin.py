@@ -12,7 +12,7 @@ def F(V):
 def edges(V, d=None):
     d = d or min(np.linalg.norm(V[0] - w) for w in V[1:]); return [(a, b) for a, b in itertools.combinations(range(len(V)), 2) if abs(np.linalg.norm(V[a] - V[b]) - d) < 1e-9]
 net_in, net_out = [], []
-Ic = ref['I'] / PHI; ID = ref['ID'] * PHI / 2; D = ref['D']; TI = ref['TI'] / PHI; RT = ref['RT'] * (1 / PHI) / 0.5671010; I2 = ref['I'] * PHI ** 2
+Ic = ref['I'] / PHI; ID = ref['ID'] * PHI / 2; D = ref['D']; TI = ref['TI'] / PHI; RT = ref['RT'] * np.sqrt(45 - 18 * np.sqrt(5)) / 2; I2 = ref['I'] * PHI ** 2
 FID, FIc, FD, FT, FR, FI = F(ID), F(Ic), F(D), F(TI), F(RT), F(I2)
 net_in.append(('core', Ic))
 for f in FID:

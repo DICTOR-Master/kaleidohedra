@@ -5,7 +5,7 @@
 import itertools, numpy as np
 from scipy.spatial import ConvexHull
 exec(open('touch_screen.py').read().split('out = []')[0].replace("__file__.replace('touch_screen.py', 'network_screen.py')", "'network_screen.py'"))
-rt_edge = (1 / PHI) / 0.5671010   # the cage of edge 1/phi sits in an RT whose edge is cage/0.567101 (rt_ti.py)
+rt_edge = np.sqrt(45 - 18 * np.sqrt(5)) / 2   # the cage of edge 1/phi sits in an RT whose edge is cage/0.567101 (rt_ti.py)
 H = ConvexHull(np.vstack([ref['I'] * PHI, ref['D']])); RTc = np.vstack([ref['I'] * PHI, ref['D']])
 e_c = min(np.linalg.norm(RTc[i] - RTc[j]) for i in range(32) for j in range(i) if np.linalg.norm(RTc[i] - RTc[j]) > 1e-9)
 print(f'chain RT edge {rt_edge:.6f}; the hull of I(phi) and D(1) (their dual compound) is an RT of edge {e_c:.6f}')

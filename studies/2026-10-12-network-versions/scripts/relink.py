@@ -10,12 +10,12 @@ def F(V):
     return np.array(E)
 I2 = ref['I'] * PHI ** 2; FI = F(I2)
 shells = {'ID core (edge phi/2)': ref['ID'] * PHI / 2, 'dodecahedron (edge 1)': ref['D'], 'fullerene cage (edge 1/phi)': ref['TI'] / PHI,
-          'triacontahedron (edge 1.089813)': ref['RT'] * (1 / PHI) / 0.5671010}
+          'triacontahedron (edge 1.089814)': ref['RT'] * np.sqrt(45 - 18 * np.sqrt(5)) / 2}
 for k, V in shells.items():
     d = (V @ FI[:, :3].T + FI[:, 3]).max()
     print(f'{k}: {"inside" if d <= 1e-9 else "OUTSIDE"} the Lotus seed I(phi^2); deepest corner {d:+.6f} from its faces')
-print(f'volumes: RT {ConvexHull(shells["triacontahedron (edge 1.089813)"]).volume:.6f}, I(phi^2) {ConvexHull(I2).volume:.6f}')
-RT = shells['triacontahedron (edge 1.089813)']; FR = F(RT)
+print(f'volumes: RT {ConvexHull(shells["triacontahedron (edge 1.089814)"]).volume:.6f}, I(phi^2) {ConvexHull(I2).volume:.6f}')
+RT = shells['triacontahedron (edge 1.089814)']; FR = F(RT)
 import itertools
 EI = [(a, b) for a, b in itertools.combinations(range(12), 2) if abs(np.linalg.norm(I2[a] - I2[b]) - PHI ** 2) < 1e-9]
 fivef = RT[np.argsort(-np.linalg.norm(RT, axis=1))]
