@@ -81,6 +81,7 @@ import { SITE, SITES, storageKey, theme, themeOf, activeSite, setActiveSite } fr
 import { installShear } from './app/kaleido-shear.js';
 import { createStudiesWorld } from './app/world-studies.js';
 import { createIcosaWorld } from './app/world-icosa.js';
+import { createChainsWorld, chainPreviewPoints } from './app/world-chains.js';
 import { ICOSA_SOLIDS } from './krp-core/src/geometry-extensions/icosa.js';
 import { createTargetsWorld } from './app/world-targets.js';
 import { zonohedron as targetZonohedron, EMBLEM_DIRECTIONS } from './krp-core/src/geometry-extensions/targets.js';
@@ -170,6 +171,7 @@ let roofFoldWorld = null;
 let sunstarWorld = null;
 let studiesWorld = null; // Kaleidohedra's Studies
 let icosaWorld = null; // DICTO Icosa (DICTO 2026-10-10)
+let chainsWorld = null; // Multi-shell chains (DICTO 2026-10-13)
 let targetsWorld = null; // Kaleidohedra's Targets
 let shear = null; // Kaleidohedra's lattice shear (installShear); on only in an app space that has one
 let stellaJewelWorld = null;
@@ -178,8 +180,8 @@ let netsWorld = null;
 let signalWorld = null;
 let constructWorld = null;
 let own3D = null;
-const OWN_WORLD_DIMENSION = { poly: '3D', shells: '3D', golden: '3D', roofFold: '3D', sunstar: '3D', stellaJewel: '3D', studies: '3D', icosa: '3D', targets: '3D', kaleido: '2D', nets: '2D', signal: '1D', construct: '1D' };
-const own3DWorld = () => ({ poly: polyWorld, shells: shellsWorld, golden: goldenWorld, roofFold: roofFoldWorld, sunstar: sunstarWorld, stellaJewel: stellaJewelWorld, studies: studiesWorld, icosa: icosaWorld, targets: targetsWorld, kaleido: kaleidoWorld, nets: netsWorld, signal: signalWorld, construct: constructWorld })[own3D] ?? null;
+const OWN_WORLD_DIMENSION = { poly: '3D', shells: '3D', golden: '3D', roofFold: '3D', sunstar: '3D', stellaJewel: '3D', studies: '3D', icosa: '3D', chains: '3D', targets: '3D', kaleido: '2D', nets: '2D', signal: '1D', construct: '1D' };
+const own3DWorld = () => ({ poly: polyWorld, shells: shellsWorld, golden: goldenWorld, roofFold: roofFoldWorld, sunstar: sunstarWorld, stellaJewel: stellaJewelWorld, studies: studiesWorld, icosa: icosaWorld, chains: chainsWorld, targets: targetsWorld, kaleido: kaleidoWorld, nets: netsWorld, signal: signalWorld, construct: constructWorld })[own3D] ?? null;
 const own3DActive = () => !!own3DWorld() && activeDimension === OWN_WORLD_DIMENSION[own3D];
 // 4D, 5D, 6D and the own 3D worlds each own their scene, taps, Lattice View and Skeleton.
 const isOwnWorldDimension = () => activeDimension === '4D' || qcWorlds.has(activeDimension) || own3DActive();
@@ -2186,7 +2188,7 @@ async function init() {
   // this bottom-row slot whenever no attach toggle needs it.
   let paintOn = false;
   // 1D has no colours to paint (Signal is cyan, Construct shows each axis).
-  const paintAvailable = () => !!activeDimension && activeDimension !== '1D' && !(own3DActive() && ['shells', 'golden', 'roofFold', 'sunstar', 'stellaJewel', 'studies', 'icosa', 'targets', 'nets'].includes(own3D));
+  const paintAvailable = () => !!activeDimension && activeDimension !== '1D' && !(own3DActive() && ['shells', 'golden', 'roofFold', 'sunstar', 'stellaJewel', 'studies', 'icosa', 'chains', 'targets', 'nets'].includes(own3D));
   const attachNeeded = () => (activeDimension === '4D' ? ['cell24', 'cell16', ...A4_CYCLE] : activeDimension !== '2D' && !isOwnWorldDimension() ? ['rhombohedra', 'pyrochlore'] : []).includes(attachPiece());
   const paintInSlot = () => paintAvailable() && !attachNeeded();
   function setPaint(on) {
@@ -3152,10 +3154,11 @@ async function init() {
     roofFoldWorld?.setActive(own3DActive() && own3D === 'roofFold');
     studiesWorld?.setActive(own3DActive() && own3D === 'studies');
     icosaWorld?.setActive(own3DActive() && own3D === 'icosa');
+    chainsWorld?.setActive(own3DActive() && own3D === 'chains');
     targetsWorld?.setActive(own3DActive() && own3D === 'targets');
     // Targets stay exact: no shear there (it would change the targets' angles). Elsewhere in a space
     // with a shear, the panel shows; the EKP-family worlds follow it with their cell centres.
-    shear?.setEnabled(!!SITES[activeSite()].shear && !(own3DActive() && ['targets', 'icosa'].includes(own3D)));
+    shear?.setEnabled(!!SITES[activeSite()].shear && !(own3DActive() && ['targets', 'icosa', 'chains'].includes(own3D)));
     sunstarWorld?.setActive(own3DActive() && own3D === 'sunstar');
     stellaJewelWorld?.setActive(own3DActive() && own3D === 'stellaJewel');
     kaleidoWorld?.setActive(own3DActive() && own3D === 'kaleido');
@@ -3211,7 +3214,7 @@ async function init() {
     for (const id of ['hud-quick-color', 'hud-quick-lattice-view']) document.getElementById(id).style.display = activeDimension === '1D' || netsOn ? 'none' : '';
     // Polyhedraverse's space has no lattice to view (its shapes are placed freely).
     // No lattice to show in Polyhedraverse, Studies or Targets: no button (nothing unnecessary shown).
-    if (own3DActive() && ['poly', 'studies', 'icosa', 'targets'].includes(own3D)) document.getElementById('hud-quick-lattice-view').style.display = 'none';
+    if (own3DActive() && ['poly', 'studies', 'icosa', 'chains', 'targets'].includes(own3D)) document.getElementById('hud-quick-lattice-view').style.display = 'none';
     // 2D's plain lattices have no ring of their own yet; the 3D cycle drew 3D ghosts into the flat scene
     // (lattice-view audit, 2026-10-09). Own 2D worlds (the Kaleidoscope) keep their own view.
     if (activeDimension === '2D' && !own3DActive()) document.getElementById('hud-quick-lattice-view').style.display = 'none';
@@ -3963,7 +3966,7 @@ async function init() {
         // 2026-08-29 -- X-Ray stays reachable via the corner HUD wheel's
         // own #xray-toggle face and the Lab panel, so no wheel face
         // routes to it here any more.)
-        const OWN_WORLD_ACTIONS = { 'tool:shellsWorld': 'shells', 'tool:goldenWorld': 'golden', 'tool:roofFoldWorld': 'roofFold', 'tool:sunstarWorld': 'sunstar', 'tool:stellaJewelWorld': 'stellaJewel', 'tool:studiesWorld': 'studies', 'tool:icosaWorld': 'icosa', 'tool:targetsWorld': 'targets', 'tool:kaleidoWorld': 'kaleido', 'tool:netsWorld': 'nets', 'tool:signalWorld': 'signal', 'tool:constructWorld': 'construct' };
+        const OWN_WORLD_ACTIONS = { 'tool:shellsWorld': 'shells', 'tool:goldenWorld': 'golden', 'tool:roofFoldWorld': 'roofFold', 'tool:sunstarWorld': 'sunstar', 'tool:stellaJewelWorld': 'stellaJewel', 'tool:studiesWorld': 'studies', 'tool:icosaWorld': 'icosa', 'tool:chainsWorld': 'chains', 'tool:targetsWorld': 'targets', 'tool:kaleidoWorld': 'kaleido', 'tool:netsWorld': 'nets', 'tool:signalWorld': 'signal', 'tool:constructWorld': 'construct' };
         // Polyhedraverse's shapes from DICTO (step D2): tool:polyShape:<ID> builds with that shape.
         // A 4D polytope's Build (D5): tool:polytope:<seed>|<target>.
         if (action?.startsWith('tool:polytope:')) {
@@ -3993,6 +3996,11 @@ async function init() {
             (m[1] === 'stellaJewel' ? stellaJewelWorld : sunstarWorld)?.setArrangement(m[2] ?? null);
             action = `tool:${m[1]}World`;
           }
+        }
+        // Multi-shell chains: tool:chainsWorld:<karma|dharma|bodhi> picks the chain (DICTO 2026-10-13).
+        if (action?.startsWith('tool:chainsWorld:')) {
+          chainsWorld?.setChain(action.slice('tool:chainsWorld:'.length));
+          action = 'tool:chainsWorld';
         }
         // Construct's families: tool:constructWorld:<family> (square, kagome, rd).
         if (action?.startsWith('tool:constructWorld:')) {
@@ -4213,6 +4221,7 @@ async function init() {
       if (action === 'tool:sunstarWorld') return convex(roofFoldSolids().dodeca.faces.flat());
       if (action === 'tool:studiesWorld') return convex(expandedWindows(EXPANDED_WINDOWS_GOLDEN).flat());
       if (action === 'tool:icosaWorld') return convex(ICOSA_SOLIDS.STELLA_CORONA.vertices);
+      if (action?.startsWith('tool:chainsWorld:')) return convex(chainPreviewPoints(action.slice('tool:chainsWorld:'.length)));
       if (action === 'tool:targetsWorld') return convex(targetZonohedron(EMBLEM_DIRECTIONS).flatMap((f) => f.polygon));
       if (action === 'tool:stellaJewelWorld') return convex(roofFoldSolids().dodeca.faces.flat());
       if (action === 'tool:goldenWorld') {
@@ -5556,6 +5565,7 @@ async function init() {
   });
   studiesWorld = createStudiesWorld({ scene: realScene, fitView: fitCameraTo, shear: currentShear });
   icosaWorld = createIcosaWorld({ scene: realScene, fitView: fitCameraTo });
+  chainsWorld = createChainsWorld({ scene: realScene, fitView: fitCameraTo });
   targetsWorld = createTargetsWorld({ scene: realScene, fitView: fitCameraTo });
   signalWorld = createSignalWorld({
     scene,
