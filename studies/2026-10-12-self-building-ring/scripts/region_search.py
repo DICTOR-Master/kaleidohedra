@@ -77,5 +77,5 @@ for tg in TGT:
                 if hits <= 3: print(f'   {tg} phi^{m}: CLEAN at turn {G.index(g) if False else "?"}, anchor {np.round(p, 4)}: {len(names)} parts {dict(Counter(names))}', flush=True)
                 found.append({'target': tg, 'm': m, 'anchor': p.tolist(), 'parts': [{'is': n_, 'from': B[i]['r'], 'vertices': x.tolist()} for n_, (i, x) in zip(names, parts)]})
         print(f'{tg} at phi^{m} (volume {tvol:.6f}): {len(seen)} turns, {tested} placements inside the complex, clean {hits} ({time.time() - t0:.0f}s)', flush=True)
-json.dump(found, open(os.path.join(rc.HERE, f'../data/region-search-step{os.environ["STEP"]}.json'), 'w'))
+json.dump(found, open(os.path.join(rc.HERE, f'../data/region-search-step{os.environ["STEP"]}{os.environ.get("OUTTAG", "")}.json'), 'w'))
 print('done', len(found))
