@@ -89,7 +89,7 @@ once.
     - J2(φ²): clean at all 12 corners (the cap rule below).
     - CLEO(φ) = φ·t2 + AXE (480 placements).
     - Nothing else: no FUJI, AXE, J2 ring or FUJI ring at φ, φ², φ³.
-  - Results in the Chain of Karma step 2 (1,569 pieces): no clean FUJI at φ, φ², φ³ (14,540 + 9,080 + 3,720 placements); the rings, J2, AXE and CLEO were still running at this commit (`logs/region_search-step2.log`).
+  - Results in the Chain of Karma step 2 (1,569 pieces): no clean FUJI at φ, φ², φ³ (14,540 + 9,080 + 3,720 placements) and no clean AXE at φ, φ², φ³ (52,140 + 39,360 + 23,040). J2 is clean at φ (12, the cap rule scaled by 1/φ in the central Lotus seed) and at φ² (144, the same rule in every Lotus seed), always as J11 + 5 J2 + 5 AXE + 5 FUJI. STATUS: the step-2 ring searches and CLEO were still running at this commit (`logs/region_search-step2*.log`).
 - **Symmetric placement searches** (`scripts/ring_search.py`).
   - Method: kit pieces at φ⁻¹…φ⁻³ in the 120 turns, placed with a corner on a candidate point (two rounds of closure from the
     ring's corners), grouped into orbits of the ring's turns, exact cover of sample points by MILP. All separation tests are
