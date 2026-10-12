@@ -910,7 +910,7 @@ DICTO (Bodhi with Dharma).*
 - Gap 70.272181 = 80 prolate + 20 oblate golden rhombohedra by volume (31.8%, as in the Lotus seed). Two exact builds, both
   kept as a choice (DICTO): kit B: 60 B1 (inner pocket, triangular bipyramid) + 20 B4 (FUJI-like, one in each outer three-fold corner) + 120 B5 (60 left- +
   60 right-handed); all convex, full icosahedral symmetry, no overlaps, volumes exact (studies/2026-10-12-bodhi-pieces, Fable).
-  Kit A: 60 Vajra (fine) + 60 **Chatra** (B2) + 60 **Mudra** (B3) (180 pieces, all mirror-symmetric; names by DICTO). Names by DICTO: B1 = **Vajra (fine)** (inner pocket; not the VAJRA cup of UNITY, #19), B4 =
+  Kit A: 60 Vajra (fine) + 60 **Chatra** (B2) + 60 **Mudra** (B3) (180 pieces, all mirror-symmetric; names by DICTO). Names by DICTO: B1 = **Vajra (fine)** (inner pocket; a different bipyramid from UNITY's VAJRA, #19), B4 =
   **Crown Jewel** (in each outer three-fold corner), B5 = **Diadem L** and **Diadem R** (the handed pair).
 - The 12 enclose exactly a rhombic hexecontahedron (20 prolate golden rhombohedra); minus the centre, the inner pocket has exactly
   the volume of one edge-1 triacontahedron.
