@@ -160,3 +160,10 @@ So the kit is not yet shown to be self-building. The new J2 rule moves the open 
 kit + Mosseri–Sadoc tiles at sizes 1, 1/φ, 1/φ² in the 120 frame turns, corners on generated points (2 rounds): 277,976 placements,
 40,000 sample points, MILP stopped at its 3,000 s limit with no solution and no proof. Inconclusive. (The old data file's degenerate
 t3 was still in this run; it has zero volume and cannot change the result.)
+
+**Symmetric run** (`SYM=1`, `logs/fuji-phi2-sym.log`; duplicate shapes removed, AXE = t6 and CLEO = t4): placements grouped into
+whole orbits of FUJI's six symmetries (191,364 orbits from 260,046 placements). Result: **infeasible** (proved by the solver in 893 s).
+So no filling of FUJI(φ²) by kit + Mosseri–Sadoc pieces at sizes 1, 1/φ, 1/φ² exists that has FUJI's full symmetry, within this
+placement set (corners on the points generated in two rounds from FUJI's corners). The test is one-sided in the right direction:
+overlaps are only tested at sample points, which can only allow more, so "infeasible" stands. Not excluded: fillings without FUJI's
+symmetry, pieces on points beyond two rounds, other sizes or other pieces (e.g. J2, J11).
