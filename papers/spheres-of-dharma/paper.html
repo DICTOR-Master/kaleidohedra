@@ -6,7 +6,7 @@
 <p class="sub">A second endless golden cycle of the icosahedral solids, through the icosidodecahedron, the fullerene cage and the rhombic triacontahedron</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
-DRAFT 2026-10-12 · not for release · Licence CC BY 4.0 (on release) · Data and checks: studies/2026-10-12-network-versions.<br>
+Version 1 · 12 October 2026 · Licence CC BY 4.0 · Data, scripts, renders and checks are included with this record and at https://github.com/DICTOR-Master/kaleidohedra.<br>
 The icosidodecahedron as the twin form, the dual triangular structures, the triangles of rhombi, the fullerene transition and the
 last missing layer are DICTO's ideas. Computation and checking with Claude (Anthropic).
 </div>
@@ -16,8 +16,7 @@ few repeated pieces. With the dodecahedron at edge 1: an icosahedron of edge 1/�
 pentagonal pyramids and 20 twisted triangular frusta), the dodecahedron (20 triangular pyramids), a truncated icosahedron of edge 1/φ,
 the fullerene cage (12 twisted pentagonal frusta and 30 Mosseri–Sadoc tetrahedra t1 at scale 1/φ), a rhombic triacontahedron of edge
 ½√(45 − 18√5) = 1.089814 (12 pentagonal and 20 hexagonal caps and 60 tetrahedral wedges), and an icosahedron of edge φ² (30 edge and 20 face pieces).
-The outer icosahedron is φ³ times the inner one, so the cycle repeats without end in both directions; one cycle has 237 pieces. Every
-layer is checked by volume and by a sampled exact cover. The construction rests on three exact relations: the icosahedron and the
+The outer icosahedron is φ³ times the inner one, so the cycle repeats without end in both directions; one cycle has 237 pieces. All pieces of a cycle are checked to be free of overlap, with total volume exact. The construction rests on three exact relations: the icosahedron and the
 dodecahedron share the icosidodecahedron as their core, differing only in 12 pentagonal or 20 triangular corner pyramids; the
 fullerene cage wraps the dodecahedron at exactly one golden step, the dodecahedron's corners on the cage's hexagon centres; and the
 rhombic triacontahedron is the cage, with its 60 corners on the triacontahedron's faces, plus caps and wedges. The cycle shares its
@@ -26,10 +25,9 @@ that dodecahedron exactly, so the two can be exchanged half by half at every sca
 network's seams, and the five octahedra on the icosidodecahedron hold one icosahedron of edge 1 in Pacioli's golden position. Its outer shell, the rhombic triacontahedron, is the only other form found to branch like the Lotus seed
 (the Bodhi seed, described separately). The shells are the family of the Tsai-type cluster of icosahedral quasicrystals, here solid and exactly filled.</div>
 
-<p class="status"><b>Draft status.</b> Checked: all 237 pieces of one cycle pairwise free of overlap (separating axes), all inside
-the outer icosahedron, total volume equal to I(φ²) to 1e-12 (scripts/sod_overlap.py). The triacontahedron's edge is exactly
-½√(45 − 18√5) = 1.0898138. To finish before release: DICTO's approval. Not to be uploaded to Zenodo without DICTO's
-explicit OK.</p>
+<p class="status"><b>Checks.</b> All 237 pieces of one cycle are pairwise free of overlap (separating axes over all face normals and
+edge-pair cross products), all lie inside the outer icosahedron, and their total volume equals I(φ²) to 1e-12 (scripts/sod_overlap.py).
+The triacontahedron's edge is exactly ½√(45 − 18√5) = 1.0898138.</p>
 
 <p class="status"><b>Terms.</b> The six-shell cycle is called a <i>Ritsudō</i> (律動, rhythm); its concentric mode of growth, one
 ring per cycle, <i>Nenrin</i> (年輪, tree rings), in contrast to the branching of the Lotus seed. Names by DICTO.</p>
@@ -92,8 +90,8 @@ exhaustive.</p>
 <ol class="refs">
 <li>H. Takakura, C. P. Gómez, A. Yamamoto, M. de Boissieu, A. P. Tsai, Atomic structure of the binary icosahedral Yb–Cd quasicrystal, <i>Nature Materials</i> 6 (2007) 58–63.</li>
 <li>T. Keef, R. Twarock, Affine extensions of the icosahedral group with applications to the three-dimensional organisation of simple viruses, <i>J. Math. Biol.</i> 59 (2009) 287–313.</li>
-<li>R. Mosseri, J.-F. Sadoc (1982); P. Kramer, <i>Acta Cryst.</i> A38 (1982) 257–264 (the tile t1).</li>
+<li>R. Mosseri and J.-F. Sadoc, in: P. H. Gaskell, J. M. Parker, E. A. Davis (eds.), The Structure of Non-Crystalline Materials 1982 (Taylor &amp; Francis, London, 1983) p. 137; P. Kramer, Non-periodic central space filling with icosahedral symmetry using copies of seven elementary cells, <i>Acta Cryst.</i> A38 (1982) 257–264 (the tile t1).</li>
 <li>L. Pacioli, <i>De divina proportione</i> (1509).</li>
-<li>DICTO, The Chain of Karma (draft, this repository, papers/chain-of-karma).</li>
+<li>DICTO, The Chain of Karma (2026), doi:10.5281/zenodo.23310542.</li>
 </ol>
 </body></html>
