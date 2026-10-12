@@ -950,6 +950,7 @@ AXE, CLEO and the other parts, "and carry on to infinity". Name by DICTO.*
 - The enlarged gap pieces cannot be cut back into the small ones (Dehn invariant), so the Chain is a hierarchy with
   gap pieces in every size step of φ²; the icosahedra's share falls by 0.6823 each step.
 - Study files: [studies/2026-10-11-chain-of-karma](studies/2026-10-11-chain-of-karma/).
+- **Published:** The Chain of Karma, version 1, 2026-10-12, DOI [10.5281/zenodo.23310542](https://doi.org/10.5281/zenodo.23310542) (paper + data).
 - Self-building kit and prior art: [studies/2026-10-11-self-building-kit](studies/2026-10-11-self-building-kit/); literature search done
   2026-10-12 (paper section 10).
 

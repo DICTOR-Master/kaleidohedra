@@ -44,6 +44,7 @@ for tg in TGT:
             if key in seen: continue
             seen.add(key)
             F0 = rc.planes(R0); rad = np.linalg.norm(R0 - R0[anchor_idx], axis=1).max()
+            if H0: HLO_, HHI_ = (H0[0] @ AX.T).min(0), (H0[0] @ AX.T).max(0); HT = AX; FH0 = rc.planes(H0[0])
             for p in pts:
                 t = p - R0[anchor_idx]
                 if not np.all((R0 + t) @ CH[:, :3].T + CH[:, 3] <= 1e-9): continue
@@ -64,7 +65,13 @@ for tg in TGT:
                     else:
                         W = clip(PVs[i], F)
                         if W is None: continue
-                    for x in (subtract([W], H0[0] + t) if H0 else [W]):
+                    sub = [W]
+                    if H0:
+                        hlo, hhi = HLO_ + HT @ t, HHI_ + HT @ t; wl, wh = (W @ AX.T).min(0), (W @ AX.T).max(0)
+                        if np.any((wh <= hlo + 1e-9) | (wl >= hhi - 1e-9)): sub = [W]                     # clear of the hole
+                        elif np.all(W @ FH0[:, :3].T + (FH0[:, 3] - FH0[:, :3] @ t) <= 1e-9): sub = []     # inside the hole
+                        else: sub = subtract([W], H0[0] + t)
+                    for x in sub:
                         idn = ident(x) if not (ins and not H0) else [B[i]['r']]
                         if not idn: ok = False; break
                         parts.append((i, x)); names.append(idn[0])
