@@ -128,6 +128,12 @@ kept when they do not overlap, then the largest centred copy. Exact golden close
   triacontahedron on the 3- and 2-fold axes), and at φ³, φ⁴ the centre is √5 or 3φ... (not a power of φ), so no golden cycle.
 So two forms multiply, the icosahedron and the triacontahedron (the earlier statement "only the icosahedron" is corrected).
 
+## DICTO's Bodhi seed build (Polyhedraverse, 2026-10-12)
+`data/dicto-bodhi-build-2026-10-12.json`, `scripts/read_polyhedraverse_build.py` (shape vertices from krp-core, app edge 1/φ).
+21 prolate, 8 oblate, 12 RT. 11 of the 12 RT centres lie exactly φ from a common middle (φ² at edge 1): the Bodhi seed's positions,
+found by hand with face attachments. The 12th sits at distance 1 on the right axis (should be φ) and overlaps its 5 neighbours; 3
+oblate and 1 prolate also overlap RTs. 16 prolate lie in the core (2.874 of the 3.607 enclosed, app units).
+
 ## Transitional spheres (DICTO: "the transitional ring/sphere structure between the solids")
 `logs/transition_spheres.log` (computed inline with the network_screen forms). Inner (face), mid (edge) and outer (corner) spheres of
 each shell, dodecahedron edge 1. Shared: ID inner = D inner 1.113516; ID outer = D mid 1.309017; D outer = TI inner 1.401259; TI mid
