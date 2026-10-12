@@ -30,6 +30,7 @@ export function createIcosaWorld({ scene, fitView = () => {} }) {
   group.visible = false;
   scene.add(group);
   const view = { item: 'STELLA_CORONA', part: 'pieces', apart: 0, fill: false };
+  const VIEW_FIRST = structuredClone(view); // the first view, for resetView
   try {
     const data = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (ITEMS.includes(data?.item)) view.item = data.item;
@@ -142,6 +143,11 @@ export function createIcosaWorld({ scene, fitView = () => {} }) {
     group,
     meshes: () => [],
     handleTap: () => false,
+    /** Back to the first view (leaving the world, DICTO 2026-10-13). */
+    resetView() {
+      Object.assign(view, structuredClone(VIEW_FIRST)); save();
+      if (active) { draw(); fit(); }
+    },
     setActive(on) {
       if (on === active) return;
       active = on;

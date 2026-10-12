@@ -30,6 +30,7 @@ export function createTargetsWorld({ scene, fitView = () => {} }) {
   let targets = [];
   const cells = new Map(); // index -> built cell (lazy)
   const view = { type: 'all', index: 0, show: 'cell' };
+  const VIEW_FIRST = structuredClone(view); // the first view, for resetView
   let active = false;
   let skeleton = false;
   let opacity = 1;
@@ -197,6 +198,11 @@ export function createTargetsWorld({ scene, fitView = () => {} }) {
     group,
     meshes: () => [],
     handleTap: () => false,
+    /** Back to the first view (leaving the world, DICTO 2026-10-13). */
+    resetView() {
+      Object.assign(view, structuredClone(VIEW_FIRST)); save();
+      if (active) { rebuild(); fit(); }
+    },
     setActive(on) {
       if (on === active) return;
       active = on;

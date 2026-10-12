@@ -40,6 +40,7 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
   const DODECA = roofFoldSolids().dodeca;
 
   const view = { study: 'windows', stretch: SLIDERS.stretch.snaps[0], push: EXPANDED_WINDOWS_GOLDEN, morph: 1, rdMorph: 1, apart: 0.35, studyShear: 'copies' };
+  const VIEW_FIRST = structuredClone(view); // the first view, for resetView
   try {
     const data = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (STUDIES.includes(data?.study)) view.study = data.study;
@@ -241,6 +242,11 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
     group,
     meshes: () => [],
     handleTap: () => false,
+    /** Back to the first view (leaving the world, DICTO 2026-10-13). */
+    resetView() {
+      Object.assign(view, structuredClone(VIEW_FIRST)); save();
+      if (active) { draw(); fit(); }
+    },
     setActive(on) {
       if (on === active) return;
       active = on;

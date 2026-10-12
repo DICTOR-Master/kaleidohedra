@@ -4352,7 +4352,8 @@ async function init() {
 
     // The world you're in (DICTO 2026-10-13): its title under DICTO, Back to the menu screen it was picked on, and on
     // leaving a world you changed: Keep (it stays for next time), Discard (back as it was when you came in) or Stay.
-    // The view-only worlds (Multi-shell chains, DICTO Dodeca) go back to their first view on leaving, without asking.
+    // The view-only worlds (Multi-shell chains, DICTO Dodeca, DICTO Icosa, EKP studies, Targets) go back to their first view on
+    // leaving, without asking.
     let worldNow = null; // { action, stores: Map<historyKey, json> | null }
     // A store re-saved on opening only changes its lastModified stamp: that isn't a change of yours.
     const builtState = (json) => JSON.stringify(json, (k, v) => (k === 'lastModified' ? undefined : v));
@@ -4376,8 +4377,7 @@ async function init() {
         if (choice === 'stay') return false;
         if (choice === 'discard') for (const k of changed) historyRestorers.get(k).restore(JSON.parse(before.get(k)));
       }
-      chainsWorld?.resetView?.();
-      dodecaWorld?.resetView?.();
+      for (const w of [chainsWorld, dodecaWorld, icosaWorld, studiesWorld, targetsWorld]) w?.resetView?.();
       return true;
     }
     function askKeepBuild() {
