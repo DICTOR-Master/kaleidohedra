@@ -907,9 +907,12 @@ DICTO (Bodhi with Dharma).*
   as the Lotus seed, so the same fractal dimension of the seeds (≈ 2.6063).
 - The 12 touch face to face in the icosahedron pattern (30 contacts, 5 each); DICTO built them exactly in Polyhedraverse
   (data/dicto-bodhi-perfect-2026-10-12.json: centres φ from the middle to 6 decimals, 30 contacts, no overlaps).
-- Gap 70.272181 (31.8%, as in the Lotus seed), two pockets (inner ~12.3, outer ~57.5); split by axis it lies on the 20 three-fold
-  and 30 two-fold axes on each side, the Lotus seed's pattern (CLEO/FUJI, AXE). The exact pieces are not yet found; golden
-  rhombohedra do not fill it.
+- Gap 70.272181 = 80 prolate + 20 oblate golden rhombohedra by volume (31.8%, as in the Lotus seed). Exact kit, DICTO's choice
+  (kit B): 60 B1 (inner pocket, triangular bipyramid) + 20 B4 (FUJI-like, one in each outer three-fold corner) + 120 B5 (60 left- +
+  60 right-handed); all convex, full icosahedral symmetry, no overlaps, volumes exact (studies/2026-10-12-bodhi-pieces, Fable).
+  An alternative kit A (60 B1 + 60 B2 + 60 B3) also exists. Piece names to come from DICTO.
+- The 12 enclose exactly a rhombic hexecontahedron (20 prolate golden rhombohedra); minus the centre, the inner pocket has exactly
+  the volume of one edge-1 triacontahedron.
 - Study files: [studies/2026-10-12-network-versions](studies/2026-10-12-network-versions/).
 
 ## 23. Spheres of Dharma (DICTO, 2026-10-12)
