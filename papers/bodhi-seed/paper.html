@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>The Bodhi Seed</title>
+<link rel="stylesheet" href="../paper.css"></head><body>
+
+<h1>The Bodhi Seed</h1>
+<p class="sub">Twelve rhombic triacontahedra and one more inside a triacontahedron φ² times larger, with the gap filled exactly</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Draft · 12 October 2026 · Licence CC BY 4.0 · Data, scripts, renders and checks: studies/2026-10-12-bodhi-pieces and studies/2026-10-12-network-versions at https://github.com/DICTOR-Master/kaleidohedra.<br>
+The question, the golden-rhombohedron lead, the names Bodhi seed, Vajra, Crown Jewel and Diadem, the choice of builds and the hand-built
+twelve (Polyhedraverse) are DICTO's. Computation and checking with Claude (Anthropic).
+</div>
+
+<div class="abstract"><b>Abstract.</b> A rhombic triacontahedron RT(φ²) of edge φ² holds twelve RT(1) of edge 1, one on each five-fold axis and each
+pushed out until it touches the outer form, and one RT(1/φ) at its centre, without overlap. Each of the twelve touches five others
+face to face, in the pattern of the icosahedron's 30 edges. These are the counts and ratios of the Lotus seed (an icosahedron of edge φ²
+holding 12 icosahedra of edge 1 and one of edge 1/φ), and among the icosahedral solids tested on their 5-, 3- and 2-fold axes only the
+icosahedron and the rhombic triacontahedron close in this way. The gap, 31.8% of the volume (by volume 80 prolate and 20 oblate golden
+rhombohedra of edge 1, though these do not tile it), fills exactly with convex pieces in two ways, each of three types and each invariant
+under the full icosahedral group: kit A, 60 + 60 + 60 mirror-symmetric pieces; kit B, 60 Vajras (triangular bipyramids), 20 Crown Jewels
+(one in each outer three-fold corner, 14 corners) and 60 + 60 Diadems of opposite hands. Every corner is exact and every dihedral angle
+is a multiple of 6°. The twelve enclose exactly a rhombic hexecontahedron of edge 1 (20 prolate golden rhombohedra), so the inner pocket,
+the hexecontahedron minus the centre, has exactly the volume of RT(1). All pieces were checked pairwise free of overlap, with total volume
+exact. The layer of twelve triacontahedra around a rhombic hexecontahedron appears in S. Kabai's clusters; its closure inside RT(φ²), the
+centre, the exact kits and the growth as a seed were not found in the literature searched.</div>
+
+<p class="status"><b>Draft.</b> For DICTO's reading. Checks are in the study folders named above.</p>
+
+<h2>1. Which forms multiply</h2>
+<p>For each icosahedral form X (icosahedron, dodecahedron, icosidodecahedron, truncated icosahedron, rhombic triacontahedron) and each
+family of symmetry axes (12 five-fold, 20 three-fold, 30 two-fold directions), copies X(1) in the same turn were pushed out along every
+axis until they touched X(φᵏ), k = 1 … 4, and kept when no two overlapped; then the largest centred copy was found. Only two cases close
+at golden sizes, with copies that fit and a centre that is exactly a power of φ: the icosahedron on its five-fold axes in I(φ²) with
+centre I(1/φ) (the Lotus seed), and the rhombic triacontahedron on its five-fold axes in RT(φ²) with centre RT(1/φ). Everything else either
+overlaps at φ and φ², or at φ³ and φ⁴ leaves a centre whose size is not a power of φ (<code>scripts/seeding.py</code>).</p>
+
+<h2>2. The twelve</h2>
+<p>The twelve copies' centres lie φ² from the middle, at the corners of an icosahedron of edge 1.701302 (twice the inradius of RT(1)), so
+neighbours touch face to face: 30 contacts, five per copy. DICTO built the twelve by hand in the Polyhedraverse app; the exported build has
+every centre at the computed distance to six decimals, 30 face contacts and no overlap. Volumes: RT(φ²) 220.907161, twelve RT(1)
+147.728810, RT(1/φ) 2.906170, gap 70.272181.</p>
+
+<h2>3. The hollow inside the twelve</h2>
+<p>The twelve enclose exactly a rhombic hexecontahedron RH(1) of edge 1: twenty prolate golden rhombohedra, one on each three-fold axis.
+The centre RT(1/φ) sits inside it, and the inner pocket RH(1) − RT(1/φ) has volume 20φO − 10O/φ = 10φ²O, exactly that of RT(1), where
+O is the oblate golden rhombohedron of edge 1 (volume 0.470228) and the prolate one is φO; in short RH(1) = RT(1) + RT(1/φ) by volume. The
+inner pocket is 60 Vajras; three Vajras fill each of the hexecontahedron's rhombohedra outside the centre, and that union is not convex, so
+no single three-fold inner piece exists.</p>
+
+<h2>4. Two kits</h2>
+<table>
+<tr><th>Piece</th><th>Kit</th><th>Count</th><th>Volume</th><th>Shape</th></tr>
+<tr><td>Vajra</td><td>A, B</td><td>60</td><td>φ²O/6 = 0.205179</td><td>triangular bipyramid; edges 1, 1/φ, 1.0515, 1.4734, 1.7013; dihedrals 72°, 90°, 108°, 120°</td></tr>
+<tr><td>Crown Jewel</td><td>B</td><td>20</td><td>(7φ − 3)O/2 = 1.957616</td><td>14 corners, 9 faces: three pentagons on RT(φ²), three hexagons on the three copies around its corner, three cut triangles; dihedrals 36°, 90°, 120°, 144°</td></tr>
+<tr><td>Diadem L, R</td><td>B</td><td>60 + 60</td><td>O/3 = 0.156743</td><td>6 corners, 5 faces, a rhombus face (edge 1) on a copy; chiral; dihedrals 36°, 60°, 90°, 108°</td></tr>
+<tr><td>B2</td><td>A</td><td>60</td><td>(3 + 5φ)O/6 = 0.869152</td><td>7 corners: a pentagon on RT(φ²), two quadrilaterals on copies, three cut triangles</td></tr>
+<tr><td>B3</td><td>A</td><td>60</td><td>O/(3φ) = 0.096872</td><td>pyramid on a golden rhombus (edge 1) lying on a copy; dihedrals 36°, 120°, 144°</td></tr>
+</table>
+<p>Exact bookkeeping: gap = 80P + 20O; outer pocket = 70P + 10O, inner pocket = 10P + 10O = RT(1). Kit A uses 180 pieces, all
+mirror-symmetric; kit B 200 pieces, with one Crown Jewel in each three-fold corner as FUJI sits in the Lotus seed. Both kits were found
+by cutting one fundamental region (1/120) of the gap along the solids' face planes and the mirror planes, then choosing the fewest piece
+types and pieces by exact cover; three types are minimal for such cuts, and at least two are needed since the gap has two separate
+pockets.</p>
+
+<h2>5. Checks</h2>
+<p>For both kits: no overlapping pair among pieces and solids (separating axes); total volume equal to the gap to 6 × 10⁻¹⁴; 236,269
+random points each in exactly one solid or piece; all copies of a type congruent; the kit invariant under the 120 symmetries.
+Independently, for kit B: 235,529 sample points in RT(φ²), each covered exactly once by the 13 solids and 200 pieces.</p>
+
+<h2>6. Growth</h2>
+<p>Since every triacontahedron inside is whole, each can be replaced by its own Bodhi seed, as the Chain of Karma does with Lotus seeds,
+the pieces staying whole: a Bodhi chain with 13ⁿ triacontahedra after n steps. With the same counts and ratios as the Lotus seed, the
+triacontahedra alone form a self-similar set of the same dimension, D with 12φ⁻²ᴰ + φ⁻³ᴰ = 1, D ≈ 2.6063.</p>
+
+<h2>7. Relation to known work</h2>
+<p>The rhombic triacontahedron is ten prolate and ten oblate golden rhombohedra, and the rhombic hexecontahedron twenty prolate ones
+(classical). S. Kabai built clusters of rhombic triacontahedra and hexecontahedra as models of quasicrystal structure, among them a
+layer of twelve triacontahedra face to face around a hexecontahedron (Wolfram Demonstrations Project, "Cluster of 45 Polyhedra around a
+Rhombic Hexacontahedron" and "Dodecahedral Cluster of RTs and RHs"; Kabai, Bérczi and Szilassi). We found no description of that layer
+closing exactly inside RT(φ²) with RT(1/φ) at its centre, of a convex exact filling of the gap, or of its growth as a seed. The search is
+not exhaustive.</p>
+
+<h2>Figures</h2>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/bodhi-seed/fig/seed-closed.png" alt="" style="width:100%"><figcaption><b>Figure 1.</b> The Bodhi seed: RT(φ²) (crystal) holding twelve RT(1) (green) around RT(1/φ) (gold).</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/bodhi-seed/fig/seed-open.png" alt="" style="width:100%"><figcaption><b>Figure 2.</b> The thirteen pulled apart.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/bodhi-seed/fig/hollow.png" alt="" style="width:100%"><figcaption><b>Figure 3.</b> 60 Vajras around the centre: the rhombic hexecontahedron, slightly pulled apart.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/bodhi-seed/fig/crowns.png" alt="" style="width:100%"><figcaption><b>Figure 4.</b> The 20 Crown Jewels (blue) around the Vajras.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/bodhi-seed/fig/kitB-open.png" alt="" style="width:100%"><figcaption><b>Figure 5.</b> Kit B pulled apart: Vajras (gold), Crown Jewels (blue), Diadem L (lilac), Diadem R (pink); the twelve faint.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/bodhi-seed/fig/kitB-closed-gap.png" alt="" style="width:100%"><figcaption><b>Figure 6.</b> Kit B closed, without the twelve: the gap, with its twelve sockets.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/bodhi-seed/fig/kitA-open.png" alt="" style="width:100%"><figcaption><b>Figure 7.</b> Kit A pulled apart: Vajras, B2 (blue), B3 (lilac).</figcaption></figure>
+
+<h2>References</h2>
+<ol class="refs">
+<li>S. Kabai, Cluster of 45 Polyhedra around a Rhombic Hexacontahedron; Dodecahedral Cluster of RTs and RHs. Wolfram Demonstrations Project.</li>
+<li>S. Kabai, Sz. Bérczi, L. Szilassi, on clusters of rhombic triacontahedra and hexecontahedra, The Mathematica Journal.</li>
+<li>DICTO, The Chain of Karma (2026), doi:10.5281/zenodo.23310542.</li>
+<li>DICTO, Spheres of Dharma (2026), doi:10.5281/zenodo.23310834.</li>
+</ol>
+</body></html>
