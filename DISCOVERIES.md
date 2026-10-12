@@ -47,6 +47,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 21 | The icosahedral octet: Euclid's roofs moved to the icosahedron. An icosahedron + 6 edge roofs is the regular octahedron; icosahedra (edge 1) with their roofs in the octet's octahedra and icosahedra of edge 1/2 with corner and edge caps in its tetrahedra fill space exactly (icosahedra 60.79%); the Lotus Jewel (the clawed icosahedron) | DICTO (the idea: "the same principle as the dodecahedron and roofs, but with six"; the tetrahedral gap made icosahedral; clawing like the Jewel) | study checks | **not found** as fillings; the icosahedron in the octahedron at the golden section is classical (Pacioli; Fuller's Jitterbug) | 2026-10-10 |
 | 22 | Chain of Karma: the Lotus seed nested in itself without end; the icosahedron and dodecahedron as endless shells of each other; the dodecahedral Chain; every piece regrows by DICTO's pyramid rule up to a Dehn-zero (cube-equivalent) remainder | DICTO (the Chain, the name, the tip + mirror rule, the dodecahedral version) | study checks | **not found** as solid exact fillings; nested icosahedra at golden powers: Gray 2002; nested icosahedral point shells: Tsai clusters, Keef–Twarock (viruses) | 2026-10-11 |
 | 23 | Spheres of Dharma: a second exact φ³ cycle, icosahedron φ² ⊃ rhombic triacontahedron ⊃ fullerene cage ⊃ dodecahedron ⊃ icosidodecahedron ⊃ icosahedron 1/φ, each layer filled by a few piece types (237 pieces per cycle); it shares the dodecahedron with the Lotus seed, so the two can be exchanged half by half at every scale | DICTO (the icosidodecahedron as the twin form, the dual triangular structures, the triangles of rhombi, the fullerene transition, "one more missing piece") | study checks | **not found** as solid exact fillings; the shells are the Tsai cluster's family (Takakura et al. 2007); the dual compound and the compound of five octahedra are classical | 2026-10-12 |
+| 24 | The Bodhi seed: a rhombic triacontahedron of edge φ² holds 12 of edge 1 on its 5-fold axes, each touching 5 others face to face, and one of edge 1/φ at its centre; the second form (after the icosahedron, #19) that multiplies like the Lotus seed, 13 per φ² step; gap 31.8%, in 20 three-fold and 30 two-fold parts on each side | DICTO (the golden rhombohedron lead; the name; the outer twelve built exactly by hand in Polyhedraverse) | study checks | **not found**; the triacontahedron as 10 + 10 golden rhombohedra is classical | 2026-10-12 |
 
 Known results the apps show (kept here, with their numbers, as checks; not DICTO's findings; see the section at the end):
 
@@ -895,6 +896,22 @@ pieces. Names by DICTO.*
   icosahedra with dodecahedra; the Dogstar and its honeycomb are Hart's (1996). The King of Pentacles, the
   closed Stella-Corona and its network are DICTO's.
 
+## 24. The Bodhi seed (DICTO, 2026-10-12)
+
+*From DICTO's question whether any form besides the icosahedron multiplies, and his "maybe a golden ratio rhombohedron". Name by
+DICTO (Bodhi with Dharma).*
+
+- Seeding test (scripts/seeding.py): of the icosahedral forms and the 5-, 3- and 2-fold axes, only two close at golden sizes: the
+  icosahedron (the Lotus seed) and the rhombic triacontahedron. A triacontahedron of edge φ² holds 12 of edge 1 on its 5-fold axes
+  (each pushed out to touch, centres φ² from the middle) and one of edge 1/φ at its centre, with no overlap. Same counts and ratios
+  as the Lotus seed, so the same fractal dimension of the seeds (≈ 2.6063).
+- The 12 touch face to face in the icosahedron pattern (30 contacts, 5 each); DICTO built them exactly in Polyhedraverse
+  (data/dicto-bodhi-perfect-2026-10-12.json: centres φ from the middle to 6 decimals, 30 contacts, no overlaps).
+- Gap 70.272181 (31.8%, as in the Lotus seed), two pockets (inner ~12.3, outer ~57.5); split by axis it lies on the 20 three-fold
+  and 30 two-fold axes on each side, the Lotus seed's pattern (CLEO/FUJI, AXE). The exact pieces are not yet found; golden
+  rhombohedra do not fill it.
+- Study files: [studies/2026-10-12-network-versions](studies/2026-10-12-network-versions/).
+
 ## 23. Spheres of Dharma (DICTO, 2026-10-12)
 
 *DICTO's ideas: the icosidodecahedron as the hybrid "twin" of the two-form version; "the dual of that arrangement, the dodecahedron
@@ -914,9 +931,7 @@ as transition figures; "one more missing piece?". Name by DICTO.*
 - The five cubes of the dodecahedron lie in the network's seams; the five octahedra on the icosidodecahedron hold one icosahedron of
   edge 1 in Pacioli's golden way, all five at once.
 - Names (DICTO, 2026-10-12): **Ritsudō** (律動, rhythm) for the six-beat cycle; **Nenrin** (年輪, tree rings) for its concentric
-  growth, against the Lotus seed's branching; **Bodhi seed** for the second form that multiplies like the Lotus seed: a rhombic
-  triacontahedron of edge φ² holds 12 of edge 1 on its 5-fold axes and one of edge 1/φ at the centre, without overlap
-  (scripts/seeding.py; its gap not yet divided into pieces).
+  growth, against the Lotus seed's branching. Its outer shell, the triacontahedron, branches on its own: the Bodhi seed (#24).
 - Study files: [studies/2026-10-12-network-versions](studies/2026-10-12-network-versions/). Paper: draft, not for release.
 
 ## 22. Chain of Karma (DICTO, 2026-10-11)
