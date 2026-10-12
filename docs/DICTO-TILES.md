@@ -1,10 +1,25 @@
-# The DICTO Set
+# The DICTO Tiles
 
-DICTO's named pieces from the icosahedral studies, in one place, with the credit for every piece that is known from elsewhere.
+DICTO's tile sets: the prototiles from which each of his structures is tiled exactly, like Mosseri and Sadoc's tetrahedra or
+Danzer's ABCK, with the credit for every tile that is known from elsewhere.
+
+## The sets
+| Set | Prototiles | Tiles | Credit for borrowed tiles |
+|---|---|---|---|
+| **DICTO Lotus tiles** (#19, #22) | icosahedron, AXE, FUJI, CLEO | the Lotus seed I(φ²) = 12 I + I(1/φ) + 60 AXE + 20 FUJI + 20 CLEO; the Chain of Karma at every level | AXE = Mosseri–Sadoc t6, CLEO = t4 (at 1/φ) |
+| **DICTO dodecahedral tiles** (#22) | icosahedron, J2, AXE, CLEO | D(1) = I(1/φ) + 12 J2 + 30 AXE + 20 CLEO | J2 (Johnson); t6, t4 |
+| **DICTO Bodhi tiles, kit B** (#24) | rhombic triacontahedron, Vajra (fine), Crown Jewel, Diadem L, Diadem R | RT(φ²) = 12 RT + RT(1/φ) + 60 Vajra + 20 Crown Jewel + 60 + 60 Diadem | none |
+| **DICTO Bodhi tiles, kit A** (#24) | rhombic triacontahedron, Vajra (fine), Chatra, Mudra | RT(φ²) = 12 RT + RT(1/φ) + 60 each | none |
+| **Spheres of Dharma tiles** (#23) | 10 types (below; names to come) | one Ritsudō cycle, 237 tiles | Mosseri–Sadoc t1 (at 1/φ) |
+
+Each set tiles its seed exactly with tiles of two or three sizes, and the seed's large solid is again a tile one size up, so the
+structures continue without end (the Chain of Karma, the Bodhi chain, the Ritsudō cycle).
+
+## The tiles
 Edge lengths and volumes are at edge 1 (the Lotus seed's icosahedra), φ = (1 + √5)/2. Names are DICTO's. Started 2026-10-12;
 to be extended as pieces are named.
 
-## Lotus kit (#19 DICTO Icosa-13, #22 The Chain of Karma, doi:10.5281/zenodo.23310542)
+### Lotus tiles (#19 DICTO Icosa-13, #22 The Chain of Karma, doi:10.5281/zenodo.23310542)
 | Piece | Shape | Volume | Credit |
 |---|---|---|---|
 | **AXE** | tetrahedron, five edges 1, one 1/φ | 1/12 = 0.083333 | the Mosseri–Sadoc tile t6 at scale 1/φ (Mosseri & Sadoc 1982; Kramer 1982) |
@@ -14,7 +29,7 @@ to be extended as pieces are named.
 | J11 | icosahedron minus one J2 cap | 1.880192 | Johnson solid J11 |
 | pentagonal antiprism | icosahedron minus two opposite J2 caps | | classical |
 
-## DICTO Icosa pieces (#19, #20; Kaleidohedra's DICTO Icosa world)
+### DICTO Icosa pieces (#19, #20; Kaleidohedra's DICTO Icosa world)
 | Piece | Credit |
 |---|---|
 | **Triskelion**, **Triskelion Hex**, **Inner Eye**, **Hasu (lotus)**, **VAJRA** (bipyramid closing UNITY's dimples), **HMV (Gramophone)**, **Five of Cups (Tarot)**, **King of Pentacles (Tarot)**, **Shark Tooth**, **Bermuda Pyramid** | DICTO |
@@ -25,7 +40,7 @@ to be extended as pieces are named.
 Clusters: Lotus seed, UNITY, Venus (Fly Trap), DICTO Stella-Corona, Kepler Star Diadem, DESHI (R. W. Gray's arrangement, 2002),
 12-Star voids, KEPLER MACE.
 
-## Bodhi seed kits (#24 The Bodhi Seed, doi:10.5281/zenodo.23311354)
+### Bodhi tiles (#24 The Bodhi Seed, doi:10.5281/zenodo.23311354)
 | Piece | Kit | Shape | Volume (O = oblate golden rhombohedron, 0.470228) | Credit |
 |---|---|---|---|---|
 | **Vajra (fine)** | A, B | triangular bipyramid | φ²O/6 = 0.205179 | DICTO |
@@ -36,11 +51,11 @@ Clusters: Lotus seed, UNITY, Venus (Fly Trap), DICTO Stella-Corona, Kepler Star 
 
 The arrangement of twelve triacontahedra around a rhombic hexecontahedron is S. Kabai's (Wolfram Demonstrations Project).
 
-## Spheres of Dharma pieces (#23, doi:10.5281/zenodo.23310834); names to come
+### Spheres of Dharma tiles (#23, doi:10.5281/zenodo.23310834); names to come
 Pentagonal pyramid (icosidodecahedron cap), twisted triangular frustum, triangular pyramid (dodecahedron corner), twisted pentagonal
 frustum, the Mosseri–Sadoc tile t1 at scale 1/φ (credited), pentagonal cap, hexagonal cap (a triangle of rhombi), edge wedge, edge
 piece and face piece.
 
-## Classical solids used throughout
+### Classical solids used throughout
 Regular icosahedron and dodecahedron, icosidodecahedron, truncated icosahedron (fullerene cage), rhombic triacontahedron, rhombic
 hexecontahedron, prolate and oblate golden rhombohedra.
