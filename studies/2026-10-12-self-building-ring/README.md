@@ -154,3 +154,9 @@ So the kit is not yet shown to be self-building. The new J2 rule moves the open 
   (`../2026-10-11-chain-of-karma/chain-of-karma-steps-1-2.json`).
 - `renders/rings.png` (the two rings), `renders/cap-rule-J2.png` (the φ² rule, assembled and exploded).
 - Heavy runs on dicto-node (`~/ring`).
+
+## FUJI at φ², direct exact cover (2026-10-12, after the study above)
+`../2026-10-11-self-building-kit/scripts/selfbuild_ms.py ms-kit.json fuji 2 2 2 3000`, `logs/fuji-phi2-cover.log`: FUJI(φ²) from the
+kit + Mosseri–Sadoc tiles at sizes 1, 1/φ, 1/φ² in the 120 frame turns, corners on generated points (2 rounds): 277,976 placements,
+40,000 sample points, MILP stopped at its 3,000 s limit with no solution and no proof. Inconclusive. (The old data file's degenerate
+t3 was still in this run; it has zero volume and cannot change the result.)
