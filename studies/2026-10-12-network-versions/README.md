@@ -128,6 +128,14 @@ kept when they do not overlap, then the largest centred copy. Exact golden close
   triacontahedron on the 3- and 2-fold axes), and at φ³, φ⁴ the centre is √5 or 3φ... (not a power of φ), so no golden cycle.
 So two forms multiply, the icosahedron and the triacontahedron (the earlier statement "only the icosahedron" is corrected).
 
+## Bodhi seed gap, first survey (`scripts/bodhi_gap.py`, `scripts/bodhi_parts.py`)
+Gap 70.272181 (31.8%, as in the Lotus seed) in two connected pockets: inner (around the centre) ~12.3, outer ~57.5. The space
+enclosed by the 12 (centre + inner pocket) is 15.26-15.29 on finer grids (15.287, 15.269, 15.265): it does not match 17 prolate +
+5 oblate (15.285), so no rhombohedra filling is indicated. Split by nearest symmetry axis, the 5-fold parts are tiny (the copies
+sit on those axes) and the gap is carried by 20 three-fold and 30 two-fold parts on each side: inner ~0.287 (convex) and ~0.189,
+outer ~1.508 and ~0.886 (nearly convex). The same pattern as the Lotus seed (CLEO/FUJI on the 3-fold axes, AXE on the 2-fold).
+Next: the exact pieces.
+
 ## DICTO's Bodhi seed build (Polyhedraverse, 2026-10-12)
 `data/dicto-bodhi-build-2026-10-12.json`, `scripts/read_polyhedraverse_build.py` (shape vertices from krp-core, app edge 1/φ).
 21 prolate, 8 oblate, 12 RT. 11 of the 12 RT centres lie exactly φ from a common middle (φ² at edge 1): the Bodhi seed's positions,
