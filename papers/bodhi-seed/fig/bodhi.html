@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Bodhi seed renders</title>
+<style>html,body{margin:0;background:#05050a}canvas{display:block}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script></head><body>
+<script>
+const COL = { copy: 0x5fd38a, centre: 0xe8c25a, outer: 0x9fd8ff, B1: 0xe8c25a, B4: 0x4dd0e1, B5L: 0xc792ea, B5R: 0xf08fc0, B2: 0x4dd0e1, B3: 0xc792ea };
+const W = 1200, H = 1000;
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(W, H); renderer.setPixelRatio(1);
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0x05050a);
+const cam = new THREE.PerspectiveCamera(30, W / H, 0.1, 200);
+scene.add(new THREE.HemisphereLight(0xdfe6ff, 0x1a1626, 0.85));
+const sun = new THREE.DirectionalLight(0xffffff, 0.75); sun.position.set(3, 5, 4); scene.add(sun);
+let DATA = null, group = null;
+function mesh(p, col, off, glass, op) {
+  const g = new THREE.Group(), pos = [];
+  for (const t of p.t) for (const i of t) { const v = p.v[i]; pos.push(v[0] + off[0], v[1] + off[1], v[2] + off[2]); }
+  const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); geo.computeVertexNormals();
+  g.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: col, flatShading: true, side: THREE.DoubleSide, roughness: .5,
+    transparent: !!glass, opacity: glass ? op : 1, depthWrite: !glass, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+  const ep = []; for (const [a, b] of p.e) { const A = p.v[a], B = p.v[b]; ep.push(A[0] + off[0], A[1] + off[1], A[2] + off[2], B[0] + off[0], B[1] + off[1], B[2] + off[2]); }
+  const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(ep, 3));
+  g.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: glass ? 0x9fa8c0 : 0x0b1220, transparent: !!glass, opacity: glass ? 0.55 : 1 })));
+  return g;
+}
+const cen = p => p.v.reduce((a, v) => [a[0] + v[0], a[1] + v[1], a[2] + v[2]], [0, 0, 0]).map(x => x / p.v.length);
+const sc = (c, k) => c.map(x => x * k);
+window.view = function (o) {
+  if (group) scene.remove(group); group = new THREE.Group();
+  const ex = o.ex || 0, cex = o.cex || 0;
+  if (o.outer) group.add(mesh(DATA.outer, COL.outer, [0, 0, 0], true, o.outerOp || 0.12));
+  if (o.copies) for (const p of DATA.copies) group.add(mesh(p, COL.copy, sc(cen(p), cex), o.copies === 'glass', 0.22));
+  if (o.centre) group.add(mesh(DATA.centre, COL.centre, [0, 0, 0], false));
+  if (o.kit) for (const [k, p] of DATA[o.kit]) { if (o.only && !o.only.includes(k)) continue; group.add(mesh(p, COL[k], sc(cen(p), ex), false)); }
+  scene.add(group);
+  const r = o.r || 6.5, d = r / Math.tan(15 * Math.PI / 180);
+  const dir = new THREE.Vector3(...(o.dir || [0.55, 0.45, 1])).normalize(); cam.position.copy(dir.multiplyScalar(d)); cam.lookAt(0, 0, 0);
+  renderer.render(scene, cam); return true;
+};
+fetch('bodhi-data.json').then(r => r.json()).then(d => { DATA = d; window.ready = true; });
+</script></body></html>
