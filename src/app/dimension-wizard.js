@@ -664,6 +664,8 @@ function dimensionEntries(dim) {
 // The name of the world a pick opens (DICTO 2026-10-13: the world's title under DICTO): its lattice or world, then the
 // piece when there are several ("Multi-shell chains · Chain of Karma"); null when the pick isn't one of these lists.
 export function worldTitle(dim, action) {
+  const shape = action?.match(/^tool:polyShape:(\w+)$/)?.[1];
+  if (shape && POLYHEDRA[shape]) return polyShapeName(shape);
   for (const e of dimensionEntries(dim)) {
     if (e.fam?.action === action) return e.fam.label;
     const piece = e.lat?.pieces?.find((x) => x.action === action);
