@@ -28,7 +28,7 @@ export function createChainsWorld({ scene, fitView = () => {} }) {
   const group = new THREE.Group();
   group.visible = false;
   scene.add(group);
-  const view = { kind: 'karma', part: { karma: 'lotus', dharma: 'cycle', bodhi: 'seed' }, apart: 0.3, shells: 0, crystal: false };
+  const view = { kind: 'karma', part: { karma: 'lotus', dharma: 'cycle', bodhi: 'seed' }, apart: 0.3, shells: 1, crystal: false };
   try {
     const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (KINDS.includes(d?.kind)) view.kind = d.kind;
@@ -55,18 +55,18 @@ export function createChainsWorld({ scene, fitView = () => {} }) {
     radius = Math.max(...all.map((p) => Math.hypot(...p.map((c, i) => c - c0[i]))));
     const buf = { solid: { pos: [], col: [], line: [] }, glass: { pos: [], col: [], line: [] } };
     const colour = new THREE.Color();
-    // Shells (DICTO 2026-10-13): pieces grouped by the distance of their centres from the middle; the Shells slider moves each
-    // shell out as a whole, shell k by k steps, so the layers separate like an onion.
+    // Shells (DICTO 2026-10-13): pieces grouped by the distance of their centres from the middle; the Top shell slider steps
+    // through them, the chosen shell uppermost and every shell outside it lifted away (shown as crystal when Crystal is on).
     const dist = list.map(([, V]) => Math.hypot(...centreOf(V).map((c, i) => c - c0[i])));
     const levels = [...dist].sort((a, b) => a - b).reduce((acc, d) => (acc.length && d - acc[acc.length - 1] < radius * 0.06 ? acc : [...acc, d]), []);
     const shellOf = (d) => levels.reduce((best, l, i) => (Math.abs(l - d) < Math.abs(levels[best] - d) ? i : best), 0);
     list.forEach(([role, V, F], n) => {
-      const see = ALWAYS_GLASS.has(role) || (view.crystal && GLASS[view.kind].has(role));
+      const sh = shellOf(dist[n]); const top = Math.round(view.shells * (levels.length - 1));
+      if (sh > top && !ALWAYS_GLASS.has(role) && !view.crystal) return;
+      const see = ALWAYS_GLASS.has(role) || (view.crystal && (GLASS[view.kind].has(role) || sh > top));
       const b = see ? buf.glass : buf.solid;
       // Pulled apart: each piece moves out along the line from the centre through its own centre; see-through shells stay put.
-      const cv = centreOf(V).map((c, i) => c - c0[i]); const dn = Math.hypot(...cv) || 1;
-      const lift = view.shells * shellOf(dist[n]) * radius * 0.35;
-      const off = see ? [0, 0, 0] : cv.map((c) => c * view.apart + (c / dn) * lift);
+      const off = see ? [0, 0, 0] : centreOf(V).map((c, i) => (c - c0[i]) * view.apart);
       const P = V.map((p) => p.map((c, i) => (c - c0[i] + off[i]) * WS));
       colour.setHex(role === 'ncap' && V.length === 7 ? 0xffc857 : (ROLE[role] ?? 0xb8c4bd));
       for (const f of F) {
@@ -87,7 +87,7 @@ export function createChainsWorld({ scene, fitView = () => {} }) {
     }
     renderPanel();
   }
-  const fit = () => fitView([0, 0, 0], radius * (1 + view.apart + view.shells * 1.6) * WS * 1.1);
+  const fit = () => fitView([0, 0, 0], radius * (1 + view.apart) * WS * 1.1);
 
   // ---- panel ----
   const panel = document.createElement('div');
