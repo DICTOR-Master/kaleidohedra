@@ -10,5 +10,5 @@ tiles kept whole at every level: a hierarchy, not a substitution, since the gap 
 at one size (Dehn invariant). Every tile has exact coordinates in Q(√5); the tilings are checked pairwise free of overlap with exact
 total volume. AXE and CLEO are the Mosseri–Sadoc tetrahedra t6 and t4, J2 is a Johnson solid, the Spheres of Dharma set uses
 Mosseri–Sadoc's t1, and the twelve triacontahedra of the Bodhi seed sit around a rhombic hexecontahedron as in S. Kabai's clusters;
-FUJI and the Bodhi tiles are new. The sets are described in DICTO, The Chain of Karma (doi:10.5281/zenodo.23310542), Spheres of
-Dharma (doi:10.5281/zenodo.23310834) and The Bodhi Seed (doi:10.5281/zenodo.23311354).
+FUJI and the Bodhi tiles are new. The sets are described in DICTO, The Chain of Karma (doi:10.5281/zenodo.23310541), Spheres of
+Dharma (doi:10.5281/zenodo.23310833) and The Bodhi Seed (doi:10.5281/zenodo.23311353).

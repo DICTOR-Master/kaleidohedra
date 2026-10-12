@@ -28,7 +28,7 @@ volume tends to 0 and only the finite stages are tilings in the strict sense; up
 Edge lengths and volumes are at edge 1 (the Lotus seed's icosahedra), φ = (1 + √5)/2. Names are DICTO's. Started 2026-10-12;
 to be extended as pieces are named.
 
-### Lotus tiles (#19 DICTO Icosa-13, #22 The Chain of Karma, doi:10.5281/zenodo.23310542)
+### Lotus tiles (#19 DICTO Icosa-13, #22 The Chain of Karma, doi:10.5281/zenodo.23310541)
 | Piece | Shape | Volume | Credit |
 |---|---|---|---|
 | **AXE** | tetrahedron, five edges 1, one 1/φ | 1/12 = 0.083333 | the Mosseri–Sadoc tile t6 at scale 1/φ (Mosseri & Sadoc 1982; Kramer 1982) |
@@ -49,7 +49,7 @@ to be extended as pieces are named.
 Clusters: Lotus seed, UNITY, Venus (Fly Trap), DICTO Stella-Corona, Kepler Star Diadem, DESHI (R. W. Gray's arrangement, 2002),
 12-Star voids, KEPLER MACE.
 
-### Bodhi tiles (#24 The Bodhi Seed, doi:10.5281/zenodo.23311354)
+### Bodhi tiles (#24 The Bodhi Seed, doi:10.5281/zenodo.23311353)
 | Piece | Kit | Shape | Volume (O = oblate golden rhombohedron, 0.470228) | Credit |
 |---|---|---|---|---|
 | **Vajra (fine)** | A, B | triangular bipyramid | φ²O/6 = 0.205179 | DICTO |
@@ -60,7 +60,7 @@ Clusters: Lotus seed, UNITY, Venus (Fly Trap), DICTO Stella-Corona, Kepler Star 
 
 The arrangement of twelve triacontahedra around a rhombic hexecontahedron is S. Kabai's (Wolfram Demonstrations Project).
 
-### Spheres of Dharma tiles (#23, doi:10.5281/zenodo.23310834); names to come
+### Spheres of Dharma tiles (#23, doi:10.5281/zenodo.23310833); names to come
 Pentagonal pyramid (icosidodecahedron cap), twisted triangular frustum, triangular pyramid (dodecahedron corner), twisted pentagonal
 frustum, the Mosseri–Sadoc tile t1 at scale 1/φ (credited), pentagonal cap, hexagonal cap (a triangle of rhombi), edge wedge, edge
 piece and face piece.

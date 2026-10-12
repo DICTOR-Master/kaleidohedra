@@ -918,7 +918,7 @@ DICTO (Bodhi with Dharma).*
   Demonstrations: "Cluster of 45 Polyhedra around a Rhombic Hexacontahedron", 1 RH + 12 RT + 20 RT + 12 RH; "Dodecahedral Cluster of
   RTs and RHs"; Kabai, Bérczi and Szilassi on RT/RH clusters in quasicrystals). Not found: the closure inside RT(φ²) with RT(1/φ) at the
   centre, the exact convex gap kits, or the growth as a seed.
-- **Published:** The Bodhi Seed, version 1, 2026-10-12, DOI [10.5281/zenodo.23311354](https://doi.org/10.5281/zenodo.23311354) (paper + data).
+- **Published:** The Bodhi Seed, version 1, 2026-10-12, DOI [10.5281/zenodo.23311353](https://doi.org/10.5281/zenodo.23311353) (paper + data).
 - Study files: [studies/2026-10-12-network-versions](studies/2026-10-12-network-versions/).
 
 ## 23. Spheres of Dharma (DICTO, 2026-10-12)
@@ -942,7 +942,7 @@ as transition figures; "one more missing piece?". Name by DICTO.*
 - Names (DICTO, 2026-10-12): **Ritsudō** (律動, rhythm) for the six-beat cycle; **Nenrin** (年輪, tree rings) for its concentric
   growth, against the Lotus seed's branching. Its outer shell, the triacontahedron, branches on its own: the Bodhi seed (#24).
 - Study files: [studies/2026-10-12-network-versions](studies/2026-10-12-network-versions/).
-- **Published:** Spheres of Dharma, version 1, 2026-10-12, DOI [10.5281/zenodo.23310834](https://doi.org/10.5281/zenodo.23310834) (paper + data).
+- **Published:** Spheres of Dharma, version 1, 2026-10-12, DOI [10.5281/zenodo.23310833](https://doi.org/10.5281/zenodo.23310833) (paper + data).
 
 ## 22. Chain of Karma (DICTO, 2026-10-11)
 
@@ -956,7 +956,7 @@ AXE, CLEO and the other parts, "and carry on to infinity". Name by DICTO.*
 - The enlarged gap pieces cannot be cut back into the small ones (Dehn invariant), so the Chain is a hierarchy with
   gap pieces in every size step of φ²; the icosahedra's share falls by 0.6823 each step.
 - Study files: [studies/2026-10-11-chain-of-karma](studies/2026-10-11-chain-of-karma/).
-- **Published:** The Chain of Karma, version 1, 2026-10-12, DOI [10.5281/zenodo.23310542](https://doi.org/10.5281/zenodo.23310542) (paper + data).
+- **Published:** The Chain of Karma, version 1, 2026-10-12, DOI [10.5281/zenodo.23310541](https://doi.org/10.5281/zenodo.23310541) (paper + data).
 - Piece calculations and prior art: [studies/2026-10-11-self-building-kit](studies/2026-10-11-self-building-kit/); literature search done
   2026-10-12 (paper section 10).
 
