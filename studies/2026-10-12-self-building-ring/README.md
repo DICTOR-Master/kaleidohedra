@@ -167,3 +167,12 @@ So no filling of FUJI(φ²) by kit + Mosseri–Sadoc pieces at sizes 1, 1/φ, 1/
 placement set (corners on the points generated in two rounds from FUJI's corners). The test is one-sided in the right direction:
 overlaps are only tested at sample points, which can only allow more, so "infeasible" stands. Not excluded: fillings without FUJI's
 symmetry, pieces on points beyond two rounds, other sizes or other pieces (e.g. J2, J11).
+
+## FUJI alone cannot fill the band (proof, 2026-10-12, DICTO's "only one shape, FUJI")
+Band = FUJI(φ) minus its tip FUJI(1): volume (φ³ − 1)V = 2φV, Dehn invariant (φ − 1)D = D/φ, where V, D are FUJI's (D ≠ 0).
+Suppose the band is cut into FUJIs (either hand; a mirror image has the same Dehn invariant) of sizes φ^k and, if wanted, smaller
+bands. Pieces inside the band have k ≤ −1. Scaling multiplies D by a real number and multiplication by a nonzero real is injective on
+R ⊗_Q (R/Qπ), so the Dehn condition is the real equation Σ nₖ φ^k + Σ mₖ φ^(k−1) = 1/φ (FUJIs nₖ, bands mₖ). The volume is
+Σ nₖ φ^(3k) + Σ mₖ 2φ φ^(3k) = 2φ. Each FUJI(φ^k) has volume/Dehn-weight φ^(2k) ≤ φ⁻², each band(φ^k) has 2φ²φ^(2k) ≤ 2; so the
+total volume is at most 2 × (1/φ) = 1.236 < 2φ = 3.236. Contradiction: **no cut of the band into FUJIs and smaller bands exists**,
+whatever the placement. The band needs pieces with Dehn invariant independent of FUJI's (AXE, CLEO, …) or of Dehn invariant zero.
