@@ -17,6 +17,18 @@ Each set tiles its seed exactly. In the Lotus, Bodhi and Spheres of Dharma sets 
 cycle); the gap tiles stay whole at each step and accumulate in every size (they do not themselves inflate: Dehn invariant). The
 dodecahedral set fills the dodecahedron, which is not one of its tiles.
 
+## The Lotus tiles generate themselves (DICTO, 2026-10-12; reviewed)
+The Lotus seed is a dissection of the icosahedron into 13 smaller icosahedra (ratios 1/φ² and 1/φ³) and three complementary pieces,
+AXE, FUJI and CLEO. Iterating it gives a hierarchical (self-similar) dissection in which the icosahedron is the only piece that is
+ever subdivided; AXE, FUJI and CLEO are never cut and, with the central icosahedron subdivided too, recur at every scale φ^k (sizes
+relative to the seed in which they are born). So a self-generating kit needs no dissection of a large FUJI into smaller kit pieces;
+that is a separate, stronger question (open; FUJI alone or with smaller copies of itself cannot do it, proved). Not a substitution
+tiling in the strict sense (three of the four prototiles never subdivide): an iterated dissection, or partial substitution.
+Caveats: downward, the icosahedra's share of the volume tends to 0 (factor (12 + φ⁻³)/φ⁶ ≈ 0.682 per step) and only the finite stages
+are tilings in the strict sense; upward, the gap pieces of the larger seeds stay whole, so pieces of unbounded size occur (no finite
+local complexity). Upward growth about one centre: place I(φ²) as the central icosahedron of I(φ⁵). "Self-building" is used
+informally, in this sense. (Independent review by Fable, 2026-10-12: concur with these changes.)
+
 ## The tiles
 Edge lengths and volumes are at edge 1 (the Lotus seed's icosahedra), φ = (1 + √5)/2. Names are DICTO's. Started 2026-10-12;
 to be extended as pieces are named.

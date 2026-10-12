@@ -37,6 +37,28 @@ for _t in ('t1','t2','t3','t4','t5','t6','T2'):
     if _p is not None: kit[_t] = _p
 def hull(V):
     H = ConvexHull(V); return H.equations, H.volume
+# DICTO's top-down FUJI (2026-10-12): TARGET 'band' = the slab between FUJI and phi*FUJI (scaled about the apex); bands of the
+# same shape at smaller sizes join the kit, so a solution reads band = kit pieces + smaller FUJIs + smaller bands.
+import os
+if TARGET == 'band':
+    Fv = kit['fuji']['V']; Hf = ConvexHull(Fv)
+    base_eq = [e for e in Hf.equations if np.sum(np.abs(Fv @ e[:3] + e[3]) < 1e-7) == 6][0]
+    onb = np.abs(Fv @ base_eq[:3] + base_eq[3]) < 1e-7; apex = Fv[~onb][0]; B = Fv[onb]
+    kit['band'] = {'V': np.vstack([B, apex + PHI * (B - apex)])}
+# DICTO 2026-10-12: FUJI's recut pieces as extra units (env EXTRA=1): the cube corner, the three CLEO-volume pieces and the two
+# right-angled pieces (apex, base centre, base corner, base-edge midpoint; long and short edge), mirror images via the 120 frame maps.
+if os.environ.get('EXTRA') == '1':
+    Fv = kit['fuji']['V']; Hf = ConvexHull(Fv)
+    base_eq = [e for e in Hf.equations if np.sum(np.abs(Fv @ e[:3] + e[3]) < 1e-7) == 6][0]
+    onb = np.abs(Fv @ base_eq[:3] + base_eq[3]) < 1e-7; apex = Fv[~onb][0]; B = Fv[onb]; cB = B.mean(0)
+    ang = np.arctan2(*(np.linalg.svd(B - cB)[2][:2] @ (B - cB).T)[::-1]); B = B[np.argsort(ang)]
+    L = [np.linalg.norm(B[i] - B[(i + 1) % 6]) for i in range(6)]; i0 = int(np.argmax(L))
+    B = np.roll(B, -i0, axis=0)                         # B[0]-B[1] is a long edge
+    kit['cubecorner'] = {'V': np.vstack([apex, B[0], B[2], B[4]])} if abs(np.linalg.norm(B[0] - B[2]) - np.sqrt(2)) < 1e-6 else {'V': np.vstack([apex, B[1], B[3], B[5]])}
+    kit['cleovol'] = {'V': np.vstack([apex, B[0], B[1], B[2]])}
+    kit['rlong'] = {'V': np.vstack([apex, cB, B[0], (B[0] + B[1]) / 2])}
+    kit['rshort'] = {'V': np.vstack([apex, cB, B[1], (B[1] + B[2]) / 2])}
+    for k_ in ('cubecorner', 'cleovol', 'rlong', 'rshort'): print(k_, 'volume', round(ConvexHull(kit[k_]['V']).volume, 6), flush=True)
 T = kit[TARGET]; c0 = T['V'].mean(0); TV = c0 + PHI ** UP * (T['V'] - c0)
 TE, TVOL = hull(TV)
 inside = lambda X, tol=1e-7: np.all(X @ TE[:, :3].T + TE[:, 3] <= tol, axis=-1)
@@ -46,6 +68,7 @@ for name, p in kit.items():
     V0 = p['V'] - p['V'].mean(0); E, vol = hull(V0)
     for k in range(0, -K - 1, -1):
         if name == TARGET and k >= UP: continue
+        if name == 'band' and k >= 0: continue
         seen = set()
         for R in G:
             V = PHI ** k * V0 @ R.T
