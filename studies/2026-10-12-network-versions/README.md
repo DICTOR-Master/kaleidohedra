@@ -133,6 +133,9 @@ So two forms multiply, the icosahedron and the triacontahedron (the earlier stat
 21 prolate, 8 oblate, 12 RT. 11 of the 12 RT centres lie exactly φ from a common middle (φ² at edge 1): the Bodhi seed's positions,
 found by hand with face attachments. The 12th sits at distance 1 on the right axis (should be φ) and overlaps its 5 neighbours; 3
 oblate and 1 prolate also overlap RTs. 16 prolate lie in the core (2.874 of the 3.607 enclosed, app units).
+Rebuilt with triacontahedra only ("Perfect RT", `data/dicto-bodhi-perfect-2026-10-12.json`, `scripts/check_bodhi_build.py`): 12 RT,
+all in one orientation, every centre exactly φ from the middle, 30 face-to-face contacts (5 each), no overlaps: the Bodhi seed's
+outer twelve, exact, built by DICTO.
 
 ## Transitional spheres (DICTO: "the transitional ring/sphere structure between the solids")
 `logs/transition_spheres.log` (computed inline with the network_screen forms). Inner (face), mid (edge) and outer (corner) spheres of
