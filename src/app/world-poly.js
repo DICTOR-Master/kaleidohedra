@@ -377,7 +377,10 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     const spec = POLYHEDRA[id], target = POLYHEDRA[n.shape];
     if (!spec) return [];
     const tf = target.faces[fi];
-    return spec.faces.map((f, k) => k).filter((k) => isFaceEligibleForAttach(spec, k) && spec.faces[k].length === tf.length && facesCongruent(target.vertices, tf, spec.vertices, spec.faces[k]));
+    // A face kept for one partner (faceMates, e.g. the Admiral Cap's two icosahedron faces, DICTO 2026-10-13) takes only that partner.
+    if (target.faceMates?.[fi] && !target.faceMates[fi].includes(id)) return [];
+    return spec.faces.map((f, k) => k).filter((k) => isFaceEligibleForAttach(spec, k) && (!spec.faceMates?.[k] || spec.faceMates[k].includes(n.shape))
+      && spec.faces[k].length === tf.length && facesCongruent(target.vertices, tf, spec.vertices, spec.faces[k]));
   }
   // No merging (DICTO 2026-10-09: attached Hexas went into each other): a concave piece can sit flush
   // on a face and still pass through the rest, so every placement is tested against the whole build
