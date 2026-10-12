@@ -39,6 +39,7 @@ export function createChainsWorld({ scene, fitView = () => {} }) {
   } catch { /* corrupt or blocked storage: defaults */ }
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(view)); } catch { /* best-effort */ } };
   let active = false;
+  let skeleton = false, opacity = 1; // the app's view modes: Solid, Translucent, Skeleton
   const solid = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, flatShading: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
   const glass = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, flatShading: true, transparent: true, opacity: 0.22, depthWrite: false });
   function clearGroup() {
@@ -74,16 +75,18 @@ export function createChainsWorld({ scene, fitView = () => {} }) {
         f.forEach((k, i) => b.line.push(...P[k], ...P[f[(i + 1) % f.length]]));
       }
     });
+    solid.transparent = opacity < 1; solid.opacity = opacity; solid.depthWrite = opacity >= 1; solid.needsUpdate = true;
     for (const [key, mat] of [['solid', solid], ['glass', glass]]) {
       const b = buf[key];
-      if (!b.pos.length) continue;
+      if (!b.line.length) continue;
       const g = new THREE.BufferGeometry();
       g.setAttribute('position', new THREE.Float32BufferAttribute(b.pos, 3));
       g.setAttribute('color', new THREE.Float32BufferAttribute(b.col, 3));
       g.computeVertexNormals();
       const lg = new THREE.BufferGeometry();
       lg.setAttribute('position', new THREE.Float32BufferAttribute(b.line, 3));
-      group.add(new THREE.Mesh(g, mat), new THREE.LineSegments(lg, new THREE.LineBasicMaterial(key === 'glass' ? { color: 0x9fa8c0, transparent: true, opacity: 0.55 } : { color: EDGE_COLOR })));
+      if (!skeleton) group.add(new THREE.Mesh(g, mat));
+      group.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial(key === 'glass' ? { color: 0x9fa8c0, transparent: true, opacity: 0.55 } : { color: skeleton ? 0xcfe3ff : EDGE_COLOR })));
     }
     renderPanel();
   }
@@ -146,8 +149,8 @@ export function createChainsWorld({ scene, fitView = () => {} }) {
       draw();
       if (on) fit();
     },
-    setSkeleton() {},
-    setTranslucent() {},
+    setSkeleton(on) { if (on !== skeleton) { skeleton = on; if (active) draw(); } },
+    setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) draw(); } },
     setLatticeView() {},
     shearChanged() {},
     get isEmpty() { return true; },

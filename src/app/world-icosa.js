@@ -39,6 +39,7 @@ export function createIcosaWorld({ scene, fitView = () => {} }) {
   } catch { /* corrupt or blocked storage: defaults */ }
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(view)); } catch { /* best-effort */ } };
   let active = false;
+  let skeleton = false, opacity = 1; // the app's view modes: Solid, Translucent, Skeleton
 
   const material = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, flatShading: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
   function clearGroup() {
@@ -83,7 +84,9 @@ export function createIcosaWorld({ scene, fitView = () => {} }) {
     g.computeVertexNormals();
     const lg = new THREE.BufferGeometry();
     lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
-    group.add(new THREE.Mesh(g, material), new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: EDGE_COLOR })));
+    material.transparent = opacity < 1; material.opacity = opacity; material.depthWrite = opacity >= 1; material.needsUpdate = true;
+    if (!skeleton) group.add(new THREE.Mesh(g, material));
+    group.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: skeleton ? 0xcfe3ff : EDGE_COLOR })));
     renderPanel();
   }
   const fit = () => fitView([0, 0, 0], radius * (1 + view.apart) * WS * 1.1);
@@ -147,8 +150,8 @@ export function createIcosaWorld({ scene, fitView = () => {} }) {
       draw();
       if (on) fit();
     },
-    setSkeleton() {},
-    setTranslucent() {},
+    setSkeleton(on) { if (on !== skeleton) { skeleton = on; if (active) draw(); } },
+    setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) draw(); } },
     setLatticeView() {},
     shearChanged() {},
     get isEmpty() { return true; },

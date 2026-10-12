@@ -172,6 +172,7 @@ let sunstarWorld = null;
 let studiesWorld = null; // Kaleidohedra's Studies
 let icosaWorld = null; // DICTO Icosa (DICTO 2026-10-10)
 let chainsWorld = null; // Multi-shell chains (DICTO 2026-10-13)
+let pairArrangement = null; // the Stella-Jewel / Sunstar arrangement last chosen (the Kagome hulls count as hull worlds for X-ray)
 let targetsWorld = null; // Kaleidohedra's Targets
 let shear = null; // Kaleidohedra's lattice shear (installShear); on only in an app space that has one
 let stellaJewelWorld = null;
@@ -589,6 +590,11 @@ document.getElementById('lab-close')?.addEventListener('click', () => {
   const fpsMeterInput = document.getElementById('setting-fps-meter');
   fpsMeterInput.checked = s.showFPSMeter;
   fpsMeterInput.addEventListener('change', () => updateSettings({ showFPSMeter: fpsMeterInput.checked }));
+  const xrayEverywhereInput = document.getElementById('setting-xray-everywhere');
+  if (xrayEverywhereInput) {
+    xrayEverywhereInput.checked = s.xrayEverywhere;
+    xrayEverywhereInput.addEventListener('change', () => { updateSettings({ xrayEverywhere: xrayEverywhereInput.checked }); window.dispatchEvent(new Event('krp-hud-refresh')); });
+  }
 
 
 })();
@@ -3172,8 +3178,15 @@ async function init() {
     // 4D/6D: X-Ray and Spherical don't apply (the slider IS the X-Ray),
     // so their HUD faces go blank and untappable (direct decision).
     const polySpace = own3DActive() && own3D === 'poly';
-    // X-ray (DICTO 2026-10-13: across all apps): shown in every 3D space, the own 3D worlds included; 4D-6D keep their slider.
-    const xrayOff = activeDimension === '4D' || qcWorlds.has(activeDimension);
+    // X-ray (DICTO 2026-10-13): its button shows in the hull and shell worlds (Multi-shell chains, DICTO Icosa, Shells, the
+    // Kagome hull arrangements), and in every 3D world when Settings says so; 4D-6D keep their own slider. Hidden while on: off.
+    const hullShell = own3DActive() && (['chains', 'icosa', 'shells'].includes(own3D) || (['stellaJewel', 'sunstar'].includes(own3D) && /^hull/.test(pairArrangement ?? '')));
+    const xrayOff = activeDimension === '4D' || qcWorlds.has(activeDimension) || activeDimension === '1D' || (activeDimension === '2D' && !(own3DActive() && own3D === 'nets'))
+      || !(hullShell || getSettings().xrayEverywhere);
+    if (xrayOff && document.getElementById('section-enable')?.checked) document.getElementById('xray-toggle')?.click();
+    // Solid / Translucent / Skeleton (DICTO 2026-10-13: back in every world's toolbar; hidden in 1D and 2D).
+    // In the lattices the Lattice View button already cycles these, so this one shows in the own worlds (3D+ and 4D-6D).
+    { const b = document.getElementById('world-view-toggle'); if (b) b.hidden = activeDimension === '1D' || activeDimension === '2D' || !isOwnWorldDimension(); }
     for (const id of ['xray-toggle', 'spherical-toggle']) { const b = document.getElementById(id); if (b) b.hidden = id === 'xray-toggle' ? xrayOff : (isOwnWorldDimension() && !polySpace); }
     // Polyhedraverse's space: no aperiodic shadow to show (DICTO 2026-10-09: X-Ray, Section and Duality hidden there).
     { const b = document.getElementById('duality-toggle'); if (b) b.hidden = own3DActive() && own3D === 'poly'; }
@@ -3230,6 +3243,7 @@ async function init() {
   // function with the CURRENT worldViewMode's own solid-visibility
   // intent (true unless Skeleton mode has already hidden everything),
   // so the two mechanisms never fight each other.
+  window.addEventListener('krp-hud-refresh', () => applyDimensionVisibility());
   function applyDimensionVisibility() {
     setSolidWorldVisible(worldViewMode !== 'skeleton');
     // The 3D/2D Lattice View overlay belongs to the dimension it was drawn
@@ -3403,6 +3417,8 @@ async function init() {
     sunstarWorld?.setSkeleton(worldViewMode === 'skeleton');
     stellaJewelWorld?.setSkeleton(worldViewMode === 'skeleton');
     targetsWorld?.setSkeleton(worldViewMode === 'skeleton');
+    icosaWorld?.setSkeleton(worldViewMode === 'skeleton');
+    chainsWorld?.setSkeleton(worldViewMode === 'skeleton');
     // Translucent too, at the same opacity as the 3D worlds.
     world4d?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     for (const w of qcWorlds.values()) w.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
@@ -3413,6 +3429,8 @@ async function init() {
     sunstarWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     stellaJewelWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     targetsWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
+    icosaWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
+    chainsWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     document.getElementById('world-view-toggle')?.classList.toggle('active', worldViewMode !== 'color');
   }
   const worldViewSelect = document.getElementById('world-view-select');
@@ -3999,6 +4017,7 @@ async function init() {
           const m = action?.match(/^tool:(stellaJewel|sunstar)World(?::(\w+))?$/);
           if (m) {
             (m[1] === 'stellaJewel' ? stellaJewelWorld : sunstarWorld)?.setArrangement(m[2] ?? null);
+            pairArrangement = m[2] ?? null;
             action = `tool:${m[1]}World`;
           }
         }
@@ -5571,6 +5590,8 @@ async function init() {
   studiesWorld = createStudiesWorld({ scene: realScene, fitView: fitCameraTo, shear: currentShear });
   icosaWorld = createIcosaWorld({ scene: realScene, fitView: fitCameraTo });
   chainsWorld = createChainsWorld({ scene: realScene, fitView: fitCameraTo });
+  // The toolbar rules (X-ray, view modes) once everything exists: the first pass ran before the worlds were made.
+  setTimeout(() => window.dispatchEvent(new Event('krp-hud-refresh')), 0);
   targetsWorld = createTargetsWorld({ scene: realScene, fitView: fitCameraTo });
   signalWorld = createSignalWorld({
     scene,

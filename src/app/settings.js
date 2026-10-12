@@ -28,6 +28,8 @@ const DEFAULTS = {
   // attached to runs regardless of whether the meter is shown -- see
   // render.js's animate().
   showFPSMeter: false,
+  // X-ray's button shows in the hull and shell worlds; this shows it in every 3D world (DICTO 2026-10-13).
+  xrayEverywhere: false,
 };
 
 function loadSaved() {
