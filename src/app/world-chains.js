@@ -4,31 +4,35 @@
 // shells see-through. Geometry: seeds-data.js, built by scripts/build-seeds-data.py from the checked study data.
 // Words in all 7 languages (i18n chains.*); DICTO's names stay untranslated.
 import * as THREE from 'three';
-import DATA from './seeds-data.js';
+import CHAINS_DATA from './seeds-data.js';
 import { ROOF_FOLD_WORLD_SCALE as WS } from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey } from './site.js';
 
-const STORAGE_KEY = storageKey('chains');
-const KINDS = ['karma', 'dharma', 'bodhi'];
+const CHAINS_KINDS = ['karma', 'dharma', 'bodhi'];
 // Colours as in the papers' figures. Hexagonal caps of the fullerene layer gold (DICTO 2026-10-12).
 const ROLE = { ico: 0x5fd38a, cap: 0x5fd38a, lcap: 0x5fd38a, lj11: 0x5fd38a, npyr5: 0x5fd38a, core: 0xffc857, nfru3: 0xffc857, nfru5: 0xffc857,
   axe: 0x4dd0e1, laxe: 0x4dd0e1, nt1: 0x4dd0e1, nedge: 0x4dd0e1, fuji: 0xc792ea, cleo: 0xc792ea, lfuji: 0xc792ea, lcleo: 0xc792ea, npyr3: 0xc792ea,
   nface: 0xc792ea, ncap: 0xc792ea, nwedge: 0xdfe6f0, outer: 0x9fd8ff, copy: 0x5fd38a, centre: 0xffc857, B1: 0xffc857, B4: 0x4dd0e1,
-  B5L: 0xc792ea, B5R: 0xf08fc0, B2: 0x4dd0e1, B3: 0xc792ea };
+  B5L: 0xc792ea, B5R: 0xf08fc0, B2: 0x4dd0e1, B3: 0xc792ea,
+  // DICTO Dodeca
+  dodeca: 0xffc857, j63: 0x5fd38a, pyr5: 0xffc857, tet: 0x5fd38a, ipyr5: 0xffc857, itet: 0x5fd38a, wedge: 0x4dd0e1, needle: 0xc792ea, star: 0xc792ea, unit: 0xffc857 };
 // Crystal: which roles turn see-through (the shells), per chain.
-const GLASS = { karma: new Set(['ico']), dharma: new Set(['core', 'lj11']), bodhi: new Set(['copy']) };
+const CHAINS_GLASS = { karma: new Set(['ico']), dharma: new Set(['core', 'lj11']), bodhi: new Set(['copy']) };
 const ALWAYS_GLASS = new Set(['outer']);
 const EDGE_COLOR = 0x0b1220;
 const lang = () => getSettings().language;
 
-export function createChainsWorld({ scene, fitView = () => {} }) {
+/** A world of nested shells (Multi-shell chains, DICTO Dodeca): data { kind: { views: { view: [[role, vertices, faces]] } } },
+ *  words under '<prefix>.<kind>.<view>' and '<prefix>.note.<kind>'. */
+export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts }) {
+  const STORAGE_KEY = storageKey(name);
   const group = new THREE.Group();
   group.visible = false;
   scene.add(group);
-  const view = { kind: 'karma', part: { karma: 'lotus', dharma: 'cycle', bodhi: 'seed' }, apart: 0.3, shells: 1, crystal: false };
+  const view = { kind: KINDS[0], part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false };
   try {
     const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (KINDS.includes(d?.kind)) view.kind = d.kind;
@@ -64,7 +68,7 @@ export function createChainsWorld({ scene, fitView = () => {} }) {
     list.forEach(([role, V, F], n) => {
       const sh = shellOf(dist[n]); const top = Math.round(view.shells * (levels.length - 1));
       if (sh > top && !ALWAYS_GLASS.has(role) && !view.crystal) return;
-      const see = ALWAYS_GLASS.has(role) || (view.crystal && (GLASS[view.kind].has(role) || sh > top));
+      const see = ALWAYS_GLASS.has(role) || (view.crystal && (GLASS[view.kind]?.has(role) || sh > top));
       const b = see ? buf.glass : buf.solid;
       // Pulled apart: each piece moves out along the line from the centre through its own centre; see-through shells stay put.
       const off = see ? [0, 0, 0] : centreOf(V).map((c, i) => (c - c0[i]) * view.apart);
@@ -94,7 +98,7 @@ export function createChainsWorld({ scene, fitView = () => {} }) {
 
   // ---- panel ----
   const panel = document.createElement('div');
-  panel.id = 'worldchains-panel';
+  panel.id = `world${name}-panel`;
   panel.className = 'qc-panel';
   panel.innerHTML = `
     <div class="w4d-row"><label class="hull-pick"><span class="ch-view-label"></span> <select class="hull-select" data-select="part"></select></label></div>
@@ -103,7 +107,7 @@ export function createChainsWorld({ scene, fitView = () => {} }) {
     <div class="w4d-row w4d-options"><button type="button" data-chains-crystal></button></div>
     <div class="w4d-row st-note"></div>`;
   document.body.appendChild(panel);
-  addPanelMinimiser(panel, 'chains');
+  addPanelMinimiser(panel, name);
   const partSelect = panel.querySelector('[data-select="part"]');
   const apartInput = panel.querySelector('.ch-apart-row input');
   const crystalBtn = panel.querySelector('[data-chains-crystal]');
@@ -114,13 +118,13 @@ export function createChainsWorld({ scene, fitView = () => {} }) {
     const L = lang();
     panel.querySelector('.ch-view-label').textContent = t('icosa.view', L);
     partSelect.innerHTML = Object.keys(DATA[view.kind].views)
-      .map((v) => `<option value="${v}"${v === view.part[view.kind] ? ' selected' : ''}>${t(`chains.${view.kind}.${v}`, L)}</option>`).join('');
+      .map((v) => `<option value="${v}"${v === view.part[view.kind] ? ' selected' : ''}>${t(`${prefix}.${view.kind}.${v}`, L)}</option>`).join('');
     panel.querySelector('.ch-apart-label').textContent = t('icosa.apart', L);
     apartInput.value = String(Math.round(view.apart * 1000));
     panel.querySelector('.ch-shells-label').textContent = t('chains.shells', L);
     shellsInput.value = String(Math.round(view.shells * 1000));
     crystalBtn.textContent = t(view.crystal ? 'chains.crystal.on' : 'chains.crystal.off', L);
-    panel.querySelector('.st-note').textContent = t(`chains.note.${view.kind}`, L);
+    panel.querySelector('.st-note').textContent = t(`${prefix}.note.${view.kind}`, L);
   }
   partSelect.addEventListener('change', () => { if (!DATA[view.kind].views[partSelect.value]) return; view.part[view.kind] = partSelect.value; save(); draw(); fit(); });
   apartInput.addEventListener('input', () => { view.apart = Number(apartInput.value) / 1000; save(); draw(); });
@@ -135,7 +139,7 @@ export function createChainsWorld({ scene, fitView = () => {} }) {
     group,
     meshes: () => [],
     handleTap: () => false,
-    /** Which chain to show: 'karma', 'dharma' or 'bodhi' (the menu entries); anything else keeps the current one. */
+    /** Which of the world's shapes to show (the menu entries); anything else keeps the current one. */
     setChain(kind) {
       if (!KINDS.includes(kind) || kind === view.kind) return;
       view.kind = kind; save();
@@ -158,8 +162,13 @@ export function createChainsWorld({ scene, fitView = () => {} }) {
   };
 }
 
+export function createChainsWorld({ scene, fitView }) {
+  return createLayeredWorld({ scene, fitView, name: 'chains', data: CHAINS_DATA, kinds: CHAINS_KINDS, glassRoles: CHAINS_GLASS, prefix: 'chains',
+    defaultParts: { karma: 'lotus', dharma: 'cycle', bodhi: 'seed' } });
+}
+
 /** Points whose convex hull previews a chain in the DICTO menu (its first view's outline). */
 export function chainPreviewPoints(kind) {
-  const views = DATA[kind]?.views;
+  const views = CHAINS_DATA[kind]?.views;
   return views ? Object.values(views)[0].flatMap((p) => p[1]) : [];
 }
