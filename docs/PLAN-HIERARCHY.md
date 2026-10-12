@@ -27,6 +27,12 @@ DICTO says so for a specific step. The published papers are not changed; a posit
 - If the sizes do not close exactly (step 2), is a near fit worth reporting, or only exact closures?
 - Name for the joined structure.
 
+## Also for 2026-10-13: DICTO's top-down FUJI (one node job)
+DICTO: build an immense FUJI and only ever cut off the tip. FUJI(φⁿ) = FUJI(1) + band(1) + band(φ) + … + band(φⁿ⁻¹), every band
+the same shape scaled, and "the band and tip are always present at every scale". So the alphabet is just {FUJI, band}: test whether
+band = FUJI(1/φ) turned over + kit pieces + smaller FUJIs + smaller bands (sizes 1/φ, 1/φ²), with FUJI's symmetry. A finite formula of
+that kind builds FUJI at every size, which the kit-only searches could not.
+
 ## Also queued (not part of this plan)
 FUJI at φ² search result (running 2026-10-12); the Bodhi tiles' self-building; DICTO-ICOSA star inward repeat; the "12 around 1"
 family paper; golden-rhombohedron dissection of the Bodhi gap tiles.

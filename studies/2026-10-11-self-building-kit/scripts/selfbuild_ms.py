@@ -52,7 +52,11 @@ for name, p in kit.items():
             key = tuple(sorted(tuple(np.round(v, 5)) for v in V))
             if key in seen: continue
             seen.add(key); shapes.append((f'{name}@phi^{k}', V, PHI ** (3 * k) * vol))
-print('kit shapes (piece x size x orientation):', len(shapes), flush=True)
+_u = {}
+for nm, V, vol in shapes:
+    _u.setdefault(tuple(sorted(tuple(np.round(v, 5)) for v in V)), (nm, V, vol))
+shapes = list(_u.values())
+print('kit shapes (piece x size x orientation), duplicates removed:', len(shapes), flush=True)
 # candidate points: closure from the target's corners
 P = np.array(TV)
 place = {}
@@ -73,22 +77,40 @@ for rnd in range(ROUNDS):
 tree = cKDTree(P)
 keys = [k for k, W in place.items() if np.all(tree.query(W)[0] < 1e-5)]
 print('snug placements', len(keys), flush=True)
+# optional symmetry (env SYM=1): choose placements in whole orbits of the target's own symmetries in the frame
+import os
+if os.environ.get('SYM') == '1':
+    same = lambda X, Y: all(np.min(np.linalg.norm(Y - x, axis=1)) < 1e-6 for x in X)
+    stab = [g for g in G if same(TV @ g.T, TV)]
+    canon = lambda W: tuple(sorted(tuple(np.round(v, 4)) for v in W))
+    bykey = {canon(place[k]): k for k in keys}; orbits, seen = [], set()
+    for k in keys:
+        if k in seen: continue
+        mem = [bykey.get(canon(place[k] @ g.T)) for g in stab]
+        if any(m is None for m in mem): continue
+        mem = list(dict.fromkeys(mem)); seen.update(mem); orbits.append(mem)
+    print(f'target symmetries {len(stab)}; orbits {len(orbits)}', flush=True)
+else:
+    orbits = [[k] for k in keys]
 # sample points
 rng = np.random.default_rng(1); lo, hi = TV.min(0), TV.max(0)
 S = rng.uniform(lo, hi, (400000, 3)); S = S[inside(S, -1e-9)][:40000]
 print('sample points', len(S), flush=True)
-M = lil_matrix((len(S), len(keys)), dtype=np.int8); vols = np.zeros(len(keys))
-for c, key in enumerate(keys):
-    W = place[key]; E, _ = hull(W); vols[c] = shapes[key[0]][2]
-    hit = np.where(np.all(S @ E[:, :3].T + E[:, 3] <= -1e-9, axis=1))[0]
-    M[hit, c] = 1
-M = csr_matrix(M)
+rows, cols = [], []; vols = np.zeros(len(orbits))
+for c, mem in enumerate(orbits):
+    for key in mem:
+        W = place[key]; E, _ = hull(W); vols[c] += shapes[key[0]][2]
+        hit = np.where(np.all(S @ E[:, :3].T + E[:, 3] <= -1e-9, axis=1))[0]
+        rows.extend(hit.tolist()); cols.extend([c] * len(hit))
+from scipy.sparse import coo_matrix
+M = coo_matrix((np.ones(len(rows), dtype=np.int8), (rows, cols)), shape=(len(S), len(orbits))).tocsr()
+
 cons = [LinearConstraint(M, 0, 1), LinearConstraint(vols[None, :], TVOL - 1e-7, TVOL + 1e-7)]
 t0 = time.time()
-res = milp(c=np.ones(len(keys)), constraints=cons, integrality=np.ones(len(keys)), bounds=Bounds(0, 1), options={'time_limit': float(sys.argv[6]), 'disp': False})
+res = milp(c=np.ones(len(orbits)), constraints=cons, integrality=np.ones(len(orbits)), bounds=Bounds(0, 1), options={'time_limit': float(sys.argv[6]), 'disp': False})
 print('MILP:', res.status, res.message, f'{time.time() - t0:.0f}s', flush=True)
 if res.x is None: sys.exit()
-chosen = [keys[i] for i in np.where(res.x > 0.5)[0]]
+chosen = [k for i in np.where(res.x > 0.5)[0] for k in orbits[i]]
 # exact verification: pairwise overlap by separating axis (convex pieces)
 def overlap(A, B):
     EA, _ = hull(A); EB, _ = hull(B); axes = list(EA[:, :3]) + list(EB[:, :3])
