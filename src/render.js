@@ -20,7 +20,7 @@ import { bootstrapDisphenoid, disphenoidVertsToWorld, octahedronDisphenoids, dis
 import { sampleSuperellipsoidGrid, volumeMatchedRadius } from './krp-core/src/geometry-extensions/spherical-toggle.js';
 import { packing, voidSphereRadius, TANGENT_R, RADIUS_MAX } from './krp-core/src/geometry-extensions/sphere-packing.js';
 import { SKELETON_COLOR } from './app/pieces.js';
-import { createDimensionWizard } from './app/dimension-wizard.js';
+import { createDimensionWizard, worldTitle } from './app/dimension-wizard.js';
 import { dimensionLabel } from './app/dimension-label.js';
 import { createWorld4D } from './app/world-4d.js';
 import { createQuasicrystalWorld } from './app/world-quasicrystal.js';
@@ -4335,7 +4335,9 @@ async function init() {
       // applyDimensionVisibility's own dimension-scoped mesh toggling.
       // dimension-wizard.js's own showLattice2D/showLattice3D now pass
       // the real dimension alongside the action.
-      onSelectFamily: (dimension, action) => {
+      onSelectFamily: async (dimension, action, title) => {
+        if (!(await leaveWorld(action))) return;
+        enterWorld(dimension, action, title);
         if (qcWorlds.has(dimension)) { enterQuasicrystal(dimension, action); return; }
         activeDimension = dimension;
         applyDimensionVisibility();
@@ -4347,6 +4349,58 @@ async function init() {
       },
     });
     document.getElementById('hud-wizard-cue')?.addEventListener('click', () => dimensionWizard.open());
+
+    // The world you're in (DICTO 2026-10-13): its title under DICTO, Back to the menu screen it was picked on, and on
+    // leaving a world you changed: Keep (it stays for next time), Discard (back as it was when you came in) or Stay.
+    // The view-only worlds (Multi-shell chains, DICTO Dodeca) go back to their first view on leaving, without asking.
+    let worldNow = null; // { action, stores: Map<historyKey, json> | null }
+    // A store re-saved on opening only changes its lastModified stamp: that isn't a change of yours.
+    const builtState = (json) => JSON.stringify(json, (k, v) => (k === 'lastModified' ? undefined : v));
+    const storesNow = () => new Map([...historyRestorers].map(([k, { get }]) => [k, JSON.stringify(get())]));
+    function enterWorld(dimension, action, title) {
+      worldNow = { action, stores: null };
+      const entered = worldNow;
+      // Taken once the world has opened (some place a first piece as they open), so only your own changes count.
+      setTimeout(() => { if (worldNow === entered) entered.stores = storesNow(); }, 800);
+      const row = document.getElementById('hud-world-row');
+      document.getElementById('hud-world-title').textContent = title ?? '';
+      document.getElementById('hud-world-back').textContent = t('wiz.back', getSettings().language);
+      row.hidden = false;
+    }
+    async function leaveWorld(nextAction) {
+      if (!worldNow || worldNow.action === nextAction) return true;
+      const before = worldNow.stores;
+      const changed = before ? [...historyRestorers].filter(([k, { get }]) => before.has(k) && builtState(JSON.parse(before.get(k))) !== builtState(get())).map(([k]) => k) : [];
+      if (changed.length) {
+        const choice = await askKeepBuild();
+        if (choice === 'stay') return false;
+        if (choice === 'discard') for (const k of changed) historyRestorers.get(k).restore(JSON.parse(before.get(k)));
+      }
+      chainsWorld?.resetView?.();
+      dodecaWorld?.resetView?.();
+      return true;
+    }
+    function askKeepBuild() {
+      const dlg = document.getElementById('leave-dialog');
+      const L = getSettings().language;
+      document.getElementById('leave-title').textContent = t('leave.title', L);
+      document.getElementById('leave-body').textContent = t('leave.body', L);
+      for (const b of dlg.querySelectorAll('[data-choice]')) b.textContent = t(`leave.${b.dataset.choice}`, L);
+      dlg.hidden = false;
+      dlg.querySelector('[data-choice="keep"]').focus();
+      return new Promise((resolve) => {
+        const pick = (e) => {
+          const choice = e.target.closest('[data-choice]')?.dataset.choice;
+          if (!choice) return;
+          dlg.removeEventListener('click', pick);
+          dlg.hidden = true;
+          resolve(choice);
+        };
+        dlg.addEventListener('click', pick);
+      });
+    }
+    document.getElementById('hud-world-back')?.addEventListener('click', () => dimensionWizard.back());
+    onSettingsChange((st) => { const b = document.getElementById('hud-world-back'); if (b) b.textContent = t('wiz.back', st.language); });
     // Menu, Tab and Space open the DICTO wizard (the wheels are gone, DICTO 2026-10-08).
     function toggleMenu() {
       if (pickers.isAnyPickerOpen()) { pickers.closeAnyPicker(); return; }
@@ -4367,7 +4421,9 @@ async function init() {
         activeDimension = '3D';
         applyDimensionVisibility();
         applyDimensionCamera('3D');
-        handleWheelAction(`tool:${openWorld[1]}World${openWorld[2] ? `:${openWorld[2]}` : ''}`, { quiet: true });
+        const action = `tool:${openWorld[1]}World${openWorld[2] ? `:${openWorld[2]}` : ''}`;
+        enterWorld('3D', action, worldTitle('3D', action));
+        handleWheelAction(action, { quiet: true });
       }, 0);
     } else dimensionWizard.open();
 

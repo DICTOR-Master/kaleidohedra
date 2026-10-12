@@ -661,6 +661,16 @@ function dimensionEntries(dim) {
   if (dim === '4D') return [...LATTICES_4D.map((lat) => ({ app: R, kind: 'lattice', lat })), { app: P, kind: 'shapes', key: 'POLYTOPES_4D' }];
   return [{ app: R, kind: 'catalogue' }]; // 5D, 6D
 }
+// The name of the world a pick opens (DICTO 2026-10-13: the world's title under DICTO): its lattice or world, then the
+// piece when there are several ("Multi-shell chains · Chain of Karma"); null when the pick isn't one of these lists.
+export function worldTitle(dim, action) {
+  for (const e of dimensionEntries(dim)) {
+    if (e.fam?.action === action) return e.fam.label;
+    const piece = e.lat?.pieces?.find((x) => x.action === action);
+    if (piece) return e.lat.pieces.length === 1 || piece.label === e.lat.label ? e.lat.label : `${e.lat.label} · ${piece.label}`;
+  }
+  return null;
+}
 // Where a DICTO lattice opens: the app whose door you came in by (Rhombiverse: its colours, no Shear;
 // Kaleidohedra: with the Shear); the DICTO Hex Prism always in Rhombiverse, whose hexagonal lattice
 // has it.
@@ -713,6 +723,13 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
   document.body.appendChild(overlay);
   const bodyEl = overlay.querySelector('.dim-wizard-body');
   const titleEl = overlay.querySelector('.dim-wizard-title');
+  // The tapped button's label, for a world's title when the lists don't name it (a Polyhedraverse shape, a catalogue entry).
+  bodyEl.addEventListener('click', (e) => {
+    const el = e.target.closest('button');
+    if (!el) return;
+    const own = el.querySelector('.dim-wizard-label')?.textContent.trim();
+    lastLabel = own || (titleEl.textContent !== 'DICTO' ? titleEl.textContent.trim() : el.textContent.trim()) || null;
+  }, true);
 
   // ---- the door, the filter, the colours ----
   // The door (the address you came in by) sets the colours and puts its own app's entries first; the
@@ -744,7 +761,13 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     }));
   }
   // Choosing an entry enters its app's space (its colours, its tools), then opens it.
-  const choose = (dim, action, app) => { close(); setActiveSite(app); onSelectFamily(dim, action); };
+  // Back (in the world) returns to the screen the pick was made on; the title is the list's name for it, or the tapped label.
+  let lastScreen = null, lastLabel = null;
+  const choose = (dim, action, app) => {
+    lastScreen = current;
+    const title = worldTitle(dim, action) ?? lastLabel;
+    close(); setActiveSite(app); onSelectFamily(dim, action, title);
+  };
   const back = (L) => `<button type="button" class="dim-wizard-back">${t('wiz.back', L)}</button>`;
 
   // ---- DICTO: the dimensions, one open in place ----
@@ -1238,5 +1261,13 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     showDimensions(`[data-dim="${openDim}"]`);
   });
 
-  return { open, openCatalogue, openDimension, openShapePicker, close, get isOpen() { return overlay.classList.contains('open'); } };
+  function goBack() {
+    if (!lastScreen) { open(); return; }
+    countDicto();
+    paintApps();
+    lastScreen();
+    overlay.classList.add('open');
+  }
+
+  return { open, back: goBack, openCatalogue, openDimension, openShapePicker, close, get isOpen() { return overlay.classList.contains('open'); } };
 }

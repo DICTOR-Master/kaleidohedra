@@ -119,10 +119,37 @@
       user-select: none; pointer-events: none;
     }
     #hud-dim:empty { display: none; }
+    /* The world you're in, under DICTO (DICTO 2026-10-13), with Back to the menu screen you picked it on. */
+    #hud-world-row {
+      position: fixed; top: 80px; left: 16px; z-index: 900; max-width: calc(100% - 96px);
+      display: flex; align-items: center; gap: 8px;
+    }
+    #hud-world-row[hidden] { display: none; }
+    #hud-world-back {
+      flex: none; box-sizing: border-box; min-height: var(--touch-compact); padding: 0 10px;
+      background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: var(--radius-s);
+      color: var(--accent); font: var(--text-xs) var(--font-ui); white-space: nowrap; cursor: pointer; touch-action: manipulation;
+    }
+    #hud-world-title {
+      min-width: 0; color: #e8c25a; font: 600 var(--text-s) var(--font-ui);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; user-select: none; pointer-events: none;
+    }
+    /* Keep this build? (leaving a changed world) */
+    #leave-dialog { position: fixed; inset: 0; z-index: 3000; display: flex; align-items: center; justify-content: center;
+      background: rgba(0, 0, 0, 0.55); padding: 16px; }
+    #leave-dialog[hidden] { display: none; }
+    #leave-dialog .leave-card { max-width: 380px; width: 100%; padding: 18px; border-radius: var(--radius-m);
+      background: rgba(15, 15, 25, 0.97); border: 1px solid rgba(var(--accent-rgb), 0.5); color: #e6e9f0; font: var(--text-m) var(--font-ui); }
+    #leave-dialog h2 { margin: 0 0 8px; font: 600 var(--text-l) var(--font-ui); color: var(--accent); }
+    #leave-dialog p { margin: 0 0 14px; line-height: 1.45; }
+    #leave-dialog .leave-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+    #leave-dialog button { min-height: var(--touch); padding: 0 14px; border-radius: var(--radius-s); cursor: pointer; touch-action: manipulation;
+      background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); color: #e6e9f0; font: var(--text-m) var(--font-ui); }
+    #leave-dialog button[data-choice="keep"] { background: rgba(var(--accent-rgb), 0.3); border-color: var(--accent-strong); color: #fff; }
     /* 1D's two worlds, one tap apart (direct request: "a Signal/Construct
        toggle also"). */
     #hud-1d-toggle {
-      position: fixed; top: 86px; left: 16px; z-index: 900; display: flex;
+      position: fixed; top: 126px; left: 16px; z-index: 900; display: flex;
       border: 1px solid rgba(var(--piece-rgb), 0.55); border-radius: var(--radius-m); overflow: hidden;
     }
     #hud-1d-toggle[hidden] { display: none; }
@@ -197,7 +224,7 @@
        read-only, so taps pass straight through to the scene. */
     #world4d-info, .qc-info {
       display: none;
-      position: fixed; top: 96px; left: 16px; z-index: 900;
+      position: fixed; top: 136px; left: 16px; z-index: 900;
       max-width: min(320px, calc(100vw - 32px));
       padding: 8px 10px;
       background: rgba(0, 0, 0, 0.55);
@@ -261,7 +288,7 @@
     .sig-pulse.down { background: rgba(var(--piece-rgb), 0.4) !important; border-color: var(--piece) !important; color: #fff !important; }
     /* The message read out as it arrives, at the top where the line fades. */
     #sig-arrivals {
-      position: fixed; top: 150px; left: 16px; right: 16px; z-index: 850; display: none;
+      position: fixed; top: 176px; left: 16px; right: 16px; z-index: 850; display: none;
       text-align: center; color: #bfefff; font: 600 22px/1.3 ui-monospace, "SF Mono", Menlo, monospace;
       letter-spacing: 0.18em; text-shadow: 0 0 12px rgba(var(--piece-rgb), 0.6); pointer-events: none;
       overflow-wrap: anywhere;
@@ -808,7 +835,7 @@
     .poly-shape.pinned { box-shadow: inset 0 -3px 0 var(--accent-strong); }
     /* The running build name (D3b), where 1D's toggle sits (never shown together): one line, a tap for
        all of it; clear of the tools column on the right. */
-    #poly-build-name { position: fixed; top: 86px; left: 16px; z-index: 900; max-width: calc(100% - 96px); min-height: var(--touch-compact);
+    #poly-build-name { position: fixed; top: 126px; left: 16px; z-index: 900; max-width: calc(100% - 96px); min-height: var(--touch-compact);
       padding: 4px 10px; border-radius: var(--radius-m); border: 1px solid rgba(var(--accent-rgb), 0.45); background: rgba(10, 12, 20, 0.75);
       color: var(--accent); font: 600 var(--text-s) var(--font-ui); text-align: left; cursor: pointer; touch-action: manipulation;
       white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -926,10 +953,11 @@
       #lab-panel { top: 72px; right: 28px; }
       #hud-wordmark { top: 30px; left: 24px; }
       #hud-wizard-row { top: 54px; left: 24px; }
-      #hud-1d-toggle { top: 102px; left: 24px; }
-      #poly-build-name { top: 102px; left: 24px; max-width: calc(100% - 120px); }
+      #hud-world-row { top: 96px; left: 24px; max-width: calc(100% - 120px); }
+      #hud-1d-toggle { top: 142px; left: 24px; }
+      #poly-build-name { top: 142px; left: 24px; max-width: calc(100% - 120px); }
       #lattice2d-toggle-panel { top: 30px; }
-      #world4d-info, .qc-info { top: 112px; left: 24px; }
+      #world4d-info, .qc-info { top: 152px; left: 24px; }
     }
   </style>
   <!--
@@ -959,6 +987,9 @@
     <div id="hud-wizard-cue" data-i18n-title="wiz.cueTitle" title="Browse dimensions, lattices and pieces">DICTO</div>
     <div id="hud-dim"></div>
   </div>
+  <div id="hud-world-row" hidden><button type="button" id="hud-world-back"></button><span id="hud-world-title"></span></div>
+  <div id="leave-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="leave-title"><div class="leave-card"><h2 id="leave-title"></h2><p id="leave-body"></p>
+    <div class="leave-btns"><button type="button" data-choice="keep"></button><button type="button" data-choice="discard"></button><button type="button" data-choice="stay"></button></div></div></div>
   <div id="hud-1d-toggle" hidden><button type="button" data-world="signal">Signal</button><button type="button" data-world="construct">Construct</button></div>
   <button id="hud-quick-shape" type="button" title="Piece (tap to change)"></button>
   <button id="hud-quick-color" type="button" title="Colour (tap to change)"></button>

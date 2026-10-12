@@ -5,10 +5,12 @@ import sys, json, numpy as np
 from scipy.spatial import ConvexHull
 page, tw, bod = (json.load(open(p)) for p in sys.argv[1:4])
 def polys(V):
+    # Coordinates are rounded to 5 places, so a flat face's corners sit up to ~3e-5 off its plane: gather them with a looser
+    # tolerance and keep each face once, whole (no leftover triangles or split lines across a flat face; DICTO 2026-10-13).
     V = np.array(V, float); H = ConvexHull(V); out = []
-    for e in H.equations:
-        idx = [i for i in range(len(V)) if abs(V[i] @ e[:3] + e[3]) < 1e-5]
-        if any(set(idx) == set(f) for f in out): continue
+    cands = [([i for i in range(len(V)) if abs(V[i] @ e[:3] + e[3]) < 2e-4], e) for e in H.equations]
+    for idx, e in sorted(cands, key=lambda c: -len(c[0])):
+        if any(set(idx) <= set(f) for f in out): continue
         P = V[idx]; c = P.mean(0); a = P[0] - c; a /= np.linalg.norm(a); b = np.cross(e[:3], a)
         out.append([idx[i] for i in np.argsort(np.arctan2((P - c) @ b, (P - c) @ a))])
     return out

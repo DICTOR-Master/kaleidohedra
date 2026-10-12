@@ -153,6 +153,11 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       draw();
       if (on) fit();
     },
+    /** Back to each shape's first view (leaving the world, DICTO 2026-10-13). */
+    resetView() {
+      Object.assign(view, { part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false }); save();
+      if (active) { draw(); fit(); }
+    },
     setSkeleton(on) { if (on !== skeleton) { skeleton = on; if (active) draw(); } },
     setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) draw(); } },
     setLatticeView() {},
