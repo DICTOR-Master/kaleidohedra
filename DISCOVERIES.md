@@ -918,6 +918,7 @@ DICTO (Bodhi with Dharma).*
   Demonstrations: "Cluster of 45 Polyhedra around a Rhombic Hexacontahedron", 1 RH + 12 RT + 20 RT + 12 RH; "Dodecahedral Cluster of
   RTs and RHs"; Kabai, Bérczi and Szilassi on RT/RH clusters in quasicrystals). Not found: the closure inside RT(φ²) with RT(1/φ) at the
   centre, the exact convex gap kits, or the growth as a seed.
+- **Published:** The Bodhi Seed, version 1, 2026-10-12, DOI [10.5281/zenodo.23311354](https://doi.org/10.5281/zenodo.23311354) (paper + data).
 - Study files: [studies/2026-10-12-network-versions](studies/2026-10-12-network-versions/).
 
 ## 23. Spheres of Dharma (DICTO, 2026-10-12)
