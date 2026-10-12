@@ -12,8 +12,10 @@ Danzer's ABCK, with the credit for every tile that is known from elsewhere.
 | **DICTO Bodhi tiles, kit A** (#24) | rhombic triacontahedron, Vajra (fine), Chatra, Mudra | RT(φ²) = 12 RT + RT(1/φ) + 60 each | none |
 | **Spheres of Dharma tiles** (#23) | 10 types (below; names to come) | one Ritsudō cycle, 237 tiles | Mosseri–Sadoc t1 (at 1/φ) |
 
-Each set tiles its seed exactly with tiles of two or three sizes, and the seed's large solid is again a tile one size up, so the
-structures continue without end (the Chain of Karma, the Bodhi chain, the Ritsudō cycle).
+Each set tiles its seed exactly. In the Lotus, Bodhi and Spheres of Dharma sets the seed is the set's own large solid enlarged
+(icosahedron, triacontahedron, icosahedron), so the structure continues without end (the Chain of Karma, the Bodhi chain, the Ritsudō
+cycle); the gap tiles stay whole at each step and accumulate in every size (they do not themselves inflate: Dehn invariant). The
+dodecahedral set fills the dodecahedron, which is not one of its tiles.
 
 ## The tiles
 Edge lengths and volumes are at edge 1 (the Lotus seed's icosahedra), φ = (1 + √5)/2. Names are DICTO's. Started 2026-10-12;
