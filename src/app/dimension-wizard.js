@@ -95,6 +95,10 @@ const CSS = `
   color: var(--pale);
   margin-bottom: 4px;
 }
+/* The DICTOspheres home, from every app (DICTO 2026-10-13). */
+.dim-wizard-home { margin-left: auto; margin-right: 8px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; color: #e8c25a; white-space: nowrap; text-decoration: none;
+  min-height: var(--touch); display: inline-flex; align-items: center; padding: 0 6px; }
+.dim-wizard-home:hover, .dim-wizard-home:focus-visible { text-decoration: underline; }
 .dim-wizard-close { background: none; border: none; color: var(--accent); cursor: pointer; font: var(--text-xl) var(--font-ui); min-width: var(--touch); min-height: var(--touch); }
 /* DICTO: the three apps as an optional filter (DICTO 2026-10-09: off by default; tap one to show
    only its entries, tap it again for all). Wordmarks two-tone like everywhere else. */
@@ -699,7 +703,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
   overlay.className = 'dim-wizard-overlay';
   overlay.innerHTML = `
     <div class="dim-wizard-card">
-      <div class="dim-wizard-header"><span class="dim-wizard-title"></span><button type="button" class="dim-wizard-close">✕</button></div>
+      <div class="dim-wizard-header"><span class="dim-wizard-title"></span><a class="dim-wizard-home" href="https://dictospheres.com" target="_blank" rel="noopener">dictospheres.com</a><button type="button" class="dim-wizard-close">✕</button></div>
       <div class="dicto-apps"></div>
       <div class="dim-wizard-body"></div>
     </div>`;
