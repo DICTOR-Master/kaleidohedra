@@ -210,6 +210,9 @@ document.getElementById('app').appendChild(renderer.domElement);
 // normal/constant here is picked up automatically next frame with no
 // separate "apply" step.
 const sectionPlane = new THREE.Plane(new THREE.Vector3(1, 0, 0), 0);
+// X-ray in the own 3D worlds (DICTO 2026-10-13: X-ray across all apps): their groups are rebuilt on every change, so the
+// cutaway is applied to whatever they hold just before each frame.
+const CLIP_ON = [sectionPlane], CLIP_OFF = [];
 // X-Ray cut direction for a #section-axis value: the 3 coordinate axes
 // plus (angled X-Ray, 2026-09-24, direct request) the 4 cube body-
 // diagonals -- a cut perpendicular to any of those slices Pyrochlore
@@ -3169,7 +3172,9 @@ async function init() {
     // 4D/6D: X-Ray and Spherical don't apply (the slider IS the X-Ray),
     // so their HUD faces go blank and untappable (direct decision).
     const polySpace = own3DActive() && own3D === 'poly';
-    for (const id of ['xray-toggle', 'spherical-toggle']) { const b = document.getElementById(id); if (b) b.hidden = isOwnWorldDimension() && !(id === 'spherical-toggle' && polySpace); }
+    // X-ray (DICTO 2026-10-13: across all apps): shown in every 3D space, the own 3D worlds included; 4D-6D keep their slider.
+    const xrayOff = activeDimension === '4D' || qcWorlds.has(activeDimension);
+    for (const id of ['xray-toggle', 'spherical-toggle']) { const b = document.getElementById(id); if (b) b.hidden = id === 'xray-toggle' ? xrayOff : (isOwnWorldDimension() && !polySpace); }
     // Polyhedraverse's space: no aperiodic shadow to show (DICTO 2026-10-09: X-Ray, Section and Duality hidden there).
     { const b = document.getElementById('duality-toggle'); if (b) b.hidden = own3DActive() && own3D === 'poly'; }
     // 2D+ (DICTO 2026-10-10, 2D audit): the four 3D-only tools hide there (Nets keeps them: it folds
@@ -6481,6 +6486,10 @@ function animate() {
   // The full-screen DICTO wizard covers the scene: skip this pass while it's open (controls damping
   // above still runs).
   if (!isMenuOpen()) {
+    if (own3DActive() && activeDimension === '3D') {
+      const planes = document.getElementById('section-enable')?.checked ? CLIP_ON : CLIP_OFF;
+      own3DWorld()?.group?.traverse((o) => { if (o.material) for (const m of [].concat(o.material)) if (m.clippingPlanes !== planes) m.clippingPlanes = planes; });
+    }
     renderer.render(scene, camera);
   }
   // Always renders, regardless of the modal wheel's open state -- it's
