@@ -1,5 +1,8 @@
 # The self-building ring (study, 2026-10-12)
 
+> **Status (DICTO, 2026-10-12):** not needed for the Chain of Karma, which is an exact iterated dissection in which only the
+> icosahedron is subdivided. Kept only as the record of the piece calculations and searches; no claim of a self-building kit is made.
+
 **The question.** DICTO's pyramid rule: φ·P = P (the tip) + P(1/φ) point-mirrored through the centre of the tip's base (its apex
 then touches the floor) + a side ring R, with vol R = 3 vol P and Dehn invariant 0 (proved in
 [2026-10-11-self-building-kit](../2026-10-11-self-building-kit/)). Can R be cut into kit pieces at golden sizes, so that the kit

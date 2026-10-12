@@ -1,5 +1,8 @@
 # A self-building kit for the Chain of Karma (DICTO, 2026-10-11)
 
+> **Status (DICTO, 2026-10-12):** not needed for the Chain of Karma, which is an exact iterated dissection in which only the
+> icosahedron is subdivided. Kept only as the record of the piece calculations and searches; no claim of a self-building kit is made.
+
 DICTO's aim: the Lotus seed already rebuilds itself one size up (Chain of Karma, #22). Can every other piece (AXE, FUJI,
 CLEO) do the same, so that the whole kit grows without end? DICTO suggested looking at the famous tile set made
 from 6D shadows (Mosseri–Sadoc).
