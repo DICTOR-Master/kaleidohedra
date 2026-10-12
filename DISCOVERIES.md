@@ -936,7 +936,8 @@ as transition figures; "one more missing piece?". Name by DICTO.*
   edge 1 in Pacioli's golden way, all five at once.
 - Names (DICTO, 2026-10-12): **Ritsudō** (律動, rhythm) for the six-beat cycle; **Nenrin** (年輪, tree rings) for its concentric
   growth, against the Lotus seed's branching. Its outer shell, the triacontahedron, branches on its own: the Bodhi seed (#24).
-- Study files: [studies/2026-10-12-network-versions](studies/2026-10-12-network-versions/). Paper: draft, not for release.
+- Study files: [studies/2026-10-12-network-versions](studies/2026-10-12-network-versions/).
+- **Published:** Spheres of Dharma, version 1, 2026-10-12, DOI [10.5281/zenodo.23310834](https://doi.org/10.5281/zenodo.23310834) (paper + data).
 
 ## 22. Chain of Karma (DICTO, 2026-10-11)
 
