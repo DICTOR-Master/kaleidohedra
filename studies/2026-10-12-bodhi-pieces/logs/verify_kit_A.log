@@ -1,0 +1,67 @@
+kit A
+pieces: B1 x60, B2 x60, B3 x60; total 180
+all inside RT(phi^2), clear of the 12 copies and the centre (separating axes); overlapping piece pairs: 0
+piece volume 70.272181079569; gap 70.272181079570; difference -5.68e-14
+each type: all copies congruent (corner count, volume, all distances to 1e-7); kit invariant under all 120 symmetries
+  B1: 60 copies = 120 / 2; the 2 symmetries fixing one copy include a mirror: True
+  B2: 60 copies = 120 / 2; the 2 symmetries fixing one copy include a mirror: True
+  B3: 60 copies = 120 / 2; the 2 symmetries fixing one copy include a mirror: True
+sample cover: 236269 points in RT(phi^2): in exactly one solid/piece 236269, none 0, two+ 0
+volume shares: 12 copies 147.728810, centre 2.906170, B1 x60 12.310734, B2 x60 52.149107, B3 x60 5.812340; sum 220.907160976 = RT(phi^2) 220.907160976
+
+B1 (inner pocket), 60 copies
+B1: 5 corners, 9 edges, 6 faces, volume 0.205178902 = 0.269672 prolate(1)
+  edge lengths: 0.618034, 1.000000, 1.051462, 1.473370, 1.701302
+  faces (sides, side lengths): 1 x 3-gon [np.float64(0.618), np.float64(0.618), np.float64(1.0515)]; 1 x 3-gon [np.float64(0.618), np.float64(1.4734), np.float64(1.7013)]; 1 x 3-gon [np.float64(0.618), np.float64(1.7013), np.float64(1.4734)]; 1 x 3-gon [np.float64(1.0), np.float64(1.0), np.float64(1.0515)]; 2 x 3-gon [np.float64(1.0), np.float64(1.0), np.float64(1.7013)]
+  dihedral angles: 72.0000, 90.0000, 108.0000, 120.0000
+   corner 0: (s,t,u) = (1, 1, 0), |x| = 1.701301617, on: copy0, copy1
+   corner 1: (s,t,u) = (1, 1, 1), |x| = 2.383963417, on: copy0, copy1, copy2
+   corner 2: (s,t,u) = (2-φ, 2-φ, 2-φ), |x| = 0.910592997, on: centre
+   corner 3: (s,t,u) = (1, 0, 0), |x| = 1.000000000, on: copy0, centre
+   corner 4: (s,t,u) = (0, 1, 0), |x| = 1.000000000, on: copy1, centre
+   edges: 0-1 1.000000 = √(1) at 72.0000°; 0-3 1.000000 = √(1) at 108.0000°; 0-4 1.000000 = √(1) at 108.0000°; 1-2 1.473370 = √(6/5+3/5φ) at 120.0000°; 1-3 1.701302 = √(8/5+4/5φ) at 90.0000°; 1-4 1.701302 = √(8/5+4/5φ) at 90.0000°; 2-3 0.618034 = √(2-φ) at 108.0000°; 2-4 0.618034 = √(2-φ) at 108.0000°; 3-4 1.051462 = √(12/5-4/5φ) at 90.0000°
+   face [2, 1, 3]: 3-gon, area 0.447214, lies on a cut between pieces
+   face [1, 0, 3]: 3-gon, area 0.447214, lies on copy 0
+   face [4, 1, 2]: 3-gon, area 0.447214, lies on a cut between pieces
+   face [4, 0, 1]: 3-gon, area 0.447214, lies on copy 1
+   face [4, 2, 3]: 3-gon, area 0.170820, lies on centre RT(1/φ)
+   face [3, 0, 4]: 3-gon, area 0.447214, lies on a cut between pieces
+
+B2 (outer pocket), 60 copies
+B2: 7 corners, 11 edges, 6 faces, volume 0.869151778 = 1.142350 prolate(1)
+  edge lengths: 0.910593, 1.000000, 1.051462, 1.473370, 1.618034
+  faces (sides, side lengths): 1 x 3-gon [np.float64(1.0), np.float64(1.0), np.float64(1.0515)]; 1 x 3-gon [np.float64(1.0), np.float64(1.4734), np.float64(1.618)]; 1 x 3-gon [np.float64(1.0), np.float64(1.618), np.float64(1.4734)]; 1 x 4-gon [np.float64(0.9106), np.float64(1.0), np.float64(1.0), np.float64(1.618)]; 1 x 4-gon [np.float64(0.9106), np.float64(1.618), np.float64(1.0), np.float64(1.0)]; 1 x 5-gon [np.float64(0.9106), np.float64(1.0), np.float64(1.0), np.float64(0.9106), np.float64(1.0515)]
+  dihedral angles: 60.0000, 72.0000, 90.0000, 108.0000, 120.0000
+   corner 0: (s,t,u) = (1+φ, 1, 1), |x| = 3.798922312, on: outer
+   corner 1: (s,t,u) = (φ, φ, φ), |x| = 3.857333836, on: outer
+   corner 2: (s,t,u) = (1, 1, 1), |x| = 2.383963417, on: copy0, copy1, copy2
+   corner 3: (s,t,u) = (1+φ, φ, 0), |x| = 3.641564271, on: outer, copy0
+   corner 4: (s,t,u) = (1, 1+φ, 1), |x| = 3.798922312, on: outer
+   corner 5: (s,t,u) = (φ, 1+φ, 0), |x| = 3.641564271, on: outer, copy1
+   corner 6: (s,t,u) = (φ, φ, 0), |x| = 2.752763841, on: copy0, copy1
+   edges: 0-1 1.000000 = √(1) at 72.0000°; 0-2 1.618034 = √(1+φ) at 108.0000°; 0-3 0.910593 = √(9/5-3/5φ) at 60.0000°; 1-2 1.473370 = √(6/5+3/5φ) at 120.0000°; 1-4 1.000000 = √(1) at 72.0000°; 2-4 1.618034 = √(1+φ) at 108.0000°; 2-6 1.000000 = √(1) at 72.0000°; 3-5 1.051462 = √(12/5-4/5φ) at 90.0000°; 3-6 1.000000 = √(1) at 108.0000°; 4-5 0.910593 = √(9/5-3/5φ) at 60.0000°; 5-6 1.000000 = √(1) at 108.0000°
+   face [4, 1, 2]: 3-gon, area 0.723607, lies on a cut between pieces
+   face [1, 0, 2]: 3-gon, area 0.723607, lies on a cut between pieces
+   face [6, 3, 5]: 3-gon, area 0.447214, lies on a cut between pieces
+   face [2, 0, 3, 6]: 4-gon, area 1.170820, lies on copy 0
+   face [5, 3, 0, 1, 4]: 5-gon, area 1.618034, lies on outer RT(φ²)
+   face [4, 2, 6, 5]: 4-gon, area 1.170820, lies on copy 1
+
+B3 (outer pocket), 60 copies
+B3: 5 corners, 8 edges, 5 faces, volume 0.096872337 = 0.127322 prolate(1)
+  edge lengths: 0.618034, 0.910593, 1.000000
+  faces (sides, side lengths): 2 x 3-gon [np.float64(0.618), np.float64(0.9106), np.float64(1.0)]; 2 x 3-gon [np.float64(0.618), np.float64(1.0), np.float64(0.9106)]; 1 x 4-gon [np.float64(1.0), np.float64(1.0), np.float64(1.0), np.float64(1.0)]
+  dihedral angles: 36.0000, 120.0000, 144.0000
+   corner 0: (s,t,u) = (2φ, -1+φ, -1+φ), |x| = 3.892995958, on: outer, copy0
+   corner 1: (s,t,u) = (1+φ, φ, 0), |x| = 3.641564271, on: outer, copy0
+   corner 2: (s,t,u) = (1+φ, 1, 1), |x| = 3.798922312, on: outer
+   corner 3: (s,t,u) = (2, 1, 1), |x| = 3.236067977, on: copy0
+   corner 4: (s,t,u) = (1+φ, 0, φ), |x| = 3.641564271, on: outer, copy0
+   edges: 0-1 1.000000 = √(1) at 36.0000°; 0-2 0.618034 = √(2-φ) at 144.0000°; 0-4 1.000000 = √(1) at 36.0000°; 1-2 0.910593 = √(9/5-3/5φ) at 120.0000°; 1-3 1.000000 = √(1) at 36.0000°; 2-3 0.618034 = √(2-φ) at 144.0000°; 2-4 0.910593 = √(9/5-3/5φ) at 120.0000°; 3-4 1.000000 = √(1) at 36.0000°
+   face [1, 0, 2]: 3-gon, area 0.276393, lies on outer RT(φ²)
+   face [2, 0, 4]: 3-gon, area 0.276393, lies on outer RT(φ²)
+   face [3, 1, 2]: 3-gon, area 0.276393, lies on a cut between pieces
+   face [3, 2, 4]: 3-gon, area 0.276393, lies on a cut between pieces
+   face [3, 4, 0, 1]: 4-gon, area 0.894427, lies on copy 0
+
+kit A: wrote data/bodhi-B*-raw.json, data/bodhi-B*-unit.json, data/bodhi-seed-solids.json

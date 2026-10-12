@@ -1,0 +1,25 @@
+outer pocket: 3 convex cells per chamber, volume x120 = 57.961446931
+  = 76.180340 P; 70P + 10O = 57.961446931; gap - RT(1) = 57.961446931
+
+[outer+H3] 360 cells in the whole seed
+   unions of up to 2 cells: 600
+   unions of up to 2 cells: 600
+   convex unions (all sizes <= 12): 660; sizes [1, 2, 4]
+   orbits 7, congruence types 7
+   MILP: Optimization terminated successfully. (HiGHS Status 7: Optimal)
+   piece orbit: 60 copies, 2 chamber cells each, stabiliser order 2, volume 0.096870 = 0.127319 P
+   piece orbit: 60 copies, 4 chamber cells each, stabiliser order 2, volume 0.869150 = 1.142348 P
+   total pieces 120, types 2
+   fewest pieces regardless of types: 120 pieces, 2 types
+
+== outer piece type 1: 60 copies
+outer-1: 5 corners, 8 edges, 5 faces, volume 0.096872337 = 0.127322 prolate(1)
+  edge lengths: 0.618034, 0.910593, 1.000000
+  faces (sides, side lengths): 2 x 3-gon [np.float64(0.618), np.float64(0.9106), np.float64(1.0)]; 2 x 3-gon [np.float64(0.618), np.float64(1.0), np.float64(0.9106)]; 1 x 4-gon [np.float64(1.0), np.float64(1.0), np.float64(1.0), np.float64(1.0)]
+  dihedral angles: 36.0000, 120.0000, 144.0000
+
+== outer piece type 2: 60 copies
+outer-2: 7 corners, 11 edges, 6 faces, volume 0.869151778 = 1.142350 prolate(1)
+  edge lengths: 0.910593, 1.000000, 1.051462, 1.473370, 1.618034
+  faces (sides, side lengths): 1 x 3-gon [np.float64(1.0), np.float64(1.0), np.float64(1.0515)]; 1 x 3-gon [np.float64(1.0), np.float64(1.4734), np.float64(1.618)]; 1 x 3-gon [np.float64(1.0), np.float64(1.618), np.float64(1.4734)]; 1 x 4-gon [np.float64(0.9106), np.float64(1.0), np.float64(1.0), np.float64(1.618)]; 1 x 4-gon [np.float64(0.9106), np.float64(1.618), np.float64(1.0), np.float64(1.0)]; 1 x 5-gon [np.float64(0.9106), np.float64(1.0), np.float64(1.0), np.float64(0.9106), np.float64(1.0515)]
+  dihedral angles: 60.0000, 72.0000, 90.0000, 108.0000, 120.0000

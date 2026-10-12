@@ -1,0 +1,18 @@
+inner pocket: 1 convex cells per chamber, volume x120 = 12.310734149
+  = 16.180340 P; RT(1) = 12.310734149; 10P + 10O = 12.310734149
+
+[inner] 120 cells in the whole seed
+   unions of up to 2 cells: 180
+   unions of up to 2 cells: 180
+   convex unions (all sizes <= 12): 180; sizes [1, 2]
+   orbits 2, congruence types 2
+   MILP: Optimization terminated successfully. (HiGHS Status 7: Optimal)
+   piece orbit: 60 copies, 2 chamber cells each, stabiliser order 2, volume 0.205180 = 0.269674 P
+   total pieces 60, types 1
+   fewest pieces regardless of types: 60 pieces, 1 types
+
+== inner piece type 1: 60 copies
+inner-1: 5 corners, 9 edges, 6 faces, volume 0.205178902 = 0.269672 prolate(1)
+  edge lengths: 0.618034, 1.000000, 1.051462, 1.473370, 1.701302
+  faces (sides, side lengths): 1 x 3-gon [np.float64(0.618), np.float64(0.618), np.float64(1.0515)]; 1 x 3-gon [np.float64(0.618), np.float64(1.4734), np.float64(1.7013)]; 1 x 3-gon [np.float64(0.618), np.float64(1.7013), np.float64(1.4734)]; 1 x 3-gon [np.float64(1.0), np.float64(1.0), np.float64(1.0515)]; 2 x 3-gon [np.float64(1.0), np.float64(1.0), np.float64(1.7013)]
+  dihedral angles: 72.0000, 90.0000, 108.0000, 120.0000
