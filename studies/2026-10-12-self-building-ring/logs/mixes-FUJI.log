@@ -1,0 +1,35 @@
+H is the same in all turns for every piece; components ['0|0', '0|1']
+  H(AP) = -12.360680, -6.180340; volume 1.578689326
+  H(AXE) = +2.708204, +1.708204; volume 0.083333333
+  H(CLEO) = -0.708204, -2.562306; volume 0.051502832
+  H(FUJI) = +1.854102, -2.562306; volume 0.321175164
+  H(I) = -18.541020, +0.000000; volume 2.181694991
+  H(J11) = -15.450850, -3.090170; volume 1.880192158
+  H(J2) = -3.090170, +3.090170; volume 0.301502832
+  H(T2) = -3.090170, -6.180340; volume 0.083333333
+  H(t1) = +0.236068, +2.763932; volume 0.019672331
+  H(t2) = -2.381966, -3.618034; volume 0.031830501
+  H(t3) = +1.145898, +4.145898; volume 0.031830501
+  H(t4) = -0.708204, -2.562306; volume 0.051502832
+  H(t5) = -0.763932, +0.326238; volume 0.051502832
+  H(t6) = +2.708204, +1.708204; volume 0.083333333
+
+FUJI ring: 84 columns (types ['AP', 'AXE', 'CLEO', 'FUJI', 'I', 'J11', 'J2', 'T2', 't1', 't2', 't3', 't4', 't5', 't6'], sizes phi^-5..phi^0)
+  mix 1: 6 pieces: {'FUJI@phi^0': 2, 'J2@phi^0': 1, 't1@phi^-1': 1, 't2@phi^-1': 1, 't3@phi^-1': 1}
+  mix 2: 6 pieces: {'FUJI@phi^0': 2, 'J2@phi^0': 1, 't1@phi^-1': 1, 't5@phi^-2': 1, 't5@phi^-1': 1}
+  mix 3: 7 pieces: {'FUJI@phi^0': 2, 'J2@phi^0': 1, 't2@phi^-1': 1, 't3@phi^-2': 1, 't3@phi^-1': 1, 't5@phi^-2': 1}
+  mix 4: 7 pieces: {'FUJI@phi^0': 2, 'J2@phi^-2': 1, 'J2@phi^0': 1, 't1@phi^-2': 1, 't4@phi^-3': 1, 't6@phi^-3': 1}
+  mix 5: 7 pieces: {'CLEO@phi^-3': 1, 'FUJI@phi^0': 2, 'J2@phi^-2': 1, 'J2@phi^0': 1, 't1@phi^-2': 1, 't6@phi^-3': 1}
+  mix 6: 7 pieces: {'AXE@phi^-3': 1, 'CLEO@phi^-3': 1, 'FUJI@phi^0': 2, 'J2@phi^-2': 1, 'J2@phi^0': 1, 't1@phi^-2': 1}
+  mix 7: 7 pieces: {'AXE@phi^-3': 1, 'FUJI@phi^0': 2, 'J2@phi^-2': 1, 'J2@phi^0': 1, 't1@phi^-2': 1, 't4@phi^-3': 1}
+  mix 8: 7 pieces: {'FUJI@phi^0': 2, 'J2@phi^0': 1, 'T2@phi^-2': 1, 't1@phi^-1': 1, 't3@phi^-1': 1, 't5@phi^-2': 1}
+  mix 9: 7 pieces: {'FUJI@phi^0': 2, 'J2@phi^0': 1, 'T2@phi^-3': 1, 't1@phi^-1': 1, 't3@phi^-2': 1, 't5@phi^-1': 1}
+  mix 10: 8 pieces: {'FUJI@phi^0': 2, 'J2@phi^-2': 1, 'J2@phi^0': 1, 't3@phi^-2': 1, 't4@phi^-4': 1, 't4@phi^-3': 1, 't6@phi^-4': 1}
+  mix 11: 8 pieces: {'AXE@phi^-4': 1, 'CLEO@phi^-4': 1, 'FUJI@phi^0': 2, 'J2@phi^-2': 1, 'J2@phi^0': 1, 't3@phi^-2': 1, 't4@phi^-3': 1}
+  mix 12: 8 pieces: {'CLEO@phi^-3': 1, 'FUJI@phi^0': 2, 'J2@phi^-2': 1, 'J2@phi^0': 1, 't3@phi^-2': 1, 't4@phi^-4': 1, 't6@phi^-4': 1}
+  mix 13: 8 pieces: {'AXE@phi^-4': 1, 'CLEO@phi^-3': 1, 'FUJI@phi^0': 2, 'J2@phi^-2': 1, 'J2@phi^0': 1, 't3@phi^-2': 1, 't4@phi^-4': 1}
+  mix 14: 8 pieces: {'FUJI@phi^-1': 1, 'FUJI@phi^0': 1, 'J2@phi^-1': 1, 'J2@phi^0': 1, 'T2@phi^0': 1, 't3@phi^-1': 1, 't6@phi^-1': 1, 't6@phi^0': 1}
+  mix 15: 8 pieces: {'AXE@phi^-1': 1, 'AXE@phi^0': 1, 'FUJI@phi^-1': 1, 'FUJI@phi^0': 1, 'J2@phi^-1': 1, 'J2@phi^0': 1, 'T2@phi^0': 1, 't3@phi^-1': 1}
+
+FUJI ring: piece sizes that occur in at least one balanced mix: ['AP@phi^-5', 'AP@phi^-4', 'AP@phi^-3', 'AP@phi^-2', 'AP@phi^-1', 'AXE@phi^-5', 'AXE@phi^-4', 'AXE@phi^-3', 'AXE@phi^-2', 'AXE@phi^-1', 'AXE@phi^0', 'CLEO@phi^-5', 'CLEO@phi^-4', 'CLEO@phi^-3', 'CLEO@phi^-2', 'CLEO@phi^-1', 'CLEO@phi^0', 'FUJI@phi^-5', 'FUJI@phi^-4', 'FUJI@phi^-3', 'FUJI@phi^-2', 'FUJI@phi^-1', 'FUJI@phi^0', 'I@phi^-5', 'I@phi^-4', 'I@phi^-3', 'I@phi^-2', 'I@phi^-1', 'J11@phi^-5', 'J11@phi^-4', 'J11@phi^-3', 'J11@phi^-2', 'J11@phi^-1', 'J2@phi^-5', 'J2@phi^-4', 'J2@phi^-3', 'J2@phi^-2', 'J2@phi^-1', 'J2@phi^0', 'T2@phi^-5', 'T2@phi^-4', 'T2@phi^-3', 'T2@phi^-2', 'T2@phi^-1', 'T2@phi^0', 't1@phi^-5', 't1@phi^-4', 't1@phi^-3', 't1@phi^-2', 't1@phi^-1', 't1@phi^0', 't2@phi^-5', 't2@phi^-4', 't2@phi^-3', 't2@phi^-2', 't2@phi^-1', 't2@phi^0', 't3@phi^-5', 't3@phi^-4', 't3@phi^-3', 't3@phi^-2', 't3@phi^-1', 't3@phi^0', 't4@phi^-5', 't4@phi^-4', 't4@phi^-3', 't4@phi^-2', 't4@phi^-1', 't4@phi^0', 't5@phi^-5', 't5@phi^-4', 't5@phi^-3', 't5@phi^-2', 't5@phi^-1', 't5@phi^0', 't6@phi^-5', 't6@phi^-4', 't6@phi^-3', 't6@phi^-2', 't6@phi^-1', 't6@phi^0']
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();

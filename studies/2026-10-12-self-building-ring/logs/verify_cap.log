@@ -1,0 +1,16 @@
+step 1: 113 pieces, total volume 39.148928
+complex edges on the kit frame two-fold axes: True
+Lotus seed: corner A at [-2.118 -1.309  0.   ], its 5 neighbours at distance 2.618034
+J2(phi^2): 16 parts {'J11@phi^0': 1, 'J2@phi^0': 5, 'AXE@phi^0': 5, 'FUJI@phi^0': 5}
+   from: {('ico', 'cut'): 6, ('axe', 'whole'): 5, ('fuji', 'whole'): 5}
+   volume 5.410248806146 vs target 5.410248806146 (difference 8.9e-16); all inside: True; overlapping pairs: 0
+J11(phi^2): 103 parts {'I@phi^-1': 1, 'J2@phi^0': 1, 'J11@phi^0': 5, 'I@phi^0': 6, 'AXE@phi^0': 55, 'FUJI@phi^0': 15, 'CLEO@phi^0': 20}
+   from: {('ico', 'whole'): 7, ('ico', 'cut'): 6, ('axe', 'whole'): 55, ('fuji', 'whole'): 15, ('cleo', 'whole'): 20}
+   volume 33.738679330311 vs target 33.738679330311 (difference 0.0e+00); all inside: True; overlapping pairs: 0
+AP(phi^2): 93 parts {'I@phi^-1': 1, 'J2@phi^0': 2, 'J11@phi^0': 10, 'AXE@phi^0': 50, 'FUJI@phi^0': 10, 'CLEO@phi^0': 20}
+   from: {('ico', 'whole'): 1, ('ico', 'cut'): 12, ('axe', 'whole'): 50, ('fuji', 'whole'): 10, ('cleo', 'whole'): 20}
+   volume 28.328430524165 vs target 28.328430524165 (difference 0.0e+00); all inside: True; overlapping pairs: 0
+tip J2(1) at A lies in the cap's J11: True; J11 minus the tip = antiprism: True (['AP@phi^0'])
+so  phi^2 J2 = J2 (tip) + AP + 5 J2 + 5 AXE + 5 FUJI:  5.410248806146 = 5.410248806146
+
+volume identity: J2(phi^2) = phi^6 J2 = 5.410248806146;  J11 + 5 J2 + 5 AXE + 5 FUJI = 5.410248806146
