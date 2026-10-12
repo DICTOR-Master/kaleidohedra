@@ -32,6 +32,7 @@ import { SITE, storageKey, theme } from './site.js';
 import { migrateLegacyAssembly, ASSEMBLY_STORAGE_KEY } from '../krp-core/src/assembly/assembly.js';
 import { solidsOverlap, placedSolid, insideSolid } from '../krp-core/src/assembly/overlap.js';
 import { hintSlots, hasHints as buildHasHints } from '../krp-core/src/assembly/hints.js';
+import { bestFits } from '../krp-core/src/assembly/bestFits.js';
 import { t } from './i18n.js';
 import { polyShapeName } from './poly-shapes.js';
 
@@ -65,7 +66,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   let connections = []; // { nodeA, vertexA, nodeB, vertexB, kind: 'face' } (face indices for a face join)
   // queue: the shapes used lately, newest first (8); pins: the ones always offered (D3b, DICTO's build queue).
   // Favourites (pins) and Recent (the queue) live in poly-prefs.js, shared with DICTO's browser.
-  const view = { shape: DEFAULT_SHAPE, parts: 'solid', rcp: null, hints: true };
+  const view = { shape: DEFAULT_SHAPE, parts: 'solid', rcp: null, hints: true, bestFits: false };
   let active = false, skeleton = false, opacity = 1;
   let spherical = false, sphereScale = 1;
   let nextId = 1;
@@ -107,6 +108,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       adopt(Array.isArray(data.view?.pins) ? data.view.pins : [], Array.isArray(data.view?.queue) ? data.view.queue : []);
       if (PART_VIEWS.includes(data.view?.parts)) view.parts = data.view.parts;
       if (data.view?.hints === false) view.hints = false;
+      view.bestFits = data.view?.bestFits === true;
       if (data.view?.rcp && typeof data.view.rcp.target === 'string') view.rcp = { target: data.view.rcp.target, n: Math.max(1, data.view.rcp.n | 0), open: data.view.rcp.open !== false, coords: !!data.view.rcp.coords };
       if (data.version === undefined) save(); // the old site's build, now kept here
     }
@@ -231,13 +233,37 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   };
   let hintCache = { key: '', slots: [], glow: new Map() };
   const hasHints = () => buildHasHints(nodes, POLYHEDRA);
+  // ---- best fits (DICTO 2026-10-13: "a helper outline, possible placements, and offer best matches only"): for any build, the
+  // three places where a piece closes the most faces flush (krp-core bestFits.js), drawn as ghosts in rank colours and listed in
+  // the panel with their names. Worked out a moment after each change, so the screen never waits on it.
+  const BEST_COLOURS = [0xffc857, 0x4dd0e1, 0xc792ea];
+  let bestState = { key: '', slots: [], glow: new Map(), busy: false };
+  function bestHints() {
+    const key = JSON.stringify([chosen, nodes.map((n) => [n.shape, n.transform])]);
+    if (bestState.key !== key && !bestState.busy) {
+      bestState = { key, slots: [], glow: new Map(), busy: true };
+      setTimeout(() => {
+        const last = nodes.at(-1);
+        let slots = [];
+        try { slots = bestFits(nodes, POLYHEDRA, { near: last?.transform.position, chosen, preferred: queue(), count: 3, maxFaces: 8 }); } catch (err) { console.warn('best fits', err); }
+        bestState = { key, slots: slots.map((sl, i) => ({ ...sl, colour: BEST_COLOURS[i] })), glow: glowFor(slots), busy: false };
+        if (active && view.bestFits) { rebuild(); renderPanel(); }
+      }, 30);
+    }
+    return bestState;
+  }
   function hints() {
+    if (view.bestFits) return nodes.length ? bestHints() : { slots: [], glow: new Map() };
     if (!view.hints || !hasHints()) return { slots: [], glow: new Map() };
     const key = JSON.stringify(nodes.map((n) => [n.shape, n.transform]));
     if (hintCache.key === key) return hintCache;
     const last = nodes.at(-1);
     const slots = hintSlots(nodes, POLYHEDRA, { near: last?.transform.position });
-    // A built face glows when the point just outside its middle is inside a slot's piece.
+    hintCache = { key, slots, glow: glowFor(slots) };
+    return hintCache;
+  }
+  // A built face glows when the point just outside its middle is inside a slot's piece.
+  function glowFor(slots) {
     const glow = new Map();
     slots.forEach((sl, i) => {
       const ghost = placedSolid(POLYHEDRA[sl.shape], sl.position, sl.quaternion);
@@ -252,13 +278,12 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
         });
       }
     });
-    hintCache = { key, slots, glow };
-    return hintCache;
+    return glow;
   }
   function hintMeshes() {
     const { slots, glow } = hints(), out = [];
     slots.forEach((sl, i) => {
-      const spec = POLYHEDRA[sl.shape], col = HINT_COLOURS[sl.shape] ?? theme().strongHex;
+      const spec = POLYHEDRA[sl.shape], col = sl.colour ?? HINT_COLOURS[sl.shape] ?? theme().strongHex;
       const q = new THREE.Quaternion(...sl.quaternion), p = new THREE.Vector3(...sl.position);
       const P = spec.vertices.map((v) => new THREE.Vector3(...v).applyQuaternion(q).add(p));
       const pos = [], edge = [];
@@ -276,7 +301,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     for (const [k, i] of glow) {
       const [id, fi] = k.split(':'), n = nodes.find((x) => x.id === id);
       if (!n) continue;
-      const P = worldPoints(n), f = POLYHEDRA[n.shape].faces[+fi], col = HINT_COLOURS[slots[i].shape] ?? theme().strongHex;
+      const P = worldPoints(n), f = POLYHEDRA[n.shape].faces[+fi], col = slots[i].colour ?? HINT_COLOURS[slots[i].shape] ?? theme().strongHex;
       const nrm = P[f[1]].clone().sub(P[f[0]]).cross(P[f[2]].clone().sub(P[f[0]])).normalize().multiplyScalar(0.004);
       const pos = [];
       for (let j = 1; j + 1 < f.length; j++) for (const v of [f[0], f[j], f[j + 1]]) { const x = P[v].clone().add(nrm); pos.push(x.x, x.y, x.z); }
@@ -762,13 +787,20 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     refitIfGrown();
     return true;
   }
+  function bestRow(L) {
+    const st = bestHints();
+    if (st.busy) return `<div class="poly-golden poly-best-status">${t('poly.best.finding', L)}</div>`;
+    if (!st.slots.length) return `<div class="poly-golden poly-best-status">${t('poly.best.none', L)}</div>`;
+    return `<div class="poly-golden poly-best">${st.slots.map((sl, i) => `<button type="button" data-best-pick="${i}" style="border-color:#${sl.colour.toString(16).padStart(6, '0')};color:#${sl.colour.toString(16).padStart(6, '0')}">${polyShapeName(sl.shape).replaceAll('_', ' ')} · ${t(sl.closes === 1 ? 'poly.best.closes1' : 'poly.best.closes', L, { n: sl.closes })}</button>`).join('')}</div>`;
+  }
   function renderPanel() {
     disposers.forEach((d) => d()); disposers = [];
     const isGolden = active && !spherical && golden();
     const hasParts = active && !spherical && nodes.some((n) => PART_PICK[n.shape]);
     const hasRcp = active && !spherical && rcpRoot() && nodes.length === 1;
     const hasHintRow = active && !spherical && hasHints();
-    const show = active && !spherical && (selection || chosen || isGolden || hasParts || hasRcp || hasHintRow);
+    const hasBestRow = active && !spherical && nodes.length > 0;
+    const show = active && !spherical && (selection || chosen || isGolden || hasParts || hasRcp || hasHintRow || hasBestRow);
     panel.classList.toggle('visible', Boolean(show));
     if (!show) return;
     const L = lang();
@@ -777,7 +809,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       ${selection ? `<button type="button" class="poly-more" data-more>${t('poly.more', L)}</button>` : ''}
       ${selection && selection.face != null && FOURD.has(selection.node.shape) ? `<button type="button" class="poly-more" data-duoprism>${t('poly.duoprism', L)}</button>` : ''}
       ${selection && REWRITE_TARGET[selection.node.shape] ? `<button type="button" class="poly-more" data-transform>${t('poly.transform', L, { name: polyShapeName(REWRITE_TARGET[selection.node.shape]).replaceAll('_', ' ') })}</button>` : ''}
-      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${hasHintRow ? `<div class="poly-golden"><button type="button" data-hints aria-pressed="${view.hints}" title="${t('poly.hints.title', L)}">${t('poly.hints', L)}</button></div>` : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.filter((v) => v === 'solid' || nodes.some((n) => PART_PICK[n.shape]?.[v])).map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}`;
+      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${hasHintRow || hasBestRow ? `<div class="poly-golden">${hasHintRow ? `<button type="button" data-hints aria-pressed="${view.hints && !view.bestFits}" title="${t('poly.hints.title', L)}">${t('poly.hints', L)}</button>` : ''}${hasBestRow ? `<button type="button" data-best aria-pressed="${view.bestFits}" title="${t('poly.best.title', L)}">${t('poly.best', L)}</button>` : ''}</div>${hasBestRow && view.bestFits ? bestRow(L) : ''}` : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.filter((v) => v === 'solid' || nodes.some((n) => PART_PICK[n.shape]?.[v])).map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}`;
     stripBody.querySelectorAll('.poly-shape canvas').forEach((cv) => disposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 34)));
   }
   panel.addEventListener('change', (e) => {
@@ -806,7 +838,9 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     if (pressed) { pressed = false; return; } // that was a long-press (pin), not a tap
     if ('clear' in b.dataset) { chosen = null; renderPanel(); return; }
     if (rcpAct(b)) return;
-    if ('hints' in b.dataset) { view.hints = !view.hints; save(); rebuild(); renderPanel(); return; }
+    if ('hints' in b.dataset) { if (view.bestFits) { view.bestFits = false; view.hints = true; } else view.hints = !view.hints; save(); rebuild(); renderPanel(); return; }
+    if ('best' in b.dataset) { view.bestFits = !view.bestFits; save(); rebuild(); renderPanel(); return; }
+    if ('bestPick' in b.dataset) { placeSlot(Number(b.dataset.bestPick)); return; }
     if ('transform' in b.dataset && selection) { transform(selection.node); return; }
     if ('duoprism' in b.dataset && selection) { duoprism(selection.node, selection.face); return; }
     if ('goldenNext' in b.dataset) { if (!takeAssembly(withNextSafePiece({ nodes, connections }))) showHudPrompt(t('poly.golden.none', lang()), 3000); return; }
