@@ -1,6 +1,6 @@
 # Bodhi seed gap pieces (study, 2026-10-12)
 
-DICTO chose kit B and named its pieces: B1 = **Vajra (bipyramid)**, B4 = **Crown Jewel**, B5 = **Diadem L** / **Diadem R**; kit A's B2 = **Chatra**, B3 = **Mudra**.
+DICTO chose kit B and named its pieces: B1 = **Vajra (fine)**, B4 = **Crown Jewel**, B5 = **Diadem L** / **Diadem R**; kit A's B2 = **Chatra**, B3 = **Mudra**.
 
 The Bodhi seed (DICTO, discovery #24): a rhombic triacontahedron RT(φ²) holding 12 copies RT(1) on its 5-fold axes (centres
 φ² from the middle, touching the outer form and five neighbours each) and RT(1/φ) at the centre. Gap 70.272181 (31.8%).
