@@ -19,6 +19,8 @@ piece in Polyhedraverse with outlines for the next piece (as the Admiral Cap's);
 
 ## RD 13 tiles space alone (checked 2026-10-13)
 
+The rounded keyed block: **DICTO Spheroid-13 RD** (DICTO's name, 2026-10-13). Its own paper, with printable nets, comes first (for a DOI); the 13-Atom Clusters paper then cites it.
+
 DICTO asked for a Hexa analog (a 13 that fills space with a partner, as the Hexa does with its Key). Checked: the 13-RD cluster
 needs no partner. Of the 183 index-13 sublattices of FCC, 8 have the cluster as a complete set of coset representatives, so
 translates of the cluster fill space exactly (RDs are FCC's Voronoi cells). Translations have length sqrt10 in coordinates where
