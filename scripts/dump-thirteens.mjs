@@ -49,7 +49,7 @@ const roundedFree = process.argv[4] ? blockOf(JSON.parse(fs.readFileSync(process
 const det3 = (a, b, c) => a[0] * (b[1] * c[2] - b[2] * c[1]) - a[1] * (b[0] * c[2] - b[2] * c[0]) + a[2] * (b[0] * c[1] - b[1] * c[0]);
 const cross = (u, v) => [u[1] * v[2] - u[2] * v[1], u[2] * v[0] - u[0] * v[2], u[0] * v[1] - u[1] * v[0]];
 function clusterOf(id, keepFace, roleOf) {
-  const S = POLYHEDRA[id];
+  const S = typeof id === 'string' ? POLYHEDRA[id] : id;
   const c = [0, 1, 2].map((q) => S.vertices.reduce((t, v) => t + v[q], 0) / S.vertices.length);
   const V0 = S.vertices.map((v) => v.map((x, q) => x - c[q]));
   const faces = S.faces.map((f, i) => ({ f, i, n: [0, 1, 2].map((q) => (2 * f.reduce((t, k) => t + V0[k][q], 0)) / f.length) })).filter(keepFace);
@@ -86,6 +86,32 @@ function clusterOf(id, keepFace, roleOf) {
 }
 const HEXED = clusterOf('REGULAR_HEX_ED', () => true, (f) => (!f ? 'hexCentre' : f.length === 6 ? 'hexByHex' : 'hexByRhombus'));
 // the TO's middle: the squares whose neighbour is level with the centre (the axis through the two window squares is the one left out)
+// The other 12-neighbour space-fillers (DICTO 2026-10-13): DICTO's skewed RD, the Bain RD, and the golden Bilinski dodecahedron, built
+// as Polyhedraverse's Nets do (the zonohedron of four of the icosahedron's five-fold axes, edge 1).
+const PHI = (1 + Math.sqrt(5)) / 2;
+const FIVE = [[0, 1, PHI], [0, 1, -PHI], [1, PHI, 0], [1, -PHI, 0]].map((v) => v.map((x) => x / Math.hypot(...v)));
+const BILINSKI = (() => {
+  const P = [];
+  for (let m = 0; m < 16; m++) P.push([0, 1, 2].map((q) => FIVE.reduce((t, v, i) => t + ((m >> i) & 1 ? 0.5 : -0.5) * v[q], 0)));
+  // the 14 corners are the zonotope's extreme points; faces: the 12 rhombi spanned by pairs of the four axes
+  const F = [], V = [];
+  const key = (p) => p.map((x) => x.toFixed(6)).join(',');
+  const at = (p) => { const k = key(p); let i = V.findIndex((w) => key(w) === k); if (i < 0) { V.push(p); i = V.length - 1; } return i; };
+  for (let i = 0; i < 4; i++) for (let j = i + 1; j < 4; j++) for (const sgn of [1, -1]) {
+    const n = cross(FIVE[i], FIVE[j]).map((x) => x * sgn);
+    const others = [0, 1, 2, 3].filter((k) => k !== i && k !== j);
+    const base = [0, 1, 2].map((q) => others.reduce((t, k) => t + Math.sign(FIVE[k].reduce((u, x, r) => u + x * n[r], 0)) * 0.5 * FIVE[k][q], 0));
+    const a = FIVE[i], b = FIVE[j];
+    const quad = [[-1, -1], [1, -1], [1, 1], [-1, 1]].map(([s1, s2]) => base.map((x, q) => x + (s1 * a[q] + s2 * b[q]) / 2));
+    const idx = quad.map(at);
+    const c = [0, 1, 2].map((q) => quad.reduce((t, p) => t + p[q], 0) / 4);
+    const nn = cross(quad[1].map((x, q) => x - quad[0][q]), quad[2].map((x, q) => x - quad[0][q]));
+    F.push(nn.reduce((t, x, q) => t + x * c[q], 0) > 0 ? idx : [...idx].reverse());
+  }
+  return { vertices: V, faces: F };
+})();
+const RDFAM = Object.fromEntries([['skewedRd13', 'DICTO_SKEWED_RD'], ['bainRd13', 'BAIN_RD'], ['bilinski13', BILINSKI]].map(([k, sp]) =>
+  [k, clusterOf(sp, () => true, (f) => (!f ? `${k}Centre` : `${k}Cell`))]));
 const TOS = POLYHEDRA.TRUNCATED_OCTAHEDRON;
 const sqAxes = TOS.faces.filter((f) => f.length === 4).map((f) => { const n = [0, 1, 2].map((q) => f.reduce((t, k) => t + TOS.vertices[k][q], 0)); return n.map(Math.abs).indexOf(Math.max(...n.map(Math.abs))); });
 const windowAxis = 2;
@@ -100,6 +126,7 @@ const out = {
   // Seven rounded blocks: one and its six nearest neighbours (plus and minus the block lattice's three short vectors), keyed.
   hexed: { cluster: HEXED.cluster, blocks: HEXED.blocks },
   to13: { cluster: TO13.cluster, blocks: TO13.blocks },
+  ...Object.fromEntries(Object.entries(RDFAM).map(([k, c]) => [k, { cluster: c.cluster, blocks: c.blocks }])),
   rd13: { plain, rounded, ...(fattest ? { fattest } : {}), ...(roundedFree ? { roundedFree } : {}), blocks: [[0, 0, 0], ...R.L.flatMap((t) => [t, t.map((x) => -x)])].flatMap((t, b) => rounded.map(([role, V, F]) => [b ? `${role}N` : role, V.map((v) => v.map((x, q) => x + t[q])), F])) },
 };
 process.stdout.write(JSON.stringify(out));

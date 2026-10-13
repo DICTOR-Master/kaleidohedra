@@ -17,6 +17,7 @@ NAMES = {'axe': 'AXE', 'fuji': 'FUJI', 'cleo': 'Cleo', 'hasu': 'Hasu', 'vajra': 
          'B3': 'Mudra', 'B4': 'Crown Jewel', 'B5L': 'Diadem', 'wedge': 'Dodeca-13 wedge', 'needle': 'Dodeca-13 needle', 'unit': 'Dodeca-13 unit',
          'star': 'Dodeca-13 star', 'ico': 'Icosahedron', 'dodeca': 'Dodecahedron', 'idd': 'Icosidodecahedron', 'j63': 'J63',
          'copy': 'Rhombic triacontahedron', 'centre': 'Centre', 'admiral': 'Admiral Cap', 'icoSmall': 'Icosahedron', 'weirdstone': 'Weirdstone', 'tadpole': 'Tadpole', 'tet': 'Octet tetrahedron',
+         'bilinski13Centre': 'Bilinski dodecahedron', 'bilinski13Cell': 'Bilinski dodecahedron',
          'rd': 'Rhombic dodecahedron', 'rdCentre': 'Spheroid-13 RD centre', 'rdA': 'Spheroid-13 RD outer A', 'rdB': 'Spheroid-13 RD outer B'}
 def quat(R):
     # Shepperd's method: build from the largest of w, x, y, z, so half-turns (w = 0) come out right.
@@ -66,7 +67,7 @@ def mirror_id(pid):
         if pid in new and 'Diadem' in new[pid]['name'] and 'Diadem L' not in new[pid]['name']: new[pid]['name'] = new[pid]['name'].replace('Diadem', 'Diadem L')
         new[mid] = {'name': nm, 'vertices': (np.array(src['vertices']) @ D).tolist(), 'faces': [list(reversed(f)) for f in (src.get('faces') or new[pid]['faces'])]}
     return mid
-LABEL = {'octet': 'DICTO Icosahedral Octet', 'icosa13': 'DICTO Icosa-13', 'dodeca13': 'DICTO Dodeca-13', 'bodhi': 'The Bodhi Seed', 'unity': 'UNITY', 'dictoStar': 'DICTO-Star', 'deshi': 'DESHI', 'rd13': 'RD 13', 'hexed': 'Regular-hexagon ED 13', 'to13': 'Truncated octahedron 13'}
+LABEL = {'octet': 'DICTO Icosahedral Octet', 'icosa13': 'DICTO Icosa-13', 'dodeca13': 'DICTO Dodeca-13', 'bodhi': 'The Bodhi Seed', 'unity': 'UNITY', 'dictoStar': 'DICTO-Star', 'deshi': 'DESHI', 'rd13': 'RD 13', 'hexed': 'Regular-hexagon ED 13', 'to13': 'Truncated octahedron 13', 'skewedRd13': 'DICTO skewed RD 13', 'bainRd13': 'Bain RD 13', 'bilinski13': 'Bilinski 13'}
 KITLABEL = {'octahedron': 'octahedron cell', 'tetrahedron': 'tetrahedron cell', 'octetBlock': 'octet block', 'allIcoBlock': 'all-icosahedral block', 'pieces': 'pieces', 'build': '63-piece build', 'units': 'units', 'stars': 'stars', 'seed': '13 triacontahedra', 'kitA': 'Kit A', 'kitB': 'Kit B',
             'open': 'open', 'venus': 'VENUS', 'star': '', 'deshi': '', 'cluster': 'centre and twelve', 'plain': 'plain', 'rounded': 'DICTO Spheroid-13 RD (0.15)', 'fattest': 'Spheroid-13 RD, fattest (0.35)', 'roundedFree': 'Spheroid-13 RD, free centre (0.15)'}
 kits = {}
