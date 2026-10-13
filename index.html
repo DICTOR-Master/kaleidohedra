@@ -251,6 +251,7 @@
     /* 2D+ on phones: its panel sits at the bottom too, so prompts go above it (2D audit, 2026-10-10). */
     @media (max-width: 600px) { body.flat-2d #hud-prompt { bottom: calc(170px + env(safe-area-inset-bottom, 0px)); pointer-events: none; } }
     .w4d-row { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; }
+    .w4d-row[hidden] { display: none; }
     .w4d-row button {
       background: rgba(0, 0, 0, 0.45);
       border: 1px solid rgba(255, 255, 255, 0.25);

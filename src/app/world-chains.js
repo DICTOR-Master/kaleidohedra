@@ -21,10 +21,14 @@ const ROLE = { ico: 0x5fd38a, cap: 0x5fd38a, lcap: 0x5fd38a, lj11: 0x5fd38a, npy
   dodeca: 0xffc857, j63: 0x5fd38a, pyr5: 0xffc857, tet: 0x5fd38a, ipyr5: 0xffc857, itet: 0x5fd38a, wedge: 0x4dd0e1, needle: 0xc792ea, star: 0xc792ea, unit: 0xffc857,
   // The 13s (the neighbours' copies in RD 13's blocks view, N, are dimmer)
   j11: 0x5fd38a, hasu: 0x5fd38a, idd: 0xffc857, vajra: 0xc792ea, rdCentre: 0xffc857, rd: 0x9fb4c8, rdA: 0x5fd38a, rdB: 0x4dd0e1,
-  rdCentreN: 0x8a7440, rdAN: 0x3f7a57, rdBN: 0x33808a };
+  rdCentreN: 0x8a7440, rdAN: 0x3f7a57, rdBN: 0x33808a,
+  // DICTO Icosahedral Octet
+  admiral: 0x4dd0e1, icoSmall: 0xffc857, weirdstone: 0xc792ea, tadpole: 0xf08fc0, tet: 0xc792ea, frog: 0xf08fc0, pyroUp: 0xffc857,
+  pyroDown: 0xc792ea, octGlass: 0x9fd8ff, tetGlass: 0x9fd8ff, lotusJewel: 0x5fd38a, voidDodeca: 0xffc857 };
 // Crystal: which roles turn see-through (the shells), per chain.
 const CHAINS_GLASS = { karma: new Set(['ico']), dharma: new Set(['core', 'lj11']), bodhi: new Set(['copy']) };
-const ALWAYS_GLASS = new Set(['outer']);
+// Always see-through: an outer form, and the octet's cells round the pyrochlore view's tetrahedra.
+const ALWAYS_GLASS = new Set(['outer', 'octGlass', 'tetGlass']);
 const EDGE_COLOR = 0x0b1220;
 const lang = () => getSettings().language;
 
@@ -35,7 +39,8 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   const group = new THREE.Group();
   group.visible = false;
   scene.add(group);
-  const view = { kind: KINDS[0], part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false };
+  // size: for views that grow (a function of the size, DICTO Icosahedral Octet), how far out the network goes.
+  const view = { kind: KINDS[0], part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false, size: 2 };
   try {
     const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (KINDS.includes(d?.kind)) view.kind = d.kind;
@@ -43,6 +48,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     if (Number.isFinite(d?.apart)) view.apart = Math.max(0, Math.min(1.2, d.apart));
     if (Number.isFinite(d?.shells)) view.shells = Math.max(0, Math.min(1, d.shells));
     view.crystal = d?.crystal === true;
+    if (Number.isInteger(d?.size)) view.size = Math.max(1, Math.min(4, d.size));
   } catch { /* corrupt or blocked storage: defaults */ }
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(view)); } catch { /* best-effort */ } };
   let active = false;
@@ -52,12 +58,23 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   function clearGroup() {
     for (const child of [...group.children]) { group.remove(child); child.geometry.dispose(); if (child.isLineSegments) child.material.dispose(); }
   }
+  // A view is a list of pieces, or a function of the size that builds one (cached per size).
+  const grown = new Map();
+  const growing = () => typeof DATA[view.kind].views[view.part[view.kind]] === 'function';
+  const maxSize = () => DATA[view.kind].maxSize ?? 3;
+  function viewList() {
+    const v = DATA[view.kind].views[view.part[view.kind]];
+    if (typeof v !== 'function') return v;
+    const size = Math.min(view.size, maxSize()), key = `${view.kind}.${view.part[view.kind]}.${size}`;
+    if (!grown.has(key)) grown.set(key, v(size));
+    return grown.get(key);
+  }
   const centreOf = (P) => P.reduce((a, p) => a.map((c, i) => c + p[i] / P.length), [0, 0, 0]);
   let radius = 1;
   function draw() {
     clearGroup();
     if (!active) return;
-    const list = DATA[view.kind].views[view.part[view.kind]];
+    const list = viewList();
     const all = list.flatMap((p) => p[1]);
     const c0 = centreOf(all);
     radius = Math.max(...all.map((p) => Math.hypot(...p.map((c, i) => c - c0[i]))));
@@ -105,6 +122,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   panel.className = 'qc-panel';
   panel.innerHTML = `
     <div class="w4d-row"><label class="hull-pick"><span class="ch-view-label"></span> <select class="hull-select" data-select="part"></select></label></div>
+    <div class="w4d-row ch-size-row"><label class="hull-pick"><span class="ch-size-label"></span> <input type="range" class="st-slider" min="1" max="3" step="1"></label></div>
     <div class="w4d-row ch-apart-row"><label class="hull-pick"><span class="ch-apart-label"></span> <input type="range" class="st-slider" min="0" max="1200" step="1"></label></div>
     <div class="w4d-row ch-shells-row"><label class="hull-pick"><span class="ch-shells-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row w4d-options"><button type="button" data-chains-crystal></button></div>
@@ -115,6 +133,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   const apartInput = panel.querySelector('.ch-apart-row input');
   const crystalBtn = panel.querySelector('[data-chains-crystal]');
   const shellsInput = panel.querySelector('.ch-shells-row input');
+  const sizeInput = panel.querySelector('.ch-size-row input');
   function renderPanel() {
     panel.classList.toggle('visible', active);
     if (!active) return;
@@ -122,6 +141,9 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     panel.querySelector('.ch-view-label').textContent = t('icosa.view', L);
     partSelect.innerHTML = Object.keys(DATA[view.kind].views)
       .map((v) => `<option value="${v}"${v === view.part[view.kind] ? ' selected' : ''}>${t(`${prefix}.${view.kind}.${v}`, L)}</option>`).join('');
+    panel.querySelector('.ch-size-row').hidden = !growing();
+    panel.querySelector('.ch-size-label').textContent = t('chains.size', L);
+    sizeInput.max = String(maxSize()); sizeInput.value = String(Math.min(view.size, maxSize()));
     panel.querySelector('.ch-apart-label').textContent = t('icosa.apart', L);
     apartInput.value = String(Math.round(view.apart * 1000));
     panel.querySelector('.ch-shells-label').textContent = t('chains.shells', L);
@@ -134,6 +156,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   apartInput.addEventListener('change', fit);
   shellsInput.addEventListener('input', () => { view.shells = Number(shellsInput.value) / 1000; save(); draw(); });
   shellsInput.addEventListener('change', fit);
+  sizeInput.addEventListener('input', () => { view.size = Number(sizeInput.value); save(); draw(); fit(); });
   crystalBtn.addEventListener('click', () => { view.crystal = !view.crystal; save(); draw(); });
   let shownLang = lang();
   onSettingsChange((st) => { if (st.language !== shownLang) { shownLang = st.language; if (active) renderPanel(); } });
@@ -158,7 +181,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     },
     /** Back to each shape's first view (leaving the world, DICTO 2026-10-13). */
     resetView() {
-      Object.assign(view, { part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false }); save();
+      Object.assign(view, { part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false, size: 2 }); save();
       if (active) { draw(); fit(); }
     },
     setSkeleton(on) { if (on !== skeleton) { skeleton = on; if (active) draw(); } },
