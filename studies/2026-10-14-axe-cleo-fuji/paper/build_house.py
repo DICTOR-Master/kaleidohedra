@@ -14,6 +14,7 @@ html = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><title>AXE
 .logo {{ float: right; width: 30mm; margin: 0 0 4mm 6mm; }}
 .watermark {{ position: fixed; top: 50%; left: 50%; width: 120mm; transform: translate(-50%, -50%); opacity: .05; z-index: -1; }}
 img {{ max-width: 100%; }}
+.lead {{ width: 100%; margin: 2mm 0 4mm; }}
 table {{ font-size: 7pt; }}
 </style></head><body>
 <img class="watermark" src="dicto-logo.png" alt="">
@@ -25,6 +26,7 @@ table {{ font-size: 7pt; }}
 Version 1 (draft) · 14 October 2026 · DOI on release · Licence CC BY 4.0 · Data, scripts, figures, nets and checks: studies/2026-10-14-axe-cleo-fuji and studies/2026-10-10-icosa-13 at https://github.com/DICTOR-Master/kaleidohedra.<br>
 The structures, the pieces and all their names, and the 63-piece build are DICTO's. Computation and checking with Claude (Anthropic).
 </div>
+<img class="lead" src="figures/fig6-stars.jpg" alt="Triskelion Hex, Triskelion and Inner Eye">
 <div class="abstract"><b>Abstract.</b> {md.render(abstract.strip())}</div>
 {body}
 </body></html>'''
