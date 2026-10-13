@@ -9,6 +9,7 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { rdRawVerts, cellToWorld, nearestValidCell, isValidCell, cellKey, pyramidPieces, rdQuarterPieces, cellsInShells, cuboctahedronVertices, octGapVertices, hemisphereSplit, NEIGHBOR_OFFSETS } from './krp-core/src/core/lattice.js';
 import { FULL_PYRAMIDS, presentAxisKeys, hasCube, effectivePyramids } from './krp-core/src/core/pyramid.js';
 import { createAlmanac } from './app/almanac.js';
+import { createLanguageButton } from './app/language-picker.js';
 import { getDual, DUAL_DIRS, snapToDual } from './krp-core/src/core/dual.js';
 import { bccShapeScaleFor } from './krp-core/src/geometry-extensions/bcc-detail-lattice.js';
 import { truncatedOctahedronVertices, nearestBCCPoints, nearestFCCPoints, BCC_NEIGHBOR_OFFSETS } from './krp-core/src/geometry-extensions/dual-lattice.js';
@@ -3988,6 +3989,24 @@ async function init() {
   }
   almanacBtn.addEventListener('click', () => almanac.open(almanacContext()));
   (document.getElementById('hud-tools') ?? document.body).appendChild(almanacBtn);
+  // The bottom stack (DICTO 2026-10-13, big sliders): how high the panels and the Shear sheet reach from the
+  // bottom, so prompts and notices stand above them instead of over a slider.
+  {
+    const stack = () => {
+      const tops = [...document.querySelectorAll('.qc-panel.visible, #world4d-panel.visible, #kaleido-body:not([hidden])')]
+        .map((el) => el.getBoundingClientRect()).filter((r) => r.height > 0).map((r) => r.top);
+      const h = tops.length ? Math.round(innerHeight - Math.min(...tops)) : 0;
+      document.documentElement.style.setProperty('--bottom-stack', `${h}px`);
+      document.body.classList.toggle('bottom-stack', h > 0);
+    };
+    const watch = new ResizeObserver(stack);
+    const observeAll = () => document.querySelectorAll('.qc-panel, #world4d-panel, #kaleido-body').forEach((el) => watch.observe(el));
+    new MutationObserver(observeAll).observe(document.body, { childList: true });
+    observeAll();
+    addEventListener('resize', stack);
+  }
+  // 🌐 at the top of the tools column, in every app and world (DICTO 2026-10-13): the full list of languages.
+  document.getElementById('hud-tools')?.prepend(createLanguageButton());
   // The menu's action path, for callers outside the block below
   // (Construct's "Open in 4D").
   let runWheelAction = () => {};

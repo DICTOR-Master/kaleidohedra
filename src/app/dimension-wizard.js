@@ -66,7 +66,8 @@ import { FOUR_D_SHAPE_PARAMS, resolveParamsKey } from '../krp-core/src/polyhedra
 import { SITE, SITES, setActiveSite, activeSite, themeOf } from './site.js';
 import { countDicto } from './analytics.js';
 import { dimensionLabel } from './dimension-label.js';
-import { getSettings } from './settings.js';
+import { getSettings, onSettingsChange } from './settings.js';
+import { createLanguageButton } from './language-picker.js';
 
 const CSS = `
 .dim-wizard-overlay {
@@ -96,6 +97,7 @@ const CSS = `
   margin-bottom: 4px;
 }
 /* The DICTOspheres home, from every app (DICTO 2026-10-13). */
+.dim-wizard-header .lang-btn { margin-right: 8px; }
 .dim-wizard-home { margin-left: auto; margin-right: 8px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; color: #e8c25a; white-space: nowrap; text-decoration: none;
   min-height: var(--touch); display: inline-flex; align-items: center; padding: 0 6px; }
 .dim-wizard-home:hover, .dim-wizard-home:focus-visible { text-decoration: underline; }
@@ -739,6 +741,10 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
       <div class="dim-wizard-body"></div>
     </div>`;
   document.body.appendChild(overlay);
+  // 🌐 in the header (DICTO 2026-10-13: languages easy to find everywhere); the open screen redraws in the new language.
+  overlay.querySelector('.dim-wizard-close').before(createLanguageButton());
+  let shownLang = getSettings().language;
+  onSettingsChange((st) => { if (st.language !== shownLang) { shownLang = st.language; if (overlay.classList.contains('open')) current(); } });
   const bodyEl = overlay.querySelector('.dim-wizard-body');
   const titleEl = overlay.querySelector('.dim-wizard-title');
   // The tapped button's label, for a world's title when the lists don't name it (a Polyhedraverse shape, a catalogue entry).

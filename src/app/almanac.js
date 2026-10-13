@@ -15,7 +15,8 @@
 // (cyan accent, near-black panel) as changelog.js/cyborg.js already use.
 import { ALMANAC_ENTRIES } from './almanac-data.js';
 import { t } from './i18n.js';
-import { getSettings } from './settings.js';
+import { getSettings, onSettingsChange } from './settings.js';
+import { createLanguageButton } from './language-picker.js';
 import { mountWireframePreview } from './wireframe-preview.js';
 import { polyShapeEdges } from './poly-shapes.js';
 // DICTO's entries read their words in the current language; the older entries are English.
@@ -53,6 +54,7 @@ const CSS = `
   color: var(--accent);
   margin-bottom: 12px;
 }
+.almanac-header-tools { display: flex; align-items: center; gap: 8px; }
 .almanac-close { background: none; border: none; color: var(--accent); cursor: pointer; font: var(--text-l) var(--font-ui); }
 .almanac-list { display: flex; flex-direction: column; gap: 4px; }
 .almanac-entry {
@@ -155,12 +157,22 @@ export function createAlmanac({ onOpen } = {}) {
   overlay.className = 'almanac-overlay';
   overlay.innerHTML = `
     <div class="almanac-card">
-      <div class="almanac-header"><span>Almanac</span><button type="button" class="almanac-close">✕</button></div>
+      <div class="almanac-header"><span>Almanac</span><span class="almanac-header-tools"><button type="button" class="almanac-close">✕</button></span></div>
       <div class="almanac-list"></div>
       <div class="almanac-detail"></div>
     </div>`;
   document.body.appendChild(overlay);
 
+  // 🌐 beside ✕ (DICTO 2026-10-13); the list and the open entry redraw in the new language.
+  overlay.querySelector('.almanac-close').before(createLanguageButton());
+  let shownIndex = -1, shownLang = getSettings().language;
+  onSettingsChange((st) => {
+    if (st.language === shownLang) return;
+    shownLang = st.language;
+    if (!overlay.classList.contains('open')) return;
+    renderList();
+    if (detailEl.style.display === 'block' && shownIndex >= 0) showDetail(shownIndex);
+  });
   const listEl = overlay.querySelector('.almanac-list');
   const detailEl = overlay.querySelector('.almanac-detail');
 
@@ -197,6 +209,7 @@ export function createAlmanac({ onOpen } = {}) {
   function showDetail(index) {
     const entry = ALMANAC_ENTRIES[index];
     if (!entry) return;
+    shownIndex = index;
     disposePreview?.(); disposePreview = null;
     if (KIND_KEY[entry.kind]) {
       const L = lang();

@@ -127,8 +127,16 @@ function buildPanel(state, apply) {
     #kaleido-panel { position: fixed; right: calc(12px + var(--touch) + 8px); top: 150px; z-index: 50; max-width: min(300px, calc(100vw - 88px)); font: var(--text-m) var(--font-ui); color: #d8f0ff; }
     @media (pointer: coarse) and (min-width: 700px) and (min-height: 600px) { #kaleido-panel { right: calc(28px + var(--touch) + 14px); top: 166px; } } /* tablets: clear of the tools column, which moves in from the iPad's edges */
     #kaleido-panel button { min-height: var(--touch-compact); background: rgba(0, 0, 0, 0.45); color: var(--accent); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: var(--radius-s); padding: 4px 10px; cursor: pointer; } /* the shared button look */
-    #kaleido-body { margin-top: 6px; padding: 10px; background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: var(--radius-m); display: grid; gap: 8px;
-      max-height: calc(100dvh - 280px); overflow-y: auto; overscroll-behavior: contain; } /* phones: the Kept list or the six sliders must stay reachable */
+    /* Open, the Shear is a sheet along the bottom (DICTO 2026-10-13, iPad demo: sliders big, long and as low as
+       possible): full width, above the bottom buttons and any world panel (placeSheet), Path lowest, Cell above it. */
+    #kaleido-body { position: fixed; left: 50%; transform: translateX(-50%); width: min(720px, calc(100vw - 16px)); box-sizing: border-box;
+      bottom: calc(var(--shear-sheet-bottom, var(--bottom-clear, 52px)) + env(safe-area-inset-bottom, 0px)); z-index: 901;
+      padding: 10px; background: rgba(0, 0, 0, 0.72); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: var(--radius-m); display: grid; gap: 8px;
+      overflow-y: auto; overscroll-behavior: contain; } /* max-height: placeSheet; the Kept list or the six sliders stay reachable */
+    #kaleido-body > #kaleido-meter { order: 17; }
+    #kaleido-body > #kaleido-stop-buttons { order: 18; }
+    #kaleido-body > .kaleido-row:has(#kaleido-cell) { order: 19; }
+    #kaleido-body > .kaleido-row:has(#kaleido-path) { order: 20; }
     #kaleido-body[hidden] { display: none; }
     .kaleido-row { display: grid; grid-template-columns: auto 1fr; gap: 2px 8px; align-items: center; }
     .kaleido-row input, .kaleido-row select { grid-column: 1 / -1; width: 100%; min-height: 28px; }
@@ -136,7 +144,7 @@ function buildPanel(state, apply) {
     .kaleido-stops { display: flex; gap: 6px; flex-wrap: wrap; }
     /* The red band (DICTO, 2026-10-08): where on the path the cell stops filling space, for this Cell value.
        Inset by half a thumb so it lines up with the slider's travel. */
-    #kaleido-band { grid-column: 1 / -1; height: 5px; margin: -2px 9px 0; border-radius: 3px; }
+    #kaleido-band { grid-column: 1 / -1; height: 5px; margin: -2px 20px 0; border-radius: 3px; }
     .kaleido-gap { color: #ff6b6b; }
     #kaleido-note { font-size: var(--text-s); color: var(--accent); min-height: 1em; overflow-wrap: anywhere; }
     #kaleido-kept-list { display: grid; gap: 6px; margin-top: 6px; }
@@ -211,10 +219,30 @@ function buildPanel(state, apply) {
     $('#kaleido-note').textContent = `${what} at ${next.at.toFixed(3)}.`;
   };
   $('#kaleido-find').addEventListener('click', find);
+  // The sheet sits on top of whichever world panel is showing at the bottom, following its height.
+  // It stays below the tools column (phones), scrolling inside instead.
+  const placeSheet = () => {
+    const root = document.documentElement;
+    const clear = parseFloat(getComputedStyle(root).getPropertyValue('--bottom-clear')) || 52;
+    const h = Math.max(0, ...[...document.querySelectorAll('.qc-panel.visible, #world4d-panel.visible')].map((p) => p.offsetHeight));
+    const bottom = clear + (h ? h + 8 : 0);
+    root.style.setProperty('--shear-sheet-bottom', `${bottom}px`);
+    const tools = document.getElementById('hud-tools')?.getBoundingClientRect();
+    const sheetLeft = (innerWidth - Math.min(720, innerWidth - 16)) / 2;
+    const top = tools && tools.left < innerWidth - sheetLeft ? tools.bottom + 8 : 150;
+    $('#kaleido-body').style.maxHeight = `${Math.max(160, innerHeight - bottom - top)}px`;
+  };
+  const sheetWatch = new ResizeObserver(placeSheet);
   $('#kaleido-toggle').addEventListener('click', () => {
     const body = $('#kaleido-body');
     body.hidden = !body.hidden;
     $('#kaleido-toggle').setAttribute('aria-expanded', String(!body.hidden));
+    sheetWatch.disconnect();
+    if (!body.hidden) {
+      document.querySelectorAll('.qc-panel, #world4d-panel').forEach((p) => sheetWatch.observe(p));
+      placeSheet();
+      body.scrollTop = body.scrollHeight; // Path and Cell, at the bottom, in view first
+    }
   });
   path.addEventListener('input', () => setPath(Number(path.value)));
   towards.addEventListener('change', () => { state.towards = towards.value; layoutPath(); setPath(0); });

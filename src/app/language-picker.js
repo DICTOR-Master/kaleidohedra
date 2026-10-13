@@ -14,7 +14,10 @@ function addStyle() {
   style.textContent = `
 .lang-picker { display: inline-flex; align-items: center; gap: 6px; font: var(--text-m) var(--font-ui); color: #cfe8ff; }
 .lang-picker .globe { font-size: var(--text-xl); line-height: 1; }
-.lang-picker select { min-height: var(--touch); padding: 0 10px; background: rgba(10, 14, 24, 0.85); color: #e8f4ff; border: 1px solid rgba(var(--accent-rgb), 0.45); border-radius: var(--radius-m); font: inherit; cursor: pointer; }`;
+.lang-picker select { min-height: var(--touch); padding: 0 10px; background: rgba(10, 14, 24, 0.85); color: #e8f4ff; border: 1px solid rgba(var(--accent-rgb), 0.45); border-radius: var(--radius-m); font: inherit; cursor: pointer; }
+.lang-btn { position: relative; flex: 0 0 auto; width: var(--touch); height: var(--touch); display: flex; align-items: center; justify-content: center;
+  font: var(--text-xl)/1 var(--font-ui); background: rgba(10, 10, 18, 0.72); border: 1px solid rgba(var(--accent-rgb), 0.45); border-radius: var(--radius-m); cursor: pointer; }
+.lang-btn select { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; font-size: 16px; }`;
   document.head.appendChild(style);
 }
 
@@ -32,5 +35,14 @@ export function createLanguagePicker() {
   sync(getSettings().language);
   select.addEventListener('change', () => updateSettings({ language: select.value }));
   onSettingsChange((s) => sync(s.language));
+  return label;
+}
+
+/** The same picker as one 🌐 button (DICTO 2026-10-13: languages easy to find everywhere): tapping it opens
+ *  the full list of languages (the select, invisible, covers the button, so the system list opens). */
+export function createLanguageButton() {
+  addStyle();
+  const label = createLanguagePicker();
+  label.className = 'lang-btn';
   return label;
 }

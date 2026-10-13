@@ -251,6 +251,40 @@
     /* 2D+ on phones: its panel sits at the bottom too, so prompts go above it (2D audit, 2026-10-10). */
     @media (max-width: 600px) { body.flat-2d #hud-prompt { bottom: calc(170px + env(safe-area-inset-bottom, 0px)); pointer-events: none; } }
     .w4d-row { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; }
+    /* Big sliders for adult fingers (DICTO 2026-10-13, after an iPad demo): a 40px thumb on a thick track, the
+       full width of the panel, its label and value above it, and the slider rows lowest in the panel, right
+       above the bottom buttons. Wider panels on tablets so the sliders are long. */
+    :root { --bottom-clear: 52px; } /* the bottom buttons' height: panels stand just above it */
+    #world4d-panel, .qc-panel { width: min(720px, calc(100vw - 16px)); bottom: calc(var(--bottom-clear) + env(safe-area-inset-bottom, 0px)); }
+    /* Prompts and notices stand above whatever panel or sheet is at the bottom (--bottom-stack, render.js), never on a slider. */
+    body.bottom-stack #hud-prompt { bottom: calc(var(--bottom-stack) + 8px) !important; pointer-events: none; }
+    .qc-panel > .w4d-row:has(input[type=range]), #world4d-panel > .w4d-row:has(input[type=range]) { order: 10; }
+    .w4d-row:has(input[type=range]) > label { flex: 1 1 100%; flex-wrap: wrap; justify-content: center; gap: 2px 8px; }
+    .w4d-row > label > input[type=range] { order: 2; flex: 1 1 100%; }
+    .w4d-row > input[type=range] { flex: 1 1 auto; }
+    #packing-panel .pack-row { flex-wrap: wrap; gap: 2px 10px; }
+    #packing-panel .pack-row input[type=range] { flex: 1 1 100%; }
+    .qc-panel input[type=range], #world4d-panel input[type=range], #kaleido-panel input[type=range], .net-controls input[type=range] {
+      -webkit-appearance: none; appearance: none; width: 100%; min-width: 0; height: 48px; margin: 0;
+      background: transparent; touch-action: none; cursor: pointer;
+    }
+    .qc-panel input[type=range]::-webkit-slider-runnable-track, #world4d-panel input[type=range]::-webkit-slider-runnable-track,
+    #kaleido-panel input[type=range]::-webkit-slider-runnable-track, .net-controls input[type=range]::-webkit-slider-runnable-track {
+      height: 12px; border-radius: 6px; background: rgba(255, 255, 255, 0.16); border: 1px solid rgba(var(--accent-rgb), 0.55);
+    }
+    .qc-panel input[type=range]::-webkit-slider-thumb, #world4d-panel input[type=range]::-webkit-slider-thumb,
+    #kaleido-panel input[type=range]::-webkit-slider-thumb, .net-controls input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none; width: 40px; height: 40px; margin-top: -15px; border-radius: 50%;
+      background: var(--accent-strong); border: 3px solid #fff; box-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+    }
+    .qc-panel input[type=range]::-moz-range-track, #world4d-panel input[type=range]::-moz-range-track,
+    #kaleido-panel input[type=range]::-moz-range-track, .net-controls input[type=range]::-moz-range-track {
+      height: 12px; border-radius: 6px; background: rgba(255, 255, 255, 0.16); border: 1px solid rgba(var(--accent-rgb), 0.55);
+    }
+    .qc-panel input[type=range]::-moz-range-thumb, #world4d-panel input[type=range]::-moz-range-thumb,
+    #kaleido-panel input[type=range]::-moz-range-thumb, .net-controls input[type=range]::-moz-range-thumb {
+      width: 34px; height: 34px; border-radius: 50%; background: var(--accent-strong); border: 3px solid #fff; box-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+    }
     .w4d-row[hidden] { display: none; }
     .w4d-row button {
       background: rgba(0, 0, 0, 0.45);
@@ -951,6 +985,7 @@
       #about-btn { right: 28px; bottom: 20px; }
       #changelog-btn { right: 70px; bottom: 20px; }
       #undo-widget { right: 112px; bottom: 20px; }
+      :root { --bottom-clear: 72px; } /* the bottom buttons stand 20px up on tablets */
       #lab-panel { top: 72px; right: 28px; }
       #hud-wordmark { top: 30px; left: 24px; }
       #hud-wizard-row { top: 54px; left: 24px; }
