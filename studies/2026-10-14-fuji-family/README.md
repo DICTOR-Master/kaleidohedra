@@ -129,6 +129,11 @@ face, sphere about 7.5 cm across. That is the cube ∩ octahedron family between
 - **Ports of 3 cm diameter:** clearance **0.50 cm** from each square's port to its sides and **0.50 cm** from each triangle's port to
   its long sides (equal, as above), and 1.23 cm to the short sides, where the triangles meet each other.
 
+**Port gaps (DICTO, rim to rim):** 3 cm triangle to triangle, 4 cm square to square. Straight across, the model's centre-to-centre
+distances are 4.46 and 5.46 cm: they differ by exactly 1.00 cm, as DICTO's gaps do, which fixes the inscribed sphere at
+ρ = 1/(1.4142 − 1.1547) = 3.86 cm, the same value the 4 cm long side gave. Subtracting, the holes would be about 1.46 cm across,
+against the 3 cm port size given; to be checked (hole diameter vs bottle collar).
+
 So DICTO's working rule, even space round every port, fixes the shape exactly: the cube–octahedron solid with an inscribed sphere,
 whose triangles are the flat-ended triangles of the cuboctahedral member. (It is also the Wulff shape of a cubic crystal whose
 {100} and {111} surfaces have equal energy, since the Wulff construction puts the planes at distances proportional to the
