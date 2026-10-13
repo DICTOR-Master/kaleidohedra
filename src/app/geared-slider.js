@@ -4,6 +4,8 @@
 // to the nearest click-stop within `snap()`. Everything is a function so
 // the owner can switch what the slider controls without rebuilding it.
 // Markup: a `.w4d-track` holding `.w4d-ticks` and `.w4d-thumb`.
+const EDGE = 26; // the track's end margin, half its height (index.html .w4d-track)
+
 export function createGearedSlider(track, { value, setValue, limit, perSweep, detents, snap, onEnd = () => {} }) {
   const thumb = track.querySelector('.w4d-thumb');
   const ticks = track.querySelector('.w4d-ticks');
@@ -15,10 +17,10 @@ export function createGearedSlider(track, { value, setValue, limit, perSweep, de
     // room past it (about 6.5px a character plus the indent) or its label
     // hangs off the end of the track; ticks and thumb share that margin.
     const last = ds.find(({ v, below }) => !below && (v + L) / (2 * L) > 0.95);
-    const right = last?.label ? Math.max(17, Math.ceil(22 + 6.5 * String(last.label).length)) : 17;
+    const right = last?.label ? Math.max(EDGE, Math.ceil(30 + 6.5 * String(last.label).length)) : EDGE;
     ticks.style.right = `${right}px`;
     ticks.innerHTML = ds.map(({ v, label, below }) => `<span class="w4d-tick${below ? ' w4d-tick-below' : ''}" style="left:${((v + L) / (2 * L)) * 100}%">${label}</span>`).join('');
-    thumb.style.left = `calc(17px + (100% - ${17 + right}px) * ${(value() + L) / (2 * L)})`;
+    thumb.style.left = `calc(${EDGE}px + (100% - ${EDGE + right}px) * ${(value() + L) / (2 * L)})`;
   }
 
   let drag = null;

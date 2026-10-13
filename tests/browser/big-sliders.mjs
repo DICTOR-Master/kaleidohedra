@@ -24,6 +24,10 @@ for (const [name, viewport] of [['ipad', { width: 1024, height: 1366 }], ['phone
   console.log(name, 'menu in ja:', sub.slice(0, 40));
   assert.ok(/[぀-ヿ一-鿿]/.test(sub), `${name}: the menu should redraw in Japanese`);
   await page.screenshot({ path: `${SHOTS}/lang-menu-${name}.png` });
+  // The Shear panel follows the language too.
+  const shearJa = await page.textContent('#kaleido-toggle');
+  console.log(name, 'shear in ja:', shearJa);
+  assert.ok(/シアー/.test(shearJa), `${name}: the Shear button in Japanese`);
   await page.selectOption('.dim-wizard-header .lang-btn select', 'en');
   await page.keyboard.press('Escape');
   await page.waitForTimeout(400);
@@ -82,6 +86,35 @@ for (const [name, viewport] of [['ipad', { width: 1024, height: 1366 }], ['phone
   assert.ok(w.sliders.length && w.sliders.every(([wd, h]) => wd >= Math.min(600, w.vw - 60) && h >= 44), `${name}: world sliders long and tall`);
   assert.ok(w.sliders.every(([, , b]) => b <= w.undoTop), `${name}: world sliders above the bottom buttons`);
   await page.screenshot({ path: `${SHOTS}/chains-${name}.png` });
+  // The 4D geared slider: tall, long, lowest in its panel and above the bottom buttons; a finger drag moves it.
+  await page.tap('#hud-wizard-cue');
+  await page.tap('.dim-wizard-card-btn[data-dim="4D"]');
+  await page.tap('[data-action="tool:pieceType:tesseract"]');
+  await page.waitForSelector('#world4d-panel.visible', { timeout: 15000 });
+  await page.waitForTimeout(800);
+  const g = await page.evaluate(() => {
+    const p = document.getElementById('world4d-panel');
+    const tr = p.querySelector('.w4d-track').getBoundingClientRect();
+    const lowest = Math.max(...[...p.children].filter((c) => c.offsetParent && !c.classList.contains('panel-min')).map((c) => c.getBoundingClientRect().bottom));
+    const thumb = p.querySelector('.w4d-thumb').getBoundingClientRect();
+    return { track: [tr.left, tr.width, tr.height, tr.top, tr.bottom], lowest, thumb: [thumb.left + thumb.width / 2, thumb.height], undoTop: document.getElementById('undo-btn').getBoundingClientRect().top, vw: innerWidth };
+  });
+  console.log(name, '4d', JSON.stringify(g));
+  assert.ok(g.track[1] >= Math.min(600, g.vw - 60) && g.track[2] >= 48 && g.thumb[1] >= 40, `${name}: 4D slider long and tall`);
+  assert.ok(g.track[4] >= g.lowest - 0.5, `${name}: 4D slider lowest in its panel`);
+  assert.ok(g.track[4] <= g.undoTop, `${name}: 4D slider above the bottom buttons`);
+  const thumbX = () => page.evaluate(() => { const r = document.querySelector('#world4d-panel .w4d-thumb').getBoundingClientRect(); return r.left + r.width / 2; });
+  const x0 = await thumbX();
+  const cdp4 = await page.context().newCDPSession(page);
+  const ty = (g.track[3] + g.track[4]) / 2;
+  await cdp4.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: x0, y: ty }] });
+  for (let i = 1; i <= 10; i++) await cdp4.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: x0 + i * 15, y: ty }] });
+  await cdp4.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+  await page.waitForTimeout(200);
+  const x1 = await thumbX();
+  console.log(name, '4d drag thumb', Math.round(x0), '->', Math.round(x1));
+  assert.ok(Math.abs(x1 - x0) > 20, `${name}: a finger drag moves the 4D slider`);
+  await page.screenshot({ path: `${SHOTS}/4d-${name}.png` });
   console.log(name, errors.length ? `ERRORS: ${errors.join(' | ')}` : 'no errors');
   assert.equal(errors.length, 0);
   await page.close();

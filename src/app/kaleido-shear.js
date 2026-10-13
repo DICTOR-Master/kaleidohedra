@@ -93,30 +93,30 @@ function buildPanel(state, apply) {
   const panel = document.createElement('div');
   panel.id = 'kaleido-panel';
   panel.innerHTML = `
-    <button type="button" id="kaleido-toggle" aria-expanded="false" title="Shear the lattice">⟋ Shear</button>
+    <button type="button" id="kaleido-toggle" aria-expanded="false"></button>
     <div id="kaleido-body" hidden>
-      <button type="button" id="kaleido-reset" title="Back to the ordinary FCC lattice and its regular rhombic dodecahedron">↺ Reset to FCC</button>
-      <label class="kaleido-row">Towards
+      <button type="button" id="kaleido-reset"></button>
+      <label class="kaleido-row"><span data-t="towards"></span>
         <select id="kaleido-towards">${Object.entries(TOWARDS).map(([id, t]) => `<option value="${id}">${t.name}</option>`).join('')}</select>
       </label>
-      <label class="kaleido-row">Path <span id="kaleido-path-val"></span>
+      <label class="kaleido-row"><span data-t="path"></span> <span id="kaleido-path-val"></span>
         <input type="range" id="kaleido-path" step="0.01" list="kaleido-stops">
         <span id="kaleido-band" aria-hidden="true"></span>
       </label>
       <datalist id="kaleido-stops"></datalist>
       <div class="kaleido-stops" id="kaleido-stop-buttons"></div>
-      <label class="kaleido-row">Cell <span id="kaleido-cell-val"></span>
+      <label class="kaleido-row"><span data-t="cell"></span> <span id="kaleido-cell-val"></span>
         <input type="range" id="kaleido-cell" min="0" max="1" step="0.01"></label>
-      <div id="kaleido-meter" title="How regular the cell is: 1 = every angle special (36, 45, 60, 70.5, 72 or 90 degrees)"></div>
-      <div class="kaleido-stops"><button type="button" id="kaleido-find">Find</button></div>
-      <details><summary>Six sliders</summary>
+      <div id="kaleido-meter"></div>
+      <div class="kaleido-stops"><button type="button" id="kaleido-find" data-t="find"></button></div>
+      <details><summary data-t="six"></summary>
         ${KEYS.map((k) => {
           const isAngle = k.length > 1;
           return `<label class="kaleido-row">${isAngle ? `${{ alpha: 'α', beta: 'β', gamma: 'γ' }[k]}` : k} <span data-val="${k}"></span>
             <input type="range" data-key="${k}" min="${isAngle ? 20 : 0.3}" max="${isAngle ? 150 : 2.5}" step="${isAngle ? 0.1 : 0.005}"></label>`;
         }).join('')}
       </details>
-      <button type="button" id="kaleido-export">Export member</button>
+      <button type="button" id="kaleido-export" data-t="export"></button>
       <div class="kaleido-stops"><button type="button" id="kaleido-keep"></button></div>
       <details id="kaleido-kept"><summary></summary><div id="kaleido-kept-list"></div></details>
       <div id="kaleido-note" aria-live="polite"></div>
@@ -155,6 +155,17 @@ function buildPanel(state, apply) {
     .kept-row .kept-actions button { min-height: var(--touch-compact); }`;
   panel.appendChild(style);
   const $ = (sel) => panel.querySelector(sel);
+  // Every word in the panel follows the language setting (DICTO 2026-10-13).
+  const T = (key, vars) => t(`shear.${key}`, lang(), vars);
+  const stopName = (name) => ({ halfway: T('stop.halfway'), start: T('stop.start') }[name] ?? name);
+  const relabel = () => {
+    $('#kaleido-toggle').textContent = `⟋ ${T('toggle')}`;
+    $('#kaleido-toggle').title = T('toggle.title');
+    $('#kaleido-reset').textContent = `↺ ${T('reset')}`;
+    $('#kaleido-reset').title = T('reset.title');
+    $('#kaleido-meter').title = T('meter.title');
+    panel.querySelectorAll('[data-t]').forEach((el) => { el.textContent = T(el.dataset.t); });
+  };
   const path = $('#kaleido-path');
   const towards = $('#kaleido-towards');
   // Stops and range belong to the chosen target.
@@ -162,23 +173,23 @@ function buildPanel(state, apply) {
     const [lo, hi] = pathRange(state.towards);
     path.min = lo; path.max = hi;
     const stops = pathStops(state.towards);
-    $('#kaleido-stops').innerHTML = stops.map((s) => `<option value="${s.at}" label="${s.name}"></option>`).join('');
-    $('#kaleido-stop-buttons').innerHTML = stops.map((s) => `<button type="button" data-stop="${s.at}">${s.name}</button>`).join('');
+    $('#kaleido-stops').innerHTML = stops.map((s) => `<option value="${s.at}" label="${stopName(s.name)}"></option>`).join('');
+    $('#kaleido-stop-buttons').innerHTML = stops.map((s) => `<button type="button" data-stop="${s.at}">${stopName(s.name)}</button>`).join('');
     $('#kaleido-stop-buttons').querySelectorAll('[data-stop]').forEach((b) => b.addEventListener('click', () => setPath(Number(b.dataset.stop))));
   };
   const refresh = () => {
     towards.value = state.towards;
     path.value = state.path ?? 0;
     $('#kaleido-cell').value = state.cell;
-    $('#kaleido-cell-val').textContent = state.cell >= 0.995 ? '1 (equal edges)' : state.cell <= 0.005 ? '0 (sheared)' : state.cell.toFixed(2);
+    $('#kaleido-cell-val').textContent = state.cell >= 0.995 ? `1 (${T('cell.equal')})` : state.cell <= 0.005 ? `0 (${T('cell.sheared')})` : state.cell.toFixed(2);
     const q = cellQuality(cellDirections(state.params, state.cell));
-    $('#kaleido-meter').innerHTML = `Regularity <b>${q.score.toFixed(2)}</b> <span style="opacity:.75">· angles ${q.angles.map((a) => a.toFixed(1)).sort((x, y) => x - y).join(', ')}°</span>`;
+    $('#kaleido-meter').innerHTML = `${T('regularity')} <b>${q.score.toFixed(2)}</b> <span style="opacity:.75">· ${T('angles')} ${q.angles.map((a) => a.toFixed(1)).sort((x, y) => x - y).join(', ')}°</span>`;
     if (state.towards === 'bain') {
       // The BCC disphenoids: shortest / longest edge, 1 = regular tetrahedron.
       const d = disphenoidQuality(state.params);
-      $('#kaleido-meter').innerHTML += `<br>Disphenoids <b>${d.best.toFixed(3)}</b> <span style="opacity:.75">· ${d.regular} of 6 regular tetrahedra</span>`;
+      $('#kaleido-meter').innerHTML += `<br>${T('disphenoids')} <b>${d.best.toFixed(3)}</b> <span style="opacity:.75">· ${T('regularTetra', { n: d.regular })}</span>`;
     }
-    $('#kaleido-path-val').textContent = state.path === null ? '(off path)' : Number(state.path).toFixed(2);
+    $('#kaleido-path-val').textContent = state.path === null ? `(${T('offPath')})` : Number(state.path).toFixed(2);
     if (!cellFillsSpace(state.params, state.cell)) $('#kaleido-meter').innerHTML += `<br><span class="kaleido-gap">${t('shear.gap', lang())}</span>`;
     paintBand();
     for (const k of KEYS) {
@@ -208,15 +219,15 @@ function buildPanel(state, apply) {
   // current Cell value, round to the first after the last.
   const targetsFor = new Map();
   const find = () => {
-    if (state.path === null) { $('#kaleido-note').textContent = 'Find works along the path: tap a stop first.'; return; }
+    if (state.path === null) { $('#kaleido-note').textContent = T('note.findOff'); return; }
     const key = `${state.towards} ${state.cell.toFixed(2)}`;
     if (!targetsFor.has(key)) targetsFor.set(key, pathTargets(state.cell, 0.6, pathRange(state.towards), 0.02, state.towards));
     const list = targetsFor.get(key);
     const next = list.find((e) => e.at > state.path + 1e-3) ?? list[0];
-    if (!next) { $('#kaleido-note').textContent = 'Nothing to find on this path.'; return; }
+    if (!next) { $('#kaleido-note').textContent = T('note.nothing'); return; }
     setPath(Math.round(next.at * 10000) / 10000);
-    const what = { hexagons: 'Hexagons: three edge directions in a plane', 'regular tetrahedra': 'Disphenoids become regular tetrahedra (BCC is now FCC)' }[next.kind] || 'Regular cell';
-    $('#kaleido-note').textContent = `${what} at ${next.at.toFixed(3)}.`;
+    const what = T({ hexagons: 'found.hexagons', 'regular tetrahedra': 'found.tetra' }[next.kind] || 'found.regular');
+    $('#kaleido-note').textContent = T('note.found', { what, at: next.at.toFixed(3) });
   };
   $('#kaleido-find').addEventListener('click', find);
   // The sheet sits on top of whichever world panel is showing at the bottom, following its height.
@@ -254,11 +265,11 @@ function buildPanel(state, apply) {
     state.cell = 1;
     layoutPath();
     setPath(0);
-    $('#kaleido-note').textContent = 'Back to the ordinary FCC lattice.';
+    $('#kaleido-note').textContent = T('note.reset');
   });
   panel.querySelectorAll('[data-key]').forEach((input) => input.addEventListener('input', () => {
     const next = { ...state.params, [input.dataset.key]: Number(input.value) };
-    if (!paramsValid(next)) { $('#kaleido-note').textContent = 'That would flatten the cells to nothing.'; refresh(); return; }
+    if (!paramsValid(next)) { $('#kaleido-note').textContent = T('note.flat'); refresh(); return; }
     $('#kaleido-note').textContent = '';
     state.params = next;
     state.path = null; // off the straight path now
@@ -266,7 +277,7 @@ function buildPanel(state, apply) {
     apply();
   }));
   $('#kaleido-export').addEventListener('click', () => {
-    const name = prompt('Name this population member:', state.path === null ? 'member' : `path ${Number(state.path).toFixed(2)}`);
+    const name = prompt(T('export.name'), state.path === null ? 'member' : `path ${Number(state.path).toFixed(2)}`);
     if (!name) return;
     const member = { name, credit: 'Kaleidohedra by DICTO', created: new Date().toISOString(), towards: state.towards, path: state.path, params: state.params, cell: state.cell, matrix: shearMatrix(state.params), cellDirections: cellDirections(state.params, state.cell), regularity: cellQuality(cellDirections(state.params, state.cell)).score };
     const blob = new Blob([JSON.stringify(member, null, 2)], { type: 'application/json' });
@@ -275,7 +286,7 @@ function buildPanel(state, apply) {
     a.download = `kaleidohedra-${name.replace(/[^a-z0-9-]+/gi, '-')}.json`;
     a.click();
     URL.revokeObjectURL(a.href);
-    $('#kaleido-note').textContent = `Exported "${name}".`;
+    $('#kaleido-note').textContent = T('note.exported', { name });
   });
   // ---- Keep (KRP stage 4) ----
   const note = (text) => { $('#kaleido-note').textContent = text; };
@@ -338,8 +349,9 @@ function buildPanel(state, apply) {
       renderKept();
     }
   });
-  onSettingsChange(renderKept);
+  onSettingsChange(() => { relabel(); layoutPath(); refresh(); renderKept(); });
 
+  relabel();
   layoutPath();
   refresh();
   renderKept();

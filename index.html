@@ -258,7 +258,8 @@
     #world4d-panel, .qc-panel { width: min(720px, calc(100vw - 16px)); bottom: calc(var(--bottom-clear) + env(safe-area-inset-bottom, 0px)); }
     /* Prompts and notices stand above whatever panel or sheet is at the bottom (--bottom-stack, render.js), never on a slider. */
     body.bottom-stack #hud-prompt { bottom: calc(var(--bottom-stack) + 8px) !important; pointer-events: none; }
-    .qc-panel > .w4d-row:has(input[type=range]), #world4d-panel > .w4d-row:has(input[type=range]) { order: 10; }
+    .qc-panel > .w4d-row:has(input[type=range]), #world4d-panel > .w4d-row:has(input[type=range]),
+    .qc-panel > .w4d-track, #world4d-panel > .w4d-track { order: 10; }
     .w4d-row:has(input[type=range]) > label { flex: 1 1 100%; flex-wrap: wrap; justify-content: center; gap: 2px 8px; }
     .w4d-row > label > input[type=range] { order: 2; flex: 1 1 100%; }
     .w4d-row > input[type=range] { flex: 1 1 auto; }
@@ -371,20 +372,22 @@
     .hull-pick { min-width: 0; max-width: 100%; }
     /* The pair lattices' count line ("4 DICTO Jewels, 0 stella octangulas"). */
     .sj-count { color: var(--accent); font: var(--text-s) var(--font-ui); }
+    /* The geared slider (4D, 5D/6D, Kaleidoscope) is big too (DICTO 2026-10-13): a 52px track and a 40px thumb;
+       its 26px end margin is EDGE in geared-slider.js. */
     .w4d-track {
-      position: relative; height: 34px; touch-action: none; cursor: ew-resize;
-      background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 17px;
+      position: relative; height: 52px; touch-action: none; cursor: ew-resize;
+      background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 26px;
     }
-    .w4d-ticks { position: absolute; inset: 0 17px; pointer-events: none; }
+    .w4d-ticks { position: absolute; inset: 0 26px; pointer-events: none; }
     .w4d-tick {
-      position: absolute; top: 4px; bottom: 4px; width: 1px; background: rgba(var(--accent-rgb), 0.35);
-      font: var(--text-xs) var(--font-ui); color: var(--accent); text-indent: 16px; line-height: 26px; white-space: nowrap;
+      position: absolute; top: 6px; bottom: 6px; width: 1px; background: rgba(var(--accent-rgb), 0.35);
+      font: var(--text-xs) var(--font-ui); color: var(--accent); text-indent: 24px; line-height: 40px; white-space: nowrap;
     }
     /* Hyper-pyrochlore's "Pyrochlore" click-stop sits just left of the FCC
        one -- its label reads leftward so the two never overlap. */
     .w4d-tick-below { direction: rtl; }
     .w4d-thumb {
-      position: absolute; top: 4px; width: 24px; height: 24px; transform: translateX(-50%);
+      position: absolute; top: 5px; width: 40px; height: 40px; transform: translateX(-50%);
       border-radius: 50%; background: var(--accent-strong); box-shadow: 0 0 6px rgba(var(--accent-rgb), 0.8); pointer-events: none;
     }
     /* Quick-select: the CURRENTLY active Piece/Color, always visible
