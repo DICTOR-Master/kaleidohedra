@@ -30,6 +30,15 @@ seed, for regular hexagons. The family runs between exactly those two shapes: th
 regular hexagon gives a pyramid of zero height. Every shape in between is a flat-ended triangle, and FUJI is the member whose side
 faces are the golden triangles of icosahedral geometry.
 
+## Where the shape turns up in DICTO's work
+
+- His cuboctahedron spheres: sharp equilateral triangles wanted round the ports, blunt flat-ended ones made.
+- The Lotus seed's surface: the 20 FUJI bases, where he hoped for regular hexagons.
+- Bodhi kit B: the FUJI-like B4 in each outer three-fold corner.
+- **All his DeltaZips and B1NR sculptures use rounded equilateral triangles** (DICTO, 2026-10-14): the curved form of the same
+  idea, a triangle whose corners are taken off. The flat-ended triangle is its straight-edged version; how far the corners are
+  cut (r) is what the family measures.
+
 ## Reading (2026-10-14)
 
 - **DICTO's reference library:** nothing on equal-edged hexagonal pyramids or flat-ended triangle faces.
