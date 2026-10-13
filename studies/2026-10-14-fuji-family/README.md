@@ -113,6 +113,27 @@ the ports. So r was set by port clearance, not by angles.
 r ≈ 0.375, within 3% of the cuboctahedral member (√3 − 1)/2 = 0.366. The 5 cm was measured across the inside of the face (DICTO), and it fits: across a flat-ended triangle with sides 4 and 1.5,
 from a short side to the opposite long side, is (4 + 2 × 1.5) × √3/2 − 1.5 × √3/2 = 4.76 cm.
 
+## The dictosphere explained (2026-10-14)
+
+DICTO's description: 6 squares and 8 truncated triangles, the triangles meeting **short side to short side**, a 3 cm port in every
+face, sphere about 7.5 cm across. That is the cube ∩ octahedron family between the truncated octahedron and the cuboctahedron:
+|x|, |y|, |z| ≤ 1 and |x| + |y| + |z| ≤ s, with hexagon sides √2(s − 1) against the squares and √2(2 − s) against each other.
+(`scripts/dictosphere.py`, `dictosphere.json`.)
+
+- **Even space round the ports forces the sphere.** Across an edge shared by two faces, the clearances from the two face centres
+  to the edge are equal exactly when the two face planes are the same distance from the centre (feet of the perpendiculars from
+  the centre: t₁ = (d₂ − d₁ cos θ)/sin θ, t₂ = (d₁ − d₂ cos θ)/sin θ). So even space across every square–triangle edge means all
+  14 faces touch one sphere: **s = √3**, and then **r = (√3 − 1)/2 = 0.366**, the cuboctahedral FUJI member.
+- **Against DICTO's measurements:** with long sides of 4 cm, the model gives short sides of **1.46 cm** (measured 1.5), an inscribed
+  sphere **7.73 cm** across (sphere about 7.5) and measured r = 0.375 against 0.366 (s = 1.727 against √3 = 1.732).
+- **Ports of 3 cm diameter:** clearance **0.50 cm** from each square's port to its sides and **0.50 cm** from each triangle's port to
+  its long sides (equal, as above), and 1.23 cm to the short sides, where the triangles meet each other.
+
+So DICTO's working rule, even space round every port, fixes the shape exactly: the cube–octahedron solid with an inscribed sphere,
+whose triangles are the flat-ended triangles of the cuboctahedral member. (It is also the Wulff shape of a cubic crystal whose
+{100} and {111} surfaces have equal energy, since the Wulff construction puts the planes at distances proportional to the
+energies.) Why the same r also makes FUJI(r)'s base continue the cuboctahedron's face planes is not yet explained.
+
 ## Next
 
 1. Done: the STT's faces are FUJI(1/2)'s base (above).
