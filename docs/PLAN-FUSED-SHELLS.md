@@ -1,5 +1,7 @@
 # Plan: the fused-shells catalogue (DICTO 2026-10-13)
 
+Paper title (DICTO 2026-10-13): **Capturing the In-betweens: a Study of Transitional Polyhedral Shells**.
+
 DICTO: every stage between the start and the finish of the nested structures (Chain of Karma, Spheres of Dharma, Bodhi Seed Kit B),
 each taken as one fused solid; "the whole catalogue should be comprehensive for the paper; interesting ones should be built, and a
 selection of them used to show alternative exploded versions". Study folder: `studies/2026-10-13-fused-shells/`. Page:
@@ -24,7 +26,9 @@ structure's own rotations:
 6. **Interesting ones built** in the app (Multi-shell chains → a Stages view), chosen by DICTO from the leads: convex stages, named
    look-alikes, stellations, highest-symmetry partials.
 7. **Exploded versions** for a selection: Pull apart from the centre, by face, and by ring (each ring moves out as one piece).
-8. **Paper**: DICTO's. Library first (Kepler 1596, Jamnitzer 1568, Hogan 1976; add Mackay 1962), then a draft; never uploaded
+9. **In the apps** (DICTO 2026-10-13, the paper's conclusion): the transitional shells as their own group in Polyhedraverse, and a
+   movie slider in the app that plays the transitions as the build goes through them.
+8. **Paper**: DICTO's, "Capturing the In-betweens: a Study of Transitional Polyhedral Shells". Library first (Kepler 1596, Jamnitzer 1568, Hogan 1976; add Mackay 1962), then a draft; never uploaded
    without DICTO's OK.
 
 Heavy runs (2–3: thousands of unions) go to dicto-node as logged background jobs.
