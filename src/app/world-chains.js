@@ -13,7 +13,7 @@ import { storageKey } from './site.js';
 
 const CHAINS_KINDS = ['karma', 'dharma', 'bodhi'];
 // Colours as in the papers' figures. Hexagonal caps of the fullerene layer gold (DICTO 2026-10-12).
-const ROLE = { ico: 0x5fd38a, cap: 0x5fd38a, lcap: 0x5fd38a, lj11: 0x5fd38a, npyr5: 0x5fd38a, core: 0xffc857, nfru3: 0xffc857, nfru5: 0xffc857,
+export const ROLE = { ico: 0x5fd38a, cap: 0x5fd38a, lcap: 0x5fd38a, lj11: 0x5fd38a, npyr5: 0x5fd38a, core: 0xffc857, nfru3: 0xffc857, nfru5: 0xffc857,
   axe: 0x4dd0e1, laxe: 0x4dd0e1, nt1: 0x4dd0e1, nedge: 0x4dd0e1, fuji: 0xc792ea, cleo: 0xc792ea, lfuji: 0xc792ea, lcleo: 0xc792ea, npyr3: 0xc792ea,
   nface: 0xc792ea, ncap: 0xc792ea, nwedge: 0xdfe6f0, outer: 0x9fd8ff, copy: 0x5fd38a, centre: 0xffc857, B1: 0xffc857, B4: 0x4dd0e1,
   B5L: 0xc792ea, B5R: 0xf08fc0, B2: 0x4dd0e1, B3: 0xc792ea,

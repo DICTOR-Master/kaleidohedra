@@ -31,7 +31,7 @@ function tetSites(r) {
   return out;
 }
 // Pyrochlore inside the octet: one tetrahedron of each turn at every corner, mirror images through it (1 in 8 of the tetrahedra).
-const pyro = (s) => [[1, 1, 1], [3, 3, 3]].some((b) => { const d = s.map((c, i) => c - b[i]); return d.every((c) => ((c % 4) + 4) % 4 === 0) && d.reduce((t, c) => t + c / 4, 0) % 2 === 0; });
+export const pyro = (s) => [[1, 1, 1], [3, 3, 3]].some((b) => { const d = s.map((c, i) => c - b[i]); return d.every((c) => ((c % 4) + 4) % 4 === 0) && d.reduce((t, c) => t + c / 4, 0) % 2 === 0; });
 const R = (size) => size * (A / 2) * 1.01;
 const network = (tetCell) => (size) => [
   ...octSites(R(size)).filter((o) => o.even).flatMap((o) => put(C.oct, o.p)),
