@@ -37,7 +37,9 @@ faces are the golden triangles of icosahedral geometry.
 - Bodhi kit B: the FUJI-like B4 in each outer three-fold corner.
 - **All his DeltaZips and B1NR sculptures use rounded equilateral triangles** (DICTO, 2026-10-14): the curved form of the same
   idea, a triangle whose corners are taken off. The flat-ended triangle is its straight-edged version; how far the corners are
-  cut (r) is what the family measures.
+  cut (r) is what the family measures. First estimate from DICTO's figures (2026-10-14: about 2.5 cm of straight run
+  between the ties on a side, about 3 cm corner to corner): each corner takes about 0.25 cm off each side, so r is about 0.1, near
+  the sharp-triangle end. To be measured properly.
 
 ## Reading (2026-10-14)
 
@@ -57,14 +59,18 @@ faces are the golden triangles of icosahedral geometry.
   (r = 1, regular hexagons), and past it the hexagons become flat-ended triangles again on the octahedron side, which is the
   tetrahedral-octahedral (FCC, cuboctahedral) world of DICTO's spheres. FUJI's own ratio 1/φ occurs at t = 2/(φ + 2) = 0.5528
   (tetrahedron side) and at t = 2φ/(2φ + 1) = 0.7639 (octahedron side).
-- **Lead 2:** Wolfram Demonstration "Hexagons and the Golden Ratio": three equilateral triangles whose outer corners make a hexagon
-  with two edge lengths in the golden ratio, linked to the compounds of two icosahedra and five octahedra. Close to FUJI's base and
-  its three equilateral faces; page text not yet read.
+- **Odom's construction makes the whole family (read and checked 2026-10-14):** the Wolfram Demonstration "Hexagons and the
+  Golden Ratio" (after George Odom's golden ratio in the equilateral triangle) extends each side of an equilateral triangle beyond
+  both ends; with the extension in the golden ratio the six outer points make a hexagon with two edge lengths in the golden ratio,
+  and two triangles among its corners belong to the compounds of two icosahedra and of five octahedra. Rebuilt here: extending
+  side 1 by e at both ends always gives an **equiangular** hexagon (all 120°) with sides e and 1 + e, i.e. a flat-ended triangle
+  with **r = e/(1 + e)**. So e = φ gives **FUJI's base exactly** (sides φ and φ²), e = 1 gives the space-filler's r = 1/2, and
+  e = 1/φ gives r = 1/φ². Every member of the family is an Odom hexagon.
 
 ## Next
 
 1. Done: the STT's faces are FUJI(1/2)'s base (above).
-2. Read the Wolfram demonstration; compare its hexagon with FUJI's base.
+2. Done: FUJI's base is Odom's golden hexagon (above).
 3. Which FUJI(r) close gaps with which solids (r = 1/2 shares FUJI's α)? Where do flat-ended triangles appear in DICTO's
    cuboctahedral (FCC) work?
 
