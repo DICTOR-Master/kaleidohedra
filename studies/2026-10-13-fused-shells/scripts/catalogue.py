@@ -35,6 +35,29 @@ NOTES = {
 }
 
 
+CLASSIC = {(('3-gon', 20),): 'Icosahedron', (('5-gon', 12),): 'Dodecahedron', (('3-gon', 20), ('5-gon', 12)): 'Icosidodecahedron',
+           (('5-gon', 12), ('6-gon', 20)): 'Truncated icosahedron', (('4-gon', 30),): 'Rhombic triacontahedron',
+           (('3-gon', 60), ('4-gon', 30), ('5-gon', 12)): 'Convex, 80 corners (unnamed?)'}
+stage_facts = json.load(open(os.path.join(ROOT, 'stages-facts.json')))
+
+
+def stages_for(view, order):
+    P = pieces[view]
+    allP = np.array([p for _, V, _ in P for p in V], float); c0 = allP.mean(0)
+    ring = [f'{r}@{np.linalg.norm(np.array(V, float).mean(0) - c0):.2f}' for r, V, _ in P]
+    within, count = [], {}
+    for g in ring: within.append(count.get(g, 0)); count[g] = count.get(g, 0) + 1
+    out = []
+    for f in stage_facts[view]:
+        idx = set(f['pieces'])
+        whole = [g for g in set(ring[i] for i in idx) if all(i in idx for i, x in enumerate(ring) if x == g)]
+        part = sorted([order.index(ring[i]), within[i]] for i in idx if ring[i] not in whole)
+        key = tuple(sorted(f['faceShapes'].items()))
+        out.append({'g': sorted(order.index(x) for x in whole), 'p': part, 'how': f['how'], 'convex': f['convex'], 'faces': f['faces'],
+                    'shapes': f['faceShapes'], 'planes': f['planes'], 'name': CLASSIC.get(key) if f['convex'] else None})
+    return out
+
+
 def payload():
     out = []
     for view, (name, sub) in WORLD.items():
@@ -52,7 +75,10 @@ def payload():
         out.append({'id': view.split('.')[0], 'name': name, 'sub': sub, 'steps': [{
             'adds': f"{len(groups[g])} {PIECE.get(g.split('@')[0], g.split('@')[0])}" if i else f"the centre {PIECE.get(g.split('@')[0], '')}",
             'pieces': groups[g], 'convex': s['convex'], 'faces': s['faces'], 'shapes': s['faceShapes'], 'planes': s['planes'],
-            'note': NOTES[view][i]} for i, (g, s) in enumerate(zip(order, st))]})
+            'note': NOTES[view][i]} for i, (g, s) in enumerate(zip(order, st))],
+            # every stage (stages.py, partials.py; facts by stage_facts.py): whole rings as step indices, and for a partial stage the
+            # extra pieces as [step index, piece index within that step's ring]
+            'stages': stages_for(view, order)})
     return out
 
 

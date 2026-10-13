@@ -39,7 +39,18 @@ section { display: grid; gap: 10px; }
 .card .n { font: 600 11px var(--mono); color: var(--muted); }
 .card .a { font-size: 13px; line-height: 1.3; }
 .card .flag { font: 600 11px var(--mono); }
-.card .flag.c { color: var(--convex); } .card .flag.l { color: var(--lead); } .card .flag.x { color: var(--muted); }
+.card .flag.c { color: var(--convex); }
+details.all { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; }
+details.all summary { cursor: pointer; font-weight: 700; }
+.ringlegend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: var(--muted); margin: 10px 0; }
+.ringcount { font: 600 12px var(--mono); color: var(--muted); letter-spacing: .06em; text-transform: uppercase; margin: 12px 0 6px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 8px; }
+.card.small { flex: none; }
+.card .dots { display: flex; flex-wrap: wrap; gap: 2px; }
+.card .dots .sw { width: 9px; height: 9px; margin: 0; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin: 10px 0; font-size: 14px; }
+.filters select { background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; font: inherit; max-width: 100%; }
+button.more { margin-top: 10px; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px; font: inherit; cursor: pointer; } .card .flag.l { color: var(--lead); } .card .flag.x { color: var(--muted); }
 footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 12px; }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
 </style>
@@ -48,7 +59,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
   <header>
     <div class="mark">DICTO · dictospheres.com · study 2026-10-13</div>
     <h1>Fused Shells Catalogue</h1>
-    <p class="lede">Each structure built outwards one kind of piece at a time, and every step taken as one solid: the pieces fused, only the outside counted. Convex steps are classic solids; the others are what lies between them. Names marked “lead” are possibilities still to check.</p>
+    <p class="lede">Each structure built outwards, and every stage taken as one solid: the pieces fused, only the outside counted. The main route adds one kind of piece at a time; under it, the convex stages of whole rings, then the partial rings that sit on a complete shell. Every other combination was counted too (Spheres of Dharma: 107 of whole rings, 5,569 with partial rings) and is kept as data for the paper. Names marked “lead” are possibilities still to check.</p>
   </header>
 
   <div class="viewer">
@@ -83,16 +94,21 @@ const DATA = /*DATA*/null;
 const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 const NEW = new THREE.Color(css('--new')), OLD = new THREE.Color(css('--old'));
 
-function geometryFor(world, k, onlyNew) {
+// The rings (steps' pieces) at indices idx; hi: the ring to highlight (the main route), or null to colour each ring its own.
+const RINGS = ['#ffc857', '#5fd38a', '#4dd0e1', '#c792ea', '#f08fc0', '#ff9a52', '#9fd8ff', '#d9e36b', '#7cc4ff', '#e8a0a0', '#a9c4e8'].map((h) => new THREE.Color(h));
+// extra: a partial ring's pieces, [step, piece], drawn in the 'added' colour.
+function geometryFor(world, idx, hi, onlyNew, extra = []) {
   const pos = [], col = [], line = [];
-  world.steps.slice(0, k + 1).forEach((s, i) => {
-    if (onlyNew && i !== k) return;
-    const c = i === k ? NEW : OLD;
-    for (const p of s.pieces) for (const f of p.f) {
-      for (let j = 1; j + 1 < f.length; j++) for (const q of [f[0], f[j], f[j + 1]]) { pos.push(...p.v[q]); col.push(c.r, c.g, c.b); }
-      f.forEach((q, j) => line.push(...p.v[q], ...p.v[f[(j + 1) % f.length]]));
-    }
+  const put = (p, c) => { for (const f of p.f) {
+    for (let j = 1; j + 1 < f.length; j++) for (const q of [f[0], f[j], f[j + 1]]) { pos.push(...p.v[q]); col.push(c.r, c.g, c.b); }
+    f.forEach((q, j) => line.push(...p.v[q], ...p.v[f[(j + 1) % f.length]]));
+  } };
+  idx.forEach((i) => {
+    if (onlyNew && i !== hi) return;
+    const c = hi === null ? (extra.length ? OLD : RINGS[i % RINGS.length]) : i === hi ? NEW : OLD;
+    for (const p of world.steps[i].pieces) put(p, c);
   });
+  for (const [i, j] of extra) put(world.steps[i].pieces[j], NEW);
   const g = new THREE.BufferGeometry();
   g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
   g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
@@ -112,37 +128,63 @@ const holder = new THREE.Group(); scene.add(holder);
 holder.rotation.set(0.35, -0.5, 0);
 const mat = new THREE.MeshLambertMaterial({ vertexColors: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
 const lineMat = new THREE.LineBasicMaterial({ color: 0x05080d });
-function show(world, k, onlyNew) {
+function show(world, idx, hi, onlyNew, extra = []) {
   for (const c of [...holder.children]) { holder.remove(c); c.geometry.dispose(); }
-  const [g, l] = geometryFor(world, k, onlyNew);
+  const [g, l] = geometryFor(world, idx, hi, onlyNew, extra);
   holder.add(new THREE.Mesh(g, mat), new THREE.LineSegments(l, lineMat));
 }
 function resize() { const w = canvas.clientWidth || 360; renderer.setSize(w, w, false); }
 function draw() { renderer.render(scene, camera); }
 
 // Thumbnails: the same renderer, one still per step.
-function thumb(world, k) {
+const upTo = (k) => Array.from({ length: k + 1 }, (_, i) => i);
+function thumb(world, idx, hi, extra = []) {
   const keep = holder.rotation.clone();
-  holder.rotation.set(0.35, -0.5, 0); renderer.setSize(220, 220, false); show(world, k, false); draw();
+  holder.rotation.set(0.35, -0.5, 0); renderer.setSize(220, 220, false); show(world, idx, hi, false, extra); draw();
   const url = canvas.toDataURL('image/png'); holder.rotation.copy(keep); return url;
 }
 
-let cur = { w: 0, k: 0 };
+let cur = { w: 0, k: 0, stage: null };
 const $ = (id) => document.getElementById(id);
-function select(w, k) {
-  cur = { w, k };
-  const world = DATA[w], s = world.steps[k];
-  $('where').textContent = `${world.name} · step ${k + 1} of ${world.steps.length}`;
-  $('title').textContent = k ? `+ ${s.adds}` : `Start: ${s.adds}`;
+const SHAPE = { '3-gon': 'triangle', '4-gon': 'quadrilateral', '5-gon': 'pentagon', '6-gon': 'hexagon' };
+function facts(s, note) {
   $('chip').textContent = s.convex ? 'convex' : 'not convex'; $('chip').className = `chip ${s.convex ? 'convex' : 'non'}`;
   $('faces').textContent = s.faces;
-  $('shapes').textContent = Object.entries(s.shapes).map(([k2, v]) => `${v} × ${({ '3-gon': 'triangle', '4-gon': 'quadrilateral', '5-gon': 'pentagon', '6-gon': 'hexagon' })[k2] || k2}`).join(', ');
+  $('shapes').textContent = Object.entries(s.shapes).map(([k2, v]) => `${v} × ${SHAPE[k2] || k2}`).join(', ');
   $('planes').textContent = s.planes;
-  $('note').textContent = s.note || 'Between two classic solids. No name yet.';
-  document.querySelectorAll('.card').forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.w == w && c.dataset.k == k)));
-  resize(); show(world, k, $('onlyNew').checked); draw();
+  $('note').textContent = note || 'Between two classic solids. No name yet.';
+  document.querySelectorAll('.card').forEach((c) => c.setAttribute('aria-pressed', 'false'));
 }
-$('onlyNew').addEventListener('change', () => select(cur.w, cur.k));
+// "T part of npyr5" -> "tetrahedral part (4 of 12 pentagonal pyramids)"; halves and caps likewise.
+const KIND = { T: 'tetrahedral part', D5: 'five-fold part', D3: 'three-fold part', D2: 'two-fold part', half: 'half', cap: 'cap' };
+const kindOf = (st) => (st.how.match(/\+ (T|D5|D3|D2) part of|\+ (half|cap) of/) || []).slice(1).find(Boolean) || '';
+const axisOf = (st) => (st.how.match(/\((\d)-fold axis\)/) || [])[1];
+function partLabel(world, st) {
+  const ring = st.p[0][0], all = world.steps[ring].pieces.length;
+  const k = kindOf(st), ax = axisOf(st);
+  return `${KIND[k] ?? k}${ax ? ` round a ${ax}-fold axis` : ''} (${st.p.length} of ${world.steps[ring].adds})`;
+}
+function selectStage(w, si) {
+  cur = { w, k: null, stage: si };
+  const world = DATA[w], st = world.stages[si];
+  $('where').textContent = `${world.name} · stage ${si + 1} of ${world.stages.length} · ${st.g.length} rings`;
+  const rings = st.g.slice(1).map((i) => world.steps[i].adds);
+  if (st.p.length) rings.push(partLabel(world, st));
+  $('title').textContent = rings.length ? `Centre + ${rings.join(' + ')}` : 'The centre alone';
+  facts(st, st.name ? `${st.name}.` : st.p.length ? 'A partial ring: highlighted.' : '');
+  document.querySelector(`.card[data-w="${w}"][data-s="${si}"]`)?.setAttribute('aria-pressed', 'true');
+  resize(); show(world, st.g, null, false, st.p); draw();
+}
+function select(w, k) {
+  cur = { w, k, stage: null };
+  const world = DATA[w], s = world.steps[k];
+  $('where').textContent = `${world.name} · main route, step ${k + 1} of ${world.steps.length}`;
+  $('title').textContent = k ? `+ ${s.adds}` : `Start: ${s.adds}`;
+  facts(s, s.note);
+  document.querySelector(`.card[data-w="${w}"][data-k="${k}"]`)?.setAttribute('aria-pressed', 'true');
+  resize(); show(world, upTo(k), k, $('onlyNew').checked); draw();
+}
+$('onlyNew').addEventListener('change', () => (cur.stage === null ? select(cur.w, cur.k) : selectStage(cur.w, cur.stage)));
 
 // Drag to turn.
 let drag = null;
@@ -156,20 +198,87 @@ const end = () => { drag = null; canvas.style.cursor = 'grab'; };
 canvas.addEventListener('pointerup', end); canvas.addEventListener('pointercancel', end);
 addEventListener('resize', () => { resize(); draw(); });
 
-// The rows of cards.
+// Thumbnails a few at a time, keeping the main view as it was; stage cards draw when they scroll into view.
+const thumbs = [];
+let running = false;
+function next() {
+  const batch = thumbs.splice(0, 4);
+  if (!batch.length) { running = false; return; }
+  for (const [img, world, idx, hi, extra] of batch) img.src = thumb(world, idx, hi, extra);
+  resize(); cur.stage === null ? select(cur.w, cur.k) : selectStage(cur.w, cur.stage);
+  setTimeout(next, 0);
+}
+const kick = () => { if (!running) { running = true; setTimeout(next, 0); } };
+const seen = new IntersectionObserver((es) => { for (const e of es) if (e.isIntersecting) { seen.unobserve(e.target); thumbs.push(e.target._job); kick(); } }, { rootMargin: '200px' });
+function lazy(img, world, idx, hi, extra = []) { img._job = [img, world, idx, hi, extra]; seen.observe(img); }
+// The rows of cards: the main route, then every stage grouped by how many rings it has. Thumbnails render a few at a time.
 const host = $('worlds');
 DATA.forEach((world, w) => {
   const sec = document.createElement('section');
-  sec.innerHTML = `<div><h2>${world.name}</h2><div class="sub">${world.sub} · ${world.steps.length} steps, centre outwards</div></div><div class="row"></div>`;
-  const row = sec.querySelector('.row');
+  const nConvex = world.stages.filter((s) => s.convex).length;
+  sec.innerHTML = `<div><h2>${world.name}</h2><div class="sub">${world.sub} · main route: ${world.steps.length} steps, centre outwards</div></div><div class="row route"></div>
+    <details class="all"><summary>Whole-ring stages: ${world.stages.filter((x) => !x.p.length).length} (${world.stages.filter((x) => !x.p.length && x.convex).length} convex) <span class="sub">— the main route and every convex stage of whole rings</span></summary><div class="ringlegend"></div><div class="stages"></div></details>`;
+  const row = sec.querySelector('.route');
   world.steps.forEach((s, k) => {
     const b = document.createElement('button'); b.type = 'button'; b.className = 'card'; b.dataset.w = w; b.dataset.k = k;
     const flag = s.convex ? '<span class="flag c">convex</span>' : s.note ? '<span class="flag l">lead</span>' : '<span class="flag x">in between</span>';
-    b.innerHTML = `<img alt="Step ${k + 1} of ${world.name}" src="${thumb(world, k)}"><span class="n">STEP ${k + 1}</span><span class="a">${k ? '+ ' + s.adds : s.adds}</span>${flag}`;
+    b.innerHTML = `<img alt="Step ${k + 1} of ${world.name}"><span class="n">STEP ${k + 1}</span><span class="a">${k ? '+ ' + s.adds : s.adds}</span>${flag}`;
+    thumbs.push([b.querySelector('img'), world, upTo(k), k]);
     b.addEventListener('click', () => { select(w, k); window.scrollTo({ top: 0, behavior: 'smooth' }); });
     row.appendChild(b);
   });
+  sec.querySelector('.ringlegend').innerHTML = world.steps.map((s, i) => `<span><span class="sw" style="background:#${RINGS[i % RINGS.length].getHexString()}"></span>${i ? s.adds : 'centre: ' + s.adds}</span>`).join('');
+  const grid = sec.querySelector('.stages');
+  const byCount = new Map();
+  world.stages.forEach((st, si) => { if (st.p.length) return; const n = st.g.length; if (!byCount.has(n)) byCount.set(n, []); byCount.get(n).push(si); });
+  for (const [n, list] of [...byCount].sort((a, b) => a[0] - b[0])) {
+    const h = document.createElement('div'); h.className = 'ringcount'; h.textContent = `${n} ring${n > 1 ? 's' : ''} · ${list.length} stage${list.length > 1 ? 's' : ''}`;
+    const r = document.createElement('div'); r.className = 'grid';
+    for (const si of list) {
+      const st = world.stages[si];
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'card small'; b.dataset.w = w; b.dataset.s = si;
+      b.innerHTML = `<img alt="Stage ${si + 1} of ${world.name}"><span class="dots">${st.g.map((i) => `<span class="sw" style="background:#${RINGS[i % RINGS.length].getHexString()}"></span>`).join('')}</span>${st.convex ? `<span class="flag c">${st.name ?? 'convex'}</span>` : `<span class="flag x">${st.faces} faces</span>`}`;
+      lazy(b.querySelector('img'), world, st.g, null);
+      b.addEventListener('click', () => { selectStage(w, si); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      r.appendChild(b);
+    }
+    grid.append(h, r);
+  }
+  // Partial rings: filter by kind, convex only; 60 at a time.
+  const partials = world.stages.map((st, si) => si).filter((si) => world.stages[si].p.length);
+  const pBox = document.createElement('details'); pBox.className = 'all';
+  const nPC = partials.filter((si) => world.stages[si].convex).length;
+  pBox.innerHTML = `<summary>Partial rings: ${partials.length} stages (${nPC} convex) <span class="sub">— a complete shell plus a symmetric part, a half or a cap of the next ring</span></summary>
+    <div class="filters"><label>Kind <select data-f="kind"><option value="">all</option>${Object.entries(KIND).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></label>
+    <label>Ring <select data-f="ring"><option value="">all</option>${world.steps.map((s, i) => (i ? `<option value="${i}">${s.adds}</option>` : '')).join('')}</select></label>
+    <label class="tog"><input type="checkbox" data-f="convex"> convex only</label> <span class="sub" data-f="count"></span></div>
+    <div class="grid" data-f="grid"></div><button type="button" class="more" data-f="more">Show 60 more</button>`;
+  sec.appendChild(pBox);
+  let shownN = 0, list = partials;
+  const pg = pBox.querySelector('[data-f="grid"]');
+  const filter = () => {
+    const kind = pBox.querySelector('[data-f="kind"]').value, ring = pBox.querySelector('[data-f="ring"]').value, cv = pBox.querySelector('[data-f="convex"]').checked;
+    list = partials.filter((si) => { const st = world.stages[si]; return (!kind || kindOf(st) === kind) && (!ring || st.p[0][0] === +ring) && (!cv || st.convex); });
+    pg.innerHTML = ''; shownN = 0; more();
+  };
+  const more = () => {
+    for (const si of list.slice(shownN, shownN + 60)) {
+      const st = world.stages[si];
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'card small'; b.dataset.w = w; b.dataset.s = si;
+      b.innerHTML = `<img alt="Partial stage ${si + 1} of ${world.name}"><span class="dots">${st.g.map((i) => `<span class="sw" style="background:#${RINGS[i % RINGS.length].getHexString()}"></span>`).join('')}<span class="sw" style="background:var(--new)"></span></span><span class="a">${KIND[kindOf(st)] ?? ''}${axisOf(st) ? ' ' + axisOf(st) + '-fold' : ''} · ${st.p.length}</span>${st.convex ? `<span class="flag c">${st.name ?? 'convex'}</span>` : `<span class="flag x">${st.faces} faces</span>`}`;
+      lazy(b.querySelector('img'), world, st.g, null, st.p);
+      b.addEventListener('click', () => { selectStage(w, si); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      pg.appendChild(b);
+    }
+    shownN = Math.min(list.length, shownN + 60);
+    pBox.querySelector('[data-f="count"]').textContent = `${shownN} of ${list.length} shown`;
+    pBox.querySelector('[data-f="more"]').hidden = shownN >= list.length;
+  };
+  pBox.querySelectorAll('select, input').forEach((el) => el.addEventListener('change', filter));
+  pBox.querySelector('[data-f="more"]').addEventListener('click', more);
+  pBox.addEventListener('toggle', () => { if (pBox.open && !pg.children.length) filter(); });
   host.appendChild(sec);
 });
 select(0, 1);
+kick();
 </script>
