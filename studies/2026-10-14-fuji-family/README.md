@@ -100,8 +100,8 @@ dodecahedron. The next arrangement to test is the true analogue of DESHI: 12 cub
 until they share whole edges, then the corner pockets compared with the cuboctahedral member.
 
 **DICTO's dictospheres (2026-10-14, first figures):** flat-ended triangles with long sides about 4 cm and short sides about 1.5 cm,
-r ≈ 0.375, within 3% of the cuboctahedral member (√3 − 1)/2 = 0.366. The overall triangle side was given as about 5 cm, which a
-flat flat-ended triangle with those sides would make 7 cm (long + 2 × short); the faces are on a sphere, so to be measured again.
+r ≈ 0.375, within 3% of the cuboctahedral member (√3 − 1)/2 = 0.366. The 5 cm was measured across the inside of the face (DICTO), and it fits: across a flat-ended triangle with sides 4 and 1.5,
+from a short side to the opposite long side, is (4 + 2 × 1.5) × √3/2 − 1.5 × √3/2 = 4.76 cm.
 
 ## Next
 
