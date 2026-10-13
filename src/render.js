@@ -4011,6 +4011,14 @@ async function init() {
           updateQuickSelect();
           return;
         }
+        if (action?.startsWith('tool:polyKit:')) {
+          own3D = 'poly';
+          applyDimensionVisibility();
+          updateQuickSelect();
+          polyWorld?.startKit(action.slice('tool:polyKit:'.length));
+          updateQuickSelect();
+          return;
+        }
         if (action?.startsWith('tool:polyShape:')) {
           own3D = 'poly';
           applyDimensionVisibility();

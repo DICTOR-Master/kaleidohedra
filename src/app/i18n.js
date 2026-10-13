@@ -810,6 +810,15 @@ const en = {
   'poly.pickSub': "Only the shapes with a face that fits the one you tapped.",
   'wiz.poly.count.one': "{n} shape",
   'wiz.poly.count.other': "{n} shapes",
+  'wiz.poly.kits': 'The 13s: kits to build',
+  'wiz.poly.kitPieces': 'The 13s pieces',
+  'wiz.poly.dictoOwn': "DICTO's pieces",
+  'wiz.poly.kitCount.one': '{n} piece',
+  'wiz.poly.kitCount.other': '{n} pieces',
+  'poly.kit': 'Kit: {name}',
+  'poly.kit.done': 'Kit complete: {name}',
+  'poly.kit.off': "Stop the kit's outlines",
+  'poly.kit.replace': 'Start this kit on its own? Your current build is replaced. Cancel keeps your build and lines the kit up with it.',
 };
 
 const ja = {
@@ -1585,6 +1594,15 @@ const ja = {
   'poly.pickSub': "タップした面に合う面を持つ形だけ。",
   'wiz.poly.count.one': "{n} 個の形",
   'wiz.poly.count.other': "{n} 個の形",
+  'wiz.poly.kits': '13 の構成：組み立てキット',
+  'wiz.poly.kitPieces': '13 の部品',
+  'wiz.poly.dictoOwn': 'DICTO の部品',
+  'wiz.poly.kitCount.one': '{n} 部品',
+  'wiz.poly.kitCount.other': '{n} 部品',
+  'poly.kit': 'キット：{name}',
+  'poly.kit.done': 'キット完成：{name}',
+  'poly.kit.off': 'キットの輪郭を止める',
+  'poly.kit.replace': 'このキットだけで始めますか？ 今の作品は置き換わります。キャンセルすると作品を残し、キットをそれに合わせます。',
 };
 
 const es = {
@@ -2360,6 +2378,15 @@ const es = {
   'poly.pickSub': "Solo las formas con una cara que encaja en la que tocaste.",
   'wiz.poly.count.one': "{n} forma",
   'wiz.poly.count.other': "{n} formas",
+  'wiz.poly.kits': 'Los 13: kits para construir',
+  'wiz.poly.kitPieces': 'Piezas de los 13',
+  'wiz.poly.dictoOwn': 'Piezas de DICTO',
+  'wiz.poly.kitCount.one': '{n} pieza',
+  'wiz.poly.kitCount.other': '{n} piezas',
+  'poly.kit': 'Kit: {name}',
+  'poly.kit.done': 'Kit completo: {name}',
+  'poly.kit.off': 'Quitar los contornos del kit',
+  'poly.kit.replace': '¿Empezar este kit solo? Tu construcción actual se reemplaza. Cancelar la conserva y alinea el kit con ella.',
 };
 
 const fr = {
@@ -3135,6 +3162,15 @@ const fr = {
   'poly.pickSub': "Seulement les formes dont une face va sur celle que vous avez touchée.",
   'wiz.poly.count.one': "{n} forme",
   'wiz.poly.count.other': "{n} formes",
+  'wiz.poly.kits': 'Les 13 : kits à construire',
+  'wiz.poly.kitPieces': 'Pièces des 13',
+  'wiz.poly.dictoOwn': 'Pièces de DICTO',
+  'wiz.poly.kitCount.one': '{n} pièce',
+  'wiz.poly.kitCount.other': '{n} pièces',
+  'poly.kit': 'Kit : {name}',
+  'poly.kit.done': 'Kit terminé : {name}',
+  'poly.kit.off': 'Masquer les contours du kit',
+  'poly.kit.replace': 'Commencer ce kit seul ? Votre construction actuelle sera remplacée. Annuler la garde et aligne le kit dessus.',
 };
 
 const ko = {
@@ -3910,6 +3946,15 @@ const ko = {
   'poly.pickSub': "탭한 면에 맞는 면을 가진 도형만.",
   'wiz.poly.count.one': "도형 {n}개",
   'wiz.poly.count.other': "도형 {n}개",
+  'wiz.poly.kits': '13: 조립 키트',
+  'wiz.poly.kitPieces': '13 조각',
+  'wiz.poly.dictoOwn': 'DICTO의 조각',
+  'wiz.poly.kitCount.one': '조각 {n}개',
+  'wiz.poly.kitCount.other': '조각 {n}개',
+  'poly.kit': '키트: {name}',
+  'poly.kit.done': '키트 완성: {name}',
+  'poly.kit.off': '키트 윤곽 끄기',
+  'poly.kit.replace': '이 키트만으로 시작할까요? 지금 작품은 바뀝니다. 취소하면 작품을 남기고 키트를 거기에 맞춥니다.',
 };
 
 const zh = {
@@ -4685,6 +4730,15 @@ const zh = {
   'poly.pickSub': "只有带一个适合你所点之面的面的形状。",
   'wiz.poly.count.one': "{n} 个形状",
   'wiz.poly.count.other': "{n} 个形状",
+  'wiz.poly.kits': '13 组：拼装套件',
+  'wiz.poly.kitPieces': '13 组的部件',
+  'wiz.poly.dictoOwn': 'DICTO 的部件',
+  'wiz.poly.kitCount.one': '{n} 件',
+  'wiz.poly.kitCount.other': '{n} 件',
+  'poly.kit': '套件：{name}',
+  'poly.kit.done': '套件完成：{name}',
+  'poly.kit.off': '关闭套件轮廓',
+  'poly.kit.replace': '单独开始这个套件吗？当前作品将被替换。取消则保留作品，并让套件与之对齐。',
 };
 
 const ru = {
@@ -5460,6 +5514,15 @@ const ru = {
   'poly.pickSub': "Только фигуры с гранью, подходящей к той, которой вы коснулись.",
   'wiz.poly.count.one': "Форм: {n}",
   'wiz.poly.count.other': "Форм: {n}",
+  'wiz.poly.kits': 'Тринадцать: наборы для сборки',
+  'wiz.poly.kitPieces': 'Детали тринадцати',
+  'wiz.poly.dictoOwn': 'Детали DICTO',
+  'wiz.poly.kitCount.one': '{n} деталь',
+  'wiz.poly.kitCount.other': '{n} деталей',
+  'poly.kit': 'Набор: {name}',
+  'poly.kit.done': 'Набор собран: {name}',
+  'poly.kit.off': 'Убрать контуры набора',
+  'poly.kit.replace': 'Начать этот набор с нуля? Текущая постройка будет заменена. «Отмена» сохранит её и совместит набор с ней.',
 };
 
 const I18N = { en, ja, es, fr, ko, zh, ru };

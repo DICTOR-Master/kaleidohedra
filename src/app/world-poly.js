@@ -6,7 +6,7 @@
 // Saved in Polyhedraverse's own form (krp-core assembly: nodes with a shape and a transform), so a
 // build moves between this world and the old site by Export/Import.
 import * as THREE from 'three';
-import { POLYHEDRA, isFaceEligibleForAttach, HEXA_PARTS, DODECA13_PARTS } from '../krp-core/src/polyhedra/index.js';
+import { POLYHEDRA, isFaceEligibleForAttach, HEXA_PARTS, DODECA13_PARTS, KITS13 } from '../krp-core/src/polyhedra/index.js';
 import { facesCongruent } from '../krp-core/src/polyhedra/core.js';
 import { faceAttachOptions } from '../krp-core/src/assembly/faceAttach.js';
 import { rankFaceAttachOptions, isConvex, convexOverlap } from '../krp-core/src/assembly/faceRegistration.js';
@@ -33,6 +33,7 @@ import { migrateLegacyAssembly, ASSEMBLY_STORAGE_KEY } from '../krp-core/src/ass
 import { solidsOverlap, placedSolid, insideSolid } from '../krp-core/src/assembly/overlap.js';
 import { hintSlots, hasHints as buildHasHints } from '../krp-core/src/assembly/hints.js';
 import { bestFits } from '../krp-core/src/assembly/bestFits.js';
+import { kitSlots } from '../krp-core/src/assembly/kitHints.js';
 import { t } from './i18n.js';
 import { polyShapeName } from './poly-shapes.js';
 
@@ -66,7 +67,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   let connections = []; // { nodeA, vertexA, nodeB, vertexB, kind: 'face' } (face indices for a face join)
   // queue: the shapes used lately, newest first (8); pins: the ones always offered (D3b, DICTO's build queue).
   // Favourites (pins) and Recent (the queue) live in poly-prefs.js, shared with DICTO's browser.
-  const view = { shape: DEFAULT_SHAPE, parts: 'solid', rcp: null, hints: true, bestFits: false };
+  const view = { shape: DEFAULT_SHAPE, parts: 'solid', rcp: null, hints: true, bestFits: false, kit: null };
   let active = false, skeleton = false, opacity = 1;
   let spherical = false, sphereScale = 1;
   let nextId = 1;
@@ -109,6 +110,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       if (PART_VIEWS.includes(data.view?.parts)) view.parts = data.view.parts;
       if (data.view?.hints === false) view.hints = false;
       view.bestFits = data.view?.bestFits === true;
+      view.kit = KITS13[data.view?.kit] ? data.view.kit : null;
       if (data.view?.rcp && typeof data.view.rcp.target === 'string') view.rcp = { target: data.view.rcp.target, n: Math.max(1, data.view.rcp.n | 0), open: data.view.rcp.open !== false, coords: !!data.view.rcp.coords };
       if (data.version === undefined) save(); // the old site's build, now kept here
     }
@@ -232,7 +234,8 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     CUBE: 0xc792ea, PRISM_3: 0x7ae0b8, PRISM_6: 0xffc857, PRISM_8: 0xffc857, DICTO_EDGE_ROOF: 0x4dd0e1, D20: 0x5fd38a,
   };
   let hintCache = { key: '', slots: [], glow: new Map() };
-  const hasHints = () => buildHasHints(nodes, POLYHEDRA);
+  const kitOn = () => !!(view.kit && KITS13[view.kit]);
+  const hasHints = () => kitOn() || buildHasHints(nodes, POLYHEDRA);
   // ---- best fits (DICTO 2026-10-13: "a helper outline, possible placements, and offer best matches only"): for any build, the
   // three places where a piece closes the most faces flush (krp-core bestFits.js), drawn as ghosts in rank colours and listed in
   // the panel with their names. Worked out a moment after each change, so the screen never waits on it.
@@ -252,8 +255,23 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     }
     return bestState;
   }
+  // ---- a 13 kit (DICTO 2026-10-13): the kit's plan lined up with the build, its next layer as ghosts, each kind of piece its own
+  // colour (krp-core kitHints.js).
+  const KIT_COLOURS = [0xffc857, 0x5fd38a, 0x4dd0e1, 0xc792ea, 0xf08fc0, 0x9fb4c8];
+  let kitCache = { key: '', slots: [], glow: new Map() };
+  function kitHints() {
+    const key = JSON.stringify([view.kit, nodes.map((n) => [n.shape, n.transform])]);
+    if (kitCache.key === key) return kitCache;
+    const kit = KITS13[view.kit], kinds = [...new Set(kit.entries.map((e) => e.shape))];
+    const slots = kitSlots(nodes, POLYHEDRA, kit, { near: nodes.at(-1)?.transform.position, cap: 12 })
+      .map((sl) => ({ ...sl, colour: KIT_COLOURS[kinds.indexOf(sl.shape) % KIT_COLOURS.length] }));
+    kitCache = { key, slots, glow: new Map() };
+    return kitCache;
+  }
+  const kitDone = () => kitOn() && nodes.length >= KITS13[view.kit].entries.length && !kitHints().slots.length;
   function hints() {
     if (view.bestFits) return nodes.length ? bestHints() : { slots: [], glow: new Map() };
+    if (kitOn()) return view.hints ? kitHints() : { slots: [], glow: new Map() };
     if (!view.hints || !hasHints()) return { slots: [], glow: new Map() };
     const key = JSON.stringify(nodes.map((n) => [n.shape, n.transform]));
     if (hintCache.key === key) return hintCache;
@@ -292,10 +310,12 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
         f.forEach((a, k) => { const b = f[(k + 1) % f.length]; edge.push(P[a].x, P[a].y, P[a].z, P[b].x, P[b].y, P[b].z); });
       }
       const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
-      const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: 0.1, depthWrite: false, side: THREE.DoubleSide }));
+      // A kit's outlines a little stronger: its first layers are small pieces close against the centre.
+      const strong = kitOn() && !view.bestFits;
+      const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: strong ? 0.22 : 0.1, depthWrite: false, side: THREE.DoubleSide }));
       m.userData.poly = 'ghost'; m.userData.slot = i; m.userData.ownMat = true;
       const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(edge, 3));
-      out.push(m, new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: col, transparent: true, opacity: 0.2, depthWrite: false })));
+      out.push(m, new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: col, transparent: true, opacity: strong ? 0.6 : 0.2, depthWrite: false })));
       pickTargets.push(m);
     });
     for (const [k, i] of glow) {
@@ -809,7 +829,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       ${selection ? `<button type="button" class="poly-more" data-more>${t('poly.more', L)}</button>` : ''}
       ${selection && selection.face != null && FOURD.has(selection.node.shape) ? `<button type="button" class="poly-more" data-duoprism>${t('poly.duoprism', L)}</button>` : ''}
       ${selection && REWRITE_TARGET[selection.node.shape] ? `<button type="button" class="poly-more" data-transform>${t('poly.transform', L, { name: polyShapeName(REWRITE_TARGET[selection.node.shape]).replaceAll('_', ' ') })}</button>` : ''}
-      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${hasHintRow || hasBestRow ? `<div class="poly-golden">${hasHintRow ? `<button type="button" data-hints aria-pressed="${view.hints && !view.bestFits}" title="${t('poly.hints.title', L)}">${t('poly.hints', L)}</button>` : ''}${hasBestRow ? `<button type="button" data-best aria-pressed="${view.bestFits}" title="${t('poly.best.title', L)}">${t('poly.best', L)}</button>` : ''}</div>${hasBestRow && view.bestFits ? bestRow(L) : ''}` : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.filter((v) => v === 'solid' || nodes.some((n) => PART_PICK[n.shape]?.[v])).map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}`;
+      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${kitOn() ? `<div class="poly-golden poly-kit-row"><span>${t(kitDone() ? 'poly.kit.done' : 'poly.kit', L, { name: KITS13[view.kit].label })}</span><button type="button" data-kit-off title="${t('poly.kit.off', L)}">✕</button></div>` : ''}${hasHintRow || hasBestRow ? `<div class="poly-golden">${hasHintRow ? `<button type="button" data-hints aria-pressed="${view.hints && !view.bestFits}" title="${t('poly.hints.title', L)}">${t('poly.hints', L)}</button>` : ''}${hasBestRow ? `<button type="button" data-best aria-pressed="${view.bestFits}" title="${t('poly.best.title', L)}">${t('poly.best', L)}</button>` : ''}</div>${hasBestRow && view.bestFits ? bestRow(L) : ''}` : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.filter((v) => v === 'solid' || nodes.some((n) => PART_PICK[n.shape]?.[v])).map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}`;
     stripBody.querySelectorAll('.poly-shape canvas').forEach((cv) => disposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 34)));
   }
   panel.addEventListener('change', (e) => {
@@ -839,6 +859,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     if ('clear' in b.dataset) { chosen = null; renderPanel(); return; }
     if (rcpAct(b)) return;
     if ('hints' in b.dataset) { if (view.bestFits) { view.bestFits = false; view.hints = true; } else view.hints = !view.hints; save(); rebuild(); renderPanel(); return; }
+    if ('kitOff' in b.dataset) { view.kit = null; save(); rebuild(); renderPanel(); return; }
     if ('best' in b.dataset) { view.bestFits = !view.bestFits; save(); rebuild(); renderPanel(); return; }
     if ('bestPick' in b.dataset) { placeSlot(Number(b.dataset.bestPick)); return; }
     if ('transform' in b.dataset && selection) { transform(selection.node); return; }
@@ -907,6 +928,25 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       fittedRadius = Math.max(...POLYHEDRA[id].vertices.map((v) => Math.hypot(...v)));
       fitView?.(fittedRadius);
       showHudPrompt(polyShapeName(id), 2500);
+    },
+    // A 13 kit (DICTO 2026-10-13): its centre piece alone, and the kit's outlines showing where the next pieces go. Over an
+    // existing build it asks first; Cancel keeps the build and lines the kit up with whatever of it is already there.
+    startKit(id) {
+      const kit = KITS13[id];
+      if (!kit) return;
+      view.kit = id; view.hints = true; view.bestFits = false;
+      if (!nodes.length || confirm(t('poly.kit.replace', lang()))) {
+        const e = kit.entries[0];
+        nodes = [{ id: `n${nextId++}`, shape: e.shape, transform: { position: [...e.position], quaternion: [...e.quaternion] }, material: getMaterial() }];
+        connections = []; selection = null; chosen = null;
+      }
+      view.shape = kit.entries[0].shape;
+      commit();
+      // Framed on the centre and its next layer (the build refits as it grows), not the whole finished kit.
+      const reach = (sh, pos) => Math.hypot(...pos) + Math.max(...POLYHEDRA[sh].vertices.map((v) => Math.hypot(...v)));
+      fittedRadius = Math.max(...nodes.map((n) => reach(n.shape, n.transform.position)), ...hints().slots.map((sl) => reach(sl.shape, sl.position)));
+      fitView?.(fittedRadius);
+      showHudPrompt(kit.label, 2500);
     },
     // A 4D polytope's Build (D5): its seed alone, growing into the polytope (RCP-C2B), shell 1 open.
     startPolytope(seed, target) {

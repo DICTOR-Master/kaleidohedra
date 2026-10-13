@@ -55,7 +55,7 @@ import { loadCatalogue } from './catalogue-load.js';
 import { t, tn, tFor } from './i18n.js';
 import { polyShapeEdges, polyShapeName } from './poly-shapes.js';
 import { FAMILY_META, familyIds, familiesFor, pairPartners } from '../krp-core/src/polyhedra/families.js';
-import { POLYHEDRA } from '../krp-core/src/polyhedra/index.js';
+import { POLYHEDRA, KITS13, KIT13_ADDITION_IDS } from '../krp-core/src/polyhedra/index.js';
 import { isConvex } from '../krp-core/src/assembly/faceRegistration.js';
 import { favourites, recent, isFavourite, toggleFavourite } from './poly-prefs.js';
 import { netEligible, mountNetViewer } from './net-viewer.js';
@@ -588,7 +588,7 @@ const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
 // DICTO's block, findings first and tools last (copy audit, DICTO 2026-10-09).
 const DICTO_ORDER = ['chains', 'thirteens', 'icosa', 'dodeca', 'roofFold', 'stellaJewel', 'sunstar', 'studies', 'targets', 'dictofcc', 'hex', 'shells', 'golden'];
 const dictoRank = (e) => { const i = DICTO_ORDER.indexOf(e.lat?.key); return i < 0 ? DICTO_ORDER.length : i; };
-const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['DICTO_EDGE_ROOF', 'DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER'] };
+const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['DICTO_EDGE_ROOF', 'DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER', ...KIT13_ADDITION_IDS] };
 // The shape a face was tapped on, while picking: its space-filling partners come first (as the old site).
 let partnerIds = [];
 const gold = (id) => (DICTO_POLY.ids.includes(id) ? ' dicto-gold' : '');
@@ -669,6 +669,8 @@ function dimensionEntries(dim) {
 // The name of the world a pick opens (DICTO 2026-10-13: the world's title under DICTO): its lattice or world, then the
 // piece when there are several ("Multi-shell chains · Chain of Karma"); null when the pick isn't one of these lists.
 export function worldTitle(dim, action) {
+  const kit = action?.match(/^tool:polyKit:([\w.]+)$/)?.[1];
+  if (kit && KITS13[kit]) return KITS13[kit].label;
   const shape = action?.match(/^tool:polyShape:(\w+)$/)?.[1];
   if (shape && POLYHEDRA[shape]) return polyShapeName(shape);
   for (const e of dimensionEntries(dim)) {
@@ -1031,6 +1033,8 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     if (key === 'STELLATIONS') return [...new Set(STELLATION_IDS.map((id) => stellationInfo(id).solid))].map((solid) => ({ id: solid, title: stellatedSolidName(solid), ids: STELLATION_IDS.filter((id) => stellationInfo(id).solid === solid) }));
     if (key === 'BRIDGES_3D') return BRIDGE_SECTIONS.map((sec) => ({ id: sec.id, title: t(`pv.bridges.section.${sec.id}`, L), ids: sec.ids }));
     if (key === 'POLYTOPES_4D') return SYMMETRIES_4D.map((g) => ({ id: g, title: t('polytope.symmetry', L, { group: g }), ids: POLYTOPES_4D.filter((p) => p.symmetry === g).map((p) => p.id) }));
+    // DICTO's pieces, then the 13s' kit pieces (DICTO 2026-10-13) in their own section.
+    if (key === DICTO_POLY.key) return [{ id: 'dicto', title: t('wiz.poly.dictoOwn', L), ids: DICTO_POLY.ids.filter((id) => !KIT13_ADDITION_IDS.includes(id)) }, { id: 'kits13', title: t('wiz.poly.kitPieces', L), ids: KIT13_ADDITION_IDS }];
     if (key === 'SPACE_FILLING_PAIRS') return SPACE_FILLING_PAIR_LIST.map((p) => ({ id: p.ids.join('+'), title: p.honeycomb, ids: p.ids, pair: true }));
     return null;
   }
@@ -1051,10 +1055,18 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
         .map((sec) => `<div class="poly-section" data-section="${sec.id}"><div class="poly-section-title">${sec.title}</div>
           <div class="dim-wizard-grid dicto-block${sec.pair ? ' poly-pair' : ''}" style="${style}">${sec.ids.map(card).join(sec.pair ? '<span class="poly-pair-plus">+</span>' : '')}</div></div>`).join('')
       : `<div class="dim-wizard-grid dicto-block" style="${style}">${polyIds(key).filter(fits).map(card).join('')}</div>`;
+    // The 13s kits (DICTO 2026-10-13, docs/PLAN-13.md): each starts a build of the whole kit, outlines showing the next pieces.
+    const kits = key === DICTO_POLY.key && !picker ? `<div class="poly-section" data-section="kits13"><div class="poly-section-title">${t('wiz.poly.kits', L)}</div>
+          <div class="dim-wizard-grid dicto-block" style="${style}">${Object.entries(KITS13).map(([id, k]) => `
+        <button type="button" class="dim-wizard-card-btn dim-wizard-piece" data-kit="${id}">
+          ${previewSlot(() => polyShapeEdges(k.entries[0].shape))}
+          <span class="dim-wizard-row-text"><span class="dim-wizard-label">${k.label}</span><span class="dim-wizard-desc">${tn('wiz.poly.kitCount', L, k.entries.length)}</span></span>
+        </button>`).join('')}</div></div>` : '';
     bodyEl.innerHTML = `
       ${back(L)}
       <div class="dim-wizard-sub"><b>${polyLabel(key)}</b> · ${t('wiz.poly.shapes', L)}</div>
-      ${blocks}`;
+      ${kits}${blocks}`;
+    bodyEl.querySelectorAll('[data-kit]').forEach((el) => el.addEventListener('click', () => choose('3D', `tool:polyKit:${el.dataset.kit}`, 'polyhedraverse')));
     mountPreviews();
     bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => { if (picker) { showShapePicker(); return; } openDim = '3D'; showDimensions(`[data-family="${key}"]`); });
     bodyEl.querySelectorAll('[data-action]').forEach((el) => el.addEventListener('click', () => {
