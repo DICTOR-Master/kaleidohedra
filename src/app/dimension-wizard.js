@@ -478,7 +478,7 @@ export const LATTICES_3D = [
     { label: 'Truncated Tetrahedron', action: 'tool:pieceType:pyrochlore' },
   ] },
   // Golden Breathing Pyrochlore (DICTO 2026-10-14): big and small tetrahedra tip to tip, the hexagons FUJI's flat-ended triangles;
-  // its own world to build (world-breathing.js), next to the Pyrochlore, in Kaleidohedra only (R_LATTICES leaves it out).
+  // its own world to build (world-breathing.js), next to the Pyrochlore; listed once per door (the wizard drops repeats).
   { key: 'breathing', label: 'Golden Breathing Pyrochlore', pieces: [
     { label: 'Golden Breathing Pyrochlore', action: 'tool:breathingWorld' },
   ] },
@@ -596,7 +596,7 @@ function hullPreview(id) {
 }
 const K_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key))
   .map((l) => (l.key === 'hex' ? { ...l, pieces: l.pieces.filter((pc) => pc.action === 'tool:pieceType:hexprism') } : l));
-const R_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key) && l.key !== 'breathing');
+const R_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key));
 // Polyhedraverse's families: Platonic at the top as usual (DICTO 2026-10-09: "anyone wanting to
 // start at Platonic solids can do so as normal from the top of the green list"), DICTO's own pieces
 // above them in DICTO's livery; 4D Polytopes waits for D5.
