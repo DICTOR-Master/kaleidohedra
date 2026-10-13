@@ -96,8 +96,13 @@ These are face-plane matches only: a full closure like the Lotus seed also needs
 The direct analogue of DICTO's 63-piece build, a unit cube with a unit cuboctahedron on each face (`scripts/cubo_closure.py`,
 `cubo-closure.json`), does **not** close: no overlaps, but the hull (26 faces) is 40% gap, and the corner pocket (about 0.47) is not
 FUJI((√3 − 1)/2) (0.265). The cuboctahedra are too large for the cube; the Lotus seed works because each J11 hides a cap inside the
-dodecahedron. The next arrangement to test is the true analogue of DESHI: 12 cuboctahedra round a central one, parallel, slid in
-until they share whole edges, then the corner pockets compared with the cuboctahedral member.
+dodecahedron. **DESHI-style test** (`scripts/cubo_deshi.py`, `cubo-deshi.json`): 12 unit cuboctahedra on the central one's 12 vertex axes,
+parallel, slid in. Unlike icosahedra, they never come to share edges: first contact is at distance 2, **one shared corner** per
+neighbouring pair and with the centre, and sliding further makes them overlap. The cluster is then the vertex-to-vertex cluster:
+its hull is the cuboctahedron 3 times larger (14 faces, the three-fold face a triangle of side 3) and the **fill is exactly 13/27**,
+the same as the icosahedral vertex-to-vertex cluster in the Icosa-13 study (there proved by hull = 3 × the solid). No FUJI-type
+pocket appears. So the cuboctahedral member does not come from a parallel cage; where it does occur (DICTO's dictospheres, the
+face-plane match with the cuboctahedron) is still to be explained, and turned or face-axis cages are the next candidates.
 
 **DICTO's dictospheres (2026-10-14, first figures):** flat-ended triangles with long sides about 4 cm and short sides about 1.5 cm,
 r ≈ 0.375, within 3% of the cuboctahedral member (√3 − 1)/2 = 0.366. The 5 cm was measured across the inside of the face (DICTO), and it fits: across a flat-ended triangle with sides 4 and 1.5,
