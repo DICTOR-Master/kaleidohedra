@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Pieces render (DICTO)</title>
+<style>html,body{margin:0;background:#14110d}#c{width:1200px;height:1100px}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script></head><body><div id="c"></div>
+<script>
+// Clean, framed renders of single pieces for the AXE, CLEO and FUJI paper (DICTO, 2026-10-14): app colours, dark edges,
+// each piece centred with a generous margin. window.show(name) draws one piece; the page is screenshotted by render-pieces.mjs.
+const COL = { wedge: 0x4dd0e1, 'inner-wedge': 0x4dd0e1, pyramid: 0xc792ea, needle: 0xc792ea };
+const host = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setPixelRatio(1);
+renderer.setSize(1200, 1100); host.appendChild(renderer.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0x14110d);
+const camera = new THREE.PerspectiveCamera(30, 1200 / 1100, 0.01, 100);
+scene.add(new THREE.HemisphereLight(0xdfe6ff, 0x1a1626, 0.62));
+const sun = new THREE.DirectionalLight(0xffffff, 0.6); scene.add(sun);
+let current = null;
+window.show = (name, dir, up, fixR) => {
+  if (current) scene.remove(current);
+  const P = DATA[name]; const c = P.v.reduce((a, v) => a.map((x, i) => x + v[i] / P.v.length), [0, 0, 0]);
+  const V = P.v.map(v => v.map((x, i) => x - c[i]));
+  const g = new THREE.Group(), pos = [], col = [], ep = [], cc = new THREE.Color();
+  P.f.forEach((f, fi) => { cc.setHex(COL[P.t[fi]] ?? 0xcccccc);
+    for (let i = 1; i + 1 < f.length; i++) for (const k of [f[0], f[i], f[i + 1]]) { pos.push(...V[k]); col.push(cc.r, cc.g, cc.b); }
+    for (let i = 0; i < f.length; i++) ep.push(...V[f[i]], ...V[f[(i + 1) % f.length]]); });
+  const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); geo.computeVertexNormals();
+  const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(ep, 3));
+  g.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: true, side: THREE.DoubleSide, roughness: .8, metalness: 0, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })),
+        new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x0b1220 })));
+  scene.add(g); current = g;
+  const R = fixR ?? Math.max(...V.map(v => Math.hypot(...v)));
+  const d = new THREE.Vector3(...dir).normalize(), dist = R * 1.18 / Math.sin(THREE.MathUtils.degToRad(15));
+  camera.position.copy(d.clone().multiplyScalar(dist)); camera.up.set(...(up ?? [0, 1, 0])); camera.lookAt(0, 0, 0);
+  sun.position.set(3, 5, 4).applyQuaternion(camera.quaternion);
+  renderer.render(scene, camera); return true;
+};
+</script></body></html>

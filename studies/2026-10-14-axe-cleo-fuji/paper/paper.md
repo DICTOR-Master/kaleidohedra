@@ -30,7 +30,9 @@ Units: the icosahedra have edge 1, and φ = τ = (1 + √5)/2.
 
 ## 2. Three pieces
 
-Figure 1, at the head of the paper, shows the three pieces at the scale where they fill the Lotus seed.
+Figure 1, at the head of the paper, shows the three pieces at one scale, the one at which they fill the Lotus seed.
+
+The names are DICTO's. **AXE** is shaped like an axe head, with its sharp edge as the blade. **CLEO** is named after Cleopatra's Needle, the obelisk in London. **FUJI** has the shape of Mount Fuji, and its colour is that of the fuji flower, Japanese wisteria.
 
 | Piece | Shape | Edges | Volume | Credit |
 |---|---|---|---|---|
