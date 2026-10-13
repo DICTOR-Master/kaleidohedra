@@ -109,8 +109,11 @@ cons = [{'type': 'eq', 'fun': lambda x: planar_used(D(x))}, {'type': 'ineq', 'fu
 if EQUAL: cons.append({'type': 'eq', 'fun': lambda d: np.array([cellvol(D(d), ci) - 2 for ci in range(13)])})
 # The RD block is a balance point: start from small random nudges, keep the best that meets every constraint.
 best = None
-for seed in range(5):
-    start = np.random.default_rng(seed).normal(0, 0.03, 3 * (len(free) if RDC else N))
+# More and wider starts on request (robustness check): NSEEDS, NOISE, SEED0 in the environment.
+import os
+NSEEDS, NOISE, SEED0 = int(os.environ.get('NSEEDS', 5)), float(os.environ.get('NOISE', 0.03)), int(os.environ.get('SEED0', 0))
+for seed in range(SEED0, SEED0 + NSEEDS):
+    start = np.random.default_rng(seed).normal(0, NOISE, 3 * (len(free) if RDC else N))
     if RDC: start = np.concatenate([start, [1.0, 0, 0, 0]])
     res = minimize(lambda x: area(D(x)), start, method='SLSQP', constraints=cons, options={'maxiter': 1500, 'ftol': 1e-10})
     x = D(res.x)
@@ -132,4 +135,4 @@ for ci in []:
     vols.append(vol)
 print('cell volumes', [round(float(v), 4) for v in vols], 'sum %.6f' % sum(vols))
 json.dump({'W': W, 'L': L.T.tolist(), 'margin': MARGIN, 'cells': [[[ (np.array(b) + d[3*o:3*o+3]).tolist() for o, b in f] for f in cells[ci]] for ci in range(13)],
-           'centres': [p.tolist() for p in C], 'area0': a0, 'area': area(d), 'volumes': vols}, open(f'rd13-round-m{MARGIN}{"-equal" if EQUAL else "-rdcentre" if RDC else ""}.json', 'w'))
+           'centres': [p.tolist() for p in C], 'area0': a0, 'area': area(d), 'volumes': vols}, open(os.environ.get('OUT') or f'rd13-round-m{MARGIN}{"-equal" if EQUAL else "-rdcentre" if RDC else ""}.json', 'w'))
