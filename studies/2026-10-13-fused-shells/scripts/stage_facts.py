@@ -35,7 +35,7 @@ if __name__ == '__main__':
     partial = {v: sel[v]['partial'] for v in sel}
     out = {}
     with Pool(4) as pool:
-        for view in DATA:
+        for view in sel:
             P, groups, names = setup(view)
             jobs = [{'groups': S, 'pieces': sorted(i for i, g in enumerate(names) if g in S), 'how': 'whole rings'} for S in whole[view]]
             jobs += [{'groups': sorted({names[i] for i in p['pieces']}), 'pieces': p['pieces'], 'how': p['how'], 'partial': True} for p in partial[view]]

@@ -186,7 +186,9 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     for (const n of list) {
       colour(n, c);
       const P = worldPoints(n), s = POLYHEDRA[n.shape];
+      const own = c.clone(), fc = s.faceColours; // DICTO Transitional Shells: each face in its piece's colour, as in the app's views
       s.faces.forEach((f, fi) => {
+        if (fc) c.setHex(fc[fi]); else c.copy(own);
         for (let i = 1; i < f.length - 1; i++) {
           for (const k of [f[0], f[i], f[i + 1]]) { pos.push(P[k].x, P[k].y, P[k].z); col.push(c.r, c.g, c.b); }
           record?.push({ node: n, face: fi });

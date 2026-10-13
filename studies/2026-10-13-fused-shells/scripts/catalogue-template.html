@@ -51,6 +51,8 @@ details.all summary { cursor: pointer; font-weight: 700; }
 .filters { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin: 10px 0; font-size: 14px; }
 .filters select { background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; font: inherit; max-width: 100%; }
 button.more { margin-top: 10px; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px; font: inherit; cursor: pointer; } .card .flag.l { color: var(--lead); } .card .flag.x { color: var(--muted); }
+.apphead { display: grid; gap: 4px; border-top: 1px solid var(--line); padding-top: 18px; }
+h3.apph { font: 650 18px var(--display); margin: 0; }
 .film { display: grid; gap: 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
 .film-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
 .seg { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -160,9 +162,9 @@ function draw() { renderer.render(scene, camera); }
 
 // Thumbnails: the same renderer, one still per step.
 const upTo = (k) => Array.from({ length: k + 1 }, (_, i) => i);
-function thumb(world, idx, hi, extra = []) {
+function thumb(world, idx, hi, extra = [], size = 220) {
   const keep = holder.rotation.clone();
-  holder.rotation.set(0.35, -0.5, 0); renderer.setSize(220, 220, false); show(world, idx, hi, false, extra); draw();
+  holder.rotation.set(0.35, -0.5, 0); renderer.setSize(size, size, false); show(world, idx, hi, false, extra); draw();
   const url = canvas.toDataURL('image/png'); holder.rotation.copy(keep); return url;
 }
 
@@ -239,18 +241,24 @@ function lazy(img, world, idx, hi, extra = []) { img._job = [img, world, idx, hi
 const host = $('worlds');
 DATA.forEach((world, w) => {
   const sec = document.createElement('section');
-  const nConvex = world.stages.filter((s) => s.convex).length;
-  sec.innerHTML = `<div><h2>${world.name}</h2><div class="sub">${world.sub} · main route: ${world.steps.length} steps, centre outwards</div></div><div class="row route"></div>
+  if (world.app && !DATA[w - 1]?.app) {
+    const h = document.createElement('div'); h.className = 'apphead';
+    h.innerHTML = '<h2>In the app: Top shell stages</h2><p class="lede">Every view of the Multi-shell chains world, stage by stage exactly as its Top shell slider shows it (pieces grouped by distance from the centre). Each stage is everything up to that shell, fused.</p>';
+    host.appendChild(h);
+  }
+  sec.innerHTML = world.app ? `<div><h3 class="apph">${world.name}</h3><div class="sub">${world.steps.length} stages, centre outwards</div></div><div class="row route"></div>`
+    : `<div><h2>${world.name}</h2><div class="sub">${world.sub} · main route: ${world.steps.length} steps, centre outwards</div></div><div class="row route"></div>
     <details class="all"><summary>Whole-ring stages: ${world.stages.filter((x) => !x.p.length).length} (${world.stages.filter((x) => !x.p.length && x.convex).length} convex) <span class="sub">— the main route and every convex stage of whole rings</span></summary><div class="ringlegend"></div><div class="stages"></div></details>`;
   const row = sec.querySelector('.route');
   world.steps.forEach((s, k) => {
     const b = document.createElement('button'); b.type = 'button'; b.className = 'card'; b.dataset.w = w; b.dataset.k = k;
     const flag = s.convex ? '<span class="flag c">convex</span>' : s.note ? '<span class="flag l">lead</span>' : '<span class="flag x">in between</span>';
-    b.innerHTML = `<img alt="Step ${k + 1} of ${world.name}"><span class="n">STEP ${k + 1}</span><span class="a">${k ? '+ ' + s.adds : s.adds}</span>${flag}`;
-    thumbs.push([b.querySelector('img'), world, upTo(k), k]);
+    b.innerHTML = `<img alt="Step ${k + 1} of ${world.name}"><span class="n">${world.app ? 'STAGE' : 'STEP'} ${k + 1}</span><span class="a">${k ? '+ ' + s.adds : s.adds}</span>${flag}`;
+    if (world.app) lazy(b.querySelector('img'), world, upTo(k), k); else thumbs.push([b.querySelector('img'), world, upTo(k), k]);
     b.addEventListener('click', () => { select(w, k); window.scrollTo({ top: 0, behavior: 'smooth' }); });
     row.appendChild(b);
   });
+  if (world.app) { host.appendChild(sec); return; }
   sec.querySelector('.ringlegend').innerHTML = world.steps.map((s, i) => `<span><span class="sw" style="background:#${RINGS[i % RINGS.length].getHexString()}"></span>${i ? s.adds : 'centre: ' + s.adds}</span>`).join('');
   const grid = sec.querySelector('.stages');
   const byCount = new Map();
@@ -337,7 +345,7 @@ function showFilm(n) {
   $('note').textContent = done ? (world.steps[ring].note || 'A ring complete.') : `Adding ${world.steps[ring].adds}; the newest piece is orange.`;
   document.querySelectorAll('.card').forEach((c) => c.setAttribute('aria-pressed', 'false'));
 }
-$('filmWorlds').innerHTML = DATA.map((wd, w) => `<button type="button" data-w="${w}" aria-pressed="${w === filmW}">${wd.name}</button>`).join('');
+$('filmWorlds').innerHTML = DATA.map((wd, w) => (wd.app ? '' : `<button type="button" data-w="${w}" aria-pressed="${w === filmW}">${wd.name}</button>`)).join('');
 $('filmWorlds').addEventListener('click', (e) => {
   const b = e.target.closest('[data-w]'); if (!b) return;
   filmW = +b.dataset.w; $('filmWorlds').querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
@@ -356,6 +364,9 @@ $('filmPlay').addEventListener('click', () => {
 // While the film is showing, the thumbnail queue restores it rather than a stage.
 const restore = () => (cur.film ? showFilm(cur.film) : cur.stage === null ? select(cur.w, cur.k) : selectStage(cur.w, cur.stage));
 
+// For the study's figure export (scripts/render.mjs): the data, and one stage drawn at a given size as a PNG data URL.
+window.CATALOGUE = DATA;
+window.renderStage = (w, idx, hi, extra = [], size = 900) => thumb(DATA[w], idx, hi, extra, size);
 select(0, 1);
 kick();
 </script>

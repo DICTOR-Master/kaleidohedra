@@ -13,7 +13,7 @@ WORLD = {
     'dharma.cycle': ('Spheres of Dharma', 'one Ritsudō cycle, DISCOVERIES #23'),
     'bodhi.kitB': ('Bodhi Seed', 'Kit B, DISCOVERIES #24'),
 }
-PIECE = {'ico': 'icosahedra', 'cleo': 'CLEO', 'axe': 'AXE', 'fuji': 'FUJI', 'core': 'icosahedron', 'nfru3': 'twisted triangular frusta',
+PIECE = {'cap': 'caps', 'ico': 'icosahedra', 'cleo': 'CLEO', 'axe': 'AXE', 'fuji': 'FUJI', 'core': 'icosahedron', 'nfru3': 'twisted triangular frusta',
          'npyr5': 'pentagonal pyramids', 'npyr3': 'triangular pyramids', 'nfru5': 'twisted pentagonal frusta', 'nt1': 'Mosseri–Sadoc t1 tiles',
          'ncap': 'caps', 'nwedge': 'edge wedges', 'nedge': 'edge pieces', 'nface': 'face pieces', 'centre': 'rhombic triacontahedron',
          'B1': 'Vajras', 'copy': 'triacontahedra', 'B5L': 'Diadems (left)', 'B5R': 'Diadems (right)', 'B4': 'Crown Jewels'}
@@ -99,8 +99,39 @@ def payload():
     return out
 
 
+APP_VIEWS = [('karma.lotus', 'Chain of Karma · Lotus seed'), ('karma.step2', 'Chain of Karma · Chain step 2'), ('karma.dodeca', 'Chain of Karma · Dodecahedral Chain'),
+             ('dharma.cycle', 'Spheres of Dharma · one Ritsudō cycle'), ('dharma.inner', 'Spheres of Dharma · inner half'), ('dharma.outer', 'Spheres of Dharma · outer half'),
+             ('dharma.hinge', 'Spheres of Dharma · hinge'), ('bodhi.seed', 'Bodhi Seed · seed'), ('bodhi.kitB', 'Bodhi Seed · Kit B'), ('bodhi.kitA', 'Bodhi Seed · Kit A'),
+             ('bodhi.hollow', 'Bodhi Seed · the hollow')]
+
+
+def app_note(f):
+    """A lead from the counts: a classic convex solid, or faces on only a few planes (a stellation or compound look-alike)."""
+    key = tuple(sorted(f['faceShapes'].items()))
+    if f['convex']: return (CLASSIC.get(key, 'Convex') + '.') if CLASSIC.get(key) else f"Convex, {f['faces']} faces: to identify."
+    if f['planes'] <= 30: return f"Lead: its {f['faces']} visible faces lie on only {f['planes']} planes: a stellation or compound look-alike. To check."
+    return ''
+
+
+def app_worlds():
+    facts = {**json.load(open(os.path.join(ROOT, 'appstages.json'))), **json.load(open(os.path.join(ROOT, 'appstages2.json')))}
+    out = []
+    for view, name in APP_VIEWS:
+        P = pieces[view]
+        allP = np.array([p for _, V, _ in P for p in V], float); c0 = allP.mean(0)
+        rad = float(np.linalg.norm(allP - c0, axis=1).max())
+        steps_ = []
+        for f in facts[view]:
+            adds = ' + '.join(f"{n} {PIECE.get(r, r)}" for r, n in f['adds'].items())
+            steps_.append({'adds': adds if f['level'] else f'the centre {adds.split(" ", 1)[1]}', 'convex': f['convex'], 'faces': f['faces'],
+                           'shapes': f['faceShapes'], 'planes': f['planes'], 'note': app_note(f),
+                           'pieces': [{'v': np.round((np.array(P[i][1], float) - c0) / rad, 4).tolist(), 'f': P[i][2]} for i in f['pieces']]})
+        out.append({'id': view, 'name': name, 'sub': 'as the app\'s Top shell slider shows it', 'app': True, 'steps': steps_, 'stages': [], 'film': []})
+    return out
+
+
 if __name__ == '__main__':
     tpl = open(os.path.join(HERE, 'catalogue-template.html')).read()
-    html = tpl.replace('/*DATA*/null', json.dumps(payload(), separators=(',', ':')))
+    html = tpl.replace('/*DATA*/null', json.dumps(payload() + app_worlds(), separators=(',', ':')))
     open(os.path.join(ROOT, 'catalogue.html'), 'w').write(html)
     print('catalogue.html', len(html) // 1024, 'KB')

@@ -27,6 +27,9 @@ def plane(P, f, pc):
 def key_pt(p): return tuple(np.round(p, 5))
 
 
+GAP = 2e-4  # well above the data's rounding, far below any real edge (shortest edges here are > 0.05)
+
+
 def describe_union(pieces):
     """The union of the pieces as one solid: on every plane that carries piece faces, the faces pointing one way minus
     those pointing the other way (2D clipping) is the union's surface there; each connected region is one face."""
@@ -45,7 +48,9 @@ def describe_union(pieces):
     for n, d, plus, minus in planes:
         u = np.cross(n, [1, 0, 0] if abs(n[0]) < 0.9 else [0, 1, 0]); u /= np.linalg.norm(u); v = np.cross(n, u)
         to2 = lambda poly: Polygon([(float(p @ u), float(p @ v)) for p in poly]).buffer(0)
-        A = unary_union([to2(x) for x in plus]); B = unary_union([to2(x) for x in minus]) if minus else Polygon()
+        # close the rounding gaps between neighbouring faces (coordinates are stored to 6 decimals) before counting regions
+        close = lambda polys: unary_union([p.buffer(GAP, join_style=2) for p in polys]).buffer(-GAP, join_style=2)
+        A = close([to2(x) for x in plus]); B = close([to2(x) for x in minus]) if minus else Polygon()
         for region, sign in ((A.difference(B), 1), (B.difference(A), -1)):
             for g in getattr(region, 'geoms', [region]):
                 if g.is_empty or g.area < 1e-7: continue

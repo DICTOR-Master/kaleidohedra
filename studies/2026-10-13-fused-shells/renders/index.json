@@ -1,0 +1,7295 @@
+{
+ "credit": "DICTO · dictospheres.com",
+ "note": "Orange: the pieces added at that step (or the partial ring); other colours: earlier rings. Counts: the fused solid's outside (steps.py).",
+ "figures": [
+  {
+   "file": "karma-step01.png",
+   "structure": "Chain of Karma",
+   "kind": "main route step",
+   "step": 1,
+   "of": 6,
+   "adds": "the centre icosahedra",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "note": "Icosahedron."
+  },
+  {
+   "file": "karma-step02.png",
+   "structure": "Chain of Karma",
+   "kind": "main route step",
+   "step": 2,
+   "of": 6,
+   "adds": "20 CLEO",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 16,
+    "6-gon": 12,
+    "10-gon": 4
+   },
+   "planes": 12,
+   "note": "Lead: all 60 visible triangles lie on just 12 planes, in the dodecahedron's face directions, round an icosahedron core: the look of Kepler's great stellated dodecahedron. To check."
+  },
+  {
+   "file": "karma-step03.png",
+   "structure": "Chain of Karma",
+   "kind": "main route step",
+   "step": 3,
+   "of": 6,
+   "adds": "30 AXE",
+   "convex": false,
+   "faces": 56,
+   "faceShapes": {
+    "3-gon": 56
+   },
+   "planes": 20,
+   "note": "Lead: all 60 visible triangles lie on the 20 face planes of the centre icosahedron, so this is a stellation of the icosahedron. Which one: to check."
+  },
+  {
+   "file": "karma-step04.png",
+   "structure": "Chain of Karma",
+   "kind": "main route step",
+   "step": 4,
+   "of": 6,
+   "adds": "12 icosahedra",
+   "convex": false,
+   "faces": 180,
+   "faceShapes": {
+    "3-gon": 172,
+    "4-gon": 8
+   },
+   "planes": 60,
+   "note": ""
+  },
+  {
+   "file": "karma-step05.png",
+   "structure": "Chain of Karma",
+   "kind": "main route step",
+   "step": 5,
+   "of": 6,
+   "adds": "30 AXE",
+   "convex": false,
+   "faces": 180,
+   "faceShapes": {
+    "3-gon": 180
+   },
+   "planes": 52,
+   "note": ""
+  },
+  {
+   "file": "karma-step06.png",
+   "structure": "Chain of Karma",
+   "kind": "main route step",
+   "step": 6,
+   "of": 6,
+   "adds": "20 FUJI",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "note": "Icosahedron, φ³ times the centre one."
+  },
+  {
+   "file": "karma-stage001.png",
+   "structure": "Chain of Karma",
+   "kind": "convex whole-ring stage",
+   "rings": [
+    0
+   ],
+   "partial": "whole rings",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "name": "Icosahedron"
+  },
+  {
+   "file": "karma-stage006.png",
+   "structure": "Chain of Karma",
+   "kind": "convex whole-ring stage",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "whole rings",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "name": "Icosahedron"
+  },
+  {
+   "file": "karma-stage007.png",
+   "structure": "Chain of Karma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "ico + D5 part of cleo",
+   "convex": false,
+   "faces": 38,
+   "faceShapes": {
+    "3-gon": 36,
+    "6-gon": 2
+   },
+   "planes": 22,
+   "name": null
+  },
+  {
+   "file": "karma-stage008.png",
+   "structure": "Chain of Karma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "ico + D5 part of cleo",
+   "convex": false,
+   "faces": 36,
+   "faceShapes": {
+    "3-gon": 32,
+    "6-gon": 4
+   },
+   "planes": 20,
+   "name": null
+  },
+  {
+   "file": "karma-stage009.png",
+   "structure": "Chain of Karma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "ico + D3 part of cleo",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 32
+   },
+   "planes": 26,
+   "name": null
+  },
+  {
+   "file": "karma-stage010.png",
+   "structure": "Chain of Karma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "ico + D3 part of cleo",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 32
+   },
+   "planes": 26,
+   "name": null
+  },
+  {
+   "file": "karma-stage011.png",
+   "structure": "Chain of Karma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "ico + D3 part of cleo",
+   "convex": false,
+   "faces": 24,
+   "faceShapes": {
+    "3-gon": 24
+   },
+   "planes": 24,
+   "name": null
+  },
+  {
+   "file": "karma-stage012.png",
+   "structure": "Chain of Karma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "ico + D3 part of cleo",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 32
+   },
+   "planes": 26,
+   "name": null
+  },
+  {
+   "file": "karma-stage013.png",
+   "structure": "Chain of Karma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "ico + D2 part of cleo",
+   "convex": false,
+   "faces": 28,
+   "faceShapes": {
+    "3-gon": 28
+   },
+   "planes": 24,
+   "name": null
+  },
+  {
+   "file": "karma-stage014.png",
+   "structure": "Chain of Karma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "ico + D2 part of cleo",
+   "convex": false,
+   "faces": 28,
+   "faceShapes": {
+    "3-gon": 28
+   },
+   "planes": 28,
+   "name": null
+  },
+  {
+   "file": "karma-stage015.png",
+   "structure": "Chain of Karma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "ico + D2 part of cleo",
+   "convex": false,
+   "faces": 28,
+   "faceShapes": {
+    "3-gon": 28
+   },
+   "planes": 28,
+   "name": null
+  },
+  {
+   "file": "karma-stage016.png",
+   "structure": "Chain of Karma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "ico + T part of cleo",
+   "convex": false,
+   "faces": 33,
+   "faceShapes": {
+    "3-gon": 24,
+    "6-gon": 7,
+    "9-gon": 2
+   },
+   "planes": 20,
+   "name": null
+  },
+  {
+   "file": "karma-stage017.png",
+   "structure": "Chain of Karma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "ico + half of cleo (5-fold axis)",
+   "convex": false,
+   "faces": 33,
+   "faceShapes": {
+    "3-gon": 28,
+    "6-gon": 3,
+    "9-gon": 2
+   },
+   "planes": 21,
+   "name": null
+  },
+  {
+   "file": "karma-stage018.png",
+   "structure": "Chain of Karma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "ico + cap of cleo (5-fold axis)",
+   "convex": false,
+   "faces": 30,
+   "faceShapes": {
+    "3-gon": 30
+   },
+   "planes": 25,
+   "name": null
+  },
+  {
+   "file": "karma-stage019.png",
+   "structure": "Chain of Karma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "ico + half of cleo (3-fold axis)",
+   "convex": false,
+   "faces": 33,
+   "faceShapes": {
+    "3-gon": 27,
+    "6-gon": 5,
+    "9-gon": 1
+   },
+   "planes": 22,
+   "name": null
+  },
+  {
+   "file": "karma-stage020.png",
+   "structure": "Chain of Karma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "ico + cap of cleo (3-fold axis)",
+   "convex": false,
+   "faces": 28,
+   "faceShapes": {
+    "3-gon": 28
+   },
+   "planes": 25,
+   "name": null
+  },
+  {
+   "file": "karma-stage021.png",
+   "structure": "Chain of Karma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "ico + half of cleo (2-fold axis)",
+   "convex": false,
+   "faces": 33,
+   "faceShapes": {
+    "3-gon": 28,
+    "6-gon": 5
+   },
+   "planes": 23,
+   "name": null
+  },
+  {
+   "file": "karma-stage022.png",
+   "structure": "Chain of Karma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "ico + cap of cleo (2-fold axis)",
+   "convex": false,
+   "faces": 24,
+   "faceShapes": {
+    "3-gon": 24
+   },
+   "planes": 24,
+   "name": null
+  },
+  {
+   "file": "dharma-step01.png",
+   "structure": "Spheres of Dharma",
+   "kind": "main route step",
+   "step": 1,
+   "of": 11,
+   "adds": "the centre icosahedron",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "note": "Icosahedron."
+  },
+  {
+   "file": "dharma-step02.png",
+   "structure": "Spheres of Dharma",
+   "kind": "main route step",
+   "step": 2,
+   "of": 11,
+   "adds": "20 twisted triangular frusta",
+   "convex": false,
+   "faces": 80,
+   "faceShapes": {
+    "3-gon": 80
+   },
+   "planes": 80,
+   "note": ""
+  },
+  {
+   "file": "dharma-step03.png",
+   "structure": "Spheres of Dharma",
+   "kind": "main route step",
+   "step": 3,
+   "of": 11,
+   "adds": "12 pentagonal pyramids",
+   "convex": true,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 20,
+    "5-gon": 12
+   },
+   "planes": 32,
+   "note": "Icosidodecahedron."
+  },
+  {
+   "file": "dharma-step04.png",
+   "structure": "Spheres of Dharma",
+   "kind": "main route step",
+   "step": 4,
+   "of": 11,
+   "adds": "20 triangular pyramids",
+   "convex": true,
+   "faces": 12,
+   "faceShapes": {
+    "5-gon": 12
+   },
+   "planes": 12,
+   "note": "Dodecahedron."
+  },
+  {
+   "file": "dharma-step05.png",
+   "structure": "Spheres of Dharma",
+   "kind": "main route step",
+   "step": 5,
+   "of": 11,
+   "adds": "12 twisted pentagonal frusta",
+   "convex": false,
+   "faces": 84,
+   "faceShapes": {
+    "3-gon": 42,
+    "5-gon": 29,
+    "6-gon": 7,
+    "7-gon": 1,
+    "9-gon": 1,
+    "10-gon": 4
+   },
+   "planes": 44,
+   "note": ""
+  },
+  {
+   "file": "dharma-step06.png",
+   "structure": "Spheres of Dharma",
+   "kind": "main route step",
+   "step": 6,
+   "of": 11,
+   "adds": "30 Mosseri–Sadoc t1 tiles",
+   "convex": true,
+   "faces": 32,
+   "faceShapes": {
+    "5-gon": 12,
+    "6-gon": 20
+   },
+   "planes": 32,
+   "note": "Truncated icosahedron."
+  },
+  {
+   "file": "dharma-step07.png",
+   "structure": "Spheres of Dharma",
+   "kind": "main route step",
+   "step": 7,
+   "of": 11,
+   "adds": "20 caps",
+   "convex": true,
+   "faces": 102,
+   "faceShapes": {
+    "3-gon": 60,
+    "4-gon": 30,
+    "5-gon": 12
+   },
+   "planes": 102,
+   "note": "Convex, 80 corners: 60 triangles, 30 rectangles, 12 pentagons. Not one of the named convex solids I know; to check."
+  },
+  {
+   "file": "dharma-step08.png",
+   "structure": "Spheres of Dharma",
+   "kind": "main route step",
+   "step": 8,
+   "of": 11,
+   "adds": "12 caps",
+   "convex": false,
+   "faces": 144,
+   "faceShapes": {
+    "3-gon": 109,
+    "4-gon": 30,
+    "6-gon": 5
+   },
+   "planes": 110,
+   "note": ""
+  },
+  {
+   "file": "dharma-step09.png",
+   "structure": "Spheres of Dharma",
+   "kind": "main route step",
+   "step": 9,
+   "of": 11,
+   "adds": "60 edge wedges",
+   "convex": true,
+   "faces": 30,
+   "faceShapes": {
+    "4-gon": 30
+   },
+   "planes": 30,
+   "note": "Rhombic triacontahedron."
+  },
+  {
+   "file": "dharma-step10.png",
+   "structure": "Spheres of Dharma",
+   "kind": "main route step",
+   "step": 10,
+   "of": 11,
+   "adds": "30 edge pieces",
+   "convex": false,
+   "faces": 60,
+   "faceShapes": {
+    "3-gon": 60
+   },
+   "planes": 60,
+   "note": "Lead: 60 triangles on 60 planes, all at one distance from the centre: one family of planes, like a stellation of a 60-faced solid. To check."
+  },
+  {
+   "file": "dharma-step11.png",
+   "structure": "Spheres of Dharma",
+   "kind": "main route step",
+   "step": 11,
+   "of": 11,
+   "adds": "20 face pieces",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "note": "Icosahedron, φ³ times the centre one."
+  },
+  {
+   "file": "dharma-stage001.png",
+   "structure": "Spheres of Dharma",
+   "kind": "convex whole-ring stage",
+   "rings": [
+    0
+   ],
+   "partial": "whole rings",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "name": "Icosahedron"
+  },
+  {
+   "file": "dharma-stage003.png",
+   "structure": "Spheres of Dharma",
+   "kind": "convex whole-ring stage",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "whole rings",
+   "convex": true,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 20,
+    "5-gon": 12
+   },
+   "planes": 32,
+   "name": "Icosidodecahedron"
+  },
+  {
+   "file": "dharma-stage004.png",
+   "structure": "Spheres of Dharma",
+   "kind": "convex whole-ring stage",
+   "rings": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "partial": "whole rings",
+   "convex": true,
+   "faces": 12,
+   "faceShapes": {
+    "5-gon": 12
+   },
+   "planes": 12,
+   "name": "Dodecahedron"
+  },
+  {
+   "file": "dharma-stage006.png",
+   "structure": "Spheres of Dharma",
+   "kind": "convex whole-ring stage",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "whole rings",
+   "convex": true,
+   "faces": 32,
+   "faceShapes": {
+    "5-gon": 12,
+    "6-gon": 20
+   },
+   "planes": 32,
+   "name": "Truncated icosahedron"
+  },
+  {
+   "file": "dharma-stage007.png",
+   "structure": "Spheres of Dharma",
+   "kind": "convex whole-ring stage",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "whole rings",
+   "convex": true,
+   "faces": 102,
+   "faceShapes": {
+    "3-gon": 60,
+    "4-gon": 30,
+    "5-gon": 12
+   },
+   "planes": 102,
+   "name": "Convex, 80 corners (unnamed?)"
+  },
+  {
+   "file": "dharma-stage009.png",
+   "structure": "Spheres of Dharma",
+   "kind": "convex whole-ring stage",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "whole rings",
+   "convex": true,
+   "faces": 30,
+   "faceShapes": {
+    "4-gon": 30
+   },
+   "planes": 30,
+   "name": "Rhombic triacontahedron"
+  },
+  {
+   "file": "dharma-stage011.png",
+   "structure": "Spheres of Dharma",
+   "kind": "convex whole-ring stage",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "partial": "whole rings",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "name": "Icosahedron"
+  },
+  {
+   "file": "dharma-stage012.png",
+   "structure": "Spheres of Dharma",
+   "kind": "convex whole-ring stage",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "whole rings",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "name": "Icosahedron"
+  },
+  {
+   "file": "dharma-stage013.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "core + D5 part of nfru3",
+   "convex": false,
+   "faces": 55,
+   "faceShapes": {
+    "3-gon": 55
+   },
+   "planes": 55,
+   "name": null
+  },
+  {
+   "file": "dharma-stage014.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "core + D5 part of nfru3",
+   "convex": false,
+   "faces": 55,
+   "faceShapes": {
+    "3-gon": 55
+   },
+   "planes": 55,
+   "name": null
+  },
+  {
+   "file": "dharma-stage015.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "core + D3 part of nfru3",
+   "convex": false,
+   "faces": 29,
+   "faceShapes": {
+    "3-gon": 29
+   },
+   "planes": 29,
+   "name": null
+  },
+  {
+   "file": "dharma-stage016.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "core + D3 part of nfru3",
+   "convex": false,
+   "faces": 44,
+   "faceShapes": {
+    "3-gon": 44
+   },
+   "planes": 43,
+   "name": null
+  },
+  {
+   "file": "dharma-stage017.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "core + D3 part of nfru3",
+   "convex": false,
+   "faces": 47,
+   "faceShapes": {
+    "3-gon": 47
+   },
+   "planes": 47,
+   "name": null
+  },
+  {
+   "file": "dharma-stage018.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "core + D3 part of nfru3",
+   "convex": false,
+   "faces": 46,
+   "faceShapes": {
+    "3-gon": 46
+   },
+   "planes": 44,
+   "name": null
+  },
+  {
+   "file": "dharma-stage019.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "core + D2 part of nfru3",
+   "convex": false,
+   "faces": 36,
+   "faceShapes": {
+    "3-gon": 36
+   },
+   "planes": 36,
+   "name": null
+  },
+  {
+   "file": "dharma-stage020.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "core + D2 part of nfru3",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 32
+   },
+   "planes": 32,
+   "name": null
+  },
+  {
+   "file": "dharma-stage021.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "core + D2 part of nfru3",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 32
+   },
+   "planes": 32,
+   "name": null
+  },
+  {
+   "file": "dharma-stage022.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "core + T part of nfru3",
+   "convex": false,
+   "faces": 68,
+   "faceShapes": {
+    "3-gon": 68
+   },
+   "planes": 68,
+   "name": null
+  },
+  {
+   "file": "dharma-stage023.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "core + half of nfru3 (5-fold axis)",
+   "convex": false,
+   "faces": 54,
+   "faceShapes": {
+    "3-gon": 54
+   },
+   "planes": 52,
+   "name": null
+  },
+  {
+   "file": "dharma-stage024.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "core + cap of nfru3 (5-fold axis)",
+   "convex": false,
+   "faces": 38,
+   "faceShapes": {
+    "3-gon": 38
+   },
+   "planes": 38,
+   "name": null
+  },
+  {
+   "file": "dharma-stage025.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "core + half of nfru3 (3-fold axis)",
+   "convex": false,
+   "faces": 52,
+   "faceShapes": {
+    "3-gon": 52
+   },
+   "planes": 51,
+   "name": null
+  },
+  {
+   "file": "dharma-stage026.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "core + cap of nfru3 (3-fold axis)",
+   "convex": false,
+   "faces": 34,
+   "faceShapes": {
+    "3-gon": 34
+   },
+   "planes": 34,
+   "name": null
+  },
+  {
+   "file": "dharma-stage027.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "core + half of nfru3 (2-fold axis)",
+   "convex": false,
+   "faces": 46,
+   "faceShapes": {
+    "3-gon": 46
+   },
+   "planes": 45,
+   "name": null
+  },
+  {
+   "file": "dharma-stage028.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "core + cap of nfru3 (2-fold axis)",
+   "convex": false,
+   "faces": 30,
+   "faceShapes": {
+    "3-gon": 30
+   },
+   "planes": 30,
+   "name": null
+  },
+  {
+   "file": "dharma-stage029.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + D5 part of npyr3",
+   "convex": true,
+   "faces": 22,
+   "faceShapes": {
+    "3-gon": 10,
+    "5-gon": 2,
+    "6-gon": 10
+   },
+   "planes": 22,
+   "name": null
+  },
+  {
+   "file": "dharma-stage030.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + D5 part of npyr3",
+   "convex": true,
+   "faces": 22,
+   "faceShapes": {
+    "3-gon": 10,
+    "5-gon": 2,
+    "6-gon": 10
+   },
+   "planes": 22,
+   "name": null
+  },
+  {
+   "file": "dharma-stage031.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + D3 part of npyr3",
+   "convex": true,
+   "faces": 26,
+   "faceShapes": {
+    "3-gon": 14,
+    "6-gon": 6,
+    "7-gon": 6
+   },
+   "planes": 26,
+   "name": null
+  },
+  {
+   "file": "dharma-stage032.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + D3 part of npyr3",
+   "convex": true,
+   "faces": 26,
+   "faceShapes": {
+    "3-gon": 14,
+    "6-gon": 12
+   },
+   "planes": 26,
+   "name": null
+  },
+  {
+   "file": "dharma-stage033.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + D3 part of npyr3",
+   "convex": true,
+   "faces": 26,
+   "faceShapes": {
+    "3-gon": 14,
+    "6-gon": 12
+   },
+   "planes": 26,
+   "name": null
+  },
+  {
+   "file": "dharma-stage034.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + D3 part of npyr3",
+   "convex": true,
+   "faces": 30,
+   "faceShapes": {
+    "3-gon": 18,
+    "5-gon": 6,
+    "6-gon": 6
+   },
+   "planes": 30,
+   "name": null
+  },
+  {
+   "file": "dharma-stage035.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + D2 part of npyr3",
+   "convex": true,
+   "faces": 28,
+   "faceShapes": {
+    "3-gon": 16,
+    "6-gon": 12
+   },
+   "planes": 28,
+   "name": null
+  },
+  {
+   "file": "dharma-stage036.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + D2 part of npyr3",
+   "convex": true,
+   "faces": 28,
+   "faceShapes": {
+    "3-gon": 16,
+    "5-gon": 4,
+    "6-gon": 8
+   },
+   "planes": 28,
+   "name": null
+  },
+  {
+   "file": "dharma-stage037.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + D2 part of npyr3",
+   "convex": true,
+   "faces": 28,
+   "faceShapes": {
+    "3-gon": 16,
+    "6-gon": 12
+   },
+   "planes": 28,
+   "name": null
+  },
+  {
+   "file": "dharma-stage038.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + T part of npyr3",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 8,
+    "7-gon": 12
+   },
+   "planes": 20,
+   "name": null
+  },
+  {
+   "file": "dharma-stage039.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + half of npyr3 (5-fold axis)",
+   "convex": true,
+   "faces": 22,
+   "faceShapes": {
+    "3-gon": 10,
+    "5-gon": 2,
+    "6-gon": 10
+   },
+   "planes": 22,
+   "name": null
+  },
+  {
+   "file": "dharma-stage040.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + cap of npyr3 (5-fold axis)",
+   "convex": true,
+   "faces": 27,
+   "faceShapes": {
+    "3-gon": 15,
+    "5-gon": 7,
+    "6-gon": 5
+   },
+   "planes": 27,
+   "name": null
+  },
+  {
+   "file": "dharma-stage041.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + half of npyr3 (3-fold axis)",
+   "convex": true,
+   "faces": 22,
+   "faceShapes": {
+    "3-gon": 10,
+    "5-gon": 6,
+    "6-gon": 6
+   },
+   "planes": 22,
+   "name": null
+  },
+  {
+   "file": "dharma-stage042.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + cap of npyr3 (3-fold axis)",
+   "convex": true,
+   "faces": 28,
+   "faceShapes": {
+    "3-gon": 16,
+    "5-gon": 6,
+    "6-gon": 6
+   },
+   "planes": 28,
+   "name": null
+  },
+  {
+   "file": "dharma-stage043.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + half of npyr3 (2-fold axis)",
+   "convex": true,
+   "faces": 24,
+   "faceShapes": {
+    "3-gon": 12,
+    "5-gon": 6,
+    "6-gon": 6
+   },
+   "planes": 24,
+   "name": null
+  },
+  {
+   "file": "dharma-stage044.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + cap of npyr3 (2-fold axis)",
+   "convex": true,
+   "faces": 30,
+   "faceShapes": {
+    "3-gon": 18,
+    "5-gon": 8,
+    "6-gon": 4
+   },
+   "planes": 30,
+   "name": null
+  },
+  {
+   "file": "dharma-stage045.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + D5 part of nfru5",
+   "convex": false,
+   "faces": 43,
+   "faceShapes": {
+    "3-gon": 31,
+    "5-gon": 3,
+    "9-gon": 9
+   },
+   "planes": 42,
+   "name": null
+  },
+  {
+   "file": "dharma-stage046.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + D5 part of nfru5",
+   "convex": false,
+   "faces": 105,
+   "faceShapes": {
+    "3-gon": 77,
+    "5-gon": 19,
+    "6-gon": 5,
+    "7-gon": 1,
+    "9-gon": 2,
+    "10-gon": 1
+   },
+   "planes": 62,
+   "name": null
+  },
+  {
+   "file": "dharma-stage047.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + D3 part of nfru5",
+   "convex": false,
+   "faces": 71,
+   "faceShapes": {
+    "3-gon": 51,
+    "5-gon": 14,
+    "10-gon": 1,
+    "13-gon": 5
+   },
+   "planes": 58,
+   "name": null
+  },
+  {
+   "file": "dharma-stage048.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + D3 part of nfru5",
+   "convex": false,
+   "faces": 78,
+   "faceShapes": {
+    "3-gon": 60,
+    "5-gon": 14,
+    "9-gon": 4
+   },
+   "planes": 56,
+   "name": null
+  },
+  {
+   "file": "dharma-stage049.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + D2 part of nfru5",
+   "convex": false,
+   "faces": 56,
+   "faceShapes": {
+    "3-gon": 44,
+    "5-gon": 4,
+    "9-gon": 4,
+    "13-gon": 4
+   },
+   "planes": 52,
+   "name": null
+  },
+  {
+   "file": "dharma-stage050.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + half of nfru5 (5-fold axis)",
+   "convex": false,
+   "faces": 77,
+   "faceShapes": {
+    "3-gon": 58,
+    "5-gon": 13,
+    "6-gon": 1,
+    "9-gon": 4,
+    "10-gon": 1
+   },
+   "planes": 53,
+   "name": null
+  },
+  {
+   "file": "dharma-stage051.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + cap of nfru5 (5-fold axis)",
+   "convex": false,
+   "faces": 37,
+   "faceShapes": {
+    "3-gon": 25,
+    "5-gon": 7,
+    "9-gon": 5
+   },
+   "planes": 37,
+   "name": null
+  },
+  {
+   "file": "dharma-stage052.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + half of nfru5 (3-fold axis)",
+   "convex": false,
+   "faces": 71,
+   "faceShapes": {
+    "3-gon": 49,
+    "5-gon": 15,
+    "6-gon": 1,
+    "9-gon": 6
+   },
+   "planes": 54,
+   "name": null
+  },
+  {
+   "file": "dharma-stage053.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + cap of nfru5 (3-fold axis)",
+   "convex": false,
+   "faces": 50,
+   "faceShapes": {
+    "3-gon": 34,
+    "5-gon": 10,
+    "9-gon": 6
+   },
+   "planes": 45,
+   "name": null
+  },
+  {
+   "file": "dharma-stage054.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + half of nfru5 (2-fold axis)",
+   "convex": false,
+   "faces": 57,
+   "faceShapes": {
+    "3-gon": 37,
+    "5-gon": 14,
+    "6-gon": 1,
+    "9-gon": 5
+   },
+   "planes": 48,
+   "name": null
+  },
+  {
+   "file": "dharma-stage055.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2
+   ],
+   "partial": "core+nfru3+npyr5 + cap of nfru5 (2-fold axis)",
+   "convex": false,
+   "faces": 44,
+   "faceShapes": {
+    "3-gon": 32,
+    "5-gon": 6,
+    "9-gon": 6
+   },
+   "planes": 42,
+   "name": null
+  },
+  {
+   "file": "dharma-stage056.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "partial": "core+nfru3+npyr5+npyr3 + D5 part of nfru5",
+   "convex": true,
+   "faces": 22,
+   "faceShapes": {
+    "3-gon": 10,
+    "5-gon": 2,
+    "6-gon": 10
+   },
+   "planes": 22,
+   "name": null
+  },
+  {
+   "file": "dharma-stage057.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "partial": "core+nfru3+npyr5+npyr3 + D5 part of nfru5",
+   "convex": false,
+   "faces": 72,
+   "faceShapes": {
+    "3-gon": 31,
+    "4-gon": 5,
+    "5-gon": 25,
+    "6-gon": 8,
+    "9-gon": 1,
+    "10-gon": 2
+   },
+   "planes": 42,
+   "name": null
+  },
+  {
+   "file": "dharma-stage058.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "partial": "core+nfru3+npyr5+npyr3 + D3 part of nfru5",
+   "convex": false,
+   "faces": 46,
+   "faceShapes": {
+    "3-gon": 26,
+    "4-gon": 1,
+    "5-gon": 11,
+    "7-gon": 7,
+    "10-gon": 1
+   },
+   "planes": 38,
+   "name": null
+  },
+  {
+   "file": "dharma-stage059.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "partial": "core+nfru3+npyr5+npyr3 + D3 part of nfru5",
+   "convex": false,
+   "faces": 49,
+   "faceShapes": {
+    "3-gon": 27,
+    "4-gon": 4,
+    "5-gon": 11,
+    "6-gon": 6,
+    "7-gon": 1
+   },
+   "planes": 36,
+   "name": null
+  },
+  {
+   "file": "dharma-stage060.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "partial": "core+nfru3+npyr5+npyr3 + D2 part of nfru5",
+   "convex": false,
+   "faces": 36,
+   "faceShapes": {
+    "3-gon": 24,
+    "5-gon": 4,
+    "6-gon": 4,
+    "7-gon": 4
+   },
+   "planes": 32,
+   "name": null
+  },
+  {
+   "file": "dharma-stage061.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "partial": "core+nfru3+npyr5+npyr3 + half of nfru5 (5-fold axis)",
+   "convex": false,
+   "faces": 48,
+   "faceShapes": {
+    "3-gon": 24,
+    "4-gon": 1,
+    "5-gon": 12,
+    "6-gon": 8,
+    "7-gon": 1,
+    "8-gon": 1,
+    "10-gon": 1
+   },
+   "planes": 33,
+   "name": null
+  },
+  {
+   "file": "dharma-stage062.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "partial": "core+nfru3+npyr5+npyr3 + cap of nfru5 (5-fold axis)",
+   "convex": true,
+   "faces": 17,
+   "faceShapes": {
+    "3-gon": 5,
+    "5-gon": 7,
+    "6-gon": 5
+   },
+   "planes": 17,
+   "name": null
+  },
+  {
+   "file": "dharma-stage063.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "partial": "core+nfru3+npyr5+npyr3 + half of nfru5 (3-fold axis)",
+   "convex": false,
+   "faces": 48,
+   "faceShapes": {
+    "3-gon": 23,
+    "4-gon": 3,
+    "5-gon": 12,
+    "6-gon": 8,
+    "8-gon": 1,
+    "9-gon": 1
+   },
+   "planes": 34,
+   "name": null
+  },
+  {
+   "file": "dharma-stage064.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "partial": "core+nfru3+npyr5+npyr3 + cap of nfru5 (3-fold axis)",
+   "convex": false,
+   "faces": 30,
+   "faceShapes": {
+    "3-gon": 14,
+    "4-gon": 1,
+    "5-gon": 9,
+    "6-gon": 6
+   },
+   "planes": 25,
+   "name": null
+  },
+  {
+   "file": "dharma-stage065.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "partial": "core+nfru3+npyr5+npyr3 + half of nfru5 (2-fold axis)",
+   "convex": false,
+   "faces": 35,
+   "faceShapes": {
+    "3-gon": 14,
+    "4-gon": 2,
+    "5-gon": 12,
+    "6-gon": 7
+   },
+   "planes": 28,
+   "name": null
+  },
+  {
+   "file": "dharma-stage066.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "partial": "core+nfru3+npyr5+npyr3 + cap of nfru5 (2-fold axis)",
+   "convex": false,
+   "faces": 24,
+   "faceShapes": {
+    "3-gon": 12,
+    "5-gon": 6,
+    "6-gon": 6
+   },
+   "planes": 22,
+   "name": null
+  },
+  {
+   "file": "dharma-stage067.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + D5 part of ncap",
+   "convex": true,
+   "faces": 72,
+   "faceShapes": {
+    "3-gon": 40,
+    "4-gon": 10,
+    "5-gon": 12,
+    "6-gon": 10
+   },
+   "planes": 72,
+   "name": null
+  },
+  {
+   "file": "dharma-stage068.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + D5 part of ncap",
+   "convex": true,
+   "faces": 72,
+   "faceShapes": {
+    "3-gon": 40,
+    "4-gon": 10,
+    "5-gon": 12,
+    "6-gon": 10
+   },
+   "planes": 72,
+   "name": null
+  },
+  {
+   "file": "dharma-stage069.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + D3 part of ncap",
+   "convex": true,
+   "faces": 42,
+   "faceShapes": {
+    "3-gon": 12,
+    "5-gon": 12,
+    "6-gon": 18
+   },
+   "planes": 42,
+   "name": null
+  },
+  {
+   "file": "dharma-stage070.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + D3 part of ncap",
+   "convex": true,
+   "faces": 59,
+   "faceShapes": {
+    "3-gon": 30,
+    "4-gon": 3,
+    "5-gon": 12,
+    "6-gon": 14
+   },
+   "planes": 59,
+   "name": null
+  },
+  {
+   "file": "dharma-stage071.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + D3 part of ncap",
+   "convex": true,
+   "faces": 62,
+   "faceShapes": {
+    "3-gon": 36,
+    "5-gon": 12,
+    "6-gon": 14
+   },
+   "planes": 62,
+   "name": null
+  },
+  {
+   "file": "dharma-stage072.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + D3 part of ncap",
+   "convex": true,
+   "faces": 59,
+   "faceShapes": {
+    "3-gon": 30,
+    "4-gon": 3,
+    "5-gon": 12,
+    "6-gon": 14
+   },
+   "planes": 59,
+   "name": null
+  },
+  {
+   "file": "dharma-stage073.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + D2 part of ncap",
+   "convex": true,
+   "faces": 50,
+   "faceShapes": {
+    "3-gon": 20,
+    "4-gon": 2,
+    "5-gon": 12,
+    "6-gon": 16
+   },
+   "planes": 50,
+   "name": null
+  },
+  {
+   "file": "dharma-stage074.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + D2 part of ncap",
+   "convex": true,
+   "faces": 52,
+   "faceShapes": {
+    "3-gon": 24,
+    "5-gon": 12,
+    "6-gon": 16
+   },
+   "planes": 52,
+   "name": null
+  },
+  {
+   "file": "dharma-stage075.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + D2 part of ncap",
+   "convex": true,
+   "faces": 52,
+   "faceShapes": {
+    "3-gon": 24,
+    "5-gon": 12,
+    "6-gon": 16
+   },
+   "planes": 52,
+   "name": null
+  },
+  {
+   "file": "dharma-stage076.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + T part of ncap",
+   "convex": true,
+   "faces": 86,
+   "faceShapes": {
+    "3-gon": 60,
+    "4-gon": 6,
+    "5-gon": 12,
+    "6-gon": 8
+   },
+   "planes": 86,
+   "name": null
+  },
+  {
+   "file": "dharma-stage077.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + half of ncap (5-fold axis)",
+   "convex": true,
+   "faces": 72,
+   "faceShapes": {
+    "3-gon": 40,
+    "4-gon": 10,
+    "5-gon": 12,
+    "6-gon": 10
+   },
+   "planes": 72,
+   "name": null
+  },
+  {
+   "file": "dharma-stage078.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + cap of ncap (5-fold axis)",
+   "convex": true,
+   "faces": 52,
+   "faceShapes": {
+    "3-gon": 20,
+    "4-gon": 5,
+    "5-gon": 12,
+    "6-gon": 15
+   },
+   "planes": 52,
+   "name": null
+  },
+  {
+   "file": "dharma-stage079.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + half of ncap (3-fold axis)",
+   "convex": true,
+   "faces": 70,
+   "faceShapes": {
+    "3-gon": 36,
+    "4-gon": 12,
+    "5-gon": 12,
+    "6-gon": 10
+   },
+   "planes": 70,
+   "name": null
+  },
+  {
+   "file": "dharma-stage080.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + cap of ncap (3-fold axis)",
+   "convex": true,
+   "faces": 49,
+   "faceShapes": {
+    "3-gon": 18,
+    "4-gon": 3,
+    "5-gon": 12,
+    "6-gon": 16
+   },
+   "planes": 49,
+   "name": null
+  },
+  {
+   "file": "dharma-stage081.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + half of ncap (2-fold axis)",
+   "convex": true,
+   "faces": 63,
+   "faceShapes": {
+    "3-gon": 30,
+    "4-gon": 9,
+    "5-gon": 12,
+    "6-gon": 12
+   },
+   "planes": 63,
+   "name": null
+  },
+  {
+   "file": "dharma-stage082.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + cap of ncap (2-fold axis)",
+   "convex": true,
+   "faces": 41,
+   "faceShapes": {
+    "3-gon": 10,
+    "4-gon": 1,
+    "5-gon": 12,
+    "6-gon": 18
+   },
+   "planes": 41,
+   "name": null
+  },
+  {
+   "file": "dharma-stage083.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + D5 part of ncap",
+   "convex": true,
+   "faces": 30,
+   "faceShapes": {
+    "5-gon": 20,
+    "6-gon": 10
+   },
+   "planes": 30,
+   "name": null
+  },
+  {
+   "file": "dharma-stage084.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + D5 part of ncap",
+   "convex": true,
+   "faces": 22,
+   "faceShapes": {
+    "3-gon": 10,
+    "4-gon": 10,
+    "5-gon": 2
+   },
+   "planes": 22,
+   "name": null
+  },
+  {
+   "file": "dharma-stage085.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + D3 part of ncap",
+   "convex": true,
+   "faces": 26,
+   "faceShapes": {
+    "3-gon": 2,
+    "4-gon": 6,
+    "5-gon": 18
+   },
+   "planes": 26,
+   "name": null
+  },
+  {
+   "file": "dharma-stage086.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + D3 part of ncap",
+   "convex": true,
+   "faces": 26,
+   "faceShapes": {
+    "4-gon": 12,
+    "5-gon": 12,
+    "6-gon": 2
+   },
+   "planes": 26,
+   "name": null
+  },
+  {
+   "file": "dharma-stage087.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + D2 part of ncap",
+   "convex": true,
+   "faces": 28,
+   "faceShapes": {
+    "4-gon": 4,
+    "5-gon": 20,
+    "6-gon": 4
+   },
+   "planes": 28,
+   "name": null
+  },
+  {
+   "file": "dharma-stage088.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + half of ncap (5-fold axis)",
+   "convex": true,
+   "faces": 26,
+   "faceShapes": {
+    "3-gon": 5,
+    "4-gon": 5,
+    "5-gon": 11,
+    "6-gon": 5
+   },
+   "planes": 26,
+   "name": null
+  },
+  {
+   "file": "dharma-stage089.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + cap of ncap (5-fold axis)",
+   "convex": true,
+   "faces": 31,
+   "faceShapes": {
+    "5-gon": 16,
+    "6-gon": 15
+   },
+   "planes": 31,
+   "name": null
+  },
+  {
+   "file": "dharma-stage090.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + half of ncap (3-fold axis)",
+   "convex": true,
+   "faces": 26,
+   "faceShapes": {
+    "3-gon": 4,
+    "4-gon": 6,
+    "5-gon": 12,
+    "6-gon": 4
+   },
+   "planes": 26,
+   "name": null
+  },
+  {
+   "file": "dharma-stage091.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + cap of ncap (3-fold axis)",
+   "convex": true,
+   "faces": 29,
+   "faceShapes": {
+    "3-gon": 1,
+    "4-gon": 3,
+    "5-gon": 15,
+    "6-gon": 10
+   },
+   "planes": 29,
+   "name": null
+  },
+  {
+   "file": "dharma-stage092.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + half of ncap (2-fold axis)",
+   "convex": true,
+   "faces": 28,
+   "faceShapes": {
+    "3-gon": 2,
+    "4-gon": 4,
+    "5-gon": 14,
+    "6-gon": 8
+   },
+   "planes": 28,
+   "name": null
+  },
+  {
+   "file": "dharma-stage093.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1 + cap of ncap (2-fold axis)",
+   "convex": true,
+   "faces": 30,
+   "faceShapes": {
+    "4-gon": 2,
+    "5-gon": 16,
+    "6-gon": 12
+   },
+   "planes": 30,
+   "name": null
+  },
+  {
+   "file": "dharma-stage094.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of ncap",
+   "convex": false,
+   "faces": 110,
+   "faceShapes": {
+    "3-gon": 70,
+    "4-gon": 30,
+    "5-gon": 10
+   },
+   "planes": 110,
+   "name": null
+  },
+  {
+   "file": "dharma-stage095.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of ncap",
+   "convex": false,
+   "faces": 137,
+   "faceShapes": {
+    "3-gon": 101,
+    "4-gon": 30,
+    "5-gon": 2,
+    "6-gon": 4
+   },
+   "planes": 112,
+   "name": null
+  },
+  {
+   "file": "dharma-stage096.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of ncap",
+   "convex": false,
+   "faces": 125,
+   "faceShapes": {
+    "3-gon": 88,
+    "4-gon": 30,
+    "5-gon": 6,
+    "6-gon": 1
+   },
+   "planes": 116,
+   "name": null
+  },
+  {
+   "file": "dharma-stage097.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of ncap",
+   "convex": false,
+   "faces": 125,
+   "faceShapes": {
+    "3-gon": 88,
+    "4-gon": 30,
+    "5-gon": 6,
+    "6-gon": 1
+   },
+   "planes": 114,
+   "name": null
+  },
+  {
+   "file": "dharma-stage098.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D2 part of ncap",
+   "convex": false,
+   "faces": 117,
+   "faceShapes": {
+    "3-gon": 79,
+    "4-gon": 30,
+    "5-gon": 8
+   },
+   "planes": 113,
+   "name": null
+  },
+  {
+   "file": "dharma-stage099.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + half of ncap (5-fold axis)",
+   "convex": false,
+   "faces": 124,
+   "faceShapes": {
+    "3-gon": 86,
+    "4-gon": 30,
+    "5-gon": 6,
+    "6-gon": 2
+   },
+   "planes": 111,
+   "name": null
+  },
+  {
+   "file": "dharma-stage100.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + cap of ncap (5-fold axis)",
+   "convex": false,
+   "faces": 106,
+   "faceShapes": {
+    "3-gon": 65,
+    "4-gon": 30,
+    "5-gon": 11
+   },
+   "planes": 106,
+   "name": null
+  },
+  {
+   "file": "dharma-stage101.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + half of ncap (3-fold axis)",
+   "convex": false,
+   "faces": 123,
+   "faceShapes": {
+    "3-gon": 85,
+    "4-gon": 30,
+    "5-gon": 6,
+    "6-gon": 2
+   },
+   "planes": 112,
+   "name": null
+  },
+  {
+   "file": "dharma-stage102.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + cap of ncap (3-fold axis)",
+   "convex": false,
+   "faces": 113,
+   "faceShapes": {
+    "3-gon": 73,
+    "4-gon": 30,
+    "5-gon": 9,
+    "6-gon": 1
+   },
+   "planes": 109,
+   "name": null
+  },
+  {
+   "file": "dharma-stage103.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + half of ncap (2-fold axis)",
+   "convex": false,
+   "faces": 117,
+   "faceShapes": {
+    "3-gon": 78,
+    "4-gon": 30,
+    "5-gon": 8,
+    "6-gon": 1
+   },
+   "planes": 110,
+   "name": null
+  },
+  {
+   "file": "dharma-stage104.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + cap of ncap (2-fold axis)",
+   "convex": false,
+   "faces": 109,
+   "faceShapes": {
+    "3-gon": 69,
+    "4-gon": 30,
+    "5-gon": 10
+   },
+   "planes": 107,
+   "name": null
+  },
+  {
+   "file": "dharma-stage105.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of nwedge",
+   "convex": false,
+   "faces": 92,
+   "faceShapes": {
+    "3-gon": 50,
+    "4-gon": 30,
+    "5-gon": 12
+   },
+   "planes": 92,
+   "name": null
+  },
+  {
+   "file": "dharma-stage106.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of nwedge",
+   "convex": false,
+   "faces": 92,
+   "faceShapes": {
+    "3-gon": 50,
+    "4-gon": 10,
+    "5-gon": 32
+   },
+   "planes": 92,
+   "name": null
+  },
+  {
+   "file": "dharma-stage107.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of nwedge",
+   "convex": false,
+   "faces": 92,
+   "faceShapes": {
+    "3-gon": 50,
+    "4-gon": 10,
+    "5-gon": 32
+   },
+   "planes": 92,
+   "name": null
+  },
+  {
+   "file": "dharma-stage108.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of nwedge",
+   "convex": false,
+   "faces": 92,
+   "faceShapes": {
+    "3-gon": 50,
+    "4-gon": 15,
+    "5-gon": 22,
+    "6-gon": 5
+   },
+   "planes": 92,
+   "name": null
+  },
+  {
+   "file": "dharma-stage109.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of nwedge",
+   "convex": false,
+   "faces": 92,
+   "faceShapes": {
+    "3-gon": 50,
+    "4-gon": 15,
+    "5-gon": 22,
+    "6-gon": 5
+   },
+   "planes": 92,
+   "name": null
+  },
+  {
+   "file": "dharma-stage110.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of nwedge",
+   "convex": false,
+   "faces": 92,
+   "faceShapes": {
+    "3-gon": 50,
+    "4-gon": 20,
+    "5-gon": 12,
+    "6-gon": 10
+   },
+   "planes": 92,
+   "name": null
+  },
+  {
+   "file": "dharma-stage111.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 96,
+   "faceShapes": {
+    "3-gon": 54,
+    "4-gon": 24,
+    "5-gon": 12,
+    "6-gon": 6
+   },
+   "planes": 96,
+   "name": null
+  },
+  {
+   "file": "dharma-stage112.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 96,
+   "faceShapes": {
+    "3-gon": 54,
+    "4-gon": 18,
+    "5-gon": 24
+   },
+   "planes": 96,
+   "name": null
+  },
+  {
+   "file": "dharma-stage113.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 96,
+   "faceShapes": {
+    "3-gon": 54,
+    "4-gon": 18,
+    "5-gon": 24
+   },
+   "planes": 96,
+   "name": null
+  },
+  {
+   "file": "dharma-stage114.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 96,
+   "faceShapes": {
+    "3-gon": 54,
+    "4-gon": 18,
+    "5-gon": 24
+   },
+   "planes": 96,
+   "name": null
+  },
+  {
+   "file": "dharma-stage115.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 96,
+   "faceShapes": {
+    "3-gon": 54,
+    "4-gon": 18,
+    "5-gon": 24
+   },
+   "planes": 96,
+   "name": null
+  },
+  {
+   "file": "dharma-stage116.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 96,
+   "faceShapes": {
+    "3-gon": 54,
+    "4-gon": 21,
+    "5-gon": 18,
+    "6-gon": 3
+   },
+   "planes": 96,
+   "name": null
+  },
+  {
+   "file": "dharma-stage117.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 96,
+   "faceShapes": {
+    "3-gon": 54,
+    "4-gon": 18,
+    "5-gon": 24
+   },
+   "planes": 96,
+   "name": null
+  },
+  {
+   "file": "dharma-stage118.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 96,
+   "faceShapes": {
+    "3-gon": 54,
+    "4-gon": 21,
+    "5-gon": 18,
+    "6-gon": 3
+   },
+   "planes": 96,
+   "name": null
+  },
+  {
+   "file": "dharma-stage119.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 96,
+   "faceShapes": {
+    "3-gon": 54,
+    "4-gon": 21,
+    "5-gon": 18,
+    "6-gon": 3
+   },
+   "planes": 96,
+   "name": null
+  },
+  {
+   "file": "dharma-stage120.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 96,
+   "faceShapes": {
+    "3-gon": 54,
+    "4-gon": 21,
+    "5-gon": 18,
+    "6-gon": 3
+   },
+   "planes": 96,
+   "name": null
+  },
+  {
+   "file": "dharma-stage121.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D2 part of nwedge",
+   "convex": false,
+   "faces": 98,
+   "faceShapes": {
+    "3-gon": 56,
+    "4-gon": 24,
+    "5-gon": 16,
+    "6-gon": 2
+   },
+   "planes": 98,
+   "name": null
+  },
+  {
+   "file": "dharma-stage122.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D2 part of nwedge",
+   "convex": false,
+   "faces": 98,
+   "faceShapes": {
+    "3-gon": 56,
+    "4-gon": 24,
+    "5-gon": 16,
+    "6-gon": 2
+   },
+   "planes": 98,
+   "name": null
+  },
+  {
+   "file": "dharma-stage123.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D2 part of nwedge",
+   "convex": false,
+   "faces": 98,
+   "faceShapes": {
+    "3-gon": 56,
+    "4-gon": 22,
+    "5-gon": 20
+   },
+   "planes": 98,
+   "name": null
+  },
+  {
+   "file": "dharma-stage124.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D2 part of nwedge",
+   "convex": false,
+   "faces": 98,
+   "faceShapes": {
+    "3-gon": 56,
+    "4-gon": 22,
+    "5-gon": 20
+   },
+   "planes": 98,
+   "name": null
+  },
+  {
+   "file": "dharma-stage125.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D2 part of nwedge",
+   "convex": false,
+   "faces": 98,
+   "faceShapes": {
+    "3-gon": 56,
+    "4-gon": 22,
+    "5-gon": 20
+   },
+   "planes": 98,
+   "name": null
+  },
+  {
+   "file": "dharma-stage126.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + T part of nwedge",
+   "convex": false,
+   "faces": 90,
+   "faceShapes": {
+    "3-gon": 48,
+    "4-gon": 12,
+    "5-gon": 24,
+    "6-gon": 6
+   },
+   "planes": 90,
+   "name": null
+  },
+  {
+   "file": "dharma-stage127.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + T part of nwedge",
+   "convex": false,
+   "faces": 90,
+   "faceShapes": {
+    "3-gon": 48,
+    "4-gon": 12,
+    "5-gon": 24,
+    "6-gon": 6
+   },
+   "planes": 90,
+   "name": null
+  },
+  {
+   "file": "dharma-stage128.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + T part of nwedge",
+   "convex": false,
+   "faces": 90,
+   "faceShapes": {
+    "3-gon": 48,
+    "4-gon": 18,
+    "5-gon": 12,
+    "6-gon": 12
+   },
+   "planes": 90,
+   "name": null
+  },
+  {
+   "file": "dharma-stage129.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + T part of nwedge",
+   "convex": false,
+   "faces": 90,
+   "faceShapes": {
+    "3-gon": 48,
+    "4-gon": 6,
+    "5-gon": 36
+   },
+   "planes": 90,
+   "name": null
+  },
+  {
+   "file": "dharma-stage130.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + T part of nwedge",
+   "convex": false,
+   "faces": 90,
+   "faceShapes": {
+    "3-gon": 48,
+    "4-gon": 18,
+    "5-gon": 12,
+    "6-gon": 12
+   },
+   "planes": 90,
+   "name": null
+  },
+  {
+   "file": "dharma-stage131.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + half of nwedge (5-fold axis)",
+   "convex": false,
+   "faces": 72,
+   "faceShapes": {
+    "3-gon": 30,
+    "4-gon": 30,
+    "5-gon": 12
+   },
+   "planes": 72,
+   "name": null
+  },
+  {
+   "file": "dharma-stage132.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + cap of nwedge (5-fold axis)",
+   "convex": false,
+   "faces": 97,
+   "faceShapes": {
+    "3-gon": 55,
+    "4-gon": 30,
+    "5-gon": 12
+   },
+   "planes": 97,
+   "name": null
+  },
+  {
+   "file": "dharma-stage133.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + half of nwedge (3-fold axis)",
+   "convex": false,
+   "faces": 72,
+   "faceShapes": {
+    "3-gon": 30,
+    "4-gon": 24,
+    "5-gon": 12,
+    "6-gon": 6
+   },
+   "planes": 72,
+   "name": null
+  },
+  {
+   "file": "dharma-stage134.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + cap of nwedge (3-fold axis)",
+   "convex": false,
+   "faces": 93,
+   "faceShapes": {
+    "3-gon": 51,
+    "4-gon": 24,
+    "5-gon": 18
+   },
+   "planes": 93,
+   "name": null
+  },
+  {
+   "file": "dharma-stage135.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + half of nwedge (2-fold axis)",
+   "convex": false,
+   "faces": 74,
+   "faceShapes": {
+    "3-gon": 32,
+    "4-gon": 24,
+    "5-gon": 16,
+    "6-gon": 2
+   },
+   "planes": 74,
+   "name": null
+  },
+  {
+   "file": "dharma-stage136.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + cap of nwedge (2-fold axis)",
+   "convex": false,
+   "faces": 92,
+   "faceShapes": {
+    "3-gon": 50,
+    "4-gon": 22,
+    "5-gon": 20
+   },
+   "planes": 92,
+   "name": null
+  },
+  {
+   "file": "dharma-stage137.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of nedge",
+   "convex": false,
+   "faces": 132,
+   "faceShapes": {
+    "3-gon": 100,
+    "4-gon": 20,
+    "5-gon": 12
+   },
+   "planes": 122,
+   "name": null
+  },
+  {
+   "file": "dharma-stage138.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of nedge",
+   "convex": false,
+   "faces": 122,
+   "faceShapes": {
+    "3-gon": 90,
+    "4-gon": 20,
+    "5-gon": 12
+   },
+   "planes": 117,
+   "name": null
+  },
+  {
+   "file": "dharma-stage139.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of nedge",
+   "convex": false,
+   "faces": 118,
+   "faceShapes": {
+    "3-gon": 81,
+    "4-gon": 25,
+    "5-gon": 12
+   },
+   "planes": 115,
+   "name": null
+  },
+  {
+   "file": "dharma-stage140.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of nedge",
+   "convex": false,
+   "faces": 116,
+   "faceShapes": {
+    "3-gon": 79,
+    "4-gon": 25,
+    "5-gon": 12
+   },
+   "planes": 114,
+   "name": null
+  },
+  {
+   "file": "dharma-stage141.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nedge",
+   "convex": false,
+   "faces": 120,
+   "faceShapes": {
+    "3-gon": 84,
+    "4-gon": 24,
+    "5-gon": 12
+   },
+   "planes": 119,
+   "name": null
+  },
+  {
+   "file": "dharma-stage142.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nedge",
+   "convex": false,
+   "faces": 120,
+   "faceShapes": {
+    "3-gon": 84,
+    "4-gon": 24,
+    "5-gon": 12
+   },
+   "planes": 118,
+   "name": null
+  },
+  {
+   "file": "dharma-stage143.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nedge",
+   "convex": false,
+   "faces": 110,
+   "faceShapes": {
+    "3-gon": 71,
+    "4-gon": 27,
+    "5-gon": 12
+   },
+   "planes": 110,
+   "name": null
+  },
+  {
+   "file": "dharma-stage144.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nedge",
+   "convex": false,
+   "faces": 114,
+   "faceShapes": {
+    "3-gon": 78,
+    "4-gon": 24,
+    "5-gon": 12
+   },
+   "planes": 114,
+   "name": null
+  },
+  {
+   "file": "dharma-stage145.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nedge",
+   "convex": false,
+   "faces": 120,
+   "faceShapes": {
+    "3-gon": 84,
+    "4-gon": 24,
+    "5-gon": 12
+   },
+   "planes": 117,
+   "name": null
+  },
+  {
+   "file": "dharma-stage146.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nedge",
+   "convex": false,
+   "faces": 112,
+   "faceShapes": {
+    "3-gon": 73,
+    "4-gon": 27,
+    "5-gon": 12
+   },
+   "planes": 112,
+   "name": null
+  },
+  {
+   "file": "dharma-stage147.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D2 part of nedge",
+   "convex": false,
+   "faces": 115,
+   "faceShapes": {
+    "3-gon": 77,
+    "4-gon": 26,
+    "5-gon": 12
+   },
+   "planes": 114,
+   "name": null
+  },
+  {
+   "file": "dharma-stage148.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D2 part of nedge",
+   "convex": false,
+   "faces": 115,
+   "faceShapes": {
+    "3-gon": 77,
+    "4-gon": 26,
+    "5-gon": 12
+   },
+   "planes": 114,
+   "name": null
+  },
+  {
+   "file": "dharma-stage149.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D2 part of nedge",
+   "convex": false,
+   "faces": 108,
+   "faceShapes": {
+    "3-gon": 68,
+    "4-gon": 28,
+    "5-gon": 12
+   },
+   "planes": 108,
+   "name": null
+  },
+  {
+   "file": "dharma-stage150.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + T part of nedge",
+   "convex": false,
+   "faces": 125,
+   "faceShapes": {
+    "3-gon": 95,
+    "4-gon": 18,
+    "5-gon": 12
+   },
+   "planes": 122,
+   "name": null
+  },
+  {
+   "file": "dharma-stage151.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + T part of nedge",
+   "convex": false,
+   "faces": 127,
+   "faceShapes": {
+    "3-gon": 97,
+    "4-gon": 18,
+    "5-gon": 12
+   },
+   "planes": 124,
+   "name": null
+  },
+  {
+   "file": "dharma-stage152.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + T part of nedge",
+   "convex": false,
+   "faces": 120,
+   "faceShapes": {
+    "3-gon": 84,
+    "4-gon": 24,
+    "5-gon": 12
+   },
+   "planes": 120,
+   "name": null
+  },
+  {
+   "file": "dharma-stage153.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + half of nedge (5-fold axis)",
+   "convex": false,
+   "faces": 122,
+   "faceShapes": {
+    "3-gon": 94,
+    "4-gon": 16,
+    "5-gon": 12
+   },
+   "planes": 119,
+   "name": null
+  },
+  {
+   "file": "dharma-stage154.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + cap of nedge (5-fold axis)",
+   "convex": false,
+   "faces": 111,
+   "faceShapes": {
+    "3-gon": 74,
+    "4-gon": 25,
+    "5-gon": 12
+   },
+   "planes": 109,
+   "name": null
+  },
+  {
+   "file": "dharma-stage155.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + half of nedge (3-fold axis)",
+   "convex": false,
+   "faces": 121,
+   "faceShapes": {
+    "3-gon": 91,
+    "4-gon": 18,
+    "5-gon": 12
+   },
+   "planes": 120,
+   "name": null
+  },
+  {
+   "file": "dharma-stage156.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + cap of nedge (3-fold axis)",
+   "convex": false,
+   "faces": 110,
+   "faceShapes": {
+    "3-gon": 71,
+    "4-gon": 27,
+    "5-gon": 12
+   },
+   "planes": 110,
+   "name": null
+  },
+  {
+   "file": "dharma-stage157.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + half of nedge (2-fold axis)",
+   "convex": false,
+   "faces": 123,
+   "faceShapes": {
+    "3-gon": 94,
+    "4-gon": 17,
+    "5-gon": 12
+   },
+   "planes": 120,
+   "name": null
+  },
+  {
+   "file": "dharma-stage158.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + cap of nedge (2-fold axis)",
+   "convex": false,
+   "faces": 111,
+   "faceShapes": {
+    "3-gon": 74,
+    "4-gon": 25,
+    "5-gon": 12
+   },
+   "planes": 111,
+   "name": null
+  },
+  {
+   "file": "dharma-stage159.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of ncap",
+   "convex": false,
+   "faces": 88,
+   "faceShapes": {
+    "3-gon": 76,
+    "4-gon": 10,
+    "6-gon": 2
+   },
+   "planes": 70,
+   "name": null
+  },
+  {
+   "file": "dharma-stage160.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of ncap",
+   "convex": false,
+   "faces": 86,
+   "faceShapes": {
+    "3-gon": 73,
+    "4-gon": 10,
+    "6-gon": 3
+   },
+   "planes": 70,
+   "name": null
+  },
+  {
+   "file": "dharma-stage161.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of ncap",
+   "convex": false,
+   "faces": 36,
+   "faceShapes": {
+    "3-gon": 36
+   },
+   "planes": 32,
+   "name": null
+  },
+  {
+   "file": "dharma-stage162.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of ncap",
+   "convex": false,
+   "faces": 65,
+   "faceShapes": {
+    "3-gon": 62,
+    "4-gon": 3
+   },
+   "planes": 53,
+   "name": null
+  },
+  {
+   "file": "dharma-stage163.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of ncap",
+   "convex": false,
+   "faces": 64,
+   "faceShapes": {
+    "3-gon": 61,
+    "6-gon": 3
+   },
+   "planes": 56,
+   "name": null
+  },
+  {
+   "file": "dharma-stage164.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of ncap",
+   "convex": false,
+   "faces": 63,
+   "faceShapes": {
+    "3-gon": 58,
+    "4-gon": 3,
+    "6-gon": 2
+   },
+   "planes": 53,
+   "name": null
+  },
+  {
+   "file": "dharma-stage165.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D2 part of ncap",
+   "convex": false,
+   "faces": 50,
+   "faceShapes": {
+    "3-gon": 48,
+    "4-gon": 2
+   },
+   "planes": 42,
+   "name": null
+  },
+  {
+   "file": "dharma-stage166.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D2 part of ncap",
+   "convex": false,
+   "faces": 48,
+   "faceShapes": {
+    "3-gon": 44,
+    "6-gon": 4
+   },
+   "planes": 44,
+   "name": null
+  },
+  {
+   "file": "dharma-stage167.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D2 part of ncap",
+   "convex": false,
+   "faces": 50,
+   "faceShapes": {
+    "3-gon": 49,
+    "6-gon": 1
+   },
+   "planes": 44,
+   "name": null
+  },
+  {
+   "file": "dharma-stage168.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + T part of ncap",
+   "convex": false,
+   "faces": 110,
+   "faceShapes": {
+    "3-gon": 104,
+    "4-gon": 6
+   },
+   "planes": 86,
+   "name": null
+  },
+  {
+   "file": "dharma-stage169.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + half of ncap (5-fold axis)",
+   "convex": false,
+   "faces": 86,
+   "faceShapes": {
+    "3-gon": 73,
+    "4-gon": 10,
+    "6-gon": 3
+   },
+   "planes": 70,
+   "name": null
+  },
+  {
+   "file": "dharma-stage170.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + cap of ncap (5-fold axis)",
+   "convex": false,
+   "faces": 54,
+   "faceShapes": {
+    "3-gon": 48,
+    "4-gon": 5,
+    "6-gon": 1
+   },
+   "planes": 45,
+   "name": null
+  },
+  {
+   "file": "dharma-stage171.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + half of ncap (3-fold axis)",
+   "convex": false,
+   "faces": 84,
+   "faceShapes": {
+    "3-gon": 69,
+    "4-gon": 12,
+    "6-gon": 3
+   },
+   "planes": 68,
+   "name": null
+  },
+  {
+   "file": "dharma-stage172.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + cap of ncap (3-fold axis)",
+   "convex": false,
+   "faces": 46,
+   "faceShapes": {
+    "3-gon": 41,
+    "4-gon": 3,
+    "6-gon": 2
+   },
+   "planes": 41,
+   "name": null
+  },
+  {
+   "file": "dharma-stage173.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + half of ncap (2-fold axis)",
+   "convex": false,
+   "faces": 71,
+   "faceShapes": {
+    "3-gon": 59,
+    "4-gon": 9,
+    "6-gon": 3
+   },
+   "planes": 59,
+   "name": null
+  },
+  {
+   "file": "dharma-stage174.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + cap of ncap (2-fold axis)",
+   "convex": false,
+   "faces": 35,
+   "faceShapes": {
+    "3-gon": 34,
+    "4-gon": 1
+   },
+   "planes": 31,
+   "name": null
+  },
+  {
+   "file": "dharma-stage175.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of nwedge",
+   "convex": false,
+   "faces": 30,
+   "faceShapes": {
+    "3-gon": 10,
+    "4-gon": 20
+   },
+   "planes": 30,
+   "name": null
+  },
+  {
+   "file": "dharma-stage176.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of nwedge",
+   "convex": false,
+   "faces": 40,
+   "faceShapes": {
+    "3-gon": 30,
+    "4-gon": 10
+   },
+   "planes": 40,
+   "name": null
+  },
+  {
+   "file": "dharma-stage177.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of nwedge",
+   "convex": false,
+   "faces": 40,
+   "faceShapes": {
+    "3-gon": 30,
+    "4-gon": 10
+   },
+   "planes": 40,
+   "name": null
+  },
+  {
+   "file": "dharma-stage178.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of nwedge",
+   "convex": false,
+   "faces": 40,
+   "faceShapes": {
+    "3-gon": 30,
+    "4-gon": 10
+   },
+   "planes": 35,
+   "name": null
+  },
+  {
+   "file": "dharma-stage179.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of nwedge",
+   "convex": false,
+   "faces": 40,
+   "faceShapes": {
+    "3-gon": 30,
+    "4-gon": 10
+   },
+   "planes": 35,
+   "name": null
+  },
+  {
+   "file": "dharma-stage180.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D5 part of nwedge",
+   "convex": false,
+   "faces": 40,
+   "faceShapes": {
+    "3-gon": 30,
+    "4-gon": 9,
+    "6-gon": 1
+   },
+   "planes": 30,
+   "name": null
+  },
+  {
+   "file": "dharma-stage181.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 30,
+    "6-gon": 2
+   },
+   "planes": 26,
+   "name": null
+  },
+  {
+   "file": "dharma-stage182.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 26,
+    "4-gon": 6
+   },
+   "planes": 32,
+   "name": null
+  },
+  {
+   "file": "dharma-stage183.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 26,
+    "4-gon": 6
+   },
+   "planes": 32,
+   "name": null
+  },
+  {
+   "file": "dharma-stage184.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 26,
+    "4-gon": 6
+   },
+   "planes": 32,
+   "name": null
+  },
+  {
+   "file": "dharma-stage185.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 26,
+    "4-gon": 5,
+    "6-gon": 1
+   },
+   "planes": 32,
+   "name": null
+  },
+  {
+   "file": "dharma-stage186.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 26,
+    "4-gon": 6
+   },
+   "planes": 29,
+   "name": null
+  },
+  {
+   "file": "dharma-stage187.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 26,
+    "4-gon": 6
+   },
+   "planes": 32,
+   "name": null
+  },
+  {
+   "file": "dharma-stage188.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 26,
+    "4-gon": 6
+   },
+   "planes": 29,
+   "name": null
+  },
+  {
+   "file": "dharma-stage189.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 26,
+    "4-gon": 6
+   },
+   "planes": 29,
+   "name": null
+  },
+  {
+   "file": "dharma-stage190.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D3 part of nwedge",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 26,
+    "4-gon": 6
+   },
+   "planes": 29,
+   "name": null
+  },
+  {
+   "file": "dharma-stage191.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D2 part of nwedge",
+   "convex": false,
+   "faces": 28,
+   "faceShapes": {
+    "3-gon": 24,
+    "4-gon": 4
+   },
+   "planes": 26,
+   "name": null
+  },
+  {
+   "file": "dharma-stage192.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D2 part of nwedge",
+   "convex": false,
+   "faces": 28,
+   "faceShapes": {
+    "3-gon": 24,
+    "4-gon": 4
+   },
+   "planes": 26,
+   "name": null
+  },
+  {
+   "file": "dharma-stage193.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D2 part of nwedge",
+   "convex": false,
+   "faces": 28,
+   "faceShapes": {
+    "3-gon": 24,
+    "4-gon": 4
+   },
+   "planes": 28,
+   "name": null
+  },
+  {
+   "file": "dharma-stage194.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D2 part of nwedge",
+   "convex": false,
+   "faces": 28,
+   "faceShapes": {
+    "3-gon": 24,
+    "4-gon": 4
+   },
+   "planes": 28,
+   "name": null
+  },
+  {
+   "file": "dharma-stage195.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + D2 part of nwedge",
+   "convex": false,
+   "faces": 28,
+   "faceShapes": {
+    "3-gon": 24,
+    "4-gon": 4
+   },
+   "planes": 28,
+   "name": null
+  },
+  {
+   "file": "dharma-stage196.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + T part of nwedge",
+   "convex": false,
+   "faces": 44,
+   "faceShapes": {
+    "3-gon": 32,
+    "4-gon": 12
+   },
+   "planes": 38,
+   "name": null
+  },
+  {
+   "file": "dharma-stage197.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + T part of nwedge",
+   "convex": false,
+   "faces": 44,
+   "faceShapes": {
+    "3-gon": 32,
+    "4-gon": 12
+   },
+   "planes": 38,
+   "name": null
+  },
+  {
+   "file": "dharma-stage198.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + T part of nwedge",
+   "convex": false,
+   "faces": 44,
+   "faceShapes": {
+    "3-gon": 40,
+    "6-gon": 4
+   },
+   "planes": 32,
+   "name": null
+  },
+  {
+   "file": "dharma-stage199.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + T part of nwedge",
+   "convex": false,
+   "faces": 44,
+   "faceShapes": {
+    "3-gon": 32,
+    "4-gon": 12
+   },
+   "planes": 44,
+   "name": null
+  },
+  {
+   "file": "dharma-stage200.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + T part of nwedge",
+   "convex": false,
+   "faces": 44,
+   "faceShapes": {
+    "3-gon": 40,
+    "6-gon": 3,
+    "8-gon": 1
+   },
+   "planes": 32,
+   "name": null
+  },
+  {
+   "file": "dharma-stage201.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + half of nwedge (5-fold axis)",
+   "convex": false,
+   "faces": 50,
+   "faceShapes": {
+    "3-gon": 5,
+    "4-gon": 34,
+    "5-gon": 5,
+    "6-gon": 6
+   },
+   "planes": 40,
+   "name": null
+  },
+  {
+   "file": "dharma-stage202.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + cap of nwedge (5-fold axis)",
+   "convex": false,
+   "faces": 25,
+   "faceShapes": {
+    "3-gon": 15,
+    "4-gon": 10
+   },
+   "planes": 25,
+   "name": null
+  },
+  {
+   "file": "dharma-stage203.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + half of nwedge (3-fold axis)",
+   "convex": false,
+   "faces": 56,
+   "faceShapes": {
+    "3-gon": 22,
+    "4-gon": 24,
+    "6-gon": 10
+   },
+   "planes": 38,
+   "name": null
+  },
+  {
+   "file": "dharma-stage204.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + cap of nwedge (3-fold axis)",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 22,
+    "4-gon": 6,
+    "5-gon": 3,
+    "6-gon": 1
+   },
+   "planes": 29,
+   "name": null
+  },
+  {
+   "file": "dharma-stage205.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + half of nwedge (2-fold axis)",
+   "convex": false,
+   "faces": 52,
+   "faceShapes": {
+    "3-gon": 16,
+    "4-gon": 28,
+    "6-gon": 8
+   },
+   "planes": 37,
+   "name": null
+  },
+  {
+   "file": "dharma-stage206.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap + cap of nwedge (2-fold axis)",
+   "convex": false,
+   "faces": 34,
+   "faceShapes": {
+    "3-gon": 22,
+    "4-gon": 10,
+    "6-gon": 2
+   },
+   "planes": 29,
+   "name": null
+  },
+  {
+   "file": "dharma-stage207.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + D5 part of nedge",
+   "convex": false,
+   "faces": 60,
+   "faceShapes": {
+    "3-gon": 40,
+    "4-gon": 20
+   },
+   "planes": 50,
+   "name": null
+  },
+  {
+   "file": "dharma-stage208.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + D5 part of nedge",
+   "convex": false,
+   "faces": 50,
+   "faceShapes": {
+    "3-gon": 30,
+    "4-gon": 20
+   },
+   "planes": 45,
+   "name": null
+  },
+  {
+   "file": "dharma-stage209.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + D5 part of nedge",
+   "convex": false,
+   "faces": 46,
+   "faceShapes": {
+    "3-gon": 21,
+    "4-gon": 25
+   },
+   "planes": 43,
+   "name": null
+  },
+  {
+   "file": "dharma-stage210.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + D5 part of nedge",
+   "convex": false,
+   "faces": 44,
+   "faceShapes": {
+    "3-gon": 19,
+    "4-gon": 25
+   },
+   "planes": 42,
+   "name": null
+  },
+  {
+   "file": "dharma-stage211.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + D3 part of nedge",
+   "convex": false,
+   "faces": 48,
+   "faceShapes": {
+    "3-gon": 24,
+    "4-gon": 24
+   },
+   "planes": 47,
+   "name": null
+  },
+  {
+   "file": "dharma-stage212.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + D3 part of nedge",
+   "convex": false,
+   "faces": 48,
+   "faceShapes": {
+    "3-gon": 24,
+    "4-gon": 24
+   },
+   "planes": 46,
+   "name": null
+  },
+  {
+   "file": "dharma-stage213.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + D3 part of nedge",
+   "convex": false,
+   "faces": 38,
+   "faceShapes": {
+    "3-gon": 11,
+    "4-gon": 27
+   },
+   "planes": 38,
+   "name": null
+  },
+  {
+   "file": "dharma-stage214.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + D3 part of nedge",
+   "convex": false,
+   "faces": 42,
+   "faceShapes": {
+    "3-gon": 18,
+    "4-gon": 24
+   },
+   "planes": 42,
+   "name": null
+  },
+  {
+   "file": "dharma-stage215.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + D3 part of nedge",
+   "convex": false,
+   "faces": 48,
+   "faceShapes": {
+    "3-gon": 24,
+    "4-gon": 24
+   },
+   "planes": 45,
+   "name": null
+  },
+  {
+   "file": "dharma-stage216.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + D3 part of nedge",
+   "convex": false,
+   "faces": 40,
+   "faceShapes": {
+    "3-gon": 13,
+    "4-gon": 27
+   },
+   "planes": 40,
+   "name": null
+  },
+  {
+   "file": "dharma-stage217.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + D2 part of nedge",
+   "convex": false,
+   "faces": 43,
+   "faceShapes": {
+    "3-gon": 17,
+    "4-gon": 26
+   },
+   "planes": 42,
+   "name": null
+  },
+  {
+   "file": "dharma-stage218.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + D2 part of nedge",
+   "convex": false,
+   "faces": 43,
+   "faceShapes": {
+    "3-gon": 17,
+    "4-gon": 26
+   },
+   "planes": 42,
+   "name": null
+  },
+  {
+   "file": "dharma-stage219.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + D2 part of nedge",
+   "convex": false,
+   "faces": 36,
+   "faceShapes": {
+    "3-gon": 8,
+    "4-gon": 28
+   },
+   "planes": 36,
+   "name": null
+  },
+  {
+   "file": "dharma-stage220.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + T part of nedge",
+   "convex": false,
+   "faces": 53,
+   "faceShapes": {
+    "3-gon": 35,
+    "4-gon": 18
+   },
+   "planes": 50,
+   "name": null
+  },
+  {
+   "file": "dharma-stage221.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + T part of nedge",
+   "convex": false,
+   "faces": 55,
+   "faceShapes": {
+    "3-gon": 37,
+    "4-gon": 18
+   },
+   "planes": 52,
+   "name": null
+  },
+  {
+   "file": "dharma-stage222.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + T part of nedge",
+   "convex": false,
+   "faces": 48,
+   "faceShapes": {
+    "3-gon": 24,
+    "4-gon": 24
+   },
+   "planes": 48,
+   "name": null
+  },
+  {
+   "file": "dharma-stage223.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + half of nedge (5-fold axis)",
+   "convex": false,
+   "faces": 50,
+   "faceShapes": {
+    "3-gon": 34,
+    "4-gon": 16
+   },
+   "planes": 47,
+   "name": null
+  },
+  {
+   "file": "dharma-stage224.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + cap of nedge (5-fold axis)",
+   "convex": false,
+   "faces": 39,
+   "faceShapes": {
+    "3-gon": 14,
+    "4-gon": 25
+   },
+   "planes": 37,
+   "name": null
+  },
+  {
+   "file": "dharma-stage225.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + half of nedge (3-fold axis)",
+   "convex": false,
+   "faces": 49,
+   "faceShapes": {
+    "3-gon": 31,
+    "4-gon": 18
+   },
+   "planes": 48,
+   "name": null
+  },
+  {
+   "file": "dharma-stage226.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + cap of nedge (3-fold axis)",
+   "convex": false,
+   "faces": 38,
+   "faceShapes": {
+    "3-gon": 11,
+    "4-gon": 27
+   },
+   "planes": 38,
+   "name": null
+  },
+  {
+   "file": "dharma-stage227.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + half of nedge (2-fold axis)",
+   "convex": false,
+   "faces": 51,
+   "faceShapes": {
+    "3-gon": 34,
+    "4-gon": 17
+   },
+   "planes": 48,
+   "name": null
+  },
+  {
+   "file": "dharma-stage228.png",
+   "structure": "Spheres of Dharma",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "partial": "core+nfru3+npyr5+npyr3+nfru5+nt1+ncap+ncap+nwedge + cap of nedge (2-fold axis)",
+   "convex": false,
+   "faces": 39,
+   "faceShapes": {
+    "3-gon": 14,
+    "4-gon": 25
+   },
+   "planes": 39,
+   "name": null
+  },
+  {
+   "file": "bodhi-step01.png",
+   "structure": "Bodhi Seed",
+   "kind": "main route step",
+   "step": 1,
+   "of": 6,
+   "adds": "the centre rhombic triacontahedron",
+   "convex": true,
+   "faces": 30,
+   "faceShapes": {
+    "4-gon": 30
+   },
+   "planes": 30,
+   "note": "Rhombic triacontahedron."
+  },
+  {
+   "file": "bodhi-step02.png",
+   "structure": "Bodhi Seed",
+   "kind": "main route step",
+   "step": 2,
+   "of": 6,
+   "adds": "60 Vajras",
+   "convex": false,
+   "faces": 60,
+   "faceShapes": {
+    "4-gon": 60
+   },
+   "planes": 30,
+   "note": "Lead: all 60 visible rhombi lie on the 30 face planes of the centre triacontahedron, so this is a stellation of the rhombic triacontahedron. Which one: to check."
+  },
+  {
+   "file": "bodhi-step03.png",
+   "structure": "Bodhi Seed",
+   "kind": "main route step",
+   "step": 3,
+   "of": 6,
+   "adds": "12 triacontahedra",
+   "convex": false,
+   "faces": 240,
+   "faceShapes": {
+    "4-gon": 240
+   },
+   "planes": 90,
+   "note": ""
+  },
+  {
+   "file": "bodhi-step04.png",
+   "structure": "Bodhi Seed",
+   "kind": "main route step",
+   "step": 4,
+   "of": 6,
+   "adds": "60 Diadems (left)",
+   "convex": false,
+   "faces": 240,
+   "faceShapes": {
+    "3-gon": 30,
+    "4-gon": 120,
+    "5-gon": 26,
+    "6-gon": 64
+   },
+   "planes": 105,
+   "note": ""
+  },
+  {
+   "file": "bodhi-step05.png",
+   "structure": "Bodhi Seed",
+   "kind": "main route step",
+   "step": 5,
+   "of": 6,
+   "adds": "60 Diadems (right)",
+   "convex": false,
+   "faces": 120,
+   "faceShapes": {
+    "4-gon": 60,
+    "6-gon": 60
+   },
+   "planes": 60,
+   "note": ""
+  },
+  {
+   "file": "bodhi-step06.png",
+   "structure": "Bodhi Seed",
+   "kind": "main route step",
+   "step": 6,
+   "of": 6,
+   "adds": "20 Crown Jewels",
+   "convex": true,
+   "faces": 30,
+   "faceShapes": {
+    "4-gon": 30
+   },
+   "planes": 30,
+   "note": "Rhombic triacontahedron, φ³ times the centre one."
+  },
+  {
+   "file": "bodhi-stage001.png",
+   "structure": "Bodhi Seed",
+   "kind": "convex whole-ring stage",
+   "rings": [
+    0
+   ],
+   "partial": "whole rings",
+   "convex": true,
+   "faces": 30,
+   "faceShapes": {
+    "4-gon": 30
+   },
+   "planes": 30,
+   "name": "Rhombic triacontahedron"
+  },
+  {
+   "file": "bodhi-stage006.png",
+   "structure": "Bodhi Seed",
+   "kind": "convex whole-ring stage",
+   "rings": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "partial": "whole rings",
+   "convex": true,
+   "faces": 30,
+   "faceShapes": {
+    "4-gon": 30
+   },
+   "planes": 30,
+   "name": "Rhombic triacontahedron"
+  },
+  {
+   "file": "bodhi-stage007.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D5 part of B1",
+   "convex": false,
+   "faces": 42,
+   "faceShapes": {
+    "3-gon": 17,
+    "4-gon": 13,
+    "7-gon": 12
+   },
+   "planes": 32,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage008.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D5 part of B1",
+   "convex": false,
+   "faces": 51,
+   "faceShapes": {
+    "3-gon": 27,
+    "4-gon": 19,
+    "6-gon": 2,
+    "10-gon": 3
+   },
+   "planes": 36,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage009.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D5 part of B1",
+   "convex": false,
+   "faces": 52,
+   "faceShapes": {
+    "3-gon": 24,
+    "4-gon": 20,
+    "5-gon": 4,
+    "9-gon": 4
+   },
+   "planes": 35,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage010.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D5 part of B1",
+   "convex": false,
+   "faces": 53,
+   "faceShapes": {
+    "3-gon": 33,
+    "4-gon": 14,
+    "10-gon": 6
+   },
+   "planes": 40,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage011.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D5 part of B1",
+   "convex": false,
+   "faces": 44,
+   "faceShapes": {
+    "3-gon": 19,
+    "4-gon": 13,
+    "7-gon": 12
+   },
+   "planes": 33,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage012.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D5 part of B1",
+   "convex": false,
+   "faces": 57,
+   "faceShapes": {
+    "3-gon": 31,
+    "4-gon": 19,
+    "6-gon": 4,
+    "10-gon": 3
+   },
+   "planes": 38,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage013.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D3 part of B1",
+   "convex": false,
+   "faces": 47,
+   "faceShapes": {
+    "3-gon": 23,
+    "4-gon": 18,
+    "7-gon": 6
+   },
+   "planes": 39,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage014.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D3 part of B1",
+   "convex": false,
+   "faces": 47,
+   "faceShapes": {
+    "3-gon": 23,
+    "4-gon": 20,
+    "7-gon": 4
+   },
+   "planes": 39,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage015.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D3 part of B1",
+   "convex": false,
+   "faces": 46,
+   "faceShapes": {
+    "3-gon": 22,
+    "4-gon": 18,
+    "7-gon": 6
+   },
+   "planes": 35,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage016.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D3 part of B1",
+   "convex": false,
+   "faces": 35,
+   "faceShapes": {
+    "3-gon": 8,
+    "4-gon": 20,
+    "7-gon": 4,
+    "10-gon": 3
+   },
+   "planes": 33,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage017.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D3 part of B1",
+   "convex": false,
+   "faces": 43,
+   "faceShapes": {
+    "3-gon": 19,
+    "4-gon": 18,
+    "7-gon": 6
+   },
+   "planes": 36,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage018.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D3 part of B1",
+   "convex": false,
+   "faces": 39,
+   "faceShapes": {
+    "3-gon": 15,
+    "4-gon": 17,
+    "7-gon": 4,
+    "10-gon": 3
+   },
+   "planes": 37,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage019.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D3 part of B1",
+   "convex": false,
+   "faces": 46,
+   "faceShapes": {
+    "3-gon": 22,
+    "4-gon": 18,
+    "7-gon": 6
+   },
+   "planes": 35,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage020.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D3 part of B1",
+   "convex": false,
+   "faces": 42,
+   "faceShapes": {
+    "3-gon": 18,
+    "4-gon": 17,
+    "7-gon": 4,
+    "10-gon": 3
+   },
+   "planes": 40,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage021.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D3 part of B1",
+   "convex": false,
+   "faces": 36,
+   "faceShapes": {
+    "3-gon": 9,
+    "4-gon": 20,
+    "7-gon": 4,
+    "10-gon": 3
+   },
+   "planes": 34,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage022.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D3 part of B1",
+   "convex": false,
+   "faces": 35,
+   "faceShapes": {
+    "3-gon": 9,
+    "4-gon": 22,
+    "8-gon": 4
+   },
+   "planes": 33,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage023.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D2 part of B1",
+   "convex": false,
+   "faces": 42,
+   "faceShapes": {
+    "3-gon": 16,
+    "4-gon": 22,
+    "7-gon": 4
+   },
+   "planes": 35,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage024.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D2 part of B1",
+   "convex": false,
+   "faces": 43,
+   "faceShapes": {
+    "3-gon": 17,
+    "4-gon": 22,
+    "7-gon": 4
+   },
+   "planes": 36,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage025.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D2 part of B1",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 4,
+    "4-gon": 20,
+    "7-gon": 8
+   },
+   "planes": 32,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage026.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D2 part of B1",
+   "convex": false,
+   "faces": 34,
+   "faceShapes": {
+    "3-gon": 8,
+    "4-gon": 20,
+    "7-gon": 4,
+    "10-gon": 2
+   },
+   "planes": 33,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage027.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + D2 part of B1",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 6,
+    "4-gon": 20,
+    "7-gon": 4,
+    "10-gon": 2
+   },
+   "planes": 31,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage028.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + T part of B1",
+   "convex": false,
+   "faces": 41,
+   "faceShapes": {
+    "3-gon": 19,
+    "4-gon": 14,
+    "8-gon": 8
+   },
+   "planes": 37,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage029.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + T part of B1",
+   "convex": false,
+   "faces": 39,
+   "faceShapes": {
+    "3-gon": 17,
+    "4-gon": 14,
+    "8-gon": 8
+   },
+   "planes": 35,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage030.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + T part of B1",
+   "convex": false,
+   "faces": 52,
+   "faceShapes": {
+    "3-gon": 28,
+    "4-gon": 16,
+    "7-gon": 8
+   },
+   "planes": 36,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage031.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + T part of B1",
+   "convex": false,
+   "faces": 52,
+   "faceShapes": {
+    "3-gon": 34,
+    "4-gon": 4,
+    "7-gon": 8,
+    "10-gon": 6
+   },
+   "planes": 45,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage032.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + T part of B1",
+   "convex": false,
+   "faces": 52,
+   "faceShapes": {
+    "3-gon": 34,
+    "4-gon": 4,
+    "7-gon": 8,
+    "10-gon": 6
+   },
+   "planes": 45,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage033.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + half of B1 (5-fold axis)",
+   "convex": false,
+   "faces": 45,
+   "faceShapes": {
+    "3-gon": 8,
+    "4-gon": 30,
+    "7-gon": 4,
+    "8-gon": 3
+   },
+   "planes": 31,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage034.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + cap of B1 (5-fold axis)",
+   "convex": false,
+   "faces": 36,
+   "faceShapes": {
+    "3-gon": 6,
+    "4-gon": 24,
+    "7-gon": 6
+   },
+   "planes": 31,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage035.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + half of B1 (3-fold axis)",
+   "convex": false,
+   "faces": 41,
+   "faceShapes": {
+    "3-gon": 4,
+    "4-gon": 28,
+    "7-gon": 4,
+    "8-gon": 5
+   },
+   "planes": 31,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage036.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + cap of B1 (3-fold axis)",
+   "convex": false,
+   "faces": 39,
+   "faceShapes": {
+    "3-gon": 10,
+    "4-gon": 26,
+    "7-gon": 2,
+    "8-gon": 1
+   },
+   "planes": 33,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage037.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + half of B1 (2-fold axis)",
+   "convex": false,
+   "faces": 53,
+   "faceShapes": {
+    "3-gon": 15,
+    "4-gon": 31,
+    "5-gon": 1,
+    "8-gon": 6
+   },
+   "planes": 35,
+   "name": null
+  },
+  {
+   "file": "bodhi-stage038.png",
+   "structure": "Bodhi Seed",
+   "kind": "partial ring on a complete shell",
+   "rings": [
+    0
+   ],
+   "partial": "centre + cap of B1 (2-fold axis)",
+   "convex": false,
+   "faces": 35,
+   "faceShapes": {
+    "3-gon": 6,
+    "4-gon": 27,
+    "8-gon": 2
+   },
+   "planes": 31,
+   "name": null
+  },
+  {
+   "file": "app-karma-lotus-step01.png",
+   "structure": "Chain of Karma · Lotus seed",
+   "kind": "app Top shell stage",
+   "step": 1,
+   "of": 6,
+   "adds": "the centre icosahedra",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "note": "Icosahedron."
+  },
+  {
+   "file": "app-karma-lotus-step02.png",
+   "structure": "Chain of Karma · Lotus seed",
+   "kind": "app Top shell stage",
+   "step": 2,
+   "of": 6,
+   "adds": "20 CLEO",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 16,
+    "6-gon": 12,
+    "10-gon": 4
+   },
+   "planes": 12,
+   "note": "Lead: its 32 visible faces lie on only 12 planes: a stellation or compound look-alike. To check."
+  },
+  {
+   "file": "app-karma-lotus-step03.png",
+   "structure": "Chain of Karma · Lotus seed",
+   "kind": "app Top shell stage",
+   "step": 3,
+   "of": 6,
+   "adds": "30 AXE",
+   "convex": false,
+   "faces": 56,
+   "faceShapes": {
+    "3-gon": 56
+   },
+   "planes": 20,
+   "note": "Lead: its 56 visible faces lie on only 20 planes: a stellation or compound look-alike. To check."
+  },
+  {
+   "file": "app-karma-lotus-step04.png",
+   "structure": "Chain of Karma · Lotus seed",
+   "kind": "app Top shell stage",
+   "step": 4,
+   "of": 6,
+   "adds": "12 icosahedra",
+   "convex": false,
+   "faces": 180,
+   "faceShapes": {
+    "3-gon": 172,
+    "4-gon": 8
+   },
+   "planes": 60,
+   "note": ""
+  },
+  {
+   "file": "app-karma-lotus-step05.png",
+   "structure": "Chain of Karma · Lotus seed",
+   "kind": "app Top shell stage",
+   "step": 5,
+   "of": 6,
+   "adds": "30 AXE",
+   "convex": false,
+   "faces": 180,
+   "faceShapes": {
+    "3-gon": 180
+   },
+   "planes": 52,
+   "note": ""
+  },
+  {
+   "file": "app-karma-lotus-step06.png",
+   "structure": "Chain of Karma · Lotus seed",
+   "kind": "app Top shell stage",
+   "step": 6,
+   "of": 6,
+   "adds": "20 FUJI",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "note": "Icosahedron."
+  },
+  {
+   "file": "app-karma-step2-step01.png",
+   "structure": "Chain of Karma · Chain step 2",
+   "kind": "app Top shell stage",
+   "step": 1,
+   "of": 11,
+   "adds": "the centre icosahedra",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "note": "Icosahedron."
+  },
+  {
+   "file": "app-karma-step2-step02.png",
+   "structure": "Chain of Karma · Chain step 2",
+   "kind": "app Top shell stage",
+   "step": 2,
+   "of": 11,
+   "adds": "30 AXE + 20 CLEO",
+   "convex": false,
+   "faces": 45,
+   "faceShapes": {
+    "3-gon": 33,
+    "8-gon": 12
+   },
+   "planes": 20,
+   "note": "Lead: its 45 visible faces lie on only 20 planes: a stellation or compound look-alike. To check."
+  },
+  {
+   "file": "app-karma-step2-step03.png",
+   "structure": "Chain of Karma · Chain step 2",
+   "kind": "app Top shell stage",
+   "step": 3,
+   "of": 11,
+   "adds": "12 icosahedra + 30 AXE + 20 FUJI",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "note": "Icosahedron."
+  },
+  {
+   "file": "app-karma-step2-step04.png",
+   "structure": "Chain of Karma · Chain step 2",
+   "kind": "app Top shell stage",
+   "step": 4,
+   "of": 11,
+   "adds": "20 CLEO",
+   "convex": false,
+   "faces": 51,
+   "faceShapes": {
+    "3-gon": 44,
+    "5-gon": 1,
+    "8-gon": 2,
+    "9-gon": 1,
+    "11-gon": 2,
+    "15-gon": 1
+   },
+   "planes": 12,
+   "note": "Lead: its 51 visible faces lie on only 12 planes: a stellation or compound look-alike. To check."
+  },
+  {
+   "file": "app-karma-step2-step05.png",
+   "structure": "Chain of Karma · Chain step 2",
+   "kind": "app Top shell stage",
+   "step": 5,
+   "of": 11,
+   "adds": "12 icosahedra + 30 AXE",
+   "convex": false,
+   "faces": 240,
+   "faceShapes": {
+    "3-gon": 180,
+    "4-gon": 60
+   },
+   "planes": 60,
+   "note": ""
+  },
+  {
+   "file": "app-karma-step2-step06.png",
+   "structure": "Chain of Karma · Chain step 2",
+   "kind": "app Top shell stage",
+   "step": 6,
+   "of": 11,
+   "adds": "60 AXE + 60 FUJI",
+   "convex": false,
+   "faces": 358,
+   "faceShapes": {
+    "3-gon": 296,
+    "4-gon": 60,
+    "6-gon": 2
+   },
+   "planes": 72,
+   "note": ""
+  },
+  {
+   "file": "app-karma-step2-step07.png",
+   "structure": "Chain of Karma · Chain step 2",
+   "kind": "app Top shell stage",
+   "step": 7,
+   "of": 11,
+   "adds": "60 icosahedra + 120 AXE + 60 CLEO",
+   "convex": false,
+   "faces": 888,
+   "faceShapes": {
+    "3-gon": 823,
+    "4-gon": 36,
+    "5-gon": 21,
+    "6-gon": 4,
+    "9-gon": 2,
+    "11-gon": 2
+   },
+   "planes": 144,
+   "note": ""
+  },
+  {
+   "file": "app-karma-step2-step08.png",
+   "structure": "Chain of Karma · Chain step 2",
+   "kind": "app Top shell stage",
+   "step": 8,
+   "of": 11,
+   "adds": "12 icosahedra + 180 AXE + 60 FUJI + 60 CLEO",
+   "convex": false,
+   "faces": 692,
+   "faceShapes": {
+    "3-gon": 508,
+    "4-gon": 139,
+    "5-gon": 21,
+    "7-gon": 24
+   },
+   "planes": 124,
+   "note": ""
+  },
+  {
+   "file": "app-karma-step2-step09.png",
+   "structure": "Chain of Karma · Chain step 2",
+   "kind": "app Top shell stage",
+   "step": 9,
+   "of": 11,
+   "adds": "210 AXE + 60 CLEO",
+   "convex": false,
+   "faces": 696,
+   "faceShapes": {
+    "3-gon": 559,
+    "4-gon": 32,
+    "5-gon": 16,
+    "6-gon": 24,
+    "7-gon": 5,
+    "9-gon": 60
+   },
+   "planes": 124,
+   "note": ""
+  },
+  {
+   "file": "app-karma-step2-step10.png",
+   "structure": "Chain of Karma · Chain step 2",
+   "kind": "app Top shell stage",
+   "step": 10,
+   "of": 11,
+   "adds": "60 icosahedra + 120 AXE + 80 FUJI + 60 CLEO",
+   "convex": false,
+   "faces": 260,
+   "faceShapes": {
+    "3-gon": 180,
+    "4-gon": 50,
+    "6-gon": 10,
+    "12-gon": 20
+   },
+   "planes": 72,
+   "note": ""
+  },
+  {
+   "file": "app-karma-step2-step11.png",
+   "structure": "Chain of Karma · Chain step 2",
+   "kind": "app Top shell stage",
+   "step": 11,
+   "of": 11,
+   "adds": "12 icosahedra + 60 AXE + 60 FUJI",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "note": "Icosahedron."
+  },
+  {
+   "file": "app-karma-dodeca-step01.png",
+   "structure": "Chain of Karma · Dodecahedral Chain",
+   "kind": "app Top shell stage",
+   "step": 1,
+   "of": 4,
+   "adds": "the centre icosahedra",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "note": "Icosahedron."
+  },
+  {
+   "file": "app-karma-dodeca-step02.png",
+   "structure": "Chain of Karma · Dodecahedral Chain",
+   "kind": "app Top shell stage",
+   "step": 2,
+   "of": 4,
+   "adds": "20 CLEO",
+   "convex": false,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 16,
+    "6-gon": 12,
+    "10-gon": 4
+   },
+   "planes": 12,
+   "note": "Lead: its 32 visible faces lie on only 12 planes: a stellation or compound look-alike. To check."
+  },
+  {
+   "file": "app-karma-dodeca-step03.png",
+   "structure": "Chain of Karma · Dodecahedral Chain",
+   "kind": "app Top shell stage",
+   "step": 3,
+   "of": 4,
+   "adds": "30 AXE",
+   "convex": false,
+   "faces": 56,
+   "faceShapes": {
+    "3-gon": 56
+   },
+   "planes": 20,
+   "note": "Lead: its 56 visible faces lie on only 20 planes: a stellation or compound look-alike. To check."
+  },
+  {
+   "file": "app-karma-dodeca-step04.png",
+   "structure": "Chain of Karma · Dodecahedral Chain",
+   "kind": "app Top shell stage",
+   "step": 4,
+   "of": 4,
+   "adds": "12 caps",
+   "convex": true,
+   "faces": 12,
+   "faceShapes": {
+    "5-gon": 12
+   },
+   "planes": 12,
+   "note": "Dodecahedron."
+  },
+  {
+   "file": "app-dharma-cycle-step01.png",
+   "structure": "Spheres of Dharma · one Ritsudō cycle",
+   "kind": "app Top shell stage",
+   "step": 1,
+   "of": 7,
+   "adds": "the centre icosahedron",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "note": "Icosahedron."
+  },
+  {
+   "file": "app-dharma-cycle-step02.png",
+   "structure": "Spheres of Dharma · one Ritsudō cycle",
+   "kind": "app Top shell stage",
+   "step": 2,
+   "of": 7,
+   "adds": "20 twisted triangular frusta",
+   "convex": false,
+   "faces": 80,
+   "faceShapes": {
+    "3-gon": 80
+   },
+   "planes": 80,
+   "note": ""
+  },
+  {
+   "file": "app-dharma-cycle-step03.png",
+   "structure": "Spheres of Dharma · one Ritsudō cycle",
+   "kind": "app Top shell stage",
+   "step": 3,
+   "of": 7,
+   "adds": "12 pentagonal pyramids",
+   "convex": true,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 20,
+    "5-gon": 12
+   },
+   "planes": 32,
+   "note": "Icosidodecahedron."
+  },
+  {
+   "file": "app-dharma-cycle-step04.png",
+   "structure": "Spheres of Dharma · one Ritsudō cycle",
+   "kind": "app Top shell stage",
+   "step": 4,
+   "of": 7,
+   "adds": "20 triangular pyramids + 12 twisted pentagonal frusta",
+   "convex": false,
+   "faces": 84,
+   "faceShapes": {
+    "3-gon": 42,
+    "5-gon": 29,
+    "6-gon": 7,
+    "7-gon": 1,
+    "9-gon": 1,
+    "10-gon": 4
+   },
+   "planes": 44,
+   "note": ""
+  },
+  {
+   "file": "app-dharma-cycle-step05.png",
+   "structure": "Spheres of Dharma · one Ritsudō cycle",
+   "kind": "app Top shell stage",
+   "step": 5,
+   "of": 7,
+   "adds": "30 Mosseri–Sadoc t1 tiles + 32 caps + 60 edge wedges",
+   "convex": true,
+   "faces": 30,
+   "faceShapes": {
+    "4-gon": 30
+   },
+   "planes": 30,
+   "note": "Rhombic triacontahedron."
+  },
+  {
+   "file": "app-dharma-cycle-step06.png",
+   "structure": "Spheres of Dharma · one Ritsudō cycle",
+   "kind": "app Top shell stage",
+   "step": 6,
+   "of": 7,
+   "adds": "30 edge pieces",
+   "convex": false,
+   "faces": 60,
+   "faceShapes": {
+    "3-gon": 60
+   },
+   "planes": 60,
+   "note": ""
+  },
+  {
+   "file": "app-dharma-cycle-step07.png",
+   "structure": "Spheres of Dharma · one Ritsudō cycle",
+   "kind": "app Top shell stage",
+   "step": 7,
+   "of": 7,
+   "adds": "20 face pieces",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "note": "Icosahedron."
+  },
+  {
+   "file": "app-dharma-inner-step01.png",
+   "structure": "Spheres of Dharma · inner half",
+   "kind": "app Top shell stage",
+   "step": 1,
+   "of": 4,
+   "adds": "the centre icosahedron",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "note": "Icosahedron."
+  },
+  {
+   "file": "app-dharma-inner-step02.png",
+   "structure": "Spheres of Dharma · inner half",
+   "kind": "app Top shell stage",
+   "step": 2,
+   "of": 4,
+   "adds": "20 twisted triangular frusta",
+   "convex": false,
+   "faces": 80,
+   "faceShapes": {
+    "3-gon": 80
+   },
+   "planes": 80,
+   "note": ""
+  },
+  {
+   "file": "app-dharma-inner-step03.png",
+   "structure": "Spheres of Dharma · inner half",
+   "kind": "app Top shell stage",
+   "step": 3,
+   "of": 4,
+   "adds": "12 pentagonal pyramids",
+   "convex": true,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 20,
+    "5-gon": 12
+   },
+   "planes": 32,
+   "note": "Icosidodecahedron."
+  },
+  {
+   "file": "app-dharma-inner-step04.png",
+   "structure": "Spheres of Dharma · inner half",
+   "kind": "app Top shell stage",
+   "step": 4,
+   "of": 4,
+   "adds": "20 triangular pyramids",
+   "convex": true,
+   "faces": 12,
+   "faceShapes": {
+    "5-gon": 12
+   },
+   "planes": 12,
+   "note": "Dodecahedron."
+  },
+  {
+   "file": "app-dharma-outer-step01.png",
+   "structure": "Spheres of Dharma · outer half",
+   "kind": "app Top shell stage",
+   "step": 1,
+   "of": 4,
+   "adds": "the centre twisted pentagonal frusta",
+   "convex": false,
+   "faces": 113,
+   "faceShapes": {
+    "3-gon": 87,
+    "5-gon": 14,
+    "6-gon": 7,
+    "9-gon": 1,
+    "10-gon": 4
+   },
+   "planes": 44,
+   "note": ""
+  },
+  {
+   "file": "app-dharma-outer-step02.png",
+   "structure": "Spheres of Dharma · outer half",
+   "kind": "app Top shell stage",
+   "step": 2,
+   "of": 4,
+   "adds": "30 Mosseri–Sadoc t1 tiles + 32 caps + 60 edge wedges",
+   "convex": false,
+   "faces": 30,
+   "faceShapes": {
+    "4-gon": 30
+   },
+   "planes": 30,
+   "note": "Lead: its 30 visible faces lie on only 30 planes: a stellation or compound look-alike. To check."
+  },
+  {
+   "file": "app-dharma-outer-step03.png",
+   "structure": "Spheres of Dharma · outer half",
+   "kind": "app Top shell stage",
+   "step": 3,
+   "of": 4,
+   "adds": "30 edge pieces",
+   "convex": false,
+   "faces": 60,
+   "faceShapes": {
+    "3-gon": 60
+   },
+   "planes": 60,
+   "note": ""
+  },
+  {
+   "file": "app-dharma-outer-step04.png",
+   "structure": "Spheres of Dharma · outer half",
+   "kind": "app Top shell stage",
+   "step": 4,
+   "of": 4,
+   "adds": "20 face pieces",
+   "convex": false,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "note": "Lead: its 20 visible faces lie on only 20 planes: a stellation or compound look-alike. To check."
+  },
+  {
+   "file": "app-dharma-hinge-step01.png",
+   "structure": "Spheres of Dharma · hinge",
+   "kind": "app Top shell stage",
+   "step": 1,
+   "of": 6,
+   "adds": "the centre icosahedron",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "note": "Icosahedron."
+  },
+  {
+   "file": "app-dharma-hinge-step02.png",
+   "structure": "Spheres of Dharma · hinge",
+   "kind": "app Top shell stage",
+   "step": 2,
+   "of": 6,
+   "adds": "20 twisted triangular frusta",
+   "convex": false,
+   "faces": 80,
+   "faceShapes": {
+    "3-gon": 80
+   },
+   "planes": 80,
+   "note": ""
+  },
+  {
+   "file": "app-dharma-hinge-step03.png",
+   "structure": "Spheres of Dharma · hinge",
+   "kind": "app Top shell stage",
+   "step": 3,
+   "of": 6,
+   "adds": "12 pentagonal pyramids",
+   "convex": true,
+   "faces": 32,
+   "faceShapes": {
+    "3-gon": 20,
+    "5-gon": 12
+   },
+   "planes": 32,
+   "note": "Icosidodecahedron."
+  },
+  {
+   "file": "app-dharma-hinge-step04.png",
+   "structure": "Spheres of Dharma · hinge",
+   "kind": "app Top shell stage",
+   "step": 4,
+   "of": 6,
+   "adds": "20 triangular pyramids",
+   "convex": true,
+   "faces": 12,
+   "faceShapes": {
+    "5-gon": 12
+   },
+   "planes": 12,
+   "note": "Dodecahedron."
+  },
+  {
+   "file": "app-dharma-hinge-step05.png",
+   "structure": "Spheres of Dharma · hinge",
+   "kind": "app Top shell stage",
+   "step": 5,
+   "of": 6,
+   "adds": "12 lj11 + 30 laxe",
+   "convex": false,
+   "faces": 180,
+   "faceShapes": {
+    "3-gon": 179,
+    "5-gon": 1
+   },
+   "planes": 52,
+   "note": ""
+  },
+  {
+   "file": "app-dharma-hinge-step06.png",
+   "structure": "Spheres of Dharma · hinge",
+   "kind": "app Top shell stage",
+   "step": 6,
+   "of": 6,
+   "adds": "20 lfuji",
+   "convex": true,
+   "faces": 20,
+   "faceShapes": {
+    "3-gon": 20
+   },
+   "planes": 20,
+   "note": "Icosahedron."
+  },
+  {
+   "file": "app-bodhi-seed-step01.png",
+   "structure": "Bodhi Seed · seed",
+   "kind": "app Top shell stage",
+   "step": 1,
+   "of": 2,
+   "adds": "the centre outer + 1 rhombic triacontahedron",
+   "convex": false,
+   "faces": 60,
+   "faceShapes": {
+    "4-gon": 60
+   },
+   "planes": 60,
+   "note": ""
+  },
+  {
+   "file": "app-bodhi-seed-step02.png",
+   "structure": "Bodhi Seed · seed",
+   "kind": "app Top shell stage",
+   "step": 2,
+   "of": 2,
+   "adds": "12 triacontahedra",
+   "convex": false,
+   "faces": 240,
+   "faceShapes": {
+    "4-gon": 240
+   },
+   "planes": 120,
+   "note": ""
+  },
+  {
+   "file": "app-bodhi-kitb-step01.png",
+   "structure": "Bodhi Seed · Kit B",
+   "kind": "app Top shell stage",
+   "step": 1,
+   "of": 5,
+   "adds": "the centre rhombic triacontahedron",
+   "convex": true,
+   "faces": 30,
+   "faceShapes": {
+    "4-gon": 30
+   },
+   "planes": 30,
+   "note": "Rhombic triacontahedron."
+  },
+  {
+   "file": "app-bodhi-kitb-step02.png",
+   "structure": "Bodhi Seed · Kit B",
+   "kind": "app Top shell stage",
+   "step": 2,
+   "of": 5,
+   "adds": "60 Vajras",
+   "convex": false,
+   "faces": 60,
+   "faceShapes": {
+    "4-gon": 60
+   },
+   "planes": 30,
+   "note": "Lead: its 60 visible faces lie on only 30 planes: a stellation or compound look-alike. To check."
+  },
+  {
+   "file": "app-bodhi-kitb-step03.png",
+   "structure": "Bodhi Seed · Kit B",
+   "kind": "app Top shell stage",
+   "step": 3,
+   "of": 5,
+   "adds": "12 triacontahedra",
+   "convex": false,
+   "faces": 240,
+   "faceShapes": {
+    "4-gon": 240
+   },
+   "planes": 90,
+   "note": ""
+  },
+  {
+   "file": "app-bodhi-kitb-step04.png",
+   "structure": "Bodhi Seed · Kit B",
+   "kind": "app Top shell stage",
+   "step": 4,
+   "of": 5,
+   "adds": "60 Diadems (left) + 60 Diadems (right)",
+   "convex": false,
+   "faces": 120,
+   "faceShapes": {
+    "4-gon": 60,
+    "6-gon": 60
+   },
+   "planes": 60,
+   "note": ""
+  },
+  {
+   "file": "app-bodhi-kitb-step05.png",
+   "structure": "Bodhi Seed · Kit B",
+   "kind": "app Top shell stage",
+   "step": 5,
+   "of": 5,
+   "adds": "20 Crown Jewels",
+   "convex": true,
+   "faces": 30,
+   "faceShapes": {
+    "4-gon": 30
+   },
+   "planes": 30,
+   "note": "Rhombic triacontahedron."
+  },
+  {
+   "file": "app-bodhi-kita-step01.png",
+   "structure": "Bodhi Seed · Kit A",
+   "kind": "app Top shell stage",
+   "step": 1,
+   "of": 5,
+   "adds": "the centre rhombic triacontahedron",
+   "convex": true,
+   "faces": 30,
+   "faceShapes": {
+    "4-gon": 30
+   },
+   "planes": 30,
+   "note": "Rhombic triacontahedron."
+  },
+  {
+   "file": "app-bodhi-kita-step02.png",
+   "structure": "Bodhi Seed · Kit A",
+   "kind": "app Top shell stage",
+   "step": 2,
+   "of": 5,
+   "adds": "60 Vajras",
+   "convex": false,
+   "faces": 60,
+   "faceShapes": {
+    "4-gon": 60
+   },
+   "planes": 30,
+   "note": "Lead: its 60 visible faces lie on only 30 planes: a stellation or compound look-alike. To check."
+  },
+  {
+   "file": "app-bodhi-kita-step03.png",
+   "structure": "Bodhi Seed · Kit A",
+   "kind": "app Top shell stage",
+   "step": 3,
+   "of": 5,
+   "adds": "12 triacontahedra",
+   "convex": false,
+   "faces": 240,
+   "faceShapes": {
+    "4-gon": 240
+   },
+   "planes": 90,
+   "note": ""
+  },
+  {
+   "file": "app-bodhi-kita-step04.png",
+   "structure": "Bodhi Seed · Kit A",
+   "kind": "app Top shell stage",
+   "step": 4,
+   "of": 5,
+   "adds": "60 B2",
+   "convex": false,
+   "faces": 117,
+   "faceShapes": {
+    "4-gon": 87,
+    "8-gon": 12,
+    "12-gon": 3,
+    "16-gon": 15
+   },
+   "planes": 60,
+   "note": ""
+  },
+  {
+   "file": "app-bodhi-kita-step05.png",
+   "structure": "Bodhi Seed · Kit A",
+   "kind": "app Top shell stage",
+   "step": 5,
+   "of": 5,
+   "adds": "60 B3",
+   "convex": true,
+   "faces": 30,
+   "faceShapes": {
+    "4-gon": 30
+   },
+   "planes": 30,
+   "note": "Rhombic triacontahedron."
+  },
+  {
+   "file": "app-bodhi-hollow-step01.png",
+   "structure": "Bodhi Seed · the hollow",
+   "kind": "app Top shell stage",
+   "step": 1,
+   "of": 2,
+   "adds": "the centre rhombic triacontahedron",
+   "convex": true,
+   "faces": 30,
+   "faceShapes": {
+    "4-gon": 30
+   },
+   "planes": 30,
+   "note": "Rhombic triacontahedron."
+  },
+  {
+   "file": "app-bodhi-hollow-step02.png",
+   "structure": "Bodhi Seed · the hollow",
+   "kind": "app Top shell stage",
+   "step": 2,
+   "of": 2,
+   "adds": "60 Vajras",
+   "convex": false,
+   "faces": 60,
+   "faceShapes": {
+    "4-gon": 60
+   },
+   "planes": 30,
+   "note": "Lead: its 60 visible faces lie on only 30 planes: a stellation or compound look-alike. To check."
+  }
+ ]
+}

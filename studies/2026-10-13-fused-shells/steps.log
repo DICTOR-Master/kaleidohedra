@@ -1,0 +1,99 @@
+== dharma.cycle
+  + core@0.00 x1     -> CONVEX, 20 faces {'3-gon': 20}; plane distances {'3-fold': [0.4671]}
+  + nfru3@0.84 x20   -> non-convex, 80 faces {'3-gon': 80}; plane distances {'3-fold': [1.2229], 'other': [0.4274]}
+  + npyr5@1.03 x12   -> CONVEX, 32 faces {'3-gon': 20, '5-gon': 12}; plane distances {'3-fold': [1.2229], '5-fold': [1.1135]}
+  + npyr3@1.27 x20   -> CONVEX, 12 faces {'5-gon': 12}; plane distances {'5-fold': [1.1135]}
+  + nfru5@1.28 x12   -> non-convex, 84 faces {'3-gon': 42, '5-gon': 29, '6-gon': 7, '7-gon': 1, '9-gon': 1, '10-gon': 4}; plane distances {'5-fold': [1.1135, 1.4384], '3-fold': [1.4013]}
+  + nt1@1.40 x30     -> CONVEX, 32 faces {'5-gon': 12, '6-gon': 20}; plane distances {'5-fold': [1.4384], '3-fold': [1.4013]}
+  + ncap@1.43 x20    -> CONVEX, 102 faces {'3-gon': 60, '4-gon': 30, '5-gon': 12}; plane distances {'5-fold': [1.4384], 'other': [1.5], '2-fold': [1.5]}
+  + ncap@1.49 x12    -> non-convex, 144 faces {'3-gon': 109, '4-gon': 30, '6-gon': 5}; plane distances {'3-fold': [1.4013], 'other': [1.5], '2-fold': [1.5]}
+  + nwedge@1.55 x60  -> CONVEX, 30 faces {'4-gon': 30}; plane distances {'2-fold': [1.5]}
+  + nedge@1.71 x30   -> non-convex, 60 faces {'3-gon': 60}; plane distances {'other': [1.4399, 1.44]}
+  + nface@1.89 x20   -> CONVEX, 20 faces {'3-gon': 20}; plane distances {'3-fold': [1.9786]}
+== karma.lotus
+  + ico@0.00 x1      -> CONVEX, 20 faces {'3-gon': 20}; plane distances {'3-fold': [0.4671]}
+  + cleo@0.70 x20    -> non-convex, 32 faces {'3-gon': 16, '6-gon': 12, '10-gon': 4}; plane distances {'5-fold': [0.2629]}
+  + axe@0.90 x30     -> non-convex, 56 faces {'3-gon': 56}; plane distances {'3-fold': [0.4671]}
+  + ico@1.54 x12     -> non-convex, 180 faces {'3-gon': 172, '4-gon': 8}; plane distances {'3-fold': [0.4671, 1.0444, 1.9786]}
+  + axe@1.71 x30     -> non-convex, 180 faces {'3-gon': 180}; plane distances {'3-fold': [1.0444, 1.9786], '5-fold': [1.1135]}
+  + fuji@1.90 x20    -> CONVEX, 20 faces {'3-gon': 20}; plane distances {'3-fold': [1.9786]}
+== bodhi.kitB
+  + centre@0.00 x1   -> CONVEX, 30 faces {'4-gon': 30}; plane distances {'2-fold': [0.8506, 0.8507]}
+  + B1@1.32 x60      -> non-convex, 60 faces {'4-gon': 60}; plane distances {'2-fold': [0.8506, 0.8507]}
+  + copy@2.62 x12    -> non-convex, 240 faces {'4-gon': 240}; plane distances {'2-fold': [1.3764, 2.7527, 2.7528, 3.6034]}
+  + B5L@3.01 x60     -> non-convex, 240 faces {'3-gon': 30, '4-gon': 120, '5-gon': 26, '6-gon': 64}; plane distances {'2-fold': [0.0, 1.3764, 2.7527, 2.7528, 3.6034]}
+  + B5R@3.01 x60     -> non-convex, 120 faces {'4-gon': 60, '6-gon': 60}; plane distances {'2-fold': [2.7527, 2.7528, 3.6034]}
+  + B4@3.37 x20      -> CONVEX, 30 faces {'4-gon': 30}; plane distances {'2-fold': [3.6034]}
+== karma.step2
+  + ico@0.00 x1      -> CONVEX, 20 faces {'3-gon': 20}; plane distances {'3-fold': [0.2887]}
+  + cleo@0.43 x20    -> non-convex, 18 faces {'3-gon': 6, '10-gon': 6, '12-gon': 6}; plane distances {'5-fold': [0.1625]}
+  + axe@0.56 x30     -> non-convex, 45 faces {'3-gon': 33, '8-gon': 12}; plane distances {'3-fold': [0.2887]}
+  + ico@0.95 x12     -> non-convex, 180 faces {'3-gon': 180}; plane distances {'3-fold': [0.2887, 0.6455, 1.2228]}
+  + axe@1.06 x30     -> non-convex, 180 faces {'3-gon': 180}; plane distances {'3-fold': [0.6455, 1.2228], '5-fold': [0.6882]}
+  + fuji@1.17 x20    -> CONVEX, 20 faces {'3-gon': 20}; plane distances {'3-fold': [1.2228]}
+  + cleo@1.83 x20    -> non-convex, 51 faces {'3-gon': 44, '5-gon': 1, '8-gon': 2, '9-gon': 1, '11-gon': 2, '15-gon': 1}; plane distances {'5-fold': [0.6882]}
+  + axe@2.37 x30     -> non-convex, 60 faces {'3-gon': 52, '5-gon': 8}; plane distances {'3-fold': [1.2228]}
+  + ico@2.49 x12     -> non-convex, 240 faces {'3-gon': 180, '4-gon': 60}; plane distances {'3-fold': [0.2887, 1.2228, 2.7344]}
+  + axe@2.72 x60     -> non-convex, 180 faces {'3-gon': 60, '4-gon': 120}; plane distances {'3-fold': [0.2887, 1.2228, 2.7344]}
+  + fuji@2.77 x60    -> non-convex, 358 faces {'3-gon': 296, '4-gon': 60, '6-gon': 2}; plane distances {'3-fold': [1.2228, 2.157, 2.7344], '5-fold': [2.9152]}
+  + axe@3.29 x60     -> non-convex, 500 faces {'3-gon': 441, '4-gon': 13, '5-gon': 1, '6-gon': 45}; plane distances {'3-fold': [1.2228, 2.157, 2.7344], '5-fold': [1.5388, 1.5389, 2.9152]}
+  + axe@3.45 x60     -> non-convex, 620 faces {'3-gon': 561, '4-gon': 13, '5-gon': 1, '6-gon': 45}; plane distances {'3-fold': [0.2887, 1.2228, 2.157, 2.7344], '5-fold': [1.5388, 1.5389, 2.9152]}
+  + cleo@3.50 x60    -> non-convex, 656 faces {'3-gon': 624, '4-gon': 14, '5-gon': 9, '6-gon': 6, '7-gon': 1, '9-gon': 2}; plane distances {'3-fold': [0.2887, 1.2228, 2.157, 2.7344], '5-fold': [2.0646, 2.9152]}
+  + ico@3.61 x60     -> non-convex, 892 faces {'3-gon': 838, '4-gon': 29, '5-gon': 19, '6-gon': 4, '9-gon': 1, '11-gon': 1}; plane distances {'3-fold': [0.2887, 1.2228, 1.8002, 2.7344, 3.6685, 4.2459], '5-fold': [2.0646, 2.9152]}
+  + axe@3.64 x60     -> non-convex, 739 faces {'3-gon': 689, '4-gon': 21, '5-gon': 11, '6-gon': 6, '9-gon': 1, '10-gon': 1, '11-gon': 1, '12-gon': 9}; plane distances {'3-fold': [1.2228, 1.8002, 2.7344, 3.6685, 4.2459], '5-fold': [2.9152, 3.7659]}
+  + cleo@3.96 x60    -> non-convex, 892 faces {'3-gon': 854, '4-gon': 21, '5-gon': 11, '6-gon': 4, '9-gon': 1, '11-gon': 1}; plane distances {'3-fold': [0.2887, 1.2228, 1.8002, 2.7344, 3.6685, 4.2459], '5-fold': [2.0646, 2.9152]}
+  + ico@4.03 x12     -> non-convex, 891 faces {'3-gon': 860, '4-gon': 21, '5-gon': 6, '6-gon': 4}; plane distances {'3-fold': [1.2228, 1.8002, 2.7344, 3.6685, 4.2459], '5-fold': [2.0646, 2.9152]}
+  + fuji@4.12 x60    -> non-convex, 837 faces {'3-gon': 772, '4-gon': 43, '5-gon': 22}; plane distances {'3-fold': [1.2228, 2.157, 2.7344, 3.6685, 4.2459], '5-fold': [0.6882, 2.0646]}
+  + axe@4.13 x120    -> non-convex, 680 faces {'3-gon': 513, '4-gon': 126, '5-gon': 22, '7-gon': 1, '11-gon': 18}; plane distances {'3-fold': [1.2228, 2.157, 2.7344, 3.6685, 4.2459], '5-fold': [0.6882, 1.5388, 1.5389]}
+  + cleo@4.22 x60    -> non-convex, 532 faces {'3-gon': 352, '4-gon': 125, '5-gon': 18, '6-gon': 12, '7-gon': 1, '9-gon': 1, '10-gon': 2, '11-gon': 18, '12-gon': 3}; plane distances {'3-fold': [1.2228, 2.157, 2.7344, 3.6685, 4.2459], '5-fold': [0.6882, 4.2916]}
+  + axe@4.38 x120    -> non-convex, 655 faces {'3-gon': 512, '4-gon': 84, '5-gon': 24, '6-gon': 12, '9-gon': 18, '10-gon': 2, '12-gon': 3}; plane distances {'3-fold': [1.2228, 2.157, 2.7344, 3.6685, 4.2459], '5-fold': [2.9152, 4.2916]}
+  + axe@4.49 x30     -> non-convex, 535 faces {'3-gon': 392, '4-gon': 42, '5-gon': 6, '6-gon': 12, '9-gon': 78, '10-gon': 2, '12-gon': 3}; plane distances {'3-fold': [2.157, 2.7344, 3.6685, 4.2459], '5-fold': [2.9152, 4.2916]}
+  + axe@4.57 x60     -> non-convex, 686 faces {'3-gon': 548, '4-gon': 42, '5-gon': 14, '7-gon': 5, '9-gon': 77}; plane distances {'3-fold': [1.2228, 2.157, 2.7344, 3.6685, 4.2459], '5-fold': [1.5388, 1.5389, 2.9152]}
+  + cleo@4.61 x60    -> non-convex, 690 faces {'3-gon': 556, '4-gon': 34, '5-gon': 14, '6-gon': 21, '7-gon': 4, '8-gon': 1, '9-gon': 60}; plane distances {'3-fold': [1.2228, 2.157, 2.7344, 3.6685, 4.2459], '5-fold': [2.0646, 2.9152]}
+  + fuji@4.76 x60    -> non-convex, 688 faces {'3-gon': 522, '4-gon': 40, '5-gon': 90, '6-gon': 27, '7-gon': 8, '8-gon': 1}; plane distances {'3-fold': [1.2228, 2.157, 2.7344, 3.6685], '5-fold': [0.6882, 2.0646, 2.9152]}
+  + axe@4.82 x60     -> non-convex, 658 faces {'3-gon': 507, '4-gon': 42, '5-gon': 95, '6-gon': 6, '7-gon': 8}; plane distances {'3-fold': [1.2228, 2.157, 2.7344, 3.6685], '5-fold': [0.6882, 2.9152]}
+  + ico@4.91 x60     -> non-convex, 598 faces {'3-gon': 508, '4-gon': 65, '5-gon': 10, '6-gon': 11, '7-gon': 4}; plane distances {'3-fold': [1.2228, 2.7344, 3.6685, 4.2459, 5.1801], '5-fold': [0.6882, 2.9152]}
+  + fuji@4.96 x20    -> non-convex, 380 faces {'3-gon': 290, '4-gon': 65, '6-gon': 5, '12-gon': 20}; plane distances {'3-fold': [1.2228, 3.6685, 4.2459, 5.1801], '5-fold': [0.6882]}
+  + axe@5.14 x60     -> non-convex, 260 faces {'3-gon': 180, '4-gon': 55, '6-gon': 5, '12-gon': 20}; plane distances {'3-fold': [3.6685, 4.2459, 5.1801], '5-fold': [5.1423]}
+  + axe@5.56 x60     -> non-convex, 440 faces {'3-gon': 415, '4-gon': 1, '5-gon': 4, '12-gon': 20}; plane distances {'3-fold': [0.2887, 3.6685, 4.2459, 5.1801], '5-fold': [2.9152, 5.1423]}
+  + ico@5.57 x12     -> non-convex, 440 faces {'3-gon': 420, '12-gon': 20}; plane distances {'5-fold': [2.9152, 5.1423], '3-fold': [1.8002, 4.2459, 5.1801]}
+  + fuji@5.65 x60    -> CONVEX, 20 faces {'3-gon': 20}; plane distances {'3-fold': [5.1801]}
+== karma.dodeca
+  + ico@0.00 x1      -> CONVEX, 20 faces {'3-gon': 20}; plane distances {'3-fold': [0.4671]}
+  + cleo@0.70 x20    -> non-convex, 32 faces {'3-gon': 16, '6-gon': 12, '10-gon': 4}; plane distances {'5-fold': [0.2629]}
+  + axe@0.90 x30     -> non-convex, 56 faces {'3-gon': 56}; plane distances {'3-fold': [0.4671]}
+  + cap@1.03 x12     -> CONVEX, 12 faces {'5-gon': 12}; plane distances {'5-fold': [1.1135]}
+== dharma.inner
+  + core@0.00 x1     -> CONVEX, 20 faces {'3-gon': 20}; plane distances {'3-fold': [0.4671]}
+  + nfru3@0.84 x20   -> non-convex, 80 faces {'3-gon': 80}; plane distances {'3-fold': [1.2229], 'other': [0.4274]}
+  + npyr5@1.03 x12   -> CONVEX, 32 faces {'3-gon': 20, '5-gon': 12}; plane distances {'3-fold': [1.2229], '5-fold': [1.1135]}
+  + npyr3@1.27 x20   -> CONVEX, 12 faces {'5-gon': 12}; plane distances {'5-fold': [1.1135]}
+== dharma.outer
+  + nfru5@1.28 x12   -> non-convex, 113 faces {'3-gon': 87, '5-gon': 14, '6-gon': 7, '9-gon': 1, '10-gon': 4}; plane distances {'2-fold': [1.1135, 1.4384], '3-fold': [1.4013], 'other': [1.4013]}
+  + nt1@1.40 x30     -> non-convex, 32 faces {'5-gon': 12, '6-gon': 20}; plane distances {'2-fold': [1.4384], '3-fold': [1.4013], 'other': [1.4013]}
+  + ncap@1.43 x20    -> non-convex, 102 faces {'3-gon': 60, '4-gon': 30, '5-gon': 12}; plane distances {'2-fold': [1.4384], 'other': [1.5]}
+  + ncap@1.49 x12    -> non-convex, 143 faces {'3-gon': 107, '4-gon': 30, '6-gon': 6}; plane distances {'3-fold': [1.4013], 'other': [1.4013, 1.5]}
+  + nwedge@1.55 x60  -> non-convex, 30 faces {'4-gon': 30}; plane distances {'other': [1.5]}
+  + nedge@1.71 x30   -> non-convex, 60 faces {'3-gon': 60}; plane distances {'other': [1.4399, 1.44]}
+  + nface@1.89 x20   -> non-convex, 20 faces {'3-gon': 20}; plane distances {'3-fold': [1.9786], 'other': [1.9786]}
+== dharma.hinge
+  + core@0.00 x1     -> CONVEX, 20 faces {'3-gon': 20}; plane distances {'3-fold': [0.4671]}
+  + nfru3@0.84 x20   -> non-convex, 80 faces {'3-gon': 80}; plane distances {'3-fold': [1.2229], 'other': [0.4274]}
+  + npyr5@1.03 x12   -> CONVEX, 32 faces {'3-gon': 20, '5-gon': 12}; plane distances {'3-fold': [1.2229], '5-fold': [1.1135]}
+  + npyr3@1.27 x20   -> CONVEX, 12 faces {'5-gon': 12}; plane distances {'5-fold': [1.1135]}
+  + lj11@1.63 x12    -> non-convex, 180 faces {'3-gon': 180}; plane distances {'3-fold': [0.4671, 1.0444, 1.9786]}
+  + laxe@1.71 x30    -> non-convex, 180 faces {'3-gon': 179, '5-gon': 1}; plane distances {'5-fold': [1.1135], '3-fold': [1.0444, 1.9786]}
+  + lfuji@1.90 x20   -> CONVEX, 20 faces {'3-gon': 20}; plane distances {'3-fold': [1.9786]}
+== bodhi.seed
+  + centre@0.00 x1   -> CONVEX, 30 faces {'4-gon': 30}; plane distances {'2-fold': [0.8506, 0.8507]}
+  + outer@0.00 x1    -> non-convex, 60 faces {'4-gon': 60}; plane distances {'2-fold': [0.8506, 0.8507, 3.6034]}
+  + copy@2.62 x12    -> non-convex, 240 faces {'4-gon': 240}; plane distances {'2-fold': [0.8506, 0.8507, 1.3764, 2.7527, 2.7528, 3.6034]}
+== bodhi.kitA
+  + centre@0.00 x1   -> CONVEX, 30 faces {'4-gon': 30}; plane distances {'2-fold': [0.8506, 0.8507]}
+  + B1@1.32 x60      -> non-convex, 60 faces {'4-gon': 60}; plane distances {'2-fold': [0.8506, 0.8507]}
+  + copy@2.62 x12    -> non-convex, 240 faces {'4-gon': 240}; plane distances {'2-fold': [1.3764, 2.7527, 2.7528, 3.6034]}
+  + B2@3.33 x60      -> non-convex, 117 faces {'4-gon': 87, '8-gon': 12, '12-gon': 3, '16-gon': 15}; plane distances {'2-fold': [2.7527, 2.7528, 3.6034]}
+  + B3@3.59 x60      -> CONVEX, 30 faces {'4-gon': 30}; plane distances {'2-fold': [3.6034]}
+== bodhi.hollow
+  + centre@0.00 x1   -> CONVEX, 30 faces {'4-gon': 30}; plane distances {'2-fold': [0.8506, 0.8507]}
+  + B1@1.32 x60      -> non-convex, 60 faces {'4-gon': 60}; plane distances {'2-fold': [0.8506, 0.8507]}

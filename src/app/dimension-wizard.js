@@ -55,6 +55,7 @@ import { loadCatalogue } from './catalogue-load.js';
 import { t, tn, tFor } from './i18n.js';
 import { polyShapeEdges, polyShapeName } from './poly-shapes.js';
 import { FAMILY_META, familyIds, familiesFor, pairPartners } from '../krp-core/src/polyhedra/families.js';
+import { TRANSITIONAL_IDS } from '../krp-core/src/polyhedra/transitional.js';
 import { POLYHEDRA, KITS13, KIT13_ADDITION_IDS } from '../krp-core/src/polyhedra/index.js';
 import { isConvex } from '../krp-core/src/assembly/faceRegistration.js';
 import { favourites, recent, isFavourite, toggleFavourite } from './poly-prefs.js';
@@ -594,7 +595,8 @@ const R_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key));
 // Polyhedraverse's families: Platonic at the top as usual (DICTO 2026-10-09: "anyone wanting to
 // start at Platonic solids can do so as normal from the top of the green list"), DICTO's own pieces
 // above them in DICTO's livery; 4D Polytopes waits for D5.
-const POLY_FAMILIES = ['PLATONIC', 'ARCHIMEDEAN', 'CATALAN', 'JOHNSON', 'DELTAHEDRA', 'PRISMS', 'ANTIPRISMS', 'STELLATIONS', 'PARALLELOHEDRA', 'SPACE_FILLING_PAIRS', 'BRIDGES_3D', 'APERIODIC', 'MISCELLANEOUS'];
+// DICTO Transitional Shells first: DICTO's newest work at the top (DICTO 2026-10-08), in DICTO's livery.
+const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'PLATONIC', 'ARCHIMEDEAN', 'CATALAN', 'JOHNSON', 'DELTAHEDRA', 'PRISMS', 'ANTIPRISMS', 'STELLATIONS', 'PARALLELOHEDRA', 'SPACE_FILLING_PAIRS', 'BRIDGES_3D', 'APERIODIC', 'MISCELLANEOUS'];
 // DICTO's own work, shown in DICTO's livery (silver) at the top of its app's block (DICTO 2026-10-09);
 // it still opens in its app. Lattices and worlds by key, single pieces by action, and DICTO's
 // Polyhedraverse pieces gathered from across its families.
@@ -607,7 +609,7 @@ const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['DICTO_
 export const DICTO_PIECE_IDS = DICTO_POLY.ids;
 // The shape a face was tapped on, while picking: its space-filling partners come first (as the old site).
 let partnerIds = [];
-const gold = (id) => (DICTO_POLY.ids.includes(id) ? ' dicto-gold' : '');
+const gold = (id) => (DICTO_POLY.ids.includes(id) || TRANSITIONAL_IDS.includes(id) ? ' dicto-gold' : '');
 const polyIds = (key) => (key === 'PARTNERS' ? partnerIds : key === DICTO_POLY.key ? DICTO_POLY.ids.filter((id) => polyShapeName(id) !== id) : key === 'FAVOURITES' ? favourites() : key === 'RECENT' ? recent() : key === 'STARS' ? STAR_POLYHEDRON_IDS : familyIds(key));
 const polyLabel = (key) => (key === 'PARTNERS' ? t('poly.d.pairs', getSettings().language) : key === DICTO_POLY.key ? DICTO_POLY.label : key === 'FAVOURITES' ? t('wiz.poly.favourites', getSettings().language) : key === 'RECENT' ? t('wiz.poly.recent', getSettings().language) : key === 'STARS' ? 'Kepler–Poinsot' : FAMILY_META[key].label);
 // ---- the shape browser (step D4, DICTO 2026-10-09: inside DICTO) ----
