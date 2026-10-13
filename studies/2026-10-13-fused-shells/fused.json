@@ -1,0 +1,307 @@
+[
+ {
+  "view": "dharma.cycle",
+  "layers": [
+   {
+    "outerRadius": 0.588,
+    "pieces": {
+     "core": 1
+    },
+    "outerSolid": {
+     "V": 12,
+     "E": 30,
+     "F": 20,
+     "faces": {
+      "3-gon": 20
+     },
+     "name": "convex polyhedron (20 triangulars)",
+     "volume": 0.515032,
+     "edgeLengths": [
+      0.618
+     ]
+    },
+    "outerConvex": true,
+    "faceTiles": [],
+    "edgePieces": [
+     "core"
+    ],
+    "unplaced": []
+   },
+   {
+    "outerRadius": 1.309,
+    "pieces": {
+     "npyr5": 12,
+     "nfru3": 20
+    },
+    "outerSolid": {
+     "V": 30,
+     "E": 60,
+     "F": 32,
+     "faces": {
+      "3-gon": 20,
+      "5-gon": 12
+     },
+     "name": "convex polyhedron (20 triangulars, 12 pentagonals)",
+     "volume": 7.326089,
+     "edgeLengths": [
+      0.809
+     ]
+    },
+    "outerConvex": true,
+    "faceTiles": [
+     {
+      "count": 2,
+      "roles": [
+       "nfru3",
+       "npyr5",
+       "npyr5",
+       "npyr5"
+      ],
+      "convex": false,
+      "solid": null,
+      "outerFace": "3-gon"
+     },
+     {
+      "count": 6,
+      "roles": [
+       "nfru3",
+       "npyr5"
+      ],
+      "convex": false,
+      "solid": null,
+      "outerFace": "3-gon"
+     },
+     {
+      "count": 12,
+      "roles": [
+       "nfru3"
+      ],
+      "convex": true,
+      "solid": {
+       "V": 6,
+       "E": 12,
+       "F": 8,
+       "faces": {
+        "3-gon": 8
+       },
+       "name": "twisted triangular frustum (triangular antiprismoid)",
+       "volume": 0.22215,
+       "edgeLengths": [
+        0.618,
+        0.809,
+        0.866
+       ]
+      },
+      "outerFace": "3-gon"
+     }
+    ],
+    "edgePieces": [],
+    "unplaced": []
+   },
+   {
+    "outerRadius": 1.401,
+    "pieces": {
+     "npyr3": 20
+    },
+    "outerSolid": {
+     "V": 20,
+     "E": 42,
+     "F": 24,
+     "faces": {
+      "3-gon": 12,
+      "4-gon": 12
+     },
+     "name": "convex polyhedron (12 triangulars, 12 quadrilaterals)",
+     "volume": 7.663189,
+     "edgeLengths": [
+      1.0,
+      1.618
+     ]
+    },
+    "outerConvex": true,
+    "faceTiles": [],
+    "edgePieces": [
+     "npyr3"
+    ],
+    "unplaced": [
+     "npyr3"
+    ]
+   },
+   {
+    "outerRadius": 1.532,
+    "pieces": {
+     "nfru5": 12,
+     "nt1": 30
+    },
+    "outerSolid": {
+     "V": 68,
+     "E": 150,
+     "F": 84,
+     "faces": {
+      "3-gon": 48,
+      "4-gon": 24,
+      "5-gon": 12
+     },
+     "name": "convex polyhedron (48 triangulars, 24 quadrilaterals, 12 pentagonals)",
+     "volume": 13.05168,
+     "edgeLengths": [
+      0.618,
+      1.2361
+     ]
+    },
+    "outerConvex": true,
+    "faceTiles": [],
+    "edgePieces": [
+     "nfru5",
+     "nt1"
+    ],
+    "unplaced": []
+   },
+   {
+    "outerRadius": 1.606,
+    "pieces": {
+     "ncap": 20
+    },
+    "outerSolid": null,
+    "outerConvex": false
+   },
+   {
+    "outerRadius": 1.763,
+    "pieces": {
+     "ncap": 12,
+     "nwedge": 60
+    },
+    "outerSolid": null,
+    "outerConvex": false
+   },
+   {
+    "outerRadius": 2.49,
+    "pieces": {
+     "nedge": 30,
+     "nface": 20
+    },
+    "outerSolid": null,
+    "outerConvex": false
+   }
+  ]
+ },
+ {
+  "view": "karma.lotus",
+  "layers": [
+   {
+    "outerRadius": 0.588,
+    "pieces": {
+     "ico": 1
+    },
+    "outerSolid": {
+     "V": 12,
+     "E": 30,
+     "F": 20,
+     "faces": {
+      "3-gon": 20
+     },
+     "name": "convex polyhedron (20 triangulars)",
+     "volume": 0.515032,
+     "edgeLengths": [
+      0.618
+     ]
+    },
+    "outerConvex": true,
+    "faceTiles": [],
+    "edgePieces": [
+     "ico"
+    ],
+    "unplaced": []
+   },
+   {
+    "outerRadius": 1.401,
+    "pieces": {
+     "axe": 30,
+     "cleo": 20
+    },
+    "outerSolid": null,
+    "outerConvex": false
+   },
+   {
+    "outerRadius": 2.14,
+    "pieces": {
+     "axe": 30,
+     "fuji": 20
+    },
+    "outerSolid": null,
+    "outerConvex": false
+   },
+   {
+    "outerRadius": 2.49,
+    "pieces": {
+     "ico": 12
+    },
+    "outerSolid": null,
+    "outerConvex": false
+   }
+  ]
+ },
+ {
+  "view": "bodhi.kitB",
+  "layers": [
+   {
+    "outerRadius": 1.0,
+    "pieces": {
+     "centre": 1
+    },
+    "outerSolid": {
+     "V": 32,
+     "E": 60,
+     "F": 30,
+     "faces": {
+      "4-gon": 30
+     },
+     "name": "convex polyhedron (30 quadrilaterals)",
+     "volume": 2.906159,
+     "edgeLengths": [
+      0.618
+     ]
+    },
+    "outerConvex": true,
+    "faceTiles": [],
+    "edgePieces": [
+     "centre"
+    ],
+    "unplaced": []
+   },
+   {
+    "outerRadius": 2.384,
+    "pieces": {
+     "B1": 60
+    },
+    "outerSolid": null,
+    "outerConvex": false
+   },
+   {
+    "outerRadius": 3.642,
+    "pieces": {
+     "B5L": 60,
+     "B5R": 60
+    },
+    "outerSolid": null,
+    "outerConvex": false
+   },
+   {
+    "outerRadius": 3.893,
+    "pieces": {
+     "B4": 20
+    },
+    "outerSolid": null,
+    "outerConvex": false
+   },
+   {
+    "outerRadius": 4.236,
+    "pieces": {
+     "copy": 12
+    },
+    "outerSolid": null,
+    "outerConvex": false
+   }
+  ]
+ }
+]

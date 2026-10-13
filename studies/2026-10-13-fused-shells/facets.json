@@ -1,0 +1,351 @@
+[
+ {
+  "view": "dharma.cycle",
+  "shells": [
+   {
+    "inner": "icosahedron",
+    "outer": "icosidodecahedron",
+    "innerVolume": 0.515032,
+    "outerVolume": 7.326089,
+    "pieceTypes": [
+     "nfru3@0.84",
+     "npyr5@1.03"
+    ],
+    "facets": [
+     {
+      "count": 12,
+      "outerFace": "5-gon",
+      "pyramid": "pentagonal pyramid (regular base)",
+      "innerPart": "convex polyhedron (10 triangulars)",
+      "innerPartFaces": {
+       "3-gon": 10
+      },
+      "wedgeVolume": 0.385779,
+      "wholePiecesVolume": 0.197338,
+      "piecesWhole": false,
+      "pieces": [
+       "npyr5"
+      ]
+     },
+     {
+      "count": 20,
+      "outerFace": "3-gon",
+      "pyramid": "tetrahedron (triangular pyramid)",
+      "innerPart": "tetrahedron (triangular pyramid)",
+      "innerPartFaces": {
+       "3-gon": 4
+      },
+      "wedgeVolume": 0.109086,
+      "wholePiecesVolume": 0,
+      "piecesWhole": false,
+      "pieces": []
+     }
+    ]
+   },
+   {
+    "inner": "icosidodecahedron",
+    "outer": "dodecahedron",
+    "innerVolume": 7.326089,
+    "outerVolume": 7.663182,
+    "pieceTypes": [
+     "npyr3@1.27"
+    ],
+    "facets": [
+     {
+      "count": 12,
+      "outerFace": "5-gon",
+      "pyramid": "pentagonal pyramid (regular base)",
+      "innerPart": "convex polyhedron (5 triangulars, 5 quadrilaterals, 1 pentagonal)",
+      "innerPartFaces": {
+       "3-gon": 5,
+       "4-gon": 5,
+       "5-gon": 1
+      },
+      "wedgeVolume": 0.028092,
+      "wholePiecesVolume": 0,
+      "piecesWhole": false,
+      "pieces": []
+     }
+    ]
+   },
+   {
+    "inner": "dodecahedron",
+    "outer": "truncated icosahedron",
+    "innerVolume": 7.663182,
+    "outerVolume": 13.051691,
+    "pieceTypes": [
+     "nfru5@1.28",
+     "nt1@1.40"
+    ],
+    "facets": [
+     {
+      "count": 12,
+      "outerFace": "5-gon",
+      "pyramid": "pentagonal pyramid",
+      "innerPart": "pentagonal pyramid (regular base)",
+      "innerPartFaces": {
+       "3-gon": 5,
+       "5-gon": 1
+      },
+      "wedgeVolume": 0.168923,
+      "wholePiecesVolume": 0,
+      "piecesWhole": false,
+      "pieces": []
+     },
+     {
+      "count": 12,
+      "outerFace": "6-gon",
+      "pyramid": "hexagonal pyramid",
+      "innerPart": "convex polyhedron (3 triangulars, 3 quadrilaterals, 3 pentagonals)",
+      "innerPartFaces": {
+       "3-gon": 3,
+       "4-gon": 3,
+       "5-gon": 3
+      },
+      "wedgeVolume": 0.168071,
+      "wholePiecesVolume": 0,
+      "piecesWhole": false,
+      "pieces": []
+     },
+     {
+      "count": 8,
+      "outerFace": "6-gon",
+      "pyramid": "hexagonal pyramid (regular base)",
+      "innerPart": "convex polyhedron (6 triangulars, 3 quadrilaterals, 2 pentagonals, 1 hexagonal)",
+      "innerPartFaces": {
+       "3-gon": 6,
+       "4-gon": 3,
+       "5-gon": 2,
+       "6-gon": 1
+      },
+      "wedgeVolume": 0.168068,
+      "wholePiecesVolume": 0,
+      "piecesWhole": false,
+      "pieces": []
+     }
+    ]
+   },
+   {
+    "inner": "truncated icosahedron",
+    "outer": "icosahedron",
+    "innerVolume": 13.051691,
+    "outerVolume": 13.905792,
+    "pieceTypes": [
+     "ncap@1.49"
+    ],
+    "facets": [
+     {
+      "count": 20,
+      "outerFace": "3-gon",
+      "pyramid": "tetrahedron (triangular pyramid)",
+      "innerPart": "convex polyhedron (3 triangulars, 3 pentagonals, 1 hexagonal)",
+      "innerPartFaces": {
+       "3-gon": 3,
+       "5-gon": 3,
+       "6-gon": 1
+      },
+      "wedgeVolume": 0.042705,
+      "wholePiecesVolume": 0,
+      "piecesWhole": false,
+      "pieces": []
+     }
+    ]
+   },
+   {
+    "inner": "truncated icosahedron",
+    "outer": "icosahedral 80-corner solid",
+    "innerVolume": 13.051691,
+    "outerVolume": 14.404252,
+    "pieceTypes": [
+     "ncap@1.43"
+    ],
+    "facets": [
+     {
+      "count": 12,
+      "outerFace": "5-gon",
+      "pyramid": "pentagonal pyramid",
+      "innerPart": "pentagonal pyramid",
+      "innerPartFaces": {
+       "3-gon": 5,
+       "5-gon": 1
+      },
+      "wedgeVolume": 0.0,
+      "wholePiecesVolume": 0,
+      "piecesWhole": true,
+      "pieces": []
+     },
+     {
+      "count": 60,
+      "outerFace": "3-gon",
+      "pyramid": "tetrahedron (triangular pyramid)",
+      "innerPart": "tetrahedron (triangular pyramid)",
+      "innerPartFaces": {
+       "3-gon": 4
+      },
+      "wedgeVolume": 0.011271,
+      "wholePiecesVolume": 0,
+      "piecesWhole": false,
+      "pieces": []
+     },
+     {
+      "count": 30,
+      "outerFace": "4-gon",
+      "pyramid": "quadrilateral pyramid",
+      "innerPart": "convex polyhedron (6 triangulars)",
+      "innerPartFaces": {
+       "3-gon": 6
+      },
+      "wedgeVolume": 0.022542,
+      "wholePiecesVolume": 0,
+      "piecesWhole": false,
+      "pieces": []
+     }
+    ]
+   },
+   {
+    "inner": "icosahedral 80-corner solid",
+    "outer": "rhombic triacontahedron",
+    "innerVolume": 14.404252,
+    "outerVolume": 15.934627,
+    "pieceTypes": [
+     "ncap@1.49",
+     "nwedge@1.55"
+    ],
+    "facets": [
+     {
+      "count": 30,
+      "outerFace": "4-gon",
+      "pyramid": "quadrilateral pyramid",
+      "innerPart": "convex polyhedron (4 triangulars, 7 quadrilaterals)",
+      "innerPartFaces": {
+       "3-gon": 4,
+       "4-gon": 7
+      },
+      "wedgeVolume": 0.051013,
+      "wholePiecesVolume": 0,
+      "piecesWhole": false,
+      "pieces": []
+     }
+    ]
+   },
+   {
+    "inner": "rhombic triacontahedron",
+    "outer": "icosahedron",
+    "innerVolume": 15.934627,
+    "outerVolume": 39.148895,
+    "pieceTypes": [
+     "nedge@1.71",
+     "nface@1.89"
+    ],
+    "facets": [
+     {
+      "count": 20,
+      "outerFace": "3-gon",
+      "pyramid": "tetrahedron (triangular pyramid)",
+      "innerPart": "convex polyhedron (6 triangulars)",
+      "innerPartFaces": {
+       "3-gon": 6
+      },
+      "wedgeVolume": 1.160718,
+      "wholePiecesVolume": 0.368921,
+      "piecesWhole": false,
+      "pieces": [
+       "nface"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "view": "karma.lotus",
+  "shells": [
+   {
+    "inner": "icosahedron",
+    "outer": "icosahedron",
+    "innerVolume": 0.515032,
+    "outerVolume": 39.148995,
+    "pieceTypes": [
+     "axe@0.90",
+     "axe@1.71",
+     "cleo@0.70",
+     "fuji@1.90",
+     "ico@1.54"
+    ],
+    "facets": [
+     {
+      "count": 20,
+      "outerFace": "3-gon",
+      "pyramid": "tetrahedron (triangular pyramid)",
+      "innerPart": "tetrahedron (triangular pyramid)",
+      "innerPartFaces": {
+       "3-gon": 4
+      },
+      "wedgeVolume": 1.931689,
+      "wholePiecesVolume": 0.37268,
+      "piecesWhole": false,
+      "pieces": [
+       "cleo",
+       "fuji"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "view": "bodhi.kitB",
+  "shells": [
+   {
+    "inner": "rhombic triacontahedron",
+    "outer": "rhombic triacontahedron",
+    "innerVolume": 2.906159,
+    "outerVolume": 220.907121,
+    "pieceTypes": [
+     "B1@1.32",
+     "B4@3.37",
+     "B5L@3.01",
+     "B5R@3.01",
+     "copy@2.62"
+    ],
+    "facets": [
+     {
+      "count": 24,
+      "outerFace": "4-gon",
+      "pyramid": "quadrilateral pyramid",
+      "innerPart": "quadrilateral pyramid",
+      "innerPartFaces": {
+       "3-gon": 4,
+       "4-gon": 1
+      },
+      "wedgeVolume": 7.266717,
+      "wholePiecesVolume": 1.037325,
+      "piecesWhole": false,
+      "pieces": [
+       "B1",
+       "B1",
+       "B5L",
+       "B5L",
+       "B5R",
+       "B5R"
+      ]
+     },
+     {
+      "count": 6,
+      "outerFace": "4-gon",
+      "pyramid": "quadrilateral pyramid",
+      "innerPart": "quadrilateral pyramid",
+      "innerPartFaces": {
+       "3-gon": 4,
+       "4-gon": 1
+      },
+      "wedgeVolume": 7.266692,
+      "wholePiecesVolume": 0,
+      "piecesWhole": false,
+      "pieces": []
+     }
+    ]
+   }
+  ]
+ }
+]
