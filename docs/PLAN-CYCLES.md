@@ -129,6 +129,11 @@ it goes into the world or the papers until it is checked.
   corners, an open aim, not a result. Simmons-Duffin's picture of CFTs as signposts and renormalization flows as roads has the
   same shape as the Cycles: named solids as stations, the movie as the road between them. An analogy for the world's text, not a
   claim.
+- **The trail since 2017:** the bootstrap now navigates theory space (navigator function, Reehorst et al. 2021; review Rychkov
+  and Su 2024; Rychkov 2025) and pins the 3D Ising model more tightly (stress tensor, Chang et al. 2025); the O(3) theory turns out
+  to be unstable to cubic anisotropy (Chester et al. 2021). Theory space as a shape: the EFT-hedron (Arkani-Hamed, Huang, Huang
+  2021), cosmological polytopes (2017). **Most direct link found:** 3D Ising CFT from 12 spins on the corners of an icosahedron
+  (Lao and Rychkov 2023), the small test case of the fuzzy-sphere method (Zhu et al. 2023).
 - **Questions:** which of our shells are the flattened pieces of the 600-cell template, exactly (cell by cell)? Does an icosahedral
   3D CFT exist in the literature, and if not, is that a well-posed open question to put to physicists?
 

@@ -267,3 +267,12 @@ reference library, not in this repo.
 - F. Kos, D. Poland, D. Simmons-Duffin, A. Vichi (2016). *Precision islands in the Ising and O(N) models*. JHEP 08, 036. <https://arxiv.org/abs/1603.04436>
 - D. Poland, D. Simmons-Duffin (2016). *The conformal bootstrap*. Nature Physics 12, 535–539. <https://doi.org/10.1038/nphys3761>
 - N. Arkani-Hamed, J. Trnka (2014). *The amplituhedron*. JHEP 10, 030. <https://arxiv.org/abs/1312.2007>
+- B.-X. Lao, S. Rychkov (2023). *3D Ising CFT and exact diagonalization on icosahedron: the power of conformal perturbation theory*. SciPost Phys. 15, 243. <https://arxiv.org/abs/2307.02540>
+- W. Zhu, C. Han, E. Huffman, J. S. Hofmann, Y.-C. He (2023). *Uncovering conformal symmetry in the 3D Ising transition: state-operator correspondence from a quantum fuzzy sphere regularization*. Phys. Rev. X 13, 021009. <https://arxiv.org/abs/2210.13482>
+- S. M. Chester et al. (2021). *Bootstrapping Heisenberg magnets and their cubic instability*. Phys. Rev. D 104, 105013. <https://arxiv.org/abs/2011.14647>
+- M. Reehorst, S. Rychkov, D. Simmons-Duffin, B. Sirois, N. Su, B. van Rees (2021). *Navigator function for the conformal bootstrap*. SciPost Phys. 11, 072. <https://arxiv.org/abs/2104.09518>
+- S. Rychkov, N. Su (2024). *New developments in the numerical conformal bootstrap*. Rev. Mod. Phys. 96, 045004. <https://arxiv.org/abs/2311.15844>
+- C.-H. Chang et al. (2025). *Bootstrapping the 3d Ising stress tensor*. JHEP 03, 136. <https://doi.org/10.1007/JHEP03(2025)136>
+- S. Rychkov (2025). *Conformal bootstrap: from Polyakov to our times*. Int. J. Mod. Phys. A. <https://arxiv.org/abs/2509.02779>
+- N. Arkani-Hamed, T.-C. Huang, Y.-t. Huang (2021). *The EFT-hedron*. JHEP 05, 259. <https://arxiv.org/abs/2012.15849>
+- N. Arkani-Hamed, P. Benincasa, A. Postnikov (2017). *Cosmological polytopes and the wavefunction of the universe*. <https://arxiv.org/abs/1709.02813>
