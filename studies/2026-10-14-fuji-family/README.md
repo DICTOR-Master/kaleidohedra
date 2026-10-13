@@ -104,6 +104,11 @@ the same as the icosahedral vertex-to-vertex cluster in the Icosa-13 study (ther
 pocket appears. So the cuboctahedral member does not come from a parallel cage; where it does occur (DICTO's dictospheres, the
 face-plane match with the cuboctahedron) is still to be explained, and turned or face-axis cages are the next candidates.
 
+**How the dictosphere triangles came about (DICTO, 2026-10-14):** a cuboctahedral arrangement on a sphere with a PET-bottle
+port in every square and every triangle. The squares should be much bigger than the triangles; with ports in both, the
+triangles' corners came too close to the edges of the neighbouring holes, so the triangles were truncated to give even space round
+the ports. So r was set by port clearance, not by angles.
+
 **DICTO's dictospheres (2026-10-14, first figures):** flat-ended triangles with long sides about 4 cm and short sides about 1.5 cm,
 r ≈ 0.375, within 3% of the cuboctahedral member (√3 − 1)/2 = 0.366. The 5 cm was measured across the inside of the face (DICTO), and it fits: across a flat-ended triangle with sides 4 and 1.5,
 from a short side to the opposite long side, is (4 + 2 × 1.5) × √3/2 − 1.5 × √3/2 = 4.76 cm.
