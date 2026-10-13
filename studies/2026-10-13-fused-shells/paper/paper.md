@@ -14,7 +14,7 @@ DICTO's Chain of Karma, Spheres of Dharma and Bodhi Seed are exact icosahedral d
 - **Adding 30 AXE turns it into the excavated dodecahedron**, a stellation of the icosahedron, with all 32 corners kept.
 - **Adding 12 caps closes the dodecahedron.** The Dodecahedral Chain thus walks from the icosahedron to its dual through two star solids.
 - **The Bodhi Seed's centre + 60 Vajra (fine) is the rhombic hexecontahedron.**
-- **The Spheres of Dharma's seventh stage is a convex solid with 80 corners**, 12 regular pentagons, 30 rhombi and 60 triangles, every face tangent to one sphere. We did not find it in the catalogues we searched.
+- **The Spheres of Dharma's seventh stage is a convex solid with 102 faces and 80 corners**: 12 regular pentagons, 30 rhombi and 60 triangles, every face tangent to one sphere. We did not find it in the catalogues we searched; DICTO names it the **DICTO Truncated-Icosahedral Hecatodihedron**.
 
 Every identification is checked against an independent construction to within 10⁻⁴. We describe all 21 piece types, show 45 further convex stages, and give cut-out nets so the in-betweens can be built by hand. The transitional shells now have their own group in the Polyhedraverse app.
 
@@ -93,7 +93,7 @@ Three features stand out:
 **What each piece does.** The main routes (Figures 1 to 3) show each piece's role:
 
 - **Lotus seed.** CLEO stands on each face of the core and makes the star (stage 2); AXE fills its 30 grooves (stage 3); the 12 outer icosahedra and outer AXE build a spiky 180-triangle stage; FUJI closes the large icosahedron.
-- **Spheres of Dharma.** Vajra (twist) makes an icosidodecahedron with 12 pentagonal dimples and the 12 Stupas fill them; Cleo-low closes the dodecahedron; the 12 Monkey Staffs and t1 make the truncated icosahedron; Shield gives the 80-corner solid; the caps and Vajra-blade complete the rhombic triacontahedron; Sevenfold-blade gives an icosahedron with 20 dimples, and Cleo-low 2 fills them.
+- **Spheres of Dharma.** Vajra (twist) makes an icosidodecahedron with 12 pentagonal dimples and the 12 Stupas fill them; Cleo-low closes the dodecahedron; the 12 Monkey Staffs and t1 make the truncated icosahedron; Shield gives the DICTO Truncated-Icosahedral Hecatodihedron; the caps and Vajra-blade complete the rhombic triacontahedron; Sevenfold-blade gives an icosahedron with 20 dimples, and Cleo-low 2 fills them.
 - **Bodhi Seed Kit B.** Vajra (fine) turns the centre triacontahedron into the rhombic hexecontahedron; the 12 copies, the Diadems and the Crown Jewels close the large triacontahedron.
 
 ## 4. Classical and new solids among the in-betweens
@@ -110,7 +110,7 @@ Each identification below was checked by `analysis/identify.py` against a solid 
 
 **4.5 Centre + 60 Vajra (fine) = the rhombic hexecontahedron.** Bodhi Kit B stage 2 has the 62 corners of 20 prolate golden rhombohedra around the centre, their volume, and 60 golden rhombi on the 30 face planes of the centre triacontahedron. This is the rhombic hexecontahedron (Unkelbach 1940), a stellation of the rhombic triacontahedron (Messer 1995). The Bodhi pieces study had shown that the 12 copies enclose it [DICTO, Bodhi pieces study]; here it is also reached from inside.
 
-**4.6 The convex 80-corner solid.** Spheres of Dharma stage 7 is convex, with 12 regular pentagons, 30 rhombi (sides 0.65097, angles 56.68° and 123.32°) and 60 isosceles triangles. Its corners are the 60 of the truncated icosahedron and 20 on the three-fold axes, forming a regular dodecahedron. It is the truncated icosahedron with a Shield on each hexagon, at the exact height where the triangles of neighbouring Shields across each hexagon–hexagon edge lie flat as one rhombus. In Conway's notation it is the hexagon-kis truncated icosahedron k6tI in this flattened, rhombic form. **All 102 faces are tangent to one sphere**, of radius 1.5: it has an insphere, like a Catalan solid, while having three kinds of face. It is not an Archimedean, Catalan or Johnson solid, and we did not find it in Conway-notation or other catalogues searched, nor among the named relatives with 80 or 92 corners.
+**4.6 The DICTO Truncated-Icosahedral Hecatodihedron.** Spheres of Dharma stage 7 is convex, with 12 regular pentagons, 30 rhombi (sides 0.65097, angles 56.68° and 123.32°) and 60 isosceles triangles. Its corners are the 60 of the truncated icosahedron and 20 on the three-fold axes, forming a regular dodecahedron. It is the truncated icosahedron with a Shield on each hexagon, at the exact height where the triangles of neighbouring Shields across each hexagon–hexagon edge lie flat as one rhombus. In Conway's notation it is the hexagon-kis truncated icosahedron k6tI in this flattened, rhombic form. **All 102 faces are tangent to one sphere**, of radius 1.5: it has an insphere, like a Catalan solid, while having three kinds of face. It is not an Archimedean, Catalan or Johnson solid, and we did not find it in Conway-notation or other catalogues searched, nor among the named relatives with 80 or 92 corners. DICTO names it the **DICTO Truncated-Icosahedral Hecatodihedron**: *hecatodi-* for its 102 faces (Greek *hekaton* 100 + *di* 2, as in the hecatonicosachoron, the 120-cell), on the truncated icosahedron it grows from.
 
 **4.7 Dimpled shells.** Two Dharma stages are elegant dimpled solids: the icosidodecahedron with 12 inward pentagonal pyramids reaching the core's corners (stage 2), and the outer icosahedron with 20 shallow inward pyramids whose apices are the Shields' apices (stage 10).
 
@@ -118,14 +118,14 @@ Each identification below was checked by `analysis/identify.py` against a solid 
 
 ## 5. In the apps and in paper
 
-**Polyhedraverse.** The transitional shells have their own group, **DICTO Transitional Shells**, in the Polyhedraverse app, each a single solid with every face in its piece's colour as in the app's views. It now holds seven: the great stellated dodecahedron and excavated dodecahedron (Lotus seed and Dodecahedral Chain stages 2 and 3), the Dodecahedral Chain's dodecahedron (stage 4), Lotus seed stages 4 and 5, the rhombic hexecontahedron (Bodhi Kit B stage 2) and the 80-corner solid (Dharma stage 7). The Kaleidohedra app's Multi-shell chains world shows every stage with its Top shell slider, and a movie slider that plays each build through its transitions is next.
+**Polyhedraverse.** The transitional shells have their own group, **DICTO Transitional Shells**, in the Polyhedraverse app, each a single solid with every face in its piece's colour as in the app's views. It now holds seven: the great stellated dodecahedron and excavated dodecahedron (Lotus seed and Dodecahedral Chain stages 2 and 3), the Dodecahedral Chain's dodecahedron (stage 4), Lotus seed stages 4 and 5, the rhombic hexecontahedron (Bodhi Kit B stage 2) and the DICTO Truncated-Icosahedral Hecatodihedron (Dharma stage 7). The Kaleidohedra app's Multi-shell chains world shows every stage with its Top shell slider, and a movie slider that plays each build through its transitions is next.
 
 **Cut-out nets.** `nets/transitional-shells-nets.pdf` gives 12 A4 pages of cut-and-glue nets for four shells, with numbered glue tabs, marked mountain and valley folds, lettered pieces and the DICTO mark:
 
 - the great stellated dodecahedron (Lotus 2), 5 pieces;
 - the excavated dodecahedron (Lotus 3), 6 pieces;
 - the rhombic hexecontahedron (Bodhi Kit B 2), 6 pieces;
-- the 80-corner solid (Dharma 7), 6 pieces.
+- the DICTO Truncated-Icosahedral Hecatodihedron (Dharma 7), 6 pieces.
 
 Each net places every face once, true to its 3D shape, pairs every cut edge with a numbered tab, and has no overlaps (`nets/nets.py`, `nets/nets-checks.json`).
 
@@ -137,7 +137,7 @@ Each net places every face once, true to its 3D shape, pairs every cut edge with
 
 ![Figure 2](figures/fig2-dharma-route.jpg)
 
-**Figure 2.** Spheres of Dharma, one cycle: (a) icosahedron 1/φ; (b) + 20 Vajra (twist), the dimpled icosidodecahedron; (c) + 12 Stupa, icosidodecahedron; (d) + 20 Cleo-low, dodecahedron; (e) + 12 Monkey Staff; (f) + 30 t1, truncated icosahedron; (g) + 20 Shield, the convex 80-corner solid; (h) + 12 pentagonal caps; (i) + 60 Vajra-blade, rhombic triacontahedron; (j) + 30 Sevenfold-blade, the dimpled icosahedron; (k) + 20 Cleo-low 2, icosahedron φ².
+**Figure 2.** Spheres of Dharma, one cycle: (a) icosahedron 1/φ; (b) + 20 Vajra (twist), the dimpled icosidodecahedron; (c) + 12 Stupa, icosidodecahedron; (d) + 20 Cleo-low, dodecahedron; (e) + 12 Monkey Staff; (f) + 30 t1, truncated icosahedron; (g) + 20 Shield, the DICTO Truncated-Icosahedral Hecatodihedron; (h) + 12 pentagonal caps; (i) + 60 Vajra-blade, rhombic triacontahedron; (j) + 30 Sevenfold-blade, the dimpled icosahedron; (k) + 20 Cleo-low 2, icosahedron φ².
 
 ![Figure 3](figures/fig3-bodhi-route.jpg)
 
@@ -145,7 +145,7 @@ Each net places every face once, true to its 3D shape, pairs every cut edge with
 
 ![Figure 4](figures/fig4-named-inbetweens.jpg)
 
-**Figure 4.** The in-betweens of Section 4, each at its own scale: (a) the great stellated dodecahedron (Lotus 2); (b) the excavated dodecahedron (Lotus 3); (c) the rhombic hexecontahedron (Bodhi Kit B 2); (d) the convex 80-corner solid (Dharma 7; each rhombus shows as the two Shield triangles that form it); (e) the icosahedron with 20 shallow dimples (Dharma 10); (f) the icosidodecahedron with 12 pentagonal dimples (Dharma 2).
+**Figure 4.** The in-betweens of Section 4, each at its own scale: (a) the great stellated dodecahedron (Lotus 2); (b) the excavated dodecahedron (Lotus 3); (c) the rhombic hexecontahedron (Bodhi Kit B 2); (d) the DICTO Truncated-Icosahedral Hecatodihedron (Dharma 7; each rhombus shows as the two Shield triangles that form it); (e) the icosahedron with 20 shallow dimples (Dharma 10); (f) the icosidodecahedron with 12 pentagonal dimples (Dharma 2).
 
 ![Figure 5](figures/fig5-samsara-stages.jpg)
 

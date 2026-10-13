@@ -28,7 +28,7 @@ CHOSEN = [
     ('TRANS_LOTUS_4', 'Lotus seed, stage 4: + 12 icosahedra', 'karma.lotus', 'app', 4),
     ('TRANS_LOTUS_5', 'Lotus seed, stage 5: + 30 AXE', 'karma.lotus', 'app', 5),
     ('TRANS_BODHI_B2', 'Rhombic hexecontahedron: triacontahedron + 60 Vajras (Bodhi Seed Kit B, stage 2)', 'bodhi.kitB', 'app', 2),
-    ('TRANS_DHARMA_80', 'Spheres of Dharma, stage 7: truncated icosahedron + 20 Shields, convex, 80 corners', 'dharma.cycle', 'route', 7),
+    ('TRANS_DHARMA_80', 'DICTO Truncated-Icosahedral Hecatodihedron: truncated icosahedron + 20 Shields (Spheres of Dharma, stage 7)', 'dharma.cycle', 'route', 7),
 ]
 
 

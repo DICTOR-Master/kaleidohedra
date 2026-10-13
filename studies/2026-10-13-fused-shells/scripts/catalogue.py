@@ -25,7 +25,7 @@ NOTES = {
                     '', '',
                     'Icosahedron, φ³ times the centre one.'],
     'dharma.cycle': ['Icosahedron.', '', 'Icosidodecahedron.', 'Dodecahedron.', '', 'Truncated icosahedron.',
-                     'Convex, 80 corners: 60 triangles, 30 rectangles, 12 pentagons. Not one of the named convex solids I know; to check.',
+                     "DICTO Truncated-Icosahedral Hecatodihedron (DICTO's name): 102 faces (60 triangles, 30 rhombi, 12 pentagons), all tangent to one sphere; 80 corners.",
                      '', 'Rhombic triacontahedron.',
                      'Lead: 60 triangles on 60 planes, all at one distance from the centre: one family of planes, like a stellation of a 60-faced solid. To check.',
                      'Icosahedron, φ³ times the centre one.'],
@@ -37,7 +37,7 @@ NOTES = {
 
 CLASSIC = {(('3-gon', 20),): 'Icosahedron', (('5-gon', 12),): 'Dodecahedron', (('3-gon', 20), ('5-gon', 12)): 'Icosidodecahedron',
            (('5-gon', 12), ('6-gon', 20)): 'Truncated icosahedron', (('4-gon', 30),): 'Rhombic triacontahedron',
-           (('3-gon', 60), ('4-gon', 30), ('5-gon', 12)): 'Convex, 80 corners (unnamed?)'}
+           (('3-gon', 60), ('4-gon', 30), ('5-gon', 12)): 'DICTO Truncated-Icosahedral Hecatodihedron'}
 stage_facts = json.load(open(os.path.join(ROOT, 'stages-facts.json')))
 
 
