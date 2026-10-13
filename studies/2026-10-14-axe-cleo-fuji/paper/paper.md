@@ -2,7 +2,7 @@
 
 **DICTO** · dictospheres.com
 
-*Draft, 14 October 2026 · not released · CC BY 4.0 on release. Computation, checking and drafting with Claude (Anthropic). The structures, the pieces and their names are DICTO's. Working title; the title is DICTO's to choose.*
+*14 October 2026 · doi:10.5281/zenodo.23351292 · CC BY 4.0. Computation, checking and drafting with Claude (Anthropic). The structures, the pieces and their names are DICTO's.*
 
 ---
 

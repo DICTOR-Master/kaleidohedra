@@ -318,7 +318,7 @@ def svg_pages(nets):
                 f'<text x="{MARGIN}" y="{MARGIN + 21.5}" font-size="3.1">Glue each grey tab under the edge with the same number. Pieces are lettered A, B, ...</text>'
                 f'<text x="{MARGIN}" y="{MARGIN + 26}" font-size="3.1">{c["faces"]} faces in {c["pieces"]} piece{"s" if c["pieces"] > 1 else ""} ({", ".join(chr(65 + j) for j in range(c["pieces"]))}); '
                 f'{c["cutPairs"]} glue pairs; scale {net["scale"]} mm per unit. Checked: no overlaps, every edge folded or paired.</text>')
-        foot = (f'<text x="{MARGIN}" y="{PAGE_H - 7}" font-size="3">DICTO · dictospheres.com · AXE, CLEO and FUJI nets · 2026-10-14</text>'
+        foot = (f'<text x="{MARGIN}" y="{PAGE_H - 7}" font-size="3">DICTO · dictospheres.com · AXE, CLEO and FUJI nets · doi:10.5281/zenodo.23351292</text>'
                 f'<text x="{PAGE_W - MARGIN}" y="{PAGE_H - 7}" font-size="3" text-anchor="end">page {pno} / {total}</text>')
         svgs.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297" font-family="Noto Sans, DejaVu Sans, sans-serif">{head}{"".join(g)}{foot}</svg>')
     return svgs
