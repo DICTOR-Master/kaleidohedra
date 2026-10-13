@@ -168,6 +168,21 @@ rhombic dodecahedra each node is either a meeting of 4 edges (using 4 of the 8 t
 (using all 8). The square ports (on the cube axes) are not on any edge. (An earlier note here said square to triangle; corrected
 by DICTO.)
 
+## Does the dictosphere solid tile space? (2026-10-14)
+
+The sphere itself leaves gaps (DICTO); the question is the flat-faced solid (cube ∩ octahedron with an inscribed sphere).
+
+- **Not by translations.** A convex solid that fills space with translated copies must have centrally symmetric faces (Minkowski;
+  Venkov; McMullen). The solid is centrally symmetric, but its flat-ended triangles are not (opposite sides 1.035 and 0.379). And
+  because the solid has full cubic symmetry, every copy in the same orientation is a translate, so any tiling would need copies
+  turned to other orientations.
+- **The edge test passes only one way:** 109.47° + 125.26° + 125.26° = 360°, so along every edge of a tiling there would be one
+  triangle–triangle edge and two triangle–square edges. Those edges have lengths 0.379 and 1.035, in the irrational ratio 1 + √3,
+  so along any finite line of edges the two kinds cannot end together. This points strongly against a tiling, but a full proof
+  for mixed orientations and endless edge lines has not been written.
+- What does fill space is the **rhombic dodecahedron frame** the dictospheres build (above): the spheres are the nodes, the
+  bottles the edges, and the cells are rhombic dodecahedra.
+
 ## Next
 
 1. Done: the STT's faces are FUJI(1/2)'s base (above).
