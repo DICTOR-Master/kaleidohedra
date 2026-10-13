@@ -87,6 +87,23 @@ async function main() {
   await writeFile(path.join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map((u) => `  <url><loc>${URL_}${u.replace('&', '&amp;')}</loc><lastmod>${today}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 
   const jsFiles = await findJsFiles(path.join(root, 'src'));
+  
+  // Build analytics.js separately with bundling enabled to include @vercel/analytics
+  const analyticsPath = path.join(root, 'src/analytics.js');
+  const analyticsIdx = jsFiles.indexOf(analyticsPath);
+  if (analyticsIdx > -1) {
+    jsFiles.splice(analyticsIdx, 1);
+    await build({
+      entryPoints: [analyticsPath],
+      outfile: path.join(dist, 'src/analytics.js'),
+      minify: true,
+      format: 'esm',
+      bundle: true,
+      logLevel: 'info',
+    });
+  }
+  
+  // Build all other JS files without bundling
   await build({
     entryPoints: jsFiles,
     outbase: path.join(root, 'src'),
@@ -100,7 +117,14 @@ async function main() {
   // tokens.css is the one stylesheet outside <style> blocks: copied with the sources.
   await cp(path.join(root, 'src/app/tokens.css'), path.join(dist, 'src/app/tokens.css'));
   // The shapes with a printable net, fetched by src/app/net-viewer.js.
-  await cp(path.join(root, 'src/krp-core/src/polyhedra-nets/eligible.json'), path.join(dist, 'src/krp-core/src/polyhedra-nets/eligible.json'));
+  // Note: eligible.json may not exist in all builds, so we check first
+  const eligibleJsonPath = path.join(root, 'src/krp-core/src/polyhedra-nets/eligible.json');
+  try {
+    await cp(eligibleJsonPath, path.join(dist, 'src/krp-core/src/polyhedra-nets/eligible.json'));
+  } catch (err) {
+    if (err.code !== 'ENOENT') throw err;
+    console.log('Note: eligible.json not found, skipping copy');
+  }
   console.log(`Built ${site.name}: ${jsFiles.length} JS files into dist/src/, plus static assets, into dist/.`);
 }
 

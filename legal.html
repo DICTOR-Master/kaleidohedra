@@ -41,5 +41,6 @@
       .then((md) => { main.innerHTML = renderMarkdown(md.replaceAll('Kaleidohedra is', `${NAME} is`).replaceAll('Kaleidohedra has', `${NAME} has`)); })
       .catch(() => { main.textContent = 'This page could not be loaded. Check your connection and try again.'; });
   </script>
+  <script type="module" src="./src/analytics.js"></script>
 </body>
 </html>
