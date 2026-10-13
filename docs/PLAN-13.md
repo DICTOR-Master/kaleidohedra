@@ -22,8 +22,7 @@ piece in Polyhedraverse with outlines for the next piece (as the Admiral Cap's);
 DICTO asked for a Hexa analog (a 13 that fills space with a partner, as the Hexa does with its Key). Checked: the 13-RD cluster
 needs no partner. Of the 183 index-13 sublattices of FCC, 8 have the cluster as a complete set of coset representatives, so
 translates of the cluster fill space exactly (RDs are FCC's Voronoi cells). Translations have length sqrt10 in coordinates where
-neighbours are sqrt2 apart (sqrt5 neighbour spacings), e.g. (3, 1, 0); the 8 are one arrangement in two hands (left and right
-twist), the 3D analogue of the seven-hexagon flower tiling. Likely known as a perfect 1-code in the FCC lattice (coding theory):
+neighbours are sqrt2 apart (sqrt5 neighbour spacings), e.g. (3, 1, 0); the 8 are one arrangement in eight orientations, all turns of the cube (no handedness; corrected 2026-10-13), the 3D analogue of the seven-hexagon flower tiling. Likely known as a perfect 1-code in the FCC lattice (coding theory):
 literature search before any claim.
 
 ## Stages

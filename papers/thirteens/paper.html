@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>DICTO 13-Atom Clusters</title>
+<link rel="stylesheet" href="../paper.css"></head><body>
+
+<h1>DICTO 13-Atom Clusters</h1>
+<p class="sub">Twelve around one, seven ways: six golden clusters and the periodic one, with the pieces that fill between them</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+DRAFT, not released · 13 October 2026 · Licence CC BY 4.0 · Data, scripts, renders and checks: papers/thirteens and docs/PLAN-13.md at https://github.com/DICTOR-Master/kaleidohedra.<br>
+The clusters, their names (Lotus seed, DESHI, UNITY, VENUS, DICTO-Star, Bodhi seed, the piece names, DICTO 13-Atom Clusters), the question
+whether the rhombic dodecahedron's 13 fills space like the Hexa, and the choice to round it while keeping it keyed are DICTO's.
+Computation and checking with Claude (Anthropic).
+</div>
+
+<div class="abstract"><b>Abstract.</b> Twelve equal spheres can touch a thirteenth and no more (Schütte and van der Waerden 1952), and
+twelve atoms round one make the icosahedral cluster of liquids and metals (Frank 1952). We set seven polyhedral thirteens side by side,
+each a centre and twelve copies on its five-fold or two-fold axes: the Icosa-13 (Lotus seed), DESHI, the Dodeca-13, UNITY with its
+closed form VENUS, the DICTO-Star, the Bodhi seed, and the rhombic dodecahedron's 13 (RD 13). For each we give how the twelve touch the
+centre and one another, and the kits that fill between them: 16 kits in all, from 13 to 213 pieces, every piece a closed solid with flat faces. Two of the golden clusters close exactly into a larger copy of their own form (the
+Icosa-13 in an icosahedron of edge φ², the Bodhi seed in a triacontahedron of edge φ²); the others leave dimples by design. The RD 13
+is the periodic member: of the 183 sublattices of index 13 in the face-centred cubic lattice, 8 have the cluster as a complete set of
+representatives, so blocks of 13 rhombic dodecahedra fill space by translation alone; the 8 are one arrangement, turned. Moving
+every corner of that honeycomb by the same rule in every block, with every face kept flat and every cell convex, the block's surface
+can be cut from 59.40 to 47.47 (minimum piece thickness 0.15), its roundness 36πV²/S³ rising from 0.365 to 0.715, while the blocks
+still fill space and interlock. The block tiling is the face-centred cubic case of a radius-one perfect code; we did not find it stated,
+but the setting is classical (Golomb and Welch 1970).</div>
+
+<h2>1. Twelve around one</h2>
+<p>Each cluster here is a centre C and twelve copies T placed on the twelve five-fold axes of the icosahedron (the golden clusters) or
+on the twelve two-fold directions of the cube (the RD 13), each touching the centre. Edge lengths are those of the twelve unless stated;
+φ = (1 + √5)/2. The table gives the centre, the twelve, how far the twelve sit from the middle and how they touch.</p>
+<table>
+<tr><th>Cluster</th><th>Centre</th><th>Twelve</th><th>Distance</th><th>Centre–twelve</th><th>Among the twelve</th></tr>
+<tr><td>Icosa-13 (Lotus seed)</td><td>icosahedron, edge 1/φ</td><td>icosahedra</td><td>1.538842</td><td>12 at a corner</td><td>30 along an edge</td></tr>
+<tr><td>DESHI</td><td>icosahedron, edge 1/φ</td><td>icosahedra</td><td>1.538842</td><td>12 at a corner</td><td>30 along an edge</td></tr>
+<tr><td>Dodeca-13</td><td>dodecahedron</td><td>dodecahedra</td><td>2.227033</td><td>12 by a whole face</td><td>30 along an edge</td></tr>
+<tr><td>UNITY / VENUS</td><td>icosidodecahedron</td><td>J11 (gyroelongated pentagonal pyramids)</td><td>1.888191</td><td>12 by a whole face</td><td>30 at a corner</td></tr>
+<tr><td>DICTO-Star</td><td>icosidodecahedron</td><td>dodecahedra</td><td>2.489898</td><td>12 by a whole face</td><td>30 along an edge</td></tr>
+<tr><td>Bodhi seed</td><td>rhombic triacontahedron, edge 1/φ</td><td>rhombic triacontahedra</td><td>φ² = 2.618034</td><td>12 at a corner</td><td>30 by a whole face</td></tr>
+<tr><td>RD 13</td><td>rhombic dodecahedron</td><td>rhombic dodecahedra</td><td>√2 (neighbour spacing)</td><td>12 by a whole face</td><td>24 by a whole face</td></tr>
+</table>
+<p>DESHI is the Lotus seed's thirteen icosahedra on their own: the same centre, the same twelve, the same contacts, without the
+pieces between. In every golden cluster the thirty contacts among the twelve follow the thirty edges of the icosahedron; in the RD 13
+the twenty-four follow the edges of the cuboctahedron, as do the twelve spheres around one in the face-centred cubic packing.</p>
+
+<h2>2. What fills between</h2>
+<table>
+<tr><th>Cluster</th><th>Kit</th><th>Pieces</th><th>Kinds</th><th>Volume</th><th>Of its hull</th></tr>
+<tr><td>Icosa-13</td><td>pieces</td><td>113</td><td>13 icosahedra, 60 AXE, 20 FUJI, 20 Cleo</td><td>39.148929</td><td>exactly 1 (icosahedron of edge φ²)</td></tr>
+<tr><td></td><td>63-piece build</td><td>63</td><td>dodecahedron, 12 J11, 30 AXE, 20 FUJI</td><td>39.148929</td><td>exactly 1</td></tr>
+<tr><td></td><td>units</td><td>13</td><td>centre and 12 Hasu units</td><td>39.148929</td><td>exactly 1</td></tr>
+<tr><td>Dodeca-13</td><td>pieces</td><td>63</td><td>13 dodecahedra, 30 wedges, 20 needles</td><td>106.058468</td><td>0.7419</td></tr>
+<tr><td></td><td>units</td><td>13</td><td>centre and 12 units</td><td>106.058468</td><td>0.7419</td></tr>
+<tr><td></td><td>stars</td><td>33</td><td>13 dodecahedra, 20 stars</td><td>112.412572</td><td>0.7863</td></tr>
+<tr><td>UNITY</td><td>open</td><td>13</td><td>icosidodecahedron, 12 J11</td><td>36.397840</td><td>0.6426</td></tr>
+<tr><td>VENUS</td><td>closed</td><td>33</td><td>UNITY and 20 VAJRA</td><td>46.935230</td><td>0.8286</td></tr>
+<tr><td>DICTO-Star</td><td></td><td>33</td><td>icosidodecahedron, 12 dodecahedra, 20 J63</td><td>131.336693</td><td>0.7240</td></tr>
+<tr><td>DESHI</td><td></td><td>13</td><td>13 icosahedra</td><td>26.695372</td><td>0.6819</td></tr>
+<tr><td>Bodhi seed</td><td>seed</td><td>13</td><td>13 rhombic triacontahedra</td><td>150.634741</td><td>0.7030</td></tr>
+<tr><td></td><td>Kit A</td><td>193</td><td>the 13, 60 Vajra (fine), 60 Chatra, 60 Mudra</td><td>220.9069</td><td>1 (triacontahedron of edge φ²)</td></tr>
+<tr><td></td><td>Kit B</td><td>213</td><td>the 13, 60 Vajra (fine), 20 Crown Jewels, 60 + 60 Diadems</td><td>220.9070</td><td>1</td></tr>
+<tr><td>RD 13</td><td>plain</td><td>13</td><td>13 rhombic dodecahedra</td><td>26</td><td>0.6724</td></tr>
+<tr><td></td><td>rounded (0.15)</td><td>13</td><td>centre and two kinds of six</td><td>26</td><td>0.8966</td></tr>
+<tr><td></td><td>fattest (0.35)</td><td>13</td><td>centre and two kinds of six</td><td>26</td><td>0.7997</td></tr>
+</table>
+<p>"Of its hull" is the kit's volume over the volume of its convex hull. The Icosa-13 and the Bodhi seed close exactly into a larger
+copy of their own form, φ² times the twelve; the Bodhi kits' last digits reflect coordinates stored to five places. The Dodeca-13, UNITY,
+VENUS and the DICTO-Star are filled solids with dimples between the twelve, by design; DESHI and the bare Bodhi seed are the frames.
+Earlier work on single members: the Lotus seed and its growth (DICTO, The Chain of Karma), the Bodhi seed and its kits (DICTO, The Bodhi
+Seed).</p>
+
+<h2>3. The periodic member: RD 13</h2>
+<p>Rhombic dodecahedra are the Voronoi cells of the face-centred cubic lattice (here the integer points with even coordinate sum,
+neighbours √2 apart, cells of volume 2). A cluster of 13 cells, a centre and its twelve neighbours, fills space by translation exactly
+when its 13 lattice points are a complete set of representatives of a sublattice of index 13. Every such sublattice is the kernel of a
+map x ↦ w·x mod 13; of the 183 choices of w up to scale, 8 separate the 13 points. Their shortest translations have length √10, along
+directions such as (3, 1, 0), and the 8 are one arrangement in eight orientations, all related by turns of the cube (so it has no
+left- and right-handed forms): the three-dimensional counterpart of the seven-hexagon flower tiling of the plane. So the RD 13 is the one cluster here that tiles space
+on its own, with no partner (the DICTO Hexa needs its Key).</p>
+<p>DICTO asked for the block to be made rounder in the way the Hexa reads as one block, with its outside still keyed. Every corner of
+the honeycomb was given a displacement depending only on its class modulo the block lattice (39 classes), so the blocks still tile
+exactly; every face was kept flat (four corners coplanar), every cell convex with its corners at least a set thickness inside each face
+plane, and the block's outer surface minimised (its volume is fixed at 26, so least surface is roundest). Five random starts gave the
+same result at each thickness:</p>
+<table>
+<tr><th>Minimum thickness</th><th>Outer surface</th><th>Roundness 36πV²/S³</th><th>Centre piece</th><th>Outer pieces (six of each)</th></tr>
+<tr><td>plain RD 13</td><td>59.3970</td><td>0.365</td><td>2</td><td>2 / 2</td></tr>
+<tr><td>0.08</td><td>46.9400</td><td>0.739</td><td>8.19</td><td>1.54 / 1.43</td></tr>
+<tr><td>0.15</td><td>47.4731</td><td>0.715</td><td>7.18</td><td>1.64 / 1.50</td></tr>
+<tr><td>0.25</td><td>48.6610</td><td>0.664</td><td>5.95</td><td>1.72 / 1.62</td></tr>
+<tr><td>0.35</td><td>50.3083</td><td>0.600</td><td>4.87</td><td>1.79 / 1.73</td></tr>
+</table>
+<p>A single rhombic dodecahedron has roundness 0.741, so at thickness 0.15 the block of thirteen reads nearly as round as one cell.
+The pieces keep the rhombic dodecahedron's combinatorics (12 four-sided faces, 14 corners) with flat but no longer rhombic faces; the
+centre and the two kinds of outer piece come with their mirror images, six outer pieces of each hand. Requiring all thirteen pieces
+equal in volume reaches only 0.431, from differing starts. Flat faces are exact to 10⁻¹², and the thirteen volumes sum to 26 in every
+case.</p>
+
+<h2>4. Kits to build</h2>
+<p>All 16 kits are buildable piece by piece in the Polyhedraverse app (DICTO's pieces). Each kit is stored as a plan, every piece's
+shape, place and turn about the centre. Choosing a kit puts its centre down; the plan is lined up with the build by the turn and place
+that match the most built pieces, and the next layer still open is shown as outlines, from the centre out. The kits use 25 new pieces
+(among them AXE, FUJI, Cleo, Hasu, VAJRA, Vajra (fine), Chatra, Mudra, Crown Jewel, Diadem L and R, and the RD 13 pieces) and reuse
+catalogue solids (dodecahedra, icosahedra, J11, J63, the icosidodecahedron, the triacontahedra) for 221 placements. The DICTO 13-Atom
+Clusters world of the Kaleidohedra app shows every kit with pull-apart, shell-by-shell and see-through views.</p>
+
+<h2>5. Checks</h2>
+<p>Every piece of every kit: closed, consistently wound, faces flat (worst 1.5 × 10⁻⁵, from five-place coordinates; 10⁻¹³ for the
+RD 13). Kit volumes as tabled; the closed kits equal their hulls. Every placement of every kit plan reproduces its piece exactly
+(corners within 10⁻⁴), and every kit builds to completion following its outlines from a centre placed at an arbitrary turn and place.
+The RD 13 tiling: the 13 lattice points are distinct modulo the sublattice (8 of 183 sublattices), and the rounded blocks keep volume
+26 with every corner class moved once. Scripts: scripts/dump-thirteens.mjs, build-thirteens-data.py, build-kits13.py, kit-shapes.py;
+studies/2026-10-13-rd13-block.</p>
+
+<h2>6. Relation to known work</h2>
+<p>Twelve spheres round one and the thirteen-sphere problem: Schütte and van der Waerden (1952). The thirteen-atom icosahedral cluster:
+Frank (1952); its shells as a dense non-crystallographic packing: Mackay (1962). Icosahedral scaling and packing of icosahedra and
+dodecahedra: Gray (2002). Clusters of triacontahedra: Kabai. Tilings of a lattice by translates of a point and its neighbours are
+radius-one perfect codes; in the cube lattice they exist in every dimension (Golomb and Welch 1970; see Etzion 2011, Campello et al.
+2015), while radius two fails in three dimensions (Gravier, Mollard and Payan 1998). We did not find the face-centred cubic case, the
+RD 13 tiling, stated, though it is simple enough that it may be known; we claim no novelty for it. We found no description of the
+rounded, keyed RD 13 block, or of these seven clusters with their kits side by side. The search is not exhaustive.</p>
+
+<h2>Figures</h2>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/thirteens/fig/icosa13-closed.png" alt="" style="width:48%"><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/thirteens/fig/icosa13-open.png" alt="" style="width:48%"><figcaption><b>Figure 1.</b> Icosa-13 (Lotus seed), 113 pieces, closed and pulled apart.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/thirteens/fig/deshi-closed.png" alt="" style="width:48%"><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/thirteens/fig/deshi-open.png" alt="" style="width:48%"><figcaption><b>Figure 2.</b> DESHI: the Lotus seed's thirteen icosahedra alone.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/thirteens/fig/dodeca13-closed.png" alt="" style="width:48%"><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/thirteens/fig/dodeca13-open.png" alt="" style="width:48%"><figcaption><b>Figure 3.</b> Dodeca-13: thirteen dodecahedra, 30 wedges, 20 needles.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/thirteens/fig/unity-closed.png" alt="" style="width:48%"><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/thirteens/fig/unity-open.png" alt="" style="width:48%"><figcaption><b>Figure 4.</b> VENUS: UNITY (icosidodecahedron and 12 J11) closed by 20 VAJRA.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/thirteens/fig/dictostar-closed.png" alt="" style="width:48%"><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/thirteens/fig/dictostar-open.png" alt="" style="width:48%"><figcaption><b>Figure 5.</b> DICTO-Star: icosidodecahedron, 12 dodecahedra, 20 J63.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/thirteens/fig/bodhi-closed.png" alt="" style="width:48%"><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/thirteens/fig/bodhi-open.png" alt="" style="width:48%"><figcaption><b>Figure 6.</b> The Bodhi seed, and Kit B pulled apart with the twelve see-through.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/thirteens/fig/rd13-plain.png" alt="" style="width:32%"><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/thirteens/fig/rd13-rounded.png" alt="" style="width:32%"><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/thirteens/fig/rd13-rounded-open.png" alt="" style="width:32%"><figcaption><b>Figure 7.</b> RD 13: the plain cluster, the rounded keyed block (thickness 0.15), pulled apart (centre gold, the two kinds of outer piece green and blue).</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/thirteens/fig/rd13-blocks.png" alt="" style="width:60%"><figcaption><b>Figure 8.</b> Seven rounded blocks filling space, keyed (the six neighbours dimmed).</figcaption></figure>
+
+<h2>References</h2>
+<ol class="refs">
+<li>K. Schütte, B. L. van der Waerden, Das Problem der dreizehn Kugeln, Math. Ann. 125 (1952) 325–334, doi:10.1007/BF01343127.</li>
+<li>F. C. Frank, Supercooling of liquids, Proc. R. Soc. Lond. A 215 (1952) 43–46, doi:10.1098/rspa.1952.0194.</li>
+<li>A. L. Mackay, A dense non-crystallographic packing of equal spheres, Acta Cryst. 15 (1962) 916–918, doi:10.1107/S0365110X6200239X.</li>
+<li>R. W. Gray, More Icosahedron Scaling and Packing; More Dodecahedron Scaling and Packing (2002).</li>
+<li>S. Kabai, clusters of rhombic triacontahedra and hexecontahedra, Wolfram Demonstrations Project.</li>
+<li>S. W. Golomb, L. R. Welch, Perfect codes in the Lee metric and the packing of polyominoes, SIAM J. Appl. Math. 18 (1970) 302–317, doi:10.1137/0118025.</li>
+<li>S. Gravier, M. Mollard, C. Payan, On the non-existence of 3-dimensional tiling in the Lee metric, European J. Combin. 19 (1998) 567–572, doi:10.1006/eujc.1998.0211.</li>
+<li>T. Etzion, Product constructions for perfect Lee codes, IEEE Trans. Inf. Theory (2011), arXiv:1103.3933.</li>
+<li>A. Campello, G. C. Jorge, J. E. Strapasson, S. I. R. Costa, Perfect codes in the lp metric, European J. Combin. (2016), arXiv:1506.02517.</li>
+<li>DICTO, The Chain of Karma (2026), doi:10.5281/zenodo.23310541.</li>
+<li>DICTO, Spheres of Dharma (2026), doi:10.5281/zenodo.23310833.</li>
+<li>DICTO, The Bodhi Seed (2026), doi:10.5281/zenodo.23311353.</li>
+<li>DICTO, Kaleidohedra (2026), doi:10.5281/zenodo.23173809.</li>
+</ol>
+</body></html>

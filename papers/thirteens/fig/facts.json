@@ -1,0 +1,367 @@
+{
+ "icosa13": {
+  "centre": {
+   "role": "ico",
+   "edge": 0.6180339918593475,
+   "faces": 20,
+   "volume": 0.515028331731877
+  },
+  "twelve": {
+   "role": "ico",
+   "edge": 1.0000000050312,
+   "faces": 20,
+   "volume": 2.181695023554544
+  },
+  "distance": [
+   1.5388417763298474,
+   1.538841776329848
+  ],
+  "centre_contacts": {
+   "corner": 12
+  },
+  "twelve_contacts": {
+   "None": 36,
+   "edge": 30
+  },
+  "kits": {
+   "pieces": {
+    "pieces": 113,
+    "roles": {
+     "axe": 60,
+     "cleo": 20,
+     "fuji": 20,
+     "ico": 13
+    },
+    "volume": 39.148928728897815,
+    "hull": 39.14892877286242,
+    "ratio": 0.9999999988769909
+   },
+   "build": {
+    "pieces": 63,
+    "roles": {
+     "axe": 30,
+     "dodeca": 1,
+     "fuji": 20,
+     "j11": 12
+    },
+    "volume": 39.14892874456192,
+    "hull": 39.14892877286242,
+    "ratio": 0.9999999992771067
+   },
+   "units": {
+    "pieces": 13,
+    "roles": {
+     "hasu": 12,
+     "ico": 1
+    },
+    "volume": 39.14892059397068,
+    "hull": 39.148931034008534,
+    "ratio": 0.9999997333250851
+   }
+  }
+ },
+ "dodeca13": {
+  "centre": {
+   "role": "dodeca",
+   "edge": 0.9999999996646366,
+   "faces": 12,
+   "volume": 7.663118951933221
+  },
+  "twelve": {
+   "role": "dodeca",
+   "edge": 0.9999999999158828,
+   "faces": 12,
+   "volume": 7.663118958959246
+  },
+  "distance": [
+   2.22703272861686,
+   2.2270327286168614
+  ],
+  "centre_contacts": {
+   "face": 12
+  },
+  "twelve_contacts": {
+   "None": 36,
+   "edge": 30
+  },
+  "kits": {
+   "pieces": {
+    "pieces": 63,
+    "roles": {
+     "dodeca": 13,
+     "needle": 20,
+     "wedge": 30
+    },
+    "volume": 106.05847203931995,
+    "hull": 142.95532334424547,
+    "ratio": 0.7418994239474694
+   },
+   "units": {
+    "pieces": 13,
+    "roles": {
+     "centre": 1,
+     "unit": 12
+    },
+    "volume": 106.05847204766609,
+    "hull": 142.95532334424547,
+    "ratio": 0.7418994240058523
+   },
+   "stars": {
+    "pieces": 33,
+    "roles": {
+     "dodeca": 13,
+     "star": 20
+    },
+    "volume": 112.41257400722995,
+    "hull": 142.95532334424547,
+    "ratio": 0.7863475901245969
+   }
+  }
+ },
+ "bodhi": {
+  "centre": {
+   "role": "centre",
+   "edge": 0.6180332024252417,
+   "faces": 30,
+   "volume": 2.906159019466615
+  },
+  "twelve": {
+   "role": "copy",
+   "edge": 0.9999995369842992,
+   "faces": 30,
+   "volume": 12.310715048359905
+  },
+  "distance": [
+   2.618031721136427,
+   2.6180317211364272
+  ],
+  "centre_contacts": {
+   "corner": 12
+  },
+  "twelve_contacts": {
+   "face": 30,
+   "None": 36
+  },
+  "kits": {
+   "seed": {
+    "pieces": 13,
+    "roles": {
+     "centre": 1,
+     "copy": 12
+    },
+    "volume": 150.6347395997854,
+    "hull": 214.2675305356219,
+    "ratio": 0.7030217748028904
+   },
+   "kitA": {
+    "pieces": 193,
+    "roles": {
+     "B1": 60,
+     "B2": 60,
+     "B3": 60,
+     "centre": 1,
+     "copy": 12
+    },
+    "volume": 220.90692084393544,
+    "hull": 220.9075324196411,
+    "ratio": 0.9999972315307724
+   },
+   "kitB": {
+    "pieces": 213,
+    "roles": {
+     "B1": 60,
+     "B4": 20,
+     "B5L": 60,
+     "B5R": 60,
+     "centre": 1,
+     "copy": 12
+    },
+    "volume": 220.90698446929122,
+    "hull": 220.90752600511308,
+    "ratio": 0.9999975485859098
+   }
+  }
+ },
+ "unity": {
+  "centre": {
+   "role": "idd",
+   "edge": 1.0000000050311997,
+   "faces": 32,
+   "volume": 13.835526146014809
+  },
+  "twelve": {
+   "role": "j11",
+   "edge": 1.0000001003098935,
+   "faces": 16,
+   "volume": 1.880192704763372
+  },
+  "distance": [
+   1.8881671589004239,
+   1.8881671589004243
+  ],
+  "centre_contacts": {
+   "face": 12
+  },
+  "twelve_contacts": {
+   "corner": 30,
+   "None": 36
+  },
+  "kits": {
+   "open": {
+    "pieces": 13,
+    "roles": {
+     "idd": 1,
+     "j11": 12
+    },
+    "volume": 36.397838620440815,
+    "hull": 56.643440488610025,
+    "ratio": 0.642578175097958
+   },
+   "venus": {
+    "pieces": 33,
+    "roles": {
+     "idd": 1,
+     "j11": 12,
+     "vajra": 20
+    },
+    "volume": 46.93522726037887,
+    "hull": 56.643440488610025,
+    "ratio": 0.8286083411514649
+   }
+  }
+ },
+ "dictoStar": {
+  "centre": {
+   "role": "centre",
+   "edge": 1.0000000050312,
+   "faces": 32,
+   "volume": 13.835526145367005
+  },
+  "twelve": {
+   "role": "dodeca",
+   "edge": 1.0000000050312,
+   "faces": 12,
+   "volume": 7.6631190770471465
+  },
+  "distance": [
+   2.489898297409957,
+   2.4898982974099573
+  ],
+  "centre_contacts": {
+   "face": 12
+  },
+  "twelve_contacts": {
+   "None": 36,
+   "edge": 30
+  },
+  "kits": {
+   "star": {
+    "pieces": 33,
+    "roles": {
+     "centre": 1,
+     "dodeca": 12,
+     "j63": 20
+    },
+    "volume": 131.33668532148425,
+    "hull": 181.39408917469112,
+    "ratio": 0.724040600876475
+   }
+  }
+ },
+ "deshi": {
+  "centre": {
+   "role": "ico",
+   "edge": 0.6180339918593475,
+   "faces": 20,
+   "volume": 0.515028331731877
+  },
+  "twelve": {
+   "role": "ico",
+   "edge": 1.0000000050312,
+   "faces": 20,
+   "volume": 2.181695023554544
+  },
+  "distance": [
+   1.5388417763298474,
+   1.538841776329848
+  ],
+  "centre_contacts": {
+   "corner": 12
+  },
+  "twelve_contacts": {
+   "None": 36,
+   "edge": 30
+  },
+  "kits": {
+   "deshi": {
+    "pieces": 13,
+    "roles": {
+     "ico": 13
+    },
+    "volume": 26.695368614386403,
+    "hull": 39.14892877286242,
+    "ratio": 0.6818926967138708
+   }
+  }
+ },
+ "rd13": {
+  "centre": {
+   "role": "rdCentre",
+   "edge": 0.8660254037844385,
+   "faces": 12,
+   "volume": 2.0
+  },
+  "twelve": {
+   "role": "rd",
+   "edge": 0.8660254037844385,
+   "faces": 12,
+   "volume": 2.0
+  },
+  "distance": [
+   1.4142135623730951,
+   1.4142135623730951
+  ],
+  "centre_contacts": {
+   "face": 12
+  },
+  "twelve_contacts": {
+   "face": 24,
+   "None": 30,
+   "corner": 12
+  },
+  "kits": {
+   "plain": {
+    "pieces": 13,
+    "roles": {
+     "rd": 12,
+     "rdCentre": 1
+    },
+    "volume": 26.0,
+    "hull": 38.66666666666667,
+    "ratio": 0.6724137931034482
+   },
+   "rounded": {
+    "pieces": 13,
+    "roles": {
+     "rdA": 6,
+     "rdB": 6,
+     "rdCentre": 1
+    },
+    "volume": 26.000000000000004,
+    "hull": 28.997441484698715,
+    "ratio": 0.8966308290929601
+   },
+   "fattest": {
+    "pieces": 13,
+    "roles": {
+     "rdA": 6,
+     "rdB": 6,
+     "rdCentre": 1
+    },
+    "volume": 25.999999999999996,
+    "hull": 32.51066621739974,
+    "ratio": 0.7997375330956698
+   }
+  }
+ }
+}
