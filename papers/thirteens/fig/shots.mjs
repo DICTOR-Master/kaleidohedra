@@ -14,6 +14,12 @@ const V = {
   'deshi-closed': { kind: 'deshi', view: 'deshi' }, 'deshi-open': { kind: 'deshi', view: 'deshi', apart: 0.5 },
   'rd13-plain': { kind: 'rd13', view: 'plain' }, 'rd13-rounded': { kind: 'rd13', view: 'rounded' }, 'rd13-rounded-open': { kind: 'rd13', view: 'rounded', apart: 0.45 },
   'rd13-blocks': { kind: 'rd13', view: 'blocks' },
+  'hexed-closed': { kind: 'hexed', view: 'cluster' }, 'hexed-open': { kind: 'hexed', view: 'cluster', apart: 0.45 }, 'hexed-blocks': { kind: 'hexed', view: 'blocks' },
+  'to13-closed': { kind: 'to13', view: 'cluster' }, 'to13-open': { kind: 'to13', view: 'cluster', apart: 0.45 }, 'to13-blocks': { kind: 'to13', view: 'blocks' },
+  'skewedrd13-closed': { kind: 'skewedRd13', view: 'cluster' }, 'skewedrd13-blocks': { kind: 'skewedRd13', view: 'blocks' },
+  'bainrd13-closed': { kind: 'bainRd13', view: 'cluster' }, 'bainrd13-blocks': { kind: 'bainRd13', view: 'blocks' },
+  'bilinski13-closed': { kind: 'bilinski13', view: 'cluster' }, 'bilinski13-blocks': { kind: 'bilinski13', view: 'blocks' },
+  'jewel13-closed': { kind: 'jewel13', view: 'cluster' }, 'jewel13-stellas': { kind: 'jewel13', view: 'withStellas' }, 'jewel13-open': { kind: 'jewel13', view: 'cluster', apart: 0.45 },
 };
 for (const [n, o] of Object.entries(V)) { await p.evaluate((o) => window.view(o), o); await p.waitForTimeout(500); await p.screenshot({ path: `${n}.png` }); }
 await b.close(); srv.close();

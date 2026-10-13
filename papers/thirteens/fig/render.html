@@ -5,7 +5,7 @@
 // Renders for the DICTO 13-Atom Clusters paper: one 13 (kind) and view from data.json, whole or pulled apart, some roles see-through.
 const COL = { ico: 0x5fd38a, dodeca: 0xe8c25a, centre: 0xe8c25a, unit: 0xe8c25a, wedge: 0x4dd0e1, needle: 0xc792ea, star: 0xc792ea, axe: 0x4dd0e1, fuji: 0xc792ea,
   cleo: 0xc792ea, j11: 0x5fd38a, hasu: 0x5fd38a, idd: 0xe8c25a, vajra: 0xc792ea, j63: 0x5fd38a, copy: 0x5fd38a, B1: 0xe8c25a, B2: 0x4dd0e1, B3: 0xc792ea,
-  B4: 0x4dd0e1, B5L: 0xc792ea, B5R: 0xf08fc0, rdCentre: 0xe8c25a, rd: 0x9fb4c8, rdA: 0x5fd38a, rdB: 0x4dd0e1, rdCentreN: 0x8a7440, rdAN: 0x3f7a57, rdBN: 0x33808a };
+  B4: 0x4dd0e1, B5L: 0xc792ea, B5R: 0xf08fc0, stella: 0xc792ea, rdCentre: 0xe8c25a, rd: 0x9fb4c8, rdA: 0x5fd38a, rdB: 0x4dd0e1, rdCentreN: 0x8a7440, rdAN: 0x3f7a57, rdBN: 0x33808a };
 const W = 1000, H = 1000;
 const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(W, H); renderer.setPixelRatio(1);
 document.body.appendChild(renderer.domElement);
@@ -15,14 +15,25 @@ scene.add(new THREE.HemisphereLight(0xdfe6ff, 0x1a1626, 0.85));
 const sun = new THREE.DirectionalLight(0xffffff, 0.75); sun.position.set(3, 5, 4); scene.add(sun);
 let DATA = null, group = null;
 fetch('data.json').then((r) => r.json()).then((d) => { DATA = d; window.ready = true; });
-window.view = ({ kind, view, apart = 0, glass = [], hide = [], dir = [0.55, 0.42, 0.72] }) => {
+// centreGold (DICTO 2026-10-13): the piece nearest the middle gold, no other piece gold (gold roles orange); new members' cells cyan.
+window.view = ({ kind, view, apart = 0, glass = [], hide = [], dir = [0.55, 0.42, 0.72], centreGold = true }) => {
   if (group) scene.remove(group);
   group = new THREE.Group();
   const list = DATA[kind].views[view].filter((p) => !hide.includes(p[0]));
   const all = list.flatMap((p) => p[1]);
   const c0 = [0, 1, 2].map((k) => all.reduce((t, v) => t + v[k], 0) / all.length);
   let r = 0;
+  const mids = list.map(([, V]) => [0, 1, 2].map((k) => V.reduce((t, v) => t + v[k], 0) / V.length - c0[k]));
+  const ci = mids.map((m) => Math.hypot(...m)).reduce((b, d, i, a) => (d < a[b] ? i : b), 0);
+  const colourOf = (role, i) => {
+    let h = COL[role] ?? (/Centre$/.test(role) ? 0xe8c25a : /CentreN$/.test(role) ? 0x8a7440 : /N$/.test(role) ? 0x33808a : 0x4dd0e1);
+    if (!centreGold) return h;
+    if (i === ci || /Centre$/.test(role)) return 0xe8c25a;
+    return h === 0xe8c25a ? 0xff9a52 : h;
+  };
+  let pieceIndex = -1;
   for (const [role, V, F] of list) {
+    pieceIndex++;
     const c = [0, 1, 2].map((k) => V.reduce((t, v) => t + v[k], 0) / V.length);
     const see = glass.includes(role);
     const off = see ? [0, 0, 0] : c.map((x, k) => (x - c0[k]) * apart);
@@ -31,7 +42,7 @@ window.view = ({ kind, view, apart = 0, glass = [], hide = [], dir = [0.55, 0.42
     const pos = [], edges = [];
     for (const f of F) { for (let i = 1; i + 1 < f.length; i++) for (const j of [f[0], f[i], f[i + 1]]) pos.push(...P[j]); f.forEach((a, i) => edges.push(...P[a], ...P[f[(i + 1) % f.length]])); }
     const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
-    group.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: COL[role] ?? 0xb8c4bd, flatShading: true, side: THREE.DoubleSide, roughness: 0.5,
+    group.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: colourOf(role, pieceIndex), flatShading: true, side: THREE.DoubleSide, roughness: 0.5,
       transparent: see, opacity: see ? 0.18 : 1, depthWrite: !see, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
     const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(edges, 3));
     group.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: see ? 0x9fa8c0 : 0x0b1220, transparent: see, opacity: see ? 0.5 : 1 })));

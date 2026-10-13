@@ -139,8 +139,8 @@
    "corner": 12
   },
   "twelve_contacts": {
-   "face": 30,
-   "None": 36
+   "None": 36,
+   "face": 30
   },
   "kits": {
    "seed": {
@@ -203,8 +203,8 @@
    "face": 12
   },
   "twelve_contacts": {
-   "corner": 30,
-   "None": 36
+   "None": 36,
+   "corner": 30
   },
   "kits": {
    "open": {
@@ -325,8 +325,8 @@
    "face": 12
   },
   "twelve_contacts": {
-   "face": 24,
    "None": 30,
+   "face": 24,
    "corner": 12
   },
   "kits": {
@@ -347,9 +347,9 @@
      "rdB": 6,
      "rdCentre": 1
     },
-    "volume": 26.000000000000004,
-    "hull": 28.997441484698715,
-    "ratio": 0.8966308290929601
+    "volume": 26.0,
+    "hull": 29.34731259504019,
+    "ratio": 0.8859414270318605
    },
    "fattest": {
     "pieces": 13,
@@ -358,9 +358,259 @@
      "rdB": 6,
      "rdCentre": 1
     },
-    "volume": 25.999999999999996,
-    "hull": 32.51066621739974,
-    "ratio": 0.7997375330956698
+    "volume": 26.0,
+    "hull": 32.77896442171675,
+    "ratio": 0.7931916233074909
+   },
+   "roundedFree": {
+    "pieces": 13,
+    "roles": {
+     "rdA": 6,
+     "rdB": 6,
+     "rdCentre": 1
+    },
+    "volume": 26.000000000000004,
+    "hull": 28.997441484698715,
+    "ratio": 0.8966308290929601
+   }
+  }
+ },
+ "hexed": {
+  "centre": {
+   "role": "hexCentre",
+   "edge": 1.0,
+   "faces": 12,
+   "volume": 5.656854249492382
+  },
+  "twelve": {
+   "role": "hexByHex",
+   "edge": 1.0,
+   "faces": 12,
+   "volume": 5.656854249492381
+  },
+  "distance": [
+   1.7320508075688772,
+   2.449489742783178
+  ],
+  "centre_contacts": {
+   "face": 12
+  },
+  "twelve_contacts": {
+   "None": 34,
+   "edge": 8,
+   "face": 24
+  },
+  "kits": {
+   "cluster": {
+    "pieces": 13,
+    "roles": {
+     "hexByHex": 4,
+     "hexByRhombus": 8,
+     "hexCentre": 1
+    },
+    "volume": 73.53910524340097,
+    "hull": 106.53742169877316,
+    "ratio": 0.690265486725664
+   }
+  }
+ },
+ "to13": {
+  "centre": {
+   "role": "toCentre",
+   "edge": 0.9999999999999998,
+   "faces": 14,
+   "volume": 11.313708498984765
+  },
+  "twelve": {
+   "role": "toBySquare",
+   "edge": 0.9999999999999998,
+   "faces": 14,
+   "volume": 11.313708498984765
+  },
+  "distance": [
+   2.449489742783178,
+   2.8284271247461903
+  ],
+  "centre_contacts": {
+   "face": 12
+  },
+  "twelve_contacts": {
+   "None": 38,
+   "face": 28
+  },
+  "kits": {
+   "cluster": {
+    "pieces": 13,
+    "roles": {
+     "toByHex": 8,
+     "toBySquare": 4,
+     "toCentre": 1
+    },
+    "volume": 147.07821048680194,
+    "hull": 204.5895620233076,
+    "ratio": 0.7188940092165906
+   }
+  }
+ },
+ "skewedRd13": {
+  "centre": {
+   "role": "skewedRd13Centre",
+   "edge": 1.0,
+   "faces": 12,
+   "volume": 2.6180339887498936
+  },
+  "twelve": {
+   "role": "skewedRd13Cell",
+   "edge": 1.0,
+   "faces": 12,
+   "volume": 2.6180339887498936
+  },
+  "distance": [
+   1.175570504584946,
+   1.7320508075688776
+  ],
+  "centre_contacts": {
+   "face": 12
+  },
+  "twelve_contacts": {
+   "None": 30,
+   "face": 24,
+   "corner": 12
+  },
+  "kits": {
+   "cluster": {
+    "pieces": 13,
+    "roles": {
+     "skewedRd13Cell": 12,
+     "skewedRd13Centre": 1
+    },
+    "volume": 34.03444185374862,
+    "hull": 50.61532378249796,
+    "ratio": 0.6724137931034481
+   }
+  }
+ },
+ "bainRd13": {
+  "centre": {
+   "role": "bainRd13Centre",
+   "edge": 1.0,
+   "faces": 12,
+   "volume": 2.828427124746191
+  },
+  "twelve": {
+   "role": "bainRd13Cell",
+   "edge": 1.0,
+   "faces": 12,
+   "volume": 2.828427124746191
+  },
+  "distance": [
+   1.4142135623730951,
+   1.7320508075688776
+  ],
+  "centre_contacts": {
+   "face": 12
+  },
+  "twelve_contacts": {
+   "None": 30,
+   "face": 24,
+   "corner": 12
+  },
+  "kits": {
+   "cluster": {
+    "pieces": 13,
+    "roles": {
+     "bainRd13Cell": 12,
+     "bainRd13Centre": 1
+    },
+    "volume": 36.769552621700484,
+    "hull": 54.682924411759636,
+    "ratio": 0.672413793103449
+   }
+  }
+ },
+ "bilinski13": {
+  "centre": {
+   "role": "bilinski13Centre",
+   "edge": 0.9999999999999999,
+   "faces": 12,
+   "volume": 2.462146829740204
+  },
+  "twelve": {
+   "role": "bilinski13Cell",
+   "edge": 1.0,
+   "faces": 12,
+   "volume": 2.4621468297402025
+  },
+  "distance": [
+   1.0514622242382674,
+   1.7013016167040798
+  ],
+  "centre_contacts": {
+   "face": 12
+  },
+  "twelve_contacts": {
+   "None": 30,
+   "face": 24,
+   "corner": 12
+  },
+  "kits": {
+   "cluster": {
+    "pieces": 13,
+    "roles": {
+     "bilinski13Cell": 12,
+     "bilinski13Centre": 1
+    },
+    "volume": 32.007908786622636,
+    "hull": 47.60150537497724,
+    "ratio": 0.6724137931034484
+   }
+  }
+ },
+ "jewel13": {
+  "centre": {
+   "role": "jewelCentre",
+   "edge": 0.9290460521132632,
+   "faces": 60,
+   "volume": 6.354101966249686
+  },
+  "twelve": {
+   "role": "jewelCell",
+   "edge": 0.9290460521132632,
+   "faces": 60,
+   "volume": 6.354101966249686
+  },
+  "distance": [
+   2.288245611270737,
+   2.288245611270737
+  ],
+  "centre_contacts": {
+   "face": 12
+  },
+  "twelve_contacts": {
+   "None": 42,
+   "face": 24
+  },
+  "kits": {
+   "cluster": {
+    "pieces": 13,
+    "roles": {
+     "jewelCell": 12,
+     "jewelCentre": 1
+    },
+    "volume": 82.60332556124591,
+    "hull": 148.42330557020128,
+    "ratio": 0.5565387810486149
+   },
+   "withStellas": {
+    "pieces": 19,
+    "roles": {
+     "jewelCell": 12,
+     "jewelCentre": 1,
+     "stella": 6
+    },
+    "volume": 95.31152949374531,
+    "hull": 148.42330557020128,
+    "ratio": 0.6421601319791712
    }
   }
  }

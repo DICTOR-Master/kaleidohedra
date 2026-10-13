@@ -1,6 +1,6 @@
-# DICTO 13-Atom Clusters: build sets, a world and a paper (DICTO, 2026-10-13)
+# DICTO ATOM-13×13: build sets, a world and a paper (DICTO, 2026-10-13)
 
-Name by DICTO (2026-10-13): **DICTO 13-Atom Clusters** (internally 'thirteens').
+Name by DICTO (2026-10-13): **DICTO ATOM-13×13** (internally 'thirteens').
 
 Twelve around one, seven ways. DICTO's decisions (2026-10-13): both a viewing world in Kaleidohedra and every kit buildable piece by
 piece in Polyhedraverse with outlines for the next piece (as the Admiral Cap's); all seven members (DESHI added 2026-10-13); every kit we have, as a choice.

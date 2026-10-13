@@ -4,7 +4,8 @@ import sys, json, itertools, numpy as np
 from scipy.spatial import ConvexHull
 D = json.load(open(sys.argv[1]))
 MAIN = {'icosa13': ('pieces', 'ico'), 'dodeca13': ('pieces', 'dodeca'), 'bodhi': ('seed', None), 'unity': ('open', None), 'dictoStar': ('star', ('centre', 'dodeca')),
-        'deshi': ('deshi', None), 'rd13': ('plain', None)}
+        'deshi': ('deshi', None), 'rd13': ('plain', None), 'hexed': ('cluster', None), 'to13': ('cluster', None), 'skewedRd13': ('cluster', None),
+        'bainRd13': ('cluster', None), 'bilinski13': ('cluster', None), 'jewel13': ('cluster', None)}
 def edge(V, F): return float(np.mean([np.linalg.norm(np.array(V[f[i]]) - np.array(V[f[(i + 1) % len(f)]])) for f in F for i in range(len(f))]))
 def vol(V, F):
     V = np.array(V, float); c = V.mean(0)
@@ -21,7 +22,7 @@ for kind, (view, roles) in MAIN.items():
     P = D[kind][view]
     if roles: P = [p for p in P if p[0] in roles]
     P = P[:13]
-    ci = next((i for i, p in enumerate(P) if p[0] in ('centre', 'rdCentre')), 0)   # the centre (Bodhi lists it last)
+    ci = next((i for i, p in enumerate(P) if p[0] in ('centre', 'rdCentre') or p[0].endswith('Centre')), 0)   # the centre (Bodhi lists it last)
     P = [P[ci]] + P[:ci] + P[ci + 1:]
     c = np.array(P[0][1]).mean(0)
     cen, twelve = P[0], P[1:]

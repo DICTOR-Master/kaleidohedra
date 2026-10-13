@@ -529,8 +529,8 @@ const K_WORLDS = [
   { key: 'octet', label: 'DICTO Icosahedral Octet', pieces: [{ label: 'Octet with Admiral Caps', action: 'tool:octetWorld:caps' },
     { label: 'All-icosahedral octet', action: 'tool:octetWorld:allIco' }, { label: 'Frog Chorus', action: 'tool:octetWorld:frog' },
     { label: 'Pyrochlore in the octet', action: 'tool:octetWorld:pyrochlore' }, { label: 'Lotus Jewel network', action: 'tool:octetWorld:lotusJewel' }] },
-  // DICTO 13-Atom Clusters (DICTO's name, 2026-10-13; docs/PLAN-13.md): twelve around one, seven ways.
-  { key: 'thirteens', label: 'DICTO 13-Atom Clusters', pieces: [{ label: 'DICTO Icosa-13 (Lotus seed)', action: 'tool:thirteensWorld:icosa13' },
+  // DICTO ATOM-13×13 (DICTO's name, 2026-10-13; docs/PLAN-13.md): twelve around one, thirteen ways.
+  { key: 'thirteens', label: 'DICTO ATOM-13×13', pieces: [{ label: 'DICTO Icosa-13 (Lotus seed)', action: 'tool:thirteensWorld:icosa13' },
     { label: 'DICTO Dodeca-13', action: 'tool:thirteensWorld:dodeca13' }, { label: 'The Bodhi Seed', action: 'tool:thirteensWorld:bodhi' },
     { label: 'UNITY and VENUS', action: 'tool:thirteensWorld:unity' }, { label: 'DICTO-Star', action: 'tool:thirteensWorld:dictoStar' },
     { label: 'DESHI', action: 'tool:thirteensWorld:deshi' }, { label: 'RD 13', action: 'tool:thirteensWorld:rd13' },
