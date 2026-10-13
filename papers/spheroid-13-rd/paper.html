@@ -23,8 +23,10 @@ dodecahedron 0.741, and the block lattice's Voronoi cell, the roundest single ti
 times the size of the lattice's own cells. The block has the tiling's full symmetry (order 6), so it uses three piece shapes: the centre
 and two outer kinds of six, each three pieces and their mirror images. Each block meets 14 others across all 84 of its outer faces; the
 centres never meet. Four thicknesses are given (0.08 to 0.35), with printable nets at one scale per set; as a variant, the centre left
-free to reshape gains at most 0.01 in roundness. The block tiling is the FCC case of a radius-one perfect code; we did not find it
-stated, and claim no novelty for it.</div>
+free to reshape gains at most 0.01 in roundness. The block tiling itself is known: it is the radius-one perfect code of the A₃
+lattice (Kovačević and Tan 2018), written explicitly as x₁ + 3x₂ + 9x₃ ≡ 0 (mod 13) by Kovačević (2026), and its weights 0, 1, 3, 9
+are Singer's perfect difference set of the projective plane of order 3. What is new here is the block as thirteen rhombic dodecahedra,
+rounded and keyed around a true rhombic dodecahedron, with its pieces and nets.</div>
 
 <h2>1. The thirteen fills space</h2>
 <p>Take the FCC lattice as the integer points with even coordinate sum; neighbours are √2 apart and each Voronoi cell, a rhombic
@@ -36,6 +38,12 @@ left- and right-handed forms. One of them has basis (−3, 0, 1), (0, −1, 3), 
 [−3, 3, 10]], covolume 26; its shortest vectors are 6 of length √10, then 2 of √12 (along a three-fold axis) and 6 of √14. The cube
 symmetries that keep it, the point group of the tiling, have order 6: three turns about that axis and the inversion. It is the
 three-dimensional counterpart of the seven-hexagon flower tiling of the plane.</p>
+<p>This tiling is known in coding theory. The FCC lattice is the root lattice A₃, and a lattice tiling by a point and its nearest
+neighbours is a radius-one perfect code: Kovačević and Tan (2018) construct such tilings of Aₙ in every prime-power dimension, and
+Kovačević (2026) gives the three-dimensional one explicitly as {x : x₁ + 3x₂ + 9x₃ ≡ 0 (mod 13)}, our block lattice (w = (1, 3, 9) in
+the coordinates used here). The weights explain why it works: 0, 1, 3, 9 is Singer's perfect difference set modulo 13 (Singer 1938),
+from the projective plane of order 3 with its 13 points and 13 lines; every nonzero residue is a difference of two of them exactly once,
+so the thirteen lattice points of a block fall into the thirteen classes one each.</p>
 
 <h2>2. A true rhombic dodecahedron at the heart</h2>
 <p>DICTO specified the block's rounded quality: a block that reads as one rounded form, as the DICTO Hexa reads as one block, with its
@@ -115,8 +123,10 @@ nets.mjs in studies/2026-10-13-rd13-block.</p>
 <h2>8. Relation to known work</h2>
 <p>A tiling of a lattice by translates of a point and its nearest neighbours is a radius-one perfect code. In the cube lattice such codes
 exist in every dimension (Golomb and Welch 1970; product constructions in Etzion 2011; Campello et al. 2015 on the lp metrics), while
-radius two fails in three dimensions (Gravier, Mollard and Payan 1998). We did not find the FCC case, the 13-cell block tiling, stated;
-it is simple enough that it may be known, and we claim no novelty for it. Twelve equal spheres round one is the kissing configuration of
+radius two fails in three dimensions (Gravier, Mollard and Payan 1998). In the A₃ = FCC lattice the radius-one code, the 13-cell block
+tiling of section 1, is due to Kovačević and Tan (2018), given explicitly by Kovačević (2026), and rests on Singer's difference set
+(1938); see also Dejter, Fuentes and Araujo (2025) on perfect codes in lattice graphs. The count of 8 sublattices and their equivalence
+under the cube's turns are checked here. Twelve equal spheres round one is the kissing configuration of
 the FCC packing (Schütte and van der Waerden 1952 for the bound). Parallelohedra, the convex solids that tile by translation, were
 classified by Fedorov (1885); see Grünbaum (2010). We found no description of rounding a space-filling cluster with flat faces while
 keeping it keyed and its centre a true rhombic dodecahedron, of the DICTO Spheroid-13 RD, or of its pieces. The search is not
@@ -139,6 +149,10 @@ exhaustive.</p>
 <li>B. Grünbaum, The Bilinski dodecahedron, and assorted parallelohedra, zonohedra, monohedra, isozonohedra and otherhedra, Math. Intelligencer 32(4) (2010) 5–15, doi:10.1007/s00283-010-9138-7.</li>
 <li>E. S. Fedorov, Elements of the Theory of Figures (in Russian), Zap. Mineral. Obshch. 21 (1885).</li>
 <li>S. Gravier, M. Mollard, C. Payan, On the non-existence of 3-dimensional tiling in the Lee metric, European J. Combin. 19 (1998) 567–572, doi:10.1006/eujc.1998.0211.</li>
+<li>M. Kovačević, V. Y. F. Tan, Codes in the space of multisets: coding for permutation channels with impairments, IEEE Trans. Inf. Theory 64 (2018) 5156–5169, doi:10.1109/TIT.2017.2789292.</li>
+<li>M. Kovačević, An isodiametric theorem and lattice diameter-perfect codes in A₃ (2026), arXiv:2607.21037.</li>
+<li>J. Singer, A theorem in finite projective geometry and some applications to number theory, Trans. Amer. Math. Soc. 43 (1938) 377–385, doi:10.1090/S0002-9947-1938-1501951-4.</li>
+<li>I. J. Dejter, L. R. Fuentes, C. A. Araujo, Perfect truncated-metric codes in lattice graphs and superlattice graphs, J. Combin. Math. Combin. Comput. 126 (2025) 247–261.</li>
 <li>K. Schütte, B. L. van der Waerden, Das Problem der dreizehn Kugeln, Math. Ann. 125 (1952) 325–334, doi:10.1007/BF01343127.</li>
 <li>DICTO, the DICTO Hexa and Hexa-Key (2026), DISCOVERIES.md #18, https://github.com/DICTOR-Master/kaleidohedra.</li>
 </ol>

@@ -24,8 +24,7 @@ The rounded keyed block: **DICTO Spheroid-13 RD** (DICTO's name, 2026-10-13). It
 DICTO asked for a Hexa analog (a 13 that fills space with a partner, as the Hexa does with its Key). Checked: the 13-RD cluster
 needs no partner. Of the 183 index-13 sublattices of FCC, 8 have the cluster as a complete set of coset representatives, so
 translates of the cluster fill space exactly (RDs are FCC's Voronoi cells). Translations have length sqrt10 in coordinates where
-neighbours are sqrt2 apart (sqrt5 neighbour spacings), e.g. (3, 1, 0); the 8 are one arrangement in eight orientations, all turns of the cube (no handedness; corrected 2026-10-13), the 3D analogue of the seven-hexagon flower tiling. Likely known as a perfect 1-code in the FCC lattice (coding theory):
-literature search before any claim.
+neighbours are sqrt2 apart (sqrt5 neighbour spacings), e.g. (3, 1, 0); the 8 are one arrangement in eight orientations, all turns of the cube (no handedness; corrected 2026-10-13), the 3D analogue of the seven-hexagon flower tiling. KNOWN (found 2026-10-13): Kovačević and Tan 2018 (radius-1 perfect codes in A_n), explicitly x1 + 3x2 + 9x3 = 0 mod 13 in Kovačević 2026; Singer's difference set {0,1,3,9} mod 13.
 
 ## Stages
 
