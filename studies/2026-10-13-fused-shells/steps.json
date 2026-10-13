@@ -45,11 +45,11 @@
     "5-gon": 12
    },
    "planeFamilies": {
-    "3-fold": [
-     1.2229
-    ],
     "5-fold": [
      1.1135
+    ],
+    "3-fold": [
+     1.2229
     ]
    },
    "holesInFaces": 0,
@@ -76,15 +76,11 @@
    "added": "npyr3@1.27 x20"
   },
   {
-   "faces": 84,
+   "faces": 124,
    "planes": 44,
    "faceShapes": {
-    "3-gon": 42,
-    "5-gon": 29,
-    "6-gon": 7,
-    "7-gon": 1,
-    "9-gon": 1,
-    "10-gon": 4
+    "3-gon": 112,
+    "5-gon": 12
    },
    "planeFamilies": {
     "5-fold": [
@@ -95,7 +91,7 @@
      1.4013
     ]
    },
-   "holesInFaces": 4,
+   "holesInFaces": 0,
    "convex": false,
    "volume": 12.46153,
    "radius": 1.5315,
@@ -148,12 +144,11 @@
    "added": "ncap@1.43 x20"
   },
   {
-   "faces": 144,
+   "faces": 150,
    "planes": 110,
    "faceShapes": {
-    "3-gon": 109,
-    "4-gon": 30,
-    "6-gon": 5
+    "3-gon": 120,
+    "4-gon": 30
    },
    "planeFamilies": {
     "3-fold": [
@@ -244,29 +239,27 @@
    "added": "ico@0.00 x1"
   },
   {
-   "faces": 32,
+   "faces": 60,
    "planes": 12,
    "faceShapes": {
-    "3-gon": 16,
-    "6-gon": 12,
-    "10-gon": 4
+    "3-gon": 60
    },
    "planeFamilies": {
     "5-fold": [
      0.2629
     ]
    },
-   "holesInFaces": 4,
+   "holesInFaces": 0,
    "convex": false,
    "volume": 1.5451,
    "radius": 1.4013,
    "added": "cleo@0.70 x20"
   },
   {
-   "faces": 56,
+   "faces": 60,
    "planes": 20,
    "faceShapes": {
-    "3-gon": 56
+    "3-gon": 60
    },
    "planeFamilies": {
     "3-fold": [
@@ -283,8 +276,7 @@
    "faces": 180,
    "planes": 60,
    "faceShapes": {
-    "3-gon": 172,
-    "4-gon": 8
+    "3-gon": 180
    },
    "planeFamilies": {
     "3-fold": [
@@ -396,21 +388,27 @@
    "added": "copy@2.62 x12"
   },
   {
-   "faces": 240,
-   "planes": 105,
+   "faces": 418,
+   "planes": 120,
    "faceShapes": {
-    "3-gon": 30,
-    "4-gon": 120,
-    "5-gon": 26,
-    "6-gon": 64
+    "3-gon": 148,
+    "4-gon": 270
    },
    "planeFamilies": {
     "2-fold": [
-     0.0,
+     -0.0,
      1.3764,
      2.7527,
      2.7528,
      3.6034
+    ],
+    "3-fold": [
+     -0.9822,
+     0.9822
+    ],
+    "other": [
+     -2.5716,
+     1.4472
     ]
    },
    "holesInFaces": 0,
@@ -420,14 +418,16 @@
    "added": "B5L@3.01 x60"
   },
   {
-   "faces": 120,
-   "planes": 60,
+   "faces": 121,
+   "planes": 61,
    "faceShapes": {
+    "3-gon": 1,
     "4-gon": 60,
     "6-gon": 60
    },
    "planeFamilies": {
     "2-fold": [
+     -0.0,
      2.7527,
      2.7528,
      3.6034
@@ -476,30 +476,27 @@
    "added": "ico@0.00 x1"
   },
   {
-   "faces": 18,
+   "faces": 60,
    "planes": 12,
    "faceShapes": {
-    "3-gon": 6,
-    "10-gon": 6,
-    "12-gon": 6
+    "3-gon": 60
    },
    "planeFamilies": {
     "5-fold": [
      0.1625
     ]
    },
-   "holesInFaces": 6,
+   "holesInFaces": 0,
    "convex": false,
    "volume": 0.36475,
    "radius": 0.866,
    "added": "cleo@0.43 x20"
   },
   {
-   "faces": 45,
+   "faces": 60,
    "planes": 20,
    "faceShapes": {
-    "3-gon": 33,
-    "8-gon": 12
+    "3-gon": 60
    },
    "planeFamilies": {
     "3-fold": [
@@ -513,16 +510,17 @@
    "added": "axe@0.56 x30"
   },
   {
-   "faces": 180,
+   "faces": 176,
    "planes": 60,
    "faceShapes": {
-    "3-gon": 180
+    "3-gon": 176
    },
    "planeFamilies": {
     "3-fold": [
      0.2887,
      0.6455,
-     1.2228
+     1.2228,
+     1.2229
     ]
    },
    "holesInFaces": 0,
@@ -540,7 +538,8 @@
    "planeFamilies": {
     "3-fold": [
      0.6455,
-     1.2228
+     1.2228,
+     1.2229
     ],
     "5-fold": [
      0.6882
@@ -560,7 +559,7 @@
    },
    "planeFamilies": {
     "3-fold": [
-     1.2228
+     1.2229
     ]
    },
    "holesInFaces": 0,
@@ -570,22 +569,17 @@
    "added": "fuji@1.17 x20"
   },
   {
-   "faces": 51,
+   "faces": 60,
    "planes": 12,
    "faceShapes": {
-    "3-gon": 44,
-    "5-gon": 1,
-    "8-gon": 2,
-    "9-gon": 1,
-    "11-gon": 2,
-    "15-gon": 1
+    "3-gon": 60
    },
    "planeFamilies": {
     "5-fold": [
      0.6882
     ]
    },
-   "holesInFaces": 2,
+   "holesInFaces": 0,
    "convex": false,
    "volume": 27.72551,
    "radius": 3.6685,
@@ -595,12 +589,12 @@
    "faces": 60,
    "planes": 20,
    "faceShapes": {
-    "3-gon": 52,
-    "5-gon": 8
+    "3-gon": 60
    },
    "planeFamilies": {
     "3-fold": [
-     1.2228
+     1.2228,
+     1.2229
     ]
    },
    "holesInFaces": 0,
@@ -618,8 +612,11 @@
    },
    "planeFamilies": {
     "3-fold": [
+     0.2886,
      0.2887,
+     0.2888,
      1.2228,
+     1.2229,
      2.7344
     ]
    },
@@ -630,17 +627,25 @@
    "added": "ico@2.49 x12"
   },
   {
-   "faces": 180,
-   "planes": 60,
+   "faces": 300,
+   "planes": 72,
    "faceShapes": {
-    "3-gon": 60,
+    "3-gon": 180,
     "4-gon": 120
    },
    "planeFamilies": {
     "3-fold": [
+     0.2886,
      0.2887,
+     0.2888,
      1.2228,
+     1.2229,
      2.7344
+    ],
+    "5-fold": [
+     -0.6883,
+     -0.6882,
+     -0.6881
     ]
    },
    "holesInFaces": 0,
@@ -650,17 +655,19 @@
    "added": "axe@2.72 x60"
   },
   {
-   "faces": 358,
+   "faces": 360,
    "planes": 72,
    "faceShapes": {
-    "3-gon": 296,
-    "4-gon": 60,
-    "6-gon": 2
+    "3-gon": 300,
+    "4-gon": 60
    },
    "planeFamilies": {
     "3-fold": [
      1.2228,
+     1.2229,
      2.157,
+     2.1571,
+     2.7343,
      2.7344
     ],
     "5-fold": [
@@ -674,18 +681,18 @@
    "added": "fuji@2.77 x60"
   },
   {
-   "faces": 500,
+   "faces": 539,
    "planes": 84,
    "faceShapes": {
-    "3-gon": 441,
-    "4-gon": 13,
-    "5-gon": 1,
-    "6-gon": 45
+    "3-gon": 539
    },
    "planeFamilies": {
     "3-fold": [
      1.2228,
+     1.2229,
      2.157,
+     2.1571,
+     2.7343,
      2.7344
     ],
     "5-fold": [
@@ -694,92 +701,108 @@
      2.9152
     ]
    },
-   "holesInFaces": 6,
+   "holesInFaces": 0,
    "convex": false,
    "volume": 128.03701,
    "radius": 3.8024,
    "added": "axe@3.29 x60"
   },
   {
-   "faces": 620,
-   "planes": 104,
+   "faces": 659,
+   "planes": 105,
    "faceShapes": {
-    "3-gon": 561,
-    "4-gon": 13,
-    "5-gon": 1,
-    "6-gon": 45
+    "3-gon": 659
    },
    "planeFamilies": {
     "3-fold": [
+     0.2886,
      0.2887,
+     1.2227,
      1.2228,
+     1.2229,
+     2.1569,
      2.157,
+     2.1571,
      2.7344
     ],
     "5-fold": [
+     1.5387,
      1.5388,
      1.5389,
+     1.539,
      2.9152
     ]
    },
-   "holesInFaces": 6,
+   "holesInFaces": 0,
    "convex": false,
    "volume": 133.03704,
    "radius": 4.0095,
    "added": "axe@3.45 x60"
   },
   {
-   "faces": 656,
-   "planes": 104,
+   "faces": 660,
+   "planes": 106,
    "faceShapes": {
-    "3-gon": 624,
-    "4-gon": 14,
-    "5-gon": 9,
-    "6-gon": 6,
-    "7-gon": 1,
-    "9-gon": 2
+    "3-gon": 660
    },
    "planeFamilies": {
     "3-fold": [
+     -2.7343,
+     0.2886,
      0.2887,
+     1.2227,
      1.2228,
+     1.2229,
+     2.1569,
      2.157,
+     2.1571,
      2.7344
     ],
     "5-fold": [
+     2.0645,
      2.0646,
      2.9152
     ]
    },
-   "holesInFaces": 6,
+   "holesInFaces": 0,
    "convex": false,
    "volume": 136.1272,
    "radius": 4.0095,
    "added": "cleo@3.50 x60"
   },
   {
-   "faces": 892,
-   "planes": 144,
+   "faces": 900,
+   "planes": 150,
    "faceShapes": {
-    "3-gon": 838,
-    "4-gon": 29,
-    "5-gon": 19,
-    "6-gon": 4,
-    "9-gon": 1,
-    "11-gon": 1
+    "3-gon": 900
    },
    "planeFamilies": {
     "3-fold": [
+     0.2886,
      0.2887,
+     1.2227,
      1.2228,
+     1.2229,
+     1.223,
+     1.8001,
      1.8002,
+     1.8003,
+     1.8004,
+     2.7342,
+     2.7343,
      2.7344,
+     2.7345,
      3.6685,
+     3.6686,
      4.2459
     ],
     "5-fold": [
+     2.0645,
      2.0646,
-     2.9152
+     2.0647,
+     2.9151,
+     2.9152,
+     2.9153
     ]
    },
    "holesInFaces": 0,
@@ -789,60 +812,78 @@
    "added": "ico@3.61 x60"
   },
   {
-   "faces": 739,
+   "faces": 780,
    "planes": 124,
    "faceShapes": {
-    "3-gon": 689,
-    "4-gon": 21,
-    "5-gon": 11,
-    "6-gon": 6,
-    "9-gon": 1,
-    "10-gon": 1,
-    "11-gon": 1,
-    "12-gon": 9
+    "3-gon": 780
    },
    "planeFamilies": {
     "3-fold": [
+     1.2227,
      1.2228,
+     1.2229,
+     1.223,
+     1.8001,
      1.8002,
+     1.8003,
+     1.8004,
+     2.7343,
      2.7344,
      3.6685,
+     3.6686,
      4.2459
     ],
     "5-fold": [
+     2.9151,
      2.9152,
+     2.9153,
      3.7659
     ]
    },
-   "holesInFaces": 1,
+   "holesInFaces": 0,
    "convex": false,
    "volume": 272.02869,
    "radius": 4.5069,
    "added": "axe@3.64 x60"
   },
   {
-   "faces": 892,
-   "planes": 144,
+   "faces": 900,
+   "planes": 155,
    "faceShapes": {
-    "3-gon": 854,
-    "4-gon": 21,
-    "5-gon": 11,
-    "6-gon": 4,
-    "9-gon": 1,
-    "11-gon": 1
+    "3-gon": 900
    },
    "planeFamilies": {
     "3-fold": [
+     0.2882,
+     0.2884,
+     0.2886,
      0.2887,
+     0.2888,
+     0.2889,
+     1.2227,
      1.2228,
+     1.2229,
+     1.223,
+     1.8001,
      1.8002,
+     1.8003,
+     1.8004,
+     2.7342,
+     2.7343,
      2.7344,
+     2.7345,
      3.6685,
+     3.6686,
      4.2459
     ],
     "5-fold": [
+     2.0643,
+     2.0645,
      2.0646,
-     2.9152
+     2.0647,
+     2.9151,
+     2.9152,
+     2.9153
     ]
    },
    "holesInFaces": 0,
@@ -852,25 +893,37 @@
    "added": "cleo@3.96 x60"
   },
   {
-   "faces": 891,
-   "planes": 124,
+   "faces": 900,
+   "planes": 130,
    "faceShapes": {
-    "3-gon": 860,
-    "4-gon": 21,
-    "5-gon": 6,
-    "6-gon": 4
+    "3-gon": 900
    },
    "planeFamilies": {
     "3-fold": [
+     1.2227,
      1.2228,
+     1.2229,
+     1.223,
+     1.2231,
+     1.2233,
+     1.8001,
      1.8002,
+     1.8003,
+     1.8004,
+     2.7343,
      2.7344,
+     2.7345,
      3.6685,
+     3.6686,
      4.2459
     ],
     "5-fold": [
+     2.0645,
      2.0646,
-     2.9152
+     2.0647,
+     2.9151,
+     2.9152,
+     2.9153
     ]
    },
    "holesInFaces": 0,
@@ -880,24 +933,45 @@
    "added": "ico@4.03 x12"
   },
   {
-   "faces": 837,
-   "planes": 124,
+   "faces": 888,
+   "planes": 135,
    "faceShapes": {
-    "3-gon": 772,
-    "4-gon": 43,
-    "5-gon": 22
+    "3-gon": 828,
+    "4-gon": 12,
+    "5-gon": 48
    },
    "planeFamilies": {
     "3-fold": [
+     1.2227,
      1.2228,
+     1.2229,
+     1.223,
+     1.2231,
+     1.2232,
+     1.2233,
+     2.1567,
+     2.1569,
      2.157,
+     2.1571,
+     2.1572,
+     2.1573,
+     2.7343,
      2.7344,
+     2.7345,
      3.6685,
+     3.6686,
      4.2459
     ],
     "5-fold": [
+     0.6879,
+     0.688,
+     0.6881,
      0.6882,
-     2.0646
+     0.6883,
+     0.6885,
+     2.0645,
+     2.0646,
+     2.0647
     ]
    },
    "holesInFaces": 0,
@@ -907,27 +981,46 @@
    "added": "fuji@4.12 x60"
   },
   {
-   "faces": 680,
-   "planes": 124,
+   "faces": 768,
+   "planes": 136,
    "faceShapes": {
-    "3-gon": 513,
-    "4-gon": 126,
-    "5-gon": 22,
-    "7-gon": 1,
-    "11-gon": 18
+    "3-gon": 588,
+    "4-gon": 132,
+    "5-gon": 48
    },
    "planeFamilies": {
     "3-fold": [
+     1.2227,
      1.2228,
+     1.2229,
+     1.223,
+     1.2231,
+     1.2232,
+     1.2233,
+     2.1567,
+     2.1569,
      2.157,
+     2.1571,
+     2.1572,
+     2.1573,
+     2.7343,
      2.7344,
+     2.7345,
      3.6685,
+     3.6686,
      4.2459
     ],
     "5-fold": [
+     0.6879,
+     0.688,
+     0.6881,
      0.6882,
+     0.6883,
+     0.6885,
+     1.5387,
      1.5388,
-     1.5389
+     1.5389,
+     1.539
     ]
    },
    "holesInFaces": 0,
@@ -937,264 +1030,460 @@
    "added": "axe@4.13 x120"
   },
   {
-   "faces": 532,
-   "planes": 124,
+   "faces": 648,
+   "planes": 129,
    "faceShapes": {
-    "3-gon": 352,
-    "4-gon": 125,
-    "5-gon": 18,
-    "6-gon": 12,
-    "7-gon": 1,
-    "9-gon": 1,
-    "10-gon": 2,
-    "11-gon": 18,
-    "12-gon": 3
+    "3-gon": 468,
+    "4-gon": 132,
+    "5-gon": 48
    },
    "planeFamilies": {
     "3-fold": [
+     1.2227,
      1.2228,
+     1.2229,
+     1.223,
+     2.1567,
+     2.1569,
      2.157,
+     2.1571,
+     2.1572,
+     2.1573,
+     2.7343,
      2.7344,
+     2.7345,
      3.6685,
+     3.6686,
      4.2459
     ],
     "5-fold": [
+     0.6879,
+     0.688,
+     0.6881,
      0.6882,
+     0.6883,
+     0.6885,
      4.2916
     ]
    },
-   "holesInFaces": 2,
+   "holesInFaces": 0,
    "convex": false,
    "volume": 313.66007,
    "radius": 4.7886,
    "added": "cleo@4.22 x60"
   },
   {
-   "faces": 655,
-   "planes": 124,
+   "faces": 768,
+   "planes": 125,
    "faceShapes": {
-    "3-gon": 512,
-    "4-gon": 84,
-    "5-gon": 24,
-    "6-gon": 12,
-    "9-gon": 18,
-    "10-gon": 2,
-    "12-gon": 3
+    "3-gon": 708,
+    "4-gon": 12,
+    "5-gon": 48
    },
    "planeFamilies": {
     "3-fold": [
+     1.2227,
      1.2228,
+     1.2229,
+     1.223,
+     2.1568,
+     2.1569,
      2.157,
+     2.1571,
+     2.7343,
      2.7344,
+     2.7345,
      3.6685,
+     3.6686,
      4.2459
     ],
     "5-fold": [
      2.9152,
+     2.9153,
      4.2916
     ]
    },
-   "holesInFaces": 4,
+   "holesInFaces": 0,
    "convex": false,
    "volume": 323.66011,
    "radius": 4.7886,
    "added": "axe@4.38 x120"
   },
   {
-   "faces": 535,
-   "planes": 104,
+   "faces": 800,
+   "planes": 139,
    "faceShapes": {
-    "3-gon": 392,
-    "4-gon": 42,
-    "5-gon": 6,
-    "6-gon": 12,
-    "9-gon": 78,
-    "10-gon": 2,
-    "12-gon": 3
+    "3-gon": 800
    },
    "planeFamilies": {
     "3-fold": [
+     -1.2228,
+     -1.2225,
+     2.1568,
+     2.1569,
      2.157,
+     2.1571,
+     2.7343,
      2.7344,
+     2.7345,
      3.6685,
+     3.6686,
      4.2459
+    ],
+    "other": [
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     -2.4174,
+     NaN,
+     -2.8011
     ],
     "5-fold": [
      2.9152,
+     2.9153,
      4.2916
     ]
    },
-   "holesInFaces": 4,
+   "holesInFaces": 0,
    "convex": false,
    "volume": 368.52085,
    "radius": 5.6038,
    "added": "axe@4.49 x30"
   },
   {
-   "faces": 686,
-   "planes": 124,
+   "faces": 920,
+   "planes": 161,
    "faceShapes": {
-    "3-gon": 548,
-    "4-gon": 42,
-    "5-gon": 14,
-    "7-gon": 5,
-    "9-gon": 77
+    "3-gon": 920
    },
    "planeFamilies": {
     "3-fold": [
+     -1.2228,
+     -1.2225,
+     1.2227,
      1.2228,
+     1.2229,
+     1.223,
+     2.1568,
+     2.1569,
      2.157,
+     2.1571,
+     2.7343,
      2.7344,
+     2.7345,
+     3.6684,
      3.6685,
+     3.6686,
+     3.6687,
      4.2459
     ],
+    "other": [
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     -2.4174,
+     NaN,
+     NaN,
+     -2.8011,
+     NaN
+    ],
     "5-fold": [
+     1.5387,
      1.5388,
      1.5389,
-     2.9152
+     1.539,
+     2.9151,
+     2.9152,
+     2.9153
     ]
    },
-   "holesInFaces": 2,
+   "holesInFaces": 0,
    "convex": false,
    "volume": 373.52085,
    "radius": 5.6038,
    "added": "axe@4.57 x60"
   },
   {
-   "faces": 690,
-   "planes": 124,
+   "faces": 920,
+   "planes": 161,
    "faceShapes": {
-    "3-gon": 556,
-    "4-gon": 34,
-    "5-gon": 14,
-    "6-gon": 21,
-    "7-gon": 4,
-    "8-gon": 1,
-    "9-gon": 60
+    "3-gon": 920
    },
    "planeFamilies": {
     "3-fold": [
+     -1.2228,
+     -1.2225,
+     1.2227,
      1.2228,
+     1.2229,
+     1.223,
+     2.1568,
+     2.1569,
      2.157,
+     2.1571,
+     2.7343,
      2.7344,
+     2.7345,
      3.6685,
+     3.6686,
      4.2459
     ],
+    "other": [
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     -2.4174,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     -2.8011
+    ],
     "5-fold": [
+     2.0644,
+     2.0645,
      2.0646,
-     2.9152
+     2.0647,
+     2.0648,
+     2.9151,
+     2.9152,
+     2.9153
     ]
    },
-   "holesInFaces": 6,
+   "holesInFaces": 0,
    "convex": false,
    "volume": 376.61103,
    "radius": 5.6038,
    "added": "cleo@4.61 x60"
   },
   {
-   "faces": 688,
-   "planes": 116,
+   "faces": 956,
+   "planes": 203,
    "faceShapes": {
-    "3-gon": 522,
-    "4-gon": 40,
-    "5-gon": 90,
-    "6-gon": 27,
-    "7-gon": 8,
-    "8-gon": 1
+    "3-gon": 896,
+    "5-gon": 24,
+    "6-gon": 36
    },
    "planeFamilies": {
     "3-fold": [
+     -1.2232,
+     -1.2229,
+     -1.2228,
+     -1.2227,
+     -1.2226,
+     -0.289,
+     -0.2887,
+     -0.2885,
+     1.2226,
+     1.2227,
      1.2228,
+     1.2229,
+     1.223,
+     1.2231,
+     2.1569,
      2.157,
+     2.1571,
+     2.734,
+     2.7342,
+     2.7343,
      2.7344,
-     3.6685
+     2.7347,
+     3.6685,
+     3.6686
+    ],
+    "other": [
+     -0.8159,
+     0.8005,
+     2.877,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     -2.2906
     ],
     "5-fold": [
+     0.6879,
+     0.688,
+     0.6881,
      0.6882,
+     0.6883,
+     0.6884,
+     0.7063,
+     2.0644,
+     2.0645,
      2.0646,
-     2.9152
+     2.0647,
+     2.0648,
+     2.9101,
+     2.9152,
+     2.9153
     ]
    },
-   "holesInFaces": 12,
+   "holesInFaces": 0,
    "convex": false,
    "volume": 395.88166,
    "radius": 5.6038,
    "added": "fuji@4.76 x60"
   },
   {
-   "faces": 658,
-   "planes": 104,
+   "faces": 956,
+   "planes": 191,
    "faceShapes": {
-    "3-gon": 507,
-    "4-gon": 42,
-    "5-gon": 95,
-    "6-gon": 6,
-    "7-gon": 8
+    "3-gon": 884,
+    "5-gon": 36,
+    "6-gon": 36
    },
    "planeFamilies": {
     "3-fold": [
+     -1.2232,
+     -1.2229,
+     -1.2228,
+     -1.2227,
+     -1.2226,
+     -0.2891,
+     -0.289,
+     -0.2889,
+     -0.2887,
+     -0.2885,
+     1.2227,
      1.2228,
+     1.2229,
+     1.223,
+     2.1569,
      2.157,
+     2.1571,
+     2.734,
+     2.7342,
+     2.7343,
      2.7344,
-     3.6685
+     2.7347,
+     3.6685,
+     3.6686
+    ],
+    "other": [
+     -0.8159,
+     NaN,
+     NaN,
+     NaN,
+     2.877,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     -2.2906,
+     NaN,
+     0.8005
     ],
     "5-fold": [
+     0.6879,
+     0.688,
+     0.6881,
      0.6882,
-     2.9152
+     0.6883,
+     0.6884,
+     0.7063,
+     2.9101,
+     2.9152,
+     2.9153
     ]
    },
-   "holesInFaces": 8,
+   "holesInFaces": 0,
    "convex": false,
    "volume": 400.88168,
    "radius": 5.6038,
    "added": "axe@4.82 x60"
   },
   {
-   "faces": 598,
-   "planes": 124,
+   "faces": 680,
+   "planes": 128,
    "faceShapes": {
-    "3-gon": 508,
-    "4-gon": 65,
-    "5-gon": 10,
-    "6-gon": 11,
-    "7-gon": 4
+    "3-gon": 560,
+    "4-gon": 100,
+    "5-gon": 20
    },
    "planeFamilies": {
     "3-fold": [
+     1.2224,
+     1.2227,
      1.2228,
+     1.2229,
+     1.2232,
+     2.7343,
      2.7344,
+     3.6684,
      3.6685,
+     3.6686,
+     3.6687,
+     4.2457,
+     4.2458,
      4.2459,
+     4.246,
+     4.2461,
+     5.18,
      5.1801
     ],
     "5-fold": [
+     0.6881,
      0.6882,
      2.9152
     ]
    },
-   "holesInFaces": 6,
+   "holesInFaces": 0,
    "convex": false,
    "volume": 531.78337,
    "radius": 5.8327,
    "added": "ico@4.91 x60"
   },
   {
-   "faces": 380,
-   "planes": 92,
+   "faces": 500,
+   "planes": 96,
    "faceShapes": {
-    "3-gon": 290,
-    "4-gon": 65,
-    "6-gon": 5,
-    "12-gon": 20
+    "3-gon": 420,
+    "4-gon": 60,
+    "6-gon": 20
    },
    "planeFamilies": {
     "3-fold": [
+     1.2224,
+     1.2227,
      1.2228,
+     1.2229,
+     1.2232,
+     3.6684,
      3.6685,
+     3.6686,
+     3.6687,
+     4.2457,
+     4.2458,
      4.2459,
+     4.246,
+     4.2461,
+     5.18,
      5.1801
     ],
     "5-fold": [
+     0.6881,
      0.6882
     ]
    },
@@ -1205,21 +1494,24 @@
    "added": "fuji@4.96 x20"
   },
   {
-   "faces": 260,
+   "faces": 380,
    "planes": 72,
    "faceShapes": {
-    "3-gon": 180,
-    "4-gon": 55,
-    "6-gon": 5,
-    "12-gon": 20
+    "3-gon": 300,
+    "4-gon": 60,
+    "6-gon": 20
    },
    "planeFamilies": {
     "3-fold": [
      3.6685,
+     3.6686,
+     4.2458,
      4.2459,
+     5.18,
      5.1801
     ],
     "5-fold": [
+     5.1422,
      5.1423
     ]
    },
@@ -1230,23 +1522,38 @@
    "added": "axe@5.14 x60"
   },
   {
-   "faces": 440,
-   "planes": 104,
+   "faces": 560,
+   "planes": 110,
    "faceShapes": {
-    "3-gon": 415,
+    "3-gon": 539,
     "4-gon": 1,
-    "5-gon": 4,
-    "12-gon": 20
+    "6-gon": 20
    },
    "planeFamilies": {
     "3-fold": [
+     0.2881,
+     0.2884,
+     0.2886,
      0.2887,
+     0.2888,
+     0.2889,
+     0.289,
+     3.6684,
      3.6685,
+     3.6686,
+     4.2458,
      4.2459,
+     4.246,
+     5.18,
      5.1801
     ],
     "5-fold": [
+     2.9149,
+     2.9151,
      2.9152,
+     2.9153,
+     2.9154,
+     5.1422,
      5.1423
     ]
    },
@@ -1257,20 +1564,30 @@
    "added": "axe@5.56 x60"
   },
   {
-   "faces": 440,
+   "faces": 560,
    "planes": 84,
    "faceShapes": {
-    "3-gon": 420,
-    "12-gon": 20
+    "3-gon": 540,
+    "6-gon": 20
    },
    "planeFamilies": {
     "5-fold": [
+     2.9151,
      2.9152,
+     2.9153,
+     5.1422,
      5.1423
     ],
     "3-fold": [
+     1.8,
+     1.8001,
      1.8002,
+     1.8003,
+     1.8004,
+     4.2458,
      4.2459,
+     4.246,
+     5.18,
      5.1801
     ]
    },
@@ -1317,29 +1634,27 @@
    "added": "ico@0.00 x1"
   },
   {
-   "faces": 32,
+   "faces": 60,
    "planes": 12,
    "faceShapes": {
-    "3-gon": 16,
-    "6-gon": 12,
-    "10-gon": 4
+    "3-gon": 60
    },
    "planeFamilies": {
     "5-fold": [
      0.2629
     ]
    },
-   "holesInFaces": 4,
+   "holesInFaces": 0,
    "convex": false,
    "volume": 1.5451,
    "radius": 1.4013,
    "added": "cleo@0.70 x20"
   },
   {
-   "faces": 56,
+   "faces": 60,
    "planes": 20,
    "faceShapes": {
-    "3-gon": 56
+    "3-gon": 60
    },
    "planeFamilies": {
     "3-fold": [
@@ -1416,11 +1731,11 @@
     "5-gon": 12
    },
    "planeFamilies": {
-    "3-fold": [
-     1.2229
-    ],
     "5-fold": [
      1.1135
+    ],
+    "3-fold": [
+     1.2229
     ]
    },
    "holesInFaces": 0,
@@ -1449,18 +1764,17 @@
  ],
  "dharma.outer": [
   {
-   "faces": 113,
-   "planes": 44,
+   "faces": 128,
+   "planes": 54,
    "faceShapes": {
-    "3-gon": 87,
-    "5-gon": 14,
-    "6-gon": 7,
-    "9-gon": 1,
-    "10-gon": 4
+    "3-gon": 104,
+    "5-gon": 24
    },
    "planeFamilies": {
     "2-fold": [
+     -1.1135,
      1.1135,
+     1.1136,
      1.4384
     ],
     "3-fold": [
@@ -1477,124 +1791,185 @@
    "added": "nfru5@1.28 x12"
   },
   {
-   "faces": 32,
-   "planes": 32,
+   "faces": 62,
+   "planes": 52,
    "faceShapes": {
-    "5-gon": 12,
+    "3-gon": 22,
+    "5-gon": 20,
     "6-gon": 20
    },
    "planeFamilies": {
     "2-fold": [
+     -1.1135,
      1.4384
     ],
     "3-fold": [
      1.4013
     ],
     "other": [
-     1.4013
+     0.5,
+     NaN,
+     1.4013,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN
     ]
    },
-   "holesInFaces": 0,
+   "holesInFaces": 2,
    "convex": false,
    "volume": 5.38851,
    "radius": 1.5315,
    "added": "nt1@1.40 x30"
   },
   {
-   "faces": 102,
-   "planes": 102,
+   "faces": 132,
+   "planes": 122,
    "faceShapes": {
-    "3-gon": 60,
+    "3-gon": 82,
     "4-gon": 30,
-    "5-gon": 12
+    "5-gon": 20
    },
    "planeFamilies": {
     "2-fold": [
+     -1.1135,
      1.4384
     ],
     "other": [
-     1.5
+     0.5,
+     NaN,
+     1.5,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN
     ]
    },
-   "holesInFaces": 0,
+   "holesInFaces": 2,
    "convex": false,
    "volume": 6.74107,
    "radius": 1.6057,
    "added": "ncap@1.43 x20"
   },
   {
-   "faces": 143,
-   "planes": 110,
+   "faces": 180,
+   "planes": 130,
    "faceShapes": {
-    "3-gon": 107,
+    "3-gon": 142,
     "4-gon": 30,
-    "6-gon": 6
+    "5-gon": 8
    },
    "planeFamilies": {
+    "2-fold": [
+     -1.1135
+    ],
     "3-fold": [
      1.4013
     ],
     "other": [
+     0.5,
      1.4013,
-     1.5
+     1.5,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN
     ]
    },
-   "holesInFaces": 0,
+   "holesInFaces": 2,
    "convex": false,
    "volume": 7.59517,
    "radius": 1.7634,
    "added": "ncap@1.49 x12"
   },
   {
-   "faces": 30,
-   "planes": 30,
+   "faces": 92,
+   "planes": 50,
    "faceShapes": {
-    "4-gon": 30
+    "3-gon": 54,
+    "4-gon": 30,
+    "5-gon": 8
    },
    "planeFamilies": {
+    "2-fold": [
+     -1.1135
+    ],
     "other": [
-     1.5
+     0.5,
+     NaN,
+     1.5,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN
     ]
    },
-   "holesInFaces": 0,
+   "holesInFaces": 2,
    "convex": false,
    "volume": 8.27144,
    "radius": 1.7634,
    "added": "nwedge@1.55 x60"
   },
   {
-   "faces": 60,
-   "planes": 60,
+   "faces": 90,
+   "planes": 80,
    "faceShapes": {
-    "3-gon": 60
+    "3-gon": 82,
+    "5-gon": 8
    },
    "planeFamilies": {
+    "2-fold": [
+     -1.1135
+    ],
     "other": [
+     0.5,
+     NaN,
+     1.44,
+     NaN,
      1.4399,
-     1.44
+     NaN,
+     NaN,
+     NaN,
+     NaN
     ]
    },
-   "holesInFaces": 0,
+   "holesInFaces": 2,
    "convex": false,
    "volume": 24.10732,
    "radius": 2.4899,
    "added": "nedge@1.71 x30"
   },
   {
-   "faces": 20,
-   "planes": 20,
+   "faces": 50,
+   "planes": 40,
    "faceShapes": {
-    "3-gon": 20
+    "3-gon": 42,
+    "5-gon": 8
    },
    "planeFamilies": {
-    "3-fold": [
-     1.9786
+    "2-fold": [
+     -1.1135
     ],
     "other": [
+     0.5,
+     1.9786,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN,
+     NaN
+    ],
+    "3-fold": [
      1.9786
     ]
    },
-   "holesInFaces": 0,
+   "holesInFaces": 2,
    "convex": false,
    "volume": 31.48571,
    "radius": 2.4899,
@@ -1647,11 +2022,11 @@
     "5-gon": 12
    },
    "planeFamilies": {
-    "3-fold": [
-     1.2229
-    ],
     "5-fold": [
      1.1135
+    ],
+    "3-fold": [
+     1.2229
     ]
    },
    "holesInFaces": 0,
@@ -1700,8 +2075,7 @@
    "faces": 180,
    "planes": 52,
    "faceShapes": {
-    "3-gon": 179,
-    "5-gon": 1
+    "3-gon": 180
    },
    "planeFamilies": {
     "5-fold": [
@@ -1775,13 +2149,15 @@
    "added": "outer@0.00 x1"
   },
   {
-   "faces": 240,
-   "planes": 120,
+   "faces": 360,
+   "planes": 150,
    "faceShapes": {
-    "4-gon": 240
+    "4-gon": 360
    },
    "planeFamilies": {
     "2-fold": [
+     -0.8507,
+     -0.8506,
      0.8506,
      0.8507,
      1.3764,
@@ -1855,16 +2231,18 @@
    "added": "copy@2.62 x12"
   },
   {
-   "faces": 117,
-   "planes": 60,
+   "faces": 300,
+   "planes": 90,
    "faceShapes": {
-    "4-gon": 87,
-    "8-gon": 12,
-    "12-gon": 3,
-    "16-gon": 15
+    "3-gon": 120,
+    "4-gon": 120,
+    "5-gon": 60
    },
    "planeFamilies": {
     "2-fold": [
+     -1.3765,
+     -1.3764,
+     -1.3763,
      2.7527,
      2.7528,
      3.6034
