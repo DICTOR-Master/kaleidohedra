@@ -3947,7 +3947,9 @@ async function init() {
   // Almanac (docs/RHOMBIVERSE_SPEC_ALMANAC.md, Stage 1): created once; its own overlay handles
   // its open/closed state internally (open()/close()/toggle()), this
   // scope just needs a stable reference to call into from onAction.
-  const almanac = createAlmanac();
+  // Open on an entry goes through the DICTO wizard (created further down), as a tap there would.
+  let openFromAlmanac = null;
+  const almanac = createAlmanac({ onOpen: (entry, label) => openFromAlmanac?.(entry, label) });
   // 📖 the Almanac's own button (its wheel face went with the wheels, DICTO 2026-10-08), last in the
   // tools column: at the bottom it met the world panels and, on a phone, the paint slot.
   const almanacBtn = document.createElement('button');
@@ -4436,6 +4438,7 @@ async function init() {
       else dimensionWizard.open();
     }
     isMenuOpen = () => dimensionWizard.isOpen;
+    openFromAlmanac = (entry, label) => dimensionWizard.go(entry.action, entry.app, label);
     openShapePicker = dimensionWizard.openShapePicker;
 
     // The app's entry gate: every load opens the DICTO wizard on the app you came in by -- unless the address names a

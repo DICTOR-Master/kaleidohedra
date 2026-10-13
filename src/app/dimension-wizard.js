@@ -597,6 +597,7 @@ const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
 const DICTO_ORDER = ['chains', 'thirteens', 'octet', 'icosa', 'dodeca', 'roofFold', 'stellaJewel', 'sunstar', 'studies', 'targets', 'dictofcc', 'hex', 'shells', 'golden'];
 const dictoRank = (e) => { const i = DICTO_ORDER.indexOf(e.lat?.key); return i < 0 ? DICTO_ORDER.length : i; };
 const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['DICTO_EDGE_ROOF', 'DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER', ...KIT13_ADDITION_IDS] };
+export const DICTO_PIECE_IDS = DICTO_POLY.ids;
 // The shape a face was tapped on, while picking: its space-filling partners come first (as the old site).
 let partnerIds = [];
 const gold = (id) => (DICTO_POLY.ids.includes(id) ? ' dicto-gold' : '');
@@ -786,6 +787,12 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     close(); setActiveSite(app); onSelectFamily(dim, action, title);
   };
   const back = (L) => `<button type="button" class="dim-wizard-back">${t('wiz.back', L)}</button>`;
+  // Open from outside the wizard (the Almanac's Open, DICTO 2026-10-13): the same pick a tap here makes,
+  // in the app the action belongs to (Polyhedraverse's shapes; DICTO's lattices by the door; worlds Kaleidohedra's).
+  const go = (action, app = null, label = null) => {
+    lastLabel = label; // the title when the lists don't name it
+    choose('3D', action, app ?? (/^tool:poly(Shape|Kit):/.test(action) ? 'polyhedraverse' : action.startsWith('tool:pieceType:') ? dictoOpen(action) : 'kaleidohedra'));
+  };
 
   // ---- DICTO: the dimensions, one open in place ----
   // (DICTO 2026-10-09) Plain dimension buttons; the open one shows its content right under it, in app
@@ -1298,5 +1305,5 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     overlay.classList.add('open');
   }
 
-  return { open, back: goBack, openCatalogue, openDimension, openShapePicker, close, get isOpen() { return overlay.classList.contains('open'); } };
+  return { open, go, back: goBack, openCatalogue, openDimension, openShapePicker, close, get isOpen() { return overlay.classList.contains('open'); } };
 }

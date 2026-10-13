@@ -40,14 +40,15 @@ test('every real piece action in WHEEL_PIECE/WHEEL_RD_FAMILY appears in Almanac 
 test('every Almanac entry has a real label and description', () => {
   for (const entry of ALMANAC_ENTRIES) {
     assert.ok(entry.id, `entry missing id: ${JSON.stringify(entry)}`);
-    if (entry.kind === 'dicto') continue; // its words are in i18n, checked below in every language
+    if (entry.kind === 'dicto' || entry.kind === 'known') continue; // their words are in i18n, checked below in every language
+    if (entry.kind === 'dictoPiece') { assert.ok(entry.label?.trim(), `entry "${entry.id}" missing a label`); continue; } // shared sentence, below
     assert.ok(entry.label && entry.label.trim().length > 0, `entry "${entry.id}" missing a label`);
     assert.ok(entry.desc && entry.desc.trim().length > 0, `entry "${entry.id}" missing a description`);
   }
 });
 
 test("DICTO's entries have a label, description and how-to in every language", () => {
-  for (const entry of ALMANAC_ENTRIES.filter((e) => e.kind === 'dicto')) {
+  for (const entry of ALMANAC_ENTRIES.filter((e) => e.kind === 'dicto' || e.kind === 'known')) {
     for (const lang of LANG_ORDER) {
       for (const part of ['label', 'desc', 'how']) {
         const key = `alm.d.${entry.key}.${part}`;
@@ -98,4 +99,22 @@ test('every piece entry has real, non-null stats -- either computed V/E/F or a r
       assert.notEqual(entry.stats.unit, entry.stats.unitPlural, `piece "${entry.id}"'s unit/unitPlural should differ (or this is at least worth a second look)`);
     }
   }
+});
+
+// Open (DICTO 2026-10-13): every DICTO finding, known result and DICTO piece opens its world or piece.
+test("DICTO's findings, known results and pieces each have an Open action", () => {
+  const OPENABLE = /^tool:(polyShape:\w+|pieceType:\w+|\w+World(:\w+)?)$/;
+  for (const entry of ALMANAC_ENTRIES.filter((e) => ['dicto', 'known', 'dictoPiece'].includes(e.kind))) {
+    assert.match(entry.action ?? '', OPENABLE, `"${entry.id}" has no Open action`);
+  }
+  for (const lang of LANG_ORDER) {
+    for (const key of ['alm.open', 'alm.kind.pieces', 'alm.kind.known', 'alm.known', 'alm.piece.desc', 'alm.piece.descNone', 'alm.stats']) {
+      assert.ok(t(key, lang) !== key, `"${key}" missing in ${lang}`);
+    }
+  }
+});
+
+test("the findings #1-#26 that are DICTO's or known each have an entry", () => {
+  const numbers = new Set(ALMANAC_ENTRIES.flatMap((e) => (e.finding ?? '').match(/\d+/g) ?? []).map(Number));
+  for (let n = 1; n <= 26; n++) assert.ok(numbers.has(n), `DISCOVERIES #${n} has no Almanac entry`);
 });

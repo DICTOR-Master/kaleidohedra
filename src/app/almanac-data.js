@@ -24,6 +24,8 @@ import { hexPrismVerts } from '../krp-core/src/geometry-extensions/hex-prism.js'
 import { dictoHexCellVerts } from '../krp-core/src/geometry-extensions/dicto-hex.js';
 import { rhombohedraTileVerts } from '../krp-core/src/geometry-extensions/rhombohedra-lattice.js';
 import { truncatedTetrahedronVerts } from '../krp-core/src/geometry-extensions/pyrochlore-lattice.js';
+import { getAnySpec } from '../krp-core/src/polyhedra/lookup.js';
+import { DICTO_PIECE_IDS } from './dimension-wizard.js';
 
 // Only "kind: dept" faces with a real tool:pieceType:*/tool:cuboctaBuild
 // action are actual placeable pieces. Excludes two kinds of non-piece
@@ -225,22 +227,65 @@ export const LATTICE_CONCEPT_ENTRIES = [
 
 // DICTO's discoveries (DICTO 2026-10-09): every piece and world of DICTO's own, first, in 7 languages
 // (i18n alm.d.<key>.label/.desc/.how): what it is, how to build it, its DISCOVERIES number and DOI.
-// shape: the Polyhedraverse shape its preview turns, if any.
+// Newest first (DICTO 2026-10-13: all of #1-#26). shape: the Polyhedraverse shape its preview turns, if any.
+// action: what Open does, the same action the DICTO wizard dispatches; app: where it opens when the
+// action alone doesn't say (the Shear's results open in Kaleidohedra).
 export const DICTO_ENTRIES = [
-  ['ekp', '#8', '10.5281/zenodo.23176568', 'DODECAHEDRON'],
-  ['jewel', '#10', '10.5281/zenodo.23220273', 'DRAGON_JEWEL'],
-  ['sunstar', null, null, 'DOGSTAR'],
-  ['chains', '#12, 12a', '10.5281/zenodo.23226716', 'STELLA_OCTANGULA'],
-  ['c13', '#13', '10.5281/zenodo.23247392', 'DODECAHEDRON'],
-  ['dictoStar', '#14', '10.5281/zenodo.23256623', 'ICOSIDODECAHEDRON'],
-  ['clusters', '#15, #16', '10.5281/zenodo.23256623', 'DJ_OCTAHEDRAL_CLUSTER'],
-  ['networks', '#15, #16', '10.5281/zenodo.23257393', 'DJ_TETRAHEDRAL_CLUSTER'],
-  ['hulls', '#17', '10.5281/zenodo.23262227', null],
-  ['hexa', '#18', '10.5281/zenodo.23262227', 'DICTO_HEXA'],
-  ['hexaKey', '#18', '10.5281/zenodo.23262227', 'DICTO_HEXA_KEY'],
-  ['hexaNets', '#18', '10.5281/zenodo.23262227', 'DICTO_HEXA_RHOMBO_CLUSTER'],
-  ['dictoRd', '#1', '10.5281/zenodo.23173810', 'DICTO_SKEWED_RD'],
-  ['dictoHex', null, null, 'DICTO_LEANING_HEX_PRISM'],
-].map(([key, finding, doi, shape]) => ({ kind: 'dicto', id: `dicto:${key}`, key, finding, doi, shape, markKey: null }));
+  ['atom13', '#26', '10.5281/zenodo.23333183', 'ICOSAHEDRON', 'tool:thirteensWorld:icosa13'],
+  ['spheroid13', '#25', '10.5281/zenodo.23332821', 'KIT13_RD13_RDCENTRE_T15', 'tool:thirteensWorld:rd13'],
+  ['bodhi', '#24', '10.5281/zenodo.23311353', 'RHOMBIC_TRIACONTAHEDRON', 'tool:chainsWorld:bodhi'],
+  ['dharma', '#23', '10.5281/zenodo.23310833', 'ICOSIDODECAHEDRON', 'tool:chainsWorld:dharma'],
+  ['karma', '#22', '10.5281/zenodo.23310541', 'ICOSAHEDRON', 'tool:chainsWorld:karma'],
+  ['octet', '#21', '10.5281/zenodo.23284390', 'DICTO_EDGE_ROOF', 'tool:octetWorld:caps'],
+  ['stellaCorona', '#20', '10.5281/zenodo.23272686', 'ICOSIDODECAHEDRON', 'tool:icosaWorld'],
+  ['icosa13', '#19', '10.5281/zenodo.23272686', 'KIT13_ICOSA13_FUJI', 'tool:thirteensWorld:icosa13'],
+  ['hexa', '#18', '10.5281/zenodo.23262227', 'DICTO_HEXA', 'tool:polyShape:DICTO_HEXA'],
+  ['hexaKey', '#18', '10.5281/zenodo.23262227', 'DICTO_HEXA_KEY', 'tool:stellaJewelWorld:hexaKey'],
+  ['hexaNets', '#18', '10.5281/zenodo.23262227', 'DICTO_HEXA_RHOMBO_CLUSTER', 'tool:stellaJewelWorld:hexa'],
+  ['hulls', '#17', '10.5281/zenodo.23262227', null, 'tool:stellaJewelWorld:hullOcta'],
+  ['clusters', '#15, #16', '10.5281/zenodo.23256623', 'DJ_OCTAHEDRAL_CLUSTER', 'tool:stellaJewelWorld:tetra'],
+  ['networks', '#15, #16', '10.5281/zenodo.23257393', 'DJ_TETRAHEDRAL_CLUSTER', 'tool:stellaJewelWorld:octet'],
+  ['dictoStar', '#14', '10.5281/zenodo.23256623', 'ICOSIDODECAHEDRON', 'tool:dodecaWorld:star'],
+  ['c13', '#13', '10.5281/zenodo.23247392', 'DODECAHEDRON', 'tool:dodecaWorld:dodeca13'],
+  ['chains', '#12, 12a', '10.5281/zenodo.23226716', 'STELLA_OCTANGULA', 'tool:sunstarWorld'],
+  ['stretched', '#11', null, 'DODECAHEDRON', 'tool:studiesWorld'],
+  ['jewel', '#10', '10.5281/zenodo.23220273', 'DRAGON_JEWEL', 'tool:stellaJewelWorld'],
+  ['rdFamily', '#9', null, 'RD_TARGET_4', 'tool:targetsWorld'],
+  ['ekp', '#8', '10.5281/zenodo.23176568', 'DODECAHEDRON', 'tool:roofFoldWorld'],
+  ['skewedEd', '#7', null, 'DICTO_SKEWED_ED_16', 'tool:polyShape:DICTO_SKEWED_ED_16'],
+  ['nineFillers', '#6', null, 'REGULAR_HEX_ED', 'tool:targetsWorld'],
+  ['equalEdge', '#2', null, 'DICTO_SKEWED_RD', 'tool:pieceType:dictofcc', 'kaleidohedra'],
+  ['dictoRd', '#1', '10.5281/zenodo.23173810', 'DICTO_SKEWED_RD', 'tool:pieceType:dictofcc'],
+  ['sunstar', null, null, 'DOGSTAR', 'tool:sunstarWorld'],
+  ['dictoHex', null, null, 'DICTO_LEANING_HEX_PRISM', 'tool:pieceType:dictohex'],
+].map(([key, finding, doi, shape, action, app = null]) => ({ kind: 'dicto', id: `dicto:${key}`, key, finding, doi, shape, action, app, markKey: null }));
 
-export const ALMANAC_ENTRIES = [...DICTO_ENTRIES, ...PIECE_ENTRIES, ...LATTICE_CONCEPT_ENTRIES];
+// Known results the apps show (DISCOVERIES #3-#5): checked against, found known, credited there; not DICTO's.
+export const KNOWN_ENTRIES = [
+  ['bainDis', '#3', null, 'tool:pieceType:idis', 'kaleidohedra'],
+  ['bainRd', '#4', 'BAIN_RD', 'tool:polyShape:BAIN_RD'],
+  ['hexEd', '#5', 'REGULAR_HEX_ED', 'tool:polyShape:REGULAR_HEX_ED'],
+].map(([key, finding, shape, action, app = null]) => ({ kind: 'known', id: `known:${key}`, key, finding, doi: null, shape, action, app, markKey: null }));
+
+// DICTO's pieces: every one of the DICTO wizard's own list (DICTO_PIECE_IDS), so none goes missing,
+// each opening in Polyhedraverse. Mirror twins, the other Spheroid-13 RD thicknesses and plain solids
+// (an icosahedron, a triacontahedron, a tetrahedron, the Bilinski centre at their kits' sizes) are left
+// out; a piece that is already a finding's own entry (the Hexa) isn't listed twice. Words: the
+// piece's own name and a shared sentence naming its finding.
+const PIECE_FINDING = [[/^KIT13_RD13_/, '#25'], [/^KIT13_BODHI_/, '#24'], [/^(DICTO_EDGE_ROOF|KIT13_OCTET_)/, '#21'],
+  [/^KIT13_(ICOSA13|UNITY)_/, '#19'], [/^DICTO_HEXA/, '#18'], [/^DODECA_.*_CLUSTER$/, '#16'], [/^DJ_.*_CLUSTER$/, '#15'],
+  [/^DICTO_DODECA13_STAR$/, '#14'], [/^DICTO_DODECA13/, '#13'], [/^DRAGON_JEWEL$/, '#10'], [/^DICTO_SKEWED_ED_/, '#7'],
+  [/^DICTO_(SKEWED_RD|SQUARE_FACED_BLOCK|ALL_RHOMBUS_BLOCK|FLATTENED_RHOMBOHEDRON)$/, '#1']];
+const PLAIN_SOLIDS = new Set(['KIT13_ICOSA13_ICO', 'KIT13_BODHI_COPY', 'KIT13_OCTET_ICOSMALL', 'KIT13_OCTET_TET', 'KIT13_BILINSKI13_BILINSKI13CENTRE']);
+const keptPiece = (id) => !PLAIN_SOLIDS.has(id) && !id.endsWith('_M') && !(id.startsWith('KIT13_RD13_') && !id.endsWith('_T15'))
+  && !DICTO_ENTRIES.some((e) => e.action === `tool:polyShape:${id}`) && !!getAnySpec(id);
+export const DICTO_PIECE_ENTRIES = DICTO_PIECE_IDS.filter(keptPiece).map((id) => {
+  const s = getAnySpec(id);
+  return {
+    kind: 'dictoPiece', id: `dictoPiece:${id}`, label: s.name, shape: id, action: `tool:polyShape:${id}`, app: 'polyhedraverse',
+    finding: PIECE_FINDING.find(([re]) => re.test(id))?.[1] ?? null, doi: null, markKey: null,
+    stats: { vertexCount: s.vertices.length, edgeCount: s.edges.length, faceCount: s.faces.length },
+  };
+});
+
+export const ALMANAC_ENTRIES = [...DICTO_ENTRIES, ...DICTO_PIECE_ENTRIES, ...KNOWN_ENTRIES, ...PIECE_ENTRIES, ...LATTICE_CONCEPT_ENTRIES];

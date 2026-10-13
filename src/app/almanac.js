@@ -20,7 +20,10 @@ import { mountWireframePreview } from './wireframe-preview.js';
 import { polyShapeEdges } from './poly-shapes.js';
 // DICTO's entries read their words in the current language; the older entries are English.
 const lang = () => getSettings().language;
-const labelOf = (e) => (e.kind === 'dicto' ? t(`alm.d.${e.key}.label`, lang()) : e.label);
+// DICTO's findings and the known results have i18n words (alm.d.<key>.*); DICTO's pieces their own names.
+const WORDED = new Set(['dicto', 'known']);
+const labelOf = (e) => (WORDED.has(e.kind) ? t(`alm.d.${e.key}.label`, lang()) : e.label);
+const KIND_KEY = { dicto: 'alm.kind.dicto', dictoPiece: 'alm.kind.pieces', known: 'alm.kind.known' };
 import { iconFrame, MARKS } from './wheel-icons.js';
 
 const CSS = `
@@ -82,6 +85,12 @@ const CSS = `
 .almanac-how-title { font: 700 var(--text-xs) var(--font-ui); letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
 .almanac-ref { margin-top: 10px; font: var(--text-s) var(--font-ui); color: #9ab; }
 .almanac-ref a { color: var(--accent); }
+.almanac-open {
+  display: block; width: 100%; margin-top: 12px; padding: 10px 12px; min-height: 44px;
+  background: rgba(var(--accent-rgb), 0.18); border: 1px solid var(--accent); border-radius: var(--radius-s);
+  color: #fff; font: 700 var(--text-m) var(--font-ui); cursor: pointer;
+}
+.almanac-open:hover { background: rgba(var(--accent-rgb), 0.3); }
 .almanac-back {
   background: none; border: none; color: var(--accent); cursor: pointer;
   font: var(--text-m) var(--font-ui); padding: 0; margin-bottom: 12px;
@@ -138,7 +147,8 @@ function statsHtml(stats) {
   return '';
 }
 
-export function createAlmanac() {
+// onOpen(entry, label): Open on an entry opens its world or piece in the app (DICTO 2026-10-13).
+export function createAlmanac({ onOpen } = {}) {
   injectCssOnce();
 
   const overlay = document.createElement('div');
@@ -162,7 +172,7 @@ export function createAlmanac() {
     let lastKind = null;
     ALMANAC_ENTRIES.forEach((entry, i) => {
       if (entry.kind !== lastKind) {
-        sectionsHtml += `<div class="almanac-kind">${entry.kind === 'dicto' ? t('alm.kind.dicto', lang()) : KIND_LABEL[entry.kind] ?? entry.kind}</div>`;
+        sectionsHtml += `<div class="almanac-kind">${KIND_KEY[entry.kind] ? t(KIND_KEY[entry.kind], lang()) : KIND_LABEL[entry.kind] ?? entry.kind}</div>`;
         lastKind = entry.kind;
       }
       sectionsHtml += `
@@ -188,18 +198,26 @@ export function createAlmanac() {
     const entry = ALMANAC_ENTRIES[index];
     if (!entry) return;
     disposePreview?.(); disposePreview = null;
-    if (entry.kind === 'dicto') {
+    if (KIND_KEY[entry.kind]) {
       const L = lang();
+      const st = entry.stats;
+      const desc = WORDED.has(entry.kind) ? t(`alm.d.${entry.key}.desc`, L)
+        : t(entry.finding ? 'alm.piece.desc' : 'alm.piece.descNone', L, { n: entry.finding });
+      const ref = entry.kind === 'known' ? `${t('alm.ref', L, { n: entry.finding })} · ${t('alm.known', L)}`
+        : entry.finding ? `DICTO · ${t('alm.ref', L, { n: entry.finding })}${entry.doi ? ` · <a href="https://doi.org/${entry.doi}" target="_blank" rel="noopener">DOI ${entry.doi}</a>` : ''}` : 'DICTO';
       detailEl.innerHTML = `
       <button type="button" class="almanac-back">&larr; ${t('alm.back', L)}</button>
       ${entry.shape ? '<canvas class="almanac-preview"></canvas>' : ''}
       <div class="almanac-detail-title">${labelOf(entry)}</div>
-      <div class="almanac-detail-desc">${t(`alm.d.${entry.key}.desc`, L)}</div>
-      <div class="almanac-how"><div class="almanac-how-title">${t('alm.how', L)}</div>${t(`alm.d.${entry.key}.how`, L)}</div>
-      ${entry.finding ? `<div class="almanac-ref">DICTO · ${t('alm.ref', L, { n: entry.finding })}${entry.doi ? ` · <a href="https://doi.org/${entry.doi}" target="_blank" rel="noopener">DOI ${entry.doi}</a>` : ''}</div>` : '<div class="almanac-ref">DICTO</div>'}`;
+      ${st ? `<div class="almanac-detail-stats">${t('alm.stats', L, { v: st.vertexCount, e: st.edgeCount, f: st.faceCount })}</div>` : ''}
+      <div class="almanac-detail-desc">${desc}</div>
+      ${WORDED.has(entry.kind) ? `<div class="almanac-how"><div class="almanac-how-title">${t('alm.how', L)}</div>${t(`alm.d.${entry.key}.how`, L)}</div>` : ''}
+      ${entry.action && onOpen ? `<button type="button" class="almanac-open">${t('alm.open', L)}</button>` : ''}
+      <div class="almanac-ref">${ref}</div>`;
       const cv = detailEl.querySelector('.almanac-preview');
       if (cv) disposePreview = mountWireframePreview(cv, polyShapeEdges(entry.shape), 120);
       detailEl.querySelector('.almanac-back').addEventListener('click', showList);
+      detailEl.querySelector('.almanac-open')?.addEventListener('click', () => { close(); onOpen(entry, labelOf(entry)); });
       listEl.style.display = 'none';
       detailEl.style.display = 'block';
       return;
