@@ -3,27 +3,28 @@
 <link rel="stylesheet" href="../paper.css"></head><body>
 
 <h1>DICTO Spheroid-13 RD</h1>
-<p class="sub">Thirteen rhombic dodecahedra as one rounded, keyed block that fills space by translation alone</p>
+<p class="sub">A true rhombic dodecahedron wrapped by twelve keyed pieces: a nearly round block of thirteen that fills space by translation alone</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
 DRAFT, not released · 13 October 2026 · Licence CC BY 4.0 · Data, scripts, renders, nets and checks: studies/2026-10-13-rd13-block at https://github.com/DICTOR-Master/kaleidohedra.<br>
 The question whether the rhombic dodecahedron's thirteen fills space as the DICTO Hexa does, the rounded, keyed quality of the block,
-the choice of thicknesses and the name DICTO Spheroid-13 RD are DICTO's. Computation and checking with Claude (Anthropic).
+the true rhombic dodecahedron at its centre, the choice of thicknesses and the name DICTO Spheroid-13 RD are DICTO's. Computation and
+checking with Claude (Anthropic).
 </div>
 
 <div class="abstract"><b>Abstract.</b> A rhombic dodecahedron with its twelve face neighbours, thirteen cells of the face-centred cubic
 (FCC) honeycomb, fills space by translation alone: of the 183 sublattices of index 13 in the FCC lattice, exactly 8 have the thirteen
 lattice points as a complete set of representatives, and the 8 are turns of one arrangement, with block translations of length √10
-(neighbour spacing √2). Moving every corner of the honeycomb by a displacement that depends only on its class modulo the block lattice
-keeps the blocks tiling exactly; with every face kept flat, every cell convex with a minimum thickness, and the block's outer surface
-minimised, the thirteen-cell block becomes nearly round while its outside stays keyed. At minimum thickness 0.15 its roundness
-36πV²/S³ is 0.715 (the plain block 0.365, a single rhombic dodecahedron 0.741, the block lattice's own Voronoi cell, the roundest tile
-with these translations, 0.748). The block has the tiling's full symmetry (order 6: three turns and inversion), so it uses three piece
-shapes, a centre and two outer kinds of six, each outer kind three pieces and their mirror images. Each block meets 14 others across
-all 84 of its outer faces; the centres never meet. Each block of thirteen fills space on its own; its centre, the thirteenth block, is centrally symmetric but its faces are not
-parallelograms, so taken out of the block it is not a parallelohedron and would not tile alone. Eight of its corners lie within 1% of
-one sphere. Four thicknesses are given (0.08 to 0.35), with printable nets at one scale per set.
-The block tiling is the FCC case of a radius-one perfect code; we did not find it stated, and claim no novelty for it.</div>
+(neighbour spacing √2). Keeping that tiling, we reshape the block: the centre stays a true rhombic dodecahedron, only larger, and the
+twelve cells around it are moved, corner class by corner class and the same in every block, with every face flat and every cell convex
+with a minimum thickness, to make the block's outer surface as small as possible. The result, the DICTO Spheroid-13 RD, is nearly
+round while its outside stays keyed: at minimum thickness 0.15 its roundness 36πV²/S³ is 0.707 (the plain block 0.365, a single rhombic
+dodecahedron 0.741, and the block lattice's Voronoi cell, the roundest single tile with these translations, 0.748), with a centre 1.525
+times the size of the lattice's own cells. The block has the tiling's full symmetry (order 6), so it uses three piece shapes: the centre
+and two outer kinds of six, each three pieces and their mirror images. Each block meets 14 others across all 84 of its outer faces; the
+centres never meet. Four thicknesses are given (0.08 to 0.35), with printable nets at one scale per set; as a variant, the centre left
+free to reshape gains at most 0.01 in roundness. The block tiling is the FCC case of a radius-one perfect code; we did not find it
+stated, and claim no novelty for it.</div>
 
 <h2>1. The thirteen fills space</h2>
 <p>Take the FCC lattice as the integer points with even coordinate sum; neighbours are √2 apart and each Voronoi cell, a rhombic
@@ -36,99 +37,99 @@ left- and right-handed forms. One of them has basis (−3, 0, 1), (0, −1, 3), 
 symmetries that keep it, the point group of the tiling, have order 6: three turns about that axis and the inversion. It is the
 three-dimensional counterpart of the seven-hexagon flower tiling of the plane.</p>
 
-<h2>2. Rounding the block, keeping it keyed</h2>
+<h2>2. A true rhombic dodecahedron at the heart</h2>
 <p>DICTO specified the block's rounded quality: a block that reads as one rounded form, as the DICTO Hexa reads as one block, with its
-outside still keyed. To realise it, every corner of the honeycomb was given a displacement depending only on its class modulo the block
-lattice (39 classes, 117 unknowns), so a corner shared by two blocks moves once and the blocks still tile exactly. Constraints: each of
-the 78 face classes stays flat (its four corners coplanar), and each cell stays convex with every corner at least a set thickness inside
-the plane of each face not containing it. Objective: the block's outer surface, which at fixed volume 26 is the same as maximising
-roundness. Sequential quadratic programming from five small random starts reached the same block at every thickness.</p>
+outside still keyed, and with a true rhombic dodecahedron at its centre. To realise it, every corner of the honeycomb was given a
+displacement depending only on its class modulo the block lattice (39 classes), so a corner shared by two blocks moves once and the
+blocks still tile exactly. The centre's fourteen corners are not free: they follow from two numbers, its size s and its middle, so it
+stays an exact rhombic dodecahedron, s times a lattice cell. Constraints: every face stays flat (four corners coplanar), and every cell
+stays convex with each corner at least a set thickness inside the plane of each face not containing it. Objective: the block's outer
+surface, which at fixed volume 26 is the same as maximising roundness. Sequential quadratic programming from five small random starts
+reached the same block at every thickness.</p>
 <table>
-<tr><th>Minimum thickness</th><th>Outer surface</th><th>Roundness</th><th>Centre volume</th><th>Outer volumes (A / B)</th><th>Of its hull</th></tr>
-<tr><td>plain</td><td>59.3970</td><td>0.365</td><td>2</td><td>2 / 2</td><td>0.672</td></tr>
-<tr><td>0.08</td><td>46.9400</td><td>0.739</td><td>8.19</td><td>1.54 / 1.43</td><td>0.939</td></tr>
-<tr><td><b>0.15</b></td><td>47.4731</td><td>0.715</td><td>7.18</td><td>1.64 / 1.50</td><td>0.897</td></tr>
-<tr><td>0.25</td><td>48.6610</td><td>0.664</td><td>5.95</td><td>1.72 / 1.62</td><td>—</td></tr>
-<tr><td><b>0.35</b></td><td>50.3083</td><td>0.600</td><td>4.87</td><td>1.79 / 1.73</td><td>0.800</td></tr>
+<tr><th>Minimum thickness</th><th>Outer surface</th><th>Roundness</th><th>Centre</th><th>Centre volume</th><th>Outer volumes (A / B)</th><th>Of its hull</th></tr>
+<tr><td>plain</td><td>59.3970</td><td>0.365</td><td>× 1</td><td>2</td><td>2 / 2</td><td>0.672</td></tr>
+<tr><td>0.08</td><td>47.0285</td><td>0.735</td><td>× 1.589</td><td>8.03</td><td>1.72 / 1.28</td><td>—</td></tr>
+<tr><td><b>0.15</b></td><td>47.6397</td><td>0.707</td><td>× 1.525</td><td>7.10</td><td>1.78 / 1.37</td><td>0.886</td></tr>
+<tr><td>0.25</td><td>48.8894</td><td>0.654</td><td>× 1.433</td><td>5.89</td><td>1.85 / 1.51</td><td>—</td></tr>
+<tr><td><b>0.35</b></td><td>50.5260</td><td>0.593</td><td>× 1.342</td><td>4.84</td><td>1.90 / 1.63</td><td>0.793</td></tr>
 </table>
 <p>For comparison, the block lattice's Voronoi cell, the roundest convex tile with these translations, has 14 faces, surface 46.7464
-and roundness 0.748. At thickness 0.08 the keyed block of thirteen flat-faced cells comes within 0.4% of its surface. Thicker outer
-pieces cost roundness and shrink the centre; 0.15 (the main block) and 0.35 (the fattest outer pieces) are the two DICTO chose. Asking
-all thirteen cells to keep volume 2 reaches only 0.431, and different starts give different blocks.</p>
+and roundness 0.748. At thickness 0.08 the keyed block of thirteen flat-faced cells around a true rhombic dodecahedron comes within 0.6%
+of its surface. Thicker outer pieces cost roundness and shrink the centre; 0.15 (the main block) and 0.35 (the fattest outer pieces)
+are the two DICTO chose.</p>
 
 <h2>3. The pieces</h2>
 <p>Every piece keeps the rhombic dodecahedron's combinatorics, 14 corners and 12 four-sided faces meeting as in the rhombic
-dodecahedron, but the faces are now general flat quadrilaterals and the dihedral angles, all 120° in the rhombic dodecahedron, spread.
-The block has the tiling's full symmetry (order 6), so the twelve outer cells fall into two kinds of six, and in each kind the inversion
-pairs three pieces with their three mirror images.</p>
+dodecahedron. The centre is exactly a rhombic dodecahedron, its dihedral angles all 120°; in the twelve outer pieces the faces become
+general flat quadrilaterals and the dihedral angles spread. The block has the tiling's full symmetry (order 6), so the twelve outer
+cells fall into two kinds of six, and in each kind the inversion pairs three pieces with their three mirror images.</p>
 <table>
 <tr><th>Thickness</th><th>Piece</th><th>Count</th><th>Volume</th><th>Surface</th><th>Roundness</th><th>Edges</th><th>Dihedral angles</th></tr>
-<tr><td>0.15</td><td>centre</td><td>1</td><td>7.1842</td><td>20.0393</td><td>0.725</td><td>1.319–1.356</td><td>106.5°–127.5°</td></tr>
-<tr><td></td><td>outer A</td><td>3 + 3 mirrored</td><td>1.6384</td><td>8.1580</td><td>0.559</td><td>0.207–1.356</td><td>94.2°–165.6°</td></tr>
-<tr><td></td><td>outer B</td><td>3 + 3 mirrored</td><td>1.4975</td><td>8.0449</td><td>0.487</td><td>0.594–1.356</td><td>72.1°–165.3°</td></tr>
-<tr><td>0.35</td><td>centre</td><td>1</td><td>4.8686</td><td>15.3971</td><td>0.734</td><td>1.135–1.197</td><td>112.1°–125.0°</td></tr>
-<tr><td></td><td>outer A</td><td>3 + 3 mirrored</td><td>1.7889</td><td>8.1448</td><td>0.670</td><td>0.458–1.181</td><td>103.4°–147.3°</td></tr>
-<tr><td></td><td>outer B</td><td>3 + 3 mirrored</td><td>1.7330</td><td>8.0971</td><td>0.640</td><td>0.657–1.197</td><td>90.9°–147.2°</td></tr>
+<tr><td>0.15</td><td>centre (rhombic dodecahedron)</td><td>1</td><td>7.0959</td><td>19.7387</td><td>0.740</td><td>1.321</td><td>120°</td></tr>
+<tr><td></td><td>outer A</td><td>3 + 3 mirrored</td><td>1.7801</td><td>8.5047</td><td>0.583</td><td>0.411–1.321</td><td>88.7°–163.4°</td></tr>
+<tr><td></td><td>outer B</td><td>3 + 3 mirrored</td><td>1.3706</td><td>7.5322</td><td>0.497</td><td>0.497–1.321</td><td>78.1°–162.3°</td></tr>
+<tr><td>0.35</td><td>centre (rhombic dodecahedron)</td><td>1</td><td>4.8351</td><td>15.2845</td><td>0.740</td><td>1.162</td><td>120°</td></tr>
+<tr><td></td><td>outer A</td><td>3 + 3 mirrored</td><td>1.8952</td><td>8.4204</td><td>0.680</td><td>0.570–1.162</td><td>100.8°–147.0°</td></tr>
+<tr><td></td><td>outer B</td><td>3 + 3 mirrored</td><td>1.6323</td><td>7.7655</td><td>0.644</td><td>0.637–1.162</td><td>95.5°–146.0°</td></tr>
 </table>
 
 <h2>4. The centre, the thirteenth block</h2>
-<p>The centre is wrapped on all twelve faces by the twelve and never meets another block's centre. At thickness 0.15 it holds 7.1842
-of the block's 26, the volume of 3.59 rhombic dodecahedra, and it has the block's symmetry: three turns about the three-fold axis and
-the inversion. Its twelve faces fall into two kinds, six of each. The six corners where four faces meet lie on one sphere (radius 1.535)
-and form an octahedron squashed along the axis (edges 2.092 and 2.248). The two three-face corners on the axis lie almost on that sphere
-(1.525), so eight of its fourteen corners are within 1% of one sphere; the other six three-face corners sit 18% further in (1.264), where
-the outer pieces press. Placed over a rhombic dodecahedron of the same volume, no corner is farther than 15% of an edge from its
-counterpart, and less as the outer pieces thicken (9% at 0.35).</p>
-<p>Each block of thirteen fills space by translation on its own. The centre taken out of its block is a different matter. It is
-centrally symmetric, each face with a parallel, congruent opposite, but its faces are not parallelograms: their diagonals miss
-each other's midpoints by up to 0.019, 1.5% of an edge. So the centre is neither an affine image of the rhombic dodecahedron nor one of
-Fedorov's parallelohedra, whose faces are centrally symmetric (among them the golden Bilinski dodecahedron, Grünbaum 2010): alone it
-would not fill space by translation. With its twelve, as the thirteenth block of the DICTO Spheroid-13 RD, it does.</p>
-<table>
-<tr><th>Minimum thickness</th><th>Volume</th><th>In rhombic dodecahedra</th><th>Roundness</th><th>Farthest corner from an RD of equal volume</th><th>Faces off a parallelogram</th></tr>
-<tr><td>0.08</td><td>8.1855</td><td>4.09</td><td>0.722</td><td>17% of an edge</td><td>1.9%</td></tr>
-<tr><td>0.15</td><td>7.1842</td><td>3.59</td><td>0.725</td><td>15%</td><td>1.5%</td></tr>
-<tr><td>0.25</td><td>5.9497</td><td>2.97</td><td>0.731</td><td>12%</td><td>1.7%</td></tr>
-<tr><td>0.35</td><td>4.8686</td><td>2.43</td><td>0.734</td><td>9%</td><td>2.2%</td></tr>
-</table>
-<p>The four centres form a graded set (Figure 5), each nearly as round as the rhombic dodecahedron itself (0.741).</p>
+<p>Each block of thirteen fills space by translation on its own, and at its heart sits a true rhombic dodecahedron, 1.525 times a
+lattice cell at thickness 0.15 (3.55 cells' volume), turned as the lattice's cells are. It is wrapped on all twelve faces by the twelve,
+and never meets another block's centre: each centre is an island in the honeycomb of blocks. The twelve outer pieces do all the rounding.
+As a true rhombic dodecahedron the centre is itself one of Fedorov's five parallelohedra (Fedorov 1885; Grünbaum 2010): taken out, it
+would fill space on its own too, as the FCC honeycomb at 1.525 times the scale. So the Spheroid-13 RD holds two space-fillings, one
+inside the other: the block of thirteen, and at its heart the cell the whole lattice is made of.</p>
+<p><b>The free centre (variant).</b> If the centre too is left free to reshape, the block gains at most 0.01 in roundness (0.739, 0.715,
+0.664, 0.600 at the four thicknesses, against 0.735, 0.707, 0.654, 0.593), and the centre stays close to a rhombic dodecahedron without
+being one: at thickness 0.15 it holds 7.18 (3.59 cells' volume), has two kinds of face, six each, and eight of its fourteen corners lie
+within 1% of one sphere, the other six 18% further in where the outer pieces press. It is centrally symmetric, but its faces miss being
+parallelograms by about 1.5% of an edge, so taken out of its block it is not one of Fedorov's parallelohedra, unlike the true rhombic dodecahedron
+of the main form. The four free centres form a graded set (Figure 6). The true rhombic dodecahedron is the main form: simpler
+to state, to make and to recognise, for almost no loss.</p>
 
 <h2>5. How the blocks meet</h2>
 <p>Inside a block 36 faces are shared: the centre's 12 with the twelve, and 24 among the twelve (the cuboctahedron's edges). All 84 outer
 faces of a block lie against neighbouring blocks, none left open: 54 against the six nearest blocks (√10 away), 12 against the two along
 the three-fold axis (√12) and 18 against six more (√14). So each block meets 14 others, the same neighbours as the lattice's 14-faced
-Voronoi cell. All 84 outer faces belong to outer pieces: the centres never meet one another. Each centre is an island wrapped by its own
-twelve, and the outer pieces of all blocks form one connected keyed network.</p>
+Voronoi cell. All 84 outer faces belong to outer pieces: the outer pieces of all blocks form one connected keyed network around the
+islands of the centres.</p>
 
 <h2>6. Making it</h2>
-<p>Printable A4 nets of the centre and of both outer kinds, with their mirror images, are included for thicknesses 0.15 and 0.35 (ten
-sheets), each set at one scale so the pieces fit together: 24.0 mm per unit at 0.15 and 27.7 mm at 0.35, giving blocks about 10 cm and 12 cm across.
-Cut lines are solid, fold lines dashed, glued edges numbered alike, with tabs. In the Polyhedraverse app (DICTO's pieces) the block is a
-kit built from the centre out with outlines showing each next piece; the Kaleidohedra app shows it whole, pulled apart, and as seven
+<p>Printable A4 nets are included for the centre and both outer kinds, with their mirror images: two main sets with the true rhombic
+dodecahedron at the centre (thickness 0.15 at 28.5 mm per unit, a block about 12.5 cm across; thickness 0.35 at 32.4 mm, about 14.4 cm)
+and the free-centre variant (0.15 at 24.0 mm, about 10.4 cm), fifteen sheets, each set at one scale so its pieces fit together. Cut lines
+are solid, fold lines dashed, glued edges numbered alike, with tabs. In the Polyhedraverse app (DICTO's pieces) each version is a kit
+built from the centre out with outlines showing the next piece; the Kaleidohedra app shows the block whole, pulled apart, and as seven
 blocks filling space.</p>
 
 <h2>7. Checks</h2>
-<p>The 13 lattice points are distinct modulo each of the 8 sublattices and coincide modulo the other 175. In every rounded block, faces
-are flat to 10⁻¹² and the thirteen volumes sum to 26 exactly; every corner class moves once, so blocks tile; the block's corner set is
-invariant under the six symmetries; all 84 outer faces are matched by faces of neighbouring blocks. Five starts agree at each thickness.
-Every kit placement reproduces its piece to 10⁻⁴. Scripts: round.py, analysis.py, pieces.py, compare.py, render.py and nets.mjs in
-studies/2026-10-13-rd13-block, and centre.py for the centre.</p>
+<p>The 13 lattice points are distinct modulo each of the 8 sublattices and coincide modulo the other 175. In every block, faces are flat
+to 10⁻¹³ and the thirteen volumes sum to 26 exactly; the centre's corners are exactly s times a lattice cell's about its middle; every
+corner class moves once, so blocks tile; the block is invariant under the six symmetries; all 84 outer faces are matched by faces of
+neighbouring blocks. Five starts agree at each thickness. Every kit placement reproduces its piece to 10⁻⁴, and every kit builds to
+completion following its outlines. Scripts: round.py (with the rdcentre mode), analysis.py, pieces.py, centre.py, compare.py and
+nets.mjs in studies/2026-10-13-rd13-block.</p>
 
 <h2>8. Relation to known work</h2>
 <p>A tiling of a lattice by translates of a point and its nearest neighbours is a radius-one perfect code. In the cube lattice such codes
 exist in every dimension (Golomb and Welch 1970; product constructions in Etzion 2011; Campello et al. 2015 on the lp metrics), while
 radius two fails in three dimensions (Gravier, Mollard and Payan 1998). We did not find the FCC case, the 13-cell block tiling, stated;
 it is simple enough that it may be known, and we claim no novelty for it. Twelve equal spheres round one is the kissing configuration of
-the FCC packing (Schütte and van der Waerden 1952 for the bound). We found no description of rounding a space-filling cluster with flat
-faces while keeping it keyed, of the DICTO Spheroid-13 RD, or of its pieces. The search is not exhaustive.</p>
+the FCC packing (Schütte and van der Waerden 1952 for the bound). Parallelohedra, the convex solids that tile by translation, were
+classified by Fedorov (1885); see Grünbaum (2010). We found no description of rounding a space-filling cluster with flat faces while
+keeping it keyed and its centre a true rhombic dodecahedron, of the DICTO Spheroid-13 RD, or of its pieces. The search is not
+exhaustive.</p>
 
 <h2>Figures</h2>
-<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/rd13-plain.png" alt="" style="width:48%"><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/rd13-rounded.png" alt="" style="width:48%"><figcaption><b>Figure 1.</b> The plain thirteen rhombic dodecahedra, and the DICTO Spheroid-13 RD (thickness 0.15): centre gold, outer kinds green and blue.</figcaption></figure>
-<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/rd13-rounded-open.png" alt="" style="width:60%"><figcaption><b>Figure 2.</b> The block pulled apart.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/rd13-plain.png" alt="" style="width:48%"><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/rd13-rounded.png" alt="" style="width:48%"><figcaption><b>Figure 1.</b> The plain thirteen rhombic dodecahedra, and the DICTO Spheroid-13 RD (thickness 0.15): the true rhombic dodecahedron at the centre gold, the two outer kinds green and blue.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/rd13-rounded-open.png" alt="" style="width:60%"><figcaption><b>Figure 2.</b> The block pulled apart, the rhombic dodecahedron at its heart.</figcaption></figure>
 <figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/rd13-blocks.png" alt="" style="width:60%"><figcaption><b>Figure 3.</b> Seven blocks filling space, keyed (the six nearest neighbours dimmed).</figcaption></figure>
-<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/thickness.png" alt="" style="width:100%"><figcaption><b>Figure 4.</b> Minimum thickness 0.08, 0.15, 0.25 and 0.35: whole (top) and pulled apart (bottom).</figcaption></figure>
-<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/centres.png" alt="" style="width:100%"><figcaption><b>Figure 5.</b> The centre, the thirteenth block, at the four thicknesses, at true relative size: from the side (top) and along another direction (bottom).</figcaption></figure>
-<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/net-centre-1.png" alt="" style="width:48%"><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/net-outer-a-1.png" alt="" style="width:48%"><figcaption><b>Figure 6.</b> Two of the ten printable nets (thickness 0.15, one scale): the centre and outer piece A.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/thickness.png" alt="" style="width:100%"><figcaption><b>Figure 4.</b> Minimum thickness 0.08, 0.15, 0.25 and 0.35, centre a true rhombic dodecahedron: whole (top) and pulled apart (bottom).</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/free-vs-exact.png" alt="" style="width:100%"><figcaption><b>Figure 5.</b> The free-centre variant beside the true rhombic dodecahedron centre, at thickness 0.15 and 0.35.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/centres.png" alt="" style="width:100%"><figcaption><b>Figure 6.</b> The variant's free centres at the four thicknesses, at true relative size: a graded set.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/net-centre-1.png" alt="" style="width:48%"><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/net-outer-a-1.png" alt="" style="width:48%"><figcaption><b>Figure 7.</b> Two of the fifteen printable nets (thickness 0.15, one scale): the rhombic dodecahedron centre and outer piece A.</figcaption></figure>
 
 <h2>References</h2>
 <ol class="refs">
