@@ -74,6 +74,42 @@ confirm with DICTO.
 - The small stellated dodecahedron and the great dodecahedron join Loop 1 as stations between 1 and 4 (order to be fixed by the
   stellation steps in stage 2).
 
+## Sources by station (from "Capturing the In-betweens", doi:10.5281/zenodo.23345503)
+
+The paper's reference list (studies/2026-10-13-fused-shells/paper/REFERENCES.md) is the starting library for the Cycles. Each
+station gets a short note in the world (one line, checked, with its source); claims marked *check* are to be read in the source
+before they go into any public text.
+
+**Loop 1 (stellation and duality)**
+- Stations 1–4 and the two added Kepler–Poinsot solids: Kepler, *Harmonices mundi* (1619) for the small and great stellated
+  dodecahedra; Poinsot (1810) for the great dodecahedron; Cauchy (1813) that the four are all the regular star polyhedra; Coxeter,
+  Du Val, Flather, Petrie, *The Fifty-Nine Icosahedra* (1938) and Wenninger (1971) for the stellation steps and the excavated
+  dodecahedron's place among the icosahedron's stellations.
+- Station 5 (the pair): the dodecahedron–icosahedron dual compound (Kepler; Cundy and Rollett 1951); the icosidodecahedron also
+  as a made object: the self-assembled M30L60 icosidodecahedron (Fujita et al. 2016).
+- Station 6: Unkelbach (1940) and Messer (1995) for the rhombic hexecontahedron as a stellation of the rhombic triacontahedron;
+  Kabai's triacontahedron/hexecontahedron clusters.
+- Stations 7–8: the truncated icosahedron as the C60 / fullerene and capsid cage (Dechant, Wardman, Keef, Twarock 2014).
+- The motion between stations: capsid maturation through transitional intermediate states (Lata et al. 2000) and structural
+  transitions between icosahedral lattices (Indelicato et al. 2012), the closest published picture of a polyhedral shell moving
+  from one form to another; the jitterbug (Fuller; Verheyen 1989) as the continuous counterpart and itself a closed cycle.
+
+**Loop 2 (growth by shells)**
+- Nested-shell clusters in real alloys, whose shells are the Cycle's stations: the Bergman cluster (Bergman, Waugh, Pauling 1957)
+  and the Tsai cluster of the Yb–Cd quasicrystal (Takakura et al. 2007): dodecahedron, icosahedron, icosidodecahedron, rhombic
+  triacontahedron, one inside the next (*check* the exact shell sequences in both sources).
+- Growth to the next scale: Mackay's icosahedral shells (1962) and their magic numbers 13, 55, 147, seen in xenon clusters (Echt,
+  Sattler, Recknagel 1981; Teo and Sloane 1985; Martin 1996); icosahedral–decahedral–FCC growth changes in silver clusters
+  (Baletto, Mottet, Ferrando 2000; review 2005); core–shell polyicosahedra (Rossi et al. 2004).
+- Scale steps as a rule: the φ-inflation of the icosahedral tilings (Dietl and Eschenburg 2016; Papadopolos and Ogievetsky 1999
+  for the Mosseri–Sadoc tiles); Caspar and Klug (1962) T-numbers and Twarock and Luque (2019) for how capsids step up in size.
+- Cluster packing into a quasicrystal: Fujita, Takano, Yamamoto, Tsai (2013).
+
+**Builder**
+- Designed assembly as the builder's counterpart: designed protein icosahedra (King et al. 2014; Hsia et al. 2016), capsid
+  assembly pathways (Zlotnick 1994; Hagan and Chandler 2006; Perlmutter and Hagan 2015), and the sharp M24L48 switch (Sun et al.
+  2010).
+
 ## Later study: icosahedral order, from our shells to 3D field theory
 
 Agreed by DICTO 2026-10-14, after the Cycles world. A reading and checking study, not a Fable job unless DICTO says so. Nothing from
