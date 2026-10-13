@@ -1,7 +1,7 @@
 # The 13s: build sets, a world and a paper (DICTO, 2026-10-13)
 
 Twelve around one, six ways. DICTO's decisions (2026-10-13): both a viewing world in Kaleidohedra and every kit buildable piece by
-piece in Polyhedraverse with outlines for the next piece (as the Admiral Cap's); all six members; every kit we have, as a choice.
+piece in Polyhedraverse with outlines for the next piece (as the Admiral Cap's); all seven members (DESHI added 2026-10-13); every kit we have, as a choice.
 
 ## Members and kits
 
@@ -12,6 +12,7 @@ piece in Polyhedraverse with outlines for the next piece (as the Admiral Cap's);
 | UNITY (#19) | icosidodecahedron + 12 J11, dimples closed by VAJRA |
 | Bodhi seed (#24) | 13 rhombic triacontahedra + Kit A (Vajra fine, Chatra, Mudra) or Kit B (Vajra fine, Crown Jewel, Diadems) |
 | DICTO-Star (#14) | icosidodecahedron + 12 dodecahedra + 20 J63 |
+| DESHI (DICTO Icosa world) | 13 icosahedra |
 | RD 13 (periodic) | 13 rhombic dodecahedra (FCC) |
 
 ## RD 13 tiles space alone (checked 2026-10-13)

@@ -37,6 +37,7 @@ const out = {
   dodeca13: { pieces: conv(d13.pieces), units: conv(d13.units), stars: conv(d13.stars) },
   icosa13: { pieces: conv(ICOSA_PARTS.LOTUS_SEED.pieces), build: conv(ICOSA_PARTS.LOTUS_SEED.build), units: conv(ICOSA_PARTS.LOTUS_SEED.units) },
   unity: { open: conv(ICOSA_PARTS.UNITY.pieces), venus: conv(ICOSA_PARTS.VENUS.pieces) },
+  deshi: { deshi: conv(ICOSA_PARTS.DESHI.pieces) },
   bodhi: { seed: SEEDS.bodhi.views.seed.filter((p) => p[0] !== 'outer'), kitA: SEEDS.bodhi.views.kitA, kitB: SEEDS.bodhi.views.kitB },
   dictoStar: { star: STAR.star.views.star },
   rd13: { plain, rounded },
