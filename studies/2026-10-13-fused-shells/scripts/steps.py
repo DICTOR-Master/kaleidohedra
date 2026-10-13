@@ -31,49 +31,36 @@ GAP = 2e-4  # well above the data's rounding, far below any real edge (shortest 
 
 
 def describe_union(pieces):
-    """The union of the pieces as one solid: on every plane that carries piece faces, the faces pointing one way minus
-    those pointing the other way (2D clipping) is the union's surface there; each connected region is one face."""
-    from shapely.geometry import Polygon
-    from shapely.ops import unary_union
-    planes = []  # [n, d, +faces, -faces]
-    for P, F in pieces:
-        pc = P.mean(0)
-        for f in F:
-            n, d = plane(P, f, pc)
-            for q in planes:
-                if np.allclose(q[0], n, atol=1e-4) and abs(q[1] - d) < 1e-4: q[2].append(P[f]); break
-                if np.allclose(q[0], -n, atol=1e-4) and abs(q[1] + d) < 1e-4: q[3].append(P[f]); break
-            else: planes.append([n, d, [P[f]], []])
-    faces = []
-    for n, d, plus, minus in planes:
-        u = np.cross(n, [1, 0, 0] if abs(n[0]) < 0.9 else [0, 1, 0]); u /= np.linalg.norm(u); v = np.cross(n, u)
-        to2 = lambda poly: Polygon([(float(p @ u), float(p @ v)) for p in poly]).buffer(0)
-        # close the rounding gaps between neighbouring faces (coordinates are stored to 6 decimals) before counting regions
-        close = lambda polys: unary_union([p.buffer(GAP, join_style=2) for p in polys]).buffer(-GAP, join_style=2)
-        A = close([to2(x) for x in plus]); B = close([to2(x) for x in minus]) if minus else Polygon()
-        for region, sign in ((A.difference(B), 1), (B.difference(A), -1)):
-            for g in getattr(region, 'geoms', [region]):
-                if g.is_empty or g.area < 1e-7: continue
-                g = g.buffer(1e-7).buffer(-1e-7).simplify(1e-6)
-                for h in getattr(g, 'geoms', [g]):
-                    if h.area < 1e-7: continue
-                    if h.area < 1e-4: continue  # slivers from rounding
-                    if d * sign < 0: continue  # facing the centre: none of these builds is hollow; one rounding mismatch on one Dharma plane
-                    faces.append({'n': n * sign, 'd': d * sign, 'sides': corners2d(list(h.exterior.coords)[:-1]), 'holes': len(h.interiors), 'area': h.area})
+    """The union of the pieces as one solid, counted with build_transitional's face builder (Fable's check, 2026-10-13: faces that
+    only touch at a corner must not merge): each piece face's visible part, neighbours in one plane merged while the face stays
+    convex. So a face is a convex face of the solid (a star-shaped face would count as its convex parts; none occurs among the
+    named stages). Planes: the distinct planes those faces lie in."""
+    import build_transitional as bt
+    V, F, _, holes, vol_surface, _ = bt.fused_polyhedron([('solid', P, Fc) for P, Fc in pieces])
     allP = np.vstack([P for P, _ in pieces])
     vol = sum(ConvexHull(P).volume for P, _ in pieces)
     hull = ConvexHull(allP)
-    fams, sides = {}, {}
-    for g in faces:
-        fam = next((name for name, ax in AXES.items() if any(abs(abs(np.dot(g['n'], a)) - 1) < 1e-4 for a in ax)), 'other')
-        fams.setdefault(fam, set()).add(round(g['d'], 4))
-        sides[g['sides']] = sides.get(g['sides'], 0) + 1
-    distinct = []
-    for g in faces:
-        if not any(np.allclose(g['n'], q[0], atol=1e-4) and abs(g['d'] - q[1]) < 1e-3 for q in distinct): distinct.append((g['n'], g['d']))
-    return {'faces': len(faces), 'planes': len(distinct), 'faceShapes': {f'{k}-gon': v for k, v in sorted(sides.items())},
-            'planeFamilies': {k: sorted(v) for k, v in fams.items()}, 'holesInFaces': sum(f['holes'] for f in faces),
-            'convex': bool(abs(hull.volume - vol) < 1e-5 * vol), 'volume': round(vol, 5), 'radius': round(float(np.linalg.norm(allP, axis=1).max()), 4)}
+    convex = bool(abs(hull.volume - vol) < 1e-5 * vol)
+    if convex:  # a convex stage's faces are exactly its hull's faces (coplanar triangles merged), corners only
+        from fuse import hull_faces, dedupe
+        Q = dedupe(allP)
+        _, HF = hull_faces(Q)
+        keep = [i for i in sorted({i for _, _, f in HF for i in f}) if sum(i in f for _, _, f in HF) >= 3]
+        V = Q[keep]
+        _, HF = hull_faces(V)
+        F = [f for _, _, f in HF]
+    sides, planes, fams = {}, [], {}
+    for f in F:
+        sides[len(f)] = sides.get(len(f), 0) + 1
+        a, b, c = V[f[0]], V[f[1]], V[f[2]]
+        n = np.cross(b - a, c - a); n = n / np.linalg.norm(n); d = float(np.dot(n, a))
+        if not any(np.allclose(n, q[0], atol=1e-4) and abs(d - q[1]) < 1e-3 for q in planes):
+            planes.append((n, d))
+            fam = next((name for name, ax in AXES.items() if any(abs(abs(np.dot(n, x)) - 1) < 1e-4 for x in ax)), 'other')
+            fams.setdefault(fam, set()).add(round(d, 4))
+    return {'faces': len(F), 'planes': len(planes), 'faceShapes': {f'{k}-gon': v for k, v in sorted(sides.items())},
+            'planeFamilies': {k: sorted(v) for k, v in fams.items()}, 'holesInFaces': holes,
+            'convex': convex, 'volume': round(vol, 5), 'radius': round(float(np.linalg.norm(allP, axis=1).max()), 4)}
 
 
 def corners2d(pts):

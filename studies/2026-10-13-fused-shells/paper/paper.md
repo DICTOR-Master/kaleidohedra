@@ -90,10 +90,10 @@ The script `analysis/pieces_analysis.py` sorts the 11 views' pieces into congrue
 | **FUJI** | Lotus 20 | hexagonal pyramid, base hexagon with all angles 120° and sides 1, 1/φ alternating | 7 / 12 / 6 triangles + 1 hexagon | 1 (9), 1/φ (3) | 37.38°, 41.81°, 142.62° | C3v (6) | (1 + 3√5)/24 | not a union of Mosseri–Sadoc tiles at this scale [DICTO, Icosa-13 study] |
 | icosahedra | Lotus 1 + 12 | regular | | | 138.19° | Ih (120) | | |
 | pentagonal cap | Dodecahedral Chain 12 (edge 1); Dharma 12 (edge 1/φ) | Johnson solid J2 (equilateral pentagonal pyramid) | 6 / 10 / 6 | all equal | 37.38°, 138.19° | C5v (10) | | J2 |
-| (pentagonal pyramid, npyr5) | Dharma 12 | pentagonal pyramid, base 0.809 (= φ/2), sides √3/2, apex pointing in | 6 / 10 / 6 | φ/2 (5), √3/2 (5) | 43.36°, 132.40° | C5v (10) | 0.19734 | not J2 (sides longer than base) |
+| **Stupa** (pentagonal pyramid, npyr5) | Dharma 12 | pentagonal pyramid, base 0.809 (= φ/2), sides √3/2, apex pointing in | 6 / 10 / 6 | φ/2 (5), √3/2 (5) | 43.36°, 132.40° | C5v (10) | 0.19734 | not J2 (sides longer than base) |
 | **Vajra (twist)** (nfru3) | Dharma 20 | trigonal antiprismoid ("twisted triangular frustum"): parallel equilateral triangles 1/φ and φ/2, six side triangles | 6 / 12 / 8 triangles | 1/φ (3), φ/2 (3), √3/2 (6) | 99.26°, 110.91°, 113.80° | C3v (6) | 0.22215 | none found |
 | **Cleo-low** (npyr3) | Dharma 20 | trigonal pyramid: base equilateral φ/2, sides 1/2; the dodecahedron's corner over the icosidodecahedron | 4 / 6 / 4 | φ/2 (3), 1/2 (3) | 37.38°, 116.57° | C3v (6) | 0.016855 | similar to Mosseri–Sadoc t3 (half its tabulated size; checked) |
-| (twisted pentagonal frustum, nfru5) | Dharma 12 | pentagonal antiprismoid: pentagons 1/φ and 1; 5 equilateral and 5 obtuse golden side triangles | 10 / 20 / 10 triangles + 2 pentagons | 1/φ (15), 1 (5) | 63.43°, 142.62° | C5v (10) | (11√5 − 15)/24 | none found |
+| **Monkey Staff** (twisted pentagonal frustum, nfru5) | Dharma 12 | pentagonal antiprismoid: pentagons 1/φ and 1; 5 equilateral and 5 obtuse golden side triangles | 10 / 20 / 10 triangles + 2 pentagons | 1/φ (15), 1 (5) | 63.43°, 142.62° | C5v (10) | (11√5 − 15)/24 | none found |
 | t1 (nt1) | Dharma 30 | tetrahedron | 4 / 6 / 4 | 1/φ (5), 1 (1) | 37.38°, 116.57°, 138.19° | C2v (4) | (√5 − 2)/12 | Mosseri–Sadoc t1 scaled by 1/τ (checked) |
 | **Shield** (hexagonal cap) | Dharma 20 | very low regular-hexagon pyramid on the truncated icosahedron's hexagon | 7 / 12 / 6 triangles + 1 hexagon | 1/φ (6), 0.651 (6) | 20.91°, 159.45° | C6v (12) | 0.06763 | none found |
 | **Vajra-blade** (wedge) | Dharma 60 | tetrahedron (one mirror) | 4 / 6 / 4 | 1/φ (3), 0.651 (2), 1.0898 (1) | 20.55°, 20.91°, 144°, 159.10° | Cs (2) | 0.011271 | none found |
@@ -121,9 +121,9 @@ Three observations about the pieces:
   - The 12 outer icosahedra and the outer AXE then build a spiky 180-triangle stage.
   - FUJI fills each three-fold corner last and closes the large icosahedron.
 - **Spheres of Dharma.**
-  - Vajra (twist) makes an icosidodecahedron with 12 pentagonal dimples, and the pentagonal pyramids fill the dimples.
+  - Vajra (twist) makes an icosidodecahedron with 12 pentagonal dimples, and the 12 Stupas fill the dimples.
   - Cleo-low closes the dodecahedron.
-  - The twisted pentagonal frusta and t1 make the truncated icosahedron.
+  - The 12 Monkey Staffs and t1 make the truncated icosahedron.
   - Shield turns it into the 80-corner solid; the pentagonal caps and Vajra-blade then complete the rhombic triacontahedron.
   - Sevenfold-blade gives an icosahedron with 20 dimples, and Cleo-low 2 fills them.
 - **Bodhi Seed Kit B.** Vajra (fine) turns the centre triacontahedron into a rhombic hexecontahedron. The 12 copies, the two Diadems and the Crown Jewels then close the large triacontahedron.
@@ -278,7 +278,7 @@ The fold pattern, mountain or valley from the 3D dihedral, together with the glu
 
 ![Figure 2](figures/fig2-dharma-route.jpg)
 
-**Figure 2.** Spheres of Dharma, one cycle: (a) icosahedron 1/φ; (b) + 20 Vajra (twist), the dimpled icosidodecahedron; (c) + 12 pentagonal pyramids, icosidodecahedron; (d) + 20 Cleo-low, dodecahedron; (e) + 12 twisted pentagonal frusta; (f) + 30 t1, truncated icosahedron; (g) + 20 Shield, the convex 80-corner solid; (h) + 12 pentagonal caps; (i) + 60 Vajra-blade, rhombic triacontahedron; (j) + 30 Sevenfold-blade, the dimpled icosahedron; (k) + 20 Cleo-low 2, icosahedron φ².
+**Figure 2.** Spheres of Dharma, one cycle: (a) icosahedron 1/φ; (b) + 20 Vajra (twist), the dimpled icosidodecahedron; (c) + 12 Stupa, icosidodecahedron; (d) + 20 Cleo-low, dodecahedron; (e) + 12 Monkey Staff; (f) + 30 t1, truncated icosahedron; (g) + 20 Shield, the convex 80-corner solid; (h) + 12 pentagonal caps; (i) + 60 Vajra-blade, rhombic triacontahedron; (j) + 30 Sevenfold-blade, the dimpled icosahedron; (k) + 20 Cleo-low 2, icosahedron φ².
 
 ![Figure 3](figures/fig3-bodhi-route.jpg)
 

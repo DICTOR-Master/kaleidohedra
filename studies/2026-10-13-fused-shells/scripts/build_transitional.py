@@ -19,12 +19,16 @@ ROLE = json.load(open(os.path.join(HERE, 'role-colours.json')))
 
 # (id, name, view, how the stage is chosen): 'app': the app's Top shell levels up to k (1-based); 'route': main-route steps up to k.
 CHOSEN = [
-    ('TRANS_LOTUS_2', 'Lotus seed, stage 2: icosahedron + 20 CLEO', 'karma.lotus', 'app', 2),
-    ('TRANS_LOTUS_3', 'Lotus seed, stage 3: + 30 AXE', 'karma.lotus', 'app', 3),
+    # The Dodecahedral Chain, the clearest teaching route (DICTO 2026-10-13): icosahedron -> great stellated dodecahedron ->
+    # excavated dodecahedron -> dodecahedron (identifications checked in the paper, CHECKS.md). Its stages 2 and 3 are the Lotus
+    # seed's stages 2 and 3.
+    ('TRANS_LOTUS_2', 'Great stellated dodecahedron: icosahedron + 20 CLEO (Lotus seed and Dodecahedral Chain, stage 2)', 'karma.lotus', 'app', 2),
+    ('TRANS_LOTUS_3', 'Excavated dodecahedron: + 30 AXE (Lotus seed and Dodecahedral Chain, stage 3)', 'karma.lotus', 'app', 3),
+    ('TRANS_DCHAIN_4', 'Dodecahedron: + 12 caps (Dodecahedral Chain, stage 4)', 'karma.dodeca', 'app', 4),
     ('TRANS_LOTUS_4', 'Lotus seed, stage 4: + 12 icosahedra', 'karma.lotus', 'app', 4),
     ('TRANS_LOTUS_5', 'Lotus seed, stage 5: + 30 AXE', 'karma.lotus', 'app', 5),
-    ('TRANS_BODHI_B2', 'Bodhi Seed Kit B, stage 2: triacontahedron + 60 Vajras', 'bodhi.kitB', 'app', 2),
-    ('TRANS_DHARMA_80', 'Spheres of Dharma: the convex 80-corner stage', 'dharma.cycle', 'route', 7),
+    ('TRANS_BODHI_B2', 'Rhombic hexecontahedron: triacontahedron + 60 Vajras (Bodhi Seed Kit B, stage 2)', 'bodhi.kitB', 'app', 2),
+    ('TRANS_DHARMA_80', 'Spheres of Dharma, stage 7: truncated icosahedron + 20 Shields, convex, 80 corners', 'dharma.cycle', 'route', 7),
 ]
 
 
@@ -74,7 +78,28 @@ def fused_polyhedron(pcs):
                         if m.geom_type == 'Polygon' and abs(m.convex_hull.area - m.area) < 1e-6 and abs(m.area - polys[a].area - polys[c].area) < 1e-5:
                             polys[a] = m; polys.pop(c); merged = True; break
                     if merged: break
-            return polys
+            # second pass: pieces joined along edges (not just at a corner) that together make one convex shape become one face
+            n = len(polys)
+            joined = [[a] for a in range(n)]
+            near = lambda a, c: polys[a].buffer(GAP).intersection(polys[c].buffer(GAP)).area > 1e-6
+            comp, seen = [], set()
+            for a in range(n):
+                if a in seen: continue
+                stack, cur = [a], []
+                seen.add(a)
+                while stack:
+                    x = stack.pop(); cur.append(x)
+                    for c in range(n):
+                        if c not in seen and near(x, c): seen.add(c); stack.append(c)
+                comp.append(cur)
+            out = []
+            for cur in comp:
+                if len(cur) > 1:
+                    m = close([polys[x] for x in cur])
+                    if m.geom_type == 'Polygon' and abs(m.convex_hull.area - m.area) < 1e-6 and abs(m.area - sum(polys[x].area for x in cur)) < 1e-5:
+                        out.append(m); continue
+                out += [polys[x] for x in cur]
+            return out
         visible = {r: convex_merge([to2(x).difference(B) for x in fs]) for r, fs in plus.items()}
         for sign, regions in ((1, visible), (-1, {'inner': [B.difference(allplus)]})):
             for role, reg in regions.items():

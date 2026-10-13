@@ -13,9 +13,9 @@ WORLD = {
     'dharma.cycle': ('Spheres of Dharma', 'one Ritsudō cycle, DISCOVERIES #23'),
     'bodhi.kitB': ('Bodhi Seed', 'Kit B, DISCOVERIES #24'),
 }
-PIECE = {'cap': 'caps', 'ico': 'icosahedra', 'cleo': 'CLEO', 'axe': 'AXE', 'fuji': 'FUJI', 'core': 'icosahedron', 'nfru3': 'twisted triangular frusta',
-         'npyr5': 'pentagonal pyramids', 'npyr3': 'triangular pyramids', 'nfru5': 'twisted pentagonal frusta', 'nt1': 'Mosseri–Sadoc t1 tiles',
-         'ncap': 'caps', 'nwedge': 'edge wedges', 'nedge': 'edge pieces', 'nface': 'face pieces', 'centre': 'rhombic triacontahedron',
+PIECE = {'cap': 'caps', 'ico': 'icosahedra', 'cleo': 'CLEO', 'axe': 'AXE', 'fuji': 'FUJI', 'core': 'icosahedron', 'nfru3': 'Vajra (twist)',
+         'npyr5': 'Stupa', 'npyr3': 'Cleo-low', 'nfru5': 'Monkey Staff', 'nt1': 'Mosseri–Sadoc t1 tiles',
+         'ncap': 'caps', 'nwedge': 'Vajra-blade', 'nedge': 'Sevenfold-blade', 'nface': 'Cleo-low 2', 'centre': 'rhombic triacontahedron',
          'B1': 'Vajras', 'copy': 'triacontahedra', 'B5L': 'Diadems (left)', 'B5R': 'Diadems (right)', 'B4': 'Crown Jewels'}
 # What each step is or may be. Convex steps: the classic solid (checked by face counts). Others: leads to check.
 NOTES = {

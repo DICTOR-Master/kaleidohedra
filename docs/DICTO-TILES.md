@@ -60,10 +60,11 @@ Clusters: Lotus seed, UNITY, Venus (Fly Trap), DICTO Stella-Corona, Kepler Star 
 
 The arrangement of twelve triacontahedra around a rhombic hexecontahedron is S. Kabai's (Wolfram Demonstrations Project).
 
-### Spheres of Dharma tiles (#23, doi:10.5281/zenodo.23310833); names to come
-Pentagonal pyramid (icosidodecahedron cap), twisted triangular frustum, triangular pyramid (dodecahedron corner), twisted pentagonal
-frustum, the Mosseri–Sadoc tile t1 at scale 1/φ (credited), pentagonal cap, hexagonal cap (a triangle of rhombi), edge wedge, edge
-piece and face piece.
+### Spheres of Dharma tiles (#23, doi:10.5281/zenodo.23310833); names by DICTO
+Vajra (twist) (twisted triangular frustum), **Stupa** (pentagonal pyramid, the icosidodecahedron cap; named 2026-10-13), Cleo-low
+(triangular pyramid, the dodecahedron corner), **Monkey Staff** (twisted pentagonal frustum; named 2026-10-13), the Mosseri–Sadoc
+tile t1 at scale 1/φ (credited), the pentagonal cap (Johnson solid J2), Shield (hexagonal cap), Vajra-blade (edge wedge),
+Sevenfold-blade (edge piece) and Cleo-low 2 (face piece).
 
 ### Classical solids used throughout
 Regular icosahedron and dodecahedron, icosidodecahedron, truncated icosahedron (fullerene cage), rhombic triacontahedron, rhombic

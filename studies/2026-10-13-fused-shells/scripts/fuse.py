@@ -18,7 +18,7 @@ def hull_faces(P):
     for eq, simplex in zip(h.equations, h.simplices):
         n, d = eq[:3], -eq[3]
         for f in faces:
-            if np.allclose(f[0], n, atol=1e-4) and abs(f[1] - d) < 1e-4:
+            if np.allclose(f[0], n, atol=2e-4) and abs(f[1] - d) < 2e-4:
                 f[2].update(simplex); break
         else:
             faces.append([n, d, set(simplex)])
