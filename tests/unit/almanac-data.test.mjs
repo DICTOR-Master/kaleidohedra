@@ -59,6 +59,19 @@ test("DICTO's entries have a label, description and how-to in every language", (
   }
 });
 
+test('the older pieces and lattice ideas have a label and description in every language', () => {
+  const prefix = { piece: 'alm.p', concept: 'alm.c' };
+  for (const entry of ALMANAC_ENTRIES.filter((e) => prefix[e.kind])) {
+    for (const lang of LANG_ORDER) {
+      for (const part of ['label', 'desc']) {
+        const key = `${prefix[entry.kind]}.${entry.id.split(':').pop()}.${part}`;
+        const text = t(key, lang);
+        assert.ok(text && text !== key && (lang === 'en' || text !== t(key, 'en') || part === 'label'), `"${key}" missing in ${lang}`);
+      }
+    }
+  }
+});
+
 test('every Almanac entry id is globally unique across pieces/concepts/history', () => {
   const ids = ALMANAC_ENTRIES.map((e) => e.id);
   assert.equal(new Set(ids).size, ids.length, 'duplicate id found across ALMANAC_ENTRIES');

@@ -23,8 +23,14 @@ import { polyShapeEdges } from './poly-shapes.js';
 const lang = () => getSettings().language;
 // DICTO's findings and the known results have i18n words (alm.d.<key>.*); DICTO's pieces their own names.
 const WORDED = new Set(['dicto', 'known']);
-const labelOf = (e) => (WORDED.has(e.kind) ? t(`alm.d.${e.key}.label`, lang()) : e.label);
+// The older pieces and lattice ideas (alm.p.* / alm.c.*, DICTO 2026-10-13: every entry in 7 languages),
+// keyed by the last part of their id ('tool:pieceType:rd' -> rd, 'concept:rdSplits' -> rdSplits).
+const OLD_KEY = { piece: 'alm.p', concept: 'alm.c' };
+const oldKey = (e, part) => `${OLD_KEY[e.kind]}.${e.id.split(':').pop()}.${part}`;
+const textOf = (e, part) => (WORDED.has(e.kind) ? t(`alm.d.${e.key}.${part}`, lang()) : OLD_KEY[e.kind] ? t(oldKey(e, part), lang()) : e[part]);
+const labelOf = (e) => textOf(e, 'label');
 const KIND_KEY = { dicto: 'alm.kind.dicto', dictoPiece: 'alm.kind.pieces', known: 'alm.kind.known' };
+const OLD_KIND_KEY = { piece: 'alm.kind.piece', concept: 'alm.kind.concept' };
 import { iconFrame, MARKS } from './wheel-icons.js';
 
 const CSS = `
@@ -122,8 +128,6 @@ function injectCssOnce() {
 // real section heading here -- markKey-less entries (the 2 lattice
 // concepts, spec section 6's open question) simply render with no icon
 // (.almanac-*-icon:empty collapses to nothing) rather than a placeholder.
-const KIND_LABEL = { piece: 'Pieces', concept: 'Lattice Concepts', history: 'History' };
-
 function iconHtml(markKey, label) {
   return markKey && MARKS[markKey] ? iconFrame(MARKS[markKey], { title: label }) : '';
 }
@@ -138,13 +142,13 @@ function iconHtml(markKey, label) {
 function statsHtml(stats) {
   if (!stats) return '';
   if (typeof stats.vertexCount === 'number') {
-    return `<div class="almanac-detail-stats">${stats.vertexCount} vertices &middot; ${stats.edgeCount} edges &middot; ${stats.faceCount} faces</div>`;
+    return `<div class="almanac-detail-stats">${t('alm.stats', lang(), { v: stats.vertexCount, e: stats.edgeCount, f: stats.faceCount })}</div>`;
   }
   if (typeof stats.composedOf === 'number') {
     // Real singular/plural forms from almanac-data.js, not a naive "+s"
     // (a real bug found live: "Hemi RD half" -> "Hemi RD halfs").
-    const unit = stats.composedOf === 1 ? stats.unit : stats.unitPlural;
-    return `<div class="almanac-detail-stats">Composed of ${stats.composedOf} &times; ${unit}</div>`;
+    const unit = t(`alm.unit.${stats.unit.startsWith('Hemi') ? 'hemi' : 'wedge'}.${stats.composedOf === 1 ? 'one' : 'other'}`, lang());
+    return `<div class="almanac-detail-stats">${t('alm.composed', lang(), { n: stats.composedOf, unit })}</div>`;
   }
   return '';
 }
@@ -157,7 +161,7 @@ export function createAlmanac({ onOpen } = {}) {
   overlay.className = 'almanac-overlay';
   overlay.innerHTML = `
     <div class="almanac-card">
-      <div class="almanac-header"><span>Almanac</span><span class="almanac-header-tools"><button type="button" class="almanac-close">✕</button></span></div>
+      <div class="almanac-header"><span class="almanac-title"></span><span class="almanac-header-tools"><button type="button" class="almanac-close">✕</button></span></div>
       <div class="almanac-list"></div>
       <div class="almanac-detail"></div>
     </div>`;
@@ -180,11 +184,12 @@ export function createAlmanac({ onOpen } = {}) {
   // concepts, then history -- see almanac-data.js) rather than one flat
   // list, since which section an entry is in is itself useful context.
   function renderList() {
+    overlay.querySelector('.almanac-title').textContent = t('alm.title', lang());
     let sectionsHtml = '';
     let lastKind = null;
     ALMANAC_ENTRIES.forEach((entry, i) => {
       if (entry.kind !== lastKind) {
-        sectionsHtml += `<div class="almanac-kind">${KIND_KEY[entry.kind] ? t(KIND_KEY[entry.kind], lang()) : KIND_LABEL[entry.kind] ?? entry.kind}</div>`;
+        sectionsHtml += `<div class="almanac-kind">${t(KIND_KEY[entry.kind] ?? OLD_KIND_KEY[entry.kind] ?? '', lang()) || entry.kind}</div>`;
         lastKind = entry.kind;
       }
       sectionsHtml += `
@@ -236,11 +241,11 @@ export function createAlmanac({ onOpen } = {}) {
       return;
     }
     detailEl.innerHTML = `
-      <button type="button" class="almanac-back">&larr; Back</button>
-      <div class="almanac-detail-icon">${iconHtml(entry.markKey, entry.label)}</div>
-      <div class="almanac-detail-title">${entry.label}</div>
+      <button type="button" class="almanac-back">&larr; ${t('alm.back', lang())}</button>
+      <div class="almanac-detail-icon">${iconHtml(entry.markKey, labelOf(entry))}</div>
+      <div class="almanac-detail-title">${labelOf(entry)}</div>
       ${statsHtml(entry.stats)}
-      <div class="almanac-detail-desc">${entry.desc}</div>`;
+      <div class="almanac-detail-desc">${textOf(entry, 'desc')}</div>`;
     detailEl.querySelector('.almanac-back').addEventListener('click', showList);
     listEl.style.display = 'none';
     detailEl.style.display = 'block';
