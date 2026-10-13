@@ -148,6 +148,20 @@ whose triangles are the flat-ended triangles of the cuboctahedral member. (It is
 {100} and {111} surfaces have equal energy, since the Wulff construction puts the planes at distances proportional to the
 energies.) Why the same r also makes FUJI(r)'s base continue the cuboctahedron's face planes is not yet explained.
 
+## Does a blunted icosahedron fill space? (DICTO, 2026-10-14)
+
+An icosahedron with its triangles blunted into flat-ended triangles is the icosahedron cut by the dodecahedron's planes: 20
+flat-ended triangles and 12 pentagons (from the icosahedron to the icosidodecahedron). However deep the cut, it has only two
+dihedral angles, because the face directions never change: 138.19° (triangle to triangle, the icosahedron's) and 142.62°
+(triangle to pentagon, the icosidodecahedron's). **No member fills space on its own:** round any edge of a tiling the angles of
+the tiles meeting there add to 360° (or to 180° where the edge lies on another tile's face), and with every angle between 138° and
+143°, one is too few and two or three never make 180° or 360° (276°–285° and 414°–428°). The same argument rules out the plain
+icosahedron. Filling space needs partner pieces, as in the Lotus seed, the Sunstar and the Spheres of Dharma.
+
+By contrast the dictosphere's solid has angles 109.47° and 125.26°, and 109.47° + 2 × 125.26° = 360°: the angle condition for
+filling space holds there (as for the truncated octahedron, which does fill space); whether its other proportions allow it is
+not checked.
+
 ## Next
 
 1. Done: the STT's faces are FUJI(1/2)'s base (above).
