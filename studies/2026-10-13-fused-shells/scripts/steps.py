@@ -1,0 +1,138 @@
+# What each step becomes (DICTO 2026-10-13): build each structure outwards one piece type at a time (by distance from the
+# centre) and describe the whole build as ONE solid: its outer surface (faces of the union, coplanar neighbours merged),
+# corners, convex or not, and which face planes it uses (icosahedron/dodecahedron/triacontahedron planes = a stellation).
+import os, sys, json
+import numpy as np
+from scipy.spatial import ConvexHull
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from fuse import DATA
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+PHI = (1 + 5 ** 0.5) / 2
+AXES = {  # unit normals of the icosahedral face-plane families
+    '5-fold (dodecahedron planes)': [(0, 1, PHI), (0, -1, PHI), (1, PHI, 0), (-1, PHI, 0), (PHI, 0, 1), (-PHI, 0, 1)],
+    '3-fold (icosahedron planes)': [(1, 1, 1), (1, 1, -1), (1, -1, 1), (-1, 1, 1), (0, 1 / PHI, PHI), (0, -1 / PHI, PHI), (1 / PHI, PHI, 0), (-1 / PHI, PHI, 0), (PHI, 0, 1 / PHI), (-PHI, 0, 1 / PHI)],
+    '2-fold (triacontahedron planes)': [(1, 0, 0), (0, 1, 0), (0, 0, 1)] + [s for a, b, c in [(1, PHI, PHI ** 2)] for s in
+        [(a, b, c), (-a, b, c), (a, -b, c), (a, b, -c), (b, c, a), (-b, c, a), (b, -c, a), (b, c, -a), (c, a, b), (-c, a, b), (c, -a, b), (c, a, -b)]],
+}
+
+
+def plane(P, f, pc):
+    a, b, c = P[f[0]], P[f[1]], P[f[2]]
+    n = np.cross(b - a, c - a); n /= np.linalg.norm(n)
+    if np.dot(n, a - pc) < 0: n = -n
+    return n, float(np.dot(n, a))
+
+
+def key_pt(p): return tuple(np.round(p, 5))
+
+
+def describe_union(pieces):
+    """The union of the pieces as one solid: on every plane that carries piece faces, the faces pointing one way minus
+    those pointing the other way (2D clipping) is the union's surface there; each connected region is one face."""
+    from shapely.geometry import Polygon
+    from shapely.ops import unary_union
+    planes = []  # [n, d, +faces, -faces]
+    for P, F in pieces:
+        pc = P.mean(0)
+        for f in F:
+            n, d = plane(P, f, pc)
+            for q in planes:
+                if np.allclose(q[0], n, atol=1e-4) and abs(q[1] - d) < 1e-4: q[2].append(P[f]); break
+                if np.allclose(q[0], -n, atol=1e-4) and abs(q[1] + d) < 1e-4: q[3].append(P[f]); break
+            else: planes.append([n, d, [P[f]], []])
+    faces = []
+    for n, d, plus, minus in planes:
+        u = np.cross(n, [1, 0, 0] if abs(n[0]) < 0.9 else [0, 1, 0]); u /= np.linalg.norm(u); v = np.cross(n, u)
+        to2 = lambda poly: Polygon([(float(p @ u), float(p @ v)) for p in poly]).buffer(0)
+        A = unary_union([to2(x) for x in plus]); B = unary_union([to2(x) for x in minus]) if minus else Polygon()
+        for region, sign in ((A.difference(B), 1), (B.difference(A), -1)):
+            for g in getattr(region, 'geoms', [region]):
+                if g.is_empty or g.area < 1e-7: continue
+                g = g.buffer(1e-7).buffer(-1e-7).simplify(1e-6)
+                for h in getattr(g, 'geoms', [g]):
+                    if h.area < 1e-7: continue
+                    if h.area < 1e-4: continue  # slivers from rounding
+                    if d * sign < 0: continue  # facing the centre: none of these builds is hollow; one rounding mismatch on one Dharma plane
+                    faces.append({'n': n * sign, 'd': d * sign, 'sides': corners2d(list(h.exterior.coords)[:-1]), 'holes': len(h.interiors), 'area': h.area})
+    allP = np.vstack([P for P, _ in pieces])
+    vol = sum(ConvexHull(P).volume for P, _ in pieces)
+    hull = ConvexHull(allP)
+    fams, sides = {}, {}
+    for g in faces:
+        fam = next((name for name, ax in AXES.items() if any(abs(abs(np.dot(g['n'], a)) - 1) < 1e-4 for a in ax)), 'other')
+        fams.setdefault(fam, set()).add(round(g['d'], 4))
+        sides[g['sides']] = sides.get(g['sides'], 0) + 1
+    distinct = []
+    for g in faces:
+        if not any(np.allclose(g['n'], q[0], atol=1e-4) and abs(g['d'] - q[1]) < 1e-3 for q in distinct): distinct.append((g['n'], g['d']))
+    return {'faces': len(faces), 'planes': len(distinct), 'faceShapes': {f'{k}-gon': v for k, v in sorted(sides.items())},
+            'planeFamilies': {k: sorted(v) for k, v in fams.items()}, 'holesInFaces': sum(f['holes'] for f in faces),
+            'convex': bool(abs(hull.volume - vol) < 1e-5 * vol), 'volume': round(vol, 5), 'radius': round(float(np.linalg.norm(allP, axis=1).max()), 4)}
+
+
+def corners2d(pts):
+    """Number of true corners of a 2D polygon (points along a straight edge dropped)."""
+    q = []
+    for p in pts:
+        if not q or np.hypot(p[0] - q[-1][0], p[1] - q[-1][1]) > 1e-4: q.append(p)
+    if len(q) > 1 and np.hypot(q[0][0] - q[-1][0], q[0][1] - q[-1][1]) <= 1e-4: q.pop()
+    pts = q
+    k, n = 0, len(pts)
+    for i in range(n):
+        a, b, c = np.array(pts[i - 1]), np.array(pts[i]), np.array(pts[(i + 1) % n])
+        u, v = b - a, c - b
+        if np.linalg.norm(u) > 1e-5 and np.linalg.norm(v) > 1e-5 and abs(u[0] * v[1] - u[1] * v[0]) > 2e-3 * np.linalg.norm(u) * np.linalg.norm(v): k += 1
+    return k
+
+
+def area(poly):
+    c = poly.mean(0)
+    return sum(np.linalg.norm(np.cross(poly[i] - c, poly[(i + 1) % len(poly)] - c)) / 2 for i in range(len(poly)))
+
+
+def set_axes(groups):
+    """Symmetry axes of the data itself, from the icosahedron (Karma, Dharma) or triacontahedron (Bodhi) at the centre:
+    corner directions, face normals and edge-midpoint directions, named by how many faces meet / sides there are."""
+    P, F = min((x for xs in groups.values() for x in xs), key=lambda x: np.linalg.norm(x[0].mean(0)))
+    from scipy.spatial import ConvexHull
+    h = ConvexHull(P)
+    u = lambda v: v / np.linalg.norm(v)
+    corner = [u(p) for p in P]
+    normal = [u(e[:3]) for e in h.equations]
+    edge = [u((P[a] + P[b]) / 2) for a in range(len(P)) for b in range(a + 1, len(P)) if abs(np.linalg.norm(P[a] - P[b]) - min(np.linalg.norm(P[i] - P[j]) for i in range(len(P)) for j in range(i + 1, len(P)))) < 1e-4]
+    AXES.clear()
+    AXES.update({'5-fold': [], '3-fold': [], '2-fold': edge})
+    for v in corner + normal:
+        k = sum(abs(np.dot(v, w) - np.dot(v, v)) < 1e-6 for w in [v])  # placeholder, classified below
+    # classify corner/normal directions by their symmetry: count faces of the centre solid touching the corner
+    ico = len(P) == 12
+    AXES['5-fold' if ico else '3-fold'].extend(corner if ico else [])
+    AXES['3-fold' if ico else '5-fold'].extend(normal if ico else [])
+    if not ico:  # triacontahedron: corners are 5-fold (12) and 3-fold (20); face normals are 2-fold
+        r = np.linalg.norm(P, axis=1)
+        AXES['5-fold'] = [u(p) for p, ri in zip(P, r) if ri > r.mean()]
+        AXES['3-fold'] = [u(p) for p, ri in zip(P, r) if ri <= r.mean()]
+        AXES['2-fold'] = normal
+    AXES['2-fold'] = AXES['2-fold'] or edge
+
+
+if __name__ == '__main__':
+    out = {}
+    for view, pieces in DATA.items():
+        allP = np.array([p for _, V, _ in pieces for p in V], float); c0 = allP.mean(0)
+        groups = {}
+        for r, V, F in pieces:
+            P = np.array(V, float) - c0
+            groups.setdefault(f'{r}@{np.linalg.norm(P.mean(0)):.2f}', []).append((P, F))
+        set_axes(groups)
+        order = sorted(groups, key=lambda g: np.mean([np.linalg.norm(P.mean(0)) for P, _ in groups[g]]))
+        print('==', view)
+        built, steps = [], []
+        for g in order:
+            built += groups[g]
+            d = describe_union(built); d['added'] = f'{g} x{len(groups[g])}'
+            steps.append(d)
+            print(f"  + {d['added']:<16} -> {'CONVEX' if d['convex'] else 'non-convex'}, {d['faces']} faces {d['faceShapes']}; plane distances {d['planeFamilies']}")
+        out[view] = steps
+    json.dump(out, open(os.path.join(HERE, '..', 'steps.json'), 'w'), indent=1)

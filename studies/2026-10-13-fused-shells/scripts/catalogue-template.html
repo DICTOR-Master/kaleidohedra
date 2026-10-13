@@ -1,0 +1,175 @@
+<title>Fused Shells Catalogue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,650&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one big turnable viewer up top, then each structure as a row of step cards read left to right, centre outwards. */
+:root {
+  --bg: #0b0f16; --panel: #121925; --line: #243145; --fg: #dbe4ef; --muted: #8796ab;
+  --new: #ff9a52; --old: #6f8fae; --convex: #5fd38a; --lead: #ffc857;
+  --display: 'Literata', Georgia, serif; --body: 'Atkinson Hyperlegible', system-ui, sans-serif; --mono: 'JetBrains Mono', ui-monospace, monospace;
+  color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font: 15px/1.55 var(--body); margin: 0; padding-inline: 16px; padding-block: 20px 40px; }
+main { max-width: 1120px; margin: 0 auto; display: grid; gap: 28px; }
+h1, h2 { font-family: var(--display); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(26px, 4vw, 38px); font-weight: 650; }
+h2 { font-size: 22px; font-weight: 650; }
+.lede { color: var(--muted); max-width: 68ch; margin: 6px 0 0; }
+.mark { font: 600 12px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--lead); }
+.viewer { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 18px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+@media (max-width: 760px) { .viewer { grid-template-columns: 1fr; } }
+#stage { width: 100%; aspect-ratio: 1; max-width: 100%; touch-action: none; cursor: grab; border-radius: 8px; background: #070a10; display: block; }
+.facts { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.facts .where { font: 600 12px var(--mono); color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+.facts h3 { font: 650 20px var(--display); margin: 0; }
+dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; font-variant-numeric: tabular-nums; }
+dt { color: var(--muted); } dd { margin: 0; font-family: var(--mono); font-size: 14px; }
+.chip { display: inline-block; padding: 1px 8px; border-radius: 999px; font: 600 12px var(--mono); border: 1px solid; }
+.chip.convex { color: var(--convex); border-color: var(--convex); } .chip.non { color: var(--muted); border-color: var(--line); }
+.note { border-left: 3px solid var(--lead); padding: 4px 0 4px 10px; color: var(--fg); }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 13px; color: var(--muted); align-items: center; }
+.sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 5px; }
+label.tog { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+section { display: grid; gap: 10px; }
+.sub { color: var(--muted); font-size: 14px; }
+.row { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; scroll-snap-type: x proximity; }
+.card { flex: 0 0 138px; scroll-snap-align: start; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 6px; display: grid; gap: 4px; cursor: pointer; text-align: left; color: inherit; font: inherit; }
+.card:focus-visible, .card[aria-pressed="true"] { outline: 2px solid var(--new); outline-offset: 1px; }
+.card img { width: 100%; aspect-ratio: 1; border-radius: 5px; background: #070a10; display: block; }
+.card .n { font: 600 11px var(--mono); color: var(--muted); }
+.card .a { font-size: 13px; line-height: 1.3; }
+.card .flag { font: 600 11px var(--mono); }
+.card .flag.c { color: var(--convex); } .card .flag.l { color: var(--lead); } .card .flag.x { color: var(--muted); }
+footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 12px; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>
+
+<main>
+  <header>
+    <div class="mark">DICTO · dictospheres.com · study 2026-10-13</div>
+    <h1>Fused Shells Catalogue</h1>
+    <p class="lede">Each structure built outwards one kind of piece at a time, and every step taken as one solid: the pieces fused, only the outside counted. Convex steps are classic solids; the others are what lies between them. Names marked “lead” are possibilities still to check.</p>
+  </header>
+
+  <div class="viewer">
+    <canvas id="stage" width="720" height="720" aria-label="Turnable view of the chosen step; drag to turn"></canvas>
+    <div class="facts" aria-live="polite">
+      <div class="where" id="where"></div>
+      <h3 id="title"></h3>
+      <div><span class="chip" id="chip"></span></div>
+      <dl>
+        <dt>Faces</dt><dd id="faces"></dd>
+        <dt>Face shapes</dt><dd id="shapes"></dd>
+        <dt>Planes</dt><dd id="planes"></dd>
+      </dl>
+      <div class="note" id="note"></div>
+      <div class="legend">
+        <span><span class="sw" style="background:var(--new)"></span>pieces added at this step</span>
+        <span><span class="sw" style="background:var(--old)"></span>earlier steps</span>
+        <label class="tog"><input type="checkbox" id="onlyNew"> only this step's pieces</label>
+      </div>
+      <div class="sub">Drag to turn.</div>
+    </div>
+  </div>
+
+  <div id="worlds"></div>
+
+  <footer>Faces are the outside of the fused pieces: faces lying in one plane and touching count as one. “Planes” counts the different planes those faces lie in; a step whose faces all lie on a classic solid's face planes is a stellation of it. Data: studies/2026-10-13-fused-shells (steps.py). DICTO · dictospheres.com</footer>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const DATA = /*DATA*/null;
+const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const NEW = new THREE.Color(css('--new')), OLD = new THREE.Color(css('--old'));
+
+function geometryFor(world, k, onlyNew) {
+  const pos = [], col = [], line = [];
+  world.steps.slice(0, k + 1).forEach((s, i) => {
+    if (onlyNew && i !== k) return;
+    const c = i === k ? NEW : OLD;
+    for (const p of s.pieces) for (const f of p.f) {
+      for (let j = 1; j + 1 < f.length; j++) for (const q of [f[0], f[j], f[j + 1]]) { pos.push(...p.v[q]); col.push(c.r, c.g, c.b); }
+      f.forEach((q, j) => line.push(...p.v[q], ...p.v[f[(j + 1) % f.length]]));
+    }
+  });
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+  g.computeVertexNormals();
+  const l = new THREE.BufferGeometry(); l.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+  return [g, l];
+}
+
+const canvas = document.getElementById('stage');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1));
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 50); camera.position.set(0, 0, 4.4);
+scene.add(new THREE.AmbientLight(0xffffff, 0.45));
+const sun = new THREE.DirectionalLight(0xffffff, 0.8); sun.position.set(2, 3, 4); scene.add(sun);
+const holder = new THREE.Group(); scene.add(holder);
+holder.rotation.set(0.35, -0.5, 0);
+const mat = new THREE.MeshLambertMaterial({ vertexColors: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
+const lineMat = new THREE.LineBasicMaterial({ color: 0x05080d });
+function show(world, k, onlyNew) {
+  for (const c of [...holder.children]) { holder.remove(c); c.geometry.dispose(); }
+  const [g, l] = geometryFor(world, k, onlyNew);
+  holder.add(new THREE.Mesh(g, mat), new THREE.LineSegments(l, lineMat));
+}
+function resize() { const w = canvas.clientWidth || 360; renderer.setSize(w, w, false); }
+function draw() { renderer.render(scene, camera); }
+
+// Thumbnails: the same renderer, one still per step.
+function thumb(world, k) {
+  const keep = holder.rotation.clone();
+  holder.rotation.set(0.35, -0.5, 0); renderer.setSize(220, 220, false); show(world, k, false); draw();
+  const url = canvas.toDataURL('image/png'); holder.rotation.copy(keep); return url;
+}
+
+let cur = { w: 0, k: 0 };
+const $ = (id) => document.getElementById(id);
+function select(w, k) {
+  cur = { w, k };
+  const world = DATA[w], s = world.steps[k];
+  $('where').textContent = `${world.name} · step ${k + 1} of ${world.steps.length}`;
+  $('title').textContent = k ? `+ ${s.adds}` : `Start: ${s.adds}`;
+  $('chip').textContent = s.convex ? 'convex' : 'not convex'; $('chip').className = `chip ${s.convex ? 'convex' : 'non'}`;
+  $('faces').textContent = s.faces;
+  $('shapes').textContent = Object.entries(s.shapes).map(([k2, v]) => `${v} × ${({ '3-gon': 'triangle', '4-gon': 'quadrilateral', '5-gon': 'pentagon', '6-gon': 'hexagon' })[k2] || k2}`).join(', ');
+  $('planes').textContent = s.planes;
+  $('note').textContent = s.note || 'Between two classic solids. No name yet.';
+  document.querySelectorAll('.card').forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.w == w && c.dataset.k == k)));
+  resize(); show(world, k, $('onlyNew').checked); draw();
+}
+$('onlyNew').addEventListener('change', () => select(cur.w, cur.k));
+
+// Drag to turn.
+let drag = null;
+canvas.addEventListener('pointerdown', (e) => { drag = { x: e.clientX, y: e.clientY }; canvas.setPointerCapture(e.pointerId); canvas.style.cursor = 'grabbing'; });
+canvas.addEventListener('pointermove', (e) => {
+  if (!drag) return;
+  holder.rotation.y += (e.clientX - drag.x) * 0.01; holder.rotation.x += (e.clientY - drag.y) * 0.01;
+  drag = { x: e.clientX, y: e.clientY }; draw();
+});
+const end = () => { drag = null; canvas.style.cursor = 'grab'; };
+canvas.addEventListener('pointerup', end); canvas.addEventListener('pointercancel', end);
+addEventListener('resize', () => { resize(); draw(); });
+
+// The rows of cards.
+const host = $('worlds');
+DATA.forEach((world, w) => {
+  const sec = document.createElement('section');
+  sec.innerHTML = `<div><h2>${world.name}</h2><div class="sub">${world.sub} · ${world.steps.length} steps, centre outwards</div></div><div class="row"></div>`;
+  const row = sec.querySelector('.row');
+  world.steps.forEach((s, k) => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'card'; b.dataset.w = w; b.dataset.k = k;
+    const flag = s.convex ? '<span class="flag c">convex</span>' : s.note ? '<span class="flag l">lead</span>' : '<span class="flag x">in between</span>';
+    b.innerHTML = `<img alt="Step ${k + 1} of ${world.name}" src="${thumb(world, k)}"><span class="n">STEP ${k + 1}</span><span class="a">${k ? '+ ' + s.adds : s.adds}</span>${flag}`;
+    b.addEventListener('click', () => { select(w, k); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    row.appendChild(b);
+  });
+  host.appendChild(sec);
+});
+select(0, 1);
+</script>
