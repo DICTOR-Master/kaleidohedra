@@ -66,10 +66,14 @@ confirm with DICTO.
 5. **Polyhedraverse links** for each station's solid (the Transitional Shells group already holds stations 2, 3, 6 and 7).
 6. Browser tests on dicto-node through the real controls (phone and iPad sizes), then one push.
 
-## Open items for DICTO
+## Decided (DICTO, 2026-10-14)
 
-1. The world's name.
-2. Station 6 → 7: if no clean Bodhi → Dharma route exists, should Loop 1 go 5 → 8 → 7 → 1 instead (triacontahedron pair → truncated
-   icosahedron → add the Shields → Hecatodihedron → back)?
-3. Should the Star Chain Reaction be a branch at the dodecahedron, as proposed, or left out?
-4. Should the small stellated dodecahedron and great dodecahedron (the two unused Kepler–Poinsot solids) be stations between 2 and 4?
+- If no clean Bodhi → Dharma route exists, Loop 1 goes 5 → 8 → 7 → 1 (triacontahedron pair → truncated icosahedron → add the
+  Shields → Hecatodihedron → back).
+- The Star Chain Reaction is a branch at the dodecahedron (step in, step back out).
+- The small stellated dodecahedron and the great dodecahedron join Loop 1 as stations between 1 and 4 (order to be fixed by the
+  stellation steps in stage 2).
+
+## Open
+
+- The world's name (DICTO, later).
