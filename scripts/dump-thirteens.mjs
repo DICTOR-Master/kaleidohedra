@@ -40,6 +40,7 @@ const out = {
   deshi: { deshi: conv(ICOSA_PARTS.DESHI.pieces) },
   bodhi: { seed: SEEDS.bodhi.views.seed.filter((p) => p[0] !== 'outer'), kitA: SEEDS.bodhi.views.kitA, kitB: SEEDS.bodhi.views.kitB },
   dictoStar: { star: STAR.star.views.star },
-  rd13: { plain, rounded },
+  // Seven rounded blocks: one and its six nearest neighbours (plus and minus the block lattice's three short vectors), keyed.
+  rd13: { plain, rounded, blocks: [[0, 0, 0], ...R.L.flatMap((t) => [t, t.map((x) => -x)])].flatMap((t, b) => rounded.map(([role, V, F]) => [b ? `${role}N` : role, V.map((v) => v.map((x, q) => x + t[q])), F])) },
 };
 process.stdout.write(JSON.stringify(out));
