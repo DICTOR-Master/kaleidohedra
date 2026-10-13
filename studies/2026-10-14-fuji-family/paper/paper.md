@@ -30,13 +30,19 @@ FUJI was found as a gap piece. In DICTO's Lotus seed, twelve icosahedra round a 
 
 Its base had appeared before. Building cuboctahedral spheres of PET-bottle ports, DICTO wanted sharp equilateral triangles round the ports and settled for blunted, flat-ended ones. Colouring the Lotus seed, he hoped for regular hexagons and found the same flat-ended triangles. His DeltaZip and B1NR sculptures use rounded triangles, the curved form of the same idea.
 
+![Figure 1](figures/fig0-dicto-work.jpg)
+
+**Figure 1.** DICTO's work. (a) DeltaZips: deltahedra built from rings tied with zip ties, each ring a rounded triangle. (b) Thirteen dictospheres joined, twelve round one. (c) A dictosphere design, with caps on some of its ports. Photographs and design: DICTO.
+
+The same outline appears at the centre of the DeltaZips logo: the recycling symbol's three arrows make a triangle with its corners taken off. Measured on the logo as a flat-ended triangle with the same reach to the corners and to the sides, the symbol has r ≈ 0.79, and the DeltaZip ring photographed behind it r ≈ 0.48. Both lie well inside the family's range.
+
 This paper takes FUJI's shape as the starting point of a family (Section 2), finds its bases in a classical construction (Section 3), proves which member belongs to which antiprism (Section 4), and follows the members into tilings, crystals and DICTO's sculpture (Section 5).
 
 ## 2. The family
 
-![Figure 1](figures/fig1-family.jpg)
+![Figure 2](figures/fig1-family.jpg)
 
-**Figure 1.** FUJI(r) at one scale, all side edges 1: the tetrahedron (r = 0), r = 1/4, r = 1/2, FUJI (r = 1/φ), r = 0.8 and the flat hexagon (r = 1). Darker faces: the three equilateral triangles; lighter: the three isosceles triangles 1, 1, r.
+**Figure 2.** FUJI(r) at one scale, all side edges 1: the tetrahedron (r = 0), r = 1/4, r = 1/2, FUJI (r = 1/φ), r = 0.8 and the flat hexagon (r = 1). Darker faces: the three equilateral triangles; lighter: the three isosceles triangles 1, 1, r.
 
 **The base.** A flat-ended triangle with sides 1 and r is a big equilateral triangle of side 1 + 2r with an equilateral corner of side r cut off at each corner. In the literature it is the isogonal hexagon or truncated triangle t{3}. All six corners lie on one circle, of radius² (1 + r + r²)/3. So an apex at height h over the centre has all six side edges equal, and they are 1 when
 
@@ -60,9 +66,9 @@ Two of the angles are the same angle, 41.81° = arccos(√5/3). In the Lotus see
 
 ## 3. Odom's hexagon
 
-![Figure 2](figures/fig2-odom.png)
+![Figure 3](figures/fig2-odom.png)
 
-**Figure 2.** Extend each side of the gold triangle by e at both ends: the six ends make a flat-ended triangle with sides e and 1 + e. With e = φ (right) it is FUJI's base.
+**Figure 3.** Extend each side of the gold triangle by e at both ends: the six ends make a flat-ended triangle with sides e and 1 + e. With e = φ (right) it is FUJI's base.
 
 George Odom's construction relates the golden ratio to the equilateral triangle [Wolfram Demonstrations, Hexagons and the Golden Ratio]. Extend each side of an equilateral triangle by the golden ratio at both ends, and the six outer points form a hexagon whose two side lengths are in the golden ratio.
 
@@ -70,9 +76,9 @@ Rebuilt here for any extension e: the six points always form an equiangular hexa
 
 ## 4. The antiprism theorem
 
-![Figure 3](figures/fig3-antiprisms.png)
+![Figure 4](figures/fig3-antiprisms.png)
 
-**Figure 3.** The member that matches each antiprism: r = 2 cos(π/n) − 1. FUJI is the five-fold member.
+**Figure 4.** The member that matches each antiprism: r = 2 cos(π/n) − 1. FUJI is the five-fold member.
 
 In the Lotus seed, FUJI's base lies in one plane with the icosahedron triangles on its long sides: 41.81° + 138.19° = 180°. For any solid X with unit triangles, the same happens when L + D_X = 180°, where D_X is the solid's dihedral angle at the triangle's edge. That is, when
 
@@ -109,9 +115,9 @@ Damasceno, Engel and Glotzer studied truncated tetrahedra from the tetrahedron t
 
 ### 5.3 Breathing pyrochlores
 
-![Figure 4](figures/fig4-pyrochlore.jpg)
+![Figure 5](figures/fig4-pyrochlore.jpg)
 
-**Figure 4.** The Golden Breathing Pyrochlore world in the Kaleidohedra app. (a) Big (gold) and small (purple) tetrahedra meet tip to tip, with see-through truncated tetrahedra between them. (b) One kagome layer: every hexagon is FUJI's flat-ended triangle.
+**Figure 5.** The Golden Breathing Pyrochlore world in the Kaleidohedra app. (a) Big (gold) and small (purple) tetrahedra meet tip to tip, with see-through truncated tetrahedra between them. (b) One kagome layer: every hexagon is FUJI's flat-ended triangle.
 
 A pyrochlore is a network of tetrahedra sharing corners: every corner belongs to one "up" and one "down" tetrahedron, tip to tip. In a **breathing pyrochlore** the two sets have different sizes, edge 1 and edge r. Such materials exist among the chromium spinel oxides [Okamoto et al. 2013]. Every kagome hexagon then has sides 1 and r alternating, with all angles 120°: the flat-ended triangle with the breathing ratio as its r.
 
@@ -125,13 +131,13 @@ It can be built cell by cell in the Kaleidohedra app, with a slider for the brea
 
 ### 5.4 DICTO's dictospheres
 
-![Figure 5](figures/fig5-dictosphere.jpg)
+![Figure 6](figures/fig5-dictosphere.jpg)
 
-**Figure 5.** (a) A dictosphere modelled as a sphere 8.8 cm across with 3 cm ports: each point of the surface belongs to its nearest port. The curved squares (cyan) and curved flat-ended triangles (wisteria) meet short side to short side. (b) The flat counterpart: the solid whose 14 faces all touch the sphere, whose triangles are the cuboctahedral member r = (√3 − 1)/2.
+**Figure 6.** (a) A dictosphere modelled as a sphere 8.8 cm across with 3 cm ports: each point of the surface belongs to its nearest port. The curved squares (cyan) and curved flat-ended triangles (wisteria) meet short side to short side. (b) The flat counterpart: the solid whose 14 faces all touch the sphere, whose triangles are the cuboctahedral member r = (√3 − 1)/2.
 
 A dictosphere is a sphere. It carries 14 PET-bottle ports in a cuboctahedral arrangement: 6 on the cube axes (the squares) and 8 on the three-fold axes (the triangles). DICTO divides its surface round the ports into squares and triangles. With ports in both, the triangles' corners crowded the neighbouring holes, so he truncated the triangles to give even space round every port. The truncated triangles meet short side to short side.
 
-**Even space fixes the pattern.** On a sphere, an even margin round every port means that each point of the surface belongs to its nearest port. The squares and triangles are then the regions of the sphere nearest each port. Their boundaries are arcs of great circles halfway between neighbouring ports, and the triangles come out as curved flat-ended triangles. Projected from the centre onto flat planes, the same pattern is the solid whose 14 faces all touch one inner sphere (Figure 5b): the cube ∩ octahedron with both sets of faces at the same distance. Its flat-ended triangles are exactly the **cuboctahedral member, r = (√3 − 1)/2 = 0.366**. (The same rule in the flat: across an edge shared by two faces, the clearances from the two face centres to the edge are equal exactly when the faces lie at the same distance from the centre.)
+**Even space fixes the pattern.** On a sphere, an even margin round every port means that each point of the surface belongs to its nearest port. The squares and triangles are then the regions of the sphere nearest each port. Their boundaries are arcs of great circles halfway between neighbouring ports, and the triangles come out as curved flat-ended triangles. Projected from the centre onto flat planes, the same pattern is the solid whose 14 faces all touch one inner sphere (Figure 6b): the cube ∩ octahedron with both sets of faces at the same distance. Its flat-ended triangles are exactly the **cuboctahedral member, r = (√3 − 1)/2 = 0.366**. (The same rule in the flat: across an edge shared by two faces, the clearances from the two face centres to the edge are equal exactly when the faces lie at the same distance from the centre.)
 
 **Against DICTO's dictosphere.** The sphere's size comes from DICTO's steel-tape measurement: 8.4 cm along the surface between the centres of two triangles on either side of a square, an arc of 109.47°, which gives a radius of 4.40 cm. The sides along the surface then follow.
 

@@ -40,6 +40,8 @@ faces are the golden triangles of icosahedral geometry.
   cut (r) is what the family measures. First estimate from DICTO's figures (2026-10-14: about 2.5 cm of straight run
   between the ties on a side, about 3 cm corner to corner): each corner takes about 0.25 cm off each side, so r is about 0.1, near
   the sharp-triangle end. To be measured properly.
+- **The recycling symbol** (DICTO, 2026-10-14): the three chasing arrows outline a triangle with blunted corners, in the same
+  general range; it is the centre of DICTO's DeltaZips logo.
 
 ## Reading (2026-10-14)
 
