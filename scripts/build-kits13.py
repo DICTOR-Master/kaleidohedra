@@ -67,9 +67,9 @@ def mirror_id(pid):
         if pid in new and 'Diadem' in new[pid]['name'] and 'Diadem L' not in new[pid]['name']: new[pid]['name'] = new[pid]['name'].replace('Diadem', 'Diadem L')
         new[mid] = {'name': nm, 'vertices': (np.array(src['vertices']) @ D).tolist(), 'faces': [list(reversed(f)) for f in (src.get('faces') or new[pid]['faces'])]}
     return mid
-LABEL = {'octet': 'DICTO Icosahedral Octet', 'icosa13': 'DICTO Icosa-13', 'dodeca13': 'DICTO Dodeca-13', 'bodhi': 'The Bodhi Seed', 'unity': 'UNITY', 'dictoStar': 'DICTO-Star', 'deshi': 'DESHI', 'rd13': 'RD 13', 'hexed': 'Regular-hexagon ED 13', 'to13': 'Truncated octahedron 13', 'skewedRd13': 'DICTO skewed RD 13', 'bainRd13': 'Bain RD 13', 'bilinski13': 'Bilinski 13'}
+LABEL = {'octet': 'DICTO Icosahedral Octet', 'icosa13': 'DICTO Icosa-13', 'dodeca13': 'DICTO Dodeca-13', 'bodhi': 'The Bodhi Seed', 'unity': 'UNITY', 'dictoStar': 'DICTO-Star', 'deshi': 'DESHI', 'rd13': 'RD 13', 'hexed': 'Regular-hexagon ED 13', 'to13': 'Truncated octahedron 13', 'skewedRd13': 'DICTO skewed RD 13', 'bainRd13': 'Bain RD 13', 'bilinski13': 'Bilinski 13', 'jewel13': 'DICTO Jewel 13'}
 KITLABEL = {'octahedron': 'octahedron cell', 'tetrahedron': 'tetrahedron cell', 'octetBlock': 'octet block', 'allIcoBlock': 'all-icosahedral block', 'pieces': 'pieces', 'build': '63-piece build', 'units': 'units', 'stars': 'stars', 'seed': '13 triacontahedra', 'kitA': 'Kit A', 'kitB': 'Kit B',
-            'open': 'open', 'venus': 'VENUS', 'star': '', 'deshi': '', 'cluster': 'centre and twelve', 'plain': 'plain', 'rounded': 'DICTO Spheroid-13 RD (0.15)', 'fattest': 'Spheroid-13 RD, fattest (0.35)', 'roundedFree': 'Spheroid-13 RD, free centre (0.15)'}
+            'open': 'open', 'venus': 'VENUS', 'star': '', 'deshi': '', 'cluster': 'centre and twelve', 'withStellas': 'with the 6 stella octangulas', 'plain': 'plain', 'rounded': 'DICTO Spheroid-13 RD (0.15)', 'fattest': 'Spheroid-13 RD, fattest (0.35)', 'roundedFree': 'Spheroid-13 RD, free centre (0.15)'}
 kits = {}
 for kind, views in raw.items():
     for view, pieces in views.items():

@@ -112,6 +112,15 @@ const BILINSKI = (() => {
 })();
 const RDFAM = Object.fromEntries([['skewedRd13', 'DICTO_SKEWED_RD'], ['bainRd13', 'BAIN_RD'], ['bilinski13', BILINSKI]].map(([k, sp]) =>
   [k, clusterOf(sp, () => true, (f) => (!f ? `${k}Centre` : `${k}Cell`))]));
+// The DICTO Jewel 13 (DICTO 2026-10-13): in the Stella-Jewel checkerboard the Jewels sit on FCC (the even cells), so a Jewel has 12 Jewel
+// neighbours on the face diagonals, each meeting it across one whole window; the 6 stella octangulas on the axes each take a whole wall.
+const JW = POLYHEDRA.DRAGON_JEWEL, ST = POLYHEDRA.STELLA_OCTANGULA;
+const centred = (S) => { const c = [0, 1, 2].map((q) => S.vertices.reduce((t, v) => t + v[q], 0) / S.vertices.length); return S.vertices.map((v) => v.map((x, q) => x - c[q])); };
+const JV = centred(JW), SV = centred(ST), SP = (1 + Math.sqrt(5)) / 2;
+const FD = []; for (const a of [0, 1, 2]) for (const b of [0, 1, 2]) if (a < b) for (const sa of [1, -1]) for (const sb of [1, -1]) { const t = [0, 0, 0]; t[a] = sa * SP; t[b] = sb * SP; FD.push(t); }
+const jewelAt = (t, role) => [role, JV.map((v) => v.map((x, q) => x + t[q])), JW.faces];
+const jewelCluster = [jewelAt([0, 0, 0], 'jewelCentre'), ...FD.map((t) => jewelAt(t, 'jewelCell'))];
+const jewelStellas = [0, 1, 2].flatMap((a) => [1, -1].map((s) => { const t = [0, 0, 0]; t[a] = s * SP; return ['stella', SV.map((v) => v.map((x, q) => x + t[q])), ST.faces]; }));
 const TOS = POLYHEDRA.TRUNCATED_OCTAHEDRON;
 const sqAxes = TOS.faces.filter((f) => f.length === 4).map((f) => { const n = [0, 1, 2].map((q) => f.reduce((t, k) => t + TOS.vertices[k][q], 0)); return n.map(Math.abs).indexOf(Math.max(...n.map(Math.abs))); });
 const windowAxis = 2;
@@ -126,6 +135,7 @@ const out = {
   // Seven rounded blocks: one and its six nearest neighbours (plus and minus the block lattice's three short vectors), keyed.
   hexed: { cluster: HEXED.cluster, blocks: HEXED.blocks },
   to13: { cluster: TO13.cluster, blocks: TO13.blocks },
+  jewel13: { cluster: jewelCluster, withStellas: [...jewelCluster, ...jewelStellas] },
   ...Object.fromEntries(Object.entries(RDFAM).map(([k, c]) => [k, { cluster: c.cluster, blocks: c.blocks }])),
   rd13: { plain, rounded, ...(fattest ? { fattest } : {}), ...(roundedFree ? { roundedFree } : {}), blocks: [[0, 0, 0], ...R.L.flatMap((t) => [t, t.map((x) => -x)])].flatMap((t, b) => rounded.map(([role, V, F]) => [b ? `${role}N` : role, V.map((v) => v.map((x, q) => x + t[q])), F])) },
 };

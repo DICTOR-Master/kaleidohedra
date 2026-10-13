@@ -537,7 +537,7 @@ const K_WORLDS = [
     { label: 'Regular-hexagon ED 13', action: 'tool:thirteensWorld:hexed' },
     { label: 'Truncated octahedron 13', action: 'tool:thirteensWorld:to13' },
     { label: 'DICTO skewed RD 13', action: 'tool:thirteensWorld:skewedRd13' }, { label: 'Bain RD 13', action: 'tool:thirteensWorld:bainRd13' },
-    { label: 'Bilinski 13', action: 'tool:thirteensWorld:bilinski13' }] },
+    { label: 'Bilinski 13', action: 'tool:thirteensWorld:bilinski13' }, { label: 'DICTO Jewel 13', action: 'tool:thirteensWorld:jewel13' }] },
   { key: 'icosa', label: 'DICTO Icosa', pieces: [{ label: 'DICTO Icosa', action: 'tool:icosaWorld' }] },
   // DICTO Dodeca (DICTO 2026-10-13): the dodecahedral twin of DICTO Icosa.
   { key: 'dodeca', label: 'DICTO Dodeca', pieces: [{ label: 'DICTO Dodeca-13', action: 'tool:dodecaWorld:dodeca13' },

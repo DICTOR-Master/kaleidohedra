@@ -4,18 +4,19 @@
 import DATA from './thirteens-data.js';
 import { createLayeredWorld } from './world-chains.js';
 
-const KINDS = ['icosa13', 'dodeca13', 'bodhi', 'unity', 'dictoStar', 'deshi', 'rd13', 'hexed', 'to13', 'skewedRd13', 'bainRd13', 'bilinski13'];
+const KINDS = ['icosa13', 'dodeca13', 'bodhi', 'unity', 'dictoStar', 'deshi', 'rd13', 'hexed', 'to13', 'skewedRd13', 'bainRd13', 'bilinski13', 'jewel13'];
 // Crystal: the twelve and their centre turn see-through, so what fills between them shows.
 const GLASS = {
   icosa13: new Set(['ico', 'dodeca', 'j11']), dodeca13: new Set(['dodeca', 'centre']), bodhi: new Set(['copy']), unity: new Set(['j11']),
   dictoStar: new Set(['dodeca', 'centre']), deshi: new Set(['ico']), hexed: new Set(['hexByHex', 'hexByRhombus', 'hexByHexN', 'hexByRhombusN', 'hexCentreN']),
   to13: new Set(['toByHex', 'toBySquare', 'toByHexN', 'toBySquareN', 'toCentreN']),
+  jewel13: new Set(['jewelCell', 'stella']),
   ...Object.fromEntries(['skewedRd13', 'bainRd13', 'bilinski13'].map((k) => [k, new Set([`${k}Cell`, `${k}CellN`, `${k}CentreN`])])), rd13: new Set(['rd', 'rdA', 'rdB', 'rdAN', 'rdBN', 'rdCentreN']),
 };
 
 export function createThirteensWorld({ scene, fitView }) {
   return createLayeredWorld({ scene, fitView, name: 'thirteens', data: DATA, kinds: KINDS, glassRoles: GLASS, prefix: 'thirteens',
-    defaultParts: { icosa13: 'pieces', dodeca13: 'pieces', bodhi: 'seed', unity: 'open', dictoStar: 'star', deshi: 'deshi', rd13: 'plain', hexed: 'cluster', to13: 'cluster', skewedRd13: 'cluster', bainRd13: 'cluster', bilinski13: 'cluster' }, centreGold: true });
+    defaultParts: { icosa13: 'pieces', dodeca13: 'pieces', bodhi: 'seed', unity: 'open', dictoStar: 'star', deshi: 'deshi', rd13: 'plain', hexed: 'cluster', to13: 'cluster', skewedRd13: 'cluster', bainRd13: 'cluster', bilinski13: 'cluster', jewel13: 'cluster' }, centreGold: true });
 }
 
 /** Points whose convex hull previews a 13 in the DICTO menu (its first view). */
