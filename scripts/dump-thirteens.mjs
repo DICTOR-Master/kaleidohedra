@@ -1,5 +1,5 @@
 // Gathers every 13's kits from their checked sources into one JSON (DICTO 2026-10-13, docs/PLAN-13.md stage 1).
-// Usage: node scripts/dump-thirteens.mjs <rd13 rounded json (0.15)> [<rd13 fattest json (0.35)>] > thirteens-raw.json
+// Usage: node scripts/dump-thirteens.mjs <rd13 rounded json (0.15, exact RD centre)> <fattest json (0.35, exact RD centre)> <free-centre json (0.15)> > thirteens-raw.json
 import fs from 'fs';
 import { ICOSA_PARTS } from '../src/krp-core/src/geometry-extensions/icosa.js';
 import { DODECA13_PARTS } from '../src/krp-core/src/polyhedra/dodeca13.js';
@@ -36,6 +36,8 @@ const blockOf = (R) => R.cells.map((faces, ci) => {
 const rounded = blockOf(R);
 // The fattest outer pieces (DICTO 2026-10-13: "I like the fattest RDs"), minimum thickness 0.35, as a second rounded view.
 const fattest = process.argv[3] ? blockOf(JSON.parse(fs.readFileSync(process.argv[3], 'utf8'))) : null;
+// The free-centre block (DICTO 2026-10-13: exact RD centre as main, free as variant).
+const roundedFree = process.argv[4] ? blockOf(JSON.parse(fs.readFileSync(process.argv[4], 'utf8'))) : null;
 const out = {
   dodeca13: { pieces: conv(d13.pieces), units: conv(d13.units), stars: conv(d13.stars) },
   icosa13: { pieces: conv(ICOSA_PARTS.LOTUS_SEED.pieces), build: conv(ICOSA_PARTS.LOTUS_SEED.build), units: conv(ICOSA_PARTS.LOTUS_SEED.units) },
@@ -44,6 +46,6 @@ const out = {
   bodhi: { seed: SEEDS.bodhi.views.seed.filter((p) => p[0] !== 'outer'), kitA: SEEDS.bodhi.views.kitA, kitB: SEEDS.bodhi.views.kitB },
   dictoStar: { star: STAR.star.views.star },
   // Seven rounded blocks: one and its six nearest neighbours (plus and minus the block lattice's three short vectors), keyed.
-  rd13: { plain, rounded, ...(fattest ? { fattest } : {}), blocks: [[0, 0, 0], ...R.L.flatMap((t) => [t, t.map((x) => -x)])].flatMap((t, b) => rounded.map(([role, V, F]) => [b ? `${role}N` : role, V.map((v) => v.map((x, q) => x + t[q])), F])) },
+  rd13: { plain, rounded, ...(fattest ? { fattest } : {}), ...(roundedFree ? { roundedFree } : {}), blocks: [[0, 0, 0], ...R.L.flatMap((t) => [t, t.map((x) => -x)])].flatMap((t, b) => rounded.map(([role, V, F]) => [b ? `${role}N` : role, V.map((v) => v.map((x, q) => x + t[q])), F])) },
 };
 process.stdout.write(JSON.stringify(out));

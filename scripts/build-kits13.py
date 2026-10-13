@@ -1,7 +1,7 @@
 # Builds src/krp-core/src/polyhedra/kits13.js (DICTO 2026-10-13, docs/PLAN-13.md stage 3): every 13 kit as Polyhedraverse pieces
 # plus placements, from the centre out. A kit shape reuses a catalogue piece when exactly congruent (same size); otherwise it is
 # a new DICTO piece (mirror twins as their own piece). Also the RD 13 centres at four thicknesses as a graded set.
-# Usage: python3 scripts/build-kits13.py thirteens-raw.json catalogue.json rd13-m0.08.json rd13-m0.25.json
+# Usage: python3 scripts/build-kits13.py thirteens-raw.json catalogue.json <free-centre jsons for the graded set: 0.08 0.25 0.35 ...>
 import sys, json, numpy as np
 sys.path.insert(0, 'scripts')
 from importlib import import_module
@@ -11,7 +11,7 @@ D = np.diag([-1.0, 1, 1])
 NAMES = {'axe': 'AXE', 'fuji': 'FUJI', 'cleo': 'Cleo', 'hasu': 'Hasu', 'vajra': 'VAJRA', 'j11': 'J11', 'B1': 'Vajra (fine)', 'B2': 'Chatra',
          'B3': 'Mudra', 'B4': 'Crown Jewel', 'B5L': 'Diadem', 'wedge': 'Dodeca-13 wedge', 'needle': 'Dodeca-13 needle', 'unit': 'Dodeca-13 unit',
          'star': 'Dodeca-13 star', 'ico': 'Icosahedron', 'dodeca': 'Dodecahedron', 'idd': 'Icosidodecahedron', 'j63': 'J63',
-         'copy': 'Rhombic triacontahedron', 'centre': 'Centre', 'rd': 'Rhombic dodecahedron', 'rdCentre': 'RD 13 centre', 'rdA': 'RD 13 outer A', 'rdB': 'RD 13 outer B'}
+         'copy': 'Rhombic triacontahedron', 'centre': 'Centre', 'rd': 'Rhombic dodecahedron', 'rdCentre': 'Spheroid-13 RD centre', 'rdA': 'Spheroid-13 RD outer A', 'rdB': 'Spheroid-13 RD outer B'}
 def quat(R):
     # Shepperd's method: build from the largest of w, x, y, z, so half-turns (w = 0) come out right.
     tr = np.trace(R)
@@ -36,7 +36,8 @@ def find(V, F, role, kind, thick):
         m = ks.match(S, V)
         if m: return cid, m[0], m[1]
     base = f"KIT13_{kind.upper()}_{role.upper()}" + (f"_{thick}" if thick else '')
-    name = NAMES.get(role, role) + (f' ({thick.replace("T", "0.")})' if thick else '')
+    tag = {'T15': '0.15, exact RD centre', 'T35': '0.35, exact RD centre', 'T15F': '0.15, free centre'}.get(thick, thick.replace('T', '0.') if thick else '')
+    name = NAMES.get(role, role) + (f' ({tag})' if thick else '')
     if role in ('ico', 'dodeca', 'idd', 'copy', 'centre'): name += f' (edge {edge(V, F):.3f})'
     c = V.mean(0); new[base] = {'name': name, 'vertices': (V - c).tolist(), 'faces': F}
     return base, np.eye(3), c
@@ -50,12 +51,12 @@ def mirror_id(pid):
     return mid
 LABEL = {'icosa13': 'DICTO Icosa-13', 'dodeca13': 'DICTO Dodeca-13', 'bodhi': 'The Bodhi Seed', 'unity': 'UNITY', 'dictoStar': 'DICTO-Star', 'deshi': 'DESHI', 'rd13': 'RD 13'}
 KITLABEL = {'pieces': 'pieces', 'build': '63-piece build', 'units': 'units', 'stars': 'stars', 'seed': '13 triacontahedra', 'kitA': 'Kit A', 'kitB': 'Kit B',
-            'open': 'open', 'venus': 'VENUS', 'star': '', 'deshi': '', 'plain': 'plain', 'rounded': 'rounded (0.15)', 'fattest': 'fattest (0.35)'}
+            'open': 'open', 'venus': 'VENUS', 'star': '', 'deshi': '', 'plain': 'plain', 'rounded': 'DICTO Spheroid-13 RD (0.15)', 'fattest': 'Spheroid-13 RD, fattest (0.35)', 'roundedFree': 'Spheroid-13 RD, free centre (0.15)'}
 kits = {}
 for kind, views in raw.items():
     for view, pieces in views.items():
         if view == 'blocks': continue
-        thick = 'T15' if view == 'rounded' else 'T35' if view == 'fattest' else ''
+        thick = {'rounded': 'T15', 'fattest': 'T35', 'roundedFree': 'T15F'}.get(view, '')
         shapes, entries = ks.classify(pieces)
         ids = []
         for s in shapes: ids.append(find(s['V'], s['F'], s['role'], kind, thick))
@@ -73,9 +74,9 @@ for kind, views in raw.items():
             out.append({'shape': pid, 'position': (pos - cen).round(9).tolist(), 'quaternion': quat(rot)})
         out.sort(key=lambda o: np.linalg.norm(o['position']))
         kits[f'{kind}.{view}'] = {'label': ' · '.join(x for x in [LABEL[kind], KITLABEL.get(view, view)] if x), 'entries': out}
-# The graded set: RD 13 centres at the four thicknesses (0.15 and 0.35 come from their kits).
-for fn, tag in [(sys.argv[3], 'T08'), (sys.argv[4], 'T25')]:
-    R = json.load(open(fn)); faces = R['cells'][0]
+# The graded set (DICTO 2026-10-13): the free centres at each thickness given (the exact centres are plain rhombic dodecahedra).
+for fn in sys.argv[3:]:
+    R = json.load(open(fn)); faces = R['cells'][0]; tag = 'T%02d' % round(R['margin'] * 100)
     V, F = [], []
     for f in faces:
         idx = []
@@ -84,7 +85,9 @@ for fn, tag in [(sys.argv[3], 'T08'), (sys.argv[4], 'T25')]:
             if k is None: V.append(p); k = len(V) - 1
             idx.append(k)
         F.append(idx)
-    V = np.array(V); new[f'KIT13_RD13_RDCENTRE_{tag}'] = {'name': f'RD 13 centre ({tag.replace("T", "0.")})', 'vertices': (V - V.mean(0)).tolist(), 'faces': F}
+    V = np.array(V)
+    pid, _, _ = find(V, F, 'rdCentre', 'rd13', tag + 'F')
+    new[pid]['name'] = f'Spheroid-13 RD free centre ({R["margin"]})' if pid in new and pid.startswith('KIT13') else new.get(pid, {}).get('name')
 print(len(new), 'new pieces;', sum(1 for k in kits.values() for e in k['entries'] if e['shape'] in cat), 'placements reuse catalogue pieces')
 for k, v in kits.items():
     from collections import Counter
