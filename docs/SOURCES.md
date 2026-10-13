@@ -110,6 +110,11 @@ Dense packings of Platonic solids, pyritohedral and dodecahedral structures.
 - S. Torquato, Y. Jiao (2009). *Dense packings of polyhedra: Platonic and Archimedean solids*. <https://arxiv.org/abs/0909.0940>
 - J. de Graaf, R. van Roij, M. Dijkstra (2011). *Dense regular packings of irregular non-convex particles*. <https://arxiv.org/abs/1107.0603>
 - J. C. Lagarias, C. Zong (2012). *Mysteries in packing regular tetrahedra*. <https://www.ams.org/notices/201211/rtx121101540p.pdf>
+- K. Schütte, B. L. van der Waerden (1952). *Das Problem der dreizehn Kugeln*. Math. Ann. 125, 325-334. <https://doi.org/10.1007/BF01343127>
+- S. W. Golomb, L. R. Welch (1970). *Perfect codes in the Lee metric and the packing of polyominoes*. SIAM J. Appl. Math. 18, 302-317. <https://doi.org/10.1137/0118025>
+- S. Gravier, M. Mollard, C. Payan (1998). *On the non-existence of 3-dimensional tiling in the Lee metric*. European J. Combin. 19, 567-572. <https://doi.org/10.1006/eujc.1998.0211>
+- T. Etzion (2011). *Product constructions for perfect Lee codes*. <https://arxiv.org/abs/1103.3933>
+- A. Campello, G. C. Jorge, J. E. Strapasson, S. I. R. Costa (2015). *Perfect codes in the lp metric*. <https://arxiv.org/abs/1506.02517>
 
 ### Quasicrystals and aperiodic order
 
