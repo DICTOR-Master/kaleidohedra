@@ -67,11 +67,35 @@ faces are the golden triangles of icosahedral geometry.
   with **r = e/(1 + e)**. So e = φ gives **FUJI's base exactly** (sides φ and φ²), e = 1 gives the space-filler's r = 1/2, and
   e = 1/φ gives r = 1/φ². Every member of the family is an Odom hexagon.
 
+## Which FUJI(r) close gaps (checked 2026-10-14)
+
+In the Lotus seed FUJI's base lies in one plane with the three icosahedron triangles on its long sides (41.81° + 138.19° = 180°).
+The same test for other solids with unit triangles (`scripts/gaps.py`, `gaps.json`): FUJI(r) continues the plane of solid X's
+triangles when its base angle on the long sides plus X's dihedral there is 180°.
+
+| Solid (dihedral at the triangle's edge) | r | exact |
+|---|---|---|
+| icosahedron, pentagonal antiprism (138.19°) | 0.618034 | **1/φ: FUJI** |
+| cuboctahedron, triangle-square (125.26°) | 0.366025 | **(√3 − 1)/2**; base angle the 'magic angle' arctan √2 = 54.74° |
+| square antiprism, triangle-triangle (127.55°) | 0.414214 | **√2 − 1** (the silver ratio's inverse) |
+| rhombicuboctahedron, triangle-square (144.74°) | 0.724745 | **(√6 − 1)/2**; base angle arctan(1/√2) = 35.26° |
+| icosidodecahedron, triangle-pentagon (142.62°) | 0.691982 | base angle = δ, FUJI's own short-side angle |
+| snub cube, snub dodecahedron, rhombicosidodecahedron | 0.70–0.94 | no closed form looked for |
+| tetrahedron, octahedron, truncated tetrahedron, prisms | none | the octahedron gives r = 0, the tetrahedron itself |
+
+**The antiprism pattern** (`scripts/antiprisms.py`): for the n-gonal antiprism with unit edges, **r = 2 cos(π/n) − 1**, checked to
+10⁻¹² for n = 4 to 12, with n = 3 (the octahedron) giving r = 0. So the family is indexed by the antiprisms: the tetrahedron
+(n = 3), √2 − 1 (n = 4), **FUJI (n = 5, golden)**, √3 − 1 (n = 6), and r → 1 as n grows (the flat regular hexagon). A proof has
+not been written; the pattern is numerical so far.
+
+These are face-plane matches only: a full closure like the Lotus seed also needs the other gaps filled. The cuboctahedral member
+(√3 − 1)/2 is the one to test first against DICTO's cuboctahedron spheres.
+
 ## Next
 
 1. Done: the STT's faces are FUJI(1/2)'s base (above).
 2. Done: FUJI's base is Odom's golden hexagon (above).
-3. Which FUJI(r) close gaps with which solids (r = 1/2 shares FUJI's α)? Where do flat-ended triangles appear in DICTO's
+3. Done in part (face-plane matches above); next a full closure test for the cuboctahedral member. Where do flat-ended triangles appear in DICTO's
    cuboctahedral (FCC) work?
 
 The family's name is DICTO's to choose ("FUJI family" is a working label).
