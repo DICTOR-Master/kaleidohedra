@@ -246,3 +246,18 @@ reference library, not in this repo.
 - R. B. Fuller, E. J. Applewhite, *Synergetics* (1975): the jitterbug. Library, link.
 - P. J. Pearce, Minimum inventory maximum diversity building system, US 3,974,600 (1976). Library, PDF.
 - R. Verheyen, The complete set of jitterbug transformers and the analysis of their motion, Comput. Math. Appl. 17 (1989) 203–250, doi:10.1016/B978-0-08-037237-2.50023-4. *New*, link.
+
+## Icosahedral order and 3D field theory (later study, PLAN-CYCLES, 2026-10-14)
+
+- F. C. Frank (1952). *Supercooling of liquids*. Proc. R. Soc. A 215, 43–46. <https://doi.org/10.1098/rspa.1952.0194>
+- P. J. Steinhardt, D. R. Nelson, M. Ronchetti (1983). *Bond-orientational order in liquids and glasses*. Phys. Rev. B 28, 784. <https://doi.org/10.1103/PhysRevB.28.784>
+- S. Sachdev, D. R. Nelson (1985). *Order in metallic glasses and icosahedral crystals*. Phys. Rev. B 32, 4592. <https://doi.org/10.1103/PhysRevB.32.4592>
+- J.-F. Sadoc, R. Mosseri (1999). *Geometrical Frustration*. Cambridge University Press. <https://doi.org/10.1017/CBO9780511599934>
+- D. R. Nelson (2002). *Defects and Geometry in Condensed Matter Physics*. Cambridge University Press.
+- D. Poland, S. Rychkov, A. Vichi (2019). *The conformal bootstrap: theory, numerical techniques, and applications*. Rev. Mod. Phys. 91, 015002. <https://arxiv.org/abs/1805.04405>
+- A. Stergiou (2018). *Bootstrapping hypercubic and hypertetrahedral theories in three dimensions*. JHEP 05, 035. <https://arxiv.org/abs/1801.07127>
+- A. Stergiou (2019). *Bootstrapping MN and tetragonal CFTs in three dimensions*. SciPost Phys. 7, 010. <https://arxiv.org/abs/1904.00017>
+- S. R. Kousvos, A. Stergiou (2019). *Bootstrapping mixed correlators in three-dimensional cubic theories*. SciPost Phys. 6, 035. <https://arxiv.org/abs/1810.10015>
+- J. McKay (1980). *Graphs, singularities, and finite groups*. Proc. Symp. Pure Math. 37, 183–186. <https://doi.org/10.1090/pspum/037/604577>
+- A. B. Zamolodchikov (1989). *Integrals of motion and S-matrix of the (scaled) T=Tc Ising model with magnetic field*. Int. J. Mod. Phys. A 4, 4235. <https://doi.org/10.1142/S0217751X8900176X>
+- R. Coldea et al. (2010). *Quantum criticality in an Ising chain: experimental evidence for emergent E8 symmetry*. Science 327, 177. <https://doi.org/10.1126/science.1180085>

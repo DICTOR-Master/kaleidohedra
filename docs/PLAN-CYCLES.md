@@ -74,6 +74,24 @@ confirm with DICTO.
 - The small stellated dodecahedron and the great dodecahedron join Loop 1 as stations between 1 and 4 (order to be fixed by the
   stellation steps in stage 2).
 
+## Later study: icosahedral order, from our shells to 3D field theory
+
+Agreed by DICTO 2026-10-14, after the Cycles world. A reading and checking study, not a Fable job unless DICTO says so. Nothing from
+it goes into the world or the papers until it is checked.
+
+- **The link (published physics):** single-shell icosahedral packing (12 around 1) beats FCC/HCP locally (Frank 1952). It is
+  measured in supercooled liquids (Steinhardt, Nelson, Ronchetti 1983), and its ideal template is the 600-cell in curved space
+  (Sadoc and Mosseri; Sachdev and Nelson 1985). Our 13-clusters, AXE and CLEO (Mosseri–Sadoc tiles) sit on this route.
+- **3D conformal bootstrap:** run for polytope symmetries (hypercube, simplex: Stergiou 2018; dihedral: Stergiou 2019; cubic
+  island: Kousvos and Stergiou 2019). Two searches (2026-10-14) found **no bootstrap or ε-expansion study with icosahedral global
+  symmetry**. Not proof of absence: check the multiscalar fixed-point classifications (Osborn and Stergiou) next.
+- **E8 thread:** binary icosahedral group ↔ E8 (McKay 1980); E8 spectrum with mass ratio φ in a 2D field theory (Zamolodchikov
+  1989), measured in CoNb₂O₆ (Coldea et al. 2010); the 600-cell is the same group's polytope.
+- **Questions:** which of our shells are the flattened pieces of the 600-cell template, exactly (cell by cell)? Does an icosahedral
+  3D CFT exist in the literature, and if not, is that a well-posed open question to put to physicists?
+
+References: library section "Field theory" (2026-10-14).
+
 ## Open
 
 - The world's name (DICTO, later).
