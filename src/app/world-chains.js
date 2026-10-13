@@ -5,6 +5,7 @@
 // Words in all 7 languages (i18n chains.*); DICTO's names stay untranslated.
 import * as THREE from 'three';
 import CHAINS_DATA from './seeds-data.js';
+import MOVIE from './movie-names.js';
 import { ROOF_FOLD_WORLD_SCALE as WS } from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
@@ -39,7 +40,7 @@ const lang = () => getSettings().language;
 
 /** A world of nested shells (Multi-shell chains, DICTO Dodeca): data { kind: { views: { view: [[role, vertices, faces]] } } },
  *  words under '<prefix>.<kind>.<view>' and '<prefix>.note.<kind>'. */
-export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false }) {
+export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null }) {
   const STORAGE_KEY = storageKey(name);
   const group = new THREE.Group();
   group.visible = false;
@@ -95,6 +96,41 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     const l = Math.hypot(...sum) || 1;
     return sum.map((x) => (x / l) * dmax);
   }
+  // The build movie (DICTO 2026-10-14): the view built one piece at a time, ring by ring (rings: one kind of piece at one distance,
+  // in the order of movie-names.js, else by distance), each ring from the top of a five-fold axis down, then round it. film: how
+  // many pieces show (null: the movie is off and the view shows whole). The newest piece is orange.
+  let film = null, playing = null;
+  const films = new WeakMap();
+  function filmOf(list) {
+    if (films.has(list)) return films.get(list);
+    const all = list.flatMap((p) => p[1]), c0 = centreOf(all);
+    const cen = list.map(([, V]) => centreOf(V).map((c, i) => c - c0[i]));
+    const dist = cen.map((c) => Math.hypot(...c));
+    const key = (n) => `${list[n][0]}@${dist[n].toFixed(2)}`;
+    const named = movie?.[view.kind]?.[view.part[view.kind]] ?? [];
+    const ringIndex = new Map(named.map((r, i) => [r.ring, i]));
+    const rings = new Map();
+    list.forEach((_, n) => { const k = key(n); if (!rings.has(k)) rings.set(k, []); rings.get(k).push(n); });
+    const order = [...rings.keys()].sort((a, b) => (ringIndex.get(a) ?? 1e9) - (ringIndex.get(b) ?? 1e9) || Math.min(...rings.get(a).map((n) => dist[n])) - Math.min(...rings.get(b).map((n) => dist[n])));
+    // a five-fold axis: the centre piece's corner farthest from its middle (the icosahedron: any corner; the triacontahedron: a five-fold one)
+    const c = dist.indexOf(Math.min(...dist)), Vc = list[c][1], mc = centreOf(Vc);
+    const far = Vc.reduce((b, v) => (Math.hypot(...v.map((x, i) => x - mc[i])) > Math.hypot(...b.map((x, i) => x - mc[i])) ? v : b));
+    const ax = far.map((x, i) => x - mc[i]); const al = Math.hypot(...ax); const a = ax.map((x) => x / al);
+    const r1 = Math.abs(a[0]) < 0.9 ? [1, 0, 0] : [0, 1, 0];
+    const u = [a[1] * r1[2] - a[2] * r1[1], a[2] * r1[0] - a[0] * r1[2], a[0] * r1[1] - a[1] * r1[0]]; const ul = Math.hypot(...u);
+    const e1 = u.map((x) => x / ul), e2 = [a[1] * e1[2] - a[2] * e1[1], a[2] * e1[0] - a[0] * e1[2], a[0] * e1[1] - a[1] * e1[0]];
+    const dot = (p, q) => p[0] * q[0] + p[1] * q[1] + p[2] * q[2];
+    const polar = (n) => (dist[n] < 1e-9 ? 0 : Math.round(Math.acos(Math.max(-1, Math.min(1, dot(cen[n], a) / dist[n]))) * 1800 / Math.PI));
+    const seq = [], ends = [];
+    order.forEach((k, ri) => {
+      seq.push(...rings.get(k).sort((p, q) => polar(p) - polar(q) || Math.atan2(dot(cen[p], e2), dot(cen[p], e1)) - Math.atan2(dot(cen[q], e2), dot(cen[q], e1))));
+      ends.push({ at: seq.length, name: named[ringIndex.get(k) ?? -1]?.name ?? null });
+    });
+    const rank = new Map(seq.map((n, i) => [n, i]));
+    const f = { seq, rank, ends };
+    films.set(list, f);
+    return f;
+  }
   let radius = 1;
   function draw() {
     clearGroup();
@@ -115,9 +151,11 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     const GOLD = 0xffc857, ORANGE = 0xff9a52, DIM_GOLD = 0x8a7440;
     const centreIndex = centreGold ? dist.indexOf(Math.min(...dist)) : -1;
     const isCentreRole = (r) => /Centre(N)?$/.test(r) || /^(rdCentre|hexCentre|toCentre)/.test(r);
+    const fm = film === null ? null : filmOf(list);
     list.forEach(([role, V, F], n) => {
+      if (fm && fm.rank.get(n) >= film) return;
       const sh = shellOf(dist[n]); const top = Math.round(view.shells * (levels.length - 1));
-      if (sh > top && !ALWAYS_GLASS.has(role) && !view.crystal) return;
+      if (!fm && sh > top && !ALWAYS_GLASS.has(role) && !view.crystal) return;
       const see = ALWAYS_GLASS.has(role) || (view.crystal && (GLASS[view.kind]?.has(role) || sh > top));
       const b = see ? buf.glass : buf.solid;
       // Pulled apart: each piece moves out along the line from the centre through its own centre; see-through shells stay put.
@@ -130,6 +168,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       const P = V.map((p) => p.map((c, i) => (c - c0[i] + off[i]) * WS));
       let hex = role === 'ncap' && V.length === 7 ? 0xffc857 : (ROLE[role] ?? 0xb8c4bd);
       if (centreGold) hex = n === centreIndex || (isCentreRole(role) && hex !== DIM_GOLD) ? GOLD : (hex === GOLD ? ORANGE : hex);
+      if (fm && fm.rank.get(n) === film - 1) hex = ORANGE; // the newest piece of the movie
       colour.setHex(hex);
       for (const f of F) {
         for (let i = 1; i + 1 < f.length; i++) for (const k of [f[0], f[i], f[i + 1]]) { b.pos.push(...P[k]); b.col.push(colour.r, colour.g, colour.b); }
@@ -164,7 +203,9 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     <div class="w4d-row ch-size-row"><label class="hull-pick"><span class="ch-size-label"></span> <input type="range" class="st-slider" min="1" max="3" step="1"></label></div>
     <div class="w4d-row ch-apart-row"><label class="hull-pick"><span class="ch-apart-label"></span> <input type="range" class="st-slider" min="0" max="1200" step="1"></label></div>
     <div class="w4d-row ch-shells-row"><label class="hull-pick"><span class="ch-shells-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
-    <div class="w4d-row w4d-options"><button type="button" data-chains-byface></button><button type="button" data-chains-crystal></button></div>
+    <div class="w4d-row ch-film-row"><label class="hull-pick"><span class="ch-film-label"></span> <input type="range" class="st-slider" min="0" max="1" step="1"></label></div>
+    <div class="w4d-row st-note ch-film-note" aria-live="polite"></div>
+    <div class="w4d-row w4d-options"><button type="button" data-chains-play></button><button type="button" data-chains-byface></button><button type="button" data-chains-crystal></button></div>
     <div class="w4d-row st-note"></div>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, name);
@@ -175,6 +216,44 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   byFaceBtn.hidden = !byFace;
   const shellsInput = panel.querySelector('.ch-shells-row input');
   const sizeInput = panel.querySelector('.ch-size-row input');
+  const filmRow = panel.querySelector('.ch-film-row'), filmInput = filmRow.querySelector('input'), filmNote = panel.querySelector('.ch-film-note');
+  const playBtn = panel.querySelector('[data-chains-play]');
+  filmRow.hidden = playBtn.hidden = filmNote.hidden = !movie;
+  // DICTO's piece names stay as they are; the classical pieces are translated.
+  const PIECE = { axe: 'AXE', laxe: 'AXE', cleo: 'CLEO', lcleo: 'CLEO', fuji: 'FUJI', lfuji: 'FUJI', nfru3: 'Vajra (twist)', npyr5: 'Stupa', npyr3: 'Cleo-low',
+    nfru5: 'Monkey Staff', nt1: 't1', nwedge: 'Vajra-blade', nedge: 'Sevenfold-blade', nface: 'Cleo-low 2', B1: 'Vajra (fine)', B2: 'Chatra', B3: 'Mudra',
+    B4: 'Crown Jewel', B5L: 'Diadem L', B5R: 'Diadem R', lj11: 'J11' };
+  const pieceName = (role, V, L) => (role === 'ncap' && V.length === 7 ? 'Shield' : PIECE[role]
+    ?? t({ ico: 'solid.icosahedron', core: 'solid.icosahedron', cap: 'piece.cap', ncap: 'piece.cap', lcap: 'piece.cap', centre: 'solid.rhombicTriacontahedron', copy: 'solid.rhombicTriacontahedron' }[role] ?? role, L));
+  const solidName = (k, L) => (k === 'hecatodihedron' ? 'DICTO Truncated-Icosahedral Hecatodihedron' : t(`solid.${k}`, L));
+  function renderFilm() {
+    if (!movie || !active) return;
+    const L = lang(), list = viewList(), fm = filmOf(list), n = film ?? fm.seq.length;
+    filmInput.max = String(fm.seq.length); filmInput.value = String(n);
+    panel.querySelector('.ch-film-label').textContent = t('chains.film.label', L);
+    playBtn.textContent = playing ? `⏸ ${t('chains.film.pause', L)}` : `▶ ${t('chains.film.play', L)}`;
+    if (film === null) { filmNote.textContent = ''; return; }
+    const [role, V] = n ? list[fm.seq[n - 1]] : [null, []];
+    const done = fm.ends.find((e) => e.at === n && e.name);
+    filmNote.textContent = n ? `${t('chains.film.piece', L, { n, total: fm.seq.length, piece: pieceName(role, V, L) })}${done ? ` · ${solidName(done.name, L)}` : ''}` : '';
+  }
+  const stopFilm = () => { if (playing) { clearInterval(playing); playing = null; } };
+  const setFilm = (n) => { film = n; draw(); renderFilm(); };
+  filmInput.addEventListener('input', () => { stopFilm(); setFilm(Number(filmInput.value)); });
+  playBtn.addEventListener('click', () => {
+    if (playing) { stopFilm(); renderFilm(); return; }
+    const fm = filmOf(viewList()), total = fm.seq.length;
+    let n = film === null || film >= total ? 0 : film;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // one piece at a time, quick enough that a large view takes about half a minute; with reduced motion, a ring at a time
+    const step = reduce ? null : Math.max(1, Math.round(total / 300));
+    playing = setInterval(() => {
+      n = reduce ? (fm.ends.find((e) => e.at > n)?.at ?? total) : Math.min(total, n + step);
+      setFilm(n);
+      if (n >= total) { stopFilm(); renderFilm(); }
+    }, reduce ? 900 : 100);
+    renderFilm();
+  });
   function renderPanel() {
     panel.classList.toggle('visible', active);
     if (!active) return;
@@ -192,9 +271,10 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     crystalBtn.textContent = t(view.crystal ? 'chains.crystal.on' : 'chains.crystal.off', L);
     byFaceBtn.textContent = t(view.byFace ? 'chains.byFace.on' : 'chains.byFace.off', L);
     byFaceBtn.classList.toggle('active', view.byFace);
-    panel.querySelector('.st-note').textContent = t(`${prefix}.note.${view.kind}`, L);
+    panel.querySelector('.st-note:not(.ch-film-note)').textContent = t(`${prefix}.note.${view.kind}`, L);
+    renderFilm();
   }
-  partSelect.addEventListener('change', () => { if (!DATA[view.kind].views[partSelect.value]) return; view.part[view.kind] = partSelect.value; save(); draw(); fit(); });
+  partSelect.addEventListener('change', () => { if (!DATA[view.kind].views[partSelect.value]) return; view.part[view.kind] = partSelect.value; stopFilm(); film = null; save(); draw(); fit(); renderFilm(); });
   apartInput.addEventListener('input', () => { view.apart = Number(apartInput.value) / 1000; save(); draw(); });
   apartInput.addEventListener('change', fit);
   shellsInput.addEventListener('input', () => { view.shells = Number(shellsInput.value) / 1000; save(); draw(); });
@@ -213,13 +293,14 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     setChain(kind) {
       if (!KINDS.includes(kind) || kind === view.kind) return;
       view.kind = kind; save();
-      if (active) { draw(); fitStart(); }
+      stopFilm(); film = null;
+      if (active) { draw(); fitStart(); renderFilm(); }
     },
     setActive(on) {
       if (on === active) return;
       active = on;
       group.visible = on;
-      if (!on) panel.classList.remove('visible');
+      if (!on) { panel.classList.remove('visible'); stopFilm(); film = null; }
       draw();
       if (on) fitStart();
     },
@@ -238,7 +319,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
 }
 
 export function createChainsWorld({ scene, fitView }) {
-  return createLayeredWorld({ scene, fitView, name: 'chains', data: CHAINS_DATA, kinds: CHAINS_KINDS, glassRoles: CHAINS_GLASS, prefix: 'chains', byFace: true,
+  return createLayeredWorld({ scene, fitView, name: 'chains', data: CHAINS_DATA, kinds: CHAINS_KINDS, glassRoles: CHAINS_GLASS, prefix: 'chains', byFace: true, movie: MOVIE,
     defaultParts: { karma: 'lotus', dharma: 'cycle', bodhi: 'seed' } });
 }
 
