@@ -183,6 +183,44 @@ The sphere itself leaves gaps (DICTO); the question is the flat-faced solid (cub
 - What does fill space is the **rhombic dodecahedron frame** the dictospheres build (above): the spheres are the nodes, the
   bottles the edges, and the cells are rhombic dodecahedra.
 
+## Turned cuboctahedral cages (2026-10-14)
+
+`scripts/cubo_cages.py` (run on dicto-node), `cubo-cages.json`: unit cuboctahedra on the 12 corner, 6 square or 8 triangle axes of
+a central one, parallel or turned about their own axis (90°, 45°, 60°), slid in until they touch.
+
+| Axes | Turned | Neighbours touch at | Centre that fits | Fill of hull | Flat-ended hull faces |
+|---|---|---|---|---|---|
+| 12 corner | no | one corner | 1 | 13/27 | none |
+| 12 corner | 90° | one corner | 0.914 | 0.468 | none |
+| 6 square | no | one corner | 1 | 0.574 | none |
+| 6 square | 45° | a whole edge | 0.707 | 0.593 | none |
+| 8 triangle | no | **a whole square** | 0.5 | **0.864** | none |
+| 8 triangle | 60° | one corner | 1 | 0.480 | none |
+
+None makes flat-ended triangles. (The parallel triangle-axis cage is a piece of the cuboctahedron–octahedron honeycomb, where
+cuboctahedra share squares.) So the cuboctahedral member's homes are the dictosphere (even spacing) and the face-plane match, not a
+cage of whole cuboctahedra.
+
+## FUJI's flat-ended triangles in pyrochlore networks (2026-10-14)
+
+The pyrochlore network is corner-sharing tetrahedra; its (111) layers are kagome nets of triangles and hexagons, and the space
+between the tetrahedra is filled by truncated tetrahedra (tetrahedra + truncated tetrahedra fill space). When the two sets of
+tetrahedra have different sizes, edge a and edge b (the **breathing pyrochlore** lattice, found in real spinel oxides: Okamoto,
+Nilsen, Attfield and Hiroi 2013, doi:10.1103/PhysRevLett.110.097203), every kagome hexagon has sides a and b alternating with all
+angles 120° (checked: the walk a, b, a, b, a, b turning 60° closes): **a flat-ended triangle with r = b/a.** So the breathing
+ratio of a breathing pyrochlore is exactly the FUJI-family parameter: r = 1 is the ordinary pyrochlore (regular hexagons),
+r = 1/2 the space-filling truncated tetrahedron's faces, r = 1/φ FUJI's base. DICTO's Rhombiverse and Kaleidohedra Pyrochlore and
+3D Kagome worlds are the regular case.
+
+## And the truncated octahedron (2026-10-14)
+
+The truncated octahedron is the middle member of the dictosphere's family (cube ∩ octahedron, s = 1.5): regular hexagons, r = 1.
+On one side (s < 1.5, towards the octahedron) its hexagons become flat-ended triangles with the short sides against the squares;
+on the other (s > 1.5, towards the cuboctahedron) with the long sides against the squares: the dictosphere is s = √3 there. All
+members have the same angles (109.47°, 125.26°), but by Minkowski's theorem only the truncated octahedron, whose hexagons are
+centrally symmetric, fills space by translation (Kelvin's cell, the body-centred cubic packing's cell). So the truncated
+octahedron is to the dictosphere what the regular hexagon is to FUJI: the symmetric r = 1 end that DICTO hoped for.
+
 ## Next
 
 1. Done: the STT's faces are FUJI(1/2)'s base (above).
