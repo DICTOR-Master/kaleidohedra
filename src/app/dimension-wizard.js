@@ -525,8 +525,8 @@ const K_WORLDS = [
   // Multi-shell chains (DICTO 2026-10-13): the three published nestings, #22-#24, one entry each.
   { key: 'chains', label: 'Multi-shell chains', pieces: [{ label: 'Chain of Karma', action: 'tool:chainsWorld:karma' },
     { label: 'Spheres of Dharma', action: 'tool:chainsWorld:dharma' }, { label: 'The Bodhi Seed', action: 'tool:chainsWorld:bodhi' }] },
-  // The 13s (DICTO 2026-10-13, docs/PLAN-13.md): twelve around one, seven ways.
-  { key: 'thirteens', label: 'The 13s', pieces: [{ label: 'DICTO Icosa-13 (Lotus seed)', action: 'tool:thirteensWorld:icosa13' },
+  // DICTO 13-Atom Clusters (DICTO's name, 2026-10-13; docs/PLAN-13.md): twelve around one, seven ways.
+  { key: 'thirteens', label: 'DICTO 13-Atom Clusters', pieces: [{ label: 'DICTO Icosa-13 (Lotus seed)', action: 'tool:thirteensWorld:icosa13' },
     { label: 'DICTO Dodeca-13', action: 'tool:thirteensWorld:dodeca13' }, { label: 'The Bodhi Seed', action: 'tool:thirteensWorld:bodhi' },
     { label: 'UNITY and VENUS', action: 'tool:thirteensWorld:unity' }, { label: 'DICTO-Star', action: 'tool:thirteensWorld:dictoStar' },
     { label: 'DESHI', action: 'tool:thirteensWorld:deshi' }, { label: 'RD 13', action: 'tool:thirteensWorld:rd13' }] },
