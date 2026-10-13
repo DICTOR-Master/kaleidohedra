@@ -227,10 +227,11 @@ export const LATTICE_CONCEPT_ENTRIES = [
 
 // DICTO's discoveries (DICTO 2026-10-09): every piece and world of DICTO's own, first, in 7 languages
 // (i18n alm.d.<key>.label/.desc/.how): what it is, how to build it, its DISCOVERIES number and DOI.
-// Newest first (DICTO 2026-10-13: all of #1-#26). shape: the Polyhedraverse shape its preview turns, if any.
+// Newest first (DICTO 2026-10-13: all of #1-#26; #27 added 2026-10-14). shape: the Polyhedraverse shape its preview turns, if any.
 // action: what Open does, the same action the DICTO wizard dispatches; app: where it opens when the
 // action alone doesn't say (the Shear's results open in Kaleidohedra).
 export const DICTO_ENTRIES = [
+  ['inbetweens', '#27', '10.5281/zenodo.23345502', 'TRANS_DHARMA_80', 'tool:chainsWorld:dharma'],
   ['atom13', '#26', '10.5281/zenodo.23333183', 'ICOSAHEDRON', 'tool:thirteensWorld:icosa13'],
   ['spheroid13', '#25', '10.5281/zenodo.23332821', 'KIT13_RD13_RDCENTRE_T15', 'tool:thirteensWorld:rd13'],
   ['bodhi', '#24', '10.5281/zenodo.23311353', 'RHOMBIC_TRIACONTAHEDRON', 'tool:chainsWorld:bodhi'],

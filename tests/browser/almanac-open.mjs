@@ -8,6 +8,7 @@ const DOOR = process.env.DOOR ?? 'kaleidohedra';
 // [entry id, the world title expected after Open, the app space]
 const CASES = [
   ['dicto:karma', 'Multi-shell chains · Chain of Karma', 'kaleidohedra'],
+  ['dicto:inbetweens', 'Multi-shell chains · Spheres of Dharma', 'kaleidohedra'],
   ['dicto:atom13', 'DICTO ATOM-13×13 · DICTO Icosa-13 (Lotus seed)', 'kaleidohedra'],
   ['dicto:equalEdge', 'DICTO FCC · DICTO RD', 'kaleidohedra'],
   ['dicto:stretched', 'Studies', 'kaleidohedra'],
