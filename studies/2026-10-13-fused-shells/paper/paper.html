@@ -1,0 +1,562 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Capturing the In-betweens (DICTO, draft)</title><style>
+@page { size: A4; margin: 16mm 15mm 18mm; }
+body { font: 9.6pt/1.45 "Noto Serif", "DejaVu Serif", Georgia, serif; color: #1b1f24; margin: 0; }
+h1 { font: 700 20pt/1.2 "Noto Sans", "DejaVu Sans", sans-serif; margin: 0 0 3mm; }
+h2 { font: 700 12.5pt/1.3 "Noto Sans", "DejaVu Sans", sans-serif; margin: 6mm 0 2mm; color: #9a3f00; }
+p, li { text-align: justify; hyphens: auto; }
+table { border-collapse: collapse; width: 100%; font: 7pt/1.3 "Noto Sans", "DejaVu Sans", sans-serif; margin: 2mm 0 3mm; page-break-inside: auto; }
+th, td { border-bottom: 0.4pt solid #ccd; padding: 1.2mm 1mm; vertical-align: top; text-align: left; }
+th { background: #fff3e9; }
+tr { page-break-inside: avoid; }
+img { width: 100%; display: block; margin: 3mm 0 1mm; page-break-inside: avoid; }
+p:has(> img) { page-break-inside: avoid; }
+code { font-size: 8pt; }
+hr { border: 0; border-top: 0.5pt solid #ccc; }
+</style></head><body><h1>Capturing the In-betweens: a Study of Transitional Polyhedral Shells</h1>
+<p><strong>DICTO</strong> · dictospheres.com</p>
+<p><em>First draft for DICTO, 13 October 2026. Not released. Computation, checking and drafting with Claude (Anthropic). The structures, their pieces and their names are DICTO's.</em></p>
+<hr />
+<h2>Abstract</h2>
+<p>Three exact icosahedral dissections by DICTO, the Chain of Karma, the Spheres of Dharma and the Bodhi Seed, each build a larger polyhedron from a small core by adding rings of congruent pieces. Between the regular, Archimedean and Catalan solids that the builds pass through lie intermediate stages, which we call transitional shells. We treat each stage as a single solid by fusing its pieces. We then identify the stages that are classical polyhedra and describe the 21 piece types technically.</p>
+<p>On the main routes, the counts are 11 stages for the Spheres of Dharma (7 convex), 6 for the Chain of Karma's Lotus seed (2 convex) and 6 for Bodhi Seed Kit B (2 convex). Counting every combination of whole rings gives 107, 7 and 10 stages. Counting partial rings as well gives 5,569, 124 and 363.</p>
+<p>Three classical solids occur among the intermediate stages, and one further convex stage has no name we could find; each identification was confirmed against an independent construction to within 10⁻⁴:</p>
+<ul>
+<li><strong>Lotus seed, stage 2</strong> (icosahedron + 20 CLEO) is the solid bounded by Kepler's great stellated dodecahedron: 60 golden triangles and 32 corners.</li>
+<li><strong>Lotus seed, stage 3</strong> (+ 30 AXE) is the excavated dodecahedron. Its surface is the Ef1g1 stellation of the icosahedron, and it has exactly the same 32 corners as stage 2.</li>
+<li><strong>The same two solids reappear</strong> in the Dodecahedral Chain at the same size, and in Samsara (Chain step 2) at scales 1/φ and φ².</li>
+<li><strong>Bodhi Seed Kit B, stage 2</strong> (rhombic triacontahedron + 60 Vajra (fine)) is the rhombic hexecontahedron.</li>
+<li><strong>Spheres of Dharma, stage 7</strong> is a convex solid with 80 corners and faces of 12 regular pentagons, 30 rhombi and 60 isosceles triangles. It is the truncated icosahedron with a low hexagonal pyramid (Shield) on each hexagon. We found no name for it.</li>
+</ul>
+<p>Three of the piece types are known solids: AXE, CLEO and t1 are Mosseri–Sadoc tiles. One piece, Cleo-low, is similar to a fourth Mosseri–Sadoc tile, t3. The caps are Johnson solids J2 and J11.</p>
+<p>We give A4 cut-out nets, checked for overlaps, for four of the transitional shells.</p>
+<hr />
+<h2>1. Introduction</h2>
+<p>While scrubbing the Top-shell slider in the Kaleidohedra app's Multi-shell chains world, DICTO noticed that the in-between stages of his nested structures look very different from the solids at the start and end of each step. He picked out about 11 striking stages on Chain step 2, 5 on the Lotus seed, 4 on the Dodecahedral Chain and 6 on the other views. His proposal was that &quot;these forms may be known about, but possibly not viewed as transitional shapes between the regular well-known solids, and there may be hidden value in analysing the transitional steps that show as the models build and change.&quot;</p>
+<p>This paper does four things:</p>
+<ol>
+<li>It defines the stages exactly (Section 2).</li>
+<li>It describes the pieces that build them (Section 3).</li>
+<li>It identifies the stages that are classical solids and checks each identification against an independent construction (Section 4).</li>
+<li>It reads the result against the literature DICTO pointed to: crystal and cluster growth, virus capsids, materials science, chemistry and medicine (Section 5).</li>
+</ol>
+<p>Section 6 gives our own assessment of what the transitional shells are worth, and Section 7 gives the plan for them in the apps. Section 8 describes the cut-out nets.</p>
+<h2>2. The structures and their stages</h2>
+<p><strong>The structures.</strong> All three structures are DICTO's published findings. The Lotus seed is the icosahedron of edge φ², cut into 13 icosahedra, 60 AXE, 20 FUJI and 20 CLEO, 113 pieces in all [DICTO, Chain of Karma]. Replacing every icosahedron with a Lotus seed gives Samsara (Chain step 2, 1,569 pieces). Closing a grown core with 12 pentagonal caps gives the Dodecahedral Chain.</p>
+<p>The Spheres of Dharma is a six-shell cycle of 237 pieces [DICTO, Spheres of Dharma]:</p>
+<blockquote>
+<p>icosahedron 1/φ → icosidodecahedron φ/2 → dodecahedron 1 → truncated icosahedron 1/φ → rhombic triacontahedron → icosahedron φ²</p>
+</blockquote>
+<p>The outer icosahedron is φ³ times the inner one, so the cycle repeats. The Bodhi Seed is a rhombic triacontahedron of edge φ² holding 12 triacontahedra of edge 1 on its five-fold axes around one of edge 1/φ [DICTO, The Bodhi Seed]. Its gap is filled exactly by Kit A (Vajra (fine), Chatra, Mudra) or by Kit B (Vajra (fine), Crown Jewel, Diadem L and R).</p>
+<p><strong>Stages.</strong> Inside each structure, every piece is assigned to a ring: an orbit of congruent pieces at one distance from the centre. A <em>stage</em> is the union of a set of rings. The study counts stages in three ways:</p>
+<ul>
+<li><strong>Main route.</strong> Rings are added in order of distance.</li>
+<li><strong>Whole-ring stages.</strong> Any union of rings that touches the core.</li>
+<li><strong>Partial-ring stages.</strong> Symmetric parts, hemispheres or caps of a ring, added to a whole-ring stage.</li>
+</ul>
+<p>The app's Top-shell slider groups rings into levels slightly differently (<code>appstages.json</code>). Table 1 gives the counts. They come from the study's data (<code>stages.json</code>, <code>partials.json</code>); we did not recompute them.</p>
+<p><strong>Table 1.</strong> Stage counts.</p>
+<table>
+<thead>
+<tr>
+<th>Structure</th>
+<th>Main-route steps</th>
+<th>Whole-ring stages (convex)</th>
+<th>Partial-ring stages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spheres of Dharma (one cycle)</td>
+<td>11</td>
+<td>107 (8)</td>
+<td>5,569</td>
+</tr>
+<tr>
+<td>Chain of Karma, Lotus seed</td>
+<td>6</td>
+<td>7 (2)</td>
+<td>124</td>
+</tr>
+<tr>
+<td>Bodhi Seed, Kit B</td>
+<td>6</td>
+<td>10 (2)</td>
+<td>363</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fusing.</strong> We treat each stage as one solid: the outer surface of the union of its pieces. Coplanar parts of piece faces are merged, and gaps from rounding are closed. Faces pointing inward are subtracted from those pointing out, and every face is checked to be a simple polygon. The fused solid's volume must equal the sum of its pieces' volumes. Six fused stages are already in Polyhedraverse (<code>transitional.js</code>); we computed seven more in the same way (<code>analysis/data/fused-extra.json</code>).</p>
+<p>One convention needs a warning. The study's own face counts (<code>steps.py</code>, <code>renders/index.json</code>) also merge coplanar faces that touch at only a corner, and they do this unevenly. Lotus stage 2, for example, is counted as 16 triangles, 12 hexagons and 4 decagons on 12 planes. That cannot be right for a stage with full icosahedral symmetry, where all 12 planes must look the same. In this paper we count faces as the fused polyhedra in <code>transitional.js</code> do. Under that convention Lotus stage 2 has 60 triangles, 90 edges and 32 corners.</p>
+<h2>3. The pieces</h2>
+<p>Table 2 lists every piece type. Lengths are in the study's own units:</p>
+<ul>
+<li><strong>Lotus seed:</strong> icosahedra of edge 1, core of edge 1/φ.</li>
+<li><strong>Bodhi Seed:</strong> copies of edge 1.</li>
+<li><strong>Spheres of Dharma:</strong> dodecahedron of edge 1.</li>
+</ul>
+<p>Dihedral angles are interior angles. Symmetry is the order of each piece's own symmetry group, counting rotations and reflections; &quot;chiral&quot; means the piece has no reflection symmetry.</p>
+<p>The script <code>analysis/pieces_analysis.py</code> sorts the 11 views' pieces into congruence classes, allowing for scale. AXE, FUJI, CLEO and the icosahedra recur in Samsara at scales 1/φ, 1 and φ². Closed forms were fitted to the measured values, such as edge² = (3 − √5)/2 for edge 1/φ and cos² = 5/9 for 138.19°. They agree to 3 × 10⁻⁵, but they are fits, not proofs, so we do not quote any that are not already standard.</p>
+<p><strong>Table 2.</strong> The pieces. Where DICTO has not yet named a piece, its working label is shown in brackets.</p>
+<table>
+<thead>
+<tr>
+<th>Piece (DICTO's name)</th>
+<th>Where, how many</th>
+<th>Kind (technical)</th>
+<th>Corners / edges / faces</th>
+<th>Edge lengths (count)</th>
+<th>Interior dihedrals</th>
+<th>Symmetry</th>
+<th>Volume</th>
+<th>Known as</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AXE</strong></td>
+<td>Lotus 60</td>
+<td>tetrahedron with five edges 1 and one 1/φ</td>
+<td>4 / 6 / 4 triangles</td>
+<td>1 (5), 1/φ (1)</td>
+<td>41.81°, 63.43°, 79.19°</td>
+<td>C2v (4)</td>
+<td>1/12</td>
+<td>Mosseri–Sadoc t6 scaled by 1/τ (checked)</td>
+</tr>
+<tr>
+<td><strong>CLEO</strong></td>
+<td>Lotus 20</td>
+<td>trigonal pyramid: base equilateral 1/φ, sides 1</td>
+<td>4 / 6 / 4</td>
+<td>1/φ (3), 1 (3)</td>
+<td>63.43°, 79.19°</td>
+<td>C3v (6)</td>
+<td>(√5 − 1)/24</td>
+<td>Mosseri–Sadoc t4 scaled by 1/τ (checked); the spike of the great stellated dodecahedron</td>
+</tr>
+<tr>
+<td><strong>FUJI</strong></td>
+<td>Lotus 20</td>
+<td>hexagonal pyramid, base hexagon with all angles 120° and sides 1, 1/φ alternating</td>
+<td>7 / 12 / 6 triangles + 1 hexagon</td>
+<td>1 (9), 1/φ (3)</td>
+<td>37.38°, 41.81°, 142.62°</td>
+<td>C3v (6)</td>
+<td>(1 + 3√5)/24</td>
+<td>not a union of Mosseri–Sadoc tiles at this scale [DICTO, Icosa-13 study]</td>
+</tr>
+<tr>
+<td>icosahedra</td>
+<td>Lotus 1 + 12</td>
+<td>regular</td>
+<td></td>
+<td></td>
+<td>138.19°</td>
+<td>Ih (120)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pentagonal cap</td>
+<td>Dodecahedral Chain 12 (edge 1); Dharma 12 (edge 1/φ)</td>
+<td>Johnson solid J2 (equilateral pentagonal pyramid)</td>
+<td>6 / 10 / 6</td>
+<td>all equal</td>
+<td>37.38°, 138.19°</td>
+<td>C5v (10)</td>
+<td></td>
+<td>J2</td>
+</tr>
+<tr>
+<td>(pentagonal pyramid, npyr5)</td>
+<td>Dharma 12</td>
+<td>pentagonal pyramid, base 0.809 (= φ/2), sides √3/2, apex pointing in</td>
+<td>6 / 10 / 6</td>
+<td>φ/2 (5), √3/2 (5)</td>
+<td>43.36°, 132.40°</td>
+<td>C5v (10)</td>
+<td>0.19734</td>
+<td>not J2 (sides longer than base)</td>
+</tr>
+<tr>
+<td><strong>Vajra (twist)</strong> (nfru3)</td>
+<td>Dharma 20</td>
+<td>trigonal antiprismoid (&quot;twisted triangular frustum&quot;): parallel equilateral triangles 1/φ and φ/2, six side triangles</td>
+<td>6 / 12 / 8 triangles</td>
+<td>1/φ (3), φ/2 (3), √3/2 (6)</td>
+<td>99.26°, 110.91°, 113.80°</td>
+<td>C3v (6)</td>
+<td>0.22215</td>
+<td>none found</td>
+</tr>
+<tr>
+<td><strong>Cleo-low</strong> (npyr3)</td>
+<td>Dharma 20</td>
+<td>trigonal pyramid: base equilateral φ/2, sides 1/2; the dodecahedron's corner over the icosidodecahedron</td>
+<td>4 / 6 / 4</td>
+<td>φ/2 (3), 1/2 (3)</td>
+<td>37.38°, 116.57°</td>
+<td>C3v (6)</td>
+<td>0.016855</td>
+<td>similar to Mosseri–Sadoc t3 (half its tabulated size; checked)</td>
+</tr>
+<tr>
+<td>(twisted pentagonal frustum, nfru5)</td>
+<td>Dharma 12</td>
+<td>pentagonal antiprismoid: pentagons 1/φ and 1; 5 equilateral and 5 obtuse golden side triangles</td>
+<td>10 / 20 / 10 triangles + 2 pentagons</td>
+<td>1/φ (15), 1 (5)</td>
+<td>63.43°, 142.62°</td>
+<td>C5v (10)</td>
+<td>(11√5 − 15)/24</td>
+<td>none found</td>
+</tr>
+<tr>
+<td>t1 (nt1)</td>
+<td>Dharma 30</td>
+<td>tetrahedron</td>
+<td>4 / 6 / 4</td>
+<td>1/φ (5), 1 (1)</td>
+<td>37.38°, 116.57°, 138.19°</td>
+<td>C2v (4)</td>
+<td>(√5 − 2)/12</td>
+<td>Mosseri–Sadoc t1 scaled by 1/τ (checked)</td>
+</tr>
+<tr>
+<td><strong>Shield</strong> (hexagonal cap)</td>
+<td>Dharma 20</td>
+<td>very low regular-hexagon pyramid on the truncated icosahedron's hexagon</td>
+<td>7 / 12 / 6 triangles + 1 hexagon</td>
+<td>1/φ (6), 0.651 (6)</td>
+<td>20.91°, 159.45°</td>
+<td>C6v (12)</td>
+<td>0.06763</td>
+<td>none found</td>
+</tr>
+<tr>
+<td><strong>Vajra-blade</strong> (wedge)</td>
+<td>Dharma 60</td>
+<td>tetrahedron (one mirror)</td>
+<td>4 / 6 / 4</td>
+<td>1/φ (3), 0.651 (2), 1.0898 (1)</td>
+<td>20.55°, 20.91°, 144°, 159.10°</td>
+<td>Cs (2)</td>
+<td>0.011271</td>
+<td>none found</td>
+</tr>
+<tr>
+<td><strong>Sevenfold-blade</strong> (edge piece)</td>
+<td>Dharma 30</td>
+<td>6-corner solid, 6 triangles + 1 quadrilateral</td>
+<td>6 / 11 / 7</td>
+<td>0.7265 (2), 1.0898 (4), 1.5568 (4), φ² (1)</td>
+<td>72°, 85.66°, 108°, 112.53°</td>
+<td>C2v (4)</td>
+<td>5 − 2√5</td>
+<td>none found</td>
+</tr>
+<tr>
+<td><strong>Cleo-low 2</strong> (face piece)</td>
+<td>Dharma 20</td>
+<td>trigonal pyramid: base equilateral φ² (the outer icosahedron's face), sides 1.5568</td>
+<td>4 / 6 / 4</td>
+<td>φ² (3), 1.5568 (3)</td>
+<td>26.26°, 134.93°</td>
+<td>C3v (6)</td>
+<td>0.36892</td>
+<td>none found</td>
+</tr>
+<tr>
+<td>J11 (Dharma hinge)</td>
+<td>hinge 12</td>
+<td>gyroelongated pentagonal pyramid, edge 1</td>
+<td>11 / 25 / 15 triangles + 1 pentagon</td>
+<td>all 1</td>
+<td>100.81°, 138.19°</td>
+<td>C5v (10)</td>
+<td>(25 + 9√5)/24</td>
+<td>Johnson solid J11</td>
+</tr>
+<tr>
+<td><strong>Vajra (fine)</strong> (B1)</td>
+<td>Bodhi kits A and B, 60</td>
+<td>irregular triangular bipyramid</td>
+<td>5 / 9 / 6</td>
+<td>1/φ (2), 1 (3), 1.0515 (1), 1.4734 (1), 1.7013 (2)</td>
+<td>72°, 90°, 108°, 120°</td>
+<td>Cs (2)</td>
+<td>RT(1)/60 = 0.20518</td>
+<td>none found [Bodhi pieces study]</td>
+</tr>
+<tr>
+<td><strong>Chatra</strong> (B2)</td>
+<td>Kit A 60</td>
+<td>7-corner solid: 3 triangles, 2 quadrilaterals, 1 pentagon</td>
+<td>7 / 11 / 6</td>
+<td>0.9106 (2), 1 (5), 1.0515, 1.4734, φ (2)</td>
+<td>60°, 72°, 90°, 108°, 120°</td>
+<td>Cs (2)</td>
+<td>0.86915</td>
+<td>none found</td>
+</tr>
+<tr>
+<td><strong>Mudra</strong> (B3)</td>
+<td>Kit A 60</td>
+<td>quadrilateral pyramid</td>
+<td>5 / 8 / 5</td>
+<td>1/φ (2), 0.9106 (2), 1 (4)</td>
+<td>36°, 120°, 144°</td>
+<td>C2v (4)</td>
+<td>0.09687</td>
+<td>none found</td>
+</tr>
+<tr>
+<td><strong>Crown Jewel</strong> (B4)</td>
+<td>Kit B 20</td>
+<td>14-corner solid: 3 triangles, 3 pentagons, 3 hexagons</td>
+<td>14 / 21 / 9</td>
+<td>0.5628 (6), 1 (6), 1.0515 (3), 2/φ (3), φ (3)</td>
+<td>36°, 90°, 120°, 144°</td>
+<td>C3v (6)</td>
+<td>1.95764</td>
+<td>none found</td>
+</tr>
+<tr>
+<td><strong>Diadem L / Diadem R</strong> (B5)</td>
+<td>Kit B 60 + 60</td>
+<td>6-corner solid: 2 triangles, 3 quadrilaterals; L and R are mirror images</td>
+<td>6 / 9 / 5</td>
+<td>0.5628 (2), 0.6498 (2), 1 (4), 2/φ (1)</td>
+<td>36°, 60°, 90°, 108°</td>
+<td>C2 (2), chiral</td>
+<td>0.15674</td>
+<td>none found</td>
+</tr>
+<tr>
+<td>rhombic triacontahedra</td>
+<td>Bodhi 1 + 12 (+ outer)</td>
+<td>Catalan solid</td>
+<td></td>
+<td>1/φ, 1, φ²</td>
+<td>144°</td>
+<td>Ih (120)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Three observations about the pieces:</p>
+<ul>
+<li><strong>The Bodhi pieces have simple angles.</strong> Every dihedral angle of every Bodhi piece is a multiple of 6°, as the Bodhi pieces study already found [DICTO, Bodhi pieces study]. The Dharma and Lotus pieces instead show the characteristic icosahedral angles: arccos(√5/3) = 41.81°, arccos(1/√5) = 63.43°, 116.57°, 138.19°, and J2's base angle 37.38°.</li>
+<li><strong>Many pieces are pyramids.</strong> The pyramids and pyramid-like pieces (CLEO, Cleo-low, Cleo-low 2, Shield, FUJI, the caps) each sit over one face of the solid beneath them. The pieces that are not pyramids (AXE, t1, Vajra-blade, Sevenfold-blade, Diadem) sit along edges.</li>
+<li><strong>One Mosseri–Sadoc similarity is new here.</strong> Cleo-low has the shape of the Mosseri–Sadoc tile t3 at half its tabulated size. This had not been recorded in DICTO's earlier studies, which credit only AXE (t6), CLEO (t4) and t1.</li>
+</ul>
+<p><strong>What each piece does in the transitions.</strong> The main routes (Figures 1 to 3) show the role of each piece:</p>
+<ul>
+<li><strong>Lotus seed.</strong>
+<ul>
+<li>CLEO stands on each face of the core icosahedron and turns it into a star (stage 2).</li>
+<li>AXE fills the 30 grooves between the star's points (stage 3).</li>
+<li>The 12 outer icosahedra and the outer AXE then build a spiky 180-triangle stage.</li>
+<li>FUJI fills each three-fold corner last and closes the large icosahedron.</li>
+</ul>
+</li>
+<li><strong>Spheres of Dharma.</strong>
+<ul>
+<li>Vajra (twist) makes an icosidodecahedron with 12 pentagonal dimples, and the pentagonal pyramids fill the dimples.</li>
+<li>Cleo-low closes the dodecahedron.</li>
+<li>The twisted pentagonal frusta and t1 make the truncated icosahedron.</li>
+<li>Shield turns it into the 80-corner solid; the pentagonal caps and Vajra-blade then complete the rhombic triacontahedron.</li>
+<li>Sevenfold-blade gives an icosahedron with 20 dimples, and Cleo-low 2 fills them.</li>
+</ul>
+</li>
+<li><strong>Bodhi Seed Kit B.</strong> Vajra (fine) turns the centre triacontahedron into a rhombic hexecontahedron. The 12 copies, the two Diadems and the Crown Jewels then close the large triacontahedron.</li>
+</ul>
+<h2>4. Classical solids among the in-betweens</h2>
+<p>Every claim in this section was checked by <code>analysis/identify.py</code>, which recorded 25 checks, all passing (<code>analysis/identify.log</code>). Each stage is compared with a solid built independently of the stage's data. Only the size and orientation of the stage's core are taken from the data. The tolerance is 10⁻⁴, because the coordinates are stored to 5–6 decimals.</p>
+<p><strong>4.1 Lotus seed stage 2 is Kepler's great stellated dodecahedron.</strong> We built the great stellated dodecahedron (GSD) from the core icosahedron alone (core circumradius r). Its 12 pentagram faces lie in the planes aᵢ·x = r/√5, one for each five-fold axis aᵢ; each plane holds the five neighbours of the opposite corner. Its 20 points lie where three of these planes meet on a three-fold axis. Lotus stage 2 matches this construction in every respect:</p>
+<ul>
+<li>Its 20 outer corners are the GSD's 20 points (worst error 3.6 × 10⁻⁵).</li>
+<li>Its 12 inner corners are the core's corners.</li>
+<li>Its 60 faces lie in the 12 GSD planes.</li>
+<li>Its faces are exactly the GSD's 60 visible triangles, each a point plus one edge of the core.</li>
+<li>Every triangle is golden: sides 1, 1 and 1/φ, apex angle 36°.</li>
+<li>Each plane carries a regular pentagram (ratio of outer to inner radius = φ²).</li>
+<li>The circumradius equals the GSD formula (√3/4)(√5 − 1)·a with chord a = φ².</li>
+<li>The volume, 1.545098, equals the icosahedron plus 20 golden pyramids.</li>
+</ul>
+<p>The stage therefore is the solid bounded by the GSD's outer surface, with 60 faces, 90 edges and 32 corners, as Polyhedraverse shows. As a star polyhedron in Kepler's sense, the GSD has 12 pentagram faces, 30 edges and 20 corners. The GSD first appears in Kepler's <em>Harmonices mundi</em> (1619). A by-product of the check: each CLEO (Mosseri–Sadoc t4/τ) is exactly one point of the star, so <strong>GSD = icosahedron + 20 CLEO</strong>. This follows directly from the geometry and is not claimed as new.</p>
+<p><strong>4.2 Lotus seed stage 3 is the excavated dodecahedron.</strong> The checks:</p>
+<ul>
+<li>Stage 3 has the same 32 corners as stage 2 (worst error 1.4 × 10⁻⁵).</li>
+<li>Its 60 faces are equilateral triangles of edge 1, equal to the edge of the dodecahedron formed by its outer corners.</li>
+<li>Every face lies in one of the 20 face planes of the core icosahedron.</li>
+<li>Its volume equals the dodecahedron minus 12 J2 pyramids (4.045117).</li>
+</ul>
+<p>This is the excavated dodecahedron. Its surface is the Ef1g1 stellation of the icosahedron in <em>The Fifty-Nine Icosahedra</em> (Coxeter et al. 1938) and model 28 in Wenninger (1971). We took the label Ef1g1 from the Wikipedia article, which cites the book; we did not check it in the book. Adding 30 AXE therefore turns the great stellated dodecahedron into the excavated dodecahedron without moving any corner. Only the faces change, from 12 dodecahedron planes to 20 icosahedron planes.</p>
+<p><strong>4.3 The Dodecahedral Chain: icosahedron → great stellated dodecahedron → excavated dodecahedron → dodecahedron.</strong> The Dodecahedral Chain's own stages 2 and 3 are the same two solids at the same size. Stage 2 matches to 1.6 × 10⁻⁷ and stage 3 to 6.3 × 10⁻⁶. Stage 4 adds 12 J2 caps and closes the regular dodecahedron. In four steps, then, the build goes from an icosahedron to its dual dodecahedron through two classical non-convex solids, and the final dodecahedron's corners are the star's points. We have not found this sequence described as a dissection path. The solids themselves are of course classical.</p>
+<p><strong>4.4 Samsara (Chain step 2).</strong> In the app's grouping, Samsara's stage 2 is the excavated dodecahedron at scale 1/φ, and its stage 4 is the great stellated dodecahedron at scale φ². The checks give scale factors φ^−1.000 and φ^+2.000, with corners matching to 1 × 10⁻⁵ and 5.4 × 10⁻⁵. Its other stages (Figure 5) lie on 20 to 144 planes. We did not identify them.</p>
+<p><strong>4.5 Bodhi Seed Kit B stage 2 is the rhombic hexecontahedron.</strong> The checks:</p>
+<ul>
+<li>Its 62 corners are exactly the outer corners of 20 prolate golden rhombohedra of edge 1, one on each three-fold axis around the centre (worst error 3.5 × 10⁻⁶).</li>
+<li>Its volume equals 20 prolate rhombohedra (15.2169).</li>
+<li>Its 60 faces are golden rhombi (diagonal ratio φ) lying on the 30 face planes of the centre triacontahedron.</li>
+</ul>
+<p>This is the rhombic hexecontahedron, described by Unkelbach (1940). It is one of the fully supported stellations of the rhombic triacontahedron enumerated by Messer (1995); we did not map it to Messer's notation. The Bodhi pieces study had already shown that the 12 copies enclose this solid [DICTO, Bodhi pieces study]. The new point is that it is also reached from inside, as the centre plus 60 Vajra (fine). The rhombic hexecontahedron and triacontahedron built from golden rhombohedra are standard objects in icosahedral tiling work (Senechal 2004; Kabai).</p>
+<p><strong>4.6 The convex 80-corner stage of the Spheres of Dharma.</strong> Stage 7 is convex: its hull volume equals its volume, 14.40420. Its faces are 12 regular pentagons, 30 quadrilaterals and 60 isosceles triangles.</p>
+<p>The brief's lead called the quadrilaterals rectangles. They are <strong>rhombi</strong>, with all sides 0.65097 and angles 56.68° and 123.32°. They are not golden rhombi, whose acute angle is 63.43°.</p>
+<p>Its corners are the 60 corners of the stage-6 truncated icosahedron and 20 corners on the three-fold axes, which form a regular dodecahedron. The solid is the convex hull of these two. Equivalently, it is the truncated icosahedron with a Shield on each hexagon. The Shields are so low that a triangle of one Shield and a triangle of its neighbour across a hexagon–hexagon edge lie in one plane, and each such pair is one rhombus. All 90 triangle and rhombus planes are tangent to one sphere, of radius 1.5.</p>
+<p>The triangle normals lie in mirror planes, 20.905° from the nearest three-fold axis. That rules out the deltoidal hexecontahedron's planes (14.985°) and the triakis icosahedron's (11.211°). With two corner orbits, three kinds of face and non-regular faces, the solid is not Archimedean, Catalan or Johnson. We found no name for it. It may still appear in Conway-operator catalogues, and DICTO may want to check there before naming it.</p>
+<p><strong>4.7 Two more Dharma stages.</strong></p>
+<ul>
+<li><strong>Stage 2</strong> (core + 20 Vajra (twist)) is the icosidodecahedron with 12 inward pentagonal pyramids, each reaching a corner of the core. Its 80 triangles lie on 80 planes.</li>
+<li><strong>Stage 10</strong> (+ 30 Sevenfold-blade) is the outer icosahedron (edge φ²) with 20 inward triangular pyramids. Their apices are the Shields' apices from stage 7, at radius 1.6057. Its 60 triangles lie on 60 different planes. It is not the great dodecahedron: round the same icosahedron, the great dodecahedron's dimples would reach radius 1.4013, so these dimples are shallower. The brief's lead that stage 10 was a stellation of one 60-faced solid is therefore not supported.</li>
+</ul>
+<p><strong>4.8 Convex stages among the partial rings.</strong> On complete shells, 45 of the Spheres of Dharma's partial-ring stages are convex (<code>renders/index.json</code>). They have 36 distinct face signatures, with 17 to 86 faces built from triangles, quadrilaterals, pentagons and hexagons (Figure 6). None has the full icosahedral symmetry, and we have not tried to identify them. They are the &quot;slices&quot; between two closed shells: a truncated icosahedron partly capped, a dodecahedron partly truncated, and so on.</p>
+<h2>5. The literature, field by field</h2>
+<p>We searched DICTO's reference library first and added every new source to it. Twenty-six entries went into a new &quot;Transitions&quot; section of <code>INDEX</code>.</p>
+<p><strong>5.1 Stellation and the history of nested solids.</strong> The identifications in Section 4 put three of the transitional shells into the classical stellation literature: Kepler (1619), Poinsot (1810), Cauchy (1813), Coxeter et al. (1938), Wenninger (1971), Messer (1995) and Cutler and Schulte (2011). Kepler's <em>Mysterium cosmographicum</em> (1596) nests the five Platonic solids with spheres in the gaps; Jamnitzer (1568) and Pacioli (1509) drew nested and stellated solids. DICTO's structures are filled versions of such nests, with every gap filled by a few congruent piece types. Stellation adds cells of a fixed plane arrangement. The transitional shells are different: they arise from adding solid pieces, and the planes in use change from stage to stage (12, then 20, then 60 in the Lotus seed). That some stages land exactly on stellations is a fact about these particular golden dissections. It is not true of stages in general.</p>
+<p><strong>5.2 Crystal and cluster growth.</strong> This connection is real at the level of shell types. Atom clusters grow in concentric icosahedral shells, and the shells take the same forms that appear in DICTO's routes:</p>
+<ul>
+<li><strong>Mackay</strong> (1962): icosahedral shells.</li>
+<li><strong>Bergman et al.</strong> (1957): icosahedron, then dodecahedron with icosahedron, then a truncated-icosahedral 60-atom shell.</li>
+<li><strong>Tsai-type quasicrystal clusters</strong> (Takakura et al. 2007): dodecahedron, icosahedron, icosidodecahedron, rhombic triacontahedron.</li>
+</ul>
+<p>Magic numbers mark the closed shells (Echt et al. 1981; Martin 1996; Teo and Sloane 1985). The sizes in between are less stable, and growth does pass through them: Baletto, Mottet and Ferrando (2000) follow silver clusters through intermediate morphologies, Baletto and Ferrando (2005) review the subject, and Rossi et al. (2004) describe core–shell clusters.</p>
+<p>The match is only structural. In clusters the shells are sets of atom positions with radius ratios set by bonding. DICTO's shells are space-filling solids with golden radius ratios. For example, the 12 + 20 corners shared by Lotus stages 2 and 3 have a radius ratio of 2.384. The 12 + 20 corners of a rhombic triacontahedron, the form usually given for the Bergman cluster's second shell, have a ratio of 0.911. Nothing we found shows that the specific transitional solids occur as cluster shells. The useful, testable step is to compare the stages' corner sets with tabulated cluster shells, radius by radius.</p>
+<p><strong>5.3 Materials and quasicrystals.</strong> The Bodhi result is the strongest material link. The rhombic hexecontahedron (stage 2) is a union of 20 prolate golden rhombohedra, which are the Ammann tiles of 3D Penrose tilings. Clusters of rhombic triacontahedra and hexecontahedra are an established description of icosahedral quasicrystal structure (Kabai; Senechal 2004; Dietl and Eschenburg 2016; Fujita et al. 2013). AXE, CLEO, t1 and now Cleo-low are Mosseri–Sadoc tiles, which build icosahedral tilings (Mosseri and Sadoc 1982; Koca et al. 2020). The transitional shells are therefore made of tiles from the quasicrystal toolbox. Whether any stage is a cluster seen in a real quasicrystal or approximant is open.</p>
+<p><strong>5.4 Virus capsids.</strong> Capsids are single icosahedral shells (Caspar and Klug 1962; Twarock and Luque 2019), and they assemble through partial shells (Zlotnick 1994; Hagan and Chandler 2006; Perlmutter and Hagan 2015). Some mature through observed transitional shells; the HK97 capsid is one (Lata et al. 2000). Concentric organisation (capsid with genome) has been modelled as nested icosahedral point sets (Keef and Twarock 2009). The transitions between icosahedral arrangements have been modelled through 6D lattices (Indelicato et al. 2012; Salthouse et al. 2015), the closest mathematical analogue to &quot;transitional shells&quot; that we found.</p>
+<p>Two connections hold:</p>
+<ul>
+<li>Assembly is a sequence of in-between shells, and the in-betweens matter.</li>
+<li>Nested icosahedral shells with golden ratios do occur in capsid models.</li>
+</ul>
+<p>One does not: capsid intermediates are partial surfaces of one shell, not solids filling the space between two shells. DICTO's partial-ring stages are the nearer analogue.</p>
+<p><strong>5.5 Chemistry.</strong> Coordination cages self-assemble as polyhedra, among them an M₃₀L₆₀ icosidodecahedron (Fujita et al. 2016), one of the Spheres of Dharma's shells. These systems also give the counter-evidence. Sun et al. (2010) found that M₁₂L₂₄ and M₂₄L₄₈ cages switch sharply between polyhedra with no stable in-between. In chemistry the transitional forms are usually transient and unseen, so the transitional shells cannot claim chemical relevance without a specific system where one is observed.</p>
+<p><strong>5.6 Medicine.</strong> The link is indirect. Some antivirals act on capsid assembly, on intermediates and misassembly, rather than on the finished shell (Stray et al. 2005). Designed icosahedral protein cages built from two or more components (King et al. 2014; Hsia et al. 2016) are studied as scaffolds for vaccines and delivery. DICTO's kits are multi-component, exactly space-filling icosahedral systems, and could serve as geometric templates for multi-shell cage design. We found no evidence that any has been, or that the shapes have a medical use. We record this as a speculative lead, not a finding.</p>
+<p><strong>5.7 Design, building and teaching.</strong> Pearce's &quot;minimum inventory, maximum diversity&quot; building system (1976) is a direct design precedent. A few piece types (AXE, CLEO, FUJI; or the Dharma's ten) produce a long sequence of distinct, exactly fitting forms, including famous ones. Fuller's jitterbug and Verheyen's (1989) jitterbug transformers move continuously between polyhedra by rotating rigid faces. DICTO's transitions are discrete and additive, so the two are complementary rather than alike. For teaching, the shells give a physical route to stellations: the great stellated dodecahedron and excavated dodecahedron become stages one builds by adding pieces, rather than figures obtained by extending planes. Models and nets are the established medium for this (Wenninger 1971; Cundy and Rollett 1951).</p>
+<h2>6. Assessment: what the transitional shells are worth</h2>
+<p>Our conclusion, separated from the checks above:</p>
+<ol>
+<li><strong>Mathematical value, shown.</strong> Exact few-piece dissections pass through named classical solids at intermediate stages: the great stellated dodecahedron, the excavated dodecahedron and the rhombic hexecontahedron. The great stellated dodecahedron and the excavated dodecahedron share all 32 corners and are joined by adding 30 AXE. So the stages give constructive, buildable links between regular, Archimedean, Catalan and stellated forms. These identities are verified. The individual solids are classical; the routes between them, built from DICTO's pieces, we did not find in the literature, although the search was not exhaustive.</li>
+<li><strong>One new-looking convex solid, unconfirmed.</strong> The 80-corner Dharma stage has no name we could find. Whether it is new is open until Conway-operator and near-miss catalogues are checked.</li>
+<li><strong>Thin value as individual shapes.</strong> Thousands of other stages, including the 45 convex partial-ring stages, have no known name and no demonstrated use. Their value is visual and for design, not as findings. Some of their face counts also depend on the merging convention (Section 2).</li>
+<li><strong>Analogy, not evidence, across fields.</strong> Concentric icosahedral shells and growth through non-closed intermediates are real in metal clusters, quasicrystal clusters and virus capsids. Nothing we found shows these particular polyhedra occurring there, and chemistry's cages switch without stable in-betweens. The connection worth testing is a quantitative comparison of stage corner sets and radius ratios with known cluster shells and capsid point arrays.</li>
+<li><strong>Clear value for teaching and making.</strong> A movie of the transitions and cut-out models make stellation and duality tangible as growth. This is the most immediate use.</li>
+</ol>
+<h2>7. Next steps (the plan)</h2>
+<p>The transitional shells are being added to Polyhedraverse as their own group, <strong>&quot;DICTO Transitional Shells&quot;</strong>. The first six are already in (<code>src/krp-core/src/polyhedra/transitional.js</code>):</p>
+<ol>
+<li>Lotus seed stage 2 (the great stellated dodecahedron)</li>
+<li>Lotus seed stage 3 (the excavated dodecahedron)</li>
+<li>Lotus seed stage 4</li>
+<li>Lotus seed stage 5</li>
+<li>Bodhi Seed Kit B stage 2 (the rhombic hexecontahedron)</li>
+<li>the Spheres of Dharma's convex 80-corner stage</li>
+</ol>
+<p>The app is to get a <strong>movie slider</strong> that plays the transitions a build goes through.</p>
+<p>Further work suggested by this draft:</p>
+<ul>
+<li>Make the face-merging convention in <code>steps.py</code> symmetric, so that corner-touching coplanar faces are either always or never merged.</li>
+<li>Check the Ef1g1 label in <em>The Fifty-Nine Icosahedra</em>, and map the rhombic hexecontahedron to Messer's notation.</li>
+<li>Search the Conway-operator and near-miss catalogues for the 80-corner solid before naming it.</li>
+<li>Compare stage corner sets with tabulated cluster shells (Bergman, Mackay, Tsai) and with capsid point arrays.</li>
+<li>Consider adding the Dodecahedral Chain route (icosahedron → great stellated dodecahedron → excavated dodecahedron → dodecahedron) to the group, as its clearest teaching sequence.</li>
+</ul>
+<h2>8. Cut-out nets</h2>
+<p><code>nets/transitional-shells-nets.pdf</code> has 12 A4 pages with nets for four shells:</p>
+<ul>
+<li>Lotus stage 2 (great stellated dodecahedron): 44 mm per unit, 5 pieces.</li>
+<li>Lotus stage 3 (excavated dodecahedron): 40 mm per unit, 6 pieces.</li>
+<li>Bodhi Kit B stage 2 (rhombic hexecontahedron): 30 mm per unit, 6 pieces.</li>
+<li>Dharma stage 7 (80 corners): 46 mm per unit, 6 pieces.</li>
+</ul>
+<p>On every page:</p>
+<ul>
+<li>Glue tabs are numbered in pairs.</li>
+<li>Mountain folds are dashed blue and valley folds dash-dot red. Three of the four shells are non-convex and need valley folds.</li>
+<li>Pieces are lettered A, B, and so on.</li>
+<li>Each page carries the DICTO mark.</li>
+</ul>
+<p>Each net was checked by <code>nets/nets.py</code> (<code>nets/nets-checks.json</code>):</p>
+<ul>
+<li>Every face is placed once, congruent to its 3D face to 10⁻¹⁰ mm.</li>
+<li>Every edge of the solid is either a fold within a piece or a numbered pair of cut edges, and every pair has a tab.</li>
+<li>No two faces or tabs overlap (worst overlap 10⁻⁷ mm²).</li>
+<li>No piece leaves the page, and no two pieces overlap on a page.</li>
+</ul>
+<p>The fold pattern, mountain or valley from the 3D dihedral, together with the glue pairs, reproduces the solid's edge graph exactly. For the convex 80-corner solid this fixes the folded shape (Cauchy's rigidity theorem). For the three star-like solids it fixes the shape once the marked valley folds are used. The nets have not yet been built in paper.</p>
+<h2>Figures</h2>
+<p><img src="figures/fig1-karma-route.jpg" alt="Figure 1" /></p>
+<p><strong>Figure 1.</strong> Chain of Karma, Lotus seed main route: (a) core icosahedron; (b) + 20 CLEO, the great stellated dodecahedron; (c) + 30 AXE, the excavated dodecahedron; (d) + 12 icosahedra; (e) + 30 AXE; (f) + 20 FUJI, the icosahedron of edge φ². Orange: the pieces added at that step. One scale throughout.</p>
+<p><img src="figures/fig2-dharma-route.jpg" alt="Figure 2" /></p>
+<p><strong>Figure 2.</strong> Spheres of Dharma, one cycle: (a) icosahedron 1/φ; (b) + 20 Vajra (twist), the dimpled icosidodecahedron; (c) + 12 pentagonal pyramids, icosidodecahedron; (d) + 20 Cleo-low, dodecahedron; (e) + 12 twisted pentagonal frusta; (f) + 30 t1, truncated icosahedron; (g) + 20 Shield, the convex 80-corner solid; (h) + 12 pentagonal caps; (i) + 60 Vajra-blade, rhombic triacontahedron; (j) + 30 Sevenfold-blade, the dimpled icosahedron; (k) + 20 Cleo-low 2, icosahedron φ².</p>
+<p><img src="figures/fig3-bodhi-route.jpg" alt="Figure 3" /></p>
+<p><strong>Figure 3.</strong> Bodhi Seed Kit B: (a) centre triacontahedron; (b) + 60 Vajra (fine), the rhombic hexecontahedron; (c) + 12 triacontahedra; (d) + 60 Diadem L; (e) + 60 Diadem R; (f) + 20 Crown Jewel, the triacontahedron of edge φ².</p>
+<p><img src="figures/fig4-named-inbetweens.jpg" alt="Figure 4" /></p>
+<p><strong>Figure 4.</strong> The in-betweens identified in Section 4, each at its own scale: (a) the great stellated dodecahedron (Lotus 2); (b) the excavated dodecahedron (Lotus 3); (c) the rhombic hexecontahedron (Bodhi Kit B 2); (d) the convex 80-corner solid (Dharma 7; the rhombi appear as pairs of triangles, because the render shows each piece's faces); (e) the icosahedron with 20 shallow dimples (Dharma 10); (f) the icosidodecahedron with 12 pentagonal dimples (Dharma 2).</p>
+<p><img src="figures/fig5-samsara-stages.jpg" alt="Figure 5" /></p>
+<p><strong>Figure 5.</strong> Samsara (Chain step 2), the app's 11 Top-shell stages, one scale: (b) is the excavated dodecahedron at 1/φ and (d) the great stellated dodecahedron at φ².</p>
+<p><img src="figures/fig6-convex-partials.jpg" alt="Figure 6" /></p>
+<p><strong>Figure 6.</strong> Twelve of the 45 convex partial-ring stages of the Spheres of Dharma (catalogue stages 62, 38, 29, 84, 31, 85, 86, 88, 83, 89, 69, 76), each with a different face signature; orange marks the partial ring.</p>
+<h2>Data, scripts and checks</h2>
+<p>Everything is in this folder:</p>
+<ul>
+<li><code>analysis/identify.py</code> (log and JSON): the 25 identification checks.</li>
+<li><code>analysis/pieces_analysis.py</code> (log and JSON): the piece table.</li>
+<li><code>analysis/fuse_extra.py</code> with <code>analysis/data/fused-extra.json</code>: the extra fused stages, run on dicto-node.</li>
+<li><code>figures/compose.py</code>: the plates, from the study's <code>renders/</code>.</li>
+<li><code>nets/nets.py</code>: the nets and their checks.</li>
+<li><code>CHECKS.md</code>: what was verified and how.</li>
+<li><code>REFERENCES.md</code>: the reference list.</li>
+</ul>
+<h2>Credits</h2>
+<p>DICTO: the structures, the pieces and all piece and structure names, the observation that started this study, and the plan for the app. Classical solids are credited to their sources. The Mosseri–Sadoc tiles are due to Mosseri and Sadoc (1982), as tabulated by Koca et al. (2020).</p>
+<h2>References</h2>
+<p>See <code>REFERENCES.md</code> for the full list with DOIs. Cited above:</p>
+<ul>
+<li>DICTO, The Chain of Karma (2026), doi:10.5281/zenodo.23310541.</li>
+<li>DICTO, Spheres of Dharma (2026), doi:10.5281/zenodo.23310833.</li>
+<li>DICTO, The Bodhi Seed (2026), doi:10.5281/zenodo.23311353.</li>
+<li>DICTO, Icosa-13 study and Bodhi pieces study, Kaleidohedra repository (studies/2026-10-10-icosa-13, studies/2026-10-12-bodhi-pieces).</li>
+<li>J. Kepler, <em>Mysterium cosmographicum</em> (1596); <em>Harmonices mundi</em> (1619).</li>
+<li>L. Pacioli, <em>Divina proportione</em> (1509); W. Jamnitzer, <em>Perspectiva corporum regularium</em> (1568).</li>
+<li>L. Poinsot (1810); A.-L. Cauchy (1813).</li>
+<li>H. S. M. Coxeter, P. Du Val, H. T. Flather, J. F. Petrie, <em>The Fifty-Nine Icosahedra</em> (1938; reprint 1982), doi:10.1007/978-1-4613-8216-4.</li>
+<li>M. J. Wenninger, <em>Polyhedron Models</em> (1971), doi:10.1017/CBO9780511569746.</li>
+<li>H. M. Cundy, A. P. Rollett, <em>Mathematical Models</em> (1951).</li>
+<li>H. Unkelbach, Deutsche Math. 5 (1940) 306–316.</li>
+<li>P. W. Messer, Structural Topology 21 (1995) 25–46.</li>
+<li>A. M. Cutler, E. Schulte, Beitr. Algebra Geom. 52 (2011) 133–161, doi:10.1007/s13366-011-0015-0.</li>
+<li>R. Mosseri, J. F. Sadoc (1982); N. O. Koca et al., Dodecahedral structures with Mosseri–Sadoc tiles (2020).</li>
+<li>A. L. Mackay, Acta Cryst. 15 (1962) 916, doi:10.1107/S0365110X6200239X.</li>
+<li>G. Bergman, J. L. T. Waugh, L. Pauling, Acta Cryst. 10 (1957) 254, doi:10.1107/S0365110X57000808.</li>
+<li>H. Takakura et al., Nature Mater. 6 (2007) 58.</li>
+<li>O. Echt, K. Sattler, E. Recknagel, PRL 47 (1981) 1121, doi:10.1103/PhysRevLett.47.1121.</li>
+<li>T. P. Martin, Phys. Rep. 273 (1996) 199, doi:10.1016/0370-1573(95)00083-6.</li>
+<li>B. K. Teo, N. J. A. Sloane, Inorg. Chem. 24 (1985) 4545, doi:10.1021/ic00220a025.</li>
+<li>F. Baletto, C. Mottet, R. Ferrando, PRL 84 (2000) 5544, doi:10.1103/PhysRevLett.84.5544.</li>
+<li>F. Baletto, R. Ferrando, Rev. Mod. Phys. 77 (2005) 371, doi:10.1103/RevModPhys.77.371.</li>
+<li>G. Rossi et al., PRL 93 (2004) 105503, doi:10.1103/PhysRevLett.93.105503.</li>
+<li>M. Senechal, Donald and the golden rhombohedra (2004).</li>
+<li>S. Kabai, clusters of rhombic triacontahedra and hexecontahedra (Wolfram Demonstrations; Bridges 2011).</li>
+<li>R. M. K. Dietl, J.-H. Eschenburg (2016); N. Fujita et al. (2013).</li>
+<li>D. L. D. Caspar, A. Klug, Cold Spring Harb. Symp. Quant. Biol. 27 (1962) 1.</li>
+<li>R. Twarock, A. Luque, Nat. Commun. 10 (2019) 4414, doi:10.1038/s41467-019-12367-3.</li>
+<li>A. Zlotnick, J. Mol. Biol. 241 (1994) 59, doi:10.1006/jmbi.1994.1473.</li>
+<li>M. F. Hagan, D. Chandler, Biophys. J. 91 (2006) 42, doi:10.1529/biophysj.105.076851.</li>
+<li>J. D. Perlmutter, M. F. Hagan, Annu. Rev. Phys. Chem. 66 (2015) 217, doi:10.1146/annurev-physchem-040214-121637.</li>
+<li>R. Lata et al., Cell 100 (2000) 253, doi:10.1016/S0092-8674(00)81563-9.</li>
+<li>T. Keef, R. Twarock, J. Math. Biol. 59 (2009) 287, doi:10.1007/s00285-008-0228-5.</li>
+<li>G. Indelicato et al., J. Math. Biol. 64 (2012) 745, doi:10.1007/s00285-011-0425-5.</li>
+<li>D. G. Salthouse et al., Acta Cryst. A 71 (2015) 410, doi:10.1107/S2053273315006701.</li>
+<li>Q.-F. Sun et al., Science 328 (2010) 1144, doi:10.1126/science.1188605.</li>
+<li>D. Fujita et al., Chem 1 (2016) 91, doi:10.1016/j.chempr.2016.06.007.</li>
+<li>S. J. Stray et al., PNAS 102 (2005) 8138, doi:10.1073/pnas.0409732102.</li>
+<li>N. P. King et al., Nature 510 (2014) 103, doi:10.1038/nature13404.</li>
+<li>Y. Hsia et al., Nature 535 (2016) 136, doi:10.1038/nature18010.</li>
+<li>P. Pearce, US 3,974,600 (1976); R. B. Fuller, <em>Synergetics</em> (1975).</li>
+<li>R. Verheyen, Comput. Math. Appl. 17 (1989) 203, doi:10.1016/B978-0-08-037237-2.50023-4.</li>
+</ul>
+<p>DICTO · dictospheres.com</p>
+</body></html>

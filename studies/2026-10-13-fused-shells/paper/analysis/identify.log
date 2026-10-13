@@ -1,0 +1,31 @@
+Lotus 2: 32 corners = 12 inner + 20 outer; faces 60; edges 90
+[PASS] Lotus 2: its 20 outer corners are the GSD's 20 points built from the core alone (worst 3.57e-05)
+[PASS] Lotus 2: its 12 inner corners are the core icosahedron's corners (worst 2.31e-06)
+[PASS] Lotus 2: all 60 faces lie in the 12 GSD planes a_i.x = r/sqrt5 = 0.262866 (worst plane offset 6.6e-06)
+[PASS] Lotus 2: its 60 faces are exactly the GSD's 60 visible triangles (tip + core edge), 60/60 matched
+[PASS] Lotus 2: edge lengths [0.618036, 1.000003], ratio 1.618034 vs phi 1.618034 (golden triangles, apex 36 deg)
+[PASS] Lotus 2: each plane holds 5 points + 5 inner corners, radius ratio 2.618034 = phi^2 2.618034 (regular pentagram)
+[PASS] Lotus 2: volume 1.545098 = icosahedron + 20 golden pyramids by formula 1.545098
+[PASS] Lotus 2: circumradius 1.401262 = GSD formula (sqrt3/4)(sqrt5-1)·edge, edge = pentagram chord 2.618041 -> 1.401262
+[PASS] Lotus 3 has exactly Lotus 2's 32 corners (worst 1.42e-05)
+[PASS] Lotus 3: all 60 faces lie in the 20 face planes of the centre icosahedron (inradius 0.467087)
+[PASS] Lotus 3: 60 equilateral triangles of edge 1.000003 = the hull dodecahedron's edge 1.000003
+[PASS] Lotus 3: volume 4.045118 = dodecahedron - 12 J2 pyramids = 4.045117 (excavated dodecahedron, Coxeter et al. Ef1g1)
+[PASS] Chain step 2 (STEP2_2): excavated dodecahedron scaled by 0.618034 (phi^-1.000); corners match True (worst 1.0e-05); volume 0.954922 vs 0.954925
+[PASS] Chain step 2 (STEP2_4): GSD scaled by 2.618033 (phi^+2.000); corners match True (worst 5.4e-05); volume 27.725584 vs 27.725618
+[PASS] Bodhi Kit B stage 2: its 62 corners = the corners of 20 prolate golden rhombohedra (edge 1) round the centre (worst 3.5e-06)
+[PASS] Bodhi Kit B stage 2: volume 15.216848 = 20 prolate golden rhombohedra 15.216902
+[PASS] Bodhi Kit B stage 2: 60 faces on 30 planes, all at distance [0.8506, 0.8507] (the centre triacontahedron's face planes)
+[PASS] Bodhi Kit B stage 2: every face a golden rhombus (diagonal ratio 1.618034, worst dev 2.7e-06)
+[PASS] Dharma 80: convex (hull volume 14.404200 = solid 14.404200); faces 60 tri, 30 quad, 12 pent
+[PASS] Dharma 80: the 30 quadrilaterals are rhombi, not rectangles: sides 0.65097-0.65097, angles 56.68/123.32 deg
+[PASS] Dharma 80: corners = 60 at r 1.5315 (the truncated icosahedron of stage 6) + 20 at r 1.6057 on the 3-fold axes (a regular dodecahedron)
+Dharma 80: face-plane distances [1.4384, 1.5]: all 90 triangle and rhombus planes touch one sphere
+Dharma 80: each of the 60 triangle normals lies in a mirror plane: 60/60
+Dharma 80: angle between each triangle normal and its nearest 3-fold axis: [20.905] deg
+Dharma 10: 12 outer corners = icosahedron (edge 2.61803), 20 inner corners on the 3-fold axes at r 1.6057, 60 triangles on 60 planes at distance [1.4399500100532177]
+[PASS] Dharma 10: a great dodecahedron round the same icosahedron would put its 20 dimple corners at r 1.4013; here r 1.6057: not the great dodecahedron (dimples shallower)
+[PASS] Dharma 10: every triangle = one edge of the outer icosahedron + one inner corner (an icosahedron with 20 inward triangular pyramids)
+Dharma 2: corners [np.int64(12), np.int64(30)] at r [np.float64(0.5878), np.float64(1.309)]; faces 80 triangles; = icosidodecahedron (30 corners) with 12 inward pentagonal pyramids reaching the core icosahedron's corners
+[PASS] Dodecahedral Chain DODECA_2: same 32 corners as the GSD (Lotus 2), same size (worst 1.6e-07); 60 faces; volume 1.545098
+[PASS] Dodecahedral Chain DODECA_3: same 32 corners as the excavated dodecahedron (Lotus 3), same size (worst 6.3e-06); 60 faces; volume 4.045116

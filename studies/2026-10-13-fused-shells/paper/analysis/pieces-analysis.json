@@ -1,0 +1,2166 @@
+{
+ "credit": "DICTO · dictospheres.com",
+ "note": "One representative per congruence class; lengths in the study units of pieces.json. Closed forms are fitted to 1e-6 (lengths) / 2e-5 (cosines): guesses, not proofs.",
+ "pieces": [
+  {
+   "corners": 12,
+   "edges": 30,
+   "faces": 20,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "volume": 0.5150324776410774,
+   "convex": true,
+   "edgeLengths": [
+    0.618036
+   ],
+   "dihedrals": [
+    138.189685
+   ],
+   "edgeMult": {
+    "0.61804": 30
+   },
+   "symmetryOrder": 120,
+   "properRotations": 60,
+   "chiral": false,
+   "faceSides": [
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ]
+   ],
+   "class": "12-corner convex polyhedron",
+   "id": "dharma.cycle:core",
+   "alsoIn": [
+    "karma.lotus:ico",
+    "karma.lotus:ico (x1.618029)",
+    "karma.step2:ico (x0.618034)",
+    "karma.step2:ico",
+    "karma.step2:ico (x1.618025)",
+    "karma.dodeca:ico",
+    "dharma.inner:core",
+    "dharma.hinge:core"
+   ],
+   "dictoName": "core icosahedron",
+   "mosseriSadoc": [],
+   "exact": {
+    "edge": {
+     "0.618036": "L² = (3 - 1√5)/2"
+    },
+    "dihedral": {
+     "138.190": "cos² = (5)/9"
+    },
+    "volume": "(-5 + 5√5)/12"
+   }
+  },
+  {
+   "corners": 6,
+   "edges": 10,
+   "faces": 6,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    5
+   ],
+   "volume": 0.197337706578851,
+   "convex": true,
+   "edgeLengths": [
+    0.809019,
+    0.866028
+   ],
+   "dihedrals": [
+    43.358198,
+    132.399635
+   ],
+   "edgeMult": {
+    "0.80902": 5,
+    "0.86603": 5
+   },
+   "symmetryOrder": 10,
+   "properRotations": 5,
+   "chiral": false,
+   "faceSides": [
+    [
+     0.809,
+     0.809,
+     0.809,
+     0.809,
+     0.809
+    ],
+    [
+     0.809,
+     0.866,
+     0.866
+    ],
+    [
+     0.809,
+     0.866,
+     0.866
+    ],
+    [
+     0.809,
+     0.866,
+     0.866
+    ],
+    [
+     0.809,
+     0.866,
+     0.866
+    ],
+    [
+     0.809,
+     0.866,
+     0.866
+    ]
+   ],
+   "class": "5-gonal pyramid",
+   "id": "dharma.cycle:npyr5",
+   "alsoIn": [
+    "dharma.inner:npyr5",
+    "dharma.hinge:npyr5"
+   ],
+   "dictoName": "(pentagonal pyramid; no name yet)",
+   "mosseriSadoc": [],
+   "exact": {
+    "edge": {
+     "0.809019": "L² = (3 + 1√5)/8",
+     "0.866028": "L² = (3)/4"
+    },
+    "dihedral": {
+     "43.358": "cos⁴ = (1√5)/8",
+     "132.400": "cos² = (18 - 5√5)/15"
+    },
+    "volume": null
+   }
+  },
+  {
+   "corners": 6,
+   "edges": 12,
+   "faces": 8,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "volume": 0.22215043020000005,
+   "convex": true,
+   "edgeLengths": [
+    0.618036,
+    0.809019,
+    0.866028
+   ],
+   "dihedrals": [
+    99.26446,
+    110.905144,
+    113.800175
+   ],
+   "edgeMult": {
+    "0.61804": 3,
+    "0.80902": 3,
+    "0.86603": 6
+   },
+   "symmetryOrder": 6,
+   "properRotations": 3,
+   "chiral": false,
+   "faceSides": [
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.866,
+     0.866
+    ],
+    [
+     0.618,
+     0.866,
+     0.866
+    ],
+    [
+     0.618,
+     0.866,
+     0.866
+    ],
+    [
+     0.809,
+     0.809,
+     0.809
+    ],
+    [
+     0.809,
+     0.866,
+     0.866
+    ],
+    [
+     0.809,
+     0.866,
+     0.866
+    ],
+    [
+     0.809,
+     0.866,
+     0.866
+    ]
+   ],
+   "class": "twisted 3-gonal antiprism-like frustum (prismatoid)",
+   "id": "dharma.cycle:nfru3",
+   "alsoIn": [
+    "dharma.cycle:nfru3",
+    "dharma.inner:nfru3",
+    "dharma.inner:nfru3",
+    "dharma.hinge:nfru3",
+    "dharma.hinge:nfru3"
+   ],
+   "dictoName": "Vajra (twist)",
+   "mosseriSadoc": [],
+   "exact": {
+    "edge": {
+     "0.618036": "L² = (3 - 1√5)/2",
+     "0.809019": "L² = (3 + 1√5)/8",
+     "0.866028": "L² = (3)/4"
+    },
+    "dihedral": {
+     "99.264": null,
+     "110.905": "cos² = (3 - 1√5)/6",
+     "113.800": "cos = (-19 + 2√5)/36"
+    },
+    "volume": null
+   }
+  },
+  {
+   "corners": 4,
+   "edges": 6,
+   "faces": 4,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "volume": 0.01685476661795034,
+   "convex": true,
+   "edgeLengths": [
+    0.500002,
+    0.809019
+   ],
+   "dihedrals": [
+    37.37757,
+    116.564725
+   ],
+   "edgeMult": {
+    "0.50000": 3,
+    "0.80902": 3
+   },
+   "symmetryOrder": 6,
+   "properRotations": 3,
+   "chiral": false,
+   "faceSides": [
+    [
+     0.5,
+     0.5,
+     0.809
+    ],
+    [
+     0.5,
+     0.5,
+     0.809
+    ],
+    [
+     0.5,
+     0.5,
+     0.809
+    ],
+    [
+     0.809,
+     0.809,
+     0.809
+    ]
+   ],
+   "class": "tetrahedron (symmetry order 6)",
+   "id": "dharma.cycle:npyr3",
+   "alsoIn": [
+    "dharma.inner:npyr3",
+    "dharma.hinge:npyr3"
+   ],
+   "dictoName": "Cleo-low",
+   "mosseriSadoc": [
+    "t3 at Icosa-13 scale x0.809019"
+   ],
+   "exact": {
+    "edge": {
+     "0.500002": "L² = (1)/4",
+     "0.809019": "L² = (3 + 1√5)/8"
+    },
+    "dihedral": {
+     "37.378": "cos² = (5 + 2√5)/15",
+     "116.565": "cos² = (1)/5"
+    },
+    "volume": null
+   }
+  },
+  {
+   "corners": 10,
+   "edges": 20,
+   "faces": 12,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    5,
+    5
+   ],
+   "volume": 0.39986092126387046,
+   "convex": true,
+   "edgeLengths": [
+    0.618034,
+    1.000003
+   ],
+   "dihedrals": [
+    63.434412,
+    142.622921
+   ],
+   "edgeMult": {
+    "0.61803": 15,
+    "1.00000": 5
+   },
+   "symmetryOrder": 10,
+   "properRotations": 5,
+   "chiral": false,
+   "faceSides": [
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     1.0
+    ],
+    [
+     0.618,
+     0.618,
+     1.0
+    ],
+    [
+     0.618,
+     0.618,
+     1.0
+    ],
+    [
+     0.618,
+     0.618,
+     1.0
+    ],
+    [
+     0.618,
+     0.618,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   ],
+   "class": "twisted 5-gonal antiprism-like frustum (prismatoid)",
+   "id": "dharma.cycle:nfru5",
+   "alsoIn": [
+    "dharma.outer:nfru5"
+   ],
+   "dictoName": "(twisted pentagonal frustum; no name yet)",
+   "mosseriSadoc": [],
+   "exact": {
+    "edge": {
+     "0.618034": "L² = (3 - 1√5)/2",
+     "1.000003": "L² = 1"
+    },
+    "dihedral": {
+     "63.434": "cos² = (1)/5",
+     "142.623": "cos² = (5 + 2√5)/15"
+    },
+    "volume": "(-15 + 11√5)/24"
+   }
+  },
+  {
+   "corners": 4,
+   "edges": 6,
+   "faces": 4,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "volume": 0.01967192273195097,
+   "convex": true,
+   "edgeLengths": [
+    0.618034,
+    1.000003
+   ],
+   "dihedrals": [
+    37.376715,
+    116.566067,
+    138.190653
+   ],
+   "edgeMult": {
+    "0.61803": 5,
+    "1.00000": 1
+   },
+   "symmetryOrder": 4,
+   "properRotations": 2,
+   "chiral": false,
+   "faceSides": [
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     1.0
+    ],
+    [
+     0.618,
+     0.618,
+     1.0
+    ]
+   ],
+   "class": "tetrahedron (symmetry order 4)",
+   "id": "dharma.cycle:nt1",
+   "alsoIn": [
+    "dharma.outer:nt1"
+   ],
+   "dictoName": "t1 (Mosseri–Sadoc)",
+   "mosseriSadoc": [
+    "t1 at Icosa-13 scale"
+   ],
+   "exact": {
+    "edge": {
+     "0.618034": "L² = (3 - 1√5)/2",
+     "1.000003": "L² = 1"
+    },
+    "dihedral": {
+     "37.377": "cos² = (5 + 2√5)/15",
+     "116.566": "cos² = (1)/5",
+     "138.191": "cos² = (5)/9"
+    },
+    "volume": "(-2 + 1√5)/12"
+   }
+  },
+  {
+   "corners": 6,
+   "edges": 10,
+   "faces": 6,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    5
+   ],
+   "volume": 0.07117501431026933,
+   "convex": true,
+   "edgeLengths": [
+    0.618034
+   ],
+   "dihedrals": [
+    37.377368,
+    138.189685
+   ],
+   "edgeMult": {
+    "0.61803": 10
+   },
+   "symmetryOrder": 10,
+   "properRotations": 5,
+   "chiral": false,
+   "faceSides": [
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.618,
+     0.618,
+     0.618,
+     0.618
+    ]
+   ],
+   "class": "5-gonal pyramid",
+   "id": "dharma.cycle:ncap5",
+   "alsoIn": [
+    "karma.dodeca:cap (x1.618039)",
+    "dharma.outer:ncap"
+   ],
+   "dictoName": "pentagonal cap (J2)",
+   "mosseriSadoc": [],
+   "exact": {
+    "edge": {
+     "0.618034": "L² = (3 - 1√5)/2"
+    },
+    "dihedral": {
+     "37.377": "cos² = (5 + 2√5)/15",
+     "138.190": "cos² = (5)/9"
+    },
+    "volume": "(-5 + 3√5)/24"
+   }
+  },
+  {
+   "corners": 7,
+   "edges": 12,
+   "faces": 7,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    6
+   ],
+   "volume": 0.06762666326535831,
+   "convex": true,
+   "edgeLengths": [
+    0.618034,
+    0.65097
+   ],
+   "dihedrals": [
+    20.905216,
+    159.445502
+   ],
+   "edgeMult": {
+    "0.61803": 6,
+    "0.65097": 6
+   },
+   "symmetryOrder": 12,
+   "properRotations": 6,
+   "chiral": false,
+   "faceSides": [
+    [
+     0.618,
+     0.618,
+     0.618,
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.651,
+     0.651
+    ],
+    [
+     0.618,
+     0.651,
+     0.651
+    ],
+    [
+     0.618,
+     0.651,
+     0.651
+    ],
+    [
+     0.618,
+     0.651,
+     0.651
+    ],
+    [
+     0.618,
+     0.651,
+     0.651
+    ],
+    [
+     0.618,
+     0.651,
+     0.651
+    ]
+   ],
+   "class": "6-gonal pyramid",
+   "id": "dharma.cycle:ncap6",
+   "alsoIn": [
+    "dharma.outer:ncap"
+   ],
+   "dictoName": "Shield",
+   "mosseriSadoc": [],
+   "exact": {
+    "edge": {
+     "0.618034": "L² = (3 - 1√5)/2",
+     "0.650970": null
+    },
+    "dihedral": {
+     "20.905": "cos² = (3 + 1√5)/6",
+     "159.446": "cos = (-9 - 1√5)/12"
+    },
+    "volume": null
+   }
+  },
+  {
+   "corners": 4,
+   "edges": 6,
+   "faces": 4,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "volume": 0.01127101218295499,
+   "convex": true,
+   "edgeLengths": [
+    0.618031,
+    0.650969,
+    1.089813
+   ],
+   "dihedrals": [
+    20.554295,
+    20.905009,
+    144.000197,
+    159.095102
+   ],
+   "edgeMult": {
+    "0.61803": 3,
+    "0.65097": 2,
+    "1.08981": 1
+   },
+   "symmetryOrder": 2,
+   "properRotations": 1,
+   "chiral": false,
+   "faceSides": [
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     0.651,
+     0.651
+    ],
+    [
+     0.618,
+     0.651,
+     1.0898
+    ],
+    [
+     0.618,
+     0.651,
+     1.0898
+    ]
+   ],
+   "class": "tetrahedron (symmetry order 2)",
+   "id": "dharma.cycle:nwedge",
+   "alsoIn": [
+    "dharma.outer:nwedge"
+   ],
+   "dictoName": "Vajra-blade",
+   "mosseriSadoc": [],
+   "exact": {
+    "edge": {
+     "0.618031": "L² = (3 - 1√5)/2",
+     "0.650969": null,
+     "1.089813": "L = (32 - 7√5)/15"
+    },
+    "dihedral": {
+     "20.554": "cos = (9 + 1√5)/12",
+     "20.905": "cos² = (3 + 1√5)/6",
+     "144.000": "cos² = (3 + 1√5)/8",
+     "159.095": "cos² = (3 + 1√5)/6"
+    },
+    "volume": null
+   }
+  },
+  {
+   "corners": 6,
+   "edges": 11,
+   "faces": 7,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    4
+   ],
+   "volume": 0.5278628190515136,
+   "convex": true,
+   "edgeLengths": [
+    0.726541,
+    1.089813,
+    1.556842,
+    2.61803
+   ],
+   "dihedrals": [
+    71.999899,
+    85.664167,
+    107.99992,
+    112.532503
+   ],
+   "edgeMult": {
+    "0.72654": 2,
+    "1.08981": 4,
+    "1.55684": 4,
+    "2.61803": 1
+   },
+   "symmetryOrder": 4,
+   "properRotations": 2,
+   "chiral": false,
+   "faceSides": [
+    [
+     0.7265,
+     1.0898,
+     1.5568
+    ],
+    [
+     0.7265,
+     1.0898,
+     1.5568
+    ],
+    [
+     0.7265,
+     1.0898,
+     1.5568
+    ],
+    [
+     0.7265,
+     1.0898,
+     1.5568
+    ],
+    [
+     1.0898,
+     1.0898,
+     1.0898,
+     1.0898
+    ],
+    [
+     1.5568,
+     1.5568,
+     2.618
+    ],
+    [
+     1.5568,
+     1.5568,
+     2.618
+    ]
+   ],
+   "class": "6-corner convex polyhedron",
+   "id": "dharma.cycle:nedge",
+   "alsoIn": [
+    "dharma.outer:nedge"
+   ],
+   "dictoName": "Sevenfold-blade",
+   "mosseriSadoc": [],
+   "exact": {
+    "edge": {
+     "0.726541": "L² = 5 - 2√5",
+     "1.089813": "L = (32 - 7√5)/15",
+     "1.556842": "L⁴ = (174 + 1√5)/30",
+     "2.618030": "L² = (7 + 3√5)/2"
+    },
+    "dihedral": {
+     "72.000": "cos² = (3 - 1√5)/8",
+     "85.664": "cos = (-21 + 10√5)/18",
+     "108.000": "cos² = (3 - 1√5)/8",
+     "112.533": "cos² = (29 - 11√5)/30"
+    },
+    "volume": "5 - 2√5"
+   }
+  },
+  {
+   "corners": 4,
+   "edges": 6,
+   "faces": 4,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "volume": 0.36892094327185515,
+   "convex": true,
+   "edgeLengths": [
+    1.556842,
+    2.61803
+   ],
+   "dihedrals": [
+    26.262857,
+    134.934988
+   ],
+   "edgeMult": {
+    "1.55684": 3,
+    "2.61803": 3
+   },
+   "symmetryOrder": 6,
+   "properRotations": 3,
+   "chiral": false,
+   "faceSides": [
+    [
+     1.5568,
+     1.5568,
+     2.618
+    ],
+    [
+     1.5568,
+     1.5568,
+     2.618
+    ],
+    [
+     1.5568,
+     1.5568,
+     2.618
+    ],
+    [
+     2.618,
+     2.618,
+     2.618
+    ]
+   ],
+   "class": "tetrahedron (symmetry order 6)",
+   "id": "dharma.cycle:nface",
+   "alsoIn": [
+    "dharma.outer:nface"
+   ],
+   "dictoName": "Cleo-low 2",
+   "mosseriSadoc": [],
+   "exact": {
+    "edge": {
+     "1.556842": "L⁴ = (174 + 1√5)/30",
+     "2.618030": "L² = (7 + 3√5)/2"
+    },
+    "dihedral": {
+     "26.263": "cos² = (4 + 9√5)/30",
+     "134.935": null
+    },
+    "volume": null
+   }
+  },
+  {
+   "corners": 4,
+   "edges": 6,
+   "faces": 4,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "volume": 0.08333389339999998,
+   "convex": true,
+   "edgeLengths": [
+    0.618038,
+    1.0
+   ],
+   "dihedrals": [
+    41.810639,
+    63.435253,
+    79.187555
+   ],
+   "edgeMult": {
+    "0.61804": 1,
+    "1.00000": 5
+   },
+   "symmetryOrder": 4,
+   "properRotations": 2,
+   "chiral": false,
+   "faceSides": [
+    [
+     0.618,
+     1.0,
+     1.0
+    ],
+    [
+     0.618,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ]
+   ],
+   "class": "tetrahedron (symmetry order 4)",
+   "id": "karma.lotus:axe",
+   "alsoIn": [
+    "karma.step2:axe (x0.618033)",
+    "karma.step2:axe",
+    "karma.step2:axe (x2.618034)",
+    "karma.dodeca:axe",
+    "dharma.hinge:laxe"
+   ],
+   "dictoName": "AXE",
+   "mosseriSadoc": [
+    "t6 at Icosa-13 scale"
+   ],
+   "exact": {
+    "edge": {
+     "0.618038": "L² = (3 - 1√5)/2",
+     "1.000000": "L² = 1"
+    },
+    "dihedral": {
+     "41.811": "cos² = (5)/9",
+     "63.435": "cos² = (1)/5",
+     "79.188": "cos² = (5 - 2√5)/15"
+    },
+    "volume": "(1)/12"
+   }
+  },
+  {
+   "corners": 7,
+   "edges": 12,
+   "faces": 7,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    6
+   ],
+   "volume": 0.32117499999999993,
+   "convex": true,
+   "edgeLengths": [
+    0.618038,
+    0.999997
+   ],
+   "dihedrals": [
+    37.377291,
+    41.810139,
+    142.622743
+   ],
+   "edgeMult": {
+    "0.61804": 3,
+    "1.00000": 9
+   },
+   "symmetryOrder": 6,
+   "properRotations": 3,
+   "chiral": false,
+   "faceSides": [
+    [
+     0.618,
+     0.618,
+     0.618,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     0.618,
+     1.0,
+     1.0
+    ],
+    [
+     0.618,
+     1.0,
+     1.0
+    ],
+    [
+     0.618,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ]
+   ],
+   "class": "6-gonal pyramid",
+   "id": "karma.lotus:fuji",
+   "alsoIn": [
+    "karma.step2:fuji (x0.618037)",
+    "karma.step2:fuji",
+    "karma.step2:fuji (x2.618047)",
+    "dharma.hinge:lfuji"
+   ],
+   "dictoName": "FUJI",
+   "mosseriSadoc": [],
+   "exact": {
+    "edge": {
+     "0.618038": "L² = (3 - 1√5)/2",
+     "0.999997": "L² = 1"
+    },
+    "dihedral": {
+     "37.377": "cos² = (5 + 2√5)/15",
+     "41.810": "cos² = (5)/9",
+     "142.623": "cos² = (5 + 2√5)/15"
+    },
+    "volume": "(1 + 3√5)/24"
+   }
+  },
+  {
+   "corners": 4,
+   "edges": 6,
+   "faces": 4,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "volume": 0.051503119410269325,
+   "convex": true,
+   "edgeLengths": [
+    0.618035,
+    1.000003
+   ],
+   "dihedrals": [
+    63.434931,
+    79.187712
+   ],
+   "edgeMult": {
+    "0.61804": 3,
+    "1.00000": 3
+   },
+   "symmetryOrder": 6,
+   "properRotations": 3,
+   "chiral": false,
+   "faceSides": [
+    [
+     0.618,
+     0.618,
+     0.618
+    ],
+    [
+     0.618,
+     1.0,
+     1.0
+    ],
+    [
+     0.618,
+     1.0,
+     1.0
+    ],
+    [
+     0.618,
+     1.0,
+     1.0
+    ]
+   ],
+   "class": "tetrahedron (symmetry order 6)",
+   "id": "karma.lotus:cleo",
+   "alsoIn": [
+    "karma.step2:cleo (x0.618034)",
+    "karma.step2:cleo",
+    "karma.step2:cleo (x2.618017)",
+    "karma.dodeca:cleo"
+   ],
+   "dictoName": "CLEO",
+   "mosseriSadoc": [
+    "t4 at Icosa-13 scale"
+   ],
+   "exact": {
+    "edge": {
+     "0.618035": "L² = (3 - 1√5)/2",
+     "1.000003": "L² = 1"
+    },
+    "dihedral": {
+     "63.435": "cos² = (1)/5",
+     "79.188": "cos² = (5 - 2√5)/15"
+    },
+    "volume": "(-1 + 1√5)/24"
+   }
+  },
+  {
+   "corners": 32,
+   "edges": 60,
+   "faces": 30,
+   "euler": 2,
+   "faceTypes": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "volume": 12.310715048359903,
+   "convex": true,
+   "edgeLengths": [
+    1.0
+   ],
+   "dihedrals": [
+    144.0
+   ],
+   "edgeMult": {
+    "1.00000": 60
+   },
+   "symmetryOrder": 120,
+   "properRotations": 60,
+   "chiral": false,
+   "faceSides": [
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   ],
+   "class": "32-corner convex polyhedron",
+   "id": "bodhi.kitB:copy",
+   "alsoIn": [
+    "bodhi.kitB:centre (x0.618033)",
+    "bodhi.seed:outer (x2.618036)",
+    "bodhi.seed:copy",
+    "bodhi.seed:centre (x0.618033)",
+    "bodhi.kitA:copy",
+    "bodhi.kitA:centre (x0.618033)",
+    "bodhi.hollow:centre (x0.618033)"
+   ],
+   "dictoName": "rhombic triacontahedron",
+   "mosseriSadoc": [],
+   "exact": {
+    "edge": {
+     "1.000000": "L² = 1"
+    },
+    "dihedral": {
+     "144.000": "cos² = (3 + 1√5)/8"
+    },
+    "volume": null
+   }
+  },
+  {
+   "corners": 5,
+   "edges": 9,
+   "faces": 6,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "volume": 0.20517821546187112,
+   "convex": true,
+   "edgeLengths": [
+    0.618033,
+    0.999999,
+    1.051461,
+    1.473369,
+    1.701299
+   ],
+   "dihedrals": [
+    72.000007,
+    90.00004,
+    107.999948,
+    120.0
+   ],
+   "edgeMult": {
+    "0.61803": 2,
+    "1.00000": 3,
+    "1.05146": 1,
+    "1.47337": 1,
+    "1.70130": 2
+   },
+   "symmetryOrder": 2,
+   "properRotations": 1,
+   "chiral": false,
+   "faceSides": [
+    [
+     0.618,
+     0.618,
+     1.0515
+    ],
+    [
+     0.618,
+     1.4734,
+     1.7013
+    ],
+    [
+     0.618,
+     1.4734,
+     1.7013
+    ],
+    [
+     1.0,
+     1.0,
+     1.0515
+    ],
+    [
+     1.0,
+     1.0,
+     1.7013
+    ],
+    [
+     1.0,
+     1.0,
+     1.7013
+    ]
+   ],
+   "class": "triangular bipyramid (irregular)",
+   "id": "bodhi.kitB:B1",
+   "alsoIn": [
+    "bodhi.kitA:B1",
+    "bodhi.hollow:B1"
+   ],
+   "dictoName": "Vajra (fine)",
+   "mosseriSadoc": [],
+   "exact": {
+    "edge": {
+     "0.618033": "L² = (3 - 1√5)/2",
+     "0.999999": "L² = 1",
+     "1.051461": "L² = (10 - 2√5)/5",
+     "1.473369": "L² = (15 + 3√5)/10",
+     "1.701299": "L² = (10 + 2√5)/5"
+    },
+    "dihedral": {
+     "72.000": "cos² = (3 - 1√5)/8",
+     "90.000": "cos² = 0",
+     "108.000": "cos² = (3 - 1√5)/8",
+     "120.000": "cos² = (1)/4"
+    },
+    "volume": null
+   }
+  },
+  {
+   "corners": 14,
+   "edges": 21,
+   "faces": 9,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    5,
+    5,
+    5,
+    6,
+    6,
+    6
+   ],
+   "volume": 1.9576359491247537,
+   "convex": true,
+   "edgeLengths": [
+    0.562778,
+    1.0,
+    1.051461,
+    1.236066,
+    1.618034
+   ],
+   "dihedrals": [
+    36.000366,
+    90.00015,
+    120.000144,
+    143.999634
+   ],
+   "edgeMult": {
+    "0.56278": 6,
+    "1.00000": 6,
+    "1.05146": 3,
+    "1.23607": 3,
+    "1.61803": 3
+   },
+   "symmetryOrder": 6,
+   "properRotations": 3,
+   "chiral": false,
+   "faceSides": [
+    [
+     0.5628,
+     0.5628,
+     1.0,
+     1.0,
+     1.2361,
+     1.2361
+    ],
+    [
+     0.5628,
+     0.5628,
+     1.0,
+     1.0,
+     1.2361,
+     1.2361
+    ],
+    [
+     0.5628,
+     0.5628,
+     1.0,
+     1.0,
+     1.2361,
+     1.2361
+    ],
+    [
+     0.5628,
+     0.5628,
+     1.0515
+    ],
+    [
+     0.5628,
+     0.5628,
+     1.0515
+    ],
+    [
+     0.5628,
+     0.5628,
+     1.0515
+    ],
+    [
+     1.0,
+     1.0,
+     1.0515,
+     1.618,
+     1.618
+    ],
+    [
+     1.0,
+     1.0,
+     1.0515,
+     1.618,
+     1.618
+    ],
+    [
+     1.0,
+     1.0,
+     1.0515,
+     1.618,
+     1.618
+    ]
+   ],
+   "class": "14-corner convex polyhedron",
+   "id": "bodhi.kitB:B4",
+   "alsoIn": [],
+   "dictoName": "Crown Jewel",
+   "mosseriSadoc": [],
+   "exact": {
+    "edge": {
+     "0.562778": "L² = (15 - 6√5)/5",
+     "1.000000": "L² = 1",
+     "1.051461": "L² = (10 - 2√5)/5",
+     "1.236066": "L² = 6 - 2√5",
+     "1.618034": "L² = (3 + 1√5)/2"
+    },
+    "dihedral": {
+     "36.000": "cos² = (3 + 1√5)/8",
+     "90.000": "cos² = 0",
+     "120.000": "cos² = (1)/4",
+     "144.000": "cos² = (3 + 1√5)/8"
+    },
+    "volume": null
+   }
+  },
+  {
+   "corners": 6,
+   "edges": 9,
+   "faces": 5,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    4,
+    4,
+    4
+   ],
+   "volume": 0.15674192185758998,
+   "convex": true,
+   "edgeLengths": [
+    0.562777,
+    0.649838,
+    0.999999,
+    1.236066
+   ],
+   "dihedrals": [
+    35.999977,
+    59.999994,
+    89.99994,
+    108.00004
+   ],
+   "edgeMult": {
+    "0.56278": 2,
+    "0.64984": 2,
+    "1.00000": 4,
+    "1.23607": 1
+   },
+   "symmetryOrder": 2,
+   "properRotations": 2,
+   "chiral": true,
+   "faceSides": [
+    [
+     0.5628,
+     0.6498,
+     1.0
+    ],
+    [
+     0.5628,
+     0.6498,
+     1.0
+    ],
+    [
+     0.5628,
+     0.6498,
+     1.0,
+     1.2361
+    ],
+    [
+     0.5628,
+     0.6498,
+     1.0,
+     1.2361
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   ],
+   "class": "6-corner convex polyhedron",
+   "id": "bodhi.kitB:B5L",
+   "alsoIn": [
+    "bodhi.kitB:B5R"
+   ],
+   "dictoName": "Diadem L (R = mirror image)",
+   "mosseriSadoc": [],
+   "exact": {
+    "edge": {
+     "0.562777": "L² = (15 - 6√5)/5",
+     "0.649838": "L² = (20 - 8√5)/5",
+     "0.999999": "L² = 1",
+     "1.236066": "L² = 6 - 2√5"
+    },
+    "dihedral": {
+     "36.000": "cos² = (3 + 1√5)/8",
+     "60.000": "cos² = (1)/4",
+     "90.000": "cos² = 0",
+     "108.000": "cos² = (3 - 1√5)/8"
+    },
+    "volume": null
+   }
+  },
+  {
+   "corners": 11,
+   "edges": 25,
+   "faces": 16,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    5
+   ],
+   "volume": 1.8801880586399065,
+   "convex": true,
+   "edgeLengths": [
+    0.999999
+   ],
+   "dihedrals": [
+    100.812117,
+    138.189735
+   ],
+   "edgeMult": {
+    "1.00000": 25
+   },
+   "symmetryOrder": 10,
+   "properRotations": 5,
+   "chiral": false,
+   "faceSides": [
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   ],
+   "class": "11-corner convex polyhedron",
+   "id": "dharma.hinge:lj11",
+   "alsoIn": [],
+   "dictoName": "J11 (gyroelongated pentagonal pyramid)",
+   "mosseriSadoc": [],
+   "exact": {
+    "edge": {
+     "0.999999": "L² = 1"
+    },
+    "dihedral": {
+     "100.812": "cos² = (5 - 2√5)/15",
+     "138.190": "cos² = (5)/9"
+    },
+    "volume": "(25 + 9√5)/24"
+   }
+  },
+  {
+   "corners": 7,
+   "edges": 11,
+   "faces": 6,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    4,
+    4,
+    5
+   ],
+   "volume": 0.8691485096174173,
+   "convex": true,
+   "edgeLengths": [
+    0.910592,
+    0.999999,
+    1.051461,
+    1.473369,
+    1.618032
+   ],
+   "dihedrals": [
+    60.0,
+    72.000003,
+    89.999994,
+    108.000002,
+    120.0
+   ],
+   "edgeMult": {
+    "0.91059": 2,
+    "1.00000": 5,
+    "1.05146": 1,
+    "1.47337": 1,
+    "1.61803": 2
+   },
+   "symmetryOrder": 2,
+   "properRotations": 1,
+   "chiral": false,
+   "faceSides": [
+    [
+     0.9106,
+     0.9106,
+     1.0,
+     1.0,
+     1.0515
+    ],
+    [
+     0.9106,
+     1.0,
+     1.0,
+     1.618
+    ],
+    [
+     0.9106,
+     1.0,
+     1.0,
+     1.618
+    ],
+    [
+     1.0,
+     1.0,
+     1.0515
+    ],
+    [
+     1.0,
+     1.4734,
+     1.618
+    ],
+    [
+     1.0,
+     1.4734,
+     1.618
+    ]
+   ],
+   "class": "7-corner convex polyhedron",
+   "id": "bodhi.kitA:B2",
+   "alsoIn": [
+    "bodhi.kitA:B2"
+   ],
+   "dictoName": "Chatra",
+   "mosseriSadoc": [],
+   "exact": {
+    "edge": {
+     "0.910592": "L² = (15 - 3√5)/10",
+     "0.999999": "L² = 1",
+     "1.051461": "L² = (10 - 2√5)/5",
+     "1.473369": "L² = (15 + 3√5)/10",
+     "1.618032": "L² = (3 + 1√5)/2"
+    },
+    "dihedral": {
+     "60.000": "cos² = (1)/4",
+     "72.000": "cos² = (3 - 1√5)/8",
+     "90.000": "cos² = 0",
+     "108.000": "cos² = (3 - 1√5)/8",
+     "120.000": "cos² = (1)/4"
+    },
+    "volume": null
+   }
+  },
+  {
+   "corners": 5,
+   "edges": 8,
+   "faces": 5,
+   "euler": 2,
+   "faceTypes": [
+    3,
+    3,
+    3,
+    3,
+    4
+   ],
+   "volume": 0.09687192648035277,
+   "convex": true,
+   "edgeLengths": [
+    0.618033,
+    0.910592,
+    0.999999
+   ],
+   "dihedrals": [
+    35.999981,
+    120.000035,
+    144.000009
+   ],
+   "edgeMult": {
+    "0.61803": 2,
+    "0.91059": 2,
+    "1.00000": 4
+   },
+   "symmetryOrder": 4,
+   "properRotations": 2,
+   "chiral": false,
+   "faceSides": [
+    [
+     0.618,
+     0.9106,
+     1.0
+    ],
+    [
+     0.618,
+     0.9106,
+     1.0
+    ],
+    [
+     0.618,
+     0.9106,
+     1.0
+    ],
+    [
+     0.618,
+     0.9106,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   ],
+   "class": "quadrilateral pyramid",
+   "id": "bodhi.kitA:B3",
+   "alsoIn": [],
+   "dictoName": "Mudra",
+   "mosseriSadoc": [],
+   "exact": {
+    "edge": {
+     "0.618033": "L² = (3 - 1√5)/2",
+     "0.910592": "L² = (15 - 3√5)/10",
+     "0.999999": "L² = 1"
+    },
+    "dihedral": {
+     "36.000": "cos² = (3 + 1√5)/8",
+     "120.000": "cos² = (1)/4",
+     "144.000": "cos² = (3 + 1√5)/8"
+    },
+    "volume": null
+   }
+  }
+ ]
+}
