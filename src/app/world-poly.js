@@ -257,7 +257,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   }
   // ---- a 13 kit (DICTO 2026-10-13): the kit's plan lined up with the build, its next layer as ghosts, each kind of piece its own
   // colour (krp-core kitHints.js).
-  const KIT_COLOURS = [0xffc857, 0x5fd38a, 0x4dd0e1, 0xc792ea, 0xf08fc0, 0x9fb4c8];
+  const KIT_COLOURS = [0xffc857, 0xc792ea, 0x4dd0e1, 0xf08fc0, 0x9fb4c8, 0x5fd38a]; // green last: built pieces are green
   let kitCache = { key: '', slots: [], glow: new Map() };
   function kitHints() {
     const key = JSON.stringify([view.kit, nodes.map((n) => [n.shape, n.transform])]);
@@ -269,6 +269,8 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     return kitCache;
   }
   const kitDone = () => kitOn() && nodes.length >= KITS13[view.kit].entries.length && !kitHints().slots.length;
+  // Outlines of a kit on screen: the pieces go see-through and taps go to the outlines (✕ on the kit row hands them back).
+  const kitGuiding = () => kitOn() && view.hints && !view.bestFits && kitHints().slots.length > 0;
   function hints() {
     if (view.bestFits) return nodes.length ? bestHints() : { slots: [], glow: new Map() };
     if (kitOn()) return view.hints ? kitHints() : { slots: [], glow: new Map() };
@@ -360,9 +362,12 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
         pickTargets.push(mesh);
       }
     } else if (nodes.length) {
-      pieceMaterial.transparent = opacity < 1;
-      pieceMaterial.opacity = opacity;
-      pieceMaterial.depthWrite = opacity >= 1;
+      // Building a kit (DICTO 2026-10-13): the built pieces see-through while outlines show, so the next layer reads even when it
+      // nestles behind them (Bodhi's Vajras round the centre).
+      const see = kitGuiding() ? Math.min(opacity, 0.4) : opacity;
+      pieceMaterial.transparent = see < 1;
+      pieceMaterial.opacity = see;
+      pieceMaterial.depthWrite = see >= 1;
       faceOwner = [];
       const inParts = (n) => view.parts !== 'solid' && PART_PICK[n.shape]?.[view.parts];
       const shown = nodes.filter((n) => !inParts(n)), parted = nodes.filter(inParts);
@@ -901,7 +906,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
 
   return {
     group,
-    meshes: () => pickTargets,
+    meshes: () => (kitGuiding() ? pickTargets.filter((m) => m.userData.poly === 'ghost') : pickTargets),
     handleTap,
     setActive(on) {
       if (on === active) return;
