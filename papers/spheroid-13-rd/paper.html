@@ -20,7 +20,9 @@ minimised, the thirteen-cell block becomes nearly round while its outside stays 
 36πV²/S³ is 0.715 (the plain block 0.365, a single rhombic dodecahedron 0.741, the block lattice's own Voronoi cell, the roundest tile
 with these translations, 0.748). The block has the tiling's full symmetry (order 6: three turns and inversion), so it uses three piece
 shapes, a centre and two outer kinds of six, each outer kind three pieces and their mirror images. Each block meets 14 others across
-all 84 of its outer faces; the centres never meet. Four thicknesses are given (0.08 to 0.35), with printable nets at one scale per set.
+all 84 of its outer faces; the centres never meet. Each block of thirteen fills space on its own; its centre, the thirteenth block, is centrally symmetric but its faces are not
+parallelograms, so taken out of the block it is not a parallelohedron and would not tile alone. Eight of its corners lie within 1% of
+one sphere. Four thicknesses are given (0.08 to 0.35), with printable nets at one scale per set.
 The block tiling is the FCC case of a radius-one perfect code; we did not find it stated, and claim no novelty for it.</div>
 
 <h2>1. The thirteen fills space</h2>
@@ -68,31 +70,51 @@ pairs three pieces with their three mirror images.</p>
 <tr><td></td><td>outer A</td><td>3 + 3 mirrored</td><td>1.7889</td><td>8.1448</td><td>0.670</td><td>0.458–1.181</td><td>103.4°–147.3°</td></tr>
 <tr><td></td><td>outer B</td><td>3 + 3 mirrored</td><td>1.7330</td><td>8.0971</td><td>0.640</td><td>0.657–1.197</td><td>90.9°–147.2°</td></tr>
 </table>
-<p>The centres at the four thicknesses (volumes 8.19, 7.18, 5.95, 4.87) form a graded set; all are nearly as round as the rhombic
-dodecahedron itself.</p>
 
-<h2>4. How the blocks meet</h2>
+<h2>4. The centre, the thirteenth block</h2>
+<p>The centre is wrapped on all twelve faces by the twelve and never meets another block's centre. At thickness 0.15 it holds 7.1842
+of the block's 26, the volume of 3.59 rhombic dodecahedra, and it has the block's symmetry: three turns about the three-fold axis and
+the inversion. Its twelve faces fall into two kinds, six of each. The six corners where four faces meet lie on one sphere (radius 1.535)
+and form an octahedron squashed along the axis (edges 2.092 and 2.248). The two three-face corners on the axis lie almost on that sphere
+(1.525), so eight of its fourteen corners are within 1% of one sphere; the other six three-face corners sit 18% further in (1.264), where
+the outer pieces press. Placed over a rhombic dodecahedron of the same volume, no corner is farther than 15% of an edge from its
+counterpart, and less as the outer pieces thicken (9% at 0.35).</p>
+<p>Each block of thirteen fills space by translation on its own. The centre taken out of its block is a different matter. It is
+centrally symmetric, each face with a parallel, congruent opposite, but its faces are not parallelograms: their diagonals miss
+each other's midpoints by up to 0.019, 1.5% of an edge. So the centre is neither an affine image of the rhombic dodecahedron nor one of
+Fedorov's parallelohedra, whose faces are centrally symmetric (among them the golden Bilinski dodecahedron, Grünbaum 2010): alone it
+would not fill space by translation. With its twelve, as the thirteenth block of the DICTO Spheroid-13 RD, it does.</p>
+<table>
+<tr><th>Minimum thickness</th><th>Volume</th><th>In rhombic dodecahedra</th><th>Roundness</th><th>Farthest corner from an RD of equal volume</th><th>Faces off a parallelogram</th></tr>
+<tr><td>0.08</td><td>8.1855</td><td>4.09</td><td>0.722</td><td>17% of an edge</td><td>1.9%</td></tr>
+<tr><td>0.15</td><td>7.1842</td><td>3.59</td><td>0.725</td><td>15%</td><td>1.5%</td></tr>
+<tr><td>0.25</td><td>5.9497</td><td>2.97</td><td>0.731</td><td>12%</td><td>1.7%</td></tr>
+<tr><td>0.35</td><td>4.8686</td><td>2.43</td><td>0.734</td><td>9%</td><td>2.2%</td></tr>
+</table>
+<p>The four centres form a graded set (Figure 5), each nearly as round as the rhombic dodecahedron itself (0.741).</p>
+
+<h2>5. How the blocks meet</h2>
 <p>Inside a block 36 faces are shared: the centre's 12 with the twelve, and 24 among the twelve (the cuboctahedron's edges). All 84 outer
 faces of a block lie against neighbouring blocks, none left open: 54 against the six nearest blocks (√10 away), 12 against the two along
 the three-fold axis (√12) and 18 against six more (√14). So each block meets 14 others, the same neighbours as the lattice's 14-faced
 Voronoi cell. All 84 outer faces belong to outer pieces: the centres never meet one another. Each centre is an island wrapped by its own
 twelve, and the outer pieces of all blocks form one connected keyed network.</p>
 
-<h2>5. Making it</h2>
+<h2>6. Making it</h2>
 <p>Printable A4 nets of the centre and of both outer kinds, with their mirror images, are included for thicknesses 0.15 and 0.35 (ten
 sheets), each set at one scale so the pieces fit together: 24.0 mm per unit at 0.15 and 27.7 mm at 0.35, giving blocks about 10 cm and 12 cm across.
 Cut lines are solid, fold lines dashed, glued edges numbered alike, with tabs. In the Polyhedraverse app (DICTO's pieces) the block is a
 kit built from the centre out with outlines showing each next piece; the Kaleidohedra app shows it whole, pulled apart, and as seven
 blocks filling space.</p>
 
-<h2>6. Checks</h2>
+<h2>7. Checks</h2>
 <p>The 13 lattice points are distinct modulo each of the 8 sublattices and coincide modulo the other 175. In every rounded block, faces
 are flat to 10⁻¹² and the thirteen volumes sum to 26 exactly; every corner class moves once, so blocks tile; the block's corner set is
 invariant under the six symmetries; all 84 outer faces are matched by faces of neighbouring blocks. Five starts agree at each thickness.
 Every kit placement reproduces its piece to 10⁻⁴. Scripts: round.py, analysis.py, pieces.py, compare.py, render.py and nets.mjs in
-studies/2026-10-13-rd13-block.</p>
+studies/2026-10-13-rd13-block, and centre.py for the centre.</p>
 
-<h2>7. Relation to known work</h2>
+<h2>8. Relation to known work</h2>
 <p>A tiling of a lattice by translates of a point and its nearest neighbours is a radius-one perfect code. In the cube lattice such codes
 exist in every dimension (Golomb and Welch 1970; product constructions in Etzion 2011; Campello et al. 2015 on the lp metrics), while
 radius two fails in three dimensions (Gravier, Mollard and Payan 1998). We did not find the FCC case, the 13-cell block tiling, stated;
@@ -105,13 +127,16 @@ faces while keeping it keyed, of the DICTO Spheroid-13 RD, or of its pieces. The
 <figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/rd13-rounded-open.png" alt="" style="width:60%"><figcaption><b>Figure 2.</b> The block pulled apart.</figcaption></figure>
 <figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/rd13-blocks.png" alt="" style="width:60%"><figcaption><b>Figure 3.</b> Seven blocks filling space, keyed (the six nearest neighbours dimmed).</figcaption></figure>
 <figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/thickness.png" alt="" style="width:100%"><figcaption><b>Figure 4.</b> Minimum thickness 0.08, 0.15, 0.25 and 0.35: whole (top) and pulled apart (bottom).</figcaption></figure>
-<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/net-centre-1.png" alt="" style="width:48%"><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/net-outer-a-1.png" alt="" style="width:48%"><figcaption><b>Figure 5.</b> Two of the ten printable nets (thickness 0.15, one scale): the centre and outer piece A.</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/centres.png" alt="" style="width:100%"><figcaption><b>Figure 5.</b> The centre, the thirteenth block, at the four thicknesses, at true relative size: from the side (top) and along another direction (bottom).</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/net-centre-1.png" alt="" style="width:48%"><img src="https://raw.githubusercontent.com/DICTOR-Master/kaleidohedra/master/papers/spheroid-13-rd/fig/net-outer-a-1.png" alt="" style="width:48%"><figcaption><b>Figure 6.</b> Two of the ten printable nets (thickness 0.15, one scale): the centre and outer piece A.</figcaption></figure>
 
 <h2>References</h2>
 <ol class="refs">
 <li>S. W. Golomb, L. R. Welch, Perfect codes in the Lee metric and the packing of polyominoes, SIAM J. Appl. Math. 18 (1970) 302–317, doi:10.1137/0118025.</li>
 <li>T. Etzion, Product constructions for perfect Lee codes, IEEE Trans. Inf. Theory (2011), arXiv:1103.3933.</li>
 <li>A. Campello, G. C. Jorge, J. E. Strapasson, S. I. R. Costa, Perfect codes in the lp metric, European J. Combin. (2016), arXiv:1506.02517.</li>
+<li>B. Grünbaum, The Bilinski dodecahedron, and assorted parallelohedra, zonohedra, monohedra, isozonohedra and otherhedra, Math. Intelligencer 32(4) (2010) 5–15, doi:10.1007/s00283-010-9138-7.</li>
+<li>E. S. Fedorov, Elements of the Theory of Figures (in Russian), Zap. Mineral. Obshch. 21 (1885).</li>
 <li>S. Gravier, M. Mollard, C. Payan, On the non-existence of 3-dimensional tiling in the Lee metric, European J. Combin. 19 (1998) 567–572, doi:10.1006/eujc.1998.0211.</li>
 <li>K. Schütte, B. L. van der Waerden, Das Problem der dreizehn Kugeln, Math. Ann. 125 (1952) 325–334, doi:10.1007/BF01343127.</li>
 <li>DICTO, the DICTO Hexa and Hexa-Key (2026), DISCOVERIES.md #18, https://github.com/DICTOR-Master/kaleidohedra.</li>
