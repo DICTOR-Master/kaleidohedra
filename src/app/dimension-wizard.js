@@ -533,7 +533,9 @@ const K_WORLDS = [
   { key: 'thirteens', label: 'DICTO 13-Atom Clusters', pieces: [{ label: 'DICTO Icosa-13 (Lotus seed)', action: 'tool:thirteensWorld:icosa13' },
     { label: 'DICTO Dodeca-13', action: 'tool:thirteensWorld:dodeca13' }, { label: 'The Bodhi Seed', action: 'tool:thirteensWorld:bodhi' },
     { label: 'UNITY and VENUS', action: 'tool:thirteensWorld:unity' }, { label: 'DICTO-Star', action: 'tool:thirteensWorld:dictoStar' },
-    { label: 'DESHI', action: 'tool:thirteensWorld:deshi' }, { label: 'RD 13', action: 'tool:thirteensWorld:rd13' }] },
+    { label: 'DESHI', action: 'tool:thirteensWorld:deshi' }, { label: 'RD 13', action: 'tool:thirteensWorld:rd13' },
+    { label: 'Regular-hexagon ED 13', action: 'tool:thirteensWorld:hexed' },
+    { label: 'Truncated octahedron 13', action: 'tool:thirteensWorld:to13' }] },
   { key: 'icosa', label: 'DICTO Icosa', pieces: [{ label: 'DICTO Icosa', action: 'tool:icosaWorld' }] },
   // DICTO Dodeca (DICTO 2026-10-13): the dodecahedral twin of DICTO Icosa.
   { key: 'dodeca', label: 'DICTO Dodeca', pieces: [{ label: 'DICTO Dodeca-13', action: 'tool:dodecaWorld:dodeca13' },

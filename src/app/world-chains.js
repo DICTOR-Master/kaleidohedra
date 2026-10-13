@@ -22,6 +22,8 @@ const ROLE = { ico: 0x5fd38a, cap: 0x5fd38a, lcap: 0x5fd38a, lj11: 0x5fd38a, npy
   // The 13s (the neighbours' copies in RD 13's blocks view, N, are dimmer)
   j11: 0x5fd38a, hasu: 0x5fd38a, idd: 0xffc857, vajra: 0xc792ea, rdCentre: 0xffc857, rd: 0x9fb4c8, rdA: 0x5fd38a, rdB: 0x4dd0e1,
   rdCentreN: 0x8a7440, rdAN: 0x3f7a57, rdBN: 0x33808a,
+  toCentre: 0xffc857, toByHex: 0x4dd0e1, toBySquare: 0xc792ea, toCentreN: 0x8a7440, toByHexN: 0x33808a, toBySquareN: 0x6f5a8a,
+  hexCentre: 0xffc857, hexByHex: 0x4dd0e1, hexByRhombus: 0x5fd38a, hexCentreN: 0x8a7440, hexByHexN: 0x33808a, hexByRhombusN: 0x3f7a57,
   // DICTO Icosahedral Octet
   admiral: 0x4dd0e1, icoSmall: 0xffc857, weirdstone: 0xc792ea, tadpole: 0xf08fc0, tet: 0xc792ea, frog: 0xf08fc0, pyroUp: 0xffc857,
   pyroDown: 0xc792ea, octGlass: 0x9fd8ff, tetGlass: 0x9fd8ff, lotusJewel: 0x5fd38a, voidDodeca: 0xffc857 };
@@ -34,7 +36,7 @@ const lang = () => getSettings().language;
 
 /** A world of nested shells (Multi-shell chains, DICTO Dodeca): data { kind: { views: { view: [[role, vertices, faces]] } } },
  *  words under '<prefix>.<kind>.<view>' and '<prefix>.note.<kind>'. */
-export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts }) {
+export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false }) {
   const STORAGE_KEY = storageKey(name);
   const group = new THREE.Group();
   group.visible = false;
@@ -85,6 +87,11 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     const dist = list.map(([, V]) => Math.hypot(...centreOf(V).map((c, i) => c - c0[i])));
     const levels = [...dist].sort((a, b) => a - b).reduce((acc, d) => (acc.length && d - acc[acc.length - 1] < radius * 0.06 ? acc : [...acc, d]), []);
     const shellOf = (d) => levels.reduce((best, l, i) => (Math.abs(l - d) < Math.abs(levels[best] - d) ? i : best), 0);
+    // centreGold (the 13s, DICTO 2026-10-13: "the central 13th should always be gold"): the piece nearest the middle is gold, and
+    // no other piece is (gold roles turn orange); blocks views keep each block's own centre role (gold, its copies dimmer).
+    const GOLD = 0xffc857, ORANGE = 0xff9a52, DIM_GOLD = 0x8a7440;
+    const centreIndex = centreGold ? dist.indexOf(Math.min(...dist)) : -1;
+    const isCentreRole = (r) => /^(rdCentre|hexCentre|toCentre)/.test(r);
     list.forEach(([role, V, F], n) => {
       const sh = shellOf(dist[n]); const top = Math.round(view.shells * (levels.length - 1));
       if (sh > top && !ALWAYS_GLASS.has(role) && !view.crystal) return;
@@ -93,7 +100,9 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       // Pulled apart: each piece moves out along the line from the centre through its own centre; see-through shells stay put.
       const off = see ? [0, 0, 0] : centreOf(V).map((c, i) => (c - c0[i]) * view.apart);
       const P = V.map((p) => p.map((c, i) => (c - c0[i] + off[i]) * WS));
-      colour.setHex(role === 'ncap' && V.length === 7 ? 0xffc857 : (ROLE[role] ?? 0xb8c4bd));
+      let hex = role === 'ncap' && V.length === 7 ? 0xffc857 : (ROLE[role] ?? 0xb8c4bd);
+      if (centreGold) hex = n === centreIndex || (isCentreRole(role) && hex !== DIM_GOLD) ? GOLD : (hex === GOLD ? ORANGE : hex);
+      colour.setHex(hex);
       for (const f of F) {
         for (let i = 1; i + 1 < f.length; i++) for (const k of [f[0], f[i], f[i + 1]]) { b.pos.push(...P[k]); b.col.push(colour.r, colour.g, colour.b); }
         f.forEach((k, i) => b.line.push(...P[k], ...P[f[(i + 1) % f.length]]));
