@@ -1,0 +1,188 @@
+{
+ "volume AXE": {
+  "value": 0.083333333,
+  "exact": 0.083333333,
+  "ok": true
+ },
+ "volume CLEO": {
+  "value": 0.051502832,
+  "exact": 0.051502832,
+  "ok": true
+ },
+ "volume FUJI": {
+  "value": 0.321175164,
+  "exact": 0.321175164,
+  "ok": true
+ },
+ "volume Triskelion Hex": {
+  "value": 0.571175164,
+  "exact": 0.571175164,
+  "ok": true
+ },
+ "volume Triskelion": {
+  "value": 0.301502832,
+  "exact": 0.301502832,
+  "ok": true
+ },
+ "volume Inner Eye": {
+  "value": 4.045084968,
+  "exact": 4.045084972,
+  "ok": true
+ },
+ "volume small centre": {
+  "value": 0.515028323,
+  "exact": 0.515028324,
+  "ok": true
+ },
+ "volume Lotus seed": {
+  "value": 39.148928128,
+  "exact": 39.148928136,
+  "ok": true
+ },
+ "edges AXE": [
+  0.618033988,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "dihedrals AXE (edge length, degrees)": [
+  [
+   0.618034,
+   63.4349
+  ],
+  [
+   1.0,
+   41.8103
+  ],
+  [
+   1.0,
+   79.1877
+  ]
+ ],
+ "edges CLEO": [
+  0.618033989,
+  0.618033989,
+  0.618033989,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "dihedrals CLEO (edge length, degrees)": [
+  [
+   0.618034,
+   79.1877
+  ],
+  [
+   1.0,
+   63.4349
+  ]
+ ],
+ "edges FUJI": [
+  0.618033988,
+  0.618033988,
+  0.618033988,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "dihedrals FUJI (edge length, degrees)": [
+  [
+   0.618034,
+   37.3774
+  ],
+  [
+   1.0,
+   41.8103
+  ],
+  [
+   1.0,
+   142.6226
+  ]
+ ],
+ "Lotus seed = phi^6 icosahedra": {
+  "value": 39.148928136,
+  "exact": 39.148928136,
+  "ok": true
+ },
+ "113-piece build: 12 I + I(1/phi) + 60 AXE + 20 FUJI + 20 CLEO": {
+  "value": 39.148928136,
+  "exact": 39.148928136,
+  "ok": true
+ },
+ "63-piece build: dodecahedron + 12 J11 + 30 AXE + 20 FUJI": {
+  "value": 39.148928136,
+  "exact": 39.148928136,
+  "ok": true
+ },
+ "dodecahedron = I(1/phi) + 12 J2 + 30 AXE + 20 CLEO": {
+  "value": 7.663118961,
+  "exact": 7.663118961,
+  "ok": true
+ },
+ "Inner Eye = I(1/phi) + 30 AXE + 20 CLEO": {
+  "value": 4.045084972,
+  "exact": 4.045084972,
+  "ok": true
+ },
+ "Triskelion = CLEO + 3 AXE = J2 (volume)": {
+  "value": 0.301502832,
+  "exact": 0.301502832,
+  "ok": true
+ },
+ "Triskelion Hex = FUJI + 3 AXE": {
+  "value": 0.571175164,
+  "exact": 0.571175164,
+  "ok": true
+ },
+ "63-piece roles": {
+  "dodecahedron": 1,
+  "J11": 12,
+  "AXE": 30,
+  "FUJI": 20
+ },
+ "63-piece data volume sum": {
+  "value": 39.148928127,
+  "exact": 39.148928136,
+  "ok": true
+ },
+ "FUJI base circumradius^2 (a^2+ab+b^2)/3": {
+  "value": 0.666666667,
+  "exact": 0.666666667,
+  "ok": true
+ },
+ "FUJI height": {
+  "value": 0.577350269,
+  "exact": 0.577350269,
+  "ok": true
+ },
+ "two icosahedra round an edge leave 360 - 2*138.19 = 83.62 = 2 alpha": {
+  "value": 83.620629792,
+  "exact": 83.620629792,
+  "ok": true
+ },
+ "alpha + 2 delta = dodecahedron dihedral 116.5651": {
+  "value": 116.565114896,
+  "exact": 116.565051177,
+  "ok": true
+ },
+ "delta (FUJI base angle on short edges), degrees": 37.3774,
+ "AXE short edge = 1/phi": {
+  "value": 0.618033988,
+  "exact": 0.618033989,
+  "ok": true
+ },
+ "CLEO base edge = 1/phi": {
+  "value": 0.618033989,
+  "exact": 0.618033989,
+  "ok": true
+ },
+ "failures": []
+}
