@@ -221,6 +221,27 @@ members have the same angles (109.47°, 125.26°), but by Minkowski's theorem on
 centrally symmetric, fills space by translation (Kelvin's cell, the body-centred cubic packing's cell). So the truncated
 octahedron is to the dictosphere what the regular hexagon is to FUJI: the symmetric r = 1 end that DICTO hoped for.
 
+## Literature search on the family (2026-10-14)
+
+- **The shape of the base** is the isogonal hexagon, also written t{3}, the truncated triangle (an equiangular hexagon with
+  alternating long and short sides; Wikipedia, "Hexagon"). DICTO's word is the flat-ended triangle.
+- **The pyramid FUJI(r)** (equal side edges on that hexagon): no source found that defines or studies it, as a family or as single
+  members, in two extended searches and the reference library. Hart's pyramid pages list only the three regular-faced pyramids.
+- **The antiprism angle** cos D = (1 − 4 cos(π/n))/3 is known: OEIS gives it for the heptagonal and nonagonal antiprisms (A394077 and
+  neighbours). **The link r = 2 cos(π/n) − 1 to the pyramids was not found**: the part proved here (PROOFS.md) appears to be new.
+- **Breathing pyrochlores** are known materials (Okamoto et al. 2013). Their breathing ratio is the family's r; one search summary
+  quotes Yb–Yb spacings of 3.3 Å and 6.2 Å for Ba₃Yb₂Zn₅O₁₁ (r ≈ 0.53, near the space-filler's 1/2; to verify in the papers:
+  Rau et al. 2018, doi:10.1088/1361-648X/aae45a; Dissanayake et al. 2022, doi:10.1038/s41535-022-00488-w). The Cr spinels
+  LiGaCr₄O₈ and LiInCr₄O₈ are close to r = 1. No golden (r = 1/φ) breathing pyrochlore was found.
+- **Truncated triangular nanoplates** of silver and gold (truncated nanoprisms) are flat-ended triangles studied for their optics;
+  no link to the pyramids or to particular ratios was found.
+- Not found: equiangular-hexagon pyramids among icosahedral quasicrystal tiles (Kramer, Danzer, Mosseri–Sadoc); FUJI remains outside
+  those tile sets (Icosa-13 study proofs).
+
+So, as far as these searches reach: the base shape, the antiprism angles, the breathing pyrochlore and the space-filler are known;
+the FUJI family of pyramids, its base-angle formulas, the antiprism theorem linking them, and the identifications that tie the
+family together (FUJI, Odom's hexagon, the golden breathing pyrochlore, the dictosphere) were not found.
+
 ## Next
 
 1. Done: the STT's faces are FUJI(1/2)'s base (above).
