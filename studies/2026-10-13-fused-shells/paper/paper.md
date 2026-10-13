@@ -2,7 +2,7 @@
 
 **DICTO** · dictospheres.com
 
-*Draft, 13 October 2026. Not released. Computation, checking and drafting with Claude (Anthropic). The structures, their pieces and their names are DICTO's.*
+*14 October 2026 · doi:10.5281/zenodo.23345503 · CC BY 4.0. Computation, checking and drafting with Claude (Anthropic). The structures, their pieces and their names are DICTO's.*
 
 ---
 
@@ -58,7 +58,7 @@ The outer icosahedron is φ³ times the inner one, so the cycle repeats. The Bod
 
 Lengths are in the study's units (Lotus seed: icosahedra of edge 1; Bodhi Seed: copies of edge 1; Spheres of Dharma: dodecahedron of edge 1). Dihedral angles are interior.
 
-**Table 2.** The 21 piece types.
+**Table 2.** The 21 piece types (pictured in Figures 7 to 9).
 
 | Piece (DICTO's name) | Where, how many | Kind | Corners / edges / faces | Edge lengths (count) | Interior dihedrals | Symmetry | Volume | Known as |
 |---|---|---|---|---|---|---|---|---|
@@ -154,6 +154,18 @@ Each net places every face once, true to its 3D shape, pairs every cut edge with
 ![Figure 6](figures/fig6-convex-partials.jpg)
 
 **Figure 6.** Twelve of the 45 convex partial-ring stages of the Spheres of Dharma, each with a different face pattern; orange marks the partial ring.
+
+![Figure 7](figures/fig7-karma-pieces.png)
+
+**Figure 7.** The Chain of Karma pieces at edge 1, every edge labelled: AXE, CLEO, FUJI, the pentagonal cap and J11 [DICTO, Chain of Karma].
+
+![Figure 8](figures/fig8-dharma-pieces.png)
+
+**Figure 8.** The Spheres of Dharma pieces with DICTO's names, in the app's colours (dodecahedron of edge 1): Vajra (twist), Stupa, Cleo-low, Monkey Staff, t1, Shield, the pentagonal cap, Vajra-blade, Sevenfold-blade and Cleo-low 2.
+
+![Figure 9](figures/fig9-bodhi-pieces.png)
+
+**Figure 9.** The Bodhi Seed's gap pieces: Vajra (fine) (B1), Chatra (B2), Mudra (B3), Crown Jewel (B4) and Diadem (B5, shown as L) [DICTO, Bodhi pieces study].
 
 ## Data, scripts and checks
 

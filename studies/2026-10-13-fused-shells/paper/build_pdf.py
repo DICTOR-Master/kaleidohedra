@@ -20,6 +20,6 @@ p:has(> img) { page-break-inside: avoid; }
 code { font-size: 8pt; }
 hr { border: 0; border-top: 0.5pt solid #ccc; }
 """
-html = f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Capturing the In-betweens (DICTO, draft)</title><style>{css}</style></head><body>{body}</body></html>'
+html = f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Capturing the In-betweens (DICTO)</title><style>{css}</style></head><body>{body}</body></html>'
 open(os.path.join(HERE, 'paper.html'), 'w', encoding='utf-8').write(html)
 print('ok', len(html))

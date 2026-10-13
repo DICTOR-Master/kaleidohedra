@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Capturing the In-betweens (DICTO, draft)</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Capturing the In-betweens (DICTO)</title><style>
 @page { size: A4; margin: 16mm 15mm 18mm; }
 body { font: 9.6pt/1.45 "Noto Serif", "DejaVu Serif", Georgia, serif; color: #1b1f24; margin: 0; }
 h1 { font: 700 20pt/1.2 "Noto Sans", "DejaVu Sans", sans-serif; margin: 0 0 3mm; }
@@ -14,7 +14,7 @@ code { font-size: 8pt; }
 hr { border: 0; border-top: 0.5pt solid #ccc; }
 </style></head><body><h1>Capturing the In-betweens: a Study of Transitional Polyhedral Shells</h1>
 <p><strong>DICTO</strong> · dictospheres.com</p>
-<p><em>Draft, 13 October 2026. Not released. Computation, checking and drafting with Claude (Anthropic). The structures, their pieces and their names are DICTO's.</em></p>
+<p><em>14 October 2026 · doi:10.5281/zenodo.23345503 · CC BY 4.0. Computation, checking and drafting with Claude (Anthropic). The structures, their pieces and their names are DICTO's.</em></p>
 <hr />
 <h2>Abstract</h2>
 <p>DICTO's Chain of Karma, Spheres of Dharma and Bodhi Seed are exact icosahedral dissections: each grows a large polyhedron from a small core by adding rings of congruent pieces. Between the familiar solids at the start and end of each step lie the in-between stages, the <strong>transitional shells</strong>. Taking each stage as one solid, with its pieces fused, we find that the builds pass through celebrated polyhedra on the way:</p>
@@ -78,7 +78,7 @@ hr { border: 0; border-top: 0.5pt solid #ccc; }
 <p><strong>Fusing.</strong> Each stage is taken as one solid: the outer surface of its pieces, with each face the visible part of the pieces' faces in one plane. The fused solid's volume equals the sum of its pieces' volumes in every case.</p>
 <h2>3. The pieces</h2>
 <p>Lengths are in the study's units (Lotus seed: icosahedra of edge 1; Bodhi Seed: copies of edge 1; Spheres of Dharma: dodecahedron of edge 1). Dihedral angles are interior.</p>
-<p><strong>Table 2.</strong> The 21 piece types.</p>
+<p><strong>Table 2.</strong> The 21 piece types (pictured in Figures 7 to 9).</p>
 <table>
 <thead>
 <tr>
@@ -372,6 +372,12 @@ hr { border: 0; border-top: 0.5pt solid #ccc; }
 <p><strong>Figure 5.</strong> Samsara (Chain step 2), the app's 11 Top shell stages, one scale: (b) is the excavated dodecahedron at 1/φ and (d) the great stellated dodecahedron at φ².</p>
 <p><img src="figures/fig6-convex-partials.jpg" alt="Figure 6" /></p>
 <p><strong>Figure 6.</strong> Twelve of the 45 convex partial-ring stages of the Spheres of Dharma, each with a different face pattern; orange marks the partial ring.</p>
+<p><img src="figures/fig7-karma-pieces.png" alt="Figure 7" /></p>
+<p><strong>Figure 7.</strong> The Chain of Karma pieces at edge 1, every edge labelled: AXE, CLEO, FUJI, the pentagonal cap and J11 [DICTO, Chain of Karma].</p>
+<p><img src="figures/fig8-dharma-pieces.png" alt="Figure 8" /></p>
+<p><strong>Figure 8.</strong> The Spheres of Dharma pieces with DICTO's names, in the app's colours (dodecahedron of edge 1): Vajra (twist), Stupa, Cleo-low, Monkey Staff, t1, Shield, the pentagonal cap, Vajra-blade, Sevenfold-blade and Cleo-low 2.</p>
+<p><img src="figures/fig9-bodhi-pieces.png" alt="Figure 9" /></p>
+<p><strong>Figure 9.</strong> The Bodhi Seed's gap pieces: Vajra (fine) (B1), Chatra (B2), Mudra (B3), Crown Jewel (B4) and Diadem (B5, shown as L) [DICTO, Bodhi pieces study].</p>
 <h2>Data, scripts and checks</h2>
 <p>Everything is in this folder: <code>analysis/identify.py</code> (the 25 identification checks, with log and JSON), <code>analysis/pieces_analysis.py</code> (the piece table), <code>analysis/fuse_extra.py</code> and <code>analysis/data/fused-extra.json</code> (extra fused stages), <code>figures/compose.py</code> (the plates), <code>nets/nets.py</code> (the nets and their checks), <code>CHECKS.md</code> and <code>REFERENCES.md</code>. The stage counts and the catalogue are in the study folder above (<code>steps.py</code>, <code>stages.py</code>, <code>partials.py</code>, <code>catalogue.html</code>).</p>
 <h2>Credits</h2>
