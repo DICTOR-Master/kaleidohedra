@@ -123,6 +123,12 @@ it goes into the world or the papers until it is checked.
   symmetry**. Not proof of absence: check the multiscalar fixed-point classifications (Osborn and Stergiou) next.
 - **E8 thread:** binary icosahedral group ↔ E8 (McKay 1980); E8 spectrum with mass ratio φ in a 2D field theory (Zamolodchikov
   1989), measured in CoNb₂O₆ (Coldea et al. 2010); the 600-cell is the same group's polytope.
+- **The article that started this (DICTO, 2026-10-14):** Wolchover, "Physicists uncover geometric 'theory space'", Quanta,
+  23 February 2017. The bootstrap's allowed regions have kinks (the 3D Ising model sits at one, El-Showk et al. 2012; Kos et al.
+  2016); Arkani-Hamed suggests the space of theories may be a high-dimensional polyhedron with the interesting theories at its
+  corners, an open aim, not a result. Simmons-Duffin's picture of CFTs as signposts and renormalization flows as roads has the
+  same shape as the Cycles: named solids as stations, the movie as the road between them. An analogy for the world's text, not a
+  claim.
 - **Questions:** which of our shells are the flattened pieces of the 600-cell template, exactly (cell by cell)? Does an icosahedral
   3D CFT exist in the literature, and if not, is that a well-posed open question to put to physicists?
 

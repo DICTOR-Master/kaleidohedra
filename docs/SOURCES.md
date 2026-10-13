@@ -261,3 +261,9 @@ reference library, not in this repo.
 - J. McKay (1980). *Graphs, singularities, and finite groups*. Proc. Symp. Pure Math. 37, 183–186. <https://doi.org/10.1090/pspum/037/604577>
 - A. B. Zamolodchikov (1989). *Integrals of motion and S-matrix of the (scaled) T=Tc Ising model with magnetic field*. Int. J. Mod. Phys. A 4, 4235. <https://doi.org/10.1142/S0217751X8900176X>
 - R. Coldea et al. (2010). *Quantum criticality in an Ising chain: experimental evidence for emergent E8 symmetry*. Science 327, 177. <https://doi.org/10.1126/science.1180085>
+- N. Wolchover (2017). *Physicists uncover geometric 'theory space'*. Quanta Magazine, 23 February. <https://www.quantamagazine.org/using-the-bootstrap-physicists-uncover-geometry-of-theory-space-20170223/>
+- R. Rattazzi, V. S. Rychkov, E. Tonni, A. Vichi (2008). *Bounding scalar operator dimensions in 4D CFT*. JHEP 12, 031. <https://arxiv.org/abs/0807.0004>
+- S. El-Showk, M. F. Paulos, D. Poland, S. Rychkov, D. Simmons-Duffin, A. Vichi (2012). *Solving the 3D Ising model with the conformal bootstrap*. Phys. Rev. D 86, 025022. <https://arxiv.org/abs/1203.6064>
+- F. Kos, D. Poland, D. Simmons-Duffin, A. Vichi (2016). *Precision islands in the Ising and O(N) models*. JHEP 08, 036. <https://arxiv.org/abs/1603.04436>
+- D. Poland, D. Simmons-Duffin (2016). *The conformal bootstrap*. Nature Physics 12, 535–539. <https://doi.org/10.1038/nphys3761>
+- N. Arkani-Hamed, J. Trnka (2014). *The amplituhedron*. JHEP 10, 030. <https://arxiv.org/abs/1312.2007>
