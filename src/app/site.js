@@ -5,16 +5,16 @@
 export const SITES = {
   // netsGroups: the Nets world's groups shown in this app's space (null: all of them).
   // shear: whether this app's space has Kaleidohedra's lattice shear.
-  // analytics: Vercel Web Analytics is switched on for this site's project (analytics.js counts DICTO).
+  // analytics: Vercel Web Analytics is switched on for this site's project (analytics.js counts DICTO). All three on (DICTO 2026-10-13).
   // wordmark: the name in two tones, the second part in the app's accent (as Polyhedraverse's name).
-  kaleidohedra: { name: 'Kaleidohedra', wordmark: ['KALEIDO', 'HEDRA'], colour: '#ff9a52', url: 'https://kaleidohedra.dictospheres.com', netsGroups: ['voronoi', 'platonic', 'ekp'], shear: true, inside: true, door: true, analytics: false },
+  kaleidohedra: { name: 'Kaleidohedra', wordmark: ['KALEIDO', 'HEDRA'], colour: '#ff9a52', url: 'https://kaleidohedra.dictospheres.com', netsGroups: ['voronoi', 'platonic', 'ekp'], shear: true, inside: true, door: true, analytics: true },
   // inside: whether its worlds run in this app (Polyhedraverse's since step D2); door: whether this
   // build can open as that app (?site=, SITE). Polyhedraverse is a door since step D6.
-  polyhedraverse: { name: 'Polyhedraverse', wordmark: ['POLYHEDRA', 'VERSE'], colour: '#5ee233', url: 'https://polyhedraverse.dictospheres.com', netsGroups: null, shear: false, inside: true, door: true, analytics: false },
+  polyhedraverse: { name: 'Polyhedraverse', wordmark: ['POLYHEDRA', 'VERSE'], colour: '#5ee233', url: 'https://polyhedraverse.dictospheres.com', netsGroups: null, shear: false, inside: true, door: true, analytics: true },
   // DICTO's own space (DICTO 2026-10-09): 1D+ and 2D+ belong to no app, an easier way in; silver.
   // Going up to 3D+ from there lands in the door's app.
   dicto: { name: 'DICTO', wordmark: ['DIC', 'TO'], colour: '#d8dce6', url: '', netsGroups: null, shear: false, inside: true, door: false },
-  rhombiverse: { name: 'Rhombiverse', wordmark: ['RHOMBI', 'VERSE'], colour: '#22c3e6', url: 'https://rhombiverse.dictospheres.com', netsGroups: null, shear: false, inside: true, door: true, analytics: false },
+  rhombiverse: { name: 'Rhombiverse', wordmark: ['RHOMBI', 'VERSE'], colour: '#22c3e6', url: 'https://rhombiverse.dictospheres.com', netsGroups: null, shear: false, inside: true, door: true, analytics: true },
 };
 
 function detect() {
