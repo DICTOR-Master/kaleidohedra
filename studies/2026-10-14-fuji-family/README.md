@@ -91,6 +91,18 @@ not been written; the pattern is numerical so far.
 These are face-plane matches only: a full closure like the Lotus seed also needs the other gaps filled. The cuboctahedral member
 (√3 − 1)/2 is the one to test first against DICTO's cuboctahedron spheres.
 
+## Cuboctahedral closure, first test (2026-10-14)
+
+The direct analogue of DICTO's 63-piece build, a unit cube with a unit cuboctahedron on each face (`scripts/cubo_closure.py`,
+`cubo-closure.json`), does **not** close: no overlaps, but the hull (26 faces) is 40% gap, and the corner pocket (about 0.47) is not
+FUJI((√3 − 1)/2) (0.265). The cuboctahedra are too large for the cube; the Lotus seed works because each J11 hides a cap inside the
+dodecahedron. The next arrangement to test is the true analogue of DESHI: 12 cuboctahedra round a central one, parallel, slid in
+until they share whole edges, then the corner pockets compared with the cuboctahedral member.
+
+**DICTO's dictospheres (2026-10-14, first figures):** flat-ended triangles with long sides about 4 cm and short sides about 1.5 cm,
+r ≈ 0.375, within 3% of the cuboctahedral member (√3 − 1)/2 = 0.366. The overall triangle side was given as about 5 cm, which a
+flat flat-ended triangle with those sides would make 7 cm (long + 2 × short); the faces are on a sphere, so to be measured again.
+
 ## Next
 
 1. Done: the STT's faces are FUJI(1/2)'s base (above).
