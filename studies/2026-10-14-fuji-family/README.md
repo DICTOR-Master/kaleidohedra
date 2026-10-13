@@ -160,7 +160,11 @@ icosahedron. Filling space needs partner pieces, as in the Lotus seed, the Sunst
 
 By contrast the dictosphere's solid has angles 109.47° and 125.26°, and 109.47° + 2 × 125.26° = 360°: the angle condition for
 filling space holds there (as for the truncated octahedron, which does fill space); whether its other proportions allow it is
-not checked.
+not checked. **DICTO (2026-10-14): the dictospheres form rhombic dodecahedra.** That fits the geometry: the 14 port directions (6
+squares on the cube axes, 8 triangles on the three-fold axes) are exactly the directions of a rhombic dodecahedron's 14 corners
+(its 6 four-edge corners and 8 three-edge corners; the rhombic dodecahedron is the cuboctahedron's dual), and every edge of a
+rhombic dodecahedron joins a four-edge corner to a three-edge corner, i.e. a square port to a triangle port. Rhombic dodecahedra
+fill space (the cells of the FCC packing).
 
 ## Next
 
