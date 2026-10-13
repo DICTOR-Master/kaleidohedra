@@ -37,7 +37,7 @@ const network = (tetCell) => (size) => [
   ...octSites(R(size)).filter((o) => o.even).flatMap((o) => put(C.oct, o.p)),
   ...tetSites(R(size)).flatMap((t) => put(C[tetCell], t.p, t.invert)),
 ];
-const DATA = {
+export const OCTET_VIEWS = {
   caps: { maxSize: 4, views: { network: network('tet'), cell: [...put(C.oct, [0, 0, 0]), ...put(C.tet, [A / 4, A / 4, A / 4])] } },
   allIco: { maxSize: 3, views: { network: network('tetIco'), octahedron: put(C.oct, [0, 0, 0]), tetrahedron: put(C.tetIco, [0, 0, 0]) } },
   frog: { maxSize: 2, views: {
@@ -72,6 +72,7 @@ const DATA = {
     jewel: put(C.lotusJewel, [0, 0, 0]),
   } },
 };
+const DATA = OCTET_VIEWS;
 const GLASS = { caps: new Set(['ico']), allIco: new Set(['ico', 'icoSmall']), frog: new Set(['ico', 'icoSmall']), pyrochlore: new Set(['octGlass', 'tetGlass']), lotusJewel: new Set(['voidDodeca']) };
 
 export function createOctetWorld({ scene, fitView }) {

@@ -1060,12 +1060,14 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
           <div class="dim-wizard-grid dicto-block${sec.pair ? ' poly-pair' : ''}" style="${style}">${sec.ids.map(card).join(sec.pair ? '<span class="poly-pair-plus">+</span>' : '')}</div></div>`).join('')
       : `<div class="dim-wizard-grid dicto-block" style="${style}">${polyIds(key).filter(fits).map(card).join('')}</div>`;
     // The 13s kits (DICTO 2026-10-13, docs/PLAN-13.md): each starts a build of the whole kit, outlines showing the next pieces.
-    const kits = key === DICTO_POLY.key && !picker ? `<div class="poly-section" data-section="kits13"><div class="poly-section-title">${t('wiz.poly.kits', L)}</div>
-          <div class="dim-wizard-grid dicto-block" style="${style}">${Object.entries(KITS13).map(([id, k]) => `
+    // Kits to build, a section per group (the 13s; the DICTO Icosahedral Octet, DICTO 2026-10-13).
+    const kitCards = (group) => Object.entries(KITS13).filter(([, k]) => (k.group ?? '13') === group).map(([id, k]) => `
         <button type="button" class="dim-wizard-card-btn dim-wizard-piece" data-kit="${id}">
           ${previewSlot(() => polyShapeEdges(k.entries[0].shape))}
           <span class="dim-wizard-row-text"><span class="dim-wizard-label">${k.label}</span><span class="dim-wizard-desc">${tn('wiz.poly.kitCount', L, k.entries.length)}</span></span>
-        </button>`).join('')}</div></div>` : '';
+        </button>`).join('');
+    const kits = key === DICTO_POLY.key && !picker ? [['13', 'wiz.poly.kits'], ['octet', 'wiz.poly.kitsOctet']].map(([g, title]) => `<div class="poly-section" data-section="kits-${g}"><div class="poly-section-title">${t(title, L)}</div>
+          <div class="dim-wizard-grid dicto-block" style="${style}">${kitCards(g)}</div></div>`).join('') : '';
     bodyEl.innerHTML = `
       ${back(L)}
       <div class="dim-wizard-sub"><b>${polyLabel(key)}</b> · ${t('wiz.poly.shapes', L)}</div>

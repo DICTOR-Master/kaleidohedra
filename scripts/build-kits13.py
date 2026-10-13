@@ -7,11 +7,17 @@ sys.path.insert(0, 'scripts')
 from importlib import import_module
 ks = import_module('kit-shapes')
 raw, cat = json.load(open(sys.argv[1])), json.load(open(sys.argv[2]))
+# More kits from other worlds (OCTET_RAW: the DICTO Icosahedral Octet's, scripts/dump-octet-kits.mjs), in their own group.
+import os
+GROUP = {k: '13' for k in raw}
+if os.environ.get('OCTET_RAW'):
+    extra = json.load(open(os.environ['OCTET_RAW'])); raw.update(extra); GROUP.update({k: 'octet' for k in extra})
 D = np.diag([-1.0, 1, 1])
 NAMES = {'axe': 'AXE', 'fuji': 'FUJI', 'cleo': 'Cleo', 'hasu': 'Hasu', 'vajra': 'VAJRA', 'j11': 'J11', 'B1': 'Vajra (fine)', 'B2': 'Chatra',
          'B3': 'Mudra', 'B4': 'Crown Jewel', 'B5L': 'Diadem', 'wedge': 'Dodeca-13 wedge', 'needle': 'Dodeca-13 needle', 'unit': 'Dodeca-13 unit',
          'star': 'Dodeca-13 star', 'ico': 'Icosahedron', 'dodeca': 'Dodecahedron', 'idd': 'Icosidodecahedron', 'j63': 'J63',
-         'copy': 'Rhombic triacontahedron', 'centre': 'Centre', 'rd': 'Rhombic dodecahedron', 'rdCentre': 'Spheroid-13 RD centre', 'rdA': 'Spheroid-13 RD outer A', 'rdB': 'Spheroid-13 RD outer B'}
+         'copy': 'Rhombic triacontahedron', 'centre': 'Centre', 'admiral': 'Admiral Cap', 'icoSmall': 'Icosahedron', 'weirdstone': 'Weirdstone', 'tadpole': 'Tadpole', 'tet': 'Octet tetrahedron',
+         'rd': 'Rhombic dodecahedron', 'rdCentre': 'Spheroid-13 RD centre', 'rdA': 'Spheroid-13 RD outer A', 'rdB': 'Spheroid-13 RD outer B'}
 def quat(R):
     # Shepperd's method: build from the largest of w, x, y, z, so half-turns (w = 0) come out right.
     tr = np.trace(R)
@@ -28,20 +34,31 @@ def quat(R):
 def edge(V, F):
     return np.mean([np.linalg.norm(np.array(V[f[i]]) - np.array(V[f[(i + 1) % len(f)]])) for f in F for i in range(len(f))])
 new = {}            # id -> {name, vertices, faces}
+# Shapes compared by corner count and distances from the middle, with a small tolerance (exact rounding split equal shapes, 2026-10-13).
+def same_sig(a, b): return a[0] == b[0] and max(abs(x - y) for x, y in zip(a[1], b[1])) < 1e-3
 def find(V, F, role, kind, thick):
     """A piece id and A, b with V = A @ S + b for that piece's vertices S (A a rotation)."""
     for cid, c in list(cat.items()) + [(k, {'vertices': v['vertices']}) for k, v in new.items()]:
         S = np.array(c['vertices'], float)
-        if ks.signature(S) != ks.signature(V): continue
+        if not same_sig(ks.signature(S), ks.signature(V)): continue
         m = ks.match(S, V)
         if m: return cid, m[0], m[1]
+    # a mirror image of a piece already made is that piece's mirror twin, not a new piece
+    for nid, nv in list(new.items()):
+        if nid.endswith('_M'): continue
+        Sm = np.array(nv['vertices'], float) @ D
+        if not same_sig(ks.signature(Sm), ks.signature(V)): continue
+        m = ks.match(Sm, V)
+        if m: return mirror_id(nid), m[0], m[1]
     base = f"KIT13_{kind.upper()}_{role.upper()}" + (f"_{thick}" if thick else '')
+    while base in new: base += 'X'      # never overwrite a piece already made (its placements depend on it)
     tag = {'T15': '0.15, exact RD centre', 'T35': '0.35, exact RD centre', 'T15F': '0.15, free centre'}.get(thick, thick.replace('T', '0.') if thick else '')
     name = NAMES.get(role, role) + (f' ({tag})' if thick else '')
-    if role in ('ico', 'dodeca', 'idd', 'copy', 'centre'): name += f' (edge {edge(V, F):.3f})'
+    if role in ('ico', 'dodeca', 'idd', 'copy', 'centre', 'icoSmall', 'tet'): name += f' (edge {edge(V, F):.3f})'
     c = V.mean(0); new[base] = {'name': name, 'vertices': (V - c).tolist(), 'faces': F}
     return base, np.eye(3), c
 def mirror_id(pid):
+    if pid.endswith('_M') and (pid[:-2] in new or pid[:-2] in cat): return pid[:-2]   # the twin of a twin is the piece itself
     mid = pid + '_M'
     if mid not in new:
         src = new[pid] if pid in new else cat[pid]
@@ -49,8 +66,8 @@ def mirror_id(pid):
         if pid in new and 'Diadem' in new[pid]['name'] and 'Diadem L' not in new[pid]['name']: new[pid]['name'] = new[pid]['name'].replace('Diadem', 'Diadem L')
         new[mid] = {'name': nm, 'vertices': (np.array(src['vertices']) @ D).tolist(), 'faces': [list(reversed(f)) for f in (src.get('faces') or new[pid]['faces'])]}
     return mid
-LABEL = {'icosa13': 'DICTO Icosa-13', 'dodeca13': 'DICTO Dodeca-13', 'bodhi': 'The Bodhi Seed', 'unity': 'UNITY', 'dictoStar': 'DICTO-Star', 'deshi': 'DESHI', 'rd13': 'RD 13'}
-KITLABEL = {'pieces': 'pieces', 'build': '63-piece build', 'units': 'units', 'stars': 'stars', 'seed': '13 triacontahedra', 'kitA': 'Kit A', 'kitB': 'Kit B',
+LABEL = {'octet': 'DICTO Icosahedral Octet', 'icosa13': 'DICTO Icosa-13', 'dodeca13': 'DICTO Dodeca-13', 'bodhi': 'The Bodhi Seed', 'unity': 'UNITY', 'dictoStar': 'DICTO-Star', 'deshi': 'DESHI', 'rd13': 'RD 13'}
+KITLABEL = {'octahedron': 'octahedron cell', 'tetrahedron': 'tetrahedron cell', 'octetBlock': 'octet block', 'allIcoBlock': 'all-icosahedral block', 'pieces': 'pieces', 'build': '63-piece build', 'units': 'units', 'stars': 'stars', 'seed': '13 triacontahedra', 'kitA': 'Kit A', 'kitB': 'Kit B',
             'open': 'open', 'venus': 'VENUS', 'star': '', 'deshi': '', 'plain': 'plain', 'rounded': 'DICTO Spheroid-13 RD (0.15)', 'fattest': 'Spheroid-13 RD, fattest (0.35)', 'roundedFree': 'Spheroid-13 RD, free centre (0.15)'}
 kits = {}
 for kind, views in raw.items():
@@ -73,7 +90,7 @@ for kind, views in raw.items():
                 rot = R @ A; pos = R @ b + t
             out.append({'shape': pid, 'position': (pos - cen).round(9).tolist(), 'quaternion': quat(rot)})
         out.sort(key=lambda o: np.linalg.norm(o['position']))
-        kits[f'{kind}.{view}'] = {'label': ' · '.join(x for x in [LABEL[kind], KITLABEL.get(view, view)] if x), 'entries': out}
+        kits[f'{kind}.{view}'] = {'label': ' · '.join(x for x in [LABEL[kind], KITLABEL.get(view, view)] if x), 'group': GROUP[kind], 'entries': out}
 # The graded set (DICTO 2026-10-13): the free centres at each thickness given (the exact centres are plain rhombic dodecahedra).
 for fn in sys.argv[3:]:
     R = json.load(open(fn)); faces = R['cells'][0]; tag = 'T%02d' % round(R['margin'] * 100)
