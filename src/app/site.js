@@ -7,7 +7,7 @@ export const SITES = {
   // shear: whether this app's space has Kaleidohedra's lattice shear.
   // analytics: Vercel Web Analytics is switched on for this site's project (analytics.js counts DICTO).
   // wordmark: the name in two tones, the second part in the app's accent (as Polyhedraverse's name).
-  kaleidohedra: { name: 'Kaleidohedra', wordmark: ['KALEIDO', 'HEDRA'], colour: '#ff9a52', url: 'https://kaleidohedra.dictospheres.com', netsGroups: ['voronoi', 'platonic', 'ekp'], shear: true, inside: true, door: true, analytics: false },
+  kaleidohedra: { name: 'Kaleidohedra', wordmark: ['KALEIDO', 'HEDRA'], colour: '#ff9a52', url: 'https://kaleidohedra.dictospheres.com', netsGroups: ['voronoi', 'platonic', 'ekp'], shear: true, inside: true, door: true, analytics: true },
   // inside: whether its worlds run in this app (Polyhedraverse's since step D2); door: whether this
   // build can open as that app (?site=, SITE). Polyhedraverse is a door since step D6.
   polyhedraverse: { name: 'Polyhedraverse', wordmark: ['POLYHEDRA', 'VERSE'], colour: '#5ee233', url: 'https://polyhedraverse.dictospheres.com', netsGroups: null, shear: false, inside: true, door: true, analytics: false },
