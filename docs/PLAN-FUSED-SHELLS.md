@@ -14,6 +14,9 @@ structure's own rotations:
    icosahedral rotations (tetrahedral T, 5-fold D5, 3-fold D3, 2-fold D2). Deduplicated up to rotation.
 3. **Hemispheres and caps**: for each stage and ring, the half on one side of a plane through the centre, and the polar cap round one
    5-, 3- or 2-fold axis.
+   DONE 2026-10-13: steps 2-3 counted in full (Dharma 5,569, Karma 124, Bodhi 363); after DICTO's "are you breaking them down too
+   much?", the catalogue shows only the main route, every convex stage, and partials on a complete shell (Dharma 216, 45 convex;
+   Karma 16; Bodhi 32) (`select.py`); the full counts stay as data for the paper.
 4. **Growth film** (DONE 2026-10-13): the main route built one piece at a time (pieces in order of distance, ties by angle round a 5-fold axis), as a
    slider on the page.
 5. **Facts and leads** for every stage: faces, face shapes, planes, convex, symmetry; leads to names (stellations: all faces on one
