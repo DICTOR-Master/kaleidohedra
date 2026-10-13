@@ -30,9 +30,7 @@ Units: the icosahedra have edge 1, and φ = τ = (1 + √5)/2.
 
 ## 2. Three pieces
 
-![Figure 1](figures/fig1-pieces.jpg)
-
-**Figure 1.** (a) AXE, (b) CLEO and (c) FUJI, at the scale where they fill the Lotus seed.
+Figure 1, at the head of the paper, shows the three pieces at the scale where they fill the Lotus seed.
 
 | Piece | Shape | Edges | Volume | Credit |
 |---|---|---|---|---|
