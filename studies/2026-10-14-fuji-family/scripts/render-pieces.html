@@ -4,7 +4,7 @@
 <script>
 // Clean, framed renders of single pieces for the FUJI family paper (DICTO, 2026-10-14): app colours, dark edges,
 // each piece centred with a generous margin. window.show(name) draws one piece; the page is screenshotted by render-pieces.mjs.
-const COL = { equi: 0xc792ea, iso: 0xe2bdf7, base: 0x4dd0e1, square: 0x4dd0e1, hex: 0xc792ea };
+const COL = { equi: 0xc792ea, iso: 0xe2bdf7, base: 0x4dd0e1, square: 0x4dd0e1, hex: 0xc792ea, port: 0x1c1826, seam: 0x0b1220 };
 const host = document.getElementById('c');
 const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setPixelRatio(1);
 renderer.setSize(1200, 1100); host.appendChild(renderer.domElement);
@@ -24,9 +24,9 @@ window.show = (name, dir, up, fixR) => {
   const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); geo.computeVertexNormals();
   const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(ep, 3));
   g.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: true, side: THREE.DoubleSide, roughness: .8, metalness: 0, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })),
-        new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x0b1220 })));
+        ...(P.f.length > 5000 ? [] : [new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x0b1220 }))]));
   scene.add(g); current = g;
-  const R = fixR ?? Math.max(...V.map(v => Math.hypot(...v)));
+  const R = fixR ?? V.reduce((m, v) => Math.max(m, Math.hypot(...v)), 0);
   const d = new THREE.Vector3(...dir).normalize(), dist = R * 1.18 / Math.sin(THREE.MathUtils.degToRad(15));
   camera.position.copy(d.clone().multiplyScalar(dist)); camera.up.set(...(up ?? [0, 1, 0])); camera.lookAt(0, 0, 0);
   sun.position.set(3, 5, 4).applyQuaternion(camera.quaternion);

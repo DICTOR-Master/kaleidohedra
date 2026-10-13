@@ -2,7 +2,7 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs'; import path from 'node:path';
 const here = path.dirname(new URL(import.meta.url).pathname);
-const data = fs.readFileSync(path.join(here, '..', 'paper', 'figures', 'solids.json'), 'utf8');
+const data = fs.readFileSync(path.join(here, '..', 'paper', 'figures', process.env.SOLIDS ?? 'solids.json'), 'utf8');
 const html = fs.readFileSync(path.join(here, 'render-pieces.html'), 'utf8').replace('<script>\n//', `<script>const DATA = ${data};\n//`);
 fs.writeFileSync(path.join(here, '_r.html'), html);
 const VIEWS = JSON.parse(process.argv[2] ?? '{}');

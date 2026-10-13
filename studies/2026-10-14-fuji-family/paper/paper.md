@@ -20,7 +20,7 @@ The members turn up in several places:
 - **Odom's golden hexagon** is FUJI's base, and every member's base is an Odom hexagon.
 - **The space-filling truncated tetrahedron** of Damasceno, Engel and Glotzer has the r = 1/2 member's base as its faces.
 - **In a breathing pyrochlore** the kagome hexagons are flat-ended triangles, with r equal to the breathing ratio.
-- **DICTO's dictospheres** carry the cuboctahedral member, r = (√3 − 1)/2. It is the shape forced by keeping an even margin round every bottle port.
+- **DICTO's dictospheres**, spheres with 14 bottle ports, are divided into curved squares and curved flat-ended triangles. Keeping an even margin round every port fixes the pattern, and its flat counterpart's triangles are the cuboctahedral member, r = (√3 − 1)/2.
 
 ---
 
@@ -123,27 +123,29 @@ The space between the tetrahedra is filled by two kinds of truncated tetrahedra,
 
 It can be built cell by cell in the Kaleidohedra app, with a slider for the breathing ratio.
 
-### 5.4 DICTO's dictospheres (r = (√3 − 1)/2)
+### 5.4 DICTO's dictospheres
 
-![Figure 5](figures/dictosphere-solid.jpg)
+![Figure 5](figures/fig5-dictosphere.jpg)
 
-**Figure 5.** The dictosphere's solid: six squares (cyan) and eight flat-ended triangles (wisteria), every face touching one inner sphere.
+**Figure 5.** (a) A dictosphere modelled as a sphere 8.8 cm across with 3 cm ports: each point of the surface belongs to its nearest port. The curved squares (cyan) and curved flat-ended triangles (wisteria) meet short side to short side. (b) The flat counterpart: the solid whose 14 faces all touch the sphere, whose triangles are the cuboctahedral member r = (√3 − 1)/2.
 
-A dictosphere is DICTO's cuboctahedral sphere with a PET-bottle port in each of its 6 squares and 8 triangles. Ports in both made the triangles' corners crowd the neighbouring holes, so DICTO truncated the triangles to give even space round the ports. The truncated triangles meet short side to short side.
+A dictosphere is a sphere. It carries 14 PET-bottle ports in a cuboctahedral arrangement: 6 on the cube axes (the squares) and 8 on the three-fold axes (the triangles). DICTO divides its surface round the ports into squares and triangles. With ports in both, the triangles' corners crowded the neighbouring holes, so he truncated the triangles to give even space round every port. The truncated triangles meet short side to short side.
 
-**Even space forces the shape.** Across an edge shared by two faces, the clearances from the two face centres to the edge are equal exactly when the two faces lie at the same distance from the centre. So even space everywhere means that all 14 faces touch one inner sphere. The solid is then the cube ∩ octahedron with both sets of faces at the same distance, and its flat-ended triangles are exactly the **cuboctahedral member, r = (√3 − 1)/2 = 0.366**.
+**Even space fixes the pattern.** On a sphere, an even margin round every port means that each point of the surface belongs to its nearest port. The squares and triangles are then the regions of the sphere nearest each port. Their boundaries are arcs of great circles halfway between neighbouring ports, and the triangles come out as curved flat-ended triangles. Projected from the centre onto flat planes, the same pattern is the solid whose 14 faces all touch one inner sphere (Figure 5b): the cube ∩ octahedron with both sets of faces at the same distance. Its flat-ended triangles are exactly the **cuboctahedral member, r = (√3 − 1)/2 = 0.366**. (The same rule in the flat: across an edge shared by two faces, the clearances from the two face centres to the edge are equal exactly when the faces lie at the same distance from the centre.)
 
-| | model (from the 4 cm long side) | DICTO's dictosphere |
-|---|---|---|
-| short side | 1.46 cm | 1.5 cm |
-| r | 0.366 (flat faces); 0.356 (along the sphere) | 0.375 |
-| across the flats | 7.73 cm | about 7.5 to 8.4 cm |
+**Against DICTO's dictosphere.** The sphere's size comes from DICTO's steel-tape measurement: 8.4 cm along the surface between the centres of two triangles on either side of a square, an arc of 109.47°, which gives a radius of 4.40 cm. The sides along the surface then follow.
 
-On the sphere itself, the same rule means that each point of the surface belongs to its nearest port. These regions are the equal-depth solid projected onto the sphere.
+| | model on the sphere | flat counterpart | DICTO's dictosphere |
+|---|---|---|---|
+| long side (triangle to square) | 3.79 cm | 4.55 cm | about 4 cm |
+| short side (triangle to triangle) | 1.35 cm | 1.67 cm | about 1.5 cm |
+| r | 0.356 | 0.366 | 0.375 |
 
-The 14 port directions are also the directions of a rhombic dodecahedron's 14 corners, and every edge of a rhombic dodecahedron runs along a three-fold axis. So dictospheres joined triangle port to triangle port build rhombic-dodecahedron frames, which fill space, exactly as DICTO builds them.
+The measured sides lie between the curved and the flat versions, as they would for hand measurement with a tape on a curved surface; all three ratios agree within a few per cent.
 
-The truncated octahedron is the r = 1 member of the same cube–octahedron family, with regular hexagons. Every member has the same face angles (109.47° and 125.26°), but only the truncated octahedron, whose hexagons are centrally symmetric, fills space by translation (Kelvin's cell). It is to the dictosphere what the regular hexagon is to FUJI: the symmetric shape at r = 1.
+**Building with them.** The 14 port directions are the directions of a rhombic dodecahedron's 14 corners, and every edge of a rhombic dodecahedron runs along a three-fold axis. So dictospheres joined triangle port to triangle port build rhombic-dodecahedron frames, which fill space, exactly as DICTO builds them.
+
+**The truncated octahedron** is the r = 1 member of the same cube–octahedron pattern, with regular hexagons. Every member of the flat family has the same face angles (109.47° and 125.26°), but only the truncated octahedron, whose hexagons are centrally symmetric, fills space by translation (Kelvin's cell). It is to the dictosphere's pattern what the regular hexagon is to FUJI: the symmetric shape at r = 1.
 
 ## 6. What is known, and what is new
 
@@ -152,15 +154,15 @@ The base shape (the isogonal hexagon), the antiprism angles (listed for single a
 - the family FUJI(r) of pyramids;
 - its base-angle formulas;
 - the antiprism theorem that links the family to the antiprisms;
-- the identifications that tie it together: FUJI's base as Odom's golden hexagon, the breathing pyrochlore's hexagons as the family's bases, and the dictosphere as the equal-depth solid whose triangles are the cuboctahedral member.
+- the identifications that tie it together: FUJI's base as Odom's golden hexagon, the breathing pyrochlore's hexagons as the family's bases, and the dictosphere's even-margin pattern, whose flat counterpart's triangles are the cuboctahedral member.
 
 The family gives one shape and one parameter to things found separately:
 - a gap piece in an icosahedral cluster;
 - a space-filler found by computer packing;
 - the hexagons of frustrated magnets;
-- the faces of a sculptor's PET-bottle spheres.
+- the pattern round the ports of a sculptor's PET-bottle spheres.
 
-In each, the parameter r is set by a different symmetry: five-fold for FUJI, cubic for the dictosphere, the breathing ratio for the pyrochlore.
+In each, the parameter r is set by a different symmetry: five-fold for FUJI, cubic for the dictosphere's ports, the breathing ratio for the pyrochlore.
 
 ## Appendix: proofs
 
