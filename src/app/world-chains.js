@@ -127,6 +127,8 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     renderPanel();
   }
   const fit = () => fitView([0, 0, 0], radius * (1 + view.apart) * WS * 1.1);
+  // A shape's own starting view (DATA[kind].viewDir), used when the shape is opened.
+  const fitStart = () => fitView([0, 0, 0], radius * (1 + view.apart) * WS * 1.1, DATA[view.kind].viewDir ?? null);
 
   // ---- panel ----
   const panel = document.createElement('div');
@@ -181,7 +183,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     setChain(kind) {
       if (!KINDS.includes(kind) || kind === view.kind) return;
       view.kind = kind; save();
-      if (active) { draw(); fit(); }
+      if (active) { draw(); fitStart(); }
     },
     setActive(on) {
       if (on === active) return;
@@ -189,7 +191,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       group.visible = on;
       if (!on) panel.classList.remove('visible');
       draw();
-      if (on) fit();
+      if (on) fitStart();
     },
     /** Back to each shape's first view (leaving the world, DICTO 2026-10-13). */
     resetView() {

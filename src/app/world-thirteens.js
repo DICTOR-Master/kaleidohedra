@@ -14,6 +14,9 @@ const GLASS = {
   ...Object.fromEntries(['skewedRd13', 'bainRd13', 'bilinski13'].map((k) => [k, new Set([`${k}Cell`, `${k}CellN`, `${k}CentreN`])])), rd13: new Set(['rd', 'rdA', 'rdB', 'rdAN', 'rdBN', 'rdCentreN']),
 };
 
+// The truncated octahedron 13 opens from above, straight down its window axis: the gold centre's square at the middle (DICTO 2026-10-13).
+DATA.to13.viewDir = [0.0001, 0.00001, 1];
+
 export function createThirteensWorld({ scene, fitView }) {
   return createLayeredWorld({ scene, fitView, name: 'thirteens', data: DATA, kinds: KINDS, glassRoles: GLASS, prefix: 'thirteens',
     defaultParts: { icosa13: 'pieces', dodeca13: 'pieces', bodhi: 'seed', unity: 'open', dictoStar: 'star', deshi: 'deshi', rd13: 'plain', hexed: 'cluster', to13: 'cluster', skewedRd13: 'cluster', bainRd13: 'cluster', bilinski13: 'cluster', jewel13: 'cluster' }, centreGold: true });
