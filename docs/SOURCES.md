@@ -115,6 +115,10 @@ Dense packings of Platonic solids, pyritohedral and dodecahedral structures.
 - S. Gravier, M. Mollard, C. Payan (1998). *On the non-existence of 3-dimensional tiling in the Lee metric*. European J. Combin. 19, 567-572. <https://doi.org/10.1006/eujc.1998.0211>
 - T. Etzion (2011). *Product constructions for perfect Lee codes*. <https://arxiv.org/abs/1103.3933>
 - A. Campello, G. C. Jorge, J. E. Strapasson, S. I. R. Costa (2015). *Perfect codes in the lp metric*. <https://arxiv.org/abs/1506.02517>
+- J. Singer (1938). *A theorem in finite projective geometry and some applications to number theory*. Trans. Amer. Math. Soc. 43, 377-385. <https://doi.org/10.1090/S0002-9947-1938-1501951-4>
+- M. Kovačević, V. Y. F. Tan (2018). *Codes in the space of multisets: coding for permutation channels with impairments*. IEEE Trans. Inf. Theory 64, 5156-5169. <https://doi.org/10.1109/TIT.2017.2789292>
+- I. J. Dejter, L. R. Fuentes, C. A. Araujo (2025). *Perfect truncated-metric codes in lattice graphs and superlattice graphs*. J. Combin. Math. Combin. Comput. 126, 247-261.
+- M. Kovačević (2026). *An isodiametric theorem and lattice diameter-perfect codes in A3*. <https://arxiv.org/abs/2607.21037>
 
 ### Quasicrystals and aperiodic order
 
