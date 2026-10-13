@@ -77,22 +77,48 @@ def cellvol(d, ci):
             vol += abs(np.linalg.det(np.array([P[a] - cen, P[b] - cen, m - cen]))) / 6
     return vol
 EQUAL = len(sys.argv) > 2 and sys.argv[2] == 'equal'
+# 'rdcentre' (DICTO 2026-10-13: "it looks more like an RD than the others"): the centre stays an exact rhombic dodecahedron, its 14
+# corners at m + s * (its plain corners), with the size s and the middle m free (4 extra unknowns after the displacements).
+RDC = len(sys.argv) > 2 and sys.argv[2] == 'rdcentre'
+centre_corners = {o: np.array(b, float) for f in cells[0] for o, b in f}
+free = [o for o in range(N) if o not in centre_corners]
+# The centre's corners are not unknowns: they follow from its size s and middle m (so nothing is stated twice); x = the other corner
+# classes' displacements, then s and m.
+def expand(x):
+    d = np.zeros(3 * N)
+    for i, o in enumerate(free): d[3 * o:3 * o + 3] = x[3 * i:3 * i + 3]
+    s_, m = x[3 * len(free)], x[3 * len(free) + 1:3 * len(free) + 4]
+    for o, b in centre_corners.items(): d[3 * o:3 * o + 3] = (s_ - 1) * b + m
+    return d
+def rd_centre(x): return np.zeros(1)
 d0 = np.zeros(3 * N)
 a0 = area(d0); V = 26.0
 iq = lambda a: 36 * np.pi * V ** 2 / a ** 3
 print('start: outer area %.4f  roundness (36 pi V^2/S^3) %.4f' % (a0, iq(a0)))
-cons = [{'type': 'eq', 'fun': planar}, {'type': 'ineq', 'fun': convex}]
-if EQUAL: cons.append({'type': 'eq', 'fun': lambda d: np.array([cellvol(d, ci) - 2 for ci in range(13)])})
+D = expand if RDC else (lambda x: x)
+# the centre's own faces are flat by construction in rdcentre mode, so their flatness is not asked again
+centre_faces = {tuple(sorted(o for o, _ in f)) for f in cells[0]}
+planar_keep = [k for k in faceset if not (RDC and k in centre_faces)]
+def planar_used(d):
+    out = []
+    for k in planar_keep:
+        ci, fi = faceset[k]; P = [pos(d, o, b) for o, b in cells[ci][fi]]
+        out.append(np.linalg.det(np.array([P[1] - P[0], P[2] - P[0], P[3] - P[0]])))
+    return np.array(out)
+cons = [{'type': 'eq', 'fun': lambda x: planar_used(D(x))}, {'type': 'ineq', 'fun': lambda x: convex(D(x))}]
+if EQUAL: cons.append({'type': 'eq', 'fun': lambda d: np.array([cellvol(D(d), ci) - 2 for ci in range(13)])})
 # The RD block is a balance point: start from small random nudges, keep the best that meets every constraint.
 best = None
 for seed in range(5):
-    start = np.random.default_rng(seed).normal(0, 0.03, 3 * N)
-    res = minimize(area, start, method='SLSQP', constraints=cons, options={'maxiter': 800, 'ftol': 1e-10})
-    ok = np.abs(planar(res.x)).max() < 1e-8 and convex(res.x).min() > -1e-8 and (not EQUAL or max(abs(cellvol(res.x, ci) - 2) for ci in range(13)) < 1e-6)
-    print('seed', seed, res.message, 'area %.4f' % area(res.x), 'ok' if ok else 'FAILS constraints', flush=True)
-    if ok and (best is None or area(res.x) < area(best.x)): best = res
+    start = np.random.default_rng(seed).normal(0, 0.03, 3 * (len(free) if RDC else N))
+    if RDC: start = np.concatenate([start, [1.0, 0, 0, 0]])
+    res = minimize(lambda x: area(D(x)), start, method='SLSQP', constraints=cons, options={'maxiter': 1500, 'ftol': 1e-10})
+    x = D(res.x)
+    ok = np.abs(planar(x)).max() < 1e-8 and convex(x).min() > -1e-8 and (not EQUAL or max(abs(cellvol(x, ci) - 2) for ci in range(13)) < 1e-6) and (not RDC or np.abs(rd_centre(res.x)).max() < 1e-7)
+    print('seed', seed, res.message, 'area %.4f' % area(x), ('centre scale %.4f' % res.x[3 * len(free)]) if RDC else '', 'ok' if ok else 'FAILS constraints', flush=True)
+    if ok and (best is None or area(D(res.x)) < area(D(best.x))): best = res
 res = best or res
-d = res.x
+d = D(res.x)
 print(res.message, 'iterations', res.nit)
 print('end:   outer area %.4f  roundness %.4f  | max non-flatness %.2e  min convexity margin %.4f' % (area(d), iq(area(d)), np.abs(planar(d)).max(), convex(d).min() + MARGIN))
 vols = [cellvol(d, ci) for ci in range(13)]
@@ -106,4 +132,4 @@ for ci in []:
     vols.append(vol)
 print('cell volumes', [round(float(v), 4) for v in vols], 'sum %.6f' % sum(vols))
 json.dump({'W': W, 'L': L.T.tolist(), 'margin': MARGIN, 'cells': [[[ (np.array(b) + d[3*o:3*o+3]).tolist() for o, b in f] for f in cells[ci]] for ci in range(13)],
-           'centres': [p.tolist() for p in C], 'area0': a0, 'area': area(d), 'volumes': vols}, open(f'rd13-round-m{MARGIN}{"-equal" if EQUAL else ""}.json', 'w'))
+           'centres': [p.tolist() for p in C], 'area0': a0, 'area': area(d), 'volumes': vols}, open(f'rd13-round-m{MARGIN}{"-equal" if EQUAL else "-rdcentre" if RDC else ""}.json', 'w'))

@@ -19,6 +19,7 @@ for k, fn in enumerate(files):
         ax.set_xlim(-3.2, 3.2); ax.set_ylim(-3.2, 3.2); ax.set_zlim(-3.2, 3.2); ax.set_box_aspect((1, 1, 1)); ax.axis('off'); ax.view_init(22, 35)
         if row == 0:
             outer = sorted(set(round(x, 3) for x in v[1:]))
-            ax.set_title(f"thickness {R['margin']}\nroundness {iq:.3f}\ncentre {v[0]:.2f}, outer {' / '.join(f'{x:.2f}' for x in outer)}", color='#e6e9f0', fontsize=9)
+            kind = 'exact RD centre' if 'rdcentre' in fn else 'free centre'
+            ax.set_title(f"thickness {R['margin']} · {kind}\nroundness {iq:.3f}\ncentre {v[0]:.2f}, outer {' / '.join(f'{x:.2f}' for x in outer)}", color='#e8c25a' if 'rdcentre' in fn else '#e6e9f0', fontsize=9)
 plt.subplots_adjust(0, 0, 1, 0.9, 0, 0)
 plt.savefig(sys.argv[1], dpi=120, facecolor='#0b0f14')
