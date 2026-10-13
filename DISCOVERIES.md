@@ -48,6 +48,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 22 | Chain of Karma: the Lotus seed nested in itself without end; the icosahedron and dodecahedron as endless shells of each other; the dodecahedral Chain; an iterated dissection in which only the icosahedron is subdivided, the gap pieces occurring at every scale | DICTO (the Chain, the name, the dodecahedral version) | study checks | **not found** as solid exact fillings; nested icosahedra at golden powers: Gray 2002; nested icosahedral point shells: Tsai clusters, Keef–Twarock (viruses) | 2026-10-11 |
 | 23 | Spheres of Dharma: a second exact φ³ cycle, icosahedron φ² ⊃ rhombic triacontahedron ⊃ fullerene cage ⊃ dodecahedron ⊃ icosidodecahedron ⊃ icosahedron 1/φ, each layer filled by a few piece types (237 pieces per cycle); it shares the dodecahedron with the Lotus seed, so the two can be exchanged half by half at every scale | DICTO (the icosidodecahedron as the twin form, the dual triangular structures, the triangles of rhombi, the fullerene transition, "one more missing piece") | study checks | **not found** as solid exact fillings; the shells are the Tsai cluster's family (Takakura et al. 2007); the dual compound and the compound of five octahedra are classical | 2026-10-12 |
 | 24 | The Bodhi seed: a rhombic triacontahedron of edge φ² holds 12 of edge 1 on its 5-fold axes, each touching 5 others face to face, and one of edge 1/φ at its centre; the second form (after the icosahedron, #19) that multiplies like the Lotus seed, 13 per φ² step; gap 31.8%, in 20 three-fold and 30 two-fold parts on each side | DICTO (the golden rhombohedron lead; the name; the outer twelve built exactly by hand in Polyhedraverse) | study checks | **partly known**: 12 rhombic triacontahedra face to face around a rhombic hexecontahedron is S. Kabai's cluster layer (Wolfram Demonstrations, "Cluster of 45 Polyhedra around a Rhombic Hexacontahedron"; Kabai, Bérczi, Szilassi, RT/RH clusters); **not found**: its exact closure in the triacontahedron φ², the centre 1/φ, the gap kits, the seed's growth | 2026-10-12 |
+| 25 | The DICTO Spheroid-13 RD: the rhombic dodecahedron's 13 (a centre and its 12 face neighbours) fills space by translation alone; reshaped with flat faces, kept keyed, a true rhombic dodecahedron at its centre, the block reaches roundness 0.707 (thickness 0.15; the lattice's best single tile 0.748) | DICTO (the Hexa question, the rounded keyed quality, the true RD centre, the thicknesses, the name) | study checks; 40 wide starts | **tiling known**: the A3 radius-one perfect code (Kovačević and Tan 2018; x1 + 3x2 + 9x3 = 0 mod 13 in Kovačević 2026; Singer 1938); the rounded keyed block **not found** | 2026-10-13 (Zenodo 10.5281/zenodo.23332821) |
 
 Known results the apps show (kept here, with their numbers, as checks; not DICTO's findings; see the section at the end):
 
@@ -895,6 +896,23 @@ pieces. Names by DICTO.*
   Demonstration "Cluster of 20 Icosahedra" (in the vein of Kabai); Robert Austin's 2014 model overlaps whole
   icosahedra with dodecahedra; the Dogstar and its honeycomb are Hart's (1996). The King of Pentacles, the
   closed Stella-Corona and its network are DICTO's.
+
+## 25. The DICTO Spheroid-13 RD (DICTO, 2026-10-13)
+
+*DICTO's question: does the rhombic dodecahedron's 13 fill space as the Hexa does; then: make the block rounder, keyed, and with a true
+rhombic dodecahedron at its heart.*
+
+- **The tiling (known):** a rhombic dodecahedron and its 12 face neighbours tile space by translation: 8 of the 183 index-13 sublattices of
+  FCC, all turns of one arrangement (no handedness), translations √10 (neighbours √2). This is the A3 radius-one perfect code (Kovačević
+  and Tan 2018; written as x1 + 3x2 + 9x3 = 0 mod 13 in Kovačević 2026); the weights 0, 1, 3, 9 are Singer's perfect difference set mod 13.
+- **The DICTO Spheroid-13 RD (DICTO's):** every corner class of the honeycomb moved the same in every block, faces flat, cells convex with a
+  minimum thickness, least outer surface, the centre an exact rhombic dodecahedron (×1.5252 at thickness 0.15). Roundness 0.735 / 0.707 /
+  0.654 / 0.593 at thickness 0.08 / 0.15 / 0.25 / 0.35 (plain block 0.365; the block lattice's Voronoi cell 0.748). Three piece shapes (centre,
+  two outer kinds of six, each three pieces and their mirror images); block symmetry order 6; each block meets 14 others across all 84 outer
+  faces; the centres never meet. Free-centre variant: at most 0.01 rounder, centre a near-RD that is not a parallelohedron.
+- Nets: 15 printable A4 sheets, one scale per set. App: DICTO ATOM-13×13 world (RD 13 views) and Polyhedraverse kits.
+- Study: [studies/2026-10-13-rd13-block](studies/2026-10-13-rd13-block/); paper: [papers/spheroid-13-rd](papers/spheroid-13-rd/).
+- Archived: Zenodo [10.5281/zenodo.23332822](https://doi.org/10.5281/zenodo.23332822) (concept 10.5281/zenodo.23332821), 2026-10-13.
 
 ## 24. The Bodhi seed (DICTO, 2026-10-12)
 
