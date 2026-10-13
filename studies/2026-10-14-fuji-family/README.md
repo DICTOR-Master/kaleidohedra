@@ -46,16 +46,24 @@ faces are the golden triangles of icosahedral geometry.
 - **The Mosseri–Sadoc composite tiles z, h, s, a are not FUJI:** their faces are golden triangles only (Papadopolos and
   Ogievetsky 1999, §4), while FUJI has three equilateral faces and a hexagon. Consistent with the Icosa-13 proof that FUJI is not a
   union of Mosseri–Sadoc tiles at its own scale or larger.
-- **Lead 1, flat-ended triangles that fill space:** the truncated tetrahedra between the tetrahedron and the octahedron have four
-  flat-ended-triangle faces, and one of them fills space on its own, "a new space filling polyhedron, which has been overlooked in
-  previous searches" (Damasceno, Engel and Glotzer 2012). Its r is to be read from the paper and checked.
+- **Flat-ended triangles that fill space (read 2026-10-14):** Damasceno, Engel and Glotzer (2012) study truncated tetrahedra from
+  the tetrahedron (t = 0) to the octahedron (t = 1); the hexagons have sides σ(1 − t) and σt/2, so r = (t/2)/(1 − t) for
+  t ≤ 2/3. At **t = 1/2** the solid fills space on its own (their "space-filling truncated tetrahedron", STT; centroids on β-tin,
+  space group I4₁/amd), and they note the hexagons' 2:1 edge ratio. **So the STT's four hexagons are exactly FUJI(1/2)'s base**,
+  the same member where the icosahedral angle α reappears. Checked from their Table S1 vertices: hexagons with sides 1 and 1/2 at
+  distance 1/√6 from the centre (long side 1). FUJI(1/2) pyramids sit face to face on the STT's hexagons, but nothing is flush
+  there (151.28° and 166.92° across the edges), so the augmented solid is not obviously special.
+- **The same family runs through the whole tetrahedron-to-octahedron range:** t = 2/3 is the Archimedean truncated tetrahedron
+  (r = 1, regular hexagons), and past it the hexagons become flat-ended triangles again on the octahedron side, which is the
+  tetrahedral-octahedral (FCC, cuboctahedral) world of DICTO's spheres. FUJI's own ratio 1/φ occurs at t = 2/(φ + 2) = 0.5528
+  (tetrahedron side) and at t = 2φ/(2φ + 1) = 0.7639 (octahedron side).
 - **Lead 2:** Wolfram Demonstration "Hexagons and the Golden Ratio": three equilateral triangles whose outer corners make a hexagon
   with two edge lengths in the golden ratio, linked to the compounds of two icosahedra and five octahedra. Close to FUJI's base and
   its three equilateral faces; page text not yet read.
 
 ## Next
 
-1. Read Damasceno et al. for the space-filling member's r, and check whether FUJI(r) pyramids sit on its faces.
+1. Done: the STT's faces are FUJI(1/2)'s base (above).
 2. Read the Wolfram demonstration; compare its hexagon with FUJI's base.
 3. Which FUJI(r) close gaps with which solids (r = 1/2 shares FUJI's α)? Where do flat-ended triangles appear in DICTO's
    cuboctahedral (FCC) work?
