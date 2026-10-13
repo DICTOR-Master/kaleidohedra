@@ -85,8 +85,8 @@ triangles when its base angle on the long sides plus X's dihedral there is 180°
 
 **The antiprism pattern** (`scripts/antiprisms.py`): for the n-gonal antiprism with unit edges, **r = 2 cos(π/n) − 1**, checked to
 10⁻¹² for n = 4 to 12, with n = 3 (the octahedron) giving r = 0. So the family is indexed by the antiprisms: the tetrahedron
-(n = 3), √2 − 1 (n = 4), **FUJI (n = 5, golden)**, √3 − 1 (n = 6), and r → 1 as n grows (the flat regular hexagon). A proof has
-not been written; the pattern is numerical so far.
+(n = 3), √2 − 1 (n = 4), **FUJI (n = 5, golden)**, √3 − 1 (n = 6), and r → 1 as n grows (the flat regular hexagon). **Proved** in `PROOFS.md` (2026-10-14), with
+the base-angle formulas cos L = (1 + 2r)/3 and cos² S = (2 + r)/(3(2 − r)), which also explain the r = 1/2 coincidence.
 
 These are face-plane matches only: a full closure like the Lotus seed also needs the other gaps filled. The cuboctahedral member
 (√3 − 1)/2 is the one to test first against DICTO's cuboctahedron spheres.
