@@ -14,7 +14,7 @@ structure's own rotations:
    icosahedral rotations (tetrahedral T, 5-fold D5, 3-fold D3, 2-fold D2). Deduplicated up to rotation.
 3. **Hemispheres and caps**: for each stage and ring, the half on one side of a plane through the centre, and the polar cap round one
    5-, 3- or 2-fold axis.
-4. **Growth film**: the main route built one piece at a time (pieces in order of distance, ties by angle round a 5-fold axis), as a
+4. **Growth film** (DONE 2026-10-13): the main route built one piece at a time (pieces in order of distance, ties by angle round a 5-fold axis), as a
    slider on the page.
 5. **Facts and leads** for every stage: faces, face shapes, planes, convex, symmetry; leads to names (stellations: all faces on one
    solid's planes; classic convex solids; compounds).

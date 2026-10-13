@@ -58,6 +58,21 @@ def stages_for(view, order):
     return out
 
 
+def film_order(groups, order):
+    centre = groups[order[0]][0]['v']
+    C = np.array(centre)
+    axis = C[np.argmax(np.linalg.norm(C, axis=1))]  # a corner of the centre solid on a five-fold axis (icosahedron: any; RT: the far ones)
+    axis = axis / np.linalg.norm(axis)
+    ref = np.cross(axis, [1, 0, 0] if abs(axis[0]) < 0.9 else [0, 1, 0]); ref /= np.linalg.norm(ref); ref2 = np.cross(axis, ref)
+    out = [[0, 0]]
+    for i, g in enumerate(order[1:], 1):
+        cs = [np.array(p['v']).mean(0) for p in groups[g]]
+        key = lambda j: (round(float(np.degrees(np.arccos(np.clip(np.dot(cs[j], axis) / np.linalg.norm(cs[j]), -1, 1)))), 1),
+                         float(np.arctan2(np.dot(cs[j], ref2), np.dot(cs[j], ref))))
+        out += [[i, j] for j in sorted(range(len(cs)), key=key)]
+    return out
+
+
 def payload():
     out = []
     for view, (name, sub) in WORLD.items():
@@ -78,7 +93,9 @@ def payload():
             'note': NOTES[view][i]} for i, (g, s) in enumerate(zip(order, st))],
             # every stage (stages.py, partials.py; facts by stage_facts.py): whole rings as step indices, and for a partial stage the
             # extra pieces as [step index, piece index within that step's ring]
-            'stages': stages_for(view, order)})
+            'stages': stages_for(view, order),
+            # growth film: every piece in turn, ring by ring, each ring from the top of a five-fold axis down (by angle, then round)
+            'film': film_order(groups, order)})
     return out
 
 

@@ -51,6 +51,18 @@ details.all summary { cursor: pointer; font-weight: 700; }
 .filters { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin: 10px 0; font-size: 14px; }
 .filters select { background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; font: inherit; max-width: 100%; }
 button.more { margin-top: 10px; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px; font: inherit; cursor: pointer; } .card .flag.l { color: var(--lead); } .card .flag.x { color: var(--muted); }
+.film { display: grid; gap: 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+.film-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg button, .play { min-height: 44px; padding: 0 14px; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 8px; font: inherit; cursor: pointer; }
+.seg button[aria-pressed="true"] { border-color: var(--new); color: var(--new); }
+.play { border-color: var(--new); color: var(--new); font-weight: 700; min-width: 96px; }
+/* A big slider for fingers (DICTO's iPad rule): a thick track and a 40px thumb. */
+#film { -webkit-appearance: none; appearance: none; width: 100%; height: 48px; background: transparent; touch-action: none; cursor: pointer; margin: 0; }
+#film::-webkit-slider-runnable-track { height: 12px; border-radius: 6px; background: var(--line); }
+#film::-webkit-slider-thumb { -webkit-appearance: none; width: 40px; height: 40px; margin-top: -14px; border-radius: 50%; background: var(--new); border: 3px solid var(--bg); }
+#film::-moz-range-track { height: 12px; border-radius: 6px; background: var(--line); }
+#film::-moz-range-thumb { width: 36px; height: 36px; border-radius: 50%; background: var(--new); border: 3px solid var(--bg); }
 footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 12px; }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
 </style>
@@ -82,6 +94,16 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
       <div class="sub">Drag to turn.</div>
     </div>
   </div>
+
+  <section class="film" aria-label="Growth film">
+    <div><h2>Growth film</h2><div class="sub">The main route built one piece at a time: ring by ring, each ring from the top of a five-fold axis down. Shown in the viewer above.</div></div>
+    <div class="film-row">
+      <div class="seg" role="group" aria-label="Structure" id="filmWorlds"></div>
+      <button type="button" id="filmPlay" class="play">Play</button>
+    </div>
+    <input type="range" id="film" min="1" value="1" step="1" aria-label="Pieces built">
+    <div class="sub" id="filmInfo"></div>
+  </section>
 
   <div id="worlds"></div>
 
@@ -165,6 +187,7 @@ function partLabel(world, st) {
   return `${KIND[k] ?? k}${ax ? ` round a ${ax}-fold axis` : ''} (${st.p.length} of ${world.steps[ring].adds})`;
 }
 function selectStage(w, si) {
+  if (typeof stop === 'function') stop();
   cur = { w, k: null, stage: si };
   const world = DATA[w], st = world.stages[si];
   $('where').textContent = `${world.name} · stage ${si + 1} of ${world.stages.length} · ${st.g.length} rings`;
@@ -176,6 +199,7 @@ function selectStage(w, si) {
   resize(); show(world, st.g, null, false, st.p); draw();
 }
 function select(w, k) {
+  if (typeof stop === 'function') stop();
   cur = { w, k, stage: null };
   const world = DATA[w], s = world.steps[k];
   $('where').textContent = `${world.name} · main route, step ${k + 1} of ${world.steps.length}`;
@@ -205,7 +229,7 @@ function next() {
   const batch = thumbs.splice(0, 4);
   if (!batch.length) { running = false; return; }
   for (const [img, world, idx, hi, extra] of batch) img.src = thumb(world, idx, hi, extra);
-  resize(); cur.stage === null ? select(cur.w, cur.k) : selectStage(cur.w, cur.stage);
+  resize(); restore();
   setTimeout(next, 0);
 }
 const kick = () => { if (!running) { running = true; setTimeout(next, 0); } };
@@ -279,6 +303,59 @@ DATA.forEach((world, w) => {
   pBox.addEventListener('toggle', () => { if (pBox.open && !pg.children.length) filter(); });
   host.appendChild(sec);
 });
+// ---- growth film ----
+let filmW = 1, playing = null;
+function showFilm(n) {
+  const world = DATA[filmW], F = world.film;
+  n = Math.max(1, Math.min(F.length, n));
+  cur = { w: filmW, k: null, stage: null, film: n };
+  const pos = [], col = [], line = [];
+  F.slice(0, n).forEach(([i, j], m) => {
+    const p = world.steps[i].pieces[j], c = m === n - 1 ? NEW : RINGS[i % RINGS.length];
+    for (const f of p.f) {
+      for (let q = 1; q + 1 < f.length; q++) for (const v of [f[0], f[q], f[q + 1]]) { pos.push(...p.v[v]); col.push(c.r, c.g, c.b); }
+      f.forEach((v, q) => line.push(...p.v[v], ...p.v[f[(q + 1) % f.length]]));
+    }
+  });
+  for (const c of [...holder.children]) { holder.remove(c); c.geometry.dispose(); }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); g.computeVertexNormals();
+  const l = new THREE.BufferGeometry(); l.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+  holder.add(new THREE.Mesh(g, mat), new THREE.LineSegments(l, lineMat));
+  resize(); draw();
+  const [ring] = F[n - 1];
+  const inRing = F.slice(0, n).filter(([i]) => i === ring).length, ringSize = world.steps[ring].pieces.length;
+  const done = F.slice(0, n).filter(([i]) => i === ring).length === ringSize;
+  $('film').value = n;
+  $('filmInfo').textContent = `${world.name}: piece ${n} of ${F.length} · ring ${ring + 1} of ${world.steps.length} (${world.steps[ring].adds}), ${inRing} of ${ringSize}${done && world.steps[ring].convex ? ' · complete: a convex solid' : ''}`;
+  $('where').textContent = `${world.name} · growth film`;
+  $('title').textContent = `Piece ${n} of ${F.length}`;
+  $('chip').textContent = done ? (world.steps[ring].convex ? 'convex' : 'ring complete') : 'growing'; $('chip').className = `chip ${done && world.steps[ring].convex ? 'convex' : 'non'}`;
+  $('faces').textContent = done ? world.steps[ring].faces : '—';
+  $('shapes').textContent = done ? Object.entries(world.steps[ring].shapes).map(([k2, v]) => `${v} × ${SHAPE[k2] || k2}`).join(', ') : '—';
+  $('planes').textContent = done ? world.steps[ring].planes : '—';
+  $('note').textContent = done ? (world.steps[ring].note || 'A ring complete.') : `Adding ${world.steps[ring].adds}; the newest piece is orange.`;
+  document.querySelectorAll('.card').forEach((c) => c.setAttribute('aria-pressed', 'false'));
+}
+$('filmWorlds').innerHTML = DATA.map((wd, w) => `<button type="button" data-w="${w}" aria-pressed="${w === filmW}">${wd.name}</button>`).join('');
+$('filmWorlds').addEventListener('click', (e) => {
+  const b = e.target.closest('[data-w]'); if (!b) return;
+  filmW = +b.dataset.w; $('filmWorlds').querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+  $('film').max = DATA[filmW].film.length; stop(); showFilm(1);
+});
+$('film').max = DATA[filmW].film.length;
+$('film').addEventListener('input', () => { stop(); showFilm(+$('film').value); });
+const stop = () => { if (playing) { clearInterval(playing); playing = null; $('filmPlay').textContent = 'Play'; } };
+$('filmPlay').addEventListener('click', () => {
+  if (playing) return stop();
+  let n = +$('film').value; if (n >= DATA[filmW].film.length) n = 0;
+  $('filmPlay').textContent = 'Pause';
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  playing = setInterval(() => { n += reduce ? 10 : 1; showFilm(n); if (n >= DATA[filmW].film.length) stop(); }, reduce ? 400 : 90);
+});
+// While the film is showing, the thumbnail queue restores it rather than a stage.
+const restore = () => (cur.film ? showFilm(cur.film) : cur.stage === null ? select(cur.w, cur.k) : selectStage(cur.w, cur.stage));
+
 select(0, 1);
 kick();
 </script>
