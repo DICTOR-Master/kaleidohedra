@@ -134,7 +134,8 @@ distances are 4.46 and 5.46 cm: they differ by exactly 1.00 cm, as DICTO's gaps 
 ρ = 1/(1.4142 − 1.1547) = 3.86 cm, the same value the 4 cm long side gave. Subtracting, the holes would be about 1.46 cm across,
 against the 3 cm port size given; to be checked (hole diameter vs bottle collar).
 
-**Across the sphere (DICTO):** 8.4 cm between opposite flat port faces, and the true sphere a few mm wider. So the dictosphere is
+**Across the sphere (DICTO):** 8.4 cm between opposite flat port faces, square to square and also triangle to triangle (steel
+tape, 2026-10-14): **the same depth for both kinds of face, as the explanation requires**; and the true sphere a few mm wider. So the dictosphere is
 a sphere with shallow flats, not the sharp solid (whose corners would stand 24% further out). On the sphere, even spacing means
 each point of the surface belongs to its nearest port: the spherical Voronoi diagram of the 14 port centres, which is the
 equal-depth solid projected onto the sphere. Its edges along the surface have ratio **0.356** (short/long), against 0.366 for the
