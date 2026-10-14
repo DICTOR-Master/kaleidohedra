@@ -244,6 +244,24 @@ So, as far as these searches reach: the base shape, the antiprism angles, the br
 the FUJI family of pyramids, its base-angle formulas, the antiprism theorem linking them, and the identifications that tie the
 family together (FUJI, Odom's hexagon, the golden breathing pyrochlore, the dictosphere) were not found.
 
+## What defines a member? (legitimacy, started 2026-10-14)
+
+DICTO: be careful; find the parameters that define the family before building more.
+
+- **Why the side edges are 1.** A pyramid with equal side edges on an equiangular hexagon (sides a and b alternating) has two free
+  ratios, b/a and (side edge)/a. Asking for equilateral faces on the long sides fixes the second: side edge = a. (Equilateral
+  faces on the short sides are impossible, since the circumradius exceeds b.) So FUJI(r) is the one-parameter family of
+  equal-edged pyramids on flat-ended triangles whose long faces are equilateral, which is what lets them meet the triangle faces
+  of deltahedra and Archimedean solids.
+- **Natural members** are then the r where something closes: the face-plane condition r = (−3 cos D − 1)/2 for a solid with unit
+  triangles (the antiprisms r = 2 cos(π/n) − 1, the cuboctahedron, the rhombicuboctahedron, …); a whole cluster closing (so far only
+  FUJI, in the Lotus seed); a space-filling or crystal structure (r = 1/2, breathing pyrochlores).
+- **The same construction on other polygons** (equiangular 2k-gons with sides 1 and r alternating, equal side edges, equilateral
+  long faces): it exists for k = 3, 4 and 5 only, each family starting at a regular-faced pyramid and ending flat:
+  k = 3 from the tetrahedron to r = 1 (FUJI's family); **k = 4 from the square pyramid J1 (half the octahedron) to r = 2 sin 15° =
+  0.5176**; **k = 5 from the pentagonal pyramid J2 to r = 2 sin 6° = 0.2091**; for k ≥ 6 the long sides alone already lie flat. So the
+  FUJI family is one of exactly three "flat-ended pyramid" families, matching the three regular-faced pyramids. To study.
+
 ## Next
 
 1. Done: the STT's faces are FUJI(1/2)'s base (above).
