@@ -5,7 +5,7 @@
 <script>
 (async function () {
   const scn = location.hash.slice(1) || 'key5';
-  const [D, K] = await Promise.all(['diamond-cell.json', 'keyed-to.json'].map((f) => fetch(f).then((r) => r.json())));
+  const [D, K, T] = await Promise.all(['diamond-cell.json', 'keyed-to.json', 'to.json'].map((f) => fetch(f).then((r) => r.json())));
   const W = 1000, H = 1000, renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
   renderer.setSize(W, H); renderer.setPixelRatio(1); document.body.appendChild(renderer.domElement);
   const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
@@ -39,6 +39,14 @@
   if (scn === 'key4') {   // the four cells round one truncated-octahedron corner
     const sites = []; for (let x = -3; x <= 3; x++) for (let y = -3; y <= 3; y++) for (let z = -3; z <= 3; z++) if ([x, y, z].every((u) => u % 2 === 0) || [x, y, z].every((u) => Math.abs(u % 2) === 1)) sites.push([x, y, z]);
     const v = [0, 0.5, 1]; near(sites, v).forEach((s, i) => mesh(K, A(s), i === 0 ? GOLD : BLUE, i !== 0)); c = v; R = 4.4;
+  }
+  const legs = [[0, 0, 0], ...bonds];
+  const piece = (m, color, glass) => legs.forEach((l) => mesh(T, A([m[0] + l[0], m[1] + l[1], m[2] + l[2]]), color, glass));
+  if (scn === 'five') { piece([0, 0, 0], GOLD, false); R = 6.2; }
+  if (scn === 'fivefill') {   // one piece and the copies that touch it most closely (all parallel: plain translates)
+    piece([0, 0, 0], GOLD, false);
+    const ex = 1.12;   // pulled slightly apart so each piece reads
+    [[0, 0, 2], [0, 0, -2], [3, -1, 1], [-3, 1, -1]].forEach((m, i) => piece(m.map((u) => u * ex), i % 2 ? 0x8fbfd8 : BLUE, false)); R = 13;
   }
   const cam = new THREE.PerspectiveCamera(30, 1, 0.1, 100); cam.position.set(c[0] + R * 0.9, c[1] + R * 0.75, c[2] + R * 1.3); cam.lookAt(...c);
   renderer.render(scene, cam); document.title = 'done';
