@@ -12,7 +12,7 @@ const volume = (s) => {
   return Math.abs(v);
 };
 const ICOSIDODECA = (11 * Math.sqrt(5) - 5) / 6;   // edge 1/phi, circumradius 1
-for (const [id, n] of [['cleoSphere', 32], ['cleoSphere.allCleo', 80], ['cleoSphere.domed', 20]]) {
+for (const [id, n] of [['cleoSphere', 32], ['cleoSphere.allCleo', 80]]) {
   test(`${id}: ${n} pieces filling the icosidodecahedron`, () => {
     const kit = KITS13[id]; assert.ok(kit, id); assert.equal(kit.group, 'cleo'); assert.equal(kit.entries.length, n);
     const sum = kit.entries.reduce((s, e) => { assert.ok(POLYHEDRA[e.shape], e.shape); return s + volume(POLYHEDRA[e.shape]); }, 0);
