@@ -2,7 +2,7 @@
 
 **DICTO** · dictospheres.com
 
-*Draft, 14 October 2026 · not released. Computation, checking and drafting with Claude (Anthropic). Working title.*
+*14 October 2026 · DICTO DOI: 10.5281/zenodo.23357897. Computation, checking and drafting with Claude (Anthropic).*
 
 ---
 
@@ -189,6 +189,8 @@ Golden rhombohedra fill space in a lattice, and every rhombus face is cut along 
 
 The same pieces build the **rhombic hexecontahedron**, known as 20 prolate golden rhombohedra round a point [Hafner and Žitko]: 20 Cleo-Icos round the centre (the icosahedron), 20 Antonius, and 20 Cleo-Icos at the tips (Figure 10c; checked against the rhombic hexecontahedron of our Bodhi Seed). The cut of a rhombohedron by those two planes is general (any parallelepiped splits into two corner tetrahedra of a sixth each and a middle of two thirds), and for the rhombohedron of 60° it gives the regular tetrahedra and octahedron of the tetrahedral–octahedral honeycomb. What is particular here is that the golden rhombohedron's corner is the icosahedron's central pyramid, so the icosahedron's own pieces, with one partner, fill space. We found this split in neither of the dissections of the golden rhombohedra we read [Hafner and Žitko; Hafner and Komatar 2008].
 
+**The octahedron, and the half Admiral Cap.** Six Admiral Caps (our name for the two small tetrahedra that roof one of the icosahedron's six axis-parallel edges) turn the icosahedron into the regular octahedron [2]. Each cap splits into two **half caps**, and the octahedron is exactly **20 Cleo-Icos + 12 half caps** (volumes φ²/24, φ/24 and φ⁶/6 for an icosahedron of edge 1; sampling finds every point in exactly one piece). Along the edge it shares with the icosahedron the half cap's angle is 110.91°, Antonius's angle, so a Cleo-Icos and a half cap sharing a face make one **kite pyramid**, and the octahedron is also 8 Cleo-Icos + 12 kite pyramids. But Cleo-Icos and half caps (with or without Antonius) **cannot fill space**: the angles π, arccos(−√5/3) and arccos(1/√3) are rationally independent, so there is an additive rule on angles that is zero on π and on every Cleo-Icos and Antonius angle and positive on the half cap's octahedral edges; round such an edge the angles could never total 2π. Space needs a further piece with tetrahedral angles, the regular tetrahedron, which gives back the octet [2].
+
 ## 6. What is known, and what is new
 
 The base shape (the isogonal hexagon), the antiprism angles (listed for single antiprisms in the OEIS), the golden hexagon after Odom, the space-filling truncated tetrahedron and breathing pyrochlores are all known, and are credited above. Our searches (14 October 2026: our reference library, web searches for the family, its base-angle formulas, flat-ended or isogonal hexagonal pyramids, and antiprism dihedral relations, and the OEIS) did not find the following. That is a report of what we searched, not a claim that they are unknown. The base-angle formulas are elementary, and the hexagons with alternating sides are standard in breathing kagome lattices; what we offer is the family as one object, and the links between its members:
@@ -196,7 +198,7 @@ The base shape (the isogonal hexagon), the antiprism angles (listed for single a
 - the family FUJI(r) of pyramids;
 - the antiprism rule (Proposition 1) that links the family to the antiprisms, which combines the standard dihedral formula with the base-angle formula;
 - that the equal-depth cube–octahedron solid has the cuboctahedral member's triangles exactly because its cube corners are that member's apexes (Section 5.4), and the wheel bound with the impossibility of five octagonal wheels (Section 5.5);
-- the split of the prolate golden rhombohedron into Cleo-Icos + Antonius + Cleo-Icos, by which the icosahedron's central pyramid fills space with one partner (Section 5.7);
+- the split of the prolate golden rhombohedron into Cleo-Icos + Antonius + Cleo-Icos, by which the icosahedron's central pyramid fills space with one partner, and the octahedron as 20 Cleo-Icos + 12 half Admiral Caps, which cannot fill space without a tetrahedral piece (Section 5.7);
 - as a synthesis, the identifications that tie it together: FUJI's base as the golden hexagon after Odom, the breathing pyrochlore's hexagons as the family's bases, and the equal-depth cube–octahedron solid, whose triangles are the cuboctahedral member.
 
 The family gives one shape and one parameter to things found separately:
@@ -227,11 +229,12 @@ So cos D_n = (1 − 4c)/3, the standard antiprism dihedral. The numerical check,
 
 ## Credits
 
-FUJI, Cleo-Icos, Antonius, the Lotus seed, the dictospheres, the DeltaZips and B1NR sculptures, the term "flat-ended triangle" and the names are DICTO's. Odom's work, the golden-hexagon construction after it, the space-filling truncated tetrahedron (Damasceno, Engel and Glotzer) and the breathing pyrochlore (Okamoto, Nilsen, Attfield and Hiroi) are credited to their authors. Data, scripts, proofs and checks: studies/2026-10-14-fuji-family and studies/2026-10-14-icosa-cleo-pair at https://github.com/DICTOR-Master/kaleidohedra.
+FUJI, Cleo-Icos, Antonius, the Lotus seed, the dictospheres, the DeltaZips and B1NR sculptures, the term "flat-ended triangle" and the names are DICTO's. Odom's work, the golden-hexagon construction after it, the space-filling truncated tetrahedron (Damasceno, Engel and Glotzer) and the breathing pyrochlore (Okamoto, Nilsen, Attfield and Hiroi) are credited to their authors. Data, scripts, proofs and checks: studies/2026-10-14-fuji-family studies/2026-10-14-icosa-cleo-pair and studies/2026-10-14-half-cap at https://github.com/DICTOR-Master/kaleidohedra.
 
 ## References
 
-- [1] DICTO, AXE, CLEO and FUJI: the Gap Pieces of the Icosahedron (2026), doi:10.5281/zenodo.23351291.
+- [1] DICTO, AXE, CLEO and FUJI: the Gap Pieces of the Icosahedron (2026), DICTO DOI: 10.5281/zenodo.23351291.
+- [2] DICTO, the Icosahedral Octet and its Admiral Caps (DISCOVERIES.md #21, 2026), studies and app at https://github.com/DICTOR-Master/kaleidohedra.
 - G. Odom and J. van de Craats, Elementary Problem E3007, Amer. Math. Monthly 90 (1983) 482; solution 93 (1986) 572.
 - Wolfram Demonstrations Project, Hexagons and the Golden Ratio (after G. Odom), https://demonstrations.wolfram.com/HexagonsAndTheGoldenRatio/.
 - H. S. M. Coxeter, Regular Polytopes, 3rd ed., Dover (1973).
