@@ -69,7 +69,7 @@ Les pièces sont colorées selon le réglage **Couleurs** (dans Réglages) : **C
 |---|---|---|
 | World View | Couleur, Translucide ou Squelette | Touchez le bouton World View pour alterner |
 | Lattice View | Votre construction et chaque emplacement libre un cran plus loin, pour la pièce choisie | Touchez le bouton Lattice View pour parcourir les pièces |
-| X-Ray | Une coupe. Faites glisser le plan à travers la structure, y compris en diagonale | Bouton X-Ray (⛶) |
+| X-Ray | Une coupe. Faites glisser le plan à travers la structure, y compris en diagonale ou, dans les mondes icosaédriques, le long d’un axe d’ordre 5, 3 ou 2 (Paramètres → Vue en coupe). La coupe se voit du côté retiré : tournez la vue ou utilisez Retourner | Bouton X-Ray (⛶) |
 | Spherical | Touchez pour alterner : chaque pièce en sphère (les RD entiers touchent leurs douze voisins), puis les vides entre RD entiers (octaédriques en or, tétraédriques en rose, seulement là où ils sont fermés), toutes les sphères rendues pâles. Un curseur règle la taille de toutes les sphères (cran à la taille propre de chaque forme ; en dessous = écartées, au-delà = qui se chevauchent). Avec Lattice View activé, chaque place libre du réseau apparaît comme une sphère pâle. Une vue seulement | Bouton Spherical (◯) : éteint → sphères → vides |
 | Duality | Le pavage apériodique que projette cette structure cristalline | Bouton Duality (◐) |
 | Dualize | Échange FCC et BCC | Paramètres → Dualize Preview |

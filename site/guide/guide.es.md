@@ -69,7 +69,7 @@ Las piezas se colorean según el ajuste **Colores** (en Ajustes): **Cian** (toda
 |---|---|---|
 | World View | Color, Translúcido o Esqueleto | Toca el botón World View para alternar |
 | Lattice View | Tu construcción y todos los huecos libres un paso más allá, para la pieza elegida | Toca el botón Lattice View para recorrer las piezas |
-| X-Ray | Un corte. Arrastra el plano a través de la estructura, también en diagonal | Botón X-Ray (⛶) |
+| X-Ray | Un corte. Arrastra el plano a través de la estructura, también en diagonal o, en los mundos icosaédricos, a lo largo de un eje de orden 5, 3 o 2 (Ajustes → Vista de sección). El corte se ve desde el lado recortado: gira la vista o usa Invertir | Botón X-Ray (⛶) |
 | Spherical | Toca para cambiar: cada pieza como una esfera (los RD enteros tocan a sus doce vecinos), luego los huecos entre RD enteros (octaédricos en oro, tetraédricos en rosa, solo donde están cerrados) con todas las esferas tenues. Un control deslizante da tamaño a todas las esferas (se detiene en el tamaño propio de cada forma; menos = separadas, más = solapadas). Con Lattice View activo, cada hueco libre de la red se ve como una esfera tenue. Solo una vista | Botón Spherical (◯): apagado → esferas → huecos |
 | Duality | El teselado aperiódico que proyecta esta estructura cristalina | Botón Duality (◐) |
 | Dualize | Intercambia FCC y BCC | Ajustes → Dualize Preview |

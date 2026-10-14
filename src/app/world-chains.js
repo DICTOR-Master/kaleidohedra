@@ -36,6 +36,7 @@ const CHAINS_GLASS = { karma: new Set(['ico']), dharma: new Set(['core', 'lj11']
 // Always see-through: an outer form, and the octet's cells round the pyrochlore view's tetrahedra.
 const ALWAYS_GLASS = new Set(['outer', 'octGlass', 'tetGlass']);
 const EDGE_COLOR = 0x0b1220;
+const SHRINK = 0.996; // see draw(): touching faces a hair apart
 const lang = () => getSettings().language;
 
 const centreOf = (P) => P.reduce((a, p) => a.map((c, i) => c + p[i] / P.length), [0, 0, 0]);
@@ -172,7 +173,10 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
         if (!faceMoves.has(V)) faceMoves.set(V, faceMove(V, F, c0));
         off = faceMoves.get(V).map((c) => c * view.apart);
       } else if (!see) off = centreOf(V).map((c, i) => (c - c0[i]) * view.apart);
-      const P = V.map((p) => p.map((c, i) => (c - c0[i] + off[i]) * WS));
+      // Each solid piece is drawn 0.4% smaller about its own centre (DICTO 2026-10-15): faces two pieces share then sit a hair apart, so
+      // they never fight in depth (the speckles the X-ray cut showed); too small to see in the closed views. Glass shells keep their size.
+      const cV = see ? null : centreOf(V);
+      const P = V.map((p) => p.map((c, i) => ((cV ? cV[i] + (c - cV[i]) * SHRINK : c) - c0[i] + off[i]) * WS));
       let hex = role === 'ncap' && V.length === 7 ? 0xffc857 : (ROLE[role] ?? 0xb8c4bd);
       if (centreGold) hex = n === centreIndex || (isCentreRole(role) && hex !== DIM_GOLD) ? GOLD : (hex === GOLD ? ORANGE : hex);
       if (fm && fm.rank.get(n) === film - 1) hex = ORANGE; // the newest piece of the movie

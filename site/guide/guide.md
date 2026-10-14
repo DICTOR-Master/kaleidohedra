@@ -67,7 +67,7 @@ Pieces are coloured by the **Colours** setting (in Settings): **Cyan** (every pi
 |---|---|---|
 | World View | Colour, Translucent or Skeleton | Tap the World View button to cycle |
 | Lattice View | Your build plus every open slot one step out, for the chosen piece | Tap the Lattice View button to cycle through the pieces |
-| X-Ray | A cutaway. Drag the plane through the structure, including on a diagonal | X-Ray button (⛶) |
+| X-Ray | A cutaway. Drag the plane through the structure, on a diagonal or, in the icosahedral worlds, along a 5-, 3- or 2-fold axis (Settings → Section view). The cut shows from the side that was cut away: turn the view, or use Flip | X-Ray button (⛶) |
 | Spherical | Tap to cycle: each piece as a sphere (whole RDs touch their twelve neighbours), then the voids between whole RDs (octahedral gold, tetrahedral rose, where fully enclosed) with every sphere made faint. A slider sizes every sphere (a click-stop at each shape's own size; below = apart, beyond = overlapping). With Lattice View on, every open lattice slot shows as a faint sphere. View only | Spherical button (◯): off → spheres → voids |
 | Duality | The aperiodic tiling that this crystal structure casts | Duality button (◐) |
 | Dualize | Swaps FCC and BCC | Settings → Dualize Preview |
