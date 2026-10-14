@@ -74,7 +74,7 @@ Two of the angles are the same angle, 41.81° = arccos(√5/3). In the Lotus see
 
 **Figure 3.** Extend each side of the gold triangle by e at both ends: the six ends make a flat-ended triangle with sides e and 1 + e. With e = φ (right) it is FUJI's base.
 
-George Odom found the golden ratio in the equilateral triangle [Odom and van de Craats 1983]. A related construction, published as the Wolfram Demonstration "Hexagons and the Golden Ratio" after Odom, extends each side of an equilateral triangle by the golden ratio at both ends; the six outer points form a hexagon whose two side lengths are in the golden ratio. **This golden hexagon is FUJI's base.** (Odom's own construction, Problem E3007, is a different one: the line through two side midpoints of an equilateral triangle, extended to the circumcircle.)
+George Odom found the golden ratio in the equilateral triangle [Odom and van de Craats 1983]. A related construction, published by Sándor Kabai as the Wolfram Demonstration "Hexagons and the Golden Ratio" (2008), after Odom, extends each side of an equilateral triangle by the golden ratio at both ends; the six outer points form a hexagon whose two side lengths are in the golden ratio. **This golden hexagon is FUJI's base.** (Odom's own construction, Problem E3007, is a different one: the line through two side midpoints of an equilateral triangle, extended to the circumcircle.)
 
 Rebuilt here for any extension e, the six points always form an equiangular hexagon with sides e and 1 + e: a flat-ended triangle with r = e/(1 + e). So the same construction, with extension e, gives every member with r < 1 (the flat hexagon, r = 1, would need e infinite). This is a change of parameter, not a new result. The extension e = 1 gives r = 1/2, the base of the member in Section 5.2.
 
@@ -242,7 +242,7 @@ FUJI, Cleo-Icos, Antonius, the Lotus seed, the dictospheres, the DeltaZips and B
 - [1] DICTO, AXE, CLEO and FUJI: the Gap Pieces of the Icosahedron (2026), DICTO DOI: 10.5281/zenodo.23351291.
 - [2] DICTO, the Icosahedral Octet and its Admiral Caps (DISCOVERIES.md #21, 2026), studies and app at https://github.com/DICTOR-Master/kaleidohedra.
 - G. Odom and J. van de Craats, Elementary Problem E3007, Amer. Math. Monthly 90 (1983) 482; solution 93 (1986) 572.
-- Wolfram Demonstrations Project, Hexagons and the Golden Ratio (after G. Odom), https://demonstrations.wolfram.com/HexagonsAndTheGoldenRatio/.
+- S. Kabai, Hexagons and the Golden Ratio (after G. Odom), Wolfram Demonstrations Project (2008), CC BY-NC-SA, https://demonstrations.wolfram.com/HexagonsAndTheGoldenRatio/.
 - H. S. M. Coxeter, Regular Polytopes, 3rd ed., Dover (1973).
 - P. F. Damasceno, M. Engel, S. C. Glotzer, Crystalline assemblies and densest packings of a family of truncated tetrahedra and the role of directional entropic forces, ACS Nano 6 (2012) 609–614, doi:10.1021/nn204012y.
 - Y. Okamoto, G. J. Nilsen, J. P. Attfield, Z. Hiroi, Breathing pyrochlore lattice realized in A-site ordered spinel oxides LiGaCr₄O₈ and LiInCr₄O₈, Phys. Rev. Lett. 110 (2013) 097203, doi:10.1103/PhysRevLett.110.097203.

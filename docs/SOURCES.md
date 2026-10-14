@@ -306,3 +306,4 @@ reference library, not in this repo.
 - S. Rychkov (2025). *Conformal bootstrap: from Polyakov to our times*. Int. J. Mod. Phys. A. <https://arxiv.org/abs/2509.02779>
 - N. Arkani-Hamed, T.-C. Huang, Y.-t. Huang (2021). *The EFT-hedron*. JHEP 05, 259. <https://arxiv.org/abs/2012.15849>
 - N. Arkani-Hamed, P. Benincasa, A. Postnikov (2017). *Cosmological polytopes and the wavefunction of the universe*. <https://arxiv.org/abs/1709.02813>
+- S. Kabai, Hexagons and the Golden Ratio (after G. Odom), Wolfram Demonstrations Project (2008), CC BY-NC-SA, https://demonstrations.wolfram.com/HexagonsAndTheGoldenRatio/ (contributor read by DICTO from the page, 2026-10-14; credited in the FUJI paper source for its next version).
