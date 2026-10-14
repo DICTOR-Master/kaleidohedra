@@ -153,6 +153,18 @@ The measured sides lie between the curved and the flat versions, as they would f
 
 **The truncated octahedron** is the r = 1 member of the same cube–octahedron pattern, with regular hexagons. Every member of the flat family has the same face angles (109.47° and 125.26°), but only the truncated octahedron, whose hexagons are centrally symmetric, fills space by translation (Kelvin's cell). It is to the dictosphere's pattern what the regular hexagon is to FUJI: the symmetric shape at r = 1.
 
+### 5.5 Wheels, and the CLEO sphere
+
+![Figure 7](figures/fig7-wheels-cleo-sphere.jpg)
+
+**Figure 7.** (a) Four hexagonal wheels of FUJI's flat-ended triangles, overlapped into the cuboctahedron's outer structure. (b) Six decagonal wheels of golden triangles, the icosidodecahedron's. (c) The CLEO sphere pulled apart: 20 CLEOs (wisteria) and 12 pentagonal pyramids (cyan), all tips at the centre.
+
+Our DeltaZip wheels led to a construction in the same spirit. A cuboctahedron's 24 edges split into four regular hexagons, one in each of its four central planes; a wheel of six triangles in each plane (centre to rim), with every triangle blunted into a flat-ended triangle, gives four wheels that overlap into the cuboctahedron's outer structure (Figure 7a). Each spoke is shared by two wheels, and the blunted corners keep the hub and the twelve crossings clear. Four is the most: only in the cuboctahedron does each wheel meet every other exactly along its own spokes. The icosahedral counterpart has six wheels, in the planes square to the five-fold axes, each a decagon of ten golden triangles (sides φ, φ, 1): the icosidodecahedron's six great decagons (Figure 7b).
+
+The six wheels cut the icosidodecahedron into pieces with their tips at the centre. With edge 1/φ the icosidodecahedron has circumradius exactly 1, so each piece over a triangle has an equilateral base 1/φ and side edges 1: **it is CLEO**. **Twenty CLEOs pointing inwards and twelve pentagonal pyramids** (side edges 1, base edge 1/φ, volume √5/12 each) **fill the icosidodecahedron exactly**, volume (11√5 − 5)/6 (Figure 7c). It is the icosahedral twin of the four hexagonal wheels cutting the cuboctahedron into 8 regular tetrahedra and 6 square pyramids.
+
+Each pentagonal pyramid divides about its axis into **five congruent right-angled triangular pyramids**, each with one golden face (1, 1, 1/φ, the same as CLEO's side faces), a base triangle with sides 0.5257, 0.5257 and 1/φ (72° at the centre of the pentagon), and volume √5/60. Equilateral CLEOs themselves cannot fill the pentagonal pockets (a pentagon cannot be tiled by equilateral triangles); these five are the pocket's own CLEO-like pieces. CLEO cannot fill an icosahedron from its centre on its own: its tip angles are 36°, where 20 pieces closing a sphere need 63.4°, so twenty CLEOs cover only 29% of the directions round the centre. The pentagonal pyramids take the rest.
+
 ## 6. What is known, and what is new
 
 The base shape (the isogonal hexagon), the antiprism angles (listed for single antiprisms in the OEIS), Odom's golden hexagon, the space-filling truncated tetrahedron and breathing pyrochlores are all known, and are credited above. Searches of the literature and of our reference library (2026-10-14) did not find:
@@ -166,7 +178,8 @@ The family gives one shape and one parameter to things found separately:
 - a gap piece in an icosahedral cluster;
 - a space-filler found by computer packing;
 - the hexagons of frustrated magnets;
-- the pattern round the ports of a sculptor's PET-bottle spheres.
+- the pattern round the ports of a sculptor's PET-bottle spheres;
+- wheels of flat-ended triangles in the cuboctahedron, and a sphere of twenty CLEOs.
 
 In each, the parameter r is set by a different symmetry: five-fold for FUJI, cubic for the dictosphere's ports, the breathing ratio for the pyrochlore.
 
