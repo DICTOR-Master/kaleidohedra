@@ -1,0 +1,136 @@
+{
+ "corners": [
+  [
+   0.0,
+   0.5,
+   0.809017
+  ],
+  [
+   0.5,
+   0.809017,
+   0.0
+  ],
+  [
+   0.809017,
+   0.0,
+   0.5
+  ],
+  [
+   0.0,
+   0.5,
+   -0.809017
+  ],
+  [
+   0.5,
+   -0.809017,
+   0.0
+  ],
+  [
+   -0.809017,
+   0.0,
+   0.5
+  ],
+  [
+   0.0,
+   -0.5,
+   0.809017
+  ],
+  [
+   -0.5,
+   0.809017,
+   0.0
+  ],
+  [
+   0.809017,
+   0.0,
+   -0.5
+  ],
+  [
+   0.0,
+   -0.5,
+   -0.809017
+  ],
+  [
+   -0.5,
+   -0.809017,
+   0.0
+  ],
+  [
+   -0.809017,
+   0.0,
+   -0.5
+  ]
+ ],
+ "stations": {
+  "icosahedron": {
+   "faces": 20,
+   "face_shape": "triangle",
+   "edges": 30,
+   "edge_length": [
+    1.0
+   ],
+   "plane_distance": [
+    0.755761
+   ]
+  },
+  "great dodecahedron": {
+   "faces": 12,
+   "face_shape": "pentagon",
+   "edges": 30,
+   "edge_length": [
+    1.0
+   ],
+   "plane_distance": [
+    0.425325
+   ]
+  },
+  "small stellated dodecahedron": {
+   "faces": 12,
+   "face_shape": "pentagram",
+   "edges": 30,
+   "edge_length": [
+    1.618034
+   ],
+   "plane_distance": [
+    0.425325
+   ]
+  },
+  "great icosahedron": {
+   "faces": 20,
+   "face_shape": "triangle",
+   "edges": 30,
+   "edge_length": [
+    1.618034
+   ],
+   "plane_distance": [
+    0.178411
+   ]
+  }
+ },
+ "steps": [
+  {
+   "step": "icosahedron -> great dodecahedron",
+   "same_corners": true,
+   "same_edges": true,
+   "same_face_planes": false
+  },
+  {
+   "step": "great dodecahedron -> small stellated dodecahedron",
+   "same_corners": true,
+   "same_edges": false,
+   "same_face_planes": true
+  },
+  {
+   "step": "small stellated dodecahedron -> great icosahedron",
+   "same_corners": true,
+   "same_edges": true,
+   "same_face_planes": false
+  },
+  {
+   "step": "great icosahedron -> icosahedron",
+   "same_corners": true,
+   "same_edges": false,
+   "same_face_planes": false
+  }
+ ]
+}
