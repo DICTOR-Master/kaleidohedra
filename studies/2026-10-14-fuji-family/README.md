@@ -281,6 +281,14 @@ rhombicosidodecahedron 0.1420, snub dodecahedron 0.0975 and 0.1705, hexagonal-an
 yet sought. Pattern: each family's r = 0 member lies flat with a quasiregular solid (octahedron, cuboctahedron,
 icosidodecahedron), and each family runs from that solid's world towards the flat.
 
+## Octahedral cluster, first search (2026-10-14)
+
+`scripts/octa_cluster.py` (dicto-node), `octa-cluster.json`: 8 octahedra, cuboctahedra or rhombicuboctahedra on the 3-fold axes,
+parallel, slid in until neighbours touch (so 4 surround each 4-fold axis, as 3 icosahedra surround FUJI). The hull faces on the
+4-fold axes are a square (octahedra), a 12-cornered right-angled cross (cuboctahedra) and a 16-cornered outline
+(rhombicuboctahedra); none is a flat-ended square, so none of these simple cages closes with a square-family member. A wider
+search (turned solids, mixed solids, other axes, gap pieces) is open.
+
 ## Next
 
 1. Done: the STT's faces are FUJI(1/2)'s base (above).
