@@ -1,0 +1,58 @@
+[
+ {
+  "honeycomb": "alternated cubic (tetrahedral-octahedral, the octet)",
+  "centre": "D4",
+  "piece": "D8",
+  "what": "a tetrahedron, an octahedron on each face",
+  "fits_without_overlap": true
+ },
+ {
+  "honeycomb": "alternated cubic (the octet)",
+  "centre": "D8",
+  "piece": "D4",
+  "what": "an octahedron, a tetrahedron on four alternate faces",
+  "fits_without_overlap": true
+ },
+ {
+  "honeycomb": "quarter cubic",
+  "centre": "TRUNCATED_TETRAHEDRON",
+  "piece": "D4",
+  "what": "a truncated tetrahedron, a tetrahedron on each triangle",
+  "fits_without_overlap": true
+ },
+ {
+  "honeycomb": "quarter cubic",
+  "centre": "TRUNCATED_TETRAHEDRON",
+  "piece": "TRUNCATED_TETRAHEDRON",
+  "what": "a truncated tetrahedron, another on each hexagon",
+  "fits_without_overlap": true
+ },
+ {
+  "honeycomb": "quarter cubic",
+  "centre": "D4",
+  "piece": "TRUNCATED_TETRAHEDRON",
+  "what": "a tetrahedron, a truncated tetrahedron on each face",
+  "fits_without_overlap": true
+ },
+ {
+  "honeycomb": "bitruncated cubic",
+  "centre": "TRUNCATED_OCTAHEDRON",
+  "piece": "TRUNCATED_OCTAHEDRON",
+  "what": "a truncated octahedron, another on four alternate hexagons (DICTO's five TOs)",
+  "fits_without_overlap": true
+ },
+ {
+  "honeycomb": "rectified cubic",
+  "centre": "CUBOCTAHEDRON",
+  "piece": "D8",
+  "what": "a cuboctahedron, an octahedron on four alternate triangles",
+  "fits_without_overlap": true
+ },
+ {
+  "honeycomb": "rectified cubic",
+  "centre": "D8",
+  "piece": "CUBOCTAHEDRON",
+  "what": "an octahedron, a cuboctahedron on four alternate faces",
+  "fits_without_overlap": true
+ }
+]

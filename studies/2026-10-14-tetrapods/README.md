@@ -23,4 +23,25 @@ truncated octahedra (a TO with TOs on its four tetrahedral hexagons) fit, but th
 is that the cluster is part of a space filling (the bitruncated cubic honeycomb). So the rule for "four round one" needs DICTO's choice:
 fit only, outer pieces touching, or part of a space filling.
 
+## Four round one: DICTO's rule, part of a space filling (2026-10-14)
+
+A centre with four pieces on four tetrahedrally placed faces counts when the five are part of a space filling. From the classical
+honeycombs, all eight also found by the search as clean fits (`four-round-one-space-filling.json`):
+
+| Honeycomb | Centre | Four pieces |
+|---|---|---|
+| alternated cubic (the octet) | tetrahedron | octahedra, on all four faces |
+| alternated cubic (the octet) | octahedron | tetrahedra, on four alternate faces |
+| quarter cubic | truncated tetrahedron | tetrahedra, on its four triangles |
+| quarter cubic | truncated tetrahedron | truncated tetrahedra, on its four hexagons |
+| quarter cubic | tetrahedron | truncated tetrahedra, on all four faces |
+| bitruncated cubic | truncated octahedron | truncated octahedra, on four alternate hexagons (**DICTO's five TOs**) |
+| rectified cubic | cuboctahedron | octahedra, on four alternate triangles |
+| rectified cubic | octahedron | cuboctahedra, on four alternate faces |
+
+And DICTO's own: the **Golden Breathing Pyrochlore** keeps the quarter-cubic pattern for every breathing ratio (a big tetrahedron
+with four truncated tetrahedra round it, a truncated tetrahedron with four tetrahedra on its triangles), so it gives a whole
+one-parameter family of four-round-one tetrapods. The four at a point list above (38) is already a space-filling property for the
+lattice fillers among them (rhombic dodecahedron, truncated octahedron, rhombohedra, the elongated dodecahedra, the prisms).
+
 DICTO · dictospheres.com
