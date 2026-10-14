@@ -38,6 +38,38 @@ const ALWAYS_GLASS = new Set(['outer', 'octGlass', 'tetGlass']);
 const EDGE_COLOR = 0x0b1220;
 const lang = () => getSettings().language;
 
+const centreOf = (P) => P.reduce((a, p) => a.map((c, i) => c + p[i] / P.length), [0, 0, 0]);
+
+/** The build-movie order of a view's pieces (DICTO 2026-10-14): rings (one kind of piece at one distance) in the order of `named`
+ *  (movie-names.js), else by distance; each ring from the top of a five-fold axis down, then round it. { seq, rank, ends }. */
+export function filmOrder(list, named = []) {
+  const all = list.flatMap((p) => p[1]), c0 = centreOf(all);
+  const cen = list.map(([, V]) => centreOf(V).map((c, i) => c - c0[i]));
+  const dist = cen.map((c) => Math.hypot(...c));
+  const key = (n) => `${list[n][0]}@${dist[n].toFixed(2)}`;
+  const ringIndex = new Map(named.map((r, i) => [r.ring, i]));
+  const rings = new Map();
+  list.forEach((_, n) => { const k = key(n); if (!rings.has(k)) rings.set(k, []); rings.get(k).push(n); });
+  const order = [...rings.keys()].sort((a, b) => (ringIndex.get(a) ?? 1e9) - (ringIndex.get(b) ?? 1e9) || Math.min(...rings.get(a).map((n) => dist[n])) - Math.min(...rings.get(b).map((n) => dist[n])));
+  // a five-fold axis: the centre piece's corner farthest from its middle (the icosahedron: any corner; the triacontahedron: a five-fold one)
+  const c = dist.indexOf(Math.min(...dist)), Vc = list[c][1], mc = centreOf(Vc);
+  const far = Vc.reduce((b, v) => (Math.hypot(...v.map((x, i) => x - mc[i])) > Math.hypot(...b.map((x, i) => x - mc[i])) ? v : b));
+  const ax = far.map((x, i) => x - mc[i]); const al = Math.hypot(...ax); const a = ax.map((x) => x / al);
+  const r1 = Math.abs(a[0]) < 0.9 ? [1, 0, 0] : [0, 1, 0];
+  const u = [a[1] * r1[2] - a[2] * r1[1], a[2] * r1[0] - a[0] * r1[2], a[0] * r1[1] - a[1] * r1[0]]; const ul = Math.hypot(...u);
+  const e1 = u.map((x) => x / ul), e2 = [a[1] * e1[2] - a[2] * e1[1], a[2] * e1[0] - a[0] * e1[2], a[0] * e1[1] - a[1] * e1[0]];
+  const dot = (p, q) => p[0] * q[0] + p[1] * q[1] + p[2] * q[2];
+  const polar = (n) => (dist[n] < 1e-9 ? 0 : Math.round(Math.acos(Math.max(-1, Math.min(1, dot(cen[n], a) / dist[n]))) * 1800 / Math.PI));
+  const seq = [], ends = [];
+  order.forEach((k, ri) => {
+    seq.push(...rings.get(k).sort((p, q) => polar(p) - polar(q) || Math.atan2(dot(cen[p], e2), dot(cen[p], e1)) - Math.atan2(dot(cen[q], e2), dot(cen[q], e1))));
+    ends.push({ at: seq.length, name: named[ringIndex.get(k) ?? -1]?.name ?? null });
+  });
+  const rank = new Map(seq.map((n, i) => [n, i]));
+  const f = { seq, rank, ends };
+  return f;
+}
+
 /** A world of nested shells (Multi-shell chains, DICTO Dodeca): data { kind: { views: { view: [[role, vertices, faces]] } } },
  *  words under '<prefix>.<kind>.<view>' and '<prefix>.note.<kind>'. */
 export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null }) {
@@ -76,7 +108,6 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     if (!grown.has(key)) grown.set(key, v(size));
     return grown.get(key);
   }
-  const centreOf = (P) => P.reduce((a, p) => a.map((c, i) => c + p[i] / P.length), [0, 0, 0]);
   // Pull apart by face (DICTO 2026-10-13: see the solids the many pieces form): each piece moves along the outward normal of
   // its outermost face, as far as that face's plane is from the middle, so all the pieces under one face of a shell's solid
   // lift off together as one tile. A piece whose outermost faces tie (under an edge or a corner) moves along their average.
@@ -103,31 +134,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   const films = new WeakMap();
   function filmOf(list) {
     if (films.has(list)) return films.get(list);
-    const all = list.flatMap((p) => p[1]), c0 = centreOf(all);
-    const cen = list.map(([, V]) => centreOf(V).map((c, i) => c - c0[i]));
-    const dist = cen.map((c) => Math.hypot(...c));
-    const key = (n) => `${list[n][0]}@${dist[n].toFixed(2)}`;
-    const named = movie?.[view.kind]?.[view.part[view.kind]] ?? [];
-    const ringIndex = new Map(named.map((r, i) => [r.ring, i]));
-    const rings = new Map();
-    list.forEach((_, n) => { const k = key(n); if (!rings.has(k)) rings.set(k, []); rings.get(k).push(n); });
-    const order = [...rings.keys()].sort((a, b) => (ringIndex.get(a) ?? 1e9) - (ringIndex.get(b) ?? 1e9) || Math.min(...rings.get(a).map((n) => dist[n])) - Math.min(...rings.get(b).map((n) => dist[n])));
-    // a five-fold axis: the centre piece's corner farthest from its middle (the icosahedron: any corner; the triacontahedron: a five-fold one)
-    const c = dist.indexOf(Math.min(...dist)), Vc = list[c][1], mc = centreOf(Vc);
-    const far = Vc.reduce((b, v) => (Math.hypot(...v.map((x, i) => x - mc[i])) > Math.hypot(...b.map((x, i) => x - mc[i])) ? v : b));
-    const ax = far.map((x, i) => x - mc[i]); const al = Math.hypot(...ax); const a = ax.map((x) => x / al);
-    const r1 = Math.abs(a[0]) < 0.9 ? [1, 0, 0] : [0, 1, 0];
-    const u = [a[1] * r1[2] - a[2] * r1[1], a[2] * r1[0] - a[0] * r1[2], a[0] * r1[1] - a[1] * r1[0]]; const ul = Math.hypot(...u);
-    const e1 = u.map((x) => x / ul), e2 = [a[1] * e1[2] - a[2] * e1[1], a[2] * e1[0] - a[0] * e1[2], a[0] * e1[1] - a[1] * e1[0]];
-    const dot = (p, q) => p[0] * q[0] + p[1] * q[1] + p[2] * q[2];
-    const polar = (n) => (dist[n] < 1e-9 ? 0 : Math.round(Math.acos(Math.max(-1, Math.min(1, dot(cen[n], a) / dist[n]))) * 1800 / Math.PI));
-    const seq = [], ends = [];
-    order.forEach((k, ri) => {
-      seq.push(...rings.get(k).sort((p, q) => polar(p) - polar(q) || Math.atan2(dot(cen[p], e2), dot(cen[p], e1)) - Math.atan2(dot(cen[q], e2), dot(cen[q], e1))));
-      ends.push({ at: seq.length, name: named[ringIndex.get(k) ?? -1]?.name ?? null });
-    });
-    const rank = new Map(seq.map((n, i) => [n, i]));
-    const f = { seq, rank, ends };
+    const f = filmOrder(list, movie?.[view.kind]?.[view.part[view.kind]] ?? []);
     films.set(list, f);
     return f;
   }

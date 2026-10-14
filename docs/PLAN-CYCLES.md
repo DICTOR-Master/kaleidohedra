@@ -25,6 +25,13 @@ Lotus seed ends on the same icosahedron, and Bodhi Kit B grows by the same φ³.
 - **Loop 2:** the Spheres of Dharma build movie, piece by piece, station names as each solid closes.
 - **Placement:** a new world in Kaleidohedra 3D+, next to the IDT world, which links to it; nothing duplicated.
 
+## Progress
+
+- Stage 1 (data) done: studies/2026-10-14-cycles (stations, loop1.json). Great icosahedron made buildable (Polyhedraverse kit).
+- Stage 3 (viewer) first version done 2026-10-14: src/app/world-cycles.js, 'DICTO Icosahedral Cycles' in DICTO's 3D+ worlds; Loop 1 and
+  Loop 2 sliders, loop switch at the icosahedron, 7 languages; tests/browser/cycles.mjs. The IDT world no longer exists in the code, so
+  there was nothing to link from. Not yet: the dual-compound side step, the Star Chain Reaction branch, the builder (stage 4).
+
 ## Shape of the world: a figure-eight
 
 Two loops share one station, the **icosahedron in its EKP frame**.

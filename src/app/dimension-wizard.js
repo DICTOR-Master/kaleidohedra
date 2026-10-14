@@ -531,6 +531,8 @@ const SHARED_WORLDS = ['roofFold', 'sunstar', 'stellaJewel', 'shells', 'golden']
 const K_WORLDS = [
   // DICTO Icosa (DICTO 2026-10-10: "own Icosa world", reached only through the DICTO worlds; newest first)
   // Multi-shell chains (DICTO 2026-10-13): the three published nestings, #22-#24, one entry each.
+  // DICTO Icosahedral Cycles (DICTO 2026-10-14, docs/PLAN-CYCLES.md; working name): two loops, one size and growth.
+  { key: 'cycles', label: 'DICTO Icosahedral Cycles', pieces: [{ label: 'DICTO Icosahedral Cycles', action: 'tool:cyclesWorld' }] },
   { key: 'chains', label: 'Multi-shell chains', pieces: [{ label: 'Chain of Karma', action: 'tool:chainsWorld:karma' },
     { label: 'Spheres of Dharma', action: 'tool:chainsWorld:dharma' }, { label: 'The Bodhi Seed', action: 'tool:chainsWorld:bodhi' }] },
   // DICTO Icosahedral Octet (DICTO 2026-10-13; DISCOVERIES #21): Euclid's roofs moved to the icosahedron, as growing networks.
@@ -605,7 +607,7 @@ const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'PLATONIC', 'ARCHIMEDEAN', 'CATALAN
 // DICTO's own work, shown in DICTO's livery (silver) at the top of its app's block (DICTO 2026-10-09);
 // it still opens in its app. Lattices and worlds by key, single pieces by action, and DICTO's
 // Polyhedraverse pieces gathered from across its families.
-const DICTO_WORK = new Set(['chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
+const DICTO_WORK = new Set(['cycles', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
 const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
 // DICTO's block, findings first and tools last (copy audit, DICTO 2026-10-09).
 const DICTO_ORDER = ['chains', 'thirteens', 'octet', 'icosa', 'dodeca', 'roofFold', 'stellaJewel', 'sunstar', 'octetBuild', 'studies', 'targets', 'dictofcc', 'hex', 'shells', 'golden'];
