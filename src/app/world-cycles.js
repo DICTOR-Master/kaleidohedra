@@ -244,13 +244,13 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
     <div class="w4d-row w4d-options cy-roads"><button type="button" data-cy-road="dharma"></button><button type="button" data-cy-road="lotus"></button></div>
     <div class="w4d-row st-note cy-note"></div>
     <div class="w4d-row st-note cy-station"></div>
-    <div class="w4d-row w4d-options"><button type="button" data-cy-play></button><button type="button" data-cy-pacioli></button><button type="button" data-cy-build hidden></button></div>
+    <div class="w4d-row w4d-options"><button type="button" data-cy-play></button><button type="button" data-cy-pacioli></button><button type="button" data-cy-build hidden></button><button type="button" data-cy-chain hidden></button></div>
     <div class="w4d-row cy-slider-row"><input type="range" class="st-slider cy-slider" min="0" step="1" aria-label=""></div>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, 'cycles');
   const slider = panel.querySelector('.cy-slider');
   const buildBtn = panel.querySelector('[data-cy-build]');
-  let buildAction = null;
+  let buildAction = null, at = null;
   function renderPanel() {
     panel.classList.toggle('visible', active);
     if (!active) return;
@@ -260,7 +260,7 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
     panel.querySelector('.cy-roads').hidden = view.loop !== 2;
     panel.querySelectorAll('[data-cy-road]').forEach((b) => { b.textContent = t(`cy.road.${b.dataset.cyRoad}`, L); b.setAttribute('aria-pressed', String(view.road === b.dataset.cyRoad)); });
     slider.setAttribute('aria-label', t('cy.slider', L));
-    let line, at = null;
+    let line; at = null;
     if (view.loop === 2) {
       const { film, stations, build } = road(), total = film.seq.length;
       slider.min = '1'; slider.max = String(total); slider.value = String(view.t2);
@@ -279,6 +279,9 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
     }
     panel.querySelector('.cy-station').textContent = line;
     buildBtn.hidden = !buildAction;
+    // The Star Chain Reaction branch (PLAN-CYCLES: step in at the dodecahedron and back out): it lives in the Sunstar world.
+    const chainBtn = panel.querySelector('[data-cy-chain]');
+    chainBtn.hidden = !(view.loop === 3 && ['dodecahedron', 'greatStellatedDodecahedron'].includes(at)); chainBtn.textContent = t('cy.starChain', L);
     const pl = panel.querySelector('[data-cy-play]'); pl.textContent = t(play ? 'cy.stop' : 'cy.play', L); pl.setAttribute('aria-pressed', String(!!play));
     const pac = panel.querySelector('[data-cy-pacioli]');
     pac.hidden = view.loop === 2; pac.textContent = t('poly.pacioli', L); pac.title = t('poly.pacioli.title', L); pac.setAttribute('aria-pressed', String(view.pacioli));
@@ -297,6 +300,7 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
     save(); draw(); renderPanel(); fit();
   }));
   buildBtn.addEventListener('click', () => { stop(); if (buildAction) openAction(buildAction); });
+  panel.querySelector('[data-cy-chain]').addEventListener('click', () => { stop(); openAction('tool:sunstarWorld:chain'); });
   // ---- Play (DICTO 2026-10-14: "the whole thing should be looped, so you press stop or it stops when you exit"): a tour of every
   // path from the shared icosahedron, round and round: Loop 1 once round, the side step and the Cleo-Icos path out and back, then
   // Loop 2 by both roads. Stops on Stop, on any other control, or on leaving the world.

@@ -69,6 +69,9 @@ await page.waitForTimeout(12000); console.log('later:', await page.getAttribute(
 await page.tap('[data-cy-play]'); await page.waitForTimeout(400);
 const s1 = await line(); await page.waitForTimeout(1500); assert.equal(await line(), s1, 'stopped'); assert.equal(await page.getAttribute('[data-cy-play]', 'aria-pressed'), 'false');
 await page.tap('[data-cy-loop="3"]'); await page.waitForTimeout(400);
+// The Star Chain Reaction branch: shown at the dodecahedron, opens the Sunstar world's chain view
+await set(200); await page.waitForTimeout(400);
+assert.equal(await page.isVisible('[data-cy-chain]'), true, 'Star Chain Reaction offered at the dodecahedron');
 // Build: at the great stellated dodecahedron, the button opens its Polyhedraverse kit
 await set(300); await page.waitForTimeout(300);
 assert.equal(await page.isVisible('[data-cy-build]'), true, 'Build shown at a station');

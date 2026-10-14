@@ -824,7 +824,8 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     shearChanged() { if (active) draw(); },
     /** Open on an arrangement (its own DICTO entry), or, with none, on the plain lattice's views. */
     setArrangement(id) {
-      const target = id && MODE_LIST.find((m) => m.id === id && m.arrangement) ? id : (modeOf().arrangement ? MODE_LIST.find((m) => !m.arrangement).id : view.mode);
+      // an arrangement, or a named view (the Cycles world steps into the Sunstar's Star Chain Reaction, DICTO 2026-10-14)
+      const target = id && MODE_LIST.find((m) => m.id === id) ? id : (modeOf().arrangement ? MODE_LIST.find((m) => !m.arrangement).id : view.mode);
       if (target === view.mode) return;
       view.mode = target;
       save();
