@@ -4,6 +4,7 @@
 import json, itertools, numpy as np
 from scipy.spatial import ConvexHull
 import sys, io, contextlib
+TIGHT = sys.argv[1:] == ['tight']                      # step 4: the tight nest (both loose ends tightened exactly)
 sys.argv = ['polar.py', 'data/dharma_cycle.json']
 with contextlib.redirect_stdout(io.StringIO()):
     exec(open('scripts/polar.py').read())                  # rebuilds the exact reversed chain `rev`, with Q, S, volume, det3
@@ -30,7 +31,19 @@ def solve3(P3):
     cols = lambda k: [[(d1 if i == 0 else d2 if i == 1 else d3) if j == k else (n1, n2, n3)[i][j] for j in range(3)] for i in range(3)]
     return [det3(*cols(k)) / det for k in range(3)]
 def sq(a, b): return sum(((a[i] - b[i]) * (a[i] - b[i]) for i in range(3)), Q(0))
-FL = json.load(open('data/polar-pieces.json'))
+if TIGHT:
+    def grow(A, B):                                         # exact largest s with s*A inside B: min over B's faces of d / max(A . n)
+        best = None
+        for idx, n, d in exact_planes(B):
+            m = max((sum((n[i] * a[i] for i in range(3)), Q(0)) for a in A), key=lambda x: x.f()); s = d / m
+            if best is None or s.f() < best.f(): best = s
+        return best
+    s0 = grow(rev[0][1], rev[1][1]); s6 = Q(1) / grow(rev[-2][1], rev[-1][1])
+    rev[0] = (rev[0][0], [[x * s0 for x in v] for v in rev[0][1]]); rev[-1] = (rev[-1][0], [[x * s6 for x in v] for v in rev[-1][1]])
+    print(f'inner dodecahedron x {s0!r} = {s0.f():.9f}; outer dodecahedron x {s6!r} = {s6.f():.9f}')
+    cl = sum((rev[-1][1][0][i] * rev[-1][1][0][i] for i in range(3)), Q(0)) / sum((rev[0][1][0][i] * rev[0][1][0][i] for i in range(3)), Q(0))
+    print(f'closure, outer / inner dodecahedron: squared linear ratio {cl!r} = {cl.f():.9f}, linear {cl.f() ** 0.5:.9f}, volume ratio {cl.f() ** 1.5:.9f}')
+FL = json.load(open('data/polar-tight-pieces.json' if TIGHT else 'data/polar-pieces.json'))
 out = []
 for k in range(len(rev) - 1):
     (na, A), (nb, B) = rev[k], rev[k + 1]
@@ -64,4 +77,5 @@ for k in range(len(rev) - 1):
     lay = volume(B, f(B)) - volume(A, f(A))
     out.append(f'{na} -> {nb}: {len(layer_float)} pieces; one volume each: {len(vols) == 1}; piece volume {next(iter(vols))!r}; '
                f'sum - layer = {total - lay!r}')
-print('\n'.join(out)); open('data/polar-exact.txt', 'w').write('\n'.join(out) + '\n')
+out = ([f'inner dodecahedron x {s0!r}; outer dodecahedron x {s6!r}; squared closure ratio {cl!r} (linear {cl.f() ** 0.5:.9f})'] if TIGHT else []) + out
+print('\n'.join(out)); open('data/polar-tight-exact.txt' if TIGHT else 'data/polar-exact.txt', 'w').write('\n'.join(out) + '\n')
