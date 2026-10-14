@@ -1,0 +1,9 @@
+0. Dharma's icosidodecahedron scaled by 2/phi: 30 corners, edge 1.000002431602
+1. pieces: 1 core icosahedron, 20 Cleo-Ico, 12 flat pentagonal pyramid, 60 X, 60 Y, 20 tripyr (to dodecahedron), 12 twisted pentagonal frustum, 30 t1, 20 cap (to Hecatodihedron) = 235
+2. volumes: pieces 27.203061052077; their hull 27.202964135817; difference 9.7e-05; hull has 114 face planes (the Hecatodihedron has 102)
+3. inside the icosidodecahedron: 13.835640524853 vs its volume 13.835640524853
+4. overlaps: 6956 nearby pairs tested, worst separation -7.1e-06 (data stored to 6 places, so >= -1e-5: none)
+5. convex fusions of two face-sharing pieces (700 shared faces looked at):
+    60 x  Cleo-Ico + X:  5 corners, 6 faces (sides {3: 6}), vol 0.181810
+    24 x  t1 + twisted pentagonal frustum:  11 corners, 14 faces (sides {3: 11, 4: 2, 5: 1}), vol 0.792310
+    20 x  Cleo-Ico + tripyr (to dodecahedron):  5 corners, 6 faces (sides {3: 6}), vol 0.140917

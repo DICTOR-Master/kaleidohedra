@@ -1,0 +1,6 @@
+1. volumes: core 2.181694990625 + 12 pyramids 2.927050983125 + 20 antiprisms 8.726779962500 = 13.835525936249; ID 13.835525936249; difference -1.8e-15
+2. no overlaps among the 33 solids: worst separation -1.1e-16
+3. sampled points inside the ID: covered once 16159, not covered 0, covered twice 0
+4. pentagonal pyramid: base edge 1, height 0.425325, side edges [np.float64(0.951057)], volume 0.243921
+5. antiprism: two edge-1 triangles 0.755761 apart; ID-to-core edges [np.float64(0.951057), np.float64(1.380039)]; faces 8 triangles; volume 0.436339
+6. whole-face contacts between pyramids and antiprisms: 60 triangles (60 expected if every pyramid side meets an antiprism side)

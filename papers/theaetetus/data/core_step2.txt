@@ -1,0 +1,11 @@
+1. each antiprism = its Cleo-Ico + 3 top-edge tetrahedra (X) + 3 bottom-edge tetrahedra (Y): volumes 8.726779962500 vs 8.726779962500 (diff 0.0e+00)
+   X edges [np.float64(0.57735), np.float64(0.951057), np.float64(0.951057), np.float64(0.951057), np.float64(0.951057), np.float64(1.0)] vol 0.072723;  Y edges [np.float64(0.57735), np.float64(0.57735), np.float64(0.951057), np.float64(0.951057), np.float64(0.951057), np.float64(1.0)] vol 0.036362;  Cleo-Ico vol 0.109085
+2. edge pieces: 30 (Y pairs over the core edges, sizes [2]); convex: 0 of 30; vertices 5, edges [np.float64(0.539345), np.float64(0.57735), np.float64(0.57735)]..., vol 0.081982
+3. corner pieces: 12, each the flat pyramid + 5 X; convex: 0 of 12; vertices 11, vol 0.870963
+4. hollow = core + 12 corner pieces + 30 edge pieces + 20 Cleo-Icos: 17.274416175394 vs ID 13.835525936249 (diff 3.4e+00)
+5. X: 4 vertices, vol/edge³ 0.07272 -> same shape as: none (closest by volume ratio: ['AXE', 'CLEO'])
+5. Y: 4 vertices, vol/edge³ 0.03636 -> same shape as: none (closest by volume ratio: ['SHARK_TOOTH', 'HOUND_TOOTH'])
+5. edge piece: 5 vertices, vol/edge³ 0.0953 -> same shape as: none (closest by volume ratio: ['AXE', 'BERMUDA_PYRAMID'])
+5. corner piece: 11 vertices, vol/edge³ 0.20561 -> same shape as: none (closest by volume ratio: ['HMV', 'FIVE_OF_CUPS'])
+5. flat pyramid: 6 vertices, vol/edge³ 0.05758 -> same shape as: none (closest by volume ratio: ['J2 (pentagonal pyramid)', 'VAJRA'])
+5. Cleo-Ico: 4 vertices, vol/edge³ 0.10908 -> same shape as: none (closest by volume ratio: ['BERMUDA_PYRAMID', 'regular tetrahedron'])
