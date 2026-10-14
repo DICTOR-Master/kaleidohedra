@@ -15,6 +15,16 @@ Lotus seed ends on the same icosahedron, and Bodhi Kit B grows by the same φ³.
 - The tables below are the earlier draft; where they disagree, this section wins. "φ² larger" below is the outline's edge (core
   dodecahedron edge 1); against the start icosahedron the growth is **φ³**.
 
+## Decisions 2026-10-14 (second batch)
+
+- **Loop 1 order:** icosahedron → great dodecahedron → small stellated dodecahedron → great icosahedron → icosahedron, all on the same
+  12 corners (studies/2026-10-14-cycles/loop1.json: the steps keep edges, planes, edges, then only the corners). Side step through the
+  dual compound to the dodecahedron and the great stellated dodecahedron.
+- **The great icosahedron is made buildable in Polyhedraverse first** (DICTO), so every Loop 1 station can be built.
+- **Loop 1 movement:** the 12 corners stay lit; the old faces fade out as the new ones fade in; shared edges or planes stay solid.
+- **Loop 2:** the Spheres of Dharma build movie, piece by piece, station names as each solid closes.
+- **Placement:** a new world in Kaleidohedra 3D+, next to the IDT world, which links to it; nothing duplicated.
+
 ## Shape of the world: a figure-eight
 
 Two loops share one station, the **icosahedron in its EKP frame**.
