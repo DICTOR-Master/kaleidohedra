@@ -2,13 +2,13 @@
 
 **DICTO** · dictospheres.com
 
-*Draft, 14 October 2026 · not released. Computation, checking and drafting with Claude (Anthropic). The family, the pieces, the sculptures and their names are DICTO's. Working title; the title is DICTO's to choose.*
+*Draft, 14 October 2026 · not released. Computation, checking and drafting with Claude (Anthropic). Working title.*
 
 ---
 
 ## Abstract
 
-FUJI is the hexagonal pyramid that closes the corners of DICTO's thirteen-icosahedron cluster, the Lotus seed. Its base is a **flat-ended triangle**: a hexagon with all angles 120° and sides 1 and 1/φ alternating. The same shape kept turning up elsewhere, in DICTO's cuboctahedral PET-bottle spheres and in the colouring of the Lotus seed, so we asked whether FUJI belongs to a family.
+FUJI is the hexagonal pyramid that closes the corners of our thirteen-icosahedron cluster, the Lotus seed [1]. Its base is a **flat-ended triangle**: a hexagon with all angles 120° and sides 1 and 1/φ alternating. The same shape kept turning up elsewhere, in our cuboctahedral PET-bottle spheres and in the colouring of the Lotus seed, so we asked whether FUJI belongs to a family.
 
 It does. Put an apex over a flat-ended triangle with sides 1 and r, with all six side edges of length 1. This gives a one-parameter family **FUJI(r)**, running from the regular tetrahedron (r = 0) through FUJI (r = 1/φ) to the flat regular hexagon (r = 1). We prove:
 
@@ -20,23 +20,23 @@ The members turn up in several places:
 - **Odom's golden hexagon** is FUJI's base, and every member's base is an Odom hexagon.
 - **The space-filling truncated tetrahedron** of Damasceno, Engel and Glotzer has the r = 1/2 member's base as its faces.
 - **In a breathing pyrochlore** the kagome hexagons are flat-ended triangles, with r equal to the breathing ratio.
-- **DICTO's dictospheres**, spheres with 14 bottle ports, are divided into curved squares and curved flat-ended triangles. Keeping an even margin round every port fixes the pattern, and its flat counterpart's triangles are the cuboctahedral member, r = (√3 − 1)/2.
+- **Our dictospheres**, spheres with 14 bottle ports, are divided into curved squares and curved flat-ended triangles. Keeping an even margin round every port fixes the pattern, and its flat counterpart's triangles are the cuboctahedral member, r = (√3 − 1)/2.
 
 ---
 
 ## 1. Introduction
 
-FUJI was found as a gap piece. In DICTO's Lotus seed, twelve icosahedra round a small one, the corners where three icosahedra meet are filled by a hexagonal pyramid with all six side edges 1, and DICTO named it after Mount Fuji [DICTO, AXE, CLEO and FUJI]. It is not made of the Mosseri–Sadoc tiles that make its partners AXE and CLEO.
+FUJI was found as a gap piece. In the Lotus seed, twelve icosahedra round a small one, the corners where three icosahedra meet are filled by a hexagonal pyramid with all six side edges 1, which we named after Mount Fuji [1]. It is not made of the Mosseri–Sadoc tiles that make its partners AXE and CLEO.
 
-Its base had appeared before. Building cuboctahedral spheres of PET-bottle ports, DICTO wanted sharp equilateral triangles round the ports and settled for blunted, flat-ended ones. Colouring the Lotus seed, he hoped for regular hexagons and found the same flat-ended triangles. His DeltaZip and B1NR sculptures use rounded triangles, the curved form of the same idea.
+Its base had appeared before. Building cuboctahedral spheres of PET-bottle ports, we wanted sharp equilateral triangles round the ports and settled for blunted, flat-ended ones. Colouring the Lotus seed, we hoped for regular hexagons and found the same flat-ended triangles. Our DeltaZip and B1NR sculptures use rounded triangles, the curved form of the same idea.
 
 ![Figure 1](figures/fig0-dicto-work.jpg)
 
-**Figure 1.** DICTO's work. (a) DeltaZips: deltahedra built from rings tied with zip ties, each ring a rounded triangle. (b) Thirteen dictospheres joined, twelve round one. (c) A dictosphere design, with caps on some of its ports. Photographs and design: DICTO.
+**Figure 1.** Our sculptures. (a) DeltaZips: deltahedra built from rings tied with zip ties, each ring a rounded triangle. (b) Thirteen dictospheres joined, twelve round one. (c) A dictosphere design, with caps on some of its ports. Photographs and design: DICTO.
 
 The same outline appears at the centre of the DeltaZips logo: the recycling symbol's three arrows make a triangle with its corners taken off. Measured on the logo as a flat-ended triangle with the same reach to the corners and to the sides, the symbol has r ≈ 0.79, and the DeltaZip ring photographed behind it r ≈ 0.48. Both lie well inside the family's range.
 
-This paper takes FUJI's shape as the starting point of a family (Section 2), finds its bases in a classical construction (Section 3), proves which member belongs to which antiprism (Section 4), and follows the members into tilings, crystals and DICTO's sculpture (Section 5).
+This paper takes FUJI's shape as the starting point of a family (Section 2), finds its bases in a classical construction (Section 3), proves which member belongs to which antiprism (Section 4), and follows the members into tilings, crystals and our sculpture (Section 5).
 
 ## 2. The family
 
@@ -107,7 +107,7 @@ The antiprisms therefore index the family:
 
 ### 5.1 FUJI in the Lotus seed
 
-The Lotus seed is a regular icosahedron of edge φ², exactly: 12 icosahedra, a small centre, 60 AXE, 20 FUJI and 20 CLEO, or DICTO's 63-piece build of a dodecahedron, 12 J11, 30 AXE and 20 FUJI [DICTO, AXE, CLEO and FUJI]. Each of its 20 big faces is three icosahedron triangles and one FUJI base. FUJI is the five-fold member of the family, which is why it belongs to the icosahedron.
+The Lotus seed is a regular icosahedron of edge φ², exactly: 12 icosahedra, a small centre, 60 AXE, 20 FUJI and 20 CLEO, or our 63-piece build of a dodecahedron, 12 J11, 30 AXE and 20 FUJI [1]. Each of its 20 big faces is three icosahedron triangles and one FUJI base. FUJI is the five-fold member of the family, which is why it belongs to the icosahedron.
 
 ### 5.2 The space-filling truncated tetrahedron (r = 1/2)
 
@@ -129,19 +129,19 @@ The space between the tetrahedra is filled by two kinds of truncated tetrahedra,
 
 It can be built cell by cell in the Kaleidohedra app, with a slider for the breathing ratio.
 
-### 5.4 DICTO's dictospheres
+### 5.4 The dictospheres
 
 ![Figure 6](figures/fig5-dictosphere.jpg)
 
 **Figure 6.** (a) A dictosphere modelled as a sphere 8.8 cm across with 3 cm ports: each point of the surface belongs to its nearest port. The curved squares (cyan) and curved flat-ended triangles (wisteria) meet short side to short side. (b) The flat counterpart: the solid whose 14 faces all touch the sphere, whose triangles are the cuboctahedral member r = (√3 − 1)/2.
 
-A dictosphere is a sphere. It carries 14 PET-bottle ports in a cuboctahedral arrangement: 6 on the cube axes (the squares) and 8 on the three-fold axes (the triangles). DICTO divides its surface round the ports into squares and triangles. With ports in both, the triangles' corners crowded the neighbouring holes, so he truncated the triangles to give even space round every port. The truncated triangles meet short side to short side.
+A dictosphere is a sphere. It carries 14 PET-bottle ports in a cuboctahedral arrangement: 6 on the cube axes (the squares) and 8 on the three-fold axes (the triangles). We divide its surface round the ports into squares and triangles. With ports in both, the triangles' corners crowded the neighbouring holes, so we truncated the triangles to give even space round every port. The truncated triangles meet short side to short side.
 
 **Even space fixes the pattern.** On a sphere, an even margin round every port means that each point of the surface belongs to its nearest port. The squares and triangles are then the regions of the sphere nearest each port. Their boundaries are arcs of great circles halfway between neighbouring ports, and the triangles come out as curved flat-ended triangles. Projected from the centre onto flat planes, the same pattern is the solid whose 14 faces all touch one inner sphere (Figure 6b): the cube ∩ octahedron with both sets of faces at the same distance. Its flat-ended triangles are exactly the **cuboctahedral member, r = (√3 − 1)/2 = 0.366**. (The same rule in the flat: across an edge shared by two faces, the clearances from the two face centres to the edge are equal exactly when the faces lie at the same distance from the centre.)
 
-**Against DICTO's dictosphere.** The sphere's size comes from DICTO's steel-tape measurement: 8.4 cm along the surface between the centres of two triangles on either side of a square, an arc of 109.47°, which gives a radius of 4.40 cm. The sides along the surface then follow.
+**Against a real dictosphere.** The sphere's size comes from a steel-tape measurement: 8.4 cm along the surface between the centres of two triangles on either side of a square, an arc of 109.47°, which gives a radius of 4.40 cm. The sides along the surface then follow.
 
-| | model on the sphere | flat counterpart | DICTO's dictosphere |
+| | model on the sphere | flat counterpart | measured on a dictosphere |
 |---|---|---|---|
 | long side (triangle to square) | 3.79 cm | 4.55 cm | about 4 cm |
 | short side (triangle to triangle) | 1.35 cm | 1.67 cm | about 1.5 cm |
@@ -149,13 +149,13 @@ A dictosphere is a sphere. It carries 14 PET-bottle ports in a cuboctahedral arr
 
 The measured sides lie between the curved and the flat versions, as they would for hand measurement with a tape on a curved surface; all three ratios agree within a few per cent.
 
-**Building with them.** The 14 port directions are the directions of a rhombic dodecahedron's 14 corners, and every edge of a rhombic dodecahedron runs along a three-fold axis. So dictospheres joined triangle port to triangle port build rhombic-dodecahedron frames, which fill space, exactly as DICTO builds them.
+**Building with them.** The 14 port directions are the directions of a rhombic dodecahedron's 14 corners, and every edge of a rhombic dodecahedron runs along a three-fold axis. So dictospheres joined triangle port to triangle port build rhombic-dodecahedron frames, which fill space, as we build them.
 
 **The truncated octahedron** is the r = 1 member of the same cube–octahedron pattern, with regular hexagons. Every member of the flat family has the same face angles (109.47° and 125.26°), but only the truncated octahedron, whose hexagons are centrally symmetric, fills space by translation (Kelvin's cell). It is to the dictosphere's pattern what the regular hexagon is to FUJI: the symmetric shape at r = 1.
 
 ## 6. What is known, and what is new
 
-The base shape (the isogonal hexagon), the antiprism angles (listed for single antiprisms in the OEIS), Odom's golden hexagon, the space-filling truncated tetrahedron and breathing pyrochlores are all known, and are credited above. Searches of the literature and of DICTO's reference library (2026-10-14) did not find:
+The base shape (the isogonal hexagon), the antiprism angles (listed for single antiprisms in the OEIS), Odom's golden hexagon, the space-filling truncated tetrahedron and breathing pyrochlores are all known, and are credited above. Searches of the literature and of our reference library (2026-10-14) did not find:
 
 - the family FUJI(r) of pyramids;
 - its base-angle formulas;
@@ -191,8 +191,8 @@ FUJI, the Lotus seed, the dictospheres, the DeltaZips and B1NR sculptures, the t
 
 ## References
 
-- DICTO, AXE, CLEO and FUJI: the Gap Pieces of the Icosahedron (2026), doi:10.5281/zenodo.23351291.
-- DICTO, The Chain of Karma (2026), doi:10.5281/zenodo.23310541.
+- [1] DICTO, AXE, CLEO and FUJI: the Gap Pieces of the Icosahedron (2026), doi:10.5281/zenodo.23351291.
+- [2] DICTO, The Chain of Karma (2026), doi:10.5281/zenodo.23310541.
 - Wolfram Demonstrations Project, Hexagons and the Golden Ratio (after G. Odom), https://demonstrations.wolfram.com/HexagonsAndTheGoldenRatio/.
 - P. F. Damasceno, M. Engel, S. C. Glotzer, Crystalline assemblies and densest packings of a family of truncated tetrahedra and the role of directional entropic forces, ACS Nano 6 (2012) 609–614, doi:10.1021/nn204012y.
 - Y. Okamoto, G. J. Nilsen, J. P. Attfield, Z. Hiroi, Breathing pyrochlore lattice realized in A-site ordered spinel oxides LiGaCr₄O₈ and LiInCr₄O₈, Phys. Rev. Lett. 110 (2013) 097203, doi:10.1103/PhysRevLett.110.097203.

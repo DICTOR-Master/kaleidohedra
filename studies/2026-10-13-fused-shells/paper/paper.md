@@ -2,19 +2,19 @@
 
 **DICTO** · dictospheres.com
 
-*14 October 2026 · doi:10.5281/zenodo.23345503 · CC BY 4.0. Computation, checking and drafting with Claude (Anthropic). The structures, their pieces and their names are DICTO's.*
+*14 October 2026 · doi:10.5281/zenodo.23345503 · CC BY 4.0. Computation, checking and drafting with Claude (Anthropic).*
 
 ---
 
 ## Abstract
 
-DICTO's Chain of Karma, Spheres of Dharma and Bodhi Seed are exact icosahedral dissections: each grows a large polyhedron from a small core by adding rings of congruent pieces. Between the familiar solids at the start and end of each step lie the in-between stages, the **transitional shells**. Taking each stage as one solid, with its pieces fused, we find that the builds pass through celebrated polyhedra on the way:
+Our Chain of Karma, Spheres of Dharma and Bodhi Seed are exact icosahedral dissections: each grows a large polyhedron from a small core by adding rings of congruent pieces. Between the familiar solids at the start and end of each step lie the in-between stages, the **transitional shells**. Taking each stage as one solid, with its pieces fused, we find that the builds pass through celebrated polyhedra on the way:
 
 - **Icosahedron + 20 CLEO is Kepler's great stellated dodecahedron.**
 - **Adding 30 AXE turns it into the excavated dodecahedron**, a stellation of the icosahedron, with all 32 corners kept.
 - **Adding 12 caps closes the dodecahedron.** The Dodecahedral Chain thus walks from the icosahedron to its dual through two star solids.
 - **The Bodhi Seed's centre + 60 Vajra (fine) is the rhombic hexecontahedron.**
-- **The Spheres of Dharma's seventh stage is a convex solid with 102 faces and 80 corners**: 12 regular pentagons, 30 rhombi and 60 triangles, every face tangent to one sphere. We did not find it in the catalogues we searched; DICTO names it the **DICTO Truncated-Icosahedral Hecatodihedron**.
+- **The Spheres of Dharma's seventh stage is a convex solid with 102 faces and 80 corners**: 12 regular pentagons, 30 rhombi and 60 triangles, every face tangent to one sphere. We did not find it in the catalogues we searched; we name it the **DICTO Truncated-Icosahedral Hecatodihedron**.
 
 Every identification is checked against an independent construction to within 10⁻⁴. We describe all 21 piece types, show 45 further convex stages, and give cut-out nets so the in-betweens can be built by hand. The transitional shells now have their own group in the Polyhedraverse app.
 
@@ -22,21 +22,21 @@ Every identification is checked against an independent construction to within 10
 
 ## 1. Introduction
 
-Scrubbing the Top shell slider in the Kaleidohedra app's Multi-shell chains world, DICTO saw that the in-between stages of his nested structures look strikingly different from the solids at either end of each step. He picked out about 11 on Chain step 2, 5 on the Lotus seed, 4 on the Dodecahedral Chain and 6 more on the other views. His idea: these forms may be known, but not as **transitional shapes between the well-known solids**, and the steps a model goes through as it builds are worth looking at in their own right.
+Scrubbing the Top shell slider in the Kaleidohedra app's Multi-shell chains world, we saw that the in-between stages of our nested structures look strikingly different from the solids at either end of each step. We picked out about 11 on Chain step 2, 5 on the Lotus seed, 4 on the Dodecahedral Chain and 6 more on the other views. Our idea: these forms may be known, but not as **transitional shapes between the well-known solids**, and the steps a model goes through as it builds are worth looking at in their own right.
 
 This paper defines the stages exactly (Section 2), describes the pieces that build them (Section 3), and identifies the classical and new solids among them (Section 4). Section 5 shows the shells in the apps and as paper models.
 
-Two of the three structures are members of DICTO ATOM-13×13, thirteen clusters of twelve around one [DICTO, ATOM-13×13]. The Lotus seed is its Icosa-13, and the Bodhi seed is its thirteen triacontahedra. So the transitional shells are also the shells through which those thirteens fill up into a single larger solid; the figures echo the ATOM-13 kits.
+Two of the three structures are members of DICTO ATOM-13×13, thirteen clusters of twelve around one [ATOM-13×13]. The Lotus seed is its Icosa-13, and the Bodhi seed is its thirteen triacontahedra. So the transitional shells are also the shells through which those thirteens fill up into a single larger solid; the figures echo the ATOM-13 kits.
 
 ## 2. The structures and their stages
 
-**The structures.** The Lotus seed is the icosahedron of edge φ², cut into 13 icosahedra, 60 AXE, 20 FUJI and 20 CLEO, 113 pieces in all [DICTO, Chain of Karma]. Replacing every icosahedron with a Lotus seed gives Samsara (Chain step 2, 1,569 pieces). Closing a grown core with 12 pentagonal caps gives the Dodecahedral Chain.
+**The structures.** The Lotus seed is the icosahedron of edge φ², cut into 13 icosahedra, 60 AXE, 20 FUJI and 20 CLEO, 113 pieces in all [Chain of Karma]. Replacing every icosahedron with a Lotus seed gives Samsara (Chain step 2, 1,569 pieces). Closing a grown core with 12 pentagonal caps gives the Dodecahedral Chain.
 
-The Spheres of Dharma is a six-shell cycle of 237 pieces [DICTO, Spheres of Dharma]:
+The Spheres of Dharma is a six-shell cycle of 237 pieces [Spheres of Dharma]:
 
 > icosahedron 1/φ → icosidodecahedron φ/2 → dodecahedron 1 → truncated icosahedron 1/φ → rhombic triacontahedron → icosahedron φ²
 
-The outer icosahedron is φ³ times the inner one, so the cycle repeats. The Bodhi Seed is a rhombic triacontahedron of edge φ² holding 12 triacontahedra of edge 1 on its five-fold axes around one of edge 1/φ [DICTO, The Bodhi Seed]. Its gap is filled exactly by Kit A (Vajra (fine), Chatra, Mudra) or Kit B (Vajra (fine), Crown Jewel, Diadem L and R).
+The outer icosahedron is φ³ times the inner one, so the cycle repeats. The Bodhi Seed is a rhombic triacontahedron of edge φ² holding 12 triacontahedra of edge 1 on its five-fold axes around one of edge 1/φ [The Bodhi Seed]. Its gap is filled exactly by Kit A (Vajra (fine), Chatra, Mudra) or Kit B (Vajra (fine), Crown Jewel, Diadem L and R).
 
 **Stages.** Every piece belongs to a ring: an orbit of congruent pieces at one distance from the centre. A *stage* is a union of rings around the core:
 
@@ -60,33 +60,33 @@ Lengths are in the study's units (Lotus seed: icosahedra of edge 1; Bodhi Seed: 
 
 **Table 2.** The 21 piece types (pictured in Figures 7 to 9).
 
-| Piece (DICTO's name) | Where, how many | Kind | Corners / edges / faces | Edge lengths (count) | Interior dihedrals | Symmetry | Volume | Known as |
+| Piece | Where, how many | Kind | Corners / edges / faces | Edge lengths (count) | Interior dihedrals | Symmetry | Volume | Known as |
 |---|---|---|---|---|---|---|---|---|
 | **AXE** | Lotus 60 | tetrahedron, five edges 1 and one 1/φ | 4 / 6 / 4 triangles | 1 (5), 1/φ (1) | 41.81°, 63.43°, 79.19° | C2v (4) | 1/12 | Mosseri–Sadoc t6 at 1/τ |
 | **CLEO** | Lotus 20 | trigonal pyramid: base 1/φ, sides 1 | 4 / 6 / 4 | 1/φ (3), 1 (3) | 63.43°, 79.19° | C3v (6) | (√5 − 1)/24 | Mosseri–Sadoc t4 at 1/τ; one point of the great stellated dodecahedron |
-| **FUJI** | Lotus 20 | hexagonal pyramid on a 120° hexagon of sides 1, 1/φ | 7 / 12 / 6 triangles + 1 hexagon | 1 (9), 1/φ (3) | 37.38°, 41.81°, 142.62° | C3v (6) | (1 + 3√5)/24 | DICTO's |
+| **FUJI** | Lotus 20 | hexagonal pyramid on a 120° hexagon of sides 1, 1/φ | 7 / 12 / 6 triangles + 1 hexagon | 1 (9), 1/φ (3) | 37.38°, 41.81°, 142.62° | C3v (6) | (1 + 3√5)/24 | ours |
 | icosahedra | Lotus 1 + 12 | regular | | | 138.19° | Ih (120) | | |
 | pentagonal cap | Dodecahedral Chain 12; Dharma 12 | equilateral pentagonal pyramid | 6 / 10 / 6 | all equal | 37.38°, 138.19° | C5v (10) | | Johnson solid J2 |
-| **Stupa** | Dharma 12 | pentagonal pyramid: base φ/2, sides √3/2, apex inward | 6 / 10 / 6 | φ/2 (5), √3/2 (5) | 43.36°, 132.40° | C5v (10) | 0.19734 | DICTO's |
-| **Vajra (twist)** | Dharma 20 | twisted triangular frustum: parallel triangles 1/φ and φ/2 | 6 / 12 / 8 triangles | 1/φ (3), φ/2 (3), √3/2 (6) | 99.26°, 110.91°, 113.80° | C3v (6) | 0.22215 | DICTO's |
+| **Stupa** | Dharma 12 | pentagonal pyramid: base φ/2, sides √3/2, apex inward | 6 / 10 / 6 | φ/2 (5), √3/2 (5) | 43.36°, 132.40° | C5v (10) | 0.19734 | ours |
+| **Vajra (twist)** | Dharma 20 | twisted triangular frustum: parallel triangles 1/φ and φ/2 | 6 / 12 / 8 triangles | 1/φ (3), φ/2 (3), √3/2 (6) | 99.26°, 110.91°, 113.80° | C3v (6) | 0.22215 | ours |
 | **Cleo-low** | Dharma 20 | trigonal pyramid: base φ/2, sides 1/2 (the dodecahedron's corner) | 4 / 6 / 4 | φ/2 (3), 1/2 (3) | 37.38°, 116.57° | C3v (6) | 0.016855 | the shape of Mosseri–Sadoc t3 at half size |
-| **Monkey Staff** | Dharma 12 | twisted pentagonal frustum: pentagons 1/φ and 1 | 10 / 20 / 10 triangles + 2 pentagons | 1/φ (15), 1 (5) | 63.43°, 142.62° | C5v (10) | (11√5 − 15)/24 | DICTO's |
+| **Monkey Staff** | Dharma 12 | twisted pentagonal frustum: pentagons 1/φ and 1 | 10 / 20 / 10 triangles + 2 pentagons | 1/φ (15), 1 (5) | 63.43°, 142.62° | C5v (10) | (11√5 − 15)/24 | ours |
 | t1 | Dharma 30 | tetrahedron | 4 / 6 / 4 | 1/φ (5), 1 (1) | 37.38°, 116.57°, 138.19° | C2v (4) | (√5 − 2)/12 | Mosseri–Sadoc t1 at 1/τ |
-| **Shield** | Dharma 20 | very low regular-hexagon pyramid | 7 / 12 / 6 triangles + 1 hexagon | 1/φ (6), 0.651 (6) | 20.91°, 159.45° | C6v (12) | 0.06763 | DICTO's |
-| **Vajra-blade** | Dharma 60 | tetrahedron with one mirror | 4 / 6 / 4 | 1/φ (3), 0.651 (2), 1.0898 (1) | 20.55°, 20.91°, 144°, 159.10° | Cs (2) | 0.011271 | DICTO's |
-| **Sevenfold-blade** | Dharma 30 | 6 triangles + 1 quadrilateral | 6 / 11 / 7 | 0.7265 (2), 1.0898 (4), 1.5568 (4), φ² (1) | 72°, 85.66°, 108°, 112.53° | C2v (4) | 5 − 2√5 | DICTO's |
-| **Cleo-low 2** | Dharma 20 | trigonal pyramid on the outer icosahedron's face | 4 / 6 / 4 | φ² (3), 1.5568 (3) | 26.26°, 134.93° | C3v (6) | 0.36892 | DICTO's |
+| **Shield** | Dharma 20 | very low regular-hexagon pyramid | 7 / 12 / 6 triangles + 1 hexagon | 1/φ (6), 0.651 (6) | 20.91°, 159.45° | C6v (12) | 0.06763 | ours |
+| **Vajra-blade** | Dharma 60 | tetrahedron with one mirror | 4 / 6 / 4 | 1/φ (3), 0.651 (2), 1.0898 (1) | 20.55°, 20.91°, 144°, 159.10° | Cs (2) | 0.011271 | ours |
+| **Sevenfold-blade** | Dharma 30 | 6 triangles + 1 quadrilateral | 6 / 11 / 7 | 0.7265 (2), 1.0898 (4), 1.5568 (4), φ² (1) | 72°, 85.66°, 108°, 112.53° | C2v (4) | 5 − 2√5 | ours |
+| **Cleo-low 2** | Dharma 20 | trigonal pyramid on the outer icosahedron's face | 4 / 6 / 4 | φ² (3), 1.5568 (3) | 26.26°, 134.93° | C3v (6) | 0.36892 | ours |
 | J11 | Dharma hinge 12 | gyroelongated pentagonal pyramid, edge 1 | 11 / 25 / 15 triangles + 1 pentagon | all 1 | 100.81°, 138.19° | C5v (10) | (25 + 9√5)/24 | Johnson solid J11 |
-| **Vajra (fine)** | Bodhi kits A and B, 60 | irregular triangular bipyramid | 5 / 9 / 6 | 1/φ (2), 1 (3), 1.0515, 1.4734, 1.7013 (2) | 72°, 90°, 108°, 120° | Cs (2) | 0.20518 | DICTO's |
-| **Chatra** | Kit A 60 | 3 triangles, 2 quadrilaterals, 1 pentagon | 7 / 11 / 6 | 0.9106 (2), 1 (5), 1.0515, 1.4734, φ (2) | 60°, 72°, 90°, 108°, 120° | Cs (2) | 0.86915 | DICTO's |
-| **Mudra** | Kit A 60 | quadrilateral pyramid | 5 / 8 / 5 | 1/φ (2), 0.9106 (2), 1 (4) | 36°, 120°, 144° | C2v (4) | 0.09687 | DICTO's |
-| **Crown Jewel** | Kit B 20 | 3 triangles, 3 pentagons, 3 hexagons | 14 / 21 / 9 | 0.5628 (6), 1 (6), 1.0515 (3), 2/φ (3), φ (3) | 36°, 90°, 120°, 144° | C3v (6) | 1.95764 | DICTO's |
-| **Diadem L / R** | Kit B 60 + 60 | 2 triangles, 3 quadrilaterals; mirror pair | 6 / 9 / 5 | 0.5628 (2), 0.6498 (2), 1 (4), 2/φ (1) | 36°, 60°, 90°, 108° | C2 (2), chiral | 0.15674 | DICTO's |
+| **Vajra (fine)** | Bodhi kits A and B, 60 | irregular triangular bipyramid | 5 / 9 / 6 | 1/φ (2), 1 (3), 1.0515, 1.4734, 1.7013 (2) | 72°, 90°, 108°, 120° | Cs (2) | 0.20518 | ours |
+| **Chatra** | Kit A 60 | 3 triangles, 2 quadrilaterals, 1 pentagon | 7 / 11 / 6 | 0.9106 (2), 1 (5), 1.0515, 1.4734, φ (2) | 60°, 72°, 90°, 108°, 120° | Cs (2) | 0.86915 | ours |
+| **Mudra** | Kit A 60 | quadrilateral pyramid | 5 / 8 / 5 | 1/φ (2), 0.9106 (2), 1 (4) | 36°, 120°, 144° | C2v (4) | 0.09687 | ours |
+| **Crown Jewel** | Kit B 20 | 3 triangles, 3 pentagons, 3 hexagons | 14 / 21 / 9 | 0.5628 (6), 1 (6), 1.0515 (3), 2/φ (3), φ (3) | 36°, 90°, 120°, 144° | C3v (6) | 1.95764 | ours |
+| **Diadem L / R** | Kit B 60 + 60 | 2 triangles, 3 quadrilaterals; mirror pair | 6 / 9 / 5 | 0.5628 (2), 0.6498 (2), 1 (4), 2/φ (1) | 36°, 60°, 90°, 108° | C2 (2), chiral | 0.15674 | ours |
 | rhombic triacontahedra | Bodhi 1 + 12 | Catalan solid | | 1/φ, 1, φ² | 144° | Ih (120) | | |
 
 Three features stand out:
 
-- **The Bodhi pieces have clean angles.** Every dihedral angle of every Bodhi piece is a multiple of 6° [DICTO, Bodhi pieces study]. The Lotus and Dharma pieces carry the icosahedral angles 41.81°, 63.43°, 116.57°, 138.19° and 37.38°.
+- **The Bodhi pieces have clean angles.** Every dihedral angle of every Bodhi piece is a multiple of 6° [Bodhi pieces study]. The Lotus and Dharma pieces carry the icosahedral angles 41.81°, 63.43°, 116.57°, 138.19° and 37.38°.
 - **Pieces sit over faces or along edges.** The pyramids (CLEO, Cleo-low, Cleo-low 2, Shield, FUJI, Stupa, the caps) each stand on one face of the solid beneath; AXE, t1, Vajra-blade, Sevenfold-blade and the Diadems lie along its edges.
 - **A new Mosseri–Sadoc likeness.** Cleo-low has the shape of the Mosseri–Sadoc tile t3 at half its tabulated size, joining AXE (t6), CLEO (t4) and t1.
 
@@ -104,13 +104,13 @@ Each identification below was checked by `analysis/identify.py` against a solid 
 
 **4.2 + 30 AXE = the excavated dodecahedron.** Lotus seed stage 3 has the same 32 corners as stage 2. Its 60 faces are equilateral triangles lying in the 20 face planes of the core icosahedron, and its volume is the dodecahedron minus 12 J2 pyramids. This is the excavated dodecahedron, the Ef1g1 stellation of the icosahedron (Coxeter et al. 1938; Wenninger 1971, model 28). Adding 30 AXE changes every face while every corner stays put.
 
-**4.3 The Dodecahedral Chain: icosahedron → great stellated dodecahedron → excavated dodecahedron → dodecahedron.** The Dodecahedral Chain's stages 2 and 3 are the same two solids at the same size, and stage 4 adds 12 J2 caps to close the regular dodecahedron, whose corners are the star's points. In four building steps the icosahedron becomes its dual through two classical star solids, a route made entirely of DICTO's pieces.
+**4.3 The Dodecahedral Chain: icosahedron → great stellated dodecahedron → excavated dodecahedron → dodecahedron.** The Dodecahedral Chain's stages 2 and 3 are the same two solids at the same size, and stage 4 adds 12 J2 caps to close the regular dodecahedron, whose corners are the star's points. In four building steps the icosahedron becomes its dual through two classical star solids, a route made entirely of our pieces.
 
 **4.4 Samsara.** In Chain step 2, stage 2 is the excavated dodecahedron at scale 1/φ and stage 4 is the great stellated dodecahedron at scale φ²: the same transition, repeated at two golden scales (Figure 5).
 
-**4.5 Centre + 60 Vajra (fine) = the rhombic hexecontahedron.** Bodhi Kit B stage 2 has the 62 corners of 20 prolate golden rhombohedra around the centre, their volume, and 60 golden rhombi on the 30 face planes of the centre triacontahedron. This is the rhombic hexecontahedron (Unkelbach 1940), a stellation of the rhombic triacontahedron (Messer 1995). The Bodhi pieces study had shown that the 12 copies enclose it [DICTO, Bodhi pieces study]; here it is also reached from inside.
+**4.5 Centre + 60 Vajra (fine) = the rhombic hexecontahedron.** Bodhi Kit B stage 2 has the 62 corners of 20 prolate golden rhombohedra around the centre, their volume, and 60 golden rhombi on the 30 face planes of the centre triacontahedron. This is the rhombic hexecontahedron (Unkelbach 1940), a stellation of the rhombic triacontahedron (Messer 1995). The Bodhi pieces study had shown that the 12 copies enclose it [Bodhi pieces study]; here it is also reached from inside.
 
-**4.6 The DICTO Truncated-Icosahedral Hecatodihedron.** Spheres of Dharma stage 7 is convex, with 12 regular pentagons, 30 rhombi (sides 0.65097, angles 56.68° and 123.32°) and 60 isosceles triangles. Its corners are the 60 of the truncated icosahedron and 20 on the three-fold axes, forming a regular dodecahedron. It is the truncated icosahedron with a Shield on each hexagon, at the exact height where the triangles of neighbouring Shields across each hexagon–hexagon edge lie flat as one rhombus. In Conway's notation it is the hexagon-kis truncated icosahedron k6tI in this flattened, rhombic form. **All 102 faces are tangent to one sphere**, of radius 1.5: it has an insphere, like a Catalan solid, while having three kinds of face. It is not an Archimedean, Catalan or Johnson solid, and we did not find it in Conway-notation or other catalogues searched, nor among the named relatives with 80 or 92 corners. DICTO names it the **DICTO Truncated-Icosahedral Hecatodihedron**: *hecatodi-* for its 102 faces (Greek *hekaton* 100 + *di* 2, as in the hecatonicosachoron, the 120-cell), on the truncated icosahedron it grows from.
+**4.6 The DICTO Truncated-Icosahedral Hecatodihedron.** Spheres of Dharma stage 7 is convex, with 12 regular pentagons, 30 rhombi (sides 0.65097, angles 56.68° and 123.32°) and 60 isosceles triangles. Its corners are the 60 of the truncated icosahedron and 20 on the three-fold axes, forming a regular dodecahedron. It is the truncated icosahedron with a Shield on each hexagon, at the exact height where the triangles of neighbouring Shields across each hexagon–hexagon edge lie flat as one rhombus. In Conway's notation it is the hexagon-kis truncated icosahedron k6tI in this flattened, rhombic form. **All 102 faces are tangent to one sphere**, of radius 1.5: it has an insphere, like a Catalan solid, while having three kinds of face. It is not an Archimedean, Catalan or Johnson solid, and we did not find it in Conway-notation or other catalogues searched, nor among the named relatives with 80 or 92 corners. We name it the **DICTO Truncated-Icosahedral Hecatodihedron**: *hecatodi-* for its 102 faces (Greek *hekaton* 100 + *di* 2, as in the hecatonicosachoron, the 120-cell), on the truncated icosahedron it grows from.
 
 **4.7 Dimpled shells.** Two Dharma stages are elegant dimpled solids: the icosidodecahedron with 12 inward pentagonal pyramids reaching the core's corners (stage 2), and the outer icosahedron with 20 shallow inward pyramids whose apices are the Shields' apices (stage 10).
 
@@ -157,15 +157,15 @@ Each net places every face once, true to its 3D shape, pairs every cut edge with
 
 ![Figure 7](figures/fig7-karma-pieces.png)
 
-**Figure 7.** The Chain of Karma pieces at edge 1, every edge labelled: AXE, CLEO, FUJI, the pentagonal cap and J11 [DICTO, Chain of Karma].
+**Figure 7.** The Chain of Karma pieces at edge 1, every edge labelled: AXE, CLEO, FUJI, the pentagonal cap and J11 [Chain of Karma].
 
 ![Figure 8](figures/fig8-dharma-pieces.png)
 
-**Figure 8.** The Spheres of Dharma pieces with DICTO's names, in the app's colours (dodecahedron of edge 1): Vajra (twist), Stupa, Cleo-low, Monkey Staff, t1, Shield, the pentagonal cap, Vajra-blade, Sevenfold-blade and Cleo-low 2.
+**Figure 8.** The Spheres of Dharma pieces with their names, in the app's colours (dodecahedron of edge 1): Vajra (twist), Stupa, Cleo-low, Monkey Staff, t1, Shield, the pentagonal cap, Vajra-blade, Sevenfold-blade and Cleo-low 2.
 
 ![Figure 9](figures/fig9-bodhi-pieces.png)
 
-**Figure 9.** The Bodhi Seed's gap pieces: Vajra (fine) (B1), Chatra (B2), Mudra (B3), Crown Jewel (B4) and Diadem (B5, shown as L) [DICTO, Bodhi pieces study].
+**Figure 9.** The Bodhi Seed's gap pieces: Vajra (fine) (B1), Chatra (B2), Mudra (B3), Crown Jewel (B4) and Diadem (B5, shown as L) [Bodhi pieces study].
 
 ## Data, scripts and checks
 
