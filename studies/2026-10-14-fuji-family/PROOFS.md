@@ -30,7 +30,7 @@ on 2026-10-14; this is the reason.)
 
 ## 2. Which member continues which solid's faces
 
-FUJI(r)'s base lies in one plane with a solid X's face across an edge when L + D_X = 180°, i.e. cos L = −cos D_X, i.e.
+Face-plane condition (defined): FUJI(r) is glued by one of its equilateral faces to a unit triangle of a solid X, and its base continues the plane of the face of X across that triangle's edge (triangle–triangle edges for the icosahedron, octahedron and antiprisms; triangle–square edges for the cuboctahedron and rhombicuboctahedron). This holds when L + D_X = 180°, i.e. cos L = −cos D_X, i.e.
 
   **r = (−3 cos D_X − 1)/2.**
 
