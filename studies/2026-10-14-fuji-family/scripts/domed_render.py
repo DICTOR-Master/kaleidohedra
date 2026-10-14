@@ -18,7 +18,7 @@ def solids(kind):
     for f in tris:
         tips = [c for c, p in zip(pc, pens) if len(set(p) & set(f)) == 2]
         if kind == 'domed': out.append(('w1', np.vstack([np.zeros(3), V[f], tips])))
-        else: out += [('w0', np.vstack([np.zeros(3), tips])), ('w2', np.vstack([V[f], tips]))]
+        else: out += [('w0', np.vstack([np.zeros(3), tips]))]
     return out
 res = {}
 for kind, ex in (('domed', 0.45), ('faceted', 0.45)):
