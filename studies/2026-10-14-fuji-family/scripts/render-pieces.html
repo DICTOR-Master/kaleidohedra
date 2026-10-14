@@ -4,7 +4,7 @@
 <script>
 // Clean, framed renders of single pieces for the FUJI family paper (DICTO, 2026-10-14): app colours, dark edges,
 // each piece centred with a generous margin. window.show(name) draws one piece; the page is screenshotted by render-pieces.mjs.
-const COL = { equi: 0xc792ea, iso: 0xe2bdf7, base: 0x4dd0e1, square: 0x4dd0e1, hex: 0xc792ea, port: 0x1c1826, seam: 0x0b1220 };
+const COL = { equi: 0xc792ea, iso: 0xe2bdf7, base: 0x4dd0e1, square: 0x4dd0e1, hex: 0xc792ea, port: 0x1c1826, seam: 0x0b1220, w0: 0x4dd0e1, w1: 0xc792ea, w2: 0xffc857, w3: 0x5fd38a, edge: 0x2a2633 };
 const host = document.getElementById('c');
 const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setPixelRatio(1);
 renderer.setSize(1200, 1100); host.appendChild(renderer.domElement);
@@ -12,6 +12,7 @@ const scene = new THREE.Scene(); scene.background = new THREE.Color(0x14110d);
 const camera = new THREE.PerspectiveCamera(30, 1200 / 1100, 0.01, 100);
 scene.add(new THREE.HemisphereLight(0xdfe6ff, 0x1a1626, 0.62));
 const sun = new THREE.DirectionalLight(0xffffff, 0.6); scene.add(sun);
+const headlight = new THREE.DirectionalLight(0xffffff, 0.35); scene.add(headlight);
 let current = null;
 window.show = (name, dir, up, fixR) => {
   if (current) scene.remove(current);
@@ -29,7 +30,7 @@ window.show = (name, dir, up, fixR) => {
   const R = fixR ?? V.reduce((m, v) => Math.max(m, Math.hypot(...v)), 0);
   const d = new THREE.Vector3(...dir).normalize(), dist = R * 1.18 / Math.sin(THREE.MathUtils.degToRad(15));
   camera.position.copy(d.clone().multiplyScalar(dist)); camera.up.set(...(up ?? [0, 1, 0])); camera.lookAt(0, 0, 0);
-  sun.position.set(3, 5, 4).applyQuaternion(camera.quaternion);
+  sun.position.set(3, 5, 4).applyQuaternion(camera.quaternion); headlight.position.copy(camera.position);
   renderer.render(scene, camera); return true;
 };
 </script></body></html>
