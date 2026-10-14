@@ -1,0 +1,88 @@
+{
+ "credit": "DICTO (design study with Claude), 2026-10-14",
+ "shapes": {
+  "diamond-cell": {
+   "name": "diamond cell (Voronoi cell of the diamond pattern; classically the triakis truncated tetrahedron)",
+   "scale": "cube of the diamond pattern = 4 (bond length √3)",
+   "faces": 16,
+   "face_kinds": {
+    "3": 12,
+    "6": 4
+   },
+   "vertices": 16,
+   "volume": 8.0,
+   "volume_check": 8.0,
+   "edge_lengths": [
+    0.866,
+    1.4142
+   ],
+   "hexagons_point_along_the_four_bonds": true,
+   "neighbour_across_hexagon_is_the_same_cell_turned": true,
+   "cells_meeting_at_its_corners": [
+    4,
+    6
+   ],
+   "four_round_one": true,
+   "four_meeting_at_a_point": false
+  },
+  "keyed-TO": {
+   "name": "keyed truncated octahedron (a DICTO design study shape; name to be given by DICTO)",
+   "scale": "bcc lattice points 2Z³ ∪ 2Z³+(1,1,1); truncated octahedron edge 0.707107; pyramid height h (shown h = 0.5)",
+   "faces": 54,
+   "face_kinds": {
+    "squares": 6,
+    "triangles": 48
+   },
+   "vertices": 32,
+   "volume_TO": 4.0,
+   "by_height": {
+    "0.25": {
+     "volume": 4.0,
+     "tiling": {
+      "samples": 3000,
+      "covered_once": 3000,
+      "gaps": 0,
+      "overlaps": 0,
+      "negative": 0
+     }
+    },
+    "0.4": {
+     "volume": 4.0,
+     "tiling": {
+      "samples": 3000,
+      "covered_once": 3000,
+      "gaps": 0,
+      "overlaps": 0,
+      "negative": 0
+     }
+    },
+    "0.5": {
+     "volume": 4.0,
+     "tiling": {
+      "samples": 3000,
+      "covered_once": 3000,
+      "gaps": 0,
+      "overlaps": 0,
+      "negative": 0
+     }
+    },
+    "0.6": {
+     "volume": 4.0,
+     "tiling": {
+      "samples": 3000,
+      "covered_once": 3000,
+      "gaps": 0,
+      "overlaps": 0,
+      "negative": 0
+     }
+    }
+   },
+   "cells_meeting_at_corners": [
+    2,
+    4
+   ],
+   "four_round_one": "yes: four pieces round one, each across a bump hexagon, a plain translate (its dent takes the bump)",
+   "four_meeting_at_a_point": "at its 24 truncated-octahedron corners (see cells_meeting_at_corners; the 8 pyramid apexes are where 2 meet)"
+  }
+ }
+}

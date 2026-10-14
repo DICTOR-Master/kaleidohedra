@@ -62,3 +62,27 @@ Both types use copies of a single shape, and the copies are part of its own spac
 - The **truncated octahedron is in both types**: four meet at each of its corners, and four sit round it on alternate hexagons.
 
 DICTO · dictospheres.com
+
+## New shapes for the group (2026-10-14, `scripts/new_shapes.py` → `new/`)
+
+DICTO asked for shapes made for the group rather than more rhombic dodecahedra. Two, both one polyhedron in its own space filling,
+and both turn out to be **in both types**, as the truncated octahedron is:
+
+**1. The diamond cell** (`new/diamond-cell.json`): the Voronoi cell of the diamond pattern, where every point has four nearest
+neighbours in tetrahedral directions. 16 faces (4 hexagons, 12 triangles), 16 corners, volume 8 at diamond cube 4 (checked = 4³/8).
+- *Four round one:* its four hexagons face the four bonds exactly; the cell across each is the same cell turned (the diamond's other
+  half), so the five are part of the diamond tiling. Picture `renders/dia5.jpg`.
+- *Four at a point:* at its four three-faced corners exactly four cells meet (at the other twelve corners, six meet). `renders/dia4.jpg`.
+- Prior art: this cell is classical (the triakis truncated tetrahedron; its tiling is the diamond's Voronoi tiling, e.g. Conway,
+  Burgiel and Goodman-Strauss, *The Symmetries of Things*, 2008). New here is only its place in DICTO's group.
+
+**2. The keyed truncated octahedron** (`new/keyed-to.json`, shown with pyramid height h = 0.5): the truncated octahedron with a
+hexagonal pyramid pushed **out** on four alternate hexagons and the same pyramid pressed **in** on the other four. 54 faces (6 squares,
+48 triangles), 32 corners, volume unchanged.
+- It still tiles by translation: across each bump hexagon the neighbour shows a dent, which takes the bump. Checked by sampling 3,000
+  points per height: every point covered exactly once (no gaps, no overlaps) for h = 0.25, 0.4, 0.5 and 0.6.
+- *Four round one:* the four neighbours across the bumps, each keyed in. `renders/key1.jpg` (alone), `renders/key5.jpg` (five).
+- *Four at a point:* at each of its 24 truncated-octahedron corners exactly four cells meet (the 8 pyramid apexes are where two meet).
+  `renders/key4.jpg`.
+- Unlike the plain truncated octahedron, the keys fix which way each neighbour sits: the five cannot slide apart along a hexagon.
+- A DICTO design study shape; we have not yet searched the literature for it, and DICTO chooses the name and the pyramid height.
