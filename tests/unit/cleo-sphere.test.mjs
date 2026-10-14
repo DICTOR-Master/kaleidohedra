@@ -46,3 +46,9 @@ test('RHex kit: 20 Cleo-Icos + 20 Antonius + 20 Cleo-Icos, 20 rhombohedron cells
   assert.equal(KITS13['antonius.block'].cells.length, 8); assert.equal(KITS13['antonius.rhombohedron'].cells.length, 1);
   for (const c of k.cells) assert.equal(c.length, 8);
 });
+test('great icosahedron kit: D20 + 20 face units fill the great icosahedron (47.7877 at D20 edge 1)', () => {
+  const k = KITS13.greatIcosahedron; assert.equal(k.group, 'stars'); assert.equal(k.entries.length, 21);
+  assert.equal(k.entries[0].shape, 'D20'); assert.equal(k.entries.filter((e) => e.shape === 'GREAT_ICO_UNIT').length, 20);
+  const sum = k.entries.reduce((s, e) => s + volume(POLYHEDRA[e.shape]), 0);
+  assert.ok(Math.abs(sum - 47.787731) < 1e-4, `${sum}`);
+});
