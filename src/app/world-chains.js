@@ -19,7 +19,7 @@ export const ROLE = { ico: 0x5fd38a, cap: 0x5fd38a, lcap: 0x5fd38a, lj11: 0x5fd3
   nface: 0xc792ea, ncap: 0xc792ea, nwedge: 0xdfe6f0, outer: 0x9fd8ff, copy: 0x5fd38a, centre: 0xffc857, B1: 0xffc857, B4: 0x4dd0e1,
   B5L: 0xc792ea, B5R: 0xf08fc0, B2: 0x4dd0e1, B3: 0xc792ea,
   // DICTO Dodeca
-  dodeca: 0xffc857, j63: 0x5fd38a, pyr5: 0xffc857, tet: 0x5fd38a, ipyr5: 0xffc857, itet: 0x5fd38a, icleo: 0xc792ea, fpyr5: 0xb39ddb, wedge: 0x4dd0e1, needle: 0xc792ea, star: 0xc792ea, unit: 0xffc857,
+  dodeca: 0xffc857, j63: 0x5fd38a, pyr5: 0xffc857, tet: 0x5fd38a, ipyr5: 0xffc857, itet: 0x5fd38a, icleo: 0xc792ea, fpyr5: 0xb39ddb, tx: 0x4dd0e1, ty: 0x2e8b9a, bipyr: 0x9575cd, wedge: 0x4dd0e1, needle: 0xc792ea, star: 0xc792ea, unit: 0xffc857,
   // The 13s (the neighbours' copies in RD 13's blocks view, N, are dimmer)
   j11: 0x5fd38a, hasu: 0x5fd38a, idd: 0xffc857, vajra: 0xc792ea, rdCentre: 0xffc857, rd: 0x9fb4c8, rdA: 0x5fd38a, rdB: 0x4dd0e1,
   rdCentreN: 0x8a7440, rdAN: 0x3f7a57, rdBN: 0x33808a,
@@ -229,7 +229,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   // DICTO's piece names stay as they are; the classical pieces are translated.
   const PIECE = { axe: 'AXE', laxe: 'AXE', cleo: 'CLEO', lcleo: 'CLEO', fuji: 'FUJI', lfuji: 'FUJI', nfru3: 'Vajra (twist)', npyr5: 'Stupa', npyr3: 'Cleo-low',
     nfru5: 'Monkey Staff', nt1: 't1', nwedge: 'Vajra-blade', nedge: 'Sevenfold-blade', nface: 'Cleo-low 2', B1: 'Vajra (fine)', B2: 'Chatra', B3: 'Mudra',
-    B4: 'Crown Jewel', B5L: 'Diadem L', B5R: 'Diadem R', lj11: 'J11', icleo: 'Cleo-Ico', fpyr5: 'Flat pentagonal pyramid' };
+    B4: 'Crown Jewel', B5L: 'Diadem L', B5R: 'Diadem R', lj11: 'J11', icleo: 'Cleo-Ico', fpyr5: 'Flat pentagonal pyramid', tx: 'X', ty: 'Y', bipyr: 'Bipyramid' };
   const pieceName = (role, V, L) => (role === 'ncap' && V.length === 7 ? 'Shield' : PIECE[role]
     ?? t({ ico: 'solid.icosahedron', core: 'solid.icosahedron', cap: 'piece.cap', ncap: 'piece.cap', lcap: 'piece.cap', centre: 'solid.rhombicTriacontahedron', copy: 'solid.rhombicTriacontahedron' }[role] ?? role, L));
   const solidName = (k, L) => (k === 'hecatodihedron' ? 'DICTO Truncated-Icosahedral Hecatodihedron' : t(`solid.${k}`, L));

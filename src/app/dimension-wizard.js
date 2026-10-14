@@ -533,6 +533,8 @@ const K_WORLDS = [
   // Multi-shell chains (DICTO 2026-10-13): the three published nestings, #22-#24, one entry each.
   // DICTO-TIC, Transitional Icosahedral Cycles (DICTO's name, 2026-10-14; docs/PLAN-CYCLES.md): two loops and their side paths.
   { key: 'cycles', label: 'DICTO-TIC (Transitional Icosahedral Cycles)', pieces: [{ label: 'DICTO-TIC (Transitional Icosahedral Cycles)', action: 'tool:cyclesWorld' }] },
+  // Theaetetus (DICTO 2026-10-15): the Cleo core grown to the DICTO Hecatodihedron.
+  { key: 'theaetetus', label: 'Theaetetus', pieces: [{ label: 'Theaetetus', action: 'tool:theaetetusWorld' }] },
   { key: 'chains', label: 'Multi-shell chains', pieces: [{ label: 'Chain of Karma', action: 'tool:chainsWorld:karma' },
     { label: 'Spheres of Dharma', action: 'tool:chainsWorld:dharma' }, { label: 'The Bodhi Seed', action: 'tool:chainsWorld:bodhi' }] },
   // DICTO Icosahedral Octet (DICTO 2026-10-13; DISCOVERIES #21): Euclid's roofs moved to the icosahedron, as growing networks.
@@ -607,10 +609,10 @@ const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'PLATONIC', 'ARCHIMEDEAN', 'CATALAN
 // DICTO's own work, shown in DICTO's livery (silver) at the top of its app's block (DICTO 2026-10-09);
 // it still opens in its app. Lattices and worlds by key, single pieces by action, and DICTO's
 // Polyhedraverse pieces gathered from across its families.
-const DICTO_WORK = new Set(['cycles', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
+const DICTO_WORK = new Set(['cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
 const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
 // DICTO's block, findings first and tools last (copy audit, DICTO 2026-10-09).
-const DICTO_ORDER = ['chains', 'thirteens', 'octet', 'icosa', 'dodeca', 'roofFold', 'stellaJewel', 'sunstar', 'octetBuild', 'studies', 'targets', 'dictofcc', 'hex', 'shells', 'golden'];
+const DICTO_ORDER = ['theaetetus', 'chains', 'thirteens', 'octet', 'icosa', 'dodeca', 'roofFold', 'stellaJewel', 'sunstar', 'octetBuild', 'studies', 'targets', 'dictofcc', 'hex', 'shells', 'golden'];
 const dictoRank = (e) => { const i = DICTO_ORDER.indexOf(e.lat?.key); return i < 0 ? DICTO_ORDER.length : i; };
 const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['TETRAPOD_FIVE_TO', 'TETRAPOD_FOUR_RD', 'ANTONIUS', 'ICOSA_FACE_PYRAMID', 'PENTA_CLEO', 'CLEO_SPHERE_POCKET', 'DICTO_EDGE_ROOF', 'DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER', ...KIT13_ADDITION_IDS] };
 export const DICTO_PIECE_IDS = DICTO_POLY.ids;
