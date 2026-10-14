@@ -21,7 +21,7 @@ The members turn up in several places:
 - **The golden hexagon** of a construction after Odom is FUJI's base; the same construction with any extension gives every member with r < 1.
 - **The space-filling truncated tetrahedron** of Damasceno, Engel and Glotzer has the r = 1/2 member's base as its faces.
 - **In a breathing pyrochlore** the kagome hexagons are flat-ended triangles, with r equal to the breathing ratio; as a Wythoff construction it tiles space for every r.
-- **Our dictospheres**, spheres with 14 bottle ports, are divided into curved squares and curved flat-ended triangles. Keeping an even margin round every port fixes the pattern, and its flat counterpart's triangles are the cuboctahedral member, r = (√3 − 1)/2, because at that depth the cube's corners are exactly the member's apexes; we prove the two conditions are the same.
+- **The equal-depth cube–octahedron solid** has the cuboctahedral member's base, r = (√3 − 1)/2, as its eight triangles, and its cube corners are exactly that member's apexes; we prove the two conditions are the same.
 
 ---
 
@@ -29,7 +29,7 @@ The members turn up in several places:
 
 FUJI was found as a gap piece. In the Lotus seed, twelve icosahedra round a small one, the corners where three icosahedra meet are filled by a hexagonal pyramid with all six side edges 1, which we named after Mount Fuji [1]. It is not made of the Mosseri–Sadoc tiles [Papadopolos and Ogievetsky 1999; Koca et al. 2020] that make its partners AXE and CLEO.
 
-Its base had appeared before. Building cuboctahedral spheres of PET-bottle ports, we wanted sharp equilateral triangles round the ports and settled for blunted, flat-ended ones. Colouring the Lotus seed, we hoped for regular hexagons and found the same flat-ended triangles. Our DeltaZip and B1NR sculptures use rounded triangles, the curved form of the same idea.
+Its base had appeared before. Designing our dictospheres, 3D-printed spheres with 14 PET-bottle ports in a cuboctahedral arrangement, we wanted sharp equilateral triangles round the ports and settled for blunted, flat-ended ones, to keep an even margin round every port. That is where we first met the shape; the spheres themselves are not examples of the family, which is about pyramids, but they led us to the cube–octahedron solid of Section 5.4. Colouring the Lotus seed, we hoped for regular hexagons and found the same flat-ended triangles. Our DeltaZip and B1NR sculptures use rounded triangles, the curved form of the same idea.
 
 ![Figure 1](figures/fig0-dicto-work.jpg)
 
@@ -140,23 +140,17 @@ The space between the tetrahedra is filled by two kinds of truncated tetrahedra,
 
 It can be built cell by cell in the Kaleidohedra app, with a slider for the breathing ratio.
 
-### 5.4 The dictospheres
+### 5.4 The cube–octahedron solid
 
-![Figure 7](figures/fig5-dictosphere.jpg)
+![Figure 7](figures/dictosphere-solid.jpg)
 
-**Figure 7.** (a) The ideal dictosphere: each point of the sphere belongs to its nearest port. The curved squares (cyan) and curved flat-ended triangles (wisteria) meet short side to short side. (b) The flat counterpart: the solid whose 14 faces all touch the sphere, whose triangles are the cuboctahedral member r = (√3 − 1)/2.
+**Figure 7.** The cube ∩ octahedron with both sets of faces at the same distance from the centre: 6 squares (cyan) and 8 flat-ended triangles (wisteria), r = (√3 − 1)/2, meeting short side to short side.
 
-A dictosphere is a sphere. It carries 14 PET-bottle ports in a cuboctahedral arrangement: 6 on the cube axes (the squares) and 8 on the three-fold axes (the triangles). We divide its surface round the ports into squares and triangles. With ports in both, the triangles' corners crowded the neighbouring holes, so we truncated the triangles to give even space round every port. The truncated triangles meet short side to short side.
+Cut a cube by an octahedron with both sets of faces at the same distance from the centre (|x|, |y|, |z| ≤ 1 and |x| + |y| + |z| ≤ √3). The solid has 6 squares and 8 flat-ended triangles, and all 14 faces touch one inner sphere. Its triangles are exactly the **cuboctahedral member, r = (√3 − 1)/2 = 0.366**. (Equal depth is also the rule of even clearance: across an edge shared by two faces, the distances from the two face centres to the edge are equal exactly when the faces lie at the same distance from the centre.)
 
-**Even space fixes the pattern.** On a sphere, with all ports the same size, an even margin round every port means that each point of the surface belongs to its nearest port. The squares and triangles are then the regions of the sphere nearest each port. Their boundaries are arcs of great circles halfway between neighbouring ports, and the triangles come out as curved flat-ended triangles. Projected from the centre onto flat planes, the same pattern is the solid whose 14 faces all touch one inner sphere (Figure 7b): the cube ∩ octahedron with both sets of faces at the same distance. Its flat-ended triangles are exactly the **cuboctahedral member, r = (√3 − 1)/2 = 0.366**. (The same rule in the flat: across an edge shared by two faces, the clearances from the two face centres to the edge are equal exactly when the faces lie at the same distance from the centre.)
+**Why the cuboctahedral member.** Take the solid |x|, |y|, |z| ≤ 1, |x| + |y| + |z| ≤ S, and put an apex at the cube's corner (1, 1, 1) over the triangle on x + y + z = S. For 3/2 < S < 2 (where the triangles' long sides face the squares), its six side edges are all √((2 − S)² + 1), and its three long faces lie in the cube's faces. Those faces are equilateral exactly when 2(S − 1)² = (2 − S)² + 1, that is S² = 3, which is the equal-depth solid. So **equal depth and the cuboctahedral member are the same condition: at equal depth, the cube's eight corners are exactly the apexes of copies of FUJI((√3 − 1)/2), scaled by √2(√3 − 1) ≈ 1.035, standing on the eight triangles.** The cuboctahedron's member rests on the same angle: in each case a long face and the base lie in a cube plane and an octahedron plane, so L = 54.74° and r = (√3 − 1)/2.
 
-**Why the cuboctahedral member.** Take the solid |x|, |y|, |z| ≤ 1, |x| + |y| + |z| ≤ S, and put an apex at the cube's corner (1, 1, 1) over the triangle on x + y + z = S. For 3/2 < S < 2 (where the triangles' long sides face the squares), its six side edges are all √((2 − S)² + 1), and its three long faces lie in the cube's faces. Those faces are equilateral exactly when 2(S − 1)² = (2 − S)² + 1, that is S² = 3, which is the equal-depth solid. So **the even-margin rule and the cuboctahedral member are the same condition: at equal depth, the cube's eight corners are exactly the apexes of copies of FUJI((√3 − 1)/2), scaled by √2(√3 − 1) ≈ 1.035, standing on the eight triangles.** The cuboctahedron's member rests on the same angle: in each case a long face and the base lie in a cube plane and an octahedron plane, so L = 54.74° and r = (√3 − 1)/2.
-
-**The ideal and the made object.** Dictospheres are made by hand, so they are not precise enough to measure the ratio; we use the ideal one, defined by its design rule. On the sphere, its curved triangles have sides in the ratio r = 0.356 (as arcs); in its flat counterpart, r = (√3 − 1)/2 = 0.366. Our hand measurements, about 4 cm and 1.5 cm, are consistent with both.
-
-**Building with them.** The 14 port directions are the directions of a rhombic dodecahedron's 14 corners, and every edge of a rhombic dodecahedron runs along a three-fold axis. So dictospheres joined triangle port to triangle port build rhombic-dodecahedron frames, which fill space, as we build them.
-
-**The truncated octahedron** is the r = 1 member of the same cube–octahedron pattern, with regular hexagons. Every member of the flat family has the same dihedral angles (109.47° and 125.26°), but only the truncated octahedron, whose hexagons are centrally symmetric, fills space by translation (Kelvin's cell). It is to the dictosphere's pattern what the regular hexagon is to FUJI: the symmetric shape at r = 1.
+**The truncated octahedron** is the r = 1 member of the same cube–octahedron family of solids, with regular hexagons. Every member has the same dihedral angles (109.47° and 125.26°), but only the truncated octahedron, whose hexagons are centrally symmetric, fills space by translation (Kelvin's cell). It is to the equal-depth solid what the regular hexagon is to FUJI: the symmetric shape at r = 1.
 
 ### 5.5 Wheels, and the CLEO sphere
 
@@ -188,17 +182,17 @@ The base shape (the isogonal hexagon), the antiprism angles (listed for single a
 
 - the family FUJI(r) of pyramids;
 - the antiprism rule (Proposition 1) that links the family to the antiprisms, which combines the standard dihedral formula with the base-angle formula;
-- why the dictosphere's even margin gives the cuboctahedral member (Section 5.4), and the wheel bound with the impossibility of five octagonal wheels (Section 5.5);
-- as a synthesis, the identifications that tie it together: FUJI's base as the golden hexagon after Odom, the breathing pyrochlore's hexagons as the family's bases, and the dictosphere's even-margin pattern, whose flat counterpart's triangles are the cuboctahedral member.
+- that the equal-depth cube–octahedron solid has the cuboctahedral member's triangles exactly because its cube corners are that member's apexes (Section 5.4), and the wheel bound with the impossibility of five octagonal wheels (Section 5.5);
+- as a synthesis, the identifications that tie it together: FUJI's base as the golden hexagon after Odom, the breathing pyrochlore's hexagons as the family's bases, and the equal-depth cube–octahedron solid, whose triangles are the cuboctahedral member.
 
 The family gives one shape and one parameter to things found separately:
 - a gap piece in an icosahedral cluster;
 - a space-filler found by computer packing;
 - the hexagons of frustrated magnets;
-- the pattern round the ports of a sculptor's PET-bottle spheres;
+- the faces of the equal-depth cube–octahedron solid;
 - wheels of flat-ended triangles in the cuboctahedron, a sphere of twenty CLEOs, and six crossed circles that lead to the icosahedron.
 
-In each, the parameter r is set by a different symmetry: five-fold for FUJI, cubic for the dictosphere's ports, the breathing ratio for the pyrochlore.
+In each, the parameter r is set by a different symmetry: five-fold for FUJI, cubic for the cube–octahedron solid, the breathing ratio for the pyrochlore.
 
 ## Appendix: proofs
 
@@ -215,7 +209,7 @@ With R² = 1/(4(1 − c)(1 + c)), their dot product is
 
 So cos D_n = (1 − 4c)/3, the standard antiprism dihedral. The numerical check, n = 3 to 12, agrees to 10⁻¹² (study scripts and an independent review).
 
-**The dictosphere's member.** Corner A = (1, 1, 1); the triangle on x + y + z = S has corners such as (1, S − 1, 0) (after the cube cuts it) at distance √((2 − S)² + 1) from A, the same for all six. For 3/2 < S < 2, the long face A, (1, S − 1, 0), (1, 0, S − 1) lies in x = 1 and has the base edge (S − 1)√2; it is equilateral when 2(S − 1)² = (2 − S)² + 1, i.e. S² = 3.
+**The cube–octahedron solid's member.** Corner A = (1, 1, 1); the triangle on x + y + z = S has corners such as (1, S − 1, 0) (after the cube cuts it) at distance √((2 − S)² + 1) from A, the same for all six. For 3/2 < S < 2, the long face A, (1, S − 1, 0), (1, 0, S − 1) lies in x = 1 and has the base edge (S − 1)√2; it is equilateral when 2(S − 1)² = (2 − S)² + 1, i.e. S² = 3.
 
 ## Credits
 
