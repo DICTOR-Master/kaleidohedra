@@ -54,9 +54,10 @@ Both types use copies of a single shape, and the copies are part of its own spac
   the **Bain elongated dodecahedron** and the **regular-hexagon elongated dodecahedron** (on four of their faces each). The rhombic
   dodecahedron, cube, hexagonal prism and the classic elongated dodecahedron have no four faces in tetrahedral positions. The truncated
   tetrahedron is ruled out under this rule (its tiling needs tetrahedra too).
-- **Four meeting at a point** (corners of solid angle π): among the space-fillers, the **rhombic dodecahedron** (DICTO's example), the
-  truncated octahedron, the rhombohedra, the elongated dodecahedra (classic, regular-hexagon, Bain, DICTO skewed), the Bain RD, the
-  leaning square and hexagonal prisms, RD-Hemi, the target cells and the Spheroid-13 RD pieces.
+- **Four meeting at a point** (corners of solid angle π), the group without filling it with rhombic dodecahedra (DICTO: "don't fill it
+  with RDs"): one **rhombic dodecahedron** (DICTO's example), the **truncated octahedron**, the **rhombohedron**, the **elongated
+  dodecahedra** (classic, regular-hexagon, Bain, DICTO skewed) and the **leaning square and hexagonal prisms**. Left out as RD variants:
+  the Bain RD, RD-Hemi, the RD target cells, the Spheroid-13 RD pieces and the octahedron's flat stellation (an RD).
 - The **truncated octahedron is in both types**: four meet at each of its corners, and four sit round it on alternate hexagons.
 
 DICTO · dictospheres.com
