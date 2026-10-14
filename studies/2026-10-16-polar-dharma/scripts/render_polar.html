@@ -1,0 +1,33 @@
+<!doctype html><meta charset="utf-8"><title>Polar Dharma (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}#tag{position:fixed;right:14px;bottom:10px;font:600 14px system-ui;color:#5b5346}</style>
+<div id="tag">DICTO · dictospheres.com</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// The Spheres of Dharma turned inside out (polar reciprocation), one kind of piece per layer; house palette, each layer its own colour.
+(async function () {
+  const scn = location.hash.slice(1) || 'closed';
+  const J = await fetch('polar-render.json').then((r) => r.json());
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(1000, 1000); renderer.setPixelRatio(1); renderer.localClippingEnabled = true;
+  document.body.appendChild(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.8)); const sun = new THREE.DirectionalLight(0xffffff, 0.7); sun.position.set(4, 7, 5); scene.add(sun);
+  const COL = [0x4dd0e1, 0xc792ea, 0x5fd38a, 0xf08fc0, 0x9fd8ff, 0xff9a52];   // layers inside to outside; core gold
+  const clip = scn === 'cut' ? [new THREE.Plane(new THREE.Vector3(0, 0, -1), 0)] : [];
+  const add = (S, col, shift, sh) => {
+    const n = Math.hypot(...S.c) || 1, d = S.c.map((x) => (x / n) * shift);
+    const P = S.v.map((v) => v.map((x, i) => S.c[i] + (x - S.c[i]) * sh + d[i]));
+    const pos = [], line = [];
+    for (const f of S.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...P[f[0]], ...P[f[i]], ...P[f[i + 1]]); for (let i = 0; i < f.length; i++) line.push(...P[f[i]], ...P[f[(i + 1) % f.length]]); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: col, roughness: 0.5, flatShading: true, side: THREE.DoubleSide, clippingPlanes: clip, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3)); scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, clippingPlanes: clip })));
+  };
+  const sh = scn === 'closed' ? 0.995 : 0.97, step = scn === 'apart' ? 0.55 : 0;
+  add(J.core, 0xffc857, 0, sh);
+  J.layers.forEach((L, k) => { if (scn === 'inner' && k > 3) return; for (const S of L.pieces) add(S, COL[k], step * (k + 1), sh); });
+  const cam = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+  const dist = { closed: 10.5, cut: 10.5, apart: 17, inner: 5.2 }[scn];
+  const dir = scn === 'cut' ? new THREE.Vector3(0.12, 0.2, 1) : new THREE.Vector3(0.62, 0.48, 0.9);
+  cam.position.copy(dir.normalize().multiplyScalar(dist)); cam.lookAt(0, 0, 0); renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>
