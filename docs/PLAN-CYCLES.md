@@ -169,3 +169,10 @@ References: library section "Field theory" (2026-10-14).
 ## Open
 
 - The world's name (DICTO, later).
+
+## 2026-10-14 (evening): Hypsicles, Golden rectangles, Slow
+
+DICTO chose 2, 3 and 4 of four proposals. Path 6 **Hypsicles** (icosahedron → 20 Cleo-Icos opened → the dodecahedron's 12
+pyramids in the same sphere → dodecahedron; the glass insphere stands alone at the midpoint; equal inradius tested). Path 7 **Golden
+rectangles** (one, two, three rectangles, then the icosahedron's faces). **Slow** toggle for Play (0.4× speed, holds 2.6× longer).
+Both paths join the Play tour. Tests: tests/unit/cycles-hypsicles.test.mjs, tests/browser/cycles-hyp.mjs.
