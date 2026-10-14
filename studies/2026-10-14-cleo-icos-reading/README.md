@@ -105,4 +105,24 @@ reference library, then the web. Claims below are what the sources say; nothing 
   20 + 20 + 20, the octahedron as 20 Cleo-Icos + 12 half caps.
 - The FUJI family paper's section 5.7 now credits Kabai and Prodan et al. (version 3).
 
+## Round 5 (same day): the classical line, Hypsicles to Kepler
+
+- **Hypsicles, "Book XIV" of Euclid (c. 150 BC, from a lost treatise of Apollonius; one proposition credited to Aristaeus):** for the
+  dodecahedron and icosahedron inscribed in the same sphere, (Prop. 2) one circle circumscribes both the dodecahedron's pentagon and the
+  icosahedron's triangle, and the perpendiculars from the centre to their faces are equal, so their volumes are in the ratio of their
+  surfaces. The argument cuts both solids into pyramids from the centre of equal height: the icosahedron's 20 are the Cleo-Icos, the
+  dodecahedron's 12 are its pentagonal pyramids. **So the Cleo-Icos is in classical geometry, as the twin of the dodecahedron's central
+  pyramid**: same height, bases in equal circles (checked: inradius ÷ circumradius = 0.79465 for both; triangle ÷ pentagon in one
+  circle = 0.5464, which is then also the ratio of their volumes).
+- **Euclid XIII.16:** the icosahedron in a sphere, its side the irrational "minor" line; built from a pentagon in a circle, with the
+  sphere's diameter² = 5 × that circle's radius² (Heath's Euclid; Joyce's online edition).
+- **Piero della Francesca, *Libellus de quinque corporibus regularibus* (1480s), and Pacioli, *De divina proportione* (1509, with
+  Leonardo's drawings and Piero's text in Italian):** volumes and inscriptions of the regular solids; Pacioli's thirteen "effects" of
+  the divine proportion come from Euclid XIII. Whether Piero computes the icosahedron's volume by its 20 central pyramids is still to be
+  read in the Libellus (Codex Urbinas 632; facsimile, Museo Galileo).
+- **Kepler, *Mysterium cosmographicum* (1596):** nested solids by inscribed and circumscribed spheres; the dodecahedron and icosahedron
+  share the ratio 0.79465 of inradius to circumradius (duality), the same ratio as the Cleo-Icos's height to its side edge.
+
+So the line runs from Aristaeus and Apollonius through Hypsicles, Euclid XIII, Piero and Pacioli to Kepler, long before Mackay.
+
 DICTO · dictospheres.com

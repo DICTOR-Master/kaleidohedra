@@ -233,6 +233,10 @@ reference library, not in this repo.
 - A. Prodan, R. Dušić Hren, M. van Midden, H. J. P. van Midden, E. Zupanič, The equivalence between unit-cell twinning and tiling in icosahedral quasicrystals, Sci. Rep. 7 (2017), doi:10.1038/s41598-017-12669-w; arXiv:1503.00942 (prolate golden rhombohedra as distorted fcc cells, twinned round rhombic hexecontahedra).
 - L. Pauling, Apparent icosahedral symmetry is due to directed multiple twinning of cubic crystals, Nature 317 (1985) 512-514.
 
+- Hypsicles, "Book XIV" of Euclid's Elements (c. 150 BC): dodecahedron and icosahedron in the same sphere; one circle round both faces (Prop. 2, after Aristaeus); volumes in the ratio of surfaces by equal perpendiculars from the centre. ProofWiki, Book:Euclid/The Elements/Book XIV; MacTutor, Hypsicles.
+- Euclid, Elements XIII.16 (the icosahedron in a sphere), D. E. Joyce online edition, https://mathcs.clarku.edu/~djoyce/elements/bookXIII/propXIII16.html.
+- Piero della Francesca, Libellus de quinque corporibus regularibus (1480s), Codex Urbinas 632; facsimile, Museo Galileo.
+
 ### Clusters and growth
 - G. Bergman, J. L. T. Waugh, L. Pauling, The crystal structure of the metallic phase Mg32(Al, Zn)49, Acta Cryst. 10 (1957) 254–259, doi:10.1107/S0365110X57000808. *New*, link.
 - A. L. Mackay, A dense non-crystallographic packing of equal spheres, Acta Cryst. 15 (1962) 916–918, doi:10.1107/S0365110X6200239X. Library, link.
