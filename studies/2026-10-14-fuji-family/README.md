@@ -262,6 +262,25 @@ DICTO: be careful; find the parameters that define the family before building mo
   0.5176**; **k = 5 from the pentagonal pyramid J2 to r = 2 sin 6° = 0.2091**; for k ≥ 6 the long sides alone already lie flat. So the
   FUJI family is one of exactly three "flat-ended pyramid" families, matching the three regular-faced pyramids. To study.
 
+## The three flat-ended pyramid families (worked out 2026-10-14)
+
+`scripts/kfamilies.py`, `kfamilies.json`. For base 2k-gons (k = 3, 4, 5) with sides 1 and r: the base is a regular k-gon of side
+s = 1 + r / cos(π/k) with its corners cut, so the long-side base angle is **cos L = (1 + r / cos(π/k)) / (√3 tan(π/k))**
+(checked against coordinates); k = 3 gives (1 + 2r)/3.
+
+| Family | r = 0 | L at r = 0 | flat at | partner at r = 0 (L + D = 180°) |
+|---|---|---|---|---|
+| triangular (FUJI) | tetrahedron | 70.53° | r = 1 | octahedron |
+| square (octahedral) | square pyramid J1 | 54.74° | r = 2 sin 15° = 0.5176 | cuboctahedron |
+| pentagonal (icosahedral) | pentagonal pyramid J2 | 37.38° (= FUJI's δ) | r = 2 sin 6° = 0.2091 | icosidodecahedron |
+
+Face-plane members with simple forms: triangular: icosahedron 1/φ (FUJI), cuboctahedron (√3 − 1)/2, square antiprism √2 − 1,
+rhombicuboctahedron (√6 − 1)/2, n-gonal antiprisms 2 cos(π/n) − 1; square: **rhombicuboctahedron 1 − 1/√2**, icosahedron and
+pentagonal antiprism (√15/3 − 1)/√2 = 0.2058, icosidodecahedron 0.2661, rhombicosidodecahedron 0.4370; pentagonal:
+rhombicosidodecahedron 0.1420, snub dodecahedron 0.0975 and 0.1705, hexagonal-and-up antiprisms. Closed forms beyond these not
+yet sought. Pattern: each family's r = 0 member lies flat with a quasiregular solid (octahedron, cuboctahedron,
+icosidodecahedron), and each family runs from that solid's world towards the flat.
+
 ## Next
 
 1. Done: the STT's faces are FUJI(1/2)'s base (above).
