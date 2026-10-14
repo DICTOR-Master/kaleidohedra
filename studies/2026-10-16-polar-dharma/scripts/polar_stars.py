@@ -1,12 +1,14 @@
 # Polar Dharma step 5 (2026-10-16, DICTO's question): can a Kepler-Poinsot solid sit in the original's big gap, between the
 # triacontahedron (RT) and the outer dodecahedron D(phi^3)? Star solids as filled bodies (points of nonzero winding number), all
 # star-shaped from the centre. For each: the scale range [lo, hi] with RT inside the star and the star inside D(phi^3).
-import json, itertools, numpy as np
+import json, itertools, sys, numpy as np
 CL = json.load(open('data/reversed-chain.json')); C = {n: np.array(V, float) for n, V in CL}
-RT, DO, IC = C['rhombic triacontahedron'], C['dodecahedron (phi^3)'], C['icosahedron']
+IN, OUT = (sys.argv[1:3] + ['rhombic triacontahedron', 'dodecahedron (phi^3)'][len(sys.argv) - 1:])[:2]   # default: the big gap
+RT, DO, IC = C[IN], C[OUT], C['icosahedron']
+Vd0 = C['dodecahedron (phi^3)']
 phi = (1 + 5 ** .5) / 2
 Vi = IC / np.linalg.norm(IC[0])                              # unit icosahedron on the chain's 5-fold axes
-Vd = DO / np.linalg.norm(DO[0])                              # unit dodecahedron on the 3-fold axes
+Vd = Vd0 / np.linalg.norm(Vd0[0])                              # unit dodecahedron on the 3-fold axes
 def ring(V, idx, n):
     Q = V[idx]; c = Q.mean(0); a = Q[0] - c; a /= np.linalg.norm(a); b = np.cross(n, a)
     return [idx[i] for i in np.argsort(np.arctan2((Q - c) @ b, (Q - c) @ a))]
@@ -57,7 +59,7 @@ for name, (F, V) in stars().items():
     F = orient(F); dens = wind(F, np.zeros(3) + 1e-9)
     lo = max(hull_radial(RT, u) / radial(F, u, 1.0) for u in U)      # RT inside the star once scaled by lo
     hi = min(hull_radial(DO, v / np.linalg.norm(v)) / np.linalg.norm(v) for v in V)   # star corners inside D(phi^3)
-    lines.append(f'{name}: {len(F)} faces, density at the centre {dens:.3f}; fits between RT and D(phi^3) for corner radius '
+    lines.append(f'{IN} -> {OUT}, {name}: {len(F)} faces, density at the centre {dens:.3f}; fits for corner radius '
                  f'{lo:.6f} .. {hi:.6f} ' + ('YES' if lo <= hi + 1e-9 else 'NO'))
     print(lines[-1], flush=True)
-open('data/polar-stars.txt', 'w').write('\n'.join(lines) + '\n')
+open('data/polar-stars.txt' if OUT == 'dodecahedron (phi^3)' else 'data/polar-stars-inner.txt', 'w').write('\n'.join(lines) + '\n')

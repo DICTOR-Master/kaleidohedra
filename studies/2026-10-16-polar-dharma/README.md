@@ -57,3 +57,18 @@ The originals are unchanged: `reversed-chain.json`, `polar-pieces.json`, `polar-
 - Great stellated dodecahedron: it fits at exactly one size. Its 20 points are D(φ³)'s corners, and the RT touches it. `polar_gsd_exact.py` (`data/polar-gsd-exact.txt`) confirms this exactly in ℚ(√5): each of the chain's 12 icosahedron corners (which are also RT's five-fold tips) lies on 5 of the star's face planes. These 12 corners are the star's 12 valley points.
 
 The GSD's two point sets (dodecahedron points and icosahedron valleys) are classical. What the check adds is that the polar Dharma chain already contains both, as its icosahedron station and its outer dodecahedron.
+
+### Step 5b: the big gap cut around the great stellated dodecahedron (GSD)
+
+The GSD body is the chain's icosahedron plus 20 spikes; its surface is 60 triangles, each seen once from the centre. `polar_gsd_pieces.py` cuts both sides of the star by the cones over those triangles. Results, exact in ℚ(√5), in `data/polar-gsd-pieces.txt`:
+
+- RT → GSD: 60 tetrahedra T-K-a-b, all congruent. T is a star point, K a triacontahedron corner, and a, b are valley corners. Each has volume 188/3 − 28√5, and the sum minus the layer is 0.
+- GSD → D(φ³): 60 irregular pentagonal pyramids, all congruent. Each has volume 112/3 − 248/15·√5, and the sum minus the layer is 0.
+- The GSD's volume is −2320 + 1040√5, exactly 3 times the chain's icosahedron.
+- The squared ratio of star points to valleys is 3φ³/√5. Apart from the fixed √3/√5 conversion between three-fold and five-fold corner radii, the step is φ³, the same φ³ by which the cycle closes.
+
+Renders: `renders/polar-gsd-*.png` (`node shoot_polar.mjs gsd`). The `inner` view shows the star alone.
+
+### Step 5c: the inner gap (inner dodecahedron → icosidodecahedron)
+
+None of the four Kepler–Poinsot solids fit there (`data/polar-stars-inner.txt`). The Hecatodihedron (102 faces, 80 corners) does fit, but loosely: its scale can run from 0.314757 to 0.387857 of its original size, giving room ×1.2322, the same slack the dodecahedron has (`polar_heca_gap.py` → `data/polar-heca-gap.txt`). At the low end, the dodecahedron's 20 corners touch Hecatodihedron faces. At the high end, 20 Hecatodihedron corners touch the icosidodecahedron's triangles. Unlike the GSD in the big gap, no single size touches both. The same file lists the other original stations for comparison: the icosidodecahedron, dodecahedron, truncated icosahedron and RT fit, and the two icosahedra do not.

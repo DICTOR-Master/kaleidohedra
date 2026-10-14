@@ -6,12 +6,12 @@
 // The Spheres of Dharma turned inside out (polar reciprocation), one kind of piece per layer; house palette, each layer its own colour.
 (async function () {
   const scn = location.hash.slice(1) || 'closed';
-  const J = await fetch(location.search.includes('tight') ? 'polar-tight-render.json' : 'polar-render.json').then((r) => r.json());
+  const J = await fetch(location.search.includes('tight') ? 'polar-tight-render.json' : location.search.includes('gsd') ? 'polar-gsd-render.json' : 'polar-render.json').then((r) => r.json());
   const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(1000, 1000); renderer.setPixelRatio(1); renderer.localClippingEnabled = true;
   document.body.appendChild(renderer.domElement);
   const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
   scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.8)); const sun = new THREE.DirectionalLight(0xffffff, 0.7); sun.position.set(4, 7, 5); scene.add(sun);
-  const COL = [0x4dd0e1, 0xc792ea, 0x5fd38a, 0xf08fc0, 0x9fd8ff, 0xff9a52];   // layers inside to outside; core gold
+  const COL = location.search.includes('gsd') ? [0x4dd0e1, 0xc792ea, 0x5fd38a, 0xf08fc0, 0x9fd8ff, 0xff9a52, 0x9fa8da] : [0x4dd0e1, 0xc792ea, 0x5fd38a, 0xf08fc0, 0x9fd8ff, 0xff9a52];   // layers inside to outside; core gold
   const clip = scn === 'cut' ? [new THREE.Plane(new THREE.Vector3(0, 0, -1), 0)] : [];
   const add = (S, col, shift, sh) => {
     const n = Math.hypot(...S.c) || 1, d = S.c.map((x) => (x / n) * shift);
@@ -24,9 +24,9 @@
   };
   const sh = scn === 'closed' ? 0.995 : 0.97, step = scn === 'apart' ? (location.search.includes('tight') ? 0.22 : 0.55) : 0;
   add(J.core, 0xffc857, 0, sh);
-  J.layers.forEach((L, k) => { if (scn === 'inner' && k > 3) return; for (const S of L.pieces) add(S, COL[k], step * (k + 1), sh); });
+  J.layers.forEach((L, k) => { if (scn === 'inner' && k > (location.search.includes('gsd') ? 5 : 3)) return; for (const S of L.pieces) add(S, COL[k], step * (k + 1), sh); });
   const cam = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
-  const dist = (location.search.includes('tight') ? { closed: 5.8, cut: 5.8, apart: 9, inner: 5.2 } : { closed: 10.5, cut: 10.5, apart: 17, inner: 5.2 })[scn];
+  const dist = (location.search.includes('tight') ? { closed: 5.8, cut: 5.8, apart: 9, inner: 5.2 } : location.search.includes('gsd') ? { closed: 10.5, cut: 10.5, apart: 17, inner: 9 } : { closed: 10.5, cut: 10.5, apart: 17, inner: 5.2 })[scn];
   const dir = scn === 'cut' ? new THREE.Vector3(0.12, 0.2, 1) : new THREE.Vector3(0.62, 0.48, 0.9);
   cam.position.copy(dir.normalize().multiplyScalar(dist)); cam.lookAt(0, 0, 0); renderer.render(scene, cam); document.title = 'ready';
 })();
