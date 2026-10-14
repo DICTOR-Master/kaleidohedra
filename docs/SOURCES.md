@@ -215,6 +215,12 @@ reference library, not in this repo.
 - I. Hafner, A. Komatar, A Dissection of a Prolate Golden Rhombohedron, Wolfram Demonstrations Project (2008), into smaller golden rhombohedra (from the search summary; page needs JavaScript), https://demonstrations.wolfram.com/ADissectionOfAProlateGoldenRhombohedron/.
 - G. Odom, J. van de Craats, Elementary Problem E3007, Amer. Math. Monthly 90 (1983) 482; solution 93 (1986) 572 (Odom's golden ratio from two side midpoints of an equilateral triangle and the circumcircle).
 
+- S. Kabai, Twenty Tetrahedra in Icosahedral Cluster, Wolfram Demonstrations Project (July 2014), https://demonstrations.wolfram.com/TwentyTetrahedraInIcosahedralCluster/ (the icosahedron's 20 central pyramids called "golden tetrahedra"; Cleo-Icos reading study 2026-10-14).
+- F. Fang, K. Irwin, J. Kovacs, G. Sadler, Cabinet of curiosities: the interesting geometry of the angle β = arccos((3φ − 1)/4), arXiv:1304.1771 (2013).
+- F. Fang, J. Kovacs, G. Sadler, K. Irwin, An icosahedral quasicrystal as a packing of regular tetrahedra, arXiv:1311.3994 (2013).
+- R. Mosseri, J.-F. Sadoc, Geometrical frustration and defects in condensed matter systems, C. R. Physique 15 (2014), doi:10.1016/j.crhy.2013.09.006.
+- G. Tarjus, S. A. Kivelson, Z. Nussinov, P. Viot, The frustration-based approach of supercooled liquids and the glass transition, arXiv:cond-mat/0509127 (2005).
+
 ### Clusters and growth
 - G. Bergman, J. L. T. Waugh, L. Pauling, The crystal structure of the metallic phase Mg32(Al, Zn)49, Acta Cryst. 10 (1957) 254–259, doi:10.1107/S0365110X57000808. *New*, link.
 - A. L. Mackay, A dense non-crystallographic packing of equal spheres, Acta Cryst. 15 (1962) 916–918, doi:10.1107/S0365110X6200239X. Library, link.
