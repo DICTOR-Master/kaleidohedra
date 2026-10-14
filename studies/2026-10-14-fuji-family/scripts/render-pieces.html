@@ -18,14 +18,24 @@ window.show = (name, dir, up, fixR) => {
   if (current) scene.remove(current);
   const P = DATA[name]; const c = P.v.reduce((a, v) => a.map((x, i) => x + v[i] / P.v.length), [0, 0, 0]);
   const V = P.v.map(v => v.map((x, i) => x - c[i]));
-  const g = new THREE.Group(), pos = [], col = [], ep = [], cc = new THREE.Color();
-  P.f.forEach((f, fi) => { cc.setHex(COL[P.t[fi]] ?? 0xcccccc);
-    for (let i = 1; i + 1 < f.length; i++) for (const k of [f[0], f[i], f[i + 1]]) { pos.push(...V[k]); col.push(cc.r, cc.g, cc.b); }
-    for (let i = 0; i < f.length; i++) ep.push(...V[f[i]], ...V[f[(i + 1) % f.length]]); });
-  const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); geo.computeVertexNormals();
-  const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(ep, 3));
-  g.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: true, side: THREE.DoubleSide, roughness: .8, metalness: 0, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })),
-        ...(P.f.length > 5000 ? [] : [new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x0b1220 }))]));
+  // Crystal (DICTO 2026-10-14): a tag ending in 'g' (w1g, w5g, ...) is see-through glass of that colour, its edges pale.
+  const g = new THREE.Group(), cc = new THREE.Color();
+  const buf = { solid: { pos: [], col: [], ep: [] }, glass: { pos: [], col: [], ep: [] } };
+  P.f.forEach((f, fi) => { const tag = P.t[fi] ?? ''; const isGlass = tag.length > 2 && tag.endsWith('g'); const b = isGlass ? buf.glass : buf.solid;
+    cc.setHex(COL[isGlass ? tag.slice(0, -1) : tag] ?? 0xcccccc);
+    for (let i = 1; i + 1 < f.length; i++) for (const k of [f[0], f[i], f[i + 1]]) { b.pos.push(...V[k]); b.col.push(cc.r, cc.g, cc.b); }
+    for (let i = 0; i < f.length; i++) b.ep.push(...V[f[i]], ...V[f[(i + 1) % f.length]]); });
+  for (const [key, b] of Object.entries(buf)) {
+    if (!b.pos.length) continue;
+    const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.Float32BufferAttribute(b.pos, 3)); geo.setAttribute('color', new THREE.Float32BufferAttribute(b.col, 3)); geo.computeVertexNormals();
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(b.ep, 3));
+    const glass = key === 'glass';
+    const mesh = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: true, side: THREE.DoubleSide, roughness: .8, metalness: 0,
+      transparent: glass, opacity: glass ? 0.22 : 1, depthWrite: !glass, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 }));
+    if (glass) mesh.renderOrder = 2;
+    g.add(mesh);
+    if (P.f.length <= 5000) g.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial(glass ? { color: 0xd8f0ff, transparent: true, opacity: 0.55 } : { color: 0x0b1220 })));
+  }
   scene.add(g); current = g;
   const R = fixR ?? V.reduce((m, v) => Math.max(m, Math.hypot(...v)), 0);
   const d = new THREE.Vector3(...dir).normalize(), dist = R * 1.18 / Math.sin(THREE.MathUtils.degToRad(15));
