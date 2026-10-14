@@ -34,6 +34,12 @@ await set(115); await page.waitForTimeout(600); console.log('115:', await line()
 await page.screenshot({ path: `${SH}/cycles-l2-115.png` });
 await set(237); await page.waitForTimeout(800); console.log('end:', await line()); assert.match(await line(), /φ³ larger/);
 await page.screenshot({ path: `${SH}/cycles-l2-237.png` });
+// The Lotus seed road: the same icosahedron, φ³ larger, by another route
+await page.tap('[data-cy-road="lotus"]'); await page.waitForTimeout(600);
+console.log('lotus start:', await line()); assert.match(await line(), /1 of 113 pieces · icosahedron/);
+await set(51); await page.waitForTimeout(500); assert.match(await line(), /excavated dodecahedron/);
+await set(113); await page.waitForTimeout(700); console.log('lotus end:', await line()); assert.match(await line(), /φ³ larger/);
+await page.screenshot({ path: `${SH}/cycles-l2-lotus.png` });
 const box = await page.locator('#worldcycles-panel .cy-slider').boundingBox();
 console.log('slider', Math.round(box.width), 'x', Math.round(box.height));
 // The side step: icosahedron → dual compound → dodecahedron → great stellated dodecahedron.

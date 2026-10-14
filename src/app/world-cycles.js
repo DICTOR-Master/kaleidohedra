@@ -100,9 +100,13 @@ const PACIOLI = [0, 1, 2].map((z) => { const P = ICO.filter((p) => Math.abs(p[z]
 export const GEOMETRY = { ICO, DOD, GSD_PENTS, ID_FACES, RT_FACES, DOD_PENTS, PACIOLI }; // for tests
 
 // ---- Loop 2: the Spheres of Dharma cycle movie ----
-const DHARMA = CHAINS_DATA.dharma.views.cycle;
-const FILM = filmOrder(DHARMA, MOVIE.dharma.cycle);
-export const LOOP2_STATIONS = FILM.ends.filter((e) => e.name).map((e) => ({ at: e.at, key: e.name }));
+// Two roads to the same icosahedron φ³ larger (DICTO's option 1, docs/PLAN-CYCLES.md): Spheres of Dharma and the Lotus seed.
+export const ROADS = {
+  dharma: { list: CHAINS_DATA.dharma.views.cycle, named: MOVIE.dharma.cycle, build: 'tool:chainsWorld:dharma' },
+  lotus: { list: CHAINS_DATA.karma.views.lotus, named: MOVIE.karma.lotus, build: 'tool:chainsWorld:karma' },
+};
+for (const r of Object.values(ROADS)) { r.film = filmOrder(r.list, r.named); r.stations = r.film.ends.filter((e) => e.name).map((e) => ({ at: e.at, key: e.name })); }
+export const LOOP2_STATIONS = ROADS.dharma.stations;
 const solidName = (k, L) => (k === 'hecatodihedron' ? 'DICTO Truncated-Icosahedral Hecatodihedron' : ['dualCompound', 'cleoIcos20', 'plusAntonius'].includes(k) ? t(`cy.${k}`, L) : t(`solid.${k}`, L));
 
 export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = () => {}, openAction = () => {} }) {
@@ -110,14 +114,16 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
   const group = new THREE.Group();
   group.visible = false;
   scene.add(group);
-  const view = { loop: 1, t1: 0, t2: 1, t3: 0, t4: 0, pacioli: false };
+  const view = { loop: 1, t1: 0, t2: 1, t3: 0, t4: 0, pacioli: false, road: 'dharma' };
+  const road = () => ROADS[view.road];
   try {
     const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if ([1, 2, 3, 4].includes(d?.loop)) view.loop = d.loop;
     if (Number.isFinite(d?.t4)) view.t4 = Math.max(0, Math.min(2, d.t4));
     view.pacioli = d?.pacioli === true;
     if (Number.isFinite(d?.t1)) view.t1 = Math.max(0, Math.min(4, d.t1));
-    if (Number.isInteger(d?.t2)) view.t2 = Math.max(1, Math.min(FILM.seq.length, d.t2));
+    if (d?.road === 'lotus') view.road = 'lotus';
+    if (Number.isInteger(d?.t2)) view.t2 = Math.max(1, Math.min(ROADS[view.road].film.seq.length, d.t2));
     if (Number.isFinite(d?.t3)) view.t3 = Math.max(0, Math.min(3, d.t3));
   } catch { /* corrupt or blocked storage: defaults */ }
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(view)); } catch { /* best-effort */ } };
@@ -179,9 +185,9 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
     }
   }
   function drawLoop2() {
-    const n = view.t2, buf = { pos: [], col: [], line: [] }, colour = new THREE.Color();
+    const n = view.t2, buf = { pos: [], col: [], line: [] }, colour = new THREE.Color(), { list, film } = road();
     for (let r = 0; r < n; r++) {
-      const [role, Vp, F] = DHARMA[FILM.seq[r]];
+      const [role, Vp, F] = list[film.seq[r]];
       colour.setHex(r === n - 1 ? ORANGE : ROLE[role] ?? 0x9fb4c8);
       for (const face of F) {
         const Q = face.map((k) => W(Vp[k]));
@@ -225,7 +231,7 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
     if (view.loop === 4) return (view.t4 > 1.02 ? 1.42 : view.t4 > 0.02 ? 1.0 : 0.62) * WS; // RHex tips at 2.028 x the kit scale
     if (view.loop !== 2) return 0.62 * WS; // every station of Loop 1 and the side step lies within the icosahedron's corners or the dodecahedron's
     let r = 0.6;
-    for (let k = 0; k < view.t2; k++) for (const p of DHARMA[FILM.seq[k]][1]) r = Math.max(r, Math.hypot(...p));
+    for (let k = 0; k < view.t2; k++) for (const p of road().list[road().film.seq[k]][1]) r = Math.max(r, Math.hypot(...p));
     return r * WS;
   };
   const fit = () => fitView([0, 0, 0], radius() * 1.15);
@@ -235,6 +241,7 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
   panel.className = 'qc-panel';
   panel.innerHTML = `
     <div class="w4d-row w4d-options"><button type="button" data-cy-loop="1"></button><button type="button" data-cy-loop="3"></button><button type="button" data-cy-loop="4"></button><button type="button" data-cy-loop="2"></button></div>
+    <div class="w4d-row w4d-options cy-roads"><button type="button" data-cy-road="dharma"></button><button type="button" data-cy-road="lotus"></button></div>
     <div class="w4d-row st-note cy-note"></div>
     <div class="w4d-row st-note cy-station"></div>
     <div class="w4d-row w4d-options"><button type="button" data-cy-pacioli></button><button type="button" data-cy-build hidden></button></div>
@@ -249,15 +256,18 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
     if (!active) return;
     const L = lang();
     panel.querySelectorAll('[data-cy-loop]').forEach((b) => { const n = Number(b.dataset.cyLoop); b.textContent = t(`cy.loop${n}`, L); b.setAttribute('aria-pressed', String(view.loop === n)); });
-    panel.querySelector('.cy-note').textContent = t(`cy.note${view.loop}`, L);
+    panel.querySelector('.cy-note').textContent = t(view.loop === 2 ? `cy.note2.${view.road}` : `cy.note${view.loop}`, L);
+    panel.querySelector('.cy-roads').hidden = view.loop !== 2;
+    panel.querySelectorAll('[data-cy-road]').forEach((b) => { b.textContent = t(`cy.road.${b.dataset.cyRoad}`, L); b.setAttribute('aria-pressed', String(view.road === b.dataset.cyRoad)); });
     slider.setAttribute('aria-label', t('cy.slider', L));
     let line, at = null;
     if (view.loop === 2) {
-      slider.min = '1'; slider.max = String(FILM.seq.length); slider.value = String(view.t2);
-      const st = [...LOOP2_STATIONS].reverse().find((s) => s.at <= view.t2);
-      const last = view.t2 === FILM.seq.length;
-      line = `${t('cy.pieces', L, { n: view.t2, total: FILM.seq.length })}${st ? ` · ${last ? t('cy.bigger', L) : solidName(st.key, L)}` : ''}`;
-      buildAction = 'tool:chainsWorld:dharma';
+      const { film, stations, build } = road(), total = film.seq.length;
+      slider.min = '1'; slider.max = String(total); slider.value = String(view.t2);
+      const st = [...stations].reverse().find((s) => s.at <= view.t2);
+      const last = view.t2 === total;
+      line = `${t('cy.pieces', L, { n: view.t2, total })}${st ? ` · ${last ? t('cy.bigger', L) : solidName(st.key, L)}` : ''}`;
+      buildAction = build;
     } else {
       const { path, i, j, f } = between(), last = path.stations.length - 1;
       slider.min = '0'; slider.max = String(last * 100); slider.value = String(Math.round(tOf() * 100));
@@ -271,7 +281,7 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
     buildBtn.hidden = !buildAction;
     const pac = panel.querySelector('[data-cy-pacioli]');
     pac.hidden = view.loop === 2; pac.textContent = t('poly.pacioli', L); pac.title = t('poly.pacioli.title', L); pac.setAttribute('aria-pressed', String(view.pacioli));
-    buildBtn.textContent = t(view.loop === 2 ? 'cy.build.dharma' : 'cy.build', L);
+    buildBtn.textContent = t(view.loop === 2 ? 'cy.build.dharma' : 'cy.build', L); // both roads are in Multi-shell chains
   }
   slider.addEventListener('input', () => {
     const v = Number(slider.value);
@@ -286,6 +296,7 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
     save(); draw(); renderPanel(); fit();
   }));
   buildBtn.addEventListener('click', () => { if (buildAction) openAction(buildAction); });
+  panel.querySelectorAll('[data-cy-road]').forEach((b) => b.addEventListener('click', () => { view.road = b.dataset.cyRoad; view.t2 = 1; save(); draw(); renderPanel(); fit(); }));
   panel.querySelector('[data-cy-pacioli]').addEventListener('click', () => { view.pacioli = !view.pacioli; save(); draw(); renderPanel(); });
   let shownLang = lang();
   onSettingsChange((st) => { if (st.language !== shownLang) { shownLang = st.language; if (active) renderPanel(); } });
@@ -309,7 +320,7 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
     clear() { view.t1 = 0; view.t2 = 1; view.t3 = 0; view.t4 = 0; save(); draw(); renderPanel(); },
     snapshot: () => ({ version: 1, ...view }),
     restore(j) {
-      view.loop = [1, 2, 3, 4].includes(j?.loop) ? j.loop : 1; if (Number.isFinite(j?.t4)) view.t4 = j.t4;
+      view.loop = [1, 2, 3, 4].includes(j?.loop) ? j.loop : 1; if (Number.isFinite(j?.t4)) view.t4 = j.t4; view.road = j?.road === 'lotus' ? 'lotus' : 'dharma';
       if (Number.isFinite(j?.t1)) view.t1 = j.t1; if (Number.isInteger(j?.t2)) view.t2 = j.t2; if (Number.isFinite(j?.t3)) view.t3 = j.t3;
       save(); draw(); renderPanel();
     },
