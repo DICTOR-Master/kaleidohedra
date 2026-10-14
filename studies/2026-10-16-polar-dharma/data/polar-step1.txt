@@ -1,0 +1,16 @@
+Reversed chain (polar in the unit sphere), inside to outside:
+  0. dodecahedron: 20 corners, 12 faces, radius 0.505406-0.505406, shortest distance 0.360680, volume 7120 - 3184√5 = 0.359560
+  1. icosidodecahedron: 30 corners, 32 faces, radius 0.666667-0.666667, shortest distance 0.412023, volume -20/81 + 44/81√5 = 0.967741
+  2. dual of the Hecatodihedron: 102 corners, 80 faces, radius 0.666667-0.695199, shortest distance 0.197124, volume -1000/1539 + 1240/1539√5 = 1.151868
+  3. pentakis dodecahedron: 32 corners, 60 faces, radius 0.695199-0.713644, shortest distance 0.451768, volume -1040/171 + 560/171√5 = 1.240924
+  4. icosahedron: 12 corners, 20 faces, radius 0.898056-0.898056, shortest distance 0.944272, volume -2320/3 + 1040/3√5 = 1.836899
+  5. rhombic triacontahedron: 32 corners, 30 faces, radius 0.817763-0.898056, shortest distance 0.555029, volume -6080 + 2720√5 = 2.104899
+  6. dodecahedron: 20 corners, 12 faces, radius 2.140933-2.140933, shortest distance 1.527864, volume -80 + 48√5 = 27.331263
+closure: outer dodecahedron / inner dodecahedron volume = 38 + 17√5 = 76.013156 (phi^9 = 76.013156)
+Touching (inner corners on outer faces, inner faces through outer corners), and layer volumes:
+  dodecahedron -> icosidodecahedron: inside True; 0 inner corners on outer faces; 0 outer corners on inner face planes; layer volume -576740/81 + 257948/81√5 = 0.608181
+  icosidodecahedron -> dual of the Hecatodihedron: inside True; 30 inner corners on outer faces; 90 outer corners on inner face planes; layer volume -620/1539 + 404/1539√5 = 0.184127
+  dual of the Hecatodihedron -> pentakis dodecahedron: inside True; 102 inner corners on outer faces; 32 outer corners on inner face planes; layer volume -440/81 + 200/81√5 = 0.089057
+  pentakis dodecahedron -> icosahedron: inside True; 20 inner corners on outer faces; 12 outer corners on inner face planes; layer volume -131200/171 + 58720/171√5 = 0.595974
+  icosahedron -> rhombic triacontahedron: inside True; 12 inner corners on outer faces; 12 outer corners on inner face planes; layer volume -15920/3 + 7120/3√5 = 0.268000
+  rhombic triacontahedron -> dodecahedron: inside True; 0 inner corners on outer faces; 20 outer corners on inner face planes; layer volume 6000 - 2672√5 = 25.226364
