@@ -165,6 +165,18 @@ The six wheels cut the icosidodecahedron into pieces with their tips at the cent
 
 Each pentagonal pyramid divides about its axis into **five congruent right-angled triangular pyramids**, each with one golden face (1, 1, 1/φ, the same as CLEO's side faces), a base triangle with sides 0.5257, 0.5257 and 1/φ (72° at the centre of the pentagon), and volume √5/60. Equilateral CLEOs themselves cannot fill the pentagonal pockets (a pentagon cannot be tiled by equilateral triangles); these five are the pocket's own CLEO-like pieces. CLEO cannot fill an icosahedron from its centre on its own: its tip angles are 36°, where 20 pieces closing a sphere need 63.4°, so twenty CLEOs cover only 29% of the directions round the centre. The pentagonal pyramids take the rest.
 
+### 5.6 Six circles and the icosahedron
+
+![Figure 8](figures/fig8-six-circles.jpg)
+
+**Figure 8.** (a) Six equal slotted rings in the planes square to the five-fold axes, seen down a five-fold axis. (b) The CLEO sphere they frame, seen the same way: 20 CLEOs in the triangular windows, 12 pentagonal pockets. (c) Faceted flat across the pentagon centres: 20 Icosahedral Cleo filling an icosahedron.
+
+How many crossed circles make an icosahedron? Four make the cuboctahedron, and four is the most that meet evenly in that way. **Six** circles, one in each plane square to a five-fold axis, cross every 36° round each circle and divide the sphere into **20 triangles and 12 pentagons**, the icosidodecahedron's pattern. The icosahedron is there, though the circles never draw its edges: its **12 corners are the centres of the 12 pentagonal windows**, and its **20 faces lie over the 20 triangular windows**. Six equal flat rings slotted together, alternately from the outside and the inside at each crossing, are all identical (one template, cut six), which is how our six-ring DeltaZip balls go together.
+
+The pieces complete the route. The triangular windows hold the 20 CLEOs pointing inwards; each pentagonal window holds five Penta-cleo (Section 5.5). Each CLEO with the three Penta-cleo on its golden sides fills one face-cone of the icosahedron, and cutting it flat across its three outer tips, the pentagon centres, leaves an **Icosahedral Cleo**: a triangular pyramid with its tip at the centre and its flat base outside, side edges 0.851 and base edge 2/√5 = 0.894. **Twenty Icosahedral Cleo fill an icosahedron exactly**, their bases its twenty faces. Six circles, then, make the icosahedron in a roundabout way: through the icosidodecahedron and the CLEO sphere.
+
+The icosahedron, filled or not, still does not fill space (its dihedral angle 138.19° leaves 41.81° gaps), and the twenty pieces alone do not either: their angles are 72° along the side edges, five of which close round a corner, and 69.09° along the base edges, which no combination of 72° and 69.09° completes to 360°. In space, icosahedral shapes need partner pieces, as AXE and FUJI are to the Lotus seed.
+
 ## 6. What is known, and what is new
 
 The base shape (the isogonal hexagon), the antiprism angles (listed for single antiprisms in the OEIS), Odom's golden hexagon, the space-filling truncated tetrahedron and breathing pyrochlores are all known, and are credited above. Searches of the literature and of our reference library (2026-10-14) did not find:
@@ -179,7 +191,7 @@ The family gives one shape and one parameter to things found separately:
 - a space-filler found by computer packing;
 - the hexagons of frustrated magnets;
 - the pattern round the ports of a sculptor's PET-bottle spheres;
-- wheels of flat-ended triangles in the cuboctahedron, and a sphere of twenty CLEOs.
+- wheels of flat-ended triangles in the cuboctahedron, a sphere of twenty CLEOs, and six crossed circles that lead to the icosahedron.
 
 In each, the parameter r is set by a different symmetry: five-fold for FUJI, cubic for the dictosphere's ports, the breathing ratio for the pyrochlore.
 
