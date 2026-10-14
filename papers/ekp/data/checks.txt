@@ -33,6 +33,18 @@ OK   face neighbours share a cube face's 4 corners, edge neighbours a cube edge 
 OK   crossings: all 6 face neighbours overlap by exactly two roofs, 2(dodecahedron - cube)/6 = 2.157378652; all 12 edge and 8 corner neighbours overlap by 0
 OK   crossings: every face crossing puts exactly 2 roof vertices on the neighbour's icosahedron, and each of a cell's 12 icosahedron vertices receives exactly one
 OK   crossings: ridges run z, x, y over the x, y, z faces, and the cell's 24 symmetries make all crossings of a kind congruent (classes 6, 8, 12)
+OK   merged surface, one site: encloses 14.472 (sampled union 14.458), no piece inside another dodecahedron
+OK   merged surface, two face neighbours: encloses 26.787 (sampled union 26.935), no piece inside another dodecahedron
+OK   merged surface, two edge neighbours: encloses 28.944 (sampled union 29.035), no piece inside another dodecahedron
+OK   merged surface, a 2x2x2 block: encloses 89.889 (sampled union 89.959), no piece inside another dodecahedron
+OK   merged surface, an L of four: encloses 51.416 (sampled union 51.390), no piece inside another dodecahedron
+OK   merged surface of one site is the whole dodecahedron
+OK   merged surface of two edge neighbours encloses exactly twice the dodecahedron (they touch, no overlap)
+OK   merged edges of one site are its 30 edges (30)
+OK   merged edges, two face neighbours: 54 edges, all creases or outline, none twice, no crease missing
+OK   merged edges, two edge neighbours: 63 edges, all creases or outline, none twice, no crease missing
+OK   merged edges, a 2x2x2 block: 197 edges, all creases or outline, none twice, no crease missing
+OK   merged surface, sheared 2x2x2 block: encloses 88.850 (sampled union 88.829); 601 edges, all creases or outline
 OK   parity colouring: all 24 m-3 operations kept, odd translations (2,0,0) swap colours, even ones (2,2,0) keep them
 OK   pattern xyz: 24 point operations kept, translations (2,2,0) (0,2,2) (2,0,2) keep it, (2,0,0) don't -> Fm-3 (No. 202)
 OK   pattern columns: 8 point operations kept, translations (2,2,0) (2,-2,0) (0,0,2) keep it, (2,0,0) (0,2,0) don't -> Cmmm (No. 65)
@@ -46,5 +58,21 @@ OK   octahedron on the 6 cube-face centres (edge sqrt2, volume 4/3): every icosa
 OK   stella octangula: two regular tetrahedra (edge 2 sqrt2) on alternate cube corners whose 8 face planes are the octahedron's; their edge midpoints are its vertices
 OK   Kepler's chain nests exactly in one cell: icosahedron in octahedron in both tetrahedra in cube in dodecahedron
 OK   symmetry: stella octangula keeps 24 of the 24, one tetrahedron 12, the octahedron 24; their edges are off the icosahedral axes
+OK   wrap order rects → ico → oct → dogstar → stella → cube → star → dodeca: rects ⊂ ico ⊂ oct ⊂ stella ⊂ cube ⊂ dodeca; ico ⊂ star ⊂ dodeca; the star crosses oct, stella and cube
+OK   wrap order: the Dogstar ⊂ stella ⊂ cube ⊂ dodecahedron and ⊂ star, and crosses the octahedron and icosahedron, so it goes just before the stella
+OK   windows: 12 rhombi (72°, edge 2/phi, long diagonal a cube edge, in the dodecahedron's own face planes), 48 triangular walls (24 + 24: sides sqrt2/phi or sqrt2/phi^2, 2/phi, sqrt2), closed, volume 12.000000000 = 12 (each roof keeps 1/phi)
+OK   stretched dodecahedron (cube-face axis): any s gives 8 regular pentagons, 4 hexagons (108 x 4, 144 x 2), 2 rectangles, volume V + s x 7.236068; squares at s = 2/phi
+OK   expanded windows at t = sqrt(7 - 4 phi) = 0.726542528: 74 faces = 12 thick rhombi + 6 golden rhombi (ratio phi, on the cube faces) + 8 equilateral triangles + 48 triangles; edges 2/phi^2, 2/phi, 2t only; closed; 80 faces at other t
+OK   windows into the icosidodecahedron: hull 12 regular pentagons + 20 equilateral triangles, edge 2/phi, vertices at radius 2; every rhombus lies in a pentagon, 3 corners on its vertices
+OK   windows into the rhombic dodecahedron: starts at the windows, keeps each cube edge, passes through 12 squares, ends exactly as the RD (12 rhombi of edge sqrt3)
+OK   windows and stellas, checkerboard: each odd cube is its stella + six carved roofs (64000 points, 0 uncovered or doubled); 6 x 0.6667 = cube - stella = 4
+OK   DICTO Jewel, five-fold: 6 five-fold axes; each face has 5 window positions (thick rhombi on its diagonals), and the cube picks exactly the 12 windows, each facing a five-fold axis
+OK   DICTO Jewels alone on the even cells (FCC) meet face to face on all 12 rhombi
+OK   Stella–Jewel Lattice point tests: each point of an odd cube is in its stella octangula or exactly one neighbouring DICTO Jewel (13824 points, 0 wrong)
+OK   Dogstar: closed, 60 triangles on the 12 face planes of a dodecahedron 1/phi^3 the cell's, edges only 2/phi^4..2/phi, volume 1.527864 = 16 - dodecahedron; with dodecahedra it fills space (the Sunstar Lattice) (8000 points, 0 wrong)
+OK   Sunstar Lattice point tests: each point of an odd cube is in its Dogstar or exactly one dodecahedron (10648 points, 0 wrong)
+OK   Dogstars in every cell: a Dogstar lies inside its cell's dodecahedron (2736 points, 0 outside), and Dogstars in neighbouring cells never overlap (0 doubled)
+OK   nested Sunstar chain: the great star's 60 faces all lie on the 1/phi^3 core's planes, and the 1/phi^3 Sunstar fits inside it with no room to grow (largest scale 1.000000000)
+OK   Dragon chain: every step touches (cube in DICTO Jewel 1.000000; stella in cube 1.000000; Dogstar in stella 1.000000; dodecahedron(1/phi^3) in Dogstar 1.000000; DICTO Jewel(1/phi^3) in dodecahedron(1/phi^3) 1.000000)
 
-48 checks, 0 failures (krp-core v0.14.0, scripts/verify-roof-fold.mjs, EKP-cell checks only)
+All checks passed (0 failures).
