@@ -36,5 +36,21 @@ await set(237); await page.waitForTimeout(800); console.log('end:', await line()
 await page.screenshot({ path: `${SH}/cycles-l2-237.png` });
 const box = await page.locator('#worldcycles-panel .cy-slider').boundingBox();
 console.log('slider', Math.round(box.width), 'x', Math.round(box.height));
+// The side step: icosahedron → dual compound → dodecahedron → great stellated dodecahedron.
+await page.tap('[data-cy-loop="3"]'); await page.waitForTimeout(600);
+for (const [v, name] of [[0, 'icosahedron'], [100, 'dual compound'], [200, 'dodecahedron'], [300, 'great stellated dodecahedron']]) {
+  await set(v); await page.waitForTimeout(500); const l = await line(); assert.ok(l.startsWith(name), `side ${v}: ${l}`);
+  await page.screenshot({ path: `${SH}/cycles-l3-${v}.png` });
+}
+await set(250); await page.waitForTimeout(300); assert.match(await line(), /keeps the 20 corners/);
+// Build: at the great stellated dodecahedron, the button opens its Polyhedraverse kit
+await set(300); await page.waitForTimeout(300);
+assert.equal(await page.isVisible('[data-cy-build]'), true, 'Build shown at a station');
+await page.tap('[data-cy-build]'); await page.waitForTimeout(1500);
+if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');
+await page.waitForTimeout(800);
+const kitRow = await page.textContent('.poly-kit-row').catch(() => '');
+console.log('build opened:', kitRow); assert.match(kitRow, /Great stellated dodecahedron/);
+await page.screenshot({ path: `${SH}/cycles-build-gsd.png` });
 console.log(errors.length ? 'ERRORS ' + errors.join(' | ') : 'no errors'); assert.equal(errors.length, 0);
 await b.close(); console.log('cycles OK');

@@ -9,7 +9,7 @@ const d = (a, b) => Math.hypot(...a.map((x, k) => x - b[k]));
 
 test('the icosahedron kits are found, and only they', () => {
   const ico = Object.keys(KITS13).filter((id) => kitIcosahedron(KITS13[id], POLYHEDRA));
-  assert.deepEqual(ico.sort(), ['cleoSphere.icosahedron', 'deshi.deshi', 'greatIcosahedron', 'icosa13.build', 'icosa13.pieces', 'icosa13.units']);
+  assert.deepEqual(ico.sort(), ['cleoSphere.icosahedron', 'deshi.deshi', 'greatIcosahedron', 'icosa13.build', 'icosa13.pieces', 'icosa13.units', 'stars.gd', 'stars.ssd']);
 });
 
 test('three golden rectangles on the 12 corners, short side an edge', () => {

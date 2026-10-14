@@ -5753,7 +5753,7 @@ async function init() {
     fitView: fitCameraTo,
     onChange: () => { if (historyRestorers.has('worldoctetbuild')) recordHistory('worldoctetbuild', octetBuildWorld.snapshot()); },
   });
-  cyclesWorld = createCyclesWorld({ scene: realScene, showHudPrompt, fitView: fitCameraTo });
+  cyclesWorld = createCyclesWorld({ scene: realScene, showHudPrompt, fitView: fitCameraTo, openAction: (action) => openFromAlmanac?.({ action, app: null }, null) });
   breathingWorld = createBreathingWorld({
     scene: realScene,
     showHudPrompt,
