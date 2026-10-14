@@ -1,4 +1,4 @@
-// The Theaetetus world (DICTO 2026-10-15) through the real UI on an iPad: opened from the DICTO wizard, its three views, the X-ray
+// The Theaetetus world (DICTO 2026-10-15) through the real UI on an iPad: opened from the DICTO wizard, its one view (102 pieces), the X-ray
 // icosahedral axes offered, Pull apart, the ?open= link; no errors. Screenshots.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
@@ -18,9 +18,9 @@ if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#
 await page.waitForTimeout(2000);
 const sel = page.locator('select.hull-select[data-select="part"]:visible').first();
 const views = await sel.evaluate((s) => [...s.options].map((o) => o.value + '=' + o.textContent));
-console.log('views:', views.join(' | ')); assert.equal(views.length, 3);
-for (const v of ['heca', 'held', 'inner']) { await sel.selectOption(v); await page.waitForTimeout(900); await page.screenshot({ path: `${SH}/theaetetus-${v}.png` }); }
-await sel.selectOption('heca'); await page.waitForTimeout(600);
+console.log('views:', views.join(' | ')); assert.equal(views.length, 1); assert.match(views[0], /^c102=102/);
+for (const v of ['c102']) { await sel.selectOption(v); await page.waitForTimeout(900); await page.screenshot({ path: `${SH}/theaetetus-${v}.png` }); }
+
 assert.equal(await page.locator('#xray-toggle').isHidden(), false, 'X-ray offered (shell world)');
 await page.tap('#xray-toggle'); await page.waitForTimeout(1200);
 const frame = await page.evaluate(() => document.getElementById('section-axis').dataset.icoFrame);
