@@ -43,4 +43,29 @@ reference library, then the web. Claims below are what the sources say; nothing 
 - Frank and Kasper (1958, 1959): the tetrahedra of Frank–Kasper phases (Z12 sites are icosahedra of near-Cleo-Icos tetrahedra).
 - Quasicrystal decorations of Ammann rhombohedra with tetrahedra (Katz, Gratias; Henley's "canonical cell tiling").
 
+## Round 2 (same day)
+
+- **Gold nanoparticles: the strongest lead.** Icosahedral multiply twinned particles (MTPs) of gold and silver are 20 single-crystal
+  fcc tetrahedra, twin-related on their faces; regular tetrahedra cannot fill the icosahedron, so the particles carry strain (about 6%
+  for the icosahedron, about 2% for the decahedron; Marks and Peng 2016 review). Yacamán, Heinemann, Yang and Poppa (J. Cryst. Growth
+  47 (1979) 187-195) found the units in gold to be "20 identical and twin-related tetrahedral units" that are "slightly deformed", whose
+  "crystal structure ... is rhombohedral". Ino (J. Phys. Soc. Jpn 21 (1966) 346) is the early work.
+  - **Our observation, consistent with that:** an fcc tetrahedron's three edges from one corner span the fcc rhombohedral cell (60°).
+    Stretched uniformly into the Cleo-Icos, those edges meet at 63.43°, so the cell becomes exactly the **prolate golden rhombohedron**,
+    the one that splits into Cleo-Icos + Antonius + Cleo-Icos. The rhombohedral angle in the 1979 paper is not in the abstract; to check
+    in the full text before any claim.
+- **Henley's canonical-cell tiling** (icosahedral quasicrystals): its edges run only along two-fold and three-fold directions (b and c
+  bonds), so its cells cannot include the Cleo-Icos, whose side edges lie on five-fold axes.
+- **The "20-group" (Sen, Aschheim, Irwin, Mathematics 5 (2017) 29) and its E8 link (Crystals 2024):** 20 *regular* tetrahedra round a
+  point, with gaps, studied for a 6D lattice; not the Cleo-Icos. Fang, Irwin, Kovacs, Sadler (Fractal Fract. 3 (2019) 48): closing those
+  gaps by rotating the regular tetrahedra (angle β).
+- **Elser–Sloane (J. Phys. A 20 (1987) 6161):** the 3D slice's "golden tetrahedron" prototile; its shape is still to be read in the
+  original (doi:10.1088/0305-4470/20/18/016).
+
+## Round 3 leads
+
+- Yacamán et al. 1979 full text: the rhombohedral angle (does it equal 63.43°?), and Yang's "rhombohedral" model of the units.
+- Mackay (1962), the Mackay icosahedron as shells of distorted tetrahedra; Nelson (1983, PRB 28, 5515) on polytetrahedral order.
+- Elser–Sloane original; Coxeter's statistical honeycomb (5.1044 tetrahedra per edge) in *Close packing and froth* (1958).
+
 DICTO · dictospheres.com

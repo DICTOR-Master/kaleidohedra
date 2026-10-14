@@ -221,6 +221,11 @@ reference library, not in this repo.
 - R. Mosseri, J.-F. Sadoc, Geometrical frustration and defects in condensed matter systems, C. R. Physique 15 (2014), doi:10.1016/j.crhy.2013.09.006.
 - G. Tarjus, S. A. Kivelson, Z. Nussinov, P. Viot, The frustration-based approach of supercooled liquids and the glass transition, arXiv:cond-mat/0509127 (2005).
 
+- M. J. Yacamán, K. Heinemann, C. Y. Yang, H. Poppa, The structure of small, vapor-deposited particles II: experimental study of particles with hexagonal profile, J. Cryst. Growth 47 (1979) 187-195 (gold icosahedra = 20 slightly deformed, rhombohedral tetrahedral units).
+- L. D. Marks, L. Peng, Nanoparticle shape, thermodynamics and kinetics, J. Phys.: Condens. Matter 28 (2016) 053001 (multiply twinned particles, strain).
+- R. Sen, R. Aschheim, K. Irwin, Emergence of an aperiodic Dirichlet space from the tetrahedral units of an icosahedral internal space, Mathematics 5 (2017) 29 (the 20-group of regular tetrahedra).
+- V. Elser, N. J. A. Sloane, A highly symmetric four-dimensional quasicrystal, J. Phys. A 20 (1987) 6161-6168, doi:10.1088/0305-4470/20/18/016.
+
 ### Clusters and growth
 - G. Bergman, J. L. T. Waugh, L. Pauling, The crystal structure of the metallic phase Mg32(Al, Zn)49, Acta Cryst. 10 (1957) 254–259, doi:10.1107/S0365110X57000808. *New*, link.
 - A. L. Mackay, A dense non-crystallographic packing of equal spheres, Acta Cryst. 15 (1962) 916–918, doi:10.1107/S0365110X6200239X. Library, link.
