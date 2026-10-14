@@ -1,0 +1,72 @@
+{
+ "cyclic": {
+  "RD rhombus, sharp corners": {
+   "rhombus_angle": 70.5288,
+   "cut_fraction": 0.333333333,
+   "spread": 2.2329249560471e-11,
+   "sides": [
+    0.333333,
+    0.57735
+   ],
+   "radius": 0.5000000000223292
+  },
+  "RD rhombus, blunt corners": {
+   "rhombus_angle": 70.5288,
+   "cyclic": "never"
+  },
+  "RD rhombus, all corners": {
+   "rhombus_angle": 70.5288,
+   "cut_fraction": 0.499899986,
+   "spread": 5.77431501826986e-05,
+   "sides": [
+    0.000173,
+    0.4999,
+    0.706965
+   ],
+   "radius": 0.43304158116748087
+  },
+  "golden rhombus, sharp corners": {
+   "rhombus_angle": 63.4349,
+   "cut_fraction": 0.447213595,
+   "spread": 7.913614208376885e-11,
+   "sides": [
+    0.447214,
+    0.525731
+   ],
+   "radius": 0.5000000000791361
+  },
+  "golden rhombus, blunt corners": {
+   "rhombus_angle": 63.4349,
+   "cyclic": "never"
+  },
+  "golden rhombus, all corners": {
+   "rhombus_angle": 63.4349,
+   "cut_fraction": 0.499899986,
+   "spread": 8.507704956295381e-05,
+   "sides": [
+    0.00019,
+    0.4999,
+    0.808855
+   ],
+   "radius": 0.47557080428295184
+  }
+ },
+ "equal_depth": {
+  "RD + cube planes (cuts the 4-valent, sharp corners)": {
+   "4-gon x6: sides [0.82843], angles [90.0]": 6,
+   "6-gon x12: sides [0.50731, 0.82843], angles [109.47, 125.26]": 12
+  },
+  "RD + octahedron planes (cuts the 3-valent, blunt corners)": {
+   "6-gon x12: sides [0.55051, 1.10102], angles [70.53, 144.74]": 12,
+   "3-gon x8: sides [1.10102], angles [60.0]": 8
+  },
+  "RT + dodecahedron planes (cuts the 5-valent, sharp corners)": {
+   "6-gon x30: sides [0.33395, 0.41279], angles [116.57, 121.72]": 30,
+   "5-gon x12: sides [0.41279], angles [108.0]": 12
+  },
+  "RT + icosahedron planes (cuts the 3-valent, blunt corners)": {
+   "6-gon x30: sides [0.35091, 0.63907], angles [63.43, 148.28]": 30,
+   "3-gon x20: sides [0.63907], angles [60.0]": 20
+  }
+ }
+}
