@@ -75,28 +75,39 @@ None of the four Kepler–Poinsot solids fit there (`data/polar-stars-inner.txt`
 
 ## Step 6: rounder solids? (2026-10-16, DICTO's question)
 
-`polar_round.py` tests the icosahedral Archimedean solids and their Catalan duals (up to 120 faces) in both gaps (`data/polar-round.txt`):
+`polar_round.py` tests the icosahedral Archimedean solids and their Catalan duals (up to 120 faces) in both gaps; the results are in `data/polar-round.txt`. Each coordinate list is now checked against the chain's 5-fold axes. The first run had most of the solids in the mirror golden frame, which gave wrong numbers; it was corrected the same day.
 
-- **Big gap, inside the great stellated dodecahedron, around RT:** none fit. RT's 12 tips sit exactly in the star's 12 valleys, where the star pinches inward, so any rounder solid that contains RT pushes out past the valleys. Outside the star, any convex solid that contains it also contains its 20 points, so only D(φ³) itself fits there.
-- **Inner gap, inside the icosidodecahedron, around the dodecahedron or around the Hecatodihedron at its touching size:** all fit except the truncated dodecahedron, but each one floats (none is locked). The room for each is:
-  - deltoidal hexecontahedron (60 faces): ×1.142
-  - disdyakis triacontahedron (120 faces): ×1.142
-  - rhombicosidodecahedron (62 faces, roundest, in/circ 0.925): ×1.059
-  - truncated icosidodecahedron (62 faces): ×1.044
-  - others as listed in the data file
-
-  The room around the Hecatodihedron is the same as around the dodecahedron, except for the pentakis dodecahedron, RT and ID.
-
-(RT shows as NO in the big gap only because of sampling at its own touching points. It is the trivially locked case.)
+- **Big gap, inside the great stellated dodecahedron, around RT:** only RT itself fits, and it locks (this also serves as a sanity check). RT's 12 tips sit in the star's 12 valleys, so anything rounder pushes out past them.
+- **Inner gap, inside ID:** everything fits except the triakis icosahedron, but every fit floats. The room for each:
+  - truncated icosidodecahedron: ×1.196
+  - rhombicosidodecahedron: ×1.172
+  - pentakis dodecahedron: ×1.152
+  - truncated icosahedron: ×1.093
+  - deltoidal hexecontahedron: ×1.074
+  - disdyakis triacontahedron: ×1.053
+  - (the rest are in the data file)
 
 ## Step 7: a dual pair instead of the Hecatodihedron? (2026-10-16, DICTO's question)
 
-The test is the chain D ⊂ s1·X ⊂ s2·Y ⊂ ID, where X and Y are a dual pair. A pair locks when all three contacts hold at once (D touches X, X touches Y, Y touches ID). That happens when slack = 1. Results are in `polar_dual_pair.py` and `data/polar-dual-pair.txt`.
+The test is the chain D ⊂ s1·X ⊂ s2·Y ⊂ ID; a pair locks when slack = 1. Results are in `polar_dual_pair.py` and `data/polar-dual-pair.txt`. No pair locks. These fit:
 
-- No pair locks.
-- Three pairs fit, with room to spare:
-  - truncated icosidodecahedron inside disdyakis triacontahedron: ×1.015, the tightest fit;
-  - rhombicosidodecahedron inside deltoidal hexecontahedron: ×1.039;
-  - pentakis dodecahedron inside truncated icosahedron: ×1.093.
-- The nearest miss is the deltoidal hexecontahedron inside the rhombicosidodecahedron, at 0.9956, short by 0.4%.
-- Every other pair and order is too big for the gap.
+| Inner solid | Outer solid | Slack |
+|---|---|---|
+| rhombicosidodecahedron | deltoidal hexecontahedron | 1.0022 (nearest to locked, 0.2%) |
+| RT | ID | 1.022 |
+| disdyakis triacontahedron | truncated icosidodecahedron | 1.052 |
+| deltoidal hexecontahedron | rhombicosidodecahedron | 1.074 |
+| pentakis dodecahedron | truncated icosahedron | 1.093 |
+
+The truncated icosidodecahedron does not fit inside its dual (slack 0.980). As DICTO noted, in the reversed chain the pair goes in reverse order.
+
+## Step 8: the truncated icosidodecahedron pair in the inner gap (DICTO's choice)
+
+`polar_pair.py` builds the chain D ⊂ DT ⊂ TID ⊂ ID ⊂ … The disdyakis triacontahedron (DT) touches the inner dodecahedron, and the truncated icosidodecahedron (TID) touches ID. In fact the TID's 12 decagons lie exactly in ID's pentagon planes. The play of ×1.052 sits between the pair. The cone cut (`data/polar-pair-pieces.txt`, float) gives:
+
+- D → DT: 12 pieces of one kind (11 corners, 15 triangles and a pentagon).
+- DT → TID: 120 congruent pieces. They are one symmetry orbit, with volumes equal to 3e-11. The script's shape key reports 103 kinds, but that is noise.
+- TID → ID: 50 caps of two kinds, on the 30 squares and 20 hexagons.
+- Each layer's sum equals the layer volume.
+
+The outer layers are unchanged. Renders: `renders/polar-pair-*.png` (`node shoot_polar.mjs pair`). None of this is exact yet.

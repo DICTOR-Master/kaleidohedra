@@ -37,8 +37,16 @@ def dual(V):
 CAT = {'pentakis dodecahedron': 'truncated icosahedron', 'triakis icosahedron': 'truncated dodecahedron',
        'deltoidal hexecontahedron': 'rhombicosidodecahedron', 'disdyakis triacontahedron': 'truncated icosidodecahedron',
        'rhombic triacontahedron': 'icosidodecahedron'}
-SOL = {k: cyc(v) @ SW for k, v in ARCH.items()}
+from scipy.spatial.transform import Rotation as _R
+_a = C['icosahedron'][0] / np.linalg.norm(C['icosahedron'][0]); R5 = _R.from_rotvec(_a * 2 * np.pi / 5).as_matrix()
+def sym(V): W = V @ R5.T; return all(np.min(np.linalg.norm(V - w, axis=1)) < 1e-9 * np.linalg.norm(V, axis=1).max() for w in W)
+SOL = {}
+for k, v in ARCH.items():                                   # each coordinate list may be in either golden frame: keep the one
+    V = cyc(v) @ SW                                         # that has the chain's 5-fold axes (checked)
+    V = V if sym(V) else V[:, [1, 0, 2]]
+    assert sym(V), k; SOL[k] = V
 SOL.update({k: dual(SOL[a]) for k, a in CAT.items()})
+for k, V in SOL.items(): assert sym(V), k
 for k, V in SOL.items(): assert len(ConvexHull(V).vertices) == len(V), k
 def rad(V, u):
     e = ConvexHull(V).equations; nu = e[:, :3] @ u; m = nu > 1e-12; return np.min(-e[m, 3] / nu[m])
