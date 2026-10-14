@@ -237,6 +237,10 @@ reference library, not in this repo.
 - Euclid, Elements XIII.16 (the icosahedron in a sphere), D. E. Joyce online edition, https://mathcs.clarku.edu/~djoyce/elements/bookXIII/propXIII16.html.
 - Piero della Francesca, Libellus de quinque corporibus regularibus (1480s), Codex Urbinas 632; facsimile, Museo Galileo.
 
+- Twenty-sided die (icosahedron) with Greek letters, Ptolemaic–Roman Egypt, 2nd c. BC–4th c. AD, Metropolitan Museum of Art 551072, https://www.metmuseum.org/art/collection/search/551072.
+- R. Sarhangi, Illustrating Abu al-Wafa' Buzjani: flat images, spherical constructions, Iranian Studies; and Bridges 2006, https://archive.bridgesmathart.org/2006/bridges2006-551.html.
+- Moscow Mathematical Papyrus (c. 1850 BC), problem 14 (frustum volume); see arXiv:2207.04427 on the two Egyptian pyramid volume formulas.
+
 ### Clusters and growth
 - G. Bergman, J. L. T. Waugh, L. Pauling, The crystal structure of the metallic phase Mg32(Al, Zn)49, Acta Cryst. 10 (1957) 254–259, doi:10.1107/S0365110X57000808. *New*, link.
 - A. L. Mackay, A dense non-crystallographic packing of equal spheres, Acta Cryst. 15 (1962) 916–918, doi:10.1107/S0365110X6200239X. Library, link.

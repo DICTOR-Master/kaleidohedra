@@ -125,4 +125,22 @@ reference library, then the web. Claims below are what the sources say; nothing 
 
 So the line runs from Aristaeus and Apollonius through Hypsicles, Euclid XIII, Piero and Pacioli to Kepler, long before Mackay.
 
+## Round 6 (same day): Egypt, Babylonia, Persia
+
+None of these sources shows the Cleo-Icos itself; they show the tools and the solid it comes from.
+
+- **Egypt:** the Moscow Mathematical Papyrus (c. 1850 BC), problem 14, gives the correct volume of a truncated square pyramid, the only
+  ancient example; the pyramid-volume rule (a third of base × height) is what later lets Hypsicles compare solids by their central
+  pyramids. **Icosahedral dice** survive from Ptolemaic and Roman Egypt (2nd century BC to 4th century AD; Metropolitan Museum, serpentinite,
+  Greek letters on the 20 faces), and one from Dakhleh Oasis carries the names of Egyptian gods in Demotic on its faces.
+- **Babylonia:** volumes of truncated pyramids appear on tablets, one correct and others with a wrong averaging rule; no Babylonian text
+  gives a pyramid volume explicitly, and none shows the regular solids (Neugebauer-style surveys; Wikipedia, History of geometry).
+- **Greece:** the octahedron and icosahedron are credited to Theaetetus, all five solids investigated by him (Heath).
+- **Persia:** Abū al-Wafāʾ al-Būzjānī (10th century), *On the geometric constructions necessary for the craftsman*, constructs spherical
+  polyhedra on a sphere for craftsmen; Sarhangi (Iranian Studies; Bridges 2006) finds his spherical dodecahedron exact and his spherical
+  icosahedron construction flawed.
+
+So the oldest layer is the method (volumes by pyramids, Egypt), the icosahedron as an object (Egyptian dice, Theaetetus), and its
+construction on the sphere (Būzjānī); the Cleo-Icos as a named piece first appears with Hypsicles' central pyramids.
+
 DICTO · dictospheres.com
