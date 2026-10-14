@@ -91,4 +91,18 @@ reference library, then the web. Claims below are what the sources say; nothing 
   + 12 half caps. The rhombohedral description of the units in gold (1979) is suggestive: if the units are strained into the Cleo-Icos
   shape, their cell is the golden rhombohedron (63.43°). Their published angle is still to be read in the full text.
 
+## Round 4 (same day): the rhombohedron link is partly known
+
+- **Kabai (Wolfram Demonstrations, 2014):** "a golden tetrahedron is the tetrahedral part of a golden rhombohedron", and 20 of them make
+  the regular icosahedron. So the Cleo-Icos as the prolate golden rhombohedron's corner is **known**.
+- **Prodan, Dušić Hren, van Midden, van Midden, Zupanič (Sci. Rep. 7, 2017; arXiv 1503.00942):** icosahedral quasicrystals described by
+  cyclic twinning of primitive prolate golden rhombohedra (63.43°), each a distorted face-centred cubic cell, grouped round multiply
+  twinned rhombic hexecontahedra. No tetrahedra, no antiprism in the text (searched). So the fcc → golden rhombohedron link is
+  **known** (theirs), and agrees with the "rhombohedral" gold particles of 1979.
+- **Pauling (Nature 317, 1985):** quasicrystals as multiple twins of a large cubic cell (20 twins later, PNAS 1990); refuted for Al–Mn
+  by NMR (Nature 326, 1987). Historical context only.
+- **Still not found anywhere:** Antonius (the middle of the rhombohedron), the Cleo-Icos + Antonius space-filling pair, RHex as
+  20 + 20 + 20, the octahedron as 20 Cleo-Icos + 12 half caps.
+- The FUJI family paper's section 5.7 now credits Kabai and Prodan et al. (version 3).
+
 DICTO · dictospheres.com

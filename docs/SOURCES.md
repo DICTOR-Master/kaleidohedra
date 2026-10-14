@@ -230,6 +230,9 @@ reference library, not in this repo.
 - C. Y. Yang, Crystallography of decahedral and icosahedral particles I: geometry of twinning, J. Cryst. Growth 47 (1979) 274-282, doi:10.1016/0022-0248(79)90252-5 (the icosahedron as a multiply twinned rhombohedral crystal).
 - L. D. Marks, Surface structure and energetics of multiply twinned particles, Phil. Mag. A 49 (1984) 81-93 (Ino's homogeneous and inhomogeneous strain models reviewed).
 
+- A. Prodan, R. Dušić Hren, M. van Midden, H. J. P. van Midden, E. Zupanič, The equivalence between unit-cell twinning and tiling in icosahedral quasicrystals, Sci. Rep. 7 (2017), doi:10.1038/s41598-017-12669-w; arXiv:1503.00942 (prolate golden rhombohedra as distorted fcc cells, twinned round rhombic hexecontahedra).
+- L. Pauling, Apparent icosahedral symmetry is due to directed multiple twinning of cubic crystals, Nature 317 (1985) 512-514.
+
 ### Clusters and growth
 - G. Bergman, J. L. T. Waugh, L. Pauling, The crystal structure of the metallic phase Mg32(Al, Zn)49, Acta Cryst. 10 (1957) 254–259, doi:10.1107/S0365110X57000808. *New*, link.
 - A. L. Mackay, A dense non-crystallographic packing of equal spheres, Acta Cryst. 15 (1962) 916–918, doi:10.1107/S0365110X6200239X. Library, link.
