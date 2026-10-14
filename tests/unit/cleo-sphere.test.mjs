@@ -23,3 +23,9 @@ test('Penta-cleo is a fifth of a pentagonal pocket', () => {
   assert.ok(Math.abs(5 * volume(POLYHEDRA.PENTA_CLEO) - volume(POLYHEDRA.CLEO_SPHERE_POCKET)) < 1e-9);
   assert.equal(POLYHEDRA.PENTA_CLEO.name ?? 'Penta-cleo', POLYHEDRA.PENTA_CLEO.name ?? 'Penta-cleo');
 });
+test('the faceted bases: 20 face pyramids fill an icosahedron of edge 2/sqrt5', () => {
+  const kit = KITS13['cleoSphere.icosahedron']; assert.equal(kit.entries.length, 20);
+  const a = 2 / Math.sqrt(5), ico = (5 * (3 + Math.sqrt(5)) / 12) * a ** 3;
+  const sum = kit.entries.reduce((s, e) => s + volume(POLYHEDRA[e.shape]), 0);
+  assert.ok(Math.abs(sum - ico) < 1e-6, `${sum} vs ${ico}`);
+});

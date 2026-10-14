@@ -10,7 +10,7 @@ await page.waitForSelector('.dim-wizard-overlay.open');
 if (!(await page.locator('[data-family="DICTO_PIECES"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
 const fam = page.locator('[data-family="DICTO_PIECES"]').first(); await fam.scrollIntoViewIfNeeded(); await fam.tap(); await page.waitForTimeout(800);
 const kits = await page.evaluate(() => [...document.querySelectorAll('[data-section="kits-cleo"] [data-kit]')].map((e) => e.dataset.kit));
-console.log('CLEO sphere kits:', kits); assert.deepEqual(kits.sort(), ['cleoSphere', 'cleoSphere.allCleo', 'cleoSphere.domed', 'cleoSphere.faceted']);
+console.log('CLEO sphere kits:', kits); assert.deepEqual(kits.sort(), ['cleoSphere', 'cleoSphere.allCleo', 'cleoSphere.domed', 'cleoSphere.faceted', 'cleoSphere.icosahedron']);
 const html = await page.evaluate(() => document.querySelector('.dim-wizard-body').textContent);
 assert.ok(/Penta-cleo/.test(html), 'Penta-cleo listed');
 const k = page.locator('[data-kit="cleoSphere.domed"]').first(); await k.scrollIntoViewIfNeeded(); await k.tap(); await page.waitForTimeout(1500);
