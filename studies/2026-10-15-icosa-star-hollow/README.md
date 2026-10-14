@@ -59,3 +59,9 @@ face-sharing pairs: Cleo-Ico + triangular pyramid (20, a symmetric triangular bi
 1/φ, 0.9511, 0.9763, 1), Cleo-Ico + one X (60 options, breaks symmetry), t1 + frustum (24 options, not enough t1 for all). DICTO chose the
 bipyramids: 215 pieces; the hull is the Hecatodihedron, 102 faces (60 triangles, 30 rhombi, 12 pentagons), 80 corners; volumes agree to
 1e-4 (data rounding). Renders `renders/heca-*.jpg`.
+
+**Down to 102 pieces? (DICTO 2026-10-15; `scripts/f102.py`):** the pieces come in symmetry sets of 1, 12, 20, 30 and 60. With the core split
+into its 20 Cleo-Icos, exactly one grouping reaches the Hecatodihedron's 102: 20 (inner Cleo-Ico + its 3 Y) + 20 (bipyramid + its 3 X) +
+20 caps + 12 (flat pentagonal pyramid + the frustum on its axis) + 30 t1 = 102. The count works, but none of the three fused kinds is
+convex: inner Cleo-Ico + 3 Y, bipyramid + 3 X, flat pyramid + frustum (also bipyramid + cap) all have dents. A set of 12 + 30 + 60 is
+impossible while the 20 bipyramids stay whole (20 does not divide into sets of 12, 30 or 60).
