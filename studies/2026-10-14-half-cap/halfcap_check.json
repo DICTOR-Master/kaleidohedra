@@ -1,0 +1,51 @@
+{
+ "n_cleo": 20,
+ "n_half": 12,
+ "vol_cleo": 0.10908474953124563,
+ "phi2_24": 0.10908474953124563,
+ "vol_half": 0.06741808286457895,
+ "phi_24": 0.06741808286457895,
+ "vol_sum": 2.990711984999863,
+ "vol_oct": 2.9907119849998596,
+ "all_half_vols_equal": true,
+ "half_cap_edges_len_dihedral": {
+  "AB": [
+   1.0,
+   110.9052
+  ],
+  "AT": [
+   0.707107,
+   54.7356
+  ],
+  "AC": [
+   1.0,
+   41.8103
+  ],
+  "BT": [
+   0.707107,
+   54.7356
+  ],
+  "BC": [
+   1.0,
+   41.8103
+  ],
+  "TC": [
+   1.144123,
+   109.4712
+  ]
+ },
+ "theta_I_deg": 138.1896851042214,
+ "alpha_deg": 54.735610317245346,
+ "checks_deg": {
+  "AB_eq_180_minus_thI_over2": 110.9051574478893,
+  "AC_eq_180_minus_thI": 41.81031489577859,
+  "TC_eq_2alpha": 109.47122063449069
+ },
+ "samples": 66577,
+ "covered_exactly_once": 66577,
+ "uncovered": 0,
+ "overlap": 0,
+ "octet_tet_volume": 0.7476779962499647,
+ "five_cleo_three_half": 0.747677996249965,
+ "pslq_pi_thetaI_alpha_maxcoeff_1e6": "None"
+}
