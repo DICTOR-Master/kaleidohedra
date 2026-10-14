@@ -51,6 +51,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 25 | The DICTO Spheroid-13 RD: the rhombic dodecahedron's 13 (a centre and its 12 face neighbours) fills space by translation alone; reshaped with flat faces, kept keyed, a true rhombic dodecahedron at its centre, the block reaches roundness 0.707 (thickness 0.15; the lattice's best single tile 0.748) | DICTO (the Hexa question, the rounded keyed quality, the true RD centre, the thicknesses, the name) | study checks; 40 wide starts | **tiling known**: the A3 radius-one perfect code (Kovačević and Tan 2018; x1 + 3x2 + 9x3 = 0 mod 13 in Kovačević 2026; Singer 1938); the rounded keyed block **not found** | 2026-10-13 (Zenodo 10.5281/zenodo.23332821) |
 | 26 | DICTO ATOM-13×13: thirteen twelve-around-one clusters side by side, six golden (Icosa-13, DESHI, Dodeca-13, UNITY/VENUS, DICTO-Star, Bodhi seed) and seven periodic (RD 13 / Spheroid-13 RD, DICTO skewed RD, Bain RD, Bilinski, regular-hexagon ED, truncated octahedron 4 + 5 + 4, DICTO Jewel), with 24 buildable kits; the seven periodic blocks are one tiling in seven shapes | DICTO (the members, names, the TO's 4 + 5 + 4 with its windows, the gold centre, the title) | kit and tiling checks | **the tiling known** (A3 perfect code, Kovačević–Tan 2018, Singer 1938); the thirteen together, the kits, the TO and Jewel blocks **not found** | 2026-10-13 (Zenodo 10.5281/zenodo.23333183) |
 | 27 | Capturing the In-betweens: the in-between stages of the Chain of Karma, Spheres of Dharma and Bodhi Seed taken as fused solids (the transitional shells); icosahedron + 20 CLEO is the great stellated dodecahedron, + 30 AXE the excavated dodecahedron (all 32 corners kept), + 12 caps the dodecahedron; the Bodhi centre + 60 Vajra (fine) is the rhombic hexecontahedron; Spheres of Dharma stage 7 is the convex DICTO Truncated-Icosahedral Hecatodihedron (102 faces: 12 pentagons, 30 rhombi, 60 triangles; 80 corners; see #28); 45 convex partial stages; Dharma piece names Stupa and Monkey Staff | DICTO (the observation in the app, the transitional-shell idea, the names) | 25 identification checks; nets checked | **the named solids known** (Kepler 1619; Coxeter et al. 1938; Unkelbach 1940); the routes through them built from DICTO's pieces, and the Hecatodihedron, **not found** in the catalogues searched | 2026-10-14 (Zenodo 10.5281/zenodo.23345502) |
+| 28 | The DICTO Truncated-Icosahedral Hecatodihedron: the truncated icosahedron with a Shield on each hexagon, at the height where the triangles of neighbouring Shields lie flat as rhombi; convex, 102 faces (12 regular pentagons, 30 rhombi, 60 triangles), 80 corners, 180 edges, only two edge angles; its 30 rhombi and 60 triangles touch one sphere, its 12 pentagons lie a little inside | DICTO (Spheres of Dharma stage 7; the name) | papers/tih/data/tih_check.py, from Polyhedraverse's TRANS_DHARMA_80 | **not found** (Conway's k6tI has 132 faces; this flattened form not found in the catalogues searched) | 2026-10-14 |
 
 Known results the apps show (kept here, with their numbers, as checks; not DICTO's findings; see the section at the end):
 
@@ -898,6 +899,26 @@ pieces. Names by DICTO.*
   Demonstration "Cluster of 20 Icosahedra" (in the vein of Kabai); Robert Austin's 2014 model overlaps whole
   icosahedra with dodecahedra; the Dogstar and its honeycomb are Hart's (1996). The King of Pentacles, the
   closed Stella-Corona and its network are DICTO's.
+
+## 28. The DICTO Truncated-Icosahedral Hecatodihedron (DICTO, 2026-10-14)
+
+Spheres of Dharma stage 7 (#23, #27) as a solid of its own, named by DICTO (*hecatodi-*, 102). Checked from Polyhedraverse's
+TRANS_DHARMA_80 by `papers/tih/data/tih_check.py`:
+
+- The truncated icosahedron (edge 1/φ here) with a **Shield** on each of its 20 hexagons: a low hexagonal pyramid whose apex is on
+  the three-fold axis, at the height where the two triangles of neighbouring Shields across each hexagon–hexagon edge lie in one
+  plane. Those 60 pairs become **30 rhombi** (sides 0.65097, angles 56.68° and 123.32°); the 60 triangles across hexagon–pentagon
+  edges stay triangles (sides 1/φ, 0.65097, 0.65097); the **12 regular pentagons** are the truncated icosahedron's own.
+- **102 faces, 80 corners, 180 edges** (Euler 2); convex; only two edge angles, 159.45° and 163.53°. The 60 corners of the
+  truncated icosahedron lie on one sphere (1.5315) and the 20 Shield apices on another (1.6057), as a regular dodecahedron of edge
+  3/φ² = 1.14590 (3/φ times the truncated icosahedron's edge). Volume 14.4042 at truncated-icosahedron edge 1/φ.
+- **Touching sphere:** the 30 rhombi and 60 triangles are all 1.5 from the centre; the 12 pentagons are 1.4384 (the truncated
+  icosahedron's pentagon distance). So it has **no insphere**. (#27 and the In-betweens paper v2 said all 102 faces were tangent;
+  corrected 2026-10-14, paper v3.)
+- **Relation to known solids:** combinatorially it is Conway's hexakis truncated icosahedron k6tI (132 faces) with its 60 coplanar
+  triangle pairs merged into 30 rhombi; this flattened form was not found in the catalogues searched (Conway-notation lists, named
+  polyhedra with 80 or 92 corners). Not an Archimedean, Catalan or Johnson solid.
+- In the app: Polyhedraverse, DICTO Transitional Shells; DICTO-TIC, Loop 2 (Dharma road), piece 115.
 
 ## 27. Capturing the In-betweens (DICTO, 2026-10-14)
 

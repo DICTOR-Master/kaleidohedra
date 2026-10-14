@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>The DICTO Truncated-Icosahedral Hecatodihedron</title>
+<link rel="stylesheet" href="../paper.css"></head><body>
+
+<h1>The DICTO Truncated-Icosahedral Hecatodihedron</h1>
+<p class="sub">A convex solid of 102 faces: the truncated icosahedron with a low pyramid on each hexagon, flattened so that neighbouring triangles become rhombi</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Version 1 · 14 October 2026 · DICTO DOI: on release · Licence CC BY 4.0 · Data, renders and checks: papers/tih at https://github.com/DICTOR-Master/kaleidohedra.<br>
+The solid is a stage of our Spheres of Dharma, found by building it, and the name is ours. Computation and checking were done with Claude (Anthropic).
+</div>
+
+<div class="abstract"><b>Abstract.</b> We describe a convex polyhedron with 102 faces, 80 corners and 180 edges that arises as the seventh stage of our Spheres of Dharma, a cycle of nested icosahedral shells. It is the truncated icosahedron with a low hexagonal pyramid (a <i>Shield</i>) on each of its 20 hexagons, at the one height at which the two triangles of neighbouring Shields across every hexagon–hexagon edge lie in a single plane. Its faces are 12 regular pentagons, 30 rhombi and 60 isosceles triangles; it has only two edge angles. Combinatorially it is Conway's hexakis truncated icosahedron k6tI (132 faces) with its 60 coplanar triangle pairs merged into 30 rhombi. The rhombi and triangles all touch one sphere; the pentagons lie a little inside it, so the solid has no insphere. We name it the <b>DICTO Truncated-Icosahedral Hecatodihedron</b> (<i>hecatodi-</i>, one hundred and two). This corrects an earlier statement of ours that all 102 faces touch one sphere.</div>
+
+<h2>1. Origin</h2>
+<p>The Spheres of Dharma (DISCOVERIES #23) grow an icosahedron, layer by layer, through the icosidodecahedron, the dodecahedron, the truncated icosahedron and the rhombic triacontahedron, back to an icosahedron φ³ larger. Taking each closed stage as one solid (our paper <i>Capturing the In-betweens</i>, DICTO DOI: 10.5281/zenodo.23345502), stage 7, the truncated icosahedron with a Shield on every hexagon, turned out to be convex, with fewer faces than its pieces suggest: 102. It is a station of our DICTO-TIC world (Transitional Icosahedral Cycles) and a shape in Polyhedraverse's DICTO Transitional Shells.</p>
+
+<figure><div class="figs"><img src="renders/fig-tih.png"><img src="renders/fig-tih5.png"><img src="renders/fig-apart.png"></div>
+<figcaption><b>Fig. 1–3.</b> (1) The Hecatodihedron: 12 regular pentagons (gold), 30 rhombi (cyan), 60 triangles (wisteria). (2) Down a five-fold axis. (3) The truncated icosahedron (green) and its 20 Shields, pulled apart.</figcaption></figure>
+
+<h2>2. The solid</h2>
+<p>Start from the truncated icosahedron of edge 1/φ (the scale of the Dharma build). On each hexagon stand a hexagonal pyramid whose apex lies on the hexagon's three-fold axis. Raise the apices together: there is one height at which the triangle of one Shield and the triangle of its neighbour, across each edge where two hexagons meet, lie in one plane. At that height the 60 such pairs become 30 rhombi, and the 60 triangles across the hexagon–pentagon edges stay triangles. The 20 apices are then the corners of a regular dodecahedron.</p>
+<table>
+<tr><th>Faces</th><th>Number</th><th>Shape</th><th>Distance from the centre</th></tr>
+<tr><td>Regular pentagons</td><td>12</td><td>side 1/φ = 0.61803</td><td>1.4384</td></tr>
+<tr><td>Rhombi</td><td>30</td><td>sides 0.65097, angles 56.68° and 123.32°</td><td>1.5</td></tr>
+<tr><td>Isosceles triangles</td><td>60</td><td>sides 0.61803, 0.65097, 0.65097</td><td>1.5</td></tr>
+</table>
+<p>Corners: 80, the 60 of the truncated icosahedron (all at distance 1.5315) and the 20 Shield apices (at 1.6057), which form a regular dodecahedron of edge 3/φ² = 1.14590. Edges: 180, with only two edge angles, 159.45° and 163.53°. Euler's formula: 80 − 180 + 102 = 2. Volume 14.4042 at this scale.</p>
+<p><b>A sphere, but not an insphere.</b> The 30 rhombi and 60 triangles all lie at distance 1.5 from the centre, so 90 of the 102 faces touch one sphere. The 12 pentagons, the truncated icosahedron's own, lie at 1.4384, a little closer; the solid therefore has no insphere. Our earlier paper said that all 102 faces touch one sphere; that was wrong, and is corrected in its version 3.</p>
+
+<h2>3. Relation to known solids, and status</h2>
+<p>Combinatorially, a pyramid on each hexagon of the truncated icosahedron is Conway's hexakis truncated icosahedron, k6tI, with 80 corners and 132 triangular-and-pentagonal faces. The Hecatodihedron is the particular, flattened realisation in which 60 pairs of its triangles are coplanar, so that it has 102 faces and 180 edges. It is not an Archimedean, Catalan or Johnson solid. We did not find this flattened form in the catalogues we searched (Conway-notation lists and named polyhedra with 80 or 92 corners, 2026-10-13 and 2026-10-14). That is a report of what we searched, not a claim that it is unknown.</p>
+<p>The name: <i>hecatodi-</i> for its 102 faces (Greek <i>hekaton</i>, 100, and <i>di</i>, 2), as in the hecatonicosachoron, the 120-cell; <i>truncated-icosahedral</i> for the solid it grows from.</p>
+
+<h2>4. Reproducibility</h2>
+<p>Included: <code>data/tih_check.py</code> and <code>data/tih-checks.json</code> (face kinds, distances, corners, edges, edge angles, volume and the dodecahedron of apices, computed from Polyhedraverse's shape TRANS_DHARMA_80), and <code>data/tih_fig.py</code> (the figures). The solid can be opened in Polyhedraverse (DICTO Transitional Shells) and seen arriving in DICTO-TIC, Loop 2.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>DICTO, Capturing the In-betweens: a study of transitional polyhedral shells (2026), DICTO DOI: 10.5281/zenodo.23345502 (version 3 corrects the insphere statement).</li>
+<li>DICTO, Spheres of Dharma (2026), DICTO DOI: 10.5281/zenodo.23310833.</li>
+<li>J. H. Conway, H. Burgiel, C. Goodman-Strauss, <i>The Symmetries of Things</i>, A K Peters (2008) (Conway polyhedron notation).</li>
+<li>Hexapentakis truncated icosahedron and related Conway forms, Wikipedia, https://en.wikipedia.org/wiki/Hexapentakis_truncated_icosahedron (lists k6tI).</li>
+<li>N. W. Johnson, Convex polyhedra with regular faces, <i>Canad. J. Math.</i> 18 (1966) 169–200.</li>
+</ol>
+<p class="sub">DICTO · dictospheres.com</p>
+</body></html>
