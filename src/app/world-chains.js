@@ -229,7 +229,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   // DICTO's piece names stay as they are; the classical pieces are translated.
   const PIECE = { axe: 'AXE', laxe: 'AXE', cleo: 'CLEO', lcleo: 'CLEO', fuji: 'FUJI', lfuji: 'FUJI', nfru3: 'Vajra (twist)', npyr5: 'Stupa', npyr3: 'Cleo-low',
     nfru5: 'Monkey Staff', nt1: 't1', nwedge: 'Vajra-blade', nedge: 'Sevenfold-blade', nface: 'Cleo-low 2', B1: 'Vajra (fine)', B2: 'Chatra', B3: 'Mudra',
-    B4: 'Crown Jewel', B5L: 'Diadem L', B5R: 'Diadem R', lj11: 'J11', icleo: 'Cleo-Ico', fpyr5: 'Flat pentagonal pyramid', ccleo: 'Cleo-Ico', col: 'Column', tx: 'X', ty: 'Y', bipyr: 'Bipyramid' };
+    B4: 'Crown Jewel', B5L: 'Diadem L', B5R: 'Diadem R', lj11: 'J11', icleo: 'Cleo-Ico', fpyr5: 'Aetos', ccleo: 'Cleo-Ico', col: 'Kion', tx: 'Sphen', ty: 'Sphenion', bipyr: 'Atraktos' };  // names by DICTO 2026-10-15
   const pieceName = (role, V, L) => (role === 'ncap' && V.length === 7 ? 'Shield' : PIECE[role]
     ?? t({ ico: 'solid.icosahedron', core: 'solid.icosahedron', cap: 'piece.cap', ncap: 'piece.cap', lcap: 'piece.cap', centre: 'solid.rhombicTriacontahedron', copy: 'solid.rhombicTriacontahedron' }[role] ?? role, L));
   const solidName = (k, L) => (k === 'hecatodihedron' ? 'DICTO Truncated-Icosahedral Hecatodihedron' : t(`solid.${k}`, L));
