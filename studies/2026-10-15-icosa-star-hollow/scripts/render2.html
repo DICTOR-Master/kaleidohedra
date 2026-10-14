@@ -1,0 +1,40 @@
+<!doctype html><meta charset="utf-8"><title>Cleo core to the Hecatodihedron (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}#tag{position:fixed;right:14px;bottom:10px;font:600 14px system-ui;color:#5b5346}#cap{position:fixed;left:14px;top:10px;font:600 15px system-ui;color:#3d372d;max-width:900px}</style>
+<div id="tag">DICTO · dictospheres.com</div><div id="cap"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(async function () {
+  const scn = location.hash.slice(1) || 'closed';
+  const J = await fetch('heca_bipyr.json').then((r) => r.json());
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+  renderer.setSize(1000, 1000); renderer.setPixelRatio(1); renderer.localClippingEnabled = true; document.body.appendChild(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.8)); const sun = new THREE.DirectionalLight(0xffffff, 0.7); sun.position.set(4, 7, 5); scene.add(sun);
+  const C = { 'core icosahedron': [0xd9a441, 0], 'bipyramid (Cleo-Ico + dodecahedron corner)': [0x8e6cc8, 1], 'flat pentagonal pyramid': [0xb39ddb, 1],
+    'X': [0x4fb3bf, 1], 'Y': [0x2e8b9a, 1], 'twisted pentagonal frustum': [0x6fbf73, 2], 't1': [0x9ccc65, 2], 'cap (to Hecatodihedron)': [0xe8945a, 3] };
+  const cut = scn === 'cut' ? [new THREE.Plane(new THREE.Vector3(0, 0, -1), 0)] : [];
+  const show = { closed: [0, 1, 2, 3], cut: [0, 1, 2, 3], apart: [0, 1, 2, 3], inner: [0, 1] }[scn];
+  const step = scn === 'apart' ? 0.75 : 0;
+  for (const [k, L] of Object.entries(J)) {
+    const [col, layer] = C[k]; if (!show.includes(layer)) continue;
+    const onlyBip = scn === 'inner' && layer === 1 && !k.startsWith('bipyramid');
+    if (onlyBip) continue;
+    for (const S of L) {
+      const c = S.c, n = Math.hypot(...c) || 1, d = c.map((x) => (x / n) * step * layer);
+      const sh = scn === 'cut' ? 0.965 : 1, m = S.v.reduce((a, v) => a.map((x, i) => x + v[i] / S.v.length), [0, 0, 0]);
+      const pos = []; for (const f of S.f) for (const j of f) pos.push(...[0, 1, 2].map((i) => m[i] + (S.v[j][i] - m[i]) * sh + d[i]));
+      const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+      scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: col, roughness: 0.5, flatShading: true, side: THREE.DoubleSide, clippingPlanes: cut })));
+      scene.add(new THREE.LineSegments(new THREE.EdgesGeometry(g, 1), new THREE.LineBasicMaterial({ color: 0x2a2218, clippingPlanes: cut })));
+    }
+  }
+  const caps = { closed: 'The Cleo core grown to the DICTO Hecatodihedron: 215 pieces, 102 faces', cut: 'Cut in half: the edge-1 core, the 20 bipyramids and the Dharma layers round it',
+    apart: 'Pulled apart by layer: core; bipyramids, flat pyramids, X and Y; frusta and t1; caps', inner: 'The core and its 20 bipyramids (Cleo-Ico + dodecahedron corner)' };
+  document.getElementById('cap').textContent = caps[scn];
+  const cam = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+  const dist = { closed: 10.5, cut: 10.5, apart: 19, inner: 8.6 }[scn];
+  const dir = scn === 'cut' ? new THREE.Vector3(0.15, 0.22, 1) : new THREE.Vector3(0.62, 0.48, 0.9);
+  cam.position.copy(dir.normalize().multiplyScalar(dist)); cam.lookAt(0, 0, 0);
+  renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>

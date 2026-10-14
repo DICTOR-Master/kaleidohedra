@@ -50,3 +50,12 @@ X on its top (shell) edges + 3 tetrahedra Y on its bottom (core) edges. X: edges
 The predicted 12 + 30 + 20 shell (Karma pattern) does NOT appear: the Y pairs over the 30 core edges are not convex, nor the flat pyramids
 with their 5 X, nor any X + Y inside an antiprism. None of the pieces is a kit piece (AXE, FUJI, CLEO, ...) or J2 or a regular tetrahedron
 by shape. The 1/√3 lengths (triangle centres) are what keep them out of the golden kit.
+
+**Cleo core to the DICTO Hecatodihedron (DICTO 2026-10-15, "new standalone object"; `scripts/cleo_heca.py`, `heca_bipyr.py`, `data/`):** our
+step (edge-1 core in the icosidodecahedron of edge 1; Dharma's own first step has the core 1/1.309 as large) followed by the Spheres of
+Dharma layers scaled by 2/φ (20 triangular pyramids to the dodecahedron, 12 twisted pentagonal frusta + 30 t1 to the truncated icosahedron,
+20 caps to the Hecatodihedron). 235 pieces, no overlaps (6956 nearby pairs; Dharma's data is stored to 6 places). Convex fusions of
+face-sharing pairs: Cleo-Ico + triangular pyramid (20, a symmetric triangular bipyramid from a core face to a dodecahedron corner, edges
+1/φ, 0.9511, 0.9763, 1), Cleo-Ico + one X (60 options, breaks symmetry), t1 + frustum (24 options, not enough t1 for all). DICTO chose the
+bipyramids: 215 pieces; the hull is the Hecatodihedron, 102 faces (60 triangles, 30 rhombi, 12 pentagons), 80 corners; volumes agree to
+1e-4 (data rounding). Renders `renders/heca-*.jpg`.
