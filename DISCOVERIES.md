@@ -52,6 +52,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 26 | DICTO ATOM-13×13: thirteen twelve-around-one clusters side by side, six golden (Icosa-13, DESHI, Dodeca-13, UNITY/VENUS, DICTO-Star, Bodhi seed) and seven periodic (RD 13 / Spheroid-13 RD, DICTO skewed RD, Bain RD, Bilinski, regular-hexagon ED, truncated octahedron 4 + 5 + 4, DICTO Jewel), with 24 buildable kits; the seven periodic blocks are one tiling in seven shapes | DICTO (the members, names, the TO's 4 + 5 + 4 with its windows, the gold centre, the title) | kit and tiling checks | **the tiling known** (A3 perfect code, Kovačević–Tan 2018, Singer 1938); the thirteen together, the kits, the TO and Jewel blocks **not found** | 2026-10-13 (Zenodo 10.5281/zenodo.23333183) |
 | 27 | Capturing the In-betweens: the in-between stages of the Chain of Karma, Spheres of Dharma and Bodhi Seed taken as fused solids (the transitional shells); icosahedron + 20 CLEO is the great stellated dodecahedron, + 30 AXE the excavated dodecahedron (all 32 corners kept), + 12 caps the dodecahedron; the Bodhi centre + 60 Vajra (fine) is the rhombic hexecontahedron; Spheres of Dharma stage 7 is the convex DICTO Truncated-Icosahedral Hecatodihedron (102 faces: 12 pentagons, 30 rhombi, 60 triangles; 80 corners; see #28); 45 convex partial stages; Dharma piece names Stupa and Monkey Staff | DICTO (the observation in the app, the transitional-shell idea, the names) | 25 identification checks; nets checked | **the named solids known** (Kepler 1619; Coxeter et al. 1938; Unkelbach 1940); the routes through them built from DICTO's pieces, and the Hecatodihedron, **not found** in the catalogues searched | 2026-10-14 (Zenodo 10.5281/zenodo.23345502) |
 | 28 | The DICTO Truncated-Icosahedral Hecatodihedron: the truncated icosahedron with a Shield on each hexagon, at the height where the triangles of neighbouring Shields lie flat as rhombi; convex, 102 faces (12 regular pentagons, 30 rhombi, 60 triangles), 80 corners, 180 edges, only two edge angles; its 30 rhombi and 60 triangles touch one sphere, its 12 pentagons lie a little inside | DICTO (Spheres of Dharma stage 7; the name) | papers/tih/data/tih_check.py, from Polyhedraverse's TRANS_DHARMA_80 | **not found** (Conway's k6tI has 132 faces; searched: Conway notation (Hart), Johnson solids and near misses (incl. Kaplan's rectified truncated icosahedron), MathWorld and PolyhedronData, the Polytope Wiki) | 2026-10-14 |
+| 29 | Theaetetus: an icosahedron of edge 1 held exactly in the icosidodecahedron of edge 1 by 20 Cleo-Icos on its face centres (and 12 Aetos on its corners), locked against every turn and shift; the hollow is the core + 12 Aetos + 20 antiprisms, each antiprism a Cleo-Ico + 3 Sphen + 3 Sphenion (volumes 3 : 2 : 1); grown with the Spheres of Dharma layers (×2/φ) to the DICTO Hecatodihedron in two exact stories: the stations (215 pieces, every layer closed, 20 Atraktos) and 102 clean pieces (20 Cleo-Icos, 20 Kion, 12 frusta, 30 t1, 20 caps), the icosahedron and dodecahedron cut by the same 20 cones; all volumes exact in ℚ(√5), remainder 0. Paper: DICTO DOI: 10.5281/zenodo.23378070 (2026-10-15). | DICTO (the hold, the growth, the 102, all names) | studies/2026-10-15-icosa-star-hollow (exact.py, exact_stations.py, cut102.py) | the hollow's split is the shadow of Klitzing's segmentochoron K-4.137 (credited); the hold, the stations and the Kion **not found** (library + web, 2026-10-15) | 2026-10-15 |
 
 Known results the apps show (kept here, with their numbers, as checks; not DICTO's findings; see the section at the end):
 
@@ -899,6 +900,23 @@ pieces. Names by DICTO.*
   Demonstration "Cluster of 20 Icosahedra" (in the vein of Kabai); Robert Austin's 2014 model overlaps whole
   icosahedra with dodecahedra; the Dogstar and its honeycomb are Hart's (1996). The King of Pentacles, the
   closed Stella-Corona and its network are DICTO's.
+
+## 29. Theaetetus (DICTO, 2026-10-15)
+
+Named by DICTO after Theaetetus of Athens, by tradition the first to construct the icosahedron. Paper: DICTO DOI: 10.5281/zenodo.23378070.
+Study: `studies/2026-10-15-icosa-star-hollow`.
+
+- **The loose core:** the hollow DICTO-ICOSA star's core (edge 2/√5) rests on 12 tips and turns about 14° before touching anything.
+- **DICTO's Cleo-Ico hold:** 20 Cleo-Icos standing on the icosidodecahedron's triangles (edge 1) put their points exactly on the face
+  centres of an icosahedron of edge 1 (the triangles lie at φ²/√3, twice its inradius: the rectified icosahedron of edge 2). Locked: every
+  turn and shift collides. With 12 Aetos (flat pentagonal pyramids, side edges = the Cleo-Ico's) on its corners: the app's hollow view.
+- **The hollow exactly:** core + 12 Aetos + 20 antiprisms (the shadow of Klitzing's segmentochoron "icosahedron atop icosidodecahedron",
+  K-4.137, height 1/(2φ)); each antiprism = Cleo-Ico + 3 Sphen + 3 Sphenion; volumes Cleo-Ico : Sphen : Sphenion = 3 : 2 : 1, Aetos = √5 Cleo-Icos.
+- **Two stories to the Hecatodihedron (#28)** with the Spheres of Dharma layers (#23) scaled by 2/φ: the stations, 215 pieces with every
+  layer closed (Cleo-Ico + dodecahedron corner = Atraktos), and 102 clean pieces with no dents (20 Cleo-Icos, 20 Kion, 12 twisted
+  pentagonal frusta, 30 t1, 20 caps), the same 20 cones cutting the icosahedron by faces and the dodecahedron by corners. Exact in ℚ(√5):
+  both sum to 3350 − 1486√5 with remainder 0.
+- In the app: Kaleidohedra, DICTO 3D+ → Theaetetus (`?open=theaetetus`), both stories; the hollow star in DICTO Dodeca.
 
 ## 28. The DICTO Truncated-Icosahedral Hecatodihedron (DICTO, 2026-10-14)
 
