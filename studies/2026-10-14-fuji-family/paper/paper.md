@@ -103,6 +103,12 @@ The antiprisms therefore index the family:
 - n = 6 gives √3 − 1;
 - as n grows, r tends to the flat regular hexagon.
 
+**Golden and silver.** The members for n = 4 and n = 5 are the two best-known metallic means. For n = 5, r = 2 cos 36° − 1 = φ − 1 = 1/φ, the golden ratio's inverse: FUJI. For n = 4, r = 2 cos 45° − 1 = √2 − 1 = 1/(1 + √2), the inverse of the **silver ratio** 1 + √2. So FUJI has a silver sister one step down the same formula, on the square antiprism, and seen down its axis that antiprism's outline is the **regular octagon**, as the pentagonal antiprism's is the regular decagon (Figure 5). The square family adds another silver number: its member on the rhombicuboctahedron is r = 1 − 1/√2. The golden members belong with icosahedral order and the silver ones with octagonal order (the Ammann–Beenker tilings are built on 1 + √2), so the family may be one place where the two meet; we have not yet followed that further.
+
+![Figure 5](figures/fig9-golden-silver.png)
+
+**Figure 5.** The silver member (n = 4, r = √2 − 1) and the golden member FUJI (n = 5, r = 1/φ): their flat-ended triangles, and their antiprisms seen down the axis, the regular octagon and decagon.
+
 ## 5. Where the members live
 
 ### 5.1 FUJI in the Lotus seed
@@ -115,9 +121,9 @@ Damasceno, Engel and Glotzer studied truncated tetrahedra from the tetrahedron t
 
 ### 5.3 Breathing pyrochlores
 
-![Figure 5](figures/fig4-pyrochlore.jpg)
+![Figure 6](figures/fig4-pyrochlore.jpg)
 
-**Figure 5.** The Golden Breathing Pyrochlore world in the Kaleidohedra app. (a) Big (gold) and small (purple) tetrahedra meet tip to tip, with see-through truncated tetrahedra between them. (b) One kagome layer: every hexagon is FUJI's flat-ended triangle.
+**Figure 6.** The Golden Breathing Pyrochlore world in the Kaleidohedra app. (a) Big (gold) and small (purple) tetrahedra meet tip to tip, with see-through truncated tetrahedra between them. (b) One kagome layer: every hexagon is FUJI's flat-ended triangle.
 
 A pyrochlore is a network of tetrahedra sharing corners: every corner belongs to one "up" and one "down" tetrahedron, tip to tip. In a **breathing pyrochlore** the two sets have different sizes, edge 1 and edge r. Such materials exist among the chromium spinel oxides [Okamoto et al. 2013]. Every kagome hexagon then has sides 1 and r alternating, with all angles 120°: the flat-ended triangle with the breathing ratio as its r.
 
@@ -131,13 +137,13 @@ It can be built cell by cell in the Kaleidohedra app, with a slider for the brea
 
 ### 5.4 The dictospheres
 
-![Figure 6](figures/fig5-dictosphere.jpg)
+![Figure 7](figures/fig5-dictosphere.jpg)
 
-**Figure 6.** (a) A dictosphere modelled as a sphere 8.8 cm across with 3 cm ports: each point of the surface belongs to its nearest port. The curved squares (cyan) and curved flat-ended triangles (wisteria) meet short side to short side. (b) The flat counterpart: the solid whose 14 faces all touch the sphere, whose triangles are the cuboctahedral member r = (√3 − 1)/2.
+**Figure 7.** (a) A dictosphere modelled as a sphere 8.8 cm across with 3 cm ports: each point of the surface belongs to its nearest port. The curved squares (cyan) and curved flat-ended triangles (wisteria) meet short side to short side. (b) The flat counterpart: the solid whose 14 faces all touch the sphere, whose triangles are the cuboctahedral member r = (√3 − 1)/2.
 
 A dictosphere is a sphere. It carries 14 PET-bottle ports in a cuboctahedral arrangement: 6 on the cube axes (the squares) and 8 on the three-fold axes (the triangles). We divide its surface round the ports into squares and triangles. With ports in both, the triangles' corners crowded the neighbouring holes, so we truncated the triangles to give even space round every port. The truncated triangles meet short side to short side.
 
-**Even space fixes the pattern.** On a sphere, an even margin round every port means that each point of the surface belongs to its nearest port. The squares and triangles are then the regions of the sphere nearest each port. Their boundaries are arcs of great circles halfway between neighbouring ports, and the triangles come out as curved flat-ended triangles. Projected from the centre onto flat planes, the same pattern is the solid whose 14 faces all touch one inner sphere (Figure 6b): the cube ∩ octahedron with both sets of faces at the same distance. Its flat-ended triangles are exactly the **cuboctahedral member, r = (√3 − 1)/2 = 0.366**. (The same rule in the flat: across an edge shared by two faces, the clearances from the two face centres to the edge are equal exactly when the faces lie at the same distance from the centre.)
+**Even space fixes the pattern.** On a sphere, an even margin round every port means that each point of the surface belongs to its nearest port. The squares and triangles are then the regions of the sphere nearest each port. Their boundaries are arcs of great circles halfway between neighbouring ports, and the triangles come out as curved flat-ended triangles. Projected from the centre onto flat planes, the same pattern is the solid whose 14 faces all touch one inner sphere (Figure 7b): the cube ∩ octahedron with both sets of faces at the same distance. Its flat-ended triangles are exactly the **cuboctahedral member, r = (√3 − 1)/2 = 0.366**. (The same rule in the flat: across an edge shared by two faces, the clearances from the two face centres to the edge are equal exactly when the faces lie at the same distance from the centre.)
 
 **Against a real dictosphere.** The sphere's size comes from a steel-tape measurement: 8.4 cm along the surface between the centres of two triangles on either side of a square, an arc of 109.47°, which gives a radius of 4.40 cm. The sides along the surface then follow.
 
@@ -155,21 +161,21 @@ The measured sides lie between the curved and the flat versions, as they would f
 
 ### 5.5 Wheels, and the CLEO sphere
 
-![Figure 7](figures/fig7-wheels-cleo-sphere.jpg)
+![Figure 8](figures/fig7-wheels-cleo-sphere.jpg)
 
-**Figure 7.** (a) Four hexagonal wheels of FUJI's flat-ended triangles, overlapped into the cuboctahedron's outer structure. (b) Six decagonal wheels of golden triangles, the icosidodecahedron's. (c) The CLEO sphere pulled apart: 20 CLEOs (wisteria) and 12 pentagonal pyramids (cyan), all tips at the centre.
+**Figure 8.** (a) Four hexagonal wheels of FUJI's flat-ended triangles, overlapped into the cuboctahedron's outer structure. (b) Six decagonal wheels of golden triangles, the icosidodecahedron's. (c) The CLEO sphere pulled apart: 20 CLEOs (wisteria) and 12 pentagonal pyramids (cyan), all tips at the centre.
 
-Our DeltaZip wheels led to a construction in the same spirit. A cuboctahedron's 24 edges split into four regular hexagons, one in each of its four central planes; a wheel of six triangles in each plane (centre to rim), with every triangle blunted into a flat-ended triangle, gives four wheels that overlap into the cuboctahedron's outer structure (Figure 7a). Each spoke is shared by two wheels, and the blunted corners keep the hub and the twelve crossings clear. Four is the most: only in the cuboctahedron does each wheel meet every other exactly along its own spokes. The icosahedral counterpart has six wheels, in the planes square to the five-fold axes, each a decagon of ten golden triangles (sides φ, φ, 1): the icosidodecahedron's six great decagons (Figure 7b).
+Our DeltaZip wheels led to a construction in the same spirit. A cuboctahedron's 24 edges split into four regular hexagons, one in each of its four central planes; a wheel of six triangles in each plane (centre to rim), with every triangle blunted into a flat-ended triangle, gives four wheels that overlap into the cuboctahedron's outer structure (Figure 8a). Each spoke is shared by two wheels, and the blunted corners keep the hub and the twelve crossings clear. Four is the most: only in the cuboctahedron does each wheel meet every other exactly along its own spokes. The icosahedral counterpart has six wheels, in the planes square to the five-fold axes, each a decagon of ten golden triangles (sides φ, φ, 1): the icosidodecahedron's six great decagons (Figure 8b).
 
-The six wheels cut the icosidodecahedron into pieces with their tips at the centre. With edge 1/φ the icosidodecahedron has circumradius exactly 1, so each piece over a triangle has an equilateral base 1/φ and side edges 1: **it is CLEO**. **Twenty CLEOs pointing inwards and twelve pentagonal pyramids** (side edges 1, base edge 1/φ, volume √5/12 each) **fill the icosidodecahedron exactly**, volume (11√5 − 5)/6 (Figure 7c). It is the icosahedral twin of the four hexagonal wheels cutting the cuboctahedron into 8 regular tetrahedra and 6 square pyramids.
+The six wheels cut the icosidodecahedron into pieces with their tips at the centre. With edge 1/φ the icosidodecahedron has circumradius exactly 1, so each piece over a triangle has an equilateral base 1/φ and side edges 1: **it is CLEO**. **Twenty CLEOs pointing inwards and twelve pentagonal pyramids** (side edges 1, base edge 1/φ, volume √5/12 each) **fill the icosidodecahedron exactly**, volume (11√5 − 5)/6 (Figure 8c). It is the icosahedral twin of the four hexagonal wheels cutting the cuboctahedron into 8 regular tetrahedra and 6 square pyramids.
 
 Each pentagonal pyramid divides about its axis into **five congruent right-angled triangular pyramids**, each with one golden face (1, 1, 1/φ, the same as CLEO's side faces), a base triangle with sides 0.5257, 0.5257 and 1/φ (72° at the centre of the pentagon), and volume √5/60. Equilateral CLEOs themselves cannot fill the pentagonal pockets (a pentagon cannot be tiled by equilateral triangles); these five are the pocket's own CLEO-like pieces. CLEO cannot fill an icosahedron from its centre on its own: its tip angles are 36°, where 20 pieces closing a sphere need 63.4°, so twenty CLEOs cover only 29% of the directions round the centre. The pentagonal pyramids take the rest.
 
 ### 5.6 Six circles and the icosahedron
 
-![Figure 8](figures/fig8-six-circles.jpg)
+![Figure 9](figures/fig8-six-circles.jpg)
 
-**Figure 8.** (a) Six equal slotted rings in the planes square to the five-fold axes, seen down a five-fold axis. (b) The CLEO sphere they frame, seen the same way: 20 CLEOs in the triangular windows, 12 pentagonal pockets. (c) Faceted flat across the pentagon centres: 20 Icosahedral Cleo filling an icosahedron.
+**Figure 9.** (a) Six equal slotted rings in the planes square to the five-fold axes, seen down a five-fold axis. (b) The CLEO sphere they frame, seen the same way: 20 CLEOs in the triangular windows, 12 pentagonal pockets. (c) Faceted flat across the pentagon centres: 20 Icosahedral Cleo filling an icosahedron.
 
 How many crossed circles make an icosahedron? Four make the cuboctahedron, and four is the most that meet evenly in that way. **Six** circles, one in each plane square to a five-fold axis, cross every 36° round each circle and divide the sphere into **20 triangles and 12 pentagons**, the icosidodecahedron's pattern. The icosahedron is there, though the circles never draw its edges: its **12 corners are the centres of the 12 pentagonal windows**, and its **20 faces lie over the 20 triangular windows**. Six equal flat rings slotted together, alternately from the outside and the inside at each crossing, are all identical (one template, cut six), which is how our six-ring DeltaZip balls go together.
 
