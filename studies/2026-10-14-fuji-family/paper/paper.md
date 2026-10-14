@@ -22,6 +22,7 @@ The members turn up in several places:
 - **The space-filling truncated tetrahedron** of Damasceno, Engel and Glotzer has the r = 1/2 member's base as its faces.
 - **In a breathing pyrochlore** the kagome hexagons are flat-ended triangles, with r equal to the breathing ratio; as a Wythoff construction it tiles space for every r.
 - **The equal-depth cube–octahedron solid** has the cuboctahedral member's base, r = (√3 − 1)/2, as its eight triangles, and its cube corners are exactly that member's apexes; we prove the two conditions are the same.
+- **Cleo-Icos and Antonius:** the icosahedron's central pyramid is the corner of the prolate golden rhombohedron, which splits into Cleo-Icos + Antonius + Cleo-Icos; so the two fill space, two to one, and build the rhombic hexecontahedron.
 
 ---
 
@@ -168,13 +169,25 @@ Each pentagonal pyramid divides about its axis into **five congruent right-angle
 
 ![Figure 9](figures/fig8-six-circles.jpg)
 
-**Figure 9.** (a) Six equal slotted rings in the planes square to the five-fold axes, seen down a five-fold axis. (b) The CLEO sphere they frame, seen the same way: 20 CLEOs in the triangular windows, 12 pentagonal pockets. (c) Faceted flat across the pentagon centres: 20 Icosahedral Cleo filling an icosahedron.
+**Figure 9.** (a) Six equal slotted rings in the planes square to the five-fold axes, seen down a five-fold axis. (b) The CLEO sphere they frame, seen the same way: 20 CLEOs in the triangular windows, 12 pentagonal pockets. (c) Faceted flat across the pentagon centres: 20 Cleo-Icos filling an icosahedron.
 
 How many crossed circles make an icosahedron? Four make the cuboctahedron, and four is the most that meet in that way (Section 5.5). **Six** circles, one in each plane square to a five-fold axis, cross every 36° round each circle and divide the sphere into **20 triangles and 12 pentagons**, the icosidodecahedron's pattern. The icosahedron is there, though the circles never draw its edges: its **12 corners are the centres of the 12 pentagonal windows**, and its **20 faces lie over the 20 triangular windows**. Six equal flat rings slotted together, alternately from the outside and the inside at each crossing, are all identical (one template, cut six), which is how our six-ring DeltaZip balls go together. An alternating slot pattern exists for any set of great circles with no three through one point, since their crossings then form a four-valent map (as in alternating knot diagrams); here the equal crossing angles (63.43°) and equal spacing (36°) make the six rings identical.
 
-The pieces complete the route. The triangular windows hold the 20 CLEOs pointing inwards; each pentagonal window holds five Penta-cleo (Section 5.5). Each CLEO with the three Penta-cleo on its golden sides fills the part, inside the icosidodecahedron, of one face-cone of the icosahedron whose corners are the pentagon centres. Cutting flat across the three pentagon centres removes the parts outside that icosahedron (CLEO's outer corners are at radius 1, beyond the icosahedron's corners at 0.851), and leaves the **Icosahedral Cleo**: the icosahedron's central pyramid on one face, tip at the centre and flat base outside, side edges 0.851 and base edge 2/√5 = 0.894. Twenty of them make the icosahedron, as the central pyramids of any solid make that solid; the point is the route, not the dissection. Six circles, then, lead to the icosahedron in a roundabout way: through the icosidodecahedron and the CLEO sphere.
+The pieces complete the route. The triangular windows hold the 20 CLEOs pointing inwards; each pentagonal window holds five Penta-cleo (Section 5.5). Each CLEO with the three Penta-cleo on its golden sides fills the part, inside the icosidodecahedron, of one face-cone of the icosahedron whose corners are the pentagon centres. Cutting flat across the three pentagon centres removes the parts outside that icosahedron (CLEO's outer corners are at radius 1, beyond the icosahedron's corners at 0.851), and leaves the **Cleo-Icos**: the icosahedron's central pyramid on one face, tip at the centre and flat base outside, side edges 0.851 and base edge 2/√5 = 0.894. Twenty of them make the icosahedron, as the central pyramids of any solid make that solid; the point is the route, not the dissection. Six circles, then, lead to the icosahedron in a roundabout way: through the icosidodecahedron and the CLEO sphere.
 
-The icosahedron, filled or not, still does not fill space (its dihedral angle 138.19° leaves 41.81° gaps), and the twenty pieces alone do not either: their dihedral angles are 72° along the side edges (five close round a line through the centre) and 69.09° along the base edges, and no combination that includes a base edge, with 72° angles and flat 180° faces, makes 360°. In space, icosahedral shapes need partner pieces, as AXE and FUJI are to the Lotus seed.
+The icosahedron, filled or not, still does not fill space (its dihedral angle 138.19° leaves 41.81° gaps), and the twenty pieces alone do not either: their dihedral angles are 72° along the side edges (five close round a line through the centre) and 69.09° along the base edges, and no combination that includes a base edge, with 72° angles and flat 180° faces, makes 360°. In space they need a partner piece: Antonius (Section 5.7).
+
+### 5.7 Cleo-Icos and Antonius fill space
+
+![Figure 10](figures/fig10-cleo-icos-antonius.jpg)
+
+**Figure 10.** (a) One prolate golden rhombohedron = Cleo-Icos + Antonius + Cleo-Icos, pulled apart along its long axis. (b) Eight rhombohedra, 16 Cleo-Icos (wisteria) and 8 Antonius (cyan), a piece of the space-filling. (c) The rhombic hexecontahedron: 20 Cleo-Icos round the centre (the icosahedron), 20 Antonius, and 20 Cleo-Icos at the tips, pulled apart.
+
+The Cleo-Icos cannot fill space alone (Section 5.6), but it can with one partner. The three edges from the icosahedron's centre to the corners of one face, u, v and w, meet at arccos(1/√5) = 63.43°, the face angle of the **prolate golden rhombohedron**. So u, v and w span a golden rhombohedron (edge 0.851, dihedral angles 72° and 108°), and the Cleo-Icos is exactly its corner at one sharp tip. In coordinates along u, v and w the rhombohedron is 0 ≤ x, y, z ≤ 1, and the planes x + y + z = 1 and x + y + z = 2 cut it into three pieces: a Cleo-Icos at each sharp tip, and between them **Antonius**, a convex trigonal antiprism with two equilateral faces (edge 2/√5) and six side faces identical to the Cleo-Icos's (0.851, 0.851, 0.894). Antonius has exactly **four times the Cleo-Icos's volume**, and the rhombohedron six times.
+
+Golden rhombohedra fill space in a lattice, and every rhombus face is cut along the same diagonal from both sides. So **Cleo-Icos and Antonius fill space, two to one, face to face, with no mirror images.** Along Antonius's equilateral edges its dihedral angle is 110.91°, which with the Cleo-Icos's 69.09° makes 180°: the faces meet flat. We checked a patch of 2,187 pieces: no gaps or overlaps, every face matched, every edge and every corner closing exactly. The Dehn invariant agrees: the Cleo-Icos's is not zero, so no single space-filler (a cube, a rhombohedron) could be its partner, and Antonius's is exactly −2 times the Cleo-Icos's, which the two-to-one ratio balances.
+
+The same pieces build the **rhombic hexecontahedron**, known as 20 prolate golden rhombohedra round a point [Hafner and Žitko]: 20 Cleo-Icos round the centre (the icosahedron), 20 Antonius, and 20 Cleo-Icos at the tips (Figure 10c; checked against the rhombic hexecontahedron of our Bodhi Seed). The cut of a rhombohedron by those two planes is general (any parallelepiped splits into two corner tetrahedra of a sixth each and a middle of two thirds), and for the rhombohedron of 60° it gives the regular tetrahedra and octahedron of the tetrahedral–octahedral honeycomb. What is particular here is that the golden rhombohedron's corner is the icosahedron's central pyramid, so the icosahedron's own pieces, with one partner, fill space. We found this split in neither of the dissections of the golden rhombohedra we read [Hafner and Žitko; Hafner and Komatar 2008].
 
 ## 6. What is known, and what is new
 
@@ -183,6 +196,7 @@ The base shape (the isogonal hexagon), the antiprism angles (listed for single a
 - the family FUJI(r) of pyramids;
 - the antiprism rule (Proposition 1) that links the family to the antiprisms, which combines the standard dihedral formula with the base-angle formula;
 - that the equal-depth cube–octahedron solid has the cuboctahedral member's triangles exactly because its cube corners are that member's apexes (Section 5.4), and the wheel bound with the impossibility of five octagonal wheels (Section 5.5);
+- the split of the prolate golden rhombohedron into Cleo-Icos + Antonius + Cleo-Icos, by which the icosahedron's central pyramid fills space with one partner (Section 5.7);
 - as a synthesis, the identifications that tie it together: FUJI's base as the golden hexagon after Odom, the breathing pyrochlore's hexagons as the family's bases, and the equal-depth cube–octahedron solid, whose triangles are the cuboctahedral member.
 
 The family gives one shape and one parameter to things found separately:
@@ -213,7 +227,7 @@ So cos D_n = (1 − 4c)/3, the standard antiprism dihedral. The numerical check,
 
 ## Credits
 
-FUJI, the Lotus seed, the dictospheres, the DeltaZips and B1NR sculptures, the term "flat-ended triangle" and the names are DICTO's. Odom's work, the golden-hexagon construction after it, the space-filling truncated tetrahedron (Damasceno, Engel and Glotzer) and the breathing pyrochlore (Okamoto, Nilsen, Attfield and Hiroi) are credited to their authors. Data, scripts, proofs and checks: studies/2026-10-14-fuji-family at https://github.com/DICTOR-Master/kaleidohedra.
+FUJI, Cleo-Icos, Antonius, the Lotus seed, the dictospheres, the DeltaZips and B1NR sculptures, the term "flat-ended triangle" and the names are DICTO's. Odom's work, the golden-hexagon construction after it, the space-filling truncated tetrahedron (Damasceno, Engel and Glotzer) and the breathing pyrochlore (Okamoto, Nilsen, Attfield and Hiroi) are credited to their authors. Data, scripts, proofs and checks: studies/2026-10-14-fuji-family and studies/2026-10-14-icosa-cleo-pair at https://github.com/DICTOR-Master/kaleidohedra.
 
 ## References
 
@@ -226,6 +240,8 @@ FUJI, the Lotus seed, the dictospheres, the DeltaZips and B1NR sculptures, the t
 - Z. Papadopolos, O. Ogievetsky, On quasiperiodic space tilings, inflation and Dehn invariants (1999), arXiv:math-ph/9910006.
 - N. O. Koca, R. Koc, M. Koca, A. Al-Siyabi, Dodecahedral structures with Mosseri–Sadoc tiles (2020), arXiv:2009.07048.
 - OEIS, A394077 (heptagonal antiprism dihedral angle), https://oeis.org/A394077.
+- I. Hafner, T. Žitko, Paper model solution of Conway–Radin–Sadun problem, Visual Mathematics, https://www.mi.sanu.ac.rs/vismath/hafnervisual/visual48A/Visual48A.html.
+- I. Hafner, A. Komatar, A Dissection of a Prolate Golden Rhombohedron, Wolfram Demonstrations Project (2008), https://demonstrations.wolfram.com/ADissectionOfAProlateGoldenRhombohedron/.
 - H. Minkowski, Allgemeine Lehrsätze über die konvexen Polyeder, Nachr. Ges. Wiss. Göttingen (1897) 198–219.
 - Lord Kelvin (W. Thomson), On the division of space with minimum partitional area, Phil. Mag. 24 (1887) 503–514.
 

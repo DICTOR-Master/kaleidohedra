@@ -39,3 +39,10 @@ test('Antonius: golden rhombohedron = Cleo-Icos + Antonius + Cleo-Icos; the bloc
   const sum = block.entries.reduce((s, e) => s + volume(POLYHEDRA[e.shape]), 0);
   assert.ok(Math.abs(sum - 48 * c) < 1e-9);
 });
+test('RHex kit: 20 Cleo-Icos + 20 Antonius + 20 Cleo-Icos, 20 rhombohedron cells; helper cells on every Antonius kit', () => {
+  const k = KITS13['antonius.rhex']; assert.equal(k.entries.length, 60);
+  assert.equal(k.entries.filter((e) => e.shape === 'ANTONIUS').length, 20);
+  assert.equal(k.cells.length, 20);
+  assert.equal(KITS13['antonius.block'].cells.length, 8); assert.equal(KITS13['antonius.rhombohedron'].cells.length, 1);
+  for (const c of k.cells) assert.equal(c.length, 8);
+});
