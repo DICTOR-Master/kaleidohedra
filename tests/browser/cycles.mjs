@@ -69,6 +69,12 @@ await page.waitForTimeout(12000); console.log('later:', await page.getAttribute(
 await page.tap('[data-cy-play]'); await page.waitForTimeout(400);
 const s1 = await line(); await page.waitForTimeout(1500); assert.equal(await line(), s1, 'stopped'); assert.equal(await page.getAttribute('[data-cy-play]', 'aria-pressed'), 'false');
 await page.tap('[data-cy-loop="3"]'); await page.waitForTimeout(400);
+// The Admiral Cap path: icosahedron → octahedron, with the step into the Octet at the octahedron
+await page.tap('[data-cy-loop="5"]'); await page.waitForTimeout(500);
+await set(100); await page.waitForTimeout(600); console.log('admiral:', await line()); assert.match(await line(), /^octahedron/);
+assert.equal(await page.isVisible('[data-cy-chain]'), true, 'step into the Octet offered');
+await page.screenshot({ path: `${SH}/cycles-l5.png` });
+await page.tap('[data-cy-loop="3"]'); await page.waitForTimeout(400);
 // The Star Chain Reaction branch: shown at the dodecahedron, opens the Sunstar world's chain view
 await set(200); await page.waitForTimeout(400);
 assert.equal(await page.isVisible('[data-cy-chain]'), true, 'Star Chain Reaction offered at the dodecahedron');

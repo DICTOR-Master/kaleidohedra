@@ -531,8 +531,8 @@ const SHARED_WORLDS = ['roofFold', 'sunstar', 'stellaJewel', 'shells', 'golden']
 const K_WORLDS = [
   // DICTO Icosa (DICTO 2026-10-10: "own Icosa world", reached only through the DICTO worlds; newest first)
   // Multi-shell chains (DICTO 2026-10-13): the three published nestings, #22-#24, one entry each.
-  // DICTO Icosahedral Cycles (DICTO 2026-10-14, docs/PLAN-CYCLES.md; working name): two loops, one size and growth.
-  { key: 'cycles', label: 'DICTO Icosahedral Cycles', pieces: [{ label: 'DICTO Icosahedral Cycles', action: 'tool:cyclesWorld' }] },
+  // DICTO-TIC, Transitional Icosahedral Cycles (DICTO's name, 2026-10-14; docs/PLAN-CYCLES.md): two loops and their side paths.
+  { key: 'cycles', label: 'DICTO-TIC (Transitional Icosahedral Cycles)', pieces: [{ label: 'DICTO-TIC (Transitional Icosahedral Cycles)', action: 'tool:cyclesWorld' }] },
   { key: 'chains', label: 'Multi-shell chains', pieces: [{ label: 'Chain of Karma', action: 'tool:chainsWorld:karma' },
     { label: 'Spheres of Dharma', action: 'tool:chainsWorld:dharma' }, { label: 'The Bodhi Seed', action: 'tool:chainsWorld:bodhi' }] },
   // DICTO Icosahedral Octet (DICTO 2026-10-13; DISCOVERIES #21): Euclid's roofs moved to the icosahedron, as growing networks.

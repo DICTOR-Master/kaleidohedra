@@ -1,4 +1,4 @@
-// DICTO Icosahedral Cycles: a 3D+ world of two loops (DICTO 2026-10-14, docs/PLAN-CYCLES.md; the name is DICTO's to choose).
+// DICTO-TIC, Transitional Icosahedral Cycles (DICTO's name, 2026-10-14): a 3D+ world of two loops and their side paths (docs/PLAN-CYCLES.md).
 // Loop 1, one size: the icosahedron, great dodecahedron, small stellated dodecahedron and great icosahedron share the same 12 corners;
 // the corners stay lit while each solid's faces fade into the next (studies/2026-10-14-cycles/loop1.json: the steps keep the edges,
 // the face planes, the edges, then only the corners). The side step: from the icosahedron through the dual compound (the rhombic
@@ -88,10 +88,21 @@ export const PATHS = {
   // The Cleo-Icos path (DICTO 2026-10-14): the icosahedron as 20 Cleo-Icos, then 20 Antonius, then 20 more Cleo-Icos: the rhombic
   // hexecontahedron (20 golden rhombohedra; studies/2026-10-14-icosa-cleo-pair). Drawn from Polyhedraverse's kit, scaled to this icosahedron.
   4: { stations: ['cleoIcos20', 'plusAntonius', 'rhombicHexecontahedron'], keeps: ['antonius', 'rhexClose'] },
+  // The Admiral Cap path (DICTO 2026-10-14): the icosahedron + 6 Admiral Caps = the octahedron; each cap sits on one short side of a
+  // Pacioli golden rectangle, its tip on that side's axis. Drawn from Polyhedraverse's octahedron kit, scaled to this icosahedron.
+  5: { stations: ['icosahedron', 'octahedron'], keeps: ['admiral'] },
 };
-const KIT_RHEX = KITS13['antonius.rhex'], KIT_SCALE = Math.sqrt(5) / (2 * PHI); // kit icosahedron edge 2/√5 -> 1/φ
-const PIECE_COLOUR = { ICOSA_FACE_PYRAMID: 0xc792ea, ANTONIUS: 0x4dd0e1 };
-const LAYER_BUILD = ['tool:polyKit:cleoSphere.icosahedron', 'tool:polyKit:antonius.rhex', 'tool:polyKit:antonius.rhex'];
+// Paths drawn from Polyhedraverse kits: which kit, its scale to this icosahedron (edge 1/φ), each piece's layer, colours, and the
+// Build action at each station.
+const PIECE_PATHS = {
+  4: { kit: KITS13['antonius.rhex'], scale: Math.sqrt(5) / (2 * PHI), layer: (e, n) => Math.floor(n / 20),
+    colour: { ICOSA_FACE_PYRAMID: 0xc792ea, ANTONIUS: 0x4dd0e1 }, build: ['tool:polyKit:cleoSphere.icosahedron', 'tool:polyKit:antonius.rhex', 'tool:polyKit:antonius.rhex'] },
+  5: { kit: KITS13['octet.octahedron'], scale: 1 / PHI, layer: (e) => (e.shape === 'D20' ? 0 : 1),
+    colour: { D20: 0x5fd38a, DICTO_EDGE_ROOF: 0xffc857 }, build: ['tool:polyKit:cleoSphere.icosahedron', 'tool:polyKit:octet.octahedron'] },
+};
+// Where a station steps out into another world (one place only): the Star Chain Reaction, the Icosahedral Octet.
+const STEP_OUT = { 'dodecahedron': ['cy.starChain', 'tool:sunstarWorld:chain'], 'greatStellatedDodecahedron': ['cy.starChain', 'tool:sunstarWorld:chain'],
+  'octahedron': ['cy.octet', 'tool:octetWorld:caps'] };
 export const LOOP1 = PATHS[1].stations.slice(0, 4).map((key) => ({ key }));
 export const LOOP1_KEEPS = PATHS[1].keeps;
 // Pacioli's three golden rectangles (DICTO 2026-10-14): the icosahedron's 12 corners are (0, ±1, ±φ), (±1, ±φ, 0), (±φ, 0, ±1) and their
@@ -107,18 +118,19 @@ export const ROADS = {
 };
 for (const r of Object.values(ROADS)) { r.film = filmOrder(r.list, r.named); r.stations = r.film.ends.filter((e) => e.name).map((e) => ({ at: e.at, key: e.name })); }
 export const LOOP2_STATIONS = ROADS.dharma.stations;
-const solidName = (k, L) => (k === 'hecatodihedron' ? 'DICTO Truncated-Icosahedral Hecatodihedron' : ['dualCompound', 'cleoIcos20', 'plusAntonius'].includes(k) ? t(`cy.${k}`, L) : t(`solid.${k}`, L));
+const solidName = (k, L) => (k === 'hecatodihedron' ? 'DICTO Truncated-Icosahedral Hecatodihedron' : ['dualCompound', 'cleoIcos20', 'plusAntonius', 'octahedronCaps'].includes(k) ? t(`cy.${k}`, L) : t(`solid.${k}`, L));
 
 export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = () => {}, openAction = () => {} }) {
   const STORAGE_KEY = storageKey('cycles');
   const group = new THREE.Group();
   group.visible = false;
   scene.add(group);
-  const view = { loop: 1, t1: 0, t2: 1, t3: 0, t4: 0, pacioli: false, road: 'dharma' };
+  const view = { loop: 1, t1: 0, t2: 1, t3: 0, t4: 0, t5: 0, pacioli: false, road: 'dharma' };
   const road = () => ROADS[view.road];
   try {
     const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
-    if ([1, 2, 3, 4].includes(d?.loop)) view.loop = d.loop;
+    if ([1, 2, 3, 4, 5].includes(d?.loop)) view.loop = d.loop;
+    if (Number.isFinite(d?.t5)) view.t5 = Math.max(0, Math.min(1, d.t5));
     if (Number.isFinite(d?.t4)) view.t4 = Math.max(0, Math.min(2, d.t4));
     view.pacioli = d?.pacioli === true;
     if (Number.isFinite(d?.t1)) view.t1 = Math.max(0, Math.min(4, d.t1));
@@ -151,7 +163,7 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
   }
   const ekey = ([a, b]) => [a, b].map((p) => p.map((x) => x.toFixed(5)).join(',')).sort().join('|');
   // where a path's slider is: the station before, the one after, and how far between (0..1)
-  const tOf = () => (view.loop === 1 ? view.t1 : view.loop === 3 ? view.t3 : view.t4);
+  const tOf = () => view[{ 1: 't1', 3: 't3', 4: 't4', 5: 't5' }[view.loop]];
   function between() {
     const path = PATHS[view.loop], tt = tOf(), last = path.stations.length - 1;
     const i = Math.min(Math.floor(tt), last), j = Math.min(i + 1, last), f = i === last ? 0 : tt - i;
@@ -205,14 +217,14 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
   }
   // The Cleo-Icos path: layer k of the kit (20 pieces each) shows in full once the slider passes k, fading in on the way.
   function drawPieces() {
-    const tt = view.t4, tris = new Map(), edges = [];
-    KIT_RHEX.entries.forEach((e, n) => {
-      const layer = Math.floor(n / 20), alpha = Math.max(0, Math.min(1, tt - layer + 1));
+    const P5 = PIECE_PATHS[view.loop], tt = tOf(), tris = new Map(), edges = [];
+    P5.kit.entries.forEach((e, n) => {
+      const layer = P5.layer(e, n), alpha = Math.max(0, Math.min(1, tt - layer + 1));
       if (alpha < 0.02) return;
       const q = new THREE.Quaternion(...e.quaternion), spec = POLYHEDRA[e.shape];
-      const P = spec.vertices.map((v) => new THREE.Vector3(...v).applyQuaternion(q).add(new THREE.Vector3(...e.position)).multiplyScalar(KIT_SCALE).toArray());
+      const P = spec.vertices.map((v) => new THREE.Vector3(...v).applyQuaternion(q).add(new THREE.Vector3(...e.position)).multiplyScalar(P5.scale).toArray());
       const key = `${e.shape}:${alpha.toFixed(2)}`;
-      if (!tris.has(key)) tris.set(key, { colour: PIECE_COLOUR[e.shape] ?? 0x9fb4c8, alpha, list: [] });
+      if (!tris.has(key)) tris.set(key, { colour: P5.colour[e.shape] ?? 0x9fb4c8, alpha, list: [] });
       for (const f of spec.faces) { tris.get(key).list.push(...fan(f.map((k) => P[k]))); edges.push(...f.map((k, m) => [P[k], P[f[(m + 1) % f.length]]])); }
     });
     for (const { colour, alpha, list } of tris.values()) group.add(triMesh(list, colour, alpha * opacity));
@@ -221,7 +233,7 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
   function draw() {
     clearGroup();
     if (!active) return;
-    if (view.loop === 2) drawLoop2(); else if (view.loop === 4) drawPieces(); else drawPath();
+    if (view.loop === 2) drawLoop2(); else if (PIECE_PATHS[view.loop]) drawPieces(); else drawPath();
     if (view.pacioli && view.loop !== 2) {
       group.add(triMesh(PACIOLI.flatMap(fan), 0xffe082, 0.45 * opacity));
       group.add(lines(PACIOLI.flatMap((P) => P.map((p, k) => [p, P[(k + 1) % 4]])), 0xffffff, 1));
@@ -229,6 +241,7 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
   }
   const radius = () => {
     if (view.loop === 4) return (view.t4 > 1.02 ? 1.42 : view.t4 > 0.02 ? 1.0 : 0.62) * WS; // RHex tips at 2.028 x the kit scale
+    if (view.loop === 5) return (view.t5 > 0.02 ? 0.86 : 0.62) * WS; // the octahedron's corners at φ²/2 x 1/φ
     if (view.loop !== 2) return 0.62 * WS; // every station of Loop 1 and the side step lies within the icosahedron's corners or the dodecahedron's
     let r = 0.6;
     for (let k = 0; k < view.t2; k++) for (const p of road().list[road().film.seq[k]][1]) r = Math.max(r, Math.hypot(...p));
@@ -240,7 +253,7 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
   panel.id = 'worldcycles-panel';
   panel.className = 'qc-panel';
   panel.innerHTML = `
-    <div class="w4d-row w4d-options"><button type="button" data-cy-loop="1"></button><button type="button" data-cy-loop="3"></button><button type="button" data-cy-loop="4"></button><button type="button" data-cy-loop="2"></button></div>
+    <div class="w4d-row w4d-options"><button type="button" data-cy-loop="1"></button><button type="button" data-cy-loop="3"></button><button type="button" data-cy-loop="4"></button><button type="button" data-cy-loop="5"></button><button type="button" data-cy-loop="2"></button></div>
     <div class="w4d-row w4d-options cy-roads"><button type="button" data-cy-road="dharma"></button><button type="button" data-cy-road="lotus"></button></div>
     <div class="w4d-row st-note cy-note"></div>
     <div class="w4d-row st-note cy-station"></div>
@@ -275,13 +288,13 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
         at = path.stations[f > 0.98 ? j : i];
         line = `${solidName(at, L)}${view.loop === 1 && tOf() >= last - 0.02 ? ` · ${t('cy.again', L)}` : ''}`;
       } else line = `${solidName(path.stations[i], L)} → ${solidName(path.stations[j], L)} · ${t(`cy.keep.${path.keeps[i]}`, L)}`;
-      buildAction = at ? (view.loop === 4 ? LAYER_BUILD[path.stations.indexOf(at)] : ST[at].build) : null;
+      buildAction = at ? (PIECE_PATHS[view.loop] ? PIECE_PATHS[view.loop].build[path.stations.indexOf(at)] : ST[at].build) : null;
     }
     panel.querySelector('.cy-station').textContent = line;
     buildBtn.hidden = !buildAction;
-    // The Star Chain Reaction branch (PLAN-CYCLES: step in at the dodecahedron and back out): it lives in the Sunstar world.
-    const chainBtn = panel.querySelector('[data-cy-chain]');
-    chainBtn.hidden = !(view.loop === 3 && ['dodecahedron', 'greatStellatedDodecahedron'].includes(at)); chainBtn.textContent = t('cy.starChain', L);
+    // Stepping out into another world: the Star Chain Reaction (PLAN-CYCLES: step in at the dodecahedron and back out) and the Octet.
+    const chainBtn = panel.querySelector('[data-cy-chain]'), out = view.loop !== 2 && at ? STEP_OUT[at] : null;
+    chainBtn.hidden = !out; if (out) chainBtn.textContent = t(out[0], L);
     const pl = panel.querySelector('[data-cy-play]'); pl.textContent = t(play ? 'cy.stop' : 'cy.play', L); pl.setAttribute('aria-pressed', String(!!play));
     const pac = panel.querySelector('[data-cy-pacioli]');
     pac.hidden = view.loop === 2; pac.textContent = t('poly.pacioli', L); pac.title = t('poly.pacioli.title', L); pac.setAttribute('aria-pressed', String(view.pacioli));
@@ -290,27 +303,27 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
   slider.addEventListener('input', () => {
     const v = Number(slider.value);
     if (view.loop === 2) view.t2 = v;
-    else { let x = v / 100; const r = Math.round(x); if (Math.abs(x - r) < 0.06) x = r; if (view.loop === 1) view.t1 = x; else if (view.loop === 3) view.t3 = x; else view.t4 = x; } // settles on each station
+    else { let x = v / 100; const r = Math.round(x); if (Math.abs(x - r) < 0.06) x = r; view[{ 1: 't1', 3: 't3', 4: 't4', 5: 't5' }[view.loop]] = x; } // settles on each station
     save(); draw(); renderPanel();
   });
   slider.addEventListener('change', () => { if (view.loop !== 1) fit(); });
   panel.querySelectorAll('[data-cy-loop]').forEach((b) => b.addEventListener('click', () => {
     // the switch happens at the shared icosahedron: each path starts there
-    view.loop = Number(b.dataset.cyLoop); view.t1 = 0; view.t2 = 1; view.t3 = 0; view.t4 = 0;
+    view.loop = Number(b.dataset.cyLoop); view.t1 = 0; view.t2 = 1; view.t3 = 0; view.t4 = 0; view.t5 = 0;
     save(); draw(); renderPanel(); fit();
   }));
   buildBtn.addEventListener('click', () => { stop(); if (buildAction) openAction(buildAction); });
-  panel.querySelector('[data-cy-chain]').addEventListener('click', () => { stop(); openAction('tool:sunstarWorld:chain'); });
+  panel.querySelector('[data-cy-chain]').addEventListener('click', () => { const out = at && STEP_OUT[at]; if (!out) return; stop(); openAction(out[1]); });
   // ---- Play (DICTO 2026-10-14: "the whole thing should be looped, so you press stop or it stops when you exit"): a tour of every
   // path from the shared icosahedron, round and round: Loop 1 once round, the side step and the Cleo-Icos path out and back, then
   // Loop 2 by both roads. Stops on Stop, on any other control, or on leaving the world.
-  const TOUR = [{ loop: 1, to: 4 }, { loop: 3, to: 3, back: true }, { loop: 4, to: 2, back: true }, { loop: 2, road: 'dharma' }, { loop: 2, road: 'lotus' }];
+  const TOUR = [{ loop: 1, to: 4 }, { loop: 3, to: 3, back: true }, { loop: 4, to: 2, back: true }, { loop: 5, to: 1, back: true }, { loop: 2, road: 'dharma' }, { loop: 2, road: 'lotus' }];
   const STATION_SPEED = 0.45, PIECE_SPEED = 22, HOLD = 1.1; // stations per second, pieces per second, seconds held at a station
   let play = null;
-  const tKey = (l) => ({ 1: 't1', 3: 't3', 4: 't4' })[l];
+  const tKey = (l) => ({ 1: 't1', 3: 't3', 4: 't4', 5: 't5' })[l];
   function startLeg(i) {
     const leg = TOUR[i % TOUR.length];
-    view.loop = leg.loop; if (leg.road) view.road = leg.road; view.t1 = 0; view.t2 = 1; view.t3 = 0; view.t4 = 0;
+    view.loop = leg.loop; if (leg.road) view.road = leg.road; view.t1 = 0; view.t2 = 1; view.t3 = 0; view.t4 = 0; view.t5 = 0;
     play = { i: i % TOUR.length, dir: 1, hold: HOLD, last: performance.now(), raf: 0 };
     if (leg.loop === 2) { const { list, film } = road(); let r = 0.6; for (const n of film.seq) for (const q of list[n][1]) r = Math.max(r, Math.hypot(...q)); fitView([0, 0, 0], r * WS * 1.15); }
     else fit();
@@ -365,10 +378,10 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
     setLatticeView() {},
     shearChanged() {},
     get isEmpty() { return false; },
-    clear() { view.t1 = 0; view.t2 = 1; view.t3 = 0; view.t4 = 0; save(); draw(); renderPanel(); },
+    clear() { view.t1 = 0; view.t2 = 1; view.t3 = 0; view.t4 = 0; view.t5 = 0; save(); draw(); renderPanel(); },
     snapshot: () => ({ version: 1, ...view }),
     restore(j) {
-      view.loop = [1, 2, 3, 4].includes(j?.loop) ? j.loop : 1; if (Number.isFinite(j?.t4)) view.t4 = j.t4; view.road = j?.road === 'lotus' ? 'lotus' : 'dharma';
+      view.loop = [1, 2, 3, 4, 5].includes(j?.loop) ? j.loop : 1; if (Number.isFinite(j?.t4)) view.t4 = j.t4; if (Number.isFinite(j?.t5)) view.t5 = j.t5; view.road = j?.road === 'lotus' ? 'lotus' : 'dharma';
       if (Number.isFinite(j?.t1)) view.t1 = j.t1; if (Number.isInteger(j?.t2)) view.t2 = j.t2; if (Number.isFinite(j?.t3)) view.t3 = j.t3;
       save(); draw(); renderPanel();
     },

@@ -30,7 +30,7 @@ Lotus seed ends on the same icosahedron, and Bodhi Kit B grows by the same φ³.
 - Stage 1 (data) done: studies/2026-10-14-cycles (stations, loop1.json). Great icosahedron made buildable (Polyhedraverse kit).
 - Stage 3 (viewer) first version done 2026-10-14: src/app/world-cycles.js, 'DICTO Icosahedral Cycles' in DICTO's 3D+ worlds; Loop 1 and
   Loop 2 sliders, loop switch at the icosahedron, 7 languages; tests/browser/cycles.mjs. The IDT world no longer exists in the code, so
-  there was nothing to link from. Since then (same day): the dual side step, the Cleo-Icos path, Build buttons opening each station's kit (stage 4 as links, no duplicated builder), Golden rectangles, the Lotus seed road in Loop 2, Play (a looping tour), and the Star Chain Reaction branch (a button at the dodecahedron that opens the Sunstar world's chain view). Open: the world's name.
+  there was nothing to link from. Since then (same day): the dual side step, the Cleo-Icos path, Build buttons opening each station's kit (stage 4 as links, no duplicated builder), Golden rectangles, the Lotus seed road in Loop 2, Play (a looping tour), and the Star Chain Reaction branch (a button at the dodecahedron that opens the Sunstar world's chain view). Named by DICTO: DICTO-TIC (Transitional Icosahedral Cycles). Added: the Admiral Cap path (icosahedron + 6 Admiral Caps = octahedron, caps on Pacioli's short sides) with a step into the Icosahedral Octet.
 
 ## Shape of the world: a figure-eight
 
