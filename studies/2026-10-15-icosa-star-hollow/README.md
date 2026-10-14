@@ -23,3 +23,13 @@ face pyramids from its centre) standing on the icosidodecahedron's triangles, po
 
 Renders (`renders/`, `scripts/render.html` + `shoot.mjs` on dicto-node): closed in the glass shell, cut in half, shell removed, pulled apart.
 Status: a study; the app's hollow view still shows the 2026-10-12 version. Not claimed; no prior-art search yet.
+
+**In the app (DICTO 2026-10-15, "Cleo-Icos + 12 flat pyramids"):** the hollow view now holds the edge-1 core with the 20 Cleo-Icos
+on its face centres and 12 flat pentagonal pyramids on its corners (base the pentagonal window, height 0.425325, side edges 0.951057,
+the Cleo-Ico's own side length, so its side triangles are the Cleo-Ico's). 217 pieces (scripts/build-dodeca-data.py).
+
+**Cleo core step 1 (docs/PLAN-CLEO-CORE.md; `scripts/core_step1.py`, `data/core_step1.txt`):** the hollow is exactly the edge-1 core +
+12 flat pentagonal pyramids + 20 triangular antiprisms: volumes add up to 1.8e-15, no overlaps among the 33, 16 159 sampled points each
+covered once, and all 60 pyramid–antiprism contacts are whole faces. Each antiprism is two edge-1 triangles 0.755761 apart joined by six
+triangles of sides 1, 0.951057, 0.951057, again the Cleo-Ico's side triangle; each holds one outer Cleo-Ico. Next: step 2, cut the
+antiprism around its Cleo-Ico.
