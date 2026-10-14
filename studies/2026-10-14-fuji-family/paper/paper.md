@@ -2,7 +2,7 @@
 
 **DICTO** · dictospheres.com
 
-*14 October 2026 · DICTO DOI: 10.5281/zenodo.23357897. Computation, checking and drafting with Claude (Anthropic).*
+*Version 2, 14 October 2026 · DICTO DOI: 10.5281/zenodo.23357896 (all versions). Computation, checking and drafting with Claude (Anthropic).*
 
 ---
 
@@ -188,6 +188,10 @@ The Cleo-Icos cannot fill space alone (Section 5.6), but it can with one partner
 Golden rhombohedra fill space in a lattice, and every rhombus face is cut along the same diagonal from both sides. So **Cleo-Icos and Antonius fill space, two to one, face to face, with no mirror images.** Along Antonius's equilateral edges its dihedral angle is 110.91°, which with the Cleo-Icos's 69.09° makes 180°: the faces meet flat. We checked a patch of 2,187 pieces: no gaps or overlaps, every face matched, every edge and every corner closing exactly. The Dehn invariant agrees: the Cleo-Icos's is not zero, so no single space-filler (a cube, a rhombohedron) could be its partner, and Antonius's is exactly −2 times the Cleo-Icos's, which the two-to-one ratio balances.
 
 The same pieces build the **rhombic hexecontahedron**, known as 20 prolate golden rhombohedra round a point [Hafner and Žitko]: 20 Cleo-Icos round the centre (the icosahedron), 20 Antonius, and 20 Cleo-Icos at the tips (Figure 10c; checked against the rhombic hexecontahedron of our Bodhi Seed). The cut of a rhombohedron by those two planes is general (any parallelepiped splits into two corner tetrahedra of a sixth each and a middle of two thirds), and for the rhombohedron of 60° it gives the regular tetrahedra and octahedron of the tetrahedral–octahedral honeycomb. What is particular here is that the golden rhombohedron's corner is the icosahedron's central pyramid, so the icosahedron's own pieces, with one partner, fill space. We found this split in neither of the dissections of the golden rhombohedra we read [Hafner and Žitko; Hafner and Komatar 2008].
+
+![Figure 11](figures/fig11-pacioli-cleo-icos.jpg)
+
+**Figure 11.** Both from the same viewpoint. (a) The icosahedron as 20 Cleo-Icos in glass, with Pacioli's three golden rectangles (gold) crossing at the centre, where the Cleo-Icos tips meet. (b) The rectangles alone, each cut by its diagonals: the triangles on the short sides (wisteria, 63.43° at the centre) are side faces of Cleo-Icos; those on the long sides (gold) have 116.57°.
 
 **Pacioli's golden rectangles.** The three golden rectangles of Pacioli, at right angles through the centre, have their 12 corners at the icosahedron's 12 corners, the outer corners of the Cleo-Icos, and pass through the centre, where all 20 Cleo-Icos tips meet. Cut by its diagonals (two diameters), each rectangle falls into four triangles from the centre. The two on its short sides, which are icosahedron edges, are exactly side faces of Cleo-Icos, walls between neighbours, with 63.43° at the centre; they are also halves of the golden rhombi that bound the golden rhombohedra above. The two on its long sides have 116.57° at the centre. 63.43° and 116.57° are the golden rhombus's two angles, so each rectangle is made of halves of golden rhombi, the same faces that bound the Cleo-Icos and the rhombohedra filled by Cleo-Icos and Antonius.
 
