@@ -33,7 +33,7 @@ import { migrateLegacyAssembly, ASSEMBLY_STORAGE_KEY } from '../krp-core/src/ass
 import { solidsOverlap, placedSolid, insideSolid } from '../krp-core/src/assembly/overlap.js';
 import { hintSlots, hasHints as buildHasHints } from '../krp-core/src/assembly/hints.js';
 import { bestFits } from '../krp-core/src/assembly/bestFits.js';
-import { kitSlots } from '../krp-core/src/assembly/kitHints.js';
+import { kitSlots, kitFrame, kitIcosahedron, goldenRectangles } from '../krp-core/src/assembly/kitHints.js';
 import { t } from './i18n.js';
 import { polyShapeName } from './poly-shapes.js';
 
@@ -67,7 +67,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   let connections = []; // { nodeA, vertexA, nodeB, vertexB, kind: 'face' } (face indices for a face join)
   // queue: the shapes used lately, newest first (8); pins: the ones always offered (D3b, DICTO's build queue).
   // Favourites (pins) and Recent (the queue) live in poly-prefs.js, shared with DICTO's browser.
-  const view = { shape: DEFAULT_SHAPE, parts: 'solid', rcp: null, hints: true, bestFits: false, kit: null };
+  const view = { shape: DEFAULT_SHAPE, parts: 'solid', rcp: null, hints: true, bestFits: false, kit: null, pacioli: false };
   let active = false, skeleton = false, opacity = 1;
   let spherical = false, sphereScale = 1;
   let nextId = 1;
@@ -270,6 +270,23 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     kitCache = { key, slots, glow: new Map() };
     return kitCache;
   }
+  // Pacioli's three golden rectangles (DICTO 2026-10-14) on any kit that fills an icosahedron: corners on its 12 corners, each through
+  // the centre with two opposite edges as its short sides; lined up with the build like the kit's outlines.
+  const kitIco = () => (kitOn() ? kitIcosahedron(KITS13[view.kit], POLYHEDRA) : null);
+  const pacioliOn = () => view.pacioli && !!kitIco();
+  const pacioliFill = new THREE.MeshBasicMaterial({ color: 0xffe082, transparent: true, opacity: 0.45, side: THREE.DoubleSide, depthWrite: false });
+  const pacioliEdge = new THREE.LineBasicMaterial({ color: 0xffffff }); // fill as EKP's rectangles; white rims stand clear of the gold outlines
+  function pacioliMeshes() {
+    const W = kitFrame(nodes, POLYHEDRA, KITS13[view.kit]), rects = goldenRectangles(kitIco());
+    if (!W || !rects) return [];
+    const q = new THREE.Quaternion(...W.q), p = new THREE.Vector3(...W.p);
+    return rects.flatMap((r) => {
+      const P = r.map((v) => new THREE.Vector3(...v).applyQuaternion(q).add(p));
+      const g = new THREE.BufferGeometry().setFromPoints([P[0], P[1], P[2], P[0], P[2], P[3]]);
+      const fill = new THREE.Mesh(g, pacioliFill); fill.renderOrder = 2;
+      return [fill, new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(P), pacioliEdge)];
+    });
+  }
   const kitDone = () => kitOn() && nodes.length >= KITS13[view.kit].entries.length && !kitHints().slots.length;
   // Outlines of a kit on screen: the pieces go see-through and taps go to the outlines (✕ on the kit row hands them back).
   const kitGuiding = () => kitOn() && view.hints && !view.bestFits && kitHints().slots.length > 0;
@@ -396,6 +413,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       }
       // What comes next: ghosts and glowing faces.
       if (!spherical) { const hm = hintMeshes(); if (hm.length) group.add(...hm); }
+      if (pacioliOn()) group.add(...pacioliMeshes());
       // 4D Prism walls: the prism cell joining each face to the far copy, see-through.
       const walls = duoprismWalls();
       if (walls) group.add(...walls);
@@ -836,7 +854,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       ${selection ? `<button type="button" class="poly-more" data-more>${t('poly.more', L)}</button>` : ''}
       ${selection && selection.face != null && FOURD.has(selection.node.shape) ? `<button type="button" class="poly-more" data-duoprism>${t('poly.duoprism', L)}</button>` : ''}
       ${selection && REWRITE_TARGET[selection.node.shape] ? `<button type="button" class="poly-more" data-transform>${t('poly.transform', L, { name: polyShapeName(REWRITE_TARGET[selection.node.shape]).replaceAll('_', ' ') })}</button>` : ''}
-      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${kitOn() ? `<div class="poly-golden poly-kit-row"><span>${t(kitDone() ? 'poly.kit.done' : 'poly.kit', L, { name: KITS13[view.kit].label })}</span><button type="button" data-kit-off title="${t('poly.kit.off', L)}">✕</button></div>` : ''}${hasHintRow || hasBestRow ? `<div class="poly-golden">${hasHintRow ? `<button type="button" data-hints aria-pressed="${view.hints && !view.bestFits}" title="${t('poly.hints.title', L)}">${t('poly.hints', L)}</button>` : ''}${hasBestRow ? `<button type="button" data-best aria-pressed="${view.bestFits}" title="${t('poly.best.title', L)}">${t('poly.best', L)}</button>` : ''}</div>${hasBestRow && view.bestFits ? bestRow(L) : ''}` : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.filter((v) => v === 'solid' || nodes.some((n) => PART_PICK[n.shape]?.[v])).map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}`;
+      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${kitOn() ? `<div class="poly-golden poly-kit-row"><span>${t(kitDone() ? 'poly.kit.done' : 'poly.kit', L, { name: KITS13[view.kit].label })}</span>${kitIco() ? `<button type="button" data-pacioli aria-pressed="${!!view.pacioli}" title="${t('poly.pacioli.title', L)}">${t('poly.pacioli', L)}</button>` : ''}<button type="button" data-kit-off title="${t('poly.kit.off', L)}">✕</button></div>` : ''}${hasHintRow || hasBestRow ? `<div class="poly-golden">${hasHintRow ? `<button type="button" data-hints aria-pressed="${view.hints && !view.bestFits}" title="${t('poly.hints.title', L)}">${t('poly.hints', L)}</button>` : ''}${hasBestRow ? `<button type="button" data-best aria-pressed="${view.bestFits}" title="${t('poly.best.title', L)}">${t('poly.best', L)}</button>` : ''}</div>${hasBestRow && view.bestFits ? bestRow(L) : ''}` : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.filter((v) => v === 'solid' || nodes.some((n) => PART_PICK[n.shape]?.[v])).map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}`;
     stripBody.querySelectorAll('.poly-shape canvas').forEach((cv) => disposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 34)));
   }
   panel.addEventListener('change', (e) => {
@@ -866,6 +884,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     if ('clear' in b.dataset) { chosen = null; renderPanel(); return; }
     if (rcpAct(b)) return;
     if ('hints' in b.dataset) { if (view.bestFits) { view.bestFits = false; view.hints = true; } else view.hints = !view.hints; save(); rebuild(); renderPanel(); return; }
+    if ('pacioli' in b.dataset) { view.pacioli = !view.pacioli; save(); rebuild(); renderPanel(); return; }
     if ('kitOff' in b.dataset) { view.kit = null; save(); rebuild(); renderPanel(); return; }
     if ('best' in b.dataset) { view.bestFits = !view.bestFits; save(); rebuild(); renderPanel(); return; }
     if ('bestPick' in b.dataset) { placeSlot(Number(b.dataset.bestPick)); return; }

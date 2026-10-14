@@ -15,5 +15,10 @@ const html = await page.evaluate(() => document.querySelector('.dim-wizard-body'
 assert.ok(/Penta-cleo/.test(html), 'Penta-cleo listed');
 const k = page.locator('[data-kit="cleoSphere.icosahedron"]').first(); await k.scrollIntoViewIfNeeded(); await k.tap(); await page.waitForTimeout(1500);
 await page.screenshot({ path: `${process.env.SHOTS ?? '/tmp'}/cleo-sphere-kit.png` });
+// Pacioli's golden rectangles (DICTO 2026-10-14): a toggle on icosahedron kits, tapped on and off.
+const pac = page.locator('[data-pacioli]'); assert.equal(await pac.count(), 1, 'golden rectangles toggle shown');
+await pac.tap(); await page.waitForTimeout(500); assert.equal(await page.locator('[data-pacioli]').getAttribute('aria-pressed'), 'true');
+await page.screenshot({ path: `${process.env.SHOTS ?? '/tmp'}/cleo-sphere-pacioli.png` });
+await page.locator('[data-pacioli]').tap(); await page.waitForTimeout(300); assert.equal(await page.locator('[data-pacioli]').getAttribute('aria-pressed'), 'false');
 console.log(errors.length ? 'ERRORS ' + errors.join(' | ') : 'no errors'); assert.equal(errors.length, 0);
 await b.close(); console.log('cleo-sphere OK');
