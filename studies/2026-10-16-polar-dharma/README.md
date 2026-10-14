@@ -88,3 +88,15 @@ None of the four Kepler–Poinsot solids fit there (`data/polar-stars-inner.txt`
   The room around the Hecatodihedron is the same as around the dodecahedron, except for the pentakis dodecahedron, RT and ID.
 
 (RT shows as NO in the big gap only because of sampling at its own touching points. It is the trivially locked case.)
+
+## Step 7: a dual pair instead of the Hecatodihedron? (2026-10-16, DICTO's question)
+
+The test is the chain D ⊂ s1·X ⊂ s2·Y ⊂ ID, where X and Y are a dual pair. A pair locks when all three contacts hold at once (D touches X, X touches Y, Y touches ID). That happens when slack = 1. Results are in `polar_dual_pair.py` and `data/polar-dual-pair.txt`.
+
+- No pair locks.
+- Three pairs fit, with room to spare:
+  - truncated icosidodecahedron inside disdyakis triacontahedron: ×1.015, the tightest fit;
+  - rhombicosidodecahedron inside deltoidal hexecontahedron: ×1.039;
+  - pentakis dodecahedron inside truncated icosahedron: ×1.093.
+- The nearest miss is the deltoidal hexecontahedron inside the rhombicosidodecahedron, at 0.9956, short by 0.4%.
+- Every other pair and order is too big for the gap.
