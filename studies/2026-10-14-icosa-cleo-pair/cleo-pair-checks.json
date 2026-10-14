@@ -1,0 +1,178 @@
+{
+ "edge_base": 0.8944271909999159,
+ "side_edge_R": 0.8506508083520399,
+ "cos_uv": 0.44721359549995804,
+ "1/sqrt5": 0.4472135954999579,
+ "vol": {
+  "cleo": 0.07805469288332914,
+  "cleo2": 0.07805469288332907,
+  "A": 0.31221877153331645,
+  "rhombohedron": 0.4683281572999746,
+  "ico_over_20": 0.07805469288332914,
+  "A_over_cleo": 3.9999999999999987,
+  "rh_over_cleo": 5.999999999999997
+ },
+ "cleo_edges_len_deg": [
+  [
+   0.850650808,
+   72.0
+  ],
+  [
+   0.894427191,
+   69.094843
+  ]
+ ],
+ "cleo_nfaces_nverts": [
+  4,
+  4
+ ],
+ "cleo_far_edges_len_deg": [
+  [
+   0.850650808,
+   72.0
+  ],
+  [
+   0.894427191,
+   69.094843
+  ]
+ ],
+ "cleo_far_nfaces_nverts": [
+  4,
+  4
+ ],
+ "A_edges_len_deg": [
+  [
+   0.850650808,
+   108.0
+  ],
+  [
+   0.894427191,
+   110.905157
+  ]
+ ],
+ "A_nfaces_nverts": [
+  8,
+  6
+ ],
+ "rhombohedron_edges_len_deg": [
+  [
+   0.850650808,
+   72.0
+  ],
+  [
+   0.850650808,
+   108.0
+  ]
+ ],
+ "rhombohedron_nfaces_nverts": [
+  6,
+  8
+ ],
+ "cleo_far_congruent_to_cleo": true,
+ "A_face_sizes": [
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3
+ ],
+ "A_vertices": [
+  [
+   0.0,
+   0.4472135954999579,
+   0.7236067977499789
+  ],
+  [
+   0.4472135954999579,
+   0.7236067977499789,
+   0.0
+  ],
+  [
+   0.7236067977499789,
+   0.0,
+   0.4472135954999579
+  ],
+  [
+   0.4472135954999579,
+   1.1708203932499368,
+   0.7236067977499789
+  ],
+  [
+   1.1708203932499368,
+   0.7236067977499789,
+   0.4472135954999579
+  ],
+  [
+   0.7236067977499789,
+   0.4472135954999579,
+   1.1708203932499368
+  ]
+ ],
+ "u_v_w": [
+  [
+   0.0,
+   0.4472135954999579,
+   0.7236067977499789
+  ],
+  [
+   0.4472135954999579,
+   0.7236067977499789,
+   0.0
+  ],
+  [
+   0.7236067977499789,
+   0.0,
+   0.4472135954999579
+  ]
+ ],
+ "cleo_apex_solid_angle_x20_over_4pi": 1.0,
+ "theta_ico_deg": 138.1896851042214,
+ "A_cap_edge_dihedral_plus_half_theta_deg": 180.0,
+ "dehn_coeff_of_E_x_halftheta": {
+  "cleo": 3.0,
+  "A": -6.0,
+  "rhombohedron": 0.0
+ },
+ "montecarlo_points": 104189,
+ "cover_count_hist": [
+  0,
+  104189
+ ],
+ "faces_checked": 604,
+ "faces_shared_by_exactly_2": 604,
+ "face_kinds": {
+  "A+C'": 302,
+  "A+C": 302
+ },
+ "edges_checked": 432,
+ "max_edge_angle_sum_error": 0.0,
+ "vertices_checked": 79,
+ "max_vertex_solid_angle_error": 0.0,
+ "RT_hull_volume": 23.227553482998896,
+ "20_rhombohedra_volume": 9.366563145999493,
+ "RT_check_hist_inside_hull": [
+  43333,
+  29220
+ ],
+ "RT_check_points_outside_hull_covered": 0,
+ "RT_hull_nvertices": 20,
+ "RT_hull_nfaces_merged": 12,
+ "variant_base_corner": {
+  "far_corner_congruent_to_cleo": true,
+  "middle_volume_over_cleo": 3.9999999999999987,
+  "middle_congruent_to_A": true,
+  "middle_edges_len_deg": [
+   [
+    0.850650808,
+    108.0
+   ],
+   [
+    0.894427191,
+    110.905157
+   ]
+  ]
+ }
+}
