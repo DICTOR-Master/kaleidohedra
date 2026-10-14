@@ -211,6 +211,10 @@ reference library, not in this repo.
 - N. Fujita, H. Takano, A. Yamamoto, A.-P. Tsai, Cluster packing geometry for Al-based F-type icosahedral alloys (2013). Library, PDF.
 - S. Kabai, clusters of rhombic triacontahedra and hexecontahedra (Wolfram Demonstrations; Bridges 2011). Cited in DISCOVERIES #24.
 
+- I. Hafner, T. Žitko, Paper model solution of Conway–Radin–Sadun problem, Visual Mathematics (icosahedron from 20 central pyramids; rhombic hexecontahedron = 20 prolate golden rhombohedra), https://www.mi.sanu.ac.rs/vismath/hafnervisual/visual48A/Visual48A.html. Read 2026-10-14 for Cleo-Icos & Antonius: no Antonius split.
+- I. Hafner, A. Komatar, A Dissection of a Prolate Golden Rhombohedron, Wolfram Demonstrations Project (2008), into smaller golden rhombohedra (from the search summary; page needs JavaScript), https://demonstrations.wolfram.com/ADissectionOfAProlateGoldenRhombohedron/.
+- G. Odom, J. van de Craats, Elementary Problem E3007, Amer. Math. Monthly 90 (1983) 482; solution 93 (1986) 572 (Odom's golden ratio from two side midpoints of an equilateral triangle and the circumcircle).
+
 ### Clusters and growth
 - G. Bergman, J. L. T. Waugh, L. Pauling, The crystal structure of the metallic phase Mg32(Al, Zn)49, Acta Cryst. 10 (1957) 254–259, doi:10.1107/S0365110X57000808. *New*, link.
 - A. L. Mackay, A dense non-crystallographic packing of equal spheres, Acta Cryst. 15 (1962) 916–918, doi:10.1107/S0365110X6200239X. Library, link.
