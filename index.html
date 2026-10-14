@@ -1192,6 +1192,10 @@
         <option value="d1mm">Diagonal 2</option>
         <option value="dm1m">Diagonal 3</option>
         <option value="dmm1">Diagonal 4</option>
+        <!-- Icosahedral axes (DICTO 2026-10-15): shown only when the scene has 5-fold symmetry (render.js refreshIcoFrame). -->
+        <option value="i5" data-ico data-i18n="xray.axis.i5" hidden>5-fold axis</option>
+        <option value="i3" data-ico data-i18n="xray.axis.i3" hidden>3-fold axis</option>
+        <option value="i2" data-ico data-i18n="xray.axis.i2" hidden>2-fold axis</option>
       </select>
       <input id="section-pos" type="range" min="-20" max="20" step="0.5" value="0" />
       <label><input id="section-flip" type="checkbox" /> <span data-i18n="world.flip">Flip</span></label>

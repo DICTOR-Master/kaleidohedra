@@ -235,8 +235,59 @@ const SECTION_AXIS_DIRS = {
   x: [1, 0, 0], y: [0, 1, 0], z: [0, 0, 1],
   d111: [1, 1, 1], d1mm: [1, -1, -1], dm1m: [-1, 1, -1], dmm1: [-1, -1, 1],
 };
+// Icosahedral axes (DICTO 2026-10-15): the shell worlds hold the icosahedron in one of two frames, corners at (0, ±1, ±φ) and cyclic
+// ('a', e.g. Bodhi) or at (0, ±φ, ±1) and cyclic ('b', e.g. Karma, Dharma). Both share the 3-fold axis (1, 1, 1) and the 2-fold z
+// axis; only the 5-fold axis differs, so the frame is read from what is on screen (refreshIcoFrame) and the three choices show only
+// when the scene really has 5-fold symmetry.
+const GOLD = (1 + Math.sqrt(5)) / 2;
+const ICO_FIVE = { a: [0, 1, GOLD], b: [1, 0, GOLD] };
+let icoFrame = null; // 'a' | 'b' | null (not icosahedral)
 function sectionAxisVector(axis) {
+  if (axis === 'i5') return new THREE.Vector3(...ICO_FIVE[icoFrame ?? 'a']).normalize();
+  if (axis === 'i3') return new THREE.Vector3(1, 1, 1).normalize();
+  if (axis === 'i2') return new THREE.Vector3(0, 0, 1);
   return new THREE.Vector3(...(SECTION_AXIS_DIRS[axis] ?? SECTION_AXIS_DIRS.x)).normalize();
+}
+// Which frame (if any) the visible scene is 5-fold symmetric in: sample up to 3000 corners, turn them 72° about each candidate axis
+// and count how many land on a corner again.
+function detectIcoFrame() {
+  const pts = [], v = new THREE.Vector3(), m = new THREE.Matrix4();
+  scene.traverseVisible((o) => {
+    if (o.userData.noIcoScan || !(o.isMesh || o.isLineSegments) || !o.geometry?.attributes?.position) return;
+    const pos = o.geometry.attributes.position, n = o.isInstancedMesh ? o.count : 1;
+    for (let k = 0; k < n; k++) {
+      if (o.isInstancedMesh) { o.getMatrixAt(k, m); m.premultiply(o.matrixWorld); } else m.copy(o.matrixWorld);
+      for (let i = 0; i < pos.count; i++) pts.push(v.fromBufferAttribute(pos, i).applyMatrix4(m).clone());
+      if (pts.length > 60000) return;
+    }
+  });
+  if (pts.length < 12) return null;
+  const rmax = Math.max(...pts.map((p) => p.length()));
+  const tol = rmax * 2e-3, key = (p) => `${Math.round(p.x / tol)},${Math.round(p.y / tol)},${Math.round(p.z / tol)}`;
+  const grid = new Set(pts.map(key));
+  const near = (p) => {
+    const bx = Math.round(p.x / tol), by = Math.round(p.y / tol), bz = Math.round(p.z / tol);
+    for (let dx = -1; dx <= 1; dx++) for (let dy = -1; dy <= 1; dy++) for (let dz = -1; dz <= 1; dz++) if (grid.has(`${bx + dx},${by + dy},${bz + dz}`)) return true;
+    return false;
+  };
+  const step = Math.max(1, Math.floor(pts.length / 3000)), sample = pts.filter((p, i) => i % step === 0 && p.length() > tol);
+  const score = (dir) => {
+    const q = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(...dir).normalize(), (2 * Math.PI) / 5);
+    return sample.filter((p) => near(p.clone().applyQuaternion(q))).length / sample.length;
+  };
+  const a = score(ICO_FIVE.a), b = score(ICO_FIVE.b);
+  if (Math.max(a, b) < 0.9) return null;
+  return a >= b ? 'a' : 'b';
+}
+
+// Re-reads the icosahedral frame and shows or hides the three icosahedral choices (only while X-ray is on).
+function refreshIcoFrame() {
+  if (!document.getElementById('section-enable')?.checked) return;
+  icoFrame = detectIcoFrame();
+  const sel = document.getElementById('section-axis');
+  sel.dataset.icoFrame = icoFrame ?? '';
+  for (const o of sel.querySelectorAll('option[data-ico]')) o.hidden = !icoFrame;
+  if (!icoFrame && sel.value.startsWith('i')) sel.value = 'x';
 }
 
 function updateSectionPlane() {
@@ -3042,9 +3093,22 @@ async function init() {
   }
   updateSectionPlane();
   updateSectionEnabled();
-  document.getElementById('section-enable').addEventListener('change', updateSectionEnabled);
+  document.getElementById('section-enable').addEventListener('change', () => { updateSectionEnabled(); refreshIcoFrame(); updateSectionPlane(); syncXrayHandleToSectionPlane(); });
+  window.addEventListener('krp-hud-refresh', () => { refreshIcoFrame(); updateSectionPlane(); syncXrayHandleToSectionPlane(); });
+  // Worlds swap their pieces in after the HUD refresh, so while X-ray is on the frame is read again whenever what is on screen
+  // changes (a cheap count of visible meshes and corners, checked twice a second).
+  let icoScanSig = '';
+  setInterval(() => {
+    if (!document.getElementById('section-enable')?.checked) { icoScanSig = ''; return; }
+    let meshes = 0, corners = 0;
+    scene.traverseVisible((o) => { if (!o.userData.noIcoScan && (o.isMesh || o.isLineSegments) && o.geometry?.attributes?.position) { meshes++; corners += o.geometry.attributes.position.count * (o.isInstancedMesh ? o.count : 1); } });
+    const sig = `${meshes}:${corners}`;
+    if (sig === icoScanSig) return;
+    icoScanSig = sig; refreshIcoFrame(); updateSectionPlane(); syncXrayHandleToSectionPlane();
+  }, 500);
   for (const id of ['section-axis', 'section-flip', 'section-pos']) {
     document.getElementById(id).addEventListener('input', () => {
+      if (id === 'section-axis') refreshIcoFrame();
       updateSectionPlane();
       syncXrayHandleToSectionPlane();
     });
@@ -3496,6 +3560,7 @@ async function init() {
   });
   const xrayHandle = new THREE.Mesh(xrayHandleGeometry, xrayHandleMaterial);
   xrayHandle.visible = false;
+  xrayHandle.userData.noIcoScan = true;
   scene.add(xrayHandle);
 
   const xrayGizmo = new TransformControls(camera, renderer.domElement);
@@ -3503,7 +3568,7 @@ async function init() {
   xrayGizmo.setSize(0.8);
   xrayGizmo.visible = false;
   xrayGizmo.enabled = false;
-  scene.add(xrayGizmo.getHelper ? xrayGizmo.getHelper() : xrayGizmo);
+  { const h = xrayGizmo.getHelper ? xrayGizmo.getHelper() : xrayGizmo; h.traverse((o) => { o.userData.noIcoScan = true; }); scene.add(h); }
   xrayGizmo.addEventListener('dragging-changed', (e) => {
     controls.enabled = !e.value; // TransformControls/OrbitControls both want the mouse -- yield orbit while actively dragging the plane
   });
@@ -3548,6 +3613,7 @@ async function init() {
     const turningOn = !enableCheckbox.checked;
     enableCheckbox.checked = turningOn;
     updateSectionEnabled();
+    if (turningOn) { refreshIcoFrame(); updateSectionPlane(); }
     xrayHandle.visible = turningOn;
     xrayGizmo.visible = turningOn;
     xrayGizmo.enabled = turningOn;
