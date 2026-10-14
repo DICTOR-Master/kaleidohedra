@@ -65,3 +65,10 @@ into its 20 Cleo-Icos, exactly one grouping reaches the Hecatodihedron's 102: 20
 20 caps + 12 (flat pentagonal pyramid + the frustum on its axis) + 30 t1 = 102. The count works, but none of the three fused kinds is
 convex: inner Cleo-Ico + 3 Y, bipyramid + 3 X, flat pyramid + frustum (also bipyramid + cap) all have dents. A set of 12 + 30 + 60 is
 impossible while the 20 bipyramids stay whole (20 does not divide into sets of 12, 30 or 60).
+
+**102 clean pieces (DICTO 2026-10-15, "look for new cuts"; `scripts/cut102.py`, `data/cut102.txt`):** by symmetry the shell outside a core of
+20 Cleo-Icos must be 12 + 20 + 20 + 30. Dharma's 12 frusta, 30 t1 and 20 caps are already convex; the dodecahedron minus the core is cut
+from the centre through the core's 30 edges into 20 columns, each cone(core face) ∩ dodecahedron ∩ {beyond the face}: convex by
+construction; 10 corners, 7 faces (the core face, 3 pentagons on the mirror planes, 3 kites on the dodecahedron). Total 20 + 20 + 12 + 30 +
+20 = 102. Core + columns = dodecahedron (8e-5, data rounding); all 102 = the Hecatodihedron; 13 082 sampled points once each (1 more within
+rounding of a shared face). Renders `renders/c102-*.jpg`.
