@@ -50,8 +50,9 @@ Both types use copies of a single shape, and the copies are part of its own spac
 
 - **Four round one** (four copies on four tetrahedrally placed faces of a fifth): among the lattice space-fillers (parallelohedra), the
   copy across each face is a translate, so the five sit in the shape's own tiling (`scripts/same_shape.py`, checked: translates fit,
-  no overlaps). Four shapes: the **truncated octahedron** (four alternate hexagons, DICTO's example), the **Bain rhombic dodecahedron**,
-  the **Bain elongated dodecahedron** and the **regular-hexagon elongated dodecahedron** (on four of their faces each). The rhombic
+  no overlaps). In the group: the **truncated octahedron** (four alternate hexagons, DICTO's example), the **Bain elongated dodecahedron**
+  and the **regular-hexagon elongated dodecahedron** (on four of their faces each). The Bain rhombic dodecahedron also qualifies but is
+  left out as an RD variant (DICTO: "don't fill it with RDs"). The rhombic
   dodecahedron, cube, hexagonal prism and the classic elongated dodecahedron have no four faces in tetrahedral positions. The truncated
   tetrahedron is ruled out under this rule (its tiling needs tetrahedra too).
 - **Four meeting at a point** (corners of solid angle π), the group without filling it with rhombic dodecahedra (DICTO: "don't fill it
