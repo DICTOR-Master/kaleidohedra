@@ -5,6 +5,16 @@ Working name; the names are DICTO's to choose.
 DICTO's decisions (2026-10-14): **loops**, not a line; **both** a builder and a viewer; the halfway point is **both** the rhombic
 triacontahedron and the icosidodecahedron, as a pair; the growth stations (13s, Dogstar/Sunstar) form a **second cycle**.
 
+## Decision 2026-10-14 (after stage 1): option 1
+
+Stage 1 (studies/2026-10-14-cycles) found that the **Dharma build is already a growth loop of named solids**: icosahedron →
+icosidodecahedron → dodecahedron → truncated icosahedron → Hecatodihedron → rhombic triacontahedron → icosahedron **φ³ larger**. The
+Lotus seed ends on the same icosahedron, and Bodhi Kit B grows by the same φ³. DICTO chose **option 1**:
+- **Loop 2 (growth) = Dharma**, with the **Lotus seed as a second road** between the same two icosahedra (they meet at φ³).
+- **Loop 1 = the one-size loop**: stellations and duality at a single size, closing on the start icosahedron.
+- The tables below are the earlier draft; where they disagree, this section wins. "φ² larger" below is the outline's edge (core
+  dodecahedron edge 1); against the start icosahedron the growth is **φ³**.
+
 ## Shape of the world: a figure-eight
 
 Two loops share one station, the **icosahedron in its EKP frame**.
