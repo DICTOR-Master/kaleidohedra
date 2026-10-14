@@ -1,9 +1,10 @@
 # Polar Dharma step 2 (2026-10-16): each reversed layer A ⊂ B cut into one piece per face F of A: cone(F) ∩ B ∩ {beyond F}, convex by
 # construction (the Kion construction of Theaetetus, #29). Reports per layer: piece kinds (by shape), corners, faces, volumes, and the sum
 # against the layer; then which neighbouring pieces fuse without a dent.
-import json, itertools, numpy as np
+import json, itertools, sys, numpy as np
 from scipy.spatial import ConvexHull, HalfspaceIntersection
-CL = json.load(open('data/reversed-chain.json')); names = [n for n, _ in CL]; C = {n: V for n, V in CL}
+IN, TXT, OUT = (sys.argv[1:4] + ['data/reversed-chain.json', 'data/polar-step2.txt', 'data/polar-pieces.json'][len(sys.argv) - 1:])[:3]
+CL = json.load(open(IN)); names = [n for n, _ in CL]; C = {n: V for n, V in CL}
 def faces(P):
     h = ConvexHull(P); F = []
     for e in h.equations:
@@ -60,4 +61,4 @@ for k in range(len(names) - 1):
         out.append(f'      fuses without a dent: {cnt} pair(s) -> {nc} corners, faces {dict((x, sd.count(x)) for x in sorted(set(sd)))}')
     allpieces[f'{names[k]} -> {names[k + 1]}'] = [V.tolist() for V in pieces]
     print('\n'.join(out[-1 - len(kinds) - len(fus):]), flush=True)
-open('data/polar-step2.txt', 'w').write('\n'.join(out) + '\n'); json.dump(allpieces, open('data/polar-pieces.json', 'w'))
+open(TXT, 'w').write('\n'.join(out) + '\n'); json.dump(allpieces, open(OUT, 'w'))

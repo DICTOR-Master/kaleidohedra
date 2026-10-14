@@ -6,7 +6,7 @@
 // The Spheres of Dharma turned inside out (polar reciprocation), one kind of piece per layer; house palette, each layer its own colour.
 (async function () {
   const scn = location.hash.slice(1) || 'closed';
-  const J = await fetch('polar-render.json').then((r) => r.json());
+  const J = await fetch(location.search.includes('tight') ? 'polar-tight-render.json' : 'polar-render.json').then((r) => r.json());
   const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(1000, 1000); renderer.setPixelRatio(1); renderer.localClippingEnabled = true;
   document.body.appendChild(renderer.domElement);
   const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
@@ -22,11 +22,11 @@
     scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: col, roughness: 0.5, flatShading: true, side: THREE.DoubleSide, clippingPlanes: clip, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
     const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3)); scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, clippingPlanes: clip })));
   };
-  const sh = scn === 'closed' ? 0.995 : 0.97, step = scn === 'apart' ? 0.55 : 0;
+  const sh = scn === 'closed' ? 0.995 : 0.97, step = scn === 'apart' ? (location.search.includes('tight') ? 0.22 : 0.55) : 0;
   add(J.core, 0xffc857, 0, sh);
   J.layers.forEach((L, k) => { if (scn === 'inner' && k > 3) return; for (const S of L.pieces) add(S, COL[k], step * (k + 1), sh); });
   const cam = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
-  const dist = { closed: 10.5, cut: 10.5, apart: 17, inner: 5.2 }[scn];
+  const dist = (location.search.includes('tight') ? { closed: 5.8, cut: 5.8, apart: 9, inner: 5.2 } : { closed: 10.5, cut: 10.5, apart: 17, inner: 5.2 })[scn];
   const dir = scn === 'cut' ? new THREE.Vector3(0.12, 0.2, 1) : new THREE.Vector3(0.62, 0.48, 0.9);
   cam.position.copy(dir.normalize().multiplyScalar(dist)); cam.lookAt(0, 0, 0); renderer.render(scene, cam); document.title = 'ready';
 })();

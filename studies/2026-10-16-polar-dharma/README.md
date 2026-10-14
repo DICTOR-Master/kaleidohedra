@@ -35,3 +35,15 @@ one exact volume, sum − layer = 0 exactly in all six. Shapes: D→ID columns (
 30-30-120°); ID→H* caps (regular pentagon, 5 quadrilaterals, 5 triangles 30-30-120°); H*→PD low pyramids on a regular hexagon (side edge
 1.07 × base; not FUJI-family); PD→I irregular 5-corner wedges (incl. 30-60-90° triangles); I→RT Kepler's pyramids; RT→D roofs on the
 rhombi, each ridge one dodecahedron edge, end triangles 54-72-54° (classical D/RT edge relation). Renders `renders/` (`scripts/render_polar.html`).
+
+## Step 4: the tight nest (2026-10-16)
+
+DICTO asked for a more even nest. The faithful polar version leaves two ends loose, because the original cycle's closure forces the outer dodecahedron to be the inner one × φ³. The triacontahedron could grow ×1.894 before touching the outer dodecahedron, and the inner dodecahedron ×1.232 before touching the icosidodecahedron. The four middle stations already touch, so they stay as they are. `polar_tight.py` tightens both ends (inner ×1.232241, outer ×0.527864):
+
+- The outer layer drops from 25.23 to 1.915, and the closure goes from φ³ linear to 1.814635.
+- The inradii are now 0.495, 0.567, 0.623, 0.653, 0.714, 0.764, 0.898.
+- Each layer still has one kind of piece, and each layer sum equals the layer volume.
+- The inner layer becomes 12 near-antiprism columns (10 corners, 2 pentagons, 10 triangles).
+- The outer layer becomes 30 wedges (6 corners, a rhombus and 6 triangles) on the rhombi. Each wedge's ridge is a dodecahedron edge, and the 12 five-fold tips of the triacontahedron now touch the face centres of the outer dodecahedron.
+
+The originals are unchanged: `reversed-chain.json`, `polar-pieces.json`, `polar-render.json` and `renders/polar-*.png`. The tight versions are named `*-tight*`: `data/polar-tight.txt`, `reversed-chain-tight.json`, `polar-tight-pieces.*`, `polar-tight-render.json` and `renders/polar-tight-*.png` (`node shoot_polar.mjs tight`). This step is not exact yet; the numbers above are floats.
