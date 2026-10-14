@@ -72,3 +72,9 @@ from the centre through the core's 30 edges into 20 columns, each cone(core face
 construction; 10 corners, 7 faces (the core face, 3 pentagons on the mirror planes, 3 kites on the dodecahedron). Total 20 + 20 + 12 + 30 +
 20 = 102. Core + columns = dodecahedron (8e-5, data rounding); all 102 = the Hecatodihedron; 13 082 sampled points once each (1 more within
 rounding of a shared face). Renders `renders/c102-*.jpg`.
+
+**Web prior-art check (2026-10-15):** the hollow's decomposition (core + 12 Aetos + 20 antiprisms) is the orthogonal shadow of Klitzing's CRF
+segmentochoron "icosahedron atop icosidodecahedron" (ikaid, K-4.137; bases I(1) and ID(1), 20 octahedra + 12 pentagonal pyramids, height
+(√5 − 1)/4): lateral edges project to √(1 − 1/(4φ²)) = √((5 + √5)/8) = 0.951057 exactly. Also found, different: Hart's compound of five
+octahedra (core icosahedron of edge 2/φ), Levin's Bridges 2024 tetrahedra in an icosahedron. Not found: the Cleo-Ico hold, Sphen/Sphenion,
+the stations, the Kion cut.
