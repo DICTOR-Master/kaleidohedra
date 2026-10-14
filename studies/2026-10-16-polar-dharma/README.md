@@ -47,3 +47,13 @@ DICTO asked for a more even nest. The faithful polar version leaves two ends loo
 - The outer layer becomes 30 wedges (6 corners, a rhombus and 6 triangles) on the rhombi. Each wedge's ridge is a dodecahedron edge, and the 12 five-fold tips of the triacontahedron now touch the face centres of the outer dodecahedron.
 
 The originals are unchanged: `reversed-chain.json`, `polar-pieces.json`, `polar-render.json` and `renders/polar-*.png`. The tight versions are named `*-tight*`: `data/polar-tight.txt`, `reversed-chain-tight.json`, `polar-tight-pieces.*`, `polar-tight-render.json` and `renders/polar-tight-*.png` (`node shoot_polar.mjs tight`). Exact check (`python3 scripts/polar_exact.py tight` → `data/polar-tight-exact.txt`): inner scale 11/18 + 5/18√5, outer scale 5 − 2√5, squared closure ratio 49815/2 − 22275/2·√5 (linear 1.814635, volume ×5.975, not a power of φ). Every layer has one exact piece volume, and in every layer the sum minus the layer volume is 0. The new end pieces are 12 × (−35/729 + 71/2187·√5) inside and 30 × (−7352/3 + 1096√5) outside.
+
+## Step 5: Kepler–Poinsot solids in the big gap (2026-10-16, DICTO's question, faithful/original nest)
+
+`polar_stars.py` treats each star as a filled body (nonzero winding number). The densities check out at the centre: 3, 3, 7, 7. For each star it finds the range of corner radius over which the triacontahedron (RT) sits inside the star and the star sits inside D(φ³) (`data/polar-stars.txt`):
+
+- Great dodecahedron and small stellated dodecahedron: both fit for a corner radius from 1.453085 to 1.701302. At the low end, RT's 20 three-fold corners touch the dimple bottoms. At the high end, the star's 12 points touch the face centres of D(φ³).
+- Great icosahedron: it does not fit. RT needs a corner radius of 1.984, and D(φ³) allows at most 1.701.
+- Great stellated dodecahedron: it fits at exactly one size. Its 20 points are D(φ³)'s corners, and the RT touches it. `polar_gsd_exact.py` (`data/polar-gsd-exact.txt`) confirms this exactly in ℚ(√5): each of the chain's 12 icosahedron corners (which are also RT's five-fold tips) lies on 5 of the star's face planes. These 12 corners are the star's 12 valley points.
+
+The GSD's two point sets (dodecahedron points and icosahedron valleys) are classical. What the check adds is that the polar Dharma chain already contains both, as its icosahedron station and its outer dodecahedron.
