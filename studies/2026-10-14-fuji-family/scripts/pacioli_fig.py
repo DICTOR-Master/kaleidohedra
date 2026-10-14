@@ -1,4 +1,4 @@
-# Figure (DICTO 2026-10-14): Pacioli's three golden rectangles and the 20 Cleo-Icos. (a) the 20 Cleo-Icos pulled slightly apart with the
+# Figure (DICTO 2026-10-14): Pacioli's three golden rectangles and the 20 Cleo-Icos. (a) the icosahedron as an outline, the 6 Cleo-Icos on the rectangles' short sides, and the
 # three rectangles through the centre; (b) the rectangles alone, each cut by its diagonals: the short-side triangles (63.43° at the
 # centre, Cleo-Icos side faces) wisteria, the long-side triangles (116.57°) gold. DICTO · dictospheres.com
 import itertools, json, os
@@ -22,9 +22,22 @@ def slab(P, n, th=0.006):    # a thin plate so the rectangle shows from both sid
     for k in range(len(P)): out.append([top[k], top[(k + 1) % len(P)], bot[(k + 1) % len(P)], bot[k]])
     return out
 a_items = []
-for f in F:
-    c = V[list(f)].mean(0); d = c / np.linalg.norm(c) * 0.42; T = [np.zeros(3) + d] + [V[i] + d for i in f]
-    a_items.append(('w1', [[T[1], T[2], T[3]], [T[0], T[2], T[1]], [T[0], T[3], T[2]], [T[0], T[1], T[3]]]))
+# (a) DICTO 2026-10-14: the icosahedron mostly empty: its edges as thin rods, and only the Cleo-Icos the rectangles define, one on each
+# of the 6 short sides (the face on the side of that edge away from the rectangle's plane's first axis), with the three rectangles.
+def rod(p, q, r=0.012):
+    d = q - p; d /= np.linalg.norm(d); e1 = np.cross(d, [1, 0, 0] if abs(d[0]) < .9 else [0, 1, 0]); e1 /= np.linalg.norm(e1); e2 = np.cross(d, e1)
+    ring = [r * (np.cos(t) * e1 + np.sin(t) * e2) for t in np.linspace(0, 2 * np.pi, 7)[:-1]]
+    return [[p + ring[k], p + ring[(k + 1) % 6], q + ring[(k + 1) % 6], q + ring[k]] for k in range(6)]
+E1 = [(a_, b_) for a_, b_ in itertools.combinations(range(12), 2) if abs(np.linalg.norm(V[a_] - V[b_]) - 1) < 1e-9]
+for a_, b_ in E1: a_items.append(('w5', rod(V[a_], V[b_])))
+for z, R in enumerate(RECTS):
+    for k in range(4):
+        p, q = R[k], R[(k + 1) % 4]
+        if abs(np.linalg.norm(p - q) - 1) > 1e-9: continue
+        f = [t for t in F if all(any(np.allclose(V[i], x) for i in t) for x in (p, q))]
+        f = max(f, key=lambda t: V[list(t)].mean(0) @ np.roll(np.eye(3)[z], 1))      # one of the two faces on this edge, chosen the same way on each side
+        T = [np.zeros(3)] + [V[i] for i in f]
+        a_items.append(('w1', [[T[1], T[2], T[3]], [T[0], T[2], T[1]], [T[0], T[3], T[2]], [T[0], T[1], T[3]]]))
 for z, R in enumerate(RECTS): a_items.append(('w2', slab(R, np.eye(3)[z])))
 b_items = []
 for z, R in enumerate(RECTS):
