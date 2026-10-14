@@ -30,3 +30,11 @@ Correction (main session): earlier today we said a partner must supply a 41.81°
 110.905° cap edges meet the Cleo's 69.095° edges in a flat face (69.095° + 110.905° = 180°), which also closes.
 
 DICTO · dictospheres.com
+
+## RHex check (DICTO, 2026-10-14)
+
+`scripts/rhex_check.py` → `rhex-check.json`: the 20 golden rhombohedra on the icosahedron's faces (sharing the centre) do not overlap
+(0 of 400,000 random points in two), their union is 120 Cleo-Icos, and their 62 corners match Polyhedraverse's rhombic hexecontahedron
+(TRANS_BODHI_B2, Bodhi Seed Kit B stage 2) after scaling: 12 at 0.851, 30 at 1.447, 20 at 2.028. So **the rhombic hexecontahedron =
+20 Cleo-Icos (the icosahedron) + 20 Antonius + 20 Cleo-Icos**. (The rhombic hexecontahedron as 20 golden rhombohedra round a point is
+known; the Cleo-Icos/Antonius split of it follows.) Names (DICTO): the Icosahedral Cleo is **Cleo-Icos**; the antiprism is **Antonius**.

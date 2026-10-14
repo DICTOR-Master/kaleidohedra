@@ -29,3 +29,13 @@ test('the faceted bases: 20 face pyramids fill an icosahedron of edge 2/sqrt5', 
   const sum = kit.entries.reduce((s, e) => s + volume(POLYHEDRA[e.shape]), 0);
   assert.ok(Math.abs(sum - ico) < 1e-6, `${sum} vs ${ico}`);
 });
+test('Antonius: golden rhombohedron = Cleo-Icos + Antonius + Cleo-Icos; the block fills 8 rhombohedra', () => {
+  const c = volume(POLYHEDRA.ICOSA_FACE_PYRAMID), a = volume(POLYHEDRA.ANTONIUS);
+  assert.ok(Math.abs(a - 4 * c) < 1e-9, `${a / c}`);
+  const one = KITS13['antonius.rhombohedron'], block = KITS13['antonius.block'];
+  assert.deepEqual(one.entries.map((e) => e.shape), ['ICOSA_FACE_PYRAMID', 'ANTONIUS', 'ICOSA_FACE_PYRAMID']);
+  assert.equal(block.entries.length, 24);
+  assert.equal(block.entries.filter((e) => e.shape === 'ANTONIUS').length, 8);
+  const sum = block.entries.reduce((s, e) => s + volume(POLYHEDRA[e.shape]), 0);
+  assert.ok(Math.abs(sum - 48 * c) < 1e-9);
+});
