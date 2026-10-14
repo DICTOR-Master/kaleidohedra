@@ -6,14 +6,15 @@
 // Paper figures (2026-10-15): exact corners, whole faces (no stray edges), each piece drawn a hair smaller so touching faces never fight.
 (async function () {
   const [story, scn] = (location.hash.slice(1) || 'c102-closed').split('-');
-  const J = (await fetch('exact_meshes.json').then((r) => r.json()))[story];
+  const ALL = await fetch('exact_meshes.json').then((r) => r.json()); const J = ALL[story];
   const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
   renderer.setSize(1000, 1000); renderer.setPixelRatio(1); renderer.localClippingEnabled = true; document.body.appendChild(renderer.domElement);
   const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
   scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.8)); const sun = new THREE.DirectionalLight(0xffffff, 0.7); sun.position.set(4, 7, 5); scene.add(sun);
-  const C = { 'core icosahedron': [0xd9a441, 0], 'core Cleo-Ico': [0xd9a441, 0], 'Aetos (flat pentagonal pyramid)': [0xb39ddb, 1], 'Sphen (X)': [0x4fb3bf, 1],
-    'Sphenion (Y)': [0x2e8b9a, 1], 'Atraktos': [0x8e6cc8, 1], 'column': [0x8e6cc8, 1], 'twisted pentagonal frustum': [0x6fbf73, 2], 't1': [0x9ccc65, 2],
-    'cap (to Hecatodihedron)': [0xe8945a, 3] };
+  const C = { 'core icosahedron': [0xffc857, 0], 'core Cleo-Ico': [0xffc857, 0], 'Aetos (flat pentagonal pyramid)': [0x9fd8ff, 1], 'Sphen (X)': [0x4dd0e1, 1],
+    'Sphenion (Y)': [0x2e8b9a, 1], 'Atraktos': [0xf08fc0, 1], 'column': [0xf08fc0, 1], 'twisted pentagonal frustum': [0x5fd38a, 2], 't1': [0x9ccc65, 2],
+    'cap (to Hecatodihedron)': [0xc792ea, 3] };   // house palette, caps wisteria and the truncated-icosahedron layer green as in the Hecatodihedron paper
+  const FACE = { 5: 0xffc857, 4: 0x4dd0e1, 3: 0xc792ea };   // the Hecatodihedron by face type: pentagons gold, rhombi cyan, triangles wisteria
   const core = J['core icosahedron']?.[0] ?? null;
   const five = core ? core.v[0] : J['core Cleo-Ico'][0].v[0];                       // a core corner: on a five-fold axis
   const n5 = new THREE.Vector3(...five).normalize();
@@ -22,7 +23,15 @@
   const clip = axis ? [new THREE.Plane(axis.clone().negate(), 0)] : [];
   const show = { closed: [0, 1, 2, 3], cut: [0, 1, 2, 3], cut5: [0, 1, 2, 3], cut3: [0, 1, 2, 3], apart: [0, 1, 2, 3], inner: [0, 1] }[scn];
   const step = scn === 'apart' ? 0.75 : 0, coreStep = scn === 'apart' ? 0.22 : 0, sh = axis ? 0.97 : 0.993;
-  for (const [k, L] of Object.entries(J)) {
+  if (scn === 'closed') {          // the solid itself, coloured by face type, true face outlines only
+    const Hh = ALL.hull, pos = [], col = [], line = [], c = new THREE.Color();
+    for (const f of Hh.f) { c.setHex(FACE[f.length]); for (let i = 1; i + 1 < f.length; i++) for (const j of [f[0], f[i], f[i + 1]]) { pos.push(...Hh.v[j]); col.push(c.r, c.g, c.b); }
+      for (let i = 0; i < f.length; i++) line.push(...Hh.v[f[i]], ...Hh.v[f[(i + 1) % f.length]]); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); g.computeVertexNormals();
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.5, flatShading: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3)); scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218 })));
+  }
+  for (const [k, L] of (scn === 'closed' ? [] : Object.entries(J))) {
     const [col, layer] = C[k]; if (!show.includes(layer)) continue;
     if (scn === 'inner' && layer === 1 && !['Atraktos', 'column'].includes(k)) continue;
     for (const S of L) {

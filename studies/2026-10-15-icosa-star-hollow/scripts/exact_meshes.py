@@ -29,3 +29,12 @@ def dump(G):
 json.dump({'stations': dump(stations), 'c102': dump(c102)}, open('data/exact_meshes.json', 'w'))
 for nm, G in (('stations', stations), ('c102', c102)):
     print(nm, {k: (len(L), sorted(len(f) for f in polys(L[0])[1])) for k, L in G.items()})
+# the Hecatodihedron's own surface for the closed views: whole faces tagged by sides (5 gold, 4 cyan, 3 wisteria, as in the
+# Hecatodihedron paper)
+D = json.load(open('data/exact_meshes.json'))
+allc = list({tuple((x.a, x.b) for x in v): v for L in c102.values() for V in L for v in V}.values())
+W, F = polys(allc)
+hull_idx = sorted({i for f in F for i in f})
+D['hull'] = {'v': np.round(W, 9).tolist(), 'f': F, 'sides': sorted(len(f) for f in F)}
+json.dump(D, open('data/exact_meshes.json', 'w'))
+print('hull faces', len(F), {n: sum(1 for f in F if len(f) == n) for n in (3, 4, 5)})
