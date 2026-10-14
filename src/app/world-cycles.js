@@ -244,7 +244,7 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
     <div class="w4d-row w4d-options cy-roads"><button type="button" data-cy-road="dharma"></button><button type="button" data-cy-road="lotus"></button></div>
     <div class="w4d-row st-note cy-note"></div>
     <div class="w4d-row st-note cy-station"></div>
-    <div class="w4d-row w4d-options"><button type="button" data-cy-pacioli></button><button type="button" data-cy-build hidden></button></div>
+    <div class="w4d-row w4d-options"><button type="button" data-cy-play></button><button type="button" data-cy-pacioli></button><button type="button" data-cy-build hidden></button></div>
     <div class="w4d-row cy-slider-row"><input type="range" class="st-slider cy-slider" min="0" step="1" aria-label=""></div>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, 'cycles');
@@ -279,6 +279,7 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
     }
     panel.querySelector('.cy-station').textContent = line;
     buildBtn.hidden = !buildAction;
+    const pl = panel.querySelector('[data-cy-play]'); pl.textContent = t(play ? 'cy.stop' : 'cy.play', L); pl.setAttribute('aria-pressed', String(!!play));
     const pac = panel.querySelector('[data-cy-pacioli]');
     pac.hidden = view.loop === 2; pac.textContent = t('poly.pacioli', L); pac.title = t('poly.pacioli.title', L); pac.setAttribute('aria-pressed', String(view.pacioli));
     buildBtn.textContent = t(view.loop === 2 ? 'cy.build.dharma' : 'cy.build', L); // both roads are in Multi-shell chains
@@ -295,7 +296,49 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
     view.loop = Number(b.dataset.cyLoop); view.t1 = 0; view.t2 = 1; view.t3 = 0; view.t4 = 0;
     save(); draw(); renderPanel(); fit();
   }));
-  buildBtn.addEventListener('click', () => { if (buildAction) openAction(buildAction); });
+  buildBtn.addEventListener('click', () => { stop(); if (buildAction) openAction(buildAction); });
+  // ---- Play (DICTO 2026-10-14: "the whole thing should be looped, so you press stop or it stops when you exit"): a tour of every
+  // path from the shared icosahedron, round and round: Loop 1 once round, the side step and the Cleo-Icos path out and back, then
+  // Loop 2 by both roads. Stops on Stop, on any other control, or on leaving the world.
+  const TOUR = [{ loop: 1, to: 4 }, { loop: 3, to: 3, back: true }, { loop: 4, to: 2, back: true }, { loop: 2, road: 'dharma' }, { loop: 2, road: 'lotus' }];
+  const STATION_SPEED = 0.45, PIECE_SPEED = 22, HOLD = 1.1; // stations per second, pieces per second, seconds held at a station
+  let play = null;
+  const tKey = (l) => ({ 1: 't1', 3: 't3', 4: 't4' })[l];
+  function startLeg(i) {
+    const leg = TOUR[i % TOUR.length];
+    view.loop = leg.loop; if (leg.road) view.road = leg.road; view.t1 = 0; view.t2 = 1; view.t3 = 0; view.t4 = 0;
+    play = { i: i % TOUR.length, dir: 1, hold: HOLD, last: performance.now(), raf: 0 };
+    if (leg.loop === 2) { const { list, film } = road(); let r = 0.6; for (const n of film.seq) for (const q of list[n][1]) r = Math.max(r, Math.hypot(...q)); fitView([0, 0, 0], r * WS * 1.15); }
+    else fit();
+  }
+  function tick(now) {
+    if (!play || !active) return;
+    const dt = Math.max(0, Math.min(0.6, (now - play.last) / 1000)); play.last = now; // real time, so slow devices keep the pace
+    const holding = play.hold > 0;
+    const leg = TOUR[play.i];
+    if (play.hold > 0) play.hold -= dt;
+    else if (leg.loop === 2) {
+      const total = road().film.seq.length;
+      view.t2 = Math.min(total, view.t2 + Math.max(1, Math.round(PIECE_SPEED * dt)));
+      if (view.t2 >= total) { play.hold = HOLD * 2; play.next = true; }
+    } else {
+      const k = tKey(leg.loop), before = view[k];
+      view[k] = Math.max(0, Math.min(leg.to, view[k] + play.dir * STATION_SPEED * dt));
+      if (Math.floor(before + 1e-9) !== Math.floor(view[k] + 1e-9) || view[k] === 0 || view[k] === leg.to) { view[k] = Math.round(view[k]); play.hold = HOLD; }
+      if (view[k] >= leg.to) { if (leg.back) play.dir = -1; else play.next = true; }
+      else if (view[k] <= 0 && play.dir < 0) play.next = true;
+    }
+    if (play.next && play.hold <= 0) startLeg(play.i + 1);
+    if (!holding || play.hold <= 0) { draw(); renderPanel(); } // nothing changes while it waits at a station
+    if (play) play.raf = requestAnimationFrame(tick);
+  }
+  function stop() { if (play) { cancelAnimationFrame(play.raf); play = null; save(); renderPanel(); } }
+  panel.querySelector('[data-cy-play]').addEventListener('click', () => {
+    if (play) { stop(); return; }
+    startLeg(0); play.raf = requestAnimationFrame(tick); renderPanel();
+  });
+  slider.addEventListener('pointerdown', stop);
+  panel.querySelectorAll('[data-cy-loop], [data-cy-road], [data-cy-pacioli]').forEach((b) => b.addEventListener('click', () => { if (b.dataset.cyPacioli === undefined) stop(); }, true));
   panel.querySelectorAll('[data-cy-road]').forEach((b) => b.addEventListener('click', () => { view.road = b.dataset.cyRoad; view.t2 = 1; save(); draw(); renderPanel(); fit(); }));
   panel.querySelector('[data-cy-pacioli]').addEventListener('click', () => { view.pacioli = !view.pacioli; save(); draw(); renderPanel(); });
   let shownLang = lang();
@@ -307,6 +350,7 @@ export function createCyclesWorld({ scene, fitView = () => {}, showHudPrompt = (
     handleTap: () => false,
     setActive(on) {
       if (on === active) return;
+      if (!on) stop();
       active = on;
       group.visible = on;
       draw(); renderPanel();

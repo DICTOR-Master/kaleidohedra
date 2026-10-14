@@ -60,6 +60,15 @@ await page.tap('[data-cy-pacioli]'); await page.waitForTimeout(500); assert.equa
 await page.screenshot({ path: `${SH}/cycles-l4-pacioli.png` });
 await page.tap('[data-cy-pacioli]'); await page.waitForTimeout(300); assert.equal(await page.getAttribute('[data-cy-pacioli]', 'aria-pressed'), 'false');
 await page.tap('[data-cy-loop="3"]'); await page.waitForTimeout(400);
+// Play: tours every path from the icosahedron, round and round, until Stop
+await page.tap('[data-cy-loop="1"]'); await page.waitForTimeout(400);
+const l0 = await line(); await page.tap('[data-cy-play]'); await page.waitForTimeout(4500);
+const l1 = await line(); console.log('playing:', l0, '->', l1); assert.notEqual(l1, l0, 'play moves round the loop');
+assert.equal(await page.getAttribute('[data-cy-play]', 'aria-pressed'), 'true');
+await page.waitForTimeout(12000); console.log('later:', await page.getAttribute('[data-cy-loop="3"]', 'aria-pressed'), await line());
+await page.tap('[data-cy-play]'); await page.waitForTimeout(400);
+const s1 = await line(); await page.waitForTimeout(1500); assert.equal(await line(), s1, 'stopped'); assert.equal(await page.getAttribute('[data-cy-play]', 'aria-pressed'), 'false');
+await page.tap('[data-cy-loop="3"]'); await page.waitForTimeout(400);
 // Build: at the great stellated dodecahedron, the button opens its Polyhedraverse kit
 await set(300); await page.waitForTimeout(300);
 assert.equal(await page.isVisible('[data-cy-build]'), true, 'Build shown at a station');
