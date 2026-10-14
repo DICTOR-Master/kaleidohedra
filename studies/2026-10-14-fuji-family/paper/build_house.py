@@ -20,7 +20,7 @@ table {{ font-size: 7pt; }}
 <img class="watermark" src="dicto-logo.png" alt="">
 <img class="logo" src="dicto-logo.png" alt="DICTO">
 <h1>The FUJI Family</h1>
-<p class="sub">Pyramids on flat-ended triangles: from the tetrahedron through FUJI to the flat hexagon, the antiprism theorem, and the members found in tilings, crystals and DICTO's sculpture</p>
+<p class="sub">Pyramids on flat-ended triangles: from the tetrahedron through FUJI to the flat hexagon, the antiprism theorem, and the members found in tilings, crystals and our sculpture</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
 Version 1 (draft) · 14 October 2026 · DOI on release · Licence CC BY 4.0 · Data, scripts, proofs and checks: studies/2026-10-14-fuji-family at https://github.com/DICTOR-Master/kaleidohedra.<br>

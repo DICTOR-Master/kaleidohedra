@@ -20,10 +20,10 @@ table {{ font-size: 7pt; }}
 <img class="watermark" src="dicto-logo.png" alt="">
 <img class="logo" src="dicto-logo.png" alt="DICTO">
 <h1>AXE, CLEO and FUJI</h1>
-<p class="sub">The gap pieces of the icosahedron: the three pieces that close DICTO's thirteen-icosahedron cluster into one larger icosahedron, and where they recur</p>
+<p class="sub">The gap pieces of the icosahedron: the three pieces that close our thirteen-icosahedron cluster into one larger icosahedron, and where they recur</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
-Version 1 · 14 October 2026 · DOI 10.5281/zenodo.23351292 · Licence CC BY 4.0 · Data, scripts, figures, nets and checks: studies/2026-10-14-axe-cleo-fuji and studies/2026-10-10-icosa-13 at https://github.com/DICTOR-Master/kaleidohedra.<br>
+Version 2 · 14 October 2026 · DOI 10.5281/zenodo.23351291 · Licence CC BY 4.0 · Data, scripts, figures, nets and checks: studies/2026-10-14-axe-cleo-fuji and studies/2026-10-10-icosa-13 at https://github.com/DICTOR-Master/kaleidohedra.<br>
 The structures, the pieces and all their names, and the 63-piece build are DICTO's. Computation and checking with Claude (Anthropic).
 </div>
 <img class="lead" src="figures/fig1-pieces.jpg" alt="AXE, CLEO and FUJI"><p class="cap"><b>Figure 1.</b> (a) AXE, (b) CLEO and (c) FUJI, at one scale.</p>

@@ -28,29 +28,29 @@ table { font-size: 7pt; }
 <img class="watermark" src="dicto-logo.png" alt="">
 <img class="logo" src="dicto-logo.png" alt="DICTO">
 <h1>AXE, CLEO and FUJI</h1>
-<p class="sub">The gap pieces of the icosahedron: the three pieces that close DICTO's thirteen-icosahedron cluster into one larger icosahedron, and where they recur</p>
+<p class="sub">The gap pieces of the icosahedron: the three pieces that close our thirteen-icosahedron cluster into one larger icosahedron, and where they recur</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
-Version 1 · 14 October 2026 · DOI 10.5281/zenodo.23351292 · Licence CC BY 4.0 · Data, scripts, figures, nets and checks: studies/2026-10-14-axe-cleo-fuji and studies/2026-10-10-icosa-13 at https://github.com/DICTOR-Master/kaleidohedra.<br>
+Version 2 · 14 October 2026 · DOI 10.5281/zenodo.23351291 · Licence CC BY 4.0 · Data, scripts, figures, nets and checks: studies/2026-10-14-axe-cleo-fuji and studies/2026-10-10-icosa-13 at https://github.com/DICTOR-Master/kaleidohedra.<br>
 The structures, the pieces and all their names, and the 63-piece build are DICTO's. Computation and checking with Claude (Anthropic).
 </div>
 <img class="lead" src="figures/fig1-pieces.jpg" alt="AXE, CLEO and FUJI"><p class="cap"><b>Figure 1.</b> (a) AXE, (b) CLEO and (c) FUJI, at one scale.</p>
-<div class="abstract"><b>Abstract.</b> <p>Regular icosahedra cannot fill space: two of them meeting along an edge leave a gap of 83.62° around it. DICTO's thirteen-icosahedron cluster, the <strong>Lotus seed</strong>, closes every gap with just three small pieces, <strong>AXE</strong>, <strong>CLEO</strong> and <strong>FUJI</strong>. Together with whole icosahedra they fill an icosahedron of edge φ² exactly, in 113 pieces, or in 63 pieces when built as DICTO first built it: a dodecahedron, 12 J11 and then 30 AXE and 20 FUJI.</p>
+<div class="abstract"><b>Abstract.</b> <p>Regular icosahedra cannot fill space: two of them meeting along an edge leave a gap of 83.62° around it. Our thirteen-icosahedron cluster, the <strong>Lotus seed</strong>, closes every gap with just three small pieces, <strong>AXE</strong>, <strong>CLEO</strong> and <strong>FUJI</strong>. Together with whole icosahedra they fill an icosahedron of edge φ² exactly, in 113 pieces, or in 63 pieces when built as we first built it: a dodecahedron, 12 J11 and then 30 AXE and 20 FUJI.</p>
 <ul>
 <li><strong>AXE and CLEO are two of the Mosseri–Sadoc tiles</strong>, scaled by 1/τ. Sadoc and Mosseri made their tiles to describe icosahedral order in real materials. Here the same tiles arrive on their own, as the gap pieces of a cluster built from whole icosahedra.</li>
 <li><strong>FUJI, a hexagonal pyramid, is new.</strong> We prove that it is not a union of Mosseri–Sadoc tiles at its own scale or larger. One proof uses the Dehn invariant and the other the angles of its hexagonal base.</li>
-<li><strong>The three pieces recur throughout DICTO's work.</strong> The Dodecahedral Chain passes through the great stellated dodecahedron and the excavated dodecahedron. The dodecahedron is a small icosahedron with 12 caps, 30 AXE and 20 CLEO. The Chain of Karma repeats the Lotus seed at every scale, and the Stella-Corona grows the pieces into a network.</li>
+<li><strong>The three pieces recur throughout our work.</strong> The Dodecahedral Chain passes through the great stellated dodecahedron and the excavated dodecahedron. The dodecahedron is a small icosahedron with 12 caps, 30 AXE and 20 CLEO. The Chain of Karma repeats the Lotus seed at every scale, and the Stella-Corona grows the pieces into a network.</li>
 </ul>
 <p>Every volume, angle and count is recomputed from the study data (CHECKS.json). We give printable nets so the Lotus seed can be built by hand.</p>
 </div>
 <h2>1. Introduction</h2>
 <p>Twelve spheres fit around one, and the twelve centres are the corners of an icosahedron. Frank showed that this thirteen-atom cluster is more stable than the thirteen-atom pieces of the cubic and hexagonal crystals [Frank 1952]. It cannot be continued through space, however: the icosahedra around one another leave gaps that no number of icosahedra can close.</p>
 <p>Sadoc and Mosseri described this icosahedral order through the 600-cell, a four-dimensional polytope whose 600 tetrahedral cells fit together perfectly on a curved three-dimensional sphere [Sadoc &amp; Mosseri 1999]. Their work also gave six tetrahedral tiles with golden edge ratios, the Mosseri–Sadoc tiles, from which icosahedral structures are built in flat space [Mosseri &amp; Sadoc 1982; Kramer 1982; Koca et al. 2020].</p>
-<p>DICTO came to the same gaps from the other side, with whole icosahedra in flat space. His Lotus seed puts 12 icosahedra around a small one and fills what is left [DICTO, Icosa-13]. Two of the three pieces that do the filling turn out to be Mosseri–Sadoc tiles; the third, FUJI, is new. This paper describes the three pieces (Section 2), the Lotus seed they complete (Section 3), and the solids, chains and networks they build elsewhere (Sections 4 and 5). Section 6 proves FUJI's independence, and Section 7 gives the nets.</p>
+<p>We came to the same gaps from the other side, with whole icosahedra in flat space. Our Lotus seed puts 12 icosahedra around a small one and fills what is left [Icosa-13 study]. Two of the three pieces that do the filling turn out to be Mosseri–Sadoc tiles; the third, FUJI, is new. This paper describes the three pieces (Section 2), the Lotus seed they complete (Section 3), and the solids, chains and networks they build elsewhere (Sections 4 and 5). Section 6 proves FUJI's independence, and Section 7 gives the nets.</p>
 <p>Units: the icosahedra have edge 1, and φ = τ = (1 + √5)/2.</p>
 <h2>2. Three pieces</h2>
 <p>Figure 1, at the head of the paper, shows the three pieces at one scale, the one at which they fill the Lotus seed.</p>
-<p>The names are DICTO's. <strong>AXE</strong> is shaped like an axe head, with its sharp edge as the blade. <strong>CLEO</strong> is named after Cleopatra's Needle, the obelisk in London. <strong>FUJI</strong> has the shape of Mount Fuji, and its colour is that of the fuji flower, Japanese wisteria.</p>
+<p>The names are ours. <strong>AXE</strong> is shaped like an axe head, with its sharp edge as the blade. <strong>CLEO</strong> is named after Cleopatra's Needle, the obelisk in London. <strong>FUJI</strong> has the shape of Mount Fuji, and its colour is that of the fuji flower, Japanese wisteria.</p>
 <table>
 <thead>
 <tr>
@@ -81,7 +81,7 @@ The structures, the pieces and all their names, and the 63-piece build are DICTO
 <td>hexagonal pyramid</td>
 <td>base edges 1 and 1/φ alternating, all six side edges 1</td>
 <td>(1 + 3√5)/24</td>
-<td>new (DICTO)</td>
+<td>new</td>
 </tr>
 </tbody>
 </table>
@@ -89,7 +89,7 @@ The structures, the pieces and all their names, and the 63-piece build are DICTO
 <p><strong>CLEO</strong> is a slender pyramid whose four faces meet at 63.43° along its long edges. Placed on a face of an icosahedron of edge 1/φ, twenty CLEOs make the spikes of Kepler's great stellated dodecahedron (Section 4).</p>
 <p><strong>FUJI</strong> has a hexagonal base with all angles 120° and sides 1 and 1/φ alternating. The base is cyclic: all six corners lie on a circle of radius √(2/3), which puts the apex at height 1/√3 with every side edge 1. FUJI sits in the corner where three icosahedra meet, with its apex at a corner of the dodecahedron inside the cluster.</p>
 <p><img src="figures/fig2-kit.png" alt="Figure 2" /></p>
-<p><strong>Figure 2.</strong> The pieces at edge 1, every edge labelled: AXE, CLEO, FUJI, the pentagonal cap J2 and J11 [DICTO, Chain of Karma].</p>
+<p><strong>Figure 2.</strong> The pieces at edge 1, every edge labelled: AXE, CLEO, FUJI, the pentagonal cap J2 and J11 [Chain of Karma].</p>
 <p><strong>Two angles.</strong> All the dihedral angles of the three pieces are made of two angles, α = arccos(√5/3) = 41.81° and δ = 37.38° (FUJI's base angle on its short edges):</p>
 <table>
 <thead>
@@ -134,17 +134,17 @@ The structures, the pieces and all their names, and the 63-piece build are DICTO
 </table>
 <p>These relations hold to 120 digits (integer-relation search, Icosa-13 study §9). The same two angles reappear in Section 6, where they make the Dehn invariants exact.</p>
 <h2>3. The Lotus seed</h2>
-<p>Twelve icosahedra placed on the five-fold axes of a small central icosahedron, parallel to it and slid inward until they meet, share 30 whole edges. Their inner rings are the 12 faces of a dodecahedron of edge 1. R. W. Gray described this arrangement in 2002 and noted that the 12 icosahedra outline a larger one [Gray 2002]; DICTO calls the cage <strong>DESHI</strong>. Gray did not fill the gaps; the Lotus seed does.</p>
+<p>Twelve icosahedra placed on the five-fold axes of a small central icosahedron, parallel to it and slid inward until they meet, share 30 whole edges. Their inner rings are the 12 faces of a dodecahedron of edge 1. R. W. Gray described this arrangement in 2002 and noted that the 12 icosahedra outline a larger one [Gray 2002]; we call the cage <strong>DESHI</strong>. Gray did not fill the gaps; the Lotus seed does.</p>
 <p><img src="figures/fig3-lotus-seed.jpg" alt="Figure 3" /></p>
 <p><strong>Figure 3.</strong> The Lotus seed: (a) the filled cluster; (b) down a five-fold axis; (c) its hull, a regular icosahedron of edge φ², over the cage of 12 icosahedra.</p>
 <p><strong>The filling.</strong> Thirty AXE close the outer grooves, thirty more close the inner ones, 20 FUJI fill the outer corners, and 20 CLEO fill the inner corners around a small icosahedron of edge 1/φ:</p>
 <p><strong>I(φ²) = 12 I(1) + I(1/φ) + 60 AXE + 20 FUJI + 20 CLEO</strong> (113 pieces, no overlaps, volume (235 + 105√5)/12 = φ⁶ V(I)).</p>
 <p>The result is exactly a regular icosahedron of edge φ². Its 20 large faces are each three icosahedron faces and one FUJI base.</p>
 <p><img src="figures/fig4-exploded.jpg" alt="Figure 4" /></p>
-<p><strong>Figure 4.</strong> The Lotus seed pulled apart: (a) the 113-piece build; (b) DICTO's 63-piece build. Green: icosahedra and J11; cyan: AXE; purple: FUJI and CLEO; gold: the centre (a) and the dodecahedron (b).</p>
-<p><strong>DICTO's 63-piece build.</strong> DICTO first made this solid in the Polyhedraverse app on 5 October 2026, while working on a dodecahedron problem, by putting a J11 on every pentagon of a dodecahedron. Each J11, together with the cap hidden inside the dodecahedron, is one of the 12 outer icosahedra, so:</p>
+<p><strong>Figure 4.</strong> The Lotus seed pulled apart: (a) the 113-piece build; (b) our 63-piece build. Green: icosahedra and J11; cyan: AXE; purple: FUJI and CLEO; gold: the centre (a) and the dodecahedron (b).</p>
+<p><strong>The 63-piece build.</strong> We first made this solid in the Polyhedraverse app on 5 October 2026, while working on a dodecahedron problem, by putting a J11 on every pentagon of a dodecahedron. Each J11, together with the cap hidden inside the dodecahedron, is one of the 12 outer icosahedra, so:</p>
 <p><strong>I(φ²) = dodecahedron + 12 J11 + 30 AXE + 20 FUJI</strong> (63 pieces).</p>
-<p>The small centre, the inner AXE and the CLEOs merge into the single dodecahedron. Two standard solids and two gap pieces make it the easiest way to build the Lotus seed by hand (Section 7). The same move, a J11 on every unit pentagon, applied to an icosidodecahedron instead of a dodecahedron gives DICTO's <strong>UNITY</strong> [DICTO, Icosa-13].</p>
+<p>The small centre, the inner AXE and the CLEOs merge into the single dodecahedron. Two standard solids and two gap pieces make it the easiest way to build the Lotus seed by hand (Section 7). The same move, a J11 on every unit pentagon, applied to an icosidodecahedron instead of a dodecahedron gives our <strong>UNITY</strong> [Icosa-13 study].</p>
 <p><img src="figures/fig5-hasu.jpg" alt="Figure 5" /></p>
 <p><strong>Figure 5.</strong> (a) <strong>Hasu</strong>, the finned unit: an icosahedron with its share of the gap pieces (21 parts, 45 faces). (b) Twelve Hasu and the centre rebuild the Lotus seed, and each lifts straight out along its axis.</p>
 <p><img src="figures/fig6-stars.jpg" alt="Figure 6" /></p>
@@ -153,7 +153,7 @@ The structures, the pieces and all their names, and the 63-piece build are DICTO
 <h2>4. The same pieces, other solids</h2>
 <p><strong>The dodecahedron.</strong> Adding the 12 caps to the Inner Eye gives the dodecahedron, so</p>
 <p><strong>D(1) = I(1/φ) + 12 J2 + 30 AXE + 20 CLEO.</strong></p>
-<p>Built in that order, the stages are classical solids [DICTO, Capturing the In-betweens]:</p>
+<p>Built in that order, the stages are classical solids [Capturing the In-betweens]:</p>
 <ul>
 <li>the icosahedron I(1/φ) <strong>+ 20 CLEO is Kepler's great stellated dodecahedron</strong>;</li>
 <li><strong>+ 30 AXE is the excavated dodecahedron</strong>, a stellation of the icosahedron, on the same 32 corners [Coxeter et al. 1938; Wenninger 1971];</li>
@@ -163,10 +163,10 @@ The structures, the pieces and all their names, and the 63-piece build are DICTO
 <p><img src="figures/fig7-dodecahedral-route.jpg" alt="Figure 7" /></p>
 <p><strong>Figure 7.</strong> The Lotus seed built outward: (a) core icosahedron; (b) + 20 CLEO, the great stellated dodecahedron; (c) + 30 AXE, the excavated dodecahedron; (d) + 12 icosahedra; (e) + 30 AXE; (f) + 20 FUJI, the icosahedron of edge φ². Orange: the pieces added at each step.</p>
 <h2>5. Chains and networks</h2>
-<p><strong>The Chain of Karma.</strong> The Lotus seed is an icosahedron enlarged by φ², made of icosahedra and the three pieces. Replacing every icosahedron in it by a Lotus seed, and keeping the gap pieces whole, fills the icosahedra of edge φ⁴, φ⁶, … exactly. Steps 1 to 3 have 113, 1,569 and 20,497 pieces [DICTO, Chain of Karma]. AXE, CLEO and FUJI stay whole at each step, so they appear in every size, one step of φ² apart. The enlarged pieces cannot be cut back into the small ones (their Dehn invariants forbid it), so the Chain is a hierarchy with gap pieces in every size, rather than a self-similar tiling.</p>
+<p><strong>The Chain of Karma.</strong> The Lotus seed is an icosahedron enlarged by φ², made of icosahedra and the three pieces. Replacing every icosahedron in it by a Lotus seed, and keeping the gap pieces whole, fills the icosahedra of edge φ⁴, φ⁶, … exactly. Steps 1 to 3 have 113, 1,569 and 20,497 pieces [Chain of Karma]. AXE, CLEO and FUJI stay whole at each step, so they appear in every size, one step of φ² apart. The enlarged pieces cannot be cut back into the small ones (their Dehn invariants forbid it), so the Chain is a hierarchy with gap pieces in every size, rather than a self-similar tiling.</p>
 <p><img src="figures/fig8-chain-step2.png" alt="Figure 8" /></p>
 <p><strong>Figure 8.</strong> The Chain of Karma, step 2: 1,569 pieces filling the icosahedron of edge φ⁴.</p>
-<p><strong>The Stella-Corona.</strong> On an icosidodecahedron, DICTO places 20 icosahedra on the triangles and a <strong>King of Pentacles</strong> on each of the 12 pentagons: a J2, 10 AXE, 5 CLEO and a small J2, with a flat pentagram on top. The result is closed, every contact is a whole face, and its volume is (120 + 47√5)/3. Stella-Coronas that share icosahedra form a chain along a three-fold axis and a diamond network, the first periodic network of icosahedral clusters in this work [DICTO, Icosa networks].</p>
+<p><strong>The Stella-Corona.</strong> On an icosidodecahedron we place 20 icosahedra on the triangles and a <strong>King of Pentacles</strong> on each of the 12 pentagons: a J2, 10 AXE, 5 CLEO and a small J2, with a flat pentagram on top. The result is closed, every contact is a whole face, and its volume is (120 + 47√5)/3. Stella-Coronas that share icosahedra form a chain along a three-fold axis and a diamond network, the first periodic network of icosahedral clusters in this work [Icosa networks study].</p>
 <p><img src="figures/fig9-stella-corona.jpg" alt="Figure 9" /></p>
 <p><strong>Figure 9.</strong> The DICTO Stella-Corona: (a) closed; (b) pulled apart; (c) in its diamond network.</p>
 <h2>6. FUJI stands alone</h2>

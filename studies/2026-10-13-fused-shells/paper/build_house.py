@@ -19,10 +19,10 @@ table {{ font-size: 7pt; }}
 <img class="watermark" src="dicto-logo.png" alt="">
 <img class="logo" src="dicto-logo.png" alt="DICTO">
 <h1>Capturing the In-betweens</h1>
-<p class="sub">A study of transitional polyhedral shells: the in-between stages of DICTO's Chain of Karma, Spheres of Dharma and Bodhi Seed as solids, with the classical and new polyhedra among them</p>
+<p class="sub">A study of transitional polyhedral shells: the in-between stages of our Chain of Karma, Spheres of Dharma and Bodhi Seed as solids, with the classical and new polyhedra among them</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
-Version 1 · 14 October 2026 · DOI 10.5281/zenodo.23345503 · Licence CC BY 4.0 · Data, scripts, figures, nets and checks: studies/2026-10-13-fused-shells at https://github.com/DICTOR-Master/kaleidohedra.<br>
+Version 2 · 14 October 2026 · DOI 10.5281/zenodo.23345502 · Licence CC BY 4.0 · Data, scripts, figures, nets and checks: studies/2026-10-13-fused-shells at https://github.com/DICTOR-Master/kaleidohedra.<br>
 The structures, the pieces and all their names, the observation that started this study, the name DICTO Truncated-Icosahedral Hecatodihedron and the plan for the apps are DICTO's. Computation and checking with Claude (Anthropic).
 </div>
 <div class="abstract"><b>Abstract.</b> {md.render(abstract.strip())}</div>
