@@ -50,15 +50,15 @@ Both types use copies of a single shape, and the copies are part of its own spac
 
 - **Four round one** (four copies on four tetrahedrally placed faces of a fifth): among the lattice space-fillers (parallelohedra), the
   copy across each face is a translate, so the five sit in the shape's own tiling (`scripts/same_shape.py`, checked: translates fit,
-  no overlaps). In the group: the **truncated octahedron** (four alternate hexagons, DICTO's example), the **Bain elongated dodecahedron**
-  and the **regular-hexagon elongated dodecahedron** (on four of their faces each). The Bain rhombic dodecahedron also qualifies but is
-  left out as an RD variant (DICTO: "don't fill it with RDs"). The rhombic
+  no overlaps). In the group: the **truncated octahedron** (four alternate hexagons, DICTO's example). The Bain RD and the elongated
+  dodecahedra (Bain, regular-hexagon) also qualify but are RD family and left out (DICTO: "don't fill it with RDs"). The rhombic
   dodecahedron, cube, hexagonal prism and the classic elongated dodecahedron have no four faces in tetrahedral positions. The truncated
   tetrahedron is ruled out under this rule (its tiling needs tetrahedra too).
 - **Four meeting at a point** (corners of solid angle π), the group without filling it with rhombic dodecahedra (DICTO: "don't fill it
-  with RDs"): one **rhombic dodecahedron** (DICTO's example), the **truncated octahedron**, the **rhombohedron**, the **elongated
-  dodecahedra** (classic, regular-hexagon, Bain, DICTO skewed) and the **leaning square and hexagonal prisms**. Left out as RD variants:
-  the Bain RD, RD-Hemi, the RD target cells, the Spheroid-13 RD pieces and the octahedron's flat stellation (an RD).
+  with RDs"): one **rhombic dodecahedron** (DICTO's example), the **truncated octahedron** and the **leaning square and hexagonal
+  prisms**. Left out as RD family: the elongated dodecahedra (elongated RDs: classic, regular-hexagon, Bain, DICTO skewed), the
+  rhombohedron (the RD's quarter), the Bain RD, RD-Hemi, the RD target cells, the Spheroid-13 RD pieces and the octahedron's flat
+  stellation (an RD). Next: test non-RD space-fillers outside the library (triakis truncated tetrahedron, gyrobifastigium, ...).
 - The **truncated octahedron is in both types**: four meet at each of its corners, and four sit round it on alternate hexagons.
 
 DICTO · dictospheres.com
