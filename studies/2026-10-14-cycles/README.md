@@ -25,3 +25,12 @@ For DICTO to decide: the Dharma order (icosidodecahedron before the dodecahedron
 the triacontahedron) differs from the plan's Loop 1 order, and Dharma grows as it goes, so it is a growth loop, not a one-size loop.
 
 DICTO · dictospheres.com
+
+## Great icosahedron: buildable scope (2026-10-14)
+
+`scripts/great_ico_cells.py` → `great-ico-cells.json`: the icosahedron's 20 face planes cut the great icosahedron into **413 cells of 10
+kinds** (core icosahedron 1; then 20, 30, 60, 60, 20, 12, 120, 30, 60 by distance from the centre); their volume 110.70 matches a Monte
+Carlo volume of the great icosahedron (110.77) with the core's inradius 1. Building options for DICTO: the stellation cells layer by layer
+(faithful to the stellation diagram, 413 pieces), or a core icosahedron + 20 congruent face units (21 pieces).
+
+DICTO · dictospheres.com
