@@ -23,7 +23,7 @@ table {{ font-size: 7pt; }}
 <p class="sub">Pyramids on flat-ended triangles: from the tetrahedron through FUJI to the flat hexagon, the antiprism theorem, and the members found in tilings, crystals and our sculpture</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
-Version 3 · 14 October 2026 · DICTO DOI: 10.5281/zenodo.23357896 (all versions) · Licence CC BY 4.0 · Data, scripts, proofs and checks: studies/2026-10-14-fuji-family at https://github.com/DICTOR-Master/kaleidohedra.<br>
+Version 4 · 14 October 2026 · DICTO DOI: 10.5281/zenodo.23357896 (all versions) · Licence CC BY 4.0 · Data, scripts, proofs and checks: studies/2026-10-14-fuji-family at https://github.com/DICTOR-Master/kaleidohedra.<br>
 The family, FUJI, the dictospheres, the sculptures and all names are DICTO's. Computation, proofs and checking with Claude (Anthropic).
 </div>
 <div class="abstract"><b>Abstract.</b> {md.render(abstract.strip())}</div>
