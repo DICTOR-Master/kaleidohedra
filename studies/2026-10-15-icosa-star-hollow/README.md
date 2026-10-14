@@ -43,3 +43,10 @@ Left empty: 5 + 2√5 (now filled in the app by the 12 flat pentagonal pyramids 
 **X-ray check in the app (`scripts/xray.mjs`, `renders/app-xray-5fold.jpg`):** X-ray, 5-fold axis, cut through the centre, seen from the
 cut side: the gold core with the violet Cleo-Icos round it. Two things a user meets: the cut shows only when the camera is on the cut
 side (Flip turns it round), and faces that touch whole-face show speckles in the cut (coincident faces); a later polish.
+
+**Cleo core step 2 (`scripts/core_step2.py`, `core_step2b.py`, `data/core_step2.txt`):** each antiprism is exactly its Cleo-Ico + 3 tetrahedra
+X on its top (shell) edges + 3 tetrahedra Y on its bottom (core) edges. X: edges 1, four of 0.951057, 0.57735 (= 1/√3); Y: edges 1, three of
+0.951057, two of 0.57735. Volumes Cleo-Ico : X : Y = 3 : 2 : 1 (0.109085, 0.072723, 0.036362); an antiprism is exactly 4 Cleo-Ico volumes.
+The predicted 12 + 30 + 20 shell (Karma pattern) does NOT appear: the Y pairs over the 30 core edges are not convex, nor the flat pyramids
+with their 5 X, nor any X + Y inside an antiprism. None of the pieces is a kit piece (AXE, FUJI, CLEO, ...) or J2 or a regular tetrahedron
+by shape. The 1/√3 lengths (triangle centres) are what keep them out of the golden kit.
