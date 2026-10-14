@@ -1,0 +1,27 @@
+== dictosphere
+triangle region corners 6 arc lengths (deg) [17.588  49.3766 17.588  49.3766 17.588  49.3766]
+arc ratio short/long 0.35620045080902046
+radius from 8.4 cm tape over 109.47 deg: 4.396448173976892
+sphere arcs cm [np.float64(1.3495676104665633), np.float64(3.7887869243325127)]
+flat tangent solid sides (inradius 1) 1.035276180410083 0.3789373819630122 ratio 0.3660254037844389 cm 4.5515380729256805 1.665978560982869
+tangent-solid corner direction vs Voronoi corner (min angle, deg): 0.0
+tri-tri centre arc 5.411849282607508 rim-to-rim along surface (3 cm ports) 2.411849282607508 chord 5.076581073447595
+sq-sq centre arc 6.905924642627032 rim-to-rim along surface (3 cm ports) 3.905924642627032 chord 6.217516633908549
+areas on tangent solid: square 1.0717967697244906 hexagon 1.2057713659400524
+
+== CLEO sphere
+icosidodecahedron(1/phi) volume 3.26612462541628 (11sqrt5-5)/6 3.2661246254162815
+pent pyramid 0.18633899812498242 sqrt5/12 0.18633899812498247 | 20 CLEO+12 pp 3.26612462541628 | penta-cleo 0.03726779962499648 sqrt5/60 0.037267799624996496
+CLEO solid-angle fraction x20: 0.28624573524350067
+icosahedron neighbour-vertex angle 63.43494882292201
+pentagon-centre radius 0.8506508083520399 icosahedron edge 0.8944271909999157 2/sqrt5 0.8944271909999159
+icosahedron volume 1.5610938576665827 20 central pyramids = same by construction
+side-edge dihedral 72.0 base-edge dihedral 69.0948425521107
+combinations a*72+b*69.09+c*180=360 with b>=1: []
+icosahedron face-plane distance 0.6759734692225586 icosidodecahedron corners at radius 1 -> cut off
+
+== wheels: n planes, each with m spoke-lines, pairwise meeting in distinct spoke-lines => n-1 <= m
+2 max 3 square wheels: 3 (octahedron)
+3 max 4 hexagonal: 4 (cuboctahedron)
+4 max 5 octagonal: 5 ?
+5 max 6 decagonal: 6 (icosidodecahedron)
