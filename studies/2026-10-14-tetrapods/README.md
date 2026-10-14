@@ -44,4 +44,19 @@ with four truncated tetrahedra round it, a truncated tetrahedron with four tetra
 one-parameter family of four-round-one tetrapods. The four at a point list above (38) is already a space-filling property for the
 lattice fillers among them (rhombic dodecahedron, truncated octahedron, rhombohedra, the elongated dodecahedra, the prisms).
 
+## One polyhedron only (DICTO 2026-10-14: "same polyhedron, that's why I gave you two examples")
+
+Both types use copies of a single shape, and the copies are part of its own space filling.
+
+- **Four round one** (four copies on four tetrahedrally placed faces of a fifth): among the lattice space-fillers (parallelohedra), the
+  copy across each face is a translate, so the five sit in the shape's own tiling (`scripts/same_shape.py`, checked: translates fit,
+  no overlaps). Four shapes: the **truncated octahedron** (four alternate hexagons, DICTO's example), the **Bain rhombic dodecahedron**,
+  the **Bain elongated dodecahedron** and the **regular-hexagon elongated dodecahedron** (on four of their faces each). The rhombic
+  dodecahedron, cube, hexagonal prism and the classic elongated dodecahedron have no four faces in tetrahedral positions. The truncated
+  tetrahedron is ruled out under this rule (its tiling needs tetrahedra too).
+- **Four meeting at a point** (corners of solid angle π): among the space-fillers, the **rhombic dodecahedron** (DICTO's example), the
+  truncated octahedron, the rhombohedra, the elongated dodecahedra (classic, regular-hexagon, Bain, DICTO skewed), the Bain RD, the
+  leaning square and hexagonal prisms, RD-Hemi, the target cells and the Spheroid-13 RD pieces.
+- The **truncated octahedron is in both types**: four meet at each of its corners, and four sit round it on alternate hexagons.
+
 DICTO · dictospheres.com
