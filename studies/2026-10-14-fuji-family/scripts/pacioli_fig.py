@@ -1,4 +1,4 @@
-# Figure (DICTO 2026-10-14): Pacioli's three golden rectangles and the 20 Cleo-Icos. (a) crystal view: all 20 Cleo-Icos as glass (the 6 on the rectangles' short sides wisteria), and the
+# Figure (DICTO 2026-10-14): Pacioli's three golden rectangles and the 20 Cleo-Icos. (a) crystal view: all 20 Cleo-Icos as wisteria glass, and the
 # three rectangles through the centre; (b) the rectangles alone, each cut by its diagonals: the short-side triangles (63.43° at the
 # centre, Cleo-Icos side faces) wisteria, the long-side triangles (116.57°) gold. DICTO · dictospheres.com
 import itertools, json, os
@@ -35,10 +35,10 @@ for z, R in enumerate(RECTS):
         if abs(np.linalg.norm(p - q) - 1) > 1e-9: continue
         f = [t for t in F if all(any(np.allclose(V[i], x) for i in t) for x in (p, q))]
         defining.add(max(f, key=lambda t: V[list(t)].mean(0) @ np.roll(np.eye(3)[z], 1)))
-# crystal: all 20 Cleo-Icos as glass, the 6 the rectangles define in wisteria, the other 14 pale blue
+# crystal: all 20 Cleo-Icos as wisteria glass; two colours only (DICTO 2026-10-14: too many colours)
 for f in F:
     T = [np.zeros(3)] + [V[i] for i in f]
-    a_items.append(('w1g' if f in defining else 'w5g', [[T[1], T[2], T[3]], [T[0], T[2], T[1]], [T[0], T[3], T[2]], [T[0], T[1], T[3]]]))
+    a_items.append(('w1g', [[T[1], T[2], T[3]], [T[0], T[2], T[1]], [T[0], T[3], T[2]], [T[0], T[1], T[3]]]))
 for z, R in enumerate(RECTS): a_items.append(('w2', slab(R, np.eye(3)[z])))
 b_items = []
 for z, R in enumerate(RECTS):
