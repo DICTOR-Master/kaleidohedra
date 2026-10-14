@@ -1,0 +1,45 @@
+<!doctype html><meta charset="utf-8"><title>Theaetetus figures (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}#tag{position:fixed;right:14px;bottom:10px;font:600 14px system-ui;color:#5b5346}</style>
+<div id="tag">DICTO · dictospheres.com</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// Paper figures (2026-10-15): exact corners, whole faces (no stray edges), each piece drawn a hair smaller so touching faces never fight.
+(async function () {
+  const [story, scn] = (location.hash.slice(1) || 'c102-closed').split('-');
+  const J = (await fetch('exact_meshes.json').then((r) => r.json()))[story];
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+  renderer.setSize(1000, 1000); renderer.setPixelRatio(1); renderer.localClippingEnabled = true; document.body.appendChild(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.8)); const sun = new THREE.DirectionalLight(0xffffff, 0.7); sun.position.set(4, 7, 5); scene.add(sun);
+  const C = { 'core icosahedron': [0xd9a441, 0], 'core Cleo-Ico': [0xd9a441, 0], 'Aetos (flat pentagonal pyramid)': [0xb39ddb, 1], 'Sphen (X)': [0x4fb3bf, 1],
+    'Sphenion (Y)': [0x2e8b9a, 1], 'Atraktos': [0x8e6cc8, 1], 'column': [0x8e6cc8, 1], 'twisted pentagonal frustum': [0x6fbf73, 2], 't1': [0x9ccc65, 2],
+    'cap (to Hecatodihedron)': [0xe8945a, 3] };
+  const core = J['core icosahedron']?.[0] ?? null;
+  const five = core ? core.v[0] : J['core Cleo-Ico'][0].v[0];                       // a core corner: on a five-fold axis
+  const n5 = new THREE.Vector3(...five).normalize();
+  const tri0 = (J['Atraktos'] ?? J['column'])[0].c; const n3 = new THREE.Vector3(...tri0).normalize();   // a three-fold axis
+  const axis = { cut: new THREE.Vector3(0, 0, 1), cut5: n5, cut3: n3 }[scn];
+  const clip = axis ? [new THREE.Plane(axis.clone().negate(), 0)] : [];
+  const show = { closed: [0, 1, 2, 3], cut: [0, 1, 2, 3], cut5: [0, 1, 2, 3], cut3: [0, 1, 2, 3], apart: [0, 1, 2, 3], inner: [0, 1] }[scn];
+  const step = scn === 'apart' ? 0.75 : 0, coreStep = scn === 'apart' ? 0.22 : 0, sh = axis ? 0.97 : 0.993;
+  for (const [k, L] of Object.entries(J)) {
+    const [col, layer] = C[k]; if (!show.includes(layer)) continue;
+    if (scn === 'inner' && layer === 1 && !['Atraktos', 'column'].includes(k)) continue;
+    for (const S of L) {
+      const n = Math.hypot(...S.c) || 1, d = S.c.map((x) => (x / n) * (layer ? step * layer : coreStep));
+      const P = S.v.map((v) => v.map((x, i) => S.c[i] + (x - S.c[i]) * sh + d[i]));
+      const pos = [], line = [];
+      for (const f of S.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...P[f[0]], ...P[f[i]], ...P[f[i + 1]]); for (let i = 0; i < f.length; i++) line.push(...P[f[i]], ...P[f[(i + 1) % f.length]]); }
+      const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+      scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: col, roughness: 0.5, flatShading: true, side: THREE.DoubleSide, clippingPlanes: clip, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+      const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+      scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, clippingPlanes: clip })));
+    }
+  }
+  const cam = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+  const dist = { closed: 10.5, cut: 10.5, cut5: 10.5, cut3: 10.5, apart: 19, inner: 8.6 }[scn];
+  const dir = axis ? axis.clone().add(new THREE.Vector3(0.12, 0.18, 0.05)).normalize() : new THREE.Vector3(0.62, 0.48, 0.9).normalize();
+  cam.position.copy(dir.multiplyScalar(dist)); cam.up.set(0, 1, 0); cam.lookAt(0, 0, 0);
+  renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>
