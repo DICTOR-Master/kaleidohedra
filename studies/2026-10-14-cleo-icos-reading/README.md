@@ -68,4 +68,27 @@ reference library, then the web. Claims below are what the sources say; nothing 
 - Mackay (1962), the Mackay icosahedron as shells of distorted tetrahedra; Nelson (1983, PRB 28, 5515) on polytetrahedral order.
 - Elser–Sloane original; Coxeter's statistical honeycomb (5.1044 tetrahedra per edge) in *Close packing and froth* (1958).
 
+## Round 3 (same day): the Cleo-Icos is Mackay's unit
+
+- **Mackay (1962), Acta Cryst. 15, 916:** shells of equal spheres round one centre, with global icosahedral order. The Mackay icosahedron
+  is built of 20 distorted tetrahedra in fcc stacking; its basic unit is a near-regular tetrahedron with two edge lengths in the ratio
+  ≈ 1.05146 and faces at ≈ 63°26′ (as described secondhand, Struct. Chem. 2016, doi:10.1007/s11224-016-0843-5). Those are exactly the
+  Cleo-Icos's numbers: base edge ÷ side edge = 1/sin 72° = 1.05146, and 63.43° = 63°26′ at the centre. **So the Cleo-Icos is the unit
+  tetrahedron of the Mackay icosahedron**, the structure of most icosahedral metal clusters and nanoparticles.
+- **Ino (1969, J. Phys. Soc. Jpn) began the strain models** of icosahedral multiply twinned particles; Marks (Phil. Mag. A 49 (1984) 81)
+  reviews homogeneous and inhomogeneous strain; the rhombic or rhombohedral view (Bagley; Yang 1979, J. Cryst. Growth 47, 274; Yacamán et
+  al. 1979) treats each unit as a slightly distorted crystal. Wikipedia, *Icosahedral twins*, gives the overview.
+- **Coxeter's statistical honeycomb:** regular tetrahedra would need 2π / arccos(1/3) ≈ 5.1043 round each edge; Coxeter (*Regular
+  Polytopes*, ch. 22; *Close-packing and froth*, 1958) used it to describe froth and random packing (cited via arXiv 1108.2494). The
+  Cleo-Icos is one way of making exactly 5 fit: its side-edge angle is exactly 72°.
+
+## What this means for DICTO's work (to word carefully)
+
+- The Cleo-Icos itself is **known**: the icosahedron's central pyramid, Mackay's unit tetrahedron, Kabai's "golden tetrahedron". Our
+  papers should cite Mackay (1962) where the Cleo-Icos is introduced.
+- **Not found** in any source read: the Cleo-Icos as the corner of the prolate golden rhombohedron cut into Cleo-Icos + Antonius +
+  Cleo-Icos, the Cleo-Icos & Antonius space-filling pair, the rhombic hexecontahedron as 20 + 20 + 20, and the octahedron as 20 Cleo-Icos
+  + 12 half caps. The rhombohedral description of the units in gold (1979) is suggestive: if the units are strained into the Cleo-Icos
+  shape, their cell is the golden rhombohedron (63.43°). Their published angle is still to be read in the full text.
+
 DICTO · dictospheres.com
