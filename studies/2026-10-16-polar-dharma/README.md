@@ -72,3 +72,19 @@ Renders: `renders/polar-gsd-*.png` (`node shoot_polar.mjs gsd`). The `inner` vie
 ### Step 5c: the inner gap (inner dodecahedron → icosidodecahedron)
 
 None of the four Kepler–Poinsot solids fit there (`data/polar-stars-inner.txt`). The Hecatodihedron (102 faces, 80 corners) does fit, but loosely: its scale can run from 0.314757 to 0.387857 of its original size, giving room ×1.2322, the same slack the dodecahedron has (`polar_heca_gap.py` → `data/polar-heca-gap.txt`). At the low end, the dodecahedron's 20 corners touch Hecatodihedron faces. At the high end, 20 Hecatodihedron corners touch the icosidodecahedron's triangles. Unlike the GSD in the big gap, no single size touches both. The same file lists the other original stations for comparison: the icosidodecahedron, dodecahedron, truncated icosahedron and RT fit, and the two icosahedra do not.
+
+## Step 6: rounder solids? (2026-10-16, DICTO's question)
+
+`polar_round.py` tests the icosahedral Archimedean solids and their Catalan duals (up to 120 faces) in both gaps (`data/polar-round.txt`):
+
+- **Big gap, inside the great stellated dodecahedron, around RT:** none fit. RT's 12 tips sit exactly in the star's 12 valleys, where the star pinches inward, so any rounder solid that contains RT pushes out past the valleys. Outside the star, any convex solid that contains it also contains its 20 points, so only D(φ³) itself fits there.
+- **Inner gap, inside the icosidodecahedron, around the dodecahedron or around the Hecatodihedron at its touching size:** all fit except the truncated dodecahedron, but each one floats (none is locked). The room for each is:
+  - deltoidal hexecontahedron (60 faces): ×1.142
+  - disdyakis triacontahedron (120 faces): ×1.142
+  - rhombicosidodecahedron (62 faces, roundest, in/circ 0.925): ×1.059
+  - truncated icosidodecahedron (62 faces): ×1.044
+  - others as listed in the data file
+
+  The room around the Hecatodihedron is the same as around the dodecahedron, except for the pentakis dodecahedron, RT and ID.
+
+(RT shows as NO in the big gap only because of sampling at its own touching points. It is the trivially locked case.)
