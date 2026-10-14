@@ -39,7 +39,7 @@ Face-plane condition (defined): FUJI(r) is glued by one of its equilateral faces
 - Rhombicuboctahedron, triangle–square, cos D = −√(2/3): r = (√6 − 1)/2.
 - Octahedron, cos D = −1/3: r = 0 (the tetrahedron).
 
-## 3. Theorem: the antiprisms
+## 3. Proposition 1: the antiprisms
 
 **For the n-gonal antiprism with unit edges (n ≥ 3), the member whose base continues the plane of its triangles is
 r = 2 cos(π/n) − 1.**
@@ -74,7 +74,7 @@ Checks: n = 3, cos D = −1/3 (the octahedron), r = 0; n = 4, cos D = (1 − 2�
 n = 5, cos D = (1 − 2φ)/3 = −√5/3 (the pentagonal antiprism, the icosahedron's middle), r = φ − 1 = 1/φ, **FUJI**; n = 6,
 r = √3 − 1; as n → ∞, r → 1, the flat regular hexagon. The numerical check (`scripts/antiprisms.py`, n = 4 to 12) agrees to 10⁻¹⁵.
 
-## 4. Breathing pyrochlore and Odom's hexagon (for reference)
+## 4. Breathing pyrochlore and the golden hexagon after Odom (for reference)
 
 - In a pyrochlore whose two sets of tetrahedra have edges 1 and r, every kagome hexagon is the flat-ended triangle with sides 1 and r
   (its sides are alternately edges of the two sets, and its angles are 120° because the kagome triangles are equilateral): the
@@ -82,6 +82,6 @@ r = √3 − 1; as n → ∞, r → 1, the flat regular hexagon. The numerical c
   (`scripts/breathing_data.py`, `breathing-checks.json`).
 - Extending each side of a unit equilateral triangle by e at both ends gives six points forming an equiangular hexagon with sides e
   and 1 + e (each corner angle is 120°, as the extensions run along the triangle's sides), i.e. r = e/(1 + e); e = φ gives 1/φ,
-  FUJI's base (Odom's golden hexagon).
+  FUJI's base (the golden hexagon after Odom).
 
 DICTO · dictospheres.com

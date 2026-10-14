@@ -35,25 +35,26 @@ Version 1 (draft) · 14 October 2026 · DOI on release · Licence CC BY 4.0 · D
 The family, FUJI, the dictospheres, the sculptures and all names are DICTO's. Computation, proofs and checking with Claude (Anthropic).
 </div>
 <div class="abstract"><b>Abstract.</b> <p>FUJI is the hexagonal pyramid that closes the corners of our thirteen-icosahedron cluster, the Lotus seed [1]. Its base is a <strong>flat-ended triangle</strong>: a hexagon with all angles 120° and sides 1 and 1/φ alternating. The same shape kept turning up elsewhere, in our cuboctahedral PET-bottle spheres and in the colouring of the Lotus seed, so we asked whether FUJI belongs to a family.</p>
-<p>It does. Put an apex over a flat-ended triangle with sides 1 and r, with all six side edges of length 1. This gives a one-parameter family <strong>FUJI(r)</strong>, running from the regular tetrahedron (r = 0) through FUJI (r = 1/φ) to the flat regular hexagon (r = 1). We prove:</p>
+<p>It does. Put an apex over a flat-ended triangle with sides 1 and r, with all six side edges of length 1. This gives a one-parameter family <strong>FUJI(r)</strong>, running from the regular tetrahedron (r = 0) through FUJI (r = 1/φ) to the flat regular hexagon (r = 1). We derive the base angles and prove:</p>
 <ul>
-<li><strong>The base angles are cos L = (1 + 2r)/3 and cos² S = (2 + r)/(3(2 − r)).</strong></li>
-<li><strong>The antiprism theorem:</strong> the member whose base lies in one plane with the triangles of the n-gonal antiprism is <strong>r = 2 cos(π/n) − 1</strong>. The octahedron gives the tetrahedron, the square antiprism √2 − 1, and the pentagonal antiprism (the middle of the icosahedron) gives FUJI.</li>
+<li><strong>The base angles</strong> (derived): cos L = (1 + 2r)/3 and cos² S = (2 + r)/(3(2 − r)).</li>
+<li><strong>The antiprism rule:</strong> the member whose base continues the plane of the n-gonal antiprism's triangles is <strong>r = 2 cos(π/n) − 1</strong>, so that 1 + r is the short diagonal of the regular n-gon (for n = 3, its side).</li>
+<li><strong>The wheel bound:</strong> flat wheels crossing along different spokes number at most 3 (square), 4 (hexagonal) or 6 (decagonal), and five octagonal wheels are impossible. The octahedron gives the tetrahedron, the square antiprism √2 − 1, and the pentagonal antiprism (the middle of the icosahedron) gives FUJI.</li>
 </ul>
 <p>The members turn up in several places:</p>
 <ul>
-<li><strong>Odom's golden hexagon</strong> is FUJI's base, and every member's base is an Odom hexagon.</li>
+<li><strong>The golden hexagon</strong> of a construction after Odom is FUJI's base; the same construction with any extension gives every member with r &lt; 1.</li>
 <li><strong>The space-filling truncated tetrahedron</strong> of Damasceno, Engel and Glotzer has the r = 1/2 member's base as its faces.</li>
-<li><strong>In a breathing pyrochlore</strong> the kagome hexagons are flat-ended triangles, with r equal to the breathing ratio.</li>
-<li><strong>Our dictospheres</strong>, spheres with 14 bottle ports, are divided into curved squares and curved flat-ended triangles. Keeping an even margin round every port fixes the pattern, and its flat counterpart's triangles are the cuboctahedral member, r = (√3 − 1)/2.</li>
+<li><strong>In a breathing pyrochlore</strong> the kagome hexagons are flat-ended triangles, with r equal to the breathing ratio; as a Wythoff construction it tiles space for every r.</li>
+<li><strong>Our dictospheres</strong>, spheres with 14 bottle ports, are divided into curved squares and curved flat-ended triangles. Keeping an even margin round every port fixes the pattern, and its flat counterpart's triangles are the cuboctahedral member, r = (√3 − 1)/2, because at that depth the cube's corners are exactly the member's apexes; we prove the two conditions are the same.</li>
 </ul>
 </div>
 <h2>1. Introduction</h2>
-<p>FUJI was found as a gap piece. In the Lotus seed, twelve icosahedra round a small one, the corners where three icosahedra meet are filled by a hexagonal pyramid with all six side edges 1, which we named after Mount Fuji [1]. It is not made of the Mosseri–Sadoc tiles that make its partners AXE and CLEO.</p>
+<p>FUJI was found as a gap piece. In the Lotus seed, twelve icosahedra round a small one, the corners where three icosahedra meet are filled by a hexagonal pyramid with all six side edges 1, which we named after Mount Fuji [1]. It is not made of the Mosseri–Sadoc tiles [Papadopolos and Ogievetsky 1999; Koca et al. 2020] that make its partners AXE and CLEO.</p>
 <p>Its base had appeared before. Building cuboctahedral spheres of PET-bottle ports, we wanted sharp equilateral triangles round the ports and settled for blunted, flat-ended ones. Colouring the Lotus seed, we hoped for regular hexagons and found the same flat-ended triangles. Our DeltaZip and B1NR sculptures use rounded triangles, the curved form of the same idea.</p>
 <p><img src="figures/fig0-dicto-work.jpg" alt="Figure 1" /></p>
 <p><strong>Figure 1.</strong> Our sculptures. (a) DeltaZips: deltahedra built from rings tied with zip ties, each ring a rounded triangle. (b) Thirteen dictospheres joined, twelve round one. (c) A dictosphere design, with caps on some of its ports. Photographs and design: DICTO.</p>
-<p>The same outline appears at the centre of the DeltaZips logo: the recycling symbol's three arrows make a triangle with its corners taken off. Measured on the logo as a flat-ended triangle with the same reach to the corners and to the sides, the symbol has r ≈ 0.79, and the DeltaZip ring photographed behind it r ≈ 0.48. Both lie well inside the family's range.</p>
+<p>The same outline appears at the centre of the DeltaZips logo: the recycling symbol's three arrows make a triangle with its corners taken off.</p>
 <p>This paper takes FUJI's shape as the starting point of a family (Section 2), finds its bases in a classical construction (Section 3), proves which member belongs to which antiprism (Section 4), and follows the members into tilings, crystals and our sculpture (Section 5).</p>
 <h2>2. The family</h2>
 <p><img src="figures/fig1-family.jpg" alt="Figure 2" /></p>
@@ -80,7 +81,7 @@ The family, FUJI, the dictospheres, the sculptures and all names are DICTO's. Co
 <td>regular tetrahedron</td>
 <td>√(2/3)</td>
 <td>70.53°</td>
-<td></td>
+<td>–*</td>
 <td>four equilateral</td>
 </tr>
 <tr>
@@ -117,27 +118,28 @@ The family, FUJI, the dictospheres, the sculptures and all names are DICTO's. Co
 </tr>
 </tbody>
 </table>
+<p>*At r = 0 the short sides vanish, so S is undefined (the formula's limit, 54.74°, has no face to measure).</p>
 <p>Two of the angles are the same angle, 41.81° = arccos(√5/3). In the Lotus seed this is the gap two icosahedra leave either side of a shared edge. It appears as FUJI's long-side angle and as the r = 1/2 member's short-side angle. The formulas show why: cos² L = 5/9 exactly at r = 1/φ, and cos² S = 5/9 exactly at r = 1/2.</p>
-<h2>3. Odom's hexagon</h2>
+<h2>3. The golden hexagon after Odom</h2>
 <p><img src="figures/fig2-odom.png" alt="Figure 3" /></p>
 <p><strong>Figure 3.</strong> Extend each side of the gold triangle by e at both ends: the six ends make a flat-ended triangle with sides e and 1 + e. With e = φ (right) it is FUJI's base.</p>
-<p>George Odom's construction relates the golden ratio to the equilateral triangle [Wolfram Demonstrations, Hexagons and the Golden Ratio]. Extend each side of an equilateral triangle by the golden ratio at both ends, and the six outer points form a hexagon whose two side lengths are in the golden ratio.</p>
-<p>Rebuilt here for any extension e: the six points always form an equiangular hexagon with sides e and 1 + e, a flat-ended triangle with r = e/(1 + e). So <strong>every member of the family has an Odom hexagon as its base.</strong> The golden extension e = φ gives r = 1/φ, FUJI's base. The extension e = 1 gives r = 1/2, the base of the member in Section 5.2.</p>
-<h2>4. The antiprism theorem</h2>
+<p>George Odom found the golden ratio in the equilateral triangle [Odom and van de Craats 1983]. A related construction, published as the Wolfram Demonstration &quot;Hexagons and the Golden Ratio&quot; after Odom, extends each side of an equilateral triangle by the golden ratio at both ends; the six outer points form a hexagon whose two side lengths are in the golden ratio. <strong>This golden hexagon is FUJI's base.</strong> (Odom's own construction, Problem E3007, is a different one: the line through two side midpoints of an equilateral triangle, extended to the circumcircle.)</p>
+<p>Rebuilt here for any extension e, the six points always form an equiangular hexagon with sides e and 1 + e: a flat-ended triangle with r = e/(1 + e). So the same construction, with extension e, gives every member with r &lt; 1 (the flat hexagon, r = 1, would need e infinite). This is a change of parameter, not a new result. The extension e = 1 gives r = 1/2, the base of the member in Section 5.2.</p>
+<h2>4. The antiprism rule</h2>
 <p><img src="figures/fig3-antiprisms.png" alt="Figure 4" /></p>
 <p><strong>Figure 4.</strong> The member that matches each antiprism: r = 2 cos(π/n) − 1. FUJI is the five-fold member.</p>
-<p>In the Lotus seed, FUJI's base lies in one plane with the icosahedron triangles on its long sides: 41.81° + 138.19° = 180°. For any solid X with unit triangles, the same happens when L + D_X = 180°, where D_X is the solid's dihedral angle at the triangle's edge. That is, when</p>
+<p>In the Lotus seed, FUJI's base lies in one plane with the icosahedron triangles on its long sides: 41.81° + 138.19° = 180°. We call this the <strong>face-plane condition</strong>: FUJI(r) is glued by one of its equilateral faces to a unit triangle of a solid X, and its base continues the plane of the face of X across that triangle's edge, so that L + D_X = 180°, where D_X is X's dihedral angle at that edge. The edge is between two triangles for the icosahedron, the octahedron and the antiprisms (their triangle–triangle edges), and between a triangle and a square for the cuboctahedron and the rhombicuboctahedron, where the base continues a square. The condition holds when</p>
 <p><strong>r = (−3 cos D_X − 1)/2.</strong></p>
 <table>
 <thead>
 <tr>
-<th>Solid (angle at the triangle's edge)</th>
+<th>Solid (edge, dihedral angle)</th>
 <th>member r</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>icosahedron, pentagonal antiprism (138.19°)</td>
+<td>icosahedron (and the pentagonal antiprism, its middle), triangle–triangle (138.19°)</td>
 <td><strong>1/φ: FUJI</strong></td>
 </tr>
 <tr>
@@ -145,7 +147,7 @@ The family, FUJI, the dictospheres, the sculptures and all names are DICTO's. Co
 <td><strong>(√3 − 1)/2</strong></td>
 </tr>
 <tr>
-<td>square antiprism (127.55°)</td>
+<td>square antiprism, triangle–triangle (127.55°)</td>
 <td><strong>√2 − 1</strong></td>
 </tr>
 <tr>
@@ -153,14 +155,15 @@ The family, FUJI, the dictospheres, the sculptures and all names are DICTO's. Co
 <td><strong>(√6 − 1)/2</strong></td>
 </tr>
 <tr>
-<td>octahedron (109.47°)</td>
+<td>octahedron = triangular antiprism, triangle–triangle (109.47°)</td>
 <td>0, the tetrahedron</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Theorem.</strong> For the n-gonal antiprism with unit edges, the matching member is <strong>r = 2 cos(π/n) − 1</strong>.</p>
-<p><em>Proof (outline; in full in the appendix).</em> Place the antiprism's corners at T_k = (R cos 2kθ, R sin 2kθ, h) and B_k = (R cos (2k + 1)θ, R sin (2k + 1)θ, −h), with θ = π/n and R = 1/(2 sin θ). The two equilateral triangles on the side edge T₀B₀ have their third corners T₁ and B₋₁, each √3/2 from the edge's midpoint M. A short computation gives (T₁ − M)·(B₋₁ − M) = −(4 cos θ − 1)/4. So cos D_n = (1 − 4 cos(π/n))/3, and r = (−3 cos D_n − 1)/2 = 2 cos(π/n) − 1. ∎</p>
-<p>The antiprisms therefore index the family:</p>
+<p><strong>Proposition 1.</strong> For the n-gonal antiprism with unit edges, the member meeting the face-plane condition at a triangle–triangle edge is <strong>r = 2 cos(π/n) − 1</strong>. Equivalently, <strong>1 + r = 2 cos(π/n), the short diagonal of the regular n-gon with unit sides</strong> (for n = 3, its side).</p>
+<p>The antiprism's dihedral angle, cos D_n = (1 − 4 cos(π/n))/3, is standard (it is listed for single antiprisms in the OEIS); the proposition combines it with the base-angle formula, so the new content is one line of algebra.</p>
+<p><em>Proof (outline; the dihedral computed in full in the appendix).</em> Place the antiprism's corners at T_k = (R cos 2kθ, R sin 2kθ, h) and B_k = (R cos (2k + 1)θ, R sin (2k + 1)θ, −h), with θ = π/n and R = 1/(2 sin θ). The two equilateral triangles on the side edge T₀B₀ have their third corners T₁ and B₋₁, each √3/2 from the edge's midpoint M. A short computation gives (T₁ − M)·(B₋₁ − M) = −(4 cos θ − 1)/4. So cos D_n = (1 − 4 cos(π/n))/3, and r = (−3 cos D_n − 1)/2 = 2 cos(π/n) − 1. ∎</p>
+<p>The antiprisms therefore index the family by the n-gon's short diagonal:</p>
 <ul>
 <li>n = 3, the octahedron, gives the tetrahedron;</li>
 <li>n = 4 gives the silver ratio's inverse, √2 − 1;</li>
@@ -168,83 +171,53 @@ The family, FUJI, the dictospheres, the sculptures and all names are DICTO's. Co
 <li>n = 6 gives √3 − 1;</li>
 <li>as n grows, r tends to the flat regular hexagon.</li>
 </ul>
-<p><strong>Golden and silver.</strong> The members for n = 4 and n = 5 are the two best-known metallic means. For n = 5, r = 2 cos 36° − 1 = φ − 1 = 1/φ, the golden ratio's inverse: FUJI. For n = 4, r = 2 cos 45° − 1 = √2 − 1 = 1/(1 + √2), the inverse of the <strong>silver ratio</strong> 1 + √2. So FUJI has a silver sister one step down the same formula, on the square antiprism, and seen down its axis that antiprism's outline is the <strong>regular octagon</strong>, as the pentagonal antiprism's is the regular decagon (Figure 5). The square family adds another silver number: its member on the rhombicuboctahedron is r = 1 − 1/√2. The golden members belong with icosahedral order and the silver ones with octagonal order (the Ammann–Beenker tilings are built on 1 + √2), so the family may be one place where the two meet; we have not yet followed that further.</p>
+<p><strong>Golden and silver.</strong> The members for n = 4 and n = 5 are the inverses of the two best-known metallic means. For n = 5, r = 2 cos 36° − 1 = φ − 1 = 1/φ, the golden ratio's inverse: FUJI. For n = 4, r = 2 cos 45° − 1 = √2 − 1 = 1/(1 + √2), the inverse of the <strong>silver ratio</strong> 1 + √2. Both are short diagonals: 1 + 1/φ = φ, the pentagon's diagonal, and 1 + (√2 − 1) = √2, the square's. So FUJI has a silver sister one step down the same formula, on the square antiprism, and seen down its axis that antiprism's outline is the <strong>regular octagon</strong>, as the pentagonal antiprism's is the regular decagon (Figure 5). The family has square and pentagonal cousins. For k = 3, 4, 5, …, a flat-ended k-gon is a regular k-gon with its corners cut: an equiangular 2k-gon with sides 1 and r alternating. With all side edges 1 the long faces are equilateral, and cos L = (1 + r/cos(π/k))/(√3 tan(π/k)). The pyramid lies flat at r = 2 sin(π/k − π/6), which is 1, 2 sin 15° and 2 sin 6° for k = 3, 4, 5, and 0 or less from k = 6 on, where the regular unit hexagon is already flat. So there are families only for k = 3, 4 and 5. The square family's member on the rhombicuboctahedron (triangle–square edge) is r = 1 − 1/√2. Whether the silver members connect to octagonal quasicrystals (Ammann–Beenker tilings, inflation factor 1 + √2) we leave open.</p>
 <p><img src="figures/fig9-golden-silver.png" alt="Figure 5" /></p>
-<p><strong>Figure 5.</strong> The silver member (n = 4, r = √2 − 1) and the golden member FUJI (n = 5, r = 1/φ): their flat-ended triangles, and their antiprisms seen down the axis, the regular octagon and decagon.</p>
+<p><strong>Figure 5.</strong> The silver member (n = 4, r = √2 − 1) and the golden member FUJI (n = 5, r = 1/φ): their flat-ended triangles (above), and, separately, their antiprisms seen down the axis, whose outlines are the regular octagon and decagon (below).</p>
 <h2>5. Where the members live</h2>
 <h3>5.1 FUJI in the Lotus seed</h3>
-<p>The Lotus seed is a regular icosahedron of edge φ², exactly: 12 icosahedra, a small centre, 60 AXE, 20 FUJI and 20 CLEO, or our 63-piece build of a dodecahedron, 12 J11, 30 AXE and 20 FUJI [1]. Each of its 20 big faces is three icosahedron triangles and one FUJI base. FUJI is the five-fold member of the family, which is why it belongs to the icosahedron.</p>
+<p>The Lotus seed is a regular icosahedron of edge φ², exactly: 12 icosahedra, a small centre, 60 AXE, 20 FUJI and 20 CLEO, or our 63-piece build of a dodecahedron, 12 J11, 30 AXE and 20 FUJI [1]. Each of its 20 big faces is three icosahedron triangles and one FUJI base. FUJI is the five-fold member of the family, which is consistent with its place in the icosahedron (the face-plane condition is necessary, not sufficient, for a cluster to close).</p>
 <h3>5.2 The space-filling truncated tetrahedron (r = 1/2)</h3>
-<p>Damasceno, Engel and Glotzer studied truncated tetrahedra from the tetrahedron to the octahedron, and found that the member at truncation t = 1/2 fills space on its own [Damasceno et al. 2012]. Its four hexagons have sides in the ratio 2 : 1 (checked from their published corners): they are the r = 1/2 member's base, Odom's hexagon with e = 1.</p>
+<p>Damasceno, Engel and Glotzer studied truncated tetrahedra from the tetrahedron to the octahedron, and found that the member at truncation t = 1/2 fills space on its own [Damasceno et al. 2012]. Its four hexagons have sides in the ratio 2 : 1 (checked from their published corners): they are the r = 1/2 member's base, the e = 1 hexagon of Section 3.</p>
 <h3>5.3 Breathing pyrochlores</h3>
 <p><img src="figures/fig4-pyrochlore.jpg" alt="Figure 6" /></p>
 <p><strong>Figure 6.</strong> The Golden Breathing Pyrochlore world in the Kaleidohedra app. (a) Big (gold) and small (purple) tetrahedra meet tip to tip, with see-through truncated tetrahedra between them. (b) One kagome layer: every hexagon is FUJI's flat-ended triangle.</p>
 <p>A pyrochlore is a network of tetrahedra sharing corners: every corner belongs to one &quot;up&quot; and one &quot;down&quot; tetrahedron, tip to tip. In a <strong>breathing pyrochlore</strong> the two sets have different sizes, edge 1 and edge r. Such materials exist among the chromium spinel oxides [Okamoto et al. 2013]. Every kagome hexagon then has sides 1 and r alternating, with all angles 120°: the flat-ended triangle with the breathing ratio as its r.</p>
-<p>The space between the tetrahedra is filled by two kinds of truncated tetrahedra, both with flat-ended-triangle hexagons. The tetrahedra and truncated tetrahedra fill space exactly for every r; we checked volumes, faces and neighbours for r from 0.2 to 1. So the breathing pyrochlore is the FUJI family made into a crystal:</p>
+<p>The space between the tetrahedra is filled by two kinds of truncated tetrahedra, both with flat-ended-triangle hexagons. The tetrahedra and truncated tetrahedra fill space for every r. This is a Wythoff construction [Coxeter 1973]: in the affine group Ã₃ (whose diagram is a square), ring two adjacent nodes at distances d₀ and d₁; the cells are two tetrahedra, with edges in the ratio r = d₁/d₀, and two kinds of truncated tetrahedra (the quarter cubic honeycomb at r = 1). Wythoff's construction gives a tiling for any generating point in the fundamental simplex, not only the uniform one; here the point runs along the edge where the other two mirrors meet, so r takes every value. We also checked volumes, faces and neighbours numerically for r = 0.2, 0.382, 0.5, 0.618, 0.8 and 1. As r tends to 0 the small tetrahedra shrink to points, one kind of truncated tetrahedron becomes an octahedron and the other a tetrahedron, and the crystal becomes the tetrahedral–octahedral honeycomb. The two kinds of truncated tetrahedra share the same hexagon and are twin members of Damasceno's truncation family, one on the tetrahedron's side and one on the octahedron's. So the breathing pyrochlore is the FUJI family made into a crystal:</p>
 <ul>
 <li>r = 1 is the ordinary pyrochlore;</li>
-<li>r = 1/2 contains the space-filling truncated tetrahedron as one of its cells;</li>
+<li>r = 1/2 contains the space-filling truncated tetrahedron as one of its cells (the tetrahedron-side kind);</li>
 <li><strong>r = 1/φ, the golden breathing pyrochlore, has FUJI's base in every hexagon.</strong></li>
 </ul>
 <p>It can be built cell by cell in the Kaleidohedra app, with a slider for the breathing ratio.</p>
 <h3>5.4 The dictospheres</h3>
 <p><img src="figures/fig5-dictosphere.jpg" alt="Figure 7" /></p>
-<p><strong>Figure 7.</strong> (a) A dictosphere modelled as a sphere 8.8 cm across with 3 cm ports: each point of the surface belongs to its nearest port. The curved squares (cyan) and curved flat-ended triangles (wisteria) meet short side to short side. (b) The flat counterpart: the solid whose 14 faces all touch the sphere, whose triangles are the cuboctahedral member r = (√3 − 1)/2.</p>
+<p><strong>Figure 7.</strong> (a) The ideal dictosphere: each point of the sphere belongs to its nearest port. The curved squares (cyan) and curved flat-ended triangles (wisteria) meet short side to short side. (b) The flat counterpart: the solid whose 14 faces all touch the sphere, whose triangles are the cuboctahedral member r = (√3 − 1)/2.</p>
 <p>A dictosphere is a sphere. It carries 14 PET-bottle ports in a cuboctahedral arrangement: 6 on the cube axes (the squares) and 8 on the three-fold axes (the triangles). We divide its surface round the ports into squares and triangles. With ports in both, the triangles' corners crowded the neighbouring holes, so we truncated the triangles to give even space round every port. The truncated triangles meet short side to short side.</p>
-<p><strong>Even space fixes the pattern.</strong> On a sphere, an even margin round every port means that each point of the surface belongs to its nearest port. The squares and triangles are then the regions of the sphere nearest each port. Their boundaries are arcs of great circles halfway between neighbouring ports, and the triangles come out as curved flat-ended triangles. Projected from the centre onto flat planes, the same pattern is the solid whose 14 faces all touch one inner sphere (Figure 7b): the cube ∩ octahedron with both sets of faces at the same distance. Its flat-ended triangles are exactly the <strong>cuboctahedral member, r = (√3 − 1)/2 = 0.366</strong>. (The same rule in the flat: across an edge shared by two faces, the clearances from the two face centres to the edge are equal exactly when the faces lie at the same distance from the centre.)</p>
-<p><strong>Against a real dictosphere.</strong> The sphere's size comes from a steel-tape measurement: 8.4 cm along the surface between the centres of two triangles on either side of a square, an arc of 109.47°, which gives a radius of 4.40 cm. The sides along the surface then follow.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>model on the sphere</th>
-<th>flat counterpart</th>
-<th>measured on a dictosphere</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>long side (triangle to square)</td>
-<td>3.79 cm</td>
-<td>4.55 cm</td>
-<td>about 4 cm</td>
-</tr>
-<tr>
-<td>short side (triangle to triangle)</td>
-<td>1.35 cm</td>
-<td>1.67 cm</td>
-<td>about 1.5 cm</td>
-</tr>
-<tr>
-<td>r</td>
-<td>0.356</td>
-<td>0.366</td>
-<td>0.375</td>
-</tr>
-</tbody>
-</table>
-<p>The measured sides lie between the curved and the flat versions, as they would for hand measurement with a tape on a curved surface; all three ratios agree within a few per cent.</p>
+<p><strong>Even space fixes the pattern.</strong> On a sphere, with all ports the same size, an even margin round every port means that each point of the surface belongs to its nearest port. The squares and triangles are then the regions of the sphere nearest each port. Their boundaries are arcs of great circles halfway between neighbouring ports, and the triangles come out as curved flat-ended triangles. Projected from the centre onto flat planes, the same pattern is the solid whose 14 faces all touch one inner sphere (Figure 7b): the cube ∩ octahedron with both sets of faces at the same distance. Its flat-ended triangles are exactly the <strong>cuboctahedral member, r = (√3 − 1)/2 = 0.366</strong>. (The same rule in the flat: across an edge shared by two faces, the clearances from the two face centres to the edge are equal exactly when the faces lie at the same distance from the centre.)</p>
+<p><strong>Why the cuboctahedral member.</strong> Take the solid |x|, |y|, |z| ≤ 1, |x| + |y| + |z| ≤ S, and put an apex at the cube's corner (1, 1, 1) over the triangle on x + y + z = S. For 3/2 &lt; S &lt; 2 (where the triangles' long sides face the squares), its six side edges are all √((2 − S)² + 1), and its three long faces lie in the cube's faces. Those faces are equilateral exactly when 2(S − 1)² = (2 − S)² + 1, that is S² = 3, which is the equal-depth solid. So <strong>the even-margin rule and the cuboctahedral member are the same condition: at equal depth, the cube's eight corners are exactly the apexes of copies of FUJI((√3 − 1)/2), scaled by √2(√3 − 1) ≈ 1.035, standing on the eight triangles.</strong> The cuboctahedron's member rests on the same angle: in each case a long face and the base lie in a cube plane and an octahedron plane, so L = 54.74° and r = (√3 − 1)/2.</p>
+<p><strong>The ideal and the made object.</strong> Dictospheres are made by hand, so they are not precise enough to measure the ratio; we use the ideal one, defined by its design rule. On the sphere, its curved triangles have sides in the ratio r = 0.356 (as arcs); in its flat counterpart, r = (√3 − 1)/2 = 0.366. Our hand measurements, about 4 cm and 1.5 cm, are consistent with both.</p>
 <p><strong>Building with them.</strong> The 14 port directions are the directions of a rhombic dodecahedron's 14 corners, and every edge of a rhombic dodecahedron runs along a three-fold axis. So dictospheres joined triangle port to triangle port build rhombic-dodecahedron frames, which fill space, as we build them.</p>
-<p><strong>The truncated octahedron</strong> is the r = 1 member of the same cube–octahedron pattern, with regular hexagons. Every member of the flat family has the same face angles (109.47° and 125.26°), but only the truncated octahedron, whose hexagons are centrally symmetric, fills space by translation (Kelvin's cell). It is to the dictosphere's pattern what the regular hexagon is to FUJI: the symmetric shape at r = 1.</p>
+<p><strong>The truncated octahedron</strong> is the r = 1 member of the same cube–octahedron pattern, with regular hexagons. Every member of the flat family has the same dihedral angles (109.47° and 125.26°), but only the truncated octahedron, whose hexagons are centrally symmetric, fills space by translation (Kelvin's cell). It is to the dictosphere's pattern what the regular hexagon is to FUJI: the symmetric shape at r = 1.</p>
 <h3>5.5 Wheels, and the CLEO sphere</h3>
 <p><img src="figures/fig7-wheels-cleo-sphere.jpg" alt="Figure 8" /></p>
-<p><strong>Figure 8.</strong> (a) Four hexagonal wheels of FUJI's flat-ended triangles, overlapped into the cuboctahedron's outer structure. (b) Six decagonal wheels of golden triangles, the icosidodecahedron's. (c) The CLEO sphere pulled apart: 20 CLEOs (wisteria) and 12 pentagonal pyramids (cyan), all tips at the centre.</p>
-<p>Our DeltaZip wheels led to a construction in the same spirit. A cuboctahedron's 24 edges split into four regular hexagons, one in each of its four central planes; a wheel of six triangles in each plane (centre to rim), with every triangle blunted into a flat-ended triangle, gives four wheels that overlap into the cuboctahedron's outer structure (Figure 8a). Each spoke is shared by two wheels, and the blunted corners keep the hub and the twelve crossings clear. Four is the most: only in the cuboctahedron does each wheel meet every other exactly along its own spokes. The icosahedral counterpart has six wheels, in the planes square to the five-fold axes, each a decagon of ten golden triangles (sides φ, φ, 1): the icosidodecahedron's six great decagons (Figure 8b).</p>
+<p><strong>Figure 8.</strong> (a) Four hexagonal wheels of flat-ended triangles (drawn with FUJI's, r = 1/φ; any r &gt; 0 works), overlapped into the cuboctahedron's outer structure. (b) Six decagonal wheels of golden triangles, the icosidodecahedron's. (c) The CLEO sphere pulled apart: 20 CLEOs (wisteria) and 12 pentagonal pyramids (cyan), all tips at the centre.</p>
+<p>Our DeltaZip wheels led to a construction in the same spirit. A cuboctahedron's 24 edges split into four regular hexagons, one in each of its four central planes; a wheel of six triangles in each plane (centre to rim), with every triangle blunted into a flat-ended triangle, gives four wheels that overlap into the cuboctahedron's outer structure (Figure 8a). Each spoke is shared by two wheels, and the blunted corners keep the hub and the twelve crossings clear. <strong>Four is the most, if every two wheels meet along a different spoke:</strong> a wheel with 2m spokes has m spoke lines, each crossing wheel uses one of them, so n wheels need n − 1 ≤ m. Hexagonal wheels (m = 3) allow at most four, decagonal (m = 5) at most six, square (m = 2) at most three; at the maximum every spoke line lies in exactly two wheels. These maxima are attained by the equatorial great circles of the octahedron, the cuboctahedron and the icosidodecahedron, the classical quasi-regular polyhedra [Coxeter 1973]. (Planes through a single common line meet in any number, but all along the same spoke.) The octagonal case in between is impossible: five such circles would form the one simple arrangement of five great circles (no three through a point), whose triangles, all sides 45°, have angles 65.53°, forcing the central pentagon's angles to 114.47°, while an equilateral spherical pentagon of side 45° with equal angles has angles 122.25°. The icosahedral counterpart has six wheels, in the planes square to the five-fold axes, each a decagon of ten golden triangles (sides φ, φ, 1): the icosidodecahedron's six great decagons (Figure 8b).</p>
 <p>The six wheels cut the icosidodecahedron into pieces with their tips at the centre. With edge 1/φ the icosidodecahedron has circumradius exactly 1, so each piece over a triangle has an equilateral base 1/φ and side edges 1: <strong>it is CLEO</strong>. <strong>Twenty CLEOs pointing inwards and twelve pentagonal pyramids</strong> (side edges 1, base edge 1/φ, volume √5/12 each) <strong>fill the icosidodecahedron exactly</strong>, volume (11√5 − 5)/6 (Figure 8c). It is the icosahedral twin of the four hexagonal wheels cutting the cuboctahedron into 8 regular tetrahedra and 6 square pyramids.</p>
-<p>Each pentagonal pyramid divides about its axis into <strong>five congruent right-angled triangular pyramids</strong>, each with one golden face (1, 1, 1/φ, the same as CLEO's side faces), a base triangle with sides 0.5257, 0.5257 and 1/φ (72° at the centre of the pentagon), and volume √5/60. Equilateral CLEOs themselves cannot fill the pentagonal pockets (a pentagon cannot be tiled by equilateral triangles); these five are the pocket's own CLEO-like pieces. CLEO cannot fill an icosahedron from its centre on its own: its tip angles are 36°, where 20 pieces closing a sphere need 63.4°, so twenty CLEOs cover only 29% of the directions round the centre. The pentagonal pyramids take the rest.</p>
+<p>Each pentagonal pyramid divides about its axis into <strong>five congruent right-angled triangular pyramids</strong>, each with one golden face (1, 1, 1/φ, the same as CLEO's side faces), a base triangle with sides 0.5257, 0.5257 and 1/φ (72° at the centre of the pentagon), and volume √5/60. Equilateral CLEOs themselves cannot fill the pentagonal pockets (a pentagon cannot be tiled by equilateral triangles); these five are the pocket's own CLEO-like pieces. CLEO cannot fill an icosahedron from its centre on its own: its tip angles are 36°, where 20 pieces closing a sphere need 63.4°, so twenty CLEOs cover only about 29% of the directions round the centre. The pentagonal pyramids take the rest.</p>
 <h3>5.6 Six circles and the icosahedron</h3>
 <p><img src="figures/fig8-six-circles.jpg" alt="Figure 9" /></p>
 <p><strong>Figure 9.</strong> (a) Six equal slotted rings in the planes square to the five-fold axes, seen down a five-fold axis. (b) The CLEO sphere they frame, seen the same way: 20 CLEOs in the triangular windows, 12 pentagonal pockets. (c) Faceted flat across the pentagon centres: 20 Icosahedral Cleo filling an icosahedron.</p>
-<p>How many crossed circles make an icosahedron? Four make the cuboctahedron, and four is the most that meet evenly in that way. <strong>Six</strong> circles, one in each plane square to a five-fold axis, cross every 36° round each circle and divide the sphere into <strong>20 triangles and 12 pentagons</strong>, the icosidodecahedron's pattern. The icosahedron is there, though the circles never draw its edges: its <strong>12 corners are the centres of the 12 pentagonal windows</strong>, and its <strong>20 faces lie over the 20 triangular windows</strong>. Six equal flat rings slotted together, alternately from the outside and the inside at each crossing, are all identical (one template, cut six), which is how our six-ring DeltaZip balls go together.</p>
-<p>The pieces complete the route. The triangular windows hold the 20 CLEOs pointing inwards; each pentagonal window holds five Penta-cleo (Section 5.5). Each CLEO with the three Penta-cleo on its golden sides fills one face-cone of the icosahedron, and cutting it flat across its three outer tips, the pentagon centres, leaves an <strong>Icosahedral Cleo</strong>: a triangular pyramid with its tip at the centre and its flat base outside, side edges 0.851 and base edge 2/√5 = 0.894. <strong>Twenty Icosahedral Cleo fill an icosahedron exactly</strong>, their bases its twenty faces. Six circles, then, make the icosahedron in a roundabout way: through the icosidodecahedron and the CLEO sphere.</p>
-<p>The icosahedron, filled or not, still does not fill space (its dihedral angle 138.19° leaves 41.81° gaps), and the twenty pieces alone do not either: their angles are 72° along the side edges, five of which close round a corner, and 69.09° along the base edges, which no combination of 72° and 69.09° completes to 360°. In space, icosahedral shapes need partner pieces, as AXE and FUJI are to the Lotus seed.</p>
+<p>How many crossed circles make an icosahedron? Four make the cuboctahedron, and four is the most that meet in that way (Section 5.5). <strong>Six</strong> circles, one in each plane square to a five-fold axis, cross every 36° round each circle and divide the sphere into <strong>20 triangles and 12 pentagons</strong>, the icosidodecahedron's pattern. The icosahedron is there, though the circles never draw its edges: its <strong>12 corners are the centres of the 12 pentagonal windows</strong>, and its <strong>20 faces lie over the 20 triangular windows</strong>. Six equal flat rings slotted together, alternately from the outside and the inside at each crossing, are all identical (one template, cut six), which is how our six-ring DeltaZip balls go together. An alternating slot pattern exists for any set of great circles with no three through one point, since their crossings then form a four-valent map (as in alternating knot diagrams); here the equal crossing angles (63.43°) and equal spacing (36°) make the six rings identical.</p>
+<p>The pieces complete the route. The triangular windows hold the 20 CLEOs pointing inwards; each pentagonal window holds five Penta-cleo (Section 5.5). Each CLEO with the three Penta-cleo on its golden sides fills the part, inside the icosidodecahedron, of one face-cone of the icosahedron whose corners are the pentagon centres. Cutting flat across the three pentagon centres removes the parts outside that icosahedron (CLEO's outer corners are at radius 1, beyond the icosahedron's corners at 0.851), and leaves the <strong>Icosahedral Cleo</strong>: the icosahedron's central pyramid on one face, tip at the centre and flat base outside, side edges 0.851 and base edge 2/√5 = 0.894. Twenty of them make the icosahedron, as the central pyramids of any solid make that solid; the point is the route, not the dissection. Six circles, then, lead to the icosahedron in a roundabout way: through the icosidodecahedron and the CLEO sphere.</p>
+<p>The icosahedron, filled or not, still does not fill space (its dihedral angle 138.19° leaves 41.81° gaps), and the twenty pieces alone do not either: their dihedral angles are 72° along the side edges (five close round a line through the centre) and 69.09° along the base edges, and no combination that includes a base edge, with 72° angles and flat 180° faces, makes 360°. In space, icosahedral shapes need partner pieces, as AXE and FUJI are to the Lotus seed.</p>
 <h2>6. What is known, and what is new</h2>
-<p>The base shape (the isogonal hexagon), the antiprism angles (listed for single antiprisms in the OEIS), Odom's golden hexagon, the space-filling truncated tetrahedron and breathing pyrochlores are all known, and are credited above. Searches of the literature and of our reference library (2026-10-14) did not find:</p>
+<p>The base shape (the isogonal hexagon), the antiprism angles (listed for single antiprisms in the OEIS), the golden hexagon after Odom, the space-filling truncated tetrahedron and breathing pyrochlores are all known, and are credited above. Our searches (14 October 2026: our reference library, web searches for the family, its base-angle formulas, flat-ended or isogonal hexagonal pyramids, and antiprism dihedral relations, and the OEIS) did not find the following. That is a report of what we searched, not a claim that they are unknown. The base-angle formulas are elementary, and the hexagons with alternating sides are standard in breathing kagome lattices; what we offer is the family as one object, and the links between its members:</p>
 <ul>
 <li>the family FUJI(r) of pyramids;</li>
-<li>its base-angle formulas;</li>
-<li>the antiprism theorem that links the family to the antiprisms;</li>
-<li>the identifications that tie it together: FUJI's base as Odom's golden hexagon, the breathing pyrochlore's hexagons as the family's bases, and the dictosphere's even-margin pattern, whose flat counterpart's triangles are the cuboctahedral member.</li>
+<li>the antiprism rule (Proposition 1) that links the family to the antiprisms, which combines the standard dihedral formula with the base-angle formula;</li>
+<li>why the dictosphere's even margin gives the cuboctahedral member (Section 5.4), and the wheel bound with the impossibility of five octagonal wheels (Section 5.5);</li>
+<li>as a synthesis, the identifications that tie it together: FUJI's base as the golden hexagon after Odom, the breathing pyrochlore's hexagons as the family's bases, and the dictosphere's even-margin pattern, whose flat counterpart's triangles are the cuboctahedral member.</li>
 </ul>
 <p>The family gives one shape and one parameter to things found separately:</p>
 <ul>
@@ -264,14 +237,16 @@ The family, FUJI, the dictospheres, the sculptures and all names are DICTO's. Co
 </ul>
 <p>With R² = 1/(4(1 − c)(1 + c)), their dot product is</p>
 <p>[(4c + 3)(1 − c) − 3(4c − 1)(1 + c) − 2(1 + 2c)] / (16(1 + c)) = −(4c − 1)/4.</p>
-<p>So cos D_n = (1 − 4c)/3. The numerical check, n = 4 to 12, agrees to 10⁻¹⁵ (study scripts).</p>
+<p>So cos D_n = (1 − 4c)/3, the standard antiprism dihedral. The numerical check, n = 3 to 12, agrees to 10⁻¹² (study scripts and an independent review).</p>
+<p><strong>The dictosphere's member.</strong> Corner A = (1, 1, 1); the triangle on x + y + z = S has corners such as (1, S − 1, 0) (after the cube cuts it) at distance √((2 − S)² + 1) from A, the same for all six. For 3/2 &lt; S &lt; 2, the long face A, (1, S − 1, 0), (1, 0, S − 1) lies in x = 1 and has the base edge (S − 1)√2; it is equilateral when 2(S − 1)² = (2 − S)² + 1, i.e. S² = 3.</p>
 <h2>Credits</h2>
-<p>FUJI, the Lotus seed, the dictospheres, the DeltaZips and B1NR sculptures, the term &quot;flat-ended triangle&quot; and the names are DICTO's. Odom's construction, the space-filling truncated tetrahedron (Damasceno, Engel and Glotzer) and the breathing pyrochlore (Okamoto, Nilsen, Attfield and Hiroi) are credited to their authors. Data, scripts, proofs and checks: studies/2026-10-14-fuji-family at https://github.com/DICTOR-Master/kaleidohedra.</p>
+<p>FUJI, the Lotus seed, the dictospheres, the DeltaZips and B1NR sculptures, the term &quot;flat-ended triangle&quot; and the names are DICTO's. Odom's work, the golden-hexagon construction after it, the space-filling truncated tetrahedron (Damasceno, Engel and Glotzer) and the breathing pyrochlore (Okamoto, Nilsen, Attfield and Hiroi) are credited to their authors. Data, scripts, proofs and checks: studies/2026-10-14-fuji-family at https://github.com/DICTOR-Master/kaleidohedra.</p>
 <h2>References</h2>
 <ul>
 <li>[1] DICTO, AXE, CLEO and FUJI: the Gap Pieces of the Icosahedron (2026), doi:10.5281/zenodo.23351291.</li>
-<li>[2] DICTO, The Chain of Karma (2026), doi:10.5281/zenodo.23310541.</li>
+<li>G. Odom and J. van de Craats, Elementary Problem E3007, Amer. Math. Monthly 90 (1983) 482; solution 93 (1986) 572.</li>
 <li>Wolfram Demonstrations Project, Hexagons and the Golden Ratio (after G. Odom), https://demonstrations.wolfram.com/HexagonsAndTheGoldenRatio/.</li>
+<li>H. S. M. Coxeter, Regular Polytopes, 3rd ed., Dover (1973).</li>
 <li>P. F. Damasceno, M. Engel, S. C. Glotzer, Crystalline assemblies and densest packings of a family of truncated tetrahedra and the role of directional entropic forces, ACS Nano 6 (2012) 609–614, doi:10.1021/nn204012y.</li>
 <li>Y. Okamoto, G. J. Nilsen, J. P. Attfield, Z. Hiroi, Breathing pyrochlore lattice realized in A-site ordered spinel oxides LiGaCr₄O₈ and LiInCr₄O₈, Phys. Rev. Lett. 110 (2013) 097203, doi:10.1103/PhysRevLett.110.097203.</li>
 <li>Z. Papadopolos, O. Ogievetsky, On quasiperiodic space tilings, inflation and Dehn invariants (1999), arXiv:math-ph/9910006.</li>
