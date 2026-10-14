@@ -33,3 +33,13 @@ the Cleo-Ico's own side length, so its side triangles are the Cleo-Ico's). 217 p
 covered once, and all 60 pyramid–antiprism contacts are whole faces. Each antiprism is two edge-1 triangles 0.755761 apart joined by six
 triangles of sides 1, 0.951057, 0.951057, again the Cleo-Ico's side triangle; each holds one outer Cleo-Ico. Next: step 2, cut the
 antiprism around its Cleo-Ico.
+
+**The core as 20 Cleo-Icos too (DICTO 2026-10-15; `scripts/cleo40.py`, `data/cleo40.txt`, run inside the real DICTO-Star):** the hollow
+then holds 40 identical Cleo-Icos, 20 meeting at the centre and 20 on the shell's triangles, point to base along each three-fold axis. No
+overlaps among the 40 or with the 12 dodecahedra and 20 J63s; every outer point on its inner partner's base centre (to 2e-16). Each
+loose piece on its own is locked: 0 of 1200 small shifts and 0 of 1200 one-degree turns are free, for the inner and the outer pieces alike.
+Left empty: 5 + 2√5 (now filled in the app by the 12 flat pentagonal pyramids and, in the Cleo core project, by the antiprisms' remainders).
+
+**X-ray check in the app (`scripts/xray.mjs`, `renders/app-xray-5fold.jpg`):** X-ray, 5-fold axis, cut through the centre, seen from the
+cut side: the gold core with the violet Cleo-Icos round it. Two things a user meets: the cut shows only when the camera is on the cut
+side (Flip turns it round), and faces that touch whole-face show speckles in the cut (coincident faces); a later polish.
