@@ -4,7 +4,7 @@
 <script>
 // Clean, framed renders of single pieces for the FUJI family paper (DICTO, 2026-10-14): app colours, dark edges,
 // each piece centred with a generous margin. window.show(name) draws one piece; the page is screenshotted by render-pieces.mjs.
-const COL = { equi: 0xc792ea, iso: 0xe2bdf7, base: 0x4dd0e1, square: 0x4dd0e1, hex: 0xc792ea, port: 0x1c1826, seam: 0x0b1220, w0: 0x4dd0e1, w1: 0xc792ea, w2: 0xffc857, w3: 0x5fd38a, edge: 0x2a2633 };
+const COL = { equi: 0xc792ea, iso: 0xe2bdf7, base: 0x4dd0e1, square: 0x4dd0e1, hex: 0xc792ea, port: 0x1c1826, seam: 0x0b1220, w0: 0x4dd0e1, w1: 0xc792ea, w2: 0xffc857, w3: 0x5fd38a, w4: 0xf08fc0, w5: 0x9fd8ff, edge: 0x2a2633 };
 const host = document.getElementById('c');
 const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setPixelRatio(1);
 renderer.setSize(1200, 1100); host.appendChild(renderer.domElement);
