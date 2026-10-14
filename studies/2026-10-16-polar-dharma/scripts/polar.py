@@ -56,4 +56,4 @@ for (n1, A), (n2, B) in zip(rev, rev[1:]):
     lv = volume(B, Bf) - volume(A, Af)
     out.append(f'  {n1} -> {n2}: inside {inside}; {on} inner corners on outer faces; {thru} outer corners on inner face planes; layer volume {lv!r} = {lv.f():.6f}')
 print('\n'.join(out)); open('data/polar-step1.txt', 'w').write('\n'.join(out) + '\n')
-json.dump({n: f(V).tolist() for n, V in rev}, open('data/reversed-chain.json', 'w'))
+json.dump([[n + (' (inner)' if k == 0 else ' (phi^3)' if k == len(rev) - 1 else ''), f(V).tolist()] for k, (n, V) in enumerate(rev)], open('data/reversed-chain.json', 'w'))

@@ -10,3 +10,20 @@ carries over by duality (e.g. ID's 30 corners on the Hecatodihedron-dual's faces
 5-fold corners). Layer volumes exact (see data). Sizes invert: Dharma's thick inner layer becomes the thick outer one.
 
 Next (step 2): exact pieces for each layer; reciprocation does not carry Dharma's pieces over.
+
+## Step 2 (2026-10-16): one kind of piece per layer
+
+Each layer A ⊂ B cut into one piece per face F of A, cone(F) ∩ B ∩ {beyond F} (convex by construction; the Kion construction of #29);
+faces of A lying on B's surface give nothing. `scripts/polar_pieces.py` -> `data/polar-step2.txt`, `data/polar-pieces.json`.
+
+| Layer | Pieces | Each piece |
+|---|---|---|
+| D -> ID | 12 | 15 corners; 7 pentagons, 5 triangles |
+| ID -> Hecatodihedron-dual | 12 (ID's 20 triangles lie on the outer surface) | 11 corners; 1 pentagon, 5 quadrilaterals, 5 triangles |
+| Hecatodihedron-dual -> pentakis D | 20 (60 of 80 faces lie on the outer surface) | hexagonal pyramid |
+| pentakis D -> I | 60 | 5 corners, 6 triangles (triangular bipyramid) |
+| I -> RT | 20 | tetrahedron (Kepler's pyramids) |
+| RT -> D(φ³) | 30 | 8 corners; 5 quadrilaterals, 2 triangles |
+
+Every layer is ONE kind of piece (Dharma needs 2-3 in some); 154 pieces round the inner dodecahedron; sums match the layers (1e-9,
+floats). No two neighbours fuse without a dent. Next: exact volumes, identify the shapes, renders, prior-art check.
