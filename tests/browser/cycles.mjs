@@ -43,6 +43,17 @@ for (const [v, name] of [[0, 'icosahedron'], [100, 'dual compound'], [200, 'dode
   await page.screenshot({ path: `${SH}/cycles-l3-${v}.png` });
 }
 await set(250); await page.waitForTimeout(300); assert.match(await line(), /keeps the 20 corners/);
+// The Cleo-Icos path: 20 Cleo-Icos → + 20 Antonius → rhombic hexecontahedron.
+await page.tap('[data-cy-loop="4"]'); await page.waitForTimeout(600);
+for (const [v, name] of [[0, 'icosahedron of 20 Cleo-Icos'], [100, '+ 20 Antonius'], [200, 'rhombic hexecontahedron']]) {
+  await set(v); await page.waitForTimeout(500); const l = await line(); assert.ok(l.startsWith(name), `cleo-icos ${v}: ${l}`);
+  await page.screenshot({ path: `${SH}/cycles-l4-${v}.png` });
+}
+// Golden rectangles on the Cleo-Icos path's rhombic hexecontahedron, on and off
+await page.tap('[data-cy-pacioli]'); await page.waitForTimeout(500); assert.equal(await page.getAttribute('[data-cy-pacioli]', 'aria-pressed'), 'true');
+await page.screenshot({ path: `${SH}/cycles-l4-pacioli.png` });
+await page.tap('[data-cy-pacioli]'); await page.waitForTimeout(300); assert.equal(await page.getAttribute('[data-cy-pacioli]', 'aria-pressed'), 'false');
+await page.tap('[data-cy-loop="3"]'); await page.waitForTimeout(400);
 // Build: at the great stellated dodecahedron, the button opens its Polyhedraverse kit
 await set(300); await page.waitForTimeout(300);
 assert.equal(await page.isVisible('[data-cy-build]'), true, 'Build shown at a station');
