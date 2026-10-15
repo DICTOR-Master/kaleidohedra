@@ -176,3 +176,15 @@ Its regular hexagons belong to the periodic honeycomb, and its icosahedral symme
 ## The core: the cycle repeats inward (DICTO's choice)
 
 The outer dodecahedron is exactly φ³ times the inner one, so a copy of the whole nest scaled by 1/φ³ fills the inner dodecahedron exactly, and so on to the centre. In the faithful version each turn brings back the large gap, so the great stellated dodecahedron locks at the heart of every turn: its points are on that turn's outer dodecahedron's corners, and its valleys are on the next triacontahedron's tips. `polar_turns.py` writes three turns (732 pieces, innermost dodecahedron solid) to `data/polar-turns-render.json`. Renders: `renders/polar-turns-{cut,cut2,cut3}.png` (`node shoot_polar.mjs turns cut,cut2,cut3`), each zoom closer by about φ³.
+
+## Next idea (DICTO, 2026-10-16): both cycles interpenetrating, like a toggle
+
+First look, in floating point. The original cycle and its polar image can share the same space. The reciprocation sphere ρ is the one free parameter.
+
+- **The toggle is a symmetry.** The union of a cycle and its polar image is invariant under that polarity, which swaps the two cycles. In log-radius a polarity is a reflection, and the cycle's φ³ repeat is a translation. So the pair has mirror spheres every φ^(3/2) in radius: a palindrome in scale.
+- **Two special spheres.**
+  - At ρ² = φ²/4 (0.654508497), the polarity sends the original icosahedron to the original dodecahedron, so both cycles share the ends I and D.
+  - At ρ² = 3φ²/4 (1.963525491), they share the middle pair ID and RT instead.
+- **Never both.** The two ρ² differ by exactly 3, which is not a power of φ. So no sphere makes the cycles share both pairs.
+
+Not yet exact; next: exact check, then renders of both alignments.
