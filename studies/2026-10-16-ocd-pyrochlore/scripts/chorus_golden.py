@@ -69,3 +69,5 @@ vol = sum(ConvexHull(X).volume for X in pieces)
 out += [f'golden region in the central copy\'s cell: volume {vol:.6f}; {len(pieces)} pieces, {len(kinds)} kinds; purely golden-walled {golden_only}',
         f'Bodhi pieces among them: {match if match else "none"}  (the cubic packing gave 1624 pieces, 751 kinds, 6 Diadems)']
 print('\n'.join(out)); open('data/chorus-golden.txt', 'w').write('\n'.join(out) + '\n')
+json.dump({'pieces': [X.tolist() for X in pieces], 'mudra': [bodhi.get(sig(X)) == 'Mudra' for X in pieces],
+           'centre': S[centre].tolist(), 'neighbours': [S[i].tolist() for i in near], 'a5': json.load(open('data/chorus-space.json'))['a5']}, open('data/chorus-golden.json', 'w'))
