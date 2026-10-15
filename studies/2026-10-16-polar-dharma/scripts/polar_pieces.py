@@ -3,6 +3,7 @@
 # against the layer; then which neighbouring pieces fuse without a dent.
 import json, itertools, sys, numpy as np
 from scipy.spatial import ConvexHull, HalfspaceIntersection
+sys.path.insert(0, '/home/dicto/kaleidohedra/studies/_lib'); import geomcheck as gc   # accuracy rules: kinds by symmetry orbit
 IN, TXT, OUT = (sys.argv[1:4] + ['data/reversed-chain.json', 'data/polar-step2.txt', 'data/polar-pieces.json'][len(sys.argv) - 1:])[:3]
 CL = json.load(open(IN)); names = [n for n, _ in CL]; C = {n: V for n, V in CL}
 def faces(P):
@@ -25,6 +26,8 @@ def shape(P):
     sides = tuple(sorted(len(p['i']) for p in planes))
     L = sorted(round(np.linalg.norm(P[a] - P[b]), 5) for a, b in itertools.combinations(range(len(P)), 2))
     return len(P), sides, round(h.volume, 6), tuple(L)
+G = gc.group(gc.icosa_axes(np.array(C['icosahedron'])))
+for nm in names: gc.frame(np.array(C[nm]), gc.icosa_axes(np.array(C['icosahedron'])), nm)   # rule 1: every station in the chain frame
 out = []
 allpieces = {}
 for k in range(len(names) - 1):
@@ -42,8 +45,8 @@ for k in range(len(names) - 1):
         HS = HalfspaceIntersection(np.array(hs), pt); V = np.unique(np.round(HS.intersections, 9), axis=0)
         pieces.append(V)
     kinds = {}
-    for V in pieces:
-        s = shape(V); kinds.setdefault(s[:3] + (s[3],), []).append(V)
+    for cnt, rep in gc.kinds(pieces, G):                    # rule 4: orbits under the full icosahedral group, not float face counts
+        s = shape(gc.corners(pieces[rep])); kinds[s[:3] + (s[3], rep)] = [None] * cnt
     tot = sum(ConvexHull(V).volume for V in pieces); lay = hB.volume - hA.volume
     out.append(f'{names[k]} -> {names[k + 1]}: {len(pieces)} pieces ({empty} faces of the inner solid lie on the outer one), {len(kinds)} kind(s); volumes {tot:.9f} vs layer {lay:.9f}')
     for s, L in kinds.items():

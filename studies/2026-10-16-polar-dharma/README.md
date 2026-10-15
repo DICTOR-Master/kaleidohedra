@@ -106,7 +106,7 @@ The truncated icosidodecahedron does not fit inside its dual (slack 0.980). As D
 `polar_pair.py` builds the chain D ⊂ DT ⊂ TID ⊂ ID ⊂ … The disdyakis triacontahedron (DT) touches the inner dodecahedron, and the truncated icosidodecahedron (TID) touches ID. In fact the TID's 12 decagons lie exactly in ID's pentagon planes. The play of ×1.052 sits between the pair. The cone cut (`data/polar-pair-pieces.txt`, float) gives:
 
 - D → DT: 12 pieces of one kind (11 corners, 15 triangles and a pentagon).
-- DT → TID: 120 congruent pieces. They are one symmetry orbit, with volumes equal to 3e-11. The script's shape key reports 103 kinds, but that is noise.
+- DT → TID: 120 pieces of one kind (one symmetry orbit; checked with `geomcheck.kinds`).
 - TID → ID: 50 caps of two kinds, on the 30 squares and 20 hexagons.
 - Each layer's sum equals the layer volume.
 
@@ -119,7 +119,7 @@ The outer layers are unchanged. Renders: `renders/polar-pair-*.png` (`node shoot
 `polar_pair.py rid` builds the chain D ⊂ RID ⊂ DH ⊂ ID. The rhombicosidodecahedron (RID) touches the inner dodecahedron and the deltoidal hexecontahedron (DH) touches ID. The cut gives:
 
 - D → RID: 12 pieces of one kind.
-- RID → DH: 62 pieces in 3 kinds, on the 12 pentagons, 30 squares and 20 triangles. The script's "40 kinds" is shape-key noise.
+- RID → DH: 62 pieces in 3 kinds (12 + 30 + 20), on the pentagons, squares and triangles.
 - DH → ID: 60 pieces of one kind.
 
 **Exact check** (`polar_exact.py rid` → `data/polar-pair-rid-exact.txt`): RID is scaled by −153/11 + 69/11·√5 and DH by 1 + 3/5·√5. The play is exactly 62/123 + 137/615·√5 = 1.002181, so the pair is close to locked but not locked. All layer sums are exact. Renders: `renders/polar-pairrid-*.png`.
@@ -134,3 +134,18 @@ The outer layers are unchanged. Renders: `renders/polar-pair-*.png` (`node shoot
 - **The next turn of the cycle (the chain's icosahedron × φ³):** at exactly this size, the frames clear the whole nest, with the 30 long edges touching D(φ³)'s 30 edge midpoints. Exact check: corner radius² = (50 − 22√5)·φ⁶ = 10 + 2√5, and long-edge midpoint radius² = (10 + 2√5)/(1 + φ²) = 4 = D(φ³)'s midradius².
 
 Golden rectangles enclose the structure only when it is nested in an icosahedron again: the next turn's icosahedron, not the smallest one.
+
+Renders of the nest inside the 15 golden rectangles: `renders/polar-rect-*.png` (`node shoot_polar.mjs rect`; the render data is `data/polar-rect-render.json`, written by `polar_golden_rect.py`).
+
+## Accuracy checks (from 2026-10-16)
+
+The slips in steps 6–8 led to a shared module, `studies/_lib/geomcheck.py`, tested by `studies/_lib/test_geomcheck.py` (6 checks; each replays one of today's slips). Its rules are:
+
+1. Frame: every solid is checked against the chain's own axes, using `frame` and `orient`.
+2. Both nesting orders are always tested. Polar reversal swaps a dual pair's order.
+3. Each formula is first checked on a case with a known answer.
+4. Piece kinds are counted by symmetry orbit, using `corners` and `kinds`. Float face counts are not used.
+5. An exact remainder of 0 is required before a claim.
+6. Every number is labelled exact or float, and faithful or adjusted.
+
+`polar_pieces.py` now uses rules 1 and 4.

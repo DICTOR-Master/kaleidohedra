@@ -19,3 +19,7 @@ themselves are written up in [DISCOVERIES.md](../DISCOVERIES.md) and archived on
 | [2026-10-11-spheres-and-ripples](2026-10-11-spheres-and-ripples/) | DICTO's sphere and ripple methods on the Lotus seed |
 | [2026-10-11-chain-of-karma](2026-10-11-chain-of-karma/) | Chain of Karma: the Lotus seed nested in itself without end |
 | [2026-10-11-self-building-kit](2026-10-11-self-building-kit/) | A self-building kit: AXE and CLEO via Mosseri–Sadoc tiles; FUJI by DICTO's tip + mirror rule (tentative) |
+
+## Shared checks
+
+`_lib/geomcheck.py` holds the accuracy checks every study script should call: frame, both orders, known case, orbit kinds, the exact zero gate, and labels. Run `python3 studies/_lib/test_geomcheck.py` to test it.

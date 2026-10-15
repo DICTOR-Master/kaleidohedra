@@ -1,6 +1,6 @@
 # Step 10 (DICTO's question): do golden rectangles fit the whole structure? The three mutually perpendicular golden rectangles have
 # their 12 corners on the 5-fold axes (an icosahedron's corners). Scale k = corner radius. Where do they sit against the nest?
-import json, numpy as np
+import json, itertools, numpy as np
 from scipy.spatial import ConvexHull
 C = {n: np.array(V, float) for n, V in json.load(open('data/reversed-chain.json'))}
 I = C['icosahedron']; u = I / np.linalg.norm(I, axis=1)[:, None]          # 12 five-fold directions
@@ -25,3 +25,15 @@ lines.append(f'the next turn of the cycle, icosahedron x phi^3: corner radius {k
 lines.append('exact: corner radius^2 = (50 - 22√5) * phi^6 = 10 + 2√5; long-edge midpoint radius^2 = (10 + 2√5) / (1 + phi^2) = 4,'
              ' the midradius^2 of D(phi^3): the 30 long edges touch its 30 edge midpoints')
 print('\n'.join(lines)); open('data/polar-golden-rect.txt', 'w').write('\n'.join(lines) + '\n')
+
+# render data: the 15 rectangles of the next turn's icosahedron (corners i, j, -i, -j for each icosahedron edge i-j, counted once),
+# added to the step-5 nest (great stellated dodecahedron layers) as data/polar-rect-render.json
+K = u * k3; R = []
+for i, j in itertools.combinations(range(12), 2):
+    if abs(dist[i, j] - short) > 1e-9: continue
+    mi, mj = int(np.argmin(np.linalg.norm(u + u[i], axis=1))), int(np.argmin(np.linalg.norm(u + u[j], axis=1)))
+    key = frozenset((i, j, mi, mj))
+    if key not in [r[0] for r in R]: R.append((key, [K[i].tolist(), K[j].tolist(), K[mi].tolist(), K[mj].tolist()]))
+assert len(R) == 15
+J = json.load(open('data/polar-gsd-render.json')); J['rects'] = [r[1] for r in R]
+json.dump(J, open('data/polar-rect-render.json', 'w'))
