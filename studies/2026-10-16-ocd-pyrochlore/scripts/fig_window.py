@@ -30,3 +30,4 @@ ax.set_xlim(-26, 26); ax.set_ylim(-0.5, 2.2); ax.set_xlabel('height along the fi
 ax.text(0, 2.25, 'grey band: heights inside the radius-10 build', ha='center', va='bottom', fontsize=7, color='#555')
 ax.legend(fontsize=7, loc='upper center', bbox_to_anchor=(0.5, -0.16), ncol=3, frameon=False); ax.text(25.8, -0.48, 'DICTO · dictospheres.com', ha='right', fontsize=6.5, color='#5b5346')
 fig.tight_layout(); fig.savefig('renders/fig-window.png'); print('fig-window written', len(P), 'points;', len(inw), 'chain points shown; t_c', tc, 'L', Lc)
+json.dump({'points': P.tolist(), 'silent': Ssil.tolist(), 'tc': tc, 'L': Lc, 'fork': [12.8121, 1.1553]}, open('data/fig-window.json', 'w'))   # for window_movie.py
