@@ -24,7 +24,7 @@ for ax, (title, r2) in zip(axes, [('Ends shared: toggle sphere ρ = φ/2 (ρ² =
     for (n, d, R), (fn, a, b) in zip(orig, flip):
         g1, g2 = np.sqrt(d * R), np.sqrt(a * b)
         if r0 < g1 < r1 and r0 < g2 < r1: ax.plot([g1, g2], [0.92, 0.08], color='#c9bfae', lw=0.7, zorder=1)
-    for row, L, other, pal, y in [('yours', orig, flip, warm, 1.0), ('flipped', flip, orig, cool, 0.0)]:
+    for row, L, other, pal, y in [('original', orig, flip, warm, 1.0), ('reversed', flip, orig, cool, 0.0)]:
         vis = sorted([t for t in L if r0 < np.sqrt(t[1] * t[2]) < r1], key=lambda t: t[1] * t[2])
         for i, (n, a, b) in enumerate(vis):
             sh = same(a, b, other); c = '#1d1a16' if sh else pal[n]; g = np.sqrt(a * b)
@@ -32,7 +32,7 @@ for ax, (title, r2) in zip(axes, [('Ends shared: toggle sphere ρ = φ/2 (ρ² =
             ax.plot([g], [y], 'o', color=c, ms=8 if sh else 6, zorder=3)
             tier = (0.22 + 0.2 * (i % 3)) * (1 if y > 0.5 else -1)
             ax.text(g, y + tier, n, ha='center', va='center', fontsize=10, color=c, fontweight='bold' if sh else 'normal')
-    ax.set_yticks([0, 1]); ax.set_yticklabels(['flipped', 'yours']); ax.tick_params(axis='y', length=0)
+    ax.set_yticks([0, 1]); ax.set_yticklabels(['reversed', 'original']); ax.tick_params(axis='y', length=0)
     ax.set_xticks([0.25, 0.5, 1, 2, 4, 8]); ax.set_xticklabels(['0.25', '0.5', '1', '2', '4', '8']); ax.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
     for s in ('top', 'right', 'left'): ax.spines[s].set_visible(False)
     ax.set_title(title + '; mirror spheres dashed, every φ^(3/2)', loc='left', fontsize=12, fontweight='bold', color='#2b2620')
