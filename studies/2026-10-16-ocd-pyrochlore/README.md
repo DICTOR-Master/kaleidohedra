@@ -91,7 +91,7 @@ With these two adapter kinds the OCD's faces become golden-rhombus surfaces the 
 
 Faces in the icosahedral frame: **AXE** has two three-fold and two five-fold faces; **CLEO** one three-fold and three five-fold; **FUJI** four three-fold and three five-fold. None has a golden-rhombus plane (perpendicular to a two-fold axis). The **Cleo-Ico** has a three-fold base and three two-fold sides at 69.09° to the base, a ready-made hexagon-to-golden-rhombi adapter. One stands on each free hexagon, base on alternate corners and tip outward: all 12 have golden sides, volume 0.007630 each, 27.3% of the gap. They hit no OCD, but 12 tips meet the tips of neighbouring copies' Cleo-Icos at the square-face centres; the fix is to use alternate ones or flatten the tips. Each hexagon keeps three small corner triangles.
 
-## Step 12: the whole library (`scripts/library_scan.py`): running.
+## Step 12: the whole library (`scripts/library_scan.py`): see the end of this file.
 
 ## Step 13: the dual Hecatodihedron as partner (DICTO: "slice up the 102-faced partner"; `scripts/heca_partner.py`, `scripts/sectors.py`)
 
@@ -106,3 +106,26 @@ A copy of the OCD on a lattice is a packing iff g(Bm) ≥ 1 for every nonzero in
 ## Step 15: the X-shaped holes as meeting points (DICTO: "tips or tendrils meeting each other"; `scripts/tips_meet.py`)
 
 The small X-shaped openings in the cube-axis renders are the square-face centres. There the limbs cross (with the golden-rhombus zone), the Cleo-Ico tips collide, and four free hexagons face inward. Cut each of the four Cleo-Ico tips by the symmetric planes between the four hexagon centres. Then the tips **meet face to face in a ring, each with its two neighbours (4 shared faces)**, each keeping 84.2% (a 6-corner solid: 2 triangles, 3 quadrilaterals). The meeting faces are not rhombi.
+
+The flood fill of the densest packing's gap (`scripts/holes_flood.py` → `data/holes-flood.txt`) finds one gap component running through the whole 2×2×2 block at both resolutions (40³ and 64³ samples per cell; the gap fraction matches, 0.2107), plus tiny specks that are grid artefacts. So the densest packing's holes form **one connected labyrinth**: no Dogstar analog in the strict sense.
+
+## Step 16: limb crossing + tip ring, and five-fold symmetry (DICTO; `scripts/combine.py` → `data/combine.txt`)
+
+- **The combined junction** at a square-face centre has 2 crossing limbs (0.014410 each) and 4 trimmed tips (0.006423 each). Each tip lies 37.2% inside one limb. The union is 0.042810, of which the limbs alone are 0.026679, so the tips add 0.016131.
+- **Five-fold, locally.** Of the hull edges (including face diagonals), 12 of 30 in the crossing zone run along five-fold axes, 6 of 30 in a limb, and 3 of 12 in a trimmed tip.
+- **Five-fold, beyond one copy.** A lattice cannot carry five-fold symmetry. Copies on all 20 hexagons of one copy (the only icosahedral hexagon joins) collide in **30 of 190 pairs**: the neighbouring hexagons, the 30 edges of the dodecahedron of hexagon directions.
+
+## Step 17: the frog chorus (DICTO; `scripts/chorus_space.py`, `chorus_anim_data.py`, `render_chorus.html`, `shoot_chorus.mjs`)
+
+- **The voices.** No two neighbouring positions may be occupied at once. The largest such sets of hexagon directions include the dodecahedron's **5 inscribed cubes** (8 each; any two share 2), and each gives our clean cubic packing. These are the five voices; turning 72° about a five-fold axis takes each voice to the next.
+- **In time.** An animation cycles the five voices around one copy, looking down the five-fold axis: `~/Videos/dicto/dicto-frog-chorus.mp4` (10 s, kept outside the repo). Stills: `renders/chorus-voice-*.png`, `chorus-voices-sheet.png`.
+- **In space** (float). Five 72° wedges around a five-fold axis each carry one voice, with all copies in the same orientation, so the whole is exactly five-fold symmetric. Plain wedges clash once per boundary near the axis (best start angle 59°). With three five-fold sets of copies removed (15 of 56 within radius 2.8), nothing collides. The silent positions lie near the axis (0.47, 0.76 and 1.89 from it), which leaves an **open five-fold channel**, as five-fold twinned crystals concentrate strain there (Ino 1969, Marks 1984). Tested only to radius 2.8. Renders: `renders/chorus-space-*.png`.
+
+## Step 18: the Bodhi pieces as fillers (DICTO; `scripts/bodhi_fill.py`, `split_sections.py`)
+
+- **Faces.** Every face of all five Bodhi pieces (Vajra (fine), Chatra, Mudra, Crown Jewel, Diadem) is perpendicular to a two-fold axis: they are golden zonotopes, which fit flush with golden rhombohedra and each other. None can sit on an OCD hexagon (three-fold) or kite, so the chain is OCD → Cleo-Ico → Bodhi pieces and golden rhombohedra.
+- **Envelope.** The golden envelope of the OCD (the 30 golden planes pushed in until they touch it) is a **rhombic triacontahedron**, volume 1.398921. Plain envelopes of neighbouring copies collide (4 pairs per copy in the bcc packing, 6 in the densest), poking through at the joints.
+- **Cut envelopes.** Cut at the 8 joint planes, they no longer overlap. The two cut faces at a joint are triangles turned 180°, forming a **six-pointed star** around the joint hexagon; its six points face the gap and lie in a three-fold plane (Cleo-Ico territory).
+- **The three-way split** of the bcc packing: OCD **77.4%**, non-golden shell inside the envelopes **11.8%** (adapters or resin), golden region between envelopes **10.7%** (Bodhi pieces). Exact sections: `renders/three-way-split.png`.
+
+## Step 12 (library scan) is still running on dicto-node.

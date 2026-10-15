@@ -1,0 +1,53 @@
+<!doctype html><meta charset="utf-8"><title>Frog chorus (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}#tag{position:fixed;right:12px;bottom:8px;font:600 15px system-ui;color:#5b5346}#ttl{position:fixed;left:12px;top:8px;font:600 17px system-ui;color:#2b2620}</style>
+<div id="ttl"></div><div id="tag">DICTO · dictospheres.com</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// The frog chorus of DICTO Ogdoecontahedra, looking down a five-fold axis.
+// ?space#top|tilt|cut: five cubic voices side by side in 72-degree wedges (silent positions as ghosts, the open five-fold channel).
+// ?anim: the five voices taking turns around one copy (window.frame(t), t in [0,1)).
+(async function () {
+  const q = new URLSearchParams(location.search), mode = q.has('anim') ? 'anim' : 'space', scn = location.hash.slice(1) || 'top';
+  const [N, A, Sp] = await Promise.all(['network-render.json', 'chorus-anim.json', 'chorus-space.json'].map((f) => fetch(f).then((r) => r.json())));
+  const r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); r.setSize(1000, 1000); r.setPixelRatio(1); r.localClippingEnabled = true; document.body.prepend(r.domElement);
+  const sc = new THREE.Scene(); sc.background = new THREE.Color(0xf4f1ea); sc.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.9)); const sun = new THREE.DirectionalLight(0xffffff, 0.55); sc.add(sun);
+  const pos = []; for (const f of N.f) for (let i = 1; i + 1 < f.length; i++) pos.push(...N.v[f[0]], ...N.v[f[i]], ...N.v[f[i + 1]]);
+  const G = new THREE.BufferGeometry(); G.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); G.computeVertexNormals(); const E = new THREE.EdgesGeometry(G, 1);
+  const a5 = new THREE.Vector3(...A.a5), up = new THREE.Vector3(...A.up), side = new THREE.Vector3().crossVectors(up, a5);
+  const VOICE = [0xff9a52, 0x4dd0e1, 0xc792ea, 0x5fd38a, 0xf06292];
+  const clip = scn === 'cut' ? [new THREE.Plane(a5.clone().negate(), 0.001)] : [];
+  function copy(p, col, opacity, sc_ = 0.985) {
+    const m = new THREE.Mesh(G, new THREE.MeshStandardMaterial({ color: col, roughness: 0.5, flatShading: true, transparent: opacity < 1, opacity, depthWrite: opacity >= 1, clippingPlanes: clip, side: THREE.DoubleSide }));
+    const l = new THREE.LineSegments(E, new THREE.LineBasicMaterial({ color: 0x2a2218, transparent: true, opacity: Math.min(1, opacity + 0.2), clippingPlanes: clip }));
+    const g = new THREE.Group(); g.add(m, l); g.position.set(...p); g.scale.setScalar(sc_); sc.add(g); return { g, m, l };
+  }
+  let H = 1.6, dir = a5.clone();
+  if (mode === 'space') {
+    Sp.sites.forEach((p, i) => { const P = new THREE.Vector3(...p); copy(p, P.length() < 1e-6 ? 0xffc857 : VOICE[Sp.voice[i]], 1); });
+    Sp.removed.forEach((p) => copy(p, 0xbfb6a3, 0.12, 0.97));
+    H = 2.4; if (scn === 'tilt') dir = a5.clone().multiplyScalar(0.8).add(up.clone().multiplyScalar(0.5)).normalize();
+    document.getElementById('ttl').textContent = 'spatial chorus: five voices in 72° wedges around a five-fold axis' + (scn === 'cut' ? ' · cut' : '') + ' · ghosts = silent frogs';
+  } else {
+    copy([0, 0, 0], 0xffc857, 1);
+    const all = []; const key = (v) => v.map((x) => x.toFixed(5)).join(',');
+    const pos5 = new Map(); A.voices.forEach((V, k) => V.forEach((v) => { if (!pos5.has(key(v))) pos5.set(key(v), { v, ks: [] }); pos5.get(key(v)).ks.push(k); }));
+    for (const [, o] of pos5) { o.c = copy(o.v, 0xffffff, 1); all.push(o); }
+    const ease = (x) => x * x * (3 - 2 * x);
+    window.frame = (t) => {
+      const s = (t * 5) % 5, i = Math.floor(s), u = s - i, j = (i + 1) % 5, w = u < 0.62 ? 0 : ease((u - 0.62) / 0.38);
+      for (const o of all) {
+        const inI = o.ks.includes(i), inJ = o.ks.includes(j); let op = inI && inJ ? 1 : inI ? 1 - w : inJ ? w : 0;
+        const col = new THREE.Color(VOICE[i]).lerp(new THREE.Color(VOICE[j]), inI && inJ ? w : inJ ? 1 : 0);
+        o.c.g.visible = op > 0.01; o.c.m.material.opacity = op; o.c.m.material.transparent = op < 1; o.c.m.material.depthWrite = op >= 0.99; o.c.m.material.color.copy(col); o.c.l.material.opacity = op;
+      }
+      document.getElementById('ttl').textContent = `frog chorus · voice ${i + 1} of 5` + (w > 0 ? ` → ${j + 1}` : '') + ' · 8 copies on one inscribed cube';
+      r.render(sc, cam);
+    };
+    H = 1.75;
+  }
+  const cam = new THREE.OrthographicCamera(-H, H, H, -H, -50, 50); cam.position.copy(dir.clone().multiplyScalar(20)); cam.up.copy(up); cam.lookAt(0, 0, 0);
+  sun.position.copy(cam.position.clone().add(up.clone().multiplyScalar(8)));
+  if (mode === 'space') r.render(sc, cam); else window.frame(0);
+  document.title = 'ready';
+})();
+</script>

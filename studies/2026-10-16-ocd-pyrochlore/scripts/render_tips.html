@@ -1,0 +1,46 @@
+<!doctype html><meta charset="utf-8"><title>X junctions (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}#tag{position:fixed;right:12px;bottom:8px;font:600 14px system-ui;color:#5b5346}#ttl{position:fixed;left:12px;top:8px;font:600 16px system-ui;color:#2b2620}</style>
+<div id="ttl"></div><div id="tag">DICTO · dictospheres.com</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// An X junction: four trimmed Cleo-Ico tips meeting face to face at a square-face centre of the bcc packing of DICTO
+// Ogdoecontahedra. #axis (along the cube axis, near copy removed) | #tilt (tilted, copies faint) | #tips (the four tips alone).
+(async function () {
+  const [N, Tp] = await Promise.all([fetch('network-render.json').then((r) => r.json()), fetch('tips-meet.json').then((r) => r.json())]);
+  const scn = location.hash.slice(1) || 'axis', S = new THREE.Vector3(...Tp.site), ax = S.clone().normalize();
+  const r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); r.setSize(1000, 1000); r.setPixelRatio(1); document.body.prepend(r.domElement);
+  const sc = new THREE.Scene(); sc.background = new THREE.Color(0xf4f1ea); sc.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.9)); const sun = new THREE.DirectionalLight(0xffffff, 0.6); sc.add(sun);
+  function hullMesh(P, col, opacity) {   // convex solid from its corners (brute-force hull triangles)
+    const V = P.map((p) => new THREE.Vector3(...p)), pos = [];
+    for (let a = 0; a < V.length; a++) for (let b = a + 1; b < V.length; b++) for (let c = b + 1; c < V.length; c++) {
+      const n = new THREE.Vector3().subVectors(V[b], V[a]).cross(new THREE.Vector3().subVectors(V[c], V[a])); if (n.length() < 1e-12) continue; n.normalize();
+      let s = 0, ok = true; for (const p of V) { const t = n.dot(p.clone().sub(V[a])); if (Math.abs(t) < 1e-9) continue; if (!s) s = Math.sign(t); else if (Math.sign(t) !== s) { ok = false; break; } }
+      if (ok) pos.push(...P[a], ...P[b], ...P[c]); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    sc.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: col, roughness: 0.45, flatShading: true, side: THREE.DoubleSide, transparent: opacity < 1, opacity, depthWrite: opacity >= 1 })));
+    sc.add(new THREE.LineSegments(new THREE.EdgesGeometry(g, 1), new THREE.LineBasicMaterial({ color: 0x2a2218, transparent: opacity < 1, opacity: Math.min(1, opacity + 0.3) })));
+  }
+  const TIPC = [0xff9a52, 0x4dd0e1, 0xc792ea, 0x5fd38a];
+  Tp.trimmed.forEach((P, i) => hullMesh(P, TIPC[i], 1));
+  if (scn !== 'tips') {
+    // the copies around the junction: the two on the axis and the four around it (from the bcc sites near the junction)
+    const pos = []; for (const f of N.f) for (let i = 1; i + 1 < f.length; i++) pos.push(...N.v[f[0]], ...N.v[f[i]], ...N.v[f[i + 1]]);
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    for (const [p] of N.sites) {
+      const P = new THREE.Vector3(...p); if (P.distanceTo(S) > 1.2) continue;
+      if (scn === 'axis' && P.clone().sub(S).dot(ax) > 0.3) continue;                 // remove the near copy on the axis
+      const m = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: 0xd8cdb8, roughness: 0.6, flatShading: true, transparent: true, opacity: scn === 'axis' ? 0.55 : 0.32, depthWrite: false }));
+      m.position.copy(P); sc.add(m);
+      const l = new THREE.LineSegments(new THREE.EdgesGeometry(g, 1), new THREE.LineBasicMaterial({ color: 0x8a7f6a, transparent: true, opacity: 0.35 })); l.position.copy(P); sc.add(l);
+    }
+  }
+  const up = new THREE.Vector3(...N.cube[1]).sub(ax.clone().multiplyScalar(new THREE.Vector3(...N.cube[1]).dot(ax))).normalize();
+  const side = new THREE.Vector3().crossVectors(ax, up);
+  const dir = scn === 'axis' ? ax.clone() : ax.clone().multiplyScalar(0.75).add(up.clone().multiplyScalar(0.45)).add(side.clone().multiplyScalar(0.5)).normalize();
+  const H = scn === 'tips' ? 0.32 : scn === 'axis' ? 0.75 : 0.95, cam = new THREE.OrthographicCamera(-H, H, H, -H, -50, 50);
+  cam.position.copy(S.clone().add(dir.multiplyScalar(10))); cam.up.copy(up); cam.lookAt(S); sun.position.copy(cam.position.clone().add(up.clone().multiplyScalar(6)));
+  r.render(sc, cam);
+  document.getElementById('ttl').textContent = { axis: 'X junction, looking along the cube axis (near copy removed)', tilt: 'X junction among its copies', tips: 'the four tips meeting face to face' }[scn];
+  document.title = 'ready';
+})();
+</script>
