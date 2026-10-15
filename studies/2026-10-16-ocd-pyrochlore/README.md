@@ -86,3 +86,15 @@ Golden rhombohedra can only make a flat surface on golden-rhombus planes, which 
 - **Kite junction: 11.6407°**, with two mirror choices (the next is 31.2702°). The adapter is a shallow wedge.
 
 With these two adapter kinds the OCD's faces become golden-rhombus surfaces the bricks can sit on, much like DICTO's RVCMG adapters between families. Not yet built or checked for fit.
+
+## Step 11: our own pieces as adapters (DICTO: "where are the AXE and CLEOs when we need them?"; `scripts/cleo_adapter.py`)
+
+Faces in the icosahedral frame: **AXE** has two three-fold and two five-fold faces; **CLEO** one three-fold and three five-fold; **FUJI** four three-fold and three five-fold. None has a golden-rhombus plane (perpendicular to a two-fold axis). The **Cleo-Ico** has a three-fold base and three two-fold sides at 69.09° to the base, a ready-made hexagon-to-golden-rhombi adapter. One stands on each free hexagon, base on alternate corners and tip outward: all 12 have golden sides, volume 0.007630 each, 27.3% of the gap. They hit no OCD, but 12 tips meet the tips of neighbouring copies' Cleo-Icos at the square-face centres; the fix is to use alternate ones or flatten the tips. Each hexagon keeps three small corner triangles.
+
+## Step 12: the whole library (`scripts/library_scan.py`): running.
+
+## Step 13: the dual Hecatodihedron as partner (DICTO: "slice up the 102-faced partner"; `scripts/heca_partner.py`, `scripts/sectors.py`)
+
+At exactly 4/9 of its unit-sphere polar size, the Hecatodihedron wraps the OCD with **all 102 faces through OCD corners**: the 90 tangent faces through the 90 sphere corners and the 12 pentagons through the 12 outer corners. This is the dual nesting, like an icosahedron inside a dodecahedron. In the packing, each Heca reaches 0.091 past its cell and overlaps the Hecas of its 8 joined neighbours (at the joints). The shell Heca − OCD = 0.112700. The first cube-octant slicing had a bug (its sum exceeded the shell). Sliced instead by DICTO's icosahedral and dodecahedral sectors (20 cones on the hexagons, 12 on the pentagons), the sums check. But the ratios are forced by symmetry alone (dodecahedral/icosahedral sector = 5/3; the same shell share of 8.91% in every sector), so this slicing shows no resonance beyond symmetry. Untested: the OCD–Heca compound at edge-crossing scale, the true analogue of the I–D compound (ID and RT).
+
+X-ray sections through the centre, perpendicular to a five-, three- and two-fold axis (`scripts/xray_sections.py` → `renders/xray-sections.png`): OCD gold, Heca violet, the axes lying in each cut dashed.
