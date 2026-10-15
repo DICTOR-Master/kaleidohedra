@@ -31,3 +31,11 @@ for name, r2 in (('ends', p * p / 4), ('middle', 3 * p * p / 4)):
         if not any(same(Y, X) for _, X in orig): S.append({'name': n, 'cycle': 'reversed', 'shared': False, **shell(Y)})
     json.dump({'shells': S, 'rho2': r2}, open(f'data/toggle-{name}-render.json', 'w'))
     print(name, 'rho^2 =', round(r2, 9), '| shared:', [s['name'] for s in S if s['shared']], '| radii', round(min(np.linalg.norm(np.array(s['v']), axis=1).min() for s in S), 3), '..', round(max(np.linalg.norm(np.array(s['v']), axis=1).max() for s in S), 3))
+
+# movie data (pure geometry): the original turn and its full polar image at rho^2 = phi^2/4. Every other toggle sphere rho gives
+# the same flipped cycle scaled by rho^2 / (phi^2/4), so the movie scales one set of shells; at scale 1 the cycles share I and D,
+# at scale 3 they share ID and RT (both exact settings of the toggle, nothing bent in between).
+r2 = p * p / 4
+M = {'orig': [{'name': n, **shell(X)} for n, X in orig], 'flip': [{'name': f'polar of {n}', **shell(polar(X, r2))} for n, X in orig],
+     'shared_ends': ['icosahedron', 'dodecahedron'], 'shared_middle': ['icosidodecahedron', 'rhombic triacontahedron']}
+json.dump(M, open('data/toggle-movie.json', 'w')); print('movie data', len(M['orig']), len(M['flip']))
