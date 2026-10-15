@@ -1,0 +1,8 @@
+OCD: 80 faces (20 hexagons at distance 0.622782), volume -1000/1539 + 1240/1539√5
+tetrahedral hexagon set (0, 4, 7, 18); bond vectors exact, |t|^2 = 8/9 + 8/27√5 = 1.551428
+joined copies: the opposite hexagon lands exactly on the shared hexagon (exact check passed for all four bonds)
+collision test over 60 sites (1770 pairs): overlapping 0; touching 82 AB on faces of [6] corners: 40; BA on faces of [6] corners: 42; apart 1688
+joints: the four hexagon centres around a site form a regular tetrahedron: True (edge^2 16/27 + 16/81√5); bond midpoints of diamond = pyrochlore
+packing: fcc primitive cell volume 2048/729 + 1024/729√5 = 5.950252; two OCDs per cell fill 9225/1216 - 3915/1216√5 = 0.387166 of space; gap 0.612834
+second network shifted by 2 t0: overlapping pairs 0; touching 69 on faces of [6] corners: 69; apart 1731
+double network would fill 9225/608 - 3915/608√5 = 0.774332 of space (if no overlap)

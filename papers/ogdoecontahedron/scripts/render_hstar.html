@@ -1,0 +1,30 @@
+<!doctype html><meta charset="utf-8"><title>Hecatodihedron dual (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}#tag{position:fixed;right:14px;bottom:10px;font:600 14px system-ui;color:#5b5346}</style>
+<div id="tag">DICTO · dictospheres.com</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// The dual of the DICTO Hecatodihedron alone: 20 regular hexagons (wisteria) and 60 kites (cyan); views along a 3-fold and a 5-fold axis.
+(async function () {
+  const view = location.hash.slice(1) || 'three';
+  const J = await fetch('hstar-render.json').then((r) => r.json());
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(1000, 1000); renderer.setPixelRatio(1);
+  document.body.appendChild(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.8)); const sun = new THREE.DirectionalLight(0xffffff, 0.7); sun.position.set(4, 7, 5); scene.add(sun);
+  for (const f of J.f) {
+    const pos = [], line = [];
+    for (let i = 1; i + 1 < f.length; i++) pos.push(...J.v[f[0]], ...J.v[f[i]], ...J.v[f[i + 1]]);
+    for (let i = 0; i < f.length; i++) line.push(...J.v[f[i]], ...J.v[f[(i + 1) % f.length]]);
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: f.length === 6 ? 0xc792ea : 0x4dd0e1, roughness: 0.5, flatShading: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3)); scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218 })));
+  }
+  // camera along an axis: 3-fold = a hexagon's centre, 5-fold = one of the 12 outer corners, else an oblique view
+  const V = J.v.map((p) => new THREE.Vector3(...p)); const rmax = Math.max(...V.map((p) => p.length()));
+  const pole = V.find((p) => Math.abs(p.length() - rmax) < 1e-6).clone().normalize();
+  const hex = J.f.find((f) => f.length === 6).map((i) => V[i]).reduce((a, b) => a.clone().add(b)).normalize();
+  const dir = view === 'five' ? pole : view === 'three' ? hex : hex.clone().multiplyScalar(0.8).add(pole.clone().multiplyScalar(0.5)).add(new THREE.Vector3(0.2, 0.1, 0)).normalize();
+  const cam = new THREE.PerspectiveCamera(30, 1, 0.1, 100); cam.position.copy(dir.multiplyScalar(5.2)); cam.lookAt(0, 0, 0);
+  sun.position.copy(cam.position.clone().add(new THREE.Vector3(2, 3, 1))); renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>

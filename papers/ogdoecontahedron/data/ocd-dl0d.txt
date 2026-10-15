@@ -1,0 +1,6 @@
+OCD: V, E, F, face sizes, vertex degrees = (102, 180, 80, [(4, 60), (6, 20)], [(3, 60), (4, 30), (5, 12)])
+(A) cut-down pentakis dodecahedron: (102, 180, 80, [(4, 60), (6, 20)], [(3, 60), (4, 30), (5, 12)]); same face arrangement as the OCD: True
+(B) L0(D): (80, 180, 102, [(3, 60), (4, 30), (5, 12)], [(4, 60), (6, 20)]); dual of L0(D): (102, 180, 80, [(4, 60), (6, 20)], [(3, 60), (4, 30), (5, 12)]); same face arrangement as the OCD: True
+    Hecatodihedron (dual of the OCD) vs L0(D) directly: True
+    (A) vs (B) dual: True
+controls: shuffled labels match True (expect True); a map with one hexagon with two corners swapped matches False (expect False)
