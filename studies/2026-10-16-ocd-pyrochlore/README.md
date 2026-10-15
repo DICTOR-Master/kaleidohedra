@@ -264,3 +264,17 @@ Exact in ℚ(√5).
   - The ring-clash rule alone gives the window [0, t_c), narrower than canonical. Within the build no plane lattice point has t in [t_c, L_can), so the two windows agree, and the core equals the canonical Fibonacci chain **for |height| < 12.812**. The build reaches |height| < 10.
   - Beyond that, the ring-clash chain keeps copies the canonical chain would include: the first is at height 12.812 (t = 1.1553), then −22.71 and 34.77. There it becomes the three-gap (L, S, L+S) cut-and-project chain, a Fibonacci chain with points thinned out: still an exact quasicrystal, but not the Fibonacci word.
 - **Open:** whether some other clash (not a ring-mate) silences those copies, which would restore Fibonacci. That needs a build to about radius 14, or a targeted check of the copy at height 12.81.
+
+## Step 29: the copy at height 12.8, a tie (`scripts/chorus_h128.py` → `data/chorus-h128.txt`)
+
+Exact in ℚ(√5) for every overlap and touch; the greedy silencing is float, as in the chorus. All sites of all five voices in a cylinder around the axis (|height − 12.812| < 7, distance from the axis < 6.16): 1135 sites.
+
+- **The target** is the core-plane copy at height 12.8121, t = 1.1553 (plane coordinates (8, −4)). It clears all four of its ring-mates, as step 28 predicted.
+- **Its neighbours.** Of the 7 copies whose centres are close enough to matter, it **overlaps exactly one**: a copy at height 13.8019, distance 1.1690 from the axis, in wedge 1. That copy is *not* in the core plane, and its own ring does **not** clash with itself, so nothing else forces it silent. The target touches 4 other copies exactly.
+- **So one of two rings must go:** the target's ring or the ring at height 13.80. Either single five-fold silencing resolves the clash.
+  - Silencing the **target** keeps the spine on the canonical Fibonacci chain.
+  - Silencing the **13.80 ring** keeps the target, and the spine becomes the thinned (L, S, L+S) chain.
+- **What the chorus's own rule does.** The greedy rule (most clashes first, ties broken by distance from the centre) silences the 13.80 ring and keeps the target. Both rings have the same clash count, so this is decided by the **tie-break**, not by the geometry.
+- On the patch, the other core-plane copies near the target agree with both windows.
+
+**Result.** Hardness alone does not decide the spine beyond height 12.8. The canonical Fibonacci chain and the thinned chain are **equally minimal** there. They differ by which of two clashing rings is silenced. The chorus's tie-break chooses the thinned chain. Fibonacci holds exactly for |height| < 12.81 and continues only under a rule that prefers silencing core-plane rings.
