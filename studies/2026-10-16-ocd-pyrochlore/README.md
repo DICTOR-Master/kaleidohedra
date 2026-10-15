@@ -354,3 +354,34 @@ The decision is combinatorial and exact (an isomorphism search on face maps, mir
 - **Not checked: MathWorld PolyhedronData.** It needs the Wolfram engine; the MathWorld web pages were already searched by the Fable review.
 
 **Result.** The face arrangement is known (dual of L0(D); step above) but is **not in McCooey's catalogue**, which has its partial-truncation relative. No catalogue checked contains the metric OCD (regular hexagons, kites 117.85° / 68.62° / 55.69°).
+
+## Step 30: is there a rule that keeps the spine pure Fibonacci? (`scripts/chorus_rules.py`, `chorus_fork_min.py`, `chorus_fork_exact2.py` → `data/chorus-rules.txt`, `chorus-fork-min.txt`, `chorus-fork-exact2.txt`)
+
+DICTO: "find a rule that keeps the spine pure Fibonacci". This step **corrects step 29**.
+
+- **The four departure points.** The first plane points with t_c ≤ t < L are at heights 12.812, −22.710, 34.766 and −44.664, with plane coordinates (8, −4), (−13, 9), (21, −12) and (−26, 17). Each was given its own patch of about 1130–1155 sites (exact sites).
+- **Correction to step 29: it is not a tie.** At every departure point the core copy overlaps one off-plane copy, its *rival*, and the rival also overlaps two more copies.
+  - At 12.81 this was checked **exactly**. The rival (h 13.8019, ρ 1.1690) overlaps the target, a copy at h 14.0356, ρ 1.9114 (whose ring does not clash with itself), and a core-plane copy at h 14.7917, ρ 0.6880 (whose ring does, so it is removed anyway).
+  - The other three points were checked in float, with the same pattern.
+  - At the greedy decision the rival has 2 live clashes and the target 1. The chorus removes the rival **by count, not by tie-break**. Step 29's "both rings have the same clash count" was wrong.
+- **Minimum removal (integer program over whole rings, float clash test, per patch).**
+
+  | Height | Rings removed if the target is removed (Fibonacci) | Rings removed if the target is kept (thinned) |
+  |---|---|---|
+  | 12.812 | 44 | 43 |
+  | −22.710 | 47 | 46 |
+  | 34.766 | 46 | 45 |
+  | −44.664 | 43 | 42 |
+
+  So **keeping the core copy is cheaper by exactly one ring at every departure point**. Removing the target leaves the rival's other live clash, which costs a second ring.
+- **Rules tried** (greedy, whole rings):
+  - **A** (as built: most clashes, ties to the copy farther from the centre), **B** (ties to the copy nearer the axis) and **C** (ties to the ring nearest self-clash) all keep the target: thinned at all four points.
+  - **D** (silence the ring nearest to clashing with itself first, clash count second) removes the target at all four points: **Fibonacci**. But on the radius-10 build it removes **555** copies instead of 385, differing at 310 sites. It is far from minimal.
+  - Control: rule A reproduces the built radius-10 silences exactly (385, the same set).
+
+**Result.** No minimal rule keeps the spine Fibonacci. Hardness with minimal removal (exact clashes, integer-program minimum on patches) keeps the core copy at each departure point, so the spine is the canonical Fibonacci chain for |h| < 12.81 and then thinned: a three-gap (L, S, L + S) cut-and-project chain with window [0, t_c) as far as checked. Pure Fibonacci costs one extra ring at every departure point. A rule that pays it (D) exists but removes about 44% more copies overall.
+
+**Limits.**
+- The patches are finite; the integer program decides only within each patch.
+- Only the first four departure points were tested.
+- That the thinned spine equals the ring-clash window [0, t_c) at *every* height is not proved, only consistent at these four points.

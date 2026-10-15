@@ -1,0 +1,27 @@
+(30) rules: A as built (ties to farther from centre), B (ties to nearer the axis), C (ties to the ring nearest self-clash), D (ring margin first)
+    departure points (t_c <= t < L), nearest first: [(12.812, 8, -4), (-22.71, -13, 9), (34.766, 21, -12), (-44.664, -26, 17)]
+  height 12.812 (t 1.1553): patch 1135 sites; target ring margin 1.0186; rivals (overlapping the target, float): h 13.802 rho 1.1690 margin 1.0415
+      rule A: target kept (thinned); silenced 215; first decision touching them: removed site 79 ; (clash count, margin) then: {99: (np.int64(1), 1.0186), 253: (np.int64(2), 1.0415)}
+      rule B: target kept (thinned); silenced 220; first decision touching them: removed site 253 ; (clash count, margin) then: {99: (np.int64(1), 1.0186), 253: (np.int64(2), 1.0415)}
+      rule C: target kept (thinned); silenced 220; first decision touching them: removed site 79 ; (clash count, margin) then: {99: (np.int64(1), 1.0186), 253: (np.int64(2), 1.0415)}
+      rule D: target SILENCED (Fibonacci); silenced 330; first decision touching them: removed site 1075 ; (clash count, margin) then: {99: (np.int64(1), 1.0186), 253: (np.int64(2), 1.0415)}
+  height -22.710 (t 1.1813): patch 1150 sites; target ring margin 1.0415; rivals (overlapping the target, float): h -21.720 rho 1.1896 margin 1.0557
+      rule A: target kept (thinned); silenced 230; first decision touching them: removed site 257 ; (clash count, margin) then: {100: (np.int64(1), 1.0415), 257: (np.int64(3), 1.0557)}
+      rule B: target kept (thinned); silenced 235; first decision touching them: removed site 80 ; (clash count, margin) then: {100: (np.int64(1), 1.0415), 257: (np.int64(2), 1.0557)}
+      rule C: target kept (thinned); silenced 235; first decision touching them: removed site 257 ; (clash count, margin) then: {100: (np.int64(1), 1.0415), 257: (np.int64(2), 1.0557)}
+      rule D: target SILENCED (Fibonacci); silenced 360; first decision touching them: removed site 256 ; (clash count, margin) then: {100: (np.int64(1), 1.0415), 257: (np.int64(2), 1.0557)}
+  height 34.766 (t 1.1974): patch 1155 sites; target ring margin 1.0557; rivals (overlapping the target, float): h 35.756 rho 1.2025 margin 1.0645
+      rule A: target kept (thinned); silenced 225; first decision touching them: removed site 81 ; (clash count, margin) then: {101: (np.int64(1), 1.0557), 258: (np.int64(2), 1.0645)}
+      rule B: target kept (thinned); silenced 230; first decision touching them: removed site 81 ; (clash count, margin) then: {101: (np.int64(1), 1.0557), 258: (np.int64(2), 1.0645)}
+      rule C: target kept (thinned); silenced 230; first decision touching them: removed site 81 ; (clash count, margin) then: {101: (np.int64(1), 1.0557), 258: (np.int64(2), 1.0645)}
+      rule D: target SILENCED (Fibonacci); silenced 350; first decision touching them: removed site 861 ; (clash count, margin) then: {101: (np.int64(1), 1.0557), 258: (np.int64(2), 1.0645)}
+  height -44.664 (t 1.1392): patch 1130 sites; target ring margin 1.0044; rivals (overlapping the target, float): h -43.674 rho 1.1563 margin 1.0328
+      rule A: target kept (thinned); silenced 210; first decision touching them: removed site 251 ; (clash count, margin) then: {99: (np.int64(1), 1.0044), 251: (np.int64(2), 1.0328)}
+      rule B: target kept (thinned); silenced 215; first decision touching them: removed site 79 ; (clash count, margin) then: {99: (np.int64(1), 1.0044), 251: (np.int64(2), 1.0328)}
+      rule C: target kept (thinned); silenced 215; first decision touching them: removed site 501 ; (clash count, margin) then: {99: (np.int64(1), 1.0044), 251: (np.int64(2), 1.0328)}
+      rule D: target SILENCED (Fibonacci); silenced 325; first decision touching them: removed site 99 (target ring); (clash count, margin) then: {99: (np.int64(1), 1.0044), 251: (np.int64(2), 1.0328)}
+  rules that keep the spine Fibonacci at all four points: D
+  radius-10 build under rule A: silenced 385 (built 385); same silent set as built: True
+  radius-10 build under rule B: silenced 375 (built 385); same silent set as built: False; differ at 150 sites
+  radius-10 build under rule C: silenced 370 (built 385); same silent set as built: False; differ at 155 sites
+  radius-10 build under rule D: silenced 555 (built 385); same silent set as built: False; differ at 310 sites
