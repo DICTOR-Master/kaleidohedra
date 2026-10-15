@@ -123,3 +123,14 @@ The outer layers are unchanged. Renders: `renders/polar-pair-*.png` (`node shoot
 - DH → ID: 60 pieces of one kind.
 
 **Exact check** (`polar_exact.py rid` → `data/polar-pair-rid-exact.txt`): RID is scaled by −153/11 + 69/11·√5 and DH by 1 + 3/5·√5. The play is exactly 62/123 + 137/615·√5 = 1.002181, so the pair is close to locked but not locked. All layer sums are exact. Renders: `renders/polar-pairrid-*.png`.
+
+## Step 10: golden rectangles around the whole structure (DICTO's question)
+
+`polar_golden_rect.py` (`data/polar-golden-rect.txt`) tests the full set of golden rectangles: 15 of them (5 perpendicular triples, 60 edges), with corners on the 12 five-fold axes, against the original nest.
+
+- **Corners on the chain's icosahedron:** the corners are the RT tips and the GSD valleys. The rectangles cut through the inner shells.
+- **Corners on D(φ³)'s face centres:** the rectangles lie inside D(φ³).
+- **The smallest icosahedron around D(φ³) is not enough:** its long edges still pass through D(φ³).
+- **The next turn of the cycle (the chain's icosahedron × φ³):** at exactly this size, the frames clear the whole nest, with the 30 long edges touching D(φ³)'s 30 edge midpoints. Exact check: corner radius² = (50 − 22√5)·φ⁶ = 10 + 2√5, and long-edge midpoint radius² = (10 + 2√5)/(1 + φ²) = 4 = D(φ³)'s midradius².
+
+Golden rectangles enclose the structure only when it is nested in an icosahedron again: the next turn's icosahedron, not the smallest one.
