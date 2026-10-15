@@ -237,3 +237,18 @@ All in ℚ(√5). The five-fold axis runs through an exact OCD corner v, and eve
 - **Peak positions:** the 16 strongest peaks (some are side lobes of the same peak) all lie within 0.02–0.4 of projections of the two neighbouring voices' 3D reciprocal lattices. That is within the peak width set by the build size (about 0.3), which is the signature of a lattice cut by an irrational plane (incommensurate, quasiperiodic-type order).
 - **Limit:** with 66 points this cannot tell a quasiperiodic seam from a large-period approximant. Consistent with quasiperiodic, not proven.
 - **Method note:** the first diffraction pass folded all five seams together. That counts each vacancy 5 times and inflates the peaks fivefold, so it was discarded.
+
+## Step 27: the canonical window, the core is the Fibonacci chain (`scripts/chorus_canonical.py` → `data/chorus-canonical.txt`)
+
+Exact in ℚ(√5), core plane of step 26, radius-10 run.
+
+- **(a) Gaps.** The 11 silent heights in the plane have three distinct gaps: S, L and T. **L/S = φ exactly**, and **T = L + S exactly**, so one point is missing.
+- **(b) Canonical width.** The gap vectors for L and S are (1, −1) and (1, 0) in the plane basis (determinant 1), so they form a lattice basis. Their transverse parts have opposite signs. The canonical window length is L_can² = 64/81 + 128√5/405 (L_can = 1.223451). That is **exactly** the transverse distance of the innermost *kept* copy, the upper edge of the window bracket the build allows.
+- **(c) The word.** The gaps read LLSLTLSLLS. The T straddles height 0, and the missing point is the **centre copy** itself, which sits on the axis (transverse 0). Splitting T back into LS or SL gives a factor of the Fibonacci word.
+- **(d) The extended chain.** With window [0, L_can), the plane lattice extended exactly to heights ±45 gives **2 gaps, L and S, and a factor of the Fibonacci word** (L:S = 33:20 over this length).
+- **Agreement with the build.** Within the build's height range the chain is exactly the **11 silent copies plus the centre**. The copy lying exactly on the far window edge (t = L_can) is kept.
+
+**Result.** The chorus's core positions, the centre copy plus the silent rings in the core plane, are exactly the **canonical Fibonacci cut-and-project chain**. It is a *singular* member: both window edges are lattice points. The centre is on the closed edge and the innermost kept copy on the open one. In words: the silencing selects exactly the canonical Fibonacci window, with the centre as one of its points. Checked over the build (radius 10); extended exactly to ±45 by construction.
+
+- **Not shown:** *why* hardness picks the canonical window. A reasonable guess is that the copy at t = L_can just touches; that is not checked.
+- **Not covered:** the off-plane ring (distance 1.0042).
