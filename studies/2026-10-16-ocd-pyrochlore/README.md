@@ -331,3 +331,26 @@ The decision is combinatorial and exact (an isomorphism search on face maps, mir
 - **Sutton 1988 and Sutton 1992:** no abstract is available. The titles match the general precedent already cited.
 - **Junctions of several irrational boundaries:** none found in the abstracts or in one targeted web search. That search only found disclination readings of triple junctions in nanocrystals (Ovid'ko) and quasiperiodic dislocation arrays in small-angle quasicrystal boundaries (Hatwalne et al. 1989).
 - **For the paper:** cite Sutton 1989 when discussing the fork, as the precedent for degeneracy at irrational interfaces. Full texts of Sutton 1989 and 1992 and of Gratias–Thalal are needed before submission (library or purchase).
+
+## Catalogue check of the Ogdoecontahedron (`scripts/ocd_catalogue_scan.py` → `data/ocd-catalogue.txt`, `data/ocd-catalogue-names.txt`)
+
+- **David McCooey's Visual Polyhedra (dmccooey.com/polyhedra), scanned in full.** That is 186 pages and 553 distinct solids, with every embedded vertex and face list parsed. The catalogue includes:
+  - the Platonic, Archimedean, Catalan and Johnson solids;
+  - the uniform stars and their duals;
+  - truncated and rectified Archimedean and Catalan solids;
+  - chamfered, joined, propello, biscribed and derived solids;
+  - the geodesic families.
+  - **No solid has the OCD's counts** (V 102, E 180, F 80) **or its dual's** (V 80, E 180, F 102), so none shares its face arrangement. The 34 solids with 180 edges are listed in the data file.
+  - **Nearest relative:** the *6-truncated pentakis dodecahedron* (V 132, F 80: 20 hexagons and 60 pentagons). It is the pentakis dodecahedron with its six-valent corners truncated part-way. **The OCD's face arrangement is the end point of that truncation:** cut down to the edge midpoints, the two short pentagon edges shrink to points and the pentagons become kites.
+  - Controls on the parsed data: the truncated icosahedron matches the dual of the pentakis dodecahedron, and the icosidodecahedron matches the dual of the rhombic triacontahedron (both True). The truncated icosahedron does not match the dual of the triakis icosahedron (False).
+- **The printed books** (Wenninger, *Polyhedron Models* and *Dual Models*; Holden, *Shapes, Space and Symmetry*; Pugh, *Polyhedra: a Visual Approach*; Inchbald's articles) are copyrighted and **not read**. Ruled out by scope instead (our reasoning, not a reading):
+  - Wenninger's *Polyhedron Models* has only uniform solids, whose faces are all regular; the OCD has kites.
+  - *Dual Models* has only duals of uniform solids. The OCD's dual, the Hecatodihedron, is not uniform: its faces are 12 pentagons, 30 quads and 60 triangles, around 80 vertices of two kinds.
+  - Wenninger's *Spherical Models* covers geodesic forms; the McCooey geodesic families above contain no match.
+  - Holden and Pugh treat regular, uniform, Johnson, stellated, zonohedral and space-filling solids. The OCD is none of these: it has kites, it is not a zonohedron (kites are not centrally symmetric), and it is not a space-filler.
+  - Inchbald writes on stellations and facetings; the OCD is convex.
+  - **Still open:** any one-off figure in those books outside their main lists.
+- **Not scanned:** Bowers' and Klitzing's lists, ruled out by scope instead. Klitzing lists solids with regular faces, Bowers uniform and near-uniform ones.
+- **Not checked: MathWorld PolyhedronData.** It needs the Wolfram engine; the MathWorld web pages were already searched by the Fable review.
+
+**Result.** The face arrangement is known (dual of L0(D); step above) but is **not in McCooey's catalogue**, which has its partial-truncation relative. No catalogue checked contains the metric OCD (regular hexagons, kites 117.85° / 68.62° / 55.69°).

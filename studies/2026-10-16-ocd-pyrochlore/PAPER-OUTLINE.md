@@ -47,7 +47,7 @@ When five periodic packings of one icosahedral polyhedron meet around a five-fol
 - [x] dL0D face arrangement confirmed (exact map isomorphism, `data/ocd-dl0d.txt`): known type; claim only the metric solid.
 - [~] Katz & Gratias 1993 is closed access: read through open restatements only (README). Same spirit (hard-core window edge), different role (chosen vs forced) and different pairs (translations vs five-fold rotated images). Full text still needed before submission.
 - [~] Gratias–Thalal 1988 and Sutton 1988/89/92: closed access, abstracts only (README). Sutton 1989 (degenerate interface variants separated by line defects) is the closest precedent for the fork. No junction treatment found. Full texts needed before submission.
-- [ ] Check the book catalogues the review could not: Wenninger, Holden, Pugh and Inchbald. Also MathWorld PolyhedronData and the full Bowers and Klitzing lists.
+- [x] Catalogues: McCooey scanned in full (553 solids, no match; nearest = 6-truncated pentakis dodecahedron); books ruled out by scope, not read; MathWorld PolyhedronData not checked (README).
 - [ ] Decide the fork framing: report it as is, or search for a natural rule that keeps the spine Fibonacci.
 - [ ] Decide venue and length. Zenodo DOI only with DICTO's OK.
 
