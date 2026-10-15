@@ -65,3 +65,11 @@ Every copy has the same orientation and is centrally symmetric. So the copy at l
 - **Limb classes.** A limb's two ends are a hexagon and the opposite hexagon of the next copy, so the 12 free hexagons give **6 limbs per copy**. These come in 3 crossing pairs, one per cube axis, crossing at the square-face centres.
 - **Collision-free choice.** Choosing one limb from each pair gives **3 limbs per copy** (8 ways), using 6 of the 12 free hexagons. They fill 12.9% of the gap.
 - **Competition.** The limbs pass through the octahedral sites, so they compete with the octahedral bridges of step 6 for the same space.
+
+## Step 8: pyrochlore sharing of the conflict zones (DICTO; `scripts/conflict.py` → `data/conflict.txt`)
+
+Keep all 6 limbs per copy and let each crossing pair **share** its conflict zone, as pyrochlore tetrahedra share corners.
+
+- **The zone.** It is the intersection of the two crossing limbs, one at each square-face centre (3 per copy): **12 corners, 10 faces, all quadrilaterals**, volume 0.002140 (14.9% of a limb). It lies inside the octahedral bridge of step 6 but is not the same solid.
+- **Golden rhombi.** **2 of its faces are golden rhombi**: angles 63.4349° and 116.5651°, diagonals in the golden ratio 1.618034. These are the faces of the rhombic triacontahedron and of the golden rhombohedra. The other 8 faces are quadrilaterals with angles 80.12°–99.88°. (Float so far; exact check pending.)
+- **Filling.** All 6 limbs with each zone counted once fill 23.8% of the gap per copy.
