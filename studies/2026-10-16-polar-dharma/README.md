@@ -188,3 +188,8 @@ First look, in floating point. The original cycle and its polar image can share 
 - **Never both.** The two ρ² differ by exactly 3, which is not a power of φ. So no sphere makes the cycles share both pairs.
 
 Not yet exact; next: exact check, then renders of both alignments.
+
+Renders of both alignments: `toggle_render.py` writes `data/toggle-{ends,middle}-render.json`; the renders are `renders/toggle-{ends,middle}-{whole,cut}.png` (`render_toggle.html`, `shoot_toggle.mjs`). Shells are see-through. The original cycle is warm, the flipped cycle cool, and shared stations are dark ink.
+
+- **Ends alignment.** The mirror sphere has radius φ/2 = 0.809. The flipped turn nests almost entirely inside the original icosahedron: its dodecahedron (0.331) up to its triacontahedron, whose tips are the original icosahedron's corners. Its last layer spans out to the shared dodecahedron.
+- **Middle alignment.** The mirror sphere has radius φ√3/2 = 1.401, which equals the original dodecahedron's circumradius (float). The flipped turn reaches out to a dodecahedron of radius 4.20.

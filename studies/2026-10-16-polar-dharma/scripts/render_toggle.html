@@ -1,0 +1,32 @@
+<!doctype html><meta charset="utf-8"><title>Dharma up-down toggle (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}#tag{position:fixed;right:14px;bottom:10px;font:600 14px system-ui;color:#5b5346}</style>
+<div id="tag">DICTO · dictospheres.com</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// Both cycles in one space: the original Spheres of Dharma (warm) and its polar image (cool), shared stations in dark ink.
+// ?ends or ?middle picks the alignment; #whole or #cut picks the view.
+(async function () {
+  const which = location.search.includes('middle') ? 'middle' : 'ends', scn = location.hash.slice(1) || 'whole';
+  const J = await fetch(`toggle-${which}-render.json`).then((r) => r.json());
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(1000, 1000); renderer.setPixelRatio(1); renderer.localClippingEnabled = true;
+  document.body.appendChild(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.85)); const sun = new THREE.DirectionalLight(0xffffff, 0.6); sun.position.set(4, 7, 5); scene.add(sun);
+  const clip = scn === 'cut' ? [new THREE.Plane(new THREE.Vector3(0, 0, -1), 0)] : [];
+  const warm = [0xffc857, 0xffb74d, 0xff9a52, 0xf08a5d, 0xe57373, 0xd4a017, 0xc0392b], cool = [0x4dd0e1, 0x29b6f6, 0x5c6bc0, 0x7e57c2, 0x26a69a, 0x0097a7, 0x3949ab];
+  let iw = 0, ic = 0; let rmax = 0;
+  for (const S of J.shells) {
+    const col = S.shared ? 0x2a2218 : S.cycle === 'original' ? warm[iw++ % 7] : cool[ic++ % 7];
+    const pos = [], line = [];
+    for (const f of S.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...S.v[f[0]], ...S.v[f[i]], ...S.v[f[i + 1]]); for (let i = 0; i < f.length; i++) line.push(...S.v[f[i]], ...S.v[f[(i + 1) % f.length]]); }
+    for (const v of S.v) rmax = Math.max(rmax, Math.hypot(...v));
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: S.shared ? 0xffffff : col, transparent: true, opacity: S.shared ? 0.22 : 0.1, side: THREE.DoubleSide, depthWrite: false, flatShading: true, clippingPlanes: clip })));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: col, transparent: !S.shared, opacity: S.shared ? 1 : 0.85, clippingPlanes: clip })));
+  }
+  const cam = new THREE.PerspectiveCamera(30, 1, 0.05, 200);
+  const dir = scn === 'cut' ? new THREE.Vector3(0.12, 0.2, 1) : new THREE.Vector3(0.62, 0.48, 0.9);
+  cam.position.copy(dir.normalize().multiplyScalar(rmax * 4.3)); cam.lookAt(0, 0, 0); renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>
