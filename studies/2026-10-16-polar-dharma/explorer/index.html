@@ -6,63 +6,61 @@
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1a1814;--panel:#24211b;--fg:#ece6d6;--mute:#a59e8b;--line:#3a352b;--accent:#d8b350;--warm:#f0a050;--cool:#4fc3d9;--ink:#ece6d6;--btn:#2c2820;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#1a1814;--panel:#24211b;--fg:#ece6d6;--mute:#a59e8b;--line:#3a352b;--accent:#d8b350;--warm:#f0a050;--cool:#4fc3d9;--ink:#ece6d6;--btn:#2c2820;color-scheme:dark}
 [hidden]{display:none!important}
-body{background:var(--bg);color:var(--fg);font:15px/1.5 Inter,system-ui,sans-serif;margin:0;padding-inline:16px;padding-block:20px 32px}
-main{max-width:860px;margin:0 auto;display:grid;gap:14px}
-h1{font:650 26px/1.15 Fraunces,Georgia,serif;margin:0;text-wrap:balance}h1 b{color:var(--accent);font-weight:650}
-.lede{margin:0;color:var(--mute);max-width:68ch}
-.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-button{font:500 14px Inter,system-ui,sans-serif;background:var(--btn);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer}
-button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
-.lab{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin-right:4px}
-.stage{position:relative;width:100%;max-width:100%;aspect-ratio:1/1;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--bg);touch-action:none;cursor:grab}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 Inter,system-ui,sans-serif;margin:0;overflow:hidden}
+.stage{position:fixed;inset:0;background:var(--bg);touch-action:none;cursor:grab}
 .stage canvas{display:block;width:100%!important;height:100%!important}
-.mark{position:absolute;right:10px;bottom:8px;font:600 12px Inter,system-ui,sans-serif;color:var(--mute);pointer-events:none}
-.read{position:absolute;left:10px;top:8px;font:500 13px Inter,system-ui,sans-serif;color:var(--fg);background:color-mix(in srgb,var(--bg) 82%,transparent);padding:3px 8px;border-radius:6px;pointer-events:none;font-variant-numeric:tabular-nums}
-svg.cross{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;transition:opacity .25s}
+.top{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);display:flex;justify-content:space-between;align-items:flex-start;gap:8px;padding:10px 16px;pointer-events:none}
+.top h1{font:650 18px/1.2 Fraunces,Georgia,serif;margin:0}.top h1 b{color:var(--accent);font-weight:650}
+.read{font:500 13px Inter,system-ui,sans-serif;color:var(--fg);background:color-mix(in srgb,var(--bg) 82%,transparent);padding:3px 8px;border-radius:6px;font-variant-numeric:tabular-nums;margin-top:4px;display:inline-block}
+.mark{position:fixed;right:12px;font:600 12px Inter,system-ui,sans-serif;color:var(--mute);pointer-events:none;bottom:calc(var(--dock,0px) + 8px)}
+svg.cross{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;transition:opacity .25s}
 svg.cross line{stroke:var(--fg);stroke-width:1;stroke-dasharray:4 4;opacity:.5}
-#words{transition:opacity .25s}
-.panel{background:var(--panel);border-radius:10px;padding:14px;display:grid;gap:12px}
-input[type=range]{width:100%;accent-color:var(--accent);height:34px}
-.scale{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);font-variant-numeric:tabular-nums}
-.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--mute)}.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
-.note{font-size:13px;color:var(--mute);margin:0;max-width:72ch}
-label.chk{font-size:14px;display:flex;gap:6px;align-items:center}
+#words{position:fixed;inset:0;pointer-events:none;font:600 13px Inter,system-ui,sans-serif;color:var(--fg);transition:opacity .25s}
+.dock{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--panel) 88%,transparent);backdrop-filter:blur(6px);border-top:1px solid var(--line);display:grid;gap:8px}
+.dock.min .body{display:none}
+.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+button{font:500 15px Inter,system-ui,sans-serif;background:var(--btn);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:9px 16px;min-height:44px;cursor:pointer}
+button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.lab{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin-right:2px}
+input[type=range]{width:100%;accent-color:var(--accent);height:44px}
+.scale{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);font-variant-numeric:tabular-nums;margin-top:-6px}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12.5px;color:var(--mute)}.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+label.chk{font-size:15px;display:flex;gap:6px;align-items:center;min-height:44px}
+.spacer{flex:1}
+dialog{max-width:min(640px,calc(100vw - 32px));border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--fg);padding:18px}
+dialog::backdrop{background:rgba(0,0,0,.35)}
+dialog p{margin:0 0 10px;font-size:14px;color:var(--fg);max-width:68ch}dialog h2{font:650 18px Fraunces,Georgia,serif;margin:0 0 8px}
 </style>
-<main>
-<h1><b>DICTO</b> · Polar Dharma Explorer</h1>
-<p class="lede">The Spheres of Dharma and their polar image, the cycle flipped up–down. Everything here is true geometry, computed live in your browser.</p>
-<div class="row" role="tablist">
-  <button id="tabToggle" aria-pressed="true">The toggle</button>
-  <button id="tabCore" aria-pressed="false">The infinite core</button>
-  <button id="tabLock" aria-pressed="false">The interlock</button>
+<div class="stage" id="stage"></div>
+<svg class="cross" id="cross" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="50" y1="0" x2="50" y2="100" vector-effect="non-scaling-stroke"/><line x1="0" y1="50" x2="100" y2="50" vector-effect="non-scaling-stroke"/></svg>
+<div id="words"><span id="wUp" style="position:absolute;left:50%;transform:translateX(-50%)">up</span><span id="wDown" style="position:absolute;left:50%;transform:translateX(-50%)">down</span>
+  <span id="wLeft" style="position:absolute;left:8px">left</span><span id="wRight" style="position:absolute;right:8px">right</span></div>
+<div class="top"><div><h1><b>DICTO</b> · Polar Dharma</h1><div class="read" id="read"></div></div></div>
+<div class="mark">DICTO · dictospheres.com</div>
+<div class="dock" id="dock">
+  <div class="row"><button id="tabToggle" aria-pressed="true">Toggle</button><button id="tabCore" aria-pressed="false">Infinite core</button><button id="tabLock" aria-pressed="false">Interlock</button>
+    <span class="spacer"></span><button id="bAbout">About</button><button id="bHide">Hide controls</button></div>
+  <div class="body">
+    <section id="pToggle" style="display:grid;gap:6px">
+      <div><input type="range" id="rho" min="0" max="1000" value="0" aria-label="Toggle sphere"><div class="scale"><span>ends shared · ρ = φ/2</span><span>middle shared · ρ = φ√3/2</span></div></div>
+      <div class="row"><button id="bEnds">Ends</button><button id="bMid">Middle</button><button id="bPlayT">Play</button><label class="chk"><input type="checkbox" id="cutT" checked> Cut</label></div>
+    </section>
+    <section id="pCore" hidden><div class="row"><button id="bFall">Fall in</button><button id="bRise">Rise out</button><button id="bStop">Stop</button></div></section>
+    <section id="pLock" hidden style="display:grid;gap:6px">
+      <div class="row"><button id="sEnds" aria-pressed="true">Ends shared</button><button id="sMid" aria-pressed="false">Middle shared</button><span class="lab">colour</span><button id="cOrig" aria-pressed="true">yours</button><button id="cFlip" aria-pressed="false">flipped</button><button id="bKey" aria-pressed="false">Key</button></div>
+      <div class="legend" id="legLock"></div>
+    </section>
+    <div class="row" style="margin-top:6px"><span class="lab">view along</span><button data-ax="5" aria-pressed="true">5-fold</button><button data-ax="3">3-fold</button><button data-ax="2">2-fold</button><label class="chk"><input type="checkbox" id="flat" checked> Flat</label></div>
+  </div>
 </div>
-<div class="stage" id="stage">
-  <svg class="cross" id="cross" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="50" y1="0" x2="50" y2="100" vector-effect="non-scaling-stroke"/><line x1="0" y1="50" x2="100" y2="50" vector-effect="non-scaling-stroke"/></svg>
-  <div id="words" style="position:absolute;inset:0;pointer-events:none;font:600 13px Inter,system-ui,sans-serif;color:var(--fg)">
-    <span style="position:absolute;top:30px;left:50%;transform:translateX(-50%)">up</span><span style="position:absolute;bottom:26px;left:50%;transform:translateX(-50%)">down</span>
-    <span style="position:absolute;left:8px;top:50%;transform:translateY(-140%)">left</span><span style="position:absolute;right:8px;top:50%;transform:translateY(-140%)">right</span></div>
-  <div class="read" id="read"></div><div class="mark">DICTO · dictospheres.com</div>
-</div>
-<div class="row"><span class="lab">View along</span><button data-ax="5" aria-pressed="true">5-fold</button><button data-ax="3">3-fold</button><button data-ax="2">2-fold</button>
-  <label class="chk"><input type="checkbox" id="flat" checked> Flat (no perspective)</label></div>
-<section class="panel" id="pToggle">
-  <div><input type="range" id="rho" min="0" max="1000" value="0" aria-label="Toggle sphere"><div class="scale"><span>ρ = φ/2 · ends shared</span><span>ρ = φ√3/2 · middle shared</span></div></div>
-  <div class="row"><button id="bEnds">Ends setting</button><button id="bMid">Middle setting</button><button id="bPlayT">Play</button><label class="chk"><input type="checkbox" id="cutT" checked> Cut in half</label></div>
-  <div class="legend"><span><i style="background:var(--warm)"></i>your Spheres of Dharma</span><span><i style="background:var(--cool)"></i>the flipped cycle</span><span><i style="background:var(--ink)"></i>shared at an exact setting</span></div>
-  <p class="note">The flipped cycle scales by ρ² as you slide. At exactly two settings it clicks into yours: at ρ = φ/2 both run through the same icosahedron and dodecahedron, at ρ = φ√3/2 through the same icosidodecahedron and triacontahedron. The settings differ by exactly ×3 in ρ², not a power of φ, so no toggle shares both.</p>
-</section>
-<section class="panel" id="pCore" hidden>
-  <div class="row"><button id="bFall">Fall in</button><button id="bRise">Rise out</button><button id="bStop">Stop</button></div>
-  <p class="note">The outer dodecahedron is exactly φ³ times the inner one, so a copy of the whole nest fills the core, forever; the great stellated dodecahedron (orange) is locked at the heart of every turn. Scroll or pinch to zoom: every ×φ³ you arrive where you started, one turn deeper.</p>
-</section>
-<section class="panel" id="pLock" hidden>
-  <div class="row"><span class="lab">Setting</span><button id="sEnds" aria-pressed="true">Ends shared</button><button id="sMid" aria-pressed="false">Middle shared</button></div>
-  <div class="row"><span class="lab">Colour by</span><button id="cOrig" aria-pressed="true">your layers</button><button id="cFlip" aria-pressed="false">flipped layers</button></div>
-  <div class="legend" id="legLock"></div>
-  <p class="note">Both cycles as one solid: every piece of yours cut by every piece of the flipped cycle, checked exactly. Each piece lies in one layer of each cycle, and every piece of yours is exactly the sum of its parts. <b>Ends shared</b>: 536 pieces, 12 kinds. Your outer roofs are cut the most, and the middle columns pass through whole. <b>Middle shared</b>: 502 pieces, 11 kinds. The roofs pass through whole, and the middle layers are cut instead. The toggle moves where the two cycles cut each other. Switch the colouring to see both patterns in the same pieces. The hole at the centre is where the next turn inward begins.</p>
-</section>
-<p class="note">Drag to turn it freely. Press Play, Fall in, or a view button, and it glides back to the chosen axis, centred, with up, down, left and right marked, so every moving picture has the same bearings.</p>
-</main>
+<dialog id="about"><h2>Polar Dharma Explorer</h2>
+<p>The Spheres of Dharma and their polar image, the cycle flipped up–down. Everything is true geometry, computed live in your browser.</p>
+<p><b>Toggle.</b> The flipped cycle (cool colours) scales by ρ² as you slide. At exactly two settings it clicks into yours (warm): at ρ = φ/2 both run through the same icosahedron and dodecahedron, at ρ = φ√3/2 through the same icosidodecahedron and triacontahedron. The settings differ by exactly ×3 in ρ², not a power of φ, so no toggle shares both.</p>
+<p><b>Infinite core.</b> The outer dodecahedron is exactly φ³ times the inner one, so a copy of the whole nest fills the core, forever, with the great stellated dodecahedron locked at the heart of every turn. Every ×φ³ of zoom brings you back where you started, one turn deeper.</p>
+<p><b>Interlock.</b> Both cycles as one solid: every piece of yours cut by every piece of the flipped cycle, checked exactly in ℚ(√5). Ends shared: 536 pieces, 12 kinds. Middle shared: 502 pieces, 11 kinds. The toggle moves where the two cycles cut each other.</p>
+<p><b>Moving.</b> Drag to turn freely and pinch or scroll to zoom. Play, Fall in, a tab or a view button glides it back to the chosen axis, centred, with up, down, left and right marked.</p>
+<form method="dialog"><button>Close</button></form></dialog>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="data.js"></script>
 <script>
@@ -75,8 +73,20 @@ label.chk{font-size:14px;display:flex;gap:6px;align-items:center}
   const persp = new THREE.PerspectiveCamera(30, 1, 0.0005, 400), ortho = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.0005, 400);
   persp.position.set(0, 0, 10); ortho.position.set(0, 0, 100);
   const clip = new THREE.Plane(new THREE.Vector3(0, 0, -1), 0);            // the camera looks down -z: keep the far half
-  function resize() { const w = stage.clientWidth; renderer.setSize(w, w, false); }
-  window.addEventListener('resize', resize); resize();
+  let W = 1, Hh = 1; const TOP = 64;   // the title band
+  function resize() { W = stage.clientWidth; Hh = stage.clientHeight; renderer.setSize(W, Hh, false); persp.aspect = W / Hh; persp.updateProjectionMatrix(); place(); }
+  const dock = $('dock');
+  function place() {   // keep the picture centred in the space above the dock; the crosshair and words follow it
+    const dh = dock.offsetHeight; document.documentElement.style.setProperty('--dock', dh + 'px');
+    const cy = TOP + (Hh - dh - TOP) / 2, vb = $('cross'); vb.setAttribute('viewBox', `0 0 ${W} ${Hh}`);
+    vb.innerHTML = `<line x1="${W / 2}" y1="0" x2="${W / 2}" y2="${Hh - dh}"/><line x1="0" y1="${cy}" x2="${W}" y2="${cy}"/>`;
+    $('wUp').style.top = (TOP + 2) + 'px'; $('wDown').style.top = (Hh - dh - 26) + 'px'; $('wLeft').style.top = $('wRight').style.top = (cy - 22) + 'px';
+  }
+  $('bHide').onclick = () => { dock.classList.toggle('min'); $('bHide').textContent = dock.classList.contains('min') ? 'Show controls' : 'Hide controls'; place(); };
+  $('bAbout').onclick = () => $('about').showModal();
+  const keyOn = (on) => { $('legLock').hidden = !on; $('bKey').setAttribute('aria-pressed', on); place(); };
+  $('bKey').onclick = () => keyOn($('legLock').hidden); keyOn(window.innerWidth >= 700);
+  window.addEventListener('resize', resize); new ResizeObserver(place).observe(dock); resize();
   const light = (sc) => { sc.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.85)); const s = new THREE.DirectionalLight(0xffffff, 0.6); s.position.set(3, 5, 8); sc.add(s); };
   const tris = (S, out, shrink) => { let c = S.c; if (!c) { c = [0, 0, 0]; for (const v of S.v) for (let i = 0; i < 3; i++) c[i] += v[i] / S.v.length; }
     const V = shrink ? S.v.map((p) => p.map((x, i) => c[i] + (x - c[i]) * shrink)) : S.v;
@@ -178,6 +188,7 @@ label.chk{font-size:14px;display:flex;gap:6px;align-items:center}
   function stopMotion() { playT = false; fall = 0; $('bPlayT').textContent = 'Play'; }
   function setMode(m) { mode = m; stopMotion(); zoom = 1;
     for (const [t, p, k] of [['tabToggle', 'pToggle', 'toggle'], ['tabCore', 'pCore', 'core'], ['tabLock', 'pLock', 'lock']]) { $(t).setAttribute('aria-pressed', m === k); $(p).hidden = m !== k; }
+    requestAnimationFrame(place);
     if (m === 'core') zoom = 0.9; glide(); }
   $('tabToggle').onclick = () => setMode('toggle'); $('tabCore').onclick = () => setMode('core'); $('tabLock').onclick = () => setMode('lock');
   let last = performance.now();
@@ -187,8 +198,12 @@ label.chk{font-size:14px;display:flex;gap:6px;align-items:center}
     const st = mode === 'toggle' ? stepToggle(dt) : mode === 'core' ? stepCore(dt) : stepLock();
     st.world.quaternion.copy(q); st.scene.background = new THREE.Color(css('--bg'));
     const half = st.half * zoom;
-    let cam; if ($('flat').checked) { cam = ortho; Object.assign(ortho, { left: -half, right: half, top: half, bottom: -half }); ortho.updateProjectionMatrix(); }
-    else { cam = persp; persp.position.set(0, 0, half / TAN); persp.lookAt(0, 0, 0); }
+    // fit the picture into the space above the dock and centre it there (a view offset shifts the projection, not the geometry)
+    const dh = dock.offsetHeight, avail = Math.max(120, Hh - dh - TOP), fit = half * Math.max(Hh / avail, Hh / W) * 1.03;
+    const cy = TOP + avail / 2;                                  // where the centre should appear
+    let cam; if ($('flat').checked) { cam = ortho; const a = W / Hh; Object.assign(ortho, { left: -fit * a, right: fit * a, top: fit, bottom: -fit }); }
+    else { cam = persp; persp.position.set(0, 0, fit / TAN); persp.lookAt(0, 0, 0); }
+    cam.setViewOffset(W, Hh, 0, Hh / 2 - cy, W, Hh); cam.updateProjectionMatrix();
     renderer.render(st.scene, cam);
     const on = aligned(); $('cross').style.opacity = on ? 1 : 0; $('words').style.opacity = on ? 1 : 0;
     requestAnimationFrame(loop);
