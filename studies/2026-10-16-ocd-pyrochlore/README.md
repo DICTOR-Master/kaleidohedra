@@ -252,3 +252,15 @@ Exact in ℚ(√5), core plane of step 26, radius-10 run.
 
 - **Not shown:** *why* hardness picks the canonical window. A reasonable guess is that the copy at t = L_can just touches; that is not checked.
 - **Not covered:** the off-plane ring (distance 1.0042).
+
+## Step 28: why the window, the five-fold ring clashes with itself (`scripts/chorus_window_why.py` → `data/chorus-window-why.txt`)
+
+Exact in ℚ(√5).
+
+- **The mechanism.** Every core-plane copy was tested against its own four ring-mates (itself turned by 72°k). **Overlap ⇔ t < L_can**, for all 11 silent and 4 kept plane copies. So the core silences are forced by the five-fold ring clashing with itself: a copy too close to the axis cannot coexist with its own rotations.
+- **The edge copy.** The copy at t = L_can does **not** touch its ring-mates; it clears them by 28/81 − 4√5/27 ≈ 0.014. The step-27 guess was wrong.
+- **Critical distance.** A ring-mate pair differs by a purely transverse vector proportional to t, so there is one exact critical distance: **t_c² = 8/9 + 8√5/45 (t_c = 1.134201)**, the same for every plane copy. It lies strictly between the largest silent t (1.113132) and L_can (1.223451). **t_c ≠ L_can.**
+- **Consequence.**
+  - The ring-clash rule alone gives the window [0, t_c), narrower than canonical. Within the build no plane lattice point has t in [t_c, L_can), so the two windows agree, and the core equals the canonical Fibonacci chain **for |height| < 12.812**. The build reaches |height| < 10.
+  - Beyond that, the ring-clash chain keeps copies the canonical chain would include: the first is at height 12.812 (t = 1.1553), then −22.71 and 34.77. There it becomes the three-gap (L, S, L+S) cut-and-project chain, a Fibonacci chain with points thinned out: still an exact quasicrystal, but not the Fibonacci word.
+- **Open:** whether some other clash (not a ring-mate) silences those copies, which would restore Fibonacci. That needs a build to about radius 14, or a targeted check of the copy at height 12.81.
