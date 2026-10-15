@@ -278,3 +278,20 @@ Exact in ℚ(√5) for every overlap and touch; the greedy silencing is float, a
 - On the patch, the other core-plane copies near the target agree with both windows.
 
 **Result.** Hardness alone does not decide the spine beyond height 12.8. The canonical Fibonacci chain and the thinned chain are **equally minimal** there. They differ by which of two clashing rings is silenced. The chorus's tie-break chooses the thinned chain. Fibonacci holds exactly for |height| < 12.81 and continues only under a rule that prefers silencing core-plane rings.
+
+### Prior-art search for steps 22–29 (2026-10-15; library first, then web)
+
+**Already known (cite, don't claim):**
+- **Irrational interfaces between periodic crystals are one-dimensional quasicrystals.** Sutton, Acta Metall. 36, 1291 (1988), doi:10.1016/0001-6160(88)90281-7; Phase Transitions 16, 563 (1989); review Prog. Mater. Sci. 36, 167 (1992). Also Rivier & Lawrence, Physica B+C 150, 190 (1988).
+- **The icosahedral irrational twin**, with its coincidence-lattice approximants built as Fibonacci stackings: Ranganathan, Srivastava & Lord 2006 (already in the library).
+- **Directed multiple twinning of cubic crystals as apparent icosahedral order:** Pauling 1985 (in the library).
+- **Cyclic twinning of golden rhombohedra equals icosahedral tiling, with Fibonacci periodicities:** Prodan et al., Sci. Rep. 7, 12474 (2017), doi:10.1038/s41598-017-12669-w.
+- **A cut-and-project framework for interfaces, with generalized Fibonacci sequences in BCC [110] tilt boundaries:** Xiong, Zou, Zhang & Jiang, arXiv:2603.21158 (2026).
+- **Hard shapes forming five-fold twinned clusters:** Lee & Glotzer 2022 (in the library).
+
+**Not found:**
+- a five-fold junction of five periodic packings of one hard polyhedron, where the junction axis carries an exact Fibonacci cut-and-project chain;
+- the selection of that chain's window by the five-fold ring's self-clash (exact t_c);
+- the equal-cost fork beyond it (step 29).
+
+**Reading.** The chorus spine is a new, exact instance of a known family: irrational interfaces as quasicrystals. It is not a new phenomenon. Any write-up must cite Sutton, Ranganathan et al. and Prodan et al. The search used 1 library grep, 6 web searches and 2 abstract reads. It is not a specialist literature review; a twinning or quasicrystal specialist could know more.

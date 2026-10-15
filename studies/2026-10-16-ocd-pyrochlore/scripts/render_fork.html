@@ -1,0 +1,59 @@
+<!doctype html><meta charset="utf-8"><title>Fork at height 12.8 (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}#tag{position:fixed;right:12px;bottom:8px;font:600 14px system-ui;color:#5b5346}#ttl{position:fixed;left:12px;top:8px;font:600 16px system-ui;color:#2b2620}</style>
+<div id="ttl"></div><div id="tag">DICTO · dictospheres.com</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// Golden Bodhi Pyrochlore step 29: the fork at height 12.8. Target core copy (gold) and the one copy it overlaps (magenta, height
+// 13.80); their exact overlap in red; ring-mates pale; copies touching the target grey; the five-fold axis with the canonical chain
+// points as dots (target height ringed). #side (axis vertical) | #top (down the axis) | #lens (close on the overlap).
+(async function () {
+  const G = await fetch('chorus-fork.json').then((r) => r.json());
+  const scn = location.hash.slice(1) || 'side', a5 = new THREE.Vector3(...G.a5), T = new THREE.Vector3(...G.target), Rv = new THREE.Vector3(...G.rival);
+  const r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); r.setSize(1000, 1000); r.setPixelRatio(1); document.body.prepend(r.domElement);
+  const sc = new THREE.Scene(); sc.background = new THREE.Color(0xf4f1ea); sc.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.9)); const sun = new THREE.DirectionalLight(0xffffff, 0.6); sc.add(sun);
+  const pos = []; for (const f of G.faces) for (let i = 1; i + 1 < f.length; i++) pos.push(...G.ocd[f[0]], ...G.ocd[f[i]], ...G.ocd[f[i + 1]]);
+  const OG = new THREE.BufferGeometry(); OG.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); OG.computeVertexNormals();
+  const epos = []; for (const f of G.faces) for (let i = 0; i < f.length; i++) epos.push(...G.ocd[f[i]], ...G.ocd[f[(i + 1) % f.length]]);
+  const EG = new THREE.BufferGeometry(); EG.setAttribute('position', new THREE.Float32BufferAttribute(epos, 3));
+  function add(g, eg, col, op, at, ecol = 0x2a2218) {
+    const grp = new THREE.Group();
+    grp.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: col, roughness: 0.5, flatShading: true, side: THREE.DoubleSide, transparent: op < 1, opacity: op, depthWrite: op >= 1 })));
+    grp.add(new THREE.LineSegments(eg, new THREE.LineBasicMaterial({ color: ecol, transparent: op < 1, opacity: Math.min(1, op + 0.3) })));
+    if (at) grp.position.copy(at); sc.add(grp); return grp;
+  }
+  const lp = []; for (const t of G.lensTri) for (const k of t) lp.push(...G.lens[k]);
+  const LG = new THREE.BufferGeometry(); LG.setAttribute('position', new THREE.Float32BufferAttribute(lp, 3)); LG.computeVertexNormals();
+  const LE = new THREE.EdgesGeometry(LG, 1);
+  const lens = scn === 'lens';
+  if (!lens) {
+    for (const p of G.near) add(OG, EG, 0xd8cdb8, 0.08, new THREE.Vector3(...p), 0x8a8170);
+    for (const p of G.touch) add(OG, EG, 0xb0a894, 0.22, new THREE.Vector3(...p), 0x6d6556);
+    for (const p of G.targetRing) add(OG, EG, 0xffc857, 0.28, new THREE.Vector3(...p));
+    for (const p of G.rivalRing) add(OG, EG, 0xe91e63, 0.22, new THREE.Vector3(...p));
+  }
+  add(OG, EG, 0xffc857, lens ? 0.3 : 0.45, T); add(OG, EG, 0xe91e63, lens ? 0.3 : 0.4, Rv);
+  add(LG, LE, 0xd32f2f, 1, null, 0x4a0d0d);
+  // the axis and the canonical chain heights near the target
+  const h0 = G.hT - 3.2, h1 = G.hT + 3.2;
+  const ag = new THREE.BufferGeometry().setFromPoints([a5.clone().multiplyScalar(h0), a5.clone().multiplyScalar(h1)]);
+  sc.add(new THREE.Line(ag, new THREE.LineBasicMaterial({ color: 0x2b2620 })));
+  for (const h of G.chain) if (h > h0 && h < h1) {
+    const m = new THREE.Mesh(new THREE.SphereGeometry(Math.abs(h - G.hT) < 1e-6 ? 0.075 : 0.05, 20, 14), new THREE.MeshStandardMaterial({ color: Math.abs(h - G.hT) < 1e-6 ? 0xc62828 : 0x2b2620 }));
+    m.position.copy(a5.clone().multiplyScalar(h)); sc.add(m);
+  }
+  // cameras
+  const D = Rv.clone().sub(T); const Dp = D.clone().sub(a5.clone().multiplyScalar(D.dot(a5))).normalize();
+  const side = new THREE.Vector3().crossVectors(a5, Dp).normalize();
+  const lc = G.lens.reduce((s, v) => s.add(new THREE.Vector3(...v).divideScalar(G.lens.length)), new THREE.Vector3());
+  let C, dir, up, H;
+  if (scn === 'top') { C = a5.clone().multiplyScalar((G.hT + Rv.dot(a5)) / 2); dir = a5.clone(); up = Dp.clone(); H = 2.5; }
+  else if (scn === 'lens') { C = lc; dir = side.clone().multiplyScalar(0.8).add(a5.clone().multiplyScalar(0.25)).add(Dp.clone().multiplyScalar(-0.35)).normalize(); up = a5.clone(); H = 1.05; }
+  else { C = a5.clone().multiplyScalar((G.hT + Rv.dot(a5)) / 2).add(Dp.clone().multiplyScalar(0.6)); dir = side.clone().add(a5.clone().multiplyScalar(0.18)).normalize(); up = a5.clone(); H = 2.9; }
+  const cam = new THREE.OrthographicCamera(-H, H, H, -H, -60, 60); cam.position.copy(C.clone().add(dir.clone().multiplyScalar(25))); cam.up.copy(up); cam.lookAt(C);
+  sun.position.copy(cam.position.clone().add(up.clone().multiplyScalar(8))); r.render(sc, cam);
+  const pct = (100 * G.lensVol / G.ocdVol).toFixed(2);
+  document.getElementById('ttl').textContent = { side: 'Fork at height 12.8: core copy (gold) overlaps one copy at 13.8 (magenta); axis dots = Fibonacci chain',
+    top: 'Fork at height 12.8, down the five-fold axis: the two rings', lens: `Their exact overlap (red): ${pct}% of one copy` }[scn];
+  document.title = 'ready';
+})();
+</script>
