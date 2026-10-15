@@ -4,7 +4,8 @@
 import json, itertools, numpy as np
 from scipy.spatial import ConvexHull
 import sys, io, contextlib
-TIGHT = sys.argv[1:] == ['tight']                      # step 4: the tight nest (both loose ends tightened exactly)
+TIGHT = sys.argv[1:] == ['tight']
+PAIR = sys.argv[1] if sys.argv[1:] and sys.argv[1] in ('tid', 'rid') else None   # steps 8/9: a dual pair in the inner gap                      # step 4: the tight nest (both loose ends tightened exactly)
 sys.argv = ['polar.py', 'data/dharma_cycle.json']
 with contextlib.redirect_stdout(io.StringIO()):
     exec(open('scripts/polar.py').read())                  # rebuilds the exact reversed chain `rev`, with Q, S, volume, det3
@@ -43,7 +44,45 @@ if TIGHT:
     print(f'inner dodecahedron x {s0!r} = {s0.f():.9f}; outer dodecahedron x {s6!r} = {s6.f():.9f}')
     cl = sum((rev[-1][1][0][i] * rev[-1][1][0][i] for i in range(3)), Q(0)) / sum((rev[0][1][0][i] * rev[0][1][0][i] for i in range(3)), Q(0))
     print(f'closure, outer / inner dodecahedron: squared linear ratio {cl!r} = {cl.f():.9f}, linear {cl.f() ** 0.5:.9f}, volume ratio {cl.f() ** 1.5:.9f}')
-FL = json.load(open('data/polar-tight-pieces.json' if TIGHT else 'data/polar-pieces.json'))
+def grow_exact(A, B):                                       # exact largest s with s*A inside B
+    best = None
+    for idx, n, d in exact_planes(B):
+        m = max((sum((n[i] * a[i] for i in range(3)), Q(0)) for a in A), key=lambda x: x.f()); s_ = d / m
+        if best is None or s_.f() < best.f(): best = s_
+    return best
+if PAIR:
+    p_ = Q(Fr(1, 2), Fr(1, 2)); ip = p_ - Q(1); one = Q(1); two = Q(2); three = Q(3); z = Q(0)
+    ARCHX = {'truncated icosidodecahedron': [(ip, ip, three + p_), (two * ip, p_, one + two * p_), (ip, p_ * p_, three * p_ - one), (two * p_ - one, two, two + p_), (p_, three, two * p_)],
+             'rhombicosidodecahedron': [(one, one, p_ * p_ * p_), (p_ * p_, p_, two * p_), (two + p_, z, p_ * p_)]}
+    def cycx(pts):
+        out = {}
+        for x, y, w in pts:
+            for sg in itertools.product(*[[1, -1] if c.f() != 0 else [1] for c in (x, y, w)]):
+                a = [c * k for c, k in zip((x, y, w), sg)]
+                for r in range(3):
+                    v = a[r:] + a[:r]; out[tuple((c.a, c.b) for c in v)] = v
+        return list(out.values())
+    ax = f(rev[[n for n, _ in rev].index('icosahedron')][1])[0]; ax = ax / np.linalg.norm(ax)
+    from scipy.spatial.transform import Rotation as _R
+    R5 = _R.from_rotvec(ax * 2 * np.pi / 5).as_matrix()
+    def symf(V): W = V @ R5.T; return all(np.min(np.linalg.norm(V - w, axis=1)) < 1e-9 * np.linalg.norm(V, axis=1).max() for w in W)
+    def dualx(V): return [[c / d for c in n] for idx, n, d in exact_planes(V)]
+    Ra = 'truncated icosidodecahedron' if PAIR == 'tid' else 'rhombicosidodecahedron'
+    A0 = cycx(ARCHX[Ra])
+    for sw in ([0, 1, 2], [1, 0, 2], [0, 2, 1], [2, 1, 0]):
+        Aw = [[v[i] for i in sw] for v in A0]
+        if symf(f(Aw)): break
+    else: raise SystemExit('frame')
+    Cw = dualx(Aw); assert symf(f(Cw))
+    Xn, Yn, X, Y = ('disdyakis triacontahedron', Ra, Cw, Aw) if PAIR == 'tid' else (Ra, 'deltoidal hexecontahedron', Aw, Cw)
+    D0, ID0 = rev[0][1], rev[1][1]
+    s1 = Q(1) / grow_exact(D0, X); s2 = grow_exact(Y, ID0)
+    X = [[c * s1 for c in v] for v in X]; Y = [[c * s2 for c in v] for v in Y]
+    play = grow_exact(X, Y)
+    rev = [rev[0], (Xn, X), (Yn, Y)] + rev[1:]
+    print(f'{Xn} x {s1!r}; {Yn} x {s2!r}; play {play!r} = {play.f():.9f}')
+edge_pts = [0]
+FL = json.load(open(f'data/polar-pair{"" if PAIR == "tid" else "-rid"}-pieces.json' if PAIR else 'data/polar-tight-pieces.json' if TIGHT else 'data/polar-pieces.json'))
 out = []
 for k in range(len(rev) - 1):
     (na, A), (nb, B) = rev[k], rev[k + 1]
@@ -61,21 +100,23 @@ for k in range(len(rev) - 1):
             a, b = A[i0], A[i1]; n = [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]]
             if all(x.f() == 0 for x in n): continue
             planes.append((n, Q(0)))
-        Ve = []
+        Ve, Vk = [], []
         for v in Vp:
             act = [p for p in planes if abs(sum(p[0][i].f() * v[i] for i in range(3)) - p[1].f()) < 1e-7 * max(1, np.linalg.norm([x.f() for x in p[0]]))]
             sol = None
             for P3 in itertools.combinations(act, 3):
                 sol = solve3(P3)
-                if sol is not None: break
+                if sol is not None and max(abs(sol[i].f() - v[i]) for i in range(3)) < 1e-7: break   # the triple must give this corner
+                sol = None
+            if sol is None and len(act) == 2: edge_pts[0] += 1; continue   # a float point on an edge, not a corner (the exact sums below confirm)
             assert sol is not None and max(abs(sol[i].f() - v[i]) for i in range(3)) < 1e-7, ('no exact corner', v)
-            Ve.append(sol)
-        vol = volume(Ve, Vp); total = total + vol; vols.add(vol)
+            Ve.append(sol); Vk.append(v)
+        Vp = np.array(Vk); vol = volume(Ve, Vp); total = total + vol; vols.add(vol)
         h = ConvexHull(Vp); E = {tuple(sorted((int(a), int(b)))) for s in h.simplices for a, b in itertools.combinations(s, 2)}
         L2 = sorted({(sq(Ve[a], Ve[b]).a, sq(Ve[a], Ve[b]).b) for a, b in E if True})
         shapes.add(tuple(L2))
     lay = volume(B, f(B)) - volume(A, f(A))
-    out.append(f'{na} -> {nb}: {len(layer_float)} pieces; one volume each: {len(vols) == 1}; piece volume {next(iter(vols))!r}; '
+    out.append(f'{na} -> {nb}: {len(layer_float)} pieces ({edge_pts[0]} float edge points dropped so far); one volume each: {len(vols) == 1}; piece volume {next(iter(vols))!r}; '
                f'sum - layer = {total - lay!r}')
-out = ([f'inner dodecahedron x {s0!r}; outer dodecahedron x {s6!r}; squared closure ratio {cl!r} (linear {cl.f() ** 0.5:.9f})'] if TIGHT else []) + out
-print('\n'.join(out)); open('data/polar-tight-exact.txt' if TIGHT else 'data/polar-exact.txt', 'w').write('\n'.join(out) + '\n')
+out = ([f'inner dodecahedron x {s0!r}; outer dodecahedron x {s6!r}; squared closure ratio {cl!r} (linear {cl.f() ** 0.5:.9f})'] if TIGHT else [f'{Xn} x {s1!r}; {Yn} x {s2!r}; play {play!r} = {play.f():.9f}'] if PAIR else []) + out
+print('\n'.join(out)); open(f'data/polar-pair{"" if PAIR == "tid" else "-rid"}-exact.txt' if PAIR else 'data/polar-tight-exact.txt' if TIGHT else 'data/polar-exact.txt', 'w').write('\n'.join(out) + '\n')

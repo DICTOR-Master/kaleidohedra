@@ -6,7 +6,7 @@
 // The Spheres of Dharma turned inside out (polar reciprocation), one kind of piece per layer; house palette, each layer its own colour.
 (async function () {
   const scn = location.hash.slice(1) || 'closed';
-  const J = await fetch(location.search.includes('pair') ? 'polar-pair-render.json' : location.search.includes('tight') ? 'polar-tight-render.json' : location.search.includes('gsd') ? 'polar-gsd-render.json' : 'polar-render.json').then((r) => r.json());
+  const J = await fetch(location.search.includes('pairrid') ? 'polar-pair-rid-render.json' : location.search.includes('pair') ? 'polar-pair-render.json' : location.search.includes('tight') ? 'polar-tight-render.json' : location.search.includes('gsd') ? 'polar-gsd-render.json' : 'polar-render.json').then((r) => r.json());
   const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(1000, 1000); renderer.setPixelRatio(1); renderer.localClippingEnabled = true;
   document.body.appendChild(renderer.domElement);
   const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);

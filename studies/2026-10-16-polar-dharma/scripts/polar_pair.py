@@ -2,22 +2,24 @@
 # reversed chain the pair goes in reverse order too (DICTO): the disdyakis triacontahedron (DT) inside the truncated
 # icosidodecahedron (TID). DT grows until it touches the inner dodecahedron, TID until it touches the icosidodecahedron; the
 # play (x1.052) stays between the pair. Writes the chain, then the cone cut (polar_pieces.py) and render data.
-import json, subprocess, numpy as np
+import json, subprocess, sys, numpy as np
+WHICH = sys.argv[1] if len(sys.argv) > 1 else 'tid'          # step 9 (DICTO): 'rid' = rhombicosidodecahedron inside deltoidal hexecontahedron
 from scipy.spatial import ConvexHull
-exec(open('scripts/polar_round.py').read().split('def rad(V, u):')[0])
+_argv = sys.argv; sys.argv = ['x']; exec(open('scripts/polar_round.py').read().split('def rad(V, u):')[0]); sys.argv = _argv
 CL = json.load(open('data/reversed-chain.json')); D, ID = C['dodecahedron (inner)'], C['icosidodecahedron']
 def grow(A, B): return min(-e[3] / max(A @ e[:3]) for e in ConvexHull(B).equations)
-X, Y = SOL['disdyakis triacontahedron'], SOL['truncated icosidodecahedron']
+NX, NY = {'tid': ('disdyakis triacontahedron', 'truncated icosidodecahedron'), 'rid': ('rhombicosidodecahedron', 'deltoidal hexecontahedron')}[WHICH]
+X, Y = SOL[NX], SOL[NY]; TAG = '' if WHICH == 'tid' else '-rid'
 X = X / grow(D, X); Y = Y * grow(Y, ID)
-lines = [f'DT scaled to touch the dodecahedron, TID to touch the icosidodecahedron; play between them x{grow(X, Y):.6f}',
-         f'radii: D {np.linalg.norm(D, axis=1).max():.6f}, DT {np.linalg.norm(X, axis=1).min():.6f}-{np.linalg.norm(X, axis=1).max():.6f} '
-         f'(inradius {min(-ConvexHull(X).equations[:, 3]):.6f}), TID inradius {min(-ConvexHull(Y).equations[:, 3]):.6f}, '
+lines = [f'{NX} scaled to touch the dodecahedron, {NY} to touch the icosidodecahedron; play between them x{grow(X, Y):.6f}',
+         f'radii: D {np.linalg.norm(D, axis=1).max():.6f}, inner {np.linalg.norm(X, axis=1).min():.6f}-{np.linalg.norm(X, axis=1).max():.6f} '
+         f'(inradius {min(-ConvexHull(X).equations[:, 3]):.6f}), outer inradius {min(-ConvexHull(Y).equations[:, 3]):.6f}, '
          f'ID inradius {min(-ConvexHull(ID).equations[:, 3]):.6f}']
-print('\n'.join(lines)); open('data/polar-pair.txt', 'w').write('\n'.join(lines) + '\n')
-chain = [CL[0], ['disdyakis triacontahedron', X.tolist()], ['truncated icosidodecahedron', Y.tolist()]] + CL[1:]
-json.dump(chain, open('data/reversed-chain-pair.json', 'w'))
-subprocess.run(['python3', 'scripts/polar_pieces.py', 'data/reversed-chain-pair.json', 'data/polar-pair-pieces.txt', 'data/polar-pair-pieces.json'], check=True)
-PC = json.load(open('data/polar-pair-pieces.json'))
+print('\n'.join(lines)); open(f'data/polar-pair{TAG}.txt', 'w').write('\n'.join(lines) + '\n')
+chain = [CL[0], [NX, X.tolist()], [NY, Y.tolist()]] + CL[1:]
+json.dump(chain, open(f'data/reversed-chain-pair{TAG}.json', 'w'))
+subprocess.run(['python3', 'scripts/polar_pieces.py', f'data/reversed-chain-pair{TAG}.json', f'data/polar-pair{TAG}-pieces.txt', f'data/polar-pair{TAG}-pieces.json'], check=True)
+PC = json.load(open(f'data/polar-pair{TAG}-pieces.json'))
 def solid(V):
     V = np.array(V); h = ConvexHull(V); F = []
     for e in h.equations:
@@ -27,4 +29,4 @@ def solid(V):
         F.append([idx[i] for i in np.argsort(np.arctan2((Qp - c) @ b, (Qp - c) @ a))])
     return {'v': V.tolist(), 'f': F, 'c': V.mean(0).tolist()}
 R = {'layers': [{'name': k, 'pieces': [solid(V) for V in L]} for k, L in PC.items()], 'core': solid(chain[0][1]), 'outer': solid(chain[-1][1])}
-json.dump(R, open('data/polar-pair-render.json', 'w'))
+json.dump(R, open(f'data/polar-pair{TAG}-render.json', 'w'))

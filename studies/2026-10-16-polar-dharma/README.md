@@ -110,4 +110,16 @@ The truncated icosidodecahedron does not fit inside its dual (slack 0.980). As D
 - TID → ID: 50 caps of two kinds, on the 30 squares and 20 hexagons.
 - Each layer's sum equals the layer volume.
 
-The outer layers are unchanged. Renders: `renders/polar-pair-*.png` (`node shoot_polar.mjs pair`). None of this is exact yet.
+The outer layers are unchanged. Renders: `renders/polar-pair-*.png` (`node shoot_polar.mjs pair`).
+
+**Exact check** (`polar_exact.py tid` → `data/polar-pair-exact.txt`): DT is scaled by 9 − 3√5 (= 6/φ²) and TID by 2/15, and the play is 5/9 + 2/9·√5 (= √5·φ³/9 ≈ 1.0525). Every layer's sum minus its layer volume is exactly 0. The DT → TID piece is −2300048/37125 + 3086012/111375·√5. The float hull's extra points that lie on edges (not true corners) are dropped, and the exact sums confirm that is safe.
+
+## Step 9: the rhombicosidodecahedron pair (DICTO, 2026-10-16)
+
+`polar_pair.py rid` builds the chain D ⊂ RID ⊂ DH ⊂ ID. The rhombicosidodecahedron (RID) touches the inner dodecahedron and the deltoidal hexecontahedron (DH) touches ID. The cut gives:
+
+- D → RID: 12 pieces of one kind.
+- RID → DH: 62 pieces in 3 kinds, on the 12 pentagons, 30 squares and 20 triangles. The script's "40 kinds" is shape-key noise.
+- DH → ID: 60 pieces of one kind.
+
+**Exact check** (`polar_exact.py rid` → `data/polar-pair-rid-exact.txt`): RID is scaled by −153/11 + 69/11·√5 and DH by 1 + 3/5·√5. The play is exactly 62/123 + 137/615·√5 = 1.002181, so the pair is close to locked but not locked. All layer sums are exact. Renders: `renders/polar-pairrid-*.png`.
