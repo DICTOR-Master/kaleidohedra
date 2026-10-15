@@ -5,9 +5,10 @@
 <script>
 // The Spheres of Dharma turned inside out (polar reciprocation), one kind of piece per layer; house palette, each layer its own colour.
 (async function () {
+  if (location.search.includes('notag')) document.getElementById('tag').hidden = true;   // inner levels of the seamless core
   const scn = location.hash.slice(1) || 'closed';
   const J = await fetch(location.search.includes('turns') ? 'polar-turns-render.json' : location.search.includes('rect') ? 'polar-rect-render.json' : location.search.includes('pairrid') ? 'polar-pair-rid-render.json' : location.search.includes('pair') ? 'polar-pair-render.json' : location.search.includes('tight') ? 'polar-tight-render.json' : location.search.includes('gsd') ? 'polar-gsd-render.json' : 'polar-render.json').then((r) => r.json());
-  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(1000, 1000); renderer.setPixelRatio(1); renderer.localClippingEnabled = true;
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); const PX = +(new URLSearchParams(location.search).get('px') || 1000); renderer.setSize(PX, PX); renderer.setPixelRatio(1); renderer.localClippingEnabled = true;
   document.body.appendChild(renderer.domElement);
   const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
   scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.8)); const sun = new THREE.DirectionalLight(0xffffff, 0.7); sun.position.set(4, 7, 5); scene.add(sun);
@@ -31,9 +32,10 @@
     const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute([0, 1, 1, 2, 2, 3, 3, 0].flatMap((i) => R[i]), 3));
     scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x8a6400, clippingPlanes: clip })));
   }
-  const cam = new THREE.PerspectiveCamera(30, 1, location.search.includes('turns') ? 0.002 : 0.1, 100);
+  const ortho = new URLSearchParams(location.search).get('ortho');   // ?ortho=<half-width>: true-scale views for the seamless core
+  const cam = ortho ? new THREE.OrthographicCamera(-ortho, +ortho, +ortho, -ortho, 0.001, 100) : new THREE.PerspectiveCamera(30, 1, location.search.includes('turns') ? 0.002 : 0.1, 100);
   const dist = (location.search.includes('turns') ? { closed: 10.5, cut: 10.5, cut2: 2.5, cut3: 2.5 / 4.236068, cut4: 2.5 / 17.944272, cut5: 2.5 / 76.013156, apart: 17, inner: 10.5 } : location.search.includes('rect') ? { closed: 18, cut: 18, apart: 22, inner: 18 } : location.search.includes('pair') ? { closed: 3.6, cut: 3.6, apart: 5.2, inner: 3.6 } : location.search.includes('tight') ? { closed: 5.8, cut: 5.8, apart: 9, inner: 5.2 } : location.search.includes('gsd') ? { closed: 10.5, cut: 10.5, apart: 17, inner: 9 } : { closed: 10.5, cut: 10.5, apart: 17, inner: 5.2 })[scn];
   const dir = scn.startsWith('cut') ? new THREE.Vector3(0.12, 0.2, 1) : new THREE.Vector3(0.62, 0.48, 0.9);
-  cam.position.copy(dir.normalize().multiplyScalar(dist)); cam.lookAt(0, 0, 0); renderer.render(scene, cam); document.title = 'ready';
+  cam.position.copy(dir.normalize().multiplyScalar(ortho ? 20 : dist)); cam.lookAt(0, 0, 0); renderer.render(scene, cam); document.title = 'ready';
 })();
 </script>
