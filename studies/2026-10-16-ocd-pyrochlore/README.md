@@ -56,3 +56,12 @@ In (b) the two interpenetrating networks are the two golden frames, as in the to
 
 - **Octahedral sites (square-face centres): yes, a closed solid.** The planes of the 8 free hexagons facing the site enclose a solid with 8 corners and 8 faces (4 triangles, 4 quadrilaterals), volume 0.021229. It collides with no OCD. Each face lies in a hexagon's plane but only partly overlaps the hexagon: the face reaches past the hexagon edge, over the kites, which slope away. Three such bridges per OCD fill **19.0%** of the gap.
 - **Tetrahedral sites (cell corners): no.** The planes of the facing hexagons do not close; the region runs off to infinity.
+
+## Step 7: hexagonal prisms as limbs (DICTO: "hexagonal prisms of different angles as limbs"; `scripts/limbs.py` → `data/limbs.txt`)
+
+Every copy has the same orientation and is centrally symmetric. So the copy at lattice point c has a hexagon exactly parallel, opposite and equally turned to our free hexagon H (centre p): it equals H + v with v = c − 2p. Sweeping H along v gives a **hexagonal prism**. It is right only for the existing joints (v = 0) and oblique otherwise. Its side faces are parallelograms with sides s and |v|, which are rhombi only if |v| = s.
+
+- **One limb per free hexagon.** Each free hexagon has exactly one limb that hits no other OCD. It runs to the copy across the nearest square face: length 0.522476 = 2.196 s, **tilted 79.19°** from the hexagon normal, a steeply sheared prism. Its sides are parallelograms of 0.2379 × 0.5225, **not rhombi**.
+- **Limb classes.** A limb's two ends are a hexagon and the opposite hexagon of the next copy, so the 12 free hexagons give **6 limbs per copy**. These come in 3 crossing pairs, one per cube axis, crossing at the square-face centres.
+- **Collision-free choice.** Choosing one limb from each pair gives **3 limbs per copy** (8 ways), using 6 of the 12 free hexagons. They fill 12.9% of the gap.
+- **Competition.** The limbs pass through the octahedral sites, so they compete with the octahedral bridges of step 6 for the same space.
