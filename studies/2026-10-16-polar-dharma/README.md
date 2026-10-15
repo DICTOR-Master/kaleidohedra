@@ -193,3 +193,7 @@ Renders of both alignments: `toggle_render.py` writes `data/toggle-{ends,middle}
 
 - **Ends alignment.** The mirror sphere has radius φ/2 = 0.809. The flipped turn nests almost entirely inside the original icosahedron: its dodecahedron (0.331) up to its triacontahedron, whose tips are the original icosahedron's corners. Its last layer spans out to the shared dodecahedron.
 - **Middle alignment.** The mirror sphere has radius φ√3/2 = 1.401, which equals the original dodecahedron's circumradius (float). The flipped turn reaches out to a dodecahedron of radius 4.20.
+
+### Could the ends be "cheated" to get both alignments at once? (DICTO, 2026-10-16) No.
+
+In the original cycle only the ends are loose. The icosahedron could grow ×1.894427 inside the icosidodecahedron, and the outer icosahedron could shrink ×1.232241 before touching RT. Every middle station touches its neighbours. So the icosahedron's scale s can vary only within [1/1.232241, 1.894427] = [0.8115, 1.8944] without breaking the nest. For both pairs to be shared at once, the I↔D toggle sphere would have to move by a factor of 3 (mod φ³), and that needs s = 3/φ³ = 0.708 or s = 3, both outside the range. So even bending the ends cannot join the two alignments, and bending them would also break the exact piece fills of the end layers. The loose-end slacks are the same two numbers as in the reversed chain (step 4), as polarity requires.
