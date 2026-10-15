@@ -38,7 +38,7 @@ Renders: `renders/ocdgap-{closed,cut,apart}.png` (`render_gaps.html`, `shoot_gap
 
 ## Step 4: a partner shape for the 12 free hexagons? (DICTO, exploratory, float, `scripts/partner.py`)
 
-There are 3 partner sites per OCD, at the square-face centres of its cell. Each meets 4 free hexagons (2 from each OCD on that cube axis), so 3 × 4 = all 12 free hexagons. Giving each gap piece to its nearest site, each site collects 24 pieces whose volume is **exactly one third of the gap per OCD**. But the union is **not convex**: its hull is twice its volume, so the partner is a dented solid cradled between OCDs. Whether partners meet each other on rhombi is still running (on dicto-node).
+There are 3 partner sites per OCD, at the square-face centres of its cell. Each meets 4 free hexagons (2 from each OCD on that cube axis), so 3 × 4 = all 12 free hexagons. Giving each gap piece to its nearest site, each site collects 24 pieces whose volume is **exactly one third of the gap per OCD**. But the union is **not convex**: its hull is twice its volume, so the partner is a dented solid cradled between OCDs. Partners meet each other on irregular triangles and other polygons, **no rhombi** (`data/partner.txt`); they touch the OCDs on 18 face planes (quadrilaterals, pentagons, 2 hexagons).
 
 ## Step 5: twinning, turning copies into the other golden frame (DICTO: "would rotating out of their connections change the shadow shapes?"; `scripts/twin.py` → `data/twin.txt`)
 
