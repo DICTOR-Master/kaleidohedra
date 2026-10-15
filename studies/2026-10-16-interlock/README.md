@@ -31,3 +31,15 @@ At ρ² = 3φ²/4 = 3(3 + √5)/8 the cycles share ID and RT. The flipped cycle 
 - **11 kinds:** 11 exact volumes and 11 orbits on the exact corners (seven of 60, two of 20, one of 30, one of 12). The float orbit count had 12, splitting a 20-kind into 12 + 8: float noise again.
 - **Pieces that pass through whole.** Several original pieces lie inside one flipped piece and pass through uncut: the 30 roofs (RT → I·φ³, 0.773811), the 20 truncated icosahedron → Hecatodihedron pyramids, and the 20 icosidodecahedron → dodecahedron tetrahedra. The 60 small Hecatodihedron → RT tetrahedra (−93/152 + 21√5/76) pass through whole in both settings.
 - **Comparison.** The ends setting cuts the outer roofs the most (240 pieces) and leaves the middle columns whole. The middle setting leaves the roofs whole and cuts the middle layers (the dodecahedron → truncated icosahedron columns into 132, the Hecatodihedron → RT layer into 180). The toggle moves where the two cycles cut each other.
+
+## The kinds, described for naming (2026-10-16)
+
+`scripts/interlock_kinds.py` → `data/interlock-kinds.txt`. Galleries: `scripts/interlock_kinds_render.py`, then `render_kinds.html` with `shoot_kinds.mjs`, then `kinds_gallery.py` → `renders/kinds-{ends,middle}.png`.
+
+Float corners are cleaned first: duplicates are merged, and points on edges are dropped (a corner must have three independent face normals), as the exact check did. Each kind is listed with its count, the original and reversed layers it lies in, its corners, faces and edges, and its exact volume. Every kind satisfies Euler's formula.
+
+The working codes are **E1–E12** (ends setting) and **M1–M11** (middle setting), largest first, until DICTO names them.
+
+- **Simple shapes:** tetrahedra (E10, E12, M7, M9–M11), pentagonal pyramids (E8, E9), a triangular bipyramid (E2), and 15-corner columns (E1, E5).
+- **The same piece in both settings:** E10 = M9, the 60 small H → RT tetrahedra, which pass through whole.
+- **Equal volumes, different shapes:** E11 (5 corners) and M10 (4 corners) both have volume (1 + √5)/576.

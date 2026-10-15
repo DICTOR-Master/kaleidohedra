@@ -1,0 +1,31 @@
+<!doctype html><meta charset="utf-8"><title>Polar Dharma pieces (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// One interlock kind, alone (adapted from polar-dharma's render_pieces.html); coloured by its ORIGINAL layer: ?f=<render json>&k=<layer index>. Seen from outside the nest,
+// mostly from the side (the piece's outward direction tilted toward the camera); house palette, same layer colours as render_polar.html.
+(async function () {
+  const q = new URLSearchParams(location.search), k = +q.get('k'), PX = +(q.get('px') || 700);
+  const J = await fetch(q.get('f')).then((r) => r.json());
+  const COL = [0x4dd0e1, 0xc792ea, 0x5fd38a, 0xf08fc0, 0x9fd8ff, 0xff9a52];
+  const S = J.layers[k].pieces[0]; const CK = J.layers[k].olayer;
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(PX, PX); renderer.setPixelRatio(1);
+  document.body.appendChild(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.8)); const sun = new THREE.DirectionalLight(0xffffff, 0.7); sun.position.set(4, 7, 5); scene.add(sun);
+  const m = [0, 1, 2].map((i) => S.v.reduce((s, v) => s + v[i], 0) / S.v.length);   // centroid of the corners
+  const P = S.v.map((v) => v.map((x, i) => x - m[i])); const R = Math.max(...P.map((v) => Math.hypot(...v)));
+  const pos = [], line = [];
+  for (const f of S.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...P[f[0]], ...P[f[i]], ...P[f[i + 1]]); for (let i = 0; i < f.length; i++) line.push(...P[f[i]], ...P[f[(i + 1) % f.length]]); }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+  const grp = new THREE.Group();
+  grp.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: COL[CK], roughness: 0.5, flatShading: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+  const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3)); grp.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218 })));
+  scene.add(grp);
+  // outward direction (piece centroid from the nest centre) -> +z, then view it obliquely so its side faces show
+  const out = new THREE.Vector3(...m).normalize(); grp.quaternion.setFromUnitVectors(out, new THREE.Vector3(0, 1, 0));   // outward = up
+  const cam = new THREE.OrthographicCamera(-1.15 * R, 1.15 * R, 1.15 * R, -1.15 * R, 0.001, 100);
+  cam.position.copy(new THREE.Vector3(1, 0.62, 0.42).normalize().multiplyScalar(10 * R)); cam.lookAt(0, 0, 0);
+  renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>
