@@ -22,3 +22,12 @@ Several original layers lie wholly inside one flipped layer, so their pieces pas
 - **12 kinds**: 12 exact volumes, and 12 symmetry orbits on the exact corners (eight of 60, three of 12, one of 20). The float count of 13 split one 60-kind into 48 + 12.
 
 **Not yet done:** the middle setting, and naming or fusing the 12 kinds.
+
+## The middle setting (DICTO, 2026-10-16)
+
+At ρ² = 3φ²/4 = 3(3 + √5)/8 the cycles share ID and RT. The flipped cycle is exactly 3 times its ends-setting size, so its pieces are the ends pieces scaled by 3, and its turns −1 and 0 cover the original turn. Run with `interlock.py ../_lib middle` and `interlock_exact.py middle`; output in `data/interlock-middle*.txt` and `.json`.
+
+- **502 convex pieces.** Every original piece is exactly the sum of its parts, and every layer exactly the sum of its pieces, with remainder 0. 1656 float edge points were dropped.
+- **11 kinds:** 11 exact volumes and 11 orbits on the exact corners (eight of 60, one of 30, one of 20... see the data file). The float orbit count had 12, splitting a 20-kind into 12 + 8: float noise again.
+- **Pieces that pass through whole.** Several original pieces lie inside one flipped piece and pass through uncut: the 30 roofs (RT → I·φ³, 0.773811), the 20 truncated icosahedron → Hecatodihedron pyramids, and the 20 icosidodecahedron → dodecahedron tetrahedra. The 60 small Hecatodihedron → RT tetrahedra (−93/152 + 21√5/76) pass through whole in both settings.
+- **Comparison.** The ends setting cuts the outer roofs the most (240 pieces) and leaves the middle columns whole. The middle setting leaves the roofs whole and cuts the middle layers (the dodecahedron → truncated icosahedron columns into 132, the Hecatodihedron → RT layer into 180). The toggle moves where the two cycles cut each other.

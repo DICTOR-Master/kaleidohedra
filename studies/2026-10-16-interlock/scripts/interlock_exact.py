@@ -3,6 +3,7 @@
 # lie only on an edge are dropped (geomcheck rule 5). The flipped cycle is exact too: polar in rho^2 = phi^2/4 = (3 + sqrt5)/8, its
 # next turn scaled by phi^3 = 2 + sqrt5. Claims: every original piece equals the sum of its interlock parts, exactly; per layer too.
 import json, sys, os, io, contextlib, itertools, numpy as np
+SET = sys.argv[1] if len(sys.argv) > 1 else 'ends'              # read before polar.py replaces sys.argv; 'middle': rho^2 = 3 (3 + sqrt5)/8
 from scipy.spatial import ConvexHull
 PD = '/home/dicto/kaleidohedra/studies/2026-10-16-polar-dharma'; here = os.getcwd(); os.chdir(PD)
 sys.argv = ['polar.py', 'data/dharma_cycle.json']
@@ -48,12 +49,12 @@ def corners(Vf, planes):
             assert rank <= 2, ('no exact corner', v, len(act), rank); drop[0] += 1; continue   # planes meet in a line at most: an edge point
         Ve.append(sol); Vk.append(v)
     return Ve, np.array(Vk)
-def cone_pieces(chain, FLtxt):              # exact corners of the cone-cut pieces of a chain (as in polar_exact.py)
+def cone_pieces(chain, FLtxt, scale=1.0):              # exact corners of the cone-cut pieces of a chain (as in polar_exact.py)
     FL = json.load(open(FLtxt)); out = []
     for k in range(len(chain) - 1):
         A, B = chain[k], chain[k + 1]; PA, PB = exact_planes(A), exact_planes(B); L = []
         for Vf in FL[list(FL)[k]]:
-            Vp = np.array(Vf); uc = Vp.mean(0) / np.linalg.norm(Vp.mean(0))
+            Vp = np.array(Vf) * scale; uc = Vp.mean(0) / np.linalg.norm(Vp.mean(0))
             Fi = min((p for p in PA if sum(p[1][i].f() * uc[i] for i in range(3)) > 1e-12), key=lambda p: p[2].f() / sum(p[1][i].f() * uc[i] for i in range(3)))
             planes = [(p[1], p[2]) for p in PB] + [(Fi[1], Fi[2])]
             for i0, i1 in itertools.combinations(Fi[0], 2):
@@ -63,20 +64,21 @@ def cone_pieces(chain, FLtxt):              # exact corners of the cone-cut piec
         out.append(L)
     return out
 orig = [V for n, V in stations]
-r2 = Q(Fr(3, 8), Fr(1, 8)); p3 = Q(2, 1)
-assert abs(r2.f() - ((1 + 5 ** .5) / 2) ** 2 / 4) < 1e-15 and abs(p3.f() - ((1 + 5 ** .5) / 2) ** 3) < 1e-12
+K = 1 if SET == 'ends' else 3
+r2 = Q(Fr(3, 8), Fr(1, 8)) * Q(K); p3 = Q(2, 1); p3inv = Q(-2, 1)
+assert abs(r2.f() - K * ((1 + 5 ** .5) / 2) ** 2 / 4) < 1e-14 and abs((p3 * p3inv).f() - 1) < 1e-15 and abs(p3.f() - ((1 + 5 ** .5) / 2) ** 3) < 1e-12
 flipst = [[[c * r2 / d for c in n] for idx, n, d in exact_planes(X)] for X in orig[::-1]]   # polar: plane n.x = d -> point rho^2 n / d
 # the float chains used for the cut must be these exact chains (same solids)
 for (nm, Vf), Ve in zip(json.load(open('data/flip-ends-chain.json')), flipst):
-    A, B = np.array(Vf), F(Ve); assert len(A) == len(B) and all(np.min(np.linalg.norm(B - a, axis=1)) < 1e-9 for a in A), nm
-OP = cone_pieces(orig, 'data/orig-pieces.json'); FPc = cone_pieces(flipst, 'data/flip-ends-pieces.json')
+    A, B = np.array(Vf) * K, F(Ve); assert len(A) == len(B) and all(np.min(np.linalg.norm(B - a, axis=1)) < 1e-9 for a in A), nm
+OP = cone_pieces(orig, 'data/orig-pieces.json'); FPc = cone_pieces(flipst, 'data/flip-ends-pieces.json', K)
 print('cone pieces exact:', sum(len(L) for L in OP), 'original,', sum(len(L) for L in FPc), 'flipped; edge points dropped', drop[0], flush=True)
 vol = lambda Ve, Vk: volume(Ve, Vk)
-J = json.load(open('data/interlock-ends.json')); parts = {}; vols = {}; exactV = []
+J = json.load(open(f'data/interlock-{SET}.json')); parts = {}; vols = {}; exactV = []
 for i, q in enumerate(J['pieces']):
     li, k = q['o']; t, lj, kk = q['f']
     P, Pk = OP[li][k]; Qv, Qk = FPc[lj][kk]
-    if t: Qv = [[c * p3 for c in v] for v in Qv]; Qk = Qk * p3.f()
+    if t: m_ = p3 if t == 1 else p3inv; Qv = [[c * m_ for c in v] for v in Qv]; Qk = Qk * m_.f()
     planes = [(n, d) for _, n, d in exact_planes(P)] + [(n, d) for _, n, d in exact_planes(Qv)]
     Ve, Vk = corners(np.array(q['v']), planes); v = vol(Ve, Vk); exactV.append(F(Ve))
     parts[(li, k)] = parts.get((li, k), Q(0)) + v; vols.setdefault(v, 0); vols[v] += 1
@@ -86,10 +88,10 @@ missing = [(li, k) for li, L in enumerate(OP) for k in range(len(L)) if (li, k) 
 lay = {}
 for (li, k), s in parts.items(): lay[li] = lay.get(li, Q(0)) + s
 laycheck = [lay[li] - (volume(orig[li + 1], F(orig[li + 1])) - volume(orig[li], F(orig[li]))) for li in sorted(lay)]
-out = [f'exact interlock (ends setting): {len(J["pieces"])} pieces; float edge points dropped {drop[0]}',
+out = [f'exact interlock ({SET} setting): {len(J["pieces"])} pieces; float edge points dropped {drop[0]}',
        f'every original piece = sum of its parts, exactly: {not bad and not missing} (mismatches {len(bad)}, original pieces without parts {len(missing)})',
        f'every original layer = sum of its interlock pieces, exactly: {all(x == Q(0) for x in laycheck)}',
        f'distinct exact piece volumes: {len(vols)}',
        f'kinds by symmetry orbit on the exact corners: {len(gc.kinds(exactV, gc.group(gc.icosa_axes(F(orig[0])))))}']
 for v, c in sorted(vols.items(), key=lambda kv: -kv[0].f()): out.append(f'    {c:3d} x  {v!r} = {v.f():.9f}')
-print('\n'.join(out)); open('data/interlock-ends-exact.txt', 'w').write('\n'.join(out) + '\n')
+print('\n'.join(out)); open(f'data/interlock-{SET}-exact.txt', 'w').write('\n'.join(out) + '\n')

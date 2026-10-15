@@ -7,11 +7,13 @@ from scipy.spatial import ConvexHull, HalfspaceIntersection
 from scipy.optimize import linprog
 sys.path.insert(0, sys.argv[1] if len(sys.argv) > 1 else '../_lib'); import geomcheck as gc
 p3 = ((1 + 5 ** .5) / 2) ** 3
+SET = sys.argv[2] if len(sys.argv) > 2 else 'ends'          # 'middle': rho^2 = 3 phi^2/4, the flipped cycle x3, turns -1 and 0 cover ours
+K, TURNS = (1.0, (0, 1)) if SET == 'ends' else (3.0, (-1, 0))
 OP = json.load(open('data/orig-pieces.json')); FP = json.load(open('data/flip-ends-pieces.json'))
 C = {n: np.array(V) for n, V in json.load(open('data/orig-chain.json'))}
 G = gc.group(gc.icosa_axes(C['icosahedron']))
 orig = [(li, k, np.array(V)) for li, (lay, L) in enumerate(OP.items()) for k, V in enumerate(L)]
-flip = [(t, li, k, np.array(V) * p3 ** t) for t in (0, 1) for li, (lay, L) in enumerate(FP.items()) for k, V in enumerate(L)]
+flip = [(t, li, k, np.array(V) * K * p3 ** t) for t in TURNS for li, (lay, L) in enumerate(FP.items()) for k, V in enumerate(L)]
 def hs(V): return ConvexHull(V).equations                     # n.x + d <= 0 inside
 def meet(A, B):
     H = np.vstack([A, B]); nrm = np.linalg.norm(H[:, :3], axis=1)
@@ -32,11 +34,11 @@ for oi, (li, k, V, Ho, c, r, vol) in enumerate(Of):
     worst = max(worst, abs(s - vol) / vol)
     if oi % 40 == 0: print('orig piece', oi, 'of', len(Of), 'parts so far', len(pieces), flush=True)
 kinds = gc.kinds([np.array(q['v']) for q in pieces], G)
-out = [f'interlock (ends setting): {len(pieces)} pieces from {len(Of)} original pieces x {len(Ff)} flipped pieces',
+out = [f'interlock ({SET} setting): {len(pieces)} pieces from {len(Of)} original pieces x {len(Ff)} flipped pieces',
        f'check: every original piece is the sum of its parts, worst relative error {worst:.2e}',
        f'kinds by symmetry orbit: {len(kinds)}; counts {sorted((c for c, _ in kinds), reverse=True)}']
 by = {}
 for q in pieces: by.setdefault((q['o'][0], q['f'][0], q['f'][1]), 0); by[(q['o'][0], q['f'][0], q['f'][1])] += 1
 out.append('pieces per (original layer, flipped turn, flipped layer): ' + ', '.join(f'{k}: {v}' for k, v in sorted(by.items())))
-print('\n'.join(out)); open('data/interlock-ends.txt', 'w').write('\n'.join(out) + '\n')
-json.dump({'pieces': pieces, 'orig_layers': list(OP), 'flip_layers': list(FP)}, open('data/interlock-ends.json', 'w'))
+print('\n'.join(out)); open(f'data/interlock-{SET}.txt', 'w').write('\n'.join(out) + '\n')
+json.dump({'pieces': pieces, 'orig_layers': list(OP), 'flip_layers': list(FP)}, open(f'data/interlock-{SET}.json', 'w'))
