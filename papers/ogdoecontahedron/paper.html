@@ -5,7 +5,7 @@
 <img class="watermark" src="../dicto-logo.png" alt="">
 <img class="logo" src="../dicto-logo.png" alt="DICTO">
 <h1>The DICTO Ogdoecontahedron</h1>
-<p class="sub">The Spheres of Dharma turned inside out by polar reciprocation: the dual of the Hecatodihedron (80 faces: 20 regular hexagons and 60 kites) as the second station of a reversed exact φ³ cycle, one kind of piece per layer, the great stellated dodecahedron locked in the outer gap, a dual pair in the inner gap, and the checks that keep each step exact</p>
+<p class="sub">The Spheres of Dharma turned inside out by polar reciprocation: the dual of the Hecatodihedron (80 faces: 20 regular hexagons and 60 kites) as the second station of a reversed exact φ³ cycle, one kind of piece per layer, the great stellated dodecahedron locked in the outer gap, a dual pair in the inner gap, the cycle repeating inward to its core, and the checks that keep each step exact</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
 Draft 1 · 16 October 2026 · DICTO DOI: on publication · Licence CC BY 4.0 · Data, scripts, exact checks and renders: https://github.com/DICTOR-Master/kaleidohedra (studies/2026-10-16-polar-dharma; shared checks in studies/_lib).<br>
@@ -70,7 +70,13 @@ The Spheres of Dharma, the Hecatodihedron, the idea of turning the cycle inside 
 <figure><div class="figs one"><img src="figures/rect-closed.jpg"></div>
 <figcaption><b>Figure 6.</b> The nest (with the star layers) inside the 15 golden rectangles of the next turn's icosahedron.</figcaption></figure>
 
-<h2>8. Method: the checks this study forced on us</h2>
+
+<h2>8. The core: the cycle repeats inward</h2>
+<p>What fills the inner dodecahedron? The cycle itself. Its outer dodecahedron is exactly φ³ times its inner one, so the whole nest scaled by 1/φ³ fills the inner dodecahedron with no gap. Inside that sits the next turn, and so on to the centre. In the faithful version every turn brings back the large gap, so the great stellated dodecahedron locks at the heart of every turn: its points on that turn's dodecahedron corners and its valleys holding the next triacontahedron. The golden frame of Section 7 is the next turn outward, and the core is the next turn inward.</p>
+<figure><div class="figs two"><img src="figures/turns-cut2.jpg"><img src="figures/turns-cut3.jpg"></div>
+<figcaption><b>Figure 7.</b> Turns nested inward, cut in half: (a) inside the first turn's dodecahedron, the second turn's star and the third turn beyond it; (b) closer by φ³, the third turn's dodecahedron (gold) at the centre.</figcaption></figure>
+
+<h2>9. Method: the checks this study forced on us</h2>
 <p>Three of our first tables in this study were wrong, and each was caught before publication. Standard coordinate lists for the Archimedean solids come in two mirror golden frames, and most of ours were in the wrong one, so they did not share the chain's axes. A slack formula was inverted. A float face count reported 103 kinds of piece in a layer of 120 congruent pieces. DICTO asked for rules that would prevent this, and every study script now calls a shared module (studies/_lib/geomcheck.py) that stops with an error instead of printing a wrong table:</p>
 <ol>
 <li><b>Frame:</b> every generated solid must be invariant under the chain's own five-fold and three-fold turns.</li>
@@ -82,12 +88,12 @@ The Spheres of Dharma, the Hecatodihedron, the idea of turning the cycle inside 
 </ol>
 <p>The module's tests replay each of our slips and show the check catching it.</p>
 
-<h2>9. Relation to known work, and status</h2>
+<h2>10. Relation to known work, and status</h2>
 <p><b>Known and credited:</b> polar reciprocation and the reversal of inclusion (convex geometry; Firsching 2015); the largest copy of one polytope in another (Croft; Firsching 2015 computes it exactly; our fits are the concentric, same-orientation case); nested icosahedral shells in clusters, viruses and fullerenes (Takakura et al. 2007, the Tsai cluster of the Spheres of Dharma; Twarock, Valiunas and Zappa 2015; Dechant et al. 2014); the Kepler–Poinsot solids, the great stellated dodecahedron as an icosahedron with twenty spikes and the small stellated dodecahedron as the dodecahedron's extended edges (Kepler 1619; Poinsot 1810); the 15 golden rectangles of the icosahedron. Hafner (2007) dissects the small and great stellated dodecahedra into the triacontahedron and hexecontahedron using 60 tetrahedra, each 1/6 of a prolate golden rhombohedron; our 60 tetrahedra between the triacontahedron and the star are different pieces (in float, each has φ² times his volume on the triacontahedron's edge; not yet checked exactly).</p>
 <p><b>Not found</b> in our reference library and web searches (16 October 2026): the reversed Spheres of Dharma as an exact nest with one piece kind per layer; the Ogdoecontahedron (and the Hecatodihedron itself, #28); the tight nest; the great stellated dodecahedron's lock in the reversed cycle, which follows directly from classical facts and is presented as an observation about this cycle, not a new theorem; the inner-gap dual pairs and their exact scales and play; the exact pieces and volumes.</p>
 
-<h2>10. Reproducibility</h2>
-<p>In studies/2026-10-16-polar-dharma: <code>polar.py</code> (the reversed chain, exact poles, closure, touching), <code>polar_pieces.py</code> (the cone cut; kinds by symmetry orbit), <code>polar_exact.py</code> (exact corners and volumes; arguments <code>tight</code>, <code>tid</code>, <code>rid</code>), <code>polar_tight.py</code>, <code>polar_stars.py</code> and <code>polar_gsd_exact.py</code>, <code>polar_gsd_pieces.py</code>, <code>polar_heca_gap.py</code>, <code>polar_round.py</code>, <code>polar_dual_pair.py</code>, <code>polar_pair.py</code>, <code>polar_golden_rect.py</code>, <code>hstar_render.py</code>; outputs in <code>data/</code>, renders by <code>render_polar.html</code>, <code>render_hstar.html</code> and the <code>shoot_*.mjs</code> scripts. Checks: <code>python3 studies/_lib/test_geomcheck.py</code>.</p>
+<h2>11. Reproducibility</h2>
+<p>In studies/2026-10-16-polar-dharma: <code>polar.py</code> (the reversed chain, exact poles, closure, touching), <code>polar_pieces.py</code> (the cone cut; kinds by symmetry orbit), <code>polar_exact.py</code> (exact corners and volumes; arguments <code>tight</code>, <code>tid</code>, <code>rid</code>), <code>polar_tight.py</code>, <code>polar_stars.py</code> and <code>polar_gsd_exact.py</code>, <code>polar_gsd_pieces.py</code>, <code>polar_heca_gap.py</code>, <code>polar_round.py</code>, <code>polar_dual_pair.py</code>, <code>polar_pair.py</code>, <code>polar_golden_rect.py</code>, <code>hstar_render.py</code>, <code>polar_turns.py</code>; outputs in <code>data/</code>, renders by <code>render_polar.html</code>, <code>render_hstar.html</code> and the <code>shoot_*.mjs</code> scripts. Checks: <code>python3 studies/_lib/test_geomcheck.py</code>.</p>
 
 <h2>References</h2>
 <ol class="refs">

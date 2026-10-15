@@ -172,3 +172,7 @@ It has 102 corners and 80 faces: 20 regular hexagons and 60 kites, the duals of 
 ## Queued (DICTO, 2026-10-16): is the Ogdoecontahedron a real bridge?
 
 Its regular hexagons belong to the periodic honeycomb, and its icosahedral symmetry belongs to quasicrystals. So far the bridge is poetic only. Its kites are not Penrose kites (117.8°, 68.6°, 117.8°, 55.7°), and the ℚ(√5) and 6D-lattice link holds for every golden solid. The study would test whether its hexagons and kites can be read as a patch of a real tiling, or as a cluster in a known quasicrystal model.
+
+## The core: the cycle repeats inward (DICTO's choice)
+
+The outer dodecahedron is exactly φ³ times the inner one, so a copy of the whole nest scaled by 1/φ³ fills the inner dodecahedron exactly, and so on to the centre. In the faithful version each turn brings back the large gap, so the great stellated dodecahedron locks at the heart of every turn: its points are on that turn's outer dodecahedron's corners, and its valleys are on the next triacontahedron's tips. `polar_turns.py` writes three turns (732 pieces, innermost dodecahedron solid) to `data/polar-turns-render.json`. Renders: `renders/polar-turns-{cut,cut2,cut3}.png` (`node shoot_polar.mjs turns cut,cut2,cut3`), each zoom closer by about φ³.
