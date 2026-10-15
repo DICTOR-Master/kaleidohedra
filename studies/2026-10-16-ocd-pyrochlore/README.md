@@ -35,3 +35,24 @@ Renders: `renders/ocdgap-{closed,cut,apart}.png` (`render_gaps.html`, `shoot_gap
 ## Open
 - Fusions across the cell faces: gap pieces of neighbouring cells meet on V's square and hexagon faces and may fuse into fewer, nicer pieces.
 - A rhombic division of the gap, for example around the free hexagons that face each other across V's square faces.
+
+## Step 4: a partner shape for the 12 free hexagons? (DICTO, exploratory, float, `scripts/partner.py`)
+
+There are 3 partner sites per OCD, at the square-face centres of its cell. Each meets 4 free hexagons (2 from each OCD on that cube axis), so 3 × 4 = all 12 free hexagons. Giving each gap piece to its nearest site, each site collects 24 pieces whose volume is **exactly one third of the gap per OCD**. But the union is **not convex**: its hull is twice its volume, so the partner is a dented solid cradled between OCDs. Whether partners meet each other on rhombi is still running (on dicto-node).
+
+## Step 5: twinning, turning copies into the other golden frame (DICTO: "would rotating out of their connections change the shadow shapes?"; `scripts/twin.py` → `data/twin.txt`)
+
+A twinned copy is the OCD turned 90° about a cube axis, which puts it in the other golden frame. That turn maps the 8 joint directions onto themselves. Positions stay the same (so still 77.43%), and no arrangement collides anywhere. At a joint between a plain copy and a twinned copy, the two hexagons share plane, centre and size but are **turned 15.52° against each other**. The contact becomes a 12-gon covering **94.4%** of the hexagon, and the six slivers join the gap, so the gap shapes change.
+
+| Arrangement | Full joints | Twisted joints |
+|---|---|---|
+| (a) one network, B twinned | 0 | 40 |
+| (b) double network, second network twinned | 64 (within each network) | 64 (between the networks) |
+| (c) bcc alternating | 0 | 128 |
+
+In (b) the two interpenetrating networks are the two golden frames, as in the toggle.
+
+## Step 6: octahedral or tetrahedral bridges with hexagon faces? (DICTO; `scripts/bridge_shapes.py` → `data/bridge-shapes.txt`)
+
+- **Octahedral sites (square-face centres): yes, a closed solid.** The planes of the 8 free hexagons facing the site enclose a solid with 8 corners and 8 faces (4 triangles, 4 quadrilaterals), volume 0.021229. It collides with no OCD. Each face lies in a hexagon's plane but only partly overlaps the hexagon: the face reaches past the hexagon edge, over the kites, which slope away. Three such bridges per OCD fill **19.0%** of the gap.
+- **Tetrahedral sites (cell corners): no.** The planes of the facing hexagons do not close; the region runs off to infinity.
