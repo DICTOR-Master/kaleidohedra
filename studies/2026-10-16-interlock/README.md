@@ -13,7 +13,7 @@ Several original layers lie wholly inside one flipped layer, so their pieces pas
 
 **Views.** These are oriented orthographic sections through the centre (DICTO: fixed bearings, no perspective). Each looks along a five-fold, three-fold or two-fold axis with a two-fold axis up, so every picture is left–right symmetric. They carry crosshairs, up/down/left/right labels, and rings at the shared I and D and at I·φ³. Each is coloured once by the original layers and once by the flipped layers. They are made with `render_interlock.html` and `shoot_interlock.mjs` and saved as `renders/il-*.png` and `renders/sheet-*.png`. The hole at the centre is the shared icosahedron, where the next turn inward begins.
 
-**Explorer.** The interlock is the third tab of the Polar Dharma Explorer (`../2026-10-16-polar-dharma/explorer`).
+**Explorer.** The interlock is the third tab of the Polar Dharma Explorer (`../2026-10-16-polar-dharma/explorer`), with an ends/middle switch. Flipped layers are coloured by layer type, so the same layer keeps its colour in both settings and both turns.
 
 **Exact check (`interlock_exact.py`, run on dicto-node → `data/interlock-ends-exact.txt`).**
 - Both cycles' pieces are rebuilt with exact ℚ(√5) corners. The flipped cycle is exact too: polar in ρ² = (3 + √5)/8, with its next turn scaled by φ³ = 2 + √5.

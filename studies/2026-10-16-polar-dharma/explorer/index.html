@@ -56,9 +56,10 @@ label.chk{font-size:14px;display:flex;gap:6px;align-items:center}
   <p class="note">The outer dodecahedron is exactly φ³ times the inner one, so a copy of the whole nest fills the core, forever; the great stellated dodecahedron (orange) is locked at the heart of every turn. Scroll or pinch to zoom: every ×φ³ you arrive where you started, one turn deeper.</p>
 </section>
 <section class="panel" id="pLock" hidden>
+  <div class="row"><span class="lab">Setting</span><button id="sEnds" aria-pressed="true">Ends shared</button><button id="sMid" aria-pressed="false">Middle shared</button></div>
   <div class="row"><span class="lab">Colour by</span><button id="cOrig" aria-pressed="true">your layers</button><button id="cFlip" aria-pressed="false">flipped layers</button></div>
   <div class="legend" id="legLock"></div>
-  <p class="note">Both cycles as one solid, at the ends setting: every piece of yours cut by every piece of the flipped cycle. The result is 536 convex pieces, each lying in one layer of each cycle, and every piece of yours is exactly the sum of its parts. Switch the colouring to see the two cycles' patterns in the same pieces. The hole at the centre is the shared icosahedron, where the next turn inward begins.</p>
+  <p class="note">Both cycles as one solid: every piece of yours cut by every piece of the flipped cycle, checked exactly. Each piece lies in one layer of each cycle, and every piece of yours is exactly the sum of its parts. <b>Ends shared</b>: 536 pieces, 12 kinds. Your outer roofs are cut the most, and the middle columns pass through whole. <b>Middle shared</b>: 502 pieces, 11 kinds. The roofs pass through whole, and the middle layers are cut instead. The toggle moves where the two cycles cut each other. Switch the colouring to see both patterns in the same pieces. The hole at the centre is where the next turn inward begins.</p>
 </section>
 <p class="note">Drag to turn it freely. Press Play, Fall in, or a view button, and it glides back to the chosen axis, centred, with up, down, left and right marked, so every moving picture has the same bearings.</p>
 </main>
@@ -148,20 +149,29 @@ label.chk{font-size:14px;display:flex;gap:6px;align-items:center}
     return { scene: sC, world: wC, half: H0 };
   }
 
-  // ---------- the interlock ----------
-  const sL = new THREE.Scene(); light(sL); const wL = new THREE.Group(); sL.add(wL);
-  const WARM6 = [0xffc857, 0xff9a52, 0xe57373, 0xf08fc0, 0xc792ea, 0x8d6e63], COOLG = { 4: 0x9fd8ff, 5: 0x4dd0e1, 10: 0x26a69a, 11: 0x5c6bc0, 12: 0x7e57c2, 13: 0x3949ab };
-  const lockMats = [], ll = [];
-  for (const S of D.interlock) { const t = []; const V = tris(S, t, 0.985); lines(V, S, ll);
-    const m = new THREE.MeshStandardMaterial({ color: WARM6[S.o], roughness: 0.55, flatShading: true, side: THREE.DoubleSide, clippingPlanes: [clip], polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
-    m.userData = { o: WARM6[S.o], g: COOLG[S.g] || 0x888888 }; lockMats.push(m); wL.add(new THREE.Mesh(geo(t), m)); }
-  wL.add(new THREE.LineSegments(geo(ll), new THREE.LineBasicMaterial({ color: 0x2a2218, clippingPlanes: [clip] })));
-  const legend = { orig: ['icosahedron → icosidodecahedron', 'icosidodecahedron → dodecahedron', 'dodecahedron → truncated icosahedron', 'truncated icosahedron → Hecatodihedron', 'Hecatodihedron → triacontahedron', 'triacontahedron → icosahedron ×φ³'].map((n, i) => [WARM6[i], n]),
-                   flip: [[0x9fd8ff, 'flipped: icosahedron → triacontahedron'], [0x4dd0e1, 'flipped: triacontahedron → dodecahedron'], [0x26a69a, 'next flipped turn: dodecahedron → icosidodecahedron'], [0x5c6bc0, 'next: icosidodecahedron → Ogdoecontahedron'], [0x7e57c2, 'next: Ogdoecontahedron → pentakis dodecahedron'], [0x3949ab, 'next: pentakis dodecahedron → icosahedron']] };
-  function colourLock(by) { for (const m of lockMats) m.color.setHex(by === 'orig' ? m.userData.o : m.userData.g); $('cOrig').setAttribute('aria-pressed', by === 'orig'); $('cFlip').setAttribute('aria-pressed', by === 'flip');
-    $('legLock').innerHTML = legend[by].map(([c, n]) => `<span><i style="background:#${c.toString(16).padStart(6, '0')}"></i>${n}</span>`).join(''); }
-  $('cOrig').onclick = () => colourLock('orig'); $('cFlip').onclick = () => colourLock('flip'); colourLock('orig');
-  function stepLock() { read.textContent = 'interlock · ends setting · 536 pieces'; return { scene: sL, world: wL, half: 2.7 }; }
+  // ---------- the interlock (two settings) ----------
+  const sL = new THREE.Scene(); light(sL); let wL = new THREE.Group(); sL.add(wL);
+  const WARM6 = [0xffc857, 0xff9a52, 0xe57373, 0xf08fc0, 0xc792ea, 0x8d6e63], COOL6 = [0x26a69a, 0x5c6bc0, 0x7e57c2, 0x3949ab, 0x9fd8ff, 0x4dd0e1];
+  const ON = ['icosahedron → icosidodecahedron', 'icosidodecahedron → dodecahedron', 'dodecahedron → truncated icosahedron', 'truncated icosahedron → Hecatodihedron', 'Hecatodihedron → triacontahedron', 'triacontahedron → icosahedron ×φ³'];
+  const FN = ['dodecahedron → icosidodecahedron', 'icosidodecahedron → Ogdoecontahedron', 'Ogdoecontahedron → pentakis dodecahedron', 'pentakis dodecahedron → icosahedron', 'icosahedron → triacontahedron', 'triacontahedron → dodecahedron'];
+  let lockMats = [], lockSet = 'ends', lockBy = 'orig';
+  function buildLock(set) {
+    sL.remove(wL); wL.traverse((o) => { if (o.geometry) o.geometry.dispose(); if (o.material) o.material.dispose(); });
+    wL = new THREE.Group(); sL.add(wL); lockMats = []; const ll = [];
+    for (const S of D.lock[set]) { const t = []; const V = tris(S, t, 0.985); lines(V, S, ll);
+      const m = new THREE.MeshStandardMaterial({ color: WARM6[S.o], roughness: 0.55, flatShading: true, side: THREE.DoubleSide, clippingPlanes: [clip], polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
+      m.userData = { o: WARM6[S.o], g: COOL6[S.l] }; lockMats.push(m); wL.add(new THREE.Mesh(geo(t), m)); }
+    wL.add(new THREE.LineSegments(geo(ll), new THREE.LineBasicMaterial({ color: 0x2a2218, clippingPlanes: [clip] })));
+    lockSet = set; $('sEnds').setAttribute('aria-pressed', set === 'ends'); $('sMid').setAttribute('aria-pressed', set === 'middle'); colourLock(lockBy);
+  }
+  function colourLock(by) { lockBy = by; for (const m of lockMats) m.color.setHex(by === 'orig' ? m.userData.o : m.userData.g);
+    $('cOrig').setAttribute('aria-pressed', by === 'orig'); $('cFlip').setAttribute('aria-pressed', by === 'flip');
+    const used = [...new Set(D.lock[lockSet].map((S) => by === 'orig' ? S.o : S.l))].sort((a, b) => a - b);
+    $('legLock').innerHTML = used.map((k) => `<span><i style="background:#${(by === 'orig' ? WARM6 : COOL6)[k].toString(16).padStart(6, '0')}"></i>${by === 'orig' ? '' : 'flipped: '}${(by === 'orig' ? ON : FN)[k]}</span>`).join(''); }
+  $('cOrig').onclick = () => colourLock('orig'); $('cFlip').onclick = () => colourLock('flip');
+  $('sEnds').onclick = () => { buildLock('ends'); glide(); }; $('sMid').onclick = () => { buildLock('middle'); glide(); };
+  buildLock('ends');
+  function stepLock() { read.textContent = lockSet === 'ends' ? 'interlock · ends shared (I, D) · 536 pieces' : 'interlock · middle shared (ID, RT) · 502 pieces'; return { scene: sL, world: wL, half: 2.7 }; }
 
   // ---------- modes and the frame loop ----------
   let mode = 'toggle';
