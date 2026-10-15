@@ -160,3 +160,16 @@ Each copy of the spatial five-fold chorus gets a golden envelope cut at the join
 - **Where the silences fall.** Not only near the axis: silenced copies lie at distances from 0.29 to 4.65 from the axis. The kept fraction by distance from the axis is 0.05 within 1, 0.54 within 2, 0.67 within 3 and 0.73 within 4. So the structure has a **nearly empty core** (95% silent within distance 1 of the axis) **and silences along the wedge boundaries at every radius**, like grain boundaries that carry vacancies, thinning out as the wedges widen. The open-channel picture holds for the core, but the boundaries keep needing silences too.
 
 This is the first exactly verified five-fold arrangement in the study.
+
+## Fable review of the five-fold chorus (2026-10-16; `FABLE-REPORT.md`, `scripts/chorus_min_silence.py` → `data/chorus-min-silence.txt`)
+
+A bounded Fable task, with DICTO's go; checked afterwards.
+
+- **Known relative.** The *icosahedral irrational twin*: five cubic variants related by 72° about an irrational axis, or 44.48° about [111], with no common coincidence-site lattice (Ranganathan, Srivastava & Lord 2006, J. Mater. Sci. 41(23):7696–7703, doi:10.1007/s10853-006-0966-y; abstract verified via the IISc and CSIR eprint records). Our data matches this: neighbouring voices share one three-fold axis and differ by **44.4775°** about it (rerun checked; the same angle appeared in step 5's twin test). Historical precursor: Pauling's multiply twinned cubic crystals of icosahedral clusters (1985).
+- **Contrast with fcc decahedra** (Ino 1969, Marks 1984). The chorus has no angle gap and no strain; the cost of five-fold symmetry is paid in vacancies.
+- **Minimal silencing** (integer program, float clash test, radius 5, start angle 59°; rerun checked). The five-fold-symmetric minimum is **16 orbits, 80 copies**, the same as the greedy run, and the minimum is not unique. Without five-fold symmetry the minimum is 72. All silenced copies lie within 0.61 of a wedge boundary half-plane (the median for all sites is 0.77).
+- **Fable's hypothesis** (not yet tested). The wedge boundaries are irrational interfaces, so the vacancies should follow a quasiperiodic, golden-type pattern whose density per boundary area settles to a constant.
+- **Not found in the search** as a whole construction (exact hard-body irrational twin with vacancy accounting). Absence in one search is not proof; a specialist search is needed before any public claim.
+- **Top recommended test.** Grow to radius 8–10 and measure the vacancies on one boundary half-plane: their density per area, and whether their spacings come in golden ratios.
+
+Reference library: Ino 1969, Marks 1984 and 15 more added as link-only entries (refs repo).
