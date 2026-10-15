@@ -6,7 +6,7 @@
 <script>
 // Golden Bodhi Pyrochlore step 29, movie: the fork at height 12.8. 360 frames, 1080 px. The camera circles the five-fold axis.
 // 0-119 both rings and their exact overlap (red); 120-239 choice A: the magenta ring is silenced, the gold copy stays (the chorus's
-// tie-break: thinned chain); 240-359 choice B: the gold ring is silenced, the magenta ring stays (Fibonacci chain).
+// minimal removal, one ring fewer: thinned chain; step 30); 240-359 choice B: the gold ring is silenced, the magenta ring stays (Fibonacci chain).
 // window.draw(i) renders frame i.
 (async function () {
   const G = await fetch('chorus-fork.json').then((r) => r.json());
@@ -50,8 +50,8 @@
     gold.forEach((g) => fade(g, kg)); mag.forEach((g) => fade(g, km)); fade(lens, Math.min(kg, km));
     if (dot) { const kd = i >= 120 && i < 240 ? km : 1; dot.visible = kd > 0.01; dot.material.opacity = kd; }  // choice A: the core copy is kept, so 12.8 leaves the chain
     if (i < 120) { ttl.textContent = 'The fork at height 12.8'; sub.textContent = `Core copy (gold ring) and one copy at 13.8 (magenta ring) overlap: ${pct}% of a copy (red, exact). One ring must go.`; }
-    else if (i < 240) { ttl.textContent = 'Choice A: silence the magenta ring'; sub.textContent = 'The gold core copy stays. The chorus’s tie-break does this: the point at 12.8 leaves the chain (red dot): the thinned Fibonacci chain.'; }
-    else { ttl.textContent = 'Choice B: silence the gold ring'; sub.textContent = 'The magenta ring stays, the core copy goes: 12.8 stays a chain point: the pure Fibonacci chain. Equally minimal.'; }
+    else if (i < 240) { ttl.textContent = 'Choice A: silence the magenta ring'; sub.textContent = 'The gold core copy stays. Minimal removal does this (one ring fewer, step 30): 12.8 leaves the chain (red dot), the thinned chain.'; }
+    else { ttl.textContent = 'Choice B: silence the gold ring'; sub.textContent = 'The magenta ring stays, the core copy goes: 12.8 stays a chain point: pure Fibonacci, at the cost of one extra ring.'; }
     r.render(sc, cam);
   };
   window.draw(0); document.title = 'ready';
