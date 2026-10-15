@@ -152,3 +152,11 @@ Each copy of the spatial five-fold chorus gets a golden envelope cut at the join
 - **Kinds and Bodhi pieces.** There are 561 kinds (shape up to scale); 4,221 pieces have purely golden walls. Bodhi pieces: **5 Vajras (fine)**, one five-fold orbit. The earlier "2 Mudras" and "30 pieces" were artefacts of the early-stopping cut.
 
 **Conclusion.** Even in the five-fold arrangement, the golden region does not divide naturally into Bodhi pieces; under the canonical cut it shatters. The Golden Bodhi Pyrochlore's golden fill needs either resin or a deliberate (non-canonical) choice of Bodhi pieces. Renders: `renders/chorus-golden-exact-*.png`.
+
+## Step 22: the spatial five-fold chorus, exact, to radius 5 (`scripts/chorus_exact_big.py 5.0` → `data/chorus-exact-big.txt`)
+
+- **Construction.** The five wedges were rebuilt to radius 5 from exact lattice points of the five voices: 336 sites. Clashing copies were silenced in whole five-fold orbits (chosen in float): **80 silenced, 256 kept**, exactly five-fold symmetric by construction.
+- **Exact packing check** in ℚ(√5): any two copies further apart than twice the circumradius cannot overlap, so checking the 620 closer pairs is complete. Result: **0 overlaps**, and all 620 close pairs touch exactly face to face (the hexagon joints).
+- **Where the silences fall.** Not only near the axis: silenced copies lie at distances from 0.29 to 4.65 from the axis. The kept fraction by distance from the axis is 0.05 within 1, 0.54 within 2, 0.67 within 3 and 0.73 within 4. So the structure has a **nearly empty core** (95% silent within distance 1 of the axis) **and silences along the wedge boundaries at every radius**, like grain boundaries that carry vacancies, thinning out as the wedges widen. The open-channel picture holds for the core, but the boundaries keep needing silences too.
+
+This is the first exactly verified five-fold arrangement in the study.
