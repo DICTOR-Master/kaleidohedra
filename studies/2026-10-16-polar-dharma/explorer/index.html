@@ -5,132 +5,183 @@
 :root{--bg:#f4f1ea;--panel:#ebe5d8;--fg:#2b2620;--mute:#6d6556;--line:#d6cdb9;--accent:#9a7a1c;--warm:#e0892f;--cool:#1f8fa6;--ink:#1d1a16;--btn:#fffaf0}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1a1814;--panel:#24211b;--fg:#ece6d6;--mute:#a59e8b;--line:#3a352b;--accent:#d8b350;--warm:#f0a050;--cool:#4fc3d9;--ink:#ece6d6;--btn:#2c2820;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#1a1814;--panel:#24211b;--fg:#ece6d6;--mute:#a59e8b;--line:#3a352b;--accent:#d8b350;--warm:#f0a050;--cool:#4fc3d9;--ink:#ece6d6;--btn:#2c2820;color-scheme:dark}
+[hidden]{display:none!important}
 body{background:var(--bg);color:var(--fg);font:15px/1.5 Inter,system-ui,sans-serif;margin:0;padding-inline:16px;padding-block:20px 32px}
 main{max-width:860px;margin:0 auto;display:grid;gap:14px}
 h1{font:650 26px/1.15 Fraunces,Georgia,serif;margin:0;text-wrap:balance}h1 b{color:var(--accent);font-weight:650}
 .lede{margin:0;color:var(--mute);max-width:68ch}
-.tabs{display:flex;gap:6px;flex-wrap:wrap}
-.tabs button,.ctl button{font:500 14px Inter,system-ui,sans-serif;background:var(--btn);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer}
-.tabs button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
-.stage{position:relative;width:100%;max-width:100%;aspect-ratio:1/1;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--bg);touch-action:none}
+.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+button{font:500 14px Inter,system-ui,sans-serif;background:var(--btn);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer}
+button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.lab{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin-right:4px}
+.stage{position:relative;width:100%;max-width:100%;aspect-ratio:1/1;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--bg);touch-action:none;cursor:grab}
 .stage canvas{display:block;width:100%!important;height:100%!important}
 .mark{position:absolute;right:10px;bottom:8px;font:600 12px Inter,system-ui,sans-serif;color:var(--mute);pointer-events:none}
-.read{position:absolute;left:10px;top:8px;font:500 13px Inter,system-ui,sans-serif;color:var(--fg);background:color-mix(in srgb,var(--bg) 80%,transparent);padding:3px 8px;border-radius:6px;pointer-events:none;font-variant-numeric:tabular-nums}
+.read{position:absolute;left:10px;top:8px;font:500 13px Inter,system-ui,sans-serif;color:var(--fg);background:color-mix(in srgb,var(--bg) 82%,transparent);padding:3px 8px;border-radius:6px;pointer-events:none;font-variant-numeric:tabular-nums}
+svg.cross{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;transition:opacity .25s}
+svg.cross line{stroke:var(--fg);stroke-width:1;stroke-dasharray:4 4;opacity:.5}
+#words{transition:opacity .25s}
 .panel{background:var(--panel);border-radius:10px;padding:14px;display:grid;gap:12px}
-.ctl{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 input[type=range]{width:100%;accent-color:var(--accent);height:34px}
 .scale{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);font-variant-numeric:tabular-nums}
 .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--mute)}.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
 .note{font-size:13px;color:var(--mute);margin:0;max-width:72ch}
-[hidden]{display:none!important}
 label.chk{font-size:14px;display:flex;gap:6px;align-items:center}
 </style>
 <main>
 <h1><b>DICTO</b> · Polar Dharma Explorer</h1>
-<p class="lede">The Spheres of Dharma and their polar image, the cycle turned up–down. Everything you see is true geometry, computed live in your browser: nothing is stretched to make a picture work.</p>
-<div class="tabs" role="tablist">
+<p class="lede">The Spheres of Dharma and their polar image, the cycle flipped up–down. Everything here is true geometry, computed live in your browser.</p>
+<div class="row" role="tablist">
   <button id="tabToggle" aria-pressed="true">The toggle</button>
   <button id="tabCore" aria-pressed="false">The infinite core</button>
+  <button id="tabLock" aria-pressed="false">The interlock</button>
 </div>
-<div class="stage" id="stage"><div class="read" id="read"></div><div class="mark">DICTO · dictospheres.com</div></div>
+<div class="stage" id="stage">
+  <svg class="cross" id="cross" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="50" y1="0" x2="50" y2="100" vector-effect="non-scaling-stroke"/><line x1="0" y1="50" x2="100" y2="50" vector-effect="non-scaling-stroke"/></svg>
+  <div id="words" style="position:absolute;inset:0;pointer-events:none;font:600 13px Inter,system-ui,sans-serif;color:var(--fg)">
+    <span style="position:absolute;top:30px;left:50%;transform:translateX(-50%)">up</span><span style="position:absolute;bottom:26px;left:50%;transform:translateX(-50%)">down</span>
+    <span style="position:absolute;left:8px;top:50%;transform:translateY(-140%)">left</span><span style="position:absolute;right:8px;top:50%;transform:translateY(-140%)">right</span></div>
+  <div class="read" id="read"></div><div class="mark">DICTO · dictospheres.com</div>
+</div>
+<div class="row"><span class="lab">View along</span><button data-ax="5" aria-pressed="true">5-fold</button><button data-ax="3">3-fold</button><button data-ax="2">2-fold</button>
+  <label class="chk"><input type="checkbox" id="flat" checked> Flat (no perspective)</label></div>
 <section class="panel" id="pToggle">
   <div><input type="range" id="rho" min="0" max="1000" value="0" aria-label="Toggle sphere"><div class="scale"><span>ρ = φ/2 · ends shared</span><span>ρ = φ√3/2 · middle shared</span></div></div>
-  <div class="ctl"><button id="bEnds">Ends setting</button><button id="bMid">Middle setting</button><button id="bPlayT">Play</button><label class="chk"><input type="checkbox" id="cutT" checked> Cut in half</label></div>
+  <div class="row"><button id="bEnds">Ends setting</button><button id="bMid">Middle setting</button><button id="bPlayT">Play</button><label class="chk"><input type="checkbox" id="cutT" checked> Cut in half</label></div>
   <div class="legend"><span><i style="background:var(--warm)"></i>your Spheres of Dharma</span><span><i style="background:var(--cool)"></i>the flipped cycle</span><span><i style="background:var(--ink)"></i>shared at an exact setting</span></div>
-  <p class="note">Sliding the toggle sphere scales the flipped cycle by ρ². At exactly two settings it clicks into yours. At ρ = φ/2 both run through the same icosahedron and dodecahedron; at ρ = φ√3/2 through the same icosidodecahedron and triacontahedron. The two settings differ by exactly ×3 in ρ², which is not a power of φ, so no single toggle shares both. Drag to turn it.</p>
+  <p class="note">The flipped cycle scales by ρ² as you slide. At exactly two settings it clicks into yours: at ρ = φ/2 both run through the same icosahedron and dodecahedron, at ρ = φ√3/2 through the same icosidodecahedron and triacontahedron. The settings differ by exactly ×3 in ρ², not a power of φ, so no toggle shares both.</p>
 </section>
 <section class="panel" id="pCore" hidden>
-  <div class="ctl"><button id="bFall">Fall in</button><button id="bRise">Rise out</button><button id="bStop">Stop</button></div>
-  <p class="note">The cycle's outer dodecahedron is exactly φ³ times its inner one, so a copy of the whole nest fills the core, and so on forever. Each turn has the great stellated dodecahedron (orange) locked at its heart. Scroll or pinch to zoom: every ×φ³ you arrive where you started, one turn deeper, so the fall never ends. Drag to turn; the cut always faces you.</p>
+  <div class="row"><button id="bFall">Fall in</button><button id="bRise">Rise out</button><button id="bStop">Stop</button></div>
+  <p class="note">The outer dodecahedron is exactly φ³ times the inner one, so a copy of the whole nest fills the core, forever; the great stellated dodecahedron (orange) is locked at the heart of every turn. Scroll or pinch to zoom: every ×φ³ you arrive where you started, one turn deeper.</p>
 </section>
+<section class="panel" id="pLock" hidden>
+  <div class="row"><span class="lab">Colour by</span><button id="cOrig" aria-pressed="true">your layers</button><button id="cFlip" aria-pressed="false">flipped layers</button></div>
+  <div class="legend" id="legLock"></div>
+  <p class="note">Both cycles as one solid, at the ends setting: every piece of yours cut by every piece of the flipped cycle. The result is 536 convex pieces, each lying in one layer of each cycle, and every piece of yours is exactly the sum of its parts. Switch the colouring to see the two cycles' patterns in the same pieces. The hole at the centre is the shared icosahedron, where the next turn inward begins.</p>
+</section>
+<p class="note">Drag to turn it freely. Press Play, Fall in, or a view button, and it glides back to the chosen axis, centred, with up, down, left and right marked, so every moving picture has the same bearings.</p>
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script src="data.js"></script>
 <script>
 (function () {
-  const D = window.DHARMA, P = (1 + Math.sqrt(5)) / 2, P3 = P * P * P;
-  const stage = document.getElementById('stage'), read = document.getElementById('read');
+  const D = window.DHARMA, P = (1 + Math.sqrt(5)) / 2, P3 = P * P * P, TAN = Math.tan(15 * Math.PI / 180);
+  const $ = (id) => document.getElementById(id), stage = $('stage'), read = $('read');
   const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
   const renderer = new THREE.WebGLRenderer({ antialias: true }); renderer.localClippingEnabled = true; renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
   stage.prepend(renderer.domElement);
-  const cam = new THREE.PerspectiveCamera(30, 1, 0.0005, 400);
-  const controls = new THREE.OrbitControls(cam, renderer.domElement); controls.enableDamping = true; controls.enablePan = false; controls.rotateSpeed = 0.6;
-  const clip = new THREE.Plane(new THREE.Vector3(0, 0, -1), 0);
-  const light = (sc) => { sc.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.85)); const s = new THREE.DirectionalLight(0xffffff, 0.6); s.position.set(4, 7, 5); sc.add(s); };
-  function resize() { const w = stage.clientWidth; renderer.setSize(w, w, false); renderer.domElement.style.width = renderer.domElement.style.height = '100%'; }
+  const persp = new THREE.PerspectiveCamera(30, 1, 0.0005, 400), ortho = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.0005, 400);
+  persp.position.set(0, 0, 10); ortho.position.set(0, 0, 100);
+  const clip = new THREE.Plane(new THREE.Vector3(0, 0, -1), 0);            // the camera looks down -z: keep the far half
+  function resize() { const w = stage.clientWidth; renderer.setSize(w, w, false); }
   window.addEventListener('resize', resize); resize();
-  const tris = (S, out, shrink) => { const c = S.c || [0, 0, 0]; const V = shrink ? S.v.map((p) => p.map((x, i) => c[i] + (x - c[i]) * shrink)) : S.v;
+  const light = (sc) => { sc.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.85)); const s = new THREE.DirectionalLight(0xffffff, 0.6); s.position.set(3, 5, 8); sc.add(s); };
+  const tris = (S, out, shrink) => { let c = S.c; if (!c) { c = [0, 0, 0]; for (const v of S.v) for (let i = 0; i < 3; i++) c[i] += v[i] / S.v.length; }
+    const V = shrink ? S.v.map((p) => p.map((x, i) => c[i] + (x - c[i]) * shrink)) : S.v;
     for (const f of S.f) for (let i = 1; i + 1 < f.length; i++) out.push(...V[f[0]], ...V[f[i]], ...V[f[i + 1]]); return V; };
   const lines = (V, S, out) => { for (const f of S.f) for (let i = 0; i < f.length; i++) out.push(...V[f[i]], ...V[f[(i + 1) % f.length]]); };
   const geo = (a) => { const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(a, 3)); g.computeVertexNormals(); return g; };
 
+  // ---------- orientation: the world turns, the camera stays on +z ----------
+  const q = new THREE.Quaternion(); let axisKey = '5', returning = false;
+  function target(k) { const a = new THREE.Vector3(...D.views[k].axis), u = new THREE.Vector3(...D.views[k].up), x = new THREE.Vector3().crossVectors(u, a);
+    return new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(x, u, a)).invert(); }
+  q.copy(target('5'));
+  const aligned = () => q.angleTo(target(axisKey)) < 0.004;
+  function glide() { returning = true; }
+  document.querySelectorAll('[data-ax]').forEach((b) => b.onclick = () => { axisKey = b.dataset.ax; document.querySelectorAll('[data-ax]').forEach((x) => x.setAttribute('aria-pressed', x === b)); glide(); });
+  // drag to turn (pauses any motion), wheel or pinch to zoom
+  const ptrs = new Map(); let pinch0 = 0, zoom = 1;
+  stage.addEventListener('pointerdown', (e) => { stage.setPointerCapture(e.pointerId); ptrs.set(e.pointerId, [e.clientX, e.clientY]); returning = false; stopMotion(); });
+  stage.addEventListener('pointerup', (e) => { ptrs.delete(e.pointerId); pinch0 = 0; });
+  stage.addEventListener('pointercancel', (e) => { ptrs.delete(e.pointerId); pinch0 = 0; });
+  stage.addEventListener('pointermove', (e) => {
+    if (!ptrs.has(e.pointerId)) return; const [x0, y0] = ptrs.get(e.pointerId); ptrs.set(e.pointerId, [e.clientX, e.clientY]);
+    if (ptrs.size === 2) { const [a, b] = [...ptrs.values()]; const d = Math.hypot(a[0] - b[0], a[1] - b[1]); if (pinch0) zoomBy(pinch0 / d); pinch0 = d; return; }
+    const dx = e.clientX - x0, dy = e.clientY - y0, ang = Math.hypot(dx, dy) * 0.008; if (!ang) return;
+    q.premultiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(dy, dx, 0).normalize(), ang));
+  });
+  stage.addEventListener('wheel', (e) => { e.preventDefault(); zoomBy(Math.exp(e.deltaY * 0.0015)); }, { passive: false });
+  function zoomBy(f) { zoom *= f; if (mode !== 'core') zoom = Math.min(4, Math.max(0.15, zoom)); }
+
   // ---------- the toggle ----------
-  const sT = new THREE.Scene(); light(sT);
+  const sT = new THREE.Scene(); light(sT); const wT = new THREE.Group(); sT.add(wT);
   const warm = [0xffc857, 0xffb74d, 0xff9a52, 0xf08a5d, 0xe57373, 0xd4a017, 0xc0392b], cool = [0x4dd0e1, 0x29b6f6, 0x5c6bc0, 0x7e57c2, 0x26a69a, 0x0097a7, 0x3949ab];
   const shell = (S, col) => { const t = [], l = []; const V = tris(S, t, 0); lines(V, S, l);
     const mf = new THREE.MeshStandardMaterial({ color: col, transparent: true, opacity: 0.1, side: THREE.DoubleSide, depthWrite: false, flatShading: true, clippingPlanes: [clip] });
     const ml = new THREE.LineBasicMaterial({ color: col, clippingPlanes: [clip] });
     const g = new THREE.Group(); g.add(new THREE.Mesh(geo(t), mf), new THREE.LineSegments(geo(l), ml)); g.userData = { mf, ml, col, n: S.n }; return g; };
-  const origS = D.toggle.orig.map((S, i) => { const g = shell(S, warm[i]); sT.add(g); return g; });
-  const flipG = new THREE.Group(); D.toggle.flip.forEach((S, i) => flipG.add(shell(S, cool[i]))); sT.add(flipG);
-  let e = 0, playT = false, tT = 0;
-  const slider = document.getElementById('rho');
-  function setE(x, fromSlider) { e = Math.min(1, Math.max(0, x)); if (Math.abs(e) < 0.012) e = 0; if (Math.abs(1 - e) < 0.012) e = 1; if (!fromSlider) slider.value = Math.round(e * 1000); }
-  slider.addEventListener('input', () => { playT = false; setE(slider.value / 1000, true); });
-  document.getElementById('bEnds').onclick = () => { playT = false; setE(0); };
-  document.getElementById('bMid').onclick = () => { playT = false; setE(1); };
-  document.getElementById('bPlayT').onclick = () => { playT = !playT; document.getElementById('bPlayT').textContent = playT ? 'Pause' : 'Play'; };
+  const origS = D.toggle.orig.map((S, i) => { const g = shell(S, warm[i]); wT.add(g); return g; });
+  const flipG = new THREE.Group(); D.toggle.flip.forEach((S, i) => flipG.add(shell(S, cool[i]))); wT.add(flipG);
+  let e = 0, playT = false, tT = 0; const slider = $('rho');
+  function setE(x, fromSlider) { e = Math.min(1, Math.max(0, x)); if (e < 0.012) e = 0; if (1 - e < 0.012) e = 1; if (!fromSlider) slider.value = Math.round(e * 1000); }
+  slider.addEventListener('input', () => { stopMotion(); setE(slider.value / 1000, true); });
+  $('bEnds').onclick = () => { stopMotion(); setE(0); }; $('bMid').onclick = () => { stopMotion(); setE(1); };
+  $('bPlayT').onclick = () => { if (playT) stopMotion(); else { playT = true; $('bPlayT').textContent = 'Pause'; glide(); } };
   const ease = (x) => x * x * (3 - 2 * x), loopU = (t) => t < 0.1 ? 0 : t < 0.45 ? ease((t - 0.1) / 0.35) : t < 0.55 ? 1 : t < 0.9 ? 1 - ease((t - 0.55) / 0.35) : 0;
-  function drawToggle(dt) {
-    if (playT) { tT = (tT + dt / 10) % 1; setE(loopU(tT)); }
-    const s = Math.pow(3, e); flipG.scale.setScalar(s);
-    const ink = new THREE.Color(css('--ink') || '#1d1a16');
+  function stepToggle(dt) {
+    if (playT && !returning) { tT = (tT + dt / 10) % 1; setE(loopU(tT)); }
+    const s = Math.pow(3, e); flipG.scale.setScalar(s); const ink = new THREE.Color(css('--ink') || '#1d1a16');
     for (const m of origS) { const sh = (e === 0 && D.toggle.ends.includes(m.userData.n)) || (e === 1 && D.toggle.middle.includes(m.userData.n));
       const c = sh ? ink : new THREE.Color(m.userData.col); m.userData.ml.color.copy(c); m.userData.mf.color.copy(c); m.userData.mf.opacity = sh ? 0.28 : 0.1; }
-    const rho2 = P * P / 4 * s;
-    read.textContent = e === 0 ? 'ρ = φ/2 · shares I and D (exact)' : e === 1 ? 'ρ = φ√3/2 · shares ID and RT (exact)' : `ρ² = ${rho2.toFixed(4)} · nothing shared`;
-    clip.normal.copy(cam.position).normalize().negate(); clip.constant = 0;
-    sT.background = new THREE.Color(css('--bg')); renderer.clippingPlanes = [];
-    for (const g of [...origS, ...flipG.children]) { g.userData.mf.clippingPlanes = g.userData.ml.clippingPlanes = document.getElementById('cutT').checked ? [clip] : []; }
-    renderer.render(sT, cam);
+    const cut = $('cutT').checked; for (const g of [...origS, ...flipG.children]) g.userData.mf.clippingPlanes = g.userData.ml.clippingPlanes = cut ? [clip] : [];
+    read.textContent = e === 0 ? 'ρ = φ/2 · shares I and D (exact)' : e === 1 ? 'ρ = φ√3/2 · shares ID and RT (exact)' : `ρ² = ${(P * P / 4 * s).toFixed(4)} · nothing shared`;
+    return { scene: sT, world: wT, half: 1.15 * Math.max(2.49, 1.4013 * s) };
   }
 
   // ---------- the infinite core ----------
-  const sC = new THREE.Scene(); light(sC);
+  const sC = new THREE.Scene(); light(sC); const wC = new THREE.Group(); sC.add(wC);
   const COL = [0x4dd0e1, 0xc792ea, 0x5fd38a, 0xf08fc0, 0x9fd8ff, 0xff9a52, 0x9fa8da];
-  const turn = new THREE.Group(); const lineArr = [];
-  D.turn.layers.forEach((L, k) => { const t = []; for (const S of L) { const V = tris(S, t, 0.97); lines(V, S, lineArr); }
+  const turn = new THREE.Group(); const la = [];
+  D.turn.layers.forEach((L, k) => { const t = []; for (const S of L) { const V = tris(S, t, 0.97); lines(V, S, la); }
     turn.add(new THREE.Mesh(geo(t), new THREE.MeshStandardMaterial({ color: COL[k], roughness: 0.5, flatShading: true, side: THREE.DoubleSide, clippingPlanes: [clip], polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 }))); });
-  turn.add(new THREE.LineSegments(geo(lineArr), new THREE.LineBasicMaterial({ color: 0x2a2218, clippingPlanes: [clip] })));
-  const coreT = []; tris(D.turn.core, coreT, 0); const coreMesh = new THREE.Mesh(geo(coreT), new THREE.MeshStandardMaterial({ color: 0xffc857, flatShading: true, clippingPlanes: [clip] }));
-  for (let k = -1; k <= 5; k++) { const c = turn.clone(); c.scale.setScalar(Math.pow(P3, -k)); sC.add(c); }
-  coreMesh.scale.setScalar(Math.pow(P3, -5)); sC.add(coreMesh);
-  const D0 = 2.5; let depth = 0, fall = 0;
-  document.getElementById('bFall').onclick = () => fall = 1; document.getElementById('bRise').onclick = () => fall = -1; document.getElementById('bStop').onclick = () => fall = 0;
-  function drawCore(dt) {
-    if (fall) cam.position.multiplyScalar(Math.exp(-fall * dt * 0.45));
-    let d = cam.position.length();
-    while (d < D0 / P3) { cam.position.multiplyScalar(P3); d *= P3; depth++; }   // one turn deeper: the same picture
-    while (d > D0) { cam.position.multiplyScalar(1 / P3); d /= P3; depth--; }
-    clip.normal.copy(cam.position).normalize().negate(); clip.constant = 0;
-    read.textContent = `turn ${depth} · zoom ×φ^${(3 * depth + Math.log(D0 / d) / Math.log(P)).toFixed(2)}`;
-    sC.background = new THREE.Color(css('--bg')); renderer.render(sC, cam);
+  turn.add(new THREE.LineSegments(geo(la), new THREE.LineBasicMaterial({ color: 0x2a2218, clippingPlanes: [clip] })));
+  for (let k = -1; k <= 5; k++) { const c = turn.clone(); c.scale.setScalar(Math.pow(P3, -k)); wC.add(c); }
+  const ct = []; tris(D.turn.core, ct, 0); const coreM = new THREE.Mesh(geo(ct), new THREE.MeshStandardMaterial({ color: 0xffc857, flatShading: true, clippingPlanes: [clip] })); coreM.scale.setScalar(Math.pow(P3, -5)); wC.add(coreM);
+  let fall = 0, depth = 0; const H0 = 1.0;
+  $('bFall').onclick = () => { fall = 1; glide(); }; $('bRise').onclick = () => { fall = -1; glide(); }; $('bStop').onclick = () => stopMotion();
+  function stepCore(dt) {
+    if (fall && !returning) zoom *= Math.exp(-fall * dt * 0.45);
+    while (zoom < 1 / P3) { zoom *= P3; depth++; } while (zoom > 1) { zoom /= P3; depth--; }   // one turn: the same picture
+    read.textContent = `turn ${depth} · zoom ×φ^${(3 * depth - Math.log(zoom) / Math.log(P)).toFixed(2)}`;
+    return { scene: sC, world: wC, half: H0 };
   }
 
-  // ---------- modes ----------
+  // ---------- the interlock ----------
+  const sL = new THREE.Scene(); light(sL); const wL = new THREE.Group(); sL.add(wL);
+  const WARM6 = [0xffc857, 0xff9a52, 0xe57373, 0xf08fc0, 0xc792ea, 0x8d6e63], COOLG = { 4: 0x9fd8ff, 5: 0x4dd0e1, 10: 0x26a69a, 11: 0x5c6bc0, 12: 0x7e57c2, 13: 0x3949ab };
+  const lockMats = [], ll = [];
+  for (const S of D.interlock) { const t = []; const V = tris(S, t, 0.985); lines(V, S, ll);
+    const m = new THREE.MeshStandardMaterial({ color: WARM6[S.o], roughness: 0.55, flatShading: true, side: THREE.DoubleSide, clippingPlanes: [clip], polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
+    m.userData = { o: WARM6[S.o], g: COOLG[S.g] || 0x888888 }; lockMats.push(m); wL.add(new THREE.Mesh(geo(t), m)); }
+  wL.add(new THREE.LineSegments(geo(ll), new THREE.LineBasicMaterial({ color: 0x2a2218, clippingPlanes: [clip] })));
+  const legend = { orig: ['icosahedron → icosidodecahedron', 'icosidodecahedron → dodecahedron', 'dodecahedron → truncated icosahedron', 'truncated icosahedron → Hecatodihedron', 'Hecatodihedron → triacontahedron', 'triacontahedron → icosahedron ×φ³'].map((n, i) => [WARM6[i], n]),
+                   flip: [[0x9fd8ff, 'flipped: icosahedron → triacontahedron'], [0x4dd0e1, 'flipped: triacontahedron → dodecahedron'], [0x26a69a, 'next flipped turn: dodecahedron → icosidodecahedron'], [0x5c6bc0, 'next: icosidodecahedron → Ogdoecontahedron'], [0x7e57c2, 'next: Ogdoecontahedron → pentakis dodecahedron'], [0x3949ab, 'next: pentakis dodecahedron → icosahedron']] };
+  function colourLock(by) { for (const m of lockMats) m.color.setHex(by === 'orig' ? m.userData.o : m.userData.g); $('cOrig').setAttribute('aria-pressed', by === 'orig'); $('cFlip').setAttribute('aria-pressed', by === 'flip');
+    $('legLock').innerHTML = legend[by].map(([c, n]) => `<span><i style="background:#${c.toString(16).padStart(6, '0')}"></i>${n}</span>`).join(''); }
+  $('cOrig').onclick = () => colourLock('orig'); $('cFlip').onclick = () => colourLock('flip'); colourLock('orig');
+  function stepLock() { read.textContent = 'interlock · ends setting · 536 pieces'; return { scene: sL, world: wL, half: 2.7 }; }
+
+  // ---------- modes and the frame loop ----------
   let mode = 'toggle';
-  function setMode(m) {
-    mode = m; document.getElementById('tabToggle').setAttribute('aria-pressed', m === 'toggle'); document.getElementById('tabCore').setAttribute('aria-pressed', m === 'core');
-    document.getElementById('pToggle').hidden = m !== 'toggle'; document.getElementById('pCore').hidden = m !== 'core';
-    const dir = new THREE.Vector3(0.12, 0.2, 1).normalize();
-    if (m === 'toggle') { controls.minDistance = 3; controls.maxDistance = 40; cam.position.copy(dir.multiplyScalar(18)); }
-    else { controls.minDistance = 0; controls.maxDistance = Infinity; cam.position.copy(dir.multiplyScalar(D0 * 0.9)); }
-    controls.target.set(0, 0, 0); controls.update();
-  }
-  document.getElementById('tabToggle').onclick = () => setMode('toggle'); document.getElementById('tabCore').onclick = () => setMode('core');
-  setMode('toggle');
+  function stopMotion() { playT = false; fall = 0; $('bPlayT').textContent = 'Play'; }
+  function setMode(m) { mode = m; stopMotion(); zoom = 1;
+    for (const [t, p, k] of [['tabToggle', 'pToggle', 'toggle'], ['tabCore', 'pCore', 'core'], ['tabLock', 'pLock', 'lock']]) { $(t).setAttribute('aria-pressed', m === k); $(p).hidden = m !== k; }
+    if (m === 'core') zoom = 0.9; glide(); }
+  $('tabToggle').onclick = () => setMode('toggle'); $('tabCore').onclick = () => setMode('core'); $('tabLock').onclick = () => setMode('lock');
   let last = performance.now();
-  (function loop(now) { const dt = Math.min(0.1, (now - last) / 1000); last = now; controls.update(); mode === 'toggle' ? drawToggle(dt) : drawCore(dt); requestAnimationFrame(loop); })(last);
+  (function loop(now) {
+    const dt = Math.min(0.1, (now - last) / 1000); last = now;
+    if (returning) { const t = target(axisKey); q.slerp(t, 1 - Math.exp(-dt * 7)); if (q.angleTo(t) < 0.002) { q.copy(t); returning = false; } }
+    const st = mode === 'toggle' ? stepToggle(dt) : mode === 'core' ? stepCore(dt) : stepLock();
+    st.world.quaternion.copy(q); st.scene.background = new THREE.Color(css('--bg'));
+    const half = st.half * zoom;
+    let cam; if ($('flat').checked) { cam = ortho; Object.assign(ortho, { left: -half, right: half, top: half, bottom: -half }); ortho.updateProjectionMatrix(); }
+    else { cam = persp; persp.position.set(0, 0, half / TAN); persp.lookAt(0, 0, 0); }
+    renderer.render(st.scene, cam);
+    const on = aligned(); $('cross').style.opacity = on ? 1 : 0; $('words').style.opacity = on ? 1 : 0;
+    requestAnimationFrame(loop);
+  })(last);
 })();
 </script>

@@ -21,8 +21,8 @@ def icosa_axes(ico):
     """The chain's axes from its icosahedron corners: 5-fold (6 lines), 3-fold (face centres, 10 lines), 2-fold (edge midpoints)."""
     I = np.asarray(ico, float); I = I / np.linalg.norm(I, axis=1)[:, None]
     d = np.linalg.norm(I[:, None] - I[None], axis=2); e = np.min(d[d > 1e-9])
-    edges = [(i, j) for i, j in itertools.combinations(range(12), 2) if abs(d[i, j] - e) < 1e-9]
-    tri = [t for t in itertools.combinations(range(12), 3) if all(abs(d[a, b] - e) < 1e-9 for a, b in itertools.combinations(t, 2))]
+    edges = [(i, j) for i, j in itertools.combinations(range(12), 2) if abs(d[i, j] - e) < 1e-7]
+    tri = [t for t in itertools.combinations(range(12), 3) if all(abs(d[a, b] - e) < 1e-7 for a, b in itertools.combinations(t, 2))]
     unit = lambda v: v / np.linalg.norm(v)
     return {'5': I, '3': np.array([unit(I[list(t)].sum(0)) for t in tri]), '2': np.array([unit(I[i] + I[j]) for i, j in edges])}
 

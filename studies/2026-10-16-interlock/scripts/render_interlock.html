@@ -1,0 +1,42 @@
+<!doctype html><meta charset="utf-8"><title>Interlock (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea;font-family:system-ui,sans-serif}canvas{display:block}#ov{position:fixed;inset:0;pointer-events:none}
+#tag{position:fixed;right:12px;bottom:8px;font:600 14px system-ui;color:#5b5346}#ttl{position:fixed;left:12px;top:8px;font:600 17px system-ui;color:#2b2620;background:#f4f1eacc;padding:2px 6px;border-radius:4px}</style>
+<div id="ttl"></div><svg id="ov" viewBox="0 0 900 900"></svg><div id="tag">DICTO · dictospheres.com</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// The interlock (ends setting) as oriented orthographic sections: ?axis=5|3|2 (view along that symmetry axis, a two-fold axis up,
+// so the picture is left-right symmetric), &col=orig|flip (colour by the layer of your cycle or of the flipped cycle), &h=<half-width>.
+// The near half is cut away through the centre. Overlay: centre cross, up/down/left/right, radius rings at the shared stations.
+(async function () {
+  const q = new URLSearchParams(location.search), A = q.get('axis') || '5', col = q.get('col') || 'orig', H = +(q.get('h') || 2.65), PX = 900;
+  const J = await fetch('interlock-render.json').then((r) => r.json());
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(PX, PX); renderer.setPixelRatio(1); renderer.localClippingEnabled = true;
+  document.body.prepend(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.9)); const sun = new THREE.DirectionalLight(0xffffff, 0.5); scene.add(sun);
+  const a = new THREE.Vector3(...J.views[A].axis), up = new THREE.Vector3(...J.views[A].up);
+  const clip = [new THREE.Plane(a.clone().negate(), 0)];                       // keep the far half: we look at the cut face
+  const WARM = [0xffc857, 0xff9a52, 0xe57373, 0xf08fc0, 0xc792ea, 0x8d6e63];
+  const COOL = { 4: 0x9fd8ff, 5: 0x4dd0e1, 10: 0x26a69a, 11: 0x5c6bc0, 12: 0x7e57c2, 13: 0x3949ab };
+  for (const P of J.pieces) {
+    const c = P.v.reduce((s, v) => s.map((x, i) => x + v[i] / P.v.length), [0, 0, 0]); const V = P.v.map((v) => v.map((x, i) => c[i] + (x - c[i]) * 0.985));
+    const pos = [], line = [];
+    for (const f of P.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...V[f[0]], ...V[f[i]], ...V[f[i + 1]]); for (let i = 0; i < f.length; i++) line.push(...V[f[i]], ...V[f[(i + 1) % f.length]]); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    const colr = col === 'orig' ? WARM[P.o] : (COOL[P.g] || 0x888888);
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: colr, roughness: 0.55, flatShading: true, side: THREE.DoubleSide, clippingPlanes: clip, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3)); scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, clippingPlanes: clip })));
+  }
+  const cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.01, 100); cam.position.copy(a.clone().multiplyScalar(20)); cam.up.copy(up); cam.lookAt(0, 0, 0);
+  sun.position.copy(a.clone().multiplyScalar(5).add(up.clone().multiplyScalar(3))); renderer.render(scene, cam);
+  // overlay: centre cross, compass words, rings at the shared stations (icosahedron and dodecahedron) and at the outer icosahedron
+  const s = (r) => r / H * 450, ov = document.getElementById('ov'), add = (h) => ov.insertAdjacentHTML('beforeend', h);
+  add(`<line x1="450" y1="0" x2="450" y2="900" stroke="#2b2620" stroke-width="1" stroke-dasharray="4 4" opacity=".55"/><line x1="0" y1="450" x2="900" y2="450" stroke="#2b2620" stroke-width="1" stroke-dasharray="4 4" opacity=".55"/>`);
+  add(`<circle cx="450" cy="450" r="4" fill="#2b2620"/>`);
+  for (const [w, x, y, an] of [['up', 450, 26, 'middle'], ['down', 450, 886, 'middle'], ['left', 10, 444, 'start'], ['right', 890, 444, 'end']]) add(`<text x="${x}" y="${y}" font-size="14" fill="#2b2620" text-anchor="${an}" font-weight="600">${w}</text>`);
+  for (const [n, lab] of [['icosahedron', 'I'], ['dodecahedron', 'D'], ['icosahedron (phi^3)', 'I·φ³']]) { const r = s(J.radii[n]); if (r < 445) add(`<circle cx="450" cy="450" r="${r}" fill="none" stroke="#9a7a1c" stroke-width="1.2" stroke-dasharray="2 5"/><text x="${450 + r * 0.707 + 4}" y="${450 - r * 0.707 - 4}" font-size="13" fill="#9a7a1c" font-weight="600">${lab}</text>`); }
+  const names = { '5': 'five-fold', '3': 'three-fold', '2': 'two-fold' };
+  document.getElementById('ttl').textContent = `along a ${names[A]} axis · coloured by ${col === 'orig' ? 'your layers' : 'flipped layers'}`;
+  document.title = 'ready';
+})();
+</script>
