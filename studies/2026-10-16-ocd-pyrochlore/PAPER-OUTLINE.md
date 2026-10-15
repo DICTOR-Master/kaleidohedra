@@ -45,7 +45,7 @@ When five periodic packings of one icosahedral polyhedron meet around a five-fol
 
 ## Before writing
 - [x] dL0D face arrangement confirmed (exact map isomorphism, `data/ocd-dl0d.txt`): known type; claim only the metric solid.
-- [ ] Read Katz & Gratias 1993 in full; it may be closer than the review suggests.
+- [~] Katz & Gratias 1993 is closed access: read through open restatements only (README). Same spirit (hard-core window edge), different role (chosen vs forced) and different pairs (translations vs five-fold rotated images). Full text still needed before submission.
 - [ ] Read Gratias–Thalal 1988 and Sutton 1992 on junctions of several irrational boundaries.
 - [ ] Check the book catalogues the review could not: Wenninger, Holden, Pugh and Inchbald. Also MathWorld PolyhedronData and the full Bowers and Klitzing lists.
 - [ ] Decide the fork framing: report it as is, or search for a natural rule that keeps the spine Fibonacci.

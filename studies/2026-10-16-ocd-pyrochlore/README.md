@@ -308,3 +308,16 @@ The decision is combinatorial and exact (an isomorphism search on face maps, mir
 - Controls: randomly relabelled vertices still match; swapping two corners of one hexagon breaks the match.
 
 **So the combinatorial type is known.** What is not found in the sources checked is the metric solid: regular hexagons with kites of 117.85°, 68.62° and 55.69°.
+
+### Katz & Gratias 1993: what could and could not be read (2026-10-15)
+
+- **The paper:** Katz & Gratias, *A geometric approach to chemical ordering in icosahedral structures*, J. Non-Cryst. Solids 153–154, 187–195 (1993), doi:10.1016/0022-3093(93)90340-4. It is **closed access**: OpenAlex finds no repository copy, and no legal free copy turned up. **Not read in full.** To read it: buy it on ScienceDirect, borrow it through a library, or ask the authors' group.
+- **Read instead (open):**
+  - The Widom & Mihalkovič review (arXiv:2308.09192): Katz and Gratias "used theoretical arguments (closeness and hard core conditions) to create atomic surfaces that maximize the density while being bounded by atomic surfaces on 2-fold planes".
+  - Quiquandon & Gratias, C. R. Physique 15, 18 (2014): the closeness condition is about phason jumps being short (polyhedral windows with vertices at rationally scaled points). The hard-core condition is not stated there.
+- **The hard-core condition in its standard form** (general knowledge of the field, *not* checked against the 1993 text): two points closer than d_min may not both occur. For windows, W ∩ (W + r⊥) = ∅ for every lattice vector r whose physical part is shorter than d_min.
+- **Comparison with the chorus (our reading):**
+  - *Same spirit.* In both, a window edge is set by a minimum-distance (hard-core) rule.
+  - *Different role.* Katz–Gratias **choose** windows to maximise density under the hard-core and closeness constraints, inside a six-dimensional quasicrystal model. In the chorus nothing is chosen: the silenced set **is** the window, forced by overlap.
+  - *Different pairs.* Their exclusion acts between points related by a **lattice translation** of one quasilattice. Ours acts between a copy and its own **five-fold rotated images**, which are sites of four other periodic lattices. The window arises at a junction of periodic packings, not in a hyperspace model.
+- **For the paper:** cite Katz & Gratias as the precedent for windows bounded by hard-core conditions, and state the two differences above. Before submission, confirm this reading against the full 1993 text.
