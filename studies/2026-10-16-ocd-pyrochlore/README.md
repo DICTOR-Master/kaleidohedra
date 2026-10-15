@@ -295,3 +295,16 @@ Exact in ℚ(√5) for every overlap and touch; the greedy silencing is float, a
 - the equal-cost fork beyond it (step 29).
 
 **Reading.** The chorus spine is a new, exact instance of a known family: irrational interfaces as quasicrystals. It is not a new phenomenon. Any write-up must cite Sutton, Ranganathan et al. and Prodan et al. The search used 1 library grep, 6 web searches and 2 abstract reads. It is not a specialist literature review; a twinning or quasicrystal specialist could know more.
+
+## Face arrangement of the Ogdoecontahedron (`scripts/ocd_dl0d.py` → `data/ocd-dl0d.txt`)
+
+The decision is combinatorial and exact (an isomorphism search on face maps, mirror images allowed). It confirms the Fable review's identification.
+
+- The OCD's face arrangement is **the same as**:
+  - **(A)** the pentakis dodecahedron with its 20 six-valent corners cut down to the edge midpoints;
+  - **(B)** the dual of L0(D), Antiprism's joined-lace operator applied to the dodecahedron. L0 is built here from Antiprism's written definition ("lace with the L1 quads left unsplit"); the Antiprism program was not run.
+- Equivalently, the Hecatodihedron has the face arrangement of L0(D).
+- Counts: 102 vertices, 180 edges, 80 faces (60 quads, 20 hexagons); vertex degrees 3 (60), 4 (30), 5 (12).
+- Controls: randomly relabelled vertices still match; swapping two corners of one hexagon breaks the match.
+
+**So the combinatorial type is known.** What is not found in the sources checked is the metric solid: regular hexagons with kites of 117.85°, 68.62° and 55.69°.
