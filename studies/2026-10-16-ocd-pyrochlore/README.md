@@ -73,3 +73,16 @@ Keep all 6 limbs per copy and let each crossing pair **share** its conflict zone
 - **The zone.** It is the intersection of the two crossing limbs, one at each square-face centre (3 per copy): **12 corners, 10 faces, all quadrilaterals**, volume 0.002140 (14.9% of a limb). It lies inside the octahedral bridge of step 6 but is not the same solid.
 - **Golden rhombi.** **2 of its faces are golden rhombi**: angles 63.4349° and 116.5651°, diagonals in the golden ratio 1.618034. These are the faces of the rhombic triacontahedron and of the golden rhombohedra. The other 8 faces are quadrilaterals with angles 80.12°–99.88°. (Float so far; exact check pending.)
 - **Filling.** All 6 limbs with each zone counted once fill 23.8% of the gap per copy.
+
+## Step 9: golden rhombohedra grown from the conflict-zone rhombi (DICTO; `scripts/grow.py` → `data/grow.txt`)
+
+The zone's golden-rhombus edges run exactly along five-fold axes, so the growth stays in the icosahedral frame, quasicrystal-like. The bricks are golden rhombohedra, prolate and oblate, both faced only with golden rhombi. They grew greedily outward, accepted only without overlap; the limbs were left out, with the zone standing for their crossing. From one zone, **300 bricks (152 prolate, 148 oblate)** grew before the cap, volume 0.023006. The brick edge is 0.049892, 4.77 times smaller than the hexagon edge.
+
+## Step 10: how golden rhombi meet the non-golden faces (DICTO: "how do they meet non-golden rhombi? at an angled combination junction?")
+
+Golden rhombohedra can only make a flat surface on golden-rhombus planes, which are perpendicular to two-fold axes. The OCD's 20 hexagons are perpendicular to three-fold axes, and its 60 kites to no symmetry axis. So bare bricks meet them in a saw-tooth front, and the slivers are small because the bricks are small (DICTO: fill with resin). By symmetry there are only two junction situations, each with a fixed angle:
+
+- **Hexagon junction: 20.9052°**, the same to three golden-rhombus planes spaced evenly around the hexagon. The adapter is a low three-sided cap whose upper faces are golden-rhombus planes meeting over the hexagon centre: the shape of a **rhombic triacontahedron's three-fold corner**.
+- **Kite junction: 11.6407°**, with two mirror choices (the next is 31.2702°). The adapter is a shallow wedge.
+
+With these two adapter kinds the OCD's faces become golden-rhombus surfaces the bricks can sit on, much like DICTO's RVCMG adapters between families. Not yet built or checked for fit.
