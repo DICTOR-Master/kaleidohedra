@@ -482,6 +482,11 @@ export const LATTICES_3D = [
   { key: 'breathing', label: 'Golden Breathing Pyrochlore', pieces: [
     { label: 'Golden Breathing Pyrochlore', action: 'tool:breathingWorld' },
   ] },
+  // Golden Bodhi Pyrochlore Networks (DICTO 2026-10-15): the DICTO Ogdoecontahedron joined on its hexagons: pyrochlore networks,
+  // the double network with its gap pieces, the five voices and the five-fold chorus with its Fibonacci spine (world-bodhi-pyro.js).
+  { key: 'bodhiPyro', label: 'Golden Bodhi Pyrochlore Networks', pieces: [
+    { label: 'Golden Bodhi Pyrochlore Networks', action: 'tool:bodhiPyroWorld' },
+  ] },
   { key: 'shells', label: 'Shells', pieces: [
     { label: 'Shells', action: 'tool:shellsWorld' },
   ] },

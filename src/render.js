@@ -89,6 +89,7 @@ import { createThirteensWorld, thirteensPreviewPoints } from './app/world-thirte
 import { createOctetWorld, octetPreviewPoints } from './app/world-octet.js';
 import { createOctetBuildWorld, octetBuildPreviewPoints } from './app/world-octet-build.js';
 import { createBreathingWorld, breathingPreviewPoints } from './app/world-breathing.js';
+import { createBodhiPyroWorld, bodhiPyroPreviewPoints } from './app/world-bodhi-pyro.js';
 import { createCyclesWorld, cyclesPreviewPoints } from './app/world-cycles.js';
 import { ICOSA_SOLIDS } from './krp-core/src/geometry-extensions/icosa.js';
 import { createTargetsWorld } from './app/world-targets.js';
@@ -187,6 +188,7 @@ let octetWorld = null; // DICTO Icosahedral Octet (DICTO 2026-10-13)
 let octetBuildWorld = null; // the same, to build: Icosahedral Octet Lattice (DICTO 2026-10-13)
 let cyclesWorld = null; // DICTO Icosahedral Cycles, two loops (DICTO 2026-10-14)
 let breathingWorld = null; // Golden Breathing Pyrochlore, to build (DICTO 2026-10-14)
+let bodhiPyroWorld = null; // Golden Bodhi Pyrochlore Networks (DICTO 2026-10-15)
 let pairArrangement = null; // the Stella-Jewel / Sunstar arrangement last chosen (the Kagome hulls count as hull worlds for X-ray)
 let targetsWorld = null; // Kaleidohedra's Targets
 let shear = null; // Kaleidohedra's lattice shear (installShear); on only in an app space that has one
@@ -196,8 +198,8 @@ let netsWorld = null;
 let signalWorld = null;
 let constructWorld = null;
 let own3D = null;
-const OWN_WORLD_DIMENSION = { poly: '3D', shells: '3D', golden: '3D', roofFold: '3D', sunstar: '3D', stellaJewel: '3D', studies: '3D', icosa: '3D', chains: '3D', dodeca: '3D', theaetetus: '3D', thirteens: '3D', octet: '3D', octetBuild: '3D', breathing: '3D', cycles: '3D', targets: '3D', kaleido: '2D', nets: '2D', signal: '1D', construct: '1D' };
-const own3DWorld = () => ({ poly: polyWorld, shells: shellsWorld, golden: goldenWorld, roofFold: roofFoldWorld, sunstar: sunstarWorld, stellaJewel: stellaJewelWorld, studies: studiesWorld, icosa: icosaWorld, chains: chainsWorld, dodeca: dodecaWorld, theaetetus: theaetetusWorld, thirteens: thirteensWorld, octet: octetWorld, octetBuild: octetBuildWorld, breathing: breathingWorld, cycles: cyclesWorld, targets: targetsWorld, kaleido: kaleidoWorld, nets: netsWorld, signal: signalWorld, construct: constructWorld })[own3D] ?? null;
+const OWN_WORLD_DIMENSION = { poly: '3D', shells: '3D', golden: '3D', roofFold: '3D', sunstar: '3D', stellaJewel: '3D', studies: '3D', icosa: '3D', chains: '3D', dodeca: '3D', theaetetus: '3D', thirteens: '3D', octet: '3D', octetBuild: '3D', breathing: '3D', bodhiPyro: '3D', cycles: '3D', targets: '3D', kaleido: '2D', nets: '2D', signal: '1D', construct: '1D' };
+const own3DWorld = () => ({ poly: polyWorld, shells: shellsWorld, golden: goldenWorld, roofFold: roofFoldWorld, sunstar: sunstarWorld, stellaJewel: stellaJewelWorld, studies: studiesWorld, icosa: icosaWorld, chains: chainsWorld, dodeca: dodecaWorld, theaetetus: theaetetusWorld, thirteens: thirteensWorld, octet: octetWorld, octetBuild: octetBuildWorld, breathing: breathingWorld, bodhiPyro: bodhiPyroWorld, cycles: cyclesWorld, targets: targetsWorld, kaleido: kaleidoWorld, nets: netsWorld, signal: signalWorld, construct: constructWorld })[own3D] ?? null;
 const own3DActive = () => !!own3DWorld() && activeDimension === OWN_WORLD_DIMENSION[own3D];
 // 4D, 5D, 6D and the own 3D worlds each own their scene, taps, Lattice View and Skeleton.
 const isOwnWorldDimension = () => activeDimension === '4D' || qcWorlds.has(activeDimension) || own3DActive();
@@ -2263,7 +2265,7 @@ async function init() {
   // this bottom-row slot whenever no attach toggle needs it.
   let paintOn = false;
   // 1D has no colours to paint (Signal is cyan, Construct shows each axis).
-  const paintAvailable = () => !!activeDimension && activeDimension !== '1D' && !(own3DActive() && ['shells', 'golden', 'roofFold', 'sunstar', 'stellaJewel', 'studies', 'icosa', 'chains', 'dodeca', 'theaetetus', 'thirteens', 'octet', 'octetBuild', 'breathing', 'cycles', 'targets', 'nets'].includes(own3D));
+  const paintAvailable = () => !!activeDimension && activeDimension !== '1D' && !(own3DActive() && ['shells', 'golden', 'roofFold', 'sunstar', 'stellaJewel', 'studies', 'icosa', 'chains', 'dodeca', 'theaetetus', 'thirteens', 'octet', 'octetBuild', 'breathing', 'bodhiPyro', 'cycles', 'targets', 'nets'].includes(own3D));
   const attachNeeded = () => (activeDimension === '4D' ? ['cell24', 'cell16', ...A4_CYCLE] : activeDimension !== '2D' && !isOwnWorldDimension() ? ['rhombohedra', 'pyrochlore'] : []).includes(attachPiece());
   const paintInSlot = () => paintAvailable() && !attachNeeded();
   function setPaint(on) {
@@ -2979,6 +2981,7 @@ async function init() {
     reg('worldsunstar', '3D', () => sunstarWorld.snapshot(), (j) => sunstarWorld.restore(j));
     reg('worldoctetbuild', '3D', () => octetBuildWorld.snapshot(), (j) => octetBuildWorld.restore(j));
     reg('worldbreathing', '3D', () => breathingWorld.snapshot(), (j) => breathingWorld.restore(j));
+    reg('worldbodhipyro', '3D', () => bodhiPyroWorld.snapshot(), (j) => bodhiPyroWorld.restore(j));
     reg('worldcycles', '3D', () => cyclesWorld.snapshot(), (j) => cyclesWorld.restore(j));
     reg('worldstellajewel', '3D', () => stellaJewelWorld.snapshot(), (j) => stellaJewelWorld.restore(j));
     reg('worldkaleido', '2D', () => kaleidoWorld.snapshot(), (j) => kaleidoWorld.restore(j));
@@ -3252,11 +3255,12 @@ async function init() {
     octetWorld?.setActive(own3DActive() && own3D === 'octet');
     octetBuildWorld?.setActive(own3DActive() && own3D === 'octetBuild');
     breathingWorld?.setActive(own3DActive() && own3D === 'breathing');
+    bodhiPyroWorld?.setActive(own3DActive() && own3D === 'bodhiPyro');
     cyclesWorld?.setActive(own3DActive() && own3D === 'cycles');
     targetsWorld?.setActive(own3DActive() && own3D === 'targets');
     // Targets stay exact: no shear there (it would change the targets' angles). Elsewhere in a space
     // with a shear, the panel shows; the EKP-family worlds follow it with their cell centres.
-    shear?.setEnabled(!!SITES[activeSite()].shear && !(own3DActive() && ['targets', 'icosa', 'chains', 'dodeca', 'theaetetus', 'thirteens', 'octet', 'octetBuild', 'breathing', 'cycles'].includes(own3D)));
+    shear?.setEnabled(!!SITES[activeSite()].shear && !(own3DActive() && ['targets', 'icosa', 'chains', 'dodeca', 'theaetetus', 'thirteens', 'octet', 'octetBuild', 'breathing', 'bodhiPyro', 'cycles'].includes(own3D)));
     sunstarWorld?.setActive(own3DActive() && own3D === 'sunstar');
     stellaJewelWorld?.setActive(own3DActive() && own3D === 'stellaJewel');
     kaleidoWorld?.setActive(own3DActive() && own3D === 'kaleido');
@@ -3321,7 +3325,7 @@ async function init() {
     for (const id of ['hud-quick-color', 'hud-quick-lattice-view']) document.getElementById(id).style.display = activeDimension === '1D' || netsOn ? 'none' : '';
     // Polyhedraverse's space has no lattice to view (its shapes are placed freely).
     // No lattice to show in Polyhedraverse, Studies or Targets: no button (nothing unnecessary shown).
-    if (own3DActive() && ['poly', 'studies', 'icosa', 'chains', 'dodeca', 'theaetetus', 'thirteens', 'octet', 'octetBuild', 'breathing', 'cycles', 'targets'].includes(own3D)) document.getElementById('hud-quick-lattice-view').style.display = 'none';
+    if (own3DActive() && ['poly', 'studies', 'icosa', 'chains', 'dodeca', 'theaetetus', 'thirteens', 'octet', 'octetBuild', 'breathing', 'bodhiPyro', 'cycles', 'targets'].includes(own3D)) document.getElementById('hud-quick-lattice-view').style.display = 'none';
     // 2D's plain lattices have no ring of their own yet; the 3D cycle drew 3D ghosts into the flat scene
     // (lattice-view audit, 2026-10-09). Own 2D worlds (the Kaleidoscope) keep their own view.
     if (activeDimension === '2D' && !own3DActive()) document.getElementById('hud-quick-lattice-view').style.display = 'none';
@@ -3513,6 +3517,7 @@ async function init() {
     octetWorld?.setSkeleton(worldViewMode === 'skeleton');
     octetBuildWorld?.setSkeleton(worldViewMode === 'skeleton');
     breathingWorld?.setSkeleton(worldViewMode === 'skeleton');
+    bodhiPyroWorld?.setSkeleton(worldViewMode === 'skeleton');
     cyclesWorld?.setSkeleton(worldViewMode === 'skeleton');
     chainsWorld?.setSkeleton(worldViewMode === 'skeleton');
     // Translucent too, at the same opacity as the 3D worlds.
@@ -3532,6 +3537,7 @@ async function init() {
     octetWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     octetBuildWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     breathingWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
+    bodhiPyroWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     cyclesWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     chainsWorld?.setTranslucent(worldViewMode === 'translucent' ? TRANSLUCENT_OPACITY : 1);
     document.getElementById('world-view-toggle')?.classList.toggle('active', worldViewMode !== 'color');
@@ -4114,7 +4120,7 @@ async function init() {
         // 2026-08-29 -- X-Ray stays reachable via the corner HUD wheel's
         // own #xray-toggle face and the Lab panel, so no wheel face
         // routes to it here any more.)
-        const OWN_WORLD_ACTIONS = { 'tool:shellsWorld': 'shells', 'tool:goldenWorld': 'golden', 'tool:roofFoldWorld': 'roofFold', 'tool:sunstarWorld': 'sunstar', 'tool:stellaJewelWorld': 'stellaJewel', 'tool:studiesWorld': 'studies', 'tool:icosaWorld': 'icosa', 'tool:chainsWorld': 'chains', 'tool:dodecaWorld': 'dodeca', 'tool:theaetetusWorld': 'theaetetus', 'tool:thirteensWorld': 'thirteens', 'tool:octetWorld': 'octet', 'tool:octetBuildWorld': 'octetBuild', 'tool:breathingWorld': 'breathing', 'tool:cyclesWorld': 'cycles', 'tool:targetsWorld': 'targets', 'tool:kaleidoWorld': 'kaleido', 'tool:netsWorld': 'nets', 'tool:signalWorld': 'signal', 'tool:constructWorld': 'construct' };
+        const OWN_WORLD_ACTIONS = { 'tool:shellsWorld': 'shells', 'tool:goldenWorld': 'golden', 'tool:roofFoldWorld': 'roofFold', 'tool:sunstarWorld': 'sunstar', 'tool:stellaJewelWorld': 'stellaJewel', 'tool:studiesWorld': 'studies', 'tool:icosaWorld': 'icosa', 'tool:chainsWorld': 'chains', 'tool:dodecaWorld': 'dodeca', 'tool:theaetetusWorld': 'theaetetus', 'tool:thirteensWorld': 'thirteens', 'tool:octetWorld': 'octet', 'tool:octetBuildWorld': 'octetBuild', 'tool:breathingWorld': 'breathing', 'tool:bodhiPyroWorld': 'bodhiPyro', 'tool:cyclesWorld': 'cycles', 'tool:targetsWorld': 'targets', 'tool:kaleidoWorld': 'kaleido', 'tool:netsWorld': 'nets', 'tool:signalWorld': 'signal', 'tool:constructWorld': 'construct' };
         // Polyhedraverse's shapes from DICTO (step D2): tool:polyShape:<ID> builds with that shape.
         // A 4D polytope's Build (D5): tool:polytope:<seed>|<target>.
         if (action?.startsWith('tool:polytope:')) {
@@ -4174,6 +4180,11 @@ async function init() {
         if (action?.startsWith('tool:chainsWorld:')) {
           chainsWorld?.setChain(action.slice('tool:chainsWorld:'.length));
           action = 'tool:chainsWorld';
+        }
+        // Golden Bodhi Pyrochlore Networks: tool:bodhiPyroWorld:<network|double|voice|chorus> picks the view (the paper's link opens the chorus).
+        if (action?.startsWith('tool:bodhiPyroWorld:')) {
+          bodhiPyroWorld?.open(action.slice('tool:bodhiPyroWorld:'.length));
+          action = 'tool:bodhiPyroWorld';
         }
         // Construct's families: tool:constructWorld:<family> (square, kagome, rd).
         if (action?.startsWith('tool:constructWorld:')) {
@@ -4401,6 +4412,7 @@ async function init() {
       if (action?.startsWith('tool:octetWorld:')) return convex(octetPreviewPoints(action.slice('tool:octetWorld:'.length)));
       if (action?.startsWith('tool:octetBuildWorld:')) return convex(octetBuildPreviewPoints(action.slice('tool:octetBuildWorld:'.length)));
       if (action === 'tool:breathingWorld') return convex(breathingPreviewPoints());
+      if (action === 'tool:bodhiPyroWorld') return convex(bodhiPyroPreviewPoints());
       if (action === 'tool:cyclesWorld') return convex(cyclesPreviewPoints());
       if (action === 'tool:targetsWorld') return convex(targetZonohedron(EMBLEM_DIRECTIONS).flatMap((f) => f.polygon));
       if (action === 'tool:stellaJewelWorld') return convex(roofFoldSolids().dodeca.faces.flat());
@@ -4561,7 +4573,7 @@ async function init() {
     // world to open (DICTO 2026-10-13, the papers' "View in app" buttons): ?open=chains:karma, ?open=dodeca:star, ?open=icosa,
     // ?open=roofFold, ?open=stellaJewel:hexa ... opens that DICTO world directly.
     const openWorld = new URLSearchParams(location.search).get('open')?.match(/^([a-zA-Z]+)(?::(\w+))?$/);
-    const OPENABLE = ['octet', 'thirteens', 'chains', 'dodeca', 'theaetetus', 'thirteens', 'octet', 'icosa', 'roofFold', 'stellaJewel', 'sunstar', 'octetBuild', 'breathing', 'cycles', 'shells', 'golden', 'studies', 'targets'];
+    const OPENABLE = ['octet', 'thirteens', 'chains', 'dodeca', 'theaetetus', 'thirteens', 'octet', 'icosa', 'roofFold', 'stellaJewel', 'sunstar', 'octetBuild', 'breathing', 'bodhiPyro', 'cycles', 'shells', 'golden', 'studies', 'targets'];
     if (openWorld && OPENABLE.includes(openWorld[1])) {
       // After the rest of start-up (the worlds are made further down).
       setTimeout(() => {
@@ -5833,6 +5845,12 @@ async function init() {
     fitView: fitCameraTo,
     onChange: () => { if (historyRestorers.has('worldbreathing')) recordHistory('worldbreathing', breathingWorld.snapshot()); },
   });
+  bodhiPyroWorld = createBodhiPyroWorld({
+    scene: realScene,
+    showHudPrompt,
+    fitView: fitCameraTo,
+    onChange: () => { if (historyRestorers.has('worldbodhipyro')) recordHistory('worldbodhipyro', bodhiPyroWorld.snapshot()); },
+  });
   // The toolbar rules (X-ray, view modes) once everything exists: the first pass ran before the worlds were made.
   setTimeout(() => window.dispatchEvent(new Event('krp-hud-refresh')), 0);
   targetsWorld = createTargetsWorld({ scene: realScene, fitView: fitCameraTo });
@@ -6584,6 +6602,7 @@ async function init() {
     sunstarWorld?.clear();
     octetBuildWorld?.clear();
     breathingWorld?.clear();
+    bodhiPyroWorld?.clear();
     cyclesWorld?.clear();
     stellaJewelWorld?.clear();
     kaleidoWorld?.clear();

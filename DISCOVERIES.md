@@ -53,6 +53,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 27 | Capturing the In-betweens: the in-between stages of the Chain of Karma, Spheres of Dharma and Bodhi Seed taken as fused solids (the transitional shells); icosahedron + 20 CLEO is the great stellated dodecahedron, + 30 AXE the excavated dodecahedron (all 32 corners kept), + 12 caps the dodecahedron; the Bodhi centre + 60 Vajra (fine) is the rhombic hexecontahedron; Spheres of Dharma stage 7 is the convex DICTO Truncated-Icosahedral Hecatodihedron (102 faces: 12 pentagons, 30 rhombi, 60 triangles; 80 corners; see #28); 45 convex partial stages; Dharma piece names Stupa and Monkey Staff | DICTO (the observation in the app, the transitional-shell idea, the names) | 25 identification checks; nets checked | **the named solids known** (Kepler 1619; Coxeter et al. 1938; Unkelbach 1940); the routes through them built from DICTO's pieces, and the Hecatodihedron, **not found** in the catalogues searched | 2026-10-14 (Zenodo 10.5281/zenodo.23345502) |
 | 28 | The DICTO Truncated-Icosahedral Hecatodihedron: the truncated icosahedron with a Shield on each hexagon, at the height where the triangles of neighbouring Shields lie flat as rhombi; convex, 102 faces (12 regular pentagons, 30 rhombi, 60 triangles), 80 corners, 180 edges, only two edge angles; its 30 rhombi and 60 triangles touch one sphere, its 12 pentagons lie a little inside | DICTO (Spheres of Dharma stage 7; the name) | papers/tih/data/tih_check.py, from Polyhedraverse's TRANS_DHARMA_80 | **not found** (Conway's k6tI has 132 faces; searched: Conway notation (Hart), Johnson solids and near misses (incl. Kaplan's rectified truncated icosahedron), MathWorld and PolyhedronData, the Polytope Wiki) | 2026-10-14 |
 | 29 | Theaetetus: an icosahedron of edge 1 held exactly in the icosidodecahedron of edge 1 by 20 Cleo-Icos on its face centres (and 12 Aetos on its corners), locked against every turn and shift; the hollow is the core + 12 Aetos + 20 antiprisms, each antiprism a Cleo-Ico + 3 Sphen + 3 Sphenion (volumes 3 : 2 : 1); grown with the Spheres of Dharma layers (×2/φ) to the DICTO Hecatodihedron in two exact stories: the stations (215 pieces, every layer closed, 20 Atraktos) and 102 clean pieces (20 Cleo-Icos, 20 Kion, 12 frusta, 30 t1, 20 caps), the icosahedron and dodecahedron cut by the same 20 cones; all volumes exact in ℚ(√5), remainder 0. Paper: DICTO DOI: 10.5281/zenodo.23378070 (2026-10-15). | DICTO (the hold, the growth, the 102, all names) | studies/2026-10-15-icosa-star-hollow (exact.py, exact_stations.py, cut102.py) | the hollow's split is the shadow of Klitzing's segmentochoron K-4.137 (credited); the hold, the stations and the Kion **not found** (library + web, 2026-10-15) | 2026-10-15 |
+| 30 | A Fibonacci Spine: five periodic (body-centred cubic) packings of the DICTO Ogdoecontahedron in five 72° wedges round a five-fold axis (the icosahedral irrational twin), exact to radius 10; with the central copy, the copies removed along the axis are exactly the canonical Fibonacci cut-and-project chain for |h| < 12.81, its window set by a five-fold ring clashing with itself; beyond that minimal removal thins it (DICTO DOI: 10.5281/zenodo.23396361) | | |
 
 Known results the apps show (kept here, with their numbers, as checks; not DICTO's findings; see the section at the end):
 
@@ -900,6 +901,24 @@ pieces. Names by DICTO.*
   Demonstration "Cluster of 20 Icosahedra" (in the vein of Kabai); Robert Austin's 2014 model overlaps whole
   icosahedra with dodecahedra; the Dogstar and its honeycomb are Hart's (1996). The King of Pentacles, the
   closed Stella-Corona and its network are DICTO's.
+
+## 30. A Fibonacci Spine (DICTO, 2026-10-15)
+
+Paper: DICTO DOI: 10.5281/zenodo.23396361 ("A Fibonacci Spine in a Five-fold Chorus of Ogdoecontahedron Packings").
+Study: `studies/2026-10-16-ocd-pyrochlore` (branch research), steps 17–30.
+
+- **The networks (DICTO's idea):** the DICTO Ogdoecontahedron (20 regular hexagons, 60 kites) joined face to face on hexagons gives a diamond
+  network whose joints lie on a pyrochlore lattice; with the second network in its gaps, one body-centred cubic packing (77.43%), the rest
+  filled exactly by 72 gap pieces per copy. Each of the five inscribed cubes of its hexagon bonds gives such a packing: the five voices.
+- **The chorus (DICTO's "frog chorus"):** the five voices in five 72° wedges round a five-fold axis, clashing copies removed in whole rings;
+  exact in ℚ(√5) to radius 10 (2756 sites, 385 removed, 7465 close pairs, 0 overlaps). Every copy sits at a golden height (m + nφ)u.
+- **The spine:** with the central copy, the removed copies in the core plane are exactly the canonical singular Fibonacci chain, window
+  [0, W), W² = 64/81 + 128√5/405; the window is enforced by a ring of five copies clashing with itself below t_c, t_c² = 8/9 + 8√5/45.
+  Beyond |h| = 12.81 minimal removal (integer program on patches) keeps the core copy and thins the chain.
+- Prior art: irrational interfaces as 1D quasicrystals (Sutton; Gratias–Thalal; Rivier–Lawrence), the icosahedral irrational twin
+  (Ranganathan et al.), hard-core windows (Katz–Gratias); presented as a new exact instance, no priority claim.
+- In the app: Kaleidohedra, 3D+ → Golden Bodhi Pyrochlore Networks (`?open=bodhiPyro`, `?open=bodhiPyro:chorus`): one network with its
+  joints and pyrochlore tetrahedra, the double network with its gap pieces, the five voices, the chorus with removed copies and the spine.
 
 ## 29. Theaetetus (DICTO, 2026-10-15)
 
