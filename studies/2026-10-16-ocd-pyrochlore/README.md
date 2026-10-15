@@ -129,3 +129,11 @@ The flood fill of the densest packing's gap (`scripts/holes_flood.py` → `data/
 - **The three-way split** of the bcc packing: OCD **77.4%**, non-golden shell inside the envelopes **11.8%** (adapters or resin), golden region between envelopes **10.7%** (Bodhi pieces). Exact sections: `renders/three-way-split.png`.
 
 ## Step 12 (library scan) is still running on dicto-node.
+
+## Step 19: cutting the golden region into Bodhi pieces (DICTO; `scripts/golden_cut.py` → `data/golden-cut.txt`)
+
+DICTO's working name for the whole structure (OCD pyrochlore network, adapters and golden fill): **Golden Bodhi Pyrochlore**.
+
+The golden region of one bcc cell (V minus the cut envelopes of every nearby copy) was cut by every envelope face plane crossing it, the full arrangement of golden planes, so the cut is canonical. The volume checks: 0.159887, matching V minus the cut envelope. But the cut **shatters**: 1624 pieces of 751 kinds. Only 135 pieces have purely golden walls; 996 touch the artificial cell walls, and 1083 have faces in the joint planes (the star tips). Only 6 pieces match a Bodhi shape, all **Diadems**, tiny (volume 0.000009).
+
+So the golden region does not divide naturally into Bodhi pieces. The likely reason: the envelopes sit on a cubic lattice, so their golden planes do not line up with the golden module that makes the Bodhi Seed's pieces so simple (there, the copies sit on five-fold axes at golden distances). The cubic/five-fold tension again, as in the frog chorus. A Bodhi-clean fill would need envelope positions in the icosahedral module, such as the five-fold chorus arrangement.
