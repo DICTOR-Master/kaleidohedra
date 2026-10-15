@@ -163,6 +163,12 @@ The slips in steps 6–8 led to a shared module, `studies/_lib/geomcheck.py`, te
 | Tight nest (5 − 2√5, 11/18 + 5/18·√5); dual pairs in the inner gap (TID pair: 6/φ², play √5·φ³/9; RID pair: play 1.00218); the exact cone-cut pieces and volumes | **not found** | library + web |
 | The dual of the Hecatodihedron, and the Hecatodihedron itself | **not found** (#28) | — |
 
-## The dual of the Hecatodihedron, on its own (station 2 of the reversed cycle)
+## The DICTO Ogdoecontahedron: the dual of the Hecatodihedron, on its own (station 2 of the reversed cycle)
+
+Name by DICTO (2026-10-16): Ogdoecontahedron, from Greek ὀγδοήκοντα (80) + ἕδρα (face), for its 80 faces, as the Hecatodihedron is named for its 102. (The common English form would be octaconta-, as in MathWorld's "octacontagon". No solid of either name was found on 2026-10-16.) The data files keep the label "dual of the Hecatodihedron".
 
 It has 102 corners and 80 faces: 20 regular hexagons and 60 kites, the duals of the Hecatodihedron's 20 six-face corners and 60 four-face corners. 90 of its corners lie on one sphere (the icosidodecahedron's circumsphere), and 12 sit slightly further out. This mirrors the Hecatodihedron, whose 90 faces touch one sphere while its 12 pentagons lie slightly inside. It is the pentakis dodecahedron with its 20 six-fold corners cut off flat into regular hexagons, just as the Hecatodihedron is the truncated icosahedron with a Shield added on each hexagon. Render data comes from `hstar_render.py`; renders are `renders/hstar-{three,five,oblique}.png` (`render_hstar.html`, `shoot_hstar.mjs`).
+
+## Queued (DICTO, 2026-10-16): is the Ogdoecontahedron a real bridge?
+
+Its regular hexagons belong to the periodic honeycomb, and its icosahedral symmetry belongs to quasicrystals. So far the bridge is poetic only. Its kites are not Penrose kites (117.8°, 68.6°, 117.8°, 55.7°), and the ℚ(√5) and 6D-lattice link holds for every golden solid. The study would test whether its hexagons and kites can be read as a patch of a real tiling, or as a cluster in a known quasicrystal model.
