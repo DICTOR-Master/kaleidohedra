@@ -198,3 +198,42 @@ Reference library: Ino 1969, Marks 1984 and 15 more added as link-only entries (
   - The central copy plugs it, so the channel is **not a continuous pipe**.
   - Its outline is weakly five-fold: the spread across the five copies of each direction is 0.028, against 0.075 overall.
   - Its cross-section never repeats along the axis (no autocorrelation peaks).
+
+## Step 25: the golden ring heights, proved exactly (`scripts/chorus_heights_exact.py` → `data/chorus-heights-exact.txt`)
+
+All in ℚ(√5). The five-fold axis runs through an exact OCD corner v, and every height is X·v/|v|.
+
+- **Lemma (exact).**
+  - **Bonds:** each of the 20 joint vectors has height (m + nφ)·u with u² = 8/81 − 8√5/405 (u = 0.233658). The pairs (m, n) are only (±1, 0) and ±(1, 2).
+  - **All sites:** every site is a whole-number combination of joint vectors, so **every copy in the chorus, at any radius, sits at a golden height (m + nφ)·u**. The unit 0.98979 used in step 24 is φ³·u.
+- **Silent copies (exact).**
+  - All 385 silent copies of the radius-10 run have exact golden heights.
+  - The core has **11 rings, every one of exactly 5 copies**, with heights from (−8 − 14φ)u to (12 + 18φ)u.
+- **Ring distances (exact squared distances, in units of the innermost ring²).**
+  - **φ powers:** φ², φ⁴, φ⁶ and φ⁸, so four rings step by exactly φ, φ², φ³ and φ⁴ in distance.
+  - **Golden multiples:** five others are 4φ⁴, 5φ⁴, 9φ⁴, 4φ⁶ and 5φ⁶, i.e. distances 2φ², √5φ², 3φ², 2φ³ and √5φ³.
+  - **No simple form:** one ring (distance 1.0042) is (13 + 5√5)/2·φ⁴, with no simple power form.
+- **What is proved:**
+  - Golden heights for every copy.
+  - Exact five-copy rings.
+  - Exact φ-steps among the inner rings.
+- **What remains a reading, not proved here:** that the silenced ones form a Fibonacci-type model set (the cut-and-project window).
+
+## Step 26: the core is a cut-and-project set (exact); the seams diffract (float) (`scripts/chorus_modelset.py` → `data/chorus-modelset.txt`, radius-10 run)
+
+**(1) Core, exact in ℚ(√5).**
+- **One plane:** in one wedge, 10 of the 11 core rings lie **exactly in one plane through the axis**.
+- **A 2D lattice:** that plane's 73 sites in the build are all whole-number combinations of two basis vectors.
+- **An irrational axis:** in that basis the axis has slope α/β = −1/2 − √5/2 = **−φ**, which is irrational (the Fibonacci slope). So the projection onto the axis is injective (all heights distinct, checked).
+- **The window:** the silent sites in the plane are **exactly** those whose distance across from the axis is below a window edge W, where 1.11313 < W < 1.22345. Exact edges: transverse² = 544/81 − 992√5/405 for the outermost silent site, and 64/81 + 128√5/405 for the innermost kept one. **No kept site lies inside, and no silent site outside.**
+- **What this proves:** the core chain is the lattice points of a 2D lattice inside a strip along an irrational line of slope φ, which is the definition of a **Fibonacci-type cut-and-project (model) set**. It is checked over every site of the radius-10 build; the infinite statement follows from the same construction, but only the build is checked.
+- **Open:**
+  - **The window:** whether it equals the canonical Fibonacci window, which would make the sequence exactly the Fibonacci word, is not checked.
+  - **The off-plane ring:** the 11th ring (distance 1.0042) lies off the plane and belongs to a second, separate family.
+
+**(2) Seams, float.**
+- **Not a simple strip cut:** the offset from the seam plane alone does **not** decide silence. Kept and silent copies share offsets on both sides; silence is set by two lattices meeting.
+- **Diffraction:** seam 0's 66 distinct vacancies, in its plane, give a strongest peak of I/N = 46.6, against a perfect Bragg peak of 66 and **11.8 ± 2.0 for random sets of the same size**. The pattern is strongly ordered.
+- **Peak positions:** the 16 strongest peaks (some are side lobes of the same peak) all lie within 0.02–0.4 of projections of the two neighbouring voices' 3D reciprocal lattices. That is within the peak width set by the build size (about 0.3), which is the signature of a lattice cut by an irrational plane (incommensurate, quasiperiodic-type order).
+- **Limit:** with 66 points this cannot tell a quasiperiodic seam from a large-period approximant. Consistent with quasiperiodic, not proven.
+- **Method note:** the first diffraction pass folded all five seams together. That counts each vacancy 5 times and inflates the peaks fivefold, so it was discarded.
