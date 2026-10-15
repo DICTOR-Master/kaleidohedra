@@ -1,0 +1,7 @@
+Voronoi cell: 24 corners (truncated octahedron), volume 512/729 + 256/729√5 = 1.487563; OCD inside, touching its 8 hexagons
+gap per copy: V - OCD = 18728/13851 - 6296/13851√5 = 0.335695 (22.57% of space)
+cone cut: 72 pieces (over 12 free hexagons and 60 kites); sum - gap = 0 (exact)
+kinds (congruence): 3; counts [48, 12, 12]
+   48 x  on a kite: 6 corners, faces {'3-gon': 2, '4-gon': 3}, volume 0.001891
+   12 x  on a kite: 11 corners, faces {'4-gon': 6, '5-gon': 2}, volume 0.004409
+   12 x  on a hexagon: 13 corners, faces {'3-gon': 4, '4-gon': 1, '5-gon': 4, '6-gon': 1}, volume 0.016001

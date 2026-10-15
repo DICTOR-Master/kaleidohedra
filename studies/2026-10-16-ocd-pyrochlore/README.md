@@ -16,7 +16,22 @@ A second copy of the network, shifted by 2t₀ (the diamond's empty sites), fits
 
 Renders (`scripts/network_render.py`, `render_network.html`, `shoot_network.mjs`): `renders/ocdnet-*.png`, orthographic along a cube axis (a two-fold axis of the OCD). They show one network, the double network (first network warm, second cool), and sheet `ocdnet-sheet.png`. The "cut" views did not slice through; fix that when rendering the gaps.
 
-## Next (step 3)
+## Step 3: the gaps filled (exact, `scripts/gaps.py` → `data/gaps.txt`)
 
-- Measure the shape of the remaining gaps, which face 12 free hexagons and 60 kites per copy.
-- Test whether rhombic pieces can fill them: golden rhombohedra, the RT family, or a rhombic tiling grown from the kites.
+In the bcc packing each copy has a Voronoi cell V: a truncated octahedron with 24 corners and volume 512/729 + 256√5/729. The OCD lies inside V and touches V's 8 hexagons, which are the joints. Each copy's share of the gap is therefore **V − OCD = 18728/13851 − 6296√5/13851 = 0.335695 (22.57% of space)**.
+
+Cones from the centre over the OCD's 72 free faces (12 hexagons, 60 kites) fill it with **72 convex pieces of 3 kinds**, and the pieces sum to the gap exactly (remainder 0):
+
+| Pieces | On | Shape | Volume |
+|---|---|---|---|
+| 48 | kites | wedge, 6 corners: 2 triangles, 3 quadrilaterals | 0.001891 |
+| 12 | kites | 11 corners: 6 quadrilaterals, 2 pentagons | 0.004409 |
+| 12 | free hexagons | 13 corners: 4 triangles, 1 quadrilateral, 4 pentagons, 1 hexagon | 0.016001 |
+
+So the OCD plus these three gap pieces tile space: 1 + 48 + 12 + 12 per lattice point. **None of the piece faces is a rhombus.** The canonical cone fill works, but it is not the rhombic tiling DICTO pictured; rhombi would need a different division of the same gap (open).
+
+Renders: `renders/ocdgap-{closed,cut,apart}.png` (`render_gaps.html`, `shoot_gaps.mjs`). The "cut" still does not slice (same issue as step 2).
+
+## Open
+- Fusions across the cell faces: gap pieces of neighbouring cells meet on V's square and hexagon faces and may fuse into fewer, nicer pieces.
+- A rhombic division of the gap, for example around the free hexagons that face each other across V's square faces.

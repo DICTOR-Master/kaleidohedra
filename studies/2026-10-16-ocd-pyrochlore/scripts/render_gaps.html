@@ -1,0 +1,39 @@
+<!doctype html><meta charset="utf-8"><title>OCD gaps (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}#tag{position:fixed;right:12px;bottom:8px;font:600 14px system-ui;color:#5b5346}#ttl{position:fixed;left:12px;top:8px;font:600 16px system-ui;color:#2b2620}</style>
+<div id="ttl"></div><div id="tag">DICTO · dictospheres.com</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// One cell of the bcc packing: the OCD (gold) and the 72 gap pieces in 3 kinds (kite wedges, kite pieces, hexagon pieces).
+// #closed | #cut (sliced through the centre, near half removed) | #apart (gap pieces pushed out). Orthographic along a cube axis.
+(async function () {
+  const [G, N] = await Promise.all([fetch('gaps.json').then((r) => r.json()), fetch('network-render.json').then((r) => r.json())]);
+  const scn = location.hash.slice(1) || 'closed';
+  const r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); r.setSize(1000, 1000); r.setPixelRatio(1); r.localClippingEnabled = true; document.body.prepend(r.domElement);
+  const sc = new THREE.Scene(); sc.background = new THREE.Color(0xf4f1ea); sc.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.9)); const sun = new THREE.DirectionalLight(0xffffff, 0.55); sc.add(sun);
+  const view = new THREE.Vector3(...N.view), up = new THREE.Vector3(...N.up);
+  const tilt = view.clone().add(up.clone().multiplyScalar(0.45)).add(new THREE.Vector3(...N.cube[2]).multiplyScalar(0.3)).normalize();
+  const camDir = scn === 'cut' ? view : tilt;
+  const clip = scn === 'cut' ? [new THREE.Plane(camDir.clone().negate(), 0)] : [];
+  function solid(V, col, push) {
+    const c = V.reduce((s, v) => s.map((x, i) => x + v[i] / V.length), [0, 0, 0]); const n = Math.hypot(...c) || 1;
+    const P = V.map((v) => v.map((x, i) => c[i] + (x - c[i]) * 0.975 + c[i] / n * push));
+    const h = []; // convex hull faces via three.js ConvexGeometry-free approach: triangulate with a simple fan over hull from the centroid
+    const geo = new THREE.BufferGeometry(); const pos = [];
+    // brute-force convex hull triangles (small solids): keep triangles whose plane has all points on one side
+    for (let a = 0; a < P.length; a++) for (let b = a + 1; b < P.length; b++) for (let d = b + 1; d < P.length; d++) {
+      const A = new THREE.Vector3(...P[a]), B = new THREE.Vector3(...P[b]), C = new THREE.Vector3(...P[d]);
+      const nn = new THREE.Vector3().subVectors(B, A).cross(new THREE.Vector3().subVectors(C, A)); if (nn.length() < 1e-12) continue; nn.normalize();
+      let s = 0, ok = true; for (const p of P) { const t = nn.dot(new THREE.Vector3(...p).sub(A)); if (Math.abs(t) < 1e-9) continue; if (s === 0) s = Math.sign(t); else if (Math.sign(t) !== s) { ok = false; break; } }
+      if (ok) pos.push(...P[a], ...P[b], ...P[d]); }
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); geo.computeVertexNormals();
+    sc.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: col, roughness: 0.5, flatShading: true, side: THREE.DoubleSide, clippingPlanes: clip })));
+    const eg = new THREE.EdgesGeometry(geo, 1); sc.add(new THREE.LineSegments(eg, new THREE.LineBasicMaterial({ color: 0x2a2218, clippingPlanes: clip })));
+  }
+  solid(N.v, 0xffc857, 0);
+  const push = scn === 'apart' ? 0.35 : 0;
+  G.pieces.forEach((V, i) => solid(V, G.face[i] === 6 ? 0x7e57c2 : V.length === 6 ? 0x4dd0e1 : 0xf08fc0, push));
+  const H = scn === 'apart' ? 1.5 : 1.0, cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.01, 100);
+  cam.position.copy(camDir.clone().multiplyScalar(30)); cam.up.copy(up); cam.lookAt(0, 0, 0); sun.position.copy(cam.position.clone().add(up.clone().multiplyScalar(10)));
+  r.render(sc, cam); document.getElementById('ttl').textContent = 'one cell: OCD + 72 gap pieces (cyan 48, pink 12, violet 12) · ' + scn; document.title = 'ready';
+})();
+</script>
