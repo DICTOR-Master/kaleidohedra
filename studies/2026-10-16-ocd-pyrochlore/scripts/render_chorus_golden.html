@@ -7,7 +7,7 @@
 // golden planes of the envelopes; Mudras (a Bodhi piece) in magenta, other golden pieces in cyan shades by volume class.
 // #top (down the five-fold axis) | #tilt | #apart (pieces pushed out).
 (async function () {
-  const [N, G] = await Promise.all([fetch('network-render.json').then((r) => r.json()), fetch('chorus-golden.json').then((r) => r.json())]);
+  const [N, G] = await Promise.all([fetch('network-render.json').then((r) => r.json()), fetch(location.search.includes('exact') ? 'chorus-exact.json' : 'chorus-golden.json').then((r) => r.json())]);
   const scn = location.hash.slice(1) || 'top', C = new THREE.Vector3(...G.centre), a5 = new THREE.Vector3(...G.a5);
   const r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); r.setSize(1000, 1000); r.setPixelRatio(1); document.body.prepend(r.domElement);
   const sc = new THREE.Scene(); sc.background = new THREE.Color(0xf4f1ea); sc.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.9)); const sun = new THREE.DirectionalLight(0xffffff, 0.6); sc.add(sun);
@@ -33,14 +33,16 @@
   G.pieces.forEach((P, i) => {
     const g = vols[i]; const c = P.reduce((s, v) => s.map((x, k) => x + v[k] / P.length), [0, 0, 0]); const cv = new THREE.Vector3(...c);
     const push = scn === 'apart' ? cv.clone().sub(C).multiplyScalar(0.45) : new THREE.Vector3();
-    const grp = add(g, G.mudra[i] ? 0xe91e63 : CY[i % CY.length], 1); grp.position.copy(push);
+    const bn = G.bodhi ? G.bodhi[i] : (G.mudra[i] ? 'Mudra' : null); const BC = { 'Vajra (fine)': 0xff9800, Chatra: 0x8bc34a, Mudra: 0xe91e63, 'Crown Jewel': 0x9c27b0, Diadem: 0xffeb3b };
+    const grp = add(g, bn ? BC[bn] : CY[i % CY.length], 1); grp.position.copy(push);
   });
   const up = new THREE.Vector3(0, 0, 1).sub(a5.clone().multiplyScalar(a5.z)).normalize(); if (up.length() < 0.5) up.set(1, 0, 0);
   const dir = scn === 'top' ? a5.clone() : a5.clone().multiplyScalar(0.75).add(up.clone().multiplyScalar(0.55)).normalize();
   const H = scn === 'apart' ? 1.9 : 1.35, cam = new THREE.OrthographicCamera(-H, H, H, -H, -50, 50);
   cam.position.copy(C.clone().add(dir.multiplyScalar(20))); cam.up.copy(up); cam.lookAt(C); sun.position.copy(cam.position.clone().add(up.clone().multiplyScalar(8)));
   r.render(sc, cam);
-  document.getElementById('ttl').textContent = `five-fold golden fill: ${G.pieces.length} golden pieces round the central copy, ${G.mudra.filter(Boolean).length} Mudras (magenta) · ${scn}`;
+  const nb = G.bodhi ? G.bodhi.filter(Boolean).length : G.mudra.filter(Boolean).length;
+  document.getElementById('ttl').textContent = (location.search.includes('exact') ? 'canonical exact cut' : 'five-fold golden fill') + `: ${G.pieces.length} golden pieces round the central copy, ${nb} Bodhi pieces highlighted · ${scn}`;
   document.title = 'ready';
 })();
 </script>
