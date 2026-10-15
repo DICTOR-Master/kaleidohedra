@@ -31,11 +31,11 @@
   const lp = []; for (const t of G.lensTri) for (const k of t) lp.push(...G.lens[k]);
   const LG = new THREE.BufferGeometry(); LG.setAttribute('position', new THREE.Float32BufferAttribute(lp, 3)); LG.computeVertexNormals();
   const lens = add(LG, new THREE.EdgesGeometry(LG, 1), 0xd32f2f, 1, null, 0x4a0d0d);
-  const h0 = G.hT - 3.4, h1 = G.hT + 3.4;
+  let dot = null; const h0 = G.hT - 3.4, h1 = G.hT + 3.4;
   sc.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([a5.clone().multiplyScalar(h0), a5.clone().multiplyScalar(h1)]), new THREE.LineBasicMaterial({ color: 0x2b2620 })));
   for (const h of G.chain) if (h > h0 && h < h1) {
-    const me = Math.abs(h - G.hT) < 1e-6, m = new THREE.Mesh(new THREE.SphereGeometry(me ? 0.08 : 0.055, 20, 14), new THREE.MeshStandardMaterial({ color: me ? 0xc62828 : 0x2b2620 }));
-    m.position.copy(a5.clone().multiplyScalar(h)); sc.add(m);
+    const me = Math.abs(h - G.hT) < 1e-6, m = new THREE.Mesh(new THREE.SphereGeometry(me ? 0.08 : 0.055, 20, 14), new THREE.MeshStandardMaterial({ color: me ? 0xc62828 : 0x2b2620, transparent: me }));
+    m.position.copy(a5.clone().multiplyScalar(h)); sc.add(m); if (me) dot = m;
   }
   const D = Rv.clone().sub(T), Dp = D.clone().sub(a5.clone().multiplyScalar(D.dot(a5))).normalize(), side = new THREE.Vector3().crossVectors(a5, Dp).normalize();
   const C = a5.clone().multiplyScalar((G.hT + Rv.dot(a5)) / 2), H = 3.0, cam = new THREE.OrthographicCamera(-H, H, H, -H, -60, 60);
@@ -48,9 +48,10 @@
     if (i >= 120 && i < 240) km = 1 - ease((i - 130) / 30);
     if (i >= 240) { kg = 1 - ease((i - 250) / 30); km = ease((i - 240) / 10); }
     gold.forEach((g) => fade(g, kg)); mag.forEach((g) => fade(g, km)); fade(lens, Math.min(kg, km));
+    if (dot) { const kd = i >= 120 && i < 240 ? km : 1; dot.visible = kd > 0.01; dot.material.opacity = kd; }  // choice A: the core copy is kept, so 12.8 leaves the chain
     if (i < 120) { ttl.textContent = 'The fork at height 12.8'; sub.textContent = `Core copy (gold ring) and one copy at 13.8 (magenta ring) overlap: ${pct}% of a copy (red, exact). One ring must go.`; }
-    else if (i < 240) { ttl.textContent = 'Choice A: silence the magenta ring'; sub.textContent = 'The gold core copy stays. The chorus’s tie-break does this: the spine becomes the thinned Fibonacci chain.'; }
-    else { ttl.textContent = 'Choice B: silence the gold ring'; sub.textContent = 'The magenta ring stays, the core copy goes: the spine stays the pure Fibonacci chain. Equally minimal.'; }
+    else if (i < 240) { ttl.textContent = 'Choice A: silence the magenta ring'; sub.textContent = 'The gold core copy stays. The chorus’s tie-break does this: the point at 12.8 leaves the chain (red dot): the thinned Fibonacci chain.'; }
+    else { ttl.textContent = 'Choice B: silence the gold ring'; sub.textContent = 'The magenta ring stays, the core copy goes: 12.8 stays a chain point: the pure Fibonacci chain. Equally minimal.'; }
     r.render(sc, cam);
   };
   window.draw(0); document.title = 'ready';
