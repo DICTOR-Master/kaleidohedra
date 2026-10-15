@@ -1,0 +1,28 @@
+<!doctype html><meta charset="utf-8"><title>OCD network (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}#tag{position:fixed;right:12px;bottom:8px;font:600 14px system-ui;color:#5b5346}#ttl{position:fixed;left:12px;top:8px;font:600 16px system-ui;color:#2b2620}</style>
+<div id="ttl"></div><div id="tag">DICTO · dictospheres.com</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// The double network of DICTO Ogdoecontahedra: two hexagon-joined diamond networks (warm A/B, cool A'/B'), together a bcc packing.
+// ?net=1 shows only the first network (its joints are the pyrochlore lattice); #cut slices through the centre; orthographic along a cube axis.
+(async function () {
+  const J = await fetch('network-render.json').then((r) => r.json()); const q = new URLSearchParams(location.search), one = q.get('net') === '1', cut = location.hash === '#cut';
+  const r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); r.setSize(1000, 1000); r.setPixelRatio(1); r.localClippingEnabled = true; document.body.prepend(r.domElement);
+  const sc = new THREE.Scene(); sc.background = new THREE.Color(0xf4f1ea); sc.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.9)); const sun = new THREE.DirectionalLight(0xffffff, 0.55); sc.add(sun);
+  const view = new THREE.Vector3(...J.view), up = new THREE.Vector3(...J.up);
+  const clip = cut ? [new THREE.Plane(view.clone().negate(), 0.001)] : [];
+  const pos = [], line = [];
+  for (const f of J.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...J.v[f[0]], ...J.v[f[i]], ...J.v[f[i + 1]]); for (let i = 0; i < f.length; i++) line.push(...J.v[f[i]], ...J.v[f[(i + 1) % f.length]]); }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+  const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+  const COL = [0xffc857, 0xff9a52, 0x4dd0e1, 0x7e57c2];
+  for (const [p, k] of J.sites) { if (one && k > 1) continue;
+    const m = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: COL[k], roughness: 0.5, flatShading: true, clippingPlanes: clip, side: THREE.DoubleSide })); m.position.set(...p); m.scale.setScalar(0.995); sc.add(m);
+    const l = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, clippingPlanes: clip })); l.position.set(...p); l.scale.setScalar(0.995); sc.add(l); }
+  const H = 2.6, cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.01, 100);
+  const dir = q.get('tilt') ? view.clone().add(up.clone().multiplyScalar(0.35)).add(new THREE.Vector3(...J.cube[2]).multiplyScalar(0.25)).normalize() : view.clone();
+  cam.position.copy(dir.multiplyScalar(30)); cam.up.copy(up); cam.lookAt(0, 0, 0); sun.position.copy(cam.position.clone().add(up.clone().multiplyScalar(10)));
+  r.render(sc, cam); document.getElementById('ttl').textContent = (one ? 'one network: hexagon joints on a pyrochlore lattice' : 'double network = bcc packing, 77.4% filled') + (cut ? ' · cut' : '');
+  document.title = 'ready';
+})();
+</script>
