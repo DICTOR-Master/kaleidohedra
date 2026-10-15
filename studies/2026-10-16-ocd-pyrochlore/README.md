@@ -385,3 +385,13 @@ DICTO: "find a rule that keeps the spine pure Fibonacci". This step **corrects s
 - The patches are finite; the integer program decides only within each patch.
 - Only the first four departure points were tested.
 - That the thinned spine equals the ring-clash window [0, t_c) at *every* height is not proved, only consistent at these four points.
+
+## Further study (conclusions, 2026-10-15)
+
+The paper (`papers/ocd-chorus/`) is a natural stopping point. What could follow, in order of value:
+
+1. **Prove the thinned spine for every height.** At all four departure points the same three-copy pattern recurs: the core copy, its off-plane rival and the rival's third partner, with the rival's ring margin always a little above the core copy's. That suggests a general lattice argument: minimal removal always keeps the core copy, so the spine is exactly the cut-and-project chain of the ring-clash window [0, t_c). This would turn "checked at four points" into a theorem. It is the strongest candidate for a Version 2 or a short follow-up note.
+2. **The off-plane ring family.** The 11th core ring (distance 1.0042 from the axis, squared distance (13 + 5√5)/2 · φ⁴ times the innermost) lies outside the core plane. It is probably a second cut-and-project family in another plane through the axis. To do: find its plane, lattice and window, exactly.
+3. **The seams.** These are float only, from 66 points per seam. To tell quasiperiodic order from a long-period approximant: a much larger build (radius 15–20 on dicto-node), exact vacancy sets, diffraction with more points, and a slab or window test in the seam's own coordinates.
+4. **Other solids.** Which other icosahedral solids have five inscribed cubes among their bond directions, and do their choruses give other chains (other windows, other critical distances)? That would make this a family rather than a single case.
+5. **Before any later version:** read in full the four closed-access papers (Katz & Gratias 1993; Sutton 1989 and 1992; Gratias & Thalal 1988), through a library or by purchase.
