@@ -1,0 +1,21 @@
+(28) core-plane sites vs their own five-fold ring-mates (exact); canonical L = 1.223451
+  t = 0.11032  silent  ring-mates found 4/4  vs nearest ring-mate: OVERLAP
+  t = 0.17850  silent  ring-mates found 4/4  vs nearest ring-mate: OVERLAP
+  t = 0.28882  silent  ring-mates found 4/4  vs nearest ring-mate: OVERLAP
+  t = 0.46732  silent  ring-mates found 4/4  vs nearest ring-mate: OVERLAP
+  t = 0.57764  silent  ring-mates found 4/4  vs nearest ring-mate: OVERLAP
+  t = 0.64582  silent  ring-mates found 4/4  vs nearest ring-mate: OVERLAP
+  t = 0.75613  silent  ring-mates found 4/4  vs nearest ring-mate: OVERLAP
+  t = 0.86645  silent  ring-mates found 4/4  vs nearest ring-mate: OVERLAP
+  t = 0.93463  silent  ring-mates found 4/4  vs nearest ring-mate: OVERLAP
+  t = 1.04495  silent  ring-mates found 4/4  vs nearest ring-mate: OVERLAP
+  t = 1.11313  silent  ring-mates found 4/4  vs nearest ring-mate: OVERLAP
+  t = 1.22345  kept    ring-mates found 4/4  vs nearest ring-mate: apart  (best face separation 28/81 - 4/27√5)
+  t = 1.33377  kept    ring-mates found 4/4  vs nearest ring-mate: apart  (best face separation -20/27 + 28/81√5)
+  t = 1.40195  kept    ring-mates found 4/4  vs nearest ring-mate: apart  (best face separation 28/27 - 4/9√5)
+  t = 1.51227  kept    ring-mates found 4/4  vs nearest ring-mate: apart  (best face separation -4/81 + 4/81√5)
+  overlap exactly when t < L: True; the copy at t = L: ['apart']
+  critical distance (ring-mates just touch): t_c^2 = 8/9 + 8/45√5 (t_c = 1.134201); same for every plane site: True
+  canonical L = 1.223451; largest silent t = 1.113132; t_c inside the gap between them: True; t_c == L exactly: False
+  plane points with t_c <= t < L (kept under ring-clash, but in the canonical chain): nearest heights [(12.812, 1.1553), (-22.71, 1.1813), (34.766, 1.1974), (-44.664, 1.1392)]
+  -> the ring-clash chain equals the canonical Fibonacci chain for |height| < 12.812; the build reaches |height| < 10

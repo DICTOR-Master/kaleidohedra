@@ -1,0 +1,16 @@
+five-fold axis through the exact corner v = (0, -9/19 - 1/19√5, -2/19 + 4/19√5), |v|^2 = 170/361 + 2/361√5
+(A) unit U = -8/171 + 16/171√5; u = U/|v| with u^2 = 8/81 - 8/405√5 = 0.05459619 (u = 0.233658)
+    all 20 bond heights are golden integers times u (exact): [(-1, -2), (1, 0), (-1, 0), (-1, 0), (1, 2), (1, 2), (1, 0), (1, 0), (1, 2), (1, 2), (1, 0), (-1, 0), (-1, -2), (-1, -2), (-1, 0), (1, 2), (-1, -2), (1, 0), (-1, 0), (-1, -2)]
+(B) all 385 silent copies (core and seams) have exact golden heights; check: every height / u is m + n phi: True
+    core rings (within 1.05 of the axis): 11 rings, sizes [5]
+    height = (10 + 16 phi) u = +8.38566   distance^2 = 416/81 - 928/405√5 (0.1103); distance^2 / innermost = 1 = phi^0 exactly (distance ratio phi^0)
+    height = (-6 + -10 phi) u = -5.18262   distance^2 = 160/81 - 352/405√5 (0.1785); distance^2 / innermost = 3/2 + 1/2√5 = phi^2 exactly (distance ratio phi^1)
+    height = (4 + 6 phi) u = +3.20304   distance^2 = 64/81 - 128/405√5 (0.2888); distance^2 / innermost = 7/2 + 3/2√5 = phi^4 exactly (distance ratio phi^2)
+    height = (-2 + -4 phi) u = -1.97958   distance^2 = 32/81 - 32/405√5 (0.4673); distance^2 / innermost = 9 + 4√5 = phi^6 exactly (distance ratio phi^3)
+    height = (8 + 12 phi) u = +6.40607   distance^2 = 256/81 - 512/405√5 (0.5776); distance^2 / innermost = 14 + 6√5
+    height = (-8 + -14 phi) u = -7.16220   distance^2 = 320/81 - 128/81√5 (0.6458); distance^2 / innermost = 35/2 + 15/2√5
+    height = (2 + 2 phi) u = +1.22345   distance^2 = 32/81 + 32/405√5 (0.7561); distance^2 / innermost = 47/2 + 21/2√5 = phi^8 exactly (distance ratio phi^4)
+    height = (12 + 18 phi) u = +9.60911   distance^2 = 64/9 - 128/45√5 (0.8665); distance^2 / innermost = 63/2 + 27/2√5
+    height = (-4 + -8 phi) u = -3.95917   distance^2 = 128/81 - 128/405√5 (0.9346); distance^2 / innermost = 36 + 16√5
+    height = (-3 + -6 phi) u = -2.96938   distance^2 = 32/27 - 32/405√5 (1.0042); distance^2 / innermost = 83/2 + 37/2√5
+    height = (6 + 8 phi) u = +4.42649   distance^2 = 160/81 - 32/81√5 (1.0450); distance^2 / innermost = 45 + 20√5

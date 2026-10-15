@@ -1,0 +1,11 @@
+(a) silent sites in the core plane: 11; distinct gaps between consecutive heights: 3: 1.97958, 1.22345, 3.20304
+    third gap = long + short exactly: True  (three-distance pattern: window narrower than canonical)
+    long/short = 1/2 + 1/2√5  (phi = 1/2 + 1/2√5): True
+(b) gap vectors in the plane basis: long (1, -1), short (1, 0); determinant 1 -> a lattice basis: True
+    transverse parts have opposite signs: True; canonical window length L^2 = 64/81 + 128/405√5 (L = 1.223451)
+    build allows window edge in (1.113132, 1.223451); L inside: False; L equal to an edge: True
+(c) word along the axis (T = L+S, one point missing): LLSLTLSLLS; with each T split back into LS or SL: LLSLLSLSLLS / LLSLSLLSLLS; Fibonacci factor: True / True
+(d) extended chain (canonical window [0, L), exact): 54 points over heights +-45; distinct gaps 2; all gaps long or short: True; L:S = 33:20 = 1.65000 (phi = 1.61803); Fibonacci factor: True
+    the build's silent heights are all in the extended chain: True; the centre (height 0) is in it: True
+    chain points within the build's height range: 12 = the 11 silent sites + the centre: True
+    the copy exactly on the far window edge (t = L) is kept: True (site at height -0.75613)

@@ -1,0 +1,15 @@
+(29) target: core-plane site at height 12.8121, transverse 1.1553 (plane coords 8, -4); wedge 0 (core wedge 0)
+    patch: 1135 sites with |height - 12.812| < 7.0, distance from the axis < 6.16 (exact, all five voices)
+    target ring-mates in the patch: 4/4; vs ring-mates: ['apart', 'apart', 'apart', 'apart']
+    nearby copies (centres within 1.390): 7; overlapping the target EXACTLY: 1; touching exactly: 4
+      overlaps: height 13.8019, distance from axis 1.1690, wedge 1; its own ring clashes with itself (forced silent): False
+    greedy five-fold silencing on the patch: silenced 215 of 1135; target KEPT
+    after silencing, kept copies overlapping the target: 0; overlapping neighbours silenced: 1/1
+    core-plane sites near the target (interior of the patch):
+      h   8.3857  t 0.1103  canonical silent  ring-clash silent  patch greedy silent
+      h   9.6091  t 0.8665  canonical silent  ring-clash silent  patch greedy silent
+      h  11.5887  t 0.3991  canonical silent  ring-clash silent  patch greedy silent
+      h  12.8121  t 1.1553  canonical silent  ring-clash kept    patch greedy kept
+      h  14.7917  t 0.6880  canonical silent  ring-clash silent  patch greedy silent
+      h  16.0152  t 1.4441  canonical kept    ring-clash kept    patch greedy kept
+      h  16.7713  t 0.2206  canonical silent  ring-clash silent  patch greedy silent

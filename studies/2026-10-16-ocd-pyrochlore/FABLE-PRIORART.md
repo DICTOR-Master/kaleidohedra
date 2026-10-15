@@ -1,5 +1,7 @@
 DICTO · dictospheres.com
 
+> **Note (2026-10-15, after step 30):** where this review says "equal-cost fork" or "tie", read: minimal removal departs from the canonical window at |h| = 12.81. Step 30 showed it is not a tie (keeping the core copy is cheaper by one ring). The prior-art verdicts are unaffected.
+
 # Prior-art review: the OCD five-fold chorus and the Ogdoecontahedron
 
 Fable review for DICTO, 2026-10-15. Scope: steps 21–29 of `README.md` and `FABLE-REPORT.md`, plus the Ogdoecontahedron (OCD) itself as a polyhedron. Nothing committed or published.

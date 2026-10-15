@@ -13,13 +13,13 @@ ease = lambda x: (lambda y: y * y * (3 - 2 * y))(min(1, max(0, x)))
 for f in range(n):
     if f < 180:   # sweep
         c = -16 + 32 * ease(f / 170); x0, x1 = c - 10, c + 10; edge = L; reveal = c + 10; showS = 0
-        cap = 'Lattice points of the axis plane (exact). Those inside the strip [0, L) project to the Fibonacci chain below.'
+        cap = 'Lattice points of the axis plane (exact). Those inside the strip [0, W) project to the Fibonacci chain below.'
     elif f < 270:  # zoom out, build appears
         k = ease((f - 180) / 60); x0, x1 = 6 - 32 * k, 26; x0 = -26 * k + (6) * (1 - k); x1 = 26; edge = L; reveal = 99; showS = ease((f - 200) / 50)
         cap = 'Circled: the copies the radius-10 build silences, exactly the chain points there. Star: the central copy.'
     elif f < 420:  # strip edge slides to t_c
         x0, x1 = -26, 26; k = ease((f - 285) / 110); edge = L + (tc - L) * k; reveal = 99; showS = 1
-        cap = f'The ring clashes with itself only below t_c = {tc:.4f}: the narrower window [0, t_c). Canonical L = {L:.4f}.'
+        cap = f'The ring clashes with itself only below t_c = {tc:.4f}: the narrower window [0, t_c). Canonical W = {L:.4f}.'
     else:          # the fork
         x0, x1 = -26, 26; edge = tc; reveal = 99; showS = 1
         cap = 'Below height 12.81 both windows pick the same points. At 12.81 they first disagree: the fork (diamond).'
@@ -46,7 +46,7 @@ for f in range(n):
     fig.texts.clear()
     fig.text(0.06, 0.93, 'DICTO Ogdoecontahedron five-fold chorus: the Fibonacci spine', fontsize=28, color=fg, va='top')
     fig.text(0.06, 0.875, cap, fontsize=18, color=mute, va='top')
-    fig.text(0.06, 0.04, 'Grey band: heights inside the radius-10 build. Pale strip [0, L): canonical window; darker strip: the current window.', fontsize=14, color=mute)
+    fig.text(0.06, 0.04, 'Grey band: heights inside the radius-10 build. Pale strip [0, W): canonical window; darker strip: the current window.', fontsize=14, color=mute)
     fig.text(0.96, 0.04, 'DICTO · dictospheres.com', fontsize=15, color=mute, ha='right')
     fig.canvas.draw(); ff.stdin.write(np.asarray(fig.canvas.buffer_rgba()).tobytes())
 ff.stdin.close(); ff.wait(); print('movie done')

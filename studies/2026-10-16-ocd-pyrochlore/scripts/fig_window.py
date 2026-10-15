@@ -16,7 +16,7 @@ for p in range(-80, 81):
         if abs(h) < 26 and -0.3 < t < 2.2: P.append((h, t))
 P = np.array(P); Ssil = np.array([(hh[i].f() / nv, tr[i].f() / nw) for i in Pl if silent[i]])
 fig, ax = plt.subplots(figsize=(10, 5.0), dpi=200)
-ax.axhspan(0, Lc, color='#f3d9a0', zorder=0, label=f'canonical window [0, L), L = {Lc:.4f}')
+ax.axhspan(0, Lc, color='#f3d9a0', zorder=0, label=f'canonical window [0, W), W = {Lc:.4f}')
 ax.axhspan(0, tc, color='#e9b949', alpha=0.55, zorder=0, label=f'ring-clash window [0, t$_c$), t$_c$ = {tc:.4f}')
 ax.axvspan(-10, 10, color='#000', alpha=0.04, zorder=0)
 ax.scatter(P[:, 0], P[:, 1], s=9, c='#2b2620', zorder=2, label='plane lattice points (exact)')

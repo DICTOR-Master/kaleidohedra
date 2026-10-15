@@ -1,0 +1,38 @@
+--- radius 5.0: 80 silenced of 336 sites
+  offset from nearest boundary half-plane: max 0.981, median 0.314
+  in the core (within 1.05 of the axis): 30; on the boundaries outside it: 50
+  r<3: boundary vacancies    5   per boundary area (5 half-discs, 5*pi*r^2/2) 0.0707   per r 1.67
+  r<4: boundary vacancies   20   per boundary area (5 half-discs, 5*pi*r^2/2) 0.1592   per r 5.00
+  half-plane 0: 10 vacancies
+  distinct z (along the axis): 9; distinct gaps: [np.float64(0.2336), np.float64(0.2337), np.float64(0.5225), np.float64(0.7561), np.float64(0.9898), np.float64(1.4571), np.float64(1.9796)]
+    gap ratios to the smallest: [np.float64(1.0), np.float64(1.0004), np.float64(2.2367), np.float64(3.2367), np.float64(4.2372), np.float64(6.2376), np.float64(8.4743)]; matching powers of phi: 3/7
+  distinct distance out from the axis: 10; distinct gaps: [np.float64(0.1171), np.float64(0.1895), np.float64(0.2723), np.float64(0.5789), np.float64(0.6709), np.float64(0.696)]
+    gap ratios to the smallest: [np.float64(1.0), np.float64(1.6183), np.float64(2.3254), np.float64(4.9436), np.float64(5.7293), np.float64(5.9436)]; matching powers of phi: 2/6
+--- radius 8.0: 240 silenced of 1471 sites
+  offset from nearest boundary half-plane: max 1.064, median 0.234
+  in the core (within 1.05 of the axis): 45; on the boundaries outside it: 195
+  r<3: boundary vacancies    5   per boundary area (5 half-discs, 5*pi*r^2/2) 0.0707   per r 1.67
+  r<4: boundary vacancies   20   per boundary area (5 half-discs, 5*pi*r^2/2) 0.1592   per r 5.00
+  r<5: boundary vacancies   60   per boundary area (5 half-discs, 5*pi*r^2/2) 0.3056   per r 12.00
+  r<6: boundary vacancies   95   per boundary area (5 half-discs, 5*pi*r^2/2) 0.3360   per r 15.83
+  r<7: boundary vacancies  145   per boundary area (5 half-discs, 5*pi*r^2/2) 0.3768   per r 20.71
+  half-plane 0: 39 vacancies
+  distinct z (along the axis): 37; distinct gaps: [np.float64(0.0552), np.float64(0.2336), np.float64(0.2337), np.float64(0.2888), np.float64(0.4673), np.float64(0.5225), np.float64(0.701), np.float64(0.7561), np.float64(0.9897), np.float64(1.2235)]
+    gap ratios to the smallest: [np.float64(1.0), np.float64(4.2319), np.float64(4.2337), np.float64(5.2319), np.float64(8.4656), np.float64(9.4656), np.float64(12.6993), np.float64(13.6975), np.float64(17.9293), np.float64(22.1649)]; matching powers of phi: 1/10
+  distinct distance out from the axis: 39; distinct gaps: [np.float64(0.0251), np.float64(0.0252), np.float64(0.0407), np.float64(0.0447), np.float64(0.0472), np.float64(0.0659), np.float64(0.0723), np.float64(0.0724), np.float64(0.0764), np.float64(0.0829), np.float64(0.0868), np.float64(0.1016)] ...
+    gap ratios to the smallest: [np.float64(1.0), np.float64(1.004), np.float64(1.6215), np.float64(1.7809), np.float64(1.8805), np.float64(2.6255), np.float64(2.8805), np.float64(2.8845), np.float64(3.0438), np.float64(3.3028), np.float64(3.4582), np.float64(4.0478)]; matching powers of phi: 1/26
+--- radius 10.0: 385 silenced of 2756 sites
+  offset from nearest boundary half-plane: max 1.064, median 0.220
+  in the core (within 1.05 of the axis): 55; on the boundaries outside it: 330
+  r<3: boundary vacancies    5   per boundary area (5 half-discs, 5*pi*r^2/2) 0.0707   per r 1.67
+  r<4: boundary vacancies   20   per boundary area (5 half-discs, 5*pi*r^2/2) 0.1592   per r 5.00
+  r<5: boundary vacancies   60   per boundary area (5 half-discs, 5*pi*r^2/2) 0.3056   per r 12.00
+  r<6: boundary vacancies   95   per boundary area (5 half-discs, 5*pi*r^2/2) 0.3360   per r 15.83
+  r<7: boundary vacancies  145   per boundary area (5 half-discs, 5*pi*r^2/2) 0.3768   per r 20.71
+  r<8: boundary vacancies  205   per boundary area (5 half-discs, 5*pi*r^2/2) 0.4078   per r 25.62
+  r<9: boundary vacancies  275   per boundary area (5 half-discs, 5*pi*r^2/2) 0.4323   per r 30.56
+  half-plane 0: 66 vacancies
+  distinct z (along the axis): 61; distinct gaps: [np.float64(0.0551), np.float64(0.0552), np.float64(0.1785), np.float64(0.2336), np.float64(0.2337), np.float64(0.2888), np.float64(0.4673), np.float64(0.5224), np.float64(0.5225), np.float64(0.701), np.float64(0.7561), np.float64(0.9346)]
+    gap ratios to the smallest: [np.float64(1.0), np.float64(1.0018), np.float64(3.2396), np.float64(4.2396), np.float64(4.2414), np.float64(5.2414), np.float64(8.4809), np.float64(9.4809), np.float64(9.4828), np.float64(12.7223), np.float64(13.7223), np.float64(16.9619)]; matching powers of phi: 2/12
+  distinct distance out from the axis: 66; distinct gaps: [np.float64(0.022), np.float64(0.0221), np.float64(0.0251), np.float64(0.0252), np.float64(0.0407), np.float64(0.0447), np.float64(0.0448), np.float64(0.0472), np.float64(0.0503), np.float64(0.0504), np.float64(0.0628), np.float64(0.0659)] ...
+    gap ratios to the smallest: [np.float64(1.0), np.float64(1.0045), np.float64(1.1409), np.float64(1.1455), np.float64(1.85), np.float64(2.0318), np.float64(2.0364), np.float64(2.1455), np.float64(2.2864), np.float64(2.2909), np.float64(2.8545), np.float64(2.9955)]; matching powers of phi: 1/36

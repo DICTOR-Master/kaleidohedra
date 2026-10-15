@@ -1,0 +1,29 @@
+(1) core silences in wedge 0: 11; exactly in one plane through the axis: 10; off it: 1 (rho [np.float64(1.0042)])
+    plane sites in the build: 73; all integer combinations of two basis vectors (exact): True
+    axis direction in that lattice: alpha/beta = -1/2 - 1/2√5  -> irrational (sqrt5 part nonzero): True
+    heights of plane sites all distinct (projection to the axis injective): True
+    silent plane sites: 11, transverse coordinate from 0.11032 to 1.11313
+    kept plane sites inside that interval: 0
+    nearest kept outside: above 1.22345, none below (the axis side is the wedge edge)
+    window edge (exact): outermost silent site transverse^2 = 544/81 - 992/405√5; innermost kept beyond it transverse^2 = 64/81 + 128/405√5
+(2) seam side -1: silent 120 with |offset| up to 0.539; kept with |offset| below that: 115 of 405 -> no clean slab: the offset alone does not decide
+(2) seam side +1: silent 210 with |offset| up to 1.064; kept with |offset| below that: 285 of 325 -> no clean slab: the offset alone does not decide
+(2) seam 0 diffraction: 66 distinct vacancies; strongest peak I/N = 46.58 (perfect Bragg 66); random sets of the same size: 11.78 +- 2.04
+    peaks above 35% of the strongest: 16; distance to the nearest projected reciprocal-lattice vector (grid step 0.05):
+      peak [-7.9, -11.15]: off by 0.083  (voice 0, indices (2, -1, -2))
+      peak [-7.6, -11.2]: off by 0.223  (voice 0, indices (2, -1, -2))
+      peak [8.2, 11.15]: off by 0.151  (voice 4, indices (-1, 2, 2))
+      peak [11.45, -4.6]: off by 0.021  (voice 0, indices (0, 0, 2))
+      peak [5.8, -2.3]: off by 0.065  (voice 0, indices (0, 0, 1))
+      peak [4.8, 3.75]: off by 0.034  (voice 0, indices (-1, 0, 1))
+      peak [-1.1, 6.0]: off by 0.169  (voice 0, indices (-1, 0, 0))
+      peak [10.5, 1.4]: off by 0.043  (voice 0, indices (-1, 0, 2))
+      peak [6.5, -8.3]: off by 0.066  (voice 4, indices (0, -1, 1))
+      peak [-9.6, -7.45]: off by 0.019  (voice 0, indices (2, 0, -2))
+      peak [-3.9, -9.75]: off by 0.034  (voice 0, indices (2, 0, -1))
+      peak [1.4, -6.0]: off by 0.094  (voice 4, indices (0, -1, 0))
+      peak [1.75, -12.0]: off by 0.115  (voice 0, indices (2, 0, 0))
+      peak [-0.8, 6.0]: off by 0.132  (voice 0, indices (-1, 0, 0))
+      peak [12.0, -10.6]: off by 0.401  (voice 0, indices (1, 0, 2))
+      peak [4.5, 3.75]: off by 0.306  (voice 0, indices (-1, 0, 1))
+    all peaks explained within one grid step: False

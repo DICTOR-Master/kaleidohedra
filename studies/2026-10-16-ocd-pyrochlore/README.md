@@ -265,7 +265,9 @@ Exact in ℚ(√5).
   - Beyond that, the ring-clash chain keeps copies the canonical chain would include: the first is at height 12.812 (t = 1.1553), then −22.71 and 34.77. There it becomes the three-gap (L, S, L+S) cut-and-project chain, a Fibonacci chain with points thinned out: still an exact quasicrystal, but not the Fibonacci word.
 - **Open:** whether some other clash (not a ring-mate) silences those copies, which would restore Fibonacci. That needs a build to about radius 14, or a targeted check of the copy at height 12.81.
 
-## Step 29: the copy at height 12.8, a tie (`scripts/chorus_h128.py` → `data/chorus-h128.txt`)
+## Step 29: the copy at height 12.8, a tie
+
+> **Superseded by step 30.** It is not a tie: the rival overlaps two further copies, and keeping the core copy is cheaper by one ring. The "equally minimal" and "tie-break" statements below are wrong and kept only as a record. (`scripts/chorus_h128.py` → `data/chorus-h128.txt`)
 
 Exact in ℚ(√5) for every overlap and touch; the greedy silencing is float, as in the chorus. All sites of all five voices in a cylinder around the axis (|height − 12.812| < 7, distance from the axis < 6.16): 1135 sites.
 
@@ -292,7 +294,7 @@ Exact in ℚ(√5) for every overlap and touch; the greedy silencing is float, a
 **Not found:**
 - a five-fold junction of five periodic packings of one hard polyhedron, where the junction axis carries an exact Fibonacci cut-and-project chain;
 - the selection of that chain's window by the five-fold ring's self-clash (exact t_c);
-- the equal-cost fork beyond it (step 29).
+- minimal removal departing from the canonical window beyond |h| = 12.81 (step 30, which corrects step 29's "equal-cost fork").
 
 **Reading.** The chorus spine is a new, exact instance of a known family: irrational interfaces as quasicrystals. It is not a new phenomenon. Any write-up must cite Sutton, Ranganathan et al. and Prodan et al. The search used 1 library grep, 6 web searches and 2 abstract reads. It is not a specialist literature review; a twinning or quasicrystal specialist could know more.
 
