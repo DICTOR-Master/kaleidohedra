@@ -31,8 +31,8 @@
     const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute([0, 1, 1, 2, 2, 3, 3, 0].flatMap((i) => R[i]), 3));
     scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x8a6400, clippingPlanes: clip })));
   }
-  const cam = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
-  const dist = (location.search.includes('turns') ? { closed: 10.5, cut: 10.5, cut2: 2.5, cut3: 0.6, apart: 17, inner: 10.5 } : location.search.includes('rect') ? { closed: 18, cut: 18, apart: 22, inner: 18 } : location.search.includes('pair') ? { closed: 3.6, cut: 3.6, apart: 5.2, inner: 3.6 } : location.search.includes('tight') ? { closed: 5.8, cut: 5.8, apart: 9, inner: 5.2 } : location.search.includes('gsd') ? { closed: 10.5, cut: 10.5, apart: 17, inner: 9 } : { closed: 10.5, cut: 10.5, apart: 17, inner: 5.2 })[scn];
+  const cam = new THREE.PerspectiveCamera(30, 1, location.search.includes('turns') ? 0.002 : 0.1, 100);
+  const dist = (location.search.includes('turns') ? { closed: 10.5, cut: 10.5, cut2: 2.5, cut3: 2.5 / 4.236068, cut4: 2.5 / 17.944272, cut5: 2.5 / 76.013156, apart: 17, inner: 10.5 } : location.search.includes('rect') ? { closed: 18, cut: 18, apart: 22, inner: 18 } : location.search.includes('pair') ? { closed: 3.6, cut: 3.6, apart: 5.2, inner: 3.6 } : location.search.includes('tight') ? { closed: 5.8, cut: 5.8, apart: 9, inner: 5.2 } : location.search.includes('gsd') ? { closed: 10.5, cut: 10.5, apart: 17, inner: 9 } : { closed: 10.5, cut: 10.5, apart: 17, inner: 5.2 })[scn];
   const dir = scn.startsWith('cut') ? new THREE.Vector3(0.12, 0.2, 1) : new THREE.Vector3(0.62, 0.48, 0.9);
   cam.position.copy(dir.normalize().multiplyScalar(dist)); cam.lookAt(0, 0, 0); renderer.render(scene, cam); document.title = 'ready';
 })();

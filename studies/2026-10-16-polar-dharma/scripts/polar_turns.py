@@ -6,10 +6,11 @@ p = (1 + 5 ** .5) / 2
 J = json.load(open('data/polar-gsd-render.json'))
 def sc(S, s): return {'v': (np.array(S['v']) * s).tolist(), 'f': S['f'], 'c': (np.array(S['c']) * s).tolist()}
 layers = []
-for t in range(3):
+TURNS = 5                                           # turns 0..4 (DICTO: render the infinite core twice more)
+for t in range(TURNS):
     s = p ** (-3 * t)
     for L in J['layers']: layers.append({'name': f'turn {t}: {L["name"]}', 'pieces': [sc(S, s) for S in L['pieces']]})
 D0 = np.array(J['core']['v']); Dout = np.array(J['outer']['v'])
 assert abs(np.linalg.norm(Dout, axis=1).max() / p ** 3 - np.linalg.norm(D0, axis=1).max()) < 1e-9   # outer / phi^3 = inner
-json.dump({'layers': layers, 'core': sc(J['core'], p ** -6), 'nlay': len(J['layers'])}, open('data/polar-turns-render.json', 'w'))
+json.dump({'layers': layers, 'core': sc(J['core'], p ** (-3 * (TURNS - 1))), 'nlay': len(J['layers'])}, open('data/polar-turns-render.json', 'w'))
 print(len(layers), 'layers,', sum(len(L['pieces']) for L in layers), 'pieces')
