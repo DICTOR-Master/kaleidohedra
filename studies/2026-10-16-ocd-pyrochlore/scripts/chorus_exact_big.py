@@ -90,5 +90,6 @@ out = [f'radius {RAD}: {len(P)} sites; silenced {removed} in five-fold orbits; k
        f'EXACT check over {pairs} nearby pairs: overlapping {over}; touching exactly (face to face or edge/corner) {touch}',
        f'silenced copies lie at these distances from the five-fold axis: {dist}',
        f'kept fraction by distance from the axis: ' + ', '.join(f'<{r0:.0f}: {np.mean(alive[np.linalg.norm(P - np.outer(P @ a5, a5), axis=1) < r0]):.2f}' for r0 in (1, 2, 3, 4))]
-print('\n'.join(out)); open('data/chorus-exact-big.txt', 'w').write('\n'.join(out) + '\n')
-json.dump({'sites': Kf.tolist(), 'silenced': silent.tolist(), 'a5': a5.tolist(), 'RAD': RAD}, open('data/chorus-exact-big.json', 'w'))
+print('\n'.join(out)); open('data/chorus-exact-big.txt' if RAD == 5 else f'data/chorus-exact-r{RAD:g}.txt', 'w').write('\n'.join(out) + '\n')
+json.dump({'sites': Kf.tolist(), 'silenced': silent.tolist(), 'a5': a5.tolist(), 'e1': e1.tolist(), 'e2': e2.tolist(), 'th0': float(th0), 'RAD': RAD, 'all': P.tolist()},
+          open('data/chorus-exact-big.json' if RAD == 5 else f'data/chorus-exact-r{RAD:g}.json', 'w'))

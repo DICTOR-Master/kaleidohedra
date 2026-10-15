@@ -173,3 +173,28 @@ A bounded Fable task, with DICTO's go; checked afterwards.
 - **Top recommended test.** Grow to radius 8–10 and measure the vacancies on one boundary half-plane: their density per area, and whether their spacings come in golden ratios.
 
 Reference library: Ino 1969, Marks 1984 and 15 more added as link-only entries (refs repo).
+
+## Step 23: boundary vacancies to radius 10 (`scripts/chorus_exact_big.py 8.0 / 10.0`, `scripts/chorus_boundary.py` → `data/chorus-boundary.txt`; render `renders/chorus-boundary.png`, movie `dicto-chorus-boundary.mp4` outside the repo)
+
+- **Exact packing check:**
+  - **radius 8:** 1471 sites, 240 silenced (float choice, five-fold orbits); 3630 close pairs, **0 overlaps**, 3605 touching.
+  - **radius 10:** 2756 sites, 385 silenced; 7465 close pairs, **0 overlaps**, 7390 touching. The few close pairs that don't touch are separated by a gap.
+- **Growth:** the boundary vacancies (outside the core) grow like boundary **area**, not like a line. Within radius r the counts are 5, 20, 60, 95, 145, 205 and 275 for r = 3 to 9, with the increments rising by about 10 per unit of r. The density per boundary area (5 half-discs) is still rising: 0.31 → 0.43 from r = 5 to 9. That is consistent with settling at a constant, but the density is **not yet shown to settle**.
+- **Golden spacings on the boundary: inconclusive.** All spacings are combinations a + bφ of a base length, but that follows automatically from projecting a lattice in the golden frame. Matching gap ratios to single powers of φ found only a few. The 2D boundary pattern needs a proper quasiperiodicity test (e.g. its diffraction), not a 1D gap count.
+
+## Step 24: the core (`scripts/chorus_core.py` on the radius-8 run → `data/chorus-core-r8.txt`; heights fitted on the radius-8 and radius-10 runs)
+
+- **Core silences come in rings of 5** (one per wedge), all at the same angle in their wedge except one ring.
+- **Ring heights along the axis:** every ring height is **(m + nφ)·u** with u = 0.98979, residual below 3·10⁻⁵ (float readout of exact sites).
+  - At radius 8 there are 9 rings: (−4,−2), (−2,−2), (−4,0), (−3,0), (−2,0), (−2,2), (0,2), (−2,4), (0,4).
+  - Radius 10 adds (2,4) and (0,6).
+- **Ring distances from the axis:**
+  - 0.1785, 0.2888, 0.4673, 0.7561 step by **φ**.
+  - The radius-10 run adds a ring at 0.1103 = 0.1785/φ: a larger build finds rings closer to the axis by a factor φ.
+- **The silences form a 1D chain.** They grow with the length of the axis: 2.81 per unit length at radius 8, 2.75 at radius 10.
+- **Reading:** this is the standard cut-and-project mechanism. The five-fold axis is irrational in every voice's lattice, so the lattice points that come close to it are exactly a 1D model set (a Fibonacci-type quasiperiodic chain), which the hardness rule silences. The core is therefore a **quasiperiodic chain of silent pentagonal rings**, not a repeating stack. This is a reading of the measured data, with heights fitted to float precision; an exact proof is not done.
+- **The empty channel:**
+  - Its clear radius about the axis is 0.96 on average, 1.77 at most.
+  - The central copy plugs it, so the channel is **not a continuous pipe**.
+  - Its outline is weakly five-fold: the spread across the five copies of each direction is 0.028, against 0.075 overall.
+  - Its cross-section never repeats along the axis (no autocorrelation peaks).
