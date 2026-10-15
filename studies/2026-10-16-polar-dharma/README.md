@@ -126,15 +126,14 @@ The outer layers are unchanged. Renders: `renders/polar-pair-*.png` (`node shoot
 
 ## Step 10: golden rectangles around the whole structure (DICTO's question)
 
-`polar_golden_rect.py` (`data/polar-golden-rect.txt`) tests the full set of golden rectangles: 15 of them (5 perpendicular triples, 60 edges), with corners on the 12 five-fold axes, against the original nest.
+`polar_golden_rect.py` (`data/polar-golden-rect.txt`) tests the 15 golden rectangles (5 perpendicular triples, 60 edges), with corners on the 12 five-fold axes, against the original nest.
 
-- **Corners on the chain's icosahedron:** the corners are the RT tips and the GSD valleys. The rectangles cut through the inner shells.
+- **Corners on the chain's icosahedron:** the corners are RT tips and GSD valleys. The rectangles cut through the inner shells.
 - **Corners on D(φ³)'s face centres:** the rectangles lie inside D(φ³).
-- **The smallest icosahedron around D(φ³) is not enough:** its long edges still pass through D(φ³).
-- **The next turn of the cycle (the chain's icosahedron × φ³):** at exactly this size, the frames clear the whole nest, with the 30 long edges touching D(φ³)'s 30 edge midpoints. Exact check: corner radius² = (50 − 22√5)·φ⁶ = 10 + 2√5, and long-edge midpoint radius² = (10 + 2√5)/(1 + φ²) = 4 = D(φ³)'s midradius².
+- **The smallest icosahedron around D(φ³):** not enough to enclose the nest.
+- **The next turn of the cycle's icosahedron (the chain's icosahedron × φ³):** the rectangles clear the nest. **Each of D(φ³)'s 30 edges lies along one of the 30 long edges, centred on it**, and each long edge is exactly φ³ times as long (6.472 against 1.528). Exact check: corner radius² = 10 + 2√5, and long-edge midpoint radius² = 4 = D(φ³)'s midradius².
 
-Golden rectangles enclose the structure only when it is nested in an icosahedron again: the next turn's icosahedron, not the smallest one.
-
+**Correction (2026-10-16):** I first reported only that the long edges "touch the edge midpoints". They contain the whole edges. This makes the result classical. The 30 long edges are the edges of D(φ³)'s **small stellated dodecahedron**, the first stellation, made by extending the dodecahedron's edges (Kepler 1619). Its 12 points are the next turn's icosahedron, and a pentagram chord is φ³ (= 1 + 2φ) times the pentagon's side. So the frame that encloses the nest is the outer dodecahedron's own small stellation.
 Renders of the nest inside the 15 golden rectangles: `renders/polar-rect-*.png` (`node shoot_polar.mjs rect`; the render data is `data/polar-rect-render.json`, written by `polar_golden_rect.py`).
 
 ## Accuracy checks (from 2026-10-16)
@@ -149,3 +148,17 @@ The slips in steps 6–8 led to a shared module, `studies/_lib/geomcheck.py`, te
 6. Every number is labelled exact or float, and faithful or adjusted.
 
 `polar_pieces.py` now uses rules 1 and 4.
+
+## Prior art (checked 2026-10-16: reference library + web)
+
+| Claim | Status | Source |
+|---|---|---|
+| Polar reciprocation reverses inclusion (P ⊂ Q gives Q* ⊂ P*), so the reversed chain nests, and a dual pair swaps order in it | **classical** (convex geometry). DICTO's order rule applies it. | stated in Firsching 2015 (library) |
+| Fit and slack tests: the largest scaled copy of one polytope inside another | **known problem** (Croft; Firsching computes it exactly). Our tests are the concentric, same-orientation case. | Firsching 2015 |
+| Nested icosahedral shells in general | **known context** (clusters, viruses, fullerenes) | Twarock–Valiunas–Zappa 2015; Dechant et al. 2014 (library); Spheres of Dharma shells = the Tsai-cluster family (#23) |
+| GSD = icosahedron + 20 pyramids; GSD volume = 3 × that icosahedron | **classical**. The volume ratio follows from the standard formulas (5/4·(3+√5)a³ against 5/12·(3+√5)a³). | Kepler 1619; DISCOVERIES #27; Hafner 2007 |
+| The GSD and the RT together | **related work**: Hafner dissects SSD + GSD into RT + hexecontahedron, with 60 tetrahedra each 1/6 of a prolate golden rhombohedron. Our 60 tetrahedra (GSD minus RT) are different pieces. In floating point, each has φ² times his volume on the RT edge (not yet checked exactly). | Hafner 2007 (link only) |
+| The reversed Dharma cycle containing the GSD's points (its outer dodecahedron) and valleys (its icosahedron), locked with RT | **not found**. It follows directly from the classical facts above. Present it as an observation about DICTO's cycle, not as a new theorem. | library + web |
+| Frame of 15 golden rectangles around the nest | **classical**: it is the outer dodecahedron's small stellated dodecahedron. | Kepler 1619 |
+| Tight nest (5 − 2√5, 11/18 + 5/18·√5); dual pairs in the inner gap (TID pair: 6/φ², play √5·φ³/9; RID pair: play 1.00218); the exact cone-cut pieces and volumes | **not found** | library + web |
+| The dual of the Hecatodihedron, and the Hecatodihedron itself | **not found** (#28) | — |

@@ -307,3 +307,9 @@ reference library, not in this repo.
 - N. Arkani-Hamed, T.-C. Huang, Y.-t. Huang (2021). *The EFT-hedron*. JHEP 05, 259. <https://arxiv.org/abs/2012.15849>
 - N. Arkani-Hamed, P. Benincasa, A. Postnikov (2017). *Cosmological polytopes and the wavefunction of the universe*. <https://arxiv.org/abs/1709.02813>
 - S. Kabai, Hexagons and the Golden Ratio (after G. Odom), Wolfram Demonstrations Project (2008), CC BY-NC-SA, https://demonstrations.wolfram.com/HexagonsAndTheGoldenRatio/ (contributor read by DICTO from the page, 2026-10-14; credited in the FUJI paper source for its next version).
+
+## Polar Dharma (study 2026-10-16-polar-dharma)
+
+- M. Firsching (2015). *Computing maximal copies of polytopes contained in a polytope*. Experimental Mathematics 24, 98–105. <https://arxiv.org/abs/1407.0683> (Polar reciprocals reverse inclusion. Largest copy of a polytope in a polytope.)
+- R. Twarock, M. Valiunas, E. Zappa (2015). *Orbits of crystallographic embedding of non-crystallographic groups and applications to virology*. Acta Cryst. A. <https://arxiv.org/abs/1411.2115> (Nested icosahedral point sets.)
+- I. Hafner (2007). *Dissection of small stellated dodecahedron and great stellated dodecahedron to rhombic triacontahedron and hexecontahedron*. Visual Mathematics 9(2). <http://www.mi.sanu.ac.rs/vismath/hafnervisual/visual54A/Visual54.html>
