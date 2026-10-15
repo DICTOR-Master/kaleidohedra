@@ -162,3 +162,7 @@ The slips in steps 6–8 led to a shared module, `studies/_lib/geomcheck.py`, te
 | Frame of 15 golden rectangles around the nest | **classical**: it is the outer dodecahedron's small stellated dodecahedron. | Kepler 1619 |
 | Tight nest (5 − 2√5, 11/18 + 5/18·√5); dual pairs in the inner gap (TID pair: 6/φ², play √5·φ³/9; RID pair: play 1.00218); the exact cone-cut pieces and volumes | **not found** | library + web |
 | The dual of the Hecatodihedron, and the Hecatodihedron itself | **not found** (#28) | — |
+
+## The dual of the Hecatodihedron, on its own (station 2 of the reversed cycle)
+
+It has 102 corners and 80 faces: 20 regular hexagons and 60 kites, the duals of the Hecatodihedron's 20 six-face corners and 60 four-face corners. 90 of its corners lie on one sphere (the icosidodecahedron's circumsphere), and 12 sit slightly further out. This mirrors the Hecatodihedron, whose 90 faces touch one sphere while its 12 pentagons lie slightly inside. It is the pentakis dodecahedron with its 20 six-fold corners cut off flat into regular hexagons, just as the Hecatodihedron is the truncated icosahedron with a Shield added on each hexagon. Render data comes from `hstar_render.py`; renders are `renders/hstar-{three,five,oblique}.png` (`render_hstar.html`, `shoot_hstar.mjs`).
