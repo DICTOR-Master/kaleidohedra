@@ -45,3 +45,10 @@ swaps H and O), as the icosahedron–dodecahedron compound has 32 and 32. There 
 **Stations:** the golden cycle takes both, exactly: **I ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ hull ⊂ RT ⊂ I·φ³** (O at 3φ²/4). rTI's 90 corners lie on TI's edges;
 the hull's corners include H's 80, which lie on RT's faces; TI touches the hull at 60 corners. The cycle now holds the core and hull of both pairs:
 ID and RT (icosahedron–dodecahedron), rTI and its dual (Hecatodihedron–Ogdoecontahedron). In this cycle O sits at 3φ²/4, not at its compound size 9/4.
+
+## Step 9 (exact): the Cleo star brings the dodecahedron back: `scripts/cleo_star_station.py` → `data/cleo-star.txt`
+DICTO: "the icosahedron with the Cleo-Icosa core and Cleo-Icosa spikes … feels like the dodecahedron should be in there too". The Dharma
+icosahedron is 20 Cleo-Icos; with 20 more as spikes it is the Icosa star (volume 2·I). **Its 20 tips are exactly the corners of (2/3)·D**, the
+Dharma dodecahedron at two thirds, and that dodecahedron D′ fits (loosely) inside ID and inside O: I ⊂ star ⊂ D′ ⊂ ID ⊂ O ⊂ … — the dodecahedron
+returns as the hull of the Cleo star, in the old loose I → ID gap. D′ − star = 35/18 − 17√5/54 is **one connected gap** (cups over the 12 corners
+joined by valleys along the 30 edges; float flood fill); cut by the cones over D′'s faces it gives 12 equal pieces.
