@@ -113,3 +113,6 @@ These are the remaining gaps before any public "new" claim.
   - Metaxyhexecontahedron's dual: the structure of tI (truncated icosahedron), as stated (non-Archimedean proportions).
 - **Status:** combinatorial novelty is checked only within this sweep (two operators); proportions are not part of a Conway structure, so the
   distinguished members (9/φ⁴, 3/√5) are not tested by it. Stella not run.
+
+### J. Hart's master list (2026-10-16)
+- G. Hart, *Virtual Polyhedra*, alphabetic list read in full: compounds of every uniform solid with its dual (incl. the truncated icosahedron and dual), dodecahedron–icosahedron compounds, the rhombic enneacontahedron, the pentakis dodecahedron, the kis/stellated forms. **None** of H, O, the Hecatogdoecontahedron, the Metaxyhexecontahedron, the Palintriacontahedron, or a nested golden cycle. Remaining unread: Wenninger in print, Coxeter/Cromwell/Holden in print, Stella.
