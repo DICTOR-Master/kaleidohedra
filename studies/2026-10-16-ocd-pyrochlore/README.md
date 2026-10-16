@@ -416,3 +416,14 @@ triangles in the OCD's own 20 hexagon planes. It is the golden envelope (rhombic
 and 0.54936 (60), dihedrals 144° and 159.09°; volume 1.346 per copy, above the cell's 1.328, so copies overlap and it does not tile in the bcc
 packing. Structure: Conway t3jD (Antiprism), the triacontahedron truncated at its 20 three-fold corners: a known combinatorial type, at the
 depth set by the OCD. Exact version and prior-art check of this depth: to do.
+
+### The companion's family (DICTO: "any tweaks to give it anything special?"; float; `scripts/companion_family.py`)
+The 30 golden planes stay at 2/3; the 20 triangle planes move to depth d. d ≤ 0.6228: the icosahedron; d ≥ about 0.715: the rhombic
+triacontahedron; in between, 72 corners and 50 faces (the chamfered icosahedron). Members by depth (d/(2/3) in brackets):
+- volume = the bcc cell: d = 0.646696 (0.97004)
+- hexagon long : short = φ³: 0.648817; **the companion (OCD hexagon planes): 0.653069 (0.97960), ratio 3.4026**; ratio 3: 0.655663;
+  φ²: 0.658571; 2: 0.664547; φ: 0.669353
+- **all 120 edges equal: d = 0.680008 (1.02001)**, edge 0.30505
+- **midsphere (canonical): d = 0.700074 (1.05011)**
+The equal-edge and canonical members are probably known (chamfered icosahedron literature; to check); the golden-ratio members are choices, not
+forced by any contact. Exact values to do for whichever DICTO picks.
