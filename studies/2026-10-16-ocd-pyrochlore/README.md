@@ -522,3 +522,10 @@ around an icosahedron of 0.6174 of the crystal's: 70.24% of the outline; with 20
 and S/φ touches S + φv for every surface point v, so the seed closes iff no two of the twelve overlap, i.e. g_S(φ(v_i − v_j)/2) ≥ 1.
 The 12 farthest corners (squared radius 10/9 − 2√5/9) are on the 5-fold axes; of the 66 pairs, 30 have gauge exactly 1 (touching, each
 copy 5 others, the icosahedron's edges) and 36 exactly φ. So the seed closes exactly at φ², centre S/φ; gap share −69 + 31√5 ≈ 0.318107.
+
+**Seed piece kits, first attempts (float, not yet a kit).** (1) `scripts/stella_seed_cells.py` → `data/stella-seed-cells.txt`: cutting the outer
+form by all 429 face planes of the 13 bodies and the outer form shatters the gap into 225,413 convex cells of 41,184 kinds (volume checks: 0.318097
+vs exact 0.318107; slivers), unlike the Bodhi seed whose zonotopes use only the 15 two-fold directions. (2) `scripts/stella_seed_regions.py` →
+`data/stella-seed-regions.txt`: one region per body by separating planes (corner-contact planes x·v̂ = |v|/φ, neighbour contact faces) does
+not tile (overlap 0.10, sum 22.661 of 23.256, unequal copy regions): neighbours meet along edges where several faces tie, so the contact
+"face" is not unique. Next: symmetric separating planes (bisectors of the tied faces, or the T_h chamber cut first), then cones per region.
