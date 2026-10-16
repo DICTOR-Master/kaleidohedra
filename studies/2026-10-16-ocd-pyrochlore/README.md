@@ -445,3 +445,13 @@ the OCD's packing, copies meeting face to face across the 8 joints (exact).
 **Its gap** (`scripts/stella_gap.py`, float): one connected thin skin along all the cell walls (12.88%; near the 8 hexagon walls and 6 square walls,
 about 0.1 thick), not separate pockets; so no single convex partner, and no room for an icosahedron of useful size in this packing. A partner
 would have to be a set of thin pieces, or come from a different arrangement.
+
+### Two-solid crystals: companion + icosahedra (DICTO 2026-10-16; float; `scripts/two_solid_crystal.py` → `data/two-solid-crystal.log`)
+Icosahedra of the companion's triangle edge sit face to face on its triangles (flush, exact contact). On neighbouring triangles (41.8° apart)
+they clash (common ball radius 0.108); on triangles 70.5° or more apart they do not. Cleo-Ico spikes on all 18 free faces of each joint icosahedron
+clash (with each other and the companions). Frameworks with icosahedra bridging companion to companion through opposite faces:
+- **bcc8** (icosahedra on one inscribed cube's 8 triangles; companions on a bcc lattice, an icosahedron at every joint, a pyrochlore network of
+  icosahedra): clash-free, fills 37.2%; no second identical framework fits anywhere on an 8×8×8 grid of shifts.
+- **dia4** (4 tetrahedral triangles; a diamond network of companions): fills 13.8%; the interpenetration scan was not reliable (its neighbour
+  radius missed the long bonds) and is to be redone.
+So face-to-face bridging keeps these crystals open; a dense two-solid crystal would need icosahedra in pockets rather than as bridges.
