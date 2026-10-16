@@ -96,3 +96,7 @@ These are the remaining gaps before any public "new" claim.
 - **Searched:** the 9/φ⁴ ratio or 1.3130 with pentakis / dodecahedron–icosahedron hull (web); Polytope Wiki and MathWorld pentakis pages;
   Wassell–Benito (dual pair ratio φ/3), Bridges 2017 (φ²/√5). **Not found** as a named member. Status: an unnamed member of a known family,
   distinguished by touching both RT and I·φ³ in the Dharma nest.
+- **Layers as pieces (2026-10-16, `gap_chain.py`, polar_pieces.py → `data/gap-pieces.txt`, exact `gap_pieces_exact.py` → `data/gap-pieces-exact.txt`):**
+  one piece per face of the inner solid. RT → G: 30 pieces of one kind (6 corners; one rhombus and 6 triangles), each 353/72 − 149√5/72;
+  G → I·φ³: 60 pieces of one kind (5 corners, 6 triangles, a triangular bipyramid shape), each 1/8 + √5/18. vol G = 145/12 + 65√5/12; G takes
+  0.356 of the step's volume. Like the Dharma, every layer is one kind of piece.
