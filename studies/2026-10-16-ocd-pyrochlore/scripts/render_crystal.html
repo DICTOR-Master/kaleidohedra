@@ -1,0 +1,45 @@
+<!doctype html><meta charset="utf-8"><title>Pyrochlore two-solid crystal (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// The pyrochlore two-solid crystal (?mode=patch|slice|pair&px=): stella cuts (gold) on one network of the OCD packing, icosahedra (cyan) on
+// the other, every body meeting its 8 neighbours face to face. patch: a ball of the crystal; slice: cut through the centre, front on;
+// pair: one stella cut with its 8 neighbours (4 stella cuts as glass, 4 icosahedra).
+(async function () {
+  const q = new URLSearchParams(location.search), MODE = q.get('mode') || 'patch', PX = +(q.get('px') || 1100);
+  const J = await fetch('crystal-render.json').then((r) => r.json());
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(PX, PX); renderer.setPixelRatio(1); renderer.localClippingEnabled = true;
+  document.body.prepend(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.85)); const sun = new THREE.DirectionalLight(0xffffff, 0.6); scene.add(sun);
+  const ax = new THREE.Vector3(...J.axis), dir = MODE === 'slice' ? ax.clone() : new THREE.Vector3(0.55, 0.42, 0.72).normalize();
+  const clip = MODE === 'slice' ? [new THREE.Plane(ax.clone().negate(), 0)] : [];
+  function add(S, off, color, op = 0) {
+    const pos = [], line = [], V = S.v.map((v) => v.map((x, k) => x + off[k]));
+    for (const f of S.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...V[f[0]], ...V[f[i]], ...V[f[i + 1]]); for (let i = 0; i < f.length; i++) line.push(...V[f[i]], ...V[f[(i + 1) % f.length]]); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, roughness: 0.45, flatShading: true, side: THREE.DoubleSide, transparent: !!op, opacity: op || 1, depthWrite: !op, clippingPlanes: clip, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, transparent: true, opacity: op ? 0.3 : 0.75, clippingPlanes: clip })));
+  }
+  const GOLD = 0xe8b84a, CYAN = 0x4dd0e1;
+  let H = 2.0;
+  if (MODE === 'pair') {
+    const c = J.net1.reduce((b, p) => (Math.hypot(...p) < Math.hypot(...b) ? p : b));
+    const d = (p) => Math.hypot(p[0] - c[0], p[1] - c[1], p[2] - c[2]);
+    const sh = (p) => p.map((x, k) => x - c[k]);
+    add(J.stella, [0, 0, 0], GOLD);
+    const nb1 = J.net1.filter((p) => d(p) > 1e-6).sort((a, b) => d(a) - d(b)).slice(0, 4), nb2 = J.net2.sort((a, b) => d(a) - d(b)).slice(0, 4);
+    for (const p of nb2) add(J.ico, sh(p), CYAN); for (const p of nb1) add(J.stella, sh(p), GOLD, 0.16); H = 1.75;
+  } else {
+    const R = MODE === 'patch' ? 1.9 : 2.4;
+    for (const p of J.net1) if (Math.hypot(...p) < R) add(J.stella, p, GOLD);
+    for (const p of J.net2) if (Math.hypot(...p) < R) add(J.ico, p, CYAN);
+    H = MODE === 'patch' ? 2.3 : 2.5;
+  }
+  const up = new THREE.Vector3(0, 0, 1).sub(dir.clone().multiplyScalar(dir.z)).normalize();
+  const cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.001, 100); cam.position.copy(dir.clone().multiplyScalar(30)); cam.up.copy(up); cam.lookAt(0, 0, 0);
+  sun.position.copy(dir.clone().multiplyScalar(6).add(up.clone().multiplyScalar(5)));
+  renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>
