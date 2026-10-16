@@ -58,3 +58,13 @@ DICTO: "the 12 five-sided pyramids of Hypsicles pointing inwards". On each penta
 the icosahedron corner below: all 12 fit in the star–D′ gap with no overlap of I or the spikes (48,000 sampled interior points, float). Each has
 volume 5/108 − √5/324 and height² 29/72 − 61√5/360 (about 0.21 of D′'s own central Hypsicles pyramid's height). Together 5/9 − √5/27 = 38.1% of
 the gap; left are the valleys along the 30 edges of I, (25 − 5√5)/18 = 61.9%.
+
+## Step 11: the Hypsicles twins (DICTO: "a special filling variety like Cleo-Icosa"): `scripts/hypsicles_twins.py` (exact part fails, see below)
+The Dharma icosahedron (20 Cleo-Icos) and the dodecahedron D″ in the same circumsphere (12 "Cleo-Dodecas", its central pyramids). Hypsicles
+(Book XIV): equal inradii, so both pyramids have the same height (float: 0.467086 both).
+- **Not golden-exact.** The squared edge ratio is (5 − √5)/6, whose square root is not in ℚ(√5): D″ needs a further square root. So the twins
+  cannot be an exact pair of stations in a ℚ(√5) cycle. Everything below is float.
+- **Interlocked:** core I ∩ D″ = 60 corners on one sphere, 12 pentagons + 20 hexagons, two edge lengths (a truncated icosahedron with irregular
+  hexagons, every face on the common insphere); hull = 32 corners on the common sphere, 60 triangles (a pentakis dodecahedron inscribed in a sphere).
+  Core and hull are duals: the third member of the family midsphere compound (ID / RT) · H–O compound (rTI / dual) · Hypsicles twins (TI-like / pentakis-like).
+- **Place:** the twins with their hull sit in the loose I → ID gap, the same place as the Cleo star and its hull (2/3)·D, which is golden-exact.
