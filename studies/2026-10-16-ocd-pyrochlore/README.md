@@ -411,8 +411,8 @@ filled solid (OCD + GBPCs + the gap pieces between them). Possibly a new shape; 
 ## The companion solid (DICTO 2026-10-16: "a new hull from the OCD with the GB adapters"; DICTO: not an adapter but a complementary shape, "a free gift from the way the adapters sat on the OCD"; float; `scripts/ocd_gbpc_hull.py`)
 With the cell's own 24 GBPCs (one side of each joint) the hull has only S6 symmetry, since the one-side choice breaks it. With the full orbit,
 60 GBPCs around one copy, the hull is icosahedral: 72 corners, 50 faces, 30 hexagons in the golden planes of the envelope and 20 equilateral
-triangles in the OCD's own 20 hexagon planes. It is the golden envelope (rhombic triacontahedron) cut flat at all 20 hexagon planes of the OCD
-(the cut envelope K cuts only the 8 joint planes); each triangle is the six-pointed-star triangle around one OCD hexagon. Edges 0.16145 (60)
+triangles in the three-fold planes through the GBPCs' outer corners (distance 0.65307; **correction 2026-10-16:** not the OCD's own hexagon
+planes, at 0.62278, which give an icosahedron that only touches the golden planes at its edge midpoints). Edges 0.16145 (60)
 and 0.54936 (60), dihedrals 144° and 159.09°; volume 1.346 per copy, above the cell's 1.328, so copies overlap and it does not tile in the bcc
 packing. Structure: Conway t3jD (Antiprism), the triacontahedron truncated at its 20 three-fold corners: a known combinatorial type, at the
 depth set by the OCD. Exact version and prior-art check of this depth: to do.
