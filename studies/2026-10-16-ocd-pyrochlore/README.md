@@ -495,3 +495,11 @@ Stella thin wedges 24 × (12596 − 5596√5)/88209 (6 corners, 5 faces). The ic
 Stellas elsewhere: every octahedron meets 8 whole Stellas face to face on its joint planes; its tips enter only the odd-site Stellas' cells,
 which are notched (6 square-pyramid notches, 8.0% of the Stella). Fill **91.72%** (Stella alone 87.12%, with icosahedra 84.60%). Cutting the
 tips instead gives the cell itself (93.56%), no longer an octahedron. Exact notch volume still to do.
+
+### Octahedra on the pyrochlore networks, and the space groups (DICTO 2026-10-16; float)
+`scripts/stella_octa_pyro.py` → `data/stella-octa-pyro.txt`: every site's 6 square (cube-axis) neighbours lie on the other diamond network,
+so octahedra on one whole network never meet tip to tip; they meet each other and the OCD Stellas face to face on the joint walls (220 pairs
+tested, no overlap), and every OCD Stella is notched by 6 tips (one tip 0.017287, 8.00% for six). Fill **96.33%** (octahedra on 1/2 of the
+sites), against rock salt 91.72% (1/4). `scripts/crystal_symmetry.py` → `data/crystal-symmetry.txt` (spglib 2.8, corners as markers):
+OCD packing and OCD Stella alone Im-3 (No. 204, site m-3); OCD Stella + icosahedra and OCD Stella + octahedra on the pyrochlore networks both
+**Fd-3 (No. 203)**, both solids on site 23 (8a, 8b): the same crystal with the partner swapped; rock salt Fm-3 (No. 202).
