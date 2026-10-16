@@ -86,3 +86,9 @@ I·φ³, all 12 of I·φ³'s corners outside X): X bridges one turn to the next.
   meeting point); ten tetrahedra (20 planes: none through the tips or parallel to an X face); X's face normals lie on no 2- or 3-fold axis.
 - **Searched:** Wikipedia and Polytope Wiki pentakis pages, MathWorld, Klitzing, OEIS, a general web search; the reference library holds no pentakis or
   kleetope source. Wenninger's printed catalogues and Hart's compound pages not read. **Status: not found in the sources checked**; name DICTO's.
+
+## Names (DICTO, 2026-10-16)
+- **Palintriacontahedron** (πάλιν, back/reversed): X of step 12, the hull of the full-height icosidodecahedron star; the rhombic triacontahedron
+  turned inside out (same 32 axes, reciprocal radius ratio); 32 corners, 60 faces, each half a rhombic-dodecahedron rhombus.
+- **Hecatogdoecontahedron** (102 + 80, after icosi-dodeca): the compound of the Hecatodihedron and the Ogdoecontahedron of step 6, in the truncated
+  icosahedron's midsphere; 182 faces, 182 corners, self-dual; core the rectified truncated icosahedron, hull its dual.
