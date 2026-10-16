@@ -1,0 +1,10 @@
+DICTO · dictospheres.com
+oblate det (Fraction(376, 1), Fraction(-168, 1)), prolate det (Fraction(-232, 1), Fraction(104, 1)); block frame (three adjacent five-fold vectors) det (Fraction(-232, 1), Fraction(104, 1)): equals prolate True
+B1 Vajra (fine): volume 1/12 + 1/12*sqrt5 prolate blocks; per r^3 phi^3 dO: X = 1/6, Y = 1/6
+B2 Chatra: volume 7/12 + 1/4*sqrt5 prolate blocks; per r^3 phi^3 dO: X = 1/2, Y = 5/6
+B3 Mudra: volume 1/2 + -1/6*sqrt5 prolate blocks; per r^3 phi^3 dO: X = -1/3, Y = 1/3   <- negative X
+B4 Crown Jewel: volume 17/4 + -3/4*sqrt5 prolate blocks; per r^3 phi^3 dO: X = -3/2, Y = 7/2   <- negative X
+B5 Diadem: volume -1/6 + 1/6*sqrt5 prolate blocks; per r^3 phi^3 dO: X = 1/3, Y = 0
+periodic fill needs sum r^3 X = -10/243 per cell. Rhombohedra give X >= 0, so pieces with X < 0 are required; at edge scale r = 1/9 (lam):
+  Mudra alone: at least 90 per cell
+  Crown Jewel alone: at least 20 per cell

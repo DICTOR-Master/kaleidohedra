@@ -1,0 +1,281 @@
+{
+ "mark": "DICTO \u00b7 dictospheres.com",
+ "note": "volumes \"a|b\" = a + b*sqrt5 per bcc cell, |v| units cubed; full body lists on dicto-node ~/gbpc4/data",
+ "runs": {
+  "search-R-11.json": {
+   "mode": "R",
+   "seed": 11,
+   "restarts": [
+    {
+     "restart": 0,
+     "staged": true,
+     "fill": 0.631200785394261,
+     "tiles": 912,
+     "counts": {
+      "oblate 1.000000 lam": 13,
+      "prolate 0.500000 lam": 24,
+      "oblate 0.500000 lam": 146,
+      "prolate 0.250000 lam": 101,
+      "oblate 0.250000 lam": 628
+     },
+     "seconds": 95.46845650672913
+    },
+    {
+     "restart": 1,
+     "staged": false,
+     "fill": 0.5416495260741357,
+     "tiles": 1247,
+     "counts": {
+      "oblate 0.500000 lam": 122,
+      "oblate 1.000000 lam": 3,
+      "prolate 0.500000 lam": 18,
+      "oblate 0.250000 lam": 850,
+      "prolate 0.250000 lam": 254
+     },
+     "seconds": 241.58076691627502
+    },
+    {
+     "restart": 2,
+     "staged": true,
+     "fill": 0.5964960183391639,
+     "tiles": 920,
+     "counts": {
+      "oblate 1.000000 lam": 15,
+      "oblate 0.500000 lam": 136,
+      "prolate 0.500000 lam": 4,
+      "prolate 0.250000 lam": 108,
+      "oblate 0.250000 lam": 657
+     },
+     "seconds": 116.17531180381775
+    },
+    {
+     "restart": 3,
+     "staged": false,
+     "fill": 0.5548107628475322,
+     "tiles": 1224,
+     "counts": {
+      "oblate 0.500000 lam": 118,
+      "prolate 0.500000 lam": 13,
+      "prolate 0.250000 lam": 232,
+      "oblate 0.250000 lam": 855,
+      "oblate 1.000000 lam": 6
+     },
+     "seconds": 278.44867730140686
+    }
+   ],
+   "best_fill_float": 0.631200785394261,
+   "best_volume_exact": "-26857/5832|4087/1944",
+   "gap_volume_exact": "77545/5832|-1279/216",
+   "counts": {
+    "oblate 1.000000 lam": 13,
+    "prolate 0.500000 lam": 24,
+    "oblate 0.500000 lam": 146,
+    "prolate 0.250000 lam": 101,
+    "oblate 0.250000 lam": 628
+   },
+   "n_axes": 15
+  },
+  "search-R-12.json": {
+   "mode": "R",
+   "seed": 12,
+   "restarts": [
+    {
+     "restart": 0,
+     "staged": true,
+     "fill": 0.6091292688525907,
+     "tiles": 953,
+     "counts": {
+      "oblate 1.000000 lam": 12,
+      "oblate 0.500000 lam": 136,
+      "prolate 0.500000 lam": 22,
+      "oblate 0.250000 lam": 670,
+      "prolate 0.250000 lam": 113
+     },
+     "seconds": 99.5227837562561
+    },
+    {
+     "restart": 1,
+     "staged": false,
+     "fill": 0.5612706636757141,
+     "tiles": 1175,
+     "counts": {
+      "oblate 0.500000 lam": 112,
+      "oblate 1.000000 lam": 5,
+      "prolate 0.500000 lam": 30,
+      "oblate 0.250000 lam": 824,
+      "prolate 0.250000 lam": 204
+     },
+     "seconds": 212.41203808784485
+    },
+    {
+     "restart": 2,
+     "staged": true,
+     "fill": 0.6268787248866379,
+     "tiles": 961,
+     "counts": {
+      "oblate 1.000000 lam": 14,
+      "oblate 0.500000 lam": 145,
+      "prolate 0.500000 lam": 14,
+      "prolate 0.250000 lam": 90,
+      "oblate 0.250000 lam": 698
+     },
+     "seconds": 108.31963109970093
+    },
+    {
+     "restart": 3,
+     "staged": false,
+     "fill": 0.5471520505741007,
+     "tiles": 1104,
+     "counts": {
+      "oblate 1.000000 lam": 10,
+      "oblate 0.500000 lam": 87,
+      "prolate 0.500000 lam": 18,
+      "oblate 0.250000 lam": 777,
+      "prolate 0.250000 lam": 212
+     },
+     "seconds": 252.69762468338013
+    }
+   ],
+   "best_fill_float": 0.6268787248866379,
+   "best_volume_exact": "-3610/729|1097/486",
+   "gap_volume_exact": "9946/729|-2953/486",
+   "counts": {
+    "oblate 1.000000 lam": 14,
+    "oblate 0.500000 lam": 145,
+    "prolate 0.500000 lam": 14,
+    "prolate 0.250000 lam": 90,
+    "oblate 0.250000 lam": 698
+   },
+   "n_axes": 15
+  },
+  "search-RB-22.json": {
+   "mode": "RB",
+   "seed": 22,
+   "restarts": [
+    {
+     "restart": 0,
+     "staged": true,
+     "fill": 0.6685129809393306,
+     "tiles": 567,
+     "counts": {
+      "B1 1.000000 lam": 15,
+      "B3 1.000000 lam": 135,
+      "B5 1.000000 lam": 14,
+      "B1 0.500000 lam": 46,
+      "B3 0.500000 lam": 255,
+      "B5 0.500000 lam": 59,
+      "oblate 0.250000 lam": 32,
+      "prolate 0.250000 lam": 11
+     },
+     "seconds": 5718.18078660965
+    }
+   ],
+   "best_fill_float": 0.6685129809393306,
+   "best_volume_exact": "173711/17496|-76891/17496",
+   "gap_volume_exact": "-21647/17496|10075/17496",
+   "counts": {
+    "B1 1.000000 lam": 15,
+    "B3 1.000000 lam": 135,
+    "B5 1.000000 lam": 14,
+    "B1 0.500000 lam": 46,
+    "B3 0.500000 lam": 255,
+    "B5 0.500000 lam": 59,
+    "oblate 0.250000 lam": 32,
+    "prolate 0.250000 lam": 11
+   },
+   "n_axes": 121
+  },
+  "search-RX-31.json": {
+   "mode": "RX",
+   "seed": 31,
+   "restarts": [
+    {
+     "restart": 0,
+     "staged": true,
+     "fill": 0.6162719950009375,
+     "tiles": 541,
+     "counts": {
+      "oblate 1.000000 lam": 16,
+      "prolate 0.618034 lam": 4,
+      "oblate 0.618034 lam": 61,
+      "oblate 0.500000 lam": 23,
+      "oblate 0.381966 lam": 133,
+      "prolate 0.381966 lam": 3,
+      "oblate 0.250000 lam": 287,
+      "prolate 0.250000 lam": 14
+     },
+     "seconds": 64.15281939506531
+    },
+    {
+     "restart": 1,
+     "staged": false,
+     "fill": 0.5908528324004991,
+     "tiles": 663,
+     "counts": {
+      "oblate 0.618034 lam": 88,
+      "prolate 0.618034 lam": 9,
+      "prolate 0.381966 lam": 20,
+      "oblate 0.381966 lam": 75,
+      "oblate 0.250000 lam": 384,
+      "oblate 0.500000 lam": 6,
+      "oblate 1.000000 lam": 6,
+      "prolate 0.250000 lam": 72,
+      "prolate 0.500000 lam": 3
+     },
+     "seconds": 160.0155394077301
+    },
+    {
+     "restart": 2,
+     "staged": true,
+     "fill": 0.6324070678851359,
+     "tiles": 527,
+     "counts": {
+      "oblate 1.000000 lam": 13,
+      "oblate 0.618034 lam": 80,
+      "prolate 0.618034 lam": 6,
+      "oblate 0.500000 lam": 22,
+      "prolate 0.500000 lam": 1,
+      "oblate 0.381966 lam": 121,
+      "prolate 0.381966 lam": 3,
+      "oblate 0.250000 lam": 278,
+      "prolate 0.250000 lam": 3
+     },
+     "seconds": 64.10991334915161
+    },
+    {
+     "restart": 3,
+     "staged": false,
+     "fill": 0.5810247459101043,
+     "tiles": 691,
+     "counts": {
+      "oblate 0.618034 lam": 66,
+      "prolate 0.618034 lam": 7,
+      "oblate 0.500000 lam": 26,
+      "oblate 0.250000 lam": 386,
+      "oblate 1.000000 lam": 7,
+      "prolate 0.500000 lam": 1,
+      "prolate 0.381966 lam": 31,
+      "oblate 0.381966 lam": 94,
+      "prolate 0.250000 lam": 73
+     },
+     "seconds": 226.17048335075378
+    }
+   ],
+   "best_fill_float": 0.6324070678851359,
+   "best_volume_exact": "-1302005/5832|21575/216",
+   "gap_volume_exact": "1352693/5832|-201599/1944",
+   "counts": {
+    "oblate 1.000000 lam": 13,
+    "oblate 0.618034 lam": 80,
+    "prolate 0.618034 lam": 6,
+    "oblate 0.500000 lam": 22,
+    "prolate 0.500000 lam": 1,
+    "oblate 0.381966 lam": 121,
+    "prolate 0.381966 lam": 3,
+    "oblate 0.250000 lam": 278,
+    "prolate 0.250000 lam": 3
+   },
+   "n_axes": 15
+  }
+ }
+}
