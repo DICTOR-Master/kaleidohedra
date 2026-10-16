@@ -1,0 +1,58 @@
+<!doctype html><meta charset="utf-8"><title>Nine-station cycle (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// The golden nine-station cycle (?ver=nested|compound&mode=cutaway|slice|one&k=<station>&px=): nested has O at 3φ²/4 inside the core;
+// compound has O at its compound size 9/4, interlocked with TI and H. cutaway: every station's surface, a 90° slice about the vertical removed;
+// slice: the exact cut through a mirror plane, front on (rings), fills by layer, O as a teal outline when it crosses; one: a single station.
+(async function () {
+  const q = new URLSearchParams(location.search), VER = q.get('ver') || 'nested', MODE = q.get('mode') || 'cutaway', PX = +(q.get('px') || 1200);
+  const J = await fetch('nine-render.json').then((r) => r.json());
+  const COL = { I: 0x4dd0e1, ID: 0xc792ea, O: 0x2bb3a3, rTI: 0xf08fc0, TI: 0x5fd38a, H: 0xe8b84a, hull: 0x9fd8ff, RT: 0xff9a52, 'I·φ³': 0x4dd0e1 };
+  let S = J.stations.map((s) => ({ ...s })); const ZOOM = q.get('zoom') === '1';
+  if (VER === 'compound') { S = S.filter((s) => s.name !== 'O'); S.splice(S.findIndex((s) => s.name === 'H') + 1, 0, { ...J.O94, name: 'O' }); }
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(PX, PX); renderer.setPixelRatio(1); renderer.localClippingEnabled = true;
+  document.body.prepend(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.85)); const sun = new THREE.DirectionalLight(0xffffff, 0.6); scene.add(sun);
+  const v3 = (a) => new THREE.Vector3(...a), dir0 = v3(J.view.dir), up0 = v3(J.view.up);
+  function mesh(s, color, clip, opts = {}) {
+    const pos = [], line = [];
+    for (const f of s.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...s.v[f[0]], ...s.v[f[i]], ...s.v[f[i + 1]]); for (let i = 0; i < f.length; i++) line.push(...s.v[f[i]], ...s.v[f[(i + 1) % f.length]]); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    const m = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, roughness: 0.55, flatShading: true, side: THREE.DoubleSide, clippingPlanes: clip, clipIntersection: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1, ...opts }));
+    if (opts.offset) m.position.copy(opts.offset); scene.add(m);
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    const l = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, clippingPlanes: clip, clipIntersection: true })); if (opts.offset) l.position.copy(opts.offset); scene.add(l);
+  }
+  let H = 2.75, dir = dir0, up = up0;
+  if (MODE === 'cutaway') {
+    const wr = dir0.clone().sub(up0.clone().multiplyScalar(dir0.dot(up0))).normalize(), side = up0.clone().cross(wr);
+    const a = Math.PI / 4, n1 = wr.clone().multiplyScalar(-Math.sin(a)).add(side.clone().multiplyScalar(Math.cos(a))), n2 = wr.clone().multiplyScalar(-Math.sin(a)).sub(side.clone().multiplyScalar(Math.cos(a)));
+    const clip = [new THREE.Plane(n1, 0), new THREE.Plane(n2, 0)];       // with clipIntersection: removes only the wedge facing the camera
+    for (const s of S) { if (ZOOM && s.name === 'I·φ³') continue; mesh(s, COL[s.name], clip); }
+    if (ZOOM) H = 1.95;
+  }
+  if (MODE === 'one') { const s = S.find((x) => x.name === q.get('k')); mesh(s, COL[s.name], []); H = +(q.get('h') || 2.6); }
+  if (MODE === 'slice') {
+    const n = v3(J.slice.normal), u = v3(J.slice.up), w = n.clone().cross(u);
+    const sect = (V) => { const P = []; for (let i = 0; i < V.length; i++) { const a = v3(V[i]), da = a.dot(n); if (Math.abs(da) < 2e-6) { P.push(a); continue; }
+        for (let j = i + 1; j < V.length; j++) { const b = v3(V[j]), db = b.dot(n); if (Math.abs(db) >= 2e-6 && da * db < 0) P.push(a.clone().add(b.clone().sub(a).multiplyScalar(da / (da - db)))); } }
+      const Q = P.map((p) => [p.dot(u), p.dot(w)]).sort((x, y) => x[0] - y[0] || x[1] - y[1]), cr = (o, a, b) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+      const lo = [], hi = []; for (const p of Q) { while (lo.length > 1 && cr(lo[lo.length - 2], lo[lo.length - 1], p) <= 1e-12) lo.pop(); lo.push(p); }
+      for (const p of Q.slice().reverse()) { while (hi.length > 1 && cr(hi[hi.length - 2], hi[hi.length - 1], p) <= 1e-12) hi.pop(); hi.push(p); } return lo.slice(0, -1).concat(hi.slice(0, -1)); };
+    const flat = (R, color, z, op = 1) => { const m = new THREE.Mesh(new THREE.ShapeGeometry(new THREE.Shape(R.map((p) => new THREE.Vector2(p[0], p[1])))), new THREE.MeshBasicMaterial({ color, side: THREE.DoubleSide, transparent: op < 1, opacity: op, depthWrite: false })); m.position.z = z; scene.add(m); };
+    const rim = (R, color, r, z) => { const c = new THREE.CatmullRomCurve3([...R, R[0]].map((p) => new THREE.Vector3(p[0], p[1], z)), false, 'catmullrom', 0); scene.add(new THREE.Mesh(new THREE.TubeGeometry(c, R.length * 24, r, 8, false), new THREE.MeshBasicMaterial({ color }))); };
+    const phi = (1 + Math.sqrt(5)) / 2, nest = S.filter((s) => !(VER === 'compound' && s.name === 'O'));
+    let z = 0;
+    for (let t = 2; t >= 0; t--) { const k = Math.pow(phi, -3 * t); for (const s of [...nest].reverse()) { if ((t || ZOOM) && s.name === 'I·φ³') continue; const R = sect(s.v.map((v) => v.map((x) => x * k))); flat(R, COL[s.name], z += 0.0004); } }
+    // painter: a station's fill is the layer just inside it; outline every ring
+    for (let t = 2; t >= 0; t--) { const k = Math.pow(phi, -3 * t); for (const s of nest) if (!(ZOOM && s.name === 'I·φ³')) rim(sect(s.v.map((v) => v.map((x) => x * k))), 0x2b2620, t ? 0.004 : 0.007, 0.05); }
+    if (VER === 'compound') { const R = sect(S.find((s) => s.name === 'O').v); flat(R, 0x2bb3a3, 0.06, 0.16); rim(R, 0x0f5a51, 0.014, 0.07); }
+    dir = new THREE.Vector3(0, 0, 1); up = new THREE.Vector3(0, 1, 0); if (ZOOM) H = 1.95;
+  }
+  const cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.01, 200); cam.position.copy(dir.clone().multiplyScalar(40)); cam.up.copy(up); cam.lookAt(0, 0, 0);
+  sun.position.copy(dir.clone().multiplyScalar(6).add(up.clone().multiplyScalar(5)).add(up.clone().cross(dir).multiplyScalar(-3)));
+  renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>

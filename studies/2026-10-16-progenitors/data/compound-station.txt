@@ -1,0 +1,11 @@
+DICTO · dictospheres.com
+Progenitors step 8: O at its compound size 9/4 (interlocked with H) against the stations (exact)
+  O(9/4) vs I    : O inside I False (0 on faces); I inside O True (0 on faces)
+  O(9/4) vs ID   : O inside ID False (0 on faces); ID inside O True (0 on faces)
+  O(9/4) vs rTI  : O inside rTI False (90 on faces); rTI inside O True (90 on faces)
+  O(9/4) vs TI   : O inside TI False (90 on faces); TI inside O False (0 on faces)  — crossing
+  O(9/4) vs H    : O inside H False (90 on faces); H inside O False (0 on faces)  — crossing
+  O(9/4) vs hull : O inside hull True (102 on faces); hull inside O False (12 on faces)
+  O(9/4) vs RT   : O inside RT True (30 on faces); RT inside O False (0 on faces)
+  O(9/4) vs I·φ³ : O inside I·φ³ True (0 on faces); I·φ³ inside O False (0 on faces)
+  ID inside rTI: True
