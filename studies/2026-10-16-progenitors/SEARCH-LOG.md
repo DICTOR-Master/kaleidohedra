@@ -83,7 +83,7 @@ what was found, and what remains unread. "Not found" means not found in the sour
 - Printed catalogues and journals (Coxeter, Cromwell, Holden, *Structural Topology* beyond Messer 1995).
 These are the remaining gaps before any public "new" claim.
 
-### H. The gap member between RT and I·φ³ (DICTO 2026-10-16: "one more should fit between RT and the icosahedron")
+### H. The DICTO Metaxyhexecontahedron (named by DICTO 2026-10-16; the gap member between RT and I·φ³) (DICTO 2026-10-16: "one more should fit between RT and the icosahedron")
 - **Exact (`scripts/gap_member.py` → `data/gap-member.txt`):** in the Spheres of Dharma the RT → I·φ³ step is loose (the RT reaches 0.8115 of the way). The
   dodecahedron–icosahedron hull family (pentakis-type) has exactly one member touching both: the hull of the RT's 12 five-fold corners and the
   20 face centres of I·φ³. Icosahedron edge : dodecahedron edge = **9/φ⁴** (squared 81(47 − 21√5)/2 = 81/φ⁸), ≈ 1.313082; 60 faces; the RT lies
@@ -96,6 +96,7 @@ These are the remaining gaps before any public "new" claim.
 - **Searched:** the 9/φ⁴ ratio or 1.3130 with pentakis / dodecahedron–icosahedron hull (web); Polytope Wiki and MathWorld pentakis pages;
   Wassell–Benito (dual pair ratio φ/3), Bridges 2017 (φ²/√5). **Not found** as a named member. Status: an unnamed member of a known family,
   distinguished by touching both RT and I·φ³ in the Dharma nest.
+- **Name check:** "Metaxyhexecontahedron" (Greek *metaxý*, Plato's "in-between", + *hexēkonta*, 60 faces): web search 2026-10-16 found no use of the word (results only list the existing hexecontahedra: deltoidal, rhombic, pentagonal, noble unihexagrammic).
 - **Layers as pieces (2026-10-16, `gap_chain.py`, polar_pieces.py → `data/gap-pieces.txt`, exact `gap_pieces_exact.py` → `data/gap-pieces-exact.txt`):**
   one piece per face of the inner solid. RT → G: 30 pieces of one kind (6 corners; one rhombus and 6 triangles), each 353/72 − 149√5/72;
   G → I·φ³: 60 pieces of one kind (5 corners, 6 triangles, a triangular bipyramid shape), each 1/8 + √5/18. vol G = 145/12 + 65√5/12; G takes

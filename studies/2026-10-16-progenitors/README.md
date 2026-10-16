@@ -93,6 +93,10 @@ I·φ³, all 12 of I·φ³'s corners outside X): X bridges one turn to the next.
 - **DICTO Hecatogdoecontahedron** (102 + 80, after icosi-dodeca): the compound of the Hecatodihedron and the Ogdoecontahedron of step 6, in the truncated
   icosahedron's midsphere; 182 faces, 182 corners, self-dual; core the rectified truncated icosahedron, hull its dual.
 
+- **DICTO Metaxyhexecontahedron** (DICTO 2026-10-16; Greek *metaxý*, "in-between", + 60 faces): the member of the dodecahedron–icosahedron hull
+  family at edge ratio 9/φ⁴ that closes the RT → I·φ³ step exactly (hull of the RT's 12 five-fold corners and I·φ³'s 20 face centres);
+  its layers are 30 pieces of one kind (RT → it) and 60 of one kind (it → I·φ³). See SEARCH-LOG §H.
+
 ## Step 14 (float): the seam, and the full-cycle render
 The Palintriacontahedron lies inside the next turn's D′ (D′·φ³) and fills the next icosahedron's Cleo star almost exactly: all 32 corners inside,
 99.46% of its volume (20,000 sample points), so 0.54% pokes out, presumably through the valleys between spikes. The loose I·φ³ → ID·φ³ step is
