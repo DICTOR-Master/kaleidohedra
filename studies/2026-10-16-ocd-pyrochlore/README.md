@@ -510,3 +510,11 @@ OCD packing and OCD Stella alone Im-3 (No. 204, site m-3); OCD Stella + icosahed
 face planes); the 12 never touch each other (gap 0.31 at 63.4°); outline fill 49.82%. Flat on the 12 companion triangles fails (neighbours
 41.8° apart overlap, depth 0.20). Interlocking: 20 icosahedra flat on the centre's 20 triangles (the 3-fold gaps between the 12), largest
 without a clash 0.4878 of the crystal icosahedron (limited by the 12 OCD Stellas); 33 solids fill 58.20% of their outline.
+
+### DICTO OCD Stella seed: the Bodhi seed's pattern (DICTO 2026-10-16: "12 around a small icosa filled out like Bodhi ... seed"; float)
+`scripts/stella_seed.py` → `data/stella-seed.txt`; renders renders/stella-seed-{seed,twelve,cut}.jpg (`render_seed.html`). An outer OCD Stella of
+scale K holds 12 OCD Stellas on its 5-fold axes, each pushed out to touch it; the 12 just touch at K = 2.618032 (φ² = 2.618034). Each touches
+its 5 nearest (the icosahedron's edge pattern), others ≥ 0.82 apart; the largest centre OCD Stella has scale 0.618035 (1/φ), touching all 12.
+Gap 1 − (12 + φ⁻³)/φ⁶ ≈ 31.8%, the Bodhi seed's ratios (Bodhi seed paper: only I and RT close among the icosahedral solids tested; the OCD
+Stella is pyritohedral). Exact proof to do. Without the outer form (`stella_ico13.py` → `data/stella-ico13.txt`): 12 pulled in to touch
+around an icosahedron of 0.6174 of the crystal's: 70.24% of the outline; with 20 gap icosahedra (0.3084): 73.42%.

@@ -1,0 +1,33 @@
+<!doctype html><meta charset="utf-8"><title>DICTO OCD Stella seed</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// DICTO OCD Stella seed (?mode=seed|twelve|cut&px=): the Bodhi seed's pattern with the OCD Stella. seed: the outer OCD Stella (scale φ²) as
+// glass round the 12 (gold) and the centre (scale 1/φ, cyan); twelve: the 12 and the centre alone; cut: the near half of the 12 removed.
+(async function () {
+  const q = new URLSearchParams(location.search), MODE = q.get('mode') || 'atom', PX = +(q.get('px') || 1100);
+  const J = await fetch('stella-seed.json').then((r) => r.json());
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(PX, PX); renderer.setPixelRatio(1);
+  document.body.prepend(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.85)); const sun = new THREE.DirectionalLight(0xffffff, 0.6); scene.add(sun);
+  function add(S, off, color, op = 1, k = 1) {
+    const pos = [], line = [], V = S.v.map((v) => v.map((x, i) => x * k + off[i]));
+    for (const f of S.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...V[f[0]], ...V[f[i]], ...V[f[i + 1]]); for (let i = 0; i < f.length; i++) line.push(...V[f[i]], ...V[f[(i + 1) % f.length]]); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    const m = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, roughness: 0.45, flatShading: true, side: THREE.DoubleSide, transparent: op < 1, opacity: op, depthWrite: op >= 1, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 }));
+    m.renderOrder = op < 1 ? 2 : 0; scene.add(m);
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, transparent: true, opacity: op < 1 ? 0.25 : 0.75 })));
+  }
+  const GOLD = 0xe8b84a, CYAN = 0x4dd0e1, PHI = (1 + Math.sqrt(5)) / 2;
+  const dir = new THREE.Vector3(0.62, 0.48, 1).normalize();
+  add(J.stella, [0, 0, 0], CYAN, 1, 1 / PHI);
+  for (const p of J.stel) if (!(MODE === 'cut' && new THREE.Vector3(...p).dot(dir) > 0.2)) add(J.stella, p, GOLD);
+  if (MODE === 'seed') add(J.stella, [0, 0, 0], 0xf2d27e, 0.16, J.K);
+  const H = 2.3;
+  const cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.001, 100); cam.position.copy(dir.clone().multiplyScalar(30)); cam.lookAt(0, 0, 0);
+  sun.position.copy(dir.clone().multiplyScalar(6).add(new THREE.Vector3(0, 5, 0)));
+  renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>
