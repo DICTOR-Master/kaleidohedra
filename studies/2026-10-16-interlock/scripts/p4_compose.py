@@ -61,3 +61,14 @@ for s in ('ends', 'middle'):
     for xx in (24, 24 + L): d.line((xx, yb - 9, xx, yb + 9), fill=INK, width=3)
     d.text((34 + L, yb - 15), '0.5 (I has corner radius 0.588)', font=F(22), fill=MUTE)
     tag(img, d); img.save(f'renders/p4-kit-{s}.png'); print('kit', s, img.size)
+
+# x-ray: Figure 2 (DICTO: "use an actual x-ray cut through, as in the app"), from render_p4_xray.html via shoot_p4_xray.mjs
+import os
+if os.path.exists(f'{src}/xray-ends.png'):
+    X = [Image.open(f'{src}/xray-{s}.png').convert('RGB') for s in ('ends', 'middle')]
+    X = [im.crop(bbox(im, 24)) for im in X]; h = max(im.height for im in X); w = sum(im.width for im in X) + 120
+    img = Image.new('RGB', (w, h + 190), BG); d = ImageDraw.Draw(img); x = 40
+    for im, s, rr in zip(X, ('ends', 'middle'), ('ρ² = φ²/4', 'ρ² = 3φ²/4')):
+        img.paste(im, (x, 130)); t, sub, n, _ = NS[s]
+        ctext(d, x + im.width / 2, 22, f'{t}, {rr}', F(40, True)); ctext(d, x + im.width / 2, 76, sub, F(28), MUTE); x += im.width + 40
+    tag(img, d); img.save('renders/p4-xray.png'); print('xray', img.size)
