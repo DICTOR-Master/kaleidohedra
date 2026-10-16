@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Golden Bodhi Pyrochlore</title>
+<link rel="stylesheet" href="../paper.css">
+<style>td.n { font-variant-numeric: tabular-nums; } .figs.wide { grid-template-columns: 1fr; width: 100%; } table { font-size: 8.6pt; }</style></head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>Golden Bodhi Pyrochlore</h1>
+<p class="sub">The gaps of the Ogdoecontahedron packing: an exact fill, limbs that cross in golden rhombi, and why a golden fill shatters</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Draft 1 · 16 October 2026 · DICTO DOI: on publication · Licence CC BY 4.0 · Data, scripts, exact checks and renders are included with this record and at https://github.com/DICTOR-Master/kaleidohedra (branch research: studies/2026-10-16-ocd-pyrochlore; shared checks in studies/_lib).<br>
+The pyrochlore networks of the Ogdoecontahedron, the questions of what fills their gaps (partners, bridges, limbs, adapters, the golden fill), the use of DICTO's own pieces, and the name Golden Bodhi Pyrochlore are DICTO's. Computation, exact arithmetic and renders were done with Claude (Anthropic) as a research assistant.
+</div>
+
+<div class="abstract"><b>Abstract.</b> Copies of the DICTO Ogdoecontahedron joined face to face on their hexagons form a body-centred cubic packing that fills (9225 − 3915√5)/608 ≈ 77.43% of space (DICTO DOI: 10.5281/zenodo.23404688). This paper is about the remaining 22.57%. Exactly, in ℚ(√5): each copy's share of the gap is its Voronoi cell, a truncated octahedron, minus the solid, and cones from the centre over the 72 free faces cut it into 72 convex pieces of 3 kinds whose volumes add up with remainder 0. Asking what could fill the gap more naturally, DICTO proposed partners, bridges, hexagonal limbs and adapters. The limbs are tilted hexagonal prisms, one per free hexagon, which cross in pairs at the centres of the cell's square faces; their crossing zone has exactly two golden-rhombus faces, the faces of the rhombic triacontahedron and the golden rhombohedra. From there a golden fill suggests itself: golden rhombohedra, DICTO's Cleo-Icos as adapters from hexagons to golden planes, and the Bodhi pieces, which are all bounded by golden-rhombus planes. Each copy's golden envelope is a rhombic triacontahedron; cut at the joints, the envelopes divide the packing into 77.4% solid, 11.8% non-golden shell and 10.7% golden region. But the golden region does not divide naturally into Bodhi pieces: cut canonically by every golden plane, even in DICTO's five-fold chorus arrangement, it shatters into 8,027 pieces (exact), with only five Bodhi pieces among them. The golden fill needs either resin or a deliberate choice of pieces. Float explorations are labelled as such.</div>
+
+<h2>1. The packing and its gap</h2>
+<p>The DICTO Ogdoecontahedron (OCD) is the polar of the DICTO Hecatodihedron: 20 regular hexagons and 60 kites, exact in every coordinate. Joined face to face on a tetrahedral set of four hexagons, copies form a diamond network whose joints lie on a pyrochlore lattice; two such networks interpenetrate into a body-centred cubic (bcc) packing, every copy in the same orientation and touching eight neighbours through eight of its hexagons (DICTO DOI: 10.5281/zenodo.23404688). The other 12 hexagons and all 60 kites face the gap.</p>
+<p><b>The gap, exact.</b> Each copy's Voronoi cell in the bcc packing is a truncated octahedron V of volume 512/729 + 256√5/729. The OCD lies inside V and touches V's eight hexagons, which are the joints. So each copy's share of the gap is V − OCD = 18728/13851 − 6296√5/13851 ≈ 0.335695, 22.57% of space. Cones from the centre over the OCD's 72 free faces (12 hexagons and 60 kites) cut it into 72 convex pieces, and the pieces add up to the gap exactly, remainder 0 in ℚ(√5). They are of 3 kinds (Table 1, Figure 1). None of their faces is a rhombus.</p>
+<table><tr><th>Pieces</th><th>Over</th><th>Corners</th><th>Faces</th><th>Volume (float)</th></tr>
+<tr><td class="n">48</td><td>kites</td><td class="n">6</td><td>2 triangles, 3 quadrilaterals</td><td class="n">0.001891</td></tr>
+<tr><td class="n">12</td><td>kites</td><td class="n">11</td><td>6 quadrilaterals, 2 pentagons</td><td class="n">0.004409</td></tr>
+<tr><td class="n">12</td><td>free hexagons</td><td class="n">13</td><td>4 triangles, 1 quadrilateral, 4 pentagons, 1 hexagon</td><td class="n">0.016001</td></tr></table>
+<p class="status"><b>Table 1.</b> The cone fill of one copy's gap: 72 pieces of 3 kinds, summing exactly to V − OCD.</p>
+<figure><div class="figs wide"><img src="figures/gap.jpg"></div>
+<figcaption><b>Figure 1.</b> One cell of the packing: the Ogdoecontahedron (gold) with its 72 gap pieces, closed, cut and pulled apart. Drawn from exact pieces.</figcaption></figure>
+
+<h2>2. Partners, twins and bridges (float)</h2>
+<ul>
+<li><b>A partner.</b> The 12 free hexagons face the six square-face centres of the cell in fours (two from each copy on that cube axis). Giving each gap piece to its nearest square-face centre collects exactly one third of the gap per site, but the union is not convex: its hull is twice its volume. No rhombi appear where partners meet.</li>
+<li><b>Twinning.</b> Turning a copy 90° about a cube axis puts it in the other golden frame and maps the eight joint directions onto themselves, so twinned and plain copies still pack at 77.43%. At a joint between a plain and a twinned copy the two hexagons share plane, centre and size but are turned 15.52° against each other; their contact becomes a 12-gon covering 94.4% of the hexagon.</li>
+<li><b>An octahedral bridge.</b> At each square-face centre the planes of the eight facing free hexagons enclose a closed solid of 8 corners and 8 faces (4 triangles, 4 quadrilaterals), volume 0.021229, colliding with no copy. Three per copy fill 19.0% of the gap. At the cell corners (the tetrahedral sites) the facing planes do not close.</li>
+</ul>
+
+<h2>3. Limbs, and where they cross in golden rhombi</h2>
+<p>All copies share one orientation and are centrally symmetric, so the copy at a lattice point c has a hexagon exactly parallel, opposite and equally turned to each of our free hexagons. Sweeping a free hexagon onto it gives a hexagonal prism, a <b>limb</b>, right for the joints and oblique otherwise. Each free hexagon has exactly one limb that hits no other copy: length 0.522476, 2.196 times the hexagon edge, tilted 79.19° from the hexagon normal, its sides parallelograms of 0.2379 × 0.5225 (float). The 12 free hexagons give 6 limbs per copy, in 3 crossing pairs, one pair per cube axis, crossing at the square-face centres. Choosing one limb from each pair gives 3 collision-free limbs per copy, in 8 ways, filling 12.9% of the gap.</p>
+<p><b>The crossing zone, exact.</b> Where two limbs cross they share a convex zone, as pyrochlore tetrahedra share corners. Rebuilt from the exact network in ℚ(√5), with nothing rounded, the zone has 12 corners, each the exact meeting point of three limb planes, and 10 quadrilateral faces. <b>Exactly two of them are golden rhombi</b>: planar, four equal sides, diagonals in the ratio φ, the face of the rhombic triacontahedron and of both golden rhombohedra. Their edges run along five-fold axes (float). With each zone counted once, all six limbs fill 23.8% of the gap per copy (float). Where the limbs cross, the tips of the Cleo-Icos of §4 also meet; trimmed by the symmetric planes between the four facing hexagons, the four tips close into a ring, each touching its two neighbours face to face (Figure 2).</p>
+<figure><div class="figs wide"><img src="figures/junction.jpg"></div>
+<figcaption><b>Figure 2.</b> The junction at a square-face centre: (a) looking along the cube axis with the near copy removed; (b) among its copies; (c) the four trimmed Cleo-Ico tips meeting face to face. Drawn from float corners.</figcaption></figure>
+
+<h2>4. Towards a golden fill (float)</h2>
+<p>The golden rhombi of the crossing zone point to a golden fill: pieces bounded only by golden-rhombus planes, which are perpendicular to the 15 two-fold axes.</p>
+<ul>
+<li><b>Golden rhombohedra.</b> Grown greedily outward from one zone's golden rhombi, accepting only bricks that collide with nothing, 300 bricks (152 prolate, 148 oblate) grew before the cap, edge 0.049892. Golden rhombohedra make flat surfaces only on golden planes; the OCD's hexagons are perpendicular to three-fold axes and its kites to no symmetry axis, so bare bricks meet them in a saw-tooth. By symmetry there are only two junction angles: 20.9052° on a hexagon, where the adapter is a low three-sided cap shaped like a rhombic triacontahedron's three-fold corner, and 11.6407° on a kite, a shallow wedge.</li>
+<li><b>DICTO's pieces as adapters.</b> The AXE, CLEO and FUJI pieces have three-fold and five-fold faces, but none a golden plane. The Cleo-Ico (the icosahedron's face pyramid, apex at its centre; Theaetetus, DICTO DOI: 10.5281/zenodo.23378070) has a three-fold base and three two-fold sides at 69.09° to the base: a ready-made adapter from hexagon to golden planes. One stands on each free hexagon, base on alternate corners, all 12 with golden sides, together 27.3% of the gap. Their tips meet the neighbours' tips at the square-face centres (Figure 2c).</li>
+<li><b>The Bodhi pieces.</b> Every face of all five Bodhi pieces (DICTO DOI: 10.5281/zenodo.23311353) is perpendicular to a two-fold axis: they are golden zonotopes, flush with golden rhombohedra and each other.</li>
+<li><b>The golden envelope.</b> The 30 golden planes pushed in until they touch the OCD enclose a rhombic triacontahedron, volume 1.398921. Neighbouring envelopes poke through each other at the joints; cut at the eight joint planes they no longer overlap, and the two cut faces at a joint are triangles turned 180°, a six-pointed star around the joint hexagon.</li>
+<li><b>The three-way split</b> of the packing: OCD 77.4%; the non-golden shell inside the cut envelopes 11.8%, for adapters or resin; the golden region between the envelopes 10.7%, for Bodhi pieces and golden rhombohedra (Figure 3).</li>
+</ul>
+<figure><div class="figs wide"><img src="figures/three-way.jpg"></div>
+<figcaption><b>Figure 3.</b> Exact sections of the bcc packing: the solids (gold), the non-golden shell inside each cut envelope (pink) and the golden region between envelopes (cyan); through a copy, through a square-face centre, and in a joint plane, where the six-pointed star appears.</figcaption></figure>
+
+<h2>5. The golden region shatters (exact)</h2>
+<p>Does the golden region divide naturally into Bodhi pieces? A canonical answer cuts it by every golden plane that crosses it, so the result does not depend on the order of the cuts. In the cubic packing the region is crossed by golden planes in many directions that do not line up, and a first, non-canonical cut already gave 1,624 small pieces. The cubic lattice does not carry the golden module that makes the Bodhi Seed's pieces simple, so we repeated the cut in DICTO's five-fold chorus arrangement, where the copies sit on five-fold-symmetric positions (DICTO DOI: 10.5281/zenodo.23396361). There, exactly in ℚ(√5): the 41 central chorus sites are exact lattice points; 100 distinct envelope planes cross the central copy's cell; cutting by every one gives 16,204 cells, which sum exactly to the cell (2440/2187 + 1288√5/2187, remainder 0); 8,027 of them form the golden region, exact volume (22420 − 8972√5)/2187 ≈ 1.078188; the cut is exactly five-fold symmetric. The pieces fall into 561 kinds, and only 5 are Bodhi pieces, one five-fold orbit of the fine Vajra (Figure 4).</p>
+<p><b>Conclusion.</b> Even in the five-fold arrangement the golden region does not divide into Bodhi pieces; under the canonical cut it shatters. The Golden Bodhi Pyrochlore's golden fill needs either resin or a deliberate, non-canonical choice of Bodhi pieces and golden rhombohedra.</p>
+<figure><div class="figs wide"><img src="figures/golden-cut.jpg"></div>
+<figcaption><b>Figure 4.</b> The canonical golden cut round the central copy of the five-fold chorus: 8,027 golden pieces (cyan), the five Bodhi pieces highlighted; from the five-fold axis, tilted, and pulled apart. Exact cut, drawn from float corners.</figcaption></figure>
+
+<h2>6. Further observations (float)</h2>
+<ul>
+<li><b>The Hecatodihedron wraps the OCD.</b> Scaled to 4/9 of its unit-sphere polar size, the Hecatodihedron passes all 102 of its faces through the OCD's corners (its 90 tangent faces through the 90 sphere corners, its 12 pentagons through the 12 outer corners): the dual nesting, as an icosahedron inside a dodecahedron. In the packing each such Hecatodihedron reaches past its cell and overlaps those of its eight joined neighbours.</li>
+<li><b>The densest lattice packing</b> found (0.789260, DICTO DOI: 10.5281/zenodo.23404688) leaves holes that form one connected labyrinth (voxel flood fill at two resolutions), not separate pockets.</li>
+</ul>
+
+<h2>7. Relation to known work, and status</h2>
+<p><b>Known and credited:</b> the diamond and pyrochlore lattices and the bcc lattice with its truncated-octahedron Voronoi cell; golden rhombohedra and the rhombic triacontahedron as the classical golden zonohedra; the cone decomposition of a gap from a centre; the icosahedral irrational twin behind the five-fold chorus (Ranganathan, Srivastava and Lord 2006). DICTO's earlier papers supply the Ogdoecontahedron and its packings (#31), the five-fold chorus (#30), the Cleo-Ico (Theaetetus, #29), and the Bodhi pieces (the Bodhi Seed). <b>Not found</b> in our reference library and web searches (16 October 2026): the exact gap fill of the Ogdoecontahedron packing, its limbs and their golden crossing zone, and the golden fill's canonical shattering. <b>Exact:</b> §1's gap and its 72 pieces; §3's crossing zone and its two golden rhombi; §5's canonical cut. <b>Float:</b> everything else, as labelled.</p>
+
+<h2>8. Reproducibility</h2>
+<p>In studies/2026-10-16-ocd-pyrochlore: <code>network.py</code> (the exact network), <code>gaps.py</code> (§1, exact → <code>gaps.txt</code>), <code>partner.py</code>, <code>twin.py</code>, <code>bridge_shapes.py</code> (§2), <code>limbs.py</code>, <code>conflict.py</code> and <code>conflict_exact.py</code> (§3, exact → <code>conflict-exact.txt</code>), <code>tips_meet.py</code>, <code>combine.py</code>, <code>grow.py</code>, <code>cleo_adapter.py</code>, <code>bodhi_fill.py</code>, <code>split_sections.py</code> (§4), <code>chorus_exact.py</code> (§5, exact → <code>chorus-exact.txt</code>), <code>heca_partner.py</code>, <code>densest.py</code>, <code>holes_flood.py</code> (§6). The full record, with every step and its corrections, is the study README.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>DICTO, The DICTO Ogdoecontahedron, DICTO DOI: 10.5281/zenodo.23404688.</li>
+<li>DICTO, A Fibonacci Spine in a Five-fold Chorus of Ogdoecontahedron Packings, DICTO DOI: 10.5281/zenodo.23396361.</li>
+<li>DICTO, Theaetetus: an icosahedron held exactly by its Cleo-Icos, grown to the DICTO Hecatodihedron in two exact stories, DICTO DOI: 10.5281/zenodo.23378070.</li>
+<li>DICTO, The Bodhi Seed, DICTO DOI: 10.5281/zenodo.23311353.</li>
+<li>DICTO, The DICTO Truncated-Icosahedral Hecatodihedron, DICTO DOI: 10.5281/zenodo.23360858.</li>
+<li>U. Betke, M. Henk, Densest lattice packings of 3-polytopes, <i>Computational Geometry</i> 16 (2000) 157–186, doi:10.1016/S0925-7721(00)00007-9.</li>
+<li>S. Ranganathan, A. K. Srivastava, E. A. Lord, Coincidence-site lattices as rational approximants to irrational twins, <i>J. Mater. Sci.</i> 41 (2006) 7696–7703, doi:10.1007/s10853-006-0966-y.</li>
+</ol>
+</body></html>
