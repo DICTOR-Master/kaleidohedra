@@ -101,3 +101,15 @@ These are the remaining gaps before any public "new" claim.
   one piece per face of the inner solid. RT → G: 30 pieces of one kind (6 corners; one rhombus and 6 triangles), each 353/72 − 149√5/72;
   G → I·φ³: 60 pieces of one kind (5 corners, 6 triangles, a triangular bipyramid shape), each 1/8 + √5/18. vol G = 145/12 + 65√5/12; G takes
   0.356 of the step's volume. Like the Dharma, every layer is one kind of piece.
+
+### I. Antiprism run (A. Rossiter, Antiprism 0.29, built on dicto-node 2026-10-16; `antiprism/`)
+- **Independent recomputation** (`off_report`, float): all nine exported solids have icosahedral symmetry Ih and the stated counts; the
+  Metaxyhexecontahedron: 32 corners, 90 edges (60 + 30 lengths), 60 triangles, dihedrals 138.81° (30) and 166.98° (60), volume 24.1954 (= 145/12 + 65√5/12).
+- **Conway sweep** (`sweep.py`, Hart's algorithms in Antiprism `conway`): every string of up to two operators from a, b, d, e, g, j, k, m, o, p, r,
+  s, t, z, k3, k5, k6, t3, t5, t6 on I and D (840 forms, 124 distinct structures), compared by structure (face sides and corner orders):
+  - **Hecatodihedron and Ogdoecontahedron: no match** (their own structures, also after canonicalization).
+  - H–O core = the structure of atI (rectified truncated icosahedron), hull = jtI: confirms #28 V2 and the Hecatogdoecontahedron core/hull.
+  - Metaxyhexecontahedron and Palintriacontahedron: the structure of kD (pentakis dodecahedron), as stated (non-canonical members of a known family).
+  - Metaxyhexecontahedron's dual: the structure of tI (truncated icosahedron), as stated (non-Archimedean proportions).
+- **Status:** combinatorial novelty is checked only within this sweep (two operators); proportions are not part of a Conway structure, so the
+  distinguished members (9/φ⁴, 3/√5) are not tested by it. Stella not run.

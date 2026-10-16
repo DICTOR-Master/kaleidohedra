@@ -1,0 +1,250 @@
+== hecatodihedron.off
+[general]
+num_verts = 80
+num_faces = 102
+num_edges = 180
+vertex_centroid = (-1.66533e-17 -1.80411e-17 -4.16334e-18)
+volume_centroid = (1.49113e-11 2.42431e-10 -1.6006e-10)
+oriented = yes
+orientable = yes
+connectivity = polyhedron, closed, even, known
+num_parts = 1
+genus = 0
+area = 29.1321
+volume = 14.4042
+[face_sides_cnts]
+3 = 60
+4 = 30
+5 = 12
+[edge_lengths_cnts]
+0.618034 = 60	(range +/- 5.08791e-09)
+0.65097 = 120	(range +/- 9.66097e-09)
+[vert_order_cnts]
+4 = 60
+6 = 20
+[face_sides_cnts]
+3 = 60
+4 = 30
+5 = 12
+[dihedral_angles_cnts]
+159.446 = 120	(range +/- 1.62385e-06)
+163.528 = 60	(range +/- 1.87535e-06)
+== ho-core.off
+[general]
+num_verts = 90
+num_faces = 92
+num_edges = 180
+vertex_centroid = (3.94746e-17 -1.23358e-17 -4.31753e-17)
+volume_centroid = (2.62252e-11 -2.14126e-11 1.3626e-11)
+oriented = yes
+orientable = yes
+connectivity = polyhedron, closed, even, known
+num_parts = 1
+genus = 0
+area = 27.146
+volume = 12.9041
+[face_sides_cnts]
+3 = 60
+5 = 12
+6 = 20
+[edge_lengths_cnts]
+0.5 = 60	(range +/- 1.57225e-09)
+0.535233 = 120	(range +/- 4.40626e-09)
+[vert_order_cnts]
+4 = 90
+[face_sides_cnts]
+3 = 60
+5 = 12
+6 = 20
+[dihedral_angles_cnts]
+156.2 = 120	(range +/- 5.80531e-07)
+159.923 = 60	(range +/- 4.98699e-07)
+== ho-hull.off
+[general]
+num_verts = 92
+num_faces = 90
+num_edges = 180
+vertex_centroid = (4.82706e-18 1.44812e-17 2.41353e-18)
+volume_centroid = (4.94288e-11 1.51175e-10 -5.31118e-11)
+oriented = yes
+orientable = yes
+connectivity = polyhedron, closed, even, known
+num_parts = 1
+genus = 0
+area = 29.4696
+volume = 14.7348
+[face_sides_cnts]
+4 = 90
+[edge_lengths_cnts]
+0.540564 = 60	(range +/- 2.75546e-09)
+0.65097 = 120	(range +/- 9.66097e-09)
+[vert_order_cnts]
+3 = 60
+5 = 12
+6 = 20
+[face_sides_cnts]
+4 = 90
+[dihedral_angles_cnts]
+159.446 = 120	(range +/- 1.26952e-06)
+160.812 = 60	(range +/- 4.6017e-07)
+== ico-phi3.off
+[general]
+num_verts = 12
+num_faces = 20
+num_edges = 30
+vertex_centroid = (1.85037e-17 -7.40149e-17 -3.70074e-17)
+volume_centroid = (9.15338e-17 2.25778e-17 5.60685e-17)
+oriented = yes
+orientable = yes
+connectivity = polyhedron, closed, even, known
+num_parts = 1
+genus = 0
+area = 59.3583
+volume = 39.1489
+[face_sides_cnts]
+3 = 20
+[edge_lengths_cnts]
+2.61803 = 30	(range +/- 1.20109e-09)
+[vert_order_cnts]
+5 = 12
+[face_sides_cnts]
+3 = 20
+[dihedral_angles_cnts]
+138.19 = 30	(range +/- 3.91848e-08)
+== metaxy-dual.off
+[general]
+num_verts = 60
+num_faces = 32
+num_edges = 90
+vertex_centroid = (9.25186e-18 1.85037e-18 -1.85037e-18)
+volume_centroid = (1.66397e-14 -2.57909e-14 -1.86208e-15)
+oriented = yes
+orientable = yes
+connectivity = polyhedron, closed, even, known
+num_parts = 1
+genus = 0
+area = 1.61984
+volume = 0.180655
+[face_sides_cnts]
+5 = 12
+6 = 20
+[edge_lengths_cnts]
+0.0857847 = 60	(range +/- 6.20601e-13)
+0.266125 = 30	(range +/- 2.86521e-13)
+[vert_order_cnts]
+3 = 60
+[face_sides_cnts]
+5 = 12
+6 = 20
+[dihedral_angles_cnts]
+138.19 = 30	(range +/- 6.40691e-11)
+142.623 = 60	(range +/- 1.10925e-10)
+== metaxyhexecontahedron.off
+[general]
+num_verts = 32
+num_faces = 60
+num_edges = 90
+vertex_centroid = (6.93889e-18 0 6.93889e-18)
+volume_centroid = (-2.30922e-17 -4.976e-17 -1.1236e-16)
+oriented = yes
+orientable = yes
+connectivity = polyhedron, closed, even, known
+num_parts = 1
+genus = 0
+area = 41.9516
+volume = 24.1954
+[face_sides_cnts]
+3 = 60
+[edge_lengths_cnts]
+1.21624 = 60	(range +/- 3.26517e-13)
+1.41202 = 30	(range +/- 3.62932e-13)
+[vert_order_cnts]
+5 = 12
+6 = 20
+[face_sides_cnts]
+3 = 60
+[dihedral_angles_cnts]
+138.81 = 30	(range +/- 3.17801e-11)
+166.979 = 60	(range +/- 3.83193e-11)
+== ogdoecontahedron.off
+[general]
+num_verts = 102
+num_faces = 80
+num_edges = 180
+vertex_centroid = (9.79609e-18 8.1634e-18 -4.35382e-18)
+volume_centroid = (1.57409e-11 9.91355e-12 -2.37863e-11)
+oriented = yes
+orientable = yes
+connectivity = polyhedron, closed, even, known
+num_parts = 1
+genus = 0
+area = 27.4799
+volume = 13.1205
+[face_sides_cnts]
+4 = 60
+6 = 20
+[edge_lengths_cnts]
+0.443529 = 60	(range +/- 3.73144e-10)
+0.535233 = 120	(range +/- 4.40626e-09)
+[vert_order_cnts]
+3 = 60
+4 = 30
+5 = 12
+[face_sides_cnts]
+4 = 60
+6 = 20
+[dihedral_angles_cnts]
+156.2 = 120	(range +/- 4.87818e-07)
+156.719 = 60	(range +/- 3.28925e-07)
+== palintriacontahedron.off
+[general]
+num_verts = 32
+num_faces = 60
+num_edges = 90
+vertex_centroid = (6.93889e-18 2.08167e-17 0)
+volume_centroid = (-8.15692e-17 -6.21638e-17 -3.04879e-17)
+oriented = yes
+orientable = yes
+connectivity = polyhedron, closed, even, known
+num_parts = 1
+genus = 0
+area = 64.6211
+volume = 46.6878
+[face_sides_cnts]
+3 = 60
+[edge_lengths_cnts]
+1.51152 = 60	(range +/- 8.42171e-09)
+1.74536 = 30	(range +/- 1.94346e-08)
+[vert_order_cnts]
+5 = 12
+6 = 20
+[face_sides_cnts]
+3 = 60
+[dihedral_angles_cnts]
+143.13 = 30	(range +/- 3.13475e-07)
+164.478 = 60	(range +/- 1.47244e-06)
+== rt.off
+[general]
+num_verts = 32
+num_faces = 30
+num_edges = 60
+vertex_centroid = (1.38778e-17 1.04083e-17 0)
+volume_centroid = (4.23068e-17 1.8959e-18 -3.22308e-17)
+oriented = yes
+orientable = yes
+connectivity = polyhedron, closed, even, known
+num_parts = 1
+genus = 0
+area = 31.8692
+volume = 15.9346
+[face_sides_cnts]
+4 = 30
+[edge_lengths_cnts]
+1.08981 = 60	(range +/- 0)
+[vert_order_cnts]
+3 = 20
+5 = 12
+[face_sides_cnts]
+4 = 30
+[dihedral_angles_cnts]
+144 = 60	(range +/- 2.90338e-06)
