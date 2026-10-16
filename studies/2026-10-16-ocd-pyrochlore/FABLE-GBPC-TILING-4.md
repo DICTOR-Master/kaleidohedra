@@ -56,7 +56,7 @@ Everything is exact in ℚ(√5) unless marked FLOAT. All searches ran on dicto-
 
 **Not done within the cap.** We did not run backtracking or beam search. The two-pass cap ran out before the Bodhi runs were long enough to justify it.
 
-**Run status.** At writing, RB-21 restart 0 had finished at 66.62%; restarts 1–3 are still running. A chained job (`~/gbpc4/logs/chain.sh`) will run the gap analysis on the better Bodhi build when they finish.
+**Run status.** RB-21 ran restarts 0–2: 66.62% staged, 59.42% mixed, 66.64% staged. Restart 3 (mixed) was stopped unfinished, at the coordinator's instruction. RB-21 kept no body list, only its log (`data/gbpc-search-RB-21.log`). The gap analysis uses RB-22, the best Bodhi build.
 
 | Run | Restarts | Best fill | Edge-λ rhombohedra per restart |
 |---|---|---|---|
@@ -64,7 +64,7 @@ Everything is exact in ℚ(√5) unless marked FLOAT. All searches ran on dicto-
 | R-12 | 4 | 62.69% | 12, 5, 14, 10 |
 | RX (+ λ/φ, λ/φ²) | 4 | 63.24% | 16, 6, 13, 7 |
 | RB-22 (+ Bodhi) | 1 | **66.85%** | 0 (Bodhi pieces took those places) |
-| RB-21 (+ Bodhi) | 1 of 4 so far | 66.62% | 0 |
+| RB-21 (+ Bodhi) | 3 of 4 (restart 3 stopped) | 66.64% | 0 |
 
 ## Proved vs found
 
