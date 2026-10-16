@@ -1,0 +1,56 @@
+orig piece 0 of 114 parts so far 4
+orig piece 40 of 114 parts so far 141
+orig piece 80 of 114 parts so far 278
+interlock (ends setting): 536 pieces from 114 original pieces x 308 flipped pieces
+check: every original piece is the sum of its parts, worst relative error 5.31e-10
+kinds by symmetry orbit: 12; counts [60, 60, 60, 60, 60, 60, 60, 60, 20, 12, 12, 12]
+pieces per (original layer, flipped turn, flipped layer): (0, 0, 4): 20, (0, 0, 5): 60, (1, 0, 5): 60, (2, 1, 0): 12, (3, 1, 0): 12, (3, 1, 2): 12, (4, 1, 0): 60, (4, 1, 2): 60, (5, 1, 0): 60, (5, 1, 1): 60, (5, 1, 2): 60, (5, 1, 3): 60
+cone pieces exact: 114 original, 154 flipped; edge points dropped 0
+interlock piece 0
+interlock piece 100
+interlock piece 200
+interlock piece 300
+interlock piece 400
+interlock piece 500
+exact interlock (ends setting): 536 pieces; float edge points dropped 1158
+every original piece = sum of its parts, exactly: True (mismatches 0, original pieces without parts 0)
+every original layer = sum of its interlock pieces, exactly: True
+distinct exact piece volumes: 12
+kinds by symmetry orbit on the exact corners: 12
+     12 x  -25/24 + 2/3√5 = 0.449045318
+     60 x  145/1368 + 97/2052√5 = 0.211695221
+     60 x  83/576 - 41/2880√5 = 0.112264310
+     60 x  -11221/5184 + 15629/15552√5 = 0.082594291
+     60 x  7121/1539 - 12527/6156√5 = 0.076799293
+     12 x  160/81 - 139/162√5 = 0.056707106
+     60 x  2705/1296 - 397/432√5 = 0.032286295
+     60 x  41/5184 + 55/15552√5 = 0.015816856
+     12 x  -1415/648 + 637/648√5 = 0.014468058
+     60 x  1/576 + 1/576√5 = 0.005618174
+     20 x  -11/48 + 5/48√5 = 0.003757081
+     60 x  -2689/648 + 401/216√5 = 0.001527434
+orig piece 0 of 114 parts so far 6
+orig piece 40 of 114 parts so far 146
+orig piece 80 of 114 parts so far 289
+interlock (middle setting): 322 pieces from 114 original pieces x 308 flipped pieces
+check: every original piece is the sum of its parts, worst relative error 1.03e-09
+kinds by symmetry orbit: 8; counts [60, 60, 60, 60, 30, 20, 20, 12]
+pieces per (original layer, flipped turn, flipped layer): (0, -1, 5): 60, (0, 0, 0): 60, (1, 0, 1): 20, (2, 0, 2): 12, (2, 0, 3): 60, (3, 0, 3): 60, (4, 0, 4): 20, (5, 0, 5): 30
+cone pieces exact: 114 original, 154 flipped; edge points dropped 0
+interlock piece 0
+interlock piece 100
+interlock piece 200
+interlock piece 300
+exact interlock (middle setting): 322 pieces; float edge points dropped 1395
+every original piece = sum of its parts, exactly: True (mismatches 0, original pieces without parts 0)
+every original layer = sum of its interlock pieces, exactly: True
+distinct exact piece volumes: 8
+kinds by symmetry orbit on the exact corners: 8
+     30 x  371/72 - 47/24√5 = 0.773811322
+     12 x  5/76 + 2/57√5 = 0.144247999
+     20 x  -99/16 + 45/16√5 = 0.101441187
+     60 x  -1585/576 + 3643/2880√5 = 0.076734598
+     60 x  -101/456 + 12/95√5 = 0.060959464
+     60 x  203/72 - 56/45√5 = 0.036782072
+     20 x  1/192 + 1/192√5 = 0.016854521
+     60 x  -1/24 + 1/40√5 = 0.014235033
