@@ -10,6 +10,8 @@ Everything is exact in ℚ(√5) unless marked FLOAT. |v| is the five-fold vecto
 
 ## Results first
 
+**Correction (pass 2, FABLE-GBPC-TILING-2.md):** a face-to-face tiling cannot mix sizes (tiles sharing a face share its edges), and the count below assumes face-to-face. So the two-size fix in item 6 and §6 is void. Two sizes can only occur in tilings that are not face-to-face, where the count does not apply.
+
 1. **What G′ is (exact).** G′ is space minus the union of the *uncut* rhombic triacontahedra (RT) on the bcc sites. Each RT overlaps its 8 joined neighbours, each overlap has volume (−704 + 320√5)/729, and no three RTs share any volume. Each GBPC is the part of an RT corner that sticks out past the joint plane and is not inside the neighbour.
 2. **Corner test (exact): passes.** G′ has 48 corners per cell. At every one, the free space splits exactly into corner cones of golden rhombohedra. No corner forbids them.
 3. **Module test (exact): passes, and fixes the scale.** All corners lie in one copy of the icosahedral module λM, with λ = φ/9 (edge (φ/9)|v| = 0.1798|v|, the length of the 36° convex edges). The finer scales φ/(9k) also work.
@@ -95,7 +97,7 @@ The two equations are independent, because φ ≠ σ(φ). At λ = φ/9 their uni
 
 **Status.** The computations are exact. The analytic step (homotopy, O(N²) bound) is a proof sketch here and has not been independently checked.
 
-## 6. Minimal additions (exact bookkeeping, λ = φ/9, units of the oblate volume, x = m + nφ)
+## 6. Minimal additions (VOID, see the correction at the top) (exact bookkeeping, λ = φ/9, units of the oblate volume, x = m + nφ)
 
 G′ per cell = −30 + 66φ. In a face-to-face tiling, each piece contributes its own (m, n), and the m-values must add up to −30. Pieces with negative m are needed:
 
