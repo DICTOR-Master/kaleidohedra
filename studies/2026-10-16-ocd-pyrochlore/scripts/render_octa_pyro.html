@@ -1,0 +1,45 @@
+<!doctype html><meta charset="utf-8"><title>OCD Stella + octahedra, pyrochlore (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// OCD Stellas (gold) on one network of the OCD packing, regular octahedra (purple) on the other (?mode=patch|pair|notch&px=); every solid
+// meets its 8 joint neighbours face to face, and each octahedron's 6 tips nest in OCD Stellas. patch: a ball of the crystal; pair: one
+// octahedron with its 8 joint neighbours (4 octahedra, 4 OCD Stellas as glass); notch: one OCD Stella as glass with the 6 tips in it.
+(async function () {
+  const q = new URLSearchParams(location.search), MODE = q.get('mode') || 'patch', PX = +(q.get('px') || 1100);
+  const J = await fetch('octa-pyro-render.json').then((r) => r.json());
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(PX, PX); renderer.setPixelRatio(1); renderer.localClippingEnabled = true;
+  document.body.prepend(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.85)); const sun = new THREE.DirectionalLight(0xffffff, 0.6); scene.add(sun);
+  const ax = new THREE.Vector3(...J.axis), dir = MODE === 'slice' ? ax.clone() : new THREE.Vector3(0.55, 0.42, 0.72).normalize();
+  const clip = [];
+  function add(S, off, color, op = 0) {
+    const pos = [], line = [], V = S.v.map((v) => v.map((x, k) => x + off[k]));
+    for (const f of S.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...V[f[0]], ...V[f[i]], ...V[f[i + 1]]); for (let i = 0; i < f.length; i++) line.push(...V[f[i]], ...V[f[(i + 1) % f.length]]); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, roughness: 0.45, flatShading: true, side: THREE.DoubleSide, transparent: !!op, opacity: op || 1, depthWrite: !op, clippingPlanes: clip, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, transparent: true, opacity: op ? 0.3 : 0.75, clippingPlanes: clip })));
+  }
+  const GOLD = 0xe8b84a, PURPLE = 0x9575cd;
+  let H = 2.0;
+  const L = (p) => Math.hypot(...p);
+  if (MODE === 'pair') {
+    const c = J.net2.reduce((b, p) => (L(p) < L(b) ? p : b)), sh = (p) => p.map((x, k) => x - c[k]), d = (p) => L(sh(p));
+    add(J.octa, [0, 0, 0], PURPLE);
+    const n2 = J.net2.filter((p) => d(p) > 1e-6).sort((a, b) => d(a) - d(b)).slice(0, 4), n1 = J.net1.slice().sort((a, b) => d(a) - d(b)).slice(0, 4);
+    for (const p of n2) add(J.octa, sh(p), PURPLE, 0.35); for (const p of n1) add(J.stella, sh(p), GOLD, 0.2); H = 1.9;
+  } else if (MODE === 'notch') {
+    add(J.stella, [0, 0, 0], GOLD, 0.3); for (const t of J.tips) add(t, [0, 0, 0], PURPLE); H = 1.05;
+  } else {
+    for (const p of J.net1) if (L(p) < 2.0) add(J.stella, p, GOLD);
+    for (const p of J.net2) if (L(p) < 2.0) add(J.octa, p, PURPLE);
+    H = 3.0;
+  }
+  const up = new THREE.Vector3(0, 0, 1).sub(dir.clone().multiplyScalar(dir.z)).normalize();
+  const cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.001, 100); cam.position.copy(dir.clone().multiplyScalar(30)); cam.up.copy(up); cam.lookAt(0, 0, 0);
+  sun.position.copy(dir.clone().multiplyScalar(6).add(up.clone().multiplyScalar(5)));
+  renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>

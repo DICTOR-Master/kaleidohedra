@@ -502,4 +502,4 @@ so octahedra on one whole network never meet tip to tip; they meet each other an
 tested, no overlap), and every OCD Stella is notched by 6 tips (one tip 0.017287, 8.00% for six). Fill **96.33%** (octahedra on 1/2 of the
 sites), against rock salt 91.72% (1/4). `scripts/crystal_symmetry.py` → `data/crystal-symmetry.txt` (spglib 2.8, corners as markers):
 OCD packing and OCD Stella alone Im-3 (No. 204, site m-3); OCD Stella + icosahedra and OCD Stella + octahedra on the pyrochlore networks both
-**Fd-3 (No. 203)**, both solids on site 23 (8a, 8b): the same crystal with the partner swapped; rock salt Fm-3 (No. 202).
+**Fd-3 (No. 203)**, both solids on site 23 (8a, 8b): the same crystal with the partner swapped; rock salt Fm-3 (No. 202). Renders renders/stella-octa-pyro-{patch,pair,notch}.jpg (`octa_pyro_render_data.py`, `render_octa_pyro.html`).
