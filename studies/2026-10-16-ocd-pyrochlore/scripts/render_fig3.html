@@ -1,0 +1,54 @@
+<!doctype html><meta charset="utf-8"><title>GBP Figure 3 slice (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// Figure 3 as a slice (?view=tilt|front&px=): a block of the bcc packing of DICTO Ogdoecontahedra, front slab removed. Cut plane: exact
+// section (gold solids, pink non-golden shell, cyan golden region, translucent). Behind: solids gold, cut envelopes as pink glass.
+(async function () {
+  const q = new URLSearchParams(location.search), VIEW = q.get('view') || 'tilt', PX = +(q.get('px') || 1400);
+  const J = await fetch('fig3-slice.json').then((r) => r.json());
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(PX, PX); renderer.setPixelRatio(1); renderer.localClippingEnabled = true;
+  document.body.prepend(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.8)); const sun = new THREE.DirectionalLight(0xffffff, 0.65); scene.add(sun);
+  const n = new THREE.Vector3(...J.n), up = new THREE.Vector3(...J.up), rt = new THREE.Vector3(...J.right), W = J.W;
+  const side = [new THREE.Plane(rt.clone().negate(), W), new THREE.Plane(rt.clone(), W), new THREE.Plane(up.clone().negate(), W), new THREE.Plane(up.clone(), W)];
+  const clip = [new THREE.Plane(n.clone().negate(), 0), ...side];
+  function solid(S, s, color, op) {
+    const pos = [], line = [];
+    for (const f of S.f) { for (let i = 1; i + 1 < f.length; i++) for (const k of [f[0], f[i], f[i + 1]]) pos.push(S.v[k][0] + s[0], S.v[k][1] + s[1], S.v[k][2] + s[2]);
+      for (let i = 0; i < f.length; i++) for (const k of [f[i], f[(i + 1) % f.length]]) line.push(S.v[k][0] + s[0], S.v[k][1] + s[1], S.v[k][2] + s[2]); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    const m = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, roughness: 0.5, flatShading: true, side: THREE.DoubleSide, transparent: op < 1, opacity: op, depthWrite: op >= 1, clippingPlanes: clip, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 }));
+    m.renderOrder = op < 1 ? 2 : 0; scene.add(m);
+    if (op < 1) return; const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x5a4210, transparent: true, opacity: 0.7, clippingPlanes: clip })));
+  }
+  for (const s of J.sites) { solid(J.ocd, s, 0xf2bd45, 1); solid(J.env, s, 0xf48fb1, 0.16); }
+  function cap(poly, color, op, lift, edge) {   // a flat polygon on the cut plane, (u, v) in the right/up frame
+    const P = poly.map(([u, v]) => rt.clone().multiplyScalar(u).add(up.clone().multiplyScalar(v)).add(n.clone().multiplyScalar(lift)));
+    const pos = []; for (let i = 1; i + 1 < P.length; i++) for (const p of [P[0], P[i], P[i + 1]]) pos.push(p.x, p.y, p.z);
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color, side: THREE.DoubleSide, transparent: op < 1, opacity: op, depthWrite: op >= 1, clippingPlanes: side }));
+    m.renderOrder = op < 1 ? 3 : 1; scene.add(m);
+    if (edge) { const l = []; for (let i = 0; i < P.length; i++) { const a = P[i], b = P[(i + 1) % P.length]; l.push(a.x, a.y, a.z, b.x, b.y, b.z); }
+      const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(l, 3)); scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: edge, clippingPlanes: side }))); }
+  }
+  cap([[-W, -W], [W, -W], [W, W], [-W, W]], 0x4dd0e1, 0.62, 0.0005, 0x2a2218);
+  for (const p of J.caps.env) cap(p, 0xf48fb1, 1, 0.0010, 0xad1457);
+  for (const p of J.caps.ocd) cap(p, 0xffc857, 1, 0.0015, 0x7a5a00);
+  for (const p of J.caps.walls) {   // gold caps where the side walls cut the solids (3D polygons, trimmed by the cut plane and the other walls)
+    const P = p.map((x) => new THREE.Vector3(...x)); const pos = []; for (let i = 1; i + 1 < P.length; i++) for (const v of [P[0], P[i], P[i + 1]]) pos.push(v.x, v.y, v.z);
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    const pl = [new THREE.Plane(n.clone().negate(), 0), ...side.map((q) => new THREE.Plane(q.normal.clone(), q.constant + 0.002))];
+    scene.add(new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: 0xe9b64a, side: THREE.DoubleSide, clippingPlanes: pl })));
+    const l = []; for (let i = 0; i < P.length; i++) { const a = P[i], b = P[(i + 1) % P.length]; l.push(a.x, a.y, a.z, b.x, b.y, b.z); }
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(l, 3)); scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x7a5a00, clippingPlanes: pl })));
+  }
+  const dir = VIEW === 'front' ? n.clone() : n.clone().multiplyScalar(1).add(up.clone().multiplyScalar(0.38)).add(rt.clone().multiplyScalar(0.5)).normalize();
+  const centre = n.clone().multiplyScalar(-0.75 * J.a).add(rt.clone().multiplyScalar(0.25)), S = 2.45;
+  const cam = new THREE.OrthographicCamera(-S, S, S, -S, 0.1, 100); cam.position.copy(centre.clone().add(dir.clone().multiplyScalar(20))); cam.up.copy(up); cam.lookAt(centre);
+  sun.position.copy(dir.clone().add(up.clone().multiplyScalar(0.8)).multiplyScalar(10));
+  renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>
