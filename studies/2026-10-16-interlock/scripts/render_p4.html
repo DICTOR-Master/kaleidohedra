@@ -1,0 +1,56 @@
+<!doctype html><meta charset="utf-8"><title>P4 render (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// P4 figures (Fable review 2): the interlock drawn from its exact pieces (float corners), orthographic, house colours by original layer.
+//   ?set=ends|middle  &view=A|B|C (oblique bearings from p4_render_data.py)  &px=<size>  &h=<half-width>
+//   &mode=hero   whole solid, a cake-slice wedge of &wedge=<deg> facing the camera removed (whole pieces dropped, none clipped);
+//                &turns=n also draws the next n turns in (the same pieces scaled by φ^-3, φ^-6: the nest repeats under φ³)
+//   &mode=layer&layer=k   one original layer alone, same wedge
+//   &mode=loc&k=n         the hero with kind n in colour and every other piece pale (a locator)
+//   &mode=kind&k=n        one piece of kind n alone, outward direction up, at the fixed half-width h (a common scale)
+(async function () {
+  const q = new URLSearchParams(location.search), SET = q.get('set') || 'ends', V = q.get('view') || 'A', PX = +(q.get('px') || 1200);
+  const mode = q.get('mode') || 'hero', W = +(q.get('wedge') || 90), turns = +(q.get('turns') || 0), K = +(q.get('k') || 0), LY = +(q.get('layer') || 0);
+  const J = await fetch(`p4-render-${SET}.json`).then((r) => r.json()), vw = J.views[V];
+  const COL = [0x4dd0e1, 0xc792ea, 0x5fd38a, 0xf08fc0, 0x9fd8ff, 0xff9a52], PALE = 0xe2dbcc, phi = (1 + Math.sqrt(5)) / 2;
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(PX, PX); renderer.setPixelRatio(1);
+  document.body.prepend(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.85)); const sun = new THREE.DirectionalLight(0xffffff, 0.6); scene.add(sun);
+  const v3 = (a) => new THREE.Vector3(...a), cen = (P) => P.v.reduce((s, v) => s.map((x, i) => x + v[i] / P.v.length), [0, 0, 0]);
+  const wa = v3(vw.up), d0 = v3(vw.dir), wr = d0.clone().sub(wa.clone().multiplyScalar(d0.dot(wa))).normalize(), wr2 = wa.clone().cross(wr);   // the slice: about the vertical, facing the camera
+  const inWedge = (c) => { const p = v3(c), x = p.dot(wr), y = p.dot(wr2); return Math.abs(Math.atan2(y, x)) < (W / 2) * Math.PI / 180 && Math.hypot(x, y) > 1e-9; };
+  function add(P, colr, s = 1, shrink = 0.985, edge = 0x2a2218, eo = 1, off = [0, 0, 0], rot = null) {
+    const c = cen(P); let Vv = P.v.map((v) => v.map((x, i) => (c[i] + (x - c[i]) * shrink) * s - off[i]));
+    if (rot) Vv = Vv.map((v) => v3(v).applyMatrix4(rot).toArray());
+    const pos = [], line = [];
+    for (const f of P.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...Vv[f[0]], ...Vv[f[i]], ...Vv[f[i + 1]]); for (let i = 0; i < f.length; i++) line.push(...Vv[f[i]], ...Vv[f[(i + 1) % f.length]]); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: colr, roughness: 0.6, flatShading: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: edge, transparent: eo < 1, opacity: eo })));
+  }
+  let H = +(q.get('h') || J.radii['icosahedron (phi^3)'] * 1.08), dir = v3(vw.dir), up = v3(vw.up);
+  if (mode === 'kind') {
+    const P = J.pieces.find((p) => p.k === K), c = cen(P), cv = v3(c).normalize();
+    let side = dir.clone().sub(cv.clone().multiplyScalar(dir.dot(cv))).normalize();   // look from the side, outward up, slightly from above
+    dir = side.multiplyScalar(0.94).add(cv.clone().multiplyScalar(0.34)).normalize(); up = cv.clone().sub(dir.clone().multiplyScalar(cv.dot(dir))).normalize();
+    add(P, COL[P.o], 1, 1, 0x2a2218, 1, c);
+  } else {
+    for (let t = 0; t <= turns; t++) {
+      const s = Math.pow(phi, -3 * t);
+      for (const P of J.pieces) {
+        const c = cen(P);
+        if (inWedge(c)) continue;
+        if (mode === 'layer' && P.o !== LY) continue;
+        if (mode === 'loc') add(P, P.k === K && t === 0 ? COL[P.o] : PALE, s, 0.985, 0x6d6556, P.k === K && t === 0 ? 1 : 0.35);
+        else add(P, COL[P.o], s, 0.985, 0x2a2218, t ? 0.6 : 1);
+      }
+    }
+  }
+  const cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.01, 200); cam.position.copy(dir.clone().multiplyScalar(40)); cam.up.copy(up); cam.lookAt(0, 0, 0);
+  sun.position.copy(dir.clone().multiplyScalar(6).add(up.clone().multiplyScalar(5)).add(up.clone().cross(dir).multiplyScalar(-3)));
+  renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>

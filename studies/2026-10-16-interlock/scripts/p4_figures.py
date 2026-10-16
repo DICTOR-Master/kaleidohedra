@@ -163,3 +163,48 @@ for s in ('ends', 'middle'):
     fig.text(0.01, 0.008, 'All pieces at one scale, outward direction up. Inset: where the pieces of this kind cut the section of Figure 2 (black).', fontsize=8.5, color='#5b5346')
     mark(fig); fig.savefig(f'renders/p4-gallery-{s}.png', dpi=170, facecolor=BG); plt.close(fig)
 print('done')
+
+# ---------- 4. the toggle as rings (Fable review 2): the full flat section z = 0 of the stations only, like tree rings.
+# Original layers tinted (light, opaque, painted outside-in), reversed stations as cool rings, shared stations thick ink,
+# the sphere of reciprocation dashed. One turn of the original cycle plus the turn inside it; reversed rings in the same range.
+def tint(c, a=0.30):
+    r = np.array(matplotlib.colors.to_rgb(c)); b = np.array(matplotlib.colors.to_rgb(BG)); return tuple(b + (r - b) * a)
+def full(X, z=0.0):
+    pts = [x[:2] for x in X if abs(x[2] - z) < 1e-9]
+    for a, b in itertools.combinations(X, 2):
+        if (a[2] - z) * (b[2] - z) < -1e-12: t = (z - a[2]) / (b[2] - a[2]); pts.append((a + t * (b - a))[:2])
+    P = np.array(pts); return P[ConvexHull(P).vertices]
+fig, axs = plt.subplots(1, 2, figsize=(12, 6.6), facecolor=BG)
+NM = ['I', 'ID', 'D', 'TI', 'H', 'RT']
+for ax, s in zip(axs, ('ends', 'middle')):
+    ax.set_facecolor(BG); Rout = radii(orig[-1][1])[1]; rmin = 0.12
+    stations = [(n, X * p ** (-3 * t), t) for t in (0, 1) for n, X in orig[:-1]] + [('I·φ³', orig[-1][1], 0)]
+    stations.sort(key=lambda u: -radii(u[1])[1])
+    for n, X, t in stations:                                     # painter: each station filled with the layer colour just outside it
+        k = NM.index(n) if n in NM else 0; lay = (k - 1) % 6 if n != 'I·φ³' else 5
+        ax.add_patch(Polygon(full(X), closed=True, fc=tint(COL[lay], 0.42 if t == 0 else 0.22), ec='none', zorder=1))
+    fl = [(n, X) for n, X in flipped(s) if rmin < radii(X)[1] <= Rout * 1.0001]
+    for n, X, t in stations:
+        if radii(X)[1] < rmin: continue
+        sh = any(same(X, Y) for _, Y in fl)
+        ax.add_patch(Polygon(full(X), closed=True, fill=False, ec=INK if sh else WARM, lw=2.8 if sh else 1.1, alpha=1 if t == 0 else 0.55, zorder=3 + sh))
+    for n, X in fl:
+        if any(same(X, Y) for _, Y, _ in stations): continue
+        ax.add_patch(Polygon(full(X), closed=True, fill=False, ec=COOL, lw=1.15, zorder=3))
+    rho = SET[s]['rho2'] ** .5
+    ax.add_patch(matplotlib.patches.Circle((0, 0), rho, fill=False, ec='#5b5346', lw=1.4, ls=(0, (6, 4)), zorder=5))
+    ax.annotate(f'sphere of reciprocation, ρ = {"φ/2" if s == "ends" else "√3·φ/2"}', xy=(rho * np.cos(-2.2), rho * np.sin(-2.2)), xytext=(-Rout * 0.98, -Rout * 1.13),
+                fontsize=9, color='#3a3328', arrowprops=dict(arrowstyle='-', color='#5b5346', lw=0.8))
+    shared = [(n, X) for n, X, t in stations if t == 0 and any(same(X, Y) for _, Y in fl)]
+    for j, (n, X) in enumerate(shared):
+        ang = 0.55 + 0.32 * j; r = radii(X)[0] * 1.0; tx = Rout * 1.06
+        ax.annotate(f'shared {n}', xy=(r * np.cos(ang), r * np.sin(ang)), xytext=(tx, Rout * (0.95 - 0.16 * j)), fontsize=10, fontweight='bold', color=INK,
+                    arrowprops=dict(arrowstyle='-', color=INK, lw=0.9))
+    ax.set_xlim(-Rout * 1.08, Rout * 1.55); ax.set_ylim(-Rout * 1.2, Rout * 1.08); ax.set_aspect('equal'); ax.axis('off')
+    ax.set_title(f'{"Ends" if s == "ends" else "Middle"} setting, ρ² = {"φ²/4" if s == "ends" else "3φ²/4"}', fontsize=12.5, pad=6)
+hd = [Polygon([[0, 0]], fc=tint(c, 0.42), ec='none', label=l) for c, l in zip(COL, OL)]
+from matplotlib.lines import Line2D
+hd += [Line2D([], [], color=WARM, lw=1.1, label='original station'), Line2D([], [], color=COOL, lw=1.15, label='reversed station'), Line2D([], [], color=INK, lw=2.8, label='shared station')]
+fig.legend(handles=hd, loc='lower center', ncol=5, frameon=False, fontsize=9)
+fig.subplots_adjust(0.01, 0.12, 0.99, 0.94, wspace=0.04); mark(fig); fig.savefig('renders/p4-rings.png', dpi=190, facecolor=BG); plt.close(fig)
+print('rings done')
