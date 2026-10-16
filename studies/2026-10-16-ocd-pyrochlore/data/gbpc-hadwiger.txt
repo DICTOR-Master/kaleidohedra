@@ -1,0 +1,13 @@
+DICTO · dictospheres.com — Fable, Hadwiger-Jessen edge invariant of G' (exact in Q(sqrt5) unless marked FLOAT)
+sanity: J = 0 on a golden rhombohedron: True; on the rhombic triacontahedron: True
+overlap lenses RT cap (RT + c): 8 (the 8 joined neighbours); each has 8 corners, volume -704/729 + 320/729√5
+each lens: 12 edges, all five-fold, lengths ['1/9 + 1/9√5'] x|v| (2phi/9 = 1/9 + 1/9√5); dihedral angles / pi ['1/5', '4/5']; volume = (2phi/9)^3 x oblate volume: True
+RT edge lengths ['1/6 + 1/6√5'] x|v| (= phi/3)
+J(G') per cell = (1/2) sum over the 8 lenses of J(lens) - J(RT), in units of |v| (exact), for the 6 five-fold directions l and 3 generic u:
+  l = v1: u1: 0, u2: 0, u3: 0
+  l = v2: u1: 0, u2: 0, u3: 0
+  l = v3: u1: 0, u2: 0, u3: 0
+  l = v4: u1: 0, u2: 0, u3: 0
+  l = v5: u1: 0, u2: 0, u3: 0
+  l = v6: u1: 0, u2: 0, u3: 0
+RESULT: J(G') = 0 for all tested l, u: this invariant does not obstruct

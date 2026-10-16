@@ -1,0 +1,11 @@
+DICTO · dictospheres.com — Fable, GBPC pass 3: greedy build test for G' (exact placements)
+  edge phi/9|v|: pass placed 6; tiles 6; filled 7.81% of G' (FLOAT ratio of exact volumes)
+  edge phi/9|v|: pass placed 6; tiles 12; filled 15.63% of G' (FLOAT ratio of exact volumes)
+  edge phi/9|v|: pass placed 0; tiles 12; filled 15.63% of G' (FLOAT ratio of exact volumes)
+  edge phi/18|v|: pass placed 90; tiles 102; filled 32.79% of G' (FLOAT ratio of exact volumes)
+  edge phi/18|v|: pass placed 72; tiles 174; filled 44.92% of G' (FLOAT ratio of exact volumes)
+  edge phi/18|v|: pass placed 10; tiles 184; filled 46.54% of G' (FLOAT ratio of exact volumes)
+  edge phi/18|v|: pass placed 0; tiles 184; filled 46.54% of G' (FLOAT ratio of exact volumes)
+result: 184 tiles per cell, {('oblate', '1/18 + 1/18√5'): 12, ('prolate', '1/36 + 1/36√5'): 29, ('oblate', '1/36 + 1/36√5'): 143}; exact filled volume -2426/729 + 1108/729√5 of G' 704/81 - 928/243√5; remainder 8762/729 - 3892/729√5 = 0.081239 (53.46%)
+FLOAT Monte Carlo (200 points per tile): points inside an RT 0; points inside another tile 0
+exact recheck: overlapping pairs 0
