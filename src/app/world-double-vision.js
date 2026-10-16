@@ -7,6 +7,8 @@
 //              (set 2, Dharma-Middle), a slice removed and the next turn in at the centre; the slider recolours every piece from its
 //              original layer to its flipped layer, so the seams of each cycle show in turn;
 //   layer      one original layer alone (Figure 3), with its count in this setting (Table 3).
+// The film (Unwrap / Wrap, one switch): the interlock unwraps layer by layer into the next turn and on for ever, or wraps back outwards,
+// pausing at every station; tapping the running direction pauses it, a slider scrubs through the turn.
 // Tapping a piece names its kind (I1·n / I2·n with its shape code, Tables 1–2) and lights every piece of that kind. X-ray cuts it like
 // the paper's Figure 2 (tree rings). The paper's data (scripts/build-double-vision-data.py) loads on first entry; leaving the world
 // lets its pieces go, and only the view (setting, view, layer, slider) is kept, with Reset back to the paper's preset. Words: i18n dv.*.
@@ -51,7 +53,7 @@ export function createDoubleVisionWorld({ scene, fitView = () => {}, showHudProm
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot())); } catch { /* best-effort */ } };
 
   let DATA = null, loading = null, active = false, skeleton = false, opacity = 1, pickTargets = [];
-  let pieceMesh = null, triPiece = null, shown = []; // the drawn pieces (data piece + turn) and, per triangle, its index in shown
+  let layerMeshes = []; // the drawn pieces: one mesh per (turn, layer)
   let shells = []; // cycles view: { mesh, edges, side, shared }
   const load = () => (loading ??= import('./double-vision-data.js').then((m) => { DATA = m.default; }));
   const S = () => DATA.settings[view.setting];
@@ -59,7 +61,7 @@ export function createDoubleVisionWorld({ scene, fitView = () => {}, showHudProm
   const pieceMat = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.5, metalness: 0.05, flatShading: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
   function clearGroup() {
     for (const child of [...group.children]) { group.remove(child); child.geometry?.dispose(); if (child.material !== pieceMat) child.material?.dispose(); }
-    pickTargets = []; pieceMesh = null; triPiece = null; shown = []; shells = [];
+    pickTargets = []; layerMeshes = []; shells = [];
   }
   // The paper's slice: a wedge about the view's vertical, facing the camera; whole pieces dropped, none clipped.
   function wedgeTest() {
@@ -69,44 +71,99 @@ export function createDoubleVisionWorld({ scene, fitView = () => {}, showHudProm
   }
   const centroid = (V) => V.reduce((a, v) => a.add(new THREE.Vector3(...v)), new THREE.Vector3()).multiplyScalar(1 / V.length);
 
+  // Pieces as one mesh per (turn, original layer), so the film can lift each layer away on its own. Each mesh keeps its pieces (shown) and,
+  // per triangle, the piece's index (tri), for colours and taps.
   function drawPieces() {
     const P = S().pieces, inWedge = wedgeTest();
-    for (const turn of view.inner && view.mode === 'interlock' ? [0, 1] : [0]) {
+    const turns = film.on ? [0, 1, 2] : view.inner && view.mode === 'interlock' ? [0, 1] : [0];
+    for (const turn of turns) {
       const s = Math.pow(PHI, -3 * turn);
-      for (const p of P) {
-        if (view.mode === 'layer' && p.o !== view.layer) continue;
-        const c = centroid(p.v);
-        if (view.slice && inWedge(c)) continue;
-        shown.push({ p, turn, s, c });
+      for (let layer = 0; layer < 6; layer++) {
+        if (view.mode === 'layer' && layer !== view.layer) continue;
+        const shown = [];
+        for (const p of P) {
+          if (p.o !== layer) continue;
+          const c = centroid(p.v);
+          if (view.slice && inWedge(c)) continue;
+          shown.push({ p, turn, s, c });
+        }
+        if (!shown.length) continue;
+        const pos = [], edges = [], tri = [];
+        shown.forEach((e, i) => {
+          const V = e.p.v.map((v) => new THREE.Vector3(...v).sub(e.c).multiplyScalar(0.985).add(e.c).multiplyScalar(e.s * WS));
+          for (const f of e.p.f) {
+            for (let k = 1; k + 1 < f.length; k++) { for (const j of [f[0], f[k], f[k + 1]]) pos.push(V[j].x, V[j].y, V[j].z); tri.push(i); }
+            f.forEach((a, k) => { const b = f[(k + 1) % f.length]; edges.push(V[a].x, V[a].y, V[a].z, V[b].x, V[b].y, V[b].z); });
+          }
+        });
+        const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+        g.setAttribute('color', new THREE.Float32BufferAttribute(new Float32Array(pos.length), 3)); g.computeVertexNormals();
+        const mat = pieceMat.clone(); mat.userData.base = { transparent: pieceMat.transparent, opacity: pieceMat.opacity, depthWrite: pieceMat.depthWrite };
+        const mesh = new THREE.Mesh(g, mat); mesh.userData = { kind: 'pieces', shown, tri, turn, layer };
+        const eg = new THREE.BufferGeometry(); eg.setAttribute('position', new THREE.Float32BufferAttribute(edges, 3));
+        const line = new THREE.LineSegments(eg, new THREE.LineBasicMaterial({ color: skeleton ? 0xd8f0ff : 0x2a2218, transparent: true, opacity: skeleton ? 0.9 : 0.45 }));
+        line.userData.baseOpacity = line.material.opacity;
+        group.add(mesh, line); pickTargets.push(mesh); layerMeshes.push({ mesh, line, turn, layer });
       }
     }
-    const pos = [], edges = []; triPiece = [];
-    shown.forEach((e, i) => {
-      const V = e.p.v.map((v) => new THREE.Vector3(...v).sub(e.c).multiplyScalar(0.985).add(e.c).multiplyScalar(e.s * WS));
-      for (const f of e.p.f) {
-        for (let k = 1; k + 1 < f.length; k++) { for (const j of [f[0], f[k], f[k + 1]]) pos.push(V[j].x, V[j].y, V[j].z); triPiece.push(i); }
-        f.forEach((a, k) => { const b = f[(k + 1) % f.length]; edges.push(V[a].x, V[a].y, V[a].z, V[b].x, V[b].y, V[b].z); });
-      }
-    });
-    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
-    g.setAttribute('color', new THREE.Float32BufferAttribute(new Float32Array(pos.length), 3)); g.computeVertexNormals();
-    pieceMesh = new THREE.Mesh(g, pieceMat); pieceMesh.userData.kind = 'pieces'; group.add(pieceMesh); pickTargets.push(pieceMesh);
-    const eg = new THREE.BufferGeometry(); eg.setAttribute('position', new THREE.Float32BufferAttribute(edges, 3));
-    group.add(new THREE.LineSegments(eg, new THREE.LineBasicMaterial({ color: skeleton ? 0xd8f0ff : 0x2a2218, transparent: true, opacity: skeleton ? 0.9 : 0.45 })));
-    recolour();
+    recolour(); applyFilm();
   }
   // Colours: each piece from its original layer's colour to its flipped layer's, by the slider; a tapped kind lit, the rest pale.
   function recolour() {
-    if (!pieceMesh) return;
-    const col = pieceMesh.geometry.attributes.color, a = new THREE.Color(), b = new THREE.Color();
-    for (let tri = 0; tri < triPiece.length; tri++) {
-      const e = shown[triPiece[tri]];
-      if (kind !== null && e.p.k !== kind) a.setHex(PALE);
-      else { a.setHex(ORIG[e.p.o]).lerp(b.setHex(FLIP[e.p.r]), view.mixColour); if (e.turn) a.lerp(b.setHex(0xffffff), 0.25); }
-      for (let k = 0; k < 3; k++) col.setXYZ(tri * 3 + k, a.r, a.g, a.b);
+    const a = new THREE.Color(), b = new THREE.Color();
+    for (const { mesh } of layerMeshes) {
+      const col = mesh.geometry.attributes.color, { shown, tri } = mesh.userData;
+      for (let t = 0; t < tri.length; t++) {
+        const e = shown[tri[t]];
+        if (kind !== null && e.p.k !== kind) a.setHex(PALE);
+        else { a.setHex(ORIG[e.p.o]).lerp(b.setHex(FLIP[e.p.r]), view.mixColour); if (e.turn && !film.on) a.lerp(b.setHex(0xffffff), 0.25); }
+        for (let k = 0; k < 3; k++) col.setXYZ(t * 3 + k, a.r, a.g, a.b);
+      }
+      col.needsUpdate = true;
     }
-    col.needsUpdate = true;
   }
+  // ---- the film (DICTO 2026-10-16: "a movie: unwrap forwards or backwards at the flick of one toggle", "infinity backwards and forwards,
+  // pausing on the way"). Film time u runs over the 6 layers of a turn, outermost first; layer j of the outer turn lifts away and fades while
+  // u passes 5 - j, and the whole scene grows by φ^(1/2) per layer, so after 6 layers the next turn (φ³ smaller) has become the first: the
+  // film loops without a seam, unwrapping inwards for ever, or wrapping outwards for ever when run backwards. It pauses at every station.
+  const film = { on: false, dir: 0, t: 0, pauseUntil: 0, last: 0, raf: 0 };
+  const LAYER_SECONDS = 1.7, PAUSE_MS = 900;
+  const mod6 = (x) => ((x % 6) + 6) % 6;
+  function applyFilm() {
+    const u = film.on ? mod6(film.t) : 0;
+    group.scale.setScalar(film.on ? Math.pow(PHI, u / 2) : 1);
+    for (const { mesh, line, turn, layer } of layerMeshes) {
+      const prog = film.on && turn === 0 ? Math.min(1, Math.max(0, u - (5 - layer))) : 0;
+      const k = 1 + 0.55 * prog * prog;                                    // lift outward
+      mesh.scale.setScalar(k); line.scale.setScalar(k);
+      const o = 1 - prog, base = mesh.material.userData.base;
+      mesh.visible = line.visible = o > 0.01;
+      mesh.material.transparent = base.transparent || o < 1; mesh.material.opacity = base.opacity * o; mesh.material.depthWrite = base.depthWrite && o >= 1;
+      line.material.opacity = line.userData.baseOpacity * o;
+    }
+  }
+  function tick(now) {
+    film.raf = 0;
+    if (!active || !film.on) return;
+    const dt = film.last ? Math.min(0.1, (now - film.last) / 1000) : 0; film.last = now;
+    if (film.dir && now >= film.pauseUntil) {
+      const before = film.t; film.t += film.dir * dt / LAYER_SECONDS;
+      // a station crossed (in the direction of travel): stop on it and pause
+      const crossed = film.dir > 0 ? Math.floor(film.t) > Math.floor(before) : Math.ceil(film.t) < Math.ceil(before);
+      if (crossed) { film.t = film.dir > 0 ? Math.floor(film.t) : Math.ceil(film.t); film.pauseUntil = now + PAUSE_MS; }
+      applyFilm(); syncFilmSlider();
+    }
+    film.raf = requestAnimationFrame(tick);
+  }
+  function setFilm(dir) {
+    const wasOn = film.on;
+    if (dir === film.dir && film.on) dir = 0;                               // tapping the running direction pauses
+    film.dir = dir; film.on = film.on || dir !== 0; film.last = 0;
+    if (film.on && !wasOn) { if (view.mode !== 'interlock') view.mode = 'interlock'; draw(); }
+    if (!film.raf && film.on) film.raf = requestAnimationFrame(tick);
+    renderPanel();
+  }
+  function stopFilm() { film.on = false; film.dir = 0; film.t = 0; if (film.raf) cancelAnimationFrame(film.raf); film.raf = 0; group.scale.setScalar(1); }
   function drawCycles() {
     for (const st of S().stations) {
       const V = st.v.map((v) => new THREE.Vector3(...v).multiplyScalar(WS)), pos = [], edges = [];
@@ -139,7 +196,7 @@ export function createDoubleVisionWorld({ scene, fitView = () => {}, showHudProm
     if (view.mode === 'cycles') drawCycles(); else drawPieces();
   }
   // framed from the paper's view B, so the slice faces you
-const fit = () => DATA && fitView([0, 0, 0], (view.mode === 'cycles' ? 1.75 : 1.08) * 2.49 * WS, S().view.dir);
+const fit = () => DATA && fitView([0, 0, 0], (view.mode === 'cycles' ? 2.0 : 1.35) * 2.49 * WS, S().view.dir);
 
   function handleTap(hit, mode) {
     const ud = hit.object?.userData;
@@ -151,7 +208,7 @@ const fit = () => DATA && fitView([0, 0, 0], (view.mode === 'cycles' ? 1.75 : 1.
       return true;
     }
     if (ud.kind !== 'pieces') return false;
-    const e = shown[triPiece[Math.floor(hit.faceIndex ?? -1)]];
+    const e = ud.shown[ud.tri[Math.floor(hit.faceIndex ?? -1)]];
     if (!e) return false;
     // a second tap on the lit kind shows all again (taps closer than 0.7 s are one tap)
     const now = performance.now();
@@ -172,14 +229,16 @@ const fit = () => DATA && fitView([0, 0, 0], (view.mode === 'cycles' ? 1.75 : 1.
   panel.className = 'qc-panel';
   panel.innerHTML = `
     <div class="w4d-row st-note dv-note"></div>
-    <div class="w4d-row w4d-options dv-settings">${SETTINGS.map((s) => `<button type="button" data-dv-setting="${s}"></button>`).join('')}</div>
-    <div class="w4d-row w4d-options dv-modes">${MODES.map((m) => `<button type="button" data-dv-mode="${m}"></button>`).join('')}</div>
+    <div class="w4d-row w4d-options dv-top">${SETTINGS.map((x) => `<button type="button" data-dv-setting="${x}"></button>`).join('')}<span class="dv-gap"></span>${['unwrap', 'wrap'].map((d) => `<button type="button" data-dv-film="${d}"></button>`).join('')}</div>
+    <div class="w4d-row w4d-options dv-modes">${MODES.map((m) => `<button type="button" data-dv-mode="${m}"></button>`).join('')}<span class="dv-gap"></span><button type="button" data-dv="slice"></button><button type="button" data-dv="inner"></button><button type="button" data-dv="reset"></button><button type="button" class="dv-paper"></button></div>
     <div class="w4d-row w4d-options dv-layers">${ORIG_LAYERS.map((n, i) => `<button type="button" data-dv-layer="${i}">${n}</button>`).join('')}</div>
-    <div class="w4d-row w4d-options dv-toggles"><button type="button" data-dv="slice"></button><button type="button" data-dv="inner"></button><button type="button" data-dv="reset"></button><button type="button" class="dv-paper"></button></div>
-    <div class="w4d-row dv-mix-row"><label class="hull-pick"><span class="dv-mix-label"></span> <input type="range" class="st-slider" min="0" max="100" step="1"></label></div>`;
+    <div class="w4d-row dv-film-row"><label class="hull-pick"><span class="dv-film-pos"></span> <input type="range" class="st-slider" min="0" max="600" step="1"></label></div>
+    <div class="w4d-row dv-mix-row"><label class="hull-pick"><span class="dv-mix-label"></span> <input type="range" class="st-slider" min="0" max="100" step="1"></label></div>
+    <style>#worlddoublevision-panel .dv-gap{display:inline-block;width:14px}#worlddoublevision-panel .dv-note{max-width:62ch;margin:0 auto}</style>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, 'doublevision');
-  const slider = panel.querySelector('.dv-mix-row input');
+  const slider = panel.querySelector('.dv-mix-row input'), filmSlider = panel.querySelector('.dv-film-row input');
+  const syncFilmSlider = () => { filmSlider.value = String(Math.round(mod6(film.t) * 100)); };
   function renderPanel() {
     panel.classList.toggle('visible', active);
     if (!active) return;
@@ -189,9 +248,11 @@ const fit = () => DATA && fitView([0, 0, 0], (view.mode === 'cycles' ? 1.75 : 1.
     const vars = { shared: t(`dv.shared.${view.setting}`, L), n: s.pieces.length, k: s.kinds.length, set: setNo,
       setName: `DICTO Interlock set ${setNo} (${view.setting === 'ends' ? 'Dharma-Ends' : 'Dharma-Middle'})`,
       layer: ORIG_LAYERS[view.layer], ln: s.pieces.filter((p) => p.o === view.layer).length };
-    panel.querySelector('.dv-note').textContent = t(`dv.note.${m}`, L, vars);
+    panel.querySelector('.dv-note').textContent = t(`dv.short.${m}`, L, vars);
     panel.querySelectorAll('[data-dv-setting]').forEach((b) => { b.textContent = t(`dv.set.${b.dataset.dvSetting}`, L); b.classList.toggle('active', b.dataset.dvSetting === view.setting); });
     panel.querySelectorAll('[data-dv-mode]').forEach((b) => { b.textContent = t(`dv.mode.${b.dataset.dvMode}`, L); b.classList.toggle('active', b.dataset.dvMode === m); });
+    panel.querySelectorAll('[data-dv-film]').forEach((b) => { const d = b.dataset.dvFilm === 'unwrap' ? 1 : -1; b.textContent = t(`dv.film.${b.dataset.dvFilm}`, L); b.classList.toggle('active', film.on && film.dir === d); });
+    panel.querySelector('.dv-film-row').hidden = !film.on; panel.querySelector('.dv-mix-row').hidden = film.on; panel.querySelector('.dv-film-pos').textContent = t('dv.film.position', L); syncFilmSlider();
     panel.querySelector('.dv-layers').hidden = m !== 'layer';
     panel.querySelectorAll('[data-dv-layer]').forEach((b) => b.classList.toggle('active', Number(b.dataset.dvLayer) === view.layer));
     const tog = (k, on) => { const b = panel.querySelector(`[data-dv="${k}"]`); b.hidden = !on; if (on) b.textContent = t(`dv.${k}.${view[k] ? 'on' : 'off'}`, L); };
@@ -208,11 +269,16 @@ const fit = () => DATA && fitView([0, 0, 0], (view.mode === 'cycles' ? 1.75 : 1.
     view.setting = b.dataset.dvSetting; kind = null; commit(true);
     showHudPrompt(t(`dv.prompt.toggle.${view.setting}`, lang()), 4500);
   }));
-  panel.querySelectorAll('[data-dv-mode]').forEach((b) => b.addEventListener('click', () => { view.mode = b.dataset.dvMode; kind = null; commit(true); }));
+  panel.querySelectorAll('[data-dv-mode]').forEach((b) => b.addEventListener('click', () => { view.mode = b.dataset.dvMode; kind = null; if (view.mode !== 'interlock') stopFilm(); commit(true); }));
+  panel.querySelectorAll('[data-dv-film]').forEach((b) => b.addEventListener('click', () => {
+    const first = !film.on; setFilm(b.dataset.dvFilm === 'unwrap' ? 1 : -1);
+    if (first) showHudPrompt(t('dv.prompt.film', lang()), 5000);
+  }));
+  filmSlider.addEventListener('input', () => { if (!film.on) return; film.dir = 0; film.t = Math.floor(film.t / 6) * 6 + Number(filmSlider.value) / 100; applyFilm(); renderPanel(); });
   panel.querySelectorAll('[data-dv-layer]').forEach((b) => b.addEventListener('click', () => { view.layer = Number(b.dataset.dvLayer); kind = null; commit(); }));
   for (const k of ['slice', 'inner']) panel.querySelector(`[data-dv="${k}"]`).addEventListener('click', () => { view[k] = !view[k]; commit(); });
   panel.querySelector('.dv-paper').addEventListener('click', () => { if (DATA) window.open(`https://doi.org/${DATA.paperDoi}`, '_blank', 'noopener'); });
-  panel.querySelector('[data-dv="reset"]').addEventListener('click', () => { Object.assign(view, PRESET); kind = null; commit(true); });
+  panel.querySelector('[data-dv="reset"]').addEventListener('click', () => { Object.assign(view, PRESET); kind = null; stopFilm(); commit(true); });
   slider.addEventListener('input', () => { view[view.mode === 'cycles' ? 'mixCycles' : 'mixColour'] = Number(slider.value) / 100; save(); if (view.mode === 'cycles') fade(); else recolour(); });
   slider.addEventListener('change', () => { renderPanel(); onChange(); });
   let shownLang = lang();
@@ -225,7 +291,7 @@ const fit = () => DATA && fitView([0, 0, 0], (view.mode === 'cycles' ? 1.75 : 1.
     setActive(on) {
       if (on === active) return;
       active = on; group.visible = on; kind = null;
-      if (!on) { clearGroup(); DATA = null; loading = null; renderPanel(); return; } // leaving lets the pieces and the data go
+      if (!on) { stopFilm(); clearGroup(); DATA = null; loading = null; renderPanel(); return; } // leaving lets the pieces and the data go
       renderPanel();
       load().then(() => { if (!active) return; draw(); renderPanel(); fit(); showHudPrompt(t('dv.prompt.start', lang()), 5500); });
     },
