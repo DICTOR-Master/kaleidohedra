@@ -435,3 +435,13 @@ midsphere 66.2 / 80.1; stella star (8 joint-facing triangles released) 61.1 / 83
 **stella cut along the joints (the 8 joint-facing triangles pushed in to their first ring of corners) 87.1 / 88.5%**: it fits its packing cell
 exactly (trimming the companion to its Voronoi cell gives the same shape), meeting its 8 joint neighbours face to face. The same cut along the
 frame's cube diagonals is the same shape turned (75.6% in this packing). Renders: renders/companion-variants.jpg, companion-stella-cut-packing.jpg.
+
+### The stella cut, exact (DICTO: "make the stella cut"; `scripts/stella_cut_exact.py` → `data/stella-cut-exact.txt`)
+From golden_fill.py's exact adapters, orbited under the copy's 24 signed permutations: 60 GBPCs per copy. Companion C: 72 corners, 30 hexagons
++ 20 triangles, its three-fold planes at distance² 14/27 − 10√5/243 (the OCD hexagon planes: 2/9 + 2√5/27), volume (−18880 + 9760√5)/2187.
+**Stella cut S = C ∩ the bcc Voronoi cell**: 48 corners, 50 faces (6 golden hexagons, 24 golden quadrilaterals, 12 triangles of C, 8 triangles in
+the OCD's own joint hexagon planes = the cell's hexagon walls), volume (−4064 + 2240√5)/729, filling **151/2 − 267√5/8 ≈ 87.12%** of space in
+the OCD's packing, copies meeting face to face across the 8 joints (exact).
+**Its gap** (`scripts/stella_gap.py`, float): one connected thin skin along all the cell walls (12.88%; near the 8 hexagon walls and 6 square walls,
+about 0.1 thick), not separate pockets; so no single convex partner, and no room for an icosahedron of useful size in this packing. A partner
+would have to be a set of thin pieces, or come from a different arrangement.

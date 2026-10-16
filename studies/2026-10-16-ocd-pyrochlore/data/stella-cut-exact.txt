@@ -1,0 +1,23 @@
+DICTO · dictospheres.com
+== Setup (exact)
+OCD 20 hexagons (normals three-fold) + 60 kites (normals on no symmetry axis); bcc cell volume 512/729 + 256/729√5 = 1.487563
+golden envelope (rhombic triacontahedron): 32 corners, volume -320/27 + 160/27√5; cut at the 8 joint planes: K has 24 corners, 30 golden faces + 8 joint faces (normals three-fold), volume -608/81 + 320/81√5 = 1.327676
+per cell: OCD 77.4332%, shell K-OCD 11.8185%, golden region G 10.7483% (exact: G per cell = 5984/729 - 2624/729√5)
+cut envelopes: 14 neighbours checked, none overlap (exact); 8 touch
+OCD copies: overlapping 0 (exact, as network.py); touching pairs per copy 8, contact faces: [(6,)] corners (hexagons only), so all 60 kites and the 12 free hexagons face the gap
+
+== Part 1: non-golden walls (exact)
+each joint face: 8 per copy, a 3-gon; covered by 1 neighbour face(s); exposed tips per face: 3 (3-gon / 3-gon / 3-gon); covered + exposed = whole face, exact
+exposed fraction of each joint face: 1/3 = 0.333333 (exact)
+tip shapes (squared side lengths): 1 kind(s): 8/27 - 8/81√5 , 8/27 - 8/81√5 , 8/27 - 8/81√5
+golden faces of K are golden-rhombus planes; the only other walls of G are these tips, in the 4 joint planes (three-fold normals).
+
+== Part 2: one adapter per tip (exact)
+symmetry of the copy in its packing: 24 signed permutations; GBPCs around one copy: 60 (from 24 per cell)
+three-fold planes of the companion vs the OCD hexagon planes (distance², exact): 14/27 - 10/243√5 vs 2/9 + 2/27√5
+== The companion C and its stella cut S (exact)
+bcc cell (Voronoi): 24 corners, faces {6: 8, 4: 6}, volume 512/729 + 256/729√5 = 1.487563 (det of the basis 512/729 + 256/729√5)
+companion C: 72 corners, faces {6: 30, 3: 20}, volume -18880/2187 + 9760/2187√5 = 1.346147
+stella cut S = C ∩ cell: 48 corners, faces {6: 6, 4: 24, 3: 20}, by plane kind {('golden (2-fold)', 6): 6, ('golden (2-fold)', 4): 24, ('OCD hexagon (3-fold)', 3): 12, ('Voronoi', 3): 8}
+  volume -4064/729 + 2240/729√5 = 1.296011; share of the cell 151/2 - 267/8√5 = 0.871231
+  the Voronoi planes that cut C: [(np.float64(-2.3271), np.float64(-0.8889), np.float64(1.4383)), (np.float64(-2.3271), np.float64(0.0), np.float64(-0.8889)), (np.float64(-1.4383), np.float64(1.4383), np.float64(1.4383)), (np.float64(-1.1636), np.float64(-0.4444), np.float64(0.7191)), (np.float64(-1.1636), np.float64(0.0), np.float64(-0.4444)), (np.float64(-0.8889), np.float64(-2.3271), np.float64(0.0)), (np.float64(-0.8889), np.float64(-1.4383), np.float64(-2.3271)), (np.float64(-0.7191), np.float64(0.7191), np.float64(0.7191)), (np.float64(-0.7191), np.float64(1.1636), np.float64(-0.4444)), (np.float64(-0.4444), np.float64(-1.1636), np.float64(0.0)), (np.float64(-0.4444), np.float64(-0.7191), np.float64(-1.1636)), (np.float64(0.0), np.float64(-0.8889), np.float64(2.3271)), (np.float64(0.0), np.float64(-0.4444), np.float64(1.1636)), (np.float64(0.0), np.float64(0.4444), np.float64(-1.1636)), (np.float64(0.0), np.float64(0.8889), np.float64(-2.3271)), (np.float64(0.4444), np.float64(0.7191), np.float64(1.1636))]
