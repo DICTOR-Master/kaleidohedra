@@ -473,3 +473,11 @@ octahedron, nothing golden). So the skin cannot be puffed away while keeping gol
   icosahedron of the OCD's own 20 hexagon planes (edge 0.8240; volume (−80 + 80√5)/81). No spreading needed; every body meets its 8 neighbours face
   to face on the joint walls (the icosahedron's faces lie in the OCD hexagon planes = the walls). Fill **1523/32 − 669√5/32 ≈ 84.60%**: stella cuts
   43.56%, icosahedra 41.03%. (Companions instead, spread 5%: 80.1%.) So the second network's OCDs are replaced by their inscribed icosahedra.
+
+### The crystal's gap in convex pieces (DICTO 2026-10-16: "do the gap"; `scripts/crystal_gap_pieces.py` → `data/crystal-gap-pieces.txt`, float)
+Each solid of the stella–icosahedron crystal lies in its bcc Voronoi cell V (corners on the walls) and meets the walls flat on its 8 joint
+faces. V minus the solid, cut by cones from the centre over the free faces: 108 convex pieces per periodic cell, total 15.4045% (= the exact
+1 − (1523/32 − 669√5/32)), in 4 kinds: around each icosahedron 12 wedges (6 corners, 5 faces, volume 0.022229; 58% of the gap); around each
+OCD Stella 12 caps on the companion triangles (0.010973), 6 slabs on the golden hexagons (0.006218), 24 thin wedges on the golden
+quadrilaterals (0.000941; the float run splits them 12/12 on a corner lying on an edge). Renders: renders/crystal-gap-stella.jpg, -ico.jpg
+(`scripts/render_crystal_gap.html`). Exact pass in ℚ(√5) still to do.
