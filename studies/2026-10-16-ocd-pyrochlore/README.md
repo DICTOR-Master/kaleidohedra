@@ -436,6 +436,8 @@ midsphere 66.2 / 80.1; stella star (8 joint-facing triangles released) 61.1 / 83
 exactly (trimming the companion to its Voronoi cell gives the same shape), meeting its 8 joint neighbours face to face. The same cut along the
 frame's cube diagonals is the same shape turned (75.6% in this packing). Renders: renders/companion-variants.jpg, companion-stella-cut-packing.jpg.
 
+**Named by DICTO (2026-10-16): DICTO OCD Stella.** Renders: renders/ocd-stella-solid.jpg, -glass.jpg, -pack.jpg (`scripts/stella_render_data.py`, `scripts/render_stella.html`).
+
 ### The stella cut, exact (DICTO: "make the stella cut"; `scripts/stella_cut_exact.py` → `data/stella-cut-exact.txt`)
 From golden_fill.py's exact adapters, orbited under the copy's 24 signed permutations: 60 GBPCs per copy. Companion C: 72 corners, 30 hexagons
 + 20 triangles, its three-fold planes at distance² 14/27 − 10√5/243 (the OCD hexagon planes: 2/9 + 2√5/27), volume (−18880 + 9760√5)/2187.
