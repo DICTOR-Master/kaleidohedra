@@ -9,7 +9,7 @@ SH = {'icosahedron': 'I', 'icosidodecahedron': 'ID', 'dodecahedron': 'D', 'trunc
 def short(layer): a, b = layer.split(' -> '); return f'{SH[a]}→{SH[b]}'
 txt = open('data/interlock-kinds.txt').read()
 font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 24); bold = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 28)
-SHAPE = {'ends': 'Dod TBP Hep Hep Dod Hep QPy PPy PPy Tet QPy Tet'.split(), 'middle': 'Hep Hen Hep HPy Hep Hx Tet QPy Tet Tet Tet'.split()}
+SHAPE = {'ends': '12f TBP 7f 7f 12f 7f QPy PPy PPy Tet QPy Tet'.split(), 'middle': '7f 11f 7f HPy 7f 6f Tet QPy Tet Tet Tet'.split()}
 for setting, code in (('ends', 'I1·'), ('middle', 'I2·')):
     block = txt.split(f'== {setting} setting')[1].split('== ')[0]
     kinds = re.findall(r'(\d+) x vol .*?= ([0-9.]+)\n\s+in original layer: (.*?) \(\d+\)\n\s+in flipped layer: (.*?) \(turn (-?\d+)\) \(\d+\)\n\s+(\d+) corners, (\d+) faces', block)

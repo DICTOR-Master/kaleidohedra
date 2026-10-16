@@ -43,3 +43,8 @@ The working codes are **E1–E12** (ends setting) and **M1–M11** (middle setti
 - **Simple shapes:** tetrahedra (E10, E12, M7, M9–M11), pentagonal pyramids (E8, E9), a triangular bipyramid (E2), and 15-corner columns (E1, E5).
 - **The same piece in both settings:** E10 = M9, the 60 small H → RT tetrahedra, which pass through whole.
 - **Equal volumes, different shapes:** E11 (5 corners) and M10 (4 corners) both have volume (1 + √5)/576.
+
+## P4 figures and the 3·I check (Fable's advice, 2026-10-16)
+
+- `scripts/p4_figures.py` (run with matplotlib on dicto-node) → `renders/p4-ladder.png`, `p4-section.png`, `p4-gallery-{ends,middle}.png`: the toggle ladder, the flat section z = 0 (a mirror plane holding 5-, 3- and 2-fold axes), and the kinds at one common scale with locators. Drawn from float corners; counts in the gallery come from `data/interlock-kinds.txt`. An exploded one-chamber view was tried and dropped (9 scattered pieces, not readable).
+- `scripts/middle_icosa_3I.py` → `data/middle-icosa-3I.txt`, exact in ℚ(√5): the middle setting's reversed icosahedron is exactly 3·I (the ends setting's is I); the 60 edge-third points of 3·I are exactly the truncated icosahedron's corners; the 12 corners of 3·I are triacontahedron corners; the 8 extra points in the float hull list of the TI station lie exactly in TI face planes (not corners).
