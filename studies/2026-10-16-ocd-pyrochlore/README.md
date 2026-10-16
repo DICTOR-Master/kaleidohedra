@@ -503,3 +503,10 @@ tested, no overlap), and every OCD Stella is notched by 6 tips (one tip 0.017287
 sites), against rock salt 91.72% (1/4). `scripts/crystal_symmetry.py` → `data/crystal-symmetry.txt` (spglib 2.8, corners as markers):
 OCD packing and OCD Stella alone Im-3 (No. 204, site m-3); OCD Stella + icosahedra and OCD Stella + octahedra on the pyrochlore networks both
 **Fd-3 (No. 203)**, both solids on site 23 (8a, 8b): the same crystal with the partner swapped; rock salt Fm-3 (No. 202). Renders renders/stella-octa-pyro-{patch,pair,notch}.jpg (`octa_pyro_render_data.py`, `render_octa_pyro.html`).
+
+### DICTO OCD Stella Atom 13 (DICTO 2026-10-16: "can OCD Stella form Atom 13", "interlocking"; float)
+`scripts/stella_atom13.py` → `data/stella-atom13.txt`; renders renders/stella-atom13-{atom,inter,core}.jpg (`render_atom13.html`). 12 copies on the
+5-fold axes (its 12 farthest corners), each pushed out until it touches the centre (distance 1.56743; meets it flat, 6 corners on the centre's
+face planes); the 12 never touch each other (gap 0.31 at 63.4°); outline fill 49.82%. Flat on the 12 companion triangles fails (neighbours
+41.8° apart overlap, depth 0.20). Interlocking: 20 icosahedra flat on the centre's 20 triangles (the 3-fold gaps between the 12), largest
+without a clash 0.4878 of the crystal icosahedron (limited by the 12 OCD Stellas); 33 solids fill 58.20% of their outline.
