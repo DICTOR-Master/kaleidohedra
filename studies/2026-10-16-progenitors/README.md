@@ -52,3 +52,9 @@ icosahedron is 20 Cleo-Icos; with 20 more as spikes it is the Icosa star (volume
 Dharma dodecahedron at two thirds, and that dodecahedron D′ fits (loosely) inside ID and inside O: I ⊂ star ⊂ D′ ⊂ ID ⊂ O ⊂ … — the dodecahedron
 returns as the hull of the Cleo star, in the old loose I → ID gap. D′ − star = 35/18 − 17√5/54 is **one connected gap** (cups over the 12 corners
 joined by valleys along the 30 edges; float flood fill); cut by the cones over D′'s faces it gives 12 equal pieces.
+
+## Step 10 (exact volumes; float overlap test): 12 inward pyramids: `scripts/inward_pyramids.py` → `data/inward-pyramids.txt`
+DICTO: "the 12 five-sided pyramids of Hypsicles pointing inwards". On each pentagonal face of D′ a pentagonal pyramid pointing inward, apex at
+the icosahedron corner below: all 12 fit in the star–D′ gap with no overlap of I or the spikes (48,000 sampled interior points, float). Each has
+volume 5/108 − √5/324 and height² 29/72 − 61√5/360 (about 0.21 of D′'s own central Hypsicles pyramid's height). Together 5/9 − √5/27 = 38.1% of
+the gap; left are the valleys along the 30 edges of I, (25 − 5√5)/18 = 61.9%.
