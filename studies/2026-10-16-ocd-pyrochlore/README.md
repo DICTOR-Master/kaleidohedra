@@ -481,3 +481,17 @@ faces. V minus the solid, cut by cones from the centre over the free faces: 108 
 OCD Stella 12 caps on the companion triangles (0.010973), 6 slabs on the golden hexagons (0.006218), 24 thin wedges on the golden
 quadrilaterals (0.000941; the float run splits them 12/12 on a corner lying on an edge). Renders: renders/crystal-gap-stella.jpg, -ico.jpg
 (`scripts/render_crystal_gap.html`). Exact pass in ℚ(√5) still to do.
+
+**Exact pass** (`scripts/crystal_gap_exact.py` → `data/crystal-gap-exact.txt`, exact in Q(√5)): S and I lie inside V (I's 12 corners on the
+walls); 8 faces of each lie on the walls; pieces sum exactly to V − S = 4576/729 − 1984√5/729 and V − I = 1232/729 − 464√5/729; gap share
+−1491/32 + 669√5/32, fill 1523/32 − 669√5/32 (as stated). **4 kinds exactly**: icosahedron wedges 12 × (308 − 116√5)/2187 (6 corners, 5 faces);
+Stella caps 12 × (346204 − 143140√5)/2381643 (9 corners, 7 faces); Stella hexagon slabs 6 × (39896 − 17240√5)/216513 (16 corners, 12 faces);
+Stella thin wedges 24 × (12596 − 5596√5)/88209 (6 corners, 5 faces). The icosahedra's share of the gap (961 + 209√5)/2454 ≈ 0.582.
+
+### OCD Stella + octahedra (DICTO 2026-10-16: "it would also fill well with an octahedron ... perhaps utilising the stella"; float)
+`scripts/stella_octahedra.py` → `data/stella-octahedra.txt`; renders renders/stella-octahedra-{patch,octa,notch}.jpg (`octa_render_data.py`,
+`render_octa.html`). The cell's 8 hexagon (joint) planes bound a regular octahedron, 9/8 of the cell; its 6 tips pass the square walls, each
+1/48 of the cell, apex halfway into the next cell. Octahedra on the even sites of the simple cubic sublattice (rock-salt colouring), OCD
+Stellas elsewhere: every octahedron meets 8 whole Stellas face to face on its joint planes; its tips enter only the odd-site Stellas' cells,
+which are notched (6 square-pyramid notches, 8.0% of the Stella). Fill **91.72%** (Stella alone 87.12%, with icosahedra 84.60%). Cutting the
+tips instead gives the cell itself (93.56%), no longer an octahedron. Exact notch volume still to do.
