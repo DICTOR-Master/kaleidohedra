@@ -26,3 +26,14 @@ so O takes D's place (alternatives, as H and 3·I are). Layer volumes in the fil
 Open (DICTO 2026-10-16): "double inverted like a stella octangula" — H and O interpenetrating; neither has a midsphere, so no canonical compound;
 natural sizes: O's 90 sphere corners kissing H's 90 tangent faces, or deeper. "Truncated form of Cleo-Icosa" — to clarify (cut at the 12 corners
 or at the 20 Cleo-Ico tips of the DICTO-ICOSA star).
+
+## Step 6 (exact): the O–H compound, "double inverted like a stella octangula": `scripts/oh_compound.py` → `data/oh-compound.txt`, `oh-compound.json`
+H's 90 rhombi and triangles touch the sphere ρ² = 9/4 (its 12 pentagons lie closer, at 17/8 − √5/40). Taking O as H's polar in that sphere:
+O's 90 sphere corners kiss H's faces, O's 12 five-fold corners poke out through H's pentagons, all 80 corners of H poke out of O.
+- **Exact:** O's 90 kissing corners are exactly the 90 edge midpoints of the Dharma's own truncated icosahedron; ρ = 3/2 is the TI's midsphere.
+- **Common core H ∩ O** (float counts): 90 corners, 92 faces = 12 regular pentagons + 20 regular hexagons + 60 triangles, two edge lengths: the
+  rectified truncated icosahedron of the Dharma TI.
+- **Hull** (float counts): 92 corners (80 of H, 12 tips of O), 90 quadrilaterals (30 rhombi, 60 others), every face touching the same sphere with
+  its normal through a core corner: the polar of the core. Core and hull are a dual pair, as the octahedron and cube are for the stella octangula.
+- Known solids: the rectified truncated icosahedron and its dual (Conway aT I and its dual). The H–O compound as their source is to be checked
+  in the reference library before any claim.
