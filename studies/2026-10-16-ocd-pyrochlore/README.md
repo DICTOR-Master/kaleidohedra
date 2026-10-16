@@ -397,3 +397,13 @@ The paper (`papers/ocd-chorus/`) is a natural stopping point. What could follow,
 3. **The seams.** These are float only, from 66 points per seam. To tell quasiperiodic order from a long-period approximant: a much larger build (radius 15–20 on dicto-node), exact vacancy sets, diffraction with more points, and a slab or window test in the seam's own coordinates.
 4. **Other solids.** Which other icosahedral solids have five inscribed cubes among their bond directions, and do their choruses give other chains (other windows, other critical distances)? That would make this a family rather than a single case.
 5. **Before any later version:** read in full the four closed-access papers (Katz & Gratias 1993; Sutton 1989 and 1992; Gratias & Thalal 1988), through a library or by purchase.
+
+## The GBPC (DICTO's name, 2026-10-16): Golden Bodhi Pyrochlore Corner
+DICTO's name for Fable's golden-fill adapter (FABLE-GOLDEN-FILL.md): the cap on each star-tip triangle, the rhombic triacontahedron's three-fold
+corner cut through its three neighbours; 24 per cell, 3 at each of the 8 joints (pyrochlore points). It is the Cleo-Ico's golden conjugate:
+side² : base² = (5 − √5)/8 against the Cleo-Ico's (5 + √5)/8, i.e. the great icosahedron's central pyramid (side/base = 0.587785 = the great
+icosahedron's circumradius/edge). Around one joint the 6 GBPCs (3 from each cell) have a 12-corner, 20-triangle hull, not regular (two radii),
+which cuts into both OCDs (float). Render for naming: renders/adapter-for-naming.jpg.
+**Separate project (DICTO, queued):** the OCD merged with its 24 GBPCs. The GBPCs do not touch the OCD (every corner 0.028–0.083 outside, float),
+so a merged solid means either the convex hull (float: 36 corners, 44 faces, 20 triangles + 24 quadrilaterals, cubic symmetry) or the exact
+filled solid (OCD + GBPCs + the gap pieces between them). Possibly a new shape; exact check, symmetry and prior art to do.
