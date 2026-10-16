@@ -12,7 +12,7 @@ what was found, and what remains unread. "Not found" means not found in the sour
   rhombic-dodecahedron rhombus (cos 1/3, cos 1/√3 twice); the rhombic triacontahedron's radius ratio reversed.
 - **Family (found):** it is a convex hull of a dodecahedron and an icosahedron, a known one-parameter family of pentakis dodecahedra
   (Polytope Wiki: fully symmetric for icosahedron edge between (5 + 3√5)/10 and φ times the dodecahedron edge; Catalan at 3(7 + 5√5)/38).
-  **X is the member with icosahedron edge = 3/√5 × dodecahedron edge** (float, 15 digits).
+  **X is the member with icosahedron edge = 3/√5 × dodecahedron edge**: now **exact** (edge² ratio 9/5 in ℚ(√5), `scripts/progenitors_exact.py`).
 - **Named members found:** Catalan pentakis dodecahedron (68.62°, 55.69°); biscribed pentakis dodecahedron (McCooey; GeoGebra). X is neither.
 - **Name clash:** "Palintriacontahedron" returns nothing.
 - **Status:** a distinguished, unnamed member of a known family. Claim only that.
@@ -43,6 +43,30 @@ what was found, and what remains unread. "Not found" means not found in the sour
   lie on the three-fold axes at one radius). The size relation (2/3 of the Dharma D) is DICTO-specific. Classical relative: kleetope / "first
   stellation" constructions; the 20 Cleo-Icos are Hypsicles' pyramids (Book XIV). Status: elementary, cite as construction, not as discovery.
 
+### F. The Cleo star dissection of D′ (exact, added for the paper)
+- **Exact:** D′ = 20 core Cleo-Icos + 20 Cleo spikes + 12 inward pentagonal pyramids + 30 valley tetrahedra, remainder 0 in ℚ(√5); the
+  valley tetrahedra are all one shape (`data/progenitors-exact.txt`).
+- **Not a stellation (checked):** the spike faces lie in no icosahedron face plane, and the tips sit at 2× the face distance; the first
+  stellation (small triambic icosahedron) has its tips at 3/√5 ≈ 1.3416× (the same number as X's edge ratio; noted, not interpreted).
+  The great stellated dodecahedron's spikes have side:base φ, not the Cleo-Ico's. So the Cleo star is a non-convex triakis icosahedron
+  (a Kleetope of the icosahedron) at one particular height.
+- **Searched:** dissections of a dodecahedron into an icosahedron with pyramids/tetrahedra; outward icosahedron pyramids whose tips form a
+  dodecahedron. Found only centre-apex pyramid splits (plus.maths.org puzzle 19), Wolfram "Icosahedron-Dodecahedron Sculpture" (pyramids
+  moved out to a rhombicosidodecahedron), Mosseri–Sadoc tiles (arXiv 2009.07048, dodecahedral structures from tetrahedra), Conway–Radin–
+  Sadun / Hafner dissections into triacontahedron and hexecontahedron pieces. **Not found:** this 82-piece dissection.
+- **Status:** the tips forming a dodecahedron is elementary (they lie on the three-fold axes); the exact four-kind filling of D′ was
+  not found in the sources checked. Claim only that.
+
+### G. Searches added 16 October (second pass, for "full prior art")
+- Reference library (~/Documents/kaleidohedra-references, MANIFEST and texts): grep for Kleetope, pentakis, triakis, nested icosahedral,
+  inscribed icosahedron/dodecahedron, first stellation, reciprocation: no matching source.
+- George Hart, Virtual Polyhedra: index and the compounds list read; dual compounds are referred to the master index (not opened);
+  no TI, PD, ID or RT compound listed there.
+- Wenninger, *Dual Models*: table of contents and the Wikipedia list of Wenninger models (PD = dual of TI, W/K30) read; the book itself not.
+- Wikipedia / Polytope Wiki / MathWorld: pentakis dodecahedron, triakis icosahedron, great triakis icosahedron, great stellated dodecahedron.
+- arXiv (golden nested shells, polar reciprocation sequences): Fang–Irwin 1511.07786 (concentric 600-cells at powers of φ in the
+  Elser–Sloane quasicrystal), Steelpillow (stellations ↔ facettings under reciprocation), icosahedral tiling papers; none is the cycle.
+
 ## Sources searched (16 October 2026)
 - Web search (several queries per claim): Wikipedia (pentakis dodecahedron, rectified truncated icosahedron, rhombic enneacontahedron,
   rhombic triacontahedron, icosidodecahedron, compound of dodecahedron and icosahedron, hexapentakis truncated icosahedron), MathWorld
@@ -54,7 +78,7 @@ what was found, and what remains unread. "Not found" means not found in the sour
 
 ## Not read (could not be reached here)
 - Wenninger, *Polyhedron Models* (1971) and *Dual Models* (1983): printed only.
-- George Hart's Virtual Polyhedra compound pages: search reached the index only; individual compound pages not opened.
+- George Hart's Virtual Polyhedra: the compounds list was read, but the master index entries for polyhedron-and-dual compounds were not opened.
 - Antiprism and Stella (software catalogues): not run.
 - Printed catalogues and journals (Coxeter, Cromwell, Holden, *Structural Topology* beyond Messer 1995).
 These are the remaining gaps before any public "new" claim.
