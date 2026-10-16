@@ -75,3 +75,14 @@ height: 20 triangle tips at radius² 3 + 4√5/3, 12 pentagon tips at 5/2 + 11�
 lie in D's face planes). Their hull **X**: 32 corners, 60 triangles, every face with cos² 1/9 (once) and 1/3 (twice), i.e. angles 70.53°, 54.74°,
 54.74°: half a rhombic-dodecahedron rhombus. All nine stations lie strictly inside X; X and I·φ³ interlock (X's 20 three-fold corners outside
 I·φ³, all 12 of I·φ³'s corners outside X): X bridges one turn to the next. Renders: `renders/id-star.png`.
+
+## Step 13: is X known? (prior-art checks, 2026-10-16)
+- **Origin:** X's corners are the ID's 32 face centres pushed to twice their distance; the RT (the ID's dual) puts corners on the same 32 axes at
+  distances inversely proportional. The two five-fold : three-fold radius ratios are exact reciprocals (X 0.9106, RT 1.0982): X is the rhombic
+  triacontahedron turned inside out. Shape family: pentakis dodecahedron (a dodecahedron with 12 low pentagonal pyramids, lateral edge : base edge =
+  √3/2, apex angle arccos(1/3)); not the Catalan one (68.62°, 55.69°, 55.69°; Klitzing "pakid", MathWorld, OEIS A380796).
+- **Not the ID's first stellation** (Wenninger 47, the icosahedron–dodecahedron compound): that has the same 32 axes but the RT's ratio, and the RT as hull.
+- **Compounds tested (float), no link:** five cubes on X's dodecahedron (30 face planes: none through X's tips, none an X face, X's tip not a triple
+  meeting point); ten tetrahedra (20 planes: none through the tips or parallel to an X face); X's face normals lie on no 2- or 3-fold axis.
+- **Searched:** Wikipedia and Polytope Wiki pentakis pages, MathWorld, Klitzing, OEIS, a general web search; the reference library holds no pentakis or
+  kleetope source. Wenninger's printed catalogues and Hart's compound pages not read. **Status: not found in the sources checked**; name DICTO's.
