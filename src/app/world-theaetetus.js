@@ -2,13 +2,15 @@
 // icosahedron. The Cleo core grown to the DICTO Hecatodihedron in DICTO's 102 clean pieces: an icosahedron of edge 1 as its 20 Cleo-Icos,
 // the dodecahedron round it as 20 columns (one per core face, cut from the centre through the core's edges), then the Spheres of Dharma
 // layers scaled by 2/phi (12 twisted pentagonal frusta, 30 t1, 20 caps). The other versions stay in studies/2026-10-15-icosa-star-hollow.
+// A third view (DICTO 2026-10-16), the Cleo star: the same core grown outward as 20 more Cleo-Icos (spikes) whose tips are a dodecahedron's
+// corners, with 12 inward pentagonal pyramids and that dodecahedron as glass.
 // Geometry: theaetetus-data.js (scripts/build-theaetetus-data.py). Tools of the Multi-shell chains.
 import DATA from './theaetetus-data.js';
 import { createLayeredWorld } from './world-chains.js';
 
 export function createTheaetetusWorld({ scene, fitView }) {
   return createLayeredWorld({ scene, fitView, name: 'theaetetus', data: DATA, kinds: ['theaetetus'], prefix: 'theaetetus',
-    glassRoles: { theaetetus: new Set(['ncap', 'nt1', 'nfru5']) }, defaultParts: { theaetetus: 'c102' } });
+    glassRoles: { theaetetus: new Set(['ncap', 'nt1', 'nfru5', 'dprime']) }, defaultParts: { theaetetus: 'c102' } });
 }
 
 /** Points whose convex hull previews the world in the DICTO menu. */
