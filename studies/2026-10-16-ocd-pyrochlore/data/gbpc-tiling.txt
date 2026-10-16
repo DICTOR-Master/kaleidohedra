@@ -1,0 +1,47 @@
+DICTO · dictospheres.com — Fable, GBPC tiling of G' (exact in Q(sqrt5) unless marked FLOAT)
+
+== A. What G' is (exact)
+uncut triacontahedra RT on the bcc sites: 8 neighbours overlap each RT, each overlap volume -704/729 + 320/729√5; triple overlaps of positive volume: 0
+union per cell = vol(RT) - (1/2) sum of pair overlaps = -5824/729 + 3040/729√5; K + 24 GBPC per cell = -5824/729 + 3040/729√5; equal: True
+K and every GBPC lie inside the uncut RT, and the volumes match, so G' = space minus the union of the uncut RTs (up to measure zero).
+Each GBPC is the part of an RT corner cap that sticks out beyond the joint plane and is not inside the joined neighbour.
+
+== B. Walls of G' (exact)
+wall components touching the origin RT's faces: 30 (truncated by the finite site set: 0)
+
+== C. Wall test (exact; any arrangement of rhombohedron faces, edge-to-edge or not, one rhombohedron size lam*|v|)
+30 wall components on the 30 faces of one RT, 2 kinds; candidate scale classes theta tested: 1
+  kind x6: 4 corners, area 1/6 + 1/18√5 (frame units); scale classes that pass: theta = 1 + (1)sqrt5
+  kind x24: 6 corners, area 5/54 + 5/162√5 (frame units); scale classes that pass: theta = 1 + (1)sqrt5
+scale classes passing on every wall: 1
+coarsest passing scale: lam = phi/9 (rhombohedron edge (phi/9)|v| = 0.179782|v|); every lam = phi/(k*9) passes too; any lam not a rational multiple of phi fails on every wall
+
+== D. Corner test (exact): free cone at each corner vs unions of rhombohedron corner cones
+120 chambers of the 15 golden mirror planes (exact)
+tile cones at a point, as chamber sets: 160 rhombohedron corner cones, 240 edge wedges, 30 half-spaces
+48 wall corners modulo the lattice; by free cone size in chambers (of 120) and whether it splits into tile cones (any: corner cones, edge wedges, half-spaces / corner cones only):
+  free 18/120 chambers x14: tile cones yes; rhombohedron corner cones only yes
+  free 60/120 chambers x5: tile cones yes; rhombohedron corner cones only yes
+  free 72/120 chambers x5: tile cones yes; rhombohedron corner cones only yes
+  free 78/120 chambers x11: tile cones yes; rhombohedron corner cones only yes
+  free 90/120 chambers x11: tile cones yes; rhombohedron corner cones only yes
+
+== E. Module check (exact)
+M = Z-span of the six five-fold vectors v1..v6 (|v| = icosahedron circumradius): rank 6, its rational span is all of Q(sqrt5)^3, so every exact point lies in (1/N)M for some N. M is closed under multiplication by phi: False
+all corners of G' (48 per cell, all lattice translates) lie in one coset x0 + lam*M for lam = phi/(9k) first at k = 1, i.e. lam = phi/9 (edge 0.179782|v|); then also for every lam = phi/(9k), k = 1, 2, 3, ...
+
+== F. Galois count (exact): what the tile frequencies must satisfy in any face-to-face tiling
+calibration, U = one RT, A = 0: sigma(vol RT) = -320/27 - 160/27√5; det(A) vol + flux = -320/27 - 160/27√5; identity holds exactly
+calibration, U = one RT, A of the bcc lattice: sigma(vol RT) = -320/27 - 160/27√5; det(A) vol + flux = -320/27 - 160/27√5; identity holds exactly
+walls of G' per cell: 30 (each inside one RT face: True)
+per cell: det(A) vol(G') + wall flux = 704/81 + 928/243√5; sigma(vol G') = 704/81 + 928/243√5; equal: True
+equations per cell at lam = phi/9: p*vol(P) + o*vol(O) = vol(G'), p*sigma(vol P) + o*sigma(vol O) = 704/81 + 928/243√5; unique solution p = 66, o = -30 (exact; for lam = phi/(9k) multiply by k^3)
+o < 0: NO face-to-face tiling of G' by golden rhombohedra of one size exists, periodic or not, at any scale.
+
+== G. Removing the count obstruction (exact bookkeeping, lam = phi/9; units = oblate volume, x = m + n*phi)
+  GBPC: m = 1/6, n = 0
+  small oblate (edge lam/phi): m = -3, n = 2
+  small prolate (edge lam/phi): m = 2, n = -1
+  big oblate (edge phi*lam): m = 1, n = 2
+  big prolate (edge phi*lam): m = 2, n = 3
+with both sizes (edges phi/9 and 1/9 times |v|) the wall test says nothing (the two periods are incommensurable), and the count needs o - 3o' + 2p' = -30, p + 2o' - p' = 66 (primes = small): solvable with all >= 0, and it forces at least 10 small oblates per cell.
