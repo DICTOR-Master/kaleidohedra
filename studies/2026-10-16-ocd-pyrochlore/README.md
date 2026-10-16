@@ -462,3 +462,12 @@ Pushing the 6 cube-axis golden hexagons onto the square walls: they vanish befor
 Pushing all 30 golden planes out together (float): 87.12% → 87.91% (1.01×) → 88.58% (1.03×, 6 golden faces left) → 88.70% from 1.05× on, all golden
 faces gone and the solid bounded by its triangles alone. Full filling only comes when the triangle planes go too, i.e. the cell itself (truncated
 octahedron, nothing golden). So the skin cannot be puffed away while keeping golden faces; the clean result stays the exact 87.12% packing.
+
+### Partners with icosahedra (DICTO 2026-10-16: "trying partner with icosahedron differently?", "pyrochlore network perhaps")
+- **Holes of the bcc packing** (`scripts/pocket_icosahedra.py`, float): icosahedra at the joints, square-wall centres or cell corners are tiny
+  (edge 0.06–0.11), adding at most 1% (stella cut 87.1% → 87.4%; companion 78.2% → 79.2%).
+- **The pyrochlore two-solid crystal** (`scripts/pyro_icosahedra.py`, float search; exact fill by hand from exact volumes): stella cuts on ONE
+  network of the OCD packing (the diamond network whose joints are the pyrochlore lattice), and on every site of the empty second network the
+  icosahedron of the OCD's own 20 hexagon planes (edge 0.8240; volume (−80 + 80√5)/81). No spreading needed; every body meets its 8 neighbours face
+  to face on the joint walls (the icosahedron's faces lie in the OCD hexagon planes = the walls). Fill **1523/32 − 669√5/32 ≈ 84.60%**: stella cuts
+  43.56%, icosahedra 41.03%. (Companions instead, spread 5%: 80.1%.) So the second network's OCDs are replaced by their inscribed icosahedra.
