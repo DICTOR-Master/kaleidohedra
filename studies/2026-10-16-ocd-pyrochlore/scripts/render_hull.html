@@ -1,0 +1,42 @@
+<!doctype html><meta charset="utf-8"><title>OCD + GBPC hull (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// The hull of the DICTO Ogdoecontahedron and the 60 GBPCs around it (?mode=solid|glass|slice&px=): solid (30 golden-plane hexagons gold,
+// 20 triangles in the OCD's hexagon planes cyan), glass (the hull as glass; the OCD and the 60 GBPCs inside), slice (cut through the centre
+// across a five-fold axis, seen front on).
+(async function () {
+  const q = new URLSearchParams(location.search), MODE = q.get('mode') || 'solid', PX = +(q.get('px') || 1100);
+  const J = await fetch('hull-render.json').then((r) => r.json());
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(PX, PX); renderer.setPixelRatio(1); renderer.localClippingEnabled = true;
+  document.body.prepend(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.85)); const sun = new THREE.DirectionalLight(0xffffff, 0.6); scene.add(sun);
+  const phi = (1 + Math.sqrt(5)) / 2;
+  // five-fold axis: the hull's 12 corners at the largest radius lie on the five-fold axes
+  const R = Math.max(...J.hull.v.map((v) => Math.hypot(...v))), ax5 = new THREE.Vector3(...J.hull.v.find((v) => Math.abs(Math.hypot(...v) - R) < 1e-6)).normalize();
+  const clip = MODE === 'slice' ? [new THREE.Plane(ax5.clone().negate(), 0)] : [];
+  function add(S, colorOf, op = 0) {
+    const pos = [], col = [], line = [], c = new THREE.Color();
+    S.f.forEach((f) => { c.setHex(colorOf(f)); for (let i = 1; i + 1 < f.length; i++) for (const k of [f[0], f[i], f[i + 1]]) { pos.push(...S.v[k]); col.push(c.r, c.g, c.b); }
+      for (let i = 0; i < f.length; i++) line.push(...S.v[f[i]], ...S.v[f[(i + 1) % f.length]]); });
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); g.computeVertexNormals();
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.45, flatShading: true, side: THREE.DoubleSide, transparent: !!op, opacity: op || 1, depthWrite: !op, clippingPlanes: clip, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, transparent: true, opacity: op ? 0.35 : 0.9, clippingPlanes: clip })));
+  }
+  const hullCol = (f) => (f.length === 6 ? 0xe8b84a : 0x4dd0e1);
+  if (MODE === 'solid') add(J.hull, hullCol);
+  else {
+    add(J.ocd, (f) => (f.length === 6 ? 0xf5d77a : 0xd9a441));
+    for (const s of J.gbpc) add(s, () => 0xc792ea);
+    if (MODE === 'glass') add(J.hull, hullCol, 0.16); else add(J.hull, hullCol, 0.22);
+  }
+  let dir = MODE === 'slice' ? ax5.clone() : new THREE.Vector3(0.55, 0.42, 0.72).normalize();
+  const up = MODE === 'slice' ? new THREE.Vector3(1, 0, 0).sub(ax5.clone().multiplyScalar(ax5.x)).normalize() : new THREE.Vector3(0, 0, 1);
+  const H = 0.9;
+  const cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.001, 100); cam.position.copy(dir.clone().multiplyScalar(20)); cam.up.copy(up); cam.lookAt(0, 0, 0);
+  sun.position.copy(dir.clone().multiplyScalar(5).add(up.clone().multiplyScalar(4)));
+  renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>
