@@ -1,0 +1,40 @@
+<!doctype html><meta charset="utf-8"><title>Full cycle (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// The full golden cycle with both compounds (?mode=cutaway|slice&h=&px=): the Cleo star build in D' at the centre; ID; the core rTI; the
+// Hecatogdoecontahedron (TI ⊂ H gold, interlocked with O teal at its compound size); its hull; RT; at the seam the next icosahedron I·φ³ (cyan)
+// interlocked with the Palintriacontahedron (rose); the next icosidodecahedron ID·φ³ as glass. A 90° slice facing the camera removed.
+(async function () {
+  const q = new URLSearchParams(location.search), MODE = q.get('mode') || 'cutaway', PX = +(q.get('px') || 1400), H = +(q.get('h') || 5.9);
+  const J = await fetch('full-cycle.json').then((r) => r.json());
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(PX, PX); renderer.setPixelRatio(1); renderer.localClippingEnabled = true;
+  document.body.prepend(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.85)); const sun = new THREE.DirectionalLight(0xffffff, 0.6); scene.add(sun);
+  const v3 = (a) => new THREE.Vector3(...a), dir = v3(J.view.dir), up = v3(J.view.up);
+  const wr = dir.clone().sub(up.clone().multiplyScalar(dir.dot(up))).normalize(), side = up.clone().cross(wr), a = Math.PI / 4;
+  const clip = [new THREE.Plane(wr.clone().multiplyScalar(-Math.sin(a)).add(side.clone().multiplyScalar(Math.cos(a))), 0), new THREE.Plane(wr.clone().multiplyScalar(-Math.sin(a)).sub(side.clone().multiplyScalar(Math.cos(a))), 0)];
+  function add(S, color, o = {}) {
+    const pos = [], line = [];
+    for (const f of S.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...S.v[f[0]], ...S.v[f[i]], ...S.v[f[i + 1]]); for (let i = 0; i < f.length; i++) line.push(...S.v[f[i]], ...S.v[f[(i + 1) % f.length]]); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    const cp = o.noclip ? [] : clip;
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, roughness: 0.5, flatShading: true, side: THREE.DoubleSide, transparent: !!o.op, opacity: o.op || 1, depthWrite: !o.op, clippingPlanes: cp, clipIntersection: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, transparent: !!o.op, opacity: o.op ? 0.35 : 1, clippingPlanes: cp, clipIntersection: true })));
+  }
+  const C = { ID: 0xc792ea, rTI: 0xf08fc0, TI: 0x5fd38a, H: 0xe8b84a, O94: 0x2bb3a3, hull: 0x9fd8ff, RT: 0xff9a52, Ip3: 0x4dd0e1, X: 0xd98ba5 };
+  if (MODE === 'cutaway') {
+    for (const s of J.cleo.core) add(s, 0xc792ea); for (const s of J.cleo.spikes) add(s, 0x4dd0e1); for (const s of J.cleo.pyr) add(s, 0xe8b84a); add(J.cleo.Dp, 0xf5f0e2);
+    for (const k of ['ID', 'rTI', 'TI', 'H', 'O94', 'hull', 'RT', 'X']) add(J.st[k], C[k]);
+    // the next turn: I·φ³ as its own 20 Cleo-Icos with 20 Cleo spikes, inside D'·φ³ (glass), inside ID·φ³ (glass)
+    for (const s of J.cleo3.core) add(s, 0x4dd0e1); for (const s of J.cleo3.spikes) add(s, 0x7fe0ec);
+    add(J.cleo3.Dp, 0xf5f0e2, { op: 0.16, noclip: q.get('dpclip') === '1' ? false : true });
+    add(J.st.IDp3, 0xe6d6f3, { op: 0.10, noclip: true });
+  }
+  const cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.01, 300); cam.position.copy(dir.clone().multiplyScalar(60)); cam.up.copy(up); cam.lookAt(0, 0, 0);
+  sun.position.copy(dir.clone().multiplyScalar(6).add(up.clone().multiplyScalar(5)).add(up.clone().cross(dir).multiplyScalar(-3)));
+  renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>

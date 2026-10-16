@@ -92,3 +92,8 @@ I·φ³, all 12 of I·φ³'s corners outside X): X bridges one turn to the next.
   turned inside out (same 32 axes, reciprocal radius ratio); 32 corners, 60 faces, each half a rhombic-dodecahedron rhombus.
 - **Hecatogdoecontahedron** (102 + 80, after icosi-dodeca): the compound of the Hecatodihedron and the Ogdoecontahedron of step 6, in the truncated
   icosahedron's midsphere; 182 faces, 182 corners, self-dual; core the rectified truncated icosahedron, hull its dual.
+
+## Step 14 (float): the seam, and the full-cycle render
+The Palintriacontahedron lies inside the next turn's D′ (D′·φ³) and fills the next icosahedron's Cleo star almost exactly: all 32 corners inside,
+99.46% of its volume (20,000 sample points), so 0.54% pokes out, presumably through the valleys between spikes. The loose I·φ³ → ID·φ³ step is
+filled as at the centre (Cleo star, D′). Render of the whole: `renders/full-cycle.png` (`render_full.html`, `shoot_full.mjs`, `data/full-cycle.json`).
