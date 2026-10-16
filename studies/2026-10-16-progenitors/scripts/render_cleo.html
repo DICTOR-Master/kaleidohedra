@@ -1,0 +1,46 @@
+<!doctype html><meta charset="utf-8"><title>Cleo star build (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// The Cleo star build (?mode=exploded|assembled|cycle|one&k=&px=): the Dharma icosahedron as 20 Cleo-Icos (wisteria), 20 Cleo spikes (cyan),
+// 12 inward pentagonal pyramids (gold) under D' = (2/3)·D; assembled inside glass D' and glass ID; the eleven-station cycle cutaway
+// (I ⊂ star ⊂ D' ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ hull ⊂ RT), a slice removed. Orthographic, bearing B, house palette. Data: cleo-build.json.
+(async function () {
+  const q = new URLSearchParams(location.search), MODE = q.get('mode') || 'exploded', PX = +(q.get('px') || 1200);
+  const J = await fetch('cleo-build.json').then((r) => r.json());
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(PX, PX); renderer.setPixelRatio(1); renderer.localClippingEnabled = true;
+  document.body.prepend(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.85)); const sun = new THREE.DirectionalLight(0xffffff, 0.6); scene.add(sun);
+  const v3 = (a) => new THREE.Vector3(...a), dir = v3(J.view.dir), up = v3(J.view.up);
+  const WIS = 0xc792ea, CYAN = 0x4dd0e1, GOLD = 0xe8b84a;
+  function add(S, color, o = {}) {
+    const c = S.v.reduce((s, v) => s.map((x, i) => x + v[i] / S.v.length), [0, 0, 0]), off = o.push ? v3(c).normalize().multiplyScalar(o.push) : new THREE.Vector3();
+    const pos = [], line = [];
+    for (const f of S.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...S.v[f[0]], ...S.v[f[i]], ...S.v[f[i + 1]]); for (let i = 0; i < f.length; i++) line.push(...S.v[f[i]], ...S.v[f[(i + 1) % f.length]]); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    const m = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, roughness: 0.5, flatShading: true, side: THREE.DoubleSide, transparent: !!o.op, opacity: o.op || 1, depthWrite: !o.op, clippingPlanes: o.clip || [], clipIntersection: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 }));
+    m.position.copy(off); scene.add(m);
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    const l = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, transparent: !!o.op, opacity: o.op ? 0.45 : 1, clippingPlanes: o.clip || [], clipIntersection: true })); l.position.copy(off); scene.add(l);
+  }
+  let H = 1.15;
+  if (MODE === 'exploded') { for (const s of J.core) add(s, WIS, { push: 0.0 }); for (const s of J.spikes) add(s, CYAN, { push: 0.32 }); for (const s of J.pyr) add(s, GOLD, { push: 0.62 }); H = 1.8; }
+  if (MODE === 'assembled') { for (const s of J.core) add(s, WIS); for (const s of J.spikes) add(s, CYAN); for (const s of J.pyr) add(s, GOLD, { op: 0.45 }); add(J.Dp, 0xf3ead6, { op: 0.12 }); add(J.ID, 0xe6d6f3, { op: 0.10 }); H = 1.4; }
+  if (MODE === 'cycle') {
+    const wr = dir.clone().sub(up.clone().multiplyScalar(dir.dot(up))).normalize(), side = up.clone().cross(wr), a = Math.PI / 4;
+    const clip = [new THREE.Plane(wr.clone().multiplyScalar(-Math.sin(a)).add(side.clone().multiplyScalar(Math.cos(a))), 0), new THREE.Plane(wr.clone().multiplyScalar(-Math.sin(a)).sub(side.clone().multiplyScalar(Math.cos(a))), 0)];
+    const COL = { ID: 0xc792ea, O: 0x2bb3a3, rTI: 0xf08fc0, TI: 0x5fd38a, H: 0xe8b84a, hull: 0x9fd8ff, RT: 0xff9a52 };
+    for (const s of J.nine) if (COL[s.name]) add(s, COL[s.name], { clip });
+    add(J.Dp, 0xf5f0e2, { clip });
+    for (const s of J.core) add(s, WIS, { clip }); for (const s of J.spikes) add(s, CYAN, { clip }); for (const s of J.pyr) add(s, GOLD, { clip });
+    H = 1.95;
+  }
+  if (MODE === 'one') { const k = q.get('k'); const s = k === 'Dp' ? J.Dp : k === 'star' ? null : J.nine.find((x) => x.name === k);
+    if (k === 'star') { for (const c of J.core) add(c, WIS); for (const c of J.spikes) add(c, CYAN); } else add(s, { Dp: 0xf5f0e2, I: CYAN, ID: 0xc792ea, O: 0x2bb3a3, rTI: 0xf08fc0, TI: 0x5fd38a, H: 0xe8b84a, hull: 0x9fd8ff, RT: 0xff9a52, 'I·φ³': CYAN }[k]);
+    H = 2.6; }
+  const cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.01, 200); cam.position.copy(dir.clone().multiplyScalar(40)); cam.up.copy(up); cam.lookAt(0, 0, 0);
+  sun.position.copy(dir.clone().multiplyScalar(6).add(up.clone().multiplyScalar(5)).add(up.clone().cross(dir).multiplyScalar(-3)));
+  renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>
