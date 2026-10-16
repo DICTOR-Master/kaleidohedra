@@ -47,7 +47,7 @@ await page.tap(`${panel} [data-dv-mode="layer"]`); await page.waitForTimeout(900
 await page.tap(`${panel} [data-dv-layer="4"]`); await page.waitForTimeout(700);
 console.log('layer:', await note()); assert.match(await note(), /H → RT.*180 pieces/);
 await page.screenshot({ path: `${SH}/dv-layer.png` });
-// the film: Unwrap plays (the slider appears and moves), tapping it again pauses, Wrap runs backwards; screenshots along the way
+// the film (the ∞ control: Unwrap ring arrows in, Wrap ring arrows out, VHS pause): Unwrap plays (the slider appears and moves), tapping it again pauses, Wrap runs backwards; screenshots along the way
 await page.tap(`${panel} [data-dv-mode="interlock"]`); await page.waitForTimeout(800);
 await page.tap(`${panel} [data-dv-film="unwrap"]`); await page.waitForTimeout(400);
 assert.equal(await page.locator(`${panel} .dv-film-row`).isHidden(), false, 'film slider shown');
@@ -58,9 +58,19 @@ console.log('film position', f0, '->', f1); assert.ok(f1 > f0, 'the film moves f
 await page.tap(`${panel} [data-dv-film="unwrap"]`); await page.waitForTimeout(300);
 const p1 = await page.locator(`${panel} .dv-film-row input`).inputValue(); await page.waitForTimeout(1500);
 assert.equal(await page.locator(`${panel} .dv-film-row input`).inputValue(), p1, 'paused');
+// the VHS pause: resumes the last direction (unwrap), then pauses again
+await page.tap(`${panel} [data-dv-pause]`); await page.waitForTimeout(1500);
+assert.notEqual(await page.locator(`${panel} .dv-film-row input`).inputValue(), p1, 'pause button resumes');
+await page.tap(`${panel} [data-dv-pause]`); await page.waitForTimeout(300);
+const p2 = await page.locator(`${panel} .dv-film-row input`).inputValue(); await page.waitForTimeout(1200);
+assert.equal(await page.locator(`${panel} .dv-film-row input`).inputValue(), p2, 'pause button pauses');
+await page.screenshot({ path: `${SH}/dv-inf-paused.png` });
 await page.tap(`${panel} [data-dv-film="wrap"]`); await page.waitForTimeout(4500);
 const f2 = Number(await page.locator(`${panel} .dv-film-row input`).inputValue());
-console.log('after wrap', p1, '->', f2); assert.ok(f2 !== Number(p1), 'wrap moves');
+console.log('after wrap', p2, '->', f2); assert.ok(f2 !== Number(p2), 'wrap moves');
+assert.equal(await page.locator(`${panel} .dv-chev`).isVisible(), true, 'chevrons while playing'); assert.equal(await page.locator(`${panel} .dv-scrub`).isHidden(), true, 'no position while playing');
+await page.screenshot({ path: `${SH}/dv-chev-wrap.png` });
+await page.tap(`${panel} [data-dv-pause]`); await page.waitForTimeout(300); assert.equal(await page.locator(`${panel} .dv-scrub`).isVisible(), true, 'slider when paused');
 await page.locator(`${panel} .dv-film-row input`).fill('300'); await page.waitForTimeout(500); await page.screenshot({ path: `${SH}/dv-film-scrub.png` });
 // X-ray offered
 assert.equal(await page.locator('#xray-toggle').isHidden(), false, 'X-ray offered');
