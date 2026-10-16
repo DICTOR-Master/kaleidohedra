@@ -1,0 +1,32 @@
+<!doctype html><meta charset="utf-8"><title>Companion variants (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// Companion-solid variants (?mode=one&i=k | pack&px=): one variant solid, faces coloured by sides (3 cyan, 4 wisteria, 5 green, 6 gold, more pink);
+// pack: the stella cut along the joints (= trimmed to its cell) with its 8 joint neighbours in the OCD's bcc packing, neighbours as glass.
+(async function () {
+  const q = new URLSearchParams(location.search), MODE = q.get('mode') || 'one', I = +(q.get('i') || 0), PX = +(q.get('px') || 800);
+  const J = await fetch('variants-render.json').then((r) => r.json());
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(PX, PX); renderer.setPixelRatio(1);
+  document.body.prepend(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.85)); const sun = new THREE.DirectionalLight(0xffffff, 0.6); scene.add(sun);
+  const COL = { 3: 0x4dd0e1, 4: 0xc792ea, 5: 0x5fd38a, 6: 0xe8b84a };
+  function add(S, off, op = 0, solidCol = null) {
+    const pos = [], col = [], line = [], c = new THREE.Color(), V = S.v.map((v) => v.map((x, k) => x + off[k]));
+    S.f.forEach((f) => { c.setHex(solidCol ?? COL[f.length] ?? 0xf08fc0); for (let i = 1; i + 1 < f.length; i++) for (const k of [f[0], f[i], f[i + 1]]) { pos.push(...V[k]); col.push(c.r, c.g, c.b); }
+      for (let i = 0; i < f.length; i++) line.push(...V[f[i]], ...V[f[(i + 1) % f.length]]); });
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); g.computeVertexNormals();
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.45, flatShading: true, side: THREE.DoubleSide, transparent: !!op, opacity: op || 1, depthWrite: !op, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, transparent: true, opacity: op ? 0.3 : 0.9 })));
+  }
+  let H = 0.9;
+  if (MODE === 'one') add(J.variants[I], [0, 0, 0]);
+  else { const P = J.pack; add(P, [0, 0, 0]); for (const o of P.offsets.slice(1)) add(P, o, 0.18, 0x9fd8ff); H = 2.1; }
+  const dir = new THREE.Vector3(0.55, 0.42, 0.72).normalize();
+  const cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.001, 100); cam.position.copy(dir.clone().multiplyScalar(20)); cam.up.set(0, 0, 1); cam.lookAt(0, 0, 0);
+  sun.position.copy(dir.clone().multiplyScalar(5).add(new THREE.Vector3(0, 0, 4)));
+  renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>

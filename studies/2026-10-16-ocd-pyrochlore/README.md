@@ -427,3 +427,11 @@ triacontahedron; in between, 72 corners and 50 faces (the chamfered icosahedron)
 - **midsphere (canonical): d = 0.700074 (1.05011)**
 The equal-edge and canonical members are probably known (chamfered icosahedron literature; to check); the golden-ratio members are choices, not
 forced by any contact. Exact values to do for whichever DICTO picks.
+
+### Variants and space filling (DICTO: cuts and stars "both, side by side", depths that "improve space filling"; float; `scripts/companion_variants.py` → `data/companion-variants.txt`)
+Packing cell of the OCD's bcc packing: 1.48756 (the "cell" in adapter-render.json is a different body; an earlier run divided by it and was
+discarded). Fill in the bcc packing (largest size without overlap) / densest lattice found: companion 78.5 / 82.2%; equal edges 71.8 / 80.3;
+midsphere 66.2 / 80.1; stella star (8 joint-facing triangles released) 61.1 / 83.5; 4-fold star 79.1 / 82.9; 5-fold cut 77.6 / 81.3;
+**stella cut along the joints (the 8 joint-facing triangles pushed in to their first ring of corners) 87.1 / 88.5%**: it fits its packing cell
+exactly (trimming the companion to its Voronoi cell gives the same shape), meeting its 8 joint neighbours face to face. The same cut along the
+frame's cube diagonals is the same shape turned (75.6% in this packing). Renders: renders/companion-variants.jpg, companion-stella-cut-packing.jpg.
