@@ -1,0 +1,28 @@
+DICTO · dictospheres.com
+Line-up C: I ⊂ ID ⊂ D ⊂ TI ⊂ 3·I ⊂ RT ⊂ I·φ³ (exact, Q(√5))
+1. Nesting
+  I ⊂ ID: inside True; 0 of 12 corners of I on faces of ID
+  ID ⊂ D: inside True; 30 of 30 corners of ID on faces of D
+  D ⊂ TI: inside True; 20 of 20 corners of D on faces of TI
+  TI ⊂ 3·I: inside True; 60 of 60 corners of TI on faces of 3·I
+  3·I ⊂ RT: inside True; 12 of 12 corners of 3·I on faces of RT
+  RT ⊂ I·φ³: inside True; 0 of 32 corners of RT on faces of I·φ³
+2. Polar reversal (unit sphere), outer to inner of the original = inner to outer of the reversed:
+  polar of I·φ³: 20 corners, 12 faces
+  polar of RT: 30 corners, 32 faces
+  polar of 3·I: 20 corners, 12 faces
+  polar of TI: 32 corners, 60 faces
+  polar of D: 12 corners, 20 faces
+  polar of ID: 32 corners, 30 faces
+  polar of I: 20 corners, 12 faces
+3. Toggle ends (rho² = 3/8 + 1/8√5): shared 4: polar of I = D; polar of D = I; polar of D = I·φ³·φ^-3; polar of I·φ³ = D·φ^-3
+3. Toggle middle (rho² = 9/8 + 3/8√5): shared 4: polar of ID = RT; polar of D = 3·I; polar of 3·I = D; polar of RT = ID
+4. All rho² (up to φ³ turns) that make a pair coincide (shape match, exact):
+  rho² = 3/8 + 1/8√5 ≈ 0.654508: polar of D = I
+  rho² = 3/8 + 1/8√5 ≈ 0.654508: polar of I = D
+  rho² = 9/8 + 3/8√5 ≈ 1.963525: polar of 3·I = D
+  rho² = 9/8 + 3/8√5 ≈ 1.963525: polar of D = 3·I
+  rho² = 9/8 + 3/8√5 ≈ 1.963525: polar of ID = RT
+  rho² = 9/8 + 3/8√5 ≈ 1.963525: polar of RT = ID
+  rho² = 11/8 + 5/8√5 ≈ 2.772542: polar of D = I·φ³
+  rho² = 11/8 + 5/8√5 ≈ 2.772542: polar of I·φ³ = D
