@@ -1,0 +1,93 @@
+<!doctype html><meta charset="utf-8"><title>P4 render (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// P4 figures (Fable review 2): the interlock drawn from its exact pieces (float corners), orthographic, house colours by original layer.
+//   ?set=ends|middle  &view=A|B|C (oblique bearings from p4_render_data.py)  &px=<size>  &h=<half-width>
+//   &mode=hero   whole solid, a cake-slice wedge of &wedge=<deg> facing the camera removed (whole pieces dropped, none clipped);
+//                &turns=n also draws the next n turns in (the same pieces scaled by φ^-3, φ^-6: the nest repeats under φ³)
+//   &mode=layer&layer=k   one original layer alone, same wedge
+//   &mode=loc&k=n         the hero with kind n in colour and every other piece pale (a locator)
+//   &mode=kind&k=n        one piece of kind n alone, outward direction up, at the fixed half-width h (a common scale)
+(async function () {
+  const q = new URLSearchParams(location.search), SET = q.get('set') || 'ends', V = q.get('view') || 'A', PX = +(q.get('px') || 1200);
+  const mode = q.get('mode') || 'hero', W = +(q.get('wedge') || 90), turns = +(q.get('turns') || 0), K = +(q.get('k') || 0), LY = +(q.get('layer') || 0);
+  const J = await fetch(`p4-render-${SET}.json`).then((r) => r.json()), vw = J.views[V];
+  const COL = [0x4dd0e1, 0xc792ea, 0x5fd38a, 0xf08fc0, 0x9fd8ff, 0xff9a52], PALE = 0xe2dbcc, phi = (1 + Math.sqrt(5)) / 2;
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(PX, PX); renderer.setPixelRatio(1);
+  document.body.prepend(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.85)); const sun = new THREE.DirectionalLight(0xffffff, 0.6); scene.add(sun);
+  const v3 = (a) => new THREE.Vector3(...a), cen = (P) => P.v.reduce((s, v) => s.map((x, i) => x + v[i] / P.v.length), [0, 0, 0]);
+  const wa = v3(vw.up), d0 = v3(vw.dir), wr = d0.clone().sub(wa.clone().multiplyScalar(d0.dot(wa))).normalize(), wr2 = wa.clone().cross(wr);   // the slice: about the vertical, facing the camera
+  const inWedge = (c) => { const p = v3(c), x = p.dot(wr), y = p.dot(wr2); return Math.abs(Math.atan2(y, x)) < (W / 2) * Math.PI / 180 && Math.hypot(x, y) > 1e-9; };
+  function add(P, colr, s = 1, shrink = 0.985, edge = 0x2a2218, eo = 1, off = [0, 0, 0], rot = null) {
+    const c = cen(P); let Vv = P.v.map((v) => v.map((x, i) => (c[i] + (x - c[i]) * shrink) * s - off[i]));
+    if (rot) Vv = Vv.map((v) => v3(v).applyMatrix4(rot).toArray());
+    const pos = [], line = [];
+    for (const f of P.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...Vv[f[0]], ...Vv[f[i]], ...Vv[f[i + 1]]); for (let i = 0; i < f.length; i++) line.push(...Vv[f[i]], ...Vv[f[(i + 1) % f.length]]); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: colr, roughness: 0.6, flatShading: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: edge, transparent: eo < 1, opacity: eo })));
+  }
+  let H = +(q.get('h') || J.radii['icosahedron (phi^3)'] * 1.08), dir = v3(vw.dir), up = v3(vw.up);
+  if (mode === 'slice') {
+    // a clean slice through the centre, seen front on like tree rings (as the app's X-ray slice): the mirror plane perpendicular to a
+    // two-fold axis, the exact cut of every piece drawn as a flat cap in its layer colour with dark seams, the next turns in continuing
+    // the rings to the centre; shared stations as ink rims and the sphere of reciprocation as a dashed gold ring (from p4-xray-<set>.json)
+    const n = v3(J.slice.normal), u = v3(J.slice.up), w = n.clone().cross(u);
+    const sect = (V) => {                                  // convex section of a convex point set by the plane n.x = 0, in (u, w) coordinates
+      const P = [];
+      for (let i = 0; i < V.length; i++) { const a = v3(V[i]), da = a.dot(n); if (Math.abs(da) < 2e-5) { P.push(a); continue; }   // corners rounded to 1e-6: on the plane within 2e-5
+        for (let j = i + 1; j < V.length; j++) { const b = v3(V[j]), db = b.dot(n); if (Math.abs(db) >= 2e-5 && da * db < 0) P.push(a.clone().add(b.clone().sub(a).multiplyScalar(da / (da - db)))); } }
+      if (P.length < 3) return null;
+      const Q = P.map((p) => [p.dot(u), p.dot(w)]).sort((x, y) => x[0] - y[0] || x[1] - y[1]), cr = (o, a, b) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+      const lo = [], hi = []; for (const p of Q) { while (lo.length > 1 && cr(lo[lo.length - 2], lo[lo.length - 1], p) <= 1e-12) lo.pop(); lo.push(p); }
+      for (const p of Q.slice().reverse()) { while (hi.length > 1 && cr(hi[hi.length - 2], hi[hi.length - 1], p) <= 1e-12) hi.pop(); hi.push(p); }
+      const R = lo.slice(0, -1).concat(hi.slice(0, -1)); let A = 0; for (let i = 0; i < R.length; i++) A += cr([0, 0], R[i], R[(i + 1) % R.length]); return Math.abs(A) > 1e-10 ? R : null;
+    };
+    const flat = (R, color, z, edge, lw) => {
+      const sh = new THREE.Shape(R.map((p) => new THREE.Vector2(p[0], p[1]))); const m = new THREE.Mesh(new THREE.ShapeGeometry(sh), new THREE.MeshBasicMaterial({ color, side: THREE.DoubleSide }));
+      m.position.z = z; scene.add(m);
+      if (edge != null) { const pts = [...R, R[0]].map((p) => new THREE.Vector3(p[0], p[1], z + 0.0004)); scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: edge }))); }
+    };
+    const shadeC = (c, k) => new THREE.Color(c).multiplyScalar(k);
+    for (let t = 0; t <= turns; t++) for (const P of J.pieces) {
+      const s = Math.pow(phi, -3 * t), R = sect(P.v.map((v) => v.map((x) => x * s)));
+      if (R) flat(R, shadeC(COL[P.o], 0.97 - 0.05 * t), 0, 0x3a3128);
+    }
+    const X = await fetch(`p4-xray-${SET}.json`).then((r) => r.json());
+    const tube = (R, r, color, z) => { const c = new THREE.CatmullRomCurve3([...R, R[0]].map((p) => new THREE.Vector3(p[0], p[1], z)), false, 'catmullrom', 0); scene.add(new THREE.Mesh(new THREE.TubeGeometry(c, R.length * 24, r, 8, false), new THREE.MeshBasicMaterial({ color }))); };
+    const shared = X.stations.filter((st) => st.shared && st.side === 'orig');
+    for (const st of shared) { const R = sect(st.v); if (R) tube(R, st.turn ? 0.009 : 0.016, 0x2b2620, 0.01); }
+    const ring = []; for (let i = 0; i < 240; i++) { const a = i / 240 * 2 * Math.PI; ring.push([X.rho * Math.cos(a), X.rho * Math.sin(a)]); }
+    for (let i = 0; i < 240; i += 2) { const c = new THREE.LineCurve3(new THREE.Vector3(...ring[i], 0.012), new THREE.Vector3(...ring[i + 1], 0.012)); scene.add(new THREE.Mesh(new THREE.TubeGeometry(c, 1, 0.011, 6, false), new THREE.MeshBasicMaterial({ color: 0xc9a227 }))); }
+    const cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.01, 200); cam.position.set(0, 0, 40); cam.up.set(0, 1, 0); cam.lookAt(0, 0, 0);
+    renderer.render(scene, cam);
+    window.__labels = shared.filter((st) => st.turn === 0).map((st) => { const R = sect(st.v); const p = R.reduce((b, q) => (q[1] > b[1] ? q : b)); return { name: st.name, x: (p[0] / H + 1) / 2 * PX, y: (1 - p[1] / H) / 2 * PX, r: Math.max(...R.map((q) => Math.hypot(...q))) }; });
+    window.__rho = { x: (X.rho * Math.cos(-0.6) / H + 1) / 2 * PX, y: (1 - X.rho * Math.sin(-0.6) / H) / 2 * PX };
+    document.title = 'ready'; return;
+  }
+  if (mode === 'kind') {
+    const P = J.pieces.find((p) => p.k === K), c = cen(P), cv = v3(c).normalize();
+    let side = dir.clone().sub(cv.clone().multiplyScalar(dir.dot(cv))).normalize();   // look from the side, outward up, slightly from above
+    dir = side.multiplyScalar(0.94).add(cv.clone().multiplyScalar(0.34)).normalize(); up = cv.clone().sub(dir.clone().multiplyScalar(cv.dot(dir))).normalize();
+    add(P, COL[P.o], 1, 1, 0x2a2218, 1, c);
+  } else {
+    for (let t = 0; t <= turns; t++) {
+      const s = Math.pow(phi, -3 * t);
+      for (const P of J.pieces) {
+        const c = cen(P);
+        if (inWedge(c)) continue;
+        if (mode === 'layer' && P.o !== LY) continue;
+        if (mode === 'loc') add(P, P.k === K && t === 0 ? COL[P.o] : PALE, s, 0.985, 0x6d6556, P.k === K && t === 0 ? 1 : 0.35);
+        else add(P, COL[P.o], s, 0.985, 0x2a2218, t ? 0.6 : 1);
+      }
+    }
+  }
+  const cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.01, 200); cam.position.copy(dir.clone().multiplyScalar(40)); cam.up.copy(up); cam.lookAt(0, 0, 0);
+  sun.position.copy(dir.clone().multiplyScalar(6).add(up.clone().multiplyScalar(5)).add(up.clone().cross(dir).multiplyScalar(-3)));
+  renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>

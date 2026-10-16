@@ -1,0 +1,63 @@
+<!doctype html><meta charset="utf-8"><title>P4 X-ray (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea;font-family:'DejaVu Sans',system-ui,sans-serif}canvas{display:block}
+.lab{position:fixed;font:600 22px 'DejaVu Sans',system-ui;color:#2b2620;background:#f4f1eae6;padding:1px 7px;border-radius:5px;white-space:nowrap;transform:translate(-50%,-50%)}
+.lab.s{font-weight:400;color:#5b5346}svg{position:fixed;inset:0;pointer-events:none}</style>
+<svg id="ov"></svg>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// X-ray cut through both cycles in one setting (?set=ends|middle&px=): every station as a see-through crystal shell, the near half
+// cut away by the mirror plane z = 0, the exact section rims drawn on the cut face (original warm by layer, reversed cool, shared ink),
+// the cut face banded by the original layers, and the sphere of reciprocation as faint glass. Data: p4-xray-<set>.json.
+(async function () {
+  const q = new URLSearchParams(location.search), SET = q.get('set') || 'ends', PX = +(q.get('px') || 1200);
+  const J = await fetch(`p4-xray-${SET}.json`).then((r) => r.json());
+  const COL = [0x4dd0e1, 0xc792ea, 0x5fd38a, 0xf08fc0, 0x9fd8ff, 0xff9a52], INK = 0x2b2620, COOL = 0x1f6aa5, GOLD = 0xc9a227;
+  const LAYER_OUT = { I: 5, ID: 0, D: 1, TI: 2, H: 3, RT: 4, 'I·φ³': 5 };                 // the layer just inside each station
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(PX, PX); renderer.setPixelRatio(1); renderer.localClippingEnabled = true;
+  document.body.prepend(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.95)); const sun = new THREE.DirectionalLight(0xffffff, 0.45); sun.position.set(3, 5, 6); scene.add(sun);
+  const clip = [new THREE.Plane(new THREE.Vector3(0, 0, -1), 0)];                               // keep z <= 0: the near half is cut away
+  const base = (n) => n.replace(/·φ.*$/, '');
+  const rI = J.stations.find((s) => s.name === 'I' && s.turn === 0).r[0];
+  const S = J.stations.filter((s) => (s.side === 'orig' ? s.turn === 0 : s.r[1] > rI * 0.98)).sort((a, b) => b.r[1] - a.r[1]);   // one turn only, no inner clutter
+  // shells: see-through crystal, edges
+  for (const st of S) {
+    const V = st.v, pos = [], line = [];
+    for (const f of st.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...V[f[0]], ...V[f[i]], ...V[f[i + 1]]); for (let i = 0; i < f.length; i++) line.push(...V[f[i]], ...V[f[(i + 1) % f.length]]); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    const orig = st.side === 'orig', c = st.shared ? 0xb8ab94 : orig ? COL[LAYER_OUT[base(st.name)] ?? 0] : 0x8cc0ea;
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: c, roughness: 0.35, metalness: 0.05, transparent: true, opacity: st.shared ? 0.14 : (orig ? 0.22 : 0.10), depthWrite: false, side: THREE.DoubleSide, clippingPlanes: clip, flatShading: true })));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: st.shared ? INK : orig ? 0x8a5a2b : COOL, transparent: true, opacity: st.shared ? 0.9 : orig ? 0.55 : 0.45, clippingPlanes: clip })));
+  }
+  // the cut face carries only the exact rims (no fills), so the glass shells of the far half read in depth
+  const tube = (pts, r, color) => {
+    const c = new THREE.CatmullRomCurve3([...pts, pts[0]].map((p) => new THREE.Vector3(p[0], p[1], 0.004)), false, 'catmullrom', 0);
+    scene.add(new THREE.Mesh(new THREE.TubeGeometry(c, pts.length * 24, r, 8, false), new THREE.MeshStandardMaterial({ color, roughness: 0.5 })));
+  };
+  for (const st of S) tube(st.sect, st.shared ? 0.016 : 0.0065 * (st.turn ? 0.7 : 1), st.shared ? INK : st.side === 'orig' ? 0xa0521d : COOL);
+  // sphere of reciprocation: faint glass, and its ring on the cut face
+  scene.add(new THREE.Mesh(new THREE.SphereGeometry(J.rho, 96, 64), new THREE.MeshStandardMaterial({ color: GOLD, transparent: true, opacity: 0.10, depthWrite: false, side: THREE.DoubleSide, clippingPlanes: clip })));
+  const ring = []; for (let i = 0; i < 240; i++) { const a = i / 240 * 2 * Math.PI; ring.push([J.rho * Math.cos(a), J.rho * Math.sin(a)]); }
+  for (let i = 0; i < 240; i += 2) { const a = ring[i], b = ring[i + 1]; const c = new THREE.LineCurve3(new THREE.Vector3(a[0], a[1], 0.006), new THREE.Vector3(b[0], b[1], 0.006)); scene.add(new THREE.Mesh(new THREE.TubeGeometry(c, 1, 0.009, 6, false), new THREE.MeshStandardMaterial({ color: GOLD }))); }
+  // camera: oblique onto the cut face, so the bowls of the far half show through
+  const H = J.Rout * 1.12, dir = new THREE.Vector3(0.55, -0.85, 0.72).normalize();
+  const cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.01, 200); cam.position.copy(dir.clone().multiplyScalar(40)); cam.up.set(0, 0.35, 1); cam.lookAt(0, 0, 0);
+  renderer.render(scene, cam);
+  // labels for the shared stations of this turn and for the sphere, with leaders to their rims
+  const ov = document.getElementById('ov'); ov.setAttribute('viewBox', `0 0 ${PX} ${PX}`); ov.setAttribute('width', PX); ov.setAttribute('height', PX);
+  const proj = (p) => { const v = new THREE.Vector3(p[0], p[1], p[2] || 0).project(cam); return [(v.x + 1) / 2 * PX, (1 - v.y) / 2 * PX]; };
+  const lab = (txt, at, to, cls = '') => {
+    const [x1, y1] = proj(at), [x2, y2] = to; ov.insertAdjacentHTML('beforeend', `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#2b2620" stroke-width="1.6"/><circle cx="${x1}" cy="${y1}" r="4" fill="#2b2620"/>`);
+    const d = document.createElement('div'); d.className = 'lab ' + cls; d.textContent = txt; d.style.left = x2 + 'px'; d.style.top = y2 + 'px'; document.body.appendChild(d);
+  };
+  const shared = S.filter((s) => s.shared && s.turn === 0).sort((a, b) => a.r[1] - b.r[1]);
+  shared.forEach((st, i) => {
+    const ang = Math.PI * (0.5 + 0.13 * i), pt = st.sect.reduce((b, p) => (Math.abs(Math.atan2(p[1], p[0]) - ang) < Math.abs(Math.atan2(b[1], b[0]) - ang) ? p : b));
+    const [x, y] = proj(pt); lab(`shared ${st.name}`, pt, [Math.max(x - 150 - 40 * i, 90), Math.max(y - 70 - 25 * i, 40)]);
+  });
+  { const at = [J.rho * Math.cos(-0.35), J.rho * Math.sin(-0.35), 0], [x, y] = proj(at); lab(`sphere of reciprocation`, at, [Math.min(x + 210, PX - 170), Math.min(y + 230, PX - 30)], 's'); }
+  document.title = 'ready';
+})();
+</script>
