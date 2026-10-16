@@ -51,9 +51,12 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 25 | The DICTO Spheroid-13 RD: the rhombic dodecahedron's 13 (a centre and its 12 face neighbours) fills space by translation alone; reshaped with flat faces, kept keyed, a true rhombic dodecahedron at its centre, the block reaches roundness 0.707 (thickness 0.15; the lattice's best single tile 0.748) | DICTO (the Hexa question, the rounded keyed quality, the true RD centre, the thicknesses, the name) | study checks; 40 wide starts | **tiling known**: the A3 radius-one perfect code (Kovačević and Tan 2018; x1 + 3x2 + 9x3 = 0 mod 13 in Kovačević 2026; Singer 1938); the rounded keyed block **not found** | 2026-10-13 (Zenodo 10.5281/zenodo.23332821) |
 | 26 | DICTO ATOM-13×13: thirteen twelve-around-one clusters side by side, six golden (Icosa-13, DESHI, Dodeca-13, UNITY/VENUS, DICTO-Star, Bodhi seed) and seven periodic (RD 13 / Spheroid-13 RD, DICTO skewed RD, Bain RD, Bilinski, regular-hexagon ED, truncated octahedron 4 + 5 + 4, DICTO Jewel), with 24 buildable kits; the seven periodic blocks are one tiling in seven shapes | DICTO (the members, names, the TO's 4 + 5 + 4 with its windows, the gold centre, the title) | kit and tiling checks | **the tiling known** (A3 perfect code, Kovačević–Tan 2018, Singer 1938); the thirteen together, the kits, the TO and Jewel blocks **not found** | 2026-10-13 (Zenodo 10.5281/zenodo.23333183) |
 | 27 | Capturing the In-betweens: the in-between stages of the Chain of Karma, Spheres of Dharma and Bodhi Seed taken as fused solids (the transitional shells); icosahedron + 20 CLEO is the great stellated dodecahedron, + 30 AXE the excavated dodecahedron (all 32 corners kept), + 12 caps the dodecahedron; the Bodhi centre + 60 Vajra (fine) is the rhombic hexecontahedron; Spheres of Dharma stage 7 is the convex DICTO Truncated-Icosahedral Hecatodihedron (102 faces: 12 pentagons, 30 rhombi, 60 triangles; 80 corners; see #28); 45 convex partial stages; Dharma piece names Stupa and Monkey Staff | DICTO (the observation in the app, the transitional-shell idea, the names) | 25 identification checks; nets checked | **the named solids known** (Kepler 1619; Coxeter et al. 1938; Unkelbach 1940); the routes through them built from DICTO's pieces, and the Hecatodihedron, **not found** in the catalogues searched | 2026-10-14 (Zenodo 10.5281/zenodo.23345502) |
-| 28 | The DICTO Truncated-Icosahedral Hecatodihedron: the truncated icosahedron with a Shield on each hexagon, at the height where the triangles of neighbouring Shields lie flat as rhombi; convex, 102 faces (12 regular pentagons, 30 rhombi, 60 triangles), 80 corners, 180 edges, only two edge angles; its 30 rhombi and 60 triangles touch one sphere, its 12 pentagons lie a little inside | DICTO (Spheres of Dharma stage 7; the name) | papers/tih/data/tih_check.py, from Polyhedraverse's TRANS_DHARMA_80 | **not found** (Conway's k6tI has 132 faces; searched: Conway notation (Hart), Johnson solids and near misses (incl. Kaplan's rectified truncated icosahedron), MathWorld and PolyhedronData, the Polytope Wiki) | 2026-10-14 |
+| 28 | The DICTO Truncated-Icosahedral Hecatodihedron: the truncated icosahedron with a Shield on each hexagon, at the height where the triangles of neighbouring Shields lie flat as rhombi; convex, 102 faces (12 regular pentagons, 30 rhombi, 60 triangles), 80 corners, 180 edges, only two edge angles; its 30 rhombi and 60 triangles touch one sphere, its 12 pentagons lie a little inside | DICTO (Spheres of Dharma stage 7; the name) | papers/tih/data/tih_check.py, from Polyhedraverse's TRANS_DHARMA_80 | **not found** named (Conway's k6tI has 132 faces; searched: Conway notation (Hart), Johnson solids and near misses (incl. Kaplan's rectified truncated icosahedron), MathWorld and PolyhedronData, the Polytope Wiki); **derived from a known solid** (V2, 2026-10-16, exact): its 20 Shield apexes are the canonical pentakis dodecahedron's three-fold vertices, so it is the joined truncated icosahedron jtI with its 12 five-fold corners cut flat | 2026-10-14; V2 2026-10-16 (Zenodo 10.5281/zenodo.23360857) |
 | 29 | Theaetetus: an icosahedron of edge 1 held exactly in the icosidodecahedron of edge 1 by 20 Cleo-Icos on its face centres (and 12 Aetos on its corners), locked against every turn and shift; the hollow is the core + 12 Aetos + 20 antiprisms, each antiprism a Cleo-Ico + 3 Sphen + 3 Sphenion (volumes 3 : 2 : 1); grown with the Spheres of Dharma layers (×2/φ) to the DICTO Hecatodihedron in two exact stories: the stations (215 pieces, every layer closed, 20 Atraktos) and 102 clean pieces (20 Cleo-Icos, 20 Kion, 12 frusta, 30 t1, 20 caps), the icosahedron and dodecahedron cut by the same 20 cones; all volumes exact in ℚ(√5), remainder 0. Paper: DICTO DOI: 10.5281/zenodo.23378070 (2026-10-15). | DICTO (the hold, the growth, the 102, all names) | studies/2026-10-15-icosa-star-hollow (exact.py, exact_stations.py, cut102.py) | the hollow's split is the shadow of Klitzing's segmentochoron K-4.137 (credited); the hold, the stations and the Kion **not found** (library + web, 2026-10-15) | 2026-10-15 |
 | 30 | A Fibonacci Spine: five periodic (body-centred cubic) packings of the DICTO Ogdoecontahedron in five 72° wedges round a five-fold axis (the icosahedral irrational twin), exact to radius 10; with the central copy, the copies removed along the axis are exactly the canonical Fibonacci cut-and-project chain for |h| < 12.81, its window set by a five-fold ring clashing with itself; beyond that minimal removal thins it (DICTO DOI: 10.5281/zenodo.23396361) | | |
+| 31 | The DICTO Ogdoecontahedron: the polar of the DICTO Hecatodihedron, a convex solid of 20 regular hexagons and 60 kites (102 corners, 180 edges), exact in ℚ(√5); copies joined on hexagons form diamond and pyrochlore networks and a bcc packing of (9225 − 3915√5)/608 ≈ 77.43%; exactly the canonical pentakis dodecahedron with its 20 three-fold corners cut flat (V2); with the Hecatodihedron it forms the self-dual DICTO Hecatogdoecontahedron (182 faces), whose core and hull are the classical truncated icosahedron–pentakis dodecahedron compound's (rectified TI and jtI) | DICTO (the inside-out idea, the name, the networks, the compound's name) | studies/2026-10-16-polar-dharma, ocd-pyrochlore, progenitors | **face arrangement known** (dual of L0(D), Antiprism); **derived from a known solid** (pentakis dodecahedron cut flat); the metric solid, its packings and the compound pairing **not found named** | 2026-10-16 (Zenodo 10.5281/zenodo.23404688, V2) |
+| 32 | Inverted Shells: the Spheres of Dharma (with the Hecatodihedron stage) reciprocated into an exact reversed golden cycle D ⊂ ID ⊂ Ogdoecontahedron ⊂ PD ⊂ I ⊂ RT ⊂ D·φ³, one kind of piece per layer; the great stellated dodecahedron locks into the outer gap at one size; a dual pair fits the inner gap in reverse order | DICTO (turning the cycle inside out, the names) | studies/2026-10-16-polar-dharma (exact) | polar reciprocation **known**; the reversed exact nest and its pieces **not found** | 2026-10-16 (Zenodo 10.5281/zenodo.23405029, V2) |
+| 33 | Double Vision – Both Cycles in One Space: the Spheres of Dharma and their polar reversal in one space; the sphere of reciprocation toggles between two exact settings (ρ² = φ²/4 sharing I and D, ρ² = 3φ²/4 sharing ID and RT) that can never coincide (3 is not a power of φ); cut against each other the cycles make one solid of exact convex pieces, 536 of 12 kinds (DICTO Interlock set 1) and 502 of 11 kinds (set 2) per turn | DICTO (both cycles in one space, the toggle, the interlock, the set names) | studies/2026-10-16-interlock (exact) | **not found** (common refinement of dissections is standard) | 2026-10-16 (Zenodo 10.5281/zenodo.23407106, V2) |
 
 Known results the apps show (kept here, with their numbers, as checks; not DICTO's findings; see the section at the end):
 
@@ -902,6 +905,30 @@ pieces. Names by DICTO.*
   icosahedra with dodecahedra; the Dogstar and its honeycomb are Hart's (1996). The King of Pentacles, the
   closed Stella-Corona and its network are DICTO's.
 
+## 33. Double Vision – Both Cycles in One Space (DICTO, 2026-10-16)
+
+- The Spheres of Dharma and their reversal (#32) in one space. The sphere of reciprocation is the one free choice: at ρ² = φ²/4 the cycles share
+  the icosahedron and dodecahedron, at 3φ²/4 the icosidodecahedron and triacontahedron; never both, since the settings differ by 3, not a power of φ.
+- The interlock: every piece of one cycle cut by every piece of the other, exact with remainder 0: DICTO Interlock set 1 (Dharma-Ends), 536 pieces of
+  12 kinds per turn; set 2 (Dharma-Middle), 502 of 11. Paper DICTO DOI 10.5281/zenodo.23407106.
+- In the app: Kaleidohedra, 3D+ → Double Vision (`?open=doubleVision`): the paper's preset of the nest-and-reverse engine; the toggle,
+  the two cycles as shells, the interlock with every piece named (I1·n / I2·n), one layer at a time.
+
+## 32. Inverted Shells (DICTO, 2026-10-16)
+
+- The Spheres of Dharma with the Hecatodihedron stage as a seventh station, every station reciprocated: D ⊂ ID ⊂ Ogdoecontahedron ⊂ PD ⊂ I ⊂ RT ⊂ D·φ³,
+  exact, closure φ⁹ in volume; every layer one kind of piece; the great stellated dodecahedron in the outer gap; a dual pair in the inner gap.
+  Paper DICTO DOI 10.5281/zenodo.23405029 (V2: the Ogdoecontahedron described as derived from the pentakis dodecahedron).
+
+## 31. The DICTO Ogdoecontahedron (DICTO, 2026-10-16)
+
+- The polar of the Hecatodihedron: 20 regular hexagons, 60 kites, 102 corners (90 on one sphere), 180 edges; no insphere or midsphere; exact.
+- Exactly the canonical pentakis dodecahedron with its 20 three-fold corners cut flat at the truncated icosahedron's hexagon planes (V2).
+- Hexagon-joined networks (diamond, pyrochlore joints), the bcc double network at 77.43%; densest lattice packing found 0.789260 (float).
+- The **DICTO Hecatogdoecontahedron** (DICTO's name): the Hecatodihedron and the Ogdoecontahedron interlocked in the truncated icosahedron's
+  midsphere; 182 faces, 182 corners, self-dual; core the rectified truncated icosahedron, hull the jtI, as for the classical TI–PD compound.
+  Paper DICTO DOI 10.5281/zenodo.23404688 (V2).
+
 ## 30. A Fibonacci Spine (DICTO, 2026-10-15)
 
 Paper: DICTO DOI: 10.5281/zenodo.23396361 ("A Fibonacci Spine in a Five-fold Chorus of Ogdoecontahedron Packings").
@@ -944,17 +971,22 @@ TRANS_DHARMA_80 by `papers/tih/data/tih_check.py`:
 
 - The truncated icosahedron (edge 1/φ here) with a **Shield** on each of its 20 hexagons: a low hexagonal pyramid whose apex is on
   the three-fold axis, at the height where the two triangles of neighbouring Shields across each hexagon–hexagon edge lie in one
-  plane. Those 60 pairs become **30 rhombi** (sides 0.65097, angles 56.68° and 123.32°); the 60 triangles across hexagon–pentagon
-  edges stay triangles (sides 1/φ, 0.65097, 0.65097); the **12 regular pentagons** are the truncated icosahedron's own.
+  plane. Those 30 pairs (60 triangles) become **30 rhombi** (sides 0.65097, angles 56.68° and 123.32°); the 60 triangles across hexagon–pentagon
+  edges stay triangles (sides 1/φ, 0.65097, 0.65097); the **12 regular pentagons** are the truncated icosahedron's own. (Those are 30 pairs of
+  triangles, 60 triangles; the earlier "60 pairs" was a slip, corrected in the paper's Version 2.)
 - **102 faces, 80 corners, 180 edges** (Euler 2); convex; only two edge angles, 159.45° and 163.53°. The 60 corners of the
   truncated icosahedron lie on one sphere (1.5315) and the 20 Shield apices on another (1.6057), as a regular dodecahedron of edge
   3/φ² = 1.14590 (3/φ times the truncated icosahedron's edge). Volume 14.4042 at truncated-icosahedron edge 1/φ.
 - **Touching sphere:** the 30 rhombi and 60 triangles are all 1.5 from the centre; the 12 pentagons are 1.4384 (the truncated
   icosahedron's pentagon distance). So it has **no insphere**. (#27 and the In-betweens paper v2 said all 102 faces were tangent;
   corrected 2026-10-14, paper v3.)
-- **Relation to known solids:** combinatorially it is Conway's hexakis truncated icosahedron k6tI (132 faces) with its 60 coplanar
-  triangle pairs merged into 30 rhombi; this flattened form was not found in the catalogues searched (Conway-notation lists, named
+- **Relation to known solids:** combinatorially it is Conway's hexakis truncated icosahedron k6tI (132 faces) with 30 coplanar
+  triangle pairs merged into 30 rhombi; this flattened form was not found named in the catalogues searched (Conway-notation lists, named
   polyhedra with 80 or 92 corners). Not an Archimedean, Catalan or Johnson solid.
+- **Version 2 (2026-10-16, exact in ℚ(√5); paper DICTO DOI 10.5281/zenodo.23360857):** the 20 Shield apexes are the 20 three-fold vertices of the
+  canonical pentakis dodecahedron (the truncated icosahedron's polar in its own midsphere, radius 1.5); the 102 face planes are the joined
+  truncated icosahedron jtI's 90 plus the 12 pentagon planes. So it is the jtI with its five-fold corners cut flat: an unnamed solid derived
+  from a known one. With its polar, the DICTO Ogdoecontahedron, it forms the DICTO Hecatogdoecontahedron (see #31).
 - In the app: Polyhedraverse, DICTO Transitional Shells; DICTO-TIC, Loop 2 (Dharma road), piece 115.
 
 ## 27. Capturing the In-betweens (DICTO, 2026-10-14)
@@ -966,7 +998,7 @@ TRANS_DHARMA_80 by `papers/tih/data/tih_check.py`:
   Vajra (fine) = the rhombic hexecontahedron. Each checked against an independent construction to 10⁻⁴.
 - **The DICTO Truncated-Icosahedral Hecatodihedron** (DICTO's name): Spheres of Dharma stage 7, the truncated icosahedron with a Shield on
   each hexagon; convex, 102 faces (12 regular pentagons, 30 rhombi, 60 triangles); 80 corners. Correction (2026-10-14): only the 30 rhombi and 60 triangles touch one sphere (radius 1.5); the 12 pentagons lie at 1.4384, so it has no insphere (see #28).
-  Not found in the catalogues searched.
+  Not found named in the catalogues searched; derived from the joined truncated icosahedron (see #28, Version 2).
 - **Counts:** 45 convex partial stages; Spheres of Dharma 107 whole-ring and 5,569 partial-ring stages counted.
 - **Names:** Stupa (pentagonal pyramid) and Monkey Staff (twisted pentagonal frustum) complete the Spheres of Dharma piece names.
 - **In the apps:** the DICTO Transitional Shells group in Polyhedraverse; the build movie in Multi-shell chains.
