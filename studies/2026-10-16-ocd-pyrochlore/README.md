@@ -518,3 +518,7 @@ its 5 nearest (the icosahedron's edge pattern), others ≥ 0.82 apart; the large
 Gap 1 − (12 + φ⁻³)/φ⁶ ≈ 31.8%, the Bodhi seed's ratios (Bodhi seed paper: only I and RT close among the icosahedral solids tested; the OCD
 Stella is pyritohedral). Exact proof to do. Without the outer form (`stella_ico13.py` → `data/stella-ico13.txt`): 12 pulled in to touch
 around an icosahedron of 0.6174 of the crystal's: 70.24% of the outline; with 20 gap icosahedra (0.3084): 73.42%.
+**Exact** (`scripts/stella_seed_exact.py` → `data/stella-seed-exact.txt`, Q(√5)): by the Minkowski argument S + φv ⊂ φ²S (touching at φ²v)
+and S/φ touches S + φv for every surface point v, so the seed closes iff no two of the twelve overlap, i.e. g_S(φ(v_i − v_j)/2) ≥ 1.
+The 12 farthest corners (squared radius 10/9 − 2√5/9) are on the 5-fold axes; of the 66 pairs, 30 have gauge exactly 1 (touching, each
+copy 5 others, the icosahedron's edges) and 36 exactly φ. So the seed closes exactly at φ², centre S/φ; gap share −69 + 31√5 ≈ 0.318107.
