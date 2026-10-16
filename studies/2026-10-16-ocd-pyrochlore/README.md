@@ -455,3 +455,10 @@ clash (with each other and the companions). Frameworks with icosahedra bridging 
 - **dia4** (4 tetrahedral triangles; a diamond network of companions): fills 13.8%; the interpenetration scan was not reliable (its neighbour
   radius missed the long bonds) and is to be redone.
 So face-to-face bridging keeps these crystals open; a dense two-solid crystal would need icosahedra in pockets rather than as bridges.
+
+### Puffing the stella cut (DICTO: "can't it puff out to fill the skin?"; `scripts/stella_puff_exact.py`, exact; scan float)
+Pushing the 6 cube-axis golden hexagons onto the square walls: they vanish before reaching them (the other golden faces close the solid first);
+36 corners, 24 quadrilaterals + 20 triangles, fill **2391/16 − 1063√5/16 ≈ 87.87%** (exact), still not touching the 6 square-wall neighbours.
+Pushing all 30 golden planes out together (float): 87.12% → 87.91% (1.01×) → 88.58% (1.03×, 6 golden faces left) → 88.70% from 1.05× on, all golden
+faces gone and the solid bounded by its triangles alone. Full filling only comes when the triangle planes go too, i.e. the cell itself (truncated
+octahedron, nothing golden). So the skin cannot be puffed away while keeping golden faces; the clean result stays the exact 87.12% packing.
