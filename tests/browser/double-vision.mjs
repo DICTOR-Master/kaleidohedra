@@ -47,7 +47,7 @@ await page.tap(`${panel} [data-dv-mode="layer"]`); await page.waitForTimeout(900
 await page.tap(`${panel} [data-dv-layer="4"]`); await page.waitForTimeout(700);
 console.log('layer:', await note()); assert.match(await note(), /H → RT.*180 pieces/);
 await page.screenshot({ path: `${SH}/dv-layer.png` });
-// the film (the ∞ control: Unwrap ring arrows in, Wrap ring arrows out, VHS pause): Unwrap plays (the slider appears and moves), tapping it again pauses, Wrap runs backwards; screenshots along the way
+// the film (the ∞ control: Wrap ◀ left ring, Unwrap ▶ right ring, VHS pause): Unwrap plays (the slider appears and moves), tapping it again pauses, Wrap runs backwards; screenshots along the way
 await page.tap(`${panel} [data-dv-mode="interlock"]`); await page.waitForTimeout(800);
 await page.tap(`${panel} [data-dv-film="unwrap"]`); await page.waitForTimeout(400);
 assert.equal(await page.locator(`${panel} .dv-film-row`).isHidden(), false, 'film slider shown');
