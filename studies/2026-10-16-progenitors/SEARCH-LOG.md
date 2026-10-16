@@ -82,3 +82,17 @@ what was found, and what remains unread. "Not found" means not found in the sour
 - Antiprism and Stella (software catalogues): not run.
 - Printed catalogues and journals (Coxeter, Cromwell, Holden, *Structural Topology* beyond Messer 1995).
 These are the remaining gaps before any public "new" claim.
+
+### H. The gap member between RT and I·φ³ (DICTO 2026-10-16: "one more should fit between RT and the icosahedron")
+- **Exact (`scripts/gap_member.py` → `data/gap-member.txt`):** in the Spheres of Dharma the RT → I·φ³ step is loose (the RT reaches 0.8115 of the way). The
+  dodecahedron–icosahedron hull family (pentakis-type) has exactly one member touching both: the hull of the RT's 12 five-fold corners and the
+  20 face centres of I·φ³. Icosahedron edge : dodecahedron edge = **9/φ⁴** (squared 81(47 − 21√5)/2 = 81/φ⁸), ≈ 1.313082; 60 faces; the RT lies
+  inside with its 12 five-fold corners on it, and it lies inside I·φ³ with its 20 three-fold corners at the face centres. Classical members for
+  comparison: X (DICTO Palintriacontahedron) 3/√5 ≈ 1.3416, the Catalan pentakis dodecahedron 3(7 + 5√5)/38 ≈ 1.435; the fully symmetric range is
+  (5 + 3√5)/10 to φ (Polytope Wiki).
+- **Other solids tried in that gap (float, snug around RT, then reach toward I·φ³):** H 0.9948, ID and X 0.9787, deltoidal hexecontahedron 0.9443,
+  truncated dodecahedron 0.9325, pentakis dodecahedron 0.9149, rhombicosidodecahedron 0.8754, truncated icosahedron 0.8682; triakis icosahedron and
+  dodecahedron too big. None touches both.
+- **Searched:** the 9/φ⁴ ratio or 1.3130 with pentakis / dodecahedron–icosahedron hull (web); Polytope Wiki and MathWorld pentakis pages;
+  Wassell–Benito (dual pair ratio φ/3), Bridges 2017 (φ²/√5). **Not found** as a named member. Status: an unnamed member of a known family,
+  distinguished by touching both RT and I·φ³ in the Dharma nest.
