@@ -68,3 +68,10 @@ The Dharma icosahedron (20 Cleo-Icos) and the dodecahedron D″ in the same circ
   hexagons, every face on the common insphere); hull = 32 corners on the common sphere, 60 triangles (a pentakis dodecahedron inscribed in a sphere).
   Core and hull are duals: the third member of the family midsphere compound (ID / RT) · H–O compound (rTI / dual) · Hypsicles twins (TI-like / pentakis-like).
 - **Place:** the twins with their hull sit in the loose I → ID gap, the same place as the Cleo star and its hull (2/3)·D, which is golden-exact.
+
+## Step 12 (exact): the full-height icosidodecahedron star and its hull X: `scripts/id_star.py` → `data/id-star.txt`
+DICTO: shortening the spikes to fit "feels like cheating; one more solid is needed". The Dharma ID with its central pyramids flipped out at full
+height: 20 triangle tips at radius² 3 + 4√5/3, 12 pentagon tips at 5/2 + 11√5/10 (the same points as the Dodeca star's tips: the ID's pentagons
+lie in D's face planes). Their hull **X**: 32 corners, 60 triangles, every face with cos² 1/9 (once) and 1/3 (twice), i.e. angles 70.53°, 54.74°,
+54.74°: half a rhombic-dodecahedron rhombus. All nine stations lie strictly inside X; X and I·φ³ interlock (X's 20 three-fold corners outside
+I·φ³, all 12 of I·φ³'s corners outside X): X bridges one turn to the next. Renders: `renders/id-star.png`.

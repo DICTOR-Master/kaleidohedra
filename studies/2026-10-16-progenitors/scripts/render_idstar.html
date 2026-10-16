@@ -1,0 +1,33 @@
+<!doctype html><meta charset="utf-8"><title>ID star (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// The full-height icosidodecahedron star (?mode=star|inX|interlock&px=): the ID (wisteria) with 20 triangular spikes (cyan) and 12 pentagonal
+// spikes (gold), at the height of its own central pyramids; inside glass X (the hull of its 32 tips); X (gold) interlocked with the next-turn
+// icosahedron I·φ³ (cyan). Orthographic, bearing B, house palette. Data: id-star-render.json.
+(async function () {
+  const q = new URLSearchParams(location.search), MODE = q.get('mode') || 'star', PX = +(q.get('px') || 1200);
+  const J = await fetch('id-star-render.json').then((r) => r.json());
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(PX, PX); renderer.setPixelRatio(1);
+  document.body.prepend(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.85)); const sun = new THREE.DirectionalLight(0xffffff, 0.6); scene.add(sun);
+  const v3 = (a) => new THREE.Vector3(...a), dir = v3(J.view.dir), up = v3(J.view.up);
+  function add(S, color, op) {
+    const pos = [], line = [];
+    for (const f of S.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...S.v[f[0]], ...S.v[f[i]], ...S.v[f[i + 1]]); for (let i = 0; i < f.length; i++) line.push(...S.v[f[i]], ...S.v[f[(i + 1) % f.length]]); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, roughness: 0.5, flatShading: true, side: THREE.DoubleSide, transparent: !!op, opacity: op || 1, depthWrite: !op, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, transparent: !!op, opacity: op ? 0.5 : 1 })));
+  }
+  const star = () => { add(J.ID, 0xc792ea); J.spikes.forEach((s, i) => add(s, J.kinds[i] === 3 ? 0x4dd0e1 : 0xe8b84a)); };
+  let H = 2.75;
+  if (MODE === 'star') star();
+  if (MODE === 'inX') { star(); add(J.X, 0xf3e2b5, 0.18); }
+  if (MODE === 'interlock') { add(J.X, 0xe8b84a); add(J.Ip3, 0x4dd0e1); }
+  const cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.01, 200); cam.position.copy(dir.clone().multiplyScalar(40)); cam.up.copy(up); cam.lookAt(0, 0, 0);
+  sun.position.copy(dir.clone().multiplyScalar(6).add(up.clone().multiplyScalar(5)).add(up.clone().cross(dir).multiplyScalar(-3)));
+  renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>
