@@ -37,3 +37,11 @@ O's 90 sphere corners kiss H's faces, O's 12 five-fold corners poke out through 
   its normal through a core corner: the polar of the core. Core and hull are a dual pair, as the octahedron and cube are for the stella octangula.
 - Known solids: the rectified truncated icosahedron and its dual (Conway aT I and its dual). The H–O compound as their source is to be checked
   in the reference library before any claim.
+
+## Step 7 (exact): core and hull as stations: `scripts/core_hull_in_cycle.py` → `data/core-hull.txt`
+**The 182 count (DICTO):** the O–H compound has 102 + 80 = 182 faces and 80 + 102 = 182 corners and is self-dual (its polar in the same sphere
+swaps H and O), as the icosahedron–dodecahedron compound has 32 and 32. There every face reaches the core (ID, 32 faces) and every corner the hull
+(RT, 32 corners); here 90 pairs only kiss (O's 90 sphere corners on H's 90 tangent faces), so core and hull have 182 − 90 = 92 each.
+**Stations:** the golden cycle takes both, exactly: **I ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ hull ⊂ RT ⊂ I·φ³** (O at 3φ²/4). rTI's 90 corners lie on TI's edges;
+the hull's corners include H's 80, which lie on RT's faces; TI touches the hull at 60 corners. The cycle now holds the core and hull of both pairs:
+ID and RT (icosahedron–dodecahedron), rTI and its dual (Hecatodihedron–Ogdoecontahedron). In this cycle O sits at 3φ²/4, not at its compound size 9/4.
