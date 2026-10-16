@@ -529,3 +529,8 @@ vs exact 0.318107; slivers), unlike the Bodhi seed whose zonotopes use only the 
 `data/stella-seed-regions.txt`: one region per body by separating planes (corner-contact planes x·v̂ = |v|/φ, neighbour contact faces) does
 not tile (overlap 0.10, sum 22.661 of 23.256, unequal copy regions): neighbours meet along edges where several faces tie, so the contact
 "face" is not unique. Next: symmetric separating planes (bisectors of the tied faces, or the T_h chamber cut first), then cones per region.
+
+## OCD off-joints study (DICTO 2026-10-17: Ogdoecontahedra placed off their hexagon joints at a similar density)
+
+- **Already found (Step 14):** the densest lattice packing found is off the joints: 78.93% (float), above the hexagon-joined bcc packing's 77.43% (exact); 12 contacts per copy, 10 on hexagons and 2 on kites; its gap is one connected labyrinth.
+- **Part 1, the seed pattern** (`scripts/ocd_seed.py` → `data/ocd-seed.txt`, float): 12 OCDs on the 5-fold axes of an outer OCD close at K = 2.8240, not φ² (2.6180); the largest centre OCD is 0.8232, not 1/φ; the 12 and centre fill 55.8% of the outer form (gap 44.2%), against 68.2% for the Bodhi seed's pattern. So the OCD does **not** close as the Bodhi seed does, unlike the DICTO OCD Stella.
