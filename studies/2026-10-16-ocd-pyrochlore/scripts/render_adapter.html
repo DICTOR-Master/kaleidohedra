@@ -1,0 +1,33 @@
+<!doctype html><meta charset="utf-8"><title>Golden-fill adapter (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// The golden-fill adapter (Fable 2026-10-16): the cap on each star-tip triangle, the three-fold corner of a rhombic triacontahedron cut through
+// its three neighbouring corners. ?mode=alone (one piece, large; &az=deg) | cell (all 24 on one OCD inside its glass Voronoi cell).
+(async function () {
+  const q = new URLSearchParams(location.search), MODE = q.get('mode') || 'alone', PX = +(q.get('px') || 1100), AZ = +(q.get('az') || 0) * Math.PI / 180;
+  const J = await fetch('adapter-render.json').then((r) => r.json());
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(PX, PX); renderer.setPixelRatio(1);
+  document.body.prepend(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.85)); const sun = new THREE.DirectionalLight(0xffffff, 0.65); scene.add(sun);
+  function add(S, color, op, off) {
+    const pos = [], line = [], o = off || [0, 0, 0], V = S.v.map((v) => v.map((x, i) => x - o[i]));
+    for (const f of S.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...V[f[0]], ...V[f[i]], ...V[f[i + 1]]); for (let i = 0; i < f.length; i++) line.push(...V[f[i]], ...V[f[(i + 1) % f.length]]); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, roughness: 0.45, flatShading: true, side: THREE.DoubleSide, transparent: !!op, opacity: op || 1, depthWrite: !op, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, transparent: !!op, opacity: op ? 0.4 : 1 })));
+  }
+  let H, target = new THREE.Vector3(), dir;
+  if (MODE === 'alone') {
+    const P = J.adapters[0], c = P.v.reduce((s, v) => s.map((x, i) => x + v[i] / P.v.length), [0, 0, 0]); add(P, 0xc792ea, 0, c);
+    const out = new THREE.Vector3(...c).normalize(); const side = new THREE.Vector3(0, 0, 1).cross(out).normalize();
+    dir = out.clone().multiplyScalar(0.55).add(side.clone().multiplyScalar(Math.cos(AZ))).add(out.clone().cross(side).multiplyScalar(Math.sin(AZ))).normalize();
+    H = 0.2;
+  } else { add(J.ocd, 0xe8b84a); for (const a of J.adapters) add(a, 0xc792ea); add(J.cell, 0xe6eef5, 0.13); dir = new THREE.Vector3(0.55, 0.42, 0.72).normalize(); H = 1.0; }
+  const cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.001, 100); cam.position.copy(dir.clone().multiplyScalar(20)); cam.up.set(0, 0, 1); cam.lookAt(target);
+  sun.position.copy(dir.clone().multiplyScalar(5).add(new THREE.Vector3(0, 0, 4)));
+  renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>
