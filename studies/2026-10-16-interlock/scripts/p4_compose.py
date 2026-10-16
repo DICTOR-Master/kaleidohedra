@@ -72,3 +72,22 @@ if os.path.exists(f'{src}/xray-ends.png'):
         img.paste(im, (x, 130)); t, sub, n, _ = NS[s]
         ctext(d, x + im.width / 2, 22, f'{t}, {rr}', F(40, True)); ctext(d, x + im.width / 2, 76, sub, F(28), MUTE); x += im.width + 40
     tag(img, d); img.save('renders/p4-xray.png'); print('xray', img.size)
+
+# slice: Figure 2 final (DICTO: "same type as the hero pictures, sliced clean through the middle like the X-ray slice in the app, front on
+# like tree rings"), from render_p4.html?mode=slice via shoot_p4_slice.mjs; labels at the anchors the page reports
+if os.path.exists(f'{src}/slice-ends.png'):
+    panels = []
+    for s in ('ends', 'middle'):
+        im = Image.open(f'{src}/slice-{s}.png').convert('RGB'); A = json.load(open(f'{src}/slice-{s}.json')); d = ImageDraw.Draw(im)
+        for j, L in enumerate(sorted(A['labels'], key=lambda L: L['r'])):
+            tx, ty = 1400 - 250, 120 + 70 * j; d.line((L['x'], L['y'], tx - 8, ty + 16), fill=INK, width=3); d.ellipse((L['x'] - 6, L['y'] - 6, L['x'] + 6, L['y'] + 6), fill=INK)
+            d.text((tx, ty), f'shared {L["name"]}', font=F(32, True), fill=INK)
+        r = A['rho']; tx, ty = 1400 - 420, 1400 - 90; d.line((r['x'], r['y'], tx + 60, ty), fill=(150, 120, 30), width=3)
+        d.text((tx, ty), 'sphere of reciprocation', font=F(30), fill=(120, 95, 20))
+        panels.append(im.crop(bbox(im, 20)))
+    h = max(im.height for im in panels); w = sum(im.width for im in panels) + 120
+    img = Image.new('RGB', (w, h + 170), BG); d = ImageDraw.Draw(img); x = 40
+    for im, s, rr in zip(panels, ('ends', 'middle'), ('ρ² = φ²/4', 'ρ² = 3φ²/4')):
+        img.paste(im, (x, 130)); t, sub, n, _ = NS[s]
+        ctext(d, x + im.width / 2, 22, f'{t}, {rr}', F(40, True)); ctext(d, x + im.width / 2, 76, sub, F(28), MUTE); x += im.width + 40
+    tag(img, d); img.save('renders/p4-slice.png'); print('slice', img.size)
