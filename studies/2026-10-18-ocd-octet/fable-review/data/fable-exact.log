@@ -1,0 +1,283 @@
+setup 3.3 s {'key_base_at_edge_midpoints': False, 'key_base_splits_edge_in_ratio': 'phi : 1', 'hexagon_inside_key_base': True, 'key_mirror_symmetric_xy': False}
+frame 12.4 s; overlapping pairs 0
+keyed kit 17.6 s {'proper_symmetries': 12, 'improper_symmetries': 0, 'proper_tested': 12, 'improper_tested': 12}
+middle 19.9 s; cells [('octa', 0.029778057520575267), ('T+', 0.02543349747941954), ('octa', 0.029778057520575267), ('T-', 0.02543349747941954)] keyed hits [('OCD', '', 0.015343917203265924), ('OCD', '', 0.015343917203265924), ('key', '+++', 0.0016110514629593259), ('key', '-++', 0.0016110514629593259), ('key', '+--', 0.0016110514629593259), ('key', '---', 0.0016110514629593259)]
+M pairs 23.4 s 84 0 0
+pieces 34.6 s; full kit sum == cell: True
+core 36.3 s 72.0 0.010128977281420481
+{
+ "ocd_faces": 80,
+ "ocd_corners": 102,
+ "cell": "32/27|16/27 (2.510262505)",
+ "octa_vol": "64/81|32/81 (1.673508337)",
+ "tet_vol": "16/81|8/81 (0.418377084)",
+ "ocd_vol": "-1000/1539|1240/1539 (1.151867636)",
+ "frame_volume_sum_equals_cell": true,
+ "ocd_inside_octa": true,
+ "ocd_corners_on_octa": 48,
+ "joint_hexagons": {
+  "+++": 6,
+  "++-": 6,
+  "+-+": 6,
+  "+--": 6,
+  "-++": 6,
+  "-+-": 6,
+  "--+": 6,
+  "---": 6
+ },
+ "key_apex": [
+  "-1/3|1/3",
+  "-1/3|1/3",
+  "-1/3|1/3"
+ ],
+ "key_base": [
+  [
+   "2/3|0",
+   "-1/3|1/3",
+   "0|0"
+  ],
+  [
+   "-1/3|1/3",
+   "0|0",
+   "2/3|0"
+  ],
+  [
+   "0|0",
+   "2/3|0",
+   "-1/3|1/3"
+  ]
+ ],
+ "key_base_on_octa_edges": true,
+ "key_base_at_edge_midpoints": false,
+ "key_base_splits_edge_in_ratio": "phi : 1",
+ "key_vol": "-44/81|20/81 (0.008905673)",
+ "key_outside_octa_exact": true,
+ "key_inside_Tplus_exact": true,
+ "hexagon_corners_inside_key_base": 6,
+ "hexagon_inside_key_base": true,
+ "key_mirror_symmetric_xy": false,
+ "frame_bodies_tested": 75,
+ "frame_pairs_with_positive_overlap": 0,
+ "cone_octa_vol_each": "32/243|16/243 (0.278918056)",
+ "cones_sum_to_octa": true,
+ "cap_vols_all_equal": true,
+ "cap_vol": "1108/4617|-316/4617 (0.086940117)",
+ "caps_plus_ocd_equals_octa": true,
+ "keys_tested": 104,
+ "key_pairs_with_positive_overlap": 0,
+ "keys_in_Tplus": 4,
+ "keys_in_Tminus": 4,
+ "keys_in_Tplus_fully": true,
+ "keys_in_Tminus_fully": true,
+ "keys_vs_octahedra_positive_overlap": 0,
+ "keyed_OCD_vol": "-7688/1539|4280/1539 (1.223113024)",
+ "dented_tet_vol": "64/27|-8/9 (0.382754390)",
+ "dented_tets_equal": true,
+ "keyed_kit_sum_equals_cell": true,
+ "dented_tet_symmetry": {
+  "proper_symmetries": 12,
+  "improper_symmetries": 0,
+  "proper_tested": 12,
+  "improper_tested": 12
+ },
+ "dented_tet_is_chiral": true,
+ "star_corners": 11,
+ "H_corners": 10,
+ "H_faces": 12,
+ "H_vol": "0|4/81 (0.110423110)",
+ "H_vols_all_equal": true,
+ "middle_hulls_near_origin": 108,
+ "H_inversion_symmetric": true,
+ "H_cells_hit": [
+  [
+   "octa",
+   [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "5/243|1/243 (0.029778058)"
+  ],
+  [
+   "T+",
+   [
+    0.539345,
+    0.539345,
+    0.539345
+   ],
+   "-5/243|5/243 (0.025433497)"
+  ],
+  [
+   "octa",
+   [
+    0.0,
+    1.078689,
+    1.078689
+   ],
+   "5/243|1/243 (0.029778058)"
+  ],
+  [
+   "T-",
+   [
+    -0.539345,
+    0.539345,
+    0.539345
+   ],
+   "-5/243|5/243 (0.025433497)"
+  ]
+ ],
+ "H_vol_equals_sum_over_cells": true,
+ "H_within_4_cells_round_edge": true,
+ "H_keyed_OCD_hits": [
+  [
+   "OCD",
+   [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "",
+   "-155/4617|101/4617 (0.015343917)"
+  ],
+  [
+   "OCD",
+   [
+    0.0,
+    1.078689,
+    1.078689
+   ],
+   "",
+   "-155/4617|101/4617 (0.015343917)"
+  ],
+  [
+   "key",
+   [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "+++",
+   "-1/27|7/405 (0.001611051)"
+  ],
+  [
+   "key",
+   [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "-++",
+   "-1/27|7/405 (0.001611051)"
+  ],
+  [
+   "key",
+   [
+    0.0,
+    1.078689,
+    1.078689
+   ],
+   "+--",
+   "-1/27|7/405 (0.001611051)"
+  ],
+  [
+   "key",
+   [
+    0.0,
+    1.078689,
+    1.078689
+   ],
+   "---",
+   "-1/27|7/405 (0.001611051)"
+  ]
+ ],
+ "H_hits_only_its_two_OCDs": true,
+ "H_key_hits_count": 4,
+ "H_key_hits_belong_to_its_two_OCDs": true,
+ "middle_vol": "994/4617|-1466/23085 (0.073291070)",
+ "middle_vol_matches_step11": true,
+ "middle_vol_without_keys": "310/4617|26/4617 (0.079735276)",
+ "middle_pairs_tested": 84,
+ "middle_pairs_with_hull_overlap": 0,
+ "middle_pairs_with_PIECE_overlap": 0,
+ "middle_pair_details": [],
+ "notched_cap_vols_all_equal": true,
+ "notched_cap_vol": "32/243|-8/243 (0.058071836)",
+ "notched_cap_matches_step11": true,
+ "middles_notching_one_cap": 4,
+ "cap_notch_shares": [
+  "-7502/4617|3376/4617",
+  "136/81|-182/243"
+ ],
+ "cap_notch_shares_equal": false,
+ "notched_tet_vol": "166/81|-326/405 (0.249486023)",
+ "notched_tets_equal_volume": true,
+ "notched_tet_matches_step11": true,
+ "middles_notching_one_tet": 6,
+ "tet_notch_shares_equal": true,
+ "tet_notch_share": "13/243|-17/1215 (0.022211395)",
+ "middle_split_over_its_cells": [
+  [
+   "octa",
+   "250/4617|-82/4617 (0.014434140)"
+  ],
+  [
+   "T+",
+   "13/243|-17/1215 (0.022211395)"
+  ],
+  [
+   "octa",
+   "250/4617|-82/4617 (0.014434140)"
+  ],
+  [
+   "T-",
+   "13/243|-17/1215 (0.022211395)"
+  ]
+ ],
+ "full_kit_sum_equals_cell": true,
+ "full_kit_sum": "32/27|16/27 (2.510262505)",
+ "c1c2_projected_is_sum_of_two_spokes_over_phi": true,
+ "rhombus_edges_equal": true,
+ "rhombus_cos_at_c1": "-1/4|1/4 (0.309016994)",
+ "rhombus_angle_at_c1_deg": 72.0,
+ "rhombus_is_thick_penrose_72_108": true,
+ "rhombus_long_diagonal_equals_tip_radius": true,
+ "rhombus_matches_step15": true,
+ "prism_and_H_vol": "-10/297|98/4455 (0.015518443)",
+ "core_vol": "-36734/50787|16658/50787 (0.010128977)",
+ "core_matches_step15": true,
+ "core_hits": [
+  [
+   "OCD",
+   [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "1592/4617|-3532/23085 (0.002694733)"
+  ],
+  [
+   "OCD",
+   [
+    0.0,
+    1.078689,
+    1.078689
+   ],
+   "1592/4617|-3532/23085 (0.002694733)"
+  ]
+ ],
+ "core_clear_of_keys": true,
+ "rest_vol": "47668/50787|-99416/253935 (0.063162092)",
+ "prism_between_OCDs_within_4_cells_vol": "644780/555579|-1425226/2777895 (0.013318639)",
+ "core_share_of_full_prism_between_OCDs": 0.7605114364402821,
+ "impA_key_hex_vol": "-11/27|5/27 (0.006679255)",
+ "impA_key_hex_share_of_key": 0.7500000000000031,
+ "impA_key_hex_corners": 10,
+ "impA_trimmed_keys_meeting_H": [
+  "2/243|-4/1215 (0.000868912)",
+  "2/243|-4/1215 (0.000868912)",
+  "2/243|-4/1215 (0.000868912)",
+  "2/243|-4/1215 (0.000868912)"
+ ],
+ "impA_trimmed_key_clear_of_H": false
+}
+done 37.0 s

@@ -1,0 +1,328 @@
+{
+ "step12_angle_sum_audit": {
+  "keyed_OCD": {
+   "faces_with_angles": 110,
+   "angle_sum_ok": 102,
+   "angle_sum_wrong": 8,
+   "examples": [
+    {
+     "source": "OCD face = key face = octahedron face = tetrahedron face",
+     "angles": [
+      "30.00",
+      "120",
+      "30.00",
+      "60"
+     ],
+     "sum": 240.0,
+     "expected": 360
+    },
+    {
+     "source": "OCD face = key face = octahedron face = tetrahedron face",
+     "angles": [
+      "60",
+      "30.00",
+      "120",
+      "30.00"
+     ],
+     "sum": 240.0,
+     "expected": 360
+    },
+    {
+     "source": "OCD face = key face = octahedron face = tetrahedron face",
+     "angles": [
+      "60",
+      "30.00",
+      "120",
+      "30.00"
+     ],
+     "sum": 240.0,
+     "expected": 360
+    },
+    {
+     "source": "OCD face = key face = octahedron face",
+     "angles": [
+      "120",
+      "30.00",
+      "60",
+      "30.00"
+     ],
+     "sum": 240.0,
+     "expected": 360
+    },
+    {
+     "source": "OCD face = key face = octahedron face = tetrahedron face",
+     "angles": [
+      "30.00",
+      "120",
+      "30.00",
+      "60"
+     ],
+     "sum": 240.0,
+     "expected": 360
+    },
+    {
+     "source": "OCD face = key face = octahedron face",
+     "angles": [
+      "30.00",
+      "60",
+      "30.00",
+      "120"
+     ],
+     "sum": 240.0,
+     "expected": 360
+    }
+   ]
+  },
+  "middle": {
+   "faces_with_angles": 38,
+   "angle_sum_ok": 30,
+   "angle_sum_wrong": 8,
+   "examples": [
+    {
+     "source": "OCD face = key face = octahedron face = tetrahedron face",
+     "angles": [
+      "30.00",
+      "60",
+      "30.00",
+      "120"
+     ],
+     "sum": 240.0,
+     "expected": 360
+    },
+    {
+     "source": "OCD face = key face = octahedron face = tetrahedron face",
+     "angles": [
+      "30.00",
+      "60",
+      "30.00",
+      "120"
+     ],
+     "sum": 240.0,
+     "expected": 360
+    },
+    {
+     "source": "OCD face = key face = octahedron face = tetrahedron face",
+     "angles": [
+      "30.00",
+      "120",
+      "30.00",
+      "60"
+     ],
+     "sum": 240.0,
+     "expected": 360
+    },
+    {
+     "source": "OCD face = key face = octahedron face = tetrahedron face",
+     "angles": [
+      "120",
+      "30.00",
+      "60",
+      "30.00"
+     ],
+     "sum": 240.0,
+     "expected": 360
+    },
+    {
+     "source": "star-hull face",
+     "angles": [
+      "18.00",
+      "Penrose 144",
+      "90",
+      "Penrose 36"
+     ],
+     "sum": 288.0,
+     "expected": 360
+    },
+    {
+     "source": "star-hull face",
+     "angles": [
+      "Penrose 36",
+      "90",
+      "Penrose 144",
+      "18.00"
+     ],
+     "sum": 288.0,
+     "expected": 360
+    }
+   ]
+  },
+  "cap": {
+   "faces_with_angles": 14,
+   "angle_sum_ok": 10,
+   "angle_sum_wrong": 4,
+   "examples": [
+    {
+     "source": "OCD face = key face = octahedron face",
+     "angles": [
+      "142.24",
+      "82.24",
+      "113.28",
+      "60",
+      "66.72"
+     ],
+     "sum": 464.48,
+     "expected": 540
+    },
+    {
+     "source": "OCD face = key face = octahedron face = tetrahedron face",
+     "angles": [
+      "82.24",
+      "113.28",
+      "60",
+      "66.72",
+      "142.24"
+     ],
+     "sum": 464.48,
+     "expected": 540
+    },
+    {
+     "source": "OCD face = key face = octahedron face = tetrahedron face",
+     "angles": [
+      "82.24",
+      "142.24",
+      "66.72",
+      "60",
+      "113.28"
+     ],
+     "sum": 464.48,
+     "expected": 540
+    },
+    {
+     "source": "OCD face = key face = octahedron face = tetrahedron face",
+     "angles": [
+      "82.24",
+      "113.28",
+      "60",
+      "66.72",
+      "142.24"
+     ],
+     "sum": 464.48,
+     "expected": 540
+    }
+   ]
+  },
+  "tet_notched": {
+   "faces_with_angles": 48,
+   "angle_sum_ok": 30,
+   "angle_sum_wrong": 18,
+   "examples": [
+    {
+     "source": "star-hull face",
+     "angles": [
+      "Penrose 36",
+      "90",
+      "Penrose 144",
+      "18.00"
+     ],
+     "sum": 288.0,
+     "expected": 360
+    },
+    {
+     "source": "star-hull face",
+     "angles": [
+      "18.00",
+      "Penrose 36",
+      "90",
+      "Penrose 144"
+     ],
+     "sum": 288.0,
+     "expected": 360
+    },
+    {
+     "source": "star-hull face",
+     "angles": [
+      "Penrose 144",
+      "18.00",
+      "Penrose 36",
+      "90"
+     ],
+     "sum": 288.0,
+     "expected": 360
+    },
+    {
+     "source": "star-hull face",
+     "angles": [
+      "Penrose 36",
+      "90",
+      "Penrose 144",
+      "18.00"
+     ],
+     "sum": 288.0,
+     "expected": 360
+    },
+    {
+     "source": "star-hull face",
+     "angles": [
+      "Penrose 144",
+      "90",
+      "Penrose 36",
+      "18.00"
+     ],
+     "sum": 288.0,
+     "expected": 360
+    },
+    {
+     "source": "star-hull face",
+     "angles": [
+      "18.00",
+      "Penrose 144",
+      "90",
+      "Penrose 36"
+     ],
+     "sum": 288.0,
+     "expected": 360
+    }
+   ]
+  }
+ },
+ "key_side_face": {
+  "edges2": [
+   "20/9|-8/9",
+   "8/3|-8/9",
+   "20/9|-8/9"
+  ],
+  "angles_deg": [
+   116.565,
+   31.717,
+   31.717
+  ],
+  "cos2_exact": [
+   "1/5|0",
+   "1/2|1/10",
+   "1/2|1/10"
+  ],
+  "apex_sides_equal": true,
+  "apex_cos2_is_1_over_5": true,
+  "note": "half golden rhombus cut along its long diagonal has angles 116.57 (cos^2 = 1/5, cos < 0) and 31.72, 31.72"
+ },
+ "key_base_equilateral": true,
+ "H_hull_corners": 10,
+ "H_corners_are_the_10_tips": true,
+ "H_faces": 12,
+ "H_face_sizes": [
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  5,
+  5
+ ],
+ "tip_pentagons_perpendicular_to_axis": true,
+ "tip_pentagon_regular": true,
+ "pentagon_centres_axial_gap": 0.35048740807942247,
+ "pentagon_centres_sideways_shift": 0.35048740807942236,
+ "pentagon_circumradius": 0.35048740807942236,
+ "sideways_shift_equals_circumradius_exact": true,
+ "tip_pentagon_edge": 0.4120226591665965,
+ "axial_gap_equals_sideways_shift_exact": true,
+ "corner_to_tip_axial_drop": 0.1280989401439129,
+ "c1_c2_axial": -0.09428952779159662,
+ "note": "ring 2 = point reflection of ring 1 through m: in projection a half turn, which for a regular pentagon equals a 36-degree turn",
+ "mark": "DICTO · dictospheres.com"
+}
