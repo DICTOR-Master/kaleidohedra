@@ -19,3 +19,10 @@ Source: studies/2026-10-18-ocd-octet (steps 1–27, Fable review ba28bd0), envel
 1. Own study folder; Fable exact check of the minimal set; 2. 3D page; 3. printable STL per piece with the DICTO mark (scale to agree); 4. piece names in DICTO's scheme "DICTO <utility> set n (source)" — proposed, DICTO approves; 5. prior-art note; later: app world, paper/Zenodo.
 ## Outside the plan (noted only)
 - bcc golden kit (golden gap unsolved), OCD-specific Penrose stars as their own art network.
+
+## Decisions (DICTO 10-18)
+- Go ahead with projects 1, 2, 3. Project 2: **whole middle piece** (minimal, 3 shapes). First step for each: **Fable exact check + 3D page**; STL and names after. Print size: **octahedron edge 60 mm**.
+- DICTO: "does this include sets with cuboctahedron, and new dodecahedral shape derived kit?" → added as variants of project 3:
+  - **3b Cuboctahedron set** (refined envelope kit, step 24/25): golden envelope + φ⁻² vertex cuboctahedron + wedge + cut-down tetrahedron L/R (4 shapes).
+  - **3c Cuboctahedron + dodecahedron set** (new): as 3b, with each cut-down tetrahedron split into the central 12-pentagon dodecahedron (step 26) + the shell round it (L/R). To compute: is the shell one piece? exact faces of the dodecahedron.
+  - 3 (two-shape set) is itself the dodecahedron grown to fill its cube (step 27).
