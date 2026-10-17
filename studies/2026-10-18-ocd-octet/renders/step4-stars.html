@@ -1,0 +1,48 @@
+<title>Facing Five-fold Stars</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* layout: one drawing sheet, caption and facts below */
+:root{--bg:#f4f3ef;--fg:#1f2329;--muted:#5d6470;--line:#c9ccd2;--sheet:#fff;--s1:#d9a21b;--s2:#2f7fd8;--ring:#e9e4d4;--ring2:#dbe6f3;--f-ui:"IBM Plex Sans",system-ui,sans-serif;--f-num:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121418;--fg:#e6e8ec;--muted:#9aa1ad;--line:#2c313a;--sheet:#1a1d23;--ring:#3a3524;--ring2:#22324a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121418;--fg:#e6e8ec;--muted:#9aa1ad;--line:#2c313a;--sheet:#1a1d23;--ring:#3a3524;--ring2:#22324a;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px}
+main{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+h1{font-size:1.3rem;margin:0;text-wrap:balance} .sub{color:var(--muted);margin:0;max-width:70ch}
+figure{margin:0;background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:8px}
+svg{width:100%;height:auto;display:block} figcaption{font-size:.85rem;color:var(--muted)}
+.k1{fill:var(--s1);fill-opacity:.75;stroke:var(--fg);stroke-width:1} .k2{fill:var(--s2);fill-opacity:.55;stroke:var(--fg);stroke-width:1}
+.ring.r1{fill:var(--ring);stroke:var(--line)} .ring.r2{fill:var(--ring2);fill-opacity:.6;stroke:var(--line)}
+.circ{fill:none;stroke:var(--muted);stroke-dasharray:5 4} .off{stroke:var(--fg);stroke-width:1.5;stroke-dasharray:3 3}
+.p1{fill:var(--s1);stroke:var(--fg)} .p2{fill:var(--s2);stroke:var(--fg)}
+.lbl{fill:var(--fg);font:13px var(--f-ui)} .lbl.small{font:12px var(--f-num)}
+ul{margin:0;padding-left:1.2em;max-width:72ch} .num{font-family:var(--f-num)} .mark{font-size:.75rem;color:var(--muted)}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<main>
+<h1>Two facing five-fold stars in the OCD octet</h1>
+<p class="sub">Looking straight down one five-fold axis. Gold: the five kites round a corner of one OCD. Blue: the five kites round the facing corner of the neighbouring OCD (across the shared octahedron edge), which points straight back. Pale: the next ring of faces of each.</p>
+<figure><svg viewBox="0 0 720 569" role="img" aria-label="Two five-kite stars seen down the five-fold axis">
+<polygon points="334.00,437.20 354.47,335.29 284.33,284.33 257.54,366.78" class="k1"/>
+<polygon points="257.54,366.78 284.33,284.33 197.64,284.33 154.30,378.81" class="k1"/>
+<polygon points="354.47,233.38 284.33,284.33 354.47,335.29 445.06,284.33" class="k1"/>
+<polygon points="154.30,189.85 197.64,284.33 284.33,284.33 257.54,201.88" class="k1"/>
+<polygon points="257.54,201.88 284.33,284.33 354.47,233.38 334.00,131.46" class="k1"/>
+<polygon points="73.93,131.46 53.46,233.38 123.60,284.33 150.39,201.88" class="k2"/>
+<polygon points="150.39,201.88 123.60,284.33 210.29,284.33 253.63,189.85" class="k2"/>
+<polygon points="53.46,335.29 123.60,284.33 53.46,233.38 -37.13,284.33" class="k2"/>
+<polygon points="253.63,378.81 210.29,284.33 123.60,284.33 150.39,366.78" class="k2"/>
+<polygon points="150.39,366.78 123.60,284.33 53.46,335.29 73.93,437.20" class="k2"/>
+<circle cx="284.3" cy="284.3" r="160.7" class="circ"/>
+<line x1="284.3" y1="284.3" x2="123.6" y2="284.3" class="off"/>
+<circle cx="284.3" cy="284.3" r="6" class="p1"/><circle cx="123.6" cy="284.3" r="6" class="p2"/>
+<text x="294.3" y="304.3" class="lbl">corner 1</text><text x="111.6" y="304.3" class="lbl" text-anchor="end">corner 2 (neighbour), 0.094 nearer</text>
+<text x="204.0" y="274.3" class="lbl small" text-anchor="middle">0.3505</text>
+</svg><figcaption>Dashed circle: the tips of the gold star (radius <span class="num">0.3505</span>). The blue star's centre lies exactly on that circle, but between two gold tips, in line with a gold inner corner (180°), not on a tip. It is <span class="num">0.094</span> nearer the viewer along the axis.</figcaption></figure>
+<ul>
+<li>Exact: the sideways offset between the two corners equals the star's tip radius (both <span class="num">0.350487</span>).</li>
+<li>Exact: the neighbour's corner is <b>not</b> over a gold tip (my earlier guess was wrong); it sits at 180°, where the gold star has an inner corner.</li>
+<li>The two stars are turned 36° against each other: a half turn, which for a five-fold star is the same as 36°.</li>
+<li>Gold star surface: inner corners 0.056 and tips 0.128 below its centre; the blue star slopes the other way.</li>
+</ul>
+<span class="mark">DICTO · dictospheres.com · 2026-10-18 · studies/2026-10-18-ocd-octet step 4</span>
+</main>
