@@ -161,3 +161,10 @@ Decisions (DICTO, 10-18, asked before any app edit):
 - **The envelopes fill exactly 90 − 40√5 = 10/φ⁶ = 55.728% of space.**
 - What is left: in each octahedron, the corners outside the envelope ((224/27 − 32√5/9) per octahedron, 6 corner pieces), and each tetrahedron minus the 4 envelope corners (64/27 − 8√5/9, the step-5 dented tetrahedron, chiral).
 - So a kit **"golden envelope + 6 outer corners + left/right dented tetrahedra"** fills space with the golden envelope (a golden zonohedron, buildable from golden rhombohedra) as the big piece; the OCD sits inside it. Next: the outer corners and dented tetrahedra — can they be cut into golden/Penrose pieces?
+
+### Step 22 — what the envelopes leave (`step22_complement.py` on dicto-node → `data/step22-complement.json`)
+- The space outside the envelopes is **one connected web** (round every lattice vertex, tetrahedron and edge it runs on), so it has to be cut; the octet frame gives the cuts.
+- **The octahedron minus its envelope falls into exactly 6 separate, congruent pieces**, one per octahedron corner — no cone cuts needed (cone cuts would leave two 0.00029 slivers each). Each **outer corner = 112/81 − 16√5/27 = 0.057639** (exact from step 21: (224/27 − 32√5/9)/6), non-convex, ψ 0.456.
+- Each tetrahedron minus its 4 envelope corners = the step-5 dented tetrahedron (64/27 − 8√5/9 = 0.382754), chiral (left/right), ψ 0.620.
+- The envelope (RT) ψ 0.961.
+- **Envelope kit: golden envelope (OCD inside) + 6 outer corners + left/right dented tetrahedra — 4 shapes (3 counting the mirror pair), and 10/φ⁶ = 55.73% of space is in the golden piece.** Fills space exactly (frame + RT = octahedron part + 8 keys, step 21). The fewest shapes of any kit so far; Penrose does not appear in it (the Penrose cores straddle the envelope surfaces).
