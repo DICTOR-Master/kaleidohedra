@@ -1,0 +1,53 @@
+<title>OCD Octahedron Caps</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* layout: drawing sheet: heading, three panels in a wrapping row, findings + octet notes below */
+:root{--bg:#f4f3ef;--fg:#1f2329;--muted:#5d6470;--line:#c9ccd2;--sheet:#fff;
+--ocd:#e3c45a;--hex:#d9a21b;--kite:#efd98c;--shell:#dfe6ee;--c1:#8fb7e0;--c2:#9fd0b0;--oct:#2b4a6f;--red:#c8382f;
+--f-ui:"IBM Plex Sans",system-ui,sans-serif;--f-num:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121418;--fg:#e6e8ec;--muted:#9aa1ad;--line:#2c313a;--sheet:#1a1d23;--ocd:#b8962f;--kite:#7d6a2c;--shell:#23303d;--c1:#2f5b86;--c2:#2f6b48;--oct:#9cc0ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121418;--fg:#e6e8ec;--muted:#9aa1ad;--line:#2c313a;--sheet:#1a1d23;--ocd:#b8962f;--kite:#7d6a2c;--shell:#23303d;--c1:#2f5b86;--c2:#2f6b48;--oct:#9cc0ea;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px}
+main{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+h1{font-size:1.3rem;margin:0;text-wrap:balance} h2{font-size:1rem;margin:0}
+.sub{color:var(--muted);margin:0;max-width:70ch}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+figure{margin:0;background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:8px;min-width:0}
+figcaption{font-size:.85rem;color:var(--muted)}
+svg{width:100%;height:auto;display:block}
+.shell{fill:var(--shell)} .cap.cx{fill:var(--c1)} .cap.cy{fill:var(--c2)} .ocd{fill:var(--ocd);stroke:var(--fg);stroke-width:1}
+.hex{fill:var(--hex);stroke:var(--fg);stroke-width:.8} .kite{fill:var(--kite);stroke:var(--fg);stroke-width:.6}
+.oct{fill:none;stroke:var(--oct);stroke-width:2} .cut{stroke:var(--oct);stroke-width:1.2;stroke-dasharray:6 4}
+.ridge{stroke:var(--fg);stroke-width:2} .dots{fill:var(--fg)} .dot2{fill:var(--red)} .apex{fill:var(--red)}
+.lbl{fill:var(--fg);font:12px var(--f-ui)} .lbl.strong{font-weight:600} .lbl.small{font-size:10px;fill:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+section{background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+ul{margin:0;padding-left:1.2em} .num{font-family:var(--f-num);font-size:.88rem}
+.tag{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.mark{font-size:.75rem;color:var(--muted)}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<main>
+<h1>The Ogdoecontahedron in its octahedron: an Admiral Cap analog</h1>
+<p class="sub">The 8 joint hexagons of the OCD lie on the 8 faces of a regular octahedron (edge <span class="num">{EDGE}</span>). The OCD fills <span class="num">{FILL}%</span> of it; the rest is a shell, cut here into 6 caps, one per octahedron corner. Floating-point values (sampled volumes), not exact yet.</p>
+<div class="row">
+<figure>{PA}<figcaption><b>A. Cut through the middle (z = 0).</b> Gold: the OCD. Blue and green: four of the six caps. Dashed lines: the cap boundaries (planes z = |x|, z = |y| and their turns).</figcaption></figure>
+<figure>{PB}<figcaption><b>B. Seen from above (+z corner).</b> The OCD's upper faces: hexagons darker, kites lighter. Dashed diagonals: the four corner edges of the +z cap. That cap covers the 16 faces whose centres lie in the +z corner region (10 kites, 6 hexagons).</figcaption></figure>
+<figure>{PC}<figcaption><b>C. One joint hexagon with its golden key.</b> Three ridges (black) run from the apex (red) to alternate corners; the faces slope down 20.905° to the three two-fold corners (red dots).</figcaption></figure>
+</div>
+<div class="cards">
+<section><span class="tag">Measured</span><h2>Shell and caps</h2><ul>
+<li>OCD in octahedron: <span class="num">{FILL}%</span>; shell <span class="num">{SHELL}%</span>.</li>
+<li>The 12 five-fold corners stop at <span class="num">0.887</span> of the way to the octahedron's edges, so the shell is one connected piece, unlike the icosahedron's 6 separate Admiral Caps.</li>
+<li>Cut by the 6 corner regions, each cap is one piece, volume <span class="num">{CAP}</span> (<span class="num">{CAPPC}%</span> of the octahedron). All 6 are the same shape (turned copies under the OCD's 3-fold turns).</li>
+<li>Golden key on each hexagon (edge <span class="num">{HEXE}</span>): height <span class="num">{KEYH}</span> = <span class="num">{KEYR}</span> × edge, tilt 20.905°.</li>
+</ul></section>
+<section><span class="tag">Reasoning, not yet computed</span><h2>An octet truss set</h2><ul>
+<li><b>Yes, in principle:</b> OCD + 6 caps = the octahedron, and octahedra with regular tetrahedra of the same edge fill space as the octet truss (2 tetrahedra per octahedron), as in #21.</li>
+<li>In the octet, every octahedron face meets a tetrahedron face, so each joint hexagon faces a tetrahedron, not another OCD.</li>
+<li>The two tetrahedron orientations each meet one tetrahedral set of 4 octahedron faces. That matches the key layout (bumps on 4, dents on 4): one kind of tetrahedron gets 4 dents, the other 4 bumps.</li>
+<li>Set: <b>1 OCD + 6 caps + T(dent) + T(bump)</b>. The key easily fits a tetrahedron: height {KEYH} against the tetrahedron's inradius {TIN}. Still to check: whether caps and tetrahedra merge into fewer pieces.</li>
+</ul></section>
+</div>
+<span class="mark">DICTO · dictospheres.com · 2026-10-18 · studies/2026-10-18-ocd-octahedron-caps</span>
+</main>
