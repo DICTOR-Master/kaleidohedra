@@ -18,8 +18,8 @@ test('every wheel piece appears in the wizard exactly once', () => {
   }
   assert.equal(new Set(wizardActions).size, wizardActions.length, 'no duplicates');
   // Shells, Golden Rhombohedra, Euclid–Kepler–Pacioli Cell Network, DICTO FCC, the Golden Breathing Pyrochlore and the Golden Bodhi
-  // Pyrochlore Networks are Wizard-only
+  // Pyrochlore Networks are Wizard-only, and so are the site lattices (DICTO 2026-10-17: triangular prisms, hcp, gyrated octet)
   // (the wheels have no free face).
-  const WIZARD_ONLY = ['tool:shellsWorld', 'tool:goldenWorld', 'tool:roofFoldWorld', 'tool:sunstarWorld', 'tool:stellaJewelWorld', 'tool:breathingWorld', 'tool:bodhiPyroWorld', 'tool:pieceType:dictofcc', 'tool:pieceType:dictoblock', 'tool:pieceType:dictohex'];
+  const WIZARD_ONLY = ['tool:pieceType:triprism', 'tool:pieceType:hcp', 'tool:pieceType:gyro', 'tool:shellsWorld', 'tool:goldenWorld', 'tool:roofFoldWorld', 'tool:sunstarWorld', 'tool:stellaJewelWorld', 'tool:breathingWorld', 'tool:bodhiPyroWorld', 'tool:pieceType:dictofcc', 'tool:pieceType:dictoblock', 'tool:pieceType:dictohex'];
   for (const a of wizardActions.filter((w) => !WIZARD_ONLY.includes(w))) assert.ok(wheelActions.includes(a), `${a} is a real wheel action`);
 });
