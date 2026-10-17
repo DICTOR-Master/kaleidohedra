@@ -1,0 +1,8 @@
+DICTO · dictospheres.com
+Strict scutoid bundles closed by a rhombic dodecahedron (float)
+  bundles: 64
+  core share 0.30-1.00: worst cell 0.053 (gP 1.050, gHd 1.050, gHo 1.222, RD ×1.1); kinds {'layer P': np.float64(0.053), 'layer Hd': np.float64(0.063), 'layer Ho': np.float64(0.38), 'close P': np.float64(0.296), 'close Hd': np.float64(0.373), 'close Ho': np.float64(0.285), 'close RD': np.float64(0.069)}
+  core share 0.20-0.30: worst cell 0.149 (gP 1.178, gHd 1.222, gHo 1.394, RD ×1.2); kinds {'layer P': np.float64(0.167), 'layer Hd': np.float64(0.262), 'layer Ho': np.float64(0.656), 'close P': np.float64(0.361), 'close Hd': np.float64(0.433), 'close Ho': np.float64(0.244), 'close RD': np.float64(0.149)}
+  core share 0.12-0.20: worst cell 0.167 (gP 1.178, gHd 1.222, gHo 1.394, RD ×1.35); kinds {'layer P': np.float64(0.167), 'layer Hd': np.float64(0.262), 'layer Ho': np.float64(0.656), 'close P': np.float64(0.425), 'close Hd': np.float64(0.558), 'close Ho': np.float64(0.232), 'close RD': np.float64(0.237)}
+  core share 0.00-0.12: worst cell 0.244 (gP 1.944, gHd 2.083, gHo 2.256, RD ×1.35); kinds {'layer P': np.float64(0.584), 'layer Hd': np.float64(0.948), 'layer Ho': np.float64(0.619), 'close P': np.float64(0.416), 'close Hd': np.float64(0.583), 'close Ho': np.float64(0.272), 'close RD': np.float64(0.244)}
+  for comparison, truncated octahedron (scutoid-shared-hex.txt): best worst cell 0.043 (core 0.00-0.12), 0.009 (core 0.12-0.20)

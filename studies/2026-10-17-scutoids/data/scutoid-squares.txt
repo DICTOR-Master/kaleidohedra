@@ -1,0 +1,12 @@
+DICTO · dictospheres.com
+Squares in the layer: core TI, scutoid layer over 38 planes to B = T minus 24 corners, closing corner cells (float)
+  s 1.800 p 0.35 k 1.323: worst cell 0.246, core share 0.132; by kind {'layer P': np.float64(0.301), 'layer Hd': np.float64(0.965), 'layer Ho': np.float64(0.699), 'layer Sq': np.float64(0.752), 'close P': np.float64(0.246)}
+  s 1.800 p 0.35 k 1.415: worst cell 0.246, core share 0.132; by kind {'layer P': np.float64(0.301), 'layer Hd': np.float64(0.965), 'layer Ho': np.float64(0.699), 'layer Sq': np.float64(0.752), 'close P': np.float64(0.246)}
+  s 1.800 p 0.35 k 1.508: worst cell 0.246, core share 0.132; by kind {'layer P': np.float64(0.301), 'layer Hd': np.float64(0.965), 'layer Ho': np.float64(0.699), 'layer Sq': np.float64(0.752), 'close P': np.float64(0.246)}
+  s 1.800 p 0.35 k 1.600: worst cell 0.246, core share 0.132; by kind {'layer P': np.float64(0.301), 'layer Hd': np.float64(0.965), 'layer Ho': np.float64(0.699), 'layer Sq': np.float64(0.752), 'close P': np.float64(0.246)}
+  s 1.800 p 0.35 k 1.139: worst cell 0.244, core share 0.132; by kind {'layer P': np.float64(0.295), 'layer Hd': np.float64(0.939), 'layer Ho': np.float64(0.735), 'layer Sq': np.float64(0.276), 'close P': np.float64(0.249), 'close Ho': np.float64(0.244)}
+  s 1.750 p 0.35 k 1.139: worst cell 0.242, core share 0.144; by kind {'layer P': np.float64(0.281), 'layer Hd': np.float64(0.981), 'layer Ho': np.float64(0.742), 'layer Sq': np.float64(0.287), 'close P': np.float64(0.242), 'close Ho': np.float64(0.249)}
+  trade-off: best worst-cell for each core share band
+    core share 0.30-1.00: worst cell 0.203 (s 1.250, p 0.35, k 1.139); kinds {'layer P': np.float64(0.203), 'layer Hd': np.float64(0.291), 'layer Ho': np.float64(0.786), 'layer Sq': np.float64(0.796), 'close P': np.float64(0.211), 'close Ho': np.float64(0.263)}
+    core share 0.20-0.30: worst cell 0.211 (s 1.500, p 0.50, k 1.139); kinds {'layer P': np.float64(0.384), 'layer Hd': np.float64(0.505), 'layer Ho': np.float64(0.787), 'layer Sq': np.float64(0.472), 'close P': np.float64(0.211), 'close Ho': np.float64(0.262)}
+    core share 0.12-0.20: worst cell 0.246 (s 1.800, p 0.35, k 1.323); kinds {'layer P': np.float64(0.301), 'layer Hd': np.float64(0.965), 'layer Ho': np.float64(0.699), 'layer Sq': np.float64(0.752), 'close P': np.float64(0.246)}
