@@ -153,3 +153,11 @@ Decisions (DICTO, 10-18, asked before any app edit):
 ### Step 20 — the keyless kit with three cores on the 3D page (`step20_keyless_meshes.py` on dicto-node → `data/step20-keyless-meshes.json`)
 - Meshes: plain OCD 1.151868, notched cap 0.058072 (unchanged: keys never entered the octahedron), **keyless notched tetrahedron 0.265776**, central core 0.010129, flanking cores 0.004993 each, rest 0.059620. Per cell 1.151868 + 6×0.058072 + 6×0.079735 + 2×0.265776 = 2.510263 = cell ✓.
 - Page (same link): button "Keyless kit, 3 Penrose cores" (assembly round one OCD: 6 caps, 12 middle pieces each as central core + 2 flanking cores + rest, 4 left + 4 right tetrahedra), and single-piece buttons for the flanking cores (left, right), the rest and the keyless tetrahedron.
+
+## Stage 3 — toward a minimal golden kit (DICTO 10-18: "develop the octet toward a minimal golden kit")
+### Step 21 — the golden envelopes in the octet (`step21_envelopes_in_octet.py` → `data/step21-envelopes.json`, exact)
+- Each OCD's golden envelope (RT, (−320 + 160√5)/27) placed in the octet: **neighbouring envelopes never overlap** (exact 0).
+- **RT = (its part in the octahedron) + exactly its 8 keys** in the 8 tetrahedra round it: RT outside the octahedron = (−352 + 160√5)/81 = 8 × key.
+- **The envelopes fill exactly 90 − 40√5 = 10/φ⁶ = 55.728% of space.**
+- What is left: in each octahedron, the corners outside the envelope ((224/27 − 32√5/9) per octahedron, 6 corner pieces), and each tetrahedron minus the 4 envelope corners (64/27 − 8√5/9, the step-5 dented tetrahedron, chiral).
+- So a kit **"golden envelope + 6 outer corners + left/right dented tetrahedra"** fills space with the golden envelope (a golden zonohedron, buildable from golden rhombohedra) as the big piece; the OCD sits inside it. Next: the outer corners and dented tetrahedra — can they be cut into golden/Penrose pieces?
