@@ -1,0 +1,45 @@
+<title>Shared Middle Piece</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* layout: one drawing, then measured facts and the open question */
+:root{--bg:#f4f3ef;--fg:#1f2329;--muted:#5d6470;--line:#c9ccd2;--sheet:#fff;--ocd:#e3c45a;--oct:#e8eef5;--octl:#2b4a6f;--mid:#c8382f;--f-ui:"IBM Plex Sans",system-ui,sans-serif;--f-num:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121418;--fg:#e6e8ec;--muted:#9aa1ad;--line:#2c313a;--sheet:#1a1d23;--ocd:#b8962f;--oct:#1f2a36;--octl:#9cc0ea;--mid:#e0564c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121418;--fg:#e6e8ec;--muted:#9aa1ad;--line:#2c313a;--sheet:#1a1d23;--ocd:#b8962f;--oct:#1f2a36;--octl:#9cc0ea;--mid:#e0564c;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px}
+main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+h1{font-size:1.3rem;margin:0;text-wrap:balance} .sub{color:var(--muted);margin:0;max-width:70ch}
+figure{margin:0;background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:8px}
+svg{width:100%;height:auto;display:block} figcaption{font-size:.85rem;color:var(--muted)}
+.oct{fill:var(--oct)} .octl{fill:none;stroke:var(--octl);stroke-width:1.5} .ocd{fill:var(--ocd);stroke:var(--fg);stroke-width:1}
+.mid{fill:var(--mid);fill-opacity:.8;stroke:var(--fg);stroke-width:1} .c{fill:var(--fg)} .mpt{fill:var(--sheet);stroke:var(--fg);stroke-width:2}
+.lbl{fill:var(--fg);font:13px var(--f-ui)} ul{margin:0;padding-left:1.2em;max-width:72ch} .num{font-family:var(--f-num)} .mark{font-size:.75rem;color:var(--muted)}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<main>
+<h1>Shared middle piece between two facing stars</h1>
+<p class="sub">Cut through the mirror plane x = 0, which holds both facing five-fold corners (c1, c2), their axis and the octahedron edge the two OCDs share. Blue outlines: the two octahedra, touching along that edge. Gold: the OCDs. Red: the candidate middle piece, the hull of the two five-kite stars minus the OCDs. Floating-point first look.</p>
+<figure><svg viewBox="0 0 640 640" role="img" aria-label="Section x=0 through two OCDs and the middle piece">
+<polygon points="489.18,496.00 144.00,150.82 -201.18,496.00 144.00,841.18" class="oct"/>
+<polygon points="834.36,150.82 489.18,-194.36 144.00,150.82 489.18,496.00" class="oct"/>
+<polygon points="357.33,496.00 382.51,323.41 275.85,150.82 275.85,150.82 250.67,323.41" class="mid"/>
+<polygon points="1.78,336.99 -45.24,379.04 -69.33,496.00 -45.24,612.96 1.78,655.01 144.00,709.33 144.00,709.33 286.22,655.01 333.24,612.96 357.33,496.00 357.33,496.00 333.24,379.04 333.24,379.04 286.22,336.99 144.00,282.67 144.00,282.67" class="ocd"/>
+<polygon points="346.96,-8.19 299.94,33.86 275.85,150.82 299.94,267.78 346.96,309.83 489.18,364.15 489.18,364.15 631.40,309.83 678.42,267.78 702.51,150.82 678.42,33.86 678.42,33.86 631.40,-8.19 489.18,-62.51" class="ocd"/>
+<polygon points="489.18,496.00 144.00,150.82 -201.18,496.00 144.00,841.18" class="octl"/>
+<polygon points="834.36,150.82 489.18,-194.36 144.00,150.82 489.18,496.00" class="octl"/>
+<circle cx="333.2" cy="379.0" r="5" class="c"/>
+<circle cx="299.9" cy="267.8" r="5" class="c"/>
+<circle cx="316.6" cy="323.4" r="5" class="mpt"/>
+<text x="323.2" y="397.0" class="lbl" text-anchor="end">c1</text>
+<text x="309.9" y="261.8" class="lbl" text-anchor="start">c2</text>
+<text x="326.6" y="327.4" class="lbl" text-anchor="start">m</text>
+<text x="144.0" y="500.0" class="lbl" text-anchor="middle">OCD 1</text>
+<text x="489.2" y="154.8" class="lbl" text-anchor="middle">OCD 2</text>
+</svg><figcaption>m, the midpoint of the shared edge, is the centre: the red piece is the same seen from either OCD (inversion through m, checked).</figcaption></figure>
+<ul>
+<li>Middle piece volume ≈ <span class="num">0.0796</span> (hull of the stars <span class="num">0.1104</span>, of which 28% is inside the OCDs).</li>
+<li>It straddles the octet pieces: about 36% lies in the two caps (half each) and 64% in the two tetrahedra on the shared edge (half each).</li>
+<li><b>Clash:</b> 4 of the step-5 keys (2 from each OCD, on the faces beside the shared edge) reach into it, about 8% of its volume. Their base corners sit on the octahedron edges near m.</li>
+<li>Open for DICTO: should the middle piece swallow those key tips, or should it be trimmed round them? And should it be cut from the caps and tetrahedra (giving them notches) or replace parts of them?</li>
+</ul>
+<span class="mark">DICTO · dictospheres.com · 2026-10-18 · studies/2026-10-18-ocd-octet step 7</span>
+</main>

@@ -46,3 +46,10 @@ All numbers a + b√5 exact (Fraction pairs, `scripts/q5.py`) unless marked floa
 - Options put to DICTO: (1) a connector over the facing lobes, (2) a slanted Penrose prism from c1 to c2 (≈75° from the axis, nearly flat), (3) a shared middle piece on the half-turn centre between c1 and c2.
 - **DICTO chose (3), a shared middle piece.**
 - Note: the half-turn centre is m = (c1 + c2)/2 = R(0,1,1)/2, the **midpoint of the octahedron edge the two OCDs share**; m is a centre of inversion (each OCD and star maps to the other). In the octet, 2 octahedra and 2 tetrahedra meet round that edge.
+
+### Step 7 — the shared middle piece, first look (float) (`step7_middle_piece.py` → `data/step7-middle.json`; `draw_step7.py` → `renders/step7-middle.html`)
+- Candidate M = hull(star 1 + star 2) minus the two OCDs; inversion-symmetric through m (checked). Volume ≈ 0.0796 (hull 0.1104, 28% of it inside the OCDs).
+- It straddles the octet pieces: ≈36% in the two caps, ≈64% in the two tetrahedra on the shared edge (half each).
+- Clash: 4 step-5 keys (2 per OCD, on the faces beside the shared edge) reach into it, ≈8% of its volume.
+- Section drawing in the mirror plane x = 0: claude.ai/artifact/Pqp34sp8zVkw7Y2kS1WLgM
+- Open for DICTO: middle piece swallows the key tips or is trimmed round them? Cut from caps and tetrahedra (notching them) or replace parts of them?
