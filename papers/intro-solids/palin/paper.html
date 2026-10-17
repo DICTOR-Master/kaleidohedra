@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>The DICTO Palintriacontahedron</title>
+<link rel="stylesheet" href="../../paper.css">
+<style>.figs.two{grid-template-columns:1fr 1fr} td.n{font-variant-numeric:tabular-nums} table{font-size:8.8pt}</style></head><body>
+<img class="watermark" src="../../dicto-logo.png" alt="">
+<img class="logo" src="../../dicto-logo.png" alt="DICTO">
+<h1>The DICTO Palintriacontahedron</h1>
+<p class="sub">The rhombic triacontahedron turned inside out: the hull of the icosidodecahedron star at full height, its icosahedron edge 3/√5 times its dodecahedron edge</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Version 1 · 17 October 2026 · DICTO DOI: on publication · Licence CC BY 4.0 · An introduction to one solid; its parent paper: Vajrayana, DICTO DOI: 10.5281/zenodo.23429911. Data and checks are included with this record.<br>
+Flipping the icosidodecahedron's own central pyramids out at full height ("shortening feels like cheating; one more solid is needed") and the name are DICTO's; the exact computations and the text were done with an AI assistant (Claude, Anthropic).
+</div>
+<div class="abstract"><b>Abstract.</b> Flip the icosidodecahedron's 32 central pyramids out at full height and take the hull of their tips: the result is the DICTO Palintriacontahedron X (Greek <i>pálin</i>, back), with 32 corners and 60 triangular faces, each half a rhombic-dodecahedron rhombus (cos² of its angles 1/9, 1/3, 1/3). It is the member of the dodecahedron–icosahedron hull family whose icosahedron edge is exactly 3/√5 times its dodecahedron edge, in closed form the hull of (0, ±1, ±φ) and ((5 + √5)/6)·{(±1, ±1, ±1), (0, ±φ, ±1/φ)} (cyclic). It has the rhombic triacontahedron's 32 axes with the reciprocal radius ratio: the triacontahedron turned inside out. Everything here is exact in ℚ(√5) unless marked float.</div>
+
+<figure><div class="figs wide"><img src="figures/x-star.jpg"></div>
+<figcaption><b>Figure 1.</b> The icosidodecahedron star (its central pyramids flipped out at full height), inside its hull, the DICTO Palintriacontahedron, and X interlocked with the next icosahedron. Drawn from exact corners.</figcaption></figure>
+
+<h2>1. The solid</h2>
+<p>With the icosahedron (0, ±1, ±φ) (cyclic, edge 2) and the dodecahedron (±1, ±1, ±1), (0, ±φ, ±1/φ) (cyclic) placed over its faces, the hull of the icosahedron and k times the dodecahedron has edge ratio φ/k. The DICTO Palintriacontahedron is k = φ√5/3 = 5/6 + √5/6, ratio 3/√5 (squared 9/5).</p>
+<table><tr><th>Property</th><th>Value (exact)</th></tr>
+<tr><td>corners</td><td>32: 12 five-fold, 20 three-fold, all tips of the full-height icosidodecahedron star</td></tr>
+<tr><td>faces, edges</td><td>60 triangles, each half a rhombic-dodecahedron rhombus (cos² of the face angles 1/9, 1/3, 1/3); 90 edges</td></tr>
+<tr><td>squared edge lengths</td><td>20/9 (60 edges) and 5/3 (30 edges)</td></tr>
+<tr><td>squared corner radii</td><td>5/2 + √5/2 (five-fold) and 5/2 + 5√5/6 (three-fold)</td></tr>
+<tr><td>insphere</td><td>all 60 faces at squared distance 7/4 + 3√5/4</td></tr>
+<tr><td>midsphere</td><td>none (edges at squared distances 25/12 + 2√5/3 and 35/18 + 5√5/6)</td></tr>
+<tr><td>volume</td><td>50/3 + 50√5/9 ≈ 29.0893 (in these units)</td></tr></table>
+<p class="cap"><b>Table 1.</b> The DICTO Palintriacontahedron in closed form (<code>scripts/hull_family_exact.py</code>, exact).</p>
+
+<h2>2. Where it comes from</h2>
+<p>In the twelve-station golden cycle of Vajrayana (DICTO DOI: 10.5281/zenodo.23429911) the icosidodecahedron is the shell where the cycle's two progenitors meet. DICTO flipped its central pyramids outward at full height rather than shortening them; the hull of the 32 tips is X. It is the rhombic triacontahedron turned inside out: the same 32 axes, with the five-fold and three-fold corners at the reciprocal ratio of radii. Two float observations (labelled as such in Vajrayana): X lies inside the next turn's D′ and 99.46% of its volume (20,000 sample points) lies inside the next icosahedron's Cleo star, so it bridges one turn to the next; and the first stellation of the icosahedron puts its tips at 3/√5 times the face distance, the same number.</p>
+
+<h2>3. Its family</h2>
+<p>X belongs to the same hull family as the pentakis dodecahedron (Catalan, ratio 3(7 + 5√5)/38 ≈ 1.435) and the DICTO Metaxyhexecontahedron (9/φ⁴ ≈ 1.313), whose introduction accompanies this one. Its ratio 3/√5 ≈ 1.342 lies between them.</p>
+
+<h2>4. Status</h2>
+<p><b>Known:</b> the hull family and its fully symmetric range (Polytope Wiki), the rhombic triacontahedron and the icosidodecahedron's central pyramids. <b>Not found, in the sources checked</b> (Vajrayana §5, SEARCH-LOG.md): this member as a named or distinguished solid, or the ratio 3/√5 as distinguished. The name returns no results. Every "not found" is limited to those sources.</p>
+
+<h2>5. Files</h2>
+<p><code>scripts/hull_family_exact.py</code>, <code>data-hull-family-exact.txt</code> (this paper, exact); <code>id_star.py</code> in the study (branch research: studies/2026-10-16-progenitors). See it in the app: Kaleidohedra, 3D+ → Vajrayana.</p>
+</body></html>

@@ -1,0 +1,15 @@
+== DICTO Metaxyhexecontahedron: k = 11/18 + 5/18√5 = 1.232241105; edge ratio (icosahedron / dodecahedron) = φ/k = 63/2 + -27/2√5 = 1.313082304; squared 3807/2 + -1701/2√5
+   corners 32 (12 five-fold, 20 three-fold), faces 60, face sizes [3], edges 90
+   squared edge lengths: 14/9 + 2/27√5 = 1.721190; 94/81 + 14/27√5 = 2.319936
+   squared face distances: 7249/4162 + 16209/20810√5 -> insphere
+   squared edge-midpoint radii: 2 + 20/27√5; 161/81 + 8/9√5 -> no midsphere
+   squared corner radii: five-fold 5/2 + 1/2√5, three-fold 41/18 + 55/54√5
+   volume 410/27 + 550/81√5 = 30.368362810
+== DICTO Palintriacontahedron: k = 5/6 + 1/6√5 = 1.206011330; edge ratio (icosahedron / dodecahedron) = φ/k = 0 + 3/5√5 = 1.341640786; squared 9/5
+   corners 32 (12 five-fold, 20 three-fold), faces 60, face sizes [3], edges 90
+   squared edge lengths: 5/3 = 1.666667; 20/9 = 2.222222
+   squared face distances: 7/4 + 3/4√5 -> insphere
+   squared edge-midpoint radii: 25/12 + 2/3√5; 35/18 + 5/6√5 -> no midsphere
+   squared corner radii: five-fold 5/2 + 1/2√5, three-fold 5/2 + 5/6√5
+   volume 50/3 + 50/9√5 = 29.089266542
+M matches the paper (same ratio of three-fold to five-fold corner radii, exact): True 17/27 + 38/135√5

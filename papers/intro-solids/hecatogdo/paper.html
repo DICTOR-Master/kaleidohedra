@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>The DICTO Hecatogdoecontahedron</title>
+<link rel="stylesheet" href="../../paper.css">
+<style>.figs.two{grid-template-columns:1fr 1fr} td.n{font-variant-numeric:tabular-nums} table{font-size:8.8pt}</style></head><body>
+<img class="watermark" src="../../dicto-logo.png" alt="">
+<img class="logo" src="../../dicto-logo.png" alt="DICTO">
+<h1>The DICTO Hecatogdoecontahedron</h1>
+<p class="sub">The DICTO Hecatodihedron and the DICTO Ogdoecontahedron interlocked as a self-dual compound of 182 faces</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Version 1 · 17 October 2026 · DICTO DOI: on publication · Licence CC BY 4.0 · An introduction to one solid; its parent paper: Progenitors, DICTO DOI: 10.5281/zenodo.23413184 (and The DICTO Truncated-Icosahedral Hecatodihedron, Version 2, DICTO DOI: 10.5281/zenodo.23360857). Data and checks are included with this record.<br>
+The pairing and the name are DICTO's; the exact computations and the text were done with an AI assistant (Claude, Anthropic).
+</div>
+<div class="abstract"><b>Abstract.</b> The DICTO Hecatodihedron H (102 faces, 80 corners) and its polar, the DICTO Ogdoecontahedron O (80 faces, 102 corners), interlock in the truncated icosahedron's midsphere as one compound: the DICTO Hecatogdoecontahedron (the two names merged), 182 faces and 182 corners, self-dual. Its common core is the rectified truncated icosahedron and its hull the joined truncated icosahedron (the rhombic enneacontahedron), the core and hull of the classical truncated icosahedron–pentakis dodecahedron compound. We claim the pairing and the name only, not the core or the hull. Exact in ℚ(√5) unless marked float.</div>
+
+<figure><div class="figs wide"><img src="figures/oh-compound.jpg"></div>
+<figcaption><b>Figure 1.</b> The DICTO Hecatogdoecontahedron: H (gold) and O (teal) interlocked, with the truncated icosahedron and the common core and hull. Drawn from exact corners.</figcaption></figure>
+
+<h2>1. The compound</h2>
+<p>Take the Hecatodihedron H of the Spheres of Dharma (DICTO DOI: 10.5281/zenodo.23310833) and reciprocate it in the sphere of squared radius 9/4, the midsphere of the Dharma's truncated icosahedron, which touches H's 90 rhombi and triangles. The polar is the Ogdoecontahedron O at its compound size. Then (exact): the 90 corners of O on that sphere are exactly the 90 edge midpoints of the truncated icosahedron; no corner of H lies inside O and no corner of O inside H.</p>
+<table><tr><th>Part</th><th>Corners</th><th>Faces</th></tr>
+<tr><td>H, the DICTO Hecatodihedron</td><td class="n">80</td><td>102: 12 pentagons, 30 rhombi, 60 triangles</td></tr>
+<tr><td>O, the DICTO Ogdoecontahedron</td><td class="n">102</td><td>80: 20 regular hexagons, 60 kites</td></tr>
+<tr><td><b>the compound</b></td><td class="n"><b>182</b></td><td><b>182</b>; self-dual (a solid with its own polar)</td></tr>
+<tr><td>common core H ∩ O</td><td class="n">90</td><td>92: the rectified truncated icosahedron (12 regular pentagons, 20 regular hexagons, 60 triangles), all corners on the midsphere</td></tr>
+<tr><td>hull</td><td class="n">92</td><td>90 rhombi: the joined truncated icosahedron (rhombic enneacontahedron), the core's polar</td></tr></table>
+<p class="cap"><b>Table 1.</b> The DICTO Hecatogdoecontahedron (<code>oh_compound.py</code>; corner and face counts exact, volumes float).</p>
+
+<h2>2. Where it appears</h2>
+<p>The compound was first described in Version 2 of the Hecatodihedron paper (DICTO DOI: 10.5281/zenodo.23360857). In Progenitors (DICTO DOI: 10.5281/zenodo.23413184) its core and hull, rTI and jtI, become stations of the golden cycle I ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ I·φ³, so the cycle holds the core and hull of two dual compounds: the classical icosahedron–dodecahedron one (ID, RT) and this one. As the octahedron and cube are the core and hull of the stella octangula, the rectified truncated icosahedron and the rhombic enneacontahedron are those of the Hecatogdoecontahedron.</p>
+
+<h2>3. Status</h2>
+<p><b>Known:</b> compounds of a solid with its polar; the truncated icosahedron–pentakis dodecahedron compound, the rectified truncated icosahedron and the rhombic enneacontahedron (MathWorld; Wikipedia; McCooey; Hart). <b>Not found, in the sources checked</b> (Progenitors §4, SEARCH-LOG.md): the compound of H and O. The name returns no results. Every "not found" is limited to those sources.</p>
+
+<h2>4. Files</h2>
+<p>In the study (branch research: studies/2026-10-16-progenitors): <code>oh_compound.py</code> → <code>oh-compound.txt</code>, <code>core_hull_in_cycle.py</code>. See it in the app: Kaleidohedra, 3D+ → Vajrayana (its core and hull are stations) and Multi-shell chains.</p>
+</body></html>

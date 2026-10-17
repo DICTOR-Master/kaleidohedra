@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>The DICTO Metaxyhexecontahedron</title>
+<link rel="stylesheet" href="../../paper.css">
+<style>.figs.two{grid-template-columns:1fr 1fr} td.n{font-variant-numeric:tabular-nums} table{font-size:8.8pt}</style></head><body>
+<img class="watermark" src="../../dicto-logo.png" alt="">
+<img class="logo" src="../../dicto-logo.png" alt="DICTO">
+<h1>The DICTO Metaxyhexecontahedron</h1>
+<p class="sub">The solid in the last gap of the golden cycle: a dodecahedron–icosahedron hull whose icosahedron edge is 9/φ⁴ times its dodecahedron edge</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Version 1 · 17 October 2026 · DICTO DOI: on publication · Licence CC BY 4.0 · An introduction to one solid; its parent paper: Vajrayana, DICTO DOI: 10.5281/zenodo.23429911. Data and checks are included with this record.<br>
+The idea that one more solid fits the last gap of the cycle, and the name, are DICTO's; the exact computations and the text were done with an AI assistant (Claude, Anthropic).
+</div>
+<div class="abstract"><b>Abstract.</b> The DICTO Metaxyhexecontahedron M (Greek <i>metaxý</i>, "in-between", and 60 faces) is the convex hull of a regular icosahedron and a dodecahedron placed over its faces, at the one size where the icosahedron edge is exactly 9/φ⁴ ≈ 1.31308 times the dodecahedron edge. In closed form it is the hull of (0, ±1, ±φ) and (φ⁵/9)·{(±1, ±1, ±1), (0, ±φ, ±1/φ)} (cyclic). It has 32 corners, 90 edges and 60 congruent isosceles triangles, an insphere but no midsphere. In the twelve-station golden cycle of Vajrayana it is the station between the rhombic triacontahedron and the next icosahedron: its 12 five-fold corners are the triacontahedron's own, its 20 three-fold corners sit exactly on the centres of the next icosahedron's faces, and each of the two layers it makes is a single kind of piece. Everything here is exact in ℚ(√5).</div>
+
+<figure><div class="figs two"><img src="figures/m-alone.png"><img src="figures/m-in-cycle.jpg"></div>
+<figcaption><b>Figure 1.</b> Left: the DICTO Metaxyhexecontahedron. Right: in the twelve-station cycle (brick red), between the rhombic triacontahedron (orange) and the next icosahedron (glass), with the 60 pieces of one kind that fill the step outside it (sand). Drawn from exact corners.</figcaption></figure>
+
+<h2>1. The solid</h2>
+<p>Take the icosahedron with corners (0, ±1, ±φ) and their cyclic shifts (edge 2), and the dodecahedron with corners (±1, ±1, ±1) and the cyclic shifts of (0, ±φ, ±1/φ), placed so that its corners lie over the icosahedron's face centres (edge 2/φ). Scale the dodecahedron by k and take the convex hull. Its icosahedron edge is then φ/k times its dodecahedron edge. The DICTO Metaxyhexecontahedron is the member with k = φ⁵/9 = 11/18 + 5√5/18, so that the ratio is 9/φ⁴ (squared, 81/φ⁸).</p>
+<table><tr><th>Property</th><th>Value (exact)</th></tr>
+<tr><td>corners</td><td>32: 12 five-fold (the icosahedron's), 20 three-fold (the dodecahedron's)</td></tr>
+<tr><td>faces, edges</td><td>60 congruent isosceles triangles, 90 edges; the combinatorics of the pentakis dodecahedron</td></tr>
+<tr><td>squared edge lengths</td><td>94/81 + 14√5/27 (60 edges, five-fold to three-fold) and 14/9 + 2√5/27 (30 edges, three-fold to three-fold)</td></tr>
+<tr><td>squared corner radii</td><td>5/2 + √5/2 (five-fold) and 41/18 + 55√5/54 (three-fold)</td></tr>
+<tr><td>insphere</td><td>all 60 faces at squared distance 7249/4162 + 16209√5/20810</td></tr>
+<tr><td>midsphere</td><td>none: the two kinds of edge lie at squared distances 2 + 20√5/27 and 161/81 + 8√5/9</td></tr>
+<tr><td>volume</td><td>410/27 + 550√5/81 ≈ 30.3684 (in these units)</td></tr></table>
+<p class="cap"><b>Table 1.</b> The DICTO Metaxyhexecontahedron in closed form (<code>scripts/hull_family_exact.py</code>, every face plane and every corner tested exactly).</p>
+
+<h2>2. Where it comes from: the last gap of the golden cycle</h2>
+<p>The Spheres of Dharma (DICTO DOI: 10.5281/zenodo.23310833) nest icosahedral shells in a cycle that repeats every φ³; Progenitors (DICTO DOI: 10.5281/zenodo.23413184) set the DICTO Ogdoecontahedron into it, and Vajrayana (DICTO DOI: 10.5281/zenodo.23429911) closed its loose steps. In the step from the rhombic triacontahedron RT to the next icosahedron I·φ³, the triacontahedron reaches only 0.812 of the way. DICTO judged that one more solid should fit there. Among the convex icosahedral solids none touches both neighbours (Vajrayana, Table 3, float); this member of the dodecahedron–icosahedron hull family does. In the cycle's own units it is the hull of the triacontahedron's 12 five-fold corners and the 20 face centres of I·φ³ (squared radii 45/8 − 9√5/8 and 47/24 + 7√5/8; the same solid as Table 1, checked exactly). Cut by cones from the centre over the faces of the inner solid, the step RT → M is 30 pieces of one kind and M → I·φ³ is 60 pieces of one kind (a triangular-bipyramid shape); M takes 0.356 of the step's volume. Its polar, with 12 regular pentagons and 20 hexagons whose sides alternate in the ratio (14 + 9√5)/11, closes the matching step of the polar-reversed cycle.</p>
+
+<h2>3. Its family</h2>
+<p>The hulls of a dodecahedron and an icosahedron in dual position form a one-parameter family with the pentakis dodecahedron's combinatorics, fully symmetric for edge ratios from (5 + 3√5)/10 to φ. Its named members are the Catalan pentakis dodecahedron at 3(7 + 5√5)/38 ≈ 1.435, the DICTO Palintriacontahedron at 3/√5 ≈ 1.342 (its own introduction accompanies this one), and the DICTO Metaxyhexecontahedron at 9/φ⁴ ≈ 1.313. We note without explanation that 9/φ⁴ is also the exact gain per round of the tightest progenitor cycle in Progenitors.</p>
+
+<h2>4. Status</h2>
+<p><b>Known:</b> the family (the pentakis dodecahedron as the hull of a dodecahedron and an icosahedron, and its fully symmetric range: Polytope Wiki; the Catalan member: MathWorld, McCooey). <b>Not found, in the sources checked</b> (listed in Vajrayana §5 and its study's SEARCH-LOG.md): this member as a named or distinguished solid, or the 9/φ⁴ ratio as distinguished. The name returns no results. Every "not found" is limited to those sources.</p>
+
+<h2>5. Files</h2>
+<p><code>scripts/hull_family_exact.py</code> and its output <code>data-hull-family-exact.txt</code> (this paper, exact). The cycle, the pieces and the dual: Vajrayana's record and the study at https://github.com/DICTOR-Master/kaleidohedra (branch research: studies/2026-10-16-progenitors: <code>gap_member.py</code>, <code>gap_pieces_exact.py</code>, <code>metaxy_dual.py</code>). See it in the app: Kaleidohedra, 3D+ → Vajrayana.</p>
+</body></html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>The DICTO OCD Stella</title>
+<link rel="stylesheet" href="../../paper.css">
+<style>.figs.two{grid-template-columns:1fr 1fr} td.n{font-variant-numeric:tabular-nums} table{font-size:8.8pt}</style></head><body>
+<img class="watermark" src="../../dicto-logo.png" alt="">
+<img class="logo" src="../../dicto-logo.png" alt="DICTO">
+<h1>The DICTO OCD Stella</h1>
+<p class="sub">The Ogdoecontahedron's companion cut along its joints: a golden solid that fills 151/2 − 267√5/8 ≈ 87.12% of space in the Ogdoecontahedron's packing, copies meeting face to face</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Version 1 · 17 October 2026 · DICTO DOI: on publication · Licence CC BY 4.0 · An introduction to one solid; its parent paper: The DICTO Ogdoecontahedron, DICTO DOI: 10.5281/zenodo.23404688. Data and checks are included with this record.<br>
+The companion ("a free gift from the way the adapters sat on the OCD"), the stella cut, the seed and the name are DICTO's; the exact computations and the text were done with an AI assistant (Claude, Anthropic).
+</div>
+<div class="abstract"><b>Abstract.</b> The DICTO Ogdoecontahedron (OCD) packs in a body-centred cubic arrangement, each copy joined to 8 neighbours on hexagons. The golden adapter pieces around one copy have an icosahedral hull, the OCD's companion C (72 corners: 30 hexagons in golden planes and 20 triangles). Cutting C along the 8 joints gives the DICTO OCD Stella S: 48 corners and 50 faces, golden except for the joint triangles, which are exactly the packing cell's hexagon walls. Copies of S meet face to face across all 8 joints and fill exactly 151/2 − 267√5/8 ≈ 87.12% of space. Twelve OCD Stellas around one small one fill an outer OCD Stella exactly at φ², the Bodhi seed's pattern, though S is only pyritohedral. Exact in ℚ(√5) unless marked float.</div>
+
+<figure><div class="figs two"><img src="figures/ocd-stella-solid.jpg"><img src="figures/ocd-stella-pack.jpg"></div>
+<figcaption><b>Figure 1.</b> Left: the DICTO OCD Stella. Right: copies in the OCD's packing, meeting face to face across the joints.</figcaption></figure>
+
+<h2>1. The solid</h2>
+<p>Around one OCD of its packing (cell volume 512/729 + 256√5/729), the 60 golden adapter pieces (the full orbit of the 24 per cell) have a convex hull C with 72 corners, 30 hexagons in the golden planes of the OCD's envelope and 20 triangles in the three-fold planes through the adapters' outer corners (squared distance 14/27 − 10√5/243), volume (−18880 + 9760√5)/2187. Its combinatorial type is Conway t3jD, the triacontahedron truncated at its 20 three-fold corners, here at the depth set by the OCD (Antiprism). The DICTO OCD Stella is S = C cut by the packing's Voronoi cell, that is, along the 8 joints.</p>
+<table><tr><th>Property</th><th>Value (exact)</th></tr>
+<tr><td>corners, faces</td><td>48 corners; 50 faces: 6 golden hexagons, 24 golden quadrilaterals, 12 triangles of C, 8 triangles in the OCD's joint hexagon planes (the cell's hexagon walls)</td></tr>
+<tr><td>volume</td><td>(−4064 + 2240√5)/729 ≈ 1.296011</td></tr>
+<tr><td>packing</td><td>fills 151/2 − 267√5/8 ≈ 87.12% of space in the OCD's packing; copies meet face to face across the 8 joints</td></tr>
+<tr><td>symmetry</td><td>pyritohedral (the cut keeps the 24 symmetries the OCD shares with the cubic packing)</td></tr></table>
+<p class="cap"><b>Table 1.</b> The DICTO OCD Stella (<code>stella_cut_exact.py</code> → <code>stella-cut-exact.txt</code>).</p>
+
+<h2>2. The seed and the crystals</h2>
+<p><b>The seed (exact).</b> An outer OCD Stella of scale φ² holds 12 OCD Stellas on its five-fold axes, each touching it, and one of scale 1/φ at the centre touching all 12. By the Minkowski argument the seed closes exactly when no two of the twelve overlap; of the 66 pairs, 30 have gauge exactly 1 (touching, each copy 5 others, along the icosahedron's edges) and 36 exactly φ. So it closes exactly at φ² with the centre at 1/φ, and the gap is −69 + 31√5 ≈ 31.8%: the pattern of the Bodhi Seed (DICTO DOI: 10.5281/zenodo.23311353), though the OCD Stella is only pyritohedral (<code>stella_seed_exact.py</code>).</p>
+<p><b>Crystals.</b> On one network of the OCD's packing with a partner on the other: with icosahedra in the OCD's 20 hexagon planes, every solid meets its 8 joint neighbours face to face and the fill is 1523/32 − 669√5/32 ≈ 84.60% (exact); with regular octahedra, ≈ 96.33% (float); alone on both networks, 87.12% (exact). With icosahedra or octahedra the crystal has space group Fd-3 (No. 203).</p>
+
+<h2>3. Status</h2>
+<p><b>Known:</b> the combinatorial type of C (Conway t3jD, the chamfered-icosahedron family). <b>Not yet searched comprehensively:</b> the OCD Stella itself, its packing and its seed. We state no priority claim here beyond "derived by DICTO from the Ogdoecontahedron's packing"; a prior-art search is to follow.</p>
+
+<h2>4. Files</h2>
+<p>In the study (branch research: studies/2026-10-16-ocd-pyrochlore): <code>stella_cut_exact.py</code> → <code>stella-cut-exact.txt</code>, <code>stella_seed_exact.py</code> → <code>stella-seed-exact.txt</code>, <code>ocd_gbpc_hull.py</code>, <code>companion_variants.py</code>. See it in the app: Kaleidohedra, 3D+ → OCD Stella Crystals.</p>
+</body></html>
