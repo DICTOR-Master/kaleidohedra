@@ -1,0 +1,86 @@
+<!doctype html><meta charset="utf-8"><title>Two scutoid layers (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea;font:600 22px/1.2 Georgia,serif;color:#2a2218}canvas{display:block}
+.lab{position:absolute;transform:translate(-50%,0);text-align:center;white-space:nowrap;font-size:20px}.lab small{display:block;font:400 16px Georgia,serif;color:#6b604f}
+#mark{position:absolute;right:22px;bottom:16px;font:400 18px Georgia,serif;color:#6b604f}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<div id="mark">DICTO · dictospheres.com</div>
+<script>
+// Bundle A of the two thin scutoid layers (DICTO 2026-10-17), exact in Q(√5) (data/scutoid-two-exact.txt), true scale throughout.
+// ?mode=cutaway&upto=1|2|3 (core + layer 1 | + layer 2 | + the closing layer to the rhombic dodecahedron), a 90° wedge facing the camera
+// removed, cut cells filled solid in their own colour (standing practice); ?mode=pieces: one cell of each kind, its own face direction up.
+(async function () {
+  const q = new URLSearchParams(location.search), MODE = q.get('mode') || 'cutaway', PX = +(q.get('px') || 1400), UPTO = +(q.get('upto') || 3);
+  const J = await fetch('scutoid-two-render.json').then((r) => r.json());
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(PX, PX); renderer.setPixelRatio(1); renderer.localClippingEnabled = true;
+  document.body.prepend(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, MODE === 'cutaway' ? 0.85 : 0.62)); const sun = new THREE.DirectionalLight(0xffffff, MODE === 'cutaway' ? 0.6 : 0.5); scene.add(sun);
+  const COL = { core: 0x5fd38a, '1P': 0xe8b84a, '1Ho': 0x2bb3a3, '1Hd': 0xc792ea, '2P': 0xf5d27a, '2Ho': 0x7fd6cb, '2Hd': 0xe0c2f2,
+    cP: 0xe9c79a, cHo: 0xd9b88a, cHd: 0xefd9b8, cRD: 0x4dd0e1 };
+  const v3 = (a) => new THREE.Vector3(...a);
+  function add(S, color, clip, xf) {
+    const P = S.v.map((p) => (xf ? xf(v3(p)) : v3(p))), pos = [], line = [];
+    for (const f of S.f) { for (let i = 1; i + 1 < f.length; i++) pos.push(...P[f[0]].toArray(), ...P[f[i]].toArray(), ...P[f[i + 1]].toArray()); for (let i = 0; i < f.length; i++) line.push(...P[f[i]].toArray(), ...P[f[(i + 1) % f.length]].toArray()); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, roughness: 0.5, flatShading: true, side: THREE.DoubleSide, clippingPlanes: clip, clipIntersection: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+    if (clip.length) scene.add(new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color, side: THREE.BackSide, clippingPlanes: clip, clipIntersection: true, polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -1 })));
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, clippingPlanes: clip, clipIntersection: true })));
+    return P;
+  }
+  const centre = (S) => S.v.reduce((t, p) => t.map((x, i) => x + p[i] / S.v.length), [0, 0, 0]);
+  const shrink = (S, k = 0.965) => { const c = v3(centre(S)); return (p) => c.clone().add(p.sub(c).multiplyScalar(k)); };
+  let dir, up = new THREE.Vector3(0, 1, 0), H;
+  if (MODE === 'alt') {
+    // DICTO 2026-10-17 "maybe alternate empty cells": along each line out from the core, filled and empty alternate — the pentagon
+    // columns filled in layer 1 and empty in layer 2, the paired-hexagon columns the other way round, the diagonal frusta filled in layer 1
+    // only; no wedge cut, the empty cells open the view; the rhombic dodecahedron drawn as edges only
+    dir = new THREE.Vector3(1, 0.62, 1.55).normalize(); H = J.r * 1.04;
+    add(J.core, COL.core, []);
+    for (const c of J.layer1) if (c.g !== 'Ho') add(c, COL['1' + c.g], [], shrink(c));
+    for (const c of J.layer2) if (c.g === 'Ho') add(c, COL['2' + c.g], [], shrink(c));
+    const r = J.r, RV = [[r, 0, 0], [-r, 0, 0], [0, r, 0], [0, -r, 0], [0, 0, r], [0, 0, -r]], line = [];
+    for (const a of RV) for (const sx of [1, -1]) for (const sy of [1, -1]) for (const sz of [1, -1]) {
+      const b = [sx * r / 2, sy * r / 2, sz * r / 2]; if (Math.abs(a[0] * b[0] + a[1] * b[1] + a[2] * b[2] - r * r / 2) < 1e-6) line.push(...a, ...b); }
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+    scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x1f8fa0, transparent: true, opacity: 0.45, depthTest: true })));
+  } else if (MODE === 'cutaway') {
+    dir = new THREE.Vector3(1, 0.62, 1.55).normalize(); H = J.r * 1.08;
+    const wr = dir.clone().sub(up.clone().multiplyScalar(dir.dot(up))).normalize(), side = up.clone().cross(wr), a = Math.PI / 4;
+    const clip = [new THREE.Plane(wr.clone().multiplyScalar(-Math.sin(a)).add(side.clone().multiplyScalar(Math.cos(a))), 0), new THREE.Plane(wr.clone().multiplyScalar(-Math.sin(a)).sub(side.clone().multiplyScalar(Math.cos(a))), 0)];
+    add(J.core, COL.core, clip);
+    for (const c of J.layer1) add(c, COL['1' + c.g], clip, shrink(c));
+    if (UPTO >= 2) for (const c of J.layer2) add(c, COL['2' + c.g], clip, shrink(c));
+    if (UPTO >= 3) for (const c of J.close) add(c, COL['c' + c.g], clip, shrink(c, 0.975));
+    if (UPTO < 3) H = (UPTO === 1 ? 0.62 : 0.72) * J.r * 1.08;
+  } else {
+    // one of each kind, its own plane's direction turned to face up; laid out in rows, all at the same scale
+    const pick = (L, g) => L.find((c) => c.g === g);
+    const ROWS = [[['layer1', 'P', 'Layer 1 · pentagon → hexagon'], ['layer1', 'Ho', 'Layer 1 · hexagon → pentagon'], ['layer1', 'Hd', 'Layer 1 · hexagonal frustum']],
+      [['layer2', 'P', 'Layer 2 · hexagon → pentagon'], ['layer2', 'Ho', 'Layer 2 · pentagon → hexagon'], ['layer2', 'Hd', 'Layer 2 · hexagonal frustum']],
+    ];
+    // seen from the side, a little above; each piece turned about its own up direction so its Y corner (the free corner) faces the camera
+    dir = new THREE.Vector3(0, 0.38, 1).normalize(); const GAP = 6.6, labs = [];
+    ROWS.forEach((row, ri) => row.forEach(([L, g, name], ci) => {
+      const c = pick(J[L], g), n = v3(c.n), cc = v3(centre(c)), qn = new THREE.Quaternion().setFromUnitVectors(n, up);
+      const h = c.v.map((p) => v3(p).dot(n)), lo = Math.min(...h), hi = Math.max(...h);
+      const free = c.v.filter((p, i) => h[i] > lo + 1e-4 && h[i] < hi - 1e-4).map((p) => v3(p).sub(cc).applyQuaternion(qn));
+      const fv = free.length ? free.reduce((t, p) => t.add(p), new THREE.Vector3()).setY(0) : new THREE.Vector3(0, 0, 1);
+      const qy = new THREE.Quaternion().setFromAxisAngle(up, Math.atan2(fv.x, fv.z) - Math.atan2(dir.x, dir.z));
+      const at = new THREE.Vector3((ci - 1) * GAP, -ri * GAP * 0.95, 0), xf = (p) => p.sub(cc).applyQuaternion(qn).applyQuaternion(qy.clone().invert()).add(at);
+      const P = add(c, COL[(L === 'layer1' ? '1' : '2') + g], [], xf);
+      labs.push([new THREE.Vector3(at.x, Math.min(...P.map((p) => p.y)) - 0.9, at.z), name, g === 'Hd' ? 'no swap' : 'scutoid']);
+    }));
+    H = GAP * 1.62; scene.position.set(0, GAP * 0.55, 0);
+    window.LABS = labs;
+  }
+  const cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.01, 400); cam.position.copy(dir.clone().multiplyScalar(120)); cam.up.copy(up); cam.lookAt(0, 0, 0);
+  sun.position.copy(dir.clone().multiplyScalar(6).add(up.clone().multiplyScalar(5)).add(up.clone().cross(dir).multiplyScalar(-3)));
+  renderer.render(scene, cam); scene.updateMatrixWorld();
+  for (const [p, name, sub] of window.LABS || []) {
+    const s = p.clone().add(scene.position).project(cam), d = document.createElement('div'); d.className = 'lab';
+    d.style.left = ((s.x + 1) / 2 * PX) + 'px'; d.style.top = ((1 - s.y) / 2 * PX) + 'px'; d.innerHTML = name + (sub ? `<small>${sub}</small>` : ''); document.body.appendChild(d);
+  }
+  document.title = 'ready';
+})();
+</script>

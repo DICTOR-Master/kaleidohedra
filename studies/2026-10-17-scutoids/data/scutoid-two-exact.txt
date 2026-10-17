@@ -1,0 +1,18 @@
+DICTO · dictospheres.com
+Two thin scutoid layers in the whole rhombic dodecahedron (bundle A), exact in Q(√5)
+  M = 11/10·(dP, dHd, 8/7·dHo); B = 77/60·(dP, dHd, 21/20·dHo); RD corners on the axes at r = 501193/96000 + 72611/32000√5
+layer 1: 32 cells, volumes sum exactly to the shell between: True
+    Hd: 8 cells, inner 6, outer 6, free corners 0, corners 12; volume classes 1
+    Ho: 12 cells, inner 6, outer 5, free corners 1, corners 12; volume classes 1  SCUTOID
+    P: 12 cells, inner 5, outer 6, free corners 1, corners 12; volume classes 1  SCUTOID
+layer 2: 32 cells, volumes sum exactly to the shell between: True
+    Hd: 8 cells, inner 6, outer 6, free corners 0, corners 12; volume classes 1
+    Ho: 12 cells, inner 5, outer 6, free corners 1, corners 12; volume classes 1  SCUTOID
+    P: 12 cells, inner 6, outer 5, free corners 1, corners 12; volume classes 1  SCUTOID
+closing: 44 cells, volumes sum exactly to the shell between: True
+    Hd: 8 cells, inner 6, outer 1, free corners 6, corners 13; volume classes 1
+    Ho: 12 cells, inner 6, outer 1, free corners 2, corners 9; volume classes 1
+    P: 12 cells, inner 5, outer 1, free corners 4, corners 10; volume classes 1
+    RD: 12 cells, inner 2, outer 4, free corners 6, corners 12; volume classes 1
+scutoids: layer 1 24, layer 2 24; all cells = RD − core exactly: True
+core share 0.2027; the RD tiles space on the fcc lattice, so the bundle does
