@@ -195,3 +195,9 @@ Decisions (DICTO, 10-18, asked before any app edit):
 ### Step 25 — the refined envelope kit in 3D (`step25_refined_meshes.py` on dicto-node → `data/step25-refined-meshes.json`)
 - Meshes: φ⁻² vertex cuboctahedron 0.466307, wedges 0.005504 each, cut-down tetrahedron 0.289493 (= the exact values of step 24).
 - 3D page (same link): "Refined envelope kit" — glass envelope with the OCD, the 6 vertex cuboctahedra at its octahedron's corners (orange; each is shared by the 6 octahedra meeting there), 12 wedges (red), 4 left + 4 right cut-down tetrahedra; single-piece buttons for the cuboctahedron, a wedge and the cut-down tetrahedron.
+
+### Step 26 — the plane trick on the cut-down tetrahedra (DICTO 10-18; `step26_tet_plane_trick.py` → `data/step26-tet-cells.json`, exact)
+- Start: T+ minus its 4 φ⁻² corners (convex); cut by all 16 face planes of the 4 keys in it (the envelope's own planes); drop the cells inside the keys. Exact: 141 cells, 113 outside the keys, **12 different shapes**; they add up exactly to the cut-down tetrahedron 256/81 − 104√5/81.
+- **Not a clean golden split:** apart from one central cell, the pieces are small (largest 0.0074, 12 of them) and mix golden angles with 45°/60°/90° ones.
+- **The central cell is a dodecahedron with 12 pentagonal faces and 20 corners** (volume 0.058537, 20% of the cut-down tetrahedron), centred at the tetrahedron's centre; its pentagons are irregular (several edge lengths) and it keeps only the tetrahedron's turns — the shape of a tetartoid (float description; exact face analysis still to do).
+- Reading: the key planes are the wrong knife for the tetrahedra (too many small pieces). The tetrahedra stay the non-golden part of the refined kit; the central dodecahedral cell is a lead worth a closer look.
