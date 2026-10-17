@@ -13,7 +13,7 @@ All numbers a + b√5 exact (Fraction pairs, `scripts/q5.py`) unless marked floa
 | 2. Middle pieces + Penrose | 6–17 | facing five-fold stars; middle piece; thick Penrose rhombus core (exact); full kit exact; sphericity scores; merges rejected |
 | Fable review | ba28bd0, `fable-review/` | both kits PROVED EXACTLY 100%; corrections: tetrahedra chiral in both kits, step-12 reflex angles |
 | 3. Keyless + three cores | 18–20 | DICTO drops the keys; flanking Penrose cores (mirror pair); keyless kit on the 3D page |
-| 4. Toward a minimal golden kit | 21–22 | envelopes fill exactly 10/φ⁶; **envelope kit: golden envelope + 6 outer corners + L/R dented tetrahedra (4 shapes)** |
+| 4. Toward a minimal golden kit | 21–27 | envelopes fill exactly 10/φ⁶; envelope kit (4 shapes); outer corner = φ⁻² pyramid + 2 wedges; φ⁻² vertex cuboctahedron = ⅓ envelope; plane trick on tetrahedra fragments (central 12-pentagon cell); **two-shape kit: golden envelope (OCD inside) + grown core piece L/R** |
 | App | `src/app` on research 94eb7d2 | two networks in the Icosahedral Octet world (not on master yet; to update to the keyless kit) |
 
 Pages: 3D pieces claude.ai/artifact/Fx4WGWm6udtt6EEPKsaMua · stars AsT1sqmf4pkdGj9v6K4ZZh · middle piece Pqp34sp8zVkw7Y2kS1WLgM · slices N76HnetzU4pJpdEGETNEHD · Penrose cut 41opNbdPpZFeMa6crGpFBz.
