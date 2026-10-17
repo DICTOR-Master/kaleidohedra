@@ -19,3 +19,9 @@ Every step saved here. Exact arithmetic `scripts/q5.py`, `scripts/exactpoly.py` 
 - Exact: within each length the two choices have opposite sideways shifts, so **two layers leaning opposite ways end exactly on the neighbour's face** (closing pairs: axes 4/5 with length e, axes 1/3 with length e/φ).
 - Spill: each layer is an oblique prism; at mid-height the stack sticks out past the slab's side by the shift (**0.0849 for length e, 0.0324 for length e/φ**) into the wedge, leaving an equal hollow on the opposite side. Smaller spill with the e/φ choice.
 - Page: claude.ai/artifact/61qCpWTyzEuR9YfvfDgep1. Open: do neighbouring spills and hollows meet up with the wedges?
+
+## Step 3 — envelope keys and the five-fold corners (`step3_keys_and_fivefold.py` → `data/step3-keys.json`, exact)
+- DICTO 10-18: "go on with step 3, cant see the minimal solution without penrose".
+- **Keys:** each envelope (RT, volume (−320 + 160√5)/27) overlaps its 8 first neighbours in a convex 8-cornered piece (a golden rhombohedron) of volume (−704 + 320√5)/729; no point lies in three envelopes. Rule: an OCD keeps the overlaps towards the 4 first neighbours of tetrahedral class + and gives away the other 4 — consistent (each overlap claimed exactly once). **Keyed envelope = RT − 4 overlaps = (−5824 + 3040√5)/729 = 1.335592**, one per cell; the keyed envelopes fill **839/8 − 93√5/2 = 89.784%** of space without overlap.
+- **So G′ = 93√5/2 − 831/8 = 10.216% of space exactly** (the earlier grid estimate 10.34% was float).
+- **Five-fold corners:** all 12 five-fold corners of each envelope are free (in G′, not buried in a neighbour). Each faces the antiparallel five-fold corner of a **third neighbour** (12 of them, squared distance 64/27 + 64√5/81): gap 0.6231 (squared (88/27 − 104√5/81)), 0.4122 along the axis, 0.4673 sideways — further apart than in the octet (0.363). These are the places for Penrose links in the bcc packing.
