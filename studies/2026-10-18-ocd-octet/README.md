@@ -130,3 +130,10 @@ Decisions (DICTO, 10-18, asked before any app edit):
 - Place: the existing **DICTO Icosahedral Octet** world (#21, Admiral Caps), as new networks beside Caps / All-icosahedral / Frog Chorus / Pyrochlore / Lotus Jewel (same family, no crossover; same controls).
 - Both kits, **two rows**: **"Octet with OCD"** (keyed kit, step 5: keyed OCD, cap, dented tetrahedron) and **"Octet with OCD and Penrose cores"** (full kit, step 15: + Penrose core, middle rest; notched caps; left/right tetrahedra). Name of the full kit chosen by DICTO.
 - Colours as on the 3D study page: OCD gold, caps blue, middle rest red, Penrose core purple, left tetrahedra green, right teal.
+
+## Fable review (ba28bd0, `fable-review/REPORT.md`) — verdict and corrections
+- **Both kits PROVED EXACTLY to fill space 100%** (own exact Q(√5) engine, no symmetry shortcuts), backed by 4 M + 2 M sampled points (every point in exactly one piece).
+- **Correction to steps 5, 9, 10:** the dented tetrahedron is **chiral** (12 proper symmetries, no improper one): the key's base corners sit at the golden-section points (φ:1) of the octahedron edges, so the key is twisted. **The keyed kit also has a left and a right tetrahedron** (4 shapes; 3 counting the mirror pair as one). In the app T− must be the point reflection of T+ (it is: `put(..., invert)`).
+- **Correction to step 12:** angle lists for non-convex faces reported reflex angles θ as 360 − θ. The middle piece's "quadrilaterals with Penrose 36°/144°" are darts with a reflex 216°; "hexagon thirds (30/120/30)" are quads 30/60/30 with a reflex 240°; the notched tetrahedron's counts need recounting. Triangle claims stand (key faces exactly half golden rhombi).
+- Extra exact facts: an M's octahedron share splits 70:30 between the two caps on its edge; H is an oblique pentagonal antiprism with a 45° exact shear; the middle rest is a ring (genus 1) round the core.
+- Fable's tested improvements (space filling survives): (1) drop the keys in the full kit → OCD ψ 0.979, M 0.579, tetrahedron 0.517; (2) keyed kit with the key cut to the hexagonal plug (3/4 of the key) → keyed OCD ψ 0.948; (3) keep M whole unless the Penrose motif is wanted.
