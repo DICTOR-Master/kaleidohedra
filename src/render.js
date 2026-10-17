@@ -79,6 +79,7 @@ import {
 } from './core/persistence.js';
 import { VALID_TRIPLES, unitTileVertices } from './krp-core/src/geometry-extensions/growth.js';
 import { SITE, SITES, storageKey, theme, themeOf, activeSite, setActiveSite } from './app/site.js';
+import { createLatticeSelect } from './app/lattice-select.js';
 import { installShear } from './app/kaleido-shear.js';
 import { createStudiesWorld } from './app/world-studies.js';
 import { createIcosaWorld } from './app/world-icosa.js';
@@ -191,6 +192,7 @@ let octetBuildWorld = null; // the same, to build: Icosahedral Octet Lattice (DI
 let cyclesWorld = null; // DICTO Icosahedral Cycles, two loops (DICTO 2026-10-14)
 let breathingWorld = null; // Golden Breathing Pyrochlore, to build (DICTO 2026-10-14)
 let bodhiPyroWorld = null; // Golden Bodhi Pyrochlore Networks (DICTO 2026-10-15)
+let latticeSelect = null; // Rhombiverse's Lattice · Select (DICTO 2026-10-17), Rhombiverse door only
 let doubleVisionWorld = null; // Double Vision, both cycles in one space (DICTO 2026-10-16)
 let ocdStellaWorld = null; // OCD Stella Crystals, one network and a swappable partner (DICTO 2026-10-16)
 let pairArrangement = null; // the Stella-Jewel / Sunstar arrangement last chosen (the Kagome hulls count as hull worlds for X-ray)
@@ -3353,6 +3355,7 @@ async function init() {
   // so the two mechanisms never fight each other.
   window.addEventListener('krp-hud-refresh', () => applyDimensionVisibility());
   function applyDimensionVisibility() {
+    latticeSelect?.setDimension(activeDimension);
     setSolidWorldVisible(worldViewMode !== 'skeleton');
     // The 3D/2D Lattice View overlay belongs to the dimension it was drawn
     // in: redraw it for the new one (4D/5D/6D clear it and draw their own).
@@ -4541,8 +4544,10 @@ async function init() {
         // the first-placement outline (it caught the first tap -- direct
         // report, 2026-09-26). The Colour button is still one tap away.
         handleWheelAction(action, { quiet: true });
+        latticeSelect?.setAction(dimension, action);
       },
     });
+    if (SITE === 'rhombiverse') latticeSelect = createLatticeSelect({ go: (action, label) => dimensionWizard.go(action, 'rhombiverse', label) });
     document.getElementById('hud-wizard-cue')?.addEventListener('click', () => dimensionWizard.open());
 
     // The world you're in (DICTO 2026-10-13): its title under DICTO, Back to the menu screen it was picked on, and on
