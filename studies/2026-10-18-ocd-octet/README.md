@@ -142,3 +142,10 @@ Decisions (DICTO, 10-18, asked before any app edit):
 - **Full kit without keys:** OCD (plain, ψ 0.979), notched cap, middle piece M₀ = H − both OCDs (or Penrose core + rest), left/right tetrahedra notched by the Ms only. Space filling survives (Fable: exact by construction, sampled 4 M points). Fable's ψ: middle 0.579, tetrahedron 0.517, rest 0.497.
 - Re-run of the step-14 fit with no keys (`step18_no_keys_flanks.py` → `data/step18-fit.json`): the **flanking Penrose prisms are now clear** (nothing to hit); like the central one they are closed by both OCDs at every column, but ≈22% of their columns (central ≈12%) leave the hull, so they would be trimmed to it as the central core is. Three prisms together ≈0.021.
 - App (research branch 94eb7d2) still shows keys in "Octet with OCD and Penrose cores"; to update to the keyless kit when app work resumes. The keyed kit row ("Octet with OCD") is unchanged unless DICTO says.
+
+### Step 19 — the flanking Penrose cores, keyless kit (`step19_flank_cores.py` → `data/step19-flank-cores.json` exact; `step19_mesh.py` on dicto-node → `data/step19-mesh.json`)
+- DICTO 10-18: "compute the flanking cores and check them".
+- Exact: keyless middle piece **M₀ = (310 + 26√5)/4617 = 0.079735**. Cores: central (−36734 + 16658√5)/50787 = 0.010129 (unchanged, no key ever entered it); **each flanking core 4114/1539 − 9182√5/7695 = 0.004993**, the two exactly equal. The three prisms are pairwise interior-disjoint inside H (exact 0). Three cores = 25.2% of M₀; **rest = −231380/50787 + 524152√5/253935 = 0.059620**.
+- Meshes: every core and the rest are **single solids**; volumes equal the exact ones. Sphericity: central core 0.752, flanking core 0.729, rest 0.377 (M₀ whole 0.579).
+- **The two flanking cores are mirror images** (a left and a right): no rotation takes one onto the other; the mirror of one does.
+- So with flanking cores the full keyless kit is: OCD, notched cap, central core, left + right flanking core, rest, left + right tetrahedron (7 shapes; 5 counting mirror pairs as one).
