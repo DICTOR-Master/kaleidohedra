@@ -1,0 +1,16 @@
+DICTO · dictospheres.com
+Golden scutoid layers, route B (float)
+cage A (the truncated icosahedron): distances {'P': np.float64(4.65487687332026), 'Hd': np.float64(4.53456788451233), 'Ho': np.float64(4.53456788451233)}; corners 60; sides by group {'P': [5], 'Hd': [6], 'Ho': [6]}; volume 442.301846
+the flip: Ho at 5.111918 (×1.127322 of the TI hexagon distance)
+cage B at Ho = 1.002 × flip: distances {'P': np.float64(4.65487687332026), 'Hd': np.float64(4.53456788451233), 'Ho': np.float64(5.122141994707853)}; corners 60; sides by group {'P': [6], 'Hd': [6], 'Ho': [5]}; volume 492.526289
+cage B at Ho = 1.010 × flip: distances {'P': np.float64(4.65487687332026), 'Hd': np.float64(4.53456788451233), 'Ho': np.float64(5.163037339974982)}; corners 60; sides by group {'P': [6], 'Hd': [6], 'Ho': [5]}; volume 494.380376
+cage B at Ho = 1.030 × flip: distances {'P': np.float64(4.65487687332026), 'Hd': np.float64(4.53456788451233), 'Ho': np.float64(5.2652757031428035)}; corners 60; sides by group {'P': [6], 'Hd': [6], 'Ho': [5]}; volume 498.192130
+cage B at Ho = 1.060 × flip: distances {'P': np.float64(4.65487687332026), 'Hd': np.float64(4.53456788451233), 'Ho': np.float64(5.418633247894536)}; corners 60; sides by group {'P': [6], 'Hd': [6], 'Ho': [5]}; volume 501.997181
+layer 1: A -> B: cells sum 1693.684545 vs layer 1693.684545
+   Hd: 8 cells, inner base 6-gon, outer base 6-gon, 0 Y-corner(s), 12 corners: frustum
+   Ho: 12 cells, inner base 6-gon, outer base 5-gon, 1 Y-corner(s), 12 corners: SCUTOID
+   P: 12 cells, inner base 5-gon, outer base 6-gon, 1 Y-corner(s), 12 corners: SCUTOID
+layer 2: B -> A' = φ² A: cells sum 5800.798201 vs layer 5800.798201
+   Hd: 8 cells, inner base 6-gon, outer base 6-gon, 0 Y-corner(s), 12 corners: frustum
+   Ho: 12 cells, inner base 5-gon, outer base 6-gon, 1 Y-corner(s), 12 corners: SCUTOID
+   P: 12 cells, inner base 6-gon, outer base 5-gon, 1 Y-corner(s), 12 corners: SCUTOID
