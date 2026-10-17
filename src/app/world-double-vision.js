@@ -1,4 +1,4 @@
-// Double Vision (DICTO 2026-10-16; paper "Double Vision – Both Cycles in One Space", DICTO DOI 10.5281/zenodo.23407106): the Spheres of
+// Dual Vision (DICTO 2026-10-16; named Double Vision until 2026-10-17; paper "Double Vision – Both Cycles in One Space", DICTO DOI 10.5281/zenodo.23407106): the Spheres of
 // Dharma (yours) and their polar reversal (flipped) in one space, as the paper builds them, the first preset of DICTO's nest-and-reverse
 // engine. One switch is the paper's toggle, the sphere of reciprocation: Ends shared (ρ² = φ²/4: the cycles share the icosahedron and
 // dodecahedron) or Middle shared (ρ² = 3φ²/4: the icosidodecahedron and triacontahedron). Three views follow the paper:
@@ -6,7 +6,10 @@
 //   interlock  both cycles as one solid (§3, Figure 1): one turn of exact convex pieces, 536 (DICTO Interlock set 1, Dharma-Ends) or 502
 //              (set 2, Dharma-Middle), a slice removed and the next turn in at the centre; the slider recolours every piece from its
 //              original layer to its flipped layer, so the seams of each cycle show in turn;
-//   layer      one original layer alone (Figure 3), with its count in this setting (Table 3).
+//   layer      one original layer alone (Figure 3), with its count in this setting (Table 3);
+//   twin       the golden twin (DICTO 2026-10-17): one station of your cycle, every corner (A + B√5)/q (exact, from the data) with √5
+//              slid to −√5, every face kept; the film morphs it in place through the rational shadow (√5 → 0) to its twin, which also
+//              stands beside it. Each frame is scaled to one size: the twin turns the nest inside out (φ³ ↦ −1/φ³), so one at a time.
 // The film (Unwrap ▶ / Wrap ◀ in the two rings of an ∞, VHS pause): the interlock unwraps layer by layer into the next turn and on for ever, or wraps back outwards,
 // pausing at every station; tapping the running direction pauses it, a slider scrubs through the turn.
 // Tapping a piece names its kind (I1·n / I2·n with its shape code, Tables 1–2) and lights every piece of that kind. X-ray cuts it like
@@ -20,10 +23,11 @@ import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey } from './site.js';
 
 const PHI = (1 + Math.sqrt(5)) / 2;
-const MODES = ['cycles', 'interlock', 'layer'];
+const MODES = ['cycles', 'interlock', 'layer', 'twin'];
+const TWINS = ['I', 'ID', 'D', 'TI', 'H', 'RT']; // your cycle's stations, first turn
 const SETTINGS = ['ends', 'middle'];
 // mixCycles: both cycles at the middle; mixColour: the paper's Figure 1 colours (each piece by its original layer)
-const PRESET = { setting: 'ends', mode: 'interlock', layer: 0, mixCycles: 0.5, mixColour: 0, slice: true, inner: true };
+const PRESET = { setting: 'ends', mode: 'interlock', layer: 0, twin: 0, mixCycles: 0.5, mixColour: 0, slice: true, inner: true };
 // the paper's layer colours (original cycle) and a second set for the flipped cycle's layers
 const ORIG = [0x4dd0e1, 0xc792ea, 0x5fd38a, 0xf08fc0, 0x9fd8ff, 0xff9a52];
 const FLIP = [0xffc857, 0xe85d88, 0x7e57c2, 0x26a69a, 0xf4a261, 0x6fa8ff];
@@ -45,6 +49,7 @@ export function createDoubleVisionWorld({ scene, fitView = () => {}, showHudProm
     if (SETTINGS.includes(d.setting)) view.setting = d.setting;
     if (MODES.includes(d.mode)) view.mode = d.mode;
     if (Number.isInteger(d.layer) && d.layer >= 0 && d.layer < 6) view.layer = d.layer;
+    if (Number.isInteger(d.twin) && d.twin >= 0 && d.twin < TWINS.length) view.twin = d.twin;
     for (const k of ['mixCycles', 'mixColour']) if (Number.isFinite(d[k])) view[k] = Math.min(1, Math.max(0, d[k]));
     for (const k of ['slice', 'inner']) if (typeof d[k] === 'boolean') view[k] = d[k];
   }
@@ -55,13 +60,14 @@ export function createDoubleVisionWorld({ scene, fitView = () => {}, showHudProm
   let DATA = null, loading = null, active = false, skeleton = false, opacity = 1, pickTargets = [];
   let layerMeshes = []; // the drawn pieces: one mesh per (turn, layer)
   let shells = []; // cycles view: { mesh, edges, side, shared }
+  let twins = []; // twin view: { mesh, line, st, tri, seg, fixed }
   const load = () => (loading ??= import('./double-vision-data.js').then((m) => { DATA = m.default; }));
   const S = () => DATA.settings[view.setting];
 
   const pieceMat = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.5, metalness: 0.05, flatShading: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
   function clearGroup() {
     for (const child of [...group.children]) { group.remove(child); child.geometry?.dispose(); if (child.material !== pieceMat) child.material?.dispose(); }
-    pickTargets = []; layerMeshes = []; shells = [];
+    pickTargets = []; layerMeshes = []; shells = []; twins = [];
   }
   // The paper's slice: a wedge about the view's vertical, facing the camera; whole pieces dropped, none clipped.
   function wedgeTest() {
@@ -130,6 +136,7 @@ export function createDoubleVisionWorld({ scene, fitView = () => {}, showHudProm
   const LAYER_SECONDS = 1.7, PAUSE_MS = 900;
   const mod6 = (x) => ((x % 6) + 6) % 6;
   function applyFilm() {
+    if (view.mode === 'twin') { morphTwins(); return; }
     const u = film.on ? mod6(film.t) : 0;
     group.scale.setScalar(film.on ? Math.pow(PHI, u / 2) : 1);
     for (const { mesh, line, turn, layer } of layerMeshes) {
@@ -159,11 +166,50 @@ export function createDoubleVisionWorld({ scene, fitView = () => {}, showHudProm
     const wasOn = film.on; if (film.dir) film.lastDir = film.dir;
     if (dir === film.dir && film.on) dir = 0;                               // tapping the running direction pauses
     film.dir = dir; film.on = film.on || dir !== 0; film.last = 0;
-    if (film.on && !wasOn) { if (view.mode !== 'interlock') view.mode = 'interlock'; draw(); }
+    if (film.on && !wasOn) { if (view.mode !== 'interlock' && view.mode !== 'twin') view.mode = 'interlock'; draw(); }
     if (!film.raf && film.on) film.raf = requestAnimationFrame(tick);
     renderPanel();
   }
-  function stopFilm() { film.on = false; film.dir = 0; film.t = 0; if (film.raf) cancelAnimationFrame(film.raf); film.raf = 0; group.scale.setScalar(1); }
+  function stopFilm() { film.on = false; film.dir = 0; film.t = 0; if (film.raf) cancelAnimationFrame(film.raf); film.raf = 0; group.scale.setScalar(1); if (view.mode === 'twin') morphTwins(); }
+  // ---- the golden twin: film time t, stations at every whole t (0 yours, 1 the rational shadow, 2 the twin, 3 the shadow, 4 yours), so
+  // the loop runs for ever both ways; s = √5·cos(πt/2) replaces √5 in every corner (A + B√5)/q.
+  const R5 = Math.sqrt(5), mod4 = (x) => ((x % 4) + 4) % 4;
+  const twinS = () => (film.on ? R5 * Math.cos(Math.PI * film.t / 2) : R5);
+  const twinStation = () => S().stations.find((st) => st.side === 'orig' && st.turn === 0 && st.name === TWINS[view.twin]);
+  function corners(st, sv) { const n = st.g.length / 9, P = new Float64Array(n * 3); for (let i = 0; i < n * 3; i++) { const [A, B, q] = st.g.slice(3 * i, 3 * i + 3); P[i] = (A + B * sv) / q; } return P; }
+  // one size for every frame and every station (the outer RT's circumradius, 1.76, in world units), the twin beside it at 0.6 of that
+  const twinR = () => 1.76 * WS;
+  const twinSide = () => { const vw = S().view, up = new THREE.Vector3(...vw.up).normalize(), d = new THREE.Vector3(...vw.dir).normalize(); return up.cross(d).normalize(); };
+  function placeTwin(e, sv, size, at) {
+    const P = corners(e.st, sv); let m = 0;
+    for (let i = 0; i < P.length; i += 3) m = Math.max(m, Math.hypot(P[i], P[i + 1], P[i + 2]));
+    const k = size / m, pos = e.mesh.geometry.attributes.position, seg = e.line.geometry.attributes.position;
+    e.tri.forEach((j, i) => pos.setXYZ(i, P[3 * j] * k + at.x, P[3 * j + 1] * k + at.y, P[3 * j + 2] * k + at.z));
+    e.seg.forEach((j, i) => seg.setXYZ(i, P[3 * j] * k + at.x, P[3 * j + 1] * k + at.y, P[3 * j + 2] * k + at.z));
+    pos.needsUpdate = seg.needsUpdate = true; e.mesh.geometry.computeVertexNormals(); e.mesh.geometry.computeBoundingSphere(); e.line.geometry.computeBoundingSphere();
+  }
+  function drawTwins() {
+    const st = twinStation(), tri = [], seg = [];
+    for (const f of st.f) { for (let k = 1; k + 1 < f.length; k++) tri.push(f[0], f[k], f[k + 1]); f.forEach((a, k) => seg.push(a, f[(k + 1) % f.length])); }
+    const colour = SOLID_COLOUR[st.name] ?? 0xcccccc;
+    for (const fixed of [false, true]) {
+      const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(new Float32Array(tri.length * 3), 3));
+      const mesh = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: colour, roughness: 0.4, transparent: true, opacity: skeleton ? 0 : 0.3 * (opacity < 1 ? 0.6 : 1), depthWrite: false, side: THREE.DoubleSide }));
+      mesh.userData = { kind: 'twin', st, fixed };
+      const eg = new THREE.BufferGeometry(); eg.setAttribute('position', new THREE.Float32BufferAttribute(new Float32Array(seg.length * 3), 3));
+      const line = new THREE.LineSegments(eg, new THREE.LineBasicMaterial({ color: colour, transparent: true, opacity: 0.95 }));
+      group.add(mesh, line); pickTargets.push(mesh); twins.push({ mesh, line, st, tri, seg, fixed });
+    }
+    morphTwins();
+  }
+  function morphTwins() {
+    if (!twins.length) return;
+    const R = twinR(), side = twinSide();
+    for (const e of twins) {
+      if (e.fixed) placeTwin(e, -R5, 0.6 * R, side.clone().multiplyScalar(2.1 * R));
+      else placeTwin(e, twinS(), R, new THREE.Vector3());
+    }
+  }
   function drawCycles() {
     for (const st of S().stations) {
       const V = st.v.map((v) => new THREE.Vector3(...v).multiplyScalar(WS)), pos = [], edges = [];
@@ -193,10 +239,14 @@ export function createDoubleVisionWorld({ scene, fitView = () => {}, showHudProm
     clearGroup();
     if (!active || !DATA) return;
     pieceMat.transparent = opacity < 1 || skeleton; pieceMat.opacity = skeleton ? 0 : opacity; pieceMat.depthWrite = opacity >= 1 && !skeleton; pieceMat.needsUpdate = true;
-    if (view.mode === 'cycles') drawCycles(); else drawPieces();
+    if (view.mode === 'cycles') drawCycles(); else if (view.mode === 'twin') drawTwins(); else drawPieces();
   }
   // framed from the paper's view B, so the slice faces you
-const fit = () => DATA && fitView([0, 0, 0], (view.mode === 'cycles' ? 2.0 : 1.35) * 2.49 * WS, S().view.dir);
+const fit = () => {
+    if (!DATA) return;
+    if (view.mode === 'twin') { const R = twinR(); fitView(twinSide().multiplyScalar(1.05 * R).toArray(), 1.25 * R, S().view.dir); return; }
+    fitView([0, 0, 0], (view.mode === 'cycles' ? 2.0 : 1.35) * 2.49 * WS, S().view.dir);
+  };
 
   function handleTap(hit, mode) {
     const ud = hit.object?.userData;
@@ -207,6 +257,7 @@ const fit = () => DATA && fitView([0, 0, 0], (view.mode === 'cycles' ? 2.0 : 1.3
       showHudPrompt(t(st.shared ? 'dv.prompt.shared' : `dv.prompt.${st.side}`, L, { name: st.name }), 2600);
       return true;
     }
+    if (ud.kind === 'twin') { showHudPrompt(t('dv.prompt.twinTap', L, { name: ud.st.name }), 2600); return true; }
     if (ud.kind !== 'pieces') return false;
     const e = ud.shown[ud.tri[Math.floor(hit.faceIndex ?? -1)]];
     if (!e) return false;
@@ -234,12 +285,13 @@ const fit = () => DATA && fitView([0, 0, 0], (view.mode === 'cycles' ? 2.0 : 1.3
     <div class="w4d-row w4d-options dv-top dv-split">${SETTINGS.map((x) => `<button type="button" data-dv-setting="${x}"></button>`).join('')}</div>
     <div class="w4d-row w4d-options dv-modes">${MODES.map((m) => `<button type="button" data-dv-mode="${m}"></button>`).join('')}<span class="dv-gap"></span><button type="button" data-dv="slice"></button><button type="button" data-dv="inner"></button><button type="button" data-dv="reset"></button><button type="button" class="dv-paper"></button></div>
     <div class="w4d-row w4d-options dv-layers">${ORIG_LAYERS.map((n, i) => `<button type="button" data-dv-layer="${i}">${n}</button>`).join('')}</div>
+    <div class="w4d-row w4d-options dv-twins">${TWINS.map((n, i) => `<button type="button" data-dv-twin="${i}">${n}</button>`).join('')}</div>
     <div class="w4d-row dv-mix-row"><label class="hull-pick"><span class="dv-mix-label"></span> <input type="range" class="st-slider" min="0" max="100" step="1"></label></div>
     <style>#worlddoublevision-panel .dv-gap{display:inline-block;width:14px}#worlddoublevision-panel .dv-split{border-top:1px solid rgba(232,192,96,.35);padding-top:8px;margin-top:4px}#worlddoublevision-panel .dv-inf-row{display:flex;justify-content:center;align-items:center;gap:14px}#worlddoublevision-panel .dv-inf{position:relative;flex:0 0 184px;width:184px;height:83px;color:#d8cfb8}#worlddoublevision-panel .dv-inf-line{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:#e8c060;stroke-width:3;opacity:.6;pointer-events:none}#worlddoublevision-panel .dv-inf .dv-lobe{position:absolute!important;top:12px;margin:0!important;min-width:0!important;width:60px;height:60px;border-radius:50%!important;padding:0!important;display:grid;place-items:center;background:transparent!important;border:2px solid transparent!important;color:#d8cfb8!important;cursor:pointer}#worlddoublevision-panel .dv-inf .dv-lobe[data-dv-film=wrap]{left:21px;right:auto}#worlddoublevision-panel .dv-inf .dv-lobe[data-dv-film=unwrap]{right:21px;left:auto}#worlddoublevision-panel .dv-lobe svg{width:24px;height:24px;fill:currentColor;stroke:currentColor;stroke-width:1.5;stroke-linejoin:round}#worlddoublevision-panel .dv-inf .dv-lobe.active{color:#e8c060!important}#worlddoublevision-panel .dv-inf .dv-lobe.active svg{filter:drop-shadow(0 0 6px #e8c060)}#worlddoublevision-panel .dv-pause{width:46px;height:46px;border-radius:10px;padding:0;display:grid;place-items:center}#worlddoublevision-panel .dv-pause svg{width:20px;height:20px;fill:currentColor}#worlddoublevision-panel .dv-pause.active{color:#e8c060;border-color:#e8c060}#worlddoublevision-panel .dv-inf-run{stroke:#ffe08a;stroke-width:4.5;stroke-linecap:round;stroke-dasharray:16 84;opacity:0;filter:drop-shadow(0 0 4px #e8c060)}#worlddoublevision-panel .dv-inf.run .dv-inf-line{opacity:1}#worlddoublevision-panel .dv-inf.run .dv-inf-run{opacity:1;animation:dv-inf-run 2.2s linear infinite}#worlddoublevision-panel .dv-inf.run.rev .dv-inf-run{animation-direction:reverse}@keyframes dv-inf-run{from{stroke-dashoffset:0}to{stroke-dashoffset:-100}}#worlddoublevision-panel .dv-note{max-width:62ch;margin:0 auto}</style>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, 'doublevision');
   const slider = panel.querySelector('.dv-mix-row input'), filmSlider = panel.querySelector('.dv-film-row input');
-  const syncFilmSlider = () => { filmSlider.value = String(Math.round(mod6(film.t) * 100)); };
+  const syncFilmSlider = () => { const v = mod4(film.t); filmSlider.value = String(Math.round(view.mode === 'twin' ? (v <= 2 ? v : 4 - v) * 50 : mod6(film.t) * 100)); };
   function renderPanel() {
     panel.classList.toggle('visible', active);
     if (!active) return;
@@ -248,17 +300,19 @@ const fit = () => DATA && fitView([0, 0, 0], (view.mode === 'cycles' ? 2.0 : 1.3
     const s = S(), setNo = view.setting === 'ends' ? 1 : 2;
     const vars = { shared: t(`dv.shared.${view.setting}`, L), n: s.pieces.length, k: s.kinds.length, set: setNo,
       setName: `DICTO Interlock set ${setNo} (${view.setting === 'ends' ? 'Dharma-Ends' : 'Dharma-Middle'})`,
-      layer: ORIG_LAYERS[view.layer], ln: s.pieces.filter((p) => p.o === view.layer).length };
+      layer: ORIG_LAYERS[view.layer], ln: s.pieces.filter((p) => p.o === view.layer).length, name: TWINS[view.twin] };
     panel.querySelector('.dv-note').textContent = t(`dv.short.${m}`, L, vars);
     panel.querySelectorAll('[data-dv-setting]').forEach((b) => { b.textContent = t(`dv.set.${b.dataset.dvSetting}`, L); b.classList.toggle('active', b.dataset.dvSetting === view.setting); });
     panel.querySelectorAll('[data-dv-mode]').forEach((b) => { b.textContent = t(`dv.mode.${b.dataset.dvMode}`, L); b.classList.toggle('active', b.dataset.dvMode === m); });
     panel.querySelectorAll('[data-dv-film]').forEach((b) => { const d = b.dataset.dvFilm === 'unwrap' ? 1 : -1, w = t(`dv.film.${b.dataset.dvFilm}`, L); b.title = w; b.setAttribute('aria-label', w); b.classList.toggle('active', film.on && film.dir === d); });
     { const pb = panel.querySelector('[data-dv-pause]'), w = t('dv.film.pause', L); pb.hidden = !film.on; pb.title = w; pb.setAttribute('aria-label', w); pb.classList.toggle('active', film.on && film.dir === 0); }
-    panel.querySelector('.dv-film-row').hidden = !film.on; { const run = film.on && film.dir !== 0, inf = panel.querySelector('.dv-inf'); inf.classList.toggle('run', run); inf.classList.toggle('rev', film.dir < 0); panel.querySelector('.dv-film-row').style.display = run ? 'none' : ''; } panel.querySelector('.dv-mix-row').hidden = film.on; panel.querySelector('.dv-film-pos').textContent = t('dv.film.position', L); syncFilmSlider();
+    panel.querySelector('.dv-film-row').hidden = !film.on; { const run = film.on && film.dir !== 0, inf = panel.querySelector('.dv-inf'); inf.classList.toggle('run', run); inf.classList.toggle('rev', film.dir < 0); panel.querySelector('.dv-film-row').style.display = run ? 'none' : ''; } panel.querySelector('.dv-mix-row').hidden = film.on || m === 'twin'; panel.querySelector('.dv-film-pos').textContent = t(m === 'twin' ? 'dv.film.twinPos' : 'dv.film.position', L); filmSlider.max = m === 'twin' ? '100' : '600'; syncFilmSlider(); syncFilmSlider();
     panel.querySelector('.dv-layers').hidden = m !== 'layer';
+    panel.querySelector('.dv-twins').hidden = m !== 'twin';
+    panel.querySelectorAll('[data-dv-twin]').forEach((b) => b.classList.toggle('active', Number(b.dataset.dvTwin) === view.twin));
     panel.querySelectorAll('[data-dv-layer]').forEach((b) => b.classList.toggle('active', Number(b.dataset.dvLayer) === view.layer));
     const tog = (k, on) => { const b = panel.querySelector(`[data-dv="${k}"]`); b.hidden = !on; if (on) b.textContent = t(`dv.${k}.${view[k] ? 'on' : 'off'}`, L); };
-    tog('slice', m !== 'cycles'); tog('inner', m === 'interlock');
+    tog('slice', m !== 'cycles' && m !== 'twin'); tog('inner', m === 'interlock');
     const reset = panel.querySelector('[data-dv="reset"]');
     reset.hidden = Object.keys(PRESET).every((k) => view[k] === PRESET[k]); reset.textContent = t('dv.reset', L);
     panel.querySelector('.dv-paper').textContent = t('dv.paper', L);
@@ -271,13 +325,17 @@ const fit = () => DATA && fitView([0, 0, 0], (view.mode === 'cycles' ? 2.0 : 1.3
     view.setting = b.dataset.dvSetting; kind = null; commit(true);
     showHudPrompt(t(`dv.prompt.toggle.${view.setting}`, lang()), 4500);
   }));
-  panel.querySelectorAll('[data-dv-mode]').forEach((b) => b.addEventListener('click', () => { view.mode = b.dataset.dvMode; kind = null; if (view.mode !== 'interlock') stopFilm(); commit(true); }));
+  panel.querySelectorAll('[data-dv-mode]').forEach((b) => b.addEventListener('click', () => {
+    const was = view.mode; if (was !== b.dataset.dvMode) stopFilm(); view.mode = b.dataset.dvMode; kind = null; commit(true);
+    if (view.mode === 'twin' && was !== 'twin') showHudPrompt(t('dv.prompt.twin', lang()), 6000);
+  }));
+  panel.querySelectorAll('[data-dv-twin]').forEach((b) => b.addEventListener('click', () => { view.twin = Number(b.dataset.dvTwin); commit(true); }));
   panel.querySelectorAll('[data-dv-film]').forEach((b) => b.addEventListener('click', () => {
     const first = !film.on; setFilm(b.dataset.dvFilm === 'unwrap' ? 1 : -1);
-    if (first) showHudPrompt(t('dv.prompt.film', lang()), 5000);
+    if (first && view.mode !== 'twin') showHudPrompt(t('dv.prompt.film', lang()), 5000);
   }));
   panel.querySelector('[data-dv-pause]').addEventListener('click', () => { if (!film.on) return; if (film.dir) setFilm(film.dir); else setFilm(film.lastDir || 1); });
-  filmSlider.addEventListener('input', () => { if (!film.on) return; film.dir = 0; film.t = Math.floor(film.t / 6) * 6 + Number(filmSlider.value) / 100; applyFilm(); renderPanel(); });
+  filmSlider.addEventListener('input', () => { if (!film.on) return; film.dir = 0; film.t = view.mode === 'twin' ? Number(filmSlider.value) / 50 : Math.floor(film.t / 6) * 6 + Number(filmSlider.value) / 100; applyFilm(); renderPanel(); });
   panel.querySelectorAll('[data-dv-layer]').forEach((b) => b.addEventListener('click', () => { view.layer = Number(b.dataset.dvLayer); kind = null; commit(); }));
   for (const k of ['slice', 'inner']) panel.querySelector(`[data-dv="${k}"]`).addEventListener('click', () => { view[k] = !view[k]; commit(); });
   panel.querySelector('.dv-paper').addEventListener('click', () => { if (DATA) window.open(`https://doi.org/${DATA.paperDoi}`, '_blank', 'noopener'); });

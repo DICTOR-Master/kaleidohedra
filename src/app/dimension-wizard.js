@@ -537,12 +537,12 @@ const K_WORLDS = [
   // DICTO Icosa (DICTO 2026-10-10: "own Icosa world", reached only through the DICTO worlds; newest first)
   // Multi-shell chains (DICTO 2026-10-13): the three published nestings, #22-#24, one entry each.
   // DICTO-TIC, Transitional Icosahedral Cycles (DICTO's name, 2026-10-14; docs/PLAN-CYCLES.md): two loops and their side paths.
-  // Double Vision (DICTO 2026-10-16): the Spheres of Dharma and their polar reversal in one space, the paper's preset of the
+  // Dual Vision (DICTO 2026-10-16; named Double Vision until 2026-10-17, the paper keeps that title): the Spheres of Dharma and their polar reversal in one space, the paper's preset of the
   // nest-and-reverse engine (world-double-vision.js).
   // OCD Stella Crystals (DICTO 2026-10-16): the DICTO OCD Stella on one network, icosahedra, octahedra or OCD Stellas on the other
   // (world-ocd-stella.js).
   { key: 'ocdStella', label: 'OCD Stella Crystals', pieces: [{ label: 'OCD Stella Crystals', action: 'tool:ocdStellaWorld' }] },
-  { key: 'doubleVision', label: 'Double Vision', pieces: [{ label: 'Double Vision', action: 'tool:doubleVisionWorld' }] },
+  { key: 'doubleVision', label: 'Dual Vision', pieces: [{ label: 'Dual Vision', action: 'tool:doubleVisionWorld' }] },
   { key: 'cycles', label: 'DICTO-TIC (Transitional Icosahedral Cycles)', pieces: [{ label: 'DICTO-TIC (Transitional Icosahedral Cycles)', action: 'tool:cyclesWorld' }] },
   // Theaetetus (DICTO 2026-10-15): the Cleo core grown to the DICTO Hecatodihedron.
   { key: 'theaetetus', label: 'Theaetetus', pieces: [{ label: 'Theaetetus', action: 'tool:theaetetusWorld' }] },

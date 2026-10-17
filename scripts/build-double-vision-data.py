@@ -13,6 +13,24 @@ KINDS = {
     'ends': [('12f', 12), ('TBP', 60), ('7f', 60), ('7f', 60), ('12f', 12), ('7f', 60), ('QPy', 60), ('PPy', 60), ('PPy', 12), ('Tet', 60), ('QPy', 60), ('Tet', 20)],
     'middle': [('7f', 30), ('11f', 12), ('7f', 60), ('HPy', 20), ('7f', 60), ('6f', 60), ('Tet', 20), ('QPy', 60), ('Tet', 60), ('Tet', 60), ('Tet', 60)],
 }
+# Golden twin (DICTO 2026-10-17, "Dual Vision"): every station corner as (A + B√5)/q, recovered from the full-precision chains (every
+# station is golden: the chains' corners are in Q(√5), scaled by φ powers and the rational ρ² factor 3), checked to 1e-9; the app's Twin
+# view slides √5 to −√5 in these forms (the golden conjugate, keeping every face), a station's twin beside it.
+p = (1 + 5 ** .5) / 2; R5 = 5 ** .5; BS = np.arange(-3000, 3001)
+def gold(x):
+    for q in range(1, 241):
+        A = np.round(q * x - BS * R5); err = np.abs(A + BS * R5 - q * x)
+        k = np.argmin(np.abs(BS) + 1e6 * (err > 1e-9 * q))
+        if err[k] <= 1e-9 * q: return [int(A[k]), int(BS[k]), q]
+    raise ValueError(x)
+POOL = np.vstack([np.array(X) * p ** (-3 * t) for t in (0, 1) for n, X in json.load(open(D + 'orig-chain.json'))] +
+                 [np.array(X) * sc * p ** (3 * t) for sc in (1.0, 3.0) for t in range(-3, 3) for n, X in json.load(open(D + 'flip-ends-chain.json'))[:-1]])
+def golden(V):
+    out = []
+    for v in V:
+        j = np.argmin(np.linalg.norm(POOL - np.array(v), axis=1)); assert np.linalg.norm(POOL[j] - np.array(v)) < 2e-6
+        out += [c for x in POOL[j] for c in gold(x)]
+    return out
 out = {'paperDoi': '10.5281/zenodo.23407106', 'settings': {}}
 for s, setNo in (('ends', 1), ('middle', 2)):
     R = json.load(open(D + f'p4-render-{s}.json')); X = json.load(open(D + f'p4-xray-{s}.json')); L = json.load(open(D + f'interlock-{s}.json'))
@@ -31,7 +49,7 @@ for s, setNo in (('ends', 1), ('middle', 2)):
     assert counts == [n for _, n in KINDS[s]], (s, counts)
     assert len(pieces) == {'ends': 536, 'middle': 502}[s]
     kinds = [{'name': f'I{setNo}·{k + 1}', 'code': c, 'n': n} for k, (c, n) in enumerate(KINDS[s])]
-    stations = [{'name': t['name'], 'side': t['side'], 'turn': t['turn'], 'shared': t['shared'], 'v': r6(t['v']), 'f': t['f']} for t in X['stations']]
+    stations = [{'name': t['name'], 'side': t['side'], 'turn': t['turn'], 'shared': t['shared'], 'v': r6(t['v']), 'g': golden(t['v']), 'f': t['f']} for t in X['stations']]
     out['settings'][s] = {'rho': X['rho'], 'pieces': pieces, 'kinds': kinds, 'stations': stations,
                           'origLayers': L['orig_layers'], 'revLayers': L['flip_layers'], 'view': R['views']['B']}
     print(s, len(pieces), 'pieces', len(kinds), 'kinds', len(stations), 'stations', 'rho', X['rho'])

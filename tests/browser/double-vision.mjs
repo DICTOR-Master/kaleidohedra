@@ -72,6 +72,21 @@ assert.equal(await page.locator(`${panel} .dv-inf.run.rev`).count(), 1, 'the ∞
 await page.screenshot({ path: `${SH}/dv-chev-wrap.png` });
 await page.tap(`${panel} [data-dv-pause]`); await page.waitForTimeout(300); assert.equal(await page.locator(`${panel} .dv-scrub`).isVisible(), true, 'slider when paused'); assert.equal(await page.locator(`${panel} .dv-inf.run`).count(), 0, 'the ∞ rests when paused');
 await page.locator(`${panel} .dv-film-row input`).fill('300'); await page.waitForTimeout(500); await page.screenshot({ path: `${SH}/dv-film-scrub.png` });
+// the golden twin (DICTO 2026-10-17): one station at a time, morphing in place through the shadow to its twin, the twin beside it
+await page.tap(`${panel} [data-dv-mode="twin"]`); await page.waitForTimeout(900);
+assert.match(await note(), /Golden twin of I:/); assert.equal(await page.locator(`${panel} .dv-twins`).isVisible(), true, 'station row');
+assert.equal(await page.locator(`${panel} .dv-mix-row`).isHidden(), true, 'no mix slider in twin'); assert.equal(await page.locator(`${panel} .dv-inf.run`).count(), 0, 'film stopped on mode change');
+await page.screenshot({ path: `${SH}/dv-twin-I.png` });
+for (const n of ['D', 'RT']) {
+  await page.tap(`${panel} [data-dv-twin="${['I', 'ID', 'D', 'TI', 'H', 'RT'].indexOf(n)}"]`); await page.waitForTimeout(700);
+  assert.match(await note(), new RegExp(`Golden twin of ${n}:`)); await page.screenshot({ path: `${SH}/dv-twin-${n}.png` });
+}
+await page.tap(`${panel} [data-dv-film="unwrap"]`); await page.waitForTimeout(1500);
+assert.equal(await page.locator(`${panel} [data-dv-mode="twin"].active`).count(), 1, 'film keeps the twin view'); assert.equal(await page.locator(`${panel} .dv-inf.run`).count(), 1, 'twin film runs');
+await page.tap(`${panel} [data-dv-pause]`); await page.waitForTimeout(300);
+assert.match(await page.locator(`${panel} .dv-film-pos`).textContent(), /Yours → twin/);
+for (const [v, nm] of [['50', 'shadow'], ['100', 'twin']]) { await page.locator(`${panel} .dv-film-row input`).fill(v); await page.waitForTimeout(500); await page.screenshot({ path: `${SH}/dv-twin-RT-${nm}.png` }); }
+await page.tap(`${panel} [data-dv-mode="interlock"]`); await page.waitForTimeout(900);
 // X-ray offered
 assert.equal(await page.locator('#xray-toggle').isHidden(), false, 'X-ray offered');
 // Reset back to the paper
