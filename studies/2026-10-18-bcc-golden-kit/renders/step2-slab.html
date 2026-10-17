@@ -1,0 +1,88 @@
+<title>Golden Slab Cover</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* layout: face tiling and side views in a wrapping row, facts below */
+:root{--bg:#f4f3ef;--fg:#1f2329;--muted:#5d6470;--line:#c9ccd2;--sheet:#fff;--ra:#d9a21b;--rb:#5b8fd0;--pc:#3f9a5b;--l1:#7fcf9c;--l2:#2e9e5b;--spill:#c8382f;--slab:#eef1f5;--f-ui:"IBM Plex Sans",system-ui,sans-serif;--f-num:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121418;--fg:#e6e8ec;--muted:#9aa1ad;--line:#2c313a;--sheet:#1a1d23;--l1:#3f8a5e;--slab:#1f2a36;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121418;--fg:#e6e8ec;--muted:#9aa1ad;--line:#2c313a;--sheet:#1a1d23;--l1:#3f8a5e;--slab:#1f2a36;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px}
+main{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+h1{font-size:1.3rem;margin:0;text-wrap:balance} .sub{color:var(--muted);margin:0;max-width:72ch}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px} .col{display:flex;flex-direction:column;gap:16px;min-width:0}
+figure{margin:0;background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:8px;min-width:0}
+svg{width:100%;height:auto;display:block} figcaption{font-size:.85rem;color:var(--muted)}
+.ra{fill:var(--ra);stroke:var(--fg);stroke-width:.8} .rb{fill:var(--rb);stroke:var(--fg);stroke-width:.8} .pc{fill:var(--pc);fill-opacity:.8;stroke:var(--fg);stroke-width:.8}
+.slab{fill:var(--slab);stroke:var(--line)} .l1{fill:var(--l1);stroke:var(--fg);stroke-width:.8} .l2{fill:var(--l2);stroke:var(--fg);stroke-width:.8}
+.spill{fill:var(--spill);fill-opacity:.85} .hole{fill:var(--sheet);stroke:var(--spill);stroke-dasharray:4 3}
+.face{stroke:var(--fg);stroke-width:1.5} .lbl{fill:var(--fg);font:12px var(--f-ui)}
+ul{margin:0;padding-left:1.2em;max-width:72ch} .num{font-family:var(--f-num)} .tag{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em} .mark{font-size:.75rem;color:var(--muted)}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<main>
+<h1>Covering a slab of the golden gap</h1>
+<p class="sub">OCDs joined hexagon to hexagon on the bcc lattice, each in its golden envelope (RT). Between second neighbours the gap is a flat slab over one RT face (a golden rhombus, 63.43°), <span class="num">0.1049</span> thick. <span class="tag">Picture first, for DICTO</span></p>
+<div class="row">
+<figure><svg viewBox="0 0 640 415" role="img" aria-label="Slab face tiled by golden rhombi and parallelograms">
+<polygon points="25.23,25.23 109.15,25.23 146.68,100.29 62.76,100.29" class="ra"/>
+<polygon points="62.76,100.29 146.68,100.29 184.21,175.35 100.29,175.35" class="ra"/>
+<polygon points="100.29,175.35 184.21,175.35 221.74,250.41 137.82,250.41" class="ra"/>
+<polygon points="137.82,250.41 221.74,250.41 244.94,296.80 161.02,296.80" class="pc"/>
+<polygon points="161.02,296.80 244.94,296.80 268.13,343.20 184.21,343.20" class="pc"/>
+<polygon points="184.21,343.20 268.13,343.20 291.33,389.59 207.41,389.59" class="pc"/>
+<polygon points="109.15,25.23 193.07,25.23 230.60,100.29 146.68,100.29" class="ra"/>
+<polygon points="146.68,100.29 230.60,100.29 268.13,175.35 184.21,175.35" class="ra"/>
+<polygon points="184.21,175.35 268.13,175.35 305.66,250.41 221.74,250.41" class="ra"/>
+<polygon points="221.74,250.41 305.66,250.41 328.86,296.80 244.94,296.80" class="pc"/>
+<polygon points="244.94,296.80 328.86,296.80 352.05,343.20 268.13,343.20" class="pc"/>
+<polygon points="268.13,343.20 352.05,343.20 375.25,389.59 291.33,389.59" class="pc"/>
+<polygon points="193.07,25.23 276.99,25.23 314.52,100.29 230.60,100.29" class="ra"/>
+<polygon points="230.60,100.29 314.52,100.29 352.05,175.35 268.13,175.35" class="ra"/>
+<polygon points="268.13,175.35 352.05,175.35 389.59,250.41 305.66,250.41" class="ra"/>
+<polygon points="305.66,250.41 389.59,250.41 412.78,296.80 328.86,296.80" class="pc"/>
+<polygon points="328.86,296.80 412.78,296.80 435.98,343.20 352.05,343.20" class="pc"/>
+<polygon points="352.05,343.20 435.98,343.20 459.17,389.59 375.25,389.59" class="pc"/>
+<polygon points="276.99,25.23 328.86,25.23 366.39,100.29 314.52,100.29" class="pc"/>
+<polygon points="314.52,100.29 366.39,100.29 403.92,175.35 352.05,175.35" class="pc"/>
+<polygon points="352.05,175.35 403.92,175.35 441.45,250.41 389.59,250.41" class="pc"/>
+<polygon points="389.59,250.41 441.45,250.41 464.65,296.80 412.78,296.80" class="rb"/>
+<polygon points="412.78,296.80 464.65,296.80 487.84,343.20 435.98,343.20" class="rb"/>
+<polygon points="435.98,343.20 487.84,343.20 511.04,389.59 459.17,389.59" class="rb"/>
+<polygon points="328.86,25.23 380.73,25.23 418.26,100.29 366.39,100.29" class="pc"/>
+<polygon points="366.39,100.29 418.26,100.29 455.79,175.35 403.92,175.35" class="pc"/>
+<polygon points="403.92,175.35 455.79,175.35 493.32,250.41 441.45,250.41" class="pc"/>
+<polygon points="441.45,250.41 493.32,250.41 516.51,296.80 464.65,296.80" class="rb"/>
+<polygon points="464.65,296.80 516.51,296.80 539.71,343.20 487.84,343.20" class="rb"/>
+<polygon points="487.84,343.20 539.71,343.20 562.90,389.59 511.04,389.59" class="rb"/>
+<polygon points="380.73,25.23 432.59,25.23 470.12,100.29 418.26,100.29" class="pc"/>
+<polygon points="418.26,100.29 470.12,100.29 507.65,175.35 455.79,175.35" class="pc"/>
+<polygon points="455.79,175.35 507.65,175.35 545.18,250.41 493.32,250.41" class="pc"/>
+<polygon points="493.32,250.41 545.18,250.41 568.38,296.80 516.51,296.80" class="rb"/>
+<polygon points="516.51,296.80 568.38,296.80 591.57,343.20 539.71,343.20" class="rb"/>
+<polygon points="539.71,343.20 591.57,343.20 614.77,389.59 562.90,389.59" class="rb"/>
+</svg><figcaption><b>The face, tiled.</b> Its edge is exactly 3φ·e = 3e + 3e/φ (e = edge of the λ/φ rhombohedron, 0.0998). Cutting each edge into three e and three e/φ: <b>9 golden rhombi e×e</b> (gold), <b>9 golden rhombi e/φ×e/φ</b> (blue), <b>18 golden parallelograms e×e/φ</b> (green). Area checked exactly.</figcaption></figure>
+<div class="col"><figure><svg viewBox="0 0 560 87" role="img" aria-label="Two layers in the slab, side view">
+<polygon points="63.16,71.01 496.84,71.01 496.84,15.79 63.16,15.79" class="slab"/>
+<polygon points="63.16,71.01 496.84,71.01 513.91,43.40 80.22,43.40" class="l1"/>
+<polygon points="80.22,43.40 513.91,43.40 496.84,15.79 63.16,15.79" class="l2"/>
+<polygon points="496.84,71.01 513.91,43.40 496.84,15.79" class="spill"/>
+<polygon points="63.16,71.01 80.22,43.40 63.16,15.79" class="hole"/>
+<line x1="0.0" y1="71.0" x2="560.0" y2="71.0" class="face"/><text x="67.2" y="85.0" class="lbl">own RT face</text>
+<line x1="0.0" y1="15.8" x2="560.0" y2="15.8" class="face"/><text x="67.2" y="10.8" class="lbl">neighbour's RT face</text>
+</svg><figcaption><b>Third edge e/phi</b> (on the e×e tiles: brick (e, e, e/phi)): each layer leans sideways by <span class="num">0.0324</span>; the second leans back, so the stack ends exactly on the neighbour's face. Red: spill past the slab's side into the wedge; hatched white: the matching hollow left inside the slab.</figcaption></figure><figure><svg viewBox="0 0 560 123" role="img" aria-label="Two layers in the slab, side view">
+<polygon points="89.69,100.84 470.31,100.84 470.31,22.42 89.69,22.42" class="slab"/>
+<polygon points="89.69,100.84 470.31,100.84 533.75,61.63 153.12,61.63" class="l1"/>
+<polygon points="153.12,61.63 533.75,61.63 470.31,22.42 89.69,22.42" class="l2"/>
+<polygon points="470.31,100.84 533.75,61.63 470.31,22.42" class="spill"/>
+<polygon points="89.69,100.84 153.12,61.63 89.69,22.42" class="hole"/>
+<line x1="0.0" y1="100.8" x2="560.0" y2="100.8" class="face"/><text x="93.7" y="114.8" class="lbl">own RT face</text>
+<line x1="0.0" y1="22.4" x2="560.0" y2="22.4" class="face"/><text x="93.7" y="17.4" class="lbl">neighbour's RT face</text>
+</svg><figcaption><b>Third edge e</b> (on the e×e tiles: rhombohedron): each layer leans sideways by <span class="num">0.0849</span>; the second leans back, so the stack ends exactly on the neighbour's face. Red: spill past the slab's side into the wedge; hatched white: the matching hollow left inside the slab.</figcaption></figure></div>
+</div>
+<ul>
+<li>Each tile becomes a piece by pushing it along a third five-fold axis: rhombohedra on the rhombi, golden bricks (parallelepipeds with edges e and e/φ along five-fold axes) on the rest.</li>
+<li>Exact: four choices of that third edge give a layer exactly <b>half the slab</b> (<span class="num">0.05246</span>): two of length e, two of length e/φ.</li>
+<li>Exact: in each length the two choices lean opposite ways, so <b>two layers, one leaning each way, end exactly on the neighbour's face</b>. Between them they spill a little past the slab's sides into the wedges (red), leaving an equal hollow on the other side (hatched).</li>
+<li>Open: whether the spills and hollows of neighbouring slabs and wedges can meet up; that is the next step.</li>
+</ul>
+<span class="mark">DICTO · dictospheres.com · 2026-10-18 · studies/2026-10-18-bcc-golden-kit step 2</span>
+</main>
