@@ -57,6 +57,8 @@ export function createVajrayanaWorld({ scene, fitView = () => {}, showHudPrompt 
     const glass = !wedge || opacity < 1 || skeleton;
     const mat = new THREE.MeshStandardMaterial({ color: colour, roughness: 0.5, flatShading: true, side: THREE.DoubleSide, transparent: glass, opacity: skeleton ? 0 : glass ? (wedge ? opacity : 0.14) : 1, depthWrite: !glass });
     mat.userData.wedgePlanes = wedge ? wedgePlanes : null; mat.userData.baseOpacity = mat.opacity;
+    // in glass (the wedge off) the stations are shells and stay hollow in a cut; pieces (spikes, the 30 + 60) are always solid
+    mat.userData.hollow = !wedge && !['star', 'rtM', 'mI'].includes(key);
     const mesh = new THREE.Mesh(g, mat); mesh.userData = { kind: 'vj', key, turn };
     const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
     const lmat = new THREE.LineBasicMaterial({ color: skeleton ? colour : 0x2a2218, transparent: true, opacity: skeleton ? 0.9 : glass && !wedge ? 0.55 : 0.5 });

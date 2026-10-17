@@ -95,6 +95,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   let skeleton = false, opacity = 1; // the app's view modes: Solid, Translucent, Skeleton
   const solid = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, flatShading: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
   const glass = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, flatShading: true, transparent: true, opacity: 0.22, depthWrite: false });
+  glass.userData.hollow = true; // glass shells and helpers stay hollow in an X-ray cut (xray-caps.js)
   function clearGroup() {
     for (const child of [...group.children]) { group.remove(child); child.geometry.dispose(); if (child.isLineSegments) child.material.dispose(); }
   }

@@ -80,6 +80,7 @@ import {
 import { VALID_TRIPLES, unitTileVertices } from './krp-core/src/geometry-extensions/growth.js';
 import { SITE, SITES, storageKey, theme, themeOf, activeSite, setActiveSite } from './app/site.js';
 import { createLatticeSelect } from './app/lattice-select.js';
+import { createXrayCaps } from './app/xray-caps.js';
 import { SITE_LATTICES, SITE_LATTICE_LABELS, packCell, unpackCell } from './app/site-lattices.js';
 import { installShear } from './app/kaleido-shear.js';
 import { createStudiesWorld } from './app/world-studies.js';
@@ -240,6 +241,7 @@ const sectionPlane = new THREE.Plane(new THREE.Vector3(1, 0, 0), 0);
 // X-ray in the own 3D worlds (DICTO 2026-10-13: X-ray across all apps): their groups are rebuilt on every change, so the
 // cutaway is applied to whatever they hold just before each frame.
 const CLIP_ON = [sectionPlane], CLIP_OFF = [];
+let xrayCaps = null; // the solid infill of cut solids, in their own colours (DICTO 2026-10-17), made with the scene
 // X-Ray cut direction for a #section-axis value: the 3 coordinate axes
 // plus (angled X-Ray, 2026-09-24, direct request) the 4 cube body-
 // diagonals -- a cut perpendicular to any of those slices Pyrochlore
@@ -6909,6 +6911,9 @@ function animate() {
       // a world's own cutaway wedge (material.userData.wedgePlanes, Vajrayana) applies while the X-ray plane is off
       own3DWorld()?.group?.traverse((o) => { if (o.material) for (const m of [].concat(o.material)) { const w = planes === CLIP_OFF ? m.userData?.wedgePlanes : null, want = w ?? planes; if (m.clippingPlanes !== want) { m.clippingPlanes = want; m.clipIntersection = !!w; m.needsUpdate = true; } } });
     }
+    // X-ray solid infill: every solid the plane cuts shows a filled face in its own colour (DICTO 2026-10-17)
+    xrayCaps ??= createXrayCaps({ scene, plane: sectionPlane });
+    { const n = xrayCaps.update(); if (document.body.dataset.xrayCaps !== String(n)) document.body.dataset.xrayCaps = String(n); } // filled solids, read by tests // capped solids, read by tests
     renderer.render(scene, camera);
   }
   // Always renders, regardless of the modal wheel's open state -- it's

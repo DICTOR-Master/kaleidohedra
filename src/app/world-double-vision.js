@@ -219,7 +219,7 @@ export function createDoubleVisionWorld({ scene, fitView = () => {}, showHudProm
       }
       const colour = st.shared ? SHARED : SOLID_COLOUR[baseName(st.name)] ?? 0xcccccc;
       const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
-      const mesh = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: colour, roughness: 0.4, transparent: true, depthWrite: false, side: THREE.DoubleSide }));
+      const mesh = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: colour, roughness: 0.4, transparent: true, depthWrite: false, side: THREE.DoubleSide, userData: { hollow: true } }));
       mesh.userData = { kind: 'shell', st };
       const eg = new THREE.BufferGeometry(); eg.setAttribute('position', new THREE.Float32BufferAttribute(edges, 3));
       const line = new THREE.LineSegments(eg, new THREE.LineBasicMaterial({ color: colour, transparent: true }));

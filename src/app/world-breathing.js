@@ -70,6 +70,7 @@ export function createBreathingWorld({ scene, fitView = () => {}, showHudPrompt 
   let active = false, skeleton = false, opacity = 1;
   const solid = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, flatShading: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
   const glass = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, flatShading: true, transparent: true, opacity: 0.24, depthWrite: false });
+  glass.userData.hollow = true; // glass shells and helpers stay hollow in an X-ray cut (xray-caps.js)
   let pickTargets = [];
   function clearGroup() {
     for (const child of [...group.children]) { group.remove(child); child.geometry.dispose(); if (child.isLineSegments) child.material.dispose(); }
