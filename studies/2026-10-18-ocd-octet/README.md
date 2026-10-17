@@ -70,3 +70,12 @@ All numbers a + b√5 exact (Fraction pairs, `scripts/q5.py`) unless marked floa
 - All pieces are single solids without holes (the notched cap shows 4 zero-volume boolean slivers, ignored). Per cell 1.2231 + 6×0.0581 + 6×0.0733 + 2×0.2495 = 2.5102 ≈ cell 2.5103.
 - **Final set with middle pieces: keyed OCD, notched cap, middle piece, left tetrahedron, right tetrahedron** (5 shapes; 4 if a mirror-image pair counts as one).
 - Page: claude.ai/artifact/Fx4WGWm6udtt6EEPKsaMua (gallery + exploded assembly round one OCD: 1 OCD, 6 caps, 12 middle pieces, 4 left + 4 right tetrahedra).
+
+## Development stage 2 — exact pieces (DICTO 10-18: "next development stage")
+### Step 11 — exact volumes of the trimmed set (`exactpoly.py`, `step11_exact_pieces.py` → `data/step11-exact.json`)
+- Exact convex polytopes in Q(√5) (`exactpoly.py`: float only picks which planes meet; every corner solved and checked exactly).
+- Middle piece by convex parts: vol M = vol H − 2 vol(H∩OCD) − Σ vol(H∩key); H = hull of the two stars.
+- Exact: **hull of the two facing stars = 4√5/81**; H∩OCD = (−155 + 101√5)/4617; each of the 4 key tips in H = −1/27 + 7√5/405.
+- Exact pieces: **middle piece 994/4617 − 1466√5/23085 = 0.073291**; **notched cap (32 − 8√5)/243 = 0.058072**; **notched tetrahedron 166/81 − 326√5/405 = 0.249486**; keyed OCD (−7688 + 4280√5)/1539 (step 5).
+- Exact: keyed OCD + 6 caps + 6 middle pieces + 2 tetrahedra = cell (32 + 16√5)/27. ✓  Mesh volumes (step 10) agree to 1e-16.
+- Shares used (by symmetry): each M meets each of its 2 octahedra in (250 − 82√5)/4617 and each of its 2 tetrahedra equally (inversion through m); the 6 caps are equal (Th), the 6 edges of a tetrahedron equivalent (its 12 turns).
