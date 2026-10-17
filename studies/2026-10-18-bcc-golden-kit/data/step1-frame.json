@@ -1,0 +1,23 @@
+{
+ "mark": "DICTO · dictospheres.com",
+ "step": 1,
+ "checks": {
+  "first_neighbours": 8,
+  "second_neighbours": 6,
+  "third_neighbours": 12,
+  "dist2": [
+   "8/9|8/27",
+   "32/27|32/81",
+   "64/27|64/81"
+  ],
+  "slab_face_corners": 4,
+  "neighbour_face_directly_opposite": true,
+  "slab_gap_times_n": "32/9|-128/81",
+  "slab_gap": 0.10491910111101749,
+  "rt_face_edge": 0.48436168533690743,
+  "rt_edge_over_rhombohedron_edge_squared": {
+   "lambda/phi": "27/2|9/2",
+   "lambda/phi^2": "63/2|27/2"
+  }
+ }
+}
