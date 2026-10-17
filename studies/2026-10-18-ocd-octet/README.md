@@ -96,3 +96,10 @@ All numbers a + b√5 exact (Fraction pairs, `scripts/q5.py`) unless marked floa
 - Exact: at each side corner a **thick Penrose rhombus one φ-step smaller** (edge 0.1339, 108° at the side corner) reaches one tip of each star.
 - So three thick Penrose rhombi in φ-scaled sizes join the two stars tip to tip, symmetric about m. Each would become a Penrose prism along the axis, closed by the two OCD surfaces.
 - Open: do the prisms fit inside the middle region in 3D (between the OCDs, clear of the keys)? Page: claude.ai/artifact/41opNbdPpZFeMa6crGpFBz
+
+### Step 14 — 3D fit of the Penrose prisms (`step14_penrose_fit.py` → `data/step14-fit.json`, float sampling, 4000 columns per prism)
+- Each prism = rhombus footprint run along the five-fold axis from OCD 1's surface to OCD 2's surface.
+- **Central thick prism:** closed by both OCDs at every column ✓; **clear of all keys** ✓; column height 0.198–0.273; but **12% of its columns poke out of the star hull** (beyond the middle region, into caps/tetrahedra). Volume ≈ 0.0104.
+- **Two flanking prisms:** closed at both ends ✓, but **every column runs into a key** ✗, and ≈22% poke out of the hull. Height 0.254–0.412. Volume ≈ 0.0052 each.
+- Together the three fill ≈28% of the middle piece (0.0209 of 0.0733).
+- Reading: the central Penrose prism is a real candidate link (needs either clipping to the hull or a slightly larger middle region); the flanking prisms clash with the chosen tetrahedral keys.
