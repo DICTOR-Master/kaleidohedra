@@ -30,6 +30,7 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--fg);outline-off
 <div id="stage"><span id="info"></span><span class="mark">DICTO · dictospheres.com · studies/2026-10-18-ocd-octet steps 10, 15</span></div>
 <div class="bar" id="btns">
 <button data-v="assembly" aria-pressed="true">Assembly round one OCD</button>
+<button data-v="network" aria-pressed="false">Network: OCDs and tetrahedra</button>
 <button data-v="keyed_OCD" aria-pressed="false"><i class="sw" style="background:var(--ocd)"></i>OCD + 8 keys</button>
 <button data-v="cap" aria-pressed="false"><i class="sw" style="background:var(--cap)"></i>Notched cap</button>
 <button data-v="middle" aria-pressed="false"><i class="sw" style="background:var(--mid)"></i>Middle piece</button>
@@ -55,7 +56,7 @@ const mats={};['ocd','cap','mid','tl','tr','core'].forEach(k=>mats[k]=new THREE.
 const edgeMat=new THREE.LineBasicMaterial({transparent:true,opacity:.45});
 function geo(p,flip){const g=new THREE.BufferGeometry(),a=[];p.t.forEach(t=>{const tt=flip?[t[0],t[2],t[1]]:t;tt.forEach(i=>a.push(...p.v[i].map(x=>flip?-x:x)))});
  g.setAttribute('position',new THREE.Float32BufferAttribute(a,3));g.computeVertexNormals();return g}
-const G={};for(const k in D.p)G[k]=geo(D.p[k],false);G.tet_right=geo(D.p.tet_notched,true);
+const G={};for(const k in D.p)G[k]=geo(D.p[k],false);G.tet_right=geo(D.p.tet_notched,true);G.tet_dented_flip=geo(D.p.tet_dented,true);
 function mesh(g,mat){const m=new THREE.Mesh(g,mat);m.add(new THREE.LineSegments(new THREE.EdgesGeometry(g,20),edgeMat));return m}
 // Th: cyclic permutations x sign flips (24 ops) as 3x3 matrices
 const ops=[];[[0,1,2],[1,2,0],[2,0,1]].forEach(pm=>{for(let s=0;s<8;s++){const sg=[s&1?-1:1,s&2?-1:1,s&4?-1:1];const M=new THREE.Matrix4();const e=[0,0,0,0,0,0,0,0,0];
@@ -76,10 +77,17 @@ function build(v){world.clear();items=[];let txt='';
   uniqueBy(ops.filter(M=>M.determinant()>0),kt).forEach(M=>add(G.tet_notched,mats.tl,M,new THREE.Vector3(...D.c.tet).applyMatrix4(M)));
   uniqueBy(ops.filter(M=>M.determinant()>0),kt).forEach(M=>add(G.tet_right,mats.tr,M,new THREE.Vector3(...D.c.tet).applyMatrix4(M).negate()));
   txt='1 OCD · 6 caps · 12 middle pieces'+(G.core?' (Penrose core + rest)':'')+' · 4 left + 4 right tetrahedra';ctl.target.set(0,0,0);cam.position.set(3.2,2.4,4.2)}
+ else if(v==='network'){const R=2*D.c.tet[0];let n=0,m=0;
+  for(let i=-2;i<=2;i++)for(let j=-2;j<=2;j++)for(let k=-2;k<=2;k++){if((i+j+k)%2)continue;const p=new THREE.Vector3(i,j,k).multiplyScalar(R);if(p.length()>1.5*R+1e-6)continue;
+   const M=new THREE.Matrix4().makeTranslation(p.x,p.y,p.z);add(G.keyed_OCD,mats.ocd,M,p.clone());n++}
+  for(let i=-3;i<=3;i+=2)for(let j=-3;j<=3;j+=2)for(let k=-3;k<=3;k+=2){const p=new THREE.Vector3(i,j,k).multiplyScalar(R/2);if(p.length()>1.75*R)continue;
+   const inv=(((i+j+k)%4)+4)%4===1;const c=new THREE.Vector3(...D.c.tet).multiplyScalar(inv?-1:1);const M=new THREE.Matrix4().makeTranslation(p.x-c.x,p.y-c.y,p.z-c.z);
+   add(inv?G.tet_dented_flip:G.tet_dented,inv?mats.tr:mats.tl,M,p.clone());m++}
+  txt=n+' keyed OCDs · '+m+' tetrahedra (caps and middle pieces left out, so the links show)';ctl.target.set(0,0,0);cam.position.set(5.2,3.9,6.8)}
  else{const g=G[v],mat=v==='core'?mats.core:v==='rest'?mats.mid:v==='keyed_OCD'?mats.ocd:v==='cap'?mats.cap:v==='middle'?mats.mid:v==='tet_right'?mats.tr:mats.tl;add(g,mat,null);
   const c=centroid(g);world.position.set(-c.x,-c.y,-c.z);g.computeBoundingSphere();const r=g.boundingSphere.radius;cam.position.set(r*3,r*2.2,r*3.6);
   const vol=(D.p[v]||D.p.tet_notched).vol;txt='volume '+vol.toFixed(5);}
- if(v==='assembly')world.position.set(0,0,0);info.textContent=txt;explode()}
+ if(v==='assembly'||v==='network')world.position.set(0,0,0);info.textContent=txt;explode()}
 const ex=document.getElementById('ex');
 function explode(){const f=ex.value/100*0.9;items.forEach(m=>{m.position.copy(m.userData.dir).multiplyScalar(f)})}
 ex.addEventListener('input',explode);
