@@ -110,3 +110,9 @@ All numbers a + b√5 exact (Fraction pairs, `scripts/q5.py`) unless marked floa
 - Meshes (`step15_mesh.py` on dicto-node → `data/step15-meshes.json`): core and rest are **each one solid**; volumes equal the exact values.
 - 3D page updated (same link, claude.ai/artifact/Fx4WGWm6udtt6EEPKsaMua): buttons for the Penrose core and the rest; the assembly shows each middle piece as core + rest.
 - **Set now: keyed OCD, notched cap, Penrose core, middle rest, left and right tetrahedra** (6 shapes; 5 counting the mirror pair as one).
+
+### Step 16 — how much space each piece takes (`step16_space_shares.py` → `data/step16-shares.json`, exact)
+- DICTO 10-18: "how much space do these octet arrangements cover together with ocds". The set fills space completely (shares sum to exactly 1).
+- Exact shares of the cell: **bare OCDs 45.886%** ((1025/114 − 145√5/38)); keys 2.838% (94/3 − 14√5); **notched caps 13.880% (exactly 2√5 − 13/3)**; Penrose cores 2.421%; middle rests 15.097%; tetrahedra 19.877%.
+- So OCD + keys = 48.72%; everything else (caps, middle pieces, tetrahedra) 51.28%.
+- For comparison, OCDs joined hexagon to hexagon in the bcc packing fill 77.43%: the octet spreads the OCDs out (octahedron centres on fcc, edge 2√2φ/3) and the extra space is what the caps, middle pieces and tetrahedra take.
