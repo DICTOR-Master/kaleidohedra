@@ -300,6 +300,12 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     group,
     meshes: () => [],
     handleTap: () => false,
+    /** Open on one of the current shape's views (a link from another world: Vajrayana's Cleo star opens Theaetetus's 'cleostar'). */
+    openView(name) {
+      if (!DATA[view.kind].views[name]) return;
+      view.part[view.kind] = name; stopFilm(); film = null; save();
+      if (active) { draw(); fit(); renderFilm(); renderPanel(); }
+    },
     /** Which of the world's shapes to show (the menu entries); anything else keeps the current one. */
     setChain(kind) {
       if (!KINDS.includes(kind) || kind === view.kind) return;

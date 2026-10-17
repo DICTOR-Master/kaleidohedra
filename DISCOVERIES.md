@@ -57,6 +57,8 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 31 | The DICTO Ogdoecontahedron: the polar of the DICTO Hecatodihedron, a convex solid of 20 regular hexagons and 60 kites (102 corners, 180 edges), exact in ℚ(√5); copies joined on hexagons form diamond and pyrochlore networks and a bcc packing of (9225 − 3915√5)/608 ≈ 77.43%; exactly the canonical pentakis dodecahedron with its 20 three-fold corners cut flat (V2); with the Hecatodihedron it forms the self-dual DICTO Hecatogdoecontahedron (182 faces), whose core and hull are the classical truncated icosahedron–pentakis dodecahedron compound's (rectified TI and jtI) | DICTO (the inside-out idea, the name, the networks, the compound's name) | studies/2026-10-16-polar-dharma, ocd-pyrochlore, progenitors | **face arrangement known** (dual of L0(D), Antiprism); **derived from a known solid** (pentakis dodecahedron cut flat); the metric solid, its packings and the compound pairing **not found named** | 2026-10-16 (Zenodo 10.5281/zenodo.23404688, V2) |
 | 32 | Inverted Shells: the Spheres of Dharma (with the Hecatodihedron stage) reciprocated into an exact reversed golden cycle D ⊂ ID ⊂ Ogdoecontahedron ⊂ PD ⊂ I ⊂ RT ⊂ D·φ³, one kind of piece per layer; the great stellated dodecahedron locks into the outer gap at one size; a dual pair fits the inner gap in reverse order | DICTO (turning the cycle inside out, the names) | studies/2026-10-16-polar-dharma (exact) | polar reciprocation **known**; the reversed exact nest and its pieces **not found** | 2026-10-16 (Zenodo 10.5281/zenodo.23405029, V2) |
 | 33 | Double Vision – Both Cycles in One Space: the Spheres of Dharma and their polar reversal in one space; the sphere of reciprocation toggles between two exact settings (ρ² = φ²/4 sharing I and D, ρ² = 3φ²/4 sharing ID and RT) that can never coincide (3 is not a power of φ); cut against each other the cycles make one solid of exact convex pieces, 536 of 12 kinds (DICTO Interlock set 1) and 502 of 11 kinds (set 2) per turn | DICTO (both cycles in one space, the toggle, the interlock, the set names) | studies/2026-10-16-interlock (exact) | **not found** (common refinement of dissections is standard) | 2026-10-16 (Zenodo 10.5281/zenodo.23407106, V2) |
+| 34 | Progenitors: the DICTO Hecatodihedron and DICTO Ogdoecontahedron as a twin pair never close golden on their own (8,742 tight cycles, none on a power of φ; the tightest 3-cycle gains exactly 9/φ⁴ a round); set into the Spheres of Dharma in the dodecahedron's place (O at 3φ²/4) they close it again on φ⁹: I ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ I·φ³, a cycle holding the core and hull of two dual compounds (ID/RT and rTI/jtI, the latter the DICTO Hecatogdoecontahedron's) | DICTO (the progenitors idea, the truncated icosahedron's place, the names) | studies/2026-10-16-progenitors (exact) | **not found** (in the sources checked) | 2026-10-16 (Zenodo 10.5281/zenodo.23413184) |
+| 35 | Vajrayana: the dodecahedron returns in the cycle of #34 as the hull of the Cleo star, exactly (2/3)·D, filled by 82 pieces of four kinds; the last loose step RT ⊂ I·φ³ is closed by the DICTO Metaxyhexecontahedron, the dodecahedron–icosahedron hull member with edge ratio 9/φ⁴, touching both, each of its two layers one kind of piece (30 and 60), its dual closing the reversed cycle's step; the full-height icosidodecahedron star gives the DICTO Palintriacontahedron (ratio 3/√5); twelve stations | DICTO (the Cleo star with the dodecahedron in it, the inward pyramids, the solid in the last gap, the full-height ID star, the names) | studies/2026-10-16-progenitors (exact; some observations float, so labelled) | **not found** as named or distinguished members (the hull family is known) | 2026-10-17 (Zenodo 10.5281/zenodo.23429911) |
 
 Known results the apps show (kept here, with their numbers, as checks; not DICTO's findings; see the section at the end):
 
@@ -904,6 +906,28 @@ pieces. Names by DICTO.*
   Demonstration "Cluster of 20 Icosahedra" (in the vein of Kabai); Robert Austin's 2014 model overlaps whole
   icosahedra with dodecahedra; the Dogstar and its honeycomb are Hart's (1996). The King of Pentacles, the
   closed Stella-Corona and its network are DICTO's.
+
+## 35. Vajrayana (DICTO, 2026-10-17)
+
+- The companion to Progenitors (#34). The dodecahedron, displaced by the Ogdoecontahedron, returns inside the first loose step as the hull of
+  DICTO's Cleo star: the icosahedron's 20 Cleo-Icos with 20 more turned out as spikes have their tips exactly at (2/3)·D; 20 core Cleo-Icos,
+  20 spikes, 12 inward pentagonal pyramids and 30 valley tetrahedra (one shape) fill it with remainder 0.
+- The last loose step, RT ⊂ I·φ³, is closed by the **DICTO Metaxyhexecontahedron**: the hull of the RT's 12 five-fold corners and the 20 face
+  centres of I·φ³, the dodecahedron–icosahedron hull member with icosahedron edge 9/φ⁴ times its dodecahedron edge; it touches both, and its
+  two layers are one kind of piece each (30, then 60). Its dual closes the same step of the polar-reversed cycle.
+- The full-height icosidodecahedron star's hull, the **DICTO Palintriacontahedron** (ratio 3/√5), is the rhombic triacontahedron turned inside
+  out; its bridge to the next turn is a float observation. Twelve stations: I ⊂ Cleo star ⊂ D′ ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ M ⊂ I·φ³.
+  Paper DICTO DOI 10.5281/zenodo.23429911.
+- In the app: Kaleidohedra, 3D+ → Vajrayana (`?open=vajrayana`): the twelve stations cut away, the ∞ film peeling them one at a time,
+  the 30 + 60 closing pieces; the Cleo star build opens in Theaetetus.
+
+## 34. Progenitors (DICTO, 2026-10-16)
+
+- The DICTO Hecatodihedron H and its polar, the DICTO Ogdoecontahedron O, as a twin pair. On their own they never close golden: all 8,742
+  tight cycles through H, O, TI, PD (with any of I, ID, D, RT) miss every power of φ; the tightest, TI ⊂ H ⊂ O ⊂ PD, gains exactly 9/φ⁴ a round.
+- With O on the Dharma's own icosidodecahedron at 3φ²/4, in the dodecahedron's place, every step nests exactly and the cycle closes on φ⁹:
+  I ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ I·φ³. It holds the core and hull of two dual compounds, the icosahedron–dodecahedron one (ID, RT) and
+  the DICTO Hecatogdoecontahedron's (rTI, jtI). Paper DICTO DOI 10.5281/zenodo.23413184.
 
 ## 33. Double Vision – Both Cycles in One Space (DICTO, 2026-10-16)
 
