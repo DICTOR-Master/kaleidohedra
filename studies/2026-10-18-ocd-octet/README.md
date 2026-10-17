@@ -79,3 +79,13 @@ All numbers a + b√5 exact (Fraction pairs, `scripts/q5.py`) unless marked floa
 - Exact pieces: **middle piece 994/4617 − 1466√5/23085 = 0.073291**; **notched cap (32 − 8√5)/243 = 0.058072**; **notched tetrahedron 166/81 − 326√5/405 = 0.249486**; keyed OCD (−7688 + 4280√5)/1539 (step 5).
 - Exact: keyed OCD + 6 caps + 6 middle pieces + 2 tetrahedra = cell (32 + 16√5)/27. ✓  Mesh volumes (step 10) agree to 1e-16.
 - Shares used (by symmetry): each M meets each of its 2 octahedra in (250 − 82√5)/4617 and each of its 2 tetrahedra equally (inversion through m); the 6 caps are equal (Th), the 6 edges of a tetrahedron equivalent (its 12 turns).
+
+### Step 12 — every face, and which are golden / Penrose (`step12_exact_faces.py` → `data/step12-faces.json`, log `data/step12.log`; `step12b_key_in_hull_planes.py`)
+- Faces from the step-10 meshes, each matched to its exact source plane(s); corners snapped to exact 3-plane points; exact squared edges and exact cos² name the angles (golden 63.43/116.57, Penrose 36/72/108/144, 60/90/120).
+- **Keyed OCD:** 60 kites, 12 free hexagons, and **24 key faces that are exact half golden rhombi** (31.72°, 31.72°, 116.57°); the key bases overhang the hexagons (undersides lie on the joint planes, against the caps).
+- **Middle piece:** **no golden or Penrose rhombus.** Faces: the 10 kites of the two stars, hexagon thirds (30/120/30), key faces cut to quarter golden rhombi (right triangles 90/31.72/58.28), 45-45-90 and 69.3/41.4 triangles, and **4 quadrilaterals carrying the Penrose angles 36° and 144°** (with 90° and 18°). Edge ratios include φ (0.3505/0.2166, 0.6667/0.4120), √3 (0.4120/0.2379) and √2.
+- **Notched cap:** no golden or Penrose angles at all.
+- **Notched tetrahedron:** golden (8+8) and Penrose (7+7) angles occur in 15 quadrilaterals, none a full rhombus.
+- Exact (12b): each of the 4 keys beside a shared edge has one face lying exactly in a facing-star hull plane (of a neighbouring edge's hull).
+- **So the middle piece is not made of Penrose rhombi;** Penrose angles appear only in 4 of its faces. A true Penrose-prism link would need a different cut (open, for DICTO).
+- Caveat: some mesh loops are degenerate (0-gons, a few "?" where a corner did not snap); they are boolean slivers, not real faces.
