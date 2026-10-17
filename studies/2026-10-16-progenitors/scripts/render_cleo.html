@@ -3,7 +3,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 // The Cleo star build (?mode=exploded|assembled|cycle|one&k=&px=): the Dharma icosahedron as 20 Cleo-Icos (wisteria), 20 Cleo spikes (cyan),
-// 12 inward pentagonal pyramids (gold) and 30 valley tetrahedra (leaf green; the TI keeps its own green) under D' = (2/3)·D; assembled inside glass D' and glass ID; the eleven-station cycle cutaway
+// 12 inward pentagonal pyramids (gold) and 30 valley tetrahedra (leaf green; the TI keeps its own green) under D' = (2/3)·D; assembled inside glass D' and glass ID; the twelve-station cycle (M added 2026-10-17) cutaway
 // (I ⊂ star ⊂ D' ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ hull ⊂ RT), a slice removed. Orthographic, bearing B, house palette. Data: cleo-build.json.
 (async function () {
   const q = new URLSearchParams(location.search), MODE = q.get('mode') || 'exploded', PX = +(q.get('px') || 1200);
@@ -30,14 +30,14 @@
   if (MODE === 'cycle') {
     const wr = dir.clone().sub(up.clone().multiplyScalar(dir.dot(up))).normalize(), side = up.clone().cross(wr), a = Math.PI / 4;
     const clip = [new THREE.Plane(wr.clone().multiplyScalar(-Math.sin(a)).add(side.clone().multiplyScalar(Math.cos(a))), 0), new THREE.Plane(wr.clone().multiplyScalar(-Math.sin(a)).sub(side.clone().multiplyScalar(Math.cos(a))), 0)];
-    const COL = { ID: 0xc792ea, O: 0x2bb3a3, rTI: 0xf08fc0, TI: 0x5fd38a, H: 0xe8b84a, hull: 0x9fd8ff, RT: 0xff9a52 };
+    const COL = { ID: 0xc792ea, O: 0x2bb3a3, rTI: 0xf08fc0, TI: 0x5fd38a, H: 0xe8b84a, hull: 0x9fd8ff, RT: 0xff9a52, M: 0xc0392b };
     for (const s of J.nine) if (COL[s.name]) add(s, COL[s.name], { clip });
     add(J.Dp, 0xf5f0e2, { clip });
     for (const s of J.core) add(s, WIS, { clip }); for (const s of J.spikes) add(s, CYAN, { clip }); for (const s of J.pyr) add(s, GOLD, { clip }); for (const s of J.valley ?? []) add(s, GREEN, { clip });
     H = 1.95;
   }
   if (MODE === 'one') { const k = q.get('k'); const s = k === 'Dp' ? J.Dp : k === 'star' ? null : J.nine.find((x) => x.name === k);
-    if (k === 'star') { for (const c of J.core) add(c, WIS); for (const c of J.spikes) add(c, CYAN); } else add(s, { Dp: 0xf5f0e2, I: CYAN, ID: 0xc792ea, O: 0x2bb3a3, rTI: 0xf08fc0, TI: 0x5fd38a, H: 0xe8b84a, hull: 0x9fd8ff, RT: 0xff9a52, 'I·φ³': CYAN }[k]);
+    if (k === 'star') { for (const c of J.core) add(c, WIS); for (const c of J.spikes) add(c, CYAN); } else add(s, { Dp: 0xf5f0e2, I: CYAN, ID: 0xc792ea, O: 0x2bb3a3, rTI: 0xf08fc0, TI: 0x5fd38a, H: 0xe8b84a, hull: 0x9fd8ff, RT: 0xff9a52, M: 0xc0392b, 'I·φ³': CYAN }[k]);
     H = 2.6; }
   const cam = new THREE.OrthographicCamera(-H, H, H, -H, 0.01, 200); cam.position.copy(dir.clone().multiplyScalar(40)); cam.up.copy(up); cam.lookAt(0, 0, 0);
   sun.position.copy(dir.clone().multiplyScalar(6).add(up.clone().multiplyScalar(5)).add(up.clone().cross(dir).multiplyScalar(-3)));

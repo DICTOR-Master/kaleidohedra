@@ -24,13 +24,19 @@
     const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
     scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, transparent: !!o.op, opacity: o.op ? 0.35 : 1, clippingPlanes: cp, clipIntersection: true })));
   }
-  const C = { ID: 0xc792ea, rTI: 0xf08fc0, TI: 0x5fd38a, H: 0xe8b84a, O94: 0x2bb3a3, hull: 0x9fd8ff, RT: 0xff9a52, Ip3: 0x4dd0e1, X: 0xd98ba5, G: 0xc0392b };
+  const C = { O: 0x2bb3a3, ID: 0xc792ea, rTI: 0xf08fc0, TI: 0x5fd38a, H: 0xe8b84a, O94: 0x2bb3a3, hull: 0x9fd8ff, RT: 0xff9a52, Ip3: 0x4dd0e1, X: 0xd98ba5, G: 0xc0392b };
   if (MODE === 'cutaway') {
     for (const s of J.cleo.core) add(s, 0xc792ea); for (const s of J.cleo.spikes) add(s, 0x4dd0e1); for (const s of J.cleo.pyr) add(s, 0xe8b84a); add(J.cleo.Dp, 0xf5f0e2);
     // &gap=0 leaves out the gap member G (RT ⊂ G ⊂ I·φ³, touching both; edge ratio 9/φ⁴); &nox=1 leaves out the Palintriacontahedron X
-    for (const k of ['ID', 'rTI', 'TI', 'H', 'O94', 'hull', 'RT', 'G', 'X']) if (J.st[k] && !(k === 'G' && q.get('gap') === '0') && !(k === 'X' && q.get('nox') === '1')) add(J.st[k], C[k]);
+    // &twelve=1 (DICTO 2026-10-17): exactly the twelve stations, I ⊂ Cleo star ⊂ D′ ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ M ⊂ I·φ³ — O at its
+    // own station (3φ²/4), not the H–O compound's O at 9/4, and no Palintriacontahedron
+    const KEYS = q.get('twelve') === '1' ? ['ID', 'O', 'rTI', 'TI', 'H', 'hull', 'RT', 'G'] : ['ID', 'rTI', 'TI', 'H', 'O94', 'hull', 'RT', 'G', 'X'];
+    for (const k of KEYS) if (J.st[k] && !(k === 'G' && q.get('gap') === '0') && !(k === 'X' && q.get('nox') === '1')) add(J.st[k], C[k]);
+    // &layer=1 (DICTO 2026-10-17): the 60 pieces of one kind that fill M -> I·φ³, so the last step shows closed
+    // each piece drawn shrunk a little toward its own centre, so its faces shared with M and I·φ³ don't fight
+    if (q.get('layer') === '1') for (const pc of J.st.L60) { const c = pc.v.reduce((t, v) => t.map((x, i) => x + v[i] / pc.v.length), [0, 0, 0]); add({ v: pc.v.map((v) => v.map((x, i) => c[i] + 0.965 * (x - c[i]))), f: pc.f }, 0xe9c79a); }
     // &clean=1: the next turn only as the solid I·φ³, so the seam RT ⊂ G ⊂ I·φ³ reads plainly
-    if (q.get('clean') === '1') add(J.st.Ip3, 0x4dd0e1);
+    if (q.get('clean') === '1') add(J.st.Ip3, 0x4dd0e1, q.get('layer') === '1' ? { op: 0.22 } : {});
     else {
       // the next turn: I·φ³ as its own 20 Cleo-Icos with 20 Cleo spikes, inside D'·φ³ (glass), inside ID·φ³ (glass)
       for (const s of J.cleo3.core) add(s, 0x4dd0e1); for (const s of J.cleo3.spikes) add(s, 0x7fe0ec);
