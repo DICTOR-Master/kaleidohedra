@@ -1,0 +1,62 @@
+<title>__TITLE__</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* layout: header, 3D stage, view buttons, explode slider, facts */
+:root{--bg:#f3f4f6;--fg:#1d2230;--muted:#5b6275;--line:#d5d8e0;--panel:#fff;--sel:#1d2230;--selfg:#fff;--f-ui:"IBM Plex Sans",system-ui,sans-serif;--f-num:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11141b;--fg:#e6e8ee;--muted:#9aa1b2;--line:#2a2f3c;--panel:#181c25;--sel:#e6e8ee;--selfg:#11141b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#11141b;--fg:#e6e8ee;--muted:#9aa1b2;--line:#2a2f3c;--panel:#181c25;--sel:#e6e8ee;--selfg:#11141b;color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);display:flex;flex-direction:column;gap:10px;box-sizing:border-box;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:12px}
+h1{font-size:1.15rem;margin:0;font-weight:600;text-wrap:balance} .meta{font-size:.85rem;color:var(--muted);margin:0;max-width:80ch}
+#stage{flex:1;min-height:340px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel);position:relative;touch-action:none}
+#stage canvas{display:block;width:100%;height:100%}
+.mark{position:absolute;right:10px;bottom:8px;font-size:.72rem;color:var(--muted);pointer-events:none}
+#info{position:absolute;left:10px;top:8px;right:10px;font-size:.85rem;font-family:var(--f-num);color:var(--fg);pointer-events:none}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button{font:inherit;font-size:.9rem;padding:10px 14px;border-radius:6px;border:1px solid var(--line);background:var(--panel);color:var(--fg);cursor:pointer;display:flex;gap:8px;align-items:center;min-height:44px}
+button[aria-pressed="true"]{background:var(--sel);color:var(--selfg);border-color:var(--sel)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+.slider{display:flex;align-items:center;gap:10px;flex:1;min-width:240px;font-size:.9rem} .slider input{flex:1;height:32px}
+ul{margin:0;padding-left:1.2em;font-size:.9rem;max-width:90ch}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<h1>__TITLE__</h1>
+<p class="meta">__SUB__</p>
+<div id="stage"><span id="info"></span><span class="mark">DICTO · dictospheres.com · __MARK__</span></div>
+<div class="bar" id="btns"></div>
+<div class="bar"><label class="slider" for="ex">Pull apart <input type="range" id="ex" min="0" max="100" value="35"></label><button id="spin" aria-pressed="true">Turn</button></div>
+<ul>__FACTS__</ul>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+const D=__DATA__;
+const stage=document.getElementById('stage'),info=document.getElementById('info');
+const R=new THREE.WebGLRenderer({antialias:true,alpha:true});R.setPixelRatio(Math.min(devicePixelRatio,2));stage.prepend(R.domElement);
+const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(35,1,0.01,80);
+const ctl=new THREE.OrbitControls(cam,R.domElement);ctl.enableDamping=true;ctl.autoRotate=true;ctl.autoRotateSpeed=1.0;
+scene.add(new THREE.HemisphereLight(0xffffff,0x445566,.7));const dl=new THREE.DirectionalLight(0xffffff,.75);dl.position.set(3,5,4);cam.add(dl);scene.add(cam);
+const edgeMat=new THREE.LineBasicMaterial({transparent:true,opacity:.45});
+const G={},M={};
+for(const k in D.pieces){const p=D.pieces[k];for(const flip of [false,true]){const g=new THREE.BufferGeometry(),a=[];p.t.forEach(t=>{const tt=flip?[t[0],t[2],t[1]]:t;tt.forEach(i=>a.push(...p.v[i].map(x=>flip?-x:x)))});
+ g.setAttribute('position',new THREE.Float32BufferAttribute(a,3));g.computeVertexNormals();G[k+(flip?'~':'')]=g}
+ M[k]=new THREE.MeshStandardMaterial({color:p.colour,flatShading:true,roughness:.55,metalness:.05,side:THREE.DoubleSide});
+ if(p.glass){M[k].transparent=true;M[k].opacity=.42;M[k].depthWrite=false}
+ if(p.colour2){M[k+'~']=new THREE.MeshStandardMaterial({color:p.colour2,flatShading:true,roughness:.55,metalness:.05,side:THREE.DoubleSide})}}
+const world=new THREE.Group();scene.add(world);let items=[];
+function build(v){world.clear();items=[];const view=D.views[v];
+ for(const [k,flip,pos] of view.place){const key=k+(flip?'~':'');const m=new THREE.Mesh(G[key],M[flip&&M[k+'~']?k+'~':k]);m.add(new THREE.LineSegments(new THREE.EdgesGeometry(G[key],20),edgeMat));
+  m.userData.home=new THREE.Vector3(...pos);m.position.copy(m.userData.home);world.add(m);items.push(m)}
+ info.textContent=view.text;const r=view.radius;cam.position.set(r*1.6,r*1.2,r*2.1);ctl.target.set(0,0,0);explode()}
+const ex=document.getElementById('ex');function explode(){const f=1+ex.value/100*0.9;items.forEach(m=>m.position.copy(m.userData.home).multiplyScalar(f))}
+ex.addEventListener('input',explode);
+const bar=document.getElementById('btns');Object.keys(D.views).forEach((v,i)=>{const b=document.createElement('button');b.textContent=D.views[v].label;b.setAttribute('aria-pressed',i===0);
+ b.addEventListener('click',()=>{bar.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));build(v)});bar.appendChild(b)});
+const spin=document.getElementById('spin');if(matchMedia('(prefers-reduced-motion: reduce)').matches){ctl.autoRotate=false;spin.setAttribute('aria-pressed','false')}
+spin.addEventListener('click',()=>{ctl.autoRotate=!ctl.autoRotate;spin.setAttribute('aria-pressed',ctl.autoRotate)});
+function theme(){edgeMat.color.set(getComputedStyle(document.documentElement).getPropertyValue('--fg').trim())}
+theme();matchMedia('(prefers-color-scheme: dark)').addEventListener('change',theme);
+function size(){const w=stage.clientWidth,h=stage.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+new ResizeObserver(size).observe(stage);size();build(Object.keys(D.views)[0]);
+(function loop(){ctl.update();R.render(scene,cam);requestAnimationFrame(loop)})();
+</script>
