@@ -471,6 +471,17 @@ export const LATTICES_3D = [
     // DICTO Hex Prism (queued 2026-10-01): DICTO's leaning prism, each layer slid along its lean.
     { label: 'DICTO Hex Prism', action: 'tool:pieceType:dictohex' },
   ] },
+  // Site lattices (DICTO 2026-10-17, the Hexagonal block grows): triangular prisms (six to a Hex Prism), hcp at fcc's spacing (its
+  // trapezo-rhombic dodecahedra of the RD's volume) and the gyrated octet on the same points (site-lattices.js). Rhombiverse only.
+  { key: 'triprism', label: 'Triangular Prisms', pieces: [
+    { label: 'Triangular Prism', action: 'tool:pieceType:triprism' },
+  ] },
+  { key: 'hcp', label: 'HCP · trapezo-rhombic dodecahedra', pieces: [
+    { label: 'TRD', action: 'tool:pieceType:hcp' },
+  ] },
+  { key: 'gyro', label: 'Gyrated Octet · tetrahedra and octahedra', pieces: [
+    { label: 'Tetra + Octa', action: 'tool:pieceType:gyro' },
+  ] },
   { key: 'rhombohedral', label: 'Rhombohedral', pieces: [
     { label: 'Rhombohedra', action: 'tool:pieceType:rhombohedra' },
   ] },
@@ -609,7 +620,8 @@ function hullPreview(id) {
   for (let i = 0; i < Q.length; i++) for (let j = i + 1; j < Q.length; j++) if (d(Q[i], Q[j]) < min * 1.01) edges.push([Q[i], Q[j]]);
   return edges;
 }
-const K_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key))
+const R_ONLY = ['triprism', 'hcp', 'gyro']; // no shear for these yet, so not in Kaleidohedra
+const K_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key) && !R_ONLY.includes(l.key))
   .map((l) => (l.key === 'hex' ? { ...l, pieces: l.pieces.filter((pc) => pc.action === 'tool:pieceType:hexprism') } : l));
 const R_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key));
 // Polyhedraverse's families: Platonic at the top as usual (DICTO 2026-10-09: "anyone wanting to
@@ -687,7 +699,8 @@ function dimensionEntries(dim) {
   if (dim === '2D') return LATTICE_FAMILIES_2D.map((fam) => ({ app: 'dicto', kind: 'family', fam }));
   if (dim === '3D') return [
     ...K_LATTICES.map((lat) => ({ app: K, kind: 'lattice', lat })),
-    ...R_LATTICES.map((lat) => ({ app: R, kind: 'lattice', lat })),
+    // the new site lattices only through Rhombiverse's own door, so Kaleidohedra keeps its one Rhombiverse row
+    ...R_LATTICES.filter((lat) => SITE === R || !R_ONLY.includes(lat.key)).map((lat) => ({ app: R, kind: 'lattice', lat })),
     ...K_WORLDS.map((lat) => ({ app: K, kind: 'world', lat })),
   ].flatMap(splitDicto)
     // DICTO's own lattices and worlds (DICTO 2026-10-09: "my lattices available through Rhombiverse"):

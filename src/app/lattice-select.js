@@ -23,9 +23,18 @@ export const LATTICE_BLOCKS = [
     ] },
     { n: 'Pyrochlore', key: 'pyrochlore', action: 'tool:pieceType:pyrochlore' },
   ] },
+  // Hexagonal grows to three by three (DICTO 2026-10-17); Rhombohedral sits under hcp (ABC stacking is fcc seen down a 3-fold axis)
   { id: 'hex', st: [
-    { n: 'Hexagonal', key: 'hex', action: 'tool:pieceType:hexprism' },
-    { n: 'Rhombohedral', key: 'rhombohedral', action: 'tool:pieceType:rhombohedra' },
+    { n: 'Hexagonal', kids: [
+      { n: 'Hex prisms', key: 'hex', action: 'tool:pieceType:hexprism' },
+      { n: 'Triangular prisms', key: 'triprism', action: 'tool:pieceType:triprism' },
+      { n: 'DICTO Hex Prism', key: 'dictohex', action: 'tool:pieceType:dictohex' },
+    ] },
+    { n: 'hcp', kids: [
+      { n: 'hcp · TRD', key: 'hcp', action: 'tool:pieceType:hcp' },
+      { n: 'Gyrated octet', key: 'gyro', action: 'tool:pieceType:gyro' },
+      { n: 'Rhombohedral', key: 'rhombohedral', action: 'tool:pieceType:rhombohedra' },
+    ] },
   ] },
   { id: 'golden', st: [
     { n: 'Golden Rhombohedra', key: 'golden', action: 'tool:goldenWorld' },
@@ -115,7 +124,7 @@ export function createLatticeSelect({ go }) {
     /** A pick from anywhere (the wizard, the Almanac, a station): the lattice it is on, if it is one of the stations. */
     setAction(dimension, action) {
       dim = dimension;
-      const k = STATION.has(KEY_OF.get(action)) ? KEY_OF.get(action) : [...STATION.values()].find((s) => s.action === action)?.key;
+      const k = [...STATION.values()].find((s) => s.action === action)?.key ?? (STATION.has(KEY_OF.get(action)) ? KEY_OF.get(action) : undefined);
       key = k ?? null; renderRow();
     },
     setDimension(d) { dim = d; if (d !== '3D') close(); renderRow(); },

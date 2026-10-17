@@ -203,6 +203,8 @@ export function createBuildController({
   dictoHexWorld = null,
   dictoHexMesh = null,
   dictoHexCellAt = () => null,
+  // Site lattices (render.js, DICTO 2026-10-17): { lattices, meshes, worlds, cellAt(id, kind, instanceId), onChange(id), scale }
+  siteLattices = null,
   onDictoHexChange = () => {},
   // 2D lattice tier (replaces the old separate Square/Hexagon/Triangle
   // params): one generic "adopted family member" store PER PRIMITIVE
@@ -329,6 +331,7 @@ export function createBuildController({
     const hexPrismTargets = hexPrismMesh && getPieceType() === 'hexprism' ? [hexPrismMesh] : [];
     const dictoFccTargets = dictoFccMesh && getPieceType() === 'dictofcc' ? [dictoFccMesh] : [];
     const dictoHexTargets = dictoHexMesh && getPieceType() === 'dictohex' ? [dictoHexMesh] : [];
+    const siteTargets = siteLattices?.meshes[getPieceType()] ?? [];
     const dictoBlockTargets = getPieceType() === 'dictoblock' ? dictoBlockMeshes : [];
     // Same reasoning as every other "adopted family member" above, for
     // whichever single (angle, primitive) combination is currently
@@ -389,7 +392,7 @@ export function createBuildController({
       return own.length > 0 ? own[0] : null;
     }
     const meshTargets = getMeshPickable() ? [mesh] : [];
-    const hits = raycaster.intersectObjects([...meshTargets, ...extraPickTargets, ...bccTargets, ...elongDodecaTargets, ...hexPrismTargets, ...dictoFccTargets, ...dictoHexTargets, ...dictoBlockTargets, ...lattice2dTargets, ...rhombohedraTargets, ...pyrochloreTargets, ...firstPlacementTargets, ...interstitialTargets, ...hemisphereTargets], true);
+    const hits = raycaster.intersectObjects([...meshTargets, ...extraPickTargets, ...bccTargets, ...elongDodecaTargets, ...hexPrismTargets, ...dictoFccTargets, ...dictoHexTargets, ...siteTargets, ...dictoBlockTargets, ...lattice2dTargets, ...rhombohedraTargets, ...pyrochloreTargets, ...firstPlacementTargets, ...interstitialTargets, ...hemisphereTargets], true);
     return hits.length > 0 ? hits[0] : null;
   }
 
@@ -572,6 +575,31 @@ export function createBuildController({
     }
     hexPrismWorld.removeCell(cell.x, cell.y, cell.z);
     onHexPrismChange();
+    if (onRemoved) onRemoved(cell);
+  }
+
+  // Site lattices (hcp, gyrated octet, triangular prisms): tap a face and the piece just across it goes in, whichever kind it is
+  // (site-lattices.js acrossFace); remove taps the piece away.
+  function handleSiteClick(hit, mode, id) {
+    const action = mode === 'build' ? 'add' : 'remove';
+    const o = siteLattices.meshes[id].indexOf(hit.object);
+    const cell = o < 0 || hit.instanceId === undefined ? null : siteLattices.cellAt(id, o, hit.instanceId);
+    if (!cell) { if (onPieceNoOp) onPieceNoOp(action); return; }
+    const world = siteLattices.worlds[id];
+    if (mode === 'build') {
+      const k = siteLattices.scale, p = [hit.point.x / k, hit.point.y / k, hit.point.z / k], n = hit.face.normal;
+      const nb = siteLattices.lattices[id].pieceAt([p[0] + 0.02 * n.x, p[1] + 0.02 * n.y, p[2] + 0.02 * n.z]);
+      if (!nb) { if (onPieceNoOp) onPieceNoOp(action); return; }
+      const X = nb[0] * 8 + nb[3];
+      if (world.has(X, nb[1], nb[2])) { if (onPieceNoOp) onPieceNoOp(action); return; }
+      const material = getMaterial();
+      world.addCell(X, nb[1], nb[2], { material });
+      siteLattices.onChange(id);
+      if (onPlaced) onPlaced({ x: X, y: nb[1], z: nb[2], material });
+      return;
+    }
+    world.removeCell(cell.x, cell.y, cell.z);
+    siteLattices.onChange(id);
     if (onRemoved) onRemoved(cell);
   }
 
@@ -1650,6 +1678,10 @@ export function createBuildController({
       handleElongDodecaClick(hit, mode);
       return;
     }
+    if ((mode === 'build' || mode === 'chisel') && siteLattices?.lattices[getPieceType()]) {
+      handleSiteClick(hit, mode, getPieceType());
+      return;
+    }
     if ((mode === 'build' || mode === 'chisel') && getPieceType() === 'hexprism' && hexPrismWorld && hexPrismMesh) {
       handleHexPrismClick(hit, mode);
       return;
@@ -1981,6 +2013,10 @@ export function createBuildController({
     // so passing 'chisel' here forces the remove branch the same way.
     if (mode === 'build' && pieceTypeForInterstitialRemove === 'elongdodeca' && elongDodecaWorld && elongDodecaMesh) {
       handleElongDodecaClick(hit, 'chisel');
+      return;
+    }
+    if (mode === 'build' && siteLattices?.lattices[pieceTypeForInterstitialRemove]) {
+      handleSiteClick(hit, 'chisel', pieceTypeForInterstitialRemove);
       return;
     }
     if (mode === 'build' && pieceTypeForInterstitialRemove === 'hexprism' && hexPrismWorld && hexPrismMesh) {
