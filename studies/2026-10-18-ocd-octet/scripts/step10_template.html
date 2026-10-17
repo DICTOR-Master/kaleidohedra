@@ -1,0 +1,92 @@
+<title>OCD Octet Pieces</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* layout: header, full-width 3D stage, piece buttons + explode slider beneath, notes */
+:root{--bg:#f3f4f6;--fg:#1d2230;--muted:#5b6275;--line:#d5d8e0;--panel:#fff;--sel:#1d2230;--selfg:#fff;
+--ocd:#d9a21b;--cap:#5b8fd0;--mid:#c8382f;--tl:#3f9a5b;--tr:#2a9d9a;
+--f-ui:"IBM Plex Sans",system-ui,sans-serif;--f-num:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11141b;--fg:#e6e8ee;--muted:#9aa1b2;--line:#2a2f3c;--panel:#181c25;--sel:#e6e8ee;--selfg:#11141b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#11141b;--fg:#e6e8ee;--muted:#9aa1b2;--line:#2a2f3c;--panel:#181c25;--sel:#e6e8ee;--selfg:#11141b;color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);display:flex;flex-direction:column;gap:10px;box-sizing:border-box;
+padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:12px}
+h1{font-size:1.15rem;margin:0;font-weight:600;text-wrap:balance}
+.meta{font-size:.85rem;color:var(--muted);margin:0}
+#stage{flex:1;min-height:340px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel);position:relative;touch-action:none}
+#stage canvas{display:block;width:100%;height:100%}
+.mark{position:absolute;right:10px;bottom:8px;font-size:.72rem;color:var(--muted);pointer-events:none}
+#info{position:absolute;left:10px;top:8px;font-size:.85rem;background:var(--panel);padding:4px 8px;border-radius:6px;border:1px solid var(--line);font-family:var(--f-num)}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button{font:inherit;font-size:.9rem;padding:10px 14px;border-radius:6px;border:1px solid var(--line);background:var(--panel);color:var(--fg);cursor:pointer;display:flex;gap:8px;align-items:center;min-height:44px}
+button[aria-pressed="true"]{background:var(--sel);color:var(--selfg);border-color:var(--sel)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+.slider{display:flex;align-items:center;gap:10px;flex:1;min-width:240px;font-size:.9rem}
+.slider input{flex:1;height:32px}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<h1>OCD octet truss: the pieces</h1>
+<p class="meta">Meshes from manifold3d booleans of the study's geometry (float). Drag to turn, pinch to zoom.</p>
+<div id="stage"><span id="info"></span><span class="mark">DICTO · dictospheres.com · studies/2026-10-18-ocd-octet step 10</span></div>
+<div class="bar" id="btns">
+<button data-v="assembly" aria-pressed="true">Assembly round one OCD</button>
+<button data-v="keyed_OCD" aria-pressed="false"><i class="sw" style="background:var(--ocd)"></i>OCD + 8 keys</button>
+<button data-v="cap" aria-pressed="false"><i class="sw" style="background:var(--cap)"></i>Notched cap</button>
+<button data-v="middle" aria-pressed="false"><i class="sw" style="background:var(--mid)"></i>Middle piece</button>
+<button data-v="tet_notched" aria-pressed="false"><i class="sw" style="background:var(--tl)"></i>Tetrahedron, left</button>
+<button data-v="tet_right" aria-pressed="false"><i class="sw" style="background:var(--tr)"></i>Tetrahedron, right</button>
+<button data-v="tet_dented" aria-pressed="false"><i class="sw" style="background:var(--tl)"></i>Tetrahedron, keys only (step 5)</button>
+</div>
+<div class="bar"><label class="slider" for="ex">Pull apart <input type="range" id="ex" min="0" max="100" value="45"></label>
+<button id="spin" aria-pressed="true">Turn</button></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+/*DATA*/
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const stage=document.getElementById('stage'),info=document.getElementById('info');
+const R=new THREE.WebGLRenderer({antialias:true,alpha:true});R.setPixelRatio(Math.min(devicePixelRatio,2));stage.prepend(R.domElement);
+const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(35,1,0.01,60);cam.position.set(3.2,2.4,4.2);
+const ctl=new THREE.OrbitControls(cam,R.domElement);ctl.enableDamping=true;ctl.autoRotate=true;ctl.autoRotateSpeed=1.0;
+scene.add(new THREE.HemisphereLight(0xffffff,0x445566,.7));const dl=new THREE.DirectionalLight(0xffffff,.75);dl.position.set(3,5,4);cam.add(dl);scene.add(cam);
+const mats={};['ocd','cap','mid','tl','tr'].forEach(k=>mats[k]=new THREE.MeshStandardMaterial({flatShading:true,roughness:.55,metalness:.05,side:THREE.DoubleSide}));
+const edgeMat=new THREE.LineBasicMaterial({transparent:true,opacity:.45});
+function geo(p,flip){const g=new THREE.BufferGeometry(),a=[];p.t.forEach(t=>{const tt=flip?[t[0],t[2],t[1]]:t;tt.forEach(i=>a.push(...p.v[i].map(x=>flip?-x:x)))});
+ g.setAttribute('position',new THREE.Float32BufferAttribute(a,3));g.computeVertexNormals();return g}
+const G={};for(const k in D.p)G[k]=geo(D.p[k],false);G.tet_right=geo(D.p.tet_notched,true);
+function mesh(g,mat){const m=new THREE.Mesh(g,mat);m.add(new THREE.LineSegments(new THREE.EdgesGeometry(g,20),edgeMat));return m}
+// Th: cyclic permutations x sign flips (24 ops) as 3x3 matrices
+const ops=[];[[0,1,2],[1,2,0],[2,0,1]].forEach(pm=>{for(let s=0;s<8;s++){const sg=[s&1?-1:1,s&2?-1:1,s&4?-1:1];const M=new THREE.Matrix4();const e=[0,0,0,0,0,0,0,0,0];
+ for(let i=0;i<3;i++)e[i*3+pm[i]]=sg[i];M.set(e[0],e[1],e[2],0,e[3],e[4],e[5],0,e[6],e[7],e[8],0,0,0,0,1);ops.push(M)}});
+const world=new THREE.Group();scene.add(world);let items=[];
+function centroid(g){g.computeBoundingBox();const c=new THREE.Vector3();g.boundingBox.getCenter(c);return c}
+function add(g,mat,M,home){const m=mesh(g,mat);if(M)m.applyMatrix4(M);const c=centroid(g).clone();if(M)c.applyMatrix4(M);
+ if(home)c.copy(home);m.userData={c0:m.position.clone(),dir:c};world.add(m);items.push(m)}
+function uniqueBy(list,keyf){const seen=new Set();return list.filter(x=>{const k=keyf(x);if(seen.has(k))return false;seen.add(k);return true})}
+function build(v){world.clear();items=[];let txt='';
+ if(v==='assembly'){add(G.keyed_OCD,mats.ocd,null,new THREE.Vector3());
+  const k=M=>{const c=centroid(G.cap).clone().applyMatrix4(M);return c.toArray().map(x=>x.toFixed(3)).join()};
+  uniqueBy(ops,k).forEach(M=>add(G.cap,mats.cap,M));
+  const km=M=>{const c=new THREE.Vector3(...D.c.middle_m).applyMatrix4(M);return c.toArray().map(x=>x.toFixed(3)).join()};
+  uniqueBy(ops,km).forEach(M=>add(G.middle,mats.mid,M,new THREE.Vector3(...D.c.middle_m).applyMatrix4(M)));
+  const kt=M=>{const c=new THREE.Vector3(...D.c.tet).applyMatrix4(M);return c.toArray().map(x=>x.toFixed(3)).join()};
+  ops.filter(M=>M.determinant()>0).forEach((M,i)=>{});
+  uniqueBy(ops.filter(M=>M.determinant()>0),kt).forEach(M=>add(G.tet_notched,mats.tl,M,new THREE.Vector3(...D.c.tet).applyMatrix4(M)));
+  uniqueBy(ops.filter(M=>M.determinant()>0),kt).forEach(M=>add(G.tet_right,mats.tr,M,new THREE.Vector3(...D.c.tet).applyMatrix4(M).negate()));
+  txt='1 OCD · 6 caps · 12 middle pieces · 4 left + 4 right tetrahedra';ctl.target.set(0,0,0);cam.position.set(3.2,2.4,4.2)}
+ else{const g=G[v],mat=v==='keyed_OCD'?mats.ocd:v==='cap'?mats.cap:v==='middle'?mats.mid:v==='tet_right'?mats.tr:mats.tl;add(g,mat,null);
+  const c=centroid(g);world.position.set(-c.x,-c.y,-c.z);g.computeBoundingSphere();const r=g.boundingSphere.radius;cam.position.set(r*3,r*2.2,r*3.6);
+  const vol=(D.p[v]||D.p.tet_notched).vol;txt='volume '+vol.toFixed(5);}
+ if(v==='assembly')world.position.set(0,0,0);info.textContent=txt;explode()}
+const ex=document.getElementById('ex');
+function explode(){const f=ex.value/100*0.9;items.forEach(m=>{m.position.copy(m.userData.dir).multiplyScalar(f)})}
+ex.addEventListener('input',explode);
+document.querySelectorAll('#btns button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#btns button').forEach(x=>x.setAttribute('aria-pressed',x===b));build(b.dataset.v)}));
+const spin=document.getElementById('spin');if(matchMedia('(prefers-reduced-motion: reduce)').matches){ctl.autoRotate=false;spin.setAttribute('aria-pressed','false')}
+spin.addEventListener('click',()=>{ctl.autoRotate=!ctl.autoRotate;spin.setAttribute('aria-pressed',ctl.autoRotate)});
+function theme(){mats.ocd.color.set(css('--ocd'));mats.cap.color.set(css('--cap'));mats.mid.color.set(css('--mid'));mats.tl.color.set(css('--tl'));mats.tr.color.set(css('--tr'));edgeMat.color.set(css('--fg'))}
+theme();matchMedia('(prefers-color-scheme: dark)').addEventListener('change',theme);new MutationObserver(theme).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+function size(){const w=stage.clientWidth,h=stage.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+new ResizeObserver(size).observe(stage);size();build('assembly');
+(function loop(){ctl.update();R.render(scene,cam);requestAnimationFrame(loop)})();
+</script>

@@ -1,0 +1,7 @@
+# DICTO 2026-10-18 octet study, step 10 render: the pieces in 3D (gallery + exploded assembly round one OCD) -> renders/step10-pieces.html
+import json, os
+H = os.path.dirname(os.path.abspath(__file__)); d = json.load(open(os.path.join(H, '..', 'data', 'step10-meshes.json')))
+keep = {k: dict(v=d[k]['v'], t=d[k]['t'], vol=d[k]['volume']) for k in ('keyed_OCD', 'cap', 'middle', 'tet_dented', 'tet_notched')}
+data = json.dumps(dict(p=keep, c=d['centres']), separators=(',', ':'))
+html = open(os.path.join(H, 'step10_template.html')).read().replace('/*DATA*/', 'const D=' + data + ';')
+open(os.path.join(H, '..', 'renders', 'step10-pieces.html'), 'w').write(html); print('ok', len(html))

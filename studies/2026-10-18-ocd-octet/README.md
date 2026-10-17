@@ -63,3 +63,10 @@ All numbers a + b√5 exact (Fraction pairs, `scripts/q5.py`) unless marked floa
 - T− is T+ turned inside out through the OCD centre, so they are the same piece exactly when T+ (with its dents and notches) has a mirror symmetry.
 - With the 4 key dents only (step 5 set): all 6 tetrahedron mirrors hold → **T+ and T− are the same piece**; the step-5 keyed octet needs just 3 shapes.
 - With the 6 middle-piece notches as well (step 8 set): no mirror holds (the stars' 36° twist makes the notches twist), only the 3-fold turns → **T+ and T− are mirror images**, a left and a right tetrahedron.
+- Step 8 check done (`data/step8-trimmed.json`, 300 000 samples in one cell): Ms on different edges never overlap (0); every point assigned exactly once (0 unassigned, 0 twice); M is one piece (one big component, the rest single-voxel specks). Per cell: keyed OCD 1.2214, 6 M 0.4417 (one ≈0.0736), 6 notched caps 0.3496 (one ≈0.0583), 2 notched tetrahedra 0.4975 (one ≈0.2488).
+
+### Step 10 — the pieces as solid meshes and a 3D page (`step10_piece_meshes.py` on dicto-node with manifold3d → `data/step10-meshes.json`; `draw_step10.py` + `step10_template.html` → `renders/step10-pieces.html`)
+- Mesh volumes: keyed OCD 1.223113 and dented tetrahedron 0.382754 (both = the exact step-5 values), unnotched cap 0.086940 (= exact step 2); middle piece 0.073291, notched cap 0.058072, notched tetrahedron 0.249486 — agree with the step-8 sampling.
+- All pieces are single solids without holes (the notched cap shows 4 zero-volume boolean slivers, ignored). Per cell 1.2231 + 6×0.0581 + 6×0.0733 + 2×0.2495 = 2.5102 ≈ cell 2.5103.
+- **Final set with middle pieces: keyed OCD, notched cap, middle piece, left tetrahedron, right tetrahedron** (5 shapes; 4 if a mirror-image pair counts as one).
+- Page: claude.ai/artifact/Fx4WGWm6udtt6EEPKsaMua (gallery + exploded assembly round one OCD: 1 OCD, 6 caps, 12 middle pieces, 4 left + 4 right tetrahedra).
