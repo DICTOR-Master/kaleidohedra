@@ -6,6 +6,19 @@ DICTO · dictospheres.com
 Pieces available: the OCD (Ogdoecontahedron), the 6 caps of its octahedron (studies/2026-10-18-ocd-octahedron-caps), regular tetrahedra, the golden key on the joint hexagons.
 All numbers a + b√5 exact (Fraction pairs, `scripts/q5.py`) unless marked float.
 
+## Stages at a glance (10-18; details in the step log below)
+| Stage | Steps | Result |
+|---|---|---|
+| 1. Octet frame + keyed kit | 1–5 | OCD in the octahedron |x|+|y|+|z| ≤ 2φ/3; keyed kit (keyed OCD, cap, dented tetrahedron L/R) fills space exactly |
+| 2. Middle pieces + Penrose | 6–17 | facing five-fold stars; middle piece; thick Penrose rhombus core (exact); full kit exact; sphericity scores; merges rejected |
+| Fable review | ba28bd0, `fable-review/` | both kits PROVED EXACTLY 100%; corrections: tetrahedra chiral in both kits, step-12 reflex angles |
+| 3. Keyless + three cores | 18–20 | DICTO drops the keys; flanking Penrose cores (mirror pair); keyless kit on the 3D page |
+| 4. Toward a minimal golden kit | 21–22 | envelopes fill exactly 10/φ⁶; **envelope kit: golden envelope + 6 outer corners + L/R dented tetrahedra (4 shapes)** |
+| App | `src/app` on research 94eb7d2 | two networks in the Icosahedral Octet world (not on master yet; to update to the keyless kit) |
+
+Pages: 3D pieces claude.ai/artifact/Fx4WGWm6udtt6EEPKsaMua · stars AsT1sqmf4pkdGj9v6K4ZZh · middle piece Pqp34sp8zVkw7Y2kS1WLgM · slices N76HnetzU4pJpdEGETNEHD · Penrose cut 41opNbdPpZFeMa6crGpFBz.
+Related: bcc golden kit `studies/2026-10-18-bcc-golden-kit` (steps 1–5: slabs, keys, G′ = 93√5/2 − 831/8 exactly, no Penrose link in bcc).
+
 ## Step log
 ### Step 1 — the OCD and its octahedron, exact (`step1_ocd_in_octahedron.py` → `data/step1-ocd-exact.json`)
 - OCD taken exactly from the polar-dharma study (102 corners, 80 faces, 20 hexagons).
