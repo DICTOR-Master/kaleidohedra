@@ -3,7 +3,7 @@
 <style>
 /* layout: header, full-width 3D stage, piece buttons + explode slider beneath, notes */
 :root{--bg:#f3f4f6;--fg:#1d2230;--muted:#5b6275;--line:#d5d8e0;--panel:#fff;--sel:#1d2230;--selfg:#fff;
---ocd:#d9a21b;--cap:#5b8fd0;--mid:#c8382f;--core:#7a3fa0;--core2:#b07ad6;--tl:#3f9a5b;--tr:#2a9d9a;
+--ocd:#d9a21b;--cap:#5b8fd0;--mid:#c8382f;--core:#7a3fa0;--core2:#b07ad6;--env:#e8c56a;--tl:#3f9a5b;--tr:#2a9d9a;
 --f-ui:"IBM Plex Sans",system-ui,sans-serif;--f-num:"IBM Plex Mono",ui-monospace,monospace}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11141b;--fg:#e6e8ee;--muted:#9aa1b2;--line:#2a2f3c;--panel:#181c25;--sel:#e6e8ee;--selfg:#11141b;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#11141b;--fg:#e6e8ee;--muted:#9aa1b2;--line:#2a2f3c;--panel:#181c25;--sel:#e6e8ee;--selfg:#11141b;color-scheme:dark}
@@ -31,6 +31,9 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--fg);outline-off
 <div class="bar" id="btns">
 <button data-v="assembly" aria-pressed="true">Assembly round one OCD</button>
 <button data-v="network" aria-pressed="false">Network: OCDs and tetrahedra</button>
+<button data-v="assemblyE" aria-pressed="false">Envelope kit (4 shapes)</button>
+<button data-v="e_envelope" aria-pressed="false"><i class="sw" style="background:var(--env)"></i>Golden envelope (OCD inside)</button>
+<button data-v="e_outer_corner" aria-pressed="false"><i class="sw" style="background:var(--cap)"></i>Outer corner</button>
 <button data-v="assembly3" aria-pressed="false">Keyless kit, 3 Penrose cores (DICTO's choice)</button>
 <button data-v="keyed_OCD" aria-pressed="false"><i class="sw" style="background:var(--ocd)"></i>OCD + 8 keys</button>
 <button data-v="cap" aria-pressed="false"><i class="sw" style="background:var(--cap)"></i>Notched cap</button>
@@ -57,11 +60,11 @@ const R=new THREE.WebGLRenderer({antialias:true,alpha:true});R.setPixelRatio(Mat
 const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(35,1,0.01,60);cam.position.set(3.2,2.4,4.2);
 const ctl=new THREE.OrbitControls(cam,R.domElement);ctl.enableDamping=true;ctl.autoRotate=true;ctl.autoRotateSpeed=1.0;
 scene.add(new THREE.HemisphereLight(0xffffff,0x445566,.7));const dl=new THREE.DirectionalLight(0xffffff,.75);dl.position.set(3,5,4);cam.add(dl);scene.add(cam);
-const mats={};['ocd','cap','mid','tl','tr','core','core2'].forEach(k=>mats[k]=new THREE.MeshStandardMaterial({flatShading:true,roughness:.55,metalness:.05,side:THREE.DoubleSide}));
+const mats={};['ocd','cap','mid','tl','tr','core','core2','env'].forEach(k=>mats[k]=new THREE.MeshStandardMaterial({flatShading:true,roughness:.55,metalness:.05,side:THREE.DoubleSide}));
 const edgeMat=new THREE.LineBasicMaterial({transparent:true,opacity:.45});
 function geo(p,flip){const g=new THREE.BufferGeometry(),a=[];p.t.forEach(t=>{const tt=flip?[t[0],t[2],t[1]]:t;tt.forEach(i=>a.push(...p.v[i].map(x=>flip?-x:x)))});
  g.setAttribute('position',new THREE.Float32BufferAttribute(a,3));g.computeVertexNormals();return g}
-const G={};for(const k in D.p)G[k]=geo(D.p[k],false);for(const k in (D.k||{}))G['k_'+k]=geo(D.k[k],false);if(D.k&&D.k.tet)G.k_tet_flip=geo(D.k.tet,true);G.tet_right=geo(D.p.tet_notched,true);G.tet_dented_flip=geo(D.p.tet_dented,true);
+const G={};for(const k in D.p)G[k]=geo(D.p[k],false);for(const k in (D.k||{}))G['k_'+k]=geo(D.k[k],false);if(D.k&&D.k.tet)G.k_tet_flip=geo(D.k.tet,true);for(const k in (D.e||{}))G['e_'+k]=geo(D.e[k],false);if(D.e&&D.e.dented_tet)G.e_tet_flip=geo(D.e.dented_tet,true);G.tet_right=geo(D.p.tet_notched,true);G.tet_dented_flip=geo(D.p.tet_dented,true);
 function mesh(g,mat){const m=new THREE.Mesh(g,mat);m.add(new THREE.LineSegments(new THREE.EdgesGeometry(g,20),edgeMat));return m}
 // Th: cyclic permutations x sign flips (24 ops) as 3x3 matrices
 const ops=[];[[0,1,2],[1,2,0],[2,0,1]].forEach(pm=>{for(let s=0;s<8;s++){const sg=[s&1?-1:1,s&2?-1:1,s&4?-1:1];const M=new THREE.Matrix4();const e=[0,0,0,0,0,0,0,0,0];
@@ -82,6 +85,17 @@ function build(v){world.clear();items=[];let txt='';
   uniqueBy(ops.filter(M=>M.determinant()>0),kt).forEach(M=>add(G.tet_notched,mats.tl,M,new THREE.Vector3(...D.c.tet).applyMatrix4(M)));
   uniqueBy(ops.filter(M=>M.determinant()>0),kt).forEach(M=>add(G.tet_right,mats.tr,M,new THREE.Vector3(...D.c.tet).applyMatrix4(M).negate()));
   txt='1 OCD · 6 caps · 12 middle pieces'+(G.core?' (Penrose core + rest)':'')+' · 4 left + 4 right tetrahedra';ctl.target.set(0,0,0);cam.position.set(3.2,2.4,4.2)}
+ else if(v==='assemblyE'||v==='e_envelope'){mats.env.transparent=true;mats.env.opacity=.42;mats.env.depthWrite=false;
+  add(G.e_envelope,mats.env,null,new THREE.Vector3());add(G.e_ocd,mats.ocd,null,new THREE.Vector3());
+  if(v==='assemblyE'){
+  const k=M=>{const c=centroid(G.e_outer_corner).clone().applyMatrix4(M);return c.toArray().map(x=>x.toFixed(3)).join()};
+  uniqueBy(ops,k).forEach(M=>add(G.e_outer_corner,mats.cap,M));
+  const kt=M=>{const c=new THREE.Vector3(...D.c.tet).applyMatrix4(M);return c.toArray().map(x=>x.toFixed(3)).join()};
+  uniqueBy(ops.filter(M=>M.determinant()>0),kt).forEach(M=>add(G.e_dented_tet,mats.tl,M,new THREE.Vector3(...D.c.tet).applyMatrix4(M)));
+  uniqueBy(ops.filter(M=>M.determinant()>0),kt).forEach(M=>add(G.e_tet_flip,mats.tr,M,new THREE.Vector3(...D.c.tet).applyMatrix4(M).negate()));
+  txt='envelope kit: 1 golden envelope (OCD inside) · 6 outer corners · 4 left + 4 right dented tetrahedra · envelopes fill 10/φ⁶ = 55.73%';cam.position.set(3.2,2.4,4.2)}
+  else{txt='golden envelope, volume '+D.e.envelope.vol.toFixed(5)+' (OCD inside, gold)';cam.position.set(2.2,1.6,2.8)}
+  ctl.target.set(0,0,0)}
  else if(v==='assembly3'){add(G.k_ocd,mats.ocd,null,new THREE.Vector3());
   const k=M=>{const c=centroid(G.k_cap).clone().applyMatrix4(M);return c.toArray().map(x=>x.toFixed(3)).join()};
   uniqueBy(ops,k).forEach(M=>add(G.k_cap,mats.cap,M));
@@ -98,17 +112,17 @@ function build(v){world.clear();items=[];let txt='';
    const inv=(((i+j+k)%4)+4)%4===1;const c=new THREE.Vector3(...D.c.tet).multiplyScalar(inv?-1:1);const M=new THREE.Matrix4().makeTranslation(p.x-c.x,p.y-c.y,p.z-c.z);
    add(inv?G.tet_dented_flip:G.tet_dented,inv?mats.tr:mats.tl,M,p.clone());m++}
   txt=n+' keyed OCDs · '+m+' tetrahedra (caps and middle pieces left out, so the links show)';ctl.target.set(0,0,0);cam.position.set(5.2,3.9,6.8)}
- else{const g=G[v],mat=v.startsWith('k_core_f')?mats.core2:v==='k_rest3'?mats.mid:v==='k_tet'?mats.tl:v==='core'?mats.core:v==='rest'?mats.mid:v==='keyed_OCD'?mats.ocd:v==='cap'?mats.cap:v==='middle'?mats.mid:v==='tet_right'?mats.tr:mats.tl;add(g,mat,null);
+ else{const g=G[v],mat=v==='e_outer_corner'?mats.cap:v.startsWith('k_core_f')?mats.core2:v==='k_rest3'?mats.mid:v==='k_tet'?mats.tl:v==='core'?mats.core:v==='rest'?mats.mid:v==='keyed_OCD'?mats.ocd:v==='cap'?mats.cap:v==='middle'?mats.mid:v==='tet_right'?mats.tr:mats.tl;add(g,mat,null);
   const c=centroid(g);world.position.set(-c.x,-c.y,-c.z);g.computeBoundingSphere();const r=g.boundingSphere.radius;cam.position.set(r*3,r*2.2,r*3.6);
-  const vol=(v.startsWith('k_')?D.k[v.slice(2)]:(D.p[v]||D.p.tet_notched)).vol;txt='volume '+vol.toFixed(5);}
- if(v==='assembly'||v==='network'||v==='assembly3')world.position.set(0,0,0);info.textContent=txt;explode()}
+  const vol=(v.startsWith('e_')?D.e[v.slice(2)]:v.startsWith('k_')?D.k[v.slice(2)]:(D.p[v]||D.p.tet_notched)).vol;txt='volume '+vol.toFixed(5);}
+ if(['assembly','network','assembly3','assemblyE','e_envelope'].includes(v))world.position.set(0,0,0);info.textContent=txt;explode()}
 const ex=document.getElementById('ex');
 function explode(){const f=ex.value/100*0.9;items.forEach(m=>{m.position.copy(m.userData.dir).multiplyScalar(f)})}
 ex.addEventListener('input',explode);
 document.querySelectorAll('#btns button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#btns button').forEach(x=>x.setAttribute('aria-pressed',x===b));build(b.dataset.v)}));
 const spin=document.getElementById('spin');if(matchMedia('(prefers-reduced-motion: reduce)').matches){ctl.autoRotate=false;spin.setAttribute('aria-pressed','false')}
 spin.addEventListener('click',()=>{ctl.autoRotate=!ctl.autoRotate;spin.setAttribute('aria-pressed',ctl.autoRotate)});
-function theme(){mats.ocd.color.set(css('--ocd'));mats.cap.color.set(css('--cap'));mats.mid.color.set(css('--mid'));mats.tl.color.set(css('--tl'));mats.tr.color.set(css('--tr'));mats.core.color.set(css('--core'));mats.core2.color.set(css('--core2'));edgeMat.color.set(css('--fg'))}
+function theme(){mats.ocd.color.set(css('--ocd'));mats.cap.color.set(css('--cap'));mats.mid.color.set(css('--mid'));mats.tl.color.set(css('--tl'));mats.tr.color.set(css('--tr'));mats.core.color.set(css('--core'));mats.core2.color.set(css('--core2'));mats.env.color.set(css('--env'));edgeMat.color.set(css('--fg'))}
 theme();matchMedia('(prefers-color-scheme: dark)').addEventListener('change',theme);new MutationObserver(theme).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
 function size(){const w=stage.clientWidth,h=stage.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
 new ResizeObserver(size).observe(stage);size();build('assembly');

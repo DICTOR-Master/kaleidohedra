@@ -181,3 +181,7 @@ Decisions (DICTO, 10-18, asked before any app edit):
 - Each tetrahedron minus its 4 envelope corners = the step-5 dented tetrahedron (64/27 − 8√5/9 = 0.382754), chiral (left/right), ψ 0.620.
 - The envelope (RT) ψ 0.961.
 - **Envelope kit: golden envelope (OCD inside) + 6 outer corners + left/right dented tetrahedra — 4 shapes (3 counting the mirror pair), and 10/φ⁶ = 55.73% of space is in the golden piece.** Fills space exactly (frame + RT = octahedron part + 8 keys, step 21). The fewest shapes of any kit so far; Penrose does not appear in it (the Penrose cores straddle the envelope surfaces).
+
+### Step 23 — the envelope kit in 3D (`step23_envelope_meshes.py` on dicto-node → `data/step23-envelope-meshes.json`)
+- Meshes: envelope 1.398921, outer corner 0.057639, dented tetrahedron 0.382754, OCD 1.151868 (all = the exact values).
+- 3D page (same link): "Envelope kit (4 shapes)" assembly round one OCD — glass golden envelope with the gold OCD inside, 6 outer corners (blue), 4 left + 4 right dented tetrahedra; buttons for the envelope and the outer corner alone.
