@@ -10,7 +10,7 @@ HEAD = '''<!doctype html>
 <p class="sub">{sub}</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
-Version 1 · 17 October 2026 · DICTO DOI: 10.5281/zenodo.{doi} (all versions) · Licence CC BY 4.0 · An introduction to one solid; its parent paper: {parent}. Data and checks are included with this record.<br>
+{version} · DICTO DOI: 10.5281/zenodo.{doi} (all versions) · Licence CC BY 4.0 · An introduction to one solid; its parent paper: {parent}. Data and checks are included with this record.<br>
 {credit}
 </div>
 '''
@@ -153,5 +153,6 @@ P['ocd-stella'] = dict(title='The DICTO OCD Stella', sub="The Ogdoecontahedron's
 ''')
 for k, p in P.items():
     p['doi'] = DOI[k]
+    p['version'] = 'Version 2 · 17 October 2026 (figure re-rendered with solid cut faces)' if k == 'metaxy' else 'Version 1 · 17 October 2026'
     html = HEAD.format(**p) + p['body'] + open('appendix-library.html').read() + TAIL
     open(os.path.join(k, 'paper.html'), 'w').write(html); print(k, len(html.split()))

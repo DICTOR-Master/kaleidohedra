@@ -21,6 +21,8 @@
     const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
     const m = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, roughness: 0.5, flatShading: true, side: THREE.DoubleSide, transparent: !!o.op, opacity: o.op || 1, depthWrite: !o.op, clippingPlanes: o.clip || [], clipIntersection: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 }));
     m.position.copy(off); scene.add(m);
+    // solid infill (DICTO 2026-10-17, standing practice): a cut solid shows its cut face filled in its own colour; glass stays hollow
+    if ((o.clip || []).length && !o.op) { const fm = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color, side: THREE.BackSide, clippingPlanes: (o.clip || []), clipIntersection: true, polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -1 })); fm.position.copy(off); scene.add(fm); }
     const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
     const l = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, transparent: !!o.op, opacity: o.op ? 0.45 : 1, clippingPlanes: o.clip || [], clipIntersection: true })); l.position.copy(off); scene.add(l);
   }
