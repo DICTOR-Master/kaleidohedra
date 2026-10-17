@@ -53,3 +53,8 @@ All numbers a + b√5 exact (Fraction pairs, `scripts/q5.py`) unless marked floa
 - Clash: 4 step-5 keys (2 per OCD, on the faces beside the shared edge) reach into it, ≈8% of its volume.
 - Section drawing in the mirror plane x = 0: claude.ai/artifact/Pqp34sp8zVkw7Y2kS1WLgM
 - Open for DICTO: middle piece swallows the key tips or is trimmed round them? Cut from caps and tetrahedra (notching them) or replace parts of them?
+
+### Step 8 — DICTO 10-18: "trimmed around and leave notches"
+- Middle piece M = hull(two stars) minus both OCDs minus the keys (trimmed round the 4 key tips). Caps and tetrahedra keep their shape but get notches where M takes their space.
+- One M on every octahedron edge (each OCD has 12 five-fold corners, one facing each edge; per cell 6 Ms).
+- 2D drawing (`draw_step8.py` → `renders/step8-trimmed.html`, claude.ai/artifact/N76HnetzU4pJpdEGETNEHD): slices across the shared edge at m and 0.06, 0.12, 0.18 along it; red middle piece over blue caps / green tetrahedra = notches; purple keys stay with their OCDs. Float.
