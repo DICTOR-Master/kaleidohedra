@@ -103,3 +103,10 @@ All numbers a + b√5 exact (Fraction pairs, `scripts/q5.py`) unless marked floa
 - **Two flanking prisms:** closed at both ends ✓, but **every column runs into a key** ✗, and ≈22% poke out of the hull. Height 0.254–0.412. Volume ≈ 0.0052 each.
 - Together the three fill ≈28% of the middle piece (0.0209 of 0.0733).
 - Reading: the central Penrose prism is a real candidate link (needs either clipping to the hull or a slightly larger middle region); the flanking prisms clash with the chosen tetrahedral keys.
+
+### Step 15 — DICTO 10-18: "1, keep the central prism trimmed"
+- The middle piece splits into a **Penrose core** (central thick-rhombus prism ∩ middle piece) and the rest of the middle piece.
+- Exact (`step15_penrose_core.py` → `data/step15-core.json`): core = prism ∩ H − OCD1 − OCD2; no key enters it (exact). **Penrose core (−36734 + 16658√5)/50787 = 0.010129** (13.8% of the middle piece); **rest of the middle piece (47668/50787 − 99416√5/253935) = 0.063162**. The two OCD cuts are equal (symmetric through m).
+- Meshes (`step15_mesh.py` on dicto-node → `data/step15-meshes.json`): core and rest are **each one solid**; volumes equal the exact values.
+- 3D page updated (same link, claude.ai/artifact/Fx4WGWm6udtt6EEPKsaMua): buttons for the Penrose core and the rest; the assembly shows each middle piece as core + rest.
+- **Set now: keyed OCD, notched cap, Penrose core, middle rest, left and right tetrahedra** (6 shapes; 5 counting the mirror pair as one).

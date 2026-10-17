@@ -3,7 +3,7 @@
 <style>
 /* layout: header, full-width 3D stage, piece buttons + explode slider beneath, notes */
 :root{--bg:#f3f4f6;--fg:#1d2230;--muted:#5b6275;--line:#d5d8e0;--panel:#fff;--sel:#1d2230;--selfg:#fff;
---ocd:#d9a21b;--cap:#5b8fd0;--mid:#c8382f;--tl:#3f9a5b;--tr:#2a9d9a;
+--ocd:#d9a21b;--cap:#5b8fd0;--mid:#c8382f;--core:#7a3fa0;--tl:#3f9a5b;--tr:#2a9d9a;
 --f-ui:"IBM Plex Sans",system-ui,sans-serif;--f-num:"IBM Plex Mono",ui-monospace,monospace}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11141b;--fg:#e6e8ee;--muted:#9aa1b2;--line:#2a2f3c;--panel:#181c25;--sel:#e6e8ee;--selfg:#11141b;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#11141b;--fg:#e6e8ee;--muted:#9aa1b2;--line:#2a2f3c;--panel:#181c25;--sel:#e6e8ee;--selfg:#11141b;color-scheme:dark}
@@ -27,12 +27,14 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--fg);outline-off
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&display=swap">
 <h1>OCD octet truss: the pieces</h1>
 <p class="meta">Meshes from manifold3d booleans of the study's geometry (float). Drag to turn, pinch to zoom.</p>
-<div id="stage"><span id="info"></span><span class="mark">DICTO · dictospheres.com · studies/2026-10-18-ocd-octet step 10</span></div>
+<div id="stage"><span id="info"></span><span class="mark">DICTO · dictospheres.com · studies/2026-10-18-ocd-octet steps 10, 15</span></div>
 <div class="bar" id="btns">
 <button data-v="assembly" aria-pressed="true">Assembly round one OCD</button>
 <button data-v="keyed_OCD" aria-pressed="false"><i class="sw" style="background:var(--ocd)"></i>OCD + 8 keys</button>
 <button data-v="cap" aria-pressed="false"><i class="sw" style="background:var(--cap)"></i>Notched cap</button>
 <button data-v="middle" aria-pressed="false"><i class="sw" style="background:var(--mid)"></i>Middle piece</button>
+<button data-v="core" aria-pressed="false"><i class="sw" style="background:var(--core)"></i>Penrose core</button>
+<button data-v="rest" aria-pressed="false"><i class="sw" style="background:var(--mid)"></i>Middle piece minus core</button>
 <button data-v="tet_notched" aria-pressed="false"><i class="sw" style="background:var(--tl)"></i>Tetrahedron, left</button>
 <button data-v="tet_right" aria-pressed="false"><i class="sw" style="background:var(--tr)"></i>Tetrahedron, right</button>
 <button data-v="tet_dented" aria-pressed="false"><i class="sw" style="background:var(--tl)"></i>Tetrahedron, keys only (step 5)</button>
@@ -49,7 +51,7 @@ const R=new THREE.WebGLRenderer({antialias:true,alpha:true});R.setPixelRatio(Mat
 const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(35,1,0.01,60);cam.position.set(3.2,2.4,4.2);
 const ctl=new THREE.OrbitControls(cam,R.domElement);ctl.enableDamping=true;ctl.autoRotate=true;ctl.autoRotateSpeed=1.0;
 scene.add(new THREE.HemisphereLight(0xffffff,0x445566,.7));const dl=new THREE.DirectionalLight(0xffffff,.75);dl.position.set(3,5,4);cam.add(dl);scene.add(cam);
-const mats={};['ocd','cap','mid','tl','tr'].forEach(k=>mats[k]=new THREE.MeshStandardMaterial({flatShading:true,roughness:.55,metalness:.05,side:THREE.DoubleSide}));
+const mats={};['ocd','cap','mid','tl','tr','core'].forEach(k=>mats[k]=new THREE.MeshStandardMaterial({flatShading:true,roughness:.55,metalness:.05,side:THREE.DoubleSide}));
 const edgeMat=new THREE.LineBasicMaterial({transparent:true,opacity:.45});
 function geo(p,flip){const g=new THREE.BufferGeometry(),a=[];p.t.forEach(t=>{const tt=flip?[t[0],t[2],t[1]]:t;tt.forEach(i=>a.push(...p.v[i].map(x=>flip?-x:x)))});
  g.setAttribute('position',new THREE.Float32BufferAttribute(a,3));g.computeVertexNormals();return g}
@@ -68,13 +70,13 @@ function build(v){world.clear();items=[];let txt='';
   const k=M=>{const c=centroid(G.cap).clone().applyMatrix4(M);return c.toArray().map(x=>x.toFixed(3)).join()};
   uniqueBy(ops,k).forEach(M=>add(G.cap,mats.cap,M));
   const km=M=>{const c=new THREE.Vector3(...D.c.middle_m).applyMatrix4(M);return c.toArray().map(x=>x.toFixed(3)).join()};
-  uniqueBy(ops,km).forEach(M=>add(G.middle,mats.mid,M,new THREE.Vector3(...D.c.middle_m).applyMatrix4(M)));
+  uniqueBy(ops,km).forEach(M=>{const h=new THREE.Vector3(...D.c.middle_m).applyMatrix4(M);if(G.core){add(G.core,mats.core,M,h);add(G.rest,mats.mid,M,h)}else add(G.middle,mats.mid,M,h)});
   const kt=M=>{const c=new THREE.Vector3(...D.c.tet).applyMatrix4(M);return c.toArray().map(x=>x.toFixed(3)).join()};
   ops.filter(M=>M.determinant()>0).forEach((M,i)=>{});
   uniqueBy(ops.filter(M=>M.determinant()>0),kt).forEach(M=>add(G.tet_notched,mats.tl,M,new THREE.Vector3(...D.c.tet).applyMatrix4(M)));
   uniqueBy(ops.filter(M=>M.determinant()>0),kt).forEach(M=>add(G.tet_right,mats.tr,M,new THREE.Vector3(...D.c.tet).applyMatrix4(M).negate()));
-  txt='1 OCD · 6 caps · 12 middle pieces · 4 left + 4 right tetrahedra';ctl.target.set(0,0,0);cam.position.set(3.2,2.4,4.2)}
- else{const g=G[v],mat=v==='keyed_OCD'?mats.ocd:v==='cap'?mats.cap:v==='middle'?mats.mid:v==='tet_right'?mats.tr:mats.tl;add(g,mat,null);
+  txt='1 OCD · 6 caps · 12 middle pieces'+(G.core?' (Penrose core + rest)':'')+' · 4 left + 4 right tetrahedra';ctl.target.set(0,0,0);cam.position.set(3.2,2.4,4.2)}
+ else{const g=G[v],mat=v==='core'?mats.core:v==='rest'?mats.mid:v==='keyed_OCD'?mats.ocd:v==='cap'?mats.cap:v==='middle'?mats.mid:v==='tet_right'?mats.tr:mats.tl;add(g,mat,null);
   const c=centroid(g);world.position.set(-c.x,-c.y,-c.z);g.computeBoundingSphere();const r=g.boundingSphere.radius;cam.position.set(r*3,r*2.2,r*3.6);
   const vol=(D.p[v]||D.p.tet_notched).vol;txt='volume '+vol.toFixed(5);}
  if(v==='assembly')world.position.set(0,0,0);info.textContent=txt;explode()}
@@ -84,7 +86,7 @@ ex.addEventListener('input',explode);
 document.querySelectorAll('#btns button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#btns button').forEach(x=>x.setAttribute('aria-pressed',x===b));build(b.dataset.v)}));
 const spin=document.getElementById('spin');if(matchMedia('(prefers-reduced-motion: reduce)').matches){ctl.autoRotate=false;spin.setAttribute('aria-pressed','false')}
 spin.addEventListener('click',()=>{ctl.autoRotate=!ctl.autoRotate;spin.setAttribute('aria-pressed',ctl.autoRotate)});
-function theme(){mats.ocd.color.set(css('--ocd'));mats.cap.color.set(css('--cap'));mats.mid.color.set(css('--mid'));mats.tl.color.set(css('--tl'));mats.tr.color.set(css('--tr'));edgeMat.color.set(css('--fg'))}
+function theme(){mats.ocd.color.set(css('--ocd'));mats.cap.color.set(css('--cap'));mats.mid.color.set(css('--mid'));mats.tl.color.set(css('--tl'));mats.tr.color.set(css('--tr'));mats.core.color.set(css('--core'));edgeMat.color.set(css('--fg'))}
 theme();matchMedia('(prefers-color-scheme: dark)').addEventListener('change',theme);new MutationObserver(theme).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
 function size(){const w=stage.clientWidth,h=stage.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
 new ResizeObserver(size).observe(stage);size();build('assembly');
