@@ -10,12 +10,13 @@ HEAD = '''<!doctype html>
 <p class="sub">{sub}</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
-Version 1 · 17 October 2026 · DICTO DOI: on publication · Licence CC BY 4.0 · An introduction to one solid; its parent paper: {parent}. Data and checks are included with this record.<br>
+Version 1 · 17 October 2026 · DICTO DOI: 10.5281/zenodo.{doi} (all versions) · Licence CC BY 4.0 · An introduction to one solid; its parent paper: {parent}. Data and checks are included with this record.<br>
 {credit}
 </div>
 '''
 TAIL = '</body></html>\n'
 P = {}
+DOI = {'metaxy': '23430864', 'palin': '23430866', 'hecatogdo': '23430868', 'ocd-stella': '23430870'}
 P['metaxy'] = dict(title='The DICTO Metaxyhexecontahedron', sub='The solid in the last gap of the golden cycle: a dodecahedron–icosahedron hull whose icosahedron edge is 9/φ⁴ times its dodecahedron edge',
   parent='Vajrayana, DICTO DOI: 10.5281/zenodo.23429911',
   credit="""The idea that one more solid fits the last gap of the cycle, and the name, are DICTO's; the exact computations and the text were done with an AI assistant (Claude, Anthropic).""",
@@ -40,7 +41,7 @@ P['metaxy'] = dict(title='The DICTO Metaxyhexecontahedron', sub='The solid in th
 <p>The Spheres of Dharma (DICTO DOI: 10.5281/zenodo.23310833) nest icosahedral shells in a cycle that repeats every φ³; Progenitors (DICTO DOI: 10.5281/zenodo.23413184) set the DICTO Ogdoecontahedron into it, and Vajrayana (DICTO DOI: 10.5281/zenodo.23429911) closed its loose steps. In the step from the rhombic triacontahedron RT to the next icosahedron I·φ³, the triacontahedron reaches only 0.812 of the way. DICTO judged that one more solid should fit there. Among the convex icosahedral solids none touches both neighbours (Vajrayana, Table 3, float); this member of the dodecahedron–icosahedron hull family does. In the cycle's own units it is the hull of the triacontahedron's 12 five-fold corners and the 20 face centres of I·φ³ (squared radii 45/8 − 9√5/8 and 47/24 + 7√5/8; the same solid as Table 1, checked exactly). Cut by cones from the centre over the faces of the inner solid, the step RT → M is 30 pieces of one kind and M → I·φ³ is 60 pieces of one kind (a triangular-bipyramid shape); M takes 0.356 of the step's volume. Its polar, with 12 regular pentagons and 20 hexagons whose sides alternate in the ratio (14 + 9√5)/11, closes the matching step of the polar-reversed cycle.</p>
 
 <h2>3. Its family</h2>
-<p>The hulls of a dodecahedron and an icosahedron in dual position form a one-parameter family with the pentakis dodecahedron's combinatorics, fully symmetric for edge ratios from (5 + 3√5)/10 to φ. Its named members are the Catalan pentakis dodecahedron at 3(7 + 5√5)/38 ≈ 1.435, the DICTO Palintriacontahedron at 3/√5 ≈ 1.342 (its own introduction accompanies this one), and the DICTO Metaxyhexecontahedron at 9/φ⁴ ≈ 1.313. We note without explanation that 9/φ⁴ is also the exact gain per round of the tightest progenitor cycle in Progenitors.</p>
+<p>The hulls of a dodecahedron and an icosahedron in dual position form a one-parameter family with the pentakis dodecahedron's combinatorics, fully symmetric for edge ratios from (5 + 3√5)/10 to φ. Its named members are the Catalan pentakis dodecahedron at 3(7 + 5√5)/38 ≈ 1.435, the DICTO Palintriacontahedron at 3/√5 ≈ 1.342 (DICTO DOI: 10.5281/zenodo.23430866), and the DICTO Metaxyhexecontahedron at 9/φ⁴ ≈ 1.313. We note without explanation that 9/φ⁴ is also the exact gain per round of the tightest progenitor cycle in Progenitors.</p>
 
 <h2>4. Status</h2>
 
@@ -76,7 +77,7 @@ P['palin'] = dict(title='The DICTO Palintriacontahedron', sub='The rhombic triac
 <p>In the twelve-station golden cycle of Vajrayana (DICTO DOI: 10.5281/zenodo.23429911) the icosidodecahedron is the shell where the cycle's two progenitors meet. DICTO flipped its central pyramids outward at full height rather than shortening them; the hull of the 32 tips is X. It is the rhombic triacontahedron turned inside out: the same 32 axes, with the five-fold and three-fold corners at the reciprocal ratio of radii. Two float observations (labelled as such in Vajrayana): X lies inside the next turn's D′ and 99.46% of its volume (20,000 sample points) lies inside the next icosahedron's Cleo star, so it bridges one turn to the next; and the first stellation of the icosahedron puts its tips at 3/√5 times the face distance, the same number.</p>
 
 <h2>3. Its family</h2>
-<p>X belongs to the same hull family as the pentakis dodecahedron (Catalan, ratio 3(7 + 5√5)/38 ≈ 1.435) and the DICTO Metaxyhexecontahedron (9/φ⁴ ≈ 1.313), whose introduction accompanies this one. Its ratio 3/√5 ≈ 1.342 lies between them.</p>
+<p>X belongs to the same hull family as the pentakis dodecahedron (Catalan, ratio 3(7 + 5√5)/38 ≈ 1.435) and the DICTO Metaxyhexecontahedron (9/φ⁴ ≈ 1.313; DICTO DOI: 10.5281/zenodo.23430864). Its ratio 3/√5 ≈ 1.342 lies between them.</p>
 
 <h2>4. Status</h2>
 
@@ -151,5 +152,6 @@ P['ocd-stella'] = dict(title='The DICTO OCD Stella', sub="The Ogdoecontahedron's
 <p>In the study (branch research: studies/2026-10-16-ocd-pyrochlore): <code>stella_cut_exact.py</code> → <code>stella-cut-exact.txt</code>, <code>stella_seed_exact.py</code> → <code>stella-seed-exact.txt</code>, <code>ocd_gbpc_hull.py</code>, <code>companion_variants.py</code>. See it in the app: Kaleidohedra, 3D+ → OCD Stella Crystals.</p>
 ''')
 for k, p in P.items():
+    p['doi'] = DOI[k]
     html = HEAD.format(**p) + p['body'] + open('appendix-library.html').read() + TAIL
     open(os.path.join(k, 'paper.html'), 'w').write(html); print(k, len(html.split()))
