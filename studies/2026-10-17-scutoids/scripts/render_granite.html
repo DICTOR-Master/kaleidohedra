@@ -1,0 +1,76 @@
+<!doctype html><meta charset="utf-8"><title>loading</title>
+<!-- DICTO 2026-10-17 night: "I want the normal vertical ones in red granite." Fable's 8-piece flat scutoid group (data/fable-group-geometry.json,
+     float) in honed red granite. ?mode=group|apart|layer|stack, ?stone=red|grey. Served from ~/cleo-hold on the node; shot by shoot_granite.mjs. -->
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}#mark{position:absolute;right:22px;bottom:16px;font:400 20px Georgia,serif;color:#6b604f}
+#cap{position:absolute;left:24px;top:18px;font:600 26px Georgia,serif;color:#2a2218}#cap small{display:block;font:400 17px Georgia,serif;color:#6b604f;margin-top:4px}</style>
+<div id="cap"></div><div id="mark">DICTO · dictospheres.com</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(async () => {
+  const GAP = 0.972; const Q = new URLSearchParams(location.search), MODE = Q.get('mode') || 'group', STONE = Q.get('stone') || 'red', PX = +(Q.get('px') || 1400);
+  const J = await (await fetch('fable-group-geometry.json')).json();
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setPixelRatio(1); renderer.setSize(PX, PX * 0.72);
+  renderer.outputEncoding = THREE.sRGBEncoding; document.body.appendChild(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  const cam = new THREE.PerspectiveCamera(28, 1 / 0.72, 0.1, 200);
+  scene.add(new THREE.HemisphereLight(0xfff8ee, 0x8a7f70, 0.62));
+  const key = new THREE.DirectionalLight(0xfff1e0, 0.95); key.position.set(-4, 9, 6); scene.add(key);
+  const rim = new THREE.DirectionalLight(0xdfe8ff, 0.35); rim.position.set(6, 3, -5); scene.add(rim);
+  // granite: a seeded grain texture. Red: pink-red feldspar, black mica/hornblende, grey glassy quartz. Grey: white feldspar, black mica, grey quartz.
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  function granite() {
+    const n = 1024, c = document.createElement('canvas'); c.width = c.height = n; const g = c.getContext('2d');
+    const P = STONE === 'red'
+      ? { base: '#a3463c', grains: [['#b9584a', .30, 9], ['#8d3a33', .22, 8], ['#c76e5c', .12, 6], ['#6f6a68', .14, 7], ['#a9a6a2', .06, 5], ['#1d1b1b', .16, 4]] }
+      : { base: '#9a9a96', grains: [['#c9c8c2', .30, 8], ['#7d7d7a', .2, 7], ['#e2e1dc', .14, 6], ['#5a5a58', .14, 5], ['#1f1f1f', .2, 4]] };
+    g.fillStyle = P.base; g.fillRect(0, 0, n, n);
+    for (const [col, frac, size] of P.grains) {
+      g.fillStyle = col; const count = Math.round(frac * n * n / (size * size) * 1.6);
+      for (let i = 0; i < count; i++) {
+        const x = rnd() * n, y = rnd() * n, r = size * (0.35 + rnd() * 0.9); g.beginPath();
+        const k = 5 + Math.floor(rnd() * 3), a0 = rnd() * 6.28;
+        for (let j = 0; j < k; j++) { const a = a0 + j / k * 6.28, rr = r * (0.6 + rnd() * 0.6); g[j ? 'lineTo' : 'moveTo'](x + rr * Math.cos(a), y + rr * Math.sin(a)); }
+        g.closePath(); g.fill();
+      }
+    }
+    const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.encoding = THREE.sRGBEncoding; t.anisotropy = 8; return t;
+  }
+  const tex = granite();
+  const mat = new THREE.MeshStandardMaterial({ map: tex, roughness: 0.48, metalness: 0.0 });
+  function pieceMesh(p, off) {
+    const pos = [], uv = [], nor = [];
+    const PC = pcen(p);
+    for (const f of p.faces) {
+      const V = f.map((v) => new THREE.Vector3(v[0], v[2] * 1.0, -v[1]).sub(PC).multiplyScalar(GAP).add(PC));   // stand the layer up: z (height) -> y; a thin joint round each stone
+      const nrm = new THREE.Vector3().subVectors(V[1], V[0]).cross(new THREE.Vector3().subVectors(V[2], V[0])).normalize();
+      const fc = V.reduce((a, b) => a.add(b), new THREE.Vector3()).multiplyScalar(1 / V.length);
+      if (nrm.dot(fc.clone().sub(PC)) < 0) { nrm.negate(); V.reverse(); }   // outward, counter-clockwise
+      const u = new THREE.Vector3(1, 0, 0); if (Math.abs(nrm.x) > 0.9) u.set(0, 1, 0); u.sub(nrm.clone().multiplyScalar(u.dot(nrm))).normalize(); const w = nrm.clone().cross(u);
+      const sh = p.num * 0.37 + rnd() * 0.5;
+      for (let i = 1; i < V.length - 1; i++) for (const P_ of [V[0], V[i], V[i + 1]]) {
+        pos.push(P_.x, P_.y, P_.z); nor.push(nrm.x, nrm.y, nrm.z); uv.push(P_.dot(u) * 0.55 + sh, P_.dot(w) * 0.55 + sh * 1.7);
+      }
+    }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('normal', new THREE.Float32BufferAttribute(nor, 3)); g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+    const grp = new THREE.Group(); grp.add(new THREE.Mesh(g, mat));
+    grp.add(new THREE.LineSegments(new THREE.EdgesGeometry(g, 10), new THREE.LineBasicMaterial({ color: STONE === 'red' ? 0x3a1612 : 0x2a2a2a, transparent: true, opacity: 0.55 })));
+    grp.position.copy(off); return grp;
+  }
+  const L0 = new THREE.Vector3(J.L[0][0], 0, -J.L[0][1]), L1 = new THREE.Vector3(J.L[1][0], 0, -J.L[1][1]);
+  const cen = new THREE.Vector3(); let cnt = 0;
+  for (const p of J.pieces) for (const f of p.faces) for (const v of f) { cen.add(new THREE.Vector3(v[0], v[2], -v[1])); cnt++; } cen.multiplyScalar(1 / cnt);
+  const pcen = (p) => { const c = new THREE.Vector3(); let k = 0; for (const f of p.faces) for (const v of f) { c.add(new THREE.Vector3(v[0], v[2], -v[1])); k++; } return c.multiplyScalar(1 / k); };
+  const root = new THREE.Group(); root.position.copy(cen).multiplyScalar(-1); scene.add(root);
+  const caption = { group: ['Eight scutoids, one group', 'red granite · pentagon and hexagon ends swap top to bottom'],
+    apart: ['The eight pieces, pulled apart', 'every piece is a scutoid: a pentagon at one end, a hexagon at the other, one small triangle face'],
+    layer: ['Nine groups in one layer', 'the same eight pieces repeat side by side'], stack: ['Layers stacked straight up', 'flat top on flat bottom; nothing crosses between layers'] }[MODE];
+  document.getElementById('cap').innerHTML = (STONE === 'red' ? 'Red granite — ' : 'Grey granite — ') + caption[0] + '<small>' + caption[1] + '</small>';
+  let dist = 7.5, tgtY = 0.0, el = 0.62;
+  if (MODE === 'group') for (const p of J.pieces) root.add(pieceMesh(p, new THREE.Vector3()));
+  if (MODE === 'apart') { for (const p of J.pieces) { const d = pcen(p).sub(cen); d.y = 0; root.add(pieceMesh(p, d.multiplyScalar(0.55))); } dist = 9.5; }
+  if (MODE === 'layer') { for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) for (const p of J.pieces) root.add(pieceMesh(p, L0.clone().multiplyScalar(i).add(L1.clone().multiplyScalar(j)))); dist = 21; el = 0.8; }
+  if (MODE === 'stack') { for (let s = 0; s < 3; s++) for (let i = 0; i <= 1; i++) for (let j = 0; j <= 0; j++) for (const p of J.pieces) root.add(pieceMesh(p, L0.clone().multiplyScalar(i).add(L1.clone().multiplyScalar(j)).add(new THREE.Vector3(0, s * (J.H + 0.18), 0)))); dist = 13; tgtY = 1.1; root.position.add(L0.clone().multiplyScalar(-0.5)); }
+  const az = -0.75; cam.position.set(Math.sin(az) * Math.cos(el) * dist, tgtY + Math.sin(el) * dist, Math.cos(az) * Math.cos(el) * dist); cam.lookAt(0, tgtY, 0);
+  renderer.render(scene, cam); document.title = 'ready';
+})();
+</script>

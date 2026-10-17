@@ -58,8 +58,8 @@ if __name__ == '__main__':
            f'  calibration (at {n // 2}³): cube ψ {cube:.3f} (exact 0.806), ball {ball:.3f}']
     R = []
     for gP, gHd, gHo in ((1.85, 1.95, 2.10), (1.6, 1.7, 1.85)):
-        for af in (0.95, 1.1, 1.25, 1.4):
-            for cf in (0.85, 1.0, 1.2):
+        for af in (1.1, 1.25, 1.4):
+            for cf in (0.9, 1.1):
                 try: b = run_hex(gP, gHd, gHo, af, cf, n)
                 except Exception as e: print('fail', gP, af, cf, repr(e), flush=True); continue
                 R.append(b); print(json.dumps(b), flush=True)
