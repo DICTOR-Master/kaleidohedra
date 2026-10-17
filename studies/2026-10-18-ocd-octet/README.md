@@ -40,3 +40,9 @@ All numbers a + b√5 exact (Fraction pairs, `scripts/q5.py`) unless marked floa
 - Float: 200 000 points, every one in exactly one piece (0 gaps, 0 overlaps). ✓
 - **Result: a keyed octet truss from 3 shapes: the keyed OCD, the cap, the dented tetrahedron (in two orientations).**
 - Open: are T+ and T− with dents the same shape or mirror images? Renders of the pieces; Penrose-prism links (step 4) after DICTO reads the drawing.
+
+### Step 6 — DICTO 10-18 on the stars drawing: "the stars look possible to bring into alignment"
+- Fixed by the lattice (all OCDs are translates): the sideways offset (= tip radius), the 36° turn, the 0.094 axial step. So alignment has to come from a joining piece.
+- Options put to DICTO: (1) a connector over the facing lobes, (2) a slanted Penrose prism from c1 to c2 (≈75° from the axis, nearly flat), (3) a shared middle piece on the half-turn centre between c1 and c2.
+- **DICTO chose (3), a shared middle piece.**
+- Note: the half-turn centre is m = (c1 + c2)/2 = R(0,1,1)/2, the **midpoint of the octahedron edge the two OCDs share**; m is a centre of inversion (each OCD and star maps to the other). In the octet, 2 octahedra and 2 tetrahedra meet round that edge.
