@@ -58,3 +58,8 @@ All numbers a + b√5 exact (Fraction pairs, `scripts/q5.py`) unless marked floa
 - Middle piece M = hull(two stars) minus both OCDs minus the keys (trimmed round the 4 key tips). Caps and tetrahedra keep their shape but get notches where M takes their space.
 - One M on every octahedron edge (each OCD has 12 five-fold corners, one facing each edge; per cell 6 Ms).
 - 2D drawing (`draw_step8.py` → `renders/step8-trimmed.html`, claude.ai/artifact/N76HnetzU4pJpdEGETNEHD): slices across the shared edge at m and 0.06, 0.12, 0.18 along it; red middle piece over blue caps / green tetrahedra = notches; purple keys stay with their OCDs. Float.
+
+### Step 9 — left and right tetrahedra? (`step9_tet_handedness.py` → `data/step9-handedness.json`, float)
+- T− is T+ turned inside out through the OCD centre, so they are the same piece exactly when T+ (with its dents and notches) has a mirror symmetry.
+- With the 4 key dents only (step 5 set): all 6 tetrahedron mirrors hold → **T+ and T− are the same piece**; the step-5 keyed octet needs just 3 shapes.
+- With the 6 middle-piece notches as well (step 8 set): no mirror holds (the stars' 36° twist makes the notches twist), only the 3-fold turns → **T+ and T− are mirror images**, a left and a right tetrahedron.
