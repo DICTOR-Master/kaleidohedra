@@ -18,3 +18,9 @@ All numbers a + b√5 exact (Fraction pairs, `scripts/q5.py`) unless marked floa
 - Exact OCD volume (−1000 + 1240√5)/1539 = 1.151868 (68.83% of the octahedron). Shell (2216 − 632√5)/1539; **each cap (1108 − 316√5)/4617 = 0.086940** (corrects the sampled 0.0865 of the caps study).
 - Float check: 200 000 random points, each in exactly one of OCD / shell / T+ / T− (0 gaps, 0 overlaps).
 - **So the octet set already works with plain pieces: 1 OCD + 6 caps + T+ + T−** (per lattice cell: 1 + 6 + 1 + 1).
+
+### Step 3 — candidate key: the golden envelope's own corner (`step3_key_candidate.py` → `data/step3-key-candidate.json`) — AWAITING DICTO
+- The OCD's golden envelope (RT, same frame) pokes through each joint plane as a small tetrahedron: its 3-fold corner (|x|+|y|+|z| = √5 − 1 = 2/φ) over 3 RT corners lying exactly on the plane.
+- Exact: those 3 base corners lie **on the octahedron's edges** (base triangle inscribed in the face, so it covers the hexagon and part of the 3 caps); the key lies inside T+; volume (−44 + 20√5)/81 = 0.008906; height 0.0909.
+- Use: bump on the 4 class −1 faces into T−, matching dent in T+ (or the reverse). Not adopted: the key choice is DICTO's (this one vs the earlier 20.9° hexagon key).
+- 10-18 DICTO aside (outside this step): five-lobed patterns round the 12 five-fold corners → "Penrose prisms" to link OCDs. See README of the next study when started.
