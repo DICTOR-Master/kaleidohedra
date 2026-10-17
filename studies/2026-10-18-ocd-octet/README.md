@@ -33,5 +33,10 @@ All numbers a + b√5 exact (Fraction pairs, `scripts/q5.py`) unless marked floa
 - The stars are turned a half turn (= 36° for a five-fold star) against each other. Star: 5 kites, inner corners 0.0559 and tips 0.1281 below the centre.
 - Page: claude.ai/artifact/AsT1sqmf4pkdGj9v6K4ZZh. Next: DICTO's read of the drawing before any Penrose-prism search.
 
-### Step 5 — the keyed octet (`step5_keyed_octet.py` → `data/step5-keyed-octet.json`) — running
+### Step 5 — the keyed octet (`step5_keyed_octet.py` → `data/step5-keyed-octet.json`) — DONE
 - The key's base reaches the octahedron edges, so a dent inside the OCD would also cut the caps. So all 8 keys go out as bumps (OCD + 8 envelope corners = one piece) and both tetrahedra take 4 dents each.
+- Exact: the 4 keys entering each tetrahedron (T+ and T−) stay inside their own face pyramids, so they never overlap. ✓
+- Exact pieces: **OCD + 8 keys (−7688 + 4280√5)/1539 = 1.223113**; **cap (1108 − 316√5)/4617 = 0.086940** (×6); **tetrahedron with 4 dents 64/27 − 8√5/9 = 0.382754** (×2: T+ and T−). Sum = cell (32 + 16√5)/27 exactly. ✓
+- Float: 200 000 points, every one in exactly one piece (0 gaps, 0 overlaps). ✓
+- **Result: a keyed octet truss from 3 shapes: the keyed OCD, the cap, the dented tetrahedron (in two orientations).**
+- Open: are T+ and T− with dents the same shape or mirror images? Renders of the pieces; Penrose-prism links (step 4) after DICTO reads the drawing.
