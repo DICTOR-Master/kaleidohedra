@@ -124,3 +124,9 @@ All numbers a + b√5 exact (Fraction pairs, `scripts/q5.py`) unless marked floa
 - Alternative tried (`step17b_tet_plus_rests.py` → `data/step17b-tet-rests.json`): cut each rest by the mirror plane through its edge and axis, merge each tetrahedron with its 6 half-rests: **one solid, volume 0.438972 ✓, but ψ = 0.357**, less chunky than the tetrahedron alone (0.460).
 - Sphericity of the current pieces: bare OCD 0.979; **keyed OCD 0.696** (the overhanging key plates cost a lot); **Penrose core 0.752** (the chunkiest new piece); notched cap 0.494; notched tetrahedron 0.460; middle rest 0.385.
 - **Reading: the middle rests are thin collars round the stars; merging them into anything makes it less chunky.** The thin pieces come from the octet's spacing itself, not from how the pieces are grouped. Keep the step-15 set; do not merge.
+
+## App stage — DICTO 10-18: "lets build it in the app"
+Decisions (DICTO, 10-18, asked before any app edit):
+- Place: the existing **DICTO Icosahedral Octet** world (#21, Admiral Caps), as new networks beside Caps / All-icosahedral / Frog Chorus / Pyrochlore / Lotus Jewel (same family, no crossover; same controls).
+- Both kits, **two rows**: **"Octet with OCD"** (keyed kit, step 5: keyed OCD, cap, dented tetrahedron) and **"Octet with OCD and Penrose cores"** (full kit, step 15: + Penrose core, middle rest; notched caps; left/right tetrahedra). Name of the full kit chosen by DICTO.
+- Colours as on the 3D study page: OCD gold, caps blue, middle rest red, Penrose core purple, left tetrahedra green, right teal.
