@@ -1,0 +1,95 @@
+{
+ "mark": "DICTO · dictospheres.com",
+ "date": "2026-10-18",
+ "slab_gap_times_N": [
+  "-88/9",
+  "40/9"
+ ],
+ "N_squared": [
+  "56",
+  "-24"
+ ],
+ "slab_gap_float": 0.10491910111101738,
+ "slab_neighbours": 6,
+ "layer_heights": [
+  {
+   "piece": "rhombohedron",
+   "size": "¼λ",
+   "height": 0.021220333958339197,
+   "gap_over_height": 4.9442719099991415
+  },
+  {
+   "piece": "rhombohedron",
+   "size": "λ/φ²",
+   "height": 0.0324217852778481,
+   "gap_over_height": 3.2360679774997596
+  },
+  {
+   "piece": "rhombohedron",
+   "size": "¼λ",
+   "height": 0.03433522159721641,
+   "gap_over_height": 3.0557280900008315
+  },
+  {
+   "piece": "rhombohedron",
+   "size": "½λ",
+   "height": 0.042440667916678394,
+   "gap_over_height": 2.4721359549995707
+  },
+  {
+   "piece": "rhombohedron",
+   "size": "λ/φ",
+   "height": 0.05245955055550869,
+   "gap_over_height": 2.0
+  },
+  {
+   "piece": "rhombohedron",
+   "size": "λ/φ²",
+   "height": 0.05245955055550869,
+   "gap_over_height": 2.0
+  },
+  {
+   "piece": "B4 Crown Jewel",
+   "size": "½λ",
+   "height": 0.06867044319443281,
+   "gap_over_height": 1.5278640450004157
+  },
+  {
+   "piece": "rhombohedron",
+   "size": "½λ",
+   "height": 0.06867044319443281,
+   "gap_over_height": 1.5278640450004157
+  },
+  {
+   "piece": "rhombohedron",
+   "size": "1λ",
+   "height": 0.08488133583335679,
+   "gap_over_height": 1.2360679774997854
+  },
+  {
+   "piece": "rhombohedron",
+   "size": "λ/φ",
+   "height": 0.08488133583335679,
+   "gap_over_height": 1.2360679774997854
+  },
+  {
+   "piece": "B4 Crown Jewel",
+   "size": "1λ",
+   "height": 0.13734088638886563,
+   "gap_over_height": 0.7639320225002079
+  },
+  {
+   "piece": "rhombohedron",
+   "size": "1λ",
+   "height": 0.13734088638886563,
+   "gap_over_height": 0.7639320225002079
+  }
+ ],
+ "exact_fits": [
+  "('stack', [[('rhombohedron', 'λ/φ'), ('rhombohedron', 'λ/φ²')], [('rhombohedron', 'λ/φ'), ('rhombohedron', 'λ/φ²')]])"
+ ],
+ "checks": {
+  "six_slabs_equal": true,
+  "two_half_layers": true
+ }
+}
