@@ -31,3 +31,8 @@ Every step saved here. Exact arithmetic `scripts/q5.py`, `scripts/exactpoly.py` 
 - Exact: the facing corner's sideways offset runs **along one of corner 1's spokes** (opposite a tip); its length is **exactly 2/3 of the tip radius** (= 2φ/3 × the spoke).
 - Exact search: the offset is **not** a φ-scaled spoke/tip vector, singly or in pairs (powers φ^−4…φ^4) → **no thick Penrose rhombus joins the corners directly**, unlike the octet. The 2/3 (the lattice's thirds) breaks it. The gap is also longer (0.6231 vs 0.363).
 - Reading for DICTO: in the bcc packing a Penrose link would have to be a longer bridge through G′, or come from a different site (e.g. the OCD's own five-fold corners, or Penrose pieces between envelope stars and slab covers).
+
+## Step 5 — option 2: the OCD's own five-fold corners (`step5_ocd_stars.py` → `data/step5-ocd-stars.json`, exact)
+- DICTO 10-18: "yes, check option 2". Same facing third neighbours; the OCD corners lie on the same axes inside the envelopes, so the sideways offset is the same (0.4673); along the axis 0.5892, corner gap 0.7520 (vs 0.363 in the octet).
+- Against the OCD's five-kite star (tip radius 0.3505, inner corners 0.1890): exact, **offset = 4/3 × the tip radius**, and it is **collinear with a tip and an inner corner**: offset = (tip) + (inner)/φ along one line (length 0.3505 + 0.1168). No two independent directions → **no Penrose rhombus**, only a straight golden step along a spoke line.
+- So neither the envelope corners (2/3 of the tip radius) nor the OCD corners (4/3) give a Penrose link in bcc: the lattice's thirds sit across every five-fold pair. In the octet (R = 2φ/3) the same pair lines up exactly as a thick Penrose rhombus. Reading: Penrose comes naturally with the octet arrangement, not with bcc.

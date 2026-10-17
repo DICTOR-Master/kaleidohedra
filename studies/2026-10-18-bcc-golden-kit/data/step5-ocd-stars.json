@@ -1,0 +1,32 @@
+{
+ "mark": "DICTO · dictospheres.com",
+ "step": 5,
+ "checks": {
+  "corner_c1": [
+   "2/19|-4/19",
+   "0|0",
+   "9/19|1/19"
+  ],
+  "tips": 5,
+  "inner": 5,
+  "tip_radius": 0.35048740807942236,
+  "inner_radius": 0.18903351296711998,
+  "offset_sideways": 0.4673165441058965,
+  "offset_along": 0.5891856897523108,
+  "corner_gap": 0.7520136497457904,
+  "ratios": {
+   "offset2_over_tip2": "16/9|0",
+   "offset2_over_inner2": "24|-8"
+  },
+  "offset_parallel_to": [
+   "tip1",
+   "inner4"
+  ],
+  "single_scaled": [],
+  "two_scaled": [
+   "-1phi^0 tip1 +1phi^-1 inner4",
+   "-1phi^-4 inner4 +1phi^2 inner4",
+   "+1phi^2 inner4 -1phi^-4 inner4"
+  ]
+ }
+}
