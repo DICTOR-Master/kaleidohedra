@@ -540,7 +540,8 @@ const K_WORLDS = [
   // DICTO Icosahedral Octet (DICTO 2026-10-13; DISCOVERIES #21): Euclid's roofs moved to the icosahedron, as growing networks.
   { key: 'octet', label: 'DICTO Icosahedral Octet', pieces: [{ label: 'Octet with Admiral Caps', action: 'tool:octetWorld:caps' },
     { label: 'All-icosahedral octet', action: 'tool:octetWorld:allIco' }, { label: 'Frog Chorus', action: 'tool:octetWorld:frog' },
-    { label: 'Pyrochlore in the octet', action: 'tool:octetWorld:pyrochlore' }, { label: 'Lotus Jewel network', action: 'tool:octetWorld:lotusJewel' }] },
+    { label: 'Pyrochlore in the octet', action: 'tool:octetWorld:pyrochlore' }, { label: 'Lotus Jewel network', action: 'tool:octetWorld:lotusJewel' },
+    { label: 'Octet with OCD', action: 'tool:octetWorld:ocdOctet' }, { label: 'Octet with OCD and Penrose cores', action: 'tool:octetWorld:ocdPenrose' }] },
   // DICTO ATOM-13×13 (DICTO's name, 2026-10-13; docs/PLAN-13.md): twelve around one, thirteen ways.
   { key: 'thirteens', label: 'DICTO ATOM-13×13', pieces: [{ label: 'DICTO Icosa-13 (Lotus seed)', action: 'tool:thirteensWorld:icosa13' },
     { label: 'DICTO Dodeca-13', action: 'tool:thirteensWorld:dodeca13' }, { label: 'The Bodhi Seed', action: 'tool:thirteensWorld:bodhi' },

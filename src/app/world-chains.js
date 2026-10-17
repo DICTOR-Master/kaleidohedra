@@ -27,7 +27,9 @@ export const ROLE = { ico: 0x5fd38a, cap: 0x5fd38a, lcap: 0x5fd38a, lj11: 0x5fd3
   hexCentre: 0xffc857, hexByHex: 0x4dd0e1, hexByRhombus: 0x5fd38a, hexCentreN: 0x8a7440, hexByHexN: 0x33808a, hexByRhombusN: 0x3f7a57,
   // DICTO Icosahedral Octet
   admiral: 0x4dd0e1, icoSmall: 0xffc857, weirdstone: 0xc792ea, tadpole: 0xf08fc0, tet: 0xc792ea, frog: 0xf08fc0, pyroUp: 0xffc857,
-  pyroDown: 0xc792ea, octGlass: 0x9fd8ff, tetGlass: 0x9fd8ff, lotusJewel: 0x5fd38a, voidDodeca: 0xffc857 };
+  pyroDown: 0xc792ea, octGlass: 0x9fd8ff, tetGlass: 0x9fd8ff, lotusJewel: 0x5fd38a, voidDodeca: 0xffc857,
+  // OCD octet (DICTO 2026-10-18), the study page's colours: OCD gold, caps blue, middle rest red, Penrose core purple, tetrahedra green / teal
+  ocdKeyed: 0xd9a21b, ocdCapPlain: 0x5b8fd0, ocdCap: 0x5b8fd0, midRest: 0xc8382f, penroseCore: 0x7a3fa0, ocdTet: 0x3f9a5b, ocdTetL: 0x3f9a5b, ocdTetR: 0x2a9d9a };
 // The 12-neighbour space-fillers' 13s (DICTO 2026-10-13): centre gold, the twelve cyan, the neighbouring blocks' copies dimmer.
 Object.assign(ROLE, { jewelCentre: 0xffc857, jewelCell: 0x4dd0e1, stella: 0xc792ea });
 for (const k of ['skewedRd13', 'bainRd13', 'bilinski13']) Object.assign(ROLE, { [`${k}Centre`]: 0xffc857, [`${k}Cell`]: 0x4dd0e1, [`${k}CentreN`]: 0x8a7440, [`${k}CellN`]: 0x33808a });
@@ -160,7 +162,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     const centreIndex = centreGold ? dist.indexOf(Math.min(...dist)) : -1;
     const isCentreRole = (r) => /Centre(N)?$/.test(r) || /^(rdCentre|hexCentre|toCentre)/.test(r);
     const fm = film === null ? null : filmOf(list);
-    list.forEach(([role, V, F], n) => {
+    list.forEach(([role, V, F, E], n) => {
       if (fm && fm.rank.get(n) >= film) return;
       const sh = shellOf(dist[n]); const top = Math.round(view.shells * (levels.length - 1));
       if (!fm && sh > top && !ALWAYS_GLASS.has(role) && !view.crystal) return;
@@ -183,8 +185,10 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       colour.setHex(hex);
       for (const f of F) {
         for (let i = 1; i + 1 < f.length; i++) for (const k of [f[0], f[i], f[i + 1]]) { b.pos.push(...P[k]); b.col.push(colour.r, colour.g, colour.b); }
-        f.forEach((k, i) => b.line.push(...P[k], ...P[f[(i + 1) % f.length]]));
+        if (!E) f.forEach((k, i) => b.line.push(...P[k], ...P[f[(i + 1) % f.length]]));
       }
+      // A piece given as triangles may carry its outline E (edges between faces that are not flat), so the triangulation does not show.
+      if (E) for (const [i, j] of E) b.line.push(...P[i], ...P[j]);
     });
     solid.transparent = opacity < 1; solid.opacity = opacity; solid.depthWrite = opacity >= 1; solid.needsUpdate = true;
     for (const [key, mat] of [['solid', solid], ['glass', glass]]) {
