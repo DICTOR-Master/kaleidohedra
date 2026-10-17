@@ -89,3 +89,10 @@ All numbers a + b√5 exact (Fraction pairs, `scripts/q5.py`) unless marked floa
 - Exact (12b): each of the 4 keys beside a shared edge has one face lying exactly in a facing-star hull plane (of a neighbouring edge's hull).
 - **So the middle piece is not made of Penrose rhombi;** Penrose angles appear only in 4 of its faces. A true Penrose-prism link would need a different cut (open, for DICTO).
 - Caveat: some mesh loops are degenerate (0-gons, a few "?" where a corner did not snap); they are boolean slivers, not real faces.
+
+### Step 13 — a Penrose cut between the facing stars, in 2D (`step13_penrose_cut.py` → `data/step13-penrose.json`; `draw_step13.py` → `renders/step13-penrose.html`) — PROPOSAL (Claude), awaiting DICTO
+- DICTO 10-18: "1, draw the Penrose cut in 2D". Seen down the five-fold axis (projection exact in Q(√5)).
+- Exact: c1 → c2 is the long diagonal of a **thick Penrose rhombus** (72° at c1, c2; 108° at the sides), edge = tip radius ÷ φ = 0.2166; its edges run **along the stars' own spokes**.
+- Exact: at each side corner a **thick Penrose rhombus one φ-step smaller** (edge 0.1339, 108° at the side corner) reaches one tip of each star.
+- So three thick Penrose rhombi in φ-scaled sizes join the two stars tip to tip, symmetric about m. Each would become a Penrose prism along the axis, closed by the two OCD surfaces.
+- Open: do the prisms fit inside the middle region in 3D (between the OCDs, clear of the keys)? Page: claude.ai/artifact/41opNbdPpZFeMa6crGpFBz
