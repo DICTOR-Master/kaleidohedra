@@ -149,3 +149,7 @@ Decisions (DICTO, 10-18, asked before any app edit):
 - Meshes: every core and the rest are **single solids**; volumes equal the exact ones. Sphericity: central core 0.752, flanking core 0.729, rest 0.377 (M₀ whole 0.579).
 - **The two flanking cores are mirror images** (a left and a right): no rotation takes one onto the other; the mirror of one does.
 - So with flanking cores the full keyless kit is: OCD, notched cap, central core, left + right flanking core, rest, left + right tetrahedron (7 shapes; 5 counting mirror pairs as one).
+
+### Step 20 — the keyless kit with three cores on the 3D page (`step20_keyless_meshes.py` on dicto-node → `data/step20-keyless-meshes.json`)
+- Meshes: plain OCD 1.151868, notched cap 0.058072 (unchanged: keys never entered the octahedron), **keyless notched tetrahedron 0.265776**, central core 0.010129, flanking cores 0.004993 each, rest 0.059620. Per cell 1.151868 + 6×0.058072 + 6×0.079735 + 2×0.265776 = 2.510263 = cell ✓.
+- Page (same link): button "Keyless kit, 3 Penrose cores" (assembly round one OCD: 6 caps, 12 middle pieces each as central core + 2 flanking cores + rest, 4 left + 4 right tetrahedra), and single-piece buttons for the flanking cores (left, right), the rest and the keyless tetrahedron.
