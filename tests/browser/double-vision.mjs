@@ -39,7 +39,7 @@ await page.screenshot({ path: `${SH}/dv-interlock-middle.png` });
 // views
 await page.tap(`${panel} [data-dv-mode="cycles"]`); await page.waitForTimeout(900);
 assert.match(await note(), /icosidodecahedron and the rhombic triacontahedron/);
-assert.equal(await page.locator(`${panel} [data-dv="slice"]`).isHidden(), true, 'no slice button on the shells');
+assert.equal(await page.locator(`${panel} [data-dv="slice"]`).count(), 0, 'the cutaway lives on ⛶, not the panel');
 await page.screenshot({ path: `${SH}/dv-cycles-middle.png` });
 await page.locator(`${panel} .dv-mix-row input`).fill('100'); await page.waitForTimeout(400);
 await page.screenshot({ path: `${SH}/dv-cycles-flipped.png` });
@@ -87,6 +87,23 @@ await page.tap(`${panel} [data-dv-pause]`); await page.waitForTimeout(300);
 assert.match(await page.locator(`${panel} .dv-film-pos`).textContent(), /Yours → twin/);
 for (const [v, nm] of [['50', 'shadow'], ['100', 'twin']]) { await page.locator(`${panel} .dv-film-row input`).fill(v); await page.waitForTimeout(500); await page.screenshot({ path: `${SH}/dv-twin-RT-${nm}.png` }); }
 await page.tap(`${panel} [data-dv-mode="interlock"]`); await page.waitForTimeout(900);
+// the cutaway on ⛶ (DICTO 2026-10-17): wedge → plane → off → wedge; hidden in Twin
+const xr = async () => ({ lit: await page.locator('#xray-toggle.active').count(), plane: await page.evaluate(() => document.getElementById('section-enable').checked),
+  wedge: await page.evaluate(() => JSON.parse(Object.entries(localStorage).find(([k]) => /doublevision$/.test(k))?.[1] ?? '{}').slice) });
+const steps = [await xr()];
+for (let i = 0; i < 3; i++) {
+  await page.tap('#xray-toggle'); await page.waitForTimeout(700); steps.push(await xr());
+  if (i === 0) { assert.equal(await page.locator(`${panel} .dv-plane-row`).isVisible(), true, 'plane slider in the lower bar');
+    await page.tap(`${panel} [data-dv-axis="i3"]`); await page.locator(`${panel} .dv-plane-row input`).fill('2'); await page.waitForTimeout(500);
+    assert.equal(await page.evaluate(() => [document.getElementById('section-axis').value, document.getElementById('section-pos').value].join()), 'i3,2', 'lower-bar controls drive the plane');
+    await page.screenshot({ path: `${SH}/dv-plane.png` }); }
+}
+console.log('⛶ steps', JSON.stringify(steps));
+assert.equal(await page.locator(`${panel} .dv-plane-row`).isHidden(), true, 'plane slider only while the plane is on');
+assert.deepEqual(steps, [{ lit: 1, plane: false, wedge: true }, { lit: 1, plane: true, wedge: false }, { lit: 0, plane: false, wedge: false }, { lit: 1, plane: false, wedge: true }]);
+await page.tap(`${panel} [data-dv-mode="twin"]`); await page.waitForTimeout(700);
+assert.equal(await page.locator('#xray-toggle').isHidden(), true, '⛶ hidden in Twin');
+await page.tap(`${panel} [data-dv-mode="interlock"]`); await page.waitForTimeout(700);
 // X-ray offered
 assert.equal(await page.locator('#xray-toggle').isHidden(), false, 'X-ray offered');
 // Reset back to the paper

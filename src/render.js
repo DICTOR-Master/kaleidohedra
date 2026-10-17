@@ -3100,8 +3100,10 @@ async function init() {
     for (const mesh of interstitialMeshes.values()) mesh.material.clippingPlanes = planes;
     for (const mesh of hemisphereMeshes.values()) mesh.material.clippingPlanes = planes;
     document.getElementById('section-controls-row').style.display = enabled ? '' : 'none';
-    document.getElementById('xray-toggle')?.classList.toggle('active', enabled);
+    document.getElementById('xray-toggle')?.classList.toggle('active', enabled || dvWedgeOn());
   }
+  // Dual Vision's cutaway wedge counts as X-ray on (DICTO 2026-10-17: both cutaways on the one ⛶ button)
+  function dvWedgeOn() { return own3DActive() && own3D === 'doubleVision' && !!doubleVisionWorld?.wedge; }
   updateSectionPlane();
   updateSectionEnabled();
   document.getElementById('section-enable').addEventListener('change', () => { updateSectionEnabled(); refreshIcoFrame(); updateSectionPlane(); syncXrayHandleToSectionPlane(); });
@@ -3284,11 +3286,16 @@ async function init() {
     const hullShell = own3DActive() && (['chains', 'icosa', 'dodeca', 'theaetetus', 'doubleVision', 'ocdStella', 'thirteens', 'octet', 'shells'].includes(own3D) || (['stellaJewel', 'sunstar'].includes(own3D) && /^hull/.test(pairArrangement ?? '')));
     const xrayOff = activeDimension === '4D' || qcWorlds.has(activeDimension) || activeDimension === '1D' || (activeDimension === '2D' && !(own3DActive() && own3D === 'nets'))
       || !(hullShell || getSettings().xrayEverywhere);
+    // Dual Vision's Twin has nothing to cut: ⛶ leaves a blank space in the side bar, so the buttons below it do not move (DICTO 2026-10-17)
+    const xrayBlank = !xrayOff && own3DActive() && own3D === 'doubleVision' && doubleVisionWorld?.mode === 'twin';
+    if (xrayBlank && document.getElementById('section-enable')?.checked) document.getElementById('xray-toggle')?.click();
+    { const b = document.getElementById('xray-toggle'); if (b) b.style.visibility = xrayBlank ? 'hidden' : ''; }
     if (xrayOff && document.getElementById('section-enable')?.checked) document.getElementById('xray-toggle')?.click();
     // Solid / Translucent / Skeleton (DICTO 2026-10-13: back in every world's toolbar; hidden in 1D and 2D).
     // In the lattices the Lattice View button already cycles these, so this one shows in the own worlds (3D+ and 4D-6D).
     { const b = document.getElementById('world-view-toggle'); if (b) b.hidden = activeDimension === '1D' || activeDimension === '2D' || !isOwnWorldDimension(); }
     for (const id of ['xray-toggle', 'spherical-toggle']) { const b = document.getElementById(id); if (b) b.hidden = id === 'xray-toggle' ? xrayOff : (isOwnWorldDimension() && !polySpace); }
+    document.getElementById('xray-toggle')?.classList.toggle('active', !!document.getElementById('section-enable')?.checked || dvWedgeOn());
     // Polyhedraverse's space: no aperiodic shadow to show (DICTO 2026-10-09: X-Ray, Section and Duality hidden there).
     { const b = document.getElementById('duality-toggle'); if (b) b.hidden = own3DActive() && own3D === 'poly'; }
     // 2D+ (DICTO 2026-10-10, 2D audit): the four 3D-only tools hide there (Nets keeps them: it folds
@@ -3633,9 +3640,15 @@ async function init() {
 
   document.getElementById('xray-toggle')?.addEventListener('click', () => {
     const enableCheckbox = document.getElementById('section-enable');
+    // Dual Vision (DICTO 2026-10-17): ⛶ steps wedge (the paper's slice cut away) → X-ray plane → off, where the wedge applies
+    if (own3DActive() && own3D === 'doubleVision' && doubleVisionWorld?.wedgeApplies && !enableCheckbox.checked) {
+      if (!doubleVisionWorld.wedge) { doubleVisionWorld.setWedge(true); showHudPrompt(t('dv.xray.wedge', getSettings().language), 4000); return; }
+      doubleVisionWorld.setWedge(false);   // and the plane comes on below
+    }
     const turningOn = !enableCheckbox.checked;
     enableCheckbox.checked = turningOn;
     updateSectionEnabled();
+    doubleVisionWorld?.planeChanged();
     if (turningOn) { refreshIcoFrame(); updateSectionPlane(); }
     xrayHandle.visible = turningOn;
     xrayGizmo.visible = turningOn;

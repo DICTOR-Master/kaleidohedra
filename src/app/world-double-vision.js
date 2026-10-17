@@ -283,9 +283,11 @@ const fit = () => {
     <div class="w4d-row dv-inf-row"><div class="dv-inf"><svg class="dv-inf-line" viewBox="0 0 200 90" aria-hidden="true"><path d="M100 45C126 9 186 9 186 45S126 81 100 45 14 9 14 45 74 81 100 45Z"/><path class="dv-inf-run" pathLength="100" d="M100 45C126 9 186 9 186 45S126 81 100 45 14 9 14 45 74 81 100 45Z"/></svg>${['wrap', 'unwrap'].map((d) => `<button type="button" class="dv-lobe" data-dv-film="${d}"><svg viewBox="0 0 20 20" aria-hidden="true">${d === 'unwrap' ? '<path d="M6 3l11 7-11 7z"/>' : '<path d="M14 3L3 10l11 7z"/>'}</svg></button>`).join('')}</div><button type="button" class="dv-pause" data-dv-pause><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="3" width="4" height="14" rx="1"/><rect x="12" y="3" width="4" height="14" rx="1"/></svg></button></div>
     <div class="w4d-row dv-film-row"><label class="hull-pick dv-scrub"><span class="dv-film-pos"></span> <input type="range" class="st-slider" min="0" max="600" step="1"></label></div>
     <div class="w4d-row w4d-options dv-top dv-split">${SETTINGS.map((x) => `<button type="button" data-dv-setting="${x}"></button>`).join('')}</div>
-    <div class="w4d-row w4d-options dv-modes">${MODES.map((m) => `<button type="button" data-dv-mode="${m}"></button>`).join('')}<span class="dv-gap"></span><button type="button" data-dv="slice"></button><button type="button" data-dv="inner"></button><button type="button" data-dv="reset"></button><button type="button" class="dv-paper"></button></div>
+    <div class="w4d-row w4d-options dv-modes">${MODES.map((m) => `<button type="button" data-dv-mode="${m}"></button>`).join('')}<span class="dv-gap"></span><button type="button" data-dv="inner"></button><button type="button" data-dv="reset"></button><button type="button" class="dv-paper"></button></div>
     <div class="w4d-row w4d-options dv-layers">${ORIG_LAYERS.map((n, i) => `<button type="button" data-dv-layer="${i}">${n}</button>`).join('')}</div>
     <div class="w4d-row w4d-options dv-twins">${TWINS.map((n, i) => `<button type="button" data-dv-twin="${i}">${n}</button>`).join('')}</div>
+    <div class="w4d-row w4d-options dv-plane-axes">${['i5', 'i3', 'i2'].map((a) => `<button type="button" data-dv-axis="${a}"></button>`).join('')}</div>
+    <div class="w4d-row dv-plane-row"><label class="hull-pick"><span class="dv-plane-label"></span> <input type="range" class="st-slider"></label></div>
     <div class="w4d-row dv-mix-row"><label class="hull-pick"><span class="dv-mix-label"></span> <input type="range" class="st-slider" min="0" max="100" step="1"></label></div>
     <style>#worlddoublevision-panel .dv-gap{display:inline-block;width:14px}#worlddoublevision-panel .dv-split{border-top:1px solid rgba(232,192,96,.35);padding-top:8px;margin-top:4px}#worlddoublevision-panel .dv-inf-row{display:flex;justify-content:center;align-items:center;gap:14px}#worlddoublevision-panel .dv-inf{position:relative;flex:0 0 184px;width:184px;height:83px;color:#d8cfb8}#worlddoublevision-panel .dv-inf-line{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:#e8c060;stroke-width:3;opacity:.6;pointer-events:none}#worlddoublevision-panel .dv-inf .dv-lobe{position:absolute!important;top:12px;margin:0!important;min-width:0!important;width:60px;height:60px;border-radius:50%!important;padding:0!important;display:grid;place-items:center;background:transparent!important;border:2px solid transparent!important;color:#d8cfb8!important;cursor:pointer}#worlddoublevision-panel .dv-inf .dv-lobe[data-dv-film=wrap]{left:21px;right:auto}#worlddoublevision-panel .dv-inf .dv-lobe[data-dv-film=unwrap]{right:21px;left:auto}#worlddoublevision-panel .dv-lobe svg{width:24px;height:24px;fill:currentColor;stroke:currentColor;stroke-width:1.5;stroke-linejoin:round}#worlddoublevision-panel .dv-inf .dv-lobe.active{color:#e8c060!important}#worlddoublevision-panel .dv-inf .dv-lobe.active svg{filter:drop-shadow(0 0 6px #e8c060)}#worlddoublevision-panel .dv-pause{width:46px;height:46px;border-radius:10px;padding:0;display:grid;place-items:center}#worlddoublevision-panel .dv-pause svg{width:20px;height:20px;fill:currentColor}#worlddoublevision-panel .dv-pause.active{color:#e8c060;border-color:#e8c060}#worlddoublevision-panel .dv-inf-run{stroke:#ffe08a;stroke-width:4.5;stroke-linecap:round;stroke-dasharray:16 84;opacity:0;filter:drop-shadow(0 0 4px #e8c060)}#worlddoublevision-panel .dv-inf.run .dv-inf-line{opacity:1}#worlddoublevision-panel .dv-inf.run .dv-inf-run{opacity:1;animation:dv-inf-run 2.2s linear infinite}#worlddoublevision-panel .dv-inf.run.rev .dv-inf-run{animation-direction:reverse}@keyframes dv-inf-run{from{stroke-dashoffset:0}to{stroke-dashoffset:-100}}#worlddoublevision-panel .dv-note{max-width:62ch;margin:0 auto}</style>`;
   document.body.appendChild(panel);
@@ -312,14 +314,21 @@ const fit = () => {
     panel.querySelectorAll('[data-dv-twin]').forEach((b) => b.classList.toggle('active', Number(b.dataset.dvTwin) === view.twin));
     panel.querySelectorAll('[data-dv-layer]').forEach((b) => b.classList.toggle('active', Number(b.dataset.dvLayer) === view.layer));
     const tog = (k, on) => { const b = panel.querySelector(`[data-dv="${k}"]`); b.hidden = !on; if (on) b.textContent = t(`dv.${k}.${view[k] ? 'on' : 'off'}`, L); };
-    tog('slice', m !== 'cycles' && m !== 'twin'); tog('inner', m === 'interlock');
+    tog('inner', m === 'interlock');
     const reset = panel.querySelector('[data-dv="reset"]');
     reset.hidden = Object.keys(PRESET).every((k) => view[k] === PRESET[k]); reset.textContent = t('dv.reset', L);
     panel.querySelector('.dv-paper').textContent = t('dv.paper', L);
+    // the X-ray plane's own controls, down here while it is on (DICTO 2026-10-17: side buttons bring their controls to the lower bar)
+    { const pos = document.getElementById('section-pos'), ax = document.getElementById('section-axis'), on = !!document.getElementById('section-enable')?.checked && m !== 'twin';
+      panel.querySelector('.dv-plane-row').hidden = panel.querySelector('.dv-plane-axes').hidden = !on;
+      if (on && pos) { const r = panel.querySelector('.dv-plane-row input'); r.min = pos.min; r.max = pos.max; r.step = pos.step; r.value = pos.value; }
+      panel.querySelector('.dv-plane-label').textContent = t('dv.plane', L);
+      panel.querySelectorAll('[data-dv-axis]').forEach((b) => { b.textContent = t(`xray.axis.${b.dataset.dvAxis}`, L); b.classList.toggle('active', ax?.value === b.dataset.dvAxis); }); }
     slider.value = String(Math.round((m === 'cycles' ? view.mixCycles : view.mixColour) * 100));
     panel.querySelector('.dv-mix-label').textContent = t(m === 'cycles' ? 'dv.mix.cycles' : 'dv.mix.colour', L);
   }
-  const commit = (refit = false) => { save(); draw(); renderPanel(); onChange(); if (refit) fit(); };
+  // the HUD re-reads the ⛶ button after every change (hidden in Twin, lit while the wedge is cut away)
+  const commit = (refit = false) => { save(); draw(); renderPanel(); onChange(); if (refit) fit(); window.dispatchEvent(new Event('krp-hud-refresh')); };
   panel.querySelectorAll('[data-dv-setting]').forEach((b) => b.addEventListener('click', () => {
     if (view.setting === b.dataset.dvSetting) return;
     view.setting = b.dataset.dvSetting; kind = null; commit(true);
@@ -337,11 +346,13 @@ const fit = () => {
   panel.querySelector('[data-dv-pause]').addEventListener('click', () => { if (!film.on) return; if (film.dir) setFilm(film.dir); else setFilm(film.lastDir || 1); });
   filmSlider.addEventListener('input', () => { if (!film.on) return; film.dir = 0; film.t = view.mode === 'twin' ? Number(filmSlider.value) / 50 : Math.floor(film.t / 6) * 6 + Number(filmSlider.value) / 100; applyFilm(); renderPanel(); });
   panel.querySelectorAll('[data-dv-layer]').forEach((b) => b.addEventListener('click', () => { view.layer = Number(b.dataset.dvLayer); kind = null; commit(); }));
-  for (const k of ['slice', 'inner']) panel.querySelector(`[data-dv="${k}"]`).addEventListener('click', () => { view[k] = !view[k]; commit(); });
+  panel.querySelector('[data-dv="inner"]').addEventListener('click', () => { view.inner = !view.inner; commit(); });
   panel.querySelector('.dv-paper').addEventListener('click', () => { if (DATA) window.open(`https://doi.org/${DATA.paperDoi}`, '_blank', 'noopener'); });
   panel.querySelector('[data-dv="reset"]').addEventListener('click', () => { Object.assign(view, PRESET); kind = null; stopFilm(); commit(true); });
   slider.addEventListener('input', () => { view[view.mode === 'cycles' ? 'mixCycles' : 'mixColour'] = Number(slider.value) / 100; save(); if (view.mode === 'cycles') fade(); else recolour(); });
   slider.addEventListener('change', () => { renderPanel(); onChange(); });
+  panel.querySelector('.dv-plane-row input').addEventListener('input', (e) => { const pos = document.getElementById('section-pos'); pos.value = e.target.value; pos.dispatchEvent(new Event('input')); });
+  panel.querySelectorAll('[data-dv-axis]').forEach((b) => b.addEventListener('click', () => { const ax = document.getElementById('section-axis'); ax.value = b.dataset.dvAxis; ax.dispatchEvent(new Event('input')); renderPanel(); }));
   let shownLang = lang();
   onSettingsChange((st) => { if (st.language !== shownLang) { shownLang = st.language; if (active) renderPanel(); } });
 
@@ -359,6 +370,13 @@ const fit = () => {
     setSkeleton(on) { skeleton = on; if (active) draw(); },
     setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) draw(); } },
     setLatticeView() {},
+    // The cutaway lives on the side bar's ⛶ (DICTO 2026-10-17): wedge (the paper's slice) → X-ray plane → off. The wedge cuts pieces, so it
+    // applies in Interlock and One layer; ⛶ is hidden in Twin.
+    get mode() { return view.mode; },
+    planeChanged() { if (active) renderPanel(); },
+    get wedgeApplies() { return view.mode === 'interlock' || view.mode === 'layer'; },
+    get wedge() { return view.slice && (view.mode === 'interlock' || view.mode === 'layer'); },
+    setWedge(on) { if (view.slice !== on) { view.slice = on; commit(); } },
     shearChanged() {},
     get isEmpty() { return false; },
     clear() { Object.assign(view, PRESET); kind = null; commit(active); },
