@@ -35,6 +35,17 @@ assert.equal(await page.evaluate(() => document.getElementById('section-enable')
 await page.tap('#xray-toggle'); await page.waitForTimeout(500);
 assert.equal(await page.locator('#xray-toggle.active').count(), 0, 'off'); await page.screenshot({ path: `${SH}/vj-glass.png` });
 await page.tap('#xray-toggle'); await page.waitForTimeout(500); assert.equal(await page.locator('#xray-toggle.active').count(), 1, 'wedge again');
+// the Hecatogdoecontahedron view (DICTO 2026-10-18, #34a): H + O interlocked, core and hull switches, pull apart; film hidden
+await page.locator(`${panel} .vj-view`).selectOption('oh'); await page.waitForTimeout(900);
+assert.match(await note(), /Hecatogdoecontahedron/); assert.equal(await page.locator(`${panel} .inf`).first().isVisible(), false, 'no film here');
+await page.screenshot({ path: `${SH}/vj-oh.png` });
+await page.tap(`${panel} [data-vj="core"]`); await page.tap(`${panel} [data-vj="hull"]`); await page.waitForTimeout(600);
+assert.match(await page.locator(`${panel} [data-vj="core"]`).textContent(), /on/); await page.screenshot({ path: `${SH}/vj-oh-core-hull.png` });
+await page.tap(`${panel} [data-vj="hull"]`); await page.locator(`${panel} .vj-apart`).fill('100'); await page.waitForTimeout(800);
+await page.screenshot({ path: `${SH}/vj-oh-apart.png` });
+await page.tap(`${panel} [data-vj="reset"]`); await page.locator(`${panel} .vj-view`).selectOption('cycle'); await page.waitForTimeout(800);
+// back on the cycle as it was left (pieces on)
+assert.match(await note(), /closing steps filled/);
 // the Cleo star build lives in Theaetetus
 await page.tap(`${panel} [data-vj="cleo"]`); await page.waitForTimeout(1500);
 const ask = await page.locator('#leave-dialog:not([hidden])').count(); if (ask) { await page.tap('#leave-dialog [data-choice="keep"]'); await page.waitForTimeout(1200); }
@@ -42,5 +53,9 @@ assert.match(await page.locator('#hud-world-title').textContent(), /Theaetetus/)
 const view = await page.evaluate(() => document.querySelector('.qc-panel.visible select')?.value ?? '');
 console.log('Theaetetus view:', view); assert.equal(view, 'cleostar');
 await page.screenshot({ path: `${SH}/vj-theaetetus.png` });
+// the paper's link opens straight on the Hecatogdoecontahedron
+await page.goto(`${BASE}/index.html?site=kaleidohedra&open=vajrayana:hecatogdo`);
+await page.waitForFunction(() => /Hecatogdoecontahedron \(paper/.test(document.querySelector('#worldvajrayana-panel .vj-note')?.textContent ?? ''), null, { timeout: 15000 });
+await page.waitForTimeout(900); await page.screenshot({ path: `${SH}/vj-oh-link.png` });
 assert.deepEqual(errors, []);
 console.log('vajrayana ok'); await b.close();

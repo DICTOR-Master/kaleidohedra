@@ -5,7 +5,9 @@
 // peels one station at a time from the outside, pausing on each, and zooms by φ³ a turn so it runs for ever (Wrap builds back out); a
 // Pieces switch fills the two closing steps with their pieces, RT → M (30 of one kind) and M → I·φ³ (60 of one kind); the paper's
 // colours. Tapping a shell names its station; the Cleo star build (82 pieces) lives in Theaetetus, one tap away (no crossover).
-// The data (scripts/build-vajrayana-data.py) loads on first entry and is let go on leaving. Words: i18n vj.*.
+// A second view (DICTO 2026-10-18, paper #34a): the DICTO Hecatogdoecontahedron, H (gold) and O (teal) interlocked, with switches for
+// their common core (rTI) and hull (jtI) and a slider that pulls H and O apart; the paper's colours, no wedge.
+// The data (scripts/build-vajrayana-data.py, build-hecatogdo-data.py) loads on first entry and is let go on leaving. Words: i18n vj.*.
 import * as THREE from 'three';
 import { ROOF_FOLD_WORLD_SCALE as WS } from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { t } from './i18n.js';
@@ -23,7 +25,9 @@ const FULL = { star: 'the Cleo star: the icosahedron as 20 Cleo-Icos with 20 mor
   hull: 'the joined truncated icosahedron (jtI)', RT: 'the rhombic triacontahedron', M: 'the DICTO Metaxyhexecontahedron', Ip3: 'the next icosahedron, I·φ³, the next turn begins' };
 // the film peels a turn outside in: 11 stations, then the turn inside has become the first (φ³ larger), so it loops without a seam
 const PEEL = ['Ip3', 'M', 'RT', 'hull', 'H', 'TI', 'rTI', 'O', 'ID', 'Dp', 'star'];
-const PRESET = { pieces: false };
+const PRESET = { pieces: false, view: 'cycle', core: false, hull: false, apart: 0 };
+const OH_COL = { H: 0xe8b84a, O: 0x4dd0e1, five: 0xe8b84a, six: 0x4dd0e1, other: 0xc792ea, hullR: 0xf3e2b5, hullK: 0xe6d6f3 };
+const OH_FULL = { ohH: 'H', ohO: 'O', ohCore: 'rTI', ohHull: 'hull' };
 const STEP_SECONDS = 1.6, PAUSE_MS = 900;
 const lang = () => getSettings().language;
 
@@ -31,11 +35,17 @@ export function createVajrayanaWorld({ scene, fitView = () => {}, showHudPrompt 
   const STORAGE_KEY = storageKey('vajrayana');
   const group = new THREE.Group(); group.visible = false; scene.add(group);
   const view = { ...PRESET };
-  try { const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null'); if (d && typeof d.pieces === 'boolean') view.pieces = d.pieces; } catch { /* the preset */ }
+  try { const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null'); if (d) restoreView(d); } catch { /* the preset */ }
+  function restoreView(d) {
+    for (const k of ['pieces', 'core', 'hull']) if (typeof d[k] === 'boolean') view[k] = d[k];
+    if (d.view === 'cycle' || d.view === 'oh') view.view = d.view;
+    if (Number.isFinite(d.apart)) view.apart = Math.min(1, Math.max(0, d.apart));
+  }
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ version: 1, ...view })); } catch { /* best-effort */ } };
 
   let DATA = null, loading = null, active = false, skeleton = false, opacity = 1, wedge = true, pickTargets = [], items = [];
-  const load = () => (loading ??= import('./vajrayana-data.js').then((m) => { DATA = m.default; }));
+  let OH = null;
+  const load = () => (loading ??= Promise.all([import('./vajrayana-data.js'), import('./hecatogdo-data.js')]).then(([m, h]) => { DATA = m.default; OH = h.default; }));
   function clearGroup() { for (const c of [...group.children]) { group.remove(c); c.geometry?.dispose(); c.material?.dispose(); } pickTargets = []; items = []; }
   // the wedge: two planes through the centre a quarter turn apart, facing the camera; a material carries them (userData.wedgePlanes),
   // and render.js applies them while the X-ray plane is off
@@ -46,22 +56,25 @@ export function createVajrayanaWorld({ scene, fitView = () => {}, showHudPrompt 
     wedgePlanes = [new THREE.Plane(wr.clone().multiplyScalar(-Math.sin(a)).add(side.clone().multiplyScalar(Math.cos(a))), 0),
       new THREE.Plane(wr.clone().multiplyScalar(-Math.sin(a)).sub(side.clone().multiplyScalar(Math.cos(a))), 0)];
   }
-  function addSolid(S, colour, s, key, turn, shrink = 1) {
+  // o (the Hecatogdoecontahedron view): glass = a fixed see-through opacity, offset = a shift (the pull apart), and no wedge
+  function addSolid(S, colour, s, key, turn, shrink = 1, o = {}) {
     const c = S.v.reduce((a, v) => a.map((x, i) => x + v[i] / S.v.length), [0, 0, 0]);
-    const V = S.v.map((v) => v.map((x, i) => (c[i] + shrink * (x - c[i])) * s * WS)), pos = [], line = [];
+    const off = o.offset ?? [0, 0, 0], V = S.v.map((v) => v.map((x, i) => (c[i] + shrink * (x - c[i]) + off[i]) * s * WS)), pos = [], line = [];
     for (const f of S.f) {
       for (let i = 1; i + 1 < f.length; i++) pos.push(...V[f[0]], ...V[f[i]], ...V[f[i + 1]]);
       for (let i = 0; i < f.length; i++) line.push(...V[f[i]], ...V[f[(i + 1) % f.length]]);
     }
     const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
-    const glass = !wedge || opacity < 1 || skeleton;
-    const mat = new THREE.MeshStandardMaterial({ color: colour, roughness: 0.5, flatShading: true, side: THREE.DoubleSide, transparent: glass, opacity: skeleton ? 0 : glass ? (wedge ? opacity : 0.14) : 1, depthWrite: !glass });
-    mat.userData.wedgePlanes = wedge ? wedgePlanes : null; mat.userData.baseOpacity = mat.opacity;
+    const oh = view.view === 'oh', useWedge = wedge && !oh;
+    const glass = oh ? o.glass != null || opacity < 1 || skeleton : !wedge || opacity < 1 || skeleton;
+    const op = skeleton ? 0 : oh ? (o.glass ?? opacity) : glass ? (wedge ? opacity : 0.14) : 1;
+    const mat = new THREE.MeshStandardMaterial({ color: colour, roughness: 0.5, flatShading: true, side: THREE.DoubleSide, transparent: glass, opacity: op, depthWrite: !glass });
+    mat.userData.wedgePlanes = useWedge ? wedgePlanes : null; mat.userData.baseOpacity = mat.opacity;
     // in glass (the wedge off) the stations are shells and stay hollow in a cut; pieces (spikes, the 30 + 60) are always solid
-    mat.userData.hollow = !wedge && !['star', 'rtM', 'mI'].includes(key);
+    mat.userData.hollow = !oh && !wedge && !['star', 'rtM', 'mI'].includes(key);
     const mesh = new THREE.Mesh(g, mat); mesh.userData = { kind: 'vj', key, turn };
     const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
-    const lmat = new THREE.LineBasicMaterial({ color: skeleton ? colour : 0x2a2218, transparent: true, opacity: skeleton ? 0.9 : glass && !wedge ? 0.55 : 0.5 });
+    const lmat = new THREE.LineBasicMaterial({ color: skeleton ? colour : 0x2a2218, transparent: true, opacity: skeleton ? 0.9 : o.glass != null && o.glass < 0.3 ? 0.3 : glass && !wedge ? 0.55 : 0.5 });
     lmat.userData.wedgePlanes = mat.userData.wedgePlanes; lmat.userData.baseOpacity = lmat.opacity;
     const ln = new THREE.LineSegments(lg, lmat);
     group.add(mesh, ln); pickTargets.push(mesh); items.push({ mesh, line: ln, key, turn });
@@ -70,6 +83,7 @@ export function createVajrayanaWorld({ scene, fitView = () => {}, showHudPrompt 
     clearGroup();
     if (!active || !DATA) return;
     if (!wedgePlanes) makeWedge();
+    if (view.view === 'oh') { drawOH(); return; }
     const turns = film.on ? [0, -1, -2] : [0, -1];
     for (const turn of turns) {
       const s = PHI3 ** turn;
@@ -83,6 +97,21 @@ export function createVajrayanaWorld({ scene, fitView = () => {}, showHudPrompt 
     // the very centre (turn -2's I, or -1's when still): a small solid icosahedron, so the core never shows a hole
     addSolid(DATA.stations[0], COL.Ip3, PHI3 ** turns[turns.length - 1], 'I', turns[turns.length - 1]);
     applyFilm();
+  }
+  // the Hecatogdoecontahedron: H and O solid (glass when the core shows inside them), pulled apart sideways to the view; core and hull stay
+  // at the centre; faces of the core and hull coloured by kind as in the paper (pentagons gold, hexagons teal, triangles and kites wisteria)
+  const ohSide = () => { const d = new THREE.Vector3(...OH.view.dir), u = new THREE.Vector3(...OH.view.up); return u.cross(d).normalize().toArray(); };
+  const ohApart = () => 1.9 * view.apart;
+  function addTagged(S, colourOf, key, o) {
+    const by = new Map(); S.f.forEach((f, i) => { const c = colourOf(S.t[i]); if (!by.has(c)) by.set(c, []); by.get(c).push(f); });
+    for (const [c, f] of by) addSolid({ v: S.v, f }, c, 1, key, 0, 1, o);
+  }
+  function drawOH() {
+    const side = ohSide(), a = ohApart(), inner = view.core ? 0.3 : undefined;
+    addTagged(OH.H, () => OH_COL.H, 'ohH', { glass: inner, offset: side.map((x) => x * a) });
+    addTagged(OH.O, () => OH_COL.O, 'ohO', { glass: inner, offset: side.map((x) => -x * a) });
+    if (view.core) addTagged(OH.core, (t) => (t === '5' ? OH_COL.five : t === '6' ? OH_COL.six : OH_COL.other), 'ohCore', {});
+    if (view.hull) addTagged(OH.hull, (t) => (t === '4r' ? OH_COL.hullR : OH_COL.hullK), 'ohHull', { glass: 0.22 });
   }
   // ---- the film: u runs over the 11 peels of a turn; station PEEL[j] of turn 0 lifts away and fades while u passes j, the 30 and 60
   // pieces go with M and I·φ³; the whole scene grows by φ^(3/11) a step, so after 11 the turn inside has become the first
@@ -127,13 +156,14 @@ export function createVajrayanaWorld({ scene, fitView = () => {}, showHudPrompt 
     renderPanel();
   }
   function stopFilm() { const was = film.on; film.on = false; film.dir = 0; film.t = 0; if (film.raf) cancelAnimationFrame(film.raf); film.raf = 0; group.scale.setScalar(1); if (was) draw(); }
-  const fit = () => DATA && fitView([0, 0, 0], 1.05 * 2.49 * WS, DATA.view.dir);
+  const fit = () => DATA && (view.view === 'oh' ? fitView([0, 0, 0], 1.3 * (1.6 + ohApart()) * WS, OH.view.dir) : fitView([0, 0, 0], 1.05 * 2.49 * WS, DATA.view.dir));
 
   function handleTap(hit, mode) {
     const ud = hit.object?.userData;
     if (!ud || ud.kind !== 'vj' || !DATA || mode === 'paint') return false;
     const L = lang();
     if (ud.key === 'rtM' || ud.key === 'mI') { showHudPrompt(t(`vj.prompt.${ud.key}`, L), 3200); return true; }
+    if (OH_FULL[ud.key]) { const k = OH_FULL[ud.key]; showHudPrompt(`${VJ_NAMES[k]} · ${FULL[k]}`, 3200); return true; }
     if (ud.key === 'I') { showHudPrompt(`I · ${t('vj.prompt.core', L)}`, 2600); return true; }
     showHudPrompt(`${VJ_NAMES[ud.key]} · ${FULL[ud.key]}${ud.key === 'star' ? ` — ${t('vj.prompt.cleoLink', L)}` : ''}`, 3200);
     return true;
@@ -148,9 +178,11 @@ export function createVajrayanaWorld({ scene, fitView = () => {}, showHudPrompt 
     words: (L) => ({ wrap: t('dv.film.wrap', L), unwrap: t('dv.film.unwrap', L), pause: t('dv.film.pause', L) }),
   });
   panel.innerHTML = `
+    <div class="w4d-row"><select class="vj-view" aria-label="view"><option value="cycle"></option><option value="oh"></option></select></div>
     <div class="w4d-row st-note vj-note"></div>
+    <div class="w4d-row vj-oh-row"><label class="hull-pick"><span class="vj-apart-label"></span> <input type="range" class="st-slider vj-apart" min="0" max="100" step="1"></label></div>
     <div class="w4d-row vj-film-row"><label class="hull-pick"><span class="vj-film-pos"></span> <input type="range" class="st-slider" min="0" max="1100" step="1"></label></div>
-    <div class="w4d-row w4d-options vj-opts"><button type="button" data-vj="pieces"></button><button type="button" data-vj="cleo"></button><button type="button" data-vj="reset"></button><button type="button" data-vj="paper"></button></div>`;
+    <div class="w4d-row w4d-options vj-opts"><button type="button" data-vj="pieces"></button><button type="button" data-vj="core"></button><button type="button" data-vj="hull"></button><button type="button" data-vj="cleo"></button><button type="button" data-vj="reset"></button><button type="button" data-vj="paper"></button></div>`;
   panel.insertBefore(player.el, panel.querySelector('.vj-film-row'));
   document.body.appendChild(panel);
   addPanelMinimiser(panel, 'vajrayana');
@@ -161,20 +193,38 @@ export function createVajrayanaWorld({ scene, fitView = () => {}, showHudPrompt 
     if (!active) return;
     const L = lang();
     if (!DATA) { panel.querySelector('.vj-note').textContent = t('vj.loading', L); return; }
-    panel.querySelector('.vj-note').textContent = t(view.pieces ? 'vj.note.pieces' : 'vj.note', L);
-    player.render(film, L);
-    panel.querySelector('.vj-film-row').style.display = film.on && film.dir === 0 ? '' : 'none';
+    const oh = view.view === 'oh', sel = panel.querySelector('.vj-view');
+    sel.options[0].textContent = t('vj.view.cycle', L); sel.options[1].textContent = t('vj.view.oh', L); sel.value = view.view;
+    panel.querySelector('.vj-note').textContent = t(oh ? 'vj.note.oh' : view.pieces ? 'vj.note.pieces' : 'vj.note', L);
+    player.el.hidden = oh; if (!oh) player.render(film, L);
+    panel.querySelector('.vj-film-row').style.display = !oh && film.on && film.dir === 0 ? '' : 'none';
+    panel.querySelector('.vj-oh-row').style.display = oh ? '' : 'none';
+    panel.querySelector('.vj-apart-label').textContent = t('vj.apart', L); panel.querySelector('.vj-apart').value = String(Math.round(view.apart * 100));
     panel.querySelector('.vj-film-pos').textContent = t('vj.film.position', L);
     const b = (k) => panel.querySelector(`[data-vj="${k}"]`);
     b('pieces').textContent = t(view.pieces ? 'vj.pieces.on' : 'vj.pieces.off', L); b('pieces').classList.toggle('active', view.pieces);
+    b('pieces').hidden = oh; b('cleo').hidden = oh; b('core').hidden = !oh; b('hull').hidden = !oh;
+    b('core').textContent = t(view.core ? 'vj.core.on' : 'vj.core.off', L); b('core').classList.toggle('active', view.core);
+    b('hull').textContent = t(view.hull ? 'vj.hull.on' : 'vj.hull.off', L); b('hull').classList.toggle('active', view.hull);
     b('cleo').textContent = t('vj.cleo', L); b('paper').textContent = t('dv.paper', L);
-    b('reset').textContent = t('dv.reset', L); b('reset').hidden = view.pieces === PRESET.pieces && !film.on;
+    b('reset').textContent = t('dv.reset', L);
+    b('reset').hidden = oh ? !view.core && !view.hull && view.apart === 0 : view.pieces === PRESET.pieces && !film.on;
   }
   const commit = () => { save(); draw(); renderPanel(); onChange(); window.dispatchEvent(new Event('krp-hud-refresh')); };
   panel.querySelector('[data-vj="pieces"]').addEventListener('click', () => { view.pieces = !view.pieces; commit(); });
+  const setView = (v) => { if (v === view.view) return; stopFilm(); view.view = v; commit(); fit(); window.dispatchEvent(new Event('krp-hud-refresh')); };
+  panel.querySelector('.vj-view').addEventListener('change', (e) => setView(e.target.value));
+  panel.querySelector('[data-vj="core"]').addEventListener('click', () => { view.core = !view.core; commit(); });
+  panel.querySelector('[data-vj="hull"]').addEventListener('click', () => { view.hull = !view.hull; commit(); });
+  const apart = panel.querySelector('.vj-apart');
+  apart.addEventListener('input', () => { view.apart = Number(apart.value) / 100; draw(); renderPanel(); });
+  apart.addEventListener('change', () => { save(); fit(); onChange(); });
   panel.querySelector('[data-vj="cleo"]').addEventListener('click', () => openWorld('tool:theaetetusWorld:cleostar', 'Theaetetus'));
-  panel.querySelector('[data-vj="paper"]').addEventListener('click', () => { if (DATA) window.open(`https://doi.org/${DATA.paperDoi}`, '_blank', 'noopener'); });
-  panel.querySelector('[data-vj="reset"]').addEventListener('click', () => { Object.assign(view, PRESET); stopFilm(); commit(); fit(); });
+  panel.querySelector('[data-vj="paper"]').addEventListener('click', () => { if (DATA) window.open(`https://doi.org/${view.view === 'oh' ? OH.paperDoi : DATA.paperDoi}`, '_blank', 'noopener'); });
+  panel.querySelector('[data-vj="reset"]').addEventListener('click', () => {
+    if (view.view === 'oh') Object.assign(view, { core: false, hull: false, apart: 0 }); else Object.assign(view, { pieces: PRESET.pieces });
+    stopFilm(); commit(); fit();
+  });
   slider.addEventListener('input', () => { if (!film.on) return; film.dir = 0; film.t = Math.floor(film.t / 11) * 11 + Number(slider.value) / 100; applyFilm(); renderPanel(); });
   let shownLang = lang();
   onSettingsChange((st) => { if (st.language !== shownLang) { shownLang = st.language; if (active) renderPanel(); } });
@@ -186,12 +236,12 @@ export function createVajrayanaWorld({ scene, fitView = () => {}, showHudPrompt 
     setActive(on) {
       if (on === active) return;
       active = on; group.visible = on;
-      if (!on) { stopFilm(); clearGroup(); DATA = null; loading = null; wedgePlanes = null; renderPanel(); return; }
+      if (!on) { stopFilm(); clearGroup(); DATA = null; OH = null; loading = null; wedgePlanes = null; renderPanel(); return; }
       renderPanel();
-      load().then(() => { if (!active) return; draw(); renderPanel(); fit(); showHudPrompt(t('vj.prompt.start', lang()), 5500); });
+      load().then(() => { if (!active) return; draw(); renderPanel(); fit(); showHudPrompt(t(view.view === 'oh' ? 'vj.note.oh' : 'vj.prompt.start', lang()), 5500); });
     },
     // the side bar's ⛶ (DICTO 2026-10-17): wedge → X-ray plane → off; with the wedge off the shells turn to glass
-    get wedgeApplies() { return true; },
+    get wedgeApplies() { return view.view === 'cycle'; },
     get wedge() { return wedge; },
     setWedge(on) { if (wedge !== on) { wedge = on; if (active) draw(); window.dispatchEvent(new Event('krp-hud-refresh')); } },
     planeChanged() {},
@@ -202,9 +252,12 @@ export function createVajrayanaWorld({ scene, fitView = () => {}, showHudPrompt 
     get isEmpty() { return false; },
     clear() { Object.assign(view, PRESET); stopFilm(); save(); if (active) { draw(); renderPanel(); } },
     resetView() {},
-    open(sub) { if (sub === 'pieces') { view.pieces = true; save(); if (active) { draw(); renderPanel(); } } },
+    open(sub) {
+      if (sub === 'pieces') { view.view = 'cycle'; view.pieces = true; } else if (sub === 'hecatogdo') view.view = 'oh'; else return;
+      save(); if (active && DATA) { draw(); renderPanel(); fit(); }
+    },
     snapshot: () => ({ version: 1, ...view }),
-    restore(json) { if (json && typeof json.pieces === 'boolean') view.pieces = json.pieces; save(); draw(); renderPanel(); },
+    restore(json) { if (json) restoreView(json); save(); draw(); renderPanel(); },
   };
 }
 
