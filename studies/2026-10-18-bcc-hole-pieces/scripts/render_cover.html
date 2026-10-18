@@ -1,0 +1,31 @@
+<!doctype html><meta charset="utf-8"><title>Bull-horns cover (DICTO)</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// DICTO 2026-10-19: renders for the #36 cover image. ?view=six|piece|net &px= &az= &el= (degrees) &glass=1 (OGs as glass) &explode= (OGs pushed out from the piece)
+(async function () {
+  const q = new URLSearchParams(location.search), VIEW = q.get('view') || 'six', PX = +(q.get('px') || 1200);
+  const AZ = +(q.get('az') || 30) * Math.PI / 180, EL = +(q.get('el') || 20) * Math.PI / 180, GLASS = q.get('glass') === '1', ZOOM = +(q.get('zoom') || 1), EXP = +(q.get('explode') || 1);
+  const D = await fetch('../data/cover-render.json').then((r) => r.json());
+  const R = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); R.setSize(PX, PX); R.setPixelRatio(1); document.body.prepend(R.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0xf4f1ea);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.8));
+  const geo = (m) => { const g = new THREE.BufferGeometry(), a = []; m.t.forEach((t) => t.forEach((i) => a.push(...m.v[i]))); g.setAttribute('position', new THREE.Float32BufferAttribute(a, 3)); g.computeVertexNormals(); return g; };
+  const G = { piece: geo(D.meshes.piece), og: geo(D.meshes.og) };
+  const mat = (c, o) => new THREE.MeshStandardMaterial({ color: c, flatShading: true, roughness: .5, metalness: .04, side: THREE.DoubleSide, transparent: o < 1, opacity: o, depthWrite: o >= 1 });
+  const M = { piece: mat(0xe8603c, 1), y: mat(0xffc857, GLASS ? .28 : 1), b: mat(0x6fa8ff, GLASS ? .28 : 1) };
+  const edge = (o) => new THREE.LineBasicMaterial({ color: 0x3a3228, transparent: true, opacity: o });
+  const box = new THREE.Box3();
+  for (const it of D.views[VIEW]) {
+    const isP = it.k === 'piece', m = new THREE.Mesh(isP ? G.piece : G.og, M[it.k]);
+    m.add(new THREE.LineSegments(new THREE.EdgesGeometry(isP ? G.piece : G.og, 20), edge(isP ? .55 : (GLASS ? .35 : .4))));
+    if (it.m) { const X = new THREE.Matrix4(), e = it.m; X.set(e[0], e[1], e[2], 0, e[3], e[4], e[5], 0, e[6], e[7], e[8], 0, 0, 0, 0, 1); m.applyMatrix4(X); }
+    m.position.set(...it.p.map((x) => x * (isP ? 1 : EXP))); if (!isP) m.renderOrder = 2; scene.add(m); box.expandByObject(m);
+  }
+  const s = box.getBoundingSphere(new THREE.Sphere()), cam = new THREE.PerspectiveCamera(28, 1, .01, 100);
+  const dist = s.radius / Math.sin(14 * Math.PI / 180) / ZOOM;
+  cam.position.set(s.center.x + dist * Math.cos(EL) * Math.sin(AZ), s.center.y + dist * Math.sin(EL), s.center.z + dist * Math.cos(EL) * Math.cos(AZ));
+  cam.lookAt(s.center); const sun = new THREE.DirectionalLight(0xffffff, .7); sun.position.set(2, 3, 4); cam.add(sun); scene.add(cam);
+  R.render(scene, cam); document.title = 'ready';
+})();
+</script>

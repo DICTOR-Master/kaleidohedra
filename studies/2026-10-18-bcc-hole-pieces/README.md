@@ -12,3 +12,6 @@ DICTO · dictospheres.com
 - Open: does the piece read as DICTO's "five double T bars / double crescents"? exact face analysis; Fable check only if wanted.
 - **DICTO 10-18: "that's it"** — the piece matches his five double-T bars / double crescents.
 - **Exact space shares (per bcc cell (512 + 256√5)/729):** OCDs **(9225 − 3915√5)/608 = 77.4332%**; the 3 hole pieces **(−8617 + 3915√5)/608 = 22.5668%**; one hole piece (−8617/1824 + 1305√5/608) = **7.5223%**. OCD + 3 pieces = the cell exactly.
+
+## Cover image for #36 (DICTO 2026-10-19: not happy with the old card)
+- `scripts/cover_data.py` → `data/cover-render.json`; `scripts/render_cover.html` + `scripts/shoot_cover.mjs` (dicto-node) → `renders/cover/{piece,six2,net}.png`; GBPC from `../2026-10-16-ocd-pyrochlore/scripts/render_adapter.html?mode=cell` → `renders/cover/gbpc.png`; `scripts/cover_card.py` → `renders/cover/golden-bodhi-pyrochlore-card.jpg` (1440×1080, house style as the Vajrayana card). Captions checked against the published #36 §7 and abstract.
