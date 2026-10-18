@@ -55,3 +55,14 @@ Source: studies/2026-10-18-ocd-octet (steps 1–27, Fable review ba28bd0), envel
 - **DICTO 10-18 follow-up:** "I meant the keys to provide a continuous decorative pattern as well as key" → chose **option 2: star-scale kites running ACROSS the seams** (each kite split between neighbouring W, raised/sunk halves keying), pattern continuous over the whole assembly, all W identical, **"at a similar pattern depth to OCD"**. Open: depth = the OCD's facet fold (~1.1 mm at 60 mm) or the star's height (~5 mm)? Then Fable build or a 2D seam drawing first.
 - DICTO 10-18: depth **1.1 mm** (OCD facet fold) "but can change deeper if appropriate to overall pattern". Sent to Fable: phase 1 = 2D drawing of a seam + face layout only, stop for DICTO's OK before 3D.
 - DICTO 10-18: "transition is what I mean" (confirmed): the kites transition out of the star imprint — imprint-facet depth at the socket, flattening to ~1.1 mm across the faces and seams (the star grows out of the socket and fades into the surface pattern). Passed to Fable for the phase-1 drawing.
+
+## Idea, not pursued: an octet of bipyramids only (DICTO 2026-10-19)
+- DICTO: "is it possible to make octets with solely bipyramids". Answer (reasoning, not computed): not with the octet's own cells — the
+  octahedra are square bipyramids, but no two tetrahedra share a face, so they cannot pair into triangular bipyramids. Recut instead:
+  cones from every cell's centre over its faces; each triangle of the octet is shared by one octahedron and one tetrahedron, so the two
+  cones form one triangular bipyramid per triangle — one shape fills space, 8 per lattice cell, volume √2·a³/16 (a = octahedron edge;
+  octahedron eighth √2·a³/24 + tetrahedron quarter √2·a³/48). Not symmetric: apex heights a/√6 and a/(2√6), 2 : 1; a symmetric
+  (regular-tetrahedron) bipyramid does not fill space. With the OG: bipyramid minus its OG share, 8 round each OG.
+- Benefit judged small (DICTO OK to skip): the face-cone construction is standard (prior art likely), and for the OG it is a step back
+  from OG + W_star (2 shapes, no mirror pair, ψ 0.69, holds the Penrose cores). Only use: a simple single-shape, flat-faced physical set.
+  Unchecked: handedness of the asymmetric bipyramid. Marked, not queued.
