@@ -31,3 +31,10 @@ Source: studies/2026-10-18-p3-golden-envelope-octet (golden envelopes in the oct
 ## Step 5 — envelope + W in 3D (`scripts/p4_W.py` on dicto-node → `data/p4-W.json`)
 - W = rhombic dodecahedron round the octet vertex (0, 0, R) minus the envelopes biting into it: volume 1.111341 (= the exact (352 − 144√5)/27), one solid, sphericity 0.574 (Fable's numbers confirmed).
 - 3D page (same link): "Envelope + W" (one envelope with the 6 W at its octahedron corners), "the set", and "network" (envelopes on the octahedron sites, W on the octet vertices).
+
+## Step 6 — W with exact OCD imprints (DICTO 10-18: "like this last Fable W particularly, and face could be exact imprint of OCD?!"; `scripts/p4_W_ocd.py` on dicto-node → `data/p4-W-ocd.json`)
+- **W_OCD = rhombic dodecahedron round each octet vertex minus the 6 OCDs biting into it** (OCD-shaped sockets instead of envelope-shaped).
+- Space filling by construction: the vertex rhombic dodecahedra tile space (fcc), so every point outside the OCDs lies in exactly one W_OCD; **kit OCD + W_OCD fills space exactly**.
+- Exact volume = cell − OCD = **(2824 − 328√5)/1539 = 1.358395**; one solid (genus 0); **centrosymmetric — no mirror pair**; **sphericity 0.648** (chunkier than the envelope W, 0.574); the OCD stays whole (0.979).
+- **So: OCD + W_OCD — two shapes, no mirror images, both chunky; the 6 sockets of each W are exact OCD imprints.** (Fable check to do.)
+- 3D page (same link): "OCD + W with OCD imprints", "the set", "network".
