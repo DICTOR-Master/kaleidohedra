@@ -1,8 +1,9 @@
 # DICTO 2026-10-18 bcc hole pieces -- 3D page -> renders/bcc-hole-pieces.html (kit viewer template)
 import json, os, itertools, numpy as np
 H = os.path.dirname(os.path.abspath(__file__)); d = json.load(open(os.path.join(H, '..', 'data', 'hole-piece.json'))); a = d['a']
-P = {'piece': dict(v=d['v'], t=d['t'], colour='#ffb74d'), 'y': dict(v=d['ocd_mesh']['v'], t=d['ocd_mesh']['t'], colour='#ffc857'),
-     'b': dict(v=d['ocd_mesh']['v'], t=d['ocd_mesh']['t'], colour='#6fa8ff')}
+ocdm = json.load(open(os.path.join(H, '..', '..', '2026-10-18-ocd-octet', 'data', 'step23-envelope-meshes.json')))['ocd']   # proper OG mesh (the hole-piece file's OG triangles were indexed against the wrong vertex list)
+P = {'piece': dict(v=d['v'], t=d['t'], colour='#ffb74d'), 'y': dict(v=ocdm['v'], t=ocdm['t'], colour='#ffc857'),
+     'b': dict(v=ocdm['v'], t=ocdm['t'], colour='#6fa8ff')}
 cyc = {0: np.eye(3), 1: np.array([[0, 0, 1], [1, 0, 0], [0, 1, 0]], float), 2: np.array([[0, 1, 0], [0, 0, 1], [1, 0, 0]], float)}   # x axis -> x, y, z
 def hole_axis(s):
     odd = [i for i in range(3) if s[i] % 2]; return odd[0] if len(odd) == 1 else [i for i in range(3) if i not in odd][0]
