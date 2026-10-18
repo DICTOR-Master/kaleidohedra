@@ -59,6 +59,8 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 33 | Double Vision – Both Cycles in One Space: the Spheres of Dharma and their polar reversal in one space; the sphere of reciprocation toggles between two exact settings (ρ² = φ²/4 sharing I and D, ρ² = 3φ²/4 sharing ID and RT) that can never coincide (3 is not a power of φ); cut against each other the cycles make one solid of exact convex pieces, 536 of 12 kinds (DICTO Interlock set 1) and 502 of 11 kinds (set 2) per turn | DICTO (both cycles in one space, the toggle, the interlock, the set names) | studies/2026-10-16-interlock (exact) | **not found** (common refinement of dissections is standard) | 2026-10-16 (Zenodo 10.5281/zenodo.23407106, V2) |
 | 34 | Progenitors: the DICTO Hecatodihedron and DICTO Ogdoecontahedron as a twin pair never close golden on their own (8,742 tight cycles, none on a power of φ; the tightest 3-cycle gains exactly 9/φ⁴ a round); set into the Spheres of Dharma in the dodecahedron's place (O at 3φ²/4) they close it again on φ⁹: I ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ I·φ³, a cycle holding the core and hull of two dual compounds (ID/RT and rTI/jtI, the latter the DICTO Hecatogdoecontahedron's) | DICTO (the progenitors idea, the truncated icosahedron's place, the names) | studies/2026-10-16-progenitors (exact) | **not found** (in the sources checked) | 2026-10-16 (Zenodo 10.5281/zenodo.23413184) |
 | 35 | Vajrayana: the dodecahedron returns in the cycle of #34 as the hull of the Cleo star, exactly (2/3)·D, filled by 82 pieces of four kinds; the last loose step RT ⊂ I·φ³ is closed by the DICTO Metaxyhexecontahedron, the dodecahedron–icosahedron hull member with edge ratio 9/φ⁴, touching both, each of its two layers one kind of piece (30 and 60), its dual closing the reversed cycle's step; the full-height icosidodecahedron star gives the DICTO Palintriacontahedron (ratio 3/√5); twelve stations | DICTO (the Cleo star with the dodecahedron in it, the inward pyramids, the solid in the last gap, the full-height ID star, the names) | studies/2026-10-16-progenitors (exact; some observations float, so labelled) | **not found** as named or distinguished members (the hull family is known) | 2026-10-17 (Zenodo 10.5281/zenodo.23429911) |
+| 36 | Golden Bodhi Pyrochlore: the gap of the Ogdoecontahedron's bcc packing, 22.57% of space, exact: 72 cone pieces of 3 kinds; hexagonal limbs crossing in exactly two golden rhombi; the canonical golden cut shatters (8,027 pieces); the GBPC (Golden Bodhi Pyrochlore Corner), 24 per cell, is the one adapter every golden fill needs; what remains has no face-to-face tiling by golden rhombohedra; DICTO's Bull-horns OG adaptor fills the whole gap with one piece, three per copy, (18728 − 6296√5)/41553 each | DICTO (the questions, the Bull-horns OG adaptor, the names Golden Bodhi Pyrochlore, GBPC, Bull-horns); the obstruction and the GBPC found by Claude Fable | studies/2026-10-16-ocd-pyrochlore, studies/2026-10-18-bcc-hole-pieces (exact; float explorations labelled) | **not found** | 2026-10-18 (Zenodo 10.5281/zenodo.23451210) |
+| 37 | The DICTO Ogdoecontahedron on the Octet Truss: the OG's 8 joint hexagons lie on the faces of a regular octahedron (corners at distance 2φ/3), so the OG sits in the octet truss; four families of exact space-filling kits: golden-section keys (keyed octahedron + dented tetrahedron L/R); an exact thick Penrose rhombus linking facing five-fold stars, offset by exactly one tip radius, with three Penrose cores; golden envelopes filling exactly 10/φ⁶, with the φ⁻² vertex cuboctahedron = ⅓ envelope, a two-shape kit and a tetartoid core, each envelope touching its rhombic dodecahedron at 12 golden-section points; one-piece glue (envelope + W, OG + W with OG imprints, OG + W on the Penrose star) | DICTO (the octet from the OG's pieces, the Penrose link, the minimal golden kit, the one-piece and two-shape golden octets, the OG-imprint and star-centred glue, the keyed glue, the half-RD network, the chamber); W, the proofs, the tetartoid and the keyed-glue design by Claude Fable | studies/2026-10-18-ocd-octet, -p1 … -p4, -envelope-network (exact, proved independently; keyed W float design) | **not found** | 2026-10-19 (Zenodo 10.5281/zenodo.23457016) |
 
 Known results the apps show (kept here, with their numbers, as checks; not DICTO's findings; see the section at the end):
 
@@ -906,6 +908,26 @@ pieces. Names by DICTO.*
   Demonstration "Cluster of 20 Icosahedra" (in the vein of Kabai); Robert Austin's 2014 model overlaps whole
   icosahedra with dodecahedra; the Dogstar and its honeycomb are Hart's (1996). The King of Pentacles, the
   closed Stella-Corona and its network are DICTO's.
+
+## 37. The DICTO Ogdoecontahedron on the Octet Truss (DICTO, 2026-10-19)
+
+- The OG's eight joint hexagons lie exactly on the octahedron |x| + |y| + |z| = 2φ/3, so the OG sits in the octahedra of the octet truss
+  (the OG fills 68.83% of its octahedron; the OGs 45.886% of space). Four families of kits, all exact in Q(√5) and proved to fill space
+  once by Claude Fable's independent engine (4 000 000+ sample points each): the golden-key octet; the Penrose-core octet and the keyless
+  kit with three Penrose cores; the golden envelope network (10/φ⁶ = 90 − 40√5, the φ⁻² vertex cuboctahedron, the grown piece
+  (176 − 72√5)/27 and its tetartoid core, the envelope inside its rhombic dodecahedron); and one-piece glue (envelope + W, OG + W_OG,
+  OG + W_star, which holds all three Penrose cores). The keyed W (Fable's design, float) awaits exact keys (DICTO 2026-10-19).
+  Paper DICTO DOI 10.5281/zenodo.23457016.
+- In the app: Kaleidohedra, 3D+ → The OG on the Octet Truss (`?open=octetTruss`, `?open=octetTruss:<kit>`): each kit's set, its pieces
+  round one OG and its network.
+
+## 36. Golden Bodhi Pyrochlore (DICTO, 2026-10-18)
+
+- The gap of the Ogdoecontahedron's bcc packing, exact: 72 cone pieces; limbs crossing in golden rhombi; the canonical golden cut shatters;
+  the GBPC, 24 per cell, is the one adapter every golden fill needs, and it is where the OCD Stella (#31a) starts; no face-to-face tiling of
+  what remains by golden rhombohedra. DICTO's Bull-horns OG adaptor fills the whole gap with one piece, three per copy (OGs 77.4332%,
+  adaptors 22.5668%). Paper DICTO DOI 10.5281/zenodo.23451210.
+- In the app: Kaleidohedra, 3D+ → Golden Bodhi Pyrochlore Networks (`?open=bodhiPyro`), Double network, Gap pieces, Gap: Bull-horns OG adaptor.
 
 ## 35. Vajrayana (DICTO, 2026-10-17)
 

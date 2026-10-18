@@ -227,10 +227,21 @@ export const LATTICE_CONCEPT_ENTRIES = [
 
 // DICTO's discoveries (DICTO 2026-10-09): every piece and world of DICTO's own, first, in 7 languages
 // (i18n alm.d.<key>.label/.desc/.how): what it is, how to build it, its DISCOVERIES number and DOI.
-// Newest first (DICTO 2026-10-13: all of #1-#26; #27 added 2026-10-14). shape: the Polyhedraverse shape its preview turns, if any.
+// Newest first (DICTO 2026-10-13: all of #1-#26; #27 added 2026-10-14; #28-#37 2026-10-19, each short introduction inside its parent
+// entry, DICTO). doi: the paper's own DICTO DOI (concept, newest version). shape: the Polyhedraverse shape its preview turns, if any.
 // action: what Open does, the same action the DICTO wizard dispatches; app: where it opens when the
 // action alone doesn't say (the Shear's results open in Kaleidohedra).
 export const DICTO_ENTRIES = [
+  ['octetTruss', '#37', '10.5281/zenodo.23457016', 'RHOMBIC_DODECAHEDRON', 'tool:octetTrussWorld'],
+  ['gbp', '#36', '10.5281/zenodo.23451210', 'RHOMBIC_TRIACONTAHEDRON', 'tool:bodhiPyroWorld:double'],
+  ['vajrayana', '#35, 35a, 35b', '10.5281/zenodo.23429911', 'DODECAHEDRON', 'tool:vajrayanaWorld'],
+  ['progenitors', '#34, 34a', '10.5281/zenodo.23413184', 'TRUNCATED_ICOSAHEDRON', 'tool:vajrayanaWorld:hecatogdo'],
+  ['doubleVision', '#33', '10.5281/zenodo.23407107', 'ICOSIDODECAHEDRON', 'tool:doubleVisionWorld'],
+  ['inverted', '#32', '10.5281/zenodo.23405029', 'GREAT_STELLATED_DODECAHEDRON', 'tool:doubleVisionWorld'],
+  ['og', '#31, 31a', '10.5281/zenodo.23404688', 'PENTAKIS_DODECAHEDRON', 'tool:ocdStellaWorld'],
+  ['spine', '#30', '10.5281/zenodo.23396361', 'ICOSAHEDRON', 'tool:bodhiPyroWorld:chorus'],
+  ['theaetetus', '#29', '10.5281/zenodo.23378070', 'ICOSAHEDRON', 'tool:theaetetusWorld'],
+  ['tih', '#28', '10.5281/zenodo.23360857', 'TRANS_DHARMA_80', 'tool:cyclesWorld'],
   ['inbetweens', '#27', '10.5281/zenodo.23345502', 'TRANS_DHARMA_80', 'tool:chainsWorld:dharma'],
   ['atom13', '#26', '10.5281/zenodo.23333183', 'ICOSAHEDRON', 'tool:thirteensWorld:icosa13'],
   ['spheroid13', '#25', '10.5281/zenodo.23332821', 'KIT13_RD13_RDCENTRE_T15', 'tool:thirteensWorld:rd13'],
@@ -238,21 +249,21 @@ export const DICTO_ENTRIES = [
   ['dharma', '#23', '10.5281/zenodo.23310833', 'ICOSIDODECAHEDRON', 'tool:chainsWorld:dharma'],
   ['karma', '#22', '10.5281/zenodo.23310541', 'ICOSAHEDRON', 'tool:chainsWorld:karma'],
   ['octet', '#21', '10.5281/zenodo.23284390', 'DICTO_EDGE_ROOF', 'tool:octetWorld:caps'],
-  ['stellaCorona', '#20', '10.5281/zenodo.23272686', 'ICOSIDODECAHEDRON', 'tool:icosaWorld'],
-  ['icosa13', '#19', '10.5281/zenodo.23272686', 'KIT13_ICOSA13_FUJI', 'tool:thirteensWorld:icosa13'],
-  ['hexa', '#18', '10.5281/zenodo.23262227', 'DICTO_HEXA', 'tool:polyShape:DICTO_HEXA'],
-  ['hexaKey', '#18', '10.5281/zenodo.23262227', 'DICTO_HEXA_KEY', 'tool:stellaJewelWorld:hexaKey'],
-  ['hexaNets', '#18', '10.5281/zenodo.23262227', 'DICTO_HEXA_RHOMBO_CLUSTER', 'tool:stellaJewelWorld:hexa'],
-  ['hulls', '#17', '10.5281/zenodo.23262227', null, 'tool:stellaJewelWorld:hullOcta'],
+  ['stellaCorona', '#20', '10.5281/zenodo.23357896', 'ICOSIDODECAHEDRON', 'tool:icosaWorld'],
+  ['icosa13', '#19', '10.5281/zenodo.23351291', 'KIT13_ICOSA13_FUJI', 'tool:thirteensWorld:icosa13'],
+  ['hexa', '#18', '10.5281/zenodo.23376320', 'DICTO_HEXA', 'tool:polyShape:DICTO_HEXA'],
+  ['hexaKey', '#18', '10.5281/zenodo.23376320', 'DICTO_HEXA_KEY', 'tool:stellaJewelWorld:hexaKey'],
+  ['hexaNets', '#18', '10.5281/zenodo.23376320', 'DICTO_HEXA_RHOMBO_CLUSTER', 'tool:stellaJewelWorld:hexa'],
+  ['hulls', '#17', '10.5281/zenodo.23376317', null, 'tool:stellaJewelWorld:hullOcta'],
   ['clusters', '#15, #16', '10.5281/zenodo.23256623', 'DJ_OCTAHEDRAL_CLUSTER', 'tool:stellaJewelWorld:tetra'],
   ['networks', '#15, #16', '10.5281/zenodo.23257393', 'DJ_TETRAHEDRAL_CLUSTER', 'tool:stellaJewelWorld:octet'],
-  ['dictoStar', '#14', '10.5281/zenodo.23256623', 'ICOSIDODECAHEDRON', 'tool:dodecaWorld:star'],
-  ['c13', '#13', '10.5281/zenodo.23247392', 'DODECAHEDRON', 'tool:dodecaWorld:dodeca13'],
+  ['dictoStar', '#14', '10.5281/zenodo.23284213', 'ICOSIDODECAHEDRON', 'tool:dodecaWorld:star'],
+  ['c13', '#13', '10.5281/zenodo.23284281', 'DODECAHEDRON', 'tool:dodecaWorld:dodeca13'],
   ['chains', '#12, 12a', '10.5281/zenodo.23226716', 'STELLA_OCTANGULA', 'tool:sunstarWorld'],
   ['stretched', '#11', null, 'DODECAHEDRON', 'tool:studiesWorld'],
   ['jewel', '#10', '10.5281/zenodo.23220273', 'DRAGON_JEWEL', 'tool:stellaJewelWorld'],
   ['rdFamily', '#9', null, 'RD_TARGET_4', 'tool:targetsWorld'],
-  ['ekp', '#8', '10.5281/zenodo.23176568', 'DODECAHEDRON', 'tool:roofFoldWorld'],
+  ['ekp', '#8', '10.5281/zenodo.23284106', 'DODECAHEDRON', 'tool:roofFoldWorld'],
   ['skewedEd', '#7', null, 'DICTO_SKEWED_ED_16', 'tool:polyShape:DICTO_SKEWED_ED_16'],
   ['nineFillers', '#6', null, 'REGULAR_HEX_ED', 'tool:targetsWorld'],
   ['equalEdge', '#2', null, 'DICTO_SKEWED_RD', 'tool:pieceType:dictofcc', 'kaleidohedra'],

@@ -222,7 +222,7 @@ export function createAlmanac({ onOpen } = {}) {
       const desc = WORDED.has(entry.kind) ? t(`alm.d.${entry.key}.desc`, L)
         : t(entry.finding ? 'alm.piece.desc' : 'alm.piece.descNone', L, { n: entry.finding });
       const ref = entry.kind === 'known' ? `${t('alm.ref', L, { n: entry.finding })} · ${t('alm.known', L)}`
-        : entry.finding ? `DICTO · ${t('alm.ref', L, { n: entry.finding })}${entry.doi ? ` · <a href="https://doi.org/${entry.doi}" target="_blank" rel="noopener">DOI ${entry.doi}</a>` : ''}` : 'DICTO';
+        : entry.finding ? `DICTO · ${t('alm.ref', L, { n: entry.finding })}${entry.doi ? ` · <a href="https://doi.org/${entry.doi}" target="_blank" rel="noopener">DICTO DOI ${entry.doi}</a>` : ''}` : 'DICTO';
       detailEl.innerHTML = `
       <button type="button" class="almanac-back">&larr; ${t('alm.back', L)}</button>
       ${entry.shape ? '<canvas class="almanac-preview"></canvas>' : ''}

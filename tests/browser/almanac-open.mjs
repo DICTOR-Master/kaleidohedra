@@ -7,6 +7,8 @@ const BASE_URL = process.env.BASE_URL ?? 'http://localhost:8000';
 const DOOR = process.env.DOOR ?? 'kaleidohedra';
 // [entry id, the world title expected after Open, the app space]
 const CASES = [
+  ['dicto:octetTruss', 'The OG on the Octet Truss', 'kaleidohedra'],
+  ['dicto:theaetetus', 'Theaetetus', 'kaleidohedra'],
   ['dicto:karma', 'Multi-shell chains · Chain of Karma', 'kaleidohedra'],
   ['dicto:inbetweens', 'Multi-shell chains · Spheres of Dharma', 'kaleidohedra'],
   ['dicto:atom13', 'DICTO ATOM-13×13 · DICTO Icosa-13 (Lotus seed)', 'kaleidohedra'],

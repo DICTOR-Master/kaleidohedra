@@ -313,3 +313,25 @@ reference library, not in this repo.
 - M. Firsching (2015). *Computing maximal copies of polytopes contained in a polytope*. Experimental Mathematics 24, 98–105. <https://arxiv.org/abs/1407.0683> (Polar reciprocals reverse inclusion. Largest copy of a polytope in a polytope.)
 - R. Twarock, M. Valiunas, E. Zappa (2015). *Orbits of crystallographic embedding of non-crystallographic groups and applications to virology*. Acta Cryst. A. <https://arxiv.org/abs/1411.2115> (Nested icosahedral point sets.)
 - I. Hafner (2007). *Dissection of small stellated dodecahedron and great stellated dodecahedron to rhombic triacontahedron and hexecontahedron*. Visual Mathematics 9(2). <http://www.mi.sanu.ac.rs/vismath/hafnervisual/visual54A/Visual54.html>
+
+## The Ogdoecontahedron's gap and the octet kits (papers #36 and #37, 2026-10-18/19)
+
+Cited in Golden Bodhi Pyrochlore (DICTO DOI 10.5281/zenodo.23451210) and The DICTO Ogdoecontahedron on the Octet Truss (DICTO DOI 10.5281/zenodo.23457016); the papers' reference lists are the full record.
+
+- R. B. Fuller (1961). *Synergetic building construction* (the octet truss). US 2,986,241. <https://patents.google.com/patent/US2986241A>
+- H. Lalvani (1990). *Transformational part-count in layered octahedral-tetrahedral truss configurations*. NASA TM-102635. <https://ntrs.nasa.gov/citations/19900019282>
+- H. Lalvani (1995). *Periodic space structures composed of two nodal polyhedra for design applications*. US 5,448,868. <https://patents.google.com/patent/US5448868>
+- H. Lalvani (1997). *Building systems with non-regular polyhedra based on subdivisions of zonohedra*. US 5,623,790 (Fig. 4D: a non-regular triacontahedron packed with gaps).
+- J. H. Conway, Y. Jiao, S. Torquato (2011). *New family of tilings of three-dimensional Euclidean space by tetrahedra and octahedra*. PNAS 108, 11009–11012. <https://doi.org/10.1073/pnas.1105594108>
+- R. Gabbrielli, Y. Jiao, S. Torquato (2012). *Families of tessellations of space by elementary polyhedra via retessellations of face-centered-cubic and related tilings*. Phys. Rev. E 86, 041141. <https://doi.org/10.1103/PhysRevE.86.041141>
+- R. Akpanya, T. Goertzen, A. C. Niemeyer (2024). *Topologically interlocking blocks inside the tetroctahedrille*. <https://arxiv.org/abs/2405.01944>
+- V. R. Krishnamurthy, E. Akleman et al. (2022). *Geometrically interlocking space-filling tiling based on fabric weaves*. IEEE TVCG 28(10); and *Bi-axial woven tiles* (Graphics Interface 2020, doi:10.20380/GI2020.29). <https://midl.tamu.edu/data/papers/tvcg_woven_2021.pdf>
+- J. C. Lagarias, C. Zong (2012). *Mysteries in packing regular tetrahedra*. Notices of the AMS 59(11), 1540–1549.
+- U. Betke, M. Henk (2000). *Densest lattice packings of 3-polytopes*. Computational Geometry 16, 157–186; S. Torquato, Y. Jiao (2012), arXiv:1206.3716 (the densest known rhombic-triacontahedron packing, 0.801741).
+- Q. Lin, J. D. Corbett (2006). *The 1/1 and 2/1 approximants in the Sc–Mg–Zn quasicrystal system: triacontahedral clusters as fundamental building blocks*. JACS 128, 13268–13273. <https://doi.org/10.1021/ja063897u>
+- S. Kabai, Wolfram Demonstrations: *54-Faced Space-Filling Polyhedron* (2007), *Golden Octet Truss* (2007, a different object: the name is his), *Relating a Rhombic Triacontahedron and a Rhombic Dodecahedron* (2008, a five-fold compound), *A Rhombic Dodecahedron Made of Rhombic Triacontahedra* (2008), *Cluster of 14 Rhombic Triacontahedra* (2015). <https://demonstrations.wolfram.com/GoldenOctetTruss/>
+- J. Koskinen (2011). *Unusual tilings and transformations*. Bridges 2011. <https://static1.bridgesmathart.org/2011/cdrom/proceedings/118/paper_118.pdf>
+- I. Hafner, T. Zitko (2002). *Rhombic polyhedra: from dissection of the cube to space filling with prolate rhombohedra and rhombic dodecahedra of the second kind*. Visual Mathematics 4(2); after R. Williams (1979), *The Geometrical Foundation of Natural Structure*.
+- L. Casas (2020). *Teaching periodicity and aperiodicity using 3D-printed tiles and polyhedra*. J. Appl. Cryst. 53, 1583–1592. <https://doi.org/10.1107/S1600576720011772>
+- R. Penrose (1974). *The role of aesthetics in pure and applied mathematical research*. Bull. Inst. Math. Appl. 10, 266–271 (the Penrose rhombi).
+- GAMGI tutorials, *Interstices in the BCC structure* (the octahedral holes). <https://gamgi.tecnico.ulisboa.pt/tutorials/interstices_bcc_page1.html>
