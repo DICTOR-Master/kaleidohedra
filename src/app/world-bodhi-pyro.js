@@ -2,7 +2,8 @@
 // makes by joining copies face to face on hexagons, next to the Pyrochlore and the Golden Breathing Pyrochlore. Four views:
 //   network  one diamond network (four tetrahedral hexagons per copy); its joints, the hexagon centres, lie on a pyrochlore lattice;
 //   double   the second network in the gaps: together one body-centred cubic packing (77.43% of space), with the 72 gap pieces per
-//            copy that fill the rest exactly (48 + 12 on kites, 12 on hexagons);
+//            copy that fill the rest exactly (48 + 12 on kites, 12 on hexagons) -- or, switched, DICTO's Bull-horns OG adaptor (DICTO
+//            2026-10-18): the resin cut at the holes between 6 OGs, one piece shape, 3 per copy (bull-horns-data.js);
 //   voice    each of the five inscribed cubes gives its own body-centred cubic packing (a "voice");
 //   chorus   the five voices in five 72° wedges round a five-fold axis, exact to radius 10 (paper #30, DICTO DOI 10.5281/zenodo.23396361):
 //            removed copies as ghosts, and the Fibonacci spine on the axis.
@@ -11,6 +12,7 @@
 // Geometry: bodhi-pyro-data.js (scripts/build-bodhi-pyro-data.py, from studies/2026-10-16-ocd-pyrochlore). Words: i18n gbp.*.
 import * as THREE from 'three';
 import DATA from './bodhi-pyro-data.js';
+import BULL from './bull-horns-data.js';
 import { ROOF_FOLD_WORLD_SCALE as WS } from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
@@ -60,10 +62,18 @@ const GAPS = (() => {
   return geo;
 })();
 
+// Bull-horns OG adaptor (DICTO 2026-10-18): one copy's 3 hole pieces, in the copy's frame (the holes M.(q + e_k)).
+const HOLES = (() => {
+  const p = [];
+  for (const g of BULL.pieces) for (const tri of g.t) for (const k of tri) p.push(...g.v[k].map((x) => x * WS));
+  const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.Float32BufferAttribute(p, 3)); geo.computeVertexNormals();
+  return geo;
+})();
+
 export function createBodhiPyroWorld({ scene, fitView = () => {}, showHudPrompt = () => {}, onChange = () => {} }) {
   const STORAGE_KEY = storageKey('bodhipyro');
   const group = new THREE.Group(); group.visible = false; scene.add(group);
-  const view = { mode: 'network', voice: 0, size: Object.fromEntries(MODES.map((m) => [m, SIZE[m][2]])), joints: true, gaps: false, ghosts: true, spine: true, build: false };
+  const view = { mode: 'network', voice: 0, size: Object.fromEntries(MODES.map((m) => [m, SIZE[m][2]])), joints: true, gaps: false, holes: false, ghosts: true, spine: true, build: false };
   const builds = { network: null, double: null, voice: null }; // null: the preset for the size; else a Map key -> q
   const cubeOf = () => (view.mode === 'voice' ? view.voice : 0);
   function preset(mode, n) {
@@ -81,7 +91,7 @@ export function createBodhiPyroWorld({ scene, fitView = () => {}, showHudPrompt 
     if (MODES.includes(d.mode)) view.mode = d.mode;
     if (Number.isInteger(d.voice) && d.voice >= 0 && d.voice < 5) view.voice = d.voice;
     for (const m of MODES) { const n = Number(d.size?.[m]); if (Number.isFinite(n)) view.size[m] = Math.min(SIZE[m][1], Math.max(SIZE[m][0], Math.round(n))); }
-    for (const k of ['joints', 'gaps', 'ghosts', 'spine', 'build']) if (typeof d[k] === 'boolean') view[k] = d[k];
+    for (const k of ['joints', 'gaps', 'holes', 'ghosts', 'spine', 'build']) if (typeof d[k] === 'boolean') view[k] = d[k];
     for (const m of ['network', 'double', 'voice']) {
       const b = d.builds?.[m];
       builds[m] = Array.isArray(b) ? new Map(b.filter((q) => Array.isArray(q) && q.length === 3 && q.every(Number.isInteger) && allowed(q, m)).map((q) => [keyOf(q), q])) : null;
@@ -89,7 +99,7 @@ export function createBodhiPyroWorld({ scene, fitView = () => {}, showHudPrompt 
     }
   }
   try { read(JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null')); } catch { /* corrupt or blocked storage: start fresh */ }
-  const snapshot = () => ({ version: 1, mode: view.mode, voice: view.voice, size: { ...view.size }, joints: view.joints, gaps: view.gaps, ghosts: view.ghosts,
+  const snapshot = () => ({ version: 1, mode: view.mode, voice: view.voice, size: { ...view.size }, joints: view.joints, gaps: view.gaps, holes: view.holes, ghosts: view.ghosts,
     spine: view.spine, build: view.build, builds: Object.fromEntries(Object.entries(builds).map(([m, b]) => [m, b ? [...b.values()] : null])) });
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot())); } catch { /* best-effort */ } };
   const commit = () => { save(); draw(); renderPanel(); onChange(); };
@@ -99,11 +109,12 @@ export function createBodhiPyroWorld({ scene, fitView = () => {}, showHudPrompt 
   const ghost = new THREE.MeshStandardMaterial({ color: 0xd8cdb8, roughness: 0.6, flatShading: true, transparent: true, opacity: 0.12, depthWrite: false });
   const helper = new THREE.MeshBasicMaterial({ color: 0xffe9a8, transparent: true, opacity: 0.16, depthWrite: false });
   const gapMat = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.55, flatShading: true, side: THREE.DoubleSide });
+  const holeMat = new THREE.MeshStandardMaterial({ color: 0xffb74d, roughness: 0.35, flatShading: true, side: THREE.DoubleSide, transparent: true, opacity: 0.88 }); // resin amber
   function clearGroup() {
     for (const child of [...group.children]) {
       group.remove(child);
       if (child.isInstancedMesh) child.dispose();
-      if (child.geometry && child.geometry !== OCD && child.geometry !== GAPS) child.geometry.dispose();
+      if (child.geometry && child.geometry !== OCD && child.geometry !== GAPS && child.geometry !== HOLES) child.geometry.dispose();
       if (child.isLineSegments || child.userData.ownMaterial) child.material.dispose();
     }
     pickTargets = [];
@@ -165,7 +176,7 @@ export function createBodhiPyroWorld({ scene, fitView = () => {}, showHudPrompt 
         tl.renderOrder = 9; group.add(tl);
       }
     }
-    if (view.mode === 'double' && view.gaps) instanced(GAPS, gapMat, list, null, 'gaps');
+    if (view.mode === 'double' && view.gaps) instanced(view.holes ? HOLES : GAPS, view.holes ? holeMat : gapMat, list, null, 'gaps');
     if (view.build) {
       const free = freePlaces(map).map((q) => ({ q, p: pos(cube, q) }));
       if (free.length) pickTargets.push(instanced(OCD, helper, free, null, 'outline'));
@@ -225,7 +236,7 @@ export function createBodhiPyroWorld({ scene, fitView = () => {}, showHudPrompt 
     <div class="w4d-row st-note gbp-note"></div>
     <div class="w4d-row w4d-options gbp-modes">${MODES.map((m) => `<button type="button" data-gbp-mode="${m}"></button>`).join('')}</div>
     <div class="w4d-row w4d-options gbp-voices">${[0, 1, 2, 3, 4].map((v) => `<button type="button" data-gbp-voice="${v}"></button>`).join('')}</div>
-    <div class="w4d-row w4d-options gbp-toggles"><button type="button" data-gbp="joints"></button><button type="button" data-gbp="gaps"></button><button type="button" data-gbp="ghosts"></button><button type="button" data-gbp="spine"></button><button type="button" data-gbp="build"></button><button type="button" data-gbp="reset"></button></div>
+    <div class="w4d-row w4d-options gbp-toggles"><button type="button" data-gbp="joints"></button><button type="button" data-gbp="gaps"></button><button type="button" data-gbp="holes"></button><button type="button" data-gbp="ghosts"></button><button type="button" data-gbp="spine"></button><button type="button" data-gbp="build"></button><button type="button" data-gbp="reset"></button></div>
     <div class="w4d-row gbp-size-row"><label class="hull-pick"><span class="gbp-size-label"></span> <input type="range" class="st-slider" step="1"></label></div>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, 'bodhipyro');
@@ -237,12 +248,12 @@ export function createBodhiPyroWorld({ scene, fitView = () => {}, showHudPrompt 
     const L = lang(), m = view.mode, n = view.mode === 'chorus' ? null : sites().size;
     const chorusCount = () => { let k = 0, g = 0; for (const s of DATA.chorus.sites) if (Math.hypot(s[0], s[1], s[2]) <= view.size.chorus + 1e-6) (s[4] ? g++ : k++); return { k, g }; };
     const c = m === 'chorus' ? chorusCount() : null;
-    panel.querySelector('.gbp-note').textContent = m === 'chorus' ? t('gbp.note.chorus', L, { k: c.k, g: c.g }) : t(`gbp.note.${m}`, L, { n, v: view.voice + 1 });
+    panel.querySelector('.gbp-note').textContent = m === 'chorus' ? t('gbp.note.chorus', L, { k: c.k, g: c.g }) : t(m === 'double' && view.gaps && view.holes ? 'gbp.note.holes' : `gbp.note.${m}`, L, { n, v: view.voice + 1 });
     panel.querySelectorAll('[data-gbp-mode]').forEach((b) => { b.textContent = t(`gbp.mode.${b.dataset.gbpMode}`, L); b.classList.toggle('active', b.dataset.gbpMode === m); });
     show('.gbp-voices', m === 'voice');
     panel.querySelectorAll('[data-gbp-voice]').forEach((b) => { b.textContent = t('gbp.voice', L, { v: Number(b.dataset.gbpVoice) + 1 }); b.classList.toggle('active', Number(b.dataset.gbpVoice) === view.voice); });
     const tog = (k, on) => { const b = panel.querySelector(`[data-gbp="${k}"]`); b.hidden = !on; if (on && k !== 'reset') b.textContent = t(`gbp.${k}.${view[k] ? 'on' : 'off'}`, L); };
-    tog('joints', m === 'network'); tog('gaps', m === 'double'); tog('ghosts', m === 'chorus'); tog('spine', m === 'chorus'); tog('build', m !== 'chorus');
+    tog('joints', m === 'network'); tog('gaps', m === 'double'); tog('holes', m === 'double' && view.gaps); tog('ghosts', m === 'chorus'); tog('spine', m === 'chorus'); tog('build', m !== 'chorus');
     const reset = panel.querySelector('[data-gbp="reset"]'); reset.hidden = m === 'chorus' || !builds[m]; reset.textContent = t('gbp.reset', L);
     const [lo, hi] = SIZE[m]; slider.min = String(lo); slider.max = String(hi); slider.value = String(view.size[m]);
     panel.querySelector('.gbp-size-label').textContent = t(m === 'chorus' ? 'gbp.size.chorus' : 'gbp.size.grow', L, { n: view.size[m] });
@@ -252,7 +263,7 @@ export function createBodhiPyroWorld({ scene, fitView = () => {}, showHudPrompt 
     if (view.mode === 'chorus') showHudPrompt(t('gbp.prompt.chorus', lang()), 5000);
   }));
   panel.querySelectorAll('[data-gbp-voice]').forEach((b) => b.addEventListener('click', () => { view.voice = Number(b.dataset.gbpVoice); builds.voice = null; commit(); fit(); }));
-  for (const k of ['joints', 'gaps', 'ghosts', 'spine', 'build']) panel.querySelector(`[data-gbp="${k}"]`).addEventListener('click', () => {
+  for (const k of ['joints', 'gaps', 'holes', 'ghosts', 'spine', 'build']) panel.querySelector(`[data-gbp="${k}"]`).addEventListener('click', () => {
     view[k] = !view[k]; commit();
     if (k === 'build' && view.build) showHudPrompt(t('gbp.prompt.build', lang()), 4500);
   });
