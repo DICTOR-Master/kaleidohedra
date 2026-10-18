@@ -29,3 +29,13 @@ Source: studies/2026-10-18-ocd-octet (steps 1–27, Fable review ba28bd0), envel
 
 ## Outside the plan (DICTO 10-18): spherical containment chambers
 - DICTO: "they would all work well in construction of spherical containment chambers". Idea noted: shells of lattice cells within a radius band (hollow chamber), or nested shells of different sets; adaptor halves let envelopes be left out to open/line the inner surface. Geometry only — nothing structural is claimed. Waiting for DICTO's choice (hollow chamber / nested shells / other) before a first picture.
+
+## Status at a glance (10-18, end of day)
+| Project | Minimal set | Exact | Fable | 3D page |
+|---|---|---|---|---|
+| 1 Golden-key octet (`2026-10-18-p1-golden-key-octet`) | keyed octahedron + dented tetrahedron L/R (2) | yes | keyed kit proved (ba28bd0) | BMcKgGY7iAYGZsWbQMWpE9 |
+| 2 Penrose-core octet (`2026-10-18-p2-penrose-core-octet`) | notched octahedron + middle piece + notched tetrahedron L/R (3) | yes | keyless kit proved (ba28bd0) | BAQrqDmtUuuNUeXe4aexg4 |
+| 3 Golden envelope octet (`2026-10-18-p3-golden-envelope-octet`) | envelope + grown piece L/R (2); 3b/3c need rework (wedges unbuildable) | yes | two-shape kit proved (8af2336); tetartoid exact | FBjG7XTk3xFykgUCfyGQXS |
+| 4 Golden octet adaptor (`2026-10-18-p4-golden-octet-adaptor`) | envelope + adaptor half ×2 (2); one-piece RD; **envelope + W (Fable, 2, achiral)** | yes | W proved (8af2336) | 3Qw1XztMnTGiUuN1ntq1L9 |
+- Ideas recorded: spherical chamber (half-open inside and outside), the general "half-RD network" of any golden-adaptable solid.
+- Open for DICTO: grown piece (mirror pair, ψ 0.60) vs W (single, ψ 0.57); hidden flat cuts and 0.083 ridges OK?; STL (60 mm octahedron edge) and names next.
