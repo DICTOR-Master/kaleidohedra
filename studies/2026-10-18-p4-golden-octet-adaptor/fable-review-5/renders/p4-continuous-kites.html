@@ -1,0 +1,320 @@
+<title>Continuous Kite Keys</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#f3f4f6;--fg:#1d2230;--muted:#5b6275;--line:#d5d8e0;--panel:#fff;--raise:#e4593b;--sink:#3b6fd1;--seamc:#8e6bb8;--sock:#d9a21b;--f-ui:"IBM Plex Sans",system-ui,sans-serif;--f-num:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11141b;--fg:#e6e8ee;--muted:#9aa1b2;--line:#2a2f3c;--panel:#181c25;--raise:#f07a5e;--sink:#6f9bea;--seamc:#b394dd;--sock:#e8c56a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#11141b;--fg:#e6e8ee;--muted:#9aa1b2;--line:#2a2f3c;--panel:#181c25;--raise:#f07a5e;--sink:#6f9bea;--seamc:#b394dd;--sock:#e8c56a;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:12px;display:flex;flex-direction:column;gap:14px}
+h1{font-size:1.15rem;margin:0;font-weight:600;text-wrap:balance} h2{font-size:1rem;margin:0;font-weight:600} p,li{font-size:.9rem;max-width:80ch;line-height:1.45} .meta{color:var(--muted);margin:0}
+.panel{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:10px;overflow-x:auto} svg{display:block;max-width:100%;height:auto}
+.kite{stroke:var(--fg);stroke-width:.6;fill:none} .raised{fill:var(--raise);fill-opacity:.55} .sunk{fill:var(--sink);fill-opacity:.55} .seam{stroke:var(--seamc);stroke-width:1.6} .kite.seam{fill:var(--seamc);fill-opacity:.25;stroke:var(--fg)}
+.half{stroke:none} .face{fill:none;stroke:var(--fg);stroke-width:1.4} .socket{fill:var(--sock);fill-opacity:.9;stroke:var(--fg);stroke-width:.8} .shadow{fill:var(--fg);fill-opacity:.12;stroke:none}
+.star{stroke:var(--fg);stroke-width:1.8;stroke-dasharray:3 2} .prof{fill:none;stroke:var(--fg);stroke-width:2} .axis{stroke:var(--muted);stroke-width:.8;stroke-dasharray:2 2}
+.lab{font-size:9px;fill:var(--fg);font-family:var(--f-num)} .strong{font-weight:600;font-size:10px} .small{font-size:8px;fill:var(--muted)}
+table{border-collapse:collapse;font-size:.88rem;font-variant-numeric:tabular-nums} td,th{border:1px solid var(--line);padding:4px 8px;text-align:right} th:first-child,td:first-child{text-align:left}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.85rem} .sw{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-2px;margin-right:4px}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<h1>Continuous kite keys on the star-centred W — phase 1 drawing</h1>
+<p class="meta">DICTO 2026-10-18: "the keys to provide a continuous decorative pattern as well as key … transition is what I mean" — the OCD's star kites at exact star scale, one pattern over the whole assembly, kites running across the seams, every W identical, the relief deepest at the sockets and fading outward so the star grows out of its socket into the surface pattern. Drawing only; no 3D yet. Colour strength = local depth. DICTO · dictospheres.com · fable-review-5</p>
+<div class="legend"><span><span class="sw" style="background:var(--raise)"></span>raised (ridge +d/2 toward the viewer of this face)</span><span><span class="sw" style="background:var(--sink)"></span>sunk (valley −d/2)</span><span><span class="sw" style="background:var(--seamc)"></span>seam kites: half raised, half sunk</span><span><span class="sw" style="background:var(--sock)"></span>socket (OCD)</span><span>dashed = the socket star's two rim edges reaching the face</span></div>
+<div class="panel"><h2>(a) One seam, in the plane of the flat faces</h2>
+<svg viewBox="-12 -92 160 184" width="1100" height="1265" role="img" aria-label="Kite rows crossing the seam between two W faces"><polygon class="kite raised" points="53.9345,76.2749 64.5097,61.3192 53.5989,55.5556 43.9429,62.1447" style="fill-opacity:0.41"/>
+<polygon class="kite sunk" points="33.0286,46.7095 43.9429,62.1447 53.5989,55.5556 37.3163,44.4444" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="53.5989,55.5556 64.5097,61.3192 75.8531,45.2773 74.6326,44.4444" style="fill-opacity:0.41"/>
+<polygon class="kite raised" points="33.0286,46.7095 37.3163,44.4444 27.9155,39.4784" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="74.6326,44.4444 53.5989,33.3333 37.3163,44.4444 53.5989,55.5556" style="fill-opacity:0.50"/>
+<polygon class="kite raised" points="78.1291,42.0585 74.6326,44.4444 75.8531,45.2773" style="fill-opacity:0.38"/>
+<polygon class="kite sunk" points="21.5884,30.5305 27.9155,39.4784 37.3163,44.4444 53.5989,33.3333 37.3163,22.2222" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="53.5989,33.3333 74.6326,44.4444 78.1291,42.0585 86.4522,30.2878 74.6326,22.2222" style="fill-opacity:0.43"/>
+<polygon class="kite raised" points="21.5884,30.5305 37.3163,22.2222 16.2826,11.1111 10.5991,14.9894" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="74.6326,22.2222 53.5989,11.1111 37.3163,22.2222 53.5989,33.3333" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="97.5383,14.6098 90.9152,11.1111 74.6326,22.2222 86.4522,30.2878" style="fill-opacity:0.37"/>
+<polygon class="kite sunk" points="0.0000,-0.0000 10.5991,14.9894 16.2826,11.1111 0.0000,-0.0000" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="16.2826,11.1111 37.3163,22.2222 53.5989,11.1111 37.3163,-0.0000" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="53.5989,11.1111 74.6326,22.2222 90.9152,11.1111 74.6326,-0.0000" style="fill-opacity:0.47"/>
+<polygon class="kite sunk" points="105.4362,3.4404 90.9152,11.1111 97.5383,14.6098" style="fill-opacity:0.34"/>
+<polygon class="kite seam" points="37.3163,-0.0000 37.3163,-0.0000 16.2826,-11.1111 0.0000,-0.0000 0.0000,-0.0000" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="37.3163,-0.0000 37.3163,-0.0000 0.0000,-0.0000 0.0000,-0.0000 16.2826,11.1111" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="74.6326,-0.0000 74.6326,-0.0000 53.5989,-11.1111 37.3163,-0.0000 37.3163,-0.0000" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="74.6326,-0.0000 74.6326,-0.0000 37.3163,-0.0000 37.3163,-0.0000 53.5989,11.1111" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="107.8689,-0.0000 105.4362,-3.4404 90.9152,-11.1111 74.6326,-0.0000 74.6326,-0.0000" style="fill-opacity:0.37"/>
+<polygon class="kite seam" points="105.4362,3.4404 107.8689,-0.0000 74.6326,-0.0000 74.6326,-0.0000 90.9152,11.1111" style="fill-opacity:0.37"/>
+<polygon class="kite raised" points="0.0000,-0.0000 0.0000,-0.0000 16.2826,-11.1111 10.5991,-14.9894" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="16.2826,-11.1111 37.3163,-0.0000 53.5989,-11.1111 37.3163,-22.2222" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="53.5989,-11.1111 74.6326,-0.0000 90.9152,-11.1111 74.6326,-22.2222" style="fill-opacity:0.47"/>
+<polygon class="kite raised" points="97.5383,-14.6098 90.9152,-11.1111 105.4362,-3.4404" style="fill-opacity:0.34"/>
+<polygon class="kite sunk" points="37.3163,-22.2222 21.5884,-30.5305 10.5991,-14.9894 16.2826,-11.1111" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="74.6326,-22.2222 53.5989,-33.3333 37.3163,-22.2222 53.5989,-11.1111" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="97.5383,-14.6098 86.4522,-30.2878 74.6326,-22.2222 90.9152,-11.1111" style="fill-opacity:0.37"/>
+<polygon class="kite raised" points="27.9155,-39.4784 21.5884,-30.5305 37.3163,-22.2222 53.5989,-33.3333 37.3163,-44.4444" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="53.5989,-33.3333 74.6326,-22.2222 86.4522,-30.2878 78.1291,-42.0585 74.6326,-44.4444" style="fill-opacity:0.43"/>
+<polygon class="kite sunk" points="27.9155,-39.4784 37.3163,-44.4444 33.0286,-46.7095" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="74.6326,-44.4444 53.5989,-55.5556 37.3163,-44.4444 53.5989,-33.3333" style="fill-opacity:0.50"/>
+<polygon class="kite sunk" points="75.8531,-45.2773 74.6326,-44.4444 78.1291,-42.0585" style="fill-opacity:0.38"/>
+<polygon class="kite raised" points="33.0286,-46.7095 37.3163,-44.4444 53.5989,-55.5556 43.9429,-62.1447" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="64.5097,-61.3192 53.5989,-55.5556 74.6326,-44.4444 75.8531,-45.2773" style="fill-opacity:0.41"/>
+<polygon class="kite sunk" points="64.5097,-61.3192 53.9345,-76.2749 43.9429,-62.1447 53.5989,-55.5556" style="fill-opacity:0.41"/>
+<polygon class="kite raised half" points="37.3163,-0.0000 37.3163,-0.0000 16.2826,-11.1111 0.0000,-0.0000 0.0000,-0.0000" style="fill-opacity:0.52"/>
+<polygon class="kite sunk half" points="37.3163,-0.0000 37.3163,-0.0000 37.3163,-0.0000 0.0000,-0.0000 0.0000,-0.0000 0.0000,-0.0000" style="fill-opacity:0.52"/>
+<polygon class="kite raised half" points="37.3163,-0.0000 37.3163,-0.0000 37.3163,-0.0000 0.0000,-0.0000 0.0000,-0.0000 0.0000,-0.0000" style="fill-opacity:0.52"/>
+<polygon class="kite sunk half" points="37.3163,-0.0000 37.3163,-0.0000 0.0000,-0.0000 0.0000,-0.0000 16.2826,11.1111" style="fill-opacity:0.52"/>
+<polygon class="kite raised half" points="74.6326,-0.0000 74.6326,-0.0000 53.5989,-11.1111 37.3163,-0.0000 37.3163,-0.0000" style="fill-opacity:0.52"/>
+<polygon class="kite sunk half" points="74.6326,-0.0000 74.6326,-0.0000 74.6326,-0.0000 37.3163,-0.0000 37.3163,-0.0000 37.3163,-0.0000" style="fill-opacity:0.52"/>
+<polygon class="kite raised half" points="74.6326,-0.0000 74.6326,-0.0000 74.6326,-0.0000 37.3163,-0.0000 37.3163,-0.0000 37.3163,-0.0000" style="fill-opacity:0.52"/>
+<polygon class="kite sunk half" points="74.6326,-0.0000 74.6326,-0.0000 37.3163,-0.0000 37.3163,-0.0000 53.5989,11.1111" style="fill-opacity:0.52"/>
+<polygon class="kite raised half" points="107.8689,-0.0000 105.4362,-3.4404 90.9152,-11.1111 74.6326,-0.0000 74.6326,-0.0000" style="fill-opacity:0.37"/>
+<polygon class="kite sunk half" points="107.8689,-0.0000 107.8689,-0.0000 74.6326,-0.0000 74.6326,-0.0000 74.6326,-0.0000" style="fill-opacity:0.37"/>
+<polygon class="kite raised half" points="107.8689,-0.0000 107.8689,-0.0000 74.6326,-0.0000 74.6326,-0.0000 74.6326,-0.0000" style="fill-opacity:0.37"/>
+<polygon class="kite sunk half" points="105.4362,3.4404 107.8689,-0.0000 74.6326,-0.0000 74.6326,-0.0000 90.9152,11.1111" style="fill-opacity:0.37"/>
+<polygon class="face" points="0.0000,-0.0000 107.8689,-0.0000 53.9345,-76.2749" />
+<polygon class="face" points="0.0000,0.0000 107.8689,0.0000 53.9345,76.2749" />
+<polygon class="shadow" points="-66.6667,-0.0000 -62.4226,22.4239 -53.9345,38.1374 -17.9782,63.5624 0.0000,67.6602 17.9782,63.5624 53.9345,38.1374 62.4226,22.4239 66.6667,-0.0000 62.4226,-22.4239 53.9345,-38.1374 17.9782,-63.5624 0.0000,-67.6602 -17.9782,-63.5624 -53.9345,-38.1374 -62.4226,-22.4239" />
+<polygon class="socket" points="-66.6667,-0.0000 -58.7977,29.1344 -52.9326,38.8459 -18.9800,62.8539 0.0000,66.7701 18.9800,62.8539 52.9326,38.8459 58.7977,29.1344 66.6667,-0.0000 58.7977,-29.1344 52.9326,-38.8459 18.9800,-62.8539 0.0000,-66.7701 -18.9800,-62.8539 -52.9326,-38.8459 -58.7977,-29.1344" />
+<line class="star" x1="52.933" y1="-38.846" x2="43.135" y2="-45.774"/>
+<line class="star" x1="58.798" y1="-29.134" x2="64.501" y2="-18.576"/>
+<line class="seam" x1="0" y1="0" x2="107.87" y2="0"/>
+<text class="lab" x="2.00" y="-4.00" text-anchor="start">A0 (OCD centre, inside the socket)</text>
+<text class="lab" x="109.87" y="-0.00" text-anchor="start">E0 (edge end)</text>
+<text class="lab" x="53.93" y="-81.27" text-anchor="middle">T+ (tetrahedron centre)</text>
+<text class="lab" x="53.93" y="80.27" text-anchor="middle">T− (tetrahedron centre)</text>
+<text class="lab strong" x="72.00" y="-70.00" text-anchor="start">face 1 of W(m): raised rows = bumps of W(m)</text>
+<text class="lab strong" x="72.00" y="70.00" text-anchor="start">mirror face of W(ρm): the same rows, sign reversed</text>
+<text class="lab" x="50.00" y="3.00" text-anchor="start">seam A0E0: a row axis — these kites are half raised, half sunk</text>
+<text class="lab small" x="75.00" y="-6.00" text-anchor="start">socket rim (OCD section); grey = OCD shadow</text></svg></div>
+<div class="panel"><h2>Depth transition: section across the seam, and the depth law</h2><svg viewBox="0 0 760 215" width="760" height="215" role="img" aria-label="height profile and depth law"><polyline class="prof" points="146.7,79.9 193.3,59.1 240.0,82.3 286.7,56.7 333.3,84.0 380.0,70.0 426.7,56.0 473.3,83.3 520.0,57.7 566.7,80.9 613.3,60.1"/>
+<line class="seam" x1="119.6" y1="70.0" x2="640.4" y2="70.0"/>
+<line class="axis" x1="380.0" y1="44.8" x2="380.0" y2="95.2"/>
+<text class="lab small" x="146.7" y="93.9" text-anchor="middle">1.1</text>
+<text class="lab small" x="193.3" y="53.1" text-anchor="middle">1.2</text>
+<text class="lab small" x="240.0" y="96.3" text-anchor="middle">1.4</text>
+<text class="lab small" x="286.7" y="50.7" text-anchor="middle">1.5</text>
+<text class="lab small" x="333.3" y="98.0" text-anchor="middle">1.6</text>
+<text class="lab small" x="426.7" y="50.0" text-anchor="middle">1.6</text>
+<text class="lab small" x="473.3" y="97.3" text-anchor="middle">1.5</text>
+<text class="lab small" x="520.0" y="51.7" text-anchor="middle">1.4</text>
+<text class="lab small" x="566.7" y="94.9" text-anchor="middle">1.2</text>
+<text class="lab small" x="613.3" y="54.1" text-anchor="middle">1.1</text>
+<text class="lab" x="119.6" y="22.8">section across the rows at u = 31 mm from A0, through the seam (centre); numbers = ridge-to-valley depth in mm; heights x3</text>
+<text class="lab small" x="384.0" y="99.2">seam A0E0</text>
+<text class="lab small" x="640.4" y="98.0" text-anchor="end">face 1 (W(m)) →</text>
+<text class="lab small" x="119.6" y="98.0">← mirror face (W(ρm))</text>
+<polyline class="prof" points="257.1,130.0 263.2,130.7 269.2,131.3 275.3,132.0 281.3,132.7 287.3,133.3 293.4,134.0 299.4,134.7 305.5,135.3 311.5,136.0 317.5,136.7 323.6,137.3 329.6,138.0 335.6,138.7 341.7,139.3 347.7,140.0 353.8,140.7 359.8,141.3 365.8,142.0 371.9,142.6 377.9,143.3 383.9,144.0 390.0,144.6 396.0,145.3 402.1,146.0 408.1,146.6 414.1,147.3 420.2,148.0 426.2,148.6 432.2,149.3 438.3,150.0 444.3,150.6 450.4,151.3 456.4,152.0 462.4,152.6 468.5,153.3 474.5,154.0 480.5,154.6 486.6,155.3 492.6,156.0 498.7,156.6 504.7,157.0 510.7,157.0 516.8,157.0 522.8,157.0 528.9,157.0 534.9,157.0 540.9,157.0 547.0,157.0 553.0,157.0 559.0,157.0 565.1,157.0 571.1,157.0 577.2,157.0 583.2,157.0 589.2,157.0 595.3,157.0 601.3,157.0 607.3,157.0 613.4,157.0"/>
+<line class="axis" x1="257.1" y1="190.0" x2="257.1" y2="121.0"/><text class="lab small" x="257.1" y="202.0" text-anchor="middle">socket rim 26 mm</text>
+<line class="axis" x1="502.0" y1="190.0" x2="502.0" y2="121.0"/><text class="lab small" x="502.0" y="202.0" text-anchor="middle">fade end 37 mm</text>
+<line class="axis" x1="488.3" y1="190.0" x2="488.3" y2="121.0"/><text class="lab small" x="488.3" y="202.0" text-anchor="middle">T (corner) 37 mm</text>
+<line class="axis" x1="613.4" y1="190.0" x2="613.4" y2="121.0"/><text class="lab small" x="613.4" y="202.0" text-anchor="middle">E (corner) 42 mm</text>
+<text class="lab small" x="116.0" y="160.0" text-anchor="end">1.1 mm</text>
+<text class="lab small" x="116.0" y="133.0" text-anchor="end">2.0 mm</text>
+<text class="lab" x="120.0" y="113.0">depth law d(distance from the OCD centre): 2.0 mm at the rim → 1.1 mm from 37 mm on (both sockets; the two fields meet on the bisector E0T+, where they are equal)</text></svg>
+<p>Measured on the OCD itself: its kites fold by 23.8° (dihedral 156.2°) and the star centre rises 1.12 mm above the ring of its neighbours — the imprint's own relief is about 1.1 mm, i.e. DICTO's number. A kite roof folding like the OCD's facets (23.8°) over one row spacing is 0.9 mm deep. So "imprint depth fading to 1.1 mm" would be flat; for a visible transition the rows nearest the socket must be deeper than the imprint. Drawn: <strong>2.0 mm at the socket rim fading linearly to 1.1 mm at 37 mm from the OCD centre</strong> (the fade spans the inner 11 mm of each face; the far corners stay at 1.1 mm). Alternative if the far surface should be fainter: 1.1 mm at the rim fading to 0.5 mm. The depth field depends only on the distance from the nearer OCD centre, so it is continuous across every seam and fold (the piece's E0T-type edges lie on the bisector of the two centres).</p></div>
+<div class="panel"><h2>(b) The 8 flat faces of one W (each drawn in its own frame: A at the fan centre, E along the edge, T at the apex)</h2>
+<svg viewBox="80 60 1000 440" width="1100" height="484" role="img" aria-label="layout over the eight faces"><polygon class="kite seam" points="288.1832,363.4231 288.1832,363.4231 304.7957,348.1023 300.0000,330.0000 300.0000,330.0000" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="276.3663,396.8461 276.3663,396.8461 292.9789,381.5254 288.1832,363.4231 288.1832,363.4231" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="265.8415,426.6148 269.6933,425.5254 281.1621,414.9484 276.3663,396.8461 276.3663,396.8461" style="fill-opacity:0.37"/>
+<polygon class="kite raised" points="300.0000,330.0000 300.0000,330.0000 304.7957,348.1023 310.0692,344.2400" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="304.7957,348.1023 288.1832,363.4231 292.9789,381.5254 308.0869,370.4601" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="292.9789,381.5254 276.3663,396.8461 281.1621,414.9484 296.2701,403.8831" style="fill-opacity:0.47"/>
+<polygon class="kite raised" points="282.1984,421.9884 281.1621,414.9484 269.6933,425.5254" style="fill-opacity:0.34"/>
+<polygon class="kite sunk" points="308.0869,370.4601 320.5089,359.0040 310.0692,344.2400 304.7957,348.1023" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="296.2701,403.8831 312.8826,388.5624 308.0869,370.4601 292.9789,381.5254" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="282.1984,421.9884 299.7513,417.0237 296.2701,403.8831 281.1621,414.9484" style="fill-opacity:0.37"/>
+<polygon class="kite raised" points="326.5197,367.5045 320.5089,359.0040 308.0869,370.4601 312.8826,388.5624 327.9907,377.4971" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="312.8826,388.5624 296.2701,403.8831 299.7513,417.0237 312.9296,413.2963 316.1738,410.9202" style="fill-opacity:0.43"/>
+<polygon class="kite sunk" points="326.5197,367.5045 327.9907,377.4971 331.3771,374.3740" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="316.1738,410.9202 332.7864,395.5994 327.9907,377.4971 312.8826,388.5624" style="fill-opacity:0.50"/>
+<polygon class="kite sunk" points="316.5333,412.2770 316.1738,410.9202 312.9296,413.2963" style="fill-opacity:0.38"/>
+<polygon class="kite raised" points="331.3771,374.3740 327.9907,377.4971 332.7864,395.5994 341.7458,389.0375" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="334.4936,407.1971 332.7864,395.5994 316.1738,410.9202 316.5333,412.2770" style="fill-opacity:0.41"/>
+<polygon class="kite sunk" points="334.4936,407.1971 351.2377,402.4611 341.7458,389.0375 332.7864,395.5994" style="fill-opacity:0.41"/>
+<polygon class="face" points="300.0000,330.0000 265.8415,426.6148 351.2377,402.4611" />
+<polygon class="socket" points="321.1111,270.2888 292.5245,268.1108 281.9690,270.2888 249.7141,293.0964 240.1961,308.8561 237.6934,327.0961 248.4450,365.1089 255.2859,373.4374 278.8889,389.7112 307.4755,391.8892 318.0310,389.7112 350.2859,366.9036 359.8039,351.1439 362.3066,332.9039 351.5550,294.8911 344.7141,286.5626" />
+<text class="lab strong" x="318.0" y="398.8" text-anchor="middle">face 1  bump</text>
+<text class="lab small" x="262.7" y="429.8" text-anchor="middle">E0</text>
+<text class="lab small" x="356.6" y="404.4" text-anchor="middle">T+</text>
+<polygon class="kite seam" points="320.4674,358.9452 320.4674,358.9452 317.5493,336.5357 300.0000,330.0000 300.0000,330.0000" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="340.9347,387.8904 340.9347,387.8904 338.0166,365.4809 320.4674,358.9452 320.4674,358.9452" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="359.1642,413.6709 360.4985,409.8969 358.4840,394.4261 340.9347,387.8904 340.9347,387.8904" style="fill-opacity:0.37"/>
+<polygon class="kite sunk" points="300.0000,330.0000 300.0000,330.0000 317.5493,336.5357 317.4403,330.0000" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="317.5493,336.5357 320.4674,358.9452 338.0166,365.4809 337.7045,346.7567" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="338.0166,365.4809 340.9347,387.8904 358.4840,394.4261 358.1719,375.7019" style="fill-opacity:0.47"/>
+<polygon class="kite sunk" points="364.8304,397.6445 358.4840,394.4261 360.4985,409.8969" style="fill-opacity:0.34"/>
+<polygon class="kite raised" points="337.7045,346.7567 335.5225,330.0000 317.4403,330.0000 317.5493,336.5357" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="358.1719,375.7019 355.2538,353.2924 337.7045,346.7567 338.0166,365.4809" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="364.8304,397.6445 370.9110,380.4462 358.1719,375.7019 358.4840,394.4261" style="fill-opacity:0.37"/>
+<polygon class="kite sunk" points="345.9335,330.0000 335.5225,330.0000 337.7045,346.7567 355.2538,353.2924 354.9417,334.5682" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="355.2538,353.2924 358.1719,375.7019 370.9110,380.4462 375.4760,367.5342 375.4090,363.5134" style="fill-opacity:0.43"/>
+<polygon class="kite raised" points="345.9335,330.0000 354.9417,334.5682 354.3468,330.0000" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="375.4090,363.5134 372.4909,341.1039 354.9417,334.5682 355.2538,353.2924" style="fill-opacity:0.50"/>
+<polygon class="kite raised" points="376.7244,364.0033 375.4090,363.5134 375.4760,367.5342" style="fill-opacity:0.38"/>
+<polygon class="kite sunk" points="354.3468,330.0000 354.9417,334.5682 372.4909,341.1039 372.3058,330.0000" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="382.9460,346.4058 372.4909,341.1039 375.4090,363.5134 376.7244,364.0033" style="fill-opacity:0.41"/>
+<polygon class="kite raised" points="382.9460,346.4058 388.7464,330.0000 372.3058,330.0000 372.4909,341.1039" style="fill-opacity:0.41"/>
+<polygon class="face" points="300.0000,330.0000 359.1642,413.6709 388.7464,330.0000" />
+<polygon class="socket" points="263.4345,278.2885 245.1517,300.3720 240.8358,310.2480 240.8358,349.7520 248.2083,366.6223 261.6562,379.1966 298.9010,392.3646 309.6508,391.5875 336.5655,381.7115 354.8483,359.6280 359.1642,349.7520 359.1642,310.2480 351.7917,293.3777 338.3438,280.8034 301.0990,267.6354 290.3492,268.4125" />
+<text class="lab strong" x="366.6" y="355.1" text-anchor="middle">face 3  dent</text>
+<text class="lab small" x="360.0" y="418.1" text-anchor="middle">E1</text>
+<text class="lab small" x="393.4" y="326.7" text-anchor="middle">T+</text>
+<polygon class="kite seam" points="335.4505,330.0000 335.4505,330.0000 315.4684,319.4444 300.0000,330.0000 300.0000,330.0000" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="370.9010,330.0000 370.9010,330.0000 350.9189,319.4444 335.4505,330.0000 335.4505,330.0000" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="402.4755,330.0000 400.1644,326.7317 386.3694,319.4444 370.9010,330.0000 370.9010,330.0000" style="fill-opacity:0.37"/>
+<polygon class="kite sunk" points="300.0000,330.0000 300.0000,330.0000 315.4684,319.4444 310.0692,315.7600" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="315.4684,319.4444 335.4505,330.0000 350.9189,319.4444 335.4505,308.8889" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="350.9189,319.4444 370.9010,330.0000 386.3694,319.4444 370.9010,308.8889" style="fill-opacity:0.47"/>
+<polygon class="kite sunk" points="392.6614,316.1207 386.3694,319.4444 400.1644,326.7317" style="fill-opacity:0.34"/>
+<polygon class="kite raised" points="335.4505,308.8889 320.5089,300.9960 310.0692,315.7600 315.4684,319.4444" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="370.9010,308.8889 350.9189,298.3333 335.4505,308.8889 350.9189,319.4444" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="392.6614,316.1207 382.1296,301.2266 370.9010,308.8889 386.3694,319.4444" style="fill-opacity:0.37"/>
+<polygon class="kite sunk" points="326.5197,292.4955 320.5089,300.9960 335.4505,308.8889 350.9189,298.3333 335.4505,287.7778" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="350.9189,298.3333 370.9010,308.8889 382.1296,301.2266 374.2226,290.0444 370.9010,287.7778" style="fill-opacity:0.43"/>
+<polygon class="kite raised" points="326.5197,292.4955 335.4505,287.7778 331.3771,285.6260" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="370.9010,287.7778 350.9189,277.2222 335.4505,287.7778 350.9189,298.3333" style="fill-opacity:0.50"/>
+<polygon class="kite raised" points="372.0604,286.9866 370.9010,287.7778 374.2226,290.0444" style="fill-opacity:0.38"/>
+<polygon class="kite sunk" points="331.3771,285.6260 335.4505,287.7778 350.9189,277.2222 341.7458,270.9625" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="361.2842,271.7467 350.9189,277.2222 370.9010,287.7778 372.0604,286.9866" style="fill-opacity:0.41"/>
+<polygon class="kite raised" points="361.2842,271.7467 351.2377,257.5389 341.7458,270.9625 350.9189,277.2222" style="fill-opacity:0.41"/>
+<polygon class="face" points="300.0000,330.0000 402.4755,330.0000 351.2377,257.5389" />
+<polygon class="socket" points="236.6667,330.0000 244.1422,357.6777 249.7141,366.9036 281.9690,389.7112 300.0000,393.4316 318.0310,389.7112 350.2859,366.9036 355.8578,357.6777 363.3333,330.0000 355.8578,302.3223 350.2859,293.0964 318.0310,270.2888 300.0000,266.5684 281.9690,270.2888 249.7141,293.0964 244.1422,302.3223" />
+<text class="lab strong" x="358.9" y="290.1" text-anchor="middle">face 2  dent</text>
+<text class="lab small" x="406.6" y="331.9" text-anchor="middle">E1</text>
+<text class="lab small" x="351.2" y="251.8" text-anchor="middle">T−</text>
+<polygon class="kite seam" points="320.4674,301.0548 320.4674,301.0548 300.3121,311.2758 300.0000,330.0000 300.0000,330.0000" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="340.9347,272.1096 340.9347,272.1096 320.7795,282.3306 320.4674,301.0548 320.4674,301.0548" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="359.1642,246.3291 355.1614,246.3291 341.2468,253.3854 340.9347,272.1096 340.9347,272.1096" style="fill-opacity:0.37"/>
+<polygon class="kite raised" points="300.0000,330.0000 300.0000,330.0000 300.3121,311.2758 294.1866,313.5571" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="300.3121,311.2758 320.4674,301.0548 320.7795,282.3306 303.2302,288.8663" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="320.7795,282.3306 340.9347,272.1096 341.2468,253.3854 323.6976,259.9211" style="fill-opacity:0.47"/>
+<polygon class="kite raised" points="342.1657,246.3291 341.2468,253.3854 355.1614,246.3291" style="fill-opacity:0.34"/>
+<polygon class="kite sunk" points="303.2302,288.8663 288.1592,296.5090 294.1866,313.5571 300.3121,311.2758" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="323.6976,259.9211 303.5423,270.1421 303.2302,288.8663 320.7795,282.3306" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="342.1657,246.3291 323.9241,246.3291 323.6976,259.9211 341.2468,253.3854" style="fill-opacity:0.37"/>
+<polygon class="kite raised" points="284.6888,286.6935 288.1592,296.5090 303.2302,288.8663 303.5423,270.1421 285.9931,276.6778" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="303.5423,270.1421 323.6976,259.9211 323.9241,246.3291 310.2289,246.3291 306.4604,247.7326" style="fill-opacity:0.43"/>
+<polygon class="kite sunk" points="284.6888,286.6935 285.9931,276.6778 281.8844,278.7613" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="306.4604,247.7326 286.3052,257.9536 285.9931,276.6778 303.5423,270.1421" style="fill-opacity:0.50"/>
+<polygon class="kite sunk" points="306.4838,246.3291 306.4604,247.7326 310.2289,246.3291" style="fill-opacity:0.38"/>
+<polygon class="kite raised" points="281.8844,278.7613 285.9931,276.6778 286.3052,257.9536 275.8981,261.8294" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="287.8189,246.3291 286.3052,257.9536 306.4604,247.7326 306.4838,246.3291" style="fill-opacity:0.41"/>
+<polygon class="kite sunk" points="287.8189,246.3291 270.4179,246.3291 275.8981,261.8294 286.3052,257.9536" style="fill-opacity:0.41"/>
+<polygon class="face" points="300.0000,330.0000 359.1642,246.3291 270.4179,246.3291" />
+<polygon class="socket" points="263.4345,381.7115 290.3492,391.5875 301.0990,392.3646 338.3438,379.1966 351.7917,366.6223 359.1642,349.7520 359.1642,310.2480 354.8483,300.3720 336.5655,278.2885 309.6508,268.4125 298.9010,267.6354 261.6562,280.8034 248.2083,293.3777 240.8358,310.2480 240.8358,349.7520 245.1517,359.6280" />
+<text class="lab strong" x="301.4" y="258.9" text-anchor="middle">face 0  bump</text>
+<text class="lab small" x="363.1" y="244.1" text-anchor="middle">E0</text>
+<text class="lab small" x="265.8" y="243.0" text-anchor="middle">T−</text>
+<text class="lab strong" x="300" y="334" text-anchor="middle">A0</text>
+<polygon class="kite seam" points="838.1832,363.4231 838.1832,363.4231 854.7957,348.1023 850.0000,330.0000 850.0000,330.0000" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="826.3663,396.8461 826.3663,396.8461 842.9789,381.5254 838.1832,363.4231 838.1832,363.4231" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="815.8415,426.6148 819.6933,425.5254 831.1621,414.9484 826.3663,396.8461 826.3663,396.8461" style="fill-opacity:0.37"/>
+<polygon class="kite raised" points="850.0000,330.0000 850.0000,330.0000 854.7957,348.1023 860.0692,344.2400" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="854.7957,348.1023 838.1832,363.4231 842.9789,381.5254 858.0869,370.4601" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="842.9789,381.5254 826.3663,396.8461 831.1621,414.9484 846.2701,403.8831" style="fill-opacity:0.47"/>
+<polygon class="kite raised" points="832.1984,421.9884 831.1621,414.9484 819.6933,425.5254" style="fill-opacity:0.34"/>
+<polygon class="kite sunk" points="858.0869,370.4601 870.5089,359.0040 860.0692,344.2400 854.7957,348.1023" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="846.2701,403.8831 862.8826,388.5624 858.0869,370.4601 842.9789,381.5254" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="832.1984,421.9884 849.7513,417.0237 846.2701,403.8831 831.1621,414.9484" style="fill-opacity:0.37"/>
+<polygon class="kite raised" points="876.5197,367.5045 870.5089,359.0040 858.0869,370.4601 862.8826,388.5624 877.9907,377.4971" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="862.8826,388.5624 846.2701,403.8831 849.7513,417.0237 862.9296,413.2963 866.1738,410.9202" style="fill-opacity:0.43"/>
+<polygon class="kite sunk" points="876.5197,367.5045 877.9907,377.4971 881.3771,374.3740" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="866.1738,410.9202 882.7864,395.5994 877.9907,377.4971 862.8826,388.5624" style="fill-opacity:0.50"/>
+<polygon class="kite sunk" points="866.5333,412.2770 866.1738,410.9202 862.9296,413.2963" style="fill-opacity:0.38"/>
+<polygon class="kite raised" points="881.3771,374.3740 877.9907,377.4971 882.7864,395.5994 891.7458,389.0375" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="884.4936,407.1971 882.7864,395.5994 866.1738,410.9202 866.5333,412.2770" style="fill-opacity:0.41"/>
+<polygon class="kite sunk" points="884.4936,407.1971 901.2377,402.4611 891.7458,389.0375 882.7864,395.5994" style="fill-opacity:0.41"/>
+<polygon class="face" points="850.0000,330.0000 815.8415,426.6148 901.2377,402.4611" />
+<polygon class="socket" points="871.1111,270.2888 842.5245,268.1108 831.9690,270.2888 799.7141,293.0964 790.1961,308.8561 787.6934,327.0961 798.4450,365.1089 805.2859,373.4374 828.8889,389.7112 857.4755,391.8892 868.0310,389.7112 900.2859,366.9036 909.8039,351.1439 912.3066,332.9039 901.5550,294.8911 894.7141,286.5626" />
+<text class="lab strong" x="868.0" y="398.8" text-anchor="middle">face 7  bump</text>
+<text class="lab small" x="812.7" y="429.8" text-anchor="middle">E1</text>
+<text class="lab small" x="906.6" y="404.4" text-anchor="middle">T−</text>
+<polygon class="kite seam" points="870.4674,358.9452 870.4674,358.9452 867.5493,336.5357 850.0000,330.0000 850.0000,330.0000" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="890.9347,387.8904 890.9347,387.8904 888.0166,365.4809 870.4674,358.9452 870.4674,358.9452" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="909.1642,413.6709 910.4985,409.8969 908.4840,394.4261 890.9347,387.8904 890.9347,387.8904" style="fill-opacity:0.37"/>
+<polygon class="kite sunk" points="850.0000,330.0000 850.0000,330.0000 867.5493,336.5357 867.4403,330.0000" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="867.5493,336.5357 870.4674,358.9452 888.0166,365.4809 887.7045,346.7567" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="888.0166,365.4809 890.9347,387.8904 908.4840,394.4261 908.1719,375.7019" style="fill-opacity:0.47"/>
+<polygon class="kite sunk" points="914.8304,397.6445 908.4840,394.4261 910.4985,409.8969" style="fill-opacity:0.34"/>
+<polygon class="kite raised" points="887.7045,346.7567 885.5225,330.0000 867.4403,330.0000 867.5493,336.5357" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="908.1719,375.7019 905.2538,353.2924 887.7045,346.7567 888.0166,365.4809" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="914.8304,397.6445 920.9110,380.4462 908.1719,375.7019 908.4840,394.4261" style="fill-opacity:0.37"/>
+<polygon class="kite sunk" points="895.9335,330.0000 885.5225,330.0000 887.7045,346.7567 905.2538,353.2924 904.9417,334.5682" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="905.2538,353.2924 908.1719,375.7019 920.9110,380.4462 925.4760,367.5342 925.4090,363.5134" style="fill-opacity:0.43"/>
+<polygon class="kite raised" points="895.9335,330.0000 904.9417,334.5682 904.3468,330.0000" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="925.4090,363.5134 922.4909,341.1039 904.9417,334.5682 905.2538,353.2924" style="fill-opacity:0.50"/>
+<polygon class="kite raised" points="926.7244,364.0033 925.4090,363.5134 925.4760,367.5342" style="fill-opacity:0.38"/>
+<polygon class="kite sunk" points="904.3468,330.0000 904.9417,334.5682 922.4909,341.1039 922.3058,330.0000" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="932.9460,346.4058 922.4909,341.1039 925.4090,363.5134 926.7244,364.0033" style="fill-opacity:0.41"/>
+<polygon class="kite raised" points="932.9460,346.4058 938.7464,330.0000 922.3058,330.0000 922.4909,341.1039" style="fill-opacity:0.41"/>
+<polygon class="face" points="850.0000,330.0000 909.1642,413.6709 938.7464,330.0000" />
+<polygon class="socket" points="813.4345,278.2885 795.1517,300.3720 790.8358,310.2480 790.8358,349.7520 798.2083,366.6223 811.6562,379.1966 848.9010,392.3646 859.6508,391.5875 886.5655,381.7115 904.8483,359.6280 909.1642,349.7520 909.1642,310.2480 901.7917,293.3777 888.3438,280.8034 851.0990,267.6354 840.3492,268.4125" />
+<text class="lab strong" x="916.6" y="355.1" text-anchor="middle">face 5  dent</text>
+<text class="lab small" x="910.0" y="418.1" text-anchor="middle">E0</text>
+<text class="lab small" x="943.4" y="326.7" text-anchor="middle">T−</text>
+<polygon class="kite seam" points="885.4505,330.0000 885.4505,330.0000 865.4684,319.4444 850.0000,330.0000 850.0000,330.0000" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="920.9010,330.0000 920.9010,330.0000 900.9189,319.4444 885.4505,330.0000 885.4505,330.0000" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="952.4755,330.0000 950.1644,326.7317 936.3694,319.4444 920.9010,330.0000 920.9010,330.0000" style="fill-opacity:0.37"/>
+<polygon class="kite sunk" points="850.0000,330.0000 850.0000,330.0000 865.4684,319.4444 860.0692,315.7600" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="865.4684,319.4444 885.4505,330.0000 900.9189,319.4444 885.4505,308.8889" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="900.9189,319.4444 920.9010,330.0000 936.3694,319.4444 920.9010,308.8889" style="fill-opacity:0.47"/>
+<polygon class="kite sunk" points="942.6614,316.1207 936.3694,319.4444 950.1644,326.7317" style="fill-opacity:0.34"/>
+<polygon class="kite raised" points="885.4505,308.8889 870.5089,300.9960 860.0692,315.7600 865.4684,319.4444" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="920.9010,308.8889 900.9189,298.3333 885.4505,308.8889 900.9189,319.4444" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="942.6614,316.1207 932.1296,301.2266 920.9010,308.8889 936.3694,319.4444" style="fill-opacity:0.37"/>
+<polygon class="kite sunk" points="876.5197,292.4955 870.5089,300.9960 885.4505,308.8889 900.9189,298.3333 885.4505,287.7778" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="900.9189,298.3333 920.9010,308.8889 932.1296,301.2266 924.2226,290.0444 920.9010,287.7778" style="fill-opacity:0.43"/>
+<polygon class="kite raised" points="876.5197,292.4955 885.4505,287.7778 881.3771,285.6260" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="920.9010,287.7778 900.9189,277.2222 885.4505,287.7778 900.9189,298.3333" style="fill-opacity:0.50"/>
+<polygon class="kite raised" points="922.0604,286.9866 920.9010,287.7778 924.2226,290.0444" style="fill-opacity:0.38"/>
+<polygon class="kite sunk" points="881.3771,285.6260 885.4505,287.7778 900.9189,277.2222 891.7458,270.9625" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="911.2842,271.7467 900.9189,277.2222 920.9010,287.7778 922.0604,286.9866" style="fill-opacity:0.41"/>
+<polygon class="kite raised" points="911.2842,271.7467 901.2377,257.5389 891.7458,270.9625 900.9189,277.2222" style="fill-opacity:0.41"/>
+<polygon class="face" points="850.0000,330.0000 952.4755,330.0000 901.2377,257.5389" />
+<polygon class="socket" points="786.6667,330.0000 794.1422,357.6777 799.7141,366.9036 831.9690,389.7112 850.0000,393.4316 868.0310,389.7112 900.2859,366.9036 905.8578,357.6777 913.3333,330.0000 905.8578,302.3223 900.2859,293.0964 868.0310,270.2888 850.0000,266.5684 831.9690,270.2888 799.7141,293.0964 794.1422,302.3223" />
+<text class="lab strong" x="908.9" y="290.1" text-anchor="middle">face 4  dent</text>
+<text class="lab small" x="956.6" y="331.9" text-anchor="middle">E0</text>
+<text class="lab small" x="901.2" y="251.8" text-anchor="middle">T+</text>
+<polygon class="kite seam" points="870.4674,301.0548 870.4674,301.0548 850.3121,311.2758 850.0000,330.0000 850.0000,330.0000" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="890.9347,272.1096 890.9347,272.1096 870.7795,282.3306 870.4674,301.0548 870.4674,301.0548" style="fill-opacity:0.52"/>
+<polygon class="kite seam" points="909.1642,246.3291 905.1614,246.3291 891.2468,253.3854 890.9347,272.1096 890.9347,272.1096" style="fill-opacity:0.37"/>
+<polygon class="kite raised" points="850.0000,330.0000 850.0000,330.0000 850.3121,311.2758 844.1866,313.5571" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="850.3121,311.2758 870.4674,301.0548 870.7795,282.3306 853.2302,288.8663" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="870.7795,282.3306 890.9347,272.1096 891.2468,253.3854 873.6976,259.9211" style="fill-opacity:0.47"/>
+<polygon class="kite raised" points="892.1657,246.3291 891.2468,253.3854 905.1614,246.3291" style="fill-opacity:0.34"/>
+<polygon class="kite sunk" points="853.2302,288.8663 838.1592,296.5090 844.1866,313.5571 850.3121,311.2758" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="873.6976,259.9211 853.5423,270.1421 853.2302,288.8663 870.7795,282.3306" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="892.1657,246.3291 873.9241,246.3291 873.6976,259.9211 891.2468,253.3854" style="fill-opacity:0.37"/>
+<polygon class="kite raised" points="834.6888,286.6935 838.1592,296.5090 853.2302,288.8663 853.5423,270.1421 835.9931,276.6778" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="853.5423,270.1421 873.6976,259.9211 873.9241,246.3291 860.2289,246.3291 856.4604,247.7326" style="fill-opacity:0.43"/>
+<polygon class="kite sunk" points="834.6888,286.6935 835.9931,276.6778 831.8844,278.7613" style="fill-opacity:0.52"/>
+<polygon class="kite sunk" points="856.4604,247.7326 836.3052,257.9536 835.9931,276.6778 853.5423,270.1421" style="fill-opacity:0.50"/>
+<polygon class="kite sunk" points="856.4838,246.3291 856.4604,247.7326 860.2289,246.3291" style="fill-opacity:0.38"/>
+<polygon class="kite raised" points="831.8844,278.7613 835.9931,276.6778 836.3052,257.9536 825.8981,261.8294" style="fill-opacity:0.52"/>
+<polygon class="kite raised" points="837.8189,246.3291 836.3052,257.9536 856.4604,247.7326 856.4838,246.3291" style="fill-opacity:0.41"/>
+<polygon class="kite sunk" points="837.8189,246.3291 820.4179,246.3291 825.8981,261.8294 836.3052,257.9536" style="fill-opacity:0.41"/>
+<polygon class="face" points="850.0000,330.0000 909.1642,246.3291 820.4179,246.3291" />
+<polygon class="socket" points="813.4345,381.7115 840.3492,391.5875 851.0990,392.3646 888.3438,379.1966 901.7917,366.6223 909.1642,349.7520 909.1642,310.2480 904.8483,300.3720 886.5655,278.2885 859.6508,268.4125 848.9010,267.6354 811.6562,280.8034 798.2083,293.3777 790.8358,310.2480 790.8358,349.7520 795.1517,359.6280" />
+<text class="lab strong" x="851.4" y="258.9" text-anchor="middle">face 6  bump</text>
+<text class="lab small" x="913.1" y="244.1" text-anchor="middle">E1</text>
+<text class="lab small" x="815.8" y="243.0" text-anchor="middle">T+</text>
+<text class="lab strong" x="850" y="334" text-anchor="middle">A1</text></svg>
+<p>All eight faces carry the <em>same</em> picture in their own (A, E, T) frame; the four bump faces (A0E0T±, A1E1T±) with the signs shown, the four dent faces (A0E1T±, A1E0T±) with every sign reversed. Across the fold A0T+ (faces 1 and 3) the two pictures are related by the 3-fold turn about that edge, across A0E0 (faces 1 and 0) by the mirror x = 0, across E0T+ (faces 1 and 4) by the 3-fold turn about that edge, across the piece (faces 1 and 7) by the inversion through the edge midpoint — each fixes the shared edge point by point, so every kite line that reaches a fold continues on the next face.</p></div>
+<div class="panel"><h2>How the pattern is derived, and what it does</h2>
+<ul>
+<li><strong>Tile.</strong> The OCD's star kite itself: long edge 9.4 mm, short edge 7.8 mm, length 14.7 mm, apex angles 55.7° / 68.6° (60 mm octahedron edge). Same scale as the star in the socket.</li>
+<li><strong>Tiling.</strong> The only way congruent kites tile a plane edge to edge: rows of kites nose to tail, neighbouring rows pointing the opposite way and sitting in each other's notches (row spacing 4.4 mm). The rows run parallel to the piece's seam edge A0E0 and one row axis lies <em>on</em> the seam.</li>
+<li><strong>Why that orientation is forced.</strong> Across the seam A0E0 the next face in the same plane belongs to another W, placed by the half-turn about the A0E0 axis. That turn reverses the face normal, so the height field must be anti-symmetric across the seam (zero on it) and the kite lines must be mirror-symmetric about it. The kite tiling's only mirror lines are its row axes, hence rows parallel to A0E0 with an axis on the seam. The seam kites are then split exactly in half: the upper half rises as a bump of one W, the lower half sinks as the dent of the W behind — DICTO's "kite split between neighbouring W".</li>
+<li><strong>Heights.</strong> Row axes alternate: seam 0, then +d/2, −d/2, +d/2 … outward (anti-symmetric on the other side), with d the local depth of the transition law above (deepest at the socket, 1.1 mm far out). Each kite becomes a shallow roof (ridge along its long diagonal) or trough; every raised kite row on a bump face faces a sunk row on the neighbour. Within one face the rows alternate raised / sunk, so the pattern is decorative on its own and the whole face is a key.</li>
+<li><strong>One identical piece.</strong> The eight faces pair bipartitely across the structure (bump faces A0E0T±, A1E1T±; dent faces A0E1T±, A1E0T±; the neighbour across any face presents a face of the other class). The pattern on one face is carried to the other seven by the piece's own 2/m symmetry and by the 3-fold turns about the OCD centres, as in the first keyed W, so every W is the same solid and every bump meets a dent. This is exact, not approximate.</li>
+</ul></div>
+<div class="panel"><h2>Depth and slope (per row spacing of 4.4 mm)</h2>
+<table><tr><th>pattern depth d (ridge to valley)</th><th>slope of the kite roofs</th><th>crease along the kite's long diagonal</th><th>reads as</th></tr>
+<tr><td>1.1 mm</td><td>14°</td><td>10°</td><td>far corners (DICTO´s 1.1 mm = the imprint´s own relief)</td></tr><tr><td>1.5 mm</td><td>19°</td><td>13°</td><td>between</td></tr><tr><td>2.0 mm</td><td>25°</td><td>18°</td><td>at the socket rim (drawn)</td></tr><tr><td>2.5 mm</td><td>30°</td><td>22°</td><td>deeper option at the rim</td></tr>
+</table>
+<p>With the transition the keys are firmest where they matter most, next to the sockets (2 mm, 25° slopes), and decorative-depth (1.1 mm, 14°) at the far corners. The piece's 7.5 mm waist is unaffected.</p></div>
+<div class="panel"><h2>Problems, stated plainly</h2>
+<ul>
+<li><strong>Flat tilted kites are impossible.</strong> A periodic plane tiling by one flat tilted kite is a tilted plane: there is no non-trivial way to give every kite a flat facet. The kites here are creased along their long diagonal (two triangles, fold of 10° at 1.1 mm); at that depth the crease reads as a soft ridge, not a break, but it is not the OCD's flat facet.</li>
+<li><strong>The star does not continue into the rows.</strong> Five-fold order cannot run into a periodic row tiling. The socket rim is a visible join, as on the OCD where the W planes cut its faces. Of the two star edges reaching each face (dashed), one lies within 1° of a row direction but aligning it would tilt the rows off the seam and break the mirror; the rows stay parallel to A0E0.</li>
+<li><strong>The piece's oblique edges.</strong> Along A0T, E0T (and their A1 twins) the relief must return to the face plane so that the faces meet in a closed solid: a fade band about one row wide along those edges (not drawn as such; the clipped kites there will be flattened in 3D). Along the seam edges A0E0, A1E1 nothing fades — the zero line is the seam itself.</li>
+<li><strong>Corners.</strong> The piece corner E0 falls at 2.9 kite lengths from A0, not on a kite vertex; the pattern is simply cut there, and beyond E0 the next W's rows run the other way (inversion through E0). Pattern lines meet at E0 but the kites do not continue straight through it.</li>
+<li><strong>The transition and the sockets.</strong> The deepest rows sit next to the socket rim, exactly where the OCD's shadow (grey) overhangs the face plane: raised rows there must stay clear of the OCD (the first keyed W kept 1.3 mm). The transition may need to start a few mm outside the rim; to be checked in 3D.</li>
+<li><strong>Not yet checked</strong> (phase 1): the 3D closure at the fade bands, print tolerance, the socket shadow margin for the deep rows.</li>
+</ul></div>
