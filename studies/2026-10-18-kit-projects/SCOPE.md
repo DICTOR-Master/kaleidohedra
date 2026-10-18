@@ -26,3 +26,6 @@ Source: studies/2026-10-18-ocd-octet (steps 1–27, Fable review ba28bd0), envel
   - **3b Cuboctahedron set** (refined envelope kit, step 24/25): golden envelope + φ⁻² vertex cuboctahedron + wedge + cut-down tetrahedron L/R (4 shapes).
   - **3c Cuboctahedron + dodecahedron set** (new): as 3b, with each cut-down tetrahedron split into the central 12-pentagon dodecahedron (step 26) + the shell round it (L/R). To compute: is the shell one piece? exact faces of the dodecahedron.
   - 3 (two-shape set) is itself the dodecahedron grown to fill its cube (step 27).
+
+## Outside the plan (DICTO 10-18): spherical containment chambers
+- DICTO: "they would all work well in construction of spherical containment chambers". Idea noted: shells of lattice cells within a radius band (hollow chamber), or nested shells of different sets; adaptor halves let envelopes be left out to open/line the inner surface. Geometry only — nothing structural is claimed. Waiting for DICTO's choice (hollow chamber / nested shells / other) before a first picture.
