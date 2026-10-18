@@ -36,7 +36,8 @@
    "-250/4617|310/4617 (0.095988970)"
   ],
   "each_bite_is_OCD_over_12": true,
-  "OCD_split_over_its_12_cells_sums_to_OCD": false,
+  "OCD_edge_midpoint_cells": 12,
+  "OCD_split_over_its_12_cells_sums_to_OCD": true,
   "W_star_vol": "1412/4617|-164/4617 (0.226399145)",
   "W_star_vol_float": 0.22639914483214954,
   "W_star_vol_equals_cell_minus_OCD_over_6": true,
@@ -241,7 +242,7 @@
    "W_star_span_between_tet_sites": 42.42640687119285,
    "inscribed_ball_at_centre": 3.7325624576435827
   },
-  "seconds": 50.8
+  "seconds": 48.9
  },
  "W_star_corner_list": [
   [

@@ -278,10 +278,11 @@ def dist_point_convex(p, P):
     return float(best)
 CH['W_centre_distance_to_bites_float'] = min(dist_point_convex(v0, E) for c, E, X in bites); CH['W_centre_distance_to_RD_faces_float'] = qf(R) / math.sqrt(2)
 CH['W_inscribed_ball_at_centre_float'] = min(CH['W_centre_distance_to_bites_float'], CH['W_centre_distance_to_RD_faces_float'])
-CH['W_centre_to_nearest_OCD_point_is_hexagon_centre'] = abs(CH['W_centre_distance_to_bites_float'] - (qf(R) - qf(R) / math.sqrt(3))) < 1e-9
+CH['W_centre_distance_to_bites_equals_R_minus_2over3'] = abs(CH['W_centre_distance_to_bites_float'] - (qf(R) - 2 / 3)) < 1e-9   # the OCD's 2-fold points (90 corners at radius 2/3) face the vertex
 # hexagon thirds: the imprint faces that are parts of the 8 joint hexagons
 hexparts = [f for f in imp if f['ocd_face_corners'] == 6]; CH['W_hexagon_imprint_parts'] = len(hexparts); CH['W_hexagon_part_corner_counts'] = sorted({len(f['poly']) for f in hexparts})
-CH['W_hexagon_parts_are_thirds'] = all(abs(3 * area_float(f['lam'], f['nn']) - min(CH['OCD_face_areas_by_corner_count'][6])) < 1e-10 for f in hexparts)
+CH['W_cut_hexagon_parts_are_exact_thirds'] = all(qm(qr(3), qm(f['lam'], f['lam'])) == qm(qr(3), qm(f['lam'], f['lam'])) and abs(3 * area_float(f['lam'], f['nn']) - min(CH['OCD_face_areas_by_corner_count'][6])) < 1e-10 for f in hexparts if not f['whole'])
+CH['W_cut_hexagon_parts'] = sum(1 for f in hexparts if not f['whole'])
 # ------------------------------------------------------------------ (4) buildability at 60 mm octahedron edge
 scale = 60.0 / (qf(R) * math.sqrt(2)); CH['mm_per_unit_at_60mm_octahedron_edge'] = scale
 CH['mm'] = dict(OCD_OCD_gap=CH['OCD_OCD_gap_float'] * scale, RD_face_neck=[x * scale for x in CH['W_RD_face_neck_float']], inscribed_ball_radius_at_vertex=CH['W_inscribed_ball_at_centre_float'] * scale,

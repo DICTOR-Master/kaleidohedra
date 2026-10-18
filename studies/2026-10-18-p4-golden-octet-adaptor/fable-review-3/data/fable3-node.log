@@ -1,0 +1,10 @@
+0.0 s | OCD {'volume': 1.1518676361921631, 'area': 5.428130283724473, 'sphericity': 0.9789689385176594, 'parts': 1, 'solid_parts': 1, 'slivers': 0, 'genus': 0, 'corners': 102, 'sharpest_edge_deg': 156.19979450048587, 'bluntest_reflex_deg': 180.0000274538347, 'edges_below_60deg': 0, 'total_edge_length_below_60deg': 0.0}
+0.1 s | W_OCD {'volume': 1.3583948689928977, 'area': 9.152166319715324, 'sphericity': 0.6481033141857407, 'parts': 1, 'solid_parts': 1, 'slivers': 0, 'genus': 0, 'corners': 206, 'sharpest_edge_deg': 86.87595302367616, 'bluntest_reflex_deg': 203.8002398038982, 'edges_below_60deg': 0, 'total_edge_length_below_60deg': 0.0, 'expected_volume': np.float64(1.3583948689928973)}
+0.1 s | W_star {'volume': 0.2263991448321496, 'area': 2.6041448754879215, 'sphericity': 0.6898195593945686, 'parts': 1, 'solid_parts': 1, 'slivers': 0, 'genus': 0, 'corners': 44, 'sharpest_edge_deg': 75.3856762718824, 'bluntest_reflex_deg': 203.8001899629009, 'edges_below_60deg': 0, 'total_edge_length_below_60deg': 0.0, 'expected_volume': np.float64(0.22639914483214954), 'voronoi_volume': 0.4183770841975101}
+0.1 s | meshes saved
+0.1 s | thickness {'0': {'min': 0.1900949324917345, 'max': 0.1900949324917345}, '0.02': {'min': 0.19009493249173465, 'max': 0.19834817161386517}, '0.05': {'min': 0.19514724714214532, 'max': 0.21072803029706105}, '0.1': {'min': 0.21472152241710113, 'max': 0.23136112810238735}, '0.15': {'min': 0.23429579769205694, 'max': 0.25199422590771364}, '0.2': {'min': 0.26464430623314783, 'max': 0.28647204731934073}, '0.3': {'min': 0.3574240833241158, 'max': 0.42426406871192845}}
+44.8 s | sampling W_OCD uniform {'n': 2000000, 'in_no_piece': 0, 'in_exactly_one': 2000000, 'in_two_or_more': 0, 'in_two_OCDs': 0}
+105.8 s | sampling W_OCD boundary {'n': 2000000, 'in_no_piece': 0, 'in_exactly_one': 2000000, 'in_two_or_more': 0, 'in_two_OCDs': 0}
+215.3 s | sampling W_star uniform {'n': 2000000, 'in_no_piece': 0, 'in_exactly_one': 2000000, 'in_two_or_more': 0, 'in_two_OCDs': 0}
+401.5 s | sampling W_star boundary {'n': 2000000, 'in_no_piece': 0, 'in_exactly_one': 2000000, 'in_two_or_more': 0, 'in_two_OCDs': 0}
+401.5 s | done

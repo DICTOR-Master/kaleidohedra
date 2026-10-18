@@ -46,13 +46,16 @@ for c in lattice_pts(3):
     if X.vol != Z: bites.append((c, E, X))
 CH['OCDs_meeting_cell'] = [[qs_(x) for x in c] for c, E, X in bites]; CH['OCDs_meeting_cell_are_the_edge_ends'] = sorted(tuple(c) for c, E, X in bites) == sorted([(Z, Z, Z), (Z, R, R)])
 CH['bite_volumes'] = sorted({qstr(X.vol) for c, E, X in bites}); CH['each_bite_is_OCD_over_12'] = all(X.vol == qd(OCD.vol, qr(12)) for c, E, X in bites)
-# the OCD at 0 split over its 12 edge-midpoint cells sums to OCD
-tot = Z
-for s in itertools.product((1, -1), repeat=2):
+# the OCD at 0 split over its 12 edge-midpoint cells sums to OCD: the cell of each midpoint mm is the image of VOR under a signed
+# permutation M (about the origin) with M m = mm -- the cells are rotated copies, not translates
+tot = Z; ncells = 0
+for s_ in itertools.product((1, -1), repeat=2):
     for perm in ((0, 1), (0, 2), (1, 2)):
-        mm = [Z, Z, Z]; mm[perm[0]] = qm(half, qr(s[0])); mm[perm[1]] = qm(half, qr(s[1]))
-        t = vsub(mm, m); VORm = Poly([(n, qa(d, dot(n, t))) for n, d in VOR.planes], name='Vm')
+        mm = [Z, Z, Z]; mm[perm[0]] = qm(half, qr(s_[0])); mm[perm[1]] = qm(half, qr(s_[1]))
+        M = next(M for M in SP if apply_lin(qmat(M), m) == mm); Mq = qmat(M)
+        VORm = Poly([(apply_lin(Mq, n), d) for n, d in VOR.planes], name='Vm'); ncells += 1
         tot = qa(tot, intersect(OCD, VORm).vol)
+CH['OCD_edge_midpoint_cells'] = ncells
 CH['OCD_split_over_its_12_cells_sums_to_OCD'] = tot == OCD.vol
 vW = qs(VOR.vol, qsum([X.vol for c, E, X in bites])); CH['W_star_vol'] = qstr(vW); CH['W_star_vol_float'] = qf(vW)
 CH['W_star_vol_equals_cell_minus_OCD_over_6'] = vW == qd(qs(cell, OCD.vol), qr(6)); CH['W_star_vol_matches_claim_1412_minus_164sqrt5_over_4617'] = vW == q('1412/4617|-164/4617')

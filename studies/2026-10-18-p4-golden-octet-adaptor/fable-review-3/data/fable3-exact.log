@@ -1,12 +1,12 @@
 14.7 s | tiling done 6 1.3583948689928973
-19.0 s | split by OCD at [-1.079, 0.0, 1.079] -> cells 27
-24.0 s | split by OCD at [0.0, -1.079, 1.079] -> cells 84
+18.8 s | split by OCD at [-1.079, 0.0, 1.079] -> cells 27
+23.9 s | split by OCD at [0.0, -1.079, 1.079] -> cells 84
 30.7 s | split by OCD at [0.0, 0.0, 2.157] -> cells 160
-35.9 s | split by OCD at [0.0, 0.0, 0.0] -> cells 227
-43.8 s | split by OCD at [0.0, 1.079, 1.079] -> cells 316
-50.1 s | split by OCD at [1.079, 0.0, 1.079] -> cells 407
-77.3 s | connectivity 1
-122.7 s | faces done 206 336 132 0.6481033141857415
+36.3 s | split by OCD at [0.0, 0.0, 0.0] -> cells 227
+44.5 s | split by OCD at [0.0, 1.079, 1.079] -> cells 316
+51.1 s | split by OCD at [1.079, 0.0, 1.079] -> cells 407
+79.4 s | connectivity 1
+124.8 s | faces done 206 336 132 0.6481033141857415
 {
  "cell": "32/27|16/27 (2.510262505)",
  "OCD_vol": "-1000/1539|1240/1539 (1.151867636)",
@@ -282,13 +282,14 @@
  "W_centre_distance_to_bites_float": 0.4120226591665965,
  "W_centre_distance_to_RD_faces_float": 0.7627485370902457,
  "W_inscribed_ball_at_centre_float": 0.4120226591665965,
- "W_centre_to_nearest_OCD_point_is_hexagon_centre": false,
+ "W_centre_distance_to_bites_equals_R_minus_2over3": true,
  "W_hexagon_imprint_parts": 36,
  "W_hexagon_part_corner_counts": [
   5,
   6
  ],
- "W_hexagon_parts_are_thirds": false,
+ "W_cut_hexagon_parts_are_exact_thirds": true,
+ "W_cut_hexagon_parts": 24,
  "mm_per_unit_at_60mm_octahedron_edge": 39.331442200393894,
  "mm": {
   "OCD_OCD_gap": 7.4651249152871575,
@@ -303,6 +304,6 @@
   "octahedron_edge": 60.0,
   "cell_edge_R": 42.42640687119285
  },
- "seconds": 126.6
+ "seconds": 128.5
 }
-126.6 s | done
+128.5 s | done
