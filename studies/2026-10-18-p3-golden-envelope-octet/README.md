@@ -16,3 +16,7 @@ Golden envelope (rhombic triacontahedron) on every octahedron of the octet; enve
 - Views: 3 two-shape set, 3b cuboctahedron set, 3c cuboctahedron + dodecahedron set (all round one envelope), and the 3c pieces laid out.
 ## Next
 - Fable verdict on 3 (running); Fable check of 3b/3c; exact volume of the 3c shell (= cut-down tetrahedron − dodecahedron = 256/81 − 104√5/81 − (−146/27 + 22√5/9)); STL at 60 mm; names.
+
+## Fable review 2 (octet study fable-review-2, 8af2336)
+- Set 3 (two-shape) PROVED EXACTLY. The central dodecahedron of 3c is exactly a **tetartoid**.
+- **3b and 3c contain the step-24 wedges, which are spikes attached by slivers (not buildable)** — to rework without wedges before STL. Fable's alternative: **envelope + W** (W = rhombic dodecahedron round each octet vertex minus its 6 envelope bites; achiral; contains the φ⁻² cuboctahedron) — two shapes, no mirror pair.
