@@ -27,3 +27,7 @@ Source: studies/2026-10-18-p3-golden-envelope-octet (golden envelopes in the oct
 ## The general idea (DICTO 10-18): a "half-RD network" of any golden-adaptable solid
 - DICTO: "this could be a half RD pyrochlore network of any golden adaptable solid … I meant figuratively, with RD equivalent". Recorded as the general system: **RD-equivalent cells (golden envelope + adaptor), each cell full or half-open (adaptor half kept on one side), arranged in any network on the fcc lattice; any solid whose golden envelope this is can sit in each socket.** The chamber (step 4) is one instance.
 - Two RD-equivalents are now known: the **envelope-centred** rhombic dodecahedron (adaptor shell round one envelope, opens in two halves; this project) and Fable's **vertex-centred** rhombic dodecahedron minus its 6 envelope bites (W, one solid glue piece, achiral; octet fable-review-2).
+
+## Step 5 — envelope + W in 3D (`scripts/p4_W.py` on dicto-node → `data/p4-W.json`)
+- W = rhombic dodecahedron round the octet vertex (0, 0, R) minus the envelopes biting into it: volume 1.111341 (= the exact (352 − 144√5)/27), one solid, sphericity 0.574 (Fable's numbers confirmed).
+- 3D page (same link): "Envelope + W" (one envelope with the 6 W at its octahedron corners), "the set", and "network" (envelopes on the octahedron sites, W on the octet vertices).
