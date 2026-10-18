@@ -28,9 +28,9 @@ views = {
                 place=[['rd', False, p] for p in fcc]),
     'inside': dict(label='One piece, see-through', text='glass rhombic dodecahedra with their golden envelopes inside: the envelopes touch each face at one point (12 corners, the golden-section points)', radius=3.0,
                    place=[['rdglass', False, p] for p in fcc] + [['env', False, p] for p in fcc]),
-    'chamber': dict(label='Chamber (outside the plan)', text=f"hollow spherical chamber, radii {ci['R_in']}–{ci['R_out']}: {ci['inner_cells']} rhombic dodecahedra inside the wall, {ci['outer_cells']} outer cells open — golden envelope exposed, inward adaptor half only", radius=7.5,
+    'chamber': dict(label='Chamber (outside the plan)', text=f"hollow spherical chamber, radii {ci['R_in']}–{ci['R_out']}: {ci['outer_cells']} outer and {ci['inner_surface_cells']} inner-surface cells half-open (golden envelopes exposed outside and inside), {ci['solid_cells']} full rhombic dodecahedra between", radius=7.5,
                     place=ch['full']),
-    'chambercut': dict(label='Chamber, cut open', text='the same chamber cut in half: hollow centre, solid inner layers, envelopes on the outside', radius=7.5, place=ch['cut']),
+    'chambercut': dict(label='Chamber, cut open', text='the same chamber cut in half: envelopes exposed on the outer skin and lining the hollow centre, solid rhombic dodecahedra between', radius=7.5, place=ch['cut']),
     'twosolid': dict(label='Two-shape set (3), solid envelope', text='solid golden envelope with its 8 grown core pieces (left green, right teal)', radius=1.9,
                      place=[['env', False, [0, 0, 0]]] + tets),
 }
