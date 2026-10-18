@@ -1,0 +1,40 @@
+{
+ "mark": "DICTO · dictospheres.com",
+ "A": [
+  0.4120226591665966,
+  0.0,
+  0.6666666666666666
+ ],
+ "A_is_golden_point_of_edge": "divides the octahedron edge (0,0,R)-(R,0,0) at s : 2/3 = 1 : phi from the +z corner",
+ "directions": 600000,
+ "octa_edge_wedge_sr": 3.8237999702923284,
+ "octa_minus_RT_sr": 0.8815727864993438,
+ "components": [
+  {
+   "solid_angle_sr": 0.7529769272124016,
+   "mean_direction": [
+    -0.8702,
+    -0.0002,
+    0.2282
+   ],
+   "towards": "+z corner"
+  },
+  {
+   "solid_angle_sr": 0.1285958592869422,
+   "mean_direction": [
+    0.5284,
+    0.0048,
+    -0.8164
+   ],
+   "towards": "+x corner"
+  }
+ ],
+ "components_total": 2,
+ "reference": {
+  "regular_tetrahedron_corner_sr": 0.5513,
+  "cube_corner_sr": 1.5707963267948966,
+  "octahedron_corner_sr": 1.3593
+ },
+ "wedge_top_sliver_max_width": 0.15737865166652648,
+ "wedge_top_sliver_note": "diamond |x|+|y| <= s minus the RT rhombus at z = 2/3: 4 slivers of width 0 at the two cusps rising to s/phi^2 = 0.157 at (0, +-s, 2/3)"
+}

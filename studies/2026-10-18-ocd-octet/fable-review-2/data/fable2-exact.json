@@ -1,0 +1,758 @@
+{
+ "mark": "DICTO · dictospheres.com",
+ "review": "Fable review 2, 2026-10-18: exact verification of steps 21-27 (two-shape kit) in Q(sqrt5)",
+ "prescreen_tolerance": 1e-07,
+ "checks": {
+  "frame": {
+   "R": "1/3|1/3 (1.078689326)",
+   "s_equals_R_over_phi2": "-1/3|1/3 (0.412022659)",
+   "R_equals_2over3_plus_s": true
+  },
+  "RT_inradius_squared_all_faces": [
+   "4/9|0"
+  ],
+  "RT_face_normal_classes": {
+   "axis": 6,
+   "oblique": 24
+  },
+  "RT_oblique_normals_are_1_phi_invphi": true,
+  "RT_vertex_radii_squared": [
+   "2|-2/3",
+   "10/9|-2/9"
+  ],
+  "RT_vertex_radii_identified": {
+   "threefold_3s2": "2|-2/3",
+   "fivefold_1plusphi2_s2": "10/9|-2/9",
+   "match": true
+  },
+  "RT_vol": "-320/27|160/27 (1.398921348)",
+  "cell": "32/27|16/27 (2.510262505)",
+  "cell_equals_2R3": true,
+  "envelope_share_exact": "90|-40 (0.557280900)",
+  "envelope_share_is_10_over_phi6": true,
+  "RT_circumradius_float": 0.7837136697232976,
+  "envelope_neighbours_tested": 12,
+  "envelope_pairs_with_positive_overlap_by_distance2": {
+   "4/3|4/9": 0
+  },
+  "nn_separating_plane_x_plus_y_eq_R": {
+   "max_RT1": "1/3|1/3 (1.078689326)",
+   "min_RT2": "1/3|1/3 (1.078689326)",
+   "both_equal_R": true,
+   "RT1_contact_points": [
+    [
+     "2/3|0",
+     "-1/3|1/3",
+     "0|0"
+    ]
+   ],
+   "RT2_contact_points": [
+    [
+     "-1/3|1/3",
+     "2/3|0",
+     "0|0"
+    ]
+   ]
+  },
+  "RT_section_z0_vertices": 8,
+  "RT_edges_crossing_z0_properly": 0,
+  "nn_envelope_gap_squared": "26/9|-58/45 (0.006845718)",
+  "nn_envelope_gap_float": 0.08273885356444964,
+  "nn_envelope_gap_over_R": 0.0767031355395454,
+  "nn_envelope_gap_squared_formula_4sqrt5_over_45phi7": true,
+  "nn_gap_edges": {
+   "A1": [
+    "2/3|0",
+    "-1/3|1/3",
+    "0|0"
+   ],
+   "B1": [
+    "1|-1/3",
+    "2/3|0",
+    "0|0"
+   ],
+   "A1B1_is_RT_edge": true,
+   "parallel": true,
+   "A2_to_line_A1B1_dist2": "26/9|-58/45",
+   "line_dist2_equals_gap2": true
+  },
+  "cube_corners_OCD_centres": [
+   [
+    "1/3|1/3",
+    "1/3|1/3",
+    "0|0"
+   ],
+   [
+    "1/3|1/3",
+    "0|0",
+    "1/3|1/3"
+   ],
+   [
+    "0|0",
+    "1/3|1/3",
+    "1/3|1/3"
+   ],
+   [
+    "0|0",
+    "0|0",
+    "0|0"
+   ]
+  ],
+  "cube_corners_octet_vertices": [
+   [
+    "1/3|1/3",
+    "1/3|1/3",
+    "1/3|1/3"
+   ],
+   [
+    "1/3|1/3",
+    "0|0",
+    "0|0"
+   ],
+   [
+    "0|0",
+    "1/3|1/3",
+    "0|0"
+   ],
+   [
+    "0|0",
+    "0|0",
+    "1/3|1/3"
+   ]
+  ],
+  "envelopes_meeting_cube": [
+   [
+    "0|0",
+    "0|0",
+    "0|0"
+   ],
+   [
+    "0|0",
+    "1/3|1/3",
+    "1/3|1/3"
+   ],
+   [
+    "1/3|1/3",
+    "0|0",
+    "1/3|1/3"
+   ],
+   [
+    "1/3|1/3",
+    "1/3|1/3",
+    "0|0"
+   ]
+  ],
+  "envelopes_meeting_cube_count": 4,
+  "envelopes_meeting_cube_are_its_OCD_corners": true,
+  "bite_volumes": [
+   "-40/27|20/27 (0.174865169)",
+   "-40/27|20/27 (0.174865169)",
+   "-40/27|20/27 (0.174865169)",
+   "-40/27|20/27 (0.174865169)"
+  ],
+  "each_bite_is_RT_over_8": true,
+  "G_vol": "176/27|-8/3 (0.555670579)",
+  "G_vol_equals_cube_minus_half_RT": true,
+  "G_vol_equals_1_minus_10phi6_times_cell_over_2": true,
+  "G_vol_closed_form_176_minus_72sqrt5_over_27": true,
+  "G_vol_float": 0.555670578519079,
+  "Tminus_piece_is_inversion_exact": true,
+  "G_convex_cells": 84,
+  "G_cells_volume_sum_equals_G": true,
+  "G_connected_components_exact": 1,
+  "G_envelope_face_parts": 24,
+  "G_envelope_face_parts_by_corner_count": {
+   "3": 12,
+   "4": 12
+  },
+  "golden_rhombus_area": "-16/9|8/9",
+  "G_whole_rhombi": 12,
+  "G_whole_rhombi_are_full_golden_rhombi": true,
+  "G_triangles": 12,
+  "G_triangles_are_quarter_rhombi": true,
+  "G_triangle_edge_lengths_squared": [
+   "14/9|-2/3",
+   "2/3|-2/9",
+   "20/9|-8/9"
+  ],
+  "G_triangle_legs_s_and_s_over_phi": true,
+  "G_envelope_face_area_float": 3.147573033330525,
+  "G_envelope_area_is_half_RT_surface": true,
+  "cube_face_bite_sections_per_face": [
+   2,
+   2,
+   2,
+   2,
+   2,
+   2
+  ],
+  "cube_face_section_corner_counts": [
+   5
+  ],
+  "cube_face_part_area_exact": "-10/9|2/3 (0.379600874)",
+  "cube_face_parts_all_equal": true,
+  "G_surface_area_float": 5.425178276663017,
+  "G_surface_area_exact": "-20/3|4 + 15 golden rhombi (-16/9|8/9)",
+  "G_sphericity_exact_area": 0.6024879686628513,
+  "RT_sphericity": 0.9608903785637567,
+  "cube_face_part_corners": 10,
+  "cube_face_part_interior_angles": [
+   90.0,
+   90.0,
+   90.0,
+   90.0,
+   90.0,
+   90.0,
+   211.718,
+   211.718,
+   238.282,
+   238.282
+  ],
+  "cube_face_part_angles_named": "90 x6, 180+31.72 x2 (= 180 + half golden acute), 180+58.28 x2 (= 270 - 31.72)",
+  "cube_face_neck_width_squared": "26/9|-58/45 (0.006845718)",
+  "cube_face_neck_width_float": 0.08273885356444964,
+  "cube_face_neck_equals_envelope_gap": true,
+  "G_corners": 44,
+  "G_edges": 72,
+  "G_faces": 30,
+  "G_euler_V_minus_E_plus_F": 2,
+  "G_dihedral_angles_with_multiplicity": {
+   "108.0": 12,
+   "216.0": 24,
+   "90.0": 36
+  },
+  "hull_G_faces": 10,
+  "hull_G_vol": "32/81|8/27 (1.057600388)",
+  "hull_G_truncation_planes": [
+   [
+    "4/9|0",
+    "-4/9|0",
+    "4/9|0",
+    "0|8/27"
+   ],
+   [
+    "4/9|0",
+    "4/9|0",
+    "-4/9|0",
+    "0|8/27"
+   ],
+   [
+    "-4/9|0",
+    "4/9|0",
+    "4/9|0",
+    "0|8/27"
+   ],
+   [
+    "-4/9|0",
+    "-4/9|0",
+    "-4/9|0",
+    "-8/27|0"
+   ]
+  ],
+  "hull_G_truncation_at_2over3_along_edges": true,
+  "G_symmetries_of_48_cube_ops": {
+   "proper": 12,
+   "improper": 0
+  },
+  "G_is_chiral": true,
+  "hull_G_symmetries": {
+   "proper": 12,
+   "improper": 12
+  },
+  "G_improper_ops_preserving_corner_set": 0,
+  "whole_rhombi_per_envelope": {
+   "[0.0, 0.0, 0.0]": 3,
+   "[0.0, 1.079, 1.079]": 3,
+   "[1.079, 0.0, 1.079]": 3,
+   "[1.079, 1.079, 0.0]": 3
+  },
+  "C26_corners": 20,
+  "C26_faces": 12,
+  "C26_vol": "-146/27|22/9 (0.058536538)",
+  "C26_vol_matches_step26": true,
+  "C26_Tplus_planes_redundant": true,
+  "C26_strictly_inside_Tplus": true,
+  "C26_face_corner_counts": [
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "C26_centroid_is_cube_centre": true,
+  "C26_inside_G_by_construction": "every point beyond all three whole-rhombus planes of an envelope lies outside that envelope; C26 lies in T+ which lies in the cube",
+  "C26_symmetries_of_48": {
+   "proper": 12,
+   "improper": 0
+  },
+  "C26_edges": 30,
+  "C26_edge_length_classes_sq_with_multiplicity": {
+   "4|-16/9": 12,
+   "5/9|-2/9": 12,
+   "50/9|-22/9": 6
+  },
+  "C26_edge_lengths_float": [
+   0.15737865166652695,
+   0.24218084266845372,
+   0.2993519843863883
+  ],
+  "C26_pentagon_edges_in_order": [
+   0.15738,
+   0.24218,
+   0.24218,
+   0.29935,
+   0.15738
+  ],
+  "C26_pentagon_angles_deg": [
+   90.0,
+   121.7175,
+   116.5651,
+   63.4349,
+   148.2825
+  ],
+  "C26_is_tetartoid": true,
+  "C26_sphericity": 0.8552865279309301,
+  "C26_share_of_G": 0.10534395711229758,
+  "C26_face_plane_distance_from_centre": [
+   "1/6|-1/18"
+  ],
+  "C26_corner_radii_squared": [
+   "7/6|-1/2",
+   "53/18|-23/18",
+   "1/2|-1/6"
+  ],
+  "pyramid_vol": "-32/81|16/81 (0.046630712)",
+  "pyramid_is_phi2_corner": true,
+  "outer_corner_vol": "112/81|-16/27 (0.057638729)",
+  "outer_corner_matches_step24": true,
+  "pyramid_share_of_outer_corner": 0.8090169943749479,
+  "RT_in_octa_plus_8_keys_equals_RT": true,
+  "cusp_point": [
+   "-1/3|1/3",
+   "0|0",
+   "2/3|0"
+  ],
+  "cusp_is_s_0_2over3": true,
+  "cusp_is_pyramid_base_corner": true,
+  "edge_plane_x_plus_z_eq_R_supports_RT": true,
+  "outer_corner_solid_angle_at_cusp_sr": 0.8827875356587319,
+  "solid_angle_reference": {
+   "cube_corner": 1.5707963267948966,
+   "regular_tetrahedron_corner": 0.5513
+  },
+  "edge_point_towards_+z_corner_outside_RT": true,
+  "edge_point_towards_+x_corner_outside_RT": true,
+  "cubo_corners": 12,
+  "cubo_faces": 14,
+  "cubo_vol": "-320/81|160/81 (0.466307116)",
+  "cubo_vol_is_RT_over_3": true,
+  "cubo_vol_is_20_over_3_s3": true,
+  "cubo_overlap_with_each_nearby_envelope": [
+   "0|0 (0.000000000)"
+  ],
+  "cubo_outside_all_envelopes": true,
+  "RT_rhombus_x_face_inside_cubo_square": true,
+  "cubo_shares_full_rhombus_with_6_envelopes": true,
+  "cubo_sphericity": 0.9049971846504155,
+  "RD_corners": 14,
+  "RD_vol": "32/27|16/27 (2.510262505)",
+  "RD_vol_equals_cell": true,
+  "RD_4valent_corners_are_OCD_centres": true,
+  "RD_3valent_corners_are_tet_sites": true,
+  "W_bites": 6,
+  "W_bites_each_RT_over_6": true,
+  "W_vol": "352/27|-16/3 (1.111341157)",
+  "W_vol_equals_cell_minus_RT": true,
+  "W_vol_equals_2G": true,
+  "W_vol_float": 1.111341157038158,
+  "cubo_inside_RD": true,
+  "W_envelope_face_parts": 54,
+  "W_envelope_face_parts_by_corner_count": {
+   "4": 30,
+   "3": 24
+  },
+  "W_envelope_area_is_one_RT_surface": true,
+  "W_whole_rhombi": 6,
+  "W_RD_face_bite_sections": [
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2
+  ],
+  "W_RD_face_part_area_float": 0.22925664228140413,
+  "W_RD_face_neck_width_float": [
+   0.085013
+  ],
+  "W_RD_face_neck_squared": [
+   "164/3|-220/9"
+  ],
+  "W_surface_area_float": 9.0462257740379,
+  "W_sphericity_exact_area": 0.5735636687474338,
+  "RD_edges": 24,
+  "W_corners": 80,
+  "W_edges": 144,
+  "W_faces": 66,
+  "W_euler": 2,
+  "W_convex_cells": 183,
+  "W_cells_volume_sum_equals_W": true,
+  "W_connected_components_exact": 1,
+  "W_symmetries_of_48_cube_ops": {
+   "proper": 12,
+   "improper": 12
+  },
+  "W_is_achiral": true,
+  "W_dihedral_angles_with_multiplicity": {
+   "102.621": 24,
+   "120.0": 24,
+   "216.0": 72,
+   "77.379": 24
+  },
+  "G_centre_distance_to_bites_float": 0.22052817941653577,
+  "G_centre_distance_to_cube_faces_float": 0.5393446629166316,
+  "G_inscribed_ball_at_centre_float": 0.22052817941653577,
+  "W_centre_distance_to_bites_float": 0.4120226591665965,
+  "W_centre_distance_to_RD_faces_float": 0.7627485370902457,
+  "W_inscribed_ball_at_centre_float": 0.4120226591665965,
+  "C26_inradius_exact": "-1/6|1/6 = s/2 = R/(2 phi^2)",
+  "G_corner_list": [
+   [
+    "-1/3|1/3",
+    "-1/3|1/3",
+    "-1/3|1/3"
+   ],
+   [
+    "-1/3|1/3",
+    "-1/3|1/3",
+    "1/3|1/3"
+   ],
+   [
+    "-1/3|1/3",
+    "0|0",
+    "-2/3|2/3"
+   ],
+   [
+    "-1/3|1/3",
+    "0|0",
+    "1/3|1/3"
+   ],
+   [
+    "-1/3|1/3",
+    "0|0",
+    "2/3|0"
+   ],
+   [
+    "-1/3|1/3",
+    "1/3|1/3",
+    "-1/3|1/3"
+   ],
+   [
+    "-1/3|1/3",
+    "1/3|1/3",
+    "0|0"
+   ],
+   [
+    "-1/3|1/3",
+    "1/3|1/3",
+    "1|-1/3"
+   ],
+   [
+    "-1/3|1/3",
+    "2/3|0",
+    "0|0"
+   ],
+   [
+    "-1/3|1/3",
+    "2/3|0",
+    "2/3|0"
+   ],
+   [
+    "-2/3|2/3",
+    "-1/3|1/3",
+    "0|0"
+   ],
+   [
+    "-2/3|2/3",
+    "2/3|0",
+    "1/3|1/3"
+   ],
+   [
+    "0|0",
+    "-1/3|1/3",
+    "1/3|1/3"
+   ],
+   [
+    "0|0",
+    "-1/3|1/3",
+    "2/3|0"
+   ],
+   [
+    "0|0",
+    "-2/3|2/3",
+    "-1/3|1/3"
+   ],
+   [
+    "0|0",
+    "0|0",
+    "1/3|1/3"
+   ],
+   [
+    "0|0",
+    "0|0",
+    "2/3|0"
+   ],
+   [
+    "0|0",
+    "1/3|1/3",
+    "-1/3|1/3"
+   ],
+   [
+    "0|0",
+    "1/3|1/3",
+    "0|0"
+   ],
+   [
+    "0|0",
+    "1|-1/3",
+    "2/3|0"
+   ],
+   [
+    "0|0",
+    "2/3|0",
+    "-1/3|1/3"
+   ],
+   [
+    "0|0",
+    "2/3|0",
+    "0|0"
+   ],
+   [
+    "1/3|1/3",
+    "-1/3|1/3",
+    "-1/3|1/3"
+   ],
+   [
+    "1/3|1/3",
+    "-1/3|1/3",
+    "0|0"
+   ],
+   [
+    "1/3|1/3",
+    "-2/3|2/3",
+    "2/3|0"
+   ],
+   [
+    "1/3|1/3",
+    "0|0",
+    "-1/3|1/3"
+   ],
+   [
+    "1/3|1/3",
+    "0|0",
+    "0|0"
+   ],
+   [
+    "1/3|1/3",
+    "1/3|1/3",
+    "1/3|1/3"
+   ],
+   [
+    "1/3|1/3",
+    "1/3|1/3",
+    "2/3|0"
+   ],
+   [
+    "1/3|1/3",
+    "1|-1/3",
+    "-1/3|1/3"
+   ],
+   [
+    "1/3|1/3",
+    "2/3|0",
+    "1/3|1/3"
+   ],
+   [
+    "1/3|1/3",
+    "2/3|0",
+    "2/3|0"
+   ],
+   [
+    "1|-1/3",
+    "-1/3|1/3",
+    "1/3|1/3"
+   ],
+   [
+    "1|-1/3",
+    "2/3|0",
+    "0|0"
+   ],
+   [
+    "2/3|0",
+    "-1/3|1/3",
+    "0|0"
+   ],
+   [
+    "2/3|0",
+    "-1/3|1/3",
+    "2/3|0"
+   ],
+   [
+    "2/3|0",
+    "0|0",
+    "-1/3|1/3"
+   ],
+   [
+    "2/3|0",
+    "0|0",
+    "0|0"
+   ],
+   [
+    "2/3|0",
+    "0|0",
+    "1|-1/3"
+   ],
+   [
+    "2/3|0",
+    "1/3|1/3",
+    "-2/3|2/3"
+   ],
+   [
+    "2/3|0",
+    "1/3|1/3",
+    "1/3|1/3"
+   ],
+   [
+    "2/3|0",
+    "1/3|1/3",
+    "2/3|0"
+   ],
+   [
+    "2/3|0",
+    "2/3|0",
+    "-1/3|1/3"
+   ],
+   [
+    "2/3|0",
+    "2/3|0",
+    "1/3|1/3"
+   ]
+  ],
+  "C26_corner_list": [
+   [
+    "-1/2|1/2",
+    "-5/6|1/2",
+    "-1/3|1/3"
+   ],
+   [
+    "-1/2|1/2",
+    "7/6|-1/6",
+    "2/3|0"
+   ],
+   [
+    "-1/3|1/3",
+    "-1/2|1/2",
+    "-5/6|1/2"
+   ],
+   [
+    "-1/3|1/3",
+    "-1/3|1/3",
+    "-1/3|1/3"
+   ],
+   [
+    "-1/3|1/3",
+    "2/3|0",
+    "2/3|0"
+   ],
+   [
+    "-1/3|1/3",
+    "5/6|-1/6",
+    "7/6|-1/6"
+   ],
+   [
+    "-5/6|1/2",
+    "-1/3|1/3",
+    "-1/2|1/2"
+   ],
+   [
+    "-5/6|1/2",
+    "2/3|0",
+    "5/6|-1/6"
+   ],
+   [
+    "0|1/3",
+    "0|1/3",
+    "0|1/3"
+   ],
+   [
+    "0|1/3",
+    "1/3|0",
+    "1/3|0"
+   ],
+   [
+    "1/3|0",
+    "0|1/3",
+    "1/3|0"
+   ],
+   [
+    "1/3|0",
+    "1/3|0",
+    "0|1/3"
+   ],
+   [
+    "2/3|0",
+    "-1/2|1/2",
+    "7/6|-1/6"
+   ],
+   [
+    "2/3|0",
+    "-1/3|1/3",
+    "2/3|0"
+   ],
+   [
+    "2/3|0",
+    "2/3|0",
+    "-1/3|1/3"
+   ],
+   [
+    "2/3|0",
+    "5/6|-1/6",
+    "-5/6|1/2"
+   ],
+   [
+    "5/6|-1/6",
+    "-5/6|1/2",
+    "2/3|0"
+   ],
+   [
+    "5/6|-1/6",
+    "7/6|-1/6",
+    "-1/3|1/3"
+   ],
+   [
+    "7/6|-1/6",
+    "-1/3|1/3",
+    "5/6|-1/6"
+   ],
+   [
+    "7/6|-1/6",
+    "2/3|0",
+    "-1/2|1/2"
+   ]
+  ],
+  "seconds": 164.1
+ }
+}
