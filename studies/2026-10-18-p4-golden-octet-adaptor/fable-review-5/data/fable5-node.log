@@ -1,0 +1,14 @@
+0.1 s | W {'volume': 0.22879528396252774, 'W_star_volume': 0.2263991448321496, 'parts': 7, 'solid_parts': 2, 'genus': -5, 'area': 3.155948623062351, 'corners': 449, 'relief_triangles_per_face': 45}
+0.2 s | symmetry {'sigma_symdiff': -6.922982677262657e-05, 'iota_symdiff': -1.7357296693165658e-05}
+0.5 s | ring {'max_pairwise_overlap': 0.0005990347825945392, 'max_overlap_with_OCD': 1.5703990842094728e-18, 'union_volume': 3.8830342089602268, 'expected': 3.897411043742496, 'gap': 0.014376834782269032}
+0.5 s | pair {'overlap': 0.0005990347825945369, 'union': 0.45699153314246094, 'cells_minus_OCDs': 0.4527982896642992, 'gap': -0.004193243478161746}
+0.5 s | meshes saved
+/tmp/fable5/fable5_node.py:83: RuntimeWarning: divide by zero encountered in divide
+  l1 = ((y2 - y3) * (u - x3) + (x3 - x2) * (w - y3)) / det; l2 = ((y3 - y1) * (u - x3) + (x1 - x3) * (w - y3)) / det; l3 = 1 - l1 - l2
+/tmp/fable5/fable5_node.py:83: RuntimeWarning: invalid value encountered in divide
+  l1 = ((y2 - y3) * (u - x3) + (x3 - x2) * (w - y3)) / det; l2 = ((y3 - y1) * (u - x3) + (x1 - x3) * (w - y3)) / det; l3 = 1 - l1 - l2
+/tmp/fable5/fable5_node.py:85: RuntimeWarning: invalid value encountered in multiply
+  hgt[inside] = (l1 * h1 + l2 * h2 + l3 * h3)[inside]; done |= inside
+38.6 s | sampling uniform {'n': 1000000, 'in_no_piece': 0, 'in_exactly_one': 1000000, 'in_two_or_more': 0}
+59.8 s | sampling near_faces {'n': 500000, 'in_no_piece': 0, 'in_exactly_one': 500000, 'in_two_or_more': 0}
+59.8 s | done
