@@ -24,7 +24,15 @@ const count = async () => Number((await note()).match(/(\d+) cop/)?.[1] ?? NaN);
 for (const m of ['network', 'double', 'voice', 'chorus']) {
   await panel.locator(`[data-gbp-mode="${m}"]`).tap(); await page.waitForTimeout(1500);
   console.log(m, '|', await note());
-  if (m === 'double') { await panel.locator('[data-gbp="gaps"]').tap(); await page.waitForTimeout(1200); }
+  if (m === 'double') {
+    await panel.locator('[data-gbp="gaps"]').tap(); await page.waitForTimeout(1200);
+    // Bull-horns OG adaptor (DICTO 2026-10-18): the switch shows with the gap pieces; on, the note gives the exact shares
+    await page.screenshot({ path: `${SH}/bodhipyro-double-72.png` });
+    const holes = panel.locator('[data-gbp="holes"]'); assert.ok(await holes.isVisible(), 'adaptor switch shows with gap pieces');
+    await holes.tap(); await page.waitForTimeout(1500);
+    assert.match(await note(), /Bull-horns OG adaptor/); assert.match(await note(), /77\.4332%/);
+    console.log('holes |', await note()); await page.screenshot({ path: `${SH}/bodhipyro-double-bullhorns.png` });
+  }
   if (m === 'voice') { await panel.locator('[data-gbp-voice="2"]').tap(); await page.waitForTimeout(1000); assert.match(await note(), /3/); }
   await page.screenshot({ path: `${SH}/bodhipyro-${m}.png` });
 }
