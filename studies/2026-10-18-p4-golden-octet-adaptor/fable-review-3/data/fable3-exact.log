@@ -1,0 +1,308 @@
+14.7 s | tiling done 6 1.3583948689928973
+19.0 s | split by OCD at [-1.079, 0.0, 1.079] -> cells 27
+24.0 s | split by OCD at [0.0, -1.079, 1.079] -> cells 84
+30.7 s | split by OCD at [0.0, 0.0, 2.157] -> cells 160
+35.9 s | split by OCD at [0.0, 0.0, 0.0] -> cells 227
+43.8 s | split by OCD at [0.0, 1.079, 1.079] -> cells 316
+50.1 s | split by OCD at [1.079, 0.0, 1.079] -> cells 407
+77.3 s | connectivity 1
+122.7 s | faces done 206 336 132 0.6481033141857415
+{
+ "cell": "32/27|16/27 (2.510262505)",
+ "OCD_vol": "-1000/1539|1240/1539 (1.151867636)",
+ "OCD_symmetry_of_48_cube_ops_about_centre": {
+  "proper": 12,
+  "improper": 12
+ },
+ "OCD_faces_by_corner_count": {
+  "4": 60,
+  "6": 20
+ },
+ "OCD_corner_radii_squared_with_multiplicity": {
+  "170/361|2/361": 12,
+  "4/9|0": 90
+ },
+ "OCD_outermost_corners": 12,
+ "OCD_outermost_corner_example": [
+  "0|0",
+  "-9/19|-1/19",
+  "-2/19|4/19"
+ ],
+ "OCD_outermost_radius_float": 0.6951994790452729,
+ "OCD_outermost_on_2fold_axes_toward_octa_edge_midpoints": false,
+ "octa_edge_midpoint_radius_float": 0.7627485370902457,
+ "octa_inradius_float": 0.6227815726418106,
+ "OCD_inradius_float": 0.6227815726418104,
+ "RD_corners": 14,
+ "RD_vol_equals_cell": true,
+ "OCD_centres_tested": 6,
+ "OCDs_meeting_RD": [
+  [
+   "-1/3|-1/3",
+   "0|0",
+   "1/3|1/3"
+  ],
+  [
+   "0|0",
+   "-1/3|-1/3",
+   "1/3|1/3"
+  ],
+  [
+   "0|0",
+   "0|0",
+   "2/3|2/3"
+  ],
+  [
+   "0|0",
+   "0|0",
+   "0|0"
+  ],
+  [
+   "0|0",
+   "1/3|1/3",
+   "1/3|1/3"
+  ],
+  [
+   "1/3|1/3",
+   "0|0",
+   "1/3|1/3"
+  ]
+ ],
+ "OCDs_meeting_RD_count": 6,
+ "OCDs_meeting_RD_are_the_6_at_distance_R": true,
+ "bite_volumes": [
+  "-500/4617|620/4617 (0.191977939)"
+ ],
+ "each_bite_is_OCD_over_6": true,
+ "bite_equals_OCD_cap_region_volume": true,
+ "OCD_split_over_its_6_vertex_RDs_sums_to_OCD": true,
+ "W_vol": "2824/1539|-328/1539 (1.358394869)",
+ "W_vol_equals_cell_minus_OCD": true,
+ "W_vol_matches_claim_2824_minus_328sqrt5_over_1539": true,
+ "W_vol_float": 1.3583948689928973,
+ "W_convex_cells": 407,
+ "W_cells_volume_sum_equals_W": true,
+ "W_connected_components_exact": 1,
+ "W_symmetries_of_48_cube_ops": {
+  "proper": 12,
+  "improper": 12
+ },
+ "W_is_m3bar_achiral": true,
+ "OCD_face_areas_by_corner_count": {
+  "4": [
+   0.04146257597
+  ],
+  "6": [
+   0.147018786278
+  ]
+ },
+ "W_imprint_faces": 120,
+ "W_imprint_whole_faces": 48,
+ "W_imprint_cut_faces": 72,
+ "W_imprint_faces_breakdown": {
+  "cut 4-gon -> 4 corners": 48,
+  "cut 6-gon -> 5 corners": 24,
+  "whole 4-gon -> 4 corners": 36,
+  "whole 6-gon -> 6 corners": 12
+ },
+ "W_imprint_area_float": 5.428130283724476,
+ "W_imprint_area_equals_one_OCD_surface": true,
+ "OCD_surface_area_float": 5.4281302837244745,
+ "W_RD_face_bite_sections": [
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2
+ ],
+ "W_RD_face_part_area_float": [
+  0.310336336333
+ ],
+ "RD_face_area_float": 0.822768705254185,
+ "W_RD_face_neck_squared": [
+  "820/3|-1100/9"
+ ],
+ "W_RD_face_neck_float": [
+  0.190094932
+ ],
+ "W_RD_section_corner_counts": [
+  6
+ ],
+ "W_surface_area_float": 9.152166319715308,
+ "W_sphericity": 0.6481033141857415,
+ "OCD_sphericity": 0.9789689385176591,
+ "RD_sphericity": 0.9046998952817772,
+ "RD_edge_exit_parameter_t": [
+  "2/3|0"
+ ],
+ "W_corners": 206,
+ "W_edges": 336,
+ "W_faces": 132,
+ "W_euler": 2,
+ "W_dihedral_angles_with_multiplicity": {
+  "120.0": 24,
+  "203.28": 72,
+  "203.8": 144,
+  "86.88": 24,
+  "90.0": 48,
+  "93.12": 24
+ },
+ "W_sharpest_dihedral": 86.88,
+ "W_edges_below_90_deg": [
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ],
+  [
+   86.88,
+   0.1938
+  ]
+ ],
+ "OCD_dihedral_angles_with_multiplicity": {
+  "156.2": 120,
+  "156.72": 60
+ },
+ "OCD_section_y0_corners": 12,
+ "OCD_OCD_gap_squared": "70/81|-10/27 (0.036024206)",
+ "OCD_OCD_gap_float": 0.18980043694437415,
+ "facing_outer_corners": [
+  [
+   "-2/19|4/19",
+   "0|0",
+   "9/19|1/19"
+  ],
+  [
+   "25/57|7/57",
+   "0|0",
+   "-8/57|16/57"
+  ]
+ ],
+ "facing_outer_corners_distance_squared": "1052/1083|-1220/3249 (0.131731938)",
+ "gap_is_between_facing_outer_corners": false,
+ "outer_corner_to_octa_edge_midpoint_float": 0.0675490580449728,
+ "outer_corners_lie_on_RD_face_plane_z_eq_x": false,
+ "OCD_max_x_plus_z": "7/19|5/19 (0.956859994)",
+ "OCD_strictly_inside_octahedron_edge_plane": true,
+ "OCD_corners_on_octahedron_surface": 48,
+ "W_centre_distance_to_bites_float": 0.4120226591665965,
+ "W_centre_distance_to_RD_faces_float": 0.7627485370902457,
+ "W_inscribed_ball_at_centre_float": 0.4120226591665965,
+ "W_centre_to_nearest_OCD_point_is_hexagon_centre": false,
+ "W_hexagon_imprint_parts": 36,
+ "W_hexagon_part_corner_counts": [
+  5,
+  6
+ ],
+ "W_hexagon_parts_are_thirds": false,
+ "mm_per_unit_at_60mm_octahedron_edge": 39.331442200393894,
+ "mm": {
+  "OCD_OCD_gap": 7.4651249152871575,
+  "RD_face_neck": [
+   7.4767078305458075
+  ],
+  "inscribed_ball_radius_at_vertex": 16.205445404263585,
+  "W_extent_between_opposite_OCD_centres": 84.8528137423857,
+  "W_extent_between_opposite_tet_sites": 73.48469228349533,
+  "RD_edge": 36.74234614174767,
+  "OCD_diameter_outer": 54.68639625562619,
+  "octahedron_edge": 60.0,
+  "cell_edge_R": 42.42640687119285
+ },
+ "seconds": 126.6
+}
+126.6 s | done
