@@ -10,3 +10,5 @@ DICTO · dictospheres.com
 - Results: exactly 6 OCDs bite (2 at 0.7191, 4 at 1.0170); **volume 0.111898 = (gap per OCD)/3 exactly** (exact: (cell − OCD)/3 with cell (512 + 256√5)/729, OCD (−1000 + 1240√5)/1539); **one solid, genus 0**; sphericity 0.515; centrosymmetric with a mirror plane (no left/right).
 - 3D page (`scripts/hole_page.py` → `renders/bcc-hole-pieces.html`): the piece, with its 6 OCDs (yellow/blue by network), the network with all pieces, resin only.
 - Open: does the piece read as DICTO's "five double T bars / double crescents"? exact face analysis; Fable check only if wanted.
+- **DICTO 10-18: "that's it"** — the piece matches his five double-T bars / double crescents.
+- **Exact space shares (per bcc cell (512 + 256√5)/729):** OCDs **(9225 − 3915√5)/608 = 77.4332%**; the 3 hole pieces **(−8617 + 3915√5)/608 = 22.5668%**; one hole piece (−8617/1824 + 1305√5/608) = **7.5223%**. OCD + 3 pieces = the cell exactly.
