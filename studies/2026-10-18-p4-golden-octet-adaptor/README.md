@@ -38,3 +38,10 @@ Source: studies/2026-10-18-p3-golden-envelope-octet (golden envelopes in the oct
 - Exact volume = cell − OCD = **(2824 − 328√5)/1539 = 1.358395**; one solid (genus 0); **centrosymmetric — no mirror pair**; **sphericity 0.648** (chunkier than the envelope W, 0.574); the OCD stays whole (0.979).
 - **So: OCD + W_OCD — two shapes, no mirror images, both chunky; the 6 sockets of each W are exact OCD imprints.** (Fable check to do.)
 - 3D page (same link): "OCD + W with OCD imprints", "the set", "network".
+
+## Step 7 — W centred on the Penrose star (DICTO 10-18: "could the imprint be centred on the Penrose star also?!"; `scripts/p4_W_star.py` on dicto-node → `data/p4-W-star.json`)
+- Sites: the midpoints m of the octahedron edges, where two OCDs' five-fold stars face each other and the thick Penrose rhombus joins them ((R/2)(a,b,c), exactly two of a,b,c odd; 6 per cell).
+- **Their Voronoi cell is an octahedron with corners at the two OCD centres, the two edge ends and the two tetrahedron centres** (e.g. 0, (0,R,R), (0,R,0), (0,0,R), (±R/2, R/2, R/2)), volume = the octet tetrahedron's (16 + 8√5)/81 = cell/6.
+- **Star-centred W = that octahedron minus its 2 OCDs** (imprints at two opposite corners): (cell − OCD)/6 = (1412 − 164√5)/4617 = **0.226399**; one solid (genus 0); centrosymmetric about m (no mirror pair); **sphericity 0.690** (the chunkiest glue so far); holds 97.7% of the middle piece between the facing stars (so nearly all the Penrose link region).
+- **Kit OCD + star-centred W: two shapes, no mirror images, fills space exactly** (Voronoi cells of the edge midpoints tile space; the OCDs lie inside their union). 12 W round each OCD, 6 per cell.
+- 3D page (same link): "OCD + W centred on the Penrose star" and "the set".
