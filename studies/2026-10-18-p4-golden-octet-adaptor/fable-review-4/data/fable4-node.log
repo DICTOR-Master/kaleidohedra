@@ -1,0 +1,11 @@
+0.0 s | keyed W {'volume': 0.2263991448321496, 'W_star_volume': 0.2263991448321496, 'volume_difference': 0.0, 'parts': 1, 'solid_parts': 1, 'genus': 0, 'area': 2.774639478451868, 'sphericity': 0.6474318860376814, 'bump_volume_total': 0.006034558567120323, 'dent_volume_total': 0.006034558567120321, 'one_bump_volume': 0.001508639641780081, 'sharpest_edge_deg': 75.38566420725397, 'bluntest_reflex_deg': 279.94752702765504, 'corners': 108}
+0.0 s | pair {'overlap_volume': 0.0, 'union_volume': 0.4527982896642992, 'two_W': 0.4527982896642992, 'cells_minus_OCDs_volume': 0.4527982896642992, 'union_equals_cells_minus_OCDs': True, 'gap_volume': 0.0, 'contact_area_estimate': None}
+0.1 s | separation {'directions_tested_outward': 312, 'free_directions': 47, 'max_angle_from_face_normal_deg': 43.2563939903295, 'wall_angle_deg': 30.0}
+0.2 s | ring {'pairs_tested': 66, 'max_pairwise_overlap': 2.168404344971009e-19, 'max_overlap_with_OCD': 3.469446951953614e-18, 'union_volume': 3.8686573741779586, 'expected': 3.868657374177958, 'union_equals_sum': True}
+1.7 s | ring removal {'directions_tested': 600, 'free_directions': 0, 'note': 'translation of one W by 0.02 in each direction with the other 11 W and the OCD fixed', 'free_directions_unkeyed_W_star': 41}
+1.7 s | meshes saved
+1.7 s | sites 240
+70.4 s | sampling uniform {'n': 2000000, 'in_no_piece': 0, 'in_exactly_one': 2000000, 'in_two_or_more': 0}
+142.2 s | sampling near_relief {'n': 1998720, 'in_no_piece': 0, 'in_exactly_one': 1998720, 'in_two_or_more': 0}
+209.9 s | sampling near_faces {'n': 2000000, 'in_no_piece': 0, 'in_exactly_one': 2000000, 'in_two_or_more': 0}
+209.9 s | done
