@@ -39,3 +39,12 @@ Source: studies/2026-10-18-ocd-octet (steps 1–27, Fable review ba28bd0), envel
 | 4 Golden octet adaptor (`2026-10-18-p4-golden-octet-adaptor`) | envelope + adaptor half ×2 (2); one-piece RD; **envelope + W (Fable, 2, achiral)** | yes | W proved (8af2336) | 3Qw1XztMnTGiUuN1ntq1L9 |
 - Ideas recorded: spherical chamber (half-open inside and outside), the general "half-RD network" of any golden-adaptable solid.
 - Open for DICTO: grown piece (mirror pair, ψ 0.60) vs W (single, ψ 0.57); hidden flat cuts and 0.083 ridges OK?; STL (60 mm octahedron edge) and names next.
+
+## Queue (DICTO 10-18, "save all points to research and queueing") — paused until Fable's keyed-W answer
+1. **Keyed star-centred W (running, Fable):** the OCD imprint's rhombus pattern continued across the flat faces as a self-keying raised/sunk relief; one identical piece; 3D model + checks (brief in the SendMessage of 10-18; my failed attempt `p4_keyed_W.py` — raised tiles detached).
+2. **Tiling the adaptor piece** (DICTO: "could these pieces be made by tiling, if so all our questions would be answered"; "we have potentially one adapter piece now to build from tiles"): which tile set builds the piece exactly. Facts: the envelope = 20 golden rhombohedra; the OCD's kites are not golden/Penrose angles; G′ is not face-to-face tileable by golden rhombohedra alone. Proposed order: envelope W first (golden sockets, best chance), then DICTO's keyed W (golden tiles + kite tiles for the imprint). Me stepwise, Fable only for the final check.
+3. **Other networks for the casing** (DICTO: "are there other possible configurations which could orient it on icosahedral, tetrahedral or other networks?"):
+   - **Diamond (tetrahedral):** OCDs joined on one tetrahedral set of 4 joint hexagons (the bump/dent split); casing = the diamond-network cell. Next after Fable (cleanest).
+   - **Icosahedral cluster:** OCD + 12 on its five-fold axes, stars facing head-on (the exact OCD Stella seed pattern); several casing types because the OCD is only pyritohedral. Second.
+   - Simple cubic (six two-fold joints), bcc (done: golden gap open), quasicrystal (golden envelopes in a 3D Penrose-type tiling; the full bridge; hardest).
+4. Token thrift (DICTO): Fable only for proofs/hard builds; restate + yes before building; pages updated only when asked; short replies; background jobs, no polling.
