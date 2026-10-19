@@ -1,0 +1,24 @@
+
+== DICTO Fill set 1 (DBT) F1, gyrated
+PASS 6 pieces touch the central solid; every one has volume 968/81 + -392/81*sqrt5 = 1.129153
+PASS each piece is the image of the first under an exact isometry of the arrangement (solids and sites within 3.2R)
+      reached by a turn (same hand): 6; only by a mirror: 0; maps fixing the site: ['improper', 'proper']
+PASS a mirror of the arrangement fixes the site: the piece is its own mirror image (one hand)
+
+== DICTO Fill set 2 (OTT) F1, gyrated
+PASS 6 pieces touch the central solid; every one has volume 704/81 + -272/81*sqrt5 = 1.182587
+PASS each piece is the image of the first under an exact isometry of the arrangement (solids and sites within 3.2R)
+      reached by a turn (same hand): 6; only by a mirror: 0; maps fixing the site: ['improper', 'proper']
+PASS a mirror of the arrangement fixes the site: the piece is its own mirror image (one hand)
+
+== DICTO Fill set 2 (OTT) F2/F3, octet
+PASS 8 pieces touch the central solid; every one has volume 352/81 + -136/81*sqrt5 = 0.591293
+PASS each piece is the image of the first under an exact isometry of the arrangement (solids and sites within 3.2R)
+      reached by a turn (same hand): 4; only by a mirror: 4; maps fixing the site: ['proper']
+PASS no mirror fixes the site and some pieces are reached only by a mirror: left and right hands (unless the piece has a symmetry of its own beyond the arrangement; float check in fill_hands.py)
+saved fill-exact.json
+
+real	0m54.823s
+user	0m55.145s
+sys	0m0.106s
+exit 0

@@ -90,7 +90,7 @@ The #37 keyless Penrose-core kit (OG, 6 vertex caps per octahedron, a middle pie
 ## Filling the DBT's space (DICTO 2026-10-20 "keep filling the space"; `dbt_fill.py` on dicto-node, float)
 As #37 step 27: every leftover point goes to its nearest site; piece = the site's Voronoi region minus the DBTs.
 - **Tetrahedron centres (2 per cell):** each piece one solid, 0.564576 (= leftover / 2), sphericity 0.509, not mirror-symmetric.
-- **Bipyramid centres (the twin-plane face centres, 1 per cell): each piece one solid, 1.129153 = the whole leftover of a cell ((976 − 432√5)/81), sphericity 0.586, mirror-symmetric in its twin plane.** So the gyrated DBT kit could be **DBT + one grown-bipyramid piece: 2 shapes.** 71 faces (flat Voronoi cuts plus the DBT's golden faces; some small, smallest ≈ 0.0023). Quick render `renders/dbt-fill-bip.png`.
+- **Bipyramid centres (the twin-plane face centres, 1 per cell): each piece one solid, 1.129153 = the whole leftover of a cell ((968 − 392√5)/81), sphericity 0.586, mirror-symmetric in its twin plane.** So the gyrated DBT kit could be **DBT + one grown-bipyramid piece: 2 shapes.** 71 faces (flat Voronoi cuts plus the DBT's golden faces; some small, smallest ≈ 0.0023). Quick render `renders/dbt-fill-bip.png`.
 - Open: congruence of the pieces at all sites (same volume and sphericity at 4 sites), thin edges, exact proof, a proper 3D view.
 
 ## The DICTO Octahedrally Truncated Triacontahedron (DICTO OTT; named by DICTO 2026-10-20): the triacontahedron cut at all 8 key sites (kept alongside the DBT)
@@ -104,3 +104,13 @@ As #37 step 27: every leftover point goes to its nearest site; piece = the site'
 **Prior art check (2026-10-20):** library: Kabai's 54-faced space-filler (RT minus 8 half oblate rhombohedra, bcc), Kabai's RT clusters, a dimpled RT (rhombohedra removed at 4 corners) — all remove whole or half rhombohedra, none cuts flat at the key sites. Web: truncated RTs found cut the 12 five-fold corners (42 faces, Ih); a list of convex golden-rhombus polyhedra (orchidpalms) has only band-reduced and expanded RTs. No source found for the RT cut at 2 (D3d) or 8 (Th) three-fold corners, i.e. the RT cut by an octahedron.
 
 **Fill-set names (DICTO OK 2026-10-20):** DICTO Fill set 1 (DBT): F1 (grown bipyramid, gyrated octet). DICTO Fill set 2 (OTT): F1 (grown bipyramid, gyrated octet), F2 and F3 (grown tetrahedron, left and right, octet; hands as #37 step 27, to confirm).
+
+## Fill sets exact (2026-10-20, `fill_exact.py` → `fill-exact.log`, `fill-exact.json`; 9 PASS, 0 FAIL)
+For every fill piece touching the central solid (6 / 6 / 8): volume = Voronoi region − the solids in it, exact; each piece is the image of the first under an exact isometry of the local arrangement (solids and sites within 3.2R).
+- **DICTO Fill set 1 (DBT) F1:** (968 − 392√5)/81 ≈ 1.129153 (= cell − DBT); a mirror of the arrangement fixes its site: one hand. (Earlier notes wrote (976 − 432√5)/81, an addition slip; corrected.)
+- **DICTO Fill set 2 (OTT) F1:** (704 − 272√5)/81 ≈ 1.182587; one hand.
+- **DICTO Fill set 2 (OTT) F2, F3:** (352 − 136√5)/81 ≈ 0.591293 each; 4 reached by turns, 4 only by mirrors, no mirror fixes the site → **left and right hands**; float `fill_hands.py`: no improper map of the cube fits the piece onto itself (smallest mismatch 0.0368).
+- Each piece one solid: float (kits_page_data.py).
+
+## Cover line-up for #37a V3 (2026-10-20; `cover_lineup.py`, `cover_shots.mjs`, `cover_compose.py` → `figures/cover-lineup.jpg`)
+OG, OCD Stella, DBT, OTT over Fill set 1 F1, Fill set 2 F1, F2, F3; true relative size, one view (three-fold axis up). Shown to DICTO, not yet in the paper.
