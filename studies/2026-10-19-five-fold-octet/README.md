@@ -141,6 +141,10 @@ The reverse step takes as new corners the foot points of the last solid's faces 
 - **D′:** forward and reverse alternate between the dodecahedron and the icosahedron (plain duality, nothing new).
 - **The OG:** **no cycle within 5 steps.** Forward: 92 corners with 90 four-sided faces (a rhombic-enneacontahedron type, to check) → 180 → 212 → 270 → 452 corners. Reverse: 80 corners (120 triangles + 12 pentagons) → 132 → 140 → 162. The solids get more and more complex instead of closing. These are candidate "new duals" of the OG, to be studied.
 
+## Polar reciprocation (DICTO 2026-10-19, float)
+
+**The four UP stations are two true polar pairs: ID ↔ RT and golden truncated icosahedron ↔ Q** (each solid's polar reciprocal has the other's shape). The ID and the golden TI have all their corners on one sphere, so the UP step from them **is** polar reciprocation. The RT and Q have corners at two radii, so the UP step from them is **not** polar: it carries the RT on to the golden TI and Q on to the ID. **So the cycle alternates: polar, non-polar, polar, non-polar**, and the non-polar steps are what join the two classical dual pairs into one cycle and set the scale 10/φ⁴. The polar of the OG has 80 corners and 102 faces (60 triangles, 30 quadrilaterals, 12 pentagons), the Hecatodihedron type, as known.
+
 ## Open
 
 - **Rhythms (DICTO):** layers that overlap at different rhythms may cause local, shallower UO structures. The five-fold and three-fold columns already advance in different steps (for example, RT corners at 1.902 and √3), so where they interleave, look for thin local octet-like layers.
