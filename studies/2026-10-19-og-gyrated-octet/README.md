@@ -80,3 +80,8 @@ The #37 keyless Penrose-core kit (OG, 6 vertex caps per octahedron, a middle pie
 - **Boundary tetrahedron 41/162 + 4√5/135 ≈ 0.319340** (octet keyless tetrahedron (26 − 2√5)/81 plus (−55 + 44√5)/810 ≈ 0.053564).
 - Octet run gives #37's cap and keyless tetrahedron; single twin plane: exactly the 3 caps and 3 tetrahedra on the plane are boundary pieces; gyrated: all 6 caps and all 6 tetrahedra are; origin octahedron and one gyrated cell sum exactly.
 - (Congruence of equal-volume pieces and their hands: float overlap test, `gyr_boundary.py`.)
+
+## The DBT's spaces, and growing it (DICTO 2026-10-20: "volume is very low", option 1; float, `dbt_spaces.py`, `dbt_grow.py` on dicto-node)
+- In its octahedron the DBT touches each of the 12 edges at one golden point (1/φ² of the way along), leaving 6 separate corner spaces of (112 − 48√5)/81 ≈ 0.0576 each, sphericity 0.33.
+- Option 1: the DBT's rhombic triacontahedron scaled by s about the OG centre, cut by the bisector planes to its neighbours (the twin planes stay the pole cuts). It meets 8 neighbours (2 across the twin planes, 6 in its layer). Share of space: s 1.00 55.0% · 1.04 61.1% · 1.08 67.1% · 1.12 72.9% · 1.16 78.4% · 1.20 83.4% · 1.25 88.9% · 1.30 93.0% · about 1.6 → 100% (the solid becomes the whole cell). All 30 rhombus planes survive up to s ≈ 1.16; 24 at 1.2.
+- **But the leftover gets thinner, not chunkier:** it is one thin skin between the grown solids. Its sphericity per cell falls from 0.33 (s = 1) to 0.28 (1.08), 0.22 (1.16), 0.17 (1.25), 0.10 (1.30), and above 1.32 it breaks into slivers. So option 1 raises the share but gives no buildable leftover pieces.
