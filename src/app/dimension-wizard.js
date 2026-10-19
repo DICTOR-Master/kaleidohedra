@@ -545,12 +545,12 @@ export const LATTICES_4D = [
 // Kaleidohedra's; each app's lattices are listed once per app.
 const SHARED_WORLDS = ['roofFold', 'sunstar', 'stellaJewel', 'shells', 'golden'];
 const K_WORLDS = [
+  // The OG on the Octet Truss (DICTO 2026-10-19; paper #37): the Ogdoecontahedron's exact space-filling kits in the octet truss,
+  // and Octet ↔ gyrated (2026-10-20, paper #37a); first again as the newest work (DICTO) (world-octet-truss.js).
+  { key: 'octetTruss', label: 'The OG on the Octet Truss', pieces: [{ label: 'The OG on the Octet Truss', action: 'tool:octetTrussWorld' }] },
   // Universal PiTet (DICTO 2026-10-19): the Cleo star grown outward in spherical shells to an endless cycle of four solids
   // (world-up.js).
   { key: 'up', label: 'Universal PiTet', pieces: [{ label: 'Universal PiTet', action: 'tool:upWorld' }] },
-  // The OG on the Octet Truss (DICTO 2026-10-19; paper #37): the Ogdoecontahedron's exact space-filling kits in the octet truss
-  // (world-octet-truss.js).
-  { key: 'octetTruss', label: 'The OG on the Octet Truss', pieces: [{ label: 'The OG on the Octet Truss', action: 'tool:octetTrussWorld' }] },
   // Vajrayana (DICTO 2026-10-17; paper #35): the twelve-station golden cycle, peeled station by station (world-vajrayana.js).
   { key: 'vajrayana', label: 'Vajrayana', pieces: [{ label: 'Vajrayana', action: 'tool:vajrayanaWorld' }] },
   // DICTO Icosa (DICTO 2026-10-10: "own Icosa world", reached only through the DICTO worlds; newest first)

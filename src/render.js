@@ -5896,13 +5896,13 @@ async function init() {
   // Shells: after + Shell, pull the view back (never in) so the whole
   // hull fits, keeping the view direction; glide like focusCameraOn.
   // viewDir (optional): look from that direction instead of the current one (a world's own starting view, e.g. the TO 13 from above).
-  function fitCameraTo([x, y, z], radius, viewDir = null) {
+  function fitCameraTo([x, y, z], radius, viewDir = null, exact = false) {   // exact: zoom in as well as out (default keeps the farther distance)
     const centre = new THREE.Vector3(x, y, z);
     const need = (radius * 1.15) / Math.sin(THREE.MathUtils.degToRad(camera.fov) / 2) / Math.min(1, camera.aspect);
     const dir = viewDir ? new THREE.Vector3(...viewDir).normalize() : camera.position.clone().sub(controls.target).normalize();
     const now = camera.position.distanceTo(controls.target);
     const toTarget = centre;
-    const toPosition = centre.clone().addScaledVector(dir, Math.max(now, need));
+    const toPosition = centre.clone().addScaledVector(dir, exact ? need : Math.max(now, need));
     const fromTarget = controls.target.clone();
     const fromPosition = camera.position.clone();
     const t0 = performance.now();

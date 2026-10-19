@@ -17,6 +17,8 @@ for (const site of ['kaleidohedra', 'rhombiverse']) for (const lang of LANGS) {
   const collect = async (dim) => (await page.evaluate(() => [...document.querySelectorAll('.dim-wizard-overlay .dim-wizard-desc, .dim-wizard-overlay .dim-wizard-label')]
     .map((e) => e.textContent.trim()).filter((s) => /^[a-z][A-Za-z0-9]*(\.[A-Za-z0-9@]+){2,}$/.test(s)))).forEach((k) => raw.add(`${site} ${lang} ${dim}: ${k}`));
   await collect('start'); // whatever opens first; tapping it again below closes it, so it is read here
+  // on the Rhombiverse door 3D+ leaves the wizard straight for fcc (2026-10-20), so it is opened last there
+  if (site === 'rhombiverse') dims.sort((x, y) => (x === '3D') - (y === '3D'));
   for (const dim of dims) { await page.tap(`.dim-wizard-card-btn[data-dim="${dim}"]`); await page.waitForTimeout(300); await collect(dim); }
   await page.close();
 }
