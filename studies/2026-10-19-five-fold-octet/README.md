@@ -14,6 +14,7 @@ Frame: an icosahedron of edge 1, with the five-fold axes through its corners. Ev
 
 - **DICTO GTI**, Golden Truncated Icosahedron: the icosahedron cut at 1/(2+φ) of each edge (rather than 1/3), giving 12 regular pentagons and 20 hexagons with sides alternating 1 : φ.
 - **DICTO FPD**, Flat Pentakis Dodecahedron: the polar dual of the GTI, a dodecahedron with low five-sided pyramids, flatter than the Catalan one.
+- **Monkey Staff B** (DICTO): the twisted frustum of stage 2 (D′ → ID), named after Dharma's Monkey Staff, a twisted pentagonal frustum of other proportions.
 - The cycle: **ID → RT → DICTO GTI → DICTO FPD → ID × 10/φ⁴**. Below, "golden truncated icosahedron" = GTI and "Q" = FPD.
 
 ## Progression so far
@@ -150,6 +151,10 @@ The reverse step takes as new corners the foot points of the last solid's faces 
 ## Polar reciprocation (DICTO 2026-10-19, float)
 
 **The four UP stations are two true polar pairs: ID ↔ RT and golden truncated icosahedron ↔ Q** (each solid's polar reciprocal has the other's shape). The ID and the golden TI have all their corners on one sphere, so the UP step from them **is** polar reciprocation. The RT and Q have corners at two radii, so the UP step from them is **not** polar: it carries the RT on to the golden TI and Q on to the ID. **So the cycle alternates: polar, non-polar, polar, non-polar**, and the non-polar steps are what join the two classical dual pairs into one cycle and set the scale 10/φ⁴. The polar of the OG has 80 corners and 102 faces (60 triangles, 30 quadrilaterals, 12 pentagons), the Hecatodihedron type, as known.
+
+## The polar cycle: UP is its own polar (DICTO 2026-10-19, float)
+
+Reciprocating the whole UP chain gives **the UP chain again**: no new solids, the same four in the same cyclic order, each step again following the UP rule with all corners on the next solid's faces. **The mirror is the DICTO GTI's circumsphere (radius √10/φ = 1.95440).** Reciprocation about it swaps **GTI ↔ FPD**, **RT ↔ ID×10/φ⁴** and **ID ↔ RT×10/φ⁴**, so it reflects the chain about the gap between the GTI and the FPD. The Spheres of Dharma's polar cycle gave new stations (the OG, the Hecatodihedron); UP's does not, because UP is self-polar. New shapes from reciprocation come only from other seeds, such as the OG's open family (above).
 
 ## Open
 
