@@ -1,0 +1,39 @@
+{
+ "mark": "DICTO five-fold octet study, hexagonal stage, 2026-10-19 (float)",
+ "og_corners_shared_with_id": 30,
+ "og_other_corners_on_radius_phi": 60,
+ "og_apexes": 12,
+ "og_hexagon_side": 0.5773502691896257,
+ "id_to_og": {
+  "pieces": 12,
+  "sum": 2.6324139907235993,
+  "gap": 2.632413990723599,
+  "one_kind": true,
+  "note": "pentagon on the ID, 5 kites + 5 small triangles of the OG hexagons on top; neighbours touch only along edges"
+ },
+ "og_to_rt": {
+  "pieces": {
+   "hexagonal Cleo": 20,
+   "five-fold cap": 12,
+   "tetrahedron": 120
+  },
+  "volumes": {
+   "hexagonal Cleo": 0.06366100187501755,
+   "five-fold cap": 0.08213499983552469,
+   "tetrahedron": 0.010610166979169595
+  },
+  "one_volume_each": {
+   "hexagonal Cleo": true,
+   "five-fold cap": true,
+   "tetrahedron": true
+  },
+  "sum": 3.5320600730269973,
+  "gap": 3.532060073027001,
+  "hexagonal_cleo_height": 0.22052817941653569
+ },
+ "sample_cover": {
+  "1": 23848
+ },
+ "cap_plus_low_convex": true,
+ "d_corner_at_hexagon_centre": true
+}

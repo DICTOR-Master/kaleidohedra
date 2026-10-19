@@ -42,6 +42,19 @@ Together they form **one convex piece**: the volume of their hull equals the sum
 
 The **tightest OG round the ID** has its 20 regular hexagons **exactly in the ID's triangle planes**. That puts each D′ corner at the centre of an OG hexagon, and the OG fits inside the RT (scale 3φ/2 against `ocd-vertices.json`, the vertices from `studies/2026-10-16-ocd-pyrochlore/data/network.json`). So **ID ⊂ OG ⊂ RT**, and the pinch on the three-fold axis can become a regular-hexagon waist, the place for pure hexagonal Cleos. The pieces for this are not computed yet.
 
+## Stage 3 through the OG: pure hexagonal Cleos (`hexstage.py`, `data/hexstage.json`, float)
+
+At this size, 30 of the OG's corners **are** the ID's corners, its other 60 corners lie on the same sphere (radius φ), and the 12 apexes stand further out. Each regular hexagon (side 1/√3) is an ID triangle (edge 1) plus three small flat triangles.
+
+| Shell | Pieces | Check |
+|---|---|---|
+| ID → OG | **12 of one kind**: the ID's pentagon below; on top, 5 kites and 5 small hexagon triangles of the OG; neighbours touch only along edges | sum = gap |
+| OG → RT | **20 pure hexagonal Cleos** (regular hexagon base, apex at the RT's three-fold corner √3, height 0.2205), **12 five-fold caps** (dimpled: the OG apex pokes in), **120 tetrahedra, one volume** | sum = gap; 23,848 random points each in exactly one piece |
+
+- **Five-fold column:** each ID → OG piece fills the dimple of its cap exactly, so together they make one convex piece (hull of the ID pentagon, 5 OG corners and the RT corner).
+- **Three-fold column:** the D′ corner is exactly at the hexagon's centre, so the Cleo spike still meets the hexagonal Cleo at one point. **No six-waisted Vajra forms from these pieces**; the hexagon sits on top of the pinch.
+- **Triangles:** every face between pieces here is still a triangle. The 120 tetrahedra may be mirror pairs (not yet checked).
+
 ## Triangles as the constant (DICTO 2026-10-19)
 
 DICTO: "triangles are the only true constant in the universal octet". This holds for every stage built so far. Inside each shell, every face where two pieces meet is a triangle. Pentagons, hexagons and rhombi appear only on the shell surfaces (D′, ID, OG, RT). Read this way, the triangle is the invariant and the shell polygon is the variable, which fits both the flat octet and the 600-cell, where everything is triangles. This has been checked only on stages 1–3.
