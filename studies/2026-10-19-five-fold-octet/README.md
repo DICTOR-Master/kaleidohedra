@@ -42,6 +42,10 @@ Together they form **one convex piece**: the volume of their hull equals the sum
 
 The **tightest OG round the ID** has its 20 regular hexagons **exactly in the ID's triangle planes**. That puts each D′ corner at the centre of an OG hexagon, and the OG fits inside the RT (scale 3φ/2 against `ocd-vertices.json`, the vertices from `studies/2026-10-16-ocd-pyrochlore/data/network.json`). So **ID ⊂ OG ⊂ RT**, and the pinch on the three-fold axis can become a regular-hexagon waist, the place for pure hexagonal Cleos. The pieces for this are not computed yet.
 
+## Triangles as the constant (DICTO 2026-10-19)
+
+DICTO: "triangles are the only true constant in the universal octet". This holds for every stage built so far. Inside each shell, every face where two pieces meet is a triangle. Pentagons, hexagons and rhombi appear only on the shell surfaces (D′, ID, OG, RT). Read this way, the triangle is the invariant and the shell polygon is the variable, which fits both the flat octet and the 600-cell, where everything is triangles. This has been checked only on stages 1–3.
+
 ## Open
 
 - An exact proof of each stage: every remainder exactly 0.
