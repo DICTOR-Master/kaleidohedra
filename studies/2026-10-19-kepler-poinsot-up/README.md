@@ -22,7 +22,12 @@ DICTO noticed that the UP shells always come out flat. That is because each UP s
 
 **EXACT (`exact_kp.py`, `exact_kp.json`, ℚ(√5)):** I2 = φ³·I exactly. In each shell, the spikes, inward pyramids and valley tetrahedra together fill core → hull exactly, with no two overlapping (exact separating planes) and all inside the hull and outside the core. Each kind has one volume. Great stellated shell: spike 1/8 + √5/24 (= I/10, so the GSD = 3·I), inward pyramid 5/8 + 7√5/24, valley tetrahedron 1/6 + √5/12. Small stellated shell: spire 5/3 + 3√5/4, inward pyramid 29/24 + 13√5/24, valley tetrahedron 3/4 + √5/3.
 
-**Perspective (DICTO, from Gothic figures and Michelangelo's David, made to look right from below):** a first float model, with a viewer on the spire's base plane comparing apparent height with width, needs the spires about ×2 taller at 12 base radii (×2.7 for the GSD and ×2.2 for the SSD at 6) to read as φ² and φ. The viewpoint is to be agreed with DICTO.
+**Perspective (DICTO, from Gothic figures and Michelangelo's David, made to look right from below; `perspective.py`, float).** A pinhole camera looks at the spire; in the picture, height (base centre → tip) is compared with the base's width. DICTO chose both viewpoints:
+- **B, outside on the base plane at 6 base radii:** the true spires already look almost right (great stellated 1.59 against 1.51; small stellated 0.83 against 0.85). The "seen" heights differ by only ×0.94 and ×1.03.
+- **A, inside, standing in the valley at a spike's foot:** the true spires look about three times squatter (0.53 against 1.51; 0.40 against 0.85), and **no height reads right from there**: from the foot, extra height is foreshortened away.
+- **This corrects my first crude angle model**, which had asked for about ×2 everywhere.
+
+This matches the sculptors' practice: the correction is made for a chosen, moderate viewing distance, not for the foot.
 
 **Prior art:** the nesting of the great and small stellated dodecahedra in their hulls is classical (Kepler, Coxeter). What may be new is filling the shells with this piece pattern, and pairing it with UP. To check.
 
