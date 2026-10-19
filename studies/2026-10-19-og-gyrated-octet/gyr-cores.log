@@ -1,0 +1,16 @@
+lower octahedra 13 | lower edges 99 | plane edges 21
+fcc partner c2: |c1-p| 0.3629, along c1 axis +0.0943, sideways 0.3505, axis angle to c1 180.00 deg
+twin corner c1': |c1-p| 0.1407, along c1 axis +0.1118, sideways 0.0854, axis angle to c1 105.25 deg
+c1 itself: distance from the twin plane 0.0703; distance from edge midpoint 0.1815
+mirror middle piece Mg: volume 0.049215 (P2 piece 0.079735), sphericity 0.520 (P2 0.579), parts 1
+pieces near the test edge 43 {'low': 14, 'plane': 15, 'up': 14}
+piece-piece overlaps by kind (total volume): none
+pieces inside any OG: none
+lower P2 pieces reaching across the twin plane: total 0.000000
+Mg above the plane 0.024608 below 0.024608 (a mirror piece splits evenly)
+old P2 piece at the plane edge: above the plane 0.039868, of which inside the twin OG 0.019837
+
+real	0m0.445s
+user	0m0.934s
+sys	0m0.272s
+exit 0

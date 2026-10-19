@@ -50,3 +50,11 @@ The DICTO Belted Triacontahedron is a rhombic triacontahedron (inradius 2/3, #37
 - Symmetry D3d (order 12): three-fold turn, inversion, half-turns about the 3 golden two-fold axes perpendicular to (1,1,1).
 - The OG lies inside; 36 of its corners touch the DBT's surface.
 - Float only: surface 6.253707, sphericity 0.9590.
+
+## Penrose-core (P2) middle pieces in the gyrated octet (2026-10-20, `gyr_cores.py` on dicto-node → `gyr-cores.log`; float)
+Only edges lying in the twin plane change: round them the cells run O T | T O, so the OG across the edge is the mirror twin, not the octet partner.
+- Lower-layer P2 pieces never cross the twin plane (0 volume), so every piece off the plane is unchanged.
+- **The old P2 piece fails at a plane edge:** half of it (0.0399) lies above the plane, 0.0198 of that inside the twin OG.
+- **The facing stars are gone:** the twin's five-fold corner is 0.1407 from c1 (octet partner 0.3629), with axes 105.25° apart (octet: exactly opposite, 180°). The thick-Penrose-rhombus link c1→c2 that defines the Penrose core has no counterpart there.
+- **A mirror middle piece works:** Mg = hull(star + its mirror image) − both OGs: one solid, volume 0.049215 (P2 piece 0.079735), sphericity 0.520, mirror-symmetric (so not left/right), split evenly by the plane. No overlap with any of 43 neighbouring pieces or with any OG.
+- So a gyrated Penrose-core kit = the P2 set + Mg at twin-plane edges; octahedra and tetrahedra touching a twin plane get different notches on that face (new boundary shapes, not yet computed).
