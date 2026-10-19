@@ -16,8 +16,8 @@ import { createInfinityPlayer } from './infinity-player.js';
 // colours by solid, as in the UP world's shells: ID gold, RT cyan, GTI rose, FPD green
 const COL = { ID: 0xfff176, RT: 0x4dd0e1, GTI: 0xf06292, FPD: 0x5fd38a, IDk: 0xfff176 };
 const PIECE_COL = { RT: 0x90caf9, GTI: 0x9fb4c8, FPD: 0x64b5f6, IDk: 0x7986cb };
-const NAMES = { ID: 'ID', RT: 'RT', GTI: 'DICTO GTI', FPD: 'DICTO FPD', IDk: 'ID·10/φ⁴' };
-const FULL = { ID: 'the icosidodecahedron', RT: 'the rhombic triacontahedron', GTI: 'the DICTO Golden Truncated Icosahedron',
+const NAMES = { cleo: 'Cleo star', ID: 'ID', RT: 'RT', GTI: 'DICTO GTI', FPD: 'DICTO FPD', IDk: 'ID·10/φ⁴' };
+const FULL = { cleo: 'the Cleo star: the icosahedron as 20 Cleo-Icos with 20 more turned out as spikes, where Universal PiTet begins', ID: 'the icosidodecahedron', RT: 'the rhombic triacontahedron', GTI: 'the DICTO Golden Truncated Icosahedron',
   FPD: 'the DICTO Flat Pentakis Dodecahedron', IDk: 'the next icosidodecahedron, 10/φ⁴ larger: the next turn begins' };
 // the film peels a turn outside in: 4 stations, then the turn inside has become the first (10/φ⁴ larger), so it loops without a seam
 const PEEL = ['IDk', 'FPD', 'GTI', 'RT'];
@@ -79,8 +79,10 @@ export function createUpFilmWorld({ scene, fitView = () => {}, showHudPrompt = (
       for (const k of ['FPD', 'GTI', 'RT']) addSolid(DATA.stations[k], COL[k], s, k, turn);
       if (view.pieces) for (const k of PEEL) for (const p of DATA.pieces[k]) addSolid(p, PIECE_COL[k], s, `p:${k}`, turn, 0.965);
     }
-    // the very centre (the innermost turn's ID): a small solid, so the core never shows a hole
-    addSolid(DATA.stations.ID, COL.ID, DATA.K ** turns[turns.length - 1], 'ID', turns[turns.length - 1]);
+    // the very centre (DICTO 2026-10-19: "Cleo spikes showing at the centre"): the Cleo star inside the innermost ID, its Cleo-Icos gold and
+    // spikes cyan as in Theaetetus, so the core never shows a hole
+    const inner = turns[turns.length - 1];
+    for (const p of DATA.cleo) addSolid(p, p.spike ? 0x4dd0e1 : 0xffc857, DATA.K ** inner, 'cleo', inner, 0.97);
     applyFilm();
   }
   // ---- the film: u runs over the 4 peels of a turn; station PEEL[j] of turn 0 lifts away and fades while u passes j, its shell's pieces

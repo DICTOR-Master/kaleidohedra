@@ -147,6 +147,7 @@ film_pieces = {'RT': cone_pieces(ID, RT, lambda n: 'p'), 'GTI': cone_pieces(RT, 
                'IDk': cone_pieces(Q, ID2, lambda n: 'p')}
 film = {'K': K, 'stations': {'ID': solid_of(ID), 'RT': solid_of(RT), 'GTI': solid_of(T), 'FPD': solid_of(Q)},
         'pieces': {k: [{'v': p[1], 'f': p[2]} for p in v] for k, v in film_pieces.items()},
+        'cleo': [{'v': p[1], 'f': p[2], 'spike': k >= 20} for k, p in enumerate(cleo + spikes)],   # the Cleo star at the centre (DICTO)
         'view': {'dir': [0.45, 0.35, 1.0], 'up': [0.0, 1.0, 0.0]}, 'radius': float(np.linalg.norm(ID2, axis=1).max())}
 with open(os.path.join(os.path.dirname(OUT), 'up-film-data.js'), 'w') as f:
     f.write('// Built by scripts/build-up-data.py (Universal PiTet film, DICTO 2026-10-19). Do not edit.\nexport default ' + json.dumps(film, separators=(',', ':')) + ';\n')
