@@ -33,3 +33,11 @@ Stella–Jewel Lattice (Jewels on the even cells, an fcc of Jewels; stella octan
 - Twinned: **4.0% of the points are gaps and 4.2% overlaps**, all within about 1.6 of the plane. **The Jewel does not twin freely.**
 - Why: the Jewel and the stella are framed by **cubes**, and a cube mirrored in a plane across its body diagonal is a different cube (that mirror is not a symmetry of the cube). An octahedron mirrored in its face is just the next octahedron of the gyrated octet, which is why the OG and the OCD Stella twin and the Jewel does not. The (111) layers alternate Jewels and stellas, so a twin through a stella layer meets the same obstacle.
 - With the stellas paired in (they fill the odd cells throughout), other twin planes fail too (`jewel_twin_planes.py`): through a stella layer (x+y+z = 2) 5.1% gaps and 5.9% overlaps; between layers (x+y+z = 1 or 3) 18–19% gaps or overlaps.
+
+## The belted envelope as a shape of its own (DICTO 2026-10-19, float, `belted.py`)
+The golden envelope (rhombic triacontahedron round the OG, #37 frame) cut flat by the octahedron's two faces on one three-fold axis.
+- **The cut runs exactly through the pole corner's three five-fold neighbours** (fraction 1.000000 of each edge): it takes off the corner pyramid on the three long diagonals. The 3 rhombi round each pole become half-rhombus triangles, and the pole is an equilateral triangle whose sides are the rhombi's long diagonals (0.824045; envelope edge 0.484362).
+- **30 corners, 32 faces (24 golden rhombi + 6 half-rhombi + 2 equilateral pole triangles), 60 edges**; Euler 2. Symmetry D3d (the three-fold axis with the centre of symmetry).
+- Volume **1.38111** = envelope 1.398921 − 2 keys (0.017811; the step-3 key (−44 + 20√5)/81 each). Sphericity 0.959; pole to pole 1.245563, width 1.539601.
+- It holds the OG (the OG lies inside the octahedron) and sits in every octahedron of the gyrated octet: flat on the twin faces, keyed on the six side faces.
+- To make exact; name to propose to DICTO.
