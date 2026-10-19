@@ -73,7 +73,7 @@ export function filmOrder(list, named = []) {
 
 /** A world of nested shells (Multi-shell chains, DICTO Dodeca): data { kind: { views: { view: [[role, vertices, faces]] } } },
  *  words under '<prefix>.<kind>.<view>' and '<prefix>.note.<kind>'. */
-export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null }) {
+export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null, backOnly = null }) {
   const STORAGE_KEY = storageKey(name);
   const group = new THREE.Group();
   group.visible = false;
@@ -95,6 +95,9 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   let skeleton = false, opacity = 1; // the app's view modes: Solid, Translucent, Skeleton
   const solid = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, flatShading: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
   const glass = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, flatShading: true, transparent: true, opacity: 0.22, depthWrite: false });
+  // backOnly roles (UP's cycle, DICTO 2026-10-19): only their far faces are drawn, opaque, so nested solids show as the inside of a
+  // bowl, each layer in its colour, without being cut
+  const back = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.BackSide, flatShading: true });
   glass.userData.hollow = true; // glass shells and helpers stay hollow in an X-ray cut (xray-caps.js)
   function clearGroup() {
     for (const child of [...group.children]) { group.remove(child); child.geometry.dispose(); if (child.isLineSegments) child.material.dispose(); }
@@ -148,7 +151,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     const all = list.flatMap((p) => p[1]);
     const c0 = centreOf(all);
     radius = Math.max(...all.map((p) => Math.hypot(...p.map((c, i) => c - c0[i]))));
-    const buf = { solid: { pos: [], col: [], line: [] }, glass: { pos: [], col: [], line: [] } };
+    const buf = { solid: { pos: [], col: [], line: [] }, glass: { pos: [], col: [], line: [] }, back: { pos: [], col: [], line: [] } };
     const colour = new THREE.Color();
     // Shells (DICTO 2026-10-13): pieces grouped by the distance of their centres from the middle; the Top shell slider steps
     // through them, the chosen shell uppermost and every shell outside it lifted away (shown as crystal when Crystal is on).
@@ -166,7 +169,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       const sh = shellOf(dist[n]); const top = Math.round(view.shells * (levels.length - 1));
       if (!fm && sh > top && !ALWAYS_GLASS.has(role) && !view.crystal) return;
       const see = ALWAYS_GLASS.has(role) || (view.crystal && (GLASS[view.kind]?.has(role) || sh > top));
-      const b = see ? buf.glass : buf.solid;
+      const b = backOnly?.has(role) ? buf.back : see ? buf.glass : buf.solid;
       // Pulled apart: each piece moves out along the line from the centre through its own centre; see-through shells stay put.
       // By face: along the outward normal of the piece's outermost face instead (faceMove).
       let off = [0, 0, 0];
@@ -188,7 +191,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       }
     });
     solid.transparent = opacity < 1; solid.opacity = opacity; solid.depthWrite = opacity >= 1; solid.needsUpdate = true;
-    for (const [key, mat] of [['solid', solid], ['glass', glass]]) {
+    for (const [key, mat] of [['solid', solid], ['glass', glass], ['back', back]]) {
       const b = buf[key];
       if (!b.line.length) continue;
       const g = new THREE.BufferGeometry();
@@ -198,7 +201,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       const lg = new THREE.BufferGeometry();
       lg.setAttribute('position', new THREE.Float32BufferAttribute(b.line, 3));
       if (!skeleton) group.add(new THREE.Mesh(g, mat));
-      group.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial(key === 'glass' ? { color: 0x9fa8c0, transparent: true, opacity: 0.55 } : { color: skeleton ? 0xcfe3ff : EDGE_COLOR })));
+      if (key !== 'back') group.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial(key === 'glass' ? { color: 0x9fa8c0, transparent: true, opacity: 0.55 } : { color: skeleton ? 0xcfe3ff : EDGE_COLOR })));
     }
     renderPanel();
   }
@@ -234,7 +237,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   // DICTO's piece names stay as they are; the classical pieces are translated.
   const PIECE = { axe: 'AXE', laxe: 'AXE', cleo: 'CLEO', lcleo: 'CLEO', fuji: 'FUJI', lfuji: 'FUJI', nfru3: 'Vajra (twist)', npyr5: 'Stupa', npyr3: 'Cleo-low',
     nfru5: 'Monkey Staff', nt1: 't1', nwedge: 'Vajra-blade', nedge: 'Sevenfold-blade', nface: 'Cleo-low 2', B1: 'Vajra (fine)', B2: 'Chatra', B3: 'Mudra',
-    B4: 'Crown Jewel', B5L: 'Diadem L', B5R: 'Diadem R', lj11: 'J11', icleo: 'Cleo-Ico', fpyr5: 'Aetos', ccleo: 'Cleo-Ico', cspike: 'Cleo-Ico', col: 'Kion', tx: 'Sphen', ty: 'Sphenion', bipyr: 'Atraktos' };  // names by DICTO 2026-10-15
+    B4: 'Crown Jewel', B5L: 'Diadem L', B5R: 'Diadem R', lj11: 'J11', icleo: 'Cleo-Ico', fpyr5: 'Aetos', ccleo: 'Cleo-Ico', cspike: 'Cleo-Ico', col: 'Kion', tx: 'Sphen', ty: 'Sphenion', bipyr: 'Atraktos', upFrustum: 'Monkey Staff B' };  // names by DICTO 2026-10-15; Monkey Staff B 2026-10-19 (UP)
   const pieceName = (role, V, L) => (role === 'ncap' && V.length === 7 ? 'Shield' : PIECE[role]
     ?? t({ ico: 'solid.icosahedron', core: 'solid.icosahedron', cap: 'piece.cap', ncap: 'piece.cap', lcap: 'piece.cap', gpyr5: 'piece.inwardPyr5', cvalley: 'piece.valleyTet', dprime: 'solid.dodecahedron', centre: 'solid.rhombicTriacontahedron', copy: 'solid.rhombicTriacontahedron' }[role] ?? role, L));
   const solidName = (k, L) => (k === 'hecatodihedron' ? 'DICTO Truncated-Icosahedral Hecatodihedron' : t(`solid.${k}`, L));
