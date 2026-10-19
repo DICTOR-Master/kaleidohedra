@@ -1,0 +1,60 @@
+{
+ "mark": "DICTO five-fold octet study, 2026-10-19 (float)",
+ "stages": [
+  {
+   "from": "D'",
+   "to": "ID",
+   "pieces": {
+    "five-sided twisted frustum (D pentagon, ID pentagon turned 36 deg, 10 triangles)": 12
+   },
+   "piece_volume": 0.3514421530362536,
+   "sum": 4.217305836435041,
+   "gap": 4.217305836435042,
+   "one_kind": true
+  },
+  {
+   "from": "ID",
+   "to": "RT",
+   "pieces": {
+    "five-sided pyramid": 12,
+    "three-sided pyramid": 20,
+    "valley tetrahedron (on each ID edge)": 60
+   },
+   "sum": 6.164474063750599,
+   "gap": 6.1644740637506,
+   "tetra_one_kind": true
+  }
+ ],
+ "known_case": "D' matches the app's Cleo star hull (radius and volume)",
+ "vajra5": {
+  "parts": [
+   0.16687927070215194,
+   0.3514421530362536,
+   0.3015028323958244
+  ],
+  "sum": 0.8198242561342299,
+  "hull": 0.8198242561342298,
+  "convex_union": true,
+  "inner_tip_r": 0.9510565162951535,
+  "outer_tip_r": 1.902113032590307
+ },
+ "vajra3_note": "Cleo spike tip and the three-sided pyramid meet only at the D' corner (a point), so the 3-fold column pinches",
+ "og_round_id": {
+  "scale_vs_file": 2.4270509831248437,
+  "scale_is_3phi_over_2": 1.0,
+  "hexagon_plane": 1.5115226281523424,
+  "id_triangle_plane": 1.5115226281523415,
+  "coplanar": 1.0,
+  "og_inside_rt": true
+ },
+ "radii": {
+  "I": 0.9510565162951535,
+  "D'": 1.5115226281523415,
+  "ID": 1.618033988749895,
+  "RT5": 1.902113032590307,
+  "RT3": 1.7320508075688774,
+  "ID_is_phi": 1.0,
+  "RT5_is_2xI": 1.0,
+  "RT3_is_sqrt3": 1.0
+ }
+}
