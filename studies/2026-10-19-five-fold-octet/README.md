@@ -55,6 +55,15 @@ At this size, 30 of the OG's corners **are** the ID's corners, its other 60 corn
 - **Three-fold column:** the D′ corner is exactly at the hexagon's centre, so the Cleo spike still meets the hexagonal Cleo at one point. **No six-waisted Vajra forms from these pieces**; the hexagon sits on top of the pinch.
 - **Triangles:** every face between pieces here is still a triangle. The 120 tetrahedra may be mirror pairs (not yet checked).
 
+## Stage 4: RT → a transitional golden truncated icosahedron (`stage4.py`, `data/stage4.json`, float)
+
+DICTO: "keep going outwards, but there may be missing transitional solids." The next solid has its faces through the RT's 32 corners, at right angles to their axes, so the points meet again. It is a **truncated icosahedron that is not regular**: 12 regular pentagons and 20 hexagons whose sides alternate between 0.5279 and 0.8541, a ratio of **φ**, all 60 corners at radius 1.9544. It sits between the icosahedron and the regular truncated icosahedron, a transitional solid (prior art not checked).
+
+- **Fill:** **30 identical convex pieces, one per RT rhombus**, each of volume **1/(2φ²)**. They add up to the gap.
+- **Each piece:** the rhombus below; on top, 2 quadrilaterals (in the pentagon planes) and 2 pentagons (in the hexagon planes).
+- **Walls:** every wall between neighbouring pieces is a **triangle** (120 of 120), so the triangle constant holds.
+- **What comes next (not yet filled):** the same rule applied to its 60 corners gives a **pentakis-dodecahedron-type solid**: 60 triangles, the 12 five-fold corners at 2.0081, the 20 three-fold corners at 2.2053. That is the family the OG comes from (the OG is a pentakis dodecahedron with its 20 six-fold corners cut flat), so the OG family may come back here.
+
 ## Triangles as the constant (DICTO 2026-10-19)
 
 DICTO: "triangles are the only true constant in the universal octet". This holds for every stage built so far. Inside each shell, every face where two pieces meet is a triangle. Pentagons, hexagons and rhombi appear only on the shell surfaces (D′, ID, OG, RT). Read this way, the triangle is the invariant and the shell polygon is the variable, which fits both the flat octet and the 600-cell, where everything is triangles. This has been checked only on stages 1–3.
