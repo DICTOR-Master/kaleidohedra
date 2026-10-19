@@ -1,0 +1,66 @@
+
+== octet
+PASS M0: 108 middle pieces, all 310/4617 + 26/4617*sqrt5 = 0.079735
+PASS middle pieces near the origin octahedron: no two overlap (0 touching pairs checked) and none enters a third OG
+      cap at v(0, 0, 1) (layer plane +1): 32/243 + -8/243*sqrt5 = 0.058072
+      cap at v(0, 0, -1) (layer plane -1): 32/243 + -8/243*sqrt5 = 0.058072
+      cap at v(0, 1, 0) (layer plane +1): 32/243 + -8/243*sqrt5 = 0.058072
+      cap at v(0, -1, 0) (layer plane -1): 32/243 + -8/243*sqrt5 = 0.058072
+      cap at v(1, 0, 0) (layer plane +1): 32/243 + -8/243*sqrt5 = 0.058072
+      cap at v(-1, 0, 0) (layer plane -1): 32/243 + -8/243*sqrt5 = 0.058072
+      tetrahedron with its face on plane -1: 26/81 + -2/81*sqrt5 = 0.265776
+      tetrahedron with its face on plane -1: 26/81 + -2/81*sqrt5 = 0.265776
+      tetrahedron with its face on plane +1: 26/81 + -2/81*sqrt5 = 0.265776
+      tetrahedron with its face on plane -1: 26/81 + -2/81*sqrt5 = 0.265776
+      tetrahedron with its face on plane +1: 26/81 + -2/81*sqrt5 = 0.265776
+      tetrahedron with its face on plane +1: 26/81 + -2/81*sqrt5 = 0.265776
+PASS origin octahedron: OG + 6 caps + middle pieces inside = octahedron 64/81 + 32/81*sqrt5 = 1.673508
+PASS one cell: OG + 6 caps + 2 tetrahedra + {'M0': 6} = cell 32/27 + 16/27*sqrt5 = 2.510263
+
+== single
+PASS M0: 81 middle pieces, all 310/4617 + 26/4617*sqrt5 = 0.079735
+PASS Mg: 21 middle pieces, all 424/4617 + -88/4617*sqrt5 = 0.049215
+PASS middle pieces near the origin octahedron: no two overlap (33 touching pairs checked) and none enters a third OG
+      cap at v(0, 0, 1) (layer plane +1): 23/162 + -47/1215*sqrt5 = 0.055477
+      cap at v(0, 0, -1) (layer plane -1): 32/243 + -8/243*sqrt5 = 0.058072
+      cap at v(0, 1, 0) (layer plane +1): 23/162 + -47/1215*sqrt5 = 0.055477
+      cap at v(0, -1, 0) (layer plane -1): 32/243 + -8/243*sqrt5 = 0.058072
+      cap at v(1, 0, 0) (layer plane +1): 23/162 + -47/1215*sqrt5 = 0.055477
+      cap at v(-1, 0, 0) (layer plane -1): 32/243 + -8/243*sqrt5 = 0.058072
+      tetrahedron with its face on plane -1: 26/81 + -2/81*sqrt5 = 0.265776
+      tetrahedron with its face on plane -1: 26/81 + -2/81*sqrt5 = 0.265776
+      tetrahedron with its face on plane +1: 41/162 + 4/135*sqrt5 = 0.319340
+      tetrahedron with its face on plane -1: 26/81 + -2/81*sqrt5 = 0.265776
+      tetrahedron with its face on plane +1: 41/162 + 4/135*sqrt5 = 0.319340
+      tetrahedron with its face on plane +1: 41/162 + 4/135*sqrt5 = 0.319340
+PASS origin octahedron: OG + 6 caps + middle pieces inside = octahedron 64/81 + 32/81*sqrt5 = 1.673508
+
+== gyrated
+PASS M0: 48 middle pieces, all 310/4617 + 26/4617*sqrt5 = 0.079735
+PASS Mg: 48 middle pieces, all 424/4617 + -88/4617*sqrt5 = 0.049215
+PASS middle pieces near the origin octahedron: no two overlap (66 touching pairs checked) and none enters a third OG
+      cap at v(0, 0, 1) (layer plane +1): 23/162 + -47/1215*sqrt5 = 0.055477
+      cap at v(0, 0, -1) (layer plane -1): 23/162 + -47/1215*sqrt5 = 0.055477
+      cap at v(0, 1, 0) (layer plane +1): 23/162 + -47/1215*sqrt5 = 0.055477
+      cap at v(0, -1, 0) (layer plane -1): 23/162 + -47/1215*sqrt5 = 0.055477
+      cap at v(1, 0, 0) (layer plane +1): 23/162 + -47/1215*sqrt5 = 0.055477
+      cap at v(-1, 0, 0) (layer plane -1): 23/162 + -47/1215*sqrt5 = 0.055477
+      tetrahedron with its face on plane -1: 41/162 + 4/135*sqrt5 = 0.319340
+      tetrahedron with its face on plane -1: 41/162 + 4/135*sqrt5 = 0.319340
+      tetrahedron with its face on plane +1: 41/162 + 4/135*sqrt5 = 0.319340
+      tetrahedron with its face on plane -1: 41/162 + 4/135*sqrt5 = 0.319340
+      tetrahedron with its face on plane +1: 41/162 + 4/135*sqrt5 = 0.319340
+      tetrahedron with its face on plane +1: 41/162 + 4/135*sqrt5 = 0.319340
+PASS origin octahedron: OG + 6 caps + middle pieces inside = octahedron 64/81 + 32/81*sqrt5 = 1.673508
+PASS one cell: OG + 6 caps + 2 tetrahedra + {'M0': 3, 'Mg': 3} = cell 32/27 + 16/27*sqrt5 = 2.510263
+PASS octet: notched cap (32 - 8sqrt5)/243 as #37, and keyless notched tetrahedron = (cell - OG - 6 caps - 6 M0)/2 from #37 exact values
+PASS gyrated: all 6 caps equal, boundary cap 23/162 + -47/1215*sqrt5 = 0.055477; all 6 tetrahedra equal, boundary tetrahedron 41/162 + 4/135*sqrt5 = 0.319340
+PASS single twin plane: the 3 caps on the plane are boundary caps, the other 3 octet caps
+PASS single twin plane: the 3 tetrahedra with a face on it are boundary tetrahedra, the other 3 octet tetrahedra
+      boundary cap = octet cap - -5/486 + 7/1215*sqrt5 = 0.002595; boundary tetrahedron = octet tetrahedron + -11/162 + 22/405*sqrt5 = 0.053564
+saved gyr-boundary-exact.json
+
+real	0m48.232s
+user	0m48.479s
+sys	0m0.173s
+exit 0

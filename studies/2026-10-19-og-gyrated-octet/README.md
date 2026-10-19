@@ -74,3 +74,9 @@ The #37 keyless Penrose-core kit (OG, 6 vertex caps per octahedron, a middle pie
 - A piece only feels the one layer plane it touches: with a single twin plane the 3 caps on that side are boundary caps and the other 3 octet caps; the 3 tetrahedra with a face there are boundary tetrahedra, the others octet. So **any stacking uses the octet kit plus these three shapes.**
 - Gyrated octet: every cap and every tetrahedron is a boundary piece (6 caps congruent, 3 + 3 mirror images; tetrahedra 3 + 3 mirror images); per cell 3 middle pieces M0 (with their Penrose cores) and 3 Mg. Origin octahedron: OG + 6 caps + middle pieces inside = 1.673508 = octahedron. Per cell 1.151868 + 6(0.055477) + 3(0.079735) + 3(0.049215) + 2(0.319340) = 2.510263 = cell.
 - Middle pieces reach at most 0.5542 from their edge midpoints. To make exact.
+**Exact (`gyr_boundary_exact.py` on dicto-node → `gyr-boundary-exact.log`, `gyr-boundary-exact.json`; 17 PASS, 0 FAIL).** By convex pieces in ℚ(√5), for the octet, a single twin plane and the gyrated octet:
+- Middle pieces: M0 = (310 + 26√5)/4617, Mg = (424 − 88√5)/4617; near the origin octahedron no two overlap and none enters a third OG (exact).
+- **Boundary cap 23/162 − 47√5/1215 ≈ 0.055477** (octet cap (32 − 8√5)/243 minus (−25 + 28√5)/2430 ≈ 0.002595).
+- **Boundary tetrahedron 41/162 + 4√5/135 ≈ 0.319340** (octet keyless tetrahedron (26 − 2√5)/81 plus (−55 + 44√5)/810 ≈ 0.053564).
+- Octet run gives #37's cap and keyless tetrahedron; single twin plane: exactly the 3 caps and 3 tetrahedra on the plane are boundary pieces; gyrated: all 6 caps and all 6 tetrahedra are; origin octahedron and one gyrated cell sum exactly.
+- (Congruence of equal-volume pieces and their hands: float overlap test, `gyr_boundary.py`.)
