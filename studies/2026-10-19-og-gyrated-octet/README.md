@@ -76,7 +76,7 @@ The #37 keyless Penrose-core kit (OG, 6 vertex caps per octahedron, a middle pie
 - Middle pieces reach at most 0.5542 from their edge midpoints. To make exact.
 **Exact (`gyr_boundary_exact.py` on dicto-node → `gyr-boundary-exact.log`, `gyr-boundary-exact.json`; 17 PASS, 0 FAIL).** By convex pieces in ℚ(√5), for the octet, a single twin plane and the gyrated octet:
 - Middle pieces: M0 = (310 + 26√5)/4617, Mg = (424 − 88√5)/4617; near the origin octahedron no two overlap and none enters a third OG (exact).
-- **Boundary cap 23/162 − 47√5/1215 ≈ 0.055477** (octet cap (32 − 8√5)/243 minus (−25 + 28√5)/2430 ≈ 0.002595).
+- **Boundary cap 23/162 − 47√5/1215 ≈ 0.055477** (octet cap (32 − 8√5)/243 minus (−25 + 14√5)/2430 ≈ 0.002595).
 - **Boundary tetrahedron 41/162 + 4√5/135 ≈ 0.319340** (octet keyless tetrahedron (26 − 2√5)/81 plus (−55 + 44√5)/810 ≈ 0.053564).
 - Octet run gives #37's cap and keyless tetrahedron; single twin plane: exactly the 3 caps and 3 tetrahedra on the plane are boundary pieces; gyrated: all 6 caps and all 6 tetrahedra are; origin octahedron and one gyrated cell sum exactly.
 - (Congruence of equal-volume pieces and their hands: float overlap test, `gyr_boundary.py`.)
