@@ -1,0 +1,115 @@
+<title>DBT and 8-Cut Kits</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* layout: three kit bays side by side (stacking on phones), each a stage over a strip of exact numbers */
+:root {
+  --bg: #f3f1ec; --panel: #fbfaf7; --ink: #26231e; --mute: #6c665a; --line: #dcd6ca; --accent: #b0851a;
+  --stage: #ebe7de; --gold: #d9a521; --fill: #3f9a5b; --fill2: #2a9d9a;
+  --display: "Fraunces", Georgia, serif; --body: "Source Sans 3", "Segoe UI", sans-serif; --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #16150f; --panel: #1e1c16; --ink: #ece7dc; --mute: #a59e8f; --line: #353127; --accent: #e0b546; --stage: #24211a; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #16150f; --panel: #1e1c16; --ink: #ece7dc; --mute: #a59e8f; --line: #353127; --accent: #e0b546; --stage: #24211a; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 28px }
+header { max-width: 1240px; margin: 0 auto 18px; display: grid; gap: 6px }
+h1 { font: 650 clamp(24px, 4vw, 34px)/1.1 var(--display); margin: 0; text-wrap: balance }
+.lede { color: var(--mute); margin: 0; max-width: 70ch }
+.bays { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px }
+.bay { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: grid; min-width: 0 }
+.bay h2 { font: 600 19px/1.2 var(--display); margin: 0 }
+.bay .sub { color: var(--mute); font-size: 13.5px }
+.head { padding: 12px 14px 8px; display: grid; gap: 2px }
+.stage { position: relative; aspect-ratio: 1 / 1; max-width: 100%; background: var(--stage); touch-action: none; cursor: grab }
+.stage canvas { width: 100%; height: 100%; display: block }
+.ctl { padding: 10px 14px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; border-top: 1px solid var(--line) }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 7px; overflow: hidden }
+.seg button { font: 600 13px var(--body); padding: 7px 12px; background: transparent; color: var(--ink); border: 0; cursor: pointer }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--panel) }
+.seg button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+label.apart { display: flex; gap: 8px; align-items: center; font-size: 13px; color: var(--mute); flex: 1; min-width: 160px }
+label.apart input { flex: 1; accent-color: var(--accent) }
+dl { margin: 0; padding: 10px 14px 14px; display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; font-size: 13.5px; border-top: 1px solid var(--line) }
+dt { color: var(--mute) } dd { margin: 0; font: 12.5px/1.5 var(--mono); font-variant-numeric: tabular-nums; min-width: 0; overflow-wrap: anywhere }
+.key { display: flex; gap: 12px; flex-wrap: wrap; font-size: 12.5px; color: var(--mute); padding: 0 14px 4px }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px }
+footer { max-width: 1240px; margin: 18px auto 0; color: var(--mute); font-size: 12.5px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px }
+</style>
+
+<header>
+  <h1>The DBT kit and the 8-cut kit</h1>
+  <p class="lede">Each solid with the one shape that fills the rest of space: the leftover goes to its nearest bipyramid (gyrated octet) or nearest tetrahedron (octet). Drag to turn. The set shows the pieces apart; the cluster shows the solid with every fill piece that touches it.</p>
+</header>
+<main class="bays" id="bays"></main>
+<footer><span>Solids exact in ℚ(√5) (dbt_exact.py, cut8_exact.py); fill pieces float (dbt_fill.py, kits_page_data.py), research studies/2026-10-19-og-gyrated-octet.</span><span>DICTO · dictospheres.com</span></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const DATA = __DATA__;
+const KITS = [
+  { key: 'dbt-gyr', title: 'DICTO Belted Triacontahedron', sub: 'gyrated octet · DBT + grown bipyramid', share: '(493 − 219√5)/6 ≈ 55.02%', solid: '(−872 + 440√5)/81 ≈ 1.381110', fill: '(976 − 432√5)/81 ≈ 1.129153 per cell', fillname: 'grown bipyramid' },
+  { key: 'cut8-gyr', title: '8-cut solid', sub: 'gyrated octet · 8-cut + grown bipyramid', share: '176/3 − 26√5 ≈ 52.89%', solid: '(−608 + 320√5)/81 ≈ 1.327676', fill: '(704 − 272√5)/81 ≈ 1.182587 per cell', fillname: 'grown bipyramid' },
+  { key: 'cut8-oct', title: '8-cut solid', sub: 'octet · 8-cut + grown tetrahedra (left, right)', share: '176/3 − 26√5 ≈ 52.89%', solid: '(−608 + 320√5)/81 ≈ 1.327676', fill: '(352 − 136√5)/81 ≈ 0.591293 each', fillname: 'grown tetrahedron' },
+];
+const css = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function geom(m) {
+  const g = new THREE.BufferGeometry(); const p = new Float32Array(m.t.length * 9); let i = 0;
+  for (const [a, b, c] of m.t) for (const k of [a, b, c]) { p[i++] = m.v[k][0]; p[i++] = m.v[k][1]; p[i++] = m.v[k][2]; }
+  g.setAttribute('position', new THREE.BufferAttribute(p, 3)); g.computeVertexNormals(); return g;
+}
+function centre(m) { const c = [0, 0, 0]; for (const v of m.v) for (let k = 0; k < 3; k++) c[k] += v[k] / m.v.length; return new THREE.Vector3(...c); }
+function bay(K) {
+  const d = DATA.kits[K.key];
+  const el = document.createElement('section'); el.className = 'bay';
+  el.innerHTML = `<div class="head"><h2>${K.title}</h2><div class="sub">${K.sub}</div></div>
+    <div class="stage"></div>
+    <div class="key"><span><i class="sw" style="background:var(--gold)"></i>solid</span><span><i class="sw" style="background:var(--fill)"></i>${K.fillname}${K.key === 'cut8-oct' ? ' (left)' : ''}</span>${K.key === 'cut8-oct' ? '<span><i class="sw" style="background:var(--fill2)"></i>right</span>' : ''}</div>
+    <div class="ctl"><div class="seg" role="group" aria-label="View"><button id="${K.key}-set" aria-pressed="false">Set</button><button id="${K.key}-cl" aria-pressed="true">Cluster</button></div>
+      <label class="apart">Pull apart <input id="${K.key}-ap" type="range" min="0" max="1" step="0.01" value="0.35"></label></div>
+    <dl><dt>Solid</dt><dd>${K.solid}</dd><dt>Share of space</dt><dd>${K.share}</dd><dt>Fill piece</dt><dd>${K.fill}</dd>
+      <dt>Sphericity</dt><dd>solid ${d.solid_sph.toFixed(3)} · fill ${d.fill_sph.toFixed(3)}</dd><dt>Fill pieces touching</dt><dd>${d.fills.length}</dd></dl>`;
+  document.getElementById('bays').append(el);
+  const stage = el.querySelector('.stage');
+  const r = new THREE.WebGLRenderer({ antialias: true, alpha: true }); r.setPixelRatio(Math.min(2, devicePixelRatio)); stage.append(r.domElement);
+  const scene = new THREE.Scene(); const cam = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8170, 0.75)); const L = new THREE.DirectionalLight(0xffffff, 0.7); L.position.set(2, 3, 4); scene.add(L);
+  const root = new THREE.Group(); scene.add(root);
+  const mat = (hex, op = 1) => new THREE.MeshStandardMaterial({ color: new THREE.Color(hex), roughness: 0.55, metalness: 0.05, flatShading: true, transparent: op < 1, opacity: op, side: THREE.DoubleSide });
+  const edges = (g) => new THREE.LineSegments(new THREE.EdgesGeometry(g, 20), new THREE.LineBasicMaterial({ color: 0x2b261e, transparent: true, opacity: 0.35 }));
+  const solidG = geom(d.solid); const sc = centre(d.solid);
+  const parts = [];
+  const add = (g, colour, home, out) => { const grp = new THREE.Group(); const m = new THREE.Mesh(g, mat(colour)); grp.add(m, edges(g)); root.add(grp); parts.push({ grp, home, out }); };
+  let view = 'cl';
+  function build() {
+    while (root.children.length) root.remove(root.children[0]); parts.length = 0;
+    const fills = d.fills;
+    if (view === 'cl') {
+      add(solidG, css('--gold'), new THREE.Vector3(), new THREE.Vector3());
+      for (const f of fills) { const g = geom(f); const c = centre(f); add(g, f.hand < 0 ? css('--fill2') : css('--fill'), new THREE.Vector3(), c.clone().sub(sc).normalize().multiplyScalar(0.9)); }
+    } else {
+      const f0 = fills[0], c0 = centre(f0); const items = [[solidG, sc, css('--gold')], [geom(f0), c0, f0.hand < 0 ? css('--fill2') : css('--fill')]];
+      if (K.key === 'cut8-oct') { const f1 = fills.find((f) => f.hand !== f0.hand); if (f1) items.push([geom(f1), centre(f1), f1.hand < 0 ? css('--fill2') : css('--fill')]); }
+      const span = 1.75; items.forEach(([g, c, col], i) => { const x = (i - (items.length - 1) / 2) * span; add(g, col, new THREE.Vector3(x, 0, 0).sub(c), new THREE.Vector3()); });
+    }
+    place(); fit();
+  }
+  const ap = el.querySelector(`#${K.key}-ap`);
+  function place() { const a = +ap.value; for (const p of parts) p.grp.position.copy(p.home).addScaledVector(p.out, a); }
+  let rx = -0.35, ry = 0.6, dist = 6;
+  function fit() { const b = new THREE.Box3().setFromObject(root); const s = b.getBoundingSphere(new THREE.Sphere()); dist = s.radius / Math.sin(THREE.MathUtils.degToRad(15)) * 1.05; root.position.set(0, 0, 0); render(); }
+  function render() { cam.position.set(dist * Math.sin(ry) * Math.cos(rx), dist * Math.sin(-rx), dist * Math.cos(ry) * Math.cos(rx)); cam.lookAt(0, 0, 0); r.render(scene, cam); }
+  function size() { const w = stage.clientWidth; r.setSize(w, w, false); cam.aspect = 1; cam.updateProjectionMatrix(); render(); }
+  new ResizeObserver(size).observe(stage);
+  let drag = null;
+  stage.addEventListener('pointerdown', (e) => { drag = [e.clientX, e.clientY, rx, ry]; stage.setPointerCapture(e.pointerId); stage.style.cursor = 'grabbing'; });
+  stage.addEventListener('pointermove', (e) => { if (!drag) return; ry = drag[3] - (e.clientX - drag[0]) * 0.01; rx = Math.max(-1.45, Math.min(1.45, drag[2] - (e.clientY - drag[1]) * 0.01)); render(); });
+  const up = () => { drag = null; stage.style.cursor = 'grab'; }; stage.addEventListener('pointerup', up); stage.addEventListener('pointercancel', up);
+  ap.addEventListener('input', () => { place(); render(); });
+  const bs = el.querySelector(`#${K.key}-set`), bc = el.querySelector(`#${K.key}-cl`);
+  const setView = (v) => { view = v; bs.setAttribute('aria-pressed', v === 'set'); bc.setAttribute('aria-pressed', v === 'cl'); ap.parentElement.hidden = v === 'set'; build(); };
+  bs.addEventListener('click', () => setView('set')); bc.addEventListener('click', () => setView('cl'));
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', build);
+  new MutationObserver(build).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  build(); size();
+}
+KITS.forEach(bay);
+</script>
