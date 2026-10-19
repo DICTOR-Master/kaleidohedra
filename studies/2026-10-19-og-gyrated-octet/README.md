@@ -12,7 +12,9 @@ DICTO's question: can the OG live in the gyrated octet (the tetrahedron–octahe
 **One kit for both lattices (`kit.py`, exact):** cut each octahedron into the OG plus 8 caps (the octahedron minus the OG, one cap under each face, cut by the planes through the centre and the octahedron's edges), and keep each tetrahedron whole. No piece crosses a cell face, so **the same kit fills the octet and the gyrated octet, and any stacking in between**, with the same density (the OG fills 68.83% of its octahedron).
 - Each cap: (octahedron − OG)/8 = **(277 − 79√5)/1539 ≈ 0.065205**.
 - All 8 faces carry a joint hexagon, and the OG's symmetry inside the octahedron (pyritohedral: three-fold turns, half-turns, inversion) moves any face to any other.
-- The OG's symmetry has no mirror containing a face's axis, so a cap's only symmetry is the three-fold turn (reasoning, not yet checked exactly). The caps then come in left and right hands, 4 + 4 per OG.
+- **The caps are chiral, exact (`hand.py`):** of the 18 OG corners in a face's cone, the three-fold turn maps them onto themselves, but none of the three mirrors through the face's axis does. So the caps come in **left and right hands, 4 + 4 per OG**: faces (1,1,1), (1,−1,−1), (−1,1,−1), (−1,−1,1) one hand, the other four the other.
 - At a twin boundary a cap meets its own mirror image across the hexagon, and the two could be fused into one symmetric "twin cap" piece. The paired tetrahedra form triangular bipyramids.
 
 **Next (DICTO: tomorrow, jumping the queue):** pieces for these twin wedges and for the paired tetrahedra (triangular bipyramids); adapt #37's kits; check against the chorus study's icosahedral twin.
+
+**DICTO 2026-10-19: "this is another paper!"** It would be the companion to #37 (the OG on the octet truss → the OG on the gyrated octet, twinned). Prior art to read first: crystal twinning (the spinel law), the gyrated tetrahedral-octahedral honeycomb, and the chorus study's icosahedral twin.
