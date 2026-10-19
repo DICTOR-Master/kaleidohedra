@@ -384,9 +384,11 @@ function persistCameraState() {
 // One camera throughout (every tap, panel and fit already uses it): Parallel is the same view through
 // a 1-degree lens from far enough away to frame the same scene, so lines stay parallel; Isometric is
 // Parallel looking along (1, 1, 1). The same three as Polyhedraverse.
-const PROJECTIONS = ['perspective', 'orthographic', 'isometric'];
+// Reverse (DICTO 2026-10-19, after the perspective study: from the foot of a spire no true height reads right): reverse perspective, as in
+// icon painting, farther things drawn larger; a big bottom slider runs from normal perspective through flat to full reverse.
+const PROJECTIONS = ['perspective', 'orthographic', 'isometric', 'reverse'];
 const PARALLEL_FOV = 1;
-const PROJECTION_MARK = { perspective: '3D', orthographic: '∥', isometric: 'ISO' };
+const PROJECTION_MARK = { perspective: '3D', orthographic: '∥', isometric: 'ISO', reverse: 'REV' };
 let projection = 'perspective';
 // Remembered on this device, one setting for every app and dimension (DICTO 2026-10-09).
 const PROJECTION_KEY = storageKey('projection');
@@ -394,13 +396,13 @@ const ISO_DIR = new THREE.Vector3(1, 1, 1).normalize();
 const NEAR0 = camera.near, FAR0 = camera.far;
 const halfTan = (fov) => Math.tan(THREE.MathUtils.degToRad(fov) / 2);
 function perspectiveEquivalentPosition() {
-  if (projection === 'perspective') return camera.position;
+  if (projection === 'perspective' || projection === 'reverse') return camera.position;
   const offset = camera.position.clone().sub(controls.target);
   const frame = offset.length() * halfTan(camera.fov);
   return controls.target.clone().addScaledVector(offset.normalize(), frame / halfTan(getSettings().fov));
 }
 function fitDepthRange() {
-  if (projection === 'perspective') { camera.near = NEAR0; camera.far = FAR0; }
+  if (projection === 'perspective' || projection === 'reverse') { camera.near = NEAR0; camera.far = FAR0; }
   else {
     const d = camera.position.distanceTo(controls.target);
     camera.near = Math.max(NEAR0, d * 0.02);
@@ -412,12 +414,14 @@ function setProjection(mode) {
   const offset = camera.position.clone().sub(controls.target);
   const frame = offset.length() * halfTan(camera.fov); // half the view's height at the target: kept
   projection = mode;
-  camera.fov = mode === 'perspective' ? getSettings().fov : PARALLEL_FOV;
+  camera.fov = mode === 'perspective' || mode === 'reverse' ? getSettings().fov : PARALLEL_FOV;
+  camera.userData.customProjection = mode === 'reverse';
   const dir = mode === 'isometric' ? new THREE.Vector3(1, 1, 1).normalize() : offset.normalize();
   camera.position.copy(controls.target).addScaledVector(dir, frame / halfTan(camera.fov));
   fitDepthRange();
   controls.update();
   renderProjectionButton();
+  placeReverseRow();
   try { localStorage.setItem(PROJECTION_KEY, mode); } catch { /* best-effort */ }
 }
 function renderProjectionButton() {
@@ -433,7 +437,7 @@ document.getElementById('projection-toggle')?.addEventListener('click', () => {
   setProjection(PROJECTIONS[(PROJECTIONS.indexOf(projection) + 1) % PROJECTIONS.length]);
 });
 controls.addEventListener('change', () => {
-  if (projection === 'perspective') return;
+  if (projection === 'perspective' || projection === 'reverse') return;
   fitDepthRange();
   // ISO is a direction: once you turn away from it the view is simply parallel, so the button says ∥.
   if (projection === 'isometric' && camera.position.clone().sub(controls.target).normalize().dot(ISO_DIR) < Math.cos(THREE.MathUtils.degToRad(0.5))) {
@@ -442,6 +446,44 @@ controls.addEventListener('change', () => {
     try { localStorage.setItem(PROJECTION_KEY, projection); } catch { /* best-effort */ }
   }
 });
+// ---- reverse perspective: w = 1 + c (u - D) / D, u the distance in front of the eye, D the distance to the target (the target keeps its size).
+// c = 1 normal perspective, 0 flat (parallel), < 0 reverse: farther is larger. Depth stays ordered (near over far) for any c > -1.
+const REVERSE_KEY = storageKey('reverse-amount');
+let reverseAmount = -70; // slider, -100 full reverse .. 0 flat .. 100 normal perspective
+try { const v = Number(localStorage.getItem(REVERSE_KEY)); if (Number.isFinite(v) && localStorage.getItem(REVERSE_KEY) !== null) reverseAmount = Math.max(-100, Math.min(100, v)); } catch { /* the default */ }
+const reverseMatrix = new THREE.Matrix4();
+function applyReverse() {
+  const D = camera.position.distanceTo(controls.target), t = halfTan(camera.fov), a = camera.aspect;
+  const v = reverseAmount / 100, c = v > 0 ? v : 0.9 * v, A = 1 - c, B = c / D, n = 0.02 * D, f = 2 * D;
+  const wn = A + B * n, wf = A + B * f, al = (wf + wn) / (f - n), be = -wn - al * n;
+  reverseMatrix.set(1 / (D * t * a), 0, 0, 0, 0, 1 / (D * t), 0, 0, 0, 0, -al, be, 0, 0, -B, A);
+  camera.projectionMatrix.copy(reverseMatrix); camera.projectionMatrixInverse.copy(reverseMatrix).invert();
+}
+// taps under a custom projection: the ray through the pixel's near and far points (true for any projection)
+const setFromCamera0 = THREE.Raycaster.prototype.setFromCamera;
+THREE.Raycaster.prototype.setFromCamera = function (coords, cam) {
+  if (!cam?.userData?.customProjection) return setFromCamera0.call(this, coords, cam);
+  if (cam === camera) applyReverse();
+  const o = new THREE.Vector3(coords.x, coords.y, -1).unproject(cam), e = new THREE.Vector3(coords.x, coords.y, 1).unproject(cam);
+  this.ray.origin.copy(o); this.ray.direction.copy(e.sub(o).normalize()); this.camera = cam;
+};
+// the slider: a big row in whichever world panel is showing (or its own panel), only while REV is on
+const reverseRow = document.createElement('div');
+reverseRow.className = 'w4d-row'; reverseRow.id = 'reverse-row';
+reverseRow.innerHTML = '<label class="hull-pick"><span class="reverse-label"></span> <input type="range" class="st-slider" min="-100" max="100" step="1"></label>';
+const reversePanel = document.createElement('div'); reversePanel.className = 'qc-panel'; reversePanel.id = 'reverse-panel'; document.body.appendChild(reversePanel);
+const reverseInput = reverseRow.querySelector('input');
+reverseInput.addEventListener('input', () => { reverseAmount = Number(reverseInput.value); try { localStorage.setItem(REVERSE_KEY, String(reverseAmount)); } catch { /* best-effort */ } });
+function placeReverseRow() {
+  const on = projection === 'reverse';
+  if (!on) { reverseRow.remove(); reversePanel.classList.remove('visible'); return; }
+  reverseRow.querySelector('.reverse-label').textContent = t('projection.reverseAmount', getSettings().language);
+  reverseInput.value = String(reverseAmount);
+  const host = [...document.querySelectorAll('.qc-panel.visible, #world4d-panel.visible')].find((p) => p !== reversePanel);
+  if (host) { if (reverseRow.parentElement !== host) host.prepend(reverseRow); reversePanel.classList.remove('visible'); }
+  else { if (reverseRow.parentElement !== reversePanel) reversePanel.append(reverseRow); reversePanel.classList.add('visible'); }
+}
+setInterval(placeReverseRow, 700);
 renderProjectionButton();
 try { const saved = localStorage.getItem(PROJECTION_KEY); if (PROJECTIONS.includes(saved) && saved !== 'perspective') setProjection(saved); } catch { /* storage blocked */ }
 controls.addEventListener('end', persistCameraState);
@@ -6956,6 +6998,7 @@ function animate() {
     // X-ray solid infill: every solid the plane cuts shows a filled face in its own colour (DICTO 2026-10-17)
     xrayCaps ??= createXrayCaps({ scene, plane: sectionPlane });
     { const n = xrayCaps.update(); if (document.body.dataset.xrayCaps !== String(n)) document.body.dataset.xrayCaps = String(n); } // filled solids, read by tests // capped solids, read by tests
+    if (projection === 'reverse') applyReverse();
     renderer.render(scene, camera);
   }
   // Always renders, regardless of the modal wheel's open state -- it's
