@@ -6,7 +6,7 @@ F = '/usr/share/fonts/truetype/dejavu/DejaVuSans'; f = lambda s, b=False: ImageF
 BG, INK, MUTE = (255, 255, 255), (43, 38, 32), (109, 101, 86)
 figs = {'twins': [('00', 'Twin OGs', 'across a shared face'), ('01', 'The gyrated octet', 'three layers, A B A')],
         'kit': [('02', 'One kit for every stacking', 'OG, caps L/R, twin cap, tetrahedron, bipyramid'), ('05', 'Mirror middle piece', 'between an OG and its twin')],
-        'family': [('03', 'Twin OCD Stellas', 'meeting on the whole triangle'), ('04', 'Twin DBTs', 'pole to pole, each round its OG')]}
+        'family': [('03', 'Twin OCD Stellas', 'meeting on the whole triangle'), ('04', 'Twin DBTs', 'pole to pole across a twin layer')]}
 for name, panels in figs.items():
     n = len(panels); S = 900; gap = 40; W = n * S + (n - 1) * gap + 80; Hh = S + 190
     im = Image.new('RGB', (W, Hh), BG); d = ImageDraw.Draw(im)

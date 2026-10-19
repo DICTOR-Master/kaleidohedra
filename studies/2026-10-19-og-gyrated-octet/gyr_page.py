@@ -38,7 +38,7 @@ def mesh(mf, colour, **kw):
 pieces, home = {}, {}
 for k, mf, col, kw in [('og', OG, '#d9a521', {}), ('ogT', reflect(OG), '#5b8fd0', {}), ('oct', octa, '#9aa7b8', dict(glass=True)), ('octT', reflect(octa), '#9aa7b8', dict(glass=True)),
                        ('cap', capL, '#3f9a5b', dict(colour2='#2a9d9a')), ('tcap', twin_cap, '#8e5bd0', {}), ('tet', tet, '#c8382f', {}), ('bip', bip, '#e07b39', {}),
-                       ('st', stella, '#e8c33a', {}), ('stT', reflect(stella), '#6aa5e0', {}), ('dbt', dbt, '#d9a521', dict(glass=True)), ('dbtT', reflect(dbt), '#5b8fd0', dict(glass=True)),
+                       ('st', stella, '#e8c33a', {}), ('stT', reflect(stella), '#6aa5e0', {}), ('dbt', dbt, '#d9a521', {}), ('dbtT', reflect(dbt), '#5b8fd0', {}),
                        ('mg', Mg, '#c8382f', {})]:
     pieces[k], home[k] = mesh(mf, col, **kw)
 at = lambda k, off=(0, 0, 0), flip=False: [k, flip, (np.array(home[k]) * (-1 if flip else 1) + np.array(off)).tolist()]
@@ -58,8 +58,8 @@ views = {
               place=[[k, fl, (a * U + b * W).tolist()] + ([ROT.ravel().tolist()] if k in ('cap', 'tcap') else []) for k, fl, a, b in [('og', False, -1.45, 0.55), ('cap', False, -0.45, 0.7), ('cap', True, 0.45, 0.7), ('tcap', False, 1.45, 0.6), ('tet', False, -0.7, -0.8), ('bip', False, 0.7, -0.8)]]),
   'stella': dict(label='Twin OCD Stellas', text='the OCD Stella (gold) and its twin (blue) meeting on the whole joint triangle', radius=1.3, target=(t2 / 2).tolist(), dir=[1, -1, 0.35],
                  place=[at('st'), ['stT', False, home['stT']], at('oct'), ['octT', False, home['octT']]]),
-  'dbt': dict(label='Twin DBTs', text='DICTO Belted Triacontahedra pole to pole across a twin plane, each holding its OG', radius=1.3, target=(t2 / 2).tolist(), dir=[1, -1, 0.35],
-              place=[at('dbt'), ['dbtT', False, home['dbtT']], at('og'), ['ogT', False, home['ogT']]]),
+  'dbt': dict(label='Twin DBTs', text='DICTO Belted Triacontahedra (gold and blue) pole to pole across a twin plane', radius=1.3, target=(t2 / 2).tolist(), dir=[1, -1, 0.35],
+              place=[at('dbt'), ['dbtT', False, home['dbtT']]]),
   'mg': dict(label='Mirror middle piece', text='the mirror middle piece (red) between an OG and its twin at an edge of the twin plane', radius=0.9, target=home['mg'], dir=[1, 1, -2.2],
              place=[['mg', False, home['mg']], at('og'), ['ogT', False, home['ogT']]]),
 }
