@@ -1,0 +1,24 @@
+PASS OG has 12 outermost corners (radius^2 170/361 + 2/361*sqrt5) on the five-fold axes
+PASS 30 exact unit two-fold vectors
+PASS each of the 30 neighbour pairs u_i+u_j is exactly parallel to one two-fold unit vector
+PASS envelope = rhombic triacontahedron: 32 corners, 30 faces; volume -320/27 + 160/27*sqrt5 = 1.398921
+PASS DBT: 30 corners, 60 edges, 32 faces (Euler 2)
+PASS no new corners: the DBT keeps 30 of the envelope corners and loses exactly the two on the (1,1,1) axis
+PASS every other envelope corner lies on or inside the cuts
+PASS faces {'rhombus': 24, 'half-rhombus (isosceles)': 6, 'equilateral triangle': 2}
+      pole triangle side^2 = 8/3 - 8/9*sqrt5 (side 0.824045); its corners = the three five-fold-type envelope corners next-but-one to the pole
+PASS each half-rhombus = an envelope rhombus with its pole corner cut off along a diagonal (cut runs on diagonals)
+PASS the cut diagonal is the LONG one (ratio^2 = phi^2 = 3/2 + 1/2*sqrt5)
+PASS DBT volume -872/81 + 440/81*sqrt5 = 1.381110; each removed corner -44/81 + 20/81*sqrt5 = 0.008906
+PASS pole has three envelope edges
+      rhombohedron on the pole edges: volume -88/27 + 40/27*sqrt5 = 0.053434; removed corner / rhombohedron = 1/6
+PASS removed corner = 1/6 of that golden rhombohedron (a tetrahedron on three of its edges)
+      edge pairs at the pole with obtuse angle: 3 of 3 -> oblate
+PASS three-fold turn about (1,1,1) maps the DBT to itself
+PASS inversion maps the DBT to itself
+PASS half-turns about the 3 golden two-fold axes perpendicular to (1,1,1) map the DBT to itself -> D3d (order 12): [['1/4 + 1/4*sqrt5', '1/4 - 1/4*sqrt5', '-1/2'], ['1/2', '-1/4 - 1/4*sqrt5', '-1/4 + 1/4*sqrt5'], ['-1/4 + 1/4*sqrt5', '1/2', '-1/4 - 1/4*sqrt5']]
+PASS the mirror x<->y does NOT (so not a larger group via that plane)
+PASS OG lies inside the DBT; OG corners on its surface: 36
+      float: surface 6.253707, sphericity 0.9590
+wrote dbt-exact.json
+exit 0

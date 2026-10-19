@@ -41,3 +41,12 @@ The golden envelope (rhombic triacontahedron round the OG, #37 frame) cut flat b
 - Volume **1.38111** = envelope 1.398921 − 2 keys (0.017811; the step-3 key (−44 + 20√5)/81 each). Sphericity 0.959; pole to pole 1.245563, width 1.539601.
 - It holds the OG (the OG lies inside the octahedron) and sits in every octahedron of the gyrated octet: flat on the twin faces, keyed on the six side faces.
 - To make exact; name to propose to DICTO.
+
+## DBT exact (2026-10-20, `dbt_exact.py` on dicto-node → `dbt-exact.log`, `dbt-exact.json`; 18 PASS, 0 FAIL)
+The DICTO Belted Triacontahedron is a rhombic triacontahedron (inradius 2/3, #37 frame) truncated at its two three-fold corners on (1,1,1). It began as the golden envelope round the OG; from here it is named as a solid of its own.
+- No new corners: it keeps 30 of the RT's 32 corners and loses only the two pole corners. 60 edges, 32 faces: 24 rhombi, 6 half-rhombi, 2 equilateral pole triangles (side² = 8/3 − 8√5/9, side 0.824045).
+- Each cut runs along a rhombus's LONG diagonal (diagonal ratio² = φ²).
+- Volume (−872 + 440√5)/81 = 1.381110; RT (−320 + 160√5)/27 = 1.398921; each removed corner (−44 + 20√5)/81 = 0.008906 = exactly 1/6 of the oblate golden rhombohedron on the pole's three edges ((−88 + 40√5)/27).
+- Symmetry D3d (order 12): three-fold turn, inversion, half-turns about the 3 golden two-fold axes perpendicular to (1,1,1).
+- The OG lies inside; 36 of its corners touch the DBT's surface.
+- Float only: surface 6.253707, sphericity 0.9590.
