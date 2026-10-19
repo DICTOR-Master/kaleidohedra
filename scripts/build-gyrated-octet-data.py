@@ -46,9 +46,9 @@ def piece(name, mf, colour, glass=False):
 piece('og', OG, 0xd9a521); piece('capL', capL, 0x3f9a5b); piece('capR', m3.Manifold(m3.Mesh(vert_properties=np.ascontiguousarray(-mesh(capL)[0], dtype=np.float32),
       tri_verts=np.ascontiguousarray(mesh(capL)[1][:, ::-1], dtype=np.uint32))), 0x2a9d9a)
 piece('twinCap', twin, 0x8e5bd0); piece('tet', tet, 0xc8382f); piece('bipyramid', bip, 0xe07b39)
-piece('stella', stella, 0xe8c33a); piece('dbt', dbt, 0xd9a521, glass=True)
+piece('stella', stella, 0xe8c33a); piece('dbt', dbt, 0xd9a521)
 # mirror twins (layer 1, the far side of a twin pair) in blue, as in the paper's figures
-piece('ogTwin', OG, 0x5b8fd0); piece('stellaTwin', stella, 0x6aa5e0); piece('dbtTwin', dbt, 0x5b8fd0, glass=True)
+piece('ogTwin', OG, 0x5b8fd0); piece('stellaTwin', stella, 0x6aa5e0); piece('dbtTwin', dbt, 0x5b8fd0)
 CHIRAL = {pid['capL']: pid['capR'], pid['capR']: pid['capL']}
 TWIN = {pid['og']: pid['ogTwin'], pid['stella']: pid['stellaTwin'], pid['dbt']: pid['dbtTwin']}
 def vol_centre(p, A, t):
@@ -85,7 +85,7 @@ kits = {
   'gOG': [item('og')],
   'gCaps': [item('og')] + caps + cell_tets,
   'gStella': [item('stella')],
-  'gDBT': [item('dbt'), item('og')],
+  'gDBT': [item('dbt')],   # a solid of its own (DICTO 2026-10-20): drawn solid, without the OG
 }
 s = sum(vol_centre(it[0], np.array(it[1:10]).reshape(3, 3), np.array(it[10:13]))[0] for it in kits['gCaps'])
 print(f'cell kit volume {s:.6f} vs cell (32 + 16√5)/27 = {cellv:.6f}'); assert abs(s - cellv) < 1e-3
@@ -102,7 +102,6 @@ SETS = {'gOG': ['og'], 'gCaps': ['og', 'capL', 'capR', 'twinCap', 'tet', 'bipyra
 out = {'R': R, 'pieces': pieces, 'kits': {}}
 for k, unit in kits.items():
     st = layout(SETS[k])
-    if k == 'gDBT': st = st + [item('og', np.eye(3), np.array(st[0][13:16]))]   # the DBT holds its OG
     pair = [it for it in unit if it[0] not in (pid['tet'],)] if k == 'gCaps' else unit
     pair = [it for it in pair] + [mirror_item(it) for it in pair]
     out['kits'][k] = dict(set=st, pair=pair, unit0=unit, unit1=[mirror_item(it) for it in unit])
