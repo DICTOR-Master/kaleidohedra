@@ -46,9 +46,9 @@ footer { max-width: 1240px; margin: 18px auto 0; color: var(--mute); font-size: 
 <script>
 const DATA = __DATA__;
 const KITS = [
-  { key: 'dbt-gyr', title: 'DICTO Belted Triacontahedron (DBT)', sub: 'gyrated octet · DBT + grown bipyramid', share: '(493 − 219√5)/6 ≈ 55.02%', solid: '(−872 + 440√5)/81 ≈ 1.381110', fill: '(976 − 432√5)/81 ≈ 1.129153 per cell', fillname: 'grown bipyramid' },
-  { key: 'cut8-gyr', title: 'DICTO Octahedrally Truncated Triacontahedron (OTT)', sub: 'gyrated octet · OTT + grown bipyramid', share: '176/3 − 26√5 ≈ 52.89%', solid: '(−608 + 320√5)/81 ≈ 1.327676', fill: '(704 − 272√5)/81 ≈ 1.182587 per cell', fillname: 'grown bipyramid' },
-  { key: 'cut8-oct', title: 'DICTO Octahedrally Truncated Triacontahedron (OTT)', sub: 'octet · OTT + grown tetrahedra (left, right)', share: '176/3 − 26√5 ≈ 52.89%', solid: '(−608 + 320√5)/81 ≈ 1.327676', fill: '(352 − 136√5)/81 ≈ 0.591293 each', fillname: 'grown tetrahedron' },
+  { key: 'dbt-gyr', title: 'DICTO Belted Triacontahedron (DBT)', sub: 'gyrated octet · DBT + grown bipyramid', share: '(493 − 219√5)/6 ≈ 55.02%', solid: '(−872 + 440√5)/81 ≈ 1.381110', fill: '(976 − 432√5)/81 ≈ 1.129153 per cell', fillname: 'DICTO Fill set 1 (DBT) F1, grown bipyramid' },
+  { key: 'cut8-gyr', title: 'DICTO Octahedrally Truncated Triacontahedron (OTT)', sub: 'gyrated octet · OTT + grown bipyramid', share: '176/3 − 26√5 ≈ 52.89%', solid: '(−608 + 320√5)/81 ≈ 1.327676', fill: '(704 − 272√5)/81 ≈ 1.182587 per cell', fillname: 'DICTO Fill set 2 (OTT) F1, grown bipyramid' },
+  { key: 'cut8-oct', title: 'DICTO Octahedrally Truncated Triacontahedron (OTT)', sub: 'octet · OTT + grown tetrahedra (left, right)', share: '176/3 − 26√5 ≈ 52.89%', solid: '(−608 + 320√5)/81 ≈ 1.327676', fill: '(352 − 136√5)/81 ≈ 0.591293 each', fillname: 'DICTO Fill set 2 (OTT) F2/F3, grown tetrahedron' },
 ];
 const css = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 function geom(m) {
@@ -62,7 +62,7 @@ function bay(K) {
   const el = document.createElement('section'); el.className = 'bay';
   el.innerHTML = `<div class="head"><h2>${K.title}</h2><div class="sub">${K.sub}</div></div>
     <div class="stage"></div>
-    <div class="key"><span><i class="sw" style="background:var(--gold)"></i>solid</span><span><i class="sw" style="background:var(--fill)"></i>${K.fillname}${K.key === 'cut8-oct' ? ' (left)' : ''}</span>${K.key === 'cut8-oct' ? '<span><i class="sw" style="background:var(--fill2)"></i>right</span>' : ''}</div>
+    <div class="key"><span><i class="sw" style="background:var(--gold)"></i>solid</span><span><i class="sw" style="background:var(--fill)"></i>${K.fillname}${K.key === 'cut8-oct' ? ' (F2 left)' : ''}</span>${K.key === 'cut8-oct' ? '<span><i class="sw" style="background:var(--fill2)"></i>F3 right</span>' : ''}</div>
     <div class="ctl"><div class="seg" role="group" aria-label="View"><button id="${K.key}-set" aria-pressed="false">Set</button><button id="${K.key}-cl" aria-pressed="true">Cluster</button></div>
       <label class="apart">Pull apart <input id="${K.key}-ap" type="range" min="0" max="1" step="0.01" value="0.35"></label></div>
     <dl><dt>Solid</dt><dd>${K.solid}</dd><dt>Share of space</dt><dd>${K.share}</dd><dt>Fill piece</dt><dd>${K.fill}</dd>
