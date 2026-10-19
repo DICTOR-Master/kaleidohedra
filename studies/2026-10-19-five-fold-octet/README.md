@@ -156,6 +156,20 @@ The reverse step takes as new corners the foot points of the last solid's faces 
 
 Reciprocating the whole UP chain gives **the UP chain again**: no new solids, the same four in the same cyclic order, each step again following the UP rule with all corners on the next solid's faces. **The mirror is the DICTO GTI's circumsphere (radius √10/φ = 1.95440).** Reciprocation about it swaps **GTI ↔ FPD**, **RT ↔ ID×10/φ⁴** and **ID ↔ RT×10/φ⁴**, so it reflects the chain about the gap between the GTI and the FPD. The Spheres of Dharma's polar cycle gave new stations (the OG, the Hecatodihedron); UP's does not, because UP is self-polar. New shapes from reciprocation come only from other seeds, such as the OG's open family (above).
 
+## The OG's outward family (DICTO: "the upward shapes", 2026-10-19, float)
+
+The UP step applied outward from the OG (`stepper.nxt`):
+
+| Step | Corners | Faces | Notes |
+|---|---|---|---|
+| 1 | 92 | **30 rhombi + 60 kites** (90 quadrilaterals, 2 shapes) | not the rhombic enneacontahedron, which has 90 rhombi |
+| 2 | 180 | **12 regular pentagons + 20 regular hexagons + 60 hexagons** (92 faces) | the face counts of a Goldberg polyhedron GP(3,0) |
+| 3 | 212 | 60 triangles + 120 pentagons | |
+| 4 | 270 | 12 decagons + 20 hexagons + 120 pentagons | very round: corner radii within 0.56% |
+| 5–14 | 452 → 12,009 | more and more face kinds | |
+
+**Unlike UP, the family does not keep growing.** The volume levels off near 27.9 and the corner radii near 1.87–1.90, so it rounds towards a nearly spherical limit (still about 1.5% out of round at step 14) instead of cycling. From about step 7 on, near-duplicate corners make float unreliable, so only steps 1–4 are clean shapes to study. Prior art and names are still to do.
+
 ## Open
 
 - **Rhythms (DICTO):** layers that overlap at different rhythms may cause local, shallower UO structures. The five-fold and three-fold columns already advance in different steps (for example, RT corners at 1.902 and √3), so where they interleave, look for thin local octet-like layers.
