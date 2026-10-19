@@ -50,6 +50,8 @@ await kp.locator('[data-inf="unwrap"]').tap(); await page.waitForTimeout(3000);
 assert.ok(await kp.locator('[data-inf="unwrap"]').evaluate((b) => b.classList.contains('active')), 'KP Unwrap running');
 await page.screenshot({ path: `${SH}/up-${SITE}-kp-run.png` });
 await kp.locator('[data-upf="pieces"]').tap(); await page.waitForTimeout(1500); await page.screenshot({ path: `${SH}/up-${SITE}-kp-pieces.png` });
+await kp.locator('[data-upf="negative"]').tap(); await page.waitForTimeout(1500); await page.screenshot({ path: `${SH}/up-${SITE}-kp-negative.png` });
+assert.ok(await kp.locator('[data-upf="negative"]').evaluate((b) => b.classList.contains('active')), 'Negative on');
 // links
 await page.goto(`${BASE}/index.html?site=${SITE}&open=upFilm`); await page.waitForTimeout(4000);
 assert.equal(await page.locator('#worldupfilm-panel').isVisible(), true, 'film opened by link');

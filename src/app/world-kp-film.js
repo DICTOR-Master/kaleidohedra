@@ -23,7 +23,7 @@ const FULL = { I: 'the icosahedron, the core', GSD: 'Kepler\'s great stellated d
 const PIECE_NAMES = { cap: 'cap', axe: 'AXE', cleoR: 'CLEO\'s golden reciprocal', stet: 'valley tetrahedron' };
 const PEEL = ['Ik', 'SSD', 'D1', 'GSD'];
 const N = PEEL.length;
-const PRESET = { pieces: false };
+const PRESET = { pieces: false, negative: false };
 const STEP_SECONDS = 1.6, PAUSE_MS = 900;
 const lang = () => getSettings().language;
 
@@ -32,7 +32,7 @@ export function createKpFilmWorld({ scene, fitView = () => {}, showHudPrompt = (
   const group = new THREE.Group(); group.visible = false; scene.add(group);
   const view = { ...PRESET };
   try { const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null'); if (d) restoreView(d); } catch { /* the preset */ }
-  function restoreView(d) { if (typeof d.pieces === 'boolean') view.pieces = d.pieces; }
+  function restoreView(d) { for (const k of ['pieces', 'negative']) if (typeof d[k] === 'boolean') view[k] = d[k]; }
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ version: 1, ...view })); } catch { /* best-effort */ } };
 
   let DATA = null, loading = null, active = false, skeleton = false, opacity = 1, wedge = true, pickTargets = [], items = [];
@@ -47,7 +47,7 @@ export function createKpFilmWorld({ scene, fitView = () => {}, showHudPrompt = (
     wedgePlanes = [new THREE.Plane(wr.clone().multiplyScalar(-Math.sin(a)).add(side.clone().multiplyScalar(Math.cos(a))), 0),
       new THREE.Plane(wr.clone().multiplyScalar(-Math.sin(a)).sub(side.clone().multiplyScalar(Math.cos(a))), 0)];
   }
-  function addSolid(S, colour, s, key, turn, shrink = 1) {
+  function addSolid(S, colour, s, key, turn, shrink = 1, glassAt = null) {
     const c = S.v.reduce((a, v) => a.map((x, i) => x + v[i] / S.v.length), [0, 0, 0]);
     const V = S.v.map((v) => v.map((x, i) => (c[i] + shrink * (x - c[i])) * s * WS)), pos = [], line = [];
     for (const f of S.f) {
@@ -55,8 +55,9 @@ export function createKpFilmWorld({ scene, fitView = () => {}, showHudPrompt = (
       for (let i = 0; i < f.length; i++) line.push(...V[f[i]], ...V[f[(i + 1) % f.length]]);
     }
     const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
-    const glass = !wedge || opacity < 1 || skeleton;
-    const op = skeleton ? 0 : glass ? (wedge ? opacity : 0.14) : 1;
+    // glassAt: a fixed see-through opacity (the hulls in the Negative view)
+    const glass = glassAt != null || !wedge || opacity < 1 || skeleton;
+    const op = skeleton ? 0 : glassAt != null ? glassAt : glass ? (wedge ? opacity : 0.14) : 1;
     const mat = new THREE.MeshStandardMaterial({ color: colour, roughness: 0.5, flatShading: true, side: THREE.DoubleSide, transparent: glass, opacity: op, depthWrite: !glass });
     mat.userData.wedgePlanes = wedge ? wedgePlanes : null; mat.userData.baseOpacity = mat.opacity;
     // in glass (the wedge off) the stations are shells and stay hollow in a cut; the pieces are always solid
@@ -76,9 +77,12 @@ export function createKpFilmWorld({ scene, fitView = () => {}, showHudPrompt = (
     for (const turn of turns) {
       const s = DATA.K ** turn;
       // the outer I of a turn is the next turn's core (Ik); the core at 1 is drawn by the turn inside
-      for (const S of DATA.stations.I) addSolid(S, COL.Ik, s * DATA.K, 'Ik', turn);
-      for (const k of ['SSD', 'D1', 'GSD']) for (const S of DATA.stations[k]) addSolid(S, COL[k], s, k, turn);
-      if (view.pieces) for (const k of ['Ik', 'D1']) for (const p of DATA.pieces[k]) addSolid(p, PIECE_COL[p.kind], s, `p:${k}:${p.kind}`, turn, 0.965);
+      for (const S of DATA.stations.I) addSolid(S, COL.Ik, s * DATA.K, 'Ik', turn, 1, view.negative ? 0.08 : null);
+      // Negative (DICTO 2026-10-19: the stars stand against empty space; show the opposite, the space round them, as the structure):
+      // the valley pieces solid, the stars left as star-shaped hollows, the hulls as faint glass
+      if (view.negative) for (const k of ['D1']) for (const S of DATA.stations[k]) addSolid(S, COL[k], s, k, turn, 1, 0.08);
+      else for (const k of ['SSD', 'D1', 'GSD']) for (const S of DATA.stations[k]) addSolid(S, COL[k], s, k, turn);
+      if (view.pieces || view.negative) for (const k of ['Ik', 'D1']) for (const p of DATA.pieces[k]) addSolid(p, PIECE_COL[p.kind], s, `p:${k}:${p.kind}`, turn, 0.965);
     }
     // the very centre: the innermost turn's core icosahedron, so the core never shows a hole
     const inner = turns[turns.length - 1];
@@ -146,7 +150,7 @@ export function createKpFilmWorld({ scene, fitView = () => {}, showHudPrompt = (
   panel.innerHTML = `
     <div class="w4d-row st-note upf-note"></div>
     <div class="w4d-row upf-film-row"><label class="hull-pick"><span class="upf-film-pos"></span> <input type="range" class="st-slider" min="0" max="400" step="1"></label></div>
-    <div class="w4d-row w4d-options"><button type="button" data-upf="pieces"></button><button type="button" data-upf="up"></button><button type="button" data-upf="reset"></button></div>`;
+    <div class="w4d-row w4d-options"><button type="button" data-upf="pieces"></button><button type="button" data-upf="negative"></button><button type="button" data-upf="up"></button><button type="button" data-upf="reset"></button></div>`;
   panel.insertBefore(player.el, panel.querySelector('.upf-film-row'));
   document.body.appendChild(panel);
   addPanelMinimiser(panel, 'kpfilm');
@@ -163,11 +167,13 @@ export function createKpFilmWorld({ scene, fitView = () => {}, showHudPrompt = (
     panel.querySelector('.upf-film-pos').textContent = t('vj.film.position', L);
     const b = (k) => panel.querySelector(`[data-upf="${k}"]`);
     b('pieces').textContent = t(view.pieces ? 'vj.pieces.on' : 'vj.pieces.off', L); b('pieces').classList.toggle('active', view.pieces);
+    b('negative').textContent = t(view.negative ? 'kpf.negative.on' : 'kpf.negative.off', L); b('negative').classList.toggle('active', view.negative); b('pieces').hidden = view.negative;
     b('up').textContent = t('upf.back', L);
-    b('reset').textContent = t('upf.reset', L); b('reset').hidden = view.pieces === PRESET.pieces && !film.on;
+    b('reset').textContent = t('upf.reset', L); b('reset').hidden = view.pieces === PRESET.pieces && view.negative === PRESET.negative && !film.on;
   }
   const commit = () => { save(); draw(); renderPanel(); onChange(); window.dispatchEvent(new Event('krp-hud-refresh')); };
   panel.querySelector('[data-upf="pieces"]').addEventListener('click', () => { view.pieces = !view.pieces; commit(); });
+  panel.querySelector('[data-upf="negative"]').addEventListener('click', () => { view.negative = !view.negative; commit(); });
   panel.querySelector('[data-upf="up"]').addEventListener('click', () => openWorld('tool:upWorld', 'Universal PiTet'));
   panel.querySelector('[data-upf="reset"]').addEventListener('click', () => { Object.assign(view, PRESET); stopFilm(); commit(); fit(); });
   slider.addEventListener('input', () => { if (!film.on) return; film.dir = 0; film.t = Math.floor(film.t / N) * N + Number(slider.value) / 100; applyFilm(); renderPanel(); });
