@@ -1,0 +1,14 @@
+PASS octahedron volume 64/81 + 32/81*sqrt5 = 1.673508
+PASS joint hexagon: 6 OG corners on the face, 6 equal sides, side^2 2/9 + -2/27*sqrt5 = 0.056588
+PASS regular (short diagonals^2 = 3 side^2, long = 4 side^2)
+      hexagon / octahedron face = 6 s^2 / a^2 = 7/2 + -3/2*sqrt5 = 0.145898; the cap meets its twin across the rest, -5/2 + 3/2*sqrt5 = 0.854102
+      OG volume -1000/1539 + 1240/1539*sqrt5 = 1.151868 (octahedron - 8 caps); twin cap = left cap + its mirror (a right cap) = 554/1539 + -158/1539*sqrt5 = 0.130410
+      tetrahedron 16/81 + 8/81*sqrt5 = 0.418377; triangular bipyramid (two tetrahedra across a twin plane) 32/81 + 16/81*sqrt5 = 0.836754
+PASS the hull meets the OG and its twin in equal volumes -155/4617 + 101/4617*sqrt5 = 0.015344 (mirror symmetry)
+      hull of the star and its mirror 2/81 + 2/81*sqrt5 = 0.079903; Mg = 424/4617 + -88/4617*sqrt5 = 0.049215 (float run: 0.049215)
+PASS the DBT mirrored in its pole face = the DBT turned 60 degrees about its axis (a true twin, as the OG)
+PASS the DBT lies between its two twin planes x+y+z = -R and +R
+PASS same layer: 18 DBTs, none overlaps the central one (exact separating planes)
+PASS layer above (twin): 19 DBTs, none overlaps the central one (exact separating planes)
+PASS layer below (twin): 19 DBTs, none overlaps the central one (exact separating planes)
+exit 0

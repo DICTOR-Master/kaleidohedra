@@ -1,0 +1,11 @@
+PASS the bcc lattice has three orthogonal cube vectors of length 4R/3 (6 of that length)
+PASS a rotation onto the cube axes carries the Stella study's OCD exactly onto the #37 OG
+PASS Stella (48 corners) lies in the octahedron |x|+|y|+|z| <= R
+PASS each of the 8 octahedron faces holds exactly 3 Stella corners (its joint triangle)
+PASS the joint triangle is equilateral, side^2 = 8/3 - 8/9√5
+      Stella volume -4064/729 + 2240/729√5 = 1.296011; octahedron (64 + 32*sqrt5)/81 = 1.673508; share 604/9 - 89/3√5 = 0.774428
+PASS joint triangle / octahedron face (similar, concentric) = side^2/edge^2 = 7 - 3√5 = 0.291796
+PASS the mirror twin in a face = the Stella turned 60 degrees about the joint three-fold axis (spinel law, as the OG)
+PASS and it is not the Stella itself (a true twin, not a translate)
+PASS twin Stellas meet on the whole joint triangle (the mirror fixes the face)
+exit 0
