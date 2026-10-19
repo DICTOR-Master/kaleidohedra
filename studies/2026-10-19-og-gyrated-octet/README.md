@@ -26,3 +26,9 @@ DICTO's question: can the OG live in the gyrated octet (the tetrahedron–octahe
 - So: **the OG and its OCD Stella twin freely in the octet and the gyrated octet; the golden envelope only if trimmed.**
 
 To make exact.
+
+## The DICTO Jewel (DICTO 2026-10-19, float Monte Carlo, `jewel_twin.py`)
+Stella–Jewel Lattice (Jewels on the even cells, an fcc of Jewels; stella octangulas on the odd cells), twinned in a (111) layer of Jewels (keep x+y+z ≥ 0, mirror the rest: …C B A B C…).
+- Baseline (no twin): all 44 218 sample points within 2 of the plane covered exactly once, which validates the test (ray parity; the Jewel's volume comes out 12.03, exact 12).
+- Twinned: **4.0% of the points are gaps and 4.2% overlaps**, all within about 1.6 of the plane. **The Jewel does not twin freely.**
+- Why: the Jewel and the stella are framed by **cubes**, and a cube mirrored in a plane across its body diagonal is a different cube (that mirror is not a symmetry of the cube). An octahedron mirrored in its face is just the next octahedron of the gyrated octet, which is why the OG and the OCD Stella twin and the Jewel does not. The (111) layers alternate Jewels and stellas, so a twin through a stella layer meets the same obstacle.
