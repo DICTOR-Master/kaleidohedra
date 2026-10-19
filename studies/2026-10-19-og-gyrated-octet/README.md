@@ -7,4 +7,12 @@ DICTO's question: can the OG live in the gyrated octet (the tetrahedron–octahe
 - **The neighbour is a true mirror twin, not a translate.** In the bcc packing and in the octet every OG is a translate of the others; here the OG beyond the gyrated layer is the OG's mirror image in the shared face, and this mirror is *not* a symmetry of the OG (the OG has no mirror plane at right angles to a three-fold axis). **So the gyrated layers are twin boundaries of OGs**, the hcp stacking fault of the OG octet.
 - **Round the hexagon:** each of its 6 edges opens into a wedge-shaped gap between the twins. The faces beside the hexagon tilt about 23.8° from the joint plane, so the gap's opening is 2 × 23.8 ≈ 47.6°; exactly, cos(the angle between a face and its mirror) = (7 − 36√5)/109.
 
+**The twin, exactly (`twin.py`):** the mirror OG is **the OG turned 60° about the shared three-fold axis** (through the joint hexagon), checked exactly with the rational rotation about (1,1,1). It is not a 90° turn or the inverse. This is the classical twin of crystallography (the spinel law), the same 60° turn that changes fcc stacking into hcp. It differs from the chorus study's icosahedral twin, which turned 44.48° about a shared three-fold axis.
+
+**One kit for both lattices (`kit.py`, exact):** cut each octahedron into the OG plus 8 caps (the octahedron minus the OG, one cap under each face, cut by the planes through the centre and the octahedron's edges), and keep each tetrahedron whole. No piece crosses a cell face, so **the same kit fills the octet and the gyrated octet, and any stacking in between**, with the same density (the OG fills 68.83% of its octahedron).
+- Each cap: (octahedron − OG)/8 = **(277 − 79√5)/1539 ≈ 0.065205**.
+- All 8 faces carry a joint hexagon, and the OG's symmetry inside the octahedron (pyritohedral: three-fold turns, half-turns, inversion) moves any face to any other.
+- The OG's symmetry has no mirror containing a face's axis, so a cap's only symmetry is the three-fold turn (reasoning, not yet checked exactly). The caps then come in left and right hands, 4 + 4 per OG.
+- At a twin boundary a cap meets its own mirror image across the hexagon, and the two could be fused into one symmetric "twin cap" piece. The paired tetrahedra form triangular bipyramids.
+
 **Next (DICTO: tomorrow, jumping the queue):** pieces for these twin wedges and for the paired tetrahedra (triangular bipyramids); adapt #37's kits; check against the chorus study's icosahedral twin.
