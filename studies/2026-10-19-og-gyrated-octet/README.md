@@ -18,3 +18,11 @@ DICTO's question: can the OG live in the gyrated octet (the tetrahedron–octahe
 **Next (DICTO: tomorrow, jumping the queue):** pieces for these twin wedges and for the paired tetrahedra (triangular bipyramids); adapt #37's kits; check against the chorus study's icosahedral twin.
 
 **DICTO 2026-10-19: "this is another paper!"** It would be the companion to #37 (the OG on the octet truss → the OG on the gyrated octet, twinned). Prior art to read first: crystal twinning (the spinel law), the gyrated tetrahedral-octahedral honeycomb, and the chorus study's icosahedral twin.
+
+## A family trait? (DICTO 2026-10-19, float first look)
+- **Golden envelope (RT):** does **not** fit as it is. Its three-fold corners poke 0.0909 beyond each octahedron face. Across a twin layer each key runs into the twin's envelope, overlapping it by ≈ 0.0175 per shared face. It would need trimming flat on twin faces, or interlocking keys.
+- **OCD Stella (#31a):** **fits.** Its 8 joint faces lie exactly on the octahedron's 8 faces (the bcc hexagon walls, distance 0.622782; normals on the cube's diagonals), so it sits inside every octahedron. It fills 1.296011 / 1.673508 = **77.44%** of the octahedron (the OG 68.83%).
+- The Stella's joint face is an equilateral **triangle** (circumradius 0.47576, 29.18% of the octahedron face). Twin Stellas meet on the whole joint triangle (a mirror in the joint plane leaves it in place), with the same 60° twin as the OGs.
+- So: **the OG and its OCD Stella twin freely in the octet and the gyrated octet; the golden envelope only if trimmed.**
+
+To make exact.
