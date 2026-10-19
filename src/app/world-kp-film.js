@@ -3,7 +3,7 @@
 // itself cloned from Vajrayana's cycle): cut away (the side bar's ⛶ wedge → X-ray plane → off, glass), the ∞ film peeling one station at a
 // time from the outside, pausing on each, zooming by φ³ a turn for ever (◀ builds back out); a Pieces switch fills each shell in the Cleo
 // star's pattern, DICTO's pieces in their own colours (CLEO lilac, cap green, AXE cyan; the second shell's new valley tetrahedron amber),
-// peeling with the hull that closes them. Data: kp-film-data.js (scripts/build-kp-data.py), proved exactly in the research study
+// peeling with the hull that closes them. The second shell's inward pyramid is CLEO's golden reciprocal (height φ⁻² against CLEO's φ²), pale lilac. Data: kp-film-data.js (scripts/build-kp-data.py), proved exactly in the research study
 // studies/2026-10-19-kepler-poinsot-up. Words: i18n kpf.* and the film words of Dual Vision and Vajrayana.
 import * as THREE from 'three';
 import { ROOF_FOLD_WORLD_SCALE as WS } from '../krp-core/src/geometry-extensions/roof-fold.js';
@@ -15,12 +15,12 @@ import { createInfinityPlayer } from './infinity-player.js';
 
 // colours by solid, as in the UP world's shells: ID gold, RT cyan, GTI rose, FPD green
 const COL = { I: 0xe8c060, GSD: 0xc792ea, D1: 0x9fd8ff, SSD: 0xf06292, Ik: 0xe8c060 };
-const PIECE_COL = { cap: 0x5fd38a, axe: 0x4dd0e1, cleo: 0xc792ea, stet: 0xffa726 };
+const PIECE_COL = { cap: 0x5fd38a, axe: 0x4dd0e1, cleoR: 0xe1c8f0, stet: 0xffa726 };
 const NAMES = { I: 'I', GSD: 'great stellated dodecahedron', D1: 'D1', SSD: 'small stellated dodecahedron', Ik: 'I·φ³' };
 const FULL = { I: 'the icosahedron, the core', GSD: 'Kepler\'s great stellated dodecahedron: the core with 20 CLEO spikes, tips at 3× the face distance',
   D1: 'the dodecahedron of edge φ, the great star\'s hull', SSD: 'Kepler\'s small stellated dodecahedron: D1 with 12 spires, tips at √5× the face distance',
   Ik: 'the next icosahedron, φ³ larger: the next turn begins' };
-const PIECE_NAMES = { cap: 'cap', axe: 'AXE', cleo: 'CLEO', stet: 'valley tetrahedron' };
+const PIECE_NAMES = { cap: 'cap', axe: 'AXE', cleoR: 'CLEO\'s golden reciprocal', stet: 'valley tetrahedron' };
 const PEEL = ['Ik', 'SSD', 'D1', 'GSD'];
 const N = PEEL.length;
 const PRESET = { pieces: false };

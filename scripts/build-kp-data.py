@@ -41,7 +41,7 @@ assert abs(hv(I) + sum(map(hv, GSD + gpyr + gtet)) - hv(D1)) < 1e-9 and abs(hv(D
 data = {'K': PHI ** 3, 'radius': float(np.linalg.norm(I2, axis=1).max()),
         'stations': {'I': [solid(I)], 'GSD': [solid(I)] + [solid(p) for p in GSD], 'D1': [solid(D1)], 'SSD': [solid(D1)] + [solid(p) for p in SSD]},
         'pieces': {'D1': [dict(solid(p), kind='cap') for p in gpyr] + [dict(solid(p), kind='axe') for p in gtet],
-                   'Ik': [dict(solid(p), kind='cleo') for p in spyr] + [dict(solid(p), kind='stet') for p in stet]},
+                   'Ik': [dict(solid(p), kind='cleoR') for p in spyr] + [dict(solid(p), kind='stet') for p in stet]},
         'view': {'dir': [0.45, 0.35, 1.0], 'up': [0.0, 1.0, 0.0]}}
 with open(OUT, 'w') as f:
     f.write('// Built by scripts/build-kp-data.py (the DICTO Kepler–Poinsot–UP Cycle, DICTO 2026-10-19). Do not edit.\nexport default ' + json.dumps(data, separators=(',', ':')) + ';\n')
