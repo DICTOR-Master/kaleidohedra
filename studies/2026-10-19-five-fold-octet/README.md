@@ -81,6 +81,23 @@ DICTO: "keep going outwards, but there may be missing transitional solids." The 
 - **Rhythm:** within each cycle the five-fold and three-fold columns take turns leading (RT and Q have mirrored ratios, 1.0982).
 - **Re-checks:** stages 2 and 3 were also tested by random points: 37,268 and 54,650 points, each in exactly one piece.
 
+## EXACT: the cycle is proved (`exact_cycle.py`, `data/exact_cycle.json`)
+
+Exact arithmetic in ℚ(√5) (Fractions, exact signs). Start: the icosidodecahedron of radius φ in standard coordinates. The step rule needs no square roots: the face through corner v is v·x = v·v. Float is used only to guess which three faces meet at a corner; every guess is then proved exactly:
+
+1. each corner solves its faces exactly and lies inside every face;
+2. every listed face holds at least 3 corners, with all others inside it;
+3. the faces close up (every edge in exactly two faces, Euler V − E + F = 2), so the corner list is complete.
+
+| Step | Corners | Faces | Edges |
+|---|---|---|---|
+| ID → RT | 32 | 30 | 60 |
+| → golden truncated icosahedron | 60 | 32 | 90 |
+| → Q | 32 | 60 | 90 |
+| → ID | 30 | 32 | 60 |
+
+**The final ID equals the first exactly, scaled by 10/φ⁴ = 35 − 15√5.** Because the rule commutes with scaling, **the UP cycle repeats forever, outward**, with the same four shells of pieces each turn, 10/φ⁴ larger. Still float: the piece fills inside each shell (exact proofs of those are next), and stages 1–2 below the cycle.
+
 ## Triangles as the constant (DICTO 2026-10-19)
 
 DICTO: "triangles are the only true constant in the universal octet". This holds for every stage built so far. Inside each shell, every face where two pieces meet is a triangle. Pentagons, hexagons and rhombi appear only on the shell surfaces (D′, ID, OG, RT). Read this way, the triangle is the invariant and the shell polygon is the variable, which fits both the flat octet and the 600-cell, where everything is triangles. This has been checked only on stages 1–3.
