@@ -1,0 +1,27 @@
+
+== octet: middle pieces near the origin 108 (twin-plane 0)
+  middle-piece volumes [0.079735]
+  caps: volume 0.058072  sphericity 0.587  parts 1  x6: v(1, 0, 0), v(-1, 0, 0)(m), v(0, 1, 0), v(0, -1, 0)(m), v(0, 0, 1), v(0, 0, -1)(m)
+  tetrahedra: volume 0.265776  sphericity 0.517  parts 1  x6: face -R, face -R, face +R(m), face -R, face +R(m), face +R(m)
+  origin octahedron: OG 1.151868 + caps 0.348431 + middle pieces inside it 0.173210 = 1.673508 vs octahedron 1.673508
+  largest reach of a middle piece from its edge midpoint 0.5542 (octet edge 1.5255)
+
+== single: middle pieces near the origin 102 (twin-plane 21)
+  middle-piece volumes [0.049215, 0.079735]
+  caps: volume 0.055477  sphericity 0.579  parts 1  x3: v(1, 0, 0), v(0, 1, 0), v(0, 0, 1)
+  caps: volume 0.058072  sphericity 0.587  parts 1  x3: v(-1, 0, 0), v(0, -1, 0), v(0, 0, -1)
+  tetrahedra: volume 0.265776  sphericity 0.517  parts 1  x3: face -R, face -R, face -R
+  tetrahedra: volume 0.319340  sphericity 0.587  parts 1  x3: face +R, face +R, face +R
+  largest reach of a middle piece from its edge midpoint 0.5542 (octet edge 1.5255)
+
+== gyrated: middle pieces near the origin 96 (twin-plane 48)
+  middle-piece volumes [0.049215, 0.079735]
+  caps: volume 0.055477  sphericity 0.579  parts 1  x6: v(1, 0, 0), v(-1, 0, 0)(m), v(0, 1, 0), v(0, -1, 0)(m), v(0, 0, 1), v(0, 0, -1)(m)
+  tetrahedra: volume 0.319340  sphericity 0.587  parts 1  x6: face -R, face -R, face +R(m), face -R, face +R(m), face +R(m)
+  origin octahedron: OG 1.151868 + caps 0.332863 + middle pieces inside it 0.188777 = 1.673508 vs octahedron 1.673508
+  largest reach of a middle piece from its edge midpoint 0.5542 (octet edge 1.5255)
+
+real	0m1.258s
+user	0m2.853s
+sys	0m1.215s
+exit 0
