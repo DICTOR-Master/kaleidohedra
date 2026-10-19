@@ -20,30 +20,27 @@ await page.waitForTimeout(2500);
 const panel = page.locator('#worldup-panel');
 const sel = panel.locator('select[data-select="part"]');
 const views = await sel.evaluate((s) => [...s.options].map((o) => o.value + '=' + o.textContent));
-console.log('views:', views.join(' | ')); assert.equal(views.length, 4); assert.match(views[0], /^shells=.*308/); assert.match(views[3], /^cycle=/);
-const film = panel.locator('[data-inf="unwrap"]'), filmIn = panel.locator('[data-inf="wrap"]'), pauseBtn = panel.locator('[data-inf-pause]');
-for (const v of ['shells', 'vajras', 'hexcleo']) {
-  await sel.selectOption(v); await page.waitForTimeout(900);
-  assert.equal(await film.isVisible(), false, `no film player in ${v}`);
-  await page.screenshot({ path: `${SH}/up-${SITE}-${v}.png` });
-}
-// Pull apart on the shells
+console.log('views:', views.join(' | ')); assert.equal(views.length, 3); assert.match(views[0], /^shells=.*308/);
+for (const v of ['shells', 'vajras', 'hexcleo']) { await sel.selectOption(v); await page.waitForTimeout(900); await page.screenshot({ path: `${SH}/up-${SITE}-${v}.png` }); }
 await sel.selectOption('shells'); await page.waitForTimeout(600);
 await panel.locator('.ch-apart-row input').fill('600'); await page.waitForTimeout(700); await page.screenshot({ path: `${SH}/up-${SITE}-apart.png` });
-// the cycle and its endless film: DICTO's infinity player (Wrap / Unwrap in the rings, VHS pause)
-await sel.selectOption('cycle'); await page.waitForTimeout(1200);
-assert.equal(await film.isVisible(), true, 'the infinity player shows in the cycle view');
-await page.screenshot({ path: `${SH}/up-${SITE}-cycle.png` });
-await film.tap(); await page.waitForTimeout(2500);
-assert.ok(await film.evaluate((b) => b.classList.contains('active')), 'Unwrap running');
-assert.equal(await pauseBtn.isVisible(), true, 'pause shown while the film is on');
-await page.screenshot({ path: `${SH}/up-${SITE}-cycle-unwrap.png` });
-await filmIn.tap(); await page.waitForTimeout(1200);
-assert.ok(await filmIn.evaluate((b) => b.classList.contains('active')), 'Wrap running');
-await pauseBtn.tap(); await page.waitForTimeout(300);
-assert.ok(await pauseBtn.evaluate((b) => b.classList.contains('active')), 'paused');
-// ?open= link straight to the cycle
-await page.goto(`${BASE}/index.html?site=${SITE}&open=up:cycle`); await page.waitForTimeout(4000);
-assert.equal(await page.locator('#worldup-panel select[data-select="part"]').inputValue(), 'cycle', 'opened by link on the cycle');
+// the cycle film: its own world on Dual Vision's standard, one tap away
+await panel.locator('[data-up-film="open"]').tap(); await page.waitForTimeout(3500);
+const fp = page.locator('#worldupfilm-panel');
+assert.equal(await fp.isVisible(), true, 'the film world opened');
+const unwrap = fp.locator('[data-inf="unwrap"]'), wrap = fp.locator('[data-inf="wrap"]'), pauseBtn = fp.locator('[data-inf-pause]');
+assert.equal((await unwrap.textContent()).trim(), '', 'no words on the player');
+await page.screenshot({ path: `${SH}/up-${SITE}-film.png` });
+await unwrap.tap(); await page.waitForTimeout(3000);
+assert.ok(await unwrap.evaluate((b) => b.classList.contains('active')), 'Unwrap running');
+await page.screenshot({ path: `${SH}/up-${SITE}-film-run.png` });
+await pauseBtn.tap(); await page.waitForTimeout(400);
+assert.equal(await fp.locator('.upf-film-row').isVisible(), true, 'scrub slider while paused');
+await wrap.tap(); await page.waitForTimeout(1200);
+assert.ok(await wrap.evaluate((b) => b.classList.contains('active')), 'Wrap running');
+await fp.locator('[data-upf="pieces"]').tap(); await page.waitForTimeout(1200); await page.screenshot({ path: `${SH}/up-${SITE}-film-pieces.png` });
+// links
+await page.goto(`${BASE}/index.html?site=${SITE}&open=upFilm`); await page.waitForTimeout(4000);
+assert.equal(await page.locator('#worldupfilm-panel').isVisible(), true, 'film opened by link');
 assert.deepEqual(errors, []);
 console.log('up ok', SITE); await b.close();

@@ -4,7 +4,7 @@
 # faces through the last one's corners, at right angles to them. Built here in float in the study's frame (icosahedron of edge 1);
 # the build re-checks every view: pieces' volumes add up to their solids (1e-9).
 # Views: shells (Cleo star to the second ID, 308 pieces), vajras (the 12 five-sided Vajras on the core), hexcleo (ID -> OG -> RT with
-# the 20 hexagonal Cleos), cycle (the nested solids of three turns, for the endless film).
+# the 20 hexagonal Cleos). The cycle's film is its own world (world-up-film.js, data up-film-data.js, built here too).
 import itertools, json, os
 import numpy as np
 from scipy.spatial import ConvexHull, HalfspaceIntersection
@@ -132,22 +132,25 @@ assert abs(sum(hv(p[1]) for p in hexc + tets) + capvol + hv(OG) - hv(RT)) < 1e-5
 idglass = piece('upIDGlass', ID)
 assert abs(sum(hv(p[1]) for p in caps) - capvol) < 1e-5 and len(caps) == 60
 hexcleo = [idglass] + low + hexc + caps + tets
-# ---- the cycle: four turns, from 1/K of the first ID out to K^2 ----
-cycle = []
-# the cycle view shows the nested solids themselves (16: four per turn), see-through, one colour per solid, so the film reads as the
-# rhythm of the four shapes coming back larger (the pieces are in the shells view)
-for s in (1 / K, 1, K):
-    for r, S in (('upSolidID', ID), ('upSolidRT', RT), ('upSolidTI', T), ('upSolidQ', Q)): cycle.append([r + 'G', np.round(S * s, 6).tolist(), faces(S * s)])
 # Colour by shape (DICTO 2026-10-19): one role per shape, whatever its size or turn; mirror images count as one shape.
 def sig(V):
     D = sorted(np.linalg.norm(a - b) for a, b in itertools.combinations(np.array(V), 2)); return (len(V), tuple(np.round(np.array(D) / D[-1], 4)))
 shape_of = {}
-for r, V, F in shells + vajras + hexcleo + cycle:
-    r = r[:-1] if r.endswith('G') else r
+for r, V, F in shells + vajras + hexcleo:
     if r not in GLASS_ONLY: shape_of.setdefault(r, set()).add(sig(V))     # the ID glass of the hexagonal view is the cycle's ID
 assert all(len(s) == 1 for s in shape_of.values()), {r: len(s) for r, s in shape_of.items() if len(s) > 1}
 assert len({next(iter(s)) for r, s in shape_of.items()}) == len(shape_of)       # every role a different shape
-data = {'up': {'views': {'shells': shells, 'vajras': vajras, 'hexcleo': hexcleo, 'cycle': cycle}, 'K': K, 'turnRadius': float(np.linalg.norm(RT, axis=1).max())}}
+# ---- the film world's data (world-up-film.js, cloned from Vajrayana's cycle; DICTO 2026-10-19 "Dual Vision is the standard"): the stations
+# of one turn and, for the pieces toggle, each shell's pieces keyed by the station that closes it (they peel with it)
+def solid_of(S): S = uniq(S); return {'v': np.round(S, 6).tolist(), 'f': faces(S)}
+film_pieces = {'RT': cone_pieces(ID, RT, lambda n: 'p'), 'GTI': cone_pieces(RT, T, lambda n: 'p'), 'FPD': cone_pieces(T, Q, lambda n: 'p'),
+               'IDk': cone_pieces(Q, ID2, lambda n: 'p')}
+film = {'K': K, 'stations': {'ID': solid_of(ID), 'RT': solid_of(RT), 'GTI': solid_of(T), 'FPD': solid_of(Q)},
+        'pieces': {k: [{'v': p[1], 'f': p[2]} for p in v] for k, v in film_pieces.items()},
+        'view': {'dir': [0.45, 0.35, 1.0], 'up': [0.0, 1.0, 0.0]}, 'radius': float(np.linalg.norm(ID2, axis=1).max())}
+with open(os.path.join(os.path.dirname(OUT), 'up-film-data.js'), 'w') as f:
+    f.write('// Built by scripts/build-up-data.py (Universal PiTet film, DICTO 2026-10-19). Do not edit.\nexport default ' + json.dumps(film, separators=(',', ':')) + ';\n')
+data = {'up': {'views': {'shells': shells, 'vajras': vajras, 'hexcleo': hexcleo, }, 'K': K, 'turnRadius': float(np.linalg.norm(RT, axis=1).max())}}
 with open(OUT, 'w') as f:
     f.write('// Built by scripts/build-up-data.py (Universal PiTet, DICTO 2026-10-19). Do not edit.\nexport default ' + json.dumps(data, separators=(',', ':')) + ';\n')
 print({k: len(v) for k, v in data['up']['views'].items()}, 'bytes', os.path.getsize(OUT))
