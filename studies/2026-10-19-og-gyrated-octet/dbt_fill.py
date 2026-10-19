@@ -2,11 +2,12 @@
 # give every leftover point to its nearest site, piece = Voronoi region of the site minus the DBTs. Two choices of site:
 #   tet  the tetrahedron centres (two per cell)          bip  the bipyramid centres = twin-plane face centres (one per cell)
 # Float (manifold3d, dicto-node): volume, parts, sphericity, mirror-symmetric or not, congruence between sites.
-import json, itertools, math, numpy as np, manifold3d as m3
+import sys, json, itertools, math, numpy as np, manifold3d as m3
+SOLID, STACK = (sys.argv + ['dbt', 'gyrated'])[1:3]   # dbt | cut8 ; gyrated | octet
 from scipy.spatial import HalfspaceIntersection
 H = '/home/dicto/dbt-exact/2026-10-19-og-gyrated-octet/'
 fq = lambda s: (lambda a, b: float(eval(a)) + float(eval(b)) * 5 ** .5)(*s.split('|'))
-DB = np.array([[fq(c) for c in v] for v in json.load(open(H + 'dbt-exact.json'))['V']])
+DB = np.array([[fq(c) for c in v] for v in json.load(open(H + ('dbt-exact.json' if SOLID == 'dbt' else 'cut8-exact.json')))['V']])
 R = fq(json.load(open(H + '../2026-10-18-ocd-octet/data/step1-ocd-exact.json'))['R'])
 hull = lambda P: m3.Manifold.hull_points(np.asarray(P, float))
 sph = lambda mf: math.pi ** (1 / 3) * (6 * mf.volume()) ** (2 / 3) / mf.surface_area()
@@ -14,7 +15,7 @@ MIR = np.eye(3) - 2 / 3 * np.ones((3, 3)); mir = lambda k: (MIR, 2 * k * R / 3 *
 comp = lambda a, b: (a[0] @ b[0], a[0] @ b[1] + a[1])
 LM = {0: (np.eye(3), np.zeros(3))}
 for k in range(1, 4):
-    for s in (1, -1): j = s * k; LM[j] = comp(mir(2 * j - s), LM[j - s])
+    for s in (1, -1): j = s * k; LM[j] = comp(mir(2 * j - s), LM[j - s]) if STACK == 'gyrated' else (np.eye(3), np.array([1, 1, 0]) * R * j)
 cent0 = [np.array(c) * R for c in itertools.product(range(-4, 5), repeat=3) if sum(c) == 0]
 pts = [np.array(c) * R for c in itertools.product(range(-2, 3), repeat=3) if sum(c) % 2]
 e2 = 2 * R * R; T0 = []
@@ -56,7 +57,8 @@ def mirror_sym(mf, c):   # mirror-symmetric in a plane through c? try the twin-p
         A = np.eye(3) - 2 * np.outer(n, n); t = c - A @ c
         best = min(best, (mf.volume() - (mf.transform(np.hstack([A, t[:, None]])) ^ mf).volume()) / mf.volume())
     return best
-for name, S in (('tet', tets), ('bip', bips)):
+print('solid', SOLID, 'stacking', STACK)
+for name, S in ((('tet', tets), ('bip', bips)) if STACK == 'gyrated' else (('tet', tets),)):
     i0 = int(np.argmin(np.linalg.norm(S, axis=1))); res = []
     for i in sorted(range(len(S)), key=lambda i: np.linalg.norm(S[i]))[:4]:
         P = vor(S, i) - ALL; parts = [p for p in P.decompose() if p.volume() > 1e-7]
@@ -64,5 +66,5 @@ for name, S in (('tet', tets), ('bip', bips)):
     for c, P, parts in res:
         print(f'{name} site {np.round(c / R, 3)}: piece {P.volume():.6f}, parts {len(parts)} {[round(p.volume(), 6) for p in parts]}, sphericity {sph(max(parts, key=lambda q: q.volume())):.3f}, mirror defect {mirror_sym(P, c):.4f}')
     a, b = res[0][1], res[1][1]
-    print(f'  {name}: Voronoi cell {vor(S, i0).volume():.6f}; leftover per cell 1.129153 / {2 if name == "tet" else 1} = {1.129153 / (2 if name == "tet" else 1):.6f}')
-    json.dump({'v': np.asarray(res[0][1].to_mesh().vert_properties[:, :3]).round(6).tolist(), 't': np.asarray(res[0][1].to_mesh().tri_verts).tolist(), 'c': res[0][0].tolist()}, open(H + f'dbt-fill-{name}.json', 'w'))
+    print(f'  {name}: Voronoi cell {vor(S, i0).volume():.6f}')
+    json.dump({'v': np.asarray(res[0][1].to_mesh().vert_properties[:, :3]).round(6).tolist(), 't': np.asarray(res[0][1].to_mesh().tri_verts).tolist(), 'c': res[0][0].tolist()}, open(H + f'fill-{SOLID}-{STACK}-{name}.json', 'w'))

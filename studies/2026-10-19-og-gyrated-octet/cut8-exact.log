@@ -1,0 +1,14 @@
+PASS 24 corners
+PASS no new corners: every corner is a corner of the DBT (so of the triacontahedron)
+PASS 38 faces {3: 32, 4: 6} (4 = whole rhombi, 3 = triangles), 60 edges, Euler 2
+PASS each of the 8 octahedron faces holds an equilateral triangle, side^2 8/3 - 8sqrt5/9 (the DBT pole triangle)
+PASS 24 half-rhombus triangles (rhombi cut along the long diagonal)
+PASS volume -608/81 + 320/81*sqrt5 = 1.327676 = triacontahedron - 8 keys
+PASS and = DBT - its 6 remaining keys
+PASS symmetric under the 24 operations of the pyritohedral group Th (the OG's symmetry)
+PASS not under the swap x <-> y (so Th, not the full octahedral group)
+PASS the OG lies inside
+PASS share of space 176/3 + -26*sqrt5 = 0.528899 (DBT (493 - 219sqrt5)/6 = 0.550185)
+PASS octahedron - solid = 6 corner spaces of 112/81 + -16/27*sqrt5 = 0.057639 (as for the DBT)
+PASS per cell left over: 6 corner spaces + 2 whole tetrahedra = 704/81 + -272/81*sqrt5 = 1.182587
+saved cut8-exact.json
