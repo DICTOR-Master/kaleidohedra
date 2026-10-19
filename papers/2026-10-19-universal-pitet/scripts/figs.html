@@ -1,0 +1,44 @@
+<!doctype html><meta charset="utf-8"><title>UP figures</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}</style>
+<script type="module">
+// Figures for the Universal PiTet paper (DICTO 2026-10-19), drawn from the app's data (up-data.js, up-film-data.js), house background.
+import * as THREE from './three.module.min.js';
+import UP from './up-data.js';
+import FILM from './up-film-data.js';
+const fig = new URLSearchParams(location.search).get('fig');
+const ROLE = { upCleo: 0xffc857, upInPyr5: 0xffa726, upPyr5: 0xf06292, upPyr3: 0xf8bbd0, upHexCleo: 0xfff176, upVajra: 0xff8a65, upKitePyr: 0xffd180,
+  upCValley: 0x5fd38a, upValley: 0xaed581, upTet: 0x81c784, upFrustum: 0x4dd0e1, upRhomb: 0x9fb4c8, upPent: 0x64b5f6, upHex: 0x4db6ac,
+  upTri: 0x7986cb, upLow: 0xb3c7f7, upIDGlass: 0xd9cfb8 };
+const SCOL = { ID: 0xe8c060, RT: 0x4dd0e1, GTI: 0xf06292, FPD: 0x5fd38a };
+const W = 1000, r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); r.setSize(W, W); r.setClearColor(0xf4f1ea); r.localClippingEnabled = true;
+document.body.appendChild(r.domElement);
+const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(28, 1, 0.1, 100);
+scene.add(new THREE.AmbientLight(0xffffff, 0.55)); const dl = new THREE.DirectionalLight(0xffffff, 0.9); dl.position.set(3, 5, 6); scene.add(dl);
+const dir = new THREE.Vector3(0.45, 0.35, 1).normalize();
+// the wedge (as Vajrayana): two planes a quarter turn apart about the vertical, facing the camera
+const wr = dir.clone().setY(0).normalize(), side = new THREE.Vector3(0, 1, 0).cross(wr), a = Math.PI / 4;
+const wedge = [new THREE.Plane(wr.clone().multiplyScalar(-Math.sin(a)).add(side.clone().multiplyScalar(Math.cos(a))), 0),
+  new THREE.Plane(wr.clone().multiplyScalar(-Math.sin(a)).sub(side.clone().multiplyScalar(Math.cos(a))), 0)];
+function add(V, F, colour, { glass = 0, clip = false, scale = 1, apart = 0 } = {}) {
+  const c = V.reduce((s, v) => s.map((x, i) => x + v[i] / V.length), [0, 0, 0]), P = V.map((v) => v.map((x, i) => (x + c[i] * apart) * scale)), pos = [], line = [];
+  for (const f of F) { for (let i = 1; i + 1 < f.length; i++) pos.push(...P[f[0]], ...P[f[i]], ...P[f[i + 1]]); f.forEach((k, i) => line.push(...P[k], ...P[f[(i + 1) % f.length]])); }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+  const planes = clip ? wedge : null;
+  scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: colour, flatShading: true, roughness: 0.55, side: THREE.DoubleSide, transparent: glass > 0, opacity: glass || 1, depthWrite: !glass, clippingPlanes: planes, clipIntersection: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+  const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+  scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, transparent: true, opacity: glass ? 0.25 : 0.55, clippingPlanes: planes, clipIntersection: true })));
+}
+let R = 2;
+if (fig === 'shells') { for (const [role, V, F] of UP.up.views.shells) add(V, F, ROLE[role], { clip: true, apart: 0.12 }); R = 2.6; }
+if (fig === 'vajras') { for (const [role, V, F] of UP.up.views.vajras) add(V, F, ROLE[role], { apart: role === 'upVajra' ? 0.12 : 0 }); R = 2.25; }
+if (fig === 'hexcleo') { for (const [role, V, F] of UP.up.views.hexcleo) if (role !== 'upIDGlass') add(V, F, ROLE[role], { clip: role !== 'upIDGlass', glass: 0, apart: 0 }); R = 2.1; }
+if (fig === 'cycle') {
+  for (const turn of [0, -1]) { const s = FILM.K ** turn;
+    add(FILM.stations.ID.v, FILM.stations.ID.f, SCOL.ID, { clip: true, scale: s * FILM.K });
+    for (const k of ['FPD', 'GTI', 'RT']) add(FILM.stations[k].v, FILM.stations[k].f, SCOL[k], { clip: true, scale: s }); }
+  add(FILM.stations.ID.v, FILM.stations.ID.f, SCOL.ID, { scale: 1 / FILM.K });
+  R = FILM.radius * 1.02;
+}
+cam.position.copy(dir.clone().multiplyScalar(R / Math.sin(cam.fov * Math.PI / 360))); cam.lookAt(0, 0, 0);
+r.render(scene, cam); document.title = 'ready';
+</script>

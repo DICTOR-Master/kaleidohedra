@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Universal PiTet</title>
+<link rel="stylesheet" href="../paper.css">
+<style>td.n { font-variant-numeric: tabular-nums; } table { font-size: 8.6pt; } .figs.two { grid-template-columns: 1fr 1fr; }</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>Universal PiTet</h1>
+<p class="sub">The DICTO PiTet Proposition: an endless, self-polar four-solid cycle grown from the Cleo star, ID → RT → DICTO GTI → DICTO FPD → ID × 10/φ⁴, with exact shell pieces, five-sided Vajras and hexagonal Cleos</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Version 1 · 19 October 2026 · DICTO DOI: 10.5281/zenodo.23463305 · Licence CC BY 4.0 · Scripts, exact checks and data: https://github.com/DICTOR-Master/kaleidohedra (research branch, studies/2026-10-19-five-fold-octet) · Interactive: dictospheres.com → Kaleidohedra → DICTO → Universal PiTet
+</div>
+
+<div class="abstract"><b>Abstract.</b> DICTO asked for a five-fold version of the octet: spherical shells grown outward from the Cleo star, the same pattern each time with different solids, triangles and pyramids staying constant (hence the name PiTet: Pi for the spherical progression, Tet for the triangles). We give a rule that does this and prove, in exact arithmetic in ℚ(√5), what it produces. Let T take a convex solid with corners v to the solid {x : v·x ≤ v·v for every corner v}: each new face passes through a corner of the last solid at right angles to it. Starting from the icosidodecahedron (ID), T gives the rhombic triacontahedron (RT), then the <b>DICTO GTI</b> (Golden Truncated Icosahedron: hexagon sides 1 : φ), then the <b>DICTO FPD</b> (Flat Pentakis Dodecahedron), and then the ID again, exactly <b>10/φ⁴ = 35 − 15√5</b> times larger; the cycle therefore repeats without end. Each solid lies in the next, each shell is filled by congruent pieces of one or two kinds (exact volumes), and the whole chain is its own polar about the GTI's circumsphere. Below the cycle, the Cleo star (82 pieces) and 12 twisted frusta (Monkey Staff B) close the ID; the pieces on one five-fold axis join into a convex five-sided Vajra, and the DICTO Ogdoecontahedron fits between the ID and the RT with 20 pure hexagonal Cleos. Every claim is checked exactly.</div>
+
+<h2>1. The idea</h2>
+<p>The octet truss fills flat space with tetrahedra and octahedra. Curved space can do it with tetrahedra alone (the 600-cell), and seen from one vertex the 600-cell's shells begin icosahedron, dodecahedron, icosahedron, icosidodecahedron. DICTO's idea was to build a five-fold, spherical version in our own space: start from the Cleo star (the icosahedron as 20 Cleo-Icos with 20 more turned out as spikes, DICTO DOI: 10.5281/zenodo.23378070), and grow outward shell by shell, the same pattern each time with different solids, with multi-sided Vajras in the place of the octet's octahedra and kinds of CLEO and FUJI among the pieces. He observed that triangles are the true constant: in every shell built here, every face where two pieces meet is a triangle, and pentagons, hexagons and rhombi appear only on the shells' surfaces.</p>
+
+<h2>2. The rule and the DICTO PiTet Proposition</h2>
+<p><b>The rule.</b> For a convex solid S with corners v, let T(S) = {x : v·x ≤ v·v for all corners v of S}. Each face of T(S) passes through a corner of S, at right angles to the line from the centre to that corner, so the corners of S touch the faces of T(S) ("points meeting", DICTO). When all the corners of S lie on one sphere, T is ordinary polar reciprocation about that sphere; when they lie at several radii it is not, and that difference is what drives the cycle. The rule needs no square roots, so everything below stays in ℚ(√5).</p>
+<p><b>The DICTO PiTet Proposition.</b> Let ID be the icosidodecahedron of circumradius φ. Then (i) T(ID) is the rhombic triacontahedron RT, T(RT) is the DICTO GTI, T(GTI) is the DICTO FPD, and T(FPD) = (10/φ⁴)·ID exactly; hence T<sup>4n</sup>(ID) = (10/φ⁴)<sup>n</sup>·ID for every n, since T commutes with scaling. (ii) Each solid lies inside the next. (iii) Each shell between consecutive solids is filled exactly by one piece per face of the inner solid (the cone from the centre over that face, cut by the outer solid), the pieces falling into one or two congruence classes (Table 2). (iv) The chain is its own polar: reciprocation about the sphere of radius² 15 − 5√5 = 10/φ² (the GTI's circumsphere) swaps GTI ↔ FPD, RT ↔ ID·10/φ⁴ and ID ↔ RT·10/φ⁴.</p>
+<p><b>Proof method.</b> All coordinates are pairs of rationals a + b√5 with exact signs. Floating point is used only to guess which three faces meet at a corner; every guess is then proved exactly: each corner solves its faces and lies inside every face; every face holds at least three corners with all others inside it; every edge lies in exactly two faces and V − E + F = 2, so the corner list is complete. Congruence of pieces is proved by the 60 exact rotations of the icosahedral group; volumes are exact; the shells' sums equal their gaps with remainder exactly 0. The scripts (exact_cycle.py, exact_shells.py, exact_polar.py) run in seconds.</p>
+
+<h2>3. The four stations</h2>
+<table>
+<tr><th>Station</th><th>Faces</th><th>Corners (radius)</th><th>Note</th></tr>
+<tr><td>ID</td><td>20 triangles, 12 pentagons</td><td class="n">30 (φ)</td><td>start of each turn</td></tr>
+<tr><td>RT</td><td>30 rhombi</td><td class="n">12 (2R<sub>I</sub> ≈ 1.902), 20 (√3)</td><td>polar of the ID</td></tr>
+<tr><td><b>DICTO GTI</b></td><td>12 regular pentagons, 20 hexagons, sides 1 : φ</td><td class="n">60 (√10/φ ≈ 1.954)</td><td>the icosahedron cut at 1/(2+φ) of each edge, not 1/3; all corners on one sphere</td></tr>
+<tr><td><b>DICTO FPD</b></td><td>60 isosceles triangles</td><td class="n">12 (≈ 2.008), 20 (≈ 2.205)</td><td>polar of the GTI; flatter pyramids than the Catalan pentakis dodecahedron</td></tr>
+<tr><td>ID·10/φ⁴</td><td colspan="2">the ID again</td><td>next turn</td></tr>
+</table>
+<p class="cap"><b>Table 1.</b> The stations of one turn (radii in the frame where the icosahedron has edge 1 and R<sub>I</sub> = its circumradius). The cycle alternates polar steps (from the ID and the GTI, whose corners lie on one sphere) and non-polar steps (from the RT and the FPD); the non-polar steps join the two classical dual pairs ID–RT and GTI–FPD into one cycle and fix the gain 10/φ⁴.</p>
+<figure><div class="figs two"><img src="figures/cycle.png"><img src="figures/shells.png"></div>
+<figcaption><b>Figure 1.</b> Left: one turn of the cycle cut away, ID·10/φ⁴ (gold), FPD (green), GTI (rose), RT (cyan), with the turn inside it down to the next ID. Right: the shells from the Cleo star out to the second ID, cut away, every piece coloured by shape family (pyramids warm, tetrahedra green, shell pieces blue).</figcaption></figure>
+
+<h2>4. The shell pieces (exact)</h2>
+<table>
+<tr><th>Shell</th><th>Pieces</th><th>Exact volume of each</th><th>Gap (exact)</th></tr>
+<tr><td>ID → RT</td><td>12 on pentagons, 20 on triangles</td><td class="n">5/12; 3/8 − 17√5/120</td><td class="n">25/2 − 17√5/6</td></tr>
+<tr><td>RT → GTI</td><td>30 on rhombi</td><td class="n">(3 − √5)/4 = 1/(2φ²)</td><td class="n">45/2 − 15√5/2</td></tr>
+<tr><td>GTI → FPD</td><td>12 on pentagons, 20 on hexagons</td><td class="n">(67475 − 30175√5)/72 ≈ 0.0229; (5681 − 2534√5)/36 ≈ 0.4112</td><td class="n">(259235 − 115865√5)/18</td></tr>
+<tr><td>FPD → ID·10/φ⁴</td><td>60 on triangles</td><td class="n">(77875 − 34825√5)/27 ≈ 0.1457</td><td class="n">(1557500 − 696500√5)/9</td></tr>
+</table>
+<p class="cap"><b>Table 2.</b> One piece per face of the inner solid; each kind is one symmetry orbit, so its pieces are congruent; each next turn repeats them 10/φ⁴ larger. In every shell the walls between neighbouring pieces are triangles.</p>
+
+<h2>5. From the Cleo star to the cycle (exact)</h2>
+<p><b>Stage 1, the Cleo star.</b> The icosahedron of edge 1 as 20 Cleo-Icos, 20 spikes, 12 inward pentagonal pyramids and 30 valley tetrahedra: 82 pieces filling the dodecahedron D′ of circumradius φ²/√3 exactly, with no overlap.</p>
+<p><b>Stage 2, Monkey Staff B.</b> The tightest ID round D′ has every corner of D′ exactly at the centre of one of its triangles. The gap is filled by 12 congruent twisted frusta, DICTO's <b>Monkey Staff B</b> (the D′ pentagon below, the ID's pentagon above turned 36°, ten triangles round the side), each of volume (145 + 37√5)/648.</p>
+<p><b>Stage 3 and the five-sided Vajra.</b> The ID → RT shell can also be cut into 12 five-sided and 20 three-sided pyramids and 60 valley tetrahedra (92 pieces, exact, no overlap); the three-sided pyramid is DICTO's CLEO, a piece appearing again. On each five-fold axis the Cleo star's inward pyramid, Monkey Staff B and the outward five-sided pyramid join into one convex double-pointed piece, a <b>five-sided Vajra</b> of volume 55/108 + 5√5/36, reaching from the icosahedron's corner to the RT's.</p>
+<p><b>Hexagonal Cleos.</b> The DICTO Ogdoecontahedron (OG; DICTO DOI: 10.5281/zenodo.23404688) fits exactly between the ID and the RT: at this size its corners are the ID's 30 corners, the 60 points 2c − v (v a corner of an ID triangle, c its centre) and 12 apexes, and its 20 regular hexagons lie in the ID's triangle planes, each centred on a corner of D′. ID → OG is filled by 12 congruent pieces; OG → RT by <b>20 pure hexagonal Cleos</b> (regular hexagon base, apex at the RT's three-fold corner, each 1/4 − √5/12), 60 kite pyramids from the RT's five-fold corners (each 1/76 + √5/684) and 120 tetrahedra (each 1/24 − √5/72), all exact, with no overlap.</p>
+<figure><div class="figs two"><img src="figures/vajras.png"><img src="figures/hexcleo.png"></div>
+<figcaption><b>Figure 2.</b> Left: the 12 five-sided Vajras on the icosahedral core (gold). Right: the hexagonal-Cleo stage cut away, the ID → OG pieces (blue) with the hexagonal Cleos (yellow), kite pyramids and tetrahedra round them.</figcaption></figure>
+
+<h2>6. Prior art and what is claimed</h2>
+<p>The closest prior art we found is Bergman's continuous spherical truss (US 4,719,726, 1988): an icosahedral nucleus of twenty tetrahedral pyramids surrounded by an endless sequence of space-filling icosahedral-spherical tetrahedron–octahedron layers of equal thickness. The idea of a pyramid core with endless octet-like spherical shells is therefore not new, and we do not claim it. Kramer (1982) gave a non-periodic central filling of space with icosahedral symmetry by seven cells repeating at τ³; the UP gain 10/φ⁴ is not a power of φ. Polar reciprocation and Hart's canonical polyhedra relate dual pairs such as ID–RT and GTI–FPD; plain reciprocation has period 2. In the sources checked (the reference library listed with the data, and a web search) we did not find the rule T, the four-step cycle with gain 10/φ⁴, its self-polarity, the shell pieces, the five-sided Vajra or the hexagonal Cleos in OG hexagons. The GTI and the FPD belong to known families (truncated icosahedra, pentakis dodecahedra); what is claimed is their golden proportions as forced by the rule. Their faces are not regular; they are convex, planar, fully icosahedral and exact.</p>
+
+<h2>7. Further work</h2>
+<p>The same rule run outward from the OG gives the DICTO KRE, PHE, TPP and DPHP, which nest only as far as the TPP (to be reported separately). A taller version with true Kepler–Poinsot spikes (the great and small stellated dodecahedra alternating, gain φ³ a turn) is being studied, following DICTO's "think stellation, think Gaudí". Twelve OGs packed freely round one show no symmetry at all (float search), consistent with the frustration that the shells sidestep.</p>
+
+<h2>Data and reproducibility</h2>
+<p>Exact scripts: exact_cycle.py (the cycle), exact_shells.py (the shell pieces), exact_inner.py (Cleo star, Monkey Staff B, fine cut, OG stage, Vajra), exact_polar.py (self-polarity); float exploration: progression.py, hexstage.py, stage4.py, stage5.py, stepper.py; results in data/*.json. The interactive world (shells, Vajras, hexagonal Cleos, and the cycle film peeling station by station without end) is in the Kaleidohedra app.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>H. Bergman, Continuous spherical truss construction, US Patent 4,719,726 (1988).</li>
+<li>P. Kramer, Non-periodic central space filling with icosahedral symmetry using copies of seven elementary cells, Acta Cryst. A38 (1982) 257–264.</li>
+<li>G. W. Hart, Calculating canonical polyhedra, Mathematica in Education and Research (1997).</li>
+<li>H. S. M. Coxeter, Regular Polytopes, 3rd ed., Dover (1973).</li>
+<li>M. J. Wenninger, Dual Models, Cambridge University Press (1983).</li>
+<li>H. Lalvani, Building structures based on polygonal members and icosahedral symmetry, US Patent 4,723,382 (1988).</li>
+<li>J. F. Sadoc, R. Mosseri, Order and disorder in amorphous, tetrahedrally coordinated semiconductors: a curved-space description, Phil. Mag. B 45 (1982).</li>
+<li>DICTO, Theaetetus, DICTO DOI: 10.5281/zenodo.23378070.</li>
+<li>DICTO, The DICTO Ogdoecontahedron, DICTO DOI: 10.5281/zenodo.23404688.</li>
+<li>DICTO, Spheres of Dharma, DICTO DOI: 10.5281/zenodo.23310833.</li>
+<li>DICTO, AXE, CLEO and FUJI: the Gap Pieces of the Icosahedron, DICTO DOI: 10.5281/zenodo.23351291.</li>
+<li>DICTO, Vajrayana, DICTO DOI: 10.5281/zenodo.23429911.</li>
+<li>DICTO, The DICTO Ogdoecontahedron on the Octet Truss, DICTO DOI: 10.5281/zenodo.23457016.</li>
+</ol>
+</body></html>
