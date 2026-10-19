@@ -135,6 +135,12 @@ The stage-3 cut used for the Vajra (12 + 20 pyramids + 60 valley tetrahedra, 92 
 
 DICTO: "triangles are the only true constant in the universal octet". This holds for every stage built so far. Inside each shell, every face where two pieces meet is a triangle. Pentagons, hexagons and rhombi appear only on the shell surfaces (D′, ID, OG, RT). Read this way, the triangle is the invariant and the shell polygon is the variable, which fits both the flat octet and the 600-cell, where everything is triangles. This has been checked only on stages 1–3.
 
+## Reverse cycle (DICTO 2026-10-19, float first look)
+
+The reverse step takes as new corners the foot points of the last solid's faces (the point of each face plane nearest the centre). It undoes the forward step exactly, so **the UP cycle run in reverse just retraces itself**: RT → ID → Q/k → … inward without end, with no new solids. Starting from other seeds gives more:
+- **D′:** forward and reverse alternate between the dodecahedron and the icosahedron (plain duality, nothing new).
+- **The OG:** **no cycle within 5 steps.** Forward: 92 corners with 90 four-sided faces (a rhombic-enneacontahedron type, to check) → 180 → 212 → 270 → 452 corners. Reverse: 80 corners (120 triangles + 12 pentagons) → 132 → 140 → 162. The solids get more and more complex instead of closing. These are candidate "new duals" of the OG, to be studied.
+
 ## Open
 
 - **Rhythms (DICTO):** layers that overlap at different rhythms may cause local, shallower UO structures. The five-fold and three-fold columns already advance in different steps (for example, RT corners at 1.902 and √3), so where they interleave, look for thin local octet-like layers.
