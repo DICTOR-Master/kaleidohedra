@@ -2,7 +2,7 @@
 
 **DICTO** · dictospheres.com
 
-*Version 2, 14 October 2026 (first person throughout) · doi:10.5281/zenodo.23351291 · CC BY 4.0. Computation, checking and drafting with Claude (Anthropic).*
+*Version 3, 20 October 2026 (licence now CC BY-SA 4.0) · DICTO DOI: 10.5281/zenodo.23351291 · CC BY-SA 4.0. Computation, checking and drafting with Claude (Anthropic).*
 
 ---
 
