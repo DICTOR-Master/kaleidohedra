@@ -25,12 +25,14 @@ export function createUpWorld({ scene, fitView, openWorld = () => {} }) {
     glassRoles: { up: new Set(['upIDGlass']) }, defaultParts: { up: 'shells' } });
   // the cycle's film (DICTO 2026-10-19: "Dual Vision is the standard") lives in its own world, as Vajrayana's Cleo button opens Theaetetus
   const panel = document.getElementById('worldup-panel');
-  const filmBtn = document.createElement('button');
-  filmBtn.type = 'button'; filmBtn.dataset.upFilm = 'open';
-  panel.querySelector('.w4d-options').append(filmBtn);
-  const label = () => { filmBtn.textContent = `∞ ${t('up.film.open', getSettings().language)}`; };
+  const filmBtn = document.createElement('button'), kpBtn = document.createElement('button');
+  filmBtn.type = kpBtn.type = 'button'; filmBtn.dataset.upFilm = 'open'; kpBtn.dataset.upFilm = 'kp';
+  panel.querySelector('.w4d-options').append(filmBtn, kpBtn);
+  // the tall companion, the DICTO Kepler–Poinsot–PiTet Cycle (DICTO 2026-10-19), has its own film too
+  const label = () => { const L = getSettings().language; filmBtn.textContent = `∞ ${t('up.film.open', L)}`; kpBtn.textContent = `∞ ${t('up.film.kp', L)}`; };
   label(); onSettingsChange(label);
   filmBtn.addEventListener('click', () => openWorld('tool:upFilmWorld', 'Universal PiTet'));
+  kpBtn.addEventListener('click', () => openWorld('tool:kpFilmWorld', 'Kepler–Poinsot–PiTet'));
   return w;
 }
 

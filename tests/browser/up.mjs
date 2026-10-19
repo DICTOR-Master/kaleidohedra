@@ -39,6 +39,17 @@ assert.equal(await fp.locator('.upf-film-row').isVisible(), true, 'scrub slider 
 await wrap.tap(); await page.waitForTimeout(1200);
 assert.ok(await wrap.evaluate((b) => b.classList.contains('active')), 'Wrap running');
 await fp.locator('[data-upf="pieces"]').tap(); await page.waitForTimeout(1200); await page.screenshot({ path: `${SH}/up-${SITE}-film-pieces.png` });
+// the Kepler–Poinsot–PiTet Cycle film, from UP's panel
+await page.goto(`${BASE}/index.html?site=${SITE}&open=up`); await page.waitForTimeout(3000);
+if (await page.locator('#welcome-overlay').isVisible()) { await page.keyboard.press('Enter'); await page.waitForTimeout(2500); }
+await page.locator('#worldup-panel [data-up-film="kp"]').tap(); await page.waitForTimeout(3500);
+const kp = page.locator('#worldkpfilm-panel');
+assert.equal(await kp.isVisible(), true, 'the Kepler–Poinsot film opened');
+await page.screenshot({ path: `${SH}/up-${SITE}-kp.png` });
+await kp.locator('[data-inf="unwrap"]').tap(); await page.waitForTimeout(3000);
+assert.ok(await kp.locator('[data-inf="unwrap"]').evaluate((b) => b.classList.contains('active')), 'KP Unwrap running');
+await page.screenshot({ path: `${SH}/up-${SITE}-kp-run.png` });
+await kp.locator('[data-upf="pieces"]').tap(); await page.waitForTimeout(1500); await page.screenshot({ path: `${SH}/up-${SITE}-kp-pieces.png` });
 // links
 await page.goto(`${BASE}/index.html?site=${SITE}&open=upFilm`); await page.waitForTimeout(4000);
 assert.equal(await page.locator('#worldupfilm-panel').isVisible(), true, 'film opened by link');
