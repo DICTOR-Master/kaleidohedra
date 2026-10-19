@@ -1,6 +1,6 @@
 # Universal PiTet: growing outward from the Cleo star (2026-10-19)
 
-**Name (DICTO 2026-10-19): "Universal PiTet"**, after the triangles and pyramids that stay constant. The working name was "five-fold octet"; the folder keeps that name. Whether the name is already in use has not been checked yet.
+**Name (DICTO 2026-10-19): "Universal PiTet"**, after the triangles and pyramids that stay constant. DICTO: "even if pyramids don't hold, Pi does": the shells are a spherical progression (π) and the triangles stay throughout (Tet). The working name was "five-fold octet"; the folder keeps that name. Whether the name is already in use has not been checked yet.
 
 DICTO's idea: build outward from the Cleo star in **spherical shells with the same pattern each time and different solids each time**. Multi-sided **Vajras** would take the place of the octet's octahedra, alongside different kinds of FUJI and CLEO, and some pieces may appear twice. This is a different construction from the Spheres of Dharma, even where it passes through the same solids. This came out of the play-first brainstorm (OG-13, spherical octet, ID channel).
 
