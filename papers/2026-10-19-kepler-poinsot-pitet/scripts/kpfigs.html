@@ -7,7 +7,7 @@ import * as THREE from './three.module.min.js';
 import { ConvexGeometry } from './ConvexGeometry.js';
 import K from './kp-figs-data.js';
 const fig = new URLSearchParams(location.search).get('fig');
-const COL = { core: 0xe8c060, gspike: 0xc792ea, gpyr: 0x5fd38a, gtet: 0x4dd0e1, sspike: 0xf06292, spyr: 0xc792ea, stet: 0xffa726 };
+const COL = { core: 0xe8c060, gspike: 0xc792ea, gpyr: 0x5fd38a, gtet: 0x4dd0e1, sspike: 0xf06292, spyr: 0xe1c8f0, stet: 0xffa726 };
 const W = 1000, r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); r.setSize(W, W); r.setClearColor(0xf4f1ea); r.localClippingEnabled = true;
 document.body.appendChild(r.domElement);
 const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(28, 1, 0.1, 5000);

@@ -29,6 +29,8 @@ DICTO noticed that the UP shells always come out flat. That is because each UP s
 
 This matches the sculptors' practice: the correction is made for a chosen, moderate viewing distance, not for the foot.
 
+**Correction (2026-10-19) and golden reciprocity (EXACT, `exact_reciprocal.py`, `congruence.py`):** a first shape test compared only lists of edge lengths, and wrongly called the small shell's inward pyramid "CLEO again". The corner-matching test (`congruence.py`) shows it is not. CLEO is a tall point (height / base radius φ²); this piece is its golden reciprocal, φ⁻². Likewise the small star's spire (φ) and the great shell's cap (φ⁻¹). (h/r)² = φ⁴ and φ⁻⁴, φ² and φ⁻²: Galois conjugate pairs. This is DICTO's "opposite structures throughout", PiTet's own principle. The first shell's CLEO, cap and AXE identities are confirmed by the corner test.
+
 **Prior art:** the nesting of the great and small stellated dodecahedra in their hulls is classical (Kepler, Coxeter). What may be new is filling the shells with this piece pattern, and pairing it with UP. To check.
 
 **Next:**
