@@ -20,10 +20,13 @@ DICTO noticed that the UP shells always come out flat. That is because each UP s
 
 **The Cleo star's own pattern** (inward pyramids from the hull's faces, valley tetrahedra along the core's edges) **fills both valleys exactly**: "the same pattern, different solids". The Cleo star is the short version, with tips at 2×. Volumes: I 2.18169, GSD 6.54508 (3× I), D1 32.46149, SSD 72.58610, I2 165.83752.
 
+**EXACT (`exact_kp.py`, `exact_kp.json`, ℚ(√5)):** I2 = φ³·I exactly. In each shell, the spikes, inward pyramids and valley tetrahedra together fill core → hull exactly, with no two overlapping (exact separating planes) and all inside the hull and outside the core. Each kind has one volume. Great stellated shell: spike 1/8 + √5/24 (= I/10, so the GSD = 3·I), inward pyramid 5/8 + 7√5/24, valley tetrahedron 1/6 + √5/12. Small stellated shell: spire 5/3 + 3√5/4, inward pyramid 29/24 + 13√5/24, valley tetrahedron 3/4 + √5/3.
+
+**Perspective (DICTO, from Gothic figures and Michelangelo's David, made to look right from below):** a first float model, with a viewer on the spire's base plane comparing apparent height with width, needs the spires about ×2 taller at 12 base radii (×2.7 for the GSD and ×2.2 for the SSD at 6) to read as φ² and φ. The viewpoint is to be agreed with DICTO.
+
 **Prior art:** the nesting of the great and small stellated dodecahedra in their hulls is classical (Kepler, Coxeter). What may be new is filling the shells with this piece pattern, and pairing it with UP. To check.
 
 **Next:**
-- exact proof in ℚ(√5);
 - DICTO's perspective idea: spires lengthened so their *apparent* height, seen from inside a shell, keeps the golden proportion;
 - Gaudí: the double-twist (left and right twisted copies intersected) and catenary profiles;
 - Gaudí's own writings to the library.

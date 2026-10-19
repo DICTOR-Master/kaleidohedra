@@ -1,0 +1,53 @@
+{
+ "mark": "DICTO tall PiTet (Kepler-Poinsot), exact, 2026-10-19",
+ "I2_is_phi3_I": true,
+ "D1_is_a_dodecahedron": true,
+ "great stellated shell: spikes (core -> star)": {
+  "pieces": 20,
+  "sum_equals_gap": false,
+  "all_inside_outer": true,
+  "all_outside_inner": true,
+  "close_pairs_tested": 190,
+  "pairs_not_separated": 0,
+  "gap": "15+41/6r5"
+ },
+ "great stellated shell: valleys (star -> hull) = 12 inward pyramids + 30 valley tetrahedra": {
+  "pieces": 62,
+  "sum_equals_gap": true,
+  "all_inside_outer": true,
+  "all_outside_inner": true,
+  "close_pairs_tested": 1300,
+  "pairs_not_separated": 0,
+  "gap": "15+41/6r5"
+ },
+ "great stellated shell: volumes": {
+  "spike": "1/8+1/24r5",
+  "inward_pyramid": "5/8+7/24r5",
+  "valley_tet": "1/6+1/12r5",
+  "one_kind_each": true
+ },
+ "small stellated shell: spikes (core -> star)": {
+  "pieces": 12,
+  "sum_equals_gap": false,
+  "all_inside_outer": true,
+  "all_outside_inner": true,
+  "close_pairs_tested": 60,
+  "pairs_not_separated": 0,
+  "gap": "200/3+179/6r5"
+ },
+ "small stellated shell: valleys (star -> hull) = 20 inward pyramids + 30 valley tetrahedra": {
+  "pieces": 62,
+  "sum_equals_gap": true,
+  "all_inside_outer": true,
+  "all_outside_inner": true,
+  "close_pairs_tested": 1230,
+  "pairs_not_separated": 0,
+  "gap": "200/3+179/6r5"
+ },
+ "small stellated shell: volumes": {
+  "spike": "5/3+3/4r5",
+  "inward_pyramid": "29/24+13/24r5",
+  "valley_tet": "3/4+1/3r5",
+  "one_kind_each": true
+ }
+}
