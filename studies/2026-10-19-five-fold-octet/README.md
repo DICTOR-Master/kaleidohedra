@@ -1,4 +1,6 @@
-# DICTO's five-fold octet: growing outward from the Cleo star (2026-10-19)
+# Universal PiTet: growing outward from the Cleo star (2026-10-19)
+
+**Name (DICTO 2026-10-19): "Universal PiTet"**, after the triangles and pyramids that stay constant. The working name was "five-fold octet"; the folder keeps that name. Whether the name is already in use has not been checked yet.
 
 DICTO's idea: build outward from the Cleo star in **spherical shells with the same pattern each time and different solids each time**. Multi-sided **Vajras** would take the place of the octet's octahedra, alongside different kinds of FUJI and CLEO, and some pieces may appear twice. This is a different construction from the Spheres of Dharma, even where it passes through the same solids. This came out of the play-first brainstorm (OG-13, spherical octet, ID channel).
 
@@ -69,6 +71,9 @@ DICTO: "keep going outwards, but there may be missing transitional solids." The 
 DICTO: "triangles are the only true constant in the universal octet". This holds for every stage built so far. Inside each shell, every face where two pieces meet is a triangle. Pentagons, hexagons and rhombi appear only on the shell surfaces (D′, ID, OG, RT). Read this way, the triangle is the invariant and the shell polygon is the variable, which fits both the flat octet and the 600-cell, where everything is triangles. This has been checked only on stages 1–3.
 
 ## Open
+
+- **Rhythms (DICTO):** layers that overlap at different rhythms may cause local, shallower UO structures. The five-fold and three-fold columns already advance in different steps (for example, RT corners at 1.902 and √3), so where they interleave, look for thin local octet-like layers.
+- **Pyramids as a constant:** triangles hold at every stage. Pyramids appear at stages 1 and 3 and in the hexagonal stage, but not as separate pieces in stage 2 (the twisted frusta, which join pyramids into Vajras) or stage 4 (the rhombus pieces). Check whether those pieces are best seen as pyramids joined together.
 
 - An exact proof of each stage: every remainder exactly 0.
 - The hexagonal Cleo pieces: from the OG hexagon inward, and outward to the RT's three-fold corner (√3).
