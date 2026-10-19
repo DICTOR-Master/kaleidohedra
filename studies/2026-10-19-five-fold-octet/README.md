@@ -168,6 +168,10 @@ The UP step applied outward from the OG (`stepper.nxt`):
 | 4 | 270 | 12 decagons + 20 hexagons + 120 pentagons | very round: corner radii within 0.56% |
 | 5–14 | 452 → 12,009 | more and more face kinds | |
 
+**Names (DICTO 2026-10-19):** step 1 **DICTO KRE** (Kite-Rhombic Enneacontahedron), step 2 **DICTO PHE** (Pentagon-Hexagon Enneacontadihedron), step 3 **DICTO TPP** (Triangle-Pentagon Polyhedron), step 4 **DICTO DPHP** (Decagon-Pentagon-Hexagon Polyhedron).
+
+**Exact builds (`exact_upward.py`, `data/exact_upward.json`):** all four solids are proved exactly in ℚ(√5), with full icosahedral symmetry. OG → KRE (60 + 20 pieces), KRE → PHE (90) and PHE → TPP (92) fill exactly. **But DICTO DPHP does not contain DICTO TPP: 60 of TPP's 212 corners stand outside DPHP, by up to 0.0185** (the same happens again at step 5 → 6, with 132 corners). The UP rule makes each new face go through a corner at right angles to it, but when a solid's corners lie at several radii and close together in direction, a neighbouring corner can lie beyond that face. **So the OG family nests as shells only as far as TPP: OG ⊂ KRE ⊂ PHE ⊂ TPP.** DPHP is still a valid solid of the rule, but not a shell round TPP. The UP cycle is not affected (its exact checks prove each solid inside the next).
+
 **Unlike UP, the family does not keep growing.** The volume levels off near 27.9 and the corner radii near 1.87–1.90, so it rounds towards a nearly spherical limit (still about 1.5% out of round at step 14) instead of cycling. From about step 7 on, near-duplicate corners make float unreliable, so only steps 1–4 are clean shapes to study. Prior art and names are still to do.
 
 ## Open
