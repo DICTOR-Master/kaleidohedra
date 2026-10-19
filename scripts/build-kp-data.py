@@ -1,4 +1,4 @@
-# The DICTO Kepler–Poinsot–PiTet Cycle (DICTO 2026-10-19): data for its film world (src/app/kp-film-data.js). Built in float from the
+# The DICTO Kepler–Poinsot–UP Cycle (DICTO 2026-10-19): data for its film world (src/app/kp-film-data.js). Built in float from the
 # construction proved exactly in the research study studies/2026-10-19-kepler-poinsot-up (exact_kp.py): the icosahedron I of edge 1,
 # the great stellated dodecahedron (spikes to 3x the face distance), its hull D1 (edge phi), the small stellated dodecahedron (spires to
 # sqrt5 x the face distance), its hull I*phi^3; and each shell's pieces in the Cleo star's pattern (spikes, inward pyramids, valley
@@ -44,5 +44,5 @@ data = {'K': PHI ** 3, 'radius': float(np.linalg.norm(I2, axis=1).max()),
                    'Ik': [dict(solid(p), kind='cleo') for p in spyr] + [dict(solid(p), kind='stet') for p in stet]},
         'view': {'dir': [0.45, 0.35, 1.0], 'up': [0.0, 1.0, 0.0]}}
 with open(OUT, 'w') as f:
-    f.write('// Built by scripts/build-kp-data.py (the DICTO Kepler–Poinsot–PiTet Cycle, DICTO 2026-10-19). Do not edit.\nexport default ' + json.dumps(data, separators=(',', ':')) + ';\n')
+    f.write('// Built by scripts/build-kp-data.py (the DICTO Kepler–Poinsot–UP Cycle, DICTO 2026-10-19). Do not edit.\nexport default ' + json.dumps(data, separators=(',', ':')) + ';\n')
 print('bytes', os.path.getsize(OUT))

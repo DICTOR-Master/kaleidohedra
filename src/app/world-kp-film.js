@@ -1,4 +1,4 @@
-// The DICTO Kepler–Poinsot–PiTet Cycle film (DICTO 2026-10-19; the tall companion of Universal PiTet): I ⊂ great stellated dodecahedron ⊂ D1
+// The DICTO Kepler–Poinsot–UP Cycle film (DICTO 2026-10-19; the tall companion of Universal PiTet): I ⊂ great stellated dodecahedron ⊂ D1
 // ⊂ small stellated dodecahedron ⊂ I·φ³, one turn with the turns inside it, on Dual Vision's standard (cloned from the Universal PiTet film,
 // itself cloned from Vajrayana's cycle): cut away (the side bar's ⛶ wedge → X-ray plane → off, glass), the ∞ film peeling one station at a
 // time from the outside, pausing on each, zooming by φ³ a turn for ever (◀ builds back out); a Pieces switch fills each shell in the Cleo

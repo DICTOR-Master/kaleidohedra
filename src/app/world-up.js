@@ -28,11 +28,11 @@ export function createUpWorld({ scene, fitView, openWorld = () => {} }) {
   const filmBtn = document.createElement('button'), kpBtn = document.createElement('button');
   filmBtn.type = kpBtn.type = 'button'; filmBtn.dataset.upFilm = 'open'; kpBtn.dataset.upFilm = 'kp';
   panel.querySelector('.w4d-options').append(filmBtn, kpBtn);
-  // the tall companion, the DICTO Kepler–Poinsot–PiTet Cycle (DICTO 2026-10-19), has its own film too
+  // the tall companion, the DICTO Kepler–Poinsot–UP Cycle (DICTO 2026-10-19), has its own film too
   const label = () => { const L = getSettings().language; filmBtn.textContent = `∞ ${t('up.film.open', L)}`; kpBtn.textContent = `∞ ${t('up.film.kp', L)}`; };
   label(); onSettingsChange(label);
   filmBtn.addEventListener('click', () => openWorld('tool:upFilmWorld', 'Universal PiTet'));
-  kpBtn.addEventListener('click', () => openWorld('tool:kpFilmWorld', 'Kepler–Poinsot–PiTet'));
+  kpBtn.addEventListener('click', () => openWorld('tool:kpFilmWorld', 'Kepler–Poinsot–UP'));
   return w;
 }
 
