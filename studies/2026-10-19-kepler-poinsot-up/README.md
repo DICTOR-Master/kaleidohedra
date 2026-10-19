@@ -1,4 +1,4 @@
-# Tall PiTet: UP grown from the Kepler–Poinsot stars (DICTO 2026-10-19: "think stellation, think Gaudí", option 2; float first look)
+# The DICTO Kepler–Poinsot–UP Cycle (tall PiTet): UP grown from the Kepler–Poinsot stars (DICTO 2026-10-19: "think stellation, think Gaudí", option 2; float first look)
 
 DICTO noticed that the UP shells always come out flat. That is because each UP step is the tightest solid around the last one, and the hulls fill in every valley. Here every station is a true star instead, and the valleys stay open until the next hull.
 
