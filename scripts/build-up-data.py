@@ -114,14 +114,11 @@ low, caps, hexc, tets = [], [], [], []
 for a5, ap in zip(A5, apex):
     u = a5 / np.linalg.norm(a5); cs = ID[np.argsort(-(ID @ u))[:5]]; xs = X[np.argsort(-(X @ u))[:5]]
     L = np.vstack([cs, xs, [ap]]); low.append(piece('upLow', L))
-    C = uniq(np.vstack([cs, xs, [a5]])); FC = faces(C); FL = faces(uniq(L)); LV = uniq(L)
-    key = lambda P, f: frozenset(tuple(np.round(P[i], 7)) for i in f)
-    shared = {key(C, f) for f in FC} & {key(LV, f) for f in FL}
-    allV = uniq(np.vstack([C, LV])); idx = lambda p: int(np.argmin(np.linalg.norm(allV - p, axis=1)))
-    capF = [[idx(C[i]) for i in f] for f in FC if key(C, f) not in shared] + [[idx(LV[i]) for i in f] for f in FL if key(LV, f) not in shared]
-    used = sorted({i for f in capF for i in f}); remap = {o: n_ for n_, o in enumerate(used)}
-    caps.append(['upCap', np.round(allV[used], 6).tolist(), [[remap[i] for i in f] for f in capF]])
-    assert abs(hv(C) - hv(L) - (hv(C) - hv(L))) < 1e-12
+    # the dimpled cap over this low piece is exactly 5 pyramids from the RT's five-fold corner over the OG's 5 kites (DICTO 2026-10-19:
+    # drawn as one piece its rim was open); their volumes add up to hull(cap) minus the low piece, checked below
+    LV = uniq(L)
+    for f in faces(LV):
+        if len(f) == 4: caps.append(piece('upKitePyr', np.vstack([LV[f], [a5]])))
 nO, dO = planes(OG)
 for k in range(len(dO)):
     F = OG[np.abs(OG @ nO[k] - dO[k]) < 1e-9]
@@ -133,6 +130,7 @@ capvol = sum(hv(uniq(np.vstack([ID[np.argsort(-(ID @ (a / np.linalg.norm(a))))[:
 assert abs(sum(hv(p[1]) for p in low) + hv(ID) - hv(OG)) < 1e-5   # pieces are stored to 6 decimals
 assert abs(sum(hv(p[1]) for p in hexc + tets) + capvol + hv(OG) - hv(RT)) < 1e-5
 idglass = piece('upIDGlass', ID)
+assert abs(sum(hv(p[1]) for p in caps) - capvol) < 1e-5 and len(caps) == 60
 hexcleo = [idglass] + low + hexc + caps + tets
 # ---- the cycle: four turns, from 1/K of the first ID out to K^2 ----
 cycle = []
