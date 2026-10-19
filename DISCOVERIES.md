@@ -61,6 +61,7 @@ online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 | 35 | Vajrayana: the dodecahedron returns in the cycle of #34 as the hull of the Cleo star, exactly (2/3)·D, filled by 82 pieces of four kinds; the last loose step RT ⊂ I·φ³ is closed by the DICTO Metaxyhexecontahedron, the dodecahedron–icosahedron hull member with edge ratio 9/φ⁴, touching both, each of its two layers one kind of piece (30 and 60), its dual closing the reversed cycle's step; the full-height icosidodecahedron star gives the DICTO Palintriacontahedron (ratio 3/√5); twelve stations | DICTO (the Cleo star with the dodecahedron in it, the inward pyramids, the solid in the last gap, the full-height ID star, the names) | studies/2026-10-16-progenitors (exact; some observations float, so labelled) | **not found** as named or distinguished members (the hull family is known) | 2026-10-17 (Zenodo 10.5281/zenodo.23429911) |
 | 36 | Golden Bodhi Pyrochlore: the gap of the Ogdoecontahedron's bcc packing, 22.57% of space, exact: 72 cone pieces of 3 kinds; hexagonal limbs crossing in exactly two golden rhombi; the canonical golden cut shatters (8,027 pieces); the GBPC (Golden Bodhi Pyrochlore Corner), 24 per cell, is the one adapter every golden fill needs; what remains has no face-to-face tiling by golden rhombohedra; DICTO's Bull-horns OG adaptor fills the whole gap with one piece, three per copy, (18728 − 6296√5)/41553 each | DICTO (the questions, the Bull-horns OG adaptor, the names Golden Bodhi Pyrochlore, GBPC, Bull-horns); the obstruction and the GBPC found by Claude Fable | studies/2026-10-16-ocd-pyrochlore, studies/2026-10-18-bcc-hole-pieces (exact; float explorations labelled) | **not found** | 2026-10-18 (Zenodo 10.5281/zenodo.23451210) |
 | 37 | The DICTO Ogdoecontahedron on the Octet Truss: the OG's 8 joint hexagons lie on the faces of a regular octahedron (corners at distance 2φ/3), so the OG sits in the octet truss; four families of exact space-filling kits: golden-section keys (keyed octahedron + dented tetrahedron L/R); an exact thick Penrose rhombus linking facing five-fold stars, offset by exactly one tip radius, with three Penrose cores; golden envelopes filling exactly 10/φ⁶, with the φ⁻² vertex cuboctahedron = ⅓ envelope, a two-shape kit and a tetartoid core, each envelope touching its rhombic dodecahedron at 12 golden-section points; one-piece glue (envelope + W, OG + W with OG imprints, OG + W on the Penrose star) | DICTO (the octet from the OG's pieces, the Penrose link, the minimal golden kit, the one-piece and two-shape golden octets, the OG-imprint and star-centred glue, the keyed glue, the half-RD network, the chamber); W, the proofs, the tetartoid and the keyed-glue design by Claude Fable | studies/2026-10-18-ocd-octet, -p1 … -p4, -envelope-network (exact, proved independently; keyed W float design) | **not found** | 2026-10-19 (Zenodo 10.5281/zenodo.23457016) |
+| 38 | Universal PiTet, the DICTO PiTet Proposition: the rule T(S) = {x : v·x ≤ v·v for every corner v} takes the icosidodecahedron to the rhombic triacontahedron, the DICTO GTI (golden truncated icosahedron, hexagon sides 1 : φ), the DICTO FPD (flat pentakis dodecahedron, its polar) and back to the icosidodecahedron exactly 10/φ⁴ larger, for ever; self-polar about the GTI's circumsphere; exact shell pieces; from the Cleo star with Monkey Staff B, five-sided Vajras and hexagonal Cleos in the OG; all exact in Q(√5) | | | | |
 
 Known results the apps show (kept here, with their numbers, as checks; not DICTO's findings; see the section at the end):
 
@@ -908,6 +909,18 @@ pieces. Names by DICTO.*
   Demonstration "Cluster of 20 Icosahedra" (in the vein of Kabai); Robert Austin's 2014 model overlaps whole
   icosahedra with dodecahedra; the Dogstar and its honeycomb are Hart's (1996). The King of Pentacles, the
   closed Stella-Corona and its network are DICTO's.
+
+## 38. Universal PiTet: the DICTO PiTet Proposition (DICTO, 2026-10-19)
+
+- DICTO's five-fold octet: from the Cleo star outward in spherical shells, triangles constant. Rule T(S) = {x : v·x ≤ v·v, every corner v}:
+  ID → RT → DICTO GTI → DICTO FPD → ID × 10/φ⁴ (= 35 − 15√5), so it repeats for ever; each solid inside the next; each shell filled by one
+  exact piece per face of the inner solid; the chain is its own polar about the GTI's circumsphere (radius² 15 − 5√5). Below the cycle:
+  the Cleo star (82 pieces), 12 Monkey Staff B, the ID → RT fine cut (92), the five-sided Vajra (convex, 55/108 + 5√5/36), and the OG
+  between the ID and the RT with 20 pure hexagonal Cleos. All exact in Q(√5) (research studies/2026-10-19-five-fold-octet).
+  Prior art: Bergman's spherical truss (US 4,719,726, 1988) has a pyramid core with endless octet-like shells; the cycle and pieces were
+  not found. Paper DICTO DOI 10.5281/zenodo.23463305.
+- In the app: Kaleidohedra, 3D+ → Universal PiTet (`?open=up`): the shells, the Vajras, the hexagonal Cleos; ∞ The cycle film
+  (`?open=upFilm`) on Dual Vision's film standard, with the Cleo star at its centre.
 
 ## 37. The DICTO Ogdoecontahedron on the Octet Truss (DICTO, 2026-10-19)
 
