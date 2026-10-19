@@ -1,0 +1,33 @@
+{
+ "mark": "DICTO Universal PiTet (UP) study, stage 5, 2026-10-19 (float)",
+ "Q": {
+  "corners": 32,
+  "faces": 60,
+  "R5": 2.0081141588622726,
+  "R3": 2.2052817941653577,
+  "R3_over_R5": 1.0981854713951091,
+  "equals_RT_t5_over_t3": 1.0,
+  "each_face_holds_one_T_corner": true
+ },
+ "T_to_Q": {
+  "pieces": {
+   "5-gon": 12,
+   "6-gon": 20
+  },
+  "volumes": {
+   "5-gon": 0.02289970755371602,
+   "6-gon": 0.41121513933062137
+  },
+  "one_kind_each": {
+   "5-gon": true,
+   "6-gon": true
+  },
+  "sum": 8.499099277162847,
+  "gap": 8.499099277048106,
+  "walls_between_pieces": {
+   "3": 180
+  }
+ },
+ "og_parent_pentakis_R3_over_R5": 1.0265315223282931,
+ "og_returns": "no: Q is a pentakis-dodecahedron type of different proportions (3-fold/5-fold radii 1.0982 vs the OG parent 1.0265)"
+}

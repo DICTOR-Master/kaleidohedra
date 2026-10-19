@@ -66,6 +66,13 @@ DICTO: "keep going outwards, but there may be missing transitional solids." The 
 - **Walls:** every wall between neighbouring pieces is a **triangle** (120 of 120), so the triangle constant holds.
 - **What comes next (not yet filled):** the same rule applied to its 60 corners gives a **pentakis-dodecahedron-type solid**: 60 triangles, the 12 five-fold corners at 2.0081, the 20 three-fold corners at 2.2053. That is the family the OG comes from (the OG is a pentakis dodecahedron with its 20 six-fold corners cut flat), so the OG family may come back here.
 
+## Stage 5: golden truncated icosahedron → Q, a pentakis-dodecahedron type (`stage5.py`, `data/stage5.json`, float)
+
+- **Q:** 60 triangles. Each Q face holds exactly one corner of the golden truncated icosahedron, so the points meet again. Five-fold corners at 2.0081, three-fold corners at 2.2053.
+- **Fill:** 12 pieces on the pentagons (each 0.02290) and 20 on the hexagons (each 0.41122), one kind each; they add up to the gap. Every wall between pieces is a triangle (180 of 180).
+- **Does the OG come back? Not exactly.** Q has the OG's parent shape type (a pentakis dodecahedron) but different proportions: three-fold to five-fold radius 1.0982 here, 1.0265 for the OG's parent. So cutting Q's six-fold corners flat gives an OG relative, not the OG.
+- **Rhythm (DICTO's idea, first sign):** Q's three-fold / five-fold radius ratio **equals the RT's five-fold / three-fold ratio** (1.0982). On the RT the five-fold corners lead; on Q the three-fold corners lead by the same proportion. The two columns take turns, a rhythm of their own.
+
 ## Triangles as the constant (DICTO 2026-10-19)
 
 DICTO: "triangles are the only true constant in the universal octet". This holds for every stage built so far. Inside each shell, every face where two pieces meet is a triangle. Pentagons, hexagons and rhombi appear only on the shell surfaces (D′, ID, OG, RT). Read this way, the triangle is the invariant and the shell polygon is the variable, which fits both the flat octet and the 600-cell, where everything is triangles. This has been checked only on stages 1–3.
