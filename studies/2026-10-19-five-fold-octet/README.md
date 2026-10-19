@@ -98,6 +98,21 @@ Exact arithmetic in ℚ(√5) (Fractions, exact signs). Start: the icosidodecahe
 
 **The final ID equals the first exactly, scaled by 10/φ⁴ = 35 − 15√5.** Because the rule commutes with scaling, **the UP cycle repeats forever, outward**, with the same four shells of pieces each turn, 10/φ⁴ larger. Still float: the piece fills inside each shell (exact proofs of those are next), and stages 1–2 below the cycle.
 
+## EXACT: the pieces of the four shells (`exact_shells.py`, `data/exact_shells.json`)
+
+The exact solids of `exact_cycle.py` (ID radius φ, the same size as in this study). Pieces = one per face of the inner solid (the cone from the centre over that face, cut by the outer solid). These partition the gap by construction. Checked exactly: every corner of every piece, exact volumes, sum = gap, and **all faces of each kind form one symmetry orbit** under the 60 exact rotations, so every piece of a kind is congruent.
+
+| Shell | Pieces (exact volume each) | Sum = gap |
+|---|---|---|
+| ID → RT | 12 on pentagons (5/12), 20 on triangles (3/8 − 17√5/120) | exact |
+| RT → golden TI | 30 on rhombi ((3 − √5)/4 = 1/(2φ²)) | exact |
+| golden TI → Q | 12 on pentagons, 20 on hexagons | exact |
+| Q → ID × 10/φ⁴ | 60 on triangles | exact |
+
+The stage-3 cut used for the Vajra (12 + 20 pyramids + 60 valley tetrahedra, 92 pieces) is also exact: the volumes sum to the gap and every piece lies inside the RT. Its no-overlap is shown only by the float random-point test.
+
+**So from the ID outward the UP is exact all the way:** the solids, the cycle and the shell pieces. Still float: stages 1–2 (Cleo star → D′ → ID), the OG / hexagonal-Cleo split, and the Vajra's convexity.
+
 ## Triangles as the constant (DICTO 2026-10-19)
 
 DICTO: "triangles are the only true constant in the universal octet". This holds for every stage built so far. Inside each shell, every face where two pieces meet is a triangle. Pentagons, hexagons and rhombi appear only on the shell surfaces (D′, ID, OG, RT). Read this way, the triangle is the invariant and the shell polygon is the variable, which fits both the flat octet and the 600-cell, where everything is triangles. This has been checked only on stages 1–3.

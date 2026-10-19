@@ -1,0 +1,87 @@
+{
+ "mark": "DICTO Universal PiTet (UP), exact shell pieces, 2026-10-19",
+ "shells": [
+  {
+   "shell": "ID -> RT",
+   "pieces": {
+    "on 3-gon": 20,
+    "on 5-gon": 12
+   },
+   "exact_volumes": {
+    "on 3-gon": [
+     "3/8+-17/120r5"
+    ],
+    "on 5-gon": [
+     "5/12+0r5"
+    ]
+   },
+   "one_volume_per_kind": true,
+   "one_symmetry_orbit_per_kind": {
+    "on 3-gon": true,
+    "on 5-gon": true
+   },
+   "sum_equals_gap_exactly": true,
+   "gap": "25/2+-17/6r5"
+  },
+  {
+   "shell": "RT -> golden truncated icosahedron",
+   "pieces": {
+    "on 4-gon": 30
+   },
+   "exact_volumes": {
+    "on 4-gon": [
+     "3/4+-1/4r5"
+    ]
+   },
+   "one_volume_per_kind": true,
+   "one_symmetry_orbit_per_kind": {
+    "on 4-gon": true
+   },
+   "sum_equals_gap_exactly": true,
+   "gap": "45/2+-15/2r5"
+  },
+  {
+   "shell": "golden truncated icosahedron -> Q",
+   "pieces": {
+    "on 6-gon": 20,
+    "on 5-gon": 12
+   },
+   "exact_volumes": {
+    "on 6-gon": [
+     "5681/36+-1267/18r5"
+    ],
+    "on 5-gon": [
+     "67475/72+-30175/72r5"
+    ]
+   },
+   "one_volume_per_kind": true,
+   "one_symmetry_orbit_per_kind": {
+    "on 6-gon": true,
+    "on 5-gon": true
+   },
+   "sum_equals_gap_exactly": true,
+   "gap": "259235/18+-115865/18r5"
+  },
+  {
+   "shell": "Q -> ID x 10/phi^4",
+   "pieces": {
+    "on 3-gon": 60
+   },
+   "exact_volumes": {
+    "on 3-gon": [
+     "77875/27+-34825/27r5"
+    ]
+   },
+   "one_volume_per_kind": true,
+   "one_symmetry_orbit_per_kind": {
+    "on 3-gon": true
+   },
+   "sum_equals_gap_exactly": true,
+   "gap": "1557500/9+-696500/9r5"
+  }
+ ],
+ "stage3_fine_cut": {
+  "pieces": 92,
+  "sum_equals_gap_exactly": true
+ }
+}
