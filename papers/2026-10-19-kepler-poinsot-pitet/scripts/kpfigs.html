@@ -1,0 +1,33 @@
+<!doctype html><meta charset="utf-8"><title>KP figures</title>
+<style>html,body{margin:0;background:#f4f1ea}canvas{display:block}</style>
+<script type="module">
+// Figures for the DICTO Kepler–Poinsot–PiTet Cycle (DICTO 2026-10-19): DICTO's published pieces in their own colours (CLEO lilac, AXE cyan,
+// cap green), the two new pieces rose and amber, the core gold; house background.
+import * as THREE from './three.module.min.js';
+import K from './kp-figs-data.js';
+const fig = new URLSearchParams(location.search).get('fig');
+const COL = { core: 0xe8c060, gspike: 0xc792ea, gpyr: 0x5fd38a, gtet: 0x4dd0e1, sspike: 0xf06292, spyr: 0xc792ea, stet: 0xffa726 };
+const W = 1000, r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); r.setSize(W, W); r.setClearColor(0xf4f1ea); r.localClippingEnabled = true;
+document.body.appendChild(r.domElement);
+const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(28, 1, 0.1, 200);
+scene.add(new THREE.AmbientLight(0xffffff, 0.55)); const dl = new THREE.DirectionalLight(0xffffff, 0.9); dl.position.set(3, 5, 6); scene.add(dl);
+const dir = new THREE.Vector3(0.45, 0.35, 1).normalize();
+const wr = dir.clone().setY(0).normalize(), side = new THREE.Vector3(0, 1, 0).cross(wr), a = Math.PI / 4;
+const wedge = [new THREE.Plane(wr.clone().multiplyScalar(-Math.sin(a)).add(side.clone().multiplyScalar(Math.cos(a))), 0),
+  new THREE.Plane(wr.clone().multiplyScalar(-Math.sin(a)).sub(side.clone().multiplyScalar(Math.cos(a))), 0)];
+function add([role, V, F], { clip = false, apart = 0, scale = 1 } = {}) {
+  const c = V.reduce((s, v) => s.map((x, i) => x + v[i] / V.length), [0, 0, 0]), P = V.map((v) => v.map((x, i) => (x + c[i] * apart) * scale)), pos = [], line = [];
+  for (const f of F) { for (let i = 1; i + 1 < f.length; i++) pos.push(...P[f[0]], ...P[f[i]], ...P[f[i + 1]]); f.forEach((k, i) => line.push(...P[k], ...P[f[(i + 1) % f.length]])); }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+  const planes = clip ? wedge : null;
+  scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: COL[role], flatShading: true, roughness: 0.55, side: THREE.DoubleSide, clippingPlanes: planes, clipIntersection: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+  const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(line, 3));
+  scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, transparent: true, opacity: 0.55, clippingPlanes: planes, clipIntersection: true })));
+}
+let R = 4.2;
+if (fig === 'turn') { for (const p of [...K.core, ...K.g, ...K.s]) add(p, { clip: true }); R = 4.25; }
+if (fig === 'great') { add(K.core[0]); for (const p of K.g) add(p, p[0] === 'gspike' ? {} : { apart: 0.7, clip: true }); R = 3.7; }
+if (fig === 'small') { for (const p of K.g) add(p); add(K.core[0]); for (const p of K.s) add(p, p[0] === 'sspike' ? {} : { apart: 0.6, clip: true }); R = 6.6; }
+cam.position.copy(dir.clone().multiplyScalar(R / Math.sin(cam.fov * Math.PI / 360))); cam.lookAt(0, 0, 0);
+r.render(scene, cam); document.title = 'ready';
+</script>

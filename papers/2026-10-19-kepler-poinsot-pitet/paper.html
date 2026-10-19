@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>The DICTO Kepler–Poinsot–PiTet Cycle</title>
+<link rel="stylesheet" href="../paper.css">
+<style>td.n { font-variant-numeric: tabular-nums; } table { font-size: 8.6pt; } .figs.three { grid-template-columns: 1fr 1fr 1fr; }</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>The DICTO Kepler–Poinsot–PiTet Cycle</h1>
+<p class="sub">The tall companion to Universal PiTet: the great and small stellated dodecahedra in an endless φ³ cycle, every shell filled exactly by one pattern, with DICTO's CLEO returning</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Version 1 · 19 October 2026 · DICTO DOI: 10.5281/zenodo.23464021 · Companion to Universal PiTet (DICTO DOI: 10.5281/zenodo.23463305) · Licence CC BY 4.0 · Scripts and exact checks: https://github.com/DICTOR-Master/kaleidohedra (research branch, studies/2026-10-19-kepler-poinsot-up)
+</div>
+
+<div class="abstract"><b>Abstract.</b> Universal PiTet grows from the Cleo star by the tightest solid round the last, and its shells come out thin. DICTO asked for a taller version ("think stellation, think Gaudí"): keep every station a true star and fill only between stars. With the icosahedron I of edge 1, the great stellated dodecahedron (spikes to 3× the face distance) has a dodecahedral hull of edge φ, the small stellated dodecahedron on that hull (spires to √5× the face distance) has an icosahedral hull of edge φ³, and the cycle repeats for ever, ×φ³ in length and ×φ⁹ in volume each turn. The spires stand φ² and φ times their face radius and the hull steps ×φ then ×φ², balancing within each turn; the stars are exactly 3× and √5× their cores in volume. Every shell is filled exactly by the Cleo star's own pattern: the spikes, inward pyramids from the hull's faces and valley tetrahedra along the core's edges. In the first shell these are DICTO's CLEO, cap and AXE; in the second, CLEO returns as the inward pyramid, beside two pieces not met before. All exact in ℚ(√5).</div>
+
+<h2>1. The cycle</h2>
+<p>Let I be the icosahedron of edge 1. On each face raise a pyramid whose tip lies at three times the face's distance from the centre: this is Kepler's great stellated dodecahedron (the spikes' sides fall into its twelve pentagram planes), and its twenty tips are the corners of a dodecahedron D1 of edge φ. On each face of D1 raise a pyramid with its tip at √5 times the face distance: Kepler's small stellated dodecahedron, whose twelve tips are the corners of the icosahedron I·φ³. That icosahedron starts the next turn. The stars and their hulls are classical [1–3]; what follows is the cycle's proportions and its fill.</p>
+<table>
+<tr><th></th><th>Edge</th><th>Spire height ÷ face radius</th><th>Star ÷ core (volume)</th></tr>
+<tr><td>I (core)</td><td class="n">1</td><td></td><td></td></tr>
+<tr><td>great stellated star on I</td><td></td><td class="n">φ²</td><td class="n">3 (each spike = I/10)</td></tr>
+<tr><td>D1 (its hull)</td><td class="n">φ</td><td></td><td></td></tr>
+<tr><td>small stellated star on D1</td><td></td><td class="n">φ</td><td class="n">√5 (12 spires = (√5 − 1)·D1)</td></tr>
+<tr><td>I·φ³ (its hull)</td><td class="n">φ³</td><td></td><td>one turn: ×φ⁹</td></tr>
+</table>
+<p class="cap"><b>Table 1.</b> The proportions of one turn. The step on the triangles (three-fold axes) has the taller spire (φ²) and the smaller hull step (×φ); the step on the pentagons (five-fold) has the shorter spire (φ) and the larger hull step (×φ²). Every turn is the same.</p>
+
+<h2>2. The fill (exact)</h2>
+<p>Each shell, core → star → hull, is filled by the pattern of DICTO's Cleo star (DICTO DOI: 10.5281/zenodo.23378070): the star's spikes; one inward pyramid on each face of the hull, its apex at the core's corner beneath; and one valley tetrahedron on each edge of the core, its other two corners the tips of the two spikes beside that edge.</p>
+<table>
+<tr><th>Shell</th><th>Pieces</th><th>Exact volume of each</th><th>Is</th></tr>
+<tr><td rowspan="3">I → great star → D1</td><td>20 spikes</td><td class="n">1/8 + √5/24</td><td>DICTO's <b>CLEO</b></td></tr>
+<tr><td>12 inward pyramids</td><td class="n">5/8 + 7√5/24</td><td>DICTO's <b>cap</b></td></tr>
+<tr><td>30 valley tetrahedra</td><td class="n">1/6 + √5/12</td><td>DICTO's <b>AXE</b></td></tr>
+<tr><td rowspan="3">D1 → small star → I·φ³</td><td>12 spires</td><td class="n">5/3 + 3√5/4</td><td>new here</td></tr>
+<tr><td>20 inward pyramids</td><td class="n">29/24 + 13√5/24</td><td><b>CLEO again</b></td></tr>
+<tr><td>30 valley tetrahedra</td><td class="n">3/4 + √5/3</td><td>new here</td></tr>
+</table>
+<p class="cap"><b>Table 2.</b> The two shells of a turn. In each, the pieces fill core → hull exactly: the volumes sum to the gap with remainder exactly 0, every piece lies in the hull and outside the core, and no two overlap (an exact separating plane for every close pair). Each kind is one volume; each next turn repeats them φ³ larger.</p>
+<p>The first shell is DICTO's AXE, CLEO and cap kit [9, 10], already published as in-between stages (Capturing the In-betweens, DICTO DOI: 10.5281/zenodo.23345502): icosahedron + 20 CLEO is the great stellated dodecahedron, + 30 AXE the excavated dodecahedron [4], + 12 caps the dodecahedron. CLEO and AXE are Mosseri–Sadoc tiles [5, 6]. The second shell brings CLEO back as its inward pyramid, the same shape at a larger size, beside the small stellated spire and a new valley tetrahedron.</p>
+<figure><div class="figs three"><img src="figures/kp-turn.png"><img src="figures/kp-great.png"><img src="figures/kp-small.png"></div>
+<figcaption><b>Figure 1.</b> Left: one turn cut away, from the core (gold) out to I·φ³. Middle: the great stellated star (CLEO, lilac) with its caps (green) and AXEs (cyan) pulled away. Right: the small stellated star (spires, rose) on the first shell, with CLEO (lilac) returning as its inward pyramids and the new valley tetrahedra (amber) pulled away.</figcaption></figure>
+
+<h2>3. A note on perspective</h2>
+<p>DICTO relates the tall spires to the sculptors' practice of shaping a figure for its viewpoint (Gothic portal figures; Michelangelo's David, made for a place high above the viewer). A pinhole-camera model (float) gives two results. Seen from outside, on a spire's base plane at six base radii, the true spires already look almost right (corrections ×0.94 and ×1.03). Seen from inside, standing in a valley at a spike's foot, they look about three times squatter, and no height reads right, because added height recedes from view. In the Kaleidohedra app a reverse-perspective projection (REV) lets a viewer inside a shell see it open out instead.</p>
+
+<h2>4. What is claimed</h2>
+<p>Classical: the great and small stellated dodecahedra, their hulls and the φ³ step [1–3]; the great stellated dodecahedron's volume, three icosahedra, follows from the standard formulas. Not found in the sources checked (the reference library of the companion paper, and web searches on 19 October 2026): the endless cycle filled by one piece pattern; the small stellated dodecahedron as √5 times its core; the second shell's fill, with CLEO returning beside the spire and the new valley tetrahedron. Related dissections of the stellated dodecahedra exist [7].</p>
+
+<h2>Data and reproducibility</h2>
+<p>exact_kp.py (exact: the cycle, the volumes, the fill and no-overlap); kp.py, cleo_pattern.py (float exploration), perspective.py (the perspective model); export_figs.py and the figure page.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>J. Kepler, Harmonices Mundi (1619).</li>
+<li>L. Poinsot, Mémoire sur les polygones et les polyèdres, J. École Polytechnique (1810).</li>
+<li>H. S. M. Coxeter, Regular Polytopes, 3rd ed., Dover (1973).</li>
+<li>Excavated dodecahedron, Wikipedia (accessed 19 October 2026).</li>
+<li>R. Mosseri, J. F. Sadoc, Two and three dimensional non-periodic networks obtained from self-similar tiling, in: The Structure of Non-Crystalline Materials (1982).</li>
+<li>P. Kramer, Gateways towards quasicrystals, arXiv:1101.0061 (2011).</li>
+<li>I. Hafner, dissections of the small and great stellated dodecahedra into a rhombic triacontahedron and a rhombic hexecontahedron, Visual Mathematics 9(2) (2007); Dissection of Two Stellated Dodecahedra, Wolfram Demonstrations.</li>
+<li>DICTO, Universal PiTet: The DICTO PiTet Proposition, DICTO DOI: 10.5281/zenodo.23463305.</li>
+<li>DICTO, AXE, CLEO and FUJI: the Gap Pieces of the Icosahedron, DICTO DOI: 10.5281/zenodo.23351291.</li>
+<li>DICTO, Spheres of Dharma, DICTO DOI: 10.5281/zenodo.23310833.</li>
+<li>DICTO, Theaetetus, DICTO DOI: 10.5281/zenodo.23378070.</li>
+<li>DICTO, Capturing the In-betweens, DICTO DOI: 10.5281/zenodo.23345502.</li>
+</ol>
+</body></html>
