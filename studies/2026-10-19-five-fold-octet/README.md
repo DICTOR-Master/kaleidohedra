@@ -73,6 +73,14 @@ DICTO: "keep going outwards, but there may be missing transitional solids." The 
 - **Does the OG come back? Not exactly.** Q has the OG's parent shape type (a pentakis dodecahedron) but different proportions: three-fold to five-fold radius 1.0982 here, 1.0265 for the OG's parent. So cutting Q's six-fold corners flat gives an OG relative, not the OG.
 - **Rhythm (DICTO's idea, first sign):** Q's three-fold / five-fold radius ratio **equals the RT's five-fold / three-fold ratio** (1.0982). On the RT the five-fold corners lead; on Q the three-fold corners lead by the same proportion. The two columns take turns, a rhythm of their own.
 
+## Stage 6: Q → the ICOSIDODECAHEDRON again: a four-stage cycle (`stepper.py`, `cyclecheck.py`, `data/stage6on.*`, `data/cycle.json`, float)
+
+- **Stage 6:** Q → a regular icosidodecahedron, filled by 60 identical pieces (one on each Q triangle). Walls all triangles (180 of 180).
+- **The ID comes back, 10/φ⁴ = 1.45898 times larger** (float match to 10⁻¹⁴), and stage 7 gives the RT again at the same scale. So from the ID onward, **the UP repeats in a cycle of four: ID → RT → golden truncated icosahedron → Q → ID × 10/φ⁴**, outward without end (inward too, if the rule runs in reverse).
+- **The step rule:** each next solid has its faces through the last one's corners at right angles to them; one piece per face of the last solid. Stages 1–2 were built by a different rule, "tightest round the last": that rule applied to D′ would give an icosahedron, not the ID.
+- **Rhythm:** within each cycle the five-fold and three-fold columns take turns leading (RT and Q have mirrored ratios, 1.0982).
+- **Re-checks:** stages 2 and 3 were also tested by random points: 37,268 and 54,650 points, each in exactly one piece.
+
 ## Triangles as the constant (DICTO 2026-10-19)
 
 DICTO: "triangles are the only true constant in the universal octet". This holds for every stage built so far. Inside each shell, every face where two pieces meet is a triangle. Pentagons, hexagons and rhombi appear only on the shell surfaces (D′, ID, OG, RT). Read this way, the triangle is the invariant and the shell polygon is the variable, which fits both the flat octet and the 600-cell, where everything is triangles. This has been checked only on stages 1–3.
