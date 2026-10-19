@@ -881,6 +881,9 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     bodyEl.querySelectorAll('[data-dim]').forEach((el) => el.addEventListener('click', () => {
       const dim = el.dataset.dim;
       if (dim === '5D' || dim === '6D') { showCatalogue(dim); return; }
+      // Rhombiverse's 3D+ arrives straight on fcc with its rhombic dodecahedra, full screen (DICTO 2026-10-17: the heart of Rhombiverse;
+      // Lattice · Select then offers the rest)
+      if (SITE === 'rhombiverse' && dim === '3D') { choose('3D', 'tool:pieceType:rd', 'rhombiverse'); return; }
       openDim = openDim === dim ? null : dim;
       showDimensions(`[data-dim="${dim}"]`);
     }));
