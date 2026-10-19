@@ -9,7 +9,7 @@ const fig = new URLSearchParams(location.search).get('fig');
 const COL = { core: 0xe8c060, gspike: 0xc792ea, gpyr: 0x5fd38a, gtet: 0x4dd0e1, sspike: 0xf06292, spyr: 0xc792ea, stet: 0xffa726 };
 const W = 1000, r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); r.setSize(W, W); r.setClearColor(0xf4f1ea); r.localClippingEnabled = true;
 document.body.appendChild(r.domElement);
-const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(28, 1, 0.1, 200);
+const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(28, 1, 0.1, 5000);
 scene.add(new THREE.AmbientLight(0xffffff, 0.55)); const dl = new THREE.DirectionalLight(0xffffff, 0.9); dl.position.set(3, 5, 6); scene.add(dl);
 const dir = new THREE.Vector3(0.45, 0.35, 1).normalize();
 const wr = dir.clone().setY(0).normalize(), side = new THREE.Vector3(0, 1, 0).cross(wr), a = Math.PI / 4;
@@ -25,6 +25,10 @@ function add([role, V, F], { clip = false, apart = 0, scale = 1 } = {}) {
   scene.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x2a2218, transparent: true, opacity: 0.55, clippingPlanes: planes, clipIntersection: true })));
 }
 let R = 4.2;
+if (fig === 'cycles') {   // three turns nested, each phi^3 larger, cut away (DICTO: "it doesn't look like many cycles")
+  for (const t of [0, 1, 2]) { const sc = K.phi3 ** t; for (const p of [...(t === 0 ? K.core : []), ...K.g, ...K.s]) add(p, { clip: true, scale: sc }); }
+  R = 4.25 * K.phi3 ** 2 * 1.02;
+}
 if (fig === 'turn') { for (const p of [...K.core, ...K.g, ...K.s]) add(p, { clip: true }); R = 4.25; }
 if (fig === 'great') { add(K.core[0]); for (const p of K.g) add(p, p[0] === 'gspike' ? {} : { apart: 0.7, clip: true }); R = 3.7; }
 if (fig === 'small') { for (const p of K.g) add(p); add(K.core[0]); for (const p of K.s) add(p, p[0] === 'sspike' ? {} : { apart: 0.6, clip: true }); R = 6.6; }
