@@ -10,6 +10,12 @@ Frame: an icosahedron of edge 1, with the five-fold axes through its corners. Ev
 
 **Known case:** D′ (radius φ²/√3) matches the app's Cleo star hull, `theaetetus-data.js`, view `cleostar`; the app data has 6 decimals.
 
+## Names (DICTO 2026-10-19)
+
+- **DICTO GTI**, Golden Truncated Icosahedron: the icosahedron cut at 1/(2+φ) of each edge (rather than 1/3), giving 12 regular pentagons and 20 hexagons with sides alternating 1 : φ.
+- **DICTO FPD**, Flat Pentakis Dodecahedron: the polar dual of the GTI, a dodecahedron with low five-sided pyramids, flatter than the Catalan one.
+- The cycle: **ID → RT → DICTO GTI → DICTO FPD → ID × 10/φ⁴**. Below, "golden truncated icosahedron" = GTI and "Q" = FPD.
+
 ## Progression so far
 
 | Stage | Next solid (tightest round the last) | Pieces filling the gap | Check |
