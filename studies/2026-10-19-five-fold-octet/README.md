@@ -113,6 +113,24 @@ The stage-3 cut used for the Vajra (12 + 20 pyramids + 60 valley tetrahedra, 92 
 
 **So from the ID outward the UP is exact all the way:** the solids, the cycle and the shell pieces. Still float: stages 1–2 (Cleo star → D′ → ID), the OG / hexagonal-Cleo split, and the Vajra's convexity.
 
+## EXACT: all the way in (`exact_inner.py`, `data/exact_inner.json`)
+
+ℚ(√5), with the icosahedron of edge 1 in the standard frame and the ID as twice its edge midpoints (radius φ). Each set of pieces is checked exactly for: exact volumes, sum = gap, every piece inside the outer solid and outside the inner one, and **no overlap** (for every close pair, a face plane of one has the other wholly on its far side). Volume sum plus no overlap means the pieces fill the gap with no hole.
+
+| Shell | Pieces | Exact |
+|---|---|---|
+| Cleo star → D′ | 20 Cleo-Icos + 20 spikes + 12 inward pyramids + 30 valley tetrahedra (82) | fill, no overlap |
+| D′ → ID | 12 twisted frusta, each 145/648 + 37√5/648; every D′ corner is an ID triangle centre | fill, no overlap |
+| ID → RT (fine cut) | 12 + 20 pyramids + 60 valley tetrahedra (92) | fill, no overlap |
+| ID → OG | 12 pieces | fill, no overlap |
+| OG → RT | 20 hexagonal Cleos (1/4 − √5/12 each) + 12 dimpled caps (5/76 + 5√5/684) + 120 tetrahedra (1/24 − √5/72) | fill, no overlap |
+
+- **The OG at this size, exactly:** its corners are the 30 ID corners, plus 2c − v for each corner v of each ID triangle (c the triangle's centre), plus 12 apexes on the kite planes. That gives 102 corners and 60 kites + 20 hexagons, matching the study's OG data to 4×10⁻¹⁶.
+- **The five-sided Vajra is convex exactly:** inward pyramid + twisted frustum + outward pyramid = their hull, volume 55/108 + 5√5/36.
+- **The dimpled cap + its ID → OG piece = their hull, exactly.**
+
+**So the whole UP is now exact, from the 20 Cleo-Icos out through the endless cycle.** Note: `exact_cycle.py` starts from the mirror-image frame of the same ID; the cycle is the same in either.
+
 ## Triangles as the constant (DICTO 2026-10-19)
 
 DICTO: "triangles are the only true constant in the universal octet". This holds for every stage built so far. Inside each shell, every face where two pieces meet is a triangle. Pentagons, hexagons and rhombi appear only on the shell surfaces (D′, ID, OG, RT). Read this way, the triangle is the invariant and the shell polygon is the variable, which fits both the flat octet and the 600-cell, where everything is triangles. This has been checked only on stages 1–3.

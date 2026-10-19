@@ -1,0 +1,76 @@
+{
+ "mark": "DICTO Universal PiTet (UP), exact inner stages, 2026-10-19",
+ "stage1_counts": {
+  "cleo": 20,
+  "spikes": 20,
+  "pyramids": 12,
+  "valleys": 30
+ },
+ "stage 1: Cleo star fills D'": {
+  "pieces": 82,
+  "sum_equals_gap": true,
+  "all_inside_outer": true,
+  "all_outside_inner": true,
+  "close_pairs_tested": 1530,
+  "pairs_not_separated": 0,
+  "gap": "130/27+58/27r5"
+ },
+ "stage2_Dcorners_are_ID_triangle_centres": true,
+ "stage 2: D' -> ID, 12 twisted frusta": {
+  "pieces": 12,
+  "sum_equals_gap": true,
+  "all_inside_outer": true,
+  "all_outside_inner": true,
+  "close_pairs_tested": 30,
+  "pairs_not_separated": 0,
+  "gap": "145/54+37/54r5"
+ },
+ "frustum_volume": "145/648+37/648r5",
+ "frusta_one_volume": true,
+ "stage 3: ID -> RT fine cut (pyramids + valley tetrahedra)": {
+  "pieces": 92,
+  "sum_equals_gap": true,
+  "all_inside_outer": true,
+  "all_outside_inner": true,
+  "close_pairs_tested": 840,
+  "pairs_not_separated": 0,
+  "gap": "25/2+-17/6r5"
+ },
+ "vajra5_parts": [
+  "25/324+13/324r5",
+  "145/648+37/648r5",
+  "5/24+1/24r5"
+ ],
+ "vajra5_union_is_convex_exactly": true,
+ "vajra5_volume": "55/108+5/36r5",
+ "og": {
+  "corners": 102,
+  "faces": {
+   "4": 60,
+   "6": 20
+  },
+  "max_distance_to_study_OG_data": 4.1540741810552243e-16
+ },
+ "ID -> OG, 12 pieces": {
+  "pieces": 12,
+  "sum_equals_gap": true,
+  "all_inside_outer": true,
+  "all_outside_inner": true,
+  "close_pairs_tested": 30,
+  "pairs_not_separated": 0,
+  "gap": "65/38+47/114r5"
+ },
+ "OG -> RT: 20 hexagonal Cleos + 12 dimpled caps + 120 tetrahedra": {
+  "pieces": 152,
+  "sum_equals_gap": true,
+  "all_inside_outer": true,
+  "all_outside_inner": true,
+  "close_pairs_tested": 1980,
+  "pairs_not_separated": 0,
+  "gap": "205/19+-185/57r5"
+ },
+ "hexagonal_cleo_volume": "1/4+-1/12r5",
+ "cap_volume": "5/76+5/684r5",
+ "tet_volume": "1/24+-1/72r5",
+ "cap_plus_low_is_convex": true
+}

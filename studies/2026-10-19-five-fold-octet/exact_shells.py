@@ -64,8 +64,11 @@ def solid(S):
         idx = [j for j in range(len(S)) if abs(np.array(fv(S[j])) @ e[:3] + e[3]) < 1e-9]
         if frozenset(idx) in seen: continue                                  # the same face from another hull triangle
         seen.add(frozenset(idx))
-        n = cross(sub(S[idx[1]], S[idx[0]]), sub(S[idx[2]], S[idx[0]])); d = dot(n, S[idx[0]])
-        if d.sign() < 0: n, d = tuple(-x for x in n), -d
+        for a_, b_, c_ in itertools.combinations(idx, 3):                    # three corners not in a line
+            n = cross(sub(S[b_], S[a_]), sub(S[c_], S[a_]))
+            if any(x != Q5(0) for x in n): break
+        d = dot(n, S[idx[0]])
+        if any((dot(n, v) - d).sign() > 0 for v in S): n, d = tuple(-x for x in n), -d   # orient: the solid on the inner side
         assert all((dot(n, v) - d).sign() <= 0 for v in S) and all((dot(n, S[j]) - d) == Q5(0) for j in idx)
         H.append((n, d))
     return H
