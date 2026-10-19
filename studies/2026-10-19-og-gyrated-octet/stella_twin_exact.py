@@ -58,3 +58,7 @@ ok(twin == {key(rot(v)) for v in SV}, 'the mirror twin in a face = the Stella tu
 ok(twin != {key(v) for v in SV}, 'and it is not the Stella itself (a true twin, not a translate)')
 mt = {key(mir(v)) for v in SV}
 ok({key(v) for v in tri} <= mt, 'twin Stellas meet on the whole joint triangle (the mirror fixes the face)')
+import json as _js
+_js.dump({'mark': 'DICTO · dictospheres.com', 'note': 'OCD Stella in the #37 frame (float copy of the exact corners)', 'V': [[x.f() for x in v] for v in SV]},
+         open(os.path.expanduser('~/dbt-exact/2026-10-19-og-gyrated-octet/stella-37frame.json'), 'w'))
+print('wrote stella-37frame.json')
