@@ -71,8 +71,35 @@ sym = {'centrosymmetric': {key([qn(x) for x in p]) for p in [list(map(tuple, c))
        'coordinate_mirrors': all({key([qm(qr(s[i]), p[i]) for i in range(3)]) for p in Cs} == Cset for s in [(-1, 1, 1), (1, -1, 1), (1, 1, -1)]),
        'mirror_across_111': {key(mat(MIR, p)) for p in Cs} == Cset}
 log['jewel']['symmetry'] = sym
-ok(sym['centrosymmetric'] and sym['three_fold_111'] and sym['coordinate_mirrors'] and not sym['mirror_across_111'],
-   'Jewel corners: pyritohedral (centre, 3-fold, coordinate mirrors), no mirror across (111): the twin rule of #40 applies')
+# Fable referee 2026-10-20: what makes it pyritohedral is the missing diagonal mirror and four-fold turn (no cubic solid has a (111) mirror)
+sym['diagonal_mirror_xy'] = {key([p[1], p[0], p[2]]) for p in Cs} == Cset
+sym['four_fold_z'] = {key([qn(p[1]), p[0], p[2]]) for p in Cs} == Cset
+spm = [(perm, sg) for perm in itertools.permutations(range(3)) for sg in itertools.product((1, -1), repeat=3)]
+order = sum({key([qm(qr(sg[i]), p[perm[i]]) for i in range(3)]) for p in Cs} == Cset for perm, sg in spm); sym['group_order'] = order
+log['jewel']['symmetry'] = sym
+ok(sym['centrosymmetric'] and sym['three_fold_111'] and sym['coordinate_mirrors'] and not sym['diagonal_mirror_xy'] and not sym['four_fold_z'] and order == 24,
+   'Jewel corners: centre, 3-fold turns, coordinate mirrors, but no diagonal mirror (x <-> y) and no 4-fold turn; symmetry group of order 24: pyritohedral')
+ok(not sym['mirror_across_111'], 'Jewel corners: no mirror across a (111) plane (no cubic solid has one), used in part 5')
+# Fable referee 2026-10-20: the Jewel's surface exactly. The carved roof on the top face (towards the cell 'up', whose stella carves it) is
+# four tetrahedra A B F P, one over each quarter of the face: A, B the ends of a cube edge, F = (0,0,1) the face centre, P the corner of
+# that edge's window above the face (a ridge point or a window point). Each lies in the roof, misses the stella, they meet pairwise in
+# volume 0 and their volumes add up to the carved roof, 2/3: so they ARE the carved roof. Faces: A B F on the cube (inside the Jewel), A B P
+# half a window (in the dodecahedron's face plane), A F P and B F P on stella face planes of the cell above: 8 walls per roof, 48 in all.
+F0 = V3(0, 0, 1); quarters = []
+for A, Zr, B, X in rhombi:
+    if A[2] == ONE and B[2] == ONE:
+        Ps = [p for p in (Zr, X) if sgn(qs(p[2], ONE)) > 0]; assert len(Ps) == 1; quarters.append((A, B, F0, Ps[0]))
+tv = [vol(list(t)) for t in quarters]; tot = Z
+for v_ in tv: tot = qa(tot, v_)
+inside = all(cap(list(t), ROOF) == v_ for t, v_ in zip(quarters, tv)) and all(cap(list(t), T1) == Z and cap(list(t), T2) == Z for t in quarters)
+apart = all(cap(list(a), list(b)) == Z for a, b in itertools.combinations(quarters, 2))
+def on_plane(pts, planes): return any(all(dot(n, p) == d for p in pts) for n, d in planes)
+SPL = hull_planes(T1) + hull_planes(T2)
+walls = all(on_plane([A, F, P_], SPL) and on_plane([B, F, P_], SPL) for A, B, F, P_ in quarters)
+ok(len(quarters) == 4 and inside and apart and tot == qr(Fr(2, 3)) and walls,
+   'carved roof = 4 tetrahedra A B F P (one per quarter of the face), inside the roof, outside the stella, disjoint, total 2/3; each has half a window and 2 walls on stella planes: 8 walls per roof, 48 triangles')
+ok(len({key(P_) for A, B, F, P_ in quarters}) == 4 and sum(1 for A, B, F, P_ in quarters if key(P_) in {key(z) for z in ridges}) == 2,
+   'per roof the 4 apexes are 2 ridge points and 2 window points: 6 x 2 + 6 x 2 = 24, with 8 cube corners and 6 face centres 38 corners')
 # ---------- 3. the Stella–Jewel Lattice ----------
 # odd cell Q at the origin: its stella, and the 6 carved roofs of its even neighbours at 2e (each the neighbour's roof on its face toward Q)
 def roof_toward(c_nb, c_q):

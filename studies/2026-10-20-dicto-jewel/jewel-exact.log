@@ -6,7 +6,10 @@ PASS each window is a rhombus, side^2 = 6|-2
 PASS windows are thick Penrose rhombi: 108 degrees at the ridge corners, 72 at the cube corners (cos 108 = (1 - sqrt5)/4 exactly)
 PASS Euler: 38 - 96 + 60 = 2 (12 x 4 + 48 x 3 = 192 = 2 x 96)
 PASS Jewel volume = cell cube + 6 carved roofs = 12 exactly
-PASS Jewel corners: pyritohedral (centre, 3-fold, coordinate mirrors), no mirror across (111): the twin rule of #40 applies
+PASS Jewel corners: centre, 3-fold turns, coordinate mirrors, but no diagonal mirror (x <-> y) and no 4-fold turn; symmetry group of order 24: pyritohedral
+PASS Jewel corners: no mirror across a (111) plane (no cubic solid has one), used in part 5
+PASS carved roof = 4 tetrahedra A B F P (one per quarter of the face), inside the roof, outside the stella, disjoint, total 2/3; each has half a window and 2 walls on stella planes: 8 walls per roof, 48 triangles
+PASS per roof the 4 apexes are 2 ridge points and 2 window points: 6 x 2 + 6 x 2 = 24, with 8 cube corners and 6 face centres 38 corners
 PASS the 6 roofs pointing into the odd cell are roofs of the neighbouring Jewels (their ridges are Jewel corners)
 PASS the 6 roofs lie in the odd cell, meet only in faces (pairwise intersection volume 0), each carved part = 2/3
 PASS odd cell: stella 4 + 6 carved roofs 4 = 8 = its cube: the Stella–Jewel Lattice tiles space exactly, Jewel : stella = 12 : 4 = 3 : 1

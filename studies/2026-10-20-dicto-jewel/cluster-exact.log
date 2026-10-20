@@ -11,13 +11,15 @@ PASS all 6 face-neighbours of the odd cell (1,1,1) are corners of the rhombohedr
 PASS rhombohedron with its stella: 8 x 12 + 4 = 100 = 8 1/3 Jewels (25/16 at Hexa cube edge 1)
 PASS every set of 4 mutually neighbouring Jewels (216 in the box) is the 4 even cells round one cell corner, one set per corner: the Jewel-Tetras sit on the cell corners
 PASS each Jewel lies in 8 Jewel-Tetras (one per corner of its cell)
-PASS each Jewel lies in 6 Jewel-Octas (one per odd face-neighbour of its cell)
+PASS each Jewel lies in 6 Jewel-Octas (counted over the odd cells of the box: one per odd face-neighbour of its cell)
 PASS the Jewel-Octa has 8 faces of three mutually neighbouring Jewels, and each is completed to a Jewel-Tetra by exactly one Jewel outside: the octet truss pattern (8 tetrahedra round each octahedron)
 PASS DICTO Jewel-Octa: 6 Jewels and the stella of their odd cell, which is exactly the hole (the cell is the stella and the six carved roofs, jewel_exact.py): 6 x 12 + 4 = 76 (19/16), outer surface 288 faces
 PASS DICTO Jewel-Tetra: 4 Jewels, 48 (3/4), 228 faces, the four meeting at one point, their cell corner
-PASS without overlap at most 1/6 of the stellas lie in Jewel-Octas (6 Jewels per Octa, one Jewel per stella); each of the 12 lattices reaches it: per period 6 Jewels, 6 stellas, 1 Octa, 5 loose stellas
+PASS counted per period of each of the 12 lattices: 6 Jewels, 6 stellas, 1 inside the Octa. Bound: without overlap at most 1/6 of the stellas lie in Jewel-Octas (6 Jewels per Octa, one Jewel per stella); each of the 12 lattices reaches it: per period 6 Jewels, 6 stellas, 1 Octa, 5 loose stellas
 PASS lattice tilings recounted by the general search: Jewel-Octas 12
 PASS Jewel-Tetras tile with loose stellas on 4 lattices of index 8 (one is the anchors 2Z^3); per period 4 Jewels, 4 loose stellas
 PASS Jewel-Rhombis tile with loose stellas on 25 lattices of index 16; per period 8 Jewels, 1 stella inside, 7 loose
 PASS Jewel-Octa: 6 x 60 - 2 x 12 windows - 48 triangles on its stella = 288 faces (240 triangles, 48 windows)
 PASS DICTO Jewel-Rhombi: 8 x 60 - 2 x 18 windows - 48 triangles on its stella = 396 faces (336 triangles, 60 windows); 8 x 12 + 4 = 100 (25/16)
+classes {'tetra': [12, 2], 'octa': [24, 1], 'rhombi': [6, 9]}
+PASS (matches the referee's independent count 2, 1, 9) lattice tilings up to the piece's own pyritohedral symmetry (stabilisers of order 12, 24, 6): Jewel-Tetra 2, Jewel-Octa 1, Jewel-Rhombi 9 classes

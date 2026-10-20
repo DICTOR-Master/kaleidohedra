@@ -92,7 +92,9 @@ ok(all(corner_of(q) for q in cliques) and len({corner_of(q) for q in cliques}) =
    f'every set of 4 mutually neighbouring Jewels ({len(cliques)} in the box) is the 4 even cells round one cell corner, one set per corner: the Jewel-Tetras sit on the cell corners')
 inner = [c for c in EV if max(map(abs, c)) <= 1]
 ok(all(sum(c in q for q in cliques) == 8 for c in inner), 'each Jewel lies in 8 Jewel-Tetras (one per corner of its cell)')
-ok(all(sum(1 for d in itertools.product((-1, 0, 1), repeat=3) if sum(map(abs, d)) == 1) == 6 for c in inner), 'each Jewel lies in 6 Jewel-Octas (one per odd face-neighbour of its cell)')
+octa_of = lambda o: {tuple(o[j] + d * (j == k) for j in range(3)) for k in range(3) for d in (1, -1)}   # Fable referee: a real count
+ODD = [(x, y, z) for x in range(-3, 4) for y in range(-3, 4) for z in range(-3, 4) if (x + y + z) % 2]
+ok(all(sum(c in octa_of(o) for o in ODD) == 6 for c in inner), 'each Jewel lies in 6 Jewel-Octas (counted over the odd cells of the box: one per odd face-neighbour of its cell)')
 tri = [t for t in itertools.combinations(octa, 3) if all(nbr(a, b) for a, b in itertools.combinations(t, 2))]
 caps = [[c for c in EVs if c not in octa and all(nbr(c, x) for x in t)] for t in tri]
 ok(len(tri) == 8 and all(len(cp) == 1 for cp in caps) and len({cp[0] for cp in caps}) == 8,
@@ -101,8 +103,14 @@ ok(6 * 12 + 4 == 76, 'DICTO Jewel-Octa: 6 Jewels and the stella of their odd cel
 ok(4 * 12 == 48, 'DICTO Jewel-Tetra: 4 Jewels, 48 (3/4), 228 faces, the four meeting at one point, their cell corner')
 # the pattern overlaps: neighbouring clusters share Jewels. Without overlap, every Jewel-Octa takes 6 Jewels and 1 stella, and there
 # are as many Jewels as stellas, so at most 1/6 of the stellas can be inside Octas; the 12 lattices above reach that bound.
-ok(all(len(B_[0]) for B_ in good) and Fr(1, 6) == Fr(1, 6) and all(B_[0][0] * B_[1][1] * B_[2][2] == 12 for B_ in good),
-   'without overlap at most 1/6 of the stellas lie in Jewel-Octas (6 Jewels per Octa, one Jewel per stella); each of the 12 lattices reaches it: per period 6 Jewels, 6 stellas, 1 Octa, 5 loose stellas')
+def per_period(B, piece, inside):
+    """(Jewels, stellas, stellas inside a piece) in one period of the lattice B, from the residues of the cells"""
+    allres = {residue((x, y, z), B) for x in range(-16, 17) for y in range(-16, 17) for z in range(-16, 17)}
+    ev = sum(1 for r in allres if sum(r) % 2 == 0); od = len(allres) - ev
+    return ev, od, len({residue(c, B) for c in inside})
+pp = [per_period(B_, octa, [o]) for B_ in good]
+ok(all(x == (6, 6, 1) for x in pp) and Fr(1, 6) == Fr(pp[0][2], pp[0][1]),
+   'counted per period of each of the 12 lattices: 6 Jewels, 6 stellas, 1 inside the Octa. Bound: without overlap at most 1/6 of the stellas lie in Jewel-Octas (6 Jewels per Octa, one Jewel per stella); each of the 12 lattices reaches it: per period 6 Jewels, 6 stellas, 1 Octa, 5 loose stellas')
 # DICTO 2026-10-20: the DICTO Jewel-Rhombi (the rhombohedron above as one solid: 8 Jewels and the stella sealed inside), and how each
 # of the three fused pieces fills space with loose stellas. Lattice tilings: translations of index n (n = twice the Jewels per piece, since
 # a period holds as many stellas as Jewels) under which the piece's Jewels cover every even cell exactly once.
@@ -130,4 +138,30 @@ log['tet_lattices'] = [list(map(list, B)) for B in lt]; log['rh_lattices'] = [li
 # 6 Jewels round their stella, so all 48 triangles on it are hidden.
 ok(6 * 8 == 48 and 6 * 60 - 2 * 12 - 48 == 288 and 6 * 48 - 48 == 240 and 6 * 12 - 24 == 48, 'Jewel-Octa: 6 x 60 - 2 x 12 windows - 48 triangles on its stella = 288 faces (240 triangles, 48 windows)')
 ok(8 * 60 - 2 * 18 - 48 == 396 and 8 * 48 - 48 == 336 and 8 * 12 - 36 == 60, 'DICTO Jewel-Rhombi: 8 x 60 - 2 x 18 windows - 48 triangles on its stella = 396 faces (336 triangles, 60 windows); 8 x 12 + 4 = 100 (25/16)')
+# Fable referee 2026-10-20: lattice tilings up to the piece's own symmetry. G = the pyritohedral group of the cell pattern (cyclic
+# permutations of the axes with sign changes, order 24; the Jewels are pyritohedral, so diagonal mirrors are not symmetries). A tiling is
+# the piece on a lattice; g in G with g(piece) = piece + t maps the tiling on L to the tiling on g(L). Classes = orbits of the lattices.
+cyc = [(0, 1, 2), (1, 2, 0), (2, 0, 1)]
+Gpy = [(pm, sg) for pm in cyc for sg in itertools.product((1, -1), repeat=3)]
+assert len(Gpy) == 24
+act = lambda g, v: tuple(g[1][i] * v[g[0][i]] for i in range(3))
+def stab(piece):
+    out = []
+    for g in Gpy:
+        im = [act(g, c) for c in piece]; t = tuple(a - b for a, b in zip(im[0], piece[0]))
+        for c0 in piece:
+            t = tuple(a - b for a, b in zip(im[0], c0))
+            if {tuple(a - b for a, b in zip(c, t)) for c in im} == set(piece): out.append(g); break
+    return out
+same = lambda B1, B2: all(residue(r, B2) == (0, 0, 0) for r in B1)
+def classes(piece, Ls):
+    S = stab(piece); cls = []
+    for L_ in Ls:
+        if any(any(same([act(g, r) for r in L_], M) for g in S) for M in cls): continue
+        cls.append(L_)
+    return len(S), len(cls)
+(st_t, ct), (st_o, co), (st_r, cr) = classes(tet, lt), classes(octa, lo), classes(rh, lr)
+log['lattice_classes'] = {'tetra': [st_t, ct], 'octa': [st_o, co], 'rhombi': [st_r, cr]}
+print('classes', log['lattice_classes'])
+ok((ct, co, cr) == (2, 1, 9), f'(matches the referee\'s independent count 2, 1, 9) lattice tilings up to the piece\'s own pyritohedral symmetry (stabilisers of order {st_t}, {st_o}, {st_r}): Jewel-Tetra {ct}, Jewel-Octa {co}, Jewel-Rhombi {cr} classes')
 json.dump(log, open(os.path.join(HERE, 'cluster-exact.json'), 'w'), indent=1)
