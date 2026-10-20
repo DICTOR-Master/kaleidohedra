@@ -1,0 +1,15 @@
+PASS octet cell 32/27 + 16/27*sqrt5 = 2.510263; bcc cell 512/729 + 256/729*sqrt5 = 1.487563
+      OG: 102 corners, 80 faces, volume -1000/1539 + 1240/1539*sqrt5 = 1.151868; 9225/608 + -3915/608*sqrt5 = 0.774332 of the bcc cell (hexagon-joined packing)
+PASS OG volume as #37
+      OCD Stella: 48 corners, 50 faces, volume -4064/729 + 2240/729*sqrt5 = 1.296011; 151/2 + -267/8*sqrt5 = 0.871231 of the bcc cell
+PASS OCD Stella as #31a
+      golden envelope (rhombic triacontahedron): 32 corners, 30 faces, volume -320/27 + 160/27*sqrt5 = 1.398921; 90 + -40*sqrt5 = 0.557281 of the octet cell
+PASS golden envelope 10/phi^6 = 90 - 40sqrt5 of the octet (#37)
+      DBT: 30 corners, 32 faces, volume -872/81 + 440/81*sqrt5 = 1.381110; 493/6 + -73/2*sqrt5 = 0.550185 of the octet cell
+      OTT: 24 corners, 38 faces, volume -608/81 + 320/81*sqrt5 = 1.327676; 176/3 + -26*sqrt5 = 0.528899 of the octet cell
+      phi^-2 corner cuboctahedron: 12 corners, 14 faces, volume -320/81 + 160/81*sqrt5 = 0.466307; 30 + -40/3*sqrt5 = 0.185760 of the octet cell
+PASS the octet's phi^-2 corner cuboctahedron is exactly one third of the golden envelope: -320/81 + 160/81*sqrt5 = 0.466307
+PASS and 30 - 40sqrt5/3 of the octet cell (one per cell)
+PASS 6 pyramids -32/81 + 16/81*sqrt5 = 0.046631 + 8 tetrahedron corners -16/81 + 8/81*sqrt5 = 0.023315 = the cuboctahedron
+PASS each pyramid (-32 + 16sqrt5)/81, as #37 step 24
+saved family-exact.json

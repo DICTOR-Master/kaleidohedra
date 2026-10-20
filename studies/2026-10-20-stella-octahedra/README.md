@@ -7,3 +7,6 @@ First found 2026-10-16 (DICTO: "it would also fill well with an octahedron ... p
 - Octahedra: hexagon neighbours face to face; square neighbours would overlap tip to tip ((64 + 32√5)/2187) → no two octahedra may be square neighbours; farther never overlap.
 - **Pyrochlore (octahedra on one diamond network): 1423/32 − 3113√5/160 ≈ 96.3252%**; rock salt (a quarter): 3839/64 − 8453√5/320 ≈ 91.7242%; Stellas alone 151/2 − 267√5/8 ≈ 87.1231%. The float values of 10-16 agree. Space groups (float, spglib, 10-16): Fd-3 (pyrochlore), Fm-3 (rock salt).
 - App: K note now says exact (7 languages); tests/browser/ocd-stella.mjs requires it.
+
+## The family's numbers (`family_exact.py` → `family-exact.log`, 8 PASS)
+OG 102 corners/80 faces, (9225 − 3915√5)/608 ≈ 77.43% of the bcc cell; OCD Stella 48/50, 87.12%; golden envelope 32/30, 90 − 40√5 ≈ 55.73% of the octet; DBT 30/32, 55.02%; OTT 24/38, 52.89%. **The octet's φ⁻² corner cuboctahedron (#37 step 24) = exactly one third of the golden envelope, (−320 + 160√5)/81, 30 − 40√5/3 ≈ 18.58% of the octet**; 6 pyramids (−32 + 16√5)/81 + 8 tetrahedron corners (−16 + 8√5)/81.
