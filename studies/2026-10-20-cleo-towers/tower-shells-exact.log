@@ -1,0 +1,6 @@
+PASS one turn of four beats returns the icosidodecahedron exactly 10/phi^4 larger
+PASS shell 1 (1 beats, ID -> RT): towers {'on 3-gon': 20, 'on 5-gon': 12}, each kind one shape, adding up to the shell exactly
+PASS shell 2 (1 beats, RT -> GTI): towers {'on 4-gon': 30}, each kind one shape, adding up to the shell exactly
+PASS shell 3 (2 beats, GTI -> ID c): towers {'on 6-gon': 20, 'on 5-gon': 12}, each kind one shape, adding up to the shell exactly
+PASS shell 4 (3 beats, ID c -> FPD c): towers {'on 3-gon': 20, 'on 5-gon': 12}, each kind one shape, adding up to the shell exactly
+PASS shell 5 (5 beats, FPD c -> ID c^3): towers {'on 3-gon': 60}, each kind one shape, adding up to the shell exactly
