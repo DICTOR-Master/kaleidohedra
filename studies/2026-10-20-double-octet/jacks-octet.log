@@ -1,0 +1,4 @@
+rods: jack 0.24->0.06, tetrapod 0.22->0.07; valid True True True
+volumes: jack 1.0417, tetrapods 0.4769 0.4769; jack + 2 tetrapods = 1.9955 (space per jack: 2)
+jack leg reach 1.0 (corner at 1); tetrapod leg reach 0.594 (leg 0.62; face at 0.289, jack centre at 0.866)
+2 x 2 x 2 box: volume 7.9820 (8), overlap 2.34e-03 (marching-cubes mesh, step 0.03)
