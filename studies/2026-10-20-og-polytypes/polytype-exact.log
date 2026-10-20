@@ -1,0 +1,37 @@
+OG {'corners': 102, 'centre_symmetric': True, 'three_fold_111': True, 'pyritohedral_rotations': True, 'mirror_perp_111_is_a_symmetry': False, 'mirror_image_equals_60deg_turn': True, 'inside_its_octahedron': True, 'inside_its_layer': True, 'volume': '-1000/1539|1240/1539', 'volume_float': 1.1518676361921634}
+OTT {'corners': 24, 'centre_symmetric': True, 'three_fold_111': True, 'pyritohedral_rotations': True, 'mirror_perp_111_is_a_symmetry': False, 'mirror_image_equals_60deg_turn': True, 'inside_its_octahedron': True, 'inside_its_layer': True, 'volume': '-608/81|320/81', 'volume_float': 1.3276759604929964}
+DBT {'corners': 30, 'centre_symmetric': True, 'three_fold_111': True, 'pyritohedral_rotations': False, 'mirror_perp_111_is_a_symmetry': False, 'mirror_image_equals_60deg_turn': True, 'inside_its_octahedron': False, 'inside_its_layer': True, 'volume': '-872/81|440/81', 'volume_float': 1.3811100012334272}
+RT (golden envelope) {'corners': 32, 'centre_symmetric': True, 'three_fold_111': True, 'pyritohedral_rotations': True, 'mirror_perp_111_is_a_symmetry': False, 'mirror_image_equals_60deg_turn': True, 'inside_its_octahedron': False, 'inside_its_layer': False, 'volume': '-320/27|160/27', 'volume_float': 1.398921348146903}
+PASS the twin rule: each solid is centre-symmetric with the three-fold axis, has no mirror across the layer, and its mirror image is its 60 deg turn
+PASS MIR = inversion o half-turn, and the half-turn = (60 deg turn)^3 (so with a 120 deg symmetry, MIR(S) = R60(S))
+PASS both steps carry the octahedron at the origin to layer 1 (x+y+z = 2R)
+PASS layer 0: 19 octahedra round the one at the origin
+PASS geometry reads back the stacking word cccc: an octahedron sits above an octahedron exactly at the h layers
+PASS geometry reads back the stacking word hhhh: an octahedron sits above an octahedron exactly at the h layers
+PASS geometry reads back the stacking word hchc: an octahedron sits above an octahedron exactly at the h layers
+PASS geometry reads back the stacking word hcchcc: an octahedron sits above an octahedron exactly at the h layers
+PASS geometry reads back the stacking word chhcch: an octahedron sits above an octahedron exactly at the h layers
+DBT cc {'neighbours_tested': 12, 'largest_overlap_volume': '0|0', 'overlap_free': True}
+DBT ch {'neighbours_tested': 10, 'largest_overlap_volume': '0|0', 'overlap_free': True}
+DBT hc {'neighbours_tested': 10, 'largest_overlap_volume': '0|0', 'overlap_free': True}
+DBT hh {'neighbours_tested': 8, 'largest_overlap_volume': '0|0', 'overlap_free': True}
+RT (golden envelope) cc {'neighbours_tested': 12, 'largest_overlap_volume': '0|0', 'overlap_free': True}
+RT (golden envelope) ch {'neighbours_tested': 10, 'largest_overlap_volume': '-88/81|40/81', 'overlap_free': False}
+RT (golden envelope) hc {'neighbours_tested': 10, 'largest_overlap_volume': '-88/81|40/81', 'overlap_free': False}
+RT (golden envelope) hh {'neighbours_tested': 8, 'largest_overlap_volume': '-88/81|40/81', 'overlap_free': False}
+PASS 3C (octet): Jagodzinski (c) -> Ramsdell 3C, stacking ABC..., h share 0
+PASS 2H (gyrated octet): Jagodzinski (h) -> Ramsdell 2H, stacking AB..., h share 1
+PASS 4H: Jagodzinski (hc) -> Ramsdell 4H, stacking ABCB..., h share 1/2
+PASS 6H: Jagodzinski (hcc) -> Ramsdell 6H, stacking ABCACB..., h share 1/3
+PASS 9R: Jagodzinski (hhc) -> Ramsdell 9R, stacking ABACACB..., h share 2/3
+PASS 15R: Jagodzinski (hcchc) -> Ramsdell 15R, stacking ABCACBCABAC..., h share 2/5
+PASS 3C (octet): twin caps per cell counted from the geometry = 0
+PASS 2H (gyrated octet): twin caps per cell counted from the geometry = 1
+PASS 4H: twin caps per cell counted from the geometry = 1/2
+PASS 6H: twin caps per cell counted from the geometry = 1/3
+PASS 9R: twin caps per cell counted from the geometry = 2/3
+PASS 15R: twin caps per cell counted from the geometry = 2/5
+PASS Fibonacci stacking: 6765 layers, 2584 of them h (both Fibonacci numbers)
+PASS share of h layers 2584/6765 = 0.38196600 -> 1/phi^2 = (3 - sqrt5)/2 = 0.38196601
+Fibonacci pieces per cell: {'OG (or its twin)': '1|0 = 1.000000', 'caps': '5|1 = 7.236068', 'twin caps': '3/2|-1/2 = 0.381966', 'tetrahedra': '-1|1 = 1.236068', 'bipyramids': '3/2|-1/2 = 0.381966'}
+PASS OG share of space in every stacking = 1025/114|-145/38 = 0.458863

@@ -1,0 +1,192 @@
+{
+ "mark": "DICTO OG polytypes, exact, 2026-10-20 · DICTO · dictospheres.com",
+ "solids": {
+  "OG": {
+   "corners": 102,
+   "centre_symmetric": true,
+   "three_fold_111": true,
+   "pyritohedral_rotations": true,
+   "mirror_perp_111_is_a_symmetry": false,
+   "mirror_image_equals_60deg_turn": true,
+   "inside_its_octahedron": true,
+   "inside_its_layer": true,
+   "volume": "-1000/1539|1240/1539",
+   "volume_float": 1.1518676361921634
+  },
+  "OTT": {
+   "corners": 24,
+   "centre_symmetric": true,
+   "three_fold_111": true,
+   "pyritohedral_rotations": true,
+   "mirror_perp_111_is_a_symmetry": false,
+   "mirror_image_equals_60deg_turn": true,
+   "inside_its_octahedron": true,
+   "inside_its_layer": true,
+   "volume": "-608/81|320/81",
+   "volume_float": 1.3276759604929964
+  },
+  "DBT": {
+   "corners": 30,
+   "centre_symmetric": true,
+   "three_fold_111": true,
+   "pyritohedral_rotations": false,
+   "mirror_perp_111_is_a_symmetry": false,
+   "mirror_image_equals_60deg_turn": true,
+   "inside_its_octahedron": false,
+   "inside_its_layer": true,
+   "volume": "-872/81|440/81",
+   "volume_float": 1.3811100012334272
+  },
+  "RT (golden envelope)": {
+   "corners": 32,
+   "centre_symmetric": true,
+   "three_fold_111": true,
+   "pyritohedral_rotations": true,
+   "mirror_perp_111_is_a_symmetry": false,
+   "mirror_image_equals_60deg_turn": true,
+   "inside_its_octahedron": false,
+   "inside_its_layer": false,
+   "volume": "-320/27|160/27",
+   "volume_float": 1.398921348146903
+  }
+ },
+ "overlap": {
+  "DBT": {
+   "cc": {
+    "neighbours_tested": 12,
+    "largest_overlap_volume": "0|0",
+    "overlap_free": true
+   },
+   "ch": {
+    "neighbours_tested": 10,
+    "largest_overlap_volume": "0|0",
+    "overlap_free": true
+   },
+   "hc": {
+    "neighbours_tested": 10,
+    "largest_overlap_volume": "0|0",
+    "overlap_free": true
+   },
+   "hh": {
+    "neighbours_tested": 8,
+    "largest_overlap_volume": "0|0",
+    "overlap_free": true
+   }
+  },
+  "RT (golden envelope)": {
+   "cc": {
+    "neighbours_tested": 12,
+    "largest_overlap_volume": "0|0",
+    "overlap_free": true
+   },
+   "ch": {
+    "neighbours_tested": 10,
+    "largest_overlap_volume": "-88/81|40/81",
+    "overlap_free": false
+   },
+   "hc": {
+    "neighbours_tested": 10,
+    "largest_overlap_volume": "-88/81|40/81",
+    "overlap_free": false
+   },
+   "hh": {
+    "neighbours_tested": 8,
+    "largest_overlap_volume": "-88/81|40/81",
+    "overlap_free": false
+   }
+  }
+ },
+ "polytypes": {
+  "3C (octet)": {
+   "jagodzinski": "c",
+   "ramsdell": "3C",
+   "abc": "ABC",
+   "share_h": "0",
+   "pieces_per_cell": {
+    "OG (or its twin)": "1",
+    "caps": "8",
+    "twin caps": "0",
+    "tetrahedra": "2",
+    "bipyramids": "0"
+   }
+  },
+  "2H (gyrated octet)": {
+   "jagodzinski": "h",
+   "ramsdell": "2H",
+   "abc": "AB",
+   "share_h": "1",
+   "pieces_per_cell": {
+    "OG (or its twin)": "1",
+    "caps": "6",
+    "twin caps": "1",
+    "tetrahedra": "0",
+    "bipyramids": "1"
+   }
+  },
+  "4H": {
+   "jagodzinski": "hc",
+   "ramsdell": "4H",
+   "abc": "ABCB",
+   "share_h": "1/2",
+   "pieces_per_cell": {
+    "OG (or its twin)": "1",
+    "caps": "7",
+    "twin caps": "1/2",
+    "tetrahedra": "1",
+    "bipyramids": "1/2"
+   }
+  },
+  "6H": {
+   "jagodzinski": "hcc",
+   "ramsdell": "6H",
+   "abc": "ABCACB",
+   "share_h": "1/3",
+   "pieces_per_cell": {
+    "OG (or its twin)": "1",
+    "caps": "22/3",
+    "twin caps": "1/3",
+    "tetrahedra": "4/3",
+    "bipyramids": "1/3"
+   }
+  },
+  "9R": {
+   "jagodzinski": "hhc",
+   "ramsdell": "9R",
+   "abc": "ABACACB",
+   "share_h": "2/3",
+   "pieces_per_cell": {
+    "OG (or its twin)": "1",
+    "caps": "20/3",
+    "twin caps": "2/3",
+    "tetrahedra": "2/3",
+    "bipyramids": "2/3"
+   }
+  },
+  "15R": {
+   "jagodzinski": "hcchc",
+   "ramsdell": "15R",
+   "abc": "ABCACBCABAC",
+   "share_h": "2/5",
+   "pieces_per_cell": {
+    "OG (or its twin)": "1",
+    "caps": "36/5",
+    "twin caps": "2/5",
+    "tetrahedra": "6/5",
+    "bipyramids": "2/5"
+   }
+  },
+  "Fibonacci (aperiodic)": {
+   "rule": "c -> ch, h -> c",
+   "share_h": "(3 - sqrt5)/2",
+   "pieces_per_cell": {
+    "OG (or its twin)": "1|0",
+    "caps": "5|1",
+    "twin caps": "3/2|-1/2",
+    "tetrahedra": "-1|1",
+    "bipyramids": "3/2|-1/2"
+   },
+   "first_layers": "chcchchcchcchchcchchcchcchchcchcch"
+  }
+ },
+ "og_share_every_stacking": "1025/114|-145/38"
+}
