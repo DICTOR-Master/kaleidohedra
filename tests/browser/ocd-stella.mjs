@@ -34,7 +34,7 @@ console.log('tapped:', hud); assert.ok(hud, 'a solid named');
 await page.tap(`${panel} [data-os="gap"]`); await page.waitForTimeout(900); await page.screenshot({ path: `${SH}/os-gap.png` });
 // octahedra
 await page.tap(`${panel} [data-os-partner="octa"]`); await page.waitForTimeout(900);
-assert.match(await note(), /96\.33%/); assert.ok(!(await shown('gap')), 'gap hidden with octahedra'); assert.ok(await shown('notch'), 'notches offered');
+assert.match(await note(), /96\.33% \(exact\)/); assert.ok(!(await shown('gap')), 'gap hidden with octahedra'); assert.ok(await shown('notch'), 'notches offered');
 await page.screenshot({ path: `${SH}/os-octa.png` });
 await page.tap(`${panel} [data-os="notch"]`); await page.waitForTimeout(900); await page.screenshot({ path: `${SH}/os-notch.png` });
 // alone

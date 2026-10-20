@@ -1,7 +1,8 @@
 // OCD Stella Crystals (DICTO 2026-10-16): the DICTO OCD Stella, the stella cut of the Ogdoecontahedron's companion solid, on one network
 // of the OCD's bcc packing, and a partner on the other network, swapped with one switch:
 //   icosahedra   the OCD's 20 hexagon planes; every solid meets its 8 joint neighbours face to face; fill 1523/32 − 669√5/32 ≈ 84.60%;
-//   octahedra    the regular octahedron of the cell's 8 joint planes; its 6 tips nest in OCD Stellas, each notched by 6; ≈ 96.33% (float);
+//   octahedra    the regular octahedron of the cell's 8 joint planes; its 6 tips nest in OCD Stellas, each notched by 6 (one notch 392/2187 − 88√5/1215); 1423/32 − 3113√5/160 ≈ 96.33% (exact, 2026-10-20,
+//                studies/2026-10-20-stella-octahedra);
 //   alone        OCD Stellas on both networks, the plain bcc packing; fill 151/2 − 267√5/8 ≈ 87.12%.
 // With icosahedra or octahedra the crystal is Fd-3 (No. 203), both solids on sites of symmetry 23: the same crystal with the partner
 // swapped. Grow builds it joint step by joint step from one OCD Stella; Gap shows the exact pass's 4 kinds of convex gap piece
