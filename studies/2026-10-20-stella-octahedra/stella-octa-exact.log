@@ -1,0 +1,24 @@
+PASS cell (truncated octahedron) 512/729 + 256/729*sqrt5 = 1.487563 = #31a's cell
+PASS the octahedron of the 8 joint planes is 9/8 of the cell
+PASS the cell is the octahedron cut by the 6 square walls |x_i| <= 2R/3
+PASS OCD Stella -4064/729 + 2240/729*sqrt5 = 1.296011 (#31a)
+PASS the Stella lies in its cell
+PASS only the 6 square neighbours' octahedra reach a Stella, each tip taking the same notch
+      one notch 392/2187 + -88/1215*sqrt5 = 0.017287 (1.3339% of the Stella); six 784/729 + -176/405*sqrt5 = 0.103722 (8.0032%)
+PASS each octahedron tip beyond a square wall is 1/48 of the cell, 32/2187 + 16/2187*sqrt5 = 0.030991; the Stella takes 55.78% of it into its notch
+PASS octahedra on hexagon neighbours meet face to face (no overlap)
+PASS octahedra on square neighbours would overlap tip to tip (64/2187 + 32/2187*sqrt5 = 0.061982), so no two octahedra may be square neighbours
+PASS farther octahedra never overlap
+      pyrochlore (octahedra on one diamond network, every Stella notched 6 times): fill 1423/32 + -3113/160*sqrt5 = 0.963252 (96.3252%)
+      rock salt (octahedra on a quarter of the sites): fill 3839/64 + -8453/320*sqrt5 = 0.917242 (91.7242%)
+      OCD Stellas alone: 151/2 + -267/8*sqrt5 = 0.871231 (87.1231%)
+PASS the float fills of 2026-10-16 (96.33%, 91.72%) agree
+      pyrochlore gap -1391/32 + 3113/160*sqrt5 = 0.036748 (3.6748%): the cell outside the Stella and the 6 tips, per Stella cell; octahedra fill their own cells whole
+PASS the octahedron covers its whole cell (the cell lies in it); its 6 tips are the excess, 6/48 = 1/8 of a cell
+      notched OCD Stella (6 notches) -1616/243 + 12784/3645*sqrt5 = 1.192289
+saved stella-octa-exact.json
+
+real	0m43.924s
+user	0m44.291s
+sys	0m0.064s
+exit 0
