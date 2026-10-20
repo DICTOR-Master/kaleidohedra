@@ -50,12 +50,12 @@ for c in itertools.product((0, 1), repeat=3):
     parts.append(jewel_part(ctr) if sum(c) % 2 == 0 else mf_part(stella_mf(ctr), VIOLET))
 add('The Stella–Jewel Lattice', 'Jewels on even cells, stellas on odd · 3 : 1 by volume', parts)
 # 3 tetrahedral cluster, 4 octahedral cluster, 5 rhombohedron
-add('DICTO Jewel Tetrahedron', '4 Jewels, one window between each pair · 228 faces · 3/4', [jewel_part(c) for c in cells([(0, 0, 0), (1, 1, 0), (1, 0, 1), (0, 1, 1)])])
+add('DICTO Jewel-Tetra', '4 Jewels, one window between each pair · 228 faces · 3/4', [jewel_part(c) for c in cells([(0, 0, 0), (1, 1, 0), (1, 0, 1), (0, 1, 1)])])
 OC = np.array([2.0, 2, 2]); octc = [(2, 1, 1), (0, 1, 1), (1, 2, 1), (1, 0, 1), (1, 1, 2), (1, 1, 0)]
-add('DICTO Jewel Octahedron, opened', '6 Jewels and the stella that fills their hole · 288 faces · 19/16',
+add('DICTO Jewel-Octa, opened', '6 Jewels and the stella that fills their hole · 288 faces · 19/16',
     [mf_part(stella_mf(OC), VIOLET)] + [jewel_part(OC + (c - OC) * 1.3) for c in cells(octc)])
 rh = [tuple(sum(x) for x in zip(*[v for v, s in zip([(1, 1, 0), (1, 0, 1), (0, 1, 1)], m) if s] or [(0, 0, 0)])) for m in itertools.product((0, 1), repeat=3)]
-add('Jewel rhombohedron', '8 Jewels on 18 windows, a stella sealed inside · 8 1/3 Jewels', [jewel_part(c) for c in cells(rh)])
+add('DICTO Jewel-Rhombi', '8 Jewels on 18 windows, a stella sealed inside · 396 faces · 25/16', [jewel_part(c) for c in cells(rh)])
 # 6 the Hexa, 7 the Hexa-Key, 8 a Hexa and a Hexa-Key side by side
 cube_cells = list(itertools.product((0, 1), repeat=3))
 add('DICTO Hexa', '8 Jewels on a 2 x 2 x 2 block, one solid · 24 roofs · 5/4', [jewel_part(c) for c in cells(cube_cells)])
@@ -72,12 +72,12 @@ K = key_mf(np.zeros(3)); assert abs(K.volume() - 48) < 1e-6, K.volume()
 add('DICTO Hexa-Key', '8 stellas + 12 double roofs, one solid · 24 recesses · 3/4', [mf_part(K, TEAL)])
 pair = [jewel_part(c) for c in cells(cube_cells)] + [mf_part(key_mf(np.array([4.0, 0, 0])).translate([1.6, 0, 0]), TEAL)]   # the Hexa-Key in its own place next to the Hexa, drawn out by 1.6
 add('Hexa and Hexa-Key', 'the Hexa\'s roofs fit the Hexa-Key\'s recesses · 5 : 3', pair)
-# 9 the octet pattern: a Jewel Octahedron (its stella hidden inside) and the 8 Jewels that complete its faces to Jewel Tetrahedra
+# 9 the octet pattern: a Jewel-Octa (its stella hidden inside) and the 8 Jewels that complete its faces to Jewel-Tetras
 nbr = lambda a, b: sorted(abs(x - y) for x, y in zip(a, b)) == [0, 1, 1]
 capc = sorted({c for t in itertools.combinations(octc, 3) if all(nbr(a, b) for a, b in itertools.combinations(t, 2))
                for c in itertools.product(range(-1, 4), repeat=3) if sum(c) % 2 == 0 and c not in octc and all(nbr(c, x) for x in t)})
 assert len(capc) == 8
-add('The octet pattern', 'a Jewel Octahedron (gold) and the 8 Jewels (grey) completing its faces to Jewel Tetrahedra, drawn out', [jewel_part(c) for c in cells(octc)] + [jewel_part(OC + (c - OC) * 1.35, gold=GREY) for c in cells(capc)])
+add('The octet pattern', 'a Jewel-Octa (gold) and the 8 Jewels (grey) completing its faces to Jewel-Tetras, drawn out', [jewel_part(c) for c in cells(octc)] + [jewel_part(OC + (c - OC) * 1.35, gold=GREY) for c in cells(capc)])
 for s in scenes:
     pts = np.vstack([np.array(p['v']) for p in s['parts']]); ctr = (pts.max(0) + pts.min(0)) / 2
     for p in s['parts']: p['v'] = (np.array(p['v']) - ctr).round(5).tolist()

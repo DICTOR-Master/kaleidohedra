@@ -78,7 +78,7 @@ ok(len(rh) == 8 and len(sh) == 18 and all(v == 1 for v in sh.values()) and not a
 nb111 = [tuple(1 + d * (i == k) for i in range(3)) for k in range(3) for d in (1, -1)]
 ok(all(c in rh for c in nb111), 'all 6 face-neighbours of the odd cell (1,1,1) are corners of the rhombohedron, so its stella is sealed inside')
 ok(8 * 12 + 4 == 100, 'rhombohedron with its stella: 8 x 12 + 4 = 100 = 8 1/3 Jewels (25/16 at Hexa cube edge 1)')
-# DICTO 2026-10-20: the clusters as single solids, the DICTO Jewel Tetrahedron (4 Jewels) and the DICTO Jewel Octahedron (6 Jewels and the
+# DICTO 2026-10-20: the clusters as single solids, the DICTO Jewel-Tetra (4 Jewels) and the DICTO Jewel-Octa (6 Jewels and the
 # stella they enclose), and their octet pattern. Neighbours = even cells one face diagonal apart (one shared window, checked above).
 nbr = lambda a, b: sorted(abs(x - y) for x, y in zip(a, b)) == [0, 1, 1]
 B = range(-3, 4); EV = [(i, j, k) for i in B for j in B for k in B if (i + j + k) % 2 == 0]; EVs = set(EV)
@@ -89,18 +89,45 @@ def corner_of(q):
         if all(all(abs(qq[i] - c[i]) == 0.5 for i in range(3)) for qq in q): return c
 octs = {}
 ok(all(corner_of(q) for q in cliques) and len({corner_of(q) for q in cliques}) == len(cliques),
-   f'every set of 4 mutually neighbouring Jewels ({len(cliques)} in the box) is the 4 even cells round one cell corner, one set per corner: the Jewel Tetrahedra sit on the cell corners')
+   f'every set of 4 mutually neighbouring Jewels ({len(cliques)} in the box) is the 4 even cells round one cell corner, one set per corner: the Jewel-Tetras sit on the cell corners')
 inner = [c for c in EV if max(map(abs, c)) <= 1]
-ok(all(sum(c in q for q in cliques) == 8 for c in inner), 'each Jewel lies in 8 Jewel Tetrahedra (one per corner of its cell)')
-ok(all(sum(1 for d in itertools.product((-1, 0, 1), repeat=3) if sum(map(abs, d)) == 1) == 6 for c in inner), 'each Jewel lies in 6 Jewel Octahedra (one per odd face-neighbour of its cell)')
+ok(all(sum(c in q for q in cliques) == 8 for c in inner), 'each Jewel lies in 8 Jewel-Tetras (one per corner of its cell)')
+ok(all(sum(1 for d in itertools.product((-1, 0, 1), repeat=3) if sum(map(abs, d)) == 1) == 6 for c in inner), 'each Jewel lies in 6 Jewel-Octas (one per odd face-neighbour of its cell)')
 tri = [t for t in itertools.combinations(octa, 3) if all(nbr(a, b) for a, b in itertools.combinations(t, 2))]
 caps = [[c for c in EVs if c not in octa and all(nbr(c, x) for x in t)] for t in tri]
 ok(len(tri) == 8 and all(len(cp) == 1 for cp in caps) and len({cp[0] for cp in caps}) == 8,
-   'the Jewel Octahedron has 8 faces of three mutually neighbouring Jewels, and each is completed to a Jewel Tetrahedron by exactly one Jewel outside: the octet truss pattern (8 tetrahedra round each octahedron)')
-ok(6 * 12 + 4 == 76, 'DICTO Jewel Octahedron: 6 Jewels and the stella of their odd cell, which is exactly the hole (the cell is the stella and the six carved roofs, jewel_exact.py): 6 x 12 + 4 = 76 (19/16), outer surface 288 faces')
-ok(4 * 12 == 48, 'DICTO Jewel Tetrahedron: 4 Jewels, 48 (3/4), 228 faces, the four meeting at one point, their cell corner')
-# the pattern overlaps: neighbouring clusters share Jewels. Without overlap, every Jewel Octahedron takes 6 Jewels and 1 stella, and there
-# are as many Jewels as stellas, so at most 1/6 of the stellas can be inside Octahedra; the 12 lattices above reach that bound.
+   'the Jewel-Octa has 8 faces of three mutually neighbouring Jewels, and each is completed to a Jewel-Tetra by exactly one Jewel outside: the octet truss pattern (8 tetrahedra round each octahedron)')
+ok(6 * 12 + 4 == 76, 'DICTO Jewel-Octa: 6 Jewels and the stella of their odd cell, which is exactly the hole (the cell is the stella and the six carved roofs, jewel_exact.py): 6 x 12 + 4 = 76 (19/16), outer surface 288 faces')
+ok(4 * 12 == 48, 'DICTO Jewel-Tetra: 4 Jewels, 48 (3/4), 228 faces, the four meeting at one point, their cell corner')
+# the pattern overlaps: neighbouring clusters share Jewels. Without overlap, every Jewel-Octa takes 6 Jewels and 1 stella, and there
+# are as many Jewels as stellas, so at most 1/6 of the stellas can be inside Octas; the 12 lattices above reach that bound.
 ok(all(len(B_[0]) for B_ in good) and Fr(1, 6) == Fr(1, 6) and all(B_[0][0] * B_[1][1] * B_[2][2] == 12 for B_ in good),
-   'without overlap at most 1/6 of the stellas lie in Jewel Octahedra (6 Jewels per Octahedron, one Jewel per stella); each of the 12 lattices reaches it: per period 6 Jewels, 6 stellas, 1 Octahedron, 5 loose stellas')
+   'without overlap at most 1/6 of the stellas lie in Jewel-Octas (6 Jewels per Octa, one Jewel per stella); each of the 12 lattices reaches it: per period 6 Jewels, 6 stellas, 1 Octa, 5 loose stellas')
+# DICTO 2026-10-20: the DICTO Jewel-Rhombi (the rhombohedron above as one solid: 8 Jewels and the stella sealed inside), and how each
+# of the three fused pieces fills space with loose stellas. Lattice tilings: translations of index n (n = twice the Jewels per piece, since
+# a period holds as many stellas as Jewels) under which the piece's Jewels cover every even cell exactly once.
+def tilings(piece):
+    n = 2 * len(piece); out = []
+    for a in range(1, n + 1):
+        for d in range(1, n + 1):
+            if n % (a * d): continue
+            f = n // (a * d)
+            for b in range(d):
+                for c in range(f):
+                    for e in range(f):
+                        B = ((a, b, c), (0, d, e), (0, 0, f))
+                        if any(sum(r) % 2 for r in B): continue
+                        if len({residue(x, B) for x in piece}) == len(piece): out.append(B)   # the n/2 even classes, all hit once
+    return out
+lt, lo, lr = tilings(tet), tilings(octa), tilings(rh)
+ok(len(lo) == len(good) == 12, 'lattice tilings recounted by the general search: Jewel-Octas 12')
+ok(len(lt) == 4 and ((2, 0, 0), (0, 2, 0), (0, 0, 2)) in lt, f'Jewel-Tetras tile with loose stellas on {len(lt)} lattices of index 8 (one is the anchors 2Z^3); per period 4 Jewels, 4 loose stellas')
+ok(len(lr) == 25 and ((1, 0, 3), (0, 1, 5), (0, 0, 16)) in lr, f'Jewel-Rhombis tile with loose stellas on {len(lr)} lattices of index 16; per period 8 Jewels, 1 stella inside, 7 loose')
+log['tet_lattices'] = [list(map(list, B)) for B in lt]; log['rh_lattices'] = [list(map(list, B)) for B in lr]
+# faces of the fused solids. In the Stella–Jewel tiling each Jewel triangle lies face to face on a stella (8 triangles on each of the 6
+# odd neighbours' stellas: 6 x 8 = 48), and Jewels meet each other only on windows (checked above). So in a union of Jewels and stellas a
+# face is hidden exactly when it is a shared window or a triangle on an included stella. Both the Octa and the Rhombohedron hold all
+# 6 Jewels round their stella, so all 48 triangles on it are hidden.
+ok(6 * 8 == 48 and 6 * 60 - 2 * 12 - 48 == 288 and 6 * 48 - 48 == 240 and 6 * 12 - 24 == 48, 'Jewel-Octa: 6 x 60 - 2 x 12 windows - 48 triangles on its stella = 288 faces (240 triangles, 48 windows)')
+ok(8 * 60 - 2 * 18 - 48 == 396 and 8 * 48 - 48 == 336 and 8 * 12 - 36 == 60, 'DICTO Jewel-Rhombi: 8 x 60 - 2 x 18 windows - 48 triangles on its stella = 396 faces (336 triangles, 60 windows); 8 x 12 + 4 = 100 (25/16)')
 json.dump(log, open(os.path.join(HERE, 'cluster-exact.json'), 'w'), indent=1)
