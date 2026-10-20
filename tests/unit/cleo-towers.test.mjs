@@ -28,7 +28,7 @@ test('Hex Aktis and Deltoid Aktis: 20 and 60, named', () => {
   assert.equal(POLYHEDRA.HEX_AKTIS.name, 'DICTO Hex Aktis'); assert.equal(POLYHEDRA.DELTOID_AKTIS.name, 'DICTO Deltoid Aktis');
   assert.equal(POLYHEDRA.HEX_AKTIS.faces.length, 7); assert.equal(POLYHEDRA.DELTOID_AKTIS.faces.length, 5);
 });
-test('polar towers end on the RT x 10/phi^4; the OTT core: 8 Cleo-Icos, 24 triangle rays, 6 rhombic rays', () => {
+test('polar towers end on the RT x 10/phi^4; the OTT core: 8 Oktaktis, 24 Triaktis, 6 Tetraktis', () => {
   const k = KITS13.ottRays.entries, n = (id) => k.filter((e) => e.shape === id).length;
   assert.deepEqual([n('OTT_CLEO_ICOS'), n('OTT_TRIANGLE_RAY'), n('OTT_RHOMBIC_RAY')], [8, 24, 6]);
   assert.equal(KITS13.polarTowers.entries.filter((e) => e.shape === 'POLAR_CORE_RAY').length, 30);
