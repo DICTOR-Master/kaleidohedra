@@ -114,3 +114,9 @@ For every fill piece touching the central solid (6 / 6 / 8): volume = Voronoi re
 
 ## Cover line-up for #37a V3 (2026-10-20; `cover_lineup.py`, `cover_shots.mjs`, `cover_compose.py` → `figures/cover-lineup.jpg`)
 OG, OCD Stella, DBT, OTT over Fill set 1 F1, Fill set 2 F1, F2, F3; true relative size, one view (three-fold axis up). Shown to DICTO, not yet in the paper.
+
+## How densely do the solids pack by themselves? (DICTO 2026-10-20; `lattice_pack.py` on dicto-node → `lattice-pack.log`, `lattice-pack.json`; float)
+Densest **lattice** packing (one translate per lattice point), found by search: minimise the cell over Minkowski-reduced bases such that every lattice vector lies outside 2K (both solids are centrally symmetric); checked with lattice vectors up to coefficient 3 and mesh overlaps with the 26 nearest copies (none).
+- Checks: octahedron 0.947368 (= Minkowski's 18/19); rhombic triacontahedron 0.801787 (literature 0.801741, Torquato–Jiao; ours 0.00005 higher, within float search noise or a small improvement; not claimed).
+- **DICTO OTT 0.906282** (cell 1.464969), 6 contact pairs; **DICTO DBT 0.828621** (cell 1.666757), 6 contact pairs.
+- In the octet / gyrated octet they fill 52.89% / 55.02%: those arrangements are chosen for the golden joins and the twin layers, not for density. A lattice packing is a lower bound for the densest packing; non-lattice packings could be denser.
