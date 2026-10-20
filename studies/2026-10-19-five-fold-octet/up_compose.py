@@ -27,4 +27,4 @@ sheet(g('cycle'), 5, 'up-cycle.jpg', 'Universal PiTet', 'One turn of the cycle: 
 sheet(g('shells'), 4, 'up-shells.jpg')
 sheet(g('inner'), 3, 'up-inner.jpg')
 pcs = g('pieces'); sheet(pcs, 5, 'up-pieces.jpg', subs=[''] * len(pcs))
-sheet(g('mirror'), 1, 'up-mirror.jpg', cell=640)
+sheet(g('mirror'), 1, 'up-mirror.jpg', cell=640, names=[''], subs=[''])

@@ -91,10 +91,16 @@ SIDE = np.cross(AX, CAM); SIDE /= np.linalg.norm(SIDE)
 half = lambda L: [p for p in L if p['v'].mean(0) @ SIDE > 0.05]
 add('Stage 3: ID → RT', [faces_mesh(SOL['ID'], 1.0, '#d8d2c4')] + [piece_mesh(p, K['pyr5']) for p in pl(fine5, 40)] + [piece_mesh(p, K['pyr3']) for p in pl(fine3, 50)] +
     [piece_mesh(p, K['vtet']) for p in half(pl(fineV, 55))], group='inner', sub='12 five-sided and 20 three-sided pyramids; 60 valley tetrahedra (one side shown)')
+kpyr = []                                   # the 60 kite pyramids of OG -> RT (#38 §5), apex at the RT five-fold corner over each OG kite
+for o, i in OGh['F']:
+    if len(o) != 4: continue
+    n, d = OGh['H'][i]; kpyr.append(piece([OGh['C'][j] for j in o] + [max(A5, key=lambda v: dot(n, v).f())]))
+assert len(kpyr) == 60 and all(p['V'] == Q5(Fr(1, 76), Fr(1, 684)) for p in kpyr), 'kite pyramid volume'
+print('60 kite pyramids, each 1/76 + sqrt5/684 (exact)')
 OGs = {'v': fl(OGh['C']), 'f': [list(o) for o, _ in OGh['F']]}
 add('ID → OG', [faces_mesh(SOL['ID'], 1.0, '#d8d2c4')] + [piece_mesh(p, K['low']) for p in pl(low, 70)], group='inner', sub='12 pieces, one on each pentagon')
-add('OG → RT: hexagonal Cleos', [faces_mesh(OGs, 1.0, '#d8d2c4')] + [piece_mesh(p, K['hexc']) for p in pl(hexc, 50)] + [piece_mesh(p, K['cap']) for p in pl(caps, 30)] +
-    [piece_mesh(p, K['tet']) for p in pl(tets, 42)], group='inner', sub='20 hexagonal Cleos, 12 dimpled caps, 120 tetrahedra')
+add('OG → RT: hexagonal Cleos', [faces_mesh(OGs, 1.0, '#d8d2c4')] + [piece_mesh(p, K['hexc']) for p in pl(hexc, 50)] + [piece_mesh(p, K['cap']) for p in pl(kpyr, 42)] +
+    [piece_mesh(p, K['tet']) for p in half(pl(tets, 50))], group='inner', sub='20 hexagonal Cleos, 60 kite pyramids; 120 tetrahedra (one side shown)')
 VJ = []
 for a5 in A5:
     tI = max(I, key=lambda v: dot(v, a5).f() / np.linalg.norm([x.f() for x in v])); ip_ = next(p for p in pyr if tI in p['C'])
@@ -104,7 +110,7 @@ add('Five-sided Vajras', [mf_mesh(hull(fl(I)), K['core'])] + [piece_mesh(p, K['v
 # 4. the pieces, one of each kind
 one = [('Cleo-Ico', cleo[0], K['cleo']), ('spike', spikes[0], K['spike']), ('inward pyramid', pyr[0], K['ipyr']), ('valley tetrahedron', val[0], K['valley']),
        ('Monkey Staff B', fr[0], K['frustum']), ('five-sided pyramid', fine5[0], K['pyr5']), ('three-sided pyramid', fine3[0], K['pyr3']), ('valley tetrahedron (ID → RT)', fineV[0], K['vtet']),
-       ('five-sided Vajra', None, K['vajra']), ('ID → OG piece', low[0], K['low']), ('hexagonal Cleo', hexc[0], K['hexc']), ('dimpled cap', caps[0], K['cap']), ('tetrahedron (OG → RT)', tets[0], K['tet'])]
+       ('five-sided Vajra', None, K['vajra']), ('ID → OG piece', low[0], K['low']), ('hexagonal Cleo', hexc[0], K['hexc']), ('kite pyramid', kpyr[0], K['cap']), ('tetrahedron (OG → RT)', tets[0], K['tet'])]
 for nm, p, col in one:
     pc = VJ[0] if p is None else piece_of(p); c = pc['v'].mean(0); M = tilt(-c if nm == 'inward pyramid' else c)   # the inward pyramid points in
     pc = dict(pc, v=(pc['v'] - c) @ M.T, minus=None if pc['minus'] is None else (pc['minus'] - c) @ M.T)
