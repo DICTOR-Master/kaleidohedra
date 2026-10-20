@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>The DICTO OG Family: Four Steps Up and Four Down</title>
+<link rel="stylesheet" href="../paper.css">
+<style>td.n { font-variant-numeric: tabular-nums; } .figs.wide { grid-template-columns: 1fr; width: 100%; } table { font-size: 8.4pt; } table.lib{font-size:8pt;width:100%} table.lib td{padding:1px 4px;vertical-align:top} figure.cover{margin:4px 0 8px;text-align:center} figure.cover img{width:64%} .figs.wide img{width:84%;margin:0 auto;display:block} table.lib{break-inside:auto}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>The DICTO OG Family: Four Steps Up and Four Down</h1>
+<p class="sub">Eight new icosahedral solids grown outward and inward from the DICTO Ogdoecontahedron by one rule and its reverse, exact in ℚ(√5), with the shells between them and where the nesting breaks</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Version 1 · 20 October 2026 · __DOI__ · Companion to The DICTO Ogdoecontahedron (DICTO DOI: 10.5281/zenodo.23404688) and Universal PiTet: The DICTO PiTet Proposition (DICTO DOI: 10.5281/zenodo.23463305) · Licence CC BY-SA 4.0 · Scripts, exact checks and data: https://github.com/DICTOR-Master/kaleidohedra/tree/__COMMIT__/studies/2026-10-19-five-fold-octet (research branch, commit __COMMIT__; also attached to this record)<br>
+The idea of running the Universal PiTet step outward from the Ogdoecontahedron (“the upward shapes”), of finding the lower solids as well, and of one paper for both directions is DICTO's; the eight names are DICTO's (the four downward names in his naming scheme, approved by him). Computation, checking and drafting with Claude (Anthropic).
+</div>
+
+<figure class="cover"><img src="figures/family-grid.jpg" alt="The nine solids, from DICTO TQHD to DICTO DPHP, with the OG in the centre"></figure>
+
+<div class="abstract"><b>Abstract.</b> In Universal PiTet a single rule T builds each solid from the last: every corner v of a solid S gives the face plane v·x = v·v, through v and at right angles to the line from the centre, and T(S) is the solid these planes bound. Started at the icosidodecahedron it closes into a four-step cycle. DICTO proposed running it from the DICTO Ogdoecontahedron (OG), and also running it the other way. The reverse step P takes as new corners the foot points of S's face planes, the points of those planes nearest the centre. From the OG, four steps of T give four solids with 92, 180, 212 and 270 corners, the <b>DICTO KRE, PHE, TPP and DPHP</b>, and four steps of P give four with 80, 132, 140 and 162 corners, the <b>DICTO TPH, TQH, TQP and TQHD</b>. All eight are proved exactly in ℚ(√5), each with the full icosahedral symmetry, and each step of P is undone exactly by T. Several have regular faces: 12 regular pentagons (PHE, TPH, TQP), 20 regular hexagons (PHE, DPHP, TQH, TQHD); the KRE has 30 rhombi and 60 kites. The family does not cycle. It nests as shells for three steps up, OG ⊂ KRE ⊂ PHE ⊂ TPP, and two steps down, TQH ⊂ TPH ⊂ OG, and each of these shells, and also the shell TQHD ⊂ TQP, is filled exactly by one piece per face of the inner solid. Both directions then break in the same way: 60 corners of the TPP stand outside the DPHP, and 60 corners of the TQP outside the TQH. In the plane, T and P are the classical antipedal and pedal constructions; the polyhedral pedal construction was posed as an open problem in 2010. We found the eight solids in no source.</div>
+
+<h2>1. The rule and its reverse</h2>
+<p><b>Frame.</b> As in [2]: the icosidodecahedron of circumradius φ, and the OG between it and the rhombic triacontahedron, ID ⊂ OG ⊂ RT. In this frame the OG has 102 corners (radii φ and ≈ 1.6873), 80 faces (60 kites and 20 regular hexagons) and volume <b>(525 + 185√5)/57 ≈ 16.4679</b>. All coordinates are pairs of rationals a + b√5 with exact signs.</p>
+<p><b>The step up, T</b> [2]: T(S) = {x : v·x ≤ v·v for every corner v of S}. <b>The step down, P</b>: if S has the face planes n·x = d (the centre inside, d &gt; 0), P(S) is the convex hull of their foot points (d/n·n) n. The foot point of a face plane is the corner of P(S) whose own T-plane is that face plane, so:</p>
+<ul>
+<li><b>T undoes P</b> when every foot point is a corner of P(S): then T(P(S)) is bounded by exactly the face planes of S, so T(P(S)) = S. For all four downward steps this holds, and T(P(S)) = S is checked exactly.</li>
+<li><b>P does not always undo T.</b> A corner of S whose plane is not a face of T(S) is lost. From the OG, the planes of its 12 five-fold corners touch the KRE only at those corners themselves (they become the KRE's 12 five-fold corners), so the KRE has 102 − 12 = 90 faces, and P(KRE) is the hull of the OG's other 90 corners, not the OG (exact).</li>
+</ul>
+<p><b>Proof method</b> (as in [2]). Floating point only guesses which faces meet at a corner; each guess is proved exactly: corners solve their faces and lie inside every face; each face holds at least three corners with the others inside it; every edge lies in exactly two faces and V − E + F = 2. Symmetry is checked with the 60 exact rotations of the icosahedral group, faces are compared by exact side lengths and corner angles, and volumes are exact sums of determinants.</p>
+
+<h2>2. Four steps up (exact)</h2>
+<table><tr><th>Solid</th><th>Corners</th><th>Faces</th><th>Edges</th><th>Volume</th><th>Corner radii</th></tr>
+<tr><td>DICTO OG</td><td class="n">102</td><td>60 kites + 20 regular hexagons (80)</td><td class="n">180</td><td class="n">(525 + 185√5)/57 ≈ 16.4679</td><td class="n">1.6180–1.6873</td></tr>
+<tr><td><b>DICTO KRE</b>, Kite-Rhombic Enneacontahedron</td><td class="n">92</td><td>30 rhombi + 60 kites (90)</td><td class="n">180</td><td class="n">(920 + 60√5)/57 ≈ 18.4941</td><td class="n">1.6520–1.7321</td></tr>
+<tr><td><b>DICTO PHE</b>, Pentagon-Hexagon Enneacontadihedron</td><td class="n">180</td><td>12 regular pentagons + 20 regular hexagons + 60 hexagons (92)</td><td class="n">270</td><td class="n">(95875 − 1560√5)/4617 ≈ 20.0101</td><td class="n">1.7046–1.7427</td></tr>
+<tr><td><b>DICTO TPP</b>, Triangle-Pentagon Polyhedron</td><td class="n">212</td><td>60 triangles + 120 pentagons in two kinds (180)</td><td class="n">390</td><td class="n">≈ 22.3366</td><td class="n">1.7220–1.8104</td></tr>
+<tr><td><b>DICTO DPHP</b>, Decagon-Pentagon-Hexagon Polyhedron</td><td class="n">270</td><td>12 equal-sided decagons + 20 regular hexagons + 120 pentagons (152)</td><td class="n">420</td><td class="n">≈ 23.5434</td><td class="n">1.7995–1.8095</td></tr>
+</table>
+<p class="note">Table 1. The volumes of the TPP and DPHP are exact but long; they are in data/exact_upward.json. Radii are float values of exact corners.</p>
+<p><b>The KRE.</b> Its 92 corners and 90 four-sided faces are the counts of the rhombic enneacontahedron (§5), but its faces are 30 rhombi (side² 29/18 − √5/2, side ≈ 0.7022) and 60 kites, each with two sides equal to the rhombus side and two of side² (1505 + 315√5)/6498 (side ≈ 0.5831). <b>The PHE</b> has the face counts of the Goldberg polyhedron GP(3,0), 12 pentagons and 80 hexagons [6, 7]; here the 12 pentagons (side² 35/18 − 5√5/6) and 20 of the hexagons (side² 1/27, side √3/9) are regular, the other 60 hexagons not. <b>The TPP</b> has isosceles triangles and two kinds of pentagons. <b>The DPHP</b> is the roundest: its corner radii differ by only 0.56%. Its decagons have ten equal sides but two alternating angles, so they are not regular (exact).</p>
+
+<h2>3. Four steps down (exact)</h2>
+<table><tr><th>Solid</th><th>Corners</th><th>Faces</th><th>Edges</th><th>Volume</th><th>Corner radii</th></tr>
+<tr><td><b>DICTO TPH</b>, Triangle-Pentagon Hecatontatriacontadihedron</td><td class="n">80</td><td>120 isosceles triangles + 12 regular pentagons (132)</td><td class="n">210</td><td class="n">(10437930 + 3959694√5)/109³ ≈ 14.8970</td><td class="n">1.5115–1.5848</td></tr>
+<tr><td><b>DICTO TQH</b>, Triangle-Quadrilateral-Hexagon Polyhedron</td><td class="n">132</td><td>60 triangles + 60 quadrilaterals + 20 regular hexagons (140)</td><td class="n">270</td><td class="n">(770805045 + 337172409√5)/(2⁴·41³·109) ≈ 12.6853</td><td class="n">1.4885–1.5023</td></tr>
+<tr><td><b>DICTO TQP</b>, Triangle-Quadrilateral-Pentagon Polyhedron</td><td class="n">140</td><td>60 triangles + 30 rhombi + 60 quadrilaterals + 12 regular pentagons (162)</td><td class="n">300</td><td class="n">≈ 11.6524</td><td class="n">1.4172–1.4931</td></tr>
+<tr><td><b>DICTO TQHD</b>, Triangle-Quadrilateral-Hexagon Diacosihedron</td><td class="n">162</td><td>120 triangles in two kinds + 60 quadrilaterals + 20 regular hexagons (200)</td><td class="n">360</td><td class="n">≈ 10.4208</td><td class="n">1.3493–1.3948</td></tr>
+</table>
+<p class="note">Table 2. Exact volumes of the TQP and TQHD: data/exact_downward.json.</p>
+<p>Going down, every foot point is a corner, so each solid has as many corners as the one above has faces: 80, 132, 140, 162. Going up, the corner count of the solid below is an upper bound for the faces of the one above, met at the PHE and TPP steps; the OG loses 12 (above) and the TPP 60 (§4). The downward solids leave the small golden numbers of the OG frame behind: the first step brings the prime 109 into the denominators (the TPH's pentagon side² is (4014 + 378√5)/109²), the second the prime 41. Every triangle in the family is isosceles; the regular faces are those named in the tables (exact).</p>
+
+<h2>4. Shells and where the nesting breaks (exact)</h2>
+<p>When one solid lies inside the next, the shell between them is filled by one piece per face of the inner solid: the cone from the centre over that face, cut off by the outer solid [2]. All eight neighbouring pairs were checked; six nest:</p>
+<table><tr><th>Shell</th><th>Pieces</th><th>Piece volumes</th><th>Gap</th></tr>
+<tr><td>OG ⊂ KRE</td><td>60 on kites, 20 on hexagons</td><td class="n">(230 + 15√5)/37278 ≈ 0.00707; (429 − 145√5)/1308 ≈ 0.08010</td><td class="n">≈ 2.02617</td></tr>
+<tr><td>KRE ⊂ PHE</td><td>30 on rhombi, 60 on kites</td><td class="n">235/2916 − √5/36 ≈ 0.01848; ≈ 0.01603</td><td class="n">≈ 1.51602</td></tr>
+<tr><td>PHE ⊂ TPP</td><td>12 on pentagons, 60 on hexagons, 20 on regular hexagons</td><td class="n">≈ 0.00218; ≈ 0.03805; 409/476766 ≈ 0.000858</td><td class="n">≈ 2.32644</td></tr>
+<tr><td>TPP, DPHP</td><td colspan="3"><b>not nested:</b> 60 corners of the TPP lie outside the DPHP, by up to 0.0185</td></tr>
+<tr><td>TPH ⊂ OG</td><td>120 on triangles (two mirror orbits), 12 on pentagons</td><td class="n">≈ 0.006748; ≈ 0.06343</td><td class="n">≈ 1.57092</td></tr>
+<tr><td>TQH ⊂ TPH</td><td>60 on triangles, 60 on quadrilaterals, 20 on hexagons</td><td class="n">≈ 0.02937; ≈ 0.007311; ≈ 0.000550</td><td class="n">≈ 2.21176</td></tr>
+<tr><td>TQP, TQH</td><td colspan="3"><b>not nested:</b> 60 corners of the TQP lie outside the TQH, by up to 0.0058</td></tr>
+<tr><td>TQHD ⊂ TQP</td><td>60 + 60 on the two kinds of triangle, 60 on quadrilaterals, 20 on hexagons</td><td class="n">≈ 0.000016 and 0.003318; ≈ 0.000090; ≈ 0.05131</td><td class="n">≈ 1.23162</td></tr>
+</table>
+<p class="note">Table 3. In every nested shell the pieces sum to the gap with remainder exactly 0, and pieces on congruent faces are congruent (one volume per symmetry orbit). Exact volumes not printed here are in data/exact_upward.json and data/exact_downward.json.</p>
+<p><b>Why it breaks.</b> Upward, T(S) contains S only if no corner w of S lies beyond another corner's plane, w·v ≤ v·v. On the TPP, whose corners lie at four radii and close together in direction, 60 corners fail this; exactly these 60 are the corners whose planes give no face of the DPHP, so the DPHP has 212 − 60 = 152 faces (exact). Going from the OG to the KRE no corner fails: the 12 lost there are the OG's five-fold corners, which become corners of the KRE. Downward, P(S) lies inside S only if every foot point falls inside its own face; 60 of the TQH's 140 face planes have their foot point outside the face, and those feet are the TQP's 60 outlying corners. So <b>the OG family nests exactly only near the OG</b>, OG ⊂ KRE ⊂ PHE ⊂ TPP upward and TQH ⊂ TPH ⊂ OG downward, unlike the UP cycle, whose solids nest for ever [2]. Below the break the nesting returns once (TQHD ⊂ TQP).</p>
+<figure><div class="figs wide"><img src="figures/breaks.jpg" alt="TPP inside DPHP and TQP inside TQH, with the corners that poke out in red"></div>
+<figcaption><b>Figure 2.</b> Where the nesting breaks. Left: the DICTO TPP inside the DICTO DPHP (glass); right: the DICTO TQP inside the DICTO TQH (glass). Red: the 60 corners that lie outside (front half shown).</figcaption></figure>
+<figure><div class="figs wide"><img src="figures/shells.jpg" alt="Six shells: the inner solid with its shell pieces placed round one five-fold axis"></div>
+<figcaption><b>Figure 3.</b> The six nested shells, each filled exactly: top, upward (OG → KRE, KRE → PHE, PHE → TPP); bottom, downward (TPH → OG, TQH → TPH, TQHD → TQP). Each shows the inner solid (pale) with its shell pieces on the faces round one five-fold axis, one colour per kind of piece.</figcaption></figure>
+<p><b>No cycle.</b> From the icosidodecahedron, T returns to the start, scaled by 10/φ⁴, after four steps [2]. From the OG neither direction returns within four steps: the corner counts grow both ways (92, 180, 212, 270 up; 80, 132, 140, 162 down), and the face kinds multiply. In the plane, iterated antipedal triangles tend to the equilateral triangle [5]; the DPHP is the roundest of the nine (corner radii within 0.56%, against the OG's 4.28%), but roundness does not grow at every step (the TPP: 5.13%), and we make no claim beyond four steps.</p>
+
+<h2>5. Prior art and what is claimed</h2>
+<ul>
+<li><b>The steps.</b> In the plane, T and P are the classical <i>antipedal</i> and <i>pedal</i> constructions about a point: the antipedal polygon has its sides through the vertices, at right angles to the lines from the point, and the pedal polygon has its vertices at the feet of the perpendiculars to the sides [3, 4, 5]. Iterated pedal and antipedal triangles have long been studied [5]. For polyhedra Smarandache [3] proposed the “face pedal polyhedron” (feet of the perpendiculars from an interior point to the faces), which is P, and asked what properties it has; we found no study of it or of the 3-D antipedal step T. <b>This sharpens [2]</b>, which reported no source for T: T is the 3-D form of the antipedal construction about the centre.</li>
+<li><b>The KRE</b> is of a known type: the rhombic enneacontahedron has 92 corners and 90 rhombi, 60 wide and 30 narrow, and “without the equal edge constraint, the wide rhombi are kites if limited only by the icosahedral symmetry” [8]. The KRE is such a solid; what is new is its shape, fixed exactly by the OG.</li>
+<li><b>The PHE</b> has the counts of the Goldberg polyhedron GP(3,0) [6, 7]; its regular pentagons and 20 regular hexagons with 60 irregular ones, fixed by the OG, we found nowhere.</li>
+<li><b>The others.</b> We found no polyhedron with the counts of the TPP (60 triangles + 120 pentagons, 212 corners), the DPHP (12 decagons + 20 hexagons + 120 pentagons, 270 corners), the TPH (120 triangles + 12 pentagons, 80 corners), the TQH, the TQP or the TQHD.</li>
+</ul>
+<p>In the sources checked (the full text of the 80 library sources listed in the appendix, and web searches on 20 October 2026) we did not find the eight solids, their exact shapes, the shells and pieces, or the two breaks. <b>Claimed:</b> the eight solids as the exact steps of T and P from the OG, their exact faces and volumes, the exact shells and their pieces, and where and why the nesting breaks. <b>Not claimed:</b> the steps themselves (antipedal and pedal), the KRE's type, or anything beyond four steps.</p>
+
+<h2>6. Further work</h2>
+<ul>
+<li>Short papers on single solids of the family, after this one.</li>
+<li>The family in the Kaleidohedra app, with the breaks shown as a feature (the TPP's corners through the DPHP).</li>
+<li>Steps beyond four, which need exact arithmetic: float cannot be trusted there, as nearly coplanar faces merge or split.</li>
+</ul>
+
+<h2>Data and reproducibility</h2>
+<p>Exact scripts (ℚ(√5)), in studies/2026-10-19-five-fold-octet at the commit above: exact_upward.py (KRE, PHE, TPP, DPHP and their shells), exact_downward.py (TPH, TQH, TQP, TQHD, T(P(S)) = S, nesting and shells), family_facts.py (the OG in this frame, P(KRE), regular faces, the OG's five-fold corners), built on exact_cycle.py and exact_shells.py from [2]. Logs and data: exact-downward.log, family-facts.log, data/exact_upward.json, data/exact_downward.json, data/family_facts.json, data/og-family-solids.json (float corners and ordered faces of all nine solids). Figures: family_figs.py, shots.mjs, family_compose.py.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>DICTO, The DICTO Ogdoecontahedron, DICTO DOI: 10.5281/zenodo.23404688.</li>
+<li>DICTO, Universal PiTet: The DICTO PiTet Proposition, DICTO DOI: 10.5281/zenodo.23463305.</li>
+<li>F. Smarandache, Nine solved and nine open problems in elementary geometry, arXiv:1003.2153 (2010), problem 7.3.</li>
+<li>Pedal polygon and antipedal triangle: e.g. M. Ferrarello, M. F. Mammana, M. Pennisi, Pedal polygons, Forum Geometricorum 13 (2013).</li>
+<li>C. Castellano, C. Manack, Linear triangle dynamics: the pedal map and beyond, arXiv:1312.0281 (2013).</li>
+<li>M. Goldberg, A class of multi-symmetric polyhedra, Tôhoku Math. J. 43 (1937) 104–108.</li>
+<li>Goldberg polyhedron, Wikipedia, https://en.wikipedia.org/wiki/Goldberg_polyhedron (accessed 20 October 2026).</li>
+<li>Rhombic enneacontahedron, Wikipedia, https://en.wikipedia.org/wiki/Rhombic_enneacontahedron (accessed 20 October 2026).</li>
+</ol>
+
+<h2>Appendix. The reference library searched</h2>
+<p>The full text of the 80 sources below in DICTO's reference library was searched on 20 October 2026 for: pedal, antipedal, reciprocation, polar, canonical, foot of the perpendicular, enneacontahedron, Goldberg, kite, and the corner and face counts of the eight solids. None contains the results of this paper. The relevant hits are Goldberg's paper and the Wikipedia page on Goldberg polyhedra [6, 7], and Kabai's and Grünbaum's mentions of the rhombic enneacontahedron. Thirteen further items are page images without a text layer (the patents of Fuller, Snelson, Pearce, Baer, Hogan, Bergman and Lalvani, and Fedorov 1885).</p>
+<p><b>Web searches (20 October 2026):</b> pedal and antipedal polyhedra and their iteration; polyhedra with the counts of each of the eight solids; 30 rhombi with 60 kites; iterated polar reciprocation through perpendicular planes.</p>
+<table class="lib"><tr><th>Author(s)</th><th>Year</th><th>Title</th></tr>__LIBROWS__</table>
+</body></html>
