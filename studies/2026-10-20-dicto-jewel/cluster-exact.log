@@ -1,6 +1,6 @@
 PASS Jewels on neighbouring even cells (1,1,0) share exactly one window; at (2,0,0) none
 PASS tetrahedral cluster: every pair of its 4 Jewels shares one window (6 windows)
-PASS tetrahedral cluster: 228 faces (192 triangles + 36 rhombi), volume 4 Jewels = 48 (3/4 at Jewel Cube edge 1)
+PASS tetrahedral cluster: 228 faces (192 triangles + 36 rhombi), volume 4 Jewels = 48 (3/4 at Hexa cube edge 1)
 PASS all four Jewels meet at one point, the cells' common corner
 PASS tetrahedral clusters on the anchors 2Z^3 cover every Jewel exactly once
 PASS octahedral cluster: its 6 Jewels share 12 windows (each Jewel with its 4 neighbours in the ring)
@@ -8,4 +8,11 @@ PASS octahedral cluster: outer surface 288 faces (240 triangles + 48 rhombi), pl
 PASS octahedral clusters tile with loose stellas on 12 lattices of index 12 (e.g. rows (1,0,3), (0,1,5), (0,0,12)); each period holds 1 cluster (6 Jewels) and 5 loose stellas
 PASS rhombohedron (60 degree angles): its 8 Jewels meet face to face on 18 windows, 12 along its edges and 6 along the short diagonals of its faces
 PASS all 6 face-neighbours of the odd cell (1,1,1) are corners of the rhombohedron, so its stella is sealed inside
-PASS rhombohedron with its stella: 8 x 12 + 4 = 100 = 8 1/3 Jewels (25/16 at Jewel Cube edge 1)
+PASS rhombohedron with its stella: 8 x 12 + 4 = 100 = 8 1/3 Jewels (25/16 at Hexa cube edge 1)
+PASS every set of 4 mutually neighbouring Jewels (216 in the box) is the 4 even cells round one cell corner, one set per corner: the Jewel Tetrahedra sit on the cell corners
+PASS each Jewel lies in 8 Jewel Tetrahedra (one per corner of its cell)
+PASS each Jewel lies in 6 Jewel Octahedra (one per odd face-neighbour of its cell)
+PASS the Jewel Octahedron has 8 faces of three mutually neighbouring Jewels, and each is completed to a Jewel Tetrahedron by exactly one Jewel outside: the octet truss pattern (8 tetrahedra round each octahedron)
+PASS DICTO Jewel Octahedron: 6 Jewels and the stella of their odd cell, which is exactly the hole (the cell is the stella and the six carved roofs, jewel_exact.py): 6 x 12 + 4 = 76 (19/16), outer surface 288 faces
+PASS DICTO Jewel Tetrahedron: 4 Jewels, 48 (3/4), 228 faces, the four meeting at one point, their cell corner
+PASS without overlap at most 1/6 of the stellas lie in Jewel Octahedra (6 Jewels per Octahedron, one Jewel per stella); each of the 12 lattices reaches it: per period 6 Jewels, 6 stellas, 1 Octahedron, 5 loose stellas

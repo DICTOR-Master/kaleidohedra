@@ -4,8 +4,8 @@
 #      carved roof = roof minus the stella octangula of the cell beyond the face. Exact volumes by inclusion-exclusion of convex parts.
 #   2. The Jewel = its cell cube + 6 carved roofs: corners, faces (12 thick rhombi + 48 triangles), Euler, symmetry, volume 12.
 #   3. The Stella–Jewel Lattice, exact: an odd cell cube = its stella + the 6 carved roofs of its even neighbours, pairwise disjoint.
-#   4. The Jewel Cube (8 Jewels on a 2x2x2 block, one solid) and the Jewel Cube Key (the odd block minus the 24 roofs of its 6 cube
-#      neighbours, one solid) fill space rock-salt style, 5 : 3; the Cube's 24 roofs fill the Key's 24 recesses; window-to-window contacts.
+#   4. The Hexa (8 Jewels on a 2x2x2 block, one solid) and the Hexa-Key (the odd block minus the 24 roofs of its 6 cube
+#      neighbours, one solid) fill space rock-salt style, 5 : 3; the Hexa's 24 roofs fill the Hexa-Key's 24 recesses; window-to-window contacts.
 #   5. Why the Stella–Jewel Lattice does not twin across a (111) plane: the cube lattice is not mirror-symmetric in it.
 # usage: python3 jewel_exact.py <studies/2026-10-18-ocd-octet/scripts>
 import sys, os, json, itertools
@@ -93,20 +93,20 @@ inQ = all(all(sgn(qs(ONE, absx)) >= 0 for absx in [x if sgn(x) >= 0 else qn(x) f
 cv = [qa(qs(qs(vol(R_), cap(R_, QT1)), cap(R_, QT2)), cap(R_, QT1, QT2)) for R_ in roofs]
 ok(pair0 and inQ and all(c == qr(Fr(2, 3)) for c in cv), 'the 6 roofs lie in the odd cell, meet only in faces (pairwise intersection volume 0), each carved part = 2/3')
 ok(qa(qr(4), qm(qr(6), qr(Fr(2, 3)))) == qr(8), 'odd cell: stella 4 + 6 carved roofs 4 = 8 = its cube: the Stella–Jewel Lattice tiles space exactly, Jewel : stella = 12 : 4 = 3 : 1')
-# ---------- 4. the Jewel Cube and the Jewel Cube Key ----------
-# blocks of 2x2x2 cells (edge 4). Even blocks: Jewel Cube = 8 Jewels on the block (overlapping inside) = block cube + 24 outward carved roofs.
-# Odd blocks: Jewel Cube Key = block cube - the 24 carved roofs of the 6 neighbouring Cubes = 8 stellas + 12 double roofs.
+# ---------- 4. the Hexa and the Hexa-Key ----------
+# blocks of 2x2x2 cells (edge 4). Even blocks: Hexa = 8 Jewels on the block (overlapping inside) = block cube + 24 outward carved roofs.
+# Odd blocks: Hexa-Key = block cube - the 24 carved roofs of the 6 neighbouring Hexas = 8 stellas + 12 double roofs.
 cube_vol = qa(qr(64), qm(qr(24), qr(Fr(2, 3)))); key_vol = qs(qr(64), qm(qr(24), qr(Fr(2, 3))))
 ok(cube_vol == qr(80) and key_vol == qr(48) and qa(qm(qr(8), qr(4)), qm(qr(12), qm(TWO, qr(Fr(2, 3))))) == qr(48),
-   'Jewel Cube 64 + 24 x 2/3 = 80 (6 2/3 Jewels); Jewel Cube Key 64 - 16 = 48 (4 Jewels) = 8 stellas + 12 double roofs; 5 : 3')
+   'Hexa 64 + 24 x 2/3 = 80 (6 2/3 Jewels); Hexa-Key 64 - 16 = 48 (4 Jewels) = 8 stellas + 12 double roofs; 5 : 3')
 s = Fr(1, 4); s3 = s ** 3
-log['unit_jewel_cube_edge_1'] = {'Jewel': str(12 * s3), 'stella': str(4 * s3), 'Jewel Cube': str(80 * s3), 'Jewel Cube Key': str(48 * s3), 'carved roof': str(Fr(2, 3) * s3)}
-ok(12 * s3 == Fr(3, 16) and 80 * s3 == Fr(5, 4) and 48 * s3 == Fr(3, 4), 'at Jewel Cube edge 1: Jewel 3/16, Jewel Cube 5/4, Jewel Cube Key 3/4')
-# the 8 Jewels of a Cube: whole Jewels on all 8 cells of the block (4 even, 4 odd cells); inside the block they overlap; outside the
+log['unit_hexa_cube_edge_1'] = {'Jewel': str(12 * s3), 'stella': str(4 * s3), 'Hexa': str(80 * s3), 'Hexa-Key': str(48 * s3), 'carved roof': str(Fr(2, 3) * s3)}
+ok(12 * s3 == Fr(3, 16) and 80 * s3 == Fr(5, 4) and 48 * s3 == Fr(3, 4), 'at Hexa cube edge 1: Jewel 3/16, Hexa 5/4, Hexa-Key 3/4')
+# the 8 Jewels of a Hexa: whole Jewels on all 8 cells of the block (4 even, 4 odd cells); inside the block they overlap; outside the
 # block each outer cell face carries that cell's Jewel roof (24 roofs); a Jewel's own roofs are disjoint (part 3 at the edges), so the
-# union = block cube + 24 carved roofs, and the 24 roofs pointing into a Key from its 6 Cubes are disjoint for the same reason (part 3:
-# around any edge the configuration is that of an odd cell). The Cube's 24 roofs are exactly the Key's 24 recesses.
-# window-to-window: Cubes on even blocks 4(i,j,k), i+j+k even, i.e. FCC with offsets (4,4,0): find the faces shared by two Cubes' roofs
+# union = block cube + 24 carved roofs, and the 24 roofs pointing into a Hexa-Key from its 6 Hexas are disjoint for the same reason (part 3:
+# around any edge the configuration is that of an odd cell). The Hexa's 24 roofs are exactly the Hexa-Key's 24 recesses.
+# window-to-window: Hexas on even blocks 4(i,j,k), i+j+k even, i.e. FCC with offsets (4,4,0): find the faces shared by two Hexas' roofs
 def outer_roofs(c_block):
     out = []
     for cell in itertools.product((-1, 1), repeat=3):
@@ -121,10 +121,10 @@ for Ra in A0:
         if cap(Ra, Rb) != Z: shared.append('overlap')
         common = {key(p) for p in Ra} & {key(p) for p in Rb}
         if len(common) >= 3: shared.append(len(common))
-ok('overlap' not in shared, f'Cubes at (4,4,0): roofs never overlap; roof pairs sharing 3+ corners: {sorted(x for x in shared if x != "overlap")}')
+ok('overlap' not in shared, f'Hexas at (4,4,0): roofs never overlap; roof pairs sharing 3+ corners: {sorted(x for x in shared if x != "overlap")}')
 log['window_to_window_shared_corner_sets'] = shared
-# the windows themselves: every Jewel window (rhombus A Z B X) of each Cube's 8 Jewels, translated; windows of one Cube that coincide
-# (same four corners) with windows of the other are faces the two Cubes share
+# the windows themselves: every Jewel window (rhombus A Z B X) of each Hexa's 8 Jewels, translated; windows of one Hexa that coincide
+# (same four corners) with windows of the other are faces the two Hexas share
 def cube_windows(c_block):
     out = set()
     for cell in itertools.product((-1, 1), repeat=3):
@@ -133,11 +133,11 @@ def cube_windows(c_block):
     return out
 WA, WB = cube_windows(V3(0, 0, 0)), cube_windows(V3(4, 4, 0))
 shared_w = WA & WB
-ok(len(shared_w) == 2, f'Cubes at (4,4,0) share exactly {len(shared_w)} whole windows (thick rhombi), face to face')
+ok(len(shared_w) == 2, f'Hexas at (4,4,0) share exactly {len(shared_w)} whole windows (thick rhombi), face to face')
 log['cubes_at_440_share_windows'] = len(shared_w)
 nb12 = [(a_, b_, c_) for a_ in (-4, 0, 4) for b_ in (-4, 0, 4) for c_ in (-4, 0, 4) if sorted(map(abs, (a_, b_, c_))) == [0, 4, 4]]
 tot = sum(len(WA & cube_windows(V3(*v))) for v in nb12)
-ok(len(nb12) == 12 and tot == 24, f'each Cube meets its 12 FCC neighbours on {tot} whole windows in all (2 each)')
+ok(len(nb12) == 12 and tot == 24, f'each Hexa meets its 12 FCC neighbours on {tot} whole windows in all (2 each)')
 # ---------- 5. no twin across (111) ----------
 lat = lambda v: all(Fr(x) % 2 == 0 for x in v)
 img = [[sum(MIR[i][k] * 2 * (k == j) for k in range(3)) for i in range(3)] for j in range(3)]
