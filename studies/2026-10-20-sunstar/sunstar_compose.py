@@ -23,6 +23,6 @@ def sheet(idx, cols, path, title=None, sub=None, cell=520, gap=36, names=None, s
 sheet([1, 6, 9, 10], 4, 'cover.jpg', 'The DICTO Sunstar', 'The Sunstar, the Sunstar-Octa, the Sunstar-Hexa and the Sunstar-Hexa-Key · DICTO 2026', cell=420)
 sheet([0, 1, 2], 3, 'lattice.jpg')
 sheet([3, 4], 2, 'chain.jpg')
-sheet([5, 6, 8, 7], 2, 'clusters.jpg')
+sheet([5, 6, 8, 7], 4, 'clusters.jpg', cell=420)
 sheet([11], 1, 'hexa-key.jpg', cell=760)
 

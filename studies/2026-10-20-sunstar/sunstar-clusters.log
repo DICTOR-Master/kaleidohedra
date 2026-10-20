@@ -1,4 +1,5 @@
 PASS dodecahedra on neighbouring even cells do not overlap and touch on exactly one rhombus of equal sides (the Jewel window); two cells apart along an axis they do not touch
+PASS the contact rhombus has 108 degrees at the ridge point (cos = (1 - sqrt5)/4) and so 72 at the cube corners: a thick Penrose rhombus
 PASS the contact rhombus has three corners of the dodecahedron at the origin (two cube corners and a ridge point) and its fourth inside that face, as the Jewel window
 PASS Sunstar-Tetra / -Octa / -Rhombi: dodecahedra pairwise without overlap, meeting on 6 / 12 / 18 whole rhombi (as the Jewel clusters)
 PASS the 4 dodecahedra of the Sunstar-Tetra share one corner, the cells' common corner
@@ -9,6 +10,7 @@ PASS at Sunstar-Hexa cube edge 1: dodecahedron (5 + sqrt5)/32, Dogstar (3 - sqrt
 PASS Sunstar-Hexa: the 8 whole dodecahedra of a 2 x 2 x 2 block reach out of it by 24 roofs, pairwise without overlap (inner roofs stay in the block)
 PASS Sunstar-Hexa = block 64 + 24 roofs = 72 + 8 sqrt5; the Sunstar-Hexa-Key (a block with the 24 roofs of its 6 neighbours taken out) = 56 - 8 sqrt5 = 8 Dogstars + 12 double roofs
 PASS they fill space, block for block; volume ratio (17 + 4 sqrt5)/11 = 2.358..., irrational (the Jewel Hexa and Hexa-Key: 5 : 3)
+PASS the 24 inner roofs of a block pair up base to base across its 12 inner faces (double roofs); with the Dogstars they make the Key
 PASS each Sunstar-Hexa meets its 12 neighbours on 24 whole rhombi in all, and no two overlap
 PASS neighbouring Sunstar-Hexas (blocks one face diagonal apart) touch on exactly 2 whole rhombi, as the Jewel Hexas
 PASS the Dogstar lies wholly inside its own cell's stella octangula (volume met in full), so a Dogstar fits every cell, eight tips at each cube corner

@@ -95,7 +95,18 @@ def leaves(p):
     return True
 tips = [vadd(sd, vmul(q, s)) for sd in small_dogs for q in C8]
 ttop = [p for p in tips if leaves(p)]
-ok(len(ttop) > 0, f'{len(ttop)} spike tips of the small Dogstars lie on the great star and leave it under any enlargement: the fit is tight, scale exactly 1/phi^3')
+# Fable referee 2026-10-20: "leaves" works just above scale 1; for every larger scale the great star must be star-shaped about its
+# centre. A ray from the centre crosses each of the 12 planes once, outward, so its set of outer planes only grows; if every subset of a
+# bounded cell's outer planes is again a bounded cell's, a ray that has left the bounded cells never re-enters them.
+sigs = {frozenset(i for i in range(12) if c['planes'][i][0] != CP[i][0]) for c in cells}
+star = all(frozenset(x for x in sg if x != y) in sigs for sg in sigs for y in sg)
+per = {}
+for p in ttop:
+    sd = min(range(6), key=lambda i: qf(dot(vsub(p, small_dogs[i]), vsub(p, small_dogs[i]))))
+    per[sd] = per.get(sd, []) + [p]
+outer4 = all(len(v) == 4 and all(qf(dot(p, p)) >= max(qf(dot(q, q)) for q in [vadd(small_dogs[i], vmul(c, s)) for c in C8]) - 1e-12 for p in v) for i, v in per.items())
+ok(len(ttop) == 24 and star and len(per) == 6 and outer4,
+   'tight fit: 24 spike tips of the small Dogstars (the 4 outermost of each) lie on the great star and leave it for every enlargement about the centre (the great star is star-shaped: every subset of a bounded cell\'s outer planes is again a bounded cell\'s); scale exactly 1/phi^3')
 log['tight_tips'] = len(ttop)
 log['gsd_cells_float'] = [[[qf(x) for x in p] for p in c['corners']] for c in cells]   # for the figures only
 log['dogstar_cells'] = [i for i, c in enumerate(cells) if c['in']]

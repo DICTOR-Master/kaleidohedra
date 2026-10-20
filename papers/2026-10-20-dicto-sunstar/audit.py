@@ -7,10 +7,11 @@ LOG = open(os.path.join(S, 'sunstar-exact.log')).read() + open(os.path.join(S, '
 def chk(c, m):
     global bad; print(('PASS ' if c else 'FAIL ') + m); bad += (not c)
 r5 = 5 ** .5; phi = (1 + r5) / 2
-chk('FAIL' not in LOG and LOG.count('PASS') == 26 and '12 PASS' in txt and '14 PASS' in txt, f'logs: {LOG.count("PASS")} PASS, no FAIL; text says 12 + 14')
+chk('FAIL' not in LOG and LOG.count('PASS') == 28 and '12 PASS' in txt and '16 PASS' in txt, f'logs: {LOG.count("PASS")} PASS, no FAIL; text says 12 + 16')
 chk('Dogstar = cube - 6 roofs = 6 - 2 sqrt5' in LOG and abs((6 - 2 * r5) / 64 - (3 - r5) / 32) < 1e-15 and '(3 − √5)/32' in txt and abs(1 / 8 - 6 * (1 + r5) / 192 - (3 - r5) / 32) < 1e-15, 'Dogstar (3 - sqrt5)/32 = 1/8 - 6 roofs')
 chk('phi/2 exactly' in LOG and 'φ/2' in txt, 'Dogstar phi/2 at dodecahedron edge 1')
 chk('(5 + √5)/32' in txt and abs((10 + 2 * r5) / 64 - (5 + r5) / 32) < 1e-15 and '(5 + √5)/8' in txt and 'packing density of the dodecahedra (5 + sqrt5)/8' in LOG and abs((10 + 2 * r5) / 16 - (5 + r5) / 8) < 1e-15, 'dodecahedron (5 + sqrt5)/32, density (5 + sqrt5)/8')
+chk('great star is star-shaped' in LOG and 'star-shaped' in txt and 'cos = (1 - sqrt5)/4' in LOG and '108°' in txt and 'base to base' in LOG and 'P-type' in txt and 'Ounsted' in txt, 'referee additions: star-shaped, angle, double roofs, P-type, Ounsted')
 chk('[1, 12, 24, 8]' in LOG and '[1, 12, 30, 20]' in LOG and '24 of the 30 wedges and 8 of the 20 spikes' in txt and '63 bounded cells' in txt, 'stellation: 63 cells, Dogstar 1 + 12 + 24 + 8')
 chk('the 6 missing wedges lie on the cube axes' in LOG, 'missing wedges on axes, spike tips at cube corners')
 chk("has exactly the cell dodecahedron's 20 corners" in LOG and '24 spike tips' in LOG and '24 of their spike tips' in txt, 'great star corners; 24 tight tips')

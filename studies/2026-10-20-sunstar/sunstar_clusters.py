@@ -73,6 +73,12 @@ if len(ct) == 1:
 ok(cap(dplanes((0, 0, 0)), dplanes((1, 1, 0))) == Z and len(ct) == 1 and win and contacts((0, 0, 0), (2, 0, 0)) == [],
    'dodecahedra on neighbouring even cells do not overlap and touch on exactly one rhombus of equal sides (the Jewel window); two cells apart along an axis they do not touch')
 JW = {key(p) for p in C8} | {key(p) for p in RID}
+# Fable referee 2026-10-20: the rhombus is the whole contact (two convex solids that do not overlap meet only in one common face
+# plane, and clipping the coplanar faces finds all of it); and it is a thick Penrose rhombus: 108 degrees at the ridge point.
+poly = ct[0]; zi = next(i for i, p in enumerate(poly) if key(p) in {key(q) for q in RID})
+A_, Z_, B_ = poly[zi - 1], poly[zi], poly[(zi + 1) % 4]
+cosZ = qd(dot(vsub(A_, Z_), vsub(B_, Z_)), dot(vsub(A_, Z_), vsub(A_, Z_)))
+ok(cosZ == (Fr(1, 4), Fr(-1, 4)), 'the contact rhombus has 108 degrees at the ridge point (cos = (1 - sqrt5)/4) and so 72 at the cube corners: a thick Penrose rhombus')
 ok(sum(1 for p in ct[0] if key(p) in JW) == 3, 'the contact rhombus has three corners of the dodecahedron at the origin (two cube corners and a ridge point) and its fourth inside that face, as the Jewel window')
 # ---------- the three clusters ----------
 tet = [(0, 0, 0), (1, 1, 0), (1, 0, 1), (0, 1, 1)]
@@ -109,6 +115,12 @@ hexa = qa(qr(64), qm(qr(24), r)); key_ = qs(qr(64), qm(qr(24), r))
 ok(hexa == (Fr(72), Fr(8)) and key_ == (Fr(56), Fr(-8)) and qa(qm(qr(8), dog), qm(qr(24), r)) == key_,
    'Sunstar-Hexa = block 64 + 24 roofs = 72 + 8 sqrt5; the Sunstar-Hexa-Key (a block with the 24 roofs of its 6 neighbours taken out) = 56 - 8 sqrt5 = 8 Dogstars + 12 double roofs')
 ok(qa(hexa, key_) == qr(128) and sgn(qs(qm(hexa, qr(11)), qm(key_, (Fr(17), Fr(4))))) == 0, 'they fill space, block for block; volume ratio (17 + 4 sqrt5)/11 = 2.358..., irrational (the Jewel Hexa and Hexa-Key: 5 : 3)')
+# Fable referee 2026-10-20, the Key's make-up: a Key cell is the cube minus the 3 roofs through its outer faces = (cube minus all 6 roofs
+# of its face-neighbours, the Dogstar) plus the 3 roofs on its inner faces; and across each of the 12 inner faces the two roofs share
+# their base square, so they pair up base to base: 8 Dogstars and 12 double roofs.
+inner = [(a, b) for a, b in itertools.permutations(blk, 2) if sorted(abs(x - y) for x, y in zip(a, b)) == [0, 0, 1]]
+base = lambda a, b: frozenset(key(p) for p in roof(a, b)[:4])
+ok(len(inner) == 24 and all(base(a, b) == base(b, a) for a, b in inner), 'the 24 inner roofs of a block pair up base to base across its 12 inner faces (double roofs); with the Dogstars they make the Key')
 # into a key block: each of its 8 cells receives 3 roofs (through its 3 outer faces), a subset of the 6 into an odd cell, so disjoint
 # contacts between neighbouring twins: rhombi between dodecahedra of the two blocks
 def blk_contacts(off):
