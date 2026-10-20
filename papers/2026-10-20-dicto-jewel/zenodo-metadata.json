@@ -1,0 +1,83 @@
+{
+ "title": "The DICTO Jewel",
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "description": "<p>Put Euclid's dodecahedron on a cube, as roofs on its six faces, and carve away the stella octangulas of the six neighbouring cubes: what remains is the <b>DICTO Jewel</b>, with 38 corners and 60 faces, twelve of them thick Penrose rhombi (the windows) and 48 triangles, and volume exactly 3/16 at the scale where a 2 × 2 × 2 block of cells (the Hexa's cube, §4) has edge 1, or 12 on cells of edge 2. Jewels and stella octangulas on the other cells fill space in the rock-salt pattern, 3 : 1 by volume [2]; we prove this exactly: each stella's cube is the stella and six carved roofs of exactly 1/96 each. DICTO's clusters [2, 10], named here as single solids: the <b>DICTO Jewel-Tetra</b> (4 Jewels, 228 faces, 3/4), whose copies share out all Jewels, and the <b>DICTO Jewel-Octa</b> (6 Jewels and the stella that exactly fills their hole, 19/16), which tiles space with <i>loose</i> stellas (stellas inside no piece) on exactly 12 lattices of translations, all one tiling up to its symmetry. Together they sit in the pattern of the octet truss, eight Jewel-Tetras round each Jewel-Octa, but as overlapping solids, not as a tiling: without overlap at most one stella in six can be inside a Jewel-Octa, and the 12 lattices reach that bound. The third, the <b>DICTO Jewel-Rhombi</b>, is eight Jewels on the corners of the face-centred cubic cell, meeting on 18 windows, with the stella sealed inside (396 faces, 25/16). Each of the three tiles space with loose stellas (on 4, 12 and 25 lattices of translations; 2, 1 and 9 up to symmetry); none can without stellas, since Jewels are only three quarters of space. The <b>DICTO Hexa</b> and <b>DICTO Hexa-Key</b> [12] (5/4 and 3/4, filling space 5 : 3, two windows between neighbouring Hexas), checked numerically in [12], are proved exactly. As a solid the Jewel is pyritohedral, so it twins like the Ogdoecontahedron [5]; its packing does not twin by a (111) mirror, because that mirror does not keep the cube lattice. All claims are exact in ℚ(√5) except where marked float.</p><p>Builds on Kagome Hulls (DICTO DOI 10.5281/zenodo.23376317) and The DICTO Hexa (DICTO DOI 10.5281/zenodo.23376320). Finding #41 on dictospheres.com. Scripts, exact checks and data: https://github.com/DICTOR-Master/kaleidohedra/tree/d475b59/studies/2026-10-20-dicto-jewel, also attached here (dicto-jewel-study-d475b59.zip).</p>",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "keywords": [
+  "DICTO Jewel",
+  "DICTO Jewel-Tetra",
+  "DICTO Jewel-Octa",
+  "DICTO Jewel-Rhombi",
+  "DICTO Hexa",
+  "DICTO Hexa-Key",
+  "Stella–Jewel Lattice",
+  "stella octangula",
+  "Euclid dodecahedron",
+  "Penrose rhombus",
+  "rock-salt",
+  "space filling",
+  "octet truss",
+  "pyrochlore",
+  "pyritohedral",
+  "exact arithmetic"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/d475b59/studies/2026-10-20-dicto-jewel",
+   "relation": "isSupplementedBy",
+   "resource_type": "dataset",
+   "scheme": "url"
+  },
+  {
+   "identifier": "10.5281/zenodo.23173809",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23376317",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23376320",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23284106",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23257393",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23490114",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23484012",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23457016",
+   "relation": "references",
+   "scheme": "doi"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-20",
+ "access_right": "open"
+}
