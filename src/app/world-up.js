@@ -4,7 +4,7 @@
 // without end (each next solid has its faces through the last one's corners, at right angles to them). Triangles stay throughout (DICTO's
 // name: Pi for the spherical progression, Tet for the triangles). Proved exactly in the research study studies/2026-10-19-five-fold-octet.
 // Views: the shells; the 12 five-sided Vajras (inward pyramid + twisted frustum + outward pyramid, one convex piece each); the hexagonal
-// Cleo stage (ID -> OG -> RT). The cycle's endless film is its own world on Dual Vision's standard (world-up-film.js), one tap away.
+// Cleo stage (ID -> OG -> RT); the DICTO OG Family (#39): the same step run up and down from the OG, and where its nesting breaks. The cycle's endless film is its own world on Dual Vision's standard (world-up-film.js), one tap away.
 // Data: up-data.js (scripts/build-up-data.py). Words: i18n up.*.
 import DATA from './up-data.js';
 import { createLayeredWorld, ROLE } from './world-chains.js';
@@ -19,10 +19,15 @@ Object.assign(ROLE, {
   upCleo: 0xffc857, upInPyr5: 0xffa726, upPyr5: 0xf06292, upPyr3: 0xf8bbd0, upHexCleo: 0xfff176, upVajra: 0xff8a65, upKitePyr: 0xffd180,       // pyramids: warm
   upCValley: 0x5fd38a, upValley: 0xaed581, upTet: 0x81c784,                                                                  // tetrahedra: green
   upFrustum: 0x4dd0e1, upRhomb: 0x9fb4c8, upPent: 0x64b5f6, upHex: 0x4db6ac, upTri: 0x7986cb, upCone5: 0x90caf9,           // shell pieces: blue
-  upCone3: 0x80deea, upLow: 0xb3c7f7, upIDGlass: 0xf3ead6 });
+  upCone3: 0x80deea, upLow: 0xb3c7f7, upIDGlass: 0xf3ead6,
+  // The DICTO OG Family (#39, DICTO 2026-10-20): the solid inside gold, the shell pieces cool (one colour per shape), the outer solid of
+  // a break in glass with a red mark on each corner that pokes through it
+  ogfCore: 0xffc857, ogfGlass: 0xdfe6ea, ogfPoke: 0xd11f1f,
+  ogfP0: 0x64b5f6, ogfP1: 0x4dd0e1, ogfP2: 0x7986cb, ogfP3: 0x4db6ac, ogfP4: 0x9575cd, ogfP5: 0x81d4fa, ogfP6: 0x80cbc4,
+  ogfP7: 0x5c6bc0, ogfP8: 0x26a69a, ogfP9: 0xb39ddb, ogfP10: 0x29b6f6, ogfP11: 0x4fc3f7, ogfP12: 0x9fa8da, ogfP13: 0x00acc1 });
 export function createUpWorld({ scene, fitView, openWorld = () => {} }) {
   const w = createLayeredWorld({ scene, fitView, name: 'up', data: DATA, kinds: ['up'], prefix: 'up',
-    glassRoles: { up: new Set(['upIDGlass']) }, defaultParts: { up: 'shells' } });
+    glassRoles: { up: new Set(['upIDGlass', 'ogfGlass']) }, defaultParts: { up: 'shells' }, pinnedRoles: new Set(['ogfPoke']) });
   // the cycle's film (DICTO 2026-10-19: "Dual Vision is the standard") lives in its own world, as Vajrayana's Cleo button opens Theaetetus
   const panel = document.getElementById('worldup-panel');
   const filmBtn = document.createElement('button'), kpBtn = document.createElement('button');

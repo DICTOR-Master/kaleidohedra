@@ -1,5 +1,5 @@
 // The Universal PiTet world (DICTO 2026-10-19) through the real UI on an iPad, from both doors (SITE=kaleidohedra | rhombiverse): first in
-// DICTO's block, opened from the wizard, its four views (shells 308, Vajras, hexagonal Cleos, the cycle), the endless film's Unwrap / Wrap
+// DICTO's block, opened from the wizard, its views (shells 308, Vajras, hexagonal Cleos, the DICTO OG Family up / down / breaks, the cycle), the endless film's Unwrap / Wrap
 // toggles (play, pause, the other way), Pull apart, the ?open=up:cycle link; no errors. Screenshots.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
@@ -20,8 +20,9 @@ await page.waitForTimeout(2500);
 const panel = page.locator('#worldup-panel');
 const sel = panel.locator('select[data-select="part"]');
 const views = await sel.evaluate((s) => [...s.options].map((o) => o.value + '=' + o.textContent));
-console.log('views:', views.join(' | ')); assert.equal(views.length, 3); assert.match(views[0], /^shells=.*308/);
-for (const v of ['shells', 'vajras', 'hexcleo']) { await sel.selectOption(v); await page.waitForTimeout(900); await page.screenshot({ path: `${SH}/up-${SITE}-${v}.png` }); }
+console.log('views:', views.join(' | ')); assert.equal(views.length, 7); assert.match(views[0], /^shells=.*308/);
+for (const v of ['shells', 'vajras', 'hexcleo', 'ogUp', 'ogDown', 'ogBreakUp', 'ogBreakDown']) { await sel.selectOption(v); await page.waitForTimeout(900); await page.screenshot({ path: `${SH}/up-${SITE}-${v}.png` }); }
+for (const v of ['ogUp', 'ogDown']) { await sel.selectOption(v); await page.waitForTimeout(700); await panel.locator('.ch-apart-row input').fill('500'); await page.waitForTimeout(800); await page.screenshot({ path: `${SH}/up-${SITE}-${v}-apart.png` }); await panel.locator('.ch-apart-row input').fill('0'); }
 await sel.selectOption('shells'); await page.waitForTimeout(600);
 await panel.locator('.ch-apart-row input').fill('600'); await page.waitForTimeout(700); await page.screenshot({ path: `${SH}/up-${SITE}-apart.png` });
 // the cycle film: its own world on Dual Vision's standard, one tap away
@@ -52,6 +53,11 @@ await page.screenshot({ path: `${SH}/up-${SITE}-kp-run.png` });
 await kp.locator('[data-upf="pieces"]').tap(); await page.waitForTimeout(1500); await page.screenshot({ path: `${SH}/up-${SITE}-kp-pieces.png` });
 await kp.locator('[data-upf="negative"]').tap(); await page.waitForTimeout(1500); await page.screenshot({ path: `${SH}/up-${SITE}-kp-negative.png` });
 assert.ok(await kp.locator('[data-upf="negative"]').evaluate((b) => b.classList.contains('active')), 'Negative on');
+// the DICTO OG Family (#39) link: the paper's View in app button
+await page.goto(`${BASE}/index.html?site=${SITE}&open=up:ogUp`); await page.waitForTimeout(3500);
+if (await page.locator('#welcome-overlay').isVisible()) { await page.keyboard.press('Enter'); await page.waitForTimeout(2500); }
+assert.equal(await page.locator('#worldup-panel select[data-select="part"]').inputValue(), 'ogUp', 'OG family opened by link');
+await page.screenshot({ path: `${SH}/up-${SITE}-og-family-link.png` });
 // links
 await page.goto(`${BASE}/index.html?site=${SITE}&open=upFilm`); await page.waitForTimeout(4000);
 assert.equal(await page.locator('#worldupfilm-panel').isVisible(), true, 'film opened by link');

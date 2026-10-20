@@ -73,7 +73,7 @@ export function filmOrder(list, named = []) {
 
 /** A world of nested shells (Multi-shell chains, DICTO Dodeca): data { kind: { views: { view: [[role, vertices, faces]] } } },
  *  words under '<prefix>.<kind>.<view>' and '<prefix>.note.<kind>'. */
-export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null }) {
+export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null, pinnedRoles = new Set() }) {
   const STORAGE_KEY = storageKey(name);
   const group = new THREE.Group();
   group.visible = false;
@@ -173,7 +173,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       if (!see && view.byFace) {
         if (!faceMoves.has(V)) faceMoves.set(V, faceMove(V, F, c0));
         off = faceMoves.get(V).map((c) => c * view.apart);
-      } else if (!see) off = centreOf(V).map((c, i) => (c - c0[i]) * view.apart);
+      } else if (!see && !pinnedRoles.has(role)) off = centreOf(V).map((c, i) => (c - c0[i]) * view.apart);   // pinned: marks that stay on their corner
       // Each solid piece is drawn 0.4% smaller about its own centre (DICTO 2026-10-15): faces two pieces share then sit a hair apart, so
       // they never fight in depth (the speckles the X-ray cut showed); too small to see in the closed views. Glass shells keep their size.
       const cV = see ? null : centreOf(V);

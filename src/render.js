@@ -4347,7 +4347,7 @@ async function init() {
         // Vajrayana: tool:vajrayanaWorld:pieces opens with the closing layers shown; Theaetetus: tool:theaetetusWorld:<view> (cleostar …)
         if (action?.startsWith('tool:vajrayanaWorld:')) { vajrayanaWorld?.open(action.slice('tool:vajrayanaWorld:'.length)); action = 'tool:vajrayanaWorld'; }
         if (action?.startsWith('tool:theaetetusWorld:')) { theaetetusWorld?.openView?.(action.slice('tool:theaetetusWorld:'.length)); action = 'tool:theaetetusWorld'; }
-        // Universal PiTet: tool:upWorld:<view> (shells, vajras, hexcleo, cycle)
+        // Universal PiTet: tool:upWorld:<view> (shells, vajras, hexcleo, ogUp, ogDown, ogBreakUp, ogBreakDown, cycle)
         if (action?.startsWith('tool:upWorld:')) { upWorld?.openView?.(action.slice('tool:upWorld:'.length)); action = 'tool:upWorld'; }
         if (action?.startsWith('tool:doubleVisionWorld:')) {
           doubleVisionWorld?.open(action.slice('tool:doubleVisionWorld:'.length));

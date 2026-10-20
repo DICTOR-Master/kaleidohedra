@@ -43,7 +43,7 @@ def cone_pieces(S, N, role_of):
 def check(name, pieces, inner_vol, outer):
     tot = sum(hv(p[1]) for p in pieces if p[0] not in GLASS_ONLY)
     assert abs(tot + inner_vol - hv(outer)) < 1e-6 * hv(outer), (name, tot + inner_vol, hv(outer))
-GLASS_ONLY = {'upCoreGlass', 'upIDGlass'}
+GLASS_ONLY = {'upCoreGlass', 'upIDGlass', 'ogfGlass'}
 
 # the frame: icosahedron of edge 1, 5-fold axes on its corners
 z = 0.0
@@ -140,6 +140,33 @@ for r, V, F in shells + vajras + hexcleo:
     if r not in GLASS_ONLY: shape_of.setdefault(r, set()).add(sig(V))     # the ID glass of the hexagonal view is the cycle's ID
 assert all(len(s) == 1 for s in shape_of.values()), {r: len(s) for r, s in shape_of.items() if len(s) > 1}
 assert len({next(iter(s)) for r, s in shape_of.items()}) == len(shape_of)       # every role a different shape
+# ---- The DICTO OG Family (#39, DICTO 2026-10-20): the same step from the OG, four times up and (reversed) four times down ----
+# Up: T (faces through the corners, at right angles). Down: the reverse step, whose corners are the foot points of the face planes.
+# Exact in the research study (exact_upward.py, exact_downward.py); here in float, with the corner counts and T(down) = above checked.
+def rev(S): n, d = planes(S); return uniq(n * d[:, None])
+fam = {'OG': OG}; S_ = OG
+for nm, nc in (('KRE', 92), ('PHE', 180), ('TPP', 212), ('DPHP', 270)): S_ = nxt(S_); assert len(S_) == nc, (nm, len(S_)); fam[nm] = S_
+S_ = OG
+for nm, nc in (('TPH', 80), ('TQH', 132), ('TQP', 140), ('TQHD', 162)):
+    T_ = rev(S_); assert len(T_) == nc, (nm, len(T_))
+    assert np.max(np.linalg.norm(nxt(T_)[:, None] - S_[None], axis=2).min(1)) < 1e-7      # T undoes the step down
+    fam[nm] = T_; S_ = T_
+famsig, FAMCOL = {}, []
+def fam_role(V):                       # colour by shape across the family views: one role per shape (mirror images count as one)
+    k = sig(V)
+    if k not in famsig: famsig[k] = f'ogfP{len(famsig)}'
+    return famsig[k]
+def fam_shell(a, b):
+    ps = cone_pieces(fam[a], fam[b], lambda n: 'p'); ps = [[fam_role(p[1]), p[1], p[2]] for p in ps]
+    check(f'{a} -> {b}', ps, hv(fam[a]), fam[b]); return ps
+ogUp = [piece('ogfCore', fam['OG'])] + fam_shell('OG', 'KRE') + fam_shell('KRE', 'PHE') + fam_shell('PHE', 'TPP')
+ogDown = [piece('ogfCore', fam['TQH'])] + fam_shell('TQH', 'TPH') + fam_shell('TPH', 'OG')
+def poke(inner, outer):                # the break: the inner solid, the outer in glass, a small mark on each corner that pokes out
+    n, d = planes(fam[outer]); out = [v for v in fam[inner] if np.max(n @ v - d) > 1e-9]; assert len(out) == 60, (inner, len(out))
+    mk = [piece('ogfPoke', v + 0.04 * np.vstack([np.eye(3), -np.eye(3)])) for v in out]    # a small octahedron on each
+    return [piece('ogfCore', fam[inner]), piece('ogfGlass', fam[outer])] + mk
+ogBreakUp, ogBreakDown = poke('TPP', 'DPHP'), poke('TQP', 'TQH')
+assert len(famsig) <= 16, len(famsig)
 # ---- the film world's data (world-up-film.js, cloned from Vajrayana's cycle; DICTO 2026-10-19 "Dual Vision is the standard"): the stations
 # of one turn and, for the pieces toggle, each shell's pieces keyed by the station that closes it (they peel with it)
 def solid_of(S): S = uniq(S); return {'v': np.round(S, 6).tolist(), 'f': faces(S)}
@@ -151,7 +178,7 @@ film = {'K': K, 'stations': {'ID': solid_of(ID), 'RT': solid_of(RT), 'GTI': soli
         'view': {'dir': [0.45, 0.35, 1.0], 'up': [0.0, 1.0, 0.0]}, 'radius': float(np.linalg.norm(ID2, axis=1).max())}
 with open(os.path.join(os.path.dirname(OUT), 'up-film-data.js'), 'w') as f:
     f.write('// Built by scripts/build-up-data.py (Universal PiTet film, DICTO 2026-10-19). Do not edit.\nexport default ' + json.dumps(film, separators=(',', ':')) + ';\n')
-data = {'up': {'views': {'shells': shells, 'vajras': vajras, 'hexcleo': hexcleo, }, 'K': K, 'turnRadius': float(np.linalg.norm(RT, axis=1).max())}}
+data = {'up': {'views': {'shells': shells, 'vajras': vajras, 'hexcleo': hexcleo, 'ogUp': ogUp, 'ogDown': ogDown, 'ogBreakUp': ogBreakUp, 'ogBreakDown': ogBreakDown}, 'K': K, 'turnRadius': float(np.linalg.norm(RT, axis=1).max())}}
 with open(OUT, 'w') as f:
     f.write('// Built by scripts/build-up-data.py (Universal PiTet, DICTO 2026-10-19). Do not edit.\nexport default ' + json.dumps(data, separators=(',', ':')) + ';\n')
-print({k: len(v) for k, v in data['up']['views'].items()}, 'bytes', os.path.getsize(OUT))
+print({k: len(v) for k, v in data['up']['views'].items()}, 'family shapes', len(famsig), 'bytes', os.path.getsize(OUT))
