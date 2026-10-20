@@ -12,7 +12,7 @@
 import itertools, sys, numpy as np, manifold3d as m3
 from skimage.measure import marching_cubes
 from scipy.ndimage import gaussian_filter
-RHO_OCT, TIP_OCT, RHO_TET, TIP_TET, TET_LEN, K, STEP = 0.24, 0.06, 0.22, 0.07, 0.62, 0.04, 0.02
+RHO_OCT, TIP_OCT, RHO_TET, TIP_TET, TET_LEN, K, STEP = 0.21, 0.06, 0.17, 0.06, 0.78, 0.04, 0.02
 if len(sys.argv) > 4: RHO_OCT, TIP_OCT, RHO_TET, TIP_TET = map(float, sys.argv[1:5])
 AX = np.vstack([np.eye(3), -np.eye(3)])
 def tet_legs(t):
@@ -33,6 +33,21 @@ def field(X, c, L, RHO0, RHO1):
     for l in L:
         t = np.clip(D @ l / R0, 0, 1); ds.append(np.linalg.norm(D - np.outer(t * R0, l), axis=1) - (RHO0 * (1 - t) + RHO1 * t))
     ds = np.array(ds); m = ds.min(0); return m - K * np.log(np.exp(-(ds - m) / K).sum(0))
+# the texture (DICTO: flattened triangles and hexagons, interlocking with the opposite piece): a relief added to the boundary between the
+# pieces, + on the Oktjiru's distance and - on the Tetjiru's, so where one rises the other has the matching hollow (still a partition).
+# The pattern: three waves at 120 deg on any face (from the four tetrahedral directions), flattened into plateaus: raised hexagons and
+# sunk triangles, the impression of the triangle-hexagon tiling on the curved walls. TEX = 0 turns it off.
+import os as _os
+TEX = float(_os.environ.get('TEX', '0')); TEX_N, TEX_SHARP = 7, 4.0
+# wave vectors pi N (+-1, +-1, +-1): a whole number of waves along every lattice step (1,1,0) etc., so every Oktjiru (and every Tetjiru
+# of a turn) carries the same texture: still one shape each. Wavelength 2 / (N sqrt3) = 0.165.
+_TD = np.array([[1, 1, 1], [1, -1, -1], [-1, 1, -1], [-1, -1, 1]], float)
+def texture(X):
+    w = np.cos(np.pi * TEX_N * (X @ _TD.T)).sum(1); return np.tanh(TEX_SHARP * w)
+_field = field
+def field(X, c, L, RHO0, RHO1):
+    f = _field(X, c, L, RHO0, RHO1)
+    return f if not TEX else f + (TEX if len(L) == 6 else -TEX) * texture(X)
 _cache = {}
 def piece_mesh(c, legs, A, W, half=1.35):
     """the piece of centre c: marching cubes on g = f_c - min over the others, on a grid round c"""
@@ -41,7 +56,7 @@ def piece_mesh(c, legs, A, W, half=1.35):
     others = [o for o in centres_near(c, 2 * half + .2) if np.linalg.norm(o[0] - c) > 1e-9]
     fc = field(G, c, legs, A, W); m = np.full(len(G), np.inf)
     for o in others: m = np.minimum(m, field(G, *o))
-    g = gaussian_filter((fc - m).reshape(n, n, n), 1.2)          # smooths the grid steps away (about 0.02 wide), not the shape
+    g = gaussian_filter((fc - m).reshape(n, n, n), 0.8 if TEX else 1.2)          # smooths the grid steps away (about 0.02 wide), not the shape
     g[0], g[-1], g[:, 0], g[:, -1], g[:, :, 0], g[:, :, -1] = 1, 1, 1, 1, 1, 1
     V, F, _, _ = marching_cubes(g, 0.0, spacing=(STEP,) * 3); V = V - half + c
     mf = m3.Manifold(m3.Mesh(vert_properties=np.array(V, np.float32), tri_verts=np.array(F, np.uint32)))
