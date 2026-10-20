@@ -1,0 +1,9 @@
+PASS the OG: 102 corners centred at the origin, 20 hexagons and 60 kites
+PASS the 80 spires (face pyramids to the centre) add up to the OG exactly: -1000/1539|1240/1539
+PASS neighbouring spires meet only in faces (180 shared edges of the OG; first 60 pairs checked by exact intersection)
+PASS the 20 hexagonal spires are one shape, and the 60 kite spires are one shape (corner matching)
+PASS hexagonal spire -2/81|2/81, kite spire -4/1539|8/1539; 20 + 60 of them = the OG
+PASS heights squared: hexagonal 2/9|2/27 (0.622782), kite 42/109|2/109 (0.652955)
+PASS shares of the OG: hexagonal spires 13/22|-3/110 (0.529925), kite spires 9/22|3/110 (0.470075)
+hex spire edges^2 ['2/9|-2/27', '4/9|0']
+kite spire edges^2 ['170/361|2/361', '2/9|-2/27', '4/9|0', '86/3249|2/361']
