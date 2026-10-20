@@ -5958,6 +5958,8 @@ async function init() {
         const c = P.reduce((t, x) => t.add(x), new THREE.Vector3()).divideScalar(P.length), nrm = P[1].clone().sub(P[0]).cross(P[2].clone().sub(P[0])).normalize();
         return nrm.dot(camera.position.clone().sub(c).normalize());
       },
+      /** Screen points of the ghosts (what comes next), in slot order (DICTO 2026-10-20: cluster helpers tapped through the real canvas). */
+      ghosts() { const out = []; scene.traverse((o) => { if (o.userData?.poly === 'ghost') { o.geometry.computeBoundingSphere(); out[o.userData.slot] = toScreen(o.localToWorld(o.geometry.boundingSphere.center.clone())); } }); return out.filter(Boolean); },
       /** The screen point inside face f of node i (between its centre and first corner, nearer the centre). */
       face(i, f) { const n = polyWorld.snapshot().nodes[i], spec = POLYHEDRA_ALL[n.shape], at = placed(n), P = spec.faces[f].map((v) => at(spec.vertices[v])); const c = P.reduce((t, x) => t.add(x), new THREE.Vector3()).divideScalar(P.length); return toScreen(c); },
       /** The screen point just inside face f near its corner v (within a finger's reach of the corner). */

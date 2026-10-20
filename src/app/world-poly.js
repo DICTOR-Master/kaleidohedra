@@ -308,8 +308,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     if (!view.hints || !hasHints()) return { slots: [], glow: new Map() };
     const key = JSON.stringify(nodes.map((n) => [n.shape, n.transform]));
     if (hintCache.key === key) return hintCache;
-    const last = nodes.at(-1);
-    const slots = hintSlots(nodes, POLYHEDRA, { near: last?.transform.position });
+    const slots = hintSlots(nodes, POLYHEDRA); // round the build's middle, not the last piece (hints.js)
     hintCache = { key, slots, glow: glowFor(slots) };
     return hintCache;
   }
