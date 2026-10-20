@@ -1,0 +1,16 @@
+rods: jack 0.14->0.05, tetrapod 0.24->0.08; valid True True True
+volumes: jack 0.7203, tetrapods 0.6281 0.6281; jack + 2 tetrapods = 1.9765 (space per jack: 2)
+jack leg reach 0.976 (corner at 1); tetrapod leg reach 0.695 (leg 0.72; face at 0.289, jack centre at 0.866)
+2 x 2 x 2 box: volume 7.9059 (8), overlap 3.10e-08 (marching-cubes mesh, step 0.02)
+jacks-octet.html 6
+shots 6
+jacks-octet-a.jpg (4056, 1680)
+jacks-octet-b.jpg (2792, 1700)
+DONE
+volumes by kind: {'net': [0.628], 'tet': [0.474, 0.475], 'okt': [0.99]}
+4 x 4 x 4 box (one period): pieces sum to 63.2707 (64; marching-cubes mesh, step 0.03)
+pyro-jacks.html 5
+shots 5
+pyro-jacks-a.jpg (4056, 1680)
+pyro-jacks-b.jpg (2120, 2300)
+EXIT 0

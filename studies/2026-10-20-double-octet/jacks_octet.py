@@ -12,7 +12,8 @@
 import itertools, sys, numpy as np, manifold3d as m3
 from skimage.measure import marching_cubes
 from scipy.ndimage import gaussian_filter
-RHO_OCT, TIP_OCT, RHO_TET, TIP_TET, TET_LEN, K, STEP = 0.21, 0.06, 0.17, 0.06, 0.78, 0.04, 0.02
+RHO_OCT, TIP_OCT, RHO_TET, TIP_TET, K, STEP = 0.21, 0.06, 0.17, 0.06, 0.04, 0.02
+import os as _os0; TET_LEN = float(_os0.environ.get("TET_LEN", "0.78"))   # Tetjiru leg length
 if len(sys.argv) > 4: RHO_OCT, TIP_OCT, RHO_TET, TIP_TET = map(float, sys.argv[1:5])
 AX = np.vstack([np.eye(3), -np.eye(3)])
 def tet_legs(t):
