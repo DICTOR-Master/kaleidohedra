@@ -49,4 +49,12 @@ for kd, (f, n, d) in [(kd, next((f, n, d) for (f, n, d), r in zip(F, rays) if r 
 log['kinds'] = [{'sides': kd['sides'], 'count': kd['n'], 'volume': qs_(kd['vol']), 'share': qf(qd(qm(qr(kd['n']), kd['vol']), OTTV)), 'height': qf(kd['height2']) ** .5,
                  'edges2': sorted({qs_(d2(kd['ray'][i], kd['ray'][j])) for i in range(len(kd['ray'])) for j in range(i + 1, len(kd['ray'])) if j == len(kd['ray']) - 1 or (j - i) % kd['sides'] in (1, kd['sides'] - 1)})} for kd in kinds]
 ok(sum(kd['n'] for kd in kinds) == len(F), 'kinds of ray (corner matching): ' + '; '.join(f"{kd['n']} on {kd['sides']}-gons, height {qf(kd['height2']) ** .5:.4f}, share {qf(qd(qm(qr(kd['n']), kd['vol']), OTTV)) * 100:.2f}%" for kd in kinds))
+# DICTO 2026-10-20 ("looks tetrahedral or Cleo-Icos"): the octahedral ray is a Cleo-Icos (the pyramid from an icosahedron's centre to one
+# face), scaled: equilateral base, height^2 / edge^2 = phi^4/12 and side^2 / edge^2 = (phi^2 + 1)/4, as for the icosahedron; so the 8 octahedron
+# cuts are faces of an icosahedron centred with the OTT (the icosahedron in the octahedron at the golden section, Pacioli).
+oc = next(kd for kd in kinds if kd['n'] == 8); A_, B_, C_, O_ = oc['ray']; e2 = d2(A_, B_)
+ci = qd(qm(qm(PHI, PHI), qm(PHI, PHI)), qr(12)); cs = qd(qa(qm(PHI, PHI), ONE), qr(4))
+ok(d2(A_, B_) == d2(B_, C_) == d2(C_, A_) and qd(oc['height2'], e2) == ci and qd(d2(A_, O_), e2) == cs,
+   'the 8 octahedral rays are Cleo-Icos (similar exactly): height^2/edge^2 = phi^4/12, side^2/edge^2 = (phi^2 + 1)/4')
+log['octahedral_ray_is_cleo_icos'] = True
 json.dump(log, open(os.path.join(HERE, 'ott-rays-exact.json'), 'w'), indent=1)
