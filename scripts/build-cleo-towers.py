@@ -7,7 +7,11 @@
 #     the centre (studies/2026-10-20-og-spires).
 # Frame and size: the CLEO sphere kit's (its icosidodecahedron has circumradius 1, cleoSphere entries reused); the OG is scaled to
 # circumradius 1 too. Float here; every piece is placed by an exact symmetry of its solid and checked congruent; volumes checked.
-# Usage: python3 scripts/build-cleo-towers.py <step1-ocd-exact.json (the OG, exact)>
+#   the polar Cleo Towers: reciprocated about the GTI's circumsphere (beat k -> 5 - k): an RT core 1/c^2 of 30 rhombic rays, then shells of
+#     5, 3, 2, 1, 1 beats (studies/2026-10-20-cleo-towers/polar_exact.py);
+#   the DICTO OTT core of 38 rays: 8 Cleo-Icos (the octahedral rays are exactly Cleo-Icos), 24 triangle rays, 6 rhombic rays
+#     (studies/2026-10-20-ott-rays).
+# Usage: python3 scripts/build-cleo-towers.py <step1-ocd-exact.json (the OG, exact)> <cut8-exact.json (the OTT, exact)>
 import sys, os, re, json, itertools, math
 import numpy as np
 from scipy.spatial import ConvexHull, HalfspaceIntersection
@@ -49,6 +53,7 @@ S = [ID]
 for _ in range(4): S.append(T(S[-1]))
 c = 10 / PHI ** 4; assert key(S[4]) == key(ID * c)
 for k in range(5, 13): S.append(S[k - 4] * c)
+beat = lambda j: S[j % 4] * c ** (j // 4)
 beats = [1, 1, 2, 3, 5]; edges = [0]
 for b in beats: edges.append(edges[-1] + b)
 def towers(inner, outer):
@@ -85,6 +90,24 @@ for k, (a, b) in enumerate(zip(edges, edges[1:])):
         same = lambda A, B: len(A) == len(B) and all(np.abs(B - x).sum(1).min() < 1e-6 for x in A)
         g = next((g for g in G if same(P0 @ g.T, P)), None); assert g is not None, (pid, 'not congruent')
         tower_entries.append((k, dict(shape=pid, position=[round(float(x), 12) for x in g @ m0], quaternion=quat(g))))
+# the polar Cleo Towers (beats -7 | -2 | 1 | 3 | 4 | 5); the core: the RT 1/c^2 as 30 rhombic rays
+pbounds = [-7, -2, 1, 3, 4, 5]; pbeats = [5, 3, 2, 1, 1]; polar_entries = []
+for k, (a, b) in enumerate(zip(pbounds, pbounds[1:])):
+    canon = {}
+    for n, F, P in towers(beat(a), beat(b)):
+        pid = f'POLAR_TOWER_{k + 1}_{SIDES[n]}'
+        if pid not in canon:
+            m0 = P.mean(0); canon[pid] = (P, m0)
+            pieces[pid] = (f'Polar Cleo Tower, shell {k + 1} ({pbeats[k]} beat{"s" if pbeats[k] > 1 else ""}), on {SIDES_NAME[n]}', P - m0)
+        P0, m0 = canon[pid]
+        same = lambda A, B: len(A) == len(B) and all(np.abs(B - x).sum(1).min() < 1e-6 for x in A)
+        g = next((g for g in G if same(P0 @ g.T, P)), None); assert g is not None, (pid, 'not congruent')
+        polar_entries.append(dict(shape=pid, position=[round(float(x), 12) for x in g @ m0], quaternion=quat(g)))
+pcore = beat(-7); core_rays = []
+for e, f in faces_of(pcore):
+    P = np.vstack([pcore[f], np.zeros(3)])
+    if 'POLAR_CORE_RAY' not in pieces: pieces['POLAR_CORE_RAY'] = ('Rhombic ray (polar Cleo Towers core)', P - P.mean(0))
+    core_rays.append(P)
 core = KITS_CS['cleoSphere']['entries']
 vID = vol(ID); vOut = vol(S[12])
 tvol = sum(vol(pieces[e['shape']][1]) for _, e in tower_entries)
@@ -113,22 +136,48 @@ for e, f in faces_of(OG):
     aktis_entries.append(dict(shape=pid, position=[round(float(x), 12) for x in m[1]], quaternion=quat(m[0])))
 assert sum(1 for e in aktis_entries if e['shape'] == 'HEX_AKTIS') == 20 and len(aktis_entries) == 80
 assert abs(sum(vol(pieces[e['shape']][1]) for e in aktis_entries) - vol(OG)) < 1e-9
+pc_entries = []
+for P in core_rays:
+    m = pyr_place(pieces['POLAR_CORE_RAY'][1], P); assert m, 'polar core ray'
+    pc_entries.append(dict(shape='POLAR_CORE_RAY', position=[round(float(x), 12) for x in m[1]], quaternion=quat(m[0])))
+vpol = vol(beat(5)); assert abs(sum(vol(pieces[e['shape']][1]) for e in pc_entries + polar_entries) - vpol) < 1e-6
+# the DICTO OTT core of 38 rays (radius 1)
+D2 = json.load(open(sys.argv[2]))
+OTT = np.array([[qf(x) for x in p] for p in D2['V']]); OTT /= np.linalg.norm(OTT, axis=1).max()
+ott_entries = []
+for e, f in faces_of(OTT):
+    P = np.vstack([OTT[f], np.zeros(3)]); m = None
+    for pid in [k for k in pieces if k.startswith('OTT_')]:
+        if len(pieces[pid][1]) == len(P): m = pyr_place(pieces[pid][1], P)
+        if m: break
+    if not m:
+        m_ = P[:-1].mean(0); octa_ = len(f) == 3 and abs(abs(m_[0]) - abs(m_[1])) < 1e-9 and abs(abs(m_[1]) - abs(m_[2])) < 1e-9
+        pid = 'OTT_CLEO_ICOS' if octa_ else ('OTT_TRIANGLE_RAY' if len(f) == 3 else 'OTT_RHOMBIC_RAY')
+        pieces[pid] = ({'OTT_CLEO_ICOS': 'Cleo-Icos (DICTO OTT octahedral ray)', 'OTT_TRIANGLE_RAY': 'DICTO OTT triangle ray', 'OTT_RHOMBIC_RAY': 'DICTO OTT rhombic ray'}[pid], P - P.mean(0))
+        m = pyr_place(pieces[pid][1], P)
+    ott_entries.append(dict(shape=pid, position=[round(float(x), 12) for x in m[1]], quaternion=quat(m[0])))
+from collections import Counter as _C
+assert _C(e['shape'] for e in ott_entries) == {'OTT_CLEO_ICOS': 8, 'OTT_TRIANGLE_RAY': 24, 'OTT_RHOMBIC_RAY': 6}, _C(e['shape'] for e in ott_entries)
+assert abs(sum(vol(pieces[e['shape']][1]) for e in ott_entries) - vol(OTT)) < 1e-9
 RAW = {pid: {'name': nm, 'vertices': np.round(P, 12).tolist(), 'faces': piece_faces(P)} for pid, (nm, P) in pieces.items()}
 KITS = {
     'cleoTowers.three': {'label': 'Cleo Towers · CLEO sphere + 3 shells (1, 1, 2 beats)', 'group': 'cleo', 'entries': core + upto3},
     'cleoTowers': {'label': 'Cleo Towers · CLEO sphere + 5 shells (1, 1, 2, 3, 5 beats)', 'group': 'cleo', 'entries': core + [e for _, e in tower_entries]},
     'ogAktis': {'label': 'OG core · 20 Hex Aktis + 60 Deltoid Aktis', 'group': 'cleo', 'entries': aktis_entries},
+    'polarTowers': {'label': 'Polar Cleo Towers · RT core + 5 shells (5, 3, 2, 1, 1 beats)', 'group': 'cleo', 'entries': pc_entries + polar_entries},
+    'ottRays': {'label': 'OTT core · 8 Cleo-Icos + 24 triangle rays + 6 rhombic rays', 'group': 'cleo', 'entries': ott_entries},
 }
 out = f"""// Generated by scripts/build-cleo-towers.py (DICTO 2026-10-20). Do not edit.
 // Cleo Towers: shells of the tallest towers round the CLEO sphere in 1, 1, 2, 3, 5 beats of the Universal PiTet rule; and the OG core of
-// 80 spires: the DICTO Ogdoecontahedron as 20 DICTO Hex Aktis + 60 DICTO Deltoid Aktis, every apex at the centre (DICTO's ideas and names).
+// 80 spires: the DICTO Ogdoecontahedron as 20 DICTO Hex Aktis + 60 DICTO Deltoid Aktis, every apex at the centre (DICTO's ideas and names);
+// the polar Cleo Towers (beat k -> 5 - k about the GTI's circumsphere); and the DICTO OTT core of 38 rays (8 of them Cleo-Icos).
 import {{ specOf }} from './stellaJewel.js';
 const RAW = {json.dumps(RAW, separators=(',', ':'))};
 export const CLEO_TOWERS_ADDITIONS = Object.fromEntries(Object.entries(RAW).map(([id, p]) => [id, specOf(id, p.name, p.vertices, p.faces, false, 1)]));
 export const CLEO_TOWERS_ADDITION_IDS = Object.keys(CLEO_TOWERS_ADDITIONS);
 export const CLEO_TOWERS_KITS = {json.dumps(KITS, separators=(',', ':'))};
 // Volumes (radius-1 frame) for the tests: CLEO sphere {vID:.12f}; with 3 shells {vOut3:.12f}; with 5 shells {vOut:.12f}; the OG {vol(OG):.12f}.
-export const CLEO_TOWERS_VOLUMES = {json.dumps(dict(core=round(vID, 12), three=round(vOut3, 12), five=round(vOut, 12), og=round(vol(OG), 12)))};
+export const CLEO_TOWERS_VOLUMES = {json.dumps(dict(core=round(vID, 12), three=round(vOut3, 12), five=round(vOut, 12), og=round(vol(OG), 12), polar=round(vpol, 12), ott=round(vol(OTT), 12)))};
 """
 open(os.path.join(ROOT, 'src/krp-core/src/polyhedra/cleo-towers.js'), 'w').write(out)
 print('pieces', {k: len(v['faces']) for k, v in RAW.items()}); print({k: len(v['entries']) for k, v in KITS.items()}, 'bytes', len(out))

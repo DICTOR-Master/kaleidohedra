@@ -1,4 +1,4 @@
-// Cleo Towers and the OG core of Aktis (DICTO 2026-10-20), through the real UI on an iPad: DICTO's pieces list the new kits beside the
+// Cleo Towers, the OG core of Aktis, the polar Cleo Towers and the OTT core of rays (DICTO 2026-10-20), through the real UI on an iPad: DICTO's pieces list the new kits beside the
 // CLEO sphere and the two Aktis pieces; starting each kit builds without errors.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
@@ -13,9 +13,9 @@ const open = async () => {
 };
 await open();
 const kits = await page.evaluate(() => [...document.querySelectorAll('[data-section="kits-cleo"] [data-kit]')].map((e) => e.dataset.kit));
-for (const k of ['cleoTowers.three', 'cleoTowers', 'ogAktis']) assert.ok(kits.includes(k), `${k} listed (${kits})`);
-for (const id of ['HEX_AKTIS', 'DELTOID_AKTIS']) assert.equal(await page.locator(`[data-action="tool:polyShape:${id}"]`).count() > 0, true, `${id} listed`);
-for (const k of ['ogAktis', 'cleoTowers.three']) {
+for (const k of ['cleoTowers.three', 'cleoTowers', 'ogAktis', 'polarTowers', 'ottRays']) assert.ok(kits.includes(k), `${k} listed (${kits})`);
+for (const id of ['HEX_AKTIS', 'DELTOID_AKTIS', 'OTT_CLEO_ICOS', 'OTT_TRIANGLE_RAY', 'OTT_RHOMBIC_RAY']) assert.equal(await page.locator(`[data-action="tool:polyShape:${id}"]`).count() > 0, true, `${id} listed`);
+for (const k of ['ogAktis', 'cleoTowers.three', 'polarTowers', 'ottRays']) {
   if (k !== 'ogAktis') await open();
   const card = page.locator(`[data-kit="${k}"]`).first(); await card.scrollIntoViewIfNeeded(); await card.tap(); await page.waitForTimeout(1800);
   await page.screenshot({ path: `${process.env.SHOTS ?? '/tmp'}/kit-${k}.png` });

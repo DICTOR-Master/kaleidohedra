@@ -12,7 +12,7 @@ const volume = (s) => {
   return Math.abs(v);
 };
 const sum = (kit) => kit.entries.reduce((s, e) => { assert.ok(POLYHEDRA[e.shape], e.shape); return s + volume(POLYHEDRA[e.shape]); }, 0);
-for (const [id, n, want] of [['cleoTowers.three', 126, 'three'], ['cleoTowers', 218, 'five'], ['ogAktis', 80, 'og']]) {
+for (const [id, n, want] of [['cleoTowers.three', 126, 'three'], ['cleoTowers', 218, 'five'], ['ogAktis', 80, 'og'], ['polarTowers', 214, 'polar'], ['ottRays', 38, 'ott']]) {
   test(`${id}: ${n} pieces filling their solid`, () => {
     const kit = KITS13[id]; assert.ok(kit, id); assert.equal(kit.group, 'cleo'); assert.equal(kit.entries.length, n);
     assert.ok(Math.abs(sum(kit) - V[want]) < 1e-6, `${sum(kit)} vs ${V[want]}`);
@@ -27,4 +27,9 @@ test('Hex Aktis and Deltoid Aktis: 20 and 60, named', () => {
   assert.equal(k.filter((e) => e.shape === 'HEX_AKTIS').length, 20); assert.equal(k.filter((e) => e.shape === 'DELTOID_AKTIS').length, 60);
   assert.equal(POLYHEDRA.HEX_AKTIS.name, 'DICTO Hex Aktis'); assert.equal(POLYHEDRA.DELTOID_AKTIS.name, 'DICTO Deltoid Aktis');
   assert.equal(POLYHEDRA.HEX_AKTIS.faces.length, 7); assert.equal(POLYHEDRA.DELTOID_AKTIS.faces.length, 5);
+});
+test('polar towers end on the RT x 10/phi^4; the OTT core: 8 Cleo-Icos, 24 triangle rays, 6 rhombic rays', () => {
+  const k = KITS13.ottRays.entries, n = (id) => k.filter((e) => e.shape === id).length;
+  assert.deepEqual([n('OTT_CLEO_ICOS'), n('OTT_TRIANGLE_RAY'), n('OTT_RHOMBIC_RAY')], [8, 24, 6]);
+  assert.equal(KITS13.polarTowers.entries.filter((e) => e.shape === 'POLAR_CORE_RAY').length, 30);
 });
