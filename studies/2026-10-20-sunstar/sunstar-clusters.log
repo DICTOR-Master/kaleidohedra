@@ -1,0 +1,14 @@
+PASS dodecahedra on neighbouring even cells do not overlap and touch on exactly one rhombus of equal sides (the Jewel window); two cells apart along an axis they do not touch
+PASS the contact rhombus has three corners of the dodecahedron at the origin (two cube corners and a ridge point) and its fourth inside that face, as the Jewel window
+PASS Sunstar-Tetra / -Octa / -Rhombi: dodecahedra pairwise without overlap, meeting on 6 / 12 / 18 whole rhombi (as the Jewel clusters)
+PASS the 4 dodecahedra of the Sunstar-Tetra share one corner, the cells' common corner
+PASS the 6 dodecahedra whose roofs fill the odd cell round the Dogstar are exactly the Sunstar-Octa's, and all are corners of the Sunstar-Rhombi: the Dogstar fills each hole exactly
+PASS volumes (cells of edge 2): Sunstar-Tetra 4 D = 40 + 8 sqrt5, Sunstar-Octa 6 D + Dogstar = 66 + 10 sqrt5, Sunstar-Rhombi 8 D + Dogstar = 86 + 14 sqrt5
+PASS the Sunstar (a dodecahedron and its 6 face Dogstars) = 46 - 10 sqrt5 (cells of edge 2)
+PASS at Sunstar-Hexa cube edge 1: dodecahedron (5 + sqrt5)/32, Dogstar (3 - sqrt5)/32, Sunstar (23 - 5 sqrt5)/32, Sunstar-Tetra (5 + sqrt5)/8, Sunstar-Octa (33 + 5 sqrt5)/32, Sunstar-Rhombi (43 + 7 sqrt5)/32, Sunstar-Hexa (9 + sqrt5)/8, Sunstar-Hexa-Key (7 - sqrt5)/8
+PASS Sunstar-Hexa: the 8 whole dodecahedra of a 2 x 2 x 2 block reach out of it by 24 roofs, pairwise without overlap (inner roofs stay in the block)
+PASS Sunstar-Hexa = block 64 + 24 roofs = 72 + 8 sqrt5; the Sunstar-Hexa-Key (a block with the 24 roofs of its 6 neighbours taken out) = 56 - 8 sqrt5 = 8 Dogstars + 12 double roofs
+PASS they fill space, block for block; volume ratio (17 + 4 sqrt5)/11 = 2.358..., irrational (the Jewel Hexa and Hexa-Key: 5 : 3)
+PASS each Sunstar-Hexa meets its 12 neighbours on 24 whole rhombi in all, and no two overlap
+PASS neighbouring Sunstar-Hexas (blocks one face diagonal apart) touch on exactly 2 whole rhombi, as the Jewel Hexas
+PASS the Dogstar lies wholly inside its own cell's stella octangula (volume met in full), so a Dogstar fits every cell, eight tips at each cube corner

@@ -1,0 +1,12 @@
+PASS dodecahedron = cube 8 + 6 roofs of (1 + sqrt5)/3: 10|2
+PASS the 6 roofs reaching into an odd cell lie in it and meet only in faces (pairwise volume 0)
+PASS Dogstar = cube - 6 roofs = 6 - 2 sqrt5 = 1.527864; each even cell lies in its dodecahedron, whose roofs go into odd cells without overlap, so dodecahedra and Dogstars tile space
+PASS Dogstar volume at dodecahedron edge 1 = phi/2 exactly
+PASS dodecahedron + Dogstar = 16 = two cells; packing density of the dodecahedra (5 + sqrt5)/8
+PASS the 12 face planes of the core cut space into 63 bounded cells: core 1, pyramids 12, wedges 30, spikes 20 ([1, 12, 30, 20])
+PASS every stellation cell lies wholly inside the Dogstar or wholly outside it
+PASS Dogstar = core + 12 pyramids + 24 of 30 wedges + 8 of 20 spikes ([1, 12, 24, 8]), volumes adding up to 6 - 2 sqrt5: an exact partial stellation of the core 1/phi^3
+PASS the 6 missing wedges lie on the cube axes; the tips of the 8 spikes kept are the 8 cube corners
+PASS the great stellated dodecahedron of the core (all 63 cells) has exactly the cell dodecahedron's 20 corners: it is the EKP cell's great star
+PASS each of the 6 Dogstars of the Sunstar 1/phi^3 (round the core) lies wholly inside the great star (its volume met in full)
+PASS 24 spike tips of the small Dogstars lie on the great star and leave it under any enlargement: the fit is tight, scale exactly 1/phi^3
