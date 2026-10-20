@@ -13,4 +13,6 @@ PASS odd cell: stella 4 + 6 carved roofs 4 = 8 = its cube: the Stella–Jewel La
 PASS Jewel Cube 64 + 24 x 2/3 = 80 (6 2/3 Jewels); Jewel Cube Key 64 - 16 = 48 (4 Jewels) = 8 stellas + 12 double roofs; 5 : 3
 PASS at Jewel Cube edge 1: Jewel 3/16, Jewel Cube 5/4, Jewel Cube Key 3/4
 PASS Cubes at (4,4,0): roofs never overlap; roof pairs sharing 3+ corners: []
+PASS Cubes at (4,4,0) share exactly 2 whole windows (thick rhombi), face to face
+PASS each Cube meets its 12 FCC neighbours on 24 whole windows in all (2 each)
 PASS the mirror in a (111) plane takes the cell lattice 2Z^3 to a different lattice (e.g. (2,0,0) -> (2/3,-4/3,-4/3)): the Stella–Jewel packing cannot continue across it

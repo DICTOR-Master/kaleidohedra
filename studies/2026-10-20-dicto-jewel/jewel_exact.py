@@ -123,6 +123,21 @@ for Ra in A0:
         if len(common) >= 3: shared.append(len(common))
 ok('overlap' not in shared, f'Cubes at (4,4,0): roofs never overlap; roof pairs sharing 3+ corners: {sorted(x for x in shared if x != "overlap")}')
 log['window_to_window_shared_corner_sets'] = shared
+# the windows themselves: every Jewel window (rhombus A Z B X) of each Cube's 8 Jewels, translated; windows of one Cube that coincide
+# (same four corners) with windows of the other are faces the two Cubes share
+def cube_windows(c_block):
+    out = set()
+    for cell in itertools.product((-1, 1), repeat=3):
+        cc = [qa(c_block[i], qr(cell[i])) for i in range(3)]
+        for A, Zr, B, X in rhombi: out.add(frozenset(key(vadd(cc, p)) for p in (A, Zr, B, X)))
+    return out
+WA, WB = cube_windows(V3(0, 0, 0)), cube_windows(V3(4, 4, 0))
+shared_w = WA & WB
+ok(len(shared_w) == 2, f'Cubes at (4,4,0) share exactly {len(shared_w)} whole windows (thick rhombi), face to face')
+log['cubes_at_440_share_windows'] = len(shared_w)
+nb12 = [(a_, b_, c_) for a_ in (-4, 0, 4) for b_ in (-4, 0, 4) for c_ in (-4, 0, 4) if sorted(map(abs, (a_, b_, c_))) == [0, 4, 4]]
+tot = sum(len(WA & cube_windows(V3(*v))) for v in nb12)
+ok(len(nb12) == 12 and tot == 24, f'each Cube meets its 12 FCC neighbours on {tot} whole windows in all (2 each)')
 # ---------- 5. no twin across (111) ----------
 lat = lambda v: all(Fr(x) % 2 == 0 for x in v)
 img = [[sum(MIR[i][k] * 2 * (k == j) for k in range(3)) for i in range(3)] for j in range(3)]
