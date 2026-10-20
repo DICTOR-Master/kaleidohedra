@@ -28,6 +28,7 @@ for a, b, c in itertools.combinations([p for p in pts if abs(p.sum() - R) < 1e-9
 tet = hull(T); bip = tet + reflect(tet)
 ST = np.array(json.load(open(os.path.join(H, 'stella-37frame.json')))['V']); stella = hull(ST)
 DB = np.array([[fq(c) for c in v] for v in json.load(open(os.path.join(H, 'dbt-exact.json')))['V']]); dbt = hull(DB)
+OTV = np.array([[fq(c) for c in v] for v in json.load(open(os.path.join(H, 'cut8-exact.json')))['V']]); ott = hull(OTV)
 r = np.linalg.norm(V, axis=1); five = [i for i in range(len(V)) if r[i] > r.max() - 1e-9]
 i1 = [i for i in five if V[i, 0] > 1e-9 and V[i, 1] > 1e-9 and abs(V[i, 2]) < 1e-9][0]
 star = V[sorted({j for f in D['faces'] if i1 in f for j in f})]
@@ -38,7 +39,7 @@ def mesh(mf, colour, **kw):
 pieces, home = {}, {}
 for k, mf, col, kw in [('og', OG, '#d9a521', {}), ('ogT', reflect(OG), '#5b8fd0', {}), ('oct', octa, '#9aa7b8', dict(glass=True)), ('octT', reflect(octa), '#9aa7b8', dict(glass=True)),
                        ('cap', capL, '#3f9a5b', dict(colour2='#2a9d9a')), ('tcap', twin_cap, '#8e5bd0', {}), ('tet', tet, '#c8382f', {}), ('bip', bip, '#e07b39', {}),
-                       ('st', stella, '#e8c33a', {}), ('stT', reflect(stella), '#6aa5e0', {}), ('dbt', dbt, '#d9a521', {}), ('dbtT', reflect(dbt), '#5b8fd0', {}),
+                       ('st', stella, '#e8c33a', {}), ('stT', reflect(stella), '#6aa5e0', {}), ('dbt', dbt, '#d9a521', {}), ('dbtT', reflect(dbt), '#5b8fd0', {}), ('ott', ott, '#e0ae2c', {}), ('ottT', reflect(ott), '#6aa5e0', {}),
                        ('mg', Mg, '#c8382f', {})]:
     pieces[k], home[k] = mesh(mf, col, **kw)
 at = lambda k, off=(0, 0, 0), flip=False: [k, flip, (np.array(home[k]) * (-1 if flip else 1) + np.array(off)).tolist()]
@@ -60,6 +61,8 @@ views = {
                  place=[at('st'), ['stT', False, home['stT']], at('oct'), ['octT', False, home['octT']]]),
   'dbt': dict(label='Twin DBTs', text='DICTO Belted Triacontahedra (gold and blue) pole to pole across a twin plane', radius=1.3, target=(t2 / 2).tolist(), dir=[1, -1, 0.35],
               place=[at('dbt'), ['dbtT', False, home['dbtT']]]),
+  'ott': dict(label='Twin OTTs', text='DICTO Octahedrally Truncated Triacontahedra (gold and blue) meeting on the whole face triangle', radius=1.3, target=(t2 / 2).tolist(), dir=[1, -1, 0.35],
+              place=[at('ott'), ['ottT', False, home['ottT']], at('oct'), ['octT', False, home['octT']]]),
   'mg': dict(label='Mirror middle piece', text='the mirror middle piece (red) between an OG and its twin at an edge of the twin plane', radius=0.9, target=home['mg'], dir=[1, 1, -2.2],
              place=[['mg', False, home['mg']], at('og'), ['ogT', False, home['ogT']]]),
 }
