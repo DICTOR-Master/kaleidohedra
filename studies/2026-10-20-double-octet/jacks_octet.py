@@ -12,7 +12,8 @@
 import itertools, sys, numpy as np, manifold3d as m3
 from skimage.measure import marching_cubes
 from scipy.ndimage import gaussian_filter
-RHO_OCT, TIP_OCT, RHO_TET, TIP_TET, K, STEP = 0.21, 0.06, 0.17, 0.06, 0.04, 0.02
+RHO_OCT, TIP_OCT, RHO_TET, TIP_TET, K = 0.21, 0.06, 0.17, 0.06, 0.04
+import os as _os1; STEP = float(_os1.environ.get('STEP', '0.02'))
 import os as _os0; TET_LEN = float(_os0.environ.get("TET_LEN", "0.78"))   # Tetjiru leg length
 if len(sys.argv) > 4: RHO_OCT, TIP_OCT, RHO_TET, TIP_TET = map(float, sys.argv[1:5])
 AX = np.vstack([np.eye(3), -np.eye(3)])
@@ -43,7 +44,12 @@ TEX = float(_os.environ.get('TEX', '0')); TEX_N, TEX_SHARP = 7, 4.0
 # wave vectors pi N (+-1, +-1, +-1): a whole number of waves along every lattice step (1,1,0) etc., so every Oktjiru (and every Tetjiru
 # of a turn) carries the same texture: still one shape each. Wavelength 2 / (N sqrt3) = 0.165.
 _TD = np.array([[1, 1, 1], [1, -1, -1], [-1, 1, -1], [-1, -1, 1]], float)
+TEX_KIND = _os.environ.get('TEX_KIND', 'hex')
 def texture(X):
+    if TEX_KIND == 'tri':
+        # DICTO 10-21: "flat triangular hexagons": sines instead of cosines tell the two triangle sets apart, so one set rises as
+        # flat-topped triangles with cut corners (hexagons of 3 long + 3 short sides) and the other sinks; the next piece has the reverse
+        w = np.sin(np.pi * TEX_N * (X @ _TD.T)).sum(1); return 0.5 * (np.tanh(12 * (w - .3)) - np.tanh(12 * (-w - .3)))
     w = np.cos(np.pi * TEX_N * (X @ _TD.T)).sum(1); return np.tanh(TEX_SHARP * w)
 _field = field
 def field(X, c, L, RHO0, RHO1):
