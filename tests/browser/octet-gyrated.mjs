@@ -38,7 +38,7 @@ assert.match(await page.locator(`${panel} [data-ot-show="set"]`).getAttribute('c
 await page.tap(`${panel} [data-ot-show="network"]`); await page.waitForTimeout(1500); await page.screenshot({ path: `${SH}/gy-caps-octet-net.png` });
 await page.tap(`${panel} [data-ot-lattice="gyrated"]`); await page.waitForTimeout(1500);
 // every solid
-for (const [k, re] of [['gOG', /spinel law/], ['gCaps', /One exact kit/], ['gStella', /77\.44%/], ['gDBT', /55\.02% of space/]]) {
+for (const [k, re] of [['gOG', /spinel law/], ['gCaps', /One exact kit/], ['gStella', /77\.44%/], ['gDBT', /55\.02% of space/], ['gOTT', /52\.89% of space/]]) {
   await page.tap(`${panel} [data-ot-kit="${k}"]`); await page.waitForTimeout(1500);
   assert.match(await note(), re, `${k} described`); await page.screenshot({ path: `${SH}/gy-${k}-net.png` });
   await page.tap(`${panel} [data-ot-show="pair"]`); await page.waitForTimeout(1200); await page.screenshot({ path: `${SH}/gy-${k}-pair.png` });

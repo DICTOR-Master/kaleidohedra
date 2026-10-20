@@ -19,7 +19,7 @@ import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey } from './site.js';
 
 const FAMILIES = { keys: ['keys'], penrose: ['penrose', 'cores'], envelopes: ['grown', 'halves', 'one', 'chamber'], glue: ['envW', 'ogW', 'starW'],
-  twins: ['gOG', 'gCaps', 'gStella', 'gDBT'] };
+  twins: ['gOG', 'gCaps', 'gStella', 'gDBT', 'gOTT'] };
 const KITS = Object.values(FAMILIES).flat();
 const familyOf = (kit) => Object.keys(FAMILIES).find((f) => FAMILIES[f].includes(kit));
 const SHOWS = ['set', 'round', 'pair', 'network'];

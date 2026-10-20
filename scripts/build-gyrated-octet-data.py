@@ -1,7 +1,7 @@
 # Builds src/app/gyrated-octet-data.js for the "Octet ↔ gyrated" family of the world "The OG on the Octet Truss" (DICTO 2026-10-20;
 # paper #37a, DICTO DOI 10.5281/zenodo.23484012). Pieces are float copies of the exact solids of the research study
 # studies/2026-10-19-og-gyrated-octet: the OG (step1-ocd-exact.json), the OCD Stella turned into the #37 frame (stella-37frame.json),
-# the DICTO Belted Triacontahedron (dbt-exact.json); caps, twin cap and bipyramid are cut here with manifold3d.
+# the DICTO Belted Triacontahedron (dbt-exact.json), the DICTO OTT (cut8-exact.json); caps, twin cap and bipyramid are cut here with manifold3d.
 # Each kit: its set (one of each piece), its twin pair across x+y+z = R, and the pieces of one cell of layer 0 (octahedra centred on
 # R(a,b,c), a+b+c = 0, repeated by R(1,-1,0) and R(0,1,-1)) together with that cell mirrored in x+y+z = R (layer 1 of the gyrated octet;
 # a mirrored left cap is a right cap). The world stacks layers: octet = layer 0 moved by R(1,1,0) per layer; gyrated = layers 0 and 1
@@ -14,6 +14,7 @@ fq = lambda s: (lambda a, b: float(eval(a)) + float(eval(b)) * 5 ** .5)(*s.split
 D = json.load(open(OCTET)); V = np.array([[fq(c) for c in v] for v in D['V']]); R = fq(D['R'])
 ST = np.array(json.load(open(os.path.join(STUDY, 'stella-37frame.json')))['V'])
 DB = np.array([[fq(c) for c in v] for v in json.load(open(os.path.join(STUDY, 'dbt-exact.json')))['V']])
+OT = np.array([[fq(c) for c in v] for v in json.load(open(os.path.join(STUDY, 'cut8-exact.json')))['V']])   # the DICTO OTT
 hull = lambda P: m3.Manifold.hull_points(np.asarray(P, float))
 J = np.ones((3, 3)); MIR = np.eye(3) - 2 / 3 * J; MT = 2 * R / 3 * np.ones(3)          # mirror in x+y+z = R: x -> MIR x + MT
 def mesh(mf):
@@ -38,7 +39,7 @@ TS = tets_in_slab(); T0 = TS[0]; tet = hull(T0 - T0.mean(0))
 # a bipyramid: a layer-0 tetrahedron with a face on x+y+z = R, and its mirror
 up = [Q for Q in TS if sum(abs(p.sum() - R) < 1e-9 for p in Q) == 3][0]
 B = np.vstack([up, up @ MIR.T + MT]); bip = hull(B - B.mean(0))
-stella, dbt = hull(ST), hull(DB)
+stella, dbt, ott = hull(ST), hull(DB), hull(OT)
 pieces, pid = [], {}
 def piece(name, mf, colour, glass=False):
     P, T = mesh(mf); pid[name] = len(pieces)
@@ -46,11 +47,11 @@ def piece(name, mf, colour, glass=False):
 piece('og', OG, 0xd9a521); piece('capL', capL, 0x3f9a5b); piece('capR', m3.Manifold(m3.Mesh(vert_properties=np.ascontiguousarray(-mesh(capL)[0], dtype=np.float32),
       tri_verts=np.ascontiguousarray(mesh(capL)[1][:, ::-1], dtype=np.uint32))), 0x2a9d9a)
 piece('twinCap', twin, 0x8e5bd0); piece('tet', tet, 0xc8382f); piece('bipyramid', bip, 0xe07b39)
-piece('stella', stella, 0xe8c33a); piece('dbt', dbt, 0xd9a521)
+piece('stella', stella, 0xe8c33a); piece('dbt', dbt, 0xd9a521); piece('ott', ott, 0xe0ae2c)
 # mirror twins (layer 1, the far side of a twin pair) in blue, as in the paper's figures
-piece('ogTwin', OG, 0x5b8fd0); piece('stellaTwin', stella, 0x6aa5e0); piece('dbtTwin', dbt, 0x5b8fd0)
+piece('ogTwin', OG, 0x5b8fd0); piece('stellaTwin', stella, 0x6aa5e0); piece('dbtTwin', dbt, 0x5b8fd0); piece('ottTwin', ott, 0x5b8fd0)
 CHIRAL = {pid['capL']: pid['capR'], pid['capR']: pid['capL']}
-TWIN = {pid['og']: pid['ogTwin'], pid['stella']: pid['stellaTwin'], pid['dbt']: pid['dbtTwin']}
+TWIN = {pid['og']: pid['ogTwin'], pid['stella']: pid['stellaTwin'], pid['dbt']: pid['dbtTwin'], pid['ott']: pid['ottTwin']}
 def vol_centre(p, A, t):
     P = np.array(pieces[p]['v']) @ np.array(A).T + t; T = pieces[p]['t']; v = 0; c = np.zeros(3)
     for a, b, d in T:
@@ -85,7 +86,8 @@ kits = {
   'gOG': [item('og')],
   'gCaps': [item('og')] + caps + cell_tets,
   'gStella': [item('stella')],
-  'gDBT': [item('dbt')],   # a solid of its own (DICTO 2026-10-20): drawn solid, without the OG
+  'gDBT': [item('dbt')],
+  'gOTT': [item('ott')],   # the DICTO OTT (DICTO 2026-10-20): inside its octahedron, so it fits every stacking   # a solid of its own (DICTO 2026-10-20): drawn solid, without the OG
 }
 s = sum(vol_centre(it[0], np.array(it[1:10]).reshape(3, 3), np.array(it[10:13]))[0] for it in kits['gCaps'])
 print(f'cell kit volume {s:.6f} vs cell (32 + 16√5)/27 = {cellv:.6f}'); assert abs(s - cellv) < 1e-3
@@ -98,7 +100,7 @@ def layout(names):
         out.append(item(n, np.eye(3), np.array([x, 0, 0]) - c)); x += r + 0.15
     mid = (x - 0.15) / 2
     return [it[:10] + [it[10] - mid, it[11], it[12], it[13] - mid, it[14], it[15]] for it in out]
-SETS = {'gOG': ['og'], 'gCaps': ['og', 'capL', 'capR', 'twinCap', 'tet', 'bipyramid'], 'gStella': ['stella'], 'gDBT': ['dbt']}
+SETS = {'gOG': ['og'], 'gCaps': ['og', 'capL', 'capR', 'twinCap', 'tet', 'bipyramid'], 'gStella': ['stella'], 'gDBT': ['dbt'], 'gOTT': ['ott']}
 out = {'R': R, 'pieces': pieces, 'kits': {}}
 for k, unit in kits.items():
     st = layout(SETS[k])
