@@ -1134,7 +1134,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
           ${previewSlot(() => polyShapeEdges(k.entries[0].shape))}
           <span class="dim-wizard-row-text"><span class="dim-wizard-label">${k.label}</span><span class="dim-wizard-desc">${tn('wiz.poly.kitCount', L, k.entries.length)}</span></span>
         </button>`).join('');
-    const kits = key === DICTO_POLY.key && !picker ? [['cleo', 'wiz.poly.kitsCleo'], ['stars', 'wiz.poly.kitsStars'], ['13', 'wiz.poly.kits'], ['octet', 'wiz.poly.kitsOctet']].map(([g, title]) => `<div class="poly-section" data-section="kits-${g}"><div class="poly-section-title">${t(title, L)}</div>
+    const kits = key === DICTO_POLY.key && !picker ? [['cleo', 'wiz.poly.kitsCleo'], ['sets', 'wiz.poly.kitsSets'], ['stars', 'wiz.poly.kitsStars'], ['13', 'wiz.poly.kits'], ['octet', 'wiz.poly.kitsOctet']].map(([g, title]) => `<div class="poly-section" data-section="kits-${g}"><div class="poly-section-title">${t(title, L)}</div>
           <div class="dim-wizard-grid dicto-block" style="${style}">${kitCards(g)}</div></div>`).join('') : '';
     bodyEl.innerHTML = `
       ${back(L)}
