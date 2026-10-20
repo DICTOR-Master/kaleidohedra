@@ -69,6 +69,7 @@ def comp(F, G):  # F o G
 I3 = [[Fr(int(i == j)) for j in range(3)] for i in range(3)]
 Tc = (I3, [qm(TWO, R), Z, Z])                                         # the octet's step to the next layer: translation 2R(1,0,0)
 M0 = (MIR, [qm(qr(Fr(2, 3)), R)] * 3)                                 # mirror in the top plane x+y+z = R
+TcDown = (I3, [qn(qm(TWO, R)), Z, Z]); M0Down = (MIR, [qn(qm(qr(Fr(2, 3)), R))] * 3)               # the same steps taken downward
 ok(S(app(M0, [Z, Z, Z])) == qm(TWO, R) and S(app(Tc, [Z, Z, Z])) == qm(TWO, R), 'both steps carry the octahedron at the origin to layer 1 (x+y+z = 2R)')
 ORIGIN = [Z, Z, Z]
 def layer0(n=4):
@@ -78,8 +79,12 @@ def layer0(n=4):
     return [[qm(qr(a), R), qm(qr(b), R), qm(qr(-a - b), R)] for a, b in pts]
 def build(word, n=4):
     """layers 0..len(word): list of (map A_k, octahedron centres); A_0 = identity; word[k] is the boundary between layers k and k+1"""
+    # a mirrored layer has its reference "top" at the bottom, so its steps are taken downward in the reference frame (then mirrored up)
     maps = [(I3, [Z, Z, Z])]
-    for w in word: maps.append(comp(maps[-1], Tc if w == 'c' else M0))
+    for w in word:
+        up = maps[-1][0] == I3
+        step = (Tc if up else TcDown) if w == 'c' else (M0 if up else M0Down)
+        maps.append(comp(maps[-1], step))
     base = layer0(n); return [(Ak, [app(Ak, c) for c in base]) for Ak in maps]
 # check: layer 0 centres are octet centres (fcc: R(a,b,c), a+b+c even) and octahedra in a layer share edges only
 B0 = layer0(2); ok(B0[0] == ORIGIN and len(B0) == 19, f'layer 0: {len(B0)} octahedra round the one at the origin')
@@ -88,9 +93,11 @@ def boundary_types(word):
     Ls = build(word, 3); out = []
     for k in range(len(word)):
         cs = {key(c) for c in Ls[k + 1][1]}
-        up = app(Ls[k][0], app(M0, ORIGIN))                           # the octahedron's mirror image in its top face (layer k's frame)
+        up = app(Ls[k][0], app(M0 if Ls[k][0][0] == I3 else M0Down, ORIGIN))   # the octahedron's mirror image in its top face
         out.append('h' if key(up) in cs else 'c')
     return ''.join(out)
+for w in ['cccc', 'hhhh', 'hchc', 'hcchcc', 'chhcch']:
+    ok(all(S(app(Ak, ORIGIN)) == qm(qr(2 * k), R) for k, (Ak, _) in enumerate(build(w, 1))), f'{w}: layer k sits at x+y+z = 2kR')
 for w in ['cccc', 'hhhh', 'hchc', 'hcchcc', 'chhcch']:
     ok(boundary_types(w) == w, f'geometry reads back the stacking word {w}: an octahedron sits above an octahedron exactly at the h layers')
 

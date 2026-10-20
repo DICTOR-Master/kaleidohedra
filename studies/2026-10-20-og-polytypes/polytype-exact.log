@@ -6,6 +6,11 @@ PASS the twin rule: each solid is centre-symmetric with the three-fold axis, has
 PASS MIR = inversion o half-turn, and the half-turn = (60 deg turn)^3 (so with a 120 deg symmetry, MIR(S) = R60(S))
 PASS both steps carry the octahedron at the origin to layer 1 (x+y+z = 2R)
 PASS layer 0: 19 octahedra round the one at the origin
+PASS cccc: layer k sits at x+y+z = 2kR
+PASS hhhh: layer k sits at x+y+z = 2kR
+PASS hchc: layer k sits at x+y+z = 2kR
+PASS hcchcc: layer k sits at x+y+z = 2kR
+PASS chhcch: layer k sits at x+y+z = 2kR
 PASS geometry reads back the stacking word cccc: an octahedron sits above an octahedron exactly at the h layers
 PASS geometry reads back the stacking word hhhh: an octahedron sits above an octahedron exactly at the h layers
 PASS geometry reads back the stacking word hchc: an octahedron sits above an octahedron exactly at the h layers
