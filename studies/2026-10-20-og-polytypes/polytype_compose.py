@@ -17,7 +17,7 @@ def sheet(idx, path, title=None, sub=None, names=None, subs=None, cell=560, gap=
             d.text((x + cell / 2 - d.textlength(txt, font=fo) / 2, yy), txt, font=fo, fill=col)
     m = 'DICTO · dictospheres.com'; d.text((W - 80 - d.textlength(m, font=f(24)), Hh - 56), m, font=f(24), fill=MUTE)
     im.save(os.path.join(OUT, path), quality=90); print(path, im.size)
-sheet([0, 1, 2, 3], 'stacks.jpg', 'The OG on Every Stacking', 'OGs gold, mirror twins blue (each the OG turned 60°), twin layers faint red · side view, stacking axis upright · DICTO 2026',
+sheet([0, 1, 2, 3], 'stacks.jpg', 'The OG on Every Stacking', 'OGs gold, mirror twins blue (each the OG turned 60°), h planes faint red · side view, stacking axis upright · DICTO 2026',
       names=['3C · the octet', '2H · the gyrated octet', '6H', 'Fibonacci'], subs=['c c c c c c  ·  A B C A B C', 'h h h h h h  ·  A B A B', 'h c c h c c  ·  A B C A C B', 'c h c c h c …  ·  never repeats'])
 sheet([4, 5, 6, 7], 'fit.jpg', names=['the OTT', 'the DBT', 'the golden envelope', 'the golden envelope'],
-      subs=['on the Fibonacci stacking', 'on the Fibonacci stacking', 'across a c layer: no overlap', 'across an h layer: the tips overlap (red)'])
+      subs=['on the Fibonacci stacking', 'on the Fibonacci stacking', 'across a c plane: no overlap', 'across an h plane: the tips overlap (red)'])
