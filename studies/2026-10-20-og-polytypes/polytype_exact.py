@@ -130,7 +130,7 @@ for name in ('DBT', 'RT (golden envelope)'):
     log['overlap'][name] = res
 
 # ---------- polytypes ----------
-def abc(word):
+def abc(word):   # letter k of a periodic word is read here as the plane below layer k (build() reads it above); a cyclic shift, same symbols
     """A/B/C sequence of the close-packed stacking from the Jagodzinski word (layer k+1 relative to k: c continues the turn, h reverses)"""
     seq, d = [0, 1], 1
     for w in word[1:]:
