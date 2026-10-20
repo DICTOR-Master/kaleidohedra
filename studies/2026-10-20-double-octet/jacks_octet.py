@@ -11,7 +11,8 @@
 # volumes add up to space.
 import itertools, sys, numpy as np, manifold3d as m3
 from skimage.measure import marching_cubes
-RHO_OCT, TIP_OCT, RHO_TET, TIP_TET, TET_LEN, K, STEP = 0.24, 0.06, 0.22, 0.07, 0.62, 0.04, 0.03
+from scipy.ndimage import gaussian_filter
+RHO_OCT, TIP_OCT, RHO_TET, TIP_TET, TET_LEN, K, STEP = 0.24, 0.06, 0.22, 0.07, 0.62, 0.04, 0.02
 if len(sys.argv) > 4: RHO_OCT, TIP_OCT, RHO_TET, TIP_TET = map(float, sys.argv[1:5])
 AX = np.vstack([np.eye(3), -np.eye(3)])
 def tet_legs(t):
@@ -40,7 +41,8 @@ def piece_mesh(c, legs, A, W, half=1.35):
     others = [o for o in centres_near(c, 2 * half + .2) if np.linalg.norm(o[0] - c) > 1e-9]
     fc = field(G, c, legs, A, W); m = np.full(len(G), np.inf)
     for o in others: m = np.minimum(m, field(G, *o))
-    g = (fc - m).reshape(n, n, n); g[0], g[-1], g[:, 0], g[:, -1], g[:, :, 0], g[:, :, -1] = 1, 1, 1, 1, 1, 1
+    g = gaussian_filter((fc - m).reshape(n, n, n), 1.2)          # smooths the grid steps away (about 0.02 wide), not the shape
+    g[0], g[-1], g[:, 0], g[:, -1], g[:, :, 0], g[:, :, -1] = 1, 1, 1, 1, 1, 1
     V, F, _, _ = marching_cubes(g, 0.0, spacing=(STEP,) * 3); V = V - half + c
     mf = m3.Manifold(m3.Mesh(vert_properties=np.array(V, np.float32), tri_verts=np.array(F, np.uint32)))
     if mf.volume() < 0 or mf.status() != m3.Error.NoError:

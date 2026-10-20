@@ -20,5 +20,5 @@ def sheet(idx, cols, path, title=None, sub=None, cell=520, gap=36, names=None, s
             d.text((x + cell / 2 - d.textlength(txt, font=fo) / 2, yy), txt, font=fo, fill=col)
     m = 'DICTO · dictospheres.com'; d.text((W - 80 * K - d.textlength(m, font=f(24 * K)), Hh - 56 * K), m, font=f(24 * K), fill=MUTE)
     im.save(os.path.join(OUT, path), quality=92); print(path, im.size)
-sheet([0, 1, 2, 3], 4, 'jacks-octet-a.jpg', 'DICTO jacks', 'Six-legged jacks and tetrapods interlock and fill space, like smooth washed coral · DICTO 2026', cell=440)
+sheet([0, 1, 2, 3], 4, 'jacks-octet-a.jpg', 'DICTO Tetoktjiru', 'Coral jacks (Tibetan byi ru, coral): Oktjiru (six legs) and Tetjiru (four legs) interlock and fill space · DICTO 2026', cell=440)
 sheet([4, 5], 2, 'jacks-octet-b.jpg', cell=600)
