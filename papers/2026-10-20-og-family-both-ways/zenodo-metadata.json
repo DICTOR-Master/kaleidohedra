@@ -1,0 +1,68 @@
+{
+ "title": "The DICTO OG Family: Four Steps Up and Four Down",
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "description": "<p>In Universal PiTet a single rule T builds each solid from the last: every corner v of a solid S gives the face plane v·x = v·v, through v and at right angles to the line from the centre, and T(S) is the solid these planes bound. Started at the icosidodecahedron it closes into a four-step cycle. DICTO proposed running it from the DICTO Ogdoecontahedron (OG), and also running it the other way. The reverse step P takes as new corners the foot points of S's face planes, the points of those planes nearest the centre. From the OG, four steps of T give four solids with 92, 180, 212 and 270 corners, the <b>DICTO KRE, PHE, TPP and DPHP</b>, and four steps of P give four with 80, 132, 140 and 162 corners, the <b>DICTO TPH, TQH, TQP and TQHD</b>. All eight are proved exactly in ℚ(√5), each with the full icosahedral symmetry, and each step of P is undone exactly by T. Several have regular faces: 12 regular pentagons (PHE, TPH, TQP), 20 regular hexagons (PHE, DPHP, TQH, TQHD); the KRE has 30 rhombi and 60 kites. The family does not cycle. It nests as shells for three steps up, OG ⊂ KRE ⊂ PHE ⊂ TPP, and two steps down, TQH ⊂ TPH ⊂ OG, and each of these shells, and also the shell TQHD ⊂ TQP, is filled exactly by one piece per face of the inner solid. Both directions then break in the same way: 60 corners of the TPP stand outside the DPHP, and 60 corners of the TQP outside the TQH. In the plane, T and P are the classical antipedal and pedal constructions; the polyhedral pedal construction was posed as an open problem in 2010. We found the eight solids in no source.</p><p>Companion to The DICTO Ogdoecontahedron (#31), DICTO DOI 10.5281/zenodo.23404688, and Universal PiTet: The DICTO PiTet Proposition (#38), DICTO DOI 10.5281/zenodo.23463305. Finding #39 on dictospheres.com. Scripts, exact checks and data: https://github.com/DICTOR-Master/kaleidohedra/tree/058c2fb/studies/2026-10-19-five-fold-octet, also attached here (og-family-study-058c2fb.zip).</p>",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "keywords": [
+  "DICTO Ogdoecontahedron",
+  "DICTO KRE",
+  "DICTO PHE",
+  "DICTO TPP",
+  "DICTO DPHP",
+  "DICTO TPH",
+  "DICTO TQH",
+  "DICTO TQP",
+  "DICTO TQHD",
+  "icosahedral polyhedra",
+  "antipedal",
+  "pedal polyhedron",
+  "polar reciprocation",
+  "nested shells",
+  "golden ratio",
+  "exact arithmetic"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/058c2fb/studies/2026-10-19-five-fold-octet",
+   "relation": "isSupplementedBy",
+   "resource_type": "dataset",
+   "scheme": "url"
+  },
+  {
+   "identifier": "10.5281/zenodo.23173809",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23404688",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23463305",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "arXiv:1003.2153",
+   "relation": "references",
+   "scheme": "arxiv"
+  },
+  {
+   "identifier": "arXiv:1312.0281",
+   "relation": "references",
+   "scheme": "arxiv"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-20",
+ "access_right": "open"
+}
