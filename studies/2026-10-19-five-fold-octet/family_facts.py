@@ -33,4 +33,19 @@ for nm, T in ch.items():
     reg[nm] = {f'{k[0]}-gon {k[1]}': c for k, c in sorted(cnt.items())}
 out['faces_exact'] = reg
 out['OG_five_fold_corners_are_KRE_corners'] = sum(a in set(KRE) for a in apex)
+# the corners lost on the way up: OG -> KRE (planes that are not faces) and TPP -> DPHP; are they the corners outside the next solid?
+def lost_and_outside(S, Tn):
+    H = solid(Tn)
+    def is_face(v):   # some face plane of Tn passes through v with normal along v (the plane v.x = v.v)
+        return any((dot(n, v) - d) == Q5(0) and dot(n, v).sign() > 0 and all((n[a] * v[b] - n[b] * v[a]) == Q5(0) for a in range(3) for b in range(3))
+                   for n, d in H)
+    lost = [v for v in S if not is_face(v)]; outside = [v for v in S if any((dot(n, v) - d).sign() > 0 for n, d in H)]
+    return lost, outside
+lostOG, outOG = lost_and_outside(OG, KRE)
+out['OG_lost_corners'] = len(lostOG); out['OG_lost_are_the_12_five_fold'] = set(lostOG) == set(apex); out['OG_corners_outside_KRE'] = len(outOG)
+lostT, outT = lost_and_outside(ch['DICTO TPP'], ch['DICTO DPHP'])
+out['TPP_lost_corners'] = len(lostT); out['TPP_corners_outside_DPHP'] = len(outT); out['TPP_lost_equal_outside'] = set(lostT) == set(outT)
+TQH, TQP = ch['DICTO TQH'], ch['DICTO TQP']; Ct, Ft = polytope(solid(TQH)); Hq = solid(TQH)
+feet_out = [v for v in TQP if any((dot(n, v) - d).sign() > 0 for n, d in Hq)]
+out['TQP_corners_outside_TQH'] = len(feet_out)
 print(json.dumps(out, indent=1)); json.dump(out, open(os.path.join(HERE, 'data', 'family_facts.json'), 'w'), indent=1)

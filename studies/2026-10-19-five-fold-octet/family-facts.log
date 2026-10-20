@@ -1,0 +1,82 @@
+{
+ "mark": "DICTO OG family, extra exact facts, 2026-10-20",
+ "OG": {
+  "corners": 102,
+  "faces": 80,
+  "volume": "175/19+185/57r5",
+  "volume_float": 16.467939926973003,
+  "face_kinds": [
+   {
+    "sides": 4,
+    "count": 60
+   },
+   {
+    "sides": 6,
+    "count": 20
+   }
+  ],
+  "corner_radii_float": [
+   1.618034,
+   1.687285
+  ]
+ },
+ "OG_corners_on_a_KRE_face": 102,
+ "OG_corners_strictly_inside_KRE": 0,
+ "reverse_of_KRE": {
+  "corners": 90,
+  "equals_OG": false,
+  "subset_of_OG": true
+ },
+ "faces_exact": {
+  "DICTO OG": {
+   "4-gon irregular": 60,
+   "6-gon regular": 20
+  },
+  "DICTO KRE": {
+   "4-gon equal sides": 30,
+   "4-gon irregular": 60
+  },
+  "DICTO PHE": {
+   "5-gon regular": 12,
+   "6-gon irregular": 60,
+   "6-gon regular": 20
+  },
+  "DICTO TPP": {
+   "3-gon irregular": 60,
+   "5-gon irregular": 120
+  },
+  "DICTO DPHP": {
+   "5-gon irregular": 120,
+   "6-gon regular": 20,
+   "10-gon equal sides": 12
+  },
+  "DICTO TPH": {
+   "3-gon irregular": 120,
+   "5-gon regular": 12
+  },
+  "DICTO TQH": {
+   "3-gon irregular": 60,
+   "4-gon irregular": 60,
+   "6-gon regular": 20
+  },
+  "DICTO TQP": {
+   "3-gon irregular": 60,
+   "4-gon equal sides": 30,
+   "4-gon irregular": 60,
+   "5-gon regular": 12
+  },
+  "DICTO TQHD": {
+   "3-gon irregular": 120,
+   "4-gon irregular": 60,
+   "6-gon regular": 20
+  }
+ },
+ "OG_five_fold_corners_are_KRE_corners": 12,
+ "OG_lost_corners": 12,
+ "OG_lost_are_the_12_five_fold": true,
+ "OG_corners_outside_KRE": 0,
+ "TPP_lost_corners": 60,
+ "TPP_corners_outside_DPHP": 60,
+ "TPP_lost_equal_outside": true,
+ "TQP_corners_outside_TQH": 60
+}
