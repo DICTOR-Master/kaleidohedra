@@ -1,0 +1,109 @@
+{
+ "mark": "DICTO polar Cleo Towers, exact, 2026-10-20 \u00b7 DICTO \u00b7 dictospheres.com",
+ "rho2": "15+-5r5",
+ "polar": {
+  "ID": "RT c^1",
+  "RT": "ID c^1",
+  "GTI": "FPD",
+  "FPD": "GTI",
+  "ID c^1": "RT",
+  "RT c^1": "ID"
+ },
+ "shells": [
+  {
+   "shell": "polar shell 1: RT c^-2 -> GTI c^-1 (5 beats)",
+   "pieces": {
+    "on 4-gon": 30
+   },
+   "exact_volumes": {
+    "on 4-gon": [
+     "38821/375000+23147/500000r5"
+    ]
+   },
+   "one_volume_per_kind": true,
+   "one_symmetry_orbit_per_kind": {
+    "on 4-gon": true
+   },
+   "sum_equals_gap_exactly": true,
+   "gap": "38821/12500+69441/50000r5"
+  },
+  {
+   "shell": "polar shell 2: GTI c^-1 -> RT (3 beats)",
+   "pieces": {
+    "on 5-gon": 12,
+    "on 6-gon": 20
+   },
+   "exact_volumes": {
+    "on 5-gon": [
+     "51911/83520+-17827/83520r5"
+    ],
+    "on 6-gon": [
+     "146143/348000+6167/174000r5"
+    ]
+   },
+   "one_volume_per_kind": true,
+   "one_symmetry_orbit_per_kind": {
+    "on 5-gon": true,
+    "on 6-gon": true
+   },
+   "sum_equals_gap_exactly": true,
+   "gap": "6343/400+-741/400r5"
+  },
+  {
+   "shell": "polar shell 3: RT -> FPD (2 beats)",
+   "pieces": {
+    "on 4-gon": 30
+   },
+   "exact_volumes": {
+    "on 4-gon": [
+     "12982/27+-5800/27r5"
+    ]
+   },
+   "one_volume_per_kind": true,
+   "one_symmetry_orbit_per_kind": {
+    "on 4-gon": true
+   },
+   "sum_equals_gap_exactly": true,
+   "gap": "129820/9+-58000/9r5"
+  },
+  {
+   "shell": "polar shell 4: FPD -> ID c^1 (1 beats)",
+   "pieces": {
+    "on 3-gon": 60
+   },
+   "exact_volumes": {
+    "on 3-gon": [
+     "77875/27+-34825/27r5"
+    ]
+   },
+   "one_volume_per_kind": true,
+   "one_symmetry_orbit_per_kind": {
+    "on 3-gon": true
+   },
+   "sum_equals_gap_exactly": true,
+   "gap": "1557500/9+-696500/9r5"
+  },
+  {
+   "shell": "polar shell 5: ID c^1 -> RT c^1 (1 beats)",
+   "pieces": {
+    "on 3-gon": 20,
+    "on 5-gon": 12
+   },
+   "exact_volumes": {
+    "on 3-gon": [
+     "111375+-149425/3r5"
+    ],
+    "on 5-gon": [
+     "201250/3+-30000r5"
+    ]
+   },
+   "one_volume_per_kind": true,
+   "one_symmetry_orbit_per_kind": {
+    "on 3-gon": true,
+    "on 5-gon": true
+   },
+   "sum_equals_gap_exactly": true,
+   "gap": "3032500+-4068500/3r5"
+  }
+ ]
+}
