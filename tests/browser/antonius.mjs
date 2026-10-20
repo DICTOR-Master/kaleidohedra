@@ -10,7 +10,7 @@ await page.waitForSelector('.dim-wizard-overlay.open');
 if (!(await page.locator('[data-family="DICTO_PIECES"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
 const fam = page.locator('[data-family="DICTO_PIECES"]').first(); await fam.scrollIntoViewIfNeeded(); await fam.tap(); await page.waitForTimeout(800);
 const kits = await page.evaluate(() => [...document.querySelectorAll('[data-section="kits-cleo"] [data-kit]')].map((e) => e.dataset.kit));
-console.log('CLEO sphere kits:', kits); assert.deepEqual(kits.sort(), ['antonius.block', 'antonius.rhex', 'antonius.rhombohedron', 'cleoSphere', 'cleoSphere.allCleo', 'cleoSphere.icosahedron']);
+console.log('CLEO sphere kits:', kits); assert.deepEqual(kits.sort(), ['antonius.block', 'antonius.rhex', 'antonius.rhombohedron', 'cleoSphere', 'cleoSphere.allCleo', 'cleoSphere.icosahedron', 'cleoTowers', 'cleoTowers.three', 'ogAktis']);
 const html = await page.evaluate(() => document.querySelector('.dim-wizard-body').textContent);
 assert.ok(/Penta-cleo/.test(html), 'Penta-cleo listed'); assert.ok(/Antonius/.test(html) && /Cleo-Icos/.test(html), 'Antonius and Cleo-Icos listed');
 const k = page.locator('[data-kit="antonius.block"]').first(); await k.scrollIntoViewIfNeeded(); await k.tap(); await page.waitForTimeout(1500);
