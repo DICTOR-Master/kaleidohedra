@@ -13,7 +13,7 @@ S = {'Tetrahedron': [p for p in itertools.product((1, -1), repeat=3) if np.prod(
 GOLD, PURPLE, LILAC, BRONZE = '#d9a441', '#6b3fa0', '#9a78c8', '#8a5a24'
 rng = np.random.default_rng(0); U = rng.normal(size=(4000, 3)); U /= np.linalg.norm(U, axis=1)[:, None]
 scenes = []
-LOOK = {'Cube': 'Octahedron', 'Octahedron': 'Cube'}       # DICTO 10-21: name each body by its look (balls on a cube's corners look octahedral)
+LOOK = {'Cube': 'Octahedron', 'Octahedron': 'Cube', 'Dodecahedron': 'Icosahedron', 'Icosahedron': 'Dodecahedron'}       # DICTO 10-21: name each body by its look (balls on a cube's corners look octahedral)
 for name, Vs in S.items():
     V = np.array(Vs, float); E = min(np.linalg.norm(a - b) for a, b in itertools.combinations(V, 2)); V /= E
     D = max(np.linalg.norm(a - b) for a, b in itertools.combinations(V, 2))
