@@ -27,3 +27,10 @@ Exact in Q(sqrt5): all five solids fully symmetric; each holds the one before; c
 80 towers (60 on kites + 20 on hexagons), 132 (120 on triangles in TWO shapes, 60+60, + 12 on pentagons), 140 (60 tri + 60 quad +
 20 hex); every shell sums to its gap exactly. The one FAIL line in the log is only the "one shape per kind" test for shell 2 (TPH
 has two triangle kinds), not a geometry failure. Figure figures/og-turned-out.jpg.
+
+## Flat-ended triangles (DICTO's theme, checked 2026-10-21)
+DICTO: flat-ended triangles (hexagons, all angles 120°, sides alternating long/short) keep turning up (FUJI, latest Cleo builds,
+OG up/down families). Checked on the boundary solids (float on exact corners): the GTI's 20 hexagons ARE flat-ended triangles,
+all angles 120°, short/long = 0.4271 = (3 sqrt5 - 5)/4 (FUJI's base: 1/phi = 0.618). In the OG families none: OG, PHE (20),
+DPHP, TQH, TQHD hexagons are regular; PHE's other 60 hexagons are irregular (sides 0.22, 0.22, 0.32, 0.78, 0.78, 1 by ratio).
+Tower and piece faces not yet checked.
