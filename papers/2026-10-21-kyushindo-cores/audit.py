@@ -100,7 +100,17 @@ chk(sorted(f"{o['volume_float'][0]:.6f}" for o in B['orbits'][:2]) == sorted(fl(
 fj = js('2026-10-21-og-turned-out/flip-float.json')
 chk([b['corners'] for b in fj[:5]] == [102, 80, 132, 140, 162] and inn('102, 80, 132, 140 and 162 corners at beats 0–4'), 'full flip (float): same corner counts beats 0-4')
 fr = [fj[i + 1]['r_max'] / fj[i]['r_max'] for i in range(4)]; chk(all(1.85 < x < 2.0 for x in fr) and inn('about 1.9 per beat'), f'full flip radius ratios {[round(x, 3) for x in fr]}')
-chk(inn('(pending)') and not re.search(r'beats? 5[–-]|corners at beat [5-9]', txt), 'shells 4-5 marked pending, no numbers for beats 5+')
+SH4 = js('2026-10-21-og-turned-out/shell4-exact.json')['shell']; S4L = rd('2026-10-21-og-turned-out/shell4.log')
+chk(S4L.count('PASS') == 3 and 'beat 4 lies inside beat 7 exactly (corners outside 0)' in S4L and S4L.count('symmetric under all 60 rotations') == 2 and SH4['sum_equals_gap_exactly'] and SH4['pieces'] == {'on 3-gon': 120, 'on 6-gon': 20, 'on 4-gon': 60}, 'shell 4: symmetric, nested, 120 + 60 + 20 towers, sum exact')
+tv = sorted(parse(x) for x in SH4['exact_volumes']['on 3-gon']); q4 = parse(SH4['exact_volumes']['on 4-gon'][0]); h6 = parse(SH4['exact_volumes']['on 6-gon'][0]); gp = parse(SH4['gap'])
+n1 = (gp[0] - 60 * q4[0] - 20 * h6[0] - 120 * tv[1][0]) / (tv[0][0] - tv[1][0]); n1b = (gp[1] - 60 * q4[1] - 20 * h6[1] - 120 * tv[1][1]) / (tv[0][1] - tv[1][1])
+chk(n1 == 60 and n1b == 60, 'shell 4: the two triangle volumes occur 60 + 60 times (exact, from the sum)')
+v3 = sorted(val(x) for x in SH4['exact_volumes']['on 3-gon'])
+chk(inn('<b>200 towers</b>'.replace('<b>', '').replace('</b>', '')) and inn(f'{v3[0]:.6f} and {v3[1]:.6f}') and inn(f"{val(SH4['exact_volumes']['on 4-gon'][0]):.6f}") and inn(f"{val(SH4['exact_volumes']['on 6-gon'][0]):.6f}") and inn(f"{val(SH4['gap']):.4f}") and inn('Shell 5</b>'.replace('</b>', '')) and inn('is not built'), 'shell 4 text values; shell 5 not built')
+NS = rd('2026-10-21-og-turned-out/new-solids-faces.log')
+for k, n in {5: 'TQP-252', 6: 'TQ-320', 7: 'TQP-402', 8: 'TQ-500', 9: 'TQD-732', 10: 'TQHD-662', 11: 'TQP-672'}.items():
+    m = re.search(rf'^D{k}: (\d+) corners \((\d+) listed\), (\d+) faces', NS, re.M)
+    chk(m and int(m.group(3)) == int(n.split('-')[1]) and inn(f'down {k} DICTO {n} {m.group(1)} ({m.group(2)}) {m.group(3)}'), f'Table 9: down {k} = DICTO {n}, {m.group(1)} corners, {m.group(3)} faces')
 # 6b. surface patterns and lines (section 7)
 RB, SP, SL = rd('2026-10-21-og-turned-out/golden-ribbons.log'), rd('2026-10-21-og-turned-out/surface-patterns.log'), rd('2026-10-21-og-turned-out/surface-lines.log')
 for nmL, lg, n in [('golden-ribbons', RB, 14), ('surface-patterns', SP, 28), ('surface-lines', SL, 12)]:
@@ -151,7 +161,7 @@ nm_ = ['OG', 'TPH', 'TQH', 'TQP', 'TQHD'] + [f'down {k}' for k in range(5, 13)]
 turned = {k: f'lies inside phi^{k} {nm_[k]} (turned out, exact)' in NF for k in range(1, 13)}
 K = max(k for k in turned if turned[k]); chk(K == 8 and all(turned[k] for k in range(1, K + 1)) and inn(f'checked directly in ℚ(√5) for k ≤ {K}'), f'Corollary 1: nesting also checked exactly for k = 1..{K}')
 dn = {k: re.search(rf'downward: {re.escape(nm_[k])} inside {re.escape(nm_[k - 1])}: (True|False)', NF).group(1) == 'True' for k in range(1, K + 1)}
-yes = [k for k in dn if dn[k]]; chk(yes == [1, 2, 4] and inn(f'only for k = 1, 2 and 4 among k ≤ {K}'), f'downward nesting only at {yes}')
+yes = [k for k in dn if dn[k]]; chk(yes == [1, 2, 4] and inn('only for k = 1, 2 and 4 among k ≤ 9') and '(a) down 8: 260 x 3-point face, foot inside; 120 x 3-point face, foot outside' in NF, f'downward nesting only at {yes}')
 TM = json.load(open(os.path.join(S, '2026-10-21-nesting-proof/tmin-exact.json')))['k']; TL = rd('2026-10-21-nesting-proof/tmin-exact.log')
 phi_ = (1 + 5 ** .5) / 2
 chk(all(TM[str(k)]['t_min_le_phi_exact'] and TM[str(k)]['t_min'] < phi_ for k in range(9)) and max(TM[str(k)]['t_min'] for k in range(9)) == TM['3']['t_min'] and abs(TM['3']['t_min'] - 3 / phi_ ** 2) < 1e-12 and TM['3']['t_min_exact'] == '9/2+-3/2r5', 't_min(D_k) <= phi, k = 0..8; max at k = 3 = 3/phi^2 = (9 - 3 sqrt5)/2')
