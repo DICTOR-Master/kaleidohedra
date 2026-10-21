@@ -1,4 +1,4 @@
-# Gap pieces: which fill space alone, in pairs, in threes (DICTO, 2026-10-21) — ON HOLD
+# Gap pieces: which fill space alone, in pairs, in threes (DICTO, 2026-10-21)
 
 DICTO: "how many pieces such as CLEO are space filling as pairs etc, just in our tile kit" (the gap pieces, new test).
 
@@ -9,7 +9,9 @@ across a face). Necessary only.
   pair/three (all angles multiples of 6 deg, the golden rhombohedra's angles).
 - Known: AXE, CLEO = Mosseri-Sadoc tiles t6, t4 at 1/tau; check the library whether they alone fill space.
 
-Next (held by DICTO): Theaetetus pieces into the screen; face-to-face growth test on the node, order B1, Bodhi pairs, AXE + FUJI,
+2026-10-21 resumed: Theaetetus pieces (#29: Aetos, Sphen, Sphenion, Atraktos) added (`angle_screen_theaetetus.py`, log): each fails alone, and
+every pair with one of them fails (with each other, AXE, CLEO, FUJI, B1-B5). Kion not in the data yet.
+Next: face-to-face growth test on the node, order B1, Bodhi pairs, AXE + FUJI,
 CLEO + FUJI.
 
 DICTO · dictospheres.com
