@@ -1,0 +1,27 @@
+PASS polar(OG) = the DICTO Hecatodihedron: 80 corners, 102 faces (60 3-gons, 30 4-gons, 12 5-gons)
+PASS P^0(H) = polar(OG) exactly (Lemma 3), 80 listed foot points, 80 corners
+PASS P^1(H) = polar(KRE) exactly (Lemma 3), 102 listed foot points, 90 corners
+PASS P^2(H) = polar(PHE) exactly (Lemma 3), 92 listed foot points, 92 corners
+PASS P^3(H) = polar(TPP) exactly (Lemma 3), 180 listed foot points, 180 corners
+PASS P^4(H) = polar(DPHP) exactly (Lemma 3), 212 listed foot points, 152 corners
+PASS H (Hecatodihedron) = polar(OG): 80 corners, 102 faces (60 3-gons, 30 4-gons, 12 5-gons), 3 exact face kinds, all 60 rotations
+PASS P H = polar(KRE): 90 corners, 92 faces (60 3-gons, 12 5-gons, 20 6-gons), 3 exact face kinds, all 60 rotations
+PASS P^2 H = polar(PHE): 92 corners, 180 faces (120 3-gons, 60 3-gons), 2 exact face kinds, all 60 rotations
+PASS P^3 H = polar(TPP): 180 corners, 212 faces (120 3-gons, 60 4-gons, 12 5-gons, 20 6-gons), 4 exact face kinds, all 60 rotations
+PASS P^4 H = polar(DPHP): 152 corners, 270 faces (120 3-gons, 60 3-gons, 60 3-gons, 30 4-gons), 4 exact face kinds, all 60 rotations
+solids done (151 s)
+PASS P H inside H (Hecatodihedron): YES (corners outside 0);  OG inside KRE: YES (corners outside 0) -- polarity agrees
+PASS P^2 H inside H (Hecatodihedron): YES (corners outside 0);  OG inside PHE: YES (corners outside 0) -- polarity agrees
+PASS P^3 H inside H (Hecatodihedron): YES (corners outside 0);  OG inside TPP: YES (corners outside 0) -- polarity agrees
+PASS P^4 H inside H (Hecatodihedron): YES (corners outside 0);  OG inside DPHP: YES (corners outside 0) -- polarity agrees
+PASS P^2 H inside P H: YES (corners outside 0);  KRE inside PHE: YES (corners outside 0) -- polarity agrees
+PASS P^3 H inside P H: YES (corners outside 0);  KRE inside TPP: YES (corners outside 0) -- polarity agrees
+PASS P^4 H inside P H: YES (corners outside 0);  KRE inside DPHP: YES (corners outside 0) -- polarity agrees
+PASS P^3 H inside P^2 H: YES (corners outside 0);  PHE inside TPP: YES (corners outside 0) -- polarity agrees
+PASS P^4 H inside P^2 H: YES (corners outside 0);  PHE inside DPHP: YES (corners outside 0) -- polarity agrees
+PASS P^4 H inside P^3 H: NO (corners outside 120, largest excess 0.0392);  TPP inside DPHP: NO (corners outside 60) -- polarity agrees
+PASS shell P H -> H (Hecatodihedron) (inward): 80 towers (+12 faces lying on the outer surface, flat) in 3 orbits (60 on 3-gons 0.083986, 12 on 5-gons 0.000000, 20 on 6-gons 1.437327), one volume per orbit, adding up to the shell exactly (gap 33.785689) (16 s)
+PASS shell P^2 H -> P H (inward): 180 towers in 3 orbits (60 on 3-gons 0.093254, 60 on 3-gons 0.121083, 60 on 3-gons 0.121083), one volume per orbit, adding up to the shell exactly (gap 20.125202) (23 s)
+PASS shell P^3 H -> P^2 H (inward): 212 towers in 5 orbits (60 on 3-gons 0.022899, 60 on 3-gons 0.022899, 60 on 4-gons 0.407514, 12 on 5-gons 0.028590, 20 on 6-gons 0.009861), one volume per orbit, adding up to the shell exactly (gap 27.739060) (57 s)
+PASS shell P^4 H -> P^2 H (inward): 270 towers in 5 orbits (60 on 3-gons 0.070807, 60 on 3-gons 0.070807, 60 on 3-gons 0.167173, 60 on 3-gons 0.188535, 30 on 4-gons 0.214584), one volume per orbit, adding up to the shell exactly (gap 36.276870) (93 s)
+done (484 s)

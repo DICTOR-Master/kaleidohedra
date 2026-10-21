@@ -1,0 +1,55 @@
+PASS OTT: 24 corners. Exact symmetry (tested: 48 signed permutations + 60 icosahedral rotations): 12 rotations, 24 symmetries in all (with reflections)
+NOTE rotation group order 12 (T, tetrahedral: not O, the RT has no 4-fold axes); central inversion True; full group 24 elements (T_h, pyritohedral)
+PASS OTT: 24 corners, 38 faces (24 3-gons, 8 3-gons, 6 4-gons), 3 exact face kinds, volume -608/81+320/81r5
+  NOTE: P^1(OTT) lists 38 foot points, 8 of them not corners
+built D_1 = P^1(OTT): 30 corners (0 s)
+built D_2 = P^2(OTT): 32 corners (1 s)
+built D_3 = P^3(OTT): 60 corners (1 s)
+built D_4 = P^4(OTT): 32 corners (0 s)
+built D_5 = P^5(OTT): 30 corners (0 s)
+built D_6 = P^6(OTT): 32 corners (1 s)
+built D_7 = P^7(OTT): 60 corners (1 s)
+PASS S_0 = phi^0 P^0(OTT): 24 corners, 38 faces (24 3-gons, 8 3-gons, 6 4-gons), 3 exact face kinds, radii 0.7136..0.7837, all 24 symmetries of T_h
+PASS S_1 = phi^1 P^1(OTT): 30 corners, 32 faces (20 3-gons, 12 5-gons), 2 exact face kinds, radii 1.0787..1.0787, all 24 symmetries of T_h
+PASS S_2 = phi^2 P^2(OTT): 32 corners, 60 faces (60 3-gons), 1 exact face kinds, radii 1.4847..1.6305, all 24 symmetries of T_h
+PASS S_3 = phi^3 P^3(OTT): 60 corners, 32 faces (12 5-gons, 20 6-gons), 2 exact face kinds, radii 2.3380..2.3380, all 24 symmetries of T_h
+PASS S_4 = phi^4 P^4(OTT): 32 corners, 30 faces (30 4-gons), 1 exact face kinds, radii 3.3526..3.6818, all 24 symmetries of T_h
+PASS S_5 = phi^5 P^5(OTT): 30 corners, 32 faces (20 3-gons, 12 5-gons), 2 exact face kinds, radii 5.0675..5.0675, all 24 symmetries of T_h
+PASS S_6 = phi^6 P^6(OTT): 32 corners, 60 faces (60 3-gons), 1 exact face kinds, radii 6.9749..7.6597, all 24 symmetries of T_h
+PASS S_7 = phi^7 P^7(OTT): 60 corners, 32 faces (12 5-gons, 20 6-gons), 2 exact face kinds, radii 10.9837..10.9837, all 24 symmetries of T_h
+PASS t_min(D_0) = 5/2+-1/2r5 = 1.381966011, phi - t_min = +0.236068 [<= phi exactly]; bounds t_min <= R/r_next 1.381966 <= (R/r)^2 1.583592; S_0 inside S_1: YES (corners outside 0) -- agrees with t_min
+PASS t_min(D_1) = 9/2+-3/2r5 = 1.145898034, phi - t_min = +0.472136 [<= phi exactly]; bounds t_min <= R/r_next 1.207883 <= (R/r)^2 1.381966; S_1 inside S_2: YES (corners outside 0) -- agrees with t_min
+PASS t_min(D_2) = 5+-5/3r5 = 1.273220038, phi - t_min = +0.344814 [<= phi exactly]; bounds t_min <= R/r_next 1.273220 <= (R/r)^2 1.273220; S_2 inside S_3: YES (corners outside 0) -- agrees with t_min
+PASS t_min(D_3) = 9/2+-3/2r5 = 1.145898034, phi - t_min = +0.472136 [<= phi exactly]; bounds t_min <= R/r_next 1.207883 <= (R/r)^2 1.273220; S_3 inside S_4: YES (corners outside 0) -- agrees with t_min
+PASS t_min(D_4) = 5/2+-1/2r5 = 1.381966011, phi - t_min = +0.236068 [<= phi exactly]; bounds t_min <= R/r_next 1.381966 <= (R/r)^2 1.381966; S_4 inside S_5: YES (corners outside 0) -- agrees with t_min
+PASS t_min(D_5) = 9/2+-3/2r5 = 1.145898034, phi - t_min = +0.472136 [<= phi exactly]; bounds t_min <= R/r_next 1.207883 <= (R/r)^2 1.381966; S_5 inside S_6: YES (corners outside 0) -- agrees with t_min
+PASS t_min(D_6) = 5+-5/3r5 = 1.273220038, phi - t_min = +0.344814 [<= phi exactly]; bounds t_min <= R/r_next 1.273220 <= (R/r)^2 1.273220; S_6 inside S_7: YES (corners outside 0) -- agrees with t_min
+solids done (58 s)
+PASS S_0 (the OTT) has only T_h; S_1 .. S_7 are fixed by all 60 icosahedral rotations exactly (icosahedral from beat 1)
+PASS P(OTT) = c x ID (the CLEO sphere core) exactly, c = -1/3+1/3r5 = 0.412023; so S_k = phi c x (CLEO turned out S_(k-1)) for every k >= 1
+PASS S_k = (phi c) x phi^(k-1) P^(k-1)(ID) exactly for k = 1..7: the OTT cycle is the CLEO cycle one beat behind
+PASS shell S0 -> S1 (1 beat): 38 towers in 5 orbits (12 on 3-gons 0.045008, 12 on 3-gons 0.045008, 4 on 3-gons 0.143930, 4 on 3-gons 0.143930, 6 on 4-gons 0.090016), one volume per orbit, adding up to the shell exactly (gap 2.771739); under T_h: 3 orbits (5 s)
+PASS shell S1 -> S2 (1 beat): 32 towers in 4 orbits (12 on 3-gons 0.153494, 4 on 3-gons 0.153494, 4 on 3-gons 0.153494, 12 on 5-gons 0.555345), one volume per orbit, adding up to the shell exactly (gap 9.734013); under T_h: 3 orbits; under the 60 icosahedral rotations: 2 orbit(s) (11 s)
+PASS shell S2 -> S4 (2 beats): 60 towers in 5 orbits (12 on 3-gons 2.186826, 12 on 3-gons 2.186826, 12 on 3-gons 2.186826, 12 on 3-gons 2.186826, 12 on 3-gons 2.186826), one volume per orbit, adding up to the shell exactly (gap 131.209535); under T_h: 3 orbits; under the 60 icosahedral rotations: 1 orbit(s) (8 s)
+PASS shell S4 -> S7 (3 beats): 30 towers in 3 orbits (12 on 4-gons 147.401121, 12 on 4-gons 147.401121, 6 on 4-gons 147.401121), one volume per orbit, adding up to the shell exactly (gap 4422.033619); under T_h: 2 orbits; under the 60 icosahedral rotations: 1 orbit(s) (10 s)
+PASS polar(OTT): 38 corners, 24 faces (12 3-gons, 12 7-gons)
+PASS polar(S_0) = phi^-0 T^0(polar OTT) exactly: 38 corners, 24 faces (12 3-gons, 12 7-gons), all 24 symmetries
+PASS polar(S_1) = phi^-1 T^1(polar OTT) exactly: 32 corners, 30 faces (30 4-gons), all 24 symmetries
+PASS polar(S_1) inside polar(S_0): YES (corners outside 0) -- polarity agrees
+PASS polar(S_2) = phi^-2 T^2(polar OTT) exactly: 60 corners, 32 faces (12 5-gons, 20 6-gons), all 24 symmetries
+PASS polar(S_2) inside polar(S_1): YES (corners outside 0) -- polarity agrees
+PASS polar(S_3) = phi^-3 T^3(polar OTT) exactly: 32 corners, 60 faces (60 3-gons), all 24 symmetries
+PASS polar(S_3) inside polar(S_2): YES (corners outside 0) -- polarity agrees
+PASS polar(S_4) = phi^-4 T^4(polar OTT) exactly: 30 corners, 32 faces (20 3-gons, 12 5-gons), all 24 symmetries
+PASS polar(S_4) inside polar(S_3): YES (corners outside 0) -- polarity agrees
+PASS polar(S_5) = phi^-5 T^5(polar OTT) exactly: 32 corners, 30 faces (30 4-gons), all 24 symmetries
+PASS polar(S_5) inside polar(S_4): YES (corners outside 0) -- polarity agrees
+PASS polar(S_6) = phi^-6 T^6(polar OTT) exactly: 60 corners, 32 faces (12 5-gons, 20 6-gons), all 24 symmetries
+PASS polar(S_6) inside polar(S_5): YES (corners outside 0) -- polarity agrees
+PASS polar(S_7) = phi^-7 T^7(polar OTT) exactly: 32 corners, 60 faces (60 3-gons), all 24 symmetries
+PASS polar(S_7) inside polar(S_6): YES (corners outside 0) -- polarity agrees
+PASS polar shell polar S1 -> polar S0 (inward): 30 towers in 3 orbits (6 on 4-gons 5924.435828, 12 on 4-gons 6131.342035, 12 on 4-gons 6131.342035), one volume per orbit, adding up to the shell exactly (gap 182698.823814) (2 s)
+PASS polar shell polar S2 -> polar S1 (inward): 32 towers in 4 orbits (12 on 5-gons 784.338810, 4 on 6-gons 2734.836500, 12 on 6-gons 2734.836500, 4 on 6-gons 2734.836500), one volume per orbit, adding up to the shell exactly (gap 64108.795729) (4 s)
+PASS polar shell polar S4 -> polar S2 (inward): 32 towers in 4 orbits (4 on 3-gons 315.710786, 4 on 3-gons 315.710786, 12 on 3-gons 315.710786, 12 on 5-gons 1587.068371), one volume per orbit, adding up to the shell exactly (gap 25359.036166) (2 s)
+PASS polar shell polar S7 -> polar S4 (inward): 60 towers in 5 orbits (12 on 3-gons 41.958741, 12 on 3-gons 41.958741, 12 on 3-gons 41.958741, 12 on 3-gons 41.958741, 12 on 3-gons 41.958741), one volume per orbit, adding up to the shell exactly (gap 2517.524460) (4 s)
+done (122 s)

@@ -1,0 +1,55 @@
+PASS the CLEO sphere core: ID, 30 corners on radius phi, fixed by all 60 rotations
+PASS P^4(ID) = (phi^4/10) ID exactly: the downward family returns to the ID after 4 beats
+PASS S_(k+4) = (phi^8/10) S_k exactly (phi^8/10 = 47/20+21/20r5 = 4.697871; per beat 1.472229 < phi)
+PASS S_0: 30 corners, 32 faces (20 3-gons, 12 5-gons), 2 exact face kinds, radii [1.618034], all 60 rotations
+PASS S_1: 32 corners, 60 faces (60 3-gons), 1 exact face kinds, radii [2.227033, 2.445695], all 60 rotations
+PASS S_0 lies inside S_1 exactly (corners outside 0)
+PASS S_1 corners = phi x the foot points of S_0 exactly
+PASS S_2: 60 corners, 32 faces (12 5-gons, 20 6-gons), 2 exact face kinds, radii [3.50702], all 60 rotations
+PASS S_1 lies inside S_2 exactly (corners outside 0)
+PASS S_2 corners = phi x the foot points of S_1 exactly
+PASS S_3: 32 corners, 30 faces (30 4-gons), 1 exact face kinds, radii [5.028913, 5.522679], all 60 rotations
+PASS S_2 lies inside S_3 exactly (corners outside 0)
+PASS S_3 corners = phi x the foot points of S_2 exactly
+PASS S_4: 30 corners, 32 faces (20 3-gons, 12 5-gons), 2 exact face kinds, radii [7.601316], all 60 rotations
+PASS S_3 lies inside S_4 exactly (corners outside 0)
+PASS S_4 corners = phi x the foot points of S_3 exactly
+PASS S_5: 32 corners, 60 faces (60 3-gons), 1 exact face kinds, radii [10.462313, 11.48956], all 60 rotations
+PASS S_4 lies inside S_5 exactly (corners outside 0)
+PASS S_5 corners = phi x the foot points of S_4 exactly
+PASS S_6: 60 corners, 32 faces (12 5-gons, 20 6-gons), 2 exact face kinds, radii [16.475527], all 60 rotations
+PASS S_5 lies inside S_6 exactly (corners outside 0)
+PASS S_6 corners = phi x the foot points of S_5 exactly
+PASS S_7: 32 corners, 30 faces (30 4-gons), 1 exact face kinds, radii [23.625186, 25.944836], all 60 rotations
+PASS S_6 lies inside S_7 exactly (corners outside 0)
+PASS S_7 corners = phi x the foot points of S_6 exactly
+PASS S_0 = 1+0r5 x ID of the UP cycle exactly
+PASS S_1 = 11/20+1/4r5 x FPD (pentakis type) of the UP cycle exactly
+PASS S_2 = 9/10+2/5r5 x GTI (golden truncated icosahedron) of the UP cycle exactly
+PASS S_3 = 29/20+13/20r5 x RT of the UP cycle exactly
+solids done (14 s)
+PASS shell S0 -> S1 (1 beat): 32 towers in 2 orbits (20 on 3-gons 0.518041, 12 on 5-gons 1.874290), one volume per orbit, adding up to the shell exactly (gap 32.852295) (3 s)
+PASS shell S1 -> S2 (1 beat): 60 towers in 1 orbits (60 on 3-gons 1.699619), one volume per orbit, adding up to the shell exactly (gap 101.977169) (4 s)
+PASS shell S2 -> S4 (2 beats): 32 towers in 2 orbits (12 on 5-gons 10.184169, 20 on 6-gons 58.180999), one volume per orbit, adding up to the shell exactly (gap 1285.830010) (3 s)
+PASS shell S4 -> S7 (3 beats): 32 towers in 2 orbits (20 on 3-gons 678.788483, 12 on 5-gons 2978.679005), one volume per orbit, adding up to the shell exactly (gap 49319.917720) (3 s)
+PASS polar(ID) = T(ID)/phi^2 exactly: the rhombic triacontahedron (32 corners)
+PASS polar(S_0) = phi^-0 T^0(RT) exactly: 32 corners, 30 faces (30 4-gons), all 60 rotations
+PASS polar(S_1) = phi^-1 T^1(RT) exactly: 60 corners, 32 faces (12 5-gons, 20 6-gons), all 60 rotations
+PASS polar(S_1) lies inside polar(S_0) exactly (corners outside 0)
+PASS polar(S_2) = phi^-2 T^2(RT) exactly: 32 corners, 60 faces (60 3-gons), all 60 rotations
+PASS polar(S_2) lies inside polar(S_1) exactly (corners outside 0)
+PASS polar(S_3) = phi^-3 T^3(RT) exactly: 30 corners, 32 faces (20 3-gons, 12 5-gons), all 60 rotations
+PASS polar(S_3) lies inside polar(S_2) exactly (corners outside 0)
+PASS polar(S_4) = phi^-4 T^4(RT) exactly: 32 corners, 30 faces (30 4-gons), all 60 rotations
+PASS polar(S_4) lies inside polar(S_3) exactly (corners outside 0)
+PASS polar(S_5) = phi^-5 T^5(RT) exactly: 60 corners, 32 faces (12 5-gons, 20 6-gons), all 60 rotations
+PASS polar(S_5) lies inside polar(S_4) exactly (corners outside 0)
+PASS polar(S_6) = phi^-6 T^6(RT) exactly: 32 corners, 60 faces (60 3-gons), all 60 rotations
+PASS polar(S_6) lies inside polar(S_5) exactly (corners outside 0)
+PASS polar(S_7) = phi^-7 T^7(RT) exactly: 30 corners, 32 faces (20 3-gons, 12 5-gons), all 60 rotations
+PASS polar(S_7) lies inside polar(S_6) exactly (corners outside 0)
+PASS polar shell polar S1 -> polar S0 (inward, 1 beat): 32 towers in 2 orbits (12 on 5-gons 232.396685, 20 on 6-gons 810.321926), one volume per orbit, adding up to the shell exactly (gap 18995.198734) (4 s)
+PASS polar shell polar S2 -> polar S1 (inward, 1 beat): 60 towers in 1 orbits (60 on 3-gons 94.716547), one volume per orbit, adding up to the shell exactly (gap 5682.992832) (5 s)
+PASS polar shell polar S4 -> polar S2 (inward, 2 beats): 30 towers in 1 orbits (30 on 4-gons 77.957025), one volume per orbit, adding up to the shell exactly (gap 2338.710746) (3 s)
+PASS polar shell polar S7 -> polar S4 (inward, 3 beats): 32 towers in 2 orbits (20 on 3-gons 3.518860, 12 on 5-gons 15.441566), one volume per orbit, adding up to the shell exactly (gap 255.675903) (3 s)
+done (54 s)
