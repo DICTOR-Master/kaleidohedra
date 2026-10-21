@@ -1,7 +1,7 @@
 # DICTO emblem, forms iteration (DICTO 2026-10-22): the emblem's gold ring, with each mark replaced by its
 # Platonic form (D-I-C-T-O key) carrying its V-cut platinum initial, at the mark's measured place.
-# STAR=1 adds, as a variant, five golden Penrose rhombi (the thin 36-degree rhombs, DICTO: the fat ones too fat) meeting at the centre as a star,
-# V-cut and laid with platinum leaf like the initials.
+# STAR=1 adds, as a variant, five golden Penrose rhombi (the fat 72-degree rhombs, points into the gaps between forms) meeting at the centre as a star,
+# cut only as V-grooved outlines laid with platinum leaf, like the initials.
 import os, math, numpy as np
 from PIL import Image, ImageDraw, ImageFont
 src=open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'dicto_square.py')).read()
@@ -31,29 +31,37 @@ for k,ang in PLACE.items():
         d.polygon(pts,fill=col); d.line(pts+[pts[0]],fill=EDGE,width=2*SS)
 # carved platinum initials, centred on each form's place
 ci=src.index("from scipy import ndimage"); ce=src.index("CARVE={ch")
-exec(src[ci:ce].replace("int(0.075*W)","int(0.112*W)").replace("box=int(0.12*W)","box=int(0.17*W)"))
+exec(src[ci:ce].replace("int(0.075*W)","int(0.129*W)").replace("box=int(0.12*W)","box=int(0.2*W)"))
 for k,ang in PLACE.items():
     tile,mask,box=carved(k)
     x=c0+DIST*math.cos(math.radians(ang))*sc; y=c0-DIST*math.sin(math.radians(ang))*sc
     img.paste(tile,(int(x-box/2),int(y-box/2)),mask)
-if STAR:
-    side=0.24*RR; gap=0.008*RR
-    m=Image.new('L',(W,W),0); dm=ImageDraw.Draw(m)
+if STAR:   # five fat golden Penrose rhombi (72 deg at the centre), points into the gaps, cut as V-grooved outlines only
+    side=0.2*RR; lw=int(0.022*W)
+    def offset(P,dd):   # convex polygon (counter-clockwise) moved out by dd along each edge's normal; sharp mitred corners
+        P=np.array(P); L=[]
+        sa=sum(P[a-1][0]*P[a][1]-P[a][0]*P[a-1][1] for a in range(len(P)))
+        if sa<0: dd=-dd                     # make +dd always grow the polygon
+        for a in range(len(P)):
+            p,q=P[a],P[(a+1)%len(P)]; t=(q-p)/np.linalg.norm(q-p); nrm=np.array([t[1],-t[0]]); L.append((p+nrm*dd,t))
+        out=[]
+        for a in range(len(L)):
+            (p1,t1),(p2,t2)=L[a-1],L[a]; A=np.array([t1,-t2]).T; s_=np.linalg.solve(A,p2-p1); out.append(p1+t1*s_[0])
+        return [tuple(x) for x in out]
+    RH=[]
     for j in range(5):
-        th=math.radians(90+36+72*j); u=np.exp(1j*(th-math.radians(18))); v=np.exp(1j*(th+math.radians(18)))   # thin rhombus, 36 deg at the centre, pointing into the gaps
-        Z=np.array([0,u,u+v,v])*side; cz=Z.mean(); Z=cz+(Z-cz)*(1-gap/side*2.2)   # small gap between rhombi
-        dm.polygon([(c0+z.real, c0-z.imag) for z in Z],fill=255)
+        th=math.radians(90+36+72*j); u=np.exp(1j*(th-math.radians(36))); v=np.exp(1j*(th+math.radians(36)))
+        P=[(c0+z.real, c0-z.imag) for z in np.array([0,u,u+v,v])*side]
+        RH.append(P)
+    m=Image.new('L',(W,W),0); dm=ImageDraw.Draw(m)
+    for P in RH: dm.polygon(offset(P,lw/2),fill=255)
+    for P in RH: dm.polygon(offset(P,-lw/2),fill=0)
     M=np.array(m)/255.0; ins=M>0.5
     dist=ndimage.distance_transform_edt(ins); dist=ndimage.gaussian_filter(dist,0.8)
-    gy,gx=np.gradient(dist); k=0.9
+    gy,gx=np.gradient(dist); k=1.6
     n=np.dstack([gx*k, -gy*k, np.ones_like(dist)]); n/=np.linalg.norm(n,axis=2,keepdims=True)
     lam=np.clip(n@Lc,0,1); h=np.clip(n@(Lc+np.array([0,0,1.0]))/np.linalg.norm(Lc+[0,0,1.0]),0,1)**40
     dark=np.array([70,74,82.]); lite=np.array([226,229,235.])
     rgb=dark+(lite-dark)*lam[...,None]**1.3; rgb=rgb+(255-rgb)*h[...,None]*0.8
     img.paste(Image.fromarray(np.clip(rgb,0,255).astype(np.uint8)),(0,0),Image.fromarray((ndimage.gaussian_filter(M,0.6)*255).astype(np.uint8)))
-    d=ImageDraw.Draw(img)
-    for j in range(5):   # gold edge round each cut
-        th=math.radians(90+36+72*j); u=np.exp(1j*(th-math.radians(18))); v=np.exp(1j*(th+math.radians(18)))   # thin rhombus, 36 deg at the centre, pointing into the gaps
-        Z=np.array([0,u,u+v,v])*side; cz=Z.mean(); Z=cz+(Z-cz)*(1-gap/side*2.2)
-        P=[(c0+z.real, c0-z.imag) for z in Z]; d.line(P+[P[0]],fill=GOLD,width=2*SS)
 img=img.resize((N,N),Image.LANCZOS); img.save('dicto-emblem-forms%s.png'%('-star' if STAR else '')); print('ok')
