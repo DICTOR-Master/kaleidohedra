@@ -36,16 +36,25 @@ def rot(ax,a):
     ax=np.array(ax,float); ax/=np.linalg.norm(ax); K=np.array([[0,-ax[2],ax[1]],[ax[2],0,-ax[0]],[-ax[1],ax[0],0]])
     return np.eye(3)+math.sin(a)*K+(1-math.cos(a))*K@K
 G=rot((1,0.55,0.15),0.85)   # one general pose shows three or more faces of every solid
-POSE={'D':G,'I':G,'C':G@rot((0,0,1),0.35),'T':rot((0,0,1),0.5)@rot((1,-1,0),0.62),'O':G@rot((0,0,1),0.3)}
-GROUND=(20,15,11); GOLD=(214,168,74); PURPLE=(150,118,200)
-TONE={'D':GOLD,'I':PURPLE,'C':(232,200,120),'T':(190,160,230),'O':(176,128,58)}
+def align(u,v):   # rotation taking direction u to direction v
+    u=np.array(u,float)/np.linalg.norm(u); v=np.array(v,float)/np.linalg.norm(v); ax=np.cross(u,v)
+    return rot(ax,math.acos(np.clip(u@v,-1,1)))
+POSE={'D':G,'I':G,'C':rot((1,0,0),-0.5)@rot((0,1,0),0.62),
+      'T':align((1,1,1),(-0.18,0.32,0.93))@rot((1,1,1),0.0),     # a corner towards the viewer: three faces show
+      'O':align((1,1,1),(0.3,0.38,0.875))@rot((1,1,1),0.2)}    # nearly face-on: a hexagonal outline
+GROUND=(20,15,11); GOLD=(214,168,74)
+# Plato's elements (Timaeus): fire tetrahedron, air octahedron, water icosahedron, earth cube; the dodecahedron for the whole (aether)
+TONE={'T':(205,62,40),'O':(232,200,82),'I':(58,112,205),'C':(72,142,72),'D':(138,92,196)}
 N=1800; SS=2; W=N*SS
-view=rot((1,0,0),-0.62)          # tilt the board towards the viewer
+view=np.eye(3)                   # straight-on view: true grid squares
 light=np.array([-0.4,0.55,0.75]); light/=np.linalg.norm(light)
 img=Image.new('RGB',(W,W),GROUND); d=ImageDraw.Draw(img)
 # fit the board and its letters to the canvas
-B=np.array([[x,y,z] for x in (-2.95,2.6) for y in (-2.6,2.95) for z in (-0.44,0.44)])@view.T
+B=np.array([[x,y,z] for x in (-2.5,2.5) for y in (-2.5,2.5) for z in (-0.5,0.5)])@view.T
 sc=0.9*W/max(np.ptp(B[:,0]),np.ptp(B[:,1])); ox=W/2-sc*(B[:,0].max()+B[:,0].min())/2; oy=W/2+sc*(B[:,1].max()+B[:,1].min())/2
+P=lambda x,y,z: (lambda v:(ox+v[0]*sc, oy-v[1]*sc))(np.array([x,y,z])@view.T)
+for t in range(6):
+    d.line([P(t-2.5,-2.5,-0.5),P(t-2.5,2.5,-0.5)],fill=GOLD,width=3*SS); d.line([P(-2.5,t-2.5,-0.5),P(2.5,t-2.5,-0.5)],fill=GOLD,width=3*SS)
 items=[]
 for i in range(5):
     for j in range(5):
@@ -60,8 +69,9 @@ for _,k,Vv,F in sorted(items,key=lambda t:t[0]):
         col=tuple(int(c*b+GROUND[m]*(1-b)*0.2) for m,c in enumerate(TONE[k]))
         pts=[(ox+Vv[q,0]*sc, oy-Vv[q,1]*sc) for q in idx]
         d.polygon(pts,fill=col); d.line(pts+[pts[0]],fill=(250,232,190),width=2*SS)
-f=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf',int(0.034*W))
-for j in range(5):   # letters along the top and down the left, in board perspective
-    p=np.array([j-2,2.78,0])@view.T; d.text((ox+p[0]*sc, oy-p[1]*sc),WORD[j],font=f,fill=GOLD,anchor='mm')
-    p=np.array([-2.78,2-j,0])@view.T; d.text((ox+p[0]*sc, oy-p[1]*sc),WORD[j],font=f,fill=GOLD,anchor='mm')
+f=ImageFont.truetype('Cinzel.ttf',int(0.052*W)); f.set_variation_by_name('Bold')
+for i in range(5):
+    for j in range(5):
+        p=np.array([j-2,2-i,0.0])@view.T
+        d.text((ox+p[0]*sc, oy-p[1]*sc),M[i][j],font=f,fill=(250,242,225),anchor='mm',stroke_width=int(0.0035*W),stroke_fill=(20,15,11))
 img=img.resize((N,N),Image.LANCZOS); img.save('dicto-square.png'); print('ok')
