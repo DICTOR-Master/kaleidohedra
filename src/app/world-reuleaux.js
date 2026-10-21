@@ -89,6 +89,8 @@ export function createReuleauxWorld({ scene, fitView = () => {}, showHudPrompt =
 
   // materials: the app's piece look; glass for the balls and the bare solid
   const pieceMat = new THREE.MeshStandardMaterial({ color: theme().pieceHex, flatShading: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
+  // Build: two tones (DICTO 2026-10-21), each piece the other tone from the piece it was attached to, so neighbours read apart.
+  const pieceMat2 = pieceMat.clone(); const toneOf = (hex) => new THREE.Color(hex).offsetHSL(0.03, -0.1, -0.3);
   const ballMat = new THREE.MeshStandardMaterial({ color: 0xbfe6ff, roughness: 0.15, metalness: 0.1, transparent: true, opacity: 0.13, depthWrite: false, side: THREE.FrontSide });
   ballMat.userData.hollow = true;
   const solidMat = new THREE.MeshStandardMaterial({ color: 0xdfe6ea, flatShading: true, transparent: true, opacity: 0.22, depthWrite: false, side: THREE.DoubleSide });
@@ -99,6 +101,8 @@ export function createReuleauxWorld({ scene, fitView = () => {}, showHudPrompt =
   function styleMaterials() {
     pieceMat.color.setHex(theme().pieceHex);
     pieceMat.transparent = opacity < 1; pieceMat.opacity = opacity; pieceMat.depthWrite = opacity >= 1; pieceMat.needsUpdate = true;
+    pieceMat2.color.copy(toneOf(theme().pieceHex));
+    pieceMat2.transparent = opacity < 1; pieceMat2.opacity = opacity; pieceMat2.depthWrite = opacity >= 1; pieceMat2.needsUpdate = true;
     seamMat.color.setHex(skeleton ? theme().accentHex : EDGE_COLOR);
     solidEdgeMat.color.setHex(skeleton ? theme().accentHex : EDGE_COLOR);
   }
@@ -182,7 +186,7 @@ export function createReuleauxWorld({ scene, fitView = () => {}, showHudPrompt =
     const holder = new THREE.Group(); holder.scale.setScalar(WS); group.add(holder);
     nodes.forEach((n, i) => {
       const B = bodies.get(n.type), M = bodyMesh(B);
-      const m = new THREE.Mesh(M.geometry, pieceMat); m.userData = { kind: 'rl', node: i };
+      const m = new THREE.Mesh(M.geometry, (n.tone ?? i % 2) ? pieceMat2 : pieceMat); m.userData = { kind: 'rl', node: i };
       const l = new THREE.LineSegments(M.seams, seamMat);
       for (const o of [m, l]) { o.position.copy(nodeP(n)); o.quaternion.copy(nodeQ(n)); o.scale.setScalar(1 / B.side); holder.add(o); }
       m.visible = !skeleton;
@@ -206,7 +210,7 @@ export function createReuleauxWorld({ scene, fitView = () => {}, showHudPrompt =
     if (!put) return false;
     const pos = put.position;
     if (nodes.some((m) => m.type === type && nodeP(m).distanceTo(pos) < 1e-4)) { showHudPrompt(t('rl.prompt.taken', lang()), 2000); return true; }
-    nodes.push({ type, p: pos.toArray().map((x) => Math.round(x * 1e9) / 1e9), q: put.quaternion.toArray() });
+    nodes.push({ type, p: pos.toArray().map((x) => Math.round(x * 1e9) / 1e9), q: put.quaternion.toArray(), tone: 1 - (n.tone ?? ni % 2) });
     pending = null;
     commit(); fit();
     return true;
