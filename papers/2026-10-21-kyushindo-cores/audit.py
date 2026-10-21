@@ -6,7 +6,7 @@ from math import lcm
 from decimal import Decimal, getcontext
 getcontext().prec = 60
 S = sys.argv[1]; HERE = os.path.dirname(os.path.abspath(__file__))
-src = open(os.path.join(HERE, 'paper.src.html')).read(); txt = re.sub(r'<[^>]+>', ' ', src); txt = re.sub(r'\s+', ' ', txt)
+src = open(os.path.join(HERE, 'paper.src.html')).read(); txt = re.sub(r'<[^>]+>', ' ', src); import html as _h; txt = _h.unescape(re.sub(r'\s+', ' ', txt))
 rd = lambda p: open(os.path.join(S, p)).read(); js = lambda p: json.load(open(os.path.join(S, p)))
 bad = 0
 def chk(c, m):
@@ -141,6 +141,60 @@ chk(inn('261 entries') and inn('90 have a local file') and inn('13 page images')
 chk(inn('as convexity requires') and not inn('checked exactly; in a convex'), 'straight runs: a remark')
 chk(inn('and trapezoid rings of five on the five-fold axes (TQHD), which repeat the rings of the TQP'), 'faces: TQHD repeats TQP rings')
 chk(not inn('hexagonal spire') and not inn('kite spire'), 'no "hexagonal/kite spire" left in the text')
+# 6d. theorems, Proposition 1, Proposition 5 / Table 6 (restructure, 2026-10-21)
+NF = rd('2026-10-21-og-turned-out/nest-feet.log'); RR = rd('2026-10-21-og-turned-out/ribbons-return.log'); AH = rd('2026-10-21-og-turned-out/axis-hull.log')
+AW10 = rd('2026-10-21-og-turned-out/axis-words-10.log')
+PL = rd('2026-10-21-og-turned-out/polar-turned.log')
+chk('30 4-gons, 60 4-gons, 60 5-gons, 12 5-gons' in PL and inn('90 four-sided faces in two kinds, 30 and 60, and 72 pentagons in two kinds, 60 and 12') and '60 3-gons, 30 4-gons, 12 5-gons' in PL, 'polar S4 and Hecatodihedron face kinds')
+chk('FAIL' not in NF and 'FAIL' not in RR and 'FAIL' not in AH, 'nest-feet, ribbons-return, axis-hull logs: no FAIL')
+nm_ = ['OG', 'TPH', 'TQH', 'TQP', 'TQHD'] + [f'down {k}' for k in range(5, 13)]
+turned = {k: f'lies inside phi^{k} {nm_[k]} (turned out, exact)' in NF for k in range(1, 13)}
+K = max(k for k in turned if turned[k]); chk(K == 8 and all(turned[k] for k in range(1, K + 1)) and inn(f'checked directly in ℚ(√5) for k ≤ {K}'), f'Corollary 1: nesting also checked exactly for k = 1..{K}')
+dn = {k: re.search(rf'downward: {re.escape(nm_[k])} inside {re.escape(nm_[k - 1])}: (True|False)', NF).group(1) == 'True' for k in range(1, K + 1)}
+yes = [k for k in dn if dn[k]]; chk(yes == [1, 2, 4] and inn(f'only for k = 1, 2 and 4 among k ≤ {K}'), f'downward nesting only at {yes}')
+TM = json.load(open(os.path.join(S, '2026-10-21-nesting-proof/tmin-exact.json')))['k']; TL = rd('2026-10-21-nesting-proof/tmin-exact.log')
+phi_ = (1 + 5 ** .5) / 2
+chk(all(TM[str(k)]['t_min_le_phi_exact'] and TM[str(k)]['t_min'] < phi_ for k in range(9)) and max(TM[str(k)]['t_min'] for k in range(9)) == TM['3']['t_min'] and abs(TM['3']['t_min'] - 3 / phi_ ** 2) < 1e-12 and TM['3']['t_min_exact'] == '9/2+-3/2r5', 't_min(D_k) <= phi, k = 0..8; max at k = 3 = 3/phi^2 = (9 - 3 sqrt5)/2')
+for k in range(9):
+    e = TM[str(k)]; chk(inn(f"{e['t_min']:.6f}") and inn(f"+{e['phi_minus_t_min']:.4f}") and f'PASS t_min(D_{k}) =' in TL, f'Table 7 row {k}: {e["t_min"]:.6f}')
+chk(abs(15 - 6 * 5 ** .5 - 1.583592) < 1e-6 and 841 < 845 and 29 ** 2 == 841 and 13 ** 2 * 5 == 845 and inn('15 − 6√5 ≈ 1.583592 &lt; φ'.replace('&lt;', '<')) and inn('29 < 13√5 (841 < 845)'), '15 - 6 sqrt5 < phi (29 < 13 sqrt5)')
+CL = rd('2026-10-21-nesting-proof/covering-lemma.log')
+chk('altitude from A2 onto the longest side 18.0000 deg' in CL and 'kite argument WORKS' in CL and 'A3A5 37.3774' in CL and inn('37.377°') and inn('sin 18°') and 'kite argument FAILS' in CL and inn('more than 54.74°'), 'covering lemma: 18 deg altitude, 37.377 deg, octahedral kite fails')
+chk(all(f'(1.134, 1.117, 1.103, 1.146, 1.042, 1.087, 1.026, 1.060, 1.138)' in txt for _ in [0]) and [round(TM[str(k)]['t_min'], 3) for k in range(9)] == [1.134, 1.117, 1.103, 1.146, 1.042, 1.087, 1.026, 1.06, 1.138], 'Conjecture 1 evidence values')
+PT = rd('2026-10-21-og-turned-out/polar-turned.log'); PJ = js('2026-10-21-og-turned-out/polar-turned.json')
+chk(PT.count('PASS') == 13 and 'FAIL' not in PT and inn('polar-turned.log, 13 PASS'), 'polar-turned.log: 13 PASS')
+chk(all(f'polar(S_{k}) = phi^-{k} T^{k}(Hecatodihedron) exactly' in PT for k in range(5)) and all(f'polar(S_{k}) lies inside polar(S_{k - 1})' in PT for k in range(1, 5)), 'Corollary 2 built: k <= 4 exact, nested inward')
+cs = [PJ['solids'][f'polar S{k}']['corners'] for k in range(5)]; fs = [PJ['solids'][f'polar S{k}']['faces'] for k in range(5)]
+chk(cs == [80, 132, 140, 162, 200] and fs == [102, 80, 132, 140, 162] and inn('80, 132, 140, 162 and 200 corners and 102, 80, 132, 140 and 162 faces'), f'polar solids corners {cs} faces {fs}')
+tw = [x['towers'] for x in PJ['shells']]; shp = [len(x['orbits']) for x in PJ['shells']]
+chk(tw == [80, 132, 162] and shp == [2, 3, 4] and all(x['sum_equals_gap_exactly'] and x['one_volume_per_orbit'] for x in PJ['shells']) and inn('80, 132 and 162 in 2, 3 and 4 shapes') and inn('hold 80, 132 and 162 towers of 2, 3 and 4 shapes'), 'polar towers 80/132/162 in 2/3/4 shapes')
+for x in PJ['shells']:
+    chk(inn(f"{x['gap_float']:.4f}") and all(inn(f"{o['volume_float']:.6f}") for o in x['orbits']), f"Table 8 shell {x['shell']}")
+chk(inn('192 of 252') and inn('260 of 320') and inn('312 of 402') and "NOTE: 60 listed points are not corners of the hull" in TL and "NOTE: 90 listed points are not corners" in TL and 'D_9: 500 corners (500 listed points), 732 faces' in TL, 'Remark: hull corners vs listed points; D_9 732 faces')
+chk(inn('D<sub>10</sub> has 662 faces against 732 for D<sub>9</sub>'.replace('<sub>', '').replace('</sub>', '')) or inn('has 662 faces against 732'), 'Remark: 662 < 732')
+for nm, frag in [('OG', '60 x 4-point face, foot inside; 20 x 6-point face, foot inside'), ('TPH', '120 x 3-point face, foot inside; 12 x 5-point face, foot inside'),
+                 ('TQH', '60 x 3-point face, foot inside; 60 x 4-point face, foot outside; 20 x 6-point face, foot inside'),
+                 ('TQP', '60 x 3-point face, foot on the boundary; 90 x 4-point face, foot inside; 12 x 5-point face, foot inside'),
+                 ('TQHD', '120 x 3-point face, foot inside; 60 x 4-point face, foot outside; 20 x 6-point face, foot inside')]:
+    chk(f'(a) {nm}: {frag}' in NF, f'Proposition 1: feet on {nm}')
+chk(inn('On the TQH the foot points of the 60 trapezoids, the 30 ribbons of §8, lie outside their faces') and inn('On the TQP the feet of the 60 triangles lie on the edges of their faces'), 'Proposition 1 text')
+W = {}
+for line in (RR + AH).splitlines():
+    m = re.match(r'PASS (\S+(?: \d+)?): \d+ (?:foot )?points, hull (\d+) corners, (\d+) faces; (?:axis word )?5-fold: (\w+), 3-fold: (\w+), 2-fold: (\w+)', line)
+    if m: W[m.group(1)] = (int(m.group(2)), m.group(4), m.group(5), m.group(6))
+KAX = max(i for i, n in enumerate(nm_) if n in W); chk(all(nm_[i] in W for i in range(KAX + 1)), f'axis words on the hull for OG..{nm_[KAX]}')
+t6 = re.search(r'<table><tr><th>Axis</th>(.*?)</table>', src, re.S).group(1)
+rows = {r[0]: r[1:] for r in [re.findall(r'<td>(?:<b>)?(.*?)(?:</b>)?</td>', tr) for tr in re.findall(r'<tr>(.*?)</tr>', t6)] if r}
+for ax_i, axn in [(1, 'five-fold'), (2, 'three-fold'), (3, 'two-fold')]:
+    chk([rows[axn][i] for i in range(KAX + 1)] == [W[nm_[i]][ax_i] for i in range(KAX + 1)], f'Table 6 {axn} row = hull words OG..{nm_[KAX]}')
+w2 = [W[nm_[i]][3] for i in range(KAX + 1)]
+chk(w2[:8] == ['corner', 'edge', 'edge', 'face'] * 2 and w2[8] == 'edge' and inn('for two full periods, the OG to the TQP and the TQHD to down 7') and inn('at down 8 it reads edge'), 'Observation 1: period 4 OG..down 7, edge at down 8')
+chk(all(W[nm_[i]][1] == ('corner' if i % 2 == 0 else 'face') and W[nm_[i]][2] == ('face' if i % 2 == 0 else 'corner') for i in range(KAX + 1)), 'five/three-fold alternate on every solid with a hull word')
+chk('down 8 (312 corners): at the two-fold axis edge meet isosceles trapezoid + isosceles trapezoid (congruent): a ribbon as on the TQH' in RR and 'down 8: 402 points, hull 312 corners' in AH and 'sharing their shorter parallel side: a ribbon as on the TQH' in AH and inn('So the ribbons of the TQH return exactly at down 8 and at down 9') and 'down 9: 500 points, hull 500 corners, 732 faces; 5-fold: face, 3-fold: corner, 2-fold: edge; at the two-fold edge: isosceles trapezoid + isosceles trapezoid (congruent), sharing their shorter parallel side: a ribbon as on the TQH' in AH, 'ribbons return at down 8 and 9')
+chk('down 6 (192 corners): at the two-fold axis edge meet isosceles trapezoid + isosceles trapezoid (congruent): not a ribbon (the axis edge is their longer parallel side' in RR and inn('at down 6, two congruent isosceles trapezoids across their longer parallel sides'), 'down 6: trapezoids across their longer sides')
+chk(RR.count('isosceles triangle + isosceles triangle (congruent)') == 2 and inn('At the two-fold edges of the TPH and down 5 two congruent isosceles triangles meet'), 'TPH, down 5: triangle pairs')
+chk('252 foot points, hull 192 corners' in RR and '320 foot points, hull 260 corners' in RR and '402 foot points, hull 312 corners' in RR and inn('192 of 252') and inn('260 of 320') and inn('312 of 402'), 'foot points vs hull corners, down 6-8')
+chk('down 10   732 corners  5-fold: corner  3-fold: face    2-fold: face' in AW10, 'axis-words-10.log: down 10 three-fold face, two-fold face')
 # 7. library appendix
 rows = open(os.path.join(HERE, 'lib-rows.html')).read().count('<tr>'); chk(rows == 77 and inn('77 library sources') and inn('77 distinct sources with a text layer'), f'library rows {rows}')
 # 8. DOIs of earlier DICTO papers (as on the Collected Works, v17)
