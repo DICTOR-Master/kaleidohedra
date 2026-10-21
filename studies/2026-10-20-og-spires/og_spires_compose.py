@@ -20,5 +20,8 @@ def sheet(idx, cols, path, title=None, sub=None, cell=520, gap=36, names=None, s
             d.text((x + cell / 2 - d.textlength(txt, font=fo) / 2, yy), txt, font=fo, fill=col)
     m = 'DICTO · dictospheres.com'; d.text((W - 80 * K - d.textlength(m, font=f(24 * K)), Hh - 56 * K), m, font=f(24 * K), fill=MUTE)
     im.save(os.path.join(OUT, path), quality=92); print(path, im.size)
-sheet([0, 1, 2, 3, 4], 5, 'og-spires.jpg', 'The DICTO OG core of 80 spires', '20 hexagonal spires (gold) and 60 kite spires (purple), every apex at the centre · DICTO 2026', cell=420)
+# names DICTO's (2026-10-20): Hex Aktis (on the hexagons), Deltoid Aktis (on the kites)
+L[1]['title'] = '80 Aktis, drawn out'; L[2]['sub'] = 'the Aktis meet in the middle'
+for i, (t, s) in zip((3, 4), [('Hex Aktis', '20 of them, one shape'), ('Deltoid Aktis', '60 of them, one shape')]): L[i]['title'], L[i]['sub'] = t, s
+sheet([0, 1, 2, 3, 4], 5, 'og-spires.jpg', 'The DICTO OG core of 80 Aktis', '20 DICTO Hex Aktis (gold) and 60 DICTO Deltoid Aktis (purple), every tip at the centre · DICTO 2026', cell=420)
 

@@ -30,7 +30,7 @@ def sheet(cells, cols, path, title, sub, cell=440, gap=30, K=2):
     im.save(os.path.join(OUT, path), quality=92); print(path, im.size)
 shot = lambda i: Image.open(os.path.join(S, f'p{i}.png')).convert('RGBA')
 sheet([(shot(i), nm, SUB[nm]) for i, nm in enumerate(NAMES)], 5, 'surface-patterns.jpg', 'The surfaces of the shells',
-      'Every boundary solid, faces coloured by kind: UP stations (top), the OG and its downward solids (bottom) · DICTO 2026')
+      'Every boundary solid, faces coloured by kind: the UP stations ID, RT, GTI, FPD, then the OG and its downward solids · DICTO 2026')
 sheet([(shot(6), 'The TQH', '30 ribbons (coral): trapezoid pairs on the two-fold axes'), (shot(9), 'One ribbon', 'its two shell-3 towers, drawn a little apart')], 2,
       'ribbons.jpg', 'The ribbons', 'The TQH, boundary of the OG turned out at beat 2 · DICTO 2026', cell=520)
 # the line drawings, same camera as the renders

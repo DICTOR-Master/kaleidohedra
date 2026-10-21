@@ -1,0 +1,13 @@
+PASS T(FPD) = c ID, c = 35 - 15 sqrt5 = 10/phi^4
+PASS (1) ID: corners cut off by T: 0 of 30 (w.v <= w.w for all corners: every corner stays on the surface of T(S))
+PASS (1) RT: corners cut off by T: 0 of 32 (w.v <= w.w for all corners: every corner stays on the surface of T(S))
+PASS (1) GTI: corners cut off by T: 0 of 60 (w.v <= w.w for all corners: every corner stays on the surface of T(S))
+PASS (1) FPD: corners cut off by T: 0 of 32 (w.v <= w.w for all corners: every corner stays on the surface of T(S))
+PASS (1) OG: corners cut off by T: 0 of 102 (w.v <= w.w for all corners: every corner stays on the surface of T(S))
+PASS (1) TPH: corners cut off by T: 0 of 80 (w.v <= w.w for all corners: every corner stays on the surface of T(S))
+PASS (1) TQH: corners cut off by T: 0 of 132 (w.v <= w.w for all corners: every corner stays on the surface of T(S))
+PASS (1) TQP: corners cut off by T: 60 of 140
+PASS (1) TQHD: corners cut off by T: 0 of 162 (w.v <= w.w for all corners: every corner stays on the surface of T(S))
+PASS (2) Cleo Towers: the boundary solids at beats [0, 1, 2, 4, 7, 12] (inner and outer of every shell) are each fixed by all 60 rotations
+PASS (2) Polar Cleo Towers: the boundary solids at beats [-7, -2, 1, 3, 4, 5] (inner and outer of every shell) are each fixed by all 60 rotations
+PASS (2) OG turned out: OG, phi TPH, phi^2 TQH, phi^4 TQHD (inner and outer of every shell) are each fixed by all 60 rotations

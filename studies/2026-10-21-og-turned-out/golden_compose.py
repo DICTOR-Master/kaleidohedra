@@ -21,4 +21,4 @@ def sheet(idx, cols, path, title=None, sub=None, cell=520, gap=36, names=None, s
     m = 'DICTO · dictospheres.com'; d.text((W - 80 * K - d.textlength(m, font=f(24 * K)), Hh - 56 * K), m, font=f(24 * K), fill=MUTE)
     im.save(os.path.join(OUT, path), quality=92); print(path, im.size)
 os.makedirs(OUT, exist_ok=True)
-sheet([0, 1, 2, 3, 4, 5], 3, 'og-turned-out.jpg', 'The OG turned out, golden step', 'The 80 Aktis flipped out at 1/phi height; shells of 1, 1, 2 beats, each beat about phi larger', cell=460)
+sheet([0, 1, 2, 3, 4, 5], 3, 'og-turned-out.jpg', 'The OG turned out, golden step', 'Aktis flipped out at 1/phi height: beat k = phi^k x downward solid k; shells of 1, 1, 2 beats', cell=460)
