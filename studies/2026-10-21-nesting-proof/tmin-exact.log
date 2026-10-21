@@ -1,0 +1,41 @@
+D_0: 102 corners (102 listed points), 80 faces, 180 edges, faces by sides {4: 60, 6: 20}, corner degrees {3: 60, 4: 30, 5: 12} (0 s)
+PASS foot points of D_0 = the 80 listed points of D_1 exactly
+D_1: 80 corners (80 listed points), 132 faces, 210 edges, faces by sides {3: 120, 5: 12}, corner degrees {5: 60, 6: 20} (0 s)
+PASS foot points of D_1 = the 132 listed points of D_2 exactly
+PASS t_min(D_0) = 1.133581474681 = 445/361+-16/361r5 is the exact max over corner reps x faces of D_1
+  t_min(D_0) = 1.133581475  phi - t = +0.484453  [<= phi exactly]   bounds: 1.133581 <= t <= R/r_next 1.133581 <= (R/r)^2 1.246084;  R 1.687285 r 1.511523 H 1.584754 r_next 1.488455; faces of D_1 with pole a corner of D_0: 132/132
+D_2: 132 corners (132 listed points), 140 faces, 270 edges, faces by sides {3: 60, 4: 60, 6: 20}, corner degrees {3: 60, 5: 72} (1 s)
+PASS foot points of D_2 = the 140 listed points of D_3 exactly
+PASS t_min(D_1) = 1.117381815787 = 5941/2071+-1622/2071r5 is the exact max over corner reps x faces of D_2
+  t_min(D_1) = 1.117381816  phi - t = +0.500652  [<= phi exactly]   bounds: 1.112816 <= t <= R/r_next 1.118261 <= (R/r)^2 1.133581;  R 1.584754 r 1.488455 H 1.502278 r_next 1.417160; faces of D_2 with pole a corner of D_1: 140/140
+D_3: 140 corners (140 listed points), 162 faces, 300 edges, faces by sides {3: 60, 4: 90, 5: 12}, corner degrees {3: 60, 5: 60, 6: 20} (1 s)
+PASS foot points of D_3 = the 162 listed points of D_4 exactly
+PASS t_min(D_2) = 1.103146717839 = 247111/11881+-104650/11881r5 is the exact max over corner reps x faces of D_3
+  t_min(D_2) = 1.103146718  phi - t = +0.514887  [<= phi exactly]   bounds: 1.103147 <= t <= R/r_next 1.113392 <= (R/r)^2 1.123732;  R 1.502278 r 1.417160 H 1.493089 r_next 1.349281; faces of D_3 with pole a corner of D_2: 152/162
+D_4: 162 corners (162 listed points), 200 faces, 360 edges, faces by sides {3: 120, 4: 60, 6: 20}, corner degrees {4: 90, 5: 72} (1 s)
+PASS foot points of D_4 = the 200 listed points of D_5 exactly
+PASS t_min(D_3) = 1.145898033750 = 9/2+-3/2r5 is the exact max over corner reps x faces of D_4
+  t_min(D_3) = 1.145898034  phi - t = +0.472136  [<= phi exactly]   bounds: 1.145898 <= t <= R/r_next 1.145898 <= (R/r)^2 1.224523;  R 1.493089 r 1.349281 H 1.394803 r_next 1.302986; faces of D_4 with pole a corner of D_3: 200/200
+D_5: 200 corners (200 listed points), 252 faces, 450 edges, faces by sides {3: 120, 4: 120, 5: 12}, corner degrees {3: 60, 4: 60, 6: 80} (1 s)
+PASS foot points of D_5 = the 252 listed points of D_6 exactly
+PASS t_min(D_4) = 1.042440667917 = 7/6+-1/18r5 is the exact max over corner reps x faces of D_5
+  t_min(D_4) = 1.042440668  phi - t = +0.575593  [<= phi exactly]   bounds: 1.042441 <= t <= R/r_next 1.077054 <= (R/r)^2 1.145898;  R 1.394803 r 1.302986 H 1.371188 r_next 1.295017; faces of D_5 with pole a corner of D_4: 252/252
+  NOTE: 60 listed points are not corners of the hull: Counter({'strictly inside': 60})
+D_6: 192 corners (252 listed points), 320 faces, 510 edges, faces by sides {3: 260, 4: 60}, corner degrees {5: 132, 6: 60} (4 s)
+PASS foot points of D_6 = the 320 listed points of D_7 exactly
+PASS t_min(D_5) = 1.086902414064 = -51549296082536785663136/552928577063860942591+23322312207191211294937/552928577063860942591r5 is the exact max over corner reps x faces of D_6
+  t_min(D_5) = 1.086902414  phi - t = +0.531132  [<= phi exactly]   bounds: 1.055448 <= t <= R/r_next 1.098220 <= (R/r)^2 1.121096;  R 1.371188 r 1.295017 H 1.349278 r_next 1.248555; faces of D_6 with pole a corner of D_5: 60/320
+  NOTE: 60 listed points are not corners of the hull: Counter({'strictly inside': 60})
+D_7: 260 corners (320 listed points), 402 faces, 660 edges, faces by sides {3: 300, 4: 90, 5: 12}, corner degrees {3: 20, 4: 120, 6: 60, 7: 60} (8 s)
+PASS foot points of D_7 = the 402 listed points of D_8 exactly
+PASS t_min(D_6) = 1.025657373203 = 1187205721498291123093685/50079013386032899144803+-1523891702227515950170322/150237040158098697434409r5 is the exact max over corner reps x faces of D_7
+  t_min(D_6) = 1.025657373  phi - t = +0.592377  [<= phi exactly]   bounds: 1.025657 <= t <= R/r_next 1.083407 <= (R/r)^2 1.167852;  R 1.349278 r 1.248555 H 1.332295 r_next 1.245403; faces of D_7 with pole a corner of D_6: 132/402
+  NOTE: 90 listed points are not corners of the hull: Counter({'strictly inside': 90})
+D_8: 312 corners (402 listed points), 500 faces, 810 edges, faces by sides {3: 380, 4: 120}, corner degrees {4: 120, 5: 180, 20: 12} (24 s)
+PASS foot points of D_8 = the 500 listed points of D_9 exactly
+PASS t_min(D_7) = 1.059515513101 = -9241617963788950980713767469885440104077044848815679451/83419663493649092292492142738169302584687692526682530+4172503915462470143214908793559803571719816472673810227/83419663493649092292492142738169302584687692526682530r5 is the exact max over corner reps x faces of D_8
+  t_min(D_7) = 1.059515513  phi - t = +0.558518  [<= phi exactly]   bounds: 1.025657 <= t <= R/r_next 1.080413 <= (R/r)^2 1.144409;  R 1.332295 r 1.245403 H 1.315525 r_next 1.233135; faces of D_8 with pole a corner of D_7: 440/500
+D_9: 500 corners (500 listed points), 732 faces, 1230 edges, faces by sides {3: 540, 4: 180, 10: 12}, corner degrees {3: 120, 4: 120, 5: 120, 6: 120, 15: 20} (34 s)
+PASS foot points of D_9 = the 732 listed points of D_10 exactly
+PASS t_min(D_8) = 1.138076918104 = 4363820063004842592966660715548809487513091634474447143344748752843532206530740943434599567093865986421195644587765353669370101596677605727883363652450443966507177666494319252919709730463/2468876477214299673105851358985600534947088750606883261490125223461607562134836750439637366004051966485229212237478876965528348094099356960907271938163353396620549855416265329743586890625+-3474958602049645240915907551230246415831795782312736636677309450141433951732925429135081220878451344896422575175343479165733882292458715751189561495655191556776512171711057064577724571958/12344382386071498365529256794928002674735443753034416307450626117308037810674183752198186830020259832426146061187394384827641740470496784804536359690816766983102749277081326648717934453125r5 is the exact max over corner reps x faces of D_9
+  t_min(D_8) = 1.138076918  phi - t = +0.479957  [<= phi exactly]   bounds: 1.138077 <= t <= R/r_next 1.138077 <= (R/r)^2 1.138091;  R 1.315525 r 1.233135 H 1.290557 r_next 1.155919; faces of D_9 with pole a corner of D_8: 432/732

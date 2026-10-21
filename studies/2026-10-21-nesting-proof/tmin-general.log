@@ -1,0 +1,31 @@
+--- Platonic: theorem sharp, t_min = (R/r)^2 ---
+tetrahedron (9)                    t_min 9.000000  lower 9.000000  R/r(P) 9.000000  (R/r)^2 9.000000  V 4 F 4 foot-extreme 4/4 
+cube (3)                           t_min 3.000000  lower 3.000000  R/r(P) 3.000000  (R/r)^2 3.000000  V 8 F 6 foot-extreme 6/6 
+octahedron (3)                     t_min 3.000000  lower 3.000000  R/r(P) 3.000000  (R/r)^2 3.000000  V 6 F 8 foot-extreme 8/8 
+dodecahedron (15-6r5=1.583592)     t_min 1.583592  lower 1.583592  R/r(P) 1.583592  (R/r)^2 1.583592  V 20 F 12 foot-extreme 12/12 
+icosahedron (15-6r5)               t_min 1.583592  lower 1.583592  R/r(P) 1.583592  (R/r)^2 1.583592  V 12 F 20 foot-extreme 20/20 
+--- other classic solids (below phi? phi = 1.618034) ---
+cuboctahedron                      t_min 1.500000  lower 1.500000  R/r(P) 1.581139  (R/r)^2 2.000000  V 12 F 14 foot-extreme 14/14 
+rhombic dodecahedron               t_min 2.000000  lower 2.000000  R/r(P) 2.000000  (R/r)^2 2.000000  V 14 F 12 foot-extreme 12/12 
+truncated octahedron               t_min 1.500000  lower 1.250000  R/r(P) 1.581139  (R/r)^2 1.666667  V 24 F 14 foot-extreme 14/14 
+icosidodecahedron                  t_min 1.145898  lower 1.145898  R/r(P) 1.207883  (R/r)^2 1.381966  V 30 F 32 foot-extreme 32/32 
+truncated icosahedron              t_min 1.172560  lower 1.133581  R/r(P) 1.177400  (R/r)^2 1.194531  V 60 F 32 foot-extreme 32/32 
+--- counterexamples: no constant for centrally symmetric, nor for icosahedral symmetry ---
+square bipyramid, height 1         t_min 3.000000  lower 3.000000  R/r(P) 3.000000  (R/r)^2 3.000000  V 6 F 8 foot-extreme 8/8 (flat -> t_min -> infinity)
+square bipyramid, height 0.3       t_min 13.111111  lower 13.111111  R/r(P) 13.111111  (R/r)^2 13.111111  V 6 F 8 foot-extreme 8/8 (flat -> t_min -> infinity)
+square bipyramid, height 0.1       t_min 102.000000  lower 102.000000  R/r(P) 102.000000  (R/r)^2 102.000000  V 6 F 8 foot-extreme 8/8 (flat -> t_min -> infinity)
+square bipyramid, height 0.03      t_min 1113.111111  lower 1113.111111  R/r(P) 1113.111111  (R/r)^2 1113.111111  V 6 F 8 foot-extreme 8/8 (flat -> t_min -> infinity)
+icosahedron + 0.9 x round icosahedral core t_min 1.236164  lower 1.236164  R/r(P) 1.236164  (R/r)^2 1.248790  V 792 F 1580 foot-extreme 1340/1580 (spiky icosahedral, centrally symmetric)
+icosahedron + 0.7 x round icosahedral core t_min 1.583592  lower 1.583592  R/r(P) 1.583592  (R/r)^2 1.583592  V 12 F 20 foot-extreme 20/20 (spiky icosahedral, centrally symmetric)
+icosahedron + 0.5 x round icosahedral core t_min 1.583592  lower 1.583592  R/r(P) 1.583592  (R/r)^2 1.583592  V 12 F 20 foot-extreme 20/20 (spiky icosahedral, centrally symmetric)
+icosahedron + 0.3 x round icosahedral core t_min 1.583592  lower 1.583592  R/r(P) 1.583592  (R/r)^2 1.583592  V 12 F 20 foot-extreme 20/20 (spiky icosahedral, centrally symmetric)
+--- does t_min fall under P? (P-iterates of classic solids and random centrally symmetric hulls) ---
+cube                               t_min of P^k, k=0..5: [np.float64(3.0), np.float64(3.0), np.float64(3.0), np.float64(3.0), np.float64(3.0), np.float64(3.0)]
+rhombic dodecahedron               t_min of P^k, k=0..5: [np.float64(2.0), np.float64(1.5), np.float64(1.6667), np.float64(1.5), np.float64(2.0), np.float64(1.5)]
+icosahedron                        t_min of P^k, k=0..5: [np.float64(1.5836), np.float64(1.5836), np.float64(1.5836), np.float64(1.5836), np.float64(1.5836), np.float64(1.5836)]
+truncated icosahedron              t_min of P^k, k=0..5: [np.float64(1.1726), np.float64(1.2229), np.float64(1.1726), np.float64(1.1945), np.float64(1.1726), np.float64(1.2229)]
+icosahedron+0.7 core               t_min of P^k, k=0..5: [np.float64(1.5836), np.float64(1.5836), np.float64(1.5836), np.float64(1.5836), np.float64(1.5836), np.float64(1.5836)]
+random centrally symmetric #0          t_min of P^k, k=0..5: [np.float64(2.3684), np.float64(3.086), np.float64(1.5624), np.float64(1.7136), np.float64(1.4427), np.float64(1.2382)]
+random centrally symmetric #1          t_min of P^k, k=0..5: [np.float64(7.8923), np.float64(3.546), np.float64(2.7022), np.float64(1.7826), np.float64(1.527), np.float64(1.2625)]
+random centrally symmetric #2          t_min of P^k, k=0..5: [np.float64(5.3765), np.float64(3.0885), np.float64(2.1124), np.float64(1.646), np.float64(2.7014), np.float64(1.7342)]
+random centrally symmetric #3          t_min of P^k, k=0..5: [np.float64(2.9298), np.float64(3.6324), np.float64(1.9594), np.float64(1.672), np.float64(1.5702), np.float64(1.2379)]

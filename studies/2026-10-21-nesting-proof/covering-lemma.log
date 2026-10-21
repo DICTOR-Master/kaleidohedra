@@ -1,0 +1,14 @@
+icosahedral: Moebius triangle sides A2A3 20.9052, A2A5 31.7175, A3A5 37.3774 deg; diameter = longest side 37.3774 = arccos(0.794654); claim c = 0.794654
+   altitude from A2 onto the longest side 18.0000 deg -> kite diagonal A2A2' = 36.0000 deg; kite diameter = 37.3774 deg -> kite argument WORKS
+   min over a grid of u in the triangle of inradius(hull(orbit u)) = 0.794654 at barycentric (A2,A3,Ahi) = (np.float64(0.0), np.float64(0.0), np.float64(1.0)); claim c = 0.794654: holds
+   orbit of the A2 axis: inradius 0.850651
+   orbit of the A3 axis: inradius 0.794654
+   orbit of the high axis: inradius 0.794654
+   1/c^2 = 1.583592 = 15 - 6 sqrt5 = 1.583592 < phi = 1.618034  (29 < 13 sqrt5: 841 < 845); margin phi - (15-6sqrt5) = 0.034442
+octahedral: Moebius triangle sides A2A3 35.2644, A2A4 45.0000, A3A4 54.7356 deg; diameter = longest side 54.7356 = arccos(0.577350); claim c = 0.577350
+   altitude from A2 onto the longest side 30.0000 deg -> kite diagonal A2A2' = 60.0000 deg; kite diameter = 60.0000 deg -> kite argument FAILS
+   min over a grid of u in the triangle of inradius(hull(orbit u)) = 0.577350 at barycentric (A2,A3,Ahi) = (np.float64(0.0), np.float64(0.0), np.float64(1.0)); claim c = 0.577350: holds
+   orbit of the A2 axis: inradius 0.707107
+   orbit of the A3 axis: inradius 0.577350
+   orbit of the high axis: inradius 0.577350
+   -> octahedral: S inside 3 P(S) for every octahedrally symmetric polytope is supported numerically (cube/octahedron sharp) but the kite proof does not cover it.
