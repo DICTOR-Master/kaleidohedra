@@ -1,0 +1,207 @@
+PASS frame: I, its face centres (D) and TI fixed by the 60 rotations of the #39 frame
+PASS exact unit edges: I(1), D(1) = (3/phi) x face centres of I(1), ID(1) = sums of I(1) edge ends, TI(1) = 2a+b over I(1) edges (60 corners)
+PASS #22: I(1/phi) circumradius^2 = (phi^2+1)/(4 phi^2) (0.587785); D(1) inradius 1.113516 as stated
+PASS #23: TI(1/phi) has all 60 corners on the faces of RT; D(1) corners on TI faces (20, the hexagon centres); RT edge^2 = (45 - 18 sqrt5)/4 exactly, as stated (RT = -3/4+3/4r5 = 0.927051 x T(ID(1)))
+PASS #23: the Hecatodihedron stage H = c x polar(OG) holds the TI(1/phi) as 60 of its 80 corners (TI on the faces of H)
+PASS #23: the seven stations nest exactly, I(1/phi) < ID < D < TI < H < RT < I(phi^2)
+PASS #32: polar of #23 reversed nests exactly, D < ID < OG < PD < I < RT < D*phi^3 (closure c = 2+1r5 = 4.236068 = phi^3), its third station is the OG exactly up to scale
+PASS #33 ends setting rho^2 = phi^2/4: rho maps I(1/phi) <-> D(1) exactly (the two cycles share I and D)
+PASS #33 middle setting rho^2 = 3 phi^2/4: rho maps ID <-> RT exactly (the two cycles share ID and RT)
+PASS #33: the two settings differ by exactly 3 (not a power of phi), so no sphere gives both
+PASS #33 ends: the union between I(1/phi) and I(phi^2) has 12 distinct stations, shared: ['I (shared)', 'D (shared)', 'I (shared)']
+PASS #33 middle: the union between I(1/phi) and I(phi^2) has 11 distinct stations, shared: ['ID (shared)', 'RT (shared)']
+PASS #34 contacts as stated: 30 ID corners on O faces; rTI = edge midpoints of TI (90); 80 H corners on jtI faces; 80 jtI corners on RT faces; jtI 92 corners
+PASS #34: the nine stations nest exactly
+PASS #35: the Cleo star's 20 tips (2 x the face foot points of I) are exactly (2/3) x D(1) = D'
+PASS #35: M = hull(12 five-fold RT corners, 20 face centres of I(phi^2)): 32 corners, 60 faces, touching RT and I phi^3 (20 corners on its faces)
+PASS #35: the hull of the Cleo star is D' exactly; the twelve stations nest exactly
+PASS #38: T^4(ID) = (10/phi^4) ID exactly, 10/phi^4 = 35 - 15 sqrt5
+PASS #38 (iv): rho in the sphere of radius^2 15 - 5 sqrt5 (the GTI circumsphere) maps T^k(ID) to T^(5-k)(ID) exactly, k = 0..4 (ID <-> c RT, RT <-> c ID, GTI <-> FPD)
+PASS #38a: spikes on I(1) to 3x the face distance have tips = D(phi) exactly; spires on D(phi) to sqrt5 x the face distance have tips = I(phi^3) exactly
+PASS #39: corner counts OG, KRE, PHE, TPP, DPHP = 102, 92, 180, 212, 270 and TPH, TQH, TQP, TQHD = 80, 132, 140, 162, as published
+PASS #39: T undoes P exactly on all four downward steps (T(P(S)) = S)
+solids built (98 s)
+PASS Cleo Towers: T^(4m+j)(ID) = (10/phi^4)^m T^j(ID) exactly (checked at beat 12 = T(beat 11))
+PASS Polar Cleo Towers: rho (radius^2 15 - 5 sqrt5) of beat b is beat 5 - b exactly (b <= 5), and of the UP orbit up to scale for b = 7, 12
+PASS #43 OG turned out: S_(k+1) = phi P(S_k) exactly, so S_k = phi^k x (#39 down_k), k <= 4
+PASS #43 Corollary 2: polar(S_k) = phi^-k T^k(H) exactly, k <= 4 (H = polar OG)
+PASS new A, CLEO turned out: S_k = (phi^k / lam) T^(4-k)(ID) exactly for k = 1..4, i.e. #38 run backwards (P undoes T on the UP orbit)
+PASS new B: P^k(H) = polar(T^k OG) exactly, k <= 4 (Lemma 3)
+#43 and new A, B built (216 s)
+--- #22
+PASS #22: 22.I (I) -> 22.D (D): rho; T c = 1+2/5r5 = 1.894427, P c = 3+0r5 = 3.000000, rho c = 3/8+1/8r5 = 0.654508  [face-on placement: 12 pentagonal pyramids point-down on D faces, apices on I corners (+30 AXE, 20 CLEO)]
+PASS #22: 22.D (D) -> 22.I2 (I): rho; T c = 2/3+1/3r5 = 1.412023, P c = 0+1r5 = 2.236068, rho c = 11/8+5/8r5 = 2.772542  [Lotus seed: 12 I(1) on the corners cut by D faces (J2 in, J11 out) + 30 AXE + 20 FUJI]
+PASS #22: 22.I2 (I) -> 22.D3 (D): rho; T c = 1+2/5r5 = 1.894427, P c = 3+0r5 = 3.000000, rho c = 47/8+21/8r5 = 11.744678  [the first decomposition again, phi^3 larger]
+--- #23
+PASS #23: 23.I (I) -> 23.ID (ID): rect x c; rect c = 3/2+1/2r5 = 2.618034
+PASS #23: 23.ID (ID) -> 23.D (D): other; no exact T / P / rho / scale / rect relation  [D = ID + 20 triangular corner pyramids (ID is D rectified)]
+PASS #23: 23.D (D) -> 23.TI (TI): other; no exact T / P / rho / scale / rect relation  [cage wraps D, D corners on hexagon centres (12 twisted frusta + 30 t1)]
+PASS #23: 23.TI (TI) -> 23.H (H): other; no exact T / P / rho / scale / rect relation  [a Shield (low pyramid) on each hexagon]
+PASS #23: 23.H (H) -> 23.RT (RT): other; no exact T / P / rho / scale / rect relation  [caps close to the RT (TI corners on RT faces)]
+PASS #23: 23.RT (RT) -> 23.I3 (I): other; no exact T / P / rho / scale / rect relation  [loose nest: 30 edge + 20 face pieces]
+--- #32
+PASS #32: 32.I3 (D) -> 32.RT (ID): rect x c; rect c = 2/3+1/3r5 = 1.412023
+PASS #32: 32.RT (ID) -> 32.H (OG): other; no exact T / P / rho / scale / rect relation  [the polar of a #23 layer (cones over faces of the inner solid)]
+PASS #32: 32.H (OG) -> 32.TI (PD): other; no exact T / P / rho / scale / rect relation  [the polar of a #23 layer (cones over faces of the inner solid)]
+PASS #32: 32.TI (PD) -> 32.D (I): other; no exact T / P / rho / scale / rect relation  [the polar of a #23 layer (cones over faces of the inner solid)]
+PASS #32: 32.D (I) -> 32.ID (RT): other; no exact T / P / rho / scale / rect relation  [the polar of a #23 layer (cones over faces of the inner solid)]
+PASS #32: 32.ID (RT) -> 32.I (D): other; no exact T / P / rho / scale / rect relation  [the polar of a #23 layer (cones over faces of the inner solid)]
+--- #33 ends
+PASS #33 ends: 33e.0 (I (shared)) -> 33e.1 (RT): other; no exact T / P / rho / scale / rect relation
+PASS #33 ends: 33e.1 (RT) -> 33e.2 (ID): rho; P c = 3/2+1/2r5 = 2.618034, rho c = 3/8+1/8r5 = 0.654508
+PASS #33 ends: 33e.2 (ID) -> 33e.3 (D (shared)): other; no exact T / P / rho / scale / rect relation
+PASS #33 ends: 33e.3 (D (shared)) -> 33e.4 (TI): other; no exact T / P / rho / scale / rect relation
+PASS #33 ends: 33e.4 (TI) -> 33e.5 (H): other; no exact T / P / rho / scale / rect relation
+PASS #33 ends: 33e.5 (H) -> 33e.6 (RT): other; no exact T / P / rho / scale / rect relation
+PASS #33 ends: 33e.6 (RT) -> 33e.7 (ID): rho; P c = 11/18+5/18r5 = 1.232241, rho c = 11/8+5/8r5 = 2.772542
+PASS #33 ends: 33e.7 (ID) -> 33e.8 (OG): other; no exact T / P / rho / scale / rect relation
+PASS #33 ends: 33e.8 (OG) -> 33e.9 (PD): other; no exact T / P / rho / scale / rect relation
+PASS #33 ends: 33e.9 (PD) -> 33e.10 (I (shared)): other; no exact T / P / rho / scale / rect relation
+PASS #33 ends: 33e.10 (I (shared)) -> 33e.11 (RT): other; no exact T / P / rho / scale / rect relation
+--- #33 middle
+PASS #33 middle: 33m.0 (I) -> 33m.1 (D): rho; T c = 0+3/5r5 = 1.341641, P c = -18+9r5 = 2.124612, rho c = -3/8+3/8r5 = 0.463525
+PASS #33 middle: 33m.1 (D) -> 33m.2 (ID (shared)): rect x c; rect c = 2/3+1/3r5 = 1.412023
+PASS #33 middle: 33m.2 (ID (shared)) -> 33m.3 (OG): other; no exact T / P / rho / scale / rect relation
+PASS #33 middle: 33m.3 (OG) -> 33m.4 (D): other; no exact T / P / rho / scale / rect relation
+PASS #33 middle: 33m.4 (D) -> 33m.5 (PD): other; no exact T / P / rho / scale / rect relation
+PASS #33 middle: 33m.5 (PD) -> 33m.6 (TI): rho; P c = 17/3+-2r5 = 1.194531, rho c = 9/8+3/8r5 = 1.963525
+PASS #33 middle: 33m.6 (TI) -> 33m.7 (H): other; no exact T / P / rho / scale / rect relation
+PASS #33 middle: 33m.7 (H) -> 33m.8 (I): other; no exact T / P / rho / scale / rect relation
+PASS #33 middle: 33m.8 (I) -> 33m.9 (RT (shared)): other; no exact T / P / rho / scale / rect relation
+PASS #33 middle: 33m.9 (RT (shared)) -> 33m.10 (I): other; no exact T / P / rho / scale / rect relation
+--- #34
+PASS #34: 34.I (I) -> 34.ID (ID): rect x c; rect c = 3/2+1/2r5 = 2.618034
+PASS #34: 34.ID (ID) -> 34.O (OG): other; no exact T / P / rho / scale / rect relation  [O wraps ID (30 corners on O faces); O = middle-setting polar of H]
+PASS #34: 34.O (OG) -> 34.rTI (rTI): other; no exact T / P / rho / scale / rect relation  [loose nest]
+PASS #34: 34.rTI (rTI) -> 34.TI (TI): other; no exact T / P / rho / scale / rect relation  [rTI is TI rectified (corners on TI edges)]
+PASS #34: 34.TI (TI) -> 34.H (H): other; no exact T / P / rho / scale / rect relation  [Shields on the hexagons]
+PASS #34: 34.H (H) -> 34.jtI (jtI): other; no exact T / P / rho / scale / rect relation  [H corners on jtI faces (jtI = dual of rTI)]
+PASS #34: 34.jtI (jtI) -> 34.RT (RT): other; no exact T / P / rho / scale / rect relation  [jtI corners on RT faces]
+PASS #34: 34.RT (RT) -> 34.I3 (I): other; no exact T / P / rho / scale / rect relation  [loose nest]
+--- #35
+PASS #35: 35.I -> 35.star: other (Kleetope: 20 Cleo-Ico spikes raised on the faces (tips at 2x the face distance)); the tips alone: T c = 2/3+4/15r5 = 1.262951, P c = 2+0r5 = 2.000000, rho c = 1/4+1/12r5 = 0.436339
+PASS #35: 35.star -> 35.Dp: other (convex hull of the tips (+12 inward pyramids, 30 valley tetrahedra)); hull of the star = D exactly
+PASS #35: 35.Dp (D) -> 35.ID (ID): rect x c; rect c = 3/2+0r5 = 1.500000
+PASS #35: 35.ID (ID) -> 35.O (OG): other; no exact T / P / rho / scale / rect relation  [O wraps ID (30 corners on O faces); O = middle-setting polar of H]
+PASS #35: 35.O (OG) -> 35.rTI (rTI): other; no exact T / P / rho / scale / rect relation  [loose nest]
+PASS #35: 35.rTI (rTI) -> 35.TI (TI): other; no exact T / P / rho / scale / rect relation  [rTI is TI rectified (corners on TI edges)]
+PASS #35: 35.TI (TI) -> 35.H (H): other; no exact T / P / rho / scale / rect relation  [Shields on the hexagons]
+PASS #35: 35.H (H) -> 35.jtI (jtI): other; no exact T / P / rho / scale / rect relation  [H corners on jtI faces (jtI = dual of rTI)]
+PASS #35: 35.jtI (jtI) -> 35.RT (RT): other; no exact T / P / rho / scale / rect relation  [jtI corners on RT faces]
+PASS #35: 35.RT (RT) -> 35.M (M): other; no exact T / P / rho / scale / rect relation  [hull of RT five-fold corners and the face centres of I phi^3]
+PASS #35: 35.M (M) -> 35.I3 (I): other; no exact T / P / rho / scale / rect relation  [M corners on I phi^3 face centres]
+--- #38
+PASS #38: 38.0 (ID) -> 38.1 (RT): T; T c = 1+0r5 = 1.000000, rho c = 3/2+1/2r5 = 2.618034
+PASS #38: 38.1 (RT) -> 38.2 (GTI): T; T c = 1+0r5 = 1.000000
+PASS #38: 38.2 (GTI) -> 38.3 (FPD): T; T c = 1+0r5 = 1.000000, rho c = 15+-5r5 = 3.819660
+PASS #38: 38.3 (FPD) -> 38.4 (ID): T; T c = 1+0r5 = 1.000000
+--- #38a
+PASS #38a: 38a.I -> 38a.gsd: other (stellation: a pyramid on each face to 3x the face distance (20 CLEO)); the tips alone: T c = 1+2/5r5 = 1.894427, P c = 3+0r5 = 3.000000, rho c = 7/8+3/8r5 = 1.713525
+PASS #38a: 38a.gsd -> 38a.D1: other (convex hull of the star (+12 caps, 30 AXE)); hull of the star = D exactly
+PASS #38a: 38a.D1 -> 38a.ssd: other (stellation: a spire on each face to sqrt5 x the face distance); the tips alone: T c = 2/3+1/3r5 = 1.412023, P c = 0+1r5 = 2.236068, rho c = 29/8+13/8r5 = 7.258610
+PASS #38a: 38a.ssd -> 38a.I3: other (convex hull of the star (+20 inward pyramids, 30 valley tetrahedra)); hull of the star = I exactly
+--- #39 up
+PASS #39 up: 39u.0 (OG) -> 39u.1 (KRE): T; T c = 1+0r5 = 1.000000
+PASS #39 up: 39u.1 (KRE) -> 39u.2 (PHE): T; T c = 1+0r5 = 1.000000
+PASS #39 up: 39u.2 (PHE) -> 39u.3 (TPP): T; T c = 1+0r5 = 1.000000
+PASS #39 up: 39u.3 (TPP) -> 39u.4 (DPHP): T; T c = 1+0r5 = 1.000000
+--- #39 down
+PASS #39 down: 39d.0 (OG) -> 39d.1 (TPH): P; P c = 1+0r5 = 1.000000
+PASS #39 down: 39d.1 (TPH) -> 39d.2 (TQH): P; P c = 1+0r5 = 1.000000
+PASS #39 down: 39d.2 (TQH) -> 39d.3 (TQP): P; P c = 1+0r5 = 1.000000
+PASS #39 down: 39d.3 (TQP) -> 39d.4 (TQHD): P; P c = 1+0r5 = 1.000000
+--- Cleo Towers
+PASS Cleo Towers: CT.0 (ID) -> CT.1 (RT): T; T c = 1+0r5 = 1.000000, rho c = 3/2+1/2r5 = 2.618034
+PASS Cleo Towers: CT.1 (RT) -> CT.2 (GTI): T; T c = 1+0r5 = 1.000000
+PASS Cleo Towers: CT.2 (GTI) -> CT.4 (ID): T^2; T^n c = 1+0r5 = 1.000000
+PASS Cleo Towers: CT.4 (ID) -> CT.7 (FPD): T^3; P c = 35+-15r5 = 1.458980, T^n c = 1+0r5 = 1.000000
+PASS Cleo Towers: CT.7 (FPD) -> CT.12 (ID): T^5; T c = 35+-15r5 = 1.458980, T^n c = 1+0r5 = 1.000000
+--- Polar Cleo Towers
+PASS Polar Cleo Towers: PCT.0 (RT) -> PCT.1 (ID): P^1; P c = 1+0r5 = 1.000000, rho c = 900+-400r5 = 5.572809, P^n c = 1+0r5 = 1.000000
+PASS Polar Cleo Towers: PCT.1 (ID) -> PCT.2 (FPD): P; P c = 1+0r5 = 1.000000
+PASS Polar Cleo Towers: PCT.2 (FPD) -> PCT.4 (RT): P^2; P^n c = 1+0r5 = 1.000000
+PASS Polar Cleo Towers: PCT.4 (RT) -> PCT.7 (GTI): P^3; T c = 7/20+3/20r5 = 0.685410, P^n c = 1+0r5 = 1.000000
+PASS Polar Cleo Towers: PCT.7 (GTI) -> PCT.12 (RT): P^5; P c = 7/20+3/20r5 = 0.685410, P^n c = 1+0r5 = 1.000000
+--- OG turned out
+PASS OG turned out: OGt.0 (OG) -> OGt.1 (TPH): phiP; P c = 1/2+1/2r5 = 1.618034
+PASS OG turned out: OGt.1 (TPH) -> OGt.2 (TQH): phiP; P c = 1/2+1/2r5 = 1.618034
+PASS OG turned out: OGt.2 (TQH) -> OGt.3 (TQP): phiP; P c = 1/2+1/2r5 = 1.618034
+PASS OG turned out: OGt.3 (TQP) -> OGt.4 (TQHD): phiP; P c = 1/2+1/2r5 = 1.618034
+--- OG turned out, polar
+PASS OG turned out, polar: OGp.0 (H) -> OGp.1 (T H): T x c; T c = -1/2+1/2r5 = 0.618034
+PASS OG turned out, polar: OGp.1 (T H) -> OGp.2 (T^2 H): T x c; T c = -1/2+1/2r5 = 0.618034
+PASS OG turned out, polar: OGp.2 (T^2 H) -> OGp.3 (T^3 H): T x c; T c = -1/2+1/2r5 = 0.618034
+PASS OG turned out, polar: OGp.3 (T^3 H) -> OGp.4 (T^4 H): T x c; T c = -1/2+1/2r5 = 0.618034
+--- CLEO turned out
+PASS CLEO turned out: A.0 (ID) -> A.1 (FPD): phiP; P c = 1/2+1/2r5 = 1.618034
+PASS CLEO turned out: A.1 (FPD) -> A.2 (GTI): phiP; P c = 1/2+1/2r5 = 1.618034, rho c = 19/5+17/10r5 = 7.601316
+PASS CLEO turned out: A.2 (GTI) -> A.3 (RT): phiP; P c = 1/2+1/2r5 = 1.618034
+PASS CLEO turned out: A.3 (RT) -> A.4 (ID): phiP; P c = 1/2+1/2r5 = 1.618034, rho c = 3571/200+1597/200r5 = 35.710003
+--- polar of OG up
+PASS polar of OG up: B.0 (H) -> B.1 (P H): P; P c = 1+0r5 = 1.000000
+PASS polar of OG up: B.1 (P H) -> B.2 (P^2 H): P; P c = 1+0r5 = 1.000000
+PASS polar of OG up: B.2 (P^2 H) -> B.3 (P^3 H): P; P c = 1+0r5 = 1.000000
+PASS polar of OG up: B.3 (P^3 H) -> B.4 (P^4 H): P; P c = 1+0r5 = 1.000000
+task 1 done (372 s)
+class 0: I: 12 corners, stations ['22.I', '22.I2', '23.I', '23.I3', '32.D', '33e.0', '33e.10', '33m.0', '33m.8', '33m.10', '34.I', '34.I3', '35.I', '35.I3', '38a.I', '38a.I3']
+class 1: D: 20 corners, stations ['22.D', '22.D3', '23.D', '32.I3', '32.I', '33e.3', '33m.1', '33m.4', '35.Dp', '38a.D1']
+class 2: ID: 30 corners, stations ['23.ID', '32.RT', '33e.2', '33e.7', '33m.2', '34.ID', '35.ID', '38.0', '38.4', 'CT.0', 'CT.4', 'CT.12', 'PCT.1', 'A.0', 'A.4']
+class 3: TI: 60 corners, stations ['23.TI', '33e.4', '33m.6', '34.TI', '35.TI']
+class 4: H: 80 corners, stations ['23.H', '33e.5', '33m.7', '34.H', '35.H', 'OGp.0', 'B.0']
+class 5: RT: 32 corners, stations ['23.RT', '32.ID', '33e.1', '33e.6', '33e.11', '33m.9', '34.RT', '35.RT', '38.1', 'CT.1', 'PCT.0', 'PCT.4', 'PCT.12', 'A.3']
+class 6: OG: 102 corners, stations ['32.H', '33e.8', '33m.3', '34.O', '35.O', '39u.0', '39d.0', 'OGt.0']
+class 7: PD: 32 corners, stations ['32.TI', '33e.9', '33m.5']
+class 8: rTI: 90 corners, stations ['34.rTI', '35.rTI', 'B.1']
+class 9: jtI: 92 corners, stations ['34.jtI', '35.jtI', '39u.1']
+class 10: M: 32 corners, stations ['35.M']
+class 11: GTI: 60 corners, stations ['38.2', 'CT.2', 'PCT.7', 'A.2']
+class 12: FPD: 32 corners, stations ['38.3', 'CT.7', 'PCT.2', 'A.1']
+class 13: PHE: 180 corners, stations ['39u.2']
+class 14: TPP: 212 corners, stations ['39u.3']
+class 15: DPHP: 270 corners, stations ['39u.4']
+class 16: TPH: 80 corners, stations ['39d.1', 'OGt.1']
+class 17: TQH: 132 corners, stations ['39d.2', 'OGt.2']
+class 18: TQP: 140 corners, stations ['39d.3', 'OGt.3']
+class 19: TQHD: 162 corners, stations ['39d.4', 'OGt.4']
+class 20: T H: 132 corners, stations ['OGp.1']
+class 21: T^2 H: 140 corners, stations ['OGp.2']
+class 22: T^3 H: 162 corners, stations ['OGp.3']
+class 23: T^4 H: 200 corners, stations ['OGp.4']
+class 24: P^2 H: 92 corners, stations ['B.2']
+class 25: P^3 H: 180 corners, stations ['B.3']
+class 26: P^4 H: 152 corners, stations ['B.4']
+PASS dual (rho) pairs of classes: I <-> D, ID <-> RT, TI <-> PD, H <-> OG, rTI <-> jtI, GTI <-> FPD, PHE <-> P^2 H, TPP <-> P^3 H, DPHP <-> P^4 H, TPH <-> T H, TQH <-> T^2 H, TQP <-> T^3 H, TQHD <-> T^4 H
+PASS #22 and #23 share their I(1/phi), D(1) and I(phi^2) exactly (the hinge of #23 section 5)
+PASS #32 = rho(#23) station by station, order reversed (unit sphere, Dharma frame)
+PASS #34's O is #32's OG station scaled by 3 phi^2/4 exactly, i.e. the middle-setting polar of #23's H (#33 middle)
+PASS #34 contains six of the seven #23 stations exactly (all but D); adds O, rTI, jtI
+PASS #35 contains all nine #34 stations exactly (adds Cleo star, D', M)
+PASS #35's D' = (2/3) x #22's D(1) exactly
+PASS #38a hulls I(1) < D(phi) < I(phi^3) = phi x #22 stations I(1/phi) < D(1) < I(phi^2) exactly (the same orbit, c = 1/2+1/2r5 = 1.618034)
+PASS the Cleo star (#35, #38) and the great stellated dodecahedron (#38a) are the same Kleetope rule at heights 2 and 3 (tips at 2x and 3x the face foot points; checked: (3/2) phi x Cleo tips = GSD tips)
+PASS #38's ID and RT are #23's ID and RT up to scale (ID x 1/4+1/4r5 = 0.809017, RT x -3/4+3/4r5 = 0.927051); #23's RT = 9/2+-3/2r5 = 1.145898 x T(#23's ID)
+PASS #38's GTI is not similar to #23's TI, and #38's FPD not to #32's PD (exact: different solids)
+PASS Cleo Towers = the #38 orbit at beats 0, 1, 2, 4, 7, 12 (a Fibonacci sub-sequence)
+PASS OG turned out = phi^k x #39 down_k beat by beat
+PASS new B = rho(#39 up) station by station
+PASS #43's polar of the OG turned out = phi^-k x (the UP family of H) beat by beat; new B is H's DOWN family: H is the hinge (#39 read through rho)
+PASS #39's OG is #32's and #34's OG up to scale (one solid in all three)
+task 2 done (390 s)
+PASS new C, OTT turned out: C_k = 2/3+0r5 = 0.666667 x A_(k-1) exactly for k = 1..4 (A one beat behind; c = phi (sqrt5 - 1)/3)
+PASS OTT -> C_1: phiP; P c = 1/2+1/2r5 = 1.618034
+built T^1(OTT): 44 corners (0 s)
+built T^2(OTT): 68 corners (0 s)
+built T^3(OTT): 108 corners (1 s)
+built T^4(OTT): 98 corners (1 s)
+PASS OTT under T, k = 0: 24 corners, 38 faces (24 3-gons, 8 3-gons, 6 4-gons), 3 exact face kinds, volume 1.327676, radii 0.7136..0.7837, icosahedral False, signed-permutation symmetries 24
+PASS OTT under T, k = 1: 44 corners, 24 faces (12 3-gons, 12 8-gons), 2 exact face kinds, volume 2.017408, radii 0.8053..0.9575, icosahedral False, signed-permutation symmetries 24; T^0 inside T^1: True (corners outside 0); P(T^1) = T^0: True; similar to the UP orbit: no
+PASS OTT under T, k = 2: 68 corners, 36 faces (24 4-gons, 12 9-gons), 2 exact face kinds, volume 2.945778, radii 0.9258..1.0201, icosahedral False, signed-permutation symmetries 24; T^1 inside T^2: False (corners outside 8); P(T^2) = T^1: False; similar to the UP orbit: no
+PASS OTT under T, k = 3: 108 corners, 68 faces (8 3-gons, 24 4-gons, 12 5-gons, 24 7-gons), 4 exact face kinds, volume 4.327567, radii 1.0262..1.2263, icosahedral False, signed-permutation symmetries 24; T^2 inside T^3: False (corners outside 36); P(T^3) = T^2: True; similar to the UP orbit: no
+PASS OTT under T, k = 4: 98 corners, 60 faces (24 4-gons, 24 6-gons, 12 6-gons), 3 exact face kinds, volume 5.050967, radii 1.0398..1.1533, icosahedral False, signed-permutation symmetries 24; T^3 inside T^4: False (corners outside 72); P(T^4) = T^3: False; similar to the UP orbit: no
+PASS Lemma 3 check on the OTT: polar(T(OTT)) = P(polar OTT) exactly
+PASS OTT turned out: C.0 -> C.1: phiP; P c = 1/2+1/2r5 = 1.618034
+PASS OTT turned out: C.1 -> C.2: phiP; P c = 1/2+1/2r5 = 1.618034
+PASS OTT turned out: C.2 -> C.3: phiP; P c = 1/2+1/2r5 = 1.618034, rho c = 76/45+34/45r5 = 3.378362
+PASS OTT turned out: C.3 -> C.4: phiP; P c = 1/2+1/2r5 = 1.618034
+task 3 done (422 s)
+done (603 s)
