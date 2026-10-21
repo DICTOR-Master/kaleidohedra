@@ -28,10 +28,10 @@ L = {k: rd(p) for k, p in [('t', '2026-10-20-cleo-towers/tower-shells-exact.log'
      ('r', '2026-10-20-ott-rays/ott-rays-exact.log'), ('q', '2026-10-20-ott-rays/ott-og-planes.log'), ('g', '2026-10-21-og-turned-out/golden-exact.log'),
      ('b', '2026-10-21-og-turned-out/golden-orbits.log'), ('c8', '2026-10-19-og-gyrated-octet/cut8-exact.log')]}
 # 1. the logs and the PASS counts quoted in Data and reproducibility
-want = {'t': 6, 'p': 8, 'o': 7, 'r': 5, 'q': 2, 'b': 6}
+want = {'t': 6, 'p': 8, 'o': 7, 'r': 5, 'q': 4, 'b': 6}
 for k, n in want.items(): chk(L[k].count('PASS') == n and 'FAIL' not in L[k], f'log {k}: {n} PASS, no FAIL')
 chk(L['g'].count('PASS') == 15 and L['g'].count('FAIL') == 1 and 'FAIL shell phi TPH -> phi^2 TQH' in L['g'], 'golden-exact.log: 15 PASS + the one FAIL line (shell 2, one shape per kind)')
-for s in ['6 PASS', '8 PASS', '7 PASS', '5 PASS', '2 PASS', '15 PASS and one FAIL line']: chk(inn(s), f'text quotes "{s}"')
+for s in ['6 PASS', '8 PASS', '7 PASS', '5 PASS', '4 PASS', '15 PASS and one FAIL line']: chk(inn(s), f'text quotes "{s}"')
 # 2. Cleo Towers: Table 1 from tower-shells-exact.json
 T = js('2026-10-20-cleo-towers/tower-shells-exact.json')
 chk(T['beats'] == [1, 1, 2, 3, 5] and 'one turn of four beats returns the icosidodecahedron exactly 10/phi^4 larger' in L['t'], 'beats 1,1,2,3,5; one turn = c x ID')
@@ -85,7 +85,7 @@ chk([G['solids'][k]['corners'] for k in nm] == [102, 80, 132, 140, 162] and all(
 for k in nm: chk(inn(', '.join(f'{r:.6f}' for r in G['solids'][k]['corner_radii_float'])), f'{k} radii {G["solids"][k]["corner_radii_float"]}')
 chk(L['g'].count('lies inside') == 4 and L['g'].count('corners = the flipped spire tips (phi x foot points) exactly') == 4, 'each solid inside the next; corners = flipped tips (4 + 4)')
 rm = [max(G['solids'][k]['corner_radii_float']) for k in nm]; ratios = [f'{b / a:.2f}' for a, b in zip(rm, rm[1:])]
-chk(ratios == ['1.52', '1.53', '1.61', '1.51'] and inn('(1.52, 1.53, 1.61, 1.51)'), f'outer radius ratios {ratios}')
+chk(ratios == ['1.52', '1.53', '1.61', '1.51'] and inn('1.52, 1.53, 1.61 and 1.51'), f'outer radius ratios {ratios}')
 cnt = [sum(s['pieces'].values()) for s in G['shells']]
 chk(cnt == [80, 132, 140] and inn('80, 132 and 140 towers') and inn('2, 3 and 3 shapes'), f'golden towers {cnt}')
 chk(all(s['sum_equals_gap_exactly'] for s in G['shells']), 'golden shells: sums exact')
@@ -127,8 +127,22 @@ for t in ['(38367 + 17019√5)/13448', '(6615 + 2925√5)/3362', '2.3839 and 1.9
 chk('30 shared trapezoid-trapezoid edges' not in RB and 'pair up across their shorter parallel sides: 30 pairs' in RB and 'two per axis' in RB and '23.281 deg' in RB and '38367/13448+17019/13448r5 and 6615/3362+2925/3362r5 (2.3839, 1.9781), legs^2 1269/13448+567/13448r5 (0.4343), angles [62.15, 117.85], height 0.3840' in RB, 'ribbons: log facts')
 chk(RB.count("each trapezoid meets [2] others; 12 groups of [5]") == 2 and "{'shorter parallel side': 0, 'longer parallel side': 0, 'leg': 60}" in RB, 'TQP, TQHD: rings of 5 joined along the legs')
 chk('exactly the trapezoids\' parallel sides' in SL and 'two seams with opposite midpoints' in SL, 'TQH two-fold families = ribbon lines, two ribbons per axis')
+# 6c. referee fixes (Fable, 2026-10-21)
+KC = rd('2026-10-21-og-turned-out/kyushindo-checks.log')
+chk(KC.count('PASS') == 13 and 'FAIL' not in KC and inn('kyushindo-checks.log, 13 PASS'), 'kyushindo-checks.log: 13 PASS')
+for nm in ['ID', 'RT', 'GTI', 'FPD', 'OG', 'TPH', 'TQH', 'TQHD']: chk(f'(1) {nm}: corners cut off by T: 0 of' in KC, f'w.v <= w.w holds on {nm}')
+chk('(1) TQP: corners cut off by T: 60 of 140' in KC and inn('60 of the 140 corners would be cut off') and inn('w·v ≤ w·w for every corner w of S'), 'TQP: 60 of 140 cut; condition stated')
+chk(KC.count('fixed by all 60 rotations') == 3 and inn('the inner and the outer solid of every shell are each fixed by all 60 rotations'), 'all shells: inner and outer solids fixed by the 60 rotations')
+chk('circumradius^2 equals the OTT triangle\'s inradius^2, 2/9|-2/27' in L['q'] and 'midpoints of the triangle\'s three edges' in L['q'] and inn('(squared, (6 − 2√5)/27)') and ex('2/9|-2/27') == '(6 − 2√5)/27', 'hexagon circumradius = triangle inradius; touching at the 3 edge midpoints')
+chk(inn('60 on trapezoids') and not inn('quadrilaterals<'), 'Table 4: trapezoids')
+chk(inn('DICTO noticed that the Oktaktis looks like a Cleo-Icos') and '"looks tetrahedral or Cleo-Icos"' in rd('2026-10-20-ott-rays/ott_rays_exact.py'), 'Cleo-Icos observation credited to DICTO (script comment)')
+chk(all(float(r) < 1.618 for r in ratios) and inn('a little less than φ per beat'), 'growth per beat below phi')
+chk(inn('261 entries') and inn('90 have a local file') and inn('13 page images') and inn('about 170 link-only entries were not searched'), 'library counts stated')
+chk(inn('as convexity requires') and not inn('checked exactly; in a convex'), 'straight runs: a remark')
+chk(inn('and trapezoid rings of five on the five-fold axes (TQHD), which repeat the rings of the TQP'), 'faces: TQHD repeats TQP rings')
+chk(not inn('hexagonal spire') and not inn('kite spire'), 'no "hexagonal/kite spire" left in the text')
 # 7. library appendix
-rows = open(os.path.join(HERE, 'lib-rows.html')).read().count('<tr>'); chk(rows == 77 and inn('77 library sources') and inn('77 sources below'), f'library rows {rows}')
+rows = open(os.path.join(HERE, 'lib-rows.html')).read().count('<tr>'); chk(rows == 77 and inn('77 library sources') and inn('77 distinct sources with a text layer'), f'library rows {rows}')
 # 8. DOIs of earlier DICTO papers (as on the Collected Works, v17)
 for d in ['23463305', '23488944', '23404688', '23457016', '23484012', '23351291', '23357896', '23345699']: chk(inn('DICTO DOI: 10.5281/zenodo.' + d), f'DOI {d}')
 chk('proposal' not in txt.lower() and 'proposed' not in txt.lower(), 'no "proposal"/"proposed"')
