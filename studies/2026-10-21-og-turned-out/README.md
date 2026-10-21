@@ -12,3 +12,12 @@ Float result (`flip_float.py`, `flip-float.json`):
 - Fibonacci shells 1,1,2,3,5 = 12 beats: outer shell roughly 3000 x the core radius (beat 8 is already 200 x).
 
 DICTO · dictospheres.com
+
+## Golden step (DICTO "yes try the golden step"), `golden_step.py <t>`
+Spires shortened before flipping: tip = t x foot point. t = phi (spire height = Aktis height / phi) and t = phi^2 tested (float).
+- The solids do not change, only their size: beat k = t^k x the k-th downward solid (same corner/face counts; no old corner survives
+  on the new hull, so each solid holds the one before).
+- t = phi: growth per beat 1.520, 1.534, 1.608, 1.512, 1.591, 1.592 -> tends to phi (the downward family itself shrinks a little each
+  step and levels off, so the ratio -> t). t = phi^2: 2.46 ... 2.58 -> phi^2.
+- With Fibonacci shells 1,1,2,3,5 the shell boundaries sit at phi^0, phi^1, phi^2, phi^4, phi^7, phi^12 (times the downward family's
+  own shrink): golden scale and Fibonacci rhythm together. Outer radius at 12 beats: very roughly 200-250 x the core (estimate).
