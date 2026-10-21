@@ -12,7 +12,7 @@ def chk(c, m):
 ST = 'studies/2026-10-21-aristotle-pyramids/'
 L, A = rd(ST + 'pyramid-checks.log'), rd(ST + 'angle-relations.log')
 # 1. the exact log
-chk(L.count('\nPASS') + L.startswith('PASS') == 45 and 'FAIL' not in L and L.strip().endswith('ALL PASS') and inn('45 PASS, no FAIL'), 'pyramid-checks.log: 45 PASS, no FAIL, quoted')
+chk(L.count('\nPASS') + L.startswith('PASS') == 46 and 'FAIL' not in L and L.strip().endswith('ALL PASS') and inn('46 PASS, no FAIL'), 'pyramid-checks.log: 46 PASS, no FAIL, quoted')
 chk(A.count('integer relation: None') == 4 and inn('PSLQ'), 'angle-relations.log: no integer relation (4 searches)')
 # 2. Table 1 angles against the logs and arithmetic
 a, tD, tI = math.acos(1 / 3), math.acos(-1 / 5 ** .5), math.acos(-5 ** .5 / 3)
@@ -31,11 +31,14 @@ chk("sets not excluded by h (of 31): [('cube',), ('tetrahedron', 'octahedron'), 
 chk(inn('only {cube}, {tetrahedron, octahedron} and {cube, tetrahedron, octahedron} pass'), 'the three sets named')
 chk('dodecahedron and icosahedron pyramids (Cleo-Icos) are still excluded' in L, 'all five: D and I excluded')
 # 5. the octet
-chk('octahedron 4/3 + 2 tetrahedra 1/3 = rhombohedron 2' in L and inn('octahedron 4/3 + 2 tetrahedra of 1/3 = the cell, 2') and F(4, 3) + 2 * F(1, 3) == 2, 'octet cell volumes')
-chk('8 octahedron pyramids and 8 tetrahedron pyramids per cell' in L and inn('8 octahedron pyramids and 8 tetrahedron pyramids per cell'), '8 + 8 pyramids')
+chk('octahedron 4/3 + 2 tetrahedra 1/3 = rhombohedron 2' in L and inn('the octahedron is 4/3, each tetrahedron 1/3 and the cell 2') and F(4, 3) + 2 * F(1, 3) == 2, 'octet cell volumes')
+chk('8 octahedron pyramids and 8 tetrahedron pyramids per cell' in L and inn('8 octahedron pyramids and 8 tetrahedron pyramids'), '8 + 8 pyramids')
 chk('4 x alpha/2 + 4 x (pi - alpha)/2 = 2 pi' in L and inn('4 × α/2 + 4 × (π − α)/2 = 2π'), 'edge sum 2 pi')
 chk(inn('(1, 1, 0), (1, 0, 1), (0, 1, 1)'), 'lattice vectors')
 chk('3 x (+1/2) + 3 x (-1/2) = 0' in L and inn('3 × a × ½') and inn('3 × b × (−½)'), 'Proposition 2 weights')
+chk('octet patch (112 octahedron and 32 tetrahedron pyramids): every face pyramid lies in a slab' in L and inn('112 octahedron and 32 tetrahedron pyramids') and inn('k ≤ z ≤ k + 1'), 'slabs: {C, T, O} fills')
+chk(inn('Main theorem.') and src.index('<h2>1. The theorem') < src.index('<h2>2. Proof') < src.index('<h2>3. Corollaries') < src.index('<h2>4. Conjectures') < src.index('<h2>7. Prior art') < src.index('Appendix'), 'theorem-first order')
+chk(inn('{C}, {T, O} or {C, T, O}') and inn('Proved in general') and inn('Proved for the cases built') and inn('Observed numerically'), 'statement and status classes')
 # 6. Cleo-Icos and Antonius (#20 and the log)
 f20 = rd('studies/2026-10-14-fuji-family/paper/paper.md')
 chk('arccos(1/sqrt5) = 63.43 deg' in L and inn('arccos(1/√5) ≈ 63.43°') and 'arccos(1/√5) = 63.43°' in f20, '63.43 deg')

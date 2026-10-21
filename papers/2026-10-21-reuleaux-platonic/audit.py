@@ -37,7 +37,9 @@ chk(inn('r² = (5 + 2√5)/60') and abs((5 + 2 * 5 ** .5) / 15 / 4 - (5 + 2 * 5 
 chk(inn('1.248391589161') and inn('1.110988655456') and inn('1.024944026382') and mx['cube'] == mx['octahedron'] == '1.248391589161' and mx['dodecahedron'] == mx['icosahedron'] == '1.110988655456' and mx['tetrahedron'] == '1.024944026382', 'numerical maxima quoted')
 chk('sqrt3 - sqrt2/2 = 1.024944026382 = the largest width' in L and inn('√3 − √2/2'), 'tetrahedron sqrt3 - sqrt2/2')
 chk('face-axis width 1.248391589161 = the largest width' in L and 'face-axis width 1.110988655456 = the largest width' in L, 'face-axis = max (numerical)')
-chk(inn('is therefore numerical') and inn('not proved'), 'global maximum flagged numerical')
+chk(inn('Conjecture 1 (the largest width).') and inn('Evidence (numerical).') and 'largest width' not in txt.split('Main theorem.')[2].split('Proof')[0], 'global maximum stated as Conjecture 1 with numerical evidence, not in the theorem')
+chk(src.index('<h2>1. The theorem') < src.index('<h2>2. Proof') < src.index('<h2>3. Corollaries') < src.index('<h2>4. Conjectures') < src.index('<h2>6. Prior art') < src.index('Appendix A'), 'theorem-first order')
+chk(inn('Proved in general') and inn('Proved for the cases built') and inn('Observed numerically') and inn('does not apply to the tetrahedron: its diameter is its edge'), 'status classes; tetrahedron case explained')
 chk("along a face axis every corner has height >= -r, with equality exactly at the" in L, 'corner heights >= -r (exact)')
 chk(inn('3000 random directions') and 'U = rng.normal(size=(3000, 3))' in rd(ST + 'widths.py'), '3000 directions')
 # volume vs literature
