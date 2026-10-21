@@ -20,4 +20,7 @@ def sheet(idx, cols, path, title=None, sub=None, cell=520, gap=36, names=None, s
             d.text((x + cell / 2 - d.textlength(txt, font=fo) / 2, yy), txt, font=fo, fill=col)
     m = 'DICTO · dictospheres.com'; d.text((W - 80 * K - d.textlength(m, font=f(24 * K)), Hh - 56 * K), m, font=f(24 * K), fill=MUTE)
     im.save(os.path.join(OUT, path), quality=92); print(path, im.size)
-sheet([0, 1, 2, 3, 4, 5], 6, 'ott-rays.jpg', 'The DICTO OTT core of 38 rays', '8 octahedral rays (gold), 24 triangle rays (purple), 6 rhombic rays (cream), every apex at the centre · DICTO 2026', cell=400)
+# names DICTO's (2026-10-20): Oktaktis (octahedral ray, exactly a Cleo-Icos), Triaktis (triangle ray), Tetraktis (rhombic ray)
+L[1]['title'] = '38 OTT rays, drawn out'
+for i, (t, s) in zip((3, 4, 5), [('Oktaktis', '8, on the octahedron cuts: a Cleo-Icos'), ('Triaktis', '24, on the cut rhombi'), ('Tetraktis', '6, on the whole rhombi')]): L[i]['title'], L[i]['sub'] = t, s
+sheet([0, 1, 2, 3, 4, 5], 6, 'ott-rays.jpg', 'The DICTO OTT core of 38 rays', '8 Oktaktis (gold), 24 Triaktis (purple), 6 Tetraktis (cream), every tip at the centre · DICTO 2026', cell=400)
