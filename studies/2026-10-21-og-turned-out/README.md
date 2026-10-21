@@ -9,6 +9,6 @@ Float result (`flip_float.py`, `flip-float.json`):
   are exactly the foot points; flipping puts tips at 2 x those.
 - Turned out, every solid holds the one before it (the break TQP/TQH in #39 does not occur here). Float; exact check to do.
 - Growth about x1.9-2.0 in radius per beat; stays round within 1-7%. Beats 5-8 are new solids (200, 192, 260, 312 corners; float).
-- Fibonacci shells 1,1,2,3,5 = 12 beats: outer shell about 4000 x the core radius.
+- Fibonacci shells 1,1,2,3,5 = 12 beats: outer shell roughly 3000 x the core radius (beat 8 is already 200 x).
 
 DICTO · dictospheres.com
