@@ -21,5 +21,5 @@ def sheet(idx, cols, path, title=None, sub=None, cell=520, gap=36, names=None, s
     m = 'DICTO · dictospheres.com'; d.text((W - 80 * K - d.textlength(m, font=f(24 * K)), Hh - 56 * K), m, font=f(24 * K), fill=MUTE)
     im.save(os.path.join(OUT, path), quality=92); print(path, im.size)
 os.makedirs(OUT, exist_ok=True)
-sheet([0, 1, 2, 3], 4, 'new-solids-a.jpg', 'New solids of the OG family', 'Beats 5-11 of the OG turned out, same size · triangles gold, quads purple, pentagons lilac, hexagons bronze, decagons pale', cell=420)
+sheet([0, 1, 2, 3], 4, 'new-solids-a.jpg', 'New solids of the OG family', 'Beats 5-11 of the OG turned out, at the same size · faces coloured by kind', cell=420)
 sheet([4, 5, 6, 7], 4, 'new-solids-b.jpg', cell=420)
