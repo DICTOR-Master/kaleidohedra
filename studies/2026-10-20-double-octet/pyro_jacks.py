@@ -11,7 +11,7 @@ import os, json, itertools, numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__))
 MAIN = "if __name__ == " + "'__main__':"
 exec(open(os.path.join(HERE, 'jacks_octet.py')).read().split(MAIN)[0])
-STEP = float(os.environ.get('STEP', '0.03')); PY0, PY1, PY_LEN = 0.17, 0.11, np.sqrt(3) / 2
+STEP = float(os.environ.get('STEP', '0.03')); PY0, PY1, PY_LEN = float(os.environ.get('PY0', '0.12')), float(os.environ.get('PY1', '0.07')), np.sqrt(3) / 2   # thinner network legs (DICTO 10-21; were 0.17, 0.11)
 _FCC4 = [(0, 0, 0), (2, 2, 0), (2, 0, 2), (0, 2, 2)]
 def pyro(q):
     """'A' (up) or 'B' (down) if the tetrahedron centred at q is in the pyrochlore network, else None"""

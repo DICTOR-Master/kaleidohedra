@@ -20,5 +20,5 @@ def sheet(idx, cols, path, title=None, sub=None, cell=520, gap=36, names=None, s
             d.text((x + cell / 2 - d.textlength(txt, font=fo) / 2, yy), txt, font=fo, fill=col)
     m = 'DICTO · dictospheres.com'; d.text((W - 80 * K - d.textlength(m, font=f(24 * K)), Hh - 56 * K), m, font=f(24 * K), fill=MUTE)
     im.save(os.path.join(OUT, path), quality=92); print(path, im.size)
-sheet([0, 1, 2, 3], 4, 'pyro-jacks-a.jpg', 'DICTO Tetoktjiru: pyrochlore network', 'One Tetjiru in eight swaps its legs to the corners; up and down join corner to corner into one branching coral network · DICTO 2026', cell=440)
+sheet([0, 1, 2, 3], 4, 'pyro-jacks-a.jpg', 'DICTO Tetoktjiru: pyrochlore network', 'One Tetjiru in eight swaps its legs to its corners: one branching coral network · DICTO 2026', cell=440)
 sheet([4], 1, 'pyro-jacks-b.jpg', cell=900)
