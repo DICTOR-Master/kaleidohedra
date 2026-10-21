@@ -31,7 +31,19 @@ TILT=rot((1,0,0),-0.12)                                # a slight tilt, as in th
 V=V@TILT.T
 ring_c={tuple(f):V[f].mean(0) for f in ring}
 order=sorted(ring,key=lambda f:(math.atan2(ring_c[tuple(f)][0],ring_c[tuple(f)][1])+0.6)%(2*math.pi))   # clockwise from the top
-LET={tuple(f):ch for f,ch in zip(order,'DICTO')}
+RINGLET={tuple(f):ch for f,ch in zip(order,'DICTO')}
+# every hexagon lettered like the DICTO square: the 20 hexagons fall into the five tetrahedra of the compound of five
+# (hexagon centres pairwise at cos = -1/3); each tetrahedron takes the letter of its hexagon in the centre ring,
+# so no two neighbouring hexagons share a letter and each letter appears four times.
+import itertools
+Nh=np.array([V[f].mean(0) for f in hexes]); Nh/=np.linalg.norm(Nh,axis=1)[:,None]; Dd=Nh@Nh.T
+tets=[c for c in itertools.combinations(range(20),4) if all(abs(Dd[a,b]+1/3)<1e-6 for a,b in itertools.combinations(c,2))]
+cover=[cv for cv in itertools.combinations(tets,5) if len(set(sum(cv,())))==20][0]   # one of the two (mirror) compounds
+LET={}
+for t in cover:
+    ch=[RINGLET[tuple(hexes[i])] for i in t if tuple(hexes[i]) in RINGLET]; assert len(ch)==1
+    for i in t: LET[tuple(hexes[i])]=ch[0]
+assert len(LET)==20
 GROUND=(20,15,11); GOLD=(222,178,80); STONE=(150,141,128); PLAT=(214,218,224)
 import os as _os
 TINT=_os.environ.get('TINT','1')=='1'   # DICTO: each lettered hexagon in its element colour, the kite stars in platinum
@@ -63,7 +75,9 @@ def render(img,cx,cy,rad,SS=2):
             # facet frame: U to the right on screen, Vv up on screen, both in the facet's plane
             c=V[f].mean(0); U=np.array([1,0,0])-n*n[0]; U/=np.linalg.norm(U); Vv=np.cross(n,U)
             r=np.linalg.norm(V[f]-c,axis=1).min()            # inradius-ish
-            px=int(2*r*s*1.0); M,gx,gy=carve_tile(LET[tuple(f)],px)
+            px=int(2*r*s*1.2); M,gx,gy=carve_tile(LET[tuple(f)],px)
+            hx,hy=r*0.8,r*1.22                                   # elongated Trajan forms: tall and narrow
+            gx=gx*(hy/hx)
             k=1.6; nl=np.dstack([gx*k,-gy*k,np.ones_like(gx)]); nl/=np.linalg.norm(nl,axis=2,keepdims=True)
             nw=nl[...,0:1]*U+nl[...,1:2]*Vv+nl[...,2:3]*n           # groove normals in the world
             lam=np.clip(nw@light,0,1); hv=light+np.array([0,0,1.0]); h=np.clip(nw@(hv/np.linalg.norm(hv)),0,1)**40
@@ -71,8 +85,7 @@ def render(img,cx,cy,rad,SS=2):
             rgb=dark+(lite-dark)*lam[...,None]**1.3; rgb=rgb+(255-rgb)*h[...,None]*0.8
             tile=Image.fromarray(np.clip(rgb,0,255).astype(np.uint8)); mask=Image.fromarray((ndimage.gaussian_filter(M,0.6)*255).astype(np.uint8))
             # affine map tile (px x px, side 2*r*1.6 in the facet) onto the screen
-            half=r*1.0
-            corner=lambda a,b_: P(c+U*(a*half)+Vv*(b_*half))
+            corner=lambda a,b_: P(c+U*(a*hx)+Vv*(b_*hy))
             (x0,y0),(x1,y1),(x2,y2)=corner(-1,1),corner(1,1),corner(-1,-1)
             # screen = A*(tx,ty) + o ; PIL needs inverse
             A=np.array([[(x1-x0)/px,(x2-x0)/px],[(y1-y0)/px,(y2-y0)/px]]); Ai=np.linalg.inv(A)
