@@ -72,10 +72,11 @@ chk(val(O['kite_height2']) > val(O['hex_height2']), 'Deltoid Aktis taller than H
 R = js('2026-10-20-ott-rays/ott-rays-exact.json')
 chk('24 corners, 38 faces' in L['r'] and 'volume -608/81|320/81 (1.327676), as in #37a' in L['r'] and inn('(−608 + 320√5)/81 ≈ 1.327676'), 'OTT 24 corners, 38 faces, volume')
 chk('38 faces {3: 32, 4: 6}' in L['c8'] and '24 half-rhombus triangles' in L['c8'] and 'pyritohedral group Th' in L['c8'] and 'the OG lies inside' in L['c8'], 'OTT faces 8 + 24 + 6, Th, the OG inside (cut8-exact.log)')
-for kd, nm in zip(R['kinds'], ['octahedral', 'triangle', 'rhombic']):
-    chk(inn(f"{kd['count']} {nm} rays") and inn(ex(kd['volume']) + ' ≈ ' + fl(kd['volume'], 6)) and inn(f"{kd['height']:.4f}") and inn(f"{kd['share'] * 100:.2f}%"),
-        f"{kd['count']} {nm} rays: {ex(kd['volume'])}, height {kd['height']:.4f}, {kd['share'] * 100:.2f}%")
-chk([(k['count'], k['sides']) for k in R['kinds']] == [(8, 3), (24, 3), (6, 4)] and R['octahedral_ray_is_cleo_icos'] and 'are Cleo-Icos (similar exactly)' in L['r'], 'kinds 8/24/6; octahedral rays are Cleo-Icos')
+for kd, nm in zip(R['kinds'], ['Oktaktis', 'Triaktis', 'Tetraktis']):   # DICTO's names
+    chk(inn(f"{kd['count']} {nm}") and inn(ex(kd['volume']) + ' ≈ ' + fl(kd['volume'], 6)) and inn(f"{kd['height']:.4f}") and inn(f"{kd['share'] * 100:.2f}%"),
+        f"{kd['count']} {nm}: {ex(kd['volume'])}, height {kd['height']:.4f}, {kd['share'] * 100:.2f}%")
+chk([(k['count'], k['sides']) for k in R['kinds']] == [(8, 3), (24, 3), (6, 4)] and R['octahedral_ray_is_cleo_icos'] and 'are Cleo-Icos (similar exactly)' in L['r'], 'kinds 8/24/6; Oktaktis are Cleo-Icos')
+chk(inn('The Oktaktis are Cleo-Icos') and inn('Tetraktis (four-sided, on the whole rhombi)') and not inn('triangle ray') and not inn('octahedral ray'), 'OTT ray names used throughout')
 chk('lies in one hexagon plane of the OG, exactly' in L['q'] and abs(val(O['hex_height2']).sqrt() - Decimal(R['kinds'][0]['height'])) < Decimal('1e-12'), 'OTT octahedral cuts in OG hexagon planes; heights equal')
 # 6. OG turned out
 G = js('2026-10-21-og-turned-out/golden-exact.json')

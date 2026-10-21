@@ -9,7 +9,7 @@ INK, MUTE, BG = (238, 230, 214), (176, 165, 148), (20, 15, 11)
 P = [('2026-10-20-cleo-towers/figures/shells-b.jpg', (2390, 170, 3200, 1100), 'DICTO Cleo Towers', 'shells of 1, 1, 2, 3, 5 beats, half cut away'),
      ('2026-10-20-cleo-towers/figures/polar-b.jpg', (2440, 170, 3250, 1100), 'DICTO Polar Cleo Towers', '5, 3, 2, 1, 1 beats, half cut away'),
      ('2026-10-20-og-spires/figures/og-spires.jpg', (1060, 380, 1980, 1240), 'The OG core', '20 Hex + 60 Deltoid Aktis, drawn out'),
-     ('2026-10-20-ott-rays/figures/ott-rays.jpg', (1000, 400, 1860, 1160), 'The OTT core', '8 + 24 + 6 rays, drawn out'),
+     ('2026-10-20-ott-rays/figures/ott-rays.jpg', (1000, 400, 1860, 1160), 'The OTT core', '38 OTT rays, drawn out'),
      ('2026-10-21-og-turned-out/figures/og-turned-out.jpg', (1150, 380, 2080, 1310), 'The OG turned out', 'the 80 Aktis flipped out at 1/φ height')]
 cell, gap, side = 760, 40, 120
 W = side * 2 + len(P) * cell + (len(P) - 1) * gap; Hh = 300 + cell + 290
