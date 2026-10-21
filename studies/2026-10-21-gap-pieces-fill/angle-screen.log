@@ -1,0 +1,49 @@
+AXE {41.8103: [1.0], 63.4349: [0.618], 79.1877: [1.0]}
+CLEO {63.4349: [1.0], 79.1877: [0.618]}
+FUJI {37.3774: [0.618], 41.8103: [1.0], 142.6226: [1.0]}
+B1 {72.0: [1.618], 90.0: [1.7013, 2.7528], 108.0: [1.0, 1.618], 120.0: [2.384]}
+B2 {60.0: [1.0], 72.0: [1.0982], 90.0: [1.1547], 108.0: [1.0982, 1.7769], 120.0: [1.618]}
+B3 {36.0: [1.618], 120.0: [1.4734], 144.0: [1.0]}
+B4 {36.0: [1.7769], 90.0: [1.8683], 120.0: [1.0], 144.0: [2.1964, 2.8751]}
+B5 {36.0: [1.7769], 60.0: [1.0], 90.0: [1.1547], 108.0: [1.7769, 2.1964]}
+AXE                    fails at [('AXE', 41.8103), ('AXE', 79.1877), ('AXE', 63.4349)]
+CLEO                   fails at [('CLEO', 63.4349), ('CLEO', 79.1877)]
+FUJI                   fails at [('FUJI', 41.8103)]
+B1                     PASSES
+B2                     PASSES
+B3                     PASSES
+B4                     PASSES
+B5                     PASSES
+AXE + FUJI             PASSES
+CLEO + FUJI            PASSES
+B1 + B2                PASSES
+B1 + B3                PASSES
+B1 + B4                PASSES
+B1 + B5                PASSES
+B2 + B3                PASSES
+B2 + B4                PASSES
+B2 + B5                PASSES
+B3 + B4                PASSES
+B3 + B5                PASSES
+B4 + B5                PASSES
+AXE + CLEO + FUJI      PASSES
+AXE + FUJI + B1        PASSES
+AXE + FUJI + B2        PASSES
+AXE + FUJI + B3        PASSES
+AXE + FUJI + B4        PASSES
+AXE + FUJI + B5        PASSES
+CLEO + FUJI + B1       PASSES
+CLEO + FUJI + B2       PASSES
+CLEO + FUJI + B3       PASSES
+CLEO + FUJI + B4       PASSES
+CLEO + FUJI + B5       PASSES
+B1 + B2 + B3           PASSES
+B1 + B2 + B4           PASSES
+B1 + B2 + B5           PASSES
+B1 + B3 + B4           PASSES
+B1 + B3 + B5           PASSES
+B1 + B4 + B5           PASSES
+B2 + B3 + B4           PASSES
+B2 + B3 + B5           PASSES
+B2 + B4 + B5           PASSES
+B3 + B4 + B5           PASSES
