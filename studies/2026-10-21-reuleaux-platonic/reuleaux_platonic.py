@@ -13,6 +13,7 @@ S = {'Tetrahedron': [p for p in itertools.product((1, -1), repeat=3) if np.prod(
 GOLD, PURPLE, LILAC, BRONZE = '#d9a441', '#6b3fa0', '#9a78c8', '#8a5a24'
 rng = np.random.default_rng(0); U = rng.normal(size=(4000, 3)); U /= np.linalg.norm(U, axis=1)[:, None]
 scenes = []
+LOOK = {'Cube': 'Octahedron', 'Octahedron': 'Cube'}       # DICTO 10-21: name each body by its look (balls on a cube's corners look octahedral)
 for name, Vs in S.items():
     V = np.array(Vs, float); E = min(np.linalg.norm(a - b) for a, b in itertools.combinations(V, 2)); V /= E
     D = max(np.linalg.norm(a - b) for a, b in itertools.combinations(V, 2))
@@ -48,7 +49,7 @@ for name, Vs in S.items():
     PAL = [GOLD, PURPLE, LILAC, BRONZE]; col = [PAL[best[o]] for o in own]
     nk = len(set(best.values()))
     print(f'{name:12s} corners {len(V):2d}  diameter {D:.4f}  volume {body.volume():.4f}  width {w.min():.4f}..{w.max():.4f} (ratio {w.max() / w.min():.4f})  colours {nk}')
-    scenes.append({'title': f'Reuleaux {name.lower()}', 'sub': f'{len(V)} balls of radius {D:.3f} (edge 1)', 'parts': [{'v': np.round(P, 5).tolist(), 't': T.tolist(), 'c': col, 'e': None, 'a': 1.0}]})
+    scenes.append({'title': f'Reuleaux {LOOK.get(name, name).lower()}', 'sub': f'{len(V)} balls on the {name.lower()}\'s corners, radius {D:.3f}' if name in LOOK else f'{len(V)} balls of radius {D:.3f} (edge 1)', 'parts': [{'v': np.round(P, 5).tolist(), 't': T.tolist(), 'c': col, 'e': None, 'a': 1.0}]})
 for s in scenes:
     pts = np.array(s['parts'][0]['v']); s['E'] = round(float(np.linalg.norm(pts, axis=1).max()) * 1.04, 4)
 html = open(os.path.join(HERE, '..', '2026-10-19-five-fold-octet', 'renders', 'family.html')).read()
