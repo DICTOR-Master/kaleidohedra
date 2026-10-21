@@ -377,7 +377,7 @@ export function createReuleauxWorld({ scene, fitView = () => {}, showHudPrompt =
     /** For the browser tests (?probe): the build, and the mid-points and outward directions of the last piece's faces (scene units). */
     probe() {
       const n = nodes[nodes.length - 1];
-      return { mode: view.mode, body: view.body, nodes: nodes.length, t: film.t, ballsShown: !!filmParts?.balls.some((b) => b.visible),
+      return { mode: view.mode, body: view.body, nodes: nodes.length, placed: nodes.map((m) => ({ type: m.type, p: m.p })), t: film.t, ballsShown: !!filmParts?.balls.some((b) => b.visible),
         faces: n && DATA ? bodies.get(n.type).faces.map((_, fi) => { const F = faceOf(n, fi); return { mid: F.mid.clone().multiplyScalar(WS).toArray(), normal: F.normal.toArray() }; }) : [] };
     },
   };
