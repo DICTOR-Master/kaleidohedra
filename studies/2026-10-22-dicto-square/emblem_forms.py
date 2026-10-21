@@ -1,6 +1,6 @@
 # DICTO emblem, forms iteration (DICTO 2026-10-22): the emblem's gold ring, with each mark replaced by its
 # Platonic form (D-I-C-T-O key) carrying its V-cut platinum initial, at the mark's measured place.
-# STAR=1 adds, as a variant, five golden Penrose rhombi (the fat 72-degree rhombs) meeting at the centre as a star,
+# STAR=1 adds, as a variant, five golden Penrose rhombi (the thin 36-degree rhombs, DICTO: the fat ones too fat) meeting at the centre as a star,
 # V-cut and laid with platinum leaf like the initials.
 import os, math, numpy as np
 from PIL import Image, ImageDraw, ImageFont
@@ -31,16 +31,16 @@ for k,ang in PLACE.items():
         d.polygon(pts,fill=col); d.line(pts+[pts[0]],fill=EDGE,width=2*SS)
 # carved platinum initials, centred on each form's place
 ci=src.index("from scipy import ndimage"); ce=src.index("CARVE={ch")
-exec(src[ci:ce].replace("int(0.075*W)","int(0.085*W)").replace("box=int(0.12*W)","box=int(0.13*W)"))
+exec(src[ci:ce].replace("int(0.075*W)","int(0.112*W)").replace("box=int(0.12*W)","box=int(0.17*W)"))
 for k,ang in PLACE.items():
     tile,mask,box=carved(k)
     x=c0+DIST*math.cos(math.radians(ang))*sc; y=c0-DIST*math.sin(math.radians(ang))*sc
     img.paste(tile,(int(x-box/2),int(y-box/2)),mask)
 if STAR:
-    side=0.2*RR; gap=0.012*RR
+    side=0.24*RR; gap=0.008*RR
     m=Image.new('L',(W,W),0); dm=ImageDraw.Draw(m)
     for j in range(5):
-        th=math.radians(90+72*j); u=np.exp(1j*(th-math.radians(36))); v=np.exp(1j*(th+math.radians(36)))
+        th=math.radians(90+36+72*j); u=np.exp(1j*(th-math.radians(18))); v=np.exp(1j*(th+math.radians(18)))   # thin rhombus, 36 deg at the centre, pointing into the gaps
         Z=np.array([0,u,u+v,v])*side; cz=Z.mean(); Z=cz+(Z-cz)*(1-gap/side*2.2)   # small gap between rhombi
         dm.polygon([(c0+z.real, c0-z.imag) for z in Z],fill=255)
     M=np.array(m)/255.0; ins=M>0.5
@@ -53,7 +53,7 @@ if STAR:
     img.paste(Image.fromarray(np.clip(rgb,0,255).astype(np.uint8)),(0,0),Image.fromarray((ndimage.gaussian_filter(M,0.6)*255).astype(np.uint8)))
     d=ImageDraw.Draw(img)
     for j in range(5):   # gold edge round each cut
-        th=math.radians(90+72*j); u=np.exp(1j*(th-math.radians(36))); v=np.exp(1j*(th+math.radians(36)))
+        th=math.radians(90+36+72*j); u=np.exp(1j*(th-math.radians(18))); v=np.exp(1j*(th+math.radians(18)))   # thin rhombus, 36 deg at the centre, pointing into the gaps
         Z=np.array([0,u,u+v,v])*side; cz=Z.mean(); Z=cz+(Z-cz)*(1-gap/side*2.2)
         P=[(c0+z.real, c0-z.imag) for z in Z]; d.line(P+[P[0]],fill=GOLD,width=2*SS)
 img=img.resize((N,N),Image.LANCZOS); img.save('dicto-emblem-forms%s.png'%('-star' if STAR else '')); print('ok')
