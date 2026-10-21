@@ -8,3 +8,6 @@ DICTO's idea (2026-10-22): a word square like SATOR AREPO TENET OPERA ROTAS, wit
 
 ## Emblem, forms iteration (DICTO 2026-10-22)
 emblem_forms.py -> dicto-emblem-forms.png; STAR=1 -> dicto-emblem-forms-star.png. The emblem's gold ring with each mark replaced by its form and V-cut platinum initial, at the mark's measured angle (D 86.6°, I 19.8°, C −47.0°, T −124.7°, O 162.4°) and distance (0.625 of the ring radius) from dicto-logo.png. Variant: five fat golden Penrose rhombi (72° at the centre), points into the gaps between forms, cut only as V-grooved outlines with sharp mitred corners, laid with platinum leaf. Initials enlarged twice (DICTO). An additional iteration; the emblem itself is unchanged.
+
+## OG with carved letters (DICTO 2026-10-22)
+og_letters.py -> og-letters.png: the DICTO Ogdoecontahedron along a five-fold axis (as Figure 1(c) of #31; geometry og-geometry.json = papers/ogdoecontahedron/data/hstar-render.json), no colours: stone facets, gold edges; D-I-C-T-O V-cut in platinum leaf into the five hexagons round the centre, clockwise from the top as in the emblem, carved in each facet's own plane so the letters foreshorten.
