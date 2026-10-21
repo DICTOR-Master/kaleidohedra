@@ -1,0 +1,45 @@
+# Quanta of Space
+### An introduction to the geometric works of DICTO (draft 1, 22 October 2026)
+
+**In plain words.** Is space smooth all the way down, or is it built from pieces, as a wall is built from stones? Thinkers have asked this for two and a half thousand years. These works take the question literally: they look for exact sets of solid pieces that fit together, with no gaps, into shells, cycles and whole spaces.
+
+## 1. Atoms and the void
+Leucippus and Democritus taught that the world is made of indivisible atoms moving in the void. The atoms differ only in shape, arrangement and position. Lucretius put the teaching into verse: "nothing exists per se except atoms and the void". The atoms were pieces, but no one said what shapes they had.
+
+## 2. Plato's tile kit
+Plato gave them shapes. In the *Timaeus* the four elements are four regular solids: fire is the tetrahedron, air the octahedron, water the icosahedron and earth the cube. All four faces are built from just two right triangles. The fifth solid, the dodecahedron, was used "for the whole". It was the first tile kit for matter: a small set of exact pieces from which everything is assembled.
+
+## 3. Aristotle's mistake
+Aristotle answered that solid atoms must fill space. He claimed (*On the Heavens* III.8) that among solids only two do: the pyramid and the cube. The cube does. The regular tetrahedron does not, and the error stood for centuries. Paper #44, *Aristotle's Pyramid*, asks what he could have meant. It proves which face-pyramids of the Platonic solids can fill space.
+
+## 4. Kepler's packings
+Johannes Kepler nested the five solids between the planets' spheres (*Mysterium Cosmographicum*, 1596). In *The Six-Cornered Snowflake* (1611) he explained the snowflake by the packing of equal small units, the question that became the Kepler conjecture. Paper #8, *The Euclid–Kepler–Pacioli Cell*, finds all five Platonic solids nested on 13 points of one repeating cell.
+
+## 5. The quanta of modern science
+In 1900 Max Planck found that energy comes in quanta. In loop quantum gravity, space itself does too. Carlo Rovelli and Lee Smolin showed in 1995 that area and volume come in discrete amounts. In 2011 Eugenio Bianchi, Pietro Doná and Simone Speziale showed that each quantum of volume can be read as a small convex polyhedron, fixed by the areas and directions of its faces. Space becomes a network of polyhedra joined face to face.
+
+There is an honest difference. In that theory two neighbouring quanta share a face of the same area, but not, in general, of the same shape (Freidel and Speziale, 2010). The pieces need not fit. Our pieces always fit exactly, corner to corner. Other approaches, such as causal sets, build spacetime from points rather than solids.
+
+This collection makes no claim about physics. It shares the question and the form: what are the smallest exact pieces from which space can be built, and how do they join?
+
+## 6. The works as a study of quanta
+Read this way, the works fall into four chapters.
+
+- **Atoms.** Single solids, each an exact new piece: the DICTO Ogdoecontahedron (OG), the Hecatodihedron, the Jewel, the Hexa, AXE, CLEO and FUJI, and the Reuleaux Platonic solids.
+- **Bonds.** How pieces fill space together: exact kits, packings and lattices, from the Euclid–Kepler–Pacioli Cell to the OG on every stacking.
+- **Shells.** Pieces closing into nested shells round a core, each layer filled exactly: the Chain of Karma, the Spheres of Dharma, the Bodhi Seed and Theaetetus.
+- **Cycles.** Rules that turn one shell into the next and return, with or without end: Universal PiTet, the OG family steps, Kyushindo Cores and the polar reversals.
+
+## 7. The bridge between the periodic and the aperiodic
+**In plain words.** Some patterns repeat, like the tiles of a bathroom floor. Others never repeat, yet are perfectly ordered, like the Penrose tiling. These works use the same pieces to build both.
+
+For most of history, order in matter meant repetition. A crystal was a single cell copied without end, and five-fold symmetry was thought impossible in it. In 1982 Dan Shechtman found a metal alloy with sharp five-fold diffraction. Quasicrystals, ordered but never repeating, earned him the Nobel Prize in 2011. Matter has two kinds of order, and the question became how they meet.
+
+The quanta in these works sit on that border. One exact kit builds the repeating octet and also a Fibonacci crystal that never repeats (#40, *The DICTO OG Family on Every Stacking*). In *A Fibonacci Spine* (#30), five repeating packings of the OG meet round a five-fold axis. The copies removed along that axis form exactly the Fibonacci chain, the simplest never-repeating order. The golden shells of the Spheres of Dharma (#23) repeat only by growing φ³ larger at each turn. One kit, two orders: the pieces themselves are the bridge.
+
+## 8. What the pieces show
+Three things recur. Finite kits are enough: a handful of exact shapes builds shells and spaces without limit. The golden ratio appears wherever five-fold symmetry does, and it decides when shells close. And the pieces join the two orders of matter, the repeating and the never-repeating.
+
+The ancients guessed that space was made of shaped pieces, and modern physics has returned to the idea. These works build such pieces exactly and test them, and each paper that follows ends in a proof.
+
+*DICTO, Osaka. Sources: reference library (Plato, Lucretius, Aristotle, Kepler, Rovelli–Smolin 1995, Bianchi–Doná–Speziale 2011, Freidel–Speziale 2010, Surya 2019).*
