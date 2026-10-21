@@ -1,4 +1,4 @@
-// DICTO Icosahedral Octet (DICTO 2026-10-13; DISCOVERIES #21): Euclid's roofs moved to the icosahedron, as networks that grow with a
+// DICTO Icosahedral Octet (DICTO 2026-10-13; DISCOVERIES F21): Euclid's roofs moved to the icosahedron, as networks that grow with a
 // Size slider, on the shared layered-world engine (Pull apart, Crystal, X-ray). Cells from src/app/octet-data.js (built and checked by
 // scripts/build-octet-data.py; site rules checked by studies/2026-10-10-icosa-networks-3/octet-sites-check.py). Names by DICTO:
 // Admiral Cap, Weirdstone, Tadpole, Frog Chorus, Lotus Jewel. Words: i18n octet.*.

@@ -1,4 +1,4 @@
-// Euclid–Kepler–Pacioli Cell Network: a 3D world of its own on the Euclid–Kepler–Pacioli cell (DISCOVERIES.md #8,
+// Euclid–Kepler–Pacioli Cell Network: a 3D world of its own on the Euclid–Kepler–Pacioli cell (DISCOVERIES.md F8,
 // geometry in krp-core/src/geometry-extensions/roof-fold.js). Sites are a simple cubic
 // lattice of period phi^2 (icosahedron edge 1). Seven pieces, one at a time,
 // several per site: cube, dodecahedron, icosahedron, great stellated dodecahedron (the star),

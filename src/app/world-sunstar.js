@@ -40,7 +40,7 @@ export function createSunstarWorld(opts) {
     // DICTO's clusters of the dodecahedra (DICTO, 2026-10-09; krp-core DODECA_TETRAHEDRAL_CLUSTER and
     // DODECA_OCTAHEDRAL_CLUSTER, the octahedral one a Dogstar with its 6 dodecahedra, a Sunstar turned
     // inside out) and their octet network: the same structure as the DICTO Jewel clusters.
-    // The Kagome hulls (DISCOVERIES #17): this lattice's solids, loaded on demand.
+    // The Kagome hulls (DISCOVERIES F17): this lattice's solids, loaded on demand.
     hullLattice: 'sunstar',
     clusters: OCTET_CLUSTERS,
     networkCells: octetNetworkCells,

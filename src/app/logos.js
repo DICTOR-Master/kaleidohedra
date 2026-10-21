@@ -1,6 +1,6 @@
 // Each app's logo solid, as wireframe edges for the welcome screen (KRP: one welcome, each app its
 // own symbol; DICTO 2026-10-08, generic over the apps). Rhombiverse: the rhombic dodecahedron.
-// Kaleidohedra: the regular-hexagon elongated dodecahedron (DISCOVERIES.md #5), lying with its long
+// Kaleidohedra: the regular-hexagon elongated dodecahedron (DISCOVERIES.md F5), lying with its long
 // axis horizontal and a hexagon towards you, as in its logo. Polyhedraverse: the regular dodecahedron
 // (DICTO 2026-10-08: its turning dodecahedron, in green).
 import { convexHullFaces } from '../krp-core/src/geometry-extensions/roof-fold.js';

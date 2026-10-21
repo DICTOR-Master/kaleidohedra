@@ -8,71 +8,73 @@ Every geometric claim here is checked exactly by a script that runs on every
 push (`src/krp-core/scripts/verify-kaleido.mjs`, krp-core; `verify-zome-parallelohedra`
 in Polyhedraverse; `verify-dicto-fcc` in Rhombiverse).
 
+**Numbering (2026-10-21, DICTO):** findings are numbered F1, F2 … so they are never mistaken for paper numbers (#n on dictospheres.com). Older papers and study notes that say "finding #n" or "DISCOVERIES #n" mean Fn.
+
 **Status** means only what a literature search on 2026-10-01 turned up
 (Wikipedia, MathWorld, the Polytope Wiki, George Hart's zonohedra pages).
 "Not found" is not proof of novelty; a specialist search (e.g. Fedorov /
 Delone / Štogrin parallelohedra literature) is still needed before claiming
 priority.
 
-A deeper search on 2026-10-06 for #1 and #5 (Grünbaum's 2010 survey of
+A deeper search on 2026-10-06 for F1 and F5 (Grünbaum's 2010 survey of
 parallelohedra and zonohedra, Lalvani's zonohedra patents, the icosahedral
 tiling literature, the contents of Hart & Picciotto's *Zome Geometry*) found
-#5 known (see #5) and did not find #1. Not yet checked, as they are not
+F5 known (see F5) and did not find F1. Not yet checked, as they are not
 online: Fedorov's 1885 book, Lalvani's *Structures on Hyper-Structures*
 (1982) and the printed chapters 14 and 16 of *Zome Geometry*.
 
-| # | Finding | Credit | Verified | Status | First recorded |
+| No. | Finding | Credit | Verified | Status | First recorded |
 |---|---|---|---|---|---|
-| 1 | DICTO skewed rhombic dodecahedron | DICTO (found by building it) | yes | **not found** as this member — the family (skewed RD parallelohedra) is known (Fedorov; Lalvani 1997) | 2026-10-01 (8420a51) |
-| 2 | Equal-edge rule for sheared FCC | Kaleidohedra | yes | general idea known; this form not found | 2026-10-01 (8420a51) |
-| 6 | Exactly 9 "most regular" space-fillers | Kaleidohedra two-way search (its regular-hexagon elongated dodecahedron member: DICTO, independently, by lattice shearing) | yes | not yet searched as a set; that member is **known** (Grünbaum 2010, Fig. 2(b); see #5) | 2026-10-01 (547aac9) |
-| 7 | DICTO skewed ED (two forms) | Kaleidohedra (extending #1) | yes | **not found** as these members — the family is known (Fedorov; Lalvani 1997) | 2026-10-01 (e97193f) |
-| 8 | Euclid–Kepler–Pacioli (EKP) cell: all five Platonic solids nested in one cubic cell, with Kepler's star and Pacioli's rectangles (Pm-3) Paper: DICTO DOI: 10.5281/zenodo.23284106 (2026-10-15). | DICTO (built a physical cell) | yes | **not found** — candidate; a periodic approximant-type structure like α-AlMnSi (no fivefold axis) | 2026-10-06 (6636342) |
-| 8b | Euclid–Kepler–Pacioli network: great stellated dodecahedra (even cells) and icosahedra (odd cells), sharing only corners | DICTO (from "the overlap belongs to the extraction") | yes | **not found** — candidate | 2026-10-06 |
-| 9 | Rhombic dodecahedron sub-family: 24 sheared-FCC cells from TARGETS.md, each built from four edge directions with volume matching the table | Kaleidohedra (predicted); verified by building in Polyhedraverse (9599e14) | yes (by construction) | **candidates** — combinatorial type is Fedorov's rhombic dodecahedron (Grünbaum 2010, Fig. 2(c)); none is in Grünbaum's monohedral enumeration (Figs. 3, 10: only Kepler's K and Bilinski's B), and the paper doesn't list mixed-angle cells like these | 2026-10-06 |
-| 10 | EKP windows: the dodecahedron with its six face-neighbours' stella octangulas carved out shows exactly 12 Penrose thick rhombi (72°/108°, edge 2/φ), one on each cube edge, at the dodecahedron's own face angles; 48 triangles wall the cut-away; volume exactly 12 | DICTO (spotted 12 diamond windows between six stellas and the dodecahedron) | yes | **not found** — candidate (web-level search) | 2026-10-08 (fb9de6b) |
-| 10a | Study of #10, the windows made convex: the 12 window rhombi pushed straight out by √(7 − 4φ), keeping size and orientation, hull into a 74-face solid with 12 Penrose thick rhombi, 6 golden rhombi on the cube faces, 8 equilateral triangles and 48 triangles; three edge lengths; has a flat net (recorded as #12 in Zenodo v2026.10.08-convex) | DICTO (asked to make the windows convex by expanding from the centre) | yes | study of #10, not a separate claim | 2026-10-08 |
-| 10b | Study of #10, windows and stellas in a checkerboard: the windows (even cells) and stella octangulas (odd cells) fill space exactly, each odd cube being its stella plus its six neighbours' carved roofs; volumes 12 + 4 = two cubes | DICTO (asked for "a male counterpart to window" fitting the faces the stellas leave) | yes | study of #10, not a separate claim | 2026-10-08 (ac203df) |
-| 11 | Dodecahedron stretched along a cube-face axis: 8 regular pentagons, 4 hexagons (108° × 4, 144° × 2), 2 rectangles at any stretch; squares at one edge (2/φ); at the lattice spacing 2 it is the hull of two EKP face-neighbour dodecahedra | DICTO (the "pentagon caps and hexagons" hunch, from overlapped dodecahedra) | yes | **not found** — candidate (web-level search; a simple construction, so likely to appear somewhere, e.g. crystal habits) | 2026-10-08 (fb9de6b) |
-| 12 | Star Chain Reaction: the EKP great star is exactly the great stellated dodecahedron of the Dogstar's core (a dodecahedron 1/φ³ the cell's), and a whole Sunstar 1/φ³ the size fits inside it with no room to grow, so dodecahedron ⊃ great star ⊃ Sunstar(1/φ³) ⊃ great star(1/φ³) ⊃ … nests forever, each step touching, scale ratio φ³ | DICTO (asked for a Sunstar cell network and to search nestings; named it); found by Kaleidohedra's search under DICTO's direction. The Dogstar itself is George W. Hart's stellation 8 of the dodecahedron (1996) | yes | **not found** — candidate (web-level search, 2026-10-08) | 2026-10-08 (79448e3) |
-| 12a | Study of #12, the Jewel chain: DICTO Jewel ⊃ cube ⊃ stella octangula ⊃ Dogstar ⊃ dodecahedron(1/φ³) ⊃ DICTO Jewel(1/φ³) ⊃ …, every step touching; the EKP cell recurs inside its own stella, through the Dogstar | DICTO (asked whether "another cell network" was buried in the DICTO Jewel); found by Kaleidohedra's search | yes | study of #12, not a separate claim | 2026-10-08 |
-| 13 | The 13-dodecahedron cluster made solid: a regular dodecahedron with one on each face leaves gaps of exactly two kinds, 30 wedges (two pentagons hinged at 10.3048°, volume φ³/20) and 20 needles (volume (45 − 19√5)/600), and the filled cluster comes apart into 12 finned units Paper: DICTO DOI: 10.5281/zenodo.23284281 (2026-10-15). | DICTO (designed the cluster; asked for its gaps as pieces, separable once built) | yes | **not found** — candidate (the 10.3° gap itself is well known) | 2026-10-09 |
-| 14 | DICTO-Star: an icosidodecahedron with a regular dodecahedron on each pentagon and a tridiminished icosahedron (J63) on each triangle; 33 regular-faced pieces, every contact a whole face, every edge and corner closed, no filler, volume (195 + 89√5)/3 Paper: DICTO DOI: 10.5281/zenodo.23284213 (2026-10-15). | DICTO (the centre of DICTO's builds, by 2026-10-04); confirmed exactly by the search DICTO asked for | yes | **not found** — candidate (the version with whole icosahedra, which overlaps, is Robert Austin's 2014 model) | 2026-10-09 |
-| 15 | DICTO Jewel clusters: four DICTO Jewels in a tetrahedron (pairwise face to face, touching at one point in the middle) and six in an octahedron round a stella octangula, which fits them face for face (a solid piece); each a shape of its own, and each fills space with stella octangulas | DICTO (built the tetrahedral cluster in the app, asked for the octahedral, saw that both fill space with stellas) | yes | **not found** — candidate (made only of the DICTO Jewel, #10, itself not found) | 2026-10-09 |
-| 16 | Sunstar clusters: the octet structure of #15 in the Sunstar Lattice; four dodecahedra round a cell corner, and six round an odd cell with its Dogstar inside, a solid piece (a Dogstar with its 6 dodecahedra: a Sunstar turned inside out); each fills space with Dogstars, and shared they form the octet network | DICTO (asked whether the octet network held for the Sunstars and Dogstars) | yes | **not found** — candidate (the honeycomb itself is Hart's, 1996) | 2026-10-09 |
-| 17 | Kagome hulls: six hulls of DICTO Jewels or Sunstar dodecahedra give Kagome networks, clusters sharing single pieces corner to corner; a hull with n corners sits on a network where each cluster has n neighbours (the icosahedral exception: #13) Paper: DICTO DOI: 10.5281/zenodo.23376317 (2026-10-15). | DICTO | yes | **not found** as networks of these clusters; corner-sharing octahedra and tetrahedra are known (perovskite, pyrochlore) | 2026-10-09 (0bf8909) |
-| 18 | The DICTO Hexa: eight Hexa Jewels (DICTO Jewels passing through each other) as one solid; with its gap, the DICTO Hexa-Key, it fills space like a checkerboard, 5 : 3 Paper: DICTO DOI: 10.5281/zenodo.23376320 (2026-10-15). | DICTO (names) | yes | **not found** | 2026-10-09 (0bf8909) |
-| 19 | The DICTO Icosa-13: the Lotus seed (an icosahedron of edge φ²) is exactly a dodecahedron + 12 J11 + 30 AXE + 20 FUJI; UNITY is an icosidodecahedron + 12 J11, its dimples closed by VAJRA | DICTO (UNITY built physically; dodecahedron + 12 J11 built in Polyhedraverse 2026-10-05; names) | study checks | **not found** as dissections and fillings; the pieces AXE and CLEO are Mosseri–Sadoc tiles, the DESHI arrangement is Gray's (2002) | 2026-10-10 |
-| 20 | The DICTO Stella-Corona: icosidodecahedron + 20 icosahedra + 12 King of Pentacles (Tarot), the DICTO-Star's icosahedral twin, closed, every contact a whole face, with a diamond network. Closed result: no icosahedral Dogstar | DICTO (names) | study checks | **not found**; the 20-icosahedron shell is the Wolfram Demonstration "Cluster of 20 Icosahedra" | 2026-10-10 |
-| 21 | The icosahedral octet: Euclid's roofs moved to the icosahedron. An icosahedron + 6 edge roofs is the regular octahedron; icosahedra (edge 1) with their roofs in the octet's octahedra and icosahedra of edge 1/2 with corner and edge caps in its tetrahedra fill space exactly (icosahedra 60.79%); the Lotus Jewel (the clawed icosahedron) | DICTO (the idea: "the same principle as the dodecahedron and roofs, but with six"; the tetrahedral gap made icosahedral; clawing like the Jewel) | study checks | **not found** as fillings; the icosahedron in the octahedron at the golden section is classical (Pacioli; Fuller's Jitterbug) | 2026-10-10 |
-| 22 | Chain of Karma: the Lotus seed nested in itself without end; the icosahedron and dodecahedron as endless shells of each other; the dodecahedral Chain; an iterated dissection in which only the icosahedron is subdivided, the gap pieces occurring at every scale | DICTO (the Chain, the name, the dodecahedral version) | study checks | **not found** as solid exact fillings; nested icosahedra at golden powers: Gray 2002; nested icosahedral point shells: Tsai clusters, Keef–Twarock (viruses) | 2026-10-11 |
-| 23 | Spheres of Dharma: a second exact φ³ cycle, icosahedron φ² ⊃ rhombic triacontahedron ⊃ fullerene cage ⊃ dodecahedron ⊃ icosidodecahedron ⊃ icosahedron 1/φ, each layer filled by a few piece types (237 pieces per cycle); it shares the dodecahedron with the Lotus seed, so the two can be exchanged half by half at every scale | DICTO (the icosidodecahedron as the twin form, the dual triangular structures, the triangles of rhombi, the fullerene transition, "one more missing piece") | study checks | **not found** as solid exact fillings; the shells are the Tsai cluster's family (Takakura et al. 2007); the dual compound and the compound of five octahedra are classical | 2026-10-12 |
-| 24 | The Bodhi seed: a rhombic triacontahedron of edge φ² holds 12 of edge 1 on its 5-fold axes, each touching 5 others face to face, and one of edge 1/φ at its centre; the second form (after the icosahedron, #19) that multiplies like the Lotus seed, 13 per φ² step; gap 31.8%, in 20 three-fold and 30 two-fold parts on each side | DICTO (the golden rhombohedron lead; the name; the outer twelve built exactly by hand in Polyhedraverse) | study checks | **partly known**: 12 rhombic triacontahedra face to face around a rhombic hexecontahedron is S. Kabai's cluster layer (Wolfram Demonstrations, "Cluster of 45 Polyhedra around a Rhombic Hexacontahedron"; Kabai, Bérczi, Szilassi, RT/RH clusters); **not found**: its exact closure in the triacontahedron φ², the centre 1/φ, the gap kits, the seed's growth | 2026-10-12 |
-| 25 | The DICTO Spheroid-13 RD: the rhombic dodecahedron's 13 (a centre and its 12 face neighbours) fills space by translation alone; reshaped with flat faces, kept keyed, a true rhombic dodecahedron at its centre, the block reaches roundness 0.707 (thickness 0.15; the lattice's best single tile 0.748) | DICTO (the Hexa question, the rounded keyed quality, the true RD centre, the thicknesses, the name) | study checks; 40 wide starts | **tiling known**: the A3 radius-one perfect code (Kovačević and Tan 2018; x1 + 3x2 + 9x3 = 0 mod 13 in Kovačević 2026; Singer 1938); the rounded keyed block **not found** | 2026-10-13 (Zenodo 10.5281/zenodo.23332821) |
-| 26 | DICTO ATOM-13×13: thirteen twelve-around-one clusters side by side, six golden (Icosa-13, DESHI, Dodeca-13, UNITY/VENUS, DICTO-Star, Bodhi seed) and seven periodic (RD 13 / Spheroid-13 RD, DICTO skewed RD, Bain RD, Bilinski, regular-hexagon ED, truncated octahedron 4 + 5 + 4, DICTO Jewel), with 24 buildable kits; the seven periodic blocks are one tiling in seven shapes | DICTO (the members, names, the TO's 4 + 5 + 4 with its windows, the gold centre, the title) | kit and tiling checks | **the tiling known** (A3 perfect code, Kovačević–Tan 2018, Singer 1938); the thirteen together, the kits, the TO and Jewel blocks **not found** | 2026-10-13 (Zenodo 10.5281/zenodo.23333183) |
-| 27 | Capturing the In-betweens: the in-between stages of the Chain of Karma, Spheres of Dharma and Bodhi Seed taken as fused solids (the transitional shells); icosahedron + 20 CLEO is the great stellated dodecahedron, + 30 AXE the excavated dodecahedron (all 32 corners kept), + 12 caps the dodecahedron; the Bodhi centre + 60 Vajra (fine) is the rhombic hexecontahedron; Spheres of Dharma stage 7 is the convex DICTO Truncated-Icosahedral Hecatodihedron (102 faces: 12 pentagons, 30 rhombi, 60 triangles; 80 corners; see #28); 45 convex partial stages; Dharma piece names Stupa and Monkey Staff | DICTO (the observation in the app, the transitional-shell idea, the names) | 25 identification checks; nets checked | **the named solids known** (Kepler 1619; Coxeter et al. 1938; Unkelbach 1940); the routes through them built from DICTO's pieces, and the Hecatodihedron, **not found** in the catalogues searched | 2026-10-14 (Zenodo 10.5281/zenodo.23345502) |
-| 28 | The DICTO Truncated-Icosahedral Hecatodihedron: the truncated icosahedron with a Shield on each hexagon, at the height where the triangles of neighbouring Shields lie flat as rhombi; convex, 102 faces (12 regular pentagons, 30 rhombi, 60 triangles), 80 corners, 180 edges, only two edge angles; its 30 rhombi and 60 triangles touch one sphere, its 12 pentagons lie a little inside | DICTO (Spheres of Dharma stage 7; the name) | papers/tih/data/tih_check.py, from Polyhedraverse's TRANS_DHARMA_80 | **not found** named (Conway's k6tI has 132 faces; searched: Conway notation (Hart), Johnson solids and near misses (incl. Kaplan's rectified truncated icosahedron), MathWorld and PolyhedronData, the Polytope Wiki); **derived from a known solid** (V2, 2026-10-16, exact): its 20 Shield apexes are the canonical pentakis dodecahedron's three-fold vertices, so it is the joined truncated icosahedron jtI with its 12 five-fold corners cut flat | 2026-10-14; V2 2026-10-16 (Zenodo 10.5281/zenodo.23360857) |
-| 29 | Theaetetus: an icosahedron of edge 1 held exactly in the icosidodecahedron of edge 1 by 20 Cleo-Icos on its face centres (and 12 Aetos on its corners), locked against every turn and shift; the hollow is the core + 12 Aetos + 20 antiprisms, each antiprism a Cleo-Ico + 3 Sphen + 3 Sphenion (volumes 3 : 2 : 1); grown with the Spheres of Dharma layers (×2/φ) to the DICTO Hecatodihedron in two exact stories: the stations (215 pieces, every layer closed, 20 Atraktos) and 102 clean pieces (20 Cleo-Icos, 20 Kion, 12 frusta, 30 t1, 20 caps), the icosahedron and dodecahedron cut by the same 20 cones; all volumes exact in ℚ(√5), remainder 0. Paper: DICTO DOI: 10.5281/zenodo.23378070 (2026-10-15). | DICTO (the hold, the growth, the 102, all names) | studies/2026-10-15-icosa-star-hollow (exact.py, exact_stations.py, cut102.py) | the hollow's split is the shadow of Klitzing's segmentochoron K-4.137 (credited); the hold, the stations and the Kion **not found** (library + web, 2026-10-15) | 2026-10-15 |
-| 30 | A Fibonacci Spine: five periodic (body-centred cubic) packings of the DICTO Ogdoecontahedron in five 72° wedges round a five-fold axis (the icosahedral irrational twin), exact to radius 10; with the central copy, the copies removed along the axis are exactly the canonical Fibonacci cut-and-project chain for |h| < 12.81, its window set by a five-fold ring clashing with itself; beyond that minimal removal thins it (DICTO DOI: 10.5281/zenodo.23396361) | | |
-| 31 | The DICTO Ogdoecontahedron: the polar of the DICTO Hecatodihedron, a convex solid of 20 regular hexagons and 60 kites (102 corners, 180 edges), exact in ℚ(√5); copies joined on hexagons form diamond and pyrochlore networks and a bcc packing of (9225 − 3915√5)/608 ≈ 77.43%; exactly the canonical pentakis dodecahedron with its 20 three-fold corners cut flat (V2); with the Hecatodihedron it forms the self-dual DICTO Hecatogdoecontahedron (182 faces), whose core and hull are the classical truncated icosahedron–pentakis dodecahedron compound's (rectified TI and jtI) | DICTO (the inside-out idea, the name, the networks, the compound's name) | studies/2026-10-16-polar-dharma, ocd-pyrochlore, progenitors | **face arrangement known** (dual of L0(D), Antiprism); **derived from a known solid** (pentakis dodecahedron cut flat); the metric solid, its packings and the compound pairing **not found named** | 2026-10-16 (Zenodo 10.5281/zenodo.23404688, V2) |
-| 32 | Inverted Shells: the Spheres of Dharma (with the Hecatodihedron stage) reciprocated into an exact reversed golden cycle D ⊂ ID ⊂ Ogdoecontahedron ⊂ PD ⊂ I ⊂ RT ⊂ D·φ³, one kind of piece per layer; the great stellated dodecahedron locks into the outer gap at one size; a dual pair fits the inner gap in reverse order | DICTO (turning the cycle inside out, the names) | studies/2026-10-16-polar-dharma (exact) | polar reciprocation **known**; the reversed exact nest and its pieces **not found** | 2026-10-16 (Zenodo 10.5281/zenodo.23405029, V2) |
-| 33 | Double Vision – Both Cycles in One Space: the Spheres of Dharma and their polar reversal in one space; the sphere of reciprocation toggles between two exact settings (ρ² = φ²/4 sharing I and D, ρ² = 3φ²/4 sharing ID and RT) that can never coincide (3 is not a power of φ); cut against each other the cycles make one solid of exact convex pieces, 536 of 12 kinds (DICTO Interlock set 1) and 502 of 11 kinds (set 2) per turn | DICTO (both cycles in one space, the toggle, the interlock, the set names) | studies/2026-10-16-interlock (exact) | **not found** (common refinement of dissections is standard) | 2026-10-16 (Zenodo 10.5281/zenodo.23407106, V2) |
-| 34 | Progenitors: the DICTO Hecatodihedron and DICTO Ogdoecontahedron as a twin pair never close golden on their own (8,742 tight cycles, none on a power of φ; the tightest 3-cycle gains exactly 9/φ⁴ a round); set into the Spheres of Dharma in the dodecahedron's place (O at 3φ²/4) they close it again on φ⁹: I ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ I·φ³, a cycle holding the core and hull of two dual compounds (ID/RT and rTI/jtI, the latter the DICTO Hecatogdoecontahedron's) | DICTO (the progenitors idea, the truncated icosahedron's place, the names) | studies/2026-10-16-progenitors (exact) | **not found** (in the sources checked) | 2026-10-16 (Zenodo 10.5281/zenodo.23413184) |
-| 35 | Vajrayana: the dodecahedron returns in the cycle of #34 as the hull of the Cleo star, exactly (2/3)·D, filled by 82 pieces of four kinds; the last loose step RT ⊂ I·φ³ is closed by the DICTO Metaxyhexecontahedron, the dodecahedron–icosahedron hull member with edge ratio 9/φ⁴, touching both, each of its two layers one kind of piece (30 and 60), its dual closing the reversed cycle's step; the full-height icosidodecahedron star gives the DICTO Palintriacontahedron (ratio 3/√5); twelve stations | DICTO (the Cleo star with the dodecahedron in it, the inward pyramids, the solid in the last gap, the full-height ID star, the names) | studies/2026-10-16-progenitors (exact; some observations float, so labelled) | **not found** as named or distinguished members (the hull family is known) | 2026-10-17 (Zenodo 10.5281/zenodo.23429911) |
-| 36 | Golden Bodhi Pyrochlore: the gap of the Ogdoecontahedron's bcc packing, 22.57% of space, exact: 72 cone pieces of 3 kinds; hexagonal limbs crossing in exactly two golden rhombi; the canonical golden cut shatters (8,027 pieces); the GBPC (Golden Bodhi Pyrochlore Corner), 24 per cell, is the one adapter every golden fill needs; what remains has no face-to-face tiling by golden rhombohedra; DICTO's Bull-horns OG adaptor fills the whole gap with one piece, three per copy, (18728 − 6296√5)/41553 each | DICTO (the questions, the Bull-horns OG adaptor, the names Golden Bodhi Pyrochlore, GBPC, Bull-horns); the obstruction and the GBPC found by Claude Fable | studies/2026-10-16-ocd-pyrochlore, studies/2026-10-18-bcc-hole-pieces (exact; float explorations labelled) | **not found** | 2026-10-18 (Zenodo 10.5281/zenodo.23451210) |
-| 37 | The DICTO Ogdoecontahedron on the Octet Truss: the OG's 8 joint hexagons lie on the faces of a regular octahedron (corners at distance 2φ/3), so the OG sits in the octet truss; four families of exact space-filling kits: golden-section keys (keyed octahedron + dented tetrahedron L/R); an exact thick Penrose rhombus linking facing five-fold stars, offset by exactly one tip radius, with three Penrose cores; golden envelopes filling exactly 10/φ⁶, with the φ⁻² vertex cuboctahedron = ⅓ envelope, a two-shape kit and a tetartoid core, each envelope touching its rhombic dodecahedron at 12 golden-section points; one-piece glue (envelope + W, OG + W with OG imprints, OG + W on the Penrose star) | DICTO (the octet from the OG's pieces, the Penrose link, the minimal golden kit, the one-piece and two-shape golden octets, the OG-imprint and star-centred glue, the keyed glue, the half-RD network, the chamber); W, the proofs, the tetartoid and the keyed-glue design by Claude Fable | studies/2026-10-18-ocd-octet, -p1 … -p4, -envelope-network (exact, proved independently; keyed W float design) | **not found** | 2026-10-19 (Zenodo 10.5281/zenodo.23457016) |
-| 37a | The DICTO Ogdoecontahedron on the Gyrated Octet (companion to #37): in the gyrated octet (A B A B) every layer is a twin boundary; the OG across it is its mirror image, exactly the OG turned 60° about the joint three-fold axis (the spinel law); one exact cell kit (the OG, 4 left and 4 right caps of (277 − 79√5)/1539, whole tetrahedra) fills the octet, the gyrated octet and every stacking, with twin caps (554 − 158√5)/1539 and bipyramids at twin layers; a mirror middle piece (424 − 88√5)/4617 replaces the facing-star piece there; the OCD Stella twins on whole joint triangles; the DICTO Belted Triacontahedron (the golden envelope cut flat at two three-fold corners, (−872 + 440√5)/81, D3d) fills the gyrated octet's octahedra pole to pole without overlap, 55.02% of space; the DICTO Jewel (cube frame) does not twin | DICTO (the question, the family, the belted solid and its name); Claude (computation) | studies/2026-10-19-og-gyrated-octet (exact in Q(√5); a few float checks marked in the paper) | **not found** | 2026-10-20 (Zenodo 10.5281/zenodo.23484012) |
-| 38 | Universal PiTet, the DICTO PiTet Proposition: the rule T(S) = {x : v·x ≤ v·v for every corner v} takes the icosidodecahedron to the rhombic triacontahedron, the DICTO GTI (golden truncated icosahedron, hexagon sides 1 : φ), the DICTO FPD (flat pentakis dodecahedron, its polar) and back to the icosidodecahedron exactly 10/φ⁴ larger, for ever; self-polar about the GTI's circumsphere; exact shell pieces; from the Cleo star with Monkey Staff B, five-sided Vajras and hexagonal Cleos in the OG; all exact in Q(√5) | | | | |
+| F1 | DICTO skewed rhombic dodecahedron | DICTO (found by building it) | yes | **not found** as this member — the family (skewed RD parallelohedra) is known (Fedorov; Lalvani 1997) | 2026-10-01 (8420a51) |
+| F2 | Equal-edge rule for sheared FCC | Kaleidohedra | yes | general idea known; this form not found | 2026-10-01 (8420a51) |
+| F6 | Exactly 9 "most regular" space-fillers | Kaleidohedra two-way search (its regular-hexagon elongated dodecahedron member: DICTO, independently, by lattice shearing) | yes | not yet searched as a set; that member is **known** (Grünbaum 2010, Fig. 2(b); see F5) | 2026-10-01 (547aac9) |
+| F7 | DICTO skewed ED (two forms) | Kaleidohedra (extending F1) | yes | **not found** as these members — the family is known (Fedorov; Lalvani 1997) | 2026-10-01 (e97193f) |
+| F8 | Euclid–Kepler–Pacioli (EKP) cell: all five Platonic solids nested in one cubic cell, with Kepler's star and Pacioli's rectangles (Pm-3) Paper: DICTO DOI: 10.5281/zenodo.23284106 (2026-10-15). | DICTO (built a physical cell) | yes | **not found** — candidate; a periodic approximant-type structure like α-AlMnSi (no fivefold axis) | 2026-10-06 (6636342) |
+| F8b | Euclid–Kepler–Pacioli network: great stellated dodecahedra (even cells) and icosahedra (odd cells), sharing only corners | DICTO (from "the overlap belongs to the extraction") | yes | **not found** — candidate | 2026-10-06 |
+| F9 | Rhombic dodecahedron sub-family: 24 sheared-FCC cells from TARGETS.md, each built from four edge directions with volume matching the table | Kaleidohedra (predicted); verified by building in Polyhedraverse (9599e14) | yes (by construction) | **candidates** — combinatorial type is Fedorov's rhombic dodecahedron (Grünbaum 2010, Fig. 2(c)); none is in Grünbaum's monohedral enumeration (Figs. 3, 10: only Kepler's K and Bilinski's B), and the paper doesn't list mixed-angle cells like these | 2026-10-06 |
+| F10 | EKP windows: the dodecahedron with its six face-neighbours' stella octangulas carved out shows exactly 12 Penrose thick rhombi (72°/108°, edge 2/φ), one on each cube edge, at the dodecahedron's own face angles; 48 triangles wall the cut-away; volume exactly 12 | DICTO (spotted 12 diamond windows between six stellas and the dodecahedron) | yes | **not found** — candidate (web-level search) | 2026-10-08 (fb9de6b) |
+| F10a | Study of F10, the windows made convex: the 12 window rhombi pushed straight out by √(7 − 4φ), keeping size and orientation, hull into a 74-face solid with 12 Penrose thick rhombi, 6 golden rhombi on the cube faces, 8 equilateral triangles and 48 triangles; three edge lengths; has a flat net (recorded as F12 in Zenodo v2026.10.08-convex) | DICTO (asked to make the windows convex by expanding from the centre) | yes | study of F10, not a separate claim | 2026-10-08 |
+| F10b | Study of F10, windows and stellas in a checkerboard: the windows (even cells) and stella octangulas (odd cells) fill space exactly, each odd cube being its stella plus its six neighbours' carved roofs; volumes 12 + 4 = two cubes | DICTO (asked for "a male counterpart to window" fitting the faces the stellas leave) | yes | study of F10, not a separate claim | 2026-10-08 (ac203df) |
+| F11 | Dodecahedron stretched along a cube-face axis: 8 regular pentagons, 4 hexagons (108° × 4, 144° × 2), 2 rectangles at any stretch; squares at one edge (2/φ); at the lattice spacing 2 it is the hull of two EKP face-neighbour dodecahedra | DICTO (the "pentagon caps and hexagons" hunch, from overlapped dodecahedra) | yes | **not found** — candidate (web-level search; a simple construction, so likely to appear somewhere, e.g. crystal habits) | 2026-10-08 (fb9de6b) |
+| F12 | Star Chain Reaction: the EKP great star is exactly the great stellated dodecahedron of the Dogstar's core (a dodecahedron 1/φ³ the cell's), and a whole Sunstar 1/φ³ the size fits inside it with no room to grow, so dodecahedron ⊃ great star ⊃ Sunstar(1/φ³) ⊃ great star(1/φ³) ⊃ … nests forever, each step touching, scale ratio φ³ | DICTO (asked for a Sunstar cell network and to search nestings; named it); found by Kaleidohedra's search under DICTO's direction. The Dogstar itself is George W. Hart's stellation 8 of the dodecahedron (1996) | yes | **not found** — candidate (web-level search, 2026-10-08) | 2026-10-08 (79448e3) |
+| F12a | Study of F12, the Jewel chain: DICTO Jewel ⊃ cube ⊃ stella octangula ⊃ Dogstar ⊃ dodecahedron(1/φ³) ⊃ DICTO Jewel(1/φ³) ⊃ …, every step touching; the EKP cell recurs inside its own stella, through the Dogstar | DICTO (asked whether "another cell network" was buried in the DICTO Jewel); found by Kaleidohedra's search | yes | study of F12, not a separate claim | 2026-10-08 |
+| F13 | The 13-dodecahedron cluster made solid: a regular dodecahedron with one on each face leaves gaps of exactly two kinds, 30 wedges (two pentagons hinged at 10.3048°, volume φ³/20) and 20 needles (volume (45 − 19√5)/600), and the filled cluster comes apart into 12 finned units Paper: DICTO DOI: 10.5281/zenodo.23284281 (2026-10-15). | DICTO (designed the cluster; asked for its gaps as pieces, separable once built) | yes | **not found** — candidate (the 10.3° gap itself is well known) | 2026-10-09 |
+| F14 | DICTO-Star: an icosidodecahedron with a regular dodecahedron on each pentagon and a tridiminished icosahedron (J63) on each triangle; 33 regular-faced pieces, every contact a whole face, every edge and corner closed, no filler, volume (195 + 89√5)/3 Paper: DICTO DOI: 10.5281/zenodo.23284213 (2026-10-15). | DICTO (the centre of DICTO's builds, by 2026-10-04); confirmed exactly by the search DICTO asked for | yes | **not found** — candidate (the version with whole icosahedra, which overlaps, is Robert Austin's 2014 model) | 2026-10-09 |
+| F15 | DICTO Jewel clusters: four DICTO Jewels in a tetrahedron (pairwise face to face, touching at one point in the middle) and six in an octahedron round a stella octangula, which fits them face for face (a solid piece); each a shape of its own, and each fills space with stella octangulas | DICTO (built the tetrahedral cluster in the app, asked for the octahedral, saw that both fill space with stellas) | yes | **not found** — candidate (made only of the DICTO Jewel, F10, itself not found) | 2026-10-09 |
+| F16 | Sunstar clusters: the octet structure of F15 in the Sunstar Lattice; four dodecahedra round a cell corner, and six round an odd cell with its Dogstar inside, a solid piece (a Dogstar with its 6 dodecahedra: a Sunstar turned inside out); each fills space with Dogstars, and shared they form the octet network | DICTO (asked whether the octet network held for the Sunstars and Dogstars) | yes | **not found** — candidate (the honeycomb itself is Hart's, 1996) | 2026-10-09 |
+| F17 | Kagome hulls: six hulls of DICTO Jewels or Sunstar dodecahedra give Kagome networks, clusters sharing single pieces corner to corner; a hull with n corners sits on a network where each cluster has n neighbours (the icosahedral exception: F13) Paper: DICTO DOI: 10.5281/zenodo.23376317 (2026-10-15). | DICTO | yes | **not found** as networks of these clusters; corner-sharing octahedra and tetrahedra are known (perovskite, pyrochlore) | 2026-10-09 (0bf8909) |
+| F18 | The DICTO Hexa: eight Hexa Jewels (DICTO Jewels passing through each other) as one solid; with its gap, the DICTO Hexa-Key, it fills space like a checkerboard, 5 : 3 Paper: DICTO DOI: 10.5281/zenodo.23376320 (2026-10-15). | DICTO (names) | yes | **not found** | 2026-10-09 (0bf8909) |
+| F19 | The DICTO Icosa-13: the Lotus seed (an icosahedron of edge φ²) is exactly a dodecahedron + 12 J11 + 30 AXE + 20 FUJI; UNITY is an icosidodecahedron + 12 J11, its dimples closed by VAJRA | DICTO (UNITY built physically; dodecahedron + 12 J11 built in Polyhedraverse 2026-10-05; names) | study checks | **not found** as dissections and fillings; the pieces AXE and CLEO are Mosseri–Sadoc tiles, the DESHI arrangement is Gray's (2002) | 2026-10-10 |
+| F20 | The DICTO Stella-Corona: icosidodecahedron + 20 icosahedra + 12 King of Pentacles (Tarot), the DICTO-Star's icosahedral twin, closed, every contact a whole face, with a diamond network. Closed result: no icosahedral Dogstar | DICTO (names) | study checks | **not found**; the 20-icosahedron shell is the Wolfram Demonstration "Cluster of 20 Icosahedra" | 2026-10-10 |
+| F21 | The icosahedral octet: Euclid's roofs moved to the icosahedron. An icosahedron + 6 edge roofs is the regular octahedron; icosahedra (edge 1) with their roofs in the octet's octahedra and icosahedra of edge 1/2 with corner and edge caps in its tetrahedra fill space exactly (icosahedra 60.79%); the Lotus Jewel (the clawed icosahedron) | DICTO (the idea: "the same principle as the dodecahedron and roofs, but with six"; the tetrahedral gap made icosahedral; clawing like the Jewel) | study checks | **not found** as fillings; the icosahedron in the octahedron at the golden section is classical (Pacioli; Fuller's Jitterbug) | 2026-10-10 |
+| F22 | Chain of Karma: the Lotus seed nested in itself without end; the icosahedron and dodecahedron as endless shells of each other; the dodecahedral Chain; an iterated dissection in which only the icosahedron is subdivided, the gap pieces occurring at every scale | DICTO (the Chain, the name, the dodecahedral version) | study checks | **not found** as solid exact fillings; nested icosahedra at golden powers: Gray 2002; nested icosahedral point shells: Tsai clusters, Keef–Twarock (viruses) | 2026-10-11 |
+| F23 | Spheres of Dharma: a second exact φ³ cycle, icosahedron φ² ⊃ rhombic triacontahedron ⊃ fullerene cage ⊃ dodecahedron ⊃ icosidodecahedron ⊃ icosahedron 1/φ, each layer filled by a few piece types (237 pieces per cycle); it shares the dodecahedron with the Lotus seed, so the two can be exchanged half by half at every scale | DICTO (the icosidodecahedron as the twin form, the dual triangular structures, the triangles of rhombi, the fullerene transition, "one more missing piece") | study checks | **not found** as solid exact fillings; the shells are the Tsai cluster's family (Takakura et al. 2007); the dual compound and the compound of five octahedra are classical | 2026-10-12 |
+| F24 | The Bodhi seed: a rhombic triacontahedron of edge φ² holds 12 of edge 1 on its 5-fold axes, each touching 5 others face to face, and one of edge 1/φ at its centre; the second form (after the icosahedron, F19) that multiplies like the Lotus seed, 13 per φ² step; gap 31.8%, in 20 three-fold and 30 two-fold parts on each side | DICTO (the golden rhombohedron lead; the name; the outer twelve built exactly by hand in Polyhedraverse) | study checks | **partly known**: 12 rhombic triacontahedra face to face around a rhombic hexecontahedron is S. Kabai's cluster layer (Wolfram Demonstrations, "Cluster of 45 Polyhedra around a Rhombic Hexacontahedron"; Kabai, Bérczi, Szilassi, RT/RH clusters); **not found**: its exact closure in the triacontahedron φ², the centre 1/φ, the gap kits, the seed's growth | 2026-10-12 |
+| F25 | The DICTO Spheroid-13 RD: the rhombic dodecahedron's 13 (a centre and its 12 face neighbours) fills space by translation alone; reshaped with flat faces, kept keyed, a true rhombic dodecahedron at its centre, the block reaches roundness 0.707 (thickness 0.15; the lattice's best single tile 0.748) | DICTO (the Hexa question, the rounded keyed quality, the true RD centre, the thicknesses, the name) | study checks; 40 wide starts | **tiling known**: the A3 radius-one perfect code (Kovačević and Tan 2018; x1 + 3x2 + 9x3 = 0 mod 13 in Kovačević 2026; Singer 1938); the rounded keyed block **not found** | 2026-10-13 (Zenodo 10.5281/zenodo.23332821) |
+| F26 | DICTO ATOM-13×13: thirteen twelve-around-one clusters side by side, six golden (Icosa-13, DESHI, Dodeca-13, UNITY/VENUS, DICTO-Star, Bodhi seed) and seven periodic (RD 13 / Spheroid-13 RD, DICTO skewed RD, Bain RD, Bilinski, regular-hexagon ED, truncated octahedron 4 + 5 + 4, DICTO Jewel), with 24 buildable kits; the seven periodic blocks are one tiling in seven shapes | DICTO (the members, names, the TO's 4 + 5 + 4 with its windows, the gold centre, the title) | kit and tiling checks | **the tiling known** (A3 perfect code, Kovačević–Tan 2018, Singer 1938); the thirteen together, the kits, the TO and Jewel blocks **not found** | 2026-10-13 (Zenodo 10.5281/zenodo.23333183) |
+| F27 | Capturing the In-betweens: the in-between stages of the Chain of Karma, Spheres of Dharma and Bodhi Seed taken as fused solids (the transitional shells); icosahedron + 20 CLEO is the great stellated dodecahedron, + 30 AXE the excavated dodecahedron (all 32 corners kept), + 12 caps the dodecahedron; the Bodhi centre + 60 Vajra (fine) is the rhombic hexecontahedron; Spheres of Dharma stage 7 is the convex DICTO Truncated-Icosahedral Hecatodihedron (102 faces: 12 pentagons, 30 rhombi, 60 triangles; 80 corners; see F28); 45 convex partial stages; Dharma piece names Stupa and Monkey Staff | DICTO (the observation in the app, the transitional-shell idea, the names) | 25 identification checks; nets checked | **the named solids known** (Kepler 1619; Coxeter et al. 1938; Unkelbach 1940); the routes through them built from DICTO's pieces, and the Hecatodihedron, **not found** in the catalogues searched | 2026-10-14 (Zenodo 10.5281/zenodo.23345502) |
+| F28 | The DICTO Truncated-Icosahedral Hecatodihedron: the truncated icosahedron with a Shield on each hexagon, at the height where the triangles of neighbouring Shields lie flat as rhombi; convex, 102 faces (12 regular pentagons, 30 rhombi, 60 triangles), 80 corners, 180 edges, only two edge angles; its 30 rhombi and 60 triangles touch one sphere, its 12 pentagons lie a little inside | DICTO (Spheres of Dharma stage 7; the name) | papers/tih/data/tih_check.py, from Polyhedraverse's TRANS_DHARMA_80 | **not found** named (Conway's k6tI has 132 faces; searched: Conway notation (Hart), Johnson solids and near misses (incl. Kaplan's rectified truncated icosahedron), MathWorld and PolyhedronData, the Polytope Wiki); **derived from a known solid** (V2, 2026-10-16, exact): its 20 Shield apexes are the canonical pentakis dodecahedron's three-fold vertices, so it is the joined truncated icosahedron jtI with its 12 five-fold corners cut flat | 2026-10-14; V2 2026-10-16 (Zenodo 10.5281/zenodo.23360857) |
+| F29 | Theaetetus: an icosahedron of edge 1 held exactly in the icosidodecahedron of edge 1 by 20 Cleo-Icos on its face centres (and 12 Aetos on its corners), locked against every turn and shift; the hollow is the core + 12 Aetos + 20 antiprisms, each antiprism a Cleo-Ico + 3 Sphen + 3 Sphenion (volumes 3 : 2 : 1); grown with the Spheres of Dharma layers (×2/φ) to the DICTO Hecatodihedron in two exact stories: the stations (215 pieces, every layer closed, 20 Atraktos) and 102 clean pieces (20 Cleo-Icos, 20 Kion, 12 frusta, 30 t1, 20 caps), the icosahedron and dodecahedron cut by the same 20 cones; all volumes exact in ℚ(√5), remainder 0. Paper: DICTO DOI: 10.5281/zenodo.23378070 (2026-10-15). | DICTO (the hold, the growth, the 102, all names) | studies/2026-10-15-icosa-star-hollow (exact.py, exact_stations.py, cut102.py) | the hollow's split is the shadow of Klitzing's segmentochoron K-4.137 (credited); the hold, the stations and the Kion **not found** (library + web, 2026-10-15) | 2026-10-15 |
+| F30 | A Fibonacci Spine: five periodic (body-centred cubic) packings of the DICTO Ogdoecontahedron in five 72° wedges round a five-fold axis (the icosahedral irrational twin), exact to radius 10; with the central copy, the copies removed along the axis are exactly the canonical Fibonacci cut-and-project chain for |h| < 12.81, its window set by a five-fold ring clashing with itself; beyond that minimal removal thins it (DICTO DOI: 10.5281/zenodo.23396361) | | |
+| F31 | The DICTO Ogdoecontahedron: the polar of the DICTO Hecatodihedron, a convex solid of 20 regular hexagons and 60 kites (102 corners, 180 edges), exact in ℚ(√5); copies joined on hexagons form diamond and pyrochlore networks and a bcc packing of (9225 − 3915√5)/608 ≈ 77.43%; exactly the canonical pentakis dodecahedron with its 20 three-fold corners cut flat (V2); with the Hecatodihedron it forms the self-dual DICTO Hecatogdoecontahedron (182 faces), whose core and hull are the classical truncated icosahedron–pentakis dodecahedron compound's (rectified TI and jtI) | DICTO (the inside-out idea, the name, the networks, the compound's name) | studies/2026-10-16-polar-dharma, ocd-pyrochlore, progenitors | **face arrangement known** (dual of L0(D), Antiprism); **derived from a known solid** (pentakis dodecahedron cut flat); the metric solid, its packings and the compound pairing **not found named** | 2026-10-16 (Zenodo 10.5281/zenodo.23404688, V2) |
+| F32 | Inverted Shells: the Spheres of Dharma (with the Hecatodihedron stage) reciprocated into an exact reversed golden cycle D ⊂ ID ⊂ Ogdoecontahedron ⊂ PD ⊂ I ⊂ RT ⊂ D·φ³, one kind of piece per layer; the great stellated dodecahedron locks into the outer gap at one size; a dual pair fits the inner gap in reverse order | DICTO (turning the cycle inside out, the names) | studies/2026-10-16-polar-dharma (exact) | polar reciprocation **known**; the reversed exact nest and its pieces **not found** | 2026-10-16 (Zenodo 10.5281/zenodo.23405029, V2) |
+| F33 | Double Vision – Both Cycles in One Space: the Spheres of Dharma and their polar reversal in one space; the sphere of reciprocation toggles between two exact settings (ρ² = φ²/4 sharing I and D, ρ² = 3φ²/4 sharing ID and RT) that can never coincide (3 is not a power of φ); cut against each other the cycles make one solid of exact convex pieces, 536 of 12 kinds (DICTO Interlock set 1) and 502 of 11 kinds (set 2) per turn | DICTO (both cycles in one space, the toggle, the interlock, the set names) | studies/2026-10-16-interlock (exact) | **not found** (common refinement of dissections is standard) | 2026-10-16 (Zenodo 10.5281/zenodo.23407106, V2) |
+| F34 | Progenitors: the DICTO Hecatodihedron and DICTO Ogdoecontahedron as a twin pair never close golden on their own (8,742 tight cycles, none on a power of φ; the tightest 3-cycle gains exactly 9/φ⁴ a round); set into the Spheres of Dharma in the dodecahedron's place (O at 3φ²/4) they close it again on φ⁹: I ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ I·φ³, a cycle holding the core and hull of two dual compounds (ID/RT and rTI/jtI, the latter the DICTO Hecatogdoecontahedron's) | DICTO (the progenitors idea, the truncated icosahedron's place, the names) | studies/2026-10-16-progenitors (exact) | **not found** (in the sources checked) | 2026-10-16 (Zenodo 10.5281/zenodo.23413184) |
+| F35 | Vajrayana: the dodecahedron returns in the cycle of F34 as the hull of the Cleo star, exactly (2/3)·D, filled by 82 pieces of four kinds; the last loose step RT ⊂ I·φ³ is closed by the DICTO Metaxyhexecontahedron, the dodecahedron–icosahedron hull member with edge ratio 9/φ⁴, touching both, each of its two layers one kind of piece (30 and 60), its dual closing the reversed cycle's step; the full-height icosidodecahedron star gives the DICTO Palintriacontahedron (ratio 3/√5); twelve stations | DICTO (the Cleo star with the dodecahedron in it, the inward pyramids, the solid in the last gap, the full-height ID star, the names) | studies/2026-10-16-progenitors (exact; some observations float, so labelled) | **not found** as named or distinguished members (the hull family is known) | 2026-10-17 (Zenodo 10.5281/zenodo.23429911) |
+| F36 | Golden Bodhi Pyrochlore: the gap of the Ogdoecontahedron's bcc packing, 22.57% of space, exact: 72 cone pieces of 3 kinds; hexagonal limbs crossing in exactly two golden rhombi; the canonical golden cut shatters (8,027 pieces); the GBPC (Golden Bodhi Pyrochlore Corner), 24 per cell, is the one adapter every golden fill needs; what remains has no face-to-face tiling by golden rhombohedra; DICTO's Bull-horns OG adaptor fills the whole gap with one piece, three per copy, (18728 − 6296√5)/41553 each | DICTO (the questions, the Bull-horns OG adaptor, the names Golden Bodhi Pyrochlore, GBPC, Bull-horns); the obstruction and the GBPC found by Claude Fable | studies/2026-10-16-ocd-pyrochlore, studies/2026-10-18-bcc-hole-pieces (exact; float explorations labelled) | **not found** | 2026-10-18 (Zenodo 10.5281/zenodo.23451210) |
+| F37 | The DICTO Ogdoecontahedron on the Octet Truss: the OG's 8 joint hexagons lie on the faces of a regular octahedron (corners at distance 2φ/3), so the OG sits in the octet truss; four families of exact space-filling kits: golden-section keys (keyed octahedron + dented tetrahedron L/R); an exact thick Penrose rhombus linking facing five-fold stars, offset by exactly one tip radius, with three Penrose cores; golden envelopes filling exactly 10/φ⁶, with the φ⁻² vertex cuboctahedron = ⅓ envelope, a two-shape kit and a tetartoid core, each envelope touching its rhombic dodecahedron at 12 golden-section points; one-piece glue (envelope + W, OG + W with OG imprints, OG + W on the Penrose star) | DICTO (the octet from the OG's pieces, the Penrose link, the minimal golden kit, the one-piece and two-shape golden octets, the OG-imprint and star-centred glue, the keyed glue, the half-RD network, the chamber); W, the proofs, the tetartoid and the keyed-glue design by Claude Fable | studies/2026-10-18-ocd-octet, -p1 … -p4, -envelope-network (exact, proved independently; keyed W float design) | **not found** | 2026-10-19 (Zenodo 10.5281/zenodo.23457016) |
+| F37a | The DICTO Ogdoecontahedron on the Gyrated Octet (companion to F37): in the gyrated octet (A B A B) every layer is a twin boundary; the OG across it is its mirror image, exactly the OG turned 60° about the joint three-fold axis (the spinel law); one exact cell kit (the OG, 4 left and 4 right caps of (277 − 79√5)/1539, whole tetrahedra) fills the octet, the gyrated octet and every stacking, with twin caps (554 − 158√5)/1539 and bipyramids at twin layers; a mirror middle piece (424 − 88√5)/4617 replaces the facing-star piece there; the OCD Stella twins on whole joint triangles; the DICTO Belted Triacontahedron (the golden envelope cut flat at two three-fold corners, (−872 + 440√5)/81, D3d) fills the gyrated octet's octahedra pole to pole without overlap, 55.02% of space; the DICTO Jewel (cube frame) does not twin | DICTO (the question, the family, the belted solid and its name); Claude (computation) | studies/2026-10-19-og-gyrated-octet (exact in Q(√5); a few float checks marked in the paper) | **not found** | 2026-10-20 (Zenodo 10.5281/zenodo.23484012) |
+| F38 | Universal PiTet, the DICTO PiTet Proposition: the rule T(S) = {x : v·x ≤ v·v for every corner v} takes the icosidodecahedron to the rhombic triacontahedron, the DICTO GTI (golden truncated icosahedron, hexagon sides 1 : φ), the DICTO FPD (flat pentakis dodecahedron, its polar) and back to the icosidodecahedron exactly 10/φ⁴ larger, for ever; self-polar about the GTI's circumsphere; exact shell pieces; from the Cleo star with Monkey Staff B, five-sided Vajras and hexagonal Cleos in the OG; all exact in Q(√5) | | | | |
 
 Known results the apps show (kept here, with their numbers, as checks; not DICTO's findings; see the section at the end):
 
-| # | Finding | Credit | Verified | Status | First recorded |
+| No. | Finding | Credit | Verified | Status | First recorded |
 |---|---|---|---|---|---|
-| 3 | Bain disphenoids become regular tetrahedra | — | yes | **known** (Bain, 1924) | 2026-10-01 (8420a51) |
-| 4 | Bain rhombic dodecahedron (squares + 60° rhombi) | — | yes | **known** | 2026-10-01 (8420a51) |
-| 5 | Regular-hexagon elongated dodecahedron | DICTO, independently (from the "hexagons and rhombi" hunch) | yes | **known** — the truncated octahedron with one zone removed (Fedorov's ED as drawn by Grünbaum 2010); DICTO's route, the Bain stretch, is new | 2026-10-01 (8420a51) |
+| F3 | Bain disphenoids become regular tetrahedra | — | yes | **known** (Bain, 1924) | 2026-10-01 (8420a51) |
+| F4 | Bain rhombic dodecahedron (squares + 60° rhombi) | — | yes | **known** | 2026-10-01 (8420a51) |
+| F5 | Regular-hexagon elongated dodecahedron | DICTO, independently (from the "hexagons and rhombi" hunch) | yes | **known** — the truncated octahedron with one zone removed (Fedorov's ED as drawn by Grünbaum 2010); DICTO's route, the Bain stretch, is new | 2026-10-01 (8420a51) |
 
-## 1. DICTO skewed rhombic dodecahedron
+## F1. DICTO skewed rhombic dodecahedron
 
 A rhombic-dodecahedron-type space-filler whose four equal edge directions
 meet at **60° three times and 72° three times**. Its faces are 60° rhombi and 72° rhombi.
@@ -101,7 +103,7 @@ It tiles a sheared FCC lattice, DICTO FCC.
   edges, 60° and 72° rhombi, volume exactly φ², splitting into two all-rhombus blocks and two
   flattened rhombohedra, was **not found**: a new member of a known family.
 
-## 2. The equal-edge rule
+## F2. The equal-edge rule
 
 Shear the FCC lattice any way at all. The RD-type cells that still tile the
 sheared lattice are exactly the sheared RD's four edge directions, each
@@ -116,35 +118,35 @@ FCC, and exactly DICTO's skewed RD for DICTO FCC. This is the Cell slider.
   Wikipedia "Zonohedron"). The statement for a *fixed* sheared lattice, with
   a unique equal-edge member and the circumcentre construction, was not found.
 
-## 6. The nine most regular space-fillers
+## F6. The nine most regular space-fillers
 
 Every space-filling zonohedron with all edges equal whose faces are only
 squares, regular hexagons and 60° rhombi (each two equilateral triangles):
 there are **exactly 9** — four parallelepipeds (the cube, the 60°
 rhombohedron, and two mixed), two hexagonal prisms (the regular one, and
-one leaning with 60° rhombi), the Bain RD (#4), the regular-hexagon ED
-(#5) and the regular truncated octahedron.
+one leaning with 60° rhombi), the Bain RD (F4), the regular-hexagon ED
+(F5) and the regular truncated octahedron.
 
 - Verified: `discover.py` builds every candidate exactly (top-down) and an
   independent random search over all cell shapes agrees (TARGETS.md).
   Such faces need only 60° and 90° angles, which the search covers
   exactly, so the list is complete.
-- Status: not yet searched. It says #4 and #5 are the *only* RD and ED
+- Status: not yet searched. It says F4 and F5 are the *only* RD and ED
   forms of this kind.
 
-## 7. DICTO skewed ED
+## F7. DICTO skewed ED
 
-Add a fifth edge direction to DICTO's skewed RD (#1), the same recipe #5 used
+Add a fifth edge direction to DICTO's skewed RD (F1), the same recipe F5 used
 on the Bain RD. Unlike the Bain RD, DICTO's RD has no 90° relationships at
-all, so the new direction can't join it at 60° or 90° the way #5's did — it
+all, so the new direction can't join it at 60° or 90° the way F5's did — it
 meets the existing four at 36° twice and 60° or 72° twice, and the belt test
 (Venkov) allows exactly two space-filling choices, both already present in
 TARGETS.md's search:
 
 | | Faces | Volume |
 |---|---|---|
-| **ED #16** | 4 rhombi of 60°, 4 rhombi of 72°, 2 hexagons (36°/36°/72° corners), 2 regular hexagons | **φ² + 2** |
-| **ED #18** | 6 rhombi of 60°, 2 rhombi of 72°, 4 hexagons (36°/72°/72° corners) | **φ³ + ½** |
+| **ED F16** | 4 rhombi of 60°, 4 rhombi of 72°, 2 hexagons (36°/36°/72° corners), 2 regular hexagons | **φ² + 2** |
+| **ED F18** | 6 rhombi of 60°, 2 rhombi of 72°, 4 hexagons (36°/72°/72° corners) | **φ³ + ½** |
 
 Both keep DICTO's skewed RD's own four directions unchanged as a sub-set —
 found by matching `DICTO_DIRECTIONS`' Gram matrix against every ED cell's
@@ -158,11 +160,11 @@ Neither has a square face, consistent with DICTO's RD having none.
   "to find" to built.
 - Literature check (2026-10-09): elongated dodecahedra spanned by five directions are Fedorov's
   fifth parallelohedron type, and Lalvani (US 5,623,790) treats skewed 5-zonohedra in general;
-  equilateral regular-hexagon versions are known (#5, Grünbaum 2010). These two equal-edge members on
+  equilateral regular-hexagon versions are known (F5, Grünbaum 2010). These two equal-edge members on
   DICTO's directions (36°, 60° and 72° relations; volumes φ² + 2 and φ³ + ½) were **not found**:
-  new members of a known family, like #1.
+  new members of a known family, like F1.
 
-## 8. Euclid–Kepler–Pacioli (EKP) cell
+## F8. Euclid–Kepler–Pacioli (EKP) cell
 
 *Named 2026-10-06 by DICTO, whose artist name stands for Euclid's five Platonic
 solids, all of which now nest in this one cell: **Euclid** for the roofs on the
@@ -296,16 +298,16 @@ along x, y and z.
     y = 1/(2φ), z = 1/(2φ²), and stellated-icosahedron framework literature.
 - Status: the cell and (b) **not found** — candidates; (a) **known**.
 
-## 9. Rhombic dodecahedron sub-family (candidates)
+## F9. Rhombic dodecahedron sub-family (candidates)
 
 Targets 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24 and 26 of the rhombic-dodecahedron table in TARGETS.md. Each is a zonohedron of four unit edge directions (edge 1), built in Polyhedraverse as RD_TARGET_N and checked against the table's volume. Verified by building, not by literature. Listed here as candidates until the Grünbaum 2010 tables are checked for each. Any that turn out not to appear there move to the table above as not found.
 
 **Provenance (Grünbaum 2010, read in full):**
 - Combinatorial type: each is a zonohedron of four directions, so it has the combinatorial type of Fedorov's rhombic dodecahedron (Fig. 2(c), Kepler's K). Fedorov's list of the five parallelohedron types covers this type, so no new type is involved.
-- Monohedral (all faces congruent): Grünbaum's enumeration of monohedral rhombic dodecahedra (Figs. 3 and 10) gives only Kepler's K and Bilinski's B. None of the 24 is monohedral: each has two or more rhombus kinds (for example #4 has 36°, 60° and 72° rhombi), so none is one of those two.
+- Monohedral (all faces congruent): Grünbaum's enumeration of monohedral rhombic dodecahedra (Figs. 3 and 10) gives only Kepler's K and Bilinski's B. None of the 24 is monohedral: each has two or more rhombus kinds (for example F4 has 36°, 60° and 72° rhombi), so none is one of those two.
 - So the paper neither lists nor rules out these specific cells. They stay candidates until someone checks mixed-angle sheared rhombic dodecahedra in the literature.
 
-## 10. EKP windows (DICTO, 2026-10-08)
+## F10. EKP windows (DICTO, 2026-10-08)
 
 *Its study 10a is a construction on these windows, recorded with its exact results but not claimed as a separate finding.*
 
@@ -338,13 +340,13 @@ face-neighbour cells, and carve the twelve tetrahedra out of the dodecahedron.
   rhombus itself is one of his pieces. The windows solid is not: its 48 walls lie in the stella
   octangulas' planes, and all their edges run along the cube's face diagonals, 22.24° off every
   icosahedral 2-fold axis (checked from the solid's 165 edges). The patent has no stella octangula,
-  no carving and no cube–dodecahedron construction. Not prior art for #10.
+  no carving and no cube–dodecahedron construction. Not prior art for F10.
 
-### 10a. Study: the windows made convex (DICTO, 2026-10-08)
+### F10a. Study: the windows made convex (DICTO, 2026-10-08)
 
-*Recorded as #12 in Zenodo version v2026.10.08-convex; regrouped under #10 as a study the same day (DICTO's decision).*
+*Recorded as F12 in Zenodo version v2026.10.08-convex; regrouped under F10 as a study the same day (DICTO's decision).*
 
-Any convex solid that keeps the 12 window rhombi (#10) where they are is the dodecahedron itself.
+Any convex solid that keeps the 12 window rhombi (F10) where they are is the dodecahedron itself.
 DICTO's question: expand from the centre instead. Push each rhombus straight out along its own
 normal by t, keeping its size, angles and orientation, and take the convex hull.
 
@@ -366,14 +368,14 @@ normal by t, keeping its size, angles and orientation, and take the convex hull.
   folds closed (found by the Nets code, 76 taps).
 - Verified: `src/krp-core/scripts/verify-roof-fold.mjs` §13(c) (faces, golden ratio, edge lengths, closure, the
   80-face case elsewhere) and `src/krp-core/scripts/verify-nets.mjs` (the net), every push. Shown in the Studies world, Windows made convex, with a push slider that snaps at the golden point.
-- Status: a study of #10, not a separate claim (not found at web level, 2026-10-08).
+- Status: a study of F10, not a separate claim (not found at web level, 2026-10-08).
 
-### 10b. Study: windows and stellas fill space (DICTO, 2026-10-08)
+### F10b. Study: windows and stellas fill space (DICTO, 2026-10-08)
 
 DICTO's question: is there a "male counterpart to window", with stars pushing out to fit the faces
 the stella octangulas leave? There is, and it is the stella octangula itself.
 
-- Put the windows solid (#10) in every even cell of the cubic lattice (cell parity, x + y + z
+- Put the windows solid (F10) in every even cell of the cubic lattice (cell parity, x + y + z
   even) and the cell's own stella octangula in every odd cell. Every neighbour of an even cell is
   odd, so each windows solid keeps its whole cube, and its six roofs reach into six odd cubes.
 - Each odd cube is then exactly its stella octangula plus the six carved roofs reaching into it,
@@ -400,9 +402,9 @@ the stella octangulas leave? There is, and it is the stella octangula itself.
   stella-shaped holes. Five-fold: each window lies in a dodecahedron face, facing a five-fold axis;
   each face has five window positions, one per pentagon diagonal, and the cube picks the one on a
   cube edge. Verified: `src/krp-core/scripts/verify-roof-fold.mjs` §13(g).
-- Status: a study of #10, not a separate claim (not found at web level, 2026-10-08).
+- Status: a study of F10, not a separate claim (not found at web level, 2026-10-08).
 
-## 11. The stretched dodecahedron (DICTO, 2026-10-08)
+## F11. The stretched dodecahedron (DICTO, 2026-10-08)
 
 The hull of the dodecahedron and a copy moved s along a cube-face axis (one of its 2-fold axes,
 the same axis along which the rhombic dodecahedron stretches into the elongated dodecahedron).
@@ -420,7 +422,7 @@ the same axis along which the rhombic dodecahedron stretches into the elongated 
 - Status: **not found** at web level (2026-10-08). Simple enough that it probably appears somewhere
   (crystal habits, Minkowski sums); a targeted search is still needed before claiming priority.
 
-## 12. Star Chain Reaction (DICTO, 2026-10-08)
+## F12. Star Chain Reaction (DICTO, 2026-10-08)
 
 *Named by DICTO, "like solar radiation": each star sets off the next, smaller one inside it.*
 
@@ -467,10 +469,10 @@ here is where it sits and what nests in it:
   and credited as such. Not proof of novelty; a specialist search (stellation and quasicrystal
   cluster literature) is still worth doing before claiming priority.
 
-### 12a. Study: the Jewel chain (DICTO, 2026-10-08; first called the Dragon chain, renamed by DICTO on 2026-10-09)
+### F12a. Study: the Jewel chain (DICTO, 2026-10-08; first called the Dragon chain, renamed by DICTO on 2026-10-09)
 
 DICTO's question: is "another cell network buried in the Dragon's claw"? There is, through the
-same bridge. Inside the DICTO Jewel (#10, the windows solid), every step touching, with no room to
+same bridge. Inside the DICTO Jewel (F10, the windows solid), every step touching, with no room to
 grow (the largest scale at which each fits inside the one before is exactly 1):
 
 - DICTO Jewel ⊃ cube (its cube is untouched by the carving) ⊃ stella octangula (on the cube's
@@ -479,14 +481,14 @@ grow (the largest scale at which each fits inside the one before is exactly 1):
   1/φ³ the size (its rhombi lie on the core's faces) ⊃ … , ratio φ³ per round.
 - So the EKP cell's own chain (… ⊂ stella ⊂ cube ⊂ dodecahedron) carries on downward through the
   Dogstar into the next cell, 1/φ³ smaller. The Dogstar is the bridge between scales in both this
-  chain and #12's.
+  chain and F12's.
 - Several steps touch only at the shared cube corners, which the cube, the stella and the Dogstar
   all reach; the link that is not obvious is the Dogstar touching its own core.
 - Verified: `src/krp-core/scripts/verify-roof-fold.mjs` §13(l), every push. Shown in the Stella–Jewel Lattice
   (Kaleidohedra and Rhombiverse), view Jewel chain.
-- Status: a study of #12, not a separate claim (not found at web level, 2026-10-08).
+- Status: a study of F12, not a separate claim (not found at web level, 2026-10-08).
 
-## 13. The 13-dodecahedron cluster made solid (DICTO, 2026-10-09)
+## F13. The 13-dodecahedron cluster made solid (DICTO, 2026-10-09)
 
 *DICTO's cluster: "one dodecahedron at the center of a cluster", built in layers down a 3-fold axis:
 a snowflake belt of six, three in the dimples on top, turned over, three more. Its earlier basis is
@@ -542,7 +544,7 @@ leave 360° − 3 × 116.565° = **10.3048°**. The gaps are exactly two kinds o
   needle-thirds), **Wedge** and **Needle** as pieces of their own, all attachable, in
   Polyhedraverse (DICTO's pieces) with parts views: pieces (13 + 30 + 20), units (centre + 12),
   stars (13 + 20; the stars overlap, each wedge being in two of them). Wedges cyan, needles purple.
-- **The DICTO-Star (#14) is the cluster opened up:** its 12 dodecahedra sit on the same 12 five-fold
+- **The DICTO-Star (F14) is the cluster opened up:** its 12 dodecahedra sit on the same 12 five-fold
   axes as the cluster's, but are parallel copies of the centre (12 of 12) where the cluster's are its
   mirror images (0 of 12): each outer turns 36° about its axis and moves out 0.262866 (edge 1); the
   wedges and needles open into the 20 dimples the J63s close, and the centre becomes the
@@ -550,7 +552,7 @@ leave 360° − 3 × 116.565° = **10.3048°**. The gaps are exactly two kinds o
 - **Its hull:** the convex hull has the topology of the truncated icosahedron (60 corners, 12
   pentagons, 20 hexagons) but is not Archimedean: the pentagons are regular with edge 1 (the outers'
   far faces), the hexagons' edges alternate 1 and √((27 + 7√5)/10) = 2.065248. Volume 142.955; the
-  filled cluster fills 74.19% of it. How the clusters join is the exception to #17's rule (see #17).
+  filled cluster fills 74.19% of it. How the clusters join is the exception to F17's rule (see F17).
 - Build plan: [BUILD-13-BLOCK.md](BUILD-13-BLOCK.md) (pieces with dimensions, the separable units,
   DICTO's assembly order, and the tentative bcc stacking with grown fins).
 - Verified: `src/krp-core/scripts/verify-dodeca13.mjs` (krp-core v0.12.0), every push, 10 checks: each
@@ -566,11 +568,11 @@ leave 360° − 3 × 116.565° = **10.3048°**. The gaps are exactly two kinds o
   icosahedron-based binders. The cluster's gaps as two exact solid pieces, and the separable finned
   units, were **not found** in a web-level search on 2026-10-09. Not proof of novelty.
 
-## 14. DICTO-Star (2026-10-09)
+## F14. DICTO-Star (2026-10-09)
 
 *DICTO's own pattern: it is the centre of DICTO's builds, in Polyhedraverse (by 4 October 2026) and
 from PET bottle caps and their security rings, made as a 3D analogue of the 4D fold of the
-13-dodecahedron cluster (#13: in the 120-cell the 12 outer dodecahedra fold round the centre and
+13-dodecahedron cluster (F13: in the 120-cell the 12 outer dodecahedra fold round the centre and
 close the gaps; in 3D the J63s close them instead). Having it at the centre of the build is why
 DICTO asked for a search: Kaleidohedra's search (testing DICTO's idea that bi- and tri-diminished
 icosahedra, J62 and J63, close the gaps between dodecahedra) confirmed DICTO's pattern exactly,
@@ -584,7 +586,7 @@ triangle that borders only pentagons. 33 regular-faced pieces, edge 1:
   142.6226° + 116.5651° + 100.8123° = 360° exactly (icosidodecahedron, dodecahedron, J63), and the
   dodecahedron's face there is exactly a pentagon of the J63: the edge is closed with no gap. Every
   corner of the icosidodecahedron is filled.
-- **No filler is needed**, unlike the 13-dodecahedron cluster (#13). The J63s sit like caps in the 20
+- **No filler is needed**, unlike the 13-dodecahedron cluster (F13). The J63s sit like caps in the 20
   three-fold dimples between the dodecahedra.
 - Volume exactly **(195 + 89√5)/3** ≈ 131.3367 (icosidodecahedron (45 + 17√5)/6, 12 dodecahedra,
   20 J63 of 5(3 + √5)/12 − (5 + √5)/8 each).
@@ -653,13 +655,13 @@ triangle that borders only pentagons. 33 regular-faced pieces, edge 1:
     printed books (Stewart's *Adventures Among the Toroids*), and non-English sources.
 - Archived: Zenodo [10.5281/zenodo.23256623](https://doi.org/10.5281/zenodo.23256623) (v2026.10.09-octet, 2026-10-09).
 
-## 15. DICTO Jewel clusters (DICTO, 2026-10-09)
+## F15. DICTO Jewel clusters (DICTO, 2026-10-09)
 
 *DICTO built the tetrahedral cluster in the app, asked for the octahedral one beside it, and saw that
 both fill space with stella octangulas (the cube of eight Jewels was left out: so far it exists only
 sheared).*
 
-Groups of DICTO Jewels (#10) from the Stella–Jewel Lattice, each touching pair meeting face to face on
+Groups of DICTO Jewels (F10) from the Stella–Jewel Lattice, each touching pair meeting face to face on
 a whole rhombus, each group a shape of its own (krp-core `DJ_TETRAHEDRAL_CLUSTER`,
 `DJ_OCTAHEDRAL_CLUSTER`):
 
@@ -703,13 +705,13 @@ a whole rhombus, each group a shape of its own (krp-core `DJ_TETRAHEDRAL_CLUSTER
   exactly one cluster), the octet network (8 and 6 clusters per Jewel, faces of 3, every stella
   inside one octahedral cluster), and the Kagome network (one up and one down cluster per Jewel held,
   single shared corners, half the Jewel cells).
-- Status: **not found**, a candidate, resting on #10: the clusters are made only of the DICTO Jewel,
+- Status: **not found**, a candidate, resting on F10: the clusters are made only of the DICTO Jewel,
   which itself was not found.
 - Archived: Zenodo [10.5281/zenodo.23256623](https://doi.org/10.5281/zenodo.23256623) (v2026.10.09-octet, 2026-10-09). The Kagome network: [10.5281/zenodo.23257393](https://doi.org/10.5281/zenodo.23257393) (v2026.10.09-kagome).
 
-## 16. Sunstar clusters (DICTO, 2026-10-09)
+## F16. Sunstar clusters (DICTO, 2026-10-09)
 
-*DICTO tested whether the octet network of #15 carries over to the Sunstars and Dogstars, as
+*DICTO tested whether the octet network of F15 carries over to the Sunstars and Dogstars, as
 expected. It does: the Sunstar Lattice has the same cells, dodecahedra on the even ones and Dogstars
 on the odd.*
 
@@ -721,7 +723,7 @@ on the odd.*
   in the 8 corner dodecahedra; its 8 tips reach the cell corners), and the Dogstar fits them face for
   face. A solid piece. Volume 6 dodecahedra and a Dogstar. **A Sunstar is a dodecahedron with its 6
   Dogstars; this is a Dogstar with its 6 dodecahedra**, the Sunstar turned inside out.
-- **Both fill space with Dogstars**, on the same packings as #15 (tetrahedral at all-even anchors,
+- **Both fill space with Dogstars**, on the same packings as F15 (tetrahedral at all-even anchors,
   octahedral on the lattice of 12 cells per cluster), and **shared they form the octet network**,
   every Dogstar inside one octahedral cluster.
 - **The Kagome network** holds for them too, on the same cells: up and down clusters of dodecahedra
@@ -731,19 +733,19 @@ on the odd.*
 - Verified: `src/krp-core/scripts/verify-sunstar-cluster.mjs` (krp-core v0.9.0), every push, 12 checks:
   no overlap, closed and consistently wound surfaces, volumes 4 dodecahedra and 6 dodecahedra with a
   Dogstar, the Dogstar inside and walled in, and the shared packings.
-- Status: **not found** in a web search on 2026-10-09 (with #15's). Known, and credited: the
+- Status: **not found** in a web search on 2026-10-09 (with F15's). Known, and credited: the
   honeycomb of dodecahedra and Dogstars (George W. Hart's stellation 8, 1996; Hans Walser), the octet
   truss (Buckminster Fuller; the tetrahedral-octahedral honeycomb), and new tilings by regular
   tetrahedra and octahedra (MRSEC highlight). The clusters, the Dogstar-with-its-dodecahedra and the
   octet network of dodecahedra are DICTO's.
 - Archived: Zenodo [10.5281/zenodo.23256623](https://doi.org/10.5281/zenodo.23256623) (v2026.10.09-octet, 2026-10-09). The Kagome network: [10.5281/zenodo.23257393](https://doi.org/10.5281/zenodo.23257393) (v2026.10.09-kagome).
 
-## 17. Kagome hulls (DICTO, 2026-10-09)
+## F17. Kagome hulls (DICTO, 2026-10-09)
 
 *DICTO has worked with hulls for months: how they transform, and how they repeat according to how
 they are built. Here DICTO tested whether those hulls (rhombi, cuboctahedra, RD hulls) behave as
 expected with the DICTO Jewel and the Sunstar, giving Kagome configurations as the tetrahedral
-clusters of #15 and #16 do. They do, and all six keep to one rule.*
+clusters of F15 and F16 do. They do, and all six keep to one rule.*
 
 - Both lattices have the same rock-salt cells (DICTO Jewels or dodecahedra on the even cells,
   stellas or Dogstars on the odd), so a configuration is a cluster of even cells and a lattice of
@@ -759,12 +761,12 @@ clusters of #15 and #16 do. They do, and all six keep to one rule.*
     single pieces and open pockets, the least Kagome-like.
   - **Rhombic dodecahedron** (19 even pieces and 14 odd, its corners partly stellas), on BCC with
     its second neighbours: 14 neighbours, no single pieces.
-  - **Octahedron** (the octahedral cluster of #15), on a simple cubic pattern: the corner-sharing
+  - **Octahedron** (the octahedral cluster of F15), on a simple cubic pattern: the corner-sharing
     octahedra of the perovskite structure.
 - **The rule: a hull with n corners sits on a network where each cluster has n neighbours**
   (tetrahedron and diamond, octahedron and simple cubic, cube and rhombohedron and BCC, cuboctahedron
   and FCC, rhombic dodecahedron and BCC with its second neighbours).
-- **The icosahedral exception (the 13-dodecahedron cluster, #13):** its hull has 12 corners (the
+- **The icosahedral exception (the 13-dodecahedron cluster, F13):** its hull has 12 corners (the
   outer dodecahedra), but clusters sharing one outer dodecahedron can meet only across opposite
   faces (a shift of 4 × the inradius along a five-fold axis): neighbours on adjacent five-fold axes
   (63.43°) always overlap, on 116.57° axes never, so **a cluster has at most 3 corner-sharing
@@ -796,7 +798,7 @@ clusters of #15 and #16 do. They do, and all six keep to one rule.*
   FCC primitive cell as a rhombohedron (standard crystallography). The clusters of DICTO Jewels and
   dodecahedra and the rule across the six are DICTO's.
 
-## 18. The DICTO Hexa (DICTO, 2026-10-09)
+## F18. The DICTO Hexa (DICTO, 2026-10-09)
 
 *DICTO saw a cube in Kaleidohedra's Studies (Windows, shear as copies) "beautiful and solid, like
 carved out of wood", about eight Jewels in volume. Names by DICTO.*
@@ -805,7 +807,7 @@ carved out of wood", about eight Jewels in volume. Names by DICTO.*
   Hexa, not compatible with free Jewels) on a 2 × 2 × 2 block of cells, unsheared, passing
   through each other inside. As one solid it is a cube of edge 4 with the 24 outward roofs on its
   faces (volume **80 = 6⅔ Jewels**; the eight Jewels overlap by 16). Inside, two tetrahedral clusters
-  of #15 interpenetrate.
+  of F15 interpenetrate.
 - **No shear makes eight exact Jewels meet face to face as a cube**: the shear is symmetric and no
   symmetric map takes the cube's edges to the Jewels' contact directions (even two of three fail). The
   Hexa exists only as DICTO saw it. Shearing the Jewels themselves (a 3-fold squash) loses the 72°
@@ -820,7 +822,7 @@ carved out of wood", about eight Jewels in volume. Names by DICTO.*
   4 **trimmed Jewels** (3 roofs gone, 3 dents, volume exactly one cube); the Hexa-Key into 8 stellas
   and 24 roofs; every part face-matches its neighbours.
 - **Clusters of eight Hexas:** rhombohedral (window to window, 36 whole windows shared, a Hexa-Key
-  sealed inside, **57⅓ Jewels**: the Jewel rhombohedron of #17 one level up) and diamond (Hexas sharing
+  sealed inside, **57⅓ Jewels**: the Jewel rhombohedron of F17 one level up) and diamond (Hexas sharing
   7 corner Jewels).
 - **Hexas Kagome style:** every Jewel in exactly two Hexas is impossible (corner neighbours force
   overlapping blocks); the best is the **diamond network**, each Hexa sharing 4 of its 8 corner Jewels
@@ -843,9 +845,9 @@ carved out of wood", about eight Jewels in volume. Names by DICTO.*
   cube squashed along a diagonal. The Hexa, the Hexa-Key, their 5 : 3 filling and the clusters are
   DICTO's.
 
-## 19. The DICTO Icosa-13 (DICTO, 2026-10-10)
+## F19. The DICTO Icosa-13 (DICTO, 2026-10-10)
 
-*DICTO asked to try the Dodeca-13 moves (#13) with icosahedra. His physical 13-cell (PET caps and cap rings) is
+*DICTO asked to try the Dodeca-13 moves (F13) with icosahedra. His physical 13-cell (PET caps and cap rings) is
 UNITY. Names by DICTO.*
 
 - **Lotus seed:** the regular icosahedron of edge φ² cut exactly into 12 icosahedra of edge 1, one of edge 1/φ
@@ -866,14 +868,14 @@ UNITY. Names by DICTO.*
   Koca et al. 2020); the DESHI arrangement inside I(φ²) is R. W. Gray's (2002), without the gap pieces. The
   fillings, UNITY with VAJRA, and DICTO's 63-piece build are DICTO's.
 
-## 20. The DICTO Stella-Corona (DICTO, 2026-10-10)
+## F20. The DICTO Stella-Corona (DICTO, 2026-10-10)
 
-*DICTO asked for icosahedral networks echoing Hart's and his own dodecahedral structures, using the #19
+*DICTO asked for icosahedral networks echoing Hart's and his own dodecahedral structures, using the F19
 pieces. Names by DICTO.*
 
 - **The DICTO Stella-Corona:** an icosidodecahedron + 20 icosahedra on its triangles (the **12-Star voids**) +
   12 **King of Pentacles (Tarot)** on its pentagons (each a J2, 10 AXE, 5 CLEO and a small J2, flat pentagram on
-  top). 33 pieces like the DICTO-Star (#14: 1 + 20 + 12 against 1 + 12 + 20), closed, every contact a whole face,
+  top). 33 pieces like the DICTO-Star (F14: 1 + 20 + 12 against 1 + 12 + 20), closed, every contact a whole face,
   volume (120 + 47√5)/3.
 - **Networks:** Stella-Coronas chain along a 3-fold axis and form a **diamond network** (each shares 4
   icosahedra), the first periodic network of icosahedral clusters here.
@@ -903,7 +905,7 @@ pieces. Names by DICTO.*
   138.19° are clean; with 109.47° and 180° it gives chains, bent chains and 3-connected nets (to be built).
 - Study files: [studies/2026-10-10-icosa-networks](studies/2026-10-10-icosa-networks/) and
   [studies/2026-10-10-pentagram-growth](studies/2026-10-10-pentagram-growth/) and
-  [studies/2026-10-10-icosa-networks-2](studies/2026-10-10-icosa-networks-2/). Same checks as #19.
+  [studies/2026-10-10-icosa-networks-2](studies/2026-10-10-icosa-networks-2/). Same checks as F19.
   Not yet in the apps or in krp-core.
 - Archived: Zenodo [10.5281/zenodo.23272686](https://doi.org/10.5281/zenodo.23272686) (v2026.10.10-icosa, 2026-10-10).
 - Status: **not found** in searches on 2026-10-10. Known, and credited: the 20-icosahedron shell is the Wolfram
@@ -911,7 +913,7 @@ pieces. Names by DICTO.*
   icosahedra with dodecahedra; the Dogstar and its honeycomb are Hart's (1996). The King of Pentacles, the
   closed Stella-Corona and its network are DICTO's.
 
-## 38. Universal PiTet: the DICTO PiTet Proposition (DICTO, 2026-10-19)
+## F38. Universal PiTet: the DICTO PiTet Proposition (DICTO, 2026-10-19)
 
 - DICTO's five-fold octet: from the Cleo star outward in spherical shells, triangles constant. Rule T(S) = {x : v·x ≤ v·v, every corner v}:
   ID → RT → DICTO GTI → DICTO FPD → ID × 10/φ⁴ (= 35 − 15√5), so it repeats for ever; each solid inside the next; each shell filled by one
@@ -923,7 +925,7 @@ pieces. Names by DICTO.*
 - In the app: Kaleidohedra, 3D+ → Universal PiTet (`?open=up`): the shells, the Vajras, the hexagonal Cleos; ∞ The cycle film
   (`?open=upFilm`) on Dual Vision's film standard, with the Cleo star at its centre.
 
-## 37a. The DICTO Ogdoecontahedron on the Gyrated Octet (DICTO, 2026-10-20)
+## F37a. The DICTO Ogdoecontahedron on the Gyrated Octet (DICTO, 2026-10-20)
 
 - In the gyrated octet (the tetrahedral–octahedral honeycomb stacked A B A B) every layer boundary is a twin plane: the OGs on both sides
   meet on the same joint hexagon, and the one across is the OG's mirror image, exactly the OG turned 60° (spinel law). The cell kit (OG +
@@ -932,7 +934,7 @@ pieces. Names by DICTO.*
 - In the app: Kaleidohedra, 3D+ → The OG on the Octet Truss → Octet ↔ gyrated (`?open=octetTruss:gyrated`): the OG, OG + caps, OCD
   Stella or DBT on the octet or the gyrated octet; the set, the twin pair and the network, with the twin layers as faint planes.
 
-## 37. The DICTO Ogdoecontahedron on the Octet Truss (DICTO, 2026-10-19)
+## F37. The DICTO Ogdoecontahedron on the Octet Truss (DICTO, 2026-10-19)
 
 - The OG's eight joint hexagons lie exactly on the octahedron |x| + |y| + |z| = 2φ/3, so the OG sits in the octahedra of the octet truss
   (the OG fills 68.83% of its octahedron; the OGs 45.886% of space). Four families of kits, all exact in Q(√5) and proved to fill space
@@ -944,17 +946,17 @@ pieces. Names by DICTO.*
 - In the app: Kaleidohedra, 3D+ → The OG on the Octet Truss (`?open=octetTruss`, `?open=octetTruss:<kit>`): each kit's set, its pieces
   round one OG and its network.
 
-## 36. Golden Bodhi Pyrochlore (DICTO, 2026-10-18)
+## F36. Golden Bodhi Pyrochlore (DICTO, 2026-10-18)
 
 - The gap of the Ogdoecontahedron's bcc packing, exact: 72 cone pieces; limbs crossing in golden rhombi; the canonical golden cut shatters;
-  the GBPC, 24 per cell, is the one adapter every golden fill needs, and it is where the OCD Stella (#31a) starts; no face-to-face tiling of
+  the GBPC, 24 per cell, is the one adapter every golden fill needs, and it is where the OCD Stella (F31a) starts; no face-to-face tiling of
   what remains by golden rhombohedra. DICTO's Bull-horns OG adaptor fills the whole gap with one piece, three per copy (OGs 77.4332%,
   adaptors 22.5668%). Paper DICTO DOI 10.5281/zenodo.23451210.
 - In the app: Kaleidohedra, 3D+ → Golden Bodhi Pyrochlore Networks (`?open=bodhiPyro`), Double network, Gap pieces, Gap: Bull-horns OG adaptor.
 
-## 35. Vajrayana (DICTO, 2026-10-17)
+## F35. Vajrayana (DICTO, 2026-10-17)
 
-- The companion to Progenitors (#34). The dodecahedron, displaced by the Ogdoecontahedron, returns inside the first loose step as the hull of
+- The companion to Progenitors (F34). The dodecahedron, displaced by the Ogdoecontahedron, returns inside the first loose step as the hull of
   DICTO's Cleo star: the icosahedron's 20 Cleo-Icos with 20 more turned out as spikes have their tips exactly at (2/3)·D; 20 core Cleo-Icos,
   20 spikes, 12 inward pentagonal pyramids and 30 valley tetrahedra (one shape) fill it with remainder 0.
 - The last loose step, RT ⊂ I·φ³, is closed by the **DICTO Metaxyhexecontahedron**: the hull of the RT's 12 five-fold corners and the 20 face
@@ -966,7 +968,7 @@ pieces. Names by DICTO.*
 - In the app: Kaleidohedra, 3D+ → Vajrayana (`?open=vajrayana`): the twelve stations cut away, the ∞ film peeling them one at a time,
   the 30 + 60 closing pieces; the Cleo star build opens in Theaetetus.
 
-## 34. Progenitors (DICTO, 2026-10-16)
+## F34. Progenitors (DICTO, 2026-10-16)
 
 - The DICTO Hecatodihedron H and its polar, the DICTO Ogdoecontahedron O, as a twin pair. On their own they never close golden: all 8,742
   tight cycles through H, O, TI, PD (with any of I, ID, D, RT) miss every power of φ; the tightest, TI ⊂ H ⊂ O ⊂ PD, gains exactly 9/φ⁴ a round.
@@ -974,22 +976,22 @@ pieces. Names by DICTO.*
   I ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ I·φ³. It holds the core and hull of two dual compounds, the icosahedron–dodecahedron one (ID, RT) and
   the DICTO Hecatogdoecontahedron's (rTI, jtI). Paper DICTO DOI 10.5281/zenodo.23413184.
 
-## 33. Double Vision – Both Cycles in One Space (DICTO, 2026-10-16)
+## F33. Double Vision – Both Cycles in One Space (DICTO, 2026-10-16)
 
-- The Spheres of Dharma and their reversal (#32) in one space. The sphere of reciprocation is the one free choice: at ρ² = φ²/4 the cycles share
+- The Spheres of Dharma and their reversal (F32) in one space. The sphere of reciprocation is the one free choice: at ρ² = φ²/4 the cycles share
   the icosahedron and dodecahedron, at 3φ²/4 the icosidodecahedron and triacontahedron; never both, since the settings differ by 3, not a power of φ.
 - The interlock: every piece of one cycle cut by every piece of the other, exact with remainder 0: DICTO Interlock set 1 (Dharma-Ends), 536 pieces of
   12 kinds per turn; set 2 (Dharma-Middle), 502 of 11. Paper DICTO DOI 10.5281/zenodo.23407106.
 - In the app: Kaleidohedra, 3D+ → Double Vision (`?open=doubleVision`): the paper's preset of the nest-and-reverse engine; the toggle,
   the two cycles as shells, the interlock with every piece named (I1·n / I2·n), one layer at a time.
 
-## 32. Inverted Shells (DICTO, 2026-10-16)
+## F32. Inverted Shells (DICTO, 2026-10-16)
 
 - The Spheres of Dharma with the Hecatodihedron stage as a seventh station, every station reciprocated: D ⊂ ID ⊂ Ogdoecontahedron ⊂ PD ⊂ I ⊂ RT ⊂ D·φ³,
   exact, closure φ⁹ in volume; every layer one kind of piece; the great stellated dodecahedron in the outer gap; a dual pair in the inner gap.
   Paper DICTO DOI 10.5281/zenodo.23405029 (V2: the Ogdoecontahedron described as derived from the pentakis dodecahedron).
 
-## 31. The DICTO Ogdoecontahedron (DICTO, 2026-10-16)
+## F31. The DICTO Ogdoecontahedron (DICTO, 2026-10-16)
 
 - The polar of the Hecatodihedron: 20 regular hexagons, 60 kites, 102 corners (90 on one sphere), 180 edges; no insphere or midsphere; exact.
 - Exactly the canonical pentakis dodecahedron with its 20 three-fold corners cut flat at the truncated icosahedron's hexagon planes (V2).
@@ -998,7 +1000,7 @@ pieces. Names by DICTO.*
   midsphere; 182 faces, 182 corners, self-dual; core the rectified truncated icosahedron, hull the jtI, as for the classical TI–PD compound.
   Paper DICTO DOI 10.5281/zenodo.23404688 (V2).
 
-## 30. A Fibonacci Spine (DICTO, 2026-10-15)
+## F30. A Fibonacci Spine (DICTO, 2026-10-15)
 
 Paper: DICTO DOI: 10.5281/zenodo.23396361 ("A Fibonacci Spine in a Five-fold Chorus of Ogdoecontahedron Packings").
 Study: `studies/2026-10-16-ocd-pyrochlore` (branch research), steps 17–30.
@@ -1016,7 +1018,7 @@ Study: `studies/2026-10-16-ocd-pyrochlore` (branch research), steps 17–30.
 - In the app: Kaleidohedra, 3D+ → Golden Bodhi Pyrochlore Networks (`?open=bodhiPyro`, `?open=bodhiPyro:chorus`): one network with its
   joints and pyrochlore tetrahedra, the double network with its gap pieces, the five voices, the chorus with removed copies and the spine.
 
-## 29. Theaetetus (DICTO, 2026-10-15)
+## F29. Theaetetus (DICTO, 2026-10-15)
 
 Named by DICTO after Theaetetus of Athens, by tradition the first to construct the icosahedron. Paper: DICTO DOI: 10.5281/zenodo.23378070.
 Study: `studies/2026-10-15-icosa-star-hollow`.
@@ -1027,15 +1029,15 @@ Study: `studies/2026-10-15-icosa-star-hollow`.
   turn and shift collides. With 12 Aetos (flat pentagonal pyramids, side edges = the Cleo-Ico's) on its corners: the app's hollow view.
 - **The hollow exactly:** core + 12 Aetos + 20 antiprisms (the shadow of Klitzing's segmentochoron "icosahedron atop icosidodecahedron",
   K-4.137, height 1/(2φ)); each antiprism = Cleo-Ico + 3 Sphen + 3 Sphenion; volumes Cleo-Ico : Sphen : Sphenion = 3 : 2 : 1, Aetos = √5 Cleo-Icos.
-- **Two stories to the Hecatodihedron (#28)** with the Spheres of Dharma layers (#23) scaled by 2/φ: the stations, 215 pieces with every
+- **Two stories to the Hecatodihedron (F28)** with the Spheres of Dharma layers (F23) scaled by 2/φ: the stations, 215 pieces with every
   layer closed (Cleo-Ico + dodecahedron corner = Atraktos), and 102 clean pieces with no dents (20 Cleo-Icos, 20 Kion, 12 twisted
   pentagonal frusta, 30 t1, 20 caps), the same 20 cones cutting the icosahedron by faces and the dodecahedron by corners. Exact in ℚ(√5):
   both sum to 3350 − 1486√5 with remainder 0.
 - In the app: Kaleidohedra, DICTO 3D+ → Theaetetus (`?open=theaetetus`), both stories; the hollow star in DICTO Dodeca.
 
-## 28. The DICTO Truncated-Icosahedral Hecatodihedron (DICTO, 2026-10-14)
+## F28. The DICTO Truncated-Icosahedral Hecatodihedron (DICTO, 2026-10-14)
 
-Spheres of Dharma stage 7 (#23, #27) as a solid of its own, named by DICTO (*hecatodi-*, 102). Checked from Polyhedraverse's
+Spheres of Dharma stage 7 (F23, F27) as a solid of its own, named by DICTO (*hecatodi-*, 102). Checked from Polyhedraverse's
 TRANS_DHARMA_80 by `papers/tih/data/tih_check.py`:
 
 - The truncated icosahedron (edge 1/φ here) with a **Shield** on each of its 20 hexagons: a low hexagonal pyramid whose apex is on
@@ -1047,7 +1049,7 @@ TRANS_DHARMA_80 by `papers/tih/data/tih_check.py`:
   truncated icosahedron lie on one sphere (1.5315) and the 20 Shield apices on another (1.6057), as a regular dodecahedron of edge
   3/φ² = 1.14590 (3/φ times the truncated icosahedron's edge). Volume 14.4042 at truncated-icosahedron edge 1/φ.
 - **Touching sphere:** the 30 rhombi and 60 triangles are all 1.5 from the centre; the 12 pentagons are 1.4384 (the truncated
-  icosahedron's pentagon distance). So it has **no insphere**. (#27 and the In-betweens paper v2 said all 102 faces were tangent;
+  icosahedron's pentagon distance). So it has **no insphere**. (F27 and the In-betweens paper v2 said all 102 faces were tangent;
   corrected 2026-10-14, paper v3.)
 - **Relation to known solids:** combinatorially it is Conway's hexakis truncated icosahedron k6tI (132 faces) with 30 coplanar
   triangle pairs merged into 30 rhombi; this flattened form was not found named in the catalogues searched (Conway-notation lists, named
@@ -1055,10 +1057,10 @@ TRANS_DHARMA_80 by `papers/tih/data/tih_check.py`:
 - **Version 2 (2026-10-16, exact in ℚ(√5); paper DICTO DOI 10.5281/zenodo.23360857):** the 20 Shield apexes are the 20 three-fold vertices of the
   canonical pentakis dodecahedron (the truncated icosahedron's polar in its own midsphere, radius 1.5); the 102 face planes are the joined
   truncated icosahedron jtI's 90 plus the 12 pentagon planes. So it is the jtI with its five-fold corners cut flat: an unnamed solid derived
-  from a known one. With its polar, the DICTO Ogdoecontahedron, it forms the DICTO Hecatogdoecontahedron (see #31).
+  from a known one. With its polar, the DICTO Ogdoecontahedron, it forms the DICTO Hecatogdoecontahedron (see F31).
 - In the app: Polyhedraverse, DICTO Transitional Shells; DICTO-TIC, Loop 2 (Dharma road), piece 115.
 
-## 27. Capturing the In-betweens (DICTO, 2026-10-14)
+## F27. Capturing the In-betweens (DICTO, 2026-10-14)
 
 *The in-between stages of DICTO's nested structures, each taken as one solid: the transitional shells (DICTO, from the app's Top shell slider).*
 
@@ -1066,21 +1068,21 @@ TRANS_DHARMA_80 by `papers/tih/data/tih_check.py`:
   corners); + 12 caps = the dodecahedron (the Dodecahedral Chain: icosahedron to its dual through two star solids); the Bodhi centre + 60
   Vajra (fine) = the rhombic hexecontahedron. Each checked against an independent construction to 10⁻⁴.
 - **The DICTO Truncated-Icosahedral Hecatodihedron** (DICTO's name): Spheres of Dharma stage 7, the truncated icosahedron with a Shield on
-  each hexagon; convex, 102 faces (12 regular pentagons, 30 rhombi, 60 triangles); 80 corners. Correction (2026-10-14): only the 30 rhombi and 60 triangles touch one sphere (radius 1.5); the 12 pentagons lie at 1.4384, so it has no insphere (see #28).
-  Not found named in the catalogues searched; derived from the joined truncated icosahedron (see #28, Version 2).
+  each hexagon; convex, 102 faces (12 regular pentagons, 30 rhombi, 60 triangles); 80 corners. Correction (2026-10-14): only the 30 rhombi and 60 triangles touch one sphere (radius 1.5); the 12 pentagons lie at 1.4384, so it has no insphere (see F28).
+  Not found named in the catalogues searched; derived from the joined truncated icosahedron (see F28, Version 2).
 - **Counts:** 45 convex partial stages; Spheres of Dharma 107 whole-ring and 5,569 partial-ring stages counted.
 - **Names:** Stupa (pentagonal pyramid) and Monkey Staff (twisted pentagonal frustum) complete the Spheres of Dharma piece names.
 - **In the apps:** the DICTO Transitional Shells group in Polyhedraverse; the build movie in Multi-shell chains.
 - Paper and study: [studies/2026-10-13-fused-shells](studies/2026-10-13-fused-shells/) (paper/, catalogue, data and checks).
 - Archived: Zenodo [10.5281/zenodo.23345503](https://doi.org/10.5281/zenodo.23345503) (concept 10.5281/zenodo.23345502), 2026-10-14.
 
-## 26. DICTO ATOM-13×13 (DICTO, 2026-10-13)
+## F26. DICTO ATOM-13×13 (DICTO, 2026-10-13)
 
 *Thirteen clusters of thirteen, each a centre and twelve around it; the centre always gold (DICTO).*
 
 - **Golden six:** Icosa-13 (Lotus seed), DESHI (the Lotus seed's 13 icosahedra alone), Dodeca-13, UNITY and VENUS, DICTO-Star, Bodhi seed.
   The Icosa-13 and the Bodhi seed close exactly into a φ²-times larger copy of their own form.
-- **Periodic seven:** RD 13 (with the DICTO Spheroid-13 RD, #25), DICTO skewed RD 13, Bain RD 13, Bilinski 13, regular-hexagon ED 13, the
+- **Periodic seven:** RD 13 (with the DICTO Spheroid-13 RD, F25), DICTO skewed RD 13, Bain RD 13, Bilinski 13, regular-hexagon ED 13, the
   truncated octahedron 13 (4 + 5 + 4: 8 hexagon neighbours and the 4 middle squares, the top and bottom squares left as windows onto the
   gold centre) and the DICTO Jewel 13 (with its 6 stella octangulas). Each block fills space by translation (8 of 183 index-13 sublattices);
   each neighbourhood is a linear image of the FCC one, so all seven are the A3 perfect code (known) in seven shapes.
@@ -1088,7 +1090,7 @@ TRANS_DHARMA_80 by `papers/tih/data/tih_check.py`:
 - Paper: [papers/thirteens](papers/thirteens/); plan: [docs/PLAN-13.md](docs/PLAN-13.md).
 - Archived: Zenodo [10.5281/zenodo.23333184](https://doi.org/10.5281/zenodo.23333184) (concept 10.5281/zenodo.23333183), 2026-10-13.
 
-## 25. The DICTO Spheroid-13 RD (DICTO, 2026-10-13)
+## F25. The DICTO Spheroid-13 RD (DICTO, 2026-10-13)
 
 *DICTO's question: does the rhombic dodecahedron's 13 fill space as the Hexa does; then: make the block rounder, keyed, and with a true
 rhombic dodecahedron at its heart.*
@@ -1105,7 +1107,7 @@ rhombic dodecahedron at its heart.*
 - Study: [studies/2026-10-13-rd13-block](studies/2026-10-13-rd13-block/); paper: [papers/spheroid-13-rd](papers/spheroid-13-rd/).
 - Archived: Zenodo [10.5281/zenodo.23332822](https://doi.org/10.5281/zenodo.23332822) (concept 10.5281/zenodo.23332821), 2026-10-13.
 
-## 24. The Bodhi seed (DICTO, 2026-10-12)
+## F24. The Bodhi seed (DICTO, 2026-10-12)
 
 *From DICTO's question whether any form besides the icosahedron multiplies, and his "maybe a golden ratio rhombohedron". Name by
 DICTO (Bodhi with Dharma).*
@@ -1119,7 +1121,7 @@ DICTO (Bodhi with Dharma).*
 - Gap 70.272181 = 80 prolate + 20 oblate golden rhombohedra by volume (31.8%, as in the Lotus seed). Two exact builds, both
   kept as a choice (DICTO): kit B: 60 B1 (inner pocket, triangular bipyramid) + 20 B4 (FUJI-like, one in each outer three-fold corner) + 120 B5 (60 left- +
   60 right-handed); all convex, full icosahedral symmetry, no overlaps, volumes exact (studies/2026-10-12-bodhi-pieces, Fable).
-  Kit A: 60 Vajra (fine) + 60 **Chatra** (B2) + 60 **Mudra** (B3) (180 pieces, all mirror-symmetric; names by DICTO). Names by DICTO: B1 = **Vajra (fine)** (inner pocket; a different bipyramid from UNITY's VAJRA, #19), B4 =
+  Kit A: 60 Vajra (fine) + 60 **Chatra** (B2) + 60 **Mudra** (B3) (180 pieces, all mirror-symmetric; names by DICTO). Names by DICTO: B1 = **Vajra (fine)** (inner pocket; a different bipyramid from UNITY's VAJRA, F19), B4 =
   **Crown Jewel** (in each outer three-fold corner), B5 = **Diadem L** and **Diadem R** (the handed pair).
 - The 12 enclose exactly a rhombic hexecontahedron (20 prolate golden rhombohedra); minus the centre, the inner pocket has exactly
   the volume of one edge-1 triacontahedron.
@@ -1130,7 +1132,7 @@ DICTO (Bodhi with Dharma).*
 - **Published:** The Bodhi Seed, version 1, 2026-10-12, DOI [10.5281/zenodo.23311353](https://doi.org/10.5281/zenodo.23311353) (paper + data).
 - Study files: [studies/2026-10-12-network-versions](studies/2026-10-12-network-versions/).
 
-## 23. Spheres of Dharma (DICTO, 2026-10-12)
+## F23. Spheres of Dharma (DICTO, 2026-10-12)
 
 *DICTO's ideas: the icosidodecahedron as the hybrid "twin" of the two-form version; "the dual of that arrangement, the dodecahedron
 having triangular structures at its vertices"; "the triangles of rhombi mirroring the hexagons of the fullerene cage"; fullerene cages
@@ -1149,16 +1151,16 @@ as transition figures; "one more missing piece?". Name by DICTO.*
 - The five cubes of the dodecahedron lie in the network's seams; the five octahedra on the icosidodecahedron hold one icosahedron of
   edge 1 in Pacioli's golden way, all five at once.
 - Names (DICTO, 2026-10-12): **Ritsudō** (律動, rhythm) for the six-beat cycle; **Nenrin** (年輪, tree rings) for its concentric
-  growth, against the Lotus seed's branching. Its outer shell, the triacontahedron, branches on its own: the Bodhi seed (#24).
+  growth, against the Lotus seed's branching. Its outer shell, the triacontahedron, branches on its own: the Bodhi seed (F24).
 - Study files: [studies/2026-10-12-network-versions](studies/2026-10-12-network-versions/).
 - **Published:** Spheres of Dharma, version 1, 2026-10-12, DOI [10.5281/zenodo.23310833](https://doi.org/10.5281/zenodo.23310833) (paper + data).
 
-## 22. Chain of Karma (DICTO, 2026-10-11)
+## F22. Chain of Karma (DICTO, 2026-10-11)
 
 *DICTO's idea: take the Lotus seed as a core, put "explodable" Lotus seeds in place of its icosahedra, scale up the
 AXE, CLEO and the other parts, "and carry on to infinity". Name by DICTO.*
 
-- The Lotus seed (#19) is exactly an icosahedron enlarged by φ², so it is a golden inflation rule: icosahedron × φ² =
+- The Lotus seed (F19) is exactly an icosahedron enlarged by φ², so it is a golden inflation rule: icosahedron × φ² =
   12 icosahedra + 1 small icosahedron + 60 AXE + 20 FUJI + 20 CLEO. Replacing every icosahedron by a Lotus seed and
   keeping the gap pieces whole fills φ⁴, φ⁶, … icosahedra exactly (steps 1–3 built: 113, 1,569 and 20,497 pieces,
   volume exact), upward or downward without end.
@@ -1169,10 +1171,10 @@ AXE, CLEO and the other parts, "and carry on to infinity". Name by DICTO.*
 - Piece calculations and prior art: [studies/2026-10-11-self-building-kit](studies/2026-10-11-self-building-kit/); literature search done
   2026-10-12 (paper section 10).
 
-## 21. The icosahedral octet (DICTO, 2026-10-10)
+## F21. The icosahedral octet (DICTO, 2026-10-10)
 
-*DICTO's idea: the EKP cell's principle (a cube + 6 roofs = the dodecahedron, #8) "but with six" on the
-icosahedron; then the one gap left made icosahedral too, and an icosahedron "clawed" like the DICTO Jewel (#10).*
+*DICTO's idea: the EKP cell's principle (a cube + 6 roofs = the dodecahedron, F8) "but with six" on the
+icosahedron; then the one gap left made icosahedral too, and an icosahedron "clawed" like the DICTO Jewel (F10).*
 
 - **Admiral Caps** (the edge roofs; names by DICTO): an icosahedron of edge 1 + 6 Admiral Caps (each two small tetrahedra over one of its 6 axial edges,
   volume φ/12; in Polyhedraverse's DICTO's pieces) is the regular octahedron of edge φ²/√2. Icosahedra with their
@@ -1196,7 +1198,7 @@ icosahedron; then the one gap left made icosahedral too, and an icosahedron "cla
   touching (Pacioli; the Jitterbug). Also: the icosahedron is exactly 1/φ of its cuboctahedron by volume.
 - Study files: [studies/2026-10-10-icosa-networks-3](studies/2026-10-10-icosa-networks-3/),
   [studies/2026-10-10-ico-clusters](studies/2026-10-10-ico-clusters/) and
-  [studies/2026-10-10-icosa-networks-2](studies/2026-10-10-icosa-networks-2/). Same checks as #19.
+  [studies/2026-10-10-icosa-networks-2](studies/2026-10-10-icosa-networks-2/). Same checks as F19.
 - Archived: Zenodo [10.5281/zenodo.23284390](https://doi.org/10.5281/zenodo.23284390) (v2026.10.11-octet, 2026-10-11).
 - Status: **not found** in searches on 2026-10-10, including Lalvani's US 5,448,868 and NASA TM-102635 (read; the
   icosahedron appears there only as a node). Shapes not yet named by DICTO.
@@ -1208,7 +1210,7 @@ the geometry shared by Kaleidohedra and Rhombiverse, pinned here at `src/krp-cor
 
 Results the apps were checked against that turned out to be known, each credited to its source. They keep their numbers so links and archived versions still match; they are not DICTO's findings.
 
-### 3. Bain disphenoids
+### F3. Bain disphenoids
 
 Stretch BCC by √2 along one cube axis and it becomes FCC. Of the six BCC
 disphenoid orientations, the two whose long edges lie across that axis become
@@ -1220,7 +1222,7 @@ the most regular overall (a regular tetrahedron cannot fill space alone).
 - Status: **known** — the Bain correspondence (E. C. Bain, 1924), standard in
   metallurgy. Kaleidohedra makes it something you can slide through and see.
 
-### 4. Bain rhombic dodecahedron
+### F4. Bain rhombic dodecahedron
 
 At the Bain stop the equal-edge RD cell has edge directions meeting at
 60, 60, 60, 60, 90, 90 degrees: **4 squares and 8 rhombi of 60°**, all edges
@@ -1231,7 +1233,7 @@ equal.
   D4h form, "a cuboctahedron with square pyramids attached on the top and
   bottom".
 
-### 5. Regular-hexagon elongated dodecahedron
+### F5. Regular-hexagon elongated dodecahedron
 
 Add a fifth edge direction to the Bain RD along an unstretched cube axis, of
 the same length. Every edge is 1, and the elongation direction lies at 60° to
@@ -1271,39 +1273,39 @@ All findings above credited to DICTO are the work of the artist **DICTO**
 Polyhedraverse and Kaleidohedra; "Kaleidohedra" credits mean found by this
 project's own search, under DICTO's direction. "First recorded" is the date and
 commit that first put the finding in this repository; the git history is the
-timestamped record. A physical model may predate it (#1 was built in Zometool
-before it was written up; #8's physical cell was built before 2026-10-06).
+timestamped record. A physical model may predate it (F1 was built in Zometool
+before it was written up; F8's physical cell was built before 2026-10-06).
 
 Please cite as: *DICTO, Kaleidohedra discoveries, #N (first recorded
 YYYY-MM-DD), https://doi.org/10.5281/zenodo.23173809.*
 
 The repository is public, so its commit history is a public timestamped record,
 and it is archived on Zenodo: **DOI [10.5281/zenodo.23173809](https://doi.org/10.5281/zenodo.23173809)** (all versions);
-finding #8, the Euclid–Kepler–Pacioli cell and network, is version v2026.10.06,
+finding F8, the Euclid–Kepler–Pacioli cell and network, is version v2026.10.06,
 **DOI [10.5281/zenodo.23173810](https://doi.org/10.5281/zenodo.23173810)**, published 2026-10-06.
 Renamed the Euclid–Kepler–Pacioli (EKP) cell, with Kepler's chain and Pacioli's
 rectangles, as version v2026.10.06-ekp, **DOI [10.5281/zenodo.23176568](https://doi.org/10.5281/zenodo.23176568)**.
-Findings #10 and #11 are version v2026.10.08, **DOI [10.5281/zenodo.23220273](https://doi.org/10.5281/zenodo.23220273)**
+Findings F10 and F11 are version v2026.10.08, **DOI [10.5281/zenodo.23220273](https://doi.org/10.5281/zenodo.23220273)**
 (published 2026-10-08 Japan time; Zenodo shows 2026-10-07, UTC).
-Study 10a (recorded there as #12) is version v2026.10.08-convex, **DOI [10.5281/zenodo.23220833](https://doi.org/10.5281/zenodo.23220833)**.
+Study 10a (recorded there as F12) is version v2026.10.08-convex, **DOI [10.5281/zenodo.23220833](https://doi.org/10.5281/zenodo.23220833)**.
 Study 10b, and 10a under its new label, are version v2026.10.08-checkerboard, **DOI [10.5281/zenodo.23223555](https://doi.org/10.5281/zenodo.23223555)**.
-Finding #12, the Star Chain Reaction, and its study 12a are version v2026.10.08-star-chain, **DOI [10.5281/zenodo.23226716](https://doi.org/10.5281/zenodo.23226716)**.
-Finding #13, the 13-dodecahedron cluster made solid, is version v2026.10.09-cluster, **DOI [10.5281/zenodo.23247392](https://doi.org/10.5281/zenodo.23247392)** (published 2026-10-09 Japan time; Zenodo shows 2026-10-08, UTC).
-Findings #17 (Kagome hulls) and #18 (the DICTO Hexa), with their study files, are version v2026.10.09-hulls, **DOI [10.5281/zenodo.23262227](https://doi.org/10.5281/zenodo.23262227)**.
-Findings #19 (the DICTO Icosa-13) and #20 (the DICTO Stella-Corona), with their study files, are version v2026.10.10-icosa, **DOI [10.5281/zenodo.23272686](https://doi.org/10.5281/zenodo.23272686)**.
-Finding #21 (the icosahedral octet), the #20 additions (the MACE network and its infinite quasiperiodic version, growth on the pentagrams), the five papers and their studies are version v2026.10.11-octet, **DOI [10.5281/zenodo.23284390](https://doi.org/10.5281/zenodo.23284390)** (published 2026-10-11 Japan time).
+Finding F12, the Star Chain Reaction, and its study 12a are version v2026.10.08-star-chain, **DOI [10.5281/zenodo.23226716](https://doi.org/10.5281/zenodo.23226716)**.
+Finding F13, the 13-dodecahedron cluster made solid, is version v2026.10.09-cluster, **DOI [10.5281/zenodo.23247392](https://doi.org/10.5281/zenodo.23247392)** (published 2026-10-09 Japan time; Zenodo shows 2026-10-08, UTC).
+Findings F17 (Kagome hulls) and F18 (the DICTO Hexa), with their study files, are version v2026.10.09-hulls, **DOI [10.5281/zenodo.23262227](https://doi.org/10.5281/zenodo.23262227)**.
+Findings F19 (the DICTO Icosa-13) and F20 (the DICTO Stella-Corona), with their study files, are version v2026.10.10-icosa, **DOI [10.5281/zenodo.23272686](https://doi.org/10.5281/zenodo.23272686)**.
+Finding F21 (the icosahedral octet), the F20 additions (the MACE network and its infinite quasiperiodic version, growth on the pentagrams), the five papers and their studies are version v2026.10.11-octet, **DOI [10.5281/zenodo.23284390](https://doi.org/10.5281/zenodo.23284390)** (published 2026-10-11 Japan time).
 DICTO's published works are gathered under one DOI, DICTO: Collected Geometric Works, **DOI [10.5281/zenodo.23345699](https://doi.org/10.5281/zenodo.23345699)** (all versions; published 2026-10-14).
 
 ## Sources
 
-- [Icosidodecahedra, Icosahedra, and Dodecahedra — R. Austin (RobertLovesPi), 2014](https://web.archive.org/web/2020/https://robertlovespi.net/2014/11/13/icosidodecahedra-icosahedra-and-dodecahedra/) (#14)
-- [Dodecahedral-icosahedral honeycomb (hyperbolic) — Wikipedia](https://en.wikipedia.org/wiki/Dodecahedral-icosahedral_honeycomb) (#14)
-- [Building systems with non-regular polyhedra based on subdivisions of zonohedra — H. Lalvani, US 5,623,790 (1997)](https://patents.google.com/patent/US5623790A/en) (#1, #7)
-- [Building structures based on polygonal members and icosahedral symmetry — H. Lalvani, US 4,723,382 (1988)](https://patents.google.com/patent/US4723382A/en) (#1, #10)
-- [Regular Dodecahedron-Based Network Structures — J. Jenczyk, Symmetry 16 (2024) 1509](https://doi.org/10.3390/sym16111509) (#13)
-- [Closing gaps in geometrically frustrated symmetric clusters — Fang, Irwin et al., Mathematics 6 (2018) 89](https://doi.org/10.3390/math6060089) (#13)
-- [Tetrahedral cluster of dodecahedra (120-cell) — S. Vorthmann, vZome, 2014](https://www.vzome.com/geometry/2014/10/04/dodecTetra-11-09-35.html) (#13)
-- [The Bilinski dodecahedron and assorted parallelohedra, zonohedra, monohedra, isozonohedra and otherhedra — Grünbaum, Math. Intelligencer 32 (2010)](https://faculty.washington.edu/moishe/branko/BG285%20Bilinski%20dodecahedron.pdf) (#5 is its Fig. 2(b))
+- [Icosidodecahedra, Icosahedra, and Dodecahedra — R. Austin (RobertLovesPi), 2014](https://web.archive.org/web/2020/https://robertlovespi.net/2014/11/13/icosidodecahedra-icosahedra-and-dodecahedra/) (F14)
+- [Dodecahedral-icosahedral honeycomb (hyperbolic) — Wikipedia](https://en.wikipedia.org/wiki/Dodecahedral-icosahedral_honeycomb) (F14)
+- [Building systems with non-regular polyhedra based on subdivisions of zonohedra — H. Lalvani, US 5,623,790 (1997)](https://patents.google.com/patent/US5623790A/en) (F1, F7)
+- [Building structures based on polygonal members and icosahedral symmetry — H. Lalvani, US 4,723,382 (1988)](https://patents.google.com/patent/US4723382A/en) (F1, F10)
+- [Regular Dodecahedron-Based Network Structures — J. Jenczyk, Symmetry 16 (2024) 1509](https://doi.org/10.3390/sym16111509) (F13)
+- [Closing gaps in geometrically frustrated symmetric clusters — Fang, Irwin et al., Mathematics 6 (2018) 89](https://doi.org/10.3390/math6060089) (F13)
+- [Tetrahedral cluster of dodecahedra (120-cell) — S. Vorthmann, vZome, 2014](https://www.vzome.com/geometry/2014/10/04/dodecTetra-11-09-35.html) (F13)
+- [The Bilinski dodecahedron and assorted parallelohedra, zonohedra, monohedra, isozonohedra and otherhedra — Grünbaum, Math. Intelligencer 32 (2010)](https://faculty.washington.edu/moishe/branko/BG285%20Bilinski%20dodecahedron.pdf) (F5 is its Fig. 2(b))
 - [Elongated dodecahedron — Wikipedia](https://en.wikipedia.org/wiki/Elongated_dodecahedron)
 - [Elongated Dodecahedron — MathWorld](https://mathworld.wolfram.com/ElongatedDodecahedron.html)
 - [Elongated rhombic dodecahedron — Polytope Wiki](https://polytope.miraheze.org/wiki/Elongated_rhombic_dodecahedron)
@@ -1320,6 +1322,6 @@ DICTO's published works are gathered under one DOI, DICTO: Collected Geometric W
 - [Icosahedral tiling with dodecahedral structures — Koca et al. (2020)](https://arxiv.org/abs/2008.00862) (aperiodic; not this structure)
 - [Zonohedron — Wikipedia](https://en.wikipedia.org/wiki/Zonohedron)
 - [Zonohedrification — George Hart](https://www.georgehart.com/zonohedra/zonohedrification.html)
-- [Stella octangula — MathWorld](https://mathworld.wolfram.com/StellaOctangula.html) (#10 search)
-- [Compound polyhedra — George Hart](https://www.georgehart.com/virtual-polyhedra/compounds-info.html) (#10 search)
+- [Stella octangula — MathWorld](https://mathworld.wolfram.com/StellaOctangula.html) (F10 search)
+- [Compound polyhedra — George Hart](https://www.georgehart.com/virtual-polyhedra/compounds-info.html) (F10 search)
 - [Regular and semi-regular dodecahedra fill space — Hans Walser](https://walser-h-m.ch/hans/Vortraege/20170627/script.htm) (the Dogstar as the cube minus its hip roofs)

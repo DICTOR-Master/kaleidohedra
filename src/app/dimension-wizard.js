@@ -567,7 +567,7 @@ const K_WORLDS = [
   { key: 'theaetetus', label: 'Theaetetus', pieces: [{ label: 'Theaetetus', action: 'tool:theaetetusWorld' }] },
   { key: 'chains', label: 'Multi-shell chains', pieces: [{ label: 'Chain of Karma', action: 'tool:chainsWorld:karma' },
     { label: 'Spheres of Dharma', action: 'tool:chainsWorld:dharma' }, { label: 'The Bodhi Seed', action: 'tool:chainsWorld:bodhi' }] },
-  // DICTO Icosahedral Octet (DICTO 2026-10-13; DISCOVERIES #21): Euclid's roofs moved to the icosahedron, as growing networks.
+  // DICTO Icosahedral Octet (DICTO 2026-10-13; DISCOVERIES F21): Euclid's roofs moved to the icosahedron, as growing networks.
   { key: 'octet', label: 'DICTO Icosahedral Octet', pieces: [{ label: 'Octet with Admiral Caps', action: 'tool:octetWorld:caps' },
     { label: 'All-icosahedral octet', action: 'tool:octetWorld:allIco' }, { label: 'Frog Chorus', action: 'tool:octetWorld:frog' },
     { label: 'Pyrochlore in the octet', action: 'tool:octetWorld:pyrochlore' }, { label: 'Lotus Jewel network', action: 'tool:octetWorld:lotusJewel' }] },
@@ -595,7 +595,7 @@ const K_WORLDS = [
         .map(([mode, label, form]) => ({ label, action: `tool:${world}World:${mode}`, preview: () => polyShapeEdges(`${shape}_${form}_CLUSTER`) })),
       ...(world === 'stellaJewel' ? [{ label: 'DICTO Hexa diamond network', action: 'tool:stellaJewelWorld:hexa', preview: () => polyShapeEdges('DICTO_HEXA') },
         { label: 'DICTO Hexa and Hexa-Key checkerboard', action: 'tool:stellaJewelWorld:hexaKey', preview: () => polyShapeEdges('DICTO_HEXA_KEY') }] : []),
-      // The Kagome hulls (DISCOVERIES #17); previews: the hull's cell centres, nearest neighbours joined.
+      // The Kagome hulls (DISCOVERIES F17); previews: the hull's cell centres, nearest neighbours joined.
       ...[['hullOcta', 'Octahedral Kagome', 'octa6'], ['hullRhombo', 'Rhombohedral Kagome', 'rhombo8'], ['hullCuboHollow', 'Cuboctahedral Kagome (hollow)', 'cubocta12'],
         ['hullCuboSolid', 'Cuboctahedral Kagome (solid)', 'cubocta13'], ['hullCube', 'Cubic Kagome', 'cube14'], ['hullRd', 'Rhombic dodecahedral Kagome', 'rd33']]
         .map(([mode, label, id]) => ({ label, action: `tool:${world}World:${mode}`, preview: () => hullPreview(id) })),

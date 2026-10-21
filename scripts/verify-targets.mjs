@@ -109,7 +109,7 @@ const names = targets.map((t) => `${t.type} #${t.number} · ${targetAngles(t)}`)
 check(`names "Type #n · angles" are unique (${new Set(names).size})`, new Set(names).size === targets.length);
 const emblem = zonohedron(EMBLEM_DIRECTIONS);
 check('emblem: the regular-hexagon ED, 4 regular hexagons + 4 squares + 4 60-degree rhombi, volume 4 sqrt2', sameCounts(faceCounts(emblem), { 'regular hexagon': 4, square: 4, 'rhombus 60': 4 }) && Math.abs(volumeOf(emblem) - 4 * Math.SQRT2) < 1e-9);
-// DISCOVERIES.md #5: the same cell by Fedorov's route, the truncated octahedron with one zone removed.
+// DISCOVERIES.md F5: the same cell by Fedorov's route, the truncated octahedron with one zone removed.
 const TO = [[1, 1, 0], [1, -1, 0], [1, 0, 1], [1, 0, -1], [0, 1, 1], [0, 1, -1]].map((v) => v.map((c) => c * Math.SQRT1_2));
 const angleSet = (D) => D.flatMap((a, i) => D.slice(i + 1).map((b) => Math.abs(dot(a, b)).toFixed(9))).sort().join();
 const contracted = zonohedron(TO.slice(1));

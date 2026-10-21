@@ -1,6 +1,6 @@
 // Studies: a 3D+ world of its own (direct decision, 2026-10-08: "study may
 // need its own section"), right after the Euclid–Kepler–Pacioli Cell Network
-// in the Wizard. Exact constructions on the EKP cell (DISCOVERIES.md #10 and
+// in the Wizard. Exact constructions on the EKP cell (DISCOVERIES.md F10 and
 // its study 10a, #11), one at a time, with a slider where the study has one
 // and the Shear either moving exact copies on the lattice or bending the
 // solid itself. Geometry in krp-core/src/geometry-extensions/roof-fold.js, checked in

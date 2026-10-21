@@ -1,5 +1,5 @@
 // DICTO Icosa: a 3D+ world of its own (DICTO, 2026-10-10: "own Icosa world", reached only through the DICTO
-// worlds). The DICTO Icosa family (Kaleidohedra DISCOVERIES #19, #20; names by DICTO), one shape at a time:
+// worlds). The DICTO Icosa family (Kaleidohedra DISCOVERIES F19, F20; names by DICTO), one shape at a time:
 // the clusters with their parts views and a slider that pulls the pieces apart, the Kepler Star Diadem with its
 // gaps filled by the 120 Shark Teeth or left open, and the single pieces. Geometry in
 // krp-core/src/geometry-extensions/icosa.js, checked in scripts/verify-icosa.mjs.

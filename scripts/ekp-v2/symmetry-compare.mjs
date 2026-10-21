@@ -1,6 +1,6 @@
 // Symmetry of three structures on the cubic cell lattice, with the contents held fixed:
-//   original: the seven pieces in every cube, unturned (the EKP cell, DISCOVERIES #8);
-//   network:  stars on even cubes, icosahedra on odd cubes, unturned (DISCOVERIES #8b);
+//   original: the seven pieces in every cube, unturned (the EKP cell, DISCOVERIES F8);
+//   network:  stars on even cubes, icosahedra on odd cubes, unturned (DISCOVERIES F8b);
 //   v2:       the seven pieces in every cube, odd cubes turned 90 degrees about z (checkerboard turn).
 // An operation is (O, t): a cube symmetry O (signed permutation) with a cube translation t (cell units),
 // with t one representative per class mod 2. The operations are written to ops.json for space-group.mjs.

@@ -1,5 +1,5 @@
 // The Stella–Jewel Lattice (direct request, 2026-10-08): DICTO Jewels (DJ, DICTO's name for the
-// windows solid, DISCOVERIES #10) on the even cells and stella octangulas on the odd cells, filling
+// windows solid, DISCOVERIES F10) on the even cells and stella octangulas on the odd cells, filling
 // space (study 10b). Views: both, or the DICTO Jewels alone (they meet face to face on all 12
 // rhombi, leaving stella-shaped holes). The five-fold overlay adds the five window positions on each
 // face, the cube's choice bright. The world itself is world-pair-lattice.js. Ported from
@@ -45,7 +45,7 @@ export function createStellaJewelWorld(opts) {
     kagomeNeighbours: kagomeNeighbourClusters,
     // Each cluster drawn whole, as its krp-core shape (DICTO 2026-10-09: cohesive blocks).
     clusterBlocks: { tetra: POLYHEDRA.DJ_TETRAHEDRAL_CLUSTER, kagome: POLYHEDRA.DJ_TETRAHEDRAL_CLUSTER, octa: POLYHEDRA.DJ_OCTAHEDRAL_CLUSTER, hexa: POLYHEDRA.DICTO_HEXA, hexaKey: POLYHEDRA.DICTO_HEXA_KEY },
-    // The Kagome hulls (DISCOVERIES #17): this lattice's solids, loaded on demand.
+    // The Kagome hulls (DISCOVERIES F17): this lattice's solids, loaded on demand.
     hullLattice: 'jewel',
     clusters: { ...OCTET_CLUSTERS, hexa: (s) => { const a = [0, 1].flatMap((x) => [0, 1].flatMap((y) => [0, 1].map((z) => s.map((v, i) => v - [x, y, z][i])))).find(isHexaAnchor); return a ? [0, 1].flatMap((x) => [0, 1].flatMap((y) => [0, 1].map((z) => [a[0] + x, a[1] + y, a[2] + z]))) : null; } },
     isHexaAnchor,

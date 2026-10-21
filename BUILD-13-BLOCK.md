@@ -70,7 +70,7 @@ not slim stars.
 
 ## 5. Status
 
-- Block (sections 1–3): exact and checked; recorded as DISCOVERIES #13, Zenodo
+- Block (sections 1–3): exact and checked; recorded as DISCOVERIES F13, Zenodo
   [10.5281/zenodo.23247392](https://doi.org/10.5281/zenodo.23247392).
 - Stacking (section 4): a study, recorded in #13, not claimed.
 - Shown nowhere in the apps yet; the pieces could join Polyhedraverse's Space-Filling Pairs once the

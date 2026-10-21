@@ -274,7 +274,7 @@ export const DICTO_ENTRIES = [
   ['dictoHex', null, null, 'DICTO_LEANING_HEX_PRISM', 'tool:pieceType:dictohex'],
 ].map(([key, finding, doi, shape, action, app = null]) => ({ kind: 'dicto', id: `dicto:${key}`, key, finding, doi, shape, action, app, markKey: null }));
 
-// Known results the apps show (DISCOVERIES #3-#5): checked against, found known, credited there; not DICTO's.
+// Known results the apps show (DISCOVERIES F3-F5): checked against, found known, credited there; not DICTO's.
 export const KNOWN_ENTRIES = [
   ['bainDis', '#3', null, 'tool:pieceType:idis', 'kaleidohedra'],
   ['bainRd', '#4', 'BAIN_RD', 'tool:polyShape:BAIN_RD'],

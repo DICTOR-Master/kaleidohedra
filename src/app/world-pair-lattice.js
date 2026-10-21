@@ -409,13 +409,13 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
   }
   // Networks (DICTO 2026-10-09): clusters on an anchor pattern, sharing single pieces corner to
   // corner, drawn whole as one solid each: the DICTO Hexa diamond network (8 Jewels on a 2 x 2 x 2 block,
-  // any parity) and the Kagome hulls of DISCOVERIES #17 (krp-core kagomeHulls.js, solids loaded on
+  // any parity) and the Kagome hulls of DISCOVERIES F17 (krp-core kagomeHulls.js, solids loaded on
   // demand). A network: { offsets (its cells from its anchor), isAnchor, spec (its solid), singles }.
   // The cells no cluster can cover fill by themselves once surrounded: stellas (or Dogstars), and
   // single Jewels where the network leaves them.
   const BLOCK8 = [0, 1].flatMap((x) => [0, 1].flatMap((y) => [0, 1].map((z) => [x, y, z])));
   const nets = { hexa: config.isHexaAnchor ? { offsets: BLOCK8, isAnchor: config.isHexaAnchor, spec: config.clusterBlocks?.hexa, singles: false, allJewels: true } : null };
-  // The Hexa checkerboard (DISCOVERIES #18): Hexas window to window on an FCC pattern (anchors all even,
+  // The Hexa checkerboard (DISCOVERIES F18): Hexas window to window on an FCC pattern (anchors all even,
   // x+y+z = 0 mod 4), never sharing a piece; in every gap a DICTO Hexa-Key (anchors x+y+z = 2 mod 4),
   // filled in by itself once 4 of its 6 Hexas are there. 5 : 3, the Stella-Jewel Lattice one level up.
   const FCC2 = [[2, 2, 0], [2, -2, 0], [-2, 2, 0], [-2, -2, 0], [2, 0, 2], [2, 0, -2], [-2, 0, 2], [-2, 0, -2], [0, 2, 2], [0, 2, -2], [0, -2, 2], [0, -2, -2]];
