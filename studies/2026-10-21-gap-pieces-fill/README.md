@@ -15,3 +15,6 @@ Next: face-to-face growth test on the node, order B1, Bodhi pairs, AXE + FUJI,
 CLEO + FUJI.
 
 DICTO · dictospheres.com
+
+Building test (`corona.py`, `corona.log`, first-corona search, face to face): B1 no corona in 3000 s (best 93.0% of the shell),
+B2 no corona, search exhausted in 288 s (best 86.6%). STOPPED by DICTO 2026-10-21 ("drop gap test"); B3-B5, pairs not run.
