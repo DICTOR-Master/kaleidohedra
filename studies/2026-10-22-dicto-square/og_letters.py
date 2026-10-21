@@ -54,6 +54,7 @@ FONT=os.path.join(here,'Cinzel.ttf')
 def carve_tile(ch,px):
     f=ImageFont.truetype(FONT,int(px*0.78)); f.set_variation_by_name('Bold')
     m=Image.new('L',(px,px),0); ImageDraw.Draw(m).text((px/2,px/2),ch,font=f,fill=255,anchor='mm')
+    x0,y0,x1,y1=m.getbbox(); m=m.transform(m.size,Image.AFFINE,(1,0,(x0+x1)/2-px/2,0,1,(y0+y1)/2-px/2))   # centre the letter's ink
     M=np.array(m)/255.0; ins=M>0.5
     dist=ndimage.gaussian_filter(ndimage.distance_transform_edt(ins),0.8)
     gy,gx=np.gradient(dist); return M,gx,gy
@@ -79,7 +80,7 @@ def render(img,cx,cy,rad,SS=2):
             c=V[f].mean(0); ax_=AXIS; rad=c-ax_*(c@ax_); Vv=rad-n*(rad@n); Vv/=np.linalg.norm(Vv); U=np.cross(Vv,n)
             r=np.linalg.norm(V[f]-c,axis=1).min()            # inradius-ish
             px=int(2*r*s*1.2); M,gx,gy=carve_tile(LET[tuple(f)],px)
-            hx,hy=r*0.8,r*1.22                                   # elongated Trajan forms: tall and narrow
+            hx,hy=r*0.6,r*0.92                                   # elongated Trajan forms: tall and narrow
             gx=gx*(hy/hx)
             k=1.6; nl=np.dstack([gx*k,-gy*k,np.ones_like(gx)]); nl/=np.linalg.norm(nl,axis=2,keepdims=True)
             nw=nl[...,0:1]*U+nl[...,1:2]*Vv+nl[...,2:3]*n           # groove normals in the world
