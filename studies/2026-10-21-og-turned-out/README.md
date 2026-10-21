@@ -41,3 +41,6 @@ DICTO TQP-252 (D5, 200 corners), DICTO TQ-320 (D6, 192; 20 regular triangles), D
 20 regular triangles), DICTO TQD-732 (D9, 500; 12 decagons), DICTO TQHD-662 (D10, 480; 20 hexagons + 12 decagons; not the #39
 TQHD, which has 200 faces), DICTO TQP-672 (D11, 470). Letters = face kinds (Triangle, Quadrilateral, Pentagon, Hexagon, Decagon),
 number = faces. The turned-out solids are these scaled by phi^k.
+3-beat shell (`shell4_exact.py`, `shell4.log`, `shell4-exact.json`): beat 4 and beat 7 fully symmetric, beat 4 inside beat 7 exactly,
+200 towers (120 on triangles in two shapes, 60 on quads, 20 on hexagons), sum = shell exactly. The log's FAIL line is only the
+"one shape per kind" test (two triangle kinds), as for shell 2. Figures: `new_solids_figs.py`, `new_solids_compose.py`, figures/new-solids-a/b.jpg.
