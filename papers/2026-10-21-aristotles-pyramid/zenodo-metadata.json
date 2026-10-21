@@ -1,0 +1,61 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-21",
+ "access_right": "open",
+ "title": "Aristotle's Pyramid",
+ "description": "<p><b>Main theorem.</b> Of the five face pyramids of the Platonic solids (the cone from the centre over one face), a set fills space exactly when it is the cube's pyramid alone, the tetrahedron's and the octahedron's pyramids together, or the union of these two; no other set fills space. Here a set fills space when copies of its pyramids, in any numbers, any positions and mirror images, every kind used and not necessarily face to face, tile space. The proof is a Dehn-type counting map on dihedral angles, made rigorous with the Splitting Theorem of Conway, Radin and Sadun: the dodecahedron's and the icosahedron's pyramids can never occur, and the tetrahedron's occurs exactly when the octahedron's does; the octet truss cut from its centres and the cubic tiling give the tilings. Corollaries: alone only the cube's pyramid fills space, in pairs only the tetrahedron's with the octahedron's, and with equal edges their numbers are asymptotically equal; the icosahedron's pyramid, the Cleo-Icos (DICTO's name), fills space only with a partner that is not a face pyramid, Antonius (#20). The question is DICTO's: Aristotle wrote that among solids only \"the pyramid and the cube\" fill space (On the Heavens III.8); read as the regular tetrahedron this is false, and DICTO asked whether he could have meant the Cleo-Icos. A section after the theorem collects DICTO's earlier exact fillings by the whole Platonic solids with partners. Every angle identity, the test over all 31 sets and the constructions are checked in exact arithmetic.</p><p>Finding #44 on dictospheres.com. Scripts, exact checks and data: https://github.com/DICTOR-Master/kaleidohedra/tree/f193a56/studies/2026-10-21-aristotle-pyramids (research branch), also attached here (aristotles-pyramid-study-f193a56.zip).</p>",
+ "keywords": [
+  "Aristotle",
+  "space filling",
+  "face pyramids",
+  "Platonic solids",
+  "Dehn invariant",
+  "geodetic angles",
+  "Cleo-Icos",
+  "Antonius",
+  "octet",
+  "tetrahedral-octahedral honeycomb",
+  "Euclid's roof",
+  "icosahedral octet",
+  "Sunstar Lattice",
+  "exact arithmetic"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/f193a56/studies/2026-10-21-aristotle-pyramids",
+   "relation": "isSupplementedBy",
+   "resource_type": "dataset",
+   "scheme": "url"
+  },
+  {
+   "identifier": "10.5281/zenodo.23173809",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23357896",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23497702",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23284390",
+   "relation": "references",
+   "scheme": "doi"
+  }
+ ]
+}

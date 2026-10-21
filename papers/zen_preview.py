@@ -7,7 +7,7 @@ def req(url, method='GET', body=None):
     return json.load(urllib.request.urlopen(urllib.request.Request(url, data=None if body is None else json.dumps(body).encode(), method=method, headers=H), timeout=120))
 for rid in sys.argv[1:]:
     r = req(f'https://zenodo.org/api/records/{rid}')
-    pdf = [k for k in r['files']['entries'] if k.startswith('dicto-') and k.endswith('.pdf')][0]
+    pdf = [k for k in r['files']['entries'] if k.endswith('.pdf')][0]   # the record's PDF (newer papers drop the dicto- prefix)
     if r['files'].get('default_preview') == pdf: print(rid, 'already', pdf); continue
     d = req(f'https://zenodo.org/api/records/{rid}/draft', 'POST')
     d['files']['default_preview'] = pdf
