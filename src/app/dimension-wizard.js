@@ -548,6 +548,9 @@ const K_WORLDS = [
   // The Reuleaux Platonic Solids (DICTO 2026-10-21; paper #45): balls on a Platonic solid's corners grow into its Reuleaux body (the
   // film), and the five bodies as pieces placed face to face (the build); first as the newest work (DICTO) (world-reuleaux.js).
   { key: 'reuleaux', label: 'The Reuleaux Platonic Solids', pieces: [{ label: 'The Reuleaux Platonic Solids', action: 'tool:reuleauxWorld' }] },
+  // Aristotle's Pyramid (DICTO 2026-10-21; DICTO's question, paper #44): a Platonic solid cut into its face pyramids, drawn apart, and
+  // three ready-made fills (cube pyramids, the octet cut up, the golden fix with Antonius); next to the newest work (world-aristotle.js).
+  { key: 'aristotle', label: "Aristotle's Pyramid", pieces: [{ label: "Aristotle's Pyramid", action: 'tool:aristotleWorld' }] },
   // The OG on the Octet Truss (DICTO 2026-10-19; paper #37): the Ogdoecontahedron's exact space-filling kits in the octet truss,
   // and Octet ↔ gyrated (2026-10-20, paper #37a); first again as the newest work (DICTO) (world-octet-truss.js).
   { key: 'octetTruss', label: 'The OG on the Octet Truss', pieces: [{ label: 'The OG on the Octet Truss', action: 'tool:octetTrussWorld' }] },
@@ -643,10 +646,10 @@ const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'PLATONIC', 'ARCHIMEDEAN', 'CATALAN
 // DICTO's own work, shown in DICTO's livery (silver) at the top of its app's block (DICTO 2026-10-09);
 // it still opens in its app. Lattices and worlds by key, single pieces by action, and DICTO's
 // Polyhedraverse pieces gathered from across its families.
-const DICTO_WORK = new Set(['reuleaux', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
+const DICTO_WORK = new Set(['reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
 const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
 // DICTO's block, findings first and tools last (copy audit, DICTO 2026-10-09).
-const DICTO_ORDER = ['reuleaux', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'theaetetus', 'chains', 'thirteens', 'octet', 'icosa', 'dodeca', 'roofFold', 'stellaJewel', 'sunstar', 'octetBuild', 'studies', 'targets', 'dictofcc', 'hex', 'shells', 'golden'];
+const DICTO_ORDER = ['reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'theaetetus', 'chains', 'thirteens', 'octet', 'icosa', 'dodeca', 'roofFold', 'stellaJewel', 'sunstar', 'octetBuild', 'studies', 'targets', 'dictofcc', 'hex', 'shells', 'golden'];
 const dictoRank = (e) => { const i = DICTO_ORDER.indexOf(e.lat?.key); return i < 0 ? DICTO_ORDER.length : i; };
 const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['TETRAPOD_FIVE_TO', 'TETRAPOD_FOUR_RD', 'ANTONIUS', 'ICOSA_FACE_PYRAMID', 'PENTA_CLEO', 'CLEO_SPHERE_POCKET', 'HEX_AKTIS', 'DELTOID_AKTIS', 'OTT_CLEO_ICOS', 'OTT_TRIANGLE_RAY', 'OTT_RHOMBIC_RAY', 'DICTO_EDGE_ROOF', 'DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER', ...KIT13_ADDITION_IDS] };
 export const DICTO_PIECE_IDS = DICTO_POLY.ids;
