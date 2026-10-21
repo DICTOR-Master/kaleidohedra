@@ -12,7 +12,7 @@ await page.waitForSelector('.dim-wizard-overlay.open');
 if (!(await page.locator('[data-action="tool:upWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
 await page.waitForTimeout(500);
 const first = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World/.test(a))[0]);
-console.log(SITE, 'first DICTO world:', first); assert.equal(first, 'tool:octetTrussWorld'); // the octet world holds the newest work (#37a, 2026-10-20); Universal PiTet follows it
+console.log(SITE, 'first DICTO world:', first); assert.equal(first, 'tool:reuleauxWorld'); // The Reuleaux Platonic Solids is the newest work (#45, 2026-10-21)
 const btn = page.locator('[data-action="tool:upWorld"]').first(); await btn.scrollIntoViewIfNeeded(); await btn.tap();
 await page.waitForTimeout(500);
 if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');
