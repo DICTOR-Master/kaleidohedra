@@ -32,7 +32,10 @@ V=V@TILT.T
 ring_c={tuple(f):V[f].mean(0) for f in ring}
 order=sorted(ring,key=lambda f:(math.atan2(ring_c[tuple(f)][0],ring_c[tuple(f)][1])+0.6)%(2*math.pi))   # clockwise from the top
 LET={tuple(f):ch for f,ch in zip(order,'DICTO')}
-GROUND=(20,15,11); GOLD=(222,178,80); STONE=(150,141,128)
+GROUND=(20,15,11); GOLD=(222,178,80); STONE=(150,141,128); PLAT=(214,218,224)
+import os as _os
+TINT=_os.environ.get('TINT','1')=='1'   # DICTO: each lettered hexagon in its element colour, the kite stars in platinum
+ELEM={'T':(205,62,40),'O':(232,200,82),'I':(58,112,205),'C':(72,142,72),'D':(138,92,196)}
 light=np.array([-0.45,0.55,0.7]); light/=np.linalg.norm(light)
 FONT=os.path.join(here,'Cinzel.ttf')
 def carve_tile(ch,px):
@@ -48,7 +51,13 @@ def render(img,cx,cy,rad,SS=2):
         n=np.cross(V[f[1]]-V[f[0]],V[f[2]]-V[f[0]]); n/=np.linalg.norm(n)
         if n@V[f].mean(0)<0: n=-n
         if n[2]<=1e-9: continue
-        b=0.35+0.65*max(0,n@light); col=tuple(int(c*b) for c in STONE)
+        base=STONE
+        if TINT and tuple(f) in LET: base=ELEM[LET[tuple(f)]]
+        elif TINT and len(f)==4: base=PLAT
+        b=0.35+0.65*max(0,n@light); col=tuple(int(c*b) for c in base)
+        if TINT and len(f)==4:   # platinum: a soft sheen towards the light
+            hv=light+np.array([0,0,1.0]); sp=max(0,n@(hv/np.linalg.norm(hv)))**30
+            col=tuple(int(c+(255-c)*0.6*sp) for c in col)
         pts=[P(V[q]) for q in f]; d.polygon(pts,fill=col); d.line(pts+[pts[0]],fill=GOLD,width=2*SS)
         if tuple(f) in LET:
             # facet frame: U to the right on screen, Vv up on screen, both in the facet's plane
@@ -75,4 +84,4 @@ def render(img,cx,cy,rad,SS=2):
             img.paste(t2,box[:2],m2)
 if __name__=='__main__':
     N=1400; SS=2; W=N*SS; img=Image.new('RGB',(W,W),GROUND)
-    render(img,W/2,W/2,0.46*W,SS); img.resize((N,N),Image.LANCZOS).save(os.path.join(here,'og-letters.png')); print('ok')
+    render(img,W/2,W/2,0.46*W,SS); img.resize((N,N),Image.LANCZOS).save(os.path.join(here,'og-letters%s.png'%('' if TINT else '-stone'))); print('ok')

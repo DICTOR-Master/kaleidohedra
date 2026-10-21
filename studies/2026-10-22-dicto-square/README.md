@@ -11,3 +11,4 @@ emblem_forms.py -> dicto-emblem-forms.png; STAR=1 -> dicto-emblem-forms-star.png
 
 ## OG with carved letters (DICTO 2026-10-22)
 og_letters.py -> og-letters.png: the DICTO Ogdoecontahedron along a five-fold axis (as Figure 1(c) of #31; geometry og-geometry.json = papers/ogdoecontahedron/data/hstar-render.json), no colours: stone facets, gold edges; D-I-C-T-O V-cut in platinum leaf into the five hexagons round the centre, clockwise from the top as in the emblem, carved in each facet's own plane so the letters foreshorten.
+Colour version (default, DICTO): each lettered hexagon in its element colour, the kites (stars of five) in platinum; TINT=0 -> og-letters-stone.png, the plain stone version.
