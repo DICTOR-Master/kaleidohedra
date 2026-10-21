@@ -1,0 +1,14 @@
+PASS the 60 rotations contain 15 half-turns (the 15 two-fold axes)
+PASS phi TPH: 0 four-sided faces: {}
+PASS phi^2 TQH: 60 four-sided faces: {'isosceles trapezoid': 60}
+PASS phi^2 TQH: 60 isosceles trapezoids, all with the same sides: parallel sides^2 38367/13448+17019/13448r5 and 6615/3362+2925/3362r5 (2.3839, 1.9781), legs^2 1269/13448+567/13448r5 (0.4343), angles [62.15, 117.85], height 0.3840
+PASS phi^2 TQH: 30 edges shared by two trapezoids ({'shorter parallel side': 30, 'longer parallel side': 0, 'leg': 0}); each trapezoid meets [1] others; 30 groups of [2] trapezoids
+PASS phi^2 TQH: the trapezoids pair up across their shorter parallel sides: 30 pairs (ribbons)
+PASS phi^2 TQH: every pair is centred on a two-fold axis (a half-turn fixes the seam's midpoint and swaps the two trapezoids): 30 pairs on the 15 axes, two per axis
+PASS phi^2 TQH: the two trapezoids of a pair meet at 23.281 deg off flat across the seam (float); the seam and the two outer parallel sides are parallel (exact: each is a parallel side of a trapezoid that has the seam as its other one)
+PASS phi^3 TQP: 90 four-sided faces: {'rhombus': 30, 'isosceles trapezoid': 60}
+PASS phi^3 TQP: 60 isosceles trapezoids, all with the same sides: parallel sides^2 243/82+4455/3362r5 and 656023123620/281686009081+293246544240/281686009081r5 (2.4344, 2.1580), legs^2 207199557/7137404968+91763199/7137404968r5 (0.2404), angles [54.89, 125.11], height 0.1966
+PASS phi^3 TQP: 60 edges shared by two trapezoids ({'shorter parallel side': 0, 'longer parallel side': 0, 'leg': 60}); each trapezoid meets [2] others; 12 groups of [5] trapezoids
+PASS phi^4 TQHD: 60 four-sided faces: {'isosceles trapezoid': 60}
+PASS phi^4 TQHD: 60 isosceles trapezoids, all with the same sides: parallel sides^2 68283/13448+30537/13448r5 and 1782947822193009/443053061245205+159469978162212/88610612249041r5 (3.1867, 2.8370), legs^2 29955578139/632951704040+13363604073/632951704040r5 (0.3075), angles [55.34, 124.66], height 0.2529
+PASS phi^4 TQHD: 60 edges shared by two trapezoids ({'shorter parallel side': 0, 'longer parallel side': 0, 'leg': 60}); each trapezoid meets [2] others; 12 groups of [5] trapezoids

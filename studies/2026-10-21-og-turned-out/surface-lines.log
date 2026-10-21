@@ -1,0 +1,12 @@
+PASS axes from the 60 rotations: [(2, 15), (3, 10), (5, 6)] (fold, number)
+PASS ID: 60 edges; straight runs 0 ; 15 edge directions, family sizes [(4, 15)], along axes (fold: families; 0 = none) {'2': 15}; central belts 6 [(10, 6)]
+PASS RT: 60 edges; straight runs 0 ; 6 edge directions, family sizes [(10, 6)], along axes (fold: families; 0 = none) {'5': 6}; central belts 0 
+PASS GTI: 90 edges; straight runs 0 ; 15 edge directions, family sizes [(6, 15)], along axes (fold: families; 0 = none) {'2': 15}; central belts 0 
+PASS FPD: 90 edges; straight runs 0 ; 45 edge directions, family sizes [(2, 45)], along axes (fold: families; 0 = none) {'0': 30, '2': 15}; central belts 0 
+PASS OG: 180 edges; straight runs 0 ; 60 edge directions, family sizes [(2, 30), (4, 30)], along axes (fold: families; 0 = none) {'0': 60}; central belts 0 
+PASS TPH: 210 edges; straight runs 0 ; 75 edge directions, family sizes [(2, 60), (6, 15)], along axes (fold: families; 0 = none) {'0': 60, '2': 15}; central belts 0 
+PASS TQH: each two-fold family holds two seams with opposite midpoints: the two ribbons at the two ends of one two-fold axis
+PASS TQH: the 15 edge families along the two-fold axes are exactly the trapezoids' parallel sides (90 edges: 30 seams + 60 outer sides), 6 per family: the two ribbons at the ends of one two-fold axis, 3 lines each, all along a second two-fold axis
+PASS TQH: 270 edges; straight runs 0 ; 75 edge directions, family sizes [(2, 30), (4, 30), (6, 15)], along axes (fold: families; 0 = none) {'0': 60, '2': 15}; central belts 0 
+PASS TQP: 300 edges; straight runs 0 ; 75 edge directions, family sizes [(2, 30), (4, 30), (8, 15)], along axes (fold: families; 0 = none) {'0': 60, '2': 15}; central belts 0 
+PASS TQHD: 360 edges; straight runs 0 ; 105 edge directions, family sizes [(2, 60), (4, 30), (8, 15)], along axes (fold: families; 0 = none) {'0': 90, '2': 15}; central belts 0 

@@ -1,0 +1,28 @@
+PASS T(FPD) = (35 - 15 sqrt5) ID: the UP stations close (as in #38)
+PASS ID: 30 corners, 32 faces, 60 edges, closed (Euler)
+PASS ID: 20 equilateral triangles (apart, each on a three-fold axis); 12 regular pentagons (apart, each on a five-fold axis)
+PASS ID: edges between kinds (kind numbers in the order above, from 0): 0-1: 60
+PASS RT: 32 corners, 30 faces, 60 edges, closed (Euler)
+PASS RT: 30 rhombi (all joined edge to edge)
+PASS RT: edges between kinds (kind numbers in the order above, from 0): 0-0: 60
+PASS GTI: 60 corners, 32 faces, 90 edges, closed (Euler)
+PASS GTI: 12 regular pentagons (apart, each on a five-fold axis); 20 hexagons (all joined edge to edge)
+PASS GTI: edges between kinds (kind numbers in the order above, from 0): 0-1: 60, 1-1: 30
+PASS FPD: 32 corners, 60 faces, 90 edges, closed (Euler)
+PASS FPD: 60 isosceles triangles (all joined edge to edge)
+PASS FPD: edges between kinds (kind numbers in the order above, from 0): 0-0: 90
+PASS OG: 102 corners, 80 faces, 180 edges, closed (Euler)
+PASS OG: 60 kites (12 groups of 5 joined edge to edge, each on a five-fold axis); 20 regular hexagons (apart, each on a three-fold axis)
+PASS OG: edges between kinds (kind numbers in the order above, from 0): 0-0: 60, 0-1: 120
+PASS TPH: 80 corners, 132 faces, 210 edges, closed (Euler)
+PASS TPH: 60 isosceles triangles (apart, each on no axis); 60 isosceles triangles (30 groups of 2 joined edge to edge, each on a two-fold axis); 12 regular pentagons (apart, each on a five-fold axis)
+PASS TPH: edges between kinds (kind numbers in the order above, from 0): 0-1: 120, 0-2: 60, 1-1: 30
+PASS TQH: 132 corners, 140 faces, 270 edges, closed (Euler)
+PASS TQH: 60 isosceles triangles (12 groups of 5 joined edge to edge, each on a five-fold axis); 60 isosceles trapezoids (30 groups of 2 joined edge to edge, each on a two-fold axis); 20 regular hexagons (apart, each on a three-fold axis)
+PASS TQH: edges between kinds (kind numbers in the order above, from 0): 0-0: 60, 0-1: 60, 1-1: 30, 1-2: 120
+PASS TQP: 140 corners, 162 faces, 300 edges, closed (Euler)
+PASS TQP: 60 isosceles triangles (apart, each on no axis); 30 rhombi (apart, each on a two-fold axis); 60 isosceles trapezoids (12 groups of 5 joined edge to edge, each on a five-fold axis); 12 regular pentagons (apart, each on a five-fold axis)
+PASS TQP: edges between kinds (kind numbers in the order above, from 0): 0-1: 120, 0-2: 60, 2-2: 60, 2-3: 60
+PASS TQHD: 162 corners, 200 faces, 360 edges, closed (Euler)
+PASS TQHD: 60 isosceles triangles (apart, each on no axis); 60 isosceles triangles (12 groups of 5 joined edge to edge, each on a five-fold axis); 20 regular hexagons (apart, each on a three-fold axis); 60 isosceles trapezoids (12 groups of 5 joined edge to edge, each on a five-fold axis)
+PASS TQHD: edges between kinds (kind numbers in the order above, from 0): 0-2: 120, 0-3: 60, 1-1: 60, 1-3: 60, 3-3: 60
