@@ -21,3 +21,9 @@ Spires shortened before flipping: tip = t x foot point. t = phi (spire height = 
   step and levels off, so the ratio -> t). t = phi^2: 2.46 ... 2.58 -> phi^2.
 - With Fibonacci shells 1,1,2,3,5 the shell boundaries sit at phi^0, phi^1, phi^2, phi^4, phi^7, phi^12 (times the downward family's
   own shrink): golden scale and Fibonacci rhythm together. Outer radius at 12 beats: very roughly 200-250 x the core (estimate).
+
+## Exact (`golden_exact.py`, `golden-exact.json`, `golden-exact.log`) and figure (`golden_figs.py`, `golden_compose.py`)
+Exact in Q(sqrt5): all five solids fully symmetric; each holds the one before; corners = flipped tips exactly. Shells 1,1,2 beats:
+80 towers (60 on kites + 20 on hexagons), 132 (120 on triangles in TWO shapes, 60+60, + 12 on pentagons), 140 (60 tri + 60 quad +
+20 hex); every shell sums to its gap exactly. The one FAIL line in the log is only the "one shape per kind" test for shell 2 (TPH
+has two triangle kinds), not a geometry failure. Figure figures/og-turned-out.jpg.

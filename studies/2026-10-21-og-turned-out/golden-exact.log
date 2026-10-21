@@ -1,0 +1,19 @@
+PASS OG: 102 corners, radii [1.618034, 1.687285], full symmetry
+PASS phi TPH: 80 corners, radii [2.445695, 2.564186], full symmetry
+PASS OG lies inside phi TPH exactly (corners outside 0)
+PASS phi TPH corners = the flipped spire tips (phi x foot points) exactly
+PASS phi^2 TQH: 132 corners, radii [3.896825, 3.933014], full symmetry
+PASS phi TPH lies inside phi^2 TQH exactly (corners outside 0)
+PASS phi^2 TQH corners = the flipped spire tips (phi x foot points) exactly
+PASS phi^3 TQP: 140 corners, radii [6.003187, 6.032557, 6.324828], full symmetry
+PASS phi^2 TQH lies inside phi^3 TQP exactly (corners outside 0)
+PASS phi^3 TQP corners = the flipped spire tips (phi x foot points) exactly
+PASS phi^4 TQHD: 162 corners, radii [9.248108, 9.555175, 9.560121], full symmetry
+PASS phi^3 TQP lies inside phi^4 TQHD exactly (corners outside 0)
+PASS phi^4 TQHD corners = the flipped spire tips (phi x foot points) exactly
+{"shell": "OG -> phi TPH (1 beat)", "pieces": {"on 4-gon": 60, "on 6-gon": 20}, "exact_volumes": {"on 4-gon": ["4502135449/26721628386+1806886766/22268023655r5"], "on 6-gon": ["47699/78916+71747/236748r5"]}, "one_volume_per_kind": true, "one_symmetry_orbit_per_kind": {"on 4-gon": true, "on 6-gon": true}, "sum_equals_gap_exactly": true, "gap": "546182195/24605551+806786761/73816653r5"}
+PASS shell OG -> phi TPH: towers {'on 4-gon': 60, 'on 6-gon': 20}, each kind one shape, adding up to the shell exactly
+{"shell": "phi TPH -> phi^2 TQH (1 beat)", "pieces": {"on 3-gon": 120, "on 5-gon": 12}, "exact_volumes": {"on 3-gon": ["35228108721651/70034637096728+31382065931241/140069274193456r5", "836150731910776569/1681391567418245824+372372465131565969/1681391567418245824r5"], "on 5-gon": ["155057340632535/83098620544078+69188768388063/83098620544078r5"]}, "one_volume_per_kind": false, "one_symmetry_orbit_per_kind": {"on 3-gon": false, "on 5-gon": true}, "sum_equals_gap_exactly": true, "gap": "117687272516505/1428075099344+52441972058493/1428075099344r5"}
+FAIL shell phi TPH -> phi^2 TQH: towers {'on 3-gon': 120, 'on 5-gon': 12}, each kind one shape, adding up to the shell exactly
+{"shell": "phi^2 TQH -> phi^4 TQHD (2 beats)", "pieces": {"on 3-gon": 60, "on 4-gon": 60, "on 6-gon": 20}, "exact_volumes": {"on 3-gon": ["55948950106928134975824549692139/3080795907575378368448629742480+50042572922662767214883765298909/6161591815150756736897259484960r5"], "on 4-gon": ["176657667363/26203212832+79003890513/26203212832r5"], "on 6-gon": ["1923507/551368+215055/137842r5"]}, "one_volume_per_kind": true, "one_symmetry_orbit_per_kind": {"on 3-gon": true, "on 4-gon": true, "on 6-gon": true}, "sum_equals_gap_exactly": true, "gap": "4420278329082477297780207410091/2826418263830622356374889672+988409217235034116154627744229/1413209131915311178187444836r5"}
+PASS shell phi^2 TQH -> phi^4 TQHD: towers {'on 3-gon': 60, 'on 4-gon': 60, 'on 6-gon': 20}, each kind one shape, adding up to the shell exactly
