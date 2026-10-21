@@ -11,13 +11,13 @@ scenes = []; add = lambda t_, s_, parts: scenes.append({'title': t_, 'sub': s_, 
 S0 = sphere_piece((1, 0, 0)); F0 = filler(np.array([(0, 0, 0), (1, 1, 0), (1, 0, 1), (0, 1, 1)], float))
 add('The sphere', '8 dimples', [part(S0, PURPLE)])
 add('The sphere, turned', 'the other side', [part(S0.rotate([0, 0, 90]), PURPLE)])
-add('The small rounded tetrahedron', '4 bumps, fills between the spheres', [part(F0, GOLD)])
-add('The rounded tetrahedron, turned', 'its hollows hold the spheres', [part(F0.rotate([0, 0, 180]), GOLD)])
+add('The filler', 'three-armed, fills between the spheres', [part(F0, GOLD)])
+add('The filler, turned', 'its hollows hold the spheres', [part(F0.rotate([0, 0, 180]), GOLD)])
 cen = np.array([1.0, 0, 0]); ps = [part(S0, PURPLE)]
 for sg in itertools.product((1, -1), repeat=3):
     sgv = np.array(sg, float); V = [cen + sgv[j] * np.eye(3)[j] for j in range(3)] + [cen + sgv]
     ps.append(part(filler(np.array(V)).translate(list(sgv * 0.5)), GOLD))
-add('One sphere, eight rounded tetrahedra', 'drawn apart', ps)
+add('One sphere, eight fillers', 'drawn apart', ps)
 blk = [part(filler(V).translate(list((b_ - 0.5) * 0.3)), GOLD) for b_, V in tets_in(range(0, 2))]
 for p_ in [(1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 1, 1), (2, 1, 0), (2, 0, 1), (1, 2, 0), (0, 2, 1), (1, 0, 2), (0, 1, 2), (2, 1, 2), (1, 2, 2), (2, 2, 1)]:
     blk.append(part(sphere_piece(p_).translate(list((np.array(p_, float) - 1) * 0.3)), PURPLE))

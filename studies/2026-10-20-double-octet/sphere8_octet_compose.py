@@ -20,5 +20,5 @@ def sheet(idx, cols, path, title=None, sub=None, cell=520, gap=36, names=None, s
             d.text((x + cell / 2 - d.textlength(txt, font=fo) / 2, yy), txt, font=fo, fill=col)
     m = 'DICTO · dictospheres.com'; d.text((W - 80 * K - d.textlength(m, font=f(24 * K)), Hh - 56 * K), m, font=f(24 * K), fill=MUTE)
     im.save(os.path.join(OUT, path), quality=92); print(path, im.size)
-sheet([0, 1, 2, 3], 4, 'sphere8-octet-a.jpg', 'DICTO sphere set', 'Spheres with 8 dimples and small rounded tetrahedra fill space together · DICTO 2026', cell=440)
+sheet([0, 1, 2, 3], 4, 'sphere8-octet-a.jpg', 'DICTO sphere set', 'Spheres with 8 dimples and the three-armed filler between them fill space together · DICTO 2026', cell=440)
 sheet([4, 5], 2, 'sphere8-octet-b.jpg', cell=600)
