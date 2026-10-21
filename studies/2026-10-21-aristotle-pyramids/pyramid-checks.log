@@ -57,7 +57,8 @@ PASS the sharp corner piece is the icosahedron's face pyramid (Cleo-Icos)
 PASS volumes: Cleo-Icos 1/2 + 1/6*sqrt5 (0.872678), Antonius 4 x that, rhombohedron 6 x that
 PASS Antonius: 6 corners, 8 faces, 12 edges (a trigonal antiprism)
 PASS Antonius's 6 triangle edges: angle pi - theta_I/2 = 110.91 deg; with the Cleo-Icos's theta_I/2 they make a flat 180 deg
-PASS Antonius's 6 side edges: the rhombohedron's 72 and 108 deg, rational multiples of pi (h = 0)
+PASS Antonius's 6 zigzag side edges: every one 108 deg exactly (cos = -(sqrt5 - 1)/4), a rational multiple of pi (h = 0); Antonius's dihedral angles are {108 deg, 110.91 deg}
+PASS golden rhombohedron: 72 deg exactly along the 6 edges at its sharp tips (in the Cleo-Icos), 108 deg along the other 6
 PASS h (h(theta_I) = 1): Cleo-Icos 3 edges x 1/2, Antonius 6 edges x (-1/2) of the same length: Antonius = -2 x Cleo-Icos, balanced two to one
 
 ALL PASS

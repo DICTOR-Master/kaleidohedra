@@ -190,6 +190,9 @@ for (a, b), (n1, n2) in EA.items():
 # triangle edges: angle pi - thI/2, i.e. cos^2 = (1 + cos thI)/2 and cos < 0
 chk(len(tri) == 6 and all(d == (qm(qa(ONE, ci), qr(Fr(1, 2))), -1) for d in tri), f'Antonius\'s 6 triangle edges: angle pi - theta_I/2 = {180 - math.degrees(math.acos(-5 ** .5 / 3)) / 2:.2f} deg; with the Cleo-Icos\'s theta_I/2 they make a flat 180 deg')
 c72 = COS2PI[5]
-chk(len(lat) == 6 and all(d in [(qm(c72, c72), 1), (qm(c72, c72), -1)] for d in lat), 'Antonius\'s 6 side edges: the rhombohedron\'s 72 and 108 deg, rational multiples of pi (h = 0)')
+chk(len(lat) == 6 and all(d == (qm(c72, c72), -1) for d in lat), 'Antonius\'s 6 zigzag side edges: every one 108 deg exactly (cos = -(sqrt5 - 1)/4), a rational multiple of pi (h = 0); Antonius\'s dihedral angles are {108 deg, 110.91 deg}')
+# the rhombohedron itself: 72 deg along the 6 edges at its two sharp tips, 108 deg along the 6 zigzag edges (which Antonius keeps)
+FR, ER = hull(list(R.values())); tip = [e for e in ER if any(sum(next(p for p in R if R[p] == list(R.values())[i])) in (0, 3) for i in e)]
+chk(len(ER) == 12 and len(tip) == 6 and all(dihedral(*ER[e]) == (qm(c72, c72), 1) for e in tip) and all(dihedral(*ER[e]) == (qm(c72, c72), -1) for e in ER if e not in tip), 'golden rhombohedron: 72 deg exactly along the 6 edges at its sharp tips (in the Cleo-Icos), 108 deg along the other 6')
 chk(PYR['icosahedron']['base'][3] * 3 * -2 == 6 * (-Fr(1, 2)), 'h (h(theta_I) = 1): Cleo-Icos 3 edges x 1/2, Antonius 6 edges x (-1/2) of the same length: Antonius = -2 x Cleo-Icos, balanced two to one')
 print('\nALL PASS' if bad == 0 else f'\n{bad} FAIL')
