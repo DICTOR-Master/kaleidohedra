@@ -34,3 +34,10 @@ OG up/down families). Checked on the boundary solids (float on exact corners): t
 all angles 120°, short/long = 0.4271 = (3 sqrt5 - 5)/4 (FUJI's base: 1/phi = 0.618). In the OG families none: OG, PHE (20),
 DPHP, TQH, TQHD hexagons are regular; PHE's other 60 hexagons are irregular (sides 0.22, 0.22, 0.32, 0.78, 0.78, 1 by ratio).
 Tower and piece faces not yet checked.
+
+## New solids D5–D11 and their names (DICTO 2026-10-21: "faces + face count")
+`new_solids_faces.py`, `new-solids-faces.log` (true hull of the exact points; face kinds by float tests, exact check to do):
+DICTO TQP-252 (D5, 200 corners), DICTO TQ-320 (D6, 192; 20 regular triangles), DICTO TQP-402 (D7, 260), DICTO TQ-500 (D8, 312;
+20 regular triangles), DICTO TQD-732 (D9, 500; 12 decagons), DICTO TQHD-662 (D10, 480; 20 hexagons + 12 decagons; not the #39
+TQHD, which has 200 faces), DICTO TQP-672 (D11, 470). Letters = face kinds (Triangle, Quadrilateral, Pentagon, Hexagon, Decagon),
+number = faces. The turned-out solids are these scaled by phi^k.
