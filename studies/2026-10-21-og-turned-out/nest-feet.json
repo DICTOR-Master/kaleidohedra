@@ -1,0 +1,84 @@
+{
+ "mark": "DICTO OG turned out: foot points and nesting, exact, 2026-10-21 \u00b7 DICTO \u00b7 dictospheres.com",
+ "feet": {
+  "OG": {
+   "4-point face, foot inside": 60,
+   "6-point face, foot inside": 20
+  },
+  "TPH": {
+   "3-point face, foot inside": 120,
+   "5-point face, foot inside": 12
+  },
+  "TQH": {
+   "3-point face, foot inside": 60,
+   "4-point face, foot outside": 60,
+   "6-point face, foot inside": 20
+  },
+  "TQP": {
+   "3-point face, foot on the boundary": 60,
+   "4-point face, foot inside": 90,
+   "5-point face, foot inside": 12
+  },
+  "TQHD": {
+   "3-point face, foot inside": 120,
+   "6-point face, foot inside": 20,
+   "4-point face, foot outside": 60
+  },
+  "down 5": {
+   "3-point face, foot inside": 120,
+   "4-point face, foot outside": 60,
+   "4-point face, foot inside": 60,
+   "5-point face, foot inside": 12
+  },
+  "down 6": {
+   "3-point face, foot inside": 80,
+   "3-point face, foot outside": 180,
+   "4-point face, foot inside": 60
+  },
+  "down 7": {
+   "3-point face, foot outside": 240,
+   "3-point face, foot inside": 60,
+   "4-point face, foot inside": 90,
+   "5-point face, foot inside": 12
+  },
+  "down 8": {
+   "3-point face, foot inside": 260,
+   "3-point face, foot outside": 120,
+   "4-point face, foot inside": 120
+  }
+ },
+ "nest": {
+  "TPH": {
+   "turned_out_nested": true,
+   "downward_nested": true
+  },
+  "TQH": {
+   "turned_out_nested": true,
+   "downward_nested": true
+  },
+  "TQP": {
+   "turned_out_nested": true,
+   "downward_nested": false
+  },
+  "TQHD": {
+   "turned_out_nested": true,
+   "downward_nested": true
+  },
+  "down 5": {
+   "turned_out_nested": true,
+   "downward_nested": false
+  },
+  "down 6": {
+   "turned_out_nested": true,
+   "downward_nested": false
+  },
+  "down 7": {
+   "turned_out_nested": true,
+   "downward_nested": false
+  },
+  "down 8": {
+   "turned_out_nested": true,
+   "downward_nested": false
+  }
+ }
+}

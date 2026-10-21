@@ -1,0 +1,14 @@
+PASS OG: 102 foot points, hull 102 corners, 80 faces; axis word 5-fold: corner, 3-fold: face, 2-fold: corner
+PASS TPH: 80 foot points, hull 80 corners, 132 faces; axis word 5-fold: face, 3-fold: corner, 2-fold: edge
+PASS TPH (80 corners): at the two-fold axis edge meet isosceles triangle + isosceles triangle (congruent): not a ribbon (the axis edge is their -; 0 faces of that kind)
+PASS TQH: 132 foot points, hull 132 corners, 140 faces; axis word 5-fold: corner, 3-fold: face, 2-fold: edge
+PASS TQH (132 corners): at the two-fold axis edge meet isosceles trapezoid + isosceles trapezoid (congruent): a ribbon as on the TQH (60 congruent isosceles trapezoids in 30 pairs across their shorter parallel sides)
+PASS TQP: 140 foot points, hull 140 corners, 162 faces; axis word 5-fold: face, 3-fold: corner, 2-fold: face
+PASS TQHD: 162 foot points, hull 162 corners, 200 faces; axis word 5-fold: corner, 3-fold: face, 2-fold: corner
+PASS down 5: 200 foot points, hull 200 corners, 252 faces; axis word 5-fold: face, 3-fold: corner, 2-fold: edge
+PASS down 5 (200 corners): at the two-fold axis edge meet isosceles triangle + isosceles triangle (congruent): not a ribbon (the axis edge is their -; 0 faces of that kind)
+PASS down 6: 252 foot points, hull 192 corners, 320 faces; axis word 5-fold: corner, 3-fold: face, 2-fold: edge
+PASS down 6 (192 corners): at the two-fold axis edge meet isosceles trapezoid + isosceles trapezoid (congruent): not a ribbon (the axis edge is their longer parallel side; 60 faces of that kind)
+PASS down 7: 320 foot points, hull 260 corners, 402 faces; axis word 5-fold: face, 3-fold: corner, 2-fold: face
+PASS down 8: 402 foot points, hull 312 corners, 500 faces; axis word 5-fold: corner, 3-fold: face, 2-fold: edge
+PASS down 8 (312 corners): at the two-fold axis edge meet isosceles trapezoid + isosceles trapezoid (congruent): a ribbon as on the TQH (60 congruent isosceles trapezoids in 30 pairs across their shorter parallel sides)

@@ -1,0 +1,17 @@
+PASS (a) OG: 60 x 4-point face, foot inside; 20 x 6-point face, foot inside -> P(OG) inside OG
+PASS (a) TPH: 120 x 3-point face, foot inside; 12 x 5-point face, foot inside -> P(TPH) inside TPH
+PASS (b) phi^0 OG lies inside phi^1 TPH (turned out, exact); downward: TPH inside OG: True
+PASS (a) TQH: 60 x 3-point face, foot inside; 60 x 4-point face, foot outside; 20 x 6-point face, foot inside -> P(TQH) NOT inside TQH
+PASS (b) phi^1 TPH lies inside phi^2 TQH (turned out, exact); downward: TQH inside TPH: True
+PASS (a) TQP: 60 x 3-point face, foot on the boundary; 90 x 4-point face, foot inside; 12 x 5-point face, foot inside -> P(TQP) inside TQP
+PASS (b) phi^2 TQH lies inside phi^3 TQP (turned out, exact); downward: TQP inside TQH: False
+PASS (a) TQHD: 120 x 3-point face, foot inside; 60 x 4-point face, foot outside; 20 x 6-point face, foot inside -> P(TQHD) NOT inside TQHD
+PASS (b) phi^3 TQP lies inside phi^4 TQHD (turned out, exact); downward: TQHD inside TQP: True
+PASS (a) down 5: 120 x 3-point face, foot inside; 60 x 4-point face, foot inside; 60 x 4-point face, foot outside; 12 x 5-point face, foot inside -> P(down 5) NOT inside down 5
+PASS (b) phi^4 TQHD lies inside phi^5 down 5 (turned out, exact); downward: down 5 inside TQHD: False
+PASS (a) down 6: 80 x 3-point face, foot inside; 180 x 3-point face, foot outside; 60 x 4-point face, foot inside -> P(down 6) NOT inside down 6
+PASS (b) phi^5 down 5 lies inside phi^6 down 6 (turned out, exact); downward: down 6 inside down 5: False
+PASS (a) down 7: 60 x 3-point face, foot inside; 240 x 3-point face, foot outside; 90 x 4-point face, foot inside; 12 x 5-point face, foot inside -> P(down 7) NOT inside down 7
+PASS (b) phi^6 down 6 lies inside phi^7 down 7 (turned out, exact); downward: down 7 inside down 6: False
+PASS (a) down 8: 260 x 3-point face, foot inside; 120 x 3-point face, foot outside; 120 x 4-point face, foot inside -> P(down 8) NOT inside down 8
+PASS (b) phi^7 down 7 lies inside phi^8 down 8 (turned out, exact); downward: down 8 inside down 7: False

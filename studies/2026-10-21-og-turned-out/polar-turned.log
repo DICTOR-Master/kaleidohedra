@@ -1,0 +1,13 @@
+PASS polar(OG) = the DICTO Hecatodihedron: 80 corners, 102 faces, kinds 60 3-gons, 30 4-gons, 12 5-gons
+PASS polar(S_0) = phi^-0 T^0(Hecatodihedron) exactly: 80 corners, 102 faces (60 3-gons, 30 4-gons, 12 5-gons)
+PASS polar(S_1) = phi^-1 T^1(Hecatodihedron) exactly: 132 corners, 80 faces (60 5-gons, 20 6-gons)
+PASS polar(S_1) lies inside polar(S_0) (exact)
+PASS polar(S_2) = phi^-2 T^2(Hecatodihedron) exactly: 140 corners, 132 faces (60 3-gons, 12 5-gons, 60 5-gons)
+PASS polar(S_2) lies inside polar(S_1) (exact)
+PASS polar(S_3) = phi^-3 T^3(Hecatodihedron) exactly: 162 corners, 140 faces (60 3-gons, 60 5-gons, 20 6-gons)
+PASS polar(S_3) lies inside polar(S_2) (exact)
+PASS polar(S_4) = phi^-4 T^4(Hecatodihedron) exactly: 200 corners, 162 faces (30 4-gons, 60 4-gons, 60 5-gons, 12 5-gons)
+PASS polar(S_4) lies inside polar(S_3) (exact)
+PASS inward shell polar(S_1) -> polar(S_0) (1 beat): 80 towers in 2 shapes (60 on 5-gons 3.760911, 20 on 6-gons 0.691479), adding up to the shell exactly (239.4842, phi^4 frame)
+PASS inward shell polar(S_2) -> polar(S_1) (1 beat): 132 towers in 3 shapes (60 on 3-gons 0.370515, 60 on 5-gons 0.427719, 12 on 5-gons 1.121247), adding up to the shell exactly (61.3490, phi^4 frame)
+PASS inward shell polar(S_4) -> polar(S_2) (2 beats): 162 towers in 4 shapes (60 on 4-gons 0.083893, 30 on 4-gons 0.259256, 12 on 5-gons 0.000008, 60 on 5-gons 0.152786), adding up to the shell exactly (21.9785, phi^4 frame)
