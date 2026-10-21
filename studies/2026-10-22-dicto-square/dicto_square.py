@@ -40,8 +40,20 @@ def align(u,v):   # rotation taking direction u to direction v
     u=np.array(u,float)/np.linalg.norm(u); v=np.array(v,float)/np.linalg.norm(v); ax=np.cross(u,v)
     return rot(ax,math.acos(np.clip(u@v,-1,1)))
 POSE={'D':G,'I':G,'C':rot((1,0,0),-0.5)@rot((0,1,0),0.62),
-      'T':align((1,1,1),(-0.18,0.32,0.93))@rot((1,1,1),0.0),     # a corner towards the viewer: three faces show
+      'T':None,     # a corner towards the viewer: three faces show
       'O':align((1,1,1),(0.3,0.38,0.875))@rot((1,1,1),0.2)}    # nearly face-on: a hexagonal outline
+# tetrahedron (DICTO): a corner towards the viewer, turned so its top edge lies level and the point is down,
+# like the bar and stem of the T
+def tet_pose():
+    B=align((1,1,1),(0.0,0.3,0.954)); Vt=np.array(S['T'],float)@B.T
+    best=None
+    for t in np.linspace(0,2*np.pi,7201):
+        P=(Vt@rot((0,0,1),t).T)[:,:2]; o=np.argsort(P[:,1])          # lowest ... highest
+        top=P[o[-2:]]; slope=abs(top[0,1]-top[1,1]); lowx=abs(P[o[0],0]-top[:,0].mean())
+        sc_=slope+0.3*lowx
+        if P[o[0],1]<min(top[:,1])-0.5 and (best is None or sc_<best[0]): best=(sc_,t)
+    return rot((0,0,1),best[1])@B
+POSE['T']=tet_pose()
 GROUND=(20,15,11); GOLD=(214,168,74)
 # Plato's elements (Timaeus): fire tetrahedron, air octahedron, water icosahedron, earth cube; the dodecahedron for the whole (aether)
 TONE={'T':(205,62,40),'O':(232,200,82),'I':(58,112,205),'C':(72,142,72),'D':(138,92,196)}
