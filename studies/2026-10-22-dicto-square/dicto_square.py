@@ -60,11 +60,15 @@ for i in range(5):
     for j in range(5):
         k=M[i][j]; V,F=SOL[k]; R=POSE[k]
         pos=np.array([j-2,2-i,0.0])
-        Vw=(V@R.T)*0.44+pos; Vv=Vw@view.T
+        Vb=(V@R.T)*0.44; Fv=[(n@R.T@view.T,idx) for n,idx in F]
+        def pc(P):   # area and centroid of a projected polygon
+            x,y=P[:,0],P[:,1]; c=x*np.roll(y,-1)-np.roll(x,-1)*y; A=c.sum()/2
+            return abs(A), np.array([((x+np.roll(x,-1))*c).sum(),((y+np.roll(y,-1))*c).sum()])/(6*A)
+        ac=[pc((Vb@view.T)[idx][:,:2]) for n,idx in Fv if n[2]>1e-9]
+        off=sum(a*c for a,c in ac)/sum(a for a,c in ac)          # centre of the visible outline's area
+        Vw=Vb-np.array([off[0],off[1],0])+pos; Vv=Vw@view.T
         items.append((Vv[:,2].mean(),k,Vv,[(n@R.T@view.T,idx) for n,idx in F]))
-CEN={}
 for _,k,Vv,F in sorted(items,key=lambda t:t[0]):
-    vis=[Vv[idx][:,:2].mean(0) for n,idx in F if n[2]>1e-9]; CEN[tuple(np.round(Vv.mean(0)[:2],3))]=np.mean(vis,0)   # letter on the visible body
     for n,idx in sorted(F,key=lambda f:Vv[f[1]][:,2].mean()):
         if n[2]<=1e-9: continue
         b=0.45+0.55*max(0,n@light)
@@ -95,6 +99,6 @@ def carved(ch):
 CARVE={ch:carved(ch) for ch in 'DICTO'}
 for i in range(5):
     for j in range(5):
-        p=CEN[tuple(np.round(np.array([j-2,2-i,0.0])[:2],3))]; tile,mask,box=CARVE[M[i][j]]
+        p=np.array([j-2,2-i,0.0])@view.T; tile,mask,box=CARVE[M[i][j]]
         img.paste(tile,(int(ox+p[0]*sc-box/2),int(oy-p[1]*sc-box/2)),mask)
 img=img.resize((N,N),Image.LANCZOS); img.save('dicto-square.png'); print('ok')
