@@ -37,7 +37,7 @@ chk('4 x alpha/2 + 4 x (pi - alpha)/2 = 2 pi' in L and inn('4 × α/2 + 4 × (π
 chk(inn('(1, 1, 0), (1, 0, 1), (0, 1, 1)'), 'lattice vectors')
 chk('3 x (+1/2) + 3 x (-1/2) = 0' in L and inn('3 × a × ½') and inn('3 × b × (−½)'), 'Proposition 2 weights')
 chk('octet patch (112 octahedron and 32 tetrahedron pyramids): every face pyramid lies in a slab' in L and inn('112 octahedron and 32 tetrahedron pyramids') and inn('k ≤ z ≤ k + 1'), 'slabs: {C, T, O} fills')
-chk(inn('Main theorem.') and src.index('<h2>1. The theorem') < src.index('<h2>2. Proof') < src.index('<h2>3. Corollaries') < src.index('<h2>4. Conjectures') < src.index('<h2>7. Prior art') < src.index('Appendix'), 'theorem-first order')
+chk(inn('Main theorem.') and src.index('<h2>1. The theorem') < src.index('<h2>2. Proof') < src.index('<h2>3. Corollaries') < src.index('<h2>4. Conjectures') < src.index('<h2>7. Conclusion') < src.index('<h2>8. Prior art') < src.index('Appendix'), 'theorem-first order')
 chk(inn('{C}, {T, O} or {C, T, O}') and inn('Proved in general') and inn('Proved for the cases built') and inn('Observed numerically'), 'statement and status classes')
 # 6. Cleo-Icos and Antonius (#20 and the log)
 f20 = rd('studies/2026-10-14-fuji-family/paper/paper.md')
