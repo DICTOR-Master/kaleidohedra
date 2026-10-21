@@ -1,0 +1,62 @@
+== 1. The solids' dihedral angles and the face pyramids' angles (exact)
+PASS cube: 6 faces, 12 edges, every dihedral angle has cos^2 = 0, cos sign +0 (= the classical value)
+PASS cube pyramid: 4 base edges, angle beta with cos^2 beta = (1 + cos theta)/2 = 1/2, beta acute: beta = theta/2 = 45.0000 deg
+PASS cube pyramid: 4 side edges, angle 360/3 = 120 deg exactly (cos^2 = 1/4, sign -1)
+PASS tetrahedron: 4 faces, 6 edges, every dihedral angle has cos^2 = 1/9, cos sign +1 (= the classical value)
+PASS tetrahedron pyramid: 3 base edges, angle beta with cos^2 beta = (1 + cos theta)/2 = 2/3, beta acute: beta = theta/2 = 35.2644 deg
+PASS tetrahedron pyramid: 3 side edges, angle 360/3 = 120 deg exactly (cos^2 = 1/4, sign -1)
+PASS octahedron: 8 faces, 12 edges, every dihedral angle has cos^2 = 1/9, cos sign -1 (= the classical value)
+PASS octahedron pyramid: 3 base edges, angle beta with cos^2 beta = (1 + cos theta)/2 = 1/3, beta acute: beta = theta/2 = 54.7356 deg
+PASS octahedron pyramid: 3 side edges, angle 360/4 = 90 deg exactly (cos^2 = 0, sign +0)
+PASS dodecahedron: 12 faces, 30 edges, every dihedral angle has cos^2 = 1/5, cos sign -1 (= the classical value)
+PASS dodecahedron pyramid: 5 base edges, angle beta with cos^2 beta = (1 + cos theta)/2 = 1/2 + -1/10*sqrt5, beta acute: beta = theta/2 = 58.2825 deg
+PASS dodecahedron pyramid: 5 side edges, angle 360/3 = 120 deg exactly (cos^2 = 1/4, sign -1)
+PASS icosahedron: 20 faces, 30 edges, every dihedral angle has cos^2 = 5/9, cos sign -1 (= the classical value)
+PASS icosahedron pyramid: 3 base edges, angle beta with cos^2 beta = (1 + cos theta)/2 = 1/2 + -1/6*sqrt5, beta acute: beta = theta/2 = 69.0948 deg
+PASS icosahedron pyramid: 3 side edges, angle 360/5 = 72 deg exactly (cos^2 = 3/8 + -1/8*sqrt5, sign +1)
+
+== 2. Facts for the Conway-Radin-Sadun theorems (exact)
+PASS alpha: cos^2 = 1/9, tan^2 = 8 rational (a geodetic angle); tan = +sqrt(8)
+PASS alpha: tan is a rational multiple of sqrt2 (square-free part 2)
+PASS alpha: (2 cos)^2 = 4/9 is not an integer, so 2 cos is not an algebraic integer and alpha is not a rational multiple of pi
+PASS theta_D: cos^2 = 1/5, tan^2 = 4 rational (a geodetic angle); tan = -sqrt(4)
+PASS theta_D: tan is a rational multiple of sqrt1 (square-free part 1)
+PASS theta_D: (2 cos)^2 = 4/5 is not an integer, so 2 cos is not an algebraic integer and theta_D is not a rational multiple of pi
+PASS theta_I: cos^2 = 5/9, tan^2 = 4/5 rational (a geodetic angle); tan = -sqrt(4/5)
+PASS theta_I: tan is a rational multiple of sqrt5 (square-free part 5)
+PASS theta_I: (2 cos)^2 = 20/9 is not an integer, so 2 cos is not an algebraic integer and theta_I is not a rational multiple of pi
+PASS the three tangents lie in three different square classes (sqrt2, 1, sqrt5): by the Splitting Theorem pi, alpha, theta_D, theta_I are linearly independent over Q
+
+== 3. The counting map h on every set of face pyramids
+angles as (pi, alpha, theta_D, theta_I) coefficients:
+  cube          base edge ('1/4', '0', '0', '0')  side edge ('2/3', '0', '0', '0')
+  tetrahedron   base edge ('0', '1/2', '0', '0')  side edge ('2/3', '0', '0', '0')
+  octahedron    base edge ('1/2', '-1/2', '0', '0')  side edge ('1/2', '0', '0', '0')
+  dodecahedron  base edge ('0', '0', '1/2', '0')  side edge ('2/3', '0', '0', '0')
+  icosahedron   base edge ('0', '0', '0', '1/2')  side edge ('2/5', '0', '0', '0')
+PASS sets not excluded by h (of 31): [('cube',), ('tetrahedron', 'octahedron'), ('cube', 'tetrahedron', 'octahedron')]
+PASS with all five allowed, the dodecahedron and icosahedron pyramids (Cleo-Icos) are still excluded
+PASS ('tetrahedron',): the tetrahedron/octahedron pyramid is excluded without its partner
+PASS ('octahedron',): the tetrahedron/octahedron pyramid is excluded without its partner
+PASS ('cube', 'tetrahedron'): the tetrahedron/octahedron pyramid is excluded without its partner
+PASS ('cube', 'octahedron'): the tetrahedron/octahedron pyramid is excluded without its partner
+
+== 4. The octet cut into face pyramids (exact)
+PASS the middle of the 60-degree rhombohedron is a regular octahedron (6 corners, 12 edges, all edge^2 = 2)
+PASS a corner piece is a regular tetrahedron (edge^2 = 2)
+PASS a corner piece is a regular tetrahedron (edge^2 = 2)
+PASS volumes: octahedron 4/3 + 2 tetrahedra 1/3 = rhombohedron 2 (one lattice cell: the octet has 1 octahedron and 2 tetrahedra per cell)
+PASS cut from their centres: 8 octahedron pyramids and 8 tetrahedron pyramids per cell, equal numbers
+PASS round an octet edge (2 tetrahedra, 2 octahedra) the pyramids give 4 x alpha/2 + 4 x (pi - alpha)/2 = 2 pi
+PASS h-weighted base edges, one tetrahedron pyramid + one octahedron pyramid of the same edge: 3 x (+1/2) + 3 x (-1/2) = 0
+
+== 5. Cleo-Icos + Antonius + Cleo-Icos = the prolate golden rhombohedron (#20; exact)
+PASS the centre-to-corner lines of one face meet at arccos(1/sqrt5) = 63.43 deg, the golden rhombus angle
+PASS the sharp corner piece is the icosahedron's face pyramid (Cleo-Icos)
+PASS volumes: Cleo-Icos 1/2 + 1/6*sqrt5 (0.872678), Antonius 4 x that, rhombohedron 6 x that
+PASS Antonius: 6 corners, 8 faces, 12 edges (a trigonal antiprism)
+PASS Antonius's 6 triangle edges: angle pi - theta_I/2 = 110.91 deg; with the Cleo-Icos's theta_I/2 they make a flat 180 deg
+PASS Antonius's 6 side edges: the rhombohedron's 72 and 108 deg, rational multiples of pi (h = 0)
+PASS h (h(theta_I) = 1): Cleo-Icos 3 edges x 1/2, Antonius 6 edges x (-1/2) of the same length: Antonius = -2 x Cleo-Icos, balanced two to one
+
+ALL PASS

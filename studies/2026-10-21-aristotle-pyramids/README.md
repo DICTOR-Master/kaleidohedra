@@ -30,6 +30,13 @@ Take a rational-linear map h with h(π) = 0 and h(one irrational angle) = 1, h(o
 Reading for DICTO: if "the pyramid" is a face pyramid, Aristotle is right for the cube's (trivially) and the octet pair is the
 classical fix; the golden counterpart is Cleo-Icos + Antonius. Exact proof for alone/pairs among the five, given the cited theorem.
 
+Exact checks for paper #44 (`pyramid_checks.py`, `pyramid-checks.log`, 45 PASS): every angle identity in exact Q(sqrt5)
+arithmetic (via cos^2 and the sign of cos), the facts fed to the Conway-Radin-Sadun theorems (tan^2 = 8, 4, 4/5; (2 cos)^2 = 4/9,
+4/5, 20/9 not integers, so no angle is a rational multiple of pi), the h test over all 31 sets of face pyramids (only {cube},
+{tetrahedron, octahedron} and {cube, tetrahedron, octahedron} pass), the octet cell (octahedron 4/3 + 2 x 1/3 = 2; 8 + 8 pyramids)
+and Cleo-Icos + Antonius + Cleo-Icos (volumes 1 : 4 : 1; Antonius 110.91 deg at its triangle edges). Figures: `aristotle_figs.py`
+(viewer of 2026-10-19-five-fold-octet), `jewel-shots.mjs` on dicto-node, `aristotle_compose.py` -> figures/.
+
 DICTO · dictospheres.com
 
 Library (2026-10-21): Conway-Radin-Sadun 1999 now in the reference library (arXiv math-ph/9812019). Their Splitting Theorem: the

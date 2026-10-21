@@ -19,4 +19,11 @@ directions + Nelder-Mead refinement. At diameter 1:
   (Bezdek, Lángi, Naszódi, Papez 2007), Meissner polyhedra (Montejano, Roldán-Pensado 2017). Ball-polyhedra, Meissner polyhedra and Hynd 2023 (Reuleaux polyhedra) are now in the library (arXiv, 2026-10-21), Sallee link-only;
   add legal copies before any paper. The library search (Fedorov, Grünbaum, papers/, history/, shapes/) found nothing on these bodies.
 
+Checks for paper #45 (`reuleaux_checks.py`, `reuleaux-checks.log`, 45 PASS). Exact (Q(sqrt5)): diametric pairs (4, 3, 10, 6 against
+2m - 2 = 14, 10, 38, 22; the tetrahedron 6 = 6), each corner on exactly one other sphere (so not a Reuleaux polyhedron in Sallee's
+sense), corner heights >= -r along a face axis, (r/R)^2 shared by duals, the closed forms, and the tetrahedron's edge-midpoint width
+sqrt3 - sqrt2/2. Numerical: face-axis widths = widths.log maxima, volumes at diameter 1 (0.42216, 0.64940, 0.68764, 0.57188, 0.59679;
+the tetrahedron = Harbourne's formula quoted by Hynd 2023, to 1.1e-8), faces meet along arcs exactly along the solid's edges, fewest
+colours 4/2/3/3/4.
+
 DICTO · dictospheres.com
