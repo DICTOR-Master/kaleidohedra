@@ -346,7 +346,9 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       const strong = kitOn() && !view.bestFits;
       const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: strong ? 0.22 : 0.1, depthWrite: false, side: THREE.DoubleSide }));
       m.userData.poly = 'ghost'; m.userData.slot = i; m.userData.ownMat = true;
-      const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(edge, 3));
+      // Curved kit pieces (many small faces) outline only their creases, not every mesh edge (DICTO 2026-10-21).
+      let lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(edge, 3));
+      if (spec.faces.length > 200) { lg.dispose(); lg = new THREE.EdgesGeometry(g, 25); }
       out.push(m, new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: col, transparent: true, opacity: strong ? 0.6 : 0.2, depthWrite: false })));
       pickTargets.push(m);
     });
