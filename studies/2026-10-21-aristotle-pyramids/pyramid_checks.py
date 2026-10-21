@@ -154,6 +154,24 @@ ed = tuple(4 * PYR['tetrahedron']['base'][i] + 4 * PYR['octahedron']['base'][i] 
 chk(ed == (2, 0, 0, 0), 'round an octet edge (2 tetrahedra, 2 octahedra) the pyramids give 4 x alpha/2 + 4 x (pi - alpha)/2 = 2 pi')
 hb = PYR['tetrahedron']['n'] * PYR['tetrahedron']['base'][1] + PYR['octahedron']['n'] * PYR['octahedron']['base'][1]
 chk(hb == 0, f'h-weighted base edges, one tetrahedron pyramid + one octahedron pyramid of the same edge: 3 x (+1/2) + 3 x (-1/2) = {hb}')
+# the three kinds together: in the octet with octahedra centred at the integer points of odd coordinate sum (corners at +-1 along the
+# axes) and tetrahedra in the unit cubes (corners at the even-sum corners), every face pyramid lies in a slab k <= z <= k + 1, so each
+# plane z = k is made of pyramid faces: the octet's pyramids fill z <= 0 and the cube pyramids of unit cubes fill z >= 0
+E3 = [V(*[s if k == i else 0 for k in range(3)]) for i in range(3) for s in (1, -1)]
+slab_ok, nO, nT = True, 0, 0
+for c in itertools.product(range(-1, 2), repeat=3):
+    if sum(c) % 2 == 0: continue
+    cc = V(*c); Oct = [add(cc, e) for e in E3]
+    for f in hull(Oct)[0]:
+        zs = [Oct[i][2][0] for i in f] + [cc[2][0]]; nO += 1
+        slab_ok &= max(zs) - min(zs) <= 1
+for c in itertools.product(range(-1, 1), repeat=3):
+    Tt = [V(*[c[i] + p[i] for i in range(3)]) for p in itertools.product((0, 1), repeat=3) if (sum(c) + sum(p)) % 2 == 0]
+    cen = [(sum(t[i][0] for t in Tt) / 4, Fr(0)) for i in range(3)]
+    for f in hull(Tt)[0]:
+        zs = [Tt[i][2][0] for i in f] + [cen[2][0]]; nT += 1
+        slab_ok &= max(zs) - min(zs) <= 1 and min(zs) == int(min(zs))
+chk(slab_ok and nO == 14 * 8 and nT == 8 * 4, f'octet patch ({nO} octahedron and {nT} tetrahedron pyramids): every face pyramid lies in a slab k <= z <= k + 1, so the planes z = k are unions of pyramid faces and cube pyramids can fill one side')
 print('\n== 5. Cleo-Icos + Antonius + Cleo-Icos = the prolate golden rhombohedron (#20; exact)')
 I = S['icosahedron']; Fi, _ = hull(I); f0 = sorted(Fi, key=lambda k: sorted(k))[0]; u, v, w = [I[i] for i in sorted(f0)]
 cu = qd(dot(u, v), dot(u, u))

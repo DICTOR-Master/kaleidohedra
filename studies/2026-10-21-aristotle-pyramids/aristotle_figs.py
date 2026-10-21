@@ -61,8 +61,8 @@ X = lambda P, s=0: F(np.array(P) - c0 + s * L / np.linalg.norm(L))
 scenes.append({'title': 'The octet\'s rhombohedron', 'sub': 'tetrahedron + octahedron + tetrahedron', 'E': 1.85,
                'parts': [part(X(T1), GOLD), part(X(M), PURPLE), part(X(T2), GOLD)]})
 pp = []
-for P, col, s in [(T1, GOLD, -1.7), (M, PURPLE, 0.0), (T2, GOLD, 1.7)]:
-    for Q, n in pyramids(np.array(P)): pp.append(part(X(np.array(Q) + 0.45 * n, s), col))
+for P, col, s in [(T1, GOLD, -2.3), (M, PURPLE, 0.0), (T2, GOLD, 2.3)]:
+    for Q, n in pyramids(np.array(P)): pp.append(part(X(np.array(Q) + 0.22 * n, s), col))
 scenes.append({'title': 'Cut into face pyramids', 'sub': '8 octahedron + 2 × 4 tetrahedron pyramids, drawn apart', 'E': 2.55, 'parts': pp})
 # (3) the prolate golden rhombohedron from the icosahedron's centre-to-corner lines of one face
 I = np.array(S['Icosahedron'], float); n, f = faces(I)[0]; u, v, w = f

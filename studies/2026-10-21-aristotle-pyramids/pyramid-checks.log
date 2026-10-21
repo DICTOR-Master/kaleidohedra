@@ -49,6 +49,7 @@ PASS volumes: octahedron 4/3 + 2 tetrahedra 1/3 = rhombohedron 2 (one lattice ce
 PASS cut from their centres: 8 octahedron pyramids and 8 tetrahedron pyramids per cell, equal numbers
 PASS round an octet edge (2 tetrahedra, 2 octahedra) the pyramids give 4 x alpha/2 + 4 x (pi - alpha)/2 = 2 pi
 PASS h-weighted base edges, one tetrahedron pyramid + one octahedron pyramid of the same edge: 3 x (+1/2) + 3 x (-1/2) = 0
+PASS octet patch (112 octahedron and 32 tetrahedron pyramids): every face pyramid lies in a slab k <= z <= k + 1, so the planes z = k are unions of pyramid faces and cube pyramids can fill one side
 
 == 5. Cleo-Icos + Antonius + Cleo-Icos = the prolate golden rhombohedron (#20; exact)
 PASS the centre-to-corner lines of one face meet at arccos(1/sqrt5) = 63.43 deg, the golden rhombus angle
