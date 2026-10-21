@@ -62,16 +62,39 @@ for i in range(5):
         pos=np.array([j-2,2-i,0.0])
         Vw=(V@R.T)*0.44+pos; Vv=Vw@view.T
         items.append((Vv[:,2].mean(),k,Vv,[(n@R.T@view.T,idx) for n,idx in F]))
+CEN={}
 for _,k,Vv,F in sorted(items,key=lambda t:t[0]):
+    vis=[Vv[idx][:,:2].mean(0) for n,idx in F if n[2]>1e-9]; CEN[tuple(np.round(Vv.mean(0)[:2],3))]=np.mean(vis,0)   # letter on the visible body
     for n,idx in sorted(F,key=lambda f:Vv[f[1]][:,2].mean()):
         if n[2]<=1e-9: continue
         b=0.45+0.55*max(0,n@light)
         col=tuple(int(c*b+GROUND[m]*(1-b)*0.2) for m,c in enumerate(TONE[k]))
         pts=[(ox+Vv[q,0]*sc, oy-Vv[q,1]*sc) for q in idx]
         d.polygon(pts,fill=col); d.line(pts+[pts[0]],fill=(250,232,190),width=2*SS)
-f=ImageFont.truetype('Cinzel.ttf',int(0.052*W)); f.set_variation_by_name('Bold')
+# Roman (Trajan-style) initials V-cut into each form, the groove gilded with platinum leaf:
+# the groove depth is the distance to the letter's edge, so the two walls meet in a ridge-free V along the stroke's middle;
+# light from the upper left lights one wall and leaves the other in shadow.
+from scipy import ndimage
+f=ImageFont.truetype('Cinzel.ttf',int(0.075*W)); f.set_variation_by_name('Bold')
+Lc=np.array([-0.55,0.6,0.58]); Lc/=np.linalg.norm(Lc)
+def carved(ch):
+    box=int(0.12*W); m=Image.new('L',(box,box),0); ImageDraw.Draw(m).text((box/2,box/2),ch,font=f,fill=255,anchor='mm')
+    M=np.array(m)/255.0; ins=M>0.5
+    dist=ndimage.distance_transform_edt(ins); dist=ndimage.gaussian_filter(dist,0.8)
+    gy,gx=np.gradient(dist); k=1.6                          # wall slope of the V
+    n=np.dstack([gx*k, -gy*k, np.ones_like(dist)])   # depth = -dist: a groove; n/=np.linalg.norm(n,axis=2,keepdims=True)
+    lam=np.clip(n@Lc,0,1)
+    h=n@(Lc+np.array([0,0,1.0])); h=np.clip(h/np.linalg.norm(Lc+[0,0,1.0]),0,1)**40
+    dark=np.array([70,74,82.]); lite=np.array([226,229,235.]); spec=np.array([255,255,255.])
+    rgb=dark+(lite-dark)*lam[...,None]**1.3; rgb=rgb+(spec-rgb)*h[...,None]*0.8
+    # a thin cast shadow just inside the lit-side edge (the block's lip shades the groove)
+    sh=ndimage.shift(ins.astype(float),(-2*SS*0.6,2*SS*0.6),order=1)
+    rgb*= (1-0.35*np.clip(ins-sh,0,1))[...,None]
+    tile=Image.fromarray(np.clip(rgb,0,255).astype(np.uint8)); mask=Image.fromarray((ndimage.gaussian_filter(M,0.6)*255).astype(np.uint8))
+    return tile,mask,box
+CARVE={ch:carved(ch) for ch in 'DICTO'}
 for i in range(5):
     for j in range(5):
-        p=np.array([j-2,2-i,0.0])@view.T
-        d.text((ox+p[0]*sc, oy-p[1]*sc),M[i][j],font=f,fill=(250,242,225),anchor='mm',stroke_width=int(0.0035*W),stroke_fill=(20,15,11))
+        p=CEN[tuple(np.round(np.array([j-2,2-i,0.0])[:2],3))]; tile,mask,box=CARVE[M[i][j]]
+        img.paste(tile,(int(ox+p[0]*sc-box/2),int(oy-p[1]*sc-box/2)),mask)
 img=img.resize((N,N),Image.LANCZOS); img.save('dicto-square.png'); print('ok')
