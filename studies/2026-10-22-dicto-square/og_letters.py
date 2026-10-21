@@ -29,6 +29,7 @@ c0=V[ring[0]].mean(0); spin=math.atan2(c0[0],c0[1])     # turn so the first hexa
 V=V@rot((0,0,1),spin).T
 TILT=rot((1,0,0),-0.12)                                # a slight tilt, as in the figure
 V=V@TILT.T
+AXIS=np.array([0,0,1.0])@TILT.T                         # the five-fold axis through the star's centre
 ring_c={tuple(f):V[f].mean(0) for f in ring}
 order=sorted(ring,key=lambda f:(math.atan2(ring_c[tuple(f)][0],ring_c[tuple(f)][1])+0.6)%(2*math.pi))   # clockwise from the top
 RINGLET={tuple(f):ch for f,ch in zip(order,'DICTO')}
@@ -73,7 +74,9 @@ def render(img,cx,cy,rad,SS=2):
         pts=[P(V[q]) for q in f]; d.polygon(pts,fill=col); d.line(pts+[pts[0]],fill=GOLD,width=2*SS)
         if tuple(f) in LET:
             # facet frame: U to the right on screen, Vv up on screen, both in the facet's plane
-            c=V[f].mean(0); U=np.array([1,0,0])-n*n[0]; U/=np.linalg.norm(U); Vv=np.cross(n,U)
+            # letters set in a circle round the centre of the star (DICTO): each letter's upright points away
+            # from the five-fold axis through the star's centre, tops outward, like letters round a coin
+            c=V[f].mean(0); ax_=AXIS; rad=c-ax_*(c@ax_); Vv=rad-n*(rad@n); Vv/=np.linalg.norm(Vv); U=np.cross(Vv,n)
             r=np.linalg.norm(V[f]-c,axis=1).min()            # inradius-ish
             px=int(2*r*s*1.2); M,gx,gy=carve_tile(LET[tuple(f)],px)
             hx,hy=r*0.8,r*1.22                                   # elongated Trajan forms: tall and narrow
