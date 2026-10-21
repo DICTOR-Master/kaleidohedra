@@ -65,7 +65,9 @@ img=Image.new('RGB',(W,W),GROUND); d=ImageDraw.Draw(img)
 B=np.array([[x,y,z] for x in (-2.5,2.5) for y in (-2.5,2.5) for z in (-0.5,0.5)])@view.T
 sc=0.9*W/max(np.ptp(B[:,0]),np.ptp(B[:,1])); ox=W/2-sc*(B[:,0].max()+B[:,0].min())/2; oy=W/2+sc*(B[:,1].max()+B[:,1].min())/2
 P=lambda x,y,z: (lambda v:(ox+v[0]*sc, oy-v[1]*sc))(np.array([x,y,z])@view.T)
-for t in range(6):
+import os
+GRID=os.environ.get('GRID','1')=='1'   # grid squares on or off
+for t in (range(6) if GRID else []):
     d.line([P(t-2.5,-2.5,-0.5),P(t-2.5,2.5,-0.5)],fill=GOLD,width=3*SS); d.line([P(-2.5,t-2.5,-0.5),P(2.5,t-2.5,-0.5)],fill=GOLD,width=3*SS)
 items=[]
 for i in range(5):
@@ -113,4 +115,4 @@ for i in range(5):
     for j in range(5):
         p=np.array([j-2,2-i,0.0])@view.T; tile,mask,box=CARVE[M[i][j]]
         img.paste(tile,(int(ox+p[0]*sc-box/2),int(oy-p[1]*sc-box/2)),mask)
-img=img.resize((N,N),Image.LANCZOS); img.save('dicto-square.png'); print('ok')
+img=img.resize((N,N),Image.LANCZOS); img.save('dicto-square.png' if GRID else 'dicto-square-nogrid.png'); print('ok')
