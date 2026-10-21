@@ -16,7 +16,7 @@ directions + Nelder-Mead refinement. At diameter 1:
   (sqrt30 - sqrt3)/3 = 1.248392 and 1.110989. The minimum 1 is the diameter (two opposite corners). That these axis values are the
   global maxima is numerical (search above), not proved.
 - Prior art: the Reuleaux tetrahedron (Reuleaux), Meissner bodies (1911), Reuleaux polytopes (Sallee 1970), ball-polyhedra
-  (Bezdek, Lángi, Naszódi, Papez 2007), Meissner polyhedra (Montejano, Roldán-Pensado 2017). NONE is in the reference library yet;
+  (Bezdek, Lángi, Naszódi, Papez 2007), Meissner polyhedra (Montejano, Roldán-Pensado 2017). Ball-polyhedra, Meissner polyhedra and Hynd 2023 (Reuleaux polyhedra) are now in the library (arXiv, 2026-10-21), Sallee link-only;
   add legal copies before any paper. The library search (Fedorov, Grünbaum, papers/, history/, shapes/) found nothing on these bodies.
 
 DICTO · dictospheres.com

@@ -31,3 +31,7 @@ Reading for DICTO: if "the pyramid" is a face pyramid, Aristotle is right for th
 classical fix; the golden counterpart is Cleo-Icos + Antonius. Exact proof for alone/pairs among the five, given the cited theorem.
 
 DICTO · dictospheres.com
+
+Library (2026-10-21): Conway-Radin-Sadun 1999 now in the reference library (arXiv math-ph/9812019). Their Splitting Theorem: the
+three angles have tangents in different square classes (tan alpha = 2 sqrt2, tan theta_D = -2, tan theta_I = -2/sqrt5), so no
+rational relation mixes them; by their Theorem 2 none is a rational multiple of pi. This backs the argument above.
