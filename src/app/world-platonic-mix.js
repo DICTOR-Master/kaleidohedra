@@ -1,16 +1,19 @@
 // Every Mix of the Platonic Solids (DICTO 2026-10-22; paper #47, DICTO DOI 10.5281/zenodo.23551326): the "View in app" of the paper.
-// Every non-empty mix of the five Platonic solids fills space. Five big letter toggles D I C T O choose the mix (default all five);
-// the scene shows a block of that mix's filling: one slab per world, stacked D, C, T/O, I, the solids in their element colours with
-// gold edges, the helper pieces (connectors) in muted tones. "Helpers" hides the connectors; a big slider spreads the slabs apart;
-// a small list names the helpers the mix uses. Geometry: platonic-mix-geometry.js (ported from the paper's checked study). Words:
-// i18n pm.*.
+// Every mix of the five Platonic solids fills space. The world opens empty; five big letters D I C T O each add their solid's layer
+// (slab), which drops into place in the stack order bottom to top D, C, T/O, I (T and O share the octet slab: adding the other only
+// changes which of its solids are whole and which are cut into helpers); a lit letter takes its layer out again (DICTO 2026-10-22,
+// after trying the first preview). Solids in their element colours with gold edges, helper pieces (connectors) in muted tones;
+// "Helpers" hides the connectors; a big slider spreads the slabs apart; a small list names the helpers the mix uses.
+// Build it yourself: a new layer shows its pieces as faint gold ghosts; tapping a ghost places that piece; Fill the rest places the
+// others. Every change goes through the app's undo (↶). Geometry: platonic-mix-geometry.js (ported from the paper's checked study).
+// Words: i18n pm.*.
 import * as THREE from 'three';
 import { ROOF_FOLD_WORLD_SCALE as WS } from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey } from './site.js';
-import { WORLDS, PHI, buildMix, helpersOf, isSolid } from './platonic-mix-geometry.js';
+import { WORLDS, PHI, SLAB_ORDER, slabsOf, slabPieces, pieceKey, pieceCentre, helpersOf, isSolid } from './platonic-mix-geometry.js';
 
 // the elements' colours (DICTO): dodecahedron violet, icosahedron blue, cube green, tetrahedron red, octahedron yellow; gold edges
 export const SOLID_COLOURS = { D: 0x8a5cc4, I: 0x3a70cd, C: 0x488e48, T: 0xcd3e28, O: 0xe8c852 };
@@ -19,18 +22,20 @@ const GOLD = 0xdeb250;
 const KEY = { 'Q′': 'Qp' };                              // i18n key of a kind
 const GAP = 1.2;                                         // the slabs' extra spacing at Spread 1, in edge lengths
 const K = (2 * WS) / ((3 * PHI + 1 + Math.SQRT2 + 1.512 + 3 * GAP) / 2); // one scale for every mix: the whole block, spread, fits
-const PRESET = { mix: 'DICTO', helpers: true, spread: 0 };
+const DROP = 6;                                          // a new layer falls from this far above its place (edge lengths)
+const ANIM_MS = 550;
+const PRESET = { mix: '', helpers: true, spread: 0, build: false, placed: {} };
 const lang = () => getSettings().language;
 const cleanMix = (m) => WORLDS.filter((w) => String(m).toUpperCase().includes(w)).join('');
 
-/** The pieces of one kind in one slab as one mesh (polygons fanned) and their outlines (edges between non-coplanar faces). */
-function kindGeometry(pieces) {
-  const tri = [], lines = [];
+/** Pieces as one mesh (polygons fanned; tri → piece index) and their outlines (edges between non-coplanar faces). */
+function piecesGeometry(pieces) {
+  const tri = [], lines = [], pieceOfTri = [];
   const kv = (v) => v.map((x) => x.toFixed(5)).join(',');
-  for (const p of pieces) {
+  pieces.forEach((p, pi) => {
     const edges = new Map();
     for (const F of p.faces) {
-      for (let i = 1; i + 1 < F.length; i++) tri.push(...F[0], ...F[i], ...F[i + 1]);
+      for (let i = 1; i + 1 < F.length; i++) { tri.push(...F[0], ...F[i], ...F[i + 1]); pieceOfTri.push(pi); }
       let n = [0, 0, 0];                                 // Newell's normal
       F.forEach((a, i) => { const b = F[(i + 1) % F.length]; n = [n[0] + (a[1] - b[1]) * (a[2] + b[2]), n[1] + (a[2] - b[2]) * (a[0] + b[0]), n[2] + (a[0] - b[0]) * (a[1] + b[1])]; });
       const l = Math.hypot(...n) || 1; n = n.map((x) => x / l);
@@ -40,30 +45,41 @@ function kindGeometry(pieces) {
       const flat = n.length === 2 && Math.abs(Math.abs(n[0][0] * n[1][0] + n[0][1] * n[1][1] + n[0][2] * n[1][2]) - 1) < 1e-6;
       if (!flat) lines.push(...a, ...b);
     }
-  }
-  // the study's z is up; the scene's y is up: (x, y, z) → (x, z, −y)
-  const turn = (A) => { for (let i = 0; i < A.length; i += 3) { const y = A[i + 1]; A[i + 1] = A[i + 2]; A[i + 2] = -y; } return A; };
+  });
   const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(turn(tri), 3)); g.computeVertexNormals();
   const e = new THREE.BufferGeometry(); e.setAttribute('position', new THREE.Float32BufferAttribute(turn(lines), 3));
-  return { g, e };
+  return { g, e, pieceOfTri };
 }
+// the study's z is up; the scene's y is up: (x, y, z) → (x, z, −y)
+function turn(A) { for (let i = 0; i < A.length; i += 3) { const y = A[i + 1]; A[i + 1] = A[i + 2]; A[i + 2] = -y; } return A; }
+const turned = ([x, y, z]) => [x, z, -y];
 
-export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPrompt = () => {} }) {
+export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPrompt = () => {}, onChange = () => {} }) {
   const STORAGE_KEY = storageKey('platonicMix');
   const group = new THREE.Group(); group.visible = false; group.scale.setScalar(K); scene.add(group);
-  const view = { ...PRESET };
+  const view = { ...PRESET, placed: {} };
   function read(d) {
     if (!d) return;
-    if (typeof d.view?.mix === 'string' && cleanMix(d.view.mix)) view.mix = cleanMix(d.view.mix);
+    if (typeof d.view?.mix === 'string') view.mix = cleanMix(d.view.mix);
     if (typeof d.view?.helpers === 'boolean') view.helpers = d.view.helpers;
+    if (typeof d.view?.build === 'boolean') view.build = d.view.build;
     if (Number.isFinite(d.view?.spread)) view.spread = Math.max(0, Math.min(100, d.view.spread));
+    view.placed = {};
+    if (d.view?.placed && typeof d.view.placed === 'object') {
+      for (const w of SLAB_ORDER) if (Array.isArray(d.view.placed[w])) view.placed[w] = d.view.placed[w].filter((k) => typeof k === 'string');
+    }
   }
   try { read(JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null')); } catch { /* corrupt or blocked storage: the preset */ }
-  const snapshot = () => ({ version: 1, view: { ...view } });
+  const snapshot = () => ({ version: 2, view: { ...view, placed: Object.fromEntries(Object.entries(view.placed).map(([w, a]) => [w, [...a]])) } });
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot())); } catch { /* best-effort */ } };
+  const commit = () => { save(); onChange(); };
 
-  let active = false, skeleton = false, opacity = 1, built = null, slabGroups = [], drawn = []; // drawn: [{ kind, slab, mesh, line }]
+  let active = false, skeleton = false, opacity = 1;
+  // slabs: world → { world, pieces, keys, top, group, y, drawn: [{ kind, mesh, line }], ghost: { mesh, line, pieces } | null }
+  const slabs = new Map();
   const mats = {}, lineMats = {};
+  const ghostLineMat = new THREE.LineBasicMaterial({ color: GOLD, transparent: true, opacity: 0.45, depthWrite: false });
+  const ghostPickMat = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false, colorWrite: false, side: THREE.DoubleSide });
   const colourOf = (kind) => (isSolid(kind) ? SOLID_COLOURS[kind] : HELPER_COLOURS[kind]);
   function matFor(kind) {
     if (!mats[kind]) {
@@ -74,47 +90,96 @@ export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPromp
     lineMats[kind].color.setHex(skeleton ? colourOf(kind) : isSolid(kind) ? GOLD : 0x4a4640);
     return m;
   }
-  function clearGroup() {
-    for (const sg of slabGroups) { for (const c of [...sg.children]) c.geometry?.dispose(); group.remove(sg); }
-    slabGroups = []; drawn = [];
+  const shownKind = (kind) => isSolid(kind) || view.helpers;
+  const placedSet = (w) => new Set(view.placed[w] ?? []);
+  /** Is this piece placed? Outside Build it yourself every piece is. */
+  const isPlaced = (w, key, set = placedSet(w)) => !view.build || set.has(key);
+
+  function disposeSlab(s) { for (const c of [...s.group.children]) { s.group.remove(c); c.geometry?.dispose(); } s.drawn = []; s.ghost = null; }
+  /** (Re)make a slab's pieces for the current mix (the octet slab's pieces depend on T and O) and draw it. */
+  function makeSlab(w) {
+    let s = slabs.get(w);
+    if (!s) { s = { world: w, group: new THREE.Group(), y: 0, drawn: [], ghost: null }; group.add(s.group); slabs.set(w, s); }
+    const made = slabPieces(w, view.mix);
+    s.pieces = made.pieces; s.top = made.top; s.keys = made.pieces.map(pieceKey);
+    if (view.placed[w]) { const ks = new Set(s.keys); view.placed[w] = view.placed[w].filter((k) => ks.has(k)); }
+    drawSlab(s);
+    return s;
   }
-  function draw() {
-    clearGroup();
+  function drawSlab(s) {
+    disposeSlab(s);
     if (!active) return;
-    built = buildMix(view.mix);
-    built.slabs.forEach((slab, i) => {
-      const sg = new THREE.Group(); group.add(sg); slabGroups.push(sg);
-      const mine = built.pieces.filter((p) => p.slab === i), kinds = [...new Set(mine.map((p) => p.kind))];
-      for (const kind of kinds) {
-        const { g, e } = kindGeometry(mine.filter((p) => p.kind === kind));
-        const mesh = new THREE.Mesh(g, matFor(kind)); mesh.userData = { kind: 'pm', piece: kind };
-        const line = new THREE.LineSegments(e, lineMats[kind]);
-        sg.add(mesh, line); drawn.push({ kind, slab: i, mesh, line });
-      }
-    });
-    applyVisibility(); applySpread();
-  }
-  function applyVisibility() {
-    for (const d of drawn) {
-      const shown = isSolid(d.kind) || view.helpers;
-      d.mesh.visible = shown && !skeleton; d.line.visible = shown;
+    const set = placedSet(s.world), placed = [], ghosts = [];
+    s.pieces.forEach((p, i) => { if (!shownKind(p.kind)) return; (isPlaced(s.world, s.keys[i], set) ? placed : ghosts).push(i); });
+    for (const kind of [...new Set(placed.map((i) => s.pieces[i].kind))]) {
+      const idx = placed.filter((i) => s.pieces[i].kind === kind);
+      const { g, e } = piecesGeometry(idx.map((i) => s.pieces[i]));
+      const mesh = new THREE.Mesh(g, matFor(kind)); mesh.userData = { kind: 'pm', piece: kind };
+      mesh.visible = !skeleton;
+      const line = new THREE.LineSegments(e, lineMats[kind]);
+      s.group.add(mesh, line); s.drawn.push({ kind, mesh, line });
+    }
+    if (ghosts.length) {
+      const { g, e, pieceOfTri } = piecesGeometry(ghosts.map((i) => s.pieces[i]));
+      const mesh = new THREE.Mesh(g, ghostPickMat); mesh.userData = { kind: 'pm-ghost', world: s.world, pieceOfTri, ghosts };
+      const line = new THREE.LineSegments(e, ghostLineMat);
+      s.group.add(mesh, line); s.ghost = { mesh, line, ghosts };
     }
   }
-  const height = () => (built ? built.top + (built.slabs.length - 1) * GAP * view.spread / 100 : 0);
-  function applySpread() {
-    if (!built) return;
-    const d = GAP * view.spread / 100, mid = height() / 2;
-    slabGroups.forEach((sg, i) => { sg.position.y = i * d - mid; });
+  function syncSlabs({ animate = false } = {}) {
+    const want = active ? slabsOf(view.mix) : [];
+    for (const [w, s] of slabs) if (!want.includes(w)) { disposeSlab(s); group.remove(s.group); slabs.delete(w); }
+    const added = [];
+    for (const w of want) { if (!slabs.has(w)) added.push(w); makeSlab(w); }
+    place(animate ? added : null);
+  }
+  const ordered = () => SLAB_ORDER.filter((w) => slabs.has(w)).map((w) => slabs.get(w));
+  const height = () => { const o = ordered(); return o.reduce((a, s) => a + s.top, 0) + Math.max(0, o.length - 1) * GAP * view.spread / 100; };
+  function targets() {
+    const d = GAP * view.spread / 100, out = new Map(); let y = -height() / 2;
+    for (const s of ordered()) { out.set(s.world, y); y += s.top + d; }
+    return out;
+  }
+  let anim = null;
+  /** Move the slabs to their places: at once, or (dropped = new layers) gliding, the new ones falling from above. */
+  function place(dropped) {
+    const to = targets();
+    if (!dropped) { anim = null; for (const s of ordered()) { s.y = to.get(s.world); s.group.position.y = s.y; } return; }
+    const from = new Map(ordered().map((s) => [s.world, dropped.includes(s.world) ? to.get(s.world) + DROP : s.y]));
+    const me = anim = { from, to, t0: performance.now() };
+    const step = (now) => {
+      if (anim !== me) return;                            // a newer move took over
+      const u = Math.max(0, Math.min(1, (now - me.t0) / ANIM_MS)), e = 1 - (1 - u) ** 3;
+      for (const s of ordered()) { const a = anim.from.get(s.world) ?? s.y, b = anim.to.get(s.world); s.y = a + (b - a) * e; s.group.position.y = s.y; }
+      if (u < 1 && active) requestAnimationFrame(step); else { anim = null; for (const s of ordered()) { s.y = to.get(s.world); s.group.position.y = s.y; } }
+    };
+    requestAnimationFrame(step);
   }
   const fit = () => fitView([0, 0, 0], K * Math.max(1.6 * 1.5 * PHI, height() / 2 + 1.5), null, true);
+  const redrawAll = () => { for (const s of slabs.values()) drawSlab(s); };
 
   const pieceName = (kind, L = lang()) => t(`pm.piece.${KEY[kind] ?? kind}`, L);
+  const named = (kind) => (isSolid(kind) ? pieceName(kind) : `${kind} ${pieceName(kind)}`);
+  function placePieces(w, keys) {
+    const set = placedSet(w); for (const k of keys) set.add(k);
+    view.placed[w] = [...set];
+  }
   function handleTap(hit, mode) {
     const ud = hit.object?.userData;
-    if (!ud || ud.kind !== 'pm' || mode === 'paint' || mode === 'chisel') return false;
-    showHudPrompt(isSolid(ud.piece) ? pieceName(ud.piece) : `${ud.piece} ${pieceName(ud.piece)}`, 2200);
+    if (!ud || (ud.kind !== 'pm' && ud.kind !== 'pm-ghost') || mode === 'paint' || mode === 'chisel') return false;
+    if (ud.kind === 'pm') { showHudPrompt(named(ud.piece), 2200); return true; }
+    const s = slabs.get(ud.world), i = ud.ghosts[ud.pieceOfTri[hit.faceIndex]];
+    if (!s || i === undefined) return false;
+    placePieces(ud.world, [s.keys[i]]);
+    drawSlab(s); renderPanel(); commit();
+    showHudPrompt(named(s.pieces[i].kind), 1600);
     return true;
   }
+  const counts = () => {
+    let total = 0, placed = 0;
+    for (const s of slabs.values()) { const set = placedSet(s.world); s.pieces.forEach((p, i) => { if (!shownKind(p.kind)) return; total++; if (isPlaced(s.world, s.keys[i], set)) placed++; }); }
+    return { total, placed };
+  };
 
   // ---- panel ----
   const panel = document.createElement('div');
@@ -135,7 +200,7 @@ export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPromp
   panel.innerHTML = `
     <div class="w4d-row st-note pm-note"></div>
     <div class="w4d-row pm-letters">${WORLDS.map((w) => `<button type="button" data-pm-world="${w}" style="--pm-c:${hex(SOLID_COLOURS[w])}"></button>`).join('')}</div>
-    <div class="w4d-row w4d-options"><button type="button" data-pm="helpers"></button></div>
+    <div class="w4d-row w4d-options"><button type="button" data-pm="build"></button><button type="button" data-pm="fill"></button><button type="button" data-pm="helpers"></button></div>
     <div class="w4d-row pm-helpers"></div>
     <div class="w4d-row pm-spread-row"><label class="hull-pick"><span class="pm-spread-label"></span> <input type="range" class="st-slider" min="0" max="100" step="1"></label></div>`;
   document.body.appendChild(panel);
@@ -143,23 +208,29 @@ export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPromp
   const slider = panel.querySelector('.pm-spread-row input');
   function renderPanel() {
     panel.classList.toggle('visible', active);
-    if (!active || !built) return;
-    const L = lang(), used = helpersOf(built.pieces);
-    const order = built.slabs.map((s) => (s.world === 'TO' ? ['T', 'O'].filter((x) => view.mix.includes(x)).join('') : s.world)).join(' · ');
-    panel.querySelector('.pm-note').textContent = t('pm.note', L, { order, n: built.slabs.length });
+    if (!active) return;
+    const L = lang(), all = [...slabs.values()].flatMap((s) => s.pieces), used = helpersOf(all), empty = !view.mix;
+    const order = ordered().map((s) => (s.world === 'TO' ? ['T', 'O'].filter((x) => view.mix.includes(x)).join('') : s.world)).join(' · ');
+    const { total, placed } = counts();
+    panel.querySelector('.pm-note').textContent = empty ? t('pm.hint', L)
+      : view.build ? t('pm.count', L, { placed, total }) : t('pm.note', L, { order, n: slabs.size });
     panel.querySelectorAll('[data-pm-world]').forEach((b) => {
       const w = b.dataset.pmWorld, on = view.mix.includes(w);
       b.textContent = w; b.classList.toggle('active', on); b.setAttribute('aria-pressed', String(on));
       b.title = b.ariaLabel = t(`pm.piece.${w}`, L);
     });
+    const bb = panel.querySelector('[data-pm="build"]');
+    bb.textContent = t('pm.build', L); bb.classList.toggle('active', view.build); bb.setAttribute('aria-pressed', String(view.build));
+    const fb = panel.querySelector('[data-pm="fill"]');
+    fb.hidden = !view.build || placed >= total; fb.textContent = t('pm.fill', L);
     const hb = panel.querySelector('[data-pm="helpers"]');
-    hb.parentElement.hidden = !used.length;          // cubes alone need no helpers: no toggle (nothing unnecessary shown)
+    hb.hidden = !used.length;                        // empty, or cubes alone: no helpers, no toggle (nothing unnecessary shown)
     hb.textContent = t(view.helpers ? 'pm.helpers.on' : 'pm.helpers.off', L);
     hb.classList.toggle('active', view.helpers); hb.setAttribute('aria-pressed', String(view.helpers));
     const list = panel.querySelector('.pm-helpers');
     list.hidden = !used.length || !view.helpers;
     list.innerHTML = used.map((k) => `<span><i style="background:${hex(HELPER_COLOURS[k])}"></i><b>${k}</b> ${pieceName(k, L)}</span>`).join('');
-    panel.querySelector('.pm-spread-row').hidden = built.slabs.length < 2; // one slab: nothing to spread
+    panel.querySelector('.pm-spread-row').hidden = slabs.size < 2; // one slab or none: nothing to spread
     panel.querySelector('.pm-spread-label').textContent = t('pm.spread', L);
     slider.value = String(view.spread);
   }
@@ -168,48 +239,74 @@ export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPromp
     if (!b || !panel.contains(b)) return;
     if (b.dataset.pmWorld) {
       const w = b.dataset.pmWorld, on = view.mix.includes(w);
-      if (on && view.mix.length === 1) { showHudPrompt(t('pm.prompt.last', lang()), 2500); return; }
       view.mix = cleanMix(on ? view.mix.replace(w, '') : view.mix + w);
-      save(); draw(); renderPanel(); fit();
+      const slab = slabsOf(w)[0];
+      if (!slabsOf(view.mix).includes(slab)) delete view.placed[slab];   // a layer taken out starts afresh when it comes back
+      syncSlabs({ animate: !on }); renderPanel(); fit(); commit();
+      if (!on && view.build) showHudPrompt(t('pm.prompt.build', lang()), 3500);
       return;
     }
-    if (b.dataset.pm === 'helpers') { view.helpers = !view.helpers; save(); applyVisibility(); renderPanel(); }
+    if (b.dataset.pm === 'build') {
+      view.build = !view.build; view.placed = {};      // on: every layer back to ghosts; off: every piece shown
+      redrawAll(); renderPanel(); commit();
+      if (view.build) showHudPrompt(t('pm.prompt.build', lang()), 3500);
+      return;
+    }
+    if (b.dataset.pm === 'fill') {
+      for (const s of slabs.values()) placePieces(s.world, s.keys.filter((k, i) => shownKind(s.pieces[i].kind)));
+      redrawAll(); renderPanel(); commit();
+      return;
+    }
+    if (b.dataset.pm === 'helpers') { view.helpers = !view.helpers; redrawAll(); renderPanel(); commit(); }
   });
-  slider.addEventListener('input', () => { view.spread = Number(slider.value); applySpread(); });
-  slider.addEventListener('change', () => { save(); fit(); });
+  slider.addEventListener('input', () => { view.spread = Number(slider.value); place(null); });
+  slider.addEventListener('change', () => { commit(); fit(); });
   let shownLang = lang();
   onSettingsChange((st) => { if (st.language !== shownLang) { shownLang = st.language; if (active) renderPanel(); } });
 
   return {
     group,
-    meshes: () => drawn.filter((d) => d.mesh.visible).map((d) => d.mesh),
+    meshes: () => [...slabs.values()].flatMap((s) => [...s.drawn.filter((d) => d.mesh.visible).map((d) => d.mesh), ...(s.ghost ? [s.ghost.mesh] : [])]),
     handleTap,
-    /** ?open=platonicMix:<letters>, e.g. ?open=platonicMix:DIC. */
+    /** ?open=platonicMix:<letters>, e.g. ?open=platonicMix:DIC: those layers in, whole. */
     open(arg) {
       const m = cleanMix(arg ?? '');
-      if (m) view.mix = m;
-      save(); if (active) { draw(); renderPanel(); fit(); }
+      if (m) { view.mix = m; view.build = false; view.placed = {}; }
+      save(); if (active) { syncSlabs(); renderPanel(); fit(); }
     },
     setActive(on) {
       if (on === active) return;
       active = on; group.visible = on;
-      if (!on) { clearGroup(); renderPanel(); return; }
-      draw(); renderPanel(); fit();
+      syncSlabs(); renderPanel();
+      if (!on) return;
+      fit();
       showHudPrompt(t('pm.prompt.start', lang()), 5000);
     },
-    setSkeleton(on) { skeleton = on; if (active) draw(); },
-    setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) draw(); } },
+    setSkeleton(on) { skeleton = on; if (active) redrawAll(); },
+    setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) redrawAll(); } },
     setLatticeView() {},
     shearChanged() {},
-    get isEmpty() { return true; },
-    clear() { Object.assign(view, PRESET); save(); if (active) { draw(); renderPanel(); fit(); } },
+    get isEmpty() { return !view.mix; },
+    clear() { Object.assign(view, PRESET, { placed: {} }); save(); if (active) { syncSlabs(); renderPanel(); fit(); } },
     resetView() {},
     snapshot,
-    restore(json) { read(json); save(); if (active) { draw(); renderPanel(); } },
+    restore(json) { read(json); save(); if (active) { syncSlabs(); renderPanel(); } },
     /** For the browser tests (?probe). */
     probe() {
-      return { mix: view.mix, helpers: view.helpers, spread: view.spread, slabs: built?.slabs.map((s) => s.world) ?? [], pieces: built?.pieces.length ?? 0,
-        shownKinds: [...new Set(drawn.filter((d) => d.line.visible).map((d) => d.kind))], slabY: slabGroups.map((g) => g.position.y) };
+      const { total, placed } = counts();
+      return { mix: view.mix, helpers: view.helpers, spread: view.spread, build: view.build, slabs: ordered().map((s) => s.world), total, placed,
+        ghosts: total - placed, pieces: [...slabs.values()].reduce((a, s) => a + s.pieces.length, 0), animating: !!anim,
+        shownKinds: [...new Set([...slabs.values()].flatMap((s) => s.drawn.map((d) => d.kind)))], slabY: ordered().map((s) => s.y) };
+    },
+    /** For the browser tests: the world-space centre of the k-th ghost nearest the eye (k = 0: the nearest). */
+    ghostPoint(eye, k = 0) {
+      const all = [];
+      group.updateMatrixWorld(true);
+      for (const s of slabs.values()) for (const i of s.ghost?.ghosts ?? []) {
+        const v = new THREE.Vector3(...turned(pieceCentre(s.pieces[i]))); s.group.localToWorld(v); all.push([v.distanceTo(eye), v]);
+      }
+      all.sort((a, b) => a[0] - b[0]);
+      return all[k]?.[1].toArray() ?? null;
     },
   };
 }

@@ -187,6 +187,22 @@ function iWorld(z0, slab) {
   return { pieces: P, top };
 }
 
+export const SLAB_ORDER = ['D', 'C', 'TO', 'I'];
+/** The slab worlds a mix uses, bottom to top (T and O share the octet slab 'TO'). */
+export const slabsOf = (mixIn) => { const m = new Set(mixIn); return SLAB_ORDER.filter((w) => [...w].some((c) => m.has(c))); };
+/** One slab on its own, from z = 0: its pieces (for the world, which stacks the slabs itself) and its height. */
+export function slabPieces(world, mixIn, slab = 0) {
+  const mix = new Set(mixIn);
+  return world === 'D' ? dWorld(0, slab) : world === 'C' ? cWorld(0, slab) : world === 'TO' ? toWorld(0, mix, slab) : iWorld(0, slab);
+}
+/** A piece's name within its slab: its kind and centre, so it survives a change of mix in the octet slab. */
+export function pieceKey(p) {
+  const c = mean(p.faces.flat());
+  return `${p.kind}@${c.map((x) => (Math.round(x * 1000) / 1000).toFixed(3)).join(',')}`;
+}
+/** The centre of a piece (the mean of its face corners). */
+export const pieceCentre = (p) => mean(p.faces.flat());
+
 /** The slabs of a mix (a Set or string of the letters D I C T O), bottom to top: [{ world, z0, top }] and every piece. */
 export function buildMix(mixIn) {
   const mix = new Set(mixIn), slabs = [], pieces = [];

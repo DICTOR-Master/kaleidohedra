@@ -3094,6 +3094,7 @@ async function init() {
     reg('worldocdstella', '3D', () => ocdStellaWorld.snapshot(), (j) => ocdStellaWorld.restore(j));
     reg('worldoctettruss', '3D', () => octetTrussWorld.snapshot(), (j) => octetTrussWorld.restore(j));
     reg('worldreuleaux', '3D', () => reuleauxWorld.snapshot(), (j) => reuleauxWorld.restore(j));
+    reg('worldplatonicmix', '3D', () => platonicMixWorld.snapshot(), (j) => platonicMixWorld.restore(j));
     reg('worldcycles', '3D', () => cyclesWorld.snapshot(), (j) => cyclesWorld.restore(j));
     reg('worldstellajewel', '3D', () => stellaJewelWorld.snapshot(), (j) => stellaJewelWorld.restore(j));
     reg('worldkaleido', '2D', () => kaleidoWorld.snapshot(), (j) => kaleidoWorld.restore(j));
@@ -5973,6 +5974,8 @@ async function init() {
     // The Reuleaux world's build: where on screen each face mid-point of the last piece is, turned towards the camera first.
     window.__aristotleProbe = () => aristotleWorld?.probe?.() ?? null;
     window.__platonicMixProbe = () => platonicMixWorld?.probe?.() ?? null;
+    // Every Mix's Build it yourself: where on screen the ghost nearest the eye is.
+    window.__platonicMixGhostAt = (k = 0) => { const p = platonicMixWorld?.ghostPoint?.(camera.position, k); return p ? toScreen(new THREE.Vector3(...p)) : null; };
     window.__reuleauxProbe = () => {
       const st = reuleauxWorld?.probe?.(); if (!st) return null;
       const eye = camera.position.clone();
@@ -6107,7 +6110,12 @@ async function init() {
     fitView: fitCameraTo,
     onChange: () => { if (historyRestorers.has('worldoctettruss')) recordHistory('worldoctettruss', octetTrussWorld.snapshot()); },
   });
-  platonicMixWorld = createPlatonicMixWorld({ scene: realScene, showHudPrompt, fitView: fitCameraTo });
+  platonicMixWorld = createPlatonicMixWorld({
+    scene: realScene,
+    showHudPrompt,
+    fitView: fitCameraTo,
+    onChange: () => { if (historyRestorers.has('worldplatonicmix')) recordHistory('worldplatonicmix', platonicMixWorld.snapshot()); },
+  });
   aristotleWorld = createAristotleWorld({ scene: realScene, showHudPrompt, fitView: fitCameraTo, openAction: (action) => openFromAlmanac?.({ action, app: null }, null) });
   reuleauxWorld = createReuleauxWorld({
     scene: realScene,

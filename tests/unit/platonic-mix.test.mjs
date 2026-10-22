@@ -66,3 +66,22 @@ test('all 31 mixes: points inside the block lie in exactly one piece', () => {
     assert.equal(bad, 0, `${m}: points not covered exactly once`);
   }
 });
+
+test('the world\'s slabs: each on its own from z = 0, pieces named uniquely, the same pieces as the stacked block', async () => {
+  const { slabsOf, slabPieces, pieceKey } = await import('../../src/app/platonic-mix-geometry.js');
+  assert.deepEqual(slabsOf(''), []);
+  assert.deepEqual(slabsOf('OID'), ['D', 'TO', 'I']);
+  for (const m of MIXES) {
+    const whole = buildMix(m);
+    let n = 0;
+    for (const [i, w] of slabsOf(m).entries()) {
+      const s = slabPieces(w, m, i), keys = s.pieces.map(pieceKey);
+      assert.equal(new Set(keys).size, keys.length, `${m} ${w}: unique names`);
+      close(s.top, whole.slabs[i].top - whole.slabs[i].z0, `${m} ${w} height`);
+      const zs = s.pieces.flatMap((p) => p.faces.flat().map((v) => v[2]));
+      assert.ok(Math.min(...zs) > -1e-9 && Math.max(...zs) < s.top + 1e-9, `${m} ${w}: inside its slab`);
+      n += s.pieces.length;
+    }
+    assert.equal(n, whole.pieces.length, `${m}: same pieces`);
+  }
+});
