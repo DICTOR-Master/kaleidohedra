@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Every Mix of the Platonic Solids Fills Space</title>
+<link rel="stylesheet" href="../paper.css">
+<style>p.hook { font-style: italic; color: #4a3f2a; border-left: 2px solid #c9a24a; padding-left: 3mm; margin: 2mm 0 2mm; } td.n { font-variant-numeric: tabular-nums; white-space: nowrap; } .figs.wide { grid-template-columns: 1fr; width: 100%; } .figs.wide img{width:100%;margin:0 auto;display:block} .figs.wide img.mid{width:62%} .figs.wide img.tall{width:40%} table { font-size: 8.6pt; } .thm{margin:6pt 0;padding:4pt 0 4pt 9pt;border-left:2px solid #b8962e}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>Every Mix of the Platonic Solids Fills Space</h1>
+<p class="sub">Theorem: for each of the 31 sets of Platonic solids of edge 1 there is a filling of space that uses exactly those solids, with connectors from a kit of seven pieces</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Version 1 · 22 October 2026 · __DOI__ · Licence CC BY-SA 4.0 · Scripts, checks and figures: https://github.com/DICTOR-Master/kaleidohedra/tree/__COMMIT__/studies/2026-10-22-platonic-mix-step1 (research branch, commit __COMMIT__; also attached to this record)<br>
+The question, to connect all the Platonic solids in any combination by combining the earlier work, is DICTO's idea, as are the Admiral Caps [3] and the bridge ideas of §5; computation, proofs and drafting with Claude (Anthropic).
+</div>
+
+<div class="abstract"><b>Abstract.</b> <b>Main theorem.</b> For every non-empty set M of the five Platonic solids there is a tiling of space whose tiles are copies of the solids in M, all of edge 1, each solid of M used and no other Platonic solid of edge 1, together with copies of pieces from one kit of seven connectors: the half octahedron P, the tetrahedron's face pyramid Q (#44), the same pyramid Q′ at size φ²/√2, DICTO's Admiral Caps A (F21), the Dogstar S (#42), and a cube of edge φ with one of Euclid's roofs taken away (X) or added (Y). Tiles need not meet face to face. The proof stacks flat slabs, one for each solid's "world": dodecahedra and Dogstars on Euclid's cubes, edged with X and Y; cubes; the octet, edged with half octahedra; and the icosahedra in Pacioli's position inside octahedra of edge φ²/√2, completed by the Admiral Caps, in an octet of that size. All 31 mixes are checked by computer. Corollaries: the tetrahedron, octahedron, dodecahedron and icosahedron each need a connector (alone or in any mix with D or I), the cube alone does not, and all five solids together fill space with six of the seven connectors. The six Admiral Caps of one icosahedron and one Dogstar have the same volume, φ/2. The smallest kit is left open.</div>
+
+<figure><div class="figs wide"><img class="tall" src="figures/stack-dicto.png" alt="The four slabs of the mix of all five solids, drawn apart"></div>
+<figcaption><b>Figure 1.</b> The mix of all five solids: the slabs stacked from bottom to top, drawn apart. Dodecahedra (violet), cubes (green), the octet of tetrahedra (red) and octahedra (yellow) with half octahedra on its faces (pale gold), and the icosahedra (blue) of the large octet. Left out so the solids show: the Dogstars and boundary pieces X, Y of the dodecahedron slab, the Admiral Caps round each icosahedron and the face pyramids Q′. Element colours as in DICTO's square.</figcaption></figure>
+
+<h2>1. The theorem</h2>
+<p>We write C, T, O, D and I for the cube, tetrahedron, octahedron, dodecahedron and icosahedron, all regular and of edge 1, and φ = (1 + √5)/2. A <i>mix</i> is a non-empty set M of these five; there are 31. M <i>fills space</i> if there is a tiling of space (tiles with disjoint interiors covering space, finitely many meeting any bounded set) whose tiles are congruent copies of the solids of M, every solid of M used, together with congruent copies of finitely many other pieces, the <i>connectors</i>, none of them a Platonic solid of edge 1. Tiles need not meet face to face.</p>
+<p class="hook">Choose any of the five Platonic solids, one, several or all, all with edges of the same length. The theorem says they can always be packed together with no gaps at all, using a small fixed set of helper pieces, most of them cut from the solids themselves.</p>
+<div class="thm"><b>Main theorem.</b> Every one of the 31 mixes fills space with connectors from the kit K = {P, Q, Q′, A, S, X, Y} of Table 1. The tiling can be chosen as a stack of slabs between parallel planes, each slab periodic along its planes, and the stack periodic across them.</div>
+<table><tr><th>Connector</th><th>What it is</th><th>Volume</th></tr>
+<tr><td>P</td><td>half octahedron of edge 1 (a square pyramid)</td><td class="n">√2/6 ≈ 0.23570</td></tr>
+<tr><td>Q</td><td>face pyramid of the tetrahedron of edge 1: a face joined to the centre (#44)</td><td class="n">√2/48 ≈ 0.02946</td></tr>
+<tr><td>Q′</td><td>Q at size L = φ²/√2 ≈ 1.8512</td><td class="n">φ⁶/96 ≈ 0.18692</td></tr>
+<tr><td>A</td><td>one of DICTO's six Admiral Caps: the octahedron of edge L minus the icosahedron of edge 1 in Pacioli's position, cut into its six congruent parts, one round each corner [3]</td><td class="n">φ/12 ≈ 0.13484</td></tr>
+<tr><td>S</td><td>the Dogstar: a cube of edge φ minus six of Euclid's roofs, one on each face, pointing in [6, 7]</td><td class="n">φ/2 ≈ 0.80902</td></tr>
+<tr><td>X</td><td>a cube of edge φ minus one roof (on one face, pointing in)</td><td class="n">φ³ − (1 + 3φ/2)/6 ≈ 3.66489</td></tr>
+<tr><td>Y</td><td>a cube of edge φ plus one roof (on one face, pointing out)</td><td class="n">φ³ + (1 + 3φ/2)/6 ≈ 4.80724</td></tr></table>
+<p style="font-size:8.6pt;margin-top:0"><b>Table 1.</b> The kit. A roof is one of Euclid's six roofs on the cube of edge φ that make the dodecahedron of edge 1 [6]; its volume is (1 + 3φ/2)/6 ≈ 0.57118. P, Q, Q′ and Y are convex (Y is the dodecahedron cut by the planes of five faces of its cube); A, S and X are not. Volumes from volumes.py, closed forms checked against direct computation.</p>
+
+<h2>2. Proof</h2>
+<p class="hook">The idea is a layer cake. Each solid has its own way of filling space; we make each of those into a layer with flat top and bottom, then stack the layers you need.</p>
+<p><b>Lemma 1 (stacking).</b> If slabs between parallel planes are each tiled, the slabs stacked in any order, and the stack repeated by translation across the planes, tile space.</p>
+<p><i>Proof.</i> Slabs with the same normal and adjacent faces on a common plane have disjoint interiors and their union is a thicker slab; repeating it by the translation of its thickness covers space. No face-to-face condition is needed across a plane. ∎</p>
+<p>So it is enough to give, for each solid, a slab that contains it and otherwise only connectors from K.</p>
+
+<p class="hook">The cube's layer is just cubes.</p>
+<p><b>Lemma 2 (cube slab).</b> Edge-1 cubes tile any slab of integer thickness between planes parallel to a face. ∎</p>
+
+<p class="hook">The tetrahedron and the octahedron share the classical octet. Cut flat, it leaves half octahedra on its faces; a solid that is not in the mix is cut into connector pieces.</p>
+<p><b>Lemma 3 (octet slab).</b> Let s = 1/√2. The octet of edge 1 has its corners at the points s(x, y, z) with x + y + z even, an octahedron centred at every point with x + y + z odd and a tetrahedron on the four even corners of every cube of side s [1]. For every integer k the plane z = ks is tiled exactly by the square equators (edge 1) of the octahedra centred in it. Hence for integers k &lt; m the slab ks ≤ z ≤ ms is tiled by the whole tetrahedra and octahedra between, and by half octahedra P on its two faces. If O is not in the mix, each octahedron is cut into two P; if T is not, each tetrahedron into its four face pyramids Q.</p>
+<p><i>Proof.</i> The octahedra centred in the plane z = ks are those at s(x, y, k) with x + y + k odd; their equators are the squares |X − sx| + |Y − sy| ≤ s, centred on one colour of a checkerboard of spacing s, and these squares tile the plane. An octahedron centred at height js spans (j − 1)s ≤ z ≤ (j + 1)s, and a tetrahedron in a small cube spans js ≤ z ≤ (j + 1)s, so every tile not centred in a face plane lies entirely between two consecutive planes z = js. ∎</p>
+
+<p class="hook">The icosahedron fits exactly inside a larger octahedron, Pacioli's figure, and DICTO's six Admiral Caps fill the rest. These large octahedra make their own, larger octet.</p>
+<p><b>Lemma 4 (icosahedron slab).</b> Let L = φ²/√2. The icosahedron of edge 1 with corners ½(0, ±1, ±φ) and their cyclic permutations lies in the regular octahedron |x| + |y| + |z| ≤ φ²/2, of edge L, with its twelve corners on the octahedron's edges, dividing each in the golden ratio [7]; the rest of the octahedron consists of the six Admiral Caps A. In the octet of edge L, with octahedron = icosahedron + six A and tetrahedron = four Q′, the slab between two (111) layer planes is tiled by whole pieces.</p>
+<p><i>Proof.</i> Each corner ½(0, ±1, ±φ) has |x| + |y| + |z| = ½(1 + φ) = φ²/2, so it is on the octahedron's surface, and on the edge between two of its corners; the icosahedron, the convex hull of its corners, lies inside. The octet is a union of layers between consecutive planes parallel to a face of its tetrahedra [1], each layer made of whole tetrahedra and octahedra. ∎</p>
+
+<p class="hook">The dodecahedron is Euclid's cube with a roof on each face. Dodecahedra on alternate cubes, with Dogstars in between, fill space. At a flat edge the roofs stick out, so two new pieces finish it off: X, a cube with the roof that pokes in taken out, and Y, a cube with a roof added.</p>
+<p><b>Lemma 5 (dodecahedron slab).</b> In the cubic lattice of edge φ, take three layers of cubes. In the middle layer put a dodecahedron of edge 1 (the cube with Euclid's six roofs [6]) on every other cube and a Dogstar S in the rest. In the two outer layers, put X next to a dodecahedron (the cube minus the roof that pokes into it) and Y next to a Dogstar (the cube plus the roof that pokes into the Dogstar). This tiles the slab of thickness 3φ, and its faces are flat.</p>
+<p><i>Proof.</i> A roof has its base on a face of its cube and height ½ &lt; φ, so it lies inside the cube across that face. Dodecahedra on alternate cubes, with the Dogstars as what is left of the other cubes, tile space (Hart [4]; exact in #42 [5]). In the slab, the middle-layer cubes keep that arrangement; a Dogstar's top and bottom roofs, which in the full tiling belong to dodecahedra above and below, are here the roofs of the Y pieces, so every Dogstar is a whole S. An outer cube next to a dodecahedron loses exactly the roof that pokes in (X); one next to a Dogstar gains exactly the roof that pokes into the Dogstar (Y). Roofs lie on inner faces only, so the outer faces of the slab are flat squares. ∎</p>
+
+<p><b>Proof of the main theorem.</b> Given a mix M, take one slab for each world that M needs: the dodecahedron slab if D ∈ M; a cube slab if C ∈ M; an octet slab if T or O is in M, with the solids not in M cut into P or Q; the icosahedron slab if I ∈ M. Stack them (Lemma 1). Every solid of M occurs, and the only edge-1 Platonic solids that occur are those of M, since the solids not in M are cut into connectors and the large octet's pieces have edge L. The connectors used are all in K. ∎</p>
+<p><b>Verification.</b> mixes3.py builds the stack for each of the 31 mixes and tests 40 000 random points through the whole stack, writing each piece as a signed sum of convex parts (Dogstar = cube − 6 roofs, X = cube − roof, Y = cube + roof, octahedron of edge L = icosahedron + caps): every point is covered with total exactly 1, no two dodecahedra overlap, and each mix uses exactly its own solids (log mixes3.log; steps 1 and 2 in mixes.py and mixes2.py). volumes.py checks the volumes of Table 1.</p>
+
+<figure><div class="figs wide"><img class="mid" src="figures/seam-cto.png" alt="Cubes below, half octahedra on the seam, the octet above"></div>
+<figcaption><b>Figure 2.</b> A seam of Lemma 3 met by Lemma 2: cubes (green) below; on their top squares the half octahedra P (pale gold) of the octet's bottom face; above, tetrahedra (red) and octahedra (yellow). The octet is lifted slightly to show the seam.</figcaption></figure>
+
+<h2>3. Corollaries</h2>
+<p class="hook">Some mixes need helpers and some do not, and the five solids together need six of the seven.</p>
+<p><b>Corollary 1 (who needs a connector).</b> The cube fills space alone, and so do the tetrahedron and the octahedron together (the octet). Every mix containing D or I, and the mixes T, O, C + T and C + O, need a connector: in a tiling by these solids alone, the counting map of #44 [2] gives a contradiction at an edge (h(θ<sub>D</sub>) = 1 or h(θ<sub>I</sub>) = 1 for D and I; h(α) = 1, where the tetrahedron's edges carry +1, the octahedron's −1 and the cube's 0, for the other four). Whether cubes, tetrahedra and octahedra fill space together without connectors is open; our stack uses P at the seam.</p>
+<p><b>Corollary 2 (all five).</b> All five Platonic solids of edge 1 fill space together with the six connectors P, Q′, A, S, X and Y.</p>
+<p><b>Corollary 3 (equal volumes).</b> The six Admiral Caps of one icosahedron and one Dogstar have the same volume, φ/2: the octahedron of edge L has volume φ⁶/6 = (8φ + 5)/6 and the icosahedron 5φ²/6 = (5φ + 5)/6, while the Dogstar is the cube φ³ = 2φ + 1 minus six roofs, 2φ³ − (2 + 7φ/2). (We note the coincidence; we do not know a reason for it.)</p>
+
+<h2>4. Conjectures and open questions</h2>
+<p>We state no conjecture. Open questions: (1) whether C + T + O fills space without connectors (Corollary 1); (2) the smallest kit that serves all 31 mixes (seven connectors suffice; Corollary 1 shows that at least one is needed); (3) the same with tiles meeting face to face; (4) whether every mix fills space by a tiling periodic in three independent directions (ours are periodic across the slabs and along each slab, but the slabs' periods along the planes, built on 1, φ and φ²/√2, need not match).</p>
+
+<h2>5. DICTO's ideas, and other bridges</h2>
+<p>DICTO proposed the question and suggested bridges: pieces like his RVCMG adaptors, which already join hexagons, scutoid-like forms with different polygons at the two ends, and a truncated tetrahedron with roofs. The flat slabs made these unnecessary for the theorem, but they matter for the face-to-face question (3). Two classical fillings agree with his truncated tetrahedron idea: tetrahedra and truncated tetrahedra fill space, and so do octahedra and cuboctahedra, all of edge 1 (the uniform honeycombs; prior art).</p>
+
+<h2>6. Conclusion</h2>
+<p class="hook">Any choice of Platonic solids can now be packed solid, and the helpers come from the solids themselves and from DICTO's earlier pieces.</p>
+<p>Every mix of the five Platonic solids of edge 1 fills space with connectors from one kit of seven: two are halves and quarters of the solids themselves (P, Q), one is the same quarter at another size (Q′), and four come from the golden solids, DICTO's Admiral Caps for the icosahedron and, for the dodecahedron, the Dogstar and Euclid's cube with a roof taken away or added. The proof is a stack of flat slabs, so the answer is as simple as it is general; how small the kit can be, and what changes when faces must match, are left open.</p>
+
+<h2>7. Prior art, and the status of each result</h2>
+<ul>
+<li><b>Known, credited:</b> the octet of tetrahedra and octahedra (Maurolico; Lagarias and Zong [1]); Pacioli's icosahedron in the octahedron [7]; Euclid's dodecahedron from the cube and six roofs [6]; the tiling by dodecahedra and Dogstars (Hart [4]); that the cube is the only Platonic solid that tiles space alone [8]; the uniform honeycombs of §5.</li>
+<li><b>DICTO's earlier work, cited:</b> the face pyramids and the counting map (#44 [2]); the Admiral Caps and the icosahedral octet (F21 [3]); the exact Sunstar Lattice of dodecahedra and Dogstars (#42 [5]).</li>
+<li><b>Proved here:</b> the main theorem with Lemmas 1–5, and Corollaries 1–3.</li>
+<li><b>Checked by computer:</b> all 31 stacks (random points, signed convex parts) and the volumes of Table 1.</li>
+</ul>
+<p>In the full text of the reference library's local sources (DICTOR-Master/kaleidohedra-references, commit d73a679), searched on 22 October 2026 for: five Platonic, all five, Platonic solids, honeycomb, fill space, fills space, space-filling, tile space, Dogstar and Pacioli, we found no construction that fills space with every mix of the Platonic solids. The closest are the classical fillings above and Torquato and Jiao's remark that only the cube tiles alone [8].</p>
+
+<h2>Data and reproducibility</h2>
+<p>In studies/2026-10-22-platonic-mix-step1: mixes.py (step 1, the cube, tetrahedron and octahedron; log mixes.log), mixes2.py and caps.py (step 2, the icosahedron; mixes2.log), mixes3.py (all 31 mixes, one construction; mixes3.log), volumes.py (volumes.log), seam_figure.py and stack_figure.py (Figures 2 and 1). Python 3 with numpy and scipy.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>J. C. Lagarias, C. Zong, Mysteries in packing regular tetrahedra, Notices Amer. Math. Soc. 59 (2012) 1540–1549, doi:10.1090/noti918.</li>
+<li>DICTO, Aristotle's Pyramid, #44, DICTO DOI: 10.5281/zenodo.23529497.</li>
+<li>DICTO, Kaleidohedra by DICTO, release v2026.10.11-octet, finding F21 "The icosahedral octet" (the Admiral Caps), DICTO DOI: 10.5281/zenodo.23284390.</li>
+<li>G. W. Hart, Tetrahedral stellations of the dodecahedron (1996), https://www.georgehart.com/virtual-polyhedra/stellations-dodecahedron-tetrahedral.html (stellation 8).</li>
+<li>DICTO, The DICTO Sunstar, #42, DICTO DOI: 10.5281/zenodo.23497702.</li>
+<li>Euclid, The Thirteen Books of the Elements, tr. T. L. Heath, vol. III (Books X–XIII), Cambridge (1908), Book XIII, Proposition 17.</li>
+<li>L. Pacioli, Divina proportione, Venice (1509).</li>
+<li>S. Torquato, Y. Jiao, Dense packings of the Platonic and Archimedean solids, Nature 460 (2009) 876–879; arXiv:0909.0940.</li>
+</ol>
+
+<h2>Appendix. The connectors of each mix</h2>
+<p>The connectors used by the stack of the proof, mix by mix (mixes3.log). A mix of one solid also fills space without slab faces: the tetrahedron with P, the octahedron with Q, the dodecahedron with S, the icosahedron with A and Q′.</p>
+<table><tr><th>Mix</th><th>Connectors</th></tr><tr><td>dodecahedron</td><td>S, X, Y</td></tr><tr><td>icosahedron</td><td>A, Q'</td></tr><tr><td>cube</td><td>none</td></tr><tr><td>tetrahedron</td><td>P</td></tr><tr><td>octahedron</td><td>P, Q</td></tr><tr><td>dodecahedron, icosahedron</td><td>A, Q', S, X, Y</td></tr><tr><td>dodecahedron, cube</td><td>S, X, Y</td></tr><tr><td>dodecahedron, tetrahedron</td><td>P, S, X, Y</td></tr><tr><td>dodecahedron, octahedron</td><td>P, Q, S, X, Y</td></tr><tr><td>icosahedron, cube</td><td>A, Q'</td></tr><tr><td>icosahedron, tetrahedron</td><td>A, P, Q'</td></tr><tr><td>icosahedron, octahedron</td><td>A, P, Q, Q'</td></tr><tr><td>cube, tetrahedron</td><td>P</td></tr><tr><td>cube, octahedron</td><td>P, Q</td></tr><tr><td>tetrahedron, octahedron</td><td>P</td></tr><tr><td>dodecahedron, icosahedron, cube</td><td>A, Q', S, X, Y</td></tr><tr><td>dodecahedron, icosahedron, tetrahedron</td><td>A, P, Q', S, X, Y</td></tr><tr><td>dodecahedron, icosahedron, octahedron</td><td>A, P, Q, Q', S, X, Y</td></tr><tr><td>dodecahedron, cube, tetrahedron</td><td>P, S, X, Y</td></tr><tr><td>dodecahedron, cube, octahedron</td><td>P, Q, S, X, Y</td></tr><tr><td>dodecahedron, tetrahedron, octahedron</td><td>P, S, X, Y</td></tr><tr><td>icosahedron, cube, tetrahedron</td><td>A, P, Q'</td></tr><tr><td>icosahedron, cube, octahedron</td><td>A, P, Q, Q'</td></tr><tr><td>icosahedron, tetrahedron, octahedron</td><td>A, P, Q'</td></tr><tr><td>cube, tetrahedron, octahedron</td><td>P</td></tr><tr><td>dodecahedron, icosahedron, cube, tetrahedron</td><td>A, P, Q', S, X, Y</td></tr><tr><td>dodecahedron, icosahedron, cube, octahedron</td><td>A, P, Q, Q', S, X, Y</td></tr><tr><td>dodecahedron, icosahedron, tetrahedron, octahedron</td><td>A, P, Q', S, X, Y</td></tr><tr><td>dodecahedron, cube, tetrahedron, octahedron</td><td>P, S, X, Y</td></tr><tr><td>icosahedron, cube, tetrahedron, octahedron</td><td>A, P, Q'</td></tr><tr><td>dodecahedron, icosahedron, cube, tetrahedron, octahedron</td><td>A, P, Q', S, X, Y</td></tr></table>
+</body></html>
