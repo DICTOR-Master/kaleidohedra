@@ -1,6 +1,6 @@
 // The Mosseri–Sadoc tiles (DICTO 2026-10-23), through the real UI on every door, on a phone (touch): DICTO → 3D+ →
-// Mosseri–Sadoc tiles (1982) lists M-S t1, Cleo (M-S t4), M-S t5 and AXE (M-S t6); M-S t1 and M-S t5 open their details
-// with the Mosseri–Sadoc credit; Build places M-S t5; search "Mosseri" finds the four. SHOTS saves screenshots.
+// Mosseri–Sadoc tiles (1982) lists all six by M-S number (Hound Tooth (M-S t2) … AXE (M-S t6)); M-S t1 and M-S t5 open their details
+// with the Mosseri–Sadoc credit; Build places M-S t5; search "Mosseri" finds the six; Hound Tooth's details credit t2, letter G. SHOTS saves screenshots.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SHOTS = process.env.SHOTS ?? '/tmp';
@@ -18,8 +18,12 @@ for (const door of DOORS) for (const [vp, viewport] of Object.entries(VIEWPORTS)
   assert.match(await fam.textContent(), /Mosseri–Sadoc tiles \(1982\)/);
   await fam.tap(); await page.waitForTimeout(800);
   const labels = await page.$$eval('.dim-wizard-body [data-action^="tool:polyShape:"] .dim-wizard-label', (els) => els.map((e) => e.textContent.trim()));
-  assert.deepEqual(labels, ['M-S t1', 'Cleo (M-S t4)', 'M-S t5', 'AXE (M-S t6)'], `${door} ${vp}: family list`);
+  assert.deepEqual(labels, ['M-S t1', 'Hound Tooth (M-S t2)', 'Tricap (M-S t3)', 'Cleo (M-S t4)', 'M-S t5', 'AXE (M-S t6)'], `${door} ${vp}: family list`);
   await page.screenshot({ path: `${SHOTS}/ms-t1-t5-${door}-${vp}-family.png` });
+  { const ht = page.locator('[data-action="tool:polyShape:HOUND_TOOTH"]').first(); await ht.scrollIntoViewIfNeeded(); await ht.tap(); await page.waitForTimeout(800);
+    const c = await page.textContent('[data-credit="mosseri-sadoc"]');
+    assert.ok(c.startsWith('Hound Tooth (M-S t2)') && c.includes('their letter G'), 'Hound Tooth credit');
+    await page.tap('.dim-wizard-back'); await page.waitForTimeout(600); }
   for (const [id, letter] of [['MS_T1', 'B'], ['MS_T5', 'C']]) {
     const card = page.locator(`[data-action="tool:polyShape:${id}"]`).first(); await card.scrollIntoViewIfNeeded(); await card.tap(); await page.waitForTimeout(800);
     assert.equal((await page.textContent('.poly-detail-name')).trim(), `M-S ${id.slice(-2).toLowerCase()}`);
@@ -40,7 +44,7 @@ for (const door of DOORS) for (const [vp, viewport] of Object.entries(VIEWPORTS)
   if (!(await page.locator('.poly-search-input').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
   const input = page.locator('.poly-search-input').first(); await input.scrollIntoViewIfNeeded(); await input.tap(); await input.fill('mosseri'); await page.waitForTimeout(800);
   const found = await page.$$eval('.poly-search-results [data-shape]', (els) => els.map((e) => e.dataset.shape));
-  assert.deepEqual(found.sort(), ['KIT13_ICOSA13_AXE', 'KIT13_ICOSA13_CLEO', 'MS_T1', 'MS_T5'], `${door} ${vp}: search`);
+  assert.deepEqual(found.sort(), ['HOUND_TOOTH', 'KIT13_ICOSA13_AXE', 'KIT13_ICOSA13_CLEO', 'MS_T1', 'MS_T5', 'TRICAP'], `${door} ${vp}: search`);
   console.log(`${door} ${vp}: ${labels.join(', ')} · search ${found.length} · ${errors.length ? 'ERRORS ' + errors.join(' | ') : 'no errors'}`);
   assert.equal(errors.length, 0);
   await page.close();

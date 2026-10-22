@@ -268,7 +268,7 @@ DICTO の Polyhedraverse の欄の上部では、**検索** で名前、ファ�
 | Parallelohedra | 平行移動だけで空間を埋める形：フェドロフの5種と、その変種（菱面体、そしてDICTOがZometoolで見つけた傾いた六角柱とその2つのブロック、そして歪んだ菱形十二面体とその平たい菱面体）、そしてKaleidohedraで検証済みのもの（ベイン変形で全ての辺が等しいセル：ベイン菱形十二面体、既知でDICTOが独立に到達した正六角形伸長十二面体、DICTOのベイン伸長十二面体）、そしてKaleidohedra Regular 9（全ての辺が等しく、面が正方形・正六角形・60°のひし形だけの、空間を埋める形すべて） |
 | Space-Filling Pairs | 2 つ一緒に空間を埋める形。DICTO のDICTO ジュエルと星形八面体（Kaleidohedra から）も含み、互いの面どうしでつながり、ひし形はペンローズの厚いひし形と合います。Sunstar Lattice の組もあります：ドッグスター（最密充填の正十二面体が残す穴。辺がすべて黄金比の 8 本とげの星で、体積は φ/2）と、ドッグスターと接する所に継ぎ目を入れた正十二面体。面に 6 つのドッグスターをつなぐとサンスターになります |
 | Aperiodic Sets | 2 組の非周期ペア：細長い・平たい黄金菱面体（3D ペンローズ・タイリング）と、太い・細いペンローズ菱形の角柱（層状の 5D タイリング） |
-| Mosseri–Sadoc tiles (1982) | Mosseri と Sadoc（1982）の黄金四面体を番号順に（t1〜t6 は Koca ら 2020 の表による）：M-S t1、Cleo（M-S t4）、M-S t5、AXE（M-S t6）。どれも 1/τ 倍で、詳細に番号と記号があります。Hound Tooth（M-S t2）と Tricap（M-S t3）は Kaleidohedra の DICTO Icosa ワールドにあります |
+| Mosseri–Sadoc tiles (1982) | Mosseri と Sadoc（1982）の黄金四面体を番号順に（t1〜t6 は Koca ら 2020 の表による）：M-S t1、Hound Tooth（M-S t2）、Tricap（M-S t3）、Cleo（M-S t4）、M-S t5、AXE（M-S t6）。どれも 1/τ 倍で、詳細に番号と記号があります |
 | 3D+ Bridges | 高次元の多胞体の影、断面、セル、頂点のいずれかである形。どれにあたるかは詳細に書かれています |
 | Miscellaneous | 段階的なピラミッド、コネクタ用のピース、角柱の延長パーツ |
 
