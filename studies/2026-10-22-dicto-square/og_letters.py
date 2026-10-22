@@ -99,7 +99,7 @@ def render(img,cx,cy,rad,SS=2):
             rgb=dark+(lite-dark)*lam[...,None]**1.3; rgb=rgb+(255-rgb)*h[...,None]*0.8
             tile=Image.fromarray(np.clip(rgb,0,255).astype(np.uint8)); mask=Image.fromarray((ndimage.gaussian_filter(M,0.6)*255).astype(np.uint8))
             if LINE:   # the letter as a gold outline
-                ins=M>0.5; ring=ins & ~ndimage.binary_erosion(ins,iterations=max(1,int(px*0.035)))
+                ins=M>0.5; ring=ins & ~ndimage.binary_erosion(ins,iterations=max(1,int(px*0.07)))
                 tile=Image.new('RGB',(px,px),GOLD); mask=Image.fromarray((ndimage.gaussian_filter(ring.astype(float),0.7)*255).astype(np.uint8))
             # affine map tile (px x px, side 2*r*1.6 in the facet) onto the screen
             corner=lambda a,b_: P(c+U*(a*hx)+Vv*(b_*hy))
@@ -114,7 +114,7 @@ def render(img,cx,cy,rad,SS=2):
             img.paste(t2,box[:2],m2)
 if __name__=='__main__':
     if LINE:
-        N=600; SS=2; W=N*SS; LW=int(0.006*W); img=Image.new('RGBA',(W,W),(0,0,0,0))
+        N=600; SS=2; W=N*SS; LW=int(0.012*W); img=Image.new('RGBA',(W,W),(0,0,0,0))
         render(img,W/2,W/2,0.46*W,SS); img.resize((N,N),Image.LANCZOS).save(os.path.join(here,'og-line.png'))
     else:
         N=1400; SS=2; W=N*SS; img=Image.new('RGB',(W,W),GROUND)
