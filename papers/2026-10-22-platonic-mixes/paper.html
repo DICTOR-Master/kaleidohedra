@@ -9,7 +9,7 @@
 <p class="sub">Theorem: for each of the 31 sets of Platonic solids of edge 1 there is a filling of space that uses exactly those solids, with connectors from a kit of seven pieces</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
-Version 1 · 22 October 2026 · DICTO DOI: reserved on publication · Licence CC BY-SA 4.0 · Scripts, checks and figures: https://github.com/DICTOR-Master/kaleidohedra/tree/9daa07f/studies/2026-10-22-platonic-mix-step1 (research branch, commit 9daa07f; also attached to this record)<br>
+Version 1 · 22 October 2026 · DICTO DOI: reserved on publication · Licence CC BY-SA 4.0 · Scripts, checks and figures: https://github.com/DICTOR-Master/kaleidohedra/tree/cea1e4a/studies/2026-10-22-platonic-mix-step1 (research branch, commit cea1e4a; also attached to this record)<br>
 The question, to connect all the Platonic solids in any combination by combining the earlier work, is DICTO's idea, as are the Admiral Caps [3] and the bridge ideas of §5; computation, proofs and drafting with Claude (Anthropic).
 </div>
 
@@ -32,8 +32,13 @@ The question, to connect all the Platonic solids in any combination by combining
 <tr><td>Y</td><td>a cube of edge φ plus one roof (on one face, pointing out)</td><td class="n">φ³ + (1 + 3φ/2)/6 ≈ 4.80724</td></tr></table>
 <p style="font-size:8.6pt;margin-top:0"><b>Table 1.</b> The kit. A roof is one of Euclid's six roofs on the cube of edge φ that make the dodecahedron of edge 1 [6]; its volume is (1 + 3φ/2)/6 ≈ 0.57118. P, Q, Q′ and Y are convex (Y is the dodecahedron cut by the planes of five faces of its cube); A, S and X are not. Volumes from volumes.py, closed forms checked against direct computation.</p>
 
+<figure><div class="figs wide"><img src="figures/connectors.png" alt="The seven connector pieces"></div>
+<figcaption><b>Figure 2.</b> The seven connectors, all at one scale (bar: edge 1). P, half an octahedron; Q, a quarter of a tetrahedron (a face joined to the centre); Q′, the same at size φ²/√2; A, one of DICTO's Admiral Caps (four small triangles of the large octahedron's faces and two faces of the icosahedron inside it); S, the Dogstar, a cube of edge φ with Euclid's roof pressed into each face; X, the cube with one roof pressed in; Y, the cube with one roof added. Each drawn from its own faces; the volumes agree with Table 1.</figcaption></figure>
+
 <h2>2. Proof</h2>
 <p class="hook">The idea is a layer cake. Each solid has its own way of filling space; we make each of those into a layer with flat top and bottom, then stack the layers you need.</p>
+<figure><div class="figs wide"><img class="mid" src="figures/layer-cake.png" alt="The layer cake: one flat layer per solid, stacked"></div>
+<figcaption><b>Figure 3.</b> The proof in one picture: each solid's world becomes a layer with flat faces; a mix uses the layers it needs, stacked and repeated.</figcaption></figure>
 <p><b>Lemma 1 (stacking).</b> If slabs between parallel planes are each tiled, the slabs stacked in any order, and the stack repeated by translation across the planes, tile space.</p>
 <p><i>Proof.</i> Slabs with the same normal and adjacent faces on a common plane have disjoint interiors and their union is a thicker slab; repeating it by the translation of its thickness covers space. No face-to-face condition is needed across a plane. ∎</p>
 <p>So it is enough to give, for each solid, a slab that contains it and otherwise only connectors from K.</p>
@@ -57,7 +62,7 @@ The question, to connect all the Platonic solids in any combination by combining
 <p><b>Verification.</b> mixes3.py builds the stack for each of the 31 mixes and tests 40 000 random points through the whole stack, writing each piece as a signed sum of convex parts (Dogstar = cube − 6 roofs, X = cube − roof, Y = cube + roof, octahedron of edge L = icosahedron + caps): every point is covered with total exactly 1, no two dodecahedra overlap, and each mix uses exactly its own solids (log mixes3.log; steps 1 and 2 in mixes.py and mixes2.py). volumes.py checks the volumes of Table 1.</p>
 
 <figure><div class="figs wide"><img class="mid" src="figures/seam-cto.png" alt="Cubes below, half octahedra on the seam, the octet above"></div>
-<figcaption><b>Figure 2.</b> A seam of Lemma 3 met by Lemma 2: cubes (green) below; on their top squares the half octahedra P (pale gold) of the octet's bottom face; above, tetrahedra (red) and octahedra (yellow). The octet is lifted slightly to show the seam.</figcaption></figure>
+<figcaption><b>Figure 4.</b> A seam of Lemma 3 met by Lemma 2: cubes (green) below; on their top squares the half octahedra P (pale gold) of the octet's bottom face; above, tetrahedra (red) and octahedra (yellow). The octet is lifted slightly to show the seam.</figcaption></figure>
 
 <h2>3. Corollaries</h2>
 <p class="hook">Some mixes need helpers and some do not, and the five solids together need six of the seven.</p>
@@ -85,7 +90,7 @@ The question, to connect all the Platonic solids in any combination by combining
 <p>In the full text of the reference library's local sources (DICTOR-Master/kaleidohedra-references, commit d73a679), searched on 22 October 2026 for: five Platonic, all five, Platonic solids, honeycomb, fill space, fills space, space-filling, tile space, Dogstar and Pacioli, we found no construction that fills space with every mix of the Platonic solids. The closest are the classical fillings above and Torquato and Jiao's remark that only the cube tiles alone [8].</p>
 
 <h2>Data and reproducibility</h2>
-<p>In studies/2026-10-22-platonic-mix-step1: mixes.py (step 1, the cube, tetrahedron and octahedron; log mixes.log), mixes2.py and caps.py (step 2, the icosahedron; mixes2.log), mixes3.py (all 31 mixes, one construction; mixes3.log), volumes.py (volumes.log), seam_figure.py and stack_figure.py (Figures 2 and 1). Python 3 with numpy and scipy.</p>
+<p>In studies/2026-10-22-platonic-mix-step1: mixes.py (step 1, the cube, tetrahedron and octahedron; log mixes.log), mixes2.py and caps.py (step 2, the icosahedron; mixes2.log), mixes3.py (all 31 mixes, one construction; mixes3.log), volumes.py (volumes.log), stack_figure.py, pieces_figure.py, cake_diagram.py and seam_figure.py (Figures 1–4). Python 3 with numpy and scipy.</p>
 
 <h2>References</h2>
 <ol class="refs">
