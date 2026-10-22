@@ -15,7 +15,7 @@ const probe = () => page.evaluate(() => window.__studiesProbe());
 let st = await probe(); assert.equal(st.study, 'stretch'); assert.equal(st.spacing, 1);
 assert.match(await panel.locator('[data-select="study"] option:checked').textContent(), /DICTO stretched solids/);
 assert.match(await panel.locator('.st-slider-val').textContent(), /equal-edged/);
-const DIRS = { cube: 14, face: 22, body: 24, five: 18 };
+const DIRS = { cube: 14, face: 22, body: 24, five: 22 };
 for (const [d, n] of Object.entries(DIRS)) {
   await panel.locator(`[data-st-dir="${d}"]`).tap(); await page.waitForTimeout(500);
   st = await probe(); assert.equal(st.direction, d); assert.equal(st.faces, n, `${d}: ${n} faces`);

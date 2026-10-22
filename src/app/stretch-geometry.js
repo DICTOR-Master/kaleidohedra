@@ -6,13 +6,19 @@
 // No three.js here, so the unit tests can run it.
 import { roofFoldCell, convexHullFaces, PHI } from '../krp-core/src/geometry-extensions/roof-fold.js';
 
+const unit = (v) => { const l = Math.hypot(...v); return v.map((c) => c / l); };
 export const STRETCH_DIRECTIONS = ['cube', 'face', 'body', 'five'];
 export const STRETCH_CAPS = [2, 3, 4];
-const DIRECTION = { cube: [1, 0, 0], face: [1, 1, 0], body: [1, 1, 1], five: [0, 1, PHI] };
+// The five-fold axis: a face normal of this very dodecahedron (the face whose normal leans most to +z), from its own geometry.
+const faceNormal = () => {
+  const D = roofFoldCell().dodeca;
+  const normals = convexHullFaces(D).map((f) => { const c = [0, 1, 2].map((a) => f.reduce((t, p) => t + p[a], 0) / f.length); return unit(c); });
+  return normals.reduce((best, n) => (n[2] > best[2] ? n : best));
+};
+const DIRECTION = { cube: [1, 0, 0], face: [1, 1, 0], body: [1, 1, 1], five: faceNormal() };
 const s = Math.SQRT1_2;
 const CORNERS = { 3: [[0, 0, 0], [s, s, 0], [s, 0, s]], 4: [[0, 0, 0], [s, s, 0], [s, 0, s], [0, s, s]] };
 const EDGE = 2 / PHI;   // one edge, in the frame's units
-const unit = (v) => { const l = Math.hypot(...v); return v.map((c) => c / l); };
 
 /** The caps' centres (frame units), centred on the origin. */
 export function capCentres(spacing, direction = 'cube', caps = 2) {
@@ -25,5 +31,8 @@ export function stretchedSolid(spacing, direction = 'cube', caps = 2) {
   const D = roofFoldCell().dodeca;
   return convexHullFaces(capCentres(spacing, direction, caps).flatMap((c) => D.map((p) => p.map((x, a) => x + c[a]))));
 }
-/** A face's kind, for its colour: pentagon, rhombus (any quadrilateral), long (hexagon or heptagon), triangle. */
+/** A face's kind, for its colour: pentagon, rhombus (any quadrilateral), long (a hexagon), triangle. */
 export const faceKind = (f) => (f.length === 5 ? 'pentagon' : f.length === 4 ? 'rhombus' : f.length === 3 ? 'triangle' : 'long');
+
+/** The five-fold axis used (for the tests). */
+export const FIVE_FOLD = DIRECTION.five;
