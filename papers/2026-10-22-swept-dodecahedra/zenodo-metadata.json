@@ -1,0 +1,72 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-22",
+ "access_right": "open",
+ "title": "The Polyhedral Stretching Theorem",
+ "description": "<p><b>In short.</b> Take a regular dodecahedron and slide it one edge-length in a straight line. The shape it sweeps through has every edge the same length, whichever way you slide it, except when the slide runs exactly along one of its edges.</p><p><b>Main theorem (the Polyhedral Stretching Theorem).</b> Let P be a convex polyhedron whose edges all have length 1, and slide it a distance 1 along a direction u. The swept shape (the convex hull of P and P moved by u) has every edge of length 1 unless u is parallel to an edge of P. Its faces are: each face of P not parallel to u, kept whole; each n-sided face parallel to u, stretched into an (n+2)-gon, with one side fewer for each of its edges parallel to u; and one parallelogram for every edge of P's outline seen along u, a rhombus when the slide is 1. The proof is given in an appendix.</p><p>For the dodecahedron: sliding along a cube axis gives DICTO's stretched dodecahedron (F11); along a five-fold axis the ten rhombi are all alike; along a face diagonal of Euclid's cube it gives the member DICTO found, all twelve pentagons and ten rhombi, which began as a void and two overlapping dodecahedra that DICTO saw in the dodecahedron layer of paper #47. Dodecahedra at the corners of a triangle or a tetrahedron give three- and four-cap forms with equilateral triangles among their faces. The theorem holds for every Platonic solid: the stretched icosahedra form a second new-looking family, and the tetrahedron and octahedron rediscover the cuboctahedron, the truncated tetrahedron and three Johnson solids. DICTO names the family the DICTO stretched solids: equal-edged when the stretch is one edge-length, telescoped at any other length.</p><p>Attached: printable nets (five A4 nets with glue tabs) and DICTO's telescoping paper model, which slides from equal-edged to long, and the study with all scripts and checks.</p><p>The stretched dodecahedron (F11), the long hexagon seen in the dodecahedron layer, the three- and four-cap forms and the telescoping model are DICTO's ideas; computation, proofs and drafting with Claude (Anthropic).</p>",
+ "keywords": [
+  "DICTO",
+  "dodecahedron",
+  "Platonic solids",
+  "Minkowski sum",
+  "stretched polyhedra",
+  "equilateral polyhedra",
+  "icosahedron",
+  "paper models",
+  "nets",
+  "golden ratio"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23551326",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23173809",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "arXiv:1806.07643",
+   "relation": "references",
+   "scheme": "arxiv"
+  },
+  {
+   "identifier": "arXiv:1501.01212",
+   "relation": "references",
+   "scheme": "arxiv"
+  },
+  {
+   "identifier": "arXiv:2007.01753",
+   "relation": "references",
+   "scheme": "arxiv"
+  },
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/014b5ee/studies/2026-10-22-swept-dodecahedra",
+   "relation": "isSupplementedBy",
+   "scheme": "url"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ],
+ "notes": "#49 in DICTO's numbering (dictospheres.com). Scripts and checks attached as a zip of studies/2026-10-22-swept-dodecahedra (research branch, commit 014b5ee); printable nets and the telescoping model attached as PDFs."
+}
