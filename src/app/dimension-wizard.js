@@ -545,6 +545,10 @@ export const LATTICES_4D = [
 // Kaleidohedra's; each app's lattices are listed once per app.
 const SHARED_WORLDS = ['roofFold', 'sunstar', 'stellaJewel', 'shells', 'golden'];
 const K_WORLDS = [
+  // Every Mix of the Platonic Solids (DICTO 2026-10-22; paper #47): five letter toggles D I C T O choose a mix; a block of its space
+  // filling, one slab per world, the helper pieces muted and hideable, a slider spreading the slabs; first as the newest work
+  // (world-platonic-mix.js).
+  { key: 'platonicMix', label: 'Every Mix of the Platonic Solids', pieces: [{ label: 'Every Mix of the Platonic Solids', action: 'tool:platonicMixWorld' }] },
   // The Reuleaux Platonic Solids (DICTO 2026-10-21; paper #45): balls on a Platonic solid's corners grow into its Reuleaux body (the
   // film), and the five bodies as pieces placed face to face (the build); first as the newest work (DICTO) (world-reuleaux.js).
   { key: 'reuleaux', label: 'The Reuleaux Platonic Solids', pieces: [{ label: 'The Reuleaux Platonic Solids', action: 'tool:reuleauxWorld' }] },
@@ -646,10 +650,10 @@ const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'PLATONIC', 'ARCHIMEDEAN', 'CATALAN
 // DICTO's own work, shown in DICTO's livery (silver) at the top of its app's block (DICTO 2026-10-09);
 // it still opens in its app. Lattices and worlds by key, single pieces by action, and DICTO's
 // Polyhedraverse pieces gathered from across its families.
-const DICTO_WORK = new Set(['reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
+const DICTO_WORK = new Set(['platonicMix', 'reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
 const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
 // DICTO's block, findings first and tools last (copy audit, DICTO 2026-10-09).
-const DICTO_ORDER = ['reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'theaetetus', 'chains', 'thirteens', 'octet', 'icosa', 'dodeca', 'roofFold', 'stellaJewel', 'sunstar', 'octetBuild', 'studies', 'targets', 'dictofcc', 'hex', 'shells', 'golden'];
+const DICTO_ORDER = ['platonicMix', 'reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'theaetetus', 'chains', 'thirteens', 'octet', 'icosa', 'dodeca', 'roofFold', 'stellaJewel', 'sunstar', 'octetBuild', 'studies', 'targets', 'dictofcc', 'hex', 'shells', 'golden'];
 const dictoRank = (e) => { const i = DICTO_ORDER.indexOf(e.lat?.key); return i < 0 ? DICTO_ORDER.length : i; };
 const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['TETRAPOD_FIVE_TO', 'TETRAPOD_FOUR_RD', 'ANTONIUS', 'ICOSA_FACE_PYRAMID', 'PENTA_CLEO', 'CLEO_SPHERE_POCKET', 'HEX_AKTIS', 'DELTOID_AKTIS', 'OTT_CLEO_ICOS', 'OTT_TRIANGLE_RAY', 'OTT_RHOMBIC_RAY', 'DICTO_EDGE_ROOF', 'DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER', ...KIT13_ADDITION_IDS] };
 export const DICTO_PIECE_IDS = DICTO_POLY.ids;

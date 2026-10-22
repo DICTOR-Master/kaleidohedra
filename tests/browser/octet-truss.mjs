@@ -17,7 +17,7 @@ if (!(await page.locator('[data-action="tool:octetTrussWorld"]').count())) await
 await page.waitForTimeout(500);
 const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World$/.test(a)));
 console.log('first DICTO worlds:', worlds.slice(0, 3).join(', '));
-assert.equal(worlds[0], 'tool:reuleauxWorld', 'new work first (The Reuleaux Platonic Solids, #45)'); assert.equal(worlds[1], 'tool:aristotleWorld', "then Aristotle's Pyramid (#44)"); assert.equal(worlds[2], 'tool:octetTrussWorld', 'then the octet truss'); assert.equal(worlds.filter((a) => a === 'tool:octetTrussWorld').length, 1, 'listed once');
+assert.equal(worlds[0], 'tool:platonicMixWorld', 'new work first (Every Mix of the Platonic Solids, #47)'); assert.equal(worlds[1], 'tool:reuleauxWorld', 'then The Reuleaux Platonic Solids (#45)'); assert.equal(worlds[2], 'tool:aristotleWorld', "then Aristotle's Pyramid (#44)"); assert.equal(worlds[3], 'tool:octetTrussWorld', 'then the octet truss'); assert.equal(worlds.filter((a) => a === 'tool:octetTrussWorld').length, 1, 'listed once');
 await page.locator('[data-action="tool:octetTrussWorld"]').first().tap();
 await page.waitForTimeout(500);
 if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');
