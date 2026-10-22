@@ -36,3 +36,16 @@ All 8 mixes containing the icosahedron I fill space, every solid at edge 1. The 
 | I, C, T, O | A, Q′, P |
 
 Check: 30 000 random points in a box of side 3 (both seams inside), each covered by exactly one piece, for every mix. With step 1: 15 of the 31 mixes done, connector kit so far P, Q, Q′, A. Step 3 (the dodecahedron, with Dogstars on the cubic lattice) remains.
+
+## Step 3: all 31 mixes, one construction (mixes3.py, mixes3.log)
+
+Every mix of the five Platonic solids fills space, all at edge 1, with connectors from a kit of seven pieces:
+P (half octahedron), Q (tetrahedron face pyramid), Q′ (Q at size L), A (DICTO's Admiral Caps), S (the Dogstar, #42), X (a cube of edge φ minus one of Euclid's roofs) and Y (a cube of edge φ plus one roof).
+
+Construction: one flat-faced slab per "world" in the mix, stacked (no face-to-face condition across slab faces), and the stack repeated by translation:
+- D world: dodecahedra (Euclid's cube of edge φ with 6 roofs) on alternate cubes of a cubic lattice of edge φ, Dogstars S in the others; a boundary layer on each side made of X (next to a dodecahedron: the roof poking in is taken out) and Y (next to a Dogstar: the roof poking into the Dogstar is added), so the slab faces are flat and no bare cube of edge φ appears.
+- C world: edge-1 cubes.
+- T/O world: the edge-1 octet between two planes tiled by octahedron equators (half octahedra P on both faces); a missing octahedron = 2 P, a missing tetrahedron = 4 Q.
+- I world: the large octet (edge L = φ²/√2) between two (111) layer planes, each octahedron an icosahedron (edge 1) plus six Admiral Caps, each tetrahedron 4 Q′.
+
+Check: for every one of the 31 mixes, 40 000 random points through the whole stack, pieces as signed sums of convex parts (Dogstar = cube − 6 roofs, X = cube − roof, Y = cube + roof): every point has total exactly 1; no two dodecahedra overlap; each mix uses exactly its own solids. (A single world also fills space by itself; for D alone the classical D + S suffices.)
