@@ -31,7 +31,7 @@ Read this way, the works fall into four chapters.
 - **Cycles.** Rules that turn one shell into the next and return, with or without end: Universal PiTet, the OG family steps, Kyushindo Cores and the polar reversals.
 
 ## 7. The bridge between the periodic and the aperiodic
-**In plain words.** Some patterns repeat, like the tiles of a bathroom floor. Others never repeat, yet are perfectly ordered, like the Penrose tiling. These works use the same pieces to build both.
+Some patterns repeat, like the tiles of a bathroom floor. Others never repeat, yet are perfectly ordered, like the Penrose tiling. These works use the same pieces to build both.
 
 For most of history, order in matter meant repetition. A crystal was a single cell copied without end, and five-fold symmetry was thought impossible in it. In 1982 Dan Shechtman found a metal alloy with sharp five-fold diffraction. Quasicrystals, ordered but never repeating, earned him the Nobel Prize in 2011. Matter has two kinds of order, and the question became how they meet.
 
