@@ -48,7 +48,6 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
   try {
     const data = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (STUDIES.includes(data?.study)) view.study = data.study;
-    if (['copies', 'solid'].includes(data?.studyShear)) view.studyShear = data.studyShear;
     if (STRETCH_DIRECTIONS.includes(data?.stretchDir)) view.stretchDir = data.stretchDir;
     if (STRETCH_CAPS.includes(data?.caps)) view.caps = data.caps;
     for (const { key, max } of Object.values(SLIDERS)) if (Number.isFinite(data?.[key])) view[key] = Math.max(0, Math.min(max, data[key]));
@@ -232,6 +231,7 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
   studySelect.addEventListener('change', () => {
     if (!STUDIES.includes(studySelect.value)) return;
     view.study = studySelect.value;
+    view.studyShear = view.study === 'stretch' ? 'solid' : 'copies'; // each study's own: DICTO stretched solids as the solid itself (DICTO)
     save();
     draw();
     fit();

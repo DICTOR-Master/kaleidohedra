@@ -53,7 +53,6 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     cells.clear();
     for (const s of Array.isArray(data?.cells) ? data.cells : []) if (Array.isArray(s) && s.length === 3 && s.every(Number.isInteger)) cells.set(key(s), [...s]);
     if (MODES.includes(data?.view?.mode)) view.mode = data.view.mode;
-    if (['copies', 'solid'].includes(data?.view?.shear)) view.shear = data.view.shear;
     view.axes = data?.view?.axes === true;
   }
   try { read(JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null')); } catch { /* corrupt or blocked storage: start empty */ }
@@ -834,6 +833,8 @@ export function createPairLatticeWorld({ scene, fitView = () => {}, shear = () =
     get isEmpty() { return cells.size === 0; },
     get mode() { return view.mode; },
     clear() { cells.clear(); commit(); if (active) fit(); },
+    /** The shear mode back to its default (leaving the world: shears are never remembered, DICTO 2026-10-22). */
+    resetShear() { if (view.shear === 'solid') return; view.shear = 'solid'; save(); if (active) draw(); },
     snapshot,
     restore(json) { read(json); save(); draw(); },
   };

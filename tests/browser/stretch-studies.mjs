@@ -13,6 +13,7 @@ const panel = page.locator('#worldstudies-panel');
 await panel.locator('[data-select="study"]').selectOption('stretch'); await page.waitForTimeout(800);
 const probe = () => page.evaluate(() => window.__studiesProbe());
 let st = await probe(); assert.equal(st.study, 'stretch'); assert.equal(st.spacing, 1);
+assert.match(await panel.locator('[data-study-shear]').textContent(), /the solid itself/, 'opens as the solid itself');
 assert.match(await panel.locator('[data-select="study"] option:checked').textContent(), /DICTO stretched solids/);
 assert.match(await panel.locator('.st-slider-val').textContent(), /equal-edged/);
 const DIRS = { cube: 14, face: 22, body: 24, five: 22 };
@@ -25,7 +26,6 @@ for (const [c, n] of [[3, 29], [4, 34]]) {
   st = await probe(); assert.equal(st.caps, c); assert.equal(st.faces, n, `${c} caps: ${n} faces`);
   assert.equal(await panel.locator('.st-dirs').isVisible(), false, 'no direction with 3 or 4 caps');
 }
-await panel.locator('[data-study-shear]').tap(); await page.waitForTimeout(600); // one solid, not copies on the lattice
 await page.screenshot({ path: `${SH}/stretch-studies.png` });
 await panel.locator('.st-slider').fill('1700'); await page.waitForTimeout(500);
 st = await probe(); assert.ok(Math.abs(st.spacing - 1.7) < 1e-9, 'the slider moves'); assert.equal(st.faces, 34, 'same faces telescoped');

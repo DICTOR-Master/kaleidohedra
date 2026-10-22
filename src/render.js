@@ -4736,6 +4736,10 @@ async function init() {
     const builtState = (json) => JSON.stringify(json, (k, v) => (k === 'lastModified' ? undefined : v));
     const storesNow = () => new Map([...historyRestorers].map(([k, { get }]) => [k, JSON.stringify(get())]));
     function enterWorld(dimension, action, title) {
+      // Shears are never remembered (DICTO 2026-10-22: "all shears should clear when exiting"): every entry, by any route, even
+      // back into the same world, starts unsheared, each shear mode its world's default.
+      shear?.reset();
+      for (const w of [stellaJewelWorld, sunstarWorld]) w?.resetShear?.();
       const before = worldNow;
       // before: every store as it was before this entry changed anything (a link's own view isn't a saved build).
       worldNow = { action, stores: null, keys: null, before: storesNow() };
@@ -6056,6 +6060,7 @@ async function init() {
     window.__aristotleProbe = () => aristotleWorld?.probe?.() ?? null;
     window.__platonicMixProbe = () => platonicMixWorld?.probe?.() ?? null;
     window.__studiesProbe = () => studiesWorld?.probe?.() ?? null;
+    window.__shearState = () => shear?.getState?.() ?? null;
     // the fresh-start question: is the scene out of sight (the camera sees no layer)?
     window.__sceneHidden = () => camera.layers.mask === 0;
     // Every Mix's Build it yourself: where on screen the ghost nearest the eye is.
