@@ -2,9 +2,9 @@
 // Every mix of the five Platonic solids fills space. The world opens empty; five big letters D I C T O each add their solid's layer
 // (slab), which drops into place in the stack order bottom to top D, C, T/O, I (T and O share the octet slab: adding the other only
 // changes which of its solids are whole and which are cut into helpers); a lit letter takes its layer out again (DICTO 2026-10-22,
-// after trying the first preview). Solids in their element colours with gold edges, helper pieces (connectors) in muted tones;
+// after trying the first preview). Solids in their element colours with gold edges, helper pieces (connectors) as coloured glass;
 // "Helpers" hides the connectors; a big slider spreads the slabs apart; a small list names the helpers the mix uses.
-// Build it yourself: a new layer shows its pieces as faint gold ghosts; tapping a ghost places that piece; Fill the rest places the
+// Build it yourself: a new layer shows its pieces as ghosts outlined in their own colours; tapping a ghost places that piece; Fill the rest places the
 // others. Every change goes through the app's undo (↶). Geometry: platonic-mix-geometry.js (ported from the paper's checked study).
 // Words: i18n pm.*.
 import * as THREE from 'three';
@@ -17,7 +17,10 @@ import { WORLDS, PHI, SLAB_ORDER, slabsOf, slabPieces, pieceKey, pieceCentre, he
 
 // the elements' colours (DICTO): dodecahedron violet, icosahedron blue, cube green, tetrahedron red, octahedron yellow; gold edges
 export const SOLID_COLOURS = { D: 0x8a5cc4, I: 0x3a70cd, C: 0x488e48, T: 0xcd3e28, O: 0xe8c852 };
-const HELPER_COLOURS = { P: 0x9a937f, Q: 0x9c827a, 'Q′': 0x7d8696, A: 0x6f8199, S: 0x857a96, X: 0x7a7286, Y: 0x9890a6 };
+// helpers are coloured glass (DICTO: the structure shows through); each is tinted after the solid it stands in for or joins:
+// P half-octahedra yellow, Q/Q′ quarter-tetrahedra red, A Admiral Caps blue, S Dogstar and X/Y violet
+const HELPER_COLOURS = { P: 0xf0d870, Q: 0xe8705a, 'Q′': 0xf09a6a, A: 0x6a9cf0, S: 0xb08ae6, X: 0x9a78d8, Y: 0xc4a8ee };
+const GLASS = 0.38;
 const GOLD = 0xdeb250;
 const KEY = { 'Q′': 'Qp' };                              // i18n key of a kind
 const GAP = 1.2;                                         // the slabs' extra spacing at Spread 1, in edge lengths
@@ -78,7 +81,8 @@ export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPromp
   // slabs: world → { world, pieces, keys, top, group, y, drawn: [{ kind, mesh, line }], ghost: { mesh, line, pieces } | null }
   const slabs = new Map();
   const mats = {}, lineMats = {};
-  const ghostLineMat = new THREE.LineBasicMaterial({ color: GOLD, transparent: true, opacity: 0.45, depthWrite: false });
+  const ghostLineMats = {};                              // a ghost is outlined in its own piece's colour
+  const ghostLineMat = (kind) => (ghostLineMats[kind] ??= new THREE.LineBasicMaterial({ color: colourOf(kind), transparent: true, opacity: 0.7, depthWrite: false }));
   const ghostPickMat = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false, colorWrite: false, side: THREE.DoubleSide });
   const colourOf = (kind) => (isSolid(kind) ? SOLID_COLOURS[kind] : HELPER_COLOURS[kind]);
   function matFor(kind) {
@@ -86,8 +90,9 @@ export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPromp
       mats[kind] = new THREE.MeshStandardMaterial({ color: colourOf(kind), flatShading: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1, roughness: isSolid(kind) ? 0.5 : 0.85 });
       lineMats[kind] = new THREE.LineBasicMaterial({ color: GOLD });
     }
-    const m = mats[kind]; m.transparent = opacity < 1; m.opacity = opacity; m.depthWrite = opacity >= 1; m.needsUpdate = true;
-    lineMats[kind].color.setHex(skeleton ? colourOf(kind) : isSolid(kind) ? GOLD : 0x4a4640);
+    const o = isSolid(kind) ? opacity : Math.min(opacity, GLASS);
+    const m = mats[kind]; m.transparent = o < 1; m.opacity = o; m.depthWrite = o >= 1; m.needsUpdate = true;
+    lineMats[kind].color.setHex(skeleton || !isSolid(kind) ? colourOf(kind) : GOLD);
     return m;
   }
   const shownKind = (kind) => isSolid(kind) || view.helpers;
@@ -122,8 +127,10 @@ export function createPlatonicMixWorld({ scene, fitView = () => {}, showHudPromp
     if (ghosts.length) {
       const { g, e, pieceOfTri } = piecesGeometry(ghosts.map((i) => s.pieces[i]));
       const mesh = new THREE.Mesh(g, ghostPickMat); mesh.userData = { kind: 'pm-ghost', world: s.world, pieceOfTri, ghosts };
-      const line = new THREE.LineSegments(e, ghostLineMat);
-      s.group.add(mesh, line); s.ghost = { mesh, line, ghosts };
+      s.group.add(mesh); s.ghost = { mesh, ghosts };
+      for (const kind of [...new Set(ghosts.map((i) => s.pieces[i].kind))]) {
+        s.group.add(new THREE.LineSegments(piecesGeometry(ghosts.filter((i) => s.pieces[i].kind === kind).map((i) => s.pieces[i])).e, ghostLineMat(kind)));
+      }
     }
   }
   function syncSlabs({ animate = false } = {}) {
