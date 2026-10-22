@@ -1,0 +1,21 @@
+tetrahedron  stretched along (1,0,0)  V=  8 F=  8 {'triangle': 4, 'rhombus': 4}  -> not regular-faced (rhombi/irregular): not Johnson or Archimedean
+tetrahedron  stretched along (1,1,0)  V=  6 F=  5 {'triangle': 2, 'rhombus': 2, 'square': 1}  -> not regular-faced (rhombi/irregular): not Johnson or Archimedean
+tetrahedron  stretched along (1,1,1)  V=  7 F=  7 {'triangle': 4, 'square': 3}  -> regular-faced: check Johnson list
+tetrahedron  three caps               V=  9 F=  8 {'triangle': 4, 'regular hexagon': 1, 'square': 3}  -> regular-faced: check Johnson list
+tetrahedron  four caps                V= 12 F= 14 {'triangle': 8, 'square': 6}  -> cuboctahedron (Archimedean)
+cube         stretched along (1,0,0)  V=  8 F=  6 {'square': 6}  -> cube (box)
+cube         stretched along (1,1,0)  V= 12 F=  8 {'hexagon': 2, 'square': 6}  -> not regular-faced (rhombi/irregular): not Johnson or Archimedean
+cube         stretched along (1,1,1)  V= 14 F= 12 {'square': 6, 'rhombus': 6}  -> not regular-faced (rhombi/irregular): not Johnson or Archimedean
+cube         three caps               V= 15 F= 11 {'triangle': 2, 'hexagon': 3, 'square': 6}  -> not regular-faced (rhombi/irregular): not Johnson or Archimedean
+cube         four caps                V= 16 F= 10 {'triangle': 4, 'hexagon': 6}  -> not regular-faced (rhombi/irregular): not Johnson or Archimedean
+octahedron   stretched along (1,0,0)  V= 10 F= 12 {'triangle': 8, 'square': 4}  -> regular-faced: check Johnson list
+octahedron   stretched along (1,1,0)  V=  8 F=  8 {'triangle': 4, 'rhombus': 4}  -> not regular-faced (rhombi/irregular): not Johnson or Archimedean
+octahedron   stretched along (1,1,1)  V= 12 F= 14 {'triangle': 8, 'rhombus': 6}  -> not regular-faced (rhombi/irregular): not Johnson or Archimedean
+octahedron   three caps               V=  9 F=  8 {'triangle': 4, 'rhombus': 3, 'regular hexagon': 1}  -> not regular-faced (rhombi/irregular): not Johnson or Archimedean
+octahedron   four caps                V= 12 F=  8 {'triangle': 4, 'regular hexagon': 4}  -> truncated tetrahedron (Archimedean)
+icosahedron  stretched along (1,0,0)  V= 16 F= 22 {'triangle': 16, 'rhombus': 4, 'square': 2}  -> not regular-faced (rhombi/irregular): not Johnson or Archimedean
+icosahedron  stretched along (1,1,0)  V= 18 F= 22 {'triangle': 16, 'pentagon': 4, 'rhombus': 2}  -> not regular-faced (rhombi/irregular): not Johnson or Archimedean
+icosahedron  stretched along (1,1,1)  V= 18 F= 26 {'triangle': 20, 'rhombus': 6}  -> not regular-faced (rhombi/irregular): not Johnson or Archimedean
+icosahedron  stretched along five-fold V= 22 F= 30 {'triangle': 20, 'rhombus': 10}  -> not regular-faced (rhombi/irregular): not Johnson or Archimedean
+icosahedron  three caps               V= 21 F= 23 {'triangle': 15, 'rhombus': 3, 'pentagon': 3, 'hexagon': 2}  -> not regular-faced (rhombi/irregular): not Johnson or Archimedean
+icosahedron  four caps                V= 24 F= 26 {'triangle': 16, 'rhombus': 6, 'hexagon': 4}  -> not regular-faced (rhombi/irregular): not Johnson or Archimedean
