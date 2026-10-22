@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>The Polyhedral Stretching Theorem</title>
 <link rel="stylesheet" href="../paper.css">
-<style>p.hook { font-style: italic; color: #4a3f2a; border-left: 2px solid #c9a24a; padding-left: 3mm; margin: 2mm 0 2mm; } td.n { font-variant-numeric: tabular-nums; white-space: nowrap; } .figs.wide { grid-template-columns: 1fr; width: 100%; } .figs.wide img{width:100%;margin:0 auto;display:block} .figs.wide img.mid{width:70%} .figs.two{grid-template-columns:1fr 1fr;gap:4mm} .figs.two img{width:100%} table { font-size: 8.8pt; } .thm{margin:6pt 0;padding:4pt 0 4pt 9pt;border-left:2px solid #b8962e}</style>
+<style>p.hook { font-style: italic; color: #4a3f2a; border-left: 2px solid #c9a24a; padding-left: 3mm; margin: 2mm 0 2mm; } td.n { font-variant-numeric: tabular-nums; white-space: nowrap; } .figs.wide { grid-template-columns: 1fr; width: 100%; } .figs.wide img{width:100%;margin:0 auto;display:block} .figs.wide img.mid{width:70%} .figs.two{grid-template-columns:1fr 1fr;gap:4mm} .figs.two img{width:100%} table { font-size: 8.8pt; } .thm{margin:6pt 0;padding:4pt 0 4pt 9pt;border-left:2px solid #b8962e} table.lib{font-size:8pt;width:100%;break-inside:auto} table.lib td{padding:1px 4px;vertical-align:top}</style>
 </head><body>
 <img class="watermark" src="../dicto-logo.png" alt="">
 <img class="logo" src="../dicto-logo.png" alt="DICTO">
@@ -9,7 +9,8 @@
 <p class="sub">Stretch any solid with equal edges one edge-length in any direction and every edge stays the same length: the Platonic solids, DICTO's stretched dodecahedra, three and four caps, and paper models to build them</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
-Version 1 · 22 October 2026 · __DOI__ · Licence CC BY-SA 4.0 · Scripts, checks, figures and printable nets (Swept Dodecahedra): https://github.com/DICTOR-Master/kaleidohedra/tree/__COMMIT__/studies/2026-10-22-swept-dodecahedra (research branch, commit __COMMIT__; nets and study attached to this record)<br>
+Version 2 · 22 October 2026 (Version 1: 22 October 2026) · __DOI__ · Licence CC BY-SA 4.0 · Scripts, checks, figures and printable nets (Swept Dodecahedra): https://github.com/DICTOR-Master/kaleidohedra/tree/__COMMIT__/studies/2026-10-22-swept-dodecahedra (research branch, commit __COMMIT__; nets and study attached to this record)<br>
+Version 2 adds the table of reference-library sources searched (Appendix C), the zone operation of Grünbaum and Fedorov to §8, and the authors of three references; the mathematics is unchanged.<br>
 The stretched dodecahedron (F11), the long hexagon seen in the dodecahedron layer, the three- and four-cap forms and the telescoping model are DICTO's ideas; computation, proofs and drafting with Claude (Anthropic).
 </div>
 
@@ -76,7 +77,7 @@ The stretched dodecahedron (F11), the long hexagon seen in the dodecahedron laye
 
 <h2>8. What is new, and what is known</h2>
 <p class="hook">The method is old; these shapes were not found named anywhere we looked.</p>
-<p>Sliding a solid along a line, or adding two solids corner by corner, is a standard construction (the Minkowski sum); how a face behaves when the slide lies in its plane, and how a belt forms around the outline, are known in general [4, 5]. Hart and Picciotto's sums of tetrahedra build triangle-and-rhombus solids the same way, without pentagons [6]; the convex solids glued from regular pentagons alone are listed in [7]. In the sources checked (the reference library and web searches on 22 October 2026) we did not find the dodecahedron swept along a face diagonal, the body diagonal or a five-fold axis (the last, with its ten equal rhombi, deserves a further search), nor the three- and four-cap forms, named or described. Since the construction is simple, they may exist somewhere unnamed; we present them as DICTO's family on that understanding.</p>
+<p>Sliding a solid along a line, or adding two solids corner by corner, is a standard construction (the Minkowski sum); how a face behaves when the slide lies in its plane, and how a belt forms around the outline, are known in general [4, 5]. Hart and Picciotto's sums of tetrahedra build triangle-and-rhombus solids the same way, without pentagons [6]; the convex solids glued from regular pentagons alone are listed in [7]. For zonohedra the slide is classical: all the edges of one zone can be lengthened, shortened or deleted together (Grünbaum [9], after Fedorov), and sliding a zonohedron along one of its own edges lengthens a zone, the case the theorem leaves out. In the sources checked (the reference library, listed in Appendix C, and web searches on 22 October 2026) we did not find the dodecahedron swept along a face diagonal, the body diagonal or a five-fold axis (the last, with its ten equal rhombi, deserves a further search), nor the three- and four-cap forms, named or described. Since the construction is simple, they may exist somewhere unnamed; we present them as DICTO's family on that understanding.</p>
 
 <h2>9. Conclusion</h2>
 <p class="hook">One idea, sliding a dodecahedron, gives a whole family of solids with equal edges, and you can build them.</p>
@@ -97,10 +98,14 @@ The stretched dodecahedron (F11), the long hexagon seen in the dodecahedron laye
 <li>DICTO, Every Mix of the Platonic Solids Fills Space, #47, DICTO DOI: 10.5281/zenodo.23551326.</li>
 <li>Euclid, The Thirteen Books of the Elements, tr. T. L. Heath, vol. III, Cambridge (1908), Book XIII, Proposition 17.</li>
 <li>DICTO, Kaleidohedra by DICTO, finding F11 "The stretched dodecahedron" (2026-10-08), DICTO DOI: 10.5281/zenodo.23173809.</li>
-<li>Diameter, decomposability, and Minkowski sums of polytopes, arXiv:1806.07643 (faces of a Minkowski sum as sums of faces).</li>
-<li>Minkowski sum of a Voronoi parallelotope and a segment, arXiv:1501.01212 (how faces change when a segment is added).</li>
+<li>A. Deza, L. Pournin, Diameter, decomposability, and Minkowski sums of polytopes (2018), arXiv:1806.07643 (faces of a Minkowski sum as sums of faces).</li>
+<li>R. Erdahl, V. Grishukhin, Minkowski sum of a Voronoi parallelotope and a segment (2015), arXiv:1501.01212 (how faces change when a segment is added).</li>
 <li>G. W. Hart and H. Picciotto, Green Giants, in Zome Geometry, https://www.georgehart.com/zomebook/green-giant.html.</li>
-<li>A complete list of all convex polyhedra made by gluing regular pentagons, arXiv:2007.01753.</li>
+<li>E. Arseneva, S. Langerman, B. Zolotov, A complete list of all convex polyhedra made by gluing regular pentagons (2020), arXiv:2007.01753.</li>
 <li>Ed Baumann, Modified Johnson Near Misses, https://superliminal.com/geometry/near_misses/index.html.</li>
+<li>B. Grünbaum, The Bilinski dodecahedron, and assorted parallelohedra, zonohedra, monohedra, isozonohedra and otherhedra, Math. Intelligencer 32(4) (2010) 5–15 (manuscript v2, 3 October 2010, in the reference library).</li>
 </ol>
+<h2>Appendix C. The reference library searched</h2>
+<p>The library's manifests list 280 entries, of which 101 have a local file; these give the 90 distinct sources with a text layer listed below and 13 page images. The full text of the 90 sources was searched on 22 October 2026 for: Minkowski, zonohedron, zonotope, swept, sweep, elongated, elongation, stretch, equilateral polyhedra, equal edges, Johnson solid, near miss, cupola, Picciotto, Zome, regular pentagons, elongated dodecahedron and prism. The relevant hit is Grünbaum [9] (zones lengthened, shortened or deleted; cited in §8). Minkowski also appears in Betke and Henk (lattice packings) and elsewhere in other senses; Koskinen's "stretch a dodecahedron to a tetrahedron" (Bridges 2011, in the list below) flexes the edges and is a different operation. None describes the dodecahedron swept by a segment or the cap forms. The 13 page images without a text layer (the patents of Fuller, Snelson, Pearce, Baer, Hogan, Bergman and Lalvani, and Fedorov 1885) and the 179 link-only entries were not searched.</p>
+<table class="lib"><tr><th>Author(s)</th><th>Year</th><th>Title</th></tr>__LIBROWS__</table>
 </body></html>
