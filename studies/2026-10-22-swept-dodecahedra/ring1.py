@@ -1,4 +1,4 @@
-# Ring 1 of #49 (DICTO 10-22): the Stretching Theorem for the other four Platonic solids (edge 1).
+# Ring 1 of #49 (DICTO 10-22): the Polyhedral Stretching Theorem for the other four Platonic solids (edge 1).
 # For each: random unit stretches (equilateral? belt sizes), special directions, and three / four caps.
 import numpy as np, itertools, math
 from collections import Counter

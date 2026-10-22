@@ -94,7 +94,7 @@ def draw(fname,title,parts,marks,notes,fixed=None):
     f1=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf',int(0.017*H)); f2=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',int(0.0125*H))
     dr.text((W*0.06,H*0.03),title,font=f1,fill=(40,30,20))
     for k,t in enumerate(notes): dr.text((W*0.06,H*0.065+k*H*0.02),t,font=f2,fill=(60,60,60))
-    dr.text((W*0.06,H*0.955),'DICTO · dictospheres.com · The Stretching Theorem (#49) · telescoping model · CC BY-SA 4.0',font=f2,fill=(110,110,110))
+    dr.text((W*0.06,H*0.955),'DICTO · dictospheres.com · The Polyhedral Stretching Theorem (#49) · telescoping model · CC BY-SA 4.0',font=f2,fill=(110,110,110))
     img.save(fname,resolution=dpi); return s
 if __name__=='__main__':
     LM=(LONG-1)/2          # for 'long', the ring sits centred: it starts LM from cap A's rim

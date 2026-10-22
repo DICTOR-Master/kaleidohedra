@@ -11,5 +11,5 @@ open('paper.html', 'w').write(s)
 P
 rsync -a --delete --exclude pg ./ 192.168.0.7:kaleidohedra-papers/2026-10-22-swept-dodecahedra/
 rsync -a ../paper.css ../dicto-logo.png ../print.mjs 192.168.0.7:kaleidohedra-papers/
-ssh 192.168.0.7 "cd ~/kaleidohedra-papers && node print.mjs 2026-10-22-swept-dodecahedra ${3:-swept-dodecahedra-draft.pdf} 'The Stretching Theorem' '${2:-reserved}' 1"
+ssh 192.168.0.7 "cd ~/kaleidohedra-papers && node print.mjs 2026-10-22-swept-dodecahedra ${3:-swept-dodecahedra-draft.pdf} 'The Polyhedral Stretching Theorem' '${2:-reserved}' 1"
 rsync -a 192.168.0.7:kaleidohedra-papers/2026-10-22-swept-dodecahedra/${3:-swept-dodecahedra-draft.pdf} ./
