@@ -1,7 +1,7 @@
 # DICTO · dictospheres.com — writes index.csv, the inventory of DICTO's named shapes (2026-10-22).
 # Status wording follows DISCOVERIES.md (master) and the published papers; nothing here is a new claim.
 # One name per shape (DICTO 2026-10-23): the first name DICTO chose wins (Oktaktis, #43, is the Cleo-Icos, #29: one row),
-# unless DICTO picks a later, more concise name (the F15 Jewel clusters are the #41 Jewel-Tetra and Jewel-Octa: one row each).
+# unless DICTO picks a later, more concise name (the F15 Jewel clusters are the #41 Jewel-Tetra and Jewel-Octa, the F16 Sunstar clusters the #42 Sunstar-Tetra and Sunstar-Octa: one row each).
 # kind: solid (one polyhedron), piece (a named piece of a kit/dissection), cluster (several solids as one named body or group),
 # compound, structure (a named nest, network, tiling or cycle), curved (not a polyhedron).
 import csv, json, os
@@ -41,8 +41,6 @@ R = [
  ('DICTO Dodeca-13 Unit (finned unit)', 'piece', 'F13', '13', NEW, 'not found', '', 'DICTO_DODECA13_UNIT'),
  ('DICTO Dodeca-13 Star', 'piece', 'F13', '13', NEW, 'not found', '', 'DICTO_DODECA13_STAR'),
  ('DICTO-Star', 'cluster', 'F14', '14', NEW, 'not found (the overlapping whole-icosahedron version is Austin 2014)', '', ''),
- ('Sunstar tetrahedral cluster (4 dodecahedra)', 'cluster', 'F16', '', NEW, 'not found', '', 'DODECA_TETRAHEDRAL_CLUSTER'),
- ('Sunstar octahedral cluster (6 dodecahedra round a Dogstar)', 'cluster', 'F16', '', NEW, 'not found', '', 'DODECA_OCTAHEDRAL_CLUSTER'),
  ('Kagome hulls (six hull networks)', 'structure', 'F17', '17', NEW, 'corner-sharing octahedra/tetrahedra known (perovskite, pyrochlore)', '', ''),
  ('DICTO Hexa', 'cluster', 'F18', '18', NEW, 'not found', '', 'DICTO_HEXA'),
  ('DICTO Hexa-Key', 'solid', 'F18', '18', NEW, 'not found', '', 'DICTO_HEXA_KEY'),
@@ -111,8 +109,8 @@ R = [
  ('DICTO Jewel-Tetra', 'cluster', 'F15', '41', NEW, 'not found; first called the DICTO Jewel tetrahedral cluster (F15), the same solid (corners matched, scale φ/2); DICTO chose the concise #41 name', '', 'DJ_TETRAHEDRAL_CLUSTER'),
  ('DICTO Jewel-Octa', 'cluster', 'F15', '41', NEW, 'not found; first called the DICTO Jewel octahedral cluster (F15), the same solid (corners matched, scale φ/2); DICTO chose the concise #41 name', '', 'DJ_OCTAHEDRAL_CLUSTER'),
  ('DICTO Jewel-Rhombi', 'cluster', '', '41', NEW, 'not found', '', ''),
- ('DICTO Sunstar-Tetra', 'cluster', '', '42', NEW, 'not found', '', ''),
- ('DICTO Sunstar-Octa', 'cluster', '', '42', NEW, 'not found', '', ''),
+ ('DICTO Sunstar-Tetra', 'cluster', 'F16', '42', NEW, 'not found; first called the Sunstar tetrahedral cluster (4 dodecahedra) (F16), the same solid (corners matched, scale φ/2); DICTO chose the concise #42 name', '', 'DODECA_TETRAHEDRAL_CLUSTER'),
+ ('DICTO Sunstar-Octa', 'cluster', 'F16', '42', NEW, 'not found; first called the Sunstar octahedral cluster (6 dodecahedra round a Dogstar) (F16), the same solid (corners matched, scale φ/2); DICTO chose the concise #42 name', '', 'DODECA_OCTAHEDRAL_CLUSTER'),
  ('DICTO Sunstar-Rhombi', 'cluster', '', '42', NEW, 'not found', '', ''),
  ('DICTO Sunstar-Hexa', 'cluster', '', '42', NEW, 'not found', '', ''),
  ('DICTO Sunstar-Hexa-Key', 'solid', '', '42', NEW, 'not found', '', ''),
