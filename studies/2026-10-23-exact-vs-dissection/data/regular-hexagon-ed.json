@@ -1,0 +1,846 @@
+{
+ "mark": "Regular-hexagon elongated dodecahedron (F5, #5), exact, 2026-10-23 · DICTO · dictospheres.com",
+ "name": "Regular-hexagon elongated dodecahedron (F5, #5)",
+ "field": "Q(sqrt2)",
+ "credit": "DICTO's idea; exact computation with Claude (Anthropic)",
+ "edge_directions_exact": [
+  [
+   "1/2",
+   "1/2",
+   "0+1/2*sqrt(2)"
+  ],
+  [
+   "1/2",
+   "-1/2",
+   "0-1/2*sqrt(2)"
+  ],
+  [
+   "-1/2",
+   "1/2",
+   "0-1/2*sqrt(2)"
+  ],
+  [
+   "-1/2",
+   "-1/2",
+   "0+1/2*sqrt(2)"
+  ],
+  [
+   "1",
+   "0",
+   "0"
+  ]
+ ],
+ "edge_directions_float": [
+  [
+   0.5,
+   0.5,
+   0.7071067811865476
+  ],
+  [
+   0.5,
+   -0.5,
+   -0.7071067811865476
+  ],
+  [
+   -0.5,
+   0.5,
+   -0.7071067811865476
+  ],
+  [
+   -0.5,
+   -0.5,
+   0.7071067811865476
+  ],
+  [
+   1.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "vertices_exact": [
+  [
+   "-3/2",
+   "0",
+   "0"
+  ],
+  [
+   "-1",
+   "-1/2",
+   "0-1/2*sqrt(2)"
+  ],
+  [
+   "-1",
+   "-1/2",
+   "0+1/2*sqrt(2)"
+  ],
+  [
+   "-1",
+   "1/2",
+   "0-1/2*sqrt(2)"
+  ],
+  [
+   "-1",
+   "1/2",
+   "0+1/2*sqrt(2)"
+  ],
+  [
+   "-1/2",
+   "-1",
+   "0"
+  ],
+  [
+   "-1/2",
+   "0",
+   "0-1*sqrt(2)"
+  ],
+  [
+   "-1/2",
+   "0",
+   "0+1*sqrt(2)"
+  ],
+  [
+   "-1/2",
+   "1",
+   "0"
+  ],
+  [
+   "1/2",
+   "-1",
+   "0"
+  ],
+  [
+   "1/2",
+   "0",
+   "0-1*sqrt(2)"
+  ],
+  [
+   "1/2",
+   "0",
+   "0+1*sqrt(2)"
+  ],
+  [
+   "1/2",
+   "1",
+   "0"
+  ],
+  [
+   "1",
+   "-1/2",
+   "0-1/2*sqrt(2)"
+  ],
+  [
+   "1",
+   "-1/2",
+   "0+1/2*sqrt(2)"
+  ],
+  [
+   "1",
+   "1/2",
+   "0-1/2*sqrt(2)"
+  ],
+  [
+   "1",
+   "1/2",
+   "0+1/2*sqrt(2)"
+  ],
+  [
+   "3/2",
+   "0",
+   "0"
+  ]
+ ],
+ "vertices_float": [
+  [
+   -1.5,
+   0.0,
+   0.0
+  ],
+  [
+   -1.0,
+   -0.5,
+   -0.7071067811865476
+  ],
+  [
+   -1.0,
+   -0.5,
+   0.7071067811865476
+  ],
+  [
+   -1.0,
+   0.5,
+   -0.7071067811865476
+  ],
+  [
+   -1.0,
+   0.5,
+   0.7071067811865476
+  ],
+  [
+   -0.5,
+   -1.0,
+   0.0
+  ],
+  [
+   -0.5,
+   0.0,
+   -1.4142135623730951
+  ],
+  [
+   -0.5,
+   0.0,
+   1.4142135623730951
+  ],
+  [
+   -0.5,
+   1.0,
+   0.0
+  ],
+  [
+   0.5,
+   -1.0,
+   0.0
+  ],
+  [
+   0.5,
+   0.0,
+   -1.4142135623730951
+  ],
+  [
+   0.5,
+   0.0,
+   1.4142135623730951
+  ],
+  [
+   0.5,
+   1.0,
+   0.0
+  ],
+  [
+   1.0,
+   -0.5,
+   -0.7071067811865476
+  ],
+  [
+   1.0,
+   -0.5,
+   0.7071067811865476
+  ],
+  [
+   1.0,
+   0.5,
+   -0.7071067811865476
+  ],
+  [
+   1.0,
+   0.5,
+   0.7071067811865476
+  ],
+  [
+   1.5,
+   0.0,
+   0.0
+  ]
+ ],
+ "faces": [
+  [
+   3,
+   8,
+   12,
+   15,
+   10,
+   6
+  ],
+  [
+   9,
+   14,
+   11,
+   7,
+   2,
+   5
+  ],
+  [
+   2,
+   7,
+   4,
+   0
+  ],
+  [
+   10,
+   15,
+   17,
+   13
+  ],
+  [
+   13,
+   17,
+   14,
+   9
+  ],
+  [
+   0,
+   4,
+   8,
+   3
+  ],
+  [
+   16,
+   17,
+   15,
+   12
+  ],
+  [
+   0,
+   1,
+   5,
+   2
+  ],
+  [
+   3,
+   6,
+   1,
+   0
+  ],
+  [
+   11,
+   14,
+   17,
+   16
+  ],
+  [
+   16,
+   12,
+   8,
+   4,
+   7,
+   11
+  ],
+  [
+   5,
+   1,
+   6,
+   10,
+   13,
+   9
+  ]
+ ],
+ "f_vector": [
+  18,
+  28,
+  12
+ ],
+ "face_kinds": {
+  "regular hexagon": 4,
+  "rhombus 60": 4,
+  "square": 4
+ },
+ "symmetry": {
+  "name": "D2h",
+  "order": 8,
+  "rotations": 4,
+  "inversion": true,
+  "fourfold_elements": 0,
+  "threefold_elements": 0,
+  "twofold_rotations": 3
+ },
+ "edge_lengths_squared": [
+  "1"
+ ],
+ "volume_exact": "0+4*sqrt(2)",
+ "volume_float": 5.656854249492381,
+ "lattice_basis_exact": [
+  [
+   "0",
+   "1",
+   "0-1*sqrt(2)"
+  ],
+  [
+   "-2",
+   "0",
+   "0+1*sqrt(2)"
+  ],
+  [
+   "2",
+   "1",
+   "0"
+  ]
+ ],
+ "lattice_basis_float": [
+  [
+   0.0,
+   1.0,
+   -1.4142135623730951
+  ],
+  [
+   -2.0,
+   0.0,
+   1.4142135623730951
+  ],
+  [
+   2.0,
+   1.0,
+   0.0
+  ]
+ ],
+ "tiling": {
+  "volume": "0+4*sqrt(2)",
+  "det_L": "0+4*sqrt(2)",
+  "volume_equals_det": true,
+  "centrally_symmetric": true,
+  "search_box": 2,
+  "lattice_points_in_open_2P": 0,
+  "packing": true,
+  "face_neighbours_are_lattice_vectors": true,
+  "face_neighbours": 12,
+  "tiles": true
+ },
+ "solid_checks": {
+  "closed": true,
+  "planar": true,
+  "outward_wound": true,
+  "convex": true,
+  "used_all_vertices": true,
+  "euler": true
+ },
+ "volume_at_edge_1": {
+  "volume_squared_exact": "32",
+  "float": 5.656854249492381
+ },
+ "move": {
+  "lattice": "FCC (krp-core FCC_BASIS)",
+  "shear_A_exact": [
+   [
+    "1",
+    "0",
+    "0"
+   ],
+   [
+    "0",
+    "1",
+    "0"
+   ],
+   [
+    "0",
+    "0",
+    "0+1*sqrt(2)"
+   ]
+  ],
+  "towards": "Bain, path stop 2",
+  "app_slider_values": {
+   "a2": "1",
+   "b2": "3/2",
+   "c2": "3/2",
+   "a": 1.0,
+   "b": 1.224744871391589,
+   "c": 1.224744871391589,
+   "alpha": {
+    "cos2": "4/9",
+    "cos_sign": 1,
+    "degrees": 48.18968510422141
+   },
+   "beta": {
+    "cos2": "1/6",
+    "cos_sign": 1,
+    "degrees": 65.90515744788931
+   },
+   "gamma": {
+    "cos2": "1/6",
+    "cos_sign": 1,
+    "degrees": 65.90515744788931
+   }
+  },
+  "cell": 1,
+  "stretch": {
+   "free_partition": "12|34",
+   "direction_exact": [
+    "1",
+    "0",
+    "0"
+   ],
+   "length_s": "1",
+   "rule": "u = mu1 h1 + mu2 h2 with sum mu_i h_i = 0 (here mu = 1, so u = h1 + h2): the line where the planes of h1, h2 and of h3, h4 meet"
+  },
+  "note": "The fifth direction is not a live slider in the app: it is computed in krp-core (targets.js EMBLEM_DIRECTIONS, verify-kaleido.mjs \"Bain ED along x\") and shown in the Targets world."
+ },
+ "classical": [
+  {
+   "source": "Grünbaum 2010, Fig. 2(b) p. 4 (\"an elongated dodecahedron (with regular faces, but not Archimedean)\")",
+   "description": "drawing only",
+   "checked": "face kinds and counts"
+  },
+  {
+   "source": "Fedorov 1885, § 77 case 3 (counts) and § 83 p. 234 (zone shrinking); Wikipedia \"Elongated dodecahedron\": \"a contraction of a uniform truncated octahedron\"",
+   "description": "18 vertices, 28 edges, 12 faces; the truncated octahedron with one belt shrunk to zero",
+   "exact_construction": "uniform truncated octahedron of edge 1 (permutations of (0, +-1, +-2)/sqrt 2), one of its six zones shrunk to 0",
+   "points_exact": [
+    [
+     "0-1*sqrt(2)",
+     "0-1/2*sqrt(2)",
+     "0"
+    ],
+    [
+     "0-1*sqrt(2)",
+     "0",
+     "0-1/2*sqrt(2)"
+    ],
+    [
+     "0-1*sqrt(2)",
+     "0",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0-1*sqrt(2)",
+     "0+1/2*sqrt(2)",
+     "0"
+    ],
+    [
+     "0-1/2*sqrt(2)",
+     "0-1*sqrt(2)",
+     "0"
+    ],
+    [
+     "0-1/2*sqrt(2)",
+     "0",
+     "0-1*sqrt(2)"
+    ],
+    [
+     "0-1/2*sqrt(2)",
+     "0",
+     "0+1*sqrt(2)"
+    ],
+    [
+     "0-1/2*sqrt(2)",
+     "0+1*sqrt(2)",
+     "0"
+    ],
+    [
+     "0",
+     "0-1*sqrt(2)",
+     "0-1/2*sqrt(2)"
+    ],
+    [
+     "0",
+     "0-1*sqrt(2)",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0",
+     "0-1/2*sqrt(2)",
+     "0-1*sqrt(2)"
+    ],
+    [
+     "0",
+     "0-1/2*sqrt(2)",
+     "0+1*sqrt(2)"
+    ],
+    [
+     "0",
+     "0+1/2*sqrt(2)",
+     "0-1*sqrt(2)"
+    ],
+    [
+     "0",
+     "0+1/2*sqrt(2)",
+     "0+1*sqrt(2)"
+    ],
+    [
+     "0",
+     "0+1*sqrt(2)",
+     "0-1/2*sqrt(2)"
+    ],
+    [
+     "0",
+     "0+1*sqrt(2)",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0-1*sqrt(2)",
+     "0"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0",
+     "0-1*sqrt(2)"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0",
+     "0+1*sqrt(2)"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0+1*sqrt(2)",
+     "0"
+    ],
+    [
+     "0+1*sqrt(2)",
+     "0-1/2*sqrt(2)",
+     "0"
+    ],
+    [
+     "0+1*sqrt(2)",
+     "0",
+     "0-1/2*sqrt(2)"
+    ],
+    [
+     "0+1*sqrt(2)",
+     "0",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0+1*sqrt(2)",
+     "0+1/2*sqrt(2)",
+     "0"
+    ]
+   ]
+  }
+ ],
+ "classical_credit": "Shape known: Grünbaum 2010 Fig. 2(b) as Fedorov's representative; first describer not checked. DICTO reached it independently on 2026-10-01 by the Bain stretch plus a fifth direction. Moves: Fedorov 1885: shear and stretch, Theorem 32 p. 239; zone shrinking, § 83 p. 234 (credited for the moves)",
+ "move_exact": {
+  "lattice": "FCC",
+  "A_rows_exact": [
+   [
+    "1",
+    "0",
+    "0"
+   ],
+   [
+    "0",
+    "1",
+    "0"
+   ],
+   [
+    "0",
+    "0",
+    "0+1*sqrt(2)"
+   ]
+  ],
+  "cell": 1,
+  "fifth_exact": [
+   "1",
+   "0",
+   "0"
+  ]
+ },
+ "classical_exact": [
+  {
+   "label": "uniform truncated octahedron with one zone shrunk to 0 (Fedorov, § 83; Wikipedia \"contraction\")",
+   "zonotope": [
+    [
+     "0+1/2*sqrt(2)",
+     "0-1/2*sqrt(2)",
+     "0"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0",
+     "0-1/2*sqrt(2)"
+    ],
+    [
+     "0",
+     "0+1/2*sqrt(2)",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0",
+     "0+1/2*sqrt(2)",
+     "0-1/2*sqrt(2)"
+    ]
+   ]
+  },
+  {
+   "label": "the uniform truncated octahedron is the zonotope of its six edge directions",
+   "identity_points": [
+    [
+     "0-1*sqrt(2)",
+     "0-1/2*sqrt(2)",
+     "0"
+    ],
+    [
+     "0-1*sqrt(2)",
+     "0",
+     "0-1/2*sqrt(2)"
+    ],
+    [
+     "0-1*sqrt(2)",
+     "0",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0-1*sqrt(2)",
+     "0+1/2*sqrt(2)",
+     "0"
+    ],
+    [
+     "0-1/2*sqrt(2)",
+     "0-1*sqrt(2)",
+     "0"
+    ],
+    [
+     "0-1/2*sqrt(2)",
+     "0",
+     "0-1*sqrt(2)"
+    ],
+    [
+     "0-1/2*sqrt(2)",
+     "0",
+     "0+1*sqrt(2)"
+    ],
+    [
+     "0-1/2*sqrt(2)",
+     "0+1*sqrt(2)",
+     "0"
+    ],
+    [
+     "0",
+     "0-1*sqrt(2)",
+     "0-1/2*sqrt(2)"
+    ],
+    [
+     "0",
+     "0-1*sqrt(2)",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0",
+     "0-1/2*sqrt(2)",
+     "0-1*sqrt(2)"
+    ],
+    [
+     "0",
+     "0-1/2*sqrt(2)",
+     "0+1*sqrt(2)"
+    ],
+    [
+     "0",
+     "0+1/2*sqrt(2)",
+     "0-1*sqrt(2)"
+    ],
+    [
+     "0",
+     "0+1/2*sqrt(2)",
+     "0+1*sqrt(2)"
+    ],
+    [
+     "0",
+     "0+1*sqrt(2)",
+     "0-1/2*sqrt(2)"
+    ],
+    [
+     "0",
+     "0+1*sqrt(2)",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0-1*sqrt(2)",
+     "0"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0",
+     "0-1*sqrt(2)"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0",
+     "0+1*sqrt(2)"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0+1*sqrt(2)",
+     "0"
+    ],
+    [
+     "0+1*sqrt(2)",
+     "0-1/2*sqrt(2)",
+     "0"
+    ],
+    [
+     "0+1*sqrt(2)",
+     "0",
+     "0-1/2*sqrt(2)"
+    ],
+    [
+     "0+1*sqrt(2)",
+     "0",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0+1*sqrt(2)",
+     "0+1/2*sqrt(2)",
+     "0"
+    ]
+   ],
+   "identity_zonotope": [
+    [
+     "0+1/2*sqrt(2)",
+     "0+1/2*sqrt(2)",
+     "0"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0-1/2*sqrt(2)",
+     "0"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0",
+     "0-1/2*sqrt(2)"
+    ],
+    [
+     "0",
+     "0+1/2*sqrt(2)",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0",
+     "0+1/2*sqrt(2)",
+     "0-1/2*sqrt(2)"
+    ]
+   ]
+  }
+ ],
+ "expected": {
+  "source": "Fedorov 1885 § 77 (18, 28, 12); Grünbaum 2010 Fig. 2(b) (faces); library check and DISCOVERIES #5 (volume 4 sqrt 2); TARGETS ED #28 (5.65685)",
+  "f_vector": [
+   18,
+   28,
+   12
+  ],
+  "face_kinds": {
+   "regular hexagon": 4,
+   "rhombus 60": 4,
+   "square": 4
+  },
+  "volume_exact": "0+4*sqrt(2)",
+  "symmetry": "D2h",
+  "targets_volume_float": 5.65685
+ },
+ "checks": {
+  "solid_closed_wound_planar_convex": true,
+  "fedorov_counts_18_vertices_28_edges_12_faces": true,
+  "grunbaum_fig2b_faces_4_regular_hexagons_4_squares_4_rhombi_60": true,
+  "equal_edges_1": true,
+  "volume_4sqrt2": true,
+  "symmetry_D2h": true,
+  "tiles_by_translation": true,
+  "fifth_direction_is_free_lies_in_planes_h1h2_and_h3h4": true,
+  "fifth_direction_equals_h1_plus_h2": true,
+  "same_cell_as_krp_core_EMBLEM_DIRECTIONS": true,
+  "uniform_TO_is_zonotope_of_its_6_edge_directions": true,
+  "TO_minus_any_one_of_its_6_zones_is_congruent_to_F5": true,
+  "F5_inserted_prism_is_rhombic_70.53_not_square": true,
+  "F5_minus_its_fifth_zone_is_the_Bain_RD": true
+ }
+}

@@ -1,0 +1,699 @@
+{
+ "mark": "Bain rhombic dodecahedron (#4), exact, 2026-10-23 · DICTO · dictospheres.com",
+ "name": "Bain rhombic dodecahedron (#4)",
+ "field": "Q(sqrt2)",
+ "credit": "DICTO's idea; exact computation with Claude (Anthropic)",
+ "edge_directions_exact": [
+  [
+   "1/2",
+   "1/2",
+   "0+1/2*sqrt(2)"
+  ],
+  [
+   "1/2",
+   "-1/2",
+   "0-1/2*sqrt(2)"
+  ],
+  [
+   "-1/2",
+   "1/2",
+   "0-1/2*sqrt(2)"
+  ],
+  [
+   "-1/2",
+   "-1/2",
+   "0+1/2*sqrt(2)"
+  ]
+ ],
+ "edge_directions_float": [
+  [
+   0.5,
+   0.5,
+   0.7071067811865476
+  ],
+  [
+   0.5,
+   -0.5,
+   -0.7071067811865476
+  ],
+  [
+   -0.5,
+   0.5,
+   -0.7071067811865476
+  ],
+  [
+   -0.5,
+   -0.5,
+   0.7071067811865476
+  ]
+ ],
+ "vertices_exact": [
+  [
+   "-1",
+   "0",
+   "0"
+  ],
+  [
+   "-1/2",
+   "-1/2",
+   "0-1/2*sqrt(2)"
+  ],
+  [
+   "-1/2",
+   "-1/2",
+   "0+1/2*sqrt(2)"
+  ],
+  [
+   "-1/2",
+   "1/2",
+   "0-1/2*sqrt(2)"
+  ],
+  [
+   "-1/2",
+   "1/2",
+   "0+1/2*sqrt(2)"
+  ],
+  [
+   "0",
+   "-1",
+   "0"
+  ],
+  [
+   "0",
+   "0",
+   "0-1*sqrt(2)"
+  ],
+  [
+   "0",
+   "0",
+   "0+1*sqrt(2)"
+  ],
+  [
+   "0",
+   "1",
+   "0"
+  ],
+  [
+   "1/2",
+   "-1/2",
+   "0-1/2*sqrt(2)"
+  ],
+  [
+   "1/2",
+   "-1/2",
+   "0+1/2*sqrt(2)"
+  ],
+  [
+   "1/2",
+   "1/2",
+   "0-1/2*sqrt(2)"
+  ],
+  [
+   "1/2",
+   "1/2",
+   "0+1/2*sqrt(2)"
+  ],
+  [
+   "1",
+   "0",
+   "0"
+  ]
+ ],
+ "vertices_float": [
+  [
+   -1.0,
+   0.0,
+   0.0
+  ],
+  [
+   -0.5,
+   -0.5,
+   -0.7071067811865476
+  ],
+  [
+   -0.5,
+   -0.5,
+   0.7071067811865476
+  ],
+  [
+   -0.5,
+   0.5,
+   -0.7071067811865476
+  ],
+  [
+   -0.5,
+   0.5,
+   0.7071067811865476
+  ],
+  [
+   0.0,
+   -1.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   -1.4142135623730951
+  ],
+  [
+   0.0,
+   0.0,
+   1.4142135623730951
+  ],
+  [
+   0.0,
+   1.0,
+   0.0
+  ],
+  [
+   0.5,
+   -0.5,
+   -0.7071067811865476
+  ],
+  [
+   0.5,
+   -0.5,
+   0.7071067811865476
+  ],
+  [
+   0.5,
+   0.5,
+   -0.7071067811865476
+  ],
+  [
+   0.5,
+   0.5,
+   0.7071067811865476
+  ],
+  [
+   1.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "faces": [
+  [
+   3,
+   8,
+   11,
+   6
+  ],
+  [
+   5,
+   10,
+   7,
+   2
+  ],
+  [
+   2,
+   7,
+   4,
+   0
+  ],
+  [
+   6,
+   11,
+   13,
+   9
+  ],
+  [
+   9,
+   13,
+   10,
+   5
+  ],
+  [
+   0,
+   4,
+   8,
+   3
+  ],
+  [
+   12,
+   13,
+   11,
+   8
+  ],
+  [
+   0,
+   1,
+   5,
+   2
+  ],
+  [
+   3,
+   6,
+   1,
+   0
+  ],
+  [
+   7,
+   10,
+   13,
+   12
+  ],
+  [
+   12,
+   8,
+   4,
+   7
+  ],
+  [
+   5,
+   1,
+   6,
+   9
+  ]
+ ],
+ "f_vector": [
+  14,
+  24,
+  12
+ ],
+ "face_kinds": {
+  "rhombus 60": 8,
+  "square": 4
+ },
+ "symmetry": {
+  "name": "D4h",
+  "order": 16,
+  "rotations": 8,
+  "inversion": true,
+  "fourfold_elements": 2,
+  "threefold_elements": 0,
+  "twofold_rotations": 5
+ },
+ "edge_lengths_squared": [
+  "1"
+ ],
+ "volume_exact": "0+2*sqrt(2)",
+ "volume_float": 2.8284271247461903,
+ "lattice_basis_exact": [
+  [
+   "0",
+   "1",
+   "0-1*sqrt(2)"
+  ],
+  [
+   "-1",
+   "0",
+   "0+1*sqrt(2)"
+  ],
+  [
+   "1",
+   "1",
+   "0"
+  ]
+ ],
+ "lattice_basis_float": [
+  [
+   0.0,
+   1.0,
+   -1.4142135623730951
+  ],
+  [
+   -1.0,
+   0.0,
+   1.4142135623730951
+  ],
+  [
+   1.0,
+   1.0,
+   0.0
+  ]
+ ],
+ "tiling": {
+  "volume": "0+2*sqrt(2)",
+  "det_L": "0+2*sqrt(2)",
+  "volume_equals_det": true,
+  "centrally_symmetric": true,
+  "search_box": 2,
+  "lattice_points_in_open_2P": 0,
+  "packing": true,
+  "face_neighbours_are_lattice_vectors": true,
+  "face_neighbours": 12,
+  "tiles": true
+ },
+ "solid_checks": {
+  "closed": true,
+  "planar": true,
+  "outward_wound": true,
+  "convex": true,
+  "used_all_vertices": true,
+  "euler": true
+ },
+ "volume_at_edge_1": {
+  "volume_squared_exact": "8",
+  "float": 2.8284271247461903
+ },
+ "move": {
+  "lattice": "FCC (krp-core FCC_BASIS)",
+  "shear_A_exact": [
+   [
+    "1",
+    "0",
+    "0"
+   ],
+   [
+    "0",
+    "1",
+    "0"
+   ],
+   [
+    "0",
+    "0",
+    "0+1*sqrt(2)"
+   ]
+  ],
+  "towards": "Bain, path stop 2",
+  "app_slider_values": {
+   "a2": "1",
+   "b2": "3/2",
+   "c2": "3/2",
+   "a": 1.0,
+   "b": 1.224744871391589,
+   "c": 1.224744871391589,
+   "alpha": {
+    "cos2": "4/9",
+    "cos_sign": 1,
+    "degrees": 48.18968510422141
+   },
+   "beta": {
+    "cos2": "1/6",
+    "cos_sign": 1,
+    "degrees": 65.90515744788931
+   },
+   "gamma": {
+    "cos2": "1/6",
+    "cos_sign": 1,
+    "degrees": 65.90515744788931
+   }
+  },
+  "cell": 1,
+  "cell_shift_w_exact": [
+   "0",
+   "0",
+   "0"
+  ],
+  "stretch": null,
+  "note": "A is already symmetric, so the app applies A itself. Cell = 1 and Cell = 0 coincide here."
+ },
+ "classical": [
+  {
+   "source": "Wikipedia, \"Rhombic dodecahedron\" (D4h form; link in the reference library, 2026-10-23)",
+   "description": "a cuboctahedron with square pyramids attached on the top and bottom",
+   "exact_construction": "cuboctahedron of edge 1 (permutations of (+-1, +-1, 0)/sqrt 2) and two equilateral square pyramids, apexes (0, 0, +-sqrt 2)",
+   "points_exact": [
+    [
+     "0-1/2*sqrt(2)",
+     "0-1/2*sqrt(2)",
+     "0"
+    ],
+    [
+     "0-1/2*sqrt(2)",
+     "0",
+     "0-1/2*sqrt(2)"
+    ],
+    [
+     "0-1/2*sqrt(2)",
+     "0",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0-1/2*sqrt(2)",
+     "0+1/2*sqrt(2)",
+     "0"
+    ],
+    [
+     "0",
+     "0-1/2*sqrt(2)",
+     "0-1/2*sqrt(2)"
+    ],
+    [
+     "0",
+     "0-1/2*sqrt(2)",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0",
+     "0+1/2*sqrt(2)",
+     "0-1/2*sqrt(2)"
+    ],
+    [
+     "0",
+     "0+1/2*sqrt(2)",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0-1/2*sqrt(2)",
+     "0"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0",
+     "0-1/2*sqrt(2)"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0+1/2*sqrt(2)",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0+1*sqrt(2)"
+    ],
+    [
+     "0",
+     "0",
+     "0-1*sqrt(2)"
+    ]
+   ],
+   "dissection": {
+    "pieces_inside_whole": true,
+    "pieces_interior_disjoint": true,
+    "piece_volumes": [
+     "0+5/3*sqrt(2)",
+     "0+1/6*sqrt(2)",
+     "0+1/6*sqrt(2)"
+    ],
+    "sum_of_pieces": "0+2*sqrt(2)",
+    "whole_volume": "0+2*sqrt(2)",
+    "volumes_add_up": true,
+    "glued_pieces_are_the_whole": true
+   }
+  },
+  {
+   "source": "Fedorov 1885, § 83 p. 234 (zone shrinking; page image checked in the library check)",
+   "description": "truncated octahedron -> elongated dodecahedron -> rhombic dodecahedron by shrinking belts to zero",
+   "exact_construction": "uniform truncated octahedron (edge 1) with the two zones of a perpendicular pair of edge directions shrunk to 0"
+  }
+ ],
+ "classical_credit": "Bain correspondence: E. C. Bain 1924 (the stretch). Shape: first describer not found in the library; Wikipedia lists it as the D4h form. Moves: Fedorov 1885: shear and stretch, Theorem 32 p. 239; zone shrinking, § 83 p. 234 (credited for the moves)",
+ "move_exact": {
+  "lattice": "FCC",
+  "A_rows_exact": [
+   [
+    "1",
+    "0",
+    "0"
+   ],
+   [
+    "0",
+    "1",
+    "0"
+   ],
+   [
+    "0",
+    "0",
+    "0+1*sqrt(2)"
+   ]
+  ],
+  "cell": 1,
+  "fifth_exact": null
+ },
+ "classical_exact": [
+  {
+   "label": "cuboctahedron + two equilateral square pyramids (Wikipedia, D4h form)",
+   "pieces": [
+    [
+     [
+      "0-1/2*sqrt(2)",
+      "0-1/2*sqrt(2)",
+      "0"
+     ],
+     [
+      "0-1/2*sqrt(2)",
+      "0",
+      "0-1/2*sqrt(2)"
+     ],
+     [
+      "0-1/2*sqrt(2)",
+      "0",
+      "0+1/2*sqrt(2)"
+     ],
+     [
+      "0-1/2*sqrt(2)",
+      "0+1/2*sqrt(2)",
+      "0"
+     ],
+     [
+      "0",
+      "0-1/2*sqrt(2)",
+      "0-1/2*sqrt(2)"
+     ],
+     [
+      "0",
+      "0-1/2*sqrt(2)",
+      "0+1/2*sqrt(2)"
+     ],
+     [
+      "0",
+      "0+1/2*sqrt(2)",
+      "0-1/2*sqrt(2)"
+     ],
+     [
+      "0",
+      "0+1/2*sqrt(2)",
+      "0+1/2*sqrt(2)"
+     ],
+     [
+      "0+1/2*sqrt(2)",
+      "0-1/2*sqrt(2)",
+      "0"
+     ],
+     [
+      "0+1/2*sqrt(2)",
+      "0",
+      "0-1/2*sqrt(2)"
+     ],
+     [
+      "0+1/2*sqrt(2)",
+      "0",
+      "0+1/2*sqrt(2)"
+     ],
+     [
+      "0+1/2*sqrt(2)",
+      "0+1/2*sqrt(2)",
+      "0"
+     ]
+    ],
+    [
+     [
+      "0-1/2*sqrt(2)",
+      "0",
+      "0+1/2*sqrt(2)"
+     ],
+     [
+      "0",
+      "0-1/2*sqrt(2)",
+      "0+1/2*sqrt(2)"
+     ],
+     [
+      "0",
+      "0+1/2*sqrt(2)",
+      "0+1/2*sqrt(2)"
+     ],
+     [
+      "0+1/2*sqrt(2)",
+      "0",
+      "0+1/2*sqrt(2)"
+     ],
+     [
+      "0",
+      "0",
+      "0+1*sqrt(2)"
+     ]
+    ],
+    [
+     [
+      "0-1/2*sqrt(2)",
+      "0",
+      "0-1/2*sqrt(2)"
+     ],
+     [
+      "0",
+      "0-1/2*sqrt(2)",
+      "0-1/2*sqrt(2)"
+     ],
+     [
+      "0",
+      "0+1/2*sqrt(2)",
+      "0-1/2*sqrt(2)"
+     ],
+     [
+      "0+1/2*sqrt(2)",
+      "0",
+      "0-1/2*sqrt(2)"
+     ],
+     [
+      "0",
+      "0",
+      "0-1*sqrt(2)"
+     ]
+    ]
+   ]
+  },
+  {
+   "label": "truncated octahedron with a perpendicular pair of zones shrunk to 0 (Fedorov, § 83)",
+   "zonotope": [
+    [
+     "0+1/2*sqrt(2)",
+     "0",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0",
+     "0-1/2*sqrt(2)"
+    ],
+    [
+     "0",
+     "0+1/2*sqrt(2)",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0",
+     "0+1/2*sqrt(2)",
+     "0-1/2*sqrt(2)"
+    ]
+   ]
+  }
+ ],
+ "expected": {
+  "source": "TARGETS.md (the nine; BAIN_RD), DISCOVERIES #4",
+  "f_vector": [
+   14,
+   24,
+   12
+  ],
+  "face_kinds": {
+   "rhombus 60": 8,
+   "square": 4
+  },
+  "symmetry": "D4h",
+  "targets_volume_float": 2.82843
+ },
+ "checks": {
+  "solid_closed_wound_planar_convex": true,
+  "f_vector_14_24_12": true,
+  "faces_4_squares_8_rhombi_60": true,
+  "equal_edges_1": true,
+  "symmetry_D4h": true,
+  "volume_2sqrt2": true,
+  "tiles_by_translation": true,
+  "lattice_is_Bain_FCC": true,
+  "classical_cuboctahedron_plus_2_pyramids_glue_to_one_convex_solid": true,
+  "pyramids_equilateral": true,
+  "congruent_to_cuboctahedron_plus_2_pyramids": true,
+  "uniform_TO_is_zonotope_of_its_6_edge_directions": true,
+  "TO_minus_each_perpendicular_zone_pair_is_Bain_RD": true,
+  "TO_minus_a_60_degree_zone_pair_is_a_hexagonal_prism_not_the_RD": true
+ }
+}

@@ -1,0 +1,461 @@
+{
+ "mark": "60-degree rhombohedron, exact, 2026-10-23 · DICTO · dictospheres.com",
+ "name": "60-degree rhombohedron",
+ "field": "Q(sqrt2)",
+ "credit": "DICTO's idea; exact computation with Claude (Anthropic)",
+ "edge_directions_exact": [
+  [
+   "0",
+   "0+1/2*sqrt(2)",
+   "0+1/2*sqrt(2)"
+  ],
+  [
+   "0+1/2*sqrt(2)",
+   "0",
+   "0+1/2*sqrt(2)"
+  ],
+  [
+   "0+1/2*sqrt(2)",
+   "0+1/2*sqrt(2)",
+   "0"
+  ]
+ ],
+ "edge_directions_float": [
+  [
+   0.0,
+   0.7071067811865476,
+   0.7071067811865476
+  ],
+  [
+   0.7071067811865476,
+   0.0,
+   0.7071067811865476
+  ],
+  [
+   0.7071067811865476,
+   0.7071067811865476,
+   0.0
+  ]
+ ],
+ "vertices_exact": [
+  [
+   "0-1/2*sqrt(2)",
+   "0-1/2*sqrt(2)",
+   "0-1/2*sqrt(2)"
+  ],
+  [
+   "0-1/2*sqrt(2)",
+   "0",
+   "0"
+  ],
+  [
+   "0",
+   "0-1/2*sqrt(2)",
+   "0"
+  ],
+  [
+   "0",
+   "0",
+   "0-1/2*sqrt(2)"
+  ],
+  [
+   "0",
+   "0",
+   "0+1/2*sqrt(2)"
+  ],
+  [
+   "0",
+   "0+1/2*sqrt(2)",
+   "0"
+  ],
+  [
+   "0+1/2*sqrt(2)",
+   "0",
+   "0"
+  ],
+  [
+   "0+1/2*sqrt(2)",
+   "0+1/2*sqrt(2)",
+   "0+1/2*sqrt(2)"
+  ]
+ ],
+ "vertices_float": [
+  [
+   -0.7071067811865476,
+   -0.7071067811865476,
+   -0.7071067811865476
+  ],
+  [
+   -0.7071067811865476,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   -0.7071067811865476,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   -0.7071067811865476
+  ],
+  [
+   0.0,
+   0.0,
+   0.7071067811865476
+  ],
+  [
+   0.0,
+   0.7071067811865476,
+   0.0
+  ],
+  [
+   0.7071067811865476,
+   0.0,
+   0.0
+  ],
+  [
+   0.7071067811865476,
+   0.7071067811865476,
+   0.7071067811865476
+  ]
+ ],
+ "faces": [
+  [
+   3,
+   5,
+   7,
+   6
+  ],
+  [
+   2,
+   4,
+   1,
+   0
+  ],
+  [
+   0,
+   1,
+   5,
+   3
+  ],
+  [
+   6,
+   7,
+   4,
+   2
+  ],
+  [
+   1,
+   4,
+   7,
+   5
+  ],
+  [
+   3,
+   6,
+   2,
+   0
+  ]
+ ],
+ "f_vector": [
+  8,
+  12,
+  6
+ ],
+ "face_kinds": {
+  "rhombus 60": 6
+ },
+ "symmetry": {
+  "name": "D3d",
+  "order": 12,
+  "rotations": 6,
+  "inversion": true,
+  "fourfold_elements": 0,
+  "threefold_elements": 2,
+  "twofold_rotations": 3
+ },
+ "edge_lengths_squared": [
+  "1"
+ ],
+ "volume_exact": "0+1/2*sqrt(2)",
+ "volume_float": 0.7071067811865476,
+ "lattice_basis_exact": [
+  [
+   "0+1/2*sqrt(2)",
+   "0+1/2*sqrt(2)",
+   "0"
+  ],
+  [
+   "0-1/2*sqrt(2)",
+   "0",
+   "0-1/2*sqrt(2)"
+  ],
+  [
+   "0",
+   "0+1/2*sqrt(2)",
+   "0+1/2*sqrt(2)"
+  ]
+ ],
+ "lattice_basis_float": [
+  [
+   0.7071067811865476,
+   0.7071067811865476,
+   0.0
+  ],
+  [
+   -0.7071067811865476,
+   0.0,
+   -0.7071067811865476
+  ],
+  [
+   0.0,
+   0.7071067811865476,
+   0.7071067811865476
+  ]
+ ],
+ "tiling": {
+  "volume": "0+1/2*sqrt(2)",
+  "det_L": "0+1/2*sqrt(2)",
+  "volume_equals_det": true,
+  "centrally_symmetric": true,
+  "search_box": 2,
+  "lattice_points_in_open_2P": 0,
+  "packing": true,
+  "face_neighbours_are_lattice_vectors": true,
+  "face_neighbours": 6,
+  "tiles": true
+ },
+ "solid_checks": {
+  "closed": true,
+  "planar": true,
+  "outward_wound": true,
+  "convex": true,
+  "used_all_vertices": true,
+  "euler": true
+ },
+ "volume_at_edge_1": {
+  "volume_squared_exact": "1/2",
+  "float": 0.7071067811865476
+ },
+ "move": {
+  "lattice": "simple cubic (Z^3)",
+  "shear_A_exact (columns = images of e1, e2, e3)": [
+   [
+    "0",
+    "0+1/2*sqrt(2)",
+    "0+1/2*sqrt(2)"
+   ],
+   [
+    "0+1/2*sqrt(2)",
+    "0",
+    "0+1/2*sqrt(2)"
+   ],
+   [
+    "0+1/2*sqrt(2)",
+    "0+1/2*sqrt(2)",
+    "0"
+   ]
+  ],
+  "lattice_params": {
+   "a=b=c": "1",
+   "alpha=beta=gamma": "60 degrees (cos = 1/2)"
+  },
+  "note": "a = b = c, all angles 60: the sheared cube lattice is the FCC lattice itself, and the rhombohedron is the parallelepiped on the app's FCC_BASIS (plain FCC sliders), scaled to edge 1. TARGETS: RHOMBOHEDRON_60."
+ },
+ "classical": [
+  {
+   "source": "Lagarias and Zong 2012, Notices AMS 59, p. 1542, Fig. 2 (Maurolico, 16th c.)",
+   "description": "gluing two regular tetrahedra to diagonally opposite faces of a regular octahedron; six congruent faces, each a 60-120 degree rhombus",
+   "exact_construction": "octahedron +-e_i/sqrt2 (edge 1), tetrahedron apexes +-(1,1,1)/sqrt2",
+   "points_exact": [
+    [
+     "0+1/2*sqrt(2)",
+     "0",
+     "0"
+    ],
+    [
+     "0-1/2*sqrt(2)",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0+1/2*sqrt(2)",
+     "0"
+    ],
+    [
+     "0",
+     "0-1/2*sqrt(2)",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0",
+     "0",
+     "0-1/2*sqrt(2)"
+    ],
+    [
+     "0+1/2*sqrt(2)",
+     "0+1/2*sqrt(2)",
+     "0+1/2*sqrt(2)"
+    ],
+    [
+     "0-1/2*sqrt(2)",
+     "0-1/2*sqrt(2)",
+     "0-1/2*sqrt(2)"
+    ]
+   ],
+   "dissection": {
+    "pieces_inside_whole": true,
+    "pieces_interior_disjoint": true,
+    "piece_volumes": [
+     "0+1/3*sqrt(2)",
+     "0+1/12*sqrt(2)",
+     "0+1/12*sqrt(2)"
+    ],
+    "sum_of_pieces": "0+1/2*sqrt(2)",
+    "whole_volume": "0+1/2*sqrt(2)",
+    "volumes_add_up": true,
+    "glued_pieces_are_the_whole": true
+   }
+  }
+ ],
+ "classical_credit": "Maurolico (16th century), per Lagarias and Zong 2012. Moves: Fedorov 1885: shear and stretch, Theorem 32 p. 239; zone shrinking, § 83 p. 234 (credited for the moves)",
+ "move_exact": {
+  "lattice": "cube",
+  "A_rows_exact": [
+   [
+    "0",
+    "0+1/2*sqrt(2)",
+    "0+1/2*sqrt(2)"
+   ],
+   [
+    "0+1/2*sqrt(2)",
+    "0",
+    "0+1/2*sqrt(2)"
+   ],
+   [
+    "0+1/2*sqrt(2)",
+    "0+1/2*sqrt(2)",
+    "0"
+   ]
+  ],
+  "cell": null,
+  "fifth_exact": null
+ },
+ "classical_exact": [
+  {
+   "label": "tetrahedron + octahedron + tetrahedron (Maurolico, per Lagarias and Zong 2012)",
+   "pieces": [
+    [
+     [
+      "0+1/2*sqrt(2)",
+      "0",
+      "0"
+     ],
+     [
+      "0-1/2*sqrt(2)",
+      "0",
+      "0"
+     ],
+     [
+      "0",
+      "0+1/2*sqrt(2)",
+      "0"
+     ],
+     [
+      "0",
+      "0-1/2*sqrt(2)",
+      "0"
+     ],
+     [
+      "0",
+      "0",
+      "0+1/2*sqrt(2)"
+     ],
+     [
+      "0",
+      "0",
+      "0-1/2*sqrt(2)"
+     ]
+    ],
+    [
+     [
+      "0+1/2*sqrt(2)",
+      "0",
+      "0"
+     ],
+     [
+      "0",
+      "0+1/2*sqrt(2)",
+      "0"
+     ],
+     [
+      "0",
+      "0",
+      "0+1/2*sqrt(2)"
+     ],
+     [
+      "0+1/2*sqrt(2)",
+      "0+1/2*sqrt(2)",
+      "0+1/2*sqrt(2)"
+     ]
+    ],
+    [
+     [
+      "0-1/2*sqrt(2)",
+      "0",
+      "0"
+     ],
+     [
+      "0",
+      "0-1/2*sqrt(2)",
+      "0"
+     ],
+     [
+      "0",
+      "0",
+      "0-1/2*sqrt(2)"
+     ],
+     [
+      "0-1/2*sqrt(2)",
+      "0-1/2*sqrt(2)",
+      "0-1/2*sqrt(2)"
+     ]
+    ]
+   ]
+  }
+ ],
+ "expected": {
+  "source": "Lagarias and Zong 2012 (six 60-120 rhombi); TARGETS (RHOMBOHEDRON_60, 0.707107)",
+  "f_vector": [
+   8,
+   12,
+   6
+  ],
+  "face_kinds": {
+   "rhombus 60": 6
+  },
+  "symmetry": "D3d",
+  "targets_volume_float": 0.707107
+ },
+ "checks": {
+  "solid_closed_wound_planar_convex": true,
+  "f_vector_8_12_6": true,
+  "six_rhombi_60": true,
+  "equal_edges_1": true,
+  "volume_1_over_sqrt2": true,
+  "symmetry_D3d": true,
+  "tiles_by_translation": true,
+  "tetrahedra_regular_edge_1": true,
+  "classical_octahedron_plus_2_tetrahedra_glue_to_one_convex_solid": true,
+  "congruent_to_Maurolicos_tetrahedron_octahedron_tetrahedron": true,
+  "same_as_app_FCC_basis_parallelepiped (plain FCC sliders)": true
+ }
+}

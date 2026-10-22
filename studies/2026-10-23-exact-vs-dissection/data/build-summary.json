@@ -1,0 +1,120 @@
+{
+ "mark": "exact-vs-dissection build summary, 2026-10-23 · DICTO · dictospheres.com",
+ "checks": {
+  "bain-rd": {
+   "solid_closed_wound_planar_convex": true,
+   "f_vector_14_24_12": true,
+   "faces_4_squares_8_rhombi_60": true,
+   "equal_edges_1": true,
+   "symmetry_D4h": true,
+   "volume_2sqrt2": true,
+   "tiles_by_translation": true,
+   "lattice_is_Bain_FCC": true,
+   "classical_cuboctahedron_plus_2_pyramids_glue_to_one_convex_solid": true,
+   "pyramids_equilateral": true,
+   "congruent_to_cuboctahedron_plus_2_pyramids": true,
+   "uniform_TO_is_zonotope_of_its_6_edge_directions": true,
+   "TO_minus_each_perpendicular_zone_pair_is_Bain_RD": true,
+   "TO_minus_a_60_degree_zone_pair_is_a_hexagonal_prism_not_the_RD": true
+  },
+  "regular-hexagon-ed": {
+   "solid_closed_wound_planar_convex": true,
+   "fedorov_counts_18_vertices_28_edges_12_faces": true,
+   "grunbaum_fig2b_faces_4_regular_hexagons_4_squares_4_rhombi_60": true,
+   "equal_edges_1": true,
+   "volume_4sqrt2": true,
+   "symmetry_D2h": true,
+   "tiles_by_translation": true,
+   "fifth_direction_is_free_lies_in_planes_h1h2_and_h3h4": true,
+   "fifth_direction_equals_h1_plus_h2": true,
+   "same_cell_as_krp_core_EMBLEM_DIRECTIONS": true,
+   "uniform_TO_is_zonotope_of_its_6_edge_directions": true,
+   "TO_minus_any_one_of_its_6_zones_is_congruent_to_F5": true,
+   "F5_inserted_prism_is_rhombic_70.53_not_square": true,
+   "F5_minus_its_fifth_zone_is_the_Bain_RD": true
+  },
+  "ed-classical": {
+   "solid_closed_wound_planar_convex": true,
+   "fedorov_counts_18_28_12": true,
+   "equal_edges": true,
+   "tiles_by_translation": true,
+   "symmetry_D4h": true,
+   "congruent_to_Polyhedraverse_elongatedDodecahedronVerts(1,1)": true,
+   "classical_RD_halves_plus_square_prism_glue_to_one_convex_solid": true,
+   "prism_cross_section_is_a_square": true
+  },
+  "ed-bain-z": {
+   "solid_closed_wound_planar_convex": true,
+   "fedorov_counts_18_28_12": true,
+   "faces_8_rhombi_60_4_hexagons_135_135_90": true,
+   "volume_2sqrt2_plus_2_(TARGETS 4.82843)": true,
+   "tiles_by_translation": true
+  },
+  "ed-bain-y": {
+   "bain_third_free_line_gives_F5_again": true
+  },
+  "dicto-rd": {
+   "solid_closed_wound_planar_convex": true,
+   "f_vector_14_24_12": true,
+   "volume_phi2": true,
+   "tiles_by_translation": true,
+   "faces_6_rhombi_60_6_rhombi_72": true,
+   "cell_1_of_this_shear_is_DICTO_RD_exactly": true
+  },
+  "ed-F7": {
+   "exactly_two_of_the_three_free_lines_are_blue_lines": true,
+   "one_is_TARGETS_16_(4 rh60, 4 rh72, 2 hex 144/144/72, 2 regular hexagons; volume phi^2+2)": true,
+   "other_is_TARGETS_18_(6 rh60, 2 rh72, 4 hex 144/108/108; volume phi^3+1/2)": true,
+   "both_fedorov_counts_18_28_12": true,
+   "both_equal_edges_1": true,
+   "both_tile_by_translation": true,
+   "both_closed_wound_planar_convex": true
+  },
+  "bilinski": {
+   "solid_closed_wound_planar_convex": true,
+   "f_vector_14_24_12": true,
+   "twelve_congruent_golden_rhombi (cos^2 = 1/5: diagonals in ratio phi)": true,
+   "equal_edges": true,
+   "symmetry_D2h": true,
+   "tiles_by_translation": true,
+   "shear_then_cell_1_gives_it_exactly": true,
+   "equal_edge_cell_is_unique (circumcentre of 4 non-coplanar points)": true,
+   "dependency_mu_not_all_equal_so_B_is_not_an_affine_image_of_K": true,
+   "cell_0_is_not_B (needs Cell = 1)": true,
+   "cell_1_volume_equals_lattice_det (app: fills space, no red band)": true,
+   "T_is_Keplers_triacontahedron (32 V, 60 E, 30 golden rhombi, closed convex)": true,
+   "T_minus_one_zone_is_Fedorovs_rhombic_icosahedron (22 V, 40 E, 20 golden rhombi)": true,
+   "T_minus_any_two_zones_(all 15 pairs)_is_congruent_to_the_Kaleidohedra_B": true,
+   "B_is_glued_from_four_golden_rhombohedra (exact dissection found)": true,
+   "two_acute_and_two_obtuse": true,
+   "the_four_pieces_are_Grunbaums_Ha_and_Ho": true,
+   "volume_B = 2 Ha + 2 Ho": true,
+   "sliders_are_plain_FCC_with_gamma_36: a=b=c, alpha=beta=60, cos gamma = phi/2": true,
+   "Gram_of_the_Bilinski_lattice_basis_is_|u|^2 [[1, phi/2, 1/2], [phi/2, 1, 1/2], [1/2, 1/2, 1]]": true
+  },
+  "F1-affine-to-B": {
+   "F1_dependency_equals_B_dependency (phi, phi, 1, 1 up to order)": true,
+   "a_linear_map_carries_the_four_B_directions_onto_F1s (so F1 = L(B), an affine image of Bilinski B)": true,
+   "and_F1_is_not_an_affine_image_of_Keplers_K (mu not all equal)": true,
+   "zonotope_check: L applied to Bs corners gives F1s corners": true
+  },
+  "rhombohedron-60": {
+   "solid_closed_wound_planar_convex": true,
+   "f_vector_8_12_6": true,
+   "six_rhombi_60": true,
+   "equal_edges_1": true,
+   "volume_1_over_sqrt2": true,
+   "symmetry_D3d": true,
+   "tiles_by_translation": true,
+   "tetrahedra_regular_edge_1": true,
+   "classical_octahedron_plus_2_tetrahedra_glue_to_one_convex_solid": true,
+   "congruent_to_Maurolicos_tetrahedron_octahedron_tetrahedron": true,
+   "same_as_app_FCC_basis_parallelepiped (plain FCC sliders)": true
+  },
+  "congruence-test-control": {
+   "homometric_sets_have_equal_sorted_distance_lists": true,
+   "corner_matching_rejects_them": true,
+   "corner_matching_accepts_a_rotated_copy": true
+  }
+ }
+}

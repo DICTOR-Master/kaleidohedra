@@ -1,0 +1,776 @@
+{
+ "mark": "Bilinski dodecahedron, exact, 2026-10-23 · DICTO · dictospheres.com",
+ "name": "Bilinski dodecahedron",
+ "field": "Q(sqrt5)",
+ "credit": "DICTO's idea; exact computation with Claude (Anthropic)",
+ "edge_directions_exact": [
+  [
+   "0",
+   "-1",
+   "-1/2-1/2*sqrt(5)"
+  ],
+  [
+   "0",
+   "-1",
+   "1/2+1/2*sqrt(5)"
+  ],
+  [
+   "1",
+   "1/2+1/2*sqrt(5)",
+   "0"
+  ],
+  [
+   "-1",
+   "1/2+1/2*sqrt(5)",
+   "0"
+  ]
+ ],
+ "edge_directions_float": [
+  [
+   0.0,
+   -1.0,
+   -1.618033988749895
+  ],
+  [
+   0.0,
+   -1.0,
+   1.618033988749895
+  ],
+  [
+   1.0,
+   1.618033988749895,
+   0.0
+  ],
+  [
+   -1.0,
+   1.618033988749895,
+   0.0
+  ]
+ ],
+ "vertices_exact": [
+  [
+   "-1",
+   "-1",
+   "0"
+  ],
+  [
+   "-1",
+   "0",
+   "-1/2-1/2*sqrt(5)"
+  ],
+  [
+   "-1",
+   "0",
+   "1/2+1/2*sqrt(5)"
+  ],
+  [
+   "-1",
+   "1",
+   "0"
+  ],
+  [
+   "0",
+   "-3/2-1/2*sqrt(5)",
+   "0"
+  ],
+  [
+   "0",
+   "-1/2-1/2*sqrt(5)",
+   "-1/2-1/2*sqrt(5)"
+  ],
+  [
+   "0",
+   "-1/2-1/2*sqrt(5)",
+   "1/2+1/2*sqrt(5)"
+  ],
+  [
+   "0",
+   "1/2+1/2*sqrt(5)",
+   "-1/2-1/2*sqrt(5)"
+  ],
+  [
+   "0",
+   "1/2+1/2*sqrt(5)",
+   "1/2+1/2*sqrt(5)"
+  ],
+  [
+   "0",
+   "3/2+1/2*sqrt(5)",
+   "0"
+  ],
+  [
+   "1",
+   "-1",
+   "0"
+  ],
+  [
+   "1",
+   "0",
+   "-1/2-1/2*sqrt(5)"
+  ],
+  [
+   "1",
+   "0",
+   "1/2+1/2*sqrt(5)"
+  ],
+  [
+   "1",
+   "1",
+   "0"
+  ]
+ ],
+ "vertices_float": [
+  [
+   -1.0,
+   -1.0,
+   0.0
+  ],
+  [
+   -1.0,
+   0.0,
+   -1.618033988749895
+  ],
+  [
+   -1.0,
+   0.0,
+   1.618033988749895
+  ],
+  [
+   -1.0,
+   1.0,
+   0.0
+  ],
+  [
+   0.0,
+   -2.618033988749895,
+   0.0
+  ],
+  [
+   0.0,
+   -1.618033988749895,
+   -1.618033988749895
+  ],
+  [
+   0.0,
+   -1.618033988749895,
+   1.618033988749895
+  ],
+  [
+   0.0,
+   1.618033988749895,
+   -1.618033988749895
+  ],
+  [
+   0.0,
+   1.618033988749895,
+   1.618033988749895
+  ],
+  [
+   0.0,
+   2.618033988749895,
+   0.0
+  ],
+  [
+   1.0,
+   -1.0,
+   0.0
+  ],
+  [
+   1.0,
+   0.0,
+   -1.618033988749895
+  ],
+  [
+   1.0,
+   0.0,
+   1.618033988749895
+  ],
+  [
+   1.0,
+   1.0,
+   0.0
+  ]
+ ],
+ "faces": [
+  [
+   3,
+   1,
+   0,
+   2
+  ],
+  [
+   12,
+   10,
+   11,
+   13
+  ],
+  [
+   6,
+   4,
+   10,
+   12
+  ],
+  [
+   9,
+   7,
+   1,
+   3
+  ],
+  [
+   13,
+   11,
+   7,
+   9
+  ],
+  [
+   2,
+   0,
+   4,
+   6
+  ],
+  [
+   3,
+   2,
+   8,
+   9
+  ],
+  [
+   11,
+   10,
+   4,
+   5
+  ],
+  [
+   5,
+   4,
+   0,
+   1
+  ],
+  [
+   9,
+   8,
+   12,
+   13
+  ],
+  [
+   6,
+   12,
+   8,
+   2
+  ],
+  [
+   1,
+   7,
+   11,
+   5
+  ]
+ ],
+ "f_vector": [
+  14,
+  24,
+  12
+ ],
+ "face_kinds": {
+  "golden rhombus": 12
+ },
+ "symmetry": {
+  "name": "D2h",
+  "order": 8,
+  "rotations": 4,
+  "inversion": true,
+  "fourfold_elements": 0,
+  "threefold_elements": 0,
+  "twofold_rotations": 3
+ },
+ "edge_lengths_squared": [
+  "5/2+1/2*sqrt(5)"
+ ],
+ "volume_exact": "8+4*sqrt(5)",
+ "volume_float": 16.94427190999916,
+ "lattice_basis_exact": [
+  [
+   "-2",
+   "0",
+   "0"
+  ],
+  [
+   "1",
+   "-3/2-1/2*sqrt(5)",
+   "1/2+1/2*sqrt(5)"
+  ],
+  [
+   "-1",
+   "3/2+1/2*sqrt(5)",
+   "1/2+1/2*sqrt(5)"
+  ]
+ ],
+ "lattice_basis_float": [
+  [
+   -2.0,
+   0.0,
+   0.0
+  ],
+  [
+   1.0,
+   -2.618033988749895,
+   1.618033988749895
+  ],
+  [
+   -1.0,
+   2.618033988749895,
+   1.618033988749895
+  ]
+ ],
+ "tiling": {
+  "volume": "8+4*sqrt(5)",
+  "det_L": "8+4*sqrt(5)",
+  "volume_equals_det": true,
+  "centrally_symmetric": true,
+  "search_box": 2,
+  "lattice_points_in_open_2P": 0,
+  "packing": true,
+  "face_neighbours_are_lattice_vectors": true,
+  "face_neighbours": 12,
+  "tiles": true
+ },
+ "solid_checks": {
+  "closed": true,
+  "planar": true,
+  "outward_wound": true,
+  "convex": true,
+  "used_all_vertices": true,
+  "euler": true
+ },
+ "volume_at_edge_1": {
+  "volume_squared_exact": "16/5+32/25*sqrt(5)",
+  "float": 2.462146829740203
+ },
+ "move": {
+  "lattice": "FCC (krp-core FCC_BASIS)",
+  "shear_A_exact (lengths at edge sqrt(phi+2))": [
+   [
+    "0",
+    "1",
+    "-1"
+   ],
+   [
+    "-3/2-1/2*sqrt(5)",
+    "0",
+    "0"
+   ],
+   [
+    "0",
+    "-1/2-1/2*sqrt(5)",
+    "-1/2-1/2*sqrt(5)"
+   ]
+  ],
+  "app_slider_values (scaled to the app edge sqrt3/2)": {
+   "a2": "3/4+3/20*sqrt(5)",
+   "b2": "3/4+3/20*sqrt(5)",
+   "c2": "3/4+3/20*sqrt(5)",
+   "a": 1.0418302148742704,
+   "b": 1.0418302148742704,
+   "c": 1.0418302148742704,
+   "alpha": {
+    "cos2": "1/4",
+    "cos_sign": 1,
+    "degrees": 60.00000000000001
+   },
+   "beta": {
+    "cos2": "1/4",
+    "cos_sign": 1,
+    "degrees": 60.00000000000001
+   },
+   "gamma": {
+    "cos2": "3/8+1/8*sqrt(5)",
+    "cos_sign": 1,
+    "degrees": 36.0
+   }
+  },
+  "app_slider_values (raw, edge sqrt(phi+2))": {
+   "a2": "3+1*sqrt(5)",
+   "b2": "3+1*sqrt(5)",
+   "c2": "3+1*sqrt(5)",
+   "a": 2.288245611270737,
+   "b": 2.288245611270737,
+   "c": 2.288245611270737,
+   "alpha": {
+    "cos2": "1/4",
+    "cos_sign": 1,
+    "degrees": 60.00000000000001
+   },
+   "beta": {
+    "cos2": "1/4",
+    "cos_sign": 1,
+    "degrees": 60.00000000000001
+   },
+   "gamma": {
+    "cos2": "3/8+1/8*sqrt(5)",
+    "cos_sign": 1,
+    "degrees": 36.0
+   }
+  },
+  "cell": 1,
+  "cell_shift_w_exact": [
+   "0",
+   "-1/4+1/4*sqrt(5)",
+   "0"
+  ],
+  "stretch": null,
+  "labelling": "h_i = the five-fold vectors in order (0, 1, 2, 3); 6 distinct slider settings over the 24 labellings give the same solid",
+  "note": "Reached by the six sliders (not a Towards path); the app sliders step 0.005 and 0.1 degree, so the app shows a close approximation; the exact values are these."
+ },
+ "dependency_mu_exact": [
+  "1/2+1/2*sqrt(5)",
+  "1/2+1/2*sqrt(5)",
+  "1",
+  "1"
+ ],
+ "classical": [
+  {
+   "source": "Grünbaum 2010, pp. 5-6, Fig. 4: zone deletion T -> F -> B (after Fedorov); Coxeter (quoted by Senechal 2004): remove a zone and bring the two pieces together",
+   "exact_construction": "rhombic triacontahedron = zonotope of the six five-fold axes (0, +-1, phi), (+-1, phi, 0), (phi, 0, +-1); two zones deleted",
+   "generators_exact": [
+    [
+     "0",
+     "1",
+     "1/2+1/2*sqrt(5)"
+    ],
+    [
+     "0",
+     "-1",
+     "1/2+1/2*sqrt(5)"
+    ],
+    [
+     "1",
+     "1/2+1/2*sqrt(5)",
+     "0"
+    ],
+    [
+     "-1",
+     "1/2+1/2*sqrt(5)",
+     "0"
+    ],
+    [
+     "1/2+1/2*sqrt(5)",
+     "0",
+     "1"
+    ],
+    [
+     "1/2+1/2*sqrt(5)",
+     "0",
+     "-1"
+    ]
+   ]
+  },
+  {
+   "source": "Hafner and Zitko 2002, Introduction: \"could be made by gluing appropriate number of rhombohedra\" (no count given)",
+   "result": "2 exact gluings of B from its four golden rhombohedra; each uses ['acute (prolate) golden rhombohedron', 'acute (prolate) golden rhombohedron', 'obtuse (oblate) golden rhombohedron', 'obtuse (oblate) golden rhombohedron']",
+   "gluing_offsets (delta_m: piece without h_m shifted by delta_m h_m / 2)": [
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     -1,
+     -1,
+     -1,
+     -1
+    ]
+   ],
+   "dissection": {
+    "pieces_inside_whole": true,
+    "pieces_interior_disjoint": true,
+    "piece_volumes": [
+     "3+1*sqrt(5)",
+     "3+1*sqrt(5)",
+     "1+1*sqrt(5)",
+     "1+1*sqrt(5)"
+    ],
+    "sum_of_pieces": "8+4*sqrt(5)",
+    "whole_volume": "8+4*sqrt(5)",
+    "volumes_add_up": true,
+    "glued_pieces_are_the_whole": true
+   }
+  },
+  {
+   "source": "Grünbaum 2010, pp. 8-9",
+   "description": "B is affinely a Dirichlet-Voronoi tile of a lattice affine to fcc",
+   "agreement": "the move shows the lattice of B is a linear image of FCC (the shear A); Cell = 1 is what turns K into B, since B is not an affine image of K"
+  }
+ ],
+ "volume_pieces": {
+  "Ha (acute)": "3+1*sqrt(5)",
+  "Ho (obtuse)": "1+1*sqrt(5)"
+ },
+ "classical_credit": "Bilinski 1960 (not read; link only). Zone deletion: Fedorov 1885 / Grünbaum 2010. Gluing: Hafner and Zitko 2002. Moves: Fedorov 1885: shear and stretch, Theorem 32 p. 239; zone shrinking, § 83 p. 234 (credited for the moves)",
+ "move_exact": {
+  "lattice": "FCC",
+  "A_rows_exact": [
+   [
+    "0",
+    "1",
+    "-1"
+   ],
+   [
+    "-3/2-1/2*sqrt(5)",
+    "0",
+    "0"
+   ],
+   [
+    "0",
+    "-1/2-1/2*sqrt(5)",
+    "-1/2-1/2*sqrt(5)"
+   ]
+  ],
+  "cell": 1,
+  "fifth_exact": null
+ },
+ "classical_exact": [
+  {
+   "label": "rhombic triacontahedron with any two of its six zones deleted (Grünbaum Fig. 4; all 15 pairs)",
+   "zone_deletion_generators": [
+    [
+     "0",
+     "1",
+     "1/2+1/2*sqrt(5)"
+    ],
+    [
+     "0",
+     "-1",
+     "1/2+1/2*sqrt(5)"
+    ],
+    [
+     "1",
+     "1/2+1/2*sqrt(5)",
+     "0"
+    ],
+    [
+     "-1",
+     "1/2+1/2*sqrt(5)",
+     "0"
+    ],
+    [
+     "1/2+1/2*sqrt(5)",
+     "0",
+     "1"
+    ],
+    [
+     "1/2+1/2*sqrt(5)",
+     "0",
+     "-1"
+    ]
+   ],
+   "keep": 4
+  },
+  {
+   "label": "four golden rhombohedra glued (Hafner and Zitko 2002)",
+   "pieces": [
+    [
+     [
+      "-1",
+      "-1",
+      "0"
+     ],
+     [
+      "-1",
+      "0",
+      "-1/2-1/2*sqrt(5)"
+     ],
+     [
+      "0",
+      "-3/2-1/2*sqrt(5)",
+      "0"
+     ],
+     [
+      "0",
+      "-1/2-1/2*sqrt(5)",
+      "-1/2-1/2*sqrt(5)"
+     ],
+     [
+      "0",
+      "-1/2+1/2*sqrt(5)",
+      "0"
+     ],
+     [
+      "0",
+      "1/2+1/2*sqrt(5)",
+      "-1/2-1/2*sqrt(5)"
+     ],
+     [
+      "1",
+      "-1",
+      "0"
+     ],
+     [
+      "1",
+      "0",
+      "-1/2-1/2*sqrt(5)"
+     ]
+    ],
+    [
+     [
+      "-1",
+      "-1",
+      "0"
+     ],
+     [
+      "-1",
+      "0",
+      "1/2+1/2*sqrt(5)"
+     ],
+     [
+      "0",
+      "-3/2-1/2*sqrt(5)",
+      "0"
+     ],
+     [
+      "0",
+      "-1/2-1/2*sqrt(5)",
+      "1/2+1/2*sqrt(5)"
+     ],
+     [
+      "0",
+      "-1/2+1/2*sqrt(5)",
+      "0"
+     ],
+     [
+      "0",
+      "1/2+1/2*sqrt(5)",
+      "1/2+1/2*sqrt(5)"
+     ],
+     [
+      "1",
+      "-1",
+      "0"
+     ],
+     [
+      "1",
+      "0",
+      "1/2+1/2*sqrt(5)"
+     ]
+    ],
+    [
+     [
+      "0",
+      "-1/2+1/2*sqrt(5)",
+      "0"
+     ],
+     [
+      "0",
+      "1/2+1/2*sqrt(5)",
+      "-1/2-1/2*sqrt(5)"
+     ],
+     [
+      "0",
+      "1/2+1/2*sqrt(5)",
+      "1/2+1/2*sqrt(5)"
+     ],
+     [
+      "0",
+      "3/2+1/2*sqrt(5)",
+      "0"
+     ],
+     [
+      "1",
+      "-1",
+      "0"
+     ],
+     [
+      "1",
+      "0",
+      "-1/2-1/2*sqrt(5)"
+     ],
+     [
+      "1",
+      "0",
+      "1/2+1/2*sqrt(5)"
+     ],
+     [
+      "1",
+      "1",
+      "0"
+     ]
+    ],
+    [
+     [
+      "-1",
+      "-1",
+      "0"
+     ],
+     [
+      "-1",
+      "0",
+      "-1/2-1/2*sqrt(5)"
+     ],
+     [
+      "-1",
+      "0",
+      "1/2+1/2*sqrt(5)"
+     ],
+     [
+      "-1",
+      "1",
+      "0"
+     ],
+     [
+      "0",
+      "-1/2+1/2*sqrt(5)",
+      "0"
+     ],
+     [
+      "0",
+      "1/2+1/2*sqrt(5)",
+      "-1/2-1/2*sqrt(5)"
+     ],
+     [
+      "0",
+      "1/2+1/2*sqrt(5)",
+      "1/2+1/2*sqrt(5)"
+     ],
+     [
+      "0",
+      "3/2+1/2*sqrt(5)",
+      "0"
+     ]
+    ]
+   ]
+  }
+ ],
+ "expected": {
+  "source": "Grünbaum 2010 (isozonohedron: 12 congruent golden rhombi); D2h",
+  "f_vector": [
+   14,
+   24,
+   12
+  ],
+  "face_kinds": {
+   "golden rhombus": 12
+  },
+  "symmetry": "D2h"
+ },
+ "checks": {
+  "solid_closed_wound_planar_convex": true,
+  "f_vector_14_24_12": true,
+  "twelve_congruent_golden_rhombi (cos^2 = 1/5: diagonals in ratio phi)": true,
+  "equal_edges": true,
+  "symmetry_D2h": true,
+  "tiles_by_translation": true,
+  "shear_then_cell_1_gives_it_exactly": true,
+  "equal_edge_cell_is_unique (circumcentre of 4 non-coplanar points)": true,
+  "dependency_mu_not_all_equal_so_B_is_not_an_affine_image_of_K": true,
+  "cell_0_is_not_B (needs Cell = 1)": true,
+  "cell_1_volume_equals_lattice_det (app: fills space, no red band)": true,
+  "T_is_Keplers_triacontahedron (32 V, 60 E, 30 golden rhombi, closed convex)": true,
+  "T_minus_one_zone_is_Fedorovs_rhombic_icosahedron (22 V, 40 E, 20 golden rhombi)": true,
+  "T_minus_any_two_zones_(all 15 pairs)_is_congruent_to_the_Kaleidohedra_B": true,
+  "B_is_glued_from_four_golden_rhombohedra (exact dissection found)": true,
+  "two_acute_and_two_obtuse": true,
+  "the_four_pieces_are_Grunbaums_Ha_and_Ho": true,
+  "volume_B = 2 Ha + 2 Ho": true,
+  "sliders_are_plain_FCC_with_gamma_36: a=b=c, alpha=beta=60, cos gamma = phi/2": true,
+  "Gram_of_the_Bilinski_lattice_basis_is_|u|^2 [[1, phi/2, 1/2], [phi/2, 1, 1/2], [1/2, 1/2, 1]]": true
+ }
+}

@@ -1,0 +1,68 @@
+bain-rd.json: 27 of 27 checks pass
+   corrupted (vertex moved by 1/7): caught, 16 checks fail, e.g. solid: planar
+   corrupted (one face wound backwards): caught, 7 checks fail, e.g. solid: closed
+   corrupted (lattice vector doubled): caught, 3 checks fail, e.g. tiling: volume_equals_det
+   corrupted (shear matrix entry changed by 1/5): caught, 4 checks fail, e.g. the move replayed gives exactly these corners
+   corrupted (stored volume changed by 1/1000): caught, 1 checks fail, e.g. volume as stored (exact)
+   corrupted (classical construction point moved by 1/9): caught, 1 checks fail, e.g. congruent (corner matching) to: cuboctahedron + two equilateral square pyramids (Wikipedia, D4h form)
+bilinski-dodecahedron.json: 26 of 26 checks pass
+   corrupted (vertex moved by 1/7): caught, 15 checks fail, e.g. solid: planar
+   corrupted (one face wound backwards): caught, 6 checks fail, e.g. solid: closed
+   corrupted (lattice vector doubled): caught, 3 checks fail, e.g. tiling: volume_equals_det
+   corrupted (shear matrix entry changed by 1/5): caught, 3 checks fail, e.g. the move replayed gives exactly these corners
+   corrupted (stored volume changed by 1/1000): caught, 1 checks fail, e.g. volume as stored (exact)
+   corrupted (classical construction point moved by 1/9): caught, 1 checks fail, e.g. congruent (corner matching) to: rhombic triacontahedron with any two of its six zones deleted (Grünbaum Fig. 4; all 15 pairs)
+elongated-dodecahedron-type.json:classical_equilateral_ED: 24 of 24 checks pass
+   corrupted (vertex moved by 1/7): caught, 14 checks fail, e.g. solid: planar
+   corrupted (one face wound backwards): caught, 7 checks fail, e.g. solid: closed
+   corrupted (lattice vector doubled): caught, 2 checks fail, e.g. tiling: volume_equals_det
+   corrupted (shear matrix entry changed by 1/5): caught, 3 checks fail, e.g. the move replayed gives exactly these corners
+   corrupted (stored volume changed by 1/1000): caught, 1 checks fail, e.g. volume as stored (exact)
+   corrupted (classical construction point moved by 1/9): caught, 1 checks fail, e.g. congruent (corner matching) to: Polyhedraverse elongatedDodecahedronVerts(1, 1)
+elongated-dodecahedron-type.json:bain_ED_along_z_TARGETS_23: 22 of 22 checks pass
+   corrupted (vertex moved by 1/7): caught, 13 checks fail, e.g. solid: planar
+   corrupted (one face wound backwards): caught, 7 checks fail, e.g. solid: closed
+   corrupted (lattice vector doubled): caught, 2 checks fail, e.g. tiling: volume_equals_det
+   corrupted (shear matrix entry changed by 1/5): caught, 3 checks fail, e.g. the move replayed gives exactly these corners
+   corrupted (stored volume changed by 1/1000): caught, 1 checks fail, e.g. volume as stored (exact)
+   corrupted (classical construction point moved by 1/9): caught, 1 checks fail, e.g. face kinds as stored
+elongated-dodecahedron-type.json:dicto_skewed_RD_F1: 23 of 23 checks pass
+   corrupted (vertex moved by 1/7): caught, 13 checks fail, e.g. solid: planar
+   corrupted (one face wound backwards): caught, 7 checks fail, e.g. solid: closed
+   corrupted (lattice vector doubled): caught, 3 checks fail, e.g. tiling: volume_equals_det
+   corrupted (shear matrix entry changed by 1/5): caught, 4 checks fail, e.g. the move replayed gives exactly these corners
+   corrupted (stored volume changed by 1/1000): caught, 1 checks fail, e.g. volume as stored (exact)
+   corrupted (classical construction point moved by 1/9): caught, 1 checks fail, e.g. face kinds as stored
+elongated-dodecahedron-type.json:free line 12|34: 23 of 23 checks pass
+   corrupted (vertex moved by 1/7): caught, 15 checks fail, e.g. solid: planar
+   corrupted (one face wound backwards): caught, 9 checks fail, e.g. solid: closed
+   corrupted (lattice vector doubled): caught, 2 checks fail, e.g. tiling: volume_equals_det
+   corrupted (shear matrix entry changed by 1/5): caught, 3 checks fail, e.g. the move replayed gives exactly these corners
+   corrupted (stored volume changed by 1/1000): caught, 1 checks fail, e.g. volume as stored (exact)
+   corrupted (classical construction point moved by 1/9): caught, 1 checks fail, e.g. face kinds as stored
+elongated-dodecahedron-type.json:free line 14|23: 23 of 23 checks pass
+   corrupted (vertex moved by 1/7): caught, 15 checks fail, e.g. solid: planar
+   corrupted (one face wound backwards): caught, 8 checks fail, e.g. solid: closed
+   corrupted (lattice vector doubled): caught, 2 checks fail, e.g. tiling: volume_equals_det
+   corrupted (shear matrix entry changed by 1/5): caught, 3 checks fail, e.g. the move replayed gives exactly these corners
+   corrupted (stored volume changed by 1/1000): caught, 1 checks fail, e.g. volume as stored (exact)
+   corrupted (classical construction point moved by 1/9): caught, 1 checks fail, e.g. face kinds as stored
+regular-hexagon-ed.json: 26 of 26 checks pass
+   corrupted (vertex moved by 1/7): caught, 16 checks fail, e.g. solid: planar
+   corrupted (one face wound backwards): caught, 9 checks fail, e.g. solid: closed
+   corrupted (lattice vector doubled): caught, 2 checks fail, e.g. tiling: volume_equals_det
+   corrupted (shear matrix entry changed by 1/5): caught, 3 checks fail, e.g. the move replayed gives exactly these corners
+   corrupted (stored volume changed by 1/1000): caught, 1 checks fail, e.g. volume as stored (exact)
+   corrupted (classical construction point moved by 1/9): caught, 1 checks fail, e.g. congruent (corner matching) to: uniform truncated octahedron with one zone shrunk to 0 (Fedorov, § 83; Wikipedia "contraction")
+rhombohedron-60.json: 26 of 26 checks pass
+   corrupted (vertex moved by 1/7): caught, 15 checks fail, e.g. solid: planar
+   corrupted (one face wound backwards): caught, 8 checks fail, e.g. solid: closed
+   corrupted (lattice vector doubled): caught, 3 checks fail, e.g. tiling: volume_equals_det
+   corrupted (shear matrix entry changed by 1/5): caught, 4 checks fail, e.g. the move replayed gives exactly these corners
+   corrupted (stored volume changed by 1/1000): caught, 1 checks fail, e.g. volume as stored (exact)
+   corrupted (classical construction point moved by 1/9): caught, 2 checks fail, e.g. classical glue holds: tetrahedron + octahedron + tetrahedron (Maurolico, per Lagarias and Zong 2012)
+OK   control: homometric point sets share sorted distance lists
+OK   control: corner matching rejects them (not congruent)
+OK   DICTO skewed RD (F1) = L(Bilinski B) for the stored linear map L
+
+TOTAL: 223 of 223 checks pass; corrupted copies caught: 54 of 54
