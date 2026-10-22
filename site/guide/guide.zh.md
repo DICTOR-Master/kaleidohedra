@@ -268,6 +268,7 @@ Polyhedraverse 是肖像画廊：按家族排列的每一个形状，一次一�
 | Parallelohedra | 只靠平移就能填满空间的形状：费奥多罗夫五种及其变体（菱面体，以及 DICTO 用 Zometool 发现的倾斜六棱柱和它的两个块，以及斜菱形十二面体和它的扁菱面体），然后是经 Kaleidohedra 验证的（贝恩拉伸下所有棱等长的胞体：贝恩菱形十二面体、早已为人所知且由 DICTO 独立得到的正六边形伸长十二面体，以及 DICTO 的贝恩伸长十二面体），然后是 Kaleidohedra Regular 9（所有棱等长、面只有正方形、正六边形和 60° 菱形的空间填充形状） |
 | Space-Filling Pairs | 两个一起填满空间的形状，包括 DICTO 的DICTO 宝石与星形八面体（来自 Kaleidohedra），二者的面可以彼此相接，菱形与彭罗斯粗菱形相合；还有 Sunstar Lattice 这一对：犬星（正十二面体最密堆积留下的空洞，棱长全为黄金比的八角星，体积 φ/2）与在犬星接触处加了接缝的正十二面体，在其面上接上 6 个犬星就成为太阳星 |
 | Aperiodic Sets | 两对非周期块：长形和扁形黄金菱面体（3D 彭罗斯镶嵌），以及粗、细彭罗斯菱形棱柱（分层的 5D 镶嵌） |
+| Mosseri–Sadoc tiles (1982) | Mosseri 和 Sadoc（1982）的黄金四面体，按编号排列（t1–t6 按 Koca 等 2020 的表）：M-S t1、Cleo（M-S t4）、M-S t5 和 AXE（M-S t6），都是 1/τ 倍；每个的详情给出编号和字母。Hound Tooth（M-S t2）和 Tricap（M-S t3）在 Kaleidohedra 的 DICTO Icosa 世界中 |
 | 3D+ Bridges | 是更高维多胞体的影子、截面、胞或角的形状；详情里写明是哪一种 |
 | Miscellaneous | 分级棱锥、连接件和棱柱延长件 |
 

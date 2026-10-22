@@ -268,6 +268,7 @@ DICTO의 Polyhedraverse 칸 맨 위에서 **검색**으로 이름, 가족, 면 �
 | Parallelohedra | 평행 이동만으로 공간을 채우는 도형: 페도로프의 5가지와 그 변형(능면체, 그리고 DICTO가 Zometool로 찾은 기울어진 육각기둥과 그 두 블록, 그리고 비스듬한 마름모십이면체와 그 납작한 능면체), 그리고 Kaleidohedra에서 검증된 것들(베인 변형에서 모든 모서리가 같은 셀: 베인 마름모십이면체, 이미 알려져 있었고 DICTO가 독립적으로 도달한 정육각형 늘린 십이면체, DICTO의 베인 늘린 십이면체), 그리고 Kaleidohedra Regular 9(모든 모서리가 같고 면이 정사각형, 정육각형, 60° 마름모뿐인 공간 채우기 도형 전부) |
 | Space-Filling Pairs | 둘이 함께 공간을 채우는 도형. DICTO의 DICTO 주얼과 스텔라 옥탕굴라(Kaleidohedra에서)도 있으며, 서로 면끼리 붙고 마름모는 펜로즈 두꺼운 마름모와 맞습니다. Sunstar Lattice 쌍도 있습니다: 도그스타(정십이면체가 가장 조밀한 채움에서 남기는 구멍, 모서리가 모두 황금비인 8각 별, 부피 φ/2)와, 도그스타가 닿는 곳에 이음선을 넣은 정십이면체. 면에 도그스타 6개를 붙이면 선스타가 됩니다 |
 | Aperiodic Sets | 두 쌍의 비주기 조각: 길쭉한·납작한 황금 능면체(3D 펜로즈 타일링)와 두꺼운·얇은 펜로즈 마름모 각기둥(층을 이루는 5D 타일링) |
+| Mosseri–Sadoc tiles (1982) | Mosseri와 Sadoc(1982)의 황금 사면체를 번호순으로(t1–t6은 Koca 등 2020의 표를 따름): M-S t1, Cleo(M-S t4), M-S t5, AXE(M-S t6), 모두 1/τ배이며 각 도형의 상세 정보에 번호와 기호가 있습니다. Hound Tooth(M-S t2)와 Tricap(M-S t3)은 Kaleidohedra의 DICTO Icosa 월드에 있습니다 |
 | 3D+ Bridges | 고차원 폴리토프의 그림자, 단면, 셀, 꼭짓점 중 하나인 도형. 어느 것인지는 세부 정보에 나옵니다 |
 | Miscellaneous | 단계별 피라미드, 연결용 조각, 각기둥 연장 조각 |
 

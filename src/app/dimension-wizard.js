@@ -56,7 +56,7 @@ import { t, tn, tFor } from './i18n.js';
 import { polyShapeEdges, polyShapeName } from './poly-shapes.js';
 import { FAMILY_META, familyIds, familiesFor, pairPartners } from '../krp-core/src/polyhedra/families.js';
 import { TRANSITIONAL_IDS } from '../krp-core/src/polyhedra/transitional.js';
-import { POLYHEDRA, KITS13, KIT13_ADDITION_IDS } from '../krp-core/src/polyhedra/index.js';
+import { POLYHEDRA, KITS13, KIT13_ADDITION_IDS, mosseriSadocTile } from '../krp-core/src/polyhedra/index.js';
 import { isConvex } from '../krp-core/src/assembly/faceRegistration.js';
 import { favourites, recent, isFavourite, toggleFavourite } from './poly-prefs.js';
 import { netEligible, mountNetViewer } from './net-viewer.js';
@@ -643,7 +643,7 @@ const R_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key));
 // start at Platonic solids can do so as normal from the top of the green list"), DICTO's own pieces
 // above them in DICTO's livery; 4D Polytopes waits for D5.
 // DICTO Transitional Shells first: DICTO's newest work at the top (DICTO 2026-10-08), in DICTO's livery.
-const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'PLATONIC', 'ARCHIMEDEAN', 'CATALAN', 'JOHNSON', 'DELTAHEDRA', 'PRISMS', 'ANTIPRISMS', 'STELLATIONS', 'PARALLELOHEDRA', 'SPACE_FILLING_PAIRS', 'BRIDGES_3D', 'APERIODIC', 'MISCELLANEOUS'];
+const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'PLATONIC', 'ARCHIMEDEAN', 'CATALAN', 'JOHNSON', 'DELTAHEDRA', 'PRISMS', 'ANTIPRISMS', 'STELLATIONS', 'PARALLELOHEDRA', 'SPACE_FILLING_PAIRS', 'BRIDGES_3D', 'APERIODIC', 'MOSSERI_SADOC', 'MISCELLANEOUS'];
 // DICTO's own work, shown in DICTO's livery (silver) at the top of its app's block (DICTO 2026-10-09);
 // it still opens in its app. Lattices and worlds by key, single pieces by action, and DICTO's
 // Polyhedraverse pieces gathered from across its families.
@@ -1112,10 +1112,12 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     resetPreviews();
     const L = getSettings().language;
     const fits = (x) => !picker || picker.fits(x);
+    // The Mosseri–Sadoc tiles (DICTO 2026-10-23): DICTO's names there carry their M-S number, e.g. "AXE (M-S t6)".
+    const ms = (id) => (key === 'MOSSERI_SADOC' && mosseriSadocTile(id)?.dictoName ? ` (M-S t${mosseriSadocTile(id).n})` : '');
     const card = (id) => `
         <button type="button" class="dim-wizard-card-btn dim-wizard-piece${gold(id)}" data-action="tool:polyShape:${id}">
           ${previewSlot(() => polyShapeEdges(id))}
-          <span class="dim-wizard-row-text"><span class="dim-wizard-label">${polyShapeName(id).replaceAll('_', ' ')}</span></span>
+          <span class="dim-wizard-row-text"><span class="dim-wizard-label">${polyShapeName(id).replaceAll('_', ' ')}${ms(id)}</span></span>
         </button>`;
     const sections = familySections(key, L);
     const style = blockStyle(key === DICTO_POLY.key ? 'dicto' : 'polyhedraverse');
@@ -1232,6 +1234,9 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     if (['DRAGON_JEWEL', 'STELLA_OCTANGULA', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER'].includes(id)) out.push(`<div class="poly-credit" data-credit="jewel-family">${t('pv.detail.jewelFamily', L)}</div>`);
     if (id === 'DOGSTAR' || id === 'SEAMED_DODECAHEDRON' || id === 'DRAGON_JEWEL') out.push(`<div class="poly-credit" data-credit="ekp">${t('pv.detail.ekpLink', L)} <button type="button" data-ekp>Kaleidohedra</button></div>`);
     if (BAIN_PARALLELOHEDRA_ADDITION_IDS.includes(id)) out.push(`<div class="poly-credit" data-credit="bain">${t('pv.detail.bainCredit', L)}</div>`);
+    // The Mosseri–Sadoc tiles (DICTO 2026-10-23): their number and letter, Mosseri & Sadoc's precedence and Koca et al.'s numbering.
+    const ms = mosseriSadocTile(id);
+    if (ms) out.push(`<div class="poly-credit" data-credit="mosseri-sadoc">${t(ms.dictoName ? 'pv.detail.msNamed' : 'pv.detail.msTile', L, { n: ms.n, letter: ms.letter, name: ms.dictoName })}</div>`);
     return out.join('');
   }
 
