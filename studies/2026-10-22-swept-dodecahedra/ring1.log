@@ -1,0 +1,29 @@
+== tetrahedron
+   random stretches: 1000, not equilateral: 0 | face sets: {'4×triangle + 4×quad': 649, '4×triangle + 3×quad': 351}
+   along (1,0,0): 8 faces = 4×triangle + 4×quad; edges 1.000..1.000
+   along (1,1,0): 5 faces = 2×triangle + 3×quad; edges 1.000..2.000
+   along (1,1,1): 7 faces = 4×triangle + 3×quad; edges 1.000..1.000
+   three caps: 8 faces = 4×triangle + 3×quad + 1×hexagon; edges 1.000..1.000
+   four caps: 14 faces = 8×triangle + 6×quad; edges 1.000..1.000
+== cube
+   random stretches: 1000, not equilateral: 0 | face sets: {'12×quad': 1000}
+   along (1,0,0): 6 faces = 6×quad; edges 1.000..2.000
+   along (1,1,0): 8 faces = 6×quad + 2×hexagon; edges 1.000..1.000
+   along (1,1,1): 12 faces = 12×quad; edges 1.000..1.000
+   three caps: 11 faces = 2×triangle + 6×quad + 3×hexagon; edges 1.000..1.000
+   four caps: 10 faces = 4×triangle + 6×hexagon; edges 1.000..1.000
+== octahedron
+   random stretches: 1000, not equilateral: 0 | face sets: {'8×triangle + 4×quad': 632, '8×triangle + 6×quad': 368}
+   along (1,0,0): 12 faces = 8×triangle + 4×quad; edges 1.000..1.000
+   along (1,1,0): 8 faces = 4×triangle + 4×quad; edges 1.000..2.000
+   along (1,1,1): 14 faces = 8×triangle + 6×quad; edges 1.000..1.000
+   three caps: 8 faces = 4×triangle + 3×quad + 1×hexagon; edges 1.000..2.000
+   four caps: 8 faces = 4×triangle + 4×hexagon; edges 1.000..1.000
+== icosahedron
+   random stretches: 1000, not equilateral: 0 | face sets: {'20×triangle + 6×quad': 648, '20×triangle + 8×quad': 237, '20×triangle + 10×quad': 115}
+   along (1,0,0): 22 faces = 16×triangle + 6×quad; edges 1.000..2.000
+   along (1,1,0): 22 faces = 16×triangle + 2×quad + 4×pentagon; edges 1.000..1.000
+   along (1,1,1): 26 faces = 20×triangle + 6×quad; edges 1.000..1.000
+   along five-fold (0,1,φ): 30 faces = 20×triangle + 10×quad; edges 1.000..1.000
+   three caps: 23 faces = 15×triangle + 3×quad + 3×pentagon + 2×hexagon; edges 1.000..1.000
+   four caps: 26 faces = 16×triangle + 6×quad + 4×hexagon; edges 1.000..1.000
