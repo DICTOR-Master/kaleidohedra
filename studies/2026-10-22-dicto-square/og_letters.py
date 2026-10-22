@@ -6,6 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 from scipy import ndimage
 here=os.path.dirname(os.path.abspath(__file__))
 G=json.load(open(os.path.join(here,'og-geometry.json'))); V0=np.array(G['v']); F=G['f']
+LINE=os.environ.get('LINE','0')=='1'      # gold line drawing: edges and letter outlines only, transparent ground
 assert len(F)==80 and sum(len(f)==6 for f in F)==20
 def rot(ax,a):
     ax=np.array(ax,float); ax/=np.linalg.norm(ax); K=np.array([[0,-ax[2],ax[1]],[ax[2],0,-ax[0]],[-ax[1],ax[0],0]])
@@ -79,7 +80,9 @@ def render(img,cx,cy,rad,SS=2):
         if TINT and len(f)==4:   # platinum: a soft sheen towards the light
             hv=light+np.array([0,0,1.0]); sp=max(0,n@(hv/np.linalg.norm(hv)))**30
             col=tuple(int(c+(255-c)*0.6*sp) for c in col)
-        pts=[P(V[q]) for q in f]; d.polygon(pts,fill=col); d.line(pts+[pts[0]],fill=GOLD,width=2*SS)
+        pts=[P(V[q]) for q in f]
+        if LINE: d.line(pts+[pts[0]],fill=GOLD+(255,),width=LW,joint='curve')
+        else: d.polygon(pts,fill=col); d.line(pts+[pts[0]],fill=GOLD,width=2*SS)
         if tuple(f) in LET:
             # facet frame: U to the right on screen, Vv up on screen, both in the facet's plane
             # letters set in a circle round the centre of the star (DICTO): each letter's upright points away
@@ -95,6 +98,9 @@ def render(img,cx,cy,rad,SS=2):
             dark=np.array([70,74,82.]); lite=np.array([226,229,235.])
             rgb=dark+(lite-dark)*lam[...,None]**1.3; rgb=rgb+(255-rgb)*h[...,None]*0.8
             tile=Image.fromarray(np.clip(rgb,0,255).astype(np.uint8)); mask=Image.fromarray((ndimage.gaussian_filter(M,0.6)*255).astype(np.uint8))
+            if LINE:   # the letter as a gold outline
+                ins=M>0.5; ring=ins & ~ndimage.binary_erosion(ins,iterations=max(1,int(px*0.035)))
+                tile=Image.new('RGB',(px,px),GOLD); mask=Image.fromarray((ndimage.gaussian_filter(ring.astype(float),0.7)*255).astype(np.uint8))
             # affine map tile (px x px, side 2*r*1.6 in the facet) onto the screen
             corner=lambda a,b_: P(c+U*(a*hx)+Vv*(b_*hy))
             (x0,y0),(x1,y1),(x2,y2)=corner(-1,1),corner(1,1),corner(-1,-1)
@@ -107,5 +113,9 @@ def render(img,cx,cy,rad,SS=2):
             t2=tile.transform((w,hh),Image.AFFINE,coef,resample=Image.BICUBIC); m2=mask.transform((w,hh),Image.AFFINE,coef,resample=Image.BICUBIC)
             img.paste(t2,box[:2],m2)
 if __name__=='__main__':
-    N=1400; SS=2; W=N*SS; img=Image.new('RGB',(W,W),GROUND)
-    render(img,W/2,W/2,0.46*W,SS); img.resize((N,N),Image.LANCZOS).save(os.path.join(here,'og-letters%s.png'%('' if TINT else '-stone'))); print('ok')
+    if LINE:
+        N=600; SS=2; W=N*SS; LW=int(0.006*W); img=Image.new('RGBA',(W,W),(0,0,0,0))
+        render(img,W/2,W/2,0.46*W,SS); img.resize((N,N),Image.LANCZOS).save(os.path.join(here,'og-line.png'))
+    else:
+        N=1400; SS=2; W=N*SS; img=Image.new('RGB',(W,W),GROUND)
+        render(img,W/2,W/2,0.46*W,SS); img.resize((N,N),Image.LANCZOS).save(os.path.join(here,'og-letters%s.png'%('' if TINT else '-stone'))); print('ok')
