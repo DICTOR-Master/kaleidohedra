@@ -53,7 +53,8 @@ for t in cover:
     ch=[RINGLET[tuple(hexes[i])] for i in t if tuple(hexes[i]) in RINGLET]; assert len(ch)==1
     for i in t: LET[tuple(hexes[i])]=ch[0]
 assert len(LET)==20
-GROUND=tuple(int(x) for x in os.environ.get('BG','20,15,11').split(',')); GOLD=(222,178,80); STONE=(150,141,128); PLAT=(214,218,224)
+GROUND=tuple(int(x) for x in os.environ.get('BG','20,15,11').split(',')); GOLD=(222,178,80); STONE=(150,141,128)
+PLAT={'platinum':(214,218,224),'titanium':(92,95,104)}[os.environ.get('KITE','platinum')]   # kite finish (DICTO: try dark titanium)
 import os as _os
 TINT=_os.environ.get('TINT','1')=='1'   # DICTO: each lettered hexagon in its element colour, the kite stars in platinum
 ELEM={'T':(205,62,40),'O':(232,200,82),'I':(58,112,205),'C':(72,142,72),'D':(138,92,196)}
