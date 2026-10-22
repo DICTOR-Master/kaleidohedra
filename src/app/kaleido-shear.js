@@ -22,7 +22,9 @@ import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { storageKey } from './site.js';
 
-const STORAGE_KEY = storageKey('shear');
+// The shear is never remembered (DICTO 2026-10-22: "all shears should clear when exiting"): each visit starts unsheared, and
+// leaving a world resets it (render.js leaveWorld). The old saved shear is dropped once.
+try { localStorage.removeItem(storageKey('shear')); } catch { /* storage blocked */ }
 // Kept states (KRP stage 4, DICTO's decisions 2026-10-08): each visitor's own list, in this browser
 // only, of { id, fingerprint, kept, name }; never coordinates. DICTO curates.
 const KEPT_KEY = storageKey('kept');
@@ -48,16 +50,16 @@ export function installShear({ scene, camera, onChange = () => {}, onCell = () =
   scene.add = (...objs) => { for (const o of objs) (o === camera || o === group ? add : group.add.bind(group))(o); return scene; };
   scene.remove = (...objs) => { for (const o of objs) (o.parent === group ? group.remove.bind(group) : remove)(o); return scene; };
 
-  let state;
-  try { state = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); } catch { state = null; }
-  if (!state || !KEYS.every((k) => typeof state.params?.[k] === 'number')) state = { path: 0, params: { ...FCC_PARAMS }, cell: 1 };
-  if (typeof state.cell !== 'number') state.cell = 1;
-  if (!TOWARDS[state.towards]) state.towards = 'dicto';
+  const state = { path: 0, params: { ...FCC_PARAMS }, cell: 1, towards: 'dicto' };
 
   // Off (another app's space, which has no shear): the lattice unsheared and the cell the regular
   // rhombic dodecahedron, without touching the saved state; on again, the saved shear returns.
   let enabled = true;
+  // Sheared: anything but the start (the ordinary FCC lattice and its regular cell); the No shear button shows only then.
+  const sheared = () => state.cell !== 1 || KEYS.some((k) => Math.abs(state.params[k] - FCC_PARAMS[k]) > 1e-9);
+  const showNoShear = () => { const b = document.getElementById('kaleido-noshear'); if (b) b.hidden = !enabled || !sheared(); };
   const apply = () => {
+    showNoShear();
     if (!enabled) {
       group.matrix.identity();
       group.matrixWorldNeedsUpdate = true;
@@ -69,7 +71,6 @@ export function installShear({ scene, camera, onChange = () => {}, onCell = () =
     group.matrix.set(S[0][0], S[0][1], S[0][2], 0, S[1][0], S[1][1], S[1][2], 0, S[2][0], S[2][1], S[2][2], 0, 0, 0, 0, 1);
     group.matrixWorldNeedsUpdate = true;
     onCell(cellDirectionsPreShear(state.params, state.cell));
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch { /* private mode */ }
     onChange(state);
   };
 
@@ -86,6 +87,9 @@ export function installShear({ scene, camera, onChange = () => {}, onCell = () =
       apply();
     },
     isEnabled: () => enabled,
+    isSheared: () => enabled && sheared(),
+    /** Back to the start, unsheared (leaving a world). */
+    reset() { panel.resetShear(); },
   };
 }
 
@@ -94,6 +98,7 @@ function buildPanel(state, apply) {
   panel.id = 'kaleido-panel';
   panel.innerHTML = `
     <button type="button" id="kaleido-toggle" aria-expanded="false"></button>
+    <button type="button" id="kaleido-noshear" hidden></button>
     <div id="kaleido-body" hidden>
       <button type="button" id="kaleido-reset"></button>
       <label class="kaleido-row"><span data-t="towards"></span>
@@ -138,6 +143,9 @@ function buildPanel(state, apply) {
     #kaleido-body > .kaleido-row:has(#kaleido-cell) { order: 19; }
     #kaleido-body > .kaleido-row:has(#kaleido-path) { order: 20; }
     #kaleido-body[hidden] { display: none; }
+    /* No shear (DICTO 2026-10-22: "always coming up sheared ... difficult to undo"): one big tap back, shown only when sheared. */
+    #kaleido-panel #kaleido-noshear { display: block; width: 100%; min-height: max(var(--touch), 48px); margin-top: 6px; font-weight: 700; }
+    #kaleido-panel #kaleido-noshear[hidden] { display: none; }
     .kaleido-row { display: grid; grid-template-columns: auto 1fr; gap: 2px 8px; align-items: center; }
     .kaleido-row input, .kaleido-row select { grid-column: 1 / -1; width: 100%; min-height: 28px; }
     #kaleido-towards { min-height: var(--touch-compact); background: rgba(0, 0, 0, 0.45); color: var(--accent); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: var(--radius-s); }
@@ -162,6 +170,7 @@ function buildPanel(state, apply) {
     $('#kaleido-toggle').textContent = `⟋ ${T('toggle')}`;
     $('#kaleido-toggle').title = T('toggle.title');
     $('#kaleido-reset').textContent = `↺ ${T('reset')}`;
+    $('#kaleido-noshear').textContent = `↺ ${T('noshear')}`;
     $('#kaleido-reset').title = T('reset.title');
     $('#kaleido-meter').title = T('meter.title');
     panel.querySelectorAll('[data-t]').forEach((el) => { el.textContent = T(el.dataset.t); });
@@ -260,11 +269,15 @@ function buildPanel(state, apply) {
   // Reset (direct request: "I got lost and couldn't figure where normal was"): the
   // starting state, the ordinary FCC lattice with its regular RD. Towards goes back
   // to DICTO FCC too, since on the Bain path 0 is BCC, not FCC.
-  $('#kaleido-reset').addEventListener('click', () => {
+  panel.resetShear = () => {
     state.towards = 'dicto';
     state.cell = 1;
     layoutPath();
     setPath(0);
+  };
+  $('#kaleido-noshear').addEventListener('click', () => panel.resetShear());
+  $('#kaleido-reset').addEventListener('click', () => {
+    panel.resetShear();
     $('#kaleido-note').textContent = T('note.reset');
   });
   panel.querySelectorAll('[data-key]').forEach((input) => input.addEventListener('input', () => {

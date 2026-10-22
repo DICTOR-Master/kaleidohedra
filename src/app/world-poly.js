@@ -1059,7 +1059,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     get isEmpty() { return nodes.length === 0; },
     clear() { nodes = []; connections = []; selection = null; chosen = null; commit(); },
     snapshot: toJSON,
-    restore(json) { setFromJSON(json); selection = null; save(); rebuild(); renderPanel(); onChange(); },
+    restore(json) { setFromJSON(json); selection = null; save(); rebuild(); renderPanel(); renderName(); onChange(); },
     toJSON,
   };
 }

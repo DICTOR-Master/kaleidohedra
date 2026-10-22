@@ -56,7 +56,7 @@ import { t, tn, tFor } from './i18n.js';
 import { polyShapeEdges, polyShapeName } from './poly-shapes.js';
 import { FAMILY_META, familyIds, familiesFor, pairPartners } from '../krp-core/src/polyhedra/families.js';
 import { TRANSITIONAL_IDS } from '../krp-core/src/polyhedra/transitional.js';
-import { POLYHEDRA, KITS13, KIT13_ADDITION_IDS } from '../krp-core/src/polyhedra/index.js';
+import { POLYHEDRA, KITS13, KIT13_ADDITION_IDS, mosseriSadocTile } from '../krp-core/src/polyhedra/index.js';
 import { isConvex } from '../krp-core/src/assembly/faceRegistration.js';
 import { favourites, recent, isFavourite, toggleFavourite } from './poly-prefs.js';
 import { netEligible, mountNetViewer } from './net-viewer.js';
@@ -177,9 +177,6 @@ const CSS = `
 .dicto-block { display: flex; flex-direction: column; gap: 6px; padding: 10px 10px 12px; border-left: 3px solid var(--accent-strong); background: rgba(var(--accent-rgb), 0.05); border-radius: var(--radius-m); }
 .dicto-block + .dicto-block { margin-top: 14px; }
 /* DICTO's own work inside an app's block: DICTO's silver livery. */
-.dicto-livery { display: flex; flex-direction: column; gap: 6px; padding: 8px 8px 10px; margin: 4px 0 6px; border: 1px solid rgba(var(--accent-rgb), 0.45); border-radius: var(--radius-m); background: rgba(var(--accent-rgb), 0.07); }
-.dicto-livery-name { font: 800 var(--text-s) var(--font-ui); letter-spacing: 0.1em; color: var(--pale); }
-.dicto-livery-name span { color: var(--accent-strong); }
 .dicto-block-name { font: 800 var(--text-xl)/1.2 var(--font-ui); letter-spacing: 0.06em; color: var(--pale); }
 .dicto-block-name span { color: var(--accent-strong); }
 .dicto-block .dim-wizard-section .dim-wizard-label { color: var(--pale); }
@@ -545,6 +542,10 @@ export const LATTICES_4D = [
 // Kaleidohedra's; each app's lattices are listed once per app.
 const SHARED_WORLDS = ['roofFold', 'sunstar', 'stellaJewel', 'shells', 'golden'];
 const K_WORLDS = [
+  // Every Mix of the Platonic Solids (DICTO 2026-10-22; paper #47): five letter toggles D I C T O choose a mix; a block of its space
+  // filling, one slab per world, the helper pieces muted and hideable, a slider spreading the slabs; first as the newest work
+  // (world-platonic-mix.js).
+  { key: 'platonicMix', label: 'Every Mix of the Platonic Solids', pieces: [{ label: 'Every Mix of the Platonic Solids', action: 'tool:platonicMixWorld' }] },
   // The Reuleaux Platonic Solids (DICTO 2026-10-21; paper #45): balls on a Platonic solid's corners grow into its Reuleaux body (the
   // film), and the five bodies as pieces placed face to face (the build); first as the newest work (DICTO) (world-reuleaux.js).
   { key: 'reuleaux', label: 'The Reuleaux Platonic Solids', pieces: [{ label: 'The Reuleaux Platonic Solids', action: 'tool:reuleauxWorld' }] },
@@ -608,7 +609,7 @@ const K_WORLDS = [
     ] };
   }),
   // Icosahedral Octet Lattice (DICTO 2026-10-13): the same five versions to build, a cell or a cluster per tap, listed after the
-  // Sunstar Lattice (DICTO_ORDER).
+  // Sunstar Lattice.
   { key: 'octetBuild', label: 'Icosahedral Octet Lattice', pieces: [['caps', 'Octet with Admiral Caps'], ['allIco', 'All-icosahedral octet'],
     ['frog', 'Frog Chorus'], ['pyrochlore', 'Pyrochlore in the octet'], ['lotusJewel', 'Lotus Jewel network']]
     .flatMap(([k, label]) => [{ label, action: `tool:octetBuildWorld:${k}` }, { label: `${label} · clusters`, action: `tool:octetBuildWorld:${k}.clusters` }]) },
@@ -642,15 +643,12 @@ const R_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key));
 // start at Platonic solids can do so as normal from the top of the green list"), DICTO's own pieces
 // above them in DICTO's livery; 4D Polytopes waits for D5.
 // DICTO Transitional Shells first: DICTO's newest work at the top (DICTO 2026-10-08), in DICTO's livery.
-const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'PLATONIC', 'ARCHIMEDEAN', 'CATALAN', 'JOHNSON', 'DELTAHEDRA', 'PRISMS', 'ANTIPRISMS', 'STELLATIONS', 'PARALLELOHEDRA', 'SPACE_FILLING_PAIRS', 'BRIDGES_3D', 'APERIODIC', 'MISCELLANEOUS'];
+const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'PLATONIC', 'ARCHIMEDEAN', 'CATALAN', 'JOHNSON', 'DELTAHEDRA', 'PRISMS', 'ANTIPRISMS', 'STELLATIONS', 'PARALLELOHEDRA', 'SPACE_FILLING_PAIRS', 'BRIDGES_3D', 'APERIODIC', 'MOSSERI_SADOC', 'MISCELLANEOUS'];
 // DICTO's own work, shown in DICTO's livery (silver) at the top of its app's block (DICTO 2026-10-09);
 // it still opens in its app. Lattices and worlds by key, single pieces by action, and DICTO's
 // Polyhedraverse pieces gathered from across its families.
-const DICTO_WORK = new Set(['reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
+const DICTO_WORK = new Set(['platonicMix', 'reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
 const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
-// DICTO's block, findings first and tools last (copy audit, DICTO 2026-10-09).
-const DICTO_ORDER = ['reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'theaetetus', 'chains', 'thirteens', 'octet', 'icosa', 'dodeca', 'roofFold', 'stellaJewel', 'sunstar', 'octetBuild', 'studies', 'targets', 'dictofcc', 'hex', 'shells', 'golden'];
-const dictoRank = (e) => { const i = DICTO_ORDER.indexOf(e.lat?.key); return i < 0 ? DICTO_ORDER.length : i; };
 const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['TETRAPOD_FIVE_TO', 'TETRAPOD_FOUR_RD', 'ANTONIUS', 'ICOSA_FACE_PYRAMID', 'PENTA_CLEO', 'CLEO_SPHERE_POCKET', 'HEX_AKTIS', 'DELTOID_AKTIS', 'OTT_CLEO_ICOS', 'OTT_TRIANGLE_RAY', 'OTT_RHOMBIC_RAY', 'DICTO_EDGE_ROOF', 'DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER', ...KIT13_ADDITION_IDS] };
 export const DICTO_PIECE_IDS = DICTO_POLY.ids;
 // The shape a face was tapped on, while picking: its space-filling partners come first (as the old site).
@@ -756,7 +754,7 @@ const passes = (app, filter) => !filter || app === filter || app === 'dicto';
 // The kinds inside an app's block, new work first.
 const KINDS = [['search', null], ['world', 'wiz.kind.worlds'], ['lattice', 'wiz.kind.lattices'], ['shapes', 'wiz.kind.shapes'], ['family', 'wiz.kind.worlds']];
 
-export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
+export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = () => {} }) {
   injectCssOnce();
 
   // Rotating previews (wireframe-preview.js): each rendered screen registers its canvases' edge
@@ -887,9 +885,6 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     bodyEl.querySelectorAll('[data-dim]').forEach((el) => el.addEventListener('click', () => {
       const dim = el.dataset.dim;
       if (dim === '5D' || dim === '6D') { showCatalogue(dim); return; }
-      // Rhombiverse's 3D+ arrives straight on fcc with its rhombic dodecahedra, full screen (DICTO 2026-10-17: the heart of Rhombiverse;
-      // Lattice · Select then offers the rest)
-      if (SITE === 'rhombiverse' && dim === '3D') { choose('3D', 'tool:pieceType:rd', 'rhombiverse'); return; }
       openDim = openDim === dim ? null : dim;
       showDimensions(`[data-dim="${dim}"]`);
     }));
@@ -970,15 +965,11 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     for (const app of [...new Set(entries.map((e) => e.app))]) {
       const mine = entries.filter((e) => e.app === app);
       html += `<div class="dicto-block${app === 'dicto' && mine.some((e) => e.lattice3d) ? ' dicto-gold' : ''}" style="${blockStyle(app)}"><div class="dicto-block-name">${wordmark(app)}</div>`;
-      // DICTO's own work first, in DICTO's livery.
-      const dictoOwn = mine.filter((e) => e.dicto).sort((x, y) => dictoRank(x) - dictoRank(y));
-      if (dictoOwn.length) html += `<div class="dicto-livery dicto-gold" style="${blockStyle('dicto')}"><div class="dicto-livery-name">${wordmark('dicto')}</div>${dictoOwn.map(row).join('')}</div>`;
-      const rest = mine.filter((e) => !e.dicto);
       const kinds = app === 'dicto' ? [...KINDS.filter(([k]) => k === 'shapes'), ...KINDS.filter(([k]) => k !== 'shapes')] : KINDS;
-      const restKinds = kinds.filter(([kind]) => rest.some((e) => e.kind === kind));
-      for (const [kind, label] of restKinds) {
-        if (restKinds.length > 1 && label) html += `<div class="dim-wizard-kind">${t(label, L)}</div>`;
-        html += rest.filter((e) => e.kind === kind).map(row).join('');
+      const present = kinds.filter(([kind]) => mine.some((e) => e.kind === kind));
+      for (const [kind, label] of present) {
+        if (present.length > 1 && label) html += `<div class="dim-wizard-kind">${t(label, L)}</div>`;
+        html += mine.filter((e) => e.kind === kind).map(row).join('');
       }
       html += '</div>';
     }
@@ -1121,10 +1112,12 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     resetPreviews();
     const L = getSettings().language;
     const fits = (x) => !picker || picker.fits(x);
+    // The Mosseri–Sadoc tiles (DICTO 2026-10-23): DICTO's names there carry their M-S number, e.g. "AXE (M-S t6)".
+    const ms = (id) => (key === 'MOSSERI_SADOC' && mosseriSadocTile(id)?.dictoName ? ` (M-S t${mosseriSadocTile(id).n})` : '');
     const card = (id) => `
         <button type="button" class="dim-wizard-card-btn dim-wizard-piece${gold(id)}" data-action="tool:polyShape:${id}">
           ${previewSlot(() => polyShapeEdges(id))}
-          <span class="dim-wizard-row-text"><span class="dim-wizard-label">${polyShapeName(id).replaceAll('_', ' ')}</span></span>
+          <span class="dim-wizard-row-text"><span class="dim-wizard-label">${polyShapeName(id).replaceAll('_', ' ')}${ms(id)}</span></span>
         </button>`;
     const sections = familySections(key, L);
     const style = blockStyle(key === DICTO_POLY.key ? 'dicto' : 'polyhedraverse');
@@ -1241,6 +1234,9 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     if (['DRAGON_JEWEL', 'STELLA_OCTANGULA', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER'].includes(id)) out.push(`<div class="poly-credit" data-credit="jewel-family">${t('pv.detail.jewelFamily', L)}</div>`);
     if (id === 'DOGSTAR' || id === 'SEAMED_DODECAHEDRON' || id === 'DRAGON_JEWEL') out.push(`<div class="poly-credit" data-credit="ekp">${t('pv.detail.ekpLink', L)} <button type="button" data-ekp>Kaleidohedra</button></div>`);
     if (BAIN_PARALLELOHEDRA_ADDITION_IDS.includes(id)) out.push(`<div class="poly-credit" data-credit="bain">${t('pv.detail.bainCredit', L)}</div>`);
+    // The Mosseri–Sadoc tiles (DICTO 2026-10-23): their number and letter, Mosseri & Sadoc's precedence and Koca et al.'s numbering.
+    const ms = mosseriSadocTile(id);
+    if (ms) out.push(`<div class="poly-credit" data-credit="mosseri-sadoc">${t(ms.dictoName ? 'pv.detail.msNamed' : 'pv.detail.msTile', L, { n: ms.n, letter: ms.letter, name: ms.dictoName })}</div>`);
     return out.join('');
   }
 
@@ -1344,6 +1340,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     picker = null;
     overlay.querySelector('.dicto-apps').hidden = false;
     overlay.classList.remove('open');
+    onClose();
   }
   /** D3's More…: the shapes that fit a face, by family; a tap picks one (onPick), ✕ cancels. */
   function openShapePicker(fits, onPick, { partners = [] } = {}) {

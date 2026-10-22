@@ -8,14 +8,14 @@ const b = await chromium.launch(); const page = await b.newPage({ viewport: { wi
 const errors = []; page.on('pageerror', (e) => errors.push(String(e))); page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
 page.on('dialog', (d) => d.accept());
 const SH = process.env.SHOTS ?? '/tmp', BASE = process.env.BASE_URL ?? 'http://localhost:8000', SITE = process.env.SITE ?? 'kaleidohedra';
-// the wizard lists it second, after The Reuleaux Platonic Solids (#45)
+// the wizard lists it third, after Every Mix of the Platonic Solids (#47) and The Reuleaux Platonic Solids (#45)
 await page.goto(`${BASE}/index.html?site=${SITE}`);
 await page.waitForSelector('#welcome-overlay', { state: 'visible' }); await page.keyboard.press('Enter');
 await page.waitForSelector('.dim-wizard-overlay.open');
 if (!(await page.locator('[data-action="tool:aristotleWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
 await page.waitForTimeout(500);
 const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World$/.test(a)));
-assert.deepEqual(worlds.slice(0, 2), ['tool:reuleauxWorld', 'tool:aristotleWorld'], 'near the top of DICTO\'s list');
+assert.deepEqual(worlds.slice(0, 3), ['tool:platonicMixWorld', 'tool:reuleauxWorld', 'tool:aristotleWorld'], 'near the top of DICTO\'s list');
 // the link
 await page.goto(`${BASE}/index.html?site=${SITE}&open=aristotle&probe`); await page.waitForTimeout(1500);
 if (await page.locator('#welcome-overlay').isVisible()) await page.keyboard.press('Enter');

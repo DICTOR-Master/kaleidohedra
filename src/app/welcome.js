@@ -229,9 +229,11 @@ function init() {
   // A direct link to DICTO (?dicto, DICTO 2026-10-08: "direct link from linktree"): no welcome, so the
   // DICTO wizard (which opens on every load) is the first thing seen. The parameter is then dropped,
   // so a reload is an ordinary visit. ℹ still opens the welcome.
+  // ?from=dicto (the old Polyhedraverse links from dictospheres.com) means the same.
   const params = new URLSearchParams(location.search);
-  if (params.has('dicto')) {
+  if (params.has('dicto') || params.get('from') === 'dicto') {
     params.delete('dicto');
+    if (params.get('from') === 'dicto') params.delete('from');
     const rest = params.toString();
     history.replaceState(null, '', `${location.pathname}${rest ? `?${rest}` : ''}${location.hash}`);
     hide();

@@ -11,7 +11,7 @@ await page.goto(`${BASE}/index.html?site=kaleidohedra`);
 await page.waitForSelector('#welcome-overlay', { state: 'visible' }); await page.keyboard.press('Enter');
 await page.waitForSelector('.dim-wizard-overlay.open');
 const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World$/.test(a)));
-console.log('first DICTO worlds:', worlds.slice(0, 3).join(', ')); assert.ok(worlds.indexOf('tool:vajrayanaWorld') >= 0 && worlds.indexOf('tool:vajrayanaWorld') <= 1, 'among the newest work (after The OG on the Octet Truss)');
+console.log('first DICTO worlds:', worlds.slice(0, 3).join(', ')); assert.ok(worlds.indexOf('tool:vajrayanaWorld') >= 0 && worlds.indexOf('tool:vajrayanaWorld') > worlds.indexOf('tool:octetTrussWorld') && worlds.indexOf('tool:vajrayanaWorld') < 6, 'among the newest work (after The OG on the Octet Truss)');
 await page.locator('[data-action="tool:vajrayanaWorld"]').first().tap();
 await page.waitForFunction(() => /twelve-station/.test(document.querySelector('#worldvajrayana-panel .vj-note')?.textContent ?? ''), null, { timeout: 15000 });
 await page.waitForTimeout(900);

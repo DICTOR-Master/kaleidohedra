@@ -7,7 +7,7 @@
 // scripts/verify-roof-fold.mjs.
 import * as THREE from 'three';
 import {
-  ekpWindowsSolid, dogstarSolid, neighbourStellas, stretchedDodeca, expandedWindows, morphedWindowRhombi, rdMorphRhombi,
+  ekpWindowsSolid, dogstarSolid, neighbourStellas, expandedWindows, morphedWindowRhombi, rdMorphRhombi,
   RD_MORPH_SQUARE, EXPANDED_WINDOWS_GOLDEN, convexHullFaces, roofFoldSolids, ROOF_FOLD_COLOURS,
   ROOF_FOLD_WORLD_SCALE as WS, PHI,
 } from '../krp-core/src/geometry-extensions/roof-fold.js';
@@ -15,6 +15,7 @@ import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey, theme } from './site.js';
+import { STRETCH_DIRECTIONS, STRETCH_CAPS, capCentres, stretchedSolid, faceKind } from './stretch-geometry.js';
 
 const STORAGE_KEY = storageKey('studies');
 const STUDIES = ['windows', 'windowsStellas', 'checker', 'dogstar', 'expanded', 'icosido', 'rdMorph', 'stretch'];
@@ -23,7 +24,7 @@ const GHOST_COLOR = () => theme().accentHex; // read when drawing: follows the a
 const EDGE_COLOR = 0x0b1220;
 // Each slider study: its value in view, range, snaps and label.
 const SLIDERS = {
-  stretch: { key: 'stretch', max: 2.6, snaps: [2 / PHI, 2], label: 'studies.slider.stretch' }, // one edge (squares), the lattice spacing
+  stretch: { key: 'spacing', max: 2.7, snaps: [1, PHI], label: 'studies.slider.stretch' }, // in edges: every edge 1; the lattice spacing (cube axis)
   expanded: { key: 'push', max: 1.6, snaps: [EXPANDED_WINDOWS_GOLDEN], label: 'studies.push' }, // the golden rhombi
   icosido: { key: 'morph', max: 1, snaps: [0, 1], label: 'studies.morph' },
   rdMorph: { key: 'rdMorph', max: 1, snaps: [0, RD_MORPH_SQUARE, 1], label: 'studies.morph' }, // squares on the way
@@ -31,6 +32,9 @@ const SLIDERS = {
   dogstar: { key: 'apart', max: 1, snaps: [0], label: 'studies.apart' },
 };
 const lang = () => getSettings().language;
+// DICTO stretched solids: faces by kind (DICTO 2026-10-22, paper #49), with gold edges.
+const STRETCH_COLOURS = { pentagon: 0x8a5cc4, rhombus: 0xc4aae8, long: 0x3a70cd, triangle: 0xe8c852 };
+const GOLD = 0xdeb250;
 const sideOf = (f) => Math.hypot(...f[0].map((c, k) => c - f[1][k]));
 
 export function createStudiesWorld({ scene, fitView = () => {}, shear = () => null }) {
@@ -39,16 +43,17 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
   scene.add(group);
   const DODECA = roofFoldSolids().dodeca;
 
-  const view = { study: 'windows', stretch: SLIDERS.stretch.snaps[0], push: EXPANDED_WINDOWS_GOLDEN, morph: 1, rdMorph: 1, apart: 0.35, studyShear: 'copies' };
+  const view = { study: 'windows', spacing: 1, stretchDir: 'cube', caps: 2, push: EXPANDED_WINDOWS_GOLDEN, morph: 1, rdMorph: 1, apart: 0.35, studyShear: 'copies' };
   const VIEW_FIRST = structuredClone(view); // the first view, for resetView
   try {
     const data = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (STUDIES.includes(data?.study)) view.study = data.study;
-    if (['copies', 'solid'].includes(data?.studyShear)) view.studyShear = data.studyShear;
+    if (STRETCH_DIRECTIONS.includes(data?.stretchDir)) view.stretchDir = data.stretchDir;
+    if (STRETCH_CAPS.includes(data?.caps)) view.caps = data.caps;
     for (const { key, max } of Object.values(SLIDERS)) if (Number.isFinite(data?.[key])) view[key] = Math.max(0, Math.min(max, data[key]));
   } catch { /* corrupt or blocked storage: defaults */ }
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(view)); } catch { /* best-effort */ } };
-  let active = false;
+  let active = false, drawnFaces = 0;
 
   // ---- drawing ----
   const solidMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
@@ -118,7 +123,7 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
     const out = [];
     const put = (f, hex) => out.push([f, hex]);
     if (view.study === 'stretch') {
-      for (const f of stretchedDodeca(view.stretch)) put(f, f.length === 5 ? C.dodeca : f.length === 6 ? C.star : C.cube);
+      for (const f of stretchedSolid(view.spacing, view.stretchDir, view.caps)) put(f, STRETCH_COLOURS[faceKind(f)]);
     } else if (view.study === 'expanded') {
       // Thick rhombi gold, golden rhombi coral, cube-corner triangles grey, joining triangles purple.
       const equal = (f) => f.every((p, i) => Math.abs(Math.hypot(...p.map((c, k) => c - f[(i + 1) % f.length][k])) - sideOf(f)) < 1e-6);
@@ -143,7 +148,8 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
     if (view.study === 'checker' || view.study === 'dogstar') {
       for (const { even, offset, map } of checkerPlacements()) for (const [f, hex] of checkerFaces(even)) polys.push({ polygon: f.map(map), offset, colour: new THREE.Color(hex) });
     } else for (const { offset, map } of where) for (const [f, hex] of studyFaces()) polys.push({ polygon: f.map(map), offset, colour: new THREE.Color(hex) });
-    group.add(...meshOf(polys, solidMaterial));
+    drawnFaces = polys.length / (view.study === 'checker' || view.study === 'dogstar' ? 1 : where.length); // one solid's faces
+    group.add(...meshOf(polys, solidMaterial, view.study === 'stretch' ? GOLD : EDGE_COLOR));
     if (view.study === 'icosido' || view.study === 'rdMorph') {
       // The rhombi: inlaid where they lie on the hull; mid-morph they're inside it, so their
       // outlines also show faintly through it, to follow them.
@@ -157,10 +163,10 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
       lines.renderOrder = 2;
       group.add(mesh, lines);
     }
-    // Context, faint: the six stellas round the windows, or the two dodecahedra the stretch joins.
+    // Context, faint: the six stellas round the windows, or the dodecahedra the stretch joins.
     const context = [];
     if (view.study === 'windowsStellas') for (const tet of neighbourStellas()) for (const f of tet) f.forEach((p, i) => context.push([p, f[(i + 1) % f.length]]));
-    if (view.study === 'stretch') for (const dx of [-view.stretch / 2, view.stretch / 2]) for (const [a, b] of DODECA.edges) context.push([[a[0] + dx, a[1], a[2]], [b[0] + dx, b[1], b[2]]]);
+    if (view.study === 'stretch') for (const c of capCentres(view.spacing, view.stretchDir, view.caps)) for (const [a, b] of DODECA.edges) context.push([a.map((x, i) => x + c[i]), b.map((x, i) => x + c[i])]);
     if (context.length) {
       const ghost = [];
       for (const { offset, map } of where) for (const [a, b] of context) ghost.push(...map(a).map((c, i) => c * WS + offset[i]), ...map(b).map((c, i) => c * WS + offset[i]));
@@ -172,7 +178,7 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
   }
   function fit() {
     if (view.study === 'checker' || view.study === 'dogstar') { fitView([0, 0, 0], (Math.sqrt(3) * (1 + view.apart) + 1.8) * WS * 1.15); return; }
-    const r = view.study === 'windowsStellas' ? 3.4 : view.study === 'stretch' ? view.stretch / 2 + 1.8 : view.study === 'expanded' ? 1.9 + view.push : view.study === 'icosido' || view.study === 'rdMorph' ? 2.1 : 1.8;
+    const r = view.study === 'windowsStellas' ? 3.4 : view.study === 'stretch' ? Math.max(...capCentres(view.spacing, view.stretchDir, view.caps).map((c) => Math.hypot(...c))) + 1.8 : view.study === 'expanded' ? 1.9 + view.push : view.study === 'icosido' || view.study === 'rdMorph' ? 2.1 : 1.8;
     const spread = copies() ? Math.max(...placements().map(({ offset }) => Math.hypot(...offset))) : 0;
     fitView([0, 0, 0], r * WS + spread);
   }
@@ -183,6 +189,8 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
   panel.className = 'qc-panel';
   panel.innerHTML = `
     <div class="w4d-row"><label class="hull-pick"><span class="st-study-label"></span> <select class="hull-select" data-select="study"></select></label></div>
+    <div class="w4d-row w4d-options st-caps"></div>
+    <div class="w4d-row w4d-options st-dirs"></div>
     <div class="w4d-row st-slider-row"><label class="hull-pick"><span class="st-slider-label"></span> <input type="range" class="st-slider" min="0" step="1"> <span class="st-slider-val"></span></label></div>
     <div class="w4d-row st-note"></div>
     <div class="w4d-row w4d-options"><button type="button" data-study-shear></button></div>`;
@@ -206,14 +214,24 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
       panel.querySelector('.st-slider-label').textContent = t(slider.label, L);
       sliderInput.max = String(slider.max * 1000);
       sliderInput.value = String(Math.round(view[slider.key] * 1000));
-      sliderVal.textContent = view[slider.key].toFixed(3);
+      // the stretch's readout names its kind (DICTO): equal-edged at spacing 1, telescoped otherwise
+      sliderVal.textContent = view[slider.key].toFixed(3) + (view.study === 'stretch' ? ` · ${t(Math.abs(view.spacing - 1) < 1e-9 ? 'studies.stretch.equal' : 'studies.stretch.telescoped', L)}` : '');
     }
-    note.textContent = t(`studies.note.${view.study}`, L);
+    // The stretch: how many caps, and (two caps) the direction; the direction hides with 3 or 4 caps (it doesn't apply).
+    const stretch = view.study === 'stretch';
+    const capsRow = panel.querySelector('.st-caps'), dirsRow = panel.querySelector('.st-dirs');
+    capsRow.style.display = stretch ? '' : 'none';
+    dirsRow.style.display = stretch && view.caps === 2 ? '' : 'none';
+    const choice = (attr, k, on, label) => `<button type="button" ${attr}="${k}" class="${on ? 'active' : ''}" aria-pressed="${on}">${label}</button>`;
+    capsRow.innerHTML = STRETCH_CAPS.map((n) => choice('data-st-caps', n, n === view.caps, t(`studies.stretch.caps.${n}`, L))).join('');
+    dirsRow.innerHTML = STRETCH_DIRECTIONS.map((d) => choice('data-st-dir', d, d === view.stretchDir, t(`studies.stretch.dir.${d}`, L))).join('');
+    note.textContent = t(stretch ? `studies.note.stretch.${view.caps === 2 ? view.stretchDir : `caps${view.caps}`}` : `studies.note.${view.study}`, L);
     shearBtn.textContent = t(`studies.shear.${view.studyShear}`, L);
   }
   studySelect.addEventListener('change', () => {
     if (!STUDIES.includes(studySelect.value)) return;
     view.study = studySelect.value;
+    view.studyShear = view.study === 'stretch' ? 'solid' : 'copies'; // each study's own: DICTO stretched solids as the solid itself (DICTO)
     save();
     draw();
     fit();
@@ -229,6 +247,13 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
     draw();
   });
   sliderInput.addEventListener('change', fit);
+  panel.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-st-caps], [data-st-dir]');
+    if (!b) return;
+    if (b.dataset.stCaps) view.caps = Number(b.dataset.stCaps);
+    if (b.dataset.stDir) view.stretchDir = b.dataset.stDir;
+    save(); draw(); fit();
+  });
   shearBtn.addEventListener('click', () => {
     view.studyShear = copies() ? 'solid' : 'copies';
     save();
@@ -261,5 +286,7 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
     shearChanged() { if (active) draw(); },
     get isEmpty() { return true; },
     clear() {},
+    /** For the browser tests (?probe). */
+    probe() { return { study: view.study, spacing: view.spacing, direction: view.stretchDir, caps: view.caps, faces: drawnFaces }; },
   };
 }
