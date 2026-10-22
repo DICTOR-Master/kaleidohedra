@@ -9,9 +9,9 @@ F=PF.hull_faces(V)
 def draw(Rv,px=620):
     PF.Rv=Rv; img=None
     pent=PF.orient(PF.tri([f for f in F if len(f)==5])) if False else None
-    T5=[t for f in F if len(f)==5 for t in PF.tri([f])]; T4=[t for f in F if len(f)==4 for t in PF.tri([f])]
+    T5=[t for f in F if len(f)==5 for t in PF.tri([f])]; T4=[t for f in F if len(f)==4 for t in PF.tri([f])]; T3=[t for f in F if len(f)==3 for t in PF.tri([f])]
     # render all faces together with per-face colour: draw twice and merge by depth via one call per colour on a shared buffer
-    allT=T5+T4; cols=[(138,92,196)]*len(T5)+[(196,170,232)]*len(T4)
+    allT=T5+T4+T3; cols=[(138,92,196)]*len(T5)+[(196,170,232)]*len(T4)+[(232,200,82)]*len(T3)   # triangles gold-yellow
     # depth-buffer render with per-triangle colours (reuse PF.render internals)
     scale=px*0.15
     T=[t@Rv.T for t in allT]; c=np.mean(np.vstack(T),0)
