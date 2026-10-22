@@ -28,6 +28,7 @@ async function expectStretch(page, door, how) {
   assert.match(await panel.locator('[data-select="study"] option:checked').textContent(), /DICTO stretched solids/);
   assert.match(await panel.locator('[data-st-dir="face"]').getAttribute('aria-pressed'), /true/);
   assert.match(await panel.locator('.st-slider-val').textContent(), /equal-edged/);
+  assert.equal(await page.locator('#hud-world-title').textContent(), 'The Polyhedral Stretching Theorem', `${door} ${how}: world title`);
   console.log(door, how, JSON.stringify(st), 'title:', JSON.stringify(await page.locator('#hud-world-title').textContent()));
 }
 for (const door of DOORS) {

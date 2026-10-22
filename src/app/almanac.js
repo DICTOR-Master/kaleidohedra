@@ -29,6 +29,8 @@ const OLD_KEY = { piece: 'alm.p', concept: 'alm.c' };
 const oldKey = (e, part) => `${OLD_KEY[e.kind]}.${e.id.split(':').pop()}.${part}`;
 const textOf = (e, part) => (WORDED.has(e.kind) ? t(`alm.d.${e.key}.${part}`, lang()) : OLD_KEY[e.kind] ? t(oldKey(e, part), lang()) : e[part]);
 const labelOf = (e) => textOf(e, 'label');
+// The title a ?open= link shows when its world has no title of its own: the DICTO entry the link opens, as the Almanac names it.
+export const almanacTitleFor = (action) => { const e = ALMANAC_ENTRIES.find((x) => x.kind === 'dicto' && x.action === action); return e ? labelOf(e) : null; };
 const KIND_KEY = { dicto: 'alm.kind.dicto', dictoPiece: 'alm.kind.pieces', known: 'alm.kind.known' };
 const OLD_KIND_KEY = { piece: 'alm.kind.piece', concept: 'alm.kind.concept' };
 import { iconFrame, MARKS } from './wheel-icons.js';

@@ -8,7 +8,7 @@ import { ConvexGeometry } from 'three/addons/geometries/ConvexGeometry.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { rdRawVerts, cellToWorld, nearestValidCell, isValidCell, cellKey, pyramidPieces, rdQuarterPieces, cellsInShells, cuboctahedronVertices, octGapVertices, hemisphereSplit, NEIGHBOR_OFFSETS } from './krp-core/src/core/lattice.js';
 import { FULL_PYRAMIDS, presentAxisKeys, hasCube, effectivePyramids } from './krp-core/src/core/pyramid.js';
-import { createAlmanac } from './app/almanac.js';
+import { createAlmanac, almanacTitleFor } from './app/almanac.js';
 import { createLanguageButton } from './app/language-picker.js';
 import { getDual, DUAL_DIRS, snapToDual } from './krp-core/src/core/dual.js';
 import { bccShapeScaleFor } from './krp-core/src/geometry-extensions/bcc-detail-lattice.js';
@@ -4869,7 +4869,7 @@ async function init() {
         applyDimensionVisibility();
         applyDimensionCamera('3D');
         const action = `tool:${openWorld[1]}World${openWorld[2] ? `:${openWorld[2]}` : ''}`;
-        enterWorld('3D', action, worldTitle('3D', action));
+        enterWorld('3D', action, worldTitle('3D', action) ?? almanacTitleFor(action));
         handleWheelAction(action, { quiet: true });
       }, 0);
     } else if (openKit && KITS13[openKit[1]]) {
