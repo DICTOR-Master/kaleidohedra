@@ -19,5 +19,5 @@ for _ in range(2000):
     kinds[tuple(sorted(c.items()))]+=1
 print('random directions: 2000, not equilateral:',bad)
 print('face types seen (n-gon: count) -> how often:'); [print('  ',k,'x',v) for k,v in kinds.most_common()]
-for name,u in [('cube axis (F11)',(1,0,0)),('face diagonal',(1,1,0)),('body diagonal (three-fold)',(1,1,1)),('five-fold axis',(0,1,phi)),('edge midpoint (two-fold, not cube axis)',(phi, 1/phi, 1))]:
+for name,u in [('cube axis (F11)',(1,0,0)),('face diagonal',(1,1,0)),('body diagonal (three-fold)',(1,1,1)),('five-fold axis (a face normal, (1,0,phi) in this frame)',(1,0,phi)),('a direction along two faces ((0,1,phi): perpendicular to two face normals)',(0,1,phi)),('edge midpoint (two-fold, not cube axis)',(phi, 1/phi, 1))]:
     c,mn,mx,n=summary(u); print(f'{name}: {n} faces {dict(sorted(c.items()))}, edges {mn:.6f}..{mx:.6f}')
