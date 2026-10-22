@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>The Stretching Theorem</title>
+<html lang="en"><head><meta charset="utf-8"><title>The Polyhedral Stretching Theorem</title>
 <link rel="stylesheet" href="../paper.css">
 <style>p.hook { font-style: italic; color: #4a3f2a; border-left: 2px solid #c9a24a; padding-left: 3mm; margin: 2mm 0 2mm; } td.n { font-variant-numeric: tabular-nums; white-space: nowrap; } .figs.wide { grid-template-columns: 1fr; width: 100%; } .figs.wide img{width:100%;margin:0 auto;display:block} .figs.wide img.mid{width:70%} .figs.two{grid-template-columns:1fr 1fr;gap:4mm} .figs.two img{width:100%} table { font-size: 8.8pt; } .thm{margin:6pt 0;padding:4pt 0 4pt 9pt;border-left:2px solid #b8962e}</style>
 </head><body>
 <img class="watermark" src="../dicto-logo.png" alt="">
 <img class="logo" src="../dicto-logo.png" alt="DICTO">
-<h1>The Stretching Theorem</h1>
+<h1>The Polyhedral Stretching Theorem</h1>
 <p class="sub">Stretch a dodecahedron one edge-length in any direction and every edge stays the same length: DICTO's stretched dodecahedra, three and four caps, and paper models to build them</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
@@ -24,7 +24,7 @@ The stretched dodecahedron (F11), the long hexagon seen in the dodecahedron laye
 
 <h2>2. The main result</h2>
 <p class="hook">However you slide it, as long as you do not slide it along one of its own edges, every edge of the shape it sweeps comes out one edge-length long.</p>
-<div class="thm"><b>The Stretching Theorem.</b> Let D be a regular dodecahedron with edges of length 1, and slide it a distance 1 along a direction u. The swept shape (the convex hull of D and D moved by u) has every edge of length 1 unless u is parallel to an edge of D. Its faces are: each pentagon of D not parallel to u, kept whole (one copy, at the end it faces); each pentagon parallel to u, stretched into a hexagon if u runs along one of its edges and into a heptagon otherwise; and one parallelogram for every edge of D's outline seen along u, a rhombus when the slide is 1.</div>
+<div class="thm"><b>The Polyhedral Stretching Theorem.</b> Let D be a regular dodecahedron with edges of length 1, and slide it a distance 1 along a direction u. The swept shape (the convex hull of D and D moved by u) has every edge of length 1 unless u is parallel to an edge of D. Its faces are: each pentagon of D not parallel to u, kept whole (one copy, at the end it faces); each pentagon parallel to u, stretched into a hexagon if u runs along one of its edges and into a heptagon otherwise; and one parallelogram for every edge of D's outline seen along u, a rhombus when the slide is 1.</div>
 <p>The proof is short and is given in Appendix A. In 2 000 random directions the belt always had 10 or 12 rhombi, and every edge was 1 (Appendix B).</p>
 
 <h2>3. Special directions</h2>
@@ -53,7 +53,7 @@ The stretched dodecahedron (F11), the long hexagon seen in the dodecahedron laye
 
 <h2>6. The other Platonic solids, and the icosahedron family</h2>
 <p class="hook">The theorem works for every solid whose edges are all equal. Stretch the other Platonic solids and some famous shapes appear, and some new-looking ones.</p>
-<p>The proof in Appendix A uses only that every edge of the solid has the same length, so the Stretching Theorem holds for the tetrahedron, cube, octahedron and icosahedron too (checked for 1 000 random stretches of each). Several results are well-known solids, which is a good sign that the stretch is a natural operation: the tetrahedron with four caps is the cuboctahedron and the octahedron with four caps the truncated tetrahedron (both Archimedean); the tetrahedron stretched through a corner is the elongated triangular pyramid, with three caps the triangular cupola, and the octahedron stretched through a corner the elongated square bipyramid (Johnson solids J7, J3 and J15); the stretched cube is a box, a slanted prism or a zonohedron.</p>
+<p>The proof in Appendix A uses only that every edge of the solid has the same length, so the Polyhedral Stretching Theorem holds for the tetrahedron, cube, octahedron and icosahedron too (checked for 1 000 random stretches of each). Several results are well-known solids, which is a good sign that the stretch is a natural operation: the tetrahedron with four caps is the cuboctahedron and the octahedron with four caps the truncated tetrahedron (both Archimedean); the tetrahedron stretched through a corner is the elongated triangular pyramid, with three caps the triangular cupola, and the octahedron stretched through a corner the elongated square bipyramid (Johnson solids J7, J3 and J15); the stretched cube is a box, a slanted prism or a zonohedron.</p>
 <figure><div class="figs wide"><img src="figures/icosahedron-family.png" alt="The stretched icosahedron family"></div>
 <figcaption><b>Figure 5.</b> The icosahedron (edge 1) stretched one edge-length along four directions, and with three and four caps; every edge 1. Triangles blue, rhombi lilac, pentagons violet, hexagons gold.</figcaption></figure>
 <table><tr><th>Icosahedron</th><th>Faces</th></tr>
@@ -79,7 +79,7 @@ The stretched dodecahedron (F11), the long hexagon seen in the dodecahedron laye
 <p class="hook">One idea, sliding a dodecahedron, gives a whole family of solids with equal edges, and you can build them.</p>
 <p>The theorem shows why the DICTO stretched solids keep their edges equal: every edge is either an old edge or a copy of the slide. The face-diagonal slide keeps all twelve pentagons, and three and four caps add equilateral triangles. The same theorem holds for every Platonic solid: it rediscovers the cuboctahedron, the truncated tetrahedron and three Johnson solids, and gives a family of new-looking stretched icosahedra. The Archimedean solids are left for later.</p>
 
-<h2>Appendix A. Proof of the Stretching Theorem</h2>
+<h2>Appendix A. Proof of the Polyhedral Stretching Theorem</h2>
 <p>The swept shape is the Minkowski sum D ⊕ S of D and the segment S from 0 to u. Every face of a Minkowski sum is the sum of a face of each summand, taken in a common outward direction n [4]. For S, the face in direction n is its end u if n·u &gt; 0, its start 0 if n·u &lt; 0, and S itself if n·u = 0. Hence: a face f of D with normal n, n·u ≠ 0, appears as a translate of f; a face with n·u = 0 appears as f ⊕ S, a pentagon widened by u, which has 6 sides if u is parallel to one of its edges and 7 otherwise; an edge e of D on the outline seen along u (between a face with n·u &gt; 0 and one with n·u &lt; 0) appears as the parallelogram e ⊕ S. The edges of D ⊕ S are therefore translates of edges of D (length 1) and translates of S (length |u| = 1), except where an edge of D is parallel to u: there e ⊕ S is a single segment of length 2. So every edge has length 1 exactly when no edge of D is parallel to u. ∎ The corollary is the same argument with S replaced by the triangle or tetrahedron, whose edges have length 1 and are not parallel to edges of D in the positions used.</p>
 
 <h2>Appendix B. Checks</h2>
