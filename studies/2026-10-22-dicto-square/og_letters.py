@@ -54,7 +54,9 @@ for t in cover:
     for i in t: LET[tuple(hexes[i])]=ch[0]
 assert len(LET)==20
 GROUND=tuple(int(x) for x in os.environ.get('BG','20,15,11').split(',')); GOLD=(222,178,80); STONE=(150,141,128)
-PLAT={'platinum':(214,218,224),'titanium':(92,95,104)}[os.environ.get('KITE','platinum')]   # kite finish (DICTO: try dark titanium)
+KITE=os.environ.get('KITE','platinum')
+PLAT={'platinum':(214,218,224),'titanium':(92,95,104),'aged':(196,194,186)}[KITE]   # aged: dulled, warm, no sheen (DICTO: less shiny and new)
+AGED=KITE=='aged'   # kite finish (DICTO: try dark titanium)
 import os as _os
 TINT=_os.environ.get('TINT','1')=='1'   # DICTO: each lettered hexagon in its element colour, the kite stars in platinum
 ELEM={'T':(205,62,40),'O':(232,200,82),'I':(58,112,205),'C':(72,142,72),'D':(138,92,196)}
@@ -77,8 +79,8 @@ def render(img,cx,cy,rad,SS=2):
         base=STONE
         if TINT and tuple(f) in LET: base=ELEM[LET[tuple(f)]]
         elif TINT and len(f)==4: base=PLAT
-        b=0.35+0.65*max(0,n@light); col=tuple(int(c*b) for c in base)
-        if TINT and len(f)==4:   # platinum: a soft sheen towards the light
+        b=(0.16+0.84*max(0,n@light)**1.25) if AGED else 0.35+0.65*max(0,n@light); col=tuple(int(c*b) for c in base)
+        if TINT and len(f)==4 and not AGED:   # platinum: a soft sheen towards the light
             hv=light+np.array([0,0,1.0]); sp=max(0,n@(hv/np.linalg.norm(hv)))**30
             col=tuple(int(c+(255-c)*0.6*sp) for c in col)
         pts=[P(V[q]) for q in f]
@@ -97,7 +99,7 @@ def render(img,cx,cy,rad,SS=2):
             nw=nl[...,0:1]*U+nl[...,1:2]*Vv+nl[...,2:3]*n           # groove normals in the world
             lam=np.clip(nw@light,0,1); hv=light+np.array([0,0,1.0]); h=np.clip(nw@(hv/np.linalg.norm(hv)),0,1)**40
             dark=np.array([70,74,82.]); lite=np.array([226,229,235.])
-            rgb=dark+(lite-dark)*lam[...,None]**1.3; rgb=rgb+(255-rgb)*h[...,None]*0.8
+            rgb=dark+(lite-dark)*lam[...,None]**1.3; rgb=rgb+(255-rgb)*h[...,None]*(0.3 if AGED else 0.8)
             tile=Image.fromarray(np.clip(rgb,0,255).astype(np.uint8)); mask=Image.fromarray((ndimage.gaussian_filter(M,0.6)*255).astype(np.uint8))
             if LINE:   # the letter as a gold outline
                 ins=M>0.5; ring=ins & ~ndimage.binary_erosion(ins,iterations=max(1,int(px*0.07)))
