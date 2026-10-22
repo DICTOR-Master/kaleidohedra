@@ -80,6 +80,9 @@ assert.equal(await panel.locator('[data-pm="fill"]').isVisible(), false, 'nothin
 await page.goto(`${BASE}/index.html?site=${SITE}&open=platonicMix:DIC&probe`); await page.waitForTimeout(1500);
 if (await page.locator('#welcome-overlay').isVisible()) await page.keyboard.press('Enter');
 await page.waitForTimeout(2000);
+// the build above is saved: asked first (fresh-start.mjs); Continue
+assert.equal(await page.locator('#leave-dialog:not([hidden]) [data-choice="continue"]').count(), 1, 'asked about the saved build');
+await page.tap('#leave-dialog [data-choice="continue"]'); await page.waitForTimeout(400);
 st = await probe(); assert.equal(st.mix, 'DIC'); assert.deepEqual(st.slabs, ['D', 'C', 'I']); assert.equal(st.build, false); assert.equal(st.ghosts, 0);
 console.log(errors.length ? 'ERRORS ' + errors.join(' | ') : 'no errors'); assert.equal(errors.length, 0);
 await b.close(); console.log('platonic-mix OK', SITE);

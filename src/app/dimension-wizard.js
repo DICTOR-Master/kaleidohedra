@@ -177,9 +177,6 @@ const CSS = `
 .dicto-block { display: flex; flex-direction: column; gap: 6px; padding: 10px 10px 12px; border-left: 3px solid var(--accent-strong); background: rgba(var(--accent-rgb), 0.05); border-radius: var(--radius-m); }
 .dicto-block + .dicto-block { margin-top: 14px; }
 /* DICTO's own work inside an app's block: DICTO's silver livery. */
-.dicto-livery { display: flex; flex-direction: column; gap: 6px; padding: 8px 8px 10px; margin: 4px 0 6px; border: 1px solid rgba(var(--accent-rgb), 0.45); border-radius: var(--radius-m); background: rgba(var(--accent-rgb), 0.07); }
-.dicto-livery-name { font: 800 var(--text-s) var(--font-ui); letter-spacing: 0.1em; color: var(--pale); }
-.dicto-livery-name span { color: var(--accent-strong); }
 .dicto-block-name { font: 800 var(--text-xl)/1.2 var(--font-ui); letter-spacing: 0.06em; color: var(--pale); }
 .dicto-block-name span { color: var(--accent-strong); }
 .dicto-block .dim-wizard-section .dim-wizard-label { color: var(--pale); }
@@ -612,7 +609,7 @@ const K_WORLDS = [
     ] };
   }),
   // Icosahedral Octet Lattice (DICTO 2026-10-13): the same five versions to build, a cell or a cluster per tap, listed after the
-  // Sunstar Lattice (DICTO_ORDER).
+  // Sunstar Lattice.
   { key: 'octetBuild', label: 'Icosahedral Octet Lattice', pieces: [['caps', 'Octet with Admiral Caps'], ['allIco', 'All-icosahedral octet'],
     ['frog', 'Frog Chorus'], ['pyrochlore', 'Pyrochlore in the octet'], ['lotusJewel', 'Lotus Jewel network']]
     .flatMap(([k, label]) => [{ label, action: `tool:octetBuildWorld:${k}` }, { label: `${label} · clusters`, action: `tool:octetBuildWorld:${k}.clusters` }]) },
@@ -652,9 +649,6 @@ const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'PLATONIC', 'ARCHIMEDEAN', 'CATALAN
 // Polyhedraverse pieces gathered from across its families.
 const DICTO_WORK = new Set(['platonicMix', 'reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
 const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
-// DICTO's block, findings first and tools last (copy audit, DICTO 2026-10-09).
-const DICTO_ORDER = ['platonicMix', 'reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'theaetetus', 'chains', 'thirteens', 'octet', 'icosa', 'dodeca', 'roofFold', 'stellaJewel', 'sunstar', 'octetBuild', 'studies', 'targets', 'dictofcc', 'hex', 'shells', 'golden'];
-const dictoRank = (e) => { const i = DICTO_ORDER.indexOf(e.lat?.key); return i < 0 ? DICTO_ORDER.length : i; };
 const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['TETRAPOD_FIVE_TO', 'TETRAPOD_FOUR_RD', 'ANTONIUS', 'ICOSA_FACE_PYRAMID', 'PENTA_CLEO', 'CLEO_SPHERE_POCKET', 'HEX_AKTIS', 'DELTOID_AKTIS', 'OTT_CLEO_ICOS', 'OTT_TRIANGLE_RAY', 'OTT_RHOMBIC_RAY', 'DICTO_EDGE_ROOF', 'DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER', ...KIT13_ADDITION_IDS] };
 export const DICTO_PIECE_IDS = DICTO_POLY.ids;
 // The shape a face was tapped on, while picking: its space-filling partners come first (as the old site).
@@ -760,7 +754,7 @@ const passes = (app, filter) => !filter || app === filter || app === 'dicto';
 // The kinds inside an app's block, new work first.
 const KINDS = [['search', null], ['world', 'wiz.kind.worlds'], ['lattice', 'wiz.kind.lattices'], ['shapes', 'wiz.kind.shapes'], ['family', 'wiz.kind.worlds']];
 
-export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
+export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = () => {} }) {
   injectCssOnce();
 
   // Rotating previews (wireframe-preview.js): each rendered screen registers its canvases' edge
@@ -891,9 +885,6 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     bodyEl.querySelectorAll('[data-dim]').forEach((el) => el.addEventListener('click', () => {
       const dim = el.dataset.dim;
       if (dim === '5D' || dim === '6D') { showCatalogue(dim); return; }
-      // Rhombiverse's 3D+ arrives straight on fcc with its rhombic dodecahedra, full screen (DICTO 2026-10-17: the heart of Rhombiverse;
-      // Lattice · Select then offers the rest)
-      if (SITE === 'rhombiverse' && dim === '3D') { choose('3D', 'tool:pieceType:rd', 'rhombiverse'); return; }
       openDim = openDim === dim ? null : dim;
       showDimensions(`[data-dim="${dim}"]`);
     }));
@@ -974,15 +965,11 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     for (const app of [...new Set(entries.map((e) => e.app))]) {
       const mine = entries.filter((e) => e.app === app);
       html += `<div class="dicto-block${app === 'dicto' && mine.some((e) => e.lattice3d) ? ' dicto-gold' : ''}" style="${blockStyle(app)}"><div class="dicto-block-name">${wordmark(app)}</div>`;
-      // DICTO's own work first, in DICTO's livery.
-      const dictoOwn = mine.filter((e) => e.dicto).sort((x, y) => dictoRank(x) - dictoRank(y));
-      if (dictoOwn.length) html += `<div class="dicto-livery dicto-gold" style="${blockStyle('dicto')}"><div class="dicto-livery-name">${wordmark('dicto')}</div>${dictoOwn.map(row).join('')}</div>`;
-      const rest = mine.filter((e) => !e.dicto);
       const kinds = app === 'dicto' ? [...KINDS.filter(([k]) => k === 'shapes'), ...KINDS.filter(([k]) => k !== 'shapes')] : KINDS;
-      const restKinds = kinds.filter(([kind]) => rest.some((e) => e.kind === kind));
-      for (const [kind, label] of restKinds) {
-        if (restKinds.length > 1 && label) html += `<div class="dim-wizard-kind">${t(label, L)}</div>`;
-        html += rest.filter((e) => e.kind === kind).map(row).join('');
+      const present = kinds.filter(([kind]) => mine.some((e) => e.kind === kind));
+      for (const [kind, label] of present) {
+        if (present.length > 1 && label) html += `<div class="dim-wizard-kind">${t(label, L)}</div>`;
+        html += mine.filter((e) => e.kind === kind).map(row).join('');
       }
       html += '</div>';
     }
@@ -1348,6 +1335,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges }) {
     picker = null;
     overlay.querySelector('.dicto-apps').hidden = false;
     overlay.classList.remove('open');
+    onClose();
   }
   /** D3's More…: the shapes that fit a face, by family; a tap picks one (onPick), ✕ cancels. */
   function openShapePicker(fits, onPick, { partners = [] } = {}) {

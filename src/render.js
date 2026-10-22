@@ -79,6 +79,7 @@ import {
 } from './core/persistence.js';
 import { VALID_TRIPLES, unitTileVertices } from './krp-core/src/geometry-extensions/growth.js';
 import { SITE, SITES, storageKey, theme, themeOf, activeSite, setActiveSite } from './app/site.js';
+import { buildOf, listsEmpty, sameStores, asksItself } from './app/fresh-start.js';
 import { createLatticeSelect } from './app/lattice-select.js';
 import { createXrayCaps } from './app/xray-caps.js';
 import { SITE_LATTICES, SITE_LATTICE_LABELS, packCell, unpackCell } from './app/site-lattices.js';
@@ -633,7 +634,11 @@ let openShapePicker = () => {};
 // before init() runs, need it too -- has no dependency on any init()
 // closure, just a DOM element and a timer.
 let hudPromptTimer = null;
+// True while the fresh-start check (askFreshStart in init) briefly empties a store to compare it with its untouched state:
+// nothing it triggers may show or move.
+let freshProbing = false;
 function showHudPrompt(text, ms = 4000) {
+  if (freshProbing) return;
   const el = document.getElementById('hud-prompt');
   if (!el) return;
   el.textContent = text;
@@ -3055,52 +3060,54 @@ async function init() {
   }
 
   function registerHistoryStores() {
-    const reg = (historyKey, dim, get, restore) => {
-      historyRestorers.set(historyKey, { dim, restore, get });
+    // fresh: empties the store to its untouched state (Clear World, and Start fresh on entering a world with a saved build).
+    const reg = (historyKey, dim, get, restore, fresh) => {
+      historyRestorers.set(historyKey, { dim, restore, get, fresh });
       historyLastSaved.set(historyKey, JSON.stringify(get()));
     };
-    reg(MAIN_HISTORY_KEY, '3D', () => world.toJSON(), (j) => { world.replaceAll(j); onChange(); });
-    reg(BCC_STORAGE_KEY, '3D', () => bccWorld.toJSON(), (j) => { bccWorld.replaceAll(j); onBCCChange(); });
-    reg(ELONGDODECA_STORAGE_KEY, '3D', () => elongDodecaWorld.toJSON(), (j) => { elongDodecaWorld.replaceAll(j); onElongDodecaChange(); });
-    reg(HEXPRISM_STORAGE_KEY, '3D', () => hexPrismWorld.toJSON(), (j) => { hexPrismWorld.replaceAll(j); onHexPrismChange(); });
-    reg(DICTOBLOCK_STORAGE_KEY, '3D', () => dictoBlockWorld.toJSON(), (j) => { dictoBlockWorld.replaceAll(j); onDictoBlockChange(); });
-    reg(DICTOFCC_STORAGE_KEY, '3D', () => dictoFccWorld.toJSON(), (j) => { dictoFccWorld.replaceAll(j); onDictoFccChange(); });
-    reg(DICTOHEX_STORAGE_KEY, '3D', () => dictoHexWorld.toJSON(), (j) => { dictoHexWorld.replaceAll(j); onDictoHexChange(); });
-    for (const id of Object.keys(SITE_LATTICES)) reg(siteKey(id), '3D', () => siteWorlds[id].toJSON(), (j) => { siteWorlds[id].replaceAll(j); onSiteChange(id); });
-    reg(PYROCHLORE_STORAGE_KEY, '3D', () => pyrochloreWorld.toJSON(), (j) => { pyrochloreWorld.replaceAll(j); onPyrochloreChange(); });
-    reg(RHOMBOHEDRA_STORAGE_KEY, '3D', () => rhombohedraWorld.toJSON(), (j) => { rhombohedraWorld.replaceAll(j); onRhombohedraChange(); });
-    reg(INTERSTITIAL_STORAGE_KEY, '3D', () => interstitialStore.toJSON(), (j) => { interstitialStore.replaceAll(j); onInterstitialChange(); });
-    reg(HEMISPHERE_STORAGE_KEY, '3D', () => hemisphereStore.toJSON(), (j) => { hemisphereStore.replaceAll(j); onHemisphereChange(); });
-    reg(CUBOCTA_STORAGE_KEY, '3D', () => cuboctaWorld.toJSON(), (j) => { cuboctaWorld.replaceAll(j); onCuboctaChange(); });
-    reg(CUBOCTA_GAP_STORAGE_KEY, '3D', () => octGapWorld.toJSON(), (j) => { octGapWorld.replaceAll(j); onOctGapChange(); });
+    reg(MAIN_HISTORY_KEY, '3D', () => world.toJSON(), (j) => { world.replaceAll(j); onChange(); }, () => { world.replaceAll({ worldName: SITES[SITE].name, version: 1, cells: {}, meta: {} }); onChange(); });
+    reg(BCC_STORAGE_KEY, '3D', () => bccWorld.toJSON(), (j) => { bccWorld.replaceAll(j); onBCCChange(); }, () => { bccWorld.replaceAll({ worldName: 'BCC Lattice', version: 1, cells: {}, meta: {} }); onBCCChange(); });
+    reg(ELONGDODECA_STORAGE_KEY, '3D', () => elongDodecaWorld.toJSON(), (j) => { elongDodecaWorld.replaceAll(j); onElongDodecaChange(); }, () => { elongDodecaWorld.replaceAll({ worldName: 'Elongated Dodecahedron Lattice', version: 1, cells: {}, meta: {} }); onElongDodecaChange(); });
+    reg(HEXPRISM_STORAGE_KEY, '3D', () => hexPrismWorld.toJSON(), (j) => { hexPrismWorld.replaceAll(j); onHexPrismChange(); }, () => { hexPrismWorld.replaceAll({ worldName: 'Hex Prism Lattice', version: 1, cells: {}, meta: {} }); onHexPrismChange(); });
+    reg(DICTOBLOCK_STORAGE_KEY, '3D', () => dictoBlockWorld.toJSON(), (j) => { dictoBlockWorld.replaceAll(j); onDictoBlockChange(); }, () => { dictoBlockWorld.replaceAll({ worldName: 'DICTO Blocks', version: 1, cells: {}, meta: {} }); onDictoBlockChange(); });
+    reg(DICTOFCC_STORAGE_KEY, '3D', () => dictoFccWorld.toJSON(), (j) => { dictoFccWorld.replaceAll(j); onDictoFccChange(); }, () => { dictoFccWorld.replaceAll({ worldName: 'DICTO FCC Lattice', version: 1, cells: {}, meta: {} }); onDictoFccChange(); });
+    reg(DICTOHEX_STORAGE_KEY, '3D', () => dictoHexWorld.toJSON(), (j) => { dictoHexWorld.replaceAll(j); onDictoHexChange(); }, () => { dictoHexWorld.replaceAll({ worldName: 'DICTO Hex Prism Lattice', version: 1, cells: {}, meta: {} }); onDictoHexChange(); });
+    for (const id of Object.keys(SITE_LATTICES)) reg(siteKey(id), '3D', () => siteWorlds[id].toJSON(), (j) => { siteWorlds[id].replaceAll(j); onSiteChange(id); }, () => { siteWorlds[id].replaceAll(emptySite(id)); onSiteChange(id); });
+    reg(PYROCHLORE_STORAGE_KEY, '3D', () => pyrochloreWorld.toJSON(), (j) => { pyrochloreWorld.replaceAll(j); onPyrochloreChange(); }, () => { pyrochloreWorld.replaceAll({ worldName: 'Pyrochlore Lattice', version: 1, cells: {}, meta: {} }); onPyrochloreChange(); });
+    reg(RHOMBOHEDRA_STORAGE_KEY, '3D', () => rhombohedraWorld.toJSON(), (j) => { rhombohedraWorld.replaceAll(j); onRhombohedraChange(); }, () => { rhombohedraWorld.replaceAll({ worldName: 'Rhombohedra Lattice', version: 1, cells: {}, meta: {} }); onRhombohedraChange(); });
+    reg(INTERSTITIAL_STORAGE_KEY, '3D', () => interstitialStore.toJSON(), (j) => { interstitialStore.replaceAll(j); onInterstitialChange(); }, () => { interstitialStore.replaceAll({ worldName: 'Interstitial Lattice', version: 1, cells: {}, meta: {} }); onInterstitialChange(); });
+    reg(HEMISPHERE_STORAGE_KEY, '3D', () => hemisphereStore.toJSON(), (j) => { hemisphereStore.replaceAll(j); onHemisphereChange(); }, () => { hemisphereStore.replaceAll({ worldName: 'Hemisphere Pieces', version: 1, pieces: {} }); onHemisphereChange(); });
+    reg(CUBOCTA_STORAGE_KEY, '3D', () => cuboctaWorld.toJSON(), (j) => { cuboctaWorld.replaceAll(j); onCuboctaChange(); }, () => { cuboctaWorld.replaceAll({ worldName: 'Cuboctahedron Lattice', version: 1, cells: {}, meta: {} }); onCuboctaChange(); });
+    reg(CUBOCTA_GAP_STORAGE_KEY, '3D', () => octGapWorld.toJSON(), (j) => { octGapWorld.replaceAll(j); onOctGapChange(); }, () => { octGapWorld.replaceAll({ worldName: 'Cuboctahedron Gap Octahedra', version: 1, cells: {}, meta: {} }); onOctGapChange(); });
     for (const primitive of LATTICE_PRIMITIVES) {
       const w2 = lattice2dWorlds.get(primitive.id);
-      reg(lattice2dStorageKey(primitive.id), '2D', () => w2.toJSON(), (j) => { w2.replaceAll(j); onLattice2dChange(primitive.id); });
+      reg(lattice2dStorageKey(primitive.id), '2D', () => w2.toJSON(), (j) => { w2.replaceAll(j); onLattice2dChange(primitive.id); },
+        () => { w2.replaceAll({ worldName: `2D Lattice (${primitive.label})`, version: 1, cells: {}, meta: {} }); onLattice2dChange(primitive.id); });
     }
-    reg('world4d', '4D', () => world4d.snapshot(), (j) => world4d.restore(j));
-    for (const [dim, w] of qcWorlds) reg(`world${dim.toLowerCase()}`, dim, () => w.snapshot(), (j) => w.restore(j));
-    reg('worldshells', '3D', () => shellsWorld.snapshot(), (j) => shellsWorld.restore(j));
-    reg('worldgolden', '3D', () => goldenWorld.snapshot(), (j) => goldenWorld.restore(j));
-    reg('worldpoly', '3D', () => polyWorld.snapshot(), (j) => polyWorld.restore(j));
-    reg('worldrooffold', '3D', () => roofFoldWorld.snapshot(), (j) => roofFoldWorld.restore(j));
-    reg('worldsunstar', '3D', () => sunstarWorld.snapshot(), (j) => sunstarWorld.restore(j));
-    reg('worldoctetbuild', '3D', () => octetBuildWorld.snapshot(), (j) => octetBuildWorld.restore(j));
-    reg('worldbreathing', '3D', () => breathingWorld.snapshot(), (j) => breathingWorld.restore(j));
-    reg('worldbodhipyro', '3D', () => bodhiPyroWorld.snapshot(), (j) => bodhiPyroWorld.restore(j));
-    reg('worlddoublevision', '3D', () => doubleVisionWorld.snapshot(), (j) => doubleVisionWorld.restore(j));
-    reg('worldvajrayana', '3D', () => vajrayanaWorld.snapshot(), (j) => vajrayanaWorld.restore(j));
-    reg('worldupfilm', '3D', () => upFilmWorld.snapshot(), (j) => upFilmWorld.restore(j));
-    reg('worldkpfilm', '3D', () => kpFilmWorld.snapshot(), (j) => kpFilmWorld.restore(j));
-    reg('worldocdstella', '3D', () => ocdStellaWorld.snapshot(), (j) => ocdStellaWorld.restore(j));
-    reg('worldoctettruss', '3D', () => octetTrussWorld.snapshot(), (j) => octetTrussWorld.restore(j));
-    reg('worldreuleaux', '3D', () => reuleauxWorld.snapshot(), (j) => reuleauxWorld.restore(j));
-    reg('worldplatonicmix', '3D', () => platonicMixWorld.snapshot(), (j) => platonicMixWorld.restore(j));
-    reg('worldcycles', '3D', () => cyclesWorld.snapshot(), (j) => cyclesWorld.restore(j));
-    reg('worldstellajewel', '3D', () => stellaJewelWorld.snapshot(), (j) => stellaJewelWorld.restore(j));
-    reg('worldkaleido', '2D', () => kaleidoWorld.snapshot(), (j) => kaleidoWorld.restore(j));
-    reg('worldnets', '2D', () => netsWorld.snapshot(), (j) => netsWorld.restore(j));
-    reg('world1dsignal', '1D', () => signalWorld.snapshot(), (j) => signalWorld.restore(j));
-    reg('world1dconstruct', '1D', () => constructWorld.snapshot(), (j) => constructWorld.restore(j));
+    reg('world4d', '4D', () => world4d.snapshot(), (j) => world4d.restore(j), () => world4d.clear());
+    for (const [dim, w] of qcWorlds) reg(`world${dim.toLowerCase()}`, dim, () => w.snapshot(), (j) => w.restore(j), () => w.clear());
+    reg('worldshells', '3D', () => shellsWorld.snapshot(), (j) => shellsWorld.restore(j), () => shellsWorld.clear());
+    reg('worldgolden', '3D', () => goldenWorld.snapshot(), (j) => goldenWorld.restore(j), () => goldenWorld.clear());
+    reg('worldpoly', '3D', () => polyWorld.snapshot(), (j) => polyWorld.restore(j), () => polyWorld.clear());
+    reg('worldrooffold', '3D', () => roofFoldWorld.snapshot(), (j) => roofFoldWorld.restore(j), () => roofFoldWorld.clear());
+    reg('worldsunstar', '3D', () => sunstarWorld.snapshot(), (j) => sunstarWorld.restore(j), () => sunstarWorld.clear());
+    reg('worldoctetbuild', '3D', () => octetBuildWorld.snapshot(), (j) => octetBuildWorld.restore(j), () => octetBuildWorld.clear());
+    reg('worldbreathing', '3D', () => breathingWorld.snapshot(), (j) => breathingWorld.restore(j), () => breathingWorld.clear());
+    reg('worldbodhipyro', '3D', () => bodhiPyroWorld.snapshot(), (j) => bodhiPyroWorld.restore(j), () => bodhiPyroWorld.clear());
+    reg('worlddoublevision', '3D', () => doubleVisionWorld.snapshot(), (j) => doubleVisionWorld.restore(j), () => doubleVisionWorld.clear());
+    reg('worldvajrayana', '3D', () => vajrayanaWorld.snapshot(), (j) => vajrayanaWorld.restore(j), () => vajrayanaWorld.clear());
+    reg('worldupfilm', '3D', () => upFilmWorld.snapshot(), (j) => upFilmWorld.restore(j), () => upFilmWorld.clear());
+    reg('worldkpfilm', '3D', () => kpFilmWorld.snapshot(), (j) => kpFilmWorld.restore(j), () => kpFilmWorld.clear());
+    reg('worldocdstella', '3D', () => ocdStellaWorld.snapshot(), (j) => ocdStellaWorld.restore(j), () => ocdStellaWorld.clear());
+    reg('worldoctettruss', '3D', () => octetTrussWorld.snapshot(), (j) => octetTrussWorld.restore(j), () => octetTrussWorld.clear());
+    reg('worldreuleaux', '3D', () => reuleauxWorld.snapshot(), (j) => reuleauxWorld.restore(j), () => reuleauxWorld.clear());
+    reg('worldplatonicmix', '3D', () => platonicMixWorld.snapshot(), (j) => platonicMixWorld.restore(j), () => platonicMixWorld.clear());
+    reg('worldcycles', '3D', () => cyclesWorld.snapshot(), (j) => cyclesWorld.restore(j), () => cyclesWorld.clear());
+    reg('worldstellajewel', '3D', () => stellaJewelWorld.snapshot(), (j) => stellaJewelWorld.restore(j), () => stellaJewelWorld.clear());
+    reg('worldkaleido', '2D', () => kaleidoWorld.snapshot(), (j) => kaleidoWorld.restore(j), () => kaleidoWorld.clear());
+    reg('worldnets', '2D', () => netsWorld.snapshot(), (j) => netsWorld.restore(j), () => netsWorld.clear());
+    reg('world1dsignal', '1D', () => signalWorld.snapshot(), (j) => signalWorld.restore(j), () => signalWorld.clear());
+    reg('world1dconstruct', '1D', () => constructWorld.snapshot(), (j) => constructWorld.restore(j), () => constructWorld.clear());
     updateUndoButton();
   }
 
@@ -4685,6 +4692,14 @@ async function init() {
     const qcEngines = { '5d': makeQuasicrystal('5d'), '6d': makeQuasicrystal('6d') };
     const dimensionWizard = createDimensionWizard({
       pieceEdges: wizardPieceEdges,
+      // The Polyhedraverse door opens on its own space with its build behind the menu: closing the menu there without a pick
+      // asks about a saved build too (once), as entering any world does.
+      onClose: () => setTimeout(() => {
+        if (SITE !== 'polyhedraverse' || worldNow || polyDoorAsked || !(own3DActive() && own3D === 'poly')) return;
+        polyDoorAsked = true;
+        worldNow = { action: null, stores: null, keys: null, before: storesNow() };
+        askFreshStart(worldNow, null);
+      }, 0),
       // Real bug fixed same session: this used to hardcode
       // activeDimension = '3D' regardless of which of the wizard's own
       // screens the pick came from, so choosing Square from its 2D
@@ -4706,6 +4721,8 @@ async function init() {
         latticeSelect?.setAction(dimension, action);
       },
     });
+    // RHOMBIS is Rhombiverse's puzzle: its Settings hint only on that door (the welcome card's link likewise, welcome.js).
+    if (SITE !== 'rhombiverse') document.getElementById('rhombis-settings-link')?.remove();
     if (SITE === 'rhombiverse') latticeSelect = createLatticeSelect({ go: (action, label) => dimensionWizard.go(action, 'rhombiverse', label) });
     document.getElementById('hud-wizard-cue')?.addEventListener('click', () => dimensionWizard.open());
 
@@ -4713,15 +4730,20 @@ async function init() {
     // leaving a world you changed: Keep (it stays for next time), Discard (back as it was when you came in) or Stay.
     // The view-only worlds (Multi-shell chains, DICTO Dodeca, DICTO Icosa, EKP studies, Targets) go back to their first view on
     // leaving, without asking.
-    let worldNow = null; // { action, stores: Map<historyKey, json> | null }
+    let worldNow = null; // { action, stores: Map<historyKey, json> | null, keys: the stores it shows }
+    let polyDoorAsked = false;
     // A store re-saved on opening only changes its lastModified stamp: that isn't a change of yours.
     const builtState = (json) => JSON.stringify(json, (k, v) => (k === 'lastModified' ? undefined : v));
     const storesNow = () => new Map([...historyRestorers].map(([k, { get }]) => [k, JSON.stringify(get())]));
     function enterWorld(dimension, action, title) {
-      worldNow = { action, stores: null };
+      const before = worldNow;
+      // before: every store as it was before this entry changed anything (a link's own view isn't a saved build).
+      worldNow = { action, stores: null, keys: null, before: storesNow() };
       const entered = worldNow;
+      // Once the world is open (the entry routes open it right after this): a saved build is asked about first.
+      setTimeout(() => { if (worldNow === entered) askFreshStart(entered, before?.keys); }, 0);
       // Taken once the world has opened (some place a first piece as they open), so only your own changes count.
-      setTimeout(() => { if (worldNow === entered) entered.stores = storesNow(); }, 800);
+      setTimeout(() => { if (worldNow === entered && !entered.asking) entered.stores = storesNow(); }, 800);
       const row = document.getElementById('hud-world-row');
       document.getElementById('hud-world-title').textContent = title ?? '';
       document.getElementById('hud-world-back').textContent = t('wiz.back', getSettings().language);
@@ -4739,14 +4761,68 @@ async function init() {
       for (const w of [chainsWorld, dodecaWorld, theaetetusWorld, upWorld, thirteensWorld, octetWorld, icosaWorld, studiesWorld, targetsWorld]) w?.resetView?.();
       return true;
     }
-    function askKeepBuild() {
+    // A fresh start (DICTO's rule, app audit 2026-10-22): entering a world or lattice whose store holds a saved build (not empty,
+    // and not the world's untouched state) never just shows it: "Continue where you left off" or "Start fresh". Start fresh
+    // empties those stores as Clear World does (Undo brings them back). Moving within one space (the 3D lattices share theirs)
+    // asks nothing; the Polyhedraverse kits and polytopes ask about replacing a build themselves.
+    function activeStoreKeys() {
+      const has = (k) => historyRestorers.has(k);
+      if (['4D', '5D', '6D'].includes(activeDimension)) return [`world${activeDimension.toLowerCase()}`].filter(has);
+      if (own3DActive()) return [`world${own3D.toLowerCase()}`, `world1d${own3D.toLowerCase()}`].filter(has);
+      if (activeDimension === '2D') return [lattice2dStorageKey(activeLattice2dPrimitiveId)].filter(has);
+      if (activeDimension === '3D') return [...historyRestorers].filter(([k, r]) => r.dim === '3D' && !k.startsWith('world')).map(([k]) => k);
+      return [];
+    }
+    /** Did this store hold a saved build when the world was entered (before: its JSON then)? Empties it to its untouched state for a
+     *  moment (nothing shown or moved), compares, puts it back. */
+    function holdsBuild(k, before) {
+      const r = historyRestorers.get(k);
+      if (!r?.fresh || !before) return false;
+      const then = JSON.parse(before);
+      if (listsEmpty(then)) return false;
+      const now = r.get();
+      // a world that calls itself empty (its piece count, not its view settings), unchanged by this entry, holds nothing
+      const w = activeDimension === '4D' ? world4d : qcWorlds.get(activeDimension) ?? (own3DActive() ? own3DWorld() : null);
+      if (k.startsWith('world') && w?.isEmpty === true && buildOf(now) === buildOf(then)) return false;
+      const pose = [camera.position.clone(), controls.target.clone()];
+      freshProbing = true; historyRestoring = true;
+      try {
+        r.fresh();
+        const untouched = buildOf(r.get());
+        r.restore(JSON.parse(JSON.stringify(now)));
+        return untouched !== buildOf(then) && untouched !== buildOf(now); // saved before, and not just the world's own opening state
+      } finally {
+        freshProbing = false; historyRestoring = false;
+        historyLastSaved.set(k, JSON.stringify(r.get()));
+        camera.position.copy(pose[0]); controls.target.copy(pose[1]); controls.update();
+      }
+    }
+    async function askFreshStart(entered, keysBefore) {
+      const keys = activeStoreKeys();
+      entered.keys = keys;
+      if (sameStores(keys, keysBefore) || asksItself(entered.action)) return;
+      const saved = keys.filter((k) => holdsBuild(k, entered.before?.get(k)));
+      if (!saved.length) return;
+      entered.asking = true;
+      const choice = await askChoice('fresh', ['continue', 'fresh']);
+      entered.asking = false;
+      if (choice === 'fresh' && worldNow === entered) {
+        for (const k of saved) { const r = historyRestorers.get(k); r.fresh(); recordHistory(k, r.get()); }
+        if (entered.action) handleWheelAction(entered.action, { quiet: true }); // opened again on the empty store, as asked for
+        else if (own3D === 'poly' && polyWorld?.isEmpty) polyWorld.startWith(polyWorld.shape);
+      }
+      if (worldNow === entered) entered.stores = storesNow();
+    }
+    function askKeepBuild() { return askChoice('leave', ['keep', 'discard', 'stay']); }
+    /** The app's small question panel: a title, a line, and big buttons (the first one marked). */
+    function askChoice(prefix, choices) {
       const dlg = document.getElementById('leave-dialog');
       const L = getSettings().language;
-      document.getElementById('leave-title').textContent = t('leave.title', L);
-      document.getElementById('leave-body').textContent = t('leave.body', L);
-      for (const b of dlg.querySelectorAll('[data-choice]')) b.textContent = t(`leave.${b.dataset.choice}`, L);
+      document.getElementById('leave-title').textContent = t(`${prefix}.title`, L);
+      document.getElementById('leave-body').textContent = t(`${prefix}.body`, L);
+      dlg.querySelector('.leave-btns').innerHTML = choices.map((c, i) => `<button type="button" data-choice="${c}"${i === 0 ? ' class="first"' : ''}>${t(`${prefix}.${c}`, L)}</button>`).join('');
       dlg.hidden = false;
-      dlg.querySelector('[data-choice="keep"]').focus();
+      dlg.querySelector('[data-choice]').focus();
       return new Promise((resolve) => {
         const pick = (e) => {
           const choice = e.target.closest('[data-choice]')?.dataset.choice;
@@ -5927,6 +6003,7 @@ async function init() {
   // hull fits, keeping the view direction; glide like focusCameraOn.
   // viewDir (optional): look from that direction instead of the current one (a world's own starting view, e.g. the TO 13 from above).
   function fitCameraTo([x, y, z], radius, viewDir = null, exact = false) {   // exact: zoom in as well as out (default keeps the farther distance)
+    if (freshProbing) return;
     const centre = new THREE.Vector3(x, y, z);
     const need = (radius * 1.15) / Math.sin(THREE.MathUtils.degToRad(camera.fov) / 2) / Math.min(1, camera.aspect);
     const dir = viewDir ? new THREE.Vector3(...viewDir).normalize() : camera.position.clone().sub(controls.target).normalize();
@@ -6793,7 +6870,7 @@ async function init() {
 
 
   // Clear World (⊘ on the corner HUD wheel): erase every dimension.
-  async function clearWorldToNew() {
+  function clearWorldToNew() {
     if (!confirm('Start a new world? This clears your current build.')) return;
     // Real report, 2026-08-29: "still have zero cells" after Clear World
     // -- reproduced directly. The data-level fix (onChange()'s own
@@ -6810,97 +6887,10 @@ async function init() {
     controls.update();
     saveCameraState(camera.position, controls.target);
     clearLocalStorage();
-    const fresh = await loadWorld('./data/starter-world.json');
-    world.replaceAll(fresh);
-    onChange();
-    // BCC dual-lattice build: a real second world store, so a "fresh
-    // start" needs to clear it too, not just the main one -- see
-    // core/bcc-build.md.
-    clearLocalStorage(BCC_STORAGE_KEY);
-    bccWorld.replaceAll({ worldName: 'BCC Lattice', version: 1, cells: {}, meta: {} });
-    onBCCChange();
-    // Interstitial-lattice build: a third real store, same "fresh start
-    // clears it too" reasoning as BCC above.
-    clearLocalStorage(INTERSTITIAL_STORAGE_KEY);
-    interstitialStore.replaceAll({ worldName: 'Interstitial Lattice', version: 1, cells: {} });
-    onInterstitialChange();
-    // Cuboctahedron Build: a fourth real store, same "fresh start clears
-    // it too" reasoning as BCC/interstitial above.
-    clearLocalStorage(CUBOCTA_STORAGE_KEY);
-    cuboctaWorld.replaceAll({ worldName: 'Cuboctahedron Lattice', version: 1, cells: {} });
-    onCuboctaChange();
-    // Cuboctahedron gap-octahedron Build: a fifth real store, same
-    // "fresh start clears it too" reasoning as above.
-    clearLocalStorage(CUBOCTA_GAP_STORAGE_KEY);
-    octGapWorld.replaceAll({ worldName: 'Cuboctahedron Gap Octahedra', version: 1, cells: {} });
-    onOctGapChange();
-    // Hemisphere pieces: a sixth real store, same "fresh start clears it
-    // too" reasoning as BCC/interstitial/Cuboctahedron/gap above.
-    clearLocalStorage(HEMISPHERE_STORAGE_KEY);
-    hemisphereStore.replaceAll({ worldName: 'Hemisphere Pieces', version: 1, pieces: {} });
-    onHemisphereChange();
-    // Elongated Dodecahedron/Hex Prism/Square (2D): 3 more real stores
-    // added later, same session -- real bug, direct report ("hex prisms
-    // aren't going when pressing clear current build"): these were never
-    // wired into this function at all, so Clear World silently left them
-    // untouched. Same "fresh start clears it too" reasoning as every
-    // store above.
-    clearLocalStorage(ELONGDODECA_STORAGE_KEY);
-    elongDodecaWorld.replaceAll({ worldName: 'Elongated Dodecahedron Lattice', version: 1, cells: {}, meta: {} });
-    onElongDodecaChange();
-    clearLocalStorage(HEXPRISM_STORAGE_KEY);
-    hexPrismWorld.replaceAll({ worldName: 'Hex Prism Lattice', version: 1, cells: {}, meta: {} });
-    onHexPrismChange();
-    clearLocalStorage(DICTOBLOCK_STORAGE_KEY);
-    dictoBlockWorld.replaceAll({ worldName: 'DICTO Blocks', version: 1, cells: {}, meta: {} });
-    onDictoBlockChange();
-    clearLocalStorage(DICTOFCC_STORAGE_KEY);
-    dictoFccWorld.replaceAll({ worldName: 'DICTO FCC Lattice', version: 1, cells: {}, meta: {} });
-    onDictoFccChange();
-    clearLocalStorage(DICTOHEX_STORAGE_KEY);
-    dictoHexWorld.replaceAll({ worldName: 'DICTO Hex Prism Lattice', version: 1, cells: {}, meta: {} });
-    onDictoHexChange();
-    for (const id of Object.keys(SITE_LATTICES)) { clearLocalStorage(siteKey(id)); siteWorlds[id].replaceAll(emptySite(id)); onSiteChange(id); }
-    // 2D lattice tier: one loop over every primitive, replacing the old
-    // Square/Hexagon/Triangle hand-written trio -- same "fresh start
-    // clears it too" reasoning as every store above.
-    LATTICE_PRIMITIVES.forEach((primitive) => {
-      clearLocalStorage(lattice2dStorageKey(primitive.id));
-      lattice2dWorlds.get(primitive.id).replaceAll({ worldName: `2D Lattice (${primitive.label})`, version: 1, cells: {}, meta: {} });
-      onLattice2dChange(primitive.id);
-    });
-    clearLocalStorage(RHOMBOHEDRA_STORAGE_KEY);
-    rhombohedraWorld.replaceAll({ worldName: 'Rhombohedra Lattice', version: 1, cells: {}, meta: {} });
-    onRhombohedraChange();
-    clearLocalStorage(PYROCHLORE_STORAGE_KEY);
-    pyrochloreWorld.replaceAll({ worldName: 'Pyrochlore Lattice', version: 1, cells: {}, meta: {} });
-    onPyrochloreChange();
-    // "Erase everything" includes the 4D world (it was left untouched).
-    world4d?.clear();
-    for (const w of qcWorlds.values()) w.clear();
-    shellsWorld?.clear();
-    goldenWorld?.clear();
-    polyWorld?.clear();
-    roofFoldWorld?.clear();
-    sunstarWorld?.clear();
-    octetBuildWorld?.clear();
-    breathingWorld?.clear();
-    bodhiPyroWorld?.clear();
-    doubleVisionWorld?.clear();
-    vajrayanaWorld?.clear();
-    upFilmWorld?.clear();
-    kpFilmWorld?.clear();
-    ocdStellaWorld?.clear();
-    octetTrussWorld?.clear();
-    reuleauxWorld?.clear();
+    // Every store back to its untouched state (each one's fresh, registerHistoryStores), so Undo can bring it back;
+    // Aristotle's Pyramid only has a view to reset.
+    for (const { fresh } of historyRestorers.values()) fresh?.();
     aristotleWorld?.clear();
-    platonicMixWorld?.clear();
-    cyclesWorld?.clear();
-    stellaJewelWorld?.clear();
-    kaleidoWorld?.clear();
-    netsWorld?.clear();
-    signalWorld?.clear();
-    constructWorld?.clear();
   }
   document.getElementById('clear-world-toggle')?.addEventListener('click', clearWorldToNew);
   document.getElementById('reload-toggle')?.addEventListener('click', () => {

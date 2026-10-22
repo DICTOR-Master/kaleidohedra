@@ -37,6 +37,11 @@ export async function closeDicto(page) {
     await page.tap('.dim-wizard-close');
     await page.waitForTimeout(400);
   }
+  // A seeded build is a saved build: closing the menu over it asks first (fresh-start.mjs); these specs mean to go on with it.
+  if (await page.locator('#leave-dialog:not([hidden]) [data-choice="continue"]').count()) {
+    await page.tap('#leave-dialog [data-choice="continue"]');
+    await page.waitForTimeout(300);
+  }
 }
 
 function helpers(page, ctx, cdp, errors) {

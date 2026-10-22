@@ -134,7 +134,7 @@
       min-width: 0; color: #e8c25a; font: 600 var(--text-s) var(--font-ui);
       white-space: nowrap; overflow: hidden; text-overflow: ellipsis; user-select: none; pointer-events: none;
     }
-    /* Keep this build? (leaving a changed world) */
+    /* The app's small question panel: Keep this build? (leaving a changed world); Continue or Start fresh? (entering a saved one) */
     #leave-dialog { position: fixed; inset: 0; z-index: 3000; display: flex; align-items: center; justify-content: center;
       background: rgba(0, 0, 0, 0.55); padding: 16px; }
     #leave-dialog[hidden] { display: none; }
@@ -143,9 +143,9 @@
     #leave-dialog h2 { margin: 0 0 8px; font: 600 var(--text-l) var(--font-ui); color: var(--accent); }
     #leave-dialog p { margin: 0 0 14px; line-height: 1.45; }
     #leave-dialog .leave-btns { display: flex; flex-wrap: wrap; gap: 8px; }
-    #leave-dialog button { min-height: var(--touch); padding: 0 14px; border-radius: var(--radius-s); cursor: pointer; touch-action: manipulation;
+    #leave-dialog button { flex: 1 1 auto; min-height: max(var(--touch), 52px); padding: 0 16px; border-radius: var(--radius-s); cursor: pointer; touch-action: manipulation;
       background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); color: #e6e9f0; font: var(--text-m) var(--font-ui); }
-    #leave-dialog button[data-choice="keep"] { background: rgba(var(--accent-rgb), 0.3); border-color: var(--accent-strong); color: #fff; }
+    #leave-dialog button.first { background: rgba(var(--accent-rgb), 0.3); border-color: var(--accent-strong); color: #fff; }
     /* 1D's two worlds, one tap apart (direct request: "a Signal/Construct
        toggle also"). */
     #hud-1d-toggle {
@@ -1032,7 +1032,7 @@
   </div>
   <div id="hud-world-row" hidden><button type="button" id="hud-world-back"></button><span id="hud-world-title"></span></div>
   <div id="leave-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="leave-title"><div class="leave-card"><h2 id="leave-title"></h2><p id="leave-body"></p>
-    <div class="leave-btns"><button type="button" data-choice="keep"></button><button type="button" data-choice="discard"></button><button type="button" data-choice="stay"></button></div></div></div>
+    <div class="leave-btns"></div></div></div>
   <div id="hud-1d-toggle" hidden><button type="button" data-world="signal">Signal</button><button type="button" data-world="construct">Construct</button></div>
   <button id="hud-quick-shape" type="button" title="Piece (tap to change)"></button>
   <button id="hud-quick-color" type="button" title="Colour (tap to change)"></button>
