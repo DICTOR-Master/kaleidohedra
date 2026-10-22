@@ -272,6 +272,14 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
       Object.assign(view, structuredClone(VIEW_FIRST)); save();
       if (active) { draw(); fit(); }
     },
+    /** ?open=studies:stretch (paper #49's "View in app"): the DICTO stretched solids as the paper's theorem shows them, two caps
+     *  along a face diagonal, equal-edged (spacing 1), as the solid itself. */
+    open(arg) {
+      if (arg !== 'stretch') return;
+      Object.assign(view, { study: 'stretch', stretchDir: 'face', caps: 2, spacing: 1, studyShear: 'solid' });
+      save();
+      if (active) { draw(); fit(); }
+    },
     setActive(on) {
       if (on === active) return;
       active = on;

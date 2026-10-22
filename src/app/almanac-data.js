@@ -228,10 +228,11 @@ export const LATTICE_CONCEPT_ENTRIES = [
 // DICTO's discoveries (DICTO 2026-10-09): every piece and world of DICTO's own, first, in 7 languages
 // (i18n alm.d.<key>.label/.desc/.how): what it is, how to build it, its DISCOVERIES number and DOI.
 // Newest first (DICTO 2026-10-13: all of #1-#26; #27 added 2026-10-14; #28-#38 2026-10-19, each short introduction inside its parent
-// entry, DICTO; #37a and #38a inside #37 and #38, 2026-10-20; #39 its own entry, 2026-10-20; #45 and #44 their own entries, 2026-10-21; #47 its own entry, 2026-10-22). doi: the paper's own DICTO DOI (concept, newest version). shape: the Polyhedraverse shape its preview turns, if any.
+// entry, DICTO; #37a and #38a inside #37 and #38, 2026-10-20; #39 its own entry, 2026-10-20; #45 and #44 their own entries, 2026-10-21; #47 its own entry, 2026-10-22; #49 its own entry, 2026-10-23). doi: the paper's own DICTO DOI (concept, newest version). shape: the Polyhedraverse shape its preview turns, if any.
 // action: what Open does, the same action the DICTO wizard dispatches; app: where it opens when the
 // action alone doesn't say (the Shear's results open in Kaleidohedra).
 export const DICTO_ENTRIES = [
+  ['stretching', '#49', '10.5281/zenodo.23566671', 'DODECAHEDRON', 'tool:studiesWorld:stretch'],
   ['platonicMix', '#47', '10.5281/zenodo.23551326', 'ICOSAHEDRON', 'tool:platonicMixWorld'],
   ['reuleaux', '#45', '10.5281/zenodo.23529499', null, 'tool:reuleauxWorld'],
   ['aristotle', '#44', '10.5281/zenodo.23529497', 'ICOSA_FACE_PYRAMID', 'tool:aristotleWorld'],

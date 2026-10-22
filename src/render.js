@@ -4374,6 +4374,8 @@ async function init() {
         // Every Mix of the Platonic Solids: tool:platonicMixWorld:<letters of the mix, e.g. DIC>.
         if (action?.startsWith('tool:platonicMixWorld:')) { platonicMixWorld?.open(action.slice('tool:platonicMixWorld:'.length)); action = 'tool:platonicMixWorld'; }
         if (action?.startsWith('tool:aristotleWorld:')) { aristotleWorld?.open(action.slice('tool:aristotleWorld:'.length)); action = 'tool:aristotleWorld'; }
+        // Studies: tool:studiesWorld:stretch opens the DICTO stretched solids (paper #49).
+        if (action?.startsWith('tool:studiesWorld:')) { studiesWorld?.open(action.slice('tool:studiesWorld:'.length)); action = 'tool:studiesWorld'; }
         // Vajrayana: tool:vajrayanaWorld:pieces opens with the closing layers shown; Theaetetus: tool:theaetetusWorld:<view> (cleostar …)
         if (action?.startsWith('tool:vajrayanaWorld:')) { vajrayanaWorld?.open(action.slice('tool:vajrayanaWorld:'.length)); action = 'tool:vajrayanaWorld'; }
         if (action?.startsWith('tool:theaetetusWorld:')) { theaetetusWorld?.openView?.(action.slice('tool:theaetetusWorld:'.length)); action = 'tool:theaetetusWorld'; }

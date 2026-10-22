@@ -8,6 +8,7 @@
 
 - Per-app content (head, changelog, icons): `site/<app>/`; the one DICTO User Guide (shared sections, a chapter per app, 7 languages): `site/guide/`. The apps' table (names, colours, which tools each has): `src/app/site.js`; one type scale for all: `src/app/tokens.css`.
 - Building a front door: `SITE=kaleidohedra npm run build` or `SITE=rhombiverse npm run build` (each Vercel project sets its own). Locally, `index.html?site=rhombiverse` opens Rhombiverse's door.
+- DICTO's newest worlds (DICTO → 3D+, each from his ideas and papers, with its DICTO DOI in the Almanac): **Every Mix of the Platonic Solids** (#47), **The Reuleaux Platonic Solids** (#45), **Aristotle's Pyramid** (#44), **The OG on the Octet Truss** (#37) and **Universal PiTet** (#38) with its cycle film and **The Kepler–Poinsot–UP Cycle**; in Studies, the **DICTO stretched solids** (#49, The Polyhedral Stretching Theorem), opened directly by [kaleidohedra.dictospheres.com/?open=studies:stretch](https://kaleidohedra.dictospheres.com/?open=studies:stretch). Polyhedraverse's newest family is the **Mosseri–Sadoc tiles (1982)**: the six golden tetrahedra of Mosseri and Sadoc, among them DICTO's Hound Tooth, Tricap, Cleo and AXE.
 
 It began with two shapes DICTO found by building with their hands: a golden leaning hexagonal prism, and a skewed rhombic dodecahedron that fills space as a sheared FCC lattice (first notes in Polyhedraverse's `docs/`). Everything since grew from asking what else such shapes can do.
 
