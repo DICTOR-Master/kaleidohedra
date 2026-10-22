@@ -6055,6 +6055,7 @@ async function init() {
     // The Reuleaux world's build: where on screen each face mid-point of the last piece is, turned towards the camera first.
     window.__aristotleProbe = () => aristotleWorld?.probe?.() ?? null;
     window.__platonicMixProbe = () => platonicMixWorld?.probe?.() ?? null;
+    window.__studiesProbe = () => studiesWorld?.probe?.() ?? null;
     // the fresh-start question: is the scene out of sight (the camera sees no layer)?
     window.__sceneHidden = () => camera.layers.mask === 0;
     // Every Mix's Build it yourself: where on screen the ghost nearest the eye is.
