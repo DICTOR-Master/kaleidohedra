@@ -114,8 +114,8 @@ if __name__=='__main__':
     S={'Short stretched dodecahedron (12 pentagons, 10 rhombi)':[(0,0,0),tuple(u)],
        'Three-cap dodecahedron (12 pentagons, 15 rhombi, 2 triangles)':[(0,0,0),(1/2**.5,1/2**.5,0),(1/2**.5,0,1/2**.5)],
        'Four-cap dodecahedron (12 pentagons, 18 rhombi, 4 triangles)':[(0,0,0),(1/2**.5,1/2**.5,0),(1/2**.5,0,1/2**.5),(0,1/2**.5,1/2**.5)],
-       'Long stretched dodecahedron, to the next one (12 pentagons, 10 long faces)':[(0,0,0),(phi,phi,0)],
-       "DICTO's F11 stretched dodecahedron, square version (8 pentagons, 4 hexagons, 2 squares)":[(0,0,0),(2/phi,0,0)]}
+       'Long stretched dodecahedron (12 pentagons, 10 long faces)':[(0,0,0),(phi,phi,0)],
+       "DICTO's F11, square version (8 pentagons, 4 hexagons, 2 squares)":[(0,0,0),(2/phi,0,0)]}
     pages=[]
     for i,(name,pts) in enumerate(S.items()):
         F=solid(pts); b=good_net(F,1200)
