@@ -1,0 +1,93 @@
+{
+ "name": "DICTO OCD Stella body-centred cubic packing",
+ "kind": "packing, not a fill",
+ "finding": "F31a",
+ "paper": "#31a",
+ "dicto_doi": "10.5281/zenodo.23430870",
+ "status": "published packing (lattice packing by translation; not a tiling)",
+ "field": "Q(sqrt(5))",
+ "lattice_vectors": [
+  {
+   "exact": [
+    "4/9 + (4/9)*sqrt(5)",
+    "0",
+    "0"
+   ],
+   "decimal": [
+    "1.438252434444351",
+    "0.000000000000000",
+    "0.000000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "0",
+    "4/9 + (4/9)*sqrt(5)",
+    "0"
+   ],
+   "decimal": [
+    "0.000000000000000",
+    "1.438252434444351",
+    "0.000000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "2/9 + (2/9)*sqrt(5)",
+    "2/9 + (2/9)*sqrt(5)",
+    "2/9 + (2/9)*sqrt(5)"
+   ],
+   "decimal": [
+    "0.719126217222175",
+    "0.719126217222175",
+    "0.719126217222175"
+   ]
+  }
+ ],
+ "cell_volume": {
+  "exact": "512/729 + (256/729)*sqrt(5)",
+  "decimal": "1.487562966035591"
+ },
+ "pieces": [
+  {
+   "solid": "dicto-ocd-stella",
+   "rotation": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "translation": [
+    "0",
+    "0",
+    "0"
+   ]
+  }
+ ],
+ "density": {
+  "exact": "151/2 + (-267/8)*sqrt(5)",
+  "decimal": "0.871231250944519",
+  "published_percent": "87.12",
+  "published_in": "#31a, Table 1 and Table 2"
+ },
+ "note": "#31a: the OCD Stella on the OG's body-centred cubic packing (same lattice as dicto-ogdoecontahedron-bcc-packing), copies meeting face to face across the 8 joints; each copy lies in its own Voronoi cell. Not a tiling (12.88% empty).",
+ "credit": "DICTO",
+ "creator_mark": "Created by DICTO · dictospheres.com",
+ "licence": "CC BY-SA 4.0",
+ "checks": {
+  "density_exact_equals_published": true,
+  "no_overlaps_exact": true,
+  "verified_by": "check.py"
+ }
+}

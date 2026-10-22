@@ -1,0 +1,93 @@
+{
+ "name": "DICTO Ogdoecontahedron body-centred cubic packing",
+ "kind": "packing, not a fill",
+ "finding": "F31",
+ "paper": "#31",
+ "dicto_doi": "10.5281/zenodo.23404688",
+ "status": "published packing (lattice packing by translation; not a tiling)",
+ "field": "Q(sqrt(5))",
+ "lattice_vectors": [
+  {
+   "exact": [
+    "4/9 + (4/9)*sqrt(5)",
+    "0",
+    "0"
+   ],
+   "decimal": [
+    "1.438252434444351",
+    "0.000000000000000",
+    "0.000000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "0",
+    "4/9 + (4/9)*sqrt(5)",
+    "0"
+   ],
+   "decimal": [
+    "0.000000000000000",
+    "1.438252434444351",
+    "0.000000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "2/9 + (2/9)*sqrt(5)",
+    "2/9 + (2/9)*sqrt(5)",
+    "2/9 + (2/9)*sqrt(5)"
+   ],
+   "decimal": [
+    "0.719126217222175",
+    "0.719126217222175",
+    "0.719126217222175"
+   ]
+  }
+ ],
+ "cell_volume": {
+  "exact": "512/729 + (256/729)*sqrt(5)",
+  "decimal": "1.487562966035591"
+ },
+ "pieces": [
+  {
+   "solid": "dicto-ogdoecontahedron",
+   "rotation": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "translation": [
+    "0",
+    "0",
+    "0"
+   ]
+  }
+ ],
+ "density": {
+  "exact": "9225/608 + (-3915/608)*sqrt(5)",
+  "decimal": "0.774332019882111",
+  "published_percent": "77.43",
+  "published_in": "#31, section on the single packings"
+ },
+ "note": "#31: every copy in the same orientation, touching eight neighbours through the eight hexagons that point to the corners of a cube; one of the OG's five such packings (here the cube of the joint directions (+-1, +-1, +-1)). Bond vectors t = 2 d n/|n|^2 for those hexagons (n.x = d); basis t0 + t1, t0 + t2, t0. The rest of space (22.57%) is empty: not a tiling.",
+ "credit": "DICTO",
+ "creator_mark": "Created by DICTO · dictospheres.com",
+ "licence": "CC BY-SA 4.0",
+ "checks": {
+  "density_exact_equals_published": true,
+  "no_overlaps_exact": true,
+  "verified_by": "check.py"
+ }
+}

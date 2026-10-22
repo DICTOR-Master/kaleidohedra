@@ -1,5 +1,6 @@
 # DICTO · dictospheres.com — writes index.csv, the inventory of DICTO's named shapes (2026-10-22).
 # Status wording follows DISCOVERIES.md (master) and the published papers; nothing here is a new claim.
+# One name per shape (DICTO 2026-10-23): the first name DICTO chose wins (Oktaktis, #43, is the Cleo-Icos, #29: one row).
 # kind: solid (one polyhedron), piece (a named piece of a kit/dissection), cluster (several solids as one named body or group),
 # compound, structure (a named nest, network, tiling or cycle), curved (not a polyhedron).
 import csv, json, os
@@ -70,7 +71,7 @@ R = [
  ('Monkey Staff', 'piece', 'F27', '27', NEW, 'Dharma piece name', '', ''),
  ('Shield', 'piece', 'F27', '28', NEW, 'pyramid on a truncated-icosahedron hexagon at the Hecatodihedron height', '', ''),
  ('DICTO Truncated-Icosahedral Hecatodihedron', 'solid', 'F28', '28', NEW, 'derived from a known solid (jtI with 12 five-fold corners cut flat; #28 V2); not found named', 'dicto-hecatodihedron', 'TRANS_DHARMA_80'),
- ('Cleo-Icos', 'piece', 'F29', '29', KN, 'the icosahedron\'s central face pyramid (classical shape; the name is DICTO\'s)', '', 'ICOSA_FACE_PYRAMID'),
+ ('Cleo-Icos', 'piece', 'F29', '29', KN, 'the icosahedron\'s central face pyramid (classical shape; the name is DICTO\'s); appears in #43 as the OTT\'s octahedral ray, there called Oktaktis (DICTO DOI: 10.5281/zenodo.23532013)', '', 'ICOSA_FACE_PYRAMID / OTT_CLEO_ICOS'),
  ('Kion', 'piece', 'F29', '29', NEW, 'not found', '', ''),
  ('Atraktos', 'piece', 'F29', '29', NEW, 'not found', '', ''),
  ('Aetos', 'piece', 'F29', '29', NEW, 'not found', '', ''),
@@ -78,7 +79,7 @@ R = [
  ('Sphenion', 'piece', 'F29', '29', NEW, 'hollow split is the shadow of Klitzing K-4.137', '', ''),
  ('DICTO Ogdoecontahedron (OG)', 'solid', 'F31', '31', NEW, 'face arrangement known (dual of L0(D), Antiprism); derived from the canonical pentakis dodecahedron (#31 V2)', 'dicto-ogdoecontahedron', ''),
  ('DICTO Hecatogdoecontahedron', 'compound', 'F31', '34a', NEW, 'core and hull as the classical TI-PD compound; components in this dataset', '', ''),
- ('DICTO OCD Stella', 'solid', 'F31a', '31a', NEW, 'not found', '', ''),
+ ('DICTO OCD Stella', 'solid', 'F31a', '31a', NEW, 'not found', 'dicto-ocd-stella', ''),
  ('DICTO Interlock set 1 and set 2 (piece sets)', 'structure', 'F33', '33', NEW, 'common refinement is standard', '', ''),
  ('Cleo star', 'cluster', 'F35', '35', NEW, 'not found', '', ''),
  ('DICTO Metaxyhexecontahedron', 'solid', 'F35', '35a', NEW, 'new as a named, distinguished member; the dodecahedron-icosahedron hull family is known', 'dicto-metaxyhexecontahedron', ''),
@@ -120,7 +121,6 @@ R = [
  ('Polar Cleo Towers (7 tower pieces + core ray)', 'piece', '', '43', NEW, 'not found', '', 'POLAR_TOWER_* / POLAR_CORE_RAY'),
  ('DICTO Hex Aktis', 'piece', '', '43', NEW, 'not found', '', 'HEX_AKTIS'),
  ('DICTO Deltoid Aktis', 'piece', '', '43', NEW, 'not found', '', 'DELTOID_AKTIS'),
- ('DICTO Oktaktis (OTT octahedral ray)', 'piece', '', '43', KN, 'exactly similar to the Cleo-Icos (#43)', '', 'OTT_CLEO_ICOS'),
  ('DICTO Triaktis (OTT triangle ray)', 'piece', '', '43', NEW, 'not found', '', 'OTT_TRIANGLE_RAY'),
  ('DICTO Tetraktis (OTT rhombic ray)', 'piece', '', '43', NEW, 'not found', '', 'OTT_RHOMBIC_RAY'),
  ('DICTO TQP-252', 'solid', '', '43', NEW, 'not found', '', ''),

@@ -3,8 +3,10 @@
 Created by DICTO · [dictospheres.com](https://dictospheres.com) · Licence CC BY-SA 4.0 · 2026-10-22
 
 Exact geometry of named convex and non-convex polyhedra found or named by DICTO (artist, Osaka), taken from his published papers
-and the Kaleidohedra findings archive, with lattice packings where a published result says the solid tiles space. Every number is
-exact in a real quadratic field (here always ℚ(√5)) and is re-proved by `check.py` from the data files alone.
+and the Kaleidohedra findings archive, with lattice packings where a published result says the solid tiles space, and the published
+packings that do not fill space. Every number is exact in a real quadratic field (here always ℚ(√5)) and is re-proved by `check.py`
+from the data files alone; the only exception is the unit-volume copy of each solid, whose scale is a cube root (stored exactly as a
+symbolic expression, with decimal corners).
 
 ## Contents
 
@@ -12,10 +14,12 @@ exact in a real quadratic field (here always ℚ(√5)) and is re-proved by `che
 |---|---|
 | `solids/<slug>.json` | one solid: exact corners, faces, f-vector, symmetry, exact volume, edge lengths, normalisation, source, published values, checks |
 | `solids/<slug>.off` | the same solid in standard OFF (15-decimal coordinates; same corner order and faces as the JSON) |
+| `solids/<slug>-unit-volume.off` | the same solid scaled to volume 1 (see Normalisation) |
 | `packings/<slug>.json` | a published space-filling: lattice vectors and the cell's pieces (solid + exact rotation + exact translation) |
+| `packings-nonfilling/<slug>.json` | a published packing that does not fill space: the same format, with `"kind": "packing, not a fill"` and the exact density |
 | `index.csv` | inventory of every named shape (also the ones not in this dataset), with status, finding, DICTO DOI, whether it is in the dataset and in Polyhedraverse |
 | `check.py` | standalone verifier (python3 + sympy) |
-| `build/` | the scripts that generated the files (`exactlib.py`, `build_og.py`, `build_pv.py`, `make_index.py`), their logs, and copied source data |
+| `build/` | the scripts that generated the files (`exactlib.py`, `build_og.py`, `build_pv.py`, `build_extra.py`, `make_index.py`), their logs, and copied source data |
 | `published/records.json` | the Zenodo records (latest versions) whose PDFs were used to check the published values |
 
 ## File format (solids)
@@ -29,6 +33,9 @@ exact in a real quadratic field (here always ℚ(√5)) and is re-proved by `che
 - `scale_note`: the normalisation (each solid is given in the frame of the paper it comes from, so published values can be compared
   directly); `source`: where the geometry was taken from (`Polyhedraverse` id, a Kaleidohedra study, or the paper's closed form);
   `published_values`: values stated in the published paper or archive at this scale, each re-checked by `check.py`.
+- `unit_volume`: the solid scaled to volume 1 (see Normalisation): `scale_exact` (sympy-parsable, `(V)**(-1/3)` with V the exact
+  volume), `scale_decimal`, `centre` (exact and decimal, with its kind), `vertices_decimal` (15 decimal places; same corner order and
+  faces as the solid).
 - `credit` "DICTO", `licence` "CC BY-SA 4.0".
 
 ## File format (packings)
@@ -36,12 +43,22 @@ exact in a real quadratic field (here always ℚ(√5)) and is re-proved by `che
 `lattice_vectors` (exact), `cell_volume`, and `pieces`: each piece is a solid of `solids/` mapped by `x -> R x + t` with exact `R`
 (orthogonal) and `t`. The pieces of one cell, repeated by the lattice, fill space.
 
+`packings-nonfilling/<slug>.json` has the same fields plus `kind` "packing, not a fill", `paper`, and `density`: `exact` (the published
+closed form), `decimal`, `published_percent` (as printed in the paper) and `published_in`. The pieces of one cell, repeated by the
+lattice, do not overlap; the rest of space is empty.
+
 ## Normalisation
 
 Each solid is in its source paper's frame (stated in `scale_note`), for example: the OG family of #38/#39 in the frame where the
 icosidodecahedron has circumradius φ; the DICTO Hecatodihedron in the #28 frame (truncated icosahedron of edge 1/φ); the DICTO
 Ogdoecontahedron in the #31 frame (the Hecatodihedron's polar in the unit sphere); the DBT and OTT in the #37 frame (rhombic
-triacontahedron of inradius 2/3); the parallelohedra with edge 1.
+triacontahedron of inradius 2/3); the parallelohedra with edge 1. The DICTO OCD Stella is in the OG's #31 frame, cut by the Voronoi
+cell of the OG's body-centred cubic packing whose joint hexagons point along (±1, ±1, ±1).
+
+Second common size, unit volume (DICTO 2026-10-23): every solid also carries a copy of volume 1, scaled by s = V^(-1/3) about its
+centre. The centre is the exact corner centroid: for 21 of the 23 solids this is the origin of the paper frame; the Dodeca-13 Wedge
+and Needle do not sit at the origin, so they are scaled about their corner centroid (stated in `unit_volume.centre.kind`). Cube roots
+leave ℚ(√5), so s is stored as an exact symbolic expression and the scaled corners as decimals (15 places, as everywhere else).
 
 ## How to verify
 
@@ -57,11 +74,17 @@ strictly convex polygon wound counter-clockwise from outside and every other cor
 counts, squared edge lengths; symmetry order, rotations, inversion and the Schoenflies symbol; and every recorded published value.
 For each packing: the cell volume, exact orthogonality of the rotations, the sum of piece volumes equals the cell volume exactly, and
 no two pieces overlap among all lattice translates that could meet (an exact separating plane for each such pair). Equal volume and
-no overlap prove that the pieces tile space. The OFF files are checked against the JSON.
+no overlap prove that the pieces tile space. For each non-filling packing: the kind, exact lattice vectors (decimals agree, nonzero
+cell), the cell volume, orthogonal rotations and convex pieces, density = sum of the piece volumes / cell volume exactly equal to the
+stated published closed form, its decimal (below 1), the published percentage equal to that decimal at the paper's precision, and no
+overlaps (the same separating-plane test). For each unit-volume copy: the scale is exactly (stated volume)^(-1/3) (checked to 50
+digits), the centre is the exact corner centroid, every decimal corner is centre + s (corner − centre) to 1e-14, and the decimal solid
+has volume 1 to 1e-12. The OFF files, plain and unit-volume, are checked against the JSON.
 
 Limits: for the non-convex DICTO Jewel the checks prove a closed, consistently outward-wound polyhedral surface with exact planar
 faces and the stated exact volume; freedom from self-intersection is not separately tested. The checker was also run on corrupted
-copies (a reversed face, a moved corner, a wrong group order, an extra overlapping piece) and failed each as it should.
+copies (a reversed face, a moved corner, a wrong group order, an extra overlapping piece; for the second pass, a shrunken
+non-filling lattice, a wrong published percentage and a moved unit-volume corner) and failed each as it should.
 
 ## Contents at a glance
 
@@ -76,6 +99,7 @@ copies (a reversed face, a moved corner, a wrong group order, an extra overlappi
 | DICTO Truncated-Icosahedral Hecatodihedron (DICTO Hecatodihedron, TIH) | F28 | #28 | 80, 180, 102 | Ih (120) | yes | -365/4 + (189/4)*sqrt(5) | `dicto-hecatodihedron` |
 | DICTO Jewel (EKP windows; first called Dragon Jewel) | F10 | #41 The DICTO Jewel | 38, 96, 60 | Th (24) | no | 3 + (3/2)*sqrt(5) | `dicto-jewel` |
 | DICTO KRE (Kite-Rhombic Enneacontahedron) | #39 (paper; no F number) | #39 The DICTO OG Family | 92, 180, 90 | Ih (120) | yes | 920/57 + (20/19)*sqrt(5) | `dicto-kre` |
+| DICTO OCD Stella | F31a | #31a The DICTO OCD Stella | 48, 96, 50 | Th (24) | yes | -4064/729 + (2240/729)*sqrt(5) | `dicto-ocd-stella` |
 | DICTO Metaxyhexecontahedron | F35 (paper #35a) | #35a | 32, 90, 60 | Ih (120) | yes | 410/27 + (550/81)*sqrt(5) | `dicto-metaxyhexecontahedron` |
 | DICTO Ogdoecontahedron (OG) | F31 | #31 | 102, 180, 80 | Ih (120) | yes | -1000/1539 + (1240/1539)*sqrt(5) | `dicto-ogdoecontahedron` |
 | DICTO OTT (Octahedrally Truncated Triacontahedron) | F37a | #37a (V3 for the OTT) | 24, 60, 38 | Th (24) | yes | -608/81 + (320/81)*sqrt(5) | `dicto-ott` |
@@ -92,6 +116,15 @@ copies (a reversed face, a moved corner, a wrong group order, an extra overlappi
 Packings: `dicto-skewed-rhombic-dodecahedron-lattice` (F1, DICTO FCC), `dicto-skewed-ed-16-lattice`, `dicto-skewed-ed-18-lattice` (F7):
 each solid tiles space by translation.
 
+Packings that do not fill space (`packings-nonfilling/`), each with its exact density as published:
+
+| packing | paper | lattice, pieces per cell | density (exact) | published |
+|---|---|---|---|---|
+| `dicto-ogdoecontahedron-bcc-packing` | #31 | body-centred cubic, 1 OG | (9225 − 3915√5)/608 | 77.43% |
+| `dicto-ocd-stella-bcc-packing` | #31a | the same body-centred cubic lattice, 1 OCD Stella | 151/2 − 267√5/8 | 87.12% |
+| `dicto-dbt-gyrated-octet-packing` | #37a | gyrated octet, 2 DBTs (a layer and its mirror-twin layer) | 493/6 − 73√5/2 | 55.02% |
+| `dicto-ott-octet-packing` | #37a | octet (face-centred cubic), 1 OTT | 176/3 − 26√5 | 52.89% |
+
 ## How to cite
 
 Cite this dataset and the source papers, each by its DICTO DOI (concept DOI, always the newest version):
@@ -100,6 +133,7 @@ Cite this dataset and the source papers, each by its DICTO DOI (concept DOI, alw
 - DICTO, *The DICTO Dodeca-13*: DICTO DOI: 10.5281/zenodo.23284281
 - DICTO, *The DICTO Truncated-Icosahedral Hecatodihedron* (#28): DICTO DOI: 10.5281/zenodo.23360857
 - DICTO, *The DICTO Ogdoecontahedron* (#31): DICTO DOI: 10.5281/zenodo.23404688
+- DICTO, *The DICTO OCD Stella* (#31a): DICTO DOI: 10.5281/zenodo.23430870
 - DICTO, *The DICTO Metaxyhexecontahedron* (#35a): DICTO DOI: 10.5281/zenodo.23430864
 - DICTO, *The DICTO Palintriacontahedron* (#35b): DICTO DOI: 10.5281/zenodo.23430866
 - DICTO, *The DICTO Ogdoecontahedron on the Gyrated Octet* (#37a; DBT, OTT): DICTO DOI: 10.5281/zenodo.23484012

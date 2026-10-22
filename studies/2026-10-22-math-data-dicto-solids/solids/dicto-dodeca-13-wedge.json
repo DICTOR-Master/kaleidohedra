@@ -166,6 +166,66 @@
   "exact": "1/10 + (1/20)*sqrt(5)",
   "decimal": "0.211803398874989"
  },
+ "unit_volume": {
+  "scale_exact": "(1/10 + (1/20)*sqrt(5))**(-1/3)",
+  "scale_decimal": "1.677602346717133",
+  "centre": {
+   "exact": [
+    "-1/4 + (-3/16)*sqrt(5)",
+    "-19/32 + (-7/32)*sqrt(5)",
+    "-27/32 + (-13/32)*sqrt(5)"
+   ],
+   "decimal": [
+    "-0.669262745781211",
+    "-1.082889870078079",
+    "-1.752152615859290"
+   ],
+   "kind": "corner centroid (mean of the corners; the frame origin is not the centre)"
+  },
+  "note": "x -> centre + s (x - centre), s = V^(-1/3) with V the exact volume above; cube roots leave Q(sqrt5), so s is symbolic and the corners are decimals (15 places, as elsewhere). Same corner order and faces as above; volume 1.",
+  "vertices_decimal": [
+   [
+    "-1.885800320835938",
+    "-1.462241264454902",
+    "-1.240586199698851"
+   ],
+   [
+    "-1.742515974544320",
+    "-1.694080206810551",
+    "-1.152031603634821"
+   ],
+   [
+    "-1.135553743541402",
+    "-1.462241264454902",
+    "-2.741079354287923"
+   ],
+   [
+    "-0.903714801185753",
+    "-1.837364553102170",
+    "-2.597795007996305"
+   ],
+   [
+    "-0.903714801185753",
+    "-0.623440091096336",
+    "-0.169946083984636"
+   ],
+   [
+    "0.310209660820081",
+    "-0.623440091096336",
+    "-2.597795007996305"
+   ],
+   [
+    "0.453494007111700",
+    "-0.855279033451985",
+    "-2.509240411932274"
+   ],
+   [
+    "0.453494007111700",
+    "-0.105032456157449",
+    "-1.008747257343202"
+   ]
+  ]
+ },
  "squared_edge_lengths": [
   {
    "exact": "7/10 + (-3/10)*sqrt(5)",
@@ -200,6 +260,7 @@
   "volume_positive_exact": true,
   "convex": true,
   "symmetry_order_exact": 4,
-  "verified_by": "check.py (python3 + sympy), re-run from this file alone"
+  "verified_by": "check.py (python3 + sympy), re-run from this file alone",
+  "unit_volume": "decimal unit-volume copy has volume 1 (1e-12) and is the solid scaled by s (check.py)"
  }
 }

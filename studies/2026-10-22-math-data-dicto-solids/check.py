@@ -15,6 +15,13 @@
 #             the boxes are apart exactly too) or an exact separating plane is found (separating-axis theorem for convex polyhedra:
 #             face normals of either piece and cross products of edge directions). Volume sum = cell volume plus no overlap
 #             proves that the translates fill space (a tiling).
+#   packings-nonfilling: published packings that do NOT fill space: lattice vectors exact (decimals agree, nonzero cell); cell volume as
+#             stated; rotations exactly orthogonal, pieces convex; density = sum of the piece volumes / cell volume, exactly, equal to the
+#             stated exact density (the published closed form) and its decimal, and the published percentage equals that decimal at the
+#             published precision; no two pieces overlap (same exact separating-plane test as above).
+#   unit volume: for every solid, the stated scale is exactly (stated volume)^(-1/3) (checked to 50 digits), the centre is the exact
+#             corner centroid, every decimal unit-volume corner is centre + s (corner - centre) (1e-14), and the decimal unit-volume solid
+#             has volume 1 (1e-12); the *-unit-volume.off files match.
 # Usage: python3 check.py            (prints a PASS/FAIL table; exit code 0 only if everything passes)
 import glob, itertools, json, math, os, sys
 from fractions import Fraction as Fr
@@ -213,7 +220,32 @@ def check_solid(path):
             elif k == 'squared_edge_lengths': ok &= {parse(x, d) for x in v} == set(el)
             elif k == 'symmetry_order': ok &= v == order
         rec(slug, 'agrees with the published values recorded (' + ', '.join(pub) + ')', ok)
+    if 'unit_volume' in doc: check_unit_volume(slug, doc, V, F, vol, d)
     return V, F, vol, d
+
+
+def check_unit_volume(slug, doc, V, F, vol, d):
+    import mpmath
+    mpmath.mp.dps = 60
+    uv = doc['unit_volume']; Z = QF(0, 0, d)
+    e = sympy.sympify(uv['scale_exact']); Vs = sympy.sympify(doc['volume']['exact'])
+    rec(slug, 'unit volume: scale_exact = (stated volume)^(-1/3) (50 digits)', vol == parse(doc['volume']['exact'], d) and
+        e.free_symbols == set() and abs(sympy.N(e ** -3 - Vs, 60)) < sympy.Float('1e-50'), uv['scale_exact'])
+    s = mpmath.mpf(str(sympy.N(e, 60)))
+    rec(slug, 'unit volume: scale decimal agrees (1e-14)', abs(float(uv['scale_decimal']) - float(s)) < 1e-14)
+    c = tuple(sum((v[k] for v in V), Z) / len(V) for k in range(3))
+    rec(slug, 'unit volume: centre = exact corner centroid; decimals agree', tuple(parse(x, d) for x in uv['centre']['exact']) == c and
+        all(abs(float(a) - x.f()) < 1e-14 for a, x in zip(uv['centre']['decimal'], c)))
+    mq = lambda x: mpmath.mpf(x.a.numerator) / x.a.denominator + mpmath.mpf(x.b.numerator) / x.b.denominator * mpmath.sqrt(d)
+    W = [[float(x) for x in w] for w in uv['vertices_decimal']]
+    rec(slug, 'unit volume: every corner = centre + s (corner - centre) (1e-14)', len(W) == len(V) and
+        all(abs(W[i][k] - float(mq(c[k]) + s * (mq(V[i][k]) - mq(c[k])))) < 1e-14 for i in range(len(V)) for k in range(3)))
+    vu = 0.0
+    for f in F:
+        for k in range(1, len(f) - 1):
+            a, b, cc = W[f[0]], W[f[k]], W[f[k + 1]]
+            vu += a[0] * (b[1] * cc[2] - b[2] * cc[1]) + a[1] * (b[2] * cc[0] - b[0] * cc[2]) + a[2] * (b[0] * cc[1] - b[1] * cc[0])
+    rec(slug, 'unit volume: the decimal unit-volume solid has volume 1 (1e-12)', abs(vu / 6 - 1) < 1e-12, f'{vu / 6:.15f}')
 
 
 def emax(L):
@@ -244,9 +276,13 @@ def sat_disjoint(A, B):
     return False
 
 
-def check_packing(path, solids):
+def check_packing(path, solids, filling=True):
     doc = json.load(open(path)); slug = os.path.basename(path)[:-5]; d = field_of(doc)
     L = [tuple(parse(x, d) for x in v['exact']) for v in doc['lattice_vectors']]
+    if not filling:
+        rec(slug, 'kind: "packing, not a fill"', doc.get('kind') == 'packing, not a fill')
+        rec(slug, 'lattice vectors exact; decimals agree (1e-14); cell nonzero', det3(*L).sign() != 0 and
+            all(abs(float(a) - x.f()) < 1e-14 for v, w in zip(doc['lattice_vectors'], L) for a, x in zip(v['decimal'], w)))
     cv = det3(*L); cv = cv if cv.sign() > 0 else -cv
     rec(slug, 'cell volume |det(lattice)| as stated', cv.sign() > 0 and cv == parse(doc['cell_volume']['exact'], d), doc['cell_volume']['exact'])
     pieces = []; vsum = QF(0, 0, d); orth = True
@@ -261,14 +297,27 @@ def check_packing(path, solids):
         if not json.load(open(os.path.join(HERE, 'solids', p['solid'] + '.json'))).get('convex'): orth = False
         pieces.append((W, FF)); vsum = vsum + vol
     rec(slug, 'piece rotations exactly orthogonal; pieces convex', orth)
-    rec(slug, 'sum of piece volumes = cell volume (exact)', vsum == cv)
+    if filling:
+        rec(slug, 'sum of piece volumes = cell volume (exact)', vsum == cv)
+    else:
+        dens = vsum / cv; st = doc['density']
+        rec(slug, 'density = sum of piece volumes / cell volume, exactly the stated (published) closed form', dens == parse(st['exact'], d), st['exact'])
+        rec(slug, 'stated density decimal agrees (1e-14); below 1 (not a fill)', abs(float(st['decimal']) - dens.f()) < 1e-14 and (dens - 1).sign() < 0)
+        pp = st['published_percent']; places = len(pp.split('.')[1]) if '.' in pp else 0
+        rec(slug, f'published percentage {pp}% = the exact density rounded to {places} places', f'{dens.f() * 100:.{places}f}' == pp, f'{dens.f() * 100:.6f}%')
+    ok, nexact = no_overlaps(L, pieces, d)
+    rec(slug, f'no overlaps: {nexact} nearby piece pairs each separated by an exact plane', ok)
+    if filling: rec(slug, 'volume sum = cell volume and no overlaps => the pieces tile space', ok and vsum == cv)
+
+
+def no_overlaps(L, pieces, d):
     # all translates that could meet: lattice combinations with |t| <= 2 * max radius (+ margin)
     Lf = [[x.f() for x in v] for v in L]
     rad = max(max(math.dist([x.f() for x in w], [0, 0, 0]) for w in W) for W, _ in pieces)
     G = [[sum(Lf[i][k] * Lf[j][k] for k in range(3)) for j in range(3)] for i in range(3)]
     # bound on coefficients: |c_i| <= (2 rad + 1e-6) * sqrt((G^-1)_ii)
     Gs = sympy.Matrix(G).inv(); K = [int(math.ceil((2 * rad + 1e-6) * math.sqrt(float(Gs[i, i])))) for i in range(3)]
-    ok = True; npairs = 0; nexact = 0
+    ok = True; nexact = 0
     for c in itertools.product(*[range(-k, k + 1) for k in K]):
         t = tuple(sum((L[i][k] * c[i] for i in range(3)), QF(0, 0, d)) for k in range(3))
         for i, (WA, FA) in enumerate(pieces):
@@ -277,10 +326,9 @@ def check_packing(path, solids):
                 WBt = [tuple(w[k] + t[k] for k in range(3)) for w in WB]
                 fa = [[x.f() for x in w] for w in WA]; fb = [[x.f() for x in w] for w in WBt]
                 if any(min(q[k] for q in fb) - max(p[k] for p in fa) > 1e-9 or min(p[k] for p in fa) - max(q[k] for q in fb) > 1e-9 for k in range(3)): continue
-                npairs += 1; nexact += 1
+                nexact += 1
                 if not sat_disjoint((WA, FA), (WBt, FB)): ok = False
-    rec(slug, f'no overlaps: {nexact} nearby piece pairs each separated by an exact plane', ok)
-    rec(slug, 'volume sum = cell volume and no overlaps => the pieces tile space', ok and vsum == cv)
+    return ok, nexact
 
 
 def main():
@@ -291,13 +339,18 @@ def main():
     for p in sorted(glob.glob(os.path.join(HERE, 'packings', '*.json'))):
         try: check_packing(p, solids)
         except Exception as e: rec(os.path.basename(p)[:-5], 'checks ran', False, repr(e))
+    for p in sorted(glob.glob(os.path.join(HERE, 'packings-nonfilling', '*.json'))):
+        try: check_packing(p, solids, filling=False)
+        except Exception as e: rec(os.path.basename(p)[:-5], 'checks ran', False, repr(e))
     # also the OFF files: same corners (decimals) and faces as the JSON
     for p in sorted(glob.glob(os.path.join(HERE, 'solids', '*.off'))):
-        slug = os.path.basename(p)[:-4]; doc = json.load(open(p[:-4] + '.json'))
+        unit = p.endswith('-unit-volume.off'); slug = os.path.basename(p)[:-(len('-unit-volume.off') if unit else 4)]
+        doc = json.load(open(os.path.join(HERE, 'solids', slug + '.json')))
         lines = [l for l in open(p).read().split('\n') if l and not l.startswith('#')]
         nv, nf, _ = map(int, lines[1].split())
         vs = [list(map(float, l.split())) for l in lines[2:2 + nv]]; fs = [list(map(int, l.split()))[1:] for l in lines[2 + nv:2 + nv + nf]]
-        rec(slug, 'OFF file matches the JSON', lines[0] == 'OFF' and fs == doc['faces'] and all(abs(a - float(b)) < 1e-14 for v, w in zip(vs, doc['vertices']) for a, b in zip(v, w['decimal'])))
+        ref = doc['unit_volume']['vertices_decimal'] if unit else [w['decimal'] for w in doc['vertices']]
+        rec(slug, ('unit-volume ' if unit else '') + 'OFF file matches the JSON', lines[0] == 'OFF' and len(vs) == len(ref) and fs == doc['faces'] and all(abs(a - float(b)) < 1e-14 for v, w in zip(vs, ref) for a, b in zip(v, w)))
     items = {}
     for it, t, ok, note in RESULTS: items.setdefault(it, []).append(ok)
     w = max(len(i) for i in items)
@@ -307,7 +360,8 @@ def main():
     bad = [(it, t, note) for it, t, ok, note in RESULTS if not ok]
     for it, t, note in bad: print('FAIL', it, '-', t, note)
     print(f'TOTAL: {len(RESULTS)} checks, {len(RESULTS) - len(bad)} passed, {len(bad)} failed; '
-          f'{len(solids)} solids, {len(glob.glob(os.path.join(HERE, "packings", "*.json")))} packings')
+          f'{len(solids)} solids, {len(glob.glob(os.path.join(HERE, "packings", "*.json")))} packings (fills), '
+          f'{len(glob.glob(os.path.join(HERE, "packings-nonfilling", "*.json")))} packings (not fills)')
     if '-v' in sys.argv:
         for it, t, ok, note in RESULTS: print('PASS' if ok else 'FAIL', it, '|', t, '|', note)
     sys.exit(0 if not bad else 1)
