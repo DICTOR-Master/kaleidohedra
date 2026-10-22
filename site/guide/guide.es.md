@@ -71,6 +71,7 @@ Las piezas se colorean según el ajuste **Colores** (en Ajustes): **Cian** (toda
 | Lattice View | Tu construcción y todos los huecos libres un paso más allá, para la pieza elegida | Toca el botón Lattice View para recorrer las piezas |
 | X-Ray | Un corte. Arrastra el plano a través de la estructura, también en diagonal o, en los mundos icosaédricos, a lo largo de un eje de orden 5, 3 o 2 (Ajustes → Vista de sección). El corte se ve desde el lado recortado: gira la vista o usa Invertir | Botón X-Ray (⛶) |
 | Spherical | Toca para cambiar: cada pieza como una esfera (los RD enteros tocan a sus doce vecinos), luego los huecos entre RD enteros (octaédricos en oro, tetraédricos en rosa, solo donde están cerrados) con todas las esferas tenues. Un control deslizante da tamaño a todas las esferas (se detiene en el tamaño propio de cada forma; menos = separadas, más = solapadas). Con Lattice View activo, cada hueco libre de la red se ve como una esfera tenue. Solo una vista | Botón Spherical (◯): apagado → esferas → huecos |
+| Soft | Cada cara plana abombada en un casquete suave, con un acabado: Liso, Metálico o Cerámica. El deslizador Suavidad (abajo, solo con Suave activado) ajusta cuánto. Solo vista: las piezas de debajo siguen igual para tocar y encajar. En Polyhedraverse y las redes 3D | El botón Soft (un cuadrado abombado) en la columna de herramientas |
 | Duality | El teselado aperiódico que proyecta esta estructura cristalina | Botón Duality (◐) |
 | Dualize | Intercambia FCC y BCC | Ajustes → Dualize Preview |
 
@@ -267,6 +268,7 @@ Arriba del bloque de Polyhedraverse en DICTO, **buscar** encuentra formas por no
 | Familia | Qué contiene |
 |---|---|
 | DICTO's pieces | Lo propio de DICTO, primero: las familias DICTO Hexa y DICTO Dodeca-13, la joya DICTO y sus racimos, los racimos Sunstar, los bloques de DICTO y sus celdas sesgadas |
+| Reuleaux Platonic Solids (#45) | Idea de DICTO, artículo #45 (DICTO DOI 10.5281/zenodo.23529499): para cada sólido platónico, la parte común de bolas en sus vértices con radio el diámetro del sólido: tetraedro, octaedro, cubo, icosaedro y dodecaedro de Reuleaux. Se dibujan lisos con sus costuras; encajan cara a cara por sus esquinas, en cualquier triángulo, cuadrado o pentágono de lado 1. La película, de bolas a cuerpo, está en el mundo Reuleaux de Kaleidohedra |
 | Deltahedra | Los 8 sólidos convexos hechos solo de triángulos equiláteros |
 | Platonic | Los 5 sólidos regulares |
 | Archimedean | Los 13 sólidos semirregulares |
@@ -337,6 +339,7 @@ Una columna de botones en la esquina superior derecha, del color de la app en cu
 | ⛶ | X-Ray |
 | ◐ | Duality |
 | ◯ | Spherical (apagado → esferas → huecos) |
+| Cuadrado abombado | Soft: Plano o Suave, y Liso, Metálico o Cerámica |
 | ⊘ | Clear World |
 | ↻ | Recargar (úsalo si algo parece atascado) |
 

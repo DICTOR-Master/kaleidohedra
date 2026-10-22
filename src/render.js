@@ -109,6 +109,7 @@ import { ICOSA_SOLIDS } from './krp-core/src/geometry-extensions/icosa.js';
 import { createTargetsWorld } from './app/world-targets.js';
 import { zonohedron as targetZonohedron, EMBLEM_DIRECTIONS } from './krp-core/src/geometry-extensions/targets.js';
 import { cellCorners } from './krp-core/src/geometry-extensions/kaleido-lattice.js';
+import { mountSoftControls, createSoftTwins, initSoftEnvironment, softActive, softStats } from './app/soft-finish.js';
 
 const SCALE = 1;
 // Hex Prism: no special proportion is required for a plain hex-prism
@@ -190,6 +191,7 @@ const qcWorlds = new Map();
 let shellsWorld = null;
 let goldenWorld = null;
 let polyWorld = null; // Polyhedraverse's space (step D2)
+let softFrame = null; // Soft (soft-finish.js): the button's place and the lattice cells' puffed copies, each frame
 let roofFoldWorld = null;
 let sunstarWorld = null;
 let studiesWorld = null; // Kaleidohedra's Studies
@@ -6052,6 +6054,26 @@ async function init() {
       : colorView.mode === 'pick' && material ? materialColor(material) : new THREE.Color(theme().pieceHex)),
     onChange: () => { if (historyRestorers.has('worldpoly')) recordHistory('worldpoly', polyWorld.snapshot()); },
   });
+  // Soft (DICTO 2026-10-21): puffed faces and a finish, for Polyhedraverse's pieces (world-poly.js draws its own) and the
+  // lattice worlds' 3D cells (a puffed copy over each piece mesh, the real one kept for taps). Not in the other own worlds
+  // (their own drawing), 1D, 2D, 4D-6D, Spherical or Skeleton: the button goes there.
+  initSoftEnvironment(renderer);
+  const softUi = mountSoftControls({ tools: document.getElementById('hud-tools'), before: document.getElementById('clear-world-toggle'), showHudPrompt });
+  const softTwins = createSoftTwins();
+  const softTargets = () => {
+    const out = [mesh, bccMesh, elongDodecaMesh, hexPrismMesh, dictoFccMesh, dictoHexMesh, ...siteAllMeshes(), ...dictoBlockMeshes, rhombohedraMesh, ...pyrochloreAllMeshes, cuboctaMesh, octGapMesh]
+      .filter((m) => m.visible && m.count > 0);
+    if (partialCellGroup.visible) for (const { mesh: m } of partialCellMeshes.values()) { if (m.isGroup) out.push(...m.children.filter((c) => c.isMesh)); else if (m.isMesh) out.push(m); }
+    return out;
+  };
+  softFrame = () => {
+    const lattice = !own3DActive() && (activeDimension ?? '3D') === '3D' && sphericalState === 'off' && worldViewMode !== 'skeleton';
+    const polyHere = own3DActive() && own3D === 'poly';
+    softUi.setApplies(polyHere ? !!polyWorld?.softApplies() : lattice);
+    const on = lattice && softActive();
+    softTwins.sync(on ? softTargets() : [], on);
+  };
+  if (new URLSearchParams(location.search).has('probe')) window.__softProbe = () => ({ twins: softTwins.size, applies: softUi.applies, made: softStats.made });
   // A read-only probe for the browser tests (tests/browser/poly), only with ?probe in the address:
   // Polyhedraverse's build, and where on screen a piece's face or corner is (the faces turned most
   // towards the camera first), so a test can tap the real canvas.
@@ -7076,6 +7098,7 @@ function animate() {
     // X-ray solid infill: every solid the plane cuts shows a filled face in its own colour (DICTO 2026-10-17)
     xrayCaps ??= createXrayCaps({ scene, plane: sectionPlane });
     { const n = xrayCaps.update(); if (document.body.dataset.xrayCaps !== String(n)) document.body.dataset.xrayCaps = String(n); } // filled solids, read by tests // capped solids, read by tests
+    softFrame?.();
     if (projection === 'reverse') applyReverse();
     renderer.render(scene, camera);
   }

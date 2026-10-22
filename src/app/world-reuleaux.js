@@ -9,7 +9,8 @@
 //     convex, so neighbours overlap in a lens (DICTO: the look). Each body is drawn at the size where its face corners are 1 apart, so
 //     every three-cornered face takes every three-cornered body. When the chosen body doesn't fit a face, the ones that do are offered
 //     (no arrows). Long-press (Remove) takes one away; undo and clear as usual.
-// Data: reuleaux-data.js (scripts/build-reuleaux-data.py), loaded on first entry and let go on leaving. Words: i18n rl.*.
+// Data: the film in reuleaux-data.js (scripts/build-reuleaux-data.py), loaded on first entry and let go on leaving; the five bodies
+// (mesh, patches, corners) from krp-core's reuleaux-bodies.js, shared with Polyhedraverse's Reuleaux Platonic Solids family. Words: i18n rl.*.
 import * as THREE from 'three';
 import { ROOF_FOLD_WORLD_SCALE as WS } from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { t } from './i18n.js';
@@ -17,6 +18,7 @@ import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey, theme } from './site.js';
 import { createInfinityPlayer } from './infinity-player.js';
+import { REULEAUX_RAW } from '../krp-core/src/polyhedra/reuleaux-bodies.js';
 
 export const REULEAUX_KEYS = ['tetrahedron', 'octahedron', 'cube', 'icosahedron', 'dodecahedron'];
 const EDGE_COLOR = 0x0b1220;
@@ -77,10 +79,12 @@ export function createReuleauxWorld({ scene, fitView = () => {}, showHudPrompt =
   const bodies = new Map(), frameCache = new Map();
   const load = () => (loading ??= import('./reuleaux-data.js').then((m) => {
     DATA = m.default;
-    for (const B of DATA.bodies) bodies.set(B.key, B);
+    // each body: the film's balls and frames here, its mesh, corners and faces from krp-core (one copy, Polyhedraverse's too)
+    for (const B of DATA.bodies) bodies.set(B.key, { ...B, ...REULEAUX_RAW.find((x) => x.key === B.key) });
   }));
   const bodyMesh = (B) => (B._mesh ??= decode(B.body, DATA.Q));
-  const frames = (B) => { if (!frameCache.has(B.key)) frameCache.set(B.key, B.frames.map((f) => decode(f, DATA.Q))); return frameCache.get(B.key); };
+  // the last frame (radius D) is the body itself
+  const frames = (B) => { if (!frameCache.has(B.key)) frameCache.set(B.key, B.frames.map((f) => (f.v ? decode(f, DATA.Q) : bodyMesh(B)))); return frameCache.get(B.key); };
   function releaseData() {
     for (const B of bodies.values()) if (B._mesh) { B._mesh.geometry.dispose(); B._mesh.seams.dispose(); delete B._mesh; }
     for (const list of frameCache.values()) for (const f of list) { f.geometry.dispose(); f.seams.dispose(); }

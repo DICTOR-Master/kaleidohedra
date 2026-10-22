@@ -71,6 +71,7 @@ Les pièces sont colorées selon le réglage **Couleurs** (dans Réglages) : **C
 | Lattice View | Votre construction et chaque emplacement libre un cran plus loin, pour la pièce choisie | Touchez le bouton Lattice View pour parcourir les pièces |
 | X-Ray | Une coupe. Faites glisser le plan à travers la structure, y compris en diagonale ou, dans les mondes icosaédriques, le long d’un axe d’ordre 5, 3 ou 2 (Paramètres → Vue en coupe). La coupe se voit du côté retiré : tournez la vue ou utilisez Retourner | Bouton X-Ray (⛶) |
 | Spherical | Touchez pour alterner : chaque pièce en sphère (les RD entiers touchent leurs douze voisins), puis les vides entre RD entiers (octaédriques en or, tétraédriques en rose, seulement là où ils sont fermés), toutes les sphères rendues pâles. Un curseur règle la taille de toutes les sphères (cran à la taille propre de chaque forme ; en dessous = écartées, au-delà = qui se chevauchent). Avec Lattice View activé, chaque place libre du réseau apparaît comme une sphère pâle. Une vue seulement | Bouton Spherical (◯) : éteint → sphères → vides |
+| Soft | Chaque face plane bombée en une calotte douce, avec une finition : Uni, Métallique ou Céramique. Le curseur Douceur (en bas, seulement quand Soft est actif) règle combien. Vue seulement : les pièces dessous restent telles quelles pour toucher et emboîter. Dans Polyhedraverse et les réseaux 3D | Le bouton Soft (un carré bombé) dans la colonne d'outils |
 | Duality | Le pavage apériodique que projette cette structure cristalline | Bouton Duality (◐) |
 | Dualize | Échange FCC et BCC | Paramètres → Dualize Preview |
 
@@ -267,6 +268,7 @@ En haut du bloc Polyhedraverse dans DICTO, **chercher** trouve des formes par no
 | Famille | Contenu |
 |---|---|
 | DICTO's pieces | Les créations de DICTO, en tête : les familles DICTO Hexa et DICTO Dodeca-13, le joyau DICTO et ses grappes, les grappes Sunstar, les blocs de DICTO et ses cellules biaisées |
+| Reuleaux Platonic Solids (#45) | Idée de DICTO, article #45 (DICTO DOI 10.5281/zenodo.23529499) : pour chaque solide de Platon, la partie commune de boules sur ses sommets de rayon le diamètre du solide : tétraèdre, octaèdre, cube, icosaèdre et dodécaèdre de Reuleaux. Dessinés lisses avec leurs coutures ; ils s'assemblent face à face par leurs coins, sur tout triangle, carré ou pentagone de côté 1. Le film, des boules au corps, est dans le monde Reuleaux de Kaleidohedra |
 | Deltahedra | Les 8 solides convexes faits uniquement de triangles équilatéraux |
 | Platonic | Les 5 solides réguliers |
 | Archimedean | Les 13 solides semi-réguliers |
@@ -337,6 +339,7 @@ Une colonne de boutons dans le coin supérieur droit, de la couleur de l'appli d
 | ⛶ | X-Ray |
 | ◐ | Duality |
 | ◯ | Spherical (éteint → sphères → vides) |
+| Carré bombé | Soft : Plat ou Doux, et Uni, Métallique ou Céramique |
 | ⊘ | Clear World |
 | ↻ | Recharger (si quelque chose semble bloqué) |
 
