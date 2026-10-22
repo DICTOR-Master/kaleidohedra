@@ -39,18 +39,21 @@ for (const w of ['D', 'I']) { await page.locator(`[data-pm-world="${w}"]`).tap()
 assert.equal(await mix(), 'DI');
 await go(page, 'site=kaleidohedra&open=platonicMix&probe');
 assert.equal(await asked(page), 1, 'saved build: asked first');
+assert.equal(await page.evaluate(() => window.__sceneHidden()), true, 'the saved build is out of sight while asked');
 console.log('prompt:', await page.textContent('#leave-title'), '|', await page.textContent('#leave-body'));
 await page.screenshot({ path: `${SH}/fresh-prompt.png` });
 const box = await page.locator('#leave-dialog [data-choice="fresh"]').boundingBox();
 assert.ok(box.height >= 48, 'big buttons');
 await page.tap('#leave-dialog [data-choice="fresh"]'); await page.waitForTimeout(800);
 assert.equal(await mix(), '', 'Start fresh: empty');
+assert.equal(await page.evaluate(() => window.__sceneHidden()), false, 'Start fresh: the world shown, empty');
 await page.tap('#undo-btn'); await page.waitForTimeout(800);
 assert.equal(await mix(), 'DI', '↶ brings it back');
 await go(page, 'site=kaleidohedra&open=platonicMix&probe');
 assert.equal(await asked(page), 1);
 await page.tap('#leave-dialog [data-choice="continue"]'); await page.waitForTimeout(600);
 assert.equal(await mix(), 'DI', 'Continue: the build');
+assert.equal(await page.evaluate(() => window.__sceneHidden()), false, 'Continue: shown');
 assert.equal(await page.locator('#leave-dialog').isHidden(), true);
 // a link that opens a mix is not a saved build
 await page.evaluate(() => localStorage.clear());

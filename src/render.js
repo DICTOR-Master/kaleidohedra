@@ -4804,7 +4804,11 @@ async function init() {
       const saved = keys.filter((k) => holdsBuild(k, entered.before?.get(k)));
       if (!saved.length) return;
       entered.asking = true;
+      // The saved build stays out of sight until a choice is made (DICTO): the camera sees nothing behind the panel.
+      const layersBefore = camera.layers.mask;
+      camera.layers.mask = 0;
       const choice = await askChoice('fresh', ['continue', 'fresh']);
+      camera.layers.mask = layersBefore;
       entered.asking = false;
       if (choice === 'fresh' && worldNow === entered) {
         for (const k of saved) { const r = historyRestorers.get(k); r.fresh(); recordHistory(k, r.get()); }
@@ -6051,6 +6055,8 @@ async function init() {
     // The Reuleaux world's build: where on screen each face mid-point of the last piece is, turned towards the camera first.
     window.__aristotleProbe = () => aristotleWorld?.probe?.() ?? null;
     window.__platonicMixProbe = () => platonicMixWorld?.probe?.() ?? null;
+    // the fresh-start question: is the scene out of sight (the camera sees no layer)?
+    window.__sceneHidden = () => camera.layers.mask === 0;
     // Every Mix's Build it yourself: where on screen the ghost nearest the eye is.
     window.__platonicMixGhostAt = (k = 0) => { const p = platonicMixWorld?.ghostPoint?.(camera.position, k); return p ? toScreen(new THREE.Vector3(...p)) : null; };
     window.__reuleauxProbe = () => {
