@@ -1,0 +1,50 @@
+P triangles 6 volume 0.2357
+Q triangles 4 volume 0.02946
+Q′ triangles 4 volume 0.18692
+A triangles 6 volume 0.13484
+S triangles 36 volume 0.80902
+X triangles 16 volume 3.66489
+Y triangles 16 volume 4.80724
+tetrahedron at the 4 corners of a tetrahedron: 4 faces = 4×triangle; edges 2.000..2.000
+tetrahedron at the 4 corners of a tetrahedron (turned): 14 faces = 8×triangle + 6×quad; edges 1.000..1.000  EQUAL
+tetrahedron at the 8 corners of a cube: 10 faces = 4×triangle + 6×hexagon; edges 1.000..1.000  EQUAL
+tetrahedron at the 6 corners of an octahedron: 8 faces = 4×triangle + 4×hexagon; edges 1.000..1.000  EQUAL
+tetrahedron at the 12 corners of an icosahedron: 26 faces = 16×triangle + 6×quad + 4×hexagon; edges 1.000..1.000  EQUAL
+tetrahedron at the 20 corners of a dodecahedron: 34 faces = 4×triangle + 18×quad + 12×pentagon; edges 1.000..1.000  EQUAL
+cube at the 4 corners of a tetrahedron: 10 faces = 4×triangle + 6×hexagon; edges 1.000..1.000  EQUAL
+cube at the 8 corners of a cube: 6 faces = 6×quad; edges 2.000..2.000
+cube at the 8 corners of a cube (turned): 6 faces = 6×quad; edges 2.000..2.000
+cube at the 6 corners of an octahedron: 26 faces = 8×triangle + 18×quad; edges 1.000..1.000  EQUAL
+cube at the 12 corners of an icosahedron: 26 faces = 8×triangle + 18×quad; edges 1.000..2.000
+cube at the 12 corners of an icosahedron (turned): 26 faces = 8×triangle + 18×quad; edges 1.000..2.000
+cube at the 20 corners of a dodecahedron: 18 faces = 6×quad + 12×hexagon; edges 1.000..2.000
+cube at the 20 corners of a dodecahedron (turned): 18 faces = 6×quad + 12×hexagon; edges 1.000..2.000
+octahedron at the 4 corners of a tetrahedron: 8 faces = 4×triangle + 4×hexagon; edges 1.000..1.000  EQUAL
+octahedron at the 8 corners of a cube: 26 faces = 8×triangle + 18×quad; edges 1.000..1.000  EQUAL
+octahedron at the 6 corners of an octahedron: 8 faces = 8×triangle; edges 2.000..2.000
+octahedron at the 6 corners of an octahedron (turned): 8 faces = 8×triangle; edges 2.000..2.000
+octahedron at the 12 corners of an icosahedron: 20 faces = 12×triangle + 8×hexagon; edges 1.000..1.000  EQUAL
+octahedron at the 20 corners of a dodecahedron: 44 faces = 8×triangle + 24×quad + 12×pentagon; edges 1.000..1.000  EQUAL
+icosahedron at the 4 corners of a tetrahedron: 26 faces = 16×triangle + 6×quad + 4×hexagon; edges 1.000..1.000  EQUAL
+icosahedron at the 8 corners of a cube: 26 faces = 8×triangle + 18×quad; edges 1.000..2.000
+icosahedron at the 8 corners of a cube (turned): 26 faces = 8×triangle + 18×quad; edges 1.000..2.000
+icosahedron at the 6 corners of an octahedron: 20 faces = 12×triangle + 8×hexagon; edges 1.000..1.000  EQUAL
+icosahedron at the 12 corners of an icosahedron: 20 faces = 20×triangle; edges 2.000..2.000
+icosahedron at the 12 corners of an icosahedron (turned): 38 faces = 24×triangle + 6×quad + 8×hexagon; edges 1.000..1.000  EQUAL
+icosahedron at the 20 corners of a dodecahedron: 56 faces = 8×triangle + 36×quad + 12×pentagon; edges 1.000..2.000
+icosahedron at the 20 corners of a dodecahedron (turned): 62 faces = 20×triangle + 30×quad + 12×pentagon; edges 1.000..1.000  EQUAL
+dodecahedron at the 4 corners of a tetrahedron: 34 faces = 4×triangle + 18×quad + 12×pentagon; edges 1.000..1.000  EQUAL
+dodecahedron at the 8 corners of a cube: 18 faces = 6×quad + 12×hexagon; edges 1.000..2.000
+dodecahedron at the 8 corners of a cube (turned): 18 faces = 6×quad + 12×hexagon; edges 1.000..2.000
+dodecahedron at the 6 corners of an octahedron: 44 faces = 8×triangle + 24×quad + 12×pentagon; edges 1.000..1.000  EQUAL
+dodecahedron at the 12 corners of an icosahedron: 56 faces = 8×triangle + 36×quad + 12×pentagon; edges 1.000..2.000
+dodecahedron at the 12 corners of an icosahedron (turned): 62 faces = 20×triangle + 30×quad + 12×pentagon; edges 1.000..1.000  EQUAL
+dodecahedron at the 20 corners of a dodecahedron: 12 faces = 12×pentagon; edges 2.000..2.000
+dodecahedron at the 20 corners of a dodecahedron (turned): 78 faces = 54×quad + 24×pentagon; edges 1.000..1.000  EQUAL
+-- cube turned against the icosahedron and dodecahedron
+cube turned 45° about a cube axis at the corners of an icosahedron: 28 faces = 8×triangle + 10×quad + 8×pentagon + 2×hexagon; edges 1.000..2.000
+cube turned 60° about a body diagonal at the corners of an icosahedron: 44 faces = 20×triangle + 24×quad; edges 1.000..1.000  EQUAL
+cube turned the five-fold-compatible turn (cube of the compound of five) at the corners of an icosahedron: 26 faces = 8×triangle + 18×quad; edges 1.000..2.000
+cube turned 45° about a cube axis at the corners of a dodecahedron: 36 faces = 22×quad + 8×pentagon + 6×hexagon; edges 1.000..2.000
+cube turned 60° about a body diagonal at the corners of a dodecahedron: 48 faces = 36×quad + 12×pentagon; edges 1.000..1.000  EQUAL
+cube turned the five-fold-compatible turn (cube of the compound of five) at the corners of a dodecahedron: 48 faces = 36×quad + 12×pentagon; edges 1.000..1.000  EQUAL
