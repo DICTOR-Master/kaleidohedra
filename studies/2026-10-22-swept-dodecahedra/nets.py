@@ -107,7 +107,7 @@ def sheet(name,F,pos,tree,adj,fname,cm_per_unit):
     d.text((W*0.06,H*0.03),name,font=f1,fill=(40,30,20))
     d.text((W*0.06,H*0.062),'Cut on the solid lines, fold on the dashed lines, glue the grey tabs.',font=f2,fill=(60,60,60))
     d.text((W*0.06,H*0.082),'Join the few edges without a tab with tape. Edge = %.1f cm.'%(s/dpi*2.54),font=f2,fill=(60,60,60))
-    d.text((W*0.06,H*0.955),'DICTO · dictospheres.com · Swept Dodecahedra (#49) · CC BY-SA 4.0',font=f2,fill=(110,110,110))
+    d.text((W*0.06,H*0.955),'DICTO · dictospheres.com · The Stretching Theorem (#49) · CC BY-SA 4.0',font=f2,fill=(110,110,110))
     img.save(fname,resolution=dpi); return len(T), sum(1 for i in pos for j,a,b in adj[i] if frozenset((i,j)) not in tree)//2
 if __name__=='__main__':
     u=np.array([1,1,0])/2**.5
