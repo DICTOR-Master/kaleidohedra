@@ -428,7 +428,16 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     }
     return out;
   }
-  onSoftChange(() => { if (active && nodes.length) rebuild(); });
+  // A finish change only re-finishes the soft material (DICTO 2026-10-23: switching finish on a large build froze the app while it was
+  // all rebuilt); Soft on/off and the Softness rebuild.
+  let softWas = { on: softOn(), soft: softState().soft, amount: softState().amount };
+  onSoftChange((st) => {
+    const was = softWas;
+    softWas = { on: softOn(), soft: st.soft, amount: st.amount };
+    if (!active || !nodes.length) return;
+    if (was.on && softWas.on && was.soft === st.soft && (was.amount === st.amount || !st.soft)) { applyFinish(softMat); return; }
+    rebuild();
+  });
   // A face of a piece as drawn in Soft (its cap and welts), or a curved shape's patch, just off the surface: for the tapped face and the glowing ones.
   function softFace(n, fi) {
     const g = puffedFor(n.shape, POLYHEDRA[n.shape]), P = g.attributes.position, N = g.attributes.normal, ids = g.userData.faceIds;

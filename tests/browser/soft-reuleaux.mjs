@@ -164,6 +164,8 @@ for (const door of DOORS) for (const vp of VPS) {
 
     // ---- a large build: frame time (phone profile) with Soft off, Soft Plain and Soft Metallic, switched through the panel ----
     if (vp === 'phone' && door === 'polyhedraverse') {
+      // headless software GL draws this build at ~0.7 s a frame, so a tap waits behind queued frames: a long timeout here (a timing, not a hang)
+      page.setDefaultTimeout(240000);
       await page.evaluate((build) => { for (const k of Object.keys(localStorage)) if (k.endsWith('poly-world')) localStorage.setItem(k, JSON.stringify({ version: 1, nodes: build, connections: [], view: {} })); localStorage.setItem('rv-soft-finish', JSON.stringify({ soft: false, finish: 'plain', amount: 0.25 })); }, LARGE);
       await page.reload();
       await page.waitForSelector('#welcome-overlay', { state: 'visible', timeout: 30000 }); await page.keyboard.press('Enter');
