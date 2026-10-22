@@ -10,12 +10,13 @@ import { fileURLToPath } from 'node:url';
 // Each door in its own process (the node's headless Chromium tires after a few full app loads in one run).
 if (!process.env.DOORS) {
   let bad = 0;
-  for (const door of ['polyhedraverse', 'rhombiverse', 'kaleidohedra']) bad += spawnSync(process.execPath, [fileURLToPath(import.meta.url)], { stdio: 'inherit', env: { ...process.env, DOORS: door } }).status ? 1 : 0;
+  for (const door of ['polyhedraverse', 'rhombiverse', 'kaleidohedra']) for (const vp of (process.env.VPS ?? 'phone,ipad').split(',')) bad += spawnSync(process.execPath, [fileURLToPath(import.meta.url)], { stdio: 'inherit', env: { ...process.env, DOORS: door, VP: vp } }).status ? 1 : 0;
   process.exit(bad ? 1 : 0);
 }
 
 const BASE_URL = process.env.BASE_URL ?? 'http://localhost:8000';
 const SHOTS = process.env.SHOTS ?? '/tmp';
+const VP = process.env.VP ?? 'ipad', VIEWPORT = VP === 'phone' ? { width: 390, height: 844 } : { width: 820, height: 1180 };
 const BUILD = [
   { id: 'a', shape: 'CUBE', transform: { position: [0, 0, 0], quaternion: [0, 0, 0, 1] } },
   { id: 'p0', shape: 'J1_SQUARE_PYRAMID', transform: { position: [0.6414213562373094, 0, 0], quaternion: [-0.6532814824381882, 0.2705980500730985, -0.6532814824381882, 0.2705980500730985] } },
@@ -25,11 +26,13 @@ const BUILD = [
 let failures = 0;
 for (const door of process.env.DOORS.split(',')) {
   const browser = await chromium.launch(); // one browser per door: the node's software GL tires over several big app loads
-  const ctx = await browser.newContext({ viewport: { width: 820, height: 1180 }, hasTouch: true, isMobile: true });
+  const ctx = await browser.newContext({ viewport: VIEWPORT, hasTouch: true, isMobile: true });
   const page = await ctx.newPage();
   const errors = [];
   page.on('pageerror', (e) => errors.push(String(e)));
-  page.on('console', (m) => { if (m.type() === 'error' && !/favicon|Failed to load resource/.test(m.text())) errors.push(m.text()); });
+  page.on('console', (m) => { if (m.type() === 'error' && !/favicon|Failed to load resource|Ignored attempt to cancel a touch/.test(m.text())) errors.push(m.text()); });
+  // "Continue where you left off" when a stored build is entered (the dialog can take a moment)
+  const keep = async () => { for (let k = 0; k < 8; k++) { if (await page.locator('#leave-dialog:not([hidden])').count()) { await page.tap('#leave-dialog [data-choice="continue"], #leave-dialog [data-choice="keep"]'); await page.waitForTimeout(700); return; } await page.waitForTimeout(400); } };
   page.on('dialog', (d) => d.accept());
   page.on('crash', () => console.log(`${door}: the page crashed`));
   if (door === 'polyhedraverse') {
@@ -47,14 +50,15 @@ for (const door of process.env.DOORS.split(',')) {
     await page.waitForSelector('.dim-wizard-overlay.open', { timeout: 15000 });
     await page.tap('.dim-wizard-close');
     await page.waitForTimeout(1200);
+    await keep();
     if (door === 'polyhedraverse') {
-      await page.mouse.move(410, 590); await page.mouse.wheel(0, -400); // a little closer
+      await page.mouse.move(VIEWPORT.width / 2, VIEWPORT.height / 2); await page.mouse.wheel(0, -400); // a little closer
       await page.waitForTimeout(900);
     } else {
       // an empty lattice: tap its outline for the first cell, then tap that cell for a few more
-      for (let k = 0; k < 4; k++) { await page.touchscreen.tap(410 + 12 * k, 590 - 10 * k); await page.waitForTimeout(800); }
+      for (let k = 0; k < 4; k++) { await page.touchscreen.tap(VIEWPORT.width / 2 + 12 * k, VIEWPORT.height / 2 - 10 * k); await page.waitForTimeout(800); }
     }
-    const shot = (name) => door === 'polyhedraverse' && page.screenshot({ path: `${SHOTS}/${name}.png` });
+    const shot = (name) => door === 'polyhedraverse' && page.screenshot({ path: `${SHOTS}/${name}-${VP}.png` });
     if (door === 'polyhedraverse') await shot('soft-1'); // Flat Plain: today's look
     // The button: in the tools column, a line icon (not text), shown in this build.
     await page.waitForSelector('#soft-toggle:not([hidden])', { timeout: 15000 });
@@ -70,8 +74,10 @@ for (const door of process.env.DOORS.split(',')) {
     await page.tap('#soft-panel [data-mode=soft]');
     await page.waitForTimeout(600);
     assert.equal(await sliderShown(), true, `${door}: Softness slider once Soft is on`);
-    const geo = await page.$eval('#soft-amount', (s) => { const r = s.getBoundingClientRect(); return { w: r.width, h: r.height, bottom: r.bottom, vh: innerHeight }; });
-    assert.ok(geo.w >= 300 && geo.h >= 44 && geo.vh - geo.bottom < 200, `${door}: a big bottom slider ${JSON.stringify(geo)}`);
+    // a big slider, low on the screen: right above the bottom buttons or above the other bottom panel there, never over it
+    const geo = await page.$eval('#soft-amount', (s) => { const r = s.getBoundingClientRect(), o = [...document.querySelectorAll('.qc-panel.visible:not(#soft-panel), #world4d-panel.visible, #kaleido-body:not([hidden])')].map((e) => e.getBoundingClientRect()).filter((q) => q.height > 0);
+      return { w: r.width, h: r.height, bottom: r.bottom, vh: innerHeight, over: o.some((q) => q.top < r.bottom - 1 && q.bottom > r.top + 1), above: o.length ? Math.min(...o.map((q) => q.top)) - r.bottom : null }; });
+    assert.ok(geo.w >= 300 && geo.h >= 44 && !geo.over && (geo.vh - geo.bottom < 200 || (geo.above !== null && geo.above < 60)), `a big low slider, clear of other panels ${JSON.stringify(geo)}`);
     if (door === 'polyhedraverse') { await page.screenshot({ path: `${SHOTS}/soft-panel.png` }); }
     const probe = () => page.evaluate(() => window.__softProbe?.());
     if (door !== 'polyhedraverse') {
@@ -111,6 +117,7 @@ for (const door of process.env.DOORS.split(',')) {
     await page.waitForSelector('.dim-wizard-overlay.open', { timeout: 15000 });
     await page.tap('.dim-wizard-close');
     await page.waitForTimeout(1000);
+    await keep();
     assert.ok(await page.$eval('#soft-toggle', (b) => b.classList.contains('active')), `${door}: Soft remembered`);
     // Back to Flat Plain for the next door.
     await page.tap('#soft-toggle'); await page.waitForTimeout(300);
@@ -118,10 +125,10 @@ for (const door of process.env.DOORS.split(',')) {
     await page.waitForTimeout(400);
     if (door !== 'polyhedraverse') assert.equal((await probe()).twins, 0, `${door}: Flat Plain is today's look (no copies)`);
     assert.deepEqual(errors, [], `${door}: console errors: ${errors.join(' | ')}`);
-    console.log(`ok ${door}`);
+    console.log(`ok ${door} ${VP}`);
   } catch (e) {
     failures++;
-    console.log(`FAIL ${door}: ${e.message}`);
+    console.log(`FAIL ${door} ${VP}: ${e.message.split('\n')[0]}`);
     await page.screenshot({ path: `${SHOTS}/soft-fail-${door}.png` }).catch(() => {});
   }
   await ctx.close().catch(() => {});

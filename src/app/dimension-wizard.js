@@ -56,7 +56,7 @@ import { t, tn, tFor } from './i18n.js';
 import { polyShapeEdges, polyShapeName } from './poly-shapes.js';
 import { FAMILY_META, familyIds, familiesFor, pairPartners } from '../krp-core/src/polyhedra/families.js';
 import { TRANSITIONAL_IDS } from '../krp-core/src/polyhedra/transitional.js';
-import { POLYHEDRA, KITS13, KIT13_ADDITION_IDS, mosseriSadocTile } from '../krp-core/src/polyhedra/index.js';
+import { POLYHEDRA, KITS13, KIT13_ADDITION_IDS, mosseriSadocTile, REULEAUX_ADDITION_IDS } from '../krp-core/src/polyhedra/index.js';
 import { isConvex } from '../krp-core/src/assembly/faceRegistration.js';
 import { favourites, recent, isFavourite, toggleFavourite } from './poly-prefs.js';
 import { netEligible, mountNetViewer } from './net-viewer.js';
@@ -643,7 +643,8 @@ const R_LATTICES = LATTICES_3D.filter((l) => !SHARED_WORLDS.includes(l.key));
 // start at Platonic solids can do so as normal from the top of the green list"), DICTO's own pieces
 // above them in DICTO's livery; 4D Polytopes waits for D5.
 // DICTO Transitional Shells first: DICTO's newest work at the top (DICTO 2026-10-08), in DICTO's livery.
-const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'PLATONIC', 'ARCHIMEDEAN', 'CATALAN', 'JOHNSON', 'DELTAHEDRA', 'PRISMS', 'ANTIPRISMS', 'STELLATIONS', 'PARALLELOHEDRA', 'SPACE_FILLING_PAIRS', 'BRIDGES_3D', 'APERIODIC', 'MOSSERI_SADOC', 'MISCELLANEOUS'];
+// The Reuleaux Platonic Solids next (DICTO 2026-10-23: DICTO's paper #45, in DICTO's livery).
+const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'REULEAUX_PLATONIC', 'PLATONIC', 'ARCHIMEDEAN', 'CATALAN', 'JOHNSON', 'DELTAHEDRA', 'PRISMS', 'ANTIPRISMS', 'STELLATIONS', 'PARALLELOHEDRA', 'SPACE_FILLING_PAIRS', 'BRIDGES_3D', 'APERIODIC', 'MOSSERI_SADOC', 'MISCELLANEOUS'];
 // DICTO's own work, shown in DICTO's livery (silver) at the top of its app's block (DICTO 2026-10-09);
 // it still opens in its app. Lattices and worlds by key, single pieces by action, and DICTO's
 // Polyhedraverse pieces gathered from across its families.
@@ -653,7 +654,7 @@ const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['TETRAP
 export const DICTO_PIECE_IDS = DICTO_POLY.ids;
 // The shape a face was tapped on, while picking: its space-filling partners come first (as the old site).
 let partnerIds = [];
-const gold = (id) => (DICTO_POLY.ids.includes(id) || TRANSITIONAL_IDS.includes(id) ? ' dicto-gold' : '');
+const gold = (id) => (DICTO_POLY.ids.includes(id) || TRANSITIONAL_IDS.includes(id) || REULEAUX_ADDITION_IDS.includes(id) ? ' dicto-gold' : '');
 const polyIds = (key) => (key === 'PARTNERS' ? partnerIds : key === DICTO_POLY.key ? DICTO_POLY.ids.filter((id) => polyShapeName(id) !== id) : key === 'FAVOURITES' ? favourites() : key === 'RECENT' ? recent() : key === 'STARS' ? STAR_POLYHEDRON_IDS : familyIds(key));
 const polyLabel = (key) => (key === 'PARTNERS' ? t('poly.d.pairs', getSettings().language) : key === DICTO_POLY.key ? DICTO_POLY.label : key === 'FAVOURITES' ? t('wiz.poly.favourites', getSettings().language) : key === 'RECENT' ? t('wiz.poly.recent', getSettings().language) : key === 'STARS' ? 'Kepler–Poinsot' : FAMILY_META[key].label);
 // ---- the shape browser (step D4, DICTO 2026-10-09: inside DICTO) ----
@@ -686,7 +687,7 @@ function searchShapes(q, L) {
   const words = q.toLowerCase().trim().split(/\s+/).filter(Boolean);
   if (!words.length) return [];
   return browsable().filter((id) => {
-    const hay = [polyShapeName(id), ...(STAR_POLYHEDRA[id] ? ['Kepler–Poinsot', 'star'] : familiesFor(id).map((f) => FAMILY_META[f]?.label ?? f)),
+    const hay = [polyShapeName(id, L), polyShapeName(id, 'en'), ...(STAR_POLYHEDRA[id] ? ['Kepler–Poinsot', 'star'] : familiesFor(id).map((f) => FAMILY_META[f]?.label ?? f)),
       ...faceKindsOf(id).flatMap((k) => [faceWord(k, L), faceWord(k, 'en'), k.kind])].join(' ').toLowerCase().replaceAll('_', ' ');
     const faces = (POLYHEDRA[id] ?? STAR_POLYHEDRA[id]).faces.length;
     return words.every((w) => (/^\d+$/.test(w) ? faces === Number(w) : hay.includes(w)));
@@ -1237,6 +1238,9 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     // The Mosseri–Sadoc tiles (DICTO 2026-10-23): their number and letter, Mosseri & Sadoc's precedence and Koca et al.'s numbering.
     const ms = mosseriSadocTile(id);
     if (ms) out.push(`<div class="poly-credit" data-credit="mosseri-sadoc">${t(ms.dictoName ? 'pv.detail.msNamed' : 'pv.detail.msTile', L, { n: ms.n, letter: ms.letter, name: ms.dictoName })}</div>`);
+    // The Reuleaux Platonic Solids (DICTO 2026-10-23): DICTO's idea, paper #45, its DICTO DOI, and the world with the film.
+    const rl = POLYHEDRA[id]?.reuleaux;
+    if (rl) out.push(`<div class="poly-credit" data-credit="reuleaux">${t('pv.detail.reuleaux', L, { solid: t(`rl.src.${rl.source}`, L) })} <button type="button" data-reuleaux>Kaleidohedra</button></div>`);
     return out.join('');
   }
 
@@ -1255,6 +1259,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     resetPreviews();
     const L = getSettings().language, star = !POLYHEDRA[id] && STAR_POLYHEDRA[id], s = POLYHEDRA[id] ?? star;
     if (!s) return;
+    const curved = !!s.curved; // the Reuleaux bodies: curved faces (ball patches), no 4D prism or extension of a curved body
     const fams = star ? ['Kepler–Poinsot'] : familiesFor(id).map((f) => FAMILY_META[f]?.label ?? f);
     const pairs = star ? [] : pairPartners(id).filter((x) => POLYHEDRA[x]);
     const fav = isFavourite(id);
@@ -1270,12 +1275,12 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
           <button type="button" class="poly-detail-fav" aria-pressed="${fav}">${fav ? '★' : '☆'} ${t('poly.d.fav', L)}</button>
           <button type="button" class="poly-detail-net" hidden aria-expanded="false">${t('poly.net.button', L)}</button>
           ${star ? '' : `<button type="button" class="poly-detail-compare">${t('poly.d.compare', L)}</button>
-          <button type="button" class="poly-detail-4d" aria-expanded="false">${t(FOURD_CAPABLE_IDS.includes(id) ? 'poly.d.extend4d' : 'poly.d.prism4d', L)}</button>`}
+          ${curved ? '' : `<button type="button" class="poly-detail-4d" aria-expanded="false">${t(FOURD_CAPABLE_IDS.includes(id) ? 'poly.d.extend4d' : 'poly.d.prism4d', L)}</button>`}`}
         </div>
         <div class="poly-detail-4dbox" hidden><div class="poly-detail-stage"></div><div class="dim-wizard-desc">${fourDCells(id, L)}${t(FOURD_CAPABLE_IDS.includes(id) ? 'poly.d.extend4dNote' : 'poly.d.prism4dNote', L)}</div></div>
         <div class="poly-detail-netbox" hidden></div>
         <dl class="poly-detail-stats">
-          <dt>${t('poly.d.faces', L)}</dt><dd>${s.faces.length}: ${faceKindsOf(id).map((k) => `${k.count} × ${k.regular ? t('poly.d.regular', L) + ' ' : ''}${faceWord(k, L)}`).join(', ')}</dd>
+          <dt>${t('poly.d.faces', L)}</dt><dd>${s.faces.length}: ${curved ? t('poly.d.curvedFaces', L, { n: s.faces.length, k: s.faces[0].length }) : faceKindsOf(id).map((k) => `${k.count} × ${k.regular ? t('poly.d.regular', L) + ' ' : ''}${faceWord(k, L)}`).join(', ')}</dd>
           <dt>${t('poly.d.edges', L)}</dt><dd>${s.edges.length}</dd>
           <dt>${t('poly.d.vertices', L)}</dt><dd>${s.vertices.length}</dd>
           <dt>${t('poly.d.shape', L)}</dt><dd>${isConvex(s) ? t('poly.d.convex', L) : t('poly.d.notConvex', L)}</dd>
@@ -1287,12 +1292,13 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     else previewDisposers.push(mountWireframePreview(bodyEl.querySelector('.poly-detail-preview'), polyShapeEdges(id), 200));
     bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => backTo());
     bodyEl.querySelector('[data-ekp]')?.addEventListener('click', () => choose('3D', 'tool:roofFoldWorld', 'kaleidohedra'));
+    bodyEl.querySelector('[data-reuleaux]')?.addEventListener('click', () => choose('3D', `tool:reuleauxWorld:${s.reuleaux.key}`, 'kaleidohedra'));
     if (star) return; // reference only: no building with a star solid
     bodyEl.querySelector('.poly-detail-build').addEventListener('click', () => choose('3D', `tool:polyShape:${id}`, 'polyhedraverse'));
     // 4D: the shape's 4D prism, or (4D-capable shapes) the whole 4D polytope it extends to.
     const b4 = bodyEl.querySelector('.poly-detail-4d'), box4 = bodyEl.querySelector('.poly-detail-4dbox');
     let dispose4 = null;
-    b4.addEventListener('click', () => {
+    b4?.addEventListener('click', () => {
       const open = box4.hidden;
       box4.hidden = !open; b4.setAttribute('aria-expanded', String(open));
       if (open) { dispose4 = (FOURD_CAPABLE_IDS.includes(id) ? mountRadialView : mountDuoprismView)(box4.querySelector('.poly-detail-stage'), id); previewDisposers.push(() => dispose4?.()); }

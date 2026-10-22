@@ -69,6 +69,7 @@ Pieces are coloured by the **Colours** setting (in Settings): **Cyan** (every pi
 | Lattice View | Your build plus every open slot one step out, for the chosen piece | Tap the Lattice View button to cycle through the pieces |
 | X-Ray | A cutaway. Drag the plane through the structure, on a diagonal or, in the icosahedral worlds, along a 5-, 3- or 2-fold axis (Settings → Section view). The cut shows from the side that was cut away: turn the view, or use Flip | X-Ray button (⛶) |
 | Spherical | Tap to cycle: each piece as a sphere (whole RDs touch their twelve neighbours), then the voids between whole RDs (octahedral gold, tetrahedral rose, where fully enclosed) with every sphere made faint. A slider sizes every sphere (a click-stop at each shape's own size; below = apart, beyond = overlapping). With Lattice View on, every open lattice slot shows as a faint sphere. View only | Spherical button (◯): off → spheres → voids |
+| Soft | Every flat face bulged into a soft cap, in a finish: Plain, Metallic or Ceramic. The Softness slider (at the bottom, only while Soft is on) sets how much. View only: the pieces underneath stay as they are for tapping and snapping. In Polyhedraverse and the 3D lattices | The Soft button (a puffed square) in the tools column |
 | Duality | The aperiodic tiling that this crystal structure casts | Duality button (◐) |
 | Dualize | Swaps FCC and BCC | Settings → Dualize Preview |
 
@@ -255,6 +256,7 @@ At the top of Polyhedraverse's block in DICTO, **search** finds shapes by name, 
 | Family | What's in it |
 |---|---|
 | DICTO's pieces | DICTO's own, first: the DICTO Hexa and DICTO Dodeca-13 families, the DICTO Jewel and its clusters, the Sunstar clusters, DICTO's blocks and skewed cells |
+| Reuleaux Platonic Solids (#45) | DICTO's idea, paper #45 (DICTO DOI 10.5281/zenodo.23529499): for each Platonic solid, the common part of balls on its corners with radius the solid's diameter: the Reuleaux tetrahedron, octahedron, cube, icosahedron and dodecahedron. Drawn smooth with their seams; they fit face to face by their corners, on any unit triangle, square or pentagon. The film, balls into body, is in Kaleidohedra's Reuleaux world |
 | Deltahedra | The 8 convex solids made only of equilateral triangles |
 | Platonic | The 5 regular solids |
 | Archimedean | The 13 semi-regular solids |
@@ -325,6 +327,7 @@ A column of buttons in the top right corner, in the colour of the app whose spac
 | ⛶ | X-Ray |
 | ◐ | Duality |
 | ◯ | Spherical (off → spheres → voids) |
+| Puffed square | Soft: Flat or Soft, and Plain, Metallic or Ceramic |
 | ⊘ | Clear World |
 | ↻ | Reload (use it if something looks stuck) |
 

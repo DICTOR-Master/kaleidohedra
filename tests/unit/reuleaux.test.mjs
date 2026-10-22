@@ -1,12 +1,16 @@
 // The Reuleaux Platonic Solids (DICTO 2026-10-21; paper #45): the generated data (scripts/build-reuleaux-data.py) holds five bodies with
 // the right face and corner counts, exact corners (each at distance D from its face's ball centres, inside every ball), film radii that
-// increase from just past the circumradius to D, a last film frame that is the full body, and closed meshes; and a body placed on a face
+// increase from just past the circumradius to D, a last film frame that is the full body (kept once, in krp-core), and closed meshes; and a body placed on a face
 // settles corner to corner, on the other side.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import * as THREE from 'three';
-import DATA from '../../src/app/reuleaux-data.js';
+import FILM from '../../src/app/reuleaux-data.js';
+import { REULEAUX_RAW } from '../../src/krp-core/src/polyhedra/reuleaux-bodies.js';
 import { REULEAUX_KEYS, placeOn } from '../../src/app/world-reuleaux.js';
+
+// The film here, each body's mesh, corners and faces in krp-core (shared with Polyhedraverse), joined as the world joins them.
+const DATA = { ...FILM, bodies: FILM.bodies.map((B) => ({ ...B, ...REULEAUX_RAW.find((x) => x.key === B.key) })) };
 
 // look -> [balls (the source solid's corners), faces, corners, corners per face]
 const COUNTS = { tetrahedron: [4, 4, 4, 3], octahedron: [8, 8, 6, 3], cube: [6, 6, 8, 4], icosahedron: [20, 20, 12, 3], dodecahedron: [12, 12, 20, 5] };
@@ -43,10 +47,10 @@ for (const B of DATA.bodies) {
     assert.ok(B.radii[0] > B.R && B.radii.every((r, i) => i === 0 || r > B.radii[i - 1]), 'radii increase');
     assert.ok(Math.abs(B.radii.at(-1) - B.D) < 1e-6, 'last radius is D');
     assert.ok(B.frames.every((f, i) => i === 0 || f.vol > B.frames[i - 1].vol), 'volumes grow');
-    assert.equal(B.frames.at(-1).vol, B.vol); assert.deepEqual([B.frames.at(-1).v, B.frames.at(-1).t], [B.body.v, B.body.t], 'last frame = full body');
-    for (const m of [...B.frames, B.body]) assert.ok(closed(m.t), 'closed, consistently wound mesh');
+    assert.equal(B.frames.at(-1).vol, B.vol); assert.equal(B.frames.at(-1).v, undefined, 'last frame = the body (kept once, in krp-core)');
+    assert.ok(B.frames.slice(0, -1).every((f) => f.v && f.t && f.s), 'every other frame has its own mesh');
+    for (const m of [...B.frames.slice(0, -1), B.body]) assert.ok(closed(m.t), 'closed, consistently wound mesh');
     assert.ok(Math.abs(volume(B.body) - B.vol) / B.vol < 0.02, 'body mesh volume');
-    assert.ok(Math.abs(volume(B.frames.at(-1)) - B.vol) / B.vol < 0.03, 'last frame mesh volume');
     // the build body: every triangle on one patch, every patch present, seams drawn
     assert.equal(B.body.patch.length, B.body.t.length / 3);
     assert.deepEqual([...new Set(B.body.patch)].sort((a, b) => a - b), B.balls.map((_, i) => i));

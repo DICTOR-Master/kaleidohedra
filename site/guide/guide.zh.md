@@ -71,6 +71,7 @@ DICTO 是 DICTO 的三个应用，共用同一套几何。**Rhombiverse** 是**�
 | Lattice View | 你的作品，以及所选部件向外一步的所有空位 | 轻点 Lattice View 按钮循环切换部件 |
 | X-Ray | 剖切。可以把切面拖过结构，也可以斜着拖；在二十面体类世界中还可沿五次、三次或二次轴（设置 → 剖面视图）。剖面要从被切掉的一侧看：转动视角，或用“翻转” | X-Ray 按钮（⛶） |
 | Spherical | 点按切换：每个部件显示为球（完整的 RD 与周围十二个相切），然后显示完整 RD 之间的空隙（八面体空隙金色，四面体空隙玫瑰色，只在完全封闭处），所有球变淡。滑块调节所有球的大小（在每种形状本来的大小处停住，更小则分开，更大则重叠）。打开 Lattice View 时，每个空着的格点显示为淡淡的球。仅为视图 | Spherical 按钮（◯）：关 → 球 → 空隙 |
+| Soft | 把每个平面鼓成柔和的曲面，并选择质感：素色、金属或陶瓷。柔和度滑块（在底部，仅在打开柔和时显示）调节鼓起程度。仅为显示：下面的真实部件保持不变，用于点按和吸附。用于 Polyhedraverse 和三维晶格 | 工具列中的 Soft 按钮（鼓起的方形） |
 | Duality | 这种晶体结构投射出的非周期镶嵌 | Duality 按钮（◐） |
 | Dualize | 交换 FCC 和 BCC | 设置 → Dualize Preview |
 
@@ -257,6 +258,7 @@ Polyhedraverse 是肖像画廊：按家族排列的每一个形状，一次一�
 | 家族 | 内容 |
 |---|---|
 | DICTO's pieces | DICTO 自己的作品排在最前：DICTO Hexa 与 DICTO Dodeca-13 家族、DICTO 宝石及其簇、Sunstar 簇、DICTO 的方块与斜胞 |
+| Reuleaux Platonic Solids (#45) | DICTO 的构想，论文 #45（DICTO DOI 10.5281/zenodo.23529499）：在每个柏拉图立体的顶点上放半径等于该立体直径的球，取其公共部分：勒洛四面体、八面体、立方体、二十面体和十二面体。光滑绘制并画出接缝；按角面对面拼接，可接在任何边长为 1 的三角形、正方形或五边形上。球长成立体的影片在 Kaleidohedra 的勒洛世界中 |
 | Deltahedra | 只由等边三角形构成的 8 种凸多面体 |
 | Platonic | 5 种正多面体 |
 | Archimedean | 13 种半正多面体 |
@@ -327,6 +329,7 @@ DICTO 的部件以 **DICTO Hexa** 家族开头：DICTO Hexa（八个 DICTO 宝�
 | ⛶ | X-Ray |
 | ◐ | Duality |
 | ◯ | Spherical（关 → 球 → 空隙） |
+| 鼓起的方形 | Soft：平面 / 柔和，素色 / 金属 / 陶瓷 |
 | ⊘ | Clear World |
 | ↻ | 重新加载（看起来卡住时使用） |
 

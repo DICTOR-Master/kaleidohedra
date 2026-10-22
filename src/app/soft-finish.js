@@ -56,7 +56,8 @@ function toGeometry(p, faceColours) {
 }
 /** The puffed geometry of a piece spec (vertices + faces, optional faceColours), cached under `key`. */
 export function puffedFor(key, spec, amount = softAmount()) {
-  return remember(`${key}|${amount.toFixed(3)}`, () => toGeometry(puffSpec(spec, { amount }), spec.faceColours));
+  // a curved shape (the Reuleaux bodies) is its own smooth body at every softness: one geometry
+  return remember(spec.curved ? `${key}|curved` : `${key}|${amount.toFixed(3)}`, () => toGeometry(puffSpec(spec, { amount }), spec.faceColours));
 }
 /** The same for a shape that exists only as drawn triangles (the lattice worlds' cells). */
 export function puffedForGeometry(geometry, amount = softAmount()) {
@@ -197,11 +198,18 @@ export function mountSoftControls({ tools, before = null, showHudPrompt = () => 
   panel.id = 'soft-panel'; panel.className = 'qc-panel';
   panel.innerHTML = `<div class="w4d-row soft-mode"><button type="button" data-mode="flat"></button><button type="button" data-mode="soft"></button></div>
     <div class="w4d-row soft-finishes">${FINISHES.map((f) => `<button type="button" data-finish="${f}"></button>`).join('')}</div>
-    <div class="w4d-row soft-amount"><label><span class="soft-amount-name"></span><input id="soft-amount" type="range" min="0" max="${Math.round(SOFT_MAX * 100)}" step="1"></label></div>`;
+    <div class="w4d-row soft-amount"><label class="hull-pick"><span class="soft-amount-name"></span><input id="soft-amount" type="range" min="0" max="${Math.round(SOFT_MAX * 100)}" step="1"></label></div>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, 'soft');
-  let open = false, applies = false;
+  let open = false, applies = false, placeTimer = 0;
   const slider = panel.querySelector('#soft-amount');
+  // Lowest it can be: right above the bottom buttons, or above another bottom panel showing there (Polyhedraverse's shape strip,
+  // a world's panel, the Shear sheet), never over it. Followed while open, as those panels grow and fold.
+  const OTHERS = '.qc-panel.visible:not(#soft-panel), #world4d-panel.visible, #kaleido-body:not([hidden])';
+  function place() {
+    const tops = [...document.querySelectorAll(OTHERS)].map((el) => el.getBoundingClientRect()).filter((r) => r.height > 0).map((r) => r.top);
+    panel.style.bottom = tops.length ? `${Math.round(innerHeight - Math.min(...tops) + 6)}px` : '';
+  }
   function render() {
     const L = getSettings().language;
     btn.title = t('soft.title', L); btn.setAttribute('aria-label', t('soft.title', L));
@@ -215,6 +223,8 @@ export function mountSoftControls({ tools, before = null, showHudPrompt = () => 
     slider.value = String(Math.round(state.amount * 100));
     panel.querySelector('.soft-amount').hidden = !state.soft; // the Softness slider only while Soft is on
     panel.classList.toggle('visible', open && applies);
+    clearInterval(placeTimer);
+    if (open && applies) { place(); placeTimer = setInterval(place, 400); }
   }
   btn.addEventListener('click', () => { open = !open; render(); });
   panel.addEventListener('click', (e) => {
