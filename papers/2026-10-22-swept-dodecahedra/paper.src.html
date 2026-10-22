@@ -26,16 +26,16 @@ The stretched dodecahedron (F11), the long hexagon seen in the dodecahedron laye
 <p class="hook">Take any solid whose edges are all the same length, such as a dodecahedron. However you slide it, as long as you do not slide it along one of its own edges, every edge of the shape it sweeps comes out one edge-length long.</p>
 <div class="thm"><b>The Polyhedral Stretching Theorem.</b> Let P be a convex polyhedron whose edges all have length 1, and slide it a distance 1 along a direction u. The swept shape (the convex hull of P and P moved by u) has every edge of length 1 unless u is parallel to an edge of P. Its faces are: each face of P not parallel to u, kept whole (one copy, at the end it faces); each n-sided face parallel to u, stretched into an (n+2)-gon, with one side fewer for each of its edges parallel to u; and one parallelogram for every edge of P's outline seen along u, a rhombus when the slide is 1.</div>
 <p class="hook">What happens to the faces: the faces at the two ends stay just as they were; a face lying along the slide gets longer and gains two sides; and around the middle grows a belt of diamond shapes, one for each edge on the solid's outline.</p>
-<p>For the regular dodecahedron D, whose pentagons have no parallel edges, a pentagon lying along the slide becomes a hexagon if u runs along one of its edges and a heptagon otherwise, and the belt has 10 or 12 rhombi. The proof is short and is given in Appendix A. In 2 000 random directions the belt always had 10 or 12 rhombi, and every edge was 1 (Appendix B).</p>
+<p>For the regular dodecahedron D, whose pentagons have no parallel edges, a pentagon lying along the slide becomes a hexagon if u runs along one of its edges and a heptagon otherwise, and, when no pentagon lies along the slide, the belt has 10 or 12 rhombi. The proof is short and is given in Appendix A. In 2 000 random directions the belt always had 10 or 12 rhombi, and every edge was 1 (Appendix B); the theorem proves the equal edges, while the count of 10 or 12 is what the sample showed.</p>
 
 <h2>3. Special directions</h2>
 <p class="hook">Some directions are special: they line up with the dodecahedron's own symmetry, and give the cleanest shapes.</p>
 <figure><div class="figs wide"><img class="mid" src="figures/directions.png" alt="The dodecahedron swept along four directions"></div>
 <figcaption><b>Figure 2.</b> The five directions of the table. Pentagons violet, rhombi and rectangles lilac, hexagons and heptagons blue. The five-fold stretch is the most regular: its ten rhombi are all alike.</figcaption></figure>
 <table><tr><th>Slide along</th><th>Faces</th><th>Every edge 1?</th></tr>
-<tr><td>a cube axis (DICTO's F11)</td><td>8 pentagons, 4 hexagons, 2 rectangles (squares at slide 2/φ)</td><td>no: the slide runs along two edges</td></tr>
+<tr><td>a cube axis (DICTO's F11)</td><td>8 pentagons, 4 hexagons, 2 rectangles (squares at slide 1)</td><td>no: the slide runs along two edges</td></tr>
 <tr><td>a face diagonal of Euclid's cube</td><td>12 pentagons, 10 rhombi</td><td>yes</td></tr>
-<tr><td>a body diagonal (three-fold axis)</td><td>12 pentagons, 12 rhombi</td><td>yes</td></tr>
+<tr><td>a body diagonal (three-fold axis)</td><td>12 pentagons, 12 rhombi (six of them squares)</td><td>yes</td></tr>
 <tr><td>a five-fold axis (through two opposite pentagons)</td><td>12 pentagons, 10 rhombi, all ten alike (angles 58° and 122°)</td><td>yes</td></tr>
 <tr><td>a direction lying along two pentagons (example)</td><td>10 pentagons, 6 rhombi, 2 heptagons</td><td>yes</td></tr></table>
 
@@ -49,22 +49,22 @@ The stretched dodecahedron (F11), the long hexagon seen in the dodecahedron laye
 <p class="hook">Instead of sliding along a line, put a dodecahedron at each corner of a triangle or a tetrahedron and wrap them together. Equilateral triangles appear.</p>
 <figure><div class="figs wide"><img class="mid" src="figures/caps34.png" alt="Three-cap and four-cap forms"></div>
 <figcaption><b>Figure 4.</b> Dodecahedra at the corners of an equilateral triangle (left) and a regular tetrahedron (right), one edge apart; triangles gold.</figcaption></figure>
-<p><b>Corollary.</b> Wrapping dodecahedra placed at the corners of an equilateral triangle or a regular tetrahedron of side 1, in the positions of neighbouring cubes of Euclid's lattice, gives solids with every edge 1: three caps, 12 pentagons, 15 rhombi and 2 equilateral triangles (29 faces); four caps, 12 pentagons, 18 rhombi and 4 equilateral triangles (34 faces). (The same argument as the theorem: every edge is an edge of the dodecahedron or of the triangle or tetrahedron.)</p>
+<p><b>Corollary.</b> Wrapping dodecahedra placed at the corners of an equilateral triangle or a regular tetrahedron of side 1, in the directions of neighbouring cubes of Euclid's lattice, at distance 1, gives solids with every edge 1: three caps, 12 pentagons, 15 rhombi and 2 equilateral triangles (29 faces); four caps, 12 pentagons, 18 rhombi and 4 equilateral triangles (34 faces). (The same argument as the theorem: every edge is an edge of the dodecahedron or of the triangle or tetrahedron.)</p>
 <p>DICTO also speculated that turning one end of the two-cap shape might make its belt into triangles, as in an antiprism. It cannot: over every turn and shift, the best band of triangles still has edges a third of an edge too long or short, because the rim zigzags. Three and four caps give the triangles instead.</p>
 
 <h2>6. The other Platonic solids, and the icosahedron family</h2>
 <p class="hook">The theorem works for every solid whose edges are all equal. Stretch the other Platonic solids and some famous shapes appear, and some new-looking ones.</p>
-<p>The Polyhedral Stretching Theorem needs only that every edge of the solid has the same length, so it applies to the tetrahedron, cube, octahedron and icosahedron as well (checked for 1 000 random stretches of each). Several results are well-known solids, which is a good sign that the stretch is a natural operation: the tetrahedron with four caps is the cuboctahedron and the octahedron with four caps the truncated tetrahedron (both Archimedean); the tetrahedron stretched through a corner is the elongated triangular pyramid, with three caps the triangular cupola, and the octahedron stretched through a corner the elongated square bipyramid (Johnson solids J7, J3 and J15); the stretched cube is a box, a slanted prism or a zonohedron.</p>
+<p>The Polyhedral Stretching Theorem needs only that every edge of the solid has the same length, so it applies to the tetrahedron, cube, octahedron and icosahedron as well (checked for 1 000 random stretches of each). Several results are well-known solids, which is a good sign that the stretch is a natural operation: the tetrahedron with four caps, at the corners of a tetrahedron turned the other way, is the cuboctahedron and the octahedron with four caps the truncated tetrahedron (both Archimedean); the tetrahedron stretched through a corner is the elongated triangular pyramid, with three caps on a triangle turned against its base the triangular cupola, and the octahedron stretched through a corner the elongated square bipyramid (Johnson solids J7, J3 and J15); the stretched cube is a box, a hexagonal prism or a zonohedron.</p>
 <figure><div class="figs wide"><img src="figures/icosahedron-family.png" alt="The stretched icosahedron family"></div>
-<figcaption><b>Figure 5.</b> The icosahedron (edge 1) stretched one edge-length along four directions, and with three and four caps; every edge 1. Triangles blue, rhombi lilac, pentagons violet, hexagons gold.</figcaption></figure>
+<figcaption><b>Figure 5.</b> The icosahedron (edge 1) stretched one edge-length along four directions, and with three and four caps; every edge 1 except along the cube axis, which runs along two of its edges. Triangles blue, rhombi lilac, pentagons violet, hexagons gold.</figcaption></figure>
 <table><tr><th>Icosahedron</th><th>Faces</th></tr>
 <tr><td>stretched along a five-fold axis</td><td>20 triangles, 10 rhombi</td></tr>
-<tr><td>stretched along a face diagonal</td><td>16 triangles, 2 rhombi, 4 pentagons (pairs of triangles stretched into pentagons)</td></tr>
+<tr><td>stretched along a face diagonal</td><td>16 triangles, 2 rhombi, 4 pentagons (the four triangles lying along the slide, each stretched into a pentagon)</td></tr>
 <tr><td>stretched along a body diagonal</td><td>20 triangles, 6 rhombi</td></tr>
-<tr><td>stretched along a cube axis</td><td>16 triangles, 4 rhombi, 2 squares</td></tr>
+<tr><td>stretched along a cube axis</td><td>16 triangles, 4 trapezoids, 2 squares; not equal-edged: the axis runs along two edges, which become 2 long</td></tr>
 <tr><td>three caps</td><td>15 triangles, 3 rhombi, 3 pentagons, 2 hexagons</td></tr>
 <tr><td>four caps</td><td>16 triangles, 6 rhombi, 4 hexagons</td></tr></table>
-<p>The icosahedron family is the richest. None of its six shapes is a Johnson or Archimedean solid (they have rhombi), and none was found in the sources checked; the nearest relatives are Hart and Zongker's sum of the compound of five tetrahedra, with 20 triangles and 60 rhombi [6], and Ed Baumann's equal-edged near-misses, which also merge triangles into rhombi [8]. The octahedron stretched through a face (8 triangles, 6 rhombi) and the tetrahedron and cube in their other directions are also not among the named solids we checked; a short table of the Archimedean solids is left for later.</p>
+<p>The icosahedron family is the richest. None of its five equal-edged shapes is a Johnson or Archimedean solid (they have rhombi), and none was found in the sources checked; the nearest relatives are Hart and Picciotto's Minkowski sum of the compound of five tetrahedra, with 20 triangles and 60 rhombi [6], and Ed Baumann's equal-edged near-misses, which also merge triangles into rhombi [8]. The octahedron stretched through a face (8 triangles, 6 rhombi; the same face counts as Hart and Picciotto's sum of two tetrahedra [6], though whether the shapes match was not checked) and the tetrahedron and cube in their other directions are also not among the named solids we checked; a short table of the Archimedean solids is left for later.</p>
 
 <h2>7. Make your own</h2>
 <p class="hook">Print, cut, fold and glue: every solid here can be held in the hand.</p>
@@ -97,7 +97,7 @@ The stretched dodecahedron (F11), the long hexagon seen in the dodecahedron laye
 <li>DICTO, Kaleidohedra by DICTO, finding F11 "The stretched dodecahedron" (2026-10-08), DICTO DOI: 10.5281/zenodo.23173809.</li>
 <li>Diameter, decomposability, and Minkowski sums of polytopes, arXiv:1806.07643 (faces of a Minkowski sum as sums of faces).</li>
 <li>Minkowski sum of a Voronoi parallelotope and a segment, arXiv:1501.01212 (how faces change when a segment is added).</li>
-<li>G. W. Hart, Green Giants, in Zome Geometry, https://www.georgehart.com/zomebook/green-giant.html.</li>
+<li>G. W. Hart and H. Picciotto, Green Giants, in Zome Geometry, https://www.georgehart.com/zomebook/green-giant.html.</li>
 <li>A complete list of all convex polyhedra made by gluing regular pentagons, arXiv:2007.01753.</li>
 <li>Ed Baumann, Modified Johnson Near Misses, https://superliminal.com/geometry/near_misses/index.html.</li>
 </ol>
