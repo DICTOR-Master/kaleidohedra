@@ -1,0 +1,134 @@
+{
+ "name": "DICTO Dodeca-13 Needle",
+ "finding": "F13",
+ "paper": "#13 The DICTO Dodeca-13",
+ "dicto_doi": "10.5281/zenodo.23284281",
+ "status": "new",
+ "convex": true,
+ "scale_note": "Polyhedraverse frame of the 13-dodecahedron cluster, dodecahedra of edge 1 (Polyhedraverse corners recovered exactly in Q(sqrt5) and proved; #13 volumes are at edge 1: wedge phi^3/20, needle (45 - 19 sqrt5)/600).",
+ "source": {
+  "app": "Polyhedraverse",
+  "path": "krp-core src/polyhedra/dodeca13Data.js",
+  "id": "DICTO_DODECA13_NEEDLE"
+ },
+ "credit_note": "Credit: DICTO (idea, names); exact computation with Claude (Anthropic).",
+ "published_values": {
+  "volume": "(45 - 19*sqrt(5))/600"
+ },
+ "field": "Q(sqrt(5))",
+ "vertices": [
+  {
+   "exact": [
+    "-1 + (-1/5)*sqrt(5)",
+    "-1/2 + (-2/5)*sqrt(5)",
+    "-3/4 + (-1/4)*sqrt(5)"
+   ],
+   "decimal": [
+    "-1.447213595499958",
+    "-1.394427190999916",
+    "-1.309016994374947"
+   ]
+  },
+  {
+   "exact": [
+    "-1/2 + (-2/5)*sqrt(5)",
+    "-3/4 + (-1/4)*sqrt(5)",
+    "-1 + (-1/5)*sqrt(5)"
+   ],
+   "decimal": [
+    "-1.394427190999916",
+    "-1.309016994374947",
+    "-1.447213595499958"
+   ]
+  },
+  {
+   "exact": [
+    "-3/4 + (-1/4)*sqrt(5)",
+    "-1 + (-1/5)*sqrt(5)",
+    "-1/2 + (-2/5)*sqrt(5)"
+   ],
+   "decimal": [
+    "-1.309016994374947",
+    "-1.447213595499958",
+    "-1.394427190999916"
+   ]
+  },
+  {
+   "exact": [
+    "-1/4 + (-1/4)*sqrt(5)",
+    "-1/4 + (-1/4)*sqrt(5)",
+    "-1/4 + (-1/4)*sqrt(5)"
+   ],
+   "decimal": [
+    "-0.809016994374947",
+    "-0.809016994374947",
+    "-0.809016994374947"
+   ]
+  }
+ ],
+ "faces": [
+  [
+   0,
+   1,
+   2
+  ],
+  [
+   0,
+   2,
+   3
+  ],
+  [
+   0,
+   3,
+   1
+  ],
+  [
+   1,
+   3,
+   2
+  ]
+ ],
+ "f_vector": {
+  "vertices": 4,
+  "edges": 6,
+  "faces": 4
+ },
+ "faces_by_sides": {
+  "3": 4
+ },
+ "volume": {
+  "exact": "3/40 + (-19/600)*sqrt(5)",
+  "decimal": "0.004191180712507"
+ },
+ "squared_edge_lengths": [
+  {
+   "exact": "7/10 + (-3/10)*sqrt(5)",
+   "decimal": "0.029179606750063",
+   "count": 3
+  },
+  {
+   "exact": "1",
+   "decimal": "1.000000000000000",
+   "count": 3
+  }
+ ],
+ "symmetry": {
+  "schoenflies": "C3v",
+  "order": 6,
+  "rotations": 3,
+  "contains_inversion": false
+ },
+ "credit": "DICTO",
+ "creator_mark": "Created by DICTO · dictospheres.com",
+ "licence": "CC BY-SA 4.0",
+ "checks": {
+  "closed_2_manifold": true,
+  "outward_ccw_winding": true,
+  "faces_planar_exact": true,
+  "euler_characteristic": 2,
+  "volume_positive_exact": true,
+  "convex": true,
+  "symmetry_order_exact": 6,
+  "verified_by": "check.py (python3 + sympy), re-run from this file alone"
+ }
+}

@@ -1,0 +1,112 @@
+{
+ "log": [
+  "PASS F1: four icosahedral two-fold directions meeting at 60 deg three times and 72 deg three times; zonotope volume phi^2 exactly",
+  "PASS dicto-skewed-rhombic-dodecahedron: symmetry C2h (classified) vs stated C2h",
+  "PASS dicto-skewed-rhombic-dodecahedron: volume 3/2 + (1/2)*sqrt(5) vs published (3 + sqrt(5))/2",
+  "PASS dicto-skewed-rhombic-dodecahedron: f-vector (14, 24, 12) vs published (14, 24, 12)",
+  "PASS dicto-skewed-rhombic-dodecahedron: matches Polyhedraverse DICTO_SKEWED_RD corner for corner up to similarity (scale PV/dataset, max error) = (np.float64(1.0), np.float64(2.482534153247273e-16))",
+  "PASS F7: fifth directions (36 deg twice) giving volumes phi^2 + 2 (ED F16) and phi^3 + 1/2 (ED F18) found exactly",
+  "PASS dicto-skewed-ed-16: symmetry C2h (classified) vs stated C2h",
+  "PASS dicto-skewed-ed-16: volume 7/2 + (1/2)*sqrt(5) vs published sqrt(5)/2 + 7/2",
+  "PASS dicto-skewed-ed-16: f-vector (18, 28, 12) vs published (18, 28, 12)",
+  "PASS dicto-skewed-ed-16: faces {6: 4, 4: 8} vs published {4: 8, 6: 4}",
+  "PASS dicto-skewed-ed-16: matches Polyhedraverse DICTO_SKEWED_ED_16 corner for corner up to similarity (scale PV/dataset, max error) = (np.float64(0.9999999999819924), np.float64(3.742513361547752e-11))",
+  "PASS dicto-skewed-ed-18: symmetry C2h (classified) vs stated C2h",
+  "PASS dicto-skewed-ed-18: volume 5/2 + sqrt(5) vs published 2 + sqrt(5) + 1/2",
+  "PASS dicto-skewed-ed-18: f-vector (18, 28, 12) vs published (18, 28, 12)",
+  "PASS dicto-skewed-ed-18: faces {4: 8, 6: 4} vs published {4: 8, 6: 4}",
+  "PASS dicto-skewed-ed-18: matches Polyhedraverse DICTO_SKEWED_ED_18 corner for corner up to similarity (scale PV/dataset, max error) = (np.float64(0.9999999999263457), np.float64(3.110734358298486e-10))",
+  "PASS dicto-jewel: symmetry Th (classified) vs stated Th",
+  "PASS dicto-jewel: faces {3: 48, 4: 12} vs published {3: 48, 4: 12}",
+  "PASS dicto-jewel: volume 3 + (3/2)*sqrt(5) vs published 3 + 3*sqrt(5)/2",
+  "PASS dicto-dodeca-13-wedge: symmetry C2v (classified) vs stated C2v",
+  "PASS dicto-dodeca-13-wedge: volume 1/10 + (1/20)*sqrt(5) vs published (2 + sqrt(5))/20",
+  "PASS dicto-dodeca-13-needle: symmetry C3v (classified) vs stated C3v",
+  "PASS dicto-dodeca-13-needle: volume 3/40 + (-19/600)*sqrt(5) vs published (45 - 19*sqrt(5))/600"
+ ],
+ "summary": {
+  "dicto-skewed-rhombic-dodecahedron": {
+   "V": 14,
+   "E": 24,
+   "F": 12,
+   "volume": "3/2 + (1/2)*sqrt(5)",
+   "order": 4,
+   "rot": 2,
+   "inv": true,
+   "faces": {
+    "4": 12
+   },
+   "sym": "C2h"
+  },
+  "dicto-skewed-ed-16": {
+   "V": 18,
+   "E": 28,
+   "F": 12,
+   "volume": "7/2 + (1/2)*sqrt(5)",
+   "order": 4,
+   "rot": 2,
+   "inv": true,
+   "faces": {
+    "6": 4,
+    "4": 8
+   },
+   "sym": "C2h"
+  },
+  "dicto-skewed-ed-18": {
+   "V": 18,
+   "E": 28,
+   "F": 12,
+   "volume": "5/2 + sqrt(5)",
+   "order": 4,
+   "rot": 2,
+   "inv": true,
+   "faces": {
+    "4": 8,
+    "6": 4
+   },
+   "sym": "C2h"
+  },
+  "dicto-jewel": {
+   "V": 38,
+   "E": 96,
+   "F": 60,
+   "volume": "3 + (3/2)*sqrt(5)",
+   "order": 24,
+   "rot": 12,
+   "inv": true,
+   "faces": {
+    "3": 48,
+    "4": 12
+   },
+   "sym": "Th"
+  },
+  "dicto-dodeca-13-wedge": {
+   "V": 8,
+   "E": 12,
+   "F": 6,
+   "volume": "1/10 + (1/20)*sqrt(5)",
+   "order": 4,
+   "rot": 2,
+   "inv": false,
+   "faces": {
+    "3": 2,
+    "4": 2,
+    "5": 2
+   },
+   "sym": "C2v"
+  },
+  "dicto-dodeca-13-needle": {
+   "V": 4,
+   "E": 6,
+   "F": 4,
+   "volume": "3/40 + (-19/600)*sqrt(5)",
+   "order": 6,
+   "rot": 3,
+   "inv": false,
+   "faces": {
+    "3": 4
+   },
+   "sym": "C3v"
+  }
+ }
+}

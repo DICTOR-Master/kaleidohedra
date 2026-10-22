@@ -1,0 +1,85 @@
+{
+ "name": "DICTO FCC: the DICTO skewed rhombic dodecahedron tiling a sheared FCC lattice",
+ "finding": "F1",
+ "dicto_doi": "10.5281/zenodo.23173809",
+ "status": "published fill (lattice tiling by translation)",
+ "field": "Q(sqrt(5))",
+ "lattice_vectors": [
+  {
+   "exact": [
+    "(-1/2)*sqrt(5)",
+    "-1/4 + (1/4)*sqrt(5)",
+    "-3/4 + (1/4)*sqrt(5)"
+   ],
+   "decimal": [
+    "-1.118033988749895",
+    "0.309016994374947",
+    "-0.190983005625053"
+   ]
+  },
+  {
+   "exact": [
+    "(-1/2)*sqrt(5)",
+    "-3/4 + (-1/4)*sqrt(5)",
+    "-3/4 + (1/4)*sqrt(5)"
+   ],
+   "decimal": [
+    "-1.118033988749895",
+    "-1.309016994374947",
+    "-0.190983005625053"
+   ]
+  },
+  {
+   "exact": [
+    "1/4 + (-1/4)*sqrt(5)",
+    "1/4 + (1/4)*sqrt(5)",
+    "-3/2"
+   ],
+   "decimal": [
+    "-0.309016994374947",
+    "0.809016994374947",
+    "-1.500000000000000"
+   ]
+  }
+ ],
+ "cell_volume": {
+  "exact": "3/2 + (1/2)*sqrt(5)",
+  "decimal": "2.618033988749895"
+ },
+ "pieces": [
+  {
+   "solid": "dicto-skewed-rhombic-dodecahedron",
+   "rotation": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "translation": [
+    "0",
+    "0",
+    "0"
+   ]
+  }
+ ],
+ "note": "F1: the solid tiles space by translation (DICTO FCC). Lattice basis chosen among the face-pair translations (twice each face centre); every face-pair translation is an integer combination of it.",
+ "credit": "DICTO",
+ "creator_mark": "Created by DICTO · dictospheres.com",
+ "licence": "CC BY-SA 4.0",
+ "checks": {
+  "volume_sum_equals_cell_volume": true,
+  "no_overlaps_exact": true,
+  "verified_by": "check.py"
+ }
+}

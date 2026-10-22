@@ -1,0 +1,268 @@
+{
+ "log": [
+  "PASS #38 cycle: T^4(ID) = (35 - 15 sqrt5) ID = (10/phi^4) ID exactly",
+  "PASS dicto-gti: symmetry Ih (classified) vs stated Ih",
+  "PASS dicto-fpd: symmetry Ih (classified) vs stated Ih",
+  "PASS UP-frame OG: 102 corners, 80 faces",
+  "PASS #39: UP-frame OG volume = (525 + 185 sqrt5)/57 exactly (published, #39 section 1)",
+  "PASS truncated icosahedron: 60 corners, 32 faces (edge 1/phi)",
+  "PASS dicto-hecatodihedron: f-vector (80, 180, 102) vs published (80, 180, 102)",
+  "PASS dicto-hecatodihedron: faces by sides {3: 60, 4: 30, 5: 12} vs published {3: 60, 4: 30, 5: 12}",
+  "PASS dicto-hecatodihedron: symmetry Ih (classified) vs stated Ih",
+  "PASS dicto-hecatodihedron matches Polyhedraverse TRANS_DHARMA_80 corner for corner up to similarity (scale, max error) = (np.float64(0.9999997020239179), np.float64(1.6506637162084708e-05))",
+  "PASS dicto-ogdoecontahedron: f-vector (102, 180, 80) vs published (102, 180, 80)",
+  "PASS dicto-ogdoecontahedron: faces by sides {6: 20, 4: 60} vs published {4: 60, 6: 20}",
+  "PASS dicto-ogdoecontahedron: volume -1000/1539 + (1240/1539)*sqrt(5) vs published (-1000 + 1240*sqrt(5))/1539",
+  "PASS dicto-ogdoecontahedron: squared edges ['86/3249 + (2/361)*sqrt(5)', '2/9 + (-2/27)*sqrt(5)'] vs published ['2/9 + (-2/27)*sqrt(5)', '86/3249 + (2/361)*sqrt(5)']",
+  "PASS dicto-ogdoecontahedron: symmetry Ih (classified) vs stated Ih",
+  "PASS UP-frame OG (#38/#39 construction) is the #31 OG scaled (corner-matching test), scale^2 = 27/8 + (9/8)*sqrt(5)",
+  "PASS dicto-kre: volume equals the #39 study value 920/57+20/19r5",
+  "PASS dicto-kre: f-vector (92, 180, 90) vs published (92, 180, 90)",
+  "PASS dicto-kre: symmetry Ih (classified) vs stated Ih",
+  "PASS dicto-phe: volume equals the #39 study value 95875/4617+-520/1539r5",
+  "PASS dicto-phe: f-vector (180, 270, 92) vs published (180, 270, 92)",
+  "PASS dicto-phe: symmetry Ih (classified) vs stated Ih",
+  "PASS dicto-tpp: volume equals the #39 study value -1142247902494640/32258276241813+10284735282640/398250323973r5",
+  "PASS dicto-tpp: f-vector (212, 390, 180) vs published (212, 390, 180)",
+  "PASS dicto-tpp: symmetry Ih (classified) vs stated Ih",
+  "PASS dicto-dphp: volume equals the #39 study value -14900661388229463716320/1064860352965629261+741665577198656722816/118317816996181029r5",
+  "PASS dicto-dphp: f-vector (270, 420, 152) vs published (270, 420, 152)",
+  "PASS dicto-dphp: symmetry Ih (classified) vs stated Ih",
+  "PASS dicto-tph: volume equals the #39 study value",
+  "PASS dicto-tph: f-vector (80, 210, 132) vs published (80, 210, 132)",
+  "PASS dicto-tph: symmetry Ih (classified) vs stated Ih",
+  "PASS dicto-tqh: volume equals the #39 study value",
+  "PASS dicto-tqh: f-vector (132, 270, 140) vs published (132, 270, 140)",
+  "PASS dicto-tqh: symmetry Ih (classified) vs stated Ih",
+  "PASS dicto-tqp: volume equals the #39 study value",
+  "PASS dicto-tqp: f-vector (140, 300, 162) vs published (140, 300, 162)",
+  "PASS dicto-tqp: symmetry Ih (classified) vs stated Ih",
+  "PASS dicto-tqhd: volume equals the #39 study value",
+  "PASS dicto-tqhd: f-vector (162, 360, 200) vs published (162, 360, 200)",
+  "PASS dicto-tqhd: symmetry Ih (classified) vs stated Ih",
+  "PASS dicto-metaxyhexecontahedron: f-vector (32, 90, 60) vs published (32, 90, 60)",
+  "PASS dicto-metaxyhexecontahedron: volume 410/27 + (550/81)*sqrt(5) vs published 410/27 + 550*sqrt(5)/81",
+  "PASS dicto-metaxyhexecontahedron: squared edges ['14/9 + (2/27)*sqrt(5)', '94/81 + (14/27)*sqrt(5)'] vs published ['94/81 + (14/27)*sqrt(5)', '14/9 + (2/27)*sqrt(5)']",
+  "PASS dicto-metaxyhexecontahedron: symmetry Ih (classified) vs stated Ih",
+  "PASS dicto-palintriacontahedron: f-vector (32, 90, 60) vs published (32, 90, 60)",
+  "PASS dicto-palintriacontahedron: volume 50/3 + (50/9)*sqrt(5) vs published 50/3 + 50*sqrt(5)/9",
+  "PASS dicto-palintriacontahedron: squared edges ['5/3', '20/9'] vs published ['5/3', '20/9']",
+  "PASS dicto-palintriacontahedron: symmetry Ih (classified) vs stated Ih",
+  "PASS dicto-dbt: volume -872/81 + (440/81)*sqrt(5) vs published (-872 + 440*sqrt(5))/81",
+  "PASS dicto-dbt: f-vector (30, 60, 32) vs published (30, 60, 32)",
+  "PASS dicto-dbt: symmetry D3d (classified) vs stated D3d",
+  "PASS dicto-ott: volume -608/81 + (320/81)*sqrt(5) vs published (-608 + 320*sqrt(5))/81",
+  "PASS dicto-ott: symmetry Th (classified) vs stated Th"
+ ],
+ "summary": {
+  "dicto-gti": {
+   "V": 60,
+   "E": 90,
+   "F": 32,
+   "volume": "85/2 + (-15/2)*sqrt(5)",
+   "order": 120,
+   "rot": 60,
+   "inv": true,
+   "faces": {
+    "6": 20,
+    "5": 12
+   }
+  },
+  "dicto-fpd": {
+   "V": 32,
+   "E": 90,
+   "F": 60,
+   "volume": "130000/9 + (-58000/9)*sqrt(5)",
+   "order": 120,
+   "rot": 60,
+   "inv": true,
+   "faces": {
+    "3": 60
+   }
+  },
+  "dicto-hecatodihedron": {
+   "V": 80,
+   "E": 180,
+   "F": 102,
+   "volume": "-365/4 + (189/4)*sqrt(5)",
+   "order": 120,
+   "rot": 60,
+   "inv": true,
+   "faces": {
+    "3": 60,
+    "4": 30,
+    "5": 12
+   }
+  },
+  "dicto-ogdoecontahedron": {
+   "V": 102,
+   "E": 180,
+   "F": 80,
+   "volume": "-1000/1539 + (1240/1539)*sqrt(5)",
+   "order": 120,
+   "rot": 60,
+   "inv": true,
+   "faces": {
+    "6": 20,
+    "4": 60
+   }
+  },
+  "dicto-kre": {
+   "V": 92,
+   "E": 180,
+   "F": 90,
+   "volume": "920/57 + (20/19)*sqrt(5)",
+   "order": 120,
+   "rot": 60,
+   "inv": true,
+   "faces": {
+    "4": 90
+   }
+  },
+  "dicto-phe": {
+   "V": 180,
+   "E": 270,
+   "F": 92,
+   "volume": "95875/4617 + (-520/1539)*sqrt(5)",
+   "order": 120,
+   "rot": 60,
+   "inv": true,
+   "faces": {
+    "6": 80,
+    "5": 12
+   }
+  },
+  "dicto-tpp": {
+   "V": 212,
+   "E": 390,
+   "F": 180,
+   "volume": "-1142247902494640/32258276241813 + (10284735282640/398250323973)*sqrt(5)",
+   "order": 120,
+   "rot": 60,
+   "inv": true,
+   "faces": {
+    "5": 120,
+    "3": 60
+   }
+  },
+  "dicto-dphp": {
+   "V": 270,
+   "E": 420,
+   "F": 152,
+   "volume": "-14900661388229463716320/1064860352965629261 + (741665577198656722816/118317816996181029)*sqrt(5)",
+   "order": 120,
+   "rot": 60,
+   "inv": true,
+   "faces": {
+    "5": 120,
+    "6": 20,
+    "10": 12
+   }
+  },
+  "dicto-tph": {
+   "V": 80,
+   "E": 210,
+   "F": 132,
+   "volume": "10437930/1295029 + (3959694/1295029)*sqrt(5)",
+   "order": 120,
+   "rot": 60,
+   "inv": true,
+   "faces": {
+    "3": 120,
+    "5": 12
+   }
+  },
+  "dicto-tqh": {
+   "V": 132,
+   "E": 270,
+   "F": 140,
+   "volume": "770805045/120198224 + (337172409/120198224)*sqrt(5)",
+   "order": 120,
+   "rot": 60,
+   "inv": true,
+   "faces": {
+    "4": 60,
+    "6": 20,
+    "3": 60
+   }
+  },
+  "dicto-tqp": {
+   "V": 140,
+   "E": 300,
+   "F": 162,
+   "volume": "120305817389620301905755/20607697986465930772682 + (53586855308159545924323/20607697986465930772682)*sqrt(5)",
+   "order": 120,
+   "rot": 60,
+   "inv": true,
+   "faces": {
+    "3": 60,
+    "4": 90,
+    "5": 12
+   }
+  },
+  "dicto-tqhd": {
+   "V": 162,
+   "E": 360,
+   "F": 200,
+   "volume": "270305422263352121003895663/51860885574873804704126416 + (120804282361507036859626617/51860885574873804704126416)*sqrt(5)",
+   "order": 120,
+   "rot": 60,
+   "inv": true,
+   "faces": {
+    "6": 20,
+    "3": 120,
+    "4": 60
+   }
+  },
+  "dicto-metaxyhexecontahedron": {
+   "V": 32,
+   "E": 90,
+   "F": 60,
+   "volume": "410/27 + (550/81)*sqrt(5)",
+   "order": 120,
+   "rot": 60,
+   "inv": true,
+   "faces": {
+    "3": 60
+   }
+  },
+  "dicto-palintriacontahedron": {
+   "V": 32,
+   "E": 90,
+   "F": 60,
+   "volume": "50/3 + (50/9)*sqrt(5)",
+   "order": 120,
+   "rot": 60,
+   "inv": true,
+   "faces": {
+    "3": 60
+   }
+  },
+  "dicto-dbt": {
+   "V": 30,
+   "E": 60,
+   "F": 32,
+   "volume": "-872/81 + (440/81)*sqrt(5)",
+   "order": 12,
+   "rot": 6,
+   "inv": true,
+   "faces": {
+    "3": 8,
+    "4": 24
+   }
+  },
+  "dicto-ott": {
+   "V": 24,
+   "E": 60,
+   "F": 38,
+   "volume": "-608/81 + (320/81)*sqrt(5)",
+   "order": 24,
+   "rot": 12,
+   "inv": true,
+   "faces": {
+    "3": 32,
+    "4": 6
+   }
+  }
+ }
+}

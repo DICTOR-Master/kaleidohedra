@@ -1,0 +1,306 @@
+{
+ "name": "DICTO skewed rhombic dodecahedron",
+ "finding": "F1",
+ "paper": "Kaleidohedra findings archive",
+ "dicto_doi": "10.5281/zenodo.23173809",
+ "status": "new member of a known family (rhombic-dodecahedron parallelohedra: Fedorov 1885; Lalvani US 5,623,790, 1997)",
+ "convex": true,
+ "scale_note": "Exact frame: edge 1; the edge directions are unit vectors along two-fold axes of the icosahedron (0, +-1, +-phi) cyclic (its edge midpoints divided by phi). The solid is the zonotope sum of the segments [-e/2, e/2] of its edge directions e (centred at the origin). Four directions, meeting at 60 deg three times and 72 deg three times.",
+ "source": {
+  "app": "Polyhedraverse",
+  "path": "krp-core src/geometry-extensions/dicto-fcc.js",
+  "id": "DICTO_SKEWED_RD"
+ },
+ "credit_note": "Credit: DICTO (idea, names); exact computation with Claude (Anthropic).",
+ "published_values": {
+  "volume": "(3 + sqrt(5))/2",
+  "f_vector": [
+   14,
+   24,
+   12
+  ]
+ },
+ "field": "Q(sqrt(5))",
+ "vertices": [
+  {
+   "exact": [
+    "1/8 + (-3/8)*sqrt(5)",
+    "-1/4",
+    "-9/8 + (1/8)*sqrt(5)"
+   ],
+   "decimal": [
+    "-0.713525491562421",
+    "-0.250000000000000",
+    "-0.845491502812526"
+   ]
+  },
+  {
+   "exact": [
+    "1/8 + (-3/8)*sqrt(5)",
+    "-1/4",
+    "-1/8 + (1/8)*sqrt(5)"
+   ],
+   "decimal": [
+    "-0.713525491562421",
+    "-0.250000000000000",
+    "0.154508497187474"
+   ]
+  },
+  {
+   "exact": [
+    "-1/8 + (-1/8)*sqrt(5)",
+    "-1/2 + (-1/4)*sqrt(5)",
+    "-5/8 + (1/8)*sqrt(5)"
+   ],
+   "decimal": [
+    "-0.404508497187474",
+    "-1.059016994374947",
+    "-0.345491502812526"
+   ]
+  },
+  {
+   "exact": [
+    "-1/8 + (-1/8)*sqrt(5)",
+    "-1/2 + (-1/4)*sqrt(5)",
+    "3/8 + (1/8)*sqrt(5)"
+   ],
+   "decimal": [
+    "-0.404508497187474",
+    "-1.059016994374947",
+    "0.654508497187474"
+   ]
+  },
+  {
+   "exact": [
+    "-1/8 + (-1/8)*sqrt(5)",
+    "(1/4)*sqrt(5)",
+    "-5/8 + (1/8)*sqrt(5)"
+   ],
+   "decimal": [
+    "-0.404508497187474",
+    "0.559016994374947",
+    "-0.345491502812526"
+   ]
+  },
+  {
+   "exact": [
+    "-1/8 + (-1/8)*sqrt(5)",
+    "(1/4)*sqrt(5)",
+    "3/8 + (1/8)*sqrt(5)"
+   ],
+   "decimal": [
+    "-0.404508497187474",
+    "0.559016994374947",
+    "0.654508497187474"
+   ]
+  },
+  {
+   "exact": [
+    "-3/8 + (1/8)*sqrt(5)",
+    "-1/4",
+    "7/8 + (1/8)*sqrt(5)"
+   ],
+   "decimal": [
+    "-0.095491502812526",
+    "-0.250000000000000",
+    "1.154508497187474"
+   ]
+  },
+  {
+   "exact": [
+    "3/8 + (-1/8)*sqrt(5)",
+    "1/4",
+    "-7/8 + (-1/8)*sqrt(5)"
+   ],
+   "decimal": [
+    "0.095491502812526",
+    "0.250000000000000",
+    "-1.154508497187474"
+   ]
+  },
+  {
+   "exact": [
+    "1/8 + (1/8)*sqrt(5)",
+    "(-1/4)*sqrt(5)",
+    "-3/8 + (-1/8)*sqrt(5)"
+   ],
+   "decimal": [
+    "0.404508497187474",
+    "-0.559016994374947",
+    "-0.654508497187474"
+   ]
+  },
+  {
+   "exact": [
+    "1/8 + (1/8)*sqrt(5)",
+    "(-1/4)*sqrt(5)",
+    "5/8 + (-1/8)*sqrt(5)"
+   ],
+   "decimal": [
+    "0.404508497187474",
+    "-0.559016994374947",
+    "0.345491502812526"
+   ]
+  },
+  {
+   "exact": [
+    "1/8 + (1/8)*sqrt(5)",
+    "1/2 + (1/4)*sqrt(5)",
+    "-3/8 + (-1/8)*sqrt(5)"
+   ],
+   "decimal": [
+    "0.404508497187474",
+    "1.059016994374947",
+    "-0.654508497187474"
+   ]
+  },
+  {
+   "exact": [
+    "1/8 + (1/8)*sqrt(5)",
+    "1/2 + (1/4)*sqrt(5)",
+    "5/8 + (-1/8)*sqrt(5)"
+   ],
+   "decimal": [
+    "0.404508497187474",
+    "1.059016994374947",
+    "0.345491502812526"
+   ]
+  },
+  {
+   "exact": [
+    "-1/8 + (3/8)*sqrt(5)",
+    "1/4",
+    "1/8 + (-1/8)*sqrt(5)"
+   ],
+   "decimal": [
+    "0.713525491562421",
+    "0.250000000000000",
+    "-0.154508497187474"
+   ]
+  },
+  {
+   "exact": [
+    "-1/8 + (3/8)*sqrt(5)",
+    "1/4",
+    "9/8 + (-1/8)*sqrt(5)"
+   ],
+   "decimal": [
+    "0.713525491562421",
+    "0.250000000000000",
+    "0.845491502812526"
+   ]
+  }
+ ],
+ "faces": [
+  [
+   0,
+   1,
+   5,
+   4
+  ],
+  [
+   0,
+   2,
+   3,
+   1
+  ],
+  [
+   0,
+   4,
+   10,
+   7
+  ],
+  [
+   0,
+   7,
+   8,
+   2
+  ],
+  [
+   1,
+   3,
+   6,
+   5
+  ],
+  [
+   2,
+   8,
+   9,
+   3
+  ],
+  [
+   3,
+   9,
+   13,
+   6
+  ],
+  [
+   4,
+   5,
+   11,
+   10
+  ],
+  [
+   5,
+   6,
+   13,
+   11
+  ],
+  [
+   7,
+   10,
+   12,
+   8
+  ],
+  [
+   8,
+   12,
+   13,
+   9
+  ],
+  [
+   10,
+   11,
+   13,
+   12
+  ]
+ ],
+ "f_vector": {
+  "vertices": 14,
+  "edges": 24,
+  "faces": 12
+ },
+ "faces_by_sides": {
+  "4": 12
+ },
+ "volume": {
+  "exact": "3/2 + (1/2)*sqrt(5)",
+  "decimal": "2.618033988749895"
+ },
+ "squared_edge_lengths": [
+  {
+   "exact": "1",
+   "decimal": "1.000000000000000",
+   "count": 24
+  }
+ ],
+ "symmetry": {
+  "schoenflies": "C2h",
+  "order": 4,
+  "rotations": 2,
+  "contains_inversion": true
+ },
+ "credit": "DICTO",
+ "creator_mark": "Created by DICTO · dictospheres.com",
+ "licence": "CC BY-SA 4.0",
+ "checks": {
+  "closed_2_manifold": true,
+  "outward_ccw_winding": true,
+  "faces_planar_exact": true,
+  "euler_characteristic": 2,
+  "volume_positive_exact": true,
+  "convex": true,
+  "symmetry_order_exact": 4,
+  "verified_by": "check.py (python3 + sympy), re-run from this file alone"
+ }
+}

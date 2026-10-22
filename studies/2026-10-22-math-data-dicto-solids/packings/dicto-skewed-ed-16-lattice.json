@@ -1,0 +1,85 @@
+{
+ "name": "DICTO skewed ED F16 lattice tiling",
+ "finding": "F7",
+ "dicto_doi": "10.5281/zenodo.23173809",
+ "status": "published fill (lattice tiling by translation)",
+ "field": "Q(sqrt(5))",
+ "lattice_vectors": [
+  {
+   "exact": [
+    "(-1/2)*sqrt(5)",
+    "-1/4 + (1/4)*sqrt(5)",
+    "-3/4 + (1/4)*sqrt(5)"
+   ],
+   "decimal": [
+    "-1.118033988749895",
+    "0.309016994374947",
+    "-0.190983005625053"
+   ]
+  },
+  {
+   "exact": [
+    "1/4 + (-3/4)*sqrt(5)",
+    "-1 + (-1/2)*sqrt(5)",
+    "-1/4 + (1/4)*sqrt(5)"
+   ],
+   "decimal": [
+    "-1.427050983124842",
+    "-2.118033988749895",
+    "0.309016994374947"
+   ]
+  },
+  {
+   "exact": [
+    "1/4 + (-1/4)*sqrt(5)",
+    "-1/4 + (-1/4)*sqrt(5)",
+    "-3/2"
+   ],
+   "decimal": [
+    "-0.309016994374947",
+    "-0.809016994374947",
+    "-1.500000000000000"
+   ]
+  }
+ ],
+ "cell_volume": {
+  "exact": "7/2 + (1/2)*sqrt(5)",
+  "decimal": "4.618033988749895"
+ },
+ "pieces": [
+  {
+   "solid": "dicto-skewed-ed-16",
+   "rotation": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "translation": [
+    "0",
+    "0",
+    "0"
+   ]
+  }
+ ],
+ "note": "F7: ED F16 is a parallelohedron and tiles space by translation. Lattice basis chosen among the face-pair translations (twice each face centre); every face-pair translation is an integer combination of it.",
+ "credit": "DICTO",
+ "creator_mark": "Created by DICTO · dictospheres.com",
+ "licence": "CC BY-SA 4.0",
+ "checks": {
+  "volume_sum_equals_cell_volume": true,
+  "no_overlaps_exact": true,
+  "verified_by": "check.py"
+ }
+}
