@@ -1,0 +1,43 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "version": "2",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-22",
+ "access_right": "open",
+ "title": "The Reuleaux Platonic Solids",
+ "description": "<p><b>Main theorem.</b> Put a ball on every corner of a Platonic solid of diameter 1, each of radius 1, and let B be what all the balls share (DICTO's idea). Then the smallest width of B is exactly 1, reached along any line through two corners at distance 1; and for the cube, octahedron, dodecahedron and icosahedron, with circumradius ½ and inradius r, the width along each axis through a face centre is exactly 2√(3/4 + r²) − 2r. Corollary: dual solids have the same ratio r/R, so dual pairs have exactly the same face-axis width, (√30 − √3)/3 ≈ 1.248392 for the balls on the cube and on the octahedron and (√(50 + 2√5) − √(5 + 2√5))/√15 ≈ 1.110989 for the balls on the dodecahedron and on the icosahedron. The tetrahedron is the classical case, the Reuleaux tetrahedron, where the formula does not apply (its diameter is its edge, not twice its circumradius); its edge-midpoint axis gives √3 − √2/2 by the same argument, and our volume agrees with the known closed form to 1.1 × 10<sup>−8</sup>. The four other bodies (not found in the sources checked) are not Reuleaux polyhedra in the sense of Montejano and Roldán-Pensado, following Sallee, or of Hynd. Conjecture 1, with numerical evidence from 3000 directions and local refinement: these axes give the largest width. DICTO names the bodies by their look, the Reuleaux octahedron (balls on the cube), cube (on the octahedron), icosahedron (on the dodecahedron) and dodecahedron (on the icosahedron); each has the face pattern of the dual solid, and the fewest face colours are 4, 2, 3, 3 and 4.</p><p>Finding #45 on dictospheres.com. Scripts, exact checks and data: https://github.com/DICTOR-Master/kaleidohedra/tree/f193a56/studies/2026-10-21-reuleaux-platonic (research branch), also attached here (reuleaux-platonic-study-f193a56.zip).</p>",
+ "keywords": [
+  "Reuleaux tetrahedron",
+  "Reuleaux polyhedra",
+  "ball-polyhedra",
+  "bodies of constant width",
+  "Meissner",
+  "Platonic solids",
+  "width",
+  "dual polyhedra",
+  "DICTO",
+  "exact arithmetic"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/f193a56/studies/2026-10-21-reuleaux-platonic",
+   "relation": "isSupplementedBy",
+   "resource_type": "dataset",
+   "scheme": "url"
+  },
+  {
+   "identifier": "10.5281/zenodo.23173809",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  }
+ ],
+ "notes": "Version 2 (22 October 2026): adds a short plain-words opening to each result, its proof and the conclusion, including that building the body on all five Platonic solids as one family is DICTO's idea; the mathematics is unchanged. Version 1: 21 October 2026."
+}
