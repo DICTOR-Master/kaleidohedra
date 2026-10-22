@@ -46,10 +46,10 @@ apps, the papers, DISCOVERIES.md or the website was changed.
 
 ## Inventory totals (index.csv)
 
-120 rows: **105 new, 4 rediscovered, 11 known** (Oktaktis merged into Cleo-Icos, 2026-10-23). Some rows group several named shapes
+118 rows: **103 new, 4 rediscovered, 11 known** (Oktaktis merged into Cleo-Icos; the F15 Jewel clusters merged into Jewel-Tetra and Jewel-Octa, DICTO's choice of the concise #41 names; 2026-10-23). Some rows group several named shapes
 (Cleo Towers: 8 pieces; Polar Cleo Towers: 7 + core ray; the four new Reuleaux bodies; DICTO Fill set pieces: 4; dented tetrahedron
-L/R; Q and Q′). Counting those one by one: **126 new, 4 rediscovered, 12 known, 142 named shapes in all**. By kind (rows): 36 solids,
-47 pieces, 18 clusters, 16 structures, 1 compound, 2 curved bodies. Of the 142, 23 are in this dataset.
+L/R; Q and Q′). Counting those one by one: **124 new, 4 rediscovered, 12 known, 140 named shapes in all**. By kind (rows): 36 solids,
+47 pieces, 16 clusters, 16 structures, 1 compound, 2 curved bodies. Of the 140, 23 are in this dataset.
 
 Rediscovered: regular-hexagon ED (F5, Grünbaum 2010), Dogstar (Hart 1996, stellation 8), Sunstar Lattice (Hart's honeycomb),
 Bodhi seed (partly: Kabai's cluster layer). The status column copies the wording of DISCOVERIES.md and the papers; it makes no new
@@ -110,5 +110,5 @@ Seal studies, Heikegani, scutoid pieces.
 ## Open questions for you
 
 None left from the first build: the status labels are confirmed, the non-filling packings and the unit-volume size are in, and the
-Jewel-Tetra/-Octa are the F15 clusters (index.csv rows left as they are, as asked; merging them is DICTO's call under the one-name
-rule).
+Jewel-Tetra/-Octa are the F15 clusters: merged into one row each, keeping the #41 names (DICTO 2026-10-23: "#41 more concise"),
+with the F15 names noted.
