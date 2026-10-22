@@ -11,5 +11,5 @@ open('paper.html', 'w').write(s)
 P
 rsync -a --delete --exclude pg ./ 192.168.0.7:kaleidohedra-papers/2026-10-22-platonic-mixes/
 rsync -a ../paper.css ../dicto-logo.png ../print.mjs 192.168.0.7:kaleidohedra-papers/
-ssh 192.168.0.7 "cd ~/kaleidohedra-papers && node print.mjs 2026-10-22-platonic-mixes ${3:-platonic-mixes-draft.pdf} 'Every Mix of the Platonic Solids Fills Space' '${2:-reserved}' 1"
+ssh 192.168.0.7 "cd ~/kaleidohedra-papers && node print.mjs 2026-10-22-platonic-mixes ${3:-platonic-mixes-draft.pdf} 'Every Mix of the Platonic Solids Fills Space' '${2:-reserved}' ${4:-1}"
 rsync -a 192.168.0.7:kaleidohedra-papers/2026-10-22-platonic-mixes/${3:-platonic-mixes-draft.pdf} ./

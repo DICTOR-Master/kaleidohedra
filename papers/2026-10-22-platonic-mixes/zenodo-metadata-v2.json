@@ -1,0 +1,52 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "version": "2",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-22",
+ "access_right": "open",
+ "title": "Every Mix of the Platonic Solids Fills Space",
+ "description": "<p><b>Main theorem.</b> For every non-empty set M of the five Platonic solids, written D, I, C, T, O (dodecahedron, icosahedron, cube, tetrahedron, octahedron: the letters of DICTO), there is a tiling of space whose tiles are copies of the solids in M, all of edge 1, each solid of M used and no other Platonic solid of edge 1, together with copies of pieces from one kit of seven connectors: the half octahedron P, the tetrahedron's face pyramid Q, the same pyramid Q′ at size φ²/√2, DICTO's Admiral Caps A, the Dogstar S, and a cube of edge φ with one of Euclid's roofs taken away (X) or added (Y). Tiles need not meet face to face. The proof stacks flat slabs, one for each solid's world: dodecahedra and Dogstars on Euclid's cubes, edged with X and Y; cubes; the octet, edged with half octahedra; and icosahedra in Pacioli's position inside octahedra of edge φ²/√2, completed by the Admiral Caps. All 31 mixes are also spot-checked numerically.</p><p>Corollaries: the cube alone and the tetrahedron with the octahedron need no connector, while every mix with the dodecahedron or the icosahedron, and the tetrahedron alone, the octahedron alone, cube + tetrahedron and cube + octahedron, need one; all five solids fill space together with six connectors; the six Admiral Caps of one icosahedron and one Dogstar have the same volume, φ/2. Open: whether cube + tetrahedron + octahedron need a connector, the smallest kit, the face-to-face version and three-way periodicity. Each result opens with a plain-words explanation; figures show the seven pieces and the layer cake.</p><p>The idea, to connect all the Platonic solids in any combination by building on the earlier work, is DICTO's; computation, proofs and drafting with Claude (Anthropic).</p>",
+ "keywords": [
+  "DICTO",
+  "Platonic solids",
+  "space-filling",
+  "tiling",
+  "dodecahedron",
+  "icosahedron",
+  "octet",
+  "Dogstar",
+  "Admiral Caps",
+  "golden ratio"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23529497",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23497702",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23284390",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  }
+ ],
+ "notes": "Version 2 (22 October 2026): rewords the credit line: \"The question … by combining the earlier work, is DICTO's idea\" is now \"The idea … by building on the earlier work, is DICTO's\"; nothing else changes. Version 1: 22 October 2026. #47 in DICTO's numbering (dictospheres.com). Scripts and checks attached as a zip of studies/2026-10-22-platonic-mix-step1 (research branch, commit cea1e4a)."
+}
