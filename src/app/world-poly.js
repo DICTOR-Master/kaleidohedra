@@ -36,6 +36,7 @@ import { bestFits } from '../krp-core/src/assembly/bestFits.js';
 import { kitSlots, kitFrame, kitIcosahedron, goldenRectangles } from '../krp-core/src/assembly/kitHints.js';
 import { t } from './i18n.js';
 import { polyShapeName } from './poly-shapes.js';
+import { softActive, softState, onSoftChange, puffedFor, finishMaterial, applyFinish, seamMaterial, seamLines } from './soft-finish.js';
 
 export { polyShapeEdges, polyShapeName } from './poly-shapes.js';
 
@@ -171,6 +172,8 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     for (const child of [...group.children]) {
       group.remove(child);
       if (child.userData.poly === 'sphere') { child.material.dispose(); continue; }
+      if (child.userData.poly === 'soft') { child.dispose(); continue; } // its geometry is the shared puffed one
+      if (child.userData.poly === 'softSeams') { child.geometry.dispose(); continue; }
       child.geometry.dispose();
       if (child.isLineSegments || child.userData.ownMat) child.material.dispose();
     }
@@ -357,8 +360,8 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       if (!n) continue;
       const P = worldPoints(n), f = POLYHEDRA[n.shape].faces[+fi], col = slots[i].colour ?? HINT_COLOURS[slots[i].shape] ?? theme().strongHex;
       const nrm = P[f[1]].clone().sub(P[f[0]]).cross(P[f[2]].clone().sub(P[f[0]])).normalize().multiplyScalar(0.004);
-      const pos = [];
-      for (let j = 1; j + 1 < f.length; j++) for (const v of [f[0], f[j], f[j + 1]]) { const x = P[v].clone().add(nrm); pos.push(x.x, x.y, x.z); }
+      const pos = softOn() ? softFace(n, +fi) : [];
+      if (!pos.length) for (let j = 1; j + 1 < f.length; j++) for (const v of [f[0], f[j], f[j + 1]]) { const x = P[v].clone().add(nrm); pos.push(x.x, x.y, x.z); }
       const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
       const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: 0.55, depthWrite: false, side: THREE.DoubleSide }));
       m.userData.poly = 'glow'; m.userData.ownMat = true;
@@ -375,6 +378,47 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     commit();
     refitIfGrown();
     return true;
+  }
+
+  // ---- Soft (DICTO 2026-10-21): each shape's puffed copy, one instanced mesh per shape over the real pieces (which stay,
+  // unseen, for taps). Pieces with their own face colours keep them; shapes with many small faces keep their creases.
+  const softMat = finishMaterial({ side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
+  const softSeamMat = seamMaterial();
+  const softOn = () => softActive() && !skeleton && !spherical && !view.rcp;
+  function softMeshes(list) {
+    const out = [], byShape = new Map();
+    for (const n of list) { if (!byShape.has(n.shape)) byShape.set(n.shape, []); byShape.get(n.shape).push(n); }
+    if (softMat.userData.finish !== softState().finish) applyFinish(softMat);
+    softMat.transparent = pieceMaterial.transparent; softMat.opacity = pieceMaterial.opacity; softMat.depthWrite = pieceMaterial.depthWrite;
+    for (const [shape, ns] of byShape) {
+      const spec = POLYHEDRA[shape], g = puffedFor(shape, spec);
+      const im = new THREE.InstancedMesh(g, softMat, ns.length);
+      const M = ns.map(matrixOf);
+      ns.forEach((n, i) => { im.setMatrixAt(i, M[i]); im.setColorAt(i, spec.faceColours ? new THREE.Color(0xffffff) : colorOf(n.shape, n.material, familiesFor(n.shape)[0])); });
+      im.userData.poly = 'soft'; im.raycast = () => {};
+      out.push(im);
+      // the seams: the curved face boundaries; a piece of many small faces keeps its own edges
+      if (spec.faces.length > 200) {
+        const pos = [];
+        for (const n of ns) { const P = worldPoints(n); for (const [a, b] of spec.edges) pos.push(P[a].x, P[a].y, P[a].z, P[b].x, P[b].y, P[b].z); }
+        const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+        const l = new THREE.LineSegments(lg, softSeamMat); l.raycast = () => {}; l.userData.poly = 'softSeams'; out.push(l);
+      } else { const l = seamLines(g, M, softSeamMat); l.userData.poly = 'softSeams'; out.push(l); }
+    }
+    return out;
+  }
+  onSoftChange(() => { if (active && nodes.length) rebuild(); });
+  // A face of a piece as drawn in Soft (its cap and welts), just off the surface: for the tapped face and the glowing ones.
+  function softFace(n, fi) {
+    const g = puffedFor(n.shape, POLYHEDRA[n.shape]), P = g.attributes.position, N = g.attributes.normal, ids = g.userData.faceIds;
+    const M = matrixOf(n), R = new THREE.Matrix3().getNormalMatrix(M), v = new THREE.Vector3(), w = new THREE.Vector3(), out = [];
+    const lift = 0.004 * edgeLength(POLYHEDRA[n.shape]);
+    for (let i = 0; i < P.count; i++) {
+      if (ids[i] !== fi) continue;
+      v.fromBufferAttribute(P, i).applyMatrix4(M); w.fromBufferAttribute(N, i).applyMatrix3(R).normalize();
+      v.addScaledVector(w, lift); out.push(v.x, v.y, v.z);
+    }
+    return out;
   }
 
   function rebuild() {
@@ -406,11 +450,18 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       const [mesh, lines] = meshOf(nodes, pieceMaterial, (n, c) => c.copy(colorOf(n.shape, n.material, familiesFor(n.shape)[0])), EDGE_COLOR, faceOwner);
       mesh.userData.poly = 'piece';
       mesh.visible = !skeleton;
+      const soft = softOn();
+      if (soft) {
+        // Soft: the puffed copies drawn; the real pieces stay underneath, unseen, for taps.
+        mesh.material = hiddenPickMaterial;
+        lines.visible = false;
+        group.add(...softMeshes(parted.length ? shown : nodes));
+      }
       if (parted.length) {
         // Parts drawn in place of their solids; the solids stay underneath, unseen, for taps.
         mesh.material = hiddenPickMaterial;
         lines.visible = false;
-        if (shown.length) { const [m2, l2] = meshOf(shown, pieceMaterial, (n, c) => c.copy(colorOf(n.shape, n.material, familiesFor(n.shape)[0])), EDGE_COLOR); m2.visible = !skeleton; if (skeleton) l2.material.color.setHex(theme().accentHex); group.add(m2, l2); }
+        if (shown.length && !soft) { const [m2, l2] = meshOf(shown, pieceMaterial, (n, c) => c.copy(colorOf(n.shape, n.material, familiesFor(n.shape)[0])), EDGE_COLOR); m2.visible = !skeleton; if (skeleton) l2.material.color.setHex(theme().accentHex); group.add(m2, l2); }
         group.add(...partsMeshes(parted));
       }
       if (skeleton) lines.material.color.setHex(theme().accentHex);
@@ -491,8 +542,9 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     const nrm = P[f[1]].clone().sub(P[f[0]]).cross(P[f[2]].clone().sub(P[f[0]])).normalize();
     if (nrm.dot(c.clone().sub(P.reduce((a, v) => a.add(v.clone()), new THREE.Vector3()).divideScalar(P.length))) < 0) nrm.negate();
     const lift = nrm.multiplyScalar(0.004);
-    const pos = [];
-    for (let i = 1; i < f.length - 1; i++) for (const k of [f[0], f[i], f[i + 1]]) { const q = P[k].clone().add(lift); pos.push(q.x, q.y, q.z); }
+    let pos = [];
+    if (softOn()) pos = softFace(n, fi);
+    else for (let i = 1; i < f.length - 1; i++) for (const k of [f[0], f[i], f[i + 1]]) { const q = P[k].clone().add(lift); pos.push(q.x, q.y, q.z); }
     const g = new THREE.BufferGeometry();
     g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
     const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: theme().contrastHex, transparent: true, opacity: 0.75, side: THREE.DoubleSide, depthWrite: false }));
@@ -954,6 +1006,8 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       renderName();
     },
     setSkeleton(on) { skeleton = on; if (active) rebuild(); },
+    /** Soft applies to the pieces as they are: not to Skeleton, Spherical or a 4D cell build (their own drawing). */
+    softApplies: () => active && !skeleton && !spherical && !view.rcp,
     setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) rebuild(); } },
     setLatticeView() { /* no lattice here: shapes are placed freely */ },
     refresh() { if (active) rebuild(); },
