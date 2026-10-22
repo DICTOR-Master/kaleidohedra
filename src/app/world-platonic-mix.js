@@ -17,9 +17,11 @@ import { WORLDS, PHI, SLAB_ORDER, slabsOf, slabPieces, pieceKey, pieceCentre, he
 
 // the elements' colours (DICTO): dodecahedron violet, icosahedron blue, cube green, tetrahedron red, octahedron yellow; gold edges
 export const SOLID_COLOURS = { D: 0x8a5cc4, I: 0x3a70cd, C: 0x488e48, T: 0xcd3e28, O: 0xe8c852 };
-// helpers are coloured glass (DICTO: the structure shows through); each is tinted after the solid it stands in for or joins:
-// P half-octahedra yellow, Q/Q′ quarter-tetrahedra red, A Admiral Caps blue, S Dogstar and X/Y violet
-const HELPER_COLOURS = { P: 0xf0d870, Q: 0xe8705a, 'Q′': 0xf09a6a, A: 0x6a9cf0, S: 0xb08ae6, X: 0x9a78d8, Y: 0xc4a8ee };
+// helpers are glass in a light tone of the solid they stand in for or join (DICTO): P half-octahedra O, Q/Q′ quarter-tetrahedra T,
+// A Admiral Caps I, S Dogstar and X/Y D
+const HELPER_OF = { P: 'O', Q: 'T', 'Q′': 'T', A: 'I', S: 'D', X: 'D', Y: 'D' };
+const light = (c, t = 0.45) => [16, 8, 0].reduce((a, sh) => a | (Math.round(((c >> sh) & 255) * (1 - t) + 255 * t) << sh), 0);
+const HELPER_COLOURS = Object.fromEntries(Object.entries(HELPER_OF).map(([k, w]) => [k, light(SOLID_COLOURS[w])]));
 const GLASS = 0.38;
 const GOLD = 0xdeb250;
 const KEY = { 'Q′': 'Qp' };                              // i18n key of a kind
