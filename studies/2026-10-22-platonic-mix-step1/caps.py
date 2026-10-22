@@ -19,4 +19,4 @@ lab=np.argmin(((G[:,None,:]-mids[None])**2).sum(-1),1)
 print('octahedron edges', len(mids), 'gap points by edge', np.bincount(lab,minlength=12))
 # by nearest octahedron vertex instead
 labv=np.argmin(((G[:,None,:]-OCT[None])**2).sum(-1),1); print('by vertex', np.bincount(labv,minlength=6))
-Vo=(2**.5/3)*L**3; Vi=5*phi**2/12; print('V_oct',Vo,'V_ico',Vi,'gap',Vo-Vi,'per cap (6)',(Vo-Vi)/6)
+Vo=(2**.5/3)*L**3; Vi=5*phi**2/6   # icosahedron of edge 1 (was /12: wrong); print('V_oct',Vo,'V_ico',Vi,'gap',Vo-Vi,'per cap (6)',(Vo-Vi)/6)
