@@ -13,7 +13,7 @@ Version 1 · 22 October 2026 · __DOI__ · Licence CC BY-SA 4.0 · Scripts, chec
 The stretched dodecahedron (F11), the long hexagon seen in the dodecahedron layer, the three- and four-cap forms and the telescoping model are DICTO's ideas; computation, proofs and drafting with Claude (Anthropic).
 </div>
 
-<div class="abstract"><b>In short.</b> Take a regular dodecahedron and slide it one edge-length in a straight line. The shape it sweeps through has every edge the same length, whichever way you slide it, except when the slide runs exactly along one of its edges. Its faces are the dodecahedron's twelve pentagons and a belt of rhombi, ten or twelve of them; where the slide lies flat along a pentagon, that pentagon stretches into a hexagon or a heptagon. Sliding along a cube axis gives DICTO's stretched dodecahedron (F11); sliding along a face diagonal of Euclid's cube gives a new member, all twelve pentagons and ten rhombi, which DICTO first saw as a long hexagon in the dodecahedron layer of paper #47. Placing dodecahedra at the corners of a triangle or a tetrahedron gives the three- and four-cap forms, with equilateral triangles among their faces. Printable nets, and a telescoping model that slides from short to long, are attached.</div>
+<div class="abstract"><b>In short.</b> Take a regular dodecahedron and slide it one edge-length in a straight line. The shape it sweeps through has every edge the same length, whichever way you slide it, except when the slide runs exactly along one of its edges. Its faces are the dodecahedron's twelve pentagons and a belt of rhombi, ten or twelve of them; where the slide lies flat along a pentagon, that pentagon stretches into a hexagon or a heptagon. Sliding along a cube axis gives DICTO's stretched dodecahedron (F11); sliding along a face diagonal of Euclid's cube gives a new member, all twelve pentagons and ten rhombi, which DICTO first saw as a long hexagon in the dodecahedron layer of paper #47. Placing dodecahedra at the corners of a triangle or a tetrahedron gives the three- and four-cap forms, with equilateral triangles among their faces. The same theorem holds for every Platonic solid; the stretched icosahedra form a second new-looking family, and the tetrahedron and octahedron rediscover the cuboctahedron, the truncated tetrahedron and three Johnson solids. Printable nets, and a telescoping model that slides from short to long, are attached.</div>
 
 <figure><div class="figs wide"><img src="figures/swept-dodecahedron.png" alt="The dodecahedron swept along the face diagonal of its cube, three views"></div>
 <figcaption><b>Figure 1.</b> The dodecahedron swept along the face diagonal of Euclid's cube to the next dodecahedron: twelve pentagons (violet) and a belt of ten long faces (lilac). Left: along the long edge, the long hexagon DICTO saw. Middle: end on, a decagon. Right: oblique.</figcaption></figure>
@@ -41,7 +41,7 @@ The stretched dodecahedron (F11), the long hexagon seen in the dodecahedron laye
 <p class="hook">The slide can be short or long; the faces stay the same, only the belt grows.</p>
 <figure><div class="figs wide"><img class="mid" src="figures/swept-short-long.png" alt="Short beside long"></div>
 <figcaption><b>Figure 3.</b> The face-diagonal slide. Left: slide 1, every edge 1, the rhombi of three shapes (2 with angles 45° and 135°, 4 with 55° and 125°, 4 with 69° and 111°). Right: slide φ√2 ≈ 2.288, all the way to the next dodecahedron.</figcaption></figure>
-<p>For any slide length the faces keep their kinds; only the belt's long sides change. That is why the telescoping model of §6 works: it is one solid at every length.</p>
+<p>For any slide length the faces keep their kinds; only the belt's long sides change. That is why the telescoping model of §7 works: it is one solid at every length.</p>
 
 <h2>5. Three caps and four caps</h2>
 <p class="hook">Instead of sliding along a line, put a dodecahedron at each corner of a triangle or a tetrahedron and wrap them together. Equilateral triangles appear.</p>
@@ -50,25 +50,39 @@ The stretched dodecahedron (F11), the long hexagon seen in the dodecahedron laye
 <p><b>Corollary.</b> Wrapping dodecahedra placed at the corners of an equilateral triangle or a regular tetrahedron of side 1, in the positions of neighbouring cubes of Euclid's lattice, gives solids with every edge 1: three caps, 12 pentagons, 15 rhombi and 2 equilateral triangles (29 faces); four caps, 12 pentagons, 18 rhombi and 4 equilateral triangles (34 faces). (The same argument as the theorem: every edge is an edge of the dodecahedron or of the triangle or tetrahedron.)</p>
 <p>DICTO also asked whether turning one end of the two-cap shape could make its belt into triangles, as an antiprism does. It cannot: over every turn and shift, the best band of triangles still has edges a third of an edge too long or short, because the rim zigzags. Three and four caps give the triangles instead.</p>
 
-<h2>6. Make your own</h2>
+<h2>6. The other Platonic solids, and the icosahedron family</h2>
+<p class="hook">The theorem works for every solid whose edges are all equal. Stretch the other Platonic solids and some famous shapes appear, and some new-looking ones.</p>
+<p>The proof in Appendix A uses only that every edge of the solid has the same length, so the Stretching Theorem holds for the tetrahedron, cube, octahedron and icosahedron too (checked for 1 000 random stretches of each). Several results are well-known solids, which is a good sign that the stretch is a natural operation: the tetrahedron with four caps is the cuboctahedron and the octahedron with four caps the truncated tetrahedron (both Archimedean); the tetrahedron stretched through a corner is the elongated triangular pyramid, with three caps the triangular cupola, and the octahedron stretched through a corner the elongated square bipyramid (Johnson solids J7, J3 and J15); the stretched cube is a box, a slanted prism or a zonohedron.</p>
+<figure><div class="figs wide"><img src="figures/icosahedron-family.png" alt="The stretched icosahedron family"></div>
+<figcaption><b>Figure 5.</b> The icosahedron (edge 1) stretched one edge-length along four directions, and with three and four caps; every edge 1. Triangles blue, rhombi lilac, pentagons violet, hexagons gold.</figcaption></figure>
+<table><tr><th>Icosahedron</th><th>Faces</th></tr>
+<tr><td>stretched along a five-fold axis</td><td>20 triangles, 10 rhombi</td></tr>
+<tr><td>stretched along a face diagonal</td><td>16 triangles, 2 rhombi, 4 pentagons (pairs of triangles stretched into pentagons)</td></tr>
+<tr><td>stretched along a body diagonal</td><td>20 triangles, 6 rhombi</td></tr>
+<tr><td>stretched along a cube axis</td><td>16 triangles, 4 rhombi, 2 squares</td></tr>
+<tr><td>three caps</td><td>15 triangles, 3 rhombi, 3 pentagons, 2 hexagons</td></tr>
+<tr><td>four caps</td><td>16 triangles, 6 rhombi, 4 hexagons</td></tr></table>
+<p>The icosahedron family is the richest. None of its six shapes is a Johnson or Archimedean solid (they have rhombi), and none was found in the sources checked; the nearest relatives are Hart and Zongker's sum of the compound of five tetrahedra, with 20 triangles and 60 rhombi [6], and Ed Baumann's equal-edged near-misses, which also merge triangles into rhombi [8]. The octahedron stretched through a face (8 triangles, 6 rhombi) and the tetrahedron and cube in their other directions are also not among the named solids we checked; a short table of the Archimedean solids is left for later.</p>
+
+<h2>7. Make your own</h2>
 <p class="hook">Print, cut, fold and glue: every solid here can be held in the hand.</p>
 <figure><div class="figs two"><img src="figures/net-sheet.png" alt="Net of the short stretched dodecahedron"><img src="figures/telescope-sheet.png" alt="Telescoping model, the middle ring"></div>
-<figcaption><b>Figure 5.</b> Left: the net of the short stretched dodecahedron. Right: the middle ring of the telescoping model.</figcaption></figure>
+<figcaption><b>Figure 6.</b> Left: the net of the short stretched dodecahedron. Right: the middle ring of the telescoping model.</figcaption></figure>
 <p>Two files are attached. <i>swept-dodecahedra-nets.pdf</i>: three A4 nets, the short stretched dodecahedron and the three- and four-cap forms, with fold lines dashed, cut lines solid and glue tabs; the few edges without a tab are joined with tape. <i>swept-dodecahedron-telescope.pdf</i>: DICTO's telescoping model in three parts, a cap with inner flaps, a loose middle ring of ten belt faces, and a cap with outer flaps. The faces slide over and under each other; two slider loops keep them in line. Pushed together it is the short shape; pulled to the red marks it is the long one; it extends to about 2.7 edges.</p>
 
-<h2>7. What is new, and what is known</h2>
+<h2>8. What is new, and what is known</h2>
 <p class="hook">The method is old; these shapes were not found named anywhere we looked.</p>
 <p>Sliding a solid along a line, or adding two solids corner by corner, is a standard construction (the Minkowski sum); how a face behaves when the slide lies in its plane, and how a belt forms around the outline, are known in general [4, 5]. George Hart's sums of tetrahedra build triangle-and-rhombus solids the same way, without pentagons [6]; the convex solids glued from regular pentagons alone are listed in [7]. In the sources checked (the reference library and web searches on 22 October 2026) we did not find the dodecahedron swept along a face diagonal, the body diagonal or a five-fold axis, nor the three- and four-cap forms, named or described. Since the construction is simple, they may exist somewhere unnamed; we present them as DICTO's family on that understanding.</p>
 
-<h2>8. Conclusion</h2>
+<h2>9. Conclusion</h2>
 <p class="hook">One idea, sliding a dodecahedron, gives a whole family of solids with equal edges, and you can build them.</p>
-<p>The theorem shows why DICTO's stretched dodecahedra keep their edges equal: every edge is either an old edge or a copy of the slide. The face-diagonal slide keeps all twelve pentagons, and three and four caps add equilateral triangles. The same idea applies to every Platonic solid, which is left for later.</p>
+<p>The theorem shows why DICTO's stretched dodecahedra keep their edges equal: every edge is either an old edge or a copy of the slide. The face-diagonal slide keeps all twelve pentagons, and three and four caps add equilateral triangles. The same theorem holds for every Platonic solid: it rediscovers the cuboctahedron, the truncated tetrahedron and three Johnson solids, and gives a family of new-looking stretched icosahedra. The Archimedean solids are left for later.</p>
 
 <h2>Appendix A. Proof of the Stretching Theorem</h2>
 <p>The swept shape is the Minkowski sum D ⊕ S of D and the segment S from 0 to u. Every face of a Minkowski sum is the sum of a face of each summand, taken in a common outward direction n [4]. For S, the face in direction n is its end u if n·u &gt; 0, its start 0 if n·u &lt; 0, and S itself if n·u = 0. Hence: a face f of D with normal n, n·u ≠ 0, appears as a translate of f; a face with n·u = 0 appears as f ⊕ S, a pentagon widened by u, which has 6 sides if u is parallel to one of its edges and 7 otherwise; an edge e of D on the outline seen along u (between a face with n·u &gt; 0 and one with n·u &lt; 0) appears as the parallelogram e ⊕ S. The edges of D ⊕ S are therefore translates of edges of D (length 1) and translates of S (length |u| = 1), except where an edge of D is parallel to u: there e ⊕ S is a single segment of length 2. So every edge has length 1 exactly when no edge of D is parallel to u. ∎ The corollary is the same argument with S replaced by the triangle or tetrahedron, whose edges have length 1 and are not parallel to edges of D in the positions used.</p>
 
 <h2>Appendix B. Checks</h2>
-<p>In studies/2026-10-22-swept-dodecahedra: sweep_theorem.py (2 000 random directions, all equilateral; belts of 10 or 12 rhombi; the four special directions); caps34.py (three and four caps: face kinds, edge lengths); gyro_caps.py (turned caps: no triangle belt, worst edge off by 0.336 at best); nets.py and telescope.py (the printable nets: unfoldings checked to lie flat with no faces overlapping). Python 3 with numpy and scipy.</p>
+<p>In studies/2026-10-22-swept-dodecahedra: sweep_theorem.py (2 000 random directions, all equilateral; belts of 10 or 12 rhombi; the four special directions); caps34.py (three and four caps: face kinds, edge lengths); gyro_caps.py (turned caps: no triangle belt, worst edge off by 0.336 at best); ring1.py and identify.py (the other four Platonic solids: 1 000 random stretches each, special directions, caps, and which results are known solids); icosa_family.py (Figure 5); nets.py and telescope.py (the printable nets: unfoldings checked to lie flat with no faces overlapping). Python 3 with numpy and scipy.</p>
 
 <h2>References</h2>
 <ol class="refs">
@@ -79,5 +93,6 @@ The stretched dodecahedron (F11), the long hexagon seen in the dodecahedron laye
 <li>Minkowski sum of a Voronoi parallelotope and a segment, arXiv:1501.01212 (how faces change when a segment is added).</li>
 <li>G. W. Hart, Green Giants, in Zome Geometry, https://www.georgehart.com/zomebook/green-giant.html.</li>
 <li>A complete list of all convex polyhedra made by gluing regular pentagons, arXiv:2007.01753.</li>
+<li>Ed Baumann, Modified Johnson Near Misses, https://superliminal.com/geometry/near_misses/index.html.</li>
 </ol>
 </body></html>
