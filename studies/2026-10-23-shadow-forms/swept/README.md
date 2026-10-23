@@ -1,0 +1,4 @@
+# Swept dodecahedra as a space filler — positive search (DICTO 10-22 idea; started 2026-10-23)
+Swept piece = hull of a dodecahedron (edge 1, Euclid cube of edge φ) and its copy moved by (φ, φ, 0) (one cube-edge diagonal): volume 20.062306 = 2 dodecahedra 15.326238 + bridge 4.736068 (= φ³ + 1/2).
+1. **Inside #42's grid (dodecahedra on alternate cells of the φ cube grid, 90.47% — the densest lattice packing of dodecahedra) the swept piece does not fit**: each one overlaps 6 other dodecahedra of the grid ((0,1,±1), (1,0,±1) about 4% of its volume each; (0,2,0), (1,−1,0) about 0.5%). So no pairing of that grid's dodecahedra into swept pieces works; the bridge bulges into the neighbours. (swept1.py, swept2.py; float.)
+2. Next routes (not started): (A) the swept piece's own lattice packings (translates only) and then the gap pieces, as with the AXE; (B) mixed directions (herringbone) in a sparser grid; (C) the equilateral swept piece (sweep 1) instead of φ√2.
