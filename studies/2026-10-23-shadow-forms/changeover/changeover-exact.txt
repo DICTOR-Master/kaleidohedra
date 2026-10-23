@@ -1,0 +1,29 @@
+--- equilateral (rhombic dodecahedron side): t = 0.126599; tetra piece 4 corners 4 faces, octa piece 30 corners 20 faces
+PASS equilateral (rhombic dodecahedron side): 8 tetra pieces + 4 octa pieces = 8 (the cube of side 2), exactly
+PASS every edge of both pieces has the same length, exactly (edge² = 66/25·r^0 + -24/25·r^1, ≈ 0.537113); counts (4, 4, 30, 20)
+--- equilateral (cube side): t = 0.723858; tetra piece 16 corners 10 faces, octa piece 6 corners 8 faces
+PASS equilateral (cube side): 8 tetra pieces + 4 octa pieces = 8 (the cube of side 2), exactly
+PASS every edge of both pieces has the same length, exactly: edge² = 6·r^0 + -4·r^1 = (2 − √2)²; counts (16, 10, 6, 8)
+--- Delian bond (Samson and Delilah): t = 0.470866; tetra piece 16 corners 10 faces, octa piece 6 corners 8 faces
+PASS Delian bond (Samson and Delilah): 8 tetra pieces + 4 octa pieces = 8 (the cube of side 2), exactly
+PASS Samson (tetra piece) and Delilah (octa piece) have equal volume 2/3, exactly: 2/3·r^0, 2/3·r^0
+PASS Delilah is a regular octahedron with edge² = ∛2 (edge 2^(1/6)), exactly: {'1·r^1'}
+PASS Samson: 16 corners, 10 faces (4 triangles, 6 hexagons); its edges have two lengths, squared ['1·r^0 + 1/2·r^1 + -1·r^2', '1·r^1']
+--- tetrahedra and octahedra fill half of space each: t = 0.394293; tetra piece 16 corners 10 faces, octa piece 6 corners 8 faces
+PASS tetrahedra and octahedra fill half of space each: 8 tetra pieces + 4 octa pieces = 8 (the cube of side 2), exactly
+PASS 8 tetra pieces = 4 octa pieces = 4, exactly: vT = 1/2·r^0, vO = 1·r^0
+ALL PASS
+PASS truncated cubes + octahedra, w = -5/8: every corner point of both cells passes the power test against all centres within 2 (24/6 points)
+PASS regular truncated cubes + octahedra, w = 1/4 - 1/sqrt2: every corner point of both cells passes the power test against all centres within 2 (24/6 points)
+PASS cuboctahedra + octahedra, w = -1/4: every corner point of both cells passes the power test against all centres within 2 (12/6 points)
+PASS factor x = 1/phi (golden split shapes), w = -1/(4 phi^3): every corner point of both cells passes the power test against all centres within 2 (24/24 points)
+PASS Kelvin, w = 0: every corner point of both cells passes the power test against all centres within 2 (24/24 points)
+PASS w in [-3/4, -1/4]: C + V volumes = 1 (cubic identity, 5 points)
+PASS w in [-1/4, 1/4]: C + V volumes = 1 (cubic identity, 5 points)
+PASS the two volume formulas agree at the rectified point (S = 1)
+PASS V cell = T(x), C cell = T(1/x) at w = (x-1)/(4(x+1)): x = 1 Kelvin (w = 0), x -> 0 octahedra + cuboctahedra (w -> -1/4)
+PASS golden split x = 1/phi sits at w = -1/(4 phi^3)
+PASS w = 1/4 - 1/sqrt2: triangle edges = octagon edges = -1·r^0 + 1·r^1 (= sqrt2 - 1), octahedron edge the same, so faces match
+PASS Delian ratio C = 2V: 16u^3 - 36u^2 + 18u - 1 = 0 is irreducible with three real roots (disc 39744): no formula in real radicals
+PASS its root in the factor-x range lies in (0.63, 0.64), where V passes 1/3
+ALL PASS
