@@ -125,6 +125,31 @@ hexa = lambda r: sorted(float(v) for k, v in r[1] if k == 6)
 check('the hexagons of both pieces have the same side lengths (squared: 1/2 and (3 - √5)/4)', set(results['icosahedron'][1]) & set(results['Unborn'][1]) and
       {v for k, v in results['icosahedron'][1] if k == 6} == {v for k, v in results['Unborn'][1] if k == 6})
 check('the hexagon of the padded icosahedron is congruent to that of the padded Unborn (all 15 corner distances)', results['icosahedron'][2] == results['Unborn'][2])
+# Theorem 2 (uniqueness): the faces of the core that carry no pyramid stay on the boundary of the padded piece, so for a convex padded
+# piece every pyramid tip must lie on the inner side of their planes. The tip moves linearly in t, so each signed distance is d0 + t*d1.
+def tip(W, t):
+    long_mid = mul(HALF, add(W[0], W[1])); short_mid = mul(HALF, add(W[2], W[3]))
+    return add(long_mid, mul(t, sub(short_mid, long_mid)))
+for name, base in [('icosahedron', ICO), ('Unborn', UNB)]:
+    S = set(base); FB = hull_facets(list(base)); B = list(base)
+    covered = set()
+    myAX = []
+    for W in AX.values():
+        for f in combinations(range(4), 3):
+            if all(W[i] in S for i in f): covered.add(frozenset(B.index(W[i]) for i in f)); myAX.append(W)
+    free = [(on, n) for on, n in FB.items() if on not in covered]
+    crit = []   # (face, AXE) pairs whose signed distance vanishes at t = 1/phi
+    for on, n in free:
+        x0 = B[next(iter(on))]
+        for W in myAX:
+            d0 = dot(n, sub(tip(W, Q5(0)), x0)); d1 = dot(n, sub(tip(W, Q5(1)), x0)) - d0
+            if d1.sign() != 0 and (d0 + T * d1) == 0: crit.append(d1.sign())
+            elif d1.sign() == 0: assert d0.sign() <= 0
+    worse = 'above' if name == 'icosahedron' else 'below'
+    want = 1 if name == 'icosahedron' else -1
+    check(f'{name}: {len(free)} faces carry no pyramid; {len(crit)} tip/face pairs have signed distance zero exactly at t = 1/φ, all turning outward for t {worse} 1/φ (so the padded {name} is not convex there)',
+          len(free) == 8 and len(crit) > 0 and all(c == want for c in crit))
+print('=> both padded pieces are convex only at t = 1/φ (Theorem 2)')
 # Lotus Jewel network: the 8 Tricaps (exact volume (3 - √5)/24 each, axe-gap study) move from the icosahedron side to the dodecahedron side
 VT8 = Q5(Fr(3, 24), Fr(-1, 24)) * 8
 big_k = results['icosahedron'][0] - VT8; small_k = results['Unborn'][0] + VT8
