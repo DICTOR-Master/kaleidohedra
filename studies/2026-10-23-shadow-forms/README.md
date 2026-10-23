@@ -14,3 +14,17 @@ EXACT (exact/golden_split_exact.py → golden-split-exact.txt, ALL PASS, ℚ(√
 5. **Golden split in the Lotus Jewel network** (jewelsplit1–2; exact check in golden_split_exact.py): the same cones; the 8 Tricaps move to the dodecahedron side, so the big truncated octahedron gets 8 Tricap-shaped dents and the small one 8 Tricap keys: a keyed pair, volumes **√5 and 2 exactly** (sum φ³). Each fills ≈ 89.8% / 89.4% of its hull (the keys). Any Tricap assignment still fills, so mixed keyings (some hexagons keyed one way, some the other, some not) all fill. Pictures 04–06 in golden-split/.
 
 Open: prior art (two unequal truncated octahedra on bcc are a known Laguerre/power-diagram family — the golden member with the icosahedron and the Unborn inside is not yet checked: library + web before any claim).
+
+## Prior art (thorough check, 2026-10-23)
+Sources checked: DICTO's reference library (kaleidohedra-references: MANIFEST, READING-LIST, Fedorov ch. 13 — nothing on this); web (9 searches): Koca et al. arXiv:1506.04600 (read in full, text saved in exact/), Polytope Wiki "Truncated octahedron" and "Pyritohedral icosahedron", Ozdes Koca et al. 2021 Acta A (Mosseri–Sadoc dodecahedral structures), Wikipedia bitruncated cubic honeycomb / truncated octahedron, α-AlMnSi (Pm-3 1/1 approximant) literature, Laguerre/power-diagram tessellation papers, quadibloc "Filling Space with Polyhedra", ProofWiki icosahedron in octahedron.
+
+**Known (cite):**
+- Each piece's SHAPE. Koca, Koca, Al-Ajmi, Al-Sheriani 2015 (arXiv:1506.04600; SQU J. Sci. 21(2) 2016), §4.3 eq. (49): the union of a pseudoicosahedron and its mirror image is a non-regular truncated octahedron, the B3 orbit a1(1, x, 0). Our big piece is x = φ (icosahedron ∪ mirror icosahedron), the small x = φ² (Unborn ∪ mirror Unborn) — proven exactly here (corner orbits; the 12 pyramid tips are exactly the mirror image's corners).
+- Polytope Wiki: the semi-uniform truncated octahedron o4y3x (8 ditrigons, 6 squares, full octahedral symmetry); its alternation is a pyritohedral icosahedron, regular when the ditrigon–ditrigon edge is (√5 − 1)/2 of the square–ditrigon edge (our big piece). The small piece has the reciprocal ratio φ.
+- Unweighted bcc Voronoi cell = truncated octahedron; unequal truncated octahedra on bcc arise as weighted Voronoi (Laguerre) cells — general, standard.
+- Context, not the same claim: α-AlMnSi is a Pm-3 1/1 approximant with icosahedral clusters at cube corners and body centres; Mosseri–Sadoc tiles (AXE = t6) are used aperiodically (Koca et al. 2021).
+
+**Not found in any source checked:**
+- The two-piece fill by the golden pair (x = φ at lattice points, x = φ² at body centres) — though since the two have the same hexagon with edge lengths swapped, the fill itself may be regarded as an easy member of the Laguerre family; we do not claim the bare tiling.
+- Its derivation: icosahedra + Unborns (+ Lotus Jewel / Tricap variants) with the AXE gap, and the golden split of the AXE at t = 1/φ as the unique point where both padded pieces are convex; the AXE tips landing exactly on the mirror corners; the keyed √5 / 2 pair of the Lotus Jewel network and its free keyings.
+"Not found" ≠ "new"; limited to the sources listed.
