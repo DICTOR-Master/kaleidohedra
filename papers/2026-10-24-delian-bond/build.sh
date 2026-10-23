@@ -9,7 +9,7 @@ doi = ('DICTO DOI: ' + sys.argv[2]) if sys.argv[2] else 'DICTO DOI: reserved on 
 s = s.replace('__DOI__', doi).replace('__COMMIT__', sys.argv[1])
 open('paper.html', 'w').write(s)
 P
-rsync -a --delete --exclude pg ./ ${PRINT_NODE:-dicto@192.168.0.10}:kaleidohedra-papers/2026-10-24-delian-bond/
-rsync -a ../paper.css ../dicto-logo.png ../print.mjs ${PRINT_NODE:-dicto@192.168.0.10}:kaleidohedra-papers/
-ssh ${PRINT_NODE:-dicto@192.168.0.10} "cd ~/kaleidohedra-papers && node print.mjs 2026-10-24-delian-bond ${3:-delian-bond-draft.pdf} 'The Delian Bond' '${2:-reserved}' ${4:-1}"
-rsync -a ${PRINT_NODE:-dicto@192.168.0.10}:kaleidohedra-papers/2026-10-24-delian-bond/${3:-delian-bond-draft.pdf} ./
+rsync -a --delete --exclude pg ./ ${PRINT_NODE:-big-brother}:kaleidohedra-papers/2026-10-24-delian-bond/
+rsync -a ../paper.css ../dicto-logo.png ../print.mjs ${PRINT_NODE:-big-brother}:kaleidohedra-papers/
+ssh ${PRINT_NODE:-big-brother} "cd ~/kaleidohedra-papers && node print.mjs 2026-10-24-delian-bond ${3:-delian-bond-draft.pdf} 'The Delian Bond' '${2:-reserved}' ${4:-1}"
+rsync -a ${PRINT_NODE:-big-brother}:kaleidohedra-papers/2026-10-24-delian-bond/${3:-delian-bond-draft.pdf} ./
