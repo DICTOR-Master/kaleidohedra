@@ -1,0 +1,74 @@
+{
+ "title": "The DICTO Ogdoecontahedron on the Octet Truss",
+ "publication_date": "2026-10-23",
+ "description": "<p>Joined hexagon to hexagon, copies of the DICTO Ogdoecontahedron (OG) form a body-centred cubic packing whose gap is treated in a companion paper (DICTO DOI: 10.5281/zenodo.23451210). Here the OG goes the other way: its eight joint hexagons lie exactly on the faces of a regular octahedron |x| + |y| + |z| = 2φ/3, so the OG sits in the octahedra of the octet truss, and the space round it becomes tractable. Exactly, in ℚ(√5), we give four families of space-filling kits. (1) A golden-key octet: the OG's golden envelope (a rhombic triacontahedron) pokes into each neighbouring tetrahedron as a small key whose base corners sit at the golden-section points of the octahedron's edges; keyed octahedron and dented tetrahedron (a left and a right) fill space. (2) A Penrose-core octet: the five-fold stars of neighbouring OGs face each other across every octahedron edge, offset by exactly one star tip radius, and an exact thick Penrose rhombus, with two φ-smaller ones, joins them; the shared middle piece holds three Penrose cores. (3) Golden envelopes on every octahedron never overlap and fill exactly 90 − 40√5 = 10/φ⁶ ≈ 55.73% of space; the rest is one chiral piece, so envelope and grown piece fill space with two shapes, and each envelope lies inside its rhombic dodecahedron touching all 12 faces at golden-section points. (4) One-piece glue: the rhombic dodecahedron round each octet vertex, or the octahedral cell round each edge midpoint, minus the OGs that bite it, fills space with the OG as two shapes with no mirror pair, the sockets being exact OG imprints; the edge-centred piece holds all three Penrose cores and can be keyed with the OG's own kites so that twelve copies lock round one OG. The main kits were proved exactly by an independent engine and checked with millions of sample points.</p><p>Ideas, choices and names are DICTO's; computation, exact arithmetic and renders were done with Claude (Anthropic) as a research assistant; the independent exact proofs, the vertex glue W, the identification of the tetartoid and the keyed-glue design are by Claude Fable. Data, scripts and exact checks: https://github.com/DICTOR-Master/kaleidohedra (branch research).</p><p>More of DICTO's geometry: <a href=\"https://dictospheres.com\">https://dictospheres.com</a></p>",
+ "access_right": "open",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "keywords": [
+  "Ogdoecontahedron",
+  "octet truss",
+  "tetrahedral-octahedral honeycomb",
+  "space filling",
+  "rhombic triacontahedron",
+  "golden envelope",
+  "rhombic dodecahedron",
+  "Penrose rhombus",
+  "tetartoid",
+  "interlocking",
+  "golden ratio",
+  "icosahedral symmetry",
+  "exact arithmetic",
+  "polyhedra"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/research/studies/2026-10-18-ocd-octet",
+   "relation": "isSupplementedBy",
+   "resource_type": "dataset",
+   "scheme": "url"
+  },
+  {
+   "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/research/studies/2026-10-18-p4-golden-octet-adaptor",
+   "relation": "isSupplementedBy",
+   "resource_type": "dataset",
+   "scheme": "url"
+  },
+  {
+   "identifier": "10.5281/zenodo.23173809",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23404688",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23451210",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ],
+ "version": "4",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "imprint_publisher": "Zenodo",
+ "communities": [
+  {
+   "identifier": "dicto"
+  }
+ ],
+ "notes": "Version 4 (23 October 2026): Figure 3, right panel (\"Keyless, three Penrose cores\"), redrawn from the verified keyless kit (63 pieces: the OG, 6 caps, 12 central and 24 flanking Penrose cores, 12 rests, 4 + 4 tetrahedra); the earlier panel showed overlapping wrong copies. Text and results unchanged.",
+ "upload_type": "publication",
+ "publication_type": "preprint"
+}
