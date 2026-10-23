@@ -1,0 +1,68 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-24",
+ "access_right": "open",
+ "title": "One Move Each: Classical Cut-and-Glue Space-Fillers Built Exactly",
+ "description": "<p><b>In short.</b> Books describe several classical solids that fill space by how to make them from other solids: shave a belt off one, stick two pyramids onto another, glue a few slanted bricks together. Kaleidohedra makes the same solids in one go, by tilting and stretching a lattice of points, and so gives every corner and every volume exactly. The moves themselves are Fedorov's (1885); what this paper adds is the exact data, the settings and the proofs.</p><p><b>Main theorem.</b> Five space-fillers that the literature gives by cutting, gluing, zone removal or a drawing are each obtained exactly by one setting of Kaleidohedra's three moves: a shear of the lattice, the equal-edged cell (Cell = 1) and a stretch along a free direction. With edge 1: the regular-hexagon elongated dodecahedron, volume 4√2, symmetry D2h; the Bain rhombic dodecahedron, 2√2, D4h; the classical elongated dodecahedron, 8/3 + 16√3/9, D4h; the Bilinski dodecahedron, (4/5)√(5 + 2√5), D2h; and the 60° rhombohedron, 1/√2, D3d. Each tiles space by translation and is congruent, corner by corner, to its classical construction. <b>Theorem 2:</b> every rhombic-dodecahedron-type cell has exactly three free directions. The Bilinski dodecahedron is glued exactly from two acute and two obtuse golden rhombohedra, and DICTO's skewed rhombic dodecahedron (F1) is a linear image of it.</p><p>The idea, that Kaleidohedra's lattice moves rebuild exactly the space-fillers the literature gives by cutting and gluing, is DICTO's, as are his skewed rhombic dodecahedron (F1) and his route to the regular-hexagon elongated dodecahedron (F5); computation, proofs and drafting with Claude (Anthropic). More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "space-filling",
+  "parallelohedra",
+  "Fedorov",
+  "elongated dodecahedron",
+  "Bilinski dodecahedron",
+  "rhombic dodecahedron",
+  "rhombohedron",
+  "lattice shear",
+  "Kaleidohedra",
+  "exact geometry"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.1007/s00283-010-9138-7",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1112/S0025579300010007",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1090/noti918",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23173809",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23566671",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ],
+ "notes": "#50 in DICTO's numbering (dictospheres.com). Scripts, exact data and checks attached as a zip of studies/2026-10-23-exact-vs-dissection (research branch, commit bdc063d)."
+}
