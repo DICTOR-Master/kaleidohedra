@@ -1,0 +1,41 @@
+{
+ "upload_type": "dataset",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-24",
+ "access_right": "open",
+ "title": "DICTO Solids: Exact Geometry",
+ "description": "<p>Exact geometry of the named polyhedra found or named by DICTO (artist, Osaka) in his published papers and the Kaleidohedra findings archive: 23 solids, among them the DICTO Ogdoecontahedron, the DICTO Truncated-Icosahedral Hecatodihedron, the DICTO OG family of #39, the DBT and OTT, the DICTO Jewel, the DICTO OCD Stella and DICTO's skewed parallelohedra. Every coordinate is exact in ℚ(√5) and also given to 15 decimals; each solid comes with its faces (consistently wound), f-vector, exact volume, squared edge lengths, symmetry group and the values stated in its paper, as JSON and OFF, plus a copy scaled to volume 1.</p><p>Also included: 3 lattice packings that fill space (each solid tiles by translation) and 4 published packings that do not fill space, each with exact lattice vectors, exact rotations and translations of its pieces and, for the non-filling ones, the exact density as published; and an inventory (index.csv) of all 116 shapes DICTO has named, with finding number, paper, status (new, rediscovered or known) and prior art.</p><p>A standalone checker (check.py, Python 3 + sympy) re-proves every stated value from the data files alone: 550 checks, all passing, including closed outward-wound surfaces, exact planarity, convexity where stated, symmetry, and exact separating planes showing that the pieces of each packing do not overlap. Each solid keeps the frame of the paper it comes from, so published values can be compared directly.</p><p>Shapes and names by DICTO; data built and checked with Claude (Anthropic). More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "polyhedra",
+  "exact coordinates",
+  "golden ratio",
+  "Q(sqrt 5)",
+  "space-filling",
+  "packings",
+  "symmetry",
+  "OFF files",
+  "mathematical data"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ],
+ "notes": "Built from the K repository branch math-data-dataset, commit 98e3fbb (studies/2026-10-22-math-data-dicto-solids). Verify with: pip install sympy; python3 check.py."
+}
