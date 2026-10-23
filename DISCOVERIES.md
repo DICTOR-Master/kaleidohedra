@@ -1209,7 +1209,7 @@ icosahedron; then the one gap left made icosahedral too, and an icosahedron "cla
   fill space (body-centred; sum φ³). The split at t = 1/φ is the only point where both are convex — exact, for any cut point inside the AXE: its four shared icosahedron–Unborn faces meet only there (paper #48, Theorem 2). In the Lotus
   Jewel network the 8 Tricaps move to the dodecahedron: **Lotus Jewel Axes** = Lotus Jewel + 12 pyramids (volume √5)
   and **Dodecaxes** = dodecahedron + 12 pyramids (volume 2), and every hexagon may be keyed or not, freely; the
-  Tricap mirrored in its hexagon lies inside the Unborn, so a key the other way fills too. Checked: exact (convexity as union
+  Tricap mirrored in its hexagon lies inside the Unborn, so a key the other way fills too (the reverse key: point tests only, not in paper #48; kept by DICTO 2026-10-23). Checked: exact (convexity as union
   volume = hull volume, corners, faces, volumes, hexagon congruence), and point tests of the app's pieces (0 gaps, 0 overlaps
   for every pattern, swapped or not, after taps; krp-core tests/unit/golden-split.test.mjs, tests/unit/golden-split-world.test.mjs).
   In Polyhedraverse's DICTO's pieces and the octet world's Golden split. **Known:** each piece's shape: the union of a
