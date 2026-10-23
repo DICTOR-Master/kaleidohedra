@@ -20,7 +20,9 @@ PASS the hexagons of both pieces have the same side lengths (squared: 1/2 and (3
 PASS the hexagon of the padded icosahedron is congruent to that of the padded Unborn (all 15 corner distances)
 PASS icosahedron: 8 faces carry no pyramid; 24 tip/face pairs have signed distance zero exactly at t = 1/φ, all turning outward for t above 1/φ (so the padded icosahedron is not convex there)
 PASS Unborn: 8 faces carry no pyramid; 24 tip/face pairs have signed distance zero exactly at t = 1/φ, all turning outward for t below 1/φ (so the padded Unborn is not convex there)
-=> both padded pieces are convex only at t = 1/φ (Theorem 2)
+=> both padded pieces are convex only at t = 1/φ (cut points on the axis)
+PASS each AXE: its 2 icosahedra and 2 Unborns share 4 faces (one per icosahedron-Unborn pair), and the golden point lies on all 4 planes
+PASS the 4 planes have rank 3, so they meet in exactly one point: both padded pieces convex forces every AXE to be cut at its golden point (any cut point, AXE by AXE)
 PASS Lotus Jewel network, golden split: big keyed piece (Jewel + 12 pyramids) volume (0 + 1√5) = √5
 PASS small keyed piece (dodecahedron + 12 pyramids) volume (2 + 0√5) = 2
 ALL PASS

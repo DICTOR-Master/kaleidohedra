@@ -149,7 +149,27 @@ for name, base in [('icosahedron', ICO), ('Unborn', UNB)]:
     want = 1 if name == 'icosahedron' else -1
     check(f'{name}: {len(free)} faces carry no pyramid; {len(crit)} tip/face pairs have signed distance zero exactly at t = 1/φ, all turning outward for t {worse} 1/φ (so the padded {name} is not convex there)',
           len(free) == 8 and len(crit) > 0 and all(c == want for c in crit))
-print('=> both padded pieces are convex only at t = 1/φ (Theorem 2)')
+print('=> both padded pieces are convex only at t = 1/φ (cut points on the axis)')
+# Theorem 2, any cut point (Fable's referee argument): an AXE's four pyramids go to two icosahedra I0, I1 and two Unborns U0, U1.
+# Each pair (Ii, Uj) shares a face that carries no pyramid, so it stays on the boundary of both padded pieces; the apex p (common to the
+# AXE's four pyramids) must lie on Ii's side of that plane (Ii padded convex) and on Uj's side (Uj padded convex): p lies ON the plane.
+# The four shared-face planes meet in exactly one point, the golden point p(1/φ).
+W = AXE0
+ctrI = [(Z, Z, Z), (Z, PHI, Z)]                         # the icosahedra across the long edge
+ctrU = [(H, H, H), (-H, H, H)]                          # the Unborns across the short edge
+Ishift = lambda c: [add(v, c) for v in ICO]; Ushift = lambda c: [add(sub(v, UC), c) for v in UNB]
+planes = []
+for ci in ctrI:
+    for cu in ctrU:
+        sh = set(Ishift(ci)) & set(Ushift(cu))
+        assert len(sh) == 3, len(sh)
+        a, b, c = list(sh); n = cross(sub(b, a), sub(c, a)); planes.append((n, dot(n, a)))
+g = tip(W, T)
+check('each AXE: its 2 icosahedra and 2 Unborns share 4 faces (one per icosahedron-Unborn pair), and the golden point lies on all 4 planes',
+      len(planes) == 4 and all(dot(n, g) == off for n, off in planes))
+M = [n for n, _ in planes]
+rank3 = any(det(M[i], M[j], M[k]).sign() != 0 for i, j, k in combinations(range(4), 3))
+check('the 4 planes have rank 3, so they meet in exactly one point: both padded pieces convex forces every AXE to be cut at its golden point (any cut point, AXE by AXE)', rank3)
 # Lotus Jewel network: the 8 Tricaps (exact volume (3 - √5)/24 each, axe-gap study) move from the icosahedron side to the dodecahedron side
 VT8 = Q5(Fr(3, 24), Fr(-1, 24)) * 8
 big_k = results['icosahedron'][0] - VT8; small_k = results['Unborn'][0] + VT8
