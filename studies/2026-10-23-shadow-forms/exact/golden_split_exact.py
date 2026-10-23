@@ -111,7 +111,7 @@ for name, base in [('icosahedron', ICO), ('Unborn', UNB)]:
     orbit = {tuple(sg[k] * perm[k] for k in range(3)) for perm in {(p_, q_, Z), (p_, Z, q_), (q_, p_, Z), (q_, Z, p_), (Z, p_, q_), (Z, q_, p_)}
              for sg in product((1, -1), repeat=3)}
     rel = {sub(c, (Z, Z, Z) if name == 'icosahedron' else UC) for c in C}
-    check(f'{name} + pyramids: its 24 corners are exactly the orbit of ({p_}, {q_}, 0) under all sign changes and orders (full octahedral symmetry; Koca 2015 eq. 49 with x = {"φ" if name == "icosahedron" else "φ²"})', rel == orbit)
+    check(f'{name} + pyramids: its 24 corners are exactly the orbit of ({p_}, {q_}, 0) under all sign changes and orders (full octahedral symmetry; Koca 2015 eqs. 39, 49 with x = {"τ = φ" if name == "icosahedron" else "1/τ"})', rel == orbit)
     apices = {sub(p, (Z, Z, Z) if name == 'icosahedron' else UC) for _, p in pyr}
     own = {sub(q, (Z, Z, Z) if name == 'icosahedron' else UC) for q in base}
     mirror = {(y, x, z) for x, y, z in own}
