@@ -6,7 +6,7 @@
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000', DOOR = process.env.DOOR ?? 'kaleidohedra', SH = process.env.SHOTS ?? '/tmp';
-const WORLDS = (process.env.WORLDS ?? 'octet:lotusJewel,octetBuild:lotusJewel,targets,platonicMix,reuleaux,aristotle,octetTruss,studies,chains,shells,up,bodhiPyro').split(',');
+const WORLDS = (process.env.WORLDS ?? 'dictonic,dictonic:delian,octet:lotusJewel,octetBuild:lotusJewel,targets,platonicMix,reuleaux,aristotle,octetTruss,studies,chains,shells,up,bodhiPyro').split(',');
 const VPS = { phone: { width: 390, height: 844 }, ipad: { width: 820, height: 1180 } };
 const b = await chromium.launch(); const errors = []; let fails = 0;
 for (const [vp, size] of Object.entries(VPS)) for (const w of WORLDS) {

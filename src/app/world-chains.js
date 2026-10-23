@@ -33,7 +33,9 @@ export const ROLE = { ico: 0x5fd38a, cap: 0x5fd38a, lcap: 0x5fd38a, lj11: 0x5fd3
   // Mixed blocks: whole icosahedra green, Lotus Jewels dark green, whole dodecahedra gold, Unborns orange, transitions pink, AXE cyan
   mxIco: 0x5fd38a, mxJewel: 0x2e8b57, mxDodeca: 0xffc857, mxUnborn: 0xff9a52, mxTrans: 0xf08fc0,
   // Golden split (DICTO 2026-10-23): the big truncated octahedra green, the small ones orange, as in the study's pictures
-  gsBig: 0x56a866, gsSmall: 0xe8913f };
+  gsBig: 0x56a866, gsSmall: 0xe8913f,
+  // DICTONIC's Delian bond (DICTO 2026-10-23): the tetrahedron pieces (Samson) gold, the octahedron pieces (Delilah) purple
+  dlTet: 0xffc857, dlOct: 0xc792ea };
 // The 12-neighbour space-fillers' 13s (DICTO 2026-10-13): centre gold, the twelve cyan, the neighbouring blocks' copies dimmer.
 Object.assign(ROLE, { jewelCentre: 0xffc857, jewelCell: 0x4dd0e1, stella: 0xc792ea });
 for (const k of ['skewedRd13', 'bainRd13', 'bilinski13']) Object.assign(ROLE, { [`${k}Centre`]: 0xffc857, [`${k}Cell`]: 0x4dd0e1, [`${k}CentreN`]: 0x8a7440, [`${k}CellN`]: 0x33808a });
@@ -88,15 +90,20 @@ export function filmOrder(list, named = []) {
  *  changes) and xray (the view is also told whether the X-ray cut is on, opts.xray, and redrawn when it turns). A piece may carry a 5th
  *  item { anchor, tags }: the point it pulls apart from and its shell distance (so the parts of one piece move together), and each
  *  face's tag for taps. links: { kind: [[name, action]] }, buttons that open those pieces where they live (Polyhedraverse), words
- *  '<prefix>.<kind>.links'; names are DICTO's and stay as they are. */
-export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null, pinnedRoles = new Set(), hideable = {}, links = {}, openAction = () => {} }) {
+ *  '<prefix>.<kind>.links'; names are DICTO's and stay as they are (an entry [label, action, key] takes its words from key instead).
+ *  DICTONIC (DICTO 2026-10-23): kindButtons puts the kinds in a row of buttons (words '<prefix>.kind.<kind>'); a kind with param
+ *  { start, stops: [{ u, v, key }], value(u), caption(v, L) } has one big slider (0..1000, snapping to its stops; words
+ *  '<prefix>.param.<kind>') whose value reaches its views as opts.param, with a caption under it; a kind with xray: true is told of
+ *  the X-ray cut as opts.xray; hideRows (['size', 'shells']) hides those sliders. */
+export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null, pinnedRoles = new Set(), hideable = {}, links = {}, openAction = () => {}, kindButtons = false, hideRows = [] }) {
   const STORAGE_KEY = storageKey(name);
   const group = new THREE.Group();
   group.visible = false;
   scene.add(group);
   // size: for views that grow (a function of the size, DICTO Icosahedral Octet), how far out the network goes.
   const defaultOpts = () => Object.fromEntries(KINDS.filter((k) => DATA[k].options).map((k) => [k, { pattern: DATA[k].options.patterns[0], block: DATA[k].options.startBlock ?? 1, swap: false, ...(DATA[k].options.flips ? { flips: {} } : {}) }]));
-  const view = { kind: KINDS[0], part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false, size: 2, byFace: false, hidden: false, opts: defaultOpts() };
+  const defaultParam = () => Object.fromEntries(KINDS.filter((k) => DATA[k].param).map((k) => [k, DATA[k].param.start]));
+  const view = { kind: KINDS[0], part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false, size: 2, byFace: false, hidden: false, opts: defaultOpts(), param: defaultParam() };
   try {
     const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (KINDS.includes(d?.kind)) view.kind = d.kind;
@@ -107,13 +114,14 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     view.byFace = byFace && d?.byFace === true;
     view.hidden = d?.hidden === true;
     if (Number.isInteger(d?.size)) view.size = Math.max(1, Math.min(4, d.size));
+    for (const k of KINDS) if (DATA[k].param && Number.isFinite(d?.param?.[k])) view.param[k] = Math.max(0, Math.min(1000, Math.round(d.param[k])));
     for (const k of KINDS) {
       const o = DATA[k].options, s = d?.opts?.[k];
       if (!o || !s) continue;
       if (o.patterns.includes(s.pattern)) view.opts[k].pattern = s.pattern;
       if (Number.isInteger(s.block)) view.opts[k].block = Math.max(1, Math.min(o.block, s.block));
       view.opts[k].swap = s.swap === true;
-      if (o.flips && s.flips && typeof s.flips === 'object') view.opts[k].flips = Object.fromEntries(Object.entries(s.flips).filter(([, v]) => [0, 1, 2].includes(v)));
+      if (o.flips && s?.flips && typeof s.flips === 'object') view.opts[k].flips = Object.fromEntries(Object.entries(s.flips).filter(([, v]) => [0, 1, 2].includes(v)));
     }
   } catch { /* corrupt or blocked storage: defaults */ }
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(view)); } catch { /* best-effort */ } };
@@ -132,9 +140,10 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   function viewList() {
     const v = DATA[view.kind].views[view.part[view.kind]];
     if (typeof v !== 'function') return v;
-    const size = Math.min(view.size, maxSize()), opt = DATA[view.kind].options;
-    const o = view.opts[view.kind] && opt?.xray ? { ...view.opts[view.kind], xray: xrayOn() } : view.opts[view.kind];
-    const key = `${view.kind}.${view.part[view.kind]}.${size}${o ? `.${o.pattern}.${o.block}.${o.swap}${o.flips ? `.${JSON.stringify(o.flips)}` : ''}${opt?.xray ? `.${o.xray}` : ''}` : ''}`;
+    const size = Math.min(view.size, maxSize()), pm = DATA[view.kind].param;
+    let o = view.opts[view.kind];
+    if (xrayAware() || pm) o = { ...(o ?? {}), ...(xrayAware() ? { xray: xrayOn() } : {}), ...(pm ? { param: paramValue(), paramU: view.param[view.kind] } : {}) };
+    const key = `${view.kind}.${view.part[view.kind]}.${size}${o ? `.${JSON.stringify(o)}` : ''}`;
     if (!grown.has(key)) { if (grown.size > 40) grown.clear(); grown.set(key, v(size, o)); }
     return grown.get(key);
   }
@@ -171,6 +180,9 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   let radius = 1;
   // the app's X-ray cut (render.js's #section-enable), for kinds whose view shows its parts under it
   const xrayOn = () => !!document.getElementById('section-enable')?.checked;
+  const xrayAware = () => !!(DATA[view.kind].options?.xray || DATA[view.kind].xray);
+  // the kind's one big slider (DICTONIC): its position u (0..1000) and the value it stands for
+  const paramValue = () => DATA[view.kind].param?.value(view.param[view.kind]);
   let solidMesh = null, solidTags = []; // the solid mesh drawn and each of its triangles' tag (taps)
   const hiddenRole = () => (view.hidden ? hideable[view.kind] ?? null : null);
   let drawn = {}; // pieces drawn, by role (the browser tests' probe)
@@ -252,6 +264,9 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   panel.id = `world${name}-panel`;
   panel.className = 'qc-panel';
   panel.innerHTML = `
+    <div class="w4d-row w4d-options ch-kind-buttons">${KINDS.map((k) => `<button type="button" data-chains-kind="${k}"></button>`).join('')}</div>
+    <div class="w4d-row ch-param-row"><label class="hull-pick"><span class="ch-param-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
+    <div class="w4d-row ch-param-caption" aria-live="polite"></div>
     <div class="w4d-row"><label class="hull-pick"><span class="ch-view-label"></span> <select class="hull-select" data-select="part"></select></label></div>
     <div class="w4d-row ch-size-row"><label class="hull-pick"><span class="ch-size-label"></span> <input type="range" class="st-slider" min="1" max="3" step="1"></label></div>
     <div class="w4d-row ch-pattern-row"><label class="hull-pick"><span class="ch-pattern-label"></span> <select class="hull-select" data-select="pattern"></select></label></div>
@@ -261,12 +276,13 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     <div class="w4d-row ch-shells-row"><label class="hull-pick"><span class="ch-shells-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row ch-film-row"><label class="hull-pick"><span class="ch-film-label"></span> <input type="range" class="st-slider" min="0" max="1" step="1"></label></div>
     <div class="w4d-row st-note ch-film-note" aria-live="polite"></div>
-    <div class="w4d-row w4d-options"><button type="button" data-chains-play></button><button type="button" data-chains-byface></button><button type="button" data-chains-crystal></button><button type="button" data-chains-hide></button><button type="button" data-chains-swap></button></div>
+    <div class="w4d-row w4d-options ch-options"><button type="button" data-chains-play></button><button type="button" data-chains-byface></button><button type="button" data-chains-crystal></button><button type="button" data-chains-hide></button><button type="button" data-chains-swap></button></div>
     <div class="w4d-row w4d-options ch-links"><span class="ch-links-label hull-pick"></span> </div>
     <div class="w4d-row st-note"></div>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, name);
   const partSelect = panel.querySelector('[data-select="part"]');
+  const paramInput = panel.querySelector('.ch-param-row input');
   const apartInput = panel.querySelector('.ch-apart-row input');
   const crystalBtn = panel.querySelector('[data-chains-crystal]');
   const byFaceBtn = panel.querySelector('[data-chains-byface]');
@@ -318,11 +334,22 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     panel.classList.toggle('visible', active);
     if (!active) return;
     const L = lang();
-    panel.querySelector('.ch-view-label').closest('.w4d-row').hidden = !!DATA[view.kind].options?.buttons;
+    panel.querySelector('.ch-view-label').closest('.w4d-row').hidden = !!DATA[view.kind].options?.buttons || kindButtons;
+    const kb = panel.querySelector('.ch-kind-buttons');
+    kb.hidden = !kindButtons;
+    if (kindButtons) kb.querySelectorAll('[data-chains-kind]').forEach((x) => { x.textContent = t(`${prefix}.kind.${x.dataset.chainsKind}`, L); x.classList.toggle('active', x.dataset.chainsKind === view.kind); });
+    const pm = DATA[view.kind].param;
+    panel.querySelector('.ch-param-row').hidden = panel.querySelector('.ch-param-caption').hidden = !pm;
+    if (pm) {
+      panel.querySelector('.ch-param-label').textContent = t(`${prefix}.param.${view.kind}`, L);
+      paramInput.value = String(view.param[view.kind]);
+      panel.querySelector('.ch-param-caption').textContent = pm.caption(paramValue(), L);
+    }
     panel.querySelector('.ch-view-label').textContent = t('icosa.view', L);
     partSelect.innerHTML = Object.keys(DATA[view.kind].views)
       .map((v) => `<option value="${v}"${v === view.part[view.kind] ? ' selected' : ''}>${t(`${prefix}.${view.kind}.${v}`, L)}</option>`).join('');
-    panel.querySelector('.ch-size-row').hidden = !growing();
+    panel.querySelector('.ch-size-row').hidden = !growing() || hideRows.includes('size');
+    panel.querySelector('.ch-shells-row').hidden = hideRows.includes('shells');
     panel.querySelector('.ch-size-label').textContent = t('chains.size', L);
     sizeInput.max = String(maxSize()); sizeInput.value = String(Math.min(view.size, maxSize()));
     panel.querySelector('.ch-apart-label').textContent = t('icosa.apart', L);
@@ -355,7 +382,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     if (lk) {
       linkRow.querySelector('.ch-links-label').textContent = t(`${prefix}.${view.kind}.links`, L);
       linkRow.querySelectorAll('button').forEach((x) => x.remove());
-      for (const [label, action] of lk) { const btn = document.createElement('button'); btn.type = 'button'; btn.dataset.chainsLink = action; btn.textContent = label; linkRow.append(btn); }
+      for (const [label, action, key] of lk) { const btn = document.createElement('button'); btn.type = 'button'; btn.dataset.chainsLink = action; btn.textContent = key ? t(key, L) : label; linkRow.append(btn); }
     }
     const hr = hideable[view.kind];
     hideBtn.hidden = !hr || !viewList().some((p) => p[0] === hr);
@@ -382,12 +409,27 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   });
   blockInput.addEventListener('input', () => { const o = view.opts[view.kind]; if (!o) return; o.block = Number(blockInput.value); unflip(o); save(); draw(); });
   swapBtn.addEventListener('click', () => { const o = view.opts[view.kind]; if (!o) return; o.swap = !o.swap; unflip(o); save(); draw(); });
+  panel.querySelector('.ch-kind-buttons').addEventListener('click', (e) => {
+    const k = e.target.closest('[data-chains-kind]')?.dataset.chainsKind;
+    if (!k || k === view.kind) return;
+    view.kind = k; save(); stopFilm(); film = null; draw(); fitStart();
+  });
+  // the one big slider: it snaps to a stop within 2% of it (no step buttons, DICTO); the picture is framed again when it is let go
+  paramInput.addEventListener('input', () => {
+    const pm = DATA[view.kind].param; if (!pm) return;
+    let u = Number(paramInput.value);
+    const stop = pm.stops.find((st) => Math.abs(st.u - u) <= 20);
+    if (stop) { u = stop.u; paramInput.value = String(u); }
+    if (u === view.param[view.kind]) return;
+    view.param[view.kind] = u; save(); draw();
+  });
+  paramInput.addEventListener('change', fit);
   panel.querySelector('.ch-links').addEventListener('click', (e) => { const a = e.target.closest('[data-chains-link]')?.dataset.chainsLink; if (a) openAction(a); });
   // X-ray turned on or off (the ⛶ button; render.js sets the box after its own click handler): kinds that show their parts redraw
   let shownXray = xrayOn();
   document.addEventListener('click', (e) => {
     if (!e.target.closest?.('#xray-toggle')) return;
-    setTimeout(() => { if (xrayOn() !== shownXray) { shownXray = xrayOn(); if (active && DATA[view.kind].options?.xray) draw(); } }, 0);
+    setTimeout(() => { if (xrayOn() !== shownXray) { shownXray = xrayOn(); if (active && xrayAware()) draw(); } }, 0);
   });
   let shownLang = lang();
   onSettingsChange((st) => { if (st.language !== shownLang) { shownLang = st.language; if (active) renderPanel(); } });
@@ -428,7 +470,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     },
     /** Back to each shape's first view (leaving the world, DICTO 2026-10-13). */
     resetView() {
-      Object.assign(view, { part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false, size: 2, byFace: false, hidden: false, opts: defaultOpts() }); save();
+      Object.assign(view, { part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false, size: 2, byFace: false, hidden: false, opts: defaultOpts(), param: defaultParam() }); save();
       if (active) { draw(); fit(); }
     },
     setSkeleton(on) { if (on !== skeleton) { skeleton = on; if (active) draw(); } },
@@ -438,7 +480,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     get isEmpty() { return true; },
     clear() {},
     /** For the browser tests (?probe): what is shown, and the pieces drawn by role. */
-    probe: () => ({ xray: xrayOn(), flips: view.opts[view.kind]?.flips ? Object.keys(view.opts[view.kind].flips).length : null, kind: view.kind, part: view.part[view.kind], size: Math.min(view.size, maxSize()), crystal: view.crystal, hidden: hiddenRole(), opts: view.opts[view.kind] ? { ...view.opts[view.kind] } : null, drawn: { ...drawn } }),
+    probe: () => ({ param: DATA[view.kind].param ? { u: view.param[view.kind], value: paramValue() } : null, xray: xrayOn(), flips: view.opts[view.kind]?.flips ? Object.keys(view.opts[view.kind].flips).length : null, kind: view.kind, part: view.part[view.kind], size: Math.min(view.size, maxSize()), crystal: view.crystal, hidden: hiddenRole(), opts: view.opts[view.kind] ? { ...view.opts[view.kind] } : null, drawn: { ...drawn } }),
   };
 }
 
