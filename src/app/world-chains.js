@@ -261,7 +261,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     <div class="w4d-row ch-shells-row"><label class="hull-pick"><span class="ch-shells-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row ch-film-row"><label class="hull-pick"><span class="ch-film-label"></span> <input type="range" class="st-slider" min="0" max="1" step="1"></label></div>
     <div class="w4d-row st-note ch-film-note" aria-live="polite"></div>
-    <div class="w4d-row w4d-options"><button type="button" data-chains-play></button><button type="button" data-chains-byface></button><button type="button" data-chains-crystal></button><button type="button" data-chains-hide></button><button type="button" data-chains-swap></button></div>
+    <div class="w4d-row w4d-options ch-options"><button type="button" data-chains-play></button><button type="button" data-chains-byface></button><button type="button" data-chains-crystal></button><button type="button" data-chains-hide></button><button type="button" data-chains-swap></button></div>
     <div class="w4d-row w4d-options ch-links"><span class="ch-links-label hull-pick"></span> </div>
     <div class="w4d-row st-note"></div>`;
   document.body.appendChild(panel);
