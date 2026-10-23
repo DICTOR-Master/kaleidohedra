@@ -6181,7 +6181,7 @@ async function init() {
     onChange: () => { if (historyRestorers.has('worldkpfilm')) recordHistory('worldkpfilm', kpFilmWorld.snapshot()); },
   });
   thirteensWorld = createThirteensWorld({ scene: realScene, fitView: fitCameraTo });
-  octetWorld = createOctetWorld({ scene: realScene, fitView: fitCameraTo });
+  octetWorld = createOctetWorld({ scene: realScene, fitView: fitCameraTo, openAction: (action) => openFromAlmanac?.({ action, app: null }, null) });
   octetBuildWorld = createOctetBuildWorld({
     scene: realScene,
     showHudPrompt,

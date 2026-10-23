@@ -31,7 +31,9 @@ export const ROLE = { ico: 0x5fd38a, cap: 0x5fd38a, lcap: 0x5fd38a, lj11: 0x5fd3
   // the AXE gap (DICTO 2026-10-23): Lotus Jewel green, Tricap purple, Unborn gold, AXE cyan (role axe, above)
   unborn: 0xffc857, tricap: 0xc792ea,
   // Mixed blocks: whole icosahedra green, Lotus Jewels dark green, whole dodecahedra gold, Unborns orange, transitions pink, AXE cyan
-  mxIco: 0x5fd38a, mxJewel: 0x2e8b57, mxDodeca: 0xffc857, mxUnborn: 0xff9a52, mxTrans: 0xf08fc0 };
+  mxIco: 0x5fd38a, mxJewel: 0x2e8b57, mxDodeca: 0xffc857, mxUnborn: 0xff9a52, mxTrans: 0xf08fc0,
+  // Golden split (DICTO 2026-10-23): the big truncated octahedra green, the small ones orange, as in the study's pictures
+  gsBig: 0x56a866, gsSmall: 0xe8913f };
 // The 12-neighbour space-fillers' 13s (DICTO 2026-10-13): centre gold, the twelve cyan, the neighbouring blocks' copies dimmer.
 Object.assign(ROLE, { jewelCentre: 0xffc857, jewelCell: 0x4dd0e1, stella: 0xc792ea });
 for (const k of ['skewedRd13', 'bainRd13', 'bilinski13']) Object.assign(ROLE, { [`${k}Centre`]: 0xffc857, [`${k}Cell`]: 0x4dd0e1, [`${k}CentreN`]: 0x8a7440, [`${k}CellN`]: 0x33808a });
@@ -80,14 +82,20 @@ export function filmOrder(list, named = []) {
  *  hides (DICTO 2026-10-23: the octet's AXE; shown at first), words '<prefix>.toggle.<role>.on|off'; the button only where the view has them.
  *  A kind with options { patterns, block } (the octet's Mixed blocks, DICTO 2026-10-23) has growing views (size, { pattern, block, swap })
  *  and three more controls, only for it: a pattern menu, a block-size slider (1..block) and a Swap button; words '<prefix>.option.*' and
- *  '<prefix>.pattern.<pattern>'. */
-export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null, pinnedRoles = new Set(), hideable = {} }) {
+ *  '<prefix>.pattern.<pattern>'. Options may also say (the octet's Golden split, DICTO 2026-10-23): buttons (the patterns as a row of
+ *  buttons, and the view menu hidden), blockPatterns (the patterns the block slider applies to; elsewhere it hides), flips (taps change
+ *  single pieces: the kind's tap(tag, opts) gives the new state of the tapped face's tag, kept in opts.flips until a pattern control
+ *  changes) and xray (the view is also told whether the X-ray cut is on, opts.xray, and redrawn when it turns). A piece may carry a 5th
+ *  item { anchor, tags }: the point it pulls apart from and its shell distance (so the parts of one piece move together), and each
+ *  face's tag for taps. links: { kind: [[name, action]] }, buttons that open those pieces where they live (Polyhedraverse), words
+ *  '<prefix>.<kind>.links'; names are DICTO's and stay as they are. */
+export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null, pinnedRoles = new Set(), hideable = {}, links = {}, openAction = () => {} }) {
   const STORAGE_KEY = storageKey(name);
   const group = new THREE.Group();
   group.visible = false;
   scene.add(group);
   // size: for views that grow (a function of the size, DICTO Icosahedral Octet), how far out the network goes.
-  const defaultOpts = () => Object.fromEntries(KINDS.filter((k) => DATA[k].options).map((k) => [k, { pattern: DATA[k].options.patterns[0], block: DATA[k].options.startBlock ?? 1, swap: false }]));
+  const defaultOpts = () => Object.fromEntries(KINDS.filter((k) => DATA[k].options).map((k) => [k, { pattern: DATA[k].options.patterns[0], block: DATA[k].options.startBlock ?? 1, swap: false, ...(DATA[k].options.flips ? { flips: {} } : {}) }]));
   const view = { kind: KINDS[0], part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false, size: 2, byFace: false, hidden: false, opts: defaultOpts() };
   try {
     const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
@@ -105,6 +113,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       if (o.patterns.includes(s.pattern)) view.opts[k].pattern = s.pattern;
       if (Number.isInteger(s.block)) view.opts[k].block = Math.max(1, Math.min(o.block, s.block));
       view.opts[k].swap = s.swap === true;
+      if (o.flips && s.flips && typeof s.flips === 'object') view.opts[k].flips = Object.fromEntries(Object.entries(s.flips).filter(([, v]) => [0, 1, 2].includes(v)));
     }
   } catch { /* corrupt or blocked storage: defaults */ }
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(view)); } catch { /* best-effort */ } };
@@ -123,9 +132,10 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   function viewList() {
     const v = DATA[view.kind].views[view.part[view.kind]];
     if (typeof v !== 'function') return v;
-    const size = Math.min(view.size, maxSize()), o = view.opts[view.kind];
-    const key = `${view.kind}.${view.part[view.kind]}.${size}${o ? `.${o.pattern}.${o.block}.${o.swap}` : ''}`;
-    if (!grown.has(key)) grown.set(key, v(size, o));
+    const size = Math.min(view.size, maxSize()), opt = DATA[view.kind].options;
+    const o = view.opts[view.kind] && opt?.xray ? { ...view.opts[view.kind], xray: xrayOn() } : view.opts[view.kind];
+    const key = `${view.kind}.${view.part[view.kind]}.${size}${o ? `.${o.pattern}.${o.block}.${o.swap}${o.flips ? `.${JSON.stringify(o.flips)}` : ''}${opt?.xray ? `.${o.xray}` : ''}` : ''}`;
+    if (!grown.has(key)) { if (grown.size > 40) grown.clear(); grown.set(key, v(size, o)); }
     return grown.get(key);
   }
   // Pull apart by face (DICTO 2026-10-13: see the solids the many pieces form): each piece moves along the outward normal of
@@ -159,6 +169,9 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     return f;
   }
   let radius = 1;
+  // the app's X-ray cut (render.js's #section-enable), for kinds whose view shows its parts under it
+  const xrayOn = () => !!document.getElementById('section-enable')?.checked;
+  let solidMesh = null, solidTags = []; // the solid mesh drawn and each of its triangles' tag (taps)
   const hiddenRole = () => (view.hidden ? hideable[view.kind] ?? null : null);
   let drawn = {}; // pieces drawn, by role (the browser tests' probe)
   function draw() {
@@ -173,7 +186,8 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     const colour = new THREE.Color();
     // Shells (DICTO 2026-10-13): pieces grouped by the distance of their centres from the middle; the Top shell slider steps
     // through them, the chosen shell uppermost and every shell outside it lifted away (shown as crystal when Crystal is on).
-    const dist = list.map(([, V]) => Math.hypot(...centreOf(V).map((c, i) => c - c0[i])));
+    const anchorOf = (p) => p[4]?.anchor ?? centreOf(p[1]);
+    const dist = list.map((p) => Math.hypot(...anchorOf(p).map((c, i) => c - c0[i])));
     const levels = [...dist].sort((a, b) => a - b).reduce((acc, d) => (acc.length && d - acc[acc.length - 1] < radius * 0.06 ? acc : [...acc, d]), []);
     const shellOf = (d) => levels.reduce((best, l, i) => (Math.abs(l - d) < Math.abs(levels[best] - d) ? i : best), 0);
     // centreGold (the 13s, DICTO 2026-10-13: "the central 13th should always be gold"): the piece nearest the middle is gold, and
@@ -182,7 +196,8 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     const centreIndex = centreGold ? dist.indexOf(Math.min(...dist)) : -1;
     const isCentreRole = (r) => /Centre(N)?$/.test(r) || /^(rdCentre|hexCentre|toCentre)/.test(r);
     const fm = film === null ? null : filmOf(list);
-    list.forEach(([role, V, F], n) => {
+    solidMesh = null; solidTags = [];
+    list.forEach(([role, V, F, , extra], n) => {
       if (fm && fm.rank.get(n) >= film) return;
       if (role === hiddenRole()) return;
       const sh = shellOf(dist[n]); const top = Math.round(view.shells * (levels.length - 1));
@@ -195,7 +210,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       if (!see && view.byFace) {
         if (!faceMoves.has(V)) faceMoves.set(V, faceMove(V, F, c0));
         off = faceMoves.get(V).map((c) => c * view.apart);
-      } else if (!see && !pinnedRoles.has(role)) off = centreOf(V).map((c, i) => (c - c0[i]) * view.apart);   // pinned: marks that stay on their corner
+      } else if (!see && !pinnedRoles.has(role)) off = (extra?.anchor ?? centreOf(V)).map((c, i) => (c - c0[i]) * view.apart);   // pinned: marks that stay on their corner
       // Each solid piece is drawn 0.4% smaller about its own centre (DICTO 2026-10-15): faces two pieces share then sit a hair apart, so
       // they never fight in depth (the speckles the X-ray cut showed); too small to see in the closed views. Glass shells keep their size.
       const cV = see ? null : centreOf(V);
@@ -205,10 +220,13 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       if (fm && fm.rank.get(n) === film - 1) hex = ORANGE; // the newest piece of the movie
       colour.setHex(hex);
       drawn[role] = (drawn[role] ?? 0) + 1;
-      for (const f of F) {
-        for (let i = 1; i + 1 < f.length; i++) for (const k of [f[0], f[i], f[i + 1]]) { b.pos.push(...P[k]); b.col.push(colour.r, colour.g, colour.b); }
+      F.forEach((f, fi) => {
+        for (let i = 1; i + 1 < f.length; i++) {
+          for (const k of [f[0], f[i], f[i + 1]]) { b.pos.push(...P[k]); b.col.push(colour.r, colour.g, colour.b); }
+          if (b === buf.solid) solidTags.push(extra?.tags?.[fi] ?? null);
+        }
         f.forEach((k, i) => b.line.push(...P[k], ...P[f[(i + 1) % f.length]]));
-      }
+      });
     });
     solid.transparent = opacity < 1; solid.opacity = opacity; solid.depthWrite = opacity >= 1; solid.needsUpdate = true;
     for (const [key, mat] of [['solid', solid], ['glass', glass]]) {
@@ -220,7 +238,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       g.computeVertexNormals();
       const lg = new THREE.BufferGeometry();
       lg.setAttribute('position', new THREE.Float32BufferAttribute(b.line, 3));
-      if (!skeleton) group.add(new THREE.Mesh(g, mat));
+      if (!skeleton) { const m = new THREE.Mesh(g, mat); group.add(m); if (key === 'solid') solidMesh = m; }
       group.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial(key === 'glass' ? { color: 0x9fa8c0, transparent: true, opacity: 0.55 } : { color: skeleton ? 0xcfe3ff : EDGE_COLOR })));
     }
     renderPanel();
@@ -237,12 +255,14 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     <div class="w4d-row"><label class="hull-pick"><span class="ch-view-label"></span> <select class="hull-select" data-select="part"></select></label></div>
     <div class="w4d-row ch-size-row"><label class="hull-pick"><span class="ch-size-label"></span> <input type="range" class="st-slider" min="1" max="3" step="1"></label></div>
     <div class="w4d-row ch-pattern-row"><label class="hull-pick"><span class="ch-pattern-label"></span> <select class="hull-select" data-select="pattern"></select></label></div>
+    <div class="w4d-row w4d-options ch-pattern-buttons"></div>
     <div class="w4d-row ch-block-row"><label class="hull-pick"><span class="ch-block-label"></span> <input type="range" class="st-slider" min="1" max="3" step="1"></label></div>
     <div class="w4d-row ch-apart-row"><label class="hull-pick"><span class="ch-apart-label"></span> <input type="range" class="st-slider" min="0" max="1200" step="1"></label></div>
     <div class="w4d-row ch-shells-row"><label class="hull-pick"><span class="ch-shells-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row ch-film-row"><label class="hull-pick"><span class="ch-film-label"></span> <input type="range" class="st-slider" min="0" max="1" step="1"></label></div>
     <div class="w4d-row st-note ch-film-note" aria-live="polite"></div>
     <div class="w4d-row w4d-options"><button type="button" data-chains-play></button><button type="button" data-chains-byface></button><button type="button" data-chains-crystal></button><button type="button" data-chains-hide></button><button type="button" data-chains-swap></button></div>
+    <div class="w4d-row w4d-options ch-links"><span class="ch-links-label hull-pick"></span> </div>
     <div class="w4d-row st-note"></div>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, name);
@@ -298,6 +318,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     panel.classList.toggle('visible', active);
     if (!active) return;
     const L = lang();
+    panel.querySelector('.ch-view-label').closest('.w4d-row').hidden = !!DATA[view.kind].options?.buttons;
     panel.querySelector('.ch-view-label').textContent = t('icosa.view', L);
     partSelect.innerHTML = Object.keys(DATA[view.kind].views)
       .map((v) => `<option value="${v}"${v === view.part[view.kind] ? ' selected' : ''}>${t(`${prefix}.${view.kind}.${v}`, L)}</option>`).join('');
@@ -313,12 +334,28 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     byFaceBtn.classList.toggle('active', view.byFace);
     const opt = DATA[view.kind].options, o = view.opts[view.kind], showOpt = !!opt && growing();
     panel.querySelector('.ch-pattern-row').hidden = panel.querySelector('.ch-block-row').hidden = swapBtn.hidden = !showOpt;
+    const buttons = panel.querySelector('.ch-pattern-buttons');
+    buttons.hidden = !showOpt || !opt.buttons;
+    if (showOpt && opt.buttons) {
+      panel.querySelector('.ch-pattern-row').hidden = true;
+      panel.querySelector('.ch-block-row').hidden = !(opt.blockPatterns ?? opt.patterns).includes(o.pattern);
+      buttons.innerHTML = opt.patterns.map((p) => `<button type="button" data-chains-pattern="${p}" class="${p === o.pattern ? 'active' : ''}">${t(`${prefix}.pattern.${p}`, L)}</button>`).join('');
+    }
     if (showOpt) {
       panel.querySelector('.ch-pattern-label').textContent = t(`${prefix}.option.pattern`, L);
       patternSelect.innerHTML = opt.patterns.map((p) => `<option value="${p}"${p === o.pattern ? ' selected' : ''}>${t(`${prefix}.pattern.${p}`, L)}</option>`).join('');
       panel.querySelector('.ch-block-label').textContent = t(`${prefix}.option.block`, L);
       blockInput.max = String(opt.block); blockInput.value = String(o.block);
       swapBtn.textContent = t(`${prefix}.option.swap.${o.swap ? 'on' : 'off'}`, L); swapBtn.classList.toggle('active', o.swap);
+      if (opt.buttons) swapBtn.textContent = t(`${prefix}.${view.kind}.swap.${o.swap ? 'on' : 'off'}`, L);
+      if (opt.buttons) swapBtn.hidden = o.pattern === 'smooth';   // nothing keyed: no way for the keys to point
+    }
+    const lk = links[view.kind], linkRow = panel.querySelector('.ch-links');
+    linkRow.hidden = !lk;
+    if (lk) {
+      linkRow.querySelector('.ch-links-label').textContent = t(`${prefix}.${view.kind}.links`, L);
+      linkRow.querySelectorAll('button').forEach((x) => x.remove());
+      for (const [label, action] of lk) { const btn = document.createElement('button'); btn.type = 'button'; btn.dataset.chainsLink = action; btn.textContent = label; linkRow.append(btn); }
     }
     const hr = hideable[view.kind];
     hideBtn.hidden = !hr || !viewList().some((p) => p[0] === hr);
@@ -335,16 +372,39 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   crystalBtn.addEventListener('click', () => { view.crystal = !view.crystal; save(); draw(); });
   byFaceBtn.addEventListener('click', () => { view.byFace = !view.byFace; save(); renderPanel(); draw(); });
   hideBtn.addEventListener('click', () => { view.hidden = !view.hidden; save(); draw(); });
-  patternSelect.addEventListener('change', () => { const o = view.opts[view.kind]; if (!o || !DATA[view.kind].options.patterns.includes(patternSelect.value)) return; o.pattern = patternSelect.value; save(); draw(); });
-  blockInput.addEventListener('input', () => { const o = view.opts[view.kind]; if (!o) return; o.block = Number(blockInput.value); save(); draw(); });
-  swapBtn.addEventListener('click', () => { const o = view.opts[view.kind]; if (!o) return; o.swap = !o.swap; save(); draw(); });
+  // a pattern control starts the pattern afresh: single pieces tapped (flips) are let go
+  const unflip = (o) => { if (o.flips) o.flips = {}; };
+  patternSelect.addEventListener('change', () => { const o = view.opts[view.kind]; if (!o || !DATA[view.kind].options.patterns.includes(patternSelect.value)) return; o.pattern = patternSelect.value; unflip(o); save(); draw(); });
+  panel.querySelector('.ch-pattern-buttons').addEventListener('click', (e) => {
+    const p = e.target.closest('[data-chains-pattern]')?.dataset.chainsPattern, o = view.opts[view.kind];
+    if (!p || !o || !DATA[view.kind].options.patterns.includes(p)) return;
+    o.pattern = p; unflip(o); save(); draw();
+  });
+  blockInput.addEventListener('input', () => { const o = view.opts[view.kind]; if (!o) return; o.block = Number(blockInput.value); unflip(o); save(); draw(); });
+  swapBtn.addEventListener('click', () => { const o = view.opts[view.kind]; if (!o) return; o.swap = !o.swap; unflip(o); save(); draw(); });
+  panel.querySelector('.ch-links').addEventListener('click', (e) => { const a = e.target.closest('[data-chains-link]')?.dataset.chainsLink; if (a) openAction(a); });
+  // X-ray turned on or off (the ⛶ button; render.js sets the box after its own click handler): kinds that show their parts redraw
+  let shownXray = xrayOn();
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest?.('#xray-toggle')) return;
+    setTimeout(() => { if (xrayOn() !== shownXray) { shownXray = xrayOn(); if (active && DATA[view.kind].options?.xray) draw(); } }, 0);
+  });
   let shownLang = lang();
   onSettingsChange((st) => { if (st.language !== shownLang) { shownLang = st.language; if (active) renderPanel(); } });
 
   return {
     group,
-    meshes: () => [],
-    handleTap: () => false,
+    meshes: () => (DATA[view.kind].tap && solidMesh ? [solidMesh] : []),
+    /** A tap on a tagged face (the Golden split's hexagons) steps that one piece: the kind's tap(tag, opts) gives its new state. */
+    handleTap(hit, mode) {
+      const o = view.opts[view.kind], tap = DATA[view.kind].tap;
+      if (mode !== 'build' || !tap || !o?.flips || hit?.object !== solidMesh) return false;
+      const tag = solidTags[hit.faceIndex];
+      if (!tag) return false;
+      o.flips = { ...o.flips, [tag]: tap(tag, o) };
+      save(); draw();
+      return true;
+    },
     /** Open on one of the current shape's views (a link from another world: Vajrayana's Cleo star opens Theaetetus's 'cleostar'). */
     openView(name) {
       if (!DATA[view.kind].views[name]) return;
@@ -378,7 +438,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     get isEmpty() { return true; },
     clear() {},
     /** For the browser tests (?probe): what is shown, and the pieces drawn by role. */
-    probe: () => ({ kind: view.kind, part: view.part[view.kind], size: Math.min(view.size, maxSize()), crystal: view.crystal, hidden: hiddenRole(), opts: view.opts[view.kind] ? { ...view.opts[view.kind] } : null, drawn: { ...drawn } }),
+    probe: () => ({ xray: xrayOn(), flips: view.opts[view.kind]?.flips ? Object.keys(view.opts[view.kind].flips).length : null, kind: view.kind, part: view.part[view.kind], size: Math.min(view.size, maxSize()), crystal: view.crystal, hidden: hiddenRole(), opts: view.opts[view.kind] ? { ...view.opts[view.kind] } : null, drawn: { ...drawn } }),
   };
 }
 

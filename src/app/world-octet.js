@@ -5,12 +5,16 @@
 // simple cubic lattice the gap between the icosahedra (or Lotus Jewels) and the void pieces is exactly 6 AXE per cell, so the Lotus
 // Jewel network, its twin (whole icosahedra and Unborns) and the four-kind network (Lotus Jewel, Tricap, Unborn, AXE) fill space;
 // the AXE can be hidden. Mixed blocks (DICTO 2026-10-23): each Tricap given to its icosahedron or to its dodecahedron by a pattern of
-// blocks; every such choice fills space. Words: i18n octet.*.
+// blocks; every such choice fills space. Golden split (DICTO 2026-10-23, study 2026-10-23-shadow-forms): every AXE coned from the point
+// 1/phi along its axis, its 4 pyramids joining the icosahedra and Unborns, so the network is two truncated octahedra (Icosaxes and
+// Unborn Axes, names by DICTO; with keys Lotus Jewel Axes and Dodecaxes; Polyhedraverse's DICTO's pieces, krp-core golden-split.js); each hexagon between them flat or keyed by a Tricap either way, by a
+// pattern or a tap. Words: i18n octet.*.
 import OCTET from './octet-data.js';
+import { SIGNS, FLAT, INTO_BIG, INTO_SMALL, pieceParts, pieceSurface, toPolygons } from '../krp-core/src/polyhedra/golden-split.js';
 import { createLayeredWorld } from './world-chains.js';
 
 const { a: A, phi: PHI, cells: C } = OCTET;
-const KINDS = ['caps', 'allIco', 'frog', 'pyrochlore', 'lotusJewel', 'icoUnborn', 'axeNet', 'mixed'];
+const KINDS = ['caps', 'allIco', 'frog', 'pyrochlore', 'lotusJewel', 'icoUnborn', 'axeNet', 'mixed', 'goldenSplit'];
 const range = (k) => Array.from({ length: 2 * k + 1 }, (_, i) => i - k);
 const near = (p, r) => Math.hypot(...p) <= r + 1e-9;
 // One cell at a place, or turned inside out through its middle (the octet's other tetrahedra).
@@ -172,6 +176,68 @@ export function mixedPieces(size, { pattern = 'layers', block = 1, swap = false 
   });
   return out;
 }
+// ---- Golden split (DICTO 2026-10-23; study 2026-10-23-shadow-forms, exact in Q(√5)) ----
+// Big truncated octahedra (icosahedron + 12 AXE pyramids) on the lattice points, small ones (Unborn + 12) on the cube centres. Each
+// hexagon between a big piece and a small one is FLAT, keyed INTO_BIG (its Tricap goes to the small piece: the Lotus Jewel network's
+// key) or INTO_SMALL (the Tricap mirrored in the hexagon goes to the big piece; it lies inside the Unborn); every choice fills space
+// (point tests: krp-core tests/unit/golden-split.test.mjs, tests/unit/golden-split-world.test.mjs). Patterns: smooth, all keyed,
+// checker and pyrochlore (Mixed blocks' blocks of cells: a marked cell's small piece takes the keys), random (one key in two); Swap
+// turns the keys the other way; a tap on a hexagon steps it flat → into the big → into the small → flat. Whole pieces (big green,
+// small orange) unless X-ray is on: then the cores (icosahedron, Lotus Jewel, Unborn, dodecahedron; pink if partly keyed), the AXE
+// pyramids cyan and the mirrored keys purple, so the cut shows what each piece is made of.
+// A hexagon is named by its small piece (odd n) and the direction s to the big one: 'x,y,z|sx,sy,sz'.
+export const GS_PATTERNS = ['smooth', 'allKeyed', 'checker', 'pyrochlore', 'random'];
+const gsHash = (k) => { let h = 2166136261; for (let i = 0; i < k.length; i++) h = Math.imul(h ^ k.charCodeAt(i), 16777619); return h >>> 0; };
+/** The key state of a hexagon under { pattern, block, swap, flips }. */
+export function gsState(n, s, { pattern = 'smooth', block = 1, swap = false, flips = {} } = {}) {
+  const tag = `${n.join(',')}|${s.join(',')}`;
+  if (Number.isInteger(flips[tag])) return flips[tag];
+  const keyed = pattern === 'allKeyed' || (pattern === 'random' && gsHash(tag) % 2 === 1)
+    || ((pattern === 'checker' || pattern === 'pyrochlore') && MIXED_PATTERNS[pattern](blockOf(n.map((c) => (c - 1) / 2), block)));
+  return keyed ? (swap ? INTO_SMALL : INTO_BIG) : FLAT;
+}
+const gsGeom = new Map();
+const neg = (s) => s.map((c) => -c);
+// one piece kind (big or small) with given key states: whole (polygons, each face tagged with its hexagon index or -1) or parts
+function gsPiece(big, states, xray) {
+  const k = `${big}${states.join('')}${xray}`;
+  if (gsGeom.has(k)) return gsGeom.get(k);
+  const hexOf = (P) => {   // squares face along an axis; every other face belongs to the hexagon it lies on, dents and keys included
+    const c = P.reduce((t, p) => t.map((x, i) => x + p[i] / P.length), [0, 0, 0]);
+    const a = P[0], n = [0, 1, 2].map((m) => (P[1][(m + 1) % 3] - a[(m + 1) % 3]) * (P[2][(m + 2) % 3] - a[(m + 2) % 3]) - (P[1][(m + 2) % 3] - a[(m + 2) % 3]) * (P[2][(m + 1) % 3] - a[(m + 1) % 3]));
+    if (n.filter((x) => Math.abs(x) > 1e-9 * Math.hypot(...n)).length === 1) return -1;
+    return SIGNS.reduce((b, s, i) => (s.reduce((t, x, m) => t + x * c[m], 0) > SIGNS[b].reduce((t, x, m) => t + x * c[m], 0) ? i : b), 0);
+  };
+  const mesh = (tris) => { const { vertices, faces } = toPolygons(tris); return [vertices, faces, faces.map((f) => hexOf(f.map((i) => vertices[i])))]; };
+  let out;
+  if (!xray) {
+    out = [[big ? 'gsBig' : 'gsSmall', ...mesh(pieceSurface(big, states))]];
+  } else {
+    const p = pieceParts(big, states), has = (st) => states.some((x) => x === st), every = (st) => states.every((x) => x === st);
+    const core = big ? (!has(INTO_BIG) ? 'mxIco' : every(INTO_BIG) ? 'mxJewel' : 'mxTrans')
+      : (every(FLAT) ? 'mxUnborn' : every(INTO_BIG) ? 'mxDodeca' : 'mxTrans');
+    out = [[core, ...mesh(p.core)], ...p.pyramids.map((T) => ['axe', ...mesh(T)]), ...p.keys.map((T) => ['tricap', ...mesh(T)])];
+  }
+  gsGeom.set(k, out);
+  return out;
+}
+/** Golden split on the sites of a size: [role, vertices, faces, n, { anchor, tags }] (tags: each face's hexagon name, or null). */
+export function goldenPieces(size, o = {}) {
+  const { ico, voids } = scSites(size), out = [];
+  const at = (n) => n.map((c) => (c * PHI) / 2);
+  const place = (big, n) => {
+    const hex = SIGNS.map((s) => (big ? [n.map((c, i) => c + s[i]), neg(s)] : [n, s]));
+    const states = hex.map(([m, s]) => gsState(m, s, o)), names = hex.map(([m, s]) => `${m.join(',')}|${s.join(',')}`), c = at(n);
+    for (const [role, V, F, H] of gsPiece(big, states, !!o.xray)) {
+      out.push([role, V.map((v) => v.map((x, i) => x + c[i])), F, n, { anchor: c, tags: H.map((h) => (h < 0 ? null : names[h])) }]);
+    }
+  };
+  for (const n of ico.values()) place(true, n);
+  for (const n of voids.values()) place(false, n);
+  return out;
+}
+/** The next key state of a hexagon when tapped: flat → into the big → into the small → flat. */
+export const gsNext = (tag, o) => { const [n, s] = tag.split('|').map((q) => q.split(',').map(Number)); return (gsState(n, s, o) + 1) % 3; };
 const network = (tetCell) => (size) => [
   ...octSites(R(size)).filter((o) => o.even).flatMap((o) => put(C.oct, o.p)),
   ...tetSites(R(size)).flatMap((t) => put(C[tetCell], t.p, t.invert)),
@@ -208,19 +274,24 @@ export const OCTET_VIEWS = {
     network: (size, o) => mixedPieces(size, o),
     transitions: (size, o) => mixedPieces(size, o).filter(([r]) => r === 'mxTrans' || r === 'axe'),
   } },
+  goldenSplit: { maxSize: 3, options: { patterns: GS_PATTERNS, block: 3, startBlock: 1, buttons: true, blockPatterns: ['checker', 'pyrochlore'], flips: true, xray: true },
+    tap: gsNext, views: { network: (size, o) => goldenPieces(size, o) } },
 };
 const DATA = OCTET_VIEWS;
 const GLASS = { mixed: new Set(['mxDodeca', 'mxUnborn']), caps: new Set(['ico']), allIco: new Set(['ico', 'icoSmall']), frog: new Set(['ico', 'icoSmall']), pyrochlore: new Set(['octGlass', 'tetGlass']), lotusJewel: new Set(['voidDodeca']),
-  icoUnborn: new Set(['unborn']), axeNet: new Set(['unborn']) };
+  icoUnborn: new Set(['unborn']), axeNet: new Set(['unborn']), goldenSplit: new Set(['gsSmall', 'mxUnborn', 'mxDodeca']) };
 
-export function createOctetWorld({ scene, fitView }) {
+export function createOctetWorld({ scene, fitView, openAction }) {
   return createLayeredWorld({ scene, fitView, name: 'octet', data: DATA, kinds: KINDS, glassRoles: GLASS, prefix: 'octet',
-    defaultParts: { caps: 'network', allIco: 'network', frog: 'network', pyrochlore: 'network', lotusJewel: 'network', icoUnborn: 'network', axeNet: 'network', mixed: 'network' },
-    hideable: { lotusJewel: 'axe', icoUnborn: 'axe', axeNet: 'axe', mixed: 'axe' } });
+    defaultParts: { caps: 'network', allIco: 'network', frog: 'network', pyrochlore: 'network', lotusJewel: 'network', icoUnborn: 'network', axeNet: 'network', mixed: 'network', goldenSplit: 'network' },
+    hideable: { lotusJewel: 'axe', icoUnborn: 'axe', axeNet: 'axe', mixed: 'axe' }, openAction,
+    // the four pieces live in Polyhedraverse's DICTO's pieces (one place per shape); the world links to them
+    links: { goldenSplit: [['Icosaxes', 'tool:polyShape:DICTO_ICOSAXES'], ['Unborn Axes', 'tool:polyShape:DICTO_UNBORN_AXES'],
+      ['Lotus Jewel Axes', 'tool:polyShape:DICTO_LOTUS_JEWEL_AXES'], ['Dodecaxes', 'tool:polyShape:DICTO_DODECAXES']] } });
 }
 
 /** Points whose convex hull previews a network in the DICTO menu (one cell). */
 export function octetPreviewPoints(kind) {
-  const first = { caps: C.oct, allIco: C.tetIco, frog: C.oct.slice(0, 1), pyrochlore: C.tet, lotusJewel: C.lotusJewel, icoUnborn: C.unborn, axeNet: [...C.lotusJewel, ...C.tricap], mixed: C.voidDodeca }[kind] ?? [];
+  const first = { caps: C.oct, allIco: C.tetIco, frog: C.oct.slice(0, 1), pyrochlore: C.tet, lotusJewel: C.lotusJewel, icoUnborn: C.unborn, axeNet: [...C.lotusJewel, ...C.tricap], mixed: C.voidDodeca, goldenSplit: [['gs', gsPiece(true, Array(8).fill(FLAT), false)[0][1]]] }[kind] ?? [];
   return first.flatMap((p) => p[1]);
 }

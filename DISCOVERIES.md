@@ -1199,6 +1199,26 @@ icosahedron; then the one gap left made icosahedral too, and an icosahedron "cla
   octet world as four networks: the Lotus Jewel network with its AXE, Icosahedra and Unborn, Icosahedra, dodecahedra and AXE,
   and Mixed blocks. Known: the pseudoicosahedron (Koca et al.) and AXE as a tile of aperiodic tilings (Mosseri–Sadoc, Kramer);
   the AXE gap of this packing was not found in the library or the searches of 2026-10-23.
+- **The golden split** (2026-10-23, DICTO's idea, found by his AXE route ("shadow forms"); study 2026-10-23-shadow-forms in the
+  research repo, exact in Q(√5); names by DICTO: Icosaxes, Unborn Axes, Lotus Jewel Axes, Dodecaxes): cone every AXE from the point 1/φ along its axis (from the midpoint of its long
+  edge, on two icosahedra, to the midpoint of its short edge, on two Unborns) into 4 pyramids, each joining the piece whose face
+  it sits on. Then **icosahedron + 12 pyramids** is the convex **Icosaxes** (DICTO's name; the shape is Koca et al.'s truncated octahedron x = τ), all permutations of
+  (0, ±1/2, ±φ/2), volume 1 + 2√5/3, and **Unborn + 12 pyramids** is **Unborn Axes** (DICTO's name; Koca et al.'s truncated octahedron x = 1/τ), all permutations
+  of (0, ±1/(2φ), ±φ/2), volume 1 + √5/3: 8 congruent equiangular hexagons (sides 1/√2 and 1/(φ√2)), 6 squares, full octahedral
+  symmetry; the 12 pyramid tips are the mirror image's corners. Big on the lattice points and small on the cube centres, they
+  fill space (body-centred; sum φ³). The split at t = 1/φ is the only point where both are convex (float sweep). In the Lotus
+  Jewel network the 8 Tricaps move to the dodecahedron: **Lotus Jewel Axes** = Lotus Jewel + 12 pyramids (volume √5)
+  and **Dodecaxes** = dodecahedron + 12 pyramids (volume 2), and every hexagon may be keyed or not, freely; the
+  Tricap mirrored in its hexagon lies inside the Unborn, so a key the other way fills too. Checked: exact (convexity as union
+  volume = hull volume, corners, faces, volumes, hexagon congruence), and point tests of the app's pieces (0 gaps, 0 overlaps
+  for every pattern, swapped or not, after taps; krp-core tests/unit/golden-split.test.mjs, tests/unit/golden-split-world.test.mjs).
+  In Polyhedraverse's DICTO's pieces and the octet world's Golden split. **Known:** each piece's shape: the union of a
+  pseudoicosahedron and its mirror image is the non-regular truncated octahedron of orbit (1, x, 0) (Koca et al. 2015,
+  arXiv:1506.04600, §4.3, eq. 49), here x = τ (the icosahedron and its mirror) and x = 1/τ (the Unborn and its mirror); also
+  the Polytope Wiki's semi-uniform truncated octahedron; and unequal truncated octahedra on a body-centred lattice in general are
+  weighted Voronoi (Laguerre) cells. **Not found** in the sources checked: this golden pair as a two-piece fill derived from
+  icosahedra + Unborns + split AXE, the golden split at t = 1/φ, and Lotus Jewel Axes and Dodecaxes, the keyed √5 / 2 pair with free keyings ("not found" is
+  not "new").
 - **Clusters of 4 and 6** (study 2026-10-10-ico-clusters; names by DICTO): **ICOSA-TET**, 4 icosahedra on alternate faces
   of an octahedron sharing corners (diamond network), and **ICOSA-OCT**, 6 icosahedra on the cube axes turned 45° sharing
   corners round a caged tetrahedron (perovskite network); the **Mirrored ICOSA-NON CUBE**, an icosahedron with 8
