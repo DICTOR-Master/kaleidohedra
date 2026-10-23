@@ -1,0 +1,59 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-23",
+ "access_right": "open",
+ "title": "The Golden Split: Icosahedra, Unborns and AXE Become Two Convex Space-Fillers",
+ "description": "<p><b>In short.</b> Icosahedra cannot fill space on their own. Set them in a cubic grid, edge to edge, and two kinds of gap are left: a squeezed icosahedron (the Unborn) in the middle of each cube, and thin tetrahedra (the AXE) between them. Cut each AXE into four pyramids from the point 1/φ of the way along its axis and give each pyramid to the piece it touches: the icosahedra and the Unborns become two convex truncated octahedra that fill space.</p><p><b>Main theorem.</b> In the simple cubic lattice of regular icosahedra of edge 1 and spacing φ, the golden split of every AXE makes the icosahedron with its 12 pyramids, the <i>Icosaxes</i>, and the Unborn with its 12, the <i>Unborn Axes</i>, convex truncated octahedra with full octahedral symmetry, the same equiangular hexagon (sides 1/√2 and 1/(φ√2)), volumes 1 + 2√5/3 and 1 + √5/3, filling space face to face. <b>Theorem 2:</b> for any cut points inside the AXEs, both padded pieces are convex only if every AXE is cut at its golden point. <b>Theorem 3:</b> in the Lotus Jewel network the same cut gives the keyed pair <i>Lotus Jewel Axes</i> (volume √5) and <i>Dodecaxes</i> (volume 2), and every keying fills space. <b>Theorem 4 (factor x):</b> the pair belongs to a one-parameter family of mixed space-fillers, the truncated octahedra T(x) and T(1/x), from Kelvin's cell (x = 1) to the golden pair (x = τ). A remark places the octet (tetrahedra and octahedra) in a similar family between the rhombic dodecahedron and the cube. Exact in ℚ(√5). The two smooth shapes are known (Koca et al. 2015, x = τ and x = 1/τ); the route from the icosahedron lattice, the golden split and its uniqueness, and the keyed pair were not found in the sources checked.</p><p>Paper #48 continues DICTO's search for mixed Platonic space-fillers (#47), answering his conjecture that a more elegant and simpler filling was within reach. The ideas and the names Unborn, AXE, Lotus Jewel, Icosaxes, Unborn Axes, Lotus Jewel Axes and Dodecaxes are DICTO's; computation, exact proofs and drafting with Claude (Anthropic). More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "space-filling",
+  "tiling",
+  "icosahedron",
+  "dodecahedron",
+  "truncated octahedron",
+  "golden ratio",
+  "Mosseri–Sadoc tiles",
+  "Unborn",
+  "AXE",
+  "Icosaxes",
+  "mixed space-fillers"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23551326",
+   "relation": "continues",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.24200/squjs.vol21iss2pp139-149",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1107/S2053273320015399",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ],
+ "notes": "#48 in DICTO's numbering (dictospheres.com). Scripts and exact checks attached as a zip of studies/2026-10-23-shadow-forms (research branch, commit 066a46a)."
+}
