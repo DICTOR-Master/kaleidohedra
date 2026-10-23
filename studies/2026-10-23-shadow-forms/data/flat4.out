@@ -1,0 +1,57 @@
+  skip A (1, 1, -1) (1,0) x even orbits 12
+  skip A (1, 1, -1) (1,0) checker orbits 12
+  skip A (1, 1, -1) (0,1) y even orbits 12
+  skip A (1, 1, -1) (0,1) checker orbits 12
+  skip A (1, 1, -1) (1,1) x even orbits 12
+  skip A (1, 1, -1) (1,1) y even orbits 12
+A flip (1, -1, 1) slide (1,0) keep x even: fill 73.3%
+A flip (1, -1, 1) slide (1,1) keep x even: fill 73.3%
+  skip A (1, -1, -1) (1,0) x even orbits 12
+  skip A (1, -1, -1) (1,0) checker orbits 12
+  skip A (1, -1, -1) (0,1) y even orbits 12
+  skip A (1, -1, -1) (0,1) checker orbits 12
+  skip A (1, -1, -1) (1,1) x even orbits 12
+  skip A (1, -1, -1) (1,1) y even orbits 12
+A flip (-1, 1, 1) slide (0,1) keep y even: fill 73.3%
+A flip (-1, 1, 1) slide (1,1) keep y even: fill 73.3%
+  skip A (-1, 1, -1) (1,0) x even orbits 12
+  skip A (-1, 1, -1) (1,0) checker orbits 12
+  skip A (-1, 1, -1) (0,1) y even orbits 12
+  skip A (-1, 1, -1) (0,1) checker orbits 12
+  skip A (-1, 1, -1) (1,1) x even orbits 12
+  skip A (-1, 1, -1) (1,1) y even orbits 12
+  skip A (-1, -1, -1) (1,0) x even orbits 12
+  skip A (-1, -1, -1) (1,0) checker orbits 12
+  skip A (-1, -1, -1) (0,1) y even orbits 12
+  skip A (-1, -1, -1) (0,1) checker orbits 12
+  skip A (-1, -1, -1) (1,1) x even orbits 12
+  skip A (-1, -1, -1) (1,1) y even orbits 12
+B flip (1, -1, 1) slide (1,0) keep x even: fill 82.6%
+B flip (1, -1, 1) slide (1,1) keep x even: fill 82.6%
+B flip (-1, 1, 1) slide (0,1) keep y even: fill 84.0%
+B flip (-1, 1, 1) slide (1,1) keep y even: fill 84.0%
+C flip (1, 1, -1) slide (1,0) keep x even: fill 74.3%
+C flip (1, 1, -1) slide (1,0) keep checker: fill 77.4%
+C flip (1, 1, -1) slide (0,1) keep y even: fill 77.9%
+C flip (1, 1, -1) slide (0,1) keep checker: fill 77.4%
+C flip (1, 1, -1) slide (1,1) keep x even: fill 74.3%
+C flip (1, 1, -1) slide (1,1) keep y even: fill 77.9%
+C flip (1, -1, 1) slide (1,0) keep x even: fill 74.3%
+C flip (1, -1, 1) slide (1,1) keep x even: fill 74.3%
+C flip (1, -1, -1) slide (1,0) keep x even: fill 74.3%
+C flip (1, -1, -1) slide (1,0) keep checker: fill 77.4%
+C flip (1, -1, -1) slide (0,1) keep y even: fill 77.9%
+C flip (1, -1, -1) slide (0,1) keep checker: fill 77.4%
+C flip (1, -1, -1) slide (1,1) keep x even: fill 74.3%
+C flip (1, -1, -1) slide (1,1) keep y even: fill 77.9%
+C flip (-1, 1, 1) slide (0,1) keep y even: fill 75.4%
+C flip (-1, 1, 1) slide (1,1) keep y even: fill 75.4%
+C flip (-1, 1, -1) slide (0,1) keep y even: fill 78.5%
+C flip (-1, 1, -1) slide (1,1) keep y even: fill 78.5%
+C flip (-1, -1, -1) slide (1,0) keep x even: fill 75.4%
+C flip (-1, -1, -1) slide (1,0) keep checker: fill 75.9%
+C flip (-1, -1, -1) slide (0,1) keep y even: fill 78.5%
+C flip (-1, -1, -1) slide (0,1) keep checker: fill 75.9%
+C flip (-1, -1, -1) slide (1,1) keep x even: fill 75.4%
+C flip (-1, -1, -1) slide (1,1) keep y even: fill 78.5%
+BEST: [('B', (-1, 1, 1), '(0,1)', 'y even', 84.0), ('B', (-1, 1, 1), '(1,1)', 'y even', 84.0), ('B', (1, -1, 1), '(1,0)', 'x even', 82.6), ('B', (1, -1, 1), '(1,1)', 'x even', 82.6), ('C', (-1, 1, -1), '(1,1)', 'y even', 78.5), ('C', (-1, 1, -1), '(0,1)', 'y even', 78.5)]
