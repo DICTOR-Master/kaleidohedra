@@ -1,0 +1,13 @@
+PASS t = 1/10: tetra piece 4 corners, faces {3: 4}, volume 9/1000; octa piece 30 corners, faces {3: 8, 6: 12}, volume 991/500; 8 T + 4 O = 8 (cube of side 2: 8)
+PASS   t < 1/3: tetra piece is the tetrahedron scaled by 3t (volume (3t)^3/3 = 9/1000)
+PASS t = 1/5: tetra piece 4 corners, faces {3: 4}, volume 9/125; octa piece 30 corners, faces {3: 8, 6: 12}, volume 232/125; 8 T + 4 O = 8 (cube of side 2: 8)
+PASS   t < 1/3: tetra piece is the tetrahedron scaled by 3t (volume (3t)^3/3 = 9/125)
+PASS t = 1/3: tetra piece 4 corners, faces {3: 4}, volume 1/3; octa piece 6 corners, faces {3: 8}, volume 4/3; 8 T + 4 O = 8 (cube of side 2: 8)
+PASS t = 1/3 is the octet: regular tetrahedron (volume 1/3) and regular octahedron (volume 4/3), edge √2
+PASS t = 1/2: tetra piece 16 corners, faces {3: 4, 6: 6}, volume 23/32; octa piece 6 corners, faces {3: 8}, volume 9/16; 8 T + 4 O = 8 (cube of side 2: 8)
+PASS   t > 1/3: octa piece is the octahedron scaled by (3/2)(1 - t) (volume 9/16)
+PASS t = 4/5: tetra piece 16 corners, faces {3: 4, 6: 6}, volume 491/500; octa piece 6 corners, faces {3: 8}, volume 9/250; 8 T + 4 O = 8 (cube of side 2: 8)
+PASS   t > 1/3: octa piece is the octahedron scaled by (3/2)(1 - t) (volume 9/250)
+PASS t = 9/10: tetra piece 16 corners, faces {3: 4, 6: 6}, volume 3991/4000; octa piece 6 corners, faces {3: 8}, volume 9/2000; 8 T + 4 O = 8 (cube of side 2: 8)
+PASS   t > 1/3: octa piece is the octahedron scaled by (3/2)(1 - t) (volume 9/2000)
+ALL PASS
