@@ -114,4 +114,9 @@ hexa = lambda r: sorted(float(v) for k, v in r[1] if k == 6)
 check('the hexagons of both pieces have the same side lengths (squared: 1/2 and (3 - √5)/4)', set(results['icosahedron'][1]) & set(results['Unborn'][1]) and
       {v for k, v in results['icosahedron'][1] if k == 6} == {v for k, v in results['Unborn'][1] if k == 6})
 check('the hexagon of the padded icosahedron is congruent to that of the padded Unborn (all 15 corner distances)', results['icosahedron'][2] == results['Unborn'][2])
+# Lotus Jewel network: the 8 Tricaps (exact volume (3 - √5)/24 each, axe-gap study) move from the icosahedron side to the dodecahedron side
+VT8 = Q5(Fr(3, 24), Fr(-1, 24)) * 8
+big_k = results['icosahedron'][0] - VT8; small_k = results['Unborn'][0] + VT8
+check(f'Lotus Jewel network, golden split: big keyed piece (Jewel + 12 pyramids) volume {big_k} = √5', big_k == Q5(0, 1))
+check(f'small keyed piece (dodecahedron + 12 pyramids) volume {small_k} = 2', small_k == Q5(2))
 print('ALL PASS' if fails == 0 else f'{fails} FAIL')
