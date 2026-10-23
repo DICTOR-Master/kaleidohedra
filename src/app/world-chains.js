@@ -27,7 +27,11 @@ export const ROLE = { ico: 0x5fd38a, cap: 0x5fd38a, lcap: 0x5fd38a, lj11: 0x5fd3
   hexCentre: 0xffc857, hexByHex: 0x4dd0e1, hexByRhombus: 0x5fd38a, hexCentreN: 0x8a7440, hexByHexN: 0x33808a, hexByRhombusN: 0x3f7a57,
   // DICTO Icosahedral Octet
   admiral: 0x4dd0e1, icoSmall: 0xffc857, weirdstone: 0xc792ea, tadpole: 0xf08fc0, tet: 0xc792ea, frog: 0xf08fc0, pyroUp: 0xffc857,
-  pyroDown: 0xc792ea, octGlass: 0x9fd8ff, tetGlass: 0x9fd8ff, lotusJewel: 0x5fd38a, voidDodeca: 0xffc857 };
+  pyroDown: 0xc792ea, octGlass: 0x9fd8ff, tetGlass: 0x9fd8ff, lotusJewel: 0x5fd38a, voidDodeca: 0xffc857,
+  // the AXE gap (DICTO 2026-10-23): Lotus Jewel green, Tricap purple, Unborn gold, AXE cyan (role axe, above)
+  unborn: 0xffc857, tricap: 0xc792ea,
+  // Mixed blocks: whole icosahedra green, Lotus Jewels dark green, whole dodecahedra gold, Unborns orange, transitions pink, AXE cyan
+  mxIco: 0x5fd38a, mxJewel: 0x2e8b57, mxDodeca: 0xffc857, mxUnborn: 0xff9a52, mxTrans: 0xf08fc0 };
 // The 12-neighbour space-fillers' 13s (DICTO 2026-10-13): centre gold, the twelve cyan, the neighbouring blocks' copies dimmer.
 Object.assign(ROLE, { jewelCentre: 0xffc857, jewelCell: 0x4dd0e1, stella: 0xc792ea });
 for (const k of ['skewedRd13', 'bainRd13', 'bilinski13']) Object.assign(ROLE, { [`${k}Centre`]: 0xffc857, [`${k}Cell`]: 0x4dd0e1, [`${k}CentreN`]: 0x8a7440, [`${k}CellN`]: 0x33808a });
@@ -72,14 +76,19 @@ export function filmOrder(list, named = []) {
 }
 
 /** A world of nested shells (Multi-shell chains, DICTO Dodeca): data { kind: { views: { view: [[role, vertices, faces]] } } },
- *  words under '<prefix>.<kind>.<view>' and '<prefix>.note.<kind>'. */
-export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null, pinnedRoles = new Set() }) {
+ *  words under '<prefix>.<kind>.<view>' and '<prefix>.note.<kind>'. hideable: { kind: role }, a kind's pieces that one button shows or
+ *  hides (DICTO 2026-10-23: the octet's AXE; shown at first), words '<prefix>.toggle.<role>.on|off'; the button only where the view has them.
+ *  A kind with options { patterns, block } (the octet's Mixed blocks, DICTO 2026-10-23) has growing views (size, { pattern, block, swap })
+ *  and three more controls, only for it: a pattern menu, a block-size slider (1..block) and a Swap button; words '<prefix>.option.*' and
+ *  '<prefix>.pattern.<pattern>'. */
+export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null, pinnedRoles = new Set(), hideable = {} }) {
   const STORAGE_KEY = storageKey(name);
   const group = new THREE.Group();
   group.visible = false;
   scene.add(group);
   // size: for views that grow (a function of the size, DICTO Icosahedral Octet), how far out the network goes.
-  const view = { kind: KINDS[0], part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false, size: 2, byFace: false };
+  const defaultOpts = () => Object.fromEntries(KINDS.filter((k) => DATA[k].options).map((k) => [k, { pattern: DATA[k].options.patterns[0], block: DATA[k].options.startBlock ?? 1, swap: false }]));
+  const view = { kind: KINDS[0], part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false, size: 2, byFace: false, hidden: false, opts: defaultOpts() };
   try {
     const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (KINDS.includes(d?.kind)) view.kind = d.kind;
@@ -88,7 +97,15 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     if (Number.isFinite(d?.shells)) view.shells = Math.max(0, Math.min(1, d.shells));
     view.crystal = d?.crystal === true;
     view.byFace = byFace && d?.byFace === true;
+    view.hidden = d?.hidden === true;
     if (Number.isInteger(d?.size)) view.size = Math.max(1, Math.min(4, d.size));
+    for (const k of KINDS) {
+      const o = DATA[k].options, s = d?.opts?.[k];
+      if (!o || !s) continue;
+      if (o.patterns.includes(s.pattern)) view.opts[k].pattern = s.pattern;
+      if (Number.isInteger(s.block)) view.opts[k].block = Math.max(1, Math.min(o.block, s.block));
+      view.opts[k].swap = s.swap === true;
+    }
   } catch { /* corrupt or blocked storage: defaults */ }
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(view)); } catch { /* best-effort */ } };
   let active = false;
@@ -106,8 +123,9 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   function viewList() {
     const v = DATA[view.kind].views[view.part[view.kind]];
     if (typeof v !== 'function') return v;
-    const size = Math.min(view.size, maxSize()), key = `${view.kind}.${view.part[view.kind]}.${size}`;
-    if (!grown.has(key)) grown.set(key, v(size));
+    const size = Math.min(view.size, maxSize()), o = view.opts[view.kind];
+    const key = `${view.kind}.${view.part[view.kind]}.${size}${o ? `.${o.pattern}.${o.block}.${o.swap}` : ''}`;
+    if (!grown.has(key)) grown.set(key, v(size, o));
     return grown.get(key);
   }
   // Pull apart by face (DICTO 2026-10-13: see the solids the many pieces form): each piece moves along the outward normal of
@@ -141,7 +159,10 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     return f;
   }
   let radius = 1;
+  const hiddenRole = () => (view.hidden ? hideable[view.kind] ?? null : null);
+  let drawn = {}; // pieces drawn, by role (the browser tests' probe)
   function draw() {
+    drawn = {};
     clearGroup();
     if (!active) return;
     const list = viewList();
@@ -163,6 +184,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     const fm = film === null ? null : filmOf(list);
     list.forEach(([role, V, F], n) => {
       if (fm && fm.rank.get(n) >= film) return;
+      if (role === hiddenRole()) return;
       const sh = shellOf(dist[n]); const top = Math.round(view.shells * (levels.length - 1));
       if (!fm && sh > top && !ALWAYS_GLASS.has(role) && !view.crystal) return;
       const see = ALWAYS_GLASS.has(role) || (view.crystal && (GLASS[view.kind]?.has(role) || sh > top));
@@ -182,6 +204,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       if (centreGold) hex = n === centreIndex || (isCentreRole(role) && hex !== DIM_GOLD) ? GOLD : (hex === GOLD ? ORANGE : hex);
       if (fm && fm.rank.get(n) === film - 1) hex = ORANGE; // the newest piece of the movie
       colour.setHex(hex);
+      drawn[role] = (drawn[role] ?? 0) + 1;
       for (const f of F) {
         for (let i = 1; i + 1 < f.length; i++) for (const k of [f[0], f[i], f[i + 1]]) { b.pos.push(...P[k]); b.col.push(colour.r, colour.g, colour.b); }
         f.forEach((k, i) => b.line.push(...P[k], ...P[f[(i + 1) % f.length]]));
@@ -213,11 +236,13 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   panel.innerHTML = `
     <div class="w4d-row"><label class="hull-pick"><span class="ch-view-label"></span> <select class="hull-select" data-select="part"></select></label></div>
     <div class="w4d-row ch-size-row"><label class="hull-pick"><span class="ch-size-label"></span> <input type="range" class="st-slider" min="1" max="3" step="1"></label></div>
+    <div class="w4d-row ch-pattern-row"><label class="hull-pick"><span class="ch-pattern-label"></span> <select class="hull-select" data-select="pattern"></select></label></div>
+    <div class="w4d-row ch-block-row"><label class="hull-pick"><span class="ch-block-label"></span> <input type="range" class="st-slider" min="1" max="3" step="1"></label></div>
     <div class="w4d-row ch-apart-row"><label class="hull-pick"><span class="ch-apart-label"></span> <input type="range" class="st-slider" min="0" max="1200" step="1"></label></div>
     <div class="w4d-row ch-shells-row"><label class="hull-pick"><span class="ch-shells-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row ch-film-row"><label class="hull-pick"><span class="ch-film-label"></span> <input type="range" class="st-slider" min="0" max="1" step="1"></label></div>
     <div class="w4d-row st-note ch-film-note" aria-live="polite"></div>
-    <div class="w4d-row w4d-options"><button type="button" data-chains-play></button><button type="button" data-chains-byface></button><button type="button" data-chains-crystal></button></div>
+    <div class="w4d-row w4d-options"><button type="button" data-chains-play></button><button type="button" data-chains-byface></button><button type="button" data-chains-crystal></button><button type="button" data-chains-hide></button><button type="button" data-chains-swap></button></div>
     <div class="w4d-row st-note"></div>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, name);
@@ -226,6 +251,9 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   const crystalBtn = panel.querySelector('[data-chains-crystal]');
   const byFaceBtn = panel.querySelector('[data-chains-byface]');
   byFaceBtn.hidden = !byFace;
+  const hideBtn = panel.querySelector('[data-chains-hide]');
+  const patternSelect = panel.querySelector('[data-select="pattern"]'), blockInput = panel.querySelector('.ch-block-row input');
+  const swapBtn = panel.querySelector('[data-chains-swap]');
   const shellsInput = panel.querySelector('.ch-shells-row input');
   const sizeInput = panel.querySelector('.ch-size-row input');
   const filmRow = panel.querySelector('.ch-film-row'), filmInput = filmRow.querySelector('input'), filmNote = panel.querySelector('.ch-film-note');
@@ -283,6 +311,18 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     crystalBtn.textContent = t(view.crystal ? 'chains.crystal.on' : 'chains.crystal.off', L);
     byFaceBtn.textContent = t(view.byFace ? 'chains.byFace.on' : 'chains.byFace.off', L);
     byFaceBtn.classList.toggle('active', view.byFace);
+    const opt = DATA[view.kind].options, o = view.opts[view.kind], showOpt = !!opt && growing();
+    panel.querySelector('.ch-pattern-row').hidden = panel.querySelector('.ch-block-row').hidden = swapBtn.hidden = !showOpt;
+    if (showOpt) {
+      panel.querySelector('.ch-pattern-label').textContent = t(`${prefix}.option.pattern`, L);
+      patternSelect.innerHTML = opt.patterns.map((p) => `<option value="${p}"${p === o.pattern ? ' selected' : ''}>${t(`${prefix}.pattern.${p}`, L)}</option>`).join('');
+      panel.querySelector('.ch-block-label').textContent = t(`${prefix}.option.block`, L);
+      blockInput.max = String(opt.block); blockInput.value = String(o.block);
+      swapBtn.textContent = t(`${prefix}.option.swap.${o.swap ? 'on' : 'off'}`, L); swapBtn.classList.toggle('active', o.swap);
+    }
+    const hr = hideable[view.kind];
+    hideBtn.hidden = !hr || !viewList().some((p) => p[0] === hr);
+    if (hr) { hideBtn.textContent = t(`${prefix}.toggle.${hr}.${view.hidden ? 'off' : 'on'}`, L); hideBtn.classList.toggle('active', !view.hidden); }
     panel.querySelector('.st-note:not(.ch-film-note)').textContent = t(`${prefix}.note.${view.kind}`, L);
     renderFilm();
   }
@@ -294,6 +334,10 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   sizeInput.addEventListener('input', () => { view.size = Number(sizeInput.value); save(); draw(); fit(); });
   crystalBtn.addEventListener('click', () => { view.crystal = !view.crystal; save(); draw(); });
   byFaceBtn.addEventListener('click', () => { view.byFace = !view.byFace; save(); renderPanel(); draw(); });
+  hideBtn.addEventListener('click', () => { view.hidden = !view.hidden; save(); draw(); });
+  patternSelect.addEventListener('change', () => { const o = view.opts[view.kind]; if (!o || !DATA[view.kind].options.patterns.includes(patternSelect.value)) return; o.pattern = patternSelect.value; save(); draw(); });
+  blockInput.addEventListener('input', () => { const o = view.opts[view.kind]; if (!o) return; o.block = Number(blockInput.value); save(); draw(); });
+  swapBtn.addEventListener('click', () => { const o = view.opts[view.kind]; if (!o) return; o.swap = !o.swap; save(); draw(); });
   let shownLang = lang();
   onSettingsChange((st) => { if (st.language !== shownLang) { shownLang = st.language; if (active) renderPanel(); } });
 
@@ -324,7 +368,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     },
     /** Back to each shape's first view (leaving the world, DICTO 2026-10-13). */
     resetView() {
-      Object.assign(view, { part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false, size: 2, byFace: false }); save();
+      Object.assign(view, { part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false, size: 2, byFace: false, hidden: false, opts: defaultOpts() }); save();
       if (active) { draw(); fit(); }
     },
     setSkeleton(on) { if (on !== skeleton) { skeleton = on; if (active) draw(); } },
@@ -333,6 +377,8 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     shearChanged() {},
     get isEmpty() { return true; },
     clear() {},
+    /** For the browser tests (?probe): what is shown, and the pieces drawn by role. */
+    probe: () => ({ kind: view.kind, part: view.part[view.kind], size: Math.min(view.size, maxSize()), crystal: view.crystal, hidden: hiddenRole(), opts: view.opts[view.kind] ? { ...view.opts[view.kind] } : null, drawn: { ...drawn } }),
   };
 }
 

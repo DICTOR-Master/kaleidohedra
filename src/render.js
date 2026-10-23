@@ -6084,6 +6084,9 @@ async function init() {
     window.__aristotleProbe = () => aristotleWorld?.probe?.() ?? null;
     window.__platonicMixProbe = () => platonicMixWorld?.probe?.() ?? null;
     window.__studiesProbe = () => studiesWorld?.probe?.() ?? null;
+    // the DICTO Icosahedral Octet and its build world: the network shown and its pieces by role (DICTO 2026-10-23: the AXE gap)
+    window.__octetProbe = () => octetWorld?.probe?.() ?? null;
+    window.__octetBuildProbe = () => octetBuildWorld?.probe?.() ?? null;
     window.__shearState = () => shear?.getState?.() ?? null;
     // the fresh-start question: is the scene out of sight (the camera sees no layer)?
     window.__sceneHidden = () => camera.layers.mask === 0;

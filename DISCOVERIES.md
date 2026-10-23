@@ -1187,6 +1187,18 @@ icosahedron; then the one gap left made icosahedral too, and an icosahedron "cla
 - **The Lotus Jewel** (the clawed icosahedron): on the simple cubic lattice of icosahedra (spacing φ) the 8 neighbouring void
   dodecahedra bite into each icosahedron, leaving 36 faces, 8 triangular windows of 3 golden gnomons, volume
   (1 + 3√5)/4 = 88.33%; it fills space with the dodecahedra, gap exactly 1/2.
+- **The AXE gap** (2026-10-23, study [2026-10-23-axe-gap](studies/2026-10-23-axe-gap/); names by DICTO): that gap of 1/2 is
+  exactly **6 AXE per cell** (Mosseri–Sadoc t6, volume 1/12 each; each AXE's edge of 1 is the edge two neighbouring icosahedra
+  share, its edge of 1/φ an edge two voids share), so both readings fill space with no gap: **Lotus Jewels + void dodecahedra +
+  AXE**, and **icosahedra + Unborns + AXE**. The **Unborn** (DICTO's name; the solid is the pseudoicosahedron of Koca et al.
+  2015, x = 1/τ) is the void dodecahedron minus its 8 Tricaps, volume (3 + 7√5)/12. Each Tricap is exactly icosahedron ∩
+  dodecahedron, so the pieces kept apart also tile: **Lotus Jewel + 8 Tricaps + Unborn + 6 AXE** per cell, φ³ exactly in
+  Q(√5); and **any** choice of giving each Tricap to its icosahedron or to its dodecahedron tiles, among them alternating
+  blocks of any size (layers, rods, checker, pyrochlore, each also swapped). Checked by point tests (200 000 points per
+  reading, 0 uncovered, 0 covered twice; every pattern at block sizes 1 to 3, swapped or not; random assignments). In the
+  octet world as four networks: the Lotus Jewel network with its AXE, Icosahedra and Unborn, Icosahedra, dodecahedra and AXE,
+  and Mixed blocks. Known: the pseudoicosahedron (Koca et al.) and AXE as a tile of aperiodic tilings (Mosseri–Sadoc, Kramer);
+  the AXE gap of this packing was not found in the library or the searches of 2026-10-23.
 - **Clusters of 4 and 6** (study 2026-10-10-ico-clusters; names by DICTO): **ICOSA-TET**, 4 icosahedra on alternate faces
   of an octahedron sharing corners (diamond network), and **ICOSA-OCT**, 6 icosahedra on the cube axes turned 45° sharing
   corners round a caged tetrahedron (perovskite network); the **Mirrored ICOSA-NON CUBE**, an icosahedron with 8

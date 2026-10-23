@@ -4,14 +4,16 @@
 //   caps, allIco, pyrochlore: octahedra (icosahedron + 6 Admiral Caps) at the octet's octahedral sites, tetrahedra between them
 //     (Weirdstones and Tadpoles round a small icosahedron in the all-icosahedral octet; pyrochlore's own tetrahedra coloured);
 //   frog: the icosahedra and small icosahedra, and a Frog Chorus star on the other octahedral sites;
-//   lotusJewel: Lotus Jewels, and the dodecahedral voids between them.
+//   lotusJewel: Lotus Jewels, and the dodecahedral voids between them; icoUnborn: icosahedra and Unborns; axeNet: Lotus Jewels with
+//     their Tricaps, and Unborns (DICTO 2026-10-23). In these three the AXE fill the gap: two on each face between two voids built
+//     (world-octet.js scPieces, the same pieces as the network views); a button shows or hides them.
 // Sites are integer points q (units of a/4, or φ/2 for the Lotus Jewel); every cell's neighbours across its faces are q + (±1, ±1, ±1).
 // A tap on a cell adds the empty neighbour on that side (or, in a cluster entry, a whole octahedron or jewel with its eight
 // neighbours); long-press (chisel) removes one. Words: i18n octb.*.
 import * as THREE from 'three';
 import OCTET from './octet-data.js';
 import { ROLE } from './world-chains.js';
-import { pyro } from './world-octet.js';
+import { pyro, scPieces } from './world-octet.js';
 import { ROOF_FOLD_WORLD_SCALE as WS } from '../krp-core/src/geometry-extensions/roof-fold.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
@@ -19,7 +21,8 @@ import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey } from './site.js';
 
 const { a: A, phi: PHI, cells: C } = OCTET;
-export const OCTET_BUILD_KINDS = ['caps', 'allIco', 'frog', 'pyrochlore', 'lotusJewel'];
+export const OCTET_BUILD_KINDS = ['caps', 'allIco', 'frog', 'pyrochlore', 'lotusJewel', 'icoUnborn', 'axeNet'];
+const SC = new Set(['lotusJewel', 'icoUnborn', 'axeNet']); // the simple cubic versions (sites in units of phi/2)
 const GLASS_ROLES = new Set(['octGlass', 'tetGlass']);
 const DIAG = [-1, 1].flatMap((x) => [-1, 1].flatMap((y) => [-1, 1].map((z) => [x, y, z])));
 const mod = (n, m) => ((n % m) + m) % m;
@@ -34,11 +37,9 @@ const put = (cell, t0, invert = false, role = null) => cell.map(([r, V, F]) => [
 
 /** What sits at site q in a version: { hub, pieces } (hub: an octahedron or jewel site, the centre of a cluster), or null. */
 export function cellAt(kind, q) {
-  if (kind === 'lotusJewel') {
-    const p = q.map((c) => (c * PHI) / 2);
-    if (allEven(q)) return { hub: true, pieces: put(C.lotusJewel, p) };
-    if (allOdd(q)) return { hub: false, pieces: put(C.voidDodeca, p) };
-    return null;
+  if (SC.has(kind)) {
+    if (!allEven(q) && !allOdd(q)) return null;
+    return { hub: allEven(q), pieces: scPieces(kind, ...(allEven(q) ? [new Map([[keyOf(q), q]]), new Map()] : [new Map(), new Map([[keyOf(q), q]])])) };
   }
   const p = q.map((c) => (c * A) / 4);
   if (allEven(q)) {
@@ -56,7 +57,15 @@ export function cellAt(kind, q) {
   }
   return null;
 }
-const unit = (kind) => (kind === 'lotusJewel' ? PHI / 2 : A / 4);
+const unit = (kind) => (SC.has(kind) ? PHI / 2 : A / 4);
+/** Every piece of a build (the cells qs): [role, vertices, faces, q of its cell]. The simple cubic versions add the pieces cells share
+ *  (an axeNet void's Tricaps of icosahedra not built, the AXE between two voids built). */
+export function buildPieces(kind, qs) {
+  if (!SC.has(kind)) return qs.flatMap((q) => cellAt(kind, q).pieces.map((p) => [...p, q]));
+  const ico = new Map(), voids = new Map();
+  for (const q of qs) (allEven(q) ? ico : voids).set(keyOf(q), q);
+  return scPieces(kind, ico, voids);
+}
 export const neighbours = (kind, q) => DIAG.map((d) => q.map((c, i) => c + d[i])).filter((n) => cellAt(kind, n));
 const START = [0, 0, 0];
 
@@ -65,19 +74,20 @@ export function createOctetBuildWorld({ scene, fitView = () => {}, showHudPrompt
   const group = new THREE.Group();
   group.visible = false;
   scene.add(group);
-  const view = { kind: 'caps', clusters: false };
+  const view = { kind: 'caps', clusters: false, hideAxe: false };
   const builds = Object.fromEntries(OCTET_BUILD_KINDS.map((k) => [k, new Map()])); // per version: key -> q
   const cells = () => builds[view.kind];
   function read(d) {
     if (OCTET_BUILD_KINDS.includes(d?.kind)) view.kind = d.kind;
     view.clusters = d?.clusters === true;
+    view.hideAxe = d?.hideAxe === true;
     for (const k of OCTET_BUILD_KINDS) {
       builds[k].clear();
       for (const q of Array.isArray(d?.builds?.[k]) ? d.builds[k] : []) if (Array.isArray(q) && q.length === 3 && q.every(Number.isInteger) && cellAt(k, q)) builds[k].set(keyOf(q), q);
     }
   }
   try { read(JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null')); } catch { /* corrupt or blocked storage: empty */ }
-  const snapshot = () => ({ version: 1, kind: view.kind, clusters: view.clusters, builds: Object.fromEntries(OCTET_BUILD_KINDS.map((k) => [k, [...builds[k].values()]])) });
+  const snapshot = () => ({ version: 1, kind: view.kind, clusters: view.clusters, hideAxe: view.hideAxe, builds: Object.fromEntries(OCTET_BUILD_KINDS.map((k) => [k, [...builds[k].values()]])) });
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot())); } catch { /* best-effort */ } };
   const commit = () => { save(); draw(); renderPanel(); onChange(); };
 
@@ -85,7 +95,7 @@ export function createOctetBuildWorld({ scene, fitView = () => {}, showHudPrompt
   const solid = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, flatShading: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
   const glass = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, flatShading: true, transparent: true, opacity: 0.22, depthWrite: false });
   glass.userData.hollow = true; // glass shells and helpers stay hollow in an X-ray cut (xray-caps.js)
-  let pickTargets = [];
+  let pickTargets = [], drawn = {};
   function clearGroup() {
     for (const child of [...group.children]) { group.remove(child); child.geometry.dispose(); if (child.isLineSegments) child.material.dispose(); }
     pickTargets = [];
@@ -95,18 +105,19 @@ export function createOctetBuildWorld({ scene, fitView = () => {}, showHudPrompt
     if (!active) return;
     const buf = { solid: { pos: [], col: [], line: [], rec: [] }, glass: { pos: [], col: [], line: [], rec: [] } };
     const colour = new THREE.Color();
-    for (const q of cells().values()) {
-      for (const [role, V, F] of cellAt(view.kind, q).pieces) {
-        const b = GLASS_ROLES.has(role) ? buf.glass : buf.solid;
-        const P = V.map((p) => p.map((c) => c * WS));
-        colour.setHex(ROLE[role] ?? 0xb8c4bd);
-        for (const f of F) {
-          for (let i = 1; i + 1 < f.length; i++) {
-            for (const k of [f[0], f[i], f[i + 1]]) { b.pos.push(...P[k]); b.col.push(colour.r, colour.g, colour.b); }
-            b.rec.push(q);
-          }
-          f.forEach((k, i) => b.line.push(...P[k], ...P[f[(i + 1) % f.length]]));
+    drawn = {};
+    for (const [role, V, F, q] of buildPieces(view.kind, [...cells().values()])) {
+      if (role === 'axe' && view.hideAxe) continue;
+      drawn[role] = (drawn[role] ?? 0) + 1;
+      const b = GLASS_ROLES.has(role) ? buf.glass : buf.solid;
+      const P = V.map((p) => p.map((c) => c * WS));
+      colour.setHex(ROLE[role] ?? 0xb8c4bd);
+      for (const f of F) {
+        for (let i = 1; i + 1 < f.length; i++) {
+          for (const k of [f[0], f[i], f[i + 1]]) { b.pos.push(...P[k]); b.col.push(colour.r, colour.g, colour.b); }
+          b.rec.push(q);
         }
+        f.forEach((k, i) => b.line.push(...P[k], ...P[f[(i + 1) % f.length]]));
       }
     }
     solid.transparent = opacity < 1; solid.opacity = opacity; solid.depthWrite = opacity >= 1; solid.needsUpdate = true;
@@ -174,7 +185,7 @@ export function createOctetBuildWorld({ scene, fitView = () => {}, showHudPrompt
   panel.className = 'qc-panel';
   panel.innerHTML = `
     <div class="w4d-row st-note octb-note"></div>
-    <div class="w4d-row w4d-options"><button type="button" data-octb="reset"></button></div>`;
+    <div class="w4d-row w4d-options"><button type="button" data-octb="reset"></button><button type="button" data-octb="axe"></button></div>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, 'octetBuild');
   function renderPanel() {
@@ -183,7 +194,12 @@ export function createOctetBuildWorld({ scene, fitView = () => {}, showHudPrompt
     const L = lang();
     panel.querySelector('.octb-note').textContent = `${t(`octet.${view.kind}.network`, L)} · ${t(view.clusters ? 'octb.mode.clusters' : 'octb.mode.cells', L)} · ${t('octb.count', L, { n: cells().size })}`;
     panel.querySelector('[data-octb="reset"]').textContent = t('octb.reset', L);
+    const axeBtn = panel.querySelector('[data-octb="axe"]');
+    axeBtn.hidden = !SC.has(view.kind);
+    axeBtn.textContent = t(`octet.toggle.axe.${view.hideAxe ? 'off' : 'on'}`, L);
+    axeBtn.classList.toggle('active', !view.hideAxe);
   }
+  panel.querySelector('[data-octb="axe"]').addEventListener('click', () => { view.hideAxe = !view.hideAxe; save(); draw(); renderPanel(); });
   panel.querySelector('[data-octb="reset"]').addEventListener('click', () => { cells().clear(); start(); commit(); fit(); });
   let shownLang = lang();
   onSettingsChange((st) => { if (st.language !== shownLang) { shownLang = st.language; if (active) renderPanel(); } });
@@ -217,6 +233,8 @@ export function createOctetBuildWorld({ scene, fitView = () => {}, showHudPrompt
     clear() { cells().clear(); start(); commit(); if (active) fit(); },
     snapshot,
     restore(json) { read(json); save(); draw(); renderPanel(); },
+    /** For the browser tests (?probe): the version, cells built and the pieces drawn by role. */
+    probe: () => ({ kind: view.kind, cells: cells().size, hideAxe: view.hideAxe, drawn: { ...drawn } }),
   };
 }
 
@@ -225,5 +243,5 @@ export function octetBuildPreviewPoints(id) {
   const kind = String(id ?? '').split('.')[0];
   if (!OCTET_BUILD_KINDS.includes(kind)) return [];
   const qs = String(id).endsWith('.clusters') ? [START, ...neighbours(kind, START)] : [START];
-  return qs.flatMap((q) => cellAt(kind, q).pieces.flatMap((p) => p[1]));
+  return buildPieces(kind, qs).flatMap((p) => p[1]);
 }

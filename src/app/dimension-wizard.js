@@ -577,7 +577,9 @@ const K_WORLDS = [
   // DICTO Icosahedral Octet (DICTO 2026-10-13; DISCOVERIES F21): Euclid's roofs moved to the icosahedron, as growing networks.
   { key: 'octet', label: 'DICTO Icosahedral Octet', pieces: [{ label: 'Octet with Admiral Caps', action: 'tool:octetWorld:caps' },
     { label: 'All-icosahedral octet', action: 'tool:octetWorld:allIco' }, { label: 'Frog Chorus', action: 'tool:octetWorld:frog' },
-    { label: 'Pyrochlore in the octet', action: 'tool:octetWorld:pyrochlore' }, { label: 'Lotus Jewel network', action: 'tool:octetWorld:lotusJewel' }] },
+    { label: 'Pyrochlore in the octet', action: 'tool:octetWorld:pyrochlore' }, { label: 'Lotus Jewel network', action: 'tool:octetWorld:lotusJewel' },
+    { label: 'Icosahedra and Unborn', action: 'tool:octetWorld:icoUnborn' }, { label: 'Icosahedra, dodecahedra and AXE', action: 'tool:octetWorld:axeNet' },
+    { label: 'Mixed blocks', action: 'tool:octetWorld:mixed' }] },
   // DICTO ATOM-13×13 (DICTO's name, 2026-10-13; docs/PLAN-13.md): twelve around one, thirteen ways.
   { key: 'thirteens', label: 'DICTO ATOM-13×13', pieces: [{ label: 'DICTO Icosa-13 (Lotus seed)', action: 'tool:thirteensWorld:icosa13' },
     { label: 'DICTO Dodeca-13', action: 'tool:thirteensWorld:dodeca13' }, { label: 'The Bodhi Seed', action: 'tool:thirteensWorld:bodhi' },
@@ -611,7 +613,8 @@ const K_WORLDS = [
   // Icosahedral Octet Lattice (DICTO 2026-10-13): the same five versions to build, a cell or a cluster per tap, listed after the
   // Sunstar Lattice.
   { key: 'octetBuild', label: 'Icosahedral Octet Lattice', pieces: [['caps', 'Octet with Admiral Caps'], ['allIco', 'All-icosahedral octet'],
-    ['frog', 'Frog Chorus'], ['pyrochlore', 'Pyrochlore in the octet'], ['lotusJewel', 'Lotus Jewel network']]
+    ['frog', 'Frog Chorus'], ['pyrochlore', 'Pyrochlore in the octet'], ['lotusJewel', 'Lotus Jewel network'],
+    ['icoUnborn', 'Icosahedra and Unborn'], ['axeNet', 'Icosahedra, dodecahedra and AXE']]
     .flatMap(([k, label]) => [{ label, action: `tool:octetBuildWorld:${k}` }, { label: `${label} · clusters`, action: `tool:octetBuildWorld:${k}.clusters` }]) },
   { key: 'studies', label: 'Studies', pieces: [{ label: 'Studies', action: 'tool:studiesWorld' }] },
   { key: 'targets', label: 'Targets', pieces: [{ label: 'Targets', action: 'tool:targetsWorld' }] },
@@ -650,7 +653,7 @@ const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'REULEAUX_PLATONIC', 'PLATONIC', 'A
 // Polyhedraverse pieces gathered from across its families.
 const DICTO_WORK = new Set(['platonicMix', 'reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
 const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
-const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['TETRAPOD_FIVE_TO', 'TETRAPOD_FOUR_RD', 'ANTONIUS', 'ICOSA_FACE_PYRAMID', 'PENTA_CLEO', 'CLEO_SPHERE_POCKET', 'HEX_AKTIS', 'DELTOID_AKTIS', 'OTT_CLEO_ICOS', 'OTT_TRIANGLE_RAY', 'OTT_RHOMBIC_RAY', 'DICTO_EDGE_ROOF', 'DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER', ...KIT13_ADDITION_IDS] };
+const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['TETRAPOD_FIVE_TO', 'TETRAPOD_FOUR_RD', 'ANTONIUS', 'ICOSA_FACE_PYRAMID', 'PENTA_CLEO', 'CLEO_SPHERE_POCKET', 'HEX_AKTIS', 'DELTOID_AKTIS', 'OTT_CLEO_ICOS', 'OTT_TRIANGLE_RAY', 'OTT_RHOMBIC_RAY', 'DICTO_EDGE_ROOF', 'DICTO_UNBORN', 'DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER', ...KIT13_ADDITION_IDS] };
 export const DICTO_PIECE_IDS = DICTO_POLY.ids;
 // The shape a face was tapped on, while picking: its space-filling partners come first (as the old site).
 let partnerIds = [];

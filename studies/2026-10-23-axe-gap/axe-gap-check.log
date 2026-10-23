@@ -1,0 +1,48 @@
+OK   Unborn = the study's H (sc-star-H-unit.json), same 12 vertices
+OK   Unborn: 12 vertices, 20 faces (want 20), 30 edges (want 30): 6 of 1/phi (want 6), 24 of 1 (want 24); 8 equilateral faces (want 8), 12 isosceles (1/phi, 1, 1) (want 12)
+OK   Unborn volume 1.554372987 = (3 + 7√5)/12 = 1.554372987
+OK   void dodecahedron: 20 vertices on the hull (20), volume 1.809016994 = (5 + √5)/4
+OK   distinct AXE per cell: 6 (want 6)
+OK   each AXE congruent to krp-core KIT13_ICOSA13_AXE (corner matching), volume 1/12: 0.083333333, 0.083333333, 0.083333333, 0.083333333, 0.083333333, 0.083333333
+OK   each AXE: its opposite-to-short edge is shared by 2 icosahedra, its 1/phi edge by 2 Unborns
+OK   AXE centroids on the cell faces: axes [0, 0, 1, 1, 2, 2] (two per face)
+OK   Tricap volume 0.031830501 = (3 − √5)/24; each inside the icosahedron and inside its void dodecahedron; congruent to each other
+OK   exact: icosahedron = Lotus Jewel + 8 Tricaps (5/4 + 5/12√5), dodecahedron = Unborn + 8 Tricaps (5/4 + 1/4√5)
+OK   exact per cell: ico + Unborn + 6 AXE = 2 + 1√5; Jewel + dodeca + 6 AXE = 2 + 1√5; Jewel + 8 Tricap + Unborn + 6 AXE = 2 + 1√5; phi^3 = 2 + 1√5
+OK   numeric: ico 2.181694991 + Unborn 1.554372987 + 6 AXE 0.5 = 4.236067977 = phi^3 4.236067977
+      (1) icosahedra + Unborn + AXE shares {'ico': 0.51562, 'Unborn': 0.36584, 'AXE': 0.11854}
+OK   (1) icosahedra + Unborn + AXE: 200000 points, 0 in no piece, 0 in more than one
+      (2) Lotus Jewels + void dodecahedra + AXE shares {'Jewel': 0.45531, 'dodeca': 0.42616, 'AXE': 0.11854}
+OK   (2) Lotus Jewels + void dodecahedra + AXE: 200000 points, 0 in no piece, 0 in more than one
+      (3) Lotus Jewels + Tricaps + Unborn + AXE shares {'Jewel': 0.45531, 'Tricap': 0.06032, 'Unborn': 0.36584, 'AXE': 0.11854}
+OK   (3) Lotus Jewels + Tricaps + Unborn + AXE: 200000 points, 0 in no piece, 0 in more than one
+      exact shares: ico 0.51503 Unborn 0.36694 AXE 0.11803 Jewel 0.45492 Tricaps 0.06011 dodeca 0.42705
+OK   Lotus Jewel mesh (clawed-icosahedron-unit.json) = icosahedron minus 8 Tricaps: 40000 points, 0 disagree; volume 1.927050983 = (1 + 3√5)/4
+OK   pyrochlore set: 16 per 8^3 block
+OK   mixed, random Tricap assignment 1: 200000 points, 0 in no piece, 0 in more than one
+OK   mixed, random Tricap assignment 2: 200000 points, 0 in no piece, 0 in more than one
+OK   mixed layers, block 1: 0 in no piece, 0 in more than one
+OK   mixed layers, block 1, swapped: 0 in no piece, 0 in more than one
+OK   mixed layers, block 2: 0 in no piece, 0 in more than one
+OK   mixed layers, block 2, swapped: 0 in no piece, 0 in more than one
+OK   mixed layers, block 3: 0 in no piece, 0 in more than one
+OK   mixed layers, block 3, swapped: 0 in no piece, 0 in more than one
+OK   mixed rods, block 1: 0 in no piece, 0 in more than one
+OK   mixed rods, block 1, swapped: 0 in no piece, 0 in more than one
+OK   mixed rods, block 2: 0 in no piece, 0 in more than one
+OK   mixed rods, block 2, swapped: 0 in no piece, 0 in more than one
+OK   mixed rods, block 3: 0 in no piece, 0 in more than one
+OK   mixed rods, block 3, swapped: 0 in no piece, 0 in more than one
+OK   mixed checker, block 1: 0 in no piece, 0 in more than one
+OK   mixed checker, block 1, swapped: 0 in no piece, 0 in more than one
+OK   mixed checker, block 2: 0 in no piece, 0 in more than one
+OK   mixed checker, block 2, swapped: 0 in no piece, 0 in more than one
+OK   mixed checker, block 3: 0 in no piece, 0 in more than one
+OK   mixed checker, block 3, swapped: 0 in no piece, 0 in more than one
+OK   mixed pyrochlore, block 1: 0 in no piece, 0 in more than one
+OK   mixed pyrochlore, block 1, swapped: 0 in no piece, 0 in more than one
+OK   mixed pyrochlore, block 2: 0 in no piece, 0 in more than one
+OK   mixed pyrochlore, block 2, swapped: 0 in no piece, 0 in more than one
+OK   mixed pyrochlore, block 3: 0 in no piece, 0 in more than one
+OK   mixed pyrochlore, block 3, swapped: 0 in no piece, 0 in more than one
+All checks passed (0 failures).
