@@ -1206,7 +1206,7 @@ icosahedron; then the one gap left made icosahedral too, and an icosahedron "cla
   (0, ±1/2, ±φ/2), volume 1 + 2√5/3, and **Unborn + 12 pyramids** is **Unborn Axes** (DICTO's name; Koca et al.'s truncated octahedron x = 1/τ), all permutations
   of (0, ±1/(2φ), ±φ/2), volume 1 + √5/3: 8 congruent equiangular hexagons (sides 1/√2 and 1/(φ√2)), 6 squares, full octahedral
   symmetry; the 12 pyramid tips are the mirror image's corners. Big on the lattice points and small on the cube centres, they
-  fill space (body-centred; sum φ³). The split at t = 1/φ is the only point where both are convex (float sweep). In the Lotus
+  fill space (body-centred; sum φ³). The split at t = 1/φ is the only point where both are convex — exact, for any cut point inside the AXE: its four shared icosahedron–Unborn faces meet only there (paper #48, Theorem 2). In the Lotus
   Jewel network the 8 Tricaps move to the dodecahedron: **Lotus Jewel Axes** = Lotus Jewel + 12 pyramids (volume √5)
   and **Dodecaxes** = dodecahedron + 12 pyramids (volume 2), and every hexagon may be keyed or not, freely; the
   Tricap mirrored in its hexagon lies inside the Unborn, so a key the other way fills too. Checked: exact (convexity as union
