@@ -15,7 +15,7 @@ await page.waitForSelector('.dim-wizard-overlay.open');
 if (!(await page.locator('[data-action="tool:aristotleWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
 await page.waitForTimeout(500);
 const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World$/.test(a)));
-assert.deepEqual(worlds.slice(0, 3), ['tool:platonicMixWorld', 'tool:reuleauxWorld', 'tool:aristotleWorld'], 'near the top of DICTO\'s list');
+assert.deepEqual(worlds.slice(0, 4), ['tool:dictonicWorld', 'tool:platonicMixWorld', 'tool:reuleauxWorld', 'tool:aristotleWorld'], 'near the top of DICTO\'s list');
 // the link
 await page.goto(`${BASE}/index.html?site=${SITE}&open=aristotle&probe`); await page.waitForTimeout(1500);
 if (await page.locator('#welcome-overlay').isVisible()) await page.keyboard.press('Enter');

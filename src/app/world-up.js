@@ -32,7 +32,7 @@ export function createUpWorld({ scene, fitView, openWorld = () => {} }) {
   const panel = document.getElementById('worldup-panel');
   const filmBtn = document.createElement('button'), kpBtn = document.createElement('button');
   filmBtn.type = kpBtn.type = 'button'; filmBtn.dataset.upFilm = 'open'; kpBtn.dataset.upFilm = 'kp';
-  panel.querySelector('.ch-options').append(filmBtn, kpBtn);   // the engine's buttons row (its first row may hold pattern buttons)
+  panel.querySelector('.ch-options').append(filmBtn, kpBtn);   // the engine's buttons row (its first rows hold pattern and bond buttons)
   // the tall companion, the DICTO Kepler–Poinsot–UP Cycle (DICTO 2026-10-19), has its own film too
   const label = () => { const L = getSettings().language; filmBtn.textContent = `∞ ${t('up.film.open', L)}`; kpBtn.textContent = `∞ ${t('up.film.kp', L)}`; };
   label(); onSettingsChange(label);

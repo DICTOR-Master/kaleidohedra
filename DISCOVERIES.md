@@ -1219,6 +1219,25 @@ icosahedron; then the one gap left made icosahedral too, and an icosahedron "cla
   weighted Voronoi (Laguerre) cells. **Not found** in the sources checked: this golden pair as a two-piece fill derived from
   icosahedra + Unborns + split AXE, the golden split at t = 1/φ, and Lotus Jewel Axes and Dodecaxes, the keyed √5 / 2 pair with free keyings ("not found" is
   not "new").
+- **The octet family and the Delian bond; DICTONIC** (2026-10-23, DICTO's idea; study 2026-10-23-shadow-forms/octet in the
+  research repo, exact; names by DICTO): cut every tetrahedron–octahedron double cone of the octet (tetrahedron centre → shared face
+  → octahedron centre) by the plane parallel to the face at fraction t. Every t from 0 to 1 fills space with two convex pieces (a
+  power diagram): t = 0 rhombic dodecahedra; t < 1/3 regular tetrahedra (scaled 3t) + rhombic dodecahedra with their 8 three-fold
+  corners cut; t = 1/3 the octet; t > 1/3 cubes with 4 alternate corners cut + regular octahedra (scaled 3(1 − t)/2); t = 1 cubes.
+  Special members (exact, each in its own number field): two with all edges equal, t = (2√6 − 3)/15 and t = 5/3 − (2/3)√2;
+  half and half, t = 1 − ∛6/3 (each kind fills half of space); and the **Delian bond**, t = 1 − (2/3)·2^(−1/3), where
+  **Samson** (the cut cube) and **Delilah** (the octahedron) have equal volume: Samson = 2 × the octet tetrahedron's volume,
+  Delilah = ½ × the octet octahedron's, Delilah = the octet octahedron shrunk by 1/∛2 (at octet edge 1: Delilah's edge 2^(−1/3),
+  Samson's 2^(−1/3) and (1 − 2^(−1/3))/√2, volume √2/6 each). DICTO named the six **DICTONIC SOLIDS** (Icosaxes, Unborn Axes,
+  Lotus Jewel Axes, Dodecaxes, Samson, Delilah) and the three **DICTONIC BONDS** (golden, keyed, Delian). Checked: exact in the
+  study; in the app, point tests of the pieces at every special t and between (0 gaps, 0 overlaps; krp-core
+  tests/unit/delian-bond.test.mjs, tests/unit/dictonic.test.mjs). Samson and Delilah are in Polyhedraverse's DICTO's pieces; the
+  DICTONIC world shows the three bonds with one slider each (golden: paper #48's factor x). **Known:** the octet, its dual and the
+  cube–tetrahedron–octahedron connections are classical; Knoll & Morgan, "Finding the Dual of the Tetrahedral-Octahedral Space
+  Filler", Bridges 2003, pp. 205–212, link the cube packing, the octet and the rhombic dodecahedron by separate steps (stretching,
+  truncation, tetrahedra in cubes), not a one-parameter family; power (Laguerre) diagrams make such families in general. **Not
+  found** in the sources checked: the one-slider family from rhombic dodecahedra through the octet to cubes, its two equilateral
+  members, the Delian bond, the half-and-half member ("not found" is not "new"). Paper #51, "The Delian Bond", in preparation.
 - **Clusters of 4 and 6** (study 2026-10-10-ico-clusters; names by DICTO): **ICOSA-TET**, 4 icosahedra on alternate faces
   of an octahedron sharing corners (diamond network), and **ICOSA-OCT**, 6 icosahedra on the cube axes turned 45° sharing
   corners round a caged tetrahedron (perovskite network); the **Mirrored ICOSA-NON CUBE**, an icosahedron with 8
