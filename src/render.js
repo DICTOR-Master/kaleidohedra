@@ -216,7 +216,6 @@ let octetTrussWorld = null; // The OG on the Octet Truss, the paper #37 kits (DI
 let reuleauxWorld = null; // The Reuleaux Platonic Solids, the paper #45 film and build (DICTO 2026-10-21)
 let platonicMixWorld = null; // Every Mix of the Platonic Solids, the paper #47 slabs (DICTO 2026-10-22)
 let aristotleWorld = null; // Aristotle's Pyramid, the paper #44 face pyramids and fills (DICTO 2026-10-21)
-let pairArrangement = null; // the Stella-Jewel / Sunstar arrangement last chosen (the Kagome hulls count as hull worlds for X-ray)
 let targetsWorld = null; // Kaleidohedra's Targets
 let shear = null; // Kaleidohedra's lattice shear (installShear); on only in an app space that has one
 let stellaJewelWorld = null;
@@ -732,11 +731,6 @@ document.getElementById('lab-close')?.addEventListener('click', () => {
   const fpsMeterInput = document.getElementById('setting-fps-meter');
   fpsMeterInput.checked = s.showFPSMeter;
   fpsMeterInput.addEventListener('change', () => updateSettings({ showFPSMeter: fpsMeterInput.checked }));
-  const xrayEverywhereInput = document.getElementById('setting-xray-everywhere');
-  if (xrayEverywhereInput) {
-    xrayEverywhereInput.checked = s.xrayEverywhere;
-    xrayEverywhereInput.addEventListener('change', () => { updateSettings({ xrayEverywhere: xrayEverywhereInput.checked }); window.dispatchEvent(new Event('krp-hud-refresh')); });
-  }
 
 
 })();
@@ -3408,11 +3402,9 @@ async function init() {
     // 4D/6D: X-Ray and Spherical don't apply (the slider IS the X-Ray),
     // so their HUD faces go blank and untappable (direct decision).
     const polySpace = own3DActive() && own3D === 'poly';
-    // X-ray (DICTO 2026-10-13): its button shows in the hull and shell worlds (Multi-shell chains, DICTO Icosa, Shells, the
-    // Kagome hull arrangements), and in every 3D world when Settings says so; 4D-6D keep their own slider. Hidden while on: off.
-    const hullShell = own3DActive() && (['chains', 'icosa', 'dodeca', 'theaetetus', 'up', 'upFilm', 'kpFilm', 'doubleVision', 'vajrayana', 'ocdStella', 'thirteens', 'octet', 'shells'].includes(own3D) || (['stellaJewel', 'sunstar'].includes(own3D) && /^hull/.test(pairArrangement ?? '')));
-    const xrayOff = activeDimension === '4D' || qcWorlds.has(activeDimension) || activeDimension === '1D' || (activeDimension === '2D' && !(own3DActive() && own3D === 'nets'))
-      || !(hullShell || getSettings().xrayEverywhere);
+    // X-ray (DICTO 2026-10-13; every 3D world and lattice since 2026-10-23, "a useful tool on any page where groups of pieces work
+    // together"): 4D-6D keep their own slider, 1D and 2D (but Nets) have nothing to cut. Hidden while on: off.
+    const xrayOff = activeDimension === '4D' || qcWorlds.has(activeDimension) || activeDimension === '1D' || (activeDimension === '2D' && !(own3DActive() && own3D === 'nets'));
     // Dual Vision's Twin has nothing to cut: ⛶ leaves a blank space in the side bar, so the buttons below it do not move (DICTO 2026-10-17)
     const xrayBlank = !xrayOff && own3DActive() && own3D === 'doubleVision' && doubleVisionWorld?.mode === 'twin';
     if (xrayBlank && document.getElementById('section-enable')?.checked) document.getElementById('xray-toggle')?.click();
@@ -4329,7 +4321,6 @@ async function init() {
           const m = action?.match(/^tool:(stellaJewel|sunstar)World(?::(\w+))?$/);
           if (m) {
             (m[1] === 'stellaJewel' ? stellaJewelWorld : sunstarWorld)?.setArrangement(m[2] ?? null);
-            pairArrangement = m[2] ?? null;
             action = `tool:${m[1]}World`;
           }
         }
@@ -6017,7 +6008,8 @@ async function init() {
   function fitCameraTo([x, y, z], radius, viewDir = null, exact = false) {   // exact: zoom in as well as out (default keeps the farther distance)
     if (freshProbing) return;
     const centre = new THREE.Vector3(x, y, z);
-    const need = (radius * 1.15) / Math.sin(THREE.MathUtils.degToRad(camera.fov) / 2) / Math.min(1, camera.aspect);
+    const free = 1 - readPanelCover() / window.innerHeight; // the share of the height above the controls panel
+    const need = (radius * 1.15) / Math.sin(THREE.MathUtils.degToRad(camera.fov) / 2) / Math.min(free, camera.aspect);
     const dir = viewDir ? new THREE.Vector3(...viewDir).normalize() : camera.position.clone().sub(controls.target).normalize();
     const now = camera.position.distanceTo(controls.target);
     const toTarget = centre;
@@ -6088,6 +6080,14 @@ async function init() {
     window.__octetProbe = () => octetWorld?.probe?.() ?? null;
     window.__octetBuildProbe = () => octetBuildWorld?.probe?.() ?? null;
     window.__shearState = () => shear?.getState?.() ?? null;
+    // where the open world's model lands on screen (its bounding sphere's centre and radius, px) and the strip the controls cover
+    window.__frameProbe = () => {
+      const g = own3DWorld()?.group; if (!g) return null;
+      const sph = new THREE.Box3().setFromObject(g).getBoundingSphere(new THREE.Sphere()); if (!Number.isFinite(sph.radius)) return null;
+      const c = toScreen(sph.center), d = camera.position.distanceTo(sph.center);
+      const rPx = (sph.radius / (d * Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2))) * (window.innerHeight / 2);
+      return { cx: c.x, cy: c.y, r: rPx, cover: panelCover, coverWant: readPanelCover(), h: window.innerHeight, w: window.innerWidth };
+    };
     // the fresh-start question: is the scene out of sight (the camera sees no layer)?
     window.__sceneHidden = () => camera.layers.mask === 0;
     // Every Mix's Build it yourself: where on screen the ghost nearest the eye is.
@@ -6987,12 +6987,38 @@ async function init() {
   }
 }
 
+// The controls panel at the bottom (DICTO 2026-10-23, "fix all worlds"): the picture is centred in the free space above the
+// world's panel (any panel carrying the shared minimise button), so nothing sits under the controls; fitCameraTo frames the
+// model in that space. The covered strip is re-read a few times a second and eased, so minimising the panel glides.
+let panelCover = 0, panelCoverWant = 0, panelCoverRead = 0;
+function readPanelCover() {
+  const H = window.innerHeight, W = document.documentElement.clientWidth || window.innerWidth;
+  let top = H;
+  for (const btn of document.querySelectorAll('.panel-min')) {
+    const r = btn.parentElement.getBoundingClientRect();
+    // a world panel docked low (it may end above the bottom toolbar), across most of the width
+    if (r.height > 0 && r.bottom >= H * 0.75 && r.top > H * 0.2 && r.width >= W * 0.4 && getComputedStyle(btn.parentElement).visibility !== 'hidden') top = Math.min(top, r.top);
+  }
+  return Math.max(0, Math.min(H * 0.6, H - top));
+}
+function applyPanelCover() {
+  const w = document.documentElement.clientWidth || window.innerWidth, h = window.innerHeight;
+  if (panelCover < 0.5) camera.clearViewOffset(); else camera.setViewOffset(w, h, 0, panelCover / 2, w, h);
+}
+function updatePanelCover(now) {
+  if (now - panelCoverRead > 200) { panelCoverRead = now; panelCoverWant = readPanelCover(); }
+  if (Math.abs(panelCoverWant - panelCover) < 0.5) { if (panelCover === panelCoverWant) return; panelCover = panelCoverWant; }
+  else panelCover += (panelCoverWant - panelCover) * 0.25;
+  applyPanelCover();
+}
+
 // Re-measure on every way the viewport changes (iPad Safari: rotation, the toolbar sliding, the keyboard
 // closing; a resize event can arrive before the new size is known, so measure again once it settles).
 function onResize() {
   const w = document.documentElement.clientWidth || window.innerWidth, h = window.innerHeight;
   if (!w || !h) return;
   camera.aspect = w / h;
+  panelCoverRead = 0; applyPanelCover();
   camera.updateProjectionMatrix();
   renderer.setSize(w, h, false); // CSS keeps the canvas filling the screen (#scene-canvas)
 }
@@ -7028,8 +7054,9 @@ let lastDegradeAt = 0;
 const hudDimEl = document.getElementById('hud-dim');
 const hud1dToggleEl = document.getElementById('hud-1d-toggle');
 const onedClearEl = document.getElementById('oned-clear');
-function animate() {
+function animate(frameTime = performance.now()) {
   requestAnimationFrame(animate);
+  updatePanelCover(frameTime);
   // The dimension beside Wizard (a cheap per-frame check: several paths
   // change activeDimension; not yet chosen means the default 3D world).
   // In Construct it also shows the dimensions built so far (direct
