@@ -1,0 +1,51 @@
+{
+ "upload_type": "dataset",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "version": "2",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-24",
+ "access_right": "open",
+ "title": "DICTO Solids: Exact Geometry",
+ "description": "<p>Exact geometry of the named polyhedra found or named by DICTO (artist, Osaka) in his published papers and the Kaleidohedra findings archive: 29 solids, among them the DICTO Ogdoecontahedron, the DICTO Truncated-Icosahedral Hecatodihedron, the DICTO OG family of #39, the DBT and OTT, the DICTO Jewel, the DICTO OCD Stella, DICTO's skewed parallelohedra and, new in version 2, the six DICTONIC SOLIDS of #48 and #51: Icosaxes, Unborn Axes, Lotus Jewel Axes, Dodecaxes, Samson and Delilah. Every coordinate is exact, in ℚ(√5) or (for Samson and Delilah) ℚ(∛2), and also given to 15 decimals; each solid comes with its faces (consistently wound), f-vector, exact volume, squared edge lengths, symmetry group and the values stated in its paper, as JSON and OFF, plus a copy scaled to volume 1.</p><p>Also included: 6 packings that fill space (the three lattice packings of DICTO's skewed solids and the three DICTONIC BONDS: golden, keyed and Delian) and 4 published packings that do not fill space, each with exact lattice vectors and exact placements of its pieces; and an inventory (index.csv) of all 122 rows of shapes DICTO has named, with finding number, paper, status (new, rediscovered or known), prior art and a universal number: established catalogue numbers (Johnson, uniform, Wenninger, Hart, Mosseri–Sadoc) where they exist, and DICTO's own permanent catalogue numbers D1–D75 for his new shapes, in order of first publication.</p><p>A standalone checker (check.py, Python 3 + sympy) re-proves every stated value from the data files alone: 712 checks, all passing, including closed outward-wound surfaces, exact planarity, convexity where stated, symmetry, the non-convex keyed solids as their convex hulls minus or plus 8 Tricaps, and exact separating planes showing that the pieces of each packing do not overlap.</p><p>Shapes and names by DICTO; data built and checked with Claude (Anthropic). More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "polyhedra",
+  "exact coordinates",
+  "golden ratio",
+  "Q(sqrt 5)",
+  "space-filling",
+  "packings",
+  "symmetry",
+  "OFF files",
+  "mathematical data"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  },
+  {
+   "identifier": "10.5281/zenodo.23596362",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23606828",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  }
+ ],
+ "notes": "Version 2 (24 October 2026): adds the six DICTONIC SOLIDS (#48, #51), the three DICTONIC BONDS as packings, ℚ(∛2) data, and the universal_number column with DICTO's D-numbers (D1–D75). Built from the K repository branch math-data-dataset, commit d3d18ca. Verify with: pip install sympy; python3 check.py. Version 1 (24 October 2026): 23 solids, 7 packings, inventory; commit 98e3fbb."
+}
