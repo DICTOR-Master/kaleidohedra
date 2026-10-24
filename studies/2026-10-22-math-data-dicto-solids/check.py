@@ -2,12 +2,15 @@
 # DICTO · dictospheres.com — Created by DICTO. Licence CC BY-SA 4.0.
 # Standalone verifier for the DICTO math-data dataset: needs only python3 and sympy.
 # It reads solids/*.json and packings/*.json and re-proves every stated property EXACTLY:
-#   solids:   exact strings parse into Q(sqrt d); decimals agree with them; faces are valid index cycles; the surface is a closed
+# Fields (version 2): each file states its `field`: "Q(sqrt(5))" (a + b*sqrt(5)) or "Q(2**(1/3))" (a + b*2**(1/3) + c*2**(2/3), the
+#             Delian bond); every exact string must parse into that field, a, b, c rational. Signs in Q(2**(1/3)) are decided exactly
+#             by the norm (see KC).
+#   solids:   exact strings parse into the stated field; decimals agree with them; faces are valid index cycles; the surface is a closed
 #             2-manifold (each directed edge once, its reverse once, each vertex link one cycle), consistently wound; Euler
 #             characteristic 2; every face exactly planar; exact volume (positive, so the winding is outward) equals the stated value;
 #             for solids stated convex: every face is a strictly convex polygon wound counter-clockwise seen from outside and every
 #             other corner lies strictly inside its plane; f-vector, faces by sides, squared edge lengths and their counts; the full
-#             symmetry group (orthogonal maps of the corner set about its centroid) has the stated order, rotation count and inversion,
+#             symmetry group (orthogonal maps of the corner set about its centroid that also map the faces to faces) has the stated order, rotation count and inversion,
 #             consistent with the stated Schoenflies symbol; every value marked "published" equals the computed one.
 #   packings: lattice vectors exact; the cell volume |det| as stated; piece rotations exactly orthogonal; the sum of the piece
 #             volumes equals the cell volume exactly; no two pieces (all lattice translates that could meet) overlap: for every pair
@@ -22,6 +25,16 @@
 #   unit volume: for every solid, the stated scale is exactly (stated volume)^(-1/3) (checked to 50 digits), the centre is the exact
 #             corner centroid, every decimal unit-volume corner is centre + s (corner - centre) (1e-14), and the decimal unit-volume solid
 #             has volume 1 (1e-12); the *-unit-volume.off files match.
+#   decomposition (version 2): a non-convex solid stated as a convex solid of this dataset minus (dents) or plus (keys) its 8 Tricaps:
+#             each Tricap is the #48 one (cyclic orientation: its three base corners are corners of the Unborn at the stated centre, its
+#             apex a corner of that Unborn's dodecahedron cube), all of volume (3 - sqrt5)/24; the base corners are corners of the convex
+#             solid on one face plane, the apex strictly inside the convex solid (dent) or strictly outside that face (key); the Tricaps
+#             are pairwise interior-disjoint (exact separating plane); the corner set is the convex solid's corners plus the 8 apices;
+#             every face lies in a face plane of the convex solid or of a Tricap; and the exact volume is the convex volume minus (plus)
+#             the 8 Tricap volumes.
+#   keyed fill (version 2, `"proof": "decomposition"`): the same lattice and placements as a convex fill of this dataset (which must
+#             pass); each keyed piece is its convex piece minus/plus Tricaps; every dent equals exactly one key up to a lattice vector
+#             (and vice versa), so every Tricap removed from one piece is added to exactly one other: the keyed pieces fill space too.
 # Usage: python3 check.py            (prints a PASS/FAIL table; exit code 0 only if everything passes)
 import glob, itertools, json, math, os, sys
 from fractions import Fraction as Fr
@@ -56,8 +69,55 @@ class QF:
     def f(s): return float(s.a) + float(s.b) * math.sqrt(s.d)
 
 
+class KC:
+    """a + b r + c r^2, r = k**(1/3) real (the pure cubic field Q(k**(1/3))); Fractions. Exact sign: the norm
+    a^3 + k b^3 + k^2 c^3 - 3k abc equals x |x'|^2 (the other two conjugates are complex conjugates), so it has the sign of x."""
+    __slots__ = ('c', 'k')
+    def __init__(s, a=0, b=0, c=0, k=2): s.c = (Fr(a), Fr(b), Fr(c)); s.k = k
+    @property
+    def d(s): return ('cbrt', s.k)
+    def _c(s, o): return o if isinstance(o, KC) else KC(o, 0, 0, s.k)
+    def __add__(s, o): o = s._c(o); return KC(*(x + y for x, y in zip(s.c, o.c)), k=s.k)
+    __radd__ = __add__
+    def __neg__(s): return KC(*(-x for x in s.c), k=s.k)
+    def __sub__(s, o): return s + (-s._c(o))
+    def __rsub__(s, o): return s._c(o) - s
+    def __mul__(s, o):
+        o = s._c(o); (a, b, c), (x, y, z), k = s.c, o.c, s.k
+        return KC(a * x + k * (b * z + c * y), a * y + b * x + k * c * z, a * z + b * y + c * x, k=k)
+    __rmul__ = __mul__
+    def norm(s): (a, b, c), k = s.c, s.k; return a ** 3 + k * b ** 3 + k * k * c ** 3 - 3 * k * a * b * c
+    def __truediv__(s, o):
+        o = s._c(o); (a, b, c), k = o.c, o.k; n = o.norm()
+        if n == 0: raise ZeroDivisionError
+        return s * KC((a * a - k * b * c) / n, (k * c * c - a * b) / n, (b * b - a * c) / n, k=k)
+    def sign(s): n = s.norm(); return (n > 0) - (n < 0)
+    def __eq__(s, o): o = s._c(o); return s.c == o.c
+    def __hash__(s): return hash(s.c)
+    def f(s): r = s.k ** (1 / 3); return float(s.c[0]) + float(s.c[1]) * r + float(s.c[2]) * r * r
+
+
+def fz(d, a=0):
+    """the constant a in the field d (int: Q(sqrt d); ('cbrt', k): Q(k**(1/3)))."""
+    return KC(a, 0, 0, d[1]) if isinstance(d, tuple) else QF(a, 0, d)
+
+
+def mpx(x):
+    import mpmath
+    if isinstance(x, KC):
+        r = mpmath.cbrt(x.k); return sum((mpmath.mpf(q.numerator) / q.denominator * r ** i for i, q in enumerate(x.c)), mpmath.mpf(0))
+    return mpmath.mpf(x.a.numerator) / x.a.denominator + mpmath.mpf(x.b.numerator) / x.b.denominator * mpmath.sqrt(x.d)
+
+
 def parse(txt, d):
-    """exact string -> a + b sqrt(d), refusing anything outside Q(sqrt d)."""
+    """exact string -> a field element, refusing anything outside the field d."""
+    if isinstance(d, tuple):
+        k = d[1]; e = sympy.expand(sympy.sympify(txt)); cs = [Fr(0)] * 3
+        basis = {sympy.Integer(1): 0, sympy.Integer(k) ** sympy.Rational(1, 3): 1, sympy.Integer(k) ** sympy.Rational(2, 3): 2}
+        for t, c in e.as_coefficients_dict().items():
+            if not c.is_Rational or t not in basis: raise ValueError(f'{txt} is not in Q({k}**(1/3))')
+            cs[basis[t]] += Fr(int(c.p), int(c.q))
+        return KC(*cs, k=k)
     e = sympy.expand(sympy.sympify(txt))
     a = Fr(0); b = Fr(0)
     for t, c in e.as_coefficients_dict().items():
@@ -82,7 +142,9 @@ def rec(item, test, ok, note=''):
 
 
 def field_of(doc):
-    f = doc['field']; return 1 if f == 'Q' else int(f[f.index('sqrt(') + 5:f.index(')')])
+    f = doc['field']
+    if f.endswith('**(1/3))'): return ('cbrt', int(f[2:f.index('**')]))
+    return 1 if f == 'Q' else int(f[f.index('sqrt(') + 5:f.index(')')])
 
 
 def load_vertices(doc, d):
@@ -92,21 +154,21 @@ def load_vertices(doc, d):
 
 
 def newell(V, f):
-    n = (QF(0, 0, V[0][0].d),) * 3
+    n = (fz(V[0][0].d),) * 3
     for i in range(len(f)):
         a, b = V[f[i]], V[f[(i + 1) % len(f)]]; c = cross(a, b); n = (n[0] + c[0], n[1] + c[1], n[2] + c[2])
     return n
 
 
 def volume(V, F):
-    s = QF(0, 0, V[0][0].d)
+    s = fz(V[0][0].d)
     for f in F:
         for k in range(1, len(f) - 1): s = s + det3(V[f[0]], V[f[k]], V[f[k + 1]])
     return s / 6
 
 
-def symmetry(V):
-    d = V[0][0].d; n = len(V); Z = QF(0, 0, d)
+def symmetry(V, F):
+    d = V[0][0].d; n = len(V); Z = fz(d)
     c = tuple(sum((v[k] for v in V), Z) / n for k in range(3)); W = [sub(v, c) for v in V]; S = set(W)
     norms = [dot(w, w) for w in W]; cnt = {}
     for x in norms: cnt[x] = cnt.get(x, 0) + 1
@@ -117,7 +179,7 @@ def symmetry(V):
     b = min((i for i in order if any(x.sign() for x in cross(W[a], W[i]))), key=lambda i: (cnt[norms[i]], dist(i, a)))
     ab = cross(W[a], W[b])
     cc = min((i for i in order if dot(ab, W[i]).sign()), key=lambda i: (cnt[norms[i]], dist(i, a)))
-    A = [W[a], W[b], W[cc]]; G = [[dot(A[i], A[j]) for j in range(3)] for i in range(3)]
+    A = [W[a], W[b], W[cc]]; G = [[dot(A[i], A[j]) for j in range(3)] for i in range(3)]; FS = {frozenset(f) for f in F}
     Dt = det3(*A); adj = [cross(A[1], A[2]), cross(A[2], A[0]), cross(A[0], A[1])]
     pick = lambda i, cons: [j for j in range(n) if norms[j] == G[i][i] and all(dot(W[j], W[k]) == G[i][m] for m, k in cons)]
     out = []
@@ -126,9 +188,11 @@ def symmetry(V):
             for jc in pick(2, [(0, ja), (1, jb)]):
                 B = [W[ja], W[jb], W[jc]]
                 M = [[sum((B[k][i] * adj[k][j] for k in range(3)), Z) / Dt for j in range(3)] for i in range(3)]
-                if all(tuple(dot(M[i], w) for i in range(3)) in S for w in W): out.append(M)
+                if all(tuple(dot(M[i], w) for i in range(3)) in S for w in W):
+                    img = {w: j for j, w in enumerate(W)}; perm = [img[tuple(dot(M[i], w) for i in range(3))] for w in W]
+                    if all(frozenset(perm[i] for i in f) in FS for f in F): out.append(M)
     detsign = [det3(*M).sign() for M in out]
-    inv = any(all(M[i][j] == (QF(-1, 0, d) if i == j else Z) for i in range(3) for j in range(3)) for M in out)
+    inv = any(all(M[i][j] == (fz(d, -1) if i == j else Z) for i in range(3) for j in range(3)) for M in out)
     return len(out), sum(1 for s in detsign if s > 0), inv
 
 
@@ -207,7 +271,7 @@ def check_solid(path):
         x = dot(sub(V[a], V[b]), sub(V[a], V[b])); el[x] = el.get(x, 0) + 1
     stated = {parse(e['exact'], d): e['count'] for e in doc['squared_edge_lengths']}
     rec(slug, 'squared edge lengths and counts as stated', el == stated)
-    order, rot, inv = symmetry(V); sy = doc['symmetry']
+    order, rot, inv = symmetry(V, F); sy = doc['symmetry']
     rec(slug, f"symmetry group order {order}, rotations {rot}, inversion {inv} as stated", (order, rot, inv) == (sy['order'], sy['rotations'], sy['contains_inversion']))
     rec(slug, f"Schoenflies {sy['schoenflies']} consistent with order/rotations/inversion", schoenflies(sy['schoenflies']) == (order, rot, inv))
     pub = doc.get('published_values', {})
@@ -227,7 +291,7 @@ def check_solid(path):
 def check_unit_volume(slug, doc, V, F, vol, d):
     import mpmath
     mpmath.mp.dps = 60
-    uv = doc['unit_volume']; Z = QF(0, 0, d)
+    uv = doc['unit_volume']; Z = fz(d)
     e = sympy.sympify(uv['scale_exact']); Vs = sympy.sympify(doc['volume']['exact'])
     rec(slug, 'unit volume: scale_exact = (stated volume)^(-1/3) (50 digits)', vol == parse(doc['volume']['exact'], d) and
         e.free_symbols == set() and abs(sympy.N(e ** -3 - Vs, 60)) < sympy.Float('1e-50'), uv['scale_exact'])
@@ -236,7 +300,7 @@ def check_unit_volume(slug, doc, V, F, vol, d):
     c = tuple(sum((v[k] for v in V), Z) / len(V) for k in range(3))
     rec(slug, 'unit volume: centre = exact corner centroid; decimals agree', tuple(parse(x, d) for x in uv['centre']['exact']) == c and
         all(abs(float(a) - x.f()) < 1e-14 for a, x in zip(uv['centre']['decimal'], c)))
-    mq = lambda x: mpmath.mpf(x.a.numerator) / x.a.denominator + mpmath.mpf(x.b.numerator) / x.b.denominator * mpmath.sqrt(d)
+    mq = mpx
     W = [[float(x) for x in w] for w in uv['vertices_decimal']]
     rec(slug, 'unit volume: every corner = centre + s (corner - centre) (1e-14)', len(W) == len(V) and
         all(abs(W[i][k] - float(mq(c[k]) + s * (mq(V[i][k]) - mq(c[k])))) < 1e-14 for i in range(len(V)) for k in range(3)))
@@ -285,14 +349,14 @@ def check_packing(path, solids, filling=True):
             all(abs(float(a) - x.f()) < 1e-14 for v, w in zip(doc['lattice_vectors'], L) for a, x in zip(v['decimal'], w)))
     cv = det3(*L); cv = cv if cv.sign() > 0 else -cv
     rec(slug, 'cell volume |det(lattice)| as stated', cv.sign() > 0 and cv == parse(doc['cell_volume']['exact'], d), doc['cell_volume']['exact'])
-    pieces = []; vsum = QF(0, 0, d); orth = True
+    pieces = []; vsum = fz(d); orth = True
     for p in doc['pieces']:
         V, F, vol, _ = solids[p['solid']]
         R = [[parse(x, d) for x in r] for r in p['rotation']]; t = tuple(parse(x, d) for x in p['translation'])
-        RRt = [[sum((R[i][k] * R[j][k] for k in range(3)), QF(0, 0, d)) for j in range(3)] for i in range(3)]
+        RRt = [[sum((R[i][k] * R[j][k] for k in range(3)), fz(d)) for j in range(3)] for i in range(3)]
         orth &= all(RRt[i][j] == (1 if i == j else 0) for i in range(3) for j in range(3))
         sgn = det3(*[tuple(R[i][k] for i in range(3)) for k in range(3)]).sign()
-        W = [tuple(sum((R[i][k] * v[k] for k in range(3)), QF(0, 0, d)) + t[i] for i in range(3)) for v in V]
+        W = [tuple(sum((R[i][k] * v[k] for k in range(3)), fz(d)) + t[i] for i in range(3)) for v in V]
         FF = F if sgn > 0 else [f[::-1] for f in F]
         if not json.load(open(os.path.join(HERE, 'solids', p['solid'] + '.json'))).get('convex'): orth = False
         pieces.append((W, FF)); vsum = vsum + vol
@@ -319,7 +383,7 @@ def no_overlaps(L, pieces, d):
     Gs = sympy.Matrix(G).inv(); K = [int(math.ceil((2 * rad + 1e-6) * math.sqrt(float(Gs[i, i])))) for i in range(3)]
     ok = True; nexact = 0
     for c in itertools.product(*[range(-k, k + 1) for k in K]):
-        t = tuple(sum((L[i][k] * c[i] for i in range(3)), QF(0, 0, d)) for k in range(3))
+        t = tuple(sum((L[i][k] * c[i] for i in range(3)), fz(d)) for k in range(3))
         for i, (WA, FA) in enumerate(pieces):
             for j, (WB, FB) in enumerate(pieces):
                 if c == (0, 0, 0) and j <= i: continue
@@ -331,13 +395,124 @@ def no_overlaps(L, pieces, d):
     return ok, nexact
 
 
+def tet_faces(T):
+    """the 4 faces of a tetrahedron (corner list), wound outward."""
+    F = [[0, 1, 2], [0, 3, 1], [0, 2, 3], [1, 3, 2]]
+    return F if det3(sub(T[1], T[0]), sub(T[2], T[0]), sub(T[3], T[0])).sign() < 0 else [f[::-1] for f in F]
+
+
+def tet_volume(T):
+    v = det3(sub(T[1], T[0]), sub(T[2], T[0]), sub(T[3], T[0])) / 6
+    return v if v.sign() > 0 else -v
+
+
+def check_decomposition(slug, doc, solids):
+    """version 2: a non-convex solid = a convex solid of this dataset minus (dents) or plus (keys) its 8 #48 Tricaps."""
+    dc = doc['decomposition']; d = field_of(doc); V, F, vol, _ = solids[slug]
+    VB, FB, vb, _ = solids[dc['base_solid']]
+    bdoc = json.load(open(os.path.join(HERE, 'solids', dc['base_solid'] + '.json')))
+    rec(slug, f"decomposition: base {dc['base_solid']} is a convex solid of this dataset, operation '{dc['operation']}'", bdoc.get('convex') is True and dc['operation'] in ('minus', 'plus'))
+    caps = []; orient = True
+    PH = QF(Fr(1, 2), Fr(1, 2), 5); H = PH / 2; IH = (PH - 1) / 2; Z = fz(d); HALF = fz(d, Fr(1, 2))
+    for c in dc['tricaps']:
+        u = tuple(parse(x, d) for x in c['unborn_centre']); a = tuple(parse(x, d) for x in c['apex']); B = [tuple(parse(x, d) for x in b) for b in c['base']]
+        caps.append([a] + B)
+        # the Unborn at u: u + cyclic permutations of (+-phi/2, +-1/(2 phi), 0) (#48); its dodecahedron's cube: u + (+-1/2, +-1/2, +-1/2)
+        unb = {tuple(u[k] + p[k] for k in range(3)) for s1 in (1, -1) for s2 in (1, -1) for p in
+               [(s1 * H, s2 * IH, Z), (Z, s1 * H, s2 * IH), (s2 * IH, Z, s1 * H)]}
+        sv = [2 * (a[k] - u[k]) for k in range(3)]
+        if not all(x == 1 or x == -1 for x in sv): orient = False; continue
+        # #48 Tricap of the Unborn at u towards s: apex u + s/2, base u + (s_x phi/2, s_y/(2 phi), 0), u + (0, s_y phi/2, s_z/(2 phi)), u + (s_x/(2 phi), 0, s_z phi/2)
+        want = {tuple(u[k] + w[k] for k in range(3)) for w in [(sv[0] * H, sv[1] * IH, Z), (Z, sv[1] * H, sv[2] * IH), (sv[0] * IH, Z, sv[2] * H)]}
+        if not (set(B) <= unb and set(B) == want): orient = False
+    rec(slug, "decomposition: every Tricap is #48's (cyclic orientation): its 3 base corners are corners of the Unborn at the stated centre "
+              "(cyclic permutations of (+-phi/2, +-1/(2 phi), 0)) and its apex a corner of that Unborn's dodecahedron cube", orient and len(caps) == 8)
+    tv = parse(dc['tricap_volume'], d)
+    rec(slug, 'decomposition: 8 Tricaps, each of volume exactly the stated (3 - sqrt5)/24', len(caps) == 8 and tv == fz(d, Fr(1, 8)) + QF(0, Fr(-1, 24), 5) and all(tet_volume(T) == tv for T in caps))
+    planes = [(newell(VB, f), dot(newell(VB, f), VB[f[0]])) for f in FB]; VBs = set(VB); place = True
+    for T in caps:
+        a, B = T[0], T[1:]
+        hit = [(n, h) for n, h in planes if all(dot(n, b) == h for b in B)]
+        if not (set(B) <= VBs and len(hit) == 1): place = False; continue
+        n, h = hit[0]
+        if dc['operation'] == 'minus': place &= all((dot(m, a) - g).sign() < 0 for m, g in planes)
+        else: place &= (dot(n, a) - h).sign() > 0
+    rec(slug, 'decomposition: each Tricap stands on one face of the convex base (base corners = base corners), apex ' +
+        ('strictly inside the base (a dent; the Tricap lies in the base)' if dc['operation'] == 'minus' else 'strictly outside that face (a key)'), place)
+    pieces = [(T, tet_faces(T)) for T in caps]
+    rec(slug, 'decomposition: the 8 Tricaps are pairwise interior-disjoint (exact separating planes)', all(sat_disjoint(pieces[i], pieces[j]) for i in range(8) for j in range(i + 1, 8)))
+    rec(slug, 'decomposition: corners = the base corners and the 8 apices', set(V) == VBs | {T[0] for T in caps} and len(V) == len(VB) + 8)
+    allp = planes + [(newell(T, f), dot(newell(T, f), T[f[0]])) for T, FT in pieces for f in FT]
+    def onplane(f):
+        n = newell(V, f)
+        return any(all(x.sign() == 0 for x in cross(n, m)) and dot(m, V[f[0]]) == h for m, h in allp)
+    rec(slug, 'decomposition: every face lies in a face plane of the base or of a Tricap', all(onplane(f) for f in F))
+    sgn = -1 if dc['operation'] == 'minus' else 1
+    rec(slug, f"decomposition: exact volume = base volume {'-' if sgn < 0 else '+'} 8 Tricaps", vol == vb + sgn * 8 * tv, f"{doc['volume']['exact']}")
+    return caps
+
+
+def check_keyed_packing(path, solids):
+    """version 2: a fill by non-convex keyed pieces, proved from a convex fill of this dataset and the Tricap decompositions."""
+    doc = json.load(open(path)); slug = os.path.basename(path)[:-5]; d = field_of(doc)
+    base = json.load(open(os.path.join(HERE, 'packings', doc['base_packing'] + '.json')))
+    base_ok = [ok for it, t, ok, note in RESULTS if it == doc['base_packing']]
+    rec(slug, f"base fill {doc['base_packing']} passed all its checks (a tiling by convex pieces)", base_ok and all(base_ok))
+    L = [tuple(parse(x, d) for x in v['exact']) for v in doc['lattice_vectors']]
+    LB = [tuple(parse(x, d) for x in v['exact']) for v in base['lattice_vectors']]
+    cv = det3(*L); cv = cv if cv.sign() > 0 else -cv
+    rec(slug, 'same lattice as the base fill; cell volume as stated', L == LB and cv == parse(doc['cell_volume']['exact'], d))
+    same = len(doc['pieces']) == len(base['pieces']); vsum = fz(d); dents = []; keys = []; orth = True
+    for i, p in enumerate(doc['pieces']):
+        sdoc = json.load(open(os.path.join(HERE, 'solids', p['solid'] + '.json'))); dc = sdoc['decomposition']; bp = base['pieces'][i]
+        same &= dc['base_solid'] == bp['solid'] and p['rotation'] == bp['rotation'] and p['translation'] == bp['translation']
+        R = [[parse(x, d) for x in r] for r in p['rotation']]; t = tuple(parse(x, d) for x in p['translation'])
+        orth &= all(sum((R[a][k] * R[b][k] for k in range(3)), fz(d)) == (1 if a == b else 0) for a in range(3) for b in range(3))
+        vsum = vsum + solids[p['solid']][2]
+        for c in dc['tricaps']:
+            T = [tuple(parse(x, d) for x in c['apex'])] + [tuple(parse(x, d) for x in b) for b in c['base']]
+            T = tuple(tuple(sum((R[a][k] * v[k] for k in range(3)), fz(d)) + t[a] for a in range(3)) for v in T)
+            (dents if dc['operation'] == 'minus' else keys).append((i, T))
+    rec(slug, 'each keyed piece is the base fill\'s convex piece (same solid, rotation, translation) with its Tricaps removed or added; rotations orthogonal', same and orth)
+    rec(slug, 'sum of piece volumes = cell volume (exact)', vsum == cv)
+    Lf = [[x.f() for x in v] for v in L]
+    import numpy as _np
+    M = _np.array(Lf).T
+    def lattice_diff(T1, T2):
+        # T1 = T2 + integer combination of L, corner for corner (as sets), exactly
+        g1 = [sum(x.f() for x in col) / 4 for col in zip(*T1)]; g2 = [sum(x.f() for x in col) / 4 for col in zip(*T2)]
+        cf = _np.linalg.solve(M, _np.array(g1) - _np.array(g2)); ci = [int(round(x)) for x in cf]
+        if max(abs(x - y) for x, y in zip(cf, ci)) > 1e-6: return False
+        sh = tuple(sum((L[j][k] * ci[j] for j in range(3)), fz(d)) for k in range(3))
+        return set(T1) == {tuple(v[k] + sh[k] for k in range(3)) for v in T2}
+    used = set(); match = len(dents) == len(keys)
+    for _, D in dents:
+        js = [j for j, (_, Kt) in enumerate(keys) if j not in used and lattice_diff(D, Kt)]
+        if len(js) != 1: match = False; break
+        used.add(js[0])
+    rec(slug, f'every dent ({len(dents)} per cell) is exactly one key ({len(keys)} per cell) moved by a lattice vector: each Tricap '
+              'taken from one piece is given to exactly one other', match and len(used) == len(keys))
+    rec(slug, 'base fill tiles + the Tricaps only change owner => the keyed pieces tile space (' + doc.get('keying', '') + ')',
+        base_ok and all(base_ok) and same and match and vsum == cv)
+
+
 def main():
     solids = {}
     for p in sorted(glob.glob(os.path.join(HERE, 'solids', '*.json'))):
         try: solids[os.path.basename(p)[:-5]] = check_solid(p)
         except Exception as e: rec(os.path.basename(p)[:-5], 'checks ran', False, repr(e))
+    for slug in sorted(solids):   # version 2: non-convex solids stated as a convex solid -/+ Tricaps
+        doc = json.load(open(os.path.join(HERE, 'solids', slug + '.json')))
+        if 'decomposition' in doc:
+            try: check_decomposition(slug, doc, solids)
+            except Exception as e: rec(slug, 'decomposition checks ran', False, repr(e))
+    keyed = []
     for p in sorted(glob.glob(os.path.join(HERE, 'packings', '*.json'))):
+        if json.load(open(p)).get('proof') == 'decomposition': keyed.append(p); continue
         try: check_packing(p, solids)
+        except Exception as e: rec(os.path.basename(p)[:-5], 'checks ran', False, repr(e))
+    for p in keyed:
+        try: check_keyed_packing(p, solids)
         except Exception as e: rec(os.path.basename(p)[:-5], 'checks ran', False, repr(e))
     for p in sorted(glob.glob(os.path.join(HERE, 'packings-nonfilling', '*.json'))):
         try: check_packing(p, solids, filling=False)

@@ -1,7 +1,111 @@
-# Report for DICTO: math-data dataset (first build 2026-10-22, second pass 2026-10-23)
+# Report for DICTO: math-data dataset (first build 2026-10-22, second pass 2026-10-23, version 2 2026-10-24)
 
 Created by DICTO · dictospheres.com · CC BY-SA 4.0. Branch `math-data-dataset` (local only, not pushed). Nothing on Zenodo, the
 apps, the papers, DISCOVERIES.md or the website was changed.
+
+## Version 2 (2026-10-24)
+
+Version 1 is published (Zenodo concept DOI 10.5281/zenodo.23606967, record 23606968, built from commit 98e3fbb). Version 2 is built on the
+same branch (local only, not pushed) and is **not released**: it waits for DICTO's reading.
+
+### What was added
+
+- **Six solids, the six DICTONIC SOLIDS** (DICTO's names, exactly as typed): from #48 *The Golden Split* (DICTO DOI:
+  10.5281/zenodo.23596362) the **Icosaxes** and the **Unborn Axes** (convex truncated octahedra, Oh), the **Lotus Jewel Axes** (non-convex:
+  the Icosaxes with its 8 Tricaps removed, a dent on each hexagon) and the **Dodecaxes** (non-convex: the Unborn Axes with its 8 Tricaps
+  added, a key on each hexagon), both Th; from #51 *The Delian Bond* (DICTO DOI: 10.5281/zenodo.23606828) **Samson** (convex, 16 corners,
+  10 faces: 4 triangles, 6 hexagons, Td) and **Delilah** (the regular octahedron, Oh). Each with a unit-volume copy, as in version 1.
+- **Three fills, the three DICTONIC BONDS**: `dicto-golden-bond` (Icosaxes at φℤ³, Unborn Axes at φℤ³ + (φ/2)(1, 1, 1); #48 Main
+  theorem (f)), `dicto-keyed-bond` (Lotus Jewel Axes and Dodecaxes at the same places; #48 Theorem 3), `dicto-delian-bond` (8 Samsons and
+  4 Delilahs per cube of side 2; #51).
+- **index.csv**: six new rows (in_dataset y) and a new column `universal_number` for every row; **proposed-t-numbers.md** (new).
+
+### Decisions (and who made them)
+
+- **Names exactly as typed; one name per shape, the first name DICTO chose wins** (DICTO 2026-10-23, version 1 decisions, applied):
+  Icosaxes, Unborn Axes, Lotus Jewel Axes, Dodecaxes, Samson, Delilah. Delilah is the regular octahedron (status "known", note "known shape
+  (regular octahedron)"); its row is named "Delilah" as asked (under the one-name rule DICTO may prefer "Regular octahedron (Delilah)":
+  his call).
+- **Status labels** (from #48 and #51, no new claim): Icosaxes and Unborn Axes *known* (Koca et al. 2015, non-regular truncated octahedra
+  x = τ and x = 1/τ; new route); Lotus Jewel Axes and Dodecaxes *new*; Samson *new* (a new proportion, #51); Delilah *known* (regular
+  octahedron).
+- **Second number field** (agent's choice, as briefed): Samson and Delilah are exact in ℚ(∛2), not ℚ(√5). Every file now names its
+  field (`"Q(sqrt(5))"` or `"Q(2**(1/3))"`); exact strings are sympy-parsable in that field (`a + b*2**(1/3) + c*2**(2/3)`). The
+  checker's new field class decides signs exactly by the norm a³ + 2b³ + 4c³ − 6abc (it has the sign of the number, because the other two
+  conjugates are complex conjugates), so no floating point decides anything.
+- **Frames**: #48's frame (icosahedron edge 1, lattice spacing φ) for the four golden solids; the Unborn Axes and Dodecaxes are moved so
+  that their centre, #48's cube centre (φ/2)(1, 1, 1), is at the origin (their corners are then exactly "all permutations of
+  (±1/(2φ), ±φ/2, 0)" as in #48). Samson and Delilah are in the frame of the #51 study (octet in a cube of side 2, octet edge √2), each
+  moved to its own centre: #51's octet edge 1 would need √2, which is not in ℚ(∛2). At octet edge 1 (#51) divide lengths by √2 and
+  volumes by 2√2: volume 2/3 here is √2/6 there; Delilah's edge 2^(1/6) here is 2^(−1/3) there. Stated in each `scale_note`.
+- **Keying of the keyed bond**: every Tricap on the dodecahedron side (each Icosaxes carries 8 dents, each Unborn Axes 8 keys), which is
+  the Lotus Jewel network itself; #48 Theorem 3 says any keying fills, this file fixes this one.
+- **Tricap orientation**: #48's cyclic orientation, as in keyed_polar_exact.py (base corners = corners of the Unborn, apex = a corner of
+  the Unborn's dodecahedron cube). The checker tests it for every Tricap; the mirrored Tricaps (the bug found on 10-24) fail.
+- **True face lists**: each dented or keyed hexagon becomes the 3 triangles left of the hexagon plus the Tricap's 3 side faces; coplanar
+  neighbours sharing an edge would be merged, and none are: 54 faces each (48 triangles, 6 squares), 32 corners, 84 edges.
+- **Symmetry of a solid**: now the group of maps taking corners to corners *and faces to faces*. Needed because the dents and keys sit at
+  cube corners: the corner sets of the Lotus Jewel Axes and Dodecaxes have full octahedral symmetry (48), the solids only pyritohedral
+  (Th, 24). For every version 1 solid the group is unchanged (all their checks pass as before).
+- **Polyhedraverse**: the six solids exist as DICTO_ICOSAXES, DICTO_UNBORN_AXES, DICTO_LOTUS_JEWEL_AXES, DICTO_DODECAXES, DICTO_SAMSON,
+  DICTO_DELILAH on the K branch `dictonic-world` (not merged, not live), so `in_polyhedraverse` is "n" for now; switch to "y" when it ships.
+
+### Checks
+
+- **check.py on dicto-big-brother: TOTAL: 712 checks, 712 passed, 0 failed; 29 solids, 6 packings (fills), 4 packings (not fills)**
+  (80 s). Version 1's 550 checks are all still there and pass unchanged; new: 6 solids × 22, 7 decomposition checks each for the Lotus
+  Jewel Axes and the Dodecaxes, 5 + 5 for the golden and Delian bonds, 6 for the keyed bond.
+- The keyed bond is proved without a convex split: the golden bond tiles (exact, convex pieces), the keyed bond has the same lattice and
+  placements, each keyed piece is its convex piece ∓ 8 Tricaps (re-proved), and every dent is exactly one key moved by a lattice vector.
+- **Corruption tests** (each on a copy; each must fail, and did): a Samson corner moved by 1/100 (ℚ(∛2): 14 checks failed, among them
+  planarity, volume, symmetry and the Delian bond's volume sum); a Lotus Jewel Axes corner moved by 1/100 (16 failed, among them the
+  decomposition's corners and face planes); the Lotus Jewel Axes' Tricaps mirrored x ↔ y (4 failed: the orientation test, the face planes,
+  and the keyed bond's dent–key match and conclusion); the keyed bond with the Dodecaxes moved onto the Icosaxes site (3 failed).
+- **Build log** `build/build_v2.log.json`: 49 PASS, 0 FAIL (study objects; every published value; corner sets as stated in #48; all 16
+  Tricaps of volume (3 − √5)/24; the Unborn plus its 8 Tricaps is the regular dodecahedron of edge 1/φ; Delilah's corners
+  (±2^(−1/3), 0, 0); the other tetrahedron cell is Samson turned a quarter turn about z; the three bonds' volume sums).
+- **Sources**: the study scripts were executed, not re-derived (copies in `build/sources/`): golden_split_exact.py and
+  octet_special_exact.py are byte-identical to the copies in the published #48 and #51 records (study zips golden-split-study-066a46a and
+  delian-bond-study-4e98aa8); keyed_polar_exact.py (the Tricaps and the keyed pair) is from the research branch, commit e9aed63 (written
+  after #48 was published; it is not in the #48 record).
+
+### Checked against the published papers (#48 v1, record 23596363; #51 v1, record 23606829)
+
+- #48: Icosaxes corners all permutations of (±½, ±φ/2, 0), Unborn Axes c + all permutations of (±1/(2φ), ±φ/2, 0); 8 hexagons and 6
+  squares each; full octahedral symmetry; hexagon sides 1/√2 and 1/(φ√2), Icosaxes squares 1/√2, Unborn Axes squares 1/(φ√2); volumes
+  1 + 2√5/3 and 1 + √5/3, together φ³ = 2 + √5 (the golden bond's cell); Tricap volume (3 − √5)/24; Lotus Jewel Axes √5 = 1 + 2√5/3 −
+  8(3 − √5)/24, Dodecaxes 2 = 1 + √5/3 + 8(3 − √5)/24; the Unborn plus its 8 Tricaps is the dodecahedron of edge 1/φ: all equal.
+- #51: Samson 16 corners, 10 faces (4 triangles, 6 hexagons), Delilah a regular octahedron; equal volumes √2/6 at octet edge 1 (2/3 here,
+  8 Samsons + 4 Delilahs = the cube of side 2); Delilah's edge 2^(−1/3) at octet edge 1 (squared 2^(1/3) here); Samson's edges 1/∛2 and
+  (1 − 2^(−1/3))/√2 at octet edge 1 (squared 2^(1/3) and 1 + 2^(1/3)/2 − 2^(2/3) here): all equal.
+- **Disagreements with a published paper: none found.**
+
+### universal_number (index.csv)
+
+Filled for 5 of 122 rows, only where the number is certain: Dogstar = Hart 1996, tetrahedral stellations of the dodecahedron, no. 8 (as
+cited in #42); AXE = Mosseri–Sadoc t6 and CLEO = Mosseri–Sadoc t4 (both scaled by 1/τ; DICTO confirmed 10-23); Half octahedron P = J1
+(the square pyramid with equilateral triangles, half the regular octahedron); Delilah = U5; W2 (regular octahedron: Maeder's uniform index,
+Wenninger's model number). Conventions in the README. Empty elsewhere: the other known shapes (Bain's, the parallelepiped and rhombohedron
+of F1, the Cleo-Icos, the tetrahedron face pyramid, the Reuleaux tetrahedron, the Icosaxes and Unborn Axes, which are Koca et al.'s
+non-uniform truncated octahedra) have no catalogue number we are sure of.
+
+**No DICTO T-number is used in any published paper** (all paper sources searched). T-numbers are only proposed, in
+`proposed-t-numbers.md`: 71 DICTO solids and pieces, T3–T73 in order of first publication, starting at T3 because T1 and T2 are
+already used as working labels in the app's DICTO Ball set 1, and "T1 = Cleo" was noted, although Cleo has the earlier number
+Mosseri–Sadoc t4 and so takes no T-number by the rule; 4 rows that group several pieces (Cleo Towers, Polar Cleo Towers, dented
+tetrahedron L/R, Fill set pieces) need a number per piece; 9 known or rediscovered shapes without a number are listed for DICTO's call.
+
+### Totals (version 2)
+
+index.csv: 122 rows: **104 new, 4 rediscovered, 14 known**. Counting grouped rows one by one: **125 new, 4 rediscovered, 15 known, 144
+named shapes**. By kind (rows): 42 solids, 47 pieces, 14 clusters, 16 structures, 1 compound, 2 curved bodies. Of the 144, **29 are in
+this dataset**; with 6 fills and 4 non-filling packings.
+
+### Open questions for DICTO
+
+1. T-numbers: approve the list in `proposed-t-numbers.md`, and say whether to start at T1 or T3 (T1/T2 are the Ball set 1 working labels;
+   "T1 = Cleo" against Cleo = Mosseri–Sadoc t4).
+2. Delilah's row name: "Delilah" (as now) or "Regular octahedron (Delilah)" under the one-name rule.
 
 ## Second pass (2026-10-23), DICTO's decisions
 

@@ -62,8 +62,85 @@ class QF:
     def __repr__(s): return fmt(s)
 
 
+class KC:
+    """a + b*r + c*r^2 with r = k^(1/3) real: the pure cubic field Q(cbrt k) (version 2, 2026-10-24: Samson and Delilah live in
+    Q(2**(1/3))). Exact with Fractions. sign() is exact: the norm N(x) = a^3 + k b^3 + k^2 c^3 - 3k abc is x times |x'|^2 (the other
+    two conjugates are complex conjugates), so sign(x) = sign(N(x)). The field is named by d = ('cbrt', k)."""
+    __slots__ = ('c', 'k')
+
+    def __init__(s, a=0, b=0, c=0, k=2):
+        s.c = (Fr(a), Fr(b), Fr(c)); s.k = k
+
+    @property
+    def d(s): return ('cbrt', s.k)
+
+    def _c(s, o):
+        if isinstance(o, KC):
+            assert o.k == s.k, 'mixed fields'
+            return o
+        assert not isinstance(o, QF), 'mixed fields'
+        return KC(o, 0, 0, s.k)
+
+    def __add__(s, o): o = s._c(o); return KC(*(x + y for x, y in zip(s.c, o.c)), k=s.k)
+    __radd__ = __add__
+    def __neg__(s): return KC(*(-x for x in s.c), k=s.k)
+    def __sub__(s, o): return s + (-s._c(o))
+    def __rsub__(s, o): return s._c(o) - s
+
+    def __mul__(s, o):
+        o = s._c(o); (a, b, c), (x, y, z), k = s.c, o.c, s.k
+        return KC(a * x + k * (b * z + c * y), a * y + b * x + k * c * z, a * z + b * y + c * x, k=k)
+    __rmul__ = __mul__
+
+    def norm(s):
+        (a, b, c), k = s.c, s.k
+        return a ** 3 + k * b ** 3 + k * k * c ** 3 - 3 * k * a * b * c
+
+    def __truediv__(s, o):
+        o = s._c(o); (a, b, c), k = o.c, o.k; n = o.norm(); assert n != 0
+        return s * KC((a * a - k * b * c) / n, (k * c * c - a * b) / n, (b * b - a * c) / n, k=k)
+
+    def __rtruediv__(s, o): return s._c(o) / s
+    def sign(s): n = s.norm(); return (n > 0) - (n < 0)
+    def __eq__(s, o): o = s._c(o); return s.c == o.c
+    def __hash__(s): return hash(s.c)
+    def __lt__(s, o): return (s - o).sign() < 0
+    def f(s): r = s.k ** (1 / 3); return float(s.c[0]) + float(s.c[1]) * r + float(s.c[2]) * r * r
+
+    def mp(s):
+        import mpmath
+        r = mpmath.cbrt(s.k)
+        return sum((mpmath.mpf(x.numerator) / x.denominator * r ** i for i, x in enumerate(s.c)), mpmath.mpf(0))
+
+    def dec(s, places=15):
+        r = Decimal(s.k) ** (Decimal(1) / Decimal(3))
+        x = sum((Decimal(q.numerator) / Decimal(q.denominator) * r ** i for i, q in enumerate(s.c)), Decimal(0))
+        q = x.quantize(Decimal(1).scaleb(-places))
+        return format(q, 'f') if q != 0 else format(Decimal(0).quantize(Decimal(1).scaleb(-places)), 'f')
+
+    def fmt(s):
+        def r(q): return str(q.numerator) if q.denominator == 1 else f'{q.numerator}/{q.denominator}'
+        out = []
+        for i, q in enumerate(s.c):
+            if q == 0: continue
+            if i == 0: out.append(r(q)); continue
+            base = f'{s.k}**({i}/3)'
+            out.append(base if q == 1 else (f'-{base}' if q == -1 else f'({r(q)})*{base}'))
+        if not out: return '0'
+        t = out[0]
+        for u in out[1:]: t += f' - {u[1:]}' if u.startswith('-') else f' + {u}'
+        return t
+    def __repr__(s): return s.fmt()
+
+
+def field_name(d):
+    """the dataset's `field` string for a field key d (int for Q(sqrt d), ('cbrt', k) for Q(k**(1/3)))."""
+    return f'Q({d[1]}**(1/3))' if isinstance(d, tuple) else f'Q(sqrt({d}))'
+
+
 def fmt(x):
     """sympy-parsable exact string."""
+    if isinstance(x, KC): return x.fmt()
     def r(q): return str(q.numerator) if q.denominator == 1 else f'{q.numerator}/{q.denominator}'
     if x.b == 0: return r(x.a)
     bs = f'sqrt({x.d})' if x.b == 1 else (f'-sqrt({x.d})' if x.b == -1 else f'({r(x.b)})*sqrt({x.d})')
@@ -80,7 +157,7 @@ mul = lambda k, v: (k * v[0], k * v[1], k * v[2])
 cross = lambda u, v: (u[1] * v[2] - u[2] * v[1], u[2] * v[0] - u[0] * v[2], u[0] * v[1] - u[1] * v[0])
 fv = lambda v: np.array([x.f() for x in v])
 def det3(a, b, c): return dot(a, cross(b, c))
-def zero(d=5): return QF(0, 0, d)
+def zero(d=5): return KC(0, k=d[1]) if isinstance(d, tuple) else QF(0, 0, d)
 
 
 def plane_key(n, c):
@@ -101,7 +178,7 @@ def hull(points):
         n = cross(sub(b, a), sub(c, a))
         if all(x.sign() == 0 for x in n): continue
         cc = dot(n, a)
-        if (dot(n, tuple(QF(Fr(x).limit_denominator(10**6)) for x in cen)) - cc).f() > 0: n, cc = mul(-1, n), -cc
+        if (dot(n, tuple(zero(P[0][0].d) + Fr(x).limit_denominator(10**6) for x in cen)) - cc).f() > 0: n, cc = mul(-1, n), -cc
         planes[plane_key(n, cc)] = (n, cc)
     # orient each plane outward exactly: all points must satisfy n.x <= c
     good = {}
@@ -208,8 +285,9 @@ def edges_of(F):
     return sorted({tuple(sorted((a, b))) for f in F for a, b in zip(f, f[1:] + f[:1])})
 
 
-def sym_group(V):
-    """Exact symmetry group of a finite point set about its centroid: list of (matrix, det sign)."""
+def sym_group(V, F=None):
+    """Exact symmetry group of a finite point set about its centroid: list of (matrix, det sign). With faces F (version 2), only the
+    maps that also take the face set to itself (the symmetry of the solid; for a convex solid the same group)."""
     d = V[0][0].d; n = len(V)
     c = tuple(sum((v[k] for v in V), zero(d)) / n for k in range(3))
     W = [sub(v, c) for v in V]; S = set(W)
@@ -250,6 +328,11 @@ def sym_group(V):
                 # exact matrix M = B * A^{-1}; A^{-1} rows = adj / Dt
                 M = [[sum((B[k][i] * adj[k][j] for k in range(3)), zero(d)) / Dt for j in range(3)] for i in range(3)]
                 if all(tuple(dot(M[i], w) for i in range(3)) in S for w in W):
+                    if F is not None:
+                        img = {w: j for j, w in enumerate(W)}
+                        perm = [img[tuple(dot(M[i], w) for i in range(3))] for w in W]
+                        fs = {frozenset(f) for f in F}
+                        if any(frozenset(perm[i] for i in f) not in fs for f in F): continue
                     G.append((M, det3(*M).sign()))
     return G
 
@@ -257,7 +340,7 @@ def sym_group(V):
 def schoenflies_check(G):
     order = len(G); proper = sum(1 for _, s in G if s > 0)
     d = G[0][0][0][0].d
-    inv = any(all(M[i][j] == (QF(-1, 0, d) if i == j else zero(d)) for i in range(3) for j in range(3)) for M, _ in G)
+    inv = any(all(M[i][j] == (zero(d) - 1 if i == j else zero(d)) for i in range(3) for j in range(3)) for M, _ in G)
     return order, proper, inv
 
 
@@ -269,11 +352,11 @@ def write_solid(path_noext, meta, V, F, extra_published=None):
     el = sorted({dot(sub(V[a], V[b]), sub(V[a], V[b])) for a, b in E}, key=lambda q: q.f())
     from collections import Counter
     fk = Counter(len(f) for f in F)
-    G = sym_group(V); order, proper, inv = schoenflies_check(G); cls = classify(G)
+    G = sym_group(V, F); order, proper, inv = schoenflies_check(G); cls = classify(G)
     if meta.get('symmetry_label') in (None, 'auto'): meta = dict(meta, symmetry_label=cls)
     doc = dict(meta)
     doc.update({
-        'field': f'Q(sqrt({V[0][0].d}))',
+        'field': field_name(V[0][0].d),
         'vertices': [{'exact': [fmt(x) for x in v], 'decimal': [x.dec() for x in v]} for v in V],
         'faces': F,
         'f_vector': {'vertices': len(V), 'edges': nE, 'faces': len(F)},

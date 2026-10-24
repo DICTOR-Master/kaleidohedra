@@ -1,0 +1,237 @@
+{
+ "name": "Delilah",
+ "finding": "",
+ "paper": "#51 The Delian Bond",
+ "dicto_doi": "10.5281/zenodo.23606828",
+ "status": "known shape (regular octahedron); DICTO's name at the Delian bond",
+ "convex": true,
+ "scale_note": "frame of octet_special_exact.py (#51 study): the octet in the cube of side 2, octahedron centres (1,0,0), (0,1,0), (0,0,1), (1,1,1) and tetrahedron centres (1/2 or 3/2, 1/2 or 3/2, 1/2 or 3/2) mod 2, so the octet edge is sqrt2 (#51 uses octet edge 1: divide lengths by sqrt2 and volumes by 2 sqrt2). The cut is the Delian bond t = 1 - (2/3) 2^(-1/3). The piece is moved so that its centre is at the origin. sqrt2 is not in Q(2**(1/3)); this frame keeps every coordinate exact in the one field. Delilah: the octahedron piece O(t) round the octahedron centre (1, 0, 0): the regular octahedron of edge 2^(1/6) here (= 2^(-1/3) at octet edge 1: the octet's octahedron shrunk by 2^(-1/3)), corners (+-2^(-1/3), 0, 0) and permutations; volume 2/3 here = sqrt2/6 at octet edge 1, half the octet's octahedron.",
+ "source": {
+  "app": "study",
+  "path": "research branch studies/2026-10-23-shadow-forms (commit e9aed63): octet/octet_special_exact.py cell(S, \"O\", (1,0,0), t) in Q(2**(1/3))",
+  "id": null
+ },
+ "credit_note": "Credit: DICTO (idea, names); exact computation with Claude (Anthropic).",
+ "version_added": 2,
+ "published_values": {
+  "volume": "2/3",
+  "f_vector": [
+   6,
+   12,
+   8
+  ],
+  "faces_by_sides": {
+   "3": 8
+  },
+  "squared_edge_lengths": [
+   "2**(1/3)"
+  ],
+  "symmetry_order": 48
+ },
+ "field": "Q(2**(1/3))",
+ "vertices": [
+  {
+   "exact": [
+    "(-1/2)*2**(2/3)",
+    "0",
+    "0"
+   ],
+   "decimal": [
+    "-0.793700525984100",
+    "0.000000000000000",
+    "0.000000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "0",
+    "(-1/2)*2**(2/3)",
+    "0"
+   ],
+   "decimal": [
+    "0.000000000000000",
+    "-0.793700525984100",
+    "0.000000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "0",
+    "0",
+    "(-1/2)*2**(2/3)"
+   ],
+   "decimal": [
+    "0.000000000000000",
+    "0.000000000000000",
+    "-0.793700525984100"
+   ]
+  },
+  {
+   "exact": [
+    "0",
+    "0",
+    "(1/2)*2**(2/3)"
+   ],
+   "decimal": [
+    "0.000000000000000",
+    "0.000000000000000",
+    "0.793700525984100"
+   ]
+  },
+  {
+   "exact": [
+    "0",
+    "(1/2)*2**(2/3)",
+    "0"
+   ],
+   "decimal": [
+    "0.000000000000000",
+    "0.793700525984100",
+    "0.000000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "(1/2)*2**(2/3)",
+    "0",
+    "0"
+   ],
+   "decimal": [
+    "0.793700525984100",
+    "0.000000000000000",
+    "0.000000000000000"
+   ]
+  }
+ ],
+ "faces": [
+  [
+   0,
+   1,
+   3
+  ],
+  [
+   0,
+   2,
+   1
+  ],
+  [
+   0,
+   3,
+   4
+  ],
+  [
+   0,
+   4,
+   2
+  ],
+  [
+   1,
+   2,
+   5
+  ],
+  [
+   1,
+   5,
+   3
+  ],
+  [
+   2,
+   4,
+   5
+  ],
+  [
+   3,
+   5,
+   4
+  ]
+ ],
+ "f_vector": {
+  "vertices": 6,
+  "edges": 12,
+  "faces": 8
+ },
+ "faces_by_sides": {
+  "3": 8
+ },
+ "volume": {
+  "exact": "2/3",
+  "decimal": "0.666666666666667"
+ },
+ "unit_volume": {
+  "scale_exact": "(2/3)**(-1/3)",
+  "scale_decimal": "1.144714242553332",
+  "centre": {
+   "exact": [
+    "0",
+    "0",
+    "0"
+   ],
+   "decimal": [
+    "0.000000000000000",
+    "0.000000000000000",
+    "0.000000000000000"
+   ],
+   "kind": "origin of the frame (= the corner centroid)"
+  },
+  "note": "x -> centre + s (x - centre), s = V^(-1/3) with V the exact volume above; s is symbolic and the corners are decimals (15 places, as elsewhere). Same corner order and faces as above; volume 1.",
+  "vertices_decimal": [
+   [
+    "-0.908560296416070",
+    "0.000000000000000",
+    "0.000000000000000"
+   ],
+   [
+    "0.000000000000000",
+    "-0.908560296416070",
+    "0.000000000000000"
+   ],
+   [
+    "0.000000000000000",
+    "0.000000000000000",
+    "-0.908560296416070"
+   ],
+   [
+    "0.000000000000000",
+    "0.000000000000000",
+    "0.908560296416070"
+   ],
+   [
+    "0.000000000000000",
+    "0.908560296416070",
+    "0.000000000000000"
+   ],
+   [
+    "0.908560296416070",
+    "0.000000000000000",
+    "0.000000000000000"
+   ]
+  ]
+ },
+ "squared_edge_lengths": [
+  {
+   "exact": "2**(1/3)",
+   "decimal": "1.259921049894873",
+   "count": 12
+  }
+ ],
+ "symmetry": {
+  "schoenflies": "Oh",
+  "order": 48,
+  "rotations": 24,
+  "contains_inversion": true
+ },
+ "credit": "DICTO",
+ "creator_mark": "Created by DICTO · dictospheres.com",
+ "licence": "CC BY-SA 4.0",
+ "checks": {
+  "closed_2_manifold": true,
+  "outward_ccw_winding": true,
+  "faces_planar_exact": true,
+  "euler_characteristic": 2,
+  "volume_positive_exact": true,
+  "convex": true,
+  "symmetry_order_exact": 48,
+  "verified_by": "check.py (python3 + sympy), re-run from this file alone",
+  "unit_volume": "decimal unit-volume copy has volume 1 (1e-12) and is the solid scaled by s (check.py)"
+ }
+}

@@ -1,0 +1,117 @@
+{
+ "name": "DICTO keyed bond: Lotus Jewel Axes and Dodecaxes",
+ "finding": "",
+ "paper": "#48 The Golden Split",
+ "dicto_doi": "10.5281/zenodo.23596362",
+ "status": "published fill (#48 Theorem 3)",
+ "kind": "fill by non-convex (keyed) pieces, proved by decomposition",
+ "proof": "decomposition",
+ "base_packing": "dicto-golden-bond",
+ "keying": "every Tricap on the dodecahedron side: each Icosaxes carries 8 dents, each Unborn Axes 8 keys",
+ "note": "#48 Theorem 3: in the Lotus Jewel network the golden split gives the Lotus Jewel Axes (the Icosaxes minus its 8 Tricaps) and the Dodecaxes (the Unborn Axes plus its 8 Tricaps); every way of giving each Tricap to one side or the other fills space. This file fixes one keying, every Tricap on the dodecahedron side (the Lotus Jewel network itself). Same lattice and placements as dicto-golden-bond. Proof checked by check.py: the golden bond tiles (convex pieces, exact), and every dent of a Lotus Jewel Axes is exactly one key of a Dodecaxes moved by a lattice vector, so the Tricaps only change owner.",
+ "checks": {
+  "base_fill_tiles": true,
+  "dents_equal_keys_mod_lattice": true,
+  "volume_sum_equals_cell_volume": true,
+  "verified_by": "check.py"
+ },
+ "field": "Q(sqrt(5))",
+ "lattice_vectors": [
+  {
+   "exact": [
+    "1/2 + (1/2)*sqrt(5)",
+    "0",
+    "0"
+   ],
+   "decimal": [
+    "1.618033988749895",
+    "0.000000000000000",
+    "0.000000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "0",
+    "1/2 + (1/2)*sqrt(5)",
+    "0"
+   ],
+   "decimal": [
+    "0.000000000000000",
+    "1.618033988749895",
+    "0.000000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "0",
+    "0",
+    "1/2 + (1/2)*sqrt(5)"
+   ],
+   "decimal": [
+    "0.000000000000000",
+    "0.000000000000000",
+    "1.618033988749895"
+   ]
+  }
+ ],
+ "cell_volume": {
+  "exact": "2 + sqrt(5)",
+  "decimal": "4.236067977499790"
+ },
+ "pieces": [
+  {
+   "solid": "dicto-lotus-jewel-axes",
+   "rotation": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "translation": [
+    "0",
+    "0",
+    "0"
+   ]
+  },
+  {
+   "solid": "dicto-dodecaxes",
+   "rotation": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "translation": [
+    "1/4 + (1/4)*sqrt(5)",
+    "1/4 + (1/4)*sqrt(5)",
+    "1/4 + (1/4)*sqrt(5)"
+   ]
+  }
+ ],
+ "credit": "DICTO",
+ "creator_mark": "Created by DICTO · dictospheres.com",
+ "licence": "CC BY-SA 4.0",
+ "version_added": 2
+}

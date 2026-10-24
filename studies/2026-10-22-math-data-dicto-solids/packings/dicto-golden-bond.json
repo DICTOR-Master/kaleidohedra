@@ -1,0 +1,112 @@
+{
+ "name": "DICTO golden bond: Icosaxes and Unborn Axes",
+ "finding": "",
+ "paper": "#48 The Golden Split",
+ "dicto_doi": "10.5281/zenodo.23596362",
+ "status": "published fill (#48 Main theorem (f))",
+ "note": "#48: Icosaxes at the points of phi Z^3 and Unborn Axes at the cube centres (phi/2)(1, 1, 1) + phi Z^3 fill space face to face (Icosaxes meet Icosaxes on squares, Unborn Axes meet Unborn Axes on squares, the two meet on the hexagons). One of each per cell.",
+ "field": "Q(sqrt(5))",
+ "lattice_vectors": [
+  {
+   "exact": [
+    "1/2 + (1/2)*sqrt(5)",
+    "0",
+    "0"
+   ],
+   "decimal": [
+    "1.618033988749895",
+    "0.000000000000000",
+    "0.000000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "0",
+    "1/2 + (1/2)*sqrt(5)",
+    "0"
+   ],
+   "decimal": [
+    "0.000000000000000",
+    "1.618033988749895",
+    "0.000000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "0",
+    "0",
+    "1/2 + (1/2)*sqrt(5)"
+   ],
+   "decimal": [
+    "0.000000000000000",
+    "0.000000000000000",
+    "1.618033988749895"
+   ]
+  }
+ ],
+ "cell_volume": {
+  "exact": "2 + sqrt(5)",
+  "decimal": "4.236067977499790"
+ },
+ "pieces": [
+  {
+   "solid": "dicto-icosaxes",
+   "rotation": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "translation": [
+    "0",
+    "0",
+    "0"
+   ]
+  },
+  {
+   "solid": "dicto-unborn-axes",
+   "rotation": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "translation": [
+    "1/4 + (1/4)*sqrt(5)",
+    "1/4 + (1/4)*sqrt(5)",
+    "1/4 + (1/4)*sqrt(5)"
+   ]
+  }
+ ],
+ "credit": "DICTO",
+ "creator_mark": "Created by DICTO · dictospheres.com",
+ "licence": "CC BY-SA 4.0",
+ "version_added": 2,
+ "checks": {
+  "volume_sum_equals_cell_volume": true,
+  "no_overlaps_exact": true,
+  "verified_by": "check.py"
+ }
+}

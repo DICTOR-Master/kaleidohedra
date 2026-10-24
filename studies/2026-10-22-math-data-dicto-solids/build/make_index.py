@@ -15,7 +15,8 @@ P = {'8': '10.5281/zenodo.23284106', '13': '10.5281/zenodo.23284281', '14': '10.
      '35a': '10.5281/zenodo.23430864', '35b': '10.5281/zenodo.23430866', '36': '10.5281/zenodo.23451210', '37': '10.5281/zenodo.23457016',
      '37a': '10.5281/zenodo.23484012', '38': '10.5281/zenodo.23463305', '38a': '10.5281/zenodo.23464021', '39': '10.5281/zenodo.23488944',
      '41': '10.5281/zenodo.23496353', '42': '10.5281/zenodo.23497702', '43': '10.5281/zenodo.23532013', '44': '10.5281/zenodo.23529497',
-     '45': '10.5281/zenodo.23529499', '47': '10.5281/zenodo.23551326'}
+     '45': '10.5281/zenodo.23529499', '47': '10.5281/zenodo.23551326',
+     '48': '10.5281/zenodo.23596362', '51': '10.5281/zenodo.23606828'}
 NEW, RED, KN = 'new', 'rediscovered', 'known'
 # name, kind, finding, paper (#), status, prior-art / note, dataset slug, Polyhedraverse id
 R = [
@@ -135,16 +136,34 @@ R = [
  ('Tetrahedron face pyramid Q and Q\' (#44, #47 connectors)', 'piece', '', '47', KN, 'central face pyramid of the tetrahedron', '', ''),
  ('X (cube of edge phi minus one Euclid roof) (#47)', 'piece', '', '47', NEW, 'named connector of #47', '', ''),
  ('Y (cube of edge phi plus one Euclid roof) (#47)', 'piece', '', '47', NEW, 'named connector of #47', '', ''),
+ # version 2 (2026-10-24): the six DICTONIC SOLIDS of #48 and #51 (DICTO's names; the three DICTONIC BONDS are in packings/)
+ ('Icosaxes', 'solid', '', '48', KN, 'known shape: Koca et al. 2015 non-regular truncated octahedron x = tau (semi-uniform truncated octahedron); new route (the golden split of the AXE in the icosahedron lattice, #48); the name is DICTO\'s', 'dicto-icosaxes', ''),
+ ('Unborn Axes', 'solid', '', '48', KN, 'known shape: Koca et al. 2015 non-regular truncated octahedron x = 1/tau; new route (#48); the name is DICTO\'s', 'dicto-unborn-axes', ''),
+ ('Lotus Jewel Axes', 'solid', '', '48', NEW, 'not found; the Icosaxes with 8 Tricap dents (#48 Theorem 3)', 'dicto-lotus-jewel-axes', ''),
+ ('Dodecaxes', 'solid', '', '48', NEW, 'not found; the Unborn Axes with 8 Tricap keys, holding a whole regular dodecahedron (#48 Theorem 3)', 'dicto-dodecaxes', ''),
+ ('Samson', 'solid', '', '51', NEW, 'new proportion: the cube with four alternate corners cut, at the Delian bond; not found in the sources (#51)', 'dicto-samson', ''),
+ ('Delilah', 'solid', '', '51', KN, 'known shape (regular octahedron), of edge 2^(-1/3) at octet edge 1; DICTO\'s name for it at the Delian bond (#51)', 'dicto-delilah', ''),
 ]
+# universal_number (version 2, DICTO 2026-10-23): established catalogue numbers of earlier creators first (Johnson J, uniform U,
+# Wenninger W, Hart's stellation lists, Mosseri-Sadoc tiles); DICTO T-numbers only where none exists and none is invented here
+# (proposals for DICTO in proposed-t-numbers.md). Empty = no number. Only numbers we are sure of.
+UNUM = {
+ 'Dogstar': 'Hart 1996, tetrahedral stellations of the dodecahedron, no. 8',
+ 'AXE': 'Mosseri-Sadoc t6 (scaled by 1/tau)',
+ 'CLEO': 'Mosseri-Sadoc t4 (scaled by 1/tau)',
+ 'Half octahedron P (#47 connector)': 'J1',
+ 'Delilah': 'U5; W2',
+}
 rows = []
 for name, kind, fnum, paper, status, note, slug, pv in R:
     doi = P[paper] if paper else K
-    rows.append({'name': name, 'kind': kind, 'finding': fnum, 'paper': ('#' + paper) if paper else '', 'status': status, 'prior_art_or_note': note,
+    rows.append({'name': name, 'universal_number': UNUM.get(name, ''), 'kind': kind, 'finding': fnum, 'paper': ('#' + paper) if paper else '', 'status': status, 'prior_art_or_note': note,
                  'dicto_doi': 'DICTO DOI: ' + doi, 'in_dataset': 'y' if slug else 'n', 'dataset_file': f'solids/{slug}.json' if slug else '',
                  'in_polyhedraverse': 'y' if pv else 'n', 'polyhedraverse_id': pv})
+    assert set(UNUM) <= {r[0] for r in R}
     if slug: assert os.path.exists(os.path.join(ROOT, 'solids', slug + '.json')), slug
 with open(os.path.join(ROOT, 'index.csv'), 'w', newline='') as fh:
-    fh.write('# DICTO named-shape inventory · Created by DICTO · dictospheres.com · CC BY-SA 4.0 · 2026-10-22\n')
+    fh.write('# DICTO named-shape inventory · Created by DICTO · dictospheres.com · CC BY-SA 4.0 · 2026-10-22 (version 2: 2026-10-24)\n')
     w = csv.DictWriter(fh, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
 from collections import Counter
 print(len(rows), Counter(r['status'] for r in rows), Counter((r['kind'], r['status']) for r in rows), sum(r['in_dataset'] == 'y' for r in rows))

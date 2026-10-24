@@ -167,6 +167,7 @@ def dec15(m):
     return format(q, 'f') if q != 0 else format(Decimal(0).quantize(Decimal(1).scaleb(-15)), 'f')
 for p in sorted(glob.glob(os.path.join(SOL, '*.json'))):
     slug = os.path.basename(p)[:-5]; doc = json.load(open(p))
+    if doc['field'] != 'Q(sqrt(5))' or doc.get('version_added') == 2: continue   # version 2 solids get theirs in build_v2.py
     V = [tuple(parse(x) for x in v['exact']) for v in doc['vertices']]; vol = parse(doc['volume']['exact'])
     c = tuple(sum((v[k] for v in V), zero()) / len(V) for k in range(3))
     s = mpmath.power(mpq(vol), mpmath.mpf(-1) / 3)
