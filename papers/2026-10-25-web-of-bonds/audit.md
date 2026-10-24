@@ -132,3 +132,21 @@ Sources as above, plus **RF** = review-fable.md (referee report on v2) and **SC*
 | 98 | Version line "Draft, version 3"; footer v3 | meta | build | PASS |
 
 **v3 result: 16 / 16 changed rows PASS; rows 1–82 unchanged.**
+
+---
+
+# Final audit (2026-10-25): version 1 against the final PDF (web-of-bonds.pdf, pdftotext)
+
+Build: `sh build.sh a1c9fe4 10.5281/zenodo.23629252 web-of-bonds.pdf 1` (concept DOI printed, as #51; record 10.5281/zenodo.23629253 reserved, not published). 15 pages.
+Method: every number (integer or decimal) in column 2 of rows 1–98 extracted by script and searched in the whitespace-normalised pdftotext of web-of-bonds.pdf (408 number tokens); then a line diff of pdftotext(web-of-bonds-draft-v3.pdf) against pdftotext(web-of-bonds.pdf).
+
+| # | Check | Result |
+|---|---|---|
+| F1 | 91 / 98 rows: every number found in the final PDF | PASS |
+| F2 | Rows 29 (0.1266, 0.4709: Fig. 1 axis positions, "not printed in text"), 30 (432: superseded by 456 = 371 + 61 + 24, row 80, found), 48, 49, 52, 53 (removed in v2, listed under "Removed in v2"), 82 (commit 9138f80, superseded by F4): not in the PDF, as expected | PASS |
+| F3 | Diff v3 → v1: only the version line ("Version 1"), the DOI (header and all 15 footers "DICTO DOI: 10.5281/zenodo.23629252 · v1"), the commit (a1c9fe4, header link and [S1]–[S3]), the folder name web-of-bonds, "also attached to this record", and "review of an earlier version (v2)" (was "Draft v2"); no number, table or theorem changed | PASS |
+| F4 | Study commit a1c9fe4: contains 9138f80; studies changed since only by the folder rename bond-relay → web-of-bonds and path/name text in README, compounds.py, run.sh (no number) | PASS |
+| F5 | No "Draft" in the PDF (only "drafting with Claude" in the credit line, as #51); no "reserved"; footer v1 on every page | PASS |
+| F6 | Row 98 replaced: version line "Version 1", footer v1 | PASS |
+
+**Final result: PASS — all audited numbers that are meant to be in the paper appear in the final PDF and match; v1 text = v3 text apart from the release fields.**
