@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Quanta of Space (sample)</title>
+<link rel="stylesheet" href="../paper.css">
+<style>
+body { font-size: 11pt; line-height: 1.55; }
+.page { break-after: page; }
+.titlepage { text-align: center; padding-top: 38mm; }
+.titlepage img.big { width: 62mm; margin: 0 auto 12mm; display: block; }
+.titlepage h1 { font-size: 34pt; margin: 0 0 6pt; letter-spacing: .5pt; }
+.titlepage .sub { font-size: 13pt; margin: 0 0 22mm; }
+.titlepage .by { font: 600 15pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 0 0 4pt; }
+.titlepage .small { font: 9pt/1.6 "DejaVu Sans", sans-serif; color: #444; margin: 0 auto; max-width: 140mm; }
+.titlepage .sample { margin: 18mm auto 0; max-width: 130mm; font: 9.5pt/1.5 "DejaVu Sans", sans-serif; color: #333; border-top: 1px solid #b8962e; border-bottom: 1px solid #b8962e; padding: 6pt 0; }
+.contents h2 { margin-top: 10pt; }
+.contents ol { list-style: none; padding: 0; margin: 0 0 4pt; columns: 2; column-gap: 8mm; font: 8.8pt/1.45 "DejaVu Sans", sans-serif; }
+.contents li { break-inside: avoid; margin: 0 0 1.5pt; padding-left: 9mm; text-indent: -9mm; }
+.contents li b { display: inline-block; width: 9mm; text-indent: 0; color: #6b5310; }
+.contents li.here { font-weight: 600; }
+.contents p.chap { margin: 0 0 2pt; font-style: italic; font-size: 9.5pt; }
+.contents .note { font: 8.6pt "DejaVu Sans", sans-serif; color: #444; margin-top: 6pt; }
+.intro h3, .entry h3 { font: 600 11pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 11pt 0 3pt; break-after: avoid; }
+.chapter-mark { font: 600 9pt "DejaVu Sans", sans-serif; letter-spacing: 1.5pt; text-transform: uppercase; color: #b8962e; margin: 0 0 2pt; }
+.entry h1 { font-size: 20pt; }
+.entry .logo, .intro .logo { width: 22mm; }
+.lead { font-size: 12pt; line-height: 1.5; color: #222; }
+.dataref { font: 8.8pt "DejaVu Sans", sans-serif; color: #6b5310; }
+.credit { font: 8.8pt/1.5 "DejaVu Sans", sans-serif; color: #333; border-top: 1px solid #b8962e; padding-top: 4pt; margin-top: 10pt; }
+.doi { font: 600 9.5pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 6pt 0 0; }
+.figs.wide { grid-template-columns: 1fr; width: 100%; }
+.appendix { font-size: 9.6pt; line-height: 1.45; }
+.appendix h2 { break-before: page; }
+.appendix h2.first { break-before: auto; }
+.appendix h3 { font: 600 10pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 9pt 0 2pt; break-after: avoid; }
+.appendix ul { padding-left: 5mm; margin: 2pt 0; }
+.appendix li { margin: 0 0 2pt; }
+.appendix table { font-size: 8.6pt; }
+td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.licence { font: 8.4pt "DejaVu Sans", sans-serif; color: #555; }
+</style></head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+
+<!-- ============ TITLE PAGE ============ -->
+<section class="page titlepage">
+<img class="big" src="../dicto-logo.png" alt="DICTO">
+<h1>Quanta of Space</h1>
+<p class="sub">The geometric works of DICTO, in plain words</p>
+<p class="by">DICTO</p>
+<p class="small">artist, Osaka, Japan · contact@dictospheres.com · https://dictospheres.com<br>
+All works, findings and names are DICTO's. Computation, checking and drafting with Claude (Anthropic).<br>
+Licence CC BY-SA 4.0</p>
+<p class="sample"><b>Sample for DICTO's approval of style</b> · 25 October 2026 · working title.<br>
+This sample holds the contents, the introduction, two entries (#31 and #51) and their two appendix sections. Each entry tells the work in plain words; every number, exact value and check is in the appendix at the back.</p>
+</section>
+
+<!-- ============ CONTENTS ============ -->
+<section class="page contents">
+<img class="logo" src="../dicto-logo.png" alt="DICTO" style="width:22mm">
+<h1>Contents</h1>
+<p style="font: 9.5pt 'DejaVu Sans', sans-serif;">Introduction: Quanta of Space<br>Four chapters, one entry per published work (numbers are the paper numbers on dictospheres.com)<br>Appendix: the data, work by work</p>
+
+<h2>Atoms</h2><p class="chap">Single solids, each an exact new piece.</p>
+<ol>
+<li><b>#18</b>The DICTO Hexa</li>
+<li><b>#19</b>AXE, CLEO and FUJI</li>
+<li><b>#20</b>The FUJI Family</li>
+<li><b>#28</b>The DICTO Truncated-Icosahedral Hecatodihedron</li>
+<li class="here"><b>#31</b>The DICTO Ogdoecontahedron (in this sample)</li>
+<li><b>#31a</b>The DICTO OCD Stella</li>
+<li><b>#34a</b>The DICTO Hecatogdoecontahedron</li>
+<li><b>#35a</b>The DICTO Metaxyhexecontahedron</li>
+<li><b>#35b</b>The DICTO Palintriacontahedron</li>
+<li><b>#41</b>The DICTO Jewel</li>
+<li><b>#45</b>The Reuleaux Platonic Solids</li>
+<li><b>#49</b>The Polyhedral Stretching Theorem</li>
+</ol>
+
+<h2>Bonds</h2><p class="chap">How pieces fill space together: exact kits, packings and lattices.</p>
+<ol>
+<li><b>#8</b>The Euclid–Kepler–Pacioli Cell</li>
+<li><b>#13</b>The DICTO Dodeca-13</li>
+<li><b>#14</b>The DICTO-Star</li>
+<li><b>#17</b>Kagome Hulls</li>
+<li><b>#25</b>DICTO Spheroid-13 RD</li>
+<li><b>#26</b>DICTO ATOM-13×13</li>
+<li><b>#30</b>A Fibonacci Spine</li>
+<li><b>#36</b>Golden Bodhi Pyrochlore</li>
+<li><b>#37</b>The DICTO Ogdoecontahedron on the Octet Truss</li>
+<li><b>#37a</b>The DICTO Ogdoecontahedron on the Gyrated Octet</li>
+<li><b>#40</b>The DICTO OG Family on Every Stacking</li>
+<li><b>#42</b>The DICTO Sunstar</li>
+<li><b>#44</b>Aristotle's Pyramid</li>
+<li><b>#47</b>Every Mix of the Platonic Solids Fills Space</li>
+<li><b>#48</b>The Golden Split: Icosahedra, Unborns and AXE Become Two Convex Space-Fillers</li>
+<li class="here"><b>#51</b>The Delian Bond: Samson, Delilah and the Octet Between Kepler's Rhombic Dodecahedron and the Cube (in this sample)</li>
+<li><b>#50</b>One Move Each: Classical Cut-and-Glue Space-Fillers Built Exactly</li>
+</ol>
+
+<h2>Shells</h2><p class="chap">Pieces closing into nested shells round a core, each layer filled exactly.</p>
+<ol>
+<li><b>#22</b>The Chain of Karma</li>
+<li><b>#23</b>Spheres of Dharma</li>
+<li><b>#24</b>The Bodhi Seed</li>
+<li><b>#27</b>Capturing the In-betweens</li>
+<li><b>#29</b>Theaetetus</li>
+<li><b>#34</b>Progenitors</li>
+<li><b>#35</b>Vajrayana</li>
+</ol>
+
+<h2>Cycles</h2><p class="chap">Rules that turn one shell into the next and return, with or without end.</p>
+<ol>
+<li><b>#32</b>Inverted Shells: The Spheres of Dharma Turned Inside Out</li>
+<li><b>#33</b>Double Vision – Both Cycles in One Space</li>
+<li><b>#38</b>Universal PiTet: The DICTO PiTet Proposition</li>
+<li><b>#38a</b>The DICTO Kepler–Poinsot–UP Cycle</li>
+<li><b>#39</b>The DICTO OG Family: Four Steps Up and Four Down</li>
+<li><b>#43</b>DICTO Kyushindo Cores</li>
+</ol>
+
+<h2>Findings and apps</h2>
+<ol>
+<li><b>—</b>Kaleidohedra by DICTO</li>
+<li><b>—</b>DICTO Solids: Exact Geometry (data set)</li>
+</ol>
+<p class="note">Order and chapters as in DICTO: Collected Geometric Works, Version 24 (DICTO DOI: 10.5281/zenodo.23345699).</p>
+</section>
+
+<!-- ============ INTRODUCTION ============ -->
+<section class="page intro">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<p class="chapter-mark">Introduction</p>
+<h1>Quanta of Space</h1>
+<p class="lead">Is space smooth all the way down, like water? Or is it built from pieces, the way a wall is built from stones? People have asked this for two and a half thousand years. This book takes the question literally. It looks for exact sets of solid pieces that fit together with no gaps, into shells, into cycles and into the whole of space.</p>
+<p>What follows is a family tree of an idea, not a claim about physics. The pieces in this book are shapes you could build and hold. They share a question with the old thinkers and with modern science: what are the smallest pieces of space, and how do they join?</p>
+
+<h3>Atoms and the empty space between them</h3>
+<p>In ancient Greece, Leucippus and Democritus taught that the world is made of tiny pieces that cannot be cut, the atoms, moving through empty space. The atoms differ only in their shape, their arrangement and their position. The Roman poet Lucretius put the teaching into verse: “nothing exists per se except atoms and the void”. So the atoms were pieces. But no one said what shapes they had.</p>
+
+<h3>Plato's kit of pieces</h3>
+<p>Plato gave them shapes. In his dialogue the <i>Timaeus</i>, the four elements are four regular solids. Fire is the tetrahedron, air the octahedron, water the icosahedron and earth the cube. All their faces are built from just two kinds of right-angled triangle. The fifth regular solid, the dodecahedron, was used “for the whole”. This was the first kit for building matter: a small set of exact pieces from which everything is put together.</p>
+
+<h3>Aristotle's mistake</h3>
+<p>Aristotle replied that if atoms are solid, they must fill space with no gaps. He claimed that only two solids do this: the pyramid and the cube. He was right about the cube. He was wrong about the regular tetrahedron, which does not fill space, and his error stood for centuries. Our paper #44, <i>Aristotle's Pyramid</i>, asks what he could have meant, and proves which pyramids cut from the regular solids can fill space.</p>
+
+<h3>Kepler's packings</h3>
+<p>In 1596 Johannes Kepler nested the five regular solids between the spheres of the planets. In 1611, in a small book on the six-cornered snowflake, he explained the snowflake by how equal small units pack together. That became the famous question of how tightly equal balls can be stacked. Our paper #8, <i>The Euclid–Kepler–Pacioli Cell</i>, finds all five regular solids nested on 13 points of one repeating cell.</p>
+
+<h3>The quanta of modern science</h3>
+<p>In 1900 Max Planck found that energy comes in small fixed amounts, quanta. In one modern theory of gravity, called loop quantum gravity, space itself does too. In 1995 Carlo Rovelli and Lee Smolin showed that in this theory area and volume come in separate steps, not smoothly. In 2011 Eugenio Bianchi, Pietro Doná and Simone Speziale showed that each small amount of volume can be read as a little solid with flat faces, fixed by the sizes and directions of its faces. Space becomes a network of such solids, joined face to face.</p>
+<p>There is an honest difference. In that theory two neighbouring pieces share a face of the same area, but in general not of the same shape (Freidel and Speziale, 2010). Their pieces need not fit. Our pieces always fit exactly, corner to corner. Other approaches, such as causal sets, build space and time from points rather than from solids.</p>
+<p>So this book makes no claim about physics. It shares the question and the form: what are the smallest exact pieces from which space can be built, and how do they join?</p>
+
+<h3>Four chapters</h3>
+<p>Read this way, the works fall into four chapters.</p>
+<p><b>Atoms</b> are single solids, each an exact new piece: the DICTO Ogdoecontahedron (OG), the Hecatodihedron, the Jewel, the Hexa, AXE, CLEO and FUJI, the Reuleaux Platonic solids, and the six DICTONIC SOLIDS (Icosaxes, Unborn Axes, Lotus Jewel Axes, Dodecaxes, Samson and Delilah). Their exact shapes are gathered in the data set <i>DICTO Solids: Exact Geometry</i>, where every DICTO solid has a permanent D-number.</p>
+<p><b>Bonds</b> are about how pieces fill space together: exact kits, packings and lattices, from the Euclid–Kepler–Pacioli Cell to the OG on every stacking. The clearest cases are the three DICTONIC BONDS (golden, keyed and Delian): pairs of solids that fill space together. A DICTONIC BOND is one such pair; the chapter Bonds holds every way pieces join.</p>
+<p><b>Shells</b> are pieces closing into nested layers round a core, like the skins of an onion, each layer filled exactly: the Chain of Karma, the Spheres of Dharma, the Bodhi Seed and Theaetetus.</p>
+<p><b>Cycles</b> are rules that turn one shell into the next and come back round, with or without end: Universal PiTet, the OG family steps, Kyushindo Cores and the shells turned inside out.</p>
+
+<h3>Between the repeating and the never-repeating</h3>
+<p>Some patterns repeat, like the tiles of a bathroom floor. Others never repeat, yet are perfectly ordered, like the Penrose tiling. The works in this book use the same pieces to build both.</p>
+<p>For most of history, order in matter meant repetition. A crystal was one small cell copied without end, and five-fold symmetry was thought impossible in it. Then in 1982 Dan Shechtman found a metal alloy whose scattering pattern showed sharp five-fold symmetry. These quasicrystals, ordered but never repeating, earned him the Nobel Prize in 2011. Matter has two kinds of order, and the question became how they meet.</p>
+<p>The pieces in this book sit on that border. One exact kit builds the repeating octet and also a crystal that never repeats, in the Fibonacci pattern (#40, <i>The DICTO OG Family on Every Stacking</i>). In <i>A Fibonacci Spine</i> (#30), five repeating packings of the OG meet round a five-fold axis. The copies that have to be taken out along that axis make exactly the Fibonacci chain, the simplest order that never repeats. The golden shells of the Spheres of Dharma (#23) repeat only by growing larger by the same golden factor at each turn. One kit, two kinds of order: the pieces themselves are the bridge.</p>
+
+<h3>What the pieces show</h3>
+<p>Three things come back again and again. A small kit is enough: a handful of exact shapes builds shells and spaces without limit. The golden ratio appears wherever five-fold symmetry does, and it decides when shells close. And the pieces join the two kinds of order in matter, the repeating and the never-repeating.</p>
+<p>The ancients guessed that space was made of shaped pieces, and modern physics has come back to the idea. These works build such pieces exactly and test them, and each paper behind this book ends in a proof.</p>
+<p class="credit">Sources for the introduction: Plato, <i>Timaeus</i> (tr. B. Jowett); Lucretius, <i>On the Nature of Things</i> (tr. W. E. Leonard); Aristotle, <i>On the Heavens</i> III.8 (tr. J. L. Stocks); J. Kepler, <i>Mysterium Cosmographicum</i> (1596) and <i>Strena seu de nive sexangula</i> (1611); D. Shechtman, I. Blech, D. Gratias, J. W. Cahn, Phys. Rev. Lett. 53 (1984) 1951; C. Rovelli, L. Smolin, Nucl. Phys. B 442 (1995) 593; L. Freidel, S. Speziale, Phys. Rev. D 82 (2010) 084040; E. Bianchi, P. Doná, S. Speziale, Phys. Rev. D 83 (2011) 044035; S. Surya, Living Rev. Relativ. 22 (2019) 5. Rewritten in plain words from the essay <i>Quanta of Space</i> in DICTO: Collected Geometric Works (DICTO DOI: 10.5281/zenodo.23345699). Licence CC BY-SA 4.0.</p>
+</section>
+
+<!-- ============ #31 ============ -->
+<section class="page entry">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<p class="chapter-mark">Chapter 1 · Atoms · #31</p>
+<h1>The DICTO Ogdoecontahedron</h1>
+<p class="sub">A solid of eighty faces, found by turning a set of nested shells inside out</p>
+
+<h3>If you held it</h3>
+<p class="lead">You would hold a nearly round solid with 80 flat faces: 20 regular hexagons and 60 kites. Everywhere you look, kites crowd round the hexagons. At 12 points, five kites meet in a point that stands just a little proud of the rest.</p>
+<p>Roll it in your hand and it looks the same from many sides. It has the full symmetry of the icosahedron, the twenty-sided regular solid. Its 102 corners almost all lie on one sphere: 90 of them sit exactly on it, and only the 12 five-kite points sit just outside. The faces meet along edges of only two lengths, and they fold at only two angles, which are almost the same. Each kite has two long sides, the same length as the hexagon's sides, and two shorter ones. DICTO named it for its eighty faces: <b>Ogdoecontahedron</b>, from the Greek words for “eighty” and “face”. For short it is the OG.</p>
+
+<figure><div class="figs three"><img src="figures/hstar-oblique.jpg" alt=""><img src="figures/hstar-three.jpg" alt=""><img src="figures/hstar-five.jpg" alt=""></div>
+<figcaption><b>Figure 31.</b> The DICTO Ogdoecontahedron, hexagons wisteria, kites cyan: (a) seen at a slant; (b) looking straight at a regular hexagon in the centre; (c) looking straight at one of the 12 outer points where five kites meet. From the paper's Figure 1.</figcaption></figure>
+
+<h3>How it was found</h3>
+<p>It began with an earlier work, the <i>Spheres of Dharma</i> (#23). There, six solids sit inside each other like Russian dolls. The gap between each doll and the next is filled exactly by a few repeated pieces, and the nesting repeats without end. Part-way through one layer, the caps on its hexagons close into a solid of their own, the DICTO Truncated-Icosahedral Hecatodihedron (#28).</p>
+<p>On 13 October 2026 it was DICTO's idea to turn the whole nesting inside out. Simply turning each layer's pieces over does not work: no layer closes into a shell. What does work is an old trick of geometry. Take one sphere round the common centre and use it like a mirror: every flat face becomes a corner, and every corner becomes a flat face. Each solid turns into its partner, and the order of the nesting reverses, so that the inside goes outside.</p>
+<p>We did this to all seven solids: the six of the nesting and the Hecatodihedron between them. Six came out as solids that were already known. One did not. The Hecatodihedron turned into this new solid, the Ogdoecontahedron.</p>
+
+<h3>What we found</h3>
+<p>The OG has a simple description once it is found. Take a known solid, the pentakis dodecahedron. Find its 20 corners where six faces meet, and slice each one off flat. Each slice leaves a regular hexagon, and what remains of the old faces are the kites. Adding a cap on one side of the mirror is cutting a corner on the other: the Hecatodihedron adds a low pyramid to each hexagon of its parent, and the OG cuts a corner instead.</p>
+<p>In the reversed nesting the OG sits snugly between two classical solids. Its hexagons lie in the faces of the icosidodecahedron inside it, and its kites lie in the faces of the pentakis dodecahedron around it.</p>
+<p>It was DICTO's idea, too, to join copies of the OG hexagon to hexagon. Join each copy to four others, through four hexagons that point like the corners of a tetrahedron, and the copies form a diamond network. The joints themselves sit on a pattern of corner-sharing tetrahedra, the pyrochlore lattice. A second network fits into the empty places of the first, touching it only on hexagons. Together the two make one tidy stack: every copy faces the same way and touches eight neighbours, through the eight hexagons that point to the corners of a cube. This stack fills 77.43 per cent of space. That is more than the tightest possible stack of equal balls, like oranges on a market stall, which fills 74.05 per cent. A computer search found a slightly denser regular stacking, but it is not proved to be the densest.</p>
+<p>The OG joins the regular hexagon, at home in repeating patterns, to five-fold symmetry, the symmetry of quasicrystals. We tested whether it is a piece of the standard icosahedral quasicrystal. It is not. But it can be stacked in five such ways, and where the five stacks meet round a five-fold axis, the copies that must be taken out, with the copy in the middle, form exactly the Fibonacci chain near the centre. That is the subject of <i>A Fibonacci Spine</i> (#30).</p>
+
+<h3>What it adds</h3>
+<p>Much of this is old and is credited in the paper: turning solids inside out about a sphere, the pentakis dodecahedron and the cutting of its corners, the diamond and pyrochlore lattices, and the stacking of equal balls. Even the OG's pattern of faces, which face meets which, is known: it can be written in the notation of the Antiprism software. What we did not find, in DICTO's reference library, in McCooey's online catalogue of 553 solids or in web searches, is the solid itself, with these regular hexagons and these kites, or its exact hexagon-joined stacks. So the OG is an unnamed solid derived from a known one. Its name is DICTO's; the solid with these faces, and its stacks, were not found in the sources checked.</p>
+
+<p class="dataref">Data: Appendix A.31 (counts, exact edge lengths, angles, radii and volume; the stacks and their density; the quasicrystal tests; the sources searched).</p>
+<p class="credit">The Hecatodihedron, the idea of turning the Spheres of Dharma inside out, the name Ogdoecontahedron and the idea of joining copies on their hexagons into pyrochlore networks are DICTO's. Computation, exact arithmetic and renders with Claude (Anthropic). From paper #31, Version 4, 20 October 2026. Licence CC BY-SA 4.0.</p>
+<p class="doi">DICTO DOI: 10.5281/zenodo.23404688</p>
+</section>
+
+<!-- ============ #51 ============ -->
+<section class="page entry">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<p class="chapter-mark">Chapter 2 · Bonds · #51</p>
+<h1>The Delian Bond</h1>
+<p class="sub">Samson, Delilah and the octet between Kepler's rhombic dodecahedron and the cube</p>
+
+<h3>If you held them</h3>
+<p class="lead">You would hold two solids of exactly the same volume. Delilah, in blue, is a regular octahedron: eight equal triangles. Samson, in gold, is a cube with four of its corners cut off, every other corner, so deeply that he looks like a tetrahedron with its tips clipped.</p>
+<p>Put them together and they fit: Samson's four triangles are exactly the size of Delilah's faces. Copies of the two fill all of space with no gaps. In each cube of the pattern there are eight Samsons and four Delilahs, and the Samsons form a star round a Delilah hidden at the centre. DICTO named the pair Samson and Delilah, from “Delian”.</p>
+
+<figure><div class="figs wide"><img src="figures/fig1-samson-delilah.png" alt="Samson from two sides, Delilah, and the two face to face"></div>
+<figcaption><b>Figure 51.</b> The Delian bond. From left: Samson (gold) from two sides, a cube with four alternate corners cut so deep that it looks like a clipped tetrahedron; Delilah (blue), a regular octahedron; the two face to face. Equal volume. Each panel at its own scale. From the paper's Figure 1.</figcaption></figure>
+
+<h3>Where it started</h3>
+<p>In paper #48, a single cut at the golden point turned a lattice of icosahedra and its holes into two convex solids that fill space together. On 23 October 2026 it was DICTO's idea to do the same for the three regular solids that build the octet: the tetrahedron, the octahedron and the cube. And, when a whole family of shapes appeared, his idea was to find its special positions first and name them afterwards.</p>
+
+<h3>What we found</h3>
+<p>Regular tetrahedra and octahedra fill space together, two tetrahedra for each octahedron. This classical pattern is the octet. Each of these solids can be seen as a bundle of cones, one from its centre over each face. Where a tetrahedron and an octahedron share a face, their two cones meet and make a double cone, and the double cones fill space too.</p>
+<p>Now cut every double cone with one flat cut, parallel to the shared face, and give each side to its own centre. Slide the cut along, and the tetrahedra grow while the octahedra shrink, or the other way round. It works like a slider. Wherever the cut is, space is still filled with two solids, and both stay convex, with no dents.</p>
+<ul>
+<li>At one end of the slider are Kepler's rhombic dodecahedra alone.</li>
+<li>Before the shared face, the pieces are a small regular tetrahedron and a rhombic dodecahedron with its eight corners where three faces meet cut off.</li>
+<li>A third of the way along is the octet itself.</li>
+<li>Past the shared face, the pieces are a regular octahedron and a cube with four alternate corners cut off.</li>
+<li>At the other end are cubes alone.</li>
+</ul>
+<p>A few positions on the slider stand out. At two of them, one on each side of the octet, every edge in the whole filling has the same length. At another, the tetrahedron pieces and the octahedron pieces each fill exactly half of space. At no position is a hexagon regular.</p>
+<p>And at exactly one position the two pieces have the same volume. That is the Delian bond. There Samson holds exactly twice the volume of the octet's tetrahedron, and Delilah exactly half the volume of the octet's octahedron: she is that octahedron shrunk. To double a volume you must stretch every length by the cube root of two. That is the Delian problem of the ancient Greeks, which cannot be solved with ruler and compass. Here it happens in both directions at once: one piece doubles while the other halves. The position also meets an earlier idea of DICTO's, doubling a solid's volume by the cube root of two.</p>
+
+<h3>The DICTONIC SOLIDS and BONDS</h3>
+<p>Paper #48 and this paper together give six solids that fill space in three pairs. DICTO calls the six the DICTONIC SOLIDS and the three pairs the DICTONIC BONDS: the golden bond (Icosaxes and Unborn Axes), the keyed bond (Lotus Jewel Axes and Dodecaxes) and the Delian bond (Samson and Delilah). Not all six are new as shapes. Delilah is a regular octahedron, and Samson is a cube with four corners cut, at a proportion we did not find in the sources. What is new in each bond is the bond itself: the two solids together, the cut that makes them, and the way they fill space as a pair. The same kind of cut tried on the cube meets only known solids, so the count stays at three bonds.</p>
+
+<h3>What it adds</h3>
+<p>The octet is old, and so are the links between the cube, the octet and the rhombic dodecahedron. Knoll and Morgan relate the three, but as separate steps. A general method, the weighted Voronoi or power diagram, gives families of such fillings, and this slider is one of them. Closest in spirit are the families of tetrahedra and octahedra found by Conway, Jiao and Torquato, and by Gabbrielli, Jiao and Torquato; but there both kinds of piece stay regular, while here one piece stays regular and its partner becomes a cut rhombic dodecahedron or a cut cube. What we did not find, in the sources we checked, is the slider itself, from rhombic dodecahedra through the octet to cubes, its two equal-edged members, its half-and-half member, and the Delian bond. Still open: a single solid for each bond whose copies alone fill space, and printed sets of Samson and Delilah.</p>
+
+<p class="dataref">Data: Appendix A.51 (the slider and its exact volumes; the special positions; the Delian bond; the three DICTONIC BONDS; the cube and polar remarks; the checks and sources).</p>
+<p class="credit">The ideas are DICTO's: to do for the tetrahedron, octahedron and cube what paper #48 did for the icosahedron, to find the special positions first and then name them, and the names Samson, Delilah, the DICTONIC SOLIDS and the DICTONIC BONDS. Computation, exact proofs and drafting with Claude (Anthropic). From paper #51, Version 1, 24 October 2026. Licence CC BY-SA 4.0.</p>
+<p class="doi">DICTO DOI: 10.5281/zenodo.23606828</p>
+</section>
+
+<!-- ============ APPENDIX ============ -->
+<section class="appendix">
+<img class="logo" src="../dicto-logo.png" alt="DICTO" style="width:22mm">
+<p class="chapter-mark">Appendix</p>
+<h1>The data, work by work</h1>
+<p>One section per work, with the exact values, volumes, proof sketches and checks as published in its paper. Exact values are given in the form the paper gives them; decimals (≈) are as printed there. Licence CC BY-SA 4.0.</p>
+
+<h2 class="first">A.31 The DICTO Ogdoecontahedron <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23404688)</span></h2>
+<h3>Scale and exactness</h3>
+<p>Coordinates in the scale of the reversed cycle (polar reciprocation in the unit sphere); all exact in ℚ(√5) unless marked float.</p>
+<h3>The reversed cycle</h3>
+<p>Spheres of Dharma (the Ritsudō cycle): icosahedron ⊂ icosidodecahedron ⊂ dodecahedron ⊂ truncated icosahedron ⊂ rhombic triacontahedron ⊂ icosahedron φ³ larger. With the Hecatodihedron as seventh station, reciprocated exactly in ℚ(√5):</p>
+<p style="text-align:center">dodecahedron ⊂ icosidodecahedron ⊂ Ogdoecontahedron ⊂ pentakis dodecahedron ⊂ icosahedron ⊂ rhombic triacontahedron ⊂ dodecahedron φ³ larger.</p>
+<p>Reciprocating the six solids of the cycle alone gives classical solids only. (The #30 paper calls the OG the second station, counting the inner dodecahedron as station 0.)</p>
+<h3>The solid</h3>
+<ul>
+<li>80 faces, 102 corners, 180 edges (102 − 180 + 80 = 2). 20 regular hexagons (from the Hecatodihedron's 20 Shield apexes) and 60 kites (from the truncated icosahedron's 60 corners). Corners: 12 where five faces meet, 30 where four meet, 60 where three meet.</li>
+<li>Edges: hexagon side squared 2/9 − 2√5/27 (side 0.237881); each kite has two sides of that length, next to the hexagons, and two of squared length 86/3249 + 2√5/361 (side 0.197124). 120 edges of the first length, 60 of the second.</li>
+<li>Angles: hexagons regular (all 120°); kite angles 117.85° (twice), 68.62° and 55.69°.</li>
+<li>Sphere: 90 corners exactly on the sphere of radius 2/3; the other 12 at squared radius (170 + 2√5)/361. (The Hecatodihedron has 90 faces touching one sphere and its 12 pentagons a little inside it.)</li>
+<li>Face distances, no insphere: hexagons at squared distance 2/9 + 2√5/27 (0.6228), kites at (42 + 2√5)/109 (0.6529).</li>
+<li>No midsphere: the 120 hexagon edges touch the sphere of squared radius 7/18 + √5/54 (0.65597); the 60 short kite edges come no nearer than their inner ends, on the sphere of radius 2/3.</li>
+<li>Dihedral angles (float): 156.20° on the 120 kite–hexagon edges, 156.72° on the 60 kite–kite edges.</li>
+<li>Volume (−1000 + 1240√5)/1539. Convex and centrally symmetric (checked exactly); full icosahedral symmetry.</li>
+<li>Relation (Version 2): the canonical pentakis dodecahedron (the truncated icosahedron's polar in its midsphere, at the matching size) with its 20 three-fold corners cut off at the truncated icosahedron's hexagon planes; an unnamed solid derived from a known one (#28, Version 2).</li>
+</ul>
+<h3>In the reversed cycle</h3>
+<ul>
+<li>Its 90 sphere corners lie exactly on the icosidodecahedron's circumsphere (radius 2/3); 30 of them, its two-fold corners, are the icosidodecahedron's own corners.</li>
+<li>Its 20 hexagons lie in the planes of the icosidodecahedron's 20 triangles, each hexagon holding a triangle; its 60 kites lie in the faces of the surrounding pentakis dodecahedron.</li>
+</ul>
+<h3>Face arrangement</h3>
+<p>Combinatorially the pentakis dodecahedron with its 20 six-fold corners cut down to the edge midpoints; in Antiprism notation (Rossiter) the dual of L0 applied to the dodecahedron (first reported in #30, §2). Checked by an exact isomorphism search on the face maps (mirror images allowed), with controls: randomly relabelled corners still match; swapping two corners of one hexagon breaks the match. L0 was built from Antiprism's written definition; the program itself was not run. McCooey's Visual Polyhedra (553 solids, scanned in full) has no solid with its counts or its dual's; nearest catalogued relative the 6-truncated pentakis dodecahedron (20 hexagons, 60 pentagons). The printed catalogues (Wenninger, Holden, Pugh) were ruled out by scope, not read.</p>
+<h3>Packings</h3>
+<ul>
+<li>A copy shifted by t = 2dn/|n|² (n the hexagon's normal, d its distance) puts its opposite hexagon exactly on the shared one, with no rotation (central symmetry).</li>
+<li>Diamond network: joints through a tetrahedral set of four hexagons (pairwise cosine −1/3), |t|² = 8/9 + 8√5/27. Over 60 sites (1,770 pairs) no two copies overlap (exact test: two copies overlap if and only if half their offset lies inside the solid, since K − K = 2K); the only contacts are full-hexagon joints. Joint hexagon centres at the corners of a regular tetrahedron; joints, at the diamond bond midpoints, on the pyrochlore lattice.</li>
+<li>Body-centred cubic lattice packing (two networks): density exactly (9225 − 3915√5)/608 ≈ 77.43%; densest packing of equal spheres 74.05% (Hales 1998).</li>
+<li>Local lattice search (Betke–Henk style, 200 starts, float): density 0.789260, each copy touching 12 neighbours (10 on hexagons, 2 on kites); all 200 starts converged to it; checked as a packing for lattice coefficients up to 4 (float); not proved densest.</li>
+</ul>
+<h3>Quasicrystal tests (canonical icosahedral quasicrystal: primitive six-dimensional lattice, triacontahedral window)</h3>
+<ul>
+<li>Known case first: the triacontahedron spanned by the six unit vectors fits the window, all edges along five-fold axes.</li>
+<li>Lift: corners integer in six dimensions only after scaling by 171; perpendicular images reach radius 116 against a window of 1.9; first fit after nine golden inflations (solid radius about 4,750 tiling edges). Any finite golden point set fits eventually.</li>
+<li>Edges: none of the 180 runs along a symmetry axis (every tiling edge runs along a five-fold axis).</li>
+<li>Shells: the 30 two-fold corners are the icosidodecahedron's, the 30-atom shell of the Tsai and Mackay clusters (Takakura et al. 2007); the other 60 sphere corners lie 16.47° from the nearest five-fold axis (Bergman 60-shell 20.08°, Tsai 60-shell 17.78°).</li>
+<li>Faces: no face corner angle can be made from golden-rhombus angles (63.43°, 116.57°) or Penrose angles (multiples of 36°) with up to six tiles at the corner.</li>
+<li>Not tested: other six-dimensional lattices (face- or body-centred), other windows, decorated tilings. The 20 hexagon directions contain exactly five inscribed cubes, hence five body-centred cubic packings (#30).</li>
+</ul>
+<h3>Sources and scripts</h3>
+<p>Not found in DICTO's reference library, McCooey's catalogue and web searches (16 October 2026; printed catalogues ruled out by scope, not read): the metric Ogdoecontahedron; its exact hexagon-joined packings. Scripts (branch research of github.com/DICTOR-Master/kaleidohedra): studies/2026-10-16-polar-dharma (<code>polar.py</code>, <code>hstar_render.py</code>, <code>render_hstar.html</code>); studies/2026-10-16-flip-test (<code>flip.py</code>); studies/2026-10-16-ocd-pyrochlore (<code>ocd_dl0d.py</code>, <code>ocd_catalogue_scan.py</code>, <code>network.py</code>, <code>densest.py</code>); studies/2026-10-16-ogdoecontahedron-bridge (<code>bridge.py</code>, <code>bridge.txt</code>; commit 3fd407f). References in the paper: Firsching 2015; Betke &amp; Henk 2000; Hales 1998; Rossiter, Antiprism; McCooey, Visual Polyhedra; Takakura et al. 2007.</p>
+
+<h2>A.51 The Delian Bond <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23606828)</span></h2>
+<h3>Setting</h3>
+<p>Octet of edge 1: regular tetrahedra, volume V<sub>T</sub> = √2/12, and regular octahedra, V<sub>O</sub> = √2/3 = 4V<sub>T</sub>, two tetrahedra per octahedron. Each tetrahedron is 4 cones from its centre c<sub>T</sub>, each octahedron 8 cones from its centre c<sub>O</sub> (the face pyramids, which fill space together, #44). For a shared face F the double cone B<sub>F</sub> runs from c<sub>T</sub> through F to c<sub>O</sub>; c<sub>T</sub>c<sub>O</sub> is perpendicular to F and meets it at its centre; F lies one third of the way from c<sub>T</sub> to c<sub>O</sub> (inradii 1/(2√6) and 1/√6).</p>
+<p>Classical facts used: the rhombic dodecahedron is an octahedron with the 8 tetrahedron cones over its faces added (its 8 three-fold corners at neighbouring tetrahedron centres; volume V<sub>O</sub> + 8·V<sub>T</sub>/4 = 6V<sub>T</sub>), and equally a cube with six square pyramids; the cube of edge 1/√2 is a tetrahedron with the 4 octahedron cones over its faces added (other four corners at neighbouring octahedron centres; volume V<sub>T</sub> + 4·V<sub>O</sub>/8 = 3V<sub>T</sub>).</p>
+<h3>Main theorem</h3>
+<p>For 0 ≤ t ≤ 1 cut every B<sub>F</sub> by the plane parallel to F through c<sub>T</sub> + t(c<sub>O</sub> − c<sub>T</sub>); T(t) = the 4 parts next to a tetrahedron centre, O(t) = the 8 parts next to an octahedron centre. They fill space face to face and both are convex.</p>
+<ul>
+<li>(a) 0 &lt; t ≤ 1/3: T(t) regular tetrahedron of edge 3t, volume 27t³·V<sub>T</sub>; O(t) rhombic dodecahedron with its 8 three-fold corners cut by planes parallel to the octahedron's faces (8 triangles and 12 hexagons for t &lt; 1/3), volume (6 − 54t³)·V<sub>T</sub>.</li>
+<li>(b) 1/3 ≤ t &lt; 1, a = 3(1 − t)/2: O(t) regular octahedron of edge a, volume 4a³·V<sub>T</sub>; T(t) cube with its 4 corners at octahedron centres cut (4 triangles and 6 hexagons for t &gt; 1/3), volume (3 − 2a³)·V<sub>T</sub>.</li>
+<li>(c) t = 0: rhombic dodecahedra alone; t = 1/3: the octet; t = 1: cubes alone.</li>
+</ul>
+<p><b>Proof sketch.</b> The double cones fill space and each is divided by one plane, so the pieces fill space. For t ≤ 1/3 the plane is in the tetrahedron's cone at fraction 3t from c<sub>T</sub> to F: the parts next to c<sub>T</sub> make the tetrahedron scaled by 3t; the parts next to c<sub>O</sub> are the rhombic dodecahedron cut by 8 planes (c<sub>T</sub> is its only corner beyond the plane of F), convex as an intersection of convex sets; each plane cuts the three edges at a three-fold corner at fraction 3t. For t ≥ 1/3 the plane is at fraction (3/2)(1 − t) = a from c<sub>O</sub> to F, and the roles exchange (octahedron scaled by a; cube cut by 4 planes). Volumes: (a) 27t³V<sub>T</sub> and 6V<sub>T</sub> − 8·(V<sub>T</sub>/4)·27t³; (b) a³V<sub>O</sub> = 4a³V<sub>T</sub> and 3V<sub>T</sub> − 4·(V<sub>O</sub>/8)·a³. Face to face: each triangle is the cut face of its neighbour of the other kind; hexagons are shared by neighbours of the same kind, cut by the same planes.</p>
+<p><b>Check.</b> Exact, in rational arithmetic, at t = 1/10, 1/5, 1/3, 1/2, 4/5, 9/10 (octet/octet_exact.py → octet-exact.txt).</p>
+<h3>Theorem 2 (special members)</h3>
+<ul>
+<li>(a) t = (2√6 − 3)/15: every edge (tetrahedra and cut rhombic dodecahedra) has length (2√6 − 3)/5. From 3t = (√6/4)(1 − 3t), the rhombic dodecahedron edge being √6/4.</li>
+<li>(b) t = 5/3 − (2/3)√2: every edge (cut cubes and octahedra) has length √2 − 1. From a = (1 − a)/√2, the cube edge being 1/√2.</li>
+<li>(c) t = 1 − ∛6/3: tetrahedron pieces and octahedron pieces each fill exactly half of space. From 2(3 − 2a³) = 4a³, a³ = 3/4 (for t ≤ 1/3 the tetrahedron pieces take at most a third).</li>
+<li>(d) For no t is a hexagon regular: cut-cube hexagons have angles 90°, 135°, 135°, 90°, 135°, 135°; cut-rhombic-dodecahedron hexagons keep acute angles of about 70.5° (144.7° at the cut corners).</li>
+</ul>
+<p><b>Check.</b> (a)–(c) exactly in ℚ(√6), ℚ(√2) and ℚ(∛6), with no floating point in any equality (octet/octet_special_exact.py → octet-special-exact.txt).</p>
+<h3>Theorem 3 (the Delian bond)</h3>
+<p>T(t) and O(t) have equal volume at exactly one position, t<sub>D</sub> = 1 − (2/3)·2<sup>−1/3</sup>. There Samson (the cut cube T(t<sub>D</sub>)) and Delilah (the octahedron O(t<sub>D</sub>)) both have volume √2/6 = 2V<sub>T</sub> = V<sub>O</sub>/2. Delilah is the octet's octahedron shrunk by 2<sup>−1/3</sup>: edge 1/∛2. Samson's edges: 1/∛2 (his triangles, Delilah's faces) and (1 − 2<sup>−1/3</sup>)/√2.</p>
+<p><b>Proof sketch.</b> For t ≤ 1/3, vol T(t) ≤ V<sub>T</sub> and vol O(t) ≥ 4V<sub>T</sub>: never equal. For t ≥ 1/3, (3 − 2a³)V<sub>T</sub> decreases and 4a³V<sub>T</sub> increases with a, so at most one solution: 3 − 2a³ = 4a³, a³ = 1/2, a = 2<sup>−1/3</sup>, t<sub>D</sub> = 1 − 2a/3. <b>Check:</b> exact in ℚ(∛2): equal volumes, Delilah's edges, Samson's two edge lengths.</p>
+<h3>Table: the slider (octet edge 1, V<sub>T</sub> = √2/12)</h3>
+<table><tr><th>Position</th><th>t</th><th>Tetrahedron piece</th><th>Octahedron piece</th></tr>
+<tr><td>rhombic dodecahedra</td><td class="n">0</td><td>—</td><td>rhombic dodecahedron, 6V<sub>T</sub></td></tr>
+<tr><td>equilateral (a)</td><td class="n">(2√6 − 3)/15 ≈ 0.1266</td><td>tetrahedron, edge (2√6 − 3)/5</td><td>cut rhombic dodecahedron, same edge</td></tr>
+<tr><td>the octet</td><td class="n">1/3</td><td>tetrahedron, edge 1, V<sub>T</sub></td><td>octahedron, edge 1, 4V<sub>T</sub></td></tr>
+<tr><td>half and half</td><td class="n">1 − ∛6/3 ≈ 0.3943</td><td>cut cube, 3V<sub>T</sub>/2</td><td>octahedron, a = ∛6/2, 3V<sub>T</sub></td></tr>
+<tr><td><b>Delian bond</b></td><td class="n">1 − (2/3)·2<sup>−1/3</sup> ≈ 0.4709</td><td><b>Samson</b>, 2V<sub>T</sub></td><td><b>Delilah</b>, edge 2<sup>−1/3</sup>, 2V<sub>T</sub></td></tr>
+<tr><td>equilateral (b)</td><td class="n">5/3 − (2/3)√2 ≈ 0.7239</td><td>cut cube, edge √2 − 1</td><td>octahedron, edge √2 − 1</td></tr>
+<tr><td>cubes</td><td class="n">1</td><td>cube, edge 1/√2, 3V<sub>T</sub></td><td>—</td></tr></table>
+<h3>The three DICTONIC BONDS (names by DICTO)</h3>
+<table><tr><th>Bond</th><th>Solids</th><th>From</th><th>Volumes</th></tr>
+<tr><td><b>Golden</b></td><td>Icosaxes + Unborn Axes</td><td>icosahedra, Unborns and AXE, cut at the golden point (#48)</td><td class="n">1 + 2√5/3 and 1 + √5/3</td></tr>
+<tr><td><b>Keyed</b></td><td>Lotus Jewel Axes + Dodecaxes</td><td>the Lotus Jewel network, cut the same way (#48)</td><td class="n">√5 and 2</td></tr>
+<tr><td><b>Delian</b></td><td>Samson + Delilah</td><td>the octet, cut where the volumes are equal (#51)</td><td class="n">√2/6 each</td></tr></table>
+<p>Golden and keyed volumes at icosahedron edge 1, Delian at octet edge 1. The Icosaxes and Unborn Axes are the truncated octahedra of Koca et al. (x = τ and x = 1/τ), reached by a new route; the Lotus Jewel Axes and Dodecaxes are new (#48).</p>
+<h3>Remark: the cube</h3>
+<p>The same weighted cut between a lattice of cubes and the centres of its cubes, with weight w (a power diagram): regular truncated cubes with octahedra at w = 1/4 − 1/√2 (every edge √2 − 1 at cube edge 1); cuboctahedra with octahedra at w = −1/4 (#48's x → 0); Kelvin's truncated octahedra at w = 0 (x = 1); in between, #48's T(x) and T(1/x) with w = (x − 1)/(4(x + 1)). The equal-edged members are the uniform truncated cubic and rectified cubic honeycombs; volumes are equal only for Kelvin's cell. The ratio 2 : 1 occurs at x ≈ 0.3747, a root of 16u³ − 36u² + 18u − 1 = 0, irreducible with three real roots, so with no expression in real radicals. No new bond; checked exactly (changeover/changeover_exact.py → changeover-exact.txt).</p>
+<h3>Remark: the golden bond, polar</h3>
+<p>DICTO's idea: the solids turned inside out (polar reciprocation about their centres). The polar of #48's T(x) (squares at distance (1 + x)s, hexagons at (1 + 2x)s/√3, scale s) is a cube with a low pyramid on each face (14 corners, 24 triangles, the type of the tetrakis hexahedron), pyramid height x/(1 + x) in its own half cube edges: 1/φ for the Icosaxes (x = τ), 1/φ² for the Unborn Axes (x = 1/τ), 1/2 for Kelvin's cell; for each pair x, 1/x the heights add to 1, the height of the pyramids that make a cube into the rhombic dodecahedron. A statement about proportions (the two polars have cubes of different sizes). Polar of Delilah: a cube; of Samson: an octahedron with low pyramids on four alternate faces; the keyed solids are not convex and have no polar solid. The polar solids are not claimed to fill space.</p>
+<h3>Sources and scripts</h3>
+<p>Known: the octet (tetrahedral-octahedral honeycomb); the rhombic dodecahedron as a cube with six pyramids and as an octahedron with eight quarter-tetrahedra; the cube as a tetrahedron with four corners; Knoll and Morgan 2003 (cube packing, octet and rhombic dodecahedron packing related as separate steps); power (Laguerre) diagrams (Aurenhammer 1987), whose power bisectors of the tetrahedron and octahedron centres are the cut planes here; Conway, Jiao and Torquato 2011; Gabbrielli, Jiao and Torquato 2012; Kelvin 1887; the uniform truncated cubic and rectified cubic honeycombs. Checked: DICTO's reference library (nothing on this family; Gabbrielli–Jiao–Torquato 2012 read for this check); Knoll and Morgan 2003 read in full; web searches, 23 October 2026 (cubes with four alternate corners truncated with octahedra; rhombic dodecahedra truncated at their three-fold corners with tetrahedra; power diagrams of the tetrahedral and octahedral holes of the face-centred cubic lattice; tetrahedra and octahedra of equal volume, cube root of 2), which found only the classical octet and its relatives. Not checked: Wolfram PolyhedronData, Stella / Great Stella libraries. Not found in those sources: the family as such, its two equilateral members, the half-and-half member, the Delian bond, and the golden division of the rhombic dodecahedron's pyramid by the polar golden bond. Scripts: study 2026-10-23-shadow-forms, commit 4e98aa8, github.com/DICTOR-Master/kaleidohedra (research branch). Doubling the cube: Heath 1921; ruler and compass impossibility: Wantzel 1837.</p>
+</section>
+</body></html>
