@@ -4,7 +4,7 @@ This study extends the web-of-bonds study (`../2026-10-25-web-of-bonds/`). The n
 
 ## Question
 
-web of bonds proved that both DICTONIC loops are power diagrams of fixed sites:
+The web-of-bonds study proved that both DICTONIC loops are power diagrams of fixed sites:
 - **golden:** w_big − w_small = (φ²/4)(x − 1)/(x + 1) on the bcc sites φZ³ and φZ³ + (φ/2)(1,1,1);
 - **Delian:** w_tet − w_oct = (3/8)(2t − 1) on (Z + ½)³/√2 and the odd integer points /√2.
 
