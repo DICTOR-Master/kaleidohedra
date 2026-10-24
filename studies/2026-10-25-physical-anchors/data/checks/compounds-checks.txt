@@ -1,0 +1,30 @@
+PASS  B0a equal spheres on bcc: cell = Kelvin truncated octahedron (6 squares + 8 hexagons, all edges equal, 24 corners)  edges^2 ["E(Q:['1/2']~0.5)"], vol E(Q:['4']~4)
+PASS  B0b equal spheres on fcc: cell = rhombic dodecahedron (12 rhombi, one area, one edge, 14 corners, volume 2)  area^2 ["E(Q:['1/2']~0.5)"]
+PASS  B1 golden x=1/2 (rho=5/4; small is larger): radical cells (w = r^2) = app T(x) big and T(1/x) small; areas = closed forms; site list enough  rho=1.2500 x=1/2 counts={'big': {'big-small': 8, 'big-big': 6}, 'small': {'small-small': 6, 'big-small': 8}}
+PASS  B1 golden x=1 (rho=1): radical cells (w = r^2) = app T(x) big and T(1/x) small; areas = closed forms; site list enough  rho=1.0000 x=1 counts={'big': {'big-small': 8, 'big-big': 6}, 'small': {'small-small': 6, 'big-small': 8}}
+PASS  B1 golden x=2 (rho=4/5): radical cells (w = r^2) = app T(x) big and T(1/x) small; areas = closed forms; site list enough  rho=0.8000 x=2 counts={'big': {'big-small': 8, 'big-big': 6}, 'small': {'small-small': 6, 'big-small': 8}}
+PASS  B1 golden x=5/2 (rho=3/4): radical cells (w = r^2) = app T(x) big and T(1/x) small; areas = closed forms; site list enough  rho=0.7500 x=5/2 counts={'big': {'big-small': 8, 'big-big': 6}, 'small': {'small-small': 6, 'big-small': 8}}
+PASS  B1 delian t=1/5 (rho=1/4): radical cells (w = r^2) = app tetPiece/octPiece at t; areas = closed forms; site list enough  rho=0.2500 t=0.2000 counts={'oct': {'oct-tet': 8, 'oct-oct': 12}, 'tet': {'oct-tet': 4}}
+PASS  B1 delian t=1/4 (rho=1/3): radical cells (w = r^2) = app tetPiece/octPiece at t; areas = closed forms; site list enough  rho=0.3333 t=0.2500 counts={'oct': {'oct-tet': 8, 'oct-oct': 12}, 'tet': {'oct-tet': 4}}
+PASS  B1 delian t=1/3 (rho=1/2): radical cells (w = r^2) = app tetPiece/octPiece at t; areas = closed forms; site list enough  rho=0.5000 t=0.3333 counts={'oct': {'oct-tet': 8}, 'tet': {'oct-tet': 4}}
+PASS  B1 delian t=1/2 (rho=1): radical cells (w = r^2) = app tetPiece/octPiece at t; areas = closed forms; site list enough  rho=1.0000 t=0.5000 counts={'oct': {'oct-tet': 8}, 'tet': {'tet-tet': 6, 'oct-tet': 4}}
+PASS  B1 delian t=4/7 (rho=4/3): radical cells (w = r^2) = app tetPiece/octPiece at t; areas = closed forms; site list enough  rho=1.3333 t=0.5714 counts={'oct': {'oct-tet': 8}, 'tet': {'tet-tet': 6, 'oct-tet': 4}}
+PASS  B2 CsCl: radical cells (w = r^2) = app T(x) big and T(1/x) small; areas = closed forms; site list enough  rho=0.9613 x=188/167 counts={'big': {'big-small': 8, 'big-big': 6}, 'small': {'small-small': 6, 'big-small': 8}}
+PASS  B2 CsBr: radical cells (w = r^2) = app T(x) big and T(1/x) small; areas = closed forms; site list enough  rho=0.8878 x=109/76 counts={'big': {'big-small': 8, 'big-big': 6}, 'small': {'small-small': 6, 'big-small': 8}}
+PASS  B2 CsI: radical cells (w = r^2) = app T(x) big and T(1/x) small; areas = closed forms; site list enough  rho=0.7909 x=133/64 counts={'big': {'big-small': 8, 'big-big': 6}, 'small': {'small-small': 6, 'big-small': 8}}
+PASS  B2 TlCl: radical cells (w = r^2) = app T(x) big and T(1/x) small; areas = closed forms; site list enough  rho=0.8785 x=203/137 counts={'big': {'big-small': 8, 'big-big': 6}, 'small': {'small-small': 6, 'big-small': 8}}
+PASS  B2 TlBr: radical cells (w = r^2) = app T(x) big and T(1/x) small; areas = closed forms; site list enough  rho=0.8112 x=233/122 counts={'big': {'big-small': 8, 'big-big': 6}, 'small': {'small-small': 6, 'big-small': 8}}
+PASS  B2 CaF2: radical cells (w = r^2) = app tetPiece/octPiece at t; areas = closed forms; site list enough  rho=1.1696 t=0.5391 counts={'oct': {'oct-tet': 8}, 'tet': {'tet-tet': 6, 'oct-tet': 4}}
+PASS  B2 SrF2: radical cells (w = r^2) = app tetPiece/octPiece at t; areas = closed forms; site list enough  rho=1.0397 t=0.5097 counts={'oct': {'oct-tet': 8}, 'tet': {'tet-tet': 6, 'oct-tet': 4}}
+PASS  B2 BaF2: radical cells (w = r^2) = app tetPiece/octPiece at t; areas = closed forms; site list enough  rho=0.9225 t=0.4799 counts={'oct': {'oct-tet': 8}, 'tet': {'tet-tet': 6, 'oct-tet': 4}}
+PASS  B2 CdF2: radical cells (w = r^2) = app tetPiece/octPiece at t; areas = closed forms; site list enough  rho=1.1909 t=0.5436 counts={'oct': {'oct-tet': 8}, 'tet': {'tet-tet': 6, 'oct-tet': 4}}
+PASS  B2 PbF2: radical cells (w = r^2) = app tetPiece/octPiece at t; areas = closed forms; site list enough  rho=1.0155 t=0.5038 counts={'oct': {'oct-tet': 8}, 'tet': {'tet-tet': 6, 'oct-tet': 4}}
+PASS  B2 UO2: radical cells (w = r^2) = app tetPiece/octPiece at t; areas = closed forms; site list enough  rho=1.3800 t=0.5798 counts={'oct': {'oct-tet': 8}, 'tet': {'tet-tet': 6, 'oct-tet': 4}}
+PASS  B2 ThO2: radical cells (w = r^2) = app tetPiece/octPiece at t; areas = closed forms; site list enough  rho=1.3143 t=0.5679 counts={'oct': {'oct-tet': 8}, 'tet': {'tet-tet': 6, 'oct-tet': 4}}
+PASS  B2 CeO2: radical cells (w = r^2) = app tetPiece/octPiece at t; areas = closed forms; site list enough  rho=1.4227 t=0.5872 counts={'oct': {'oct-tet': 8}, 'tet': {'tet-tet': 6, 'oct-tet': 4}}
+PASS  B2 ZrO2 (cubic): radical cells (w = r^2) = app tetPiece/octPiece at t; areas = closed forms; site list enough  rho=1.6429 t=0.6216 counts={'oct': {'oct-tet': 8}, 'tet': {'tet-tet': 6, 'oct-tet': 4}}
+PASS  B2 Li2O: radical cells (w = r^2) = app tetPiece/octPiece at t; areas = closed forms; site list enough  rho=0.4155 t=0.2935 counts={'oct': {'oct-tet': 8, 'oct-oct': 12}, 'tet': {'oct-tet': 4}}
+PASS  B2 Na2O: radical cells (w = r^2) = app tetPiece/octPiece at t; areas = closed forms; site list enough  rho=0.6972 t=0.4108 counts={'oct': {'oct-tet': 8}, 'tet': {'tet-tet': 6, 'oct-tet': 4}}
+PASS  B2 K2O: radical cells (w = r^2) = app tetPiece/octPiece at t; areas = closed forms; site list enough  rho=0.9648 t=0.4910 counts={'oct': {'oct-tet': 8}, 'tet': {'tet-tet': 6, 'oct-tet': 4}}
+PASS  B3 contact-window test = Pauling's CN8 limit r+/r- >= sqrt3 - 1 (CsCl-type and fluorite, every compound)  
+29 PASS, 0 FAIL, 45.0 s

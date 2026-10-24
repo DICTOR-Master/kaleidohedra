@@ -1,0 +1,33 @@
+PASS  A1a radical plane (equal powers) = power bisector with w = r^2 + C, any common C  
+PASS  A1b bisector is the plane 2p.(cj-ci) = |cj|^2-|ci|^2 + w_i - w_j: depends on the weights only through w_i - w_j  [1, 1, 1]
+PASS  A1c touching spheres: radical plane passes through the contact point (x = r_A)  rA
+PASS  A2a golden contact map rho = r_small/r_big = (x + 2)/(2x + 1)  (x + 2)/(2*x + 1)
+PASS  A2b inverse x = (2 - rho)/(2 rho - 1); in s = x/(1+x): rho = (2 - s)/(1 + s)  
+PASS  A2c x -> 1/x sends rho -> 1/rho (big and small swap)  
+PASS  A2d r_big/d = (1+s)/3, r_small/d = (2-s)/3 (fractions of the unlike bond)  
+PASS  A2e like spheres touch (2 r_big = a) exactly at x = sqrt3 + 1, rho = sqrt3 - 1 (Pauling's 0.732)  
+PASS  A2f like spheres touch (2 r_small = a) exactly at x = (sqrt3 - 1)/2, rho = (sqrt3 + 1)/2  
+PASS  A2g d rho/dx = -3/(2x+1)^2 < 0 (rho strictly decreasing, 2 at x=0, 1/2 at x=inf)  
+PASS  A2h contact-model window (unlike touching, like not overlapping) is x in [(sqrt3-1)/2, sqrt3+1]  Interval((-2*sqrt(15) - 2*sqrt(3) + 3 + 3*sqrt(5))/(-3*sqrt(5) - 3 + sqrt(3) + sqrt(15)), (-sqrt(15) - sqrt(3) + 3 + 3*sqrt(5))/(-3*sqrt(5) - 3 + 2*sqrt(3) + 2*sqrt(15)))
+PASS  A3 golden: u-parametrisation (radii increase with u where both >= 0; rho = (u^2-Delta)/(u^2+Delta))  
+PASS  A3g golden: |Delta| <= (a/2)^2 = phi^2/4 for all x in [0, inf] (equality only at x = 0, inf) => every x has a non-overlapping sphere packing (at the ends one kind is a point)  
+PASS  A3h golden x >= sqrt3+1: max rho = sqrt(2/(x+1)) (big-big contact); = contact map at x = sqrt3+1; -> 0 as x -> inf  
+PASS  A3i golden x <= (sqrt3-1)/2: max-contact rho = sqrt((x+1)/(2x)) (small-small contact), by the x <-> 1/x swap  
+PASS  A3j golden x = 1 forces rho = 1 (Delta = 0: equal spheres; any radius <= d/2 gives the Kelvin cell)  
+PASS  A4a Delian: unlike distance^2 d^2 = 3/8 (= |(1/2,1/2,1/2)|^2/2)  
+PASS  A4b Delian contact map rho = r_tet-site/r_oct-site = t/(1 - t); t = rho/(1+rho) = r_tet/d  -t/(t - 1)
+PASS  A4c oct-site spheres touch (2 r_O = 1) exactly at t = 1 - sqrt(2/3); rho = sqrt(3/2) - 1 (Pauling's 0.225)  
+PASS  A4d tet-site spheres touch (2 r_Q = 1/sqrt2) exactly at t = 1/sqrt3; rho = (sqrt3+1)/2 = 1/0.732...  
+PASS  A4e Delian contact window t in [1 - sqrt(2/3), 1/sqrt3] (~[0.1835, 0.5774])  Interval(-sqrt(6)*(4 - sqrt(6))/12 + 1/2, sqrt(6)*(-sqrt(6) + 2*sqrt(2))/12 + 1/2)
+PASS  A3 delian: u-parametrisation (radii increase with u where both >= 0; rho = (u^2-Delta)/(u^2+Delta))  
+PASS  A4f Delian: a non-overlapping packing exists iff t in [1/6, 2/3]: -Delta <= (1/2)^2 <=> t >= 1/6; Delta <= (1/(2 sqrt2))^2 <=> t <= 2/3; |Delta| <= d^2 always  
+PASS  A4g Delian max-contact branches: t in [1/6, 1-sqrt(2/3)]: rho = sqrt((6t-1)/2) (oct-oct contact); t in [1/sqrt3, 2/3]: rho = 1/sqrt(4 - 6t) (tet-tet contact); both meet the contact map at the window ends  
+PASS  A5a golden stops: rho(0) = 2, rho(1) = 1, rho(tau) = sqrt5/phi^2 = (3 sqrt5 - 5)/2, rho(inf) = 1/2  
+PASS  A5b golden: x = tau inside the contact window, x = 0 and inf outside (like spheres would overlap)  
+PASS  A5c Delian stops: rho(0) = 0, rho(1/3) = 1/2, rho(Delian bond) = (3/2) 2^(1/3) - 1, rho(1/2) = 1, rho -> inf at 1  
+PASS  A5d Delian: octet 1/3 and the Delian bond inside the contact window; t = 0, 1 outside and without any packing  
+PASS  A6a golden sites / phi = Z^3 and Z^3 + (1/2)(1,1,1): CsCl (B2) with a = phi (app) ; nearest unlike = sqrt3 a/2, like = a  
+PASS  A6b Delian oct sites = fluorite cation 4a (fcc), tet sites = fluorite anion 8c (all tetrahedral holes), a = sqrt2 (app)  [(0, 0, 0), (0, 1/2, 1/2), (1/2, 0, 1/2), (1/2, 1/2, 0)] | 8 8c
+PASS  A6c fluorite distances in app units: M-X = sqrt3 a/4 = sqrt6/4 = d; M-M = a/sqrt2 = 1 (octet edge); X-X = a/2 = 1/sqrt2  
+PASS  A7 Delian contact model: oct-tet triangle area = (3 sqrt3/2) r_oct^2 for t >= 1/3 and 6 sqrt3 r_tet^2 for t <= 1/3 (r_oct = (1-t)u, r_tet = t u); the two agree at the octet (r_oct = 2 r_tet)  
+32 PASS, 0 FAIL, 2.4 s

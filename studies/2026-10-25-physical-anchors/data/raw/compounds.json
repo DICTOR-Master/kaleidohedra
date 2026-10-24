@@ -1,0 +1,1105 @@
+{
+ "known": {
+  "bcc": {
+   "faces": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "edge2": [
+    "E(Q:['1/2']~0.5)"
+   ],
+   "volume": "E(Q:['4']~4)"
+  },
+  "fcc": {
+   "faces": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "area2": [
+    "E(Q:['1/2']~0.5)"
+   ],
+   "volume": "E(Q:['2']~2)"
+  }
+ },
+ "stops": {
+  "golden x=1/2": {
+   "rho": "5/4",
+   "rho_f": 1.25,
+   "s": "1/3",
+   "x": "1/2",
+   "x_f": 0.5,
+   "vol_big_halfedge3": "E(Q:['244/81']~3.01234567901)",
+   "vol_small_halfedge3": "E(Q:['404/81']~4.98765432099)",
+   "counts": {
+    "big": {
+     "big-small": 8,
+     "big-big": 6
+    },
+    "small": {
+     "small-small": 6,
+     "big-small": 8
+    }
+   },
+   "areas_app": {
+    "big-small": 0.8187414235825183,
+    "big-big": 0.1454463327083275,
+    "small-small": 0.58178533083331
+   },
+   "areas_A2_per_contact": {
+    "big-small": 1.3509996299037246,
+    "big-big": 0.24,
+    "small-small": 0.96
+   }
+  },
+  "golden x=1": {
+   "rho": "1",
+   "rho_f": 1.0,
+   "s": "1/2",
+   "x": "1",
+   "x_f": 1.0,
+   "vol_big_halfedge3": "E(Q:['4']~4)",
+   "vol_small_halfedge3": "E(Q:['4']~4)",
+   "counts": {
+    "big": {
+     "big-small": 8,
+     "big-big": 6
+    },
+    "small": {
+     "small-small": 6,
+     "big-small": 8
+    }
+   },
+   "areas_app": {
+    "big-small": 0.8502314783356921,
+    "big-big": 0.32725424859373686,
+    "small-small": 0.32725424859373686
+   },
+   "areas_A2_per_contact": {
+    "big-small": 1.7320508075688774,
+    "big-big": 0.6666666666666666,
+    "small-small": 0.6666666666666666
+   }
+  },
+  "golden x=2": {
+   "rho": "4/5",
+   "rho_f": 0.8,
+   "s": "2/3",
+   "x": "2",
+   "x_f": 2.0,
+   "vol_big_halfedge3": "E(Q:['404/81']~4.98765432099)",
+   "vol_small_halfedge3": "E(Q:['244/81']~3.01234567901)",
+   "counts": {
+    "big": {
+     "big-small": 8,
+     "big-big": 6
+    },
+    "small": {
+     "small-small": 6,
+     "big-small": 8
+    }
+   },
+   "areas_app": {
+    "big-small": 0.8187414235825183,
+    "big-big": 0.58178533083331,
+    "small-small": 0.1454463327083275
+   },
+   "areas_A2_per_contact": {
+    "big-small": 1.3509996299037246,
+    "big-big": 0.96,
+    "small-small": 0.24
+   }
+  },
+  "golden x=5/2": {
+   "rho": "3/4",
+   "rho_f": 0.75,
+   "s": "5/7",
+   "x": "5/2",
+   "x_f": 2.5,
+   "vol_big_halfedge3": "E(Q:['1804/343']~5.25947521866)",
+   "vol_small_halfedge3": "E(Q:['940/343']~2.74052478134)",
+   "counts": {
+    "big": {
+     "big-small": 8,
+     "big-big": 6
+    },
+    "small": {
+     "small-small": 6,
+     "big-small": 8
+    }
+   },
+   "areas_app": {
+    "big-small": 0.7981764898661599,
+    "big-big": 0.6678658134566059,
+    "small-small": 0.10685853015305695
+   },
+   "areas_A2_per_contact": {
+    "big-small": 1.2449115179401304,
+    "big-big": 1.0416666666666667,
+    "small-small": 0.16666666666666666
+   }
+  },
+  "delian t=1/5": {
+   "rho": "1/4",
+   "rho_f": 0.25,
+   "t": "1/5",
+   "t_f": 0.2,
+   "counts": {
+    "oct": {
+     "oct-tet": 8,
+     "oct-oct": 12
+    },
+    "tet": {
+     "oct-tet": 4
+    }
+   },
+   "areas_app": {
+    "oct-tet": 0.15588457268119896,
+    "oct-oct": 0.2262741699796952
+   },
+   "areas_A2_per_contact": {
+    "oct-tet": 0.41569219381653055,
+    "oct-oct": 0.6033977866125205
+   }
+  },
+  "delian t=1/4": {
+   "rho": "1/3",
+   "rho_f": 0.3333333333333333,
+   "t": "1/4",
+   "t_f": 0.25,
+   "counts": {
+    "oct": {
+     "oct-tet": 8,
+     "oct-oct": 12
+    },
+    "tet": {
+     "oct-tet": 4
+    }
+   },
+   "areas_app": {
+    "oct-tet": 0.24356964481437338,
+    "oct-oct": 0.15467960838455727
+   },
+   "areas_A2_per_contact": {
+    "oct-tet": 0.649519052838329,
+    "oct-oct": 0.4124789556921527
+   }
+  },
+  "delian t=1/3": {
+   "rho": "1/2",
+   "rho_f": 0.5,
+   "t": "1/3",
+   "t_f": 0.3333333333333333,
+   "counts": {
+    "oct": {
+     "oct-tet": 8
+    },
+    "tet": {
+     "oct-tet": 4
+    }
+   },
+   "areas_app": {
+    "oct-tet": 0.4330127018922193
+   },
+   "areas_A2_per_contact": {
+    "oct-tet": 1.1547005383792515
+   }
+  },
+  "delian t=1/2": {
+   "rho": "1",
+   "rho_f": 1.0,
+   "t": "1/2",
+   "t_f": 0.5,
+   "counts": {
+    "oct": {
+     "oct-tet": 8
+    },
+    "tet": {
+     "tet-tet": 6,
+     "oct-tet": 4
+    }
+   },
+   "areas_app": {
+    "oct-tet": 0.24356964481437338,
+    "tet-tet": 0.21875
+   },
+   "areas_A2_per_contact": {
+    "oct-tet": 0.649519052838329,
+    "tet-tet": 0.5833333333333334
+   }
+  },
+  "delian t=4/7": {
+   "rho": "4/3",
+   "rho_f": 1.3333333333333333,
+   "t": "4/7",
+   "t_f": 0.5714285714285714,
+   "counts": {
+    "oct": {
+     "oct-tet": 8
+    },
+    "tet": {
+     "tet-tet": 6,
+     "oct-tet": 4
+    }
+   },
+   "areas_app": {
+    "oct-tet": 0.17894912680239675,
+    "tet-tet": 0.29336734693877553
+   },
+   "areas_A2_per_contact": {
+    "oct-tet": 0.47719767147305797,
+    "tet-tet": 0.7823129251700681
+   }
+  }
+ },
+ "compounds": [
+  {
+   "formula": "CsCl",
+   "structure": "CsCl (B2)",
+   "cation": "Cs+ CN VIII",
+   "anion": "Cl- CN VI",
+   "r_cation_IR": "87/50",
+   "r_anion_IR": "181/100",
+   "r_cation_CR": "47/25",
+   "r_anion_CR": "167/100",
+   "keys": [
+    "",
+    "P"
+   ],
+   "note": "Cl- has no CN VIII entry in Shannon 1976: CN VI value used",
+   "big_site": "anion",
+   "cation_over_anion": 0.9613259668508287,
+   "pauling_CN8_cation_ok": true,
+   "rho": "174/181",
+   "rho_f": 0.9613259668508287,
+   "s": "188/355",
+   "x": "188/167",
+   "x_f": 1.125748502994012,
+   "vol_big_halfedge3": "E(Q:['186891988/44738875']~4.17739578834)",
+   "vol_small_halfedge3": "E(Q:['171019012/44738875']~3.82260421166)",
+   "counts": {
+    "big": {
+     "big-small": 8,
+     "big-big": 6
+    },
+    "small": {
+     "small-small": 6,
+     "big-small": 8
+    }
+   },
+   "areas_app": {
+    "big-small": 0.849239738384767,
+    "big-big": 0.36711681530797974,
+    "small-small": 0.28968200719002507
+   },
+   "areas_A2_per_contact": {
+    "big-small": 5.450677288878879,
+    "big-big": 2.3562666666666665,
+    "small-small": 1.8592666666666666
+   },
+   "CR_sensitivity": {
+    "rho": 0.8882978723404256,
+    "x": 1.4315068493150684
+   },
+   "in_contact_window": true
+  },
+  {
+   "formula": "CsBr",
+   "structure": "CsCl (B2)",
+   "cation": "Cs+ CN VIII",
+   "anion": "Br- CN VI",
+   "r_cation_IR": "87/50",
+   "r_anion_IR": "49/25",
+   "r_cation_CR": "47/25",
+   "r_anion_CR": "91/50",
+   "keys": [
+    "",
+    "P"
+   ],
+   "note": "Br- CN VI value used (no CN VIII entry)",
+   "big_site": "anion",
+   "cation_over_anion": 0.8877551020408163,
+   "pauling_CN8_cation_ok": true,
+   "rho": "87/98",
+   "rho_f": 0.8877551020408163,
+   "s": "109/185",
+   "x": "109/76",
+   "x_f": 1.4342105263157894,
+   "vol_big_halfedge3": "E(Q:['28702796/6331625']~4.53324320376)",
+   "vol_small_halfedge3": "E(Q:['21950204/6331625']~3.46675679624)",
+   "counts": {
+    "big": {
+     "big-small": 8,
+     "big-big": 6
+    },
+    "small": {
+     "small-small": 6,
+     "big-small": 8
+    }
+   },
+   "areas_app": {
+    "big-small": 0.8412136835472084,
+    "big-big": 0.45441726545416367,
+    "small-small": 0.22091693672782167
+   },
+   "areas_A2_per_contact": {
+    "big-small": 5.865070444589732,
+    "big-big": 3.1682666666666663,
+    "small-small": 1.5402666666666667
+   },
+   "CR_sensitivity": {
+    "rho": 0.9680851063829787,
+    "x": 1.1022727272727273
+   },
+   "in_contact_window": true
+  },
+  {
+   "formula": "CsI",
+   "structure": "CsCl (B2)",
+   "cation": "Cs+ CN VIII",
+   "anion": "I- CN VI",
+   "r_cation_IR": "87/50",
+   "r_anion_IR": "11/5",
+   "r_cation_CR": "47/25",
+   "r_anion_CR": "103/50",
+   "keys": [
+    "",
+    "A"
+   ],
+   "note": "I- CN VI value used (no CN VIII entry; key A = Ahrens 1952)",
+   "big_site": "anion",
+   "cation_over_anion": 0.7909090909090909,
+   "pauling_CN8_cation_ok": true,
+   "rho": "87/110",
+   "rho_f": 0.7909090909090909,
+   "s": "133/197",
+   "x": "133/64",
+   "x_f": 2.078125,
+   "vol_big_halfedge3": "E(Q:['38505452/7645373']~5.03643864073)",
+   "vol_small_halfedge3": "E(Q:['22657532/7645373']~2.96356135927)",
+   "counts": {
+    "big": {
+     "big-small": 8,
+     "big-big": 6
+    },
+    "small": {
+     "small-small": 6,
+     "big-small": 8
+    }
+   },
+   "areas_app": {
+    "big-small": 0.8154633225955612,
+    "big-big": 0.5966451496688512,
+    "small-small": 0.13815696382178835
+   },
+   "areas_A2_per_contact": {
+    "big-small": 6.447039515932875,
+    "big-big": 4.717066666666667,
+    "small-small": 1.0922666666666665
+   },
+   "CR_sensitivity": {
+    "rho": 0.912621359223301,
+    "x": 1.3176470588235294
+   },
+   "in_contact_window": true
+  },
+  {
+   "formula": "TlCl",
+   "structure": "CsCl (B2)",
+   "cation": "Tl+ CN VIII",
+   "anion": "Cl- CN VI",
+   "r_cation_IR": "159/100",
+   "r_anion_IR": "181/100",
+   "r_cation_CR": "173/100",
+   "r_anion_CR": "167/100",
+   "keys": [
+    "R",
+    "P"
+   ],
+   "note": "Tl+ VIII key R; Cl- CN VI used",
+   "big_site": "anion",
+   "cation_over_anion": 0.8784530386740331,
+   "pauling_CN8_cation_ok": true,
+   "rho": "159/181",
+   "rho_f": 0.8784530386740331,
+   "s": "203/340",
+   "x": "203/137",
+   "x_f": 1.4817518248175183,
+   "vol_big_halfedge3": "E(Q:['22501121/4913000']~4.57991471606)",
+   "vol_small_halfedge3": "E(Q:['16802879/4913000']~3.42008528394)",
+   "counts": {
+    "big": {
+     "big-small": 8,
+     "big-big": 6
+    },
+    "small": {
+     "small-small": 6,
+     "big-small": 8
+    }
+   },
+   "areas_app": {
+    "big-small": 0.8395521002514065,
+    "big-big": 0.4666373816712561,
+    "small-small": 0.21253408276317812
+   },
+   "areas_A2_per_contact": {
+    "big-small": 4.942753389559305,
+    "big-big": 2.7472666666666665,
+    "small-small": 1.2512666666666667
+   },
+   "CR_sensitivity": {
+    "rho": 0.9653179190751445,
+    "x": 1.1118012422360248
+   },
+   "in_contact_window": true
+  },
+  {
+   "formula": "TlBr",
+   "structure": "CsCl (B2)",
+   "cation": "Tl+ CN VIII",
+   "anion": "Br- CN VI",
+   "r_cation_IR": "159/100",
+   "r_anion_IR": "49/25",
+   "r_cation_CR": "173/100",
+   "r_anion_CR": "91/50",
+   "keys": [
+    "R",
+    "P"
+   ],
+   "note": "Tl+ VIII key R; Br- CN VI used",
+   "big_site": "anion",
+   "cation_over_anion": 0.8112244897959183,
+   "pauling_CN8_cation_ok": true,
+   "rho": "159/196",
+   "rho_f": 0.8112244897959183,
+   "s": "233/355",
+   "x": "233/122",
+   "x_f": 1.9098360655737705,
+   "vol_big_halfedge3": "E(Q:['220465948/44738875']~4.92783844028)",
+   "vol_small_halfedge3": "E(Q:['137445052/44738875']~3.07216155972)",
+   "counts": {
+    "big": {
+     "big-small": 8,
+     "big-big": 6
+    },
+    "small": {
+     "small-small": 6,
+     "big-small": 8
+    }
+   },
+   "areas_app": {
+    "big-small": 0.8225234784822925,
+    "big-big": 0.5638978266821782,
+    "small-small": 0.15459955520156093
+   },
+   "areas_A2_per_contact": {
+    "big-small": 5.27920425892956,
+    "big-big": 3.619266666666666,
+    "small-small": 0.9922666666666666
+   },
+   "CR_sensitivity": {
+    "rho": 0.9505494505494505,
+    "x": 1.1646341463414633
+   },
+   "in_contact_window": true
+  },
+  {
+   "formula": "CaF2",
+   "structure": "fluorite",
+   "cation": "Ca2+ CN VIII",
+   "anion": "F1- CN IV",
+   "r_cation_IR": "28/25",
+   "r_anion_IR": "131/100",
+   "r_cation_CR": "63/50",
+   "r_anion_CR": "117/100",
+   "keys": [
+    "*",
+    ""
+   ],
+   "note": "",
+   "tet_site": "anion",
+   "cation_over_anion": 0.8549618320610687,
+   "pauling": {
+    "rule": "cation CN8: r+/r- in [0.732, 1)",
+    "ok": true
+   },
+   "rho": "131/112",
+   "rho_f": 1.1696428571428572,
+   "t": "131/243",
+   "t_f": 0.5390946502057613,
+   "counts": {
+    "oct": {
+     "oct-tet": 8
+    },
+    "tet": {
+     "tet-tet": 6,
+     "oct-tet": 4
+    }
+   },
+   "areas_app": {
+    "oct-tet": 0.2069696438247218,
+    "tet-tet": 0.2610120408474318
+   },
+   "areas_A2_per_contact": {
+    "oct-tet": 3.259026799521599,
+    "tet-tet": 4.109999999999999
+   },
+   "CR_sensitivity": {
+    "rho": 0.9285714285714286,
+    "t": 0.48148148148148145
+   },
+   "in_contact_window": true,
+   "side_of_octet": "t > 1/3 (tet-tet bonds)"
+  },
+  {
+   "formula": "SrF2",
+   "structure": "fluorite",
+   "cation": "Sr2+ CN VIII",
+   "anion": "F1- CN IV",
+   "r_cation_IR": "63/50",
+   "r_anion_IR": "131/100",
+   "r_cation_CR": "7/5",
+   "r_anion_CR": "117/100",
+   "keys": [
+    "",
+    ""
+   ],
+   "note": "",
+   "tet_site": "anion",
+   "cation_over_anion": 0.9618320610687023,
+   "pauling": {
+    "rule": "cation CN8: r+/r- in [0.732, 1)",
+    "ok": true
+   },
+   "rho": "131/126",
+   "rho_f": 1.0396825396825398,
+   "t": "131/257",
+   "t_f": 0.5097276264591439,
+   "counts": {
+    "oct": {
+     "oct-tet": 8
+    },
+    "tet": {
+     "tet-tet": 6,
+     "oct-tet": 4
+    }
+   },
+   "areas_app": {
+    "oct-tet": 0.23418441951115032,
+    "tet-tet": 0.22958712471044226
+   },
+   "areas_A2_per_contact": {
+    "oct-tet": 4.124705793144525,
+    "tet-tet": 4.043733333333333
+   },
+   "CR_sensitivity": {
+    "rho": 0.8357142857142857,
+    "t": 0.45525291828793774
+   },
+   "in_contact_window": true,
+   "side_of_octet": "t > 1/3 (tet-tet bonds)"
+  },
+  {
+   "formula": "BaF2",
+   "structure": "fluorite",
+   "cation": "Ba2+ CN VIII",
+   "anion": "F1- CN IV",
+   "r_cation_IR": "71/50",
+   "r_anion_IR": "131/100",
+   "r_cation_CR": "39/25",
+   "r_anion_CR": "117/100",
+   "keys": [
+    "",
+    ""
+   ],
+   "note": "",
+   "tet_site": "anion",
+   "cation_over_anion": 1.083969465648855,
+   "pauling": {
+    "rule": "cation CN8: r+/r- in [0.732, 1)",
+    "ok": false
+   },
+   "rho": "131/142",
+   "rho_f": 0.9225352112676056,
+   "t": "131/273",
+   "t_f": 0.47985347985347987,
+   "counts": {
+    "oct": {
+     "oct-tet": 8
+    },
+    "tet": {
+     "tet-tet": 6,
+     "oct-tet": 4
+    }
+   },
+   "areas_app": {
+    "oct-tet": 0.2635934102449798,
+    "tet-tet": 0.19562854727689893
+   },
+   "areas_A2_per_contact": {
+    "oct-tet": 5.2387608725728265,
+    "tet-tet": 3.888
+   },
+   "CR_sensitivity": {
+    "rho": 0.75,
+    "t": 0.42857142857142855
+   },
+   "in_contact_window": true,
+   "side_of_octet": "t > 1/3 (tet-tet bonds)"
+  },
+  {
+   "formula": "CdF2",
+   "structure": "fluorite",
+   "cation": "Cd2+ CN VIII",
+   "anion": "F1- CN IV",
+   "r_cation_IR": "11/10",
+   "r_anion_IR": "131/100",
+   "r_cation_CR": "31/25",
+   "r_anion_CR": "117/100",
+   "keys": [
+    "C",
+    ""
+   ],
+   "note": "Cd2+ VIII key C",
+   "tet_site": "anion",
+   "cation_over_anion": 0.8396946564885496,
+   "pauling": {
+    "rule": "cation CN8: r+/r- in [0.732, 1)",
+    "ok": true
+   },
+   "rho": "131/110",
+   "rho_f": 1.190909090909091,
+   "t": "131/241",
+   "t_f": 0.5435684647302904,
+   "counts": {
+    "oct": {
+     "oct-tet": 8
+    },
+    "tet": {
+     "tet-tet": 6,
+     "oct-tet": 4
+    }
+   },
+   "areas_app": {
+    "oct-tet": 0.2029712093286216,
+    "tet-tet": 0.2656290353127529
+   },
+   "areas_A2_per_contact": {
+    "oct-tet": 3.143672215737512,
+    "tet-tet": 4.114133333333333
+   },
+   "CR_sensitivity": {
+    "rho": 0.9435483870967742,
+    "t": 0.4854771784232365
+   },
+   "in_contact_window": true,
+   "side_of_octet": "t > 1/3 (tet-tet bonds)"
+  },
+  {
+   "formula": "PbF2",
+   "structure": "fluorite",
+   "cation": "Pb2+ CN VIII",
+   "anion": "F1- CN IV",
+   "r_cation_IR": "129/100",
+   "r_anion_IR": "131/100",
+   "r_cation_CR": "143/100",
+   "r_anion_CR": "117/100",
+   "keys": [
+    "C",
+    ""
+   ],
+   "note": "Pb2+ VIII key C",
+   "tet_site": "anion",
+   "cation_over_anion": 0.9847328244274809,
+   "pauling": {
+    "rule": "cation CN8: r+/r- in [0.732, 1)",
+    "ok": true
+   },
+   "rho": "131/129",
+   "rho_f": 1.0155038759689923,
+   "t": "131/260",
+   "t_f": 0.5038461538461538,
+   "counts": {
+    "oct": {
+     "oct-tet": 8
+    },
+    "tet": {
+     "tet-tet": 6,
+     "oct-tet": 4
+    }
+   },
+   "areas_app": {
+    "oct-tet": 0.23983683191455546,
+    "tet-tet": 0.22306028106508877
+   },
+   "areas_A2_per_contact": {
+    "oct-tet": 4.323458623313053,
+    "tet-tet": 4.0210333333333335
+   },
+   "CR_sensitivity": {
+    "rho": 0.8181818181818182,
+    "t": 0.45
+   },
+   "in_contact_window": true,
+   "side_of_octet": "t > 1/3 (tet-tet bonds)"
+  },
+  {
+   "formula": "UO2",
+   "structure": "fluorite",
+   "cation": "U4+ CN VIII",
+   "anion": "O2- CN IV",
+   "r_cation_IR": "1",
+   "r_anion_IR": "69/50",
+   "r_cation_CR": "57/50",
+   "r_anion_CR": "31/25",
+   "keys": [
+    "R*",
+    ""
+   ],
+   "note": "U4+ VIII key R*",
+   "tet_site": "anion",
+   "cation_over_anion": 0.7246376811594203,
+   "pauling": {
+    "rule": "cation CN8: r+/r- in [0.732, 1)",
+    "ok": false
+   },
+   "rho": "69/50",
+   "rho_f": 1.38,
+   "t": "69/119",
+   "t_f": 0.5798319327731093,
+   "counts": {
+    "oct": {
+     "oct-tet": 8
+    },
+    "tet": {
+     "tet-tet": 6,
+     "oct-tet": 4
+    }
+   },
+   "areas_app": {
+    "oct-tet": 0.1720003141122614,
+    "tet-tet": 0.3013911446931714
+   },
+   "areas_A2_per_contact": {
+    "oct-tet": 2.598076211353316,
+    "tet-tet": 4.552533333333334
+   },
+   "CR_sensitivity": {
+    "rho": 1.087719298245614,
+    "t": 0.5210084033613446
+   },
+   "in_contact_window": false,
+   "side_of_octet": "t > 1/3 (tet-tet bonds)"
+  },
+  {
+   "formula": "ThO2",
+   "structure": "fluorite",
+   "cation": "Th4+ CN VIII",
+   "anion": "O2- CN IV",
+   "r_cation_IR": "21/20",
+   "r_anion_IR": "69/50",
+   "r_cation_CR": "119/100",
+   "r_anion_CR": "31/25",
+   "keys": [
+    "RC",
+    ""
+   ],
+   "note": "Th4+ VIII key RC",
+   "tet_site": "anion",
+   "cation_over_anion": 0.7608695652173914,
+   "pauling": {
+    "rule": "cation CN8: r+/r- in [0.732, 1)",
+    "ok": true
+   },
+   "rho": "46/35",
+   "rho_f": 1.3142857142857143,
+   "t": "46/81",
+   "t_f": 0.5679012345679012,
+   "counts": {
+    "oct": {
+     "oct-tet": 8
+    },
+    "tet": {
+     "tet-tet": 6,
+     "oct-tet": 4
+    }
+   },
+   "areas_app": {
+    "oct-tet": 0.1819069135178219,
+    "tet-tet": 0.2899519890260631
+   },
+   "areas_A2_per_contact": {
+    "oct-tet": 2.864379023017031,
+    "tet-tet": 4.5657000000000005
+   },
+   "CR_sensitivity": {
+    "rho": 1.0420168067226891,
+    "t": 0.5102880658436214
+   },
+   "in_contact_window": true,
+   "side_of_octet": "t > 1/3 (tet-tet bonds)"
+  },
+  {
+   "formula": "CeO2",
+   "structure": "fluorite",
+   "cation": "Ce4+ CN VIII",
+   "anion": "O2- CN IV",
+   "r_cation_IR": "97/100",
+   "r_anion_IR": "69/50",
+   "r_cation_CR": "111/100",
+   "r_anion_CR": "31/25",
+   "keys": [
+    "R",
+    ""
+   ],
+   "note": "Ce4+ VIII key R",
+   "tet_site": "anion",
+   "cation_over_anion": 0.7028985507246377,
+   "pauling": {
+    "rule": "cation CN8: r+/r- in [0.732, 1)",
+    "ok": false
+   },
+   "rho": "138/97",
+   "rho_f": 1.422680412371134,
+   "t": "138/235",
+   "t_f": 0.5872340425531914,
+   "counts": {
+    "oct": {
+     "oct-tet": 8
+    },
+    "tet": {
+     "tet-tet": 6,
+     "oct-tet": 4
+    }
+   },
+   "areas_app": {
+    "oct-tet": 0.1659934296466049,
+    "tet-tet": 0.30832729741964693
+   },
+   "areas_A2_per_contact": {
+    "oct-tet": 2.4445299072623348,
+    "tet-tet": 4.540633333333334
+   },
+   "CR_sensitivity": {
+    "rho": 1.117117117117117,
+    "t": 0.5276595744680851
+   },
+   "in_contact_window": false,
+   "side_of_octet": "t > 1/3 (tet-tet bonds)"
+  },
+  {
+   "formula": "ZrO2 (cubic)",
+   "structure": "fluorite",
+   "cation": "Zr4+ CN VIII",
+   "anion": "O2- CN IV",
+   "r_cation_IR": "21/25",
+   "r_anion_IR": "69/50",
+   "r_cation_CR": "49/50",
+   "r_anion_CR": "31/25",
+   "keys": [
+    "*",
+    ""
+   ],
+   "note": "Zr4+ VIII key *",
+   "tet_site": "anion",
+   "cation_over_anion": 0.6086956521739131,
+   "pauling": {
+    "rule": "cation CN8: r+/r- in [0.732, 1)",
+    "ok": false
+   },
+   "rho": "23/14",
+   "rho_f": 1.6428571428571428,
+   "t": "23/37",
+   "t_f": 0.6216216216216216,
+   "counts": {
+    "oct": {
+     "oct-tet": 8
+    },
+    "tet": {
+     "tet-tet": 6,
+     "oct-tet": 4
+    }
+   },
+   "areas_app": {
+    "oct-tet": 0.13948765634365867,
+    "tet-tet": 0.3389335281227173
+   },
+   "areas_A2_per_contact": {
+    "oct-tet": 1.8332025747308995,
+    "tet-tet": 4.454400000000001
+   },
+   "CR_sensitivity": {
+    "rho": 1.2653061224489797,
+    "t": 0.5585585585585585
+   },
+   "in_contact_window": false,
+   "side_of_octet": "t > 1/3 (tet-tet bonds)"
+  },
+  {
+   "formula": "Li2O",
+   "structure": "antifluorite",
+   "cation": "Li1+ CN IV",
+   "anion": "O2- CN VIII",
+   "r_cation_IR": "59/100",
+   "r_anion_IR": "71/50",
+   "r_cation_CR": "73/100",
+   "r_anion_CR": "32/25",
+   "keys": [
+    "*",
+    ""
+   ],
+   "note": "Li+ IV key *",
+   "tet_site": "cation",
+   "cation_over_anion": 0.4154929577464789,
+   "pauling": {
+    "rule": "cation CN4: r+/r- in [0.225, 0.414)",
+    "ok": false
+   },
+   "rho": "59/142",
+   "rho_f": 0.4154929577464789,
+   "t": "59/201",
+   "t_f": 0.2935323383084577,
+   "counts": {
+    "oct": {
+     "oct-tet": 8,
+     "oct-oct": 12
+    },
+    "tet": {
+     "oct-tet": 4
+    }
+   },
+   "areas_app": {
+    "oct-tet": 0.3357801771634697,
+    "oct-oct": 0.07939002399599464
+   },
+   "areas_A2_per_contact": {
+    "oct-tet": 3.617561316688357,
+    "oct-oct": 0.8553163625232477
+   },
+   "CR_sensitivity": {
+    "rho": 0.5703125,
+    "t": 0.36318407960199006
+   },
+   "in_contact_window": true,
+   "side_of_octet": "t < 1/3 (oct-oct bonds)"
+  },
+  {
+   "formula": "Na2O",
+   "structure": "antifluorite",
+   "cation": "Na1+ CN IV",
+   "anion": "O2- CN VIII",
+   "r_cation_IR": "99/100",
+   "r_anion_IR": "71/50",
+   "r_cation_CR": "113/100",
+   "r_anion_CR": "32/25",
+   "keys": [
+    "",
+    ""
+   ],
+   "note": "",
+   "tet_site": "cation",
+   "cation_over_anion": 0.6971830985915493,
+   "pauling": {
+    "rule": "cation CN4: r+/r- in [0.225, 0.414)",
+    "ok": false
+   },
+   "rho": "99/142",
+   "rho_f": 0.6971830985915493,
+   "t": "99/241",
+   "t_f": 0.4107883817427386,
+   "counts": {
+    "oct": {
+     "oct-tet": 8
+    },
+    "tet": {
+     "tet-tet": 6,
+     "oct-tet": 4
+    }
+   },
+   "areas_app": {
+    "oct-tet": 0.33824061693407653,
+    "tet-tet": 0.10943337752449166
+   },
+   "areas_A2_per_contact": {
+    "oct-tet": 5.2387608725728265,
+    "tet-tet": 1.6949333333333332
+   },
+   "CR_sensitivity": {
+    "rho": 0.8828125,
+    "t": 0.46887966804979253
+   },
+   "in_contact_window": true,
+   "side_of_octet": "t > 1/3 (tet-tet bonds)"
+  },
+  {
+   "formula": "K2O",
+   "structure": "antifluorite",
+   "cation": "K1+ CN IV",
+   "anion": "O2- CN VIII",
+   "r_cation_IR": "137/100",
+   "r_anion_IR": "71/50",
+   "r_cation_CR": "151/100",
+   "r_anion_CR": "32/25",
+   "keys": [
+    "",
+    ""
+   ],
+   "note": "",
+   "tet_site": "cation",
+   "cation_over_anion": 0.9647887323943662,
+   "pauling": {
+    "rule": "cation CN4: r+/r- in [0.225, 0.414)",
+    "ok": false
+   },
+   "rho": "137/142",
+   "rho_f": 0.9647887323943662,
+   "t": "137/279",
+   "t_f": 0.4910394265232975,
+   "counts": {
+    "oct": {
+     "oct-tet": 8
+    },
+    "tet": {
+     "tet-tet": 6,
+     "oct-tet": 4
+    }
+   },
+   "areas_app": {
+    "oct-tet": 0.2523779662664675,
+    "tet-tet": 0.20857902647704937
+   },
+   "areas_A2_per_contact": {
+    "oct-tet": 5.2387608725728265,
+    "tet-tet": 4.3296
+   },
+   "CR_sensitivity": {
+    "rho": 1.1796875,
+    "t": 0.5412186379928315
+   },
+   "in_contact_window": true,
+   "side_of_octet": "t > 1/3 (tet-tet bonds)"
+  }
+ ],
+ "seconds": 45.0
+}
