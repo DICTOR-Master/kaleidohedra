@@ -271,23 +271,30 @@
     .ch-theorem .thm-statement { margin: 0; color: #fde6b0; font-weight: 600; }
     .ch-theorem .thm-detail { margin: 4px 0 0; color: #cde; }
     .ch-theorem .thm-more { margin-top: 4px; min-height: 30px; }
-    .ch-theorem .thm-evidence-toggle { align-self: center; min-height: 36px; }
-    .ch-theorem .thm-evidence { display: flex; flex-direction: column; gap: 4px; }
-    .ch-theorem .thm-evidence[hidden] { display: none; }
-    .ch-theorem .thm-chart svg { width: 100%; height: 96px; background: rgba(0, 0, 0, 0.35); border-radius: var(--radius-s); display: block; }
-    .ch-theorem .thm-chart-title { color: #ffe2b8; text-align: center; }
-    .ch-theorem .thm-legend { display: flex; flex-wrap: wrap; gap: 4px 10px; justify-content: center; }
-    .ch-theorem .thm-legend i { display: inline-block; width: 14px; height: 4px; margin-right: 4px; vertical-align: middle; border-radius: 2px; }
-    .ch-theorem .thm-marks { color: #aab; }
-    .ch-theorem .thm-count { text-align: center; color: #ffe2b8; font-weight: 600; }
-    .ch-theorem .thm-flip { display: flex; align-items: center; gap: 8px; }
-    .ch-theorem .thm-flip[hidden] { display: none; }
-    .ch-theorem .thm-flip svg { width: 96px; height: 64px; flex: none; border-radius: var(--radius-s); background: rgba(0, 0, 0, 0.35); }
-    .ch-theorem .thm-flip.now svg { box-shadow: 0 0 0 2px #ffc857; }
+    .ch-theorem .thm-almanac-open { align-self: center; min-height: 40px; padding: 0 16px; }
+    /* The almanac sheet: top-left under the title on wide screens, the lower half on upright ones; scrolls; the picture stays in view. */
+    .thm-almanac { position: fixed; z-index: 950; left: 16px; top: 130px; width: min(420px, calc(100vw - 32px)); max-height: calc(100dvh - 200px); overflow-y: auto;
+      padding: 8px 10px; background: rgba(8, 10, 18, 0.92); border: 1px solid rgba(255, 200, 87, 0.5); border-radius: var(--radius-m);
+      color: #e8ecf5; font: var(--text-s)/1.4 var(--font-ui); display: flex; flex-direction: column; gap: 6px; }
+    .thm-almanac[hidden] { display: none; }
+    .thm-alm-head { display: flex; justify-content: space-between; align-items: center; color: #fde6b0; font-weight: 600; }
+    .thm-alm-close { min-width: 40px; min-height: 40px; }
+    .thm-almanac .thm-evidence { display: flex; flex-direction: column; gap: 6px; }
+    @media (orientation: portrait) { .thm-almanac { left: 8px; right: 8px; width: auto; top: auto; bottom: calc(var(--bottom-clear) + 8px); max-height: 52dvh; } }
+    .thm-almanac .thm-chart svg { width: 100%; height: 96px; background: rgba(0, 0, 0, 0.35); border-radius: var(--radius-s); display: block; }
+    .thm-almanac .thm-chart-title { color: #ffe2b8; text-align: center; }
+    .thm-almanac .thm-legend { display: flex; flex-wrap: wrap; gap: 4px 10px; justify-content: center; }
+    .thm-almanac .thm-legend i { display: inline-block; width: 14px; height: 4px; margin-right: 4px; vertical-align: middle; border-radius: 2px; }
+    .thm-almanac .thm-marks { color: #aab; }
+    .thm-almanac .thm-count { text-align: center; color: #ffe2b8; font-weight: 600; }
+    .thm-almanac .thm-flip { display: flex; align-items: center; gap: 8px; }
+    .thm-almanac .thm-flip[hidden] { display: none; }
+    .thm-almanac .thm-flip svg { width: 96px; height: 64px; flex: none; border-radius: var(--radius-s); background: rgba(0, 0, 0, 0.35); }
+    .thm-almanac .thm-flip.now svg { box-shadow: 0 0 0 2px #ffc857; }
     /* DICTONIC's panel never runs off the top: it scrolls instead; on phones the chart is lower and the statement shows two lines until tapped */
     #worlddictonic-panel { max-height: calc(100dvh - 150px); overflow-y: auto; }
     @media (max-width: 600px) {
-      .ch-theorem .thm-chart svg { height: 64px; }
+      .thm-almanac .thm-chart svg { height: 64px; }
       .ch-theorem .thm-statement { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; cursor: pointer; }
       .ch-theorem .thm-card.open .thm-statement { -webkit-line-clamp: unset; }
     }
@@ -330,7 +337,7 @@
       width: 34px; height: 34px; border-radius: 50%; background: var(--accent-strong); border: 3px solid #fff; box-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
     }
     .w4d-row[hidden] { display: none; }
-    .w4d-row button {
+    .w4d-row button, .thm-almanac button {
       background: rgba(0, 0, 0, 0.45);
       border: 1px solid rgba(255, 255, 255, 0.25);
       color: var(--accent); font: var(--text-s) var(--font-ui);

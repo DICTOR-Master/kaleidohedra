@@ -53,13 +53,14 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     assert.ok(await page.locator(`${P} .ch-param-row input`).isVisible(), `${tag}: the slider`);
     // the theorem block (DICTO 2026-10-25): statement, live chart with the marker, bonds per piece; no Delian switch picture on Golden
     assert.match(await page.locator(`${P} .thm-statement`).textContent(), /Theorem \(golden\)/, `${tag}: golden statement`);
-    // upright screens: the evidence folds behind a button (it would cover the picture); open it
-    assert.ok(await page.locator(`${P} .thm-evidence`).isHidden(), `${tag}: evidence folded on an upright screen`);
-    await page.tap(`${P} .thm-evidence-toggle`); await page.waitForTimeout(300);
-    assert.ok(await page.locator(`${P} .thm-chart svg`).isVisible(), `${tag}: the chart`);
-    assert.equal(await page.locator(`${P} .thm-chart polyline`).count(), 3, `${tag}: three bond curves`);
-    assert.match(await page.locator(`${P} .thm-count`).textContent(), /8 bonds to the other kind \+ 6/, `${tag}: bonds per piece`);
-    assert.ok(await page.locator(`${P} .thm-flip`).isHidden(), `${tag}: no switch picture for golden`);
+    // the almanac: the evidence in its own sheet, opened from the panel
+    assert.ok(await page.locator('.thm-almanac').isHidden(), `${tag}: almanac closed at first`);
+    await page.tap(`${P} .thm-almanac-open`); await page.waitForTimeout(300);
+    assert.ok(await page.locator('.thm-almanac .thm-chart svg').isVisible(), `${tag}: the chart in the almanac`);
+    assert.equal(await page.locator('.thm-almanac .thm-chart polyline').count(), 3, `${tag}: three bond curves`);
+    assert.match(await page.locator('.thm-almanac .thm-count').textContent(), /8 bonds to the other kind \+ 6/, `${tag}: bonds per piece`);
+    assert.ok(await page.locator('.thm-almanac .thm-flip').isHidden(), `${tag}: no switch picture for golden`);
+    await page.locator('.thm-almanac .thm-alm-close').tap(); await page.waitForTimeout(300);
     checks++;
     await shot('golden-tau');
     // X-ray at τ: the icosahedron / Unborn cores and the AXE pyramids
@@ -95,9 +96,17 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     assert.equal(st.param.value, 1 / 3, `${tag}: snapped to the octet`); assert.deepEqual(st.drawn, count(delianFamily(2, 1 / 3))); checks++;
     await shot('delian-octet');
     assert.match(await page.locator(`${P} .thm-statement`).textContent(), /Theorem \(Delian\)/);
-    assert.ok(await page.locator(`${P} .thm-flip`).isVisible(), `${tag}: the switch picture`);
-    assert.ok(await page.locator(`${P} .thm-flip.now`).count(), `${tag}: the switch picture glows at the octet`);
-    assert.match(await page.locator(`${P} .thm-count`).textContent(), /Octahedron piece: 8 bonds · tetrahedron piece: 4 bonds/); checks++;
+    await page.tap(`${P} .thm-almanac-open`); await page.waitForTimeout(300);
+    assert.ok(await page.locator('.thm-almanac .thm-flip').isVisible(), `${tag}: the switch picture`);
+    assert.ok(await page.locator('.thm-almanac .thm-flip.now').count(), `${tag}: the switch picture glows at the octet`);
+    assert.match(await page.locator('.thm-almanac .thm-count').textContent(), /Octahedron piece: 8 bonds · tetrahedron piece: 4 bonds/); checks++;
+    // the sheet's link opens the whole entry in the app's Almanac
+    await page.locator('.thm-almanac .thm-alm-entry').tap(); await page.waitForTimeout(700);
+    assert.ok(await page.locator('.thm-almanac').isHidden(), `${tag}: sheet closes`);
+    assert.match(await page.locator('body').innerText(), /DICTONIC: the six solids, the three bonds and the web of bonds/, `${tag}: Almanac entry`); checks++;
+    await page.keyboard.press('Escape'); await page.waitForTimeout(300);
+    if (await page.locator('.almanac-close, [data-almanac-close]').count()) await page.locator('.almanac-close, [data-almanac-close]').first().tap().catch(() => {});
+    await page.waitForTimeout(300);
     // Web of bonds at the octet: one rod per shared face, only octahedron–tetrahedron bonds there
     await page.tap(`${P} [data-chains-web]`); await page.waitForTimeout(900);
     st = await probe(); assert.equal(st.web, true, `${tag}: web on`);

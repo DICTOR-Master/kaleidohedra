@@ -26,25 +26,34 @@ function countLine(kind, v, L) {
   return t('dictonic.thm.count.delian', L, { o: o ?? '—', t: k ?? '—' });
 }
 
-export function mountTheorem(panel, { stopsOf, valueAt }) {
+export function mountTheorem(panel, { stopsOf, valueAt, openAction = () => {} }) {
   const box = document.createElement('div');
   box.className = 'w4d-row ch-theorem';
   box.innerHTML = `<div class="thm-card"><p class="thm-statement"></p><button type="button" class="thm-more"></button><p class="thm-detail" hidden></p></div>
-    <button type="button" class="thm-evidence-toggle"></button>
+    <button type="button" class="thm-almanac-open"></button>`;
+  // The almanac (DICTO 2026-10-25, "app almanac"): the evidence lives in its own sheet, opened from the panel, so the panel keeps
+  // only the statement and the controls and never covers the picture. It updates live with the slider and the Loop.
+  const sheet = document.createElement('div');
+  sheet.className = 'thm-almanac';
+  sheet.hidden = true;
+  sheet.innerHTML = `<div class="thm-alm-head"><span class="thm-alm-title"></span><button type="button" class="thm-alm-close" aria-label="Close">✕</button></div>
+    <button type="button" class="thm-alm-entry"></button>
     <div class="thm-evidence"><div class="thm-chart"><div class="thm-chart-title"></div><svg viewBox="0 0 320 120" preserveAspectRatio="none" role="img"></svg><div class="thm-legend"></div></div>
     <div class="thm-count" aria-live="polite"></div>
     <div class="thm-flip"><svg viewBox="0 0 120 80"></svg><span class="thm-flip-label"></span></div></div>`;
+  document.body.appendChild(sheet);
   const caption = panel.querySelector('.ch-param-caption');
   caption.after(box);
   const more = box.querySelector('.thm-more'), detail = box.querySelector('.thm-detail');
   more.addEventListener('click', () => { detail.hidden = !detail.hidden; box.querySelector('.thm-card').classList.toggle('open', !detail.hidden); update(last); });
   box.querySelector('.thm-statement').addEventListener('click', () => box.querySelector('.thm-card').classList.toggle('open'));
-  const svg = box.querySelector('.thm-chart svg'), flip = box.querySelector('.thm-flip');
-  // the evidence (chart, bonds per piece, the switch) stands open where the controls are a side column (TV, wide screens) and folds
-  // behind a button on upright screens, where it would cover the picture (DICTO's TV/iPad tests, 2026-10-25)
-  const evidence = box.querySelector('.thm-evidence'), evToggle = box.querySelector('.thm-evidence-toggle');
-  evidence.hidden = !matchMedia('(min-width: 900px) and (max-height: 900px) and (min-aspect-ratio: 4/3)').matches;
-  evToggle.addEventListener('click', () => { evidence.hidden = !evidence.hidden; update(last); });
+  const svg = sheet.querySelector('.thm-chart svg'), flip = sheet.querySelector('.thm-flip');
+  box.querySelector('.thm-almanac-open').addEventListener('click', () => { sheet.hidden = !sheet.hidden; update(last); });
+  sheet.querySelector('.thm-alm-close').addEventListener('click', () => { sheet.hidden = true; update(last); });
+  // the whole entry (words, data, the real crystals) in the app's Almanac: one name, one place
+  sheet.querySelector('.thm-alm-entry').addEventListener('click', () => { sheet.hidden = true; openAction('openAlmanac:dicto:dictonic'); });
+  // the sheet closes with the world (its panel hidden)
+  new MutationObserver(() => { if (!panel.classList.contains('visible')) sheet.hidden = true; }).observe(panel, { attributes: true, attributeFilter: ['class'] });
   let last = null, drawnFor = null;
   const W = 320, H = 120, PAD = 6;
   function chart(kind, L) {
@@ -56,7 +65,7 @@ export function mountTheorem(panel, { stopsOf, valueAt }) {
     const marks = MARKS[kind].map((k) => stops.find((s) => s.key === k || (k === 'octet' && s.key === 'octet') || (k === 'bond' && s.key === 'bond'))).filter(Boolean)
       .map((s) => `<line x1="${X(s.u)}" x2="${X(s.u)}" y1="${PAD}" y2="${H - PAD}" stroke="#ffffff55" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"/>`).join('');
     svg.innerHTML = `${marks}${paths}<line class="thm-marker" y1="${PAD}" y2="${H - PAD}" stroke="#fff" stroke-width="2" vector-effect="non-scaling-stroke"/>`;
-    box.querySelector('.thm-legend').innerHTML = CURVES[kind].map(([key, col]) => `<span><i style="background:${col}"></i>${t(`dictonic.thm.bond.${key}`, L)}</span>`).join('')
+    sheet.querySelector('.thm-legend').innerHTML = CURVES[kind].map(([key, col]) => `<span><i style="background:${col}"></i>${t(`dictonic.thm.bond.${key}`, L)}</span>`).join('')
       + `<span class="thm-marks">${MARKS[kind].map((k) => t(`dictonic.thm.mark.${k}`, L)).join(' · ')}</span>`;
     drawnFor = `${kind}.${L}`;
   }
@@ -65,16 +74,18 @@ export function mountTheorem(panel, { stopsOf, valueAt }) {
     if (!s) return;
     const { kind, u, v, L, paused } = s, on = kind in CURVES;
     box.hidden = !on;
-    if (!on) return;
+    if (!on) { sheet.hidden = true; return; }
     box.querySelector('.thm-statement').textContent = t(`dictonic.thm.${kind}`, L);
     more.textContent = t(detail.hidden ? 'dictonic.thm.more' : 'dictonic.thm.less', L);
     detail.textContent = t('dictonic.thm.detail', L);
-    evToggle.textContent = t(evidence.hidden ? 'dictonic.thm.evidence.show' : 'dictonic.thm.evidence.hide', L);
-    box.querySelector('.thm-chart-title').textContent = t('dictonic.thm.chart', L);
+    box.querySelector('.thm-almanac-open').textContent = `📖 ${t('dictonic.thm.almanac', L)}`;
+    sheet.querySelector('.thm-alm-title').textContent = t('dictonic.thm.almanac.title', L);
+    sheet.querySelector('.thm-alm-entry').textContent = t('dictonic.thm.almanac.entry', L);
+    sheet.querySelector('.thm-chart-title').textContent = t('dictonic.thm.chart', L);
     if (drawnFor !== `${kind}.${L}`) chart(kind, L);
     const m = svg.querySelector('.thm-marker'), x = PAD + ((W - 2 * PAD) * u) / 1000;
     m.setAttribute('x1', x); m.setAttribute('x2', x);
-    box.querySelector('.thm-count').textContent = countLine(kind, v, L);
+    sheet.querySelector('.thm-count').textContent = countLine(kind, v, L);
     // (4) the switch, Delian only: before the octet the rhombus's long diagonal (oct–oct) is a bond, after it the short one (tet–tet)
     flip.hidden = kind !== 'delian';
     if (kind === 'delian') {

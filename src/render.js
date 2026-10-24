@@ -4405,6 +4405,7 @@ async function init() {
           applyDimensionVisibility();
         }
         if (action === 'openAlmanac') { almanac.open(); return; }
+        if (action?.startsWith('openAlmanac:')) { almanac.open(action.slice('openAlmanac:'.length)); return; }   // straight to one entry (DICTONIC's sheet)
         // Real tool wiring below -- reuses existing, already-working
         // primitives (mode-btn clicks, panel-open functions) rather
         // than reimplementing anything, same pattern as Explore's

@@ -232,6 +232,7 @@ export const LATTICE_CONCEPT_ENTRIES = [
 // action: what Open does, the same action the DICTO wizard dispatches; app: where it opens when the
 // action alone doesn't say (the Shear's results open in Kaleidohedra).
 export const DICTO_ENTRIES = [
+  ['dictonic', '#51', '10.5281/zenodo.23606828', null, 'tool:dictonicWorld'],   // DICTONIC SOLIDS and BONDS (#48, #51) and the web of bonds (study 2026-10-25)
   ['stretching', '#49', '10.5281/zenodo.23566671', 'DODECAHEDRON', 'tool:studiesWorld:stretch'],
   ['platonicMix', '#47', '10.5281/zenodo.23551326', 'ICOSAHEDRON', 'tool:platonicMixWorld'],
   ['reuleaux', '#45', '10.5281/zenodo.23529499', null, 'tool:reuleauxWorld'],

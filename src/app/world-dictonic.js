@@ -134,7 +134,7 @@ export function createDictonicWorld({ scene, fitView, openAction }) {
   return createLayeredWorld({ scene, fitView, name: 'dictonic', data: DICTONIC_VIEWS, kinds: DICTONIC_BONDS, prefix: 'dictonic',
     glassRoles: { golden: new Set(['gsSmall', 'mxUnborn']), keyed: new Set(['gsSmall', 'mxDodeca']), delian: new Set(['dlOct']) },
     defaultParts: { golden: 'network', keyed: 'network', delian: 'network' }, kindButtons: true, rowWords: { size: 'dictonic.layers', shells: 'dictonic.topLayer' }, foldNote: true,
-    theorem: (panel) => mountTheorem(panel, { stopsOf: (k) => DICTONIC_VIEWS[k].param.stops, valueAt: (k, u) => DICTONIC_VIEWS[k].param.value(Math.round(u)) }), links: LINKS, openAction });
+    theorem: (panel) => mountTheorem(panel, { stopsOf: (k) => DICTONIC_VIEWS[k].param.stops, valueAt: (k, u) => DICTONIC_VIEWS[k].param.value(Math.round(u)), openAction }), links: LINKS, openAction });
 }
 
 /** Points whose convex hull previews DICTONIC in the DICTO menu: Icosaxes. */
