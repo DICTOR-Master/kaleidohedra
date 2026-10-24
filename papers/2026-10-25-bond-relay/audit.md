@@ -1,4 +1,4 @@
-# Number audit — "The Web of Bonds" draft (#52 proposed), 2026-10-25
+# Number audit — "The Web of Bonds: How the DICTONIC Bonds Hand Over" (#52), v1 and v2, 2026-10-25
 
 Every number in paper.src.html (text, tables, captions, appendices) checked against the two studies.
 Sources: **B** = studies/2026-10-25-bond-relay/README.md, **P** = studies/2026-10-25-physical-anchors/README.md (line numbers at commit 7b0fd8b);
@@ -70,3 +70,38 @@ CSS sizes, reference numbers, page/years/volumes in the reference list (checked 
 
 **Result: 60 / 60 PASS.** One note: the bond study's README rounds w_Q − w_O at the Delian bond to "≈ −0.0218" (truncation of −0.021850…); the paper prints −0.02185, which agrees with both the exact value 3/8 − 2^(2/3)/4 and the README's digits.
 Not audited here (outside the studies): the figure-5 app screenshot's own on-screen volumes (2.491, 1.745 — #48's 1 + 2√5/3 and 1 + √5/3, consistent).
+
+---
+
+# v2 audit (2026-10-25): numbers added or changed in Draft v2
+
+Sources: **PA** = papers/2026-10-25-bond-relay/prior-art.md; **S3** = studies/2026-10-25-scale-anomalies/README.md (commit 9138f80), its data/checks/anomalies-checks.txt and data/raw/values.json; Crossref lookups of 2026-10-25 for the reference metadata. v1 rows above are unchanged unless listed here.
+
+| # | Number in v2 | Where | Source | Result |
+|---|---|---|---|---|
+| 61 | Octet circumspheres r² = 1/2 (octahedron) and 3/8 (tetrahedron), difference −1/8 = (3/8)(2t − 1) at t = 1/3 | §3 "classical members" | PA l.17 (row 2a); recomp 0.5, 0.375, −0.125 | PASS |
+| 62 | x = 0, ∞ honeycomb circumspheres r² = φ²/4 and φ²/2, difference −φ²/4 = w_B − w_S at x = 0 | §3 | PA l.15 (row 1a); recomp from T(0) = perms of (1,0,0)φ/2 and T(∞) = perms of (1,1,0)φ/2 | PASS |
+| 63 | Alexeev §5.12 | Cor. 4, §8, [24] | PA l.24, l.34 | PASS |
+| 64 | Wang et al.: size ratio √3 − 1, both radical polyhedra 14-faced (6 squares + 8 hexagons) = window end x = √3 + 1 | §5, §8 | PA l.16, l.38; P l.69 (ρ = √3 − 1 at x = √3 + 1) | PASS |
+| 65 | George et al.: ~5000 oxides, 66 % (first rule), 13 % (rules 2–5) | §6 | S3 l.169–172; values.json (level "text") | PASS |
+| 66 | UO₂ ρ 1.3800, 1.02 %; CeO₂ 1.4227, 4.15 %; cubic ZrO₂ 1.6429, 20.27 %; edge (√3 + 1)/2 ≈ 1.3660; gap = (ρ − edge)/edge | §6 | S3 l.15–17, l.19; recomp 1.02, 4.15, 20.27 | PASS |
+| 67 | Measured lattices a = 5.47127 Å (UO₂), 5.411102 Å (CeO₂); t = 0.5806, 0.5878 vs 1/√3 ≈ 0.5774 | §6 | S3 l.101–104; checks Q1e | PASS |
+| 68 | UO₂ needs +0.0102 Å (U⁴⁺) or −0.0140 Å (O²⁻); residual +0.011 Å; half-unit 0.005 Å | Table 4 | S3 l.69, l.98, l.101; checks Q1b, Q1f | PASS |
+| 69 | CeO₂ +0.040 Å / −0.055 Å; about 6× residual 0.007 Å | Table 4 | S3 l.70, l.102, l.183 | PASS |
+| 70 | ZrO₂ +0.170 Å; Ca²⁺ cation fraction 0.61; O vacancies next to Zr, Y 8-fold (Li 1993, abstract) | Table 4 | S3 l.71, l.142–143; checks Q4c (y = 0.608); values.json level "abstract" | PASS |
+| 71 | Li₂O +0.12 Å / −0.24 Å; 73.9 GPa needed; transition 50 ± 5 GPa (Lazicki, abstract) | Table 4 | S3 l.72, l.116; checks Q2d; values.json "abstract" | PASS |
+| 72 | ρ unchanged under uniform compression/expansion (special positions) | §6 | S3 l.109; checks Q2a | PASS |
+| 73 | K₀′ = 4 assumed; UO₂ 3.8 GPa, K₀ 207 GPa; CeO₂ 18.9 GPa, K₀ 230 GPa, transition 31.5 GPa; cation-only moves out | §6 | S3 l.43, l.113–114; checks Q2b, Q2c | PASS |
+| 74 | Superionic T_S: CaF₂ 1430 K, Li₂O 1350 K, UO₂ 2670 K (reference values quoted in Fossati 2021, full text) | §6 | S3 l.130; values.json "text (web fetch of full text)" | PASS |
+| 75 | UO₂ expansion 3.39 % from 293 K to 2670 K (IAEA-TECDOC-1496) | §6 | S3 l.125; checks Q3a | PASS |
+| 76 | Gravity: strain ≈ 1.7 × 10⁻⁷ (1 m UO₂), force ratio 3.8 × 10⁻³⁴ | §6 | S3 l.159–160; checks Q5b, Q5c | PASS |
+| 77 | Radius convention ±0.14 Å shifts ρ by 21–37 %; all three misfits inside; Li₂O past the octet | §6 | S3 l.105; checks Q1c, Q1d | PASS |
+| 78 | Shannon stated accuracy not verified; 0.01 Å tabulation step | §6 | S3 l.97–98; values.json "unverified" | PASS |
+| 79 | BaF₂ 1.08, Na₂O 0.697, K₂O 0.965, 0.414; 12 cation neighbours | §6 (kept from v1) | as rows 50, 51, 54 | PASS |
+| 80 | Scale-anomaly checks 24 PASS; total 456 = 371 + 61 + 24 | App. B, [S3] | S3 l.201; anomalies-checks.txt "TOTAL 24 PASS, 0 FAIL" | PASS |
+| 81 | DOIs [6] 10.1007/978-3-642-12971-1, [20] 10.1080/14786448708628135, [23] 10.1145/116873.116880, [24] 10.2307/3062130, [25] 10.1063/1.5052478, [26] 10.1080/01418618008239380, [27] 10.1002/anie.202000829, [28] 10.1016/j.jnucmat.2015.01.029, [30] 10.1103/PhysRevB.70.014113, [31] 10.1103/PhysRevB.38.7755, [32] 10.1103/PhysRevB.73.184120, [33] 10.3389/fchem.2021.723507, [35] 10.1103/PhysRevB.48.10074 (titles, volumes, pages, years) | refs | api.crossref.org, 2026-10-25 (this session), and PA / S3 crossref.json | PASS |
+| 82 | Study commit 9138f80 (contains 7b0fd8b) | meta, [S1–S3] | `git merge-base --is-ancestor 7b0fd8b 9138f80` | PASS |
+
+Removed in v2 (no longer in the paper): "the touching windows bounded exactly by Pauling's limits" in Not found; "derived here, not quoted"; the earlier §6 text and its "to be updated" flag; the UO₂/CeO₂/ZrO₂ crystal-radius t-values 0.521/0.528/0.559 and the CsCl 1.126 → 1.432 and Li₂O 0.363 sentences (replaced by the S3 summary, row 77).
+
+**v2 result: 22 / 22 new or changed rows PASS; v1 rows 1–60 unchanged and still PASS.** Sources only marked full-text, text or abstract in S3 values.json are cited in §6; McCullough & Trueblood 1959, Dénès & Madamba 1997 and Shannon's abstract (secondary reproduction) are not cited; the β-PbF₂ ambient-form remark is labelled "general knowledge, not checked at source".
