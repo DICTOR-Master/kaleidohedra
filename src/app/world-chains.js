@@ -99,7 +99,7 @@ export function filmOrder(list, named = []) {
  *  DICTO 2026-10-25: the web of bonds) gets a Web button: the pieces turn see-through and a gold rod joins the anchors of every two
  *  pieces that share a face, its thickness by the face's area (web gives [[anchorA, anchorB, area]]); a kind with a param also gets
  *  a Loop button that runs its slider end to end and back (words '<prefix>.web.on|off|note', '<prefix>.loop.play|pause'). */
-export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null, pinnedRoles = new Set(), hideable = {}, links = {}, openAction = () => {}, kindButtons = false, hideRows = [], rowWords = {} }) {
+export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null, pinnedRoles = new Set(), hideable = {}, links = {}, openAction = () => {}, kindButtons = false, hideRows = [], rowWords = {}, foldNote = false }) {
   const STORAGE_KEY = storageKey(name);
   const group = new THREE.Group();
   group.visible = false;
@@ -159,7 +159,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     if (!grown.has(key)) { if (grown.size > 40) grown.clear(); grown.set(key, DATA[view.kind].web(size, { param: paramValue() })); }
     return grown.get(key);
   }
-  const rodMat = new THREE.MeshStandardMaterial({ color: 0xffc857, metalness: 0.3, roughness: 0.45 });
+  const rodMat = new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 0.3, roughness: 0.45 });
   const rodGeo = new THREE.CylinderGeometry(1, 1, 1, 8, 1, true);
   // Pull apart by face (DICTO 2026-10-13: see the solids the many pieces form): each piece moves along the outward normal of
   // its outermost face, as far as that face's plane is from the middle, so all the pieces under one face of a shell's solid
@@ -267,6 +267,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
         f.forEach((k, i) => b.line.push(...P[k], ...P[f[(i + 1) % f.length]]));
       });
     });
+    glass.opacity = webOn() ? 0.1 : 0.22; // the web on: the pieces step back so the rods read
     solid.transparent = opacity < 1; solid.opacity = opacity; solid.depthWrite = opacity >= 1; solid.needsUpdate = true;
     for (const [key, mat] of [['solid', solid], ['glass', glass]]) {
       const b = buf[key];
@@ -278,7 +279,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       const lg = new THREE.BufferGeometry();
       lg.setAttribute('position', new THREE.Float32BufferAttribute(b.line, 3));
       if (!skeleton) { const m = new THREE.Mesh(g, mat); group.add(m); if (key === 'solid') solidMesh = m; }
-      group.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial(key === 'glass' ? { color: 0x9fa8c0, transparent: true, opacity: 0.55 } : { color: skeleton ? 0xcfe3ff : EDGE_COLOR })));
+      group.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial(key === 'glass' ? { color: 0x9fa8c0, transparent: true, opacity: webOn() ? 0.12 : 0.55 } : { color: skeleton ? 0xcfe3ff : EDGE_COLOR })));
     }
     // The web of bonds: one rod per shared face, between the two pieces' anchors, as thick as the face is large (radius ∝ √area), within
     // the layers shown; the rods move with Pulled apart as the anchors do.
@@ -287,15 +288,19 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       const where = (a) => a.map((c, i) => (c - c0[i] + (c - c0[i]) * view.apart) * WS);
       for (const [a, b, area] of webList()) {
         if (area <= 1e-9 || shellOf(Math.hypot(...a.map((c, i) => c - c0[i]))) > top || shellOf(Math.hypot(...b.map((c, i) => c - c0[i]))) > top) continue;
-        rods.push([where(a), where(b), DATA[view.kind].webRadius * Math.sqrt(area) * WS]);
+        // outer layers fainter and thinner (DICTO 2026-10-25, after a TV test: the far rods made a tangle), the core's bonds brightest
+        const lay = Math.max(shellOf(Math.hypot(...a.map((c, i) => c - c0[i]))), shellOf(Math.hypot(...b.map((c, i) => c - c0[i])))) / Math.max(1, levels.length - 1);
+        rods.push([where(a), where(b), DATA[view.kind].webRadius * Math.sqrt(area) * WS * (1 - 0.4 * lay), 1 - 0.65 * lay]);
       }
       const inst = new THREE.InstancedMesh(rodGeo, rodMat, Math.max(1, rods.length));
       const m = new THREE.Matrix4(), q = new THREE.Quaternion(), up = new THREE.Vector3(0, 1, 0);
-      rods.forEach(([pa, pb, r], i) => {
+      const rc = new THREE.Color(), gold = new THREE.Color(0xffc857);
+      rods.forEach(([pa, pb, r, bright], i) => {
         const A = new THREE.Vector3(...pa), B = new THREE.Vector3(...pb), d = B.clone().sub(A), len = d.length();
         q.setFromUnitVectors(up, d.normalize());
         m.compose(A.add(B).multiplyScalar(0.5), q, new THREE.Vector3(r, len, r));
         inst.setMatrixAt(i, m);
+        inst.setColorAt(i, rc.copy(gold).multiplyScalar(bright));
       });
       inst.count = rods.length;
       group.add(inst);
@@ -329,6 +334,9 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     <div class="w4d-row st-note"></div>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, name);
+  // foldNote (DICTONIC, DICTO 2026-10-25): the note shows one line; a tap opens or closes it
+  const noteEl = panel.querySelector('.st-note:not(.ch-film-note)');
+  if (foldNote) { noteEl.classList.add('fold'); noteEl.addEventListener('click', () => noteEl.classList.toggle('open')); }
   const partSelect = panel.querySelector('[data-select="part"]');
   const paramInput = panel.querySelector('.ch-param-row input');
   const apartInput = panel.querySelector('.ch-apart-row input');
@@ -451,7 +459,8 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   crystalBtn.addEventListener('click', () => { view.crystal = !view.crystal; save(); draw(); });
   byFaceBtn.addEventListener('click', () => { view.byFace = !view.byFace; save(); renderPanel(); draw(); });
   hideBtn.addEventListener('click', () => { view.hidden = !view.hidden; save(); draw(); });
-  webBtn.addEventListener('click', () => { view.web = !view.web; save(); draw(); });
+  // the web starts at 2 layers (more is a tangle at first sight; the Layers slider still goes higher)
+  webBtn.addEventListener('click', () => { view.web = !view.web; if (view.web && view.size > 2) view.size = 2; save(); draw(); fit(); });
   // Loop (DICTO 2026-10-25, "the rhythm of the loop"): the kind's slider runs from one end to the other and back, without end, until
   // paused (or the kind or world changes); with reduced motion it steps from stop to stop instead of sliding.
   loopBtn.addEventListener('click', () => { if (looping) stopLoop(); else startLoop(); renderPanel(); });

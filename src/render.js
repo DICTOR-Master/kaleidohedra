@@ -7014,12 +7014,23 @@ function readPanelCover() {
   }
   return Math.max(0, Math.min(H * 0.6, H - top));
 }
+// A world panel standing as a column on the right (DICTONIC on wide, short screens, DICTO 2026-10-25): the picture moves left of it.
+let panelSide = 0;
+function readPanelSide() {
+  const H = window.innerHeight, W = document.documentElement.clientWidth || window.innerWidth;
+  let left = W;
+  for (const btn of document.querySelectorAll('.panel-min')) {
+    const r = btn.parentElement.getBoundingClientRect();
+    if (r.height >= H * 0.5 && r.width < W * 0.45 && r.left > W * 0.4 && getComputedStyle(btn.parentElement).visibility !== 'hidden') left = Math.min(left, r.left);
+  }
+  return Math.max(0, Math.min(W * 0.5, W - left));
+}
 function applyPanelCover() {
   const w = document.documentElement.clientWidth || window.innerWidth, h = window.innerHeight;
-  if (panelCover < 0.5) camera.clearViewOffset(); else camera.setViewOffset(w, h, 0, panelCover / 2, w, h);
+  if (panelCover < 0.5 && panelSide < 0.5) camera.clearViewOffset(); else camera.setViewOffset(w, h, panelSide / 2, panelCover / 2, w, h);
 }
 function updatePanelCover(now) {
-  if (now - panelCoverRead > 200) { panelCoverRead = now; panelCoverWant = readPanelCover(); }
+  if (now - panelCoverRead > 200) { panelCoverRead = now; panelCoverWant = readPanelCover(); const side = readPanelSide(); if (Math.abs(side - panelSide) > 0.5) { panelSide = side; applyPanelCover(); } }
   if (Math.abs(panelCoverWant - panelCover) < 0.5) { if (panelCover === panelCoverWant) return; panelCover = panelCoverWant; }
   else panelCover += (panelCoverWant - panelCover) * 0.25;
   applyPanelCover();
