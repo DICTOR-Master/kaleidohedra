@@ -155,7 +155,7 @@ Coordination numbers per piece, for every interval and stop, are in `data/raw/ta
   - unlike bonds: √3(3 − λ²) here, against (√3/4)(3 − λ²);
   - volumes: −2(λ³ − 9λ − 12)/3 here, against −(λ³ − 9λ − 12)/3;
   - the same flips at ±1 and the same ends at ±3.
-- In both, the second kind sits at the deep hole of the first kind's lattice, at squared distance 3. This coincidence is exact but **not explained** here.
+- In both, the unlike nearest squared distance is 3. But the second kind does not sit at the same kind of hole: in CsCl it sits at the deep hole of the first kind's lattice (the body centre of the simple cubic lattice), while in zinc blende S sits at a tetrahedral hole of fcc, which is the *shallow* hole (the deep hole of fcc is the octahedral hole, at squared distance 4 in these units; Conway & Sloane, ch. 2 and 4). So "the second kind sits at the deep hole" is not a common reason. The coincidence is exact but **not explained** here. (Corrected 2026-10-25 after the prior-art search, `prior-art.md` find 5; the earlier wording said both sit at the deep hole.)
 - No hinge exists.
 
 **5. hcp holes, the "gyrated octet" sites (DICTO's #37a: the gyrated tetrahedral–octahedral honeycomb).** The question was whether the switch moves or splits.
