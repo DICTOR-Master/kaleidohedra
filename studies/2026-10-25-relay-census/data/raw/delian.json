@@ -1,0 +1,2598 @@
+{
+ "name": "fcc + all its tetrahedral holes (Delian loop sites)",
+ "key": "delian",
+ "units": "octet edge 1 (app units); lam = w_tet - w_oct = (3/8)(2t - 1)",
+ "kinds": [
+  "oct",
+  "tet"
+ ],
+ "lam": "w_tet - w_oct",
+ "intervals": [
+  {
+   "lo": "-3/8",
+   "hi": "-1/8",
+   "sample": "-1/4",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "oct",
+     "bonds": {
+      "oct": 12,
+      "tet": 8
+     },
+     "faces": 20,
+     "corners": 30,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+     ],
+     "area2": {
+      "oct": [
+       "(8*lam + 1)**2*(8*lam + 5)**2/128"
+      ],
+      "tet": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "volume": "-(512*lam**3 + 576*lam**2 + 216*lam + 3)/12",
+     "rho": 0.7071,
+     "orbits": {
+      "oct@1": 12,
+      "tet@3/8": 8
+     },
+     "orbit_area2": {
+      "oct@1": [
+       "(8*lam + 1)**2*(8*lam + 5)**2/128"
+      ],
+      "tet@3/8": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "edge_len2": [
+      "(8*lam + 3)**2/4",
+      "3*(8*lam + 1)**2/32"
+     ]
+    },
+    {
+     "i": 1,
+     "kind": "oct",
+     "bonds": {
+      "oct": 12,
+      "tet": 8
+     },
+     "faces": 20,
+     "corners": 30,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+     ],
+     "area2": {
+      "oct": [
+       "(8*lam + 1)**2*(8*lam + 5)**2/128"
+      ],
+      "tet": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "volume": "-(512*lam**3 + 576*lam**2 + 216*lam + 3)/12",
+     "rho": 0.7071,
+     "orbits": {
+      "oct@1": 12,
+      "tet@3/8": 8
+     },
+     "orbit_area2": {
+      "oct@1": [
+       "(8*lam + 1)**2*(8*lam + 5)**2/128"
+      ],
+      "tet@3/8": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "edge_len2": [
+      "(8*lam + 3)**2/4",
+      "3*(8*lam + 1)**2/32"
+     ]
+    },
+    {
+     "i": 2,
+     "kind": "oct",
+     "bonds": {
+      "oct": 12,
+      "tet": 8
+     },
+     "faces": 20,
+     "corners": 30,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+     ],
+     "area2": {
+      "oct": [
+       "(8*lam + 1)**2*(8*lam + 5)**2/128"
+      ],
+      "tet": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "volume": "-(512*lam**3 + 576*lam**2 + 216*lam + 3)/12",
+     "rho": 0.7071,
+     "orbits": {
+      "oct@1": 12,
+      "tet@3/8": 8
+     },
+     "orbit_area2": {
+      "oct@1": [
+       "(8*lam + 1)**2*(8*lam + 5)**2/128"
+      ],
+      "tet@3/8": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "edge_len2": [
+      "(8*lam + 3)**2/4",
+      "3*(8*lam + 1)**2/32"
+     ]
+    },
+    {
+     "i": 3,
+     "kind": "oct",
+     "bonds": {
+      "oct": 12,
+      "tet": 8
+     },
+     "faces": 20,
+     "corners": 30,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+     ],
+     "area2": {
+      "oct": [
+       "(8*lam + 1)**2*(8*lam + 5)**2/128"
+      ],
+      "tet": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "volume": "-(512*lam**3 + 576*lam**2 + 216*lam + 3)/12",
+     "rho": 0.7071,
+     "orbits": {
+      "oct@1": 12,
+      "tet@3/8": 8
+     },
+     "orbit_area2": {
+      "oct@1": [
+       "(8*lam + 1)**2*(8*lam + 5)**2/128"
+      ],
+      "tet@3/8": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "edge_len2": [
+      "(8*lam + 3)**2/4",
+      "3*(8*lam + 1)**2/32"
+     ]
+    },
+    {
+     "i": 4,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "oct": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "volume": "(8*lam + 3)**3/24",
+     "rho": 0.6124,
+     "orbits": {
+      "oct@3/8": 4
+     },
+     "orbit_area2": {
+      "oct@3/8": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "(8*lam + 3)**2/4"
+     ]
+    },
+    {
+     "i": 5,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "oct": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "volume": "(8*lam + 3)**3/24",
+     "rho": 0.6124,
+     "orbits": {
+      "oct@3/8": 4
+     },
+     "orbit_area2": {
+      "oct@3/8": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "(8*lam + 3)**2/4"
+     ]
+    },
+    {
+     "i": 6,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "oct": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "volume": "(8*lam + 3)**3/24",
+     "rho": 0.6124,
+     "orbits": {
+      "oct@3/8": 4
+     },
+     "orbit_area2": {
+      "oct@3/8": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "(8*lam + 3)**2/4"
+     ]
+    },
+    {
+     "i": 7,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "oct": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "volume": "(8*lam + 3)**3/24",
+     "rho": 0.6124,
+     "orbits": {
+      "oct@3/8": 4
+     },
+     "orbit_area2": {
+      "oct@3/8": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "(8*lam + 3)**2/4"
+     ]
+    },
+    {
+     "i": 8,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "oct": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "volume": "(8*lam + 3)**3/24",
+     "rho": 0.6124,
+     "orbits": {
+      "oct@3/8": 4
+     },
+     "orbit_area2": {
+      "oct@3/8": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "(8*lam + 3)**2/4"
+     ]
+    },
+    {
+     "i": 9,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "oct": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "volume": "(8*lam + 3)**3/24",
+     "rho": 0.6124,
+     "orbits": {
+      "oct@3/8": 4
+     },
+     "orbit_area2": {
+      "oct@3/8": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "(8*lam + 3)**2/4"
+     ]
+    },
+    {
+     "i": 10,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "oct": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "volume": "(8*lam + 3)**3/24",
+     "rho": 0.6124,
+     "orbits": {
+      "oct@3/8": 4
+     },
+     "orbit_area2": {
+      "oct@3/8": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "(8*lam + 3)**2/4"
+     ]
+    },
+    {
+     "i": 11,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "oct": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "volume": "(8*lam + 3)**3/24",
+     "rho": 0.6124,
+     "orbits": {
+      "oct@3/8": 4
+     },
+     "orbit_area2": {
+      "oct@3/8": [
+       "3*(8*lam + 3)**4/256"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "(8*lam + 3)**2/4"
+     ]
+    }
+   ],
+   "dual": {
+    "6oct": 24,
+    "3oct+1tet": 128
+   },
+   "bond_types": [
+    "oct-oct",
+    "oct-tet"
+   ],
+   "bond_orbits": [
+    "oct-oct@1",
+    "oct-tet@3/8"
+   ],
+   "Vpoly": {
+    "oct": "-(512*lam**3 + 576*lam**2 + 216*lam + 3)/12",
+    "tet": "(8*lam + 3)**3/24"
+   }
+  },
+  {
+   "lo": "-1/8",
+   "hi": "3/8",
+   "sample": "0",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "oct",
+     "bonds": {
+      "tet": 8
+     },
+     "faces": 8,
+     "corners": 6,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "tet": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "volume": "-(8*lam - 3)**3/48",
+     "rho": 0.7071,
+     "orbits": {
+      "tet@3/8": 8
+     },
+     "orbit_area2": {
+      "tet@3/8": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "corner_degrees": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "edge_len2": [
+      "(8*lam - 3)**2/16"
+     ]
+    },
+    {
+     "i": 1,
+     "kind": "oct",
+     "bonds": {
+      "tet": 8
+     },
+     "faces": 8,
+     "corners": 6,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "tet": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "volume": "-(8*lam - 3)**3/48",
+     "rho": 0.7071,
+     "orbits": {
+      "tet@3/8": 8
+     },
+     "orbit_area2": {
+      "tet@3/8": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "corner_degrees": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "edge_len2": [
+      "(8*lam - 3)**2/16"
+     ]
+    },
+    {
+     "i": 2,
+     "kind": "oct",
+     "bonds": {
+      "tet": 8
+     },
+     "faces": 8,
+     "corners": 6,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "tet": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "volume": "-(8*lam - 3)**3/48",
+     "rho": 0.7071,
+     "orbits": {
+      "tet@3/8": 8
+     },
+     "orbit_area2": {
+      "tet@3/8": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "corner_degrees": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "edge_len2": [
+      "(8*lam - 3)**2/16"
+     ]
+    },
+    {
+     "i": 3,
+     "kind": "oct",
+     "bonds": {
+      "tet": 8
+     },
+     "faces": 8,
+     "corners": 6,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "tet": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "volume": "-(8*lam - 3)**3/48",
+     "rho": 0.7071,
+     "orbits": {
+      "tet@3/8": 8
+     },
+     "orbit_area2": {
+      "tet@3/8": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "corner_degrees": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "edge_len2": [
+      "(8*lam - 3)**2/16"
+     ]
+    },
+    {
+     "i": 4,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4,
+      "tet": 6
+     },
+     "faces": 10,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+     ],
+     "area2": {
+      "tet": [
+       "(8*lam - 7)**2*(8*lam + 1)**2/1024"
+      ],
+      "oct": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "volume": "(512*lam**3 - 576*lam**2 + 216*lam + 69)/96",
+     "rho": 0.6124,
+     "orbits": {
+      "oct@3/8": 4,
+      "tet@1/2": 6
+     },
+     "orbit_area2": {
+      "tet@1/2": [
+       "(8*lam - 7)**2*(8*lam + 1)**2/1024"
+      ],
+      "oct@3/8": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "(8*lam + 1)**2/32",
+      "(8*lam - 3)**2/16"
+     ]
+    },
+    {
+     "i": 5,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4,
+      "tet": 6
+     },
+     "faces": 10,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+     ],
+     "area2": {
+      "tet": [
+       "(8*lam - 7)**2*(8*lam + 1)**2/1024"
+      ],
+      "oct": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "volume": "(512*lam**3 - 576*lam**2 + 216*lam + 69)/96",
+     "rho": 0.6124,
+     "orbits": {
+      "oct@3/8": 4,
+      "tet@1/2": 6
+     },
+     "orbit_area2": {
+      "tet@1/2": [
+       "(8*lam - 7)**2*(8*lam + 1)**2/1024"
+      ],
+      "oct@3/8": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "(8*lam + 1)**2/32",
+      "(8*lam - 3)**2/16"
+     ]
+    },
+    {
+     "i": 6,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4,
+      "tet": 6
+     },
+     "faces": 10,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+     ],
+     "area2": {
+      "tet": [
+       "(8*lam - 7)**2*(8*lam + 1)**2/1024"
+      ],
+      "oct": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "volume": "(512*lam**3 - 576*lam**2 + 216*lam + 69)/96",
+     "rho": 0.6124,
+     "orbits": {
+      "oct@3/8": 4,
+      "tet@1/2": 6
+     },
+     "orbit_area2": {
+      "tet@1/2": [
+       "(8*lam - 7)**2*(8*lam + 1)**2/1024"
+      ],
+      "oct@3/8": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "(8*lam + 1)**2/32",
+      "(8*lam - 3)**2/16"
+     ]
+    },
+    {
+     "i": 7,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4,
+      "tet": 6
+     },
+     "faces": 10,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+     ],
+     "area2": {
+      "tet": [
+       "(8*lam - 7)**2*(8*lam + 1)**2/1024"
+      ],
+      "oct": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "volume": "(512*lam**3 - 576*lam**2 + 216*lam + 69)/96",
+     "rho": 0.6124,
+     "orbits": {
+      "oct@3/8": 4,
+      "tet@1/2": 6
+     },
+     "orbit_area2": {
+      "tet@1/2": [
+       "(8*lam - 7)**2*(8*lam + 1)**2/1024"
+      ],
+      "oct@3/8": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "(8*lam + 1)**2/32",
+      "(8*lam - 3)**2/16"
+     ]
+    },
+    {
+     "i": 8,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4,
+      "tet": 6
+     },
+     "faces": 10,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+     ],
+     "area2": {
+      "tet": [
+       "(8*lam - 7)**2*(8*lam + 1)**2/1024"
+      ],
+      "oct": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "volume": "(512*lam**3 - 576*lam**2 + 216*lam + 69)/96",
+     "rho": 0.6124,
+     "orbits": {
+      "oct@3/8": 4,
+      "tet@1/2": 6
+     },
+     "orbit_area2": {
+      "tet@1/2": [
+       "(8*lam - 7)**2*(8*lam + 1)**2/1024"
+      ],
+      "oct@3/8": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "(8*lam + 1)**2/32",
+      "(8*lam - 3)**2/16"
+     ]
+    },
+    {
+     "i": 9,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4,
+      "tet": 6
+     },
+     "faces": 10,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+     ],
+     "area2": {
+      "tet": [
+       "(8*lam - 7)**2*(8*lam + 1)**2/1024"
+      ],
+      "oct": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "volume": "(512*lam**3 - 576*lam**2 + 216*lam + 69)/96",
+     "rho": 0.6124,
+     "orbits": {
+      "oct@3/8": 4,
+      "tet@1/2": 6
+     },
+     "orbit_area2": {
+      "tet@1/2": [
+       "(8*lam - 7)**2*(8*lam + 1)**2/1024"
+      ],
+      "oct@3/8": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "(8*lam + 1)**2/32",
+      "(8*lam - 3)**2/16"
+     ]
+    },
+    {
+     "i": 10,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4,
+      "tet": 6
+     },
+     "faces": 10,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+     ],
+     "area2": {
+      "tet": [
+       "(8*lam - 7)**2*(8*lam + 1)**2/1024"
+      ],
+      "oct": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "volume": "(512*lam**3 - 576*lam**2 + 216*lam + 69)/96",
+     "rho": 0.6124,
+     "orbits": {
+      "oct@3/8": 4,
+      "tet@1/2": 6
+     },
+     "orbit_area2": {
+      "tet@1/2": [
+       "(8*lam - 7)**2*(8*lam + 1)**2/1024"
+      ],
+      "oct@3/8": [
+       "3*(8*lam - 3)**4/4096"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "(8*lam + 1)**2/32",
+      "(8*lam - 3)**2/16"
+     ]
+    },
+    {
+     "i": 11,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4,
+      "tet": 6
+     },
+     "faces": 10,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+     ],
+     "area2": {
+      "oct": [
+       "3*(8*lam - 3)**4/4096"
+      ],
+      "tet": [
+       "(8*lam - 7)**2*(8*lam + 1)**2/1024"
+      ]
+     },
+     "volume": "(512*lam**3 - 576*lam**2 + 216*lam + 69)/96",
+     "rho": 0.6124,
+     "orbits": {
+      "oct@3/8": 4,
+      "tet@1/2": 6
+     },
+     "orbit_area2": {
+      "oct@3/8": [
+       "3*(8*lam - 3)**4/4096"
+      ],
+      "tet@1/2": [
+       "(8*lam - 7)**2*(8*lam + 1)**2/1024"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "(8*lam + 1)**2/32",
+      "(8*lam - 3)**2/16"
+     ]
+    }
+   ],
+   "dual": {
+    "1oct+4tet": 120,
+    "8tet": 32
+   },
+   "bond_types": [
+    "oct-tet",
+    "tet-tet"
+   ],
+   "bond_orbits": [
+    "oct-tet@3/8",
+    "tet-tet@1/2"
+   ],
+   "Vpoly": {
+    "oct": "-(8*lam - 3)**3/48",
+    "tet": "(512*lam**3 - 576*lam**2 + 216*lam + 69)/96"
+   }
+  }
+ ],
+ "stops": [
+  {
+   "lam": "-3/8",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "oct",
+     "bonds": {
+      "oct": 12
+     },
+     "faces": 12,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "corners": 14,
+     "face_sizes": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "orbits": {
+      "oct@1": 12
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 1,
+     "kind": "oct",
+     "bonds": {
+      "oct": 12
+     },
+     "faces": 12,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "corners": 14,
+     "face_sizes": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "orbits": {
+      "oct@1": 12
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 2,
+     "kind": "oct",
+     "bonds": {
+      "oct": 12
+     },
+     "faces": 12,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "corners": 14,
+     "face_sizes": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "orbits": {
+      "oct@1": 12
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 3,
+     "kind": "oct",
+     "bonds": {
+      "oct": 12
+     },
+     "faces": 12,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "corners": 14,
+     "face_sizes": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "orbits": {
+      "oct@1": 12
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 4,
+     "kind": "tet",
+     "vanished": true
+    },
+    {
+     "i": 5,
+     "kind": "tet",
+     "vanished": true
+    },
+    {
+     "i": 6,
+     "kind": "tet",
+     "vanished": true
+    },
+    {
+     "i": 7,
+     "kind": "tet",
+     "vanished": true
+    },
+    {
+     "i": 8,
+     "kind": "tet",
+     "vanished": true
+    },
+    {
+     "i": 9,
+     "kind": "tet",
+     "vanished": true
+    },
+    {
+     "i": 10,
+     "kind": "tet",
+     "vanished": true
+    },
+    {
+     "i": 11,
+     "kind": "tet",
+     "vanished": true
+    }
+   ],
+   "vanish": [
+    "tet",
+    "tet",
+    "tet",
+    "tet",
+    "tet",
+    "tet",
+    "tet",
+    "tet"
+   ],
+   "dual": {
+    "6oct": 24,
+    "4oct+1tet": 32
+   },
+   "bond_types": [
+    "oct-oct"
+   ],
+   "bond_orbits": [
+    "oct-oct@1"
+   ]
+  },
+  {
+   "lam": "-1/8",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "oct",
+     "bonds": {
+      "tet": 8
+     },
+     "faces": 8,
+     "corner_degrees": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "corners": 6,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "tet@3/8": 8
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 1,
+     "kind": "oct",
+     "bonds": {
+      "tet": 8
+     },
+     "faces": 8,
+     "corner_degrees": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "corners": 6,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "tet@3/8": 8
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 2,
+     "kind": "oct",
+     "bonds": {
+      "tet": 8
+     },
+     "faces": 8,
+     "corner_degrees": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "corners": 6,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "tet@3/8": 8
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 3,
+     "kind": "oct",
+     "bonds": {
+      "tet": 8
+     },
+     "faces": 8,
+     "corner_degrees": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "corners": 6,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "tet@3/8": 8
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 4,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "oct@3/8": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 5,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "oct@3/8": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 6,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "oct@3/8": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 7,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "oct@3/8": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 8,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "oct@3/8": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 9,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "oct@3/8": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 10,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "oct@3/8": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 11,
+     "kind": "tet",
+     "bonds": {
+      "oct": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "oct@3/8": 4
+     },
+     "ghost_planes": 0
+    }
+   ],
+   "vanish": [],
+   "dual": {
+    "6oct+8tet": 56
+   },
+   "bond_types": [
+    "oct-tet"
+   ],
+   "bond_orbits": [
+    "oct-tet@3/8"
+   ]
+  },
+  {
+   "lam": "3/8",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "oct",
+     "vanished": true
+    },
+    {
+     "i": 1,
+     "kind": "oct",
+     "vanished": true
+    },
+    {
+     "i": 2,
+     "kind": "oct",
+     "vanished": true
+    },
+    {
+     "i": 3,
+     "kind": "oct",
+     "vanished": true
+    },
+    {
+     "i": 4,
+     "kind": "tet",
+     "bonds": {
+      "tet": 6
+     },
+     "faces": 6,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 8,
+     "face_sizes": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "orbits": {
+      "tet@1/2": 6
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 5,
+     "kind": "tet",
+     "bonds": {
+      "tet": 6
+     },
+     "faces": 6,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 8,
+     "face_sizes": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "orbits": {
+      "tet@1/2": 6
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 6,
+     "kind": "tet",
+     "bonds": {
+      "tet": 6
+     },
+     "faces": 6,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 8,
+     "face_sizes": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "orbits": {
+      "tet@1/2": 6
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 7,
+     "kind": "tet",
+     "bonds": {
+      "tet": 6
+     },
+     "faces": 6,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 8,
+     "face_sizes": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "orbits": {
+      "tet@1/2": 6
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 8,
+     "kind": "tet",
+     "bonds": {
+      "tet": 6
+     },
+     "faces": 6,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 8,
+     "face_sizes": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "orbits": {
+      "tet@1/2": 6
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 9,
+     "kind": "tet",
+     "bonds": {
+      "tet": 6
+     },
+     "faces": 6,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 8,
+     "face_sizes": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "orbits": {
+      "tet@1/2": 6
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 10,
+     "kind": "tet",
+     "bonds": {
+      "tet": 6
+     },
+     "faces": 6,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 8,
+     "face_sizes": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "orbits": {
+      "tet@1/2": 6
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 11,
+     "kind": "tet",
+     "bonds": {
+      "tet": 6
+     },
+     "faces": 6,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 8,
+     "face_sizes": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "orbits": {
+      "tet@1/2": 6
+     },
+     "ghost_planes": 0
+    }
+   ],
+   "vanish": [
+    "oct",
+    "oct",
+    "oct",
+    "oct"
+   ],
+   "dual": {
+    "8tet": 32,
+    "1oct+8tet": 32
+   },
+   "bond_types": [
+    "tet-tet"
+   ],
+   "bond_orbits": [
+    "tet-tet@1/2"
+   ]
+  }
+ ],
+ "seconds": 15.2,
+ "checks": [
+  [
+   "PASS",
+   "delian (-1/8, 3/8) site 0 (oct): Euler V - E + F = 2",
+   "6-12+8"
+  ],
+  [
+   "PASS",
+   "delian (-1/8, 3/8) site 1 (oct): Euler V - E + F = 2",
+   "6-12+8"
+  ],
+  [
+   "PASS",
+   "delian (-1/8, 3/8) site 2 (oct): Euler V - E + F = 2",
+   "6-12+8"
+  ],
+  [
+   "PASS",
+   "delian (-1/8, 3/8) site 3 (oct): Euler V - E + F = 2",
+   "6-12+8"
+  ],
+  [
+   "PASS",
+   "delian (-1/8, 3/8) site 4 (tet): Euler V - E + F = 2",
+   "16-24+10"
+  ],
+  [
+   "PASS",
+   "delian (-1/8, 3/8) site 5 (tet): Euler V - E + F = 2",
+   "16-24+10"
+  ],
+  [
+   "PASS",
+   "delian (-1/8, 3/8) site 6 (tet): Euler V - E + F = 2",
+   "16-24+10"
+  ],
+  [
+   "PASS",
+   "delian (-1/8, 3/8) site 7 (tet): Euler V - E + F = 2",
+   "16-24+10"
+  ],
+  [
+   "PASS",
+   "delian (-1/8, 3/8) site 8 (tet): Euler V - E + F = 2",
+   "16-24+10"
+  ],
+  [
+   "PASS",
+   "delian (-1/8, 3/8) site 9 (tet): Euler V - E + F = 2",
+   "16-24+10"
+  ],
+  [
+   "PASS",
+   "delian (-1/8, 3/8) site 10 (tet): Euler V - E + F = 2",
+   "16-24+10"
+  ],
+  [
+   "PASS",
+   "delian (-1/8, 3/8) site 11 (tet): Euler V - E + F = 2",
+   "16-24+10"
+  ],
+  [
+   "PASS",
+   "delian (-1/8, 3/8): distance bound (finite site list enough on the closed interval)",
+   "D2=12"
+  ],
+  [
+   "PASS",
+   "delian (-1/8, 3/8): cell volumes add up to the lattice cell identically in lam",
+   "sum = 8, cell = 8"
+  ],
+  [
+   "PASS",
+   "delian (-1/8, 3/8): every face shared face to face (same measure from both cells)",
+   "112 faces"
+  ],
+  [
+   "PASS",
+   "delian stop 3/8 site 4: limit of the interval = power cell from scratch",
+   "8 corners, 6 faces"
+  ],
+  [
+   "PASS",
+   "delian stop 3/8 site 5: limit of the interval = power cell from scratch",
+   "8 corners, 6 faces"
+  ],
+  [
+   "PASS",
+   "delian stop 3/8 site 6: limit of the interval = power cell from scratch",
+   "8 corners, 6 faces"
+  ],
+  [
+   "PASS",
+   "delian stop 3/8 site 7: limit of the interval = power cell from scratch",
+   "8 corners, 6 faces"
+  ],
+  [
+   "PASS",
+   "delian stop 3/8 site 8: limit of the interval = power cell from scratch",
+   "8 corners, 6 faces"
+  ],
+  [
+   "PASS",
+   "delian stop 3/8 site 9: limit of the interval = power cell from scratch",
+   "8 corners, 6 faces"
+  ],
+  [
+   "PASS",
+   "delian stop 3/8 site 10: limit of the interval = power cell from scratch",
+   "8 corners, 6 faces"
+  ],
+  [
+   "PASS",
+   "delian stop 3/8 site 11: limit of the interval = power cell from scratch",
+   "8 corners, 6 faces"
+  ],
+  [
+   "PASS",
+   "delian stop -1/8 site 0: limit of the interval = power cell from scratch",
+   "6 corners, 8 faces"
+  ],
+  [
+   "PASS",
+   "delian stop -1/8 site 1: limit of the interval = power cell from scratch",
+   "6 corners, 8 faces"
+  ],
+  [
+   "PASS",
+   "delian stop -1/8 site 2: limit of the interval = power cell from scratch",
+   "6 corners, 8 faces"
+  ],
+  [
+   "PASS",
+   "delian stop -1/8 site 3: limit of the interval = power cell from scratch",
+   "6 corners, 8 faces"
+  ],
+  [
+   "PASS",
+   "delian stop -1/8 site 4: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "delian stop -1/8 site 5: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "delian stop -1/8 site 6: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "delian stop -1/8 site 7: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "delian stop -1/8 site 8: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "delian stop -1/8 site 9: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "delian stop -1/8 site 10: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "delian stop -1/8 site 11: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "delian (-3/8, -1/8) site 0 (oct): Euler V - E + F = 2",
+   "30-48+20"
+  ],
+  [
+   "PASS",
+   "delian (-3/8, -1/8) site 1 (oct): Euler V - E + F = 2",
+   "30-48+20"
+  ],
+  [
+   "PASS",
+   "delian (-3/8, -1/8) site 2 (oct): Euler V - E + F = 2",
+   "30-48+20"
+  ],
+  [
+   "PASS",
+   "delian (-3/8, -1/8) site 3 (oct): Euler V - E + F = 2",
+   "30-48+20"
+  ],
+  [
+   "PASS",
+   "delian (-3/8, -1/8) site 4 (tet): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "delian (-3/8, -1/8) site 5 (tet): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "delian (-3/8, -1/8) site 6 (tet): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "delian (-3/8, -1/8) site 7 (tet): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "delian (-3/8, -1/8) site 8 (tet): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "delian (-3/8, -1/8) site 9 (tet): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "delian (-3/8, -1/8) site 10 (tet): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "delian (-3/8, -1/8) site 11 (tet): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "delian (-3/8, -1/8): distance bound (finite site list enough on the closed interval)",
+   "D2=12"
+  ],
+  [
+   "PASS",
+   "delian (-3/8, -1/8): cell volumes add up to the lattice cell identically in lam",
+   "sum = 8, cell = 8"
+  ],
+  [
+   "PASS",
+   "delian (-3/8, -1/8): every face shared face to face (same measure from both cells)",
+   "112 faces"
+  ],
+  [
+   "PASS",
+   "delian stop -3/8 site 0: limit of the interval = power cell from scratch",
+   "14 corners, 12 faces"
+  ],
+  [
+   "PASS",
+   "delian stop -3/8 site 1: limit of the interval = power cell from scratch",
+   "14 corners, 12 faces"
+  ],
+  [
+   "PASS",
+   "delian stop -3/8 site 2: limit of the interval = power cell from scratch",
+   "14 corners, 12 faces"
+  ],
+  [
+   "PASS",
+   "delian stop -3/8 site 3: limit of the interval = power cell from scratch",
+   "14 corners, 12 faces"
+  ],
+  [
+   "PASS",
+   "delian: at lam = -1/8 every oct cell is the known regular octahedron of the octet",
+   "[8, [3, 3, 3, 3, 3, 3, 3, 3], {\"tet\": 8}]"
+  ],
+  [
+   "PASS",
+   "delian: at lam = -1/8 every tet cell is the known regular tetrahedron of the octet",
+   "[4, [3, 3, 3, 3], {\"oct\": 4}]"
+  ],
+  [
+   "PASS",
+   "delian: at lam = -3/8 every oct cell is the known rhombic dodecahedron (Voronoi cell of fcc)",
+   "[12, [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], {\"oct\": 12}]"
+  ],
+  [
+   "PASS",
+   "delian: at lam = 3/8 every tet cell is the known cube (Voronoi cell of the simple cubic tet sites)",
+   "[6, [4, 4, 4, 4, 4, 4], {\"tet\": 6}]"
+  ]
+ ]
+}

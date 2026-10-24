@@ -1,0 +1,651 @@
+{
+ "name": "honeycomb + hexagon centres (triangular lattice, two kinds 2:1)",
+ "key": "honeycomb",
+ "units": "triangular lattice edge 1",
+ "kinds": [
+  "centre",
+  "honeycomb"
+ ],
+ "lam": "w_honeycomb - w_centre",
+ "intervals": [
+  {
+   "lo": "-1",
+   "hi": "-1/2",
+   "sample": "-7/8",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "honeycomb",
+     "bonds": {
+      "centre": 3
+     },
+     "faces": 3,
+     "corners": 3,
+     "face_sizes": [
+      2,
+      2,
+      2
+     ],
+     "area2": {
+      "centre": [
+       "3*(lam + 1)**2"
+      ]
+     },
+     "volume": "3*(lam + 1)**2/2",
+     "rho": 0.5,
+     "orbits": {
+      "centre@1": 3
+     },
+     "orbit_area2": {
+      "centre@1": [
+       "3*(lam + 1)**2"
+      ]
+     },
+     "corner_degrees": [
+      2,
+      2,
+      2
+     ],
+     "edge_len2": [
+      "3*(lam + 1)**2"
+     ]
+    },
+    {
+     "i": 1,
+     "kind": "honeycomb",
+     "bonds": {
+      "centre": 3
+     },
+     "faces": 3,
+     "corners": 3,
+     "face_sizes": [
+      2,
+      2,
+      2
+     ],
+     "area2": {
+      "centre": [
+       "3*(lam + 1)**2"
+      ]
+     },
+     "volume": "3*(lam + 1)**2/2",
+     "rho": 0.5,
+     "orbits": {
+      "centre@1": 3
+     },
+     "orbit_area2": {
+      "centre@1": [
+       "3*(lam + 1)**2"
+      ]
+     },
+     "corner_degrees": [
+      2,
+      2,
+      2
+     ],
+     "edge_len2": [
+      "3*(lam + 1)**2"
+     ]
+    },
+    {
+     "i": 2,
+     "kind": "centre",
+     "bonds": {
+      "centre": 6,
+      "honeycomb": 6
+     },
+     "faces": 12,
+     "corners": 12,
+     "face_sizes": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "area2": {
+      "centre": [
+       "(2*lam + 1)**2"
+      ],
+      "honeycomb": [
+       "3*(lam + 1)**2"
+      ]
+     },
+     "volume": "-3*lam*(lam + 2)",
+     "rho": 1.0,
+     "orbits": {
+      "centre@3": 6,
+      "honeycomb@1": 6
+     },
+     "orbit_area2": {
+      "centre@3": [
+       "(2*lam + 1)**2"
+      ],
+      "honeycomb@1": [
+       "3*(lam + 1)**2"
+      ]
+     },
+     "corner_degrees": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "edge_len2": [
+      "(2*lam + 1)**2",
+      "3*(lam + 1)**2"
+     ]
+    }
+   ],
+   "dual": {
+    "2centre+1honeycomb": 18
+   },
+   "bond_types": [
+    "centre-centre",
+    "centre-honeycomb"
+   ],
+   "bond_orbits": [
+    "centre-centre@3",
+    "centre-honeycomb@1"
+   ],
+   "Vpoly": {
+    "honeycomb": "3*(lam + 1)**2/2",
+    "centre": "-3*lam*(lam + 2)"
+   }
+  },
+  {
+   "lo": "-1/2",
+   "hi": "1",
+   "sample": "0",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "honeycomb",
+     "bonds": {
+      "centre": 3,
+      "honeycomb": 3
+     },
+     "faces": 6,
+     "corners": 6,
+     "face_sizes": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "area2": {
+      "honeycomb": [
+       "(2*lam + 1)**2/3"
+      ],
+      "centre": [
+       "(lam - 1)**2/3"
+      ]
+     },
+     "volume": "-(lam**2 - 2*lam - 2)/2",
+     "rho": 1.0,
+     "orbits": {
+      "centre@1": 3,
+      "honeycomb@1": 3
+     },
+     "orbit_area2": {
+      "honeycomb@1": [
+       "(2*lam + 1)**2/3"
+      ],
+      "centre@1": [
+       "(lam - 1)**2/3"
+      ]
+     },
+     "corner_degrees": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "edge_len2": [
+      "(2*lam + 1)**2/3",
+      "(lam - 1)**2/3"
+     ]
+    },
+    {
+     "i": 1,
+     "kind": "honeycomb",
+     "bonds": {
+      "centre": 3,
+      "honeycomb": 3
+     },
+     "faces": 6,
+     "corners": 6,
+     "face_sizes": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "area2": {
+      "centre": [
+       "(lam - 1)**2/3"
+      ],
+      "honeycomb": [
+       "(2*lam + 1)**2/3"
+      ]
+     },
+     "volume": "-(lam**2 - 2*lam - 2)/2",
+     "rho": 1.0,
+     "orbits": {
+      "centre@1": 3,
+      "honeycomb@1": 3
+     },
+     "orbit_area2": {
+      "centre@1": [
+       "(lam - 1)**2/3"
+      ],
+      "honeycomb@1": [
+       "(2*lam + 1)**2/3"
+      ]
+     },
+     "corner_degrees": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "edge_len2": [
+      "(2*lam + 1)**2/3",
+      "(lam - 1)**2/3"
+     ]
+    },
+    {
+     "i": 2,
+     "kind": "centre",
+     "bonds": {
+      "honeycomb": 6
+     },
+     "faces": 6,
+     "corners": 6,
+     "face_sizes": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "area2": {
+      "honeycomb": [
+       "(lam - 1)**2/3"
+      ]
+     },
+     "volume": "(lam - 1)**2",
+     "rho": 0.866,
+     "orbits": {
+      "honeycomb@1": 6
+     },
+     "orbit_area2": {
+      "honeycomb@1": [
+       "(lam - 1)**2/3"
+      ]
+     },
+     "corner_degrees": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "edge_len2": [
+      "(lam - 1)**2/3"
+     ]
+    }
+   ],
+   "dual": {
+    "1centre+2honeycomb": 18
+   },
+   "bond_types": [
+    "centre-honeycomb",
+    "honeycomb-honeycomb"
+   ],
+   "bond_orbits": [
+    "centre-honeycomb@1",
+    "honeycomb-honeycomb@1"
+   ],
+   "Vpoly": {
+    "honeycomb": "-(lam**2 - 2*lam - 2)/2",
+    "centre": "(lam - 1)**2"
+   }
+  }
+ ],
+ "stops": [
+  {
+   "lam": "-1",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "honeycomb",
+     "vanished": true
+    },
+    {
+     "i": 1,
+     "kind": "honeycomb",
+     "vanished": true
+    },
+    {
+     "i": 2,
+     "kind": "centre",
+     "bonds": {
+      "centre": 6
+     },
+     "faces": 6,
+     "corner_degrees": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "corners": 6,
+     "face_sizes": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "orbits": {
+      "centre@3": 6
+     },
+     "ghost_planes": 0
+    }
+   ],
+   "vanish": [
+    "honeycomb",
+    "honeycomb"
+   ],
+   "dual": {
+    "3centre+1honeycomb": 6
+   },
+   "bond_types": [
+    "centre-centre"
+   ],
+   "bond_orbits": [
+    "centre-centre@3"
+   ]
+  },
+  {
+   "lam": "-1/2",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "honeycomb",
+     "bonds": {
+      "centre": 3
+     },
+     "faces": 3,
+     "corner_degrees": [
+      2,
+      2,
+      2
+     ],
+     "corners": 3,
+     "face_sizes": [
+      2,
+      2,
+      2
+     ],
+     "orbits": {
+      "centre@1": 3
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 1,
+     "kind": "honeycomb",
+     "bonds": {
+      "centre": 3
+     },
+     "faces": 3,
+     "corner_degrees": [
+      2,
+      2,
+      2
+     ],
+     "corners": 3,
+     "face_sizes": [
+      2,
+      2,
+      2
+     ],
+     "orbits": {
+      "centre@1": 3
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 2,
+     "kind": "centre",
+     "bonds": {
+      "honeycomb": 6
+     },
+     "faces": 6,
+     "corner_degrees": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "corners": 6,
+     "face_sizes": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "orbits": {
+      "honeycomb@1": 6
+     },
+     "ghost_planes": 0
+    }
+   ],
+   "vanish": [],
+   "dual": {
+    "2centre+2honeycomb": 12
+   },
+   "bond_types": [
+    "centre-honeycomb"
+   ],
+   "bond_orbits": [
+    "centre-honeycomb@1"
+   ]
+  },
+  {
+   "lam": "1",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "honeycomb",
+     "bonds": {
+      "honeycomb": 3
+     },
+     "faces": 3,
+     "corner_degrees": [
+      2,
+      2,
+      2
+     ],
+     "corners": 3,
+     "face_sizes": [
+      2,
+      2,
+      2
+     ],
+     "orbits": {
+      "honeycomb@1": 3
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 1,
+     "kind": "honeycomb",
+     "bonds": {
+      "honeycomb": 3
+     },
+     "faces": 3,
+     "corner_degrees": [
+      2,
+      2,
+      2
+     ],
+     "corners": 3,
+     "face_sizes": [
+      2,
+      2,
+      2
+     ],
+     "orbits": {
+      "honeycomb@1": 3
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 2,
+     "kind": "centre",
+     "vanished": true
+    }
+   ],
+   "vanish": [
+    "centre"
+   ],
+   "dual": {
+    "1centre+6honeycomb": 6
+   },
+   "bond_types": [
+    "honeycomb-honeycomb"
+   ],
+   "bond_orbits": [
+    "honeycomb-honeycomb@1"
+   ]
+  }
+ ],
+ "seconds": 0.2,
+ "checks": [
+  [
+   "PASS",
+   "honeycomb (-1/2, 1): distance bound (finite site list enough on the closed interval)",
+   "D2=20"
+  ],
+  [
+   "PASS",
+   "honeycomb (-1/2, 1): cell volumes add up to the lattice cell identically in lam",
+   "sum = 3, cell = 3"
+  ],
+  [
+   "PASS",
+   "honeycomb (-1/2, 1): every face shared face to face (same measure from both cells)",
+   "18 faces"
+  ],
+  [
+   "PASS",
+   "honeycomb stop 1 site 0: limit of the interval = power cell from scratch",
+   "3 corners, 3 faces"
+  ],
+  [
+   "PASS",
+   "honeycomb stop 1 site 1: limit of the interval = power cell from scratch",
+   "3 corners, 3 faces"
+  ],
+  [
+   "PASS",
+   "honeycomb stop -1/2 site 0: limit of the interval = power cell from scratch",
+   "3 corners, 3 faces"
+  ],
+  [
+   "PASS",
+   "honeycomb stop -1/2 site 1: limit of the interval = power cell from scratch",
+   "3 corners, 3 faces"
+  ],
+  [
+   "PASS",
+   "honeycomb stop -1/2 site 2: limit of the interval = power cell from scratch",
+   "6 corners, 6 faces"
+  ],
+  [
+   "PASS",
+   "honeycomb (-1, -1/2): distance bound (finite site list enough on the closed interval)",
+   "D2=20"
+  ],
+  [
+   "PASS",
+   "honeycomb (-1, -1/2): cell volumes add up to the lattice cell identically in lam",
+   "sum = 3, cell = 3"
+  ],
+  [
+   "PASS",
+   "honeycomb (-1, -1/2): every face shared face to face (same measure from both cells)",
+   "18 faces"
+  ],
+  [
+   "PASS",
+   "honeycomb stop -1 site 2: limit of the interval = power cell from scratch",
+   "6 corners, 6 faces"
+  ],
+  [
+   "PASS",
+   "honeycomb: at lam = 0 every honeycomb cell is the known regular hexagon (Voronoi cell of the triangular lattice)",
+   "[6, 6, {\"centre\": 3, \"honeycomb\": 3}]"
+  ],
+  [
+   "PASS",
+   "honeycomb: at lam = 0 every centre cell is the known regular hexagon (Voronoi cell of the triangular lattice)",
+   "[6, 6, {\"honeycomb\": 6}]"
+  ],
+  [
+   "PASS",
+   "honeycomb: at lam = 1 every honeycomb cell is the known triangle (Voronoi cell of the honeycomb points)",
+   "[3, 3, {\"honeycomb\": 3}]"
+  ],
+  [
+   "PASS",
+   "honeycomb: at lam = -1 every centre cell is the known hexagon (Voronoi cell of the triangular lattice of centres)",
+   "[6, 6, {\"centre\": 6}]"
+  ],
+  [
+   "PASS",
+   "honeycomb: at lam = -1/2 every centre cell is the known hexagon of the trihexagonal tiling 3.6.3.6",
+   "[6, 6, {\"honeycomb\": 6}]"
+  ],
+  [
+   "PASS",
+   "honeycomb: at lam = -1/2 every honeycomb cell is the known triangle of the trihexagonal tiling 3.6.3.6",
+   "[3, 3, {\"centre\": 3}]"
+  ]
+ ]
+}

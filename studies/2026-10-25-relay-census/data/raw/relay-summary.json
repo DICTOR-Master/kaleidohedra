@@ -1,0 +1,591 @@
+{
+ "square": {
+  "name": "square lattice + centres (2D CsCl analogue)",
+  "lam": "w_corner - w_centre",
+  "units": "square edge 2 (corners 2Z^2, centres 2Z^2 + (1,1))",
+  "range": [
+   "-2",
+   "2"
+  ],
+  "flips": [
+   "0"
+  ],
+  "interior_flips": [
+   "0"
+  ],
+  "types": {
+   "centre-centre": "[-2, 0)",
+   "centre-corner": "(-2, 2)",
+   "corner-corner": "(0, 2]"
+  },
+  "orbits": {
+   "centre-centre@4": "[-2, 0)",
+   "centre-corner@2": "(-2, 2)",
+   "corner-corner@4": "(0, 2]"
+  },
+  "hinge": [
+   "0"
+  ],
+  "class": "touch: like bonds hand over at 0",
+  "named": [
+   {
+    "interval": "(-2, 0)",
+    "what": "all edges equal",
+    "lam": "2 - 2*sqrt(2)",
+    "float": -0.8284271247461901
+   },
+   {
+    "interval": "(0, 2)",
+    "what": "all edges equal",
+    "lam": "-2 + 2*sqrt(2)",
+    "float": 0.8284271247461901
+   },
+   {
+    "stop": "-2",
+    "edge_len2": [
+     "4"
+    ]
+   },
+   {
+    "stop": "0",
+    "edge_len2": [
+     "2"
+    ]
+   },
+   {
+    "stop": "2",
+    "edge_len2": [
+     "4"
+    ]
+   }
+  ]
+ },
+ "honeycomb": {
+  "name": "honeycomb + hexagon centres (triangular lattice, two kinds 2:1)",
+  "lam": "w_honeycomb - w_centre",
+  "units": "triangular lattice edge 1",
+  "range": [
+   "-1",
+   "1"
+  ],
+  "flips": [
+   "-1/2"
+  ],
+  "interior_flips": [
+   "-1/2"
+  ],
+  "types": {
+   "centre-centre": "[-1, -1/2)",
+   "centre-honeycomb": "(-1, 1)",
+   "honeycomb-honeycomb": "(-1/2, 1]"
+  },
+  "orbits": {
+   "centre-centre@3": "[-1, -1/2)",
+   "centre-honeycomb@1": "(-1, 1)",
+   "honeycomb-honeycomb@1": "(-1/2, 1]"
+  },
+  "hinge": [
+   "-1/2"
+  ],
+  "class": "touch: like bonds hand over at -1/2",
+  "named": [
+   {
+    "interval": "(-1, -1/2)",
+    "what": "all edges equal",
+    "lam": "1 - sqrt(3)",
+    "float": -0.7320508075688773
+   },
+   {
+    "interval": "(-1/2, 1)",
+    "what": "all edges equal",
+    "lam": "0",
+    "float": 0.0
+   },
+   {
+    "stop": "-1",
+    "edge_len2": [
+     "1"
+    ]
+   },
+   {
+    "stop": "-1/2",
+    "edge_len2": [
+     "3/4"
+    ]
+   },
+   {
+    "stop": "1",
+    "edge_len2": [
+     "3"
+    ]
+   }
+  ]
+ },
+ "kagome": {
+  "name": "kagome + hexagon centres (triangular lattice, two kinds 3:1)",
+  "lam": "w_kagome - w_centre",
+  "units": "triangular lattice edge 1 (kagome edge 1)",
+  "range": [
+   "-1",
+   "1"
+  ],
+  "flips": [],
+  "interior_flips": [],
+  "types": {
+   "centre-centre": "[-1, -1]",
+   "centre-kagome": "(-1, 1)",
+   "kagome-kagome": "(-1, 1]"
+  },
+  "orbits": {
+   "centre-centre@4": "[-1, -1]",
+   "centre-kagome@1": "(-1, 1)",
+   "kagome-kagome@1": "(-1, 1]"
+  },
+  "hinge": [],
+  "class": "touch: like bonds hand over at -1",
+  "named": [
+   {
+    "interval": "(-1, 1)",
+    "what": "all edges equal",
+    "lam": "0",
+    "float": 0.0
+   },
+   {
+    "stop": "-1",
+    "edge_len2": [
+     "4/3"
+    ]
+   },
+   {
+    "stop": "1",
+    "edge_len2": [
+     "4/3"
+    ]
+   }
+  ]
+ },
+ "bcc": {
+  "name": "bcc two-kind (golden loop sites)",
+  "lam": "w_big - w_small",
+  "units": "half cube edge L/2 = 1 (big sites 2Z^3); golden loop x in [0, inf] is lam = 2s - 1 in [-1, 1]",
+  "range": [
+   "-3",
+   "3"
+  ],
+  "flips": [
+   "-1",
+   "1"
+  ],
+  "interior_flips": [
+   "-1",
+   "1"
+  ],
+  "types": {
+   "big-big": "(-1, 3]",
+   "big-small": "(-3, 3)",
+   "small-small": "[-3, 1)"
+  },
+  "orbits": {
+   "big-big@4": "(-1, 3]",
+   "big-small@3": "(-3, 3)",
+   "small-small@4": "[-3, 1)"
+  },
+  "hinge": [],
+  "class": "overlap: both like bonds on (-1, 1)",
+  "named": [
+   {
+    "interval": "(-1, 1)",
+    "what": "big-big area = small-small area",
+    "lam": "0",
+    "float": 0.0
+   },
+   {
+    "interval": "(-3, -1)",
+    "what": "big: one edge length throughout",
+    "lam": "all"
+   },
+   {
+    "interval": "(-3, -1)",
+    "what": "small: all edges equal",
+    "lam": "1 - 2*sqrt(2)",
+    "float": -1.82842712474619
+   },
+   {
+    "interval": "(-3, -1)",
+    "what": "tiling: all edges equal",
+    "lam": "1 - 2*sqrt(2)",
+    "float": -1.82842712474619
+   },
+   {
+    "interval": "(-1, 1)",
+    "what": "big: all edges equal",
+    "lam": "0",
+    "float": 0.0
+   },
+   {
+    "interval": "(-1, 1)",
+    "what": "small: all edges equal",
+    "lam": "0",
+    "float": 0.0
+   },
+   {
+    "interval": "(-1, 1)",
+    "what": "tiling: all edges equal",
+    "lam": "0",
+    "float": 0.0
+   },
+   {
+    "interval": "(1, 3)",
+    "what": "big: all edges equal",
+    "lam": "-1 + 2*sqrt(2)",
+    "float": 1.82842712474619
+   },
+   {
+    "interval": "(1, 3)",
+    "what": "small: one edge length throughout",
+    "lam": "all"
+   },
+   {
+    "interval": "(1, 3)",
+    "what": "tiling: all edges equal",
+    "lam": "-1 + 2*sqrt(2)",
+    "float": 1.82842712474619
+   }
+  ]
+ },
+ "delian": {
+  "name": "fcc + all its tetrahedral holes (Delian loop sites)",
+  "lam": "w_tet - w_oct",
+  "units": "octet edge 1 (app units); lam = w_tet - w_oct = (3/8)(2t - 1)",
+  "range": [
+   "-3/8",
+   "3/8"
+  ],
+  "flips": [
+   "-1/8"
+  ],
+  "interior_flips": [
+   "-1/8"
+  ],
+  "types": {
+   "oct-oct": "[-3/8, -1/8)",
+   "oct-tet": "(-3/8, 3/8)",
+   "tet-tet": "(-1/8, 3/8]"
+  },
+  "orbits": {
+   "oct-oct@1": "[-3/8, -1/8)",
+   "oct-tet@3/8": "(-3/8, 3/8)",
+   "tet-tet@1/2": "(-1/8, 3/8]"
+  },
+  "hinge": [
+   "-1/8"
+  ],
+  "class": "touch: like bonds hand over at -1/8",
+  "named": [
+   {
+    "interval": "(-3/8, -1/8)",
+    "what": "oct: all edges equal",
+    "lam": "-21/40 + sqrt(6)/10",
+    "float": -0.28005102572168217
+   },
+   {
+    "interval": "(-3/8, -1/8)",
+    "what": "tet: one edge length throughout",
+    "lam": "all"
+   },
+   {
+    "interval": "(-3/8, -1/8)",
+    "what": "tiling: all edges equal",
+    "lam": "-21/40 + sqrt(6)/10",
+    "float": -0.28005102572168217
+   },
+   {
+    "interval": "(-1/8, 3/8)",
+    "what": "oct: one edge length throughout",
+    "lam": "all"
+   },
+   {
+    "interval": "(-1/8, 3/8)",
+    "what": "tet: all edges equal",
+    "lam": "7/8 - sqrt(2)/2",
+    "float": 0.16789321881345248
+   },
+   {
+    "interval": "(-1/8, 3/8)",
+    "what": "tiling: all edges equal",
+    "lam": "7/8 - sqrt(2)/2",
+    "float": 0.16789321881345248
+   }
+  ]
+ },
+ "nacl": {
+  "name": "rock salt NaCl (fcc + fcc)",
+  "lam": "w_Na - w_Cl",
+  "units": "Na-Cl distance 1 (cubic cell edge 2)",
+  "range": [
+   "-1",
+   "1"
+  ],
+  "flips": [
+   "0"
+  ],
+  "interior_flips": [
+   "0"
+  ],
+  "types": {
+   "Cl-Cl": "[-1, 0)",
+   "Cl-Na": "(-1, 1)",
+   "Na-Na": "(0, 1]"
+  },
+  "orbits": {
+   "Cl-Cl@2": "[-1, 0)",
+   "Cl-Na@1": "(-1, 1)",
+   "Na-Na@2": "(0, 1]"
+  },
+  "hinge": [
+   "0"
+  ],
+  "class": "touch: like bonds hand over at 0",
+  "named": [
+   {
+    "interval": "(-1, 0)",
+    "what": "Na: one edge length throughout",
+    "lam": "all"
+   },
+   {
+    "interval": "(-1, 0)",
+    "what": "Cl: all edges equal",
+    "lam": "-4 + 2*sqrt(3)",
+    "float": -0.5358983848622454
+   },
+   {
+    "interval": "(-1, 0)",
+    "what": "tiling: all edges equal",
+    "lam": "-4 + 2*sqrt(3)",
+    "float": -0.5358983848622454
+   },
+   {
+    "interval": "(0, 1)",
+    "what": "Na: all edges equal",
+    "lam": "4 - 2*sqrt(3)",
+    "float": 0.5358983848622454
+   },
+   {
+    "interval": "(0, 1)",
+    "what": "Cl: one edge length throughout",
+    "lam": "all"
+   },
+   {
+    "interval": "(0, 1)",
+    "what": "tiling: all edges equal",
+    "lam": "4 - 2*sqrt(3)",
+    "float": 0.5358983848622454
+   }
+  ]
+ },
+ "zincblende": {
+  "name": "zinc blende ZnS / diamond (fcc + one set of tetrahedral holes)",
+  "lam": "w_Zn - w_S",
+  "units": "cubic cell edge 4 (Zn-S distance sqrt3)",
+  "range": [
+   "-3",
+   "3"
+  ],
+  "flips": [
+   "-1",
+   "1"
+  ],
+  "interior_flips": [
+   "-1",
+   "1"
+  ],
+  "types": {
+   "S-S": "[-3, 1)",
+   "S-Zn": "(-3, 3)",
+   "Zn-Zn": "(-1, 3]"
+  },
+  "orbits": {
+   "S-S@8": "[-3, 1)",
+   "S-Zn@3": "(-3, 3)",
+   "Zn-Zn@8": "(-1, 3]"
+  },
+  "hinge": [],
+  "class": "overlap: both like bonds on (-1, 1)",
+  "named": [
+   {
+    "interval": "(-1, 1)",
+    "what": "Zn-Zn area = S-S area",
+    "lam": "0",
+    "float": 0.0
+   },
+   {
+    "interval": "(-3, -1)",
+    "what": "Zn: one edge length throughout",
+    "lam": "all"
+   },
+   {
+    "interval": "(1, 3)",
+    "what": "S: one edge length throughout",
+    "lam": "all"
+   }
+  ]
+ },
+ "hcpholes": {
+  "name": "hcp holes: octahedral + tetrahedral holes of ideal hcp (gyrated octet sites)",
+  "lam": "w_tet - w_oct",
+  "units": "hcp edge 1 (same as the Delian run); lam = w_tet - w_oct",
+  "range": [
+   "-11/24",
+   "3/8"
+  ],
+  "flips": [
+   "-1/8",
+   "5/24"
+  ],
+  "interior_flips": [
+   "-1/8",
+   "5/24"
+  ],
+  "types": {
+   "oct-oct": "[-11/24, 5/24)",
+   "oct-tet": "(-11/24, 3/8)",
+   "tet-tet": "(-11/24, 3/8]"
+  },
+  "orbits": {
+   "oct-oct@1": "[-11/24, -1/8)",
+   "oct-oct@2/3": "[-11/24, 5/24)",
+   "oct-tet@3/8": "(-11/24, 3/8)",
+   "tet-tet@1": "(-1/8, 3/8]",
+   "tet-tet@1/2": "(-1/8, 3/8]",
+   "tet-tet@1/6": "(-11/24, 3/8]"
+  },
+  "hinge": [],
+  "class": "overlap: both like bonds on (-11/24, 5/24)",
+  "named": [
+   {
+    "interval": "(-11/24, -1/8)",
+    "what": "tet-tet area = oct-oct area",
+    "lam": "-11/24 + 2*sqrt(5)*sqrt(8 - 3*sqrt(6))/15",
+    "float": -0.2176803749701952
+   },
+   {
+    "interval": "(-1/8, 5/24)",
+    "what": "tet-tet area = oct-oct area",
+    "lam": "-sqrt(-2000/32041 + 2608*sqrt(3)/32041) + 12*sqrt(3)/179 + 213/1432",
+    "float": -0.01543006110130589
+   },
+   {
+    "interval": "(-1/8, 5/24)",
+    "what": "tet-tet area = oct-oct area",
+    "lam": "-sqrt(432/55225 + 502*sqrt(6)/55225) + 6*sqrt(6)/235 + 413/1880",
+    "float": 0.10876030854088173
+   },
+   {
+    "interval": "(-11/24, -1/8)",
+    "what": "tet: one edge length throughout",
+    "lam": "all"
+   },
+   {
+    "interval": "(5/24, 3/8)",
+    "what": "oct: one edge length throughout",
+    "lam": "all"
+   }
+  ]
+ },
+ "a15": {
+  "name": "A15 (Cr3Si)",
+  "lam": "w_Si - w_Cr",
+  "units": "cubic cell edge 2",
+  "range": [
+   "-5/4",
+   "5/4"
+  ],
+  "flips": [
+   "1/4",
+   "3/4"
+  ],
+  "interior_flips": [
+   "1/4",
+   "3/4"
+  ],
+  "types": {
+   "Cr-Cr": "[-5/4, 3/4)",
+   "Cr-Si": "(-5/4, 5/4)",
+   "Si-Si": "(1/4, 5/4]"
+  },
+  "orbits": {
+   "Cr-Cr@1": "[-5/4, 3/4)",
+   "Cr-Cr@3/2": "[-5/4, 3/4)",
+   "Cr-Si@5/4": "(-5/4, 5/4)",
+   "Si-Si@3": "(1/4, 5/4]",
+   "Si-Si@4": "(3/4, 5/4]"
+  },
+  "hinge": [],
+  "class": "overlap: both like bonds on (1/4, 3/4)",
+  "named": [
+   {
+    "interval": "(1/4, 3/4)",
+    "what": "Si-Si area = Cr-Cr area",
+    "lam": "-3*sqrt(2)/34 + 15/68 + sqrt(9/289 + 57*sqrt(2)/1156)",
+    "float": 0.41341112786822515
+   },
+   {
+    "interval": "(1/4, 3/4)",
+    "what": "Si-Si area = Cr-Cr area",
+    "lam": "-9*sqrt(3)/107 + 113/428 + sqrt(58/11449 + 2193*sqrt(3)/22898)",
+    "float": 0.5317918206747048
+   }
+  ]
+ },
+ "c15": {
+  "name": "C15 Laves (MgCu2)",
+  "lam": "w_Mg - w_Cu",
+  "units": "cubic cell edge 8 (Cu-Cu 2 sqrt2, Mg-Mg 2 sqrt3)",
+  "range": [
+   "-11",
+   "11"
+  ],
+  "flips": [
+   "-5",
+   "7",
+   "9"
+  ],
+  "interior_flips": [
+   "-5",
+   "7",
+   "9"
+  ],
+  "types": {
+   "Cu-Cu": "[-11, 9)",
+   "Cu-Mg": "(-11, 11)",
+   "Mg-Mg": "(-5, 11]"
+  },
+  "orbits": {
+   "Cu-Cu@8": "[-11, 9)",
+   "Cu-Mg@11": "(-11, 11)",
+   "Mg-Mg@12": "(-5, 11]",
+   "Mg-Mg@32": "(7, 11]"
+  },
+  "hinge": [],
+  "class": "overlap: both like bonds on (-5, 9)",
+  "named": [
+   {
+    "interval": "(-5, 7)",
+    "what": "Mg-Mg area = Cu-Cu area",
+    "lam": "-36263/5563 - 11880*sqrt(6)/5563 + sqrt(1661569920/30946969 + 1246123440*sqrt(6)/30946969)",
+    "float": 0.592337772616413
+   },
+   {
+    "interval": "(7, 9)",
+    "what": "Mg-Mg area = Cu-Cu area",
+    "lam": "2*sqrt(10)/3 + 17/3",
+    "float": 7.774851773445587
+   },
+   {
+    "interval": "(9, 11)",
+    "what": "Cu: one edge length throughout",
+    "lam": "all"
+   }
+  ]
+ }
+}

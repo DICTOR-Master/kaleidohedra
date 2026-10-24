@@ -1,0 +1,48 @@
+PASS hcpholes (-1/8, 5/24) site 0 (oct): Euler V - E + F = 2 12-18+8
+PASS hcpholes (-1/8, 5/24) site 1 (oct): Euler V - E + F = 2 12-18+8
+PASS hcpholes (-1/8, 5/24) site 2 (tet): Euler V - E + F = 2 19-30+13
+PASS hcpholes (-1/8, 5/24) site 3 (tet): Euler V - E + F = 2 19-30+13
+PASS hcpholes (-1/8, 5/24) site 4 (tet): Euler V - E + F = 2 19-30+13
+PASS hcpholes (-1/8, 5/24) site 5 (tet): Euler V - E + F = 2 19-30+13
+PASS hcpholes (-1/8, 5/24): distance bound (finite site list enough on the closed interval) D2=12
+PASS hcpholes (-1/8, 5/24): cell volumes add up to the lattice cell identically in lam sum = 1, cell = 1
+PASS hcpholes (-1/8, 5/24): every face shared face to face (same measure from both cells) 68 faces
+PASS hcpholes stop 5/24 site 0: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS hcpholes stop 5/24 site 1: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS hcpholes stop 5/24 site 2: limit of the interval = power cell from scratch 16 corners, 13 faces
+PASS hcpholes stop 5/24 site 3: limit of the interval = power cell from scratch 16 corners, 13 faces
+PASS hcpholes stop 5/24 site 4: limit of the interval = power cell from scratch 16 corners, 13 faces
+PASS hcpholes stop 5/24 site 5: limit of the interval = power cell from scratch 16 corners, 13 faces
+PASS hcpholes (5/24, 3/8) site 0 (oct): Euler V - E + F = 2 8-12+6
+PASS hcpholes (5/24, 3/8) site 1 (oct): Euler V - E + F = 2 8-12+6
+PASS hcpholes (5/24, 3/8) site 2 (tet): Euler V - E + F = 2 19-30+13
+PASS hcpholes (5/24, 3/8) site 3 (tet): Euler V - E + F = 2 19-30+13
+PASS hcpholes (5/24, 3/8) site 4 (tet): Euler V - E + F = 2 19-30+13
+PASS hcpholes (5/24, 3/8) site 5 (tet): Euler V - E + F = 2 19-30+13
+PASS hcpholes (5/24, 3/8): distance bound (finite site list enough on the closed interval) D2=12
+PASS hcpholes (5/24, 3/8): cell volumes add up to the lattice cell identically in lam sum = 1, cell = 1
+PASS hcpholes (5/24, 3/8): every face shared face to face (same measure from both cells) 64 faces
+PASS hcpholes stop 3/8 site 2: limit of the interval = power cell from scratch 10 corners, 10 faces
+PASS hcpholes stop 3/8 site 3: limit of the interval = power cell from scratch 10 corners, 10 faces
+PASS hcpholes stop 3/8 site 4: limit of the interval = power cell from scratch 10 corners, 10 faces
+PASS hcpholes stop 3/8 site 5: limit of the interval = power cell from scratch 10 corners, 10 faces
+PASS hcpholes stop -1/8 site 0: limit of the interval = power cell from scratch 6 corners, 8 faces
+PASS hcpholes stop -1/8 site 1: limit of the interval = power cell from scratch 6 corners, 8 faces
+PASS hcpholes stop -1/8 site 2: limit of the interval = power cell from scratch 4 corners, 4 faces
+PASS hcpholes stop -1/8 site 3: limit of the interval = power cell from scratch 4 corners, 4 faces
+PASS hcpholes stop -1/8 site 4: limit of the interval = power cell from scratch 4 corners, 4 faces
+PASS hcpholes stop -1/8 site 5: limit of the interval = power cell from scratch 4 corners, 4 faces
+PASS hcpholes (-11/24, -1/8) site 0 (oct): Euler V - E + F = 2 24-36+14
+PASS hcpholes (-11/24, -1/8) site 1 (oct): Euler V - E + F = 2 24-36+14
+PASS hcpholes (-11/24, -1/8) site 2 (tet): Euler V - E + F = 2 4-6+4
+PASS hcpholes (-11/24, -1/8) site 3 (tet): Euler V - E + F = 2 4-6+4
+PASS hcpholes (-11/24, -1/8) site 4 (tet): Euler V - E + F = 2 4-6+4
+PASS hcpholes (-11/24, -1/8) site 5 (tet): Euler V - E + F = 2 4-6+4
+PASS hcpholes (-11/24, -1/8): distance bound (finite site list enough on the closed interval) D2=12
+PASS hcpholes (-11/24, -1/8): cell volumes add up to the lattice cell identically in lam sum = 1, cell = 1
+PASS hcpholes (-11/24, -1/8): every face shared face to face (same measure from both cells) 44 faces
+PASS hcpholes stop -11/24 site 0: limit of the interval = power cell from scratch 12 corners, 8 faces
+PASS hcpholes stop -11/24 site 1: limit of the interval = power cell from scratch 12 corners, 8 faces
+PASS hcpholes: at lam = -1/8 every oct cell is the known regular octahedron of the gyrated octet [8, [3, 3, 3, 3, 3, 3, 3, 3], {"oct": 2, "tet": 6}]
+PASS hcpholes: at lam = -1/8 every tet cell is the known regular tetrahedron of the gyrated octet [4, [3, 3, 3, 3], {"oct": 3, "tet": 1}]
+PASS hcpholes: at lam = -11/24 every oct cell is the known hexagonal prism (Voronoi cell of the simple hexagonal lattice of octahedral holes) [8, [4, 4, 4, 4, 4, 4, 6, 6], {"oct": 8}]

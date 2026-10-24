@@ -1,0 +1,11 @@
+PASS kagome (-1, 1): distance bound (finite site list enough on the closed interval) D2=24
+PASS kagome (-1, 1): cell volumes add up to the lattice cell identically in lam sum = 4, cell = 4
+PASS kagome (-1, 1): every face shared face to face (same measure from both cells) 24 faces
+PASS kagome stop 1 site 0: limit of the interval = power cell from scratch 4 corners, 4 faces
+PASS kagome stop 1 site 1: limit of the interval = power cell from scratch 4 corners, 4 faces
+PASS kagome stop 1 site 2: limit of the interval = power cell from scratch 4 corners, 4 faces
+PASS kagome stop -1 site 3: limit of the interval = power cell from scratch 6 corners, 6 faces
+PASS kagome: at lam = 0 every kagome cell is the known regular hexagon (Voronoi cell of the triangular lattice) [6, 6, {"centre": 2, "kagome": 4}]
+PASS kagome: at lam = 0 every centre cell is the known regular hexagon (Voronoi cell of the triangular lattice) [6, 6, {"kagome": 6}]
+PASS kagome: at lam = 1 every kagome cell is the known rhombus (rhombille tiling: Voronoi cell of the kagome points) [4, 4, {"kagome": 4}]
+PASS kagome: at lam = -1 every centre cell is the known hexagon (Voronoi cell of the triangular lattice of centres) [6, 6, {"centre": 6}]

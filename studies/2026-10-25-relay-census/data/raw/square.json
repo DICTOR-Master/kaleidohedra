@@ -1,0 +1,475 @@
+{
+ "name": "square lattice + centres (2D CsCl analogue)",
+ "key": "square",
+ "units": "square edge 2 (corners 2Z^2, centres 2Z^2 + (1,1))",
+ "kinds": [
+  "centre",
+  "corner"
+ ],
+ "lam": "w_corner - w_centre",
+ "intervals": [
+  {
+   "lo": "-2",
+   "hi": "0",
+   "sample": "-1/8",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "corner",
+     "bonds": {
+      "centre": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "area2": {
+      "centre": [
+       "(lam + 2)**2/2"
+      ]
+     },
+     "volume": "(lam + 2)**2/2",
+     "rho": 1.0,
+     "orbits": {
+      "centre@2": 4
+     },
+     "orbit_area2": {
+      "centre@2": [
+       "(lam + 2)**2/2"
+      ]
+     },
+     "corner_degrees": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "edge_len2": [
+      "(lam + 2)**2/2"
+     ]
+    },
+    {
+     "i": 1,
+     "kind": "centre",
+     "bonds": {
+      "centre": 4,
+      "corner": 4
+     },
+     "faces": 8,
+     "corners": 8,
+     "face_sizes": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "area2": {
+      "centre": [
+       "lam**2"
+      ],
+      "corner": [
+       "(lam + 2)**2/2"
+      ]
+     },
+     "volume": "-(lam**2 + 4*lam - 4)/2",
+     "rho": 1.4142,
+     "orbits": {
+      "centre@4": 4,
+      "corner@2": 4
+     },
+     "orbit_area2": {
+      "centre@4": [
+       "lam**2"
+      ],
+      "corner@2": [
+       "(lam + 2)**2/2"
+      ]
+     },
+     "corner_degrees": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "edge_len2": [
+      "(lam + 2)**2/2",
+      "lam**2"
+     ]
+    }
+   ],
+   "dual": {
+    "2centre+1corner": 12
+   },
+   "bond_types": [
+    "centre-centre",
+    "centre-corner"
+   ],
+   "bond_orbits": [
+    "centre-centre@4",
+    "centre-corner@2"
+   ],
+   "Vpoly": {
+    "corner": "(lam + 2)**2/2",
+    "centre": "-(lam**2 + 4*lam - 4)/2"
+   }
+  },
+  {
+   "lo": "0",
+   "hi": "2",
+   "sample": "1/8",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "corner",
+     "bonds": {
+      "centre": 4,
+      "corner": 4
+     },
+     "faces": 8,
+     "corners": 8,
+     "face_sizes": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "area2": {
+      "centre": [
+       "(lam - 2)**2/2"
+      ],
+      "corner": [
+       "lam**2"
+      ]
+     },
+     "volume": "-(lam**2 - 4*lam - 4)/2",
+     "rho": 1.4142,
+     "orbits": {
+      "centre@2": 4,
+      "corner@4": 4
+     },
+     "orbit_area2": {
+      "centre@2": [
+       "(lam - 2)**2/2"
+      ],
+      "corner@4": [
+       "lam**2"
+      ]
+     },
+     "corner_degrees": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "edge_len2": [
+      "(lam - 2)**2/2",
+      "lam**2"
+     ]
+    },
+    {
+     "i": 1,
+     "kind": "centre",
+     "bonds": {
+      "corner": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "area2": {
+      "corner": [
+       "(lam - 2)**2/2"
+      ]
+     },
+     "volume": "(lam - 2)**2/2",
+     "rho": 1.0,
+     "orbits": {
+      "corner@2": 4
+     },
+     "orbit_area2": {
+      "corner@2": [
+       "(lam - 2)**2/2"
+      ]
+     },
+     "corner_degrees": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "edge_len2": [
+      "(lam - 2)**2/2"
+     ]
+    }
+   ],
+   "dual": {
+    "1centre+2corner": 12
+   },
+   "bond_types": [
+    "centre-corner",
+    "corner-corner"
+   ],
+   "bond_orbits": [
+    "centre-corner@2",
+    "corner-corner@4"
+   ],
+   "Vpoly": {
+    "corner": "-(lam**2 - 4*lam - 4)/2",
+    "centre": "(lam - 2)**2/2"
+   }
+  }
+ ],
+ "stops": [
+  {
+   "lam": "-2",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "corner",
+     "vanished": true
+    },
+    {
+     "i": 1,
+     "kind": "centre",
+     "bonds": {
+      "centre": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "corners": 4,
+     "face_sizes": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "orbits": {
+      "centre@4": 4
+     },
+     "ghost_planes": 0
+    }
+   ],
+   "vanish": [
+    "corner"
+   ],
+   "dual": {
+    "4centre+1corner": 4
+   },
+   "bond_types": [
+    "centre-centre"
+   ],
+   "bond_orbits": [
+    "centre-centre@4"
+   ]
+  },
+  {
+   "lam": "0",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "corner",
+     "bonds": {
+      "centre": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "corners": 4,
+     "face_sizes": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "orbits": {
+      "centre@2": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 1,
+     "kind": "centre",
+     "bonds": {
+      "corner": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "corners": 4,
+     "face_sizes": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "orbits": {
+      "corner@2": 4
+     },
+     "ghost_planes": 0
+    }
+   ],
+   "vanish": [],
+   "dual": {
+    "2centre+2corner": 8
+   },
+   "bond_types": [
+    "centre-corner"
+   ],
+   "bond_orbits": [
+    "centre-corner@2"
+   ]
+  },
+  {
+   "lam": "2",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "corner",
+     "bonds": {
+      "corner": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "corners": 4,
+     "face_sizes": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "orbits": {
+      "corner@4": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 1,
+     "kind": "centre",
+     "vanished": true
+    }
+   ],
+   "vanish": [
+    "centre"
+   ],
+   "dual": {
+    "1centre+4corner": 4
+   },
+   "bond_types": [
+    "corner-corner"
+   ],
+   "bond_orbits": [
+    "corner-corner@4"
+   ]
+  }
+ ],
+ "seconds": 0.1,
+ "checks": [
+  [
+   "PASS",
+   "square stop 0 site 0: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "square stop 0 site 1: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "square (0, 2): distance bound (finite site list enough on the closed interval)",
+   "D2=40"
+  ],
+  [
+   "PASS",
+   "square (0, 2): cell volumes add up to the lattice cell identically in lam",
+   "sum = 4, cell = 4"
+  ],
+  [
+   "PASS",
+   "square (0, 2): every face shared face to face (same measure from both cells)",
+   "12 faces"
+  ],
+  [
+   "PASS",
+   "square (-2, 0): distance bound (finite site list enough on the closed interval)",
+   "D2=40"
+  ],
+  [
+   "PASS",
+   "square (-2, 0): cell volumes add up to the lattice cell identically in lam",
+   "sum = 4, cell = 4"
+  ],
+  [
+   "PASS",
+   "square (-2, 0): every face shared face to face (same measure from both cells)",
+   "12 faces"
+  ],
+  [
+   "PASS",
+   "square stop 2 site 0: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "square stop -2 site 1: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "square: at lam = 0 every corner cell is the known square (Voronoi cell of the centred square lattice)",
+   "[4, 4, {\"centre\": 4}]"
+  ],
+  [
+   "PASS",
+   "square: at lam = 0 every centre cell is the known square (Voronoi cell of the centred square lattice)",
+   "[4, 4, {\"corner\": 4}]"
+  ],
+  [
+   "PASS",
+   "square: at lam = 2 every corner cell is the known square (Voronoi cell of the square lattice)",
+   "[4, 4, {\"corner\": 4}]"
+  ]
+ ]
+}

@@ -1,0 +1,64 @@
+5 chambers 28.9 s
+PASS perovskite: no chamber reaches the bounding box (the coexistence region is bounded)
+PASS perovskite: every interior wall is covered exactly by chambers on its other side (no chamber missed) 5 chambers
+PASS perovskite chamber 0: distance bound at every chamber corner
+PASS perovskite chamber 0 site 0 (A): Euler
+PASS perovskite chamber 0 site 1 (B): Euler
+PASS perovskite chamber 0 site 2 (X): Euler
+PASS perovskite chamber 0 site 3 (X): Euler
+PASS perovskite chamber 0 site 4 (X): Euler
+PASS perovskite chamber 0: volumes add up to the lattice cell identically in (lam, mu) 8
+PASS perovskite chamber 0: faces shared face to face
+PASS perovskite chamber 1: distance bound at every chamber corner
+PASS perovskite chamber 1 site 0 (A): Euler
+PASS perovskite chamber 1 site 1 (B): Euler
+PASS perovskite chamber 1 site 2 (X): Euler
+PASS perovskite chamber 1 site 3 (X): Euler
+PASS perovskite chamber 1 site 4 (X): Euler
+PASS perovskite chamber 1: volumes add up to the lattice cell identically in (lam, mu) 8
+PASS perovskite chamber 1: faces shared face to face
+PASS perovskite chamber 2: distance bound at every chamber corner
+PASS perovskite chamber 2 site 0 (A): Euler
+PASS perovskite chamber 2 site 1 (B): Euler
+PASS perovskite chamber 2 site 2 (X): Euler
+PASS perovskite chamber 2 site 3 (X): Euler
+PASS perovskite chamber 2 site 4 (X): Euler
+PASS perovskite chamber 2: volumes add up to the lattice cell identically in (lam, mu) 8
+PASS perovskite chamber 2: faces shared face to face
+PASS perovskite chamber 3: distance bound at every chamber corner
+PASS perovskite chamber 3 site 0 (A): Euler
+PASS perovskite chamber 3 site 1 (B): Euler
+PASS perovskite chamber 3 site 2 (X): Euler
+PASS perovskite chamber 3 site 3 (X): Euler
+PASS perovskite chamber 3 site 4 (X): Euler
+PASS perovskite chamber 3: volumes add up to the lattice cell identically in (lam, mu) 8
+PASS perovskite chamber 3: faces shared face to face
+PASS perovskite chamber 4: distance bound at every chamber corner
+PASS perovskite chamber 4 site 0 (A): Euler
+PASS perovskite chamber 4 site 1 (B): Euler
+PASS perovskite chamber 4 site 2 (X): Euler
+PASS perovskite chamber 4 site 3 (X): Euler
+PASS perovskite chamber 4 site 4 (X): Euler
+PASS perovskite chamber 4: volumes add up to the lattice cell identically in (lam, mu) 8
+PASS perovskite chamber 4: faces shared face to face
+PASS perovskite (0, -1): A cell is the rhombic dodecahedron (fcc Voronoi)
+PASS perovskite (0, -1): B cell is a point
+PASS perovskite (0, -1): X cell is the rhombic dodecahedron (fcc Voronoi)
+PASS perovskite (0, -1): X cell is the rhombic dodecahedron (fcc Voronoi)
+PASS perovskite (0, -1): X cell is the rhombic dodecahedron (fcc Voronoi)
+5 chambers; walls 7 ; hinge chambers [] ; hinge corners []
+47 / 47 PASS; 38.7 s
+0 [['2', '-1'], ['0', '1'], ['0', '0']] ['A-A@4', 'A-B@3', 'A-X@2', 'B-X@1', 'X-X@2'] [('A', 26, {'A': 6, 'B': 8, 'X': 12}), ('B', 14, {'A': 8, 'X': 6}), ('X', 14, {'A': 4, 'B': 2, 'X': 8})] {'2A+2X': 48, '1A+1B+2X': 96}
+1 [['2', '-1'], ['2', '1'], ['0', '1']] ['A-A@4', 'A-B@3', 'A-X@2', 'B-X@1'] [('A', 26, {'A': 6, 'B': 8, 'X': 12}), ('B', 14, {'A': 8, 'X': 6}), ('X', 6, {'A': 4, 'B': 2})] {'2A+1B+1X': 96}
+2 [['0', '0'], ['0', '1'], ['-2', '1']] ['A-B@3', 'A-X@2', 'B-X@1', 'X-X@2'] [('A', 20, {'B': 8, 'X': 12}), ('B', 14, {'A': 8, 'X': 6}), ('X', 14, {'A': 4, 'B': 2, 'X': 8})] {'1A+4X': 30, '1A+1B+2X': 96}
+3 [['0', '-1'], ['2', '-1'], ['0', '0']] ['A-A@4', 'A-X@2', 'B-X@1', 'X-X@2'] [('A', 18, {'A': 6, 'X': 12}), ('B', 6, {'X': 6}), ('X', 14, {'A': 4, 'B': 2, 'X': 8})] {'2A+2X': 48, '1A+3X': 32, '1B+3X': 32}
+4 [['-2', '-1'], ['0', '-1'], ['0', '0'], ['-2', '1']] ['A-X@2', 'B-X@1', 'X-X@2'] [('A', 12, {'X': 12}), ('B', 6, {'X': 6}), ('X', 14, {'A': 4, 'B': 2, 'X': 8})] {'1A+4X': 30, '1A+3X': 32, '1B+3X': 32}
+(2, -1) {'vanished': ['B', 'X'], 'bond_types': ['A-A']}
+(0, 1) {'vanished': ['X'], 'bond_types': ['A-B', 'B-B', 'B-X']}
+(0, 0) {'vanished': [], 'bond_types': ['A-X', 'B-X', 'X-X']}
+(2, 1) {'vanished': ['X'], 'bond_types': ['A-A', 'A-B']}
+(-2, 1) {'vanished': ['A', 'X'], 'bond_types': ['B-B', 'B-X']}
+(0, -1) {'vanished': ['B'], 'bond_types': ['A-X', 'X-X']}
+(-2, -1) {'vanished': ['A', 'B'], 'bond_types': ['X-X']}
+{"('-1', '1', '1')": ['wall'], "('0', '1', '0')": ['wall'], "('0', '1', '2')": ['wall'], "('-2', '1', '0')": ['boundary'], "('-1', '0', '1')": ['boundary'], "('1', '0', '1')": ['boundary'], "('2', '1', '0')": ['boundary']}
+perovskite 39.58 s

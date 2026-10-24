@@ -1,0 +1,42 @@
+PASS nacl stop 0 site 0: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS nacl stop 0 site 1: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS nacl stop 0 site 2: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS nacl stop 0 site 3: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS nacl stop 0 site 4: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS nacl stop 0 site 5: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS nacl stop 0 site 6: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS nacl stop 0 site 7: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS nacl (0, 1) site 0 (Na): Euler V - E + F = 2 32-48+18
+PASS nacl (0, 1) site 1 (Na): Euler V - E + F = 2 32-48+18
+PASS nacl (0, 1) site 2 (Na): Euler V - E + F = 2 32-48+18
+PASS nacl (0, 1) site 3 (Na): Euler V - E + F = 2 32-48+18
+PASS nacl (0, 1) site 4 (Cl): Euler V - E + F = 2 8-12+6
+PASS nacl (0, 1) site 5 (Cl): Euler V - E + F = 2 8-12+6
+PASS nacl (0, 1) site 6 (Cl): Euler V - E + F = 2 8-12+6
+PASS nacl (0, 1) site 7 (Cl): Euler V - E + F = 2 8-12+6
+PASS nacl (0, 1): distance bound (finite site list enough on the closed interval) D2=20
+PASS nacl (0, 1): cell volumes add up to the lattice cell identically in lam sum = 8, cell = 8
+PASS nacl (0, 1): every face shared face to face (same measure from both cells) 96 faces
+PASS nacl (-1, 0) site 0 (Na): Euler V - E + F = 2 8-12+6
+PASS nacl (-1, 0) site 1 (Na): Euler V - E + F = 2 8-12+6
+PASS nacl (-1, 0) site 2 (Na): Euler V - E + F = 2 8-12+6
+PASS nacl (-1, 0) site 3 (Na): Euler V - E + F = 2 8-12+6
+PASS nacl (-1, 0) site 4 (Cl): Euler V - E + F = 2 32-48+18
+PASS nacl (-1, 0) site 5 (Cl): Euler V - E + F = 2 32-48+18
+PASS nacl (-1, 0) site 6 (Cl): Euler V - E + F = 2 32-48+18
+PASS nacl (-1, 0) site 7 (Cl): Euler V - E + F = 2 32-48+18
+PASS nacl (-1, 0): distance bound (finite site list enough on the closed interval) D2=20
+PASS nacl (-1, 0): cell volumes add up to the lattice cell identically in lam sum = 8, cell = 8
+PASS nacl (-1, 0): every face shared face to face (same measure from both cells) 96 faces
+PASS nacl stop 1 site 0: limit of the interval = power cell from scratch 14 corners, 12 faces
+PASS nacl stop 1 site 1: limit of the interval = power cell from scratch 14 corners, 12 faces
+PASS nacl stop 1 site 2: limit of the interval = power cell from scratch 14 corners, 12 faces
+PASS nacl stop 1 site 3: limit of the interval = power cell from scratch 14 corners, 12 faces
+PASS nacl stop -1 site 4: limit of the interval = power cell from scratch 14 corners, 12 faces
+PASS nacl stop -1 site 5: limit of the interval = power cell from scratch 14 corners, 12 faces
+PASS nacl stop -1 site 6: limit of the interval = power cell from scratch 14 corners, 12 faces
+PASS nacl stop -1 site 7: limit of the interval = power cell from scratch 14 corners, 12 faces
+PASS nacl: at lam = 0 every Na cell is the known cube (Voronoi cell of the simple cubic lattice) [6, [4, 4, 4, 4, 4, 4], {"Cl": 6}]
+PASS nacl: at lam = 0 every Cl cell is the known cube (Voronoi cell of the simple cubic lattice) [6, [4, 4, 4, 4, 4, 4], {"Na": 6}]
+PASS nacl: at lam = 1 every Na cell is the known rhombic dodecahedron (Voronoi cell of fcc) [12, [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], {"Na": 12}]
+PASS nacl: at lam = -1 every Cl cell is the known rhombic dodecahedron (Voronoi cell of fcc) [12, [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], {"Cl": 12}]
