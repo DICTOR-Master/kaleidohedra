@@ -1,4 +1,4 @@
-# Exact tools for the Bond Relay study (2026-10-25).
+# Exact tools for the web-of-bonds study (2026-10-25).
 #  * Field / E: exact numbers in Q(alpha), alpha a real root of a monic minimal polynomial (Q itself, Q(sqrt5), Q(sqrt2), Q(sqrt6),
 #    Q(cbrt2), Q(cbrt6)); +, -, *, exact zero test (coefficients), sign of a nonzero element from an 80-digit evaluation (an element
 #    is zero only when all its coefficients are; nonzero elements here have small height, far above 1e-80).

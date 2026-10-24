@@ -1,4 +1,4 @@
-# Bond Relay, part C (floats, cross-check only): the app's own pieces and web (data/raw/app-dump.json, from app_dump.mjs) against
+# web of bonds, part C (floats, cross-check only): the app's own pieces and web (data/raw/app-dump.json, from app_dump.mjs) against
 # the exact results of parts A/B. C1 frame/scale: the app's T(x) and Delian pieces are the study's pieces (golden x (phi/2), Delian
 # x 1/sqrt2); C2 every app bond's area = the closed form; C3 bond types present per parameter (the float findings); C4 bonds per
 # interior piece. Output: ../data/checks/app-checks.txt.

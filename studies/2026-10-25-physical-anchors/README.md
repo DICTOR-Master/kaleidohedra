@@ -1,10 +1,10 @@
 # Physical anchors for the DICTONIC loops (2026-10-25)
 
-This study extends the Bond Relay study (`../2026-10-25-web-of-bonds/`). The names of the loops, solids and stops are the ones used in papers #48 and #51, in the app and in Bond Relay. This study gives **physics anchors for the geometry**. It is not new physics. All the crystal chemistry used here is standard.
+This study extends the web-of-bonds study (`../2026-10-25-web-of-bonds/`). The names of the loops, solids and stops are the ones used in papers #48 and #51, in the app and in web of bonds. This study gives **physics anchors for the geometry**. It is not new physics. All the crystal chemistry used here is standard.
 
 ## Question
 
-Bond Relay proved that both DICTONIC loops are power diagrams of fixed sites:
+web of bonds proved that both DICTONIC loops are power diagrams of fixed sites:
 - **golden:** w_big − w_small = (φ²/4)(x − 1)/(x + 1) on the bcc sites φZ³ and φZ³ + (φ/2)(1,1,1);
 - **Delian:** w_tet − w_oct = (3/8)(2t − 1) on (Z + ½)³/√2 and the odd integer points /√2.
 
@@ -25,10 +25,10 @@ This study asks five questions:
   - A5: stops.
   - A6: structure identification (exact coset comparison with B2 Wyckoff 1a/1b and fluorite 4a/8c).
   - A7: area identity.
-- **Part B, `scripts/compounds.py` (exact over Q, cells built from scratch).** This part uses the Bond Relay `lib.py` and `samples.py`, imported and not copied. The radical tessellation is built with weight = r² itself, not only the weight difference.
+- **Part B, `scripts/compounds.py` (exact over Q, cells built from scratch).** This part uses the web of bonds `lib.py` and `samples.py`, imported and not copied. The radical tessellation is built with weight = r² itself, not only the weight difference.
   - B0 known cases: equal spheres on bcc give the Kelvin truncated octahedron; equal spheres on fcc give the rhombic dodecahedron.
   - B1: rational loop stops as touching packings.
-  - B2: every compound, with Shannon radii converted to Fractions. The checks are that the cell equals the app's piece, the bond counts, and the bond areas against the Bond Relay closed forms.
+  - B2: every compound, with Shannon radii converted to Fractions. The checks are that the cell equals the app's piece, the bond counts, and the bond areas against the web of bonds closed forms.
   - B3: the contact window equals Pauling's 8-coordination limit, for every compound.
 - **Radii.** `scripts/parse_shannon.py` reads the saved pages in `data/raw/shannon-db/` into `data/raw/shannon.json`. The pages were fetched on 2026-10-25 from the Imperial College *Database of Ionic Radii*, http://abulafia.mt.ic.ac.uk/shannon/, which states that all of its data are taken from Shannon, Acta Cryst. A32 (1976) 751–767. The printed table could not be downloaded (IUCr and Wiley returned 403), so **the values are Shannon's as transcribed by that database and have not been checked against the printed page.** The main values use the effective ionic radii (IR). The crystal radii (CR) are kept as a sensitivity check.
 - **References.** `scripts/crossref_check.py` looks up every cited DOI on api.crossref.org and writes `data/raw/crossref.json`. `data/raw/ask-library.txt` holds the four `ask-library` queries. INDEX.html, README.md and READING-LIST.md were also searched by keyword.
@@ -110,7 +110,7 @@ Caution on names: in the app, the "oct" pieces sit on the 8-coordinated fcc site
 How to read the tables:
 - All radii are in Å, from Shannon (1976) via the Imperial College transcription, for the CN shown. The key is Shannon's reliability flag.
 - **CsCl-type halides: Shannon gives Cl⁻, Br⁻ and I⁻ only for CN VI**, so the CN VI value is used as a proxy for the true CN VIII. This is flagged in every row.
-- The areas are the Bond Relay closed forms, in app units (golden L = φ; Delian octet edge 1). They were verified in B2 from cells built with w = r².
+- The areas are the web of bonds closed forms, in app units (golden L = φ; Delian octet edge 1). They were verified in B2 from cells built with w = r².
 - Every B2 row also passed this check: the radical cell is exactly the app's piece at that x or t.
 
 **CsCl type (golden)**: in every row the larger ion (anion) is on the big site, and the bonds are 8 big–small + 6 big–big per big piece and 8 big–small + 6 small–small per small piece.

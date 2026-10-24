@@ -1,6 +1,6 @@
 # Scale anomalies of the physical anchors (2026-10-25)
 
-This study follows up the Physical Anchors study (`../2026-10-25-physical-anchors/`), which built on Bond Relay (`../2026-10-25-web-of-bonds/`). It **tests the model's inputs**: the radii and the conditions they hold for. It is not new physics. Exact geometry stays exact (sympy). Every physical number is an **estimate**, and is labelled as one.
+This study follows up the Physical Anchors study (`../2026-10-25-physical-anchors/`), which built on web of bonds (`../2026-10-25-web-of-bonds/`). It **tests the model's inputs**: the radii and the conditions they hold for. It is not new physics. Exact geometry stays exact (sympy). Every physical number is an **estimate**, and is labelled as one.
 
 ## Question
 

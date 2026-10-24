@@ -1,4 +1,4 @@
-# Bond Relay, part A (exact, symbolic in the parameter, sympy): for every open regime
+# web of bonds, part A (exact, symbolic in the parameter, sympy): for every open regime
 #   golden  s = x/(1+x) in (0, 1)          (x in (0, inf); x = 1 is s = 1/2)
 #   delian  t in (0, 1/3) and t in (1/3, 1)
 # prove, for ALL parameters of the regime at once:

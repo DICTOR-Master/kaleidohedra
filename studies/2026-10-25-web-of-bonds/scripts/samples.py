@@ -1,4 +1,4 @@
-# Bond Relay, part B (exact, sample parameters): build the power cells from scratch, among fixed sites with the weights of part A,
+# web of bonds, part B (exact, sample parameters): build the power cells from scratch, among fixed sites with the weights of part A,
 # and check, exactly, at rational and irrational parameters:
 #   B1 power cell = the app's piece (every app point inside the cell, every cell corner among the app points);
 #   B2 face areas = the closed forms of part A (area^2 compared exactly);

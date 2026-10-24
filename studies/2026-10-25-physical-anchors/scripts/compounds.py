@@ -3,7 +3,7 @@
 #     equal spheres on fcc -> rhombic dodecahedron (12 congruent rhombi).
 #  B1 the loop stops, as touching-sphere packings (w = r^2, not only the weight difference): cell = the app's piece.
 #  B2 real compounds, Shannon (1976) ionic radii (via the Imperial College transcription, ../data/raw/shannon.json):
-#     rho, x or t, cell = the app's piece, bond counts per piece, bond areas = Bond Relay closed forms.
+#     rho, x or t, cell = the app's piece, bond counts per piece, bond areas = web of bonds closed forms.
 # Exact: radii are decimals -> Fractions; weights 3 r^2/(r_a + r_c)^2 (golden, half-edge units, unlike distance sqrt3) and
 # (3/4) r^2/(r_a + r_c)^2 (Delian, tetPiece units, unlike distance sqrt3/2) are rational, so every cell is over Q.
 # Output: ../data/raw/compounds.json, ../data/checks/compounds-checks.txt

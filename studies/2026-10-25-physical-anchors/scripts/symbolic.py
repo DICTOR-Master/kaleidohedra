@@ -28,7 +28,7 @@ form = 2 * p.dot(cj - ci) + ci.dot(ci) - cj.dot(cj) - wi + wj
 check("A1b bisector is the plane 2p.(cj-ci) = |cj|^2-|ci|^2 + w_i - w_j: depends on the weights only through w_i - w_j",
       quad == [1, 1, 1] and sp.expand(lin - form) == 0 and sp.expand(lin.subs({wi: wi + C, wj: wj + C}, simultaneous=True) - lin) == 0, str(quad))
 # so on a connected adjacency graph all weights are fixed up to one common constant: w_i = r_i^2 + C. (Every cell here has
-# positive volume except at the Delian ends t = 0, 1, where the vanishing kind's weight is only bounded, see Bond Relay B1.)
+# positive volume except at the Delian ends t = 0, 1, where the vanishing kind's weight is only bounded, see web of bonds B1.)
 # A1c: touching spheres -> their radical plane is the common tangent plane, through the contact point, perpendicular to ci cj
 D = sp.symbols('D', positive=True)
 cA = sp.Matrix([0, 0, 0]); cB = sp.Matrix([D, 0, 0]); rA = sp.symbols('rA', positive=True); rB_ = D - rA
@@ -38,7 +38,7 @@ check("A1c touching spheres: radical plane passes through the contact point (x =
 x, s, rho, t, u = sp.symbols('x s rho t u', nonnegative=True)
 aG = phi                      # cube edge (big-big = small-small nearest distance)
 dG = sp.sqrt(3) / 2 * phi     # big-small nearest distance (half the body diagonal)
-DeltaG = phi**2 / 4 * (x - 1) / (x + 1)       # w_big - w_small (Bond Relay)
+DeltaG = phi**2 / 4 * (x - 1) / (x + 1)       # w_big - w_small (web of bonds)
 # contact model: r_B + r_S = d, r_B^2 - r_S^2 = Delta  =>  r_B - r_S = Delta/d
 rB = (dG + DeltaG / dG) / 2; rS = (dG - DeltaG / dG) / 2
 rhoG = sp.simplify(rS / rB)
@@ -95,7 +95,7 @@ check("A3j golden x = 1 forces rho = 1 (Delta = 0: equal spheres; any radius <= 
 
 # ---------- A4: Delian map ----------
 aOO = sp.Integer(1); aQQ = 1 / sp.sqrt(2); dD = sp.sqrt(6) / 4     # O-O (octet edge), Q-Q (half cube edge), Q-O
-DeltaD = sp.Rational(3, 8) * (2 * t - 1)                          # w_tet - w_oct (Bond Relay)
+DeltaD = sp.Rational(3, 8) * (2 * t - 1)                          # w_tet - w_oct (web of bonds)
 check("A4a Delian: unlike distance^2 d^2 = 3/8 (= |(1/2,1/2,1/2)|^2/2)", zero(dD**2 - sp.Rational(3, 8)))
 rQ = (dD + DeltaD / dD) / 2; rO = (dD - DeltaD / dD) / 2
 rhoD = sp.simplify(rQ / rO)

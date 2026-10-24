@@ -1,6 +1,6 @@
 #!/bin/bash
 # Physical anchors study: parse the saved Shannon pages (Pi), then A (sympy) and B (exact cells) on dicto-big-brother.
-# B imports lib.py and samples.py from the Bond Relay study (../../2026-10-25-web-of-bonds/scripts).
+# B imports lib.py and samples.py from the web-of-bonds study (../../2026-10-25-web-of-bonds/scripts).
 # crossref_check.py needs network access (it rewrites ../data/raw/crossref.json).
 set -e; cd "$(dirname "$0")"
 python3 parse_shannon.py > /dev/null
