@@ -125,6 +125,6 @@ D is for DICTO's new shapes, so these get none. Listed so DICTO can see them.
 
 ## Open questions for DICTO
 
-1. Grouped rows D72–D75: one number per group (as now) or one per piece?
+1. Grouped rows D72–D75: one number per group — DECIDED by DICTO, 24 October 2026.
 2. Delilah (the regular octahedron, U5; W2): its row is named "Delilah" as briefed; under the one-name rule (an established literature
    name keeps that name with DICTO's beside it) it could read "Regular octahedron (Delilah)". DICTO's call. It has no D-number (a known shape).
