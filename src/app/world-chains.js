@@ -94,8 +94,12 @@ export function filmOrder(list, named = []) {
  *  DICTONIC (DICTO 2026-10-23): kindButtons puts the kinds in a row of buttons (words '<prefix>.kind.<kind>'); a kind with param
  *  { start, stops: [{ u, v, key }], value(u), caption(v, L) } has one big slider (0..1000, snapping to its stops; words
  *  '<prefix>.param.<kind>') whose value reaches its views as opts.param, with a caption under it; a kind with xray: true is told of
- *  the X-ray cut as opts.xray; hideRows (['size', 'shells']) hides those sliders. */
-export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null, pinnedRoles = new Set(), hideable = {}, links = {}, openAction = () => {}, kindButtons = false, hideRows = [] }) {
+ *  the X-ray cut as opts.xray; hideRows (['size', 'shells']) hides those sliders. rowWords { size, shells } gives those two sliders
+ *  their own words (DICTONIC: Layers, Top layer); a kind's maxSize may be a function (per device). A kind with web(size, o) (DICTONIC,
+ *  DICTO 2026-10-25: the web of bonds) gets a Web button: the pieces turn see-through and a gold rod joins the anchors of every two
+ *  pieces that share a face, its thickness by the face's area (web gives [[anchorA, anchorB, area]]); a kind with a param also gets
+ *  a Loop button that runs its slider end to end and back (words '<prefix>.web.on|off|note', '<prefix>.loop.play|pause'). */
+export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null, pinnedRoles = new Set(), hideable = {}, links = {}, openAction = () => {}, kindButtons = false, hideRows = [], rowWords = {} }) {
   const STORAGE_KEY = storageKey(name);
   const group = new THREE.Group();
   group.visible = false;
@@ -103,7 +107,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   // size: for views that grow (a function of the size, DICTO Icosahedral Octet), how far out the network goes.
   const defaultOpts = () => Object.fromEntries(KINDS.filter((k) => DATA[k].options).map((k) => [k, { pattern: DATA[k].options.patterns[0], block: DATA[k].options.startBlock ?? 1, swap: false, ...(DATA[k].options.flips ? { flips: {} } : {}) }]));
   const defaultParam = () => Object.fromEntries(KINDS.filter((k) => DATA[k].param).map((k) => [k, DATA[k].param.start]));
-  const view = { kind: KINDS[0], part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false, size: 2, byFace: false, hidden: false, opts: defaultOpts(), param: defaultParam() };
+  const view = { kind: KINDS[0], part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false, size: 2, byFace: false, hidden: false, web: false, opts: defaultOpts(), param: defaultParam() };
   try {
     const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (KINDS.includes(d?.kind)) view.kind = d.kind;
@@ -113,7 +117,8 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     view.crystal = d?.crystal === true;
     view.byFace = byFace && d?.byFace === true;
     view.hidden = d?.hidden === true;
-    if (Number.isInteger(d?.size)) view.size = Math.max(1, Math.min(4, d.size));
+    view.web = d?.web === true;
+    if (Number.isInteger(d?.size)) view.size = Math.max(1, Math.min(6, d.size));
     for (const k of KINDS) if (DATA[k].param && Number.isFinite(d?.param?.[k])) view.param[k] = Math.max(0, Math.min(1000, Math.round(d.param[k])));
     for (const k of KINDS) {
       const o = DATA[k].options, s = d?.opts?.[k];
@@ -131,12 +136,12 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   const glass = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, flatShading: true, transparent: true, opacity: 0.22, depthWrite: false });
   glass.userData.hollow = true; // glass shells and helpers stay hollow in an X-ray cut (xray-caps.js)
   function clearGroup() {
-    for (const child of [...group.children]) { group.remove(child); child.geometry.dispose(); if (child.isLineSegments) child.material.dispose(); }
+    for (const child of [...group.children]) { group.remove(child); if (child.isInstancedMesh) child.dispose(); else child.geometry.dispose(); if (child.isLineSegments) child.material.dispose(); }
   }
   // A view is a list of pieces, or a function of the size that builds one (cached per size).
   const grown = new Map();
   const growing = () => typeof DATA[view.kind].views[view.part[view.kind]] === 'function';
-  const maxSize = () => DATA[view.kind].maxSize ?? 3;
+  const maxSize = () => { const m = DATA[view.kind].maxSize ?? 3; return typeof m === 'function' ? m() : m; };
   function viewList() {
     const v = DATA[view.kind].views[view.part[view.kind]];
     if (typeof v !== 'function') return v;
@@ -147,6 +152,15 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     if (!grown.has(key)) { if (grown.size > 40) grown.clear(); grown.set(key, v(size, o)); }
     return grown.get(key);
   }
+  const webAble = () => typeof DATA[view.kind].web === 'function';
+  const webOn = () => view.web && webAble();
+  function webList() {
+    const size = Math.min(view.size, maxSize()), key = `web.${view.kind}.${size}.${view.param[view.kind] ?? ''}`;
+    if (!grown.has(key)) { if (grown.size > 40) grown.clear(); grown.set(key, DATA[view.kind].web(size, { param: paramValue() })); }
+    return grown.get(key);
+  }
+  const rodMat = new THREE.MeshStandardMaterial({ color: 0xffc857, metalness: 0.3, roughness: 0.45 });
+  const rodGeo = new THREE.CylinderGeometry(1, 1, 1, 8, 1, true);
   // Pull apart by face (DICTO 2026-10-13: see the solids the many pieces form): each piece moves along the outward normal of
   // its outermost face, as far as that face's plane is from the middle, so all the pieces under one face of a shell's solid
   // lift off together as one tile. A piece whose outermost faces tie (under an edge or a corner) moves along their average.
@@ -183,6 +197,19 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   const xrayAware = () => !!(DATA[view.kind].options?.xray || DATA[view.kind].xray);
   // the kind's one big slider (DICTONIC): its position u (0..1000) and the value it stands for
   const paramValue = () => DATA[view.kind].param?.value(view.param[view.kind]);
+  let looping = null;
+  const stopLoop = () => { if (looping) { clearInterval(looping); looping = null; } };
+  function startLoop() {
+    const pm = DATA[view.kind].param; if (!pm) return;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, stops = pm.stops.map((st) => st.u).sort((a, b) => a - b);
+    let dir = 1;
+    looping = setInterval(() => {
+      let u = view.param[view.kind];
+      if (reduce) { const next = dir > 0 ? stops.find((x) => x > u) : [...stops].reverse().find((x) => x < u); if (next === undefined) { dir = -dir; return; } u = next; }
+      else { u += dir * 8; if (u >= 1000 || u <= 0) { u = Math.max(0, Math.min(1000, u)); dir = -dir; } }
+      view.param[view.kind] = u; draw();
+    }, reduce ? 1500 : 120);
+  }
   let solidMesh = null, solidTags = []; // the solid mesh drawn and each of its triangles' tag (taps)
   const hiddenRole = () => (view.hidden ? hideable[view.kind] ?? null : null);
   let drawn = {}; // pieces drawn, by role (the browser tests' probe)
@@ -214,7 +241,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       if (role === hiddenRole()) return;
       const sh = shellOf(dist[n]); const top = Math.round(view.shells * (levels.length - 1));
       if (!fm && sh > top && !ALWAYS_GLASS.has(role) && !view.crystal) return;
-      const see = ALWAYS_GLASS.has(role) || (view.crystal && (GLASS[view.kind]?.has(role) || sh > top));
+      const see = webOn() || ALWAYS_GLASS.has(role) || (view.crystal && (GLASS[view.kind]?.has(role) || sh > top));
       const b = see ? buf.glass : buf.solid;
       // Pulled apart: each piece moves out along the line from the centre through its own centre; see-through shells stay put.
       // By face: along the outward normal of the piece's outermost face instead (faceMove).
@@ -253,6 +280,27 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       if (!skeleton) { const m = new THREE.Mesh(g, mat); group.add(m); if (key === 'solid') solidMesh = m; }
       group.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial(key === 'glass' ? { color: 0x9fa8c0, transparent: true, opacity: 0.55 } : { color: skeleton ? 0xcfe3ff : EDGE_COLOR })));
     }
+    // The web of bonds: one rod per shared face, between the two pieces' anchors, as thick as the face is large (radius ∝ √area), within
+    // the layers shown; the rods move with Pulled apart as the anchors do.
+    if (webOn()) {
+      const top = Math.round(view.shells * (levels.length - 1)), rods = [];
+      const where = (a) => a.map((c, i) => (c - c0[i] + (c - c0[i]) * view.apart) * WS);
+      for (const [a, b, area] of webList()) {
+        if (area <= 1e-9 || shellOf(Math.hypot(...a.map((c, i) => c - c0[i]))) > top || shellOf(Math.hypot(...b.map((c, i) => c - c0[i]))) > top) continue;
+        rods.push([where(a), where(b), DATA[view.kind].webRadius * Math.sqrt(area) * WS]);
+      }
+      const inst = new THREE.InstancedMesh(rodGeo, rodMat, Math.max(1, rods.length));
+      const m = new THREE.Matrix4(), q = new THREE.Quaternion(), up = new THREE.Vector3(0, 1, 0);
+      rods.forEach(([pa, pb, r], i) => {
+        const A = new THREE.Vector3(...pa), B = new THREE.Vector3(...pb), d = B.clone().sub(A), len = d.length();
+        q.setFromUnitVectors(up, d.normalize());
+        m.compose(A.add(B).multiplyScalar(0.5), q, new THREE.Vector3(r, len, r));
+        inst.setMatrixAt(i, m);
+      });
+      inst.count = rods.length;
+      group.add(inst);
+      drawn.web = rods.length;
+    }
     renderPanel();
   }
   const fit = () => fitView([0, 0, 0], radius * (1 + view.apart) * WS * 1.1);
@@ -276,7 +324,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     <div class="w4d-row ch-shells-row"><label class="hull-pick"><span class="ch-shells-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row ch-film-row"><label class="hull-pick"><span class="ch-film-label"></span> <input type="range" class="st-slider" min="0" max="1" step="1"></label></div>
     <div class="w4d-row st-note ch-film-note" aria-live="polite"></div>
-    <div class="w4d-row w4d-options ch-options"><button type="button" data-chains-play></button><button type="button" data-chains-byface></button><button type="button" data-chains-crystal></button><button type="button" data-chains-hide></button><button type="button" data-chains-swap></button></div>
+    <div class="w4d-row w4d-options ch-options"><button type="button" data-chains-play></button><button type="button" data-chains-byface></button><button type="button" data-chains-crystal></button><button type="button" data-chains-hide></button><button type="button" data-chains-swap></button><button type="button" data-chains-web></button><button type="button" data-chains-loop></button></div>
     <div class="w4d-row w4d-options ch-links"><span class="ch-links-label hull-pick"></span> </div>
     <div class="w4d-row st-note"></div>`;
   document.body.appendChild(panel);
@@ -290,6 +338,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   const hideBtn = panel.querySelector('[data-chains-hide]');
   const patternSelect = panel.querySelector('[data-select="pattern"]'), blockInput = panel.querySelector('.ch-block-row input');
   const swapBtn = panel.querySelector('[data-chains-swap]');
+  const webBtn = panel.querySelector('[data-chains-web]'), loopBtn = panel.querySelector('[data-chains-loop]');
   const shellsInput = panel.querySelector('.ch-shells-row input');
   const sizeInput = panel.querySelector('.ch-size-row input');
   const filmRow = panel.querySelector('.ch-film-row'), filmInput = filmRow.querySelector('input'), filmNote = panel.querySelector('.ch-film-note');
@@ -343,18 +392,21 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     if (pm) {
       panel.querySelector('.ch-param-label').textContent = t(`${prefix}.param.${view.kind}`, L);
       paramInput.value = String(view.param[view.kind]);
-      panel.querySelector('.ch-param-caption').textContent = pm.caption(paramValue(), L);
+      panel.querySelector('.ch-param-caption').textContent = pm.caption(paramValue(), L) + (webOn() ? ` · ${t(`${prefix}.web.note`, L)}` : '');
     }
     panel.querySelector('.ch-view-label').textContent = t('icosa.view', L);
     partSelect.innerHTML = Object.keys(DATA[view.kind].views)
       .map((v) => `<option value="${v}"${v === view.part[view.kind] ? ' selected' : ''}>${t(`${prefix}.${view.kind}.${v}`, L)}</option>`).join('');
     panel.querySelector('.ch-size-row').hidden = !growing() || hideRows.includes('size');
     panel.querySelector('.ch-shells-row').hidden = hideRows.includes('shells');
-    panel.querySelector('.ch-size-label').textContent = t('chains.size', L);
+    panel.querySelector('.ch-size-label').textContent = t(rowWords.size ?? 'chains.size', L);
     sizeInput.max = String(maxSize()); sizeInput.value = String(Math.min(view.size, maxSize()));
     panel.querySelector('.ch-apart-label').textContent = t('icosa.apart', L);
     apartInput.value = String(Math.round(view.apart * 1000));
-    panel.querySelector('.ch-shells-label').textContent = t('chains.shells', L);
+    panel.querySelector('.ch-shells-label').textContent = t(rowWords.shells ?? 'chains.shells', L);
+    webBtn.hidden = !webAble(); loopBtn.hidden = !pm;
+    if (webAble()) { webBtn.textContent = t(`${prefix}.web.${view.web ? 'on' : 'off'}`, L); webBtn.classList.toggle('active', view.web); }
+    if (pm) { loopBtn.textContent = looping ? `⏸ ${t(`${prefix}.loop.pause`, L)}` : `▶ ${t(`${prefix}.loop.play`, L)}`; loopBtn.classList.toggle('active', !!looping); }
     shellsInput.value = String(Math.round(view.shells * 1000));
     crystalBtn.textContent = t(view.crystal ? 'chains.crystal.on' : 'chains.crystal.off', L);
     byFaceBtn.textContent = t(view.byFace ? 'chains.byFace.on' : 'chains.byFace.off', L);
@@ -399,6 +451,10 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   crystalBtn.addEventListener('click', () => { view.crystal = !view.crystal; save(); draw(); });
   byFaceBtn.addEventListener('click', () => { view.byFace = !view.byFace; save(); renderPanel(); draw(); });
   hideBtn.addEventListener('click', () => { view.hidden = !view.hidden; save(); draw(); });
+  webBtn.addEventListener('click', () => { view.web = !view.web; save(); draw(); });
+  // Loop (DICTO 2026-10-25, "the rhythm of the loop"): the kind's slider runs from one end to the other and back, without end, until
+  // paused (or the kind or world changes); with reduced motion it steps from stop to stop instead of sliding.
+  loopBtn.addEventListener('click', () => { if (looping) stopLoop(); else startLoop(); renderPanel(); });
   // a pattern control starts the pattern afresh: single pieces tapped (flips) are let go
   const unflip = (o) => { if (o.flips) o.flips = {}; };
   patternSelect.addEventListener('change', () => { const o = view.opts[view.kind]; if (!o || !DATA[view.kind].options.patterns.includes(patternSelect.value)) return; o.pattern = patternSelect.value; unflip(o); save(); draw(); });
@@ -412,11 +468,12 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   panel.querySelector('.ch-kind-buttons').addEventListener('click', (e) => {
     const k = e.target.closest('[data-chains-kind]')?.dataset.chainsKind;
     if (!k || k === view.kind) return;
-    view.kind = k; save(); stopFilm(); film = null; draw(); fitStart();
+    view.kind = k; save(); stopFilm(); stopLoop(); film = null; draw(); fitStart();
   });
   // the one big slider: it snaps to a stop within 2% of it (no step buttons, DICTO); the picture is framed again when it is let go
   paramInput.addEventListener('input', () => {
     const pm = DATA[view.kind].param; if (!pm) return;
+    stopLoop();
     let u = Number(paramInput.value);
     const stop = pm.stops.find((st) => Math.abs(st.u - u) <= 20);
     if (stop) { u = stop.u; paramInput.value = String(u); }
@@ -464,13 +521,13 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
       if (on === active) return;
       active = on;
       group.visible = on;
-      if (!on) { panel.classList.remove('visible'); stopFilm(); film = null; }
+      if (!on) { panel.classList.remove('visible'); stopFilm(); stopLoop(); film = null; }
       draw();
       if (on) fitStart();
     },
     /** Back to each shape's first view (leaving the world, DICTO 2026-10-13). */
     resetView() {
-      Object.assign(view, { part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false, size: 2, byFace: false, hidden: false, opts: defaultOpts(), param: defaultParam() }); save();
+      stopLoop(); Object.assign(view, { part: { ...defaultParts }, apart: 0.3, shells: 1, crystal: false, size: 2, byFace: false, hidden: false, web: false, opts: defaultOpts(), param: defaultParam() }); save();
       if (active) { draw(); fit(); }
     },
     setSkeleton(on) { if (on !== skeleton) { skeleton = on; if (active) draw(); } },
@@ -480,7 +537,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     get isEmpty() { return true; },
     clear() {},
     /** For the browser tests (?probe): what is shown, and the pieces drawn by role. */
-    probe: () => ({ param: DATA[view.kind].param ? { u: view.param[view.kind], value: paramValue() } : null, xray: xrayOn(), flips: view.opts[view.kind]?.flips ? Object.keys(view.opts[view.kind].flips).length : null, kind: view.kind, part: view.part[view.kind], size: Math.min(view.size, maxSize()), crystal: view.crystal, hidden: hiddenRole(), opts: view.opts[view.kind] ? { ...view.opts[view.kind] } : null, drawn: { ...drawn } }),
+    probe: () => ({ web: webOn(), looping: !!looping, maxSize: maxSize(), param: DATA[view.kind].param ? { u: view.param[view.kind], value: paramValue() } : null, xray: xrayOn(), flips: view.opts[view.kind]?.flips ? Object.keys(view.opts[view.kind].flips).length : null, kind: view.kind, part: view.part[view.kind], size: Math.min(view.size, maxSize()), crystal: view.crystal, hidden: hiddenRole(), opts: view.opts[view.kind] ? { ...view.opts[view.kind] } : null, drawn: { ...drawn } }),
   };
 }
 

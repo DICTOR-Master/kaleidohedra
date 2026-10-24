@@ -1,5 +1,6 @@
 // DICTONIC (DICTO 2026-10-23), through the real UI, touch, phone (390×844) and iPad (820×1180), on the Kaleidohedra and Rhombiverse
-// doors (DOORS): first in DICTO's list; the bond buttons (big enough to touch) and one slider, the Size and Top shell sliders hidden;
+// doors (DOORS): first in DICTO's list; the bond buttons (big enough to touch) and one slider, with Layers (up to 6, 4 on a phone) and
+// Top layer sliders (DICTO 2026-10-25), a Web of bonds button (rods = the shared faces webOf finds) and a Loop button that runs the slider;
 // Golden opens at x = τ (Icosaxes + Unborn Axes named in the caption), X-ray shows the cores and AXE pyramids there, the slider snaps
 // to x = 1 (Kelvin) and reaches x → 0 and x → ∞, each drawing the pieces goldenFamily builds; Keyed has no slider and its "Set keys
 // one by one" opens the Golden split; Delian opens at the Delian bond (Samson + Delilah in the caption) and snaps to the octet, the
@@ -8,7 +9,7 @@
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { mkdirSync } from 'node:fs';
-import { goldenFamily, delianFamily, GOLDEN_STOPS, DELIAN_STOPS } from '../../src/app/world-dictonic.js';
+import { goldenFamily, delianFamily, GOLDEN_STOPS, DELIAN_STOPS, DICTONIC_VIEWS } from '../../src/app/world-dictonic.js';
 import { goldenPieces } from '../../src/app/world-octet.js';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/dictonic-shots';
@@ -44,7 +45,11 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     assert.deepEqual(st.drawn, count(goldenFamily(2, gStop('tau').v)), `${tag}: golden at τ`);
     assert.match(await caption(), /Icosaxes .*Unborn Axes/, `${tag}: τ caption names the pieces`);
     for (const k of ['golden', 'keyed', 'delian']) { const bx = await page.locator(`${P} [data-chains-kind="${k}"]`).boundingBox(); assert.ok(bx && bx.height >= 30, `${tag}: ${k} button`); }
-    for (const sel of ['.ch-size-row', '.ch-shells-row', '[data-select="part"]']) assert.ok(await page.locator(`${P} ${sel}`).isHidden(), `${tag}: ${sel} hidden`);
+    assert.ok(await page.locator(`${P} [data-select="part"]`).isHidden(), `${tag}: no view menu`);
+    for (const sel of ['.ch-size-row', '.ch-shells-row']) assert.ok(await page.locator(`${P} ${sel}`).isVisible(), `${tag}: ${sel} shown`);
+    assert.match(await page.locator(`${P} .ch-size-label`).textContent(), /Layers/); assert.match(await page.locator(`${P} .ch-shells-label`).textContent(), /Top layer/);
+    assert.equal(st.maxSize, dev === 'phone' ? 4 : 6, `${tag}: layer cap`);
+    assert.equal(await page.locator(`${P} .ch-size-row input`).getAttribute('max'), String(st.maxSize));
     assert.ok(await page.locator(`${P} .ch-param-row input`).isVisible(), `${tag}: the slider`);
     checks++;
     await shot('golden-tau');
@@ -80,6 +85,30 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     await slide(345); st = await probe();
     assert.equal(st.param.value, 1 / 3, `${tag}: snapped to the octet`); assert.deepEqual(st.drawn, count(delianFamily(2, 1 / 3))); checks++;
     await shot('delian-octet');
+    // Web of bonds at the octet: one rod per shared face, only octahedron–tetrahedron bonds there
+    await page.tap(`${P} [data-chains-web]`); await page.waitForTimeout(900);
+    st = await probe(); assert.equal(st.web, true, `${tag}: web on`);
+    assert.equal(st.drawn.web, DICTONIC_VIEWS.delian.web(2, { param: 1 / 3 }).filter((w) => w[2] > 1e-9).length, `${tag}: octet rods`);
+    assert.match(await caption(), /shared face/); checks++;
+    await shot('web-octet');
+    await slide(dStop('bond').u); st = await probe();
+    assert.equal(st.drawn.web, DICTONIC_VIEWS.delian.web(2, { param: dStop('bond').v }).filter((w) => w[2] > 1e-9).length, `${tag}: bond rods`); checks++;
+    await shot('web-delian-bond');
+    // Loop: the slider moves by itself until paused
+    const u0 = st.param.u;
+    await page.tap(`${P} [data-chains-loop]`); await page.waitForTimeout(1500);
+    st = await probe(); assert.equal(st.looping, true); assert.notEqual(st.param.u, u0, `${tag}: loop moves the slider`);
+    await page.tap(`${P} [data-chains-loop]`); await page.waitForTimeout(300);
+    const u1 = (await probe()).param.u; await page.waitForTimeout(600);
+    assert.equal((await probe()).param.u, u1, `${tag}: paused`); checks++;
+    await page.tap(`${P} [data-chains-web]`); await page.waitForTimeout(600);
+    // Layers: the largest the device allows
+    await page.locator(`${P} .ch-size-row input`).fill(String(st.maxSize)); await page.waitForTimeout(2500);
+    st = await probe(); assert.equal(st.size, st.maxSize);
+    assert.deepEqual(st.drawn, count(delianFamily(st.maxSize, st.param.value)), `${tag}: ${st.maxSize} layers`); checks++;
+    await shot(`layers-${st.maxSize}`);
+    await page.locator(`${P} .ch-size-row input`).fill('2'); await page.waitForTimeout(900);
+    await slide(dStop('octet').u);
     for (const k of ['rd', 'cube']) { await slide(dStop(k).u); st = await probe(); assert.deepEqual(st.drawn, count(delianFamily(2, dStop(k).v)), `${tag}: Delian ${k}`); checks++; }
     assert.equal(await page.locator(`${P} [data-chains-link]`).count(), 2, `${tag}: Samson and Delilah links`);
     // Keyed's "Set keys one by one" opens the Golden split

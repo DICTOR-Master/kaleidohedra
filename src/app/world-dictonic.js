@@ -60,13 +60,45 @@ const R2 = Math.SQRT1_2;
 /** The octet family's network at t: Samson-like pieces in the unit cubes, Delilah-like ones on the odd points, within the size's ball. */
 export function delianFamily(size, tt) {
   const r = 1.25 * size, k = Math.ceil(r) + 1, out = [];
-  const put = (role, P, c) => { const { vertices, faces } = convexPolygons(P); const a = c.map((q) => q * R2); out.push([role, vertices.map((v) => v.map((q) => q * R2)), faces, c, { anchor: a }]); };
+  // Every piece is a translate of one of three: the cube piece in an even or an odd cube, and the octahedron piece (DICTO 2026-10-25,
+  // more layers: one hull each instead of one per piece).
+  const parity = (x, y, z) => ((x + y + z) % 2 + 2) % 2;
+  const tetHull = [0, 1].map((p) => convexPolygons(tetPiece([p, 0, 0], tt))), octHull = convexPolygons(octPiece([1, 0, 0], tt));
+  const put = (role, { vertices, faces }, shift, c) => { const a = c.map((q) => q * R2); out.push([role, vertices.map((v) => v.map((q, i) => (q + shift[i]) * R2)), faces, c, { anchor: a }]); };
   for (let x = -k; x <= k; x++) for (let y = -k; y <= k; y++) for (let z = -k; z <= k; z++) {
-    if (tt > 0 && Math.hypot(x + 0.5, y + 0.5, z + 0.5) <= r) put('dlTet', tetPiece([x, y, z], tt), [x + 0.5, y + 0.5, z + 0.5]);
-    if (tt < 1 && ((x + y + z) % 2 + 2) % 2 === 1 && Math.hypot(x, y, z) <= r) put('dlOct', octPiece([x, y, z], tt), [x, y, z]);
+    const p = parity(x, y, z);
+    if (tt > 0 && Math.hypot(x + 0.5, y + 0.5, z + 0.5) <= r) put('dlTet', tetHull[p], [x - p, y, z], [x + 0.5, y + 0.5, z + 0.5]);
+    if (tt < 1 && p === 1 && Math.hypot(x, y, z) <= r) put('dlOct', octHull, [x - 1, y, z], [x, y, z]);
   }
   return out;
 }
+
+// ---- The web of bonds (DICTO 2026-10-25: "the network of bonds should create a web of lattices that change with the rhythm of the
+// loop"): the centres stay put; a bond is a face two pieces share, weighted by its area. Both families are face to face (each is a
+// weighted Voronoi diagram), so two pieces share a face exactly when they have a face with the same centre. ----
+const polyArea = (P) => { let x = 0, y = 0, z = 0; for (let i = 1; i + 1 < P.length; i++) { const [a, b, c] = [P[0], P[i], P[i + 1]];
+  const u = b.map((q, j) => q - a[j]), v = c.map((q, j) => q - a[j]); x += u[1] * v[2] - u[2] * v[1]; y += u[2] * v[0] - u[0] * v[2]; z += u[0] * v[1] - u[1] * v[0]; }
+  return Math.hypot(x, y, z) / 2; };
+/** Bonds of a face-to-face network of convex pieces [role, vertices, faces, n, { anchor }]: [[anchorA, anchorB, area]]. */
+export function webOf(pieces) {
+  const seen = new Map(), out = [];
+  for (const [, V, F, , extra] of pieces) for (const f of F) {
+    const P = f.map((k) => V[k]), c = P.reduce((s, p) => s.map((q, i) => q + p[i] / P.length), [0, 0, 0]);
+    const key = c.map((q) => Math.round(q * 1e5)).join(','), other = seen.get(key);
+    if (other) { out.push([other, extra.anchor, polyArea(P)]); seen.delete(key); } else seen.set(key, extra.anchor);
+  }
+  return out;
+}
+/** The golden family as whole pieces (at x = τ too: Icosaxes + Unborn Axes as single solids, not their X-ray parts). */
+function goldenCells(size, x) {
+  const { ico, voids } = scSites(size), out = [], at = (n) => n.map((c) => (c * PHI) / 2);
+  const put = (role, { vertices, faces }, n) => { const c = at(n); out.push([role, vertices.map((v) => v.map((q, i) => q + c[i])), faces, n, { anchor: c }]); };
+  for (const n of ico.values()) put('gsBig', goldenT(x), n);
+  for (const n of voids.values()) put('gsSmall', goldenT(x === 0 ? Infinity : x === Infinity ? 0 : 1 / x), n);
+  return out;
+}
+// Layers (DICTO 2026-10-25): up to 6 on an iPad or a computer, 4 on a phone.
+const layersMax = () => (typeof window !== 'undefined' && Math.min(window.screen?.width ?? 1024, window.screen?.height ?? 1024) < 600 ? 4 : 6);
 
 const stopOf = (stops, u) => stops.find((s) => s.u === u) ?? null;
 const valueOf = (stops, map) => (u) => stopOf(stops, u)?.v ?? map(u);
@@ -85,10 +117,10 @@ function delianCaption(tt, L) {
   return `${head} · ${nt} ${fmt(vt, 4)} · ${no} ${fmt(vo, 4)}`;
 }
 export const DICTONIC_VIEWS = {
-  golden: { maxSize: 3, xray: true, param: { start: goldenU(PHI), stops: GOLDEN_STOPS, value: valueOf(GOLDEN_STOPS, goldenX), caption: goldenCaption },
+  golden: { maxSize: layersMax, web: (size, o) => webOf(goldenCells(size, o.param)), webRadius: 0.055, xray: true, param: { start: goldenU(PHI), stops: GOLDEN_STOPS, value: valueOf(GOLDEN_STOPS, goldenX), caption: goldenCaption },
     views: { network: (size, o) => goldenFamily(size, o.param, o.xray) } },
-  keyed: { maxSize: 3, xray: true, views: { network: (size, o) => goldenPieces(size, { pattern: 'allKeyed', xray: o.xray }) } },
-  delian: { maxSize: 3, param: { start: DELIAN_STOPS.find((s) => s.key === 'bond').u, stops: DELIAN_STOPS, value: valueOf(DELIAN_STOPS, (u) => u / 1000), caption: delianCaption },
+  keyed: { maxSize: layersMax, xray: true, views: { network: (size, o) => goldenPieces(size, { pattern: 'allKeyed', xray: o.xray }) } },
+  delian: { maxSize: layersMax, web: (size, o) => webOf(delianFamily(size, o.param)), webRadius: 0.075, param: { start: DELIAN_STOPS.find((s) => s.key === 'bond').u, stops: DELIAN_STOPS, value: valueOf(DELIAN_STOPS, (u) => u / 1000), caption: delianCaption },
     views: { network: (size, o) => delianFamily(size, o.param) } },
 };
 const LINKS = {
@@ -100,7 +132,7 @@ const LINKS = {
 export function createDictonicWorld({ scene, fitView, openAction }) {
   return createLayeredWorld({ scene, fitView, name: 'dictonic', data: DICTONIC_VIEWS, kinds: DICTONIC_BONDS, prefix: 'dictonic',
     glassRoles: { golden: new Set(['gsSmall', 'mxUnborn']), keyed: new Set(['gsSmall', 'mxDodeca']), delian: new Set(['dlOct']) },
-    defaultParts: { golden: 'network', keyed: 'network', delian: 'network' }, kindButtons: true, hideRows: ['size', 'shells'], links: LINKS, openAction });
+    defaultParts: { golden: 'network', keyed: 'network', delian: 'network' }, kindButtons: true, rowWords: { size: 'dictonic.layers', shells: 'dictonic.topLayer' }, links: LINKS, openAction });
 }
 
 /** Points whose convex hull previews DICTONIC in the DICTO menu: Icosaxes. */
