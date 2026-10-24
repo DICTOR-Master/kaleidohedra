@@ -99,7 +99,7 @@ export function filmOrder(list, named = []) {
  *  DICTO 2026-10-25: the web of bonds) gets a Web button: the pieces turn see-through and a gold rod joins the anchors of every two
  *  pieces that share a face, its thickness by the face's area (web gives [[anchorA, anchorB, area]]); a kind with a param also gets
  *  a Loop button that runs its slider end to end and back (words '<prefix>.web.on|off|note', '<prefix>.loop.play|pause'). */
-export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null, pinnedRoles = new Set(), hideable = {}, links = {}, openAction = () => {}, kindButtons = false, hideRows = [], rowWords = {}, foldNote = false }) {
+export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null, pinnedRoles = new Set(), hideable = {}, links = {}, openAction = () => {}, kindButtons = false, hideRows = [], rowWords = {}, foldNote = false, theorem = null }) {
   const STORAGE_KEY = storageKey(name);
   const group = new THREE.Group();
   group.visible = false;
@@ -197,8 +197,8 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
   const xrayAware = () => !!(DATA[view.kind].options?.xray || DATA[view.kind].xray);
   // the kind's one big slider (DICTONIC): its position u (0..1000) and the value it stands for
   const paramValue = () => DATA[view.kind].param?.value(view.param[view.kind]);
-  let looping = null;
-  const stopLoop = () => { if (looping) { clearInterval(looping); looping = null; } };
+  let looping = null, loopHold = 0;
+  const stopLoop = () => { if (looping) { clearInterval(looping); looping = null; } loopHold = 0; };
   function startLoop() {
     const pm = DATA[view.kind].param; if (!pm) return;
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, stops = pm.stops.map((st) => st.u).sort((a, b) => a - b);
@@ -206,7 +206,14 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     looping = setInterval(() => {
       let u = view.param[view.kind];
       if (reduce) { const next = dir > 0 ? stops.find((x) => x > u) : [...stops].reverse().find((x) => x < u); if (next === undefined) { dir = -dir; return; } u = next; }
-      else { u += dir * 8; if (u >= 1000 || u <= 0) { u = Math.max(0, Math.min(1000, u)); dir = -dir; } }
+      else {
+        // the loop holds about two seconds at the kind's decisive points (pm.pauseAt: Kelvin, the octet), so the switch can be seen
+        if (loopHold > 0) { loopHold--; if (loopHold > 0) return; draw(); return; }
+        const next = u + dir * 8, hit = (pm.pauseAt ?? []).find((p) => (p - u) * (p - next) < 0 || p === next);
+        u = hit ?? next;
+        if (hit !== undefined) loopHold = 16;
+        if (u >= 1000 || u <= 0) { u = Math.max(0, Math.min(1000, u)); dir = -dir; }
+      }
       view.param[view.kind] = u; draw();
     }, reduce ? 1500 : 120);
   }
@@ -334,6 +341,8 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     <div class="w4d-row st-note"></div>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, name);
+  // theorem (DICTONIC, DICTO 2026-10-25): a statement + live evidence block under the slider's caption (dictonic-theorem.js)
+  const thm = theorem ? theorem(panel) : null;
   // foldNote (DICTONIC, DICTO 2026-10-25): the note shows one line; a tap opens or closes it
   const noteEl = panel.querySelector('.st-note:not(.ch-film-note)');
   if (foldNote) { noteEl.classList.add('fold'); noteEl.addEventListener('click', () => noteEl.classList.toggle('open')); }
@@ -448,6 +457,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     hideBtn.hidden = !hr || !viewList().some((p) => p[0] === hr);
     if (hr) { hideBtn.textContent = t(`${prefix}.toggle.${hr}.${view.hidden ? 'off' : 'on'}`, L); hideBtn.classList.toggle('active', !view.hidden); }
     panel.querySelector('.st-note:not(.ch-film-note)').textContent = t(`${prefix}.note.${view.kind}`, L);
+    thm?.update({ kind: view.kind, u: view.param[view.kind] ?? 0, v: pm ? paramValue() : null, L, paused: loopHold > 0 });
     renderFilm();
   }
   partSelect.addEventListener('change', () => { if (!DATA[view.kind].views[partSelect.value]) return; view.part[view.kind] = partSelect.value; stopFilm(); film = null; save(); draw(); fit(); renderFilm(); });

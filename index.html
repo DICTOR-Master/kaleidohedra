@@ -264,6 +264,33 @@
     .qc-panel > .ch-film-note { order: 9; color: #ffe2b8; font-weight: 600; }
     /* DICTONIC's caption (the stop and the two volumes) sits right under its slider, above the others. */
     .qc-panel > .ch-param-caption { order: 10; color: #ffe2b8; font: 600 var(--text-s)/1.4 var(--font-ui); text-align: center; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8); }
+    /* DICTONIC's theorem block (dictonic-theorem.js): the statement card, the live chart of exact bond sizes, the bonds per piece,
+       and the Delian switch drawn in the dual (it glows while the loop holds at the octet). */
+    .qc-panel > .ch-theorem { order: 10; flex-direction: column; align-items: stretch; gap: 4px; color: #e8ecf5; font: var(--text-s)/1.4 var(--font-ui); }
+    .ch-theorem .thm-card { background: rgba(255, 200, 87, 0.08); border: 1px solid rgba(255, 200, 87, 0.45); border-radius: var(--radius-s); padding: 6px 8px; }
+    .ch-theorem .thm-statement { margin: 0; color: #fde6b0; font-weight: 600; }
+    .ch-theorem .thm-detail { margin: 4px 0 0; color: #cde; }
+    .ch-theorem .thm-more { margin-top: 4px; min-height: 30px; }
+    .ch-theorem .thm-evidence-toggle { align-self: center; min-height: 36px; }
+    .ch-theorem .thm-evidence { display: flex; flex-direction: column; gap: 4px; }
+    .ch-theorem .thm-evidence[hidden] { display: none; }
+    .ch-theorem .thm-chart svg { width: 100%; height: 96px; background: rgba(0, 0, 0, 0.35); border-radius: var(--radius-s); display: block; }
+    .ch-theorem .thm-chart-title { color: #ffe2b8; text-align: center; }
+    .ch-theorem .thm-legend { display: flex; flex-wrap: wrap; gap: 4px 10px; justify-content: center; }
+    .ch-theorem .thm-legend i { display: inline-block; width: 14px; height: 4px; margin-right: 4px; vertical-align: middle; border-radius: 2px; }
+    .ch-theorem .thm-marks { color: #aab; }
+    .ch-theorem .thm-count { text-align: center; color: #ffe2b8; font-weight: 600; }
+    .ch-theorem .thm-flip { display: flex; align-items: center; gap: 8px; }
+    .ch-theorem .thm-flip[hidden] { display: none; }
+    .ch-theorem .thm-flip svg { width: 96px; height: 64px; flex: none; border-radius: var(--radius-s); background: rgba(0, 0, 0, 0.35); }
+    .ch-theorem .thm-flip.now svg { box-shadow: 0 0 0 2px #ffc857; }
+    /* DICTONIC's panel never runs off the top: it scrolls instead; on phones the chart is lower and the statement shows two lines until tapped */
+    #worlddictonic-panel { max-height: calc(100dvh - 150px); overflow-y: auto; }
+    @media (max-width: 600px) {
+      .ch-theorem .thm-chart svg { height: 64px; }
+      .ch-theorem .thm-statement { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; cursor: pointer; }
+      .ch-theorem .thm-card.open .thm-statement { -webkit-line-clamp: unset; }
+    }
     /* A folded note (DICTONIC): one line until tapped. */
     .qc-panel .st-note.fold { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; cursor: pointer; }
     .qc-panel .st-note.fold.open { -webkit-line-clamp: unset; }

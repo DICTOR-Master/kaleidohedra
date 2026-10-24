@@ -16,6 +16,7 @@ import { goldenPieces, scSites } from './world-octet.js';
 import { convexPolygons } from '../krp-core/src/polyhedra/golden-split.js';
 import { tetPiece, octPiece, octetFamilyVolumes, OCTET_FAMILY_STOPS } from '../krp-core/src/polyhedra/delian-bond.js';
 import { t } from './i18n.js';
+import { mountTheorem } from './dictonic-theorem.js';
 
 const PHI = (1 + Math.sqrt(5)) / 2;
 export const DICTONIC_BONDS = ['golden', 'keyed', 'delian'];
@@ -117,10 +118,10 @@ function delianCaption(tt, L) {
   return `${head} · ${nt} ${fmt(vt, 4)} · ${no} ${fmt(vo, 4)}`;
 }
 export const DICTONIC_VIEWS = {
-  golden: { maxSize: layersMax, web: (size, o) => webOf(goldenCells(size, o.param)), webRadius: 0.07, xray: true, param: { start: goldenU(PHI), stops: GOLDEN_STOPS, value: valueOf(GOLDEN_STOPS, goldenX), caption: goldenCaption },
+  golden: { maxSize: layersMax, web: (size, o) => webOf(goldenCells(size, o.param)), webRadius: 0.07, xray: true, param: { start: goldenU(PHI), stops: GOLDEN_STOPS, value: valueOf(GOLDEN_STOPS, goldenX), caption: goldenCaption, pauseAt: [500] },
     views: { network: (size, o) => goldenFamily(size, o.param, o.xray) } },
   keyed: { maxSize: layersMax, xray: true, views: { network: (size, o) => goldenPieces(size, { pattern: 'allKeyed', xray: o.xray }) } },
-  delian: { maxSize: layersMax, web: (size, o) => webOf(delianFamily(size, o.param)), webRadius: 0.09, param: { start: DELIAN_STOPS.find((s) => s.key === 'bond').u, stops: DELIAN_STOPS, value: valueOf(DELIAN_STOPS, (u) => u / 1000), caption: delianCaption },
+  delian: { maxSize: layersMax, web: (size, o) => webOf(delianFamily(size, o.param)), webRadius: 0.09, param: { start: DELIAN_STOPS.find((s) => s.key === 'bond').u, stops: DELIAN_STOPS, value: valueOf(DELIAN_STOPS, (u) => u / 1000), caption: delianCaption, pauseAt: [DELIAN_STOPS.find((s) => s.key === 'octet').u] },
     views: { network: (size, o) => delianFamily(size, o.param) } },
 };
 const LINKS = {
@@ -132,7 +133,8 @@ const LINKS = {
 export function createDictonicWorld({ scene, fitView, openAction }) {
   return createLayeredWorld({ scene, fitView, name: 'dictonic', data: DICTONIC_VIEWS, kinds: DICTONIC_BONDS, prefix: 'dictonic',
     glassRoles: { golden: new Set(['gsSmall', 'mxUnborn']), keyed: new Set(['gsSmall', 'mxDodeca']), delian: new Set(['dlOct']) },
-    defaultParts: { golden: 'network', keyed: 'network', delian: 'network' }, kindButtons: true, rowWords: { size: 'dictonic.layers', shells: 'dictonic.topLayer' }, foldNote: true, links: LINKS, openAction });
+    defaultParts: { golden: 'network', keyed: 'network', delian: 'network' }, kindButtons: true, rowWords: { size: 'dictonic.layers', shells: 'dictonic.topLayer' }, foldNote: true,
+    theorem: (panel) => mountTheorem(panel, { stopsOf: (k) => DICTONIC_VIEWS[k].param.stops, valueAt: (k, u) => DICTONIC_VIEWS[k].param.value(Math.round(u)) }), links: LINKS, openAction });
 }
 
 /** Points whose convex hull previews DICTONIC in the DICTO menu: Icosaxes. */

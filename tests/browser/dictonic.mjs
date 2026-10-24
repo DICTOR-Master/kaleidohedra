@@ -51,6 +51,15 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     assert.equal(st.maxSize, dev === 'phone' ? 4 : 6, `${tag}: layer cap`);
     assert.equal(await page.locator(`${P} .ch-size-row input`).getAttribute('max'), String(st.maxSize));
     assert.ok(await page.locator(`${P} .ch-param-row input`).isVisible(), `${tag}: the slider`);
+    // the theorem block (DICTO 2026-10-25): statement, live chart with the marker, bonds per piece; no Delian switch picture on Golden
+    assert.match(await page.locator(`${P} .thm-statement`).textContent(), /Theorem \(golden\)/, `${tag}: golden statement`);
+    // upright screens: the evidence folds behind a button (it would cover the picture); open it
+    assert.ok(await page.locator(`${P} .thm-evidence`).isHidden(), `${tag}: evidence folded on an upright screen`);
+    await page.tap(`${P} .thm-evidence-toggle`); await page.waitForTimeout(300);
+    assert.ok(await page.locator(`${P} .thm-chart svg`).isVisible(), `${tag}: the chart`);
+    assert.equal(await page.locator(`${P} .thm-chart polyline`).count(), 3, `${tag}: three bond curves`);
+    assert.match(await page.locator(`${P} .thm-count`).textContent(), /8 bonds to the other kind \+ 6/, `${tag}: bonds per piece`);
+    assert.ok(await page.locator(`${P} .thm-flip`).isHidden(), `${tag}: no switch picture for golden`);
     checks++;
     await shot('golden-tau');
     // X-ray at τ: the icosahedron / Unborn cores and the AXE pyramids
@@ -85,6 +94,10 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     await slide(345); st = await probe();
     assert.equal(st.param.value, 1 / 3, `${tag}: snapped to the octet`); assert.deepEqual(st.drawn, count(delianFamily(2, 1 / 3))); checks++;
     await shot('delian-octet');
+    assert.match(await page.locator(`${P} .thm-statement`).textContent(), /Theorem \(Delian\)/);
+    assert.ok(await page.locator(`${P} .thm-flip`).isVisible(), `${tag}: the switch picture`);
+    assert.ok(await page.locator(`${P} .thm-flip.now`).count(), `${tag}: the switch picture glows at the octet`);
+    assert.match(await page.locator(`${P} .thm-count`).textContent(), /Octahedron piece: 8 bonds · tetrahedron piece: 4 bonds/); checks++;
     // Web of bonds at the octet: one rod per shared face, only octahedron–tetrahedron bonds there
     await page.tap(`${P} [data-chains-web]`); await page.waitForTimeout(900);
     st = await probe(); assert.equal(st.web, true, `${tag}: web on`);
