@@ -1,0 +1,1264 @@
+{
+ "compounds": [
+  {
+   "compound": "CsCl",
+   "loop": "golden",
+   "r_cation": "87/50",
+   "r_anion": "181/100",
+   "rho": 0.9613259668508287,
+   "in_window": true,
+   "edges": {
+    "window low (like contact, sqrt3-1)": {
+     "edge": 0.7320508075688773,
+     "moves": {
+      "cation": {
+       "need_exact": "-181/100 + 181*sqrt(3)/100",
+       "need": 1.3250119616996678,
+       "shift_A": -0.4149880383003321,
+       "shift_pct": -23.849887258639775
+      },
+      "anion": {
+       "need_exact": "(87 + 87*sqrt(3))/100",
+       "need": 2.376884202584923,
+       "shift_A": 0.5668842025849232,
+       "shift_pct": 31.31956920358692
+      }
+     },
+     "split_rel_pct": 13.539524265680358,
+     "rho_gap_pct": 31.31956920358692
+    }
+   },
+   "spread": {
+    "CR (crystal radii)": 1.125748502994012,
+    "rounding ±0.005 Å (both ions, worst case)": [
+     0.9559228650137741,
+     0.9667590027700831
+    ],
+    "ESTIMATE anion CN VIII via O²⁻ VI→VIII ratio 1.42/1.40": 0.9477861645008171
+   }
+  },
+  {
+   "compound": "CsBr",
+   "loop": "golden",
+   "r_cation": "87/50",
+   "r_anion": "49/25",
+   "rho": 0.8877551020408163,
+   "in_window": true,
+   "edges": {
+    "window low (like contact, sqrt3-1)": {
+     "edge": 0.7320508075688773,
+     "moves": {
+      "cation": {
+       "need_exact": "-49/25 + 49*sqrt(3)/25",
+       "need": 1.4348195828349994,
+       "shift_A": -0.3051804171650005,
+       "shift_pct": -17.539104434770145
+      },
+      "anion": {
+       "need_exact": "(87 + 87*sqrt(3))/100",
+       "need": 2.376884202584923,
+       "shift_A": 0.41688420258492326,
+       "shift_pct": 21.269602172700164
+      }
+     },
+     "split_rel_pct": 9.61252786819733,
+     "rho_gap_pct": 21.269602172700164
+    }
+   },
+   "spread": {
+    "CR (crystal radii)": 1.032967032967033,
+    "rounding ±0.005 Å (both ions, worst case)": [
+     0.8829516539440203,
+     0.8925831202046036
+    ],
+    "ESTIMATE anion CN VIII via O²⁻ VI→VIII ratio 1.42/1.40": 0.8752515090543259
+   }
+  },
+  {
+   "compound": "CsI",
+   "loop": "golden",
+   "r_cation": "87/50",
+   "r_anion": "11/5",
+   "rho": 0.7909090909090909,
+   "in_window": true,
+   "edges": {
+    "window low (like contact, sqrt3-1)": {
+     "edge": 0.7320508075688773,
+     "moves": {
+      "cation": {
+       "need_exact": "-11/5 + 11*sqrt(3)/5",
+       "need": 1.61051177665153,
+       "shift_A": -0.12948822334846996,
+       "shift_pct": -7.441851916578733
+      },
+      "anion": {
+       "need_exact": "(87 + 87*sqrt(3))/100",
+       "need": 2.376884202584923,
+       "shift_A": 0.17688420258492324,
+       "shift_pct": 8.04019102658742
+      }
+     },
+     "split_rel_pct": 3.8647296884859563,
+     "rho_gap_pct": 8.04019102658742
+    }
+   },
+   "spread": {
+    "CR (crystal radii)": 0.912621359223301,
+    "rounding ±0.005 Å (both ions, worst case)": [
+     0.7868480725623582,
+     0.7949886104783599
+    ],
+    "ESTIMATE anion CN VIII via O²⁻ VI→VIII ratio 1.42/1.40": 0.7797695262483995
+   }
+  },
+  {
+   "compound": "TlCl",
+   "loop": "golden",
+   "r_cation": "159/100",
+   "r_anion": "181/100",
+   "rho": 0.8784530386740331,
+   "in_window": true,
+   "edges": {
+    "window low (like contact, sqrt3-1)": {
+     "edge": 0.7320508075688773,
+     "moves": {
+      "cation": {
+       "need_exact": "-181/100 + 181*sqrt(3)/100",
+       "need": 1.3250119616996678,
+       "shift_A": -0.2649880383003321,
+       "shift_pct": -16.665914358511454
+      },
+      "anion": {
+       "need_exact": "(159 + 159*sqrt(3))/200",
+       "need": 2.1719803920172573,
+       "shift_A": 0.36198039201725746,
+       "shift_pct": 19.998916686036324
+      }
+     },
+     "split_rel_pct": 9.090461438306567,
+     "rho_gap_pct": 19.998916686036324
+    }
+   },
+   "spread": {
+    "CR (crystal radii)": 1.035928143712575,
+    "rounding ±0.005 Å (both ions, worst case)": [
+     0.8732782369146006,
+     0.8836565096952909
+    ],
+    "ESTIMATE anion CN VIII via O²⁻ VI→VIII ratio 1.42/1.40": 0.8660804606645397
+   }
+  },
+  {
+   "compound": "TlBr",
+   "loop": "golden",
+   "r_cation": "159/100",
+   "r_anion": "49/25",
+   "rho": 0.8112244897959183,
+   "in_window": true,
+   "edges": {
+    "window low (like contact, sqrt3-1)": {
+     "edge": 0.7320508075688773,
+     "moves": {
+      "cation": {
+       "need_exact": "-49/25 + 49*sqrt(3)/25",
+       "need": 1.4348195828349994,
+       "shift_A": -0.1551804171650005,
+       "shift_pct": -9.759774664465441
+      },
+      "anion": {
+       "need_exact": "(159 + 159*sqrt(3))/200",
+       "need": 2.1719803920172573,
+       "shift_A": 0.21198039201725744,
+       "shift_pct": 10.815326123329461
+      }
+     },
+     "split_rel_pct": 5.130237123748,
+     "rho_gap_pct": 10.815326123329461
+    }
+   },
+   "spread": {
+    "CR (crystal radii)": 0.9505494505494505,
+    "rounding ±0.005 Å (both ions, worst case)": [
+     0.806615776081425,
+     0.8158567774936062
+    ],
+    "ESTIMATE anion CN VIII via O²⁻ VI→VIII ratio 1.42/1.40": 0.7997987927565392
+   }
+  },
+  {
+   "compound": "CaF₂",
+   "loop": "delian",
+   "r_cation": "28/25",
+   "r_anion": "131/100",
+   "rho": 1.1696428571428572,
+   "in_window": true,
+   "edges": {
+    "window low (oct-oct contact, sqrt(3/2)-1)": {
+     "edge": 0.22474487139158905,
+     "moves": {
+      "anion": {
+       "need_exact": "-28/25 + 14*sqrt(6)/25",
+       "need": 0.2517142559585797,
+       "shift_A": -1.0582857440414202,
+       "shift_pct": -80.78517130087178
+      },
+      "cation": {
+       "need_exact": "(262 + 131*sqrt(6))/100",
+       "need": 5.828831563045963,
+       "shift_A": 4.708831563045964,
+       "shift_pct": 420.4313895576753
+      }
+     },
+     "split_rel_pct": 67.76436470395443,
+     "rho_gap_pct": 420.4313895576753
+    },
+    "window high (tet-tet contact, (sqrt3+1)/2)": {
+     "edge": 1.3660254037844386,
+     "moves": {
+      "anion": {
+       "need_exact": "14/25 + 14*sqrt(3)/25",
+       "need": 1.5299484522385713,
+       "shift_A": 0.2199484522385713,
+       "shift_pct": 16.78995818615048
+      },
+      "cation": {
+       "need_exact": "(-131 + 131*sqrt(3))/100",
+       "need": 0.9589865579152292,
+       "shift_A": -0.16101344208477075,
+       "shift_pct": -14.376200186140245
+      }
+     },
+     "split_rel_pct": -7.744804384220366,
+     "rho_gap_pct": -14.376200186140245
+    },
+    "octet t=1/3 (rho=1/2)": {
+     "edge": 0.5,
+     "moves": {
+      "anion": {
+       "need_exact": "14/25",
+       "need": 0.56,
+       "shift_A": -0.75,
+       "shift_pct": -57.25190839694657
+      },
+      "cation": {
+       "need_exact": "131/50",
+       "need": 2.62,
+       "shift_A": 1.5,
+       "shift_pct": 133.92857142857142
+      }
+     },
+     "split_rel_pct": 40.106951871657756,
+     "rho_gap_pct": 133.92857142857142
+    }
+   },
+   "spread": {
+    "CR (crystal radii)": 0.9285714285714286,
+    "F CN VI": 1.1875,
+    "rounding ±0.005 Å (both ions, worst case)": [
+     1.16,
+     1.1793721973094171
+    ]
+   }
+  },
+  {
+   "compound": "SrF₂",
+   "loop": "delian",
+   "r_cation": "63/50",
+   "r_anion": "131/100",
+   "rho": 1.0396825396825398,
+   "in_window": true,
+   "edges": {
+    "window low (oct-oct contact, sqrt(3/2)-1)": {
+     "edge": 0.22474487139158905,
+     "moves": {
+      "anion": {
+       "need_exact": "-63/50 + 63*sqrt(6)/100",
+       "need": 0.2831785379534022,
+       "shift_A": -1.0268214620465979,
+       "shift_pct": -78.38331771348075
+      },
+      "cation": {
+       "need_exact": "(262 + 131*sqrt(6))/100",
+       "need": 5.828831563045963,
+       "shift_A": 4.568831563045963,
+       "shift_pct": 362.6056796068225
+      }
+     },
+     "split_rel_pct": 64.45112318457748,
+     "rho_gap_pct": 362.6056796068225
+    },
+    "window high (tet-tet contact, (sqrt3+1)/2)": {
+     "edge": 1.3660254037844386,
+     "moves": {
+      "anion": {
+       "need_exact": "63/100 + 63*sqrt(3)/100",
+       "need": 1.7211920087683927,
+       "shift_A": 0.4111920087683927,
+       "shift_pct": 31.38870295941929
+      },
+      "cation": {
+       "need_exact": "(-131 + 131*sqrt(3))/100",
+       "need": 0.9589865579152292,
+       "shift_A": -0.30101344208477077,
+       "shift_pct": -23.88995572101355
+      }
+     },
+     "split_rel_pct": -13.565356717058139,
+     "rho_gap_pct": -23.88995572101355
+    },
+    "octet t=1/3 (rho=1/2)": {
+     "edge": 0.5,
+     "moves": {
+      "anion": {
+       "need_exact": "63/100",
+       "need": 0.63,
+       "shift_A": -0.68,
+       "shift_pct": -51.908396946564885
+      },
+      "cation": {
+       "need_exact": "131/50",
+       "need": 2.62,
+       "shift_A": 1.36,
+       "shift_pct": 107.93650793650794
+      }
+     },
+     "split_rel_pct": 35.05154639175258,
+     "rho_gap_pct": 107.93650793650794
+    }
+   },
+   "spread": {
+    "CR (crystal radii)": 0.8357142857142857,
+    "F CN VI": 1.0555555555555556,
+    "rounding ±0.005 Å (both ions, worst case)": [
+     1.0316205533596838,
+     1.047808764940239
+    ]
+   }
+  },
+  {
+   "compound": "BaF₂",
+   "loop": "delian",
+   "r_cation": "71/50",
+   "r_anion": "131/100",
+   "rho": 0.9225352112676056,
+   "in_window": true,
+   "edges": {
+    "window low (oct-oct contact, sqrt(3/2)-1)": {
+     "edge": 0.22474487139158905,
+     "moves": {
+      "anion": {
+       "need_exact": "-71/50 + 71*sqrt(6)/100",
+       "need": 0.31913771737605645,
+       "shift_A": -0.9908622826239436,
+       "shift_pct": -75.63834218503386
+      },
+      "cation": {
+       "need_exact": "(262 + 131*sqrt(6))/100",
+       "need": 5.828831563045963,
+       "shift_A": 4.408831563045963,
+       "shift_pct": 310.4810959891523
+      }
+     },
+     "split_rel_pct": 60.82127201743628,
+     "rho_gap_pct": 310.4810959891523
+    },
+    "window high (tet-tet contact, (sqrt3+1)/2)": {
+     "edge": 1.3660254037844386,
+     "moves": {
+      "anion": {
+       "need_exact": "71/100 + 71*sqrt(3)/100",
+       "need": 1.939756073373903,
+       "shift_A": 0.6297560733739029,
+       "shift_pct": 48.07298270029793
+      },
+      "cation": {
+       "need_exact": "(-131 + 131*sqrt(3))/100",
+       "need": 0.9589865579152292,
+       "shift_A": -0.46101344208477074,
+       "shift_pct": -32.46573535808245
+      }
+     },
+     "split_rel_pct": -19.378564395452884,
+     "rho_gap_pct": -32.46573535808245
+    },
+    "octet t=1/3 (rho=1/2)": {
+     "edge": 0.5,
+     "moves": {
+      "anion": {
+       "need_exact": "71/100",
+       "need": 0.71,
+       "shift_A": -0.6,
+       "shift_pct": -45.80152671755725
+      },
+      "cation": {
+       "need_exact": "131/50",
+       "need": 2.62,
+       "shift_A": 1.2,
+       "shift_pct": 84.50704225352112
+      }
+     },
+     "split_rel_pct": 29.702970297029704,
+     "rho_gap_pct": 84.50704225352112
+    }
+   },
+   "spread": {
+    "CR (crystal radii)": 0.75,
+    "F CN VI": 0.9366197183098591,
+    "rounding ±0.005 Å (both ions, worst case)": [
+     0.9157894736842105,
+     0.9293286219081273
+    ]
+   }
+  },
+  {
+   "compound": "CdF₂",
+   "loop": "delian",
+   "r_cation": "11/10",
+   "r_anion": "131/100",
+   "rho": 1.190909090909091,
+   "in_window": true,
+   "edges": {
+    "window low (oct-oct contact, sqrt(3/2)-1)": {
+     "edge": 0.22474487139158905,
+     "moves": {
+      "anion": {
+       "need_exact": "-11/10 + 11*sqrt(6)/20",
+       "need": 0.24721935853074795,
+       "shift_A": -1.062780641469252,
+       "shift_pct": -81.12829324192764
+      },
+      "cation": {
+       "need_exact": "(262 + 131*sqrt(6))/100",
+       "need": 5.828831563045963,
+       "shift_A": 4.728831563045963,
+       "shift_pct": 429.89377845872394
+      }
+     },
+     "split_rel_pct": 68.24861479194531,
+     "rho_gap_pct": 429.89377845872394
+    },
+    "window high (tet-tet contact, (sqrt3+1)/2)": {
+     "edge": 1.3660254037844386,
+     "moves": {
+      "anion": {
+       "need_exact": "11/20 + 11*sqrt(3)/20",
+       "need": 1.5026279441628825,
+       "shift_A": 0.1926279441628825,
+       "shift_pct": 14.704423218540649
+      },
+      "cation": {
+       "need_exact": "(-131 + 131*sqrt(3))/100",
+       "need": 0.9589865579152292,
+       "shift_A": -0.14101344208477073,
+       "shift_pct": -12.81940382588825
+      }
+     },
+     "split_rel_pct": -6.848682015075905,
+     "rho_gap_pct": -12.81940382588825
+    },
+    "octet t=1/3 (rho=1/2)": {
+     "edge": 0.5,
+     "moves": {
+      "anion": {
+       "need_exact": "11/20",
+       "need": 0.55,
+       "shift_A": -0.76,
+       "shift_pct": -58.01526717557252
+      },
+      "cation": {
+       "need_exact": "131/50",
+       "need": 2.62,
+       "shift_A": 1.52,
+       "shift_pct": 138.1818181818182
+      }
+     },
+     "split_rel_pct": 40.86021505376344,
+     "rho_gap_pct": 138.1818181818182
+    }
+   },
+   "spread": {
+    "CR (crystal radii)": 0.9435483870967742,
+    "F CN VI": 1.209090909090909,
+    "rounding ±0.005 Å (both ions, worst case)": [
+     1.1809954751131222,
+     1.2009132420091324
+    ]
+   }
+  },
+  {
+   "compound": "PbF₂ (β)",
+   "loop": "delian",
+   "r_cation": "129/100",
+   "r_anion": "131/100",
+   "rho": 1.0155038759689923,
+   "in_window": true,
+   "edges": {
+    "window low (oct-oct contact, sqrt(3/2)-1)": {
+     "edge": 0.22474487139158905,
+     "moves": {
+      "anion": {
+       "need_exact": "-129/100 + 129*sqrt(6)/200",
+       "need": 0.2899208840951499,
+       "shift_A": -1.0200791159048501,
+       "shift_pct": -77.86863480189696
+      },
+      "cation": {
+       "need_exact": "(262 + 131*sqrt(6))/100",
+       "need": 5.828831563045963,
+       "shift_A": 4.538831563045964,
+       "shift_pct": 351.84740798805916
+      }
+     },
+     "split_rel_pct": 63.75809741878364,
+     "rho_gap_pct": 351.84740798805916
+    },
+    "window high (tet-tet contact, (sqrt3+1)/2)": {
+     "edge": 1.3660254037844386,
+     "moves": {
+      "anion": {
+       "need_exact": "129/200 + 129*sqrt(3)/200",
+       "need": 1.762172770881926,
+       "shift_A": 0.45217277088192587,
+       "shift_pct": 34.51700541083403
+      },
+      "cation": {
+       "need_exact": "(-131 + 131*sqrt(3))/100",
+       "need": 0.9589865579152292,
+       "shift_A": -0.33101344208477074,
+       "shift_pct": -25.659956750757424
+      }
+     },
+     "split_rel_pct": -14.718337951811252,
+     "rho_gap_pct": -25.659956750757424
+    },
+    "octet t=1/3 (rho=1/2)": {
+     "edge": 0.5,
+     "moves": {
+      "anion": {
+       "need_exact": "129/200",
+       "need": 0.645,
+       "shift_A": -0.665,
+       "shift_pct": -50.76335877862596
+      },
+      "cation": {
+       "need_exact": "131/50",
+       "need": 2.62,
+       "shift_A": 1.33,
+       "shift_pct": 103.10077519379846
+      }
+     },
+     "split_rel_pct": 34.0153452685422,
+     "rho_gap_pct": 103.10077519379846
+    }
+   },
+   "spread": {
+    "CR (crystal radii)": 0.8181818181818182,
+    "F CN VI": 1.0310077519379846,
+    "rounding ±0.005 Å (both ions, worst case)": [
+     1.0077220077220077,
+     1.0233463035019454
+    ]
+   }
+  },
+  {
+   "compound": "UO₂",
+   "loop": "delian",
+   "r_cation": "1",
+   "r_anion": "69/50",
+   "rho": 1.38,
+   "in_window": false,
+   "edges": {
+    "window low (oct-oct contact, sqrt(3/2)-1)": {
+     "edge": 0.22474487139158905,
+     "moves": {
+      "anion": {
+       "need_exact": "-1 + sqrt(6)/2",
+       "need": 0.22474487139158905,
+       "shift_A": -1.155255128608411,
+       "shift_pct": -83.71413975423268
+      },
+      "cation": {
+       "need_exact": "(138 + 69*sqrt(6))/50",
+       "need": 6.140295845040786,
+       "shift_A": 5.140295845040786,
+       "shift_pct": 514.0295845040786
+      }
+     },
+     "split_rel_pct": 71.98995611100514,
+     "rho_gap_pct": 514.0295845040786
+    },
+    "window high (tet-tet contact, (sqrt3+1)/2)": {
+     "edge": 1.3660254037844386,
+     "moves": {
+      "anion": {
+       "need_exact": "1/2 + sqrt(3)/2",
+       "need": 1.3660254037844386,
+       "shift_A": -0.013974596215561352,
+       "shift_pct": -1.012651899678359
+      },
+      "cation": {
+       "need_exact": "(-69 + 69*sqrt(3))/50",
+       "need": 1.0102301144450507,
+       "shift_A": 0.010230114445050665,
+       "shift_pct": 1.0230114445050664
+      }
+     },
+     "split_rel_pct": 0.508902656046162,
+     "rho_gap_pct": 1.0230114445050664
+    },
+    "octet t=1/3 (rho=1/2)": {
+     "edge": 0.5,
+     "moves": {
+      "anion": {
+       "need_exact": "1/2",
+       "need": 0.5,
+       "shift_A": -0.88,
+       "shift_pct": -63.768115942028984
+      },
+      "cation": {
+       "need_exact": "69/25",
+       "need": 2.76,
+       "shift_A": 1.76,
+       "shift_pct": 176.0
+      }
+     },
+     "split_rel_pct": 46.808510638297875,
+     "rho_gap_pct": 176.0
+    }
+   },
+   "spread": {
+    "CR (crystal radii)": 1.087719298245614,
+    "O CN VI": 1.4,
+    "O CN VIII": 1.42,
+    "rounding ±0.005 Å (both ions, worst case)": [
+     1.3681592039800996,
+     1.3919597989949748
+    ]
+   }
+  },
+  {
+   "compound": "ThO₂",
+   "loop": "delian",
+   "r_cation": "21/20",
+   "r_anion": "69/50",
+   "rho": 1.3142857142857143,
+   "in_window": true,
+   "edges": {
+    "window low (oct-oct contact, sqrt(3/2)-1)": {
+     "edge": 0.22474487139158905,
+     "moves": {
+      "anion": {
+       "need_exact": "-21/20 + 21*sqrt(6)/40",
+       "need": 0.2359821149611685,
+       "shift_A": -1.1440178850388314,
+       "shift_pct": -82.89984674194432
+      },
+      "cation": {
+       "need_exact": "(138 + 69*sqrt(6))/50",
+       "need": 6.140295845040786,
+       "shift_A": 5.090295845040786,
+       "shift_pct": 484.79008048007483
+      }
+     },
+     "split_rel_pct": 70.79396946582678,
+     "rho_gap_pct": 484.79008048007483
+    },
+    "window high (tet-tet contact, (sqrt3+1)/2)": {
+     "edge": 1.3660254037844386,
+     "moves": {
+      "anion": {
+       "need_exact": "21/40 + 21*sqrt(3)/40",
+       "need": 1.4343266739736606,
+       "shift_A": 0.05432667397366058,
+       "shift_pct": 3.936715505337723
+      },
+      "cation": {
+       "need_exact": "(-69 + 69*sqrt(3))/50",
+       "need": 1.0102301144450507,
+       "shift_A": -0.039769885554949334,
+       "shift_pct": -3.787608148090413
+      }
+     },
+     "split_rel_pct": -1.930361335663801,
+     "rho_gap_pct": -3.787608148090413
+    },
+    "octet t=1/3 (rho=1/2)": {
+     "edge": 0.5,
+     "moves": {
+      "anion": {
+       "need_exact": "21/40",
+       "need": 0.525,
+       "shift_A": -0.855,
+       "shift_pct": -61.95652173913044
+      },
+      "cation": {
+       "need_exact": "69/25",
+       "need": 2.76,
+       "shift_A": 1.71,
+       "shift_pct": 162.85714285714286
+      }
+     },
+     "split_rel_pct": 44.881889763779526,
+     "rho_gap_pct": 162.85714285714286
+    }
+   },
+   "spread": {
+    "CR (crystal radii)": 1.0420168067226891,
+    "O CN VI": 1.3333333333333333,
+    "O CN VIII": 1.3523809523809525,
+    "rounding ±0.005 Å (both ions, worst case)": [
+     1.3033175355450237,
+     1.325358851674641
+    ]
+   }
+  },
+  {
+   "compound": "CeO₂",
+   "loop": "delian",
+   "r_cation": "97/100",
+   "r_anion": "69/50",
+   "rho": 1.422680412371134,
+   "in_window": false,
+   "edges": {
+    "window low (oct-oct contact, sqrt(3/2)-1)": {
+     "edge": 0.22474487139158905,
+     "moves": {
+      "anion": {
+       "need_exact": "-97/100 + 97*sqrt(6)/200",
+       "need": 0.21800252524984137,
+       "shift_A": -1.1619974747501587,
+       "shift_pct": -84.2027155616057
+      },
+      "cation": {
+       "need_exact": "(138 + 69*sqrt(6))/50",
+       "need": 6.140295845040786,
+       "shift_A": 5.170295845040786,
+       "shift_pct": 533.0201902103903
+      }
+     },
+     "split_rel_pct": 72.71562193360646,
+     "rho_gap_pct": 533.0201902103903
+    },
+    "window high (tet-tet contact, (sqrt3+1)/2)": {
+     "edge": 1.3660254037844386,
+     "moves": {
+      "anion": {
+       "need_exact": "97/200 + 97*sqrt(3)/200",
+       "need": 1.3250446416709054,
+       "shift_A": -0.05495535832909451,
+       "shift_pct": -3.9822723426880082
+      },
+      "cation": {
+       "need_exact": "(-69 + 69*sqrt(3))/50",
+       "need": 1.0102301144450507,
+       "shift_A": 0.04023011444505067,
+       "shift_pct": 4.147434478871203
+      }
+     },
+     "split_rel_pct": 2.0315878519161368,
+     "rho_gap_pct": 4.147434478871203
+    },
+    "octet t=1/3 (rho=1/2)": {
+     "edge": 0.5,
+     "moves": {
+      "anion": {
+       "need_exact": "97/200",
+       "need": 0.485,
+       "shift_A": -0.895,
+       "shift_pct": -64.85507246376811
+      },
+      "cation": {
+       "need_exact": "69/25",
+       "need": 2.76,
+       "shift_A": 1.79,
+       "shift_pct": 184.53608247422682
+      }
+     },
+     "split_rel_pct": 47.98927613941019,
+     "rho_gap_pct": 184.53608247422682
+    }
+   },
+   "spread": {
+    "CR (crystal radii)": 1.117117117117117,
+    "O CN VI": 1.443298969072165,
+    "O CN VIII": 1.4639175257731958,
+    "rounding ±0.005 Å (both ions, worst case)": [
+     1.4102564102564104,
+     1.4352331606217616
+    ]
+   }
+  },
+  {
+   "compound": "ZrO₂ (cubic)",
+   "loop": "delian",
+   "r_cation": "21/25",
+   "r_anion": "69/50",
+   "rho": 1.6428571428571428,
+   "in_window": false,
+   "edges": {
+    "window low (oct-oct contact, sqrt(3/2)-1)": {
+     "edge": 0.22474487139158905,
+     "moves": {
+      "anion": {
+       "need_exact": "-21/25 + 21*sqrt(6)/50",
+       "need": 0.1887856919689348,
+       "shift_A": -1.191214308031065,
+       "shift_pct": -86.31987739355544
+      },
+      "cation": {
+       "need_exact": "(138 + 69*sqrt(6))/50",
+       "need": 6.140295845040786,
+       "shift_A": 5.300295845040786,
+       "shift_pct": 630.9876006000935
+      }
+     },
+     "split_rel_pct": 75.93225219539124,
+     "rho_gap_pct": 630.9876006000935
+    },
+    "window high (tet-tet contact, (sqrt3+1)/2)": {
+     "edge": 1.3660254037844386,
+     "moves": {
+      "anion": {
+       "need_exact": "21/50 + 21*sqrt(3)/50",
+       "need": 1.1474613391789286,
+       "shift_A": -0.23253866082107152,
+       "shift_pct": -16.850627595729822
+      },
+      "cation": {
+       "need_exact": "(-69 + 69*sqrt(3))/50",
+       "need": 1.0102301144450507,
+       "shift_A": 0.17023011444505065,
+       "shift_pct": 20.265489814886983
+      }
+     },
+     "split_rel_pct": 9.200483394797013,
+     "rho_gap_pct": 20.265489814886983
+    },
+    "octet t=1/3 (rho=1/2)": {
+     "edge": 0.5,
+     "moves": {
+      "anion": {
+       "need_exact": "21/50",
+       "need": 0.42,
+       "shift_A": -0.96,
+       "shift_pct": -69.56521739130434
+      },
+      "cation": {
+       "need_exact": "69/25",
+       "need": 2.76,
+       "shift_A": 1.92,
+       "shift_pct": 228.57142857142858
+      }
+     },
+     "split_rel_pct": 53.333333333333336,
+     "rho_gap_pct": 228.57142857142858
+    }
+   },
+   "spread": {
+    "CR (crystal radii)": 1.2653061224489797,
+    "O CN VI": 1.6666666666666667,
+    "O CN VIII": 1.6904761904761905,
+    "rounding ±0.005 Å (both ions, worst case)": [
+     1.6272189349112427,
+     1.658682634730539
+    ]
+   }
+  },
+  {
+   "compound": "Li₂O (anti)",
+   "loop": "delian",
+   "r_cation": "59/100",
+   "r_anion": "71/50",
+   "rho": 0.4154929577464789,
+   "in_window": true,
+   "edges": {
+    "window low (oct-oct contact, sqrt(3/2)-1)": {
+     "edge": 0.22474487139158905,
+     "moves": {
+      "cation": {
+       "need_exact": "-71/50 + 71*sqrt(6)/100",
+       "need": 0.31913771737605645,
+       "shift_A": -0.2708622826239436,
+       "shift_pct": -45.90886146168535
+      },
+      "anion": {
+       "need_exact": "(118 + 59*sqrt(6))/100",
+       "need": 2.6251989482420752,
+       "shift_A": 1.205198948242075,
+       "shift_pct": 84.87316536916022
+      }
+     },
+     "split_rel_pct": 29.793317057145465,
+     "rho_gap_pct": 84.87316536916022
+    },
+    "window high (tet-tet contact, (sqrt3+1)/2)": {
+     "edge": 1.3660254037844386,
+     "moves": {
+      "cation": {
+       "need_exact": "71/100 + 71*sqrt(3)/100",
+       "need": 1.939756073373903,
+       "shift_A": 1.349756073373903,
+       "shift_pct": 228.77221582608524
+      },
+      "anion": {
+       "need_exact": "(-59 + 59*sqrt(3))/100",
+       "need": 0.4319099764656376,
+       "shift_A": -0.9880900235343624,
+       "shift_pct": -69.58380447425087
+      }
+     },
+     "split_rel_pct": -53.35518659606382,
+     "rho_gap_pct": -69.58380447425087
+    },
+    "octet t=1/3 (rho=1/2)": {
+     "edge": 0.5,
+     "moves": {
+      "cation": {
+       "need_exact": "71/100",
+       "need": 0.71,
+       "shift_A": 0.12,
+       "shift_pct": 20.338983050847457
+      },
+      "anion": {
+       "need_exact": "59/50",
+       "need": 1.18,
+       "shift_A": -0.24,
+       "shift_pct": -16.901408450704224
+      }
+     },
+     "split_rel_pct": -9.23076923076923,
+     "rho_gap_pct": -16.901408450704224
+    }
+   },
+   "spread": {
+    "CR (crystal radii)": 0.5703125,
+    "Li CN VI": 0.5352112676056338,
+    "O CN IV": 0.427536231884058,
+    "O CN VI": 0.42142857142857143,
+    "rounding ±0.005 Å (both ions, worst case)": [
+     0.4105263157894737,
+     0.4204946996466431
+    ]
+   }
+  },
+  {
+   "compound": "Na₂O (anti)",
+   "loop": "delian",
+   "r_cation": "99/100",
+   "r_anion": "71/50",
+   "rho": 0.6971830985915493,
+   "in_window": true,
+   "edges": {
+    "window low (oct-oct contact, sqrt(3/2)-1)": {
+     "edge": 0.22474487139158905,
+     "moves": {
+      "cation": {
+       "need_exact": "-71/50 + 71*sqrt(6)/100",
+       "need": 0.31913771737605645,
+       "shift_A": -0.6708622826239435,
+       "shift_pct": -67.76386693171148
+      },
+      "anion": {
+       "need_exact": "(198 + 99*sqrt(6))/100",
+       "need": 4.404994845355346,
+       "shift_A": 2.984994845355346,
+       "shift_pct": 210.21090460248917
+      }
+     },
+     "split_rel_pct": 51.24459204861752,
+     "rho_gap_pct": 210.21090460248917
+    },
+    "window high (tet-tet contact, (sqrt3+1)/2)": {
+     "edge": 1.3660254037844386,
+     "moves": {
+      "cation": {
+       "need_exact": "71/100 + 71*sqrt(3)/100",
+       "need": 1.939756073373903,
+       "shift_A": 0.9497560733739029,
+       "shift_pct": 95.93495690645483
+      },
+      "anion": {
+       "need_exact": "(-99 + 99*sqrt(3))/100",
+       "need": 0.7247302994931886,
+       "shift_A": -0.6952697005068115,
+       "shift_pct": -48.96265496526841
+      }
+     },
+     "split_rel_pct": -32.41758185964489,
+     "rho_gap_pct": -48.96265496526841
+    },
+    "octet t=1/3 (rho=1/2)": {
+     "edge": 0.5,
+     "moves": {
+      "cation": {
+       "need_exact": "71/100",
+       "need": 0.71,
+       "shift_A": -0.28,
+       "shift_pct": -28.282828282828284
+      },
+      "anion": {
+       "need_exact": "99/50",
+       "need": 1.98,
+       "shift_A": 0.56,
+       "shift_pct": 39.436619718309856
+      }
+     },
+     "split_rel_pct": 16.470588235294116,
+     "rho_gap_pct": 39.436619718309856
+    }
+   },
+   "spread": {
+    "CR (crystal radii)": 0.8828125,
+    "O CN IV": 0.717391304347826,
+    "O CN VI": 0.7071428571428572,
+    "rounding ±0.005 Å (both ions, worst case)": [
+     0.6912280701754386,
+     0.7031802120141343
+    ]
+   }
+  },
+  {
+   "compound": "K₂O (anti)",
+   "loop": "delian",
+   "r_cation": "137/100",
+   "r_anion": "71/50",
+   "rho": 0.9647887323943662,
+   "in_window": true,
+   "edges": {
+    "window low (oct-oct contact, sqrt(3/2)-1)": {
+     "edge": 0.22474487139158905,
+     "moves": {
+      "cation": {
+       "need_exact": "-71/50 + 71*sqrt(6)/100",
+       "need": 0.31913771737605645,
+       "shift_A": -1.0508622826239435,
+       "shift_pct": -76.70527610393748
+      },
+      "anion": {
+       "need_exact": "(274 + 137*sqrt(6))/100",
+       "need": 6.095800947612954,
+       "shift_A": 4.675800947612954,
+       "shift_pct": 329.2817568741517
+      }
+     },
+     "split_rel_pct": 62.21294284141474,
+     "rho_gap_pct": 329.2817568741517
+    },
+    "window high (tet-tet contact, (sqrt3+1)/2)": {
+     "edge": 1.3660254037844386,
+     "moves": {
+      "cation": {
+       "need_exact": "71/100 + 71*sqrt(3)/100",
+       "need": 1.939756073373903,
+       "shift_A": 0.5697560733739029,
+       "shift_pct": 41.58803455283962
+      },
+      "anion": {
+       "need_exact": "(-137 + 137*sqrt(3))/100",
+       "need": 1.0029096063693619,
+       "shift_A": -0.4170903936306381,
+       "shift_pct": -29.37256293173508
+      }
+     },
+     "split_rel_pct": -17.214443020663584,
+     "rho_gap_pct": -29.37256293173508
+    },
+    "octet t=1/3 (rho=1/2)": {
+     "edge": 0.5,
+     "moves": {
+      "cation": {
+       "need_exact": "71/100",
+       "need": 0.71,
+       "shift_A": -0.66,
+       "shift_pct": -48.175182481751825
+      },
+      "anion": {
+       "need_exact": "137/50",
+       "need": 2.74,
+       "shift_A": 1.32,
+       "shift_pct": 92.95774647887323
+      }
+     },
+     "split_rel_pct": 31.73076923076923,
+     "rho_gap_pct": 92.95774647887323
+    }
+   },
+   "spread": {
+    "CR (crystal radii)": 1.1796875,
+    "O CN IV": 0.9927536231884058,
+    "O CN VI": 0.9785714285714285,
+    "rounding ±0.005 Å (both ions, worst case)": [
+     0.9578947368421052,
+     0.9717314487632509
+    ]
+   }
+  }
+ ],
+ "additivity": {
+  "UO₂": {
+   "a": 5.47127,
+   "source": "Leinders2015 (547.127 ± 0.008 pm, 20 °C, UO2.000)",
+   "d_cat_an": 2.3691294054818424,
+   "sum_radii": 2.38,
+   "residual_A": 0.010870594518157528,
+   "anion_anion": 2.735635,
+   "two_r_anion": 2.76,
+   "anion_overlap_A": 0.02436499999999997,
+   "anion_overlap_pct": 0.8906524444964321,
+   "t_measured_lattice": 0.5805662206829056,
+   "t_window_max": 0.5773502691896258
+  },
+  "CeO₂": {
+   "a": 5.411102,
+   "source": "NIST SRM 674a certificate 1989, Table 3 (information value, σ 0.000097 Å)",
+   "d_cat_an": 2.3430758972343915,
+   "sum_radii": 2.3499999999999996,
+   "residual_A": 0.0069241027656081755,
+   "anion_anion": 2.705551,
+   "two_r_anion": 2.76,
+   "anion_overlap_A": 0.05444899999999997,
+   "anion_overlap_pct": 2.012492094955888,
+   "t_measured_lattice": 0.5877503808862676,
+   "t_window_max": 0.5773502691896258
+  }
+ },
+ "pressure": {
+  "UO₂": {
+   "K0": 207,
+   "K0_source": "Idiri2004",
+   "models": {
+    "A anion-only": {
+     "drho_dP_perGPa": -0.003828522629933939,
+     "drho_dP_pct_perGPa": -0.27742917608216955,
+     "P_to_target_GPa": 3.8000000000000003,
+     "V_over_V0_at_target": 0.9824377942583344
+    },
+    "C cation-only": {
+     "drho_dP_perGPa": 0.005285384750821631,
+     "drho_dP_pct_perGPa": 0.3829988949870747,
+     "P_to_target_GPa": null,
+     "V_over_V0_at_target": null
+    }
+   },
+   "target_rho": 1.3660254037844386,
+   "transition": {
+    "P": null,
+    "source": "Idiri2004: still cubic at 69 GPa in that run (sluggish transition to cotunnite type)",
+    "V_over_V0": null
+   }
+  },
+  "CeO₂": {
+   "K0": 230,
+   "K0_source": "Duclos1988 (K0'=4 assumed there)",
+   "models": {
+    "A anion-only": {
+     "drho_dP_perGPa": -0.0035078278631761606,
+     "drho_dP_pct_perGPa": -0.24656471212180267,
+     "P_to_target_GPa": 18.85,
+     "V_over_V0_at_target": 0.9313798832645017
+    },
+    "C cation-only": {
+     "drho_dP_perGPa": 0.004992269193011545,
+     "drho_dP_pct_perGPa": 0.35090587805950707,
+     "P_to_target_GPa": null,
+     "V_over_V0_at_target": null
+    }
+   },
+   "target_rho": 1.3660254037844386,
+   "transition": {
+    "P": 31.5,
+    "source": "Duclos1988: fluorite→cotunnite-like Pnam at 31.5 ± 1.0 GPa",
+    "V_over_V0": 0.8959181556438107
+   }
+  },
+  "ThO₂": {
+   "K0": 198,
+   "K0_source": "Idiri2004",
+   "models": {
+    "A anion-only": {
+     "drho_dP_perGPa": -0.003891847096095802,
+     "drho_dP_pct_perGPa": -0.29611880078989805,
+     "P_to_target_GPa": null,
+     "V_over_V0_at_target": null
+    },
+    "C cation-only": {
+     "drho_dP_perGPa": 0.005116990495042106,
+     "drho_dP_pct_perGPa": 0.3893362333184211,
+     "P_to_target_GPa": 10.850000000000001,
+     "V_over_V0_at_target": 0.9515920876136581
+    }
+   },
+   "target_rho": 1.3660254037844386
+  },
+  "Li₂O (anti)": {
+   "K0": 90,
+   "K0_source": "Lazicki2006 (±1)",
+   "models": {
+    "A anion-only": {
+     "drho_dP_perGPa": 0.002174160471723474,
+     "drho_dP_pct_perGPa": 0.5232725203131072,
+     "P_to_target_GPa": 73.85000000000001,
+     "V_over_V0_at_target": 0.6828103130830998
+    },
+    "C cation-only": {
+     "drho_dP_perGPa": -0.005229988493870574,
+     "drho_dP_pct_perGPa": -1.258742993440037,
+     "P_to_target_GPa": null,
+     "V_over_V0_at_target": null
+    }
+   },
+   "target_rho": 0.5,
+   "transition": {
+    "P": 50.0,
+    "source": "Lazicki2006: antifluorite→anticotunnite at 50 ± 5 GPa",
+    "V_over_V0": 0.7388026136814985
+   }
+  }
+ },
+ "temperature": {
+  "source": "IAEA-TECDOC-1496 (2006) Table 1, recommending Martin (1988)",
+  "dL_293": 0.02,
+  "dL_rel_293_to_TS": 0.03389522095580899,
+  "dL_rel_293_to_Tm": 0.04667066586682678,
+  "T_S": 2670,
+  "T_m": 3120,
+  "rigid_ion_linear_expansion_needed": 0.008906524444964425,
+  "rigid_ion_T_window": 1167
+ },
+ "metastability": {
+  "CeO2-x": {
+   "r_Ce4": 0.97,
+   "r_Ce3": 1.143,
+   "need_mean_cation": 1.0102301144450507,
+   "x_needed": 0.11627200706662066,
+   "note": "ignores the vacancies themselves"
+  },
+  "UO2+x": {
+   "r_U4": 1.0,
+   "r_U5_CN7_proxy": 0.84,
+   "r_U6": 0.86,
+   "mean_cation_x0_13_U5": 0.9584,
+   "mean_cation_x0_13_U6": 0.9818,
+   "note": "oxidation makes the mean cation smaller: rho moves further out; excess O sits near the empty 4b interstices (Wang2014), not on a model site"
+  },
+  "ZrO2-CaO": {
+   "r_Zr": 0.84,
+   "r_Ca": 1.12,
+   "need_mean_cation": 1.0102301144450507,
+   "y_Ca_needed": 0.6079646944466096,
+   "note": "cation fraction of Ca needed by radius averaging alone; real stabilisation mechanism: O vacancies next to Zr (Li1993)"
+  }
+ },
+ "gravity": {
+  "density_UO2": 10950.947429567357,
+  "P_base_0.01m_Pa": 1073.9210861016672,
+  "strain_0.01m": 1.7293415235131518e-09,
+  "P_base_1.0m_Pa": 107392.10861016672,
+  "strain_1.0m": 1.7293415235131517e-07,
+  "P_base_1000.0m_Pa": 107392108.61016671,
+  "strain_1000.0m": 0.00017293415235131515,
+  "Fg_over_FCoulomb_U_O": 3.79729453535799e-34,
+  "column_height_for_P_need_m_crystal": 35384.35038829527,
+  "ESTIMATE depth_for_P_need_km_rock3300": 117.42186694897357
+ }
+}
