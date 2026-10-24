@@ -1,0 +1,47 @@
+station     volume (exact)                     × I  / I (exact)                form               step  step form
+I           -5/12 + 5/12√5                  1.0000  1                          φ^0            
+Cleo star   -5/6 + 5/6√5                    2.0000  2                          rational         2.0000  rational
+D′          10/9 + 14/27√5                  4.4086  20/9 + 44/45√5                              2.2043  
+ID          175/48 + 79/48√5               14.2245  57/8 + 127/40√5                             3.2265  
+OG          1975/456 + 895/456√5           16.9309  645/76 + 287/76√5                           1.1903  
+rTI (core)  -15/2 + 73/8√5                 25.0552  183/8 + 39/40√5                             1.4798  
+TI          -35/4 + 39/4√5                 25.3416  24 + 3/5√5                                  1.0114  
+H           -365/4 + 189/4√5               27.9678  87 + -132/5√5                               1.1036  
+jtI (hull)  -3465/38 + 900/19√5            28.6097  3321/38 + -999/38√5                         1.0230  
+RT          -135 + 135/2√5                 30.9392  243/2 + -81/2√5            81/φ^2           1.0814  
+M           145/12 + 65/12√5               46.9787  47/2 + 21/2√5              φ^8              1.5184  1/81·φ^10
+I·φ³        235/12 + 35/4√5                76.0132  38 + 17√5                  φ^9              1.6180  φ^1
+PASS method check TI: same scale as the table (ratio 1)
+PASS method check H: same scale as the table (ratio 1)
+PASS method check RT: same scale as the table (ratio 1)
+PASS method check Ip3: same scale as the table (ratio 1)
+PASS rTI exact volume agrees with float hull (12.904120 vs 12.904120)
+PASS TI has 32 face planes -> PD has 32 corners (32)
+PASS hull(TI ∪ PD) corners = the study's jtI corners (float, 1e-5)
+PASS jtI exact volume agrees with float hull (14.734799 vs 14.734799)
+PASS the twelve stations grow strictly in volume in this order
+ALL PASS
+
+all pairs (later / earlier) that are rational, rational·φ^k or rational/φ^k:
+  Cleo star / I = rational
+  RT / I = 81/φ^2
+  M / I = φ^8
+  I·φ³ / I = φ^9
+  RT / Cleo star = 81/2/φ^2
+  M / Cleo star = 1/2·φ^8
+  I·φ³ / Cleo star = 1/2·φ^9
+  M / RT = 1/81·φ^10
+  I·φ³ / RT = 1/81·φ^11
+  I·φ³ / M = φ^1
+gnomons (later − earlier) that are rational multiples of I·φ^k:
+  Cleo star − I = φ^0 · I  [1.0000 I]
+  D′ − Cleo star = (no neat form)  [2.4086 I]
+  ID − D′ = (no neat form)  [9.8159 I]
+  OG − ID = (no neat form)  [2.7064 I]
+  rTI (core) − OG = (no neat form)  [8.1242 I]
+  TI − rTI (core) = 3/4/φ^2 · I  [0.2865 I]
+  H − TI = 18/φ^4 · I  [2.6262 I]
+  jtI (hull) − H = (no neat form)  [0.6419 I]
+  RT − jtI (hull) = (no neat form)  [2.3296 I]
+  M − RT = (no neat form)  [16.0395 I]
+  I·φ³ − M = φ^7 · I  [29.0344 I]
