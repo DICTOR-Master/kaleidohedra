@@ -4,7 +4,9 @@
 // its study 10a, #11), one at a time, with a slider where the study has one
 // and the Shear either moving exact copies on the lattice or bending the
 // solid itself. Geometry in krp-core/src/geometry-extensions/roof-fold.js, checked in
-// scripts/verify-roof-fold.mjs.
+// scripts/verify-roof-fold.mjs. Also DICTO Shadow Form (DICTO 2026-10-24; DICTO's idea and name), the study 'shadowForm' next to
+// the stretch: its screen in world-shadow-form.js (rows added to this panel; its own taps and drag-to-turn), its geometry in
+// shadow-form-engine.js.
 import * as THREE from 'three';
 import {
   ekpWindowsSolid, dogstarSolid, neighbourStellas, expandedWindows, morphedWindowRhombi, rdMorphRhombi,
@@ -16,9 +18,10 @@ import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey, theme } from './site.js';
 import { STRETCH_DIRECTIONS, STRETCH_CAPS, capCentres, stretchedSolid, faceKind } from './stretch-geometry.js';
+import { createShadowForm } from './world-shadow-form.js';
 
 const STORAGE_KEY = storageKey('studies');
-const STUDIES = ['windows', 'windowsStellas', 'checker', 'dogstar', 'expanded', 'icosido', 'rdMorph', 'stretch'];
+const STUDIES = ['windows', 'windowsStellas', 'checker', 'dogstar', 'expanded', 'icosido', 'rdMorph', 'stretch', 'shadowForm'];
 const C = ROOF_FOLD_COLOURS;
 const GHOST_COLOR = () => theme().accentHex; // read when drawing: follows the app whose space you're in
 const EDGE_COLOR = 0x0b1220;
@@ -37,7 +40,7 @@ const STRETCH_COLOURS = { pentagon: 0x8a5cc4, rhombus: 0xc4aae8, long: 0x3a70cd,
 const GOLD = 0xdeb250;
 const sideOf = (f) => Math.hypot(...f[0].map((c, k) => c - f[1][k]));
 
-export function createStudiesWorld({ scene, fitView = () => {}, shear = () => null }) {
+export function createStudiesWorld({ scene, fitView = () => {}, shear = () => null, camera = null, controls = null, canvas = null, showHudPrompt = () => {}, onStudyChange = () => {} }) {
   const group = new THREE.Group();
   group.visible = false;
   scene.add(group);
@@ -140,9 +143,12 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
     }
     return out;
   }
+  const shadowOn = () => active && view.study === 'shadowForm';
   function draw() {
     clearGroup();
+    shadow?.setActive(shadowOn());
     if (!active) return;
+    if (view.study === 'shadowForm') { renderPanel(); return; }
     const where = placements();
     const polys = [];
     if (view.study === 'checker' || view.study === 'dogstar') {
@@ -177,6 +183,7 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
     renderPanel();
   }
   function fit() {
+    if (view.study === 'shadowForm') { shadow.fit(); return; }
     if (view.study === 'checker' || view.study === 'dogstar') { fitView([0, 0, 0], (Math.sqrt(3) * (1 + view.apart) + 1.8) * WS * 1.15); return; }
     const r = view.study === 'windowsStellas' ? 3.4 : view.study === 'stretch' ? Math.max(...capCentres(view.spacing, view.stretchDir, view.caps).map((c) => Math.hypot(...c))) + 1.8 : view.study === 'expanded' ? 1.9 + view.push : view.study === 'icosido' || view.study === 'rdMorph' ? 2.1 : 1.8;
     const spread = copies() ? Math.max(...placements().map(({ offset }) => Math.hypot(...offset))) : 0;
@@ -202,6 +209,7 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
   const sliderVal = panel.querySelector('.st-slider-val');
   const note = panel.querySelector('.st-note');
   const shearBtn = panel.querySelector('[data-study-shear]');
+  const shadow = createShadowForm({ panel, scene, fitView, camera, controls, canvas, showHudPrompt });
   function renderPanel() {
     panel.classList.toggle('visible', active);
     if (!active) return;
@@ -210,6 +218,10 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
     studySelect.innerHTML = STUDIES.map((k) => `<option value="${k}"${k === view.study ? ' selected' : ''}>${t(`studies.${k}`, L)}</option>`).join('');
     const slider = SLIDERS[view.study];
     sliderRow.style.display = slider ? '' : 'none';
+    // DICTO Shadow Form has its own rows (its note, views, examples, forms, grids, spacing); the studies' note and Shear button hide
+    const sf = view.study === 'shadowForm';
+    note.style.display = sf ? 'none' : ''; shearBtn.style.display = sf ? 'none' : '';
+    shadow.renderPanel();
     if (slider) {
       panel.querySelector('.st-slider-label').textContent = t(slider.label, L);
       sliderInput.max = String(slider.max * 1000);
@@ -235,6 +247,7 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
     save();
     draw();
     fit();
+    onStudyChange();
   });
   sliderInput.addEventListener('input', () => {
     const slider = SLIDERS[view.study];
@@ -265,8 +278,10 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
 
   return {
     group,
-    meshes: () => [],
-    handleTap: () => false,
+    meshes: () => (shadowOn() ? shadow.meshes() : []),
+    handleTap: (hit, mode) => (shadowOn() ? shadow.handleTap(hit, mode) : false),
+    /** The study shown (render.js hides the Shear for DICTO Shadow Form). */
+    get study() { return view.study; },
     /** Back to the first view (leaving the world, DICTO 2026-10-13). */
     resetView() {
       Object.assign(view, structuredClone(VIEW_FIRST)); save();
@@ -275,10 +290,12 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
     /** ?open=studies:stretch (paper #49's "View in app"): the DICTO stretched solids as the paper's theorem shows them, two caps
      *  along a face diagonal, equal-edged (spacing 1), as the solid itself. */
     open(arg) {
+      if (arg === 'shadowForm') { view.study = 'shadowForm'; save(); if (active) { draw(); fit(); } onStudyChange(); return; } // ?open=studies:shadowForm
       if (arg !== 'stretch') return;
       Object.assign(view, { study: 'stretch', stretchDir: 'face', caps: 2, spacing: 1, studyShear: 'solid' });
       save();
       if (active) { draw(); fit(); }
+      onStudyChange();
     },
     setActive(on) {
       if (on === active) return;
@@ -295,6 +312,6 @@ export function createStudiesWorld({ scene, fitView = () => {}, shear = () => nu
     get isEmpty() { return true; },
     clear() {},
     /** For the browser tests (?probe). */
-    probe() { return { study: view.study, spacing: view.spacing, direction: view.stretchDir, caps: view.caps, faces: drawnFaces }; },
+    probe() { return { study: view.study, spacing: view.spacing, direction: view.stretchDir, caps: view.caps, faces: drawnFaces, shadowForm: shadowOn() ? shadow.probe() : null }; },
   };
 }

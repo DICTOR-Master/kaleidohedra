@@ -3394,7 +3394,8 @@ async function init() {
     targetsWorld?.setActive(own3DActive() && own3D === 'targets');
     // Targets stay exact: no shear there (it would change the targets' angles). Elsewhere in a space
     // with a shear, the panel shows; the EKP-family worlds follow it with their cell centres.
-    shear?.setEnabled(!!SITES[activeSite()].shear && !(own3DActive() && ['targets', 'icosa', 'chains', 'dodeca', 'theaetetus', 'up', 'upFilm', 'kpFilm', 'thirteens', 'octet', 'octetBuild', 'breathing', 'bodhiPyro', 'doubleVision', 'vajrayana', 'ocdStella', 'octetTruss', 'reuleaux', 'aristotle', 'platonicMix', 'dictonic', 'cycles'].includes(own3D)));
+    // DICTO Shadow Form (a Studies entry) has no use for the Shear: hidden there (nothing unnecessary shown).
+    shear?.setEnabled(!!SITES[activeSite()].shear && !(own3DActive() && own3D === 'studies' && studiesWorld?.study === 'shadowForm') && !(own3DActive() && ['targets', 'icosa', 'chains', 'dodeca', 'theaetetus', 'up', 'upFilm', 'kpFilm', 'thirteens', 'octet', 'octetBuild', 'breathing', 'bodhiPyro', 'doubleVision', 'vajrayana', 'ocdStella', 'octetTruss', 'reuleaux', 'aristotle', 'platonicMix', 'dictonic', 'cycles'].includes(own3D)));
     sunstarWorld?.setActive(own3DActive() && own3D === 'sunstar');
     stellaJewelWorld?.setActive(own3DActive() && own3D === 'stellaJewel');
     kaleidoWorld?.setActive(own3DActive() && own3D === 'kaleido');
@@ -4377,7 +4378,7 @@ async function init() {
         // Every Mix of the Platonic Solids: tool:platonicMixWorld:<letters of the mix, e.g. DIC>.
         if (action?.startsWith('tool:platonicMixWorld:')) { platonicMixWorld?.open(action.slice('tool:platonicMixWorld:'.length)); action = 'tool:platonicMixWorld'; }
         if (action?.startsWith('tool:aristotleWorld:')) { aristotleWorld?.open(action.slice('tool:aristotleWorld:'.length)); action = 'tool:aristotleWorld'; }
-        // Studies: tool:studiesWorld:stretch opens the DICTO stretched solids (paper #49).
+        // Studies: tool:studiesWorld:stretch opens the DICTO stretched solids (paper #49); tool:studiesWorld:shadowForm DICTO Shadow Form.
         if (action?.startsWith('tool:studiesWorld:')) { studiesWorld?.open(action.slice('tool:studiesWorld:'.length)); action = 'tool:studiesWorld'; }
         // Vajrayana: tool:vajrayanaWorld:pieces opens with the closing layers shown; Theaetetus: tool:theaetetusWorld:<view> (cleostar …)
         if (action?.startsWith('tool:vajrayanaWorld:')) { vajrayanaWorld?.open(action.slice('tool:vajrayanaWorld:'.length)); action = 'tool:vajrayanaWorld'; }
@@ -6172,7 +6173,9 @@ async function init() {
     fitView: fitCameraTo,
     onChange: () => { if (historyRestorers.has('worldstellajewel')) recordHistory('worldstellajewel', stellaJewelWorld.snapshot()); },
   });
-  studiesWorld = createStudiesWorld({ scene: realScene, fitView: fitCameraTo, shear: currentShear });
+  studiesWorld = createStudiesWorld({ scene: realScene, fitView: fitCameraTo, shear: currentShear,
+    // DICTO Shadow Form (a study): drag a form to turn them all, the camera held still meanwhile; the Shear hides for it
+    camera, controls, canvas: renderer.domElement, showHudPrompt, onStudyChange: () => window.dispatchEvent(new Event('krp-hud-refresh')) });
   icosaWorld = createIcosaWorld({ scene: realScene, fitView: fitCameraTo });
   chainsWorld = createChainsWorld({ scene: realScene, fitView: fitCameraTo });
   dodecaWorld = createDodecaWorld({ scene: realScene, fitView: fitCameraTo });
