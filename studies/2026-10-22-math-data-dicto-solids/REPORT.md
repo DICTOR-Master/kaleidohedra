@@ -18,7 +18,7 @@ same branch (local only, not pushed) and is **not released**: it waits for DICTO
 - **Three fills, the three DICTONIC BONDS**: `dicto-golden-bond` (Icosaxes at φℤ³, Unborn Axes at φℤ³ + (φ/2)(1, 1, 1); #48 Main
   theorem (f)), `dicto-keyed-bond` (Lotus Jewel Axes and Dodecaxes at the same places; #48 Theorem 3), `dicto-delian-bond` (8 Samsons and
   4 Delilahs per cube of side 2; #51).
-- **index.csv**: six new rows (in_dataset y) and a new column `universal_number` for every row; **proposed-t-numbers.md** (new).
+- **index.csv**: six new rows (in_dataset y) and a new column `universal_number` for every row; **d-numbers.md** (new).
 
 ### Decisions (and who made them)
 
@@ -89,11 +89,13 @@ Wenninger's model number). Conventions in the README. Empty elsewhere: the other
 of F1, the Cleo-Icos, the tetrahedron face pyramid, the Reuleaux tetrahedron, the Icosaxes and Unborn Axes, which are Koca et al.'s
 non-uniform truncated octahedra) have no catalogue number we are sure of.
 
-**No DICTO T-number is used in any published paper** (all paper sources searched). T-numbers are only proposed, in
-`proposed-t-numbers.md`: 71 DICTO solids and pieces, T3–T73 in order of first publication, starting at T3 because T1 and T2 are
-already used as working labels in the app's DICTO Ball set 1, and "T1 = Cleo" was noted, although Cleo has the earlier number
-Mosseri–Sadoc t4 and so takes no T-number by the rule; 4 rows that group several pieces (Cleo Towers, Polar Cleo Towers, dented
-tetrahedron L/R, Fill set pieces) need a number per piece; 9 known or rediscovered shapes without a number are listed for DICTO's call.
+**D-numbers (DICTO's decision, 2026-10-24).** DICTO chose D-numbers as his permanent catalogue numbers (T stays a piece's label within a
+piece set; # papers; F findings; t1–t6 Mosseri–Sadoc). They are in `universal_number`: **D1–D71** for 71 single new solids and pieces in
+order of first publication (D1 = DICTO skewed rhombic dodecahedron … D71 = Samson), and **D72–D75** for the four rows that group several
+pieces (dented tetrahedron L/R, DICTO Fill set pieces, Cleo Towers, Polar Cleo Towers; one number per group row for now, placed after
+D71 so the 71 keep their order). Known and rediscovered shapes get none; the 9 solids and pieces among them without an outside number are
+listed in `d-numbers.md`. No shape has both an outside number and a D-number (the rule: outside number first, "; ", then D). In all,
+80 of 122 rows carry a number: 5 outside, 75 D. No published paper used a T-number before (all paper sources searched).
 
 ### Totals (version 2)
 
@@ -103,8 +105,7 @@ this dataset**; with 6 fills and 4 non-filling packings.
 
 ### Open questions for DICTO
 
-1. T-numbers: approve the list in `proposed-t-numbers.md`, and say whether to start at T1 or T3 (T1/T2 are the Ball set 1 working labels;
-   "T1 = Cleo" against Cleo = Mosseri–Sadoc t4).
+1. D-numbers for the four grouped rows (D72–D75): one per group, as now, or one per piece (from D76 on).
 2. Delilah's row name: "Delilah" (as now) or "Regular octahedron (Delilah)" under the one-name rule.
 
 ## Second pass (2026-10-23), DICTO's decisions

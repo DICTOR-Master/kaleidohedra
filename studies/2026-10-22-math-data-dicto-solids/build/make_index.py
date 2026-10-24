@@ -145,8 +145,7 @@ R = [
  ('Delilah', 'solid', '', '51', KN, 'known shape (regular octahedron), of edge 2^(-1/3) at octet edge 1; DICTO\'s name for it at the Delian bond (#51)', 'dicto-delilah', ''),
 ]
 # universal_number (version 2, DICTO 2026-10-23): established catalogue numbers of earlier creators first (Johnson J, uniform U,
-# Wenninger W, Hart's stellation lists, Mosseri-Sadoc tiles); DICTO T-numbers only where none exists and none is invented here
-# (proposals for DICTO in proposed-t-numbers.md). Empty = no number. Only numbers we are sure of.
+# Wenninger W, Hart's stellation lists, Mosseri-Sadoc tiles); DICTO D-numbers (below) for DICTO's new shapes; see d-numbers.md. Empty = no number. Only numbers we are sure of.
 UNUM = {
  'Dogstar': 'Hart 1996, tetrahedral stellations of the dodecahedron, no. 8',
  'AXE': 'Mosseri-Sadoc t6 (scaled by 1/tau)',
@@ -154,6 +153,17 @@ UNUM = {
  'Half octahedron P (#47 connector)': 'J1',
  'Delilah': 'U5; W2',
 }
+# D-numbers (DICTO 2026-10-24): DICTO's permanent catalogue number, one per new solid or piece (status new, kind solid/piece), in the
+# order of first publication (this list's order), never reused. D1-D71 for the single shapes, then D72-D75 for the four rows that group
+# several pieces (one number per group row for now; per piece to confirm with DICTO). Known/rediscovered shapes get no D-number. A shape
+# with an outside catalogue number that is also DICTO's new shape would show both, outside number first, "; "-separated (none so far).
+GROUPS = ['Dented tetrahedron L/R (golden-key octet)', 'DICTO Fill set 1 / 2 pieces (grown bipyramid, grown tetrahedra L/R)',
+          'Cleo Towers (8 tower pieces)', 'Polar Cleo Towers (7 tower pieces + core ray)']
+_eligible = [r[0] for r in R if r[1] in ('solid', 'piece') and r[4] == NEW]
+_single = [n for n in _eligible if n not in GROUPS]; _grp = [n for n in _eligible if n in GROUPS]
+assert len(_grp) == 4
+DNUM = {n: f'D{i + 1}' for i, n in enumerate(_single + _grp)}
+for n, d in DNUM.items(): UNUM[n] = UNUM[n] + '; ' + d if n in UNUM else d
 rows = []
 for name, kind, fnum, paper, status, note, slug, pv in R:
     doi = P[paper] if paper else K

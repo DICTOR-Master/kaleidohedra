@@ -18,8 +18,8 @@ of each solid, whose scale is a cube root (stored exactly as a symbolic expressi
 - **A second number field**: the `field` key now names the field of each file, `"Q(sqrt(5))"` or `"Q(2**(1/3))"`; `check.py` reads both
   exactly (every version 1 check is unchanged and passes as before).
 - **Non-convex solids as convex ∓ Tricaps**: a `decomposition` key, re-proved by `check.py`; the keyed bond is proved from the golden bond.
-- **`universal_number` column in `index.csv`**: catalogue numbers given by earlier creators (see below); **`proposed-t-numbers.md`**: the
-  DICTO T-numbers that could be given next, for DICTO to approve (none is used yet).
+- **`universal_number` column in `index.csv`**: catalogue numbers given by earlier creators, and DICTO's own **D-numbers** (D1–D75) for
+  his new solids and pieces (see below and **`d-numbers.md`**).
 - The symmetry group is now the group of the solid (corners **and** faces); for every convex solid, and for the DICTO Jewel, it is the same
   group as before.
 
@@ -33,7 +33,7 @@ of each solid, whose scale is a cube root (stored exactly as a symbolic expressi
 | `packings/<slug>.json` | a published space-filling: lattice vectors and the cell's pieces (solid + exact rotation + exact translation) |
 | `packings-nonfilling/<slug>.json` | a published packing that does not fill space: the same format, with `"kind": "packing, not a fill"` and the exact density |
 | `index.csv` | inventory of every named shape (also the ones not in this dataset), with its universal number (if any), status, finding, DICTO DOI, whether it is in the dataset and in Polyhedraverse |
-| `proposed-t-numbers.md` | proposed DICTO T-numbers for the shapes with no earlier number (a proposal for DICTO; not used anywhere yet) |
+| `d-numbers.md` | DICTO's D-numbers: the scheme, the list D1–D75, and the shapes without any number |
 | `check.py` | standalone verifier (python3 + sympy) |
 | `build/` | the scripts that generated the files (`exactlib.py`, `build_og.py`, `build_pv.py`, `build_extra.py`, `build_v2.py`, `make_index.py`), their logs, and copied source data (version 2: the three exact study scripts of #48 and #51 in `build/sources/`) |
 | `published/records.json` | the Zenodo records (latest versions) whose PDFs were used to check the published values |
@@ -194,8 +194,15 @@ Packings that do not fill space (`packings-nonfilling/`), each with its exact de
 2026-10-23): Johnson solids J1–J92 (Johnson 1966), the uniform index U of R. E. Maeder's list of the uniform
 polyhedra (U5 = regular octahedron), Wenninger's model numbers W1–W119 (*Polyhedron Models*, 1971), George W. Hart's stellation lists (1996), and the
 Mosseri–Sadoc tiles t1–t6 (numbering as tabulated by Koca et al. 2020, arXiv:2009.07048; DICTO's pieces are these scaled by 1/τ). Several
-numbers are separated by "; ". Only numbers we are sure of are given; the cell is empty where a shape has no such number. DICTO T-numbers
-(his universal piece numbers) are not used in any published paper yet; `proposed-t-numbers.md` proposes them for DICTO to approve.
+numbers are separated by "; ". Only numbers we are sure of are given.
+
+**D-numbers (DICTO 2026-10-24):** DICTO's permanent catalogue number, one per new solid or piece of his (status "new"), in the order of
+first publication, never reused: D1–D71 for single shapes, D72–D75 for the four rows that group several pieces (one number per group row
+for now; one per piece is to be confirmed with DICTO). Known and rediscovered shapes get no D-number. A shape with an outside number that
+is also DICTO's new shape would show both, outside number first ("J1; D9"); none does today. Not to be confused with T1, T2, … (a piece's
+label within one piece set), #n (papers), Fn (findings) and t1–t6 (Mosseri–Sadoc tiles); see `d-numbers.md`. 80 of 122 rows have a
+number (5 outside, 75 D); the cell is empty for the other known or rediscovered shapes and for clusters, structures, compounds and
+curved bodies.
 
 ## How to cite
 
