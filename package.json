@@ -1,7 +1,7 @@
 {
   "name": "kaleidohedra",
   "private": true,
-  "description": "Kaleidohedra and Rhombiverse by DICTO: one app with two front doors (KRP). devDependencies has esbuild, used ONLY by scripts/build.mjs at Vercel build time (SITE=kaleidohedra|rhombiverse picks the front door) to minify src/**/*.js -- local dev stays plain ES modules with no build step. three (the same version as index.html's import map, which the browser uses) is here only so the unit tests can import the DICTO screen.",
+  "description": "Kaleidohedra and Rhombiverse by DICTO: one app with two front doors (KRP). devDependencies has esbuild, used ONLY by scripts/build.mjs at Vercel build time (SITE=kaleidohedra|rhombiverse picks the front door) to minify src/**/*.js -- local dev stays plain ES modules with no build step. three (the same version as index.html's import map, which the browser uses) is here only so the unit tests can import the DICTO screen. manifold-3d (pinned; the browser loads the same version from the CDN, lazily) is here only so the unit tests can check DICTO Shadow Form's negative-space volumes.",
   "scripts": {
     "build": "node scripts/build.mjs",
     "verify:i18n": "node scripts/verify-i18n.mjs",
@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "esbuild": "^0.28.2",
+    "manifold-3d": "3.5.4",
     "three": "0.185.1"
   }
 }
