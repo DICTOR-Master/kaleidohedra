@@ -10,7 +10,7 @@ ICO = perms(.5, phi/2); UNB = perms(1/(2*phi), phi/2)
 vol = lambda P: ConvexHull(P).volume
 def tricap(sx, sy, sz):   # Tricap of the Unborn Axes at its corner direction (sx,sy,sz), in the Unborn frame
     S = np.diag([sx, sy, sz]); ap = S @ np.array([.5, .5, .5])
-    nb = [S @ np.array(v) for v in [(0, 1/(2*phi), phi/2), (phi/2, 0, 1/(2*phi)), (1/(2*phi), phi/2, 0)]]
+    nb = [S @ np.array(v) for v in [(phi/2, 1/(2*phi), 0), (0, phi/2, 1/(2*phi)), (1/(2*phi), 0, phi/2)]]      # orientation as in paper 48 (fixed 10-24, was mirrored)
     return np.array([ap] + nb)
 TR = [tricap(*s) for s in itertools.product((1, -1), repeat=3)]
 vt = vol(TR[0])
