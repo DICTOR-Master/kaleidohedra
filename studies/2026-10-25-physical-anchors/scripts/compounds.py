@@ -11,7 +11,7 @@ import json, os, sys, time
 from fractions import Fraction as Fr
 from itertools import product
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(HERE, '..', '..', '2026-10-25-bond-relay', 'scripts'))
+sys.path.insert(0, os.path.join(HERE, '..', '..', '2026-10-25-web-of-bonds', 'scripts'))
 from lib import QQ, power_cell, cell_faces, enough_sites, vadd, vsub, dot
 from samples import golden_sites, golden_T, golden_forms, delian_sites, tet_piece, oct_piece, delian_forms
 

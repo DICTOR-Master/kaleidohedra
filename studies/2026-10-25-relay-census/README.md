@@ -1,6 +1,6 @@
 # Relay census (2026-10-25)
 
-"Relay census", "soft relay", "hard relay" and "hinge" are working names from the Bond Relay study (`../2026-10-25-bond-relay/`). DICTO decides the names. The structures, cells and tilings below carry their names from the literature. DICTO's names are used only for DICTO's own things (the golden and Delian DICTONIC loops).
+"Relay census", "soft relay", "hard relay" and "hinge" are working names from the Bond Relay study (`../2026-10-25-web-of-bonds/`). DICTO decides the names. The structures, cells and tilings below carry their names from the literature. DICTO's names are used only for DICTO's own things (the golden and Delian DICTONIC loops).
 
 ## Question
 
@@ -221,7 +221,7 @@ Coordination numbers per piece, for every interval and stop, are in `data/raw/ta
 - the C15 Laves Voronoi cells (Frank–Kasper);
 - the fact that every Delaunay tessellation is the power diagram of its circumspheres.
 
-**DICTO's own draft #52** (`papers/2026-10-25-bond-relay/`) already reads the golden loop as the CsCl structure and the Delian loop as the fluorite structure. This census uses those names and does not re-check the draft.
+**DICTO's own draft #52** (`papers/2026-10-25-web-of-bonds/`) already reads the golden loop as the CsCl structure and the Delian loop as the fluorite structure. This census uses those names and does not re-check the draft.
 
 **Not found in DICTO's library** (no web search was made in this study):
 - the weight walks of NaCl, zinc blende, A15, C15, perovskite, hcp holes and the 2D networks, with their exact flips;

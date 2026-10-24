@@ -1,7 +1,7 @@
 # Prior-art search: relay census (2026-10-25)
 
 Study read: `README.md`, `data/raw/tables.md`, `data/raw/a15.json` (A15 volumes). Companion search
-`../../papers/2026-10-25-bond-relay/prior-art.md` already covers power diagrams in general
+`../../papers/2026-10-25-web-of-bonds/prior-art.md` already covers power diagrams in general
 (Aurenhammer), GKZ / Alexeev §5.12 / L-types, Pauling's limits, radical tessellations of CsCl and
 fluorite, Wang et al. 2018 and Koch 1973 as the nearest analogue. Those are not repeated here except
 where a census claim needs them.

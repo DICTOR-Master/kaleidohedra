@@ -1,6 +1,6 @@
-# Bond Relay of the DICTONIC loops (2026-10-25)
+# The web of bonds of the DICTONIC loops (2026-10-25)
 
-"Bond Relay" is a working name. DICTO decides the names. The names of the loops, solids and stops are the ones used in papers #48 and #51 and in the app.
+Published as paper #52, "The Web of Bonds: How the DICTONIC Bonds Hand Over" (title and the names "gradual hand-over" and "hand-over at the octet" by DICTO, 2026-10-25). The names of the loops, solids and stops are the ones used in papers #48 and #51 and in the app.
 
 ## Question
 
@@ -106,7 +106,7 @@ Each golden piece's 6 squares always bond to its own kind (big–big, or small�
 
 At t = 1/3 each RD rhombus trades its long diagonal (oct–oct) for its short one (tet–tet). This is a single flip.
 
-## Main theorem (working name: Bond Relay Theorem; DICTO decides the name)
+## Main theorem (paper #52)
 
 **In plain words:** each DICTONIC loop is one fixed crowd of points of two kinds with one weight slid between the kinds. The bonds are the edges of the dual weighted-Delaunay web, and the bond between unlike pieces never breaks inside the loop. The two like bonds hand over: gradually in the golden loop (both alive all the way, equal at Kelvin), and all at once in the Delian loop (at the octet).
 

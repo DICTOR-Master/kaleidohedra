@@ -1,6 +1,6 @@
 # Physical anchors for the DICTONIC loops (2026-10-25)
 
-This study extends the Bond Relay study (`../2026-10-25-bond-relay/`). The names of the loops, solids and stops are the ones used in papers #48 and #51, in the app and in Bond Relay. This study gives **physics anchors for the geometry**. It is not new physics. All the crystal chemistry used here is standard.
+This study extends the Bond Relay study (`../2026-10-25-web-of-bonds/`). The names of the loops, solids and stops are the ones used in papers #48 and #51, in the app and in Bond Relay. This study gives **physics anchors for the geometry**. It is not new physics. All the crystal chemistry used here is standard.
 
 ## Question
 

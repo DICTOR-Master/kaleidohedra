@@ -60,7 +60,7 @@ Mathematics, numbers, figures and references are sound. The points below are abo
 14. **MINOR** — Figure 1 caption vs Table 1: caption says the unlike bond "peaks at Kelvin" (left) and "peaks, with a corner, at the octet triangle √3/4" (right). Correct. But the left caption's "equal at Kelvin (φ²/8) and 1/2 against 1/(2φ²) at x = τ" omits which is which (big–big = 1/2). The figure's annotation "x = τ: 1/2" sits beside the blue (big–big) circle, so it is recoverable; the caption should still say it.
    **Fix:** "big–big 1/2 against small–small 1/(2φ²) at x = τ".
 
-15. **NIT** — Meta line and [S1]: the study folder is `studies/2026-10-25-bond-relay`, so the working name "bond-relay" appears in the paper through the URL and the three [S] citations. The text itself is clean ("Bond Relay" nowhere). If DICTO wants the working name out entirely, the folder would have to be renamed in the repo (a rename, so ask); otherwise leave it.
+15. **NIT** — Meta line and [S1]: the study folder is `studies/2026-10-25-web-of-bonds`, so the working name "bond-relay" appears in the paper through the URL and the three [S] citations. The text itself is clean ("Bond Relay" nowhere). If DICTO wants the working name out entirely, the folder would have to be renamed in the repo (a rename, so ask); otherwise leave it.
 
 16. **NIT** — [10] author order: Crossref lists the published paper as Koca, Al-Mukhaini, Koca, Al-Qanobi; the paper gives the arXiv order (as #48 did). Harmless; either add "(arXiv author order)" or reorder.
 

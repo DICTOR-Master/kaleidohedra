@@ -111,7 +111,7 @@ for key in sys.argv[1:] or NAMES:
     out["named"] = named
     summary[key] = out
     print(key, json.dumps(out, indent=1))
-# regressions against the Bond Relay study (2026-10-25-bond-relay README, closed forms in app units / L/2 units)
+# regressions against the Bond Relay study (2026-10-25-web-of-bonds README, closed forms in app units / L/2 units)
 x, t = sp.symbols("x t", positive=True)
 def area2(key, ivlo, kind, nb):
     d = json.load(open(f"../data/raw/{key}.json"))

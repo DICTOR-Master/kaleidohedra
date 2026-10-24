@@ -1,4 +1,4 @@
-# Relay census engine (2026-10-25). Generalises the Bond Relay study's power_cell (../../2026-10-25-bond-relay/scripts/lib.py):
+# Relay census engine (2026-10-25). Generalises the Bond Relay study's power_cell (../../2026-10-25-web-of-bonds/scripts/lib.py):
 #  * any dimension d = 2, 3; sites in rational coordinates x with a rational metric G (|v|^2 = v^T G v), so hexagonal lattices stay
 #    rational (power diagrams in the metric G are the affine images of the Euclidean ones: same combinatorics, same weights);
 #  * the weights are affine in a parameter lam (m = 1, or m = 2 for three kinds): w_k = c_k0 + c_k1 lam1 (+ c_k2 lam2).

@@ -1,7 +1,7 @@
 # Number audit — "The Web of Bonds: How the DICTONIC Bonds Hand Over" (#52), v1 and v2, 2026-10-25
 
 Every number in paper.src.html (text, tables, captions, appendices) checked against the two studies.
-Sources: **B** = studies/2026-10-25-bond-relay/README.md, **P** = studies/2026-10-25-physical-anchors/README.md (line numbers at commit 7b0fd8b);
+Sources: **B** = studies/2026-10-25-web-of-bonds/README.md, **P** = studies/2026-10-25-physical-anchors/README.md (line numbers at commit 7b0fd8b);
 check files as named. Decimals were also recomputed from the closed forms (python, double precision) — "recomp".
 CSS sizes, reference numbers, page/years/volumes in the reference list (checked against MANIFEST.json / P l.186–200 / #48 and #51 reference lists) are not repeated here.
 
@@ -75,7 +75,7 @@ Not audited here (outside the studies): the figure-5 app screenshot's own on-scr
 
 # v2 audit (2026-10-25): numbers added or changed in Draft v2
 
-Sources: **PA** = papers/2026-10-25-bond-relay/prior-art.md; **S3** = studies/2026-10-25-scale-anomalies/README.md (commit 9138f80), its data/checks/anomalies-checks.txt and data/raw/values.json; Crossref lookups of 2026-10-25 for the reference metadata. v1 rows above are unchanged unless listed here.
+Sources: **PA** = papers/2026-10-25-web-of-bonds/prior-art.md; **S3** = studies/2026-10-25-scale-anomalies/README.md (commit 9138f80), its data/checks/anomalies-checks.txt and data/raw/values.json; Crossref lookups of 2026-10-25 for the reference metadata. v1 rows above are unchanged unless listed here.
 
 | # | Number in v2 | Where | Source | Result |
 |---|---|---|---|---|
@@ -110,7 +110,7 @@ Removed in v2 (no longer in the paper): "the touching windows bounded exactly by
 
 # v3 audit (2026-10-25): sentences and numbers changed after the referee report (review-fable.md)
 
-Sources as above, plus **RF** = review-fable.md (referee report on v2) and **SC** = studies/2026-10-25-bond-relay/data/checks/symbolic-checks.txt. No number or theorem of v2 changed; the rows below cover every changed sentence that carries a number or a mathematical claim.
+Sources as above, plus **RF** = review-fable.md (referee report on v2) and **SC** = studies/2026-10-25-web-of-bonds/data/checks/symbolic-checks.txt. No number or theorem of v2 changed; the rows below cover every changed sentence that carries a number or a mathematical claim.
 
 | # | Changed statement | Where | Source / check | Result |
 |---|---|---|---|---|

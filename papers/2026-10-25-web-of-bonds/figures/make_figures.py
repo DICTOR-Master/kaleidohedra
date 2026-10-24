@@ -1,4 +1,4 @@
-# Figures for the web-of-bonds paper draft (#52 proposed). Closed forms from studies/2026-10-25-bond-relay (README §2, symbolic.json)
+# Figures for the web-of-bonds paper draft (#52 proposed). Closed forms from studies/2026-10-25-web-of-bonds (README §2, symbolic.json)
 # and studies/2026-10-25-physical-anchors (contact maps, windows, compounds.json). Run on dicto-big-brother: nice -n 10 ~/geom/bin/python make_figures.py
 import json, os, sys
 import numpy as np
