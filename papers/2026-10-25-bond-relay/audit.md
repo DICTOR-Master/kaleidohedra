@@ -105,3 +105,30 @@ Sources: **PA** = papers/2026-10-25-bond-relay/prior-art.md; **S3** = studies/20
 Removed in v2 (no longer in the paper): "the touching windows bounded exactly by Pauling's limits" in Not found; "derived here, not quoted"; the earlier §6 text and its "to be updated" flag; the UO₂/CeO₂/ZrO₂ crystal-radius t-values 0.521/0.528/0.559 and the CsCl 1.126 → 1.432 and Li₂O 0.363 sentences (replaced by the S3 summary, row 77).
 
 **v2 result: 22 / 22 new or changed rows PASS; v1 rows 1–60 unchanged and still PASS.** Sources only marked full-text, text or abstract in S3 values.json are cited in §6; McCullough & Trueblood 1959, Dénès & Madamba 1997 and Shannon's abstract (secondary reproduction) are not cited; the β-PbF₂ ambient-form remark is labelled "general knowledge, not checked at source".
+
+---
+
+# v3 audit (2026-10-25): sentences and numbers changed after the referee report (review-fable.md)
+
+Sources as above, plus **RF** = review-fable.md (referee report on v2) and **SC** = studies/2026-10-25-bond-relay/data/checks/symbolic-checks.txt. No number or theorem of v2 changed; the rows below cover every changed sentence that carries a number or a mathematical claim.
+
+| # | Changed statement | Where | Source / check | Result |
+|---|---|---|---|---|
+| 83 | In window ⇔ r⁺/r⁻ ≥ 0.732 for CsCl type and fluorite; ⇔ r⁻/r⁺ ≥ 0.732 for antifluorite | §5 compounds | P Table 2/3 radii; recomputed: CsCl-type 0.961, 0.888, 0.791, 0.878, 0.811 (all in, all ≥ 0.732); fluorites in: 0.855, 0.962, 1.084, 0.840, 0.985, 0.761 (≥ 0.732), out: UO₂ 0.725, CeO₂ 0.703, ZrO₂ 0.609 (< 0.732); antifluorites (all in) r⁻/r⁺ = 2.4068, 1.4343, 1.0365; RF point 1 | PASS |
+| 84 | Secondary fan: cones = regular subdivisions, chambers = triangulations; golden in one chamber; Delian in two non-maximal cones meeting at t = 1/3 in the cone of the rhombic dodecahedra; six oct sites co-spherical | Cor. 4 | Cor. 3 dual cells (B l.100–105: octahedra 6 O, square pyramids 1 O + 4 Q are not simplices); RF point 2 | PASS |
+| 85 | Wang et al.: large spheres on simple cubic, small sphere in every cubic pore ("SC" crystal); radical polyhedra of small and large all 14 faces, 6 quadrangles + 8 hexagons; size ratio √3 − 1 is our reading | §5, §8 | RF point 3 (AIP page read by the referee); PA l.16 | PASS |
+| 86 | τ = φ (name of the stop in #48 and the app) | §2 | #48 "Let φ = (1 + √5)/2 = τ" (RF point 4); P l.81 "x = τ (= φ, as in the code)" | PASS |
+| 87 | Big piece smaller for x < 1; swap exchanges | §2 | golden volume (4/3)(1 + s)³ − 4s³ increasing in s, = 4 at s = 1/2 (samples-checks B4 x = 1: 4 + 4; x = 1/2: 3.01 + 4.99) | PASS |
+| 88 | Delian volume unit: the cube at t = 1, edge 1/√2 at octet edge 1 | Cor. 3 | #51 App. B "cube, edge 1/√2"; samples-checks B8 t = 1 cube volume 1 | PASS |
+| 89 | t = 0, 1 Voronoi of the surviving kind alone | §3, §8 | Main thm (i); samples-checks B1 t = 0/1 "power cell is a point" | PASS |
+| 90 | √|Δ| ≤ d: golden |Δ| ≤ (a/2)² = φ²/4 < d² = 3φ²/4; Delian |Δ| ≤ 3/8 = d² | proof Thm 2(e) | P l.56 (d), l.70; S2 symbolic-checks A3g, A4a, A4f | PASS |
+| 91 | Distance bound: ρ² ≤ 2 (golden, (L/2)² units), ρ² ≤ 1 (Delian, cube-at-t=1 edge 1); D = 4, 3; (4 − √2)² ≈ 6.69 ≥ 2 + 1; 4 ≥ 1 + 3/4 | proof Main thm (i) | SC A7 lines ("rho^2 = 2 … D = 4", "rho^2 = 1 … D = 3"); |Δ| max: golden 2s − 1 ≤ 1, Delian w_tet − w_oct = (3/4)(2t − 1) ≤ 3/4 (samples.py l.207); recomp 6.686; RF point 8 | PASS |
+| 92 | "All geometric results are exact (371 + 61 …); the 24 physical checks of [S3] are estimates" | abstract | App. B 456 = 371 + 61 + 24 (row 80) | PASS |
+| 93 | Pauling limits and their reciprocals: 1/(√3 − 1) = (√3 + 1)/2 (Delian upper end); √(3/2) − 1 Delian lower end; √3 − 1 golden lower end | Thm 2(d) | S3 checks E2, E3; P l.68–69; recomp 1.36603 both | PASS |
+| 94 | Pressure bound labelled "bookkeeping"; K₀′ = 4 assumed for both, as in Duclos [31] | §6 | S3 l.43; values.json (Duclos "B0' = 4.00 assumed") | PASS |
+| 95 | β-PbF₂ fluorite form, metastable at ambient, α orthorhombic; placement for β (moved to Table 3 caption, §6 sentence removed) | Table 3 caption | P l.170; S3 Q4 (Dénès & Madamba 1997, secondary; not cited) — RF point 13 wording | PASS |
+| 96 | Fig. 1 caption: big–big 1/2, small–small 1/(2φ²) at x = τ | Fig. 1 | B l.76 | PASS |
+| 97 | CeO₂ verdict: "no named physical effect (pressure, temperature, gravity, stoichiometry) explains it" | Table 4 | S3 l.183 | PASS |
+| 98 | Version line "Draft, version 3"; footer v3 | meta | build | PASS |
+
+**v3 result: 16 / 16 changed rows PASS; rows 1–82 unchanged.**
