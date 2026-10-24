@@ -95,10 +95,10 @@ outside number first, separated by "; " (for example "J1; D9"). No shape in the 
 | D70 | Dodecaxes | solid | – | #48 |
 | D71 | Samson | solid | – | #51 |
 
-## D72–D75: rows that group several pieces (to confirm with DICTO: one number per group or per piece)
+## D72–D75: rows that group several pieces (one number per group: DICTO, 24 October 2026)
 
-For now each group row has one D-number, after D71 so that D1–D71 keep their order. If DICTO wants one number per piece, each piece gets
-its own D-number from D76 on and the group number stays with the group (numbers are never reused).
+DICTO decided one D-number per group (24 October 2026). The group numbers come after D71 so that D1–D71 keep their order of first
+publication. The pieces inside a group are told apart by their labels within the group (as T labels within a piece set).
 
 | D | row | what it holds |
 |---|---|---|
