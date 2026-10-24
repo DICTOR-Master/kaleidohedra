@@ -1,0 +1,143 @@
+{
+ "golden s in (0,1)": {
+  "big": {
+   "counts": {
+    "big-big": 6,
+    "big-small": 8
+   },
+   "corners_per_face": {
+    "big-big": [
+     4
+    ],
+    "big-small": [
+     6
+    ]
+   },
+   "volume": "-4*(2*s**3 - 3*s**2 - 3*s - 1)/3"
+  },
+  "small": {
+   "counts": {
+    "big-small": 8,
+    "small-small": 6
+   },
+   "corners_per_face": {
+    "big-small": [
+     6
+    ],
+    "small-small": [
+     4
+    ]
+   },
+   "volume": "4*(2*s**3 - 3*s**2 - 3*s + 5)/3"
+  },
+  "seconds": 2.4
+ },
+ "delian t in (0,1/3)": {
+  "oct": {
+   "counts": {
+    "oct-tet": 8,
+    "oct-oct": 12
+   },
+   "corners_per_face": {
+    "oct-tet": [
+     3
+    ],
+    "oct-oct": [
+     6
+    ]
+   },
+   "volume": "-2*(9*t**3 - 1)"
+  },
+  "tet0": {
+   "counts": {
+    "oct-tet": 4
+   },
+   "corners_per_face": {
+    "oct-tet": [
+     3
+    ]
+   },
+   "volume": "9*t**3"
+  },
+  "tet1": {
+   "counts": {
+    "oct-tet": 4
+   },
+   "corners_per_face": {
+    "oct-tet": [
+     3
+    ]
+   },
+   "volume": "9*t**3"
+  },
+  "seconds": 7.0
+ },
+ "delian t in (1/3,1)": {
+  "oct": {
+   "counts": {
+    "oct-tet": 8
+   },
+   "corners_per_face": {
+    "oct-tet": [
+     3
+    ]
+   },
+   "volume": "-9*(t - 1)**3/2"
+  },
+  "tet0": {
+   "counts": {
+    "tet-tet": 6,
+    "oct-tet": 4
+   },
+   "corners_per_face": {
+    "tet-tet": [
+     6
+    ],
+    "oct-tet": [
+     3
+    ]
+   },
+   "volume": "(9*t**3 - 27*t**2 + 27*t - 5)/4"
+  },
+  "tet1": {
+   "counts": {
+    "tet-tet": 6,
+    "oct-tet": 4
+   },
+   "corners_per_face": {
+    "tet-tet": [
+     6
+    ],
+    "oct-tet": [
+     3
+    ]
+   },
+   "volume": "(9*t**3 - 27*t**2 + 27*t - 5)/4"
+  },
+  "seconds": 4.0
+ },
+ "golden areas (app units, x)": {
+  "big-big": "x**2*(1 + sqrt(5))**2/(8*(x + 1)**2)",
+  "small-small": "(1 + sqrt(5))**2/(8*(x + 1)**2)",
+  "big-small": "sqrt(3)*(1 + sqrt(5))**2*(x**2 + 4*x + 1)/(32*(x + 1)**2)"
+ },
+ "golden weight difference (app units)": "(phi^2/4)(x-1)/(x+1)",
+ "delian areas (app units, t)": {
+  "oct-tet": [
+   "9*sqrt(3)*t**2/4",
+   "9*sqrt(3)*(t - 1)**2/16"
+  ],
+  "oct-oct (t<=1/3)": "-sqrt(2)*(3*t - 1)*(3*t + 1)/4",
+  "tet-tet (t>=1/3)": "-(3*t - 5)*(3*t - 1)/8"
+ },
+ "delian bond": {
+  "t": "1 - 2**(2/3)/3",
+  "w_tet - w_oct (app)": "3/8 - 2**(2/3)/4",
+  "oct-tet (app)": "2**(1/3)*sqrt(3)/8",
+  "tet-tet (app)": "1/2 - 2**(1/3)/4"
+ },
+ "golden tau": {
+  "big-small (app)": "sqrt(3)/16 + 3*sqrt(15)/16"
+ },
+ "seconds_total": 13.8
+}
