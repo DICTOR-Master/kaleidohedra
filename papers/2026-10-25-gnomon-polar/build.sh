@@ -12,5 +12,5 @@ P
 ssh ${PRINT_NODE:-dicto-big-brother} 'mkdir -p ~/kres-tmp/gnomon-polar-print && ln -sfn ~/kaleidohedra-check/node_modules ~/kres-tmp/gnomon-polar-print/node_modules'
 rsync -a --delete ./ ${PRINT_NODE:-dicto-big-brother}:kres-tmp/gnomon-polar-print/2026-10-25-gnomon-polar/
 rsync -a ../paper.css ../dicto-logo.png ../print.mjs ${PRINT_NODE:-dicto-big-brother}:kres-tmp/gnomon-polar-print/
-ssh ${PRINT_NODE:-dicto-big-brother} "cd ~/kres-tmp/gnomon-polar-print && nice -n 10 node print.mjs 2026-10-25-gnomon-polar ${3:-gnomon-polar-draft.pdf} 'What Each Step Adds (draft)' '${2:-reserved}' ${4:-1}"
+ssh ${PRINT_NODE:-dicto-big-brother} "cd ~/kres-tmp/gnomon-polar-print && nice -n 10 node print.mjs 2026-10-25-gnomon-polar ${3:-gnomon-polar-draft.pdf} 'One Turn Is a Gnomon (draft)' '${2:-reserved}' ${4:-1}"
 rsync -a ${PRINT_NODE:-dicto-big-brother}:kres-tmp/gnomon-polar-print/2026-10-25-gnomon-polar/${3:-gnomon-polar-draft.pdf} ./

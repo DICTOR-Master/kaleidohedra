@@ -61,3 +61,16 @@ Wording (re-audited v1b): "DICTO proposed that the polar has no spikes over the 
 | 45 | Heron's general definition quoted in Heath's commentary on II Def. 2 | §1, [7] | Heath vol. I not in the library; not read here — flagged | OPEN for DICTO |
 
 Wording v2: "proposed", "theorised", "concluded" ("the nature of the beast" — DICTO concluded the volume reading missed the shape); no asked/question/wonder/doubt; unnamed pieces marked "(unnamed; DICTO decides)"; DICTO's names kept exactly (Cleo-Ico, Shields, inward pentagonal pyramids, valley tetrahedra). Number "#54" (no "proposed"). Figure 2 legend reworded to "added volume" (classical gnomon = shape).
+
+## Version 3 (2026-10-25): DICTO's names Julias / Pimentels; title
+
+| # | Change | Source | Result |
+|---|---|---|---|
+| 46 | Title "One Turn Is a Gnomon: the Golden Cycle Step by Step, and the Polar of the Keyed Pair" (no working-title mark; footer too) | coordinator, DICTO accepted | done |
+| 47 | Table 3: G1 Cleo-Icos, G2 DICTO's fill of D′, G7 Shields keep names; Julia G3, G4, G5a, G5b, G6, G8, G9, G10; Pimentels G11 | DICTO 2026-10-25 via coordinator | done |
+| 48 | nine previously unnamed kinds (G3, G4, G5a, G5b, G6, G8, G9, G10, G11), not seven: v2 conclusion said "seven kinds" — corrected | S README "Technical names" (9 rows), classify_pieces.txt (9 kinds outside G1, G2, G7) | PASS (fixed) |
+| 49 | technical descriptions and nearest forms (dodecahedral cap; J9; triangular prism with edge cut; hexagonal frustum; truncation corner; J2; J1; hip roof; J12); edge lengths 2–7 | S README table; classify_pieces.txt edge-length counts (2, 3, 4, 7, 3, 3, 2, 5, 4, 6) | PASS (G7 Shield and G8 have 2; G5a has 7) |
+| 50 | piece counts 12, 12, 60, 20, 60, 12, 60, 30, 60 | classify_pieces.txt | PASS |
+| 51 | cone-section sentence (shape forced by the two nested solids; cones over all faces divide the shell exactly) | S README l.65; gnomon-shapes.txt "pieces sum to layer" PASS | PASS |
+| 52 | Johnson 1966, Can. J. Math. 18, 169–200, doi:10.4153/CJM-1966-021-8 | Crossref 2026-10-25 | PASS |
+| 53 | credit "the names Julias and Pimentels are DICTO's" | coordinator | done |
