@@ -1,0 +1,24 @@
+PASS  C1 app goldenT(x = 0) = signed permutations of (1, s, 0) phi/2, s = 0.000000  
+PASS  C1 app goldenT(x = 1/tau) = signed permutations of (1, s, 0) phi/2, s = 0.381966  
+PASS  C1 app goldenT(x = 1) = signed permutations of (1, s, 0) phi/2, s = 0.500000  
+PASS  C1 app goldenT(x = tau) = signed permutations of (1, s, 0) phi/2, s = 0.618034  
+PASS  C1 app goldenT(x = inf) = signed permutations of (1, s, 0) phi/2, s = 1.000000  
+PASS  C1 app octPiece(t = rd) = closed form  
+PASS  C1 app tetPiece(t = equilateralRd) = closed form  
+PASS  C1 app octPiece(t = equilateralRd) = closed form  
+PASS  C1 app tetPiece(t = octet) = closed form  
+PASS  C1 app octPiece(t = octet) = closed form  
+PASS  C1 app tetPiece(t = half) = closed form  
+PASS  C1 app octPiece(t = half) = closed form  
+PASS  C1 app tetPiece(t = delian) = closed form  
+PASS  C1 app octPiece(t = delian) = closed form  
+PASS  C1 app tetPiece(t = equilateralCube) = closed form  
+PASS  C1 app octPiece(t = equilateralCube) = closed form  
+PASS  C1 app tetPiece(t = cube) = closed form  
+PASS  C2 Icosaxes (Polyhedraverse) = golden big shell at x = tau (app units)  
+PASS  C2 Unborn Axes (Polyhedraverse) = golden small shell at x = tau = big shell at x = 1/tau  
+PASS  C2 Samson (Polyhedraverse) = Delian tet shell at the Delian bond, / sqrt2  
+PASS  C2 Delilah (Polyhedraverse) = Delian oct shell at the Delian bond, / sqrt2  
+PASS  C3 app OCTET_FAMILY_STOPS = exact stop values  
+PASS  C3 app GOLDEN_STOPS = 0, 1, tau, inf (inf is null in JSON)  {"zero": 0, "kelvin": 1, "tau": 1.618033988749895, "inf": null}
+23 PASS, 0 FAIL

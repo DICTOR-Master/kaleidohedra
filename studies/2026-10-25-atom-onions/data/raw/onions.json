@@ -1,0 +1,376 @@
+{
+ "onions_inside_out": {
+  "big": [
+   "x = 0",
+   "x = 1/tau",
+   "x = 1 (Kelvin)",
+   "x = tau",
+   "x = inf"
+  ],
+  "small": [
+   "x = inf",
+   "x = tau",
+   "x = 1 (Kelvin)",
+   "x = 1/tau",
+   "x = 0"
+  ],
+  "tet": [
+   "t = 0",
+   "equilateral (a)",
+   "t = 1/3 (octet)",
+   "half and half",
+   "Delian bond",
+   "equilateral (b)",
+   "t = 1"
+  ],
+  "oct": [
+   "t = 1",
+   "equilateral (b)",
+   "Delian bond",
+   "half and half",
+   "t = 1/3 (octet)",
+   "equilateral (a)",
+   "t = 0"
+  ]
+ },
+ "faces_by_regime": {
+  "big": {
+   "x = 0": {
+    "faces": {
+     "big-small 3-gon": 8
+    },
+    "corners": 6,
+    "volume_L2units": 1.3333333333333333
+   },
+   "0 < x < 1/tau (x = 1/3)": {
+    "faces": {
+     "big-small 6-gon": 8,
+     "big-big 4-gon": 6
+    },
+    "corners": 24,
+    "volume_L2units": 2.5416666666666665
+   },
+   "x = 1/tau": {
+    "faces": {
+     "big-small 6-gon": 8,
+     "big-big 4-gon": 6
+    },
+    "corners": 24,
+    "volume_L2units": 3.2961812733327727
+   },
+   "x = 1": {
+    "faces": {
+     "big-small 6-gon": 8,
+     "big-big 4-gon": 6
+    },
+    "corners": 24,
+    "volume_L2units": 4.0
+   },
+   "x = tau": {
+    "faces": {
+     "big-small 6-gon": 8,
+     "big-big 4-gon": 6
+    },
+    "corners": 24,
+    "volume_L2units": 4.703818726667228
+   },
+   "tau < x < inf (x = 3)": {
+    "faces": {
+     "big-small 6-gon": 8,
+     "big-big 4-gon": 6
+    },
+    "corners": 24,
+    "volume_L2units": 5.458333333333333
+   },
+   "x = inf": {
+    "faces": {
+     "big-small 3-gon": 8,
+     "big-big 4-gon": 6
+    },
+    "corners": 12,
+    "volume_L2units": 6.666666666666667
+   }
+  },
+  "small": {
+   "x = 0": {
+    "faces": {
+     "small-small 4-gon": 6,
+     "small-big 3-gon": 8
+    },
+    "corners": 12,
+    "volume_L2units": 6.666666666666667
+   },
+   "0 < x < 1/tau (x = 1/3)": {
+    "faces": {
+     "small-small 4-gon": 6,
+     "small-big 6-gon": 8
+    },
+    "corners": 24,
+    "volume_L2units": 5.458333333333333
+   },
+   "x = 1/tau": {
+    "faces": {
+     "small-small 4-gon": 6,
+     "small-big 6-gon": 8
+    },
+    "corners": 24,
+    "volume_L2units": 4.703818726667228
+   },
+   "x = 1": {
+    "faces": {
+     "small-small 4-gon": 6,
+     "small-big 6-gon": 8
+    },
+    "corners": 24,
+    "volume_L2units": 4.0
+   },
+   "x = tau": {
+    "faces": {
+     "small-small 4-gon": 6,
+     "small-big 6-gon": 8
+    },
+    "corners": 24,
+    "volume_L2units": 3.2961812733327727
+   },
+   "tau < x < inf (x = 3)": {
+    "faces": {
+     "small-small 4-gon": 6,
+     "small-big 6-gon": 8
+    },
+    "corners": 24,
+    "volume_L2units": 2.5416666666666665
+   },
+   "x = inf": {
+    "faces": {
+     "small-big 3-gon": 8
+    },
+    "corners": 6,
+    "volume_L2units": 1.3333333333333333
+   }
+  },
+  "tet": {
+   "t = 0": {
+    "faces": {},
+    "corners": 1,
+    "volume": 0.0
+   },
+   "0 < t < 1/3 (t = 1/6)": {
+    "faces": {
+     "tet-oct 3-gon": 4
+    },
+    "corners": 4,
+    "volume": 0.041666666666666664
+   },
+   "equilateral (a)": {
+    "faces": {
+     "tet-oct 3-gon": 4
+    },
+    "corners": 4,
+    "volume": 0.018261210037024442
+   },
+   "t = 1/3": {
+    "faces": {
+     "tet-oct 3-gon": 4
+    },
+    "corners": 4,
+    "volume": 0.3333333333333333
+   },
+   "half and half": {
+    "faces": {
+     "tet-tet 6-gon": 6,
+     "tet-oct 3-gon": 4
+    },
+    "corners": 16,
+    "volume": 0.5
+   },
+   "Delian bond": {
+    "faces": {
+     "tet-tet 6-gon": 6,
+     "tet-oct 3-gon": 4
+    },
+    "corners": 16,
+    "volume": 0.6666666666666666
+   },
+   "1/3 < t < 1 (t = 2/3)": {
+    "faces": {
+     "tet-tet 6-gon": 6,
+     "tet-oct 3-gon": 4
+    },
+    "corners": 16,
+    "volume": 0.9166666666666666
+   },
+   "equilateral (b)": {
+    "faces": {
+     "tet-tet 6-gon": 6,
+     "tet-oct 3-gon": 4
+    },
+    "corners": 16,
+    "volume": 0.9526214587563498
+   },
+   "t = 1": {
+    "faces": {
+     "tet-tet 4-gon": 6
+    },
+    "corners": 8,
+    "volume": 1.0
+   }
+  },
+  "oct": {
+   "t = 0": {
+    "faces": {
+     "oct-oct 4-gon": 12
+    },
+    "corners": 14,
+    "volume": 2.0
+   },
+   "0 < t < 1/3 (t = 1/6)": {
+    "faces": {
+     "oct-tet 3-gon": 8,
+     "oct-oct 6-gon": 12
+    },
+    "corners": 30,
+    "volume": 1.9166666666666667
+   },
+   "equilateral (a)": {
+    "faces": {
+     "oct-tet 3-gon": 8,
+     "oct-oct 6-gon": 12
+    },
+    "corners": 30,
+    "volume": 1.9634775799259512
+   },
+   "t = 1/3": {
+    "faces": {
+     "oct-tet 3-gon": 8
+    },
+    "corners": 6,
+    "volume": 1.3333333333333333
+   },
+   "half and half": {
+    "faces": {
+     "oct-tet 3-gon": 8
+    },
+    "corners": 6,
+    "volume": 1.0
+   },
+   "Delian bond": {
+    "faces": {
+     "oct-tet 3-gon": 8
+    },
+    "corners": 6,
+    "volume": 0.6666666666666666
+   },
+   "1/3 < t < 1 (t = 2/3)": {
+    "faces": {
+     "oct-tet 3-gon": 8
+    },
+    "corners": 6,
+    "volume": 0.16666666666666666
+   },
+   "equilateral (b)": {
+    "faces": {
+     "oct-tet 3-gon": 8
+    },
+    "corners": 6,
+    "volume": 0.09475708248730033
+   },
+   "t = 1": {
+    "faces": {},
+    "corners": 1,
+    "volume": 0.0
+   }
+  }
+ },
+ "named": {
+  "big": {
+   "x = 0": [
+    "regular octahedron (6 corners, 8 triangles, 12 equal edges)"
+   ],
+   "x = 1/tau": [
+    "Unborn Axes = T(1/tau) (paper #48 Theorem 4; here at a big site, by the swap x <-> 1/x); its 12 corners (1, 1/phi^2, 0) cyclic span the Unborn: 24 edges 1, 6 edges 1/phi (#48)",
+    "(edge lengths^2, app units: {\"1.000000\": 24, \"0.381966\": 6})"
+   ],
+   "x = 1": [
+    "Kelvin's truncated octahedron (24 corners, 8 hexagons + 6 squares, 36 equal edges)"
+   ],
+   "x = tau": [
+    "Icosaxes = T(tau) (paper #48 Theorem 4); its 12 corners (1, 1/phi, 0) cyclic span the regular icosahedron, edge 1 (20 triangles, 30 equal edges)",
+    "(edge lengths^2, app units: {\"1.000000\": 30})"
+   ],
+   "x = inf": [
+    "cuboctahedron (12 corners, 8 triangles + 6 squares, 24 equal edges)"
+   ]
+  },
+  "small": {
+   "x = 0": [],
+   "x = 1/tau": [],
+   "x = 1": [],
+   "x = tau": [],
+   "x = inf": []
+  },
+  "tet": {
+   "t = 0": [
+    "point"
+   ],
+   "equilateral (a)": [
+    "regular tetrahedron: every edge of both pieces equal"
+   ],
+   "t = 1/3": [
+    "octet tetrahedron (regular, edge sqrt2 = octet edge)"
+   ],
+   "half and half": [
+    "each kind fills half of space: 8 V_tet = 4 V_oct = 4 (cube of side 2)"
+   ],
+   "Delian bond": [
+    "Samson (#51): the cut cube, volume 2/3 = twice the octet tetrahedron (1/3)"
+   ],
+   "equilateral (b)": [
+    "cube with 4 cut corners: every edge of both pieces equal"
+   ],
+   "t = 1": [
+    "cube (8 corners, 6 squares)"
+   ]
+  },
+  "oct": {
+   "t = 0": [
+    "Kepler's rhombic dodecahedron (14 corners, 12 rhombi)"
+   ],
+   "equilateral (a)": [
+    "rhombic dodecahedron with 8 cut corners: every edge of both pieces equal"
+   ],
+   "t = 1/3": [
+    "octet octahedron (regular, edge sqrt2 = octet edge)"
+   ],
+   "half and half": [
+    "each kind fills half of space: 8 V_tet = 4 V_oct = 4 (cube of side 2)"
+   ],
+   "Delian bond": [
+    "Delilah (#51): the octahedron, volume 2/3 = half the octet octahedron (4/3); the octet octahedron shrunk by 2^(-1/3)"
+   ],
+   "equilateral (b)": [
+    "regular octahedron: every edge of both pieces equal"
+   ],
+   "t = 1": [
+    "point"
+   ]
+  }
+ },
+ "stops": {
+  "golden_s": {
+   "x = 0": "0",
+   "x = 1/tau": "(1/2 + sqrt(5)/2)**(-2)",
+   "x = 1 (Kelvin)": "1/2",
+   "x = tau": "1/(1/2 + sqrt(5)/2)",
+   "x = inf": "1"
+  },
+  "delian_t": {
+   "t = 0": "0",
+   "equilateral (a)": "-1/5 + 2*sqrt(6)/15",
+   "t = 1/3 (octet)": "1/3",
+   "half and half": "1 - 6**(1/3)/3",
+   "Delian bond": "1 - 2**(2/3)/3",
+   "equilateral (b)": "5/3 - 2*sqrt(2)/3",
+   "t = 1": "1"
+  }
+ }
+}

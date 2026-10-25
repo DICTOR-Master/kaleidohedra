@@ -1,0 +1,107 @@
+PASS  N1 d(slack_j)/d(w_i) = 1 and d(slack_j)/d(w_j) = -1, independent of p (raising w_i - w_j loosens every inequality)  
+PASS  N1 golden dDelta/dx = phi^2/(2(1+x)^2) > 0: big atoms grow, small atoms shrink as x rises  (1 + sqrt(5))**2/(8*(x + 1)**2)
+PASS  N1 Delian dDelta/dt = 3/4 > 0: tet atoms grow, oct atoms shrink as t rises  
+PASS  N1 golden weight in L/2 units: Delta/(phi/2)^2 = 2s - 1, s = x/(1+x)  
+PASS  N1 Delian weight in tetPiece units: 2 Delta = (3/4)(2t - 1)  
+PASS  N2 every closed-form half-space is the power bisector of a nearest neighbour (identity in the parameter)  
+PASS  N2 moving offsets are monotone: big 1+s up, small 2-s down (s = x/(1+x) up in x), tet 3t/4 up, oct 3(1-t)/4 down; fixed parts constant  
+PASS  N2 golden volume (4/3)(1+u)^3 - 4u^3 strictly increasing on [0,1] (u = s big, 1-s small): dV/du = 4(1+2u-2u^2), roots (1 +- sqrt3)/2 outside [0,1]  
+PASS  N2 golden V_big + V_small = 8 = L^3 for all s (what one kind gains, the other loses)  
+PASS  N2 Delian volumes continuous at t = 1/3 (1/3 and 4/3)  
+PASS  N2 Delian 8 V_tet + 4 V_oct = 8 (cube of side 2) on both regimes  
+PASS  N2 Delian volumes strictly monotone: V_tet' = 27t^2, 3a^2 > 0; V_oct' = -54t^2, -6a^2 < 0 (interior)  
+PASS  N3 golden stop s-values: x/(1+x) at x = 1/tau, 1, tau is 1/phi^2, 1/2, 1/phi  
+PASS  N3 golden stops strictly increasing  x = 0 0.000000, x = 1/tau 0.381966, x = 1 (Kelvin) 0.500000, x = tau 0.618034, x = inf 1.000000
+PASS  N3 Delian stops strictly increasing  t = 0 0.000000, equilateral (a) 0.126599, t = 1/3 (octet) 0.333333, half and half 0.394293, Delian bond 0.470866, equilateral (b) 0.723858, t = 1 1.000000
+PASS  N3 Delian bond: 1 - (2/3) 2^(-1/3) = 1 - 2^(2/3)/3  
+PASS  N3 big atom: every stop shell lies inside the next one outward (exact), and not on it  x = 0 -> x = 1/tau -> x = 1 (Kelvin) -> x = tau -> x = inf
+PASS  N3 small atom: every stop shell lies inside the next one outward (exact), and not on it  x = inf -> x = tau -> x = 1 (Kelvin) -> x = 1/tau -> x = 0
+PASS  N3 tet atom: every stop shell lies inside the next one outward (exact), and not on it  t = 0 -> equilateral (a) -> t = 1/3 (octet) -> half and half -> Delian bond -> equilateral (b) -> t = 1
+PASS  N3 oct atom: every stop shell lies inside the next one outward (exact), and not on it  t = 1 -> equilateral (b) -> Delian bond -> half and half -> t = 1/3 (octet) -> equilateral (a) -> t = 0
+PASS  N4 golden big x = 0: power cell from scratch = closed-form shell T  6 corners, faces {'big-small 3-gon': 8}
+PASS  N4 golden big x = 0: volume = (4/3)(1+u)^3 - 4u^3  1.333333
+PASS  N4 golden big x = 0: regular octahedron (6 corners, 8 triangles, 12 equal edges)  
+PASS  N4 golden big 0 < x < 1/tau (x = 1/3): power cell from scratch = closed-form shell T  24 corners, faces {'big-small 6-gon': 8, 'big-big 4-gon': 6}
+PASS  N4 golden big 0 < x < 1/tau (x = 1/3): volume = (4/3)(1+u)^3 - 4u^3  2.541667
+PASS  N4 golden big x = 1/tau: power cell from scratch = closed-form shell T  24 corners, faces {'big-small 6-gon': 8, 'big-big 4-gon': 6}
+PASS  N4 golden big x = 1/tau: volume = (4/3)(1+u)^3 - 4u^3  3.296181
+PASS  N4 golden big x = 1/tau: Unborn Axes = T(1/tau) (paper #48 Theorem 4; here at a big site, by the swap x <-> 1/x); its 12 corners (1, 1/phi^2, 0) cyclic span the Unborn: 24 edges 1, 6 edges 1/phi (#48)  
+PASS  N4 golden big x = 1/tau: (edge lengths^2, app units: {"1.000000": 24, "0.381966": 6})  
+PASS  N4 golden big x = 1: power cell from scratch = closed-form shell T  24 corners, faces {'big-small 6-gon': 8, 'big-big 4-gon': 6}
+PASS  N4 golden big x = 1: volume = (4/3)(1+u)^3 - 4u^3  4.000000
+PASS  N4 golden big x = 1: Kelvin's truncated octahedron (24 corners, 8 hexagons + 6 squares, 36 equal edges)  
+PASS  N4 golden big x = tau: power cell from scratch = closed-form shell T  24 corners, faces {'big-small 6-gon': 8, 'big-big 4-gon': 6}
+PASS  N4 golden big x = tau: volume = (4/3)(1+u)^3 - 4u^3  4.703819
+PASS  N4 golden big x = tau: Icosaxes = T(tau) (paper #48 Theorem 4); its 12 corners (1, 1/phi, 0) cyclic span the regular icosahedron, edge 1 (20 triangles, 30 equal edges)  
+PASS  N4 golden big x = tau: (edge lengths^2, app units: {"1.000000": 30})  
+PASS  N4 golden big tau < x < inf (x = 3): power cell from scratch = closed-form shell T  24 corners, faces {'big-small 6-gon': 8, 'big-big 4-gon': 6}
+PASS  N4 golden big tau < x < inf (x = 3): volume = (4/3)(1+u)^3 - 4u^3  5.458333
+PASS  N4 golden big x = inf: power cell from scratch = closed-form shell T  12 corners, faces {'big-small 3-gon': 8, 'big-big 4-gon': 6}
+PASS  N4 golden big x = inf: volume = (4/3)(1+u)^3 - 4u^3  6.666667
+PASS  N4 golden big x = inf: cuboctahedron (12 corners, 8 triangles + 6 squares, 24 equal edges)  
+PASS  N4 golden small x = 0: power cell from scratch = closed-form shell T  12 corners, faces {'small-small 4-gon': 6, 'small-big 3-gon': 8}
+PASS  N4 golden small x = 0: volume = (4/3)(1+u)^3 - 4u^3  6.666667
+PASS  N4 golden small 0 < x < 1/tau (x = 1/3): power cell from scratch = closed-form shell T  24 corners, faces {'small-small 4-gon': 6, 'small-big 6-gon': 8}
+PASS  N4 golden small 0 < x < 1/tau (x = 1/3): volume = (4/3)(1+u)^3 - 4u^3  5.458333
+PASS  N4 golden small x = 1/tau: power cell from scratch = closed-form shell T  24 corners, faces {'small-small 4-gon': 6, 'small-big 6-gon': 8}
+PASS  N4 golden small x = 1/tau: volume = (4/3)(1+u)^3 - 4u^3  4.703819
+PASS  N4 golden small x = 1: power cell from scratch = closed-form shell T  24 corners, faces {'small-small 4-gon': 6, 'small-big 6-gon': 8}
+PASS  N4 golden small x = 1: volume = (4/3)(1+u)^3 - 4u^3  4.000000
+PASS  N4 golden small x = tau: power cell from scratch = closed-form shell T  24 corners, faces {'small-small 4-gon': 6, 'small-big 6-gon': 8}
+PASS  N4 golden small x = tau: volume = (4/3)(1+u)^3 - 4u^3  3.296181
+PASS  N4 golden small tau < x < inf (x = 3): power cell from scratch = closed-form shell T  24 corners, faces {'small-small 4-gon': 6, 'small-big 6-gon': 8}
+PASS  N4 golden small tau < x < inf (x = 3): volume = (4/3)(1+u)^3 - 4u^3  2.541667
+PASS  N4 golden small x = inf: power cell from scratch = closed-form shell T  6 corners, faces {'small-big 3-gon': 8}
+PASS  N4 golden small x = inf: volume = (4/3)(1+u)^3 - 4u^3  1.333333
+PASS  N4 Delian tet t = 0: power cell from scratch is the single point at the site  
+PASS  N4 Delian tet 0 < t < 1/3 (t = 1/6): power cell from scratch = closed-form shell (krp-core piece)  4 corners, faces {'tet-oct 3-gon': 4}
+PASS  N4 Delian tet 0 < t < 1/3 (t = 1/6): volume = #51 closed form  0.041667
+PASS  N4 Delian tet equilateral (a): power cell from scratch = closed-form shell (krp-core piece)  4 corners, faces {'tet-oct 3-gon': 4}
+PASS  N4 Delian tet equilateral (a): volume = #51 closed form  0.018261
+PASS  N4 Delian tet equilateral (a): regular tetrahedron: every edge of both pieces equal  
+PASS  N4 Delian tet t = 1/3: power cell from scratch = closed-form shell (krp-core piece)  4 corners, faces {'tet-oct 3-gon': 4}
+PASS  N4 Delian tet t = 1/3: volume = #51 closed form  0.333333
+PASS  N4 Delian tet t = 1/3: octet tetrahedron (regular, edge sqrt2 = octet edge)  
+PASS  N4 Delian tet half and half: power cell from scratch = closed-form shell (krp-core piece)  16 corners, faces {'tet-tet 6-gon': 6, 'tet-oct 3-gon': 4}
+PASS  N4 Delian tet half and half: volume = #51 closed form  0.500000
+PASS  N4 Delian tet half and half: each kind fills half of space: 8 V_tet = 4 V_oct = 4 (cube of side 2)  
+PASS  N4 Delian tet Delian bond: power cell from scratch = closed-form shell (krp-core piece)  16 corners, faces {'tet-tet 6-gon': 6, 'tet-oct 3-gon': 4}
+PASS  N4 Delian tet Delian bond: volume = #51 closed form  0.666667
+PASS  N4 Delian tet Delian bond: Samson (#51): the cut cube, volume 2/3 = twice the octet tetrahedron (1/3)  
+PASS  N4 Delian tet 1/3 < t < 1 (t = 2/3): power cell from scratch = closed-form shell (krp-core piece)  16 corners, faces {'tet-tet 6-gon': 6, 'tet-oct 3-gon': 4}
+PASS  N4 Delian tet 1/3 < t < 1 (t = 2/3): volume = #51 closed form  0.916667
+PASS  N4 Delian tet equilateral (b): power cell from scratch = closed-form shell (krp-core piece)  16 corners, faces {'tet-tet 6-gon': 6, 'tet-oct 3-gon': 4}
+PASS  N4 Delian tet equilateral (b): volume = #51 closed form  0.952621
+PASS  N4 Delian tet equilateral (b): cube with 4 cut corners: every edge of both pieces equal  
+PASS  N4 Delian tet t = 1: power cell from scratch = closed-form shell (krp-core piece)  8 corners, faces {'tet-tet 4-gon': 6}
+PASS  N4 Delian tet t = 1: volume = #51 closed form  1.000000
+PASS  N4 Delian tet t = 1: cube (8 corners, 6 squares)  
+PASS  N4 Delian oct t = 0: power cell from scratch = closed-form shell (krp-core piece)  14 corners, faces {'oct-oct 4-gon': 12}
+PASS  N4 Delian oct t = 0: volume = #51 closed form  2.000000
+PASS  N4 Delian oct t = 0: Kepler's rhombic dodecahedron (14 corners, 12 rhombi)  
+PASS  N4 Delian oct 0 < t < 1/3 (t = 1/6): power cell from scratch = closed-form shell (krp-core piece)  30 corners, faces {'oct-tet 3-gon': 8, 'oct-oct 6-gon': 12}
+PASS  N4 Delian oct 0 < t < 1/3 (t = 1/6): volume = #51 closed form  1.916667
+PASS  N4 Delian oct equilateral (a): power cell from scratch = closed-form shell (krp-core piece)  30 corners, faces {'oct-tet 3-gon': 8, 'oct-oct 6-gon': 12}
+PASS  N4 Delian oct equilateral (a): volume = #51 closed form  1.963478
+PASS  N4 Delian oct equilateral (a): rhombic dodecahedron with 8 cut corners: every edge of both pieces equal  
+PASS  N4 Delian oct t = 1/3: power cell from scratch = closed-form shell (krp-core piece)  6 corners, faces {'oct-tet 3-gon': 8}
+PASS  N4 Delian oct t = 1/3: volume = #51 closed form  1.333333
+PASS  N4 Delian oct t = 1/3: octet octahedron (regular, edge sqrt2 = octet edge)  
+PASS  N4 Delian oct half and half: power cell from scratch = closed-form shell (krp-core piece)  6 corners, faces {'oct-tet 3-gon': 8}
+PASS  N4 Delian oct half and half: volume = #51 closed form  1.000000
+PASS  N4 Delian oct half and half: each kind fills half of space: 8 V_tet = 4 V_oct = 4 (cube of side 2)  
+PASS  N4 Delian oct Delian bond: power cell from scratch = closed-form shell (krp-core piece)  6 corners, faces {'oct-tet 3-gon': 8}
+PASS  N4 Delian oct Delian bond: volume = #51 closed form  0.666667
+PASS  N4 Delian oct Delian bond: Delilah (#51): the octahedron, volume 2/3 = half the octet octahedron (4/3); the octet octahedron shrunk by 2^(-1/3)  
+PASS  N4 Delian oct 1/3 < t < 1 (t = 2/3): power cell from scratch = closed-form shell (krp-core piece)  6 corners, faces {'oct-tet 3-gon': 8}
+PASS  N4 Delian oct 1/3 < t < 1 (t = 2/3): volume = #51 closed form  0.166667
+PASS  N4 Delian oct equilateral (b): power cell from scratch = closed-form shell (krp-core piece)  6 corners, faces {'oct-tet 3-gon': 8}
+PASS  N4 Delian oct equilateral (b): volume = #51 closed form  0.094757
+PASS  N4 Delian oct equilateral (b): regular octahedron: every edge of both pieces equal  
+PASS  N4 Delian oct t = 1: power cell from scratch is the single point at the site  
+PASS  N4 Delian bond: a = 3(1-t)/2 = 2^(-1/3) exactly (a^3 = 1/2)  E(Q(cbrt2):['0', '0', '1/2']~0.793700525984)
+PASS  N5 golden big: closed-form corners satisfy every power inequality (sites within D = 4) at s = 0 and 1; slack affine in s, so on all of [0, 1]  
+PASS  N5 golden small: same  
+PASS  N5 Delian tet: same on [0, 1/3] and [1/3, 1] (D = 3)  
+PASS  N5 Delian oct: same on [0, 1/3] and [1/3, 1] (D = 3)  
+106 PASS, 0 FAIL
