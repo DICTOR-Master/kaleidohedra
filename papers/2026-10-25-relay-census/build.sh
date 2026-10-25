@@ -35,5 +35,5 @@ open('paper.html', 'w').write(s)
 P
 rsync -a --delete --exclude pg ./ ${PRINT_NODE:-dicto-big-brother}:kres-tmp/relay-census/2026-10-25-relay-census/
 rsync -a ../paper.css ../dicto-logo.png ../print.mjs ${PRINT_NODE:-dicto-big-brother}:kres-tmp/relay-census/
-ssh ${PRINT_NODE:-dicto-big-brother} "cd ~/kres-tmp/relay-census && ln -sfn ~/kaleidohedra-check/node_modules node_modules && nice -n 10 node print.mjs 2026-10-25-relay-census ${3:-relay-census-draft.pdf} 'Bond hand-over census (working title)' '${2:-reserved}' ${4:-1}"
+ssh ${PRINT_NODE:-dicto-big-brother} "cd ~/kres-tmp/relay-census && ln -sfn ~/kaleidohedra-check/node_modules node_modules && nice -n 10 node print.mjs 2026-10-25-relay-census ${3:-relay-census-draft.pdf} 'The Global Web of Bonds' '${2:-reserved}' ${4:-1}"
 rsync -a ${PRINT_NODE:-dicto-big-brother}:kres-tmp/relay-census/2026-10-25-relay-census/${3:-relay-census-draft.pdf} ./

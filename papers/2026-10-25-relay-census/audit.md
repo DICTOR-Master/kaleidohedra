@@ -1,4 +1,4 @@
-# Number audit — relay-census paper draft (#53 proposed; DICTO decides), 2026-10-25
+# Number audit — "The Global Web of Bonds: How Bonds Hand Over Across Crystal Networks" (#53), 2026-10-25
 
 Every number in paper.src.html (text, tables, captions, figures, appendices) checked against the study
 `studies/2026-10-25-relay-census/` at commit e4dafa9 (README fix; data unchanged since f4592a6).
@@ -67,4 +67,6 @@ papers/2026-10-25-web-of-bonds/zenodo-state.json (reserved, `published: false`).
 
 | 54 | Wording (DICTO standing rule 2026-10-25): 11 replacements, "ask"/"question" → "proposed"/"proposal"/"open problem"/"library searches" (credit line, In short ×2, §1 hook and text ×2, §5 heading, Obs. 1 and 2, §6 hook, App. A); no numbers changed; grep -i "ask\|question" on paper.src.html: 0 hits | meta, In short, §1, §5, §6, App. A | rule message | PASS |
 
-**Result: 54 / 54 PASS** (v3; v2 of this audit, after the #52 concept DOI and the #37a/#40 citations). Open: Andreini [19] title not verified against a copy.
+| 55 | DICTO's decisions 2026-10-25: number #53 (no "proposed"), term "switch point" (no "DICTO decides"), title "The Global Web of Bonds: How Bonds Hand Over Across Crystal Networks" (no "working title"); title, h1, sub, meta, §2 definition, print footer; no numbers changed | head, §2 | coordinator message | PASS |
+
+**Result: 55 / 55 PASS** (v4; v3: v2 of this audit, after the #52 concept DOI and the #37a/#40 citations). Open: Andreini [19] title not verified against a copy.
