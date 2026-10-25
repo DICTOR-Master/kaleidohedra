@@ -1,0 +1,103 @@
+PASS st_ABC (-1/8, 3/8) site 0 (oct): Euler V - E + F = 2 6-12+8
+PASS st_ABC (-1/8, 3/8) site 1 (tet): Euler V - E + F = 2 16-24+10
+PASS st_ABC (-1/8, 3/8) site 2 (tet): Euler V - E + F = 2 16-24+10
+PASS st_ABC (-1/8, 3/8) site 3 (oct): Euler V - E + F = 2 6-12+8
+PASS st_ABC (-1/8, 3/8) site 4 (tet): Euler V - E + F = 2 16-24+10
+PASS st_ABC (-1/8, 3/8) site 5 (tet): Euler V - E + F = 2 16-24+10
+PASS st_ABC (-1/8, 3/8) site 6 (oct): Euler V - E + F = 2 6-12+8
+PASS st_ABC (-1/8, 3/8) site 7 (tet): Euler V - E + F = 2 16-24+10
+PASS st_ABC (-1/8, 3/8) site 8 (tet): Euler V - E + F = 2 16-24+10
+PASS st_ABC (-1/8, 3/8): distance bound (finite site list enough on the closed interval) D2=12
+PASS st_ABC (-1/8, 3/8): cell volumes add up to the lattice cell identically in lam sum = 1, cell = 1
+PASS st_ABC (-1/8, 3/8): every face shared face to face (same measure from both cells) 84 faces
+PASS st_ABC stop 3/8 site 1: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS st_ABC stop 3/8 site 2: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS st_ABC stop 3/8 site 4: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS st_ABC stop 3/8 site 5: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS st_ABC stop 3/8 site 7: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS st_ABC stop 3/8 site 8: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS st_ABC stop -1/8 site 0: limit of the interval = power cell from scratch 6 corners, 8 faces
+PASS st_ABC stop -1/8 site 1: limit of the interval = power cell from scratch 4 corners, 4 faces
+PASS st_ABC stop -1/8 site 2: limit of the interval = power cell from scratch 4 corners, 4 faces
+PASS st_ABC stop -1/8 site 3: limit of the interval = power cell from scratch 6 corners, 8 faces
+PASS st_ABC stop -1/8 site 4: limit of the interval = power cell from scratch 4 corners, 4 faces
+PASS st_ABC stop -1/8 site 5: limit of the interval = power cell from scratch 4 corners, 4 faces
+PASS st_ABC stop -1/8 site 6: limit of the interval = power cell from scratch 6 corners, 8 faces
+PASS st_ABC stop -1/8 site 7: limit of the interval = power cell from scratch 4 corners, 4 faces
+PASS st_ABC stop -1/8 site 8: limit of the interval = power cell from scratch 4 corners, 4 faces
+PASS st_ABC (-3/8, -1/8) site 0 (oct): Euler V - E + F = 2 30-48+20
+PASS st_ABC (-3/8, -1/8) site 1 (tet): Euler V - E + F = 2 4-6+4
+PASS st_ABC (-3/8, -1/8) site 2 (tet): Euler V - E + F = 2 4-6+4
+PASS st_ABC (-3/8, -1/8) site 3 (oct): Euler V - E + F = 2 30-48+20
+PASS st_ABC (-3/8, -1/8) site 4 (tet): Euler V - E + F = 2 4-6+4
+PASS st_ABC (-3/8, -1/8) site 5 (tet): Euler V - E + F = 2 4-6+4
+PASS st_ABC (-3/8, -1/8) site 6 (oct): Euler V - E + F = 2 30-48+20
+PASS st_ABC (-3/8, -1/8) site 7 (tet): Euler V - E + F = 2 4-6+4
+PASS st_ABC (-3/8, -1/8) site 8 (tet): Euler V - E + F = 2 4-6+4
+PASS st_ABC (-3/8, -1/8): distance bound (finite site list enough on the closed interval) D2=12
+PASS st_ABC (-3/8, -1/8): cell volumes add up to the lattice cell identically in lam sum = 1, cell = 1
+PASS st_ABC (-3/8, -1/8): every face shared face to face (same measure from both cells) 84 faces
+PASS st_ABC stop -3/8 site 0: limit of the interval = power cell from scratch 14 corners, 12 faces
+PASS st_ABC stop -3/8 site 3: limit of the interval = power cell from scratch 14 corners, 12 faces
+PASS st_ABC stop -3/8 site 6: limit of the interval = power cell from scratch 14 corners, 12 faces
+== ABC: 2 intervals, stops at -3/8, -1/8, 3/8
+      -3/8  3 x oct: 14 corners, faces [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], bonds {'oct': 12}
+      -3/8  6 x tet: vanished
+      -1/8  3 x oct: 6 corners, faces [3, 3, 3, 3, 3, 3, 3, 3], bonds {'tet': 8}
+      -1/8  6 x tet: 4 corners, faces [3, 3, 3, 3], bonds {'oct': 4}
+       3/8  3 x oct: vanished
+       3/8  6 x tet: 8 corners, faces [4, 4, 4, 4, 4, 4], bonds {'tet': 6}
+PASS st_AB (-1/8, 5/24) site 0 (oct): Euler V - E + F = 2 12-18+8
+PASS st_AB (-1/8, 5/24) site 1 (tet): Euler V - E + F = 2 19-30+13
+PASS st_AB (-1/8, 5/24) site 2 (tet): Euler V - E + F = 2 19-30+13
+PASS st_AB (-1/8, 5/24) site 3 (oct): Euler V - E + F = 2 12-18+8
+PASS st_AB (-1/8, 5/24) site 4 (tet): Euler V - E + F = 2 19-30+13
+PASS st_AB (-1/8, 5/24) site 5 (tet): Euler V - E + F = 2 19-30+13
+PASS st_AB (-1/8, 5/24): distance bound (finite site list enough on the closed interval) D2=12
+PASS st_AB (-1/8, 5/24): cell volumes add up to the lattice cell identically in lam sum = 1, cell = 1
+PASS st_AB (-1/8, 5/24): every face shared face to face (same measure from both cells) 68 faces
+PASS st_AB stop 5/24 site 0: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS st_AB stop 5/24 site 1: limit of the interval = power cell from scratch 16 corners, 13 faces
+PASS st_AB stop 5/24 site 2: limit of the interval = power cell from scratch 16 corners, 13 faces
+PASS st_AB stop 5/24 site 3: limit of the interval = power cell from scratch 8 corners, 6 faces
+PASS st_AB stop 5/24 site 4: limit of the interval = power cell from scratch 16 corners, 13 faces
+PASS st_AB stop 5/24 site 5: limit of the interval = power cell from scratch 16 corners, 13 faces
+PASS st_AB (5/24, 3/8) site 0 (oct): Euler V - E + F = 2 8-12+6
+PASS st_AB (5/24, 3/8) site 1 (tet): Euler V - E + F = 2 19-30+13
+PASS st_AB (5/24, 3/8) site 2 (tet): Euler V - E + F = 2 19-30+13
+PASS st_AB (5/24, 3/8) site 3 (oct): Euler V - E + F = 2 8-12+6
+PASS st_AB (5/24, 3/8) site 4 (tet): Euler V - E + F = 2 19-30+13
+PASS st_AB (5/24, 3/8) site 5 (tet): Euler V - E + F = 2 19-30+13
+PASS st_AB (5/24, 3/8): distance bound (finite site list enough on the closed interval) D2=12
+PASS st_AB (5/24, 3/8): cell volumes add up to the lattice cell identically in lam sum = 1, cell = 1
+PASS st_AB (5/24, 3/8): every face shared face to face (same measure from both cells) 64 faces
+PASS st_AB stop 3/8 site 1: limit of the interval = power cell from scratch 10 corners, 10 faces
+PASS st_AB stop 3/8 site 2: limit of the interval = power cell from scratch 10 corners, 10 faces
+PASS st_AB stop 3/8 site 4: limit of the interval = power cell from scratch 10 corners, 10 faces
+PASS st_AB stop 3/8 site 5: limit of the interval = power cell from scratch 10 corners, 10 faces
+PASS st_AB stop -1/8 site 0: limit of the interval = power cell from scratch 6 corners, 8 faces
+PASS st_AB stop -1/8 site 1: limit of the interval = power cell from scratch 4 corners, 4 faces
+PASS st_AB stop -1/8 site 2: limit of the interval = power cell from scratch 4 corners, 4 faces
+PASS st_AB stop -1/8 site 3: limit of the interval = power cell from scratch 6 corners, 8 faces
+PASS st_AB stop -1/8 site 4: limit of the interval = power cell from scratch 4 corners, 4 faces
+PASS st_AB stop -1/8 site 5: limit of the interval = power cell from scratch 4 corners, 4 faces
+PASS st_AB (-11/24, -1/8) site 0 (oct): Euler V - E + F = 2 24-36+14
+PASS st_AB (-11/24, -1/8) site 1 (tet): Euler V - E + F = 2 4-6+4
+PASS st_AB (-11/24, -1/8) site 2 (tet): Euler V - E + F = 2 4-6+4
+PASS st_AB (-11/24, -1/8) site 3 (oct): Euler V - E + F = 2 24-36+14
+PASS st_AB (-11/24, -1/8) site 4 (tet): Euler V - E + F = 2 4-6+4
+PASS st_AB (-11/24, -1/8) site 5 (tet): Euler V - E + F = 2 4-6+4
+PASS st_AB (-11/24, -1/8): distance bound (finite site list enough on the closed interval) D2=12
+PASS st_AB (-11/24, -1/8): cell volumes add up to the lattice cell identically in lam sum = 1, cell = 1
+PASS st_AB (-11/24, -1/8): every face shared face to face (same measure from both cells) 44 faces
+PASS st_AB stop -11/24 site 0: limit of the interval = power cell from scratch 12 corners, 8 faces
+PASS st_AB stop -11/24 site 3: limit of the interval = power cell from scratch 12 corners, 8 faces
+== AB: 3 intervals, stops at -11/24, -1/8, 5/24, 3/8
+    -11/24  2 x oct: 12 corners, faces [4, 4, 4, 4, 4, 4, 6, 6], bonds {'oct': 8}
+    -11/24  4 x tet: vanished
+      -1/8  2 x oct: 6 corners, faces [3, 3, 3, 3, 3, 3, 3, 3], bonds {'oct': 2, 'tet': 6}
+      -1/8  4 x tet: 4 corners, faces [3, 3, 3, 3], bonds {'oct': 3, 'tet': 1}
+      5/24  2 x oct: 8 corners, faces [4, 4, 4, 4, 4, 4], bonds {'tet': 6}
+      5/24  4 x tet: 16 corners, faces [3, 3, 3, 3, 3, 3, 4, 4, 4, 6, 6, 6, 6], bonds {'oct': 3, 'tet': 10}
+       3/8  2 x oct: vanished
+       3/8  4 x tet: 10 corners, faces [3, 3, 3, 3, 3, 3, 4, 4, 4, 6], bonds {'tet': 10}
