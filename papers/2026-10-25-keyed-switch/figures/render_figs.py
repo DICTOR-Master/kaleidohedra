@@ -35,7 +35,7 @@ else:
     for i, (fn, m, lab) in enumerate(row):
         x = -7.2 + i * 3.6; put(f'f2-{fn}.obj', m, (x, 0, 2.3), 3.2); label(lab, x, 0.55, 0.26)
     for i, (fn, m, lab) in enumerate(row2):
-        x = -7.2 + i * 3.6; put(f'f2-{fn}.obj', m, (x, 0, -1.9), 3.2); label(lab, x, -3.75, 0.26)
+        x = -7.2 + i * 3.6; put(f'f2-{fn}.obj', m, (x, 0, -1.9), 3.2, (math.radians(-28), math.radians(18), math.radians(52))); label(lab, x, -3.75, 0.26)
     label('top: octet (cubic stacking)', 6.6, 2.6, 0.3); label('bottom: twinned octet (hexagonal stacking)', 6.6, 1.9, 0.3)
     xs = 9.0
 sc.render.resolution_x = 2400
