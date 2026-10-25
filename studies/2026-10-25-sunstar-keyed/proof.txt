@@ -1,0 +1,7 @@
+dodecahedron (cube edge 2) volume = 2*sqrt(5) + 10 = 14.472135955
+one Euclid roof = 1/3 + sqrt(5)/3 = 2φ/3: True
+Dogstar = cube − 6 roofs = 6 - 2*sqrt(5) = 1.527864045;  4/φ²: True
+dodecahedron + Dogstar = 16 (two cubes of edge 2 = 16)
+app dodecahedron vs cube + roofs: |symmetric difference| = 1.11e-16
+cube − neighbours' roofs: volume 1.527864045 (exact 1.527864045), corners of the built solid 20
+app Dogstar corner points vs built corners: every app point is a built corner (max gap 4.7e-01); every built corner is an app point (max gap 2.3e-08)
