@@ -1,0 +1,88 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-26",
+ "access_right": "open",
+ "title": "The Rule of Halves: the Holes of Every Close-Packed Stacking",
+ "description": "<p><b>In short.</b> Stack layers of balls and the gaps between them are small octahedra and tetrahedra. Stack them in the cubic way (ABCABC…) or the hexagonal way (ABAB…) and these gaps are arranged differently; crystals also use countless mixed stackings, such as ABAC or ABCACB. In papers #51, #53 and #56 we slid one number, a weight, between the two kinds of gap and followed how space is shared out among them: the web of bonds. Here we follow it on every stacking at once, and find a simple rule. A tetrahedral gap always takes the piece it would have in the pure stacking of the layer it sits closest to. An octahedral gap sits half-way between two layers, and its piece is two halves: the top half is the top half of the cubic or the hexagonal piece, as the layer above decides, and the bottom half likewise from the layer below. So every stacking, of any length or pattern, is built from the two pure ones, and the kinds of piece are finite: we list them all, with exact volumes. Where a cubic layer meets a hexagonal one, octahedral pieces appear that are half cubic and half hexagonal, which DICTO calls the Janus c/h pieces ; two of them he named Chucky and Fang ; and its volume is exactly the mean of its two parents&#x27;. The proof is exact, with one bound done by hand. The rule was not found in the sources checked; its classical counterpart for the balls themselves, that each ball&#x27;s surroundings are set by its own layer, is the reason the h/c notation of crystallography exists.</p><p>The ideas are DICTO&#x27;s: following the web of bonds onto the other close-packed stackings (25 October 2026), and the names Chucky, Fang and Triskelion Tetrahedron, and the set name Janus c/h pieces. Computation, exact proofs and drafting with Claude (Anthropic); a first draft by a local open model (gpt-oss-120b) was used for the order of sections only.</p><p>Exact studies, checks, scripts and the appendix data attached (commit b24fd15d). Licence CC BY-SA 4.0. More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "close packing",
+  "stacking",
+  "polytypes",
+  "Jagodzinski",
+  "hcp",
+  "fcc",
+  "power diagram",
+  "Laguerre tessellation",
+  "octahedral hole",
+  "tetrahedral hole",
+  "rule of halves",
+  "Janus c/h pieces",
+  "Chucky",
+  "Fang",
+  "web of bonds"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23635823",
+   "relation": "continues",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1039/C6SM01180B",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1063/1.5052478",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1137/0216006",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23606828",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23631140",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "arXiv:1605.07160",
+   "relation": "references",
+   "scheme": "arxiv"
+  },
+  {
+   "identifier": "arXiv:math/9811071",
+   "relation": "references",
+   "scheme": "arxiv"
+  },
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ],
+ "notes": "#57 in DICTO's numbering (dictospheres.com). Names Chucky, Fang, Triskelion Tetrahedron and the set name Janus c/h pieces are DICTO's."
+}
