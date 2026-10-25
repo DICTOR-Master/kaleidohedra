@@ -47,3 +47,5 @@ stretch: −7/16, −1/4, −1/16, 1/300, 1/10, 1/4, 1/3):
 THEOREM CANDIDATE: every piece of every close-packed stacking is built from the two pure stackings by this rule of halves.
 To make airtight: congruence along whole stretches (corners affine in λ: same isometry at two λ per stretch ⇒ whole stretch; stops by
 continuity); fuller literature check.
+
+STRETCH-WIDE (exact_stretch.py → exact_stretch.txt): one layer symmetry g per site and stretch carries the corner FUNCTIONS (affine in λ) onto the pure piece's (tet: whole; oct: corners above / on / below the mid-plane): 176 PASS, 0 FAIL over 16 windows × 4 stretches (vanished cells skipped).
