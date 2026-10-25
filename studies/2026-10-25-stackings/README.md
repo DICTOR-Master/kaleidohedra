@@ -16,3 +16,12 @@ NO NEW PIECES — the local h/c rule survives its first test. Volumes of the thr
 Render: new-pieces.png (export_new.py, render_new.py).
 
 NAMES (DICTO 2026-10-25): DICTO Chucky (−3/8 octahedral piece, 19 corners), DICTO Fang (5/24 octahedral piece, 7 corners), DICTO Triskelion Tetrahedron, short TT (5/24 tetrahedral piece, 16 corners).
+
+CATALOGUE (catalogue.py → catalogue.txt/json; reach.py): no piece is wider than 1/√2, so a gap's sites are shaped only by the six layers
+around it; the 16 h/c windows of those layers were walked exactly (all PASS, 0 FAIL): 21 combinatorial piece types over all stops and
+stretches = every piece of every close-packed stacking. Congruence (congruent2.py, corner-distance fingerprints):
+- TT (ABAC tet at 5/24) is congruent to the cubic octet's tet piece at 5/24 (a member of #51's sliding Samson family) — not a new shape.
+- Fang (0.021824) and Chucky (0.705265) are congruent to nothing in AB or ABC; each volume is exactly the MEAN of the cubic and
+  hexagonal pieces at that λ (Fang: octahedron 0.017459 / rhombohedron 0.026189; Chucky: rhombic dodecahedron 0.707107 / AB 24-corner
+  0.703424). Hypothesis (half-and-half rule): an interface piece is half the cubic piece + half the hexagonal piece, glued on the
+  site's mid-plane. To check exactly next.

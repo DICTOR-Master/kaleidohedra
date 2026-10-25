@@ -1,0 +1,60 @@
+== window hhhh (word ABABAB): 4 stops, 117 PASS, 0 FAIL
+== window hhhc (word ABABAC): 4 stops, 125 PASS, 0 FAIL
+== window hhch (word ABABCB): 4 stops, 125 PASS, 0 FAIL
+== window hhcc (word ABABCAB): 4 stops, 143 PASS, 0 FAIL
+== window hchh (word ABACAC): 4 stops, 125 PASS, 0 FAIL
+== window hchc (word ABACAB): 4 stops, 125 PASS, 0 FAIL
+== window hcch (word ABACBC): 4 stops, 121 PASS, 0 FAIL
+== window hccc (word ABACBAB): 4 stops, 143 PASS, 0 FAIL
+== window chhh (word ABCBCB): 4 stops, 125 PASS, 0 FAIL
+== window chhc (word ABCBCAB): 4 stops, 143 PASS, 0 FAIL
+== window chch (word ABCBAB): 4 stops, 125 PASS, 0 FAIL
+== window chcc (word ABCBAC): 4 stops, 121 PASS, 0 FAIL
+== window cchh (word ABCACAB): 4 stops, 143 PASS, 0 FAIL
+== window cchc (word ABCACB): 4 stops, 121 PASS, 0 FAIL
+== window ccch (word ABCABAB): 4 stops, 143 PASS, 0 FAIL
+== window cccc (word ABCABC): 3 stops, 78 PASS, 0 FAIL
+
+DISTINCT PIECES (central-gap sites over all 16 windows):
+oct | 6 corners | faces [3, 3, 3, 3, 3, 3, 3, 3] | bonds {'oct': 2, 'tet': 6}
+    seen at: stop -1/8
+oct | 6 corners | faces [3, 3, 3, 3, 3, 3, 3, 3] | bonds {'oct': 1, 'tet': 7}
+    seen at: stop -1/8
+oct | 6 corners | faces [3, 3, 3, 3, 3, 3, 3, 3] | bonds {'tet': 8}
+    seen at: stop -1/8; stop 5/24; stretch (-1/8, 3/8); stretch (-1/8, 5/24); stretch (5/24, 3/8)
+oct | 7 corners | faces [3, 3, 3, 3, 4, 4, 4] | bonds {'tet': 7}
+    seen at: stop 5/24; stretch (5/24, 3/8)
+oct | 8 corners | faces [4, 4, 4, 4, 4, 4] | bonds {'tet': 6}
+    seen at: stop 5/24; stretch (5/24, 3/8)
+oct | 9 corners | faces [3, 3, 3, 3, 3, 5, 5, 5] | bonds {'oct': 1, 'tet': 7}
+    seen at: stretch (-1/8, 5/24)
+oct | 12 corners | faces [4, 4, 4, 4, 4, 4, 6, 6] | bonds {'oct': 8}
+    seen at: stop -11/24
+oct | 12 corners | faces [3, 3, 5, 5, 5, 5, 5, 5] | bonds {'oct': 2, 'tet': 6}
+    seen at: stretch (-1/8, 5/24)
+oct | 14 corners | faces [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4] | bonds {'oct': 12}
+    seen at: stop -3/8
+oct | 19 corners | faces [3, 3, 3, 4, 4, 4, 5, 5, 5, 5, 5, 5, 9] | bonds {'oct': 10, 'tet': 3}
+    seen at: stop -3/8
+oct | 24 corners | faces [3, 3, 3, 3, 3, 3, 6, 6, 6, 6, 6, 6, 9, 9] | bonds {'oct': 8, 'tet': 6}
+    seen at: stop -3/8; stretch (-11/24, -1/8); stretch (-3/8, -1/8)
+oct | 27 corners | faces [3, 3, 3, 3, 3, 3, 3, 6, 6, 6, 6, 6, 6, 6, 6, 6, 9] | bonds {'oct': 10, 'tet': 7}
+    seen at: stretch (-3/8, -1/8)
+oct | 30 corners | faces [3, 3, 3, 3, 3, 3, 3, 3, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6] | bonds {'oct': 12, 'tet': 8}
+    seen at: stretch (-3/8, -1/8)
+tet | 4 corners | faces [3, 3, 3, 3] | bonds {'oct': 3, 'tet': 1}
+    seen at: stop -1/8; stop -3/8; stretch (-11/24, -1/8); stretch (-3/8, -1/8)
+tet | 4 corners | faces [3, 3, 3, 3] | bonds {'oct': 4}
+    seen at: stop -1/8; stretch (-3/8, -1/8)
+tet | 8 corners | faces [4, 4, 4, 4, 4, 4] | bonds {'tet': 6}
+    seen at: stop 3/8
+tet | 10 corners | faces [3, 3, 3, 3, 3, 3, 4, 4, 4, 6] | bonds {'tet': 10}
+    seen at: stop 3/8
+tet | 16 corners | faces [3, 3, 3, 3, 3, 3, 4, 4, 4, 6, 6, 6, 6] | bonds {'oct': 3, 'tet': 10}
+    seen at: stop 5/24
+tet | 16 corners | faces [3, 3, 3, 3, 6, 6, 6, 6, 6, 6] | bonds {'oct': 4, 'tet': 6}
+    seen at: stop 5/24; stretch (-1/8, 3/8); stretch (-1/8, 5/24); stretch (5/24, 3/8)
+tet | 19 corners | faces [3, 3, 3, 3, 3, 3, 5, 5, 5, 6, 6, 6, 9] | bonds {'oct': 3, 'tet': 10}
+    seen at: stretch (-1/8, 5/24)
+tet | 19 corners | faces [4, 4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6] | bonds {'oct': 3, 'tet': 10}
+    seen at: stretch (5/24, 3/8)
