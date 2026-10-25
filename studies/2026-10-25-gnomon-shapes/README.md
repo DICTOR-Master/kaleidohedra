@@ -43,7 +43,7 @@ gnomon of I. For steps 1–10 the new whole is similar to no station of the cycl
 tested exactly not similar; all other stations differ in corner count), so they are not gnomons in the classical sense.
 
 **Shapes across the cycle (proved facts only).** No piece kind of one step is similar to a piece kind of another step (exact test over all
-16 kinds, incl. the 20 core Cleo-Icos of I); the only similar pair is the spike and the core Cleo-Ico (congruent, k = 1, as #35 states).
+15 kinds, incl. the 20 core Cleo-Icos of I); the only similar pair is the spike and the core Cleo-Ico (congruent, k = 1, as #35 states).
 No piece is similar to a station (only the OG → rTI hexagon piece shares a corner count, 12, with I; not similar). The added region of
 each step is a shell around the earlier station (or, in steps 1, 4, 6–9, a set of separate pieces), not similar to any station. Pieces
 recur only as *types* (pyramids in steps 1, 2, 7, 8, 9; tetrahedra in 1, 2, 6), never as the same shape at another size. Four steps have
