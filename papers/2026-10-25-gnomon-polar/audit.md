@@ -85,3 +85,14 @@ Wording v2: "proposed", "theorised", "concluded" ("the nature of the beast" — 
 | 57 | turn: linear ratio φ³, volume ratio (φ³)³ = φ⁹ | C (new check) | PASS |
 | 58 | Thm A (ii) adds "a solid gnomon" | wording | done |
 | 59 | checks.py 27 PASS; total 63 + 4 + 9 + 1 + 15 + 27 = 119 | checks.txt | PASS |
+
+## Version 5 (2026-10-25): six fixes from the local 120B read
+
+| # | Change | Source | Result |
+|---|---|---|---|
+| 60 | new Table 1 (symbol, name, description, paper) for the twelve stations; old Tables 1–3 renumbered 2–4, all references updated | Progenitors README (OG polar of H at 3φ²/4; rTI = H ∩ OG, corners on TI's 90 edges, at midpoints by edge symmetry; jtI = hull(TI ∪ PD), PD in ρ² = 9/4 = TI's midsphere; M = hull of RT's 12 five-fold corners and I·φ³'s 20 face centres), #35 (Cleo star, D′ = (2/3)D), #28 (Shields) | PASS |
+| 61 | Lemma: next turn = this turn × φ³ (rules refer only to I and earlier stations about the centre; fixed factors, polars in TI's midsphere, hulls, intersections, cones; commute with scaling; I·φ³ = φ³·I); volumes × φ⁹ | [2, 3, 5]; C check (φ³)³ = φ⁹ | PASS |
+| 62 | theorem labels "exact, computer-verified in exact arithmetic"; human reason for Thm A (i): corner counts settle all but the 3 pairs among Cleo star, RT, M (32 corners each) | S §1, §5 | PASS |
+| 63 | "Terms and conventions": ℚ(√5) arithmetic; scale (Part A I edge 1/φ, volume (5/12)(√5 − 1); Part B icosahedron edge 1, lattice φℤ³); T(x) = perms (±(1 + x), ±x, 0), Koca [9], fill for every x [1, Thm 4]; hull-and-remainder polar defined | checks.py (edge 1/φ); #48 Thm 4; keyed_polar_exact.py frame | PASS |
+| 64 | Tricap volume cited to #48 [1], DICTO DOI 10.5281/zenodo.23596362 | #48 §2 "(3 − √5)/24" | PASS |
+| 65 | Thm B (i) note: elementary; not found in the sources searched; likely known (Wenninger [11]) | wording | done |
