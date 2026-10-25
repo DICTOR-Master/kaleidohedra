@@ -1,0 +1,46 @@
+THE RULE OF HALVES FOR CLOSE-PACKED STACKINGS (draft proof for referee attack, DICTO with Claude, 25 October 2026)
+
+SET-UP. Unit balls, centres in close-packed layers (triangular lattices, spacing 1) at heights k·d, d = sqrt(2/3); layer k sits on one of
+the positions A, B, C (no two consecutive layers equal); the stacking is any such sequence (periodic or not). Each layer is h (hexagonal)
+if its two neighbours sit on the same position, c (cubic) otherwise. Sites: in the gap between layers k (position X) and k+1 (position Y)
+there is one octahedral hole over the third position Z at height (k+1/2)d, a tetrahedral hole over X at (k+3/4)d and one over Y at
+(k+1/4)d. Weights: w_oct = 0, w_tet = λ. The power diagram assigns to site p the cell {x : |x−p|^2 − w_p ≤ |x−q|^2 − w_q for all q}.
+We consider −11/24 ≤ λ ≤ 3/8 (outside this range one kind of cell is empty). Pure stackings: ABC... (all c, "cubic octet") and AB...
+(all h, "twinned octet").
+
+THEOREM. For every stacking and every λ in the range:
+(a) the cell of a tetrahedral site is congruent to the cell of a tetrahedral site of the pure stacking of the type (c or h) of the layer
+    nearest to the site (the tetrahedral hole over X at (k+3/4)d is nearest to layer k+1, and vice versa);
+(b) the cell of an octahedral site, cut by the horizontal plane through the site, consists of an upper half congruent to the upper half of
+    an octahedral cell of the pure stacking of the type of layer k+1, and a lower half congruent to the lower half of an octahedral cell of
+    the pure stacking of the type of layer k.
+
+PROOF.
+Step 1 (locality). Claim: the cells of the sites of gap k are determined by the six layers k−2, ..., k+3.
+ (i) Computation (exact, rational arithmetic): for each of the 16 possible type-patterns (h/c) of layers k−1..k+2 (which with relabelling
+     fix layers k−2..k+3) we build a periodic stacking containing those six layers, and compute the power diagram exactly on the whole λ-range
+     (it changes combinatorially only at finitely many λ; on each open stretch every cell corner is an affine function of λ; the program
+     verifies on each stretch that its finite site list suffices and that cell volumes add up to the lattice cell). We check: every corner of
+     every cell of gap k lies within squared distance 1/2 of its site (it suffices to check the stretch ends, since the squared distance of an
+     affine path is convex). Result: holds in all 16 cases, every stretch.
+ (ii) Hand bound: a site q of a gap three or more gaps away from gap k is at height distance ≥ 2.5 d from every site p of gap k, so
+     |q−p| ≥ 2.5d, and |w_p − w_q| ≤ 11/24. The bisector (radical plane) of p and q is at distance (|q−p|^2 + w_p − w_q)/(2|q−p|) ≥
+     ((2.5d)^2 − 11/24)/(2·2.5d) from p (the function t ↦ (t^2 − c)/(2t) is increasing), whose square is 23763/28800 > 1/2.
+ (iii) Convexity: let C_local be the cell of p computed from the sites of gaps k−2..k+2 only, C_W its cell in the periodic test stacking,
+     C_S its cell in an arbitrary stacking with the same six layers. All far constraints miss the closed ball of radius sqrt(1/2) about p.
+     C_W lies in that ball (i). Inside the ball C_W and C_local coincide; C_W ⊆ C_local; since ∂C_W ⊆ ∂C_local within the ball and both
+     are convex, C_W = C_local. The same argument gives C_S = C_local. Hence the cells of gap k depend only on the six layers.
+Step 2 (the 16 windows). For each window, each stretch, each site of gap k: one symmetry g of the layer lattice about the site's vertical
+ axis (the 12 plane symmetries of the triangular lattice, with or without the reflection z ↦ −z: 24 maps) carries the corner functions
+ (affine in λ) of the cell (a) onto those of a pure tetrahedral cell, of the stated type: 176 cases out of 176 (all sites, all stretches,
+ vanished cells skipped); (b) for octahedral sites, the corner functions above, on and below the mid-plane, and the points where edges
+ cross the mid-plane (exact rational functions of λ), onto those of the stated pure half: 160 out of 160. Equality of affine corner
+ functions gives equality of the cells (convex hulls) for every λ in the stretch; equality of corners on one side plus the section gives
+ equality of the halves.
+Step 3 (stops). At the finitely many stop values the cells are the limits of the cells on the adjacent stretches (checked: the limit equals
+ the cell computed directly at the stop), so the congruences persist.
+
+LIMITS STATED. The range −11/24 ≤ λ ≤ 3/8. In Step 2(b) the side of each corner is compared at one λ per stretch; no stretch needed to be
+split (no corner crossed the mid-plane inside a stretch for the mixed cells). Floating-point arithmetic is used nowhere in Steps 1(i),
+2, 3. COROLLARY: Fang and Chucky (new pieces of the double-hexagonal stacking ABAC) are each a cubic half glued to a hexagonal half;
+the tetrahedral piece TT is the cubic piece; the catalogue of all pieces of all close-packed stackings is finite (21 combinatorial types).
