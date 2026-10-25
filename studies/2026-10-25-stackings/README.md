@@ -31,3 +31,9 @@ its site. VOLUME form holds at every λ tested (−3/8, −1/4, 0.1, 5/24, both 
 matching half of the cubic (ABC) or hexagonal (AB) piece — hence Fang and Chucky are exact means. SHAPE form NOT confirmed: the halves'
 corner-distance fingerprints mostly do not match (24 matched, 76 not), possibly a cutting artefact (extra points on the cut plane) or a
 real difference. If shapes differ while volumes always match: a Cavalieri-type theorem — to investigate next session.
+
+SLICES (slices.py → slices.txt): horizontal slices of the ABAC octahedral piece vs the cubic (ABC) and hexagonal (AB) pieces at the same
+height from the site, λ = 5/24, 0.1, −1/4. At almost every height the slice AREA is the same in all three stackings (6 digits), even
+where the polygons differ (e.g. 6 vs 8 vs 11 sides); some slices are congruent, many only equal in area; areas differ only near the far
+ends (where ABC and AB themselves differ). Cavalieri-type law: slice areas ignore the stacking almost everywhere. Lead for next session:
+find the reason (2D power diagram of each horizontal plane? weights w − (z − z_q)²) and prove it exactly.
