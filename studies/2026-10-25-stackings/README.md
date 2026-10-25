@@ -60,3 +60,14 @@ PROOF CLOSED (exact_proof2.py → exact_proof2.txt):
 (3) Stops: limits of the stretches (census check "limit of the interval = power cell from scratch").
 Known limits of the argument (to state in the paper): the walk range −11/24 ≤ λ ≤ 3/8; sides of the reference halves compared at the
 midpoint of each (unsplit) stretch; independent referee read still to do.
+
+NIGHT RESULTS (night-57, night-57b):
+- exact_named.txt: Chucky = 383√2/768 (cubic rhombic dodecahedron √2/2, hexagonal 191√2/384), Fang = 5√2/324 (cubic octahedron √2/81,
+  hexagonal rhombohedron √2/54); each EXACTLY the mean (difference 0).
+- appendix.json / appendix.log: 23 entries (piece type × stretch × rule) with exact corner functions and volume polynomials — the
+  appendix of #57. Mixed octahedral stretch families: 19-corner (Chucky's family), 27-corner, 9-corner, 7-corner (Fang's family).
+- halves.png: Fang and Chucky, hexagonal top (blue) + cubic bottom (gold), together and drawn apart (minor: Chucky top and mark
+  slightly cropped — re-frame for the paper).
+- hales-read120.md: the 120b read Hales's arXiv math/9811071, 9811073, 9811077 excerpts (fcc/hcp/stacking/octahedra paragraphs): none
+  of the passages addresses hole cells of mixed stackings or halves; they concern scores of decomposition stars (fcc, hcp only).
+  (The model answered in referee format; its conclusion on the question: no such statement.)
