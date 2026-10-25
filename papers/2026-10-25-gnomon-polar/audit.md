@@ -42,3 +42,22 @@ Every number in paper.src.html checked. Sources: **G** = studies/2026-10-24-gnom
 
 Notes: saved gnomon-table.txt has one extra line ("RT/I x phi^2 = 81 + 0 sqrt5") not printed by gnomon_table.py; the value is check #9.
 Wording (re-audited v1b): "DICTO proposed that the polar has no spikes over the dents" (was "doubted"); grep doubt|ask|question|wonder: only the tool name ask-library remains; no "asked"/"question" for DICTO's ideas; no "new"; Júlia Pimentel credited as "the gnomon method as described to DICTO" (no published source recorded — flagged for DICTO).
+
+## Version 2 (2026-10-25): Part A rebuilt on studies/2026-10-25-gnomon-shapes (**S** = gnomon-shapes.txt / README; re-run on dicto-big-brother, output IDENTICAL, 63 PASS)
+
+| # | Number / claim in v2 | Where | Source | Result |
+|---|---|---|---|---|
+| 34 | only similar stations I ~ I·φ³, linear ratio φ³ = 2 + √5, volume φ⁹ | Thm A (i), abstract | S §5, PASS "only similar pair of stations" | PASS |
+| 35 | corner counts: I, I·φ³ 12; Cleo star, RT, M 32; others distinct | proof Thm A | S §1 (12,32,20,30,102,90,60,80,92,32,32,12) | PASS |
+| 36 | Thm A (iv) scope "within the turn from I"; (v) every whole turn from any station is a gnomon (step 12 → Cleo star·φ³ ~ Cleo star) | Thm A | S §5 step 12 line | PASS (scope narrowed vs coordinator wording: in the endless cycle the first step of the next turn also makes a whole similar to an earlier station) |
+| 37 | Table 3 piece counts 20; 12 + 30; 12; 12; 60 + 20; 60; 20; 12; 60; 30; 60 | Table 3 | S §2, README table | PASS |
+| 38 | Table 3 face/corner descriptions (15 corners 5 tri + 7 pent; 11 corners 1 pent + 5 quad + 5 tri; 8 corners 5 quad + 2 tri; 2 hexagons + 6 quads; 6 corners 1 rhombus + 6 tri; bipyramid 6 tri) | Table 3 | S §2 face counts | PASS |
+| 39 | separate parts 20, 1, 1, 12, 1, 60, 20, 12, 12, 1, 1 | Table 3 | S §2 "region = … connected part(s)"; README (step 1: 20 parts, step 2: one gap per #35) | PASS |
+| 40 | added volumes per step (= Table 2) | Table 3 | S §2 = C | PASS |
+| 41 | single pieces: I/20; (1/80)φ⁻²I; (9/10)φ⁻⁴I; (1/60)φ⁷I | Table 3, §4 | S §2 | PASS |
+| 42 | no piece kind similar across steps except spike = core Cleo-Ico (k = 1); no piece similar to a station; types: pyramids in 1, 2, 7, 8, 9, tetrahedra in 1, 2, 6 | §3 Shapes | S §3, §4, README | PASS |
+| 43 | check total 63 + 4 + 9 + 1 + 15 + 26 = 118 | abstract, App. | outputs | PASS |
+| 44 | sources [12] Mix Vale 2026-06-22, [13] Portal Tela 2026-05-12, journal not named | credit, refs | S README (as recorded; not opened here) | PASS (as recorded) |
+| 45 | Heron's general definition quoted in Heath's commentary on II Def. 2 | §1, [7] | Heath vol. I not in the library; not read here — flagged | OPEN for DICTO |
+
+Wording v2: "proposed", "theorised", "concluded" ("the nature of the beast" — DICTO concluded the volume reading missed the shape); no asked/question/wonder/doubt; unnamed pieces marked "(unnamed; DICTO decides)"; DICTO's names kept exactly (Cleo-Ico, Shields, inward pentagonal pyramids, valley tetrahedra). Number "#54" (no "proposed"). Figure 2 legend reworded to "added volume" (classical gnomon = shape).
