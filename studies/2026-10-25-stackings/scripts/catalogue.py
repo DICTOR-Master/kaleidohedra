@@ -18,25 +18,26 @@ def word_for(hc):                 # hc: 4 letters h/c for layers k−1..k+2 → 
         w.append(nxt)
     if w[-1] == w[0]: w.append(sorted({'A', 'B', 'C'} - {w[-1]})[0])   # ends clash: one more layer closes the cycle
     return ''.join(w)
-cat, rows = {}, []
-for hc in itertools.product('hc', repeat=4):
-    hc = ''.join(hc); word = word_for(hc); key = 'cat_' + hc
-    NETS[key] = net_for(word); census.NETS[key] = NETS[key]
-    C = census.Census(key); d = C.walk(); fails = [c for c in C.checks if c[0] != 'PASS']
-    central = {3 * 2, 3 * 2 + 1, 3 * 2 + 2}    # the three sites of gap k = 2 (layers 2→3 of the word: window layers k, k+1)
-    seen = []
-    for rec, kind in [(s, 'stop') for s in d['stops']] + [(iv, 'stretch') for iv in d['intervals']]:
-        where = rec['lam'] if kind == 'stop' else f"({rec['lo']}, {rec['hi']})"
-        for x in rec['sites']:
-            if x['i'] not in central or x.get('vanished'): continue
-            sig = f"{x['kind']} | {x['corners']} corners | faces {sorted(x['face_sizes'])} | bonds {x['bonds']}"
-            seen.append((kind, where, sig)); cat.setdefault(sig, set()).add(f"{kind} {where} [{hc}]")
-    rows.append(f"== window {hc} (word {word}): {len(d['stops'])} stops, {len(C.checks) - len(fails)} PASS, {len(fails)} FAIL")
-    print(rows[-1], flush=True)
-out = {sig: sorted(v) for sig, v in cat.items()}
-json.dump(out, open('../catalogue.json', 'w'), indent=1)
-with open('../catalogue.txt', 'w') as fh:
-    fh.write('\n'.join(rows) + '\n\nDISTINCT PIECES (central-gap sites over all 16 windows):\n')
-    for sig in sorted(out, key=lambda s: (s.split('|')[0], int(s.split('|')[1].split()[0]))):
-        fh.write(f"{sig}\n    seen at: {'; '.join(sorted({w.split(' [')[0] for w in out[sig]}))}\n")
-print(f'{len(out)} distinct pieces')
+if __name__ == '__main__':
+    cat, rows = {}, []
+    for hc in itertools.product('hc', repeat=4):
+        hc = ''.join(hc); word = word_for(hc); key = 'cat_' + hc
+        NETS[key] = net_for(word); census.NETS[key] = NETS[key]
+        C = census.Census(key); d = C.walk(); fails = [c for c in C.checks if c[0] != 'PASS']
+        central = {3 * 2, 3 * 2 + 1, 3 * 2 + 2}    # the three sites of gap k = 2 (layers 2→3 of the word: window layers k, k+1)
+        seen = []
+        for rec, kind in [(s, 'stop') for s in d['stops']] + [(iv, 'stretch') for iv in d['intervals']]:
+            where = rec['lam'] if kind == 'stop' else f"({rec['lo']}, {rec['hi']})"
+            for x in rec['sites']:
+                if x['i'] not in central or x.get('vanished'): continue
+                sig = f"{x['kind']} | {x['corners']} corners | faces {sorted(x['face_sizes'])} | bonds {x['bonds']}"
+                seen.append((kind, where, sig)); cat.setdefault(sig, set()).add(f"{kind} {where} [{hc}]")
+        rows.append(f"== window {hc} (word {word}): {len(d['stops'])} stops, {len(C.checks) - len(fails)} PASS, {len(fails)} FAIL")
+        print(rows[-1], flush=True)
+    out = {sig: sorted(v) for sig, v in cat.items()}
+    json.dump(out, open('../catalogue.json', 'w'), indent=1)
+    with open('../catalogue.txt', 'w') as fh:
+        fh.write('\n'.join(rows) + '\n\nDISTINCT PIECES (central-gap sites over all 16 windows):\n')
+        for sig in sorted(out, key=lambda s: (s.split('|')[0], int(s.split('|')[1].split()[0]))):
+            fh.write(f"{sig}\n    seen at: {'; '.join(sorted({w.split(' [')[0] for w in out[sig]}))}\n")
+    print(f'{len(out)} distinct pieces')

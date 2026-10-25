@@ -37,3 +37,13 @@ height from the site, λ = 5/24, 0.1, −1/4. At almost every height the slice A
 where the polygons differ (e.g. 6 vs 8 vs 11 sides); some slices are congruent, many only equal in area; areas differ only near the far
 ends (where ABC and AB themselves differ). Cavalieri-type law: slice areas ignore the stacking almost everywhere. Lead for next session:
 find the reason (2D power diagram of each horizontal plane? weights w − (z − z_q)²) and prove it exactly.
+
+EXACT HALF-PIECE RULE (exact_halves.py, exact_tets.py → exact_tets.txt; rational arithmetic, census engine; 16 windows × λ in every
+stretch: −7/16, −1/4, −1/16, 1/300, 1/10, 1/4, 1/3):
+- octahedral pieces: 0 failures — each is a top half + bottom half, each congruent to the matching half of the pure cubic (ABC) or pure
+  hexagonal (AB) piece, chosen by the layer on that side;
+- tetrahedral pieces: 208/208 — each is a whole pure piece, cubic or hexagonal, chosen by its NEAREST layer (rule B; first guess A
+  had the layers swapped: 104/104).
+THEOREM CANDIDATE: every piece of every close-packed stacking is built from the two pure stackings by this rule of halves.
+To make airtight: congruence along whole stretches (corners affine in λ: same isometry at two λ per stretch ⇒ whole stretch; stops by
+continuity); fuller literature check.
