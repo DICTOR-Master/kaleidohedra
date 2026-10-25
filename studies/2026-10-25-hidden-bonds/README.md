@@ -14,3 +14,4 @@
   (dodeca 14.472 + Dogstar 1.528 = 16 = two cubes, edge 2).
 
 NAMES (DICTO 2026-10-25): the gyrated pair = DICTO Sonsam (tet-hole piece) and DICTO Lahdeli (oct-hole piece); keyed: DICTO Sonsam-K, DICTO Lahdeli-K.
+Keyed choice (DICTO 2026-10-25): keying 1 (tet->oct A, K = 0.8) = DICTO Sonsam-K + DICTO Lahdeli-K (files kg-TOA-*.obj).
