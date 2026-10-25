@@ -74,3 +74,14 @@ Wording v2: "proposed", "theorised", "concluded" ("the nature of the beast" — 
 | 51 | cone-section sentence (shape forced by the two nested solids; cones over all faces divide the shell exactly) | S README l.65; gnomon-shapes.txt "pieces sum to layer" PASS | PASS |
 | 52 | Johnson 1966, Can. J. Math. 18, 169–200, doi:10.4153/CJM-1966-021-8 | Crossref 2026-10-25 | PASS |
 | 53 | credit "the names Julias and Pimentels are DICTO's" | coordinator | done |
+
+## Version 4 (2026-10-25): honorary naming paragraph; "solid gnomon" chain
+
+| # | Change / number | Source | Result |
+|---|---|---|---|
+| 54 | "The names" paragraph (Julias, Pimentels in tribute to Júlia Pimentel; method as reported [12, 13]; names DICTO's) | coordinator, DICTO approved | done |
+| 55 | "solid gnomon" stated as our descriptive term, no coinage claim | coordinator | done |
+| 56 | n² + n + (n + 1) = (n + 1)²; n³ + 3n² + 3n + 1 = (n + 1)³ (3 slabs n×n×1, 3 rods n×1×1, 1 corner cube: 3n² + 3n + 1) | C (new check, symbolic) | PASS |
+| 57 | turn: linear ratio φ³, volume ratio (φ³)³ = φ⁹ | C (new check) | PASS |
+| 58 | Thm A (ii) adds "a solid gnomon" | wording | done |
+| 59 | checks.py 27 PASS; total 63 + 4 + 9 + 1 + 15 + 27 = 119 | checks.txt | PASS |

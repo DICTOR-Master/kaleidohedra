@@ -22,6 +22,7 @@ PASS exactly 4 of the 11 gnomons are rational·φ^k·I: star−I = I, TI−rTI =
    I·φ³ − M = (29/2 + 13/2√5)·I ≈ 29.0344 I   form (Fraction(1, 1), 7)
 PASS gnomons add up to one turn: sum = (φ⁹ − 1)·I
 PASS Júlia step check: (n+1)² = n² + n + (n+1) (symbolic)
+PASS cube: n³ + 3n² + 3n + 1 = (n+1)³; turn volume ratio (φ³)³ = φ⁹
 PASS polar of T(x) has face pyramids of height x/(1+x); of T(1/x) 1/(1+x) (half cube edges)
 PASS the two heights add to 1 for every x > 0 (the rhombic dodecahedron height)
 PASS Icosaxes = perms (1/2, φ/2, 0): height 1/φ; Unborn Axes = perms (1/(2φ), φ/2, 0): height 1/φ²

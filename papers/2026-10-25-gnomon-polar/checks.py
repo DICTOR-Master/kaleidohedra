@@ -66,6 +66,7 @@ say('exactly 4 of the 11 gnomons are rational·φ^k·I: star−I = I, TI−rTI =
 for n2, n1, g in G: print(f'   {n2} − {n1} = ({g})·I ≈ {float(g):.4f} I   form {gf[n2]}')
 say('gnomons add up to one turn: sum = (φ⁹ − 1)·I', sum((g for _, _, g in G), Q(0)) == pw(9) - 1)
 say('Júlia step check: (n+1)² = n² + n + (n+1) (symbolic)', sp.expand((sp.Symbol('n') + 1)**2 - (sp.Symbol('n')**2 + 2*sp.Symbol('n') + 1)) == 0)
+say('cube: n³ + 3n² + 3n + 1 = (n+1)³; turn volume ratio (φ³)³ = φ⁹', sp.expand((sp.Symbol('n')+1)**3 - (sp.Symbol('n')**3 + 3*sp.Symbol('n')**2 + 3*sp.Symbol('n') + 1)) == 0 and pw(3)*pw(3)*pw(3) == pw(9))
 # ---------- Part B ----------
 x = sp.symbols('x', positive=True)
 def pyr_height(a_, b_):   # T with corners all perms of (±a, ±b, 0), a < b, about its centre: squares at |coord| = b, hexagons x+y+z = a+b
