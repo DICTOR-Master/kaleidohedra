@@ -1,0 +1,14 @@
+lam = 0.20833333333333334: tet piece 16 corners, faces [3, 3, 3, 3, 3, 3, 4, 4, 4, 6, 6, 6, 6], volume 0.340459
+               oct piece 8 corners, faces [4, 4, 4, 4, 4, 4], volume 0.026189
+  tet face with 6 sides faces a tet neighbour
+  tet face with 6 sides faces a tet neighbour
+  tet face with 6 sides faces a tet neighbour
+  tet face with 6 sides faces a tet neighbour
+tet->oct A: tet piece vol 0.311139 genus 0, oct piece vol 0.084853 genus 0, total conserved False (4 tet + 2 oct = 1.414263 vs 1.414214); watertight True
+tet->oct B: tet piece vol 0.327062 genus 0, oct piece vol 0.053007 genus 0, total conserved False (4 tet + 2 oct = 1.414263 vs 1.414214); watertight True
+oct->tet A: tet piece vol 0.348839 genus 0, oct piece vol 0.009453 genus 0, total conserved False (4 tet + 2 oct = 1.414263 vs 1.414214); watertight True
+oct->tet B: tet piece vol 0.353868 genus 0, oct piece vol 0.006761 genus 4, total conserved False (4 tet + 2 oct = 1.428992 vs 1.414214); watertight True
+CHECK tet->oct A: components [1, 1], genus 0/0, Ian Dury 0.311139, rhombohedron 0.084853, valid True
+CHECK tet->oct B: components [1, 1], genus 0/0, Ian Dury 0.327062, rhombohedron 0.053007, valid True
+CHECK oct->tet A: components [1, 1], genus 0/0, Ian Dury 0.348839, rhombohedron 0.009453, valid True
+CHECK oct->tet B: components [1, 1], genus 0/4, Ian Dury 0.353868, rhombohedron 0.006761, valid False
