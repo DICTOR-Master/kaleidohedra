@@ -1,0 +1,16 @@
+lam = 0.003266957: tet piece 19 corners, faces [3, 3, 3, 3, 3, 3, 5, 5, 5, 6, 6, 6, 9], volume 0.235702
+               oct piece 12 corners, faces [3, 3, 5, 5, 5, 5, 5, 5], volume 0.235702
+  tet face with 6 sides faces a tet neighbour
+  tet face with 6 sides faces a tet neighbour
+  tet face with 9 sides faces a tet neighbour
+  tet face with 6 sides faces a tet neighbour
+  oct face with 5 sides faces a tet neighbour
+  oct face with 5 sides faces a tet neighbour
+  oct face with 5 sides faces a tet neighbour
+  oct face with 5 sides faces a tet neighbour
+  oct face with 5 sides faces a tet neighbour
+  oct face with 5 sides faces a tet neighbour
+tet->oct A: tet piece vol 0.173476 genus -3, oct piece vol 0.360155 genus 0, total conserved True (4 tet + 2 oct = 1.414214 vs 1.414214); watertight True
+tet->oct B: tet piece vol 0.173621 genus -3, oct piece vol 0.359866 genus 0, total conserved True (4 tet + 2 oct = 1.414214 vs 1.414214); watertight True
+oct->tet A: tet piece vol 0.296854 genus 0, oct piece vol 0.113399 genus -6, total conserved True (4 tet + 2 oct = 1.414214 vs 1.414214); watertight True
+oct->tet B: tet piece vol 0.297784 genus 0, oct piece vol 0.113399 genus -2, total conserved False (4 tet + 2 oct = 1.417934 vs 1.414214); watertight True

@@ -1,0 +1,50 @@
+== delian: open interval (-1/8, 3/8) around -1/50
+  site 0 oct: corners 6, faces {3: 8}, volume -(8*lam - 3)**3/48
+  site 1 oct: corners 6, faces {3: 8}, volume -(8*lam - 3)**3/48
+  site 2 oct: corners 6, faces {3: 8}, volume -(8*lam - 3)**3/48
+  site 3 oct: corners 6, faces {3: 8}, volume -(8*lam - 3)**3/48
+  site 4 tet: corners 16, faces {3: 4, 6: 6}, volume (512*lam**3 - 576*lam**2 + 216*lam + 69)/96
+  site 5 tet: corners 16, faces {3: 4, 6: 6}, volume (512*lam**3 - 576*lam**2 + 216*lam + 69)/96
+  site 6 tet: corners 16, faces {3: 4, 6: 6}, volume (512*lam**3 - 576*lam**2 + 216*lam + 69)/96
+  site 7 tet: corners 16, faces {3: 4, 6: 6}, volume (512*lam**3 - 576*lam**2 + 216*lam + 69)/96
+  site 8 tet: corners 16, faces {3: 4, 6: 6}, volume (512*lam**3 - 576*lam**2 + 216*lam + 69)/96
+  site 9 tet: corners 16, faces {3: 4, 6: 6}, volume (512*lam**3 - 576*lam**2 + 216*lam + 69)/96
+  site 10 tet: corners 16, faces {3: 4, 6: 6}, volume (512*lam**3 - 576*lam**2 + 216*lam + 69)/96
+  site 11 tet: corners 16, faces {3: 4, 6: 6}, volume (512*lam**3 - 576*lam**2 + 216*lam + 69)/96
+  EQUAL VOLUME (tet site 4 = oct) at lam = 3/8 - 2**(2/3)/4 = -0.0218502630
+    volumes there: site 0 oct 2/3, site 1 oct 2/3, site 2 oct 2/3, site 3 oct 2/3, site 4 tet 2/3, site 5 tet 2/3, site 6 tet 2/3, site 7 tet 2/3, site 8 tet 2/3, site 9 tet 2/3, site 10 tet 2/3, site 11 tet 2/3
+    all sites equal: True
+== hcpholes: open interval (-1/8, 5/24) around 1/300
+  site 0 oct: corners 12, faces {3: 2, 5: 6}, volume (1536*lam**3 + 5184*lam**2 - 3384*lam + 523)/3072
+  site 1 oct: corners 12, faces {3: 2, 5: 6}, volume (1536*lam**3 + 5184*lam**2 - 3384*lam + 523)/3072
+  site 2 tet: corners 19, faces {3: 6, 5: 3, 6: 3, 9: 1}, volume -(1536*lam**3 + 5184*lam**2 - 3384*lam - 1013)/6144
+  site 3 tet: corners 19, faces {3: 6, 5: 3, 6: 3, 9: 1}, volume -(1536*lam**3 + 5184*lam**2 - 3384*lam - 1013)/6144
+  site 4 tet: corners 19, faces {3: 6, 5: 3, 6: 3, 9: 1}, volume -(1536*lam**3 + 5184*lam**2 - 3384*lam - 1013)/6144
+  site 5 tet: corners 19, faces {3: 6, 5: 3, 6: 3, 9: 1}, volume -(1536*lam**3 + 5184*lam**2 - 3384*lam - 1013)/6144
+  no equal-volume root inside this interval
+== c15: open interval (-5, 7) around -5/8
+  site 0 Mg: corners 28, faces {5: 12, 6: 4}, volume -(7*lam**3 - 39*lam**2 - 1779*lam - 8773)/360
+  site 1 Mg: corners 28, faces {5: 12, 6: 4}, volume -(7*lam**3 - 39*lam**2 - 1779*lam - 8773)/360
+  site 2 Mg: corners 28, faces {5: 12, 6: 4}, volume -(7*lam**3 - 39*lam**2 - 1779*lam - 8773)/360
+  site 3 Mg: corners 28, faces {5: 12, 6: 4}, volume -(7*lam**3 - 39*lam**2 - 1779*lam - 8773)/360
+  site 4 Mg: corners 28, faces {5: 12, 6: 4}, volume -(7*lam**3 - 39*lam**2 - 1779*lam - 8773)/360
+  site 5 Mg: corners 28, faces {5: 12, 6: 4}, volume -(7*lam**3 - 39*lam**2 - 1779*lam - 8773)/360
+  site 6 Mg: corners 28, faces {5: 12, 6: 4}, volume -(7*lam**3 - 39*lam**2 - 1779*lam - 8773)/360
+  site 7 Mg: corners 28, faces {5: 12, 6: 4}, volume -(7*lam**3 - 39*lam**2 - 1779*lam - 8773)/360
+  site 8 Cu: corners 20, faces {5: 12}, volume (7*lam**3 - 39*lam**2 - 1779*lam + 14267)/720
+  site 9 Cu: corners 20, faces {5: 12}, volume (7*lam**3 - 39*lam**2 - 1779*lam + 14267)/720
+  site 10 Cu: corners 20, faces {5: 12}, volume (7*lam**3 - 39*lam**2 - 1779*lam + 14267)/720
+  site 11 Cu: corners 20, faces {5: 12}, volume (7*lam**3 - 39*lam**2 - 1779*lam + 14267)/720
+  site 12 Cu: corners 20, faces {5: 12}, volume (7*lam**3 - 39*lam**2 - 1779*lam + 14267)/720
+  site 13 Cu: corners 20, faces {5: 12}, volume (7*lam**3 - 39*lam**2 - 1779*lam + 14267)/720
+  site 14 Cu: corners 20, faces {5: 12}, volume (7*lam**3 - 39*lam**2 - 1779*lam + 14267)/720
+  site 15 Cu: corners 20, faces {5: 12}, volume (7*lam**3 - 39*lam**2 - 1779*lam + 14267)/720
+  site 16 Cu: corners 20, faces {5: 12}, volume (7*lam**3 - 39*lam**2 - 1779*lam + 14267)/720
+  site 17 Cu: corners 20, faces {5: 12}, volume (7*lam**3 - 39*lam**2 - 1779*lam + 14267)/720
+  site 18 Cu: corners 20, faces {5: 12}, volume (7*lam**3 - 39*lam**2 - 1779*lam + 14267)/720
+  site 19 Cu: corners 20, faces {5: 12}, volume (7*lam**3 - 39*lam**2 - 1779*lam + 14267)/720
+  site 20 Cu: corners 20, faces {5: 12}, volume (7*lam**3 - 39*lam**2 - 1779*lam + 14267)/720
+  site 21 Cu: corners 20, faces {5: 12}, volume (7*lam**3 - 39*lam**2 - 1779*lam + 14267)/720
+  site 22 Cu: corners 20, faces {5: 12}, volume (7*lam**3 - 39*lam**2 - 1779*lam + 14267)/720
+  site 23 Cu: corners 20, faces {5: 12}, volume (7*lam**3 - 39*lam**2 - 1779*lam + 14267)/720
+  no equal-volume root inside this interval
