@@ -17,3 +17,10 @@ Method: grep of app code (src/app, krp-core) and UI strings (i18n.js) for each p
 Paper entries: #10–#39, #44, #45, #47, #48, #49, #51, #53. Missing: #40, #41, #42, #43, #50, #52, #54, #55, #56 (and #1–#9 by other refs?).
 ## Next (step 1, with DICTO)
 Confirm list in the running app (not only code), decide one home per item (no crossover), then plan.
+
+# Step 1 (live apps, Playwright DOM probe on dicto-big-brother, 2026-10-25)
+- Kaleidohedra main door: confirms step 0 (present: Samson, Delilah, Icosaxes, Dodecaxes, Sunstar, Dogstar, Reuleaux, Aristotle, Platonic, DICTONIC, Global Web; absent: all #54–#56 items, Goliath/David, keyed -K pairs, zinc blende/A15/C15/perovskite, One Move, Sunstar-Hexa).
+- Polyhedraverse: HAS #43's Aktis and Cleo Towers (so #43 is in the app, in P; correction to step 0). Still absent there: Kyushindo name, One Move, Sunstar-Hexa, OG on every stacking.
+- Rhombiverse: none of the gap items.
+- /dicto door renders a small shell first (5.5k chars), so it was not a useful probe.
+Confirmed gaps: #56, #55, #54, keyed pairs, Global Web phase 2, #50, #42 Sunstar-Hexa/Hexa-Key, #40 stackings (check), Almanac entries #40–#43, #50, #52, #54–#56.
