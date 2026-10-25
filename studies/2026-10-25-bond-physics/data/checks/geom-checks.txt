@@ -1,0 +1,11 @@
+PASS G0a bcc Voronoi (Kelvin, x = 1): O'Keeffe N = 8 + 6 Omega_sq/Omega_hex rounds to the published 10.16 | N = 10.1606096924
+PASS G0b diamond Voronoi (triakis truncated tetrahedron: 4 hexagons + 12 triangles): O'Keeffe N rounds to the published 4.54 | N = 4.53811616441, faces [(3, 12), (6, 4)]
+PASS G1 golden loop, s = 0, 1/40, ..., 1 (41 x 2 cells): areas^2 = closed forms exactly, solid angles add to 4 pi, site list enough
+PASS G1b swap x <-> 1/x: N_big(s) = N_small(1 - s) at every sample
+PASS G1c N_big is not monotone in s: it peaks inside (0, 1) | max N_big = 13.857120 at s = 3/4; ends 8.000000, 9.244413
+PASS G2 Delian loop, t = 1/60 ... 59/60 (59 x 2 cells): areas^2 = closed forms exactly, solid angles add to 4 pi, site list enough
+PASS G2b octet t = 1/3: oct cell = 8 equal triangles (N = 8), tet cell = 4 equal triangles (N = 4)
+PASS G3 17 compounds x 2 radius conventions: cells exact, areas = closed forms, solid angles add to 4 pi, IR parameters = anchors study
+PASS G4 equal weights <-> s = 1/2 (golden) and t = 1/2 (Delian): weight difference vanishes there and only there
+PASS G5 hop: for t > 1/3 the <100> anion-hop midpoint lies on the shared tet-tet face, in no other cell (the hop crosses that bond face); for t < 1/3 it lies in oct cells only (the path leaves the tet cells and crosses oct space) | t=1/6: ['oct']x2; t=1/4: ['oct']x2; t=1/3: ['oct', 'tet']x4; t=2/5: ['tet']x2; t=1/2: ['tet']x2; t=3/5: ['tet']x2; t=9/10: ['tet']x2
+10 PASS, 0 FAIL, 154.9 s

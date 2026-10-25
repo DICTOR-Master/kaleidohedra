@@ -1,0 +1,8 @@
+PASS L1a golden: one interior s* where a square and a hexagon subtend the same solid angle; there N_big = 14 (max possible); float bisection | s* = 0.756582135945, x* = 3.1081619210
+PASS L1b published-value test: Voronoi (equal-weight) O'Keeffe N is the same constant for every CsCl-type compound (10.1606 both ions) and every fluorite-type compound (8 and 8): the measured structures carry no loop parameter
+PASS L2a bond areas are strictly monotone in t on (1/3, 1) (tet-tet up, oct-tet down): area rank tests = radius-ratio rank tests
+PASS L2b every rank test recorded with its exact permutation p and its range over the measured value ranges
+PASS L3a in every placed fluorite the anion's like (tet-tet) faces take more than half of its cell surface, though they carry bond valence 0 | anion like-face share of area 0.527-0.736
+PASS L3b in every placed CsCl-type halide the anion's like (big-big) faces take 20-40 % of its surface (valence 0) | 0.245-0.354
+PASS L4 elastic data verified for only 2 of 5 CsCl-type halides (CsBr, CsI at 4.2 K): no correlation can be computed
+7 PASS, 0 FAIL

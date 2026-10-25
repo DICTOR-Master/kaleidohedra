@@ -1,0 +1,27 @@
+{
+ "_note": "Every external number used in this study, with its source and how it was read (2026-10-25). level: 'text' = read in a full text or table (web fetch); 'abstract' = read in the Crossref/publisher abstract; 'secondary' = only in a search-engine summary of a secondary page (used only as a labelled sanity check, never in a verdict); 'metadata' = only title/journal/year checked on Crossref. Numbers not found are absent, never filled in.",
+ "okeeffe_bcc": {"value": 10.16, "what": "O'Keeffe (1979) solid-angle coordination number of bcc (and 4.54 for diamond)", "source": "quoted in an IUCr Acta Cryst. B 2019 paper (journals.iucr.org/b/issues/2019/01/00/lo5042), page blocked (403); number seen only in the web-search summary", "level": "secondary", "diamond": 4.54},
+ "fluorite_TS_Tm_K": {
+   "_source": "Fossati, Chartier, Boulle, Front. Chem. 9 (2021) 723507, doi:10.3389/fchem.2021.723507, Table 3, 'T_S (ref.)' and 'T_m (ref.)' columns (reference values quoted there; values marked as DFT in the table are excluded). Level: text (web fetch of the full text; the table layout was garbled in extraction, so the pairing of rows was rebuilt from the printed potentials).",
+   "CaF2": {"TS": [1430, 1430], "Tm": [1633, 1696]},
+   "SrF2": {"TS": [1370, 1400], "Tm": [1723, 1746]},
+   "BaF2": {"TS": [1275, 1300], "Tm": [1555, 1628]},
+   "PbF2": {"TS": [711, 711], "Tm": [1128, 1128]},
+   "Li2O": {"TS": [1350, 1350], "Tm": [1703, 1703]},
+   "UO2": {"TS": [2670, 2670], "Tm": [3126, 3126]}
+ },
+ "fluorite_Ea_normal_eV": {
+   "_source": "Fossati et al. 2021, Table 5, experimental X-ion diffusion activation energies in the perfect fluorite (normal) phase; the table caption says the reference values are experimental except those marked (only the Li2O superionic value is marked DFT). Level: text (web fetch; the row/reference pairing was rebuilt from printed reference numbers and is flagged as such).",
+   "CaF2": [1.92, 3.34], "SrF2": [1.81, 1.81], "BaF2": [1.6, 2.52], "PbF2": [1.04, 1.04], "Li2O": [1.6, 2.52], "UO2": [2.46, 2.57]
+ },
+ "fluorite_Hf_eV": {
+   "_source": "Fossati et al. 2021, Table 4, experimental Frenkel-pair formation enthalpies (context only).",
+   "CaF2": [2.2, 2.8], "SrF2": [1.7, 2.3], "BaF2": [1.6, 1.9], "PbF2": [0.89, 1.06], "Li2O": [1.8, 2.53], "UO2": [2.6, 5.6]
+ },
+ "CsCl_type_elastic_1e10Pa": {
+   "_source": "Vallin, Beckman, Salama, J. Appl. Phys. 35 (1964) 1222-1223, doi:10.1063/1.1713597, abstract (Crossref): c11, c12, c44 at 4.2 K in 1e10 N/m^2. Level: abstract.",
+   "CsBr": {"c11": 3.437, "c12": 1.035, "c44": 0.999, "T_K": 4.2},
+   "CsI": {"c11": 2.737, "c12": 0.793, "c44": 0.825, "T_K": 4.2},
+   "_missing": "CsCl (Slagle & McKinstry 1967, doi:10.1063/1.1709358: abstract has no numbers), TlCl (JPSJ 33 (1972) 1361, doi:10.1143/JPSJ.33.1361: page 403, no Crossref abstract), TlBr (Solid State Commun. 5 (1967), doi:10.1016/0038-1098(67)90019-1: no abstract) - not used"
+ }
+}
