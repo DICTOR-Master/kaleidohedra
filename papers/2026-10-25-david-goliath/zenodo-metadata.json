@@ -1,0 +1,144 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-25",
+ "access_right": "open",
+ "title": "David and Goliath: Jessen's Icosahedron and the Tetrahedron in the A15 Weight Walk",
+ "description": "<p><b>In short.</b> Paper #53 slid one number, a weight, between the two kinds of points of ten crystal arrangements and recorded, exactly, every tiling of space that appears on the way. In the A15 alloy structure (the arrangement of Cr 3 Si, and of the Weaire–Phelan foam) one stop stood out: at weight difference 3/4 the space-filling pieces are a 20-faced icosahedron around every Si point and a small tetrahedron around every Cr point. DICTO named the pair Goliath and David. Here we prove the stop exactly and identify Goliath: its corners are exactly those of Jessen&#x27;s orthogonal icosahedron, so Goliath is that famous non-convex solid&#x27;s convex hull. Goliath has the same shape as the classical Z12 icosahedron of A15 (Frank and Kasper), and the whole tiling is the classical picture of A15 as icosahedra and tetrahedral holes, moved by half a body diagonal; that picture is known. What we did not find in the sources searched is that the weight walk lands exactly on it, at 3/4, and the plain statement that the A15 icosahedron is Jessen&#x27;s convex hull. We then place David and Goliath among the known pairs that the same walks produce: the octet, octahedra with cuboctahedra, the Weaire–Phelan cells, rock salt&#x27;s equilateral chamfered cubes with cubes, and zinc blende&#x27;s capped octahedra with regular tetrahedra.</p><p>The ideas are DICTO&#x27;s: the names David and Goliath (25 October 2026), and DICTO&#x27;s idea of pursuing the icosahedral pairing found in the census of paper #53, together with the framing that a new pairing shows something new while known pairs support the theorem further; computation, exact proofs and drafting with Claude (Anthropic). In short. Paper #53 slid one number, a weight, between the two kinds of points of ten crystal arrangements and recorded, exactly, every tiling of space that appears on the way. In the A15 alloy structure (the arrangement of Cr 3 Si, and of the Weaire–Phelan foam) one stop stood out: at weight difference 3/4 the space-filling pieces are a 20-faced icosahedron around every Si point and a small tetrahedron around every Cr point. DICTO named the pair Goliath and David. Here we prove the stop exactly and identify Goliath: its corners are exactly those of Jessen&#x27;s orthogonal icosahedron, so Goliath is that famous non-convex solid&#x27;s convex hull. Goliath has the same shape as the classical Z12 icosahedron of A15 (Frank and Kasper), and the whole tiling is the classical picture of A15 as icosahedra and tetrahedral holes, moved by half a body diagonal; that picture is known. What we did not find in the sources searched is that the weight walk lands exactly on it, at 3/4, and the plain statement that the A15 icosahedron is Jessen&#x27;s convex hull. We then place David and Goliath among the known pairs that the same walks produce: the octet, octahedra with cuboctahedra, the Weaire–Phelan cells, rock salt&#x27;s equilateral chamfered cubes with cubes, and zinc blende&#x27;s capped octahedra with regular tetrahedra. Main theorem. Let the A15 sites be Si at 2ℤ³ and 2ℤ³ + (1, 1, 1) and Cr at 2ℤ³ + {(1/2, 0, 1), (3/2, 0, 1), (1, 1/2, 0), (1, 3/2, 0), (0, 1, 1/2), (0, 1, 3/2)}, with weights w Si = 3/4 and w Cr = 0. Then the power cell of the Si site at the origin is Goliath = conv{(0, ±1/2, ±1) and its cyclic permutations}, with 20 triangular faces, 12 corners of degree 5, 30 edges and volume 7/2; the power cell of a Cr site is David, a tetragonal disphenoid centred on it, with two opposite edges of length 1, four of length √(3/2), and volume 1/6. Every cell is a copy of one of the two; per cubic cell of edge 2 there are 2 Goliaths and 6 Davids, and 2 · 7/2 + 6 · 1/6 = 8. Each David meets only Goliaths. All of this is exact. Figure 1. The two pieces of the Main theorem (float pictures of the exact cells). Left: Goliath, the Si cell, with its 12 corners (0, ±1/2, ±1) cyclic; dark gold, the 8 equilateral faces (edge √(3/2)); light gold, the 12 isosceles faces (base 1, legs √(3/2)). Centre: David, the Cr cell (black dot: its Cr site), with its two opposite edges of length 1 in red; the other four edges have length √(3/2). Right: Goliath with the 12 Davids that share its isosceles faces; the 8 gold faces left visible are the faces shared with the 8 neighbouring Goliaths along the body diagonals. 1. Where it started The census of #53 walked a weight through A15 and noted, at 3/4, an icosahedron and a tetrahedron that fill space together. DICTO named them and proposed to follow this pairing first.</p><p>Exact computation and checks attached (commit e012944). Licence CC BY-SA 4.0. More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "David and Goliath",
+  "A15",
+  "Frank–Kasper",
+  "Jessen icosahedron",
+  "power diagram",
+  "Laguerre tessellation",
+  "weight walk",
+  "icosahedron",
+  "tetrahedron",
+  "space-filling",
+  "web of bonds"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23631140",
+   "relation": "continues",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1007/s13366-015-0248-4",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1016/S0081-1947(08)60079-X",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1063/1.5052478",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1073/pnas.1105594108",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1073/pnas.1809655115",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1080/09500839408241577",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1103/PhysRevE.86.041141",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1107/S0108768186098671",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1107/S0365110X58000487",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1107/S0365110X59001499",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1107/S0567740869003694",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1107/S0567740872007289",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1109/18.945264",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1109/TIT.2002.805086",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1137/0216006",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.2140/pjm.2010.248.171",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23596362",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23606828",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23629252",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ],
+ "notes": "#55 in DICTO's numbering (dictospheres.com). Names David and Goliath by DICTO. Follows #53 The Global Web of Bonds (DICTO DOI 10.5281/zenodo.23631140)."
+}
