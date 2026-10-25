@@ -1,0 +1,20 @@
+== exact_tets.py
+tetrahedral sites, rule A own layer: 104 hold, 104 fail
+tetrahedral sites, rule B other layer: 208 hold, 0 fail
+tetrahedral sites, rule C split at own height: 168 hold, 40 fail
+tetrahedral sites, rule D split at mid height: 200 hold, 8 fail
+== exact_stretch.py
+window ccch: running 166 PASS, 0 FAIL
+window cccc: running 176 PASS, 0 FAIL
+
+TOTAL 176 PASS, 0 FAIL
+== exact_proof2.py
+window ccch: radius 166 ok / 0 bad; halves 150 ok / 0 bad
+window cccc: radius 176 ok / 0 bad; halves 160 ok / 0 bad
+
+TOTAL radius 176 ok, 0 bad; halves 160 ok, 0 bad
+== exact_named.py
+Chucky (λ = -3/8): ABAC [383*sqrt(2)/768], cubic [sqrt(2)/2], hexagonal [191*sqrt(2)/384]
+   mean check: Chucky − (cubic + hexagonal)/2 = 0
+Fang (λ = 5/24): ABAC [5*sqrt(2)/324], cubic [sqrt(2)/81], hexagonal [sqrt(2)/54]
+   mean check: Fang − (cubic + hexagonal)/2 = 0

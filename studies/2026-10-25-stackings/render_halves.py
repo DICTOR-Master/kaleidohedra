@@ -25,9 +25,9 @@ for tag,x,S,lab in (('fang',-3.6,5.0,'Fang: hexagonal top + cubic bottom'),('chu
     label(lab,x,-3.9,0.26)
 label('together',0,1.3,0.22); label('drawn apart at the mid-plane',0,-2.2,0.22)
 sc.render.resolution_x=2400
-cam=bpy.data.objects.new('cam',bpy.data.cameras.new('cam')); sc.collection.objects.link(cam); cam.location=(0,-20,1.0); cam.rotation_euler=(math.radians(84),0,0); sc.camera=cam; cam.data.lens=40
+cam=bpy.data.objects.new('cam',bpy.data.cameras.new('cam')); sc.collection.objects.link(cam); cam.location=(0,-21.5,1.9); cam.rotation_euler=(math.radians(84),0,0); sc.camera=cam; cam.data.lens=40
 for loc,e in (((-10,-12,14),900),((12,-10,8),500),((0,10,10),300)):
     l=bpy.data.objects.new('l',bpy.data.lights.new('l','AREA')); l.data.energy=e; l.data.size=8; l.location=loc; sc.collection.objects.link(l)
     l.rotation_euler=(Vector((0,0,0))-Vector(loc)).to_track_quat('-Z','Y').to_euler()
-t=bpy.data.curves.new('t','FONT'); t.body='DICTO'; to=bpy.data.objects.new('t',t); sc.collection.objects.link(to); to.location=(7.0,-3,-4.3); to.rotation_euler=(math.radians(84),0,0); to.scale=(0.36,)*3; to.data.materials.append(mat('mark',(0.72,0.59,0.18)))
+t=bpy.data.curves.new('t','FONT'); t.body='DICTO'; to=bpy.data.objects.new('t',t); sc.collection.objects.link(to); to.location=(6.4,-3,-4.1); to.rotation_euler=(math.radians(84),0,0); to.scale=(0.36,)*3; to.data.materials.append(mat('mark',(0.72,0.59,0.18)))
 sc.render.filepath=os.path.abspath('halves.png'); bpy.ops.render.render(write_still=True)
