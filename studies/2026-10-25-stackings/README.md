@@ -14,3 +14,5 @@ layers round it (Jagodzinski symbols). Test next on 9R (ABACACBCB, hhc).
 or ABAC (its 24-corner octahedral piece at −3/8, faces 6 tri + 6 hex + 2 nonagons, is AB's piece on the stretch (−11/24, −1/8)):
 NO NEW PIECES — the local h/c rule survives its first test. Volumes of the three ABAC pieces (floats): 0.705265, 0.021824, 0.344824.
 Render: new-pieces.png (export_new.py, render_new.py).
+
+NAMES (DICTO 2026-10-25): DICTO Chucky (−3/8 octahedral piece, 19 corners), DICTO Fang (5/24 octahedral piece, 7 corners), DICTO Triskelion Tetrahedron, short TT (5/24 tetrahedral piece, 16 corners).
