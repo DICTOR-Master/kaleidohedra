@@ -65,4 +65,6 @@ papers/2026-10-25-web-of-bonds/zenodo-state.json (reserved, `published: false`).
 | 45a | Obs. 3 half-of-CsCl sentence now labelled "Remark (ours, not an explanation)" | Obs. 3 | as #45 | PASS |
 | 51 | Reference metadata [10–15], [21–25], [6, 7, 9, 16, 17, 24] | refs | Crossref 2026-10-25 (this audit) | PASS; Ash–Bolker 1985 pages not in Crossref (omitted); Andreini [19] from general knowledge, pages omitted, not verified |
 
-**Result: 53 / 53 PASS** (v2 of this audit, after the #52 concept DOI and the #37a/#40 citations). Open: Andreini [19] title not verified against a copy.
+| 54 | Wording (DICTO standing rule 2026-10-25): 11 replacements, "ask"/"question" → "proposed"/"proposal"/"open problem"/"library searches" (credit line, In short ×2, §1 hook and text ×2, §5 heading, Obs. 1 and 2, §6 hook, App. A); no numbers changed; grep -i "ask\|question" on paper.src.html: 0 hits | meta, In short, §1, §5, §6, App. A | rule message | PASS |
+
+**Result: 54 / 54 PASS** (v3; v2 of this audit, after the #52 concept DOI and the #37a/#40 citations). Open: Andreini [19] title not verified against a copy.
