@@ -16,7 +16,7 @@ await page.waitForSelector('.dim-wizard-overlay.open');
 if (!(await page.locator('[data-action="tool:platonicMixWorld"]').count())) await page.tap('.dim-wizard-card-btn[data-dim="3D"]');
 await page.waitForTimeout(500);
 const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((a) => /World$/.test(a)));
-assert.equal(worlds[0], 'tool:dictonicWorld', 'DICTONIC first (2026-10-23)'); assert.equal(worlds[1], 'tool:platonicMixWorld', 'then Every Mix in DICTO\'s list');
+assert.equal(worlds[0], 'tool:dictonicWorld', 'DICTONIC first (2026-10-23)'); assert.equal(worlds[1], 'tool:globalWebWorld', 'then The Global Web of Bonds (2026-10-25)'); assert.equal(worlds[2], 'tool:platonicMixWorld', 'then Every Mix in DICTO\'s list');
 await page.goto(`${BASE}/index.html?site=${SITE}&open=platonicMix&probe`); await page.waitForTimeout(1500);
 if (await page.locator('#welcome-overlay').isVisible()) await page.keyboard.press('Enter');
 await page.waitForTimeout(2500);

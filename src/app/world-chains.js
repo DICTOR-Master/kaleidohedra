@@ -35,7 +35,9 @@ export const ROLE = { ico: 0x5fd38a, cap: 0x5fd38a, lcap: 0x5fd38a, lj11: 0x5fd3
   // Golden split (DICTO 2026-10-23): the big truncated octahedra green, the small ones orange, as in the study's pictures
   gsBig: 0x56a866, gsSmall: 0xe8913f,
   // DICTONIC's Delian bond (DICTO 2026-10-23): the tetrahedron pieces (Samson) gold, the octahedron pieces (Delilah) purple
-  dlTet: 0xffc857, dlOct: 0xc792ea };
+  dlTet: 0xffc857, dlOct: 0xc792ea,
+  // The Global Web of Bonds (DICTO 2026-10-25): the A kind's pieces gold, the B kind's blue, as in paper #53's figures
+  gwA: 0xffc857, gwB: 0x6fa8ff };
 // The 12-neighbour space-fillers' 13s (DICTO 2026-10-13): centre gold, the twelve cyan, the neighbouring blocks' copies dimmer.
 Object.assign(ROLE, { jewelCentre: 0xffc857, jewelCell: 0x4dd0e1, stella: 0xc792ea });
 for (const k of ['skewedRd13', 'bainRd13', 'bilinski13']) Object.assign(ROLE, { [`${k}Centre`]: 0xffc857, [`${k}Cell`]: 0x4dd0e1, [`${k}CentreN`]: 0x8a7440, [`${k}CellN`]: 0x33808a });
@@ -98,7 +100,9 @@ export function filmOrder(list, named = []) {
  *  their own words (DICTONIC: Layers, Top layer); a kind's maxSize may be a function (per device). A kind with web(size, o) (DICTONIC,
  *  DICTO 2026-10-25: the web of bonds) gets a Web button: the pieces turn see-through and a gold rod joins the anchors of every two
  *  pieces that share a face, its thickness by the face's area (web gives [[anchorA, anchorB, area]]); a kind with a param also gets
- *  a Loop button that runs its slider end to end and back (words '<prefix>.web.on|off|note', '<prefix>.loop.play|pause'). */
+ *  a Loop button that runs its slider end to end and back (words '<prefix>.web.on|off|note', '<prefix>.loop.play|pause'). A web entry may
+ *  carry a 4th item, the rod's colour (The Global Web of Bonds: one colour per kind of bond; gold otherwise), and a kind its own
+ *  webNote (an i18n key: the 2D networks' bonds are shared edges). */
 export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null, pinnedRoles = new Set(), hideable = {}, links = {}, openAction = () => {}, kindButtons = false, hideRows = [], rowWords = {}, foldNote = false, theorem = null }) {
   const STORAGE_KEY = storageKey(name);
   const group = new THREE.Group();
@@ -293,21 +297,21 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     if (webOn()) {
       const top = Math.round(view.shells * (levels.length - 1)), rods = [];
       const where = (a) => a.map((c, i) => (c - c0[i] + (c - c0[i]) * view.apart) * WS);
-      for (const [a, b, area] of webList()) {
+      for (const [a, b, area, hex] of webList()) {
         if (area <= 1e-9 || shellOf(Math.hypot(...a.map((c, i) => c - c0[i]))) > top || shellOf(Math.hypot(...b.map((c, i) => c - c0[i]))) > top) continue;
         // outer layers fainter and thinner (DICTO 2026-10-25, after a TV test: the far rods made a tangle), the core's bonds brightest
         const lay = Math.max(shellOf(Math.hypot(...a.map((c, i) => c - c0[i]))), shellOf(Math.hypot(...b.map((c, i) => c - c0[i])))) / Math.max(1, levels.length - 1);
-        rods.push([where(a), where(b), DATA[view.kind].webRadius * Math.sqrt(area) * WS * (1 - 0.4 * lay), 1 - 0.65 * lay]);
+        rods.push([where(a), where(b), DATA[view.kind].webRadius * Math.sqrt(area) * WS * (1 - 0.4 * lay), 1 - 0.65 * lay, hex ?? 0xffc857]);
       }
       const inst = new THREE.InstancedMesh(rodGeo, rodMat, Math.max(1, rods.length));
       const m = new THREE.Matrix4(), q = new THREE.Quaternion(), up = new THREE.Vector3(0, 1, 0);
-      const rc = new THREE.Color(), gold = new THREE.Color(0xffc857);
-      rods.forEach(([pa, pb, r, bright], i) => {
+      const rc = new THREE.Color();
+      rods.forEach(([pa, pb, r, bright, hex], i) => {
         const A = new THREE.Vector3(...pa), B = new THREE.Vector3(...pb), d = B.clone().sub(A), len = d.length();
         q.setFromUnitVectors(up, d.normalize());
         m.compose(A.add(B).multiplyScalar(0.5), q, new THREE.Vector3(r, len, r));
         inst.setMatrixAt(i, m);
-        inst.setColorAt(i, rc.copy(gold).multiplyScalar(bright));
+        inst.setColorAt(i, rc.setHex(hex).multiplyScalar(bright));
       });
       inst.count = rods.length;
       group.add(inst);
@@ -409,7 +413,7 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     if (pm) {
       panel.querySelector('.ch-param-label').textContent = t(`${prefix}.param.${view.kind}`, L);
       paramInput.value = String(view.param[view.kind]);
-      panel.querySelector('.ch-param-caption').textContent = pm.caption(paramValue(), L) + (webOn() ? ` · ${t(`${prefix}.web.note`, L)}` : '');
+      panel.querySelector('.ch-param-caption').textContent = pm.caption(paramValue(), L) + (webOn() ? ` · ${t(DATA[view.kind].webNote ?? `${prefix}.web.note`, L)}` : '');
     }
     panel.querySelector('.ch-view-label').textContent = t('icosa.view', L);
     partSelect.innerHTML = Object.keys(DATA[view.kind].views)
