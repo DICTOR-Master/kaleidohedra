@@ -15,3 +15,5 @@
 
 NAMES (DICTO 2026-10-25): the gyrated pair = DICTO Sonsam (tet-hole piece) and DICTO Lahdeli (oct-hole piece); keyed: DICTO Sonsam-K, DICTO Lahdeli-K.
 Keyed choice (DICTO 2026-10-25): keying 1 (tet->oct A, K = 0.8) = DICTO Sonsam-K + DICTO Lahdeli-K (files kg-TOA-*.obj).
+
+TWIN STOPS (twin_stops.py, render_twin_stops.py → twin-stops.png): gyrated octet stops beyond the octet. 5/24: oct piece = 60° rhombohedron edge 1/3 (KNOWN, fcc primitive cell), tet piece 16 corners (6 tri, 3 sq, 4 hex) vol 0.340459; 3/8: oct vanish, tet piece 10 corners (6 tri, 3 sq, 1 hex) vol √2/4 = twinned counterpart of the Delian cube stop. Candidates for names after a literature check.
