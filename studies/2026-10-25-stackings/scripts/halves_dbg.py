@@ -1,0 +1,10 @@
+exec(open("halves.py").read().split("lams = ")[0])
+lam = 0.2083333333333333
+M, S = sites_of("ABAC"); i = 0; V = cellV(M, S, i, lam); u, d, vu, vd = halves(V, M[i][1][2])
+RM, RS = ref["AB"]; j = next(j for j, (k, p) in enumerate(RM) if k == "oct"); W = cellV(RM, RS, j, lam); au, ad, *_ = halves(W, RM[j][1][2])
+CM, CS = ref["ABC"]; j2 = next(j for j, (k, p) in enumerate(CM) if k == "oct"); X = cellV(CM, CS, j2, lam); cu, cd, *_ = halves(X, CM[j2][1][2])
+print("Fang upper corners", len(u), "AB upper", len(au), "AB lower", len(ad))
+print("Fang lower corners", len(d), "ABC upper", len(cu), "ABC lower", len(cd))
+print("Fang upper (site at origin):"); print(np.round(u, 4))
+print("AB upper:"); print(np.round(au, 4))
+print("AB lower:"); print(np.round(ad, 4))

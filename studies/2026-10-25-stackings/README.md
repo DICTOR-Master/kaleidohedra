@@ -25,3 +25,9 @@ stretches = every piece of every close-packed stacking. Congruence (congruent2.p
   hexagonal pieces at that λ (Fang: octahedron 0.017459 / rhombohedron 0.026189; Chucky: rhombic dodecahedron 0.707107 / AB 24-corner
   0.703424). Hypothesis (half-and-half rule): an interface piece is half the cubic piece + half the hexagonal piece, glued on the
   site's mid-plane. To check exactly next.
+
+HALF-AND-HALF (halves.py, halves_vol.py; 2026-10-25 evening): cut each octahedral piece of ABAC / ABCACB at the horizontal plane through
+its site. VOLUME form holds at every λ tested (−3/8, −1/4, 0.1, 5/24, both stackings): each half has exactly (6 digits) the volume of the
+matching half of the cubic (ABC) or hexagonal (AB) piece — hence Fang and Chucky are exact means. SHAPE form NOT confirmed: the halves'
+corner-distance fingerprints mostly do not match (24 matched, 76 not), possibly a cutting artefact (extra points on the cut plane) or a
+real difference. If shapes differ while volumes always match: a Cavalieri-type theorem — to investigate next session.
