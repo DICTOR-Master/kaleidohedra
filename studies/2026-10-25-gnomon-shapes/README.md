@@ -60,3 +60,17 @@ pair of stations.
 
 Figure: `gnomon-shapes.png` (front half cut away, pieces pulled apart 10 %, colours = kinds within a step); copy in
 ~/Documents/papers-to-read/gnomon-shapes/.
+
+## Technical names for the unnamed pieces (2026-10-25, classify_pieces.py → classify_pieces.txt)
+Working descriptive names (DICTO decides any real names). Each piece is a *cone section*: the part of a shell lying over one face of the inner station, inside the cone from the centre over that face, up to the outer station. Its shape is forced by the two nested solids, not by equal edges, so each is a distorted relative of a classical solid; they fit because the cones over all faces of the inner solid divide the shell exactly.
+| step | technical name | faces | nearest classical form | how it differs |
+|---|---|---|---|---|
+| 3 D′→ID | pentagonal dome | 7 pentagons + 5 triangles, 15 corners | (dodecahedral cap) | not regular; 4 edge lengths |
+| 4 ID→OG | elongated pentagonal pyramid type | 1 pentagon + 5 quads + 5 triangles, 11 corners | Johnson J9 | 3 edge lengths, quads not squares |
+| 5 OG→rTI (a) | notched triangular wedge | 2 triangles + 5 quads, 8 corners | triangular prism with one edge cut | 7 edge lengths |
+| 5 OG→rTI (b) | skew hexagonal frustum | 2 parallel hexagons + 6 quads, 12 corners | hexagonal frustum | the hexagons are not translates |
+| 6 rTI→TI | corner tetrahedron | 4 triangles | the cut-off corner of a truncation | 3 edge lengths |
+| 8 H→jtI | pentagonal pyramid | 1 pentagon + 5 triangles | Johnson J2 | 2 edge lengths, not equilateral |
+| 9 jtI→RT | skew quadrilateral pyramid | 1 quad + 4 triangles | square pyramid (J1) | 5 edge lengths |
+| 10 RT→M | rhombic ridge roof | 1 rhombus + 6 triangles, 6 corners | hip roof over a rhombus | sloping sides triangulated; 4 edge lengths |
+| 11 M→I·φ³ | triangular bipyramid | 6 triangles, 5 corners | Johnson J12 | 6 edge lengths |
