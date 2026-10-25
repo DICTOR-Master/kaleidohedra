@@ -60,7 +60,9 @@ papers/2026-10-25-web-of-bonds/zenodo-state.json (reserved, `published: false`).
 | 47 | Fig. 1 lanes, ticks, diamonds | Fig. 1 | drawn from J by make_figures.py | PASS (by construction) |
 | 48 | Fig. 3 chamber polygons | Fig. 3 | drawn from P | PASS (by construction) |
 | 49 | Fig. 2 and 4 cell pictures | Figs. 2, 4 | float cells, drawing only; 3D face counts printed by make_figures.py: 18 = 6×4 + 12×6, 6×4, 20×3, 4×3 | PASS (match T) |
-| 50 | #48 10.5281/zenodo.23596362; #51 10.5281/zenodo.23606828; #52 10.5281/zenodo.23629253 | refs | #52 paper.src.html refs; zenodo-state.json | PASS (#52 reserved, not yet published: flag) |
+| 50 | #48 10.5281/zenodo.23596362; #51 10.5281/zenodo.23606828; #52 concept DOI 10.5281/zenodo.23629252 (record 23629253) | refs | #52 paper.src.html refs; zenodo-state.json conceptrecid 23629252; coordinator 2026-10-25: #52 published, cite concept DOI | PASS |
+| 50a | #37a "The DICTO Ogdoecontahedron on the Gyrated Octet", 10.5281/zenodo.23484012; #40 "The DICTO OG Family on Every Stacking", 10.5281/zenodo.23490114; cited at Table 1 (hcp holes), Cor. 4, §7 | refs [26, 27] | coordinator message 2026-10-25 (titles and DOIs as given) | PASS |
+| 45a | Obs. 3 half-of-CsCl sentence now labelled "Remark (ours, not an explanation)" | Obs. 3 | as #45 | PASS |
 | 51 | Reference metadata [10–15], [21–25], [6, 7, 9, 16, 17, 24] | refs | Crossref 2026-10-25 (this audit) | PASS; Ash–Bolker 1985 pages not in Crossref (omitted); Andreini [19] from general knowledge, pages omitted, not verified |
 
-**Result: 51 / 51 PASS.** Open: the #52 DOI is reserved but unpublished; Andreini [19] title not verified against a copy.
+**Result: 53 / 53 PASS** (v2 of this audit, after the #52 concept DOI and the #37a/#40 citations). Open: Andreini [19] title not verified against a copy.
