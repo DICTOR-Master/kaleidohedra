@@ -86,5 +86,6 @@ for title,big,small,labels in panels:
         for piece,lab in ((big,labels[0]),(small,labels[1])):
             m=piece.to_mesh(); V=np.array(m.vert_properties)[:,:3]; c=V.mean(0)
             trimesh.Trimesh(V-c,np.array(m.tri_verts)).export(f'keyed-{lab}.obj')
-            half=piece.trim_by_plane([0,1,0],float(c[1])).to_mesh()
+            nrm=np.array([1.,-1.,0])/np.sqrt(2) if lab=='Samson' else np.array([0.,1.,0])   # Samson: a plane through one socket axis (1,1,1)
+            half=piece.trim_by_plane(list(nrm),float(np.dot(nrm,c))).to_mesh()
             trimesh.Trimesh(np.array(half.vert_properties)[:,:3]-c,np.array(half.tri_verts)).export(f'keyed-{lab}-half.obj'); open('keyed_choices.txt','w').write('\n'.join(out)+'\n'); print('\n'.join(out))
