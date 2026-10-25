@@ -1,0 +1,31 @@
+Goliath {'corners': 12, 'faces': 20, 'face_sizes': [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3], 'edges': 30, 'edge2': {'1': 6, '3/2': 24}, 'deg': [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], 'vol': 7/2}
+ Goliath faces by neighbour (kind, dist^2, edge^2s): {('Si', '3', ('3/2', '3/2', '3/2')): 8, ('Cr', '5/4', ('1', '3/2', '3/2')): 12}
+PASS Goliath: 20 triangles, 12 corners deg 5, 30 edges, vol 7/2
+PASS Goliath edges: 6 of edge^2 1, 24 of edge^2 3/2
+PASS Goliath: 12 faces to Cr (edge^2 1,3/2,3/2), 8 faces to Si@3 (equilateral edge^2 3/2)
+PASS Goliath corners = (0, ±1/2, ±1) cyclic (Jessen set, halved)
+PASS Goliath + (1,1,1): all 12 corners are Cr sites (the Cr12 icosahedron of the Si at (1,1,1))
+PASS the Si at (1,1,1) has exactly 12 Cr at dist^2 5/4 and they are Goliath + (1,1,1)
+David {'corners': 4, 'faces': 4, 'face_sizes': [3, 3, 3, 3], 'edges': 6, 'edge2': {'1': 2, '3/2': 4}, 'deg': [3, 3, 3, 3], 'vol': 1/6}
+PASS David: tetrahedron, vol 1/6, 2 edges of edge^2 1 (opposite) + 4 of 3/2
+PASS David centroid = its Cr site
+PASS David + (1,1,1): 4 corners are Cr sites (a Cr4 tetrahedron)
+PASS 2*7/2 + 6*1/6 = 8 = cube of edge 2
+rock salt Na {'corners': 32, 'faces': 18, 'face_sizes': [4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6], 'edges': 48, 'edge2': {'21-12*sqrt3': 48}, 'deg': [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3], 'vol': 137-78*sqrt3}
+rock salt Cl {'corners': 8, 'faces': 6, 'face_sizes': [4, 4, 4, 4, 4, 4], 'edges': 12, 'edge2': {'21-12*sqrt3': 12}, 'deg': [3, 3, 3, 3, 3, 3, 3, 3], 'vol': -135+78*sqrt3}
+PASS rock salt Na cell: 6 squares + 12 hexagons, 32 corners, 48 edges
+PASS rock salt: every edge of both cells has length 2 sqrt3 - 3
+PASS rock salt Cl cell: cube (6 squares)
+PASS rock salt: Na vol + Cl vol = 2 (cell of edge 2 holds 4 + 4)
+ rock salt volumes: Na 137-78*sqrt3  Cl -135+78*sqrt3
+zinc blende lambda=1: big {'corners': 10, 'faces': 16, 'face_sizes': [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3], 'edges': 24, 'edge2': {'3': 12, '8': 12}, 'deg': [3, 3, 3, 3, 6, 6, 6, 6, 6, 6], 'vol': 40/3}  small {'corners': 4, 'faces': 4, 'face_sizes': [3, 3, 3, 3], 'edges': 6, 'edge2': {'8': 6}, 'deg': [3, 3, 3, 3], 'vol': 8/3}
+PASS zinc blende +1: small cell regular tetrahedron, edge^2 8, vol 8/3
+PASS zinc blende +1: big cell 16 triangles, corners deg 3 x4 + 6 x6, edges^2 8 (x12) and 3 (x12), vol 40/3
+PASS zinc blende +1: 4*8/3 + 4*40/3 = 64 = cube of edge 4
+PASS zinc blende +1: big cell = octahedron (±2,0,0) perms + 4 cap apices at the 4 empty tetrahedral holes (opposite the small sites)
+zinc blende lambda=-1: big {'corners': 10, 'faces': 16, 'face_sizes': [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3], 'edges': 24, 'edge2': {'3': 12, '8': 12}, 'deg': [3, 3, 3, 3, 6, 6, 6, 6, 6, 6], 'vol': 40/3}  small {'corners': 4, 'faces': 4, 'face_sizes': [3, 3, 3, 3], 'edges': 6, 'edge2': {'8': 6}, 'deg': [3, 3, 3, 3], 'vol': 8/3}
+PASS zinc blende -1: small cell regular tetrahedron, edge^2 8, vol 8/3
+PASS zinc blende -1: big cell 16 triangles, corners deg 3 x4 + 6 x6, edges^2 8 (x12) and 3 (x12), vol 40/3
+PASS zinc blende -1: 4*8/3 + 4*40/3 = 64 = cube of edge 4
+PASS zinc blende -1: big cell = octahedron (±2,0,0) perms + 4 cap apices at the 4 empty tetrahedral holes (opposite the small sites)
+22 PASS, 0 FAIL
