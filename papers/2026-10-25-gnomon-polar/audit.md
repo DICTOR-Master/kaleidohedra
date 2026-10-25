@@ -41,4 +41,4 @@ Every number in paper.src.html checked. Sources: **G** = studies/2026-10-24-gnom
 | 33 | study commits afd8a42, 4b05e6f, 4cac277; 4c18a0b, e9aed63 | refs | git log | PASS |
 
 Notes: saved gnomon-table.txt has one extra line ("RT/I x phi^2 = 81 + 0 sqrt5") not printed by gnomon_table.py; the value is check #9.
-Wording: no "asked"/"question" for DICTO's ideas; no "new"; Júlia Pimentel credited as "the gnomon method as described to DICTO" (no published source recorded — flagged for DICTO).
+Wording (re-audited v1b): "DICTO proposed that the polar has no spikes over the dents" (was "doubted"); grep doubt|ask|question|wonder: only the tool name ask-library remains; no "asked"/"question" for DICTO's ideas; no "new"; Júlia Pimentel credited as "the gnomon method as described to DICTO" (no published source recorded — flagged for DICTO).
