@@ -29,8 +29,8 @@ papers/2026-10-25-web-of-bonds/zenodo-state.json (reserved, `published: false`).
 | 16 | Switch points 0, −1/2, 0, −1/8; none elsewhere | Main thm (iv), Table 2 | J "hinge"; R l.73–77 | PASS |
 | 17 | Dual cells at switch points: 2+2, 2+2, 4 Na + 4 Cl, 6 oct + 8 tet | Main thm (iv), Cor. 2 | N stops "dual": square 2centre+2corner, honeycomb 2centre+2honeycomb, nacl 4Cl+4Na, delian 6oct+8tet | PASS |
 | 18 | Bonds per piece at switch points: 4/4; 3 (honeycomb) and 6 (centre); 6/6; 8 (oct) and 4 (tet) | Main thm (iv) | T rows λ = 0, −1/2, 0, −1/8 | PASS |
-| 19 | Perovskite rectangle −2…2 × −1…1, area 8; walls λ = 0, λ + 2μ = 0, λ + μ = 1; 5 chambers | Main thm (v), Fig. 3 | R l.82, l.180–184; P "walls", "coexistence_area" 8 | PASS |
-| 20 | A–A for λ > 0, A–B for λ + 2μ > 0, X–X for λ + μ < 1; A–X, B–X in all chambers; B–B in none; no hinge chamber/corner | Main thm (v), Fig. 3, Obs. 1 | P chambers' bond_types; "hinge_chambers" [], "hinge_corners" []; R l.185 | PASS (wording limited to chambers and chamber corners, as checked) |
+| 19 | Perovskite rectangle −2…2 × −1…1, area 8; walls λ = 0, λ + 2μ = 0, λ + μ = 1; 5 chambers | Main thm (v), Fig. 3 | R l.82, l.180–184; P "walls", "coexistence_area" 8 | PASS (v2: stated as the OPEN rectangle −2 < λ < 2, −1 < μ < 1, closure area 8; edges have a kind shrunk to points: P "corners" vanished lists) |
+| 20 | A–A for λ > 0, A–B for λ + 2μ > 0, X–X for λ + μ < 1; A–X, B–X in all chambers; B–B in none; no hinge chamber/corner | Main thm (v), Fig. 3, Obs. 1 | P chambers' bond_types; "hinge_chambers" [], "hinge_corners" []; R l.185 | PASS (v2: claim extended to the whole open rectangle after the wall-midpoint check, row 57) |
 | 21 | A–A and X–X both on 0 < λ < 1 − μ; meet at (0, 1) where X vanishes | Cor. 6 | R l.186; P chambers 0, 3; corner (0,1) vanished X | PASS |
 | 22 | (0, −1): B points, A and X rhombic dodecahedra | Cor. 6 | R l.82; C perovskite-checks "(0, −1)" | PASS |
 | 23 | Checks 543 / 41 / 47 / 12 = 643, 0 FAIL; per network 13, 18, 11, 25, 58, 42, 61, 48, 60, 207 | In short, proof, App. B | R l.84–91; `grep -c PASS` on C (recomp; sum 543) | PASS |
@@ -55,7 +55,7 @@ papers/2026-10-25-web-of-bonds/zenodo-state.json (reserved, `published: false`).
 | 42 | A15 at 3/4: Cr tetrahedra, Si 20 triangles, 12 corners of degree 5; at 5/4 truncated octahedra | Cor. 5, Fig. 4 | R l.80, l.172–173; T a15 | PASS |
 | 43 | CsCl/ZnS ratios: unlike ×4, like ×1/√2, volume ×2 on all three intervals; (1 ± λ)²/(2√2) vs (1 ± λ)²/2; √3(3 − λ²) vs (√3/4)(3 − λ²); face counts 16 vs 14 | Obs. 3 | R l.153–157; recomp from N bcc/zincblende area² ratios 16, 1/2, volume ratio 2 on all intervals; T (16 = 12×3+4×6; 14 = 6×4+8×6) | PASS |
 | 44 | unlike nearest squared distance 3 in both; deep vs shallow hole; fcc octahedral hole | Obs. 3 | R l.158 (corrected); PA find 5 | PASS |
-| 45 | Zinc blende sites = half of CsCl sites (2ℤ³ even sum; +(1,1,1)) | Obs. 3 | networks.py: zincblende fcc4 + 4ℤ³ = 2D₃; bcc big 2ℤ³, small 2ℤ³+(1,1,1) (recomp by hand) | PASS (new remark, labelled as a fact without explanation) |
+| 45 | Zinc blende sites = half of CsCl sites. v1 text "Zn: the points of 2ℤ³ with even coordinate sum" was **wrong** (every point of 2ℤ³ has even coordinate sum; referee point 3); v2: "the points 2(a, b, c) of 2ℤ³ with a + b + c even, that is 2D₃" | Obs. 2 (v2 numbering) | networks.py: fcc4 + 4ℤ³ = {2(a,b,c): a+b+c even} (recomp by hand) | v1 FAIL (passed in error), v2 PASS |
 | 46 | Range = (−d², d²) in nine; d² = 3, 3/8, 2, 1, 1, 1, 3, 5/4, 11; hcp lower −11/24; tet–tet @1/6 | Obs. 5 | J orbits (unlike @ distances: bcc 3, delian 3/8, square 2, honeycomb 1, kagome 1, nacl 1, zb 3, a15 5/4, c15 11; hcp 3/8); R l.168 | PASS |
 | 47 | Fig. 1 lanes, ticks, diamonds | Fig. 1 | drawn from J by make_figures.py | PASS (by construction) |
 | 48 | Fig. 3 chamber polygons | Fig. 3 | drawn from P | PASS (by construction) |
@@ -70,3 +70,19 @@ papers/2026-10-25-web-of-bonds/zenodo-state.json (reserved, `published: false`).
 | 55 | DICTO's decisions 2026-10-25: number #53 (no "proposed"), term "switch point" (no "DICTO decides"), title "The Global Web of Bonds: How Bonds Hand Over Across Crystal Networks" (no "working title"); title, h1, sub, meta, §2 definition, print footer; no numbers changed | head, §2 | coordinator message | PASS |
 
 **Result: 55 / 55 PASS** (v4; v3: v2 of this audit, after the #52 concept DOI and the #37a/#40 citations). Open: Andreini [19] title not verified against a copy.
+
+## v2 (after the referee report review-fable.md), study commit 5307e7b
+
+| # | Number / statement | Where | Source | Result |
+|---|---|---|---|---|
+| 56 | Checks 648 = 643 + 5; App. B row "perovskite walls 5" | In short, proof, App. B | data/checks/perovskite-walls-checks.txt (5 PASS); R l.84 (v2) | PASS |
+| 57 | Wall midpoints (0, 1/2), (0, −1/2), (−1, 1/2), (1, −1/2), (1, 0): all kinds alive, like bond present ({A–B,A–X,B–X,X–X}, {A–X,B–X,X–X}, {A–X,B–X,X–X}, {A–A,A–X,B–X,X–X}, {A–A,A–B,A–X,B–X}) | Main thm (v), proof | perovskite-walls-checks.txt; agrees with referee's independent cells | PASS |
+| 58 | Proposition 1 (two kinds: an A–B facet exists whenever both kinds have cells; ≥ 3 kinds: each kind keeps some unlike bond) | §4 | proof in the paper (referee point 1); consistent with all ten walks and with perovskite (A–X, B–X in every chamber) | PASS (no numbers) |
+| 59 | Corollary 2 general sentence: a simplex with ≥ 3 corners of two kinds has a like edge | §4 | pigeonhole (referee point 6) | PASS |
+| 60 | hcp lower end: c² = 8/3; tet sites at z = 3c/8, 5c/8, tet–tet distance² c²/16 = 1/6; shrink point (0, 0, c/2): distance² to tet site (c/8)² = 1/24; to nearest oct holes 1/3 (horizontal, vGv with v = (−1/3, −1/3)) + (c/4)² = 1/6, total 1/2; 1/24 − λ = 1/2 ⇒ λ = −11/24; three oct holes at 3/8 | Obs. 4 | recomp by hand from networks.py hcpholes (G, motif); shrink point from referee's float walk (centroid 0.8164 vs c/2 = 0.8165); R l.168 (v2) | PASS |
+| 61 | Fluorite: only tet–tet @ 1/2 born at −1/8 (not @ 1) | Cor. 4 | J delian orbits | PASS (v1 wording "1/2 and 1 … as in fluorite" corrected, referee point 9) |
+| 62 | Figure numbers swapped: 3D stops = Figure 3 (Cor. 3), perovskite = Figure 4 (Cor. 6) | Cor. 3, Cor. 6, captions | file names fig3-3d-stops.png, fig4-perovskite.png | PASS |
+| 63 | References renumbered in numeric order: #37a = [4], #40 = [5], old [4]–[25] → [6]–[27]; 44 citation brackets rewritten by script | refs, text | build check: every bracket number 1–27 cited, list in order | PASS |
+| 64 | Weaire–Phelan: "polyhedral cells, before relaxation" | Cor. 5 | Sloane & Vaishampayan (referee point 11) | PASS (wording) |
+
+**Result v2: 64 rows; all PASS except row 45 v1 (corrected in v2).**

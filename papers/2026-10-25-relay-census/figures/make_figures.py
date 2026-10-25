@@ -124,7 +124,7 @@ def draw2d(ax, net, A, lam, title, box):
             col = GOLD if k != k2 else (BLUE if k == A else TEAL); ls = "-" if k != k2 else "--"
             ax.plot([ci[0], c2[0]], [ci[1], c2[1]], color=col, lw=0.8, ls=ls, alpha=0.9, zorder=3)
     for k, ci, V, nb in res:
-        ax.plot(ci[0], ci[1], "o", ms=2.4 if V is not None else 1.6, color=INK, zorder=4)
+        ax.plot(ci[0], ci[1], "o", ms=4.2 if V is not None else 2.4, color=INK, mec="white", mew=0.7, zorder=4)
     ax.set_xlim(-box, box); ax.set_ylim(-box, box); ax.set_aspect("equal"); ax.axis("off")
     ax.set_title(title, fontsize=7.4, color=INK)
 fig, axs = plt.subplots(2, 3, figsize=(7.4, 5.3))
@@ -142,7 +142,7 @@ fig.legend(handles=hd, loc="lower center", ncol=3, fontsize=7, frameon=False)
 fig.subplots_adjust(left=0.01, right=0.99, top=0.93, bottom=0.07, wspace=0.05, hspace=0.25)
 logo(fig); fig.savefig(os.path.join(HERE, "fig2-2d-stops.png")); plt.close(fig)
 
-# ---------- Figure 3: perovskite chamber map ----------
+# ---------- Figure 4: perovskite chamber map ----------
 fig, ax = plt.subplots(figsize=(5.2, 3.2))
 shade = ["#efe3bd", "#f6efd9", "#dbe8f5", "#e7efe0", "#f2f2f2"]
 for n, ch in enumerate(PV["chambers"]):
@@ -157,9 +157,9 @@ ax.plot([0, 2], [1, -1], color=TEAL, lw=1.4); ax.text(1.62, -0.52, "λ + μ = 1:
 ax.set_xlim(-2.1, 2.1); ax.set_ylim(-1.1, 1.25); ax.set_aspect("equal")
 ax.set_xlabel("λ = w_A − w_X"); ax.set_ylabel("μ = w_B − w_X"); ax.set_xticks([-2, -1, 0, 1, 2]); ax.set_yticks([-1, 0, 1])
 for s in ("top", "right"): ax.spines[s].set_visible(False)
-fig.tight_layout(); logo(fig); fig.savefig(os.path.join(HERE, "fig3-perovskite.png")); plt.close(fig)
+fig.tight_layout(); logo(fig); fig.savefig(os.path.join(HERE, "fig4-perovskite.png")); plt.close(fig)
 
-# ---------- Figure 4: two 3D stops ----------
+# ---------- Figure 3: two 3D stops ----------
 def faces3d(V):
     h = ConvexHull(V); groups = []
     for simp, eq in zip(h.simplices, h.equations):
@@ -180,7 +180,7 @@ a15 = dict(G=np.eye(3), T=[(2, 0, 0), (0, 2, 0), (0, 0, 2)],
 def cell3(net, A, lam, k, c):
     return cells(net["G"], net["T"], net["motif"], wA(A), lam, [(k, c)], K=2, R2=14)[0][2]
 lamN = 4 - 2 * 3 ** 0.5
-panels = [(nacl, "Na", lamN, "Na", (0, 0, 0), "NaCl, λ = 4 − 2√3: Na cell\n6 squares + 12 hexagons, all edges equal", "#e9d9a8"),
+panels = [(nacl, "Na", lamN, "Na", (0, 0, 0), "NaCl, λ = 4 − 2√3: Na cell\n6 squares + 12 hexagons", "#e9d9a8"),
           (nacl, "Na", lamN, "Cl", (1, 0, 0), "NaCl, same λ: Cl cell\ncube (only unlike bonds)", "#cfe0f3"),
           (a15, "Si", 0.75, "Si", (0, 0, 0), "A15, λ = 3/4: Si cell\n20 triangles (icosahedral pattern)", "#e9d9a8"),
           (a15, "Si", 0.75, "Cr", (h, 0, 1), "A15, same λ: Cr cell\ntetrahedron (only unlike bonds)", "#cfe0f3")]
@@ -192,6 +192,6 @@ for n, (net, A, lam, k, c, title, col) in enumerate(panels):
     ax.set_xlim(m[0] - r, m[0] + r); ax.set_ylim(m[1] - r, m[1] + r); ax.set_zlim(m[2] - r, m[2] + r)
     ax.set_box_aspect((1, 1, 1)); ax.view_init(22, 32); ax.axis("off"); ax.set_title(title, fontsize=7, color=INK)
     print(title.split("\n")[0], "faces", sorted(len(f) for f in F))
-fig.subplots_adjust(left=0, right=1, top=0.86, bottom=0.0, wspace=0.0)
-logo(fig); fig.savefig(os.path.join(HERE, "fig4-3d-stops.png")); plt.close(fig)
+fig.subplots_adjust(left=0.03, right=0.97, top=0.84, bottom=0.0, wspace=0.08)
+logo(fig); fig.savefig(os.path.join(HERE, "fig3-3d-stops.png")); plt.close(fig)
 print("figures written")
