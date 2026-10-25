@@ -49,3 +49,14 @@ To make airtight: congruence along whole stretches (corners affine in λ: same i
 continuity); fuller literature check.
 
 STRETCH-WIDE (exact_stretch.py → exact_stretch.txt): one layer symmetry g per site and stretch carries the corner FUNCTIONS (affine in λ) onto the pure piece's (tet: whole; oct: corners above / on / below the mid-plane): 176 PASS, 0 FAIL over 16 windows × 4 stretches (vanished cells skipped).
+
+PROOF CLOSED (exact_proof2.py → exact_proof2.txt):
+(1) LOCALITY: every corner of every central cell, on every stretch of all 16 windows, within squared distance 1/2 of its site (exact,
+    checked at stretch ends; convexity): 176 ok, 0 bad. Hand step: a site three or more gaps away is ≥ 2.5·√(2/3) away in height and
+    |Δw| ≤ 11/24, so its bisector is at squared distance ≥ 23763/28800 > 1/2 from the site: it cannot meet the cell; by convexity the
+    cell is the same in every stacking with the same six layers round the gap. So the 16 windows cover every close-packed stacking.
+(2) OCTAHEDRAL HALVES: corner functions on each side and on the mid-plane, and the section points as exact rational functions of λ
+    (sympy), coincide with the pure half's under one layer symmetry: 160 ok, 0 bad (no stretch needed splitting).
+(3) Stops: limits of the stretches (census check "limit of the interval = power cell from scratch").
+Known limits of the argument (to state in the paper): the walk range −11/24 ≤ λ ≤ 3/8; sides of the reference halves compared at the
+midpoint of each (unsplit) stretch; independent referee read still to do.
