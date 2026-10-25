@@ -18,3 +18,4 @@ Keyed choice (DICTO 2026-10-25): keying 1 (tet->oct A, K = 0.8) = DICTO Sonsam-K
 
 TWIN STOPS (twin_stops.py, render_twin_stops.py → twin-stops.png): gyrated octet stops beyond the octet. 5/24: oct piece = 60° rhombohedron edge 1/3 (KNOWN, fcc primitive cell), tet piece 16 corners (6 tri, 3 sq, 4 hex) vol 0.340459; 3/8: oct vanish, tet piece 10 corners (6 tri, 3 sq, 1 hex) vol √2/4 = twinned counterpart of the Delian cube stop. Candidates for names after a literature check.
 KEYED IAN DURY (keyed_iandury.py, render_keyed_iandury.py → keyed-iandury.png): stop 5/24, K = 0.8. Valid: 1 Ian Dury → rhombohedron cones (Ian Dury 0.311139, rhombohedron becomes a six-pointed star 0.084853); 2 teeth (0.327062 / 0.053007); 3 rhombohedron → Ian Dury cones (rhombohedron left a thin skeleton 0.009453). Reverse teeth invalid (genus 4).
+Keyed choice (DICTO 2026-10-25): keying 1 = DICTO Ian Dury-K + the keyed rhombohedron (six-pointed star; unnamed).
