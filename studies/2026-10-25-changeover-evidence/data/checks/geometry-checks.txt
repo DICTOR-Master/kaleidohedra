@@ -1,0 +1,49 @@
+PASS  G1 contact map: r_A + r_B = d and r_A^2 - r_B^2 = lam give rho = r_A/r_B = (d^2+lam)/(d^2-lam)  (d**2 + lam)/(d**2 - lam)
+PASS  G1 r_A - r_B = lam/d  
+PASS  G1 regression golden: rho_small/big = (x+2)/(2x+1)  
+PASS  G1 regression Delian: rho_tet/oct = t/(1-t)  
+PASS  G2 bcc: unlike-contact window end = Pauling limit -1 + sqrt(3)  window rho = ['-1 + sqrt(3)', '1/2 + sqrt(3)/2']
+PASS  G3 bcc: like contact small-small at lam = 3 - 2*sqrt(3) lies strictly inside the life [-3, 1)  gap to life ends 2.5359, 1.4641
+PASS  G3 bcc: like contact big-big at lam = -3 + 2*sqrt(3) lies strictly inside the life (-1, 3]  gap to life ends 1.4641, 2.5359
+PASS  G2 nacl: unlike-contact window end = Pauling limit -1 + sqrt(2)  window rho = ['-1 + sqrt(2)', '1 + sqrt(2)']
+PASS  G3 nacl: like contact Cl-Cl at lam = 1 - sqrt(2) lies strictly inside the life [-1, 0)  gap to life ends 0.5858, 0.4142
+PASS  G3 nacl: like contact Na-Na at lam = -1 + sqrt(2) lies strictly inside the life (0, 1]  gap to life ends 0.4142, 0.5858
+PASS  G2 zincblende: unlike-contact window end = Pauling limit -1 + sqrt(6)/2  window rho = ['-1 + sqrt(6)/2', '2 + sqrt(6)']
+PASS  G3 zincblende: like contact S-S at lam = 3 - 2*sqrt(6) lies strictly inside the life [-3, 1)  gap to life ends 1.1010, 2.8990
+PASS  G3 zincblende: like contact Zn-Zn at lam = -3 + 2*sqrt(6) lies strictly inside the life (-1, 3]  gap to life ends 2.8990, 1.1010
+PASS  G2 delian: unlike-contact window end = Pauling limit -1 + sqrt(6)/2  window rho = ['-1 + sqrt(6)/2', '1/2 + sqrt(3)/2']
+PASS  G3 delian: like contact oct-oct at lam = 3/8 - sqrt(6)/4 lies strictly inside the life [-3/8, -1/8)  gap to life ends 0.1376, 0.1124
+PASS  G3 delian: like contact tet-tet at lam = -3/8 + sqrt(3)/4 lies strictly inside the life (-1/8, 3/8]  gap to life ends 0.1830, 0.3170
+PASS  G3 hcpholes: like contact oct-oct at lam = -1/8 lies strictly inside the life [-11/24, 5/24)  gap to life ends 0.3333, 0.3333
+PASS  G3 hcpholes: like contact tet-tet at lam = -1/8 lies strictly inside the life (-11/24, 3/8]  gap to life ends 0.3333, 0.5000
+PASS  G3 a15: like contact Cr-Cr at lam = 5/4 - sqrt(5)/2 lies strictly inside the life [-5/4, 3/4)  gap to life ends 1.3820, 0.6180
+PASS  G3 a15: like contact Si-Si at lam = -5/4 + sqrt(15)/2 lies strictly inside the life (1/4, 5/4]  gap to life ends 0.4365, 0.5635
+PASS  G4 NaCl hinge lam=0 is rho = 1 (equal radii)  
+PASS  G4 zinc blende flips +-1 are rho_Zn/S = 1/2 and 2  
+PASS  G4 CsCl flips +-1 are rho_big/small = 1/2 and 2 (contact map)  
+PASS  G4 CsCl flips are reached by the max-packing map only at rho = 0 or infinity (no positive solution)  
+PASS  G4 fluorite octet hinge -1/8 is rho_tet/oct = 1/2  
+PASS  G4 zinc blende and CsCl: same d^2 = 3 and same flips, so same rho at the flips  
+PASS  G4 C15: unlike-contact window is EMPTY (sqrt11 > sqrt3 + sqrt2: Mg-Cu never touch when like spheres do not overlap)  
+PASS  G5 C15 ideal ratio (both like contacts) = sqrt(3/2) and lam = 1  
+PASS  G5 C15 max packing: unlike pair not overlapping on both branches for q in [1, 1.7]  
+PASS  G5 C15: the max-packing lambda stays in (-2, 3) for every ratio, so flips -5, 7, 9 are unreachable  
+PASS  G5 Laves observed range 1.05-1.68 maps inside the chamber (-5, 7)  
+PASS  G6 A15 ideal ratio (Cr chain contact + Cr-Si contact) r_Si/r_Cr = sqrt5 - 1, lam = (5 - 2 sqrt5)/4  
+PASS  G6 A15 flip 1/4: p = sqrt2 (chain contact), 3/2 (unlike contact)  
+PASS  G6 A15 flip 3/4: p = 2 (chain contact), 4 (unlike contact)  
+PASS  G7 hcp atoms at (0,0,0), (1/3,1/3,1/2) are ideal hcp: 12 neighbours at distance 1  
+PASS  G7 every census "oct" site has 6 hcp atoms at distance^2 1/2 (octahedral hole)  
+PASS  G7 every census "tet" site has 4 hcp atoms at distance^2 3/8 (tetrahedral hole)  
+PASS  G7 the oct-hole set is simple hexagonal, not hcp: oct-oct nearest distance^2 = 2/3 (along c), not 1  
+PASS  G7 tet holes come in face-sharing pairs at distance^2 1/6 (shorter than the oct-tet distance^2 3/8)  
+PASS  G8 Goldschmidt t from r_A = sqrt2 t (1+mu) - 1 (r_X = 1)  
+PASS  G8 with B-X contact: mu = (mu_oct - 1)/(mu_oct + 1)  
+PASS  G8 wall lam = 0 is t = sqrt2/(1 + mu_oct) (r_A = r_X)  
+PASS  G8 wall lam + mu = 1 (B-X contact) is r_A^2 = (3 + 2 mu_oct) r_X^2, i.e. t = (1 + sqrt(3 + 2 mu_oct))/(sqrt2 (1 + mu_oct))  
+PASS  G8 wall lam + 2 mu = 0 is r_A^2 + 2 r_B^2 = 3 r_X^2, t = (1 + sqrt(3 - 2 mu_oct^2))/(sqrt2 (1 + mu_oct))  
+PASS  G8 wall lam + mu = 1 with A-X contact: t = (2 + sqrt(6 - 2 mu_oct^2))/(sqrt2 (1 + mu_oct))  
+PASS  G8 for mu_oct in [0.35, 0.65] the A-B and X-X walls lie at t > 1.0 (outside the perovskite range t <= 1)  
+PASS  G8 ideal all-touching perovskite: mu_oct = sqrt2 - 1, t = 1, r_A = r_X (on the A-A wall)  
+PASS  G9 Goldschmidt t is unchanged by a uniform cation +delta / anion -delta shift (IR -> CR)  
+PASS  G9 two-kind contact: d = r+ + r- unchanged, lambda shifts by 2 delta d (in the units of d)  

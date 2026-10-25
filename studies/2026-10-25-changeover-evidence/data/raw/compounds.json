@@ -1,0 +1,1852 @@
+{
+ "alkali_halides": [
+  {
+   "compound": "LiF",
+   "ambient": "B1 (NaCl type)",
+   "P_t_GPa": null,
+   "P_t_status": null,
+   "radii": {
+    "IR-VI": {
+     "r_cat": "19/25",
+     "r_an": "133/100",
+     "key_cat": "*",
+     "key_an": "",
+     "rho_small_large": 0.5714285714285714,
+     "rho_cat_an": 0.5714285714285714,
+     "pauling_says_B2": false,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VI": {
+     "r_cat": "9/10",
+     "r_an": "119/100",
+     "key_cat": "*",
+     "key_an": "",
+     "rho_small_large": 0.7563025210084033,
+     "rho_cat_an": 0.7563025210084033,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  },
+  {
+   "compound": "LiCl",
+   "ambient": "B1 (NaCl type)",
+   "P_t_GPa": null,
+   "P_t_status": null,
+   "radii": {
+    "IR-VI": {
+     "r_cat": "19/25",
+     "r_an": "181/100",
+     "key_cat": "*",
+     "key_an": "P",
+     "rho_small_large": 0.4198895027624309,
+     "rho_cat_an": 0.4198895027624309,
+     "pauling_says_B2": false,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "below flip 1/2"
+    },
+    "CR-VI": {
+     "r_cat": "9/10",
+     "r_an": "167/100",
+     "key_cat": "*",
+     "key_an": "P",
+     "rho_small_large": 0.5389221556886228,
+     "rho_cat_an": 0.5389221556886228,
+     "pauling_says_B2": false,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  },
+  {
+   "compound": "LiBr",
+   "ambient": "B1 (NaCl type)",
+   "P_t_GPa": null,
+   "P_t_status": null,
+   "radii": {
+    "IR-VI": {
+     "r_cat": "19/25",
+     "r_an": "49/25",
+     "key_cat": "*",
+     "key_an": "P",
+     "rho_small_large": 0.3877551020408163,
+     "rho_cat_an": 0.3877551020408163,
+     "pauling_says_B2": false,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "below flip 1/2"
+    },
+    "CR-VI": {
+     "r_cat": "9/10",
+     "r_an": "91/50",
+     "key_cat": "*",
+     "key_an": "P",
+     "rho_small_large": 0.4945054945054945,
+     "rho_cat_an": 0.4945054945054945,
+     "pauling_says_B2": false,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "below flip 1/2"
+    }
+   }
+  },
+  {
+   "compound": "LiI",
+   "ambient": "B1 (NaCl type)",
+   "P_t_GPa": null,
+   "P_t_status": null,
+   "radii": {
+    "IR-VI": {
+     "r_cat": "19/25",
+     "r_an": "11/5",
+     "key_cat": "*",
+     "key_an": "A",
+     "rho_small_large": 0.34545454545454546,
+     "rho_cat_an": 0.34545454545454546,
+     "pauling_says_B2": false,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "below flip 1/2"
+    },
+    "CR-VI": {
+     "r_cat": "9/10",
+     "r_an": "103/50",
+     "key_cat": "*",
+     "key_an": "A",
+     "rho_small_large": 0.4368932038834951,
+     "rho_cat_an": 0.4368932038834951,
+     "pauling_says_B2": false,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "below flip 1/2"
+    }
+   }
+  },
+  {
+   "compound": "NaF",
+   "ambient": "B1 (NaCl type)",
+   "P_t_GPa": null,
+   "P_t_status": null,
+   "radii": {
+    "IR-VI": {
+     "r_cat": "51/50",
+     "r_an": "133/100",
+     "key_cat": "",
+     "key_an": "",
+     "rho_small_large": 0.7669172932330827,
+     "rho_cat_an": 0.7669172932330827,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VI": {
+     "r_cat": "29/25",
+     "r_an": "119/100",
+     "key_cat": "",
+     "key_an": "",
+     "rho_small_large": 0.9747899159663865,
+     "rho_cat_an": 0.9747899159663865,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  },
+  {
+   "compound": "NaCl",
+   "ambient": "B1 (NaCl type)",
+   "P_t_GPa": 30.0,
+   "P_t_status": "about 30 (secondary)",
+   "radii": {
+    "IR-VI": {
+     "r_cat": "51/50",
+     "r_an": "181/100",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.56353591160221,
+     "rho_cat_an": 0.56353591160221,
+     "pauling_says_B2": false,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VI": {
+     "r_cat": "29/25",
+     "r_an": "167/100",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.6946107784431138,
+     "rho_cat_an": 0.6946107784431138,
+     "pauling_says_B2": false,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  },
+  {
+   "compound": "NaBr",
+   "ambient": "B1 (NaCl type)",
+   "P_t_GPa": null,
+   "P_t_status": null,
+   "radii": {
+    "IR-VI": {
+     "r_cat": "51/50",
+     "r_an": "49/25",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.5204081632653061,
+     "rho_cat_an": 0.5204081632653061,
+     "pauling_says_B2": false,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VI": {
+     "r_cat": "29/25",
+     "r_an": "91/50",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.6373626373626373,
+     "rho_cat_an": 0.6373626373626373,
+     "pauling_says_B2": false,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  },
+  {
+   "compound": "NaI",
+   "ambient": "B1 (NaCl type)",
+   "P_t_GPa": null,
+   "P_t_status": null,
+   "radii": {
+    "IR-VI": {
+     "r_cat": "51/50",
+     "r_an": "11/5",
+     "key_cat": "",
+     "key_an": "A",
+     "rho_small_large": 0.4636363636363636,
+     "rho_cat_an": 0.4636363636363636,
+     "pauling_says_B2": false,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "below flip 1/2"
+    },
+    "CR-VI": {
+     "r_cat": "29/25",
+     "r_an": "103/50",
+     "key_cat": "",
+     "key_an": "A",
+     "rho_small_large": 0.5631067961165048,
+     "rho_cat_an": 0.5631067961165048,
+     "pauling_says_B2": false,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  },
+  {
+   "compound": "KF",
+   "ambient": "B1 (NaCl type)",
+   "P_t_GPa": 2.0,
+   "P_t_status": "estimate",
+   "radii": {
+    "IR-VI": {
+     "r_cat": "69/50",
+     "r_an": "133/100",
+     "key_cat": "",
+     "key_an": "",
+     "rho_small_large": 0.9637681159420289,
+     "rho_cat_an": 1.037593984962406,
+     "pauling_says_B2": true,
+     "nacl_side": "cation larger (Na-Na faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VI": {
+     "r_cat": "38/25",
+     "r_an": "119/100",
+     "key_cat": "",
+     "key_an": "",
+     "rho_small_large": 0.7828947368421053,
+     "rho_cat_an": 1.2773109243697478,
+     "pauling_says_B2": true,
+     "nacl_side": "cation larger (Na-Na faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  },
+  {
+   "compound": "KCl",
+   "ambient": "B1 (NaCl type)",
+   "P_t_GPa": 1.968,
+   "P_t_status": "measured",
+   "radii": {
+    "IR-VI": {
+     "r_cat": "69/50",
+     "r_an": "181/100",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.7624309392265194,
+     "rho_cat_an": 0.7624309392265194,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VI": {
+     "r_cat": "38/25",
+     "r_an": "167/100",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.9101796407185628,
+     "rho_cat_an": 0.9101796407185628,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  },
+  {
+   "compound": "KBr",
+   "ambient": "B1 (NaCl type)",
+   "P_t_GPa": 1.805,
+   "P_t_status": "measured",
+   "radii": {
+    "IR-VI": {
+     "r_cat": "69/50",
+     "r_an": "49/25",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.7040816326530612,
+     "rho_cat_an": 0.7040816326530612,
+     "pauling_says_B2": false,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VI": {
+     "r_cat": "38/25",
+     "r_an": "91/50",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.8351648351648352,
+     "rho_cat_an": 0.8351648351648352,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  },
+  {
+   "compound": "KI",
+   "ambient": "B1 (NaCl type)",
+   "P_t_GPa": 1.785,
+   "P_t_status": "measured",
+   "radii": {
+    "IR-VI": {
+     "r_cat": "69/50",
+     "r_an": "11/5",
+     "key_cat": "",
+     "key_an": "A",
+     "rho_small_large": 0.6272727272727273,
+     "rho_cat_an": 0.6272727272727273,
+     "pauling_says_B2": false,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VI": {
+     "r_cat": "38/25",
+     "r_an": "103/50",
+     "key_cat": "",
+     "key_an": "A",
+     "rho_small_large": 0.7378640776699029,
+     "rho_cat_an": 0.7378640776699029,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  },
+  {
+   "compound": "RbF",
+   "ambient": "B1 (NaCl type)",
+   "P_t_GPa": 1.176,
+   "P_t_status": "estimate",
+   "radii": {
+    "IR-VI": {
+     "r_cat": "38/25",
+     "r_an": "133/100",
+     "key_cat": "",
+     "key_an": "",
+     "rho_small_large": 0.875,
+     "rho_cat_an": 1.1428571428571428,
+     "pauling_says_B2": true,
+     "nacl_side": "cation larger (Na-Na faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VI": {
+     "r_cat": "83/50",
+     "r_an": "119/100",
+     "key_cat": "",
+     "key_an": "",
+     "rho_small_large": 0.7168674698795181,
+     "rho_cat_an": 1.3949579831932772,
+     "pauling_says_B2": false,
+     "nacl_side": "cation larger (Na-Na faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  },
+  {
+   "compound": "RbCl",
+   "ambient": "B1 (NaCl type)",
+   "P_t_GPa": 0.49,
+   "P_t_status": "measured",
+   "radii": {
+    "IR-VI": {
+     "r_cat": "38/25",
+     "r_an": "181/100",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.8397790055248618,
+     "rho_cat_an": 0.8397790055248618,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VI": {
+     "r_cat": "83/50",
+     "r_an": "167/100",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.9940119760479041,
+     "rho_cat_an": 0.9940119760479041,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  },
+  {
+   "compound": "RbBr",
+   "ambient": "B1 (NaCl type)",
+   "P_t_GPa": 0.451,
+   "P_t_status": "measured",
+   "radii": {
+    "IR-VI": {
+     "r_cat": "38/25",
+     "r_an": "49/25",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.7755102040816326,
+     "rho_cat_an": 0.7755102040816326,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VI": {
+     "r_cat": "83/50",
+     "r_an": "91/50",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.9120879120879121,
+     "rho_cat_an": 0.9120879120879121,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  },
+  {
+   "compound": "RbI",
+   "ambient": "B1 (NaCl type)",
+   "P_t_GPa": 0.397,
+   "P_t_status": "measured",
+   "radii": {
+    "IR-VI": {
+     "r_cat": "38/25",
+     "r_an": "11/5",
+     "key_cat": "",
+     "key_an": "A",
+     "rho_small_large": 0.6909090909090909,
+     "rho_cat_an": 0.6909090909090909,
+     "pauling_says_B2": false,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VI": {
+     "r_cat": "83/50",
+     "r_an": "103/50",
+     "key_cat": "",
+     "key_an": "A",
+     "rho_small_large": 0.8058252427184466,
+     "rho_cat_an": 0.8058252427184466,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  },
+  {
+   "compound": "CsF",
+   "ambient": "B1 (NaCl type)",
+   "P_t_GPa": 2.0,
+   "P_t_status": "estimate",
+   "radii": {
+    "IR-VI": {
+     "r_cat": "167/100",
+     "r_an": "133/100",
+     "key_cat": "",
+     "key_an": "",
+     "rho_small_large": 0.7964071856287425,
+     "rho_cat_an": 1.255639097744361,
+     "pauling_says_B2": true,
+     "nacl_side": "cation larger (Na-Na faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "IR-VIII": {
+     "r_cat": "87/50",
+     "r_an": "133/100",
+     "key_cat": "",
+     "key_an": "",
+     "rho_small_large": 0.764367816091954,
+     "rho_cat_an": 1.3082706766917294,
+     "pauling_says_B2": true,
+     "nacl_side": "cation larger (Na-Na faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VI": {
+     "r_cat": "181/100",
+     "r_an": "119/100",
+     "key_cat": "",
+     "key_an": "",
+     "rho_small_large": 0.6574585635359116,
+     "rho_cat_an": 1.5210084033613445,
+     "pauling_says_B2": false,
+     "nacl_side": "cation larger (Na-Na faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VIII": {
+     "r_cat": "47/25",
+     "r_an": "119/100",
+     "key_cat": "",
+     "key_an": "",
+     "rho_small_large": 0.6329787234042553,
+     "rho_cat_an": 1.5798319327731092,
+     "pauling_says_B2": false,
+     "nacl_side": "cation larger (Na-Na faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  },
+  {
+   "compound": "CsCl",
+   "ambient": "B2 (CsCl type)",
+   "P_t_GPa": null,
+   "P_t_status": null,
+   "radii": {
+    "IR-VI": {
+     "r_cat": "167/100",
+     "r_an": "181/100",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.9226519337016574,
+     "rho_cat_an": 0.9226519337016574,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "IR-VIII": {
+     "r_cat": "87/50",
+     "r_an": "181/100",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.9613259668508287,
+     "rho_cat_an": 0.9613259668508287,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VI": {
+     "r_cat": "181/100",
+     "r_an": "167/100",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.9226519337016574,
+     "rho_cat_an": 1.0838323353293413,
+     "pauling_says_B2": true,
+     "nacl_side": "cation larger (Na-Na faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VIII": {
+     "r_cat": "47/25",
+     "r_an": "167/100",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.8882978723404256,
+     "rho_cat_an": 1.125748502994012,
+     "pauling_says_B2": true,
+     "nacl_side": "cation larger (Na-Na faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  },
+  {
+   "compound": "CsBr",
+   "ambient": "B2 (CsCl type)",
+   "P_t_GPa": null,
+   "P_t_status": null,
+   "radii": {
+    "IR-VI": {
+     "r_cat": "167/100",
+     "r_an": "49/25",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.8520408163265306,
+     "rho_cat_an": 0.8520408163265306,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "IR-VIII": {
+     "r_cat": "87/50",
+     "r_an": "49/25",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.8877551020408163,
+     "rho_cat_an": 0.8877551020408163,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VI": {
+     "r_cat": "181/100",
+     "r_an": "91/50",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.9945054945054945,
+     "rho_cat_an": 0.9945054945054945,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VIII": {
+     "r_cat": "47/25",
+     "r_an": "91/50",
+     "key_cat": "",
+     "key_an": "P",
+     "rho_small_large": 0.9680851063829787,
+     "rho_cat_an": 1.032967032967033,
+     "pauling_says_B2": true,
+     "nacl_side": "cation larger (Na-Na faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  },
+  {
+   "compound": "CsI",
+   "ambient": "B2 (CsCl type)",
+   "P_t_GPa": null,
+   "P_t_status": null,
+   "radii": {
+    "IR-VI": {
+     "r_cat": "167/100",
+     "r_an": "11/5",
+     "key_cat": "",
+     "key_an": "A",
+     "rho_small_large": 0.759090909090909,
+     "rho_cat_an": 0.759090909090909,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "IR-VIII": {
+     "r_cat": "87/50",
+     "r_an": "11/5",
+     "key_cat": "",
+     "key_an": "A",
+     "rho_small_large": 0.7909090909090909,
+     "rho_cat_an": 0.7909090909090909,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VI": {
+     "r_cat": "181/100",
+     "r_an": "103/50",
+     "key_cat": "",
+     "key_an": "A",
+     "rho_small_large": 0.8786407766990292,
+     "rho_cat_an": 0.8786407766990292,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    },
+    "CR-VIII": {
+     "r_cat": "47/25",
+     "r_an": "103/50",
+     "key_cat": "",
+     "key_an": "A",
+     "rho_small_large": 0.912621359223301,
+     "rho_cat_an": 0.912621359223301,
+     "pauling_says_B2": true,
+     "nacl_side": "anion larger (Cl-Cl faces)",
+     "cscl_chamber": "soft chamber (1/2, 1]"
+    }
+   }
+  }
+ ],
+ "halide_scores_IR": {
+  "pauling_0732": 13,
+  "census_flip_05": 7,
+  "n": 20
+ },
+ "halide_scores_CR": {
+  "pauling_0732": 11,
+  "census_flip_05": 5,
+  "n": 20
+ },
+ "halide_scores_IR_CsVIII": {
+  "pauling_0732": 13,
+  "n": 20
+ },
+ "halide_pauling_misfits_IR_VI": [
+  "NaF",
+  "KF",
+  "KCl",
+  "RbF",
+  "RbCl",
+  "RbBr",
+  "CsF"
+ ],
+ "halide_Pt_spearman_measured": {
+  "n": 6,
+  "rho_spearman": -0.02857142857142847,
+  "compounds": [
+   "KCl",
+   "KBr",
+   "KI",
+   "RbCl",
+   "RbBr",
+   "RbI"
+  ]
+ },
+ "halide_Pt_by_family": {
+  "K": [
+   [
+    "KI",
+    0.6273,
+    1.785
+   ],
+   [
+    "KBr",
+    0.7041,
+    1.805
+   ],
+   [
+    "KCl",
+    0.7624,
+    1.968
+   ]
+  ],
+  "Rb": [
+   [
+    "RbI",
+    0.6909,
+    0.397
+   ],
+   [
+    "RbBr",
+    0.7755,
+    0.451
+   ],
+   [
+    "RbCl",
+    0.8398,
+    0.49
+   ]
+  ]
+ },
+ "AB": [
+  {
+   "compound": "BeS",
+   "structure": "ZB",
+   "IR-actual": {
+    "r_cat": "27/100",
+    "cn_cat": "IV",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.14673913043478262,
+    "lam_ZB": -2.2322274881516586
+   },
+   "IR-VI": {
+    "r_cat": "9/20",
+    "cn_cat": "VI",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.24456521739130435,
+    "lam_ZB": -1.8209606986899562
+   },
+   "CR-actual": {
+    "r_cat": "41/100",
+    "cn_cat": "IV",
+    "r_an": "17/10",
+    "cn_an": "VI",
+    "rho": 0.2411764705882353,
+    "lam_ZB": -1.8341232227488151
+   },
+   "CR-VI": {
+    "r_cat": "59/100",
+    "cn_cat": "VI",
+    "r_an": "17/10",
+    "cn_an": "VI",
+    "rho": 0.34705882352941175,
+    "lam_ZB": -1.4541484716157205
+   }
+  },
+  {
+   "compound": "BeSe",
+   "structure": "ZB",
+   "IR-actual": {
+    "r_cat": "27/100",
+    "cn_cat": "IV",
+    "r_an": "99/50",
+    "cn_an": "VI",
+    "rho": 0.13636363636363635,
+    "lam_ZB": -2.28
+   },
+   "IR-VI": {
+    "r_cat": "9/20",
+    "cn_cat": "VI",
+    "r_an": "99/50",
+    "cn_an": "VI",
+    "rho": 0.22727272727272727,
+    "lam_ZB": -1.8888888888888888
+   },
+   "CR-actual": {
+    "r_cat": "41/100",
+    "cn_cat": "IV",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.22282608695652173,
+    "lam_ZB": -1.9066666666666667
+   },
+   "CR-VI": {
+    "r_cat": "59/100",
+    "cn_cat": "VI",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.32065217391304346,
+    "lam_ZB": -1.5432098765432098
+   }
+  },
+  {
+   "compound": "BeTe",
+   "structure": "ZB",
+   "IR-actual": {
+    "r_cat": "27/100",
+    "cn_cat": "IV",
+    "r_an": "221/100",
+    "cn_an": "VI",
+    "rho": 0.12217194570135746,
+    "lam_ZB": -2.346774193548387
+   },
+   "IR-VI": {
+    "r_cat": "9/20",
+    "cn_cat": "VI",
+    "r_an": "221/100",
+    "cn_an": "VI",
+    "rho": 0.20361990950226244,
+    "lam_ZB": -1.9849624060150375
+   },
+   "CR-actual": {
+    "r_cat": "41/100",
+    "cn_cat": "IV",
+    "r_an": "207/100",
+    "cn_an": "VI",
+    "rho": 0.19806763285024154,
+    "lam_ZB": -2.0080645161290325
+   },
+   "CR-VI": {
+    "r_cat": "59/100",
+    "cn_cat": "VI",
+    "r_an": "207/100",
+    "cn_an": "VI",
+    "rho": 0.28502415458937197,
+    "lam_ZB": -1.669172932330827
+   }
+  },
+  {
+   "compound": "ZnS",
+   "structure": "ZB",
+   "IR-actual": {
+    "r_cat": "3/5",
+    "cn_cat": "IV",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.32608695652173914,
+    "lam_ZB": -1.5245901639344261
+   },
+   "IR-VI": {
+    "r_cat": "37/50",
+    "cn_cat": "VI",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.40217391304347827,
+    "lam_ZB": -1.2790697674418605
+   },
+   "CR-actual": {
+    "r_cat": "37/50",
+    "cn_cat": "IV",
+    "r_an": "17/10",
+    "cn_an": "VI",
+    "rho": 0.43529411764705883,
+    "lam_ZB": -1.180327868852459
+   },
+   "CR-VI": {
+    "r_cat": "22/25",
+    "cn_cat": "VI",
+    "r_an": "17/10",
+    "cn_an": "VI",
+    "rho": 0.5176470588235295,
+    "lam_ZB": -0.9534883720930233
+   }
+  },
+  {
+   "compound": "ZnSe",
+   "structure": "ZB",
+   "IR-actual": {
+    "r_cat": "3/5",
+    "cn_cat": "IV",
+    "r_an": "99/50",
+    "cn_an": "VI",
+    "rho": 0.30303030303030304,
+    "lam_ZB": -1.6046511627906976
+   },
+   "IR-VI": {
+    "r_cat": "37/50",
+    "cn_cat": "VI",
+    "r_an": "99/50",
+    "cn_an": "VI",
+    "rho": 0.37373737373737376,
+    "lam_ZB": -1.3676470588235294
+   },
+   "CR-actual": {
+    "r_cat": "37/50",
+    "cn_cat": "IV",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.40217391304347827,
+    "lam_ZB": -1.2790697674418605
+   },
+   "CR-VI": {
+    "r_cat": "22/25",
+    "cn_cat": "VI",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.4782608695652174,
+    "lam_ZB": -1.0588235294117647
+   }
+  },
+  {
+   "compound": "ZnTe",
+   "structure": "ZB",
+   "IR-actual": {
+    "r_cat": "3/5",
+    "cn_cat": "IV",
+    "r_an": "221/100",
+    "cn_an": "VI",
+    "rho": 0.27149321266968324,
+    "lam_ZB": -1.7188612099644127
+   },
+   "IR-VI": {
+    "r_cat": "37/50",
+    "cn_cat": "VI",
+    "r_an": "221/100",
+    "cn_an": "VI",
+    "rho": 0.334841628959276,
+    "lam_ZB": -1.494915254237288
+   },
+   "CR-actual": {
+    "r_cat": "37/50",
+    "cn_cat": "IV",
+    "r_an": "207/100",
+    "cn_an": "VI",
+    "rho": 0.357487922705314,
+    "lam_ZB": -1.4199288256227758
+   },
+   "CR-VI": {
+    "r_cat": "22/25",
+    "cn_cat": "VI",
+    "r_an": "207/100",
+    "cn_an": "VI",
+    "rho": 0.4251207729468599,
+    "lam_ZB": -1.2101694915254237
+   }
+  },
+  {
+   "compound": "CdTe",
+   "structure": "ZB",
+   "IR-actual": {
+    "r_cat": "39/50",
+    "cn_cat": "IV",
+    "r_an": "221/100",
+    "cn_an": "VI",
+    "rho": 0.35294117647058826,
+    "lam_ZB": -1.434782608695652
+   },
+   "IR-VI": {
+    "r_cat": "19/20",
+    "cn_cat": "VI",
+    "r_an": "221/100",
+    "cn_an": "VI",
+    "rho": 0.4298642533936652,
+    "lam_ZB": -1.1962025316455696
+   },
+   "CR-actual": {
+    "r_cat": "23/25",
+    "cn_cat": "IV",
+    "r_an": "207/100",
+    "cn_an": "VI",
+    "rho": 0.4444444444444444,
+    "lam_ZB": -1.1538461538461537
+   },
+   "CR-VI": {
+    "r_cat": "109/100",
+    "cn_cat": "VI",
+    "r_an": "207/100",
+    "cn_an": "VI",
+    "rho": 0.5265700483091788,
+    "lam_ZB": -0.930379746835443
+   }
+  },
+  {
+   "compound": "CuCl",
+   "structure": "ZB",
+   "IR-actual": {
+    "r_cat": "3/5",
+    "cn_cat": "IV",
+    "r_an": "181/100",
+    "cn_an": "VI",
+    "rho": 0.3314917127071823,
+    "lam_ZB": -1.5062240663900415
+   },
+   "IR-VI": {
+    "r_cat": "77/100",
+    "cn_cat": "VI",
+    "r_an": "181/100",
+    "cn_an": "VI",
+    "rho": 0.425414364640884,
+    "lam_ZB": -1.2093023255813953
+   },
+   "CR-actual": {
+    "r_cat": "37/50",
+    "cn_cat": "IV",
+    "r_an": "167/100",
+    "cn_an": "VI",
+    "rho": 0.4431137724550898,
+    "lam_ZB": -1.157676348547718
+   },
+   "CR-VI": {
+    "r_cat": "91/100",
+    "cn_cat": "VI",
+    "r_an": "167/100",
+    "cn_an": "VI",
+    "rho": 0.5449101796407185,
+    "lam_ZB": -0.8837209302325582
+   }
+  },
+  {
+   "compound": "CuBr",
+   "structure": "ZB",
+   "IR-actual": {
+    "r_cat": "3/5",
+    "cn_cat": "IV",
+    "r_an": "49/25",
+    "cn_an": "VI",
+    "rho": 0.30612244897959184,
+    "lam_ZB": -1.59375
+   },
+   "IR-VI": {
+    "r_cat": "77/100",
+    "cn_cat": "VI",
+    "r_an": "49/25",
+    "cn_an": "VI",
+    "rho": 0.39285714285714285,
+    "lam_ZB": -1.3076923076923077
+   },
+   "CR-actual": {
+    "r_cat": "37/50",
+    "cn_cat": "IV",
+    "r_an": "91/50",
+    "cn_an": "VI",
+    "rho": 0.4065934065934066,
+    "lam_ZB": -1.265625
+   },
+   "CR-VI": {
+    "r_cat": "91/100",
+    "cn_cat": "VI",
+    "r_an": "91/50",
+    "cn_an": "VI",
+    "rho": 0.5,
+    "lam_ZB": -1.0
+   }
+  },
+  {
+   "compound": "CuI",
+   "structure": "ZB",
+   "IR-actual": {
+    "r_cat": "3/5",
+    "cn_cat": "IV",
+    "r_an": "11/5",
+    "cn_an": "VI",
+    "rho": 0.2727272727272727,
+    "lam_ZB": -1.7142857142857142
+   },
+   "IR-VI": {
+    "r_cat": "77/100",
+    "cn_cat": "VI",
+    "r_an": "11/5",
+    "cn_an": "VI",
+    "rho": 0.35,
+    "lam_ZB": -1.4444444444444444
+   },
+   "CR-actual": {
+    "r_cat": "37/50",
+    "cn_cat": "IV",
+    "r_an": "103/50",
+    "cn_an": "VI",
+    "rho": 0.3592233009708738,
+    "lam_ZB": -1.4142857142857144
+   },
+   "CR-VI": {
+    "r_cat": "91/100",
+    "cn_cat": "VI",
+    "r_an": "103/50",
+    "cn_an": "VI",
+    "rho": 0.441747572815534,
+    "lam_ZB": -1.1616161616161615
+   }
+  },
+  {
+   "compound": "ZnO",
+   "structure": "W",
+   "IR-actual": {
+    "r_cat": "3/5",
+    "cn_cat": "IV",
+    "r_an": "69/50",
+    "cn_an": "IV",
+    "rho": 0.43478260869565216,
+    "lam_ZB": -1.1818181818181819
+   },
+   "IR-VI": {
+    "r_cat": "37/50",
+    "cn_cat": "VI",
+    "r_an": "7/5",
+    "cn_an": "VI",
+    "rho": 0.5285714285714286,
+    "lam_ZB": -0.9252336448598131
+   },
+   "CR-actual": {
+    "r_cat": "37/50",
+    "cn_cat": "IV",
+    "r_an": "31/25",
+    "cn_an": "IV",
+    "rho": 0.5967741935483871,
+    "lam_ZB": -0.7575757575757576
+   },
+   "CR-VI": {
+    "r_cat": "22/25",
+    "cn_cat": "VI",
+    "r_an": "63/50",
+    "cn_an": "VI",
+    "rho": 0.6984126984126984,
+    "lam_ZB": -0.5327102803738317
+   }
+  },
+  {
+   "compound": "CdS",
+   "structure": "W",
+   "IR-actual": {
+    "r_cat": "39/50",
+    "cn_cat": "IV",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.42391304347826086,
+    "lam_ZB": -1.213740458015267
+   },
+   "IR-VI": {
+    "r_cat": "19/20",
+    "cn_cat": "VI",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.5163043478260869,
+    "lam_ZB": -0.956989247311828
+   },
+   "CR-actual": {
+    "r_cat": "23/25",
+    "cn_cat": "IV",
+    "r_an": "17/10",
+    "cn_an": "VI",
+    "rho": 0.5411764705882353,
+    "lam_ZB": -0.8931297709923665
+   },
+   "CR-VI": {
+    "r_cat": "109/100",
+    "cn_cat": "VI",
+    "r_an": "17/10",
+    "cn_an": "VI",
+    "rho": 0.6411764705882353,
+    "lam_ZB": -0.6559139784946236
+   }
+  },
+  {
+   "compound": "CdSe",
+   "structure": "W",
+   "IR-actual": {
+    "r_cat": "39/50",
+    "cn_cat": "IV",
+    "r_an": "99/50",
+    "cn_an": "VI",
+    "rho": 0.3939393939393939,
+    "lam_ZB": -1.3043478260869565
+   },
+   "IR-VI": {
+    "r_cat": "19/20",
+    "cn_cat": "VI",
+    "r_an": "99/50",
+    "cn_an": "VI",
+    "rho": 0.4797979797979798,
+    "lam_ZB": -1.0546075085324231
+   },
+   "CR-actual": {
+    "r_cat": "23/25",
+    "cn_cat": "IV",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.5,
+    "lam_ZB": -1.0
+   },
+   "CR-VI": {
+    "r_cat": "109/100",
+    "cn_cat": "VI",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.592391304347826,
+    "lam_ZB": -0.7679180887372014
+   }
+  },
+  {
+   "compound": "AgI",
+   "structure": "W",
+   "IR-actual": {
+    "r_cat": "1",
+    "cn_cat": "IV",
+    "r_an": "11/5",
+    "cn_an": "VI",
+    "rho": 0.45454545454545453,
+    "lam_ZB": -1.125
+   },
+   "IR-VI": {
+    "r_cat": "23/20",
+    "cn_cat": "VI",
+    "r_an": "11/5",
+    "cn_an": "VI",
+    "rho": 0.5227272727272727,
+    "lam_ZB": -0.9402985074626866
+   },
+   "CR-actual": {
+    "r_cat": "57/50",
+    "cn_cat": "IV",
+    "r_an": "103/50",
+    "cn_an": "VI",
+    "rho": 0.5533980582524272,
+    "lam_ZB": -0.8625
+   },
+   "CR-VI": {
+    "r_cat": "129/100",
+    "cn_cat": "VI",
+    "r_an": "103/50",
+    "cn_an": "VI",
+    "rho": 0.6262135922330098,
+    "lam_ZB": -0.6895522388059702
+   }
+  },
+  {
+   "compound": "MgO",
+   "structure": "RS",
+   "IR-actual": {
+    "r_cat": "18/25",
+    "cn_cat": "VI",
+    "r_an": "7/5",
+    "cn_an": "VI",
+    "rho": 0.5142857142857142,
+    "lam_ZB": -0.9622641509433962
+   },
+   "IR-VI": {
+    "r_cat": "18/25",
+    "cn_cat": "VI",
+    "r_an": "7/5",
+    "cn_an": "VI",
+    "rho": 0.5142857142857142,
+    "lam_ZB": -0.9622641509433962
+   },
+   "CR-actual": {
+    "r_cat": "43/50",
+    "cn_cat": "VI",
+    "r_an": "63/50",
+    "cn_an": "VI",
+    "rho": 0.6825396825396826,
+    "lam_ZB": -0.5660377358490566
+   },
+   "CR-VI": {
+    "r_cat": "43/50",
+    "cn_cat": "VI",
+    "r_an": "63/50",
+    "cn_an": "VI",
+    "rho": 0.6825396825396826,
+    "lam_ZB": -0.5660377358490566
+   }
+  },
+  {
+   "compound": "MgS",
+   "structure": "RS",
+   "IR-actual": {
+    "r_cat": "18/25",
+    "cn_cat": "VI",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.391304347826087,
+    "lam_ZB": -1.3125
+   },
+   "IR-VI": {
+    "r_cat": "18/25",
+    "cn_cat": "VI",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.391304347826087,
+    "lam_ZB": -1.3125
+   },
+   "CR-actual": {
+    "r_cat": "43/50",
+    "cn_cat": "VI",
+    "r_an": "17/10",
+    "cn_an": "VI",
+    "rho": 0.5058823529411764,
+    "lam_ZB": -0.984375
+   },
+   "CR-VI": {
+    "r_cat": "43/50",
+    "cn_cat": "VI",
+    "r_an": "17/10",
+    "cn_an": "VI",
+    "rho": 0.5058823529411764,
+    "lam_ZB": -0.984375
+   }
+  },
+  {
+   "compound": "MgSe",
+   "structure": "RS",
+   "IR-actual": {
+    "r_cat": "18/25",
+    "cn_cat": "VI",
+    "r_an": "99/50",
+    "cn_an": "VI",
+    "rho": 0.36363636363636365,
+    "lam_ZB": -1.4
+   },
+   "IR-VI": {
+    "r_cat": "18/25",
+    "cn_cat": "VI",
+    "r_an": "99/50",
+    "cn_an": "VI",
+    "rho": 0.36363636363636365,
+    "lam_ZB": -1.4
+   },
+   "CR-actual": {
+    "r_cat": "43/50",
+    "cn_cat": "VI",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.4673913043478261,
+    "lam_ZB": -1.0888888888888888
+   },
+   "CR-VI": {
+    "r_cat": "43/50",
+    "cn_cat": "VI",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.4673913043478261,
+    "lam_ZB": -1.0888888888888888
+   }
+  },
+  {
+   "compound": "CaO",
+   "structure": "RS",
+   "IR-actual": {
+    "r_cat": "1",
+    "cn_cat": "VI",
+    "r_an": "7/5",
+    "cn_an": "VI",
+    "rho": 0.7142857142857143,
+    "lam_ZB": -0.5
+   },
+   "IR-VI": {
+    "r_cat": "1",
+    "cn_cat": "VI",
+    "r_an": "7/5",
+    "cn_an": "VI",
+    "rho": 0.7142857142857143,
+    "lam_ZB": -0.5
+   },
+   "CR-actual": {
+    "r_cat": "57/50",
+    "cn_cat": "VI",
+    "r_an": "63/50",
+    "cn_an": "VI",
+    "rho": 0.9047619047619048,
+    "lam_ZB": -0.15
+   },
+   "CR-VI": {
+    "r_cat": "57/50",
+    "cn_cat": "VI",
+    "r_an": "63/50",
+    "cn_an": "VI",
+    "rho": 0.9047619047619048,
+    "lam_ZB": -0.15
+   }
+  },
+  {
+   "compound": "CaS",
+   "structure": "RS",
+   "IR-actual": {
+    "r_cat": "1",
+    "cn_cat": "VI",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.5434782608695652,
+    "lam_ZB": -0.8873239436619719
+   },
+   "IR-VI": {
+    "r_cat": "1",
+    "cn_cat": "VI",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.5434782608695652,
+    "lam_ZB": -0.8873239436619719
+   },
+   "CR-actual": {
+    "r_cat": "57/50",
+    "cn_cat": "VI",
+    "r_an": "17/10",
+    "cn_an": "VI",
+    "rho": 0.6705882352941176,
+    "lam_ZB": -0.5915492957746479
+   },
+   "CR-VI": {
+    "r_cat": "57/50",
+    "cn_cat": "VI",
+    "r_an": "17/10",
+    "cn_an": "VI",
+    "rho": 0.6705882352941176,
+    "lam_ZB": -0.5915492957746479
+   }
+  },
+  {
+   "compound": "SrO",
+   "structure": "RS",
+   "IR-actual": {
+    "r_cat": "59/50",
+    "cn_cat": "VI",
+    "r_an": "7/5",
+    "cn_an": "VI",
+    "rho": 0.8428571428571429,
+    "lam_ZB": -0.2558139534883721
+   },
+   "IR-VI": {
+    "r_cat": "59/50",
+    "cn_cat": "VI",
+    "r_an": "7/5",
+    "cn_an": "VI",
+    "rho": 0.8428571428571429,
+    "lam_ZB": -0.2558139534883721
+   },
+   "CR-actual": {
+    "r_cat": "33/25",
+    "cn_cat": "VI",
+    "r_an": "63/50",
+    "cn_an": "VI",
+    "rho": 1.0476190476190477,
+    "lam_ZB": 0.06976744186046512
+   },
+   "CR-VI": {
+    "r_cat": "33/25",
+    "cn_cat": "VI",
+    "r_an": "63/50",
+    "cn_an": "VI",
+    "rho": 1.0476190476190477,
+    "lam_ZB": 0.06976744186046512
+   }
+  },
+  {
+   "compound": "SrS",
+   "structure": "RS",
+   "IR-actual": {
+    "r_cat": "59/50",
+    "cn_cat": "VI",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.6413043478260869,
+    "lam_ZB": -0.6556291390728477
+   },
+   "IR-VI": {
+    "r_cat": "59/50",
+    "cn_cat": "VI",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.6413043478260869,
+    "lam_ZB": -0.6556291390728477
+   },
+   "CR-actual": {
+    "r_cat": "33/25",
+    "cn_cat": "VI",
+    "r_an": "17/10",
+    "cn_an": "VI",
+    "rho": 0.7764705882352941,
+    "lam_ZB": -0.37748344370860926
+   },
+   "CR-VI": {
+    "r_cat": "33/25",
+    "cn_cat": "VI",
+    "r_an": "17/10",
+    "cn_an": "VI",
+    "rho": 0.7764705882352941,
+    "lam_ZB": -0.37748344370860926
+   }
+  },
+  {
+   "compound": "BaO",
+   "structure": "RS",
+   "IR-actual": {
+    "r_cat": "27/20",
+    "cn_cat": "VI",
+    "r_an": "7/5",
+    "cn_an": "VI",
+    "rho": 0.9642857142857143,
+    "lam_ZB": -0.05454545454545454
+   },
+   "IR-VI": {
+    "r_cat": "27/20",
+    "cn_cat": "VI",
+    "r_an": "7/5",
+    "cn_an": "VI",
+    "rho": 0.9642857142857143,
+    "lam_ZB": -0.05454545454545454
+   },
+   "CR-actual": {
+    "r_cat": "149/100",
+    "cn_cat": "VI",
+    "r_an": "63/50",
+    "cn_an": "VI",
+    "rho": 1.1825396825396826,
+    "lam_ZB": 0.2509090909090909
+   },
+   "CR-VI": {
+    "r_cat": "149/100",
+    "cn_cat": "VI",
+    "r_an": "63/50",
+    "cn_an": "VI",
+    "rho": 1.1825396825396826,
+    "lam_ZB": 0.2509090909090909
+   }
+  },
+  {
+   "compound": "BaS",
+   "structure": "RS",
+   "IR-actual": {
+    "r_cat": "27/20",
+    "cn_cat": "VI",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.7336956521739131,
+    "lam_ZB": -0.4608150470219436
+   },
+   "IR-VI": {
+    "r_cat": "27/20",
+    "cn_cat": "VI",
+    "r_an": "46/25",
+    "cn_an": "VI",
+    "rho": 0.7336956521739131,
+    "lam_ZB": -0.4608150470219436
+   },
+   "CR-actual": {
+    "r_cat": "149/100",
+    "cn_cat": "VI",
+    "r_an": "17/10",
+    "cn_an": "VI",
+    "rho": 0.8764705882352941,
+    "lam_ZB": -0.1974921630094044
+   },
+   "CR-VI": {
+    "r_cat": "149/100",
+    "cn_cat": "VI",
+    "r_an": "17/10",
+    "cn_an": "VI",
+    "rho": 0.8764705882352941,
+    "lam_ZB": -0.1974921630094044
+   }
+  },
+  {
+   "compound": "CdO",
+   "structure": "RS",
+   "IR-actual": {
+    "r_cat": "19/20",
+    "cn_cat": "VI",
+    "r_an": "7/5",
+    "cn_an": "VI",
+    "rho": 0.6785714285714286,
+    "lam_ZB": -0.574468085106383
+   },
+   "IR-VI": {
+    "r_cat": "19/20",
+    "cn_cat": "VI",
+    "r_an": "7/5",
+    "cn_an": "VI",
+    "rho": 0.6785714285714286,
+    "lam_ZB": -0.574468085106383
+   },
+   "CR-actual": {
+    "r_cat": "109/100",
+    "cn_cat": "VI",
+    "r_an": "63/50",
+    "cn_an": "VI",
+    "rho": 0.8650793650793651,
+    "lam_ZB": -0.2170212765957447
+   },
+   "CR-VI": {
+    "r_cat": "109/100",
+    "cn_cat": "VI",
+    "r_an": "63/50",
+    "cn_an": "VI",
+    "rho": 0.8650793650793651,
+    "lam_ZB": -0.2170212765957447
+   }
+  }
+ ],
+ "AB_scores": {
+  "IR-actual/pauling_0414": {
+   "correct": 19,
+   "n": 24,
+   "wrong": [
+    "ZnO",
+    "CdS",
+    "AgI",
+    "MgS",
+    "MgSe"
+   ]
+  },
+  "IR-actual/census_flip_05": {
+   "correct": 22,
+   "n": 24,
+   "wrong": [
+    "MgS",
+    "MgSe"
+   ]
+  },
+  "IR-actual/best_threshold": {
+   "correct": 22,
+   "threshold": 0.5142857142857142
+  },
+  "IR-VI/pauling_0414": {
+   "correct": 16,
+   "n": 24,
+   "wrong": [
+    "CdTe",
+    "CuCl",
+    "ZnO",
+    "CdS",
+    "CdSe",
+    "AgI",
+    "MgS",
+    "MgSe"
+   ]
+  },
+  "IR-VI/census_flip_05": {
+   "correct": 19,
+   "n": 24,
+   "wrong": [
+    "ZnO",
+    "CdS",
+    "AgI",
+    "MgS",
+    "MgSe"
+   ]
+  },
+  "IR-VI/best_threshold": {
+   "correct": 21,
+   "threshold": 0.5434782608695652
+  },
+  "CR-actual/pauling_0414": {
+   "correct": 17,
+   "n": 24,
+   "wrong": [
+    "ZnS",
+    "CdTe",
+    "CuCl",
+    "ZnO",
+    "CdS",
+    "CdSe",
+    "AgI"
+   ]
+  },
+  "CR-actual/census_flip_05": {
+   "correct": 19,
+   "n": 24,
+   "wrong": [
+    "ZnO",
+    "CdS",
+    "CdSe",
+    "AgI",
+    "MgSe"
+   ]
+  },
+  "CR-actual/best_threshold": {
+   "correct": 22,
+   "threshold": 0.6705882352941176
+  },
+  "CR-VI/pauling_0414": {
+   "correct": 13,
+   "n": 24,
+   "wrong": [
+    "ZnS",
+    "ZnSe",
+    "ZnTe",
+    "CdTe",
+    "CuCl",
+    "CuBr",
+    "CuI",
+    "ZnO",
+    "CdS",
+    "CdSe",
+    "AgI"
+   ]
+  },
+  "CR-VI/census_flip_05": {
+   "correct": 15,
+   "n": 24,
+   "wrong": [
+    "ZnS",
+    "CdTe",
+    "CuCl",
+    "CuBr",
+    "ZnO",
+    "CdS",
+    "CdSe",
+    "AgI",
+    "MgSe"
+   ]
+  },
+  "CR-VI/best_threshold": {
+   "correct": 21,
+   "threshold": 0.6705882352941176
+  }
+ },
+ "perovskites": [
+  {
+   "compound": "CaTiO3",
+   "structure_room_T": "orthorhombic Pnma (octahedral tilts)",
+   "IR": {
+    "r_A": "67/50",
+    "r_B": "121/200",
+    "r_X": "7/5",
+    "t": 0.9663204890030624,
+    "mu_oct": 0.43214285714285716,
+    "rA_over_rX": 0.9571428571428572,
+    "lam": -0.04089526806425333,
+    "mu": -0.39650872817955113,
+    "contact": "B-X",
+    "t_wall_AA": 0.9874807916819617,
+    "side": "no A-A faces (lam < 0)",
+    "lam_plus_2mu": -0.8339127244233556,
+    "lam_plus_mu": -0.43740399624380444
+   },
+   "CR": {
+    "r_A": "37/25",
+    "r_B": "149/200",
+    "r_X": "63/50",
+    "t": 0.9663204890030624,
+    "mu_oct": 0.5912698412698413,
+    "rA_over_rX": 1.1746031746031746,
+    "lam": 0.14994931623559554,
+    "mu": -0.256857855361596,
+    "contact": "B-X",
+    "t_wall_AA": 0.8887327125137655,
+    "side": "A-A faces present (lam > 0)",
+    "lam_plus_2mu": -0.36376639448759646,
+    "lam_plus_mu": -0.10690853912600046
+   }
+  },
+  {
+   "compound": "SrTiO3",
+   "structure_room_T": "cubic Pm-3m at room T",
+   "IR": {
+    "r_A": "36/25",
+    "r_B": "121/200",
+    "r_X": "7/5",
+    "t": 1.001587660134561,
+    "mu_oct": 0.43214285714285716,
+    "rA_over_rX": 1.0285714285714285,
+    "lam": 0.028169014084507043,
+    "mu": -0.3952526780400714,
+    "contact": "A-X",
+    "t_wall_AA": 0.9874807916819617,
+    "side": "A-A faces present (lam > 0)",
+    "lam_plus_2mu": -0.7623363419956358,
+    "lam_plus_mu": -0.36708366395556435
+   },
+   "CR": {
+    "r_A": "79/50",
+    "r_B": "149/200",
+    "r_X": "63/50",
+    "t": 1.001587660134561,
+    "mu_oct": 0.5912698412698413,
+    "rA_over_rX": 1.253968253968254,
+    "lam": 0.22535211267605634,
+    "mu": -0.2560441876611783,
+    "contact": "A-X",
+    "t_wall_AA": 0.8887327125137655,
+    "side": "A-A faces present (lam > 0)",
+    "lam_plus_2mu": -0.2867362626463003,
+    "lam_plus_mu": -0.030692074985122
+   }
+  },
+  {
+   "compound": "BaTiO3",
+   "structure_room_T": "tetragonal P4mm at room T (cubic above ~393 K)",
+   "IR": {
+    "r_A": "161/100",
+    "r_B": "121/200",
+    "r_X": "7/5",
+    "t": 1.0615418510581087,
+    "mu_oct": 0.43214285714285716,
+    "rA_over_rX": 1.15,
+    "lam": 0.13953488372093023,
+    "mu": -0.3518669771856823,
+    "contact": "A-X",
+    "t_wall_AA": 0.9874807916819617,
+    "side": "A-A faces present (lam > 0)",
+    "lam_plus_2mu": -0.5641990706504343,
+    "lam_plus_mu": -0.21233209346475204
+   },
+   "CR": {
+    "r_A": "7/4",
+    "r_B": "149/200",
+    "r_X": "63/50",
+    "t": 1.0615418510581087,
+    "mu_oct": 0.5912698412698413,
+    "rA_over_rX": 1.3888888888888888,
+    "lam": 0.32558139534883723,
+    "mu": -0.2279389852209137,
+    "contact": "A-X",
+    "t_wall_AA": 0.8887327125137655,
+    "side": "A-A faces present (lam > 0)",
+    "lam_plus_2mu": -0.13029657509299014,
+    "lam_plus_mu": 0.09764241012792353
+   }
+  }
+ ],
+ "perovskite_note": "A-B wall side recorded per compound as lam_plus_2mu (A-B faces exist iff > 0)"
+}

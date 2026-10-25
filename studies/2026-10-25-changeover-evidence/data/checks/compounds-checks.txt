@@ -1,0 +1,15 @@
+PASS  C0 CR - IR = +0.14 for Cs+1 VIII  87/50 -> 47/25
+PASS  C0 CR - IR = +0.14 for Na+1 VI  51/50 -> 29/25
+PASS  C0 CR - IR = -0.14 for Cl-1 VI  181/100 -> 167/100
+PASS  C0 CR - IR = -0.14 for O-2 VI  7/5 -> 63/50
+PASS  C0 CR - IR = +0.14 for Ti+4 VI  121/200 -> 149/200
+PASS  C0 CR - IR = +0.14 for Zn+2 IV  3/5 -> 37/50
+PASS  C0 CR - IR = -0.14 for S-2 VI  46/25 -> 17/10
+PASS  C1 20 alkali halides placed, 3 of them B2  
+PASS  C1 regression: CsCl rho (IR, Cs VIII) = 174/181 = 0.9613 (physical anchors)  
+PASS  C1 within K and within Rb halides, P_t increases with rho (opposite to "nearer 0.732 -> easier B2")  {'K': [('KI', 0.6273, 1.785), ('KBr', 0.7041, 1.805), ('KCl', 0.7624, 1.968)], 'Rb': [('RbI', 0.6909, 0.397), ('RbBr', 0.7755, 0.451), ('RbCl', 0.8398, 0.49)]}
+PASS  C2 24 AB compounds placed  
+PASS  C2 regression: ZnS IR (Zn IV 0.60, S VI 1.84) rho = 0.3261  
+PASS  C3 t is identical under IR and CR for every titanate (convention invariance, G9)  
+PASS  C3 IR: the A-A wall r_A = r_X separates CaTiO3 (tilted) from SrTiO3 / BaTiO3  
+PASS  C3 CR: all three titanates on the same side of the A-A wall (the separation is convention-dependent)  

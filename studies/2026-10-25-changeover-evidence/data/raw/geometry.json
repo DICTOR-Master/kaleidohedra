@@ -1,0 +1,627 @@
+{
+ "nets": {
+  "bcc": {
+   "A": "big",
+   "B": "small",
+   "d2": "3",
+   "likeA2": "4",
+   "likeB2": "4",
+   "range": [
+    "-3",
+    "3"
+   ],
+   "range_is_pm_d2": true,
+   "window_lambda": [
+    "3 - 2*sqrt(3)",
+    "-3 + 2*sqrt(3)"
+   ],
+   "window_rho": [
+    "-1 + sqrt(3)",
+    "1/2 + sqrt(3)/2"
+   ],
+   "stops": [
+    {
+     "what": "flip",
+     "lam": "-1",
+     "lam_float": -1.0,
+     "rho_contact": "1/2",
+     "rho_contact_float": 0.5,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    },
+    {
+     "what": "flip",
+     "lam": "1",
+     "lam_float": 1.0,
+     "rho_contact": "2",
+     "rho_contact_float": 2.0,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    },
+    {
+     "what": "named: small: all edges equal",
+     "lam": "1 - 2*sqrt(2)",
+     "lam_float": -1.82842712474619,
+     "rho_contact": "-4 + 3*sqrt(2)",
+     "rho_contact_float": 0.24264068711928516,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    },
+    {
+     "what": "named: big: all edges equal",
+     "lam": "0",
+     "lam_float": 0.0,
+     "rho_contact": "1",
+     "rho_contact_float": 1.0,
+     "in_touching_window": true,
+     "rho_max_packing": [
+      [
+       "A-B contact",
+       "1",
+       1.0
+      ]
+     ]
+    },
+    {
+     "what": "named: big: all edges equal",
+     "lam": "-1 + 2*sqrt(2)",
+     "lam_float": 1.82842712474619,
+     "rho_contact": "2 + 3*sqrt(2)/2",
+     "rho_contact_float": 4.121320343559643,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    },
+    {
+     "what": "range end",
+     "lam": "-3",
+     "lam_float": -3.0,
+     "rho_contact": "0",
+     "rho_contact_float": 0.0,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    },
+    {
+     "what": "range end",
+     "lam": "3",
+     "lam_float": 3.0,
+     "rho_contact": "oo",
+     "rho_contact_float": null,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    }
+   ]
+  },
+  "nacl": {
+   "A": "Na",
+   "B": "Cl",
+   "d2": "1",
+   "likeA2": "2",
+   "likeB2": "2",
+   "range": [
+    "-1",
+    "1"
+   ],
+   "range_is_pm_d2": true,
+   "window_lambda": [
+    "1 - sqrt(2)",
+    "-1 + sqrt(2)"
+   ],
+   "window_rho": [
+    "-1 + sqrt(2)",
+    "1 + sqrt(2)"
+   ],
+   "stops": [
+    {
+     "what": "flip (hinge)",
+     "lam": "0",
+     "lam_float": 0.0,
+     "rho_contact": "1",
+     "rho_contact_float": 1.0,
+     "in_touching_window": true,
+     "rho_max_packing": [
+      [
+       "A-B contact",
+       "1",
+       1.0
+      ]
+     ]
+    },
+    {
+     "what": "named: Cl: all edges equal",
+     "lam": "-4 + 2*sqrt(3)",
+     "lam_float": -0.5358983848622454,
+     "rho_contact": "-3/13 + 4*sqrt(3)/13",
+     "rho_contact_float": 0.30216947925196225,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    },
+    {
+     "what": "named: Na: all edges equal",
+     "lam": "4 - 2*sqrt(3)",
+     "lam_float": 0.5358983848622454,
+     "rho_contact": "1 + 4*sqrt(3)/3",
+     "rho_contact_float": 3.309401076758503,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    },
+    {
+     "what": "range end",
+     "lam": "-1",
+     "lam_float": -1.0,
+     "rho_contact": "0",
+     "rho_contact_float": 0.0,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    },
+    {
+     "what": "range end",
+     "lam": "1",
+     "lam_float": 1.0,
+     "rho_contact": "oo",
+     "rho_contact_float": null,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    }
+   ]
+  },
+  "zincblende": {
+   "A": "Zn",
+   "B": "S",
+   "d2": "3",
+   "likeA2": "8",
+   "likeB2": "8",
+   "range": [
+    "-3",
+    "3"
+   ],
+   "range_is_pm_d2": true,
+   "window_lambda": [
+    "3 - 2*sqrt(6)",
+    "-3 + 2*sqrt(6)"
+   ],
+   "window_rho": [
+    "-1 + sqrt(6)/2",
+    "2 + sqrt(6)"
+   ],
+   "stops": [
+    {
+     "what": "flip",
+     "lam": "-1",
+     "lam_float": -1.0,
+     "rho_contact": "1/2",
+     "rho_contact_float": 0.5,
+     "in_touching_window": true,
+     "rho_max_packing": [
+      [
+       "A-B contact",
+       "1/2",
+       0.5
+      ]
+     ]
+    },
+    {
+     "what": "flip",
+     "lam": "1",
+     "lam_float": 1.0,
+     "rho_contact": "2",
+     "rho_contact_float": 2.0,
+     "in_touching_window": true,
+     "rho_max_packing": [
+      [
+       "A-B contact",
+       "2",
+       2.0
+      ]
+     ]
+    },
+    {
+     "what": "range end",
+     "lam": "-3",
+     "lam_float": -3.0,
+     "rho_contact": "0",
+     "rho_contact_float": 0.0,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    },
+    {
+     "what": "range end",
+     "lam": "3",
+     "lam_float": 3.0,
+     "rho_contact": "oo",
+     "rho_contact_float": null,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    }
+   ]
+  },
+  "delian": {
+   "A": "tet",
+   "B": "oct",
+   "d2": "3/8",
+   "likeA2": "1/2",
+   "likeB2": "1",
+   "range": [
+    "-3/8",
+    "3/8"
+   ],
+   "range_is_pm_d2": true,
+   "window_lambda": [
+    "3/8 - sqrt(6)/4",
+    "-3/8 + sqrt(3)/4"
+   ],
+   "window_rho": [
+    "-1 + sqrt(6)/2",
+    "1/2 + sqrt(3)/2"
+   ],
+   "stops": [
+    {
+     "what": "flip (hinge)",
+     "lam": "-1/8",
+     "lam_float": -0.125,
+     "rho_contact": "1/2",
+     "rho_contact_float": 0.5,
+     "in_touching_window": true,
+     "rho_max_packing": [
+      [
+       "A-B contact",
+       "1/2",
+       0.5
+      ]
+     ]
+    },
+    {
+     "what": "named: oct: all edges equal",
+     "lam": "-21/40 + sqrt(6)/10",
+     "lam_float": -0.28005102572168217,
+     "rho_contact": "-1/10 + sqrt(6)/10",
+     "rho_contact_float": 0.14494897427831782,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    },
+    {
+     "what": "named: tet: all edges equal",
+     "lam": "7/8 - sqrt(2)/2",
+     "lam_float": 0.16789321881345248,
+     "rho_contact": "1/2 + 3*sqrt(2)/2",
+     "rho_contact_float": 2.6213203435596424,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    },
+    {
+     "what": "range end",
+     "lam": "-3/8",
+     "lam_float": -0.375,
+     "rho_contact": "0",
+     "rho_contact_float": 0.0,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    },
+    {
+     "what": "range end",
+     "lam": "3/8",
+     "lam_float": 0.375,
+     "rho_contact": "oo",
+     "rho_contact_float": null,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    }
+   ]
+  },
+  "hcpholes": {
+   "A": "tet",
+   "B": "oct",
+   "d2": "3/8",
+   "likeA2": "1/6",
+   "likeB2": "2/3",
+   "range": [
+    "-11/24",
+    "3/8"
+   ],
+   "range_is_pm_d2": false,
+   "window_lambda": [
+    "-1/8",
+    "-1/8"
+   ],
+   "window_rho": [
+    "1/2",
+    "1/2"
+   ],
+   "stops": [
+    {
+     "what": "flip",
+     "lam": "-1/8",
+     "lam_float": -0.125,
+     "rho_contact": "1/2",
+     "rho_contact_float": 0.5,
+     "in_touching_window": true,
+     "rho_max_packing": [
+      [
+       "B-B contact",
+       "1/2",
+       0.5
+      ],
+      [
+       "A-A contact",
+       "1/2",
+       0.5
+      ],
+      [
+       "A-B contact",
+       "1/2",
+       0.5
+      ]
+     ]
+    },
+    {
+     "what": "flip",
+     "lam": "5/24",
+     "lam_float": 0.20833333333333334,
+     "rho_contact": "7/2",
+     "rho_contact_float": 3.5,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    },
+    {
+     "what": "range end",
+     "lam": "-11/24",
+     "lam_float": -0.4583333333333333,
+     "rho_contact": null,
+     "rho_contact_float": null,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    },
+    {
+     "what": "range end",
+     "lam": "3/8",
+     "lam_float": 0.375,
+     "rho_contact": "oo",
+     "rho_contact_float": null,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    }
+   ]
+  },
+  "a15": {
+   "A": "Si",
+   "B": "Cr",
+   "d2": "5/4",
+   "likeA2": "3",
+   "likeB2": "1",
+   "range": [
+    "-5/4",
+    "5/4"
+   ],
+   "range_is_pm_d2": true,
+   "window_lambda": [
+    "5/4 - sqrt(5)/2",
+    "-5/4 + sqrt(15)/2"
+   ],
+   "window_rho": [
+    "-1 + sqrt(5)",
+    "3/2 + sqrt(15)/2"
+   ],
+   "stops": [
+    {
+     "what": "flip",
+     "lam": "1/4",
+     "lam_float": 0.25,
+     "rho_contact": "3/2",
+     "rho_contact_float": 1.5,
+     "in_touching_window": true,
+     "rho_max_packing": [
+      [
+       "A-B contact",
+       "3/2",
+       1.5
+      ]
+     ]
+    },
+    {
+     "what": "flip",
+     "lam": "3/4",
+     "lam_float": 0.75,
+     "rho_contact": "4",
+     "rho_contact_float": 4.0,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    },
+    {
+     "what": "range end",
+     "lam": "-5/4",
+     "lam_float": -1.25,
+     "rho_contact": "0",
+     "rho_contact_float": 0.0,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    },
+    {
+     "what": "range end",
+     "lam": "5/4",
+     "lam_float": 1.25,
+     "rho_contact": "oo",
+     "rho_contact_float": null,
+     "in_touching_window": false,
+     "rho_max_packing": []
+    }
+   ]
+  },
+  "c15": {
+   "A": "Mg",
+   "B": "Cu",
+   "d2": "11",
+   "likeA2": "12",
+   "likeB2": "8",
+   "range": [
+    "-11",
+    "11"
+   ],
+   "range_is_pm_d2": true,
+   "window_lambda": "EMPTY",
+   "window_rho": "EMPTY",
+   "stops": [
+    {
+     "what": "flip",
+     "lam": "-5",
+     "lam_float": -5.0,
+     "rho_contact": "3/8",
+     "rho_contact_float": 0.375,
+     "in_touching_window": "False",
+     "rho_max_packing": []
+    },
+    {
+     "what": "flip",
+     "lam": "7",
+     "lam_float": 7.0,
+     "rho_contact": "9/2",
+     "rho_contact_float": 4.5,
+     "in_touching_window": "False",
+     "rho_max_packing": []
+    },
+    {
+     "what": "flip",
+     "lam": "9",
+     "lam_float": 9.0,
+     "rho_contact": "10",
+     "rho_contact_float": 10.0,
+     "in_touching_window": "False",
+     "rho_max_packing": []
+    },
+    {
+     "what": "range end",
+     "lam": "-11",
+     "lam_float": -11.0,
+     "rho_contact": "0",
+     "rho_contact_float": 0.0,
+     "in_touching_window": "False",
+     "rho_max_packing": []
+    },
+    {
+     "what": "range end",
+     "lam": "11",
+     "lam_float": 11.0,
+     "rho_contact": "oo",
+     "rho_contact_float": null,
+     "in_touching_window": "False",
+     "rho_max_packing": []
+    }
+   ]
+  }
+ },
+ "c15_laves": {
+  "ideal_q": "sqrt(3/2)",
+  "ideal_lam": "1",
+  "observed_q": [
+   "21/20",
+   "42/25"
+  ],
+  "observed_lam_maxpack": [
+   0.205,
+   1.9370748299319729
+  ],
+  "hardsphere_q": [
+   "119/100",
+   "27/20"
+  ],
+  "hardsphere_lam_maxpack": [
+   0.8322,
+   1.353909465020576
+  ],
+  "flips": [
+   -5,
+   7,
+   9
+  ],
+  "maxpack_lambda_range": [
+   "-2",
+   "3"
+  ],
+  "flips_as_q_unlike_contact": {
+   "-5": 0.375,
+   "7": 4.5,
+   "9": 10.0
+  },
+  "flips_as_q_MgMg_contact": {
+   "-5": [
+    0.6123724356957945
+   ],
+   "7": [],
+   "9": []
+  },
+  "flips_as_q_CuCu_contact": {
+   "-5": [],
+   "7": [
+    2.1213203435596424
+   ],
+   "9": [
+    2.345207879911715
+   ]
+  }
+ },
+ "a15": {
+  "ideal_p": "sqrt(5) - 1",
+  "ideal_p_float": 1.2360679774997898,
+  "ideal_lam": "(5 - 2*sqrt(5))/4",
+  "flip_1_4": {
+   "chain_contact_p": "[sqrt(2)]",
+   "unlike_contact_p": "[3/2]"
+  },
+  "flip_3_4": {
+   "chain_contact_p": "[2]",
+   "unlike_contact_p": "[4]"
+  },
+  "SiSi_contact_with_chain_contact_p": "sqrt(3)"
+ },
+ "hcpholes_identification": {
+  "hcp atoms (the third, missing kind)": "(0,0,0), (1/3,1/3,1/2) in the census 60-degree basis",
+  "NiAs": "cations = all census oct sites; anions = the hcp atoms (not in the census network); census tet sites empty",
+  "wurtzite": "cations = one tet site of each face-sharing pair (half of the census tet sites, one polarity); anions = hcp atoms; oct sites empty",
+  "conclusion": "no real two-kind structure found with exactly these two site sets; the census oct-tet contact is hole-to-hole, not cation-anion"
+ },
+ "perovskite": {
+  "radii_rel_rX": "r_B = mu_oct, r_A = sqrt2 t (1 + mu_oct) - 1",
+  "wall_AA_t": "sqrt(2)/(1 + mu_oct)   [lam = 0 <=> r_A = r_X]",
+  "wall_AB_t": "(1 + sqrt(3 - 2 mu_oct^2))/(sqrt2 (1 + mu_oct))   [lam + 2 mu = 0 <=> r_A^2 + 2 r_B^2 = 3 r_X^2]",
+  "wall_XX_t_BXcontact": "(1 + sqrt(3 + 2 mu_oct))/(sqrt2 (1 + mu_oct))   [lam + mu = 1 <=> r_A^2 = (3 + 2 mu_oct) r_X^2]",
+  "wall_XX_t_AXcontact": "(2 + sqrt(6 - 2 mu_oct^2))/(sqrt2 (1 + mu_oct))   [lam + mu = 1 with A-X contact (t >= 1)]",
+  "note": "for t > 1 the lattice is fixed by A-X contact; the X-X wall is then the A-X-contact form; the B-X form is listed only where it is <= 1",
+  "table": [
+   {
+    "mu_oct": 0.4,
+    "t_AA": 1.0101525445522108,
+    "t_AB": 1.3319217653325501,
+    "t_XX": 2.213888226434548
+   },
+   {
+    "mu_oct": 0.41421356237309503,
+    "t_AA": 1.0,
+    "t_AB": 1.3149929830207712,
+    "t_XX": 2.1892071150027212
+   },
+   {
+    "mu_oct": 0.45,
+    "t_AA": 0.9753196981883414,
+    "t_AB": 1.2732312801213788,
+    "t_XX": 2.1288182280971504
+   },
+   {
+    "mu_oct": 0.5,
+    "t_AA": 0.9428090415820634,
+    "t_AB": 1.2167605132909616,
+    "t_XX": 2.0483506383671966
+   },
+   {
+    "mu_oct": 0.6,
+    "t_AA": 0.8838834764831844,
+    "t_AB": 1.1092591289935492,
+    "t_XX": 1.8993882770626795
+   },
+   {
+    "mu_oct": 0.7,
+    "t_AA": 0.831890330807703,
+    "t_AB": 1.0071143195874332,
+    "t_XX": 1.7638303024403417
+   }
+  ]
+ },
+ "skipped_2d": "square + centres, honeycomb + centres and kagome + centres: no real two-kind 2D crystal family was found whose two kinds touch as unlike neighbours on these exact sites; skipped as instructed"
+}
