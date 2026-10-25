@@ -1,0 +1,5 @@
+PASS perovskite wall lam = 0, mu > 0, midpoint (0, 1/2): all kinds alive, a like bond present A-B A-X B-X X-X
+PASS perovskite wall lam = 0, mu < 0, midpoint (0, -1/2): all kinds alive, a like bond present A-X B-X X-X
+PASS perovskite wall lam + 2mu = 0, lam < 0, midpoint (-1, 1/2): all kinds alive, a like bond present A-X B-X X-X
+PASS perovskite wall lam + 2mu = 0, lam > 0, midpoint (1, -1/2): all kinds alive, a like bond present A-A A-X B-X X-X
+PASS perovskite wall lam + mu = 1, midpoint (1, 0): all kinds alive, a like bond present A-A A-B A-X B-X

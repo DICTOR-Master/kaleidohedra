@@ -81,7 +81,7 @@ Both DICTONIC loops are reproduced exactly as regressions. The golden areas matc
 | 6b. C15 Laves MgCu₂ (Mg, Cu) | (−11, 11) | **overlap** on (−5, 9) | −5, 7, 9 | none | 0: the C15 Voronoi cells (12- and 16-face). 11: triakis truncated tetrahedra (diamond Voronoi of Mg) |
 | 6c. perovskite ABX₃ (three kinds; λ = w_A − w_X, μ = w_B − w_X) | rectangle −2 ≤ λ ≤ 2, −1 ≤ μ ≤ 1 (area 8) | **overlap** (A–A / X–X); no hinge anywhere | 3 straight walls: λ = 0 (A–A born), λ + 2μ = 0 (A–B born), λ + μ = 1 (X–X dies); 5 chambers | none (no chamber and no chamber corner with only unlike bonds) | (0, −1): A and X cells are RD (B a point). B–B bonds never exist while all three kinds have cells |
 
-**PASS: 643 / 643 exact and float checks, 0 FAIL.** The split, from `data/checks/`:
+**PASS: 648 / 648 exact and float checks, 0 FAIL** (643 in the original run, plus 5 wall-midpoint checks added after the referee report on #53). The split, from `data/checks/`:
 
 | part | PASS |
 |---|---|
@@ -89,6 +89,7 @@ Both DICTONIC loops are reproduced exactly as regressions. The golden areas matc
 | relay analysis, including the 9 regressions against the Bond Relay study | 41 |
 | perovskite chambers | 47 |
 | float cross-check and exact hinge dual cells | 12 |
+| perovskite wall midpoints (`scripts/walls.py`, added later) | 5 |
 
 Every claim in the table is exact, except the uses of the word "combinatorially", which rest on face vectors and corner degrees (both exact).
 
@@ -122,7 +123,7 @@ Every claim in the table is exact, except the uses of the word "combinatorially"
 | A15 | Cr–Si (−5/4, 5/4) | Si–Si@3 (1/4, 5/4]; Si–Si@4 (3/4, 5/4] | Cr–Cr@1 and Cr–Cr@3/2 [−5/4, 3/4) |
 | C15 | Mg–Cu (−11, 11) | Mg–Mg@12 (−5, 11]; Mg–Mg@32 (7, 11] | Cu–Cu@8 [−11, 9) |
 
-In every two-kind network here, **the unlike bond lives on the whole open coexistence range**: it never breaks while both kinds have cells. This is the same as in both DICTONIC loops. It fails for the three-kind perovskite, where A–B lives only on λ + 2μ > 0.
+In every two-kind network here, **the unlike bond lives on the whole open coexistence range**: it never breaks while both kinds have cells. This is the same as in both DICTONIC loops. It fails for the three-kind perovskite, where A–B lives only on λ + 2μ > 0. (Added after the referee report on #53: for two kinds this is a general fact, not only an observation. If both kinds have cells of positive volume, the union of the A cells is a closed proper subset with nonempty interior, so its boundary is nonempty and, since a set of dimension ≤ d − 2 cannot disconnect space, contains a piece of positive measure of a facet of some A cell; across it lie B cells, and face-to-face this is an A–B bond. With three kinds the same argument gives only that each kind keeps some unlike bond, as in the perovskite.)
 
 Coordination numbers per piece, for every interval and stop, are in `data/raw/tables.md`.
 
@@ -165,7 +166,7 @@ Coordination numbers per piece, for every interval and stop, are in `data/raw/ta
   - tet–tet@1/6 lives over the whole range;
   - oct–oct@2/3 dies only at a **second flip, λ = 5/24**.
 - So **the switch splits**: one hard flip at −1/8, as in the octet, plus a soft tail ending at 5/24.
-- The lower end of the range also moves: from −3/8 (fluorite) to −11/24. In hcp the tets also have a tet neighbour, at squared distance 1/6; whether that explains the later vanishing is not examined here. This is the only two-kind network here whose range is not ± (unlike nearest distance)².
+- The lower end of the range also moves: from −3/8 (fluorite) to −11/24. In hcp the tets also have a tet neighbour, at squared distance 1/6; (Explained after the referee report on #53: a tet hole of hcp has only three oct holes at squared distance 3/8, its fourth neighbour across the shared face is the other tet at 1/6, so the tet cell does not shrink onto its site but onto the centre (0, 0, c/2) of the shared triangle, at squared distance 1/24 from the tet site and 1/3 + 1/6 = 1/2 from the three nearest oct holes; equal power 1/24 − λ = 1/2 gives λ = −11/24. The end is ±d² exactly when the vanishing cell shrinks onto its own site.) This is the only two-kind network here whose range is not ± (unlike nearest distance)².
 - The dual cell at an atom at λ = −1/8 is the trapezo-rhombic dodecahedron, the Voronoi cell of hcp (exact hull: 6 faces with two pairs of parallel sides, 6 faces with one). In fluorite at −1/8 it is the RD (12 parallelograms).
 
 **6a. A15.** This is a soft relay, overlapping on (1/4, 3/4).
@@ -184,7 +185,7 @@ Coordination numbers per piece, for every interval and stop, are in `data/raw/ta
   - λ + μ = 1 for X–X.
 - B–B never appears.
 - The like bonds A–A and X–X overlap on the chamber 0 < λ < 1 − μ. The two switch lines meet only at the corner (0, 1) of the region, where the X cells vanish. So the hand-over would become a "touch" only at the edge of the region.
-- No chamber, wall corner or region corner has only unlike bonds.
+- No chamber, wall corner or region corner has only unlike bonds; nor does any interior wall segment (exact midpoint check, `scripts/walls.py`, added later). So no point of the open rectangle has only unlike bonds.
 
 ### Anything surprising
 
@@ -256,5 +257,6 @@ Several of these may be easy, or already known in the radical-tessellation and c
 - `scripts/relay.py`: bond lives, flips, hinges, named stops and regressions. Writes `data/raw/relay-summary.json` and `data/checks/relay-checks.txt`.
 - `scripts/perovskite.py`: the three-kind chamber map. Writes `data/raw/perovskite.json` and `data/checks/perovskite-checks.txt`.
 - `scripts/crosscheck.py`: float cross-check and exact hinge dual cells. Writes `data/checks/crosscheck-checks.txt`.
+- `scripts/walls.py`: exact check at the midpoints of the five interior perovskite wall segments. Writes `data/checks/perovskite-walls-checks.txt`.
 - `scripts/tables.py`: writes `data/raw/tables.md`, the full tables of cells and bonds per interval and stop.
 - `scripts/run.sh`: reruns everything on dicto-big-brother.
