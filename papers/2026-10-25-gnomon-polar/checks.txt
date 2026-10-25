@@ -1,0 +1,39 @@
+PASS I is the icosahedron of edge 1/φ
+PASS φ-power test is sound on known values (φ^9, 81/φ², 3/(4φ²), √5 not a φ-power)
+PASS the twelve volumes grow strictly
+PASS Table 1 column V/I (11 exact entries)
+PASS Cleo star = 2·I
+PASS RT = 81·I/φ²
+PASS M = φ⁸·I and φ⁸ = (47 + 21√5)/2
+PASS I·φ³ = φ⁹·I = (38 + 17√5)·I and I·φ³ = φ·M
+PASS M/RT = φ¹⁰/81, I·φ³/RT = φ¹¹/81
+PASS exactly 10 of the 66 station ratios are rational·φ^k, all among I, Cleo star, RT, M, I·φ³
+PASS exactly 4 of the 11 gnomons are rational·φ^k·I: star−I = I, TI−rTI = (3/4)φ⁻²I, H−TI = 18φ⁻⁴I, I·φ³−M = φ⁷I
+   Cleo star − I = (1)·I ≈ 1.0000 I   form (Fraction(1, 1), 0)
+   D′ − Cleo star = (2/9 + 44/45√5)·I ≈ 2.4086 I   form None
+   ID − D′ = (353/72 + 791/360√5)·I ≈ 9.8159 I   form None
+   OG − ID = (207/152 + 457/760√5)·I ≈ 2.7064 I   form None
+   rTI − OG = (2187/152 + -2129/760√5)·I ≈ 8.1242 I   form None
+   TI − rTI = (9/8 + -3/8√5)·I ≈ 0.2865 I   form (Fraction(3, 4), -2)
+   H − TI = (63 + -27√5)·I ≈ 2.6262 I   form (Fraction(18, 1), -4)
+   jtI − H = (15/38 + 21/190√5)·I ≈ 0.6419 I   form None
+   RT − jtI = (648/19 + -270/19√5)·I ≈ 2.3296 I   form None
+   M − RT = (-98 + 51√5)·I ≈ 16.0395 I   form None
+   I·φ³ − M = (29/2 + 13/2√5)·I ≈ 29.0344 I   form (Fraction(1, 1), 7)
+PASS gnomons add up to one turn: sum = (φ⁹ − 1)·I
+PASS Júlia step check: (n+1)² = n² + n + (n+1) (symbolic)
+PASS polar of T(x) has face pyramids of height x/(1+x); of T(1/x) 1/(1+x) (half cube edges)
+PASS the two heights add to 1 for every x > 0 (the rhombic dodecahedron height)
+PASS Icosaxes = perms (1/2, φ/2, 0): height 1/φ; Unborn Axes = perms (1/(2φ), φ/2, 0): height 1/φ²
+PASS these are T(φ) and T(1/φ) of #48 Theorem 4: x/(1+x) at x = φ is 1/φ
+PASS Kelvin x = 1: both heights 1/2 (tetrakis hexahedron)
+PASS polar corner distances: apex 2/φ (both), hexagon poles 2√3/φ² and 2√3/√5
+PASS Tricap volume (3 − √5)/24 = 1/(12φ²)
+PASS √5 = (1 + 2√5/3) − 8 Tricaps, 2 = (1 + √5/3) + 8 Tricaps, sum φ³
+PASS 8 Tricaps = 1 − √5/3 ≈ 0.2546 = 10.2% of the Icosaxes, 14.6% of the Unborn Axes
+PASS tan²72° = 5 + 2√5
+PASS dent (1,1,1): base corners are Icosaxes corners on the hexagon x+y+z = φ²/2, apex at x+y+z = 3/(2φ) inside
+PASS the three dent-wall poles are equidistant: |pole|² = 10 - 2*sqrt(5) ≈ 2.3511² against the hexagon pole 2√3/φ² ≈ 1.3232
+   dent-wall pole distance 2.3511, angle to the hexagon pole 37.38°, 37.38°, 37.38°
+PASS dent-wall pole distance √(10 − 2√5) = 4 sin 36°, and 37.38° rounded
+ALL PASS
