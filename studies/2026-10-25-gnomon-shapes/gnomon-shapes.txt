@@ -1,0 +1,154 @@
+DICTO · dictospheres.com
+Gnomon shapes: what each step of the twelve-station golden cycle adds, exactly (Q(√5))
+
+1. Stations: corners, faces, exact sizes (R = corner radius, r = inradius = least face distance; squares exact)
+  I           12 corners  20 faces  R² = 5/8 − 1/8√5                        r² = 1/8 + 1/24√5 = 1/12·φ^2
+  Cleo star   32 corners  60 faces  R² = 1/2 + 1/6√5 = 1/3·φ^2              r² = — (not convex)
+  D′          20 corners  12 faces  R² = 1/2 + 1/6√5 = 1/3·φ^2              r² = 5/18 + 11/90√5
+  ID          30 corners  32 faces  R² = 7/8 + 3/8√5 = 1/4·φ^4              r² = 5/8 + 11/40√5
+  OG         102 corners  80 faces  R² = 2745/2888 + 1179/2888√5            r² = 3/4 + 1/3√5 = 1/12·φ^6
+  rTI         90 corners  92 faces  R² = 9/4                                r² = 9/8 + 3/8√5 = 3/4·φ^2
+  TI          60 corners  32 faces  R² = 21/8 − 1/8√5                       r² = 9/8 + 3/8√5 = 3/4·φ^2
+  H           80 corners 102 faces  R² = 81/8 − 27/8√5 = 27/4·φ^-2          r² = 17/8 − 1/40√5
+  jtI         92 corners  90 faces  R² = 81/8 − 27/8√5 = 27/4·φ^-2          r² = 9/4
+  RT          32 corners  30 faces  R² = 45/8 − 9/8√5                       r² = 9/4
+  M           32 corners  60 faces  R² = 47/24 + 7/8√5 = 1/12·φ^8           r² = 24921/16648 + 55719/83240√5
+  I·φ³        12 corners  20 faces  R² = 25/8 + 11/8√5                      r² = 47/24 + 7/8√5 = 1/12·φ^8
+
+2. Steps: what each step adds (pieces; all pieces of a kind congruent; kinds named by DICTO where published)
+  step  1  I → Cleo star: adds 1 × I
+       20 × Cleo-Ico (spike): tetrahedron, 4 corners, faces {3: 4}, each 1/20 × I
+            squared edges: 5/8 − 1/8√5, 3/2 − 1/2√5
+  step  2  Cleo star → D′: adds 2/9 + 44/45√5 × I
+       12 × inward pentagonal pyramid: 5-gonal pyramid, 6 corners, faces {3: 5, 5: 1}, each 1/54 + 7/270√5 × I
+            squared edges: 5/8 − 1/8√5, 4/9
+       30 × valley tetrahedron: tetrahedron, 4 corners, faces {3: 4}, each 1/45√5 × I
+            squared edges: 5/8 − 1/8√5, 3/2 − 1/2√5, 4/9
+  step  3  D′ → ID: adds 353/72 + 791/360√5 × I; region = 1 connected part(s)
+       12 × over 5-gon faces of D′: polyhedron, 15 corners, faces {3: 5, 5: 7}, each 353/864 + 791/4320√5 × I
+            squared edges: 1/12, 1/8 + 1/24√5, 4/9, 3/8 + 1/8√5
+  step  4  ID → OG: adds 207/152 + 457/760√5 × I; region = 12 connected part(s)
+       12 × over 5-gon faces of ID: polyhedron, 11 corners, faces {3: 5, 4: 5, 5: 1}, each 69/608 + 457/9120√5 × I
+            squared edges: 109/1444 + 12/361√5, 1/8 + 1/24√5, 3/8 + 1/8√5
+  step  5  OG → rTI: adds 2187/152 − 2129/760√5 × I; region = 1 connected part(s)
+       60 × over 4-gon faces of OG: polyhedron, 8 corners, faces {3: 2, 4: 5}, each 273/3040 − 203/15200√5 × I
+            squared edges: 298/361 − 662/1805√5, 7/8 − 3/8√5, 109/1444 + 12/361√5, 1/8 + 1/40√5, 1/8 + 1/24√5, 1/4, 9/8 − 3/8√5
+       20 × over 6-gon faces of OG: two parallel 6-gons joined by 6 quadrilaterals (not translates), 12 corners, faces {4: 6, 6: 2}, each 9/20 − 1/10√5 × I
+            squared edges: 7/8 − 3/8√5, 1/8 + 1/24√5, 9/8 − 3/8√5
+  step  6  rTI → TI: adds 9/8 − 3/8√5 = 3/4·φ^-2 × I; region = 60 connected part(s)
+       60 × over 3-gon faces of rTI: tetrahedron, 4 corners, faces {3: 4}, each 3/160 − 1/160√5 = 1/80·φ^-2 × I
+            squared edges: 3/8 − 1/8√5, 1/4, 9/8 − 3/8√5
+  step  7  TI → H: adds 63 − 27√5 = 18·φ^-4 × I; region = 20 connected part(s)
+       20 × over 6-gon faces of TI: 6-gonal pyramid, 7 corners, faces {3: 6, 6: 1}, each 63/20 − 27/20√5 = 9/10·φ^-4 × I
+            squared edges: 3/2 − 1/2√5, 33/4 − 7/2√5
+  step  8  H → jtI: adds 15/38 + 21/190√5 × I; region = 12 connected part(s)
+       12 × over 5-gon faces of H: 5-gonal pyramid, 6 corners, faces {3: 5, 5: 1}, each 5/152 + 7/760√5 × I
+            squared edges: 735/1444 − 35/361√5, 3/2 − 1/2√5
+  step  9  jtI → RT: adds 648/19 − 270/19√5 × I; region = 12 connected part(s)
+       60 × over 4-gon faces of jtI: 4-gonal pyramid, 5 corners, faces {3: 4, 4: 1}, each 54/95 − 9/38√5 × I
+            squared edges: 1305/1444 − 279/722√5, 735/1444 − 35/361√5, 3/2 − 1/2√5, 33/4 − 7/2√5, 45/4 − 9/2√5
+  step 10  RT → M: adds -98 + 51√5 × I; region = 1 connected part(s)
+       30 × over 4-gon faces of RT: polyhedron, 6 corners, faces {3: 6, 4: 1}, each -49/15 + 17/10√5 × I
+            squared edges: 109/12 − 4√5, 45/4 − 9/2√5, 29/6 − 3/2√5, 1 + 4/9√5
+  step 11  M → I·φ³: adds 29/2 + 13/2√5 = φ^7 × I; region = 1 connected part(s)
+       60 × over 3-gon faces of M: triangular bipyramid (6 triangles), 5 corners, faces {3: 6}, each 29/120 + 13/120√5 = 1/60·φ^7 × I
+            squared edges: 5 − 2√5, 7/24 + 1/8√5, 29/6 − 3/2√5, 7/8 + 3/8√5, 1 + 4/9√5, 7/6 + 1/2√5
+
+3. Similar pieces across the cycle (exact test on all squared corner distances; k = linear ratio later/earlier)
+  I (core): Cleo-Ico (core)  ~  I → Cleo star: Cleo-Ico (spike)   k = 1  (direct)
+
+4. Pieces similar to a station (equal corner counts tested exactly)
+  OG → rTI: over 6-gon faces of OG vs I: not similar
+  OG → rTI: over 6-gon faces of OG vs I·φ³: not similar
+
+5. Classical check (Euclid II Def. 2; Heron): is the new whole similar to an earlier station (any turn: stations repeat ×φ³)?
+  step  1 → Cleo star : similar to no other station (same corner count only: RT, M; tested exactly: not similar)
+  step  2 → D′        : similar to no other station (same corner count only: none; tested exactly: not similar)
+  step  3 → ID        : similar to no other station (same corner count only: none; tested exactly: not similar)
+  step  4 → OG        : similar to no other station (same corner count only: none; tested exactly: not similar)
+  step  5 → rTI       : similar to no other station (same corner count only: none; tested exactly: not similar)
+  step  6 → TI        : similar to no other station (same corner count only: none; tested exactly: not similar)
+  step  7 → H         : similar to no other station (same corner count only: none; tested exactly: not similar)
+  step  8 → jtI       : similar to no other station (same corner count only: none; tested exactly: not similar)
+  step  9 → RT        : similar to no other station (same corner count only: Cleo star, M; tested exactly: not similar)
+  step 10 → M         : similar to no other station (same corner count only: Cleo star, RT; tested exactly: not similar)
+  step 11 → I·φ³      : similar to I (k = 2 + 1√5 = φ^3): GNOMON in the classical sense
+  step 12 → Cleo star·φ³ (first step of the next turn) is step 1 scaled by φ³, so its new whole is similar to the Cleo star, not to a station of this whole turn other than itself.
+
+6. Size growth of the whole, step by step (exact squares; k where it lies in Q(√5))
+  step                 V ratio                          R² ratio                             r² ratio                            
+  I → Cleo star        2                                k² = 4/3 + 8/15√5 (k not in Q(√5))   —
+  Cleo star → D′       10/9 + 22/45√5                   k = 1                                —
+  D′ → ID              63/32 + 9/16√5                   k² = 9/8 + 3/8√5 = 3/4·φ^2 (k not in Q(√5)) k = 3/2
+  ID → OG              790/551 − 60/551√5               k² = 765/722 + 9/722√5 (k not in Q(√5)) k² = 5/6 + 1/6√5 (k not in Q(√5))
+  OG → rTI             53421/220 − 4749/44√5            k² = 61/2 − 131/10√5 (k not in Q(√5)) k = 9/2 − 3/2√5 = 3·φ^-2
+  rTI → TI             4854/4609 − 86/4609√5            k² = 7/6 − 1/18√5 (k not in Q(√5))   k = 1
+  TI → H               1204/319 − 381/319√5             k² = 783/218 − 243/218√5 (k not in Q(√5)) k² = 13/3 − 22/15√5 (k not in Q(√5))
+  H → jtI              87255/86222 + 423/86222√5        k = 1                                k² = 765/722 + 9/722√5 (k not in Q(√5))
+  jtI → RT             138/109 − 9/109√5                k² = 5/6 + 1/6√5 (k not in Q(√5))    k = 1
+  RT → M               41/54 + 55/162√5 = 1/81·φ^10     k² = 17/27 + 38/135√5 (k not in Q(√5)) k² = 2769/4162 + 6191/20810√5 (k not in Q(√5))
+  M → I·φ³             1/2 + 1/2√5 = φ^1                k² = 15 − 6√5 (k not in Q(√5))       k² = 55/9 − 58/27√5 (k not in Q(√5))
+PASS I: all stored points are corners (12)
+PASS D′: all stored points are corners (20)
+PASS ID: all stored points are corners (30)
+PASS OG: all stored points are corners (102)
+PASS rTI: all stored points are corners (90)
+PASS TI: all stored points are corners (60)
+PASS H: all stored points are corners (80)
+PASS jtI: all stored points are corners (92)
+PASS RT: all stored points are corners (32)
+PASS M: all stored points are corners (32)
+PASS I·φ³: all stored points are corners (12)
+PASS each Cleo star tip is 2 × the centre of its face of I (spike = Cleo-Ico reflected in the face)
+PASS volume of I = published value -5/12 + 5/12√5 (#54 Table 1)
+PASS volume of Cleo star = published value -5/6 + 5/6√5 (#54 Table 1)
+PASS volume of D′ = published value 10/9 + 14/27√5 (#54 Table 1)
+PASS volume of ID = published value 175/48 + 79/48√5 (#54 Table 1)
+PASS volume of OG = published value 1975/456 + 895/456√5 (#54 Table 1)
+PASS volume of rTI = published value -15/2 + 73/8√5 (#54 Table 1)
+PASS volume of TI = published value -35/4 + 39/4√5 (#54 Table 1)
+PASS volume of H = published value -365/4 + 189/4√5 (#54 Table 1)
+PASS volume of jtI = published value -3465/38 + 900/19√5 (#54 Table 1)
+PASS volume of RT = published value -135 + 135/2√5 (#54 Table 1)
+PASS volume of M = published value 145/12 + 65/12√5 (#54 Table 1)
+PASS volume of I·φ³ = published value 235/12 + 35/4√5 (#54 Table 1)
+PASS D′ ⊂ ID (every corner of D′ inside every face plane of ID, exact)
+PASS ID ⊂ OG (every corner of ID inside every face plane of OG, exact)
+PASS OG ⊂ rTI (every corner of OG inside every face plane of rTI, exact)
+PASS rTI ⊂ TI (every corner of rTI inside every face plane of TI, exact)
+PASS TI ⊂ H (every corner of TI inside every face plane of H, exact)
+PASS H ⊂ jtI (every corner of H inside every face plane of jtI, exact)
+PASS jtI ⊂ RT (every corner of jtI inside every face plane of RT, exact)
+PASS RT ⊂ M (every corner of RT inside every face plane of M, exact)
+PASS M ⊂ I·φ³ (every corner of M inside every face plane of I·φ³, exact)
+PASS 12 inward pentagonal pyramids, each apex the corner of I on its face axis
+PASS 30 valley tetrahedra, one per edge of I (two ends + the two neighbouring spike tips)
+PASS star + 12 inward pyramids + 30 valley tetrahedra = D′ exactly (remainder 0, #35 Table 2)
+PASS D′ → ID: the 12 cone pieces add up to vol ID − vol D′ exactly
+PASS ID → OG: the 12 cone pieces add up to vol OG − vol ID exactly
+PASS OG → rTI: the 80 cone pieces add up to vol rTI − vol OG exactly
+PASS rTI → TI: the 60 cone pieces add up to vol TI − vol rTI exactly
+PASS TI → H: the 20 cone pieces add up to vol H − vol TI exactly
+PASS H → jtI: the 12 cone pieces add up to vol jtI − vol H exactly
+PASS jtI → RT: the 60 cone pieces add up to vol RT − vol jtI exactly
+PASS RT → M: the 30 cone pieces add up to vol M − vol RT exactly
+PASS M → I·φ³: the 60 cone pieces add up to vol I·φ³ − vol M exactly
+PASS I → Cleo star: 20 spikes add vol I exactly
+PASS the 20 core Cleo-Icos of I are congruent
+PASS spike Cleo-Ico congruent to core Cleo-Ico (#35 §2)
+PASS I (core): Cleo-Ico (core): all 20 pieces congruent
+PASS I → Cleo star: Cleo-Ico (spike): all 20 pieces congruent
+PASS Cleo star → D′: inward pentagonal pyramid: all 12 pieces congruent
+PASS Cleo star → D′: valley tetrahedron: all 30 pieces congruent
+PASS D′ → ID: over 5-gon faces of D′: all 12 pieces congruent
+PASS ID → OG: over 5-gon faces of ID: all 12 pieces congruent
+PASS OG → rTI: over 4-gon faces of OG: all 60 pieces congruent
+PASS OG → rTI: over 6-gon faces of OG: all 20 pieces congruent
+PASS rTI → TI: over 3-gon faces of rTI: all 60 pieces congruent
+PASS TI → H: over 6-gon faces of TI: all 20 pieces congruent
+PASS H → jtI: over 5-gon faces of H: all 12 pieces congruent
+PASS jtI → RT: over 4-gon faces of jtI: all 60 pieces congruent
+PASS RT → M: over 4-gon faces of RT: all 30 pieces congruent
+PASS M → I·φ³: over 3-gon faces of M: all 60 pieces congruent
+PASS I·φ³ is similar to I with linear ratio φ³ (the only similar pair of stations in one turn)
+63 PASS, 0 FAIL
