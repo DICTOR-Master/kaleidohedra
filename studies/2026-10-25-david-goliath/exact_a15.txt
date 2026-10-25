@@ -1,0 +1,6 @@
+Si (Goliath) corners 12 faces 20 face sizes [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3] edges 30 edge^2 [Fraction(1, 1), Fraction(3, 2)] volume 7/2
+  Si corners that are Cr sites: 0 of 12
+Cr (David) corners 4 faces 4 face sizes [3, 3, 3, 3] edges 6 edge^2 [Fraction(1, 1), Fraction(3, 2)] volume 1/6
+  David corners: [(Fraction(0, 1), Fraction(-1, 2), Fraction(1, 1)), (Fraction(0, 1), Fraction(1, 2), Fraction(1, 1)), (Fraction(1, 1), Fraction(0, 1), Fraction(1, 2)), (Fraction(1, 1), Fraction(0, 1), Fraction(3, 2))]
+2*V_Si + 6*V_Cr = 8 (cube of edge 2 = 8): True
+Goliath corners = Jessen set (0,±1/2,±1) cyclic: True
