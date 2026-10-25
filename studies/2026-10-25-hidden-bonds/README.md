@@ -12,3 +12,5 @@
   genus-0 pieces; oct→tet B overlaps (genus 4). Renders here are flat; proper renders with render_keyed.py style still to do.
 - Sunstar reading (not yet written): #42's dodecahedra + Dogstars sit on rock salt's switch point (cubes), keyed by Euclid's six roofs
   (dodeca 14.472 + Dogstar 1.528 = 16 = two cubes, edge 2).
+
+NAMES (DICTO 2026-10-25): the gyrated pair = DICTO Sonsam (tet-hole piece) and DICTO Lahdeli (oct-hole piece); keyed: DICTO Sonsam-K, DICTO Lahdeli-K.
