@@ -15,8 +15,8 @@ faces straight out), brought in from first touch. **Exact stops** (`scripts/exac
 
 | Stop | Distance d of each centre | d / first touch |
 |---|---|---|
-| first touch: a cage of 20, meeting along the dodecahedron's 30 edges, 12 open windows | φ²√3/2 | 1 |
-| the 12 windows close at once: a sealed shell round a hollow | φ√3/2 | 1/φ |
+| first touch (Icosaxes Bloom): 20 pieces meeting along the dodecahedron's 30 edges, 12 open windows | φ²√3/2 | 1 |
+| the 12 windows close at once (Icosaxes Bud): sealed round a hollow | φ√3/2 | 1/φ |
 | the hollow fills (Icosaxes): one solid, no holes | φ²/(2√3) (the icosahedron's inradius) | 1/3 |
 | the hollow fills (Lotus Jewel Axes, dented): the Tricap tips meet | √3/(2φ) | 1/φ³ |
 
@@ -52,10 +52,10 @@ outward with the mirrored Tricap on the six facing voids. Both: no overlaps, no 
 ## Names (placeholders until DICTO changes them; the "-Axes" family style)
 | Shape | Placeholder name |
 |---|---|
-| 20 Icosaxes at first touch (cage, 12 windows) | **Icosaxes Bloom** |
+| 20 Icosaxes at first touch (12 open windows) | **Icosaxes Bloom** |
 | … at 1/φ (windows closed, sealed hollow) | **Icosaxes Bud** |
 | … at 1/3 (one solid) | **Icosaxes Seed** |
-| the same with Lotus Jewel Axes (orb at 1/φ³) | **Lotus Jewel Bloom, Lotus Jewel Bud, Lotus Jewel Seed** |
+| the same with Lotus Jewel Axes (solid at 1/φ³) | **Lotus Jewel Bloom, Lotus Jewel Bud, Lotus Jewel Seed** |
 | 8 Icosaxes round an Unborn Axes (= 9 Icosaxes passing through) | **Icosaxes Hexa** |
 | its keyed form, Tricaps outward (K2) | **Lotus Hexa** |
 | NK2's piece: 2 dents, 6 keys, volume φ² | **Keyaxes** |
