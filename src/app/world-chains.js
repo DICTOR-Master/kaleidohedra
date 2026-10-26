@@ -37,7 +37,9 @@ export const ROLE = { ico: 0x5fd38a, cap: 0x5fd38a, lcap: 0x5fd38a, lj11: 0x5fd3
   // DICTONIC's Delian bond (DICTO 2026-10-23): the tetrahedron pieces (Samson) gold, the octahedron pieces (Delilah) purple
   dlTet: 0xffc857, dlOct: 0xc792ea,
   // The Global Web of Bonds (DICTO 2026-10-25): the A kind's pieces gold, the B kind's blue, as in paper #53's figures
-  gwA: 0xffc857, gwB: 0x6fa8ff };
+  gwA: 0xffc857, gwB: 0x6fa8ff,
+  // The Stackings World (DICTO 2026-10-26): cubic layers gold, hexagonal layers platinum, as the #57 card and #58 Figure 3
+  stkC: 0xf2b84b, stkH: 0xd9d6cf, stkSel: 0xff8a3d };
 // The 12-neighbour space-fillers' 13s (DICTO 2026-10-13): centre gold, the twelve cyan, the neighbouring blocks' copies dimmer.
 Object.assign(ROLE, { jewelCentre: 0xffc857, jewelCell: 0x4dd0e1, stella: 0xc792ea });
 for (const k of ['skewedRd13', 'bainRd13', 'bilinski13']) Object.assign(ROLE, { [`${k}Centre`]: 0xffc857, [`${k}Cell`]: 0x4dd0e1, [`${k}CentreN`]: 0x8a7440, [`${k}CellN`]: 0x33808a });
@@ -516,9 +518,20 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
 
   return {
     group,
-    meshes: () => (DATA[view.kind].tap && solidMesh ? [solidMesh] : []),
+    /** Redraw after a kind's own data changed outside the panel's controls (the Stackings World's layer flips). */
+    refresh() { grown.clear(); draw(); renderPanel(); },
+    meshes: () => ((DATA[view.kind].tap || DATA[view.kind].onTap) && solidMesh ? [solidMesh] : []),
     /** A tap on a tagged face (the Golden split's hexagons) steps that one piece: the kind's tap(tag, opts) gives its new state. */
     handleTap(hit, mode) {
+      // A kind's onTap(tag) (the Stackings World, DICTO 2026-10-26): a tap on a tagged piece; true redraws the panel.
+      const onTap = DATA[view.kind].onTap;
+      if (onTap) {
+        if (mode !== 'build' || hit?.object !== solidMesh) return false;
+        const tag = solidTags[hit.faceIndex];
+        if (tag == null || !onTap(tag)) return false;
+        grown.clear(); draw(); renderPanel();
+        return true;
+      }
       const o = view.opts[view.kind], tap = DATA[view.kind].tap;
       if (mode !== 'build' || !tap || !o?.flips || hit?.object !== solidMesh) return false;
       const tag = solidTags[hit.faceIndex];
