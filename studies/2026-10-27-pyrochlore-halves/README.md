@@ -23,6 +23,13 @@ layer k+1). Every piece of 4H, 6H, 9R and 15R equals the same piece of the pure 
 ## Name (placeholder)
 **Pyrochlore Halves**: the weighted division of a diamond-type stacking (balls, diamond atoms and #57's two empty holes).
 
+## Prior art (library of 302 references, then web; 2026-10-27)
+**Known, credited:** the pyrochlore lattice as the bond-midpoint (medial) lattice of diamond, and as alternating kagome and triangular
+layers along [111] (standard in frustrated-magnetism papers); the cubic and hexagonal stackings of diamond-type crystals
+(diamond/lonsdaleite, zincblende/wurtzite); the tetrahedral–truncated-tetrahedral (quarter cubic) honeycomb (classical); the rule of
+halves (#57, DICTO).
+**Not found in the sources searched:** the rule of halves for pyrochlore stackings, or their weighted division.
+
 ## Conclusion
 The rule of halves of #57 holds on every pyrochlore polytype tested: each piece is borrowed, whole or in half, from the pure cubic or
-pure hexagonal stacking. **Status: stage 1 done (float); next: exact proof, then pictures; prior art before any paper.**
+pure hexagonal stacking. **Status: stage 1 done (float); next: exact proof, then pictures; prior art checked.**

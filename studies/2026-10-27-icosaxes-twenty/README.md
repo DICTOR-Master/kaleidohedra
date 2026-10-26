@@ -65,12 +65,20 @@ outward with the mirrored Tricap on the six facing voids. Both: no overlaps, no 
 - Golden bond: the stops are re-checked along the whole bond (x ≠ τ) in the next run; the result goes in this README.
 - Link to #57: answered by the pyrochlore study (2026-10-27-pyrochlore-halves): the rule of halves carries over to the diamond-type
   stackings. Whether Icosaxes lie on #57's own walk: parked.
-- Prior art: searched before any paper (library first, then web); no claim of novelty until then.
+- Prior art: done (below); no claim of novelty beyond "not found in the sources searched".
 - Paper: parked; candidate title "The Icosaxes Hexa: Cage, Shell and Orb".
+
+## Prior art (library of 302 references, then web; 2026-10-27)
+**Known, credited:** the Wolfram Demonstration "Cluster of 20 Icosahedra" (twenty icosahedra on a dodecahedron's corners, edge to
+edge); G. Hart, *Polyhedra Clusters* (twenty great icosahedra on a dodecahedron's corners); S. Kabai 2010, *30 Cubes on a Rhombic
+Triacontahedron* (cubes in icosahedral clusters); Koca et al. 2015 (the Icosaxes and Unborn Axes as truncated octahedra x = τ, 1/τ;
+the Unborn as their pseudoicosahedron); corner-sharing cube nets (Molecules 24(7):1221, 2019; credited in #17).
+**Not found in the sources searched:** truncated octahedra (or Icosaxes) on a dodecahedron's corners; the golden stops 1, 1/φ, 1/3
+and 1/φ³; the Icosaxes Kagome network.
 
 ## Conclusion
 Twenty Icosaxes on a dodecahedron's corners close in three exact golden steps — cage (1), shell (1/φ), orb (1/3; Lotus 1/φ³) — and
-eight round an Unborn Axes make the Icosaxes Hexa, the perfect Kagome node of the golden split. **Status: done; parked for prior art.**
+eight round an Unborn Axes make the Icosaxes Hexa, the perfect Kagome node of the golden split. **Status: done; prior art checked; parked until DICTO picks it up.**
 
 ## Data
 `data/*-union.obj`: joined solids (manifold3d), sites scaled ×φ/2; `*.json`: pieces as vertices + triangles. Scripts need
