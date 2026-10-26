@@ -20,5 +20,9 @@ O and Y cut at the gap's mid-height into a bottom half (layer k) and a top half 
 layer k+1). Every piece of 4H, 6H, 9R and 15R equals the same piece of the pure stacking of its layer (3C if c, 2H if h):
 **204 pieces at each of a = −1/4, −1/5, −1/10, 0, 1/10, none off** (float, 7 decimals).
 
-## Next
-Exact proof (as #57); the walk in a (stops where pieces vanish); prior art (spinel/pyrochlore polytypes, diamond polytypes); pictures.
+## Name (placeholder)
+**Pyrochlore Halves**: the weighted division of a diamond-type stacking (balls, diamond atoms and #57's two empty holes).
+
+## Conclusion
+The rule of halves of #57 holds on every pyrochlore polytype tested: each piece is borrowed, whole or in half, from the pure cubic or
+pure hexagonal stacking. **Status: stage 1 done (float); next: exact proof, then pictures; prior art before any paper.**

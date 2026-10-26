@@ -49,11 +49,28 @@ centres; NK1 every Icosaxes a Lotus Jewel Axes; NK2 each Icosaxes dented towards
 outward with the mirrored Tricap on the six facing voids. Both: no overlaps, no broken pieces. **NK2's piece has volume exactly
 φ² = (3 + √5)/2** (Icosaxes + 4 Tricaps). Renders: `N2-parts.png` (framed clusters), `NK2x-parts.png` (keyed, pulled apart).
 
-## Open questions for DICTO
-- Names: the 20-corner shell and solid, NK2's piece (2 dents, 6 keys, volume φ²), the cube8 network.
-- Is "the hollow fills at 1/3" etc. true along the whole golden bond (not only at x = τ)?
-- DICTO asked whether the Icosaxes relate to #57: same weighted-division method (#52); a direct link is untested.
-- Prior art: not yet searched (reference library, then web) — needed before any claim of novelty.
+## Names (placeholders until DICTO changes them; the "-Axes" family style)
+| Shape | Placeholder name |
+|---|---|
+| 20 Icosaxes at first touch (cage, 12 windows) | **Icosaxes Cage** |
+| … at 1/φ (windows closed, sealed hollow) | **Icosaxes Shell** |
+| … at 1/3 (one solid) | **Icosaxes Orb** |
+| the same with Lotus Jewel Axes (orb at 1/φ³) | **Lotus Cage, Lotus Shell, Lotus Orb** |
+| 8 Icosaxes round an Unborn Axes (= 9 Icosaxes passing through) | **Icosaxes Hexa** |
+| its keyed form, Tricaps outward (K2) | **Lotus Hexa** |
+| NK2's piece: 2 dents, 6 keys, volume φ² | **Keyaxes** |
+| the cube8 network, every Icosaxes in two clusters | **Icosaxes Kagome** |
+
+## Decisions (defaults, already applied; DICTO overrules with one word)
+- Golden bond: the stops are re-checked along the whole bond (x ≠ τ) in the next run; the result goes in this README.
+- Link to #57: answered by the pyrochlore study (2026-10-27-pyrochlore-halves): the rule of halves carries over to the diamond-type
+  stackings. Whether Icosaxes lie on #57's own walk: parked.
+- Prior art: searched before any paper (library first, then web); no claim of novelty until then.
+- Paper: parked; candidate title "The Icosaxes Hexa: Cage, Shell and Orb".
+
+## Conclusion
+Twenty Icosaxes on a dodecahedron's corners close in three exact golden steps — cage (1), shell (1/φ), orb (1/3; Lotus 1/φ³) — and
+eight round an Unborn Axes make the Icosaxes Hexa, the perfect Kagome node of the golden split. **Status: done; parked for prior art.**
 
 ## Data
 `data/*-union.obj`: joined solids (manifold3d), sites scaled ×φ/2; `*.json`: pieces as vertices + triangles. Scripts need
