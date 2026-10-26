@@ -29,6 +29,21 @@ layer k+1). Every piece of 4H, 6H, 9R and 15R equals the same piece of the pure 
 ## Pictures
 `patches-sheet.png`: the network's pieces at −1/4 in 3C (gold), 2H (platinum) and 4H (both), voids left out.
 
+## Exact proof (`scripts/pyro_exact.py`, `scripts/pyro_stretch.py`; logs in `exact/`)
+#57's method with #57's census engine unchanged, over the 16 windows (h/c of the four layers round a gap; every close-packed stacking
+looks like one of them near any gap) and the stretches of the common walk −11/36 < λ < 1/4 (stops −11/36, −1/4, −3/20, 0, 1/8, 1/6, 1/4):
+- **Exact at sample weights:** every piece congruent to its pure piece (exact squared corner distances), 12 weights spanning every
+  stretch: **768 PASS, 0 FAIL**.
+- **Stretch-wide:** on every stretch one symmetry of the layer carries the corner functions (affine in λ) of each whole piece (ball,
+  diamond atom) onto the pure piece's, and of each half (octahedral, Y hole: corners above/on/below the gap's mid-plane and the section
+  points as exact rational functions of λ) onto the pure half's: **384 ok, 0 bad** (16 windows × 6 stretches × 4 sites).
+- **Locality:** every corner of every central piece within squared distance **11/32** of its site. A site whose letter the window does not
+  fix lies at least 2¼ layer spacings away in height (h² = 27/8) with weights differing by at most 11/36, so its bisector is at squared
+  distance ≥ ((27/8 − 11/36)/(2h))² ≈ 0.698 > 11/32: it cannot meet the piece; by convexity the piece is the window's.
+**Theorem (proved):** in every close-packed stacking, for −11/36 ≤ λ ≤ 1/4, every piece of the weighted division is borrowed from the
+pure stackings: balls by their own layer, diamond atoms by their nearest layer, octahedral and Y holes as two halves by the layers on
+their two sides.
+
 ## Name (placeholder)
 **Pyrochlore Halves**: the weighted division of a diamond-type stacking (balls, diamond atoms and #57's two empty holes).
 
@@ -41,4 +56,4 @@ halves (#57, DICTO).
 
 ## Conclusion
 The rule of halves of #57 holds on every pyrochlore polytype tested: each piece is borrowed, whole or in half, from the pure cubic or
-pure hexagonal stacking. **Status: stage 1 done (float); next: exact proof of the halves; prior art checked.**
+pure hexagonal stacking. **Status: proved exactly (768 + 384 checks, locality bound); paper #60 drafted for DICTO.**
