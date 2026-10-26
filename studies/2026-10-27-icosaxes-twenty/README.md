@@ -27,7 +27,7 @@ green), `twenty-lja-sheet.png` (Lotus Jewel Axes, gold), seen down a five-fold a
 
 ## Cubic blocks on the way (kept for B)
 - H1/H2: 8 Icosaxes on a cube round an Unborn Axes = 9 Icosaxes passing through each other (each overlap √5/24; what is left of the
-  middle one is exactly an Unborn Axes): one closed solid, volume 9 + 6√5. Holds along the whole golden bond wherever the corner piece is at least as large as its partner (Kelvin onwards): the cube is filled by the corner pieces' parts and the partner, and a central corner piece stays in the cube and contains the partner.
+  middle one is exactly an Unborn Axes): one closed solid, volume 9 + 17√5/3 (8 Icosaxes + 1 Unborn Axes; #59 v1 printed 9 + 6√5 in error, corrected in v2). Holds along the whole golden bond wherever the corner piece is at least as large as its partner (Kelvin onwards): the cube is filled by the corner pieces' parts and the partner, and a central corner piece stays in the cube and contains the partner.
 - K1: 8 Lotus Jewel Axes round a Dodecaxes, 8√5 + 2; K2: keys outward (Hexa-style roofs), 23.454. Both closed, genus 0, no overlaps.
 - A1/A2 (icosahedra / Lotus Jewels round a void dodecahedron with 12 AXE): first pictures only; Blender's join was unreliable, no
   numbers kept (`data/blender-join-report.txt` is that unreliable run, for the record).
