@@ -20,6 +20,15 @@ O and Y cut at the gap's mid-height into a bottom half (layer k) and a top half 
 layer k+1). Every piece of 4H, 6H, 9R and 15R equals the same piece of the pure stacking of its layer (3C if c, 2H if h):
 **204 pieces at each of a = −1/4, −1/5, −1/10, 0, 1/10, none off** (float, 7 decimals).
 
+## Exact weight walk (`scripts/pyro_walk.py`: #57's census engine, unchanged, exact rational arithmetic; `pyro-walk-exact.json`)
+- **3C:** stops −3/8 (atom pieces vanish), **−1/4** (tetrahedra + truncated tetrahedra: the quarter cubic honeycomb), **+1/4** (roles
+  swapped: atoms truncated tetrahedra, holes tetrahedra), +3/8 (hole pieces vanish).
+- **2H:** stops −11/36, −1/4, −3/20, 0, 1/8, 1/6, 1/4; at −1/4 the diamond atoms over h layers are regular tetrahedra but the balls are
+  10-cornered pieces.
+
+## Pictures
+`patches-sheet.png`: the network's pieces at −1/4 in 3C (gold), 2H (platinum) and 4H (both), voids left out.
+
 ## Name (placeholder)
 **Pyrochlore Halves**: the weighted division of a diamond-type stacking (balls, diamond atoms and #57's two empty holes).
 
@@ -32,4 +41,4 @@ halves (#57, DICTO).
 
 ## Conclusion
 The rule of halves of #57 holds on every pyrochlore polytype tested: each piece is borrowed, whole or in half, from the pure cubic or
-pure hexagonal stacking. **Status: stage 1 done (float); next: exact proof, then pictures; prior art checked.**
+pure hexagonal stacking. **Status: stage 1 done (float); next: exact proof of the halves; prior art checked.**

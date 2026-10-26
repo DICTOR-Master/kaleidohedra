@@ -1,0 +1,42 @@
+PASS py_AB (-11/36, -1/4) site 6 (hole): Euler V - E + F = 2 33-51+20
+PASS py_AB (-11/36, -1/4) site 7 (hole): Euler V - E + F = 2 39-60+23
+PASS py_AB (-11/36, -1/4): distance bound (finite site list enough on the closed interval) D2=12
+PASS py_AB (-11/36, -1/4): cell volumes add up to the lattice cell identically in lam sum = 1, cell = 1
+PASS py_AB (-11/36, -1/4): every face shared face to face (same measure from both cells) 108 faces
+PASS py_AB stop -11/36 site 0: limit of the interval = power cell from scratch 10 corners, 7 faces
+PASS py_AB stop -11/36 site 2: limit of the interval = power cell from scratch 27 corners, 17 faces
+PASS py_AB stop -11/36 site 3: limit of the interval = power cell from scratch 37 corners, 22 faces
+PASS py_AB stop -11/36 site 4: limit of the interval = power cell from scratch 10 corners, 7 faces
+PASS py_AB stop -11/36 site 6: limit of the interval = power cell from scratch 27 corners, 17 faces
+PASS py_AB stop -11/36 site 7: limit of the interval = power cell from scratch 37 corners, 22 faces
+== AB: 6 intervals, stops at -11/36, -1/4, -3/20, 0, 1/8, 1/6, 1/4
+     -11/36  2 x atom: 10 corners, faces [3, 3, 3, 5, 5, 5, 6]
+     -11/36  2 x atom: vanished
+     -11/36  2 x hole: 27 corners, faces [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 8, 8, 8, 9, 9, 9]
+     -11/36  2 x hole: 37 corners, faces [3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 6, 8, 8, 8, 9, 9, 9]
+       -1/4  2 x atom: 10 corners, faces [3, 3, 3, 5, 5, 5, 6]
+       -1/4  2 x atom: 4 corners, faces [3, 3, 3, 3]
+       -1/4  2 x hole: 21 corners, faces [3, 3, 3, 3, 3, 3, 3, 3, 6, 6, 6, 8, 8, 8]
+       -1/4  2 x hole: 27 corners, faces [3, 3, 3, 3, 3, 3, 3, 5, 5, 5, 6, 6, 6, 6, 8, 8, 8]
+      -3/20  2 x atom: 18 corners, faces [4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6]
+      -3/20  2 x atom: 12 corners, faces [4, 4, 4, 4, 4, 4, 6, 6]
+      -3/20  2 x hole: 24 corners, faces [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6]
+      -3/20  2 x hole: 24 corners, faces [4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 6]
+          0  2 x atom: 18 corners, faces [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 6, 6]
+          0  2 x atom: 18 corners, faces [4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6]
+          0  2 x hole: 24 corners, faces [4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 6]
+          0  2 x hole: 18 corners, faces [4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6]
+        1/8  2 x atom: 24 corners, faces [4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 6]
+        1/8  2 x atom: 21 corners, faces [3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 6, 6]
+        1/8  2 x hole: 24 corners, faces [3, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 6, 6, 6]
+        1/8  2 x hole: 18 corners, faces [4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6]
+        1/6  2 x atom: 33 corners, faces [3, 3, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 7, 7, 7, 8, 8, 8]
+        1/6  2 x atom: 24 corners, faces [3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 8, 8, 8]
+        1/6  2 x hole: 26 corners, faces [3, 3, 3, 5, 5, 5, 5, 5, 5, 6, 6, 6, 7, 7, 7]
+        1/6  2 x hole: 18 corners, faces [4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6]
+        1/4  2 x atom: 15 corners, faces [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 6, 6, 6, 6]
+        1/4  2 x atom: 12 corners, faces [3, 3, 3, 3, 6, 6, 6, 6]
+        1/4  2 x hole: 5 corners, faces [3, 3, 3, 3, 3, 3]
+        1/4  2 x hole: vanished
+
+[exited with code 0]
