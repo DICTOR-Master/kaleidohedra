@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Pyrochlore Halves</title>
+<link rel="stylesheet" href="../paper.css">
+<style>.draft{color:#b00;font-weight:700;border:2px solid #b00;padding:2mm 3mm;margin:0 0 4mm;font-size:9.5pt} p.prec{font-size:9pt;color:#3a3a3a;border-left:2px solid #b8962e;padding-left:3mm;margin:2mm 0 4mm} figure{margin:4mm 0;text-align:center} figure img{width:100%} figcaption{font-size:8.5pt;color:#444}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<p class="draft">DRAFT for DICTO to read — not published. The exact proof of the halves is still to be done (marked below). Drafted by the local model on dicto-big-brother, corrected and checked by Claude against the study.</p>
+<h1>Pyrochlore Halves</h1>
+<p class="sub">The rule of halves of #57 carried to the pyrochlore network, its layers stacked in any order</p>
+<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Working draft · 27 October 2026 · Licence CC BY-SA 4.0<br>
+The idea is DICTO's. Computation with Claude (Anthropic).</div>
+
+<div class="abstract"><b>In short.</b> The pyrochlore network is made of small tetrahedra that touch only at their corners. It hides inside every diamond-like crystal: take the middle of every bond, and the four middles round each atom make one of these tetrahedra. Diamond-like crystals can stack their layers in many orders, so the pyrochlore network can too. We share out all of space round it by one weight, as in #57, and find the same rule: every piece is borrowed, whole or in half, from the pure cubic or the pure hexagonal stacking.</div>
+
+<h2>1. The idea</h2>
+<p>DICTO's idea (27 October 2026): "close packing halves rule pyrochlore network" — the rule of halves of #57 (DICTO DOI 10.5281/zenodo.23647898) on the pyrochlore network, its layers (kagome and triangular, seen down a three-fold axis) stacked in any order. The series paper #58 (DICTO DOI 10.5281/zenodo.23665944) tells the road to #57.</p>
+
+<h2>2. Main result</h2>
+<p><b>Rule (proved exactly for the walks; for the halves, checked and to be proved).</b> In every close-packed stacking, divide space by weight among the balls and diamond atoms (weight λ) and the two empty holes of each gap (weight 0). Then every piece is a piece of a pure stacking: a ball's piece is the ball piece of its own layer's pure stacking (cubic if the layer is c, hexagonal if h); a diamond atom's piece that of its nearest layer; and each hole piece, cut at its gap's mid-height, is a bottom half from the layer below and a top half from the layer above.</p>
+<p class="prec"><b>Status:</b> checked on the stackings 4H, 6H, 9R and 15R at λ = −1/4, −1/5, −1/10, 0 and 1/10: 204 pieces at each weight, every one equal to its pure piece (float, 7 decimals). [CHECK: the exact proof, by #57's method — locality over the 16 cubic/hexagonal patterns of six layers, then exact corner functions along each stretch of the weight.]</p>
+
+<h2>3. Construction</h2>
+<p>Balls of spacing 1 in close-packed layers √(2/3) apart, stacked by a word in A, B, C. The diamond-type crystal (as silicon carbide) is the balls plus #57's tetrahedral hole "over X at 3/4" above each ball. The middles of its bonds form the pyrochlore network: round each atom four middles make a regular tetrahedron of edge 1/2, and every corner belongs to exactly two tetrahedra (checked for 3C, 2H, 4H and 6H). Each gap holds four sites: the ball S, the diamond atom C, the octahedral hole O and the other tetrahedral hole Y; the two empty holes are exactly the network's open spaces.</p>
+
+<h2>4. The weight walk</h2>
+<p>Computed exactly with #57's census engine, unchanged (rational arithmetic; every built-in check passed).</p>
+<p><b>Cubic (3C).</b> Stops at −3/8 (the atoms' pieces vanish), <b>−1/4</b> (atoms regular tetrahedra, holes truncated tetrahedra of volume 23√2/96: the classical tetrahedral–truncated tetrahedral honeycomb), <b>+1/4</b> (the roles swap: atoms truncated tetrahedra, holes tetrahedra), and +3/8 (the holes' pieces vanish).</p>
+<p><b>Hexagonal (2H).</b> Stops at −11/36, −1/4, −3/20, 0, 1/8, 1/6 and 1/4. At −1/4 the diamond atoms' pieces are still regular tetrahedra but the balls' pieces have ten corners: the regular pyrochlore tetrahedra are exact pieces only on cubic layers.</p>
+<figure><img src="figures/patches-sheet.png"><figcaption>Figure 1. The network's pieces at λ = −1/4 in the cubic (gold), hexagonal (platinum) and mixed 4H stackings; open spaces left out.</figcaption></figure>
+
+<h2>5. Prior art and credit</h2>
+<p>The pyrochlore lattice as the bond-middle lattice of diamond, and as alternating kagome and triangular layers along a three-fold axis, is standard in the physics of frustrated magnets; the cubic and hexagonal stackings of diamond-type crystals (diamond and lonsdaleite, zincblende and wurtzite) are standard; the tetrahedral–truncated tetrahedral honeycomb is classical; the rule of halves is #57 (DICTO). Not found in the sources searched (a library of 302 references, and the web, 27 October 2026): the rule of halves for pyrochlore stackings, or this weighted division of them.</p>
+<h2>6. Methods and data</h2>
+<p>Study folder k-research studies/2026-10-27-pyrochlore-halves: pyro.py (construction), cells.py and halves.py (float division and halves), pyro_walk.py (exact walks with #57's engine), figures.</p>
+<h2>7. Name</h2>
+<p>Placeholder until DICTO chooses: Pyrochlore Halves.</p>
+</body></html>
