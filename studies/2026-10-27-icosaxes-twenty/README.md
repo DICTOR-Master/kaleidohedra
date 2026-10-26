@@ -52,10 +52,10 @@ outward with the mirrored Tricap on the six facing voids. Both: no overlaps, no 
 ## Names (placeholders until DICTO changes them; the "-Axes" family style)
 | Shape | Placeholder name |
 |---|---|
-| 20 Icosaxes at first touch (cage, 12 windows) | **Icosaxes Cage** |
-| … at 1/φ (windows closed, sealed hollow) | **Icosaxes Shell** |
-| … at 1/3 (one solid) | **Icosaxes Orb** |
-| the same with Lotus Jewel Axes (orb at 1/φ³) | **Lotus Cage, Lotus Shell, Lotus Orb** |
+| 20 Icosaxes at first touch (cage, 12 windows) | **Icosaxes Bloom** |
+| … at 1/φ (windows closed, sealed hollow) | **Icosaxes Bud** |
+| … at 1/3 (one solid) | **Icosaxes Seed** |
+| the same with Lotus Jewel Axes (orb at 1/φ³) | **Lotus Jewel Bloom, Lotus Jewel Bud, Lotus Jewel Seed** |
 | 8 Icosaxes round an Unborn Axes (= 9 Icosaxes passing through) | **Icosaxes Hexa** |
 | its keyed form, Tricaps outward (K2) | **Lotus Hexa** |
 | NK2's piece: 2 dents, 6 keys, volume φ² | **Keyaxes** |
@@ -66,7 +66,7 @@ outward with the mirrored Tricap on the six facing voids. Both: no overlaps, no 
 - Link to #57: answered by the pyrochlore study (2026-10-27-pyrochlore-halves): the rule of halves carries over to the diamond-type
   stackings. Whether Icosaxes lie on #57's own walk: parked.
 - Prior art: done (below); no claim of novelty beyond "not found in the sources searched".
-- Paper: parked; candidate title "The Icosaxes Hexa: Cage, Shell and Orb".
+- Paper: parked; candidate title "The Icosaxes Hexa: Bloom, Bud and Seed".
 
 ## Prior art (library of 302 references, then web; 2026-10-27)
 **Known, credited:** the Wolfram Demonstration "Cluster of 20 Icosahedra" (twenty icosahedra on a dodecahedron's corners, edge to
@@ -77,7 +77,7 @@ the Unborn as their pseudoicosahedron); corner-sharing cube nets (Molecules 24(7
 and 1/φ³; the Icosaxes Kagome network.
 
 ## Conclusion
-Twenty Icosaxes on a dodecahedron's corners close in three exact golden steps — cage (1), shell (1/φ), orb (1/3; Lotus 1/φ³) — and
+Twenty Icosaxes on a dodecahedron's corners close in three exact golden steps — bloom (1), bud (1/φ), seed (1/3; Lotus Jewel 1/φ³) — and
 eight round an Unborn Axes make the Icosaxes Hexa, the perfect Kagome node of the golden split. **Status: done; prior art checked; parked until DICTO picks it up.**
 
 ## Data
