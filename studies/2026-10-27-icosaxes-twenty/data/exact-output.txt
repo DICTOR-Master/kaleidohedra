@@ -1,0 +1,9 @@
+C5 = Matrix([[-1/4 + sqrt(5)/4, -sqrt(5)/4 - 1/4, 1/2], [1/4 + sqrt(5)/4, 1/2, -1/4 + sqrt(5)/4], [-1/2, -1/4 + sqrt(5)/4, 1/4 + sqrt(5)/4]])
+rotations: 60
+corners of the dodecahedron: 20
+first touch d = sqrt(9*sqrt(5)/8 + 21/8) = 2.26728394223 | phi^2 sqrt3/2 = 2.26728394223 | equal: True
+windows close d = sqrt(3*sqrt(5)/8 + 9/8) = 1.40125853844 | d / touch = -1/2 + sqrt(5)/2 | equals 1/phi: True
+Icosaxes hollow fills d = sqrt(sqrt(5)/8 + 7/24) | d / touch = 1/3 | equals 1/3: True
+Lotus Jewel Axes: centre covered for d < sqrt(9/8 - 3*sqrt(5)/8) | d / touch = -2 + sqrt(5) | equals 1/phi^3: True
+
+[exited with code 0]

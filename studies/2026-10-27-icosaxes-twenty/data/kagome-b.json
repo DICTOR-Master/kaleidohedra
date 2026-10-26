@@ -1,0 +1,142 @@
+{
+ "octa7": {
+  "icosaxes": 7,
+  "unbornInside": 0,
+  "anchor": "I",
+  "nets": [
+   {
+    "lattice": "sc4",
+    "neighbours": 6,
+    "twice": 0.315,
+    "once": 0.079,
+    "none": 0.606
+   },
+   {
+    "lattice": "bcc4",
+    "neighbours": 6,
+    "twice": 0.735,
+    "once": 0.265,
+    "none": 0.0
+   }
+  ]
+ },
+ "octa6": {
+  "icosaxes": 6,
+  "unbornInside": 0,
+  "anchor": "I",
+  "nets": [
+   {
+    "lattice": "sc4",
+    "neighbours": 6,
+    "twice": 0.315,
+    "once": 0.0,
+    "none": 0.685
+   },
+   {
+    "lattice": "bcc4",
+    "neighbours": 6,
+    "twice": 0.735,
+    "once": 0.0,
+    "none": 0.265
+   }
+  ]
+ },
+ "cube8": {
+  "icosaxes": 8,
+  "unbornInside": 1,
+  "anchor": "U",
+  "nets": [
+   {
+    "lattice": "bcc4",
+    "neighbours": 8,
+    "twice": 1.0,
+    "once": 0.0,
+    "none": 0.0
+   }
+  ]
+ },
+ "cubocta12": {
+  "icosaxes": 12,
+  "unbornInside": 8,
+  "anchor": "I",
+  "nets": [
+   {
+    "lattice": "fcc8",
+    "neighbours": 12,
+    "twice": 0.42,
+    "once": 0.0,
+    "none": 0.58
+   }
+  ]
+ },
+ "cubocta13": {
+  "icosaxes": 13,
+  "unbornInside": 8,
+  "anchor": "I",
+  "nets": [
+   {
+    "lattice": "fcc8",
+    "neighbours": 12,
+    "twice": 0.42,
+    "once": 0.038,
+    "none": 0.542
+   }
+  ]
+ },
+ "cube27": {
+  "icosaxes": 27,
+  "unbornInside": 8,
+  "anchor": "I",
+  "nets": [
+   {
+    "lattice": "bcc8",
+    "neighbours": 8,
+    "twice": 0.187,
+    "once": 0.621,
+    "none": 0.192
+   }
+  ]
+ },
+ "rd14": {
+  "icosaxes": 14,
+  "unbornInside": 8,
+  "anchor": "I",
+  "nets": [
+   {
+    "lattice": "sc8",
+    "neighbours": 6,
+    "twice": 0.017,
+    "once": 0.187,
+    "none": 0.796
+   },
+   {
+    "lattice": "bcc8",
+    "neighbours": 14,
+    "twice": 0.239,
+    "once": 0.0,
+    "none": 0.761
+   }
+  ]
+ },
+ "rd15": {
+  "icosaxes": 15,
+  "unbornInside": 8,
+  "anchor": "I",
+  "nets": [
+   {
+    "lattice": "sc8",
+    "neighbours": 6,
+    "twice": 0.017,
+    "once": 0.19,
+    "none": 0.793
+   },
+   {
+    "lattice": "bcc8",
+    "neighbours": 14,
+    "twice": 0.239,
+    "once": 0.026,
+    "none": 0.735
+   }
+  ]
+ }
+}
