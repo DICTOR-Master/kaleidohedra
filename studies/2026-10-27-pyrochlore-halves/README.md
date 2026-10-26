@@ -45,7 +45,7 @@ pure stackings: balls by their own layer, diamond atoms by their nearest layer, 
 their two sides.
 
 ## Name (placeholder)
-**Pyrochlore Halves**: the weighted division of a diamond-type stacking (balls, diamond atoms and #57's two empty holes).
+**DICTO Janus c/h Pyrochlore** (title by DICTO; study name Pyrochlore Halves): the weighted division of a diamond-type stacking (balls, diamond atoms and #57's two empty holes).
 
 ## Prior art (library of 302 references, then web; 2026-10-27)
 **Known, credited:** the pyrochlore lattice as the bond-midpoint (medial) lattice of diamond, and as alternating kagome and triangular
