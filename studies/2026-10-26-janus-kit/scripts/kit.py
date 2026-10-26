@@ -30,7 +30,7 @@ for word in ('ABC', 'AB', 'ABAC'):
             if c is None or c.empty: continue
             cells[i] = c
         # B + C: faces, rods, inradius
-        min_inr, worst = 1e9, 0.0; nb = 0
+        min_inr, worst = 1e9, 0.0; nb = 0; fails = []
         for i, c in cells.items():
             p = np.array([float(x) for x in spec['motif'][i][1]]) @ L.T * 0 + L @ np.array([float(x) for x in spec['motif'][i][1]])
             for kf, pts in c.faces().items():
@@ -40,11 +40,14 @@ for word in ('ABC', 'AB', 'ABAC'):
                 t = np.dot(ctr - p, n) / np.dot(q - p, n); X = p + t * (q - p)        # rod ∩ face plane
                 u = P[1] - P[0]; u -= np.dot(u, n) * n; u /= np.linalg.norm(u); v = np.cross(n, u)
                 Q = np.c_[(P - ctr) @ u, (P - ctr) @ v]; x = np.array([(X - ctr) @ u, (X - ctr) @ v])
+                area = ConvexHull(Q).volume if len(Q) >= 3 else 0.0
+                if area < 1e-9: continue                                         # a face of zero size carries no bond
                 h = ConvexHull(Q); ins = np.max(h.equations[:, :2] @ x + h.equations[:, 2])   # >0 means outside
                 inr = -np.max(h.equations[:, :2] @ np.zeros(2) * 0 + h.equations[:, 2]) if False else min(-(h.equations[:, 2] + h.equations[:, :2] @ x))
+                if ins > 1e-9: fails.append(f"{spec['motif'][i][0]}–{H['kind']} bond misses its face by {ins:.4f}")
                 worst = max(worst, ins); min_inr = min(min_inr, inr if ins <= 0 else 0.0); nb += 1
-        rec['rods'] = dict(bonds=nb, all_inside=worst <= 1e-9, worst_outside=round(worst, 6))
-        rec['scale'] = dict(min_clearance_around_rod=round(min_inr, 6), ball_spacing_mm_for_28mm_hole_8mm_rim=round(22 / min_inr, 1) if min_inr > 0 else None)
-        say(f"{key}: {nb} face-checks, rods all inside faces: {worst <= 1e-9} (worst outside {worst:.4f}); smallest clearance round a rod {min_inr:.4f} → ball spacing ≥ {22 / min_inr:.0f} mm for a 28 mm hole with 8 mm rim" if min_inr > 0 else f"{key}: rods outside faces somewhere (worst {worst:.4f})")
+        rec['rods'] = dict(bonds=nb, all_inside=bool(worst <= 1e-9), worst_outside=float(round(worst, 6)), failing=sorted(set(fails)))
+        rec['scale'] = dict(min_clearance_around_rod=float(round(min_inr, 6)), ball_spacing_mm_28mm_fitting=float(round(22 / min_inr, 1)) if min_inr > 0 else None, ball_spacing_mm_7mm_silicone=float(round(8 / min_inr, 1)) if min_inr > 0 else None)
+        say(f"{key}: {nb} face-checks, rods all inside faces: {worst <= 1e-9} (worst outside {worst:.4f}); smallest clearance round a rod {min_inr:.4f} → ball spacing ≥ {22 / min_inr:.0f} mm (28 mm fittings) / ≥ {8 / min_inr:.0f} mm (7 mm silicone)" if min_inr > 0 else f"{key}: rods outside faces: {sorted(set(fails))}")
         out[key] = rec
 json.dump(out, open('../kit.json', 'w'), indent=1); open('../kit.txt', 'w').write('\n'.join(lines) + '\n')
