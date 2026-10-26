@@ -47,10 +47,11 @@ def mat(name, col, metal=0.0, rough=0.45, emit=0.0):
 def put(fn, m, loc, s, rot):
     bpy.ops.wm.obj_import(filepath=os.path.abspath(fn)); o = bpy.context.selected_objects[0]
     o.data.materials.clear(); o.data.materials.append(m); o.scale = (s,) * 3; o.location = loc; o.rotation_euler = rot
+    o.visible_glossy = False  # no piece-in-piece or label reflections: each face shows only its own metal
     bpy.ops.object.shade_flat(); return o
 def label(txt, x, z, s, col=(0.88, 0.89, 0.93), emit=1.0):
     t = bpy.data.curves.new('n' + txt, 'FONT'); t.body = txt; t.align_x = 'CENTER'; no = bpy.data.objects.new('n' + txt, t); sc.collection.objects.link(no)
-    no.location = (x, -2, z); no.rotation_euler = (math.radians(84), 0, 0); no.scale = (s,) * 3; no.data.materials.append(mat('lab' + txt, col, emit=emit))
+    no.location = (x, -2, z); no.rotation_euler = (math.radians(84), 0, 0); no.scale = (s,) * 3; no.visible_glossy = False; no.data.materials.append(mat('lab' + txt, col, emit=emit))
 
 gold = mat('gold', (1.0, 0.71, 0.29), metal=1.0, rough=0.16)
 silver = mat('platinum', (0.70, 0.67, 0.62), metal=1.0, rough=0.20)
@@ -59,15 +60,15 @@ for tag, x, S, lab in (('fang', -3.3, 5.0, 'Fang'), ('chucky', 3.3, 2.35, 'Chuck
     for nm, m in (('hex-top', silver), ('cubic-bottom', gold)):
         for z, gap in ((1.75, 0.0), (-2.35, 0.45)):
             put(f'h-{tag}-{nm}.obj', m, (x, 0, z + (gap if nm == 'hex-top' else -gap)), S, rot)
-    label(lab, x, -4.35, 0.42)
-label('platinum: hexagonal top half  ·  gold: cubic bottom half', 0, -5.0, 0.24, (0.75, 0.77, 0.82), 0.7)
+    label(lab, x, -4.2, 0.40)
+label('platinum: hexagonal top half  ·  gold: cubic bottom half', 0, -4.75, 0.22, (0.75, 0.77, 0.82), 0.7)
 label('together', 0, 1.75, 0.26, (0.75, 0.77, 0.82), 0.7); label('drawn apart', 0, -2.35, 0.26, (0.75, 0.77, 0.82), 0.7)
 
 cam = bpy.data.objects.new('cam', bpy.data.cameras.new('cam')); sc.collection.objects.link(cam)
-cam.location = (0, -22.5, -1.0); cam.rotation_euler = (math.radians(89), 0, 0); sc.camera = cam; cam.data.lens = 46
+cam.location = (0, -22.5, -1.15); cam.rotation_euler = (math.radians(89), 0, 0); sc.camera = cam; cam.data.lens = 57
 for loc, e, col in (((-10, -12, 14), 1400, (1.0, 0.95, 0.88)), ((12, -10, 6), 700, (0.85, 0.9, 1.0)), ((0, 10, 10), 600, (1, 1, 1))):
     l = bpy.data.objects.new('l', bpy.data.lights.new('l', 'AREA')); l.data.energy = e; l.data.size = 8; l.data.color = col; l.location = loc
     sc.collection.objects.link(l); l.rotation_euler = (Vector((0, 0, 0)) - Vector(loc)).to_track_quat('-Z', 'Y').to_euler()
 t = bpy.data.curves.new('t', 'FONT'); t.body = 'DICTO'; to = bpy.data.objects.new('t', t); sc.collection.objects.link(to)
-to.location = (6.0, -3, -5.0); to.rotation_euler = (math.radians(84), 0, 0); to.scale = (0.36,) * 3; to.data.materials.append(mat('mark', (0.85, 0.66, 0.2), emit=1.5))
+to.location = (4.55, -3, -4.75); to.rotation_euler = (math.radians(84), 0, 0); to.scale = (0.30,) * 3; to.data.materials.append(mat('mark', (0.85, 0.66, 0.2), emit=1.5))
 sc.render.filepath = os.path.abspath('card57.png'); bpy.ops.render.render(write_still=True)
