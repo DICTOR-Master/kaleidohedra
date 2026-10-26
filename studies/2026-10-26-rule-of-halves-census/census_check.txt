@@ -1,0 +1,29 @@
+mean rule ('-11/24', '-3/8') ch OK
+mean rule ('-11/24', '-3/8') hc OK
+equal space per layer ('-11/24', '-3/8') OK
+mean rule ('-3/8', '-1/8') ch OK
+mean rule ('-3/8', '-1/8') hc OK
+equal space per layer ('-3/8', '-1/8') OK
+mean rule ('-1/8', '5/24') ch OK
+mean rule ('-1/8', '5/24') hc OK
+equal space per layer ('-1/8', '5/24') OK
+mean rule ('5/24', '3/8') ch OK
+mean rule ('5/24', '3/8') hc OK
+equal space per layer ('5/24', '3/8') OK
+same hexagonality hhcc hchc ('-11/24', '-3/8') OK
+same hexagonality hhcc hchc ('-3/8', '-1/8') OK
+same hexagonality hhcc hchc ('-1/8', '5/24') OK
+same hexagonality hhcc hchc ('5/24', '3/8') OK
+same hexagonality hhhccc hchchc ('-11/24', '-3/8') OK
+same hexagonality hhhccc hchchc ('-3/8', '-1/8') OK
+same hexagonality hhhccc hchchc ('-1/8', '5/24') OK
+same hexagonality hhhccc hchchc ('5/24', '3/8') OK
+same hexagonality hhccc hchcc ('-11/24', '-3/8') OK
+same hexagonality hhccc hchcc ('-3/8', '-1/8') OK
+same hexagonality hhccc hchcc ('-1/8', '5/24') OK
+same hexagonality hhccc hchcc ('5/24', '3/8') OK
+same hexagonality hcccc chccc ('-11/24', '-3/8') OK
+same hexagonality hcccc chccc ('-3/8', '-1/8') OK
+same hexagonality hcccc chccc ('-1/8', '5/24') OK
+same hexagonality hcccc chccc ('5/24', '3/8') OK
+ALL PASS
