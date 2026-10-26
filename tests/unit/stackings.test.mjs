@@ -64,3 +64,16 @@ test('census: the space split depends only on the hexagonality, not the order', 
   assert.ok(w1 && w2, 'found two orders with equal hexagonality');
   for (const l of [LAM_LO + 0.03, -0.25, 0, 0.3, LAM_HI - 0.01]) close(census(w1, l).octShare, census(w2, l).octShare, `λ=${l} ${w1} vs ${w2}`);
 });
+
+test('layer flips: the word rebuilt from the h/c sequence has exactly that sequence', async () => {
+  const { wordFromTypes, flipLayer, resetLayers, currentWord, MAX_LAYERS } = await import('../../src/app/world-stackings.js');
+  for (const w of Object.values(PRESETS)) assert.equal(wordFromTypes(layerTypes(w)), w, `${w} rebuilt from its h/c sequence`);
+  for (const k of ['3C', '2H', '4H', '6H']) for (let i = 0; i < PRESETS[k].length; i++) {
+    resetLayers(k); const before = layerTypes(PRESETS[k]);
+    if (!flipLayer(k, i)) continue;
+    const w = currentWord(k), t = layerTypes(w), want = before.map((x, j) => (j === i ? (x === 'c' ? 'h' : 'c') : x));
+    assert.ok(validWord(w) && w.length <= MAX_LAYERS && w.length % want.length === 0, `${k} flip ${i}: ${w}`);
+    assert.deepEqual(t, Array(w.length / want.length).fill(want).flat(), `${k} flip ${i}`);
+  }
+  resetLayers('3C'); assert.equal(currentWord('3C'), 'ABC');
+});

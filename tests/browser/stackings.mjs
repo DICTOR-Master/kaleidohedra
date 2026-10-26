@@ -6,8 +6,8 @@
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { mkdirSync } from 'node:fs';
-import { STACKING_KINDS, STACKING_STOPS, STACKING_VIEWS, stackingColumn } from '../../src/app/world-stackings.js';
-import { PRESETS } from '../../src/app/stackings-geometry.js';
+import { STACKING_KINDS, STACKING_STOPS, STACKING_VIEWS, stackingColumn, wordFromTypes } from '../../src/app/world-stackings.js';
+import { PRESETS, layerTypes } from '../../src/app/stackings-geometry.js';
 import { t } from '../../src/app/i18n.js';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:8000', SH = process.env.SHOTS ?? '/tmp/stackings-shots';
@@ -50,6 +50,26 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
         assert.ok((await caption()).startsWith(t(`stackings.stop.${s.key}`, 'en')), `${tag}: ${k} ${s.key} caption`); checks++;
       }
     }
+    // phase 2: flip layer 1 of 4H (c → h), the column follows the new word; reset; tap a piece for its volume
+    const u0 = STACKING_STOPS.find((x) => x.key === 's2').u + 100; await slide(u0);
+    let st = await probe(); const lam = st.param.value;
+    const chip = page.locator(`${P} [data-stk-layer="0"]`), cb = await chip.boundingBox();
+    assert.ok(cb && cb.height >= 30, `${tag}: layer chip big enough to touch`);
+    await chip.tap(); await page.waitForTimeout(1500);
+    const flipped = wordFromTypes(layerTypes('ABAC').map((x, j) => (j === 0 ? (x === 'c' ? 'h' : 'c') : x)));
+    assert.equal(await page.locator(`${P} .stk-chips [data-stk-layer]`).count(), flipped.length, `${tag}: one chip per layer of ${flipped}`);
+    st = await probe(); assert.deepEqual(st.drawn, count(stackingColumn(flipped, 1, lam)), `${tag}: flipped column`);
+    assert.match(await caption(), new RegExp(layerTypes(flipped).join('')), `${tag}: caption shows the new h/c sequence`); checks++;
+    await page.tap(`${P} [data-stk-reset]`); await page.waitForTimeout(1200);
+    st = await probe(); assert.deepEqual(st.drawn, count(stackingColumn('ABAC', 1, lam)), `${tag}: reset`); checks++;
+    const f = await page.evaluate(() => window.__frameProbe());
+    let picked = false;
+    for (const [dx, dy] of [[0, 0], [0, 0.2], [0, -0.2], [0.05, 0.4], [-0.05, -0.4], [0.1, 0.1], [-0.1, -0.1], [0, 0.6], [0, -0.6]]) {
+      await page.touchscreen.tap(f.cx + dx * f.r, f.cy + dy * f.r); await page.waitForTimeout(600);
+      if ((await probe()).drawn.stkSel === 1) { picked = true; break; }
+    }
+    assert.ok(picked, `${tag}: a tapped piece is picked`);
+    assert.match(await page.locator(`${P} .stk-info`).textContent(), /volume \d/, `${tag}: picked piece's volume`); checks++;
     assert.deepEqual(errors, [], `${tag}: console errors`);
     console.log('ok', tag); await page.close();
   }

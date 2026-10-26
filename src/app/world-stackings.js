@@ -11,6 +11,30 @@ import { PRESETS, LAYER_H, LAM_LO, LAM_HI, stackingPieces, census, layerTypes } 
 
 export const STACKING_KINDS = Object.keys(PRESETS);
 const ROLE_OF = { c: 'stkC', h: 'stkH' };
+export const MAX_LAYERS = 30;   // a flipped stacking whose period would be longer is refused (the column would be too heavy)
+
+// phase 2 (DICTO 2026-10-26): each polytype's current word (flipped layers change it) and the piece last tapped
+const state = { words: { ...PRESETS }, picked: null };
+export const currentWord = (k) => state.words[k];
+const third = (a, b) => 'ABC'.replace(a, '').replace(b, '');
+/** The ABC word with the given cyclic h/c sequence (layer k is h when layers k−1 and k+1 match), repeated until it closes, or null. */
+export function wordFromTypes(types) {
+  const n = types.length;
+  for (let reps = 1; reps <= 3; reps++) {
+    const m = n * reps, L = ['A', 'B'];
+    for (let k = 1; k <= m; k++) L.push(types[k % n] === 'h' ? L[k - 1] : third(L[k - 1], L[k]));
+    if (L[m] === L[0] && L[m + 1] === L[1]) return m <= MAX_LAYERS ? L.slice(0, m).join('') : null;
+  }
+  return null;
+}
+/** Flip layer k of polytype `kind` between c and h; false if the result would be too long. */
+export function flipLayer(kind, k) {
+  const types = layerTypes(state.words[kind]); types[k] = types[k] === 'c' ? 'h' : 'c';
+  const w = wordFromTypes(types);
+  if (!w) return false;
+  state.words[kind] = w; state.picked = null; return true;
+}
+export function resetLayers(kind) { state.words[kind] = PRESETS[kind]; state.picked = null; }
 
 // one column of holes, `size` periods tall, centred on the origin; pieces cached per word and λ
 const cache = new Map();
@@ -21,11 +45,11 @@ function column(word, lam) {
 }
 /** [role, vertices, faces, site, { anchor, kind }] for the drawn column. */
 export function stackingColumn(word, size, lam) {
-  const P = column(word, lam), H = word.length * LAYER_H, out = [], mid = (size * H) / 2;
+  const P = column(word, lam), H = word.length * LAYER_H, out = [], mid = (size * H) / 2;   // size: periods (one in the world)
   for (let r = 0; r < size; r++) for (const p of P) {
     const dz = r * H - mid, move = (v) => [v[0] - 0.5, v[2] + dz, v[1] - 0.3];   // z up in the study, y up in the app
-    const anchor = move(p.site);
-    out.push([ROLE_OF[p.type], p.vertices.map(move), p.faces, anchor, { anchor, kind: `${p.role}.${p.type}` }]);
+    const anchor = move(p.site), tag = `${word}|${P.indexOf(p)}`;
+    out.push([state.picked === tag ? 'stkSel' : ROLE_OF[p.type], p.vertices.map(move), p.faces, anchor, { anchor, kind: `${p.role}.${p.type}`, tags: p.faces.map(() => tag) }]);
   }
   return out;
 }
@@ -44,15 +68,52 @@ function caption(word, l, L) {
 }
 
 export const STACKING_VIEWS = Object.fromEntries(STACKING_KINDS.map((k) => [k, {
-  maxSize: PRESETS[k].length > 6 ? 1 : 2, viewDir: [1, 0.35, 1.2],
-  param: { start: uOf(0), stops: STACKING_STOPS, value: lamOf, caption: (l, L) => caption(PRESETS[k], l, L), pauseAt: [] },
-  views: { column: (size, o) => stackingColumn(PRESETS[k], size, o.param) },
+  maxSize: 1, viewDir: [1, 0.35, 1.2],
+  param: { start: uOf(0), stops: STACKING_STOPS, value: lamOf, caption: (l, L) => caption(currentWord(k), l, L), pauseAt: [] },
+  views: { column: (size, o) => stackingColumn(currentWord(k), size, o.param) },
+  onTap: (tag) => { if (!tag.startsWith(`${currentWord(k)}|`)) return false; state.picked = state.picked === tag ? null : tag; return true; },
 }]));
 
+/** The piece last tapped, in words: which piece, its layer and type, its volume (and for a half, the whole piece and whether it is Janus). */
+export function pickedInfo(kind, lam, L) {
+  if (!state.picked) return t('stackings.info.tap', L);
+  const [word, i] = state.picked.split('|'); if (word !== currentWord(kind)) return t('stackings.info.tap', L);
+  const P = column(word, lam), p = P[Number(i)]; if (!p) return t('stackings.info.tap', L);
+  const vars = { n: p.layer + 1, type: p.type, v: fmt(p.volume, 4) };
+  if (p.role === 'tet') return t('stackings.info.tet', L, vars);
+  const both = P.filter((q) => q.role !== 'tet' && q.gap === p.gap), whole = both.reduce((a, q) => a + q.volume, 0);
+  const janus = new Set(both.map((q) => q.type)).size > 1;
+  return t(p.role === 'octTop' ? 'stackings.info.top' : 'stackings.info.bottom', L, { ...vars, w: fmt(whole, 4) }) + (janus ? t('stackings.info.janus', L) : '');
+}
+function mountLayers(panel, getWorld) {
+  const box = document.createElement('div'); box.className = 'stk-layers'; box.style.order = '10'; box.style.textAlign = 'center';
+  box.innerHTML = '<div class="stk-layers-label st-note"></div><div class="w4d-row w4d-options stk-chips"></div><div class="stk-info st-note"></div>';
+  const cap = panel.querySelector('.ch-param-caption'); (cap?.parentElement ?? panel).insertBefore(box, cap?.nextSibling ?? null);
+  let last = null;
+  const paint = ({ kind, v, L }) => {
+    last = { kind, v, L };
+    const w = currentWord(kind), types = layerTypes(w);
+    box.querySelector('.stk-layers-label').textContent = t('stackings.layers', L);
+    const chips = box.querySelector('.stk-chips'); chips.textContent = '';
+    types.forEach((ty, k) => { const b = document.createElement('button'); b.type = 'button'; b.dataset.stkLayer = String(k); b.className = `stk-chip stk-${ty}`; b.style.borderColor = ty === 'c' ? '#f2b84b' : '#d9d6cf'; b.textContent = `${k + 1} ${w[k]} ${ty}`; chips.append(b); });
+    if (w !== PRESETS[kind]) { const r = document.createElement('button'); r.type = 'button'; r.dataset.stkReset = '1'; r.className = 'stk-chip'; r.textContent = t('stackings.reset', L, { k: kind }); chips.append(r); }
+    box.querySelector('.stk-info').textContent = pickedInfo(kind, v, L);
+  };
+  box.addEventListener('click', (e) => {
+    const b = e.target.closest('button'); if (!b || !last) return;
+    if (b.dataset.stkReset) resetLayers(last.kind);
+    else if (b.dataset.stkLayer && !flipLayer(last.kind, Number(b.dataset.stkLayer))) { box.querySelector('.stk-info').textContent = t('stackings.toolong', last.L, { n: MAX_LAYERS }); return; }
+    getWorld()?.refresh();
+  });
+  return { update: paint };
+}
+
 export function createStackingsWorld({ scene, fitView, openAction }) {
-  return createLayeredWorld({ scene, fitView, name: 'stackings', data: STACKING_VIEWS, kinds: STACKING_KINDS, prefix: 'stackings', glassRoles: {},
-    defaultParts: Object.fromEntries(STACKING_KINDS.map((k) => [k, 'column'])), kindButtons: true, rowWords: { size: 'stackings.periods', shells: 'dictonic.topLayer' }, foldNote: true,
-    openAction });
+  let world = null;
+  world = createLayeredWorld({ scene, fitView, name: 'stackings', data: STACKING_VIEWS, kinds: STACKING_KINDS, prefix: 'stackings', glassRoles: {},
+    defaultParts: Object.fromEntries(STACKING_KINDS.map((k) => [k, 'column'])), kindButtons: true, hideRows: ['size'], rowWords: { shells: 'dictonic.topLayer' }, foldNote: true,
+    theorem: (panel) => mountLayers(panel, () => world), openAction });
+  return world;
 }
 
 /** Points whose convex hull previews the world in the DICTO menu: Chucky, the Janus piece of 4H at λ = 0, both halves. */
