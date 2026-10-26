@@ -16,18 +16,18 @@ faces straight out), brought in from first touch. **Exact stops** (`scripts/exac
 | Stop | Distance d of each centre | d / first touch |
 |---|---|---|
 | first touch: a cage of 20, meeting along the dodecahedron's 30 edges, 12 open windows | φ²√3/2 | 1 |
-| the 12 windows close at once: a sealed shell round a hollow | √3/2 | 1/φ |
+| the 12 windows close at once: a sealed shell round a hollow | φ√3/2 | 1/φ |
 | the hollow fills (Icosaxes): one solid, no holes | φ²/(2√3) (the icosahedron's inradius) | 1/3 |
 | the hollow fills (Lotus Jewel Axes, dented): the Tricap tips meet | √3/(2φ) | 1/φ³ |
 
 First touch by separating axes (face normals and edge cross products, exact); the window stop as a two-variable linear programme on
 the five-fold axis; the hollow stops by the centre point. That the last point of a window is on its axis and the last point of the
-hollow is the centre is by symmetry; the float sweeps (`twenty*.py`) agree at every stop. Renders: `twenty-sheet.png` (Icosaxes,
+hollow is the centre is by symmetry; the float sweeps (`twenty*.py`) agree at every stop. Lotus Jewel Axes (`lja_points.py`, `data/lja-points-output.txt`): the meeting patch at first touch and the axis segment at the window stop avoid every Tricap dent, so its first two stops equal the Icosaxes'. Renders: `twenty-sheet.png` (Icosaxes,
 green), `twenty-lja-sheet.png` (Lotus Jewel Axes, gold), seen down a five-fold axis; `S0–S3`, `L0–L3` single views.
 
 ## Cubic blocks on the way (kept for B)
 - H1/H2: 8 Icosaxes on a cube round an Unborn Axes = 9 Icosaxes passing through each other (each overlap √5/24; what is left of the
-  middle one is exactly an Unborn Axes): one closed solid, volume 9 + 6√5. Open: whether this holds along the whole golden bond.
+  middle one is exactly an Unborn Axes): one closed solid, volume 9 + 6√5. Holds along the whole golden bond wherever the corner piece is at least as large as its partner (Kelvin onwards): the cube is filled by the corner pieces' parts and the partner, and a central corner piece stays in the cube and contains the partner.
 - K1: 8 Lotus Jewel Axes round a Dodecaxes, 8√5 + 2; K2: keys outward (Hexa-style roofs), 23.454. Both closed, genus 0, no overlaps.
 - A1/A2 (icosahedra / Lotus Jewels round a void dodecahedron with 12 AXE): first pictures only; Blender's join was unreliable, no
   numbers kept (`data/blender-join-report.txt` is that unreliable run, for the record).
@@ -62,7 +62,7 @@ outward with the mirrored Tricap on the six facing voids. Both: no overlaps, no 
 | the cube8 network, every Icosaxes in two clusters | **Icosaxes Kagome** |
 
 ## Decisions (defaults, already applied; DICTO overrules with one word)
-- Golden bond: the stops are re-checked along the whole bond (x ≠ τ) in the next run; the result goes in this README.
+- Golden bond: the Icosaxes Hexa property holds along the whole bond from Kelvin onwards (argument above); the 20-corner stops are stated for the golden pair only.
 - Link to #57: answered by the pyrochlore study (2026-10-27-pyrochlore-halves): the rule of halves carries over to the diamond-type
   stackings. Whether Icosaxes lie on #57's own walk: parked.
 - Prior art: done (below); no claim of novelty beyond "not found in the sources searched".
