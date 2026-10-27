@@ -36,3 +36,12 @@ Every source actually checked, the query that found it, and what it says for thi
   obvious constructions and are not claimed new; they get placeholder names only so the README can refer to them.
 - The comparison of 4D shadow and slice face patterns with convex and non-convex deltahedra was not found in any source
   checked.
+
+## Added for the six large slices (2026-10-27)
+
+No new search engine queries. Slice-48 was compared with the classes of non-convex deltahedra named in the sources
+already listed: Cundy's 17 and Olshevsky's 11 biform deltahedra and Shephard's and McNeill's isohedral deltahedra
+(both via Wikipedia "Deltahedron" and Tsuruta et al. 2014), Trigg's spiral deltahedra (same), and Tsuruta et al.'s
+enumeration up to 10 vertices. Slice-48 fits none of these classes (four vertex orbits; 92 faces cannot be one orbit of
+its symmetry group of order 24; not a strip; 48 vertices). The original papers (Cundy 1952, Olshevsky, Shephard 2000,
+McNeill's web list, Trigg 1978) were not opened.

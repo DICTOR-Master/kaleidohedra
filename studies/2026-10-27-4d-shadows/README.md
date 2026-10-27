@@ -7,11 +7,14 @@ all-triangle shadow or slice of the 5-, 16-, 24- or 600-cell is equilateral, the
 face pattern are variants of it (triangular bipyramid, edge ratio √(12/7) = 1.309; octahedron, ratio 2/√3 = 1.155,
 which fills space where the regular octahedron cannot), and the 600-cell's icosahedral shadow and slice carry the
 patterns of non-convex (dented / augmented) deltahedra and of none of the 8; regular deltahedra appear only as the
-4D cells and vertex figures themselves, while 4 of the 15 non-regular patterns can be no deltahedron at all.
+4D cells and vertex figures themselves, while 4 of the 15 non-regular patterns can be no deltahedron at all. Of the six large 600-cell slice patterns, one (48 vertices) has an exact
+equilateral non-convex form with the slice's own symmetry (Slice-48, placeholder name); the other five have none with
+their full symmetry.
 
 **Status:** done (projections, layers and slices along all four principal directions of all four polytopes; exact
-comparison; attachability of the two variants). Open: 6 large slice patterns (28–72 vertices) have no equilateral
-form found in 12 numerical starts each, which proves nothing either way.
+comparison; attachability of the two variants; Shadow-17 = two J11; the six large slices solved exactly under their
+full symmetry, see the last section). Open: equilateral forms of the five other large patterns with less symmetry, and
+the rotation-subgroup systems of V30 and V48 (too large for the Groebner basis).
 
 DICTO's idea: "4th dimensional shadows may more closely represent any new deltahedron type family than they do the
 original ones." Added: "compared old ones were different shapes with different attachability."
@@ -79,19 +82,20 @@ equal. Edge ratio = longest/shortest edge, exact.
 | 600-cell | **vertex-first slices at x·v = ±2** | 32, 60 | 6^20 5^12 | pentakis dodecahedron (none of the 8) | √(3/4 + √5/4) = 1.144 | **non-convex: augmented dodecahedron** (placeholder) and **dented dodecahedron = excavated dodecahedron**, exact | no edge star with itself (161.05°, 149.10°) |
 | 600-cell | edge-first layer 0 | 12, 20 | 10^2 4^10 | decagonal bipyramid | φ√2 = 2.288 | **none can exist** | — |
 | 600-cell | face-first layer 0 | 8, 12 | 66444444 | hexagonal bipyramid | √2 | **none can exist** | — |
-| 600-cell | edge-first slices at ±(1+√5) | 17, 30 | 6^5 5^12 | none of the 8 | 2.927 | non-convex equilateral form **found numerically** (Shadow-17, placeholder; 5 reflex edges, dihedrals 138.19°–201.62°; not exact) | not studied |
-| 600-cell | vertex-first slices at ±(√5−1) | 72, 140 | 10^12 5^60 | none | φ√2 = 2.288 | none found (12 starts) | — |
-| 600-cell | edge-first slices at ±(3+√5)/2 | 32, 60 | 7^10 5^22 | none | φ² = 2.618 | none found (12 starts)* | — |
-| 600-cell | face-first slices at ±(4+2√5)/3 | 30, 56 | 8^6 5^24 | none | 3.618 | none found (12 starts) | — |
-| 600-cell | cell-first slices at ±(5+3√5)/4 | 28, 52 | 9^4 5^24 | none | φ√2 = 2.288 | none found (12 starts) | — |
-| 600-cell | cell-first slices at ±(3+√5)/2 | 42, 80 | 10^6 5^36 | none | 4.815 | none found (12 starts) | — |
-| 600-cell | cell-first slices at ±(2+√5)/2 | 48, 92 | 8^12 5^36 | none | 3.618 | none found (12 starts) | — |
+| 600-cell | edge-first slices at ±(1+√5) | 17, 30 | 6^5 5^12 | none of the 8 | 2.927 | non-convex equilateral form: **two J11 base to base** (Shadow-17, placeholder; exact, see its section) | not studied |
+| 600-cell | vertex-first slices at ±(√5−1) | 72, 140 | 10^12 5^60 | none | φ√2 = 2.288 | none with Ih or I symmetry (exact, last section) | — |
+| 600-cell | edge-first slices at ±(3+√5)/2 | 32, 60 | 7^10 5^22 | none | φ² = 2.618 | none with D5d or D5 symmetry (exact)* | — |
+| 600-cell | face-first slices at ±(4+2√5)/3 | 30, 56 | 8^6 5^24 | none | 3.618 | none with D3d symmetry (exact) | — |
+| 600-cell | cell-first slices at ±(5+3√5)/4 | 28, 52 | 9^4 5^24 | none | φ√2 = 2.288 | none with Td or T symmetry (exact) | — |
+| 600-cell | cell-first slices at ±(3+√5)/2 | 42, 80 | 10^6 5^36 | none | 4.815 | none with Td or T symmetry (exact) | — |
+| 600-cell | cell-first slices at ±(2+√5)/2 | 48, 92 | 8^12 5^36 | none of the 8 | 3.618 | **non-convex equilateral form with Td symmetry: Slice-48** (placeholder; exact) | not studied |
 
 Heights are x·d with d the unnormalised direction vector of `polytopes.py` (600-cell vertex-first: d = (2,0,0,0), so
 x·d = 2 means x_1 = 1).
 
 \* An earlier 40-start run with a dense solver reported an equilateral form at start 19 (residual 8e-15, non-convex),
-but its coordinates were not kept and the recorded 12-start rerun did not find it; left undetermined.
+but its coordinates were not kept. The exact solve (last section) shows that no D5d- or D5-symmetric form exists, so
+that form, if real, had less symmetry; left undetermined.
 
 Exact squared edge lengths and dihedral cosines of every row are in `data/shadows.json`. Examples: TBP-5 edges² 2 (3)
 and 7/6 (6), dihedral cosines −1/2 and 1/8; OCT-16 edges² 2 (4) and 3/2 (8), cosines 0 and −1/2; 600-cell vertex-first
@@ -107,10 +111,9 @@ or hexagonal faces (its cells are octahedra, and they project or cut into square
 |---|---|---|
 | regular convex deltahedron (tetrahedron, octahedron, icosahedron only) | 12 | vertex-first shadows of the 5- and 16-cell; vertex layers and slices through a 4D cell or vertex figure |
 | variant of a convex deltahedron (same pattern, unequal edges) | 2 | TBP-5 (J12), OCT-16 (octahedron) |
-| pattern of a non-convex deltahedron only, exact | 2 | 600-cell vertex-first shadow, 600-cell slice at 2 |
-| pattern of a non-convex deltahedron only, numerical | 1 | Shadow-17 |
+| pattern of a non-convex deltahedron only, exact | 4 | 600-cell vertex-first shadow, 600-cell slice at 2, Shadow-17 (two J11), Slice-48 |
 | pattern no deltahedron can have | 4 | hexagonal (3) and decagonal (1) bipyramids |
-| undetermined | 6 | the large 600-cell slices |
+| no equilateral form with the slice's own symmetry (exact); less symmetric forms not excluded | 5 | the large 600-cell slices with 28, 30, 32, 42, 72 vertices |
 
 J12 is the only non-Platonic convex deltahedron whose pattern appears; the pentagonal bipyramid, snub disphenoid,
 triaugmented triangular prism and gyroelongated square bipyramid never appear.
@@ -164,17 +167,19 @@ central section is the 42-vertex solid (same graph, edges and angles as the shad
 Supported, with a qualification. Wherever a 4D shadow or slice is all triangles and not a copy of a 4D cell or vertex
 figure, it is never a regular deltahedron (0 of 15); its pattern is either a variant of a convex deltahedron (2: the
 5-cell's triangular bipyramid, the 16-cell's octahedron), or a pattern realised only by non-convex dented / augmented
-deltahedra (3: the 600-cell's icosahedral shadow and slice exactly, Shadow-17 numerically). The edge spreads are small
-(1.144–1.309) exactly in those matches. The two variants also attach differently from their regular counterparts:
+deltahedra (4, all exact: the 600-cell's icosahedral shadow and slice, Shadow-17 = two J11, and Slice-48, the
+600-cell's 48-vertex cell-first slice, whose equilateral form keeps the slice's tetrahedral symmetry). The edge spreads are small (1.144–1.309) for the two variants and the two icosahedral
+matches, larger for Shadow-17 (2.93) and Slice-48 (3.62). The two variants also attach differently from their regular counterparts:
 OCT-16 fills space alone (regular octahedron cannot), TBP-5 closes a three-around star at its base edges (J12 alone
-closes none). The qualification: 4 of the 15 non-regular patterns are bipyramids that no deltahedron can take, and 6
-large 600-cell slices are undetermined; and the regular deltahedra that do appear (12) are exactly the 4D cells and
+closes none). The qualification: 4 of the 15 non-regular patterns are bipyramids that no deltahedron can take, and 5
+large 600-cell slices have no equilateral form with their own symmetry (less symmetric forms not excluded); and the regular deltahedra that do appear (12) are exactly the 4D cells and
 vertex figures, which are not new.
 
 ## Renders
 
 - `renders/variants.png`: TBP-5 and OCT-16 (gold-brown) beside the regular J12 and octahedron (blue), with edge
   lengths, dihedrals and attachability.
+- `renders/slice48.png`: the 600-cell's 48-vertex cell-first slice beside Slice-48, its equilateral form.
 - `renders/icosahedral.png`: the 600-cell vertex-first shadow beside the 12-dented icosahedron; the 600-cell slice at
   height 2 beside the augmented dodecahedron.
 
@@ -185,7 +190,98 @@ vertex figures, which are not new.
 - `data/shadows.json` (all 223 records), `data/all-triangle-matches.json` (62 all-triangle records with matches and
   the numerical searches), `data/attachability.json`, `data/eqreal_600-cell_edge-first_slice_V17.npy` (Shadow-17's
   numerical equilateral coordinates)
+- Large slices: `scripts/large_slices.py` (symmetry, orbits, reduced systems, belts), `scripts/solve_eig.py`,
+  `scripts/count_exact.py`, `scripts/explore_real.py`, `scripts/verify_forms.py`, `scripts/exact_embed.py`,
+  `scripts/render_slice48.py` (and the earlier `scripts/solve_slices.py`, `scripts/solve_sage.py`, `scripts/curve_v42.py`, which did not finish);
+  `data/large-slices-systems.json` (exact reduced systems), `data/eig_*.json` (all real solutions with checks),
+  `data/count_*.json`, `data/explore_V42_rotations.json`, `data/form_V48_full_36.json` / `.npy` (Slice-48).
 - `prior-art.md`: every source checked.
 
 ## Shadow-17 pinned down (2026-10-27, DICTO: "maybe our rule of halves, swap rules or similar might help pin down Shadow-17")
 The halves idea: cut Shadow-17's pattern (5-fold; tips of degree 5, rings 5-5-5 with the middle ring of degree 6) at its middle ring. Each half is a **J11** (gyroelongated pentagonal pyramid = diminished icosahedron). **Shadow-17's equilateral form = two J11 glued on their pentagons**: all 136 corner-to-corner distances of the saved numerical form agree with 2 × J11 to 4e-16, and both have exactly 45 unit edges. 2 × J11 is exact by construction (edge 1, Q(√5) coordinates), so Shadow-17 HAS an exact equilateral (non-convex) form; its 5 reflex edges are the shared pentagon's edges, 2 × 100.81° = 201.62° (the J11 triangle–pentagon dihedral doubled). Not claimed new (an obvious gluing; not checked against non-convex deltahedron lists). The J11 is DICTO's starting piece (gaps of dodecahedra/icosahedra). Script: scripts/shadow17_j11.py (slice rebuild there is in other units; the congruence check is the one above).
+
+## The six large 600-cell slices: exact symmetric solve (2026-10-27, DICTO: "keep going on the six large 600-cell slices")
+
+Question: for each of the six all-triangle 600-cell slices left undetermined above (28, 30, 32, 42, 48, 72 vertices),
+does its face pattern have an equilateral, non-self-intersecting realisation?
+
+**One-line conclusion.** One does: the 48-vertex cell-first slice has an exact equilateral form with the slice's own
+tetrahedral symmetry Td (**Slice-48**, placeholder name; non-convex, dihedrals 81.75°–243.20°, embedding checked with
+exact predicates); the other five have no equilateral form with their full symmetry group (exact, complete solution
+sets), nor with the rotation subgroup where that was solvable; forms with less symmetry are not excluded.
+
+**Status:** full-symmetry question settled exactly for all six; rotation subgroups settled for V72, V28, V32 and (up
+to the exact count below) V42; the rotation-subgroup systems of V30 (15 unknowns) and V48 (12 unknowns) did not finish
+(Groebner basis > 50 min); forms without these symmetries are not searched.
+
+### Method
+
+1. **Halves / caps first.** Rings of vertices along each slice's main axis (5-fold for V72 and V32, 3-fold for the
+   others; `scripts/large_slices.py`, `belts`). Every slice has degree-5 tips and rings, but also rings of degree 7–10
+   vertices (V32: 7; V30, V48: 8; V28: 9; V42, V72: 10) between them. No cap or band was recognised as a piece of the
+   listed equal-edged solids (icosahedron caps, J11, antiprism bands, J2, octahedron/tetrahedron caps, the excavated or
+   augmented dodecahedron, the 12-dented icosahedron), and the one form found below contains no icosahedral piece (no
+   138.19° dihedral, no flat pentagonal cap). So the decision was made by method 2.
+2. **Symmetry-reduced exact solve.** The geometric symmetry group G of each slice is computed exactly: every graph
+   automorphism (networkx) induced by a linear map M with entries in Q(√5) that preserves the metric (M^T W M = W).
+   In every case G is the whole automorphism group of the pattern (V72: Ih, order 120; V32: D5d, 20; V30: D3d, 12;
+   V28, V42, V48: Td, 24). One vertex per orbit is placed in the fixed subspace of its stabiliser (exact basis), so
+   the unknowns are a few coordinates; one equation |edge|² = 1 per edge orbit. Every system is square
+   (unknowns = equations). Solved with Singular (passagemath-singular, installed in the geom venv) over Q(√5):
+   Groebner basis, Krull dimension, N = dimension of the quotient ring (number of complex solutions with
+   multiplicity, exact); all solutions by the eigenvalue method (multiplication matrix of a random linear form),
+   each refined by Newton at 120 digits on the exact equations; **complete** when the number of distinct refined
+   solutions equals N (then all solutions are simple and none is missed). Distinct and real counts cross-checked exactly
+   (`scripts/count_exact.py`: characteristic polynomial of the exact multiplication matrix of two random linear forms,
+   squarefree part, real roots isolated in the real algebraic numbers) for V72 (Ih: 8 / 4 real; I: 16 / 8), V28 (Td:
+   32 / 12), V32 (D5d: 128 / 48) and V42 (T, saturated: 152 / 52; one linear form), all agreeing with the eigenvalue method; the
+   check for V48 (192 solutions) did not finish within 50 minutes.
+   Scripts: `scripts/solve_eig.py` (main), `scripts/solve_sage.py` and `scripts/solve_slices.py` (earlier versions,
+   same results where they finished).
+3. **Embedding.** Each real solution: distinct vertices, no 180° edge, clearance between faces
+   (`scripts/verify_forms.py`; validated on the icosahedron and the augmented and dented dodecahedra), edge-through-face
+   test; the candidate that passed was then checked with exact orientation predicates on 85-digit rational
+   coordinates (`scripts/exact_embed.py`; every deciding predicate at least 0.012 in size, rounding error below
+   1e-50; validated on the augmented dodecahedron).
+
+### Results
+
+| Slice | Symmetry used | Unknowns | Complex solutions (exact N) | Complete | Real | Embedded | Why the real ones fail |
+|---|---|---|---|---|---|---|---|
+| V72 (vertex-first, ±(√5−1)) | Ih | 3 | 8 | yes | 4 | 0 | coincident vertices |
+| V72 | I (rotations) | 4 | 16 | yes | 8 | 0 | coincident vertices |
+| V32 (edge-first, ±(3+√5)/2) | D5d | 7 | 128 | yes (exact count 128 / 48 real) | 48 | 0 | edges pierce faces (32), faces touch (16) |
+| V32 | D5 | 10 | 640 | yes | 112 | 0 | self-intersection |
+| V30 (face-first, ±(4+2√5)/3) | D3d | 10 | 464 | yes | 104 | 0 | edges pierce faces (100), faces touch (4) |
+| V30 | D3 | 15 | not finished | — | — | — | Groebner basis > 50 min |
+| V28 (cell-first, ±(5+3√5)/4) | Td | 5 | 32 | yes | 12 | 0 | edges pierce faces (10), edges cross exactly (2; contact distance 0 at 50 digits) |
+| V28 | T | 7 | 64 | yes | 28 | 0 | coincident vertices (16), self-intersection (12) |
+| V42 (cell-first, ±(3+√5)/2) | Td | 7 | 96 | yes | 32 | 0 | edges pierce faces (26), faces touch (2), coincident vertices (4) |
+| V42 | T | 10 | a curve + 160 isolated (152 distinct, exact) | yes (distinct) | 52 | 0 | curve: 6 vertices at the centre; isolated: self-intersection |
+| **V48** (cell-first, ±(2+√5)/2) | **Td** | 8 | 192 | yes | 48 | **2 (one shape)** | the other 46: edges pierce faces (44), faces touch (4) |
+| V48 | T | 12 | not finished | — | — | — | Groebner basis > 50 min |
+
+V42 with T: the solution set has dimension 1. Saturating by t0_0 (the coordinate of the 6-vertex orbit on the 2-fold
+axes) leaves a zero-dimensional system (exact: Rabinowitsch ideal of dimension 0, N = 160), so every point of the curve
+has t0_0 = 0: those 6 vertices all sit at the centre, never embedded. The isolated part has 160 solutions with
+multiplicity, 152 distinct and 52 real (exact count, `scripts/count_exact.py`); the eigenvalue method found all 152
+and all 52 real ones (two of them only after relaxing the reality test from 1e-80 to 1e-30), none embedded.
+
+**Slice-48 (placeholder name).** The 600-cell's cell-first slice at height ±(2+√5)/2 (48 vertices, 138 edges,
+92 triangles, degrees 8^12 5^36, Td) has an equilateral form with the same Td symmetry: all 138 edges equal (error
+< 1e-84 after Newton), non-convex (24 of 48 vertices on the convex hull), dihedral angles 81.75° (24 edges), 130.98° (6),
+135.83° (24), 143.83° (24), 191.03° (12), 197.94° (12), 216.17° (12), 243.20° (24); none is 180°, and no two faces meet
+except along their common edges and vertices (exact predicates, smallest deciding predicate 0.012; nearest non-adjacent
+parts 0.069 apart at edge 1). The two real solutions that pass are the same shape (one is the other turned by a
+half-turn). Its coordinates are algebraic numbers, roots of the exact system in `data/large-slices-systems.json`
+(V48, full); 60-digit values of the 8 unknowns and of all 48 vertices are in `data/form_V48_full_36.json`
+(`data/form_V48_full_36.npy` in floats). It is a strict deltahedron (Tsuruta et al.'s conditions: closed, no
+self-intersection, no 180° edge). It is not in the classes of non-convex deltahedra checked: Cundy's 17 and
+Olshevsky's 11 biform deltahedra need two vertex types (Slice-48 has four vertex orbits and two degrees), Shephard's
+and McNeill's isohedral ones are face-transitive (92 faces cannot form one orbit of a group of order 24), Trigg's are
+spiral strips, Tsuruta et al. stop at 10 vertices. Not claimed new beyond that check.
+
+What the reduction does not cover: equilateral forms of these patterns with less symmetry than G (or than its rotation
+subgroup), and the rotation-subgroup systems of V30 and V48.
+
+Render: `renders/slice48.png` (the convex slice, and Slice-48 from two sides).
