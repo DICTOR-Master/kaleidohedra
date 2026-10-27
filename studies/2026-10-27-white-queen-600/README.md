@@ -21,3 +21,10 @@ a + b√5), with edges, triangles and cells FOUND by measurement. 13 exact check
 720 edges all √5 − 1; degree 12; 1200 triangles; 600 cells; Euler 0; each triangle in 2 cells, each edge in 5, each vertex
 in 20; every vertex figure an icosahedron; every cell regular. The app world will read only this file (step 2) and a test
 will match its slices to atlas600.json (step 3).
+
+## Squares = cell mid-cuts (DICTO: "the squares can be octahedrons"), 2026-10-27
+`scripts/squares_midcuts.py` (exact): a four-sided face is a cell cut through four edges. Exactly 46 of the atlas's
+four-sided faces are mid-cuts of a cell (cut parallel to two opposite edges, halfway between them = the equator of the
+cell's midpoint octahedron): 30 at vertex-first gap (5+√5)/... (h ≈ 2.618), 5 + 5 at two edge-first gaps, 6 at the
+cell-first centre. This equals the 46 true squares found by shape (Fable check, floats), so the squares of the atlas are
+exactly the octahedron equators.
