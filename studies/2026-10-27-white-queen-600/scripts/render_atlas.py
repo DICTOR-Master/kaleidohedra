@@ -64,13 +64,13 @@ def atlas():
                 continue
             k = next(a for a in A if a["item"]["direction"] == d and a["item"]["height"] == o["height"])
             fs = o["face_sizes"]
-            sub = f"{o['V']} v · {fs.get('3', 0)} tri" + (f" · {fs['4']} sq" if fs.get("4") else "")
+            sub = f"{o['V']} v · {fs.get('3', 0)} tri" + (f" · {fs['4']} quad" if fs.get("4") else "")
             panel(ax, k["fV"], k["faces"], o["height"], sub, NAMED.get((d, o["height"])) if o["at_vertex_layer"] else None,
                   o["at_vertex_layer"])
         fig.text(0.006, 1 - (r + 0.5) / 4 * 0.87 - 0.075, d, color=GOLD, fontsize=10, rotation=90, va="center")
     fig.suptitle("The White Queen 600-cell: every slice, from the centre out to the tip", color="white", fontsize=14, y=0.988)
     fig.text(0.5, 0.958, "white labels: slices at a vertex height (all triangles where the pattern allows) · blue labels: the slice "
-             "type that holds over the whole gap to the next height · triangles ivory, squares blue · one scale · exact in a + b√5 · "
+             "type that holds over the whole gap to the next height · triangles ivory, four-sided faces blue · one scale · exact in a + b√5 · "
              "the far half mirrors the near half", color="#aab0bb", fontsize=8, ha="center")
     fig.subplots_adjust(left=0.02, right=0.995, top=0.935, bottom=0.02, wspace=0.0, hspace=0.3)
     mark(fig)
@@ -97,7 +97,7 @@ def atlas_paper(wrap=11):
                 continue
             k = next(a for a in A if a["item"]["direction"] == d and a["item"]["height"] == o["height"])
             fs = o["face_sizes"]
-            sub = f"{o['V']} v · {fs.get('3', 0)} tri" + (f" · {fs['4']} sq" if fs.get("4") else "")
+            sub = f"{o['V']} v · {fs.get('3', 0)} tri" + (f" · {fs['4']} quad" if fs.get("4") else "")
             panel(ax, k["fV"], k["faces"], o["height"], sub, NAMED.get((d, o["height"])) if o["at_vertex_layer"] else None,
                   o["at_vertex_layer"])
         if label:
