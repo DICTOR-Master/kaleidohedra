@@ -1,0 +1,26 @@
+{
+ "log": [
+  "PASS #61 Ganesha: ACBC site 4 (the tetrahedral hole over X at 3/4 of gap 1: lower layer c, upper layer h), 855 engine planes at lambda = 1/10, s = 3/4",
+  "PASS Ganesha cut at its gap's mid-plane: bottom 0.058005 + top 0.196269 at ball spacing 1 (#61 Figure 1: 0.058005 and 0.196269), exactly additive",
+  "PASS dicto-ganesha: 30, 45, 17 {3: 6, 4: 3, 6: 4, 8: 3, 12: 1}, volume (68881403/165888000)*sqrt(3), symmetry C3v (6)",
+  "PASS Shadow-17 = two J11 of edge 1 (the icosahedron (0, +-1/2, +-phi/2) and cyclic, less one corner) glued on their pentagons, the second the mirror image of the first in the pentagon's plane (as in shadow17_j11.py): 17 corners, 30 triangles, exactly",
+  "PASS Shadow-17: all 136 corner distances agree with the study's numerical equilateral form of the 600-cell's edge-first slice (eqreal_..._V17.npy) to 4.4e-16 (#62: 4e-16)",
+  "PASS dicto-shadow-17: symmetry D5h order 20 (classified from the solid) vs stated D5h",
+  "PASS dicto-shadow-17: f-vector (17, 45, 30) vs published (17, 45, 30)",
+  "PASS dicto-shadow-17: faces {3: 30} vs published {'3': 30}",
+  "PASS dicto-shadow-17: squared edges ['1'] vs published ['1']",
+  "PASS dicto-shadow-17: 17, 45, 30 {3: 30}, volume 25/12 + (3/4)*sqrt(5), symmetry D5h (20)",
+  "PASS Shadow-17 volume = 2 J11 = 2 ((5/12)(3 + sqrt5) - (5 + sqrt5)/24) = 25/12 + (3/4)*sqrt(5) (icosahedron less a pentagonal pyramid, twice)",
+  "PASS #63 Humpty Dumpty: the 600-cell (circumradius 2, edge sqrt5 - 1) cut at height 1 + sqrt5/2 along the cell-first direction d (|d|^2 = 7/4 + 3sqrt5/4): 48 points (vertices on the cut and edge crossings), exactly in Q(sqrt5)",
+  "PASS Humpty Dumpty: its squared edge lengths / |d|^2 = the eight values of the study's atlas (atlas600.json), exactly",
+  "PASS dicto-humpty-dumpty: symmetry Td order 24 (classified from the solid) vs stated Td",
+  "PASS dicto-humpty-dumpty: f-vector (48, 138, 92) vs published (48, 138, 92)",
+  "PASS dicto-humpty-dumpty: faces {3: 92} vs published {'3': 92}",
+  "PASS dicto-humpty-dumpty: symmetry order 24 vs published 24",
+  "PASS dicto-humpty-dumpty: squared edges ['2/5', '12/5 + (-4/5)*sqrt(5)', '3/4 + (1/4)*sqrt(5)', '9/4 + (-1/4)*sqrt(5)', '9/4 + (3/4)*sqrt(5)', '4', '12/5 + (4/5)*sqrt(5)', '3 + sqrt(5)'] vs published ['2/5', '12/5 + (-4/5)*sqrt(5)', '3/4 + (1/4)*sqrt(5)', '9/4 + (-1/4)*sqrt(5)', '9/4 + (3/4)*sqrt(5)', '4', '12/5 + (4/5)*sqrt(5)', '3 + sqrt(5)']",
+  "PASS dicto-humpty-dumpty: 48, 138, 92 {3: 92}, volume 2627/60 + (1213/60)*sqrt(5), symmetry Td (24)",
+  "PASS dicto-ganesha: unit-volume copy, s = 1.116136866064396, centre corner centroid (mean of the corners; the frame origin is not the centre)",
+  "PASS dicto-shadow-17: unit-volume copy, s = 0.643066553993632, centre origin of the frame (= the corner centroid)",
+  "PASS dicto-humpty-dumpty: unit-volume copy, s = 0.223986034510864, centre origin of the frame (= the corner centroid)"
+ ]
+}

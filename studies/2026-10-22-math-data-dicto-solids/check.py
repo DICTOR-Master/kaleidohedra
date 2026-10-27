@@ -44,6 +44,8 @@
 #             (3 - sqrt5)/24, standing on a face of one piece (dent: apex strictly inside it; key: apex strictly outside that face, key
 #             interior-disjoint from every piece and every other Tricap), corners within the pieces' corners and the apices (every apex a
 #             corner), every face in a face plane of a piece or Tricap, and volume = pieces - dents + keys, exactly.
+#   version 4 (2026-10-28): one more field, "Q(sqrt(3))" (Ganesha), read like Q(sqrt(5)); no new kind of check (Ganesha, Shadow-17 and
+#             Humpty Dumpty take the solid checks above).
 # Usage: python3 check.py            (prints a PASS/FAIL table; exit code 0 only if everything passes)
 import glob, itertools, json, math, os, sys
 from fractions import Fraction as Fr

@@ -17,7 +17,8 @@ P = {'8': '10.5281/zenodo.23284106', '13': '10.5281/zenodo.23284281', '14': '10.
      '41': '10.5281/zenodo.23496353', '42': '10.5281/zenodo.23497702', '43': '10.5281/zenodo.23532013', '44': '10.5281/zenodo.23529497',
      '45': '10.5281/zenodo.23529499', '47': '10.5281/zenodo.23551326',
      '48': '10.5281/zenodo.23596362', '51': '10.5281/zenodo.23606828',
-     '55': '10.5281/zenodo.23632358', '56': '10.5281/zenodo.23635823', '57': '10.5281/zenodo.23647898', '59': '10.5281/zenodo.23677485'}
+     '55': '10.5281/zenodo.23632358', '56': '10.5281/zenodo.23635823', '57': '10.5281/zenodo.23647898', '59': '10.5281/zenodo.23677485',
+     '61': '10.5281/zenodo.23682596', '62': '10.5281/zenodo.23687223', '63': '10.5281/zenodo.23690856'}
 NEW, RED, KN = 'new', 'rediscovered', 'known'
 # name, kind, finding, paper (#), status, prior-art / note, dataset slug, Polyhedraverse id
 R = [
@@ -161,6 +162,13 @@ R += [
  ('Icosaxes Hexa', 'cluster', '', '59', NEW, 'eight Icosaxes round an Unborn Axes as one solid (= nine Icosaxes passing through each other), the node of the Icosaxes Kagome network; the network was not found in the sources searched (#59)', 'dicto-icosaxes-hexa', ''),
  ('Lotus Hexa', 'cluster', '', '59', NEW, 'the keyed Icosaxes Hexa: eight corner pieces dented towards a Dodecaxes and keyed outward (mirrored Tricaps) on their other seven hexagons (#59)', 'dicto-lotus-hexa', ''),
 ]
+N_V3 = len(R)                                       # rows of versions 1-3: their D-numbers D1-D83 stay as they are
+# version 4 (2026-10-28): three named solids of #61, #62 and #63 (DICTO's names; status and notes from the papers)
+R += [
+ ('Ganesha', 'solid', '', '61', NEW, 'not found in the sources checked (#61): the Janus c/h tetrahedral piece of a squashed stacking (cubic bottom, hexagonal top); in the dataset at the parameters of #61 Figure 1 (ACBC, layer spacing^2 = (3/4)(2/3), lambda = 1/10)', 'dicto-ganesha', ''),
+ ('Shadow-17', 'solid', '', '62', KN, 'known pieces, not claimed new (#62): two J11 (gyroelongated pentagonal pyramid, Johnson 1966) glued on their pentagons, an obvious gluing; #62 identifies it as the equal-edged form of the 600-cell\'s outer edge-first slices; placeholder name of #62', 'dicto-shadow-17', ''),
+ ('Humpty Dumpty', 'solid', '', '63', NEW, 'not found in the sources checked (#63): the real 48-vertex cell-first slice of the 600-cell, a convex egg of 92 triangles (Td); its forced equal-edged form is Fallen Humpty (#63; Slice-48 in #62, numeric only, not in the dataset); the name is DICTO\'s', 'dicto-humpty-dumpty', ''),
+]
 # universal_number (version 2, DICTO 2026-10-23): established catalogue numbers of earlier creators first (Johnson J, uniform U,
 # Wenninger W, Hart's stellation lists, Mosseri-Sadoc tiles); DICTO D-numbers (below) for DICTO's new shapes; see d-numbers.md. Empty = no number. Only numbers we are sure of.
 UNUM = {
@@ -182,8 +190,12 @@ assert len(_grp) == 4 and len(_single) == 71
 DNUM = {n: f'D{i + 1}' for i, n in enumerate(_single + _grp)}
 # version 3 (2026-10-27): the next free D-numbers, D76 on, in the order of first publication (#56, #57, #59); never renumbering D1-D75.
 # Clusters (the Icosaxes Hexa and Lotus Hexa, like the DICTO Hexa) and known shapes (Goliath, David) get none.
-_v3 = [r[0] for r in R[N_V2:] if r[1] in ('solid', 'piece') and r[4] == NEW]
+_v3 = [r[0] for r in R[N_V2:N_V3] if r[1] in ('solid', 'piece') and r[4] == NEW]
+assert len(_v3) == 8
 DNUM.update({n: f'D{76 + i}' for i, n in enumerate(_v3)})
+# version 4 (2026-10-28): D84 on, in the order of first publication (#61, #63); Shadow-17 (#62) is filed as known pieces (no D-number).
+_v4 = [r[0] for r in R[N_V3:] if r[1] in ('solid', 'piece') and r[4] == NEW]
+DNUM.update({n: f'D{84 + i}' for i, n in enumerate(_v4)})
 for n, d in DNUM.items(): UNUM[n] = UNUM[n] + '; ' + d if n in UNUM else d
 rows = []
 for name, kind, fnum, paper, status, note, slug, pv in R:
@@ -194,7 +206,7 @@ for name, kind, fnum, paper, status, note, slug, pv in R:
     assert set(UNUM) <= {r[0] for r in R}
     if slug: assert os.path.exists(os.path.join(ROOT, 'solids', slug + '.json')), slug
 with open(os.path.join(ROOT, 'index.csv'), 'w', newline='') as fh:
-    fh.write('# DICTO named-shape inventory · Created by DICTO · dictospheres.com · CC BY-SA 4.0 · 2026-10-22 (version 2: 2026-10-24; version 3: 2026-10-27)\n')
+    fh.write('# DICTO named-shape inventory · Created by DICTO · dictospheres.com · CC BY-SA 4.0 · 2026-10-22 (version 2: 2026-10-24; version 3: 2026-10-27; version 4: 2026-10-28)\n')
     w = csv.DictWriter(fh, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
 from collections import Counter
 print(len(rows), Counter(r['status'] for r in rows), Counter((r['kind'], r['status']) for r in rows), sum(r['in_dataset'] == 'y' for r in rows))

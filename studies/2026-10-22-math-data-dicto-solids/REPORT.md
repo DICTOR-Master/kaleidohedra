@@ -1,7 +1,84 @@
-# Report for DICTO: math-data dataset (first build 2026-10-22, second pass 2026-10-23, version 2 2026-10-24, version 3 2026-10-27)
+# Report for DICTO: math-data dataset (first build 2026-10-22, second pass 2026-10-23, version 2 2026-10-24, version 3 2026-10-27, version 4 2026-10-28)
 
 Created by DICTO · dictospheres.com · CC BY-SA 4.0. Branch `math-data-dataset` (local only, not pushed). Nothing on Zenodo, the
 apps, the papers, DISCOVERIES.md or the website was changed.
+
+## Version 4 (2026-10-28)
+
+Version 3 is published (Zenodo record 23680729). Version 4 is built on the same branch (local only, not pushed) and is **not released**:
+it waits for DICTO's reading.
+
+### What was added
+
+- **Three solids** (names exactly as in the papers), each with a unit-volume copy:
+  - #61 *The Swap Rule* (DICTO DOI: 10.5281/zenodo.23682596, v2 record 23683033): **Ganesha**, at the parameters of the paper's Figure 1
+    (stacking ACBC, layer spacing² = (3/4)(2/3), i.e. s = 3/4; weight λ = 1/10; the tetrahedral hole over X at 3/4 of the gap between layer
+    1, type c, and layer 2, type h; census site 4). 30 corners, 45 edges, 17 faces (6 triangles, 3 squares, 4 hexagons, 3 octagons, one
+    12-gon), C3v, convex, in ℚ(√3); volume (68881403/165888000)√3 here = 0.254274 at ball spacing 1. New, **D84**.
+  - #62 *Shadows of the Fourth Dimension* (DICTO DOI: 10.5281/zenodo.23687223, record 23687224): **Shadow-17**, two J11 of edge 1 glued on
+    their pentagons (the second the mirror image of the first in the pentagon's plane). 17 corners, 45 unit edges, 30 triangles, D5h,
+    non-convex, in ℚ(√5); volume 25/12 + 3√5/4 (twice J11). Status known (J11 = gyroelongated pentagonal pyramid, Johnson 1966; #62: an
+    obvious gluing, not claimed new; the new point of #62 is that it is the equal-edged form of the 600-cell's outer edge-first slices), no
+    D-number.
+  - #63 *The White Queen 600-cell* (DICTO DOI: 10.5281/zenodo.23690856, v2 record 23702910): **Humpty Dumpty**, the real 48-vertex
+    cell-first slice of the 600-cell at height 1 + √5/2. 48 corners (12 of degree 8, 36 of degree 5), 138 edges of eight lengths, 92
+    triangles, Td, convex, in ℚ(√5); volume 2627/60 + 1213√5/60 at the dataset's scale (below). New (#63: not found in the sources checked),
+    **D85**.
+- **index.csv**: three rows (in_dataset y); **d-numbers.md**, **README** and `published/records.json` (#61, #62, #63) updated.
+
+### Decisions (and who made them)
+
+- **Sources executed, not re-derived** (agent; copies in `build/sources/`, research branch commit 0620db53): #61's `splash.py` `net_for`
+  (the #57 stacking with the layer spacing as a parameter) with the census engine of version 3; #62/#63's `q5.py` and `polytopes.py` (the
+  exact 600-cell and its four directions) with the cut of `atlas600.py`. Shadow-17 is exact by the construction of #62's
+  `shadow17_j11.py` (two J11, edge 1), built here from the icosahedron (0, ±1/2, ±φ/2) and checked against the study's own numerical
+  equal-edged form of the slice (`eqreal_600-cell_edge-first_slice_V17.npy`: all 136 distances agree to 4.4·10⁻¹⁶).
+- **Ganesha's parameters** (agent): those of #61 Figure 1, the one piece the paper draws and names; the piece is the one `export_swap.py`
+  exports (first tetrahedral hole over X with a c layer below and an h layer above). Other spacings and weights give other members of the
+  same family; they are not separate files. Field ℚ(√3): at s = 3/4 the layer spacing at ball spacing √2 is 1, so the period along (1, 1, 1)
+  has length 4 and the coordinates need √3/3.
+- **Humpty Dumpty's scale** (agent): an orthonormal frame of the 3-space of the slice needs √|d|² = √((7 + 3√5)/4) besides √5 (|d|² is not
+  a square in ℚ(√5)). Scaling the slice by |d| removes it: the imaginary part of conj(d)·p (quaternions) is exact in ℚ(√5). So the file is
+  Humpty Dumpty scaled by |d| ≈ 1.8512 from the 600-cell of circumradius 2; its squared edges divided by 7/4 + 3√5/4 are the atlas values
+  exactly (checked). The unit-volume copy removes the question of scale.
+- **Statuses and D-numbers**: Ganesha and Humpty Dumpty new (the papers' prior art: not found in the sources checked); Shadow-17 known
+  pieces, no number. D84, D85 in order of publication (#61, #63); D1–D83 unchanged.
+
+### Checks
+
+- **check.py on dicto-big-brother: TOTAL: 1062 checks, 1062 passed, 0 failed; 44 solids, 6 packings (fills), 4 packings (not fills).**
+  New: Ganesha 21, Shadow-17 21 (non-convex: no convexity check), Humpty Dumpty 22. The other 998 checks are those of version 3, all passing.
+- **Build log** `build/build_v4.log.json`: 22 PASS, 0 FAIL (every published value: f-vectors, faces, squared edges, symmetry order and
+  class; Ganesha's two halves at its gap's mid-plane are 0.058005 and 0.196269 at ball spacing 1, as #61 Figure 1, and add up exactly;
+  Shadow-17 = the study's numerical form and = 2 J11 in volume; Humpty Dumpty's edges = the atlas's eight exact values).
+
+### Checked against the published papers (#61 v2, #62 v1, #63 v1/v2; the PDFs in the research repository's papers folders)
+
+- #61 Figure 1: ACBC, spacing² = ¾·⅔, λ = 1/10, part volumes 0.058005 and 0.196269: equal (to the 6 printed places).
+- #62: Shadow-17 has 17 vertices and 30 triangles, two J11 glued on their pentagons, every edge 1, five folded edges (2 × 100.81°): equal.
+- #63: 48 vertices (12 of degree 8, 36 of degree 5), 138 edges, 92 triangles, Td, convex, edge ratio up to (5 + √5)/2: equal (the largest
+  over the smallest squared edge is (15 + 5√5)/2, the atlas's `edge_ratio2_exact`).
+- **Disagreements with a published paper: none found.**
+
+### Not added in version 4, and why
+
+- #59 v2 (DICTO DOI: 10.5281/zenodo.23677485): the **Icosaxes Bloom** (twenty Icosaxes touching along edges, twelve open windows) and the
+  **Icosaxes Bud** (sealed round a hollow) are not single solids: the format holds one closed 2-manifold with no inner cavity. The
+  **Icosaxes Seed** is one solid, but its twenty Icosaxes pass through each other: the study proves the stops exactly (`exact.py`) and
+  keeps the joined solid only as a float manifold3d mesh (`S3-union.obj`); no exact union exists in the study, and the `composition` key
+  needs interior-disjoint pieces. The same for the **Lotus Jewel Bloom, Bud and Seed**.
+- #60 *DICTO Janus c/h Pyrochlore* (10.5281/zenodo.23678750): no new named pieces (the name is the paper's title; its Janus pieces are
+  unnamed members of #57's kind).
+- #62: **Slice-48** = **Fallen Humpty** (#63's name): numeric only. Its equal-edged form is a real root of a polynomial system over ℚ(√5),
+  found and refined to 120 digits (`form_V48_full_36.json` keeps 85-digit rational approximations); no exact closed form, so it is not
+  in this exact dataset. The other forms of #62 are not claimed new: TBP-5 and OCT-16 (unequal-edged variants; OCT-16 is the cell of the
+  known square bipyramidal honeycomb), the 12-dented icosahedron and the augmented dodecahedron (placeholder names, obvious
+  constructions), the excavated dodecahedron (known).
+
+### Open questions for DICTO
+
+1. Shadow-17: filed as known pieces without a D-number (as now), or new with D86 (#62 says it does not claim it new).
+2. Ganesha: one file at #61's Figure 1 parameters (as now); the Ganesha pieces form a family in s and λ.
 
 ## Version 3 (2026-10-27)
 
@@ -91,7 +168,7 @@ the research repository's papers folders)
 
 ### Open questions for DICTO
 
-1. The Icosaxes Hexa and Lotus Hexa: clusters without D-numbers (as now) or solids with D84, D85.
+1. The Icosaxes Hexa and Lotus Hexa: clusters without D-numbers (as now) or solids with D84, D85 (since version 4: the next free numbers).
 2. The Triskelion Tetrahedron: new with D82 (as now), or a named member of a known family without a number.
 3. The keyed forms of #56 (Sonsam-K, Lahdeli-K, Ian Dury-K, Rhombo-K) are float constructions in #56 (exact by the rule, but the study
    keeps only floats); they and #59's Bloom/Bud/Seed clusters are not in this version.
@@ -284,6 +361,9 @@ and matched to it corner for corner (max deviation 1.7e-5).
 
 ## Named, published, but not yet in the dataset (what remains)
 
+- Version 4 (2026-10-28): Icosaxes Bloom, Bud and Seed and Lotus Jewel Bloom, Bud and Seed (#59 v2; unions: open windows, a hollow, or
+  overlapping pieces with no exact union in the study), Fallen Humpty / Slice-48 (#62/#63; numeric only, 120-digit roots, no exact closed
+  form), the Icosaxes Kagome (#59; a network), the keyed #56 forms (Sonsam-K, Lahdeli-K, Ian Dury-K, Rhombo-K; floats only in #56).
 - No exact geometry obtained in this pass: DICTO Hexa, Hexa-Key,
   Hexa Jewel (Polyhedraverse floats are approximate, e.g. −0.5000000091; need the study's exact data), Jewel and Sunstar clusters
   (#41, #42), Stretched dodecahedron (F11), Lotus Jewel (F21), FUJI and the 13s pieces (Polyhedraverse stores 7-digit floats), Kion,

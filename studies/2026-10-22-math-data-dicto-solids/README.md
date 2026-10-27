@@ -1,13 +1,28 @@
 # DICTO solids: exact coordinates (math-data dataset)
 
-Created by DICTO · [dictospheres.com](https://dictospheres.com) · Licence CC BY-SA 4.0 · 2026-10-22 · Version 2: 2026-10-24 · **Version 3: 2026-10-27**
+Created by DICTO · [dictospheres.com](https://dictospheres.com) · Licence CC BY-SA 4.0 · 2026-10-22 · Version 2: 2026-10-24 · Version 3: 2026-10-27 · **Version 4: 2026-10-28**
 
 Exact geometry of named convex and non-convex polyhedra found or named by DICTO (artist, Osaka), taken from his published papers
 and the Kaleidohedra findings archive, with lattice packings where a published result says the solid tiles space, and the published
 packings that do not fill space. Every number is exact in a real number field stated in each file (ℚ(√5) for the solids of versions 1
 and 2 except two, ℚ(∛2) for Samson and Delilah, version 2; version 3 adds ℚ and ℚ(t), t the root of an irreducible cubic, for Sonsam and
-Lahdeli) and is re-proved by `check.py` from the data files alone; the only exception is the unit-volume copy of each solid, whose scale
+Lahdeli; version 4 adds ℚ(√3) for Ganesha) and is re-proved by `check.py` from the data files alone; the only exception is the unit-volume copy of each solid, whose scale
 is a cube root (stored exactly as a symbolic expression, with decimal corners).
+
+## What is new in version 4 (2026-10-28)
+
+- **Three solids** from three of DICTO's papers (names exactly as in the papers), each with a unit-volume copy:
+  - #61 *The Swap Rule*: **Ganesha**, the Janus c/h tetrahedral piece of a squashed stacking (cubic bottom, hexagonal top), at the
+    parameters of the paper's Figure 1: stacking ACBC, layer spacing² = (3/4)(2/3) (s = 3/4), weight λ = 1/10. 30 corners, 17 faces
+    (6 triangles, 3 squares, 4 hexagons, 3 octagons, one 12-gon), C3v; exact in ℚ(√3), convex. New (D84).
+  - #62 *Shadows of the Fourth Dimension*: **Shadow-17**, two J11 (Johnson's gyroelongated pentagonal pyramid) glued on their pentagons,
+    the equal-edged form of the 600-cell's outer edge-first slices: 17 corners, 30 unit triangles, D5h, non-convex; exact in ℚ(√5). Filed as
+    known pieces (not claimed new in #62), no D-number.
+  - #63 *The White Queen 600-cell*: **Humpty Dumpty**, the real 48-vertex cell-first slice of the 600-cell: 48 corners, 92 triangles, eight
+    edge lengths, Td, convex; exact in ℚ(√5) (at the scale stated in its `scale_note`). New (D85).
+- **One more field**: `"Q(sqrt(3))"` (Ganesha). No new keys beyond `parameters` (Ganesha: stacking, spacing, weight, site).
+- **index.csv**: three new rows; D-numbers **D84** (Ganesha) and **D85** (Humpty Dumpty); D1–D83 unchanged. Every earlier file and check
+  is unchanged and passes as before (998 checks; 1062 in all).
 
 ## What is new in version 3 (2026-10-27)
 
@@ -53,14 +68,14 @@ is a cube root (stored exactly as a symbolic expression, with decimal corners).
 | `packings/<slug>.json` | a published space-filling: lattice vectors and the cell's pieces (solid + exact rotation + exact translation) |
 | `packings-nonfilling/<slug>.json` | a published packing that does not fill space: the same format, with `"kind": "packing, not a fill"` and the exact density |
 | `index.csv` | inventory of every named shape (also the ones not in this dataset), with its universal number (if any), status, finding, DICTO DOI, whether it is in the dataset and in Polyhedraverse |
-| `d-numbers.md` | DICTO's D-numbers: the scheme, the list D1–D83, and the shapes without any number |
+| `d-numbers.md` | DICTO's D-numbers: the scheme, the list D1–D85, and the shapes without any number |
 | `check.py` | standalone verifier (python3 + sympy) |
-| `build/` | the scripts that generated the files (`exactlib.py`, `build_og.py`, `build_pv.py`, `build_extra.py`, `build_v2.py`, `build_v3.py`, `make_index.py`), their logs, and copied source data (version 2: the three exact study scripts of #48 and #51 in `build/sources/`; version 3: `exact_a15.py` of #55 and the census engine `engine.py`, `networks.py`, `stackings.py` of #53/#56/#57) |
+| `build/` | the scripts that generated the files (`exactlib.py`, `build_og.py`, `build_pv.py`, `build_extra.py`, `build_v2.py`, `build_v3.py`, `build_v4.py`, `make_index.py`), their logs, and copied source data (version 2: the three exact study scripts of #48 and #51 in `build/sources/`; version 3: `exact_a15.py` of #55 and the census engine `engine.py`, `networks.py`, `stackings.py` of #53/#56/#57; version 4: `splash.py` of #61, `q5.py` and `polytopes.py` of #62/#63, the #62 numerical Shadow-17 form and the #63 atlas row of the 48-vertex slice) |
 | `published/records.json` | the Zenodo records (latest versions) whose PDFs were used to check the published values |
 
 ## File format (solids)
 
-- `field`: `"Q(sqrt(5))"` or (version 2, Samson and Delilah) `"Q(2**(1/3))"`, or (version 3) `"Q"` (rationals) or `"Q(t)"`. Every
+- `field`: `"Q(sqrt(5))"` or (version 2, Samson and Delilah) `"Q(2**(1/3))"`, or (version 3) `"Q"` (rationals) or `"Q(t)"`, or (version 4, Ganesha) `"Q(sqrt(3))"` (`a + b*sqrt(3)`). Every
   coordinate is given twice: `exact`, a sympy-parsable string in that field, `a + b*sqrt(5)`, `a + b*2**(1/3) + c*2**(2/3)`, `a` or
   `a + b*t + c*t**2` with rationals `a`, `b`, `c`, and `decimal`, the same number rounded to 15 decimal places. (Exact signs in ℚ(∛2) are
   decided by the norm a³ + 2b³ + 4c³ − 6abc, which has the sign of the number; in ℚ(t), whose cubic has three real roots, by interval
@@ -80,7 +95,7 @@ is a cube root (stored exactly as a symbolic expression, with decimal corners).
   `kind` "tricap" (#48's Tricap of the Unborn at `unborn_centre`, as in the version 2 `decomposition`) or "mirrored tricap" (that Tricap
   mirrored in its base plane: a key of a big piece, krp-core golden-split.js INTO_SMALL), its `apex` and three `base` corners (exact), and
   `tricap_volume`. The solid is the union of the pieces, minus the dents, plus the keys.
-- `version_added`: 2 for the solids added in version 2, 3 for those added in version 3.
+- `version_added`: 2 for the solids added in version 2, 3 for those added in version 3, 4 for those added in version 4.
 - `scale_note`: the normalisation (each solid is given in the frame of the paper it comes from, so published values can be compared
   directly); `source`: where the geometry was taken from (`Polyhedraverse` id, a Kaleidohedra study, or the paper's closed form);
   `published_values`: values stated in the published paper or archive at this scale, each re-checked by `check.py`.
@@ -129,6 +144,13 @@ frame of Samson and Delilah; the papers use ball spacing 1: divide lengths by �
 √2/6, here 2/3), each moved so that its hole is at the origin; Sonsam, Ian Dury, Chucky and Fang are not centred on their holes, so their
 unit-volume copies are scaled about the corner centroid. Keyaxes, Icosaxes Hexa and Lotus Hexa in the #48/#59 frame (icosahedron edge 1),
 the Keyaxes about its centre, the two Hexas about the centre of their middle piece.
+
+Version 4 frames: Ganesha at ball spacing √2 like the other hole pieces, but its layers are squashed to spacing 1 (s = 3/4), so the
+stacking period is 4(√3/3)(1, 1, 1) and the field is ℚ(√3) (#61 states values at ball spacing 1: divide lengths by √2 and volumes by
+2√2); moved so that its hole is at the origin, scaled to unit volume about its corner centroid. Shadow-17 at edge 1, the shared
+pentagon's centre (its corner centroid) at the origin. Humpty Dumpty from the 600-cell of circumradius 2 (edge √5 − 1), turned into
+ℝ³ by the quaternion product conj(d)·p with the cell-centre direction d, which also scales it by |d| = √((7 + 3√5)/4) ≈ 1.8512: at
+that scale it is exact in ℚ(√5) (unscaled, an orthonormal frame needs √(7 + 3√5) as well); its centre is at the origin.
 
 ## How to verify
 
@@ -240,6 +262,9 @@ Version 3 (twelve solids of #55, #56, #57, #59):
 | Keyaxes | D83 | #59 The Icosaxes Hexa | 32, 84, 54 | S6 (6) | no | 3/2 + √5/2 = φ² | ℚ(√5) | `dicto-keyaxes` |
 | Icosaxes Hexa | – (cluster) | #59 The Icosaxes Hexa | 144, 228, 86 | Oh (48) | no | 9 + 17√5/3 | ℚ(√5) | `dicto-icosaxes-hexa` |
 | Lotus Hexa | – (cluster) | #59 The Icosaxes Hexa | 200, 564, 366 | Th (24) | no | 16 + 10√5/3 | ℚ(√5) | `dicto-lotus-hexa` |
+| Ganesha | D84 | #61 The Swap Rule | 30, 45, 17 | C3v (6) | yes | (68881403/165888000)√3 | ℚ(√3) | `dicto-ganesha` |
+| Shadow-17 | – (known pieces) | #62 Shadows of the Fourth Dimension | 17, 45, 30 | D5h (20) | no | 25/12 + 3√5/4 | ℚ(√5) | `dicto-shadow-17` |
+| Humpty Dumpty | D85 | #63 The White Queen 600-cell | 48, 138, 92 | Td (24) | yes | 2627/60 + 1213√5/60 | ℚ(√5) | `dicto-humpty-dumpty` |
 
 Packings: `dicto-skewed-rhombic-dodecahedron-lattice` (F1, DICTO FCC), `dicto-skewed-ed-16-lattice`, `dicto-skewed-ed-18-lattice` (F7):
 each solid tiles space by translation. Version 2, the three DICTONIC BONDS: `dicto-golden-bond` (Icosaxes at φℤ³, Unborn Axes at
@@ -265,10 +290,10 @@ numbers are separated by "; ". Only numbers we are sure of are given.
 
 **D-numbers (DICTO 2026-10-24):** DICTO's permanent catalogue number, one per new solid or piece of his (status "new"), in the order of
 first publication, never reused: D1–D71 for single shapes, D72–D75 for the four rows that group several pieces (one number per group,
-DICTO 2026-10-24), and (version 3) D76–D83 for the eight new single solids of #56, #57 and #59. Known and rediscovered shapes get no D-number. A shape with an outside number that
+DICTO 2026-10-24), and (version 3) D76–D83 for the eight new single solids of #56, #57 and #59, and (version 4) D84–D85 for Ganesha (#61) and Humpty Dumpty (#63). Known and rediscovered shapes get no D-number. A shape with an outside number that
 is also DICTO's new shape would show both, outside number first ("J1; D9"); none does today. Not to be confused with T1, T2, … (a piece's
-label within one piece set), #n (papers), Fn (findings) and t1–t6 (Mosseri–Sadoc tiles); see `d-numbers.md`. 88 of 134 rows have a
-number (5 outside, 83 D); the cell is empty for the other known or rediscovered shapes and for clusters, structures, compounds and
+label within one piece set), #n (papers), Fn (findings) and t1–t6 (Mosseri–Sadoc tiles); see `d-numbers.md`. 90 of 137 rows have a
+number (5 outside, 85 D); the cell is empty for the other known or rediscovered shapes and for clusters, structures, compounds and
 curved bodies.
 
 ## How to cite
@@ -297,6 +322,12 @@ Cite this dataset and the source papers, each by its DICTO DOI (concept DOI, alw
 - DICTO, *The Rule of Halves: the Holes of Every Close-Packed Stacking* (#57; Chucky, Fang, Triskelion Tetrahedron): DICTO DOI:
   10.5281/zenodo.23647898
 - DICTO, *The Icosaxes Hexa: Bloom, Bud and Seed* (#59; Keyaxes, Icosaxes Hexa, Lotus Hexa): DICTO DOI: 10.5281/zenodo.23677485
+- DICTO, *The Swap Rule: Ganesha, the Janus Tetrahedra of Squashed Stackings, and the Border at True Close Packing* (#61; Ganesha): DICTO
+  DOI: 10.5281/zenodo.23682596
+- DICTO, *Shadows of the Fourth Dimension: Deltahedra that Join Differently, from the Triangle-Faced Shadows and Slices of the 5-, 16-, 24-
+  and 600-cell* (#62; Shadow-17): DICTO DOI: 10.5281/zenodo.23687223
+- DICTO, *The White Queen 600-cell: an Exact Atlas of the Slices and Shadows of the 600-cell, and its Fifteen Cleo Shells* (#63; Humpty
+  Dumpty): DICTO DOI: 10.5281/zenodo.23690856
 
 Shapes, names and ideas are DICTO's; the exact computations were made with Claude (Anthropic).
 Created by DICTO · dictospheres.com · CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/).
