@@ -7,10 +7,11 @@ Status: GROUNDWORK (2026-10-27). Waits for the theorem (studies/2026-10-27-splas
 3. Main theorem (from PROOF.md, exact statement and range s ≥ s0): mid-plane halves for every hole piece, every stacking, every weight.
 4. Corollary 1, the Swap Rule: V(c|h) + V(h|c) = V(c|c) + V(h|h).
 5. Corollary 2, the border at true close packing (s = 1): the tetrahedra are whole for s ≥ 1, Ganesha for s < 1.
-6. The map (splash-map.png): every spacing and window, halves / Swap Rule / layer sums (s = ⅙, reach 2).
-7. How it was found: the rule finder (Splash Rules, DICTO's idea: simple rules hidden in pictures of computed values).
-8. Proof (locality → 16 windows; symbolic in (λ, s); border).
-9. Prior art and sources checked (list every source).
-10. Conclusion.
+6. Corollary 3, the counting rule (DICTO 10-27): at the end of the walk each octahedral piece is cut out by its tetrahedral face-neighbours only: cubic 8 → regular octahedron, hexagonal 6 → rhombohedron, volumes 4 : 6, Janus 5 (halves); the same count at every squashed spacing (end_ratios.py).
+7. The map (splash-map.png): every spacing and window, halves / Swap Rule / layer sums (s = ⅙, reach 2).
+8. How it was found: the rule finder (Splash Rules, DICTO's idea: simple rules hidden in pictures of computed values).
+9. Proof (locality → 16 windows; symbolic in (λ, s); border).
+10. Prior art and sources checked (list every source).
+11. Conclusion.
 Figures: 1 swap-rule.png (Ganesha with the pure pieces); 2 splash-map.png; 3 a Ganesha in a stacking (to render).
 Data/code: studies/2026-10-27-splash-rules (zip with the record).
