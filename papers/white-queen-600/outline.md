@@ -20,3 +20,10 @@ Sources for the list: ProofWiki "Mathematician: Charles Lutwidge Dodgson"; Oxfor
 5. True sections vs vertex-shell outlines (the common error).
 6. Data set (Zenodo, community dicto; later math-data) with check script.
 7. Prior art: Coxeter, Regular Polytopes (vertex-first sections), credited; sources checked.
+
+## Carroll quotations (checked word for word against the library texts, 2026-10-27)
+- Epigraph: "Why, sometimes I've believed as many as six impossible things before breakfast." — the White Queen, Through the Looking-Glass ch. 5 "Wool and Water" (Gutenberg #12, line 1858).
+- For the completeness of the atlas (every slice, end to end): "Begin at the beginning," the King said gravely, "and go on till you come to the end: then stop." — Alice's Adventures in Wonderland ch. 12 (Gutenberg #11).
+- Possible for the effort of exact checking: "Now, here, you see, it takes all the running you can do, to keep in the same place." — the Red Queen, Through the Looking-Glass ch. 2.
+- Naming (DICTO's names: White Queen, Ganesha, Shadow-17…): Humpty Dumpty, "When I use a word, it means just what I choose it to mean—neither more nor less." — Through the Looking-Glass ch. 6.
+- Method credit: Dodgson, Condensation of Determinants (1866), Elementary Treatise on Determinants (1867).
