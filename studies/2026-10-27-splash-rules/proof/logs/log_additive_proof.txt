@@ -1,0 +1,23 @@
+largest grid q with a cut: 13/80 by 13 sites
+  oct c dn2 ((Fraction(2, 3), Fraction(2, 3)), Fraction(-7, 4), 1): crossing 1/6; g(r) = 0, g(r - 1e-6) = 3/1000000, g(r + 1e-6) = -3/1000000
+  oct c dn2 ((Fraction(0, 1), Fraction(1, 1)), Fraction(-3, 2), 0): crossing 1/6; g(r) = 0, g(r - 1e-6) = 1/500000, g(r + 1e-6) = -1/500000
+  oct c dn2 ((Fraction(1, 1), Fraction(0, 1)), Fraction(-3, 2), 0): crossing 1/6; g(r) = 0, g(r - 1e-6) = 1/500000, g(r + 1e-6) = -1/500000
+  oct c dn2 ((Fraction(1, 1), Fraction(1, 1)), Fraction(-3, 2), 0): crossing 1/6; g(r) = 0, g(r - 1e-6) = 1/500000, g(r + 1e-6) = -1/500000
+  oct c dn2 ((Fraction(1, 3), Fraction(1, 3)), Fraction(-3, 2), 0): crossing 1/6; g(r) = 0, g(r - 1e-6) = 1/500000, g(r + 1e-6) = -1/500000
+  oct c dn2 ((Fraction(1, 3), Fraction(4, 3)), Fraction(-3, 2), 0): crossing 1/6; g(r) = 0, g(r - 1e-6) = 1/500000, g(r + 1e-6) = -1/500000
+  oct c dn2 ((Fraction(4, 3), Fraction(1, 3)), Fraction(-3, 2), 0): crossing 1/6; g(r) = 0, g(r - 1e-6) = 1/500000, g(r + 1e-6) = -1/500000
+  oct c dn3 ((Fraction(2, 3), Fraction(2, 3)), Fraction(-5, 2), 0): crossing 1/6; g(r) = 0, g(r - 1e-6) = 3/500000, g(r + 1e-6) = -3/500000
+  oct h dn2 ((Fraction(0, 1), Fraction(1, 1)), Fraction(-3, 2), 0): crossing 1/6; g(r) = 0, g(r - 1e-6) = 1/500000, g(r + 1e-6) = -1/500000
+  oct h dn2 ((Fraction(1, 1), Fraction(0, 1)), Fraction(-3, 2), 0): crossing 1/6; g(r) = 0, g(r - 1e-6) = 1/500000, g(r + 1e-6) = -1/500000
+  oct h dn2 ((Fraction(1, 1), Fraction(1, 1)), Fraction(-3, 2), 0): crossing 1/6; g(r) = 0, g(r - 1e-6) = 1/500000, g(r + 1e-6) = -1/500000
+  tetX c dn2 ((Fraction(0, 1), Fraction(0, 1)), Fraction(-3, 2), 0): crossing 1/6; g(r) = 0, g(r - 1e-6) = 3/2000000, g(r + 1e-6) = -1/500000
+  tetX h dn2 ((Fraction(0, 1), Fraction(0, 1)), Fraction(-3, 2), 0): crossing 1/6; g(r) = 0, g(r - 1e-6) = 1/500000, g(r + 1e-6) = -1/500000
+q1 = 1/6  s1 = 1/4
+tetY c: running 322 PASS 0 FAIL
+tetY h: running 643 PASS 0 FAIL
+oct c: running 912 PASS 0 FAIL
+oct h: running 1182 PASS 0 FAIL
+tetX c: running 1444 PASS 0 FAIL
+tetX h: running 1706 PASS 0 FAIL
+FAILS []
+TOTAL 1706 PASS, 0 FAIL on q in [1/6, 1/3] (s in [1/4, 1/2])

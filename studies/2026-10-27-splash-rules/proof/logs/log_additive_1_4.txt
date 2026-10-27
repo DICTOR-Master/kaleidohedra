@@ -1,0 +1,156 @@
+== s=1/4 lam=-9/32 oct: pure halves c (Fraction(1, 2), Fraction(1, 2)), h (Fraction(47, 96), Fraction(47, 96))
+   window cchc: dLo = 5/256, dUp = -5/256, V = 95/96
+   window cchh: dLo = 5/256, dUp = -5/256, V = 95/96
+   window chcc: dLo = -5/256, dUp = 5/256, V = 95/96
+   window chch: dLo = -5/256, dUp = 5/256, V = 95/96
+   window hchc: dLo = 5/256, dUp = -5/256, V = 95/96
+   window hchh: dLo = 5/256, dUp = -5/256, V = 95/96
+   window hhcc: dLo = -5/256, dUp = 5/256, V = 95/96
+   window hhch: dLo = -5/256, dUp = 5/256, V = 95/96
+   dLo depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   dUp depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   V depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   Swap: V(c|h) + V(h|c) - V(c|c) - V(h|h) = 0
+== s=1/4 lam=-9/32 tetX: pure halves c (Fraction(0, 1), Fraction(0, 1)), h (Fraction(1, 768), Fraction(7, 768))
+   window cchc: dLo = 1/768, dUp = 0, V = 1/96
+   window cchh: dLo = 1/768, dUp = 0, V = 1/96
+   window chcc: dLo = -1/768, dUp = 0, V = 0
+   window chch: dLo = -1/768, dUp = 0, V = 0
+   window hchc: dLo = 1/768, dUp = 0, V = 1/96
+   window hchh: dLo = 1/768, dUp = 0, V = 1/96
+   window hhcc: dLo = -1/768, dUp = 0, V = 0
+   window hhch: dLo = -1/768, dUp = 0, V = 0
+   dLo depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   dUp depends on window letters [] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   V depends on window letters [2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   Swap: V(c|h) + V(h|c) - V(c|c) - V(h|h) = 0
+== s=1/4 lam=-9/32 tetY: pure halves c (Fraction(0, 1), Fraction(0, 1)), h (Fraction(7, 768), Fraction(1, 768))
+   window cchc: dLo = 0, dUp = -1/768, V = 0
+   window cchh: dLo = 0, dUp = -1/768, V = 0
+   window chcc: dLo = 0, dUp = 1/768, V = 1/96
+   window chch: dLo = 0, dUp = 1/768, V = 1/96
+   window hchc: dLo = 0, dUp = -1/768, V = 0
+   window hchh: dLo = 0, dUp = -1/768, V = 0
+   window hhcc: dLo = 0, dUp = 1/768, V = 1/96
+   window hhch: dLo = 0, dUp = 1/768, V = 1/96
+   dLo depends on window letters [] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   dUp depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   V depends on window letters [1] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   Swap: V(c|h) + V(h|c) - V(c|c) - V(h|h) = 0
+== s=1/4 lam=-1/4 oct: pure halves c (Fraction(12271, 24576), Fraction(12271, 24576)), h (Fraction(2909, 6144), Fraction(2909, 6144))
+   window cchc: dLo = 243/16384, dUp = -243/16384, V = 7969/8192
+   window cchh: dLo = 243/16384, dUp = -243/16384, V = 7969/8192
+   window chcc: dLo = -243/16384, dUp = 243/16384, V = 7969/8192
+   window chch: dLo = -243/16384, dUp = 243/16384, V = 7969/8192
+   window hchc: dLo = 243/16384, dUp = -243/16384, V = 7969/8192
+   window hchh: dLo = 243/16384, dUp = -243/16384, V = 7969/8192
+   window hhcc: dLo = -243/16384, dUp = 243/16384, V = 7969/8192
+   window hhch: dLo = -243/16384, dUp = 243/16384, V = 7969/8192
+   dLo depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   dUp depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   V depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   Swap: V(c|h) + V(h|c) - V(c|c) - V(h|h) = 0
+== s=1/4 lam=-1/4 tetX: pure halves c (Fraction(17, 24576), Fraction(0, 1)), h (Fraction(79, 12288), Fraction(247, 12288))
+   window cchc: dLo = 93/16384, dUp = 0, V = 1301/49152
+   window cchh: dLo = 93/16384, dUp = 0, V = 1301/49152
+   window chcc: dLo = -93/16384, dUp = 0, V = 37/49152
+   window chch: dLo = -93/16384, dUp = 0, V = 37/49152
+   window hchc: dLo = 93/16384, dUp = 0, V = 1301/49152
+   window hchh: dLo = 93/16384, dUp = 0, V = 1301/49152
+   window hhcc: dLo = -93/16384, dUp = 0, V = 37/49152
+   window hhch: dLo = -93/16384, dUp = 0, V = 37/49152
+   dLo depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   dUp depends on window letters [] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   V depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   Swap: V(c|h) + V(h|c) - V(c|c) - V(h|h) = 0
+== s=1/4 lam=-1/4 tetY: pure halves c (Fraction(0, 1), Fraction(17, 24576)), h (Fraction(247, 12288), Fraction(79, 12288))
+   window cchc: dLo = 0, dUp = -93/16384, V = 37/49152
+   window cchh: dLo = 0, dUp = -93/16384, V = 37/49152
+   window chcc: dLo = 0, dUp = 93/16384, V = 1301/49152
+   window chch: dLo = 0, dUp = 93/16384, V = 1301/49152
+   window hchc: dLo = 0, dUp = -93/16384, V = 37/49152
+   window hchh: dLo = 0, dUp = -93/16384, V = 37/49152
+   window hhcc: dLo = 0, dUp = 93/16384, V = 1301/49152
+   window hhch: dLo = 0, dUp = 93/16384, V = 1301/49152
+   dLo depends on window letters [] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   dUp depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   V depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   Swap: V(c|h) + V(h|c) - V(c|c) - V(h|h) = 0
+== s=1/4 lam=-7/32 oct: pure halves c (Fraction(1519, 3072), Fraction(1519, 3072)), h (Fraction(689, 1536), Fraction(689, 1536))
+   window cchc: dLo = 17/2048, dUp = -17/2048, V = 2897/3072
+   window cchh: dLo = 17/2048, dUp = -17/2048, V = 2897/3072
+   window chcc: dLo = -17/2048, dUp = 17/2048, V = 2897/3072
+   window chch: dLo = -17/2048, dUp = 17/2048, V = 2897/3072
+   window hchc: dLo = 17/2048, dUp = -17/2048, V = 2897/3072
+   window hchh: dLo = 17/2048, dUp = -17/2048, V = 2897/3072
+   window hhcc: dLo = -17/2048, dUp = 17/2048, V = 2897/3072
+   window hhch: dLo = -17/2048, dUp = 17/2048, V = 2897/3072
+   dLo depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   dUp depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   V depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   Swap: V(c|h) + V(h|c) - V(c|c) - V(h|h) = 0
+== s=1/4 lam=-7/32 tetX: pure halves c (Fraction(17, 3072), Fraction(0, 1)), h (Fraction(49, 3072), Fraction(109, 3072))
+   window cchc: dLo = 61/6144, dUp = 0, V = 313/6144
+   window cchh: dLo = 61/6144, dUp = 0, V = 313/6144
+   window chcc: dLo = -61/6144, dUp = 0, V = 37/6144
+   window chch: dLo = -61/6144, dUp = 0, V = 37/6144
+   window hchc: dLo = 61/6144, dUp = 0, V = 313/6144
+   window hchh: dLo = 61/6144, dUp = 0, V = 313/6144
+   window hhcc: dLo = -61/6144, dUp = 0, V = 37/6144
+   window hhch: dLo = -61/6144, dUp = 0, V = 37/6144
+   dLo depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   dUp depends on window letters [] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   V depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   Swap: V(c|h) + V(h|c) - V(c|c) - V(h|h) = 0
+== s=1/4 lam=-7/32 tetY: pure halves c (Fraction(0, 1), Fraction(17, 3072)), h (Fraction(109, 3072), Fraction(49, 3072))
+   window cchc: dLo = 0, dUp = -61/6144, V = 37/6144
+   window cchh: dLo = 0, dUp = -61/6144, V = 37/6144
+   window chcc: dLo = 0, dUp = 61/6144, V = 313/6144
+   window chch: dLo = 0, dUp = 61/6144, V = 313/6144
+   window hchc: dLo = 0, dUp = -61/6144, V = 37/6144
+   window hchh: dLo = 0, dUp = -61/6144, V = 37/6144
+   window hhcc: dLo = 0, dUp = 61/6144, V = 313/6144
+   window hhch: dLo = 0, dUp = 61/6144, V = 313/6144
+   dLo depends on window letters [] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   dUp depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   V depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   Swap: V(c|h) + V(h|c) - V(c|c) - V(h|h) = 0
+== s=1/4 lam=-3/16 oct: pure halves c (Fraction(3943, 8192), Fraction(3943, 8192)), h (Fraction(2549, 6144), Fraction(2549, 6144))
+   window cchc: dLo = 41/16384, dUp = -41/16384, V = 22025/24576
+   window cchh: dLo = 41/16384, dUp = -41/16384, V = 22025/24576
+   window chcc: dLo = -41/16384, dUp = 41/16384, V = 22025/24576
+   window chch: dLo = -41/16384, dUp = 41/16384, V = 22025/24576
+   window hchc: dLo = 41/16384, dUp = -41/16384, V = 22025/24576
+   window hchh: dLo = 41/16384, dUp = -41/16384, V = 22025/24576
+   window hhcc: dLo = -41/16384, dUp = 41/16384, V = 22025/24576
+   window hhch: dLo = -41/16384, dUp = 41/16384, V = 22025/24576
+   dLo depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   dUp depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   V depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   Swap: V(c|h) + V(h|c) - V(c|c) - V(h|h) = 0
+== s=1/4 lam=-3/16 tetX: pure halves c (Fraction(153, 8192), Fraction(0, 1)), h (Fraction(367, 12288), Fraction(679, 12288))
+   window cchc: dLo = 469/49152, dUp = 0, V = 4103/49152
+   window cchh: dLo = 469/49152, dUp = 0, V = 4103/49152
+   window chcc: dLo = -469/49152, dUp = 0, V = 333/16384
+   window chch: dLo = -469/49152, dUp = 0, V = 333/16384
+   window hchc: dLo = 469/49152, dUp = 0, V = 4103/49152
+   window hchh: dLo = 469/49152, dUp = 0, V = 4103/49152
+   window hhcc: dLo = -469/49152, dUp = 0, V = 333/16384
+   window hhch: dLo = -469/49152, dUp = 0, V = 333/16384
+   dLo depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   dUp depends on window letters [] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   V depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   Swap: V(c|h) + V(h|c) - V(c|c) - V(h|h) = 0
+== s=1/4 lam=-3/16 tetY: pure halves c (Fraction(0, 1), Fraction(153, 8192)), h (Fraction(679, 12288), Fraction(367, 12288))
+   window cchc: dLo = 0, dUp = -469/49152, V = 333/16384
+   window cchh: dLo = 0, dUp = -469/49152, V = 333/16384
+   window chcc: dLo = 0, dUp = 469/49152, V = 4103/49152
+   window chch: dLo = 0, dUp = 469/49152, V = 4103/49152
+   window hchc: dLo = 0, dUp = -469/49152, V = 333/16384
+   window hchh: dLo = 0, dUp = -469/49152, V = 333/16384
+   window hhcc: dLo = 0, dUp = 469/49152, V = 4103/49152
+   window hhch: dLo = 0, dUp = 469/49152, V = 4103/49152
+   dLo depends on window letters [] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   dUp depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   V depends on window letters [1, 2] (0 = layer k-1, 1 = t, 2 = t', 3 = layer k+2)
+   Swap: V(c|h) + V(h|c) - V(c|c) - V(h|h) = 0

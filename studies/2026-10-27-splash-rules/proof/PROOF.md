@@ -89,13 +89,54 @@ Both choices of layer 2 (gap 1) and of layer −2 (gap −2) are listed explicit
 - **Checked** (exact engine at samples): that this cut makes the actual halves differ from the pure halves for s < 1/2 (s = 2/5) and for λ > U(s) (s = 3/4). Also that the cubic walk equals [λ₋(c), U(s)] at the sampled spacings (lemma W proves only ⊆).
 
 ## Open
-- **Volume Swap Rule below s0.** At s = 2/5 the volume rule still holds exactly, at λ = −29/100, −27/100 and −1/4, including where the halves rule fails (logs/log_swapvol_below_s0.txt). The splash map also shows it at s = 1/3 and 1/4. Below 1/2 the mechanism is not the mid-plane cut. A proof for 1/4 ≤ s < 1/2 would need a different split, for example accounting for the chunk that the octahedral hole of the gap above takes. Not done.
+- **Volume Swap Rule below s0:** resolved in Part II (additivity, proved for 1/4 ≤ s < 1/2).
 - **s < 1/4** (pieces reaching two gaps, s = 1/6) is untouched.
 
 ## Files
 - `swapgeom.py`: frame, site lists, linearised rows, domain, exact LP (float basis proposal with an exact primal and dual check; exact dual fallback for degenerate vertices), certificate checker.
 - `walkends.py`: lemma W. `locality.py`: step 2. `threshold.py`: step 3. `border.py`: step 4.
 - `validate.py`: step 5. `sharp.py`, `swapvol_below.py`: sharpness and the volume check below s0.
+- `additive.py`, `additive_proof.py`: Part II (defect tables; threshold s1 and certificates).
 - `explore_bad.py`: exploration of where outside holes cut at fixed q (used to find the U(s) bound).
 - `logs/`: all run outputs. `prior-art.md`, `data/library-queries.txt`: prior art.
 - Machine: dicto-big-brother, `~/geom/bin/python`, work directory `~/kres-tmp/swap/`. The engine is in `~/kres-tmp/st57/scripts/`.
+
+## Part II — the volume Swap Rule for 1/4 ≤ s < 1/2 (proved): additivity, not halves
+
+DICTO's question: why does the volume rule outlive the halves rule? The fact of influence is **additivity**. The Swap Rule needs only V = A(t) + B(t′), a volume that is a sum of one term per layer type. It does not need the mid-plane halves to be pure.
+
+### Mechanism (exact tables: additive.py, logs/log_additive_{2_5,1_3,1_4}.txt)
+- For 1/4 ≤ s < 1/2, the half-volume defects (actual half minus pure half) appear only in mixed windows. They depend only on the two layer types t and t′, never on the outer layers k−1 and k+2.
+- **Octahedral piece.** In a c|h piece the lower half exceeds the pure c lower half by δ, and the upper half falls short of the pure h upper half by the same δ. The total is exactly L(c) + R(h). Example: s = 2/5, λ = −29/100, δ = 2/3125. The rule survives because the amount moved across the mid-plane is one constant.
+- **TetX piece** (mirror: tetY). V(c|h) = L(c) + R(h) + δ and V(h|c) = L(h) + R(c) − δ. The two defects cancel in the sum; δ = 7/37500 in the same example.
+- **The carver.** Below s = 1/2, the octahedral hole of the next gap carves a set D out of the lower part of this gap's octahedral and tetX pieces, whenever the shared layer is c.
+- **Why D is constant.** D lies against the mid-plane, out of reach of every hole of the gap below that differs between c and h. So D is the same set whatever the far layer is.
+
+The carving gives:
+- Vlow(t, t′) = |K_low(t) ∩ low| − [t′ = c]·|D_low|;
+- by the mirror, Vup(t, t′) = |K_up(t′) ∩ up| − [t = c]·|D_up|;
+- **V(t, t′) = A(t) + B(t′)**, with A(t) = |K_low(t) ∩ low| − [t = c]|D_up| and B(t′) = |K_up(t′) ∩ up| − [t′ = c]|D_low|.
+
+So each correction is one constant per c layer, the volume is additive, and the Swap Rule follows. The halves fail only because the carved set sits on one side of the mid-plane: the piece of the pure c stacking always has it carved, the c|h piece does not.
+
+### Proof (additive_proof.py; same linearisation, one Farkas certificate per pair)
+The certificates run over all q in [1/6, 1/3] (s in [1/4, 1/2]) and λ in [λ₋(t), 3s/8].
+- **(P1) Only the next gap above cuts, and only for t′ = c.** No hole of gap −2 (both choices), gap −3 or below (superset), gap 2 or above (superset), and no hole of gap 1 when layer 2 is A (t′ = h) cuts the lower half K_low(t) ∩ {ζ ≤ 1/2}. The bound ζ ≥ −1 is also certified, for the vertical dominance argument.
+- **(P2) The carved set is the same for c and h.** For each hole j of gap 1 when layer 2 is C, take Π_j = K0 ∩ {ζ ≤ 1/2} ∩ {pow_j ≤ pow_i}, where K0 is the cell against the gap's own holes and the one hole of the gap below that both types share (A at −3/4). Every hole of the gap below that occurs only for c, or only for h, satisfies pow_i ≤ pow_k on Π_j. Then K_low(c) ∩ low ∩ {pow_j ≤ pow_i} = K_low(h) ∩ low ∩ {pow_j ≤ pow_i} = Π_j, so D does not depend on t.
+- **Counts:** P1 and P2 together, over the 6 (role, type) cases, give **1706 PASS, 0 FAIL**, each certificate re-checked exactly (logs/log_additive_proof.txt). An earlier run at the guessed q1 = 1/6, logs/log_additive_cert_1_6.txt, is identical.
+- The upper side follows by the mirror ζ → 1 − ζ.
+- Lateral and vertical dominance are as in Part I.
+
+### s1 = 1/4, exact (additive_proof.py, threshold part)
+- Over the q-grid 1/15 … 1/3, the outside holes that ever cut are those of gaps −2 and −3.
+- Every one of them stops at q = 1/6 exactly: g = 0 at 1/6, g > 0 at 1/6 − 10⁻⁶ and g < 0 at 1/6 + 10⁻⁶. There are 13 critical holes, mostly octahedral holes of gap −2 cutting the octahedral and tetX lower halves.
+- So **s1 = 1/4**. This is the end point of the expected range (1/6, 1/4], and below it a piece's reach becomes 2 gaps.
+- **Sharp, engine check:** at s = 1/5 (λ = −27/100 and −13/50) the octahedral volumes depend on all four window layers, and the tetrahedral volumes on three. The Swap Rule in its two-type form no longer applies (logs/log_additive_1_5.txt).
+
+### Result
+**Swap Rule (volumes) holds for every stacking, every s ≥ 1/4 and every λ in [λ₋(c), U(s)] (proved).**
+- For s ≥ 1/2 the cause is the pure mid-plane halves (Part I).
+- For 1/4 ≤ s < 1/2 the cause is additivity: pure halves minus one constant carved set per c layer.
+- Below 1/4 the pieces reach two gaps: the s = 1/6 regime, with layer sums.
+
+**Checked only:** the exact defect tables at s = 2/5, 1/3 and 1/4 (they agree with the formula), and the failure at s = 1/5.

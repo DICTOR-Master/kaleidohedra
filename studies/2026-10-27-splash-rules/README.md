@@ -10,7 +10,9 @@
 
 **Step 2 done (theorem, proof/PROOF.md):** for every stacking, every layer spacing s ≥ ½ and every weight λ of the cubic walk (λ from −1/4 − s/8 for c, −1/3 − s/8 for h, up to min(1/3 + s/24, 3s/8)), every hole piece cut at its gap's mid-plane = lower half of the pure piece of its lower layer's type ∪ upper half of the pure piece of its upper layer's type; hence the Swap Rule for all three roles. Border: the far half of a tetrahedral piece is the same for c and h iff s ≥ 1; for ½ ≤ s < 1 the c far half is a proper part of the h far half at some λ (Ganesha, the Janus c/h tetrahedral piece of squashed stackings). One exact Farkas certificate per outside hole covers all s ≥ ½ at once (1070 PASS; border 58 PASS; engine cross-check 4992 PASS). Sharp: s0 = ½ exactly (below it the octahedral hole of the next gap cuts past the mid-plane) and λ ≤ 3s/8 is needed for s < 1.
 
-**Status:** run 1 + step 1 + map + step 2 (proof) done. Open: the volume Swap Rule still holds below s0 (exact at s = 2/5, 1/3, 1/4) though the halves rule fails there; its proof needs a different split. Next: run 2 = the same finder on the #60 pyrochlore walk, relay census, Web of Bonds (#53), keyed web, #55 A15 walk and #56 twinned-octet walk.
+**Step 3 done (proof/PROOF.md part II):** below s = ½ the volume Swap Rule holds because the piece volume is ADDITIVE in the two layer types: the octahedral hole of the next gap carves one fixed set out of a piece whenever the shared layer is c, out of reach of the far layer, so V = A(t) + B(t′). Proved for ¼ ≤ s < ½ (1706 certificates PASS); s1 = ¼ exactly (below it holes two gaps away cut; at s = 1/5 volumes depend on four layers). Swap Rule proved for every s ≥ ¼.
+
+**Status:** run 1 + step 1 + map + steps 2–3 (proof) done. Next: run 2 = the same finder on the #60 pyrochlore walk, relay census, Web of Bonds (#53), keyed web, #55 A15 walk and #56 twinned-octet walk.
 
 ## Method (scripts/splash.py, exact, on dicto-big-brother)
 - Family: the #57 hole walk (octahedral hole weight 0, tetrahedral weight λ) on close-packed stackings, layer spacing scaled d² = s·⅔, s ∈ {½, ¾, 1, 3/2, 2}; s = 1 is #57.
