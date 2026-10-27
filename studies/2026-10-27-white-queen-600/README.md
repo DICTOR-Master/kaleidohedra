@@ -14,3 +14,10 @@ low priority).
 - `scripts/render_atlas.py` — `renders/atlas600.png` (all slice types), `renders/shadows600.png` (four shadows;
   the 48-vertex cell-first slice beside Humpty Dumpty = Slice-48 of #62).
 - Names: Humpty Dumpty = Slice-48 (DICTO 2026-10-27). Carroll material belongs to #63 only.
+
+## White Queen world, step 1: the source model (2026-10-27)
+`scripts/export_source.py` → `data/600cell-source.json` (40 KB): the 600-cell from its definition, exact (each coordinate
+a + b√5), with edges, triangles and cells FOUND by measurement. 13 exact checks, all PASS: 120 vertices on radius 2;
+720 edges all √5 − 1; degree 12; 1200 triangles; 600 cells; Euler 0; each triangle in 2 cells, each edge in 5, each vertex
+in 20; every vertex figure an icosahedron; every cell regular. The app world will read only this file (step 2) and a test
+will match its slices to atlas600.json (step 3).
