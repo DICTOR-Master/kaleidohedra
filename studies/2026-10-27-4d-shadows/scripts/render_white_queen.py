@@ -68,7 +68,7 @@ def main():
         items = sorted(rows[d], key=lambda t: t[0])
         for c, (hv, h, P, F, it) in enumerate(items):
             ax = fig.add_subplot(4, ncol, r * ncol + c + 1, projection="3d")
-            panel(ax, P, F, f"height {NICE.get(h, h)}", f"{it['V']} vertices · {it['F']} triangles",
+            panel(ax, P, F, f"height {NICE.get(h, h)}", f"{it['V']} vertices · {it['F']} " + ("triangles" if it["all_triangles"] else "faces"),
                   NAMED.get((d, it["V"])))
         if d in TIP:
             ax = fig.add_subplot(4, ncol, r * ncol + len(items) + 1, projection="3d")
