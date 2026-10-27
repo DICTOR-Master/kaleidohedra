@@ -27,6 +27,7 @@ export const WQ_SNAP = 40;
 export const WQ_DEFAULT = { from: 'vertex-first', to: 'cell-first' };
 export const WQ_MODES = ['shadow', 'slice', 'shells'];
 export const WQ_SHELLS = CLEO_SHELLS.length;   // 15
+export const WQ_ARISTOTLE_ACTION = 'tool:aristotleWorld:icosahedron';   // the Cleo-Icos in Aristotle's Pyramid (paper #44)
 // the study picture's colours (matplotlib viridis from 0.15 to 0.95), the core gold
 const VIRIDIS = [[0, 0x440154], [0.125, 0x482878], [0.25, 0x3e4989], [0.375, 0x31688e], [0.5, 0x26828e], [0.625, 0x1f9e89], [0.75, 0x35b779], [0.875, 0x6ece58], [1, 0xfde725]];
 function viridis(x) {
@@ -74,7 +75,7 @@ export function wqCaption({ from, to, u }, s, L) {
   return `${head} · ${parts.join(' · ')}`;
 }
 
-export function createWhiteQueenWorld({ scene, fitView = () => {} }) {
+export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = () => {} }) {
   const STORAGE_KEY = storageKey('whiteQueen');
   const group = new THREE.Group();
   group.visible = false;
@@ -300,6 +301,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {} }) {
     <div class="w4d-row wq-param-row"><label class="hull-pick"><span class="wq-param-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row wq-slice-row"><label class="hull-pick"><span class="wq-slice-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row wq-apart-row"><label class="hull-pick"><span class="wq-apart-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
+    <div class="w4d-row w4d-options wq-link-row"><button type="button" data-wq-link></button></div>
     <div class="w4d-row wq-shells-row"><label class="hull-pick"><span class="wq-shells-label"></span> <input type="range" class="st-slider" min="1" max="${CLEO_SHELLS.length}" step="1"></label></div>
     <div class="w4d-row ch-param-caption" aria-live="polite"></div>
     <div class="w4d-row st-note fold"></div>`;
@@ -320,6 +322,9 @@ export function createWhiteQueenWorld({ scene, fitView = () => {} }) {
     panel.querySelector('.wq-halves-row').hidden = !shadow;
     panel.querySelector('.wq-apart-row').hidden = !(shadow && view.halves);
     panel.querySelector('.wq-shells-row').hidden = !shells;
+    // at the Cleo core, the back link to the Cleo-Icos in Aristotle's Pyramid (each shape lives in one place, the others link)
+    panel.querySelector('.wq-link-row').hidden = !(shells && view.shells === 1);
+    panel.querySelector('[data-wq-link]').textContent = t('wq.link.aristotle', L);
     halvesBtn.textContent = t('wq.halves', L); halvesBtn.classList.toggle('active', view.halves); halvesBtn.setAttribute('aria-pressed', String(view.halves));
     for (const end of ['from', 'to', 'slice']) {
       const lab = panel.querySelector(`[data-wq-label="${end}"]`);
@@ -375,6 +380,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {} }) {
   // From: the turning starts there (the slider at its start); To: it ends there (the slider at its end). Picking as From the
   // direction that is To swaps the two. Slice: the direction, from its centre.
   panel.addEventListener('click', (e) => {
+    if (e.target.closest('[data-wq-link]')) { openAction(WQ_ARISTOTLE_ACTION); return; }
     if (e.target.closest('[data-wq-halves]')) { view.halves = !view.halves; save(); draw(); fit(); return; }
     const b = e.target.closest('[data-wq-from], [data-wq-to], [data-wq-slice], [data-wq-mode]');
     if (!b) return;
@@ -397,7 +403,8 @@ export function createWhiteQueenWorld({ scene, fitView = () => {} }) {
      *  cell-first); ?open=whitequeen:slice | :shells those views; ?open=whitequeen:humpty the Slice view at Humpty Dumpty. */
     setChain(kind) {
       const k = SHORT[kind] ?? kind;
-      if (kind === 'slice' || kind === 'shells') view.mode = kind;
+      if (kind === 'slice') view.mode = kind;
+      else if (kind === 'shells') Object.assign(view, { mode: 'shells', shells: 1 });   // the link from Aristotle's Pyramid: the Cleo core
       else if (kind === 'humpty') {
         const n = DIRECTIONS.indexOf('cell-first');
         Object.assign(view, { mode: 'slice', sliceDir: 'cell-first', sliceK: SLICE_STOPS[n].findIndex((s) => s.height === WQ_NAMED[0].height) });

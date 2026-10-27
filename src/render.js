@@ -6296,7 +6296,7 @@ async function init() {
   });
   dictonicWorld = createDictonicWorld({ scene: realScene, fitView: fitCameraTo, openAction: (action) => openFromAlmanac?.({ action, app: null }, null) });
   globalWebWorld = createGlobalWebWorld({ scene: realScene, fitView: fitCameraTo, openAction: (action) => openFromAlmanac?.({ action, app: null }, null) });
-  whiteQueenWorld = createWhiteQueenWorld({ scene: realScene, fitView: fitCameraTo });
+  whiteQueenWorld = createWhiteQueenWorld({ scene: realScene, fitView: fitCameraTo, openAction: (action) => openFromAlmanac?.({ action, app: null }, null) });
   bloomWorld = createBloomWorld({ scene: realScene, fitView: fitCameraTo, openAction: (action) => openFromAlmanac?.({ action, app: null }, null) });
   stackingsWorld = createStackingsWorld({ scene: realScene, fitView: fitCameraTo, openAction: (action) => openFromAlmanac?.({ action, app: null }, null) });
   aristotleWorld = createAristotleWorld({ scene: realScene, showHudPrompt, fitView: fitCameraTo, openAction: (action) => openFromAlmanac?.({ action, app: null }, null) });

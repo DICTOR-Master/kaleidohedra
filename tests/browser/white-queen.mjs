@@ -123,6 +123,19 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
       assert.equal(await page.locator(`${P} .ch-param-caption.wq-gold`).count(), n === 1 ? 1 : 0);
     }
     checks++;
+    // the links both ways with Aristotle's Pyramid (paper #44): the back link only at the Cleo core
+    assert.ok(!(await page.locator(`${P} [data-wq-link]`).isVisible()), `${tag}: no Aristotle link beyond the core`);
+    await shl.fill('1'); await page.waitForTimeout(250);
+    const leave = async () => { await page.waitForTimeout(500); if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]'); };
+    await page.tap(`${P} [data-wq-link]`); await leave();
+    await page.waitForSelector('#worldaristotle-panel.visible'); await page.waitForTimeout(800);
+    let ar = await page.evaluate(() => window.__aristotleProbe());
+    assert.deepEqual([ar.mode, ar.solid], ['pyramids', 'icosahedron'], `${tag}: back link opens the Cleo-Icos`);
+    assert.equal(await page.locator('#worldaristotle-panel [data-ar="whiteQueen"]').textContent(), t('ar.link.whiteQueen', 'en'));
+    await page.tap('#worldaristotle-panel [data-ar="whiteQueen"]'); await leave();
+    await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(800);
+    st = await probe(page); assert.deepEqual([st.mode, st.shells], ['shells', 1], `${tag}: Aristotle links to the Cleo core`);
+    assert.equal(await page.locator(`${P} [data-wq-link]`).textContent(), t('wq.link.aristotle', 'en')); checks++;
     // Halves, in the Shadow view
     await page.tap(`${P} [data-wq-mode="shadow"]`); await page.waitForTimeout(300);
     st = await probe(page); assert.equal(st.mode, 'shadow'); assert.equal(st.halves, null, `${tag}: Halves off at first`);
@@ -195,6 +208,15 @@ for (const [dev, viewport] of Object.entries({ phone: { width: 390, height: 844 
     await page.locator(`${P} .wq-shells-row input`).fill(String(n)); await page.waitForTimeout(1100);
     await page.screenshot({ path: `${SH}/${dev}-shells-${n}.png` });
   }
+  await page.locator(`${P} .wq-shells-row input`).fill('1'); await page.waitForTimeout(300);
+  await page.click(`${P} [data-wq-link]`); await page.waitForTimeout(600);
+  if (await page.locator('#leave-dialog:not([hidden])').count()) await page.click('#leave-dialog [data-choice="keep"]');
+  await page.waitForSelector('#worldaristotle-panel.visible'); await page.waitForTimeout(1200);
+  await page.screenshot({ path: `${SH}/${dev}-aristotle-link.png` });
+  await page.click('#worldaristotle-panel [data-ar="whiteQueen"]'); await page.waitForTimeout(600);
+  if (await page.locator('#leave-dialog:not([hidden])').count()) await page.click('#leave-dialog [data-choice="keep"]');
+  await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1200);
+  await page.screenshot({ path: `${SH}/${dev}-shells-core-link.png` });
   await page.click(`${P} [data-wq-mode="shadow"]`); await page.click(`${P} [data-wq-halves]`);
   for (const [k, a] of [['vertex-first', 0], ['vertex-first', 600], ['cell-first', 600]]) {
     await page.click(`${P} [data-wq-from="${k}"]`); await page.locator(`${P} .wq-apart-row input`).fill(String(a));
