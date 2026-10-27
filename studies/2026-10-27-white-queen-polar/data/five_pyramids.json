@@ -1,0 +1,168 @@
+[
+ {
+  "polytope": "5-cell",
+  "core": "vertex",
+  "cells_at_vertex": 4,
+  "shadow": {
+   "solid": "tetrahedron",
+   "R2_over_a2": "3/8",
+   "aristotle": "3/8",
+   "matches": true,
+   "faces": 4,
+   "edges": 6
+  },
+  "ok": true,
+  "true_apex2_over_base2": "1 (regular tetrahedron)"
+ },
+ {
+  "polytope": "5-cell",
+  "core": "cell",
+  "cell_corners": 4,
+  "shadow": {
+   "solid": "tetrahedron",
+   "R2_over_a2": "3/8",
+   "aristotle": "3/8",
+   "matches": true,
+   "faces": 4,
+   "edges": 6
+  },
+  "ok": true,
+  "true_apex2_over_base2": "2/5"
+ },
+ {
+  "polytope": "16-cell",
+  "core": "vertex",
+  "cells_at_vertex": 8,
+  "shadow": {
+   "solid": "octahedron",
+   "R2_over_a2": "1/2",
+   "aristotle": "1/2",
+   "matches": true,
+   "faces": 8,
+   "edges": 12
+  },
+  "ok": true,
+  "true_apex2_over_base2": "1 (regular tetrahedron)"
+ },
+ {
+  "polytope": "16-cell",
+  "core": "cell",
+  "cell_corners": 4,
+  "shadow": {
+   "solid": "tetrahedron",
+   "R2_over_a2": "3/8",
+   "aristotle": "3/8",
+   "matches": true,
+   "faces": 4,
+   "edges": 6
+  },
+  "ok": true,
+  "true_apex2_over_base2": "1/2"
+ },
+ {
+  "polytope": "tesseract",
+  "core": "cell",
+  "cell_corners": 8,
+  "shadow": {
+   "solid": "cube",
+   "R2_over_a2": "3/4",
+   "aristotle": "3/4",
+   "matches": true,
+   "faces": 6,
+   "edges": 12
+  },
+  "ok": true,
+  "true_apex2_over_base2": "1"
+ },
+ {
+  "polytope": "24-cell",
+  "core": "cell",
+  "cell_corners": 6,
+  "shadow": {
+   "solid": "octahedron",
+   "R2_over_a2": "1/2",
+   "aristotle": "1/2",
+   "matches": true,
+   "faces": 8,
+   "edges": 12
+  },
+  "ok": true,
+  "true_apex2_over_base2": "1"
+ },
+ {
+  "polytope": "600-cell",
+  "core": "vertex",
+  "cells_at_vertex": 20,
+  "shadow": {
+   "solid": "icosahedron",
+   "R2_over_a2": "5/8+1/8r5",
+   "aristotle": "5/8+1/8r5",
+   "matches": true,
+   "faces": 20,
+   "edges": 30
+  },
+  "ok": true,
+  "true_apex2_over_base2": "1 (regular tetrahedron)"
+ },
+ {
+  "polytope": "600-cell",
+  "core": "cell",
+  "cell_corners": 4,
+  "shadow": {
+   "solid": "tetrahedron",
+   "R2_over_a2": "3/8",
+   "aristotle": "3/8",
+   "matches": true,
+   "faces": 4,
+   "edges": 6
+  },
+  "ok": true,
+  "true_apex2_over_base2": "3/2+1/2r5"
+ },
+ {
+  "polytope": "120-cell",
+  "core": "cell",
+  "cell_corners": 20,
+  "shadow": {
+   "solid": "dodecahedron",
+   "R2_over_a2": "9/8+3/8r5",
+   "aristotle": "9/8+3/8r5",
+   "matches": true,
+   "faces": 12,
+   "edges": 30
+  },
+  "ok": true,
+  "true_apex2_over_base2": "7+3r5"
+ },
+ {
+  "polytope": "small stellated 120-cell {5/2,5,3}",
+  "core": "star vertex",
+  "edges": 1200,
+  "cells_at_vertex": 12,
+  "edges_per_spike": [
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "distinct_base_points": 20,
+  "shadow": {
+   "solid": "dodecahedron",
+   "R2_over_a2": "9/8+3/8r5",
+   "aristotle": "9/8+3/8r5",
+   "matches": true,
+   "faces": 12,
+   "edges": 30
+  },
+  "ok": true,
+  "true_apex2_over_base2": "3/2+1/2r5"
+ }
+]
