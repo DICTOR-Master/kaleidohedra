@@ -29,6 +29,20 @@
 <tr><td>5</td><td>App: a Polar button in the White Queen world swaps 600-cell and 120-cell in the Shadow, Slice and Shells views; the gold Cleo core turns into the gold central dodecahedron.</td><td>Kaleidohedra</td><td>medium</td></tr>
 <tr><td>6</td><td>Paper #64 (placeholder): The Red Queen 120-cell, led by its main theorem, the exact polar dictionary.</td><td>paper</td><td>medium</td></tr></table>
 
+<h2>Stages 0–2: results (28 October 2026)</h2>
+<div class="thm"><b>Verdict.</b> The Red Queen is built exactly, and the polar exchange holds point for point. 13 of 13 exact checks pass (scripts/red_queen.py, data/red_queen.json).</div>
+<table><tr><th>Check</th><th>Result</th></tr>
+<tr><td>600 corners (the White Queen's 600 cell centres), 1200 equal edges, 4 at every corner</td><td>exact</td></tr>
+<tr><td>720 regular pentagons (one round each White Queen edge), each in exactly 2 cells</td><td>exact</td></tr>
+<tr><td>120 cells (one round each White Queen vertex), each a regular dodecahedron</td><td>exact</td></tr>
+<tr><td>Dodecahedra round one cell: 9 layers 1, 12, 20, 12, 30, 12, 20, 12, 1</td><td>exact (known, see below)</td></tr>
+<tr><td>Corners round one cell: 15 layers 20, 20, 30, 60, 60, 60, 20, 60, 20, 60, 60, 60, 30, 20, 20, the Cleo shells</td><td>exact</td></tr>
+<tr><td>In perspective from just beyond the opposite cell, every dodecahedron layer is one kind of piece</td><td>exact; it follows from the icosahedral symmetry round the axis, which turns each layer onto itself</td></tr>
+<tr><td>The core: the central dodecahedron, its 20 corners the centres of the 20 Cleo-Icos</td><td>exact</td></tr>
+<tr><td>Its 12 pentagons are the polar of the 12 corners of the Cleo core's icosahedron</td><td>exact</td></tr></table>
+<p><b>The pentagonal pyramids.</b> Cut from its centre, the Red Queen's core falls into the 12 pentagonal pyramids of the regular dodecahedron, Aristotle's dodecahedron pyramid of #44, as the White Queen's core falls into the 20 Cleo-Icos. The dictionary of the two cores: Cleo-Icos ↔ corner of the dodecahedron (20 ↔ 20); corner of the icosahedron ↔ pentagonal pyramid (12 ↔ 12). In the 120-cell the core is one whole cell; the 12 pyramids are its cut from the centre, not cells of their own.</p>
+<p class="prec"><b>Sources checked</b> (stage 0, 28 October 2026). Reference library (ask-library on "120-cell layers round one cell; Boole Stott sections; Schlegel diagram; 600-cell / 120-cell duality"): H. S. M. Coxeter, <i>Regular Polytopes</i>, 3rd ed. (1973); M. Koca, N. Koca, M. Al-Ajmi, "Branching of the W(H4) polytopes" (2011); M. Koca, M. Al-Ajmi, N. Koca, grand antiprism by quaternions (2009); Kaida Shi (2009), overall shapes of the 120-cell and 600-cell; A. Garrison, R. Scott, "Small covers of the dodecahedron and the 120-cell" (2001). Web search "120-cell layers of cells around one dodecahedron 1, 12, 20, 12, 30": Wikipedia "120-cell" (cites J. Stillwell, "The story of the 120-cell", Notices AMS 2001); S. Schleimer and H. Segerman, "Puzzling the 120-cell", arXiv 1310.3549, and their sculpture talks, which give the layers 1, 12, 20, 12, 30, … round one dodecahedron; the Zometool 120-cell model page (Ruhr-Universität Bochum). The 9 layers are known; the reading of the Cleo shells as the Red Queen's corner layers, and the core dictionary with Aristotle's pyramids, were not found in these sources.</p>
+
 <h2>Order</h2>
 <p>Stages 0–2 now: they run on dicto-big-brother and cost few tokens, so they fit the frugal week. Stages 3–6 after the frugal week, after the build pieces (Icosaxes, Lotus Jewel Axes, Unborn Axes), which stay first.</p>
 <p class="prec">Name: "The Red Queen 120-cell" is a placeholder until DICTO names it. Carroll references stay in the White Queen and Red Queen papers only.</p>

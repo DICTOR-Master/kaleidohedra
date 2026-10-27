@@ -1,0 +1,59 @@
+{
+ "corner_radius2": "7/4+3/4r5",
+ "edge2": "1/4",
+ "cell_layers": [
+  1,
+  12,
+  20,
+  12,
+  30,
+  12,
+  20,
+  12,
+  1
+ ],
+ "corner_layers": [
+  20,
+  20,
+  30,
+  60,
+  60,
+  60,
+  20,
+  60,
+  20,
+  60,
+  60,
+  60,
+  30,
+  20,
+  20
+ ],
+ "kinds_per_cell_layer": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "checks": {
+  "1200 edges, each between two corners": true,
+  "all edges one length": true,
+  "600 corners all at one radius": true,
+  "every corner has 4 edges (vertex figure a tetrahedron)": true,
+  "720 pentagons of 5 corners": true,
+  "every pentagon regular (5 sides equal, 5 diagonals equal)": true,
+  "120 cells, each a regular dodecahedron (20 corners, 30 equal edges, 3 per corner, on one sphere)": true,
+  "each pentagon in exactly 2 cells": true,
+  "120 dodecahedra in 9 layers 1,12,20,12,30,12,20,12,1": true,
+  "600 corners in 15 layers = the Cleo shells": true,
+  "core projects to a regular dodecahedron centred on the axis": true,
+  "the core's 20 corners are the centres of the 20 Cleo-Icos cells round White Queen vertex 0": true,
+  "core's 12 pentagons = the 12 White Queen edges at vertex 0 (the icosahedron's 12 corners)": true
+ },
+ "eye_height_over_opposite": "21/20"
+}
