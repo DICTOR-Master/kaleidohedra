@@ -1,0 +1,12352 @@
+[
+ {
+  "polytope": "5-cell",
+  "direction": "vertex-first",
+  "kind": "shadow",
+  "height": null,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 0,
+  "height": "-1/5",
+  "layer_vertices": 4,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 1,
+  "height": "4/5",
+  "layer_vertices": 1,
+  "dim": 0
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "-1/5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "0",
+  "central": true,
+  "at_vertex_layer": false,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "32/25"
+  ],
+  "edge_len": [
+   1.131371
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "4/5",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 0
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "edge-first",
+  "kind": "shadow",
+  "height": null,
+  "V": 5,
+  "E": 9,
+  "F": 6,
+  "face_sizes": {
+   "3": 6
+  },
+  "all_triangles": true,
+  "degrees": "44433",
+  "edge_len2_exact": [
+   "7/6",
+   "2"
+  ],
+  "edge_len": [
+   1.080123,
+   1.414214
+  ],
+  "edge_len_count": [
+   6,
+   3
+  ],
+  "edge_ratio2_exact": "12/7",
+  "edge_ratio": 1.309307,
+  "dihedral_cos2_exact": [
+   "-(1/4)",
+   "+(1/64)"
+  ],
+  "dihedral_deg": [
+   120.0,
+   82.8192
+  ],
+  "dihedral_count": [
+   3,
+   6
+  ]
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 0,
+  "height": "-1/5",
+  "layer_vertices": 3,
+  "dim": 2
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 1,
+  "height": "3/10",
+  "layer_vertices": 2,
+  "dim": 1
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "-1/5",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 2
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "0",
+  "central": true,
+  "at_vertex_layer": false,
+  "V": 6,
+  "E": 9,
+  "F": 5,
+  "face_sizes": {
+   "3": 2,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "333333",
+  "edge_len2_exact": [
+   "8/25",
+   "18/25"
+  ],
+  "edge_len": [
+   0.565685,
+   0.848528
+  ],
+  "edge_len_count": [
+   3,
+   6
+  ],
+  "edge_ratio2_exact": "9/4",
+  "edge_ratio": 1.5,
+  "dihedral_cos2_exact": [
+   "0(0)",
+   "+(1/4)"
+  ],
+  "dihedral_deg": [
+   90.0,
+   60.0
+  ],
+  "dihedral_count": [
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "3/10",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 1
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "face-first",
+  "kind": "shadow",
+  "height": null,
+  "V": 5,
+  "E": 9,
+  "F": 6,
+  "face_sizes": {
+   "3": 6
+  },
+  "all_triangles": true,
+  "degrees": "44433",
+  "edge_len2_exact": [
+   "7/6",
+   "2"
+  ],
+  "edge_len": [
+   1.080123,
+   1.414214
+  ],
+  "edge_len_count": [
+   6,
+   3
+  ],
+  "edge_ratio2_exact": "12/7",
+  "edge_ratio": 1.309307,
+  "dihedral_cos2_exact": [
+   "-(1/4)",
+   "+(1/64)"
+  ],
+  "dihedral_deg": [
+   120.0,
+   82.8192
+  ],
+  "dihedral_count": [
+   3,
+   6
+  ]
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 0,
+  "height": "-1/5",
+  "layer_vertices": 2,
+  "dim": 1
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 1,
+  "height": "2/15",
+  "layer_vertices": 3,
+  "dim": 2
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "-1/5",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 1
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "0",
+  "central": true,
+  "at_vertex_layer": false,
+  "V": 6,
+  "E": 9,
+  "F": 5,
+  "face_sizes": {
+   "3": 2,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "333333",
+  "edge_len2_exact": [
+   "8/25",
+   "18/25"
+  ],
+  "edge_len": [
+   0.565685,
+   0.848528
+  ],
+  "edge_len_count": [
+   3,
+   6
+  ],
+  "edge_ratio2_exact": "9/4",
+  "edge_ratio": 1.5,
+  "dihedral_cos2_exact": [
+   "0(0)",
+   "+(1/4)"
+  ],
+  "dihedral_deg": [
+   90.0,
+   60.0
+  ],
+  "dihedral_count": [
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "2/15",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 2
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "cell-first",
+  "kind": "shadow",
+  "height": null,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 0,
+  "height": "-1/5",
+  "layer_vertices": 1,
+  "dim": 0
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 1,
+  "height": "1/20",
+  "layer_vertices": 4,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "-1/5",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 0
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "0",
+  "central": true,
+  "at_vertex_layer": false,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "32/25"
+  ],
+  "edge_len": [
+   1.131371
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "5-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "1/20",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "vertex-first",
+  "kind": "shadow",
+  "height": null,
+  "V": 6,
+  "E": 12,
+  "F": 8,
+  "face_sizes": {
+   "3": 8
+  },
+  "all_triangles": true,
+  "degrees": "444444",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   12
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/9)"
+  ],
+  "dihedral_deg": [
+   109.4712
+  ],
+  "dihedral_count": [
+   12
+  ]
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 0,
+  "height": "-1",
+  "layer_vertices": 1,
+  "dim": 0
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 1,
+  "height": "0",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 12,
+  "F": 8,
+  "face_sizes": {
+   "3": 8
+  },
+  "all_triangles": true,
+  "degrees": "444444",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   12
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/9)"
+  ],
+  "dihedral_deg": [
+   109.4712
+  ],
+  "dihedral_count": [
+   12
+  ]
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 2,
+  "height": "1",
+  "layer_vertices": 1,
+  "dim": 0
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "-1",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 0
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "0",
+  "central": true,
+  "at_vertex_layer": true,
+  "V": 6,
+  "E": 12,
+  "F": 8,
+  "face_sizes": {
+   "3": 8
+  },
+  "all_triangles": true,
+  "degrees": "444444",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   12
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/9)"
+  ],
+  "dihedral_deg": [
+   109.4712
+  ],
+  "dihedral_count": [
+   12
+  ]
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "1",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 0
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "edge-first",
+  "kind": "shadow",
+  "height": null,
+  "V": 6,
+  "E": 12,
+  "F": 8,
+  "face_sizes": {
+   "3": 8
+  },
+  "all_triangles": true,
+  "degrees": "444444",
+  "edge_len2_exact": [
+   "3/2",
+   "2"
+  ],
+  "edge_len": [
+   1.224745,
+   1.414214
+  ],
+  "edge_len_count": [
+   8,
+   4
+  ],
+  "edge_ratio2_exact": "4/3",
+  "edge_ratio": 1.154701,
+  "dihedral_cos2_exact": [
+   "-(1/4)",
+   "0(0)"
+  ],
+  "dihedral_deg": [
+   120.0,
+   90.0
+  ],
+  "dihedral_count": [
+   8,
+   4
+  ]
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 0,
+  "height": "-1/2",
+  "layer_vertices": 2,
+  "dim": 1
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 1,
+  "height": "0",
+  "layer_vertices": 4,
+  "dim": 2
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 2,
+  "height": "1/2",
+  "layer_vertices": 2,
+  "dim": 1
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "-1/2",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 1
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "0",
+  "central": true,
+  "at_vertex_layer": true,
+  "V": 6,
+  "E": 12,
+  "F": 8,
+  "face_sizes": {
+   "3": 8
+  },
+  "all_triangles": true,
+  "degrees": "444444",
+  "edge_len2_exact": [
+   "3/2",
+   "2"
+  ],
+  "edge_len": [
+   1.224745,
+   1.414214
+  ],
+  "edge_len_count": [
+   8,
+   4
+  ],
+  "edge_ratio2_exact": "4/3",
+  "edge_ratio": 1.154701,
+  "dihedral_cos2_exact": [
+   "-(1/4)",
+   "0(0)"
+  ],
+  "dihedral_deg": [
+   120.0,
+   90.0
+  ],
+  "dihedral_count": [
+   8,
+   4
+  ]
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "1/2",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 1
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "face-first",
+  "kind": "shadow",
+  "height": null,
+  "V": 8,
+  "E": 18,
+  "F": 12,
+  "face_sizes": {
+   "3": 12
+  },
+  "all_triangles": true,
+  "degrees": "66444444",
+  "edge_len2_exact": [
+   "2/3",
+   "5/3"
+  ],
+  "edge_len": [
+   0.816497,
+   1.290994
+  ],
+  "edge_len_count": [
+   6,
+   12
+  ],
+  "edge_ratio2_exact": "5/2",
+  "edge_ratio": 1.581139,
+  "dihedral_cos2_exact": [
+   "-(4/9)",
+   "-(1/9)"
+  ],
+  "dihedral_deg": [
+   131.8103,
+   109.4712
+  ],
+  "dihedral_count": [
+   12,
+   6
+  ]
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 0,
+  "height": "-1/3",
+  "layer_vertices": 3,
+  "dim": 2
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 1,
+  "height": "0",
+  "layer_vertices": 2,
+  "dim": 1
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 2,
+  "height": "1/3",
+  "layer_vertices": 3,
+  "dim": 2
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "-1/3",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 2
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "0",
+  "central": true,
+  "at_vertex_layer": true,
+  "V": 8,
+  "E": 18,
+  "F": 12,
+  "face_sizes": {
+   "3": 12
+  },
+  "all_triangles": true,
+  "degrees": "66444444",
+  "edge_len2_exact": [
+   "1/2",
+   "3/2"
+  ],
+  "edge_len": [
+   0.707107,
+   1.224745
+  ],
+  "edge_len_count": [
+   6,
+   12
+  ],
+  "edge_ratio2_exact": "3",
+  "edge_ratio": 1.732051,
+  "dihedral_cos2_exact": [
+   "-(49/121)",
+   "-(25/121)"
+  ],
+  "dihedral_deg": [
+   129.5212,
+   117.0357
+  ],
+  "dihedral_count": [
+   12,
+   6
+  ]
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "1/3",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 2
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "cell-first",
+  "kind": "shadow",
+  "height": null,
+  "V": 8,
+  "E": 12,
+  "F": 6,
+  "face_sizes": {
+   "4": 6
+  },
+  "all_triangles": false,
+  "degrees": "33333333",
+  "edge_len2_exact": [
+   "1"
+  ],
+  "edge_len": [
+   1.0
+  ],
+  "edge_len_count": [
+   12
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "0(0)"
+  ],
+  "dihedral_deg": [
+   90.0
+  ],
+  "dihedral_count": [
+   12
+  ]
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 0,
+  "height": "-1/4",
+  "layer_vertices": 4,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 1,
+  "height": "1/4",
+  "layer_vertices": 4,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "-1/4",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "0",
+  "central": true,
+  "at_vertex_layer": false,
+  "V": 12,
+  "E": 24,
+  "F": 14,
+  "face_sizes": {
+   "3": 8,
+   "4": 6
+  },
+  "all_triangles": false,
+  "degrees": "444444444444",
+  "edge_len2_exact": [
+   "1/2"
+  ],
+  "edge_len": [
+   0.707107
+  ],
+  "edge_len_count": [
+   24
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/3)"
+  ],
+  "dihedral_deg": [
+   125.2644
+  ],
+  "dihedral_count": [
+   24
+  ]
+ },
+ {
+  "polytope": "16-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "1/4",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "vertex-first",
+  "kind": "shadow",
+  "height": null,
+  "V": 14,
+  "E": 24,
+  "F": 12,
+  "face_sizes": {
+   "4": 12
+  },
+  "all_triangles": false,
+  "degrees": "44444433333333",
+  "edge_len2_exact": [
+   "3/2"
+  ],
+  "edge_len": [
+   1.224745
+  ],
+  "edge_len_count": [
+   24
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/4)"
+  ],
+  "dihedral_deg": [
+   120.0
+  ],
+  "dihedral_count": [
+   24
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 0,
+  "height": "-2",
+  "layer_vertices": 1,
+  "dim": 0
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 1,
+  "height": "-1",
+  "layer_vertices": 8,
+  "V": 8,
+  "E": 12,
+  "F": 6,
+  "face_sizes": {
+   "4": 6
+  },
+  "all_triangles": false,
+  "degrees": "33333333",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   12
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "0(0)"
+  ],
+  "dihedral_deg": [
+   90.0
+  ],
+  "dihedral_count": [
+   12
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 2,
+  "height": "0",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 12,
+  "F": 8,
+  "face_sizes": {
+   "3": 8
+  },
+  "all_triangles": true,
+  "degrees": "444444",
+  "edge_len2_exact": [
+   "4"
+  ],
+  "edge_len": [
+   2.0
+  ],
+  "edge_len_count": [
+   12
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/9)"
+  ],
+  "dihedral_deg": [
+   109.4712
+  ],
+  "dihedral_count": [
+   12
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 3,
+  "height": "1",
+  "layer_vertices": 8,
+  "V": 8,
+  "E": 12,
+  "F": 6,
+  "face_sizes": {
+   "4": 6
+  },
+  "all_triangles": false,
+  "degrees": "33333333",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   12
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "0(0)"
+  ],
+  "dihedral_deg": [
+   90.0
+  ],
+  "dihedral_count": [
+   12
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 4,
+  "height": "2",
+  "layer_vertices": 1,
+  "dim": 0
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "-2",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 0
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "-1",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 8,
+  "E": 12,
+  "F": 6,
+  "face_sizes": {
+   "4": 6
+  },
+  "all_triangles": false,
+  "degrees": "33333333",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   12
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "0(0)"
+  ],
+  "dihedral_deg": [
+   90.0
+  ],
+  "dihedral_count": [
+   12
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "0",
+  "central": true,
+  "at_vertex_layer": true,
+  "V": 14,
+  "E": 24,
+  "F": 12,
+  "face_sizes": {
+   "4": 12
+  },
+  "all_triangles": false,
+  "degrees": "44444433333333",
+  "edge_len2_exact": [
+   "3/2"
+  ],
+  "edge_len": [
+   1.224745
+  ],
+  "edge_len_count": [
+   24
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/4)"
+  ],
+  "dihedral_deg": [
+   120.0
+  ],
+  "dihedral_count": [
+   24
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "1",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 8,
+  "E": 12,
+  "F": 6,
+  "face_sizes": {
+   "4": 6
+  },
+  "all_triangles": false,
+  "degrees": "33333333",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   12
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "0(0)"
+  ],
+  "dihedral_deg": [
+   90.0
+  ],
+  "dihedral_count": [
+   12
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "2",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 0
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "edge-first",
+  "kind": "shadow",
+  "height": null,
+  "V": 14,
+  "E": 30,
+  "F": 18,
+  "face_sizes": {
+   "3": 12,
+   "4": 6
+  },
+  "all_triangles": false,
+  "degrees": "66444444444444",
+  "edge_len2_exact": [
+   "4/3",
+   "11/6",
+   "2"
+  ],
+  "edge_len": [
+   1.154701,
+   1.354006,
+   1.414214
+  ],
+  "edge_len_count": [
+   12,
+   12,
+   6
+  ],
+  "edge_ratio2_exact": "3/2",
+  "edge_ratio": 1.224745,
+  "dihedral_cos2_exact": [
+   "-(25/36)",
+   "-(1/3)",
+   "-(1/4)"
+  ],
+  "dihedral_deg": [
+   146.4427,
+   125.2644,
+   120.0
+  ],
+  "dihedral_count": [
+   12,
+   12,
+   6
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 0,
+  "height": "-3/2",
+  "layer_vertices": 2,
+  "dim": 1
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 1,
+  "height": "-1",
+  "layer_vertices": 3,
+  "dim": 2
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 2,
+  "height": "-1/2",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 9,
+  "F": 5,
+  "face_sizes": {
+   "3": 2,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "333333",
+  "edge_len2_exact": [
+   "2",
+   "4"
+  ],
+  "edge_len": [
+   1.414214,
+   2.0
+  ],
+  "edge_len_count": [
+   3,
+   6
+  ],
+  "edge_ratio2_exact": "2",
+  "edge_ratio": 1.414214,
+  "dihedral_cos2_exact": [
+   "0(0)",
+   "+(1/4)"
+  ],
+  "dihedral_deg": [
+   90.0,
+   60.0
+  ],
+  "dihedral_count": [
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 3,
+  "height": "0",
+  "layer_vertices": 2,
+  "dim": 1
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 4,
+  "height": "1/2",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 9,
+  "F": 5,
+  "face_sizes": {
+   "3": 2,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "333333",
+  "edge_len2_exact": [
+   "2",
+   "4"
+  ],
+  "edge_len": [
+   1.414214,
+   2.0
+  ],
+  "edge_len_count": [
+   3,
+   6
+  ],
+  "edge_ratio2_exact": "2",
+  "edge_ratio": 1.414214,
+  "dihedral_cos2_exact": [
+   "0(0)",
+   "+(1/4)"
+  ],
+  "dihedral_deg": [
+   90.0,
+   60.0
+  ],
+  "dihedral_count": [
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 5,
+  "height": "1",
+  "layer_vertices": 3,
+  "dim": 2
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 6,
+  "height": "3/2",
+  "layer_vertices": 2,
+  "dim": 1
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "-3/2",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 1
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "-1",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 11,
+  "E": 18,
+  "F": 9,
+  "face_sizes": {
+   "4": 9
+  },
+  "all_triangles": false,
+  "degrees": "44433333333",
+  "edge_len2_exact": [
+   "7/18",
+   "3/2"
+  ],
+  "edge_len": [
+   0.62361,
+   1.224745
+  ],
+  "edge_len_count": [
+   6,
+   12
+  ],
+  "edge_ratio2_exact": "27/7",
+  "edge_ratio": 1.963961,
+  "dihedral_cos2_exact": [
+   "-(4/25)",
+   "-(1/10)"
+  ],
+  "dihedral_deg": [
+   113.5782,
+   108.4349
+  ],
+  "dihedral_count": [
+   6,
+   12
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "-1/2",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 14,
+  "E": 24,
+  "F": 12,
+  "face_sizes": {
+   "4": 12
+  },
+  "all_triangles": false,
+  "degrees": "44444433333333",
+  "edge_len2_exact": [
+   "2/9",
+   "14/9",
+   "2"
+  ],
+  "edge_len": [
+   0.471405,
+   1.247219,
+   1.414214
+  ],
+  "edge_len_count": [
+   3,
+   18,
+   3
+  ],
+  "edge_ratio2_exact": "9",
+  "edge_ratio": 3.0,
+  "dihedral_cos2_exact": [
+   "-(3/10)",
+   "-(1/4)",
+   "-(4/25)"
+  ],
+  "dihedral_deg": [
+   123.2109,
+   120.0,
+   113.5782
+  ],
+  "dihedral_count": [
+   12,
+   6,
+   6
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "0",
+  "central": true,
+  "at_vertex_layer": true,
+  "V": 26,
+  "E": 42,
+  "F": 18,
+  "face_sizes": {
+   "4": 12,
+   "6": 6
+  },
+  "all_triangles": false,
+  "degrees": "66333333333333333333333333",
+  "edge_len2_exact": [
+   "7/18",
+   "8/9",
+   "3/2"
+  ],
+  "edge_len": [
+   0.62361,
+   0.942809,
+   1.224745
+  ],
+  "edge_len_count": [
+   24,
+   6,
+   12
+  ],
+  "edge_ratio2_exact": "27/7",
+  "edge_ratio": 1.963961,
+  "dihedral_cos2_exact": [
+   "-(16/25)",
+   "-(3/10)",
+   "-(1/4)"
+  ],
+  "dihedral_deg": [
+   143.1301,
+   123.2109,
+   120.0
+  ],
+  "dihedral_count": [
+   12,
+   24,
+   6
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "1/2",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 14,
+  "E": 24,
+  "F": 12,
+  "face_sizes": {
+   "4": 12
+  },
+  "all_triangles": false,
+  "degrees": "44444433333333",
+  "edge_len2_exact": [
+   "2/9",
+   "14/9",
+   "2"
+  ],
+  "edge_len": [
+   0.471405,
+   1.247219,
+   1.414214
+  ],
+  "edge_len_count": [
+   3,
+   18,
+   3
+  ],
+  "edge_ratio2_exact": "9",
+  "edge_ratio": 3.0,
+  "dihedral_cos2_exact": [
+   "-(3/10)",
+   "-(1/4)",
+   "-(4/25)"
+  ],
+  "dihedral_deg": [
+   123.2109,
+   120.0,
+   113.5782
+  ],
+  "dihedral_count": [
+   12,
+   6,
+   6
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "1",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 11,
+  "E": 18,
+  "F": 9,
+  "face_sizes": {
+   "4": 9
+  },
+  "all_triangles": false,
+  "degrees": "44433333333",
+  "edge_len2_exact": [
+   "7/18",
+   "3/2"
+  ],
+  "edge_len": [
+   0.62361,
+   1.224745
+  ],
+  "edge_len_count": [
+   6,
+   12
+  ],
+  "edge_ratio2_exact": "27/7",
+  "edge_ratio": 1.963961,
+  "dihedral_cos2_exact": [
+   "-(4/25)",
+   "-(1/10)"
+  ],
+  "dihedral_deg": [
+   113.5782,
+   108.4349
+  ],
+  "dihedral_count": [
+   6,
+   12
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "3/2",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 1
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "face-first",
+  "kind": "shadow",
+  "height": null,
+  "V": 18,
+  "E": 42,
+  "F": 26,
+  "face_sizes": {
+   "3": 24,
+   "6": 2
+  },
+  "all_triangles": false,
+  "degrees": "666666444444444444",
+  "edge_len2_exact": [
+   "2/3",
+   "5/3",
+   "2"
+  ],
+  "edge_len": [
+   0.816497,
+   1.290994,
+   1.414214
+  ],
+  "edge_len_count": [
+   12,
+   24,
+   6
+  ],
+  "edge_ratio2_exact": "3",
+  "edge_ratio": 1.732051,
+  "dihedral_cos2_exact": [
+   "-(16/21)",
+   "-(25/49)",
+   "-(1/3)"
+  ],
+  "dihedral_deg": [
+   150.7941,
+   135.5847,
+   125.2644
+  ],
+  "dihedral_count": [
+   24,
+   6,
+   12
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 0,
+  "height": "-4/3",
+  "layer_vertices": 3,
+  "dim": 2
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 1,
+  "height": "-2/3",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 9,
+  "F": 5,
+  "face_sizes": {
+   "3": 2,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "333333",
+  "edge_len2_exact": [
+   "2",
+   "4"
+  ],
+  "edge_len": [
+   1.414214,
+   2.0
+  ],
+  "edge_len_count": [
+   6,
+   3
+  ],
+  "edge_ratio2_exact": "2",
+  "edge_ratio": 1.414214,
+  "dihedral_cos2_exact": [
+   "0(0)",
+   "+(1/4)"
+  ],
+  "dihedral_deg": [
+   90.0,
+   60.0
+  ],
+  "dihedral_count": [
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 2,
+  "height": "0",
+  "layer_vertices": 6,
+  "dim": 2
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 3,
+  "height": "2/3",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 9,
+  "F": 5,
+  "face_sizes": {
+   "3": 2,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "333333",
+  "edge_len2_exact": [
+   "2",
+   "4"
+  ],
+  "edge_len": [
+   1.414214,
+   2.0
+  ],
+  "edge_len_count": [
+   6,
+   3
+  ],
+  "edge_ratio2_exact": "2",
+  "edge_ratio": 1.414214,
+  "dihedral_cos2_exact": [
+   "0(0)",
+   "+(1/4)"
+  ],
+  "dihedral_deg": [
+   90.0,
+   60.0
+  ],
+  "dihedral_count": [
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 4,
+  "height": "4/3",
+  "layer_vertices": 3,
+  "dim": 2
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "-4/3",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 2
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "-2/3",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 12,
+  "E": 21,
+  "F": 11,
+  "face_sizes": {
+   "3": 2,
+   "4": 9
+  },
+  "all_triangles": false,
+  "degrees": "444444333333",
+  "edge_len2_exact": [
+   "1/2",
+   "3/2",
+   "2"
+  ],
+  "edge_len": [
+   0.707107,
+   1.224745,
+   1.414214
+  ],
+  "edge_len_count": [
+   3,
+   12,
+   6
+  ],
+  "edge_ratio2_exact": "4",
+  "edge_ratio": 2.0,
+  "dihedral_cos2_exact": [
+   "-(3/11)",
+   "-(25/121)",
+   "-(2/11)"
+  ],
+  "dihedral_deg": [
+   121.4822,
+   117.0357,
+   115.2394
+  ],
+  "dihedral_count": [
+   6,
+   3,
+   12
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "0",
+  "central": true,
+  "at_vertex_layer": true,
+  "V": 18,
+  "E": 30,
+  "F": 14,
+  "face_sizes": {
+   "4": 12,
+   "6": 2
+  },
+  "all_triangles": false,
+  "degrees": "444444333333333333",
+  "edge_len2_exact": [
+   "1/2",
+   "3/2",
+   "2"
+  ],
+  "edge_len": [
+   0.707107,
+   1.224745,
+   1.414214
+  ],
+  "edge_len_count": [
+   12,
+   12,
+   6
+  ],
+  "edge_ratio2_exact": "4",
+  "edge_ratio": 2.0,
+  "dihedral_cos2_exact": [
+   "-(49/121)",
+   "-(3/11)",
+   "-(25/121)"
+  ],
+  "dihedral_deg": [
+   129.5212,
+   121.4822,
+   117.0357
+  ],
+  "dihedral_count": [
+   12,
+   12,
+   6
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "2/3",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 12,
+  "E": 21,
+  "F": 11,
+  "face_sizes": {
+   "3": 2,
+   "4": 9
+  },
+  "all_triangles": false,
+  "degrees": "444444333333",
+  "edge_len2_exact": [
+   "1/2",
+   "3/2",
+   "2"
+  ],
+  "edge_len": [
+   0.707107,
+   1.224745,
+   1.414214
+  ],
+  "edge_len_count": [
+   3,
+   12,
+   6
+  ],
+  "edge_ratio2_exact": "4",
+  "edge_ratio": 2.0,
+  "dihedral_cos2_exact": [
+   "-(3/11)",
+   "-(25/121)",
+   "-(2/11)"
+  ],
+  "dihedral_deg": [
+   121.4822,
+   117.0357,
+   115.2394
+  ],
+  "dihedral_count": [
+   6,
+   3,
+   12
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "4/3",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 2
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "cell-first",
+  "kind": "shadow",
+  "height": null,
+  "V": 12,
+  "E": 24,
+  "F": 14,
+  "face_sizes": {
+   "3": 8,
+   "4": 6
+  },
+  "all_triangles": false,
+  "degrees": "444444444444",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   24
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/3)"
+  ],
+  "dihedral_deg": [
+   125.2644
+  ],
+  "dihedral_count": [
+   24
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 0,
+  "height": "-1",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 12,
+  "F": 8,
+  "face_sizes": {
+   "3": 8
+  },
+  "all_triangles": true,
+  "degrees": "444444",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   12
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/9)"
+  ],
+  "dihedral_deg": [
+   109.4712
+  ],
+  "dihedral_count": [
+   12
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 1,
+  "height": "0",
+  "layer_vertices": 12,
+  "V": 12,
+  "E": 24,
+  "F": 14,
+  "face_sizes": {
+   "3": 8,
+   "4": 6
+  },
+  "all_triangles": false,
+  "degrees": "444444444444",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   24
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/3)"
+  ],
+  "dihedral_deg": [
+   125.2644
+  ],
+  "dihedral_count": [
+   24
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 2,
+  "height": "1",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 12,
+  "F": 8,
+  "face_sizes": {
+   "3": 8
+  },
+  "all_triangles": true,
+  "degrees": "444444",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   12
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/9)"
+  ],
+  "dihedral_deg": [
+   109.4712
+  ],
+  "dihedral_count": [
+   12
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "-1",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 6,
+  "E": 12,
+  "F": 8,
+  "face_sizes": {
+   "3": 8
+  },
+  "all_triangles": true,
+  "degrees": "444444",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   12
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/9)"
+  ],
+  "dihedral_deg": [
+   109.4712
+  ],
+  "dihedral_count": [
+   12
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "0",
+  "central": true,
+  "at_vertex_layer": true,
+  "V": 12,
+  "E": 24,
+  "F": 14,
+  "face_sizes": {
+   "3": 8,
+   "4": 6
+  },
+  "all_triangles": false,
+  "degrees": "444444444444",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   24
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/3)"
+  ],
+  "dihedral_deg": [
+   125.2644
+  ],
+  "dihedral_count": [
+   24
+  ]
+ },
+ {
+  "polytope": "24-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "1",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 6,
+  "E": 12,
+  "F": 8,
+  "face_sizes": {
+   "3": 8
+  },
+  "all_triangles": true,
+  "degrees": "444444",
+  "edge_len2_exact": [
+   "2"
+  ],
+  "edge_len": [
+   1.414214
+  ],
+  "edge_len_count": [
+   12
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/9)"
+  ],
+  "dihedral_deg": [
+   109.4712
+  ],
+  "dihedral_count": [
+   12
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "shadow",
+  "height": null,
+  "V": 42,
+  "E": 120,
+  "F": 80,
+  "face_sizes": {
+   "3": 80
+  },
+  "all_triangles": true,
+  "degrees": "666666666666666666666666666666555555555555",
+  "edge_len2_exact": [
+   "9/2 - 3/2\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   1.070466,
+   1.236068
+  ],
+  "edge_len_count": [
+   60,
+   60
+  ],
+  "edge_ratio2_exact": "4/3",
+  "edge_ratio": 1.154701,
+  "dihedral_cos2_exact": [
+   "-(23/32 + 3/32\u221a5)",
+   "-(5/6)"
+  ],
+  "dihedral_deg": [
+   164.4775,
+   155.9052
+  ],
+  "dihedral_count": [
+   60,
+   60
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 0,
+  "height": "-4",
+  "layer_vertices": 1,
+  "dim": 0
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 1,
+  "height": "-1 - \u221a5",
+  "layer_vertices": 12,
+  "V": 12,
+  "E": 30,
+  "F": 20,
+  "face_sizes": {
+   "3": 20
+  },
+  "all_triangles": true,
+  "degrees": "555555555555",
+  "edge_len2_exact": [
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   1.236068
+  ],
+  "edge_len_count": [
+   30
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(5/9)"
+  ],
+  "dihedral_deg": [
+   138.1897
+  ],
+  "dihedral_count": [
+   30
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 2,
+  "height": "-2",
+  "layer_vertices": 20,
+  "V": 20,
+  "E": 30,
+  "F": 12,
+  "face_sizes": {
+   "5": 12
+  },
+  "all_triangles": false,
+  "degrees": "33333333333333333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   1.236068
+  ],
+  "edge_len_count": [
+   30
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/5)"
+  ],
+  "dihedral_deg": [
+   116.5651
+  ],
+  "dihedral_count": [
+   30
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 3,
+  "height": "1 - \u221a5",
+  "layer_vertices": 12,
+  "V": 12,
+  "E": 30,
+  "F": 20,
+  "face_sizes": {
+   "3": 20
+  },
+  "all_triangles": true,
+  "degrees": "555555555555",
+  "edge_len2_exact": [
+   "4"
+  ],
+  "edge_len": [
+   2.0
+  ],
+  "edge_len_count": [
+   30
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(5/9)"
+  ],
+  "dihedral_deg": [
+   138.1897
+  ],
+  "dihedral_count": [
+   30
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 4,
+  "height": "0",
+  "layer_vertices": 30,
+  "V": 30,
+  "E": 60,
+  "F": 32,
+  "face_sizes": {
+   "3": 20,
+   "5": 12
+  },
+  "all_triangles": false,
+  "degrees": "444444444444444444444444444444",
+  "edge_len2_exact": [
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   1.236068
+  ],
+  "edge_len_count": [
+   60
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/3 + 2/15\u221a5)"
+  ],
+  "dihedral_deg": [
+   142.6226
+  ],
+  "dihedral_count": [
+   60
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 5,
+  "height": "-1 + \u221a5",
+  "layer_vertices": 12,
+  "V": 12,
+  "E": 30,
+  "F": 20,
+  "face_sizes": {
+   "3": 20
+  },
+  "all_triangles": true,
+  "degrees": "555555555555",
+  "edge_len2_exact": [
+   "4"
+  ],
+  "edge_len": [
+   2.0
+  ],
+  "edge_len_count": [
+   30
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(5/9)"
+  ],
+  "dihedral_deg": [
+   138.1897
+  ],
+  "dihedral_count": [
+   30
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 6,
+  "height": "2",
+  "layer_vertices": 20,
+  "V": 20,
+  "E": 30,
+  "F": 12,
+  "face_sizes": {
+   "5": 12
+  },
+  "all_triangles": false,
+  "degrees": "33333333333333333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   1.236068
+  ],
+  "edge_len_count": [
+   30
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/5)"
+  ],
+  "dihedral_deg": [
+   116.5651
+  ],
+  "dihedral_count": [
+   30
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 7,
+  "height": "1 + \u221a5",
+  "layer_vertices": 12,
+  "V": 12,
+  "E": 30,
+  "F": 20,
+  "face_sizes": {
+   "3": 20
+  },
+  "all_triangles": true,
+  "degrees": "555555555555",
+  "edge_len2_exact": [
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   1.236068
+  ],
+  "edge_len_count": [
+   30
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(5/9)"
+  ],
+  "dihedral_deg": [
+   138.1897
+  ],
+  "dihedral_count": [
+   30
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "layer",
+  "layer": 8,
+  "height": "4",
+  "layer_vertices": 1,
+  "dim": 0
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "-4",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 0
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "-1 - \u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 12,
+  "E": 30,
+  "F": 20,
+  "face_sizes": {
+   "3": 20
+  },
+  "all_triangles": true,
+  "degrees": "555555555555",
+  "edge_len2_exact": [
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   1.236068
+  ],
+  "edge_len_count": [
+   30
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(5/9)"
+  ],
+  "dihedral_deg": [
+   138.1897
+  ],
+  "dihedral_count": [
+   30
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "-2",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 32,
+  "E": 90,
+  "F": 60,
+  "face_sizes": {
+   "3": 60
+  },
+  "all_triangles": true,
+  "degrees": "66666666666666666666555555555555",
+  "edge_len2_exact": [
+   "28 - 12\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   1.080363,
+   1.236068
+  ],
+  "edge_len_count": [
+   60,
+   30
+  ],
+  "edge_ratio2_exact": "3/4 + 1/4\u221a5",
+  "edge_ratio": 1.144123,
+  "dihedral_cos2_exact": [
+   "-(1289/1681 + 96/1681\u221a5)",
+   "-(701/1681 + 240/1681\u221a5)"
+  ],
+  "dihedral_deg": [
+   161.0465,
+   149.0991
+  ],
+  "dihedral_count": [
+   60,
+   30
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "1 - \u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 72,
+  "E": 210,
+  "F": 140,
+  "face_sizes": {
+   "3": 140
+  },
+  "all_triangles": true,
+  "degrees": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "36 - 16\u221a5",
+   "14 - 6\u221a5",
+   "28 - 12\u221a5"
+  ],
+  "edge_len": [
+   0.472136,
+   0.763932,
+   1.080363
+  ],
+  "edge_len_count": [
+   60,
+   30,
+   120
+  ],
+  "edge_ratio2_exact": "3 + \u221a5",
+  "edge_ratio": 2.288246,
+  "dihedral_cos2_exact": [
+   "-(199/287 + 32/287\u221a5)",
+   "-(79/123 + 16/123\u221a5)",
+   "-(45/49)"
+  ],
+  "dihedral_deg": [
+   166.1501,
+   165.0154,
+   163.3985
+  ],
+  "dihedral_count": [
+   120,
+   60,
+   30
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "0",
+  "central": true,
+  "at_vertex_layer": true,
+  "V": 42,
+  "E": 120,
+  "F": 80,
+  "face_sizes": {
+   "3": 80
+  },
+  "all_triangles": true,
+  "degrees": "666666666666666666666666666666555555555555",
+  "edge_len2_exact": [
+   "9/2 - 3/2\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   1.070466,
+   1.236068
+  ],
+  "edge_len_count": [
+   60,
+   60
+  ],
+  "edge_ratio2_exact": "4/3",
+  "edge_ratio": 1.154701,
+  "dihedral_cos2_exact": [
+   "-(23/32 + 3/32\u221a5)",
+   "-(5/6)"
+  ],
+  "dihedral_deg": [
+   164.4775,
+   155.9052
+  ],
+  "dihedral_count": [
+   60,
+   60
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "-1 + \u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 72,
+  "E": 210,
+  "F": 140,
+  "face_sizes": {
+   "3": 140
+  },
+  "all_triangles": true,
+  "degrees": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "36 - 16\u221a5",
+   "14 - 6\u221a5",
+   "28 - 12\u221a5"
+  ],
+  "edge_len": [
+   0.472136,
+   0.763932,
+   1.080363
+  ],
+  "edge_len_count": [
+   60,
+   30,
+   120
+  ],
+  "edge_ratio2_exact": "3 + \u221a5",
+  "edge_ratio": 2.288246,
+  "dihedral_cos2_exact": [
+   "-(199/287 + 32/287\u221a5)",
+   "-(79/123 + 16/123\u221a5)",
+   "-(45/49)"
+  ],
+  "dihedral_deg": [
+   166.1501,
+   165.0154,
+   163.3985
+  ],
+  "dihedral_count": [
+   120,
+   60,
+   30
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "2",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 32,
+  "E": 90,
+  "F": 60,
+  "face_sizes": {
+   "3": 60
+  },
+  "all_triangles": true,
+  "degrees": "66666666666666666666555555555555",
+  "edge_len2_exact": [
+   "28 - 12\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   1.080363,
+   1.236068
+  ],
+  "edge_len_count": [
+   60,
+   30
+  ],
+  "edge_ratio2_exact": "3/4 + 1/4\u221a5",
+  "edge_ratio": 1.144123,
+  "dihedral_cos2_exact": [
+   "-(1289/1681 + 96/1681\u221a5)",
+   "-(701/1681 + 240/1681\u221a5)"
+  ],
+  "dihedral_deg": [
+   161.0465,
+   149.0991
+  ],
+  "dihedral_count": [
+   60,
+   30
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "1 + \u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 12,
+  "E": 30,
+  "F": 20,
+  "face_sizes": {
+   "3": 20
+  },
+  "all_triangles": true,
+  "degrees": "555555555555",
+  "edge_len2_exact": [
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   1.236068
+  ],
+  "edge_len_count": [
+   30
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(5/9)"
+  ],
+  "dihedral_deg": [
+   138.1897
+  ],
+  "dihedral_count": [
+   30
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "vertex-first",
+  "kind": "slice",
+  "height": "4",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 0
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "shadow",
+  "height": null,
+  "V": 52,
+  "E": 130,
+  "F": 80,
+  "face_sizes": {
+   "3": 60,
+   "4": 20
+  },
+  "all_triangles": false,
+  "degrees": [
+   10,
+   10,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4
+  ],
+  "edge_len2_exact": [
+   "4 - 8/5\u221a5",
+   "11/2 - 21/10\u221a5",
+   "2 - 2/5\u221a5",
+   "11/2 - 19/10\u221a5",
+   "5 - 8/5\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.649839,
+   0.896804,
+   1.051462,
+   1.118692,
+   1.192599,
+   1.236068
+  ],
+  "edge_len_count": [
+   20,
+   20,
+   20,
+   20,
+   40,
+   10
+  ],
+  "edge_ratio2_exact": "5/2 + 1/2\u221a5",
+  "edge_ratio": 1.902113,
+  "dihedral_cos2_exact": [
+   "-(35/72 + 5/24\u221a5)",
+   "-(219/248 + 1/744\u221a5)",
+   "-(621/961 + 88/961\u221a5)",
+   "-(5/6)",
+   "-(15/32 + 5/32\u221a5)"
+  ],
+  "dihedral_deg": [
+   167.3389,
+   160.2732,
+   157.2907,
+   155.9052,
+   154.7572
+  ],
+  "dihedral_count": [
+   20,
+   40,
+   10,
+   40,
+   20
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 0,
+  "height": "-5/2 - 1/2\u221a5",
+  "layer_vertices": 2,
+  "dim": 1
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 1,
+  "height": "-1 - \u221a5",
+  "layer_vertices": 5,
+  "dim": 2
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 2,
+  "height": "-3/2 - 1/2\u221a5",
+  "layer_vertices": 10,
+  "V": 10,
+  "E": 15,
+  "F": 7,
+  "face_sizes": {
+   "4": 5,
+   "5": 2
+  },
+  "all_triangles": false,
+  "degrees": "3333333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "4"
+  ],
+  "edge_len": [
+   1.236068,
+   2.0
+  ],
+  "edge_len_count": [
+   10,
+   5
+  ],
+  "edge_ratio2_exact": "3/2 + 1/2\u221a5",
+  "edge_ratio": 1.618034,
+  "dihedral_cos2_exact": [
+   "-(3/8 - 1/8\u221a5)",
+   "0(0)"
+  ],
+  "dihedral_deg": [
+   108.0,
+   90.0
+  ],
+  "dihedral_count": [
+   5,
+   10
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 3,
+  "height": "-\u221a5",
+  "layer_vertices": 2,
+  "dim": 1
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 4,
+  "height": "-2",
+  "layer_vertices": 5,
+  "dim": 2
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 5,
+  "height": "-1/2 - 1/2\u221a5",
+  "layer_vertices": 10,
+  "V": 10,
+  "E": 15,
+  "F": 7,
+  "face_sizes": {
+   "4": 5,
+   "5": 2
+  },
+  "all_triangles": false,
+  "degrees": "3333333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "4"
+  ],
+  "edge_len": [
+   1.236068,
+   2.0
+  ],
+  "edge_len_count": [
+   5,
+   10
+  ],
+  "edge_ratio2_exact": "3/2 + 1/2\u221a5",
+  "edge_ratio": 1.618034,
+  "dihedral_cos2_exact": [
+   "-(3/8 - 1/8\u221a5)",
+   "0(0)"
+  ],
+  "dihedral_deg": [
+   108.0,
+   90.0
+  ],
+  "dihedral_count": [
+   5,
+   10
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 6,
+  "height": "-1",
+  "layer_vertices": 10,
+  "V": 10,
+  "E": 15,
+  "F": 7,
+  "face_sizes": {
+   "4": 5,
+   "5": 2
+  },
+  "all_triangles": false,
+  "degrees": "3333333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "6 + 2\u221a5"
+  ],
+  "edge_len": [
+   1.236068,
+   3.236068
+  ],
+  "edge_len_count": [
+   10,
+   5
+  ],
+  "edge_ratio2_exact": "7/2 + 3/2\u221a5",
+  "edge_ratio": 2.618034,
+  "dihedral_cos2_exact": [
+   "-(3/8 - 1/8\u221a5)",
+   "0(0)"
+  ],
+  "dihedral_deg": [
+   108.0,
+   90.0
+  ],
+  "dihedral_count": [
+   5,
+   10
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 7,
+  "height": "1/2 - 1/2\u221a5",
+  "layer_vertices": 10,
+  "V": 10,
+  "E": 15,
+  "F": 7,
+  "face_sizes": {
+   "4": 5,
+   "5": 2
+  },
+  "all_triangles": false,
+  "degrees": "3333333333",
+  "edge_len2_exact": [
+   "4"
+  ],
+  "edge_len": [
+   2.0
+  ],
+  "edge_len_count": [
+   15
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(3/8 - 1/8\u221a5)",
+   "0(0)"
+  ],
+  "dihedral_deg": [
+   108.0,
+   90.0
+  ],
+  "dihedral_count": [
+   5,
+   10
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 8,
+  "height": "0",
+  "layer_vertices": 12,
+  "V": 12,
+  "E": 30,
+  "F": 20,
+  "face_sizes": {
+   "3": 20
+  },
+  "all_triangles": true,
+  "degrees": [
+   10,
+   10,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4
+  ],
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "8"
+  ],
+  "edge_len": [
+   1.236068,
+   2.828427
+  ],
+  "edge_len_count": [
+   10,
+   20
+  ],
+  "edge_ratio2_exact": "3 + \u221a5",
+  "edge_ratio": 2.288246,
+  "dihedral_cos2_exact": [
+   "-(681/1681 + 304/1681\u221a5)",
+   "-(201/1681 - 88/1681\u221a5)"
+  ],
+  "dihedral_deg": [
+   154.1214,
+   92.874
+  ],
+  "dihedral_count": [
+   20,
+   10
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 9,
+  "height": "-1/2 + 1/2\u221a5",
+  "layer_vertices": 10,
+  "V": 10,
+  "E": 15,
+  "F": 7,
+  "face_sizes": {
+   "4": 5,
+   "5": 2
+  },
+  "all_triangles": false,
+  "degrees": "3333333333",
+  "edge_len2_exact": [
+   "4"
+  ],
+  "edge_len": [
+   2.0
+  ],
+  "edge_len_count": [
+   15
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(3/8 - 1/8\u221a5)",
+   "0(0)"
+  ],
+  "dihedral_deg": [
+   108.0,
+   90.0
+  ],
+  "dihedral_count": [
+   5,
+   10
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 10,
+  "height": "1",
+  "layer_vertices": 10,
+  "V": 10,
+  "E": 15,
+  "F": 7,
+  "face_sizes": {
+   "4": 5,
+   "5": 2
+  },
+  "all_triangles": false,
+  "degrees": "3333333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "6 + 2\u221a5"
+  ],
+  "edge_len": [
+   1.236068,
+   3.236068
+  ],
+  "edge_len_count": [
+   10,
+   5
+  ],
+  "edge_ratio2_exact": "7/2 + 3/2\u221a5",
+  "edge_ratio": 2.618034,
+  "dihedral_cos2_exact": [
+   "-(3/8 - 1/8\u221a5)",
+   "0(0)"
+  ],
+  "dihedral_deg": [
+   108.0,
+   90.0
+  ],
+  "dihedral_count": [
+   5,
+   10
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 11,
+  "height": "1/2 + 1/2\u221a5",
+  "layer_vertices": 10,
+  "V": 10,
+  "E": 15,
+  "F": 7,
+  "face_sizes": {
+   "4": 5,
+   "5": 2
+  },
+  "all_triangles": false,
+  "degrees": "3333333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "4"
+  ],
+  "edge_len": [
+   1.236068,
+   2.0
+  ],
+  "edge_len_count": [
+   5,
+   10
+  ],
+  "edge_ratio2_exact": "3/2 + 1/2\u221a5",
+  "edge_ratio": 1.618034,
+  "dihedral_cos2_exact": [
+   "-(3/8 - 1/8\u221a5)",
+   "0(0)"
+  ],
+  "dihedral_deg": [
+   108.0,
+   90.0
+  ],
+  "dihedral_count": [
+   5,
+   10
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 12,
+  "height": "2",
+  "layer_vertices": 5,
+  "dim": 2
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 13,
+  "height": "\u221a5",
+  "layer_vertices": 2,
+  "dim": 1
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 14,
+  "height": "3/2 + 1/2\u221a5",
+  "layer_vertices": 10,
+  "V": 10,
+  "E": 15,
+  "F": 7,
+  "face_sizes": {
+   "4": 5,
+   "5": 2
+  },
+  "all_triangles": false,
+  "degrees": "3333333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "4"
+  ],
+  "edge_len": [
+   1.236068,
+   2.0
+  ],
+  "edge_len_count": [
+   10,
+   5
+  ],
+  "edge_ratio2_exact": "3/2 + 1/2\u221a5",
+  "edge_ratio": 1.618034,
+  "dihedral_cos2_exact": [
+   "-(3/8 - 1/8\u221a5)",
+   "0(0)"
+  ],
+  "dihedral_deg": [
+   108.0,
+   90.0
+  ],
+  "dihedral_count": [
+   5,
+   10
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 15,
+  "height": "1 + \u221a5",
+  "layer_vertices": 5,
+  "dim": 2
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "layer",
+  "layer": 16,
+  "height": "5/2 + 1/2\u221a5",
+  "layer_vertices": 2,
+  "dim": 1
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "-5/2 - 1/2\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 1
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "-1 - \u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 17,
+  "E": 45,
+  "F": 30,
+  "face_sizes": {
+   "3": 30
+  },
+  "all_triangles": true,
+  "degrees": "66666555555555555",
+  "edge_len2_exact": [
+   "144/5 - 64/5\u221a5",
+   "36 - 16\u221a5",
+   "28 - 12\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.422291,
+   0.472136,
+   1.080363,
+   1.236068
+  ],
+  "edge_len_count": [
+   10,
+   10,
+   20,
+   5
+  ],
+  "edge_ratio2_exact": "35/8 + 15/8\u221a5",
+  "edge_ratio": 2.927051,
+  "dihedral_cos2_exact": [
+   "-(391/451 - 8/451\u221a5)",
+   "-(81/121 + 8/121\u221a5)",
+   "-(21/41 + 4/41\u221a5)",
+   "-(201/1681 + 88/1681\u221a5)"
+  ],
+  "dihedral_deg": [
+   155.4445,
+   154.6922,
+   148.716,
+   119.1072
+  ],
+  "dihedral_count": [
+   10,
+   10,
+   20,
+   5
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "-3/2 - 1/2\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 32,
+  "E": 90,
+  "F": 60,
+  "face_sizes": {
+   "3": 60
+  },
+  "all_triangles": true,
+  "degrees": "77777777775555555555555555555555",
+  "edge_len2_exact": [
+   "36 - 16\u221a5",
+   "61/2 - 27/2\u221a5",
+   "3/2 - 1/2\u221a5",
+   "9/2 - 3/2\u221a5",
+   "28 - 12\u221a5",
+   "24/5 - 8/5\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.472136,
+   0.559538,
+   0.618034,
+   1.070466,
+   1.080363,
+   1.105573,
+   1.236068
+  ],
+  "edge_len_count": [
+   5,
+   20,
+   5,
+   20,
+   20,
+   10,
+   10
+  ],
+  "edge_ratio2_exact": "7/2 + 3/2\u221a5",
+  "edge_ratio": 2.618034,
+  "dihedral_cos2_exact": [
+   "-(235/319 + 24/319\u221a5)",
+   "-(425/638 + 65/638\u221a5)",
+   "-(903/968 - 19/968\u221a5)",
+   "-(865/1189 + 76/1189\u221a5)",
+   "-(81/121 + 8/121\u221a5)",
+   "-(211/451 + 32/451\u221a5)"
+  ],
+  "dihedral_deg": [
+   162.039,
+   160.9955,
+   160.5354,
+   158.9024,
+   154.6922,
+   142.3279
+  ],
+  "dihedral_count": [
+   20,
+   20,
+   5,
+   20,
+   15,
+   10
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "-\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 82,
+  "E": 210,
+  "F": 130,
+  "face_sizes": {
+   "3": 100,
+   "4": 30
+  },
+  "all_triangles": false,
+  "degrees": [
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "9 - 4\u221a5",
+   "132 - 59\u221a5",
+   "94 - 42\u221a5",
+   "27 - 12\u221a5",
+   "188 - 84\u221a5",
+   "72 - 32\u221a5",
+   "34 - 15\u221a5",
+   "14 - 6\u221a5",
+   "12 - 5\u221a5",
+   "144 - 64\u221a5",
+   "122 - 54\u221a5"
+  ],
+  "edge_len": [
+   0.236068,
+   0.268308,
+   0.291796,
+   0.408882,
+   0.412662,
+   0.667701,
+   0.677481,
+   0.763932,
+   0.905351,
+   0.944272,
+   1.119075
+  ],
+  "edge_len_count": [
+   5,
+   20,
+   10,
+   40,
+   20,
+   40,
+   10,
+   15,
+   20,
+   10,
+   20
+  ],
+  "edge_ratio2_exact": "18 + 2\u221a5",
+  "edge_ratio": 4.740478,
+  "dihedral_cos2_exact": [
+   "-(5865/6989 + 404/6989\u221a5)",
+   "-(21/41 + 8/41\u221a5)",
+   "-(625/1189 + 220/1189\u221a5)",
+   "-(5047/5302 - 49/5302\u221a5)",
+   "-(1926/2651 + 234/2651\u221a5)",
+   "-(190/319 + 46/319\u221a5)",
+   "-(5825/6989 + 264/6989\u221a5)",
+   "-(42081/58081 + 4732/58081\u221a5)",
+   "-(235/319 + 24/319\u221a5)",
+   "-(807/902 + 1/902\u221a5)",
+   "-(425/638 + 65/638\u221a5)",
+   "-(903/968 - 19/968\u221a5)",
+   "-(865/1189 + 76/1189\u221a5)",
+   "-(81/121 + 8/121\u221a5)"
+  ],
+  "dihedral_deg": [
+   169.7657,
+   166.8834,
+   165.7478,
+   164.7981,
+   163.9858,
+   163.3657,
+   163.3514,
+   162.2148,
+   162.039,
+   161.2953,
+   160.9955,
+   160.5354,
+   158.9024,
+   154.6922
+  ],
+  "dihedral_count": [
+   20,
+   10,
+   20,
+   10,
+   20,
+   20,
+   20,
+   10,
+   20,
+   10,
+   20,
+   5,
+   20,
+   5
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "-2",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 77,
+  "E": 205,
+  "F": 130,
+  "face_sizes": {
+   "3": 110,
+   "4": 20
+  },
+  "all_triangles": false,
+  "degrees": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "74/5 - 33/5\u221a5",
+   "9 - 4\u221a5",
+   "188 - 84\u221a5",
+   "101/2 - 45/2\u221a5",
+   "36 - 16\u221a5",
+   "21/2 - 9/2\u221a5",
+   "72 - 32\u221a5",
+   "14 - 6\u221a5",
+   "12 - 5\u221a5",
+   "144 - 64\u221a5",
+   "28 - 12\u221a5",
+   "27/2 - 11/2\u221a5",
+   "122 - 54\u221a5"
+  ],
+  "edge_len": [
+   0.20482,
+   0.236068,
+   0.412662,
+   0.434132,
+   0.472136,
+   0.661585,
+   0.667701,
+   0.763932,
+   0.905351,
+   0.944272,
+   1.080363,
+   1.096187,
+   1.119075
+  ],
+  "edge_len_count": [
+   10,
+   10,
+   20,
+   20,
+   20,
+   20,
+   20,
+   10,
+   20,
+   5,
+   20,
+   10,
+   20
+  ],
+  "edge_ratio2_exact": "590/31 + 150/31\u221a5",
+  "edge_ratio": 5.463693,
+  "dihedral_cos2_exact": [
+   "-(5865/6989 + 404/6989\u221a5)",
+   "-(49601/67721 + 6952/67721\u221a5)",
+   "-(21/41 + 8/41\u221a5)",
+   "-(625/1189 + 220/1189\u221a5)",
+   "-(5047/5302 - 49/5302\u221a5)",
+   "-(1926/2651 + 234/2651\u221a5)",
+   "-(60081/78961 + 5668/78961\u221a5)",
+   "-(190/319 + 46/319\u221a5)",
+   "-(5825/6989 + 264/6989\u221a5)",
+   "-(42081/58081 + 4732/58081\u221a5)",
+   "-(807/902 + 1/902\u221a5)",
+   "-(425/638 + 65/638\u221a5)",
+   "-(903/968 - 19/968\u221a5)",
+   "-(865/1189 + 76/1189\u221a5)"
+  ],
+  "dihedral_deg": [
+   169.7657,
+   168.7558,
+   166.8834,
+   165.7478,
+   164.7981,
+   163.9858,
+   163.719,
+   163.3657,
+   163.3514,
+   162.2148,
+   161.2953,
+   160.9955,
+   160.5354,
+   158.9024
+  ],
+  "dihedral_count": [
+   20,
+   10,
+   10,
+   20,
+   10,
+   20,
+   10,
+   20,
+   20,
+   10,
+   10,
+   20,
+   5,
+   20
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "-1/2 - 1/2\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 72,
+  "E": 200,
+  "F": 130,
+  "face_sizes": {
+   "3": 120,
+   "4": 10
+  },
+  "all_triangles": false,
+  "degrees": "999999999955555555555555555555555555555555555555555555555555555555555555",
+  "edge_len2_exact": [
+   "9 - 4\u221a5",
+   "34/5 - 3\u221a5",
+   "36 - 16\u221a5",
+   "23/10 - 9/10\u221a5",
+   "61/2 - 27/2\u221a5",
+   "3/2 - 1/2\u221a5",
+   "39/2 - 17/2\u221a5",
+   "14 - 6\u221a5",
+   "13/10 - 3/10\u221a5",
+   "9/2 - 3/2\u221a5",
+   "28 - 12\u221a5",
+   "24/5 - 8/5\u221a5",
+   "8 - 3\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.236068,
+   0.302979,
+   0.472136,
+   0.536226,
+   0.559538,
+   0.618034,
+   0.70244,
+   0.763932,
+   0.793208,
+   1.070466,
+   1.080363,
+   1.105573,
+   1.136572,
+   1.236068
+  ],
+  "edge_len_count": [
+   5,
+   20,
+   10,
+   10,
+   20,
+   10,
+   20,
+   10,
+   10,
+   20,
+   20,
+   20,
+   20,
+   5
+  ],
+  "edge_ratio2_exact": "14 + 6\u221a5",
+  "edge_ratio": 5.236068,
+  "dihedral_cos2_exact": [
+   "-(49601/67721 + 6952/67721\u221a5)",
+   "-(625/1189 + 220/1189\u221a5)",
+   "-(201/281 + 28/281\u221a5)",
+   "-(5047/5302 - 49/5302\u221a5)",
+   "-(67401/78961 + 2552/78961\u221a5)",
+   "-(4677/6182 + 467/6182\u221a5)",
+   "-(1926/2651 + 234/2651\u221a5)",
+   "-(60081/78961 + 5668/78961\u221a5)",
+   "-(190/319 + 46/319\u221a5)",
+   "-(5825/6989 + 264/6989\u221a5)",
+   "-(42081/58081 + 4732/58081\u221a5)",
+   "-(807/902 + 1/902\u221a5)",
+   "-(383/968 + 171/968\u221a5)"
+  ],
+  "dihedral_deg": [
+   168.7558,
+   165.7478,
+   165.5953,
+   164.7981,
+   164.2005,
+   164.1568,
+   163.9858,
+   163.719,
+   163.3657,
+   163.3514,
+   162.2148,
+   161.2953,
+   152.7724
+  ],
+  "dihedral_count": [
+   30,
+   20,
+   20,
+   10,
+   5,
+   20,
+   20,
+   10,
+   20,
+   20,
+   10,
+   10,
+   5
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "-1",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 92,
+  "E": 245,
+  "F": 155,
+  "face_sizes": {
+   "3": 130,
+   "4": 25
+  },
+  "all_triangles": false,
+  "degrees": "88888888885555555555555555555555555555555555555555555555555555555555555555555555555555555555",
+  "edge_len2_exact": [
+   "34/5 - 3\u221a5",
+   "27 - 12\u221a5",
+   "144/5 - 64/5\u221a5",
+   "36 - 16\u221a5",
+   "3/2 - 1/2\u221a5",
+   "114/5 - 10\u221a5",
+   "72 - 32\u221a5",
+   "39/2 - 17/2\u221a5",
+   "14 - 6\u221a5",
+   "13/10 - 3/10\u221a5",
+   "46/5 - 18/5\u221a5",
+   "28 - 12\u221a5",
+   "24/5 - 8/5\u221a5",
+   "8 - 3\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.302979,
+   0.408882,
+   0.422291,
+   0.472136,
+   0.618034,
+   0.662812,
+   0.667701,
+   0.70244,
+   0.763932,
+   0.793208,
+   1.072453,
+   1.080363,
+   1.105573,
+   1.136572,
+   1.236068
+  ],
+  "edge_len_count": [
+   10,
+   20,
+   40,
+   10,
+   5,
+   20,
+   20,
+   20,
+   10,
+   20,
+   10,
+   20,
+   10,
+   20,
+   10
+  ],
+  "edge_ratio2_exact": "270/31 + 110/31\u221a5",
+  "edge_ratio": 4.07972,
+  "dihedral_cos2_exact": [
+   "-(6145/8149 + 836/8149\u221a5)",
+   "-(49601/67721 + 6952/67721\u221a5)",
+   "-(62261/67721 + 1276/67721\u221a5)",
+   "-(6/11 + 2/11\u221a5)",
+   "-(63/88 + 9/88\u221a5)",
+   "-(201/281 + 28/281\u221a5)",
+   "-(47241/67721 + 7092/67721\u221a5)",
+   "-(1731/2651 + 328/2651\u221a5)",
+   "-(67401/78961 + 2552/78961\u221a5)",
+   "-(4677/6182 + 467/6182\u221a5)",
+   "-(60081/78961 + 5668/78961\u221a5)",
+   "-(190/319 + 46/319\u221a5)",
+   "-(5825/6989 + 264/6989\u221a5)",
+   "-(42081/58081 + 4732/58081\u221a5)",
+   "-(3527/6182 + 639/6182\u221a5)"
+  ],
+  "dihedral_deg": [
+   172.6146,
+   168.7558,
+   168.6854,
+   167.3461,
+   166.3862,
+   165.5953,
+   164.8562,
+   164.616,
+   164.2005,
+   164.1568,
+   163.719,
+   163.3657,
+   163.3514,
+   162.2148,
+   153.5539
+  ],
+  "dihedral_count": [
+   20,
+   20,
+   20,
+   10,
+   10,
+   20,
+   20,
+   20,
+   15,
+   20,
+   10,
+   20,
+   20,
+   10,
+   10
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "1/2 - 1/2\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 92,
+  "E": 255,
+  "F": 165,
+  "face_sizes": {
+   "3": 150,
+   "4": 15
+  },
+  "all_triangles": false,
+  "degrees": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "9 - 4\u221a5",
+   "132 - 59\u221a5",
+   "27 - 12\u221a5",
+   "101/2 - 45/2\u221a5",
+   "36 - 16\u221a5",
+   "114/5 - 10\u221a5",
+   "56/5 - 24/5\u221a5",
+   "14 - 6\u221a5",
+   "576/5 - 256/5\u221a5",
+   "35/2 - 15/2\u221a5",
+   "1",
+   "46/5 - 18/5\u221a5",
+   "28 - 12\u221a5",
+   "27/2 - 11/2\u221a5",
+   "122 - 54\u221a5",
+   "8 - 3\u221a5"
+  ],
+  "edge_len": [
+   0.236068,
+   0.268308,
+   0.408882,
+   0.434132,
+   0.472136,
+   0.662812,
+   0.683282,
+   0.763932,
+   0.844582,
+   0.854102,
+   1.0,
+   1.072453,
+   1.080363,
+   1.096187,
+   1.119075,
+   1.136572
+  ],
+  "edge_len_count": [
+   10,
+   20,
+   20,
+   20,
+   10,
+   10,
+   20,
+   20,
+   10,
+   5,
+   10,
+   20,
+   20,
+   20,
+   20,
+   20
+  ],
+  "edge_ratio2_exact": "12 + 5\u221a5",
+  "edge_ratio": 4.814597,
+  "dihedral_cos2_exact": [
+   "-(261/281 + 72/3091\u221a5)",
+   "-(855/1124 + 101/1124\u221a5)",
+   "-(62261/67721 + 1276/67721\u221a5)",
+   "-(6/11 + 2/11\u221a5)",
+   "-(61/121 + 24/121\u221a5)",
+   "-(63/88 + 9/88\u221a5)",
+   "-(775/964 + 59/964\u221a5)",
+   "-(201/281 + 28/281\u221a5)",
+   "-(47241/67721 + 7092/67721\u221a5)",
+   "-(1731/2651 + 328/2651\u221a5)",
+   "-(67401/78961 + 2552/78961\u221a5)",
+   "-(4677/6182 + 467/6182\u221a5)",
+   "-(60081/78961 + 5668/78961\u221a5)"
+  ],
+  "dihedral_deg": [
+   172.0585,
+   168.6998,
+   168.6854,
+   167.3461,
+   166.7735,
+   166.3862,
+   165.9176,
+   165.5953,
+   164.8562,
+   164.616,
+   164.2005,
+   164.1568,
+   163.719
+  ],
+  "dihedral_count": [
+   10,
+   20,
+   20,
+   10,
+   20,
+   10,
+   40,
+   20,
+   20,
+   40,
+   15,
+   20,
+   10
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "0",
+  "central": true,
+  "at_vertex_layer": true,
+  "V": 92,
+  "E": 250,
+  "F": 160,
+  "face_sizes": {
+   "3": 140,
+   "4": 20
+  },
+  "all_triangles": false,
+  "degrees": [
+   10,
+   10,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "144/5 - 64/5\u221a5",
+   "23/10 - 9/10\u221a5",
+   "61/2 - 27/2\u221a5",
+   "3/2 - 1/2\u221a5",
+   "39/2 - 17/2\u221a5",
+   "9/2 - 3/2\u221a5",
+   "24/5 - 8/5\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.422291,
+   0.536226,
+   0.559538,
+   0.618034,
+   0.70244,
+   1.070466,
+   1.105573,
+   1.236068
+  ],
+  "edge_len_count": [
+   20,
+   40,
+   40,
+   20,
+   40,
+   40,
+   40,
+   10
+  ],
+  "edge_ratio2_exact": "35/8 + 15/8\u221a5",
+  "edge_ratio": 2.927051,
+  "dihedral_cos2_exact": [
+   "-(39781/58081 + 7656/58081\u221a5)",
+   "-(855/1124 + 101/1124\u221a5)",
+   "-(61/121 + 24/121\u221a5)",
+   "-(775/964 + 59/964\u221a5)",
+   "-(47241/67721 + 7092/67721\u221a5)",
+   "-(1731/2651 + 328/2651\u221a5)",
+   "-(67401/78961 + 2552/78961\u221a5)",
+   "-(81/121 + 8/121\u221a5)"
+  ],
+  "dihedral_deg": [
+   171.8031,
+   168.6998,
+   166.7735,
+   165.9176,
+   164.8562,
+   164.616,
+   164.2005,
+   154.6922
+  ],
+  "dihedral_count": [
+   20,
+   40,
+   20,
+   40,
+   40,
+   60,
+   20,
+   10
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "-1/2 + 1/2\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 92,
+  "E": 255,
+  "F": 165,
+  "face_sizes": {
+   "3": 150,
+   "4": 15
+  },
+  "all_triangles": false,
+  "degrees": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "9 - 4\u221a5",
+   "132 - 59\u221a5",
+   "27 - 12\u221a5",
+   "101/2 - 45/2\u221a5",
+   "36 - 16\u221a5",
+   "114/5 - 10\u221a5",
+   "56/5 - 24/5\u221a5",
+   "14 - 6\u221a5",
+   "576/5 - 256/5\u221a5",
+   "35/2 - 15/2\u221a5",
+   "1",
+   "46/5 - 18/5\u221a5",
+   "28 - 12\u221a5",
+   "27/2 - 11/2\u221a5",
+   "122 - 54\u221a5",
+   "8 - 3\u221a5"
+  ],
+  "edge_len": [
+   0.236068,
+   0.268308,
+   0.408882,
+   0.434132,
+   0.472136,
+   0.662812,
+   0.683282,
+   0.763932,
+   0.844582,
+   0.854102,
+   1.0,
+   1.072453,
+   1.080363,
+   1.096187,
+   1.119075,
+   1.136572
+  ],
+  "edge_len_count": [
+   10,
+   20,
+   20,
+   20,
+   10,
+   10,
+   20,
+   20,
+   10,
+   5,
+   10,
+   20,
+   20,
+   20,
+   20,
+   20
+  ],
+  "edge_ratio2_exact": "12 + 5\u221a5",
+  "edge_ratio": 4.814597,
+  "dihedral_cos2_exact": [
+   "-(261/281 + 72/3091\u221a5)",
+   "-(855/1124 + 101/1124\u221a5)",
+   "-(62261/67721 + 1276/67721\u221a5)",
+   "-(6/11 + 2/11\u221a5)",
+   "-(61/121 + 24/121\u221a5)",
+   "-(63/88 + 9/88\u221a5)",
+   "-(775/964 + 59/964\u221a5)",
+   "-(201/281 + 28/281\u221a5)",
+   "-(47241/67721 + 7092/67721\u221a5)",
+   "-(1731/2651 + 328/2651\u221a5)",
+   "-(67401/78961 + 2552/78961\u221a5)",
+   "-(4677/6182 + 467/6182\u221a5)",
+   "-(60081/78961 + 5668/78961\u221a5)"
+  ],
+  "dihedral_deg": [
+   172.0585,
+   168.6998,
+   168.6854,
+   167.3461,
+   166.7735,
+   166.3862,
+   165.9176,
+   165.5953,
+   164.8562,
+   164.616,
+   164.2005,
+   164.1568,
+   163.719
+  ],
+  "dihedral_count": [
+   10,
+   20,
+   20,
+   10,
+   20,
+   10,
+   40,
+   20,
+   20,
+   40,
+   15,
+   20,
+   10
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "1",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 92,
+  "E": 245,
+  "F": 155,
+  "face_sizes": {
+   "3": 130,
+   "4": 25
+  },
+  "all_triangles": false,
+  "degrees": "88888888885555555555555555555555555555555555555555555555555555555555555555555555555555555555",
+  "edge_len2_exact": [
+   "34/5 - 3\u221a5",
+   "27 - 12\u221a5",
+   "144/5 - 64/5\u221a5",
+   "36 - 16\u221a5",
+   "3/2 - 1/2\u221a5",
+   "114/5 - 10\u221a5",
+   "72 - 32\u221a5",
+   "39/2 - 17/2\u221a5",
+   "14 - 6\u221a5",
+   "13/10 - 3/10\u221a5",
+   "46/5 - 18/5\u221a5",
+   "28 - 12\u221a5",
+   "24/5 - 8/5\u221a5",
+   "8 - 3\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.302979,
+   0.408882,
+   0.422291,
+   0.472136,
+   0.618034,
+   0.662812,
+   0.667701,
+   0.70244,
+   0.763932,
+   0.793208,
+   1.072453,
+   1.080363,
+   1.105573,
+   1.136572,
+   1.236068
+  ],
+  "edge_len_count": [
+   10,
+   20,
+   40,
+   10,
+   5,
+   20,
+   20,
+   20,
+   10,
+   20,
+   10,
+   20,
+   10,
+   20,
+   10
+  ],
+  "edge_ratio2_exact": "270/31 + 110/31\u221a5",
+  "edge_ratio": 4.07972,
+  "dihedral_cos2_exact": [
+   "-(6145/8149 + 836/8149\u221a5)",
+   "-(49601/67721 + 6952/67721\u221a5)",
+   "-(62261/67721 + 1276/67721\u221a5)",
+   "-(6/11 + 2/11\u221a5)",
+   "-(63/88 + 9/88\u221a5)",
+   "-(201/281 + 28/281\u221a5)",
+   "-(47241/67721 + 7092/67721\u221a5)",
+   "-(1731/2651 + 328/2651\u221a5)",
+   "-(67401/78961 + 2552/78961\u221a5)",
+   "-(4677/6182 + 467/6182\u221a5)",
+   "-(60081/78961 + 5668/78961\u221a5)",
+   "-(190/319 + 46/319\u221a5)",
+   "-(5825/6989 + 264/6989\u221a5)",
+   "-(42081/58081 + 4732/58081\u221a5)",
+   "-(3527/6182 + 639/6182\u221a5)"
+  ],
+  "dihedral_deg": [
+   172.6146,
+   168.7558,
+   168.6854,
+   167.3461,
+   166.3862,
+   165.5953,
+   164.8562,
+   164.616,
+   164.2005,
+   164.1568,
+   163.719,
+   163.3657,
+   163.3514,
+   162.2148,
+   153.5539
+  ],
+  "dihedral_count": [
+   20,
+   20,
+   20,
+   10,
+   10,
+   20,
+   20,
+   20,
+   15,
+   20,
+   10,
+   20,
+   20,
+   10,
+   10
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "1/2 + 1/2\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 72,
+  "E": 200,
+  "F": 130,
+  "face_sizes": {
+   "3": 120,
+   "4": 10
+  },
+  "all_triangles": false,
+  "degrees": "999999999955555555555555555555555555555555555555555555555555555555555555",
+  "edge_len2_exact": [
+   "9 - 4\u221a5",
+   "34/5 - 3\u221a5",
+   "36 - 16\u221a5",
+   "23/10 - 9/10\u221a5",
+   "61/2 - 27/2\u221a5",
+   "3/2 - 1/2\u221a5",
+   "39/2 - 17/2\u221a5",
+   "14 - 6\u221a5",
+   "13/10 - 3/10\u221a5",
+   "9/2 - 3/2\u221a5",
+   "28 - 12\u221a5",
+   "24/5 - 8/5\u221a5",
+   "8 - 3\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.236068,
+   0.302979,
+   0.472136,
+   0.536226,
+   0.559538,
+   0.618034,
+   0.70244,
+   0.763932,
+   0.793208,
+   1.070466,
+   1.080363,
+   1.105573,
+   1.136572,
+   1.236068
+  ],
+  "edge_len_count": [
+   5,
+   20,
+   10,
+   10,
+   20,
+   10,
+   20,
+   10,
+   10,
+   20,
+   20,
+   20,
+   20,
+   5
+  ],
+  "edge_ratio2_exact": "14 + 6\u221a5",
+  "edge_ratio": 5.236068,
+  "dihedral_cos2_exact": [
+   "-(49601/67721 + 6952/67721\u221a5)",
+   "-(625/1189 + 220/1189\u221a5)",
+   "-(201/281 + 28/281\u221a5)",
+   "-(5047/5302 - 49/5302\u221a5)",
+   "-(67401/78961 + 2552/78961\u221a5)",
+   "-(4677/6182 + 467/6182\u221a5)",
+   "-(1926/2651 + 234/2651\u221a5)",
+   "-(60081/78961 + 5668/78961\u221a5)",
+   "-(190/319 + 46/319\u221a5)",
+   "-(5825/6989 + 264/6989\u221a5)",
+   "-(42081/58081 + 4732/58081\u221a5)",
+   "-(807/902 + 1/902\u221a5)",
+   "-(383/968 + 171/968\u221a5)"
+  ],
+  "dihedral_deg": [
+   168.7558,
+   165.7478,
+   165.5953,
+   164.7981,
+   164.2005,
+   164.1568,
+   163.9858,
+   163.719,
+   163.3657,
+   163.3514,
+   162.2148,
+   161.2953,
+   152.7724
+  ],
+  "dihedral_count": [
+   30,
+   20,
+   20,
+   10,
+   5,
+   20,
+   20,
+   10,
+   20,
+   20,
+   10,
+   10,
+   5
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "2",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 77,
+  "E": 205,
+  "F": 130,
+  "face_sizes": {
+   "3": 110,
+   "4": 20
+  },
+  "all_triangles": false,
+  "degrees": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "74/5 - 33/5\u221a5",
+   "9 - 4\u221a5",
+   "188 - 84\u221a5",
+   "101/2 - 45/2\u221a5",
+   "36 - 16\u221a5",
+   "21/2 - 9/2\u221a5",
+   "72 - 32\u221a5",
+   "14 - 6\u221a5",
+   "12 - 5\u221a5",
+   "144 - 64\u221a5",
+   "28 - 12\u221a5",
+   "27/2 - 11/2\u221a5",
+   "122 - 54\u221a5"
+  ],
+  "edge_len": [
+   0.20482,
+   0.236068,
+   0.412662,
+   0.434132,
+   0.472136,
+   0.661585,
+   0.667701,
+   0.763932,
+   0.905351,
+   0.944272,
+   1.080363,
+   1.096187,
+   1.119075
+  ],
+  "edge_len_count": [
+   10,
+   10,
+   20,
+   20,
+   20,
+   20,
+   20,
+   10,
+   20,
+   5,
+   20,
+   10,
+   20
+  ],
+  "edge_ratio2_exact": "590/31 + 150/31\u221a5",
+  "edge_ratio": 5.463693,
+  "dihedral_cos2_exact": [
+   "-(5865/6989 + 404/6989\u221a5)",
+   "-(49601/67721 + 6952/67721\u221a5)",
+   "-(21/41 + 8/41\u221a5)",
+   "-(625/1189 + 220/1189\u221a5)",
+   "-(5047/5302 - 49/5302\u221a5)",
+   "-(1926/2651 + 234/2651\u221a5)",
+   "-(60081/78961 + 5668/78961\u221a5)",
+   "-(190/319 + 46/319\u221a5)",
+   "-(5825/6989 + 264/6989\u221a5)",
+   "-(42081/58081 + 4732/58081\u221a5)",
+   "-(807/902 + 1/902\u221a5)",
+   "-(425/638 + 65/638\u221a5)",
+   "-(903/968 - 19/968\u221a5)",
+   "-(865/1189 + 76/1189\u221a5)"
+  ],
+  "dihedral_deg": [
+   169.7657,
+   168.7558,
+   166.8834,
+   165.7478,
+   164.7981,
+   163.9858,
+   163.719,
+   163.3657,
+   163.3514,
+   162.2148,
+   161.2953,
+   160.9955,
+   160.5354,
+   158.9024
+  ],
+  "dihedral_count": [
+   20,
+   10,
+   10,
+   20,
+   10,
+   20,
+   10,
+   20,
+   20,
+   10,
+   10,
+   20,
+   5,
+   20
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 82,
+  "E": 210,
+  "F": 130,
+  "face_sizes": {
+   "3": 100,
+   "4": 30
+  },
+  "all_triangles": false,
+  "degrees": [
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "9 - 4\u221a5",
+   "132 - 59\u221a5",
+   "94 - 42\u221a5",
+   "27 - 12\u221a5",
+   "188 - 84\u221a5",
+   "72 - 32\u221a5",
+   "34 - 15\u221a5",
+   "14 - 6\u221a5",
+   "12 - 5\u221a5",
+   "144 - 64\u221a5",
+   "122 - 54\u221a5"
+  ],
+  "edge_len": [
+   0.236068,
+   0.268308,
+   0.291796,
+   0.408882,
+   0.412662,
+   0.667701,
+   0.677481,
+   0.763932,
+   0.905351,
+   0.944272,
+   1.119075
+  ],
+  "edge_len_count": [
+   5,
+   20,
+   10,
+   40,
+   20,
+   40,
+   10,
+   15,
+   20,
+   10,
+   20
+  ],
+  "edge_ratio2_exact": "18 + 2\u221a5",
+  "edge_ratio": 4.740478,
+  "dihedral_cos2_exact": [
+   "-(5865/6989 + 404/6989\u221a5)",
+   "-(21/41 + 8/41\u221a5)",
+   "-(625/1189 + 220/1189\u221a5)",
+   "-(5047/5302 - 49/5302\u221a5)",
+   "-(1926/2651 + 234/2651\u221a5)",
+   "-(190/319 + 46/319\u221a5)",
+   "-(5825/6989 + 264/6989\u221a5)",
+   "-(42081/58081 + 4732/58081\u221a5)",
+   "-(235/319 + 24/319\u221a5)",
+   "-(807/902 + 1/902\u221a5)",
+   "-(425/638 + 65/638\u221a5)",
+   "-(903/968 - 19/968\u221a5)",
+   "-(865/1189 + 76/1189\u221a5)",
+   "-(81/121 + 8/121\u221a5)"
+  ],
+  "dihedral_deg": [
+   169.7657,
+   166.8834,
+   165.7478,
+   164.7981,
+   163.9858,
+   163.3657,
+   163.3514,
+   162.2148,
+   162.039,
+   161.2953,
+   160.9955,
+   160.5354,
+   158.9024,
+   154.6922
+  ],
+  "dihedral_count": [
+   20,
+   10,
+   20,
+   10,
+   20,
+   20,
+   20,
+   10,
+   20,
+   10,
+   20,
+   5,
+   20,
+   5
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "3/2 + 1/2\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 32,
+  "E": 90,
+  "F": 60,
+  "face_sizes": {
+   "3": 60
+  },
+  "all_triangles": true,
+  "degrees": "77777777775555555555555555555555",
+  "edge_len2_exact": [
+   "36 - 16\u221a5",
+   "61/2 - 27/2\u221a5",
+   "3/2 - 1/2\u221a5",
+   "9/2 - 3/2\u221a5",
+   "28 - 12\u221a5",
+   "24/5 - 8/5\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.472136,
+   0.559538,
+   0.618034,
+   1.070466,
+   1.080363,
+   1.105573,
+   1.236068
+  ],
+  "edge_len_count": [
+   5,
+   20,
+   5,
+   20,
+   20,
+   10,
+   10
+  ],
+  "edge_ratio2_exact": "7/2 + 3/2\u221a5",
+  "edge_ratio": 2.618034,
+  "dihedral_cos2_exact": [
+   "-(235/319 + 24/319\u221a5)",
+   "-(425/638 + 65/638\u221a5)",
+   "-(903/968 - 19/968\u221a5)",
+   "-(865/1189 + 76/1189\u221a5)",
+   "-(81/121 + 8/121\u221a5)",
+   "-(211/451 + 32/451\u221a5)"
+  ],
+  "dihedral_deg": [
+   162.039,
+   160.9955,
+   160.5354,
+   158.9024,
+   154.6922,
+   142.3279
+  ],
+  "dihedral_count": [
+   20,
+   20,
+   5,
+   20,
+   15,
+   10
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "1 + \u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 17,
+  "E": 45,
+  "F": 30,
+  "face_sizes": {
+   "3": 30
+  },
+  "all_triangles": true,
+  "degrees": "66666555555555555",
+  "edge_len2_exact": [
+   "144/5 - 64/5\u221a5",
+   "36 - 16\u221a5",
+   "28 - 12\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.422291,
+   0.472136,
+   1.080363,
+   1.236068
+  ],
+  "edge_len_count": [
+   10,
+   10,
+   20,
+   5
+  ],
+  "edge_ratio2_exact": "35/8 + 15/8\u221a5",
+  "edge_ratio": 2.927051,
+  "dihedral_cos2_exact": [
+   "-(391/451 - 8/451\u221a5)",
+   "-(81/121 + 8/121\u221a5)",
+   "-(21/41 + 4/41\u221a5)",
+   "-(201/1681 + 88/1681\u221a5)"
+  ],
+  "dihedral_deg": [
+   155.4445,
+   154.6922,
+   148.716,
+   119.1072
+  ],
+  "dihedral_count": [
+   10,
+   10,
+   20,
+   5
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "edge-first",
+  "kind": "slice",
+  "height": "5/2 + 1/2\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 1
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "shadow",
+  "height": null,
+  "V": 56,
+  "E": 150,
+  "F": 96,
+  "face_sizes": {
+   "3": 84,
+   "4": 12
+  },
+  "all_triangles": false,
+  "degrees": "88888866666666666666666666666666444444444444444444444444",
+  "edge_len2_exact": [
+   "14/3 - 2\u221a5",
+   "11/2 - 13/6\u221a5",
+   "7/2 - 7/6\u221a5",
+   "17/3 - 2\u221a5",
+   "4/3",
+   "11/2 - 11/6\u221a5",
+   "29/6 - 3/2\u221a5",
+   "3 - 2/3\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.441056,
+   0.809436,
+   0.944063,
+   1.092946,
+   1.154701,
+   1.183445,
+   1.216237,
+   1.228531,
+   1.236068
+  ],
+  "edge_len_count": [
+   12,
+   24,
+   24,
+   24,
+   12,
+   24,
+   12,
+   12,
+   6
+  ],
+  "edge_ratio2_exact": "9/2 + 3/2\u221a5",
+  "edge_ratio": 2.802517,
+  "dihedral_cos2_exact": [
+   "-(433/744 + 43/248\u221a5)",
+   "-(35/72 + 5/24\u221a5)",
+   "-(23/32 + 3/32\u221a5)",
+   "-(9/16 + 7/48\u221a5)",
+   "-(219/248 + 1/744\u221a5)",
+   "-(43/72 + 1/8\u221a5)",
+   "-(353/496 + 33/496\u221a5)",
+   "-(5/6)"
+  ],
+  "dihedral_deg": [
+   169.9746,
+   167.3389,
+   164.4775,
+   160.5018,
+   160.2732,
+   159.4456,
+   158.0656,
+   155.9052
+  ],
+  "dihedral_count": [
+   24,
+   12,
+   6,
+   24,
+   24,
+   12,
+   24,
+   24
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 0,
+  "height": "-2 - 2/3\u221a5",
+  "layer_vertices": 3,
+  "dim": 2
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 1,
+  "height": "-1 - \u221a5",
+  "layer_vertices": 2,
+  "dim": 1
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 2,
+  "height": "-4/3 - 2/3\u221a5",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 9,
+  "F": 5,
+  "face_sizes": {
+   "3": 2,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "4"
+  ],
+  "edge_len": [
+   1.236068,
+   2.0
+  ],
+  "edge_len_count": [
+   3,
+   6
+  ],
+  "edge_ratio2_exact": "3/2 + 1/2\u221a5",
+  "edge_ratio": 1.618034,
+  "dihedral_cos2_exact": [
+   "0(0)",
+   "+(1/4)"
+  ],
+  "dihedral_deg": [
+   90.0,
+   60.0
+  ],
+  "dihedral_count": [
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 3,
+  "height": "-5/3 - 1/3\u221a5",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 9,
+  "F": 5,
+  "face_sizes": {
+   "3": 2,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "333333",
+  "edge_len2_exact": [
+   "4"
+  ],
+  "edge_len": [
+   2.0
+  ],
+  "edge_len_count": [
+   9
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "0(0)",
+   "+(1/4)"
+  ],
+  "dihedral_deg": [
+   90.0,
+   60.0
+  ],
+  "dihedral_count": [
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 4,
+  "height": "-2/3 - 2/3\u221a5",
+  "layer_vertices": 6,
+  "dim": 2
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 5,
+  "height": "-1 - 1/3\u221a5",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 9,
+  "F": 5,
+  "face_sizes": {
+   "3": 2,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "6 + 2\u221a5"
+  ],
+  "edge_len": [
+   1.236068,
+   3.236068
+  ],
+  "edge_len_count": [
+   6,
+   3
+  ],
+  "edge_ratio2_exact": "7/2 + 3/2\u221a5",
+  "edge_ratio": 2.618034,
+  "dihedral_cos2_exact": [
+   "0(0)",
+   "+(1/4)"
+  ],
+  "dihedral_deg": [
+   90.0,
+   60.0
+  ],
+  "dihedral_count": [
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 6,
+  "height": "-4/3",
+  "layer_vertices": 3,
+  "dim": 2
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 7,
+  "height": "-1/3 - 1/3\u221a5",
+  "layer_vertices": 12,
+  "V": 12,
+  "E": 18,
+  "F": 8,
+  "face_sizes": {
+   "4": 6,
+   "6": 2
+  },
+  "all_triangles": false,
+  "degrees": "333333333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "4"
+  ],
+  "edge_len": [
+   1.236068,
+   2.0
+  ],
+  "edge_len_count": [
+   6,
+   12
+  ],
+  "edge_ratio2_exact": "3/2 + 1/2\u221a5",
+  "edge_ratio": 1.618034,
+  "dihedral_cos2_exact": [
+   "-(1/4)",
+   "0(0)"
+  ],
+  "dihedral_deg": [
+   120.0,
+   90.0
+  ],
+  "dihedral_count": [
+   6,
+   12
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 8,
+  "height": "-2/3",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 9,
+  "F": 5,
+  "face_sizes": {
+   "3": 2,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "6 + 2\u221a5"
+  ],
+  "edge_len": [
+   1.236068,
+   3.236068
+  ],
+  "edge_len_count": [
+   3,
+   6
+  ],
+  "edge_ratio2_exact": "7/2 + 3/2\u221a5",
+  "edge_ratio": 2.618034,
+  "dihedral_cos2_exact": [
+   "0(0)",
+   "+(1/4)"
+  ],
+  "dihedral_deg": [
+   90.0,
+   60.0
+  ],
+  "dihedral_count": [
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 9,
+  "height": "1/3 - 1/3\u221a5",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 9,
+  "F": 5,
+  "face_sizes": {
+   "3": 2,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "333333",
+  "edge_len2_exact": [
+   "4",
+   "6 + 2\u221a5"
+  ],
+  "edge_len": [
+   2.0,
+   3.236068
+  ],
+  "edge_len_count": [
+   6,
+   3
+  ],
+  "edge_ratio2_exact": "3/2 + 1/2\u221a5",
+  "edge_ratio": 1.618034,
+  "dihedral_cos2_exact": [
+   "0(0)",
+   "+(1/4)"
+  ],
+  "dihedral_deg": [
+   90.0,
+   60.0
+  ],
+  "dihedral_count": [
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 10,
+  "height": "0",
+  "layer_vertices": 8,
+  "V": 8,
+  "E": 18,
+  "F": 12,
+  "face_sizes": {
+   "3": 12
+  },
+  "all_triangles": true,
+  "degrees": "66444444",
+  "edge_len2_exact": [
+   "4",
+   "8"
+  ],
+  "edge_len": [
+   2.0,
+   2.828427
+  ],
+  "edge_len_count": [
+   6,
+   12
+  ],
+  "edge_ratio2_exact": "2",
+  "edge_ratio": 1.414214,
+  "dihedral_cos2_exact": [
+   "-(25/49)",
+   "-(1/49)"
+  ],
+  "dihedral_deg": [
+   135.5847,
+   98.2132
+  ],
+  "dihedral_count": [
+   12,
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 11,
+  "height": "-1/3 + 1/3\u221a5",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 9,
+  "F": 5,
+  "face_sizes": {
+   "3": 2,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "333333",
+  "edge_len2_exact": [
+   "4",
+   "6 + 2\u221a5"
+  ],
+  "edge_len": [
+   2.0,
+   3.236068
+  ],
+  "edge_len_count": [
+   6,
+   3
+  ],
+  "edge_ratio2_exact": "3/2 + 1/2\u221a5",
+  "edge_ratio": 1.618034,
+  "dihedral_cos2_exact": [
+   "0(0)",
+   "+(1/4)"
+  ],
+  "dihedral_deg": [
+   90.0,
+   60.0
+  ],
+  "dihedral_count": [
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 12,
+  "height": "2/3",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 9,
+  "F": 5,
+  "face_sizes": {
+   "3": 2,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "6 + 2\u221a5"
+  ],
+  "edge_len": [
+   1.236068,
+   3.236068
+  ],
+  "edge_len_count": [
+   3,
+   6
+  ],
+  "edge_ratio2_exact": "7/2 + 3/2\u221a5",
+  "edge_ratio": 2.618034,
+  "dihedral_cos2_exact": [
+   "0(0)",
+   "+(1/4)"
+  ],
+  "dihedral_deg": [
+   90.0,
+   60.0
+  ],
+  "dihedral_count": [
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 13,
+  "height": "1/3 + 1/3\u221a5",
+  "layer_vertices": 12,
+  "V": 12,
+  "E": 18,
+  "F": 8,
+  "face_sizes": {
+   "4": 6,
+   "6": 2
+  },
+  "all_triangles": false,
+  "degrees": "333333333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "4"
+  ],
+  "edge_len": [
+   1.236068,
+   2.0
+  ],
+  "edge_len_count": [
+   6,
+   12
+  ],
+  "edge_ratio2_exact": "3/2 + 1/2\u221a5",
+  "edge_ratio": 1.618034,
+  "dihedral_cos2_exact": [
+   "-(1/4)",
+   "0(0)"
+  ],
+  "dihedral_deg": [
+   120.0,
+   90.0
+  ],
+  "dihedral_count": [
+   6,
+   12
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 14,
+  "height": "4/3",
+  "layer_vertices": 3,
+  "dim": 2
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 15,
+  "height": "1 + 1/3\u221a5",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 9,
+  "F": 5,
+  "face_sizes": {
+   "3": 2,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "6 + 2\u221a5"
+  ],
+  "edge_len": [
+   1.236068,
+   3.236068
+  ],
+  "edge_len_count": [
+   6,
+   3
+  ],
+  "edge_ratio2_exact": "7/2 + 3/2\u221a5",
+  "edge_ratio": 2.618034,
+  "dihedral_cos2_exact": [
+   "0(0)",
+   "+(1/4)"
+  ],
+  "dihedral_deg": [
+   90.0,
+   60.0
+  ],
+  "dihedral_count": [
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 16,
+  "height": "2/3 + 2/3\u221a5",
+  "layer_vertices": 6,
+  "dim": 2
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 17,
+  "height": "5/3 + 1/3\u221a5",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 9,
+  "F": 5,
+  "face_sizes": {
+   "3": 2,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "333333",
+  "edge_len2_exact": [
+   "4"
+  ],
+  "edge_len": [
+   2.0
+  ],
+  "edge_len_count": [
+   9
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "0(0)",
+   "+(1/4)"
+  ],
+  "dihedral_deg": [
+   90.0,
+   60.0
+  ],
+  "dihedral_count": [
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 18,
+  "height": "4/3 + 2/3\u221a5",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 9,
+  "F": 5,
+  "face_sizes": {
+   "3": 2,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "4"
+  ],
+  "edge_len": [
+   1.236068,
+   2.0
+  ],
+  "edge_len_count": [
+   3,
+   6
+  ],
+  "edge_ratio2_exact": "3/2 + 1/2\u221a5",
+  "edge_ratio": 1.618034,
+  "dihedral_cos2_exact": [
+   "0(0)",
+   "+(1/4)"
+  ],
+  "dihedral_deg": [
+   90.0,
+   60.0
+  ],
+  "dihedral_count": [
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 19,
+  "height": "1 + \u221a5",
+  "layer_vertices": 2,
+  "dim": 1
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "layer",
+  "layer": 20,
+  "height": "2 + 2/3\u221a5",
+  "layer_vertices": 3,
+  "dim": 2
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "-2 - 2/3\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 2
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "-1 - \u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 26,
+  "E": 69,
+  "F": 45,
+  "face_sizes": {
+   "3": 42,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "99555555555555555555555555",
+  "edge_len2_exact": [
+   "9 - 4\u221a5",
+   "132 - 59\u221a5",
+   "27 - 12\u221a5",
+   "188 - 84\u221a5",
+   "36 - 16\u221a5",
+   "14 - 6\u221a5",
+   "28 - 12\u221a5",
+   "122 - 54\u221a5"
+  ],
+  "edge_len": [
+   0.236068,
+   0.268308,
+   0.408882,
+   0.412662,
+   0.472136,
+   0.763932,
+   1.080363,
+   1.119075
+  ],
+  "edge_len_count": [
+   3,
+   12,
+   12,
+   12,
+   6,
+   6,
+   12,
+   6
+  ],
+  "edge_ratio2_exact": "18 + 2\u221a5",
+  "edge_ratio": 4.740478,
+  "dihedral_cos2_exact": [
+   "-(7/16 + 3/16\u221a5)",
+   "-(46129/58081 + 1344/58081\u221a5)",
+   "-(4685/6989 + 2724/34945\u221a5)",
+   "-(121/145)",
+   "-(31/58 + 18/145\u221a5)",
+   "-(143/203 + 36/1015\u221a5)",
+   "-(2621/4205 + 204/4205\u221a5)",
+   "-(4/7)"
+  ],
+  "dihedral_deg": [
+   157.7612,
+   156.8912,
+   156.7868,
+   155.9936,
+   154.3091,
+   152.2875,
+   148.8089,
+   139.1066
+  ],
+  "dihedral_count": [
+   6,
+   3,
+   12,
+   12,
+   12,
+   12,
+   6,
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "-4/3 - 2/3\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 30,
+  "E": 84,
+  "F": 56,
+  "face_sizes": {
+   "3": 56
+  },
+  "all_triangles": true,
+  "degrees": "888888555555555555555555555555",
+  "edge_len2_exact": [
+   "14/5 - 6/5\u221a5",
+   "23/10 - 9/10\u221a5",
+   "61/2 - 27/2\u221a5",
+   "3/2 - 1/2\u221a5",
+   "39/2 - 17/2\u221a5",
+   "9/2 - 3/2\u221a5",
+   "28 - 12\u221a5",
+   "24/5 - 8/5\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.341641,
+   0.536226,
+   0.559538,
+   0.618034,
+   0.70244,
+   1.070466,
+   1.080363,
+   1.105573,
+   1.236068
+  ],
+  "edge_len_count": [
+   6,
+   12,
+   6,
+   3,
+   12,
+   24,
+   12,
+   6,
+   3
+  ],
+  "edge_ratio2_exact": "15/2 + 5/2\u221a5",
+  "edge_ratio": 3.618034,
+  "dihedral_cos2_exact": [
+   "-(5081/6989 + 3024/34945\u221a5)",
+   "-(27/38 + 3/38\u221a5)",
+   "-(3118/4579 + 414/4579\u221a5)",
+   "-(46129/58081 + 1344/58081\u221a5)",
+   "-(4685/6989 + 2724/34945\u221a5)",
+   "-(121/145)",
+   "-(31/58 + 18/145\u221a5)",
+   "-(2621/4205 + 204/4205\u221a5)",
+   "-(23/32 - 3/32\u221a5)"
+  ],
+  "dihedral_deg": [
+   163.6229,
+   160.3625,
+   160.0073,
+   156.8912,
+   156.7868,
+   155.9936,
+   154.3091,
+   148.8089,
+   135.5225
+  ],
+  "dihedral_count": [
+   12,
+   6,
+   12,
+   9,
+   12,
+   12,
+   12,
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "-5/3 - 1/3\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 54,
+  "E": 150,
+  "F": 98,
+  "face_sizes": {
+   "3": 92,
+   "4": 6
+  },
+  "all_triangles": false,
+  "degrees": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "94 - 42\u221a5",
+   "564/5 - 252/5\u221a5",
+   "27 - 12\u221a5",
+   "188 - 84\u221a5",
+   "36 - 16\u221a5",
+   "114/5 - 10\u221a5",
+   "72 - 32\u221a5",
+   "56/5 - 24/5\u221a5",
+   "4/5",
+   "1",
+   "46/5 - 18/5\u221a5",
+   "28 - 12\u221a5",
+   "122 - 54\u221a5",
+   "8 - 3\u221a5"
+  ],
+  "edge_len": [
+   0.291796,
+   0.319647,
+   0.408882,
+   0.412662,
+   0.472136,
+   0.662812,
+   0.667701,
+   0.683282,
+   0.894427,
+   1.0,
+   1.072453,
+   1.080363,
+   1.119075,
+   1.136572
+  ],
+  "edge_len_count": [
+   6,
+   12,
+   12,
+   12,
+   6,
+   12,
+   12,
+   12,
+   3,
+   3,
+   12,
+   24,
+   12,
+   12
+  ],
+  "edge_ratio2_exact": "61/8 + 27/8\u221a5",
+  "edge_ratio": 3.89509,
+  "dihedral_cos2_exact": [
+   "-(93/145 + 108/725\u221a5)",
+   "-(271/304 + 9/304\u221a5)",
+   "-(5717/6989 + 2016/34945\u221a5)",
+   "-(11213/15542 + 1419/15542\u221a5)",
+   "-(95/203 + 204/1015\u221a5)",
+   "-(5827/7771 + 576/7771\u221a5)",
+   "-(121/133)",
+   "-(1881/2045 - 12/2045\u221a5)",
+   "-(81/145 + 108/725\u221a5)",
+   "-(27/38 + 3/38\u221a5)",
+   "-(3118/4579 + 414/4579\u221a5)",
+   "-(1129/1444 + 15/361\u221a5)",
+   "-(46129/58081 + 1344/58081\u221a5)",
+   "-(4685/6989 + 2724/34945\u221a5)",
+   "-(31/58 + 18/145\u221a5)"
+  ],
+  "dihedral_deg": [
+   170.807,
+   168.1237,
+   166.6901,
+   164.1734,
+   163.2972,
+   163.1091,
+   162.5198,
+   162.2131,
+   160.7881,
+   160.3625,
+   160.0073,
+   159.275,
+   156.8912,
+   156.7868,
+   154.3091
+  ],
+  "dihedral_count": [
+   12,
+   6,
+   12,
+   12,
+   12,
+   12,
+   6,
+   12,
+   12,
+   6,
+   12,
+   3,
+   9,
+   12,
+   12
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "-2/3 - 2/3\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 72,
+  "E": 192,
+  "F": 122,
+  "face_sizes": {
+   "3": 104,
+   "4": 18
+  },
+  "all_triangles": false,
+  "degrees": "999999555555555555555555555555555555555555555555555555555555555555555555",
+  "edge_len2_exact": [
+   "656/3 - 880/9\u221a5",
+   "7 - 28/9\u221a5",
+   "208 - 93\u221a5",
+   "27 - 12\u221a5",
+   "28 - 112/9\u221a5",
+   "144/5 - 64/5\u221a5",
+   "36 - 16\u221a5",
+   "216/5 - 96/5\u221a5",
+   "114/5 - 10\u221a5",
+   "72 - 32\u221a5",
+   "56/5 - 24/5\u221a5",
+   "4/5",
+   "12 - 5\u221a5",
+   "46/5 - 18/5\u221a5",
+   "28 - 12\u221a5",
+   "8 - 3\u221a5",
+   "216 - 96\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.170026,
+   0.208192,
+   0.213724,
+   0.408882,
+   0.416385,
+   0.422291,
+   0.472136,
+   0.517199,
+   0.662812,
+   0.667701,
+   0.683282,
+   0.894427,
+   0.905351,
+   1.072453,
+   1.080363,
+   1.136572,
+   1.156492,
+   1.236068
+  ],
+  "edge_len_count": [
+   6,
+   12,
+   12,
+   12,
+   12,
+   6,
+   12,
+   12,
+   12,
+   24,
+   3,
+   6,
+   12,
+   12,
+   12,
+   12,
+   12,
+   3
+  ],
+  "edge_ratio2_exact": "423/16 + 189/16\u221a5",
+  "edge_ratio": 7.269873,
+  "dihedral_cos2_exact": [
+   "-(689/722 + 9/722\u221a5)",
+   "-(209/290 + 153/1450\u221a5)",
+   "-(5717/6989 + 2016/34945\u221a5)",
+   "-(63/95 + 12/95\u221a5)",
+   "-(1631/1919 + 372/9595\u221a5)",
+   "-(11213/15542 + 1419/15542\u221a5)",
+   "-(737/1010 + 441/5050\u221a5)",
+   "-(37469/51005 + 4224/51005\u221a5)",
+   "-(95/203 + 204/1015\u221a5)",
+   "-(5827/7771 + 576/7771\u221a5)",
+   "-(127/190 + 21/190\u221a5)",
+   "-(121/133)",
+   "-(1881/2045 - 12/2045\u221a5)",
+   "-(81/145 + 108/725\u221a5)",
+   "-(27/38 + 3/38\u221a5)",
+   "-(3118/4579 + 414/4579\u221a5)",
+   "-(1129/1444 + 15/361\u221a5)",
+   "-(46129/58081 + 1344/58081\u221a5)",
+   "-(72529/167281 + 23712/167281\u221a5)"
+  ],
+  "dihedral_deg": [
+   172.3258,
+   167.9804,
+   166.6901,
+   166.5133,
+   165.418,
+   164.1734,
+   164.1027,
+   163.5484,
+   163.2972,
+   163.1091,
+   163.1075,
+   162.5198,
+   162.2131,
+   160.7881,
+   160.3625,
+   160.0073,
+   159.275,
+   156.8912,
+   150.0356
+  ],
+  "dihedral_count": [
+   6,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   6,
+   12,
+   24,
+   12,
+   6,
+   12,
+   12,
+   6,
+   12,
+   3,
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "-1 - 1/3\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 84,
+  "E": 219,
+  "F": 137,
+  "face_sizes": {
+   "3": 110,
+   "4": 27
+  },
+  "all_triangles": false,
+  "degrees": "888888555555555555555555555555555555555555555555555555555555555555555555555555555555",
+  "edge_len2_exact": [
+   "34/5 - 3\u221a5",
+   "14/5 - 6/5\u221a5",
+   "27 - 12\u221a5",
+   "144/5 - 64/5\u221a5",
+   "32 - 128/9\u221a5",
+   "23/10 - 9/10\u221a5",
+   "7 - 3\u221a5",
+   "7/6 - 7/18\u221a5",
+   "61/2 - 27/2\u221a5",
+   "72 - 32\u221a5",
+   "39/2 - 17/2\u221a5",
+   "14 - 6\u221a5",
+   "84/5 - 36/5\u221a5",
+   "4/5",
+   "9/2 - 3/2\u221a5",
+   "28 - 12\u221a5",
+   "14/3 - 14/9\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.302979,
+   0.341641,
+   0.408882,
+   0.422291,
+   0.445134,
+   0.536226,
+   0.540182,
+   0.545055,
+   0.559538,
+   0.667701,
+   0.70244,
+   0.763932,
+   0.836846,
+   0.894427,
+   1.070466,
+   1.080363,
+   1.090109,
+   1.236068
+  ],
+  "edge_len_count": [
+   12,
+   9,
+   12,
+   12,
+   6,
+   12,
+   6,
+   12,
+   36,
+   12,
+   12,
+   6,
+   24,
+   6,
+   12,
+   12,
+   12,
+   6
+  ],
+  "edge_ratio2_exact": "270/31 + 110/31\u221a5",
+  "edge_ratio": 4.07972,
+  "dihedral_cos2_exact": [
+   "-(30557/41309 + 21564/206545\u221a5)",
+   "-(209/290 + 153/1450\u221a5)",
+   "-(3091/4579 + 576/4579\u221a5)",
+   "-(13/19 + 9/76\u221a5)",
+   "-(63/95 + 12/95\u221a5)",
+   "-(1631/1919 + 372/9595\u221a5)",
+   "-(328/409 + 24/409\u221a5)",
+   "-(11213/15542 + 1419/15542\u221a5)",
+   "-(737/1010 + 441/5050\u221a5)",
+   "-(5141/9158 + 1485/9158\u221a5)",
+   "-(21713/24341 + 1728/121705\u221a5)",
+   "-(37469/51005 + 4224/51005\u221a5)",
+   "-(95/203 + 204/1015\u221a5)",
+   "-(5827/7771 + 576/7771\u221a5)",
+   "-(127/190 + 21/190\u221a5)",
+   "-(121/133)",
+   "-(1881/2045 - 12/2045\u221a5)",
+   "-(81/145 + 108/725\u221a5)",
+   "-(1129/1444 + 15/361\u221a5)",
+   "-(15/19)"
+  ],
+  "dihedral_deg": [
+   170.5727,
+   167.9804,
+   167.936,
+   166.9493,
+   166.5133,
+   165.418,
+   165.0178,
+   164.1734,
+   164.1027,
+   163.9923,
+   163.9739,
+   163.5484,
+   163.2972,
+   163.1091,
+   163.1075,
+   162.5198,
+   162.2131,
+   160.7881,
+   159.275,
+   152.6883
+  ],
+  "dihedral_count": [
+   12,
+   12,
+   12,
+   6,
+   12,
+   12,
+   6,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   24,
+   12,
+   6,
+   12,
+   12,
+   3,
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "-4/3",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 105,
+  "E": 270,
+  "F": 167,
+  "face_sizes": {
+   "3": 128,
+   "4": 39
+  },
+  "all_triangles": false,
+  "degrees": [
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "208 - 93\u221a5",
+   "492 - 220\u221a5",
+   "132 - 59\u221a5",
+   "18 - 8\u221a5",
+   "159/2 - 71/2\u221a5",
+   "27 - 12\u221a5",
+   "188 - 84\u221a5",
+   "216/5 - 96/5\u221a5",
+   "6/5 - 2/5\u221a5",
+   "136/5 - 12\u221a5",
+   "21/2 - 9/2\u221a5",
+   "34 - 15\u221a5",
+   "56/5 - 24/5\u221a5",
+   "112/9 - 16/3\u221a5",
+   "245/18 - 35/6\u221a5",
+   "14 - 6\u221a5",
+   "108 - 48\u221a5",
+   "576/5 - 256/5\u221a5",
+   "35/2 - 15/2\u221a5",
+   "7/9",
+   "12 - 5\u221a5",
+   "144 - 64\u221a5",
+   "180 - 80\u221a5",
+   "28 - 12\u221a5",
+   "122 - 54\u221a5",
+   "216 - 96\u221a5"
+  ],
+  "edge_len": [
+   0.213724,
+   0.255039,
+   0.268308,
+   0.333851,
+   0.345813,
+   0.408882,
+   0.412662,
+   0.517199,
+   0.552786,
+   0.605957,
+   0.661585,
+   0.677481,
+   0.683282,
+   0.720242,
+   0.753247,
+   0.763932,
+   0.817763,
+   0.844582,
+   0.854102,
+   0.881917,
+   0.905351,
+   0.944272,
+   1.055728,
+   1.080363,
+   1.119075,
+   1.156492
+  ],
+  "edge_len_count": [
+   12,
+   12,
+   18,
+   12,
+   12,
+   12,
+   12,
+   12,
+   6,
+   12,
+   12,
+   12,
+   6,
+   6,
+   12,
+   6,
+   12,
+   12,
+   6,
+   12,
+   12,
+   6,
+   6,
+   6,
+   12,
+   12
+  ],
+  "edge_ratio2_exact": "288/19 + 120/19\u221a5",
+  "edge_ratio": 5.411139,
+  "dihedral_cos2_exact": [
+   "-(149/266 + 51/266\u221a5)",
+   "-(30557/41309 + 21564/206545\u221a5)",
+   "-(203/230 + 9/230\u221a5)",
+   "-(209/290 + 153/1450\u221a5)",
+   "-(3091/4579 + 576/4579\u221a5)",
+   "-(18197/24341 + 11052/121705\u221a5)",
+   "-(13/19 + 9/76\u221a5)",
+   "-(63/95 + 12/95\u221a5)",
+   "-(1631/1919 + 372/9595\u221a5)",
+   "-(328/409 + 24/409\u221a5)",
+   "-(1651/2323 + 1152/11615\u221a5)",
+   "-(117/241 + 48/241\u221a5)",
+   "-(45389/51005 + 852/51005\u221a5)",
+   "-(338/437 + 30/437\u221a5)",
+   "-(737/1010 + 441/5050\u221a5)",
+   "-(5141/9158 + 1485/9158\u221a5)",
+   "-(21713/24341 + 1728/121705\u221a5)",
+   "-(37469/51005 + 4224/51005\u221a5)",
+   "-(95/203 + 204/1015\u221a5)",
+   "-(5827/7771 + 576/7771\u221a5)",
+   "-(127/190 + 21/190\u221a5)",
+   "-(121/133)",
+   "-(1881/2045 - 12/2045\u221a5)",
+   "-(81/145 + 108/725\u221a5)"
+  ],
+  "dihedral_deg": [
+   173.9441,
+   170.5727,
+   170.0438,
+   167.9804,
+   167.936,
+   167.1638,
+   166.9493,
+   166.5133,
+   165.418,
+   165.0178,
+   164.941,
+   164.7523,
+   164.3517,
+   164.3204,
+   164.1027,
+   163.9923,
+   163.9739,
+   163.5484,
+   163.2972,
+   163.1091,
+   163.1075,
+   162.5198,
+   162.2131,
+   160.7881
+  ],
+  "dihedral_count": [
+   6,
+   12,
+   12,
+   12,
+   18,
+   12,
+   6,
+   12,
+   12,
+   6,
+   12,
+   6,
+   6,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   24,
+   12,
+   6,
+   12,
+   12
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "-1/3 - 1/3\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 78,
+  "E": 219,
+  "F": 143,
+  "face_sizes": {
+   "3": 134,
+   "4": 9
+  },
+  "all_triangles": false,
+  "degrees": "999999999999555555555555555555555555555555555555555555555555555555555555555555",
+  "edge_len2_exact": [
+   "4 - 16/9\u221a5",
+   "7 - 28/9\u221a5",
+   "564/5 - 252/5\u221a5",
+   "14/5 - 6/5\u221a5",
+   "101/2 - 45/2\u221a5",
+   "7 - 3\u221a5",
+   "7/6 - 7/18\u221a5",
+   "61/2 - 27/2\u221a5",
+   "3/2 - 1/2\u221a5",
+   "14 - 6\u221a5",
+   "13/10 - 3/10\u221a5",
+   "3 - \u221a5",
+   "128 - 512/9\u221a5",
+   "4/5",
+   "9/2 - 3/2\u221a5",
+   "14/3 - 14/9\u221a5",
+   "27/2 - 11/2\u221a5",
+   "24/5 - 8/5\u221a5",
+   "122 - 54\u221a5",
+   "8 - 3\u221a5",
+   "16/3 - 16/9\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.157379,
+   0.208192,
+   0.319647,
+   0.341641,
+   0.434132,
+   0.540182,
+   0.545055,
+   0.559538,
+   0.618034,
+   0.763932,
+   0.793208,
+   0.874032,
+   0.890268,
+   0.894427,
+   1.070466,
+   1.090109,
+   1.096187,
+   1.105573,
+   1.119075,
+   1.136572,
+   1.165376,
+   1.236068
+  ],
+  "edge_len_count": [
+   3,
+   12,
+   12,
+   6,
+   6,
+   12,
+   12,
+   12,
+   6,
+   6,
+   12,
+   6,
+   6,
+   6,
+   24,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   6
+  ],
+  "edge_ratio2_exact": "63/2 + 27/2\u221a5",
+  "edge_ratio": 7.854102,
+  "dihedral_cos2_exact": [
+   "-(203/230 + 9/230\u221a5)",
+   "-(409/505 + 36/505\u221a5)",
+   "-(3091/4579 + 576/4579\u221a5)",
+   "-(18197/24341 + 11052/121705\u221a5)",
+   "-(13/19 + 9/76\u221a5)",
+   "-(153/202 + 42/505\u221a5)",
+   "-(1631/1919 + 372/9595\u221a5)",
+   "-(328/409 + 24/409\u221a5)",
+   "-(1651/2323 + 1152/11615\u221a5)",
+   "-(117/241 + 48/241\u221a5)",
+   "-(23/32 + 3/32\u221a5)",
+   "-(45389/51005 + 852/51005\u221a5)",
+   "-(338/437 + 30/437\u221a5)",
+   "-(737/1010 + 441/5050\u221a5)",
+   "-(5141/9158 + 1485/9158\u221a5)",
+   "-(21713/24341 + 1728/121705\u221a5)",
+   "-(37469/51005 + 4224/51005\u221a5)",
+   "-(5827/7771 + 576/7771\u221a5)",
+   "-(127/190 + 21/190\u221a5)",
+   "-(541/874 + 75/874\u221a5)"
+  ],
+  "dihedral_deg": [
+   170.0438,
+   169.9095,
+   167.936,
+   167.1638,
+   166.9493,
+   166.2364,
+   165.418,
+   165.0178,
+   164.941,
+   164.7523,
+   164.4775,
+   164.3517,
+   164.3204,
+   164.1027,
+   163.9923,
+   163.9739,
+   163.5484,
+   163.1091,
+   163.1075,
+   154.222
+  ],
+  "dihedral_count": [
+   12,
+   12,
+   18,
+   12,
+   6,
+   12,
+   12,
+   6,
+   24,
+   6,
+   3,
+   6,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "-2/3",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 114,
+  "E": 300,
+  "F": 188,
+  "face_sizes": {
+   "3": 152,
+   "4": 36
+  },
+  "all_triangles": false,
+  "degrees": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "7 - 28/9\u221a5",
+   "9 - 4\u221a5",
+   "132 - 59\u221a5",
+   "34/5 - 3\u221a5",
+   "564/5 - 252/5\u221a5",
+   "27 - 12\u221a5",
+   "2/3 - 2/9\u221a5",
+   "188 - 84\u221a5",
+   "28 - 112/9\u221a5",
+   "36 - 16\u221a5",
+   "7 - 3\u221a5",
+   "7/6 - 7/18\u221a5",
+   "21/2 - 9/2\u221a5",
+   "114/5 - 10\u221a5",
+   "34 - 15\u221a5",
+   "39/2 - 17/2\u221a5",
+   "13/10 - 3/10\u221a5",
+   "3 - \u221a5",
+   "128 - 512/9\u221a5",
+   "4/5",
+   "12 - 5\u221a5",
+   "144 - 64\u221a5",
+   "28 - 12\u221a5",
+   "27/2 - 11/2\u221a5",
+   "8 - 3\u221a5",
+   "16/3 - 16/9\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.208192,
+   0.236068,
+   0.268308,
+   0.302979,
+   0.319647,
+   0.408882,
+   0.412023,
+   0.412662,
+   0.416385,
+   0.472136,
+   0.540182,
+   0.545055,
+   0.661585,
+   0.662812,
+   0.677481,
+   0.70244,
+   0.793208,
+   0.874032,
+   0.890268,
+   0.894427,
+   0.905351,
+   0.944272,
+   1.080363,
+   1.096187,
+   1.136572,
+   1.165376,
+   1.236068
+  ],
+  "edge_len_count": [
+   12,
+   6,
+   12,
+   12,
+   12,
+   24,
+   3,
+   12,
+   12,
+   6,
+   6,
+   12,
+   12,
+   12,
+   12,
+   18,
+   12,
+   12,
+   12,
+   6,
+   12,
+   6,
+   24,
+   12,
+   12,
+   6,
+   3
+  ],
+  "edge_ratio2_exact": "18 + 54/7\u221a5",
+  "edge_ratio": 5.937143,
+  "dihedral_cos2_exact": [
+   "-(32777/41309 + 18444/206545\u221a5)",
+   "-(3605/6989 + 7296/34945\u221a5)",
+   "-(203/230 + 9/230\u221a5)",
+   "-(409/505 + 36/505\u221a5)",
+   "-(3/4 + 9/92\u221a5)",
+   "-(12977/14645 + 468/14645\u221a5)",
+   "-(9947/15542 + 2205/15542\u221a5)",
+   "-(3091/4579 + 576/4579\u221a5)",
+   "-(109609/167281 + 22176/167281\u221a5)",
+   "-(18197/24341 + 11052/121705\u221a5)",
+   "-(153/202 + 42/505\u221a5)",
+   "-(9083/9407 - 96/9407\u221a5)",
+   "-(2009/4205 + 864/4205\u221a5)",
+   "-(1347/1636 + 81/1636\u221a5)",
+   "-(1651/2323 + 1152/11615\u221a5)",
+   "-(117/241 + 48/241\u221a5)",
+   "-(7589/11861 + 7668/59305\u221a5)",
+   "-(23/32 + 3/32\u221a5)",
+   "-(45389/51005 + 852/51005\u221a5)",
+   "-(338/437 + 30/437\u221a5)",
+   "-(737/1010 + 441/5050\u221a5)",
+   "-(5141/9158 + 1485/9158\u221a5)",
+   "-(21713/24341 + 1728/121705\u221a5)",
+   "-(37469/51005 + 4224/51005\u221a5)",
+   "-(127/190 + 21/190\u221a5)",
+   "-(601/1444 + 63/361\u221a5)"
+  ],
+  "dihedral_deg": [
+   175.2472,
+   172.4351,
+   170.0438,
+   169.9095,
+   169.8172,
+   168.1115,
+   168.067,
+   167.936,
+   167.3001,
+   167.1638,
+   166.2364,
+   166.1551,
+   165.4881,
+   165.1204,
+   164.941,
+   164.7523,
+   164.5404,
+   164.4775,
+   164.3517,
+   164.3204,
+   164.1027,
+   163.9923,
+   163.9739,
+   163.5484,
+   163.1075,
+   153.8985
+  ],
+  "dihedral_count": [
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   6,
+   6,
+   12,
+   12,
+   12,
+   6,
+   12,
+   24,
+   24,
+   6,
+   24,
+   3,
+   6,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   3
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "1/3 - 1/3\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 114,
+  "E": 300,
+  "F": 188,
+  "face_sizes": {
+   "3": 152,
+   "4": 36
+  },
+  "all_triangles": false,
+  "degrees": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "656/3 - 880/9\u221a5",
+   "246 - 110\u221a5",
+   "94 - 42\u221a5",
+   "18 - 8\u221a5",
+   "27 - 12\u221a5",
+   "188 - 84\u221a5",
+   "28 - 112/9\u221a5",
+   "101/2 - 45/2\u221a5",
+   "27/10 - 11/10\u221a5",
+   "216/5 - 96/5\u221a5",
+   "70/9 - 10/3\u221a5",
+   "136/5 - 12\u221a5",
+   "21/2 - 9/2\u221a5",
+   "72 - 32\u221a5",
+   "34 - 15\u221a5",
+   "56/5 - 24/5\u221a5",
+   "112/9 - 16/3\u221a5",
+   "245/18 - 35/6\u221a5",
+   "14 - 6\u221a5",
+   "202 - 90\u221a5",
+   "505/2 - 225/2\u221a5",
+   "46/5 - 18/5\u221a5",
+   "2/3 + 2/9\u221a5",
+   "28 - 12\u221a5",
+   "27/2 - 11/2\u221a5",
+   "122 - 54\u221a5",
+   "216 - 96\u221a5"
+  ],
+  "edge_len": [
+   0.170026,
+   0.18034,
+   0.291796,
+   0.333851,
+   0.408882,
+   0.412662,
+   0.416385,
+   0.434132,
+   0.49023,
+   0.517199,
+   0.569401,
+   0.605957,
+   0.661585,
+   0.667701,
+   0.677481,
+   0.683282,
+   0.720242,
+   0.753247,
+   0.763932,
+   0.868264,
+   0.970748,
+   1.072453,
+   1.078689,
+   1.080363,
+   1.096187,
+   1.119075,
+   1.156492
+  ],
+  "edge_len_count": [
+   12,
+   6,
+   6,
+   6,
+   12,
+   12,
+   12,
+   24,
+   12,
+   12,
+   3,
+   12,
+   12,
+   24,
+   12,
+   6,
+   12,
+   12,
+   12,
+   6,
+   12,
+   12,
+   3,
+   12,
+   12,
+   12,
+   12
+  ],
+  "edge_ratio2_exact": "189/8 + 81/8\u221a5",
+  "edge_ratio": 6.801852,
+  "dihedral_cos2_exact": [
+   "-(18/19 + 3/152\u221a5)",
+   "-(3605/6989 + 7296/34945\u221a5)",
+   "-(409/505 + 36/505\u221a5)",
+   "-(3/4 + 9/92\u221a5)",
+   "-(12977/14645 + 468/14645\u221a5)",
+   "-(9947/15542 + 2205/15542\u221a5)",
+   "-(109609/167281 + 22176/167281\u221a5)",
+   "-(18197/24341 + 11052/121705\u221a5)",
+   "-(153/202 + 42/505\u221a5)",
+   "-(9083/9407 - 96/9407\u221a5)",
+   "-(2009/4205 + 864/4205\u221a5)",
+   "-(1347/1636 + 81/1636\u221a5)",
+   "-(1651/2323 + 1152/11615\u221a5)",
+   "-(117/241 + 48/241\u221a5)",
+   "-(7589/11861 + 7668/59305\u221a5)",
+   "-(23/32 + 3/32\u221a5)",
+   "-(45389/51005 + 852/51005\u221a5)",
+   "-(338/437 + 30/437\u221a5)",
+   "-(5141/9158 + 1485/9158\u221a5)",
+   "-(21713/24341 + 1728/121705\u221a5)",
+   "-(37469/51005 + 4224/51005\u221a5)"
+  ],
+  "dihedral_deg": [
+   174.7105,
+   172.4351,
+   169.9095,
+   169.8172,
+   168.1115,
+   168.067,
+   167.3001,
+   167.1638,
+   166.2364,
+   166.1551,
+   165.4881,
+   165.1204,
+   164.941,
+   164.7523,
+   164.5404,
+   164.4775,
+   164.3517,
+   164.3204,
+   163.9923,
+   163.9739,
+   163.5484
+  ],
+  "dihedral_count": [
+   6,
+   12,
+   12,
+   12,
+   24,
+   6,
+   24,
+   12,
+   24,
+   12,
+   12,
+   24,
+   36,
+   6,
+   24,
+   6,
+   6,
+   12,
+   12,
+   12,
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "0",
+  "central": true,
+  "at_vertex_layer": true,
+  "V": 104,
+  "E": 282,
+  "F": 180,
+  "face_sizes": {
+   "3": 156,
+   "4": 24
+  },
+  "all_triangles": false,
+  "degrees": [
+   12,
+   12,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "34/5 - 3\u221a5",
+   "14/5 - 6/5\u221a5",
+   "32 - 128/9\u221a5",
+   "36 - 16\u221a5",
+   "23/10 - 9/10\u221a5",
+   "7 - 3\u221a5",
+   "39/2 - 17/2\u221a5",
+   "13/10 - 3/10\u221a5",
+   "8/3 - 8/9\u221a5",
+   "84/5 - 36/5\u221a5",
+   "9/2 - 3/2\u221a5",
+   "28 - 12\u221a5",
+   "14/3 - 14/9\u221a5",
+   "8 - 3\u221a5"
+  ],
+  "edge_len": [
+   0.302979,
+   0.341641,
+   0.445134,
+   0.472136,
+   0.536226,
+   0.540182,
+   0.70244,
+   0.793208,
+   0.824045,
+   0.836846,
+   1.070466,
+   1.080363,
+   1.090109,
+   1.136572
+  ],
+  "edge_len_count": [
+   24,
+   12,
+   24,
+   12,
+   24,
+   24,
+   24,
+   24,
+   6,
+   24,
+   24,
+   24,
+   24,
+   12
+  ],
+  "edge_ratio2_exact": "235/31 + 90/31\u221a5",
+  "edge_ratio": 3.751327,
+  "dihedral_cos2_exact": [
+   "-(37001/51005 + 6048/51005\u221a5)",
+   "-(3/4 + 9/92\u221a5)",
+   "-(12977/14645 + 468/14645\u221a5)",
+   "-(9947/15542 + 2205/15542\u221a5)",
+   "-(109609/167281 + 22176/167281\u221a5)",
+   "-(153/202 + 42/505\u221a5)",
+   "-(9083/9407 - 96/9407\u221a5)",
+   "-(2009/4205 + 864/4205\u221a5)",
+   "-(1347/1636 + 81/1636\u221a5)",
+   "-(1651/2323 + 1152/11615\u221a5)",
+   "-(7589/11861 + 7668/59305\u221a5)",
+   "-(23/32 + 3/32\u221a5)",
+   "-(45389/51005 + 852/51005\u221a5)",
+   "-(338/437 + 30/437\u221a5)"
+  ],
+  "dihedral_deg": [
+   174.4315,
+   169.8172,
+   168.1115,
+   168.067,
+   167.3001,
+   166.2364,
+   166.1551,
+   165.4881,
+   165.1204,
+   164.941,
+   164.5404,
+   164.4775,
+   164.3517,
+   164.3204
+  ],
+  "dihedral_count": [
+   12,
+   24,
+   24,
+   12,
+   24,
+   24,
+   12,
+   12,
+   24,
+   48,
+   24,
+   6,
+   12,
+   24
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "-1/3 + 1/3\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 114,
+  "E": 300,
+  "F": 188,
+  "face_sizes": {
+   "3": 152,
+   "4": 36
+  },
+  "all_triangles": false,
+  "degrees": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "656/3 - 880/9\u221a5",
+   "246 - 110\u221a5",
+   "94 - 42\u221a5",
+   "18 - 8\u221a5",
+   "27 - 12\u221a5",
+   "188 - 84\u221a5",
+   "28 - 112/9\u221a5",
+   "101/2 - 45/2\u221a5",
+   "27/10 - 11/10\u221a5",
+   "216/5 - 96/5\u221a5",
+   "70/9 - 10/3\u221a5",
+   "136/5 - 12\u221a5",
+   "21/2 - 9/2\u221a5",
+   "72 - 32\u221a5",
+   "34 - 15\u221a5",
+   "56/5 - 24/5\u221a5",
+   "112/9 - 16/3\u221a5",
+   "245/18 - 35/6\u221a5",
+   "14 - 6\u221a5",
+   "202 - 90\u221a5",
+   "505/2 - 225/2\u221a5",
+   "46/5 - 18/5\u221a5",
+   "2/3 + 2/9\u221a5",
+   "28 - 12\u221a5",
+   "27/2 - 11/2\u221a5",
+   "122 - 54\u221a5",
+   "216 - 96\u221a5"
+  ],
+  "edge_len": [
+   0.170026,
+   0.18034,
+   0.291796,
+   0.333851,
+   0.408882,
+   0.412662,
+   0.416385,
+   0.434132,
+   0.49023,
+   0.517199,
+   0.569401,
+   0.605957,
+   0.661585,
+   0.667701,
+   0.677481,
+   0.683282,
+   0.720242,
+   0.753247,
+   0.763932,
+   0.868264,
+   0.970748,
+   1.072453,
+   1.078689,
+   1.080363,
+   1.096187,
+   1.119075,
+   1.156492
+  ],
+  "edge_len_count": [
+   12,
+   6,
+   6,
+   6,
+   12,
+   12,
+   12,
+   24,
+   12,
+   12,
+   3,
+   12,
+   12,
+   24,
+   12,
+   6,
+   12,
+   12,
+   12,
+   6,
+   12,
+   12,
+   3,
+   12,
+   12,
+   12,
+   12
+  ],
+  "edge_ratio2_exact": "189/8 + 81/8\u221a5",
+  "edge_ratio": 6.801852,
+  "dihedral_cos2_exact": [
+   "-(18/19 + 3/152\u221a5)",
+   "-(3605/6989 + 7296/34945\u221a5)",
+   "-(409/505 + 36/505\u221a5)",
+   "-(3/4 + 9/92\u221a5)",
+   "-(12977/14645 + 468/14645\u221a5)",
+   "-(9947/15542 + 2205/15542\u221a5)",
+   "-(109609/167281 + 22176/167281\u221a5)",
+   "-(18197/24341 + 11052/121705\u221a5)",
+   "-(153/202 + 42/505\u221a5)",
+   "-(9083/9407 - 96/9407\u221a5)",
+   "-(2009/4205 + 864/4205\u221a5)",
+   "-(1347/1636 + 81/1636\u221a5)",
+   "-(1651/2323 + 1152/11615\u221a5)",
+   "-(117/241 + 48/241\u221a5)",
+   "-(7589/11861 + 7668/59305\u221a5)",
+   "-(23/32 + 3/32\u221a5)",
+   "-(45389/51005 + 852/51005\u221a5)",
+   "-(338/437 + 30/437\u221a5)",
+   "-(5141/9158 + 1485/9158\u221a5)",
+   "-(21713/24341 + 1728/121705\u221a5)",
+   "-(37469/51005 + 4224/51005\u221a5)"
+  ],
+  "dihedral_deg": [
+   174.7105,
+   172.4351,
+   169.9095,
+   169.8172,
+   168.1115,
+   168.067,
+   167.3001,
+   167.1638,
+   166.2364,
+   166.1551,
+   165.4881,
+   165.1204,
+   164.941,
+   164.7523,
+   164.5404,
+   164.4775,
+   164.3517,
+   164.3204,
+   163.9923,
+   163.9739,
+   163.5484
+  ],
+  "dihedral_count": [
+   6,
+   12,
+   12,
+   12,
+   24,
+   6,
+   24,
+   12,
+   24,
+   12,
+   12,
+   24,
+   36,
+   6,
+   24,
+   6,
+   6,
+   12,
+   12,
+   12,
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "2/3",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 114,
+  "E": 300,
+  "F": 188,
+  "face_sizes": {
+   "3": 152,
+   "4": 36
+  },
+  "all_triangles": false,
+  "degrees": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "7 - 28/9\u221a5",
+   "9 - 4\u221a5",
+   "132 - 59\u221a5",
+   "34/5 - 3\u221a5",
+   "564/5 - 252/5\u221a5",
+   "27 - 12\u221a5",
+   "2/3 - 2/9\u221a5",
+   "188 - 84\u221a5",
+   "28 - 112/9\u221a5",
+   "36 - 16\u221a5",
+   "7 - 3\u221a5",
+   "7/6 - 7/18\u221a5",
+   "21/2 - 9/2\u221a5",
+   "114/5 - 10\u221a5",
+   "34 - 15\u221a5",
+   "39/2 - 17/2\u221a5",
+   "13/10 - 3/10\u221a5",
+   "3 - \u221a5",
+   "128 - 512/9\u221a5",
+   "4/5",
+   "12 - 5\u221a5",
+   "144 - 64\u221a5",
+   "28 - 12\u221a5",
+   "27/2 - 11/2\u221a5",
+   "8 - 3\u221a5",
+   "16/3 - 16/9\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.208192,
+   0.236068,
+   0.268308,
+   0.302979,
+   0.319647,
+   0.408882,
+   0.412023,
+   0.412662,
+   0.416385,
+   0.472136,
+   0.540182,
+   0.545055,
+   0.661585,
+   0.662812,
+   0.677481,
+   0.70244,
+   0.793208,
+   0.874032,
+   0.890268,
+   0.894427,
+   0.905351,
+   0.944272,
+   1.080363,
+   1.096187,
+   1.136572,
+   1.165376,
+   1.236068
+  ],
+  "edge_len_count": [
+   12,
+   6,
+   12,
+   12,
+   12,
+   24,
+   3,
+   12,
+   12,
+   6,
+   6,
+   12,
+   12,
+   12,
+   12,
+   18,
+   12,
+   12,
+   12,
+   6,
+   12,
+   6,
+   24,
+   12,
+   12,
+   6,
+   3
+  ],
+  "edge_ratio2_exact": "18 + 54/7\u221a5",
+  "edge_ratio": 5.937143,
+  "dihedral_cos2_exact": [
+   "-(32777/41309 + 18444/206545\u221a5)",
+   "-(3605/6989 + 7296/34945\u221a5)",
+   "-(203/230 + 9/230\u221a5)",
+   "-(409/505 + 36/505\u221a5)",
+   "-(3/4 + 9/92\u221a5)",
+   "-(12977/14645 + 468/14645\u221a5)",
+   "-(9947/15542 + 2205/15542\u221a5)",
+   "-(3091/4579 + 576/4579\u221a5)",
+   "-(109609/167281 + 22176/167281\u221a5)",
+   "-(18197/24341 + 11052/121705\u221a5)",
+   "-(153/202 + 42/505\u221a5)",
+   "-(9083/9407 - 96/9407\u221a5)",
+   "-(2009/4205 + 864/4205\u221a5)",
+   "-(1347/1636 + 81/1636\u221a5)",
+   "-(1651/2323 + 1152/11615\u221a5)",
+   "-(117/241 + 48/241\u221a5)",
+   "-(7589/11861 + 7668/59305\u221a5)",
+   "-(23/32 + 3/32\u221a5)",
+   "-(45389/51005 + 852/51005\u221a5)",
+   "-(338/437 + 30/437\u221a5)",
+   "-(737/1010 + 441/5050\u221a5)",
+   "-(5141/9158 + 1485/9158\u221a5)",
+   "-(21713/24341 + 1728/121705\u221a5)",
+   "-(37469/51005 + 4224/51005\u221a5)",
+   "-(127/190 + 21/190\u221a5)",
+   "-(601/1444 + 63/361\u221a5)"
+  ],
+  "dihedral_deg": [
+   175.2472,
+   172.4351,
+   170.0438,
+   169.9095,
+   169.8172,
+   168.1115,
+   168.067,
+   167.936,
+   167.3001,
+   167.1638,
+   166.2364,
+   166.1551,
+   165.4881,
+   165.1204,
+   164.941,
+   164.7523,
+   164.5404,
+   164.4775,
+   164.3517,
+   164.3204,
+   164.1027,
+   163.9923,
+   163.9739,
+   163.5484,
+   163.1075,
+   153.8985
+  ],
+  "dihedral_count": [
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   6,
+   6,
+   12,
+   12,
+   12,
+   6,
+   12,
+   24,
+   24,
+   6,
+   24,
+   3,
+   6,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   3
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "1/3 + 1/3\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 78,
+  "E": 219,
+  "F": 143,
+  "face_sizes": {
+   "3": 134,
+   "4": 9
+  },
+  "all_triangles": false,
+  "degrees": "999999999999555555555555555555555555555555555555555555555555555555555555555555",
+  "edge_len2_exact": [
+   "4 - 16/9\u221a5",
+   "7 - 28/9\u221a5",
+   "564/5 - 252/5\u221a5",
+   "14/5 - 6/5\u221a5",
+   "101/2 - 45/2\u221a5",
+   "7 - 3\u221a5",
+   "7/6 - 7/18\u221a5",
+   "61/2 - 27/2\u221a5",
+   "3/2 - 1/2\u221a5",
+   "14 - 6\u221a5",
+   "13/10 - 3/10\u221a5",
+   "3 - \u221a5",
+   "128 - 512/9\u221a5",
+   "4/5",
+   "9/2 - 3/2\u221a5",
+   "14/3 - 14/9\u221a5",
+   "27/2 - 11/2\u221a5",
+   "24/5 - 8/5\u221a5",
+   "122 - 54\u221a5",
+   "8 - 3\u221a5",
+   "16/3 - 16/9\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.157379,
+   0.208192,
+   0.319647,
+   0.341641,
+   0.434132,
+   0.540182,
+   0.545055,
+   0.559538,
+   0.618034,
+   0.763932,
+   0.793208,
+   0.874032,
+   0.890268,
+   0.894427,
+   1.070466,
+   1.090109,
+   1.096187,
+   1.105573,
+   1.119075,
+   1.136572,
+   1.165376,
+   1.236068
+  ],
+  "edge_len_count": [
+   3,
+   12,
+   12,
+   6,
+   6,
+   12,
+   12,
+   12,
+   6,
+   6,
+   12,
+   6,
+   6,
+   6,
+   24,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   6
+  ],
+  "edge_ratio2_exact": "63/2 + 27/2\u221a5",
+  "edge_ratio": 7.854102,
+  "dihedral_cos2_exact": [
+   "-(203/230 + 9/230\u221a5)",
+   "-(409/505 + 36/505\u221a5)",
+   "-(3091/4579 + 576/4579\u221a5)",
+   "-(18197/24341 + 11052/121705\u221a5)",
+   "-(13/19 + 9/76\u221a5)",
+   "-(153/202 + 42/505\u221a5)",
+   "-(1631/1919 + 372/9595\u221a5)",
+   "-(328/409 + 24/409\u221a5)",
+   "-(1651/2323 + 1152/11615\u221a5)",
+   "-(117/241 + 48/241\u221a5)",
+   "-(23/32 + 3/32\u221a5)",
+   "-(45389/51005 + 852/51005\u221a5)",
+   "-(338/437 + 30/437\u221a5)",
+   "-(737/1010 + 441/5050\u221a5)",
+   "-(5141/9158 + 1485/9158\u221a5)",
+   "-(21713/24341 + 1728/121705\u221a5)",
+   "-(37469/51005 + 4224/51005\u221a5)",
+   "-(5827/7771 + 576/7771\u221a5)",
+   "-(127/190 + 21/190\u221a5)",
+   "-(541/874 + 75/874\u221a5)"
+  ],
+  "dihedral_deg": [
+   170.0438,
+   169.9095,
+   167.936,
+   167.1638,
+   166.9493,
+   166.2364,
+   165.418,
+   165.0178,
+   164.941,
+   164.7523,
+   164.4775,
+   164.3517,
+   164.3204,
+   164.1027,
+   163.9923,
+   163.9739,
+   163.5484,
+   163.1091,
+   163.1075,
+   154.222
+  ],
+  "dihedral_count": [
+   12,
+   12,
+   18,
+   12,
+   6,
+   12,
+   12,
+   6,
+   24,
+   6,
+   3,
+   6,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "4/3",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 105,
+  "E": 270,
+  "F": 167,
+  "face_sizes": {
+   "3": 128,
+   "4": 39
+  },
+  "all_triangles": false,
+  "degrees": [
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "208 - 93\u221a5",
+   "492 - 220\u221a5",
+   "132 - 59\u221a5",
+   "18 - 8\u221a5",
+   "159/2 - 71/2\u221a5",
+   "27 - 12\u221a5",
+   "188 - 84\u221a5",
+   "216/5 - 96/5\u221a5",
+   "6/5 - 2/5\u221a5",
+   "136/5 - 12\u221a5",
+   "21/2 - 9/2\u221a5",
+   "34 - 15\u221a5",
+   "56/5 - 24/5\u221a5",
+   "112/9 - 16/3\u221a5",
+   "245/18 - 35/6\u221a5",
+   "14 - 6\u221a5",
+   "108 - 48\u221a5",
+   "576/5 - 256/5\u221a5",
+   "35/2 - 15/2\u221a5",
+   "7/9",
+   "12 - 5\u221a5",
+   "144 - 64\u221a5",
+   "180 - 80\u221a5",
+   "28 - 12\u221a5",
+   "122 - 54\u221a5",
+   "216 - 96\u221a5"
+  ],
+  "edge_len": [
+   0.213724,
+   0.255039,
+   0.268308,
+   0.333851,
+   0.345813,
+   0.408882,
+   0.412662,
+   0.517199,
+   0.552786,
+   0.605957,
+   0.661585,
+   0.677481,
+   0.683282,
+   0.720242,
+   0.753247,
+   0.763932,
+   0.817763,
+   0.844582,
+   0.854102,
+   0.881917,
+   0.905351,
+   0.944272,
+   1.055728,
+   1.080363,
+   1.119075,
+   1.156492
+  ],
+  "edge_len_count": [
+   12,
+   12,
+   18,
+   12,
+   12,
+   12,
+   12,
+   12,
+   6,
+   12,
+   12,
+   12,
+   6,
+   6,
+   12,
+   6,
+   12,
+   12,
+   6,
+   12,
+   12,
+   6,
+   6,
+   6,
+   12,
+   12
+  ],
+  "edge_ratio2_exact": "288/19 + 120/19\u221a5",
+  "edge_ratio": 5.411139,
+  "dihedral_cos2_exact": [
+   "-(149/266 + 51/266\u221a5)",
+   "-(30557/41309 + 21564/206545\u221a5)",
+   "-(203/230 + 9/230\u221a5)",
+   "-(209/290 + 153/1450\u221a5)",
+   "-(3091/4579 + 576/4579\u221a5)",
+   "-(18197/24341 + 11052/121705\u221a5)",
+   "-(13/19 + 9/76\u221a5)",
+   "-(63/95 + 12/95\u221a5)",
+   "-(1631/1919 + 372/9595\u221a5)",
+   "-(328/409 + 24/409\u221a5)",
+   "-(1651/2323 + 1152/11615\u221a5)",
+   "-(117/241 + 48/241\u221a5)",
+   "-(45389/51005 + 852/51005\u221a5)",
+   "-(338/437 + 30/437\u221a5)",
+   "-(737/1010 + 441/5050\u221a5)",
+   "-(5141/9158 + 1485/9158\u221a5)",
+   "-(21713/24341 + 1728/121705\u221a5)",
+   "-(37469/51005 + 4224/51005\u221a5)",
+   "-(95/203 + 204/1015\u221a5)",
+   "-(5827/7771 + 576/7771\u221a5)",
+   "-(127/190 + 21/190\u221a5)",
+   "-(121/133)",
+   "-(1881/2045 - 12/2045\u221a5)",
+   "-(81/145 + 108/725\u221a5)"
+  ],
+  "dihedral_deg": [
+   173.9441,
+   170.5727,
+   170.0438,
+   167.9804,
+   167.936,
+   167.1638,
+   166.9493,
+   166.5133,
+   165.418,
+   165.0178,
+   164.941,
+   164.7523,
+   164.3517,
+   164.3204,
+   164.1027,
+   163.9923,
+   163.9739,
+   163.5484,
+   163.2972,
+   163.1091,
+   163.1075,
+   162.5198,
+   162.2131,
+   160.7881
+  ],
+  "dihedral_count": [
+   6,
+   12,
+   12,
+   12,
+   18,
+   12,
+   6,
+   12,
+   12,
+   6,
+   12,
+   6,
+   6,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   24,
+   12,
+   6,
+   12,
+   12
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "1 + 1/3\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 84,
+  "E": 219,
+  "F": 137,
+  "face_sizes": {
+   "3": 110,
+   "4": 27
+  },
+  "all_triangles": false,
+  "degrees": "888888555555555555555555555555555555555555555555555555555555555555555555555555555555",
+  "edge_len2_exact": [
+   "34/5 - 3\u221a5",
+   "14/5 - 6/5\u221a5",
+   "27 - 12\u221a5",
+   "144/5 - 64/5\u221a5",
+   "32 - 128/9\u221a5",
+   "23/10 - 9/10\u221a5",
+   "7 - 3\u221a5",
+   "7/6 - 7/18\u221a5",
+   "61/2 - 27/2\u221a5",
+   "72 - 32\u221a5",
+   "39/2 - 17/2\u221a5",
+   "14 - 6\u221a5",
+   "84/5 - 36/5\u221a5",
+   "4/5",
+   "9/2 - 3/2\u221a5",
+   "28 - 12\u221a5",
+   "14/3 - 14/9\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.302979,
+   0.341641,
+   0.408882,
+   0.422291,
+   0.445134,
+   0.536226,
+   0.540182,
+   0.545055,
+   0.559538,
+   0.667701,
+   0.70244,
+   0.763932,
+   0.836846,
+   0.894427,
+   1.070466,
+   1.080363,
+   1.090109,
+   1.236068
+  ],
+  "edge_len_count": [
+   12,
+   9,
+   12,
+   12,
+   6,
+   12,
+   6,
+   12,
+   36,
+   12,
+   12,
+   6,
+   24,
+   6,
+   12,
+   12,
+   12,
+   6
+  ],
+  "edge_ratio2_exact": "270/31 + 110/31\u221a5",
+  "edge_ratio": 4.07972,
+  "dihedral_cos2_exact": [
+   "-(30557/41309 + 21564/206545\u221a5)",
+   "-(209/290 + 153/1450\u221a5)",
+   "-(3091/4579 + 576/4579\u221a5)",
+   "-(13/19 + 9/76\u221a5)",
+   "-(63/95 + 12/95\u221a5)",
+   "-(1631/1919 + 372/9595\u221a5)",
+   "-(328/409 + 24/409\u221a5)",
+   "-(11213/15542 + 1419/15542\u221a5)",
+   "-(737/1010 + 441/5050\u221a5)",
+   "-(5141/9158 + 1485/9158\u221a5)",
+   "-(21713/24341 + 1728/121705\u221a5)",
+   "-(37469/51005 + 4224/51005\u221a5)",
+   "-(95/203 + 204/1015\u221a5)",
+   "-(5827/7771 + 576/7771\u221a5)",
+   "-(127/190 + 21/190\u221a5)",
+   "-(121/133)",
+   "-(1881/2045 - 12/2045\u221a5)",
+   "-(81/145 + 108/725\u221a5)",
+   "-(1129/1444 + 15/361\u221a5)",
+   "-(15/19)"
+  ],
+  "dihedral_deg": [
+   170.5727,
+   167.9804,
+   167.936,
+   166.9493,
+   166.5133,
+   165.418,
+   165.0178,
+   164.1734,
+   164.1027,
+   163.9923,
+   163.9739,
+   163.5484,
+   163.2972,
+   163.1091,
+   163.1075,
+   162.5198,
+   162.2131,
+   160.7881,
+   159.275,
+   152.6883
+  ],
+  "dihedral_count": [
+   12,
+   12,
+   12,
+   6,
+   12,
+   12,
+   6,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   24,
+   12,
+   6,
+   12,
+   12,
+   3,
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "2/3 + 2/3\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 72,
+  "E": 192,
+  "F": 122,
+  "face_sizes": {
+   "3": 104,
+   "4": 18
+  },
+  "all_triangles": false,
+  "degrees": "999999555555555555555555555555555555555555555555555555555555555555555555",
+  "edge_len2_exact": [
+   "656/3 - 880/9\u221a5",
+   "7 - 28/9\u221a5",
+   "208 - 93\u221a5",
+   "27 - 12\u221a5",
+   "28 - 112/9\u221a5",
+   "144/5 - 64/5\u221a5",
+   "36 - 16\u221a5",
+   "216/5 - 96/5\u221a5",
+   "114/5 - 10\u221a5",
+   "72 - 32\u221a5",
+   "56/5 - 24/5\u221a5",
+   "4/5",
+   "12 - 5\u221a5",
+   "46/5 - 18/5\u221a5",
+   "28 - 12\u221a5",
+   "8 - 3\u221a5",
+   "216 - 96\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.170026,
+   0.208192,
+   0.213724,
+   0.408882,
+   0.416385,
+   0.422291,
+   0.472136,
+   0.517199,
+   0.662812,
+   0.667701,
+   0.683282,
+   0.894427,
+   0.905351,
+   1.072453,
+   1.080363,
+   1.136572,
+   1.156492,
+   1.236068
+  ],
+  "edge_len_count": [
+   6,
+   12,
+   12,
+   12,
+   12,
+   6,
+   12,
+   12,
+   12,
+   24,
+   3,
+   6,
+   12,
+   12,
+   12,
+   12,
+   12,
+   3
+  ],
+  "edge_ratio2_exact": "423/16 + 189/16\u221a5",
+  "edge_ratio": 7.269873,
+  "dihedral_cos2_exact": [
+   "-(689/722 + 9/722\u221a5)",
+   "-(209/290 + 153/1450\u221a5)",
+   "-(5717/6989 + 2016/34945\u221a5)",
+   "-(63/95 + 12/95\u221a5)",
+   "-(1631/1919 + 372/9595\u221a5)",
+   "-(11213/15542 + 1419/15542\u221a5)",
+   "-(737/1010 + 441/5050\u221a5)",
+   "-(37469/51005 + 4224/51005\u221a5)",
+   "-(95/203 + 204/1015\u221a5)",
+   "-(5827/7771 + 576/7771\u221a5)",
+   "-(127/190 + 21/190\u221a5)",
+   "-(121/133)",
+   "-(1881/2045 - 12/2045\u221a5)",
+   "-(81/145 + 108/725\u221a5)",
+   "-(27/38 + 3/38\u221a5)",
+   "-(3118/4579 + 414/4579\u221a5)",
+   "-(1129/1444 + 15/361\u221a5)",
+   "-(46129/58081 + 1344/58081\u221a5)",
+   "-(72529/167281 + 23712/167281\u221a5)"
+  ],
+  "dihedral_deg": [
+   172.3258,
+   167.9804,
+   166.6901,
+   166.5133,
+   165.418,
+   164.1734,
+   164.1027,
+   163.5484,
+   163.2972,
+   163.1091,
+   163.1075,
+   162.5198,
+   162.2131,
+   160.7881,
+   160.3625,
+   160.0073,
+   159.275,
+   156.8912,
+   150.0356
+  ],
+  "dihedral_count": [
+   6,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   6,
+   12,
+   24,
+   12,
+   6,
+   12,
+   12,
+   6,
+   12,
+   3,
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "5/3 + 1/3\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 54,
+  "E": 150,
+  "F": 98,
+  "face_sizes": {
+   "3": 92,
+   "4": 6
+  },
+  "all_triangles": false,
+  "degrees": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "94 - 42\u221a5",
+   "564/5 - 252/5\u221a5",
+   "27 - 12\u221a5",
+   "188 - 84\u221a5",
+   "36 - 16\u221a5",
+   "114/5 - 10\u221a5",
+   "72 - 32\u221a5",
+   "56/5 - 24/5\u221a5",
+   "4/5",
+   "1",
+   "46/5 - 18/5\u221a5",
+   "28 - 12\u221a5",
+   "122 - 54\u221a5",
+   "8 - 3\u221a5"
+  ],
+  "edge_len": [
+   0.291796,
+   0.319647,
+   0.408882,
+   0.412662,
+   0.472136,
+   0.662812,
+   0.667701,
+   0.683282,
+   0.894427,
+   1.0,
+   1.072453,
+   1.080363,
+   1.119075,
+   1.136572
+  ],
+  "edge_len_count": [
+   6,
+   12,
+   12,
+   12,
+   6,
+   12,
+   12,
+   12,
+   3,
+   3,
+   12,
+   24,
+   12,
+   12
+  ],
+  "edge_ratio2_exact": "61/8 + 27/8\u221a5",
+  "edge_ratio": 3.89509,
+  "dihedral_cos2_exact": [
+   "-(93/145 + 108/725\u221a5)",
+   "-(271/304 + 9/304\u221a5)",
+   "-(5717/6989 + 2016/34945\u221a5)",
+   "-(11213/15542 + 1419/15542\u221a5)",
+   "-(95/203 + 204/1015\u221a5)",
+   "-(5827/7771 + 576/7771\u221a5)",
+   "-(121/133)",
+   "-(1881/2045 - 12/2045\u221a5)",
+   "-(81/145 + 108/725\u221a5)",
+   "-(27/38 + 3/38\u221a5)",
+   "-(3118/4579 + 414/4579\u221a5)",
+   "-(1129/1444 + 15/361\u221a5)",
+   "-(46129/58081 + 1344/58081\u221a5)",
+   "-(4685/6989 + 2724/34945\u221a5)",
+   "-(31/58 + 18/145\u221a5)"
+  ],
+  "dihedral_deg": [
+   170.807,
+   168.1237,
+   166.6901,
+   164.1734,
+   163.2972,
+   163.1091,
+   162.5198,
+   162.2131,
+   160.7881,
+   160.3625,
+   160.0073,
+   159.275,
+   156.8912,
+   156.7868,
+   154.3091
+  ],
+  "dihedral_count": [
+   12,
+   6,
+   12,
+   12,
+   12,
+   12,
+   6,
+   12,
+   12,
+   6,
+   12,
+   3,
+   9,
+   12,
+   12
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "4/3 + 2/3\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 30,
+  "E": 84,
+  "F": 56,
+  "face_sizes": {
+   "3": 56
+  },
+  "all_triangles": true,
+  "degrees": "888888555555555555555555555555",
+  "edge_len2_exact": [
+   "14/5 - 6/5\u221a5",
+   "23/10 - 9/10\u221a5",
+   "61/2 - 27/2\u221a5",
+   "3/2 - 1/2\u221a5",
+   "39/2 - 17/2\u221a5",
+   "9/2 - 3/2\u221a5",
+   "28 - 12\u221a5",
+   "24/5 - 8/5\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.341641,
+   0.536226,
+   0.559538,
+   0.618034,
+   0.70244,
+   1.070466,
+   1.080363,
+   1.105573,
+   1.236068
+  ],
+  "edge_len_count": [
+   6,
+   12,
+   6,
+   3,
+   12,
+   24,
+   12,
+   6,
+   3
+  ],
+  "edge_ratio2_exact": "15/2 + 5/2\u221a5",
+  "edge_ratio": 3.618034,
+  "dihedral_cos2_exact": [
+   "-(5081/6989 + 3024/34945\u221a5)",
+   "-(27/38 + 3/38\u221a5)",
+   "-(3118/4579 + 414/4579\u221a5)",
+   "-(46129/58081 + 1344/58081\u221a5)",
+   "-(4685/6989 + 2724/34945\u221a5)",
+   "-(121/145)",
+   "-(31/58 + 18/145\u221a5)",
+   "-(2621/4205 + 204/4205\u221a5)",
+   "-(23/32 - 3/32\u221a5)"
+  ],
+  "dihedral_deg": [
+   163.6229,
+   160.3625,
+   160.0073,
+   156.8912,
+   156.7868,
+   155.9936,
+   154.3091,
+   148.8089,
+   135.5225
+  ],
+  "dihedral_count": [
+   12,
+   6,
+   12,
+   9,
+   12,
+   12,
+   12,
+   6,
+   3
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "1 + \u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 26,
+  "E": 69,
+  "F": 45,
+  "face_sizes": {
+   "3": 42,
+   "4": 3
+  },
+  "all_triangles": false,
+  "degrees": "99555555555555555555555555",
+  "edge_len2_exact": [
+   "9 - 4\u221a5",
+   "132 - 59\u221a5",
+   "27 - 12\u221a5",
+   "188 - 84\u221a5",
+   "36 - 16\u221a5",
+   "14 - 6\u221a5",
+   "28 - 12\u221a5",
+   "122 - 54\u221a5"
+  ],
+  "edge_len": [
+   0.236068,
+   0.268308,
+   0.408882,
+   0.412662,
+   0.472136,
+   0.763932,
+   1.080363,
+   1.119075
+  ],
+  "edge_len_count": [
+   3,
+   12,
+   12,
+   12,
+   6,
+   6,
+   12,
+   6
+  ],
+  "edge_ratio2_exact": "18 + 2\u221a5",
+  "edge_ratio": 4.740478,
+  "dihedral_cos2_exact": [
+   "-(7/16 + 3/16\u221a5)",
+   "-(46129/58081 + 1344/58081\u221a5)",
+   "-(4685/6989 + 2724/34945\u221a5)",
+   "-(121/145)",
+   "-(31/58 + 18/145\u221a5)",
+   "-(143/203 + 36/1015\u221a5)",
+   "-(2621/4205 + 204/4205\u221a5)",
+   "-(4/7)"
+  ],
+  "dihedral_deg": [
+   157.7612,
+   156.8912,
+   156.7868,
+   155.9936,
+   154.3091,
+   152.2875,
+   148.8089,
+   139.1066
+  ],
+  "dihedral_count": [
+   6,
+   3,
+   12,
+   12,
+   12,
+   12,
+   6,
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "face-first",
+  "kind": "slice",
+  "height": "2 + 2/3\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "dim": 2
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "shadow",
+  "height": null,
+  "V": 44,
+  "E": 120,
+  "F": 78,
+  "face_sizes": {
+   "3": 72,
+   "4": 6
+  },
+  "all_triangles": false,
+  "degrees": "66666666666666666666555555555555555555555555",
+  "edge_len2_exact": [
+   "3 - \u221a5",
+   "21/4 - 7/4\u221a5",
+   "17/4 - 5/4\u221a5",
+   "3/2"
+  ],
+  "edge_len": [
+   0.874032,
+   1.156236,
+   1.206199,
+   1.224745
+  ],
+  "edge_len_count": [
+   24,
+   48,
+   24,
+   24
+  ],
+  "edge_ratio2_exact": "9/8 + 3/8\u221a5",
+  "edge_ratio": 1.401259,
+  "dihedral_cos2_exact": [
+   "-(23/32 + 3/32\u221a5)",
+   "-(9/16 + 7/48\u221a5)",
+   "-(5/6)",
+   "-(15/32 + 5/32\u221a5)"
+  ],
+  "dihedral_deg": [
+   164.4775,
+   160.5018,
+   155.9052,
+   154.7572
+  ],
+  "dihedral_count": [
+   24,
+   48,
+   24,
+   24
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 0,
+  "height": "-7/4 - 3/4\u221a5",
+  "layer_vertices": 4,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   1.236068
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 1,
+  "height": "-5/4 - 3/4\u221a5",
+  "layer_vertices": 4,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "4"
+  ],
+  "edge_len": [
+   2.0
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 2,
+  "height": "-3/2 - 1/2\u221a5",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 12,
+  "F": 8,
+  "face_sizes": {
+   "3": 8
+  },
+  "all_triangles": true,
+  "degrees": "444444",
+  "edge_len2_exact": [
+   "4"
+  ],
+  "edge_len": [
+   2.0
+  ],
+  "edge_len_count": [
+   12
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/9)"
+  ],
+  "dihedral_deg": [
+   109.4712
+  ],
+  "dihedral_count": [
+   12
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 3,
+  "height": "-1 - 1/2\u221a5",
+  "layer_vertices": 12,
+  "V": 12,
+  "E": 24,
+  "F": 14,
+  "face_sizes": {
+   "3": 8,
+   "4": 6
+  },
+  "all_triangles": false,
+  "degrees": "444444444444",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "4"
+  ],
+  "edge_len": [
+   1.236068,
+   2.0
+  ],
+  "edge_len_count": [
+   12,
+   12
+  ],
+  "edge_ratio2_exact": "3/2 + 1/2\u221a5",
+  "edge_ratio": 1.618034,
+  "dihedral_cos2_exact": [
+   "-(1/3)"
+  ],
+  "dihedral_deg": [
+   125.2644
+  ],
+  "dihedral_count": [
+   24
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 4,
+  "height": "-3/4 - 1/4\u221a5",
+  "layer_vertices": 12,
+  "V": 12,
+  "E": 18,
+  "F": 8,
+  "face_sizes": {
+   "3": 4,
+   "6": 4
+  },
+  "all_triangles": false,
+  "degrees": "333333333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "4"
+  ],
+  "edge_len": [
+   1.236068,
+   2.0
+  ],
+  "edge_len_count": [
+   12,
+   6
+  ],
+  "edge_ratio2_exact": "3/2 + 1/2\u221a5",
+  "edge_ratio": 1.618034,
+  "dihedral_cos2_exact": [
+   "-(1/9)",
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   109.4712,
+   70.5288
+  ],
+  "dihedral_count": [
+   12,
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 5,
+  "height": "-1/4 - 1/4\u221a5",
+  "layer_vertices": 12,
+  "V": 12,
+  "E": 18,
+  "F": 8,
+  "face_sizes": {
+   "3": 4,
+   "6": 4
+  },
+  "all_triangles": false,
+  "degrees": "333333333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "4"
+  ],
+  "edge_len": [
+   1.236068,
+   2.0
+  ],
+  "edge_len_count": [
+   6,
+   12
+  ],
+  "edge_ratio2_exact": "3/2 + 1/2\u221a5",
+  "edge_ratio": 1.618034,
+  "dihedral_cos2_exact": [
+   "-(1/9)",
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   109.4712,
+   70.5288
+  ],
+  "dihedral_count": [
+   12,
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 6,
+  "height": "-1/2",
+  "layer_vertices": 4,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "6 + 2\u221a5"
+  ],
+  "edge_len": [
+   3.236068
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 7,
+  "height": "0",
+  "layer_vertices": 12,
+  "V": 12,
+  "E": 24,
+  "F": 14,
+  "face_sizes": {
+   "3": 8,
+   "4": 6
+  },
+  "all_triangles": false,
+  "degrees": "444444444444",
+  "edge_len2_exact": [
+   "4"
+  ],
+  "edge_len": [
+   2.0
+  ],
+  "edge_len_count": [
+   24
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/3)"
+  ],
+  "dihedral_deg": [
+   125.2644
+  ],
+  "dihedral_count": [
+   24
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 8,
+  "height": "1/2",
+  "layer_vertices": 4,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "6 + 2\u221a5"
+  ],
+  "edge_len": [
+   3.236068
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 9,
+  "height": "1/4 + 1/4\u221a5",
+  "layer_vertices": 12,
+  "V": 12,
+  "E": 18,
+  "F": 8,
+  "face_sizes": {
+   "3": 4,
+   "6": 4
+  },
+  "all_triangles": false,
+  "degrees": "333333333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "4"
+  ],
+  "edge_len": [
+   1.236068,
+   2.0
+  ],
+  "edge_len_count": [
+   6,
+   12
+  ],
+  "edge_ratio2_exact": "3/2 + 1/2\u221a5",
+  "edge_ratio": 1.618034,
+  "dihedral_cos2_exact": [
+   "-(1/9)",
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   109.4712,
+   70.5288
+  ],
+  "dihedral_count": [
+   12,
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 10,
+  "height": "3/4 + 1/4\u221a5",
+  "layer_vertices": 12,
+  "V": 12,
+  "E": 18,
+  "F": 8,
+  "face_sizes": {
+   "3": 4,
+   "6": 4
+  },
+  "all_triangles": false,
+  "degrees": "333333333333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "4"
+  ],
+  "edge_len": [
+   1.236068,
+   2.0
+  ],
+  "edge_len_count": [
+   12,
+   6
+  ],
+  "edge_ratio2_exact": "3/2 + 1/2\u221a5",
+  "edge_ratio": 1.618034,
+  "dihedral_cos2_exact": [
+   "-(1/9)",
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   109.4712,
+   70.5288
+  ],
+  "dihedral_count": [
+   12,
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 11,
+  "height": "1 + 1/2\u221a5",
+  "layer_vertices": 12,
+  "V": 12,
+  "E": 24,
+  "F": 14,
+  "face_sizes": {
+   "3": 8,
+   "4": 6
+  },
+  "all_triangles": false,
+  "degrees": "444444444444",
+  "edge_len2_exact": [
+   "6 - 2\u221a5",
+   "4"
+  ],
+  "edge_len": [
+   1.236068,
+   2.0
+  ],
+  "edge_len_count": [
+   12,
+   12
+  ],
+  "edge_ratio2_exact": "3/2 + 1/2\u221a5",
+  "edge_ratio": 1.618034,
+  "dihedral_cos2_exact": [
+   "-(1/3)"
+  ],
+  "dihedral_deg": [
+   125.2644
+  ],
+  "dihedral_count": [
+   24
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 12,
+  "height": "3/2 + 1/2\u221a5",
+  "layer_vertices": 6,
+  "V": 6,
+  "E": 12,
+  "F": 8,
+  "face_sizes": {
+   "3": 8
+  },
+  "all_triangles": true,
+  "degrees": "444444",
+  "edge_len2_exact": [
+   "4"
+  ],
+  "edge_len": [
+   2.0
+  ],
+  "edge_len_count": [
+   12
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "-(1/9)"
+  ],
+  "dihedral_deg": [
+   109.4712
+  ],
+  "dihedral_count": [
+   12
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 13,
+  "height": "5/4 + 3/4\u221a5",
+  "layer_vertices": 4,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "4"
+  ],
+  "edge_len": [
+   2.0
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "layer",
+  "layer": 14,
+  "height": "7/4 + 3/4\u221a5",
+  "layer_vertices": 4,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   1.236068
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "-7/4 - 3/4\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   1.236068
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "-5/4 - 3/4\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 28,
+  "E": 78,
+  "F": 52,
+  "face_sizes": {
+   "3": 52
+  },
+  "all_triangles": true,
+  "degrees": "9999555555555555555555555555",
+  "edge_len2_exact": [
+   "36 - 16\u221a5",
+   "72 - 32\u221a5",
+   "28 - 12\u221a5"
+  ],
+  "edge_len": [
+   0.472136,
+   0.667701,
+   1.080363
+  ],
+  "edge_len_count": [
+   18,
+   24,
+   36
+  ],
+  "edge_ratio2_exact": "3 + \u221a5",
+  "edge_ratio": 2.288246,
+  "dihedral_cos2_exact": [
+   "-(27/41 + 18/205\u221a5)",
+   "-(3/7 + 4/21\u221a5)",
+   "-(5/7 + 2/35\u221a5)",
+   "-(4/5)",
+   "-(1289/1681 - 96/1681\u221a5)"
+  ],
+  "dihedral_deg": [
+   157.6072,
+   157.5759,
+   156.5833,
+   153.4349,
+   143.0768
+  ],
+  "dihedral_count": [
+   24,
+   12,
+   24,
+   12,
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "-3/2 - 1/2\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 42,
+  "E": 120,
+  "F": 80,
+  "face_sizes": {
+   "3": 80
+  },
+  "all_triangles": true,
+  "degrees": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "9 - 4\u221a5",
+   "27 - 12\u221a5",
+   "72 - 32\u221a5",
+   "14 - 6\u221a5",
+   "28 - 12\u221a5",
+   "8 - 3\u221a5"
+  ],
+  "edge_len": [
+   0.236068,
+   0.408882,
+   0.667701,
+   0.763932,
+   1.080363,
+   1.136572
+  ],
+  "edge_len_count": [
+   12,
+   24,
+   12,
+   12,
+   48,
+   12
+  ],
+  "edge_ratio2_exact": "12 + 5\u221a5",
+  "edge_ratio": 4.814597,
+  "dihedral_cos2_exact": [
+   "-(107/145 + 14/145\u221a5)",
+   "-(247/319 + 96/1595\u221a5)",
+   "-(7/11 + 4/33\u221a5)",
+   "-(2961/4205 + 324/4205\u221a5)",
+   "-(3/7 + 4/21\u221a5)",
+   "-(5/7 + 2/35\u221a5)",
+   "-(4/5)"
+  ],
+  "dihedral_deg": [
+   167.5916,
+   162.4305,
+   162.284,
+   159.4214,
+   157.5759,
+   156.5833,
+   153.4349
+  ],
+  "dihedral_count": [
+   24,
+   24,
+   12,
+   12,
+   12,
+   24,
+   12
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "-1 - 1/2\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 48,
+  "E": 138,
+  "F": 92,
+  "face_sizes": {
+   "3": 92
+  },
+  "all_triangles": true,
+  "degrees": "888888888888555555555555555555555555555555555555",
+  "edge_len2_exact": [
+   "14/5 - 6/5\u221a5",
+   "144/5 - 64/5\u221a5",
+   "3/2 - 1/2\u221a5",
+   "39/2 - 17/2\u221a5",
+   "9/2 - 3/2\u221a5",
+   "28 - 12\u221a5",
+   "24/5 - 8/5\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.341641,
+   0.422291,
+   0.618034,
+   0.70244,
+   1.070466,
+   1.080363,
+   1.105573,
+   1.236068
+  ],
+  "edge_len_count": [
+   6,
+   24,
+   12,
+   12,
+   24,
+   24,
+   24,
+   12
+  ],
+  "edge_ratio2_exact": "15/2 + 5/2\u221a5",
+  "edge_ratio": 3.618034,
+  "dihedral_cos2_exact": [
+   "-(25/29 + 16/435\u221a5)",
+   "-(463/627 + 52/627\u221a5)",
+   "-(32441/43681 + 3360/43681\u221a5)",
+   "-(247/319 + 96/1595\u221a5)",
+   "-(7/11 + 4/33\u221a5)",
+   "-(2961/4205 + 324/4205\u221a5)",
+   "-(25/33)"
+  ],
+  "dihedral_deg": [
+   166.3508,
+   163.9849,
+   163.0166,
+   162.4305,
+   162.284,
+   159.4214,
+   150.5038
+  ],
+  "dihedral_count": [
+   24,
+   24,
+   6,
+   24,
+   36,
+   12,
+   12
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "-3/4 - 1/4\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 72,
+  "E": 198,
+  "F": 128,
+  "face_sizes": {
+   "3": 116,
+   "4": 12
+  },
+  "all_triangles": false,
+  "degrees": "888888888888555555555555555555555555555555555555555555555555555555555555",
+  "edge_len2_exact": [
+   "144/5 - 64/5\u221a5",
+   "36 - 16\u221a5",
+   "61/2 - 27/2\u221a5",
+   "3/2 - 1/2\u221a5",
+   "72 - 32\u221a5",
+   "39/2 - 17/2\u221a5",
+   "4/5",
+   "28 - 12\u221a5",
+   "24/5 - 8/5\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.422291,
+   0.472136,
+   0.559538,
+   0.618034,
+   0.667701,
+   0.70244,
+   0.894427,
+   1.080363,
+   1.105573,
+   1.236068
+  ],
+  "edge_len_count": [
+   24,
+   12,
+   12,
+   12,
+   24,
+   24,
+   6,
+   48,
+   24,
+   12
+  ],
+  "edge_ratio2_exact": "35/8 + 15/8\u221a5",
+  "edge_ratio": 2.927051,
+  "dihedral_cos2_exact": [
+   "-(2/3 + 2/15\u221a5)",
+   "-(2267/3135 + 316/3135\u221a5)",
+   "-(2183/2299 - 4/2299\u221a5)",
+   "-(13/15 + 2/75\u221a5)",
+   "-(463/627 + 52/627\u221a5)",
+   "-(181/225 + 4/75\u221a5)",
+   "-(19/41 + 42/205\u221a5)",
+   "-(32441/43681 + 3360/43681\u221a5)",
+   "-(7/11 + 4/33\u221a5)",
+   "-(55/123 + 20/123\u221a5)"
+  ],
+  "dihedral_deg": [
+   169.1877,
+   166.8853,
+   166.5189,
+   164.2473,
+   163.9849,
+   163.9651,
+   163.733,
+   163.0166,
+   162.284,
+   154.2123
+  ],
+  "dihedral_count": [
+   24,
+   24,
+   12,
+   24,
+   36,
+   12,
+   24,
+   6,
+   24,
+   12
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "-1/4 - 1/4\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 84,
+  "E": 234,
+  "F": 152,
+  "face_sizes": {
+   "3": 140,
+   "4": 12
+  },
+  "all_triangles": false,
+  "degrees": "999999999999555555555555555555555555555555555555555555555555555555555555555555555555",
+  "edge_len2_exact": [
+   "9 - 4\u221a5",
+   "564/5 - 252/5\u221a5",
+   "188 - 84\u221a5",
+   "144/5 - 64/5\u221a5",
+   "72 - 32\u221a5",
+   "14 - 6\u221a5",
+   "4/5",
+   "12 - 5\u221a5",
+   "28 - 12\u221a5",
+   "122 - 54\u221a5",
+   "8 - 3\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.236068,
+   0.319647,
+   0.412662,
+   0.422291,
+   0.667701,
+   0.763932,
+   0.894427,
+   0.905351,
+   1.080363,
+   1.119075,
+   1.136572,
+   1.236068
+  ],
+  "edge_len_count": [
+   12,
+   12,
+   24,
+   24,
+   24,
+   12,
+   12,
+   12,
+   48,
+   24,
+   24,
+   6
+  ],
+  "edge_ratio2_exact": "14 + 6\u221a5",
+  "edge_ratio": 5.236068,
+  "dihedral_cos2_exact": [
+   "-(83/145 + 26/145\u221a5)",
+   "-(7533/8569 + 324/8569\u221a5)",
+   "-(163/209 + 16/209\u221a5)",
+   "-(2267/3135 + 316/3135\u221a5)",
+   "-(53/58 + 3/290\u221a5)",
+   "-(443/627 + 64/627\u221a5)",
+   "-(4097/6061 + 3452/30305\u221a5)",
+   "-(23/32 + 3/32\u221a5)",
+   "-(13/15 + 2/75\u221a5)",
+   "-(463/627 + 52/627\u221a5)",
+   "-(181/225 + 4/75\u221a5)",
+   "-(19/41 + 42/205\u221a5)",
+   "-(18809/43681 + 7488/43681\u221a5)"
+  ],
+  "dihedral_deg": [
+   170.607,
+   169.0083,
+   167.2226,
+   166.8853,
+   165.4546,
+   165.204,
+   164.7335,
+   164.4775,
+   164.2473,
+   163.9849,
+   163.9651,
+   163.733,
+   154.4452
+  ],
+  "dihedral_count": [
+   24,
+   12,
+   24,
+   24,
+   24,
+   12,
+   24,
+   12,
+   24,
+   12,
+   12,
+   24,
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "-1/2",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 124,
+  "E": 324,
+  "F": 202,
+  "face_sizes": {
+   "3": 160,
+   "4": 42
+  },
+  "all_triangles": false,
+  "degrees": [
+   12,
+   12,
+   12,
+   12,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "208 - 93\u221a5",
+   "9 - 4\u221a5",
+   "27 - 12\u221a5",
+   "188 - 84\u221a5",
+   "36 - 16\u221a5",
+   "216/5 - 96/5\u221a5",
+   "72 - 32\u221a5",
+   "56/5 - 24/5\u221a5",
+   "12 - 5\u221a5",
+   "1",
+   "28 - 12\u221a5",
+   "122 - 54\u221a5",
+   "216 - 96\u221a5"
+  ],
+  "edge_len": [
+   0.213724,
+   0.236068,
+   0.408882,
+   0.412662,
+   0.472136,
+   0.517199,
+   0.667701,
+   0.683282,
+   0.905351,
+   1.0,
+   1.080363,
+   1.119075,
+   1.156492
+  ],
+  "edge_len_count": [
+   24,
+   12,
+   24,
+   48,
+   12,
+   12,
+   72,
+   36,
+   24,
+   12,
+   24,
+   12,
+   12
+  ],
+  "edge_ratio2_exact": "288/19 + 120/19\u221a5",
+  "edge_ratio": 5.411139,
+  "dihedral_cos2_exact": [
+   "-(23/30 + 1/10\u221a5)",
+   "-(83/145 + 26/145\u221a5)",
+   "-(7533/8569 + 324/8569\u221a5)",
+   "-(2549/4205 + 672/4205\u221a5)",
+   "-(163/209 + 16/209\u221a5)",
+   "-(53/58 + 3/290\u221a5)",
+   "-(443/627 + 64/627\u221a5)",
+   "-(4097/6061 + 3452/30305\u221a5)",
+   "-(23/32 + 3/32\u221a5)",
+   "-(13/15 + 2/75\u221a5)",
+   "-(181/225 + 4/75\u221a5)",
+   "-(19/41 + 42/205\u221a5)"
+  ],
+  "dihedral_deg": [
+   174.3401,
+   170.607,
+   169.0083,
+   168.9903,
+   167.2226,
+   165.4546,
+   165.204,
+   164.7335,
+   164.4775,
+   164.2473,
+   163.9651,
+   163.733
+  ],
+  "dihedral_count": [
+   24,
+   24,
+   12,
+   24,
+   48,
+   48,
+   12,
+   48,
+   24,
+   24,
+   12,
+   24
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "0",
+  "central": true,
+  "at_vertex_layer": true,
+  "V": 84,
+  "E": 240,
+  "F": 158,
+  "face_sizes": {
+   "3": 152,
+   "4": 6
+  },
+  "all_triangles": false,
+  "degrees": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "14/5 - 6/5\u221a5",
+   "61/2 - 27/2\u221a5",
+   "3/2 - 1/2\u221a5",
+   "84/5 - 36/5\u221a5",
+   "9/2 - 3/2\u221a5",
+   "28 - 12\u221a5",
+   "24/5 - 8/5\u221a5"
+  ],
+  "edge_len": [
+   0.341641,
+   0.559538,
+   0.618034,
+   0.836846,
+   1.070466,
+   1.080363,
+   1.105573
+  ],
+  "edge_len_count": [
+   24,
+   48,
+   24,
+   24,
+   24,
+   48,
+   48
+  ],
+  "edge_ratio2_exact": "6 + 2\u221a5",
+  "edge_ratio": 3.236068,
+  "dihedral_cos2_exact": [
+   "-(2549/4205 + 672/4205\u221a5)",
+   "-(163/209 + 16/209\u221a5)",
+   "-(53/58 + 3/290\u221a5)",
+   "-(443/627 + 64/627\u221a5)",
+   "-(4097/6061 + 3452/30305\u221a5)",
+   "-(23/32 + 3/32\u221a5)"
+  ],
+  "dihedral_deg": [
+   168.9903,
+   167.2226,
+   165.4546,
+   165.204,
+   164.7335,
+   164.4775
+  ],
+  "dihedral_count": [
+   24,
+   72,
+   48,
+   24,
+   48,
+   24
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "1/2",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 124,
+  "E": 324,
+  "F": 202,
+  "face_sizes": {
+   "3": 160,
+   "4": 42
+  },
+  "all_triangles": false,
+  "degrees": [
+   12,
+   12,
+   12,
+   12,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "208 - 93\u221a5",
+   "9 - 4\u221a5",
+   "27 - 12\u221a5",
+   "188 - 84\u221a5",
+   "36 - 16\u221a5",
+   "216/5 - 96/5\u221a5",
+   "72 - 32\u221a5",
+   "56/5 - 24/5\u221a5",
+   "12 - 5\u221a5",
+   "1",
+   "28 - 12\u221a5",
+   "122 - 54\u221a5",
+   "216 - 96\u221a5"
+  ],
+  "edge_len": [
+   0.213724,
+   0.236068,
+   0.408882,
+   0.412662,
+   0.472136,
+   0.517199,
+   0.667701,
+   0.683282,
+   0.905351,
+   1.0,
+   1.080363,
+   1.119075,
+   1.156492
+  ],
+  "edge_len_count": [
+   24,
+   12,
+   24,
+   48,
+   12,
+   12,
+   72,
+   36,
+   24,
+   12,
+   24,
+   12,
+   12
+  ],
+  "edge_ratio2_exact": "288/19 + 120/19\u221a5",
+  "edge_ratio": 5.411139,
+  "dihedral_cos2_exact": [
+   "-(23/30 + 1/10\u221a5)",
+   "-(83/145 + 26/145\u221a5)",
+   "-(7533/8569 + 324/8569\u221a5)",
+   "-(2549/4205 + 672/4205\u221a5)",
+   "-(163/209 + 16/209\u221a5)",
+   "-(53/58 + 3/290\u221a5)",
+   "-(443/627 + 64/627\u221a5)",
+   "-(4097/6061 + 3452/30305\u221a5)",
+   "-(23/32 + 3/32\u221a5)",
+   "-(13/15 + 2/75\u221a5)",
+   "-(181/225 + 4/75\u221a5)",
+   "-(19/41 + 42/205\u221a5)"
+  ],
+  "dihedral_deg": [
+   174.3401,
+   170.607,
+   169.0083,
+   168.9903,
+   167.2226,
+   165.4546,
+   165.204,
+   164.7335,
+   164.4775,
+   164.2473,
+   163.9651,
+   163.733
+  ],
+  "dihedral_count": [
+   24,
+   24,
+   12,
+   24,
+   48,
+   48,
+   12,
+   48,
+   24,
+   24,
+   12,
+   24
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "1/4 + 1/4\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 84,
+  "E": 234,
+  "F": 152,
+  "face_sizes": {
+   "3": 140,
+   "4": 12
+  },
+  "all_triangles": false,
+  "degrees": "999999999999555555555555555555555555555555555555555555555555555555555555555555555555",
+  "edge_len2_exact": [
+   "9 - 4\u221a5",
+   "564/5 - 252/5\u221a5",
+   "188 - 84\u221a5",
+   "144/5 - 64/5\u221a5",
+   "72 - 32\u221a5",
+   "14 - 6\u221a5",
+   "4/5",
+   "12 - 5\u221a5",
+   "28 - 12\u221a5",
+   "122 - 54\u221a5",
+   "8 - 3\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.236068,
+   0.319647,
+   0.412662,
+   0.422291,
+   0.667701,
+   0.763932,
+   0.894427,
+   0.905351,
+   1.080363,
+   1.119075,
+   1.136572,
+   1.236068
+  ],
+  "edge_len_count": [
+   12,
+   12,
+   24,
+   24,
+   24,
+   12,
+   12,
+   12,
+   48,
+   24,
+   24,
+   6
+  ],
+  "edge_ratio2_exact": "14 + 6\u221a5",
+  "edge_ratio": 5.236068,
+  "dihedral_cos2_exact": [
+   "-(83/145 + 26/145\u221a5)",
+   "-(7533/8569 + 324/8569\u221a5)",
+   "-(163/209 + 16/209\u221a5)",
+   "-(2267/3135 + 316/3135\u221a5)",
+   "-(53/58 + 3/290\u221a5)",
+   "-(443/627 + 64/627\u221a5)",
+   "-(4097/6061 + 3452/30305\u221a5)",
+   "-(23/32 + 3/32\u221a5)",
+   "-(13/15 + 2/75\u221a5)",
+   "-(463/627 + 52/627\u221a5)",
+   "-(181/225 + 4/75\u221a5)",
+   "-(19/41 + 42/205\u221a5)",
+   "-(18809/43681 + 7488/43681\u221a5)"
+  ],
+  "dihedral_deg": [
+   170.607,
+   169.0083,
+   167.2226,
+   166.8853,
+   165.4546,
+   165.204,
+   164.7335,
+   164.4775,
+   164.2473,
+   163.9849,
+   163.9651,
+   163.733,
+   154.4452
+  ],
+  "dihedral_count": [
+   24,
+   12,
+   24,
+   24,
+   24,
+   12,
+   24,
+   12,
+   24,
+   12,
+   12,
+   24,
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "3/4 + 1/4\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 72,
+  "E": 198,
+  "F": 128,
+  "face_sizes": {
+   "3": 116,
+   "4": 12
+  },
+  "all_triangles": false,
+  "degrees": "888888888888555555555555555555555555555555555555555555555555555555555555",
+  "edge_len2_exact": [
+   "144/5 - 64/5\u221a5",
+   "36 - 16\u221a5",
+   "61/2 - 27/2\u221a5",
+   "3/2 - 1/2\u221a5",
+   "72 - 32\u221a5",
+   "39/2 - 17/2\u221a5",
+   "4/5",
+   "28 - 12\u221a5",
+   "24/5 - 8/5\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.422291,
+   0.472136,
+   0.559538,
+   0.618034,
+   0.667701,
+   0.70244,
+   0.894427,
+   1.080363,
+   1.105573,
+   1.236068
+  ],
+  "edge_len_count": [
+   24,
+   12,
+   12,
+   12,
+   24,
+   24,
+   6,
+   48,
+   24,
+   12
+  ],
+  "edge_ratio2_exact": "35/8 + 15/8\u221a5",
+  "edge_ratio": 2.927051,
+  "dihedral_cos2_exact": [
+   "-(2/3 + 2/15\u221a5)",
+   "-(2267/3135 + 316/3135\u221a5)",
+   "-(2183/2299 - 4/2299\u221a5)",
+   "-(13/15 + 2/75\u221a5)",
+   "-(463/627 + 52/627\u221a5)",
+   "-(181/225 + 4/75\u221a5)",
+   "-(19/41 + 42/205\u221a5)",
+   "-(32441/43681 + 3360/43681\u221a5)",
+   "-(7/11 + 4/33\u221a5)",
+   "-(55/123 + 20/123\u221a5)"
+  ],
+  "dihedral_deg": [
+   169.1877,
+   166.8853,
+   166.5189,
+   164.2473,
+   163.9849,
+   163.9651,
+   163.733,
+   163.0166,
+   162.284,
+   154.2123
+  ],
+  "dihedral_count": [
+   24,
+   24,
+   12,
+   24,
+   36,
+   12,
+   24,
+   6,
+   24,
+   12
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "1 + 1/2\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 48,
+  "E": 138,
+  "F": 92,
+  "face_sizes": {
+   "3": 92
+  },
+  "all_triangles": true,
+  "degrees": "888888888888555555555555555555555555555555555555",
+  "edge_len2_exact": [
+   "14/5 - 6/5\u221a5",
+   "144/5 - 64/5\u221a5",
+   "3/2 - 1/2\u221a5",
+   "39/2 - 17/2\u221a5",
+   "9/2 - 3/2\u221a5",
+   "28 - 12\u221a5",
+   "24/5 - 8/5\u221a5",
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   0.341641,
+   0.422291,
+   0.618034,
+   0.70244,
+   1.070466,
+   1.080363,
+   1.105573,
+   1.236068
+  ],
+  "edge_len_count": [
+   6,
+   24,
+   12,
+   12,
+   24,
+   24,
+   24,
+   12
+  ],
+  "edge_ratio2_exact": "15/2 + 5/2\u221a5",
+  "edge_ratio": 3.618034,
+  "dihedral_cos2_exact": [
+   "-(25/29 + 16/435\u221a5)",
+   "-(463/627 + 52/627\u221a5)",
+   "-(32441/43681 + 3360/43681\u221a5)",
+   "-(247/319 + 96/1595\u221a5)",
+   "-(7/11 + 4/33\u221a5)",
+   "-(2961/4205 + 324/4205\u221a5)",
+   "-(25/33)"
+  ],
+  "dihedral_deg": [
+   166.3508,
+   163.9849,
+   163.0166,
+   162.4305,
+   162.284,
+   159.4214,
+   150.5038
+  ],
+  "dihedral_count": [
+   24,
+   24,
+   6,
+   24,
+   36,
+   12,
+   12
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "3/2 + 1/2\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 42,
+  "E": 120,
+  "F": 80,
+  "face_sizes": {
+   "3": 80
+  },
+  "all_triangles": true,
+  "degrees": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "edge_len2_exact": [
+   "9 - 4\u221a5",
+   "27 - 12\u221a5",
+   "72 - 32\u221a5",
+   "14 - 6\u221a5",
+   "28 - 12\u221a5",
+   "8 - 3\u221a5"
+  ],
+  "edge_len": [
+   0.236068,
+   0.408882,
+   0.667701,
+   0.763932,
+   1.080363,
+   1.136572
+  ],
+  "edge_len_count": [
+   12,
+   24,
+   12,
+   12,
+   48,
+   12
+  ],
+  "edge_ratio2_exact": "12 + 5\u221a5",
+  "edge_ratio": 4.814597,
+  "dihedral_cos2_exact": [
+   "-(107/145 + 14/145\u221a5)",
+   "-(247/319 + 96/1595\u221a5)",
+   "-(7/11 + 4/33\u221a5)",
+   "-(2961/4205 + 324/4205\u221a5)",
+   "-(3/7 + 4/21\u221a5)",
+   "-(5/7 + 2/35\u221a5)",
+   "-(4/5)"
+  ],
+  "dihedral_deg": [
+   167.5916,
+   162.4305,
+   162.284,
+   159.4214,
+   157.5759,
+   156.5833,
+   153.4349
+  ],
+  "dihedral_count": [
+   24,
+   24,
+   12,
+   12,
+   12,
+   24,
+   12
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "5/4 + 3/4\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 28,
+  "E": 78,
+  "F": 52,
+  "face_sizes": {
+   "3": 52
+  },
+  "all_triangles": true,
+  "degrees": "9999555555555555555555555555",
+  "edge_len2_exact": [
+   "36 - 16\u221a5",
+   "72 - 32\u221a5",
+   "28 - 12\u221a5"
+  ],
+  "edge_len": [
+   0.472136,
+   0.667701,
+   1.080363
+  ],
+  "edge_len_count": [
+   18,
+   24,
+   36
+  ],
+  "edge_ratio2_exact": "3 + \u221a5",
+  "edge_ratio": 2.288246,
+  "dihedral_cos2_exact": [
+   "-(27/41 + 18/205\u221a5)",
+   "-(3/7 + 4/21\u221a5)",
+   "-(5/7 + 2/35\u221a5)",
+   "-(4/5)",
+   "-(1289/1681 - 96/1681\u221a5)"
+  ],
+  "dihedral_deg": [
+   157.6072,
+   157.5759,
+   156.5833,
+   153.4349,
+   143.0768
+  ],
+  "dihedral_count": [
+   24,
+   12,
+   24,
+   12,
+   6
+  ]
+ },
+ {
+  "polytope": "600-cell",
+  "direction": "cell-first",
+  "kind": "slice",
+  "height": "7/4 + 3/4\u221a5",
+  "central": false,
+  "at_vertex_layer": true,
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "face_sizes": {
+   "3": 4
+  },
+  "all_triangles": true,
+  "degrees": "3333",
+  "edge_len2_exact": [
+   "6 - 2\u221a5"
+  ],
+  "edge_len": [
+   1.236068
+  ],
+  "edge_len_count": [
+   6
+  ],
+  "edge_ratio2_exact": "1",
+  "edge_ratio": 1.0,
+  "dihedral_cos2_exact": [
+   "+(1/9)"
+  ],
+  "dihedral_deg": [
+   70.5288
+  ],
+  "dihedral_count": [
+   6
+  ]
+ }
+]
