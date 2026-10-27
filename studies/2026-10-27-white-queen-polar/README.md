@@ -1,4 +1,4 @@
-# White Queen Polar (placeholder name) — study (DICTO 2026-10-27: "a polar swap of the White Queen")
+# White Queen Polar — study (DICTO 2026-10-27: "a polar swap of the White Queen")
 
 **Status: stage 0 (plan).** The polar (dual) of the 600-cell is the 120-cell: 120 dodecahedral cells, 600 vertices.
 Polar swap: each vertex of the 600-cell ↔ a dodecahedral cell of the 120-cell; each tetrahedral cell ↔ a vertex.
