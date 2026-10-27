@@ -101,13 +101,13 @@ export function filmOrder(list, named = []) {
  *  { start, stops: [{ u, v, key }], value(u), caption(v, L) } has one big slider (0..1000, snapping to its stops; words
  *  '<prefix>.param.<kind>') whose value reaches its views as opts.param, with a caption under it; a kind with xray: true is told of
  *  the X-ray cut as opts.xray; hideRows (['size', 'shells']) hides those sliders. rowWords { size, shells } gives those two sliders
- *  their own words (DICTONIC: Layers, Top layer); a kind's maxSize may be a function (per device). A kind with web(size, o) (DICTONIC,
+ *  their own words (DICTONIC: Layers, Top layer); apartTo { kind: view } switches that kind to the view when Pull apart moves; a kind's maxSize may be a function (per device). A kind with web(size, o) (DICTONIC,
  *  DICTO 2026-10-25: the web of bonds) gets a Web button: the pieces turn see-through and a gold rod joins the anchors of every two
  *  pieces that share a face, its thickness by the face's area (web gives [[anchorA, anchorB, area]]); a kind with a param also gets
  *  a Loop button that runs its slider end to end and back (words '<prefix>.web.on|off|note', '<prefix>.loop.play|pause'). A web entry may
  *  carry a 4th item, the rod's colour (The Global Web of Bonds: one colour per kind of bond; gold otherwise), and a kind its own
  *  webNote (an i18n key: the 2D networks' bonds are shared edges). */
-export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null, pinnedRoles = new Set(), hideable = {}, links = {}, openAction = () => {}, kindButtons = false, hideRows = [], rowWords = {}, foldNote = false, theorem = null }) {
+export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA, kinds: KINDS, glassRoles: GLASS, prefix, defaultParts, centreGold = false, byFace = false, movie = null, pinnedRoles = new Set(), hideable = {}, links = {}, openAction = () => {}, kindButtons = false, hideRows = [], rowWords = {}, apartTo = {}, foldNote = false, theorem = null }) {
   const STORAGE_KEY = storageKey(name);
   const group = new THREE.Group();
   group.visible = false;
@@ -470,7 +470,12 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     renderFilm();
   }
   partSelect.addEventListener('change', () => { if (!DATA[view.kind].views[partSelect.value]) return; view.part[view.kind] = partSelect.value; stopFilm(); film = null; save(); draw(); fit(); renderFilm(); });
-  apartInput.addEventListener('input', () => { view.apart = Number(apartInput.value) / 1000; save(); draw(); });
+  apartInput.addEventListener('input', () => {
+    view.apart = Number(apartInput.value) / 1000;
+    const to = apartTo[view.kind];   // a one-piece view breaks into its pieces when pulled apart (DICTO 2026-10-28, Bloom: Joined → Pieces)
+    if (to && view.part[view.kind] !== to && DATA[view.kind].views[to]) { view.part[view.kind] = to; partSelect.value = to; stopFilm(); film = null; renderFilm(); }
+    save(); draw();
+  });
   apartInput.addEventListener('change', fit);
   shellsInput.addEventListener('input', () => { view.shells = Number(shellsInput.value) / 1000; save(); draw(); });
   shellsInput.addEventListener('change', fit);

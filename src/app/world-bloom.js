@@ -68,7 +68,8 @@ export const BLOOM_VIEWS = {
 };
 export function createBloomWorld({ scene, fitView, openAction }) {
   return createLayeredWorld({ scene, fitView, name: 'bloom', data: BLOOM_VIEWS, kinds: BLOOM_KINDS, prefix: 'bloom', glassRoles: {},
-    defaultParts: { icosaxes: 'joined', lotus: 'joined', hexa: 'hexa' }, kindButtons: true, hideRows: ['size', 'shells'], foldNote: true, openAction });   // shells hidden: the twenty sit at one distance, nothing to peel
+    defaultParts: { icosaxes: 'joined', lotus: 'joined', hexa: 'hexa' }, kindButtons: true, hideRows: ['size', 'shells'], foldNote: true, openAction,
+    apartTo: { icosaxes: 'pieces', lotus: 'pieces' } });   // Joined is one solid: pulling apart shows its twenty pieces (DICTO 2026-10-28)   // shells hidden: the twenty sit at one distance, nothing to peel
 }
 /** Points whose convex hull previews the world in the DICTO menu: one Icosaxes. */
 export const bloomPreviewPoints = () => ICOSAXES.vertices;

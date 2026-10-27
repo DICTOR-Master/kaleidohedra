@@ -48,6 +48,8 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
         assert.ok((await caption()).startsWith(t(`bloom.stop.${s.key}`, 'en')), `${tag}: ${k} ${s.key} caption`); checks++;
       }
     }
+    { await page.locator(`${P} .ch-apart-row input`).fill('600'); await page.waitForTimeout(900); const sa = await probe();   // Joined is one solid: pulling apart shows the pieces
+      assert.equal(sa.part, 'pieces', `${tag}: Pull apart switches Joined to Pieces`); assert.equal(total(sa.drawn), 20, `${tag}: twenty pieces pulled apart`); checks++; }
     await page.tap(`${P} [data-chains-kind="hexa"]`); await page.waitForTimeout(1500);
     let st = await probe(); assert.equal(st.kind, 'hexa'); assert.equal(total(st.drawn), 9, `${tag}: Icosaxes Hexa 9 pieces`); checks++;
     assert.equal(await page.locator(`${P} .ch-param-row input`).count() === 0 || !(await page.locator(`${P} .ch-param-row`).isVisible()), true, `${tag}: no slider on the Hexa button`); checks++;
