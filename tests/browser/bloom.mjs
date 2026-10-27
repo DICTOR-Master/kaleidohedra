@@ -30,6 +30,7 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     await page.waitForTimeout(500);
     const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
     assert.deepEqual(worlds.slice(0, 4), ['tool:dictonicWorld', 'tool:globalWebWorld', 'tool:stackingsWorld', 'tool:bloomWorld'], `${tag}: after the Stackings World`); checks++;
+    assert.equal(await page.evaluate(() => /wiz\.\w/.test(document.body.innerText)), false, `${tag}: no raw wiz.* keys in the menu`); checks++;
     await page.locator('[data-action="tool:bloomWorld"]').first().tap(); await page.waitForTimeout(400);
     if (await page.locator('#leave-dialog:not([hidden])').count()) await page.tap('#leave-dialog [data-choice="keep"]');
     await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1500);
