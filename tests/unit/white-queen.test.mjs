@@ -66,3 +66,37 @@ test('a turning starts in its start direction\'s own frame (no jump on picking i
     assert.deepEqual(a.frame, viewAt(from, from, 0).frame);
   }
 });
+
+// The Slice view against #63's atlas (white-queen-atlas.json: the 62 entries of study 2026-10-27-white-queen-600/data/atlas600.json,
+// fields as there): the same stops in the same order, the same exact height strings, and every live slice with exactly the atlas's
+// vertices and face sizes (the tips: the same dimension and points). This is the check that the app shows the paper's slices.
+import { readFileSync } from 'node:fs';
+import { SLICE_STOPS, sliceAt, q5String } from '../../src/app/white-queen-geometry.js';
+const ATLAS = JSON.parse(readFileSync(new URL('./white-queen-atlas.json', import.meta.url)));
+test('all 62 slices of the atlas, live from the source: stops, heights, vertices and face sizes', () => {
+  assert.equal(ATLAS.length, 62);
+  assert.deepEqual(SLICE_STOPS.map((s) => s.length), [9, 17, 21, 15]);
+  DIRECTIONS.forEach((dir, n) => {
+    const E = ATLAS.filter((e) => e.direction === dir);
+    assert.equal(E.length, SLICE_STOPS[n].length, dir);
+    E.forEach((e, k) => {
+      const s = sliceAt(dir, k), tag = `${dir} ${e.height}`;
+      assert.equal(s.stop.height, e.height, `${tag}: exact height`); close(s.stop.value, e.h, `${tag}: height`);
+      assert.equal(s.stop.atVertex, e.at_vertex_layer, `${tag}: at a vertex height`);
+      assert.equal(s.stop.tip, k === E.length - 1, `${tag}: tip`);
+      if (e.dim !== undefined) { assert.equal(s.dim, e.dim, `${tag}: tip dimension`); assert.equal(s.points.length, e.V, `${tag}: tip points`); return; }
+      assert.equal(s.dim, 3, tag);
+      assert.equal(s.vertices.length, e.V, `${tag}: vertices`);
+      assert.equal(s.faces.length, e.F, `${tag}: faces`);
+      const fs = {}; for (const f of s.faces) fs[f.length] = (fs[f.length] ?? 0) + 1;
+      assert.deepEqual(Object.fromEntries(Object.entries(fs).map(([a, b]) => [a, b])), e.face_sizes, `${tag}: face sizes`);
+    });
+  });
+});
+test('Humpty Dumpty (cell-first, 1 + 1/2√5): 48 vertices, 92 triangles; Shadow-17 (edge-first, 1 + √5): 17 vertices, 30 triangles', () => {
+  for (const [dir, h, V, T] of [['cell-first', '1 + 1/2√5', 48, 92], ['edge-first', '1 + √5', 17, 30]]) {
+    const k = SLICE_STOPS[DIRECTIONS.indexOf(dir)].findIndex((s) => s.height === h), s = sliceAt(dir, k);
+    assert.ok(k >= 0 && s.stop.atVertex); assert.equal(s.vertices.length, V); assert.equal(s.faces.length, T); assert.ok(s.faces.every((f) => f.length === 3));
+  }
+  assert.equal(q5String([[-1, 2], [1, 2]]), '-1/2 + 1/2√5'); assert.equal(q5String([[0, 1], [1, 1]]), '√5'); assert.equal(q5String([[1, 4], [0, 1]]), '1/4');
+});

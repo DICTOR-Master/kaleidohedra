@@ -137,3 +137,73 @@ export function shadowAt(from, to, s) {
   cache.set(key, out);
   return out;
 }
+
+// ---- Slices (W3, DICTO 2026-10-27): the cut of the 600-cell by the 3-space x·d = h, d the source's own d (not a unit vector, so
+// heights compare within one direction only, as #63). Heights are exact in Q(√5), [a, b] = a + b√5 with a, b rationals [p, q].
+const gcd = (x, y) => { x = Math.abs(x); y = Math.abs(y); while (y) [x, y] = [y, x % y]; return x || 1; };
+const R = (p, q = 1) => { if (q < 0) { p = -p; q = -q; } const g = gcd(p, q); return [p / g, q / g]; };
+const rAdd = (x, y) => R(x[0] * y[1] + y[0] * x[1], x[1] * y[1]);
+const rMul = (x, y) => R(x[0] * y[0], x[1] * y[1]);
+const rParse = (s) => { const [p, q = '1'] = String(s).split('/'); return R(Number(p), Number(q)); };
+const qAdd = (x, y) => [rAdd(x[0], y[0]), rAdd(x[1], y[1])];
+const qMul = (x, y) => [rAdd(rMul(x[0], y[0]), rMul(R(5), rMul(x[1], y[1]))), rAdd(rMul(x[0], y[1]), rMul(x[1], y[0]))];
+const qFloat = (x) => x[0][0] / x[0][1] + (x[1][0] / x[1][1]) * Math.sqrt(5);
+const qKey = (x) => `${x[0][0]}/${x[0][1]},${x[1][0]}/${x[1][1]}`;
+const rStr = ([p, q]) => (q === 1 ? `${p}` : `${p}/${q}`);
+/** An exact height written as #63 writes it: '0', '1/4', '√5', '-1/2 + 1/2√5', '1 + 1/2√5'. */
+export function q5String([a, b]) {
+  if (b[0] === 0) return rStr(a);
+  const bs = `${Math.abs(b[0]) === 1 && b[1] === 1 ? '' : rStr([Math.abs(b[0]), b[1]])}√5`;
+  if (a[0] === 0) return `${b[0] < 0 ? '-' : ''}${bs}`;
+  return `${rStr(a)} ${b[0] > 0 ? '+' : '-'} ${bs}`;
+}
+const EXACT = SRC.vertices_exact.map((v) => v.map(([a, b]) => [rParse(a), rParse(b)]));
+const D_EXACT = DIRECTIONS.map((k) => SRC.directions[k].d_exact.map(([a, b]) => [rParse(a), rParse(b)]));
+const HEIGHTS = D_EXACT.map((d) => EXACT.map((v) => v.reduce((s, x, i) => qAdd(s, qMul(x, d[i])), [R(0), R(0)])));
+const D_FLOAT = D_EXACT.map((d) => d.map(qFloat));
+
+/** The slice stops of one direction, from the centre (height 0) to the tip: every vertex height and the exact midpoint of every
+ *  gap between two neighbouring ones (#63, Lemma: one pattern per gap). [{ h (exact), height (string), value (float), atVertex, tip }] */
+export const SLICE_STOPS = DIRECTIONS.map((_, n) => {
+  const seen = new Map();
+  for (const h of HEIGHTS[n]) seen.set(qKey(h), h);
+  const hs = [...seen.values()].sort((x, y) => qFloat(x) - qFloat(y));
+  const cuts = [...hs.map((h) => ({ h, atVertex: true })), ...hs.slice(1).map((h, i) => ({ h: qMul(qAdd(hs[i], h), [R(1, 2), R(0)]), atVertex: false }))];
+  const top = qFloat(hs[hs.length - 1]);
+  return cuts.filter((c) => qFloat(c.h) > -1e-12).sort((x, y) => qFloat(x.h) - qFloat(y.h))
+    .map((c) => ({ ...c, height: q5String(c.h), value: qFloat(c.h), tip: Math.abs(qFloat(c.h) - top) < 1e-12 }));
+});
+
+/** The slice of direction n at its stop k, in the direction's own 3D frame: { stop, points, dim, and (dim 3) the hull as hull() }.
+ *  The points: the vertices at that height and the crossing points of the edges that pass through it. */
+const sliceCache = new Map();
+export function sliceAt(dir, k) {
+  const n = indexOf(dir), key = `${n}.${k}`;
+  if (sliceCache.has(key)) return sliceCache.get(key);
+  const stop = SLICE_STOPS[n][k], hk = qKey(stop.h), hv = stop.value, H = HEIGHTS[n], d = D_FLOAT[n], frame = FRAMES[n];
+  const pts4 = VERTICES.filter((_, i) => qKey(H[i]) === hk);
+  for (const [a, b] of EDGES) {
+    const ha = qFloat(H[a]), hb = qFloat(H[b]);
+    if ((ha - hv) * (hb - hv) < 0 && qKey(H[a]) !== hk && qKey(H[b]) !== hk) {
+      const t = (hv - ha) / (hb - ha);
+      pts4.push(VERTICES[a].map((x, i) => x + t * (VERTICES[b][i] - x)));
+    }
+  }
+  const points = pts4.map((p) => frame.map((f) => dot(p, f)));
+  // the dimension of the points (a tip: a point, an edge or a triangle)
+  let dim = 0;
+  if (points.length > 1) {
+    const o = points[0], far = points.reduce((b, p) => (Math.hypot(...sub(p, o)) > Math.hypot(...sub(b, o)) ? p : b), o), e = sub(far, o);
+    if (Math.hypot(...e) > 1e-9) dim = 1;
+    const off = points.map((p) => Math.hypot(...cross(e, sub(p, o))) / Math.hypot(...e));
+    const k3 = off.indexOf(Math.max(...off));
+    if (dim && off[k3] > 1e-9) {
+      dim = 2;
+      const nn = cross(e, sub(points[k3], o));
+      if (points.some((p) => Math.abs(dot3(nn, sub(p, o))) / Math.hypot(...nn) > 1e-9)) dim = 3;
+    }
+  }
+  const out = { stop, points, dim, ...(dim === 3 ? hull(points) : {}) };
+  sliceCache.set(key, out);
+  return out;
+}
