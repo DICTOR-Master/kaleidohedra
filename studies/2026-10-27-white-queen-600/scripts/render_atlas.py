@@ -17,7 +17,7 @@ from render import BG, GOLD, draw, find, mark
 
 IVORY, SILVER, EDGE = "#efe9dc", "#9fb4c8", "#7f8692"
 ROWS = ["vertex-first", "edge-first", "face-first", "cell-first"]
-NAMED = {("edge-first", "1 + √5"): "Shadow-17", ("cell-first", "1 + 1/2√5"): "Humpty Dumpty"}
+NAMED = {("edge-first", "1 + √5"): "Shadow-17", ("cell-first", "1 + 1/2√5"): "Humpty's egg"}
 R = 1.75
 
 
