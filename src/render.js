@@ -477,6 +477,12 @@ function applyReverse() {
   const v = reverseAmount / 100, c = v > 0 ? v : 0.9 * v, A = 1 - c, B = c / D, n = 0.02 * D, f = 2 * D;
   const wn = A + B * n, wf = A + B * f, al = (wf + wn) / (f - n), be = -wn - al * n;
   reverseMatrix.set(1 / (D * t * a), 0, 0, 0, 0, 1 / (D * t), 0, 0, 0, 0, -al, be, 0, 0, -B, A);
+  // the picture stands above the controls panel (setViewOffset, as in the other projections): shift it the same way on screen
+  const vo = camera.view?.enabled ? camera.view : null;
+  if (vo) {
+    const tx = (-2 * vo.offsetX) / vo.fullWidth, ty = (2 * vo.offsetY) / vo.fullHeight, m = reverseMatrix.elements;
+    for (const col of [0, 4, 8, 12]) { m[col] += tx * m[col + 3]; m[col + 1] += ty * m[col + 3]; }
+  }
   camera.projectionMatrix.copy(reverseMatrix); camera.projectionMatrixInverse.copy(reverseMatrix).invert();
 }
 // taps under a custom projection: the ray through the pixel's near and far points (true for any projection)
