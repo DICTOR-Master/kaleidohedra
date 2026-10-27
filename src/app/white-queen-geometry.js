@@ -207,3 +207,26 @@ export function sliceAt(dir, k) {
   sliceCache.set(key, out);
   return out;
 }
+
+// ---- Cleo shells (W4b, DICTO 2026-10-27): the 600 cells round the vertex v = (2, 0, 0, 0) in 15 shells by the height of their
+// centre along v (units where v is at +2), from the 20 cells at v (the Cleo core) to the 20 at the opposite vertex; seen in perspective
+// from an eye just beyond the opposite vertex, at height −21/10 (study 2026-10-27-white-queen-600, cleo_shells.py).
+export const CLEO_EYE = -21 / 10;
+/** The 120 vertices in that perspective, in vertex-first's own frame: the apex v at the centre. */
+export const CLEO_POINTS = VERTICES.map((x) => FRAMES[0].map((f) => dot(x, f) / (x[0] - CLEO_EYE)));
+/** The shells, from the core outwards: { cells (indices into CELLS), height (float, of the cell centres along v) }. */
+export const CLEO_SHELLS = (() => {
+  const by = new Map();
+  CELLS.forEach((c, i) => { const h = c.reduce((s, k) => s + VERTICES[k][0], 0) / 4, key = Math.round(h * 1e9); if (!by.has(key)) by.set(key, { height: h, cells: [] }); by.get(key).cells.push(i); });
+  return [...by.values()].sort((a, b) => b.height - a.height);
+})();
+
+// ---- Halves (W5, DICTO 2026-10-27; front_cells_exact.py): in a shadow along u, a cell is in front if its centre·u > 0, behind if < 0,
+// side-on (flattened in the shadow) if = 0. In the four main views the front cells tile the shadow exactly once, and so do the back ones.
+const CENTRES = CELLS.map((c) => [0, 1, 2, 3].map((a) => c.reduce((s, k) => s + VERTICES[k][a], 0) / 4));
+/** { front, back, side } cell indices for the view direction u (side-on within 1e-9). */
+export function halves(u) {
+  const out = { front: [], back: [], side: [] };
+  CENTRES.forEach((c, i) => { const x = dot(c, u); out[x > 1e-9 ? 'front' : x < -1e-9 ? 'back' : 'side'].push(i); });
+  return out;
+}

@@ -100,3 +100,42 @@ test('Humpty Dumpty (cell-first, 1 + 1/2√5): 48 vertices, 92 triangles; Shadow
   }
   assert.equal(q5String([[-1, 2], [1, 2]]), '-1/2 + 1/2√5'); assert.equal(q5String([[0, 1], [1, 1]]), '√5'); assert.equal(q5String([[1, 4], [0, 1]]), '1/4');
 });
+
+// Cleo shells (W4b; study cleo_shells.py): the 600 cells round one vertex in 15 shells by the height of their centres, in perspective
+// from height −21/10; each shell one kind of piece (sorted squared edge lengths in the view, floats to 1e-9), the core the 20 cells at
+// the vertex with the apex at the centre and its 12 base corners equidistant from it.
+import { CLEO_SHELLS, CLEO_POINTS, CLEO_EYE, halves } from '../../src/app/white-queen-geometry.js';
+test('Cleo shells: 15 shells of 20, 20, 30, 60, 60, 60, 20, 60, 20, 60, 60, 60, 30, 20, 20, each one kind; the Cleo core', () => {
+  assert.equal(CLEO_EYE, -2.1);
+  assert.deepEqual(CLEO_SHELLS.map((s) => s.cells.length), [20, 20, 30, 60, 60, 60, 20, 60, 20, 60, 60, 60, 30, 20, 20]);
+  assert.equal(new Set(CLEO_SHELLS.flatMap((s) => s.cells)).size, 600);
+  const d2 = (p, q) => p.reduce((s, x, i) => s + (x - q[i]) ** 2, 0);
+  CLEO_SHELLS.forEach((sh, k) => {
+    const kinds = sh.cells.map((ci) => { const c = CELLS[ci], L = []; for (let a = 0; a < 4; a++) for (let b = a + 1; b < 4; b++) L.push(d2(CLEO_POINTS[c[a]], CLEO_POINTS[c[b]])); return L.sort((x, y) => x - y); });
+    kinds.forEach((L) => L.forEach((x, i) => assert.ok(Math.abs(x - kinds[0][i]) <= 1e-9 * Math.max(1, x), `shell ${k}: one kind`)));
+  });
+  const core = CLEO_SHELLS[0].cells, apex = 0;   // vertex 0 is v = (2, 0, 0, 0)
+  assert.ok(core.every((ci) => CELLS[ci].includes(apex)), 'the core: the 20 cells at v');
+  CLEO_POINTS[apex].forEach((x) => close(x, 0, 'apex at the centre'));
+  const base = [...new Set(core.flatMap((ci) => CELLS[ci]))].filter((k) => k !== apex);
+  assert.equal(base.length, 12);
+  base.forEach((k) => close(Math.hypot(...CLEO_POINTS[k]), Math.hypot(...CLEO_POINTS[base[0]]), '12 base corners equidistant'));
+});
+
+// Halves (W5; study front_cells_exact.py): front / back / side-on cells in the four main views.
+test('Halves: front, back and side-on cells in the four main views', () => {
+  const EXP = { 'vertex-first': [270, 270, 60], 'edge-first': [290, 290, 20], 'face-first': [288, 288, 24], 'cell-first': [273, 273, 54] };
+  for (const dir of DIRECTIONS) { const h = halves(viewAt(dir, dir, 0).u); assert.deepEqual([h.front.length, h.back.length, h.side.length], EXP[dir], dir); }
+});
+test('Halves: in each main view the front cells fill the shadow once, and so do the back cells (volumes)', () => {
+  const det = (a, b, c) => a[0] * (b[1] * c[2] - b[2] * c[1]) - a[1] * (b[0] * c[2] - b[2] * c[0]) + a[2] * (b[0] * c[1] - b[1] * c[0]);
+  const sub = (p, q) => p.map((x, i) => x - q[i]);
+  for (const dir of DIRECTIONS) {
+    const s = shadowAt(dir, dir, 0), h = halves(s.u), c0 = s.points[0];
+    let hullVol = 0;
+    for (const f of s.faces) for (let i = 1; i + 1 < f.length; i++) hullVol += det(sub(s.points[f[0]], c0), sub(s.points[f[i]], c0), sub(s.points[f[i + 1]], c0)) / 6;
+    const vol = (list) => list.reduce((t, ci) => { const [a, b, c, d] = CELLS[ci].map((k) => s.P[k]); return t + Math.abs(det(sub(b, a), sub(c, a), sub(d, a))) / 6; }, 0);
+    close(Math.abs(hullVol), vol(h.front), `${dir}: front`); close(Math.abs(hullVol), vol(h.back), `${dir}: back`);
+    close(vol(h.side), 0, `${dir}: side-on cells are flat`);
+  }
+});

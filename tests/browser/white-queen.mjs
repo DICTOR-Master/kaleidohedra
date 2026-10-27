@@ -8,6 +8,8 @@
 // atlas's stops (tests/unit/white-queen-atlas.json), each with the atlas's vertices and face sizes; Humpty Dumpty and Shadow-17 in gold;
 // Humpty Dumpty turns until the picture is touched. Every one of the 7 languages at phone width: the direction rows fit on one line.
 // Slice screenshots: Humpty Dumpty, Shadow-17, a gap slice, the cell-first tip, and the Slice panel in Russian.
+// Shells (W4b): the slider builds 1..15 shells (20, 20, 30, 60, …), the core caption gold. Halves (W5) in the Shadow view: off at first,
+// the four main views' front / back / side-on counts, the apart slider only while Halves is on. Screenshots of both.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { mkdirSync } from 'node:fs';
@@ -109,8 +111,33 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     await page.touchscreen.tap(viewport.width / 2, viewport.height * 0.3); await page.waitForTimeout(300);
     const a1 = (await probe(page)).spinAngle; await page.waitForTimeout(500); st = await probe(page);
     assert.ok(!st.spinning && st.spinAngle === a1, `${tag}: Humpty stops when touched`); checks++;
+    // Shells
+    await page.tap(`${P} [data-wq-mode="shells"]`); await page.waitForTimeout(400);
+    assert.ok(!(await page.locator(`${P} [data-wq-row="slice"]`).isVisible()) && !(await page.locator(`${P} .wq-halves-row`).isVisible()), `${tag}: only the Shells rows`);
+    const SIZES = [20, 20, 30, 60, 60, 60, 20, 60, 20, 60, 60, 60, 30, 20, 20], shl = page.locator(`${P} .wq-shells-row input`);
+    for (let n = 1; n <= 15; n++) {
+      await shl.fill(String(n)); await page.waitForTimeout(150);
+      st = await probe(page); assert.deepEqual([st.mode, st.shells, st.newest.pieces], ['shells', n, SIZES[n - 1]], `${tag}: ${n} shells`);
+      const cap = await caption();
+      assert.ok(n === 1 ? cap === t('wq.shells.core', 'en') : cap.includes(`${SIZES[n - 1]} pieces · one kind`), `${tag}: shells caption ${cap}`);
+      assert.equal(await page.locator(`${P} .ch-param-caption.wq-gold`).count(), n === 1 ? 1 : 0);
+    }
+    checks++;
+    // Halves, in the Shadow view
     await page.tap(`${P} [data-wq-mode="shadow"]`); await page.waitForTimeout(300);
-    assert.equal((await probe(page)).mode, 'shadow');
+    st = await probe(page); assert.equal(st.mode, 'shadow'); assert.equal(st.halves, null, `${tag}: Halves off at first`);
+    assert.ok(!(await page.locator(`${P} .wq-apart-row`).isVisible()), `${tag}: no apart slider while Halves is off`);
+    await page.tap(`${P} [data-wq-halves]`); await page.waitForTimeout(300);
+    const HALF = { 'vertex-first': [270, 270, 60], 'edge-first': [290, 290, 20], 'face-first': [288, 288, 24], 'cell-first': [273, 273, 54] };
+    for (const k of DIRS) {
+      await tapFrom(k); st = await probe(page);
+      assert.deepEqual([st.halves.front, st.halves.back, st.halves.side], HALF[k], `${tag}: halves ${k}`);
+      assert.ok((await caption()).includes(`${HALF[k][0]} front · ${HALF[k][1]} back · ${HALF[k][2]} side-on`), `${tag}: halves caption ${k}`);
+    }
+    await page.locator(`${P} .wq-apart-row input`).fill('500'); await page.waitForTimeout(250);
+    assert.equal((await probe(page)).halves.apart, 500); checks++;
+    await page.tap(`${P} [data-wq-halves]`); await page.waitForTimeout(250);
+    assert.equal((await probe(page)).halves, null); assert.ok(!(await page.locator(`${P} .wq-apart-row`).isVisible()));
     // nothing unnecessary: the app's lattice-view button is hidden in this world
     assert.ok(!(await page.locator('#hud-quick-lattice-view').isVisible()), `${tag}: no lattice view`); checks++;
     assert.deepEqual(errors, [], `${tag}: console errors`);
@@ -132,7 +159,7 @@ for (const [short, key] of [['vertex', 'vertex-first'], ['cell', 'cell-first']])
   await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1200);
   for (const L of LANG_ORDER) {
     await page.selectOption('#hud-tools .lang-btn select', L); await page.waitForTimeout(300);
-    for (const mode of ['shadow', 'slice']) {
+    for (const mode of ['shadow', 'slice', 'shells']) {
       await page.tap(`${P} [data-wq-mode="${mode}"]`); await page.waitForTimeout(250);
       const rows = await page.evaluate((sel) => [...document.querySelectorAll(`${sel} .wq-row, ${sel} .wq-modes`)].filter((r) => r.offsetParent)
         .map((r) => ({ over: r.scrollWidth - r.clientWidth, tall: r.getBoundingClientRect().height, btn: Math.max(...[...r.querySelectorAll('button')].map((x) => x.getBoundingClientRect().height)) })), P);
@@ -163,6 +190,18 @@ for (const [dev, viewport] of Object.entries({ phone: { width: 390, height: 844 
     await page.locator(`${P} .wq-slice-row input`).fill(String(sliceU(dir, k))); await page.waitForTimeout(900);
     await page.screenshot({ path: `${SH}/${dev}-${name}.png` });
   }
+  await page.click(`${P} [data-wq-mode="shells"]`);
+  for (const n of [1, 3, 7, 12, 14, 15]) {
+    await page.locator(`${P} .wq-shells-row input`).fill(String(n)); await page.waitForTimeout(1100);
+    await page.screenshot({ path: `${SH}/${dev}-shells-${n}.png` });
+  }
+  await page.click(`${P} [data-wq-mode="shadow"]`); await page.click(`${P} [data-wq-halves]`);
+  for (const [k, a] of [['vertex-first', 0], ['vertex-first', 600], ['cell-first', 600]]) {
+    await page.click(`${P} [data-wq-from="${k}"]`); await page.locator(`${P} .wq-apart-row input`).fill(String(a));
+    await page.locator(`${P} .wq-apart-row input`).dispatchEvent('change'); await page.waitForTimeout(1100);
+    await page.screenshot({ path: `${SH}/${dev}-halves-${k}-${a}.png` });
+  }
+  await page.click(`${P} [data-wq-halves]`);
   assert.deepEqual(errors, [], `${dev} screenshots: console errors`); checks++;
   await page.close();
 }
