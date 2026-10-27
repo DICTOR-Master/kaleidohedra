@@ -39,7 +39,9 @@ export const ROLE = { ico: 0x5fd38a, cap: 0x5fd38a, lcap: 0x5fd38a, lj11: 0x5fd3
   // The Global Web of Bonds (DICTO 2026-10-25): the A kind's pieces gold, the B kind's blue, as in paper #53's figures
   gwA: 0xffc857, gwB: 0x6fa8ff,
   // The Stackings World (DICTO 2026-10-26): cubic layers gold, hexagonal layers platinum, as the #57 card and #58 Figure 3
-  stkC: 0xf2b84b, stkH: 0xd9d6cf, stkSel: 0xff8a3d };
+  stkC: 0xf2b84b, stkH: 0xd9d6cf, stkSel: 0xff8a3d,
+  // The Icosaxes Bloom (DICTO 2026-10-27): Icosaxes green and Lotus Jewel Axes gold (as #59's figures), Unborn Axes / Dodecaxes orange
+  bloomI: 0x56a866, bloomL: 0xffc857, bloomBig: 0x56a866, bloomSmall: 0xe8913f };
 // The 12-neighbour space-fillers' 13s (DICTO 2026-10-13): centre gold, the twelve cyan, the neighbouring blocks' copies dimmer.
 Object.assign(ROLE, { jewelCentre: 0xffc857, jewelCell: 0x4dd0e1, stella: 0xc792ea });
 for (const k of ['skewedRd13', 'bainRd13', 'bilinski13']) Object.assign(ROLE, { [`${k}Centre`]: 0xffc857, [`${k}Cell`]: 0x4dd0e1, [`${k}CentreN`]: 0x8a7440, [`${k}CellN`]: 0x33808a });
