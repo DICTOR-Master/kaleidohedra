@@ -30,6 +30,8 @@ Read this way, the works fall into four chapters.
 - **Shells.** Pieces closing into nested shells round a core, each layer filled exactly: the Chain of Karma, the Spheres of Dharma, the Bodhi Seed and Theaetetus.
 - **Cycles.** Rules that turn one shell into the next and return, with or without end: Universal PiTet, the OG family steps, Kyushindo Cores and the polar reversals.
 
+The shells have the longest history. Aristotle wrote that among solids the pyramid fills space (*On the Heavens* III.8). His commentators argued for centuries over how many tetrahedra meet round a point: Simplicius and Averroës said twelve, others twenty, and Thomas Bradwardine saw that the icosahedron cuts from its centre into twenty equal tetrahedra without being able to say whether they are regular (Lagarias and Zong, 2012). They are not: they are the Cleo-Icos (#19, #44). Kepler nested the Platonic solids in shells round the Sun (*Mysterium Cosmographicum*, 1596). In four dimensions the twenty tetrahedra do close regularly, round every vertex of the 600-cell, found by Schläfli about 1852 and modelled in sections by Alicia Boole Stott about 1900. In *The White Queen 600-cell* (#63) its 600 cells fall into 15 shells round one vertex, each shell of one kind of piece, round a core of twenty Cleo-Icos filling an icosahedron: Aristotle's pyramid, Bradwardine's twenty and Kepler's shells, one dimension up.
+
 ## 7. The bridge between the periodic and the aperiodic
 Some patterns repeat, like the tiles of a bathroom floor. Others never repeat, yet are perfectly ordered, like the Penrose tiling. These works use the same pieces to build both.
 
