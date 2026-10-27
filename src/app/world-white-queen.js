@@ -19,7 +19,7 @@ import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey } from './site.js';
 import { ROOF_FOLD_WORLD_SCALE as WS } from '../krp-core/src/geometry-extensions/roof-fold.js';
-import { DIRECTIONS, EDGES, CELLS, shadowAt, viewAt, SLICE_STOPS, sliceAt, CLEO_POINTS, CLEO_SHELLS, halves } from './white-queen-geometry.js';
+import { DIRECTIONS, EDGES, CELLS, shadowAt, viewAt, SLICE_STOPS, sliceAt, CLEO_POINTS, CLEO_SHELLS, halves, quadKind, quadKinds, SLICE_AXES } from './white-queen-geometry.js';
 
 export const WQ_DIRECTIONS = DIRECTIONS;
 /** The slider: 0..1000 along the chosen turning, its two ends the stops (it snaps to one within WQ_SNAP). */
@@ -56,6 +56,10 @@ export function wqSliceCaption(dir, k, L) {
     const fs = faceSizes(s.faces);
     parts.push(t('wq.count.vertices', L, { n: s.vertices.length }), t('wq.count.triangles', L, { n: fs[3] ?? 0 }));
     if (fs[4]) parts.push(t('wq.count.quads', L, { n: fs[4] }));
+    // the four-sided faces' kinds (W7): kites and squares named in the caption
+    const q = quadKinds(s);
+    if (q.kite) parts.push(t('wq.kind.kite', L, { n: q.kite }));
+    if (q.square) parts.push(t('wq.kind.square', L, { n: q.square }));
   }
   if (st.tip) parts.push(t(`wq.tip.${s.dim}`, L));
   return `${nm ? `${t(`wq.name.${nm.key}`, L)} · ` : ''}${parts.join(' · ')}`;
@@ -63,6 +67,7 @@ export function wqSliceCaption(dir, k, L) {
 const SHORT = { vertex: 'vertex-first', edge: 'edge-first', face: 'face-first', cell: 'cell-first' };   // ?open=whitequeen:<short>
 const IVORY = 0xefe9dc, BLUE = 0x9fb4c8, OTHER = 0xd8c690;   // as #63's figures (render_atlas.py); faces of 5+ sides never show at the stops
 const SHELL = 0.42;   // the see-through shell's opacity
+const ROSE = 0xd98fa6, DEEP_BLUE = 0x5b7fb8;   // W7: kites rose, squares a deeper blue than the other four-sided faces
 const GOLD = 0xffc857, SLICE_EDGE = 0x4a505c, HUMPTY_SCALE = 1.3, GLOW = 0.38;   // GLOW: each face lit from within in its own colour (ivory, not grey)   // Humpty Dumpty: gold edges, a bit larger
 const lang = () => getSettings().language;
 
@@ -81,7 +86,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
   group.visible = false;
   scene.add(group);
   // the view: Shadow (the turning from → to, the slider's place u) or Slice (a direction and its stop k)
-  const view = { mode: 'shadow', ...WQ_DEFAULT, u: 0, sliceDir: 'vertex-first', sliceK: 0, shells: 1, halves: false, apart: 0 };
+  const view = { mode: 'shadow', ...WQ_DEFAULT, u: 0, sliceDir: 'vertex-first', sliceK: 0, shells: 1, halves: false, apart: 0, lineUp: false };
   try {
     const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (WQ_MODES.includes(d?.mode)) view.mode = d.mode;
@@ -90,6 +95,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     if (DIRECTIONS.includes(d?.sliceDir)) view.sliceDir = d.sliceDir;
     if (Number.isInteger(d?.shells)) view.shells = Math.max(1, Math.min(WQ_SHELLS, d.shells));
     view.halves = d?.halves === true;
+    view.lineUp = d?.lineUp === true;
     if (Number.isFinite(d?.apart)) view.apart = Math.max(0, Math.min(1000, Math.round(d.apart)));
     if (Number.isInteger(d?.sliceK)) view.sliceK = Math.max(0, Math.min(SLICE_STOPS[DIRECTIONS.indexOf(view.sliceDir)].length - 1, d.sliceK));
   } catch { /* defaults */ }
@@ -119,8 +125,11 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
   for (const o of [inner, shell, hullLines]) o.frustumCulled = false;
 
   // ---- the Slice view: rebuilt per stop, in its own turning group (Humpty Dumpty turns) ----
-  const sliceGroup = new THREE.Group(), spin = new THREE.Group();
-  sliceGroup.add(spin);
+  // Line up (W7): the align group turns the slice so its direction's main symmetry axis (SLICE_AXES) points at the viewer
+  const sliceGroup = new THREE.Group(), align = new THREE.Group(), spin = new THREE.Group();
+  sliceGroup.add(align); align.add(spin);
+  const Z = new THREE.Vector3(0, 0, 1);
+  const applyAlign = () => { if (view.lineUp) align.quaternion.setFromUnitVectors(new THREE.Vector3(...SLICE_AXES[DIRECTIONS.indexOf(view.sliceDir)]), Z); else align.quaternion.identity(); };
   group.add(shadowGroup, sliceGroup);
   const dotGeo = new THREE.SphereGeometry(1, 16, 12);
   let humpty = false, spinStopped = false;
@@ -162,7 +171,9 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     const wasHumpty = humpty;
     humpty = nm?.key === 'humpty';
     if (humpty && !wasHumpty) spinStopped = false;   // arriving at Humpty Dumpty: he turns again
-    if (!humpty) spin.rotation.set(0, 0, 0);
+    if (!humpty || view.lineUp) spin.rotation.set(0, 0, 0);
+    if (view.lineUp) spinStopped = true;   // lined up: Humpty Dumpty holds still on the axis
+    applyAlign();
     const scale = WS * (humpty ? HUMPTY_SCALE : 1), Q = s.points.map((p) => p.map((c) => c * scale));
     const edgeHex = humpty ? GOLD : skeleton ? 0xdfe6f0 : SLICE_EDGE;
     const lines = [];
@@ -170,7 +181,8 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
       // one mesh per colour, each lit a little from within in its own colour, so the ivory and the blue read as in #63's figures
       const byColour = new Map();
       for (const f of s.faces) {
-        const hex = f.length === 3 ? IVORY : f.length === 4 ? BLUE : OTHER;
+        const qk = f.length === 4 ? quadKind(f.map((k) => s.points[k])) : null;
+        const hex = f.length === 3 ? IVORY : qk === 'kite' ? ROSE : qk === 'square' ? DEEP_BLUE : f.length === 4 ? BLUE : OTHER;
         if (!byColour.has(hex)) byColour.set(hex, []);
         const pos = byColour.get(hex);
         for (let i = 1; i + 1 < f.length; i++) for (const k of [f[0], f[i], f[i + 1]]) pos.push(...Q[k]);
@@ -285,7 +297,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
   const R = 2 * WS;   // the 600-cell's circumradius: every shadow and slice fits inside it
   const fitShadow = () => fitView([0, 0, 0], R * 1.12, [0.3, 0.25, 1]);
   // the Shells view frames the newest shell (they grow from the small core to the outer wrap), zooming in as well as out
-  const fit = () => (view.mode === 'shells' ? fitView([0, 0, 0], shellsRadius * 1.15, [0.55, 0.45, 1], true) : view.mode === 'shadow' && view.halves && view.apart ? fitView([0, 0, 0], R * (1.12 + view.apart / 1000), [1, 0.35, 0.55], true) : fitShadow());
+  const fit = () => (view.mode === 'slice' && view.lineUp ? fitView([0, 0, 0], R * 1.12, [0, 0, 1], true) : view.mode === 'shells' ? fitView([0, 0, 0], shellsRadius * 1.15, [0.55, 0.45, 1], true) : view.mode === 'shadow' && view.halves && view.apart ? fitView([0, 0, 0], R * (1.12 + view.apart / 1000), [1, 0.35, 0.55], true) : fitShadow());
 
   // ---- panel ----
   const panel = document.createElement('div');
@@ -302,6 +314,8 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     <div class="w4d-row wq-slice-row"><label class="hull-pick"><span class="wq-slice-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row wq-apart-row"><label class="hull-pick"><span class="wq-apart-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row w4d-options wq-link-row"><button type="button" data-wq-link></button></div>
+    <div class="w4d-row w4d-options wq-lineup-row"><button type="button" data-wq-lineup></button></div>
+    <div class="w4d-row st-note wq-legend"></div>
     <div class="w4d-row wq-shells-row"><label class="hull-pick"><span class="wq-shells-label"></span> <input type="range" class="st-slider" min="1" max="${CLEO_SHELLS.length}" step="1"></label></div>
     <div class="w4d-row ch-param-caption" aria-live="polite"></div>
     <div class="w4d-row st-note fold"></div>`;
@@ -309,7 +323,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
   addPanelMinimiser(panel, 'whiteQueen');
   const input = panel.querySelector('.wq-param-row input'), sliceInput = panel.querySelector('.wq-slice-row input');
   const apartInput = panel.querySelector('.wq-apart-row input'), shellsInput = panel.querySelector('.wq-shells-row input'), halvesBtn = panel.querySelector('[data-wq-halves]');
-  const caption = panel.querySelector('.ch-param-caption'), note = panel.querySelector('.st-note');
+  const caption = panel.querySelector('.ch-param-caption'), note = panel.querySelector('.st-note.fold');
   note.addEventListener('click', () => note.classList.toggle('open'));
   function renderPanel() {
     panel.classList.toggle('visible', active);
@@ -322,6 +336,16 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     panel.querySelector('.wq-halves-row').hidden = !shadow;
     panel.querySelector('.wq-apart-row').hidden = !(shadow && view.halves);
     panel.querySelector('.wq-shells-row').hidden = !shells;
+    panel.querySelector('.wq-lineup-row').hidden = !slice;
+    const lu = panel.querySelector('[data-wq-lineup]');
+    lu.textContent = t('wq.lineUp', L); lu.classList.toggle('active', view.lineUp); lu.setAttribute('aria-pressed', String(view.lineUp));
+    // the legend: only when the slice has kites or squares
+    const legend = panel.querySelector('.wq-legend'), qk = slice && shown.dim === 3 ? quadKinds(shown) : null;
+    legend.hidden = !(qk && (qk.kite || qk.square));
+    if (!legend.hidden) {
+      const sw = (hex, key) => `<span class="wq-sw"><i style="background:#${new THREE.Color(hex).getHexString()}"></i>${t(key, L)}</span>`;
+      legend.innerHTML = [qk.kite ? sw(ROSE, 'wq.legend.kite') : '', qk.square ? sw(DEEP_BLUE, 'wq.legend.square') : '', sw(BLUE, 'wq.legend.quad'), sw(IVORY, 'wq.legend.triangle')].join('');
+    }
     // at the Cleo core, the back link to the Cleo-Icos in Aristotle's Pyramid (each shape lives in one place, the others link)
     panel.querySelector('.wq-link-row').hidden = !(shells && view.shells === 1);
     panel.querySelector('[data-wq-link]').textContent = t('wq.link.aristotle', L);
@@ -381,6 +405,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
   // direction that is To swaps the two. Slice: the direction, from its centre.
   panel.addEventListener('click', (e) => {
     if (e.target.closest('[data-wq-link]')) { openAction(WQ_ARISTOTLE_ACTION); return; }
+    if (e.target.closest('[data-wq-lineup]')) { view.lineUp = !view.lineUp; if (!view.lineUp) spinStopped = false; save(); draw(); fit(); return; }
     if (e.target.closest('[data-wq-halves]')) { view.halves = !view.halves; save(); draw(); fit(); return; }
     const b = e.target.closest('[data-wq-from], [data-wq-to], [data-wq-slice], [data-wq-mode]');
     if (!b) return;
@@ -391,6 +416,14 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     else if (sl) { if (sl === view.sliceDir) return; view.sliceDir = sl; view.sliceK = 0; }
     else return;
     save(); draw();
+  });
+  // the app's projection button (3D → ∥ → ISO → REV): REV adds its slider to this panel, so the picture is framed again above it
+  // (only on entering or leaving REV, keeping the view's direction; ∥ and ISO are left alone, ISO being a direction)
+  const fitRadius = () => (view.mode === 'shells' ? shellsRadius * 1.15 : view.mode === 'shadow' && view.halves && view.apart ? R * (1.12 + view.apart / 1000) : R * 1.12);
+  let wasRev = false;
+  document.addEventListener('click', (e) => {
+    if (!active || !e.target.closest?.('#projection-toggle')) return;
+    setTimeout(() => { const rev = !!document.getElementById('reverse-row')?.isConnected; if (rev !== wasRev) { wasRev = rev; fitView([0, 0, 0], fitRadius(), null, true); } }, 50);   // only on entering or leaving REV
   });
   let shownLang = lang();
   onSettingsChange((st) => { if (st.language !== shownLang) { shownLang = st.language; if (active) renderPanel(); } });
@@ -420,7 +453,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
       if (!on) { panel.classList.remove('visible'); return; }
       draw(); fit();
     },
-    resetView() { Object.assign(view, { mode: 'shadow', ...WQ_DEFAULT, u: 0, sliceDir: 'vertex-first', sliceK: 0, shells: 1, halves: false, apart: 0 }); save(); if (active) { draw(); fit(); } },
+    resetView() { Object.assign(view, { mode: 'shadow', ...WQ_DEFAULT, u: 0, sliceDir: 'vertex-first', sliceK: 0, shells: 1, halves: false, apart: 0, lineUp: false }); save(); if (active) { draw(); fit(); } },
     setSkeleton(on) { if (on !== skeleton) { skeleton = on; if (active) draw(); } },
     setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) draw(); } },
     setLatticeView() {},
@@ -437,7 +470,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
       if (view.mode === 'slice') {
         const s = shown, nm = namedAt(view.sliceDir, s.stop.height);
         return { mode: 'slice', dir: view.sliceDir, k: view.sliceK, stops: SLICE_STOPS[DIRECTIONS.indexOf(view.sliceDir)].length, height: s.stop.height, atVertex: s.stop.atVertex, tip: s.stop.tip, dim: s.dim,
-          V: s.dim === 3 ? s.vertices.length : s.points.length, faceSizes: s.dim === 3 ? faceSizes(s.faces) : null, named: nm?.key ?? null, humpty, spinning: !!raf, spinAngle: spin.rotation.y };
+          V: s.dim === 3 ? s.vertices.length : s.points.length, faceSizes: s.dim === 3 ? faceSizes(s.faces) : null, named: nm?.key ?? null, humpty, spinning: !!raf, spinAngle: spin.rotation.y, quadKinds: s.dim === 3 ? quadKinds(s) : null, lineUp: view.lineUp, axis: view.lineUp ? new THREE.Vector3(...SLICE_AXES[DIRECTIONS.indexOf(view.sliceDir)]).applyQuaternion(align.quaternion).toArray() : null };
       }
       return { mode: 'shadow', from: view.from, to: view.to, u: view.u, stop: view.u === 0 ? view.from : view.u === 1000 ? view.to : null, dir: viewAt(view.from, view.to, view.u / 1000).u, vertices: shown.vertices.length, triangles: shown.triangles, quads: shown.quads, others: shown.others, faces: shown.faces.length, edges: EDGES.length, shell: shell.visible, halves: halvesShown ? { ...halvesShown, apart: view.apart } : null };
     },
@@ -446,3 +479,23 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
 
 /** Points whose convex hull previews the world in the DICTO menu: the vertex-first shadow. */
 export const whiteQueenPreviewPoints = () => shadowAt(0, 0, 0).points;
+/** The world's cover in the DICTO menu (DICTO 2026-10-27: the Cleo shells, "absolutely beautiful"): the edges of the gold Cleo core and
+ *  of three shells round it in the Shells view's perspective, each edge in its shell's colour (blue → green → yellow); the core is
+ *  drawn over the shells and thicker, so it shows at thumbnail size. [[a, b], …] with .colours, .layers, .widths (wireframe-preview.js). */
+export const WQ_COVER_SHELLS = [0, 4, 9, 13];
+export function whiteQueenPreviewEdges() {
+  const seen = new Set(), edges = [], colours = [], layers = [], widths = [];
+  for (const k of WQ_COVER_SHELLS) {
+    const css = `#${new THREE.Color(shellColour(k)).getHexString()}`;
+    for (const ci of CLEO_SHELLS[k].cells) {
+      const c = CELLS[ci];
+      for (let a = 0; a < 4; a++) for (let b = a + 1; b < 4; b++) {
+        const key = c[a] < c[b] ? `${c[a]},${c[b]}` : `${c[b]},${c[a]}`;
+        if (seen.has(key)) continue;
+        seen.add(key); edges.push([CLEO_POINTS[c[a]], CLEO_POINTS[c[b]]]); colours.push(css); layers.push(k ? 0 : 1); widths.push(k ? 1 : 2);
+      }
+    }
+  }
+  Object.assign(edges, { colours, layers, widths });
+  return edges;
+}

@@ -107,7 +107,7 @@ import { createDictonicWorld, dictonicPreviewPoints } from './app/world-dictonic
 import { createGlobalWebWorld, globalWebPreviewPoints } from './app/world-global-web.js';
 import { createStackingsWorld, stackingsPreviewPoints } from './app/world-stackings.js';
 import { createBloomWorld, bloomPreviewPoints } from './app/world-bloom.js';
-import { createWhiteQueenWorld, whiteQueenPreviewPoints } from './app/world-white-queen.js';
+import { createWhiteQueenWorld, whiteQueenPreviewPoints, whiteQueenPreviewEdges } from './app/world-white-queen.js';
 import { createPlatonicMixWorld, platonicMixPreviewPoints } from './app/world-platonic-mix.js';
 import { createCyclesWorld, cyclesPreviewPoints } from './app/world-cycles.js';
 import { ICOSA_SOLIDS } from './krp-core/src/geometry-extensions/icosa.js';
@@ -4716,6 +4716,8 @@ async function init() {
         const pts = verts.map((m) => { const q = e.parOf(m); return poly.tier === '5d' ? [q[0], 0, q[1]] : q; });
         return edges.map(([a, b]) => [pts[a], pts[b]]);
       }
+      // The White Queen 600-cell's cover: the Cleo shells, each in its own colour (DICTO 2026-10-27)
+      if (action?.startsWith('tool:whiteQueenWorld')) return whiteQueenPreviewEdges();
       const g = wizardPieceGeometry(action);
       if (!g) return [];
       const edges = new THREE.EdgesGeometry(g);

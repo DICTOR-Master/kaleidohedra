@@ -139,3 +139,30 @@ test('Halves: in each main view the front cells fill the shadow once, and so do 
     close(vol(h.side), 0, `${dir}: side-on cells are flat`);
   }
 });
+
+// Four-sided faces by kind (W7; #63 and study check63_exact.py): over all 62 atlas slices 46 squares, 68 rectangles, 634 isosceles
+// trapezia, 104 kites (edge-first h = 0: 20; face-first h = 0: 12; cell-first gaps at 1/2 + 1/4√5, 7/8 + 3/8√5, 11/8 + 5/8√5: 24 each)
+// and 784 general, 1636 in all. Line up: each direction's axis is a symmetry axis (5-fold vertex/edge-first, 3-fold face/cell-first)
+// of every one of its slices.
+import { quadKinds, SLICE_AXES } from '../../src/app/white-queen-geometry.js';
+test('four-sided faces by kind over the atlas: 46 / 68 / 634 / 104 / 784, kites where #63 says', () => {
+  const tot = {}, kites = [];
+  DIRECTIONS.forEach((dir, n) => SLICE_STOPS[n].forEach((st, k) => {
+    const q = quadKinds(sliceAt(dir, k));
+    for (const [a, b] of Object.entries(q)) tot[a] = (tot[a] ?? 0) + b;
+    if (q.kite) kites.push([dir, st.height, q.kite]);
+  }));
+  assert.deepEqual(tot, { square: 46, rectangle: 68, trapezium: 634, kite: 104, general: 784 });
+  assert.deepEqual(kites, [['edge-first', '0', 20], ['face-first', '0', 12], ['cell-first', '1/2 + 1/4√5', 24], ['cell-first', '7/8 + 3/8√5', 24], ['cell-first', '11/8 + 5/8√5', 24]]);
+});
+test('Line up: each direction\'s axis is a symmetry axis of all its slices', () => {
+  const rot = (p, a, th) => { const c = Math.cos(th), s = Math.sin(th), d = p[0] * a[0] + p[1] * a[1] + p[2] * a[2], x = [a[1] * p[2] - a[2] * p[1], a[2] * p[0] - a[0] * p[2], a[0] * p[1] - a[1] * p[0]]; return p.map((v, i) => v * c + x[i] * s + a[i] * d * (1 - c)); };
+  DIRECTIONS.forEach((dir, n) => {
+    const m = [5, 5, 3, 3][n];
+    close(Math.hypot(...SLICE_AXES[n]), 1, `${dir}: unit axis`);
+    SLICE_STOPS[n].forEach((_, k) => {
+      const P = sliceAt(dir, k).points;
+      for (const p of P) { const q = rot(p, SLICE_AXES[n], (2 * Math.PI) / m); assert.ok(P.some((r) => dist(r, q) < 1e-9), `${dir} stop ${k}: ${m}-fold`); }
+    });
+  });
+});

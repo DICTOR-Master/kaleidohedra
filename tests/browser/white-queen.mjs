@@ -10,6 +10,9 @@
 // Slice screenshots: Humpty Dumpty, Shadow-17, a gap slice, the cell-first tip, and the Slice panel in Russian.
 // Shells (W4b): the slider builds 1..15 shells (20, 20, 30, 60, …), the core caption gold. Halves (W5) in the Shadow view: off at first,
 // the four main views' front / back / side-on counts, the apart slider only while Halves is on. Screenshots of both.
+// W7: kites and squares counted in the caption with a legend only where present; Line up turns the slice's axis to the viewer; the app's
+// projection button (3D → ∥ → ISO → REV) shows in all three views and REV's slider lands in this world's panel. Screenshots of kite
+// slices lined up, in normal perspective and in full REV.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { mkdirSync } from 'node:fs';
@@ -105,6 +108,32 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
       assert.ok((await caption()).startsWith(t(`wq.name.${key}`, 'en')), `${tag}: ${key} caption`);
       assert.ok(await page.locator(`${P} .ch-param-caption.wq-gold`).count(), `${tag}: ${key} gold`); checks++;
     }
+    // kites, squares, legend and Line up (W7)
+    await page.tap(`${P} [data-wq-slice="edge-first"]`); await sl.fill('0'); await page.waitForTimeout(300);
+    st = await probe(page); assert.equal(st.quadKinds.kite, 20, `${tag}: edge-first centre kites`);
+    assert.ok((await caption()).includes('20 kites') && await page.locator(`${P} .wq-legend`).isVisible(), `${tag}: kites in caption and legend`);
+    await page.tap(`${P} [data-wq-lineup]`); await page.waitForTimeout(300);
+    st = await probe(page); assert.ok(st.lineUp && Math.abs(st.axis[2] - 1) < 1e-6, `${tag}: lined up ${st.axis}`);
+    await page.tap(`${P} [data-wq-lineup]`); await page.waitForTimeout(200);
+    await page.tap(`${P} [data-wq-slice="vertex-first"]`); await page.waitForTimeout(300);
+    assert.ok(!(await page.locator(`${P} .wq-legend`).isVisible()), `${tag}: no legend without kites or squares`);
+    const sqK = ATLAS.filter((e) => e.direction === 'vertex-first').findIndex((e) => !e.at_vertex_layer && e.face_sizes?.['4']);
+    await sl.fill(String(sliceU('vertex-first', sqK))); await page.waitForTimeout(300); st = await probe(page);
+    if (st.quadKinds.square) assert.ok((await caption()).includes(`${st.quadKinds.square} squares`), `${tag}: squares in caption`);
+    checks++;
+    // the projection button in all three views; REV's slider in this world's panel
+    const proj = page.locator('#projection-toggle');
+    for (const mode of ['slice', 'shells', 'shadow']) {
+      await page.tap(`${P} [data-wq-mode="${mode}"]`); await page.waitForTimeout(250);
+      assert.ok(await proj.isVisible(), `${tag}: projection button in ${mode}`);
+      for (const want of ['∥', 'ISO', 'REV']) { await proj.tap(); await page.waitForTimeout(250); assert.equal((await proj.textContent()).trim(), want); }
+      assert.ok(await page.locator(`${P} #reverse-row`).isVisible(), `${tag}: REV slider in the panel (${mode})`);
+      await proj.tap(); await page.waitForTimeout(250); assert.equal((await proj.textContent()).trim(), '3D');
+    }
+    await page.tap(`${P} [data-wq-mode="slice"]`); await page.waitForTimeout(250);
+    await page.tap(`${P} [data-wq-slice="cell-first"]`); await page.waitForTimeout(200);
+    await sl.fill(String(sliceU('cell-first', ATLAS.filter((e) => e.direction === 'cell-first').findIndex((e) => e.height === '1 + 1/2√5')))); await page.waitForTimeout(400);
+    checks++;
     // Humpty Dumpty turns on his own, and stops when the picture is touched
     const a0 = (await probe(page)).spinAngle; await page.waitForTimeout(800); st = await probe(page);
     assert.ok(st.humpty && st.spinning && st.spinAngle > a0, `${tag}: Humpty turns`);
@@ -165,6 +194,27 @@ for (const [short, key] of [['vertex', 'vertex-first'], ['cell', 'cell-first']])
   assert.deepEqual(errors, [], `?open=whitequeen:${short}: console errors`); checks++;
   await page.close();
 }
+// the cover in the DICTO menu: the Cleo shells, the gold core and the shells' own colours on the card's rotating preview
+for (const [dev, viewport] of Object.entries({ phone: { width: 390, height: 844 }, desktop: { width: 1280, height: 800 } })) {
+  const page = await b.newPage({ viewport, deviceScaleFactor: 3, hasTouch: dev === 'phone', isMobile: dev === 'phone' });
+  const errors = await open(page, '&site=kaleidohedra');
+  await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
+  if (!(await page.locator('[data-action="tool:whiteQueenWorld"]').count())) await page.click('.dim-wizard-card-btn[data-dim="3D"]');
+  const card = page.locator('[data-action="tool:whiteQueenWorld"]').first();
+  await card.scrollIntoViewIfNeeded(); await page.waitForTimeout(1200);
+  const hues = await card.evaluate((el) => {
+    const c = el.querySelector('canvas.dim-wizard-preview'); if (!c) return null;
+    const d = c.getContext('2d').getImageData(0, 0, c.width, c.height).data; let gold = 0, blue = 0, green = 0;
+    for (let i = 0; i < d.length; i += 4) { if (d[i + 3] < 100) continue; const [r, g, bl] = [d[i], d[i + 1], d[i + 2]];
+      if (r > 200 && g > 150 && bl < 140) gold++; else if (bl > r + 30 && bl >= g) blue++; else if (g > r + 30 && g > bl) green++; }
+    return { gold, blue, green };
+  });
+  assert.ok(hues && hues.gold > 0 && hues.blue > 0 && hues.green > 0, `${dev}: the cover shows the gold core and coloured shells ${JSON.stringify(hues)}`); checks++;
+  await card.screenshot({ path: `${SH}/${dev}-cover-card.png` });
+  await page.screenshot({ path: `${SH}/${dev}-cover-menu.png` });
+  assert.deepEqual(errors, [], `${dev} cover: console errors`);
+  await page.close();
+}
 // every language at phone width: the direction rows fit on one line (no wrap, no sideways scroll)
 {
   const page = await b.newPage({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
@@ -208,6 +258,20 @@ for (const [dev, viewport] of Object.entries({ phone: { width: 390, height: 844 
     await page.locator(`${P} .wq-shells-row input`).fill(String(n)); await page.waitForTimeout(1100);
     await page.screenshot({ path: `${SH}/${dev}-shells-${n}.png` });
   }
+  // kite slices lined up, in normal perspective and in full reverse perspective
+  await page.click(`${P} [data-wq-mode="slice"]`); await page.click(`${P} [data-wq-lineup]`);
+  for (const [dir, h] of [['edge-first', '0'], ['cell-first', '11/8 + 5/8√5']]) {
+    await page.click(`${P} [data-wq-slice="${dir}"]`);
+    const k = ATLAS.filter((e) => e.direction === dir).findIndex((e) => e.height === h);
+    await page.locator(`${P} .wq-slice-row input`).fill(String(sliceU(dir, k))); await page.waitForTimeout(1100);
+    const nm = `${dev}-kites-${dir}-lined-up`;
+    await page.screenshot({ path: `${SH}/${nm}.png` });
+    for (let i = 0; i < 3; i++) await page.click('#projection-toggle');   // 3D → ∥ → ISO → REV
+    await page.locator('#reverse-row input').fill('-100'); await page.locator('#reverse-row input').dispatchEvent('input'); await page.waitForTimeout(1100);
+    await page.screenshot({ path: `${SH}/${nm}-rev.png` });
+    await page.click('#projection-toggle'); await page.waitForTimeout(300);   // back to 3D
+  }
+  await page.click(`${P} [data-wq-lineup]`); await page.click(`${P} [data-wq-mode="shells"]`);
   await page.locator(`${P} .wq-shells-row input`).fill('1'); await page.waitForTimeout(300);
   await page.click(`${P} [data-wq-link]`); await page.waitForTimeout(600);
   if (await page.locator('#leave-dialog:not([hidden])').count()) await page.click('#leave-dialog [data-choice="keep"]');

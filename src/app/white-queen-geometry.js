@@ -230,3 +230,52 @@ export function halves(u) {
   CENTRES.forEach((c, i) => { const x = dot(c, u); out[x > 1e-9 ? 'front' : x < -1e-9 ? 'back' : 'side'].push(i); });
   return out;
 }
+
+// ---- Four-sided faces by kind (W7, DICTO 2026-10-27; as #63 and study check63_exact.py, in the same order): square, rectangle,
+// isosceles trapezium, kite, else general (parallelograms, other trapezia, rhombi and the rest). Lengths compared to 1e-9.
+const near = (a, b) => Math.abs(a - b) <= 1e-9 * Math.max(1, Math.abs(a), Math.abs(b));
+const sq3 = (a) => dot3(a, a);
+const parallel3 = (a, b) => Math.hypot(...cross(a, b)) <= 1e-9 * Math.max(1, Math.hypot(...a) * Math.hypot(...b));
+export const QUAD_KINDS = ['square', 'rectangle', 'trapezium', 'kite', 'general'];
+/** The kind of the four-sided face with corners a, b, c, d in order round it. */
+export function quadKind([a, b, c, d]) {
+  const s = [sq3(sub(b, a)), sq3(sub(c, b)), sq3(sub(d, c)), sq3(sub(a, d))];
+  const eqd = near(sq3(sub(c, a)), sq3(sub(d, b)));
+  const par1 = parallel3(sub(b, a), sub(c, d)), par2 = parallel3(sub(c, b), sub(d, a));
+  const all = near(s[0], s[1]) && near(s[1], s[2]) && near(s[2], s[3]), opp = near(s[0], s[2]) && near(s[1], s[3]);
+  if (all && eqd) return 'square';
+  if (opp && eqd) return 'rectangle';
+  if ((par1 || par2) && eqd && !(par1 && par2)) return 'trapezium';
+  if (par1 || par2 || all) return 'general';   // parallelograms, other trapezia, rhombi
+  if ((near(s[0], s[1]) && near(s[2], s[3])) || (near(s[1], s[2]) && near(s[3], s[0]))) return 'kite';
+  return 'general';
+}
+/** The four-sided faces of a slice (sliceAt) counted by kind. */
+export function quadKinds(s) {
+  const out = Object.fromEntries(QUAD_KINDS.map((k) => [k, 0]));
+  if (s.dim === 3) for (const f of s.faces) if (f.length === 4) out[quadKind(f.map((k) => s.points[k]))]++;
+  return out;
+}
+
+// ---- Line up (W7): each direction's main symmetry axis inside its slicing 3-space, in the direction's own frame (unit 3D vectors).
+//   vertex-first: a 5-fold axis, towards a neighbour of the vertex (the vertex figure is an icosahedron);
+//   edge-first:   the edge itself, the 5-fold axis of the ring of five cells round it;
+//   face-first:   the 3-fold axis, normal to the triangle within the 3-space;
+//   cell-first:   a 3-fold axis through the cell, from its centre towards one of its corners.
+export const SLICE_AXES = DIRECTIONS.map((k, n) => {
+  const el = SRC.directions[k].element, d = UNIT_DIRECTIONS[n], V0 = VERTICES[el[0]];
+  const inSpace = (a) => { const c = dot(a, d); return a.map((x, i) => x - c * d[i]); };
+  let a;
+  if (k === 'vertex-first') a = inSpace(VERTICES[EDGES.find(([i, j]) => i === el[0] || j === el[0]).find((x) => x !== el[0])]);
+  else if (k === 'edge-first') a = inSpace(VERTICES[el[1]].map((x, i) => x - V0[i]));
+  else if (k === 'cell-first') a = inSpace(V0);
+  else {
+    // the unit vector orthogonal to d and to the triangle's two edges (Gram–Schmidt from the coordinate axes)
+    const basis = [d, unit(inSpace(VERTICES[el[1]].map((x, i) => x - V0[i])))];
+    const e2 = VERTICES[el[2]].map((x, i) => x - V0[i]);
+    basis.push(unit(basis.reduce((v, b) => { const c = dot(v, b); return v.map((x, i) => x - c * b[i]); }, e2)));
+    a = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]].map((e) => basis.reduce((v, b) => { const c = dot(v, b); return v.map((x, i) => x - c * b[i]); }, e)).sort((x, y) => Math.hypot(...y) - Math.hypot(...x))[0];
+  }
+  const v = FRAMES[n].map((f) => dot(a, f)), l = Math.hypot(...v);
+  return v.map((x) => x / l);
+});
