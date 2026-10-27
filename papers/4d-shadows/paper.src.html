@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Shadows of the Fourth Dimension</title>
+<link rel="stylesheet" href="../paper.css">
+<style>figure img{width:100%;display:block;border-radius:2pt} p.prec{font-size:9pt;color:#3a3a3a;border-left:2px solid #b8962e;padding-left:3mm;margin:3mm 0} .thm{border-left:3px solid #b8962e;padding-left:3mm;margin:3mm 0} table{border-collapse:collapse;font-size:8.6pt;margin:3mm 0} td,th{border-bottom:1px solid #ddd;padding:1.2mm 1.6mm;text-align:left;vertical-align:top}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+
+<h1>Shadows of the Fourth Dimension</h1>
+<p class="sub">Deltahedra that join differently: the triangle-faced shadows and slices of the 5-, 16-, 24- and 600-cell</p>
+<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Paper #62 · Version 1 · __DATE__ · __DOI__ · Licence CC BY-SA 4.0<br>
+The ideas are DICTO's. Computation and proofs with Claude (Anthropic).</div>
+
+<div class="abstract"><b>Abstract.</b> A deltahedron is a solid whose faces are all equilateral triangles; only eight of them are convex. Four regular solids of four-dimensional space are also built from triangles: the 5-cell, the 16-cell, the 24-cell and the 600-cell. DICTO's idea was that their three-dimensional shadows and slices might stand closer to a new family of deltahedra — same pattern of triangles, different shape — than to the eight regular ones, and that such variants would join to other pieces differently. We compute every shadow and slice of the four solids along their four main directions exactly, in numbers of the form a + b√5. Apart from copies of their own cells, none is a regular deltahedron. Two carry the face pattern of a convex deltahedron with unequal edges, and both join differently: one closes three around an edge where its regular counterpart closes nothing, the other fills space on its own where the regular octahedron cannot. The 600-cell's slices carry the patterns of dented and capped deltahedra; one of them, which we call Shadow-17, is two diminished icosahedra (J11) glued on their pentagons — found by DICTO's idea of cutting it in halves. __SIX__</div>
+
+<h2>1. The idea</h2>
+<p>DICTO's ideas (27 October 2026): "4th dimensional shadows may more closely represent any new deltahedron type family than they do the original ones", and, of such variants against the regular ones, "different shapes with different attachability". The same day a search for new deltahedra glued from DICTO's pieces (AXE, CLEO, Cleo-Icos, Admiral Cap, Tricap and others; up to 4 pieces of all kinds, up to 5 of DICTO's) found 772 solids with all faces equilateral, every one a gluing of regular tetrahedra, octahedra and icosahedra: no new deltahedron and no variant. The fourth dimension was the next place to look.</p>
+
+<h2>2. Method</h2>
+<p>All arithmetic is exact in ℚ(√5) (numbers a + b√5, a and b rational, with exact signs); floating point only proposes convex hulls, and every hull face is then checked exactly (all points on one side, every edge in two faces, Euler characteristic 2). For each solid and each of four directions — through a vertex, the middle of an edge, the centre of a triangle and the centre of a cell — we take the <b>shadow</b> (the outline of the projection into the 3-space at right angles), the <b>layers</b> (the outline of the vertices at one height) and the <b>slices</b> (the true cut by a 3-space at right angles, through the centre and at every vertex height: the vertices on it plus every edge crossing it). 223 records, 157 distinct solids, 27 with all faces triangles. Each is compared with the eight convex deltahedra by graph isomorphism; for the other patterns an equilateral form is sought (least squares on the edge lengths, as in Tsuruta et al. 2014) and confirmed exactly where found.</p>
+<p>The shadows and slices themselves are convex, as every projection and cut of a convex solid is; their triangles are unequal. The question for each is whether its <i>pattern</i> of triangles can be rebuilt with all edges equal. Where that needs some edges folded inwards, the equilateral form is non-convex: the dents belong to that form, not to the 4D solid.</p>
+
+<h2>3. Results</h2>
+<table>
+<tr><th>4D source</th><th>Solid</th><th>Pattern</th><th>Edge ratio</th><th>Equilateral form</th></tr>
+<tr><td>5-cell</td><td>edge-first shadow (TBP-5)</td><td>triangular bipyramid J12</td><td>√(12/7) = 1.309</td><td>variant of J12</td></tr>
+<tr><td>16-cell</td><td>edge-first shadow = central slice (OCT-16)</td><td>octahedron</td><td>2/√3 = 1.155</td><td>variant of the octahedron</td></tr>
+<tr><td>600-cell</td><td>vertex-first shadow = central slice (42, 80)</td><td>pentakis icosidodecahedron</td><td>2/√3</td><td>12-dented icosahedron (exact)</td></tr>
+<tr><td>600-cell</td><td>vertex-first slices at the dodecahedron height (32, 60)</td><td>pentakis dodecahedron</td><td>1.144</td><td>augmented dodecahedron; excavated dodecahedron (both exact)</td></tr>
+<tr><td>600-cell</td><td>edge-first slices (17, 30): Shadow-17</td><td>none of the 8</td><td>2.927</td><td>two J11 on their pentagons (exact)</td></tr>
+<tr><td>16-, 600-cell</td><td>face- and edge-first (8 or 12 vertices)</td><td>hexagonal, decagonal bipyramids</td><td>1.41–2.29</td><td>none can exist (Prop. 2)</td></tr>
+<tr><td>600-cell</td><td>six large slices (28–72 vertices)</td><td>none of the 8</td><td>2.29–4.81</td><td>§6</td></tr>
+</table>
+<p>All other all-triangle results are the regular tetrahedron, octahedron or icosahedron, and each is a cell or vertex figure of its 4D solid.</p>
+<div class="thm"><p><b>Proposition 1.</b> No shadow, layer or slice of the 5-, 16-, 24- or 600-cell along the four main directions is a regular deltahedron, except copies of the solid's own cells and vertex figures. The only convex-deltahedron patterns that occur among the others are those of the triangular bipyramid and the octahedron, each with unequal edges.</p></div>
+<div class="thm"><p><b>Proposition 2.</b> A bipyramid over an n-gon with all edges equal exists only for n ≤ 5: for n ≥ 6 the equilateral apex would lie in the plane of the polygon or the solid would cross itself. So the hexagonal and decagonal bipyramid patterns of the 16- and 600-cell have no deltahedron.</p></div>
+
+<h2>4. Variants join differently</h2>
+<figure><img src="figures/variants.png"><figcaption>Figure 1. The two variants (gold-brown) beside their regular counterparts (blue). Top: the 5-cell's edge-first shadow, with the pattern of the triangular bipyramid J12. Bottom: the 16-cell's edge-first shadow, with the pattern of the octahedron.</figcaption></figure>
+<p><b>TBP-5</b>, the 5-cell's edge-first shadow, has edges √2 (three) and √(7/6) (six). Its faces match no face of J12. Its base edges have a dihedral angle of exactly 120°, so three copies close face to face round an edge, which regular J12s never do; its side edges have angle arccos(1/8), which closes no star, so neither solid fills space.</p>
+<p><b>OCT-16</b>, the 16-cell's edge-first shadow, is two pyramids from the centre of a cube to two opposite faces, base to base. Its dihedral angles are 90° and 120°, and it fills space by itself, face to face: it is the cell of the square bipyramidal honeycomb (a known tiling, credited). The regular octahedron fills space only together with tetrahedra. A mixed edge star exists in angle (2·90° + 70.53° + 109.47° = 360°), but the faces do not match, so the variant and the regular family do not join face to face.</p>
+<p>So the variants differ in shape and in how they join, as DICTO expected.</p>
+
+<h2>5. The 600-cell's dented patterns, and Shadow-17</h2>
+<figure><img src="figures/icosahedral.png"><figcaption>Figure 2. The 600-cell's vertex-first slices: the patterns of the pentakis icosidodecahedron and the pentakis dodecahedron, and their exact equilateral forms (12-dented icosahedron; augmented and excavated dodecahedra).</figcaption></figure>
+<p>The 600-cell's vertex-first shadow is also its central slice, with 42 vertices and 80 triangles. Its equilateral form is an icosahedron with a shallow dent at each vertex (placeholder name: 12-dented icosahedron). The slices at the dodecahedron height (32 vertices, 60 triangles) give the excavated dodecahedron, a known deltahedron, and its outward partner, the augmented dodecahedron. Both placeholder names describe obvious constructions and are not claimed new.</p>
+<p><b>Shadow-17.</b> The edge-first slices at the outer heights have 17 vertices and 30 triangles, five-fold symmetric: two tips, then rings of 5, 5 and 5 vertices, the middle ring of degree 6. An equilateral form was first found only numerically. DICTO's idea of halves pinned it down: cut the pattern at its middle ring and each half is a J11, the gyroelongated pentagonal pyramid (the diminished icosahedron). <b>Shadow-17's equilateral form is two J11 glued on their pentagons</b>: exact by construction, with edges all 1, and all 136 corner-to-corner distances of the numerical form agree with it to 4·10⁻¹⁶. Its five folded edges are the shared pentagon's, where two J11 angles add to 2 × 100.81° = 201.62°. The J11 is the piece DICTO's work began with, filling the gaps between dodecahedra and icosahedra.</p>
+
+<h2>6. The six large slices</h2>
+<p>__SIXSECTION__</p>
+
+<h2>7. A note on the 600-cell's sections</h2>
+<p>The vertex-first "sections" of the 600-cell often listed (icosahedron, dodecahedron, icosahedron, icosidodecahedron) are the outlines of its vertex layers. A true cut at the dodecahedron height or at the equator also meets edges that cross it, and adds their midpoints: the true central section is the 42-vertex solid of §5, with the same pattern, edge lengths and angles as the shadow. Checked exactly and with an independent floating-point computation.</p>
+
+<h2>8. Prior art and credit</h2>
+<p>Coxeter's <i>Regular Polytopes</i> treats the polytopes, their projections and the vertex-first sections of the 600-cell. The eight convex deltahedra are classical (Freudenthal and van der Waerden 1947); non-convex equilateral realisations and dented variants of deltahedral patterns are studied by Tsuruta et al. (2014). The square bipyramidal honeycomb and the excavated dodecahedron are known. We did not find the comparison of the 4D shadows and slices with the deltahedra, the attachability of the variants, or Shadow-17's identification in the sources checked.</p>
+<p class="prec"><b>Sources checked</b> (27 October 2026; full record: study folder 2026-10-27-4d-shadows, prior-art.md, and 2026-10-27-five-pyramids, prior-art.md). <i>Library</i> (1007 references, 11 queries on deltahedra, 4D polytope projections and sections, 600-cell, Platonic face pyramids, space filling): no deltahedron literature in the library. <i>Web</i>: Tsuruta et al., ICGG 2014, deltahedral graphs (cgg.cs.tsukuba.ac.jp); Wikipedia, "600-cell", "Deltahedron", "Excavated dodecahedron"; the square bipyramidal honeycomb (via search); Polytope Wiki; MathWorld. Coxeter, <i>Regular Polytopes</i> (3rd ed. 1973) is cited for its well-known contents; it was not re-read for this paper.</p>
+
+<h2>9. Conclusion</h2>
+<p>The shadows of the fourth dimension are not regular deltahedra. Where they carry a deltahedron's pattern, they carry it with unequal edges, and these variants join and fill space in ways the regular ones cannot; where they carry other patterns, their equilateral forms are dented. One of them, Shadow-17, turned out to be two copies of the piece DICTO's work began with.</p>
+<p class="prec"><b>Data and code.</b> Studies 2026-10-27-4d-shadows (q5.py exact arithmetic, polytopes.py, shadows.py, classify.py, attach.py, shadow17_j11.py; data/shadows.json, all-triangle-matches.json, attachability.json) and 2026-10-27-five-pyramids. References: DICTO, The Rule of Halves (#57), DICTO DOI 10.5281/zenodo.23647898; DICTO, Every Mix of the Platonic Solids Fills Space (#47), DICTO DOI 10.5281/zenodo.23551326; DICTO, Aristotle's Pyramid (#44), DICTO DOI 10.5281/zenodo.23529497.</p>
+</body></html>
