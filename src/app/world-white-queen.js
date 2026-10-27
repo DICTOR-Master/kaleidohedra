@@ -2,9 +2,10 @@
 // Step 2, the shadows: the true orthogonal 3D shadow of the 600-cell, every one computed live from the exact source model
 // (white-queen-data.js via white-queen-geometry.js; no other 600-cell code). All 720 edges are drawn projected (the inner ones too),
 // the convex hull as a see-through shell, its real faces (coplanar triangles merged) ivory for triangles and blue for four-sided faces,
-// as in #63's figures. Four buttons (vertex-, edge-, face-, cell-first) and one big slider that turns the 4D view direction along the
-// path vertex → edge → face → cell first, snapping at the four main directions; the caption gives the hull's vertices and faces.
-// Words in all 7 languages (i18n wq.*); the slice view comes later.
+// as in #63's figures. Six turnings (DICTO 2026-10-27), one for each pair of the four main directions: two rows of four buttons pick
+// the start (From) and the end (To), each jumping to its stop, and one big slider turns the 4D view direction along that pair's great
+// circle, snapping at both ends; the caption gives the hull's vertices and faces. Words in all 7 languages (i18n wq.*); the slice view
+// comes later.
 import * as THREE from 'three';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
@@ -14,18 +15,17 @@ import { ROOF_FOLD_WORLD_SCALE as WS } from '../krp-core/src/geometry-extensions
 import { DIRECTIONS, EDGES, shadowAt, viewAt } from './white-queen-geometry.js';
 
 export const WQ_DIRECTIONS = DIRECTIONS;
-/** The slider: 0..3000, the four main directions at 0, 1000, 2000, 3000 (it snaps to one within SNAP). */
-export const WQ_STOPS = DIRECTIONS.map((key, i) => ({ key, u: i * 1000 }));
+/** The slider: 0..1000 along the chosen turning, its two ends the stops (it snaps to one within WQ_SNAP). */
 export const WQ_SNAP = 40;
+export const WQ_DEFAULT = { from: 'vertex-first', to: 'cell-first' };
 const SHORT = { vertex: 'vertex-first', edge: 'edge-first', face: 'face-first', cell: 'cell-first' };   // ?open=whitequeen:<short>
 const IVORY = 0xefe9dc, BLUE = 0x9fb4c8, OTHER = 0xd8c690;   // as #63's figures (render_atlas.py); faces of 5+ sides never show at the stops
 const SHELL = 0.42;   // the see-through shell's opacity
 const lang = () => getSettings().language;
 
-/** The caption: the direction (or "a → b" for the two it lies between) and the hull's vertex and face counts. */
-export function wqCaption(u, s, L) {
-  const st = WQ_STOPS.find((x) => x.u === u);
-  const head = st ? t(`wq.dir.${st.key}`, L) : t('wq.between', L, { a: t(`wq.dir.${DIRECTIONS[Math.floor(u / 1000)]}`, L), b: t(`wq.dir.${DIRECTIONS[Math.ceil(u / 1000)]}`, L) });
+/** The caption: the direction at a stop (or "from → to" between them) and the hull's vertex and face counts. */
+export function wqCaption({ from, to, u }, s, L) {
+  const head = u === 0 ? t(`wq.dir.${from}`, L) : u === 1000 ? t(`wq.dir.${to}`, L) : t('wq.between', L, { a: t(`wq.dir.${from}`, L), b: t(`wq.dir.${to}`, L) });
   const parts = [t('wq.count.vertices', L, { n: s.vertices.length }), t('wq.count.triangles', L, { n: s.triangles })];
   if (s.quads) parts.push(t('wq.count.quads', L, { n: s.quads }));
   if (s.others) parts.push(t('wq.count.others', L, { n: s.others }));
@@ -37,9 +37,13 @@ export function createWhiteQueenWorld({ scene, fitView = () => {} }) {
   const group = new THREE.Group();
   group.visible = false;
   scene.add(group);
-  let u = 0;
-  try { const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null'); if (Number.isFinite(d?.u)) u = Math.max(0, Math.min(3000, Math.round(d.u))); } catch { /* defaults */ }
-  const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ u })); } catch { /* best-effort */ } };
+  const view = { ...WQ_DEFAULT, u: 0 };   // the turning (from → to) and the slider's place on it
+  try {
+    const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
+    if (DIRECTIONS.includes(d?.from) && DIRECTIONS.includes(d?.to) && d.from !== d.to) Object.assign(view, { from: d.from, to: d.to });
+    if (Number.isFinite(d?.u)) view.u = Math.max(0, Math.min(1000, Math.round(d.u)));
+  } catch { /* defaults */ }
+  const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(view)); } catch { /* best-effort */ } };
   let active = false, skeleton = false, opacity = 1, shown = null;
 
   const shellMat = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, flatShading: true, transparent: true, opacity: SHELL, depthWrite: false, roughness: 0.6, metalness: 0, emissive: 0x3a3730 });
@@ -64,7 +68,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {} }) {
 
   function draw() {
     if (!active) return;
-    const s = shadowAt(u / 1000);
+    const s = shadowAt(view.from, view.to, view.u / 1000);
     shown = s;
     const P = s.P.map((p) => p.map((c) => c * WS)), Q = s.points.map((p) => p.map((c) => c * WS));
     const ep = edgeGeo.attributes.position.array;
@@ -97,9 +101,11 @@ export function createWhiteQueenWorld({ scene, fitView = () => {} }) {
   const panel = document.createElement('div');
   panel.id = 'worldwhiteQueen-panel';
   panel.className = 'qc-panel';
+  const row = (end) => `<div class="w4d-row w4d-options wq-row"><span class="hull-pick wq-row-label" data-wq-label="${end}"></span>${DIRECTIONS.map((k) => `<button type="button" data-wq-${end}="${k}"></button>`).join('')}</div>`;
   panel.innerHTML = `
-    <div class="w4d-row w4d-options wq-dir-buttons">${DIRECTIONS.map((k) => `<button type="button" data-wq-dir="${k}"></button>`).join('')}</div>
-    <div class="w4d-row wq-param-row"><label class="hull-pick"><span class="wq-param-label"></span> <input type="range" class="st-slider" min="0" max="3000" step="1"></label></div>
+    ${row('from')}
+    ${row('to')}
+    <div class="w4d-row wq-param-row"><label class="hull-pick"><span class="wq-param-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row ch-param-caption" aria-live="polite"></div>
     <div class="w4d-row st-note fold"></div>`;
   document.body.appendChild(panel);
@@ -110,23 +116,37 @@ export function createWhiteQueenWorld({ scene, fitView = () => {} }) {
     panel.classList.toggle('visible', active);
     if (!active || !shown) return;
     const L = lang();
-    panel.querySelectorAll('[data-wq-dir]').forEach((x) => { x.textContent = t(`wq.dir.${x.dataset.wqDir}`, L); x.classList.toggle('active', WQ_STOPS.find((s) => s.key === x.dataset.wqDir).u === u); });
-    panel.querySelector('.wq-param-label').textContent = t('wq.param', L);
-    input.value = String(u);
-    caption.textContent = wqCaption(u, shown, L);
+    for (const end of ['from', 'to']) {
+      panel.querySelector(`[data-wq-label="${end}"]`).textContent = t(`wq.${end}`, L);
+      panel.querySelectorAll(`[data-wq-${end}]`).forEach((x) => {
+        const k = x.dataset[end === 'from' ? 'wqFrom' : 'wqTo'];
+        x.textContent = t(`wq.dir.${k}`, L);
+        x.classList.toggle('active', k === view[end]);
+        x.hidden = end === 'to' && k === view.from;   // a direction does not turn to itself: nothing unnecessary shown
+      });
+    }
+    panel.querySelector('.wq-param-label').textContent = t('wq.param', L, { a: t(`wq.dir.${view.from}`, L), b: t(`wq.dir.${view.to}`, L) });
+    input.value = String(view.u);
+    caption.textContent = wqCaption(view, shown, L);
     note.textContent = t('wq.note', L);
   }
-  const go = (v) => { if (v === u) return; u = v; save(); draw(); };
+  const go = (v) => { if (v === view.u) return; view.u = v; save(); draw(); };
   input.addEventListener('input', () => {
     let v = Number(input.value);
-    const st = WQ_STOPS.find((s) => Math.abs(s.u - v) <= WQ_SNAP);
-    if (st) { v = st.u; input.value = String(v); }
+    if (v <= WQ_SNAP) v = 0; else if (v >= 1000 - WQ_SNAP) v = 1000;
+    input.value = String(v);
     go(v);
   });
-  panel.querySelector('.wq-dir-buttons').addEventListener('click', (e) => {
-    const k = e.target.closest('[data-wq-dir]')?.dataset.wqDir;
-    const st = WQ_STOPS.find((s) => s.key === k);
-    if (st) go(st.u);
+  // From: the turning starts there (the slider at its start); To: it ends there (the slider at its end). Picking as From the
+  // direction that is To swaps the two.
+  panel.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-wq-from], [data-wq-to]');
+    if (!b) return;
+    const from = b.dataset.wqFrom, to = b.dataset.wqTo;
+    if (from) { if (from === view.to) view.to = view.from; view.from = from; view.u = 0; }
+    else if (to && to !== view.from) { view.to = to; view.u = 1000; }
+    else return;
+    save(); draw();
   });
   let shownLang = lang();
   onSettingsChange((st) => { if (st.language !== shownLang) { shownLang = st.language; if (active) renderPanel(); } });
@@ -135,10 +155,12 @@ export function createWhiteQueenWorld({ scene, fitView = () => {} }) {
     group,
     meshes: () => [],
     handleTap: () => false,
-    /** ?open=whitequeen:<vertex|edge|face|cell>: start at that main direction. */
+    /** ?open=whitequeen:<vertex|edge|face|cell>: start at that main direction (turning to cell-first, or vertex-first from cell-first). */
     setChain(kind) {
-      const st = WQ_STOPS.find((s) => s.key === (SHORT[kind] ?? kind));
-      if (st) { u = st.u; save(); if (active) draw(); }
+      const k = SHORT[kind] ?? kind;
+      if (!DIRECTIONS.includes(k)) return;
+      Object.assign(view, { from: k, to: k === WQ_DEFAULT.to ? WQ_DEFAULT.from : WQ_DEFAULT.to, u: 0 }); save();
+      if (active) draw();
     },
     setActive(on) {
       if (on === active) return;
@@ -147,17 +169,17 @@ export function createWhiteQueenWorld({ scene, fitView = () => {} }) {
       if (!on) { panel.classList.remove('visible'); return; }
       draw(); fit();
     },
-    resetView() { u = 0; save(); if (active) { draw(); fit(); } },
+    resetView() { Object.assign(view, WQ_DEFAULT, { u: 0 }); save(); if (active) { draw(); fit(); } },
     setSkeleton(on) { if (on !== skeleton) { skeleton = on; if (active) draw(); } },
     setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) draw(); } },
     setLatticeView() {},
     shearChanged() {},
     get isEmpty() { return true; },
     clear() {},
-    /** For the browser tests (?probe): the slider, the direction, the hull's counts and the edges drawn. */
-    probe: () => (shown ? { u, stop: WQ_STOPS.find((s) => s.u === u)?.key ?? null, dir: viewAt(u / 1000).u, vertices: shown.vertices.length, triangles: shown.triangles, quads: shown.quads, others: shown.others, faces: shown.faces.length, edges: EDGES.length, shell: shell.visible } : null),
+    /** For the browser tests (?probe): the turning, the slider, the direction, the hull's counts and the edges drawn. */
+    probe: () => (shown ? { from: view.from, to: view.to, u: view.u, stop: view.u === 0 ? view.from : view.u === 1000 ? view.to : null, dir: viewAt(view.from, view.to, view.u / 1000).u, vertices: shown.vertices.length, triangles: shown.triangles, quads: shown.quads, others: shown.others, faces: shown.faces.length, edges: EDGES.length, shell: shell.visible } : null),
   };
 }
 
 /** Points whose convex hull previews the world in the DICTO menu: the vertex-first shadow. */
-export const whiteQueenPreviewPoints = () => shadowAt(0).points;
+export const whiteQueenPreviewPoints = () => shadowAt(0, 0, 0).points;

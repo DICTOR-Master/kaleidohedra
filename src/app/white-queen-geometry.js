@@ -1,8 +1,9 @@
 // The White Queen 600-cell (DICTO 2026-10-27, paper #63): the shadows of the 600-cell, computed live from the exact source model
-// (white-queen-data.js, nothing else). A 4D view direction u runs along the path vertex-first → edge-first → face-first → cell-first
-// (each step a great-circle arc between the two unit directions, the d of the source file); the 120 vertices are projected along u into
-// the 3D space orthogonal to u, in an orthonormal frame carried along the path by the same turns (so the shadow never jumps). The
-// shadow's outline is the convex hull of the projected vertices, its coplanar triangles merged into the real faces. Pure maths, no three.js.
+// (white-queen-data.js, nothing else). The 4D view direction u turns along one of six great circles, one for each pair of the four
+// main directions (vertex-, edge-, face-, cell-first; the d of the source file): from one unit direction towards the other in the plane
+// they span (DICTO 2026-10-27). The 120 vertices are projected along u into the 3D space orthogonal to u, in an orthonormal frame turned
+// with u (so the shadow never jumps along a turning). The shadow's outline is the convex hull of the projected vertices, its coplanar
+// triangles merged into the real faces. Pure maths, no three.js.
 import SRC from './white-queen-data.js';
 
 export const DIRECTIONS = ['vertex-first', 'edge-first', 'face-first', 'cell-first'];
@@ -19,29 +20,32 @@ const unit = (a) => { const l = Math.hypot(...a); return a.map((x) => x / l); };
 /** The four main directions as unit vectors (the source's d: the vertex, edge midpoint, triangle centre and cell centre). */
 export const UNIT_DIRECTIONS = DIRECTIONS.map((k) => unit(SRC.directions[k].d_exact.map(q5)));
 
-// Along the path, step i turns d_i towards d_(i+1) in their plane by the angle between them; the frame turns with it.
-const STEPS = UNIT_DIRECTIONS.slice(0, -1).map((a, i) => {
-  const b = UNIT_DIRECTIONS[i + 1], c = dot(a, b);
-  const w = unit(b.map((x, k) => x - c * a[k]));
-  return { a, w, angle: Math.acos(Math.max(-1, Math.min(1, c))) };
-});
 /** Turn x by angle in the plane of the unit pair (a, w) (a towards w), leaving the plane's orthogonal complement fixed. */
 function turn(x, { a, w }, angle) {
   const xa = dot(x, a), xw = dot(x, w), co = Math.cos(angle), si = Math.sin(angle);
   return x.map((c, k) => c + (xa * (co - 1) - xw * si) * a[k] + (xa * si + xw * (co - 1)) * w[k]);
 }
-// The frame at vertex-first (u = (1, 0, 0, 0)): the other three axes, (0, 1, 0, 0) shown up.
+/** The great-circle turning from main direction i to main direction j: the plane (a, w) and the angle between them. */
+function turning(i, j) {
+  const a = UNIT_DIRECTIONS[i], b = UNIT_DIRECTIONS[j], c = dot(a, b);
+  return { a, w: unit(b.map((x, k) => x - c * a[k])), angle: Math.acos(Math.max(-1, Math.min(1, c))) };
+}
+// Each main direction's own frame: vertex-first (u = (1, 0, 0, 0)) shows the other three axes, (0, 1, 0, 0) up; the others carry it
+// along the turnings vertex → edge → face → cell, so neighbouring views share their orientation.
 const FRAME0 = [[0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]];
-const FRAMES = [FRAME0];
-STEPS.forEach((s, i) => FRAMES.push(FRAMES[i].map((f) => turn(f, s, s.angle))));
+export const FRAMES = [FRAME0];
+for (let i = 0; i < 3; i++) { const st = turning(i, i + 1); FRAMES.push(FRAMES[i].map((f) => turn(f, st, st.angle))); }
+const indexOf = (k) => (typeof k === 'number' ? k : DIRECTIONS.indexOf(k));
+/** The six turnings, one per pair of main directions (each may be run either way). */
+export const PAIRS = DIRECTIONS.flatMap((a, i) => DIRECTIONS.slice(i + 1).map((b) => [a, b]));
 
-/** The view at path position t (0 = vertex-first, 1 = edge-first, 2 = face-first, 3 = cell-first): { u, frame }. */
-export function viewAt(t) {
-  const x = Math.max(0, Math.min(3, t)), i = Math.min(2, Math.floor(x)), s = x - i;
-  if (s === 0) return { u: UNIT_DIRECTIONS[i], frame: FRAMES[i] };
-  if (i === 2 && s === 1) return { u: UNIT_DIRECTIONS[3], frame: FRAMES[3] };
-  const st = STEPS[i], ang = st.angle * s;
-  return { u: turn(UNIT_DIRECTIONS[i], st, ang), frame: FRAMES[i].map((f) => turn(f, st, ang)) };
+/** The view at fraction s (0..1) of the turning from main direction `from` to `to` (keys or indices): { u, frame }. At s = 0 it is the
+ *  start's own view; the frame turns with u, so at s = 1 it is the end direction in the frame the turning brings. */
+export function viewAt(from, to, s) {
+  const i = indexOf(from), j = indexOf(to), x = Math.max(0, Math.min(1, s));
+  if (x === 0 || i === j) return { u: UNIT_DIRECTIONS[i], frame: FRAMES[i] };
+  const st = turning(i, j), ang = st.angle * x;
+  return { u: x === 1 ? UNIT_DIRECTIONS[j] : turn(UNIT_DIRECTIONS[i], st, ang), frame: FRAMES[i].map((f) => turn(f, st, ang)) };
 }
 
 /** The 120 vertices projected along u into the frame: 3D points (some coincide). */
@@ -122,13 +126,13 @@ export function hull(P3) {
   return { points, index, vertices, faces, triangles: faces.filter((f) => f.length === 3).length, quads: faces.filter((f) => f.length === 4).length, others: faces.filter((f) => f.length > 4).length };
 }
 
-/** Everything the world draws at path position t: the projected vertices, the hull, and the projected edges' lengths. */
+/** Everything the world draws at fraction s of the turning from `from` to `to`: the projected vertices and the hull. */
 const cache = new Map();
-export function shadowAt(t) {
-  const key = Math.round(t * 1e6);
+export function shadowAt(from, to, s) {
+  const key = `${indexOf(from)}${indexOf(to)}${Math.round(s * 1e6)}`;
   if (cache.has(key)) return cache.get(key);
-  const view = viewAt(t), P = project(view), H = hull(P);
-  const out = { t, u: view.u, P, ...H };
+  const view = viewAt(from, to, s), P = project(view), H = hull(P);
+  const out = { u: view.u, P, ...H };
   if (cache.size > 64) cache.clear();
   cache.set(key, out);
   return out;
