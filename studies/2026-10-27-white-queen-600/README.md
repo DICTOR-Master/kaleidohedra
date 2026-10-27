@@ -13,7 +13,7 @@ low priority).
   exact hulls; uses the modules of study 2026-10-27-4d-shadows. Output `data/atlas600.json`, `.pkl`.
 - `scripts/render_atlas.py` — `renders/atlas600.png` (all slice types), `renders/shadows600.png` (four shadows;
   the 48-vertex cell-first slice beside Humpty Dumpty = Slice-48 of #62).
-- Names: Humpty Dumpty = Slice-48 (DICTO 2026-10-27). Carroll material belongs to #63 only.
+- Names (DICTO 2026-10-27): Humpty Dumpty = the real 48-vertex cell-first slice (the egg); Fallen Humpty (placeholder) = its equal-edged form, Slice-48 of #62. Carroll material belongs to #63 only.
 
 ## White Queen world, step 1: the source model (2026-10-27)
 `scripts/export_source.py` → `data/600cell-source.json` (40 KB): the 600-cell from its definition, exact (each coordinate

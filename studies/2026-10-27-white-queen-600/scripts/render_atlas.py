@@ -1,7 +1,7 @@
 """The White Queen 600-cell (#63): pictures of the atlas (atlas600.py) and of the shadows.
 renders/atlas600.png : every slice type, centre to tip, in four directions; vertex-height slices and the slices between
                        them alternate; triangles ivory, squares silver-blue; one scale throughout.
-renders/shadows600.png: the four shadows, and Humpty Dumpty (Slice-48) beside its slice.
+renders/shadows600.png: the four shadows; Humpty Dumpty (the real 48-vertex slice) beside Fallen Humpty (its equal-edged form, Slice-48 of #62).
 Run on dicto-big-brother:  cd ~/kres-tmp/4d/scripts && ~/geom/bin/python render_atlas.py
 """
 import pickle
@@ -17,7 +17,7 @@ from render import BG, GOLD, draw, find, mark
 
 IVORY, SILVER, EDGE = "#efe9dc", "#9fb4c8", "#7f8692"
 ROWS = ["vertex-first", "edge-first", "face-first", "cell-first"]
-NAMED = {("edge-first", "1 + √5"): "Shadow-17", ("cell-first", "1 + 1/2√5"): "Humpty's egg"}
+NAMED = {("edge-first", "1 + √5"): "Shadow-17", ("cell-first", "1 + 1/2√5"): "Humpty Dumpty"}
 R = 1.75
 
 
@@ -123,10 +123,10 @@ def shadows():
     if signed_volume(P, F) < 0:
         F = [f[::-1] for f in F]
     ax = fig.add_subplot(2, 4, 6, projection="3d")
-    draw(ax, P0, F0, "cell-first slice, 48 vertices", "convex, edges unequal", face="#cfc6b2", view=(20, 35))
+    draw(ax, P0, F0, "Humpty Dumpty", "the 48-vertex slice: a convex egg", face="#cfc6b2", view=(20, 35))
     ax = fig.add_subplot(2, 4, 7, projection="3d")
-    draw(ax, P, F, "Humpty Dumpty", "the same 92 triangles, every edge equal\n(Slice-48 in #62)", face="#3d5f7f", view=(20, 35))
-    fig.suptitle("The White Queen 600-cell: its four shadows, and Humpty Dumpty put back together", color="white", fontsize=14)
+    draw(ax, P, F, "Fallen Humpty", "the same 92 triangles forced to be equal\n(Slice-48 in #62)", face="#3d5f7f", view=(20, 35))
+    fig.suptitle("The White Queen 600-cell: its four shadows; Humpty Dumpty and his fall", color="white", fontsize=14)
     mark(fig)
     fig.savefig("../renders/shadows600.png", dpi=130, facecolor=BG)
 
