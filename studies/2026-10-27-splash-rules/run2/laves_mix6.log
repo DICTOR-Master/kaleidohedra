@@ -1,0 +1,61 @@
+words ['AC', 'ABC', 'ACBC', 'ACABC', 'ACBCAC', 'ACBABC'] | census checks failed: {'AC': 0, 'ABC': 0, 'ACBC': 0, 'ACABC': 0, 'ACBCAC': 0, 'ACBABC': 0}
+(-11/32, -5/32)
+   M0: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+   M1: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+   K1: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+   K2: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+   K3: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+   T: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+(-5/32, 17/96)
+   M0: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+   M1: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+   K1: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+   K2: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+   K3: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+   T: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+  CLASH (layer types) 17/96 7/32 M0 hh
+  CLASH (layer types) 17/96 7/32 M0 hc
+  CLASH (layer types) 17/96 7/32 M0 cc
+  CLASH (layer types) 17/96 7/32 M0 ch
+  CLASH (layer types) 17/96 7/32 M0 hc
+  CLASH (layer types) 17/96 7/32 M0 hh
+  CLASH (layer types) 17/96 7/32 M0 cc
+  CLASH (layer types) 17/96 7/32 M0 ch
+(17/96, 7/32)
+   M0: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': '1', 'ch': 'varies'}
+   M1: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': '1', 'ch': 'varies'}
+   K1: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   K2: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   K3: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   T: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+  CLASH (layer types) 7/32 9/32 M0 hh
+  CLASH (layer types) 7/32 9/32 M0 hc
+  CLASH (layer types) 7/32 9/32 M0 cc
+  CLASH (layer types) 7/32 9/32 M0 ch
+  CLASH (layer types) 7/32 9/32 M0 hc
+  CLASH (layer types) 7/32 9/32 M0 hh
+  CLASH (layer types) 7/32 9/32 M0 cc
+  CLASH (layer types) 7/32 9/32 M0 ch
+(7/32, 9/32)
+   M0: fit {'ch': 'none', 'hc': 'none'} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': 'varies'}
+   M1: fit {'ch': 'none', 'hc': 'none'} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': 'varies'}
+   K1: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   K2: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   K3: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   T: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+  CLASH (layer types) 9/32 11/32 M0 hh
+  CLASH (layer types) 9/32 11/32 M0 hc
+  CLASH (layer types) 9/32 11/32 M0 cc
+  CLASH (layer types) 9/32 11/32 M0 ch
+  CLASH (layer types) 9/32 11/32 M0 hc
+  CLASH (layer types) 9/32 11/32 M0 hh
+  CLASH (layer types) 9/32 11/32 M0 cc
+  CLASH (layer types) 9/32 11/32 M0 ch
+(9/32, 11/32)
+   M0: fit {'ch': 'none', 'hc': 'none'} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': 'varies'}
+   M1: fit {'ch': 'none', 'hc': 'none'} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': 'varies'}
+   K1: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   K2: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   K3: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   T: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+locality clashes (6 layers round the gap): 24
