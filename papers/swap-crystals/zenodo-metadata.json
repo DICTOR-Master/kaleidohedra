@@ -1,0 +1,56 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-28",
+ "access_right": "open",
+ "title": "The Swap Rule in Crystals: Rock Salt, Cadmium Iodide, Zinc Blende and the Laves Phases on Every Stacking",
+ "description": "<p>Many crystals come in a cubic and a hexagonal form that differ only in how their layers are stacked, and in many mixed stackings between them. Paper #57 found that at close packing the space of every stacking is shared out into pieces borrowed from the two pure stackings, whole or in halves (the rule of halves), and #61 proved the Swap Rule: the two mixed pieces always add up to the two pure ones. Here we take both rules to four classical crystal families and prove, exactly, that <b>the Swap Rule holds in all four</b>, in all 299 cases where it can be tested: rock salt and nickel arsenide (NaCl, NiAs), the half-filled layers of cadmium chloride and cadmium iodide (CdCl₂, CdI₂), zinc blende and wurtzite with two different atoms (ZnS), and the Laves phases (MgCu₂, MgZn₂, MgNi₂). The rule of halves holds in full for rock salt and cadmium iodide: each octahedral piece is exactly half cubic and half hexagonal, each ball and tetrahedral piece is borrowed whole from the layer it rests on. In zinc blende the atoms keep the rule of halves, while the empty holes stop being fixed mixtures and still swap exactly. In the Laves phases, near the real alloys, every stacking is cut into exactly the same pieces.</p><p>Proof: #57's exact weight walk (rational arithmetic) on every close-packed stacking up to six layers for each family; locality checked (0 clashes); rule of halves and Swap Rule checked as exact polynomial identities in the weight. The Laves network on every stacking is built by one rule and checked against the ideal Frank–Kasper geometry.</p><p>The ideas and names are DICTO's. Computation and proof with Claude (Anthropic). Sources checked are listed in the paper. The study (scripts, raw walks, logs) is attached. Licence CC BY-SA 4.0. More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "Swap Rule",
+  "rule of halves",
+  "Janus c/h",
+  "polytypes",
+  "close packing",
+  "rock salt",
+  "nickel arsenide",
+  "cadmium iodide",
+  "zinc blende",
+  "wurtzite",
+  "Laves phases",
+  "Frank-Kasper",
+  "power diagram",
+  "Laguerre tessellation"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23647898",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23678750",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23682596",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ]
+}
