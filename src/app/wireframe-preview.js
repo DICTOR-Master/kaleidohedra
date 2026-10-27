@@ -18,7 +18,9 @@ import { theme } from './site.js';
 // 2D tile outlines, ...), so this file owns no geometry of its own.
 // An edge list flagged `edges.coin = true` (a flat 2D tile) spins like
 // a coin instead: no tilt, turning about the vertical axis, so it
-// narrows to its edge and back, with no depth dimming.
+// narrows to its edge and back, with no depth dimming. An edge list may carry `edges.colours` (one CSS colour per edge; the White
+// Queen's Cleo shells, DICTO 2026-10-27): each edge then keeps its own colour, the far ones fainter; with `edges.layers` (a number per
+// edge) higher layers draw over lower ones whatever their depth, and `edges.widths` scales each edge's line.
 
 // Canvas strokes can't use CSS variables, so read them from the canvas's own CSS context when drawing
 // (the DICTO wizard shows each app in its colours), falling back to the current theme.
@@ -85,17 +87,20 @@ export function mountWireframePreview(canvas, edges, size) {
     const minZ = Math.min(...zs);
     const zRange = Math.max(Math.max(...zs) - minZ, 1e-6);
     const byDepth = rotated
-      .map(([a, b]) => ({ a, b, avgZ: (a[2] + b[2]) / 2 }))
-      .sort((e1, e2) => e1.avgZ - e2.avgZ);
+      .map(([a, b], i) => ({ a, b, i, avgZ: (a[2] + b[2]) / 2 }))
+      .sort((e1, e2) => (edges.layers ? edges.layers[e1.i] - edges.layers[e2.i] : 0) || e1.avgZ - e2.avgZ);
     ctx.lineWidth = Math.max(1, dpr);
     const near = lineColour(canvas), far = lineColourDim(canvas); // once per frame
-    for (const { a, b, avgZ } of byDepth) {
-      ctx.strokeStyle = edges.coin || (avgZ - minZ) / zRange > 0.5 ? near : far;
+    for (const { a, b, i, avgZ } of byDepth) {
+      const front = edges.coin || (avgZ - minZ) / zRange > 0.5;
+      if (edges.colours) { ctx.strokeStyle = edges.colours[i]; ctx.globalAlpha = front ? 1 : 0.4; } else ctx.strokeStyle = front ? near : far;
+      ctx.lineWidth = Math.max(1, dpr) * (edges.widths?.[i] ?? 1);
       ctx.beginPath();
       ctx.moveTo(half + a[0] * scale, half - a[1] * scale);
       ctx.lineTo(half + b[0] * scale, half - b[1] * scale);
       ctx.stroke();
     }
+    ctx.globalAlpha = 1;
   };
 
   const onFrame = () => {

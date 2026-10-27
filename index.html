@@ -301,6 +301,14 @@
     /* A folded note (DICTONIC): one line until tapped. */
     .qc-panel .st-note.fold { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; cursor: pointer; }
     .qc-panel .st-note.fold.open { -webkit-line-clamp: unset; }
+    /* The White Queen 600-cell (DICTO 2026-10-27): DICTO's named slices (Humpty Dumpty, Shadow-17) in gold; the direction rows stay on
+       one line in every language (they scroll sideways if a screen is too narrow), touch targets unchanged. */
+    #worldwhiteQueen-panel .ch-param-caption.wq-gold { color: #ffc857; }
+    #worldwhiteQueen-panel .wq-row { flex-wrap: nowrap; overflow-x: auto; justify-content: safe center; }
+    #worldwhiteQueen-panel .wq-row > * { flex: none; }
+    #worldwhiteQueen-panel .wq-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 12px; order: 11; }   /* under the caption */
+    #worldwhiteQueen-panel .wq-legend[hidden] { display: none; }
+    #worldwhiteQueen-panel .wq-sw i { display: inline-block; width: 12px; height: 12px; margin-right: 5px; vertical-align: -1px; border-radius: 2px; }
     /* DICTONIC and The Global Web of Bonds on wide, short screens (TV, landscape; DICTO 2026-10-25): the controls stand in a column on the right, scrolling,
        and the picture is centred in the space to their left (render.js, readPanelCover). Upright tablets and phones keep the bottom panel. */
     @media (min-width: 900px) and (max-height: 900px) and (min-aspect-ratio: 4/3) {

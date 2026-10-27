@@ -4,6 +4,8 @@
 //   - The five pyramids: a Platonic solid (tappable cards) split into its face pyramids, a big slider drawing them apart, and one line
 //     from the paper's theorem on whether its pyramid fills space (the cube's alone; the tetrahedron's and octahedron's only together;
 //     the dodecahedron's and the Cleo-Icos never, with face pyramids).
+//     With the icosahedron, a link to where twenty Cleo-Icos close perfectly round a vertex: the White Queen 600-cell's Cleo core
+//     (its Shells view; DICTO 2026-10-27: each shape lives in one place, the others link).
 //   - Fills: three ready-made blocks: cube pyramids filling cubes; the octet cut up; the golden fix (2 Cleo-Icos + 1 Antonius make a
 //     prolate golden rhombohedron; rhombohedra fill space), each piece kind its own tone; "Build it yourself" opens the
 //     Polyhedraverse kit 'antonius.block'.
@@ -17,6 +19,7 @@ import { storageKey, theme } from './site.js';
 import { SOLID_KEYS, FILL_KEYS, GOLDEN_KIT, facePyramids, fillPieces } from './aristotle-geometry.js';
 
 export const ARISTOTLE_KIT_ACTION = `tool:polyKit:${GOLDEN_KIT}`;
+export const ARISTOTLE_WHITE_QUEEN_ACTION = 'tool:whiteQueenWorld:shells';   // the White Queen's Cleo core
 const EDGE_COLOR = 0x0b1220;
 const PRESET = { mode: 'pyramids', solid: 'cube', fill: 'cube', apart: 30 };
 const lang = () => getSettings().language;
@@ -113,7 +116,7 @@ export function createAristotleWorld({ scene, fitView = () => {}, showHudPrompt 
     <div class="w4d-row w4d-options ar-modes"><button type="button" data-ar-mode="pyramids"></button><button type="button" data-ar-mode="fills"></button></div>
     <div class="w4d-row ar-cards"></div>
     <div class="w4d-row ar-apart-row"><label class="hull-pick"><span class="ar-apart-label"></span> <input type="range" class="st-slider" min="0" max="100" step="1"></label></div>
-    <div class="w4d-row w4d-options"><button type="button" data-ar="build"></button></div>`;
+    <div class="w4d-row w4d-options"><button type="button" data-ar="build"></button><button type="button" data-ar="whiteQueen"></button></div>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, 'aristotle');
   const slider = panel.querySelector('.ar-apart-row input');
@@ -133,6 +136,9 @@ export function createAristotleWorld({ scene, fitView = () => {}, showHudPrompt 
     const build = panel.querySelector('[data-ar="build"]');
     build.hidden = pyr || view.fill !== 'golden'; // the kit is the golden fix's
     build.textContent = t('ar.build', L);
+    const wq = panel.querySelector('[data-ar="whiteQueen"]');
+    wq.hidden = !pyr || view.solid !== 'icosahedron';   // only where the Cleo-Icos is shown
+    wq.textContent = t('ar.link.whiteQueen', L);
   }
   panel.addEventListener('click', (e) => {
     const b = e.target.closest('button');
@@ -146,6 +152,7 @@ export function createAristotleWorld({ scene, fitView = () => {}, showHudPrompt 
     if (b.dataset.arSolid) { if (b.dataset.arSolid === view.solid) return; view.solid = b.dataset.arSolid; save(); draw(); renderPanel(); return; }
     if (b.dataset.arFill) { if (b.dataset.arFill === view.fill) return; view.fill = b.dataset.arFill; save(); draw(); renderPanel(); return; }
     if (b.dataset.ar === 'build') openAction(ARISTOTLE_KIT_ACTION);
+    if (b.dataset.ar === 'whiteQueen') openAction(ARISTOTLE_WHITE_QUEEN_ACTION);
   });
   slider.addEventListener('input', () => { view.apart = Number(slider.value); applyApart(); });
   slider.addEventListener('change', save);
