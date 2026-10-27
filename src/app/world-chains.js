@@ -279,8 +279,9 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
           for (const k of [f[0], f[i], f[i + 1]]) { b.pos.push(...P[k]); b.col.push(colour.r, colour.g, colour.b); }
           if (b === buf.solid) solidTags.push(extra?.tags?.[fi] ?? null);
         }
-        f.forEach((k, i) => b.line.push(...P[k], ...P[f[(i + 1) % f.length]]));
+        if (!extra?.edges) f.forEach((k, i) => b.line.push(...P[k], ...P[f[(i + 1) % f.length]]));
       });
+      if (extra?.edges) for (const [i, j] of extra.edges) b.line.push(...P[i], ...P[j]);   // a piece may name its own edges (the Bloom's joined solids)
     });
     glass.opacity = webOn() ? 0.1 : 0.22; // the web on: the pieces step back so the rods read
     solid.transparent = opacity < 1; solid.opacity = opacity; solid.depthWrite = opacity >= 1; solid.needsUpdate = true;
@@ -497,12 +498,12 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     if (!k || k === view.kind) return;
     view.kind = k; save(); stopFilm(); stopLoop(); film = null; draw(); fitStart();
   });
-  // the one big slider: it snaps to a stop within 2% of it (no step buttons, DICTO); the picture is framed again when it is let go
+  // the one big slider: it snaps to a stop within 2% of it (or param.snap; no step buttons, DICTO); the picture is framed again when it is let go
   paramInput.addEventListener('input', () => {
     const pm = DATA[view.kind].param; if (!pm) return;
     stopLoop();
     let u = Number(paramInput.value);
-    const stop = pm.stops.find((st) => Math.abs(st.u - u) <= 20);
+    const stop = pm.stops.find((st) => Math.abs(st.u - u) <= (pm.snap ?? 20));   // pm.snap: a world whose slider is stops only (the Bloom) snaps from further
     if (stop) { u = stop.u; paramInput.value = String(u); }
     if (u === view.param[view.kind]) return;
     view.param[view.kind] = u; save(); draw();

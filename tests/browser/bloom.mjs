@@ -1,6 +1,6 @@
 // The Icosaxes Bloom (DICTO 2026-10-27, paper #59), through the real UI, touch, phone (390×844) and iPad (820×1180), on the Kaleidohedra
 // and Rhombiverse doors (DOORS): right after the Stackings World in DICTO's list; three buttons (big enough to touch); the slider snaps to
-// every stop (Bloom, Bud, Seed; Lotus Jewel Seed for Lotus Jewel Axes), twenty pieces drawn, the caption naming the stop; the Icosaxes
+// every stop and only stops (Bloom, Bud, Seed; Lotus Jewel Seed for Lotus Jewel Axes), the joined solid drawn, the caption naming the stop; the Icosaxes
 // Hexa views; ?open=bloom:<kind>. No console errors. Screenshots ($SHOTS, default /tmp/bloom-shots) at TV 1280×720, iPad 820×1050 and
 // phone 390×760 of the Bud and the Lotus Hexa.
 import { chromium } from 'playwright';
@@ -41,9 +41,10 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     for (const k of ['icosaxes', 'lotus']) {
       if ((await probe()).kind !== k) { await page.tap(`${P} [data-chains-kind="${k}"]`); await page.waitForTimeout(1200); }
       for (const s of BLOOM_STOPS[k]) {
-        await slide(Math.max(0, Math.min(1000, s.u + (s.u < 1000 ? 6 : -6)))); const st = await probe();
+        await slide(Math.max(0, Math.min(1000, s.u + (s.u < 1000 ? 140 : -140)))); const st = await probe();   // anywhere near a stop lands on it
         assert.equal(st.param.u, s.u, `${tag}: ${k} snaps to ${s.key}`);
-        assert.equal(total(st.drawn), 20, `${tag}: ${k} ${s.key}: twenty pieces`);
+        assert.equal(st.param.value, s.v, `${tag}: ${k} ${s.key}: the stop's value`);
+        assert.equal(total(st.drawn), 1, `${tag}: ${k} ${s.key}: one joined solid`);
         assert.ok((await caption()).startsWith(t(`bloom.stop.${s.key}`, 'en')), `${tag}: ${k} ${s.key} caption`); checks++;
       }
     }
