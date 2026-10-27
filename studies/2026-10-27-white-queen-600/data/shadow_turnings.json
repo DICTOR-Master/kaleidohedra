@@ -1,0 +1,220 @@
+{
+ "vertex-first -> edge-first": {
+  "angle_deg": 18.0,
+  "events": 2,
+  "event_deg": [
+   9.7323,
+   13.6138
+  ],
+  "gaps": [
+   {
+    "from_deg": 0.0,
+    "to_deg": 9.7323,
+    "front_cells": 300,
+    "hull_vertices": 42,
+    "hull_faces": 80
+   },
+   {
+    "from_deg": 9.7323,
+    "to_deg": 13.6138,
+    "front_cells": 300,
+    "hull_vertices": 52,
+    "hull_faces": 100
+   },
+   {
+    "from_deg": 13.6138,
+    "to_deg": 18.0,
+    "front_cells": 300,
+    "hull_vertices": 52,
+    "hull_faces": 100
+   }
+  ]
+ },
+ "vertex-first -> face-first": {
+  "angle_deg": 20.9052,
+  "events": 4,
+  "event_deg": [
+   8.3008,
+   13.2825,
+   15.4504,
+   17.172
+  ],
+  "gaps": [
+   {
+    "from_deg": 0.0,
+    "to_deg": 8.3008,
+    "front_cells": 298,
+    "hull_vertices": 46,
+    "hull_faces": 84
+   },
+   {
+    "from_deg": 8.3008,
+    "to_deg": 13.2825,
+    "front_cells": 298,
+    "hull_vertices": 50,
+    "hull_faces": 92
+   },
+   {
+    "from_deg": 13.2825,
+    "to_deg": 15.4504,
+    "front_cells": 298,
+    "hull_vertices": 58,
+    "hull_faces": 108
+   },
+   {
+    "from_deg": 15.4504,
+    "to_deg": 17.172,
+    "front_cells": 298,
+    "hull_vertices": 58,
+    "hull_faces": 108
+   },
+   {
+    "from_deg": 17.172,
+    "to_deg": 20.9052,
+    "front_cells": 298,
+    "hull_vertices": 58,
+    "hull_faces": 108
+   }
+  ]
+ },
+ "vertex-first -> cell-first": {
+  "angle_deg": 22.2388,
+  "events": 4,
+  "event_deg": [
+   7.7612,
+   10.3625,
+   13.0507,
+   15.5225
+  ],
+  "gaps": [
+   {
+    "from_deg": 0.0,
+    "to_deg": 7.7612,
+    "front_cells": 294,
+    "hull_vertices": 42,
+    "hull_faces": 80
+   },
+   {
+    "from_deg": 7.7612,
+    "to_deg": 10.3625,
+    "front_cells": 294,
+    "hull_vertices": 44,
+    "hull_faces": 84
+   },
+   {
+    "from_deg": 10.3625,
+    "to_deg": 13.0507,
+    "front_cells": 294,
+    "hull_vertices": 50,
+    "hull_faces": 96
+   },
+   {
+    "from_deg": 13.0507,
+    "to_deg": 15.5225,
+    "front_cells": 294,
+    "hull_vertices": 50,
+    "hull_faces": 96
+   },
+   {
+    "from_deg": 15.5225,
+    "to_deg": 22.2388,
+    "front_cells": 294,
+    "hull_vertices": 50,
+    "hull_faces": 96
+   }
+  ]
+ },
+ "edge-first -> face-first": {
+  "angle_deg": 10.8123,
+  "events": 2,
+  "event_deg": [
+   5.1524,
+   7.6226
+  ],
+  "gaps": [
+   {
+    "from_deg": 0.0,
+    "to_deg": 5.1524,
+    "front_cells": 298,
+    "hull_vertices": 52,
+    "hull_faces": 96
+   },
+   {
+    "from_deg": 5.1524,
+    "to_deg": 7.6226,
+    "front_cells": 298,
+    "hull_vertices": 60,
+    "hull_faces": 112
+   },
+   {
+    "from_deg": 7.6226,
+    "to_deg": 10.8123,
+    "front_cells": 298,
+    "hull_vertices": 60,
+    "hull_faces": 112
+   }
+  ]
+ },
+ "edge-first -> cell-first": {
+  "angle_deg": 13.2825,
+  "events": 2,
+  "event_deg": [
+   4.1723,
+   7.256
+  ],
+  "gaps": [
+   {
+    "from_deg": 0.0,
+    "to_deg": 4.1723,
+    "front_cells": 298,
+    "hull_vertices": 52,
+    "hull_faces": 96
+   },
+   {
+    "from_deg": 4.1723,
+    "to_deg": 7.256,
+    "front_cells": 298,
+    "hull_vertices": 56,
+    "hull_faces": 104
+   },
+   {
+    "from_deg": 7.256,
+    "to_deg": 13.2825,
+    "front_cells": 298,
+    "hull_vertices": 56,
+    "hull_faces": 104
+   }
+  ]
+ },
+ "face-first -> cell-first": {
+  "angle_deg": 7.7612,
+  "events": 2,
+  "event_deg": [
+   4.771,
+   7.2671
+  ],
+  "gaps": [
+   {
+    "from_deg": 0.0,
+    "to_deg": 4.771,
+    "front_cells": 294,
+    "hull_vertices": 56,
+    "hull_faces": 108
+   },
+   {
+    "from_deg": 4.771,
+    "to_deg": 7.2671,
+    "front_cells": 294,
+    "hull_vertices": 56,
+    "hull_faces": 108
+   },
+   {
+    "from_deg": 7.2671,
+    "to_deg": 7.7612,
+    "front_cells": 294,
+    "hull_vertices": 56,
+    "hull_faces": 108
+   }
+  ]
+ }
+}
