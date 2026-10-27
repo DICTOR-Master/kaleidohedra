@@ -133,14 +133,183 @@ class KC:
     def __repr__(s): return s.fmt()
 
 
+class AlgField:
+    """Version 3 (2026-10-27): the real number field Q(t), t the only root of the irreducible integer polynomial p in the open interval
+    (lo, hi), p of degree n (Sonsam and Lahdeli: n = 3, three real roots, so the norm trick of KC does not apply). Elements are
+    coefficient tuples in the basis 1, t, ..., t^(n-1). Signs are decided exactly: interval arithmetic on a rational isolating interval
+    of t, bisected (exact signs of p at rational points) until the interval of the value excludes 0; a nonzero element is never 0 at t
+    (p irreducible), so this ends."""
+    _reg = {}
+
+    def __init__(s, coeffs, lo, hi, name='t'):
+        s.P = [Fr(c) for c in coeffs]                    # integer coefficients, highest degree first, as written
+        s.n = len(s.P) - 1; s.name = name
+        lead = s.P[0]; s.mon = [c / lead for c in s.P]   # monic, highest first
+        s.lo, s.hi = Fr(lo), Fr(hi); s.lo0, s.hi0 = s.lo, s.hi
+        s.key = ('alg', name, tuple(s.P), Fr(lo), Fr(hi))
+        assert s.peval(s.lo) * s.peval(s.hi) < 0
+
+    @classmethod
+    def get(cls, coeffs, lo, hi, name='t'):
+        k = ('alg', name, tuple(Fr(c) for c in coeffs), Fr(lo), Fr(hi))
+        if k not in cls._reg: cls._reg[k] = cls(coeffs, lo, hi, name)
+        return cls._reg[k]
+
+    def peval(s, x):
+        v = Fr(0)
+        for c in s.P: v = v * x + c
+        return v
+
+    def poly_string(s):
+        out = []
+        for i, c in enumerate(s.P):
+            e = s.n - i
+            if c == 0: continue
+            m = '' if e == 0 else (s.name if e == 1 else f'{s.name}**{e}')
+            a = abs(c); cs = (str(a) if a.denominator == 1 else f'({a})')
+            term = cs if e == 0 else (m if a == 1 else f'{cs}*{m}')
+            out.append(('-' if c < 0 else '+', term))
+        t = ('-' if out[0][0] == '-' else '') + out[0][1]
+        for sg, term in out[1:]: t += f' {sg} {term}'
+        return t
+
+    def bisect(s):
+        m = (s.lo + s.hi) / 2; v = s.peval(m); assert v != 0
+        if (s.peval(s.lo) < 0) == (v < 0): s.lo = m
+        else: s.hi = m
+
+    def approx(s, eps):
+        while s.hi - s.lo > eps: s.bisect()
+        return (s.lo + s.hi) / 2
+
+    def interval_value(s, c):
+        """interval [a, b] containing sum c_k t^k for t in [lo, hi] (Horner in interval arithmetic)."""
+        a = b = Fr(0)
+        for ck in reversed(c):                               # c low->high: Horner from the top
+            ps = [a * s.lo, a * s.hi, b * s.lo, b * s.hi]
+            a, b = min(ps) + ck, max(ps) + ck
+        return a, b
+
+    def sign(s, c):
+        if all(x == 0 for x in c): return 0
+        while True:
+            a, b = s.interval_value(c)
+            if a > 0: return 1
+            if b < 0: return -1
+            s.bisect()
+
+    def reduce(s, q):
+        """q: list low->high of any length; reduce modulo the monic polynomial."""
+        q = list(q); m = list(reversed(s.mon))           # low->high, m[n] = 1
+        for deg in range(len(q) - 1, s.n - 1, -1):
+            c = q[deg]
+            if c == 0: continue
+            for k in range(s.n + 1): q[deg - s.n + k] -= c * m[k]
+        q = q[:s.n] + [Fr(0)] * max(0, s.n - len(q))
+        return tuple(q[:s.n])
+
+
+class RF:
+    """an element of an AlgField (version 3); d = the field's key."""
+    __slots__ = ('c', 'F')
+
+    def __init__(s, c, F):
+        s.F = F; c = [Fr(x) for x in c]; s.c = tuple(c + [Fr(0)] * (F.n - len(c))) if len(c) <= F.n else F.reduce(c)
+
+    @property
+    def d(s): return s.F.key
+
+    def _c(s, o):
+        if isinstance(o, RF):
+            assert o.F is s.F, 'mixed fields'
+            return o
+        assert not isinstance(o, (QF, KC)), 'mixed fields'
+        return RF([o], s.F)
+
+    def __add__(s, o): o = s._c(o); return RF([x + y for x, y in zip(s.c, o.c)], s.F)
+    __radd__ = __add__
+    def __neg__(s): return RF([-x for x in s.c], s.F)
+    def __sub__(s, o): return s + (-s._c(o))
+    def __rsub__(s, o): return s._c(o) - s
+
+    def __mul__(s, o):
+        o = s._c(o); n = s.F.n; q = [Fr(0)] * (2 * n - 1)
+        for i, x in enumerate(s.c):
+            if x == 0: continue
+            for j, y in enumerate(o.c): q[i + j] += x * y
+        return RF(s.F.reduce(q), s.F)
+    __rmul__ = __mul__
+
+    def inv(s):
+        n = s.F.n; t = RF([0, 1], s.F) if n > 1 else None
+        cols = []; e = s
+        for j in range(n):
+            cols.append(list(e.c)); e = e * t if t is not None else e
+        M = [[cols[j][i] for j in range(n)] + [Fr(1 if i == 0 else 0)] for i in range(n)]   # M y = e0
+        for c in range(n):
+            piv = next(r for r in range(c, n) if M[r][c] != 0); M[c], M[piv] = M[piv], M[c]
+            pv = M[c][c]; M[c] = [x / pv for x in M[c]]
+            for r in range(n):
+                if r != c and M[r][c] != 0:
+                    f = M[r][c]; M[r] = [x - f * y for x, y in zip(M[r], M[c])]
+        return RF([M[i][n] for i in range(n)], s.F)
+
+    def __truediv__(s, o):
+        o = s._c(o); assert any(x != 0 for x in o.c)
+        return s * o.inv()
+
+    def __rtruediv__(s, o): return s._c(o) / s
+    def sign(s): return s.F.sign(s.c)
+    def __eq__(s, o): o = s._c(o); return s.c == o.c
+    def __hash__(s): return hash(s.c)
+    def __lt__(s, o): return (s - o).sign() < 0
+    def at(s, x): return sum((q * x ** i for i, q in enumerate(s.c)), Fr(0))
+    def f(s): return float(s.at(s.F.approx(Fr(1, 10 ** 22))))
+
+    def mp(s):
+        import mpmath
+        r = s.F.approx(Fr(1, 10 ** 70)); v = s.at(r)
+        return mpmath.mpf(v.numerator) / v.denominator
+
+    def dec(s, places=15):
+        v = s.at(s.F.approx(Fr(1, 10 ** 45)))
+        x = Decimal(v.numerator) / Decimal(v.denominator)
+        q = x.quantize(Decimal(1).scaleb(-places))
+        return format(q, 'f') if q != 0 else format(Decimal(0).quantize(Decimal(1).scaleb(-places)), 'f')
+
+    def fmt(s):
+        def r(q): return str(q.numerator) if q.denominator == 1 else f'{q.numerator}/{q.denominator}'
+        out = []; t = s.F.name
+        for i, q in enumerate(s.c):
+            if q == 0: continue
+            if i == 0: out.append(r(q)); continue
+            base = t if i == 1 else f'{t}**{i}'
+            out.append(base if q == 1 else (f'-{base}' if q == -1 else f'({r(q)})*{base}'))
+        if not out: return '0'
+        u = out[0]
+        for w in out[1:]: u += f' - {w[1:]}' if w.startswith('-') else f' + {w}'
+        return u
+    def __repr__(s): return s.fmt()
+
+
 def field_name(d):
-    """the dataset's `field` string for a field key d (int for Q(sqrt d), ('cbrt', k) for Q(k**(1/3)))."""
-    return f'Q({d[1]}**(1/3))' if isinstance(d, tuple) else f'Q(sqrt({d}))'
+    """the dataset's `field` string for a field key d (int for Q(sqrt d), 1 for Q (version 3), ('cbrt', k) for Q(k**(1/3)),
+    ('alg', name, ...) for Q(t) (version 3; the file's `field_definition` gives t))."""
+    if isinstance(d, tuple): return f'Q({d[1]}**(1/3))' if d[0] == 'cbrt' else f'Q({d[1]})'
+    return 'Q' if d == 1 else f'Q(sqrt({d}))'
+
+
+def field_definition(F):
+    """version 3: the `field_definition` of a Q(t) file."""
+    return {'generator': F.name, 'minimal_polynomial': F.poly_string(), 'isolating_interval': [str(F.lo0), str(F.hi0)],
+            'note': f'{F.name} is the only real root of the minimal polynomial in the open isolating interval; the polynomial is irreducible '
+                    f'over Q; exact strings are a + b*{F.name} + c*{F.name}**2 with rationals a, b, c.',
+            'decimal': RF([0, 1], F).dec(30)}
 
 
 def fmt(x):
     """sympy-parsable exact string."""
-    if isinstance(x, KC): return x.fmt()
+    if isinstance(x, (KC, RF)): return x.fmt()
     def r(q): return str(q.numerator) if q.denominator == 1 else f'{q.numerator}/{q.denominator}'
     if x.b == 0: return r(x.a)
     bs = f'sqrt({x.d})' if x.b == 1 else (f'-sqrt({x.d})' if x.b == -1 else f'({r(x.b)})*sqrt({x.d})')
@@ -157,7 +326,11 @@ mul = lambda k, v: (k * v[0], k * v[1], k * v[2])
 cross = lambda u, v: (u[1] * v[2] - u[2] * v[1], u[2] * v[0] - u[0] * v[2], u[0] * v[1] - u[1] * v[0])
 fv = lambda v: np.array([x.f() for x in v])
 def det3(a, b, c): return dot(a, cross(b, c))
-def zero(d=5): return KC(0, k=d[1]) if isinstance(d, tuple) else QF(0, 0, d)
+def zero(d=5):
+    if isinstance(d, tuple):
+        if d[0] == 'alg': return RF([0], AlgField.get(d[2], d[3], d[4], d[1]))
+        return KC(0, k=d[1])
+    return QF(0, 0, d)
 
 
 def plane_key(n, c):

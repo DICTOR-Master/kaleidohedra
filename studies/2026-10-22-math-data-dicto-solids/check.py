@@ -35,6 +35,15 @@
 #   keyed fill (version 2, `"proof": "decomposition"`): the same lattice and placements as a convex fill of this dataset (which must
 #             pass); each keyed piece is its convex piece minus/plus Tricaps; every dent equals exactly one key up to a lattice vector
 #             (and vice versa), so every Tricap removed from one piece is added to exactly one other: the keyed pieces fill space too.
+#   version 3 (2026-10-27): two more fields: "Q" (rationals; David, Goliath, Ian Dury, Blockhead, Chucky, Fang, Triskelion Tetrahedron)
+#             and "Q(t)" with a `field_definition` (Sonsam, Lahdeli): t the only root of an irreducible integer polynomial in a rational
+#             isolating interval; checked: irreducible over Q, exactly one root in the interval (Sturm, sympy), decimal of t; signs decided
+#             exactly by interval arithmetic on a bisected isolating interval (see RF). Composition (`composition`, non-convex solids of
+#             #59): the solid = union of convex dataset pieces (placed exactly) minus / plus Tricaps: pieces orthogonally placed and pairwise
+#             interior-disjoint, each Tricap #48's ("tricap") or #48's mirrored in its base plane ("mirrored tricap"), of volume
+#             (3 - sqrt5)/24, standing on a face of one piece (dent: apex strictly inside it; key: apex strictly outside that face, key
+#             interior-disjoint from every piece and every other Tricap), corners within the pieces' corners and the apices (every apex a
+#             corner), every face in a face plane of a piece or Tricap, and volume = pieces - dents + keys, exactly.
 # Usage: python3 check.py            (prints a PASS/FAIL table; exit code 0 only if everything passes)
 import glob, itertools, json, math, os, sys
 from fractions import Fraction as Fr
@@ -97,13 +106,102 @@ class KC:
     def f(s): r = s.k ** (1 / 3); return float(s.c[0]) + float(s.c[1]) * r + float(s.c[2]) * r * r
 
 
+class AlgField:
+    """version 3: Q(t), t the only root of the irreducible integer polynomial P (highest degree first) in the open interval (lo, hi).
+    Signs: interval arithmetic (Horner) on a rational isolating interval, bisected by exact signs of P until the value's interval
+    excludes 0 (a nonzero element is never 0 at t, P being irreducible)."""
+    REG = {}
+    def __init__(s, P, lo, hi, name):
+        s.P = [Fr(c) for c in P]; s.n = len(P) - 1; s.mon = [c / s.P[0] for c in s.P]; s.lo, s.hi = Fr(lo), Fr(hi); s.name = name
+        s.key = ('alg', name, tuple(s.P), Fr(lo), Fr(hi))
+    @classmethod
+    def get(cls, P, lo, hi, name):
+        k = ('alg', name, tuple(Fr(c) for c in P), Fr(lo), Fr(hi))
+        if k not in cls.REG: cls.REG[k] = cls(P, lo, hi, name)
+        return cls.REG[k]
+    def peval(s, x):
+        v = Fr(0)
+        for c in s.P: v = v * x + c
+        return v
+    def bisect(s):
+        m = (s.lo + s.hi) / 2; v = s.peval(m)
+        if v == 0: raise ValueError('rational root: the polynomial is not irreducible')
+        if (s.peval(s.lo) < 0) == (v < 0): s.lo = m
+        else: s.hi = m
+    def approx(s, eps):
+        while s.hi - s.lo > eps: s.bisect()
+        return (s.lo + s.hi) / 2
+    def sign(s, c):
+        if all(x == 0 for x in c): return 0
+        while True:
+            a = b = Fr(0)
+            for ck in reversed(c):
+                ps = [a * s.lo, a * s.hi, b * s.lo, b * s.hi]; a, b = min(ps) + ck, max(ps) + ck
+            if a > 0: return 1
+            if b < 0: return -1
+            s.bisect()
+    def reduce(s, q):
+        q = list(q); m = list(reversed(s.mon))
+        for deg in range(len(q) - 1, s.n - 1, -1):
+            c = q[deg]
+            if c != 0:
+                for k in range(s.n + 1): q[deg - s.n + k] -= c * m[k]
+        q = q[:s.n] + [Fr(0)] * max(0, s.n - len(q))
+        return tuple(q[:s.n])
+
+
+class RF:
+    """an element sum c_k t^k (k < n) of an AlgField."""
+    __slots__ = ('c', 'F')
+    def __init__(s, c, F):
+        s.F = F; c = [Fr(x) for x in c]; s.c = tuple(c + [Fr(0)] * (F.n - len(c))) if len(c) <= F.n else F.reduce(c)
+    @property
+    def d(s): return s.F.key
+    def _c(s, o): return o if isinstance(o, RF) else RF([o], s.F)
+    def __add__(s, o): o = s._c(o); return RF([x + y for x, y in zip(s.c, o.c)], s.F)
+    __radd__ = __add__
+    def __neg__(s): return RF([-x for x in s.c], s.F)
+    def __sub__(s, o): return s + (-s._c(o))
+    def __rsub__(s, o): return s._c(o) - s
+    def __mul__(s, o):
+        o = s._c(o); q = [Fr(0)] * (2 * s.F.n - 1)
+        for i, x in enumerate(s.c):
+            if x != 0:
+                for j, y in enumerate(o.c): q[i + j] += x * y
+        return RF(s.F.reduce(q), s.F)
+    __rmul__ = __mul__
+    def __truediv__(s, o):
+        o = s._c(o); n = s.F.n
+        if all(x == 0 for x in o.c): raise ZeroDivisionError
+        cols = []; e = o; t = RF([0, 1], s.F)
+        for j in range(n): cols.append(list(e.c)); e = e * t
+        M = [[cols[j][i] for j in range(n)] + [Fr(1 if i == 0 else 0)] for i in range(n)]
+        for c in range(n):
+            piv = next(r for r in range(c, n) if M[r][c] != 0); M[c], M[piv] = M[piv], M[c]
+            pv = M[c][c]; M[c] = [x / pv for x in M[c]]
+            for r in range(n):
+                if r != c and M[r][c] != 0:
+                    f = M[r][c]; M[r] = [x - f * y for x, y in zip(M[r], M[c])]
+        return s * RF([M[i][n] for i in range(n)], s.F)
+    def sign(s): return s.F.sign(s.c)
+    def __eq__(s, o): o = s._c(o); return s.c == o.c
+    def __hash__(s): return hash(s.c)
+    def at(s, x): return sum((q * x ** i for i, q in enumerate(s.c)), Fr(0))
+    def f(s): return float(s.at(s.F.approx(Fr(1, 10 ** 22))))
+
+
 def fz(d, a=0):
-    """the constant a in the field d (int: Q(sqrt d); ('cbrt', k): Q(k**(1/3)))."""
-    return KC(a, 0, 0, d[1]) if isinstance(d, tuple) else QF(a, 0, d)
+    """the constant a in the field d (int: Q(sqrt d), 1: Q; ('cbrt', k): Q(k**(1/3)); ('alg', ...): Q(t), version 3)."""
+    if isinstance(d, tuple):
+        if d[0] == 'alg': return RF([a], AlgField.get(d[2], d[3], d[4], d[1]))
+        return KC(a, 0, 0, d[1])
+    return QF(a, 0, d)
 
 
 def mpx(x):
     import mpmath
+    if isinstance(x, RF):
+        v = x.at(x.F.approx(Fr(1, 10 ** 70))); return mpmath.mpf(v.numerator) / v.denominator
     if isinstance(x, KC):
         r = mpmath.cbrt(x.k); return sum((mpmath.mpf(q.numerator) / q.denominator * r ** i for i, q in enumerate(x.c)), mpmath.mpf(0))
     return mpmath.mpf(x.a.numerator) / x.a.denominator + mpmath.mpf(x.b.numerator) / x.b.denominator * mpmath.sqrt(x.d)
@@ -111,6 +209,12 @@ def mpx(x):
 
 def parse(txt, d):
     """exact string -> a field element, refusing anything outside the field d."""
+    if isinstance(d, tuple) and d[0] == 'alg':
+        t = sympy.Symbol(d[1]); e = sympy.expand(sympy.sympify(txt, locals={d[1]: t})); F = AlgField.get(d[2], d[3], d[4], d[1])
+        if e.free_symbols - {t}: raise ValueError(f'{txt} is not in Q({d[1]})')
+        cs = sympy.Poly(e, t).all_coeffs()
+        if not all(c.is_Rational for c in cs): raise ValueError(f'{txt} is not in Q({d[1]})')
+        return RF([Fr(int(c.p), int(c.q)) for c in reversed(cs)], F)
     if isinstance(d, tuple):
         k = d[1]; e = sympy.expand(sympy.sympify(txt)); cs = [Fr(0)] * 3
         basis = {sympy.Integer(1): 0, sympy.Integer(k) ** sympy.Rational(1, 3): 1, sympy.Integer(k) ** sympy.Rational(2, 3): 2}
@@ -143,6 +247,10 @@ def rec(item, test, ok, note=''):
 
 def field_of(doc):
     f = doc['field']
+    if 'field_definition' in doc:                      # version 3: Q(t)
+        fd = doc['field_definition']; t = sympy.Symbol(fd['generator'])
+        P = [Fr(int(c.p), int(c.q)) for c in sympy.Poly(sympy.sympify(fd['minimal_polynomial'], locals={fd['generator']: t}), t).all_coeffs()]
+        return ('alg', fd['generator'], tuple(P), Fr(fd['isolating_interval'][0]), Fr(fd['isolating_interval'][1]))
     if f.endswith('**(1/3))'): return ('cbrt', int(f[2:f.index('**')]))
     return 1 if f == 'Q' else int(f[f.index('sqrt(') + 5:f.index(')')])
 
@@ -215,6 +323,12 @@ def schoenflies(sym):
 
 def check_solid(path):
     doc = json.load(open(path)); slug = os.path.basename(path)[:-5]; d = field_of(doc)
+    if 'field_definition' in doc:                      # version 3: the field Q(t) itself
+        fd = doc['field_definition']; t = sympy.Symbol(fd['generator']); P = sympy.Poly(sympy.sympify(fd['minimal_polynomial'], locals={fd['generator']: t}), t)
+        lo, hi = (sympy.Rational(x) for x in fd['isolating_interval']); F0 = AlgField.get(d[2], d[3], d[4], d[1])
+        rec(slug, f"field Q({fd['generator']}): {fd['minimal_polynomial']} irreducible over Q, exactly one root in ({fd['isolating_interval'][0]}, "
+                  f"{fd['isolating_interval'][1]}), its decimal as stated (1e-25)", P.is_irreducible and P.count_roots(lo, hi) == 1 and
+            P.eval(lo) * P.eval(hi) < 0 and abs(F0.approx(Fr(1, 10 ** 40)) - Fr(fd['decimal'])) < Fr(1, 10 ** 25), fd['decimal'])
     V, dec_ok = load_vertices(doc, d); F = doc['faces']; nV = len(V)
     rec(slug, 'exact strings parse; decimals agree (1e-14)', dec_ok)
     rec(slug, 'corners distinct', len(set(V)) == nV)
@@ -293,6 +407,8 @@ def check_unit_volume(slug, doc, V, F, vol, d):
     mpmath.mp.dps = 60
     uv = doc['unit_volume']; Z = fz(d)
     e = sympy.sympify(uv['scale_exact']); Vs = sympy.sympify(doc['volume']['exact'])
+    if isinstance(d, tuple) and d[0] == 'alg':          # version 3: put in the value of t (70 digits)
+        tv = sympy.Rational(fz(d).F.approx(Fr(1, 10 ** 70))); ts = sympy.Symbol(d[1]); e = e.subs(ts, tv); Vs = Vs.subs(ts, tv)
     rec(slug, 'unit volume: scale_exact = (stated volume)^(-1/3) (50 digits)', vol == parse(doc['volume']['exact'], d) and
         e.free_symbols == set() and abs(sympy.N(e ** -3 - Vs, 60)) < sympy.Float('1e-50'), uv['scale_exact'])
     s = mpmath.mpf(str(sympy.N(e, 60)))
@@ -452,6 +568,66 @@ def check_decomposition(slug, doc, solids):
     return caps
 
 
+def check_composition(slug, doc, solids):
+    """version 3: a non-convex solid = the union of convex dataset pieces (interior-disjoint, placed by x -> R x + t), minus the
+    Tricaps in `minus` (dents), plus those in `plus` (keys); each Tricap is #48's ("tricap") or #48's mirrored in its base plane
+    ("mirrored tricap")."""
+    cp = doc['composition']; d = field_of(doc); V, F, vol, _ = solids[slug]
+    PH = QF(Fr(1, 2), Fr(1, 2), 5); H = PH / 2; IH = (PH - 1) / 2; Z = fz(d)
+    P = []; orth = True; vp = Z
+    for p in cp['pieces']:
+        bdoc = json.load(open(os.path.join(HERE, 'solids', p['solid'] + '.json'))); VB, FB, vb, _ = solids[p['solid']]
+        R = [[parse(x, d) for x in r] for r in p['rotation']]; t = tuple(parse(x, d) for x in p['translation'])
+        orth &= bdoc.get('convex') is True and all(sum((R[i][k] * R[j][k] for k in range(3)), Z) == (1 if i == j else 0) for i in range(3) for j in range(3))
+        sg = det3(*[tuple(R[i][k] for i in range(3)) for k in range(3)]).sign()
+        W = [tuple(sum((R[i][k] * v[k] for k in range(3)), Z) + t[i] for i in range(3)) for v in VB]
+        FF = FB if sg > 0 else [f[::-1] for f in FB]
+        P.append((W, FF, [(newell(W, f), dot(newell(W, f), W[f[0]])) for f in FF])); vp = vp + vb
+    rec(slug, f"composition: {len(P)} convex pieces of this dataset ({', '.join(sorted({p['solid'] for p in cp['pieces']}))}), placed by exact orthogonal maps", orth)
+    rec(slug, 'composition: the pieces are pairwise interior-disjoint (exact separating planes)', all(sat_disjoint(P[i][:2], P[j][:2]) for i in range(len(P)) for j in range(i + 1, len(P))))
+    tv = parse(cp['tricap_volume'], d)
+    tets = {'minus': [], 'plus': []}; kind_ok = True
+    for side in ('minus', 'plus'):
+        for c in cp[side]:
+            u = tuple(parse(x, d) for x in c['unborn_centre']); a = tuple(parse(x, d) for x in c['apex']); B = [tuple(parse(x, d) for x in b) for b in c['base']]
+            unb = {tuple(u[k] + w[k] for k in range(3)) for s1 in (1, -1) for s2 in (1, -1) for w in [(s1 * H, s2 * IH, Z), (Z, s1 * H, s2 * IH), (s2 * IH, Z, s1 * H)]}
+            ok = False
+            for sv in itertools.product((1, -1), repeat=3):   # the #48 Tricap of the Unborn at u towards sv: apex u + sv/2, base as in check_decomposition
+                want = {tuple(u[k] + w[k] for k in range(3)) for w in [(sv[0] * H, sv[1] * IH, Z), (Z, sv[1] * H, sv[2] * IH), (sv[0] * IH, Z, sv[2] * H)]}
+                if set(B) != want or not want <= unb: continue
+                a0 = tuple(u[k] + fz(d, Fr(sv[k], 2)) for k in range(3))
+                if c['kind'] == 'tricap': ok = a == a0
+                elif c['kind'] == 'mirrored tricap':
+                    n = cross(sub(B[1], B[0]), sub(B[2], B[0])); kk = 2 * dot(n, sub(a0, B[0])) / dot(n, n)
+                    ok = a == tuple(a0[k] - kk * n[k] for k in range(3))
+            kind_ok &= ok and tet_volume([a] + B) == tv
+            tets[side].append([a] + B)
+    nT = len(tets['minus']) + len(tets['plus'])
+    rec(slug, f"composition: {len(tets['minus'])} dents and {len(tets['plus'])} keys, each #48's Tricap of the stated Unborn (cyclic orientation) or "
+              "its mirror image in its base plane, as stated, of volume exactly (3 - sqrt5)/24", kind_ok and tv == fz(d, Fr(1, 8)) + QF(0, Fr(-1, 24), 5))
+    place = True
+    for side in ('minus', 'plus'):
+        for T in tets[side]:
+            a, B = T[0], T[1:]; hits = [(W, pl, n, h) for W, FF, pl in P for n, h in pl if set(B) <= set(W) and all(dot(n, b) == h for b in B)]
+            if len(hits) != 1: place = False; continue
+            W, pl, n, h = hits[0]
+            place &= all((dot(m, a) - g).sign() < 0 for m, g in pl) if side == 'minus' else (dot(n, a) - h).sign() > 0
+    rec(slug, 'composition: each Tricap stands on one face of one piece (its base corners are corners of that piece); a dent\'s apex strictly '
+              'inside that piece, a key\'s apex strictly outside that face', place)
+    TP = [(T, tet_faces(T)) for T in tets['minus'] + tets['plus']]; nm = len(tets['minus'])
+    dis = all(sat_disjoint(TP[i], TP[j]) for i in range(nT) for j in range(i + 1, nT))
+    dis &= all(sat_disjoint(TP[i], P[k][:2]) for i in range(nm, nT) for k in range(len(P)))
+    rec(slug, 'composition: the Tricaps are pairwise interior-disjoint, and every key is interior-disjoint from every piece (exact separating planes)', dis)
+    PV = {v for W, FF, pl in P for v in W}; AP = {T[0] for T in tets['minus'] + tets['plus']}
+    rec(slug, "composition: every corner is a piece's corner or a Tricap apex, and every apex is a corner", set(V) <= PV | AP and AP <= set(V))
+    allp = [x for W, FF, pl in P for x in pl] + [(newell(T, f), dot(newell(T, f), T[f[0]])) for T, FT in TP for f in FT]
+    def onplane(f):
+        n = newell(V, f)
+        return any(all(x.sign() == 0 for x in cross(n, m)) and dot(m, V[f[0]]) == h for m, h in allp)
+    rec(slug, 'composition: every face lies in a face plane of a piece or of a Tricap', all(onplane(f) for f in F))
+    rec(slug, f"composition: exact volume = pieces - {len(tets['minus'])} + {len(tets['plus'])} Tricaps", vol == vp - nm * tv + len(tets['plus']) * tv, doc['volume']['exact'])
+
+
 def check_keyed_packing(path, solids):
     """version 2: a fill by non-convex keyed pieces, proved from a convex fill of this dataset and the Tricap decompositions."""
     doc = json.load(open(path)); slug = os.path.basename(path)[:-5]; d = field_of(doc)
@@ -506,6 +682,11 @@ def main():
         if 'decomposition' in doc:
             try: check_decomposition(slug, doc, solids)
             except Exception as e: rec(slug, 'decomposition checks ran', False, repr(e))
+    for slug in sorted(solids):   # version 3: non-convex solids stated as convex pieces -/+ Tricaps
+        doc = json.load(open(os.path.join(HERE, 'solids', slug + '.json')))
+        if 'composition' in doc:
+            try: check_composition(slug, doc, solids)
+            except Exception as e: rec(slug, 'composition checks ran', False, repr(e))
     keyed = []
     for p in sorted(glob.glob(os.path.join(HERE, 'packings', '*.json'))):
         if json.load(open(p)).get('proof') == 'decomposition': keyed.append(p); continue

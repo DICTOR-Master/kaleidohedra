@@ -16,7 +16,8 @@ P = {'8': '10.5281/zenodo.23284106', '13': '10.5281/zenodo.23284281', '14': '10.
      '37a': '10.5281/zenodo.23484012', '38': '10.5281/zenodo.23463305', '38a': '10.5281/zenodo.23464021', '39': '10.5281/zenodo.23488944',
      '41': '10.5281/zenodo.23496353', '42': '10.5281/zenodo.23497702', '43': '10.5281/zenodo.23532013', '44': '10.5281/zenodo.23529497',
      '45': '10.5281/zenodo.23529499', '47': '10.5281/zenodo.23551326',
-     '48': '10.5281/zenodo.23596362', '51': '10.5281/zenodo.23606828'}
+     '48': '10.5281/zenodo.23596362', '51': '10.5281/zenodo.23606828',
+     '55': '10.5281/zenodo.23632358', '56': '10.5281/zenodo.23635823', '57': '10.5281/zenodo.23647898', '59': '10.5281/zenodo.23677485'}
 NEW, RED, KN = 'new', 'rediscovered', 'known'
 # name, kind, finding, paper (#), status, prior-art / note, dataset slug, Polyhedraverse id
 R = [
@@ -144,6 +145,22 @@ R = [
  ('Samson', 'solid', '', '51', NEW, 'new proportion: the cube with four alternate corners cut, at the Delian bond; not found in the sources (#51)', 'dicto-samson', ''),
  ('Delilah', 'solid', '', '51', KN, 'known shape (regular octahedron), of edge 2^(-1/3) at octet edge 1; DICTO\'s name for it at the Delian bond (#51)', 'dicto-delilah', ''),
 ]
+N_V2 = len(R)                                       # rows of versions 1 and 2: their D-numbers D1-D75 stay as they are
+# version 3 (2026-10-27): twelve named solids of #55, #56, #57 and #59 (DICTO's names; status and notes from the papers)
+R += [
+ ('Goliath', 'solid', '', '55', KN, 'known shape: the classical Z12 coordination icosahedron of A15 (Frank and Kasper 1958), the convex hull of Jessen\'s orthogonal icosahedron (Jessen 1967) scaled by 1/2; here the A15 power cell at weight difference 3/4 (#55: the tiling is the classical picture of A15 shifted by half a body diagonal); the name is DICTO\'s', 'dicto-goliath', ''),
+ ('David', 'solid', '', '55', KN, 'known shape: a tetragonal disphenoid, the empty Cr4 tetrahedron of A15 moved by half a body diagonal (#55 Corollary 1); the name is DICTO\'s', 'dicto-david', ''),
+ ('Sonsam', 'solid', '', '56', NEW, 'not found in the sources checked (#56): the twinned octet\'s tetrahedral-hole piece at its equal-volume point (19 corners, a nine-sided face on the mirror plane); #56: easy to compute, so an unnamed drawing may exist', 'dicto-sonsam', ''),
+ ('Lahdeli', 'solid', '', '56', NEW, 'not found in the sources checked (#56): the twinned octet\'s octahedral-hole piece at its equal-volume point, Delilah\'s twin', 'dicto-lahdeli', ''),
+ ('Ian Dury', 'solid', '', '56', NEW, 'not found in the sources checked (#56): the twinned octet\'s tetrahedral-hole piece at the stop 5/24, beside the classical 60 deg rhombohedron', 'dicto-ian-dury', ''),
+ ('Blockhead', 'solid', '', '56', NEW, 'not found in the sources checked (#56): the twinned octet\'s tetrahedral-hole piece at 3/8, the twin of the cube', 'dicto-blockhead', ''),
+ ('Chucky', 'solid', '', '57', NEW, 'not found in the sources checked (#57): a Janus c/h piece of ABAC at -3/8 (hexagonal top half, cubic bottom half); its volume is the mean of its two parents\'', 'dicto-chucky', ''),
+ ('Fang', 'solid', '', '57', NEW, 'not found in the sources checked (#57): a Janus c/h piece of ABAC at 5/24 (hexagonal top half, cubic bottom half); its volume is the mean of its two parents\'', 'dicto-fang', ''),
+ ('Triskelion Tetrahedron', 'solid', '', '57', NEW, 'the cubic octet\'s tetrahedral piece at 5/24, a member of Samson\'s sliding family (#51); met in ABAC and named in #57 (the name marks that member)', 'dicto-triskelion-tetrahedron', ''),
+ ('Keyaxes', 'solid', '', '59', NEW, 'the piece of the keyed Icosaxes Kagome network (the Icosaxes with 2 Tricap dents and 6 mirrored Tricap keys, volume phi^2); the network was not found in the sources searched (#59)', 'dicto-keyaxes', ''),
+ ('Icosaxes Hexa', 'cluster', '', '59', NEW, 'eight Icosaxes round an Unborn Axes as one solid (= nine Icosaxes passing through each other), the node of the Icosaxes Kagome network; the network was not found in the sources searched (#59)', 'dicto-icosaxes-hexa', ''),
+ ('Lotus Hexa', 'cluster', '', '59', NEW, 'the keyed Icosaxes Hexa: eight corner pieces dented towards a Dodecaxes and keyed outward (mirrored Tricaps) on their other seven hexagons (#59)', 'dicto-lotus-hexa', ''),
+]
 # universal_number (version 2, DICTO 2026-10-23): established catalogue numbers of earlier creators first (Johnson J, uniform U,
 # Wenninger W, Hart's stellation lists, Mosseri-Sadoc tiles); DICTO D-numbers (below) for DICTO's new shapes; see d-numbers.md. Empty = no number. Only numbers we are sure of.
 UNUM = {
@@ -159,10 +176,14 @@ UNUM = {
 # with an outside catalogue number that is also DICTO's new shape would show both, outside number first, "; "-separated (none so far).
 GROUPS = ['Dented tetrahedron L/R (golden-key octet)', 'DICTO Fill set 1 / 2 pieces (grown bipyramid, grown tetrahedra L/R)',
           'Cleo Towers (8 tower pieces)', 'Polar Cleo Towers (7 tower pieces + core ray)']
-_eligible = [r[0] for r in R if r[1] in ('solid', 'piece') and r[4] == NEW]
+_eligible = [r[0] for r in R[:N_V2] if r[1] in ('solid', 'piece') and r[4] == NEW]
 _single = [n for n in _eligible if n not in GROUPS]; _grp = [n for n in _eligible if n in GROUPS]
-assert len(_grp) == 4
+assert len(_grp) == 4 and len(_single) == 71
 DNUM = {n: f'D{i + 1}' for i, n in enumerate(_single + _grp)}
+# version 3 (2026-10-27): the next free D-numbers, D76 on, in the order of first publication (#56, #57, #59); never renumbering D1-D75.
+# Clusters (the Icosaxes Hexa and Lotus Hexa, like the DICTO Hexa) and known shapes (Goliath, David) get none.
+_v3 = [r[0] for r in R[N_V2:] if r[1] in ('solid', 'piece') and r[4] == NEW]
+DNUM.update({n: f'D{76 + i}' for i, n in enumerate(_v3)})
 for n, d in DNUM.items(): UNUM[n] = UNUM[n] + '; ' + d if n in UNUM else d
 rows = []
 for name, kind, fnum, paper, status, note, slug, pv in R:
@@ -173,7 +194,7 @@ for name, kind, fnum, paper, status, note, slug, pv in R:
     assert set(UNUM) <= {r[0] for r in R}
     if slug: assert os.path.exists(os.path.join(ROOT, 'solids', slug + '.json')), slug
 with open(os.path.join(ROOT, 'index.csv'), 'w', newline='') as fh:
-    fh.write('# DICTO named-shape inventory · Created by DICTO · dictospheres.com · CC BY-SA 4.0 · 2026-10-22 (version 2: 2026-10-24)\n')
+    fh.write('# DICTO named-shape inventory · Created by DICTO · dictospheres.com · CC BY-SA 4.0 · 2026-10-22 (version 2: 2026-10-24; version 3: 2026-10-27)\n')
     w = csv.DictWriter(fh, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
 from collections import Counter
 print(len(rows), Counter(r['status'] for r in rows), Counter((r['kind'], r['status']) for r in rows), sum(r['in_dataset'] == 'y' for r in rows))

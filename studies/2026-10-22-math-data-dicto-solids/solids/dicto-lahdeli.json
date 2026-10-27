@@ -1,0 +1,369 @@
+{
+ "name": "Lahdeli",
+ "finding": "",
+ "paper": "#56 Sonsam and Lahdeli",
+ "dicto_doi": "10.5281/zenodo.23635823",
+ "convex": true,
+ "status": "new (not found in the sources checked, #56)",
+ "scale_note": "frame: the holes of ideal hexagonal close packing (the twinned octet) at ball spacing sqrt2 in orthonormal rational coordinates (close-packed layers perpendicular to (1, 1, 1): a1 = (1, -1, 0), a2 = (1, 0, -1), c = (4/3)(1, 1, 1); the census cell hcpholes mapped by x = L f); the #56/#57 values are at ball spacing 1: divide lengths by sqrt2 and volumes by 2 sqrt2 (the frame of Samson and Delilah, dicto-samson). Weights w_oct = 0, w_tet = lambda as in the census (#53 units, ball spacing 1). The piece is moved so that its hole (site) is at the origin. Lahdeli: the octahedral hole (2/3, 2/3, 1/4) of the census cell (site 0) at lambda = t, the equal-volume point. At this frame volume 2/3 = sqrt2/6 at ball spacing 1 (#56: two octahedral and four tetrahedral pieces in the cell of volume sqrt2).",
+ "source": {
+  "app": "study",
+  "path": "research branch (commit 41e1213c): census engine (hcpholes) planes of site 0, solved exactly at lambda = t",
+  "id": null
+ },
+ "credit_note": "Credit: DICTO (idea, names); exact computation with Claude (Anthropic).",
+ "version_added": 3,
+ "published_values": {
+  "volume": "2/3",
+  "f_vector": [
+   12,
+   18,
+   8
+  ],
+  "faces_by_sides": {
+   "3": 2,
+   "5": 6
+  }
+ },
+ "field": "Q(t)",
+ "field_definition": {
+  "generator": "t",
+  "minimal_polynomial": "1536*t**3 + 5184*t**2 - 3384*t + 11",
+  "isolating_interval": [
+   "-1/8",
+   "5/24"
+  ],
+  "note": "t is the only real root of the minimal polynomial in the open isolating interval; the polynomial is irreducible over Q; exact strings are a + b*t + c*t**2 with rationals a, b, c.",
+  "decimal": "0.003266956983082001167961097613"
+ },
+ "vertices": [
+  {
+   "exact": [
+    "-13/24 + t",
+    "-13/24 + t",
+    "1/12 + (-2)*t"
+   ],
+   "decimal": [
+    "-0.538399709683585",
+    "-0.538399709683585",
+    "0.076799419367169"
+   ]
+  },
+  {
+   "exact": [
+    "-13/24 + t",
+    "1/12 + (-2)*t",
+    "-13/24 + t"
+   ],
+   "decimal": [
+    "-0.538399709683585",
+    "0.076799419367169",
+    "-0.538399709683585"
+   ]
+  },
+  {
+   "exact": [
+    "-1/2 + (4/3)*t",
+    "-1/2 + (4/3)*t",
+    "1/4 + (-2/3)*t"
+   ],
+   "decimal": [
+    "-0.495644057355891",
+    "-0.495644057355891",
+    "0.247822028677945"
+   ]
+  },
+  {
+   "exact": [
+    "-1/2 + (4/3)*t",
+    "1/4 + (-2/3)*t",
+    "-1/2 + (4/3)*t"
+   ],
+   "decimal": [
+    "-0.495644057355891",
+    "0.247822028677945",
+    "-0.495644057355891"
+   ]
+  },
+  {
+   "exact": [
+    "-1/4 + (2/3)*t",
+    "1/2 + (-4/3)*t",
+    "1/2 + (-4/3)*t"
+   ],
+   "decimal": [
+    "-0.247822028677945",
+    "0.495644057355891",
+    "0.495644057355891"
+   ]
+  },
+  {
+   "exact": [
+    "-1/12 + (2)*t",
+    "13/24 - t",
+    "13/24 - t"
+   ],
+   "decimal": [
+    "-0.076799419367169",
+    "0.538399709683585",
+    "0.538399709683585"
+   ]
+  },
+  {
+   "exact": [
+    "1/12 + (-2)*t",
+    "-13/24 + t",
+    "-13/24 + t"
+   ],
+   "decimal": [
+    "0.076799419367169",
+    "-0.538399709683585",
+    "-0.538399709683585"
+   ]
+  },
+  {
+   "exact": [
+    "1/4 + (-2/3)*t",
+    "-1/2 + (4/3)*t",
+    "-1/2 + (4/3)*t"
+   ],
+   "decimal": [
+    "0.247822028677945",
+    "-0.495644057355891",
+    "-0.495644057355891"
+   ]
+  },
+  {
+   "exact": [
+    "1/2 + (-4/3)*t",
+    "-1/4 + (2/3)*t",
+    "1/2 + (-4/3)*t"
+   ],
+   "decimal": [
+    "0.495644057355891",
+    "-0.247822028677945",
+    "0.495644057355891"
+   ]
+  },
+  {
+   "exact": [
+    "1/2 + (-4/3)*t",
+    "1/2 + (-4/3)*t",
+    "-1/4 + (2/3)*t"
+   ],
+   "decimal": [
+    "0.495644057355891",
+    "0.495644057355891",
+    "-0.247822028677945"
+   ]
+  },
+  {
+   "exact": [
+    "13/24 - t",
+    "-1/12 + (2)*t",
+    "13/24 - t"
+   ],
+   "decimal": [
+    "0.538399709683585",
+    "-0.076799419367169",
+    "0.538399709683585"
+   ]
+  },
+  {
+   "exact": [
+    "13/24 - t",
+    "13/24 - t",
+    "-1/12 + (2)*t"
+   ],
+   "decimal": [
+    "0.538399709683585",
+    "0.538399709683585",
+    "-0.076799419367169"
+   ]
+  }
+ ],
+ "faces": [
+  [
+   0,
+   1,
+   6
+  ],
+  [
+   0,
+   2,
+   4,
+   3,
+   1
+  ],
+  [
+   0,
+   6,
+   7,
+   8,
+   2
+  ],
+  [
+   1,
+   3,
+   9,
+   7,
+   6
+  ],
+  [
+   2,
+   8,
+   10,
+   5,
+   4
+  ],
+  [
+   3,
+   4,
+   5,
+   11,
+   9
+  ],
+  [
+   5,
+   10,
+   11
+  ],
+  [
+   7,
+   9,
+   11,
+   10,
+   8
+  ]
+ ],
+ "f_vector": {
+  "vertices": 12,
+  "edges": 18,
+  "faces": 8
+ },
+ "faces_by_sides": {
+  "3": 2,
+  "5": 6
+ },
+ "volume": {
+  "exact": "2/3",
+  "decimal": "0.666666666666667"
+ },
+ "unit_volume": {
+  "scale_exact": "(2/3)**(-1/3)",
+  "scale_decimal": "1.144714242553332",
+  "centre": {
+   "exact": [
+    "0",
+    "0",
+    "0"
+   ],
+   "decimal": [
+    "0.000000000000000",
+    "0.000000000000000",
+    "0.000000000000000"
+   ],
+   "kind": "origin of the frame (= the corner centroid)"
+  },
+  "note": "x -> centre + s (x - centre), s = V^(-1/3) with V the exact volume above; s is symbolic and the corners are decimals (15 places, as elsewhere). Same corner order and faces as above; volume 1. The volume is rational, so s is a plain cube root.",
+  "vertices_decimal": [
+   [
+    "-0.616313815861378",
+    "-0.616313815861378",
+    "0.087913389169425"
+   ],
+   [
+    "-0.616313815861378",
+    "0.087913389169425",
+    "-0.616313815861378"
+   ],
+   [
+    "-0.567370811692209",
+    "-0.567370811692209",
+    "0.283685405846104"
+   ],
+   [
+    "-0.567370811692209",
+    "0.283685405846104",
+    "-0.567370811692209"
+   ],
+   [
+    "-0.283685405846104",
+    "0.567370811692209",
+    "0.567370811692209"
+   ],
+   [
+    "-0.087913389169425",
+    "0.616313815861378",
+    "0.616313815861378"
+   ],
+   [
+    "0.087913389169425",
+    "-0.616313815861378",
+    "-0.616313815861378"
+   ],
+   [
+    "0.283685405846104",
+    "-0.567370811692209",
+    "-0.567370811692209"
+   ],
+   [
+    "0.567370811692209",
+    "-0.283685405846104",
+    "0.567370811692209"
+   ],
+   [
+    "0.567370811692209",
+    "0.567370811692209",
+    "-0.283685405846104"
+   ],
+   [
+    "0.616313815861378",
+    "-0.087913389169425",
+    "0.616313815861378"
+   ],
+   [
+    "0.616313815861378",
+    "0.616313815861378",
+    "-0.087913389169425"
+   ]
+  ]
+ },
+ "squared_edge_lengths": [
+  {
+   "exact": "1/32 + (1/2)*t + (2)*t**2",
+   "decimal": "0.032904824507400",
+   "count": 6
+  },
+  {
+   "exact": "25/32 + (-15/2)*t + (18)*t**2",
+   "decimal": "0.756939936769613",
+   "count": 6
+  },
+  {
+   "exact": "9/8 + (-6)*t + (8)*t**2",
+   "decimal": "1.105483642164942",
+   "count": 6
+  }
+ ],
+ "symmetry": {
+  "schoenflies": "D3d",
+  "order": 12,
+  "rotations": 6,
+  "contains_inversion": true
+ },
+ "credit": "DICTO",
+ "creator_mark": "Created by DICTO · dictospheres.com",
+ "licence": "CC BY-SA 4.0",
+ "checks": {
+  "closed_2_manifold": true,
+  "outward_ccw_winding": true,
+  "faces_planar_exact": true,
+  "euler_characteristic": 2,
+  "volume_positive_exact": true,
+  "convex": true,
+  "symmetry_order_exact": 12,
+  "verified_by": "check.py (python3 + sympy), re-run from this file alone",
+  "unit_volume": "decimal unit-volume copy has volume 1 (1e-12) and is the solid scaled by s (check.py)"
+ }
+}

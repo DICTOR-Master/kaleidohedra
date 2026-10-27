@@ -1,6 +1,6 @@
 # DICTO D-numbers
 
-Created by DICTO · dictospheres.com · CC BY-SA 4.0 · math-data dataset version 2, 2026-10-24.
+Created by DICTO · dictospheres.com · CC BY-SA 4.0 · math-data dataset version 2, 2026-10-24; version 3, 2026-10-27.
 
 **The scheme (DICTO 2026-10-24).** A D-number is DICTO's permanent catalogue number: one per new solid or piece of DICTO's, given in the
 order of first publication, used once and never reused (even if a shape is retired or renamed). Numbers given by earlier creators come
@@ -107,6 +107,24 @@ publication. The pieces inside a group are told apart by their labels within the
 | D74 | Cleo Towers (8 tower pieces) (#43) | eight tower pieces (#43) |
 | D75 | Polar Cleo Towers (7 tower pieces + core ray) (#43) | seven tower pieces and the core ray (#43) |
 
+## D76–D83: version 3 (2026-10-27)
+
+The next free numbers, after the groups D72–D75, in the order of first publication (#56, #57, #59). D1–D75 are unchanged.
+
+| D | name | kind | finding | paper |
+|---|---|---|---|---|
+| D76 | Sonsam | solid | – | #56 |
+| D77 | Lahdeli | solid | – | #56 |
+| D78 | Ian Dury | solid | – | #56 |
+| D79 | Blockhead | solid | – | #56 |
+| D80 | Chucky | solid | – | #57 |
+| D81 | Fang | solid | – | #57 |
+| D82 | Triskelion Tetrahedron | solid | – | #57 |
+| D83 | Keyaxes | solid | – | #59 |
+
+The Icosaxes Hexa and the Lotus Hexa (#59) are rows of kind "cluster" (eight Icosaxes round an Unborn Axes, and its keyed form, as one
+solid), like the DICTO Hexa, so under the scheme they get no D-number; Goliath and David (#55) are known shapes (below).
+
 ## Known or rediscovered shapes with no catalogue number (no D-number; for DICTO)
 
 D is for DICTO's new shapes, so these get none. Listed so DICTO can see them.
@@ -122,9 +140,17 @@ D is for DICTO's new shapes, so these get none. Listed so DICTO can see them.
 | Tetrahedron face pyramid Q and Q' (#44, #47 connectors) | known | central face pyramid of the tetrahedron |
 | Icosaxes | known | known shape: Koca et al. 2015 non-regular truncated octahedron x = tau (semi-uniform truncated octahedron); new route (the golden split of the AXE in the icosahedron lattice, #48); the name is DICTO's |
 | Unborn Axes | known | known shape: Koca et al. 2015 non-regular truncated octahedron x = 1/tau; new route (#48); the name is DICTO's |
+| Goliath | known | the classical Z12 icosahedron of A15 (Frank and Kasper 1958), the convex hull of Jessen's orthogonal icosahedron (Jessen 1967) scaled by 1/2 (#55); the name is DICTO's |
+| David | known | a tetragonal disphenoid, the empty Cr4 tetrahedron of A15 (#55); the name is DICTO's |
 
 ## Open questions for DICTO
 
 1. Grouped rows D72–D75: one number per group — DECIDED by DICTO, 24 October 2026.
 2. Delilah (the regular octahedron, U5; W2): its row is named "Delilah" as briefed; under the one-name rule (an established literature
    name keeps that name with DICTO's beside it) it could read "Regular octahedron (Delilah)". DICTO's call. It has no D-number (a known shape).
+3. (version 3) The Icosaxes Hexa and the Lotus Hexa are filed as clusters (no D-number, as the DICTO Hexa); if DICTO wants them numbered
+   as solids, they would take the next free numbers (D84, D85).
+4. (version 3) The Triskelion Tetrahedron is filed as new (D82), as Samson was (a named member of Samson's sliding family, #57); #57's study
+   notes that it is congruent to the cubic octet's piece at 5/24, so it is not new to the stackings. DICTO's call.
+5. (version 3) Named in the same papers but not yet in the inventory, so without numbers: the keyed forms Sonsam-K, Lahdeli-K, Ian Dury-K
+   and Rhombo-K (#56), and the Icosaxes Bloom, Bud and Seed, Lotus Jewel Bloom, Bud and Seed, and the Icosaxes Kagome (#59).

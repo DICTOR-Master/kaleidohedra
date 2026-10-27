@@ -1,0 +1,189 @@
+{
+ "name": "David",
+ "finding": "",
+ "paper": "#55 David and Goliath",
+ "dicto_doi": "10.5281/zenodo.23632358",
+ "convex": true,
+ "status": "known shape (a tetragonal disphenoid: the empty Cr4 tetrahedron of A15, moved by half a body diagonal; #55 Corollary 1); the name is DICTO's",
+ "scale_note": "#55 frame (the #53 census units): A15 in the cubic cell of edge 2, Si at 2Z^3 and 2Z^3 + (1, 1, 1), Cr at 2Z^3 + {(1/2, 0, 1), (3/2, 0, 1), (1, 1/2, 0), (1, 3/2, 0), (0, 1, 1/2), (0, 1, 3/2)}, weights w_Si = 3/4, w_Cr = 0 (lambda = 3/4); the power cells. David: the power cell of the Cr site (1/2, 0, 1), corners (0, +-1/2, 1), (1, 0, 1/2), (1, 0, 3/2) (#55 (ii)); moved by -(1/2, 0, 1) so that its Cr site, its centroid, is at the origin.",
+ "source": {
+  "app": "study",
+  "path": "research branch (commit 41e1213c): studies/2026-10-25-david-goliath/exact_a15.py cell(Cr[0], 0) (Fractions), moved by -(1/2, 0, 1)",
+  "id": null
+ },
+ "credit_note": "Credit: DICTO (idea, names); exact computation with Claude (Anthropic).",
+ "version_added": 3,
+ "published_values": {
+  "volume": "1/6",
+  "f_vector": [
+   4,
+   6,
+   4
+  ],
+  "faces_by_sides": {
+   "3": 4
+  },
+  "squared_edge_lengths": [
+   "1",
+   "3/2"
+  ],
+  "symmetry_order": 8
+ },
+ "field": "Q",
+ "vertices": [
+  {
+   "exact": [
+    "-1/2",
+    "-1/2",
+    "0"
+   ],
+   "decimal": [
+    "-0.500000000000000",
+    "-0.500000000000000",
+    "0.000000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "-1/2",
+    "1/2",
+    "0"
+   ],
+   "decimal": [
+    "-0.500000000000000",
+    "0.500000000000000",
+    "0.000000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "1/2",
+    "0",
+    "-1/2"
+   ],
+   "decimal": [
+    "0.500000000000000",
+    "0.000000000000000",
+    "-0.500000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "1/2",
+    "0",
+    "1/2"
+   ],
+   "decimal": [
+    "0.500000000000000",
+    "0.000000000000000",
+    "0.500000000000000"
+   ]
+  }
+ ],
+ "faces": [
+  [
+   0,
+   1,
+   2
+  ],
+  [
+   0,
+   2,
+   3
+  ],
+  [
+   0,
+   3,
+   1
+  ],
+  [
+   1,
+   3,
+   2
+  ]
+ ],
+ "f_vector": {
+  "vertices": 4,
+  "edges": 6,
+  "faces": 4
+ },
+ "faces_by_sides": {
+  "3": 4
+ },
+ "volume": {
+  "exact": "1/6",
+  "decimal": "0.166666666666667"
+ },
+ "unit_volume": {
+  "scale_exact": "(1/6)**(-1/3)",
+  "scale_decimal": "1.817120592832140",
+  "centre": {
+   "exact": [
+    "0",
+    "0",
+    "0"
+   ],
+   "decimal": [
+    "0.000000000000000",
+    "0.000000000000000",
+    "0.000000000000000"
+   ],
+   "kind": "origin of the frame (= the corner centroid)"
+  },
+  "note": "x -> centre + s (x - centre), s = V^(-1/3) with V the exact volume above; s is symbolic and the corners are decimals (15 places, as elsewhere). Same corner order and faces as above; volume 1.",
+  "vertices_decimal": [
+   [
+    "-0.908560296416070",
+    "-0.908560296416070",
+    "0.000000000000000"
+   ],
+   [
+    "-0.908560296416070",
+    "0.908560296416070",
+    "0.000000000000000"
+   ],
+   [
+    "0.908560296416070",
+    "0.000000000000000",
+    "-0.908560296416070"
+   ],
+   [
+    "0.908560296416070",
+    "0.000000000000000",
+    "0.908560296416070"
+   ]
+  ]
+ },
+ "squared_edge_lengths": [
+  {
+   "exact": "1",
+   "decimal": "1.000000000000000",
+   "count": 2
+  },
+  {
+   "exact": "3/2",
+   "decimal": "1.500000000000000",
+   "count": 4
+  }
+ ],
+ "symmetry": {
+  "schoenflies": "D2d",
+  "order": 8,
+  "rotations": 4,
+  "contains_inversion": false
+ },
+ "credit": "DICTO",
+ "creator_mark": "Created by DICTO · dictospheres.com",
+ "licence": "CC BY-SA 4.0",
+ "checks": {
+  "closed_2_manifold": true,
+  "outward_ccw_winding": true,
+  "faces_planar_exact": true,
+  "euler_characteristic": 2,
+  "volume_positive_exact": true,
+  "convex": true,
+  "symmetry_order_exact": 8,
+  "verified_by": "check.py (python3 + sympy), re-run from this file alone",
+  "unit_volume": "decimal unit-volume copy has volume 1 (1e-12) and is the solid scaled by s (check.py)"
+ }
+}

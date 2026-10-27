@@ -1,7 +1,100 @@
-# Report for DICTO: math-data dataset (first build 2026-10-22, second pass 2026-10-23, version 2 2026-10-24)
+# Report for DICTO: math-data dataset (first build 2026-10-22, second pass 2026-10-23, version 2 2026-10-24, version 3 2026-10-27)
 
 Created by DICTO · dictospheres.com · CC BY-SA 4.0. Branch `math-data-dataset` (local only, not pushed). Nothing on Zenodo, the
 apps, the papers, DISCOVERIES.md or the website was changed.
+
+## Version 3 (2026-10-27)
+
+Version 2 is published (Zenodo concept DOI 10.5281/zenodo.23606967, record 23608590). Version 3 is built on the same branch (local only,
+not pushed) and is **not released**: it waits for DICTO's reading.
+
+### What was added
+
+- **Twelve solids** (DICTO's names, exactly as typed), each with a unit-volume copy:
+  - #55 *David and Goliath* (DICTO DOI: 10.5281/zenodo.23632358): **Goliath** (12 corners, 20 triangles, Th; the convex hull of Jessen's
+    icosahedron, known) and **David** (tetragonal disphenoid, D2d, known), in ℚ.
+  - #56 *Sonsam and Lahdeli* (DICTO DOI: 10.5281/zenodo.23635823): **Sonsam** (19 corners; 6 triangles, 3 pentagons, 3 hexagons, a nonagon;
+    C3v) and **Lahdeli** (12 corners; 2 triangles, 6 pentagons; D3d) in ℚ(t); **Ian Dury** (16 corners, C3v) and **Blockhead** (10 corners,
+    C3v) in ℚ.
+  - #57 *The Rule of Halves* (DICTO DOI: 10.5281/zenodo.23647898): **Chucky** (19 corners, C3v), **Fang** (7 corners, C3v) and the
+    **Triskelion Tetrahedron** (16 corners, 4 triangles + 6 hexagons, Td), in ℚ.
+  - #59 *The Icosaxes Hexa* (DICTO DOI: 10.5281/zenodo.23677485, version 2): **Keyaxes** (32 corners, 54 faces, S6), **Icosaxes Hexa** (144
+    corners, 86 faces, Oh) and **Lotus Hexa** (200 corners, 366 faces, Th), non-convex, in ℚ(√5).
+- **index.csv**: twelve rows (in_dataset y); **D76–D83** for Sonsam, Lahdeli, Ian Dury, Blockhead, Chucky, Fang, Triskelion Tetrahedron,
+  Keyaxes. **d-numbers.md** and **README** updated; `published/records.json` lists the four records.
+
+### Decisions (and who made them)
+
+- **Sources executed, not re-derived** (agent, as in version 2; copies in `build/sources/`, research branch commit 41e1213c): #55's
+  `exact_a15.py` (the A15 cells in Fractions); the census engine (`engine.py`, `networks.py`) and `stackings.py` give the exact planes of
+  the power cells of the holes of any close-packed stacking; each cell is then solved exactly in the dataset's field. #59: the #48 objects
+  of version 2 (`golden_split_exact.py`, `keyed_polar_exact.py`) keyed as krp-core `golden-split.js` does (INTO_BIG: the #48 Tricap taken
+  out; INTO_SMALL: the Tricap mirrored in its base plane, added); the Hexas as in k-mix `bloom-geometry.js` `hexa()`.
+- **Fields** (agent): the hole pieces have rational coordinates at ball spacing √2 with the close-packed layers perpendicular to (1, 1, 1)
+  (the frame of Samson and Delilah); so all of them are in ℚ except Sonsam and Lahdeli, whose weight t is the root of
+  1536t³ + 5184t² − 3384t + 11 in (−1/8, 5/24) (#56 Theorem 2). Their corners are affine in t, so the field is the cubic field ℚ(t), stated
+  honestly as `"Q(t)"` with a `field_definition` (minimal polynomial, isolating interval). The cubic has three real roots, so the norm
+  trick of ℚ(∛2) does not decide signs; the checker uses exact interval arithmetic on a bisected isolating interval instead. √2 is not
+  needed in any coordinate.
+- **Frames**: each hole piece moved so that its hole is at the origin; Goliath about its Si site, David about its Cr site (its centroid);
+  the Keyaxes about its centre; the two Hexas about their middle piece. Sonsam, Ian Dury, Chucky and Fang are not centred on their holes,
+  so their unit-volume copies are scaled about the corner centroid (as the Dodeca-13 Wedge and Needle).
+- **Which piece**: Sonsam and Ian Dury and Blockhead are the cell of the census hcpholes site 2 (tetrahedral hole (0, 0, 3/8)); all four
+  tetrahedral sites give the same polynomial and, by symmetry, congruent pieces. Lahdeli is site 0. Chucky and Fang are site 0 of ABAC (the
+  gap between layer 0, type c, and layer 1, type h: hexagonal top, cubic bottom), as in the study's `exact_named.py`; their mirror images
+  (the next gap) are not separate files. The Triskelion Tetrahedron is ABAC site 2 (nearest layer of type c).
+- **Keyaxes**: dents on the two hexagons facing ±(1, 1, 1), keys on the other six (any opposite pair gives the same solid up to a symmetry
+  of the Lotus Jewel Axes' group Th).
+- **Composition key** for the non-convex #59 solids (agent): pieces (convex dataset solids) minus dents plus keys, with "mirrored tricap"
+  as a second kind of Tricap. A new key name, so the version 2 `decomposition` checks are untouched.
+- **Kinds and D-numbers**: hole pieces are filed as kind "solid" (as Samson and Delilah). The Icosaxes Hexa and Lotus Hexa are filed as
+  "cluster" (eight Icosaxes round an Unborn Axes as one solid, like the DICTO Hexa), so they get no D-number. Goliath and David are known
+  (#55: "Goliath is not a new shape"; David the empty Cr4 tetrahedron), no D-number. The Triskelion Tetrahedron is filed as new (D82): the
+  name marks one member of Samson's family, as Samson (D71) marks another; the #57 study notes it is congruent to the cubic octet's piece at
+  5/24 (not new to the stackings). Both are DICTO's call (d-numbers.md, open questions 3 and 4).
+
+### Checks
+
+- **check.py on dicto-big-brother: TOTAL: 998 checks, 998 passed, 0 failed; 41 solids, 6 packings (fills), 4 packings (not fills)**
+  (1 min 51 s). New: 9 convex solids × 22 (Sonsam and Lahdeli 23, with the field check), Keyaxes and Icosaxes Hexa 29, Lotus Hexa 28 (7
+  composition checks each; no published value for the Lotus Hexa).
+- **Versions 1 and 2 unchanged**: the committed check.py (version 2) and the new one, run with `-v` on the version 1 + 2 files alone, give
+  the same 712 checks, line for line, all passing.
+- **Corruption tests** (each on a copy; each must fail, and did): a Sonsam corner moved by 1/100 in ℚ(t) (12 failed: planarity, volume,
+  convexity, edges, symmetry, published values …); Lahdeli's isolating interval widened to (−1/8, 1), which holds two roots (1 failed: the
+  field check); a Keyaxes key relabelled as an unmirrored Tricap (1 failed: the Tricap kind); a Lotus Hexa corner piece moved onto
+  another (3 failed: pieces disjoint, Tricap placement, corners); an Icosaxes Hexa face reversed (11 failed); a wrong group order of Chucky
+  (1 failed: the symmetry group check).
+- **Build log** `build/build_v3.log.json`: 77 PASS, 0 FAIL (every published value; Goliath's corners = Jessen's set ×1/2; 2 Goliaths +
+  6 Davids = the cubic cell; the cubic irreducible with one root in the stretch, t = 0.003266956983…; 4 Sonsams + 2 Lahdelis = the hcp
+  cell exactly in ℚ(t); at 5/24 the octahedral cell is the 60° rhombohedron of volume √2/54 and 4 Ian Durys + 2 rhombohedra = the cell;
+  the Triskelion Tetrahedron = the cubic octet's tetrahedral piece at 5/24 (same faces, same exact volume, corners congruent); Chucky and
+  Fang are exactly the means of their cubic and hexagonal parents; Keyaxes = φ² = Icosaxes + 4 Tricaps; Icosaxes Hexa = 8 Icosaxes +
+  1 Unborn Axes; Lotus Hexa = Icosaxes Hexa + 56 Tricaps).
+
+### Checked against the published papers (#55 v1 record 23632359, #56 v1 23635824, #57 v1 23647899, #59 v2 23679142; the PDFs as kept in
+the research repository's papers folders)
+
+- #55: Goliath = conv{(0, ±1/2, ±1) cyclic}, 20 triangles, 12 corners of degree 5, 30 edges (squared lengths 1 and 3/2), volume 7/2;
+  David: corners (0, ±1/2, 1), (1, 0, 1/2), (1, 0, 3/2) (moved here by −(1/2, 0, 1)), edges 1 and √(3/2), volume 1/6; 2 · 7/2 + 6 · 1/6 = 8:
+  all equal.
+- #56: the cubic 1536λ³ + 5184λ² − 3384λ + 11, irreducible, one root in (−1/8, 5/24), λ ≈ 0.0032669570; Sonsam 19/30/13 (6 triangles, 3
+  pentagons, 3 hexagons, one 9-gon), Lahdeli 12/18/8 (2 triangles, 6 pentagons), both √2/6; Ian Dury 16/27/13 (6, 3, 4), 13√2/54; the
+  rhombohedron √2/54; Blockhead 10/18/10 (6, 3, 1), √2/4: all equal (volumes × 2√2 in this frame).
+- #57: Chucky 19 corners (3 triangles, 3 squares, 6 pentagons, a nonagon), 383√2/768; Fang 7 corners (4 triangles, 3 squares), 5√2/324;
+  Triskelion Tetrahedron 16 corners (4 triangles, 6 hexagons), 79√2/324; Chucky and Fang the means of √2/2 and 191√2/384, of √2/81 and
+  √2/54: all equal.
+- #59 (v2): Keyaxes φ² = (3 + √5)/2; Icosaxes Hexa 9 + 17√5/3 (version 2's corrected value; version 1's 9 + 6√5 was the uncorrected sum);
+  Tricap (1 − √5/3)/8 = (3 − √5)/24: all equal. The Lotus Hexa's volume is not stated in #59; here 16 + 10√5/3 ≈ 23.4536, and the study's
+  float value (K2) is 23.454.
+- **Disagreements with a published paper: none found.**
+
+### Open questions for DICTO
+
+1. The Icosaxes Hexa and Lotus Hexa: clusters without D-numbers (as now) or solids with D84, D85.
+2. The Triskelion Tetrahedron: new with D82 (as now), or a named member of a known family without a number.
+3. The keyed forms of #56 (Sonsam-K, Lahdeli-K, Ian Dury-K, Rhombo-K) are float constructions in #56 (exact by the rule, but the study
+   keeps only floats); they and #59's Bloom/Bud/Seed clusters are not in this version.
 
 ## Version 2 (2026-10-24)
 

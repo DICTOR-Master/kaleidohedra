@@ -1,0 +1,250 @@
+{
+ "name": "Fang",
+ "finding": "",
+ "paper": "#57 The Rule of Halves",
+ "dicto_doi": "10.5281/zenodo.23647898",
+ "convex": true,
+ "status": "new (a Janus c/h piece; not found in the sources checked, #57)",
+ "scale_note": "frame: the holes of the double-hexagonal stacking ABAC (layers h, c, h, c; #57) at ball spacing sqrt2 in orthonormal rational coordinates (layers perpendicular to (1, 1, 1): a1 = (1, -1, 0), a2 = (1, 0, -1), period (8/3)(1, 1, 1); stackings.py net_for(\"ABAC\") mapped by x = L f); the #57 values are for balls of diameter 1: divide lengths by sqrt2 and volumes by 2 sqrt2 (the frame of dicto-samson and dicto-sonsam). Weights w_oct = 0, w_tet = lambda. The piece is moved so that its hole is at the origin. Fang: the same octahedral hole (site 0) at the stop lambda = 5/24; volume 5/81 here = 5 sqrt2/324 at ball diameter 1, the mean of the cubic octahedron and the hexagonal 60-degree rhombohedron (#57 Corollary (ii)).",
+ "source": {
+  "app": "study",
+  "path": "research branch (commit 41e1213c): stackings.py net_for(\"ABAC\") + census engine, planes of site 0 at lambda = 5/24",
+  "id": null
+ },
+ "credit_note": "Credit: DICTO (idea, names); exact computation with Claude (Anthropic).",
+ "version_added": 3,
+ "published_values": {
+  "volume": "5/81",
+  "f_vector": [
+   7,
+   12,
+   7
+  ],
+  "faces_by_sides": {
+   "3": 4,
+   "4": 3
+  }
+ },
+ "field": "Q",
+ "vertices": [
+  {
+   "exact": [
+    "-2/9",
+    "-2/9",
+    "1/9"
+   ],
+   "decimal": [
+    "-0.222222222222222",
+    "-0.222222222222222",
+    "0.111111111111111"
+   ]
+  },
+  {
+   "exact": [
+    "-2/9",
+    "1/9",
+    "-2/9"
+   ],
+   "decimal": [
+    "-0.222222222222222",
+    "0.111111111111111",
+    "-0.222222222222222"
+   ]
+  },
+  {
+   "exact": [
+    "-1/9",
+    "2/9",
+    "2/9"
+   ],
+   "decimal": [
+    "-0.111111111111111",
+    "0.222222222222222",
+    "0.222222222222222"
+   ]
+  },
+  {
+   "exact": [
+    "1/9",
+    "-2/9",
+    "-2/9"
+   ],
+   "decimal": [
+    "0.111111111111111",
+    "-0.222222222222222",
+    "-0.222222222222222"
+   ]
+  },
+  {
+   "exact": [
+    "2/9",
+    "-1/9",
+    "2/9"
+   ],
+   "decimal": [
+    "0.222222222222222",
+    "-0.111111111111111",
+    "0.222222222222222"
+   ]
+  },
+  {
+   "exact": [
+    "2/9",
+    "2/9",
+    "-1/9"
+   ],
+   "decimal": [
+    "0.222222222222222",
+    "0.222222222222222",
+    "-0.111111111111111"
+   ]
+  },
+  {
+   "exact": [
+    "1/3",
+    "1/3",
+    "1/3"
+   ],
+   "decimal": [
+    "0.333333333333333",
+    "0.333333333333333",
+    "0.333333333333333"
+   ]
+  }
+ ],
+ "faces": [
+  [
+   0,
+   1,
+   3
+  ],
+  [
+   0,
+   2,
+   1
+  ],
+  [
+   0,
+   3,
+   4
+  ],
+  [
+   0,
+   4,
+   6,
+   2
+  ],
+  [
+   1,
+   2,
+   6,
+   5
+  ],
+  [
+   1,
+   5,
+   3
+  ],
+  [
+   3,
+   5,
+   6,
+   4
+  ]
+ ],
+ "f_vector": {
+  "vertices": 7,
+  "edges": 12,
+  "faces": 7
+ },
+ "faces_by_sides": {
+  "3": 4,
+  "4": 3
+ },
+ "volume": {
+  "exact": "5/81",
+  "decimal": "0.061728395061728"
+ },
+ "unit_volume": {
+  "scale_exact": "(5/81)**(-1/3)",
+  "scale_decimal": "2.530297995905248",
+  "centre": {
+   "exact": [
+    "1/21",
+    "1/21",
+    "1/21"
+   ],
+   "decimal": [
+    "0.047619047619048",
+    "0.047619047619048",
+    "0.047619047619048"
+   ],
+   "kind": "corner centroid (mean of the corners; the frame origin is not the centre)"
+  },
+  "note": "x -> centre + s (x - centre), s = V^(-1/3) with V the exact volume above; s is symbolic and the corners are decimals (15 places, as elsewhere). Same corner order and faces as above; volume 1.",
+  "vertices_decimal": [
+   [
+    "-0.635159776672845",
+    "-0.635159776672845",
+    "0.208272888628905"
+   ],
+   [
+    "-0.635159776672845",
+    "0.208272888628905",
+    "-0.635159776672845"
+   ],
+   [
+    "-0.354015554905595",
+    "0.489417110396154",
+    "0.489417110396154"
+   ],
+   [
+    "0.208272888628905",
+    "-0.635159776672845",
+    "-0.635159776672845"
+   ],
+   [
+    "0.489417110396154",
+    "-0.354015554905595",
+    "0.489417110396154"
+   ],
+   [
+    "0.489417110396154",
+    "0.489417110396154",
+    "-0.354015554905595"
+   ],
+   [
+    "0.770561332163404",
+    "0.770561332163404",
+    "0.770561332163404"
+   ]
+  ]
+ },
+ "squared_edge_lengths": [
+  {
+   "exact": "2/9",
+   "decimal": "0.222222222222222",
+   "count": 12
+  }
+ ],
+ "symmetry": {
+  "schoenflies": "C3v",
+  "order": 6,
+  "rotations": 3,
+  "contains_inversion": false
+ },
+ "credit": "DICTO",
+ "creator_mark": "Created by DICTO · dictospheres.com",
+ "licence": "CC BY-SA 4.0",
+ "checks": {
+  "closed_2_manifold": true,
+  "outward_ccw_winding": true,
+  "faces_planar_exact": true,
+  "euler_characteristic": 2,
+  "volume_positive_exact": true,
+  "convex": true,
+  "symmetry_order_exact": 6,
+  "verified_by": "check.py (python3 + sympy), re-run from this file alone",
+  "unit_volume": "decimal unit-volume copy has volume 1 (1e-12) and is the solid scaled by s (check.py)"
+ }
+}

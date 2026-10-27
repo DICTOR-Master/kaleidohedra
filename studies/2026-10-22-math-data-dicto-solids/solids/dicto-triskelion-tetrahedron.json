@@ -1,0 +1,438 @@
+{
+ "name": "Triskelion Tetrahedron",
+ "finding": "",
+ "paper": "#57 The Rule of Halves",
+ "dicto_doi": "10.5281/zenodo.23647898",
+ "convex": true,
+ "status": "new (the cubic octet's tetrahedral piece at lambda = 5/24, a member of Samson's sliding family of #51; met in ABAC, #57)",
+ "scale_note": "frame: the holes of the double-hexagonal stacking ABAC (layers h, c, h, c; #57) at ball spacing sqrt2 in orthonormal rational coordinates (layers perpendicular to (1, 1, 1): a1 = (1, -1, 0), a2 = (1, 0, -1), period (8/3)(1, 1, 1); stackings.py net_for(\"ABAC\") mapped by x = L f); the #57 values are for balls of diameter 1: divide lengths by sqrt2 and volumes by 2 sqrt2 (the frame of dicto-samson and dicto-sonsam). Weights w_oct = 0, w_tet = lambda. The piece is moved so that its hole is at the origin. Triskelion Tetrahedron (TT): the tetrahedral hole over position B of the gap between layers 0 and 1 (site 2; its nearest layer, layer 0, is of type c, so by the rule of halves it is the cubic piece) at lambda = 5/24; volume 79/81 here = 79 sqrt2/324 at ball diameter 1.",
+ "source": {
+  "app": "study",
+  "path": "research branch (commit 41e1213c): stackings.py net_for(\"ABAC\") + census engine, planes of site 2 at lambda = 5/24",
+  "id": null
+ },
+ "credit_note": "Credit: DICTO (idea, names); exact computation with Claude (Anthropic).",
+ "version_added": 3,
+ "published_values": {
+  "volume": "79/81",
+  "f_vector": [
+   16,
+   24,
+   10
+  ],
+  "faces_by_sides": {
+   "3": 4,
+   "6": 6
+  }
+ },
+ "field": "Q",
+ "vertices": [
+  {
+   "exact": [
+    "-5/6",
+    "1/6",
+    "1/6"
+   ],
+   "decimal": [
+    "-0.833333333333333",
+    "0.166666666666667",
+    "0.166666666666667"
+   ]
+  },
+  {
+   "exact": [
+    "-11/18",
+    "-5/18",
+    "-5/18"
+   ],
+   "decimal": [
+    "-0.611111111111111",
+    "-0.277777777777778",
+    "-0.277777777777778"
+   ]
+  },
+  {
+   "exact": [
+    "-7/18",
+    "-1/18",
+    "11/18"
+   ],
+   "decimal": [
+    "-0.388888888888889",
+    "-0.055555555555556",
+    "0.611111111111111"
+   ]
+  },
+  {
+   "exact": [
+    "-7/18",
+    "11/18",
+    "-1/18"
+   ],
+   "decimal": [
+    "-0.388888888888889",
+    "0.611111111111111",
+    "-0.055555555555556"
+   ]
+  },
+  {
+   "exact": [
+    "-5/18",
+    "-11/18",
+    "-5/18"
+   ],
+   "decimal": [
+    "-0.277777777777778",
+    "-0.611111111111111",
+    "-0.277777777777778"
+   ]
+  },
+  {
+   "exact": [
+    "-5/18",
+    "-5/18",
+    "-11/18"
+   ],
+   "decimal": [
+    "-0.277777777777778",
+    "-0.277777777777778",
+    "-0.611111111111111"
+   ]
+  },
+  {
+   "exact": [
+    "-1/18",
+    "-7/18",
+    "11/18"
+   ],
+   "decimal": [
+    "-0.055555555555556",
+    "-0.388888888888889",
+    "0.611111111111111"
+   ]
+  },
+  {
+   "exact": [
+    "-1/18",
+    "11/18",
+    "-7/18"
+   ],
+   "decimal": [
+    "-0.055555555555556",
+    "0.611111111111111",
+    "-0.388888888888889"
+   ]
+  },
+  {
+   "exact": [
+    "1/18",
+    "1/18",
+    "13/18"
+   ],
+   "decimal": [
+    "0.055555555555556",
+    "0.055555555555556",
+    "0.722222222222222"
+   ]
+  },
+  {
+   "exact": [
+    "1/18",
+    "13/18",
+    "1/18"
+   ],
+   "decimal": [
+    "0.055555555555556",
+    "0.722222222222222",
+    "0.055555555555556"
+   ]
+  },
+  {
+   "exact": [
+    "1/6",
+    "-5/6",
+    "1/6"
+   ],
+   "decimal": [
+    "0.166666666666667",
+    "-0.833333333333333",
+    "0.166666666666667"
+   ]
+  },
+  {
+   "exact": [
+    "1/6",
+    "1/6",
+    "-5/6"
+   ],
+   "decimal": [
+    "0.166666666666667",
+    "0.166666666666667",
+    "-0.833333333333333"
+   ]
+  },
+  {
+   "exact": [
+    "1/2",
+    "1/2",
+    "1/2"
+   ],
+   "decimal": [
+    "0.500000000000000",
+    "0.500000000000000",
+    "0.500000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "11/18",
+    "-7/18",
+    "-1/18"
+   ],
+   "decimal": [
+    "0.611111111111111",
+    "-0.388888888888889",
+    "-0.055555555555556"
+   ]
+  },
+  {
+   "exact": [
+    "11/18",
+    "-1/18",
+    "-7/18"
+   ],
+   "decimal": [
+    "0.611111111111111",
+    "-0.055555555555556",
+    "-0.388888888888889"
+   ]
+  },
+  {
+   "exact": [
+    "13/18",
+    "1/18",
+    "1/18"
+   ],
+   "decimal": [
+    "0.722222222222222",
+    "0.055555555555556",
+    "0.055555555555556"
+   ]
+  }
+ ],
+ "faces": [
+  [
+   0,
+   1,
+   4,
+   10,
+   6,
+   2
+  ],
+  [
+   0,
+   2,
+   8,
+   12,
+   9,
+   3
+  ],
+  [
+   0,
+   3,
+   7,
+   11,
+   5,
+   1
+  ],
+  [
+   1,
+   5,
+   4
+  ],
+  [
+   2,
+   6,
+   8
+  ],
+  [
+   3,
+   9,
+   7
+  ],
+  [
+   4,
+   5,
+   11,
+   14,
+   13,
+   10
+  ],
+  [
+   6,
+   10,
+   13,
+   15,
+   12,
+   8
+  ],
+  [
+   7,
+   9,
+   12,
+   15,
+   14,
+   11
+  ],
+  [
+   13,
+   14,
+   15
+  ]
+ ],
+ "f_vector": {
+  "vertices": 16,
+  "edges": 24,
+  "faces": 10
+ },
+ "faces_by_sides": {
+  "3": 4,
+  "6": 6
+ },
+ "volume": {
+  "exact": "79/81",
+  "decimal": "0.975308641975309"
+ },
+ "unit_volume": {
+  "scale_exact": "(79/81)**(-1/3)",
+  "scale_decimal": "1.008368589908365",
+  "centre": {
+   "exact": [
+    "0",
+    "0",
+    "0"
+   ],
+   "decimal": [
+    "0.000000000000000",
+    "0.000000000000000",
+    "0.000000000000000"
+   ],
+   "kind": "origin of the frame (= the corner centroid)"
+  },
+  "note": "x -> centre + s (x - centre), s = V^(-1/3) with V the exact volume above; s is symbolic and the corners are decimals (15 places, as elsewhere). Same corner order and faces as above; volume 1.",
+  "vertices_decimal": [
+   [
+    "-0.840307158256971",
+    "0.168061431651394",
+    "0.168061431651394"
+   ],
+   [
+    "-0.616225249388446",
+    "-0.280102386085657",
+    "-0.280102386085657"
+   ],
+   [
+    "-0.392143340519920",
+    "-0.056020477217131",
+    "0.616225249388446"
+   ],
+   [
+    "-0.392143340519920",
+    "0.616225249388446",
+    "-0.056020477217131"
+   ],
+   [
+    "-0.280102386085657",
+    "-0.616225249388446",
+    "-0.280102386085657"
+   ],
+   [
+    "-0.280102386085657",
+    "-0.280102386085657",
+    "-0.616225249388446"
+   ],
+   [
+    "-0.056020477217131",
+    "-0.392143340519920",
+    "0.616225249388446"
+   ],
+   [
+    "-0.056020477217131",
+    "0.616225249388446",
+    "-0.392143340519920"
+   ],
+   [
+    "0.056020477217131",
+    "0.056020477217131",
+    "0.728266203822708"
+   ],
+   [
+    "0.056020477217131",
+    "0.728266203822708",
+    "0.056020477217131"
+   ],
+   [
+    "0.168061431651394",
+    "-0.840307158256971",
+    "0.168061431651394"
+   ],
+   [
+    "0.168061431651394",
+    "0.168061431651394",
+    "-0.840307158256971"
+   ],
+   [
+    "0.504184294954183",
+    "0.504184294954183",
+    "0.504184294954183"
+   ],
+   [
+    "0.616225249388446",
+    "-0.392143340519920",
+    "-0.056020477217131"
+   ],
+   [
+    "0.616225249388446",
+    "-0.056020477217131",
+    "-0.392143340519920"
+   ],
+   [
+    "0.728266203822708",
+    "0.056020477217131",
+    "0.056020477217131"
+   ]
+  ]
+ },
+ "squared_edge_lengths": [
+  {
+   "exact": "2/9",
+   "decimal": "0.222222222222222",
+   "count": 12
+  },
+  {
+   "exact": "4/9",
+   "decimal": "0.444444444444444",
+   "count": 12
+  }
+ ],
+ "symmetry": {
+  "schoenflies": "Td",
+  "order": 24,
+  "rotations": 12,
+  "contains_inversion": false
+ },
+ "credit": "DICTO",
+ "creator_mark": "Created by DICTO · dictospheres.com",
+ "licence": "CC BY-SA 4.0",
+ "checks": {
+  "closed_2_manifold": true,
+  "outward_ccw_winding": true,
+  "faces_planar_exact": true,
+  "euler_characteristic": 2,
+  "volume_positive_exact": true,
+  "convex": true,
+  "symmetry_order_exact": 24,
+  "verified_by": "check.py (python3 + sympy), re-run from this file alone",
+  "unit_volume": "decimal unit-volume copy has volume 1 (1e-12) and is the solid scaled by s (check.py)"
+ }
+}
