@@ -1,0 +1,92 @@
+words ['AC', 'ABCABC', 'ACBC', 'ACABCACABC', 'ACBCAC', 'ACBABC'] | census checks failed: {'AC': 0, 'ABCABC': 0, 'ACBC': 0, 'ACABCACABC': 0, 'ACBCAC': 0, 'ACBABC': 0}
+(-3/8, -5/18)
+   Sf: fit {'ch': {'a': '1 - 19*b/16'}, 'hc': {'a': '19/16 - 19*b/16'}} | swap True | ratio to pure c {'hh': '19/16', 'hc': '19/16', 'ch': '1'}
+   Se: fit {'ch': {'a': '1 - 19*b/16'}, 'hc': {'a': '19/16 - 19*b/16'}} | swap True | ratio to pure c {'hh': '19/16', 'ch': '1', 'hc': '19/16'}
+   Cf: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': '1', 'ch': 'varies'}
+   Ce: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': 'varies', 'hc': '1'}
+   Of: fit {'ch': {'a': '5/4 - 3*b/2'}, 'hc': {'a': '5/4 - 3*b/2'}} | swap True | ratio to pure c {'hh': '3/2', 'hc': '5/4', 'ch': '5/4'}
+   Oe: fit {'ch': {'a': '1495/1296 - 847*b/648'}, 'hc': {'a': '1495/1296 - 847*b/648'}} | swap True | ratio to pure c {'hh': '847/648', 'ch': '1495/1296', 'hc': '1495/1296'}
+   Yf: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   Ye: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': '1', 'hc': 'varies'}
+(-5/18, -1/4)
+   Sf: fit {'ch': {'a': '1 - 19*b/16'}, 'hc': {'a': '19/16 - 19*b/16'}} | swap True | ratio to pure c {'hh': '19/16', 'hc': '19/16', 'ch': '1'}
+   Se: fit {'ch': {'a': '1 - 19*b/16'}, 'hc': {'a': '19/16 - 19*b/16'}} | swap True | ratio to pure c {'hh': '19/16', 'ch': '1', 'hc': '19/16'}
+   Cf: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': '1', 'ch': 'varies'}
+   Ce: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': 'varies', 'hc': '1'}
+   Of: fit {'ch': {'a': '1/2', 'b': '1/2'}, 'hc': {'a': '1/2', 'b': '1/2'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': 'varies'}
+   Oe: fit {'ch': {'a': '1/2', 'b': '1/2'}, 'hc': {'a': '1/2', 'b': '1/2'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': 'varies', 'hc': 'varies'}
+   Yf: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   Ye: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': '1', 'hc': 'varies'}
+(-1/4, -1/8)
+   Sf: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   Se: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': '1', 'hc': 'varies'}
+   Cf: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': '1', 'ch': 'varies'}
+   Ce: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': 'varies', 'hc': '1'}
+   Of: fit {'ch': {'a': '1/2', 'b': '1/2'}, 'hc': {'a': '1/2', 'b': '1/2'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': 'varies'}
+   Oe: fit {'ch': {'a': '1/2', 'b': '1/2'}, 'hc': {'a': '1/2', 'b': '1/2'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': 'varies', 'hc': 'varies'}
+   Yf: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   Ye: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': '1', 'hc': 'varies'}
+(-1/8, 0)
+   Sf: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   Se: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': '1', 'hc': 'varies'}
+   Cf: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': '1', 'ch': 'varies'}
+   Ce: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': 'varies', 'hc': '1'}
+   Of: fit {'ch': {'a': '1/2', 'b': '1/2'}, 'hc': {'a': '1/2', 'b': '1/2'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': 'varies'}
+   Oe: fit {'ch': {'a': '1/2', 'b': '1/2'}, 'hc': {'a': '1/2', 'b': '1/2'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': 'varies', 'hc': 'varies'}
+   Yf: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   Ye: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': '1', 'hc': 'varies'}
+(0, 1/10)
+   Sf: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   Se: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': '1', 'hc': 'varies'}
+   Cf: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': '1', 'ch': 'varies'}
+   Ce: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': 'varies', 'hc': '1'}
+   Of: fit {'ch': {'a': '1/2', 'b': '1/2'}, 'hc': {'a': '1/2', 'b': '1/2'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': 'varies'}
+   Oe: fit {'ch': {'a': '1/2', 'b': '1/2'}, 'hc': {'a': '1/2', 'b': '1/2'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': 'varies', 'hc': 'varies'}
+   Yf: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   Ye: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': '1', 'hc': 'varies'}
+(1/10, 1/8)
+   Sf: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   Se: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': '1', 'hc': 'varies'}
+   Cf: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': '1', 'ch': 'varies'}
+   Ce: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': 'varies', 'hc': '1'}
+   Of: fit {'ch': {'a': '1/2', 'b': '1/2'}, 'hc': {'a': '1/2', 'b': '1/2'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': 'varies'}
+   Oe: fit {'ch': {'a': '1/2', 'b': '1/2'}, 'hc': {'a': '1/2', 'b': '1/2'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': 'varies', 'hc': 'varies'}
+   Yf: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   Ye: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': '1', 'hc': 'varies'}
+(1/8, 1/4)
+   Sf: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   Se: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': '1', 'hc': 'varies'}
+   Cf: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': '1', 'ch': 'varies'}
+   Ce: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': 'varies', 'hc': '1'}
+   Of: fit {'ch': {'a': '1/2', 'b': '1/2'}, 'hc': {'a': '1/2', 'b': '1/2'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': 'varies'}
+   Oe: fit {'ch': {'a': '1/2', 'b': '1/2'}, 'hc': {'a': '1/2', 'b': '1/2'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': 'varies', 'hc': 'varies'}
+   Yf: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   Ye: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': '1', 'hc': 'varies'}
+(1/4, 7/24)
+   Sf: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   Se: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': '1', 'hc': 'varies'}
+   Cf: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': '1', 'ch': 'varies'}
+   Ce: fit {'ch': {'a': '0', 'b': '1'}, 'hc': {'a': '1', 'b': '0'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': 'varies', 'hc': '1'}
+   Of: fit {'ch': {'a': '1/2', 'b': '1/2'}, 'hc': {'a': '1/2', 'b': '1/2'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': 'varies'}
+   Oe: fit {'ch': {'a': '1/2', 'b': '1/2'}, 'hc': {'a': '1/2', 'b': '1/2'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': 'varies', 'hc': 'varies'}
+   Yf: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   Ye: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': '1', 'hc': 'varies'}
+(7/24, 1/3)
+   Sf: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   Se: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': '1', 'hc': 'varies'}
+   Cf: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+   Ce: fit {'ch': {'a': '8/7 - 8*b/7'}, 'hc': {'a': '1 - 8*b/7'}} | swap True | ratio to pure c {'hh': '8/7', 'ch': '8/7', 'hc': '1'}
+   Of: fit {'ch': {'a': '1/2', 'b': '1/2'}, 'hc': {'a': '1/2', 'b': '1/2'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': 'varies'}
+   Oe: fit {'ch': {'a': '1/2', 'b': '1/2'}, 'hc': {'a': '1/2', 'b': '1/2'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': 'varies', 'hc': 'varies'}
+   Yf: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+   Ye: fit {'ch': {'a': '1 - 8*b/7'}, 'hc': {'a': '8/7 - 8*b/7'}} | swap True | ratio to pure c {'hh': '8/7', 'ch': '1', 'hc': '8/7'}
+(1/3, 3/8)
+   Sf: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': '1'}
+   Se: fit {'ch': {'a': '1', 'b': '0'}, 'hc': {'a': '0', 'b': '1'}} | swap True | ratio to pure c {'hh': 'varies', 'ch': '1', 'hc': 'varies'}
+   Cf: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+   Ce: fit {'ch': {'a': '8/7 - 8*b/7'}, 'hc': {'a': '1 - 8*b/7'}} | swap True | ratio to pure c {'hh': '8/7', 'ch': '8/7', 'hc': '1'}
+   Of: fit {'ch': {'a': '1/2', 'b': '1/2'}, 'hc': {'a': '1/2', 'b': '1/2'}} | swap True | ratio to pure c {'hh': 'varies', 'hc': 'varies', 'ch': 'varies'}
+   Oe: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'ch': '1', 'hc': '1'}
+   Yf: fit {'ch': {'a': '1 - b'}, 'hc': {'a': '1 - b'}} | swap True | ratio to pure c {'hh': '1', 'hc': '1', 'ch': '1'}
+   Ye: fit {'ch': {'a': '1 - 8*b/7'}, 'hc': {'a': '8/7 - 8*b/7'}} | swap True | ratio to pure c {'hh': '8/7', 'ch': '1', 'hc': '8/7'}
+locality clashes (4 layers round the gap): 0
