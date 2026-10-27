@@ -39,7 +39,9 @@ export const ROLE = { ico: 0x5fd38a, cap: 0x5fd38a, lcap: 0x5fd38a, lj11: 0x5fd3
   // The Global Web of Bonds (DICTO 2026-10-25): the A kind's pieces gold, the B kind's blue, as in paper #53's figures
   gwA: 0xffc857, gwB: 0x6fa8ff,
   // The Stackings World (DICTO 2026-10-26): cubic layers gold, hexagonal layers platinum, as the #57 card and #58 Figure 3
-  stkC: 0xf2b84b, stkH: 0xd9d6cf, stkSel: 0xff8a3d };
+  stkC: 0xf2b84b, stkH: 0xd9d6cf, stkSel: 0xff8a3d,
+  // The Icosaxes Bloom (DICTO 2026-10-27): Icosaxes green and Lotus Jewel Axes gold (as #59's figures), Unborn Axes / Dodecaxes orange
+  bloomI: 0x56a866, bloomL: 0xffc857, bloomBig: 0x56a866, bloomSmall: 0xe8913f };
 // The 12-neighbour space-fillers' 13s (DICTO 2026-10-13): centre gold, the twelve cyan, the neighbouring blocks' copies dimmer.
 Object.assign(ROLE, { jewelCentre: 0xffc857, jewelCell: 0x4dd0e1, stella: 0xc792ea });
 for (const k of ['skewedRd13', 'bainRd13', 'bilinski13']) Object.assign(ROLE, { [`${k}Centre`]: 0xffc857, [`${k}Cell`]: 0x4dd0e1, [`${k}CentreN`]: 0x8a7440, [`${k}CellN`]: 0x33808a });
@@ -277,8 +279,9 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
           for (const k of [f[0], f[i], f[i + 1]]) { b.pos.push(...P[k]); b.col.push(colour.r, colour.g, colour.b); }
           if (b === buf.solid) solidTags.push(extra?.tags?.[fi] ?? null);
         }
-        f.forEach((k, i) => b.line.push(...P[k], ...P[f[(i + 1) % f.length]]));
+        if (!extra?.edges) f.forEach((k, i) => b.line.push(...P[k], ...P[f[(i + 1) % f.length]]));
       });
+      if (extra?.edges) for (const [i, j] of extra.edges) b.line.push(...P[i], ...P[j]);   // a piece may name its own edges (the Bloom's joined solids)
     });
     glass.opacity = webOn() ? 0.1 : 0.22; // the web on: the pieces step back so the rods read
     solid.transparent = opacity < 1; solid.opacity = opacity; solid.depthWrite = opacity >= 1; solid.needsUpdate = true;
@@ -495,12 +498,12 @@ export function createLayeredWorld({ scene, fitView = () => {}, name, data: DATA
     if (!k || k === view.kind) return;
     view.kind = k; save(); stopFilm(); stopLoop(); film = null; draw(); fitStart();
   });
-  // the one big slider: it snaps to a stop within 2% of it (no step buttons, DICTO); the picture is framed again when it is let go
+  // the one big slider: it snaps to a stop within 2% of it (or param.snap; no step buttons, DICTO); the picture is framed again when it is let go
   paramInput.addEventListener('input', () => {
     const pm = DATA[view.kind].param; if (!pm) return;
     stopLoop();
     let u = Number(paramInput.value);
-    const stop = pm.stops.find((st) => Math.abs(st.u - u) <= 20);
+    const stop = pm.stops.find((st) => Math.abs(st.u - u) <= (pm.snap ?? 20));   // pm.snap: a world whose slider is stops only (the Bloom) snaps from further
     if (stop) { u = stop.u; paramInput.value = String(u); }
     if (u === view.param[view.kind]) return;
     view.param[view.kind] = u; save(); draw();
