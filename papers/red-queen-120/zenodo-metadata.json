@@ -1,0 +1,55 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-28",
+ "access_right": "open",
+ "title": "The Red Queen 120-cell: Aristotle's five pyramids as the cores of the regular four-dimensional solids",
+ "description": "<p>Aristotle wrote that among solids the pyramid fills space, and the pyramids cut from the centres of the five Platonic solids have been argued over ever since. We prove that <b>all five of these pyramids are the cores of the regular four-dimensional solids</b>, seen in perspective: the tetrahedron, octahedron and icosahedron pyramids are the shadows of the cells round one corner of the 5-cell, the 16-cell and the 600-cell, and the cube, octahedron and dodecahedron pyramids are the shadows of the sides of the four-dimensional pyramid over one cell of the tesseract, the 24-cell and the 120-cell. Each shadow has exactly the proportions of Aristotle's pyramid, and the five come in polar pairs. The 120-cell, polar of the White Queen 600-cell of #63 and named the Red Queen by DICTO, is built exactly from the White Queen: its 600 corners are her 600 cell centres, its corners stand in her fifteen Cleo shells, its 120 dodecahedra in nine layers round one, and its core is the dodecahedron cut into twelve pentagonal pyramids where hers is the icosahedron cut into twenty Cleo-Icos. No convex regular solid has dodecahedra round a corner, but the star polytope {5/2,5,3} does: its twelve golden spikes at a corner cast exactly Aristotle's dodecahedron pyramids. Her full atlas is exact: 124 slice patterns in the four main directions, passing cell-first through the Archimedean solids of the icosahedral family, and four shadows, each filled exactly once by its front cells and once by its back cells, each the polar of the White Queen's middle slice.</div>\n\n<h2>1. From the White Queen to the Red Queen</h2>\n<p>In #63, the White Queen 600-cell, 600 regular tetrahedra stand round 120 corners, and round one corner they fall into fifteen shells whose core is twenty Cleo-Icos filling a regular icosahedron (#19, #44). DICTO proposed her polar swap: every corner of one solid becomes a cell of the other. The polar of the 600-cell is the 120-cell, 120 regular dodecahedra round 600 corners. DICTO named it the Red Queen, after the other queen of <i>Through the Looking-Glass</i>. He then proposed that the dodecahedral pyramid, the one of Aristotle's five pyramids the White Queen lacks, sits at the Red Queen's core, and that all five pyramids are four-dimensional shadows. They are.</p><p>Proof: exact arithmetic in ℚ(√5) throughout (rational pairs a+b√5): the 120-cell built from the exact 600-cell of #63 (13 of 13 checks), the five-pyramids theorem (10 of 10), the atlas (17 of 17). Both layer lists of the Red Queen (cells 1, 12, 20, 12, 30, 12, 20, 12, 1; corners in the fifteen Cleo shells) are palindromes, as the White Queen's shells are.</p><p>The ideas and names are DICTO's. Computation and proof with Claude (Anthropic). Sources checked are listed in the paper. The study (scripts, data, renders) is attached. Licence CC BY-SA 4.0. More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "Red Queen",
+  "White Queen",
+  "120-cell",
+  "600-cell",
+  "polar",
+  "Aristotle's pyramid",
+  "five pyramids",
+  "four-dimensional polytopes",
+  "perspective projection",
+  "small stellated 120-cell",
+  "Cleo-Icos",
+  "slices",
+  "shadows"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23690856",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23529497",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23357896",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ]
+}
