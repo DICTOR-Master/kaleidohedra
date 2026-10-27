@@ -5,8 +5,9 @@ directions (vertex-first 9, edge-first 17, face-first 21, cell-first 15, tips in
 every slice between two vertex heights has triangles and squares, and the all-triangle slices are exactly the
 vertex-height ones listed in #62.
 
-**Status.** Step 1 (complete slice atlas, four shadows, Humpty Dumpty picture) done 2026-10-27. Scope (DICTO 2026-10-27):
-full-symmetry equal-edged forms only; lower-symmetry ("lopsided") forms are not searched, by choice.
+**Status.** Step 1 (complete slice atlas, four shadows, Humpty Dumpty picture) done 2026-10-27. Equal-edged forms are
+solved with full symmetry; forms with less symmetry may exist and are queued as a separate later study (QUEUED,
+low priority).
 
 - `scripts/atlas600.py` — slices at every vertex height and one inside every gap (one combinatorial type per gap),
   exact hulls; uses the modules of study 2026-10-27-4d-shadows. Output `data/atlas600.json`, `.pkl`.
