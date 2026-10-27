@@ -1,0 +1,42 @@
+=== a15: A15 (Cr3Si)
+  (-5/4, 1/4) 2 distinct pieces: relation -1·Si#0 + -3·Cr#1 = -4·1
+  (1/4, 3/4) 2 distinct pieces: relation -1·Si#0 + -3·Cr#1 = -4·1
+  (3/4, 5/4) 2 distinct pieces: relation -1·Si#0 + -3·Cr#1 = -4·1
+  stops: -5/4, 1/4, 3/4, 5/4
+=== bcc: bcc two-kind (golden loop sites)
+  (-3, -1) 2 distinct pieces: relation -1·big#0 + -1·small#1 = -8·1
+  (-1, 1) 2 distinct pieces: relation -1·big#0 + -1·small#1 = -8·1
+  (1, 3) 2 distinct pieces: relation -1·big#0 + -1·small#1 = -8·1
+  stops: -3, -1, 1, 3
+=== c15: C15 Laves (MgCu2)
+  (-11, -5) 2 distinct pieces: relation -1·Mg#0 + -2·Cu#1 = -64·1
+  (-5, 7) 2 distinct pieces: relation -1·Mg#0 + -2·Cu#1 = -64·1
+  (7, 9) 2 distinct pieces: relation -1·Mg#0 + -2·Cu#1 = -64·1
+  (9, 11) 2 distinct pieces: relation -1·Mg#0 + -2·Cu#1 = -64·1
+  stops: -11, -5, 7, 9, 11
+=== delian: fcc + all its tetrahedral holes (Delian loop sites)
+  (-3/8, -1/8) 2 distinct pieces: relation -1·oct#0 + -2·tet#1 = -2·1
+  (-1/8, 3/8) 2 distinct pieces: relation -1·oct#0 + -2·tet#1 = -2·1
+  stops: -3/8, -1/8, 3/8
+=== hcpholes: hcp holes: octahedral + tetrahedral holes of ideal hcp (gyrated octet sites)
+  (-11/24, -1/8) 2 distinct pieces: relation -2·oct#0 + -4·tet#1 = -1·1
+  (-1/8, 5/24) 2 distinct pieces: relation -2·oct#0 + -4·tet#1 = -1·1
+  (5/24, 3/8) 2 distinct pieces: relation -2·oct#0 + -4·tet#1 = -1·1
+  stops: -11/24, -1/8, 5/24, 3/8
+=== honeycomb: honeycomb + hexagon centres (triangular lattice, two kinds 2:1)
+  (-1, -1/2) 2 distinct pieces: relation -2·honeycomb#0 + -1·centre#1 = -3·1
+  (-1/2, 1) 2 distinct pieces: relation -2·honeycomb#0 + -1·centre#1 = -3·1
+  stops: -1, -1/2, 1
+=== kagome: kagome + hexagon centres (triangular lattice, two kinds 3:1)
+  (-1, 1) 2 distinct pieces: relation -3·kagome#0 + -1·centre#1 = -4·1
+  stops: -1, 1
+=== nacl: rock salt NaCl (fcc + fcc)
+  (-1, 0) 2 distinct pieces: relation -1·Na#0 + -1·Cl#1 = -2·1
+  (0, 1) 2 distinct pieces: relation -1·Na#0 + -1·Cl#1 = -2·1
+  stops: -1, 0, 1
+=== perovskite.json: perovskite ABX3 (A cube corner, B body centre, X face centres)
+Traceback (most recent call last):
+  File "/home/dicto/kres-tmp/splash2/finder2.py", line 13, in <module>
+    for iv in d['intervals']:
+              ~^^^^^^^^^^^^^
+KeyError: 'intervals'

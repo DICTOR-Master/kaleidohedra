@@ -31,3 +31,10 @@ No thirds appeared in run 1: the reach never exceeded one gap.
 
 ## Prior art (default step) — sources checked
 See prior-art.md.
+
+## Run 2 (2026-10-27): exact relations inside any one weight walk (run2/finder2.py)
+For each window: constant ratios between piece volumes and small integer relations among them (the plain total, pieces × volumes = cell, removed).
+- Two-kind networks of the relay census (A15, bcc, C15, Delian, hcp holes, honeycomb, kagome, NaCl, zinc blende, square): nothing beyond the total (two piece types per window leave no room for a rule).
+- #60 pyrochlore stackings (ABC, AB): nothing within one walk (its halves link different stackings, as in run 1).
+- #57 stackings ABAC, ABCACB: (i) oct − oct = tet(c) − tet(h) in every window, which is #57's "each layer takes the same space in c and h", re-found; (ii) **new small rule: in the last window, 5/24 < λ < 3/8, the three octahedral pieces have volumes in the exact ratio 4 : 5 : 6 (cubic : Janus : hexagonal)**, all proportional to (3 − 8λ)³ (they vanish together at λ = 3/8); 5 is the mean of 4 and 6, the halves rule. Not stated in #57.
+Conclusion run 2: no new rule in the two-kind networks; one new exact ratio (4 : 5 : 6) in the #57 walk.
