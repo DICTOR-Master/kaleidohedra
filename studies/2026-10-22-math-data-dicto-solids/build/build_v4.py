@@ -146,9 +146,9 @@ log(A.shape == (17, 3) and np.abs(dA - dB).max() < 1e-12, f'Shadow-17: all 136 c
     f'of the 600-cell\'s edge-first slice (eqreal_..._V17.npy) to {np.abs(dA - dB).max():.1e} (#62: 4e-16)')
 Vs17, Fs17, rs17 = emit('dicto-shadow-17', dict(
     name='Shadow-17', finding='', paper='#62 Shadows of the Fourth Dimension', dicto_doi=D62, convex=False,
-    status='known shape (two J11 glued on their pentagons; J11 = the gyroelongated pentagonal pyramid, Johnson 1966, the diminished icosahedron; '
-           'an obvious gluing, not claimed new in #62); what #62 adds is that it is the equal-edged form of the 600-cell\'s edge-first slices at '
-           'the outer heights (17 vertices, 30 triangles); the name is a placeholder of #62',
+    status="new construction from a known piece (J11, Johnson's gyroelongated pentagonal pyramid, Johnson 1966): two J11 glued on their pentagons; "
+           "#62 identifies it as the equal-edged form of the 600-cell's outer edge-first slices (17 vertices, 30 triangles); status decided by DICTO "
+           "2026-10-28; the name is a placeholder of #62",
     scale_note='edge 1: the J11 is the icosahedron with corners (0, +-1/2, +-phi/2) and cyclic permutations less its corner (0, 1/2, phi/2); the '
                'second J11 is its mirror image in the plane of the pentagon round that corner; moved so that the pentagon\'s centre is at the '
                'origin. Non-convex: the five edges of the shared pentagon are folded inward (dihedral 2 x 100.81 = 201.62 degrees, #62).',

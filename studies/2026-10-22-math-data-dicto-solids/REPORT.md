@@ -17,14 +17,13 @@ it waits for DICTO's reading.
     12-gon), C3v, convex, in ℚ(√3); volume (68881403/165888000)√3 here = 0.254274 at ball spacing 1. New, **D84**.
   - #62 *Shadows of the Fourth Dimension* (DICTO DOI: 10.5281/zenodo.23687223, record 23687224): **Shadow-17**, two J11 of edge 1 glued on
     their pentagons (the second the mirror image of the first in the pentagon's plane). 17 corners, 45 unit edges, 30 triangles, D5h,
-    non-convex, in ℚ(√5); volume 25/12 + 3√5/4 (twice J11). Status known (J11 = gyroelongated pentagonal pyramid, Johnson 1966; #62: an
-    obvious gluing, not claimed new; the new point of #62 is that it is the equal-edged form of the 600-cell's outer edge-first slices), no
-    D-number.
+    non-convex, in ℚ(√5); volume 25/12 + 3√5/4 (twice J11). Status (DICTO 2026-10-28): new construction from a known piece (J11, Johnson's
+    gyroelongated pentagonal pyramid, Johnson 1966); the equal-edged form of the 600-cell's outer edge-first slices (#62). **D86**.
   - #63 *The White Queen 600-cell* (DICTO DOI: 10.5281/zenodo.23690856, v2 record 23702910): **Humpty Dumpty**, the real 48-vertex
     cell-first slice of the 600-cell at height 1 + √5/2. 48 corners (12 of degree 8, 36 of degree 5), 138 edges of eight lengths, 92
     triangles, Td, convex, in ℚ(√5); volume 2627/60 + 1213√5/60 at the dataset's scale (below). New (#63: not found in the sources checked),
     **D85**.
-- **index.csv**: three rows (in_dataset y); **d-numbers.md**, **README** and `published/records.json` (#61, #62, #63) updated.
+- **index.csv**: three rows (in_dataset y; D84, D85, D86); **d-numbers.md**, **README** and `published/records.json` (#61, #62, #63) updated.
 
 ### Decisions (and who made them)
 
@@ -41,8 +40,9 @@ it waits for DICTO's reading.
   a square in ℚ(√5)). Scaling the slice by |d| removes it: the imaginary part of conj(d)·p (quaternions) is exact in ℚ(√5). So the file is
   Humpty Dumpty scaled by |d| ≈ 1.8512 from the 600-cell of circumradius 2; its squared edges divided by 7/4 + 3√5/4 are the atlas values
   exactly (checked). The unit-volume copy removes the question of scale.
-- **Statuses and D-numbers**: Ganesha and Humpty Dumpty new (the papers' prior art: not found in the sources checked); Shadow-17 known
-  pieces, no number. D84, D85 in order of publication (#61, #63); D1–D83 unchanged.
+- **Statuses and D-numbers**: Ganesha and Humpty Dumpty new (the papers' prior art: not found in the sources checked), D84, D85 in order of
+  publication (#61, #63). Shadow-17: first filed as known pieces; DICTO decided (2026-10-28) "new construction from a known piece (J11)",
+  D86, the next free number. D1–D83 unchanged.
 
 ### Checks
 
@@ -77,7 +77,7 @@ it waits for DICTO's reading.
 
 ### Open questions for DICTO
 
-1. Shadow-17: filed as known pieces without a D-number (as now), or new with D86 (#62 says it does not claim it new).
+1. Shadow-17: DECIDED by DICTO, 28 October 2026: new construction from a known piece (J11), D86.
 2. Ganesha: one file at #61's Figure 1 parameters (as now); the Ganesha pieces form a family in s and λ.
 
 ## Version 3 (2026-10-27)

@@ -125,16 +125,18 @@ The next free numbers, after the groups D72–D75, in the order of first publica
 The Icosaxes Hexa and the Lotus Hexa (#59) are rows of kind "cluster" (eight Icosaxes round an Unborn Axes, and its keyed form, as one
 solid), like the DICTO Hexa, so under the scheme they get no D-number; Goliath and David (#55) are known shapes (below).
 
-## D84–D85: version 4 (2026-10-28)
+## D84–D86: version 4 (2026-10-28)
 
-The next free numbers, in the order of first publication (#61, #63). D1–D83 are unchanged.
+The next free numbers: D84, D85 in the order of first publication (#61, #63), then D86 for Shadow-17 (#62), numbered by DICTO's
+decision of 28 October 2026. D1–D83 are unchanged.
 
 | D | name | kind | finding | paper |
 |---|---|---|---|---|
 | D84 | Ganesha | solid | – | #61 |
 | D85 | Humpty Dumpty | solid | – | #63 |
+| D86 | Shadow-17 | solid | – | #62 |
 
-Shadow-17 (#62) is filed as known pieces (two J11 glued on their pentagons; #62 does not claim it new), so it gets no D-number (below).
+Shadow-17: status "new construction from a known piece (J11, Johnson's gyroelongated pentagonal pyramid)" (DICTO 2026-10-28).
 
 ## Known or rediscovered shapes with no catalogue number (no D-number; for DICTO)
 
@@ -153,7 +155,6 @@ D is for DICTO's new shapes, so these get none. Listed so DICTO can see them.
 | Unborn Axes | known | known shape: Koca et al. 2015 non-regular truncated octahedron x = 1/tau; new route (#48); the name is DICTO's |
 | Goliath | known | the classical Z12 icosahedron of A15 (Frank and Kasper 1958), the convex hull of Jessen's orthogonal icosahedron (Jessen 1967) scaled by 1/2 (#55); the name is DICTO's |
 | David | known | a tetragonal disphenoid, the empty Cr4 tetrahedron of A15 (#55); the name is DICTO's |
-| Shadow-17 | known | two J11 (gyroelongated pentagonal pyramid, Johnson 1966) glued on their pentagons, not claimed new (#62); the equal-edged form of the 600-cell's outer edge-first slices; placeholder name of #62 |
 
 ## Open questions for DICTO
 
@@ -161,10 +162,10 @@ D is for DICTO's new shapes, so these get none. Listed so DICTO can see them.
 2. Delilah (the regular octahedron, U5; W2): its row is named "Delilah" as briefed; under the one-name rule (an established literature
    name keeps that name with DICTO's beside it) it could read "Regular octahedron (Delilah)". DICTO's call. It has no D-number (a known shape).
 3. (version 3) The Icosaxes Hexa and the Lotus Hexa are filed as clusters (no D-number, as the DICTO Hexa); if DICTO wants them numbered
-   as solids, they would take the next free numbers (D86, D87 since version 4).
+   as solids, they would take the next free numbers (D87, D88 since version 4).
 4. (version 3) The Triskelion Tetrahedron is filed as new (D82), as Samson was (a named member of Samson's sliding family, #57); #57's study
    notes that it is congruent to the cubic octet's piece at 5/24, so it is not new to the stackings. DICTO's call.
 5. (version 3) Named in the same papers but not yet in the inventory, so without numbers: the keyed forms Sonsam-K, Lahdeli-K, Ian Dury-K
    and Rhombo-K (#56), and the Icosaxes Bloom, Bud and Seed, Lotus Jewel Bloom, Bud and Seed, and the Icosaxes Kagome (#59).
-6. (version 4) Shadow-17: known pieces without a number (as now), or new with the next free number (D86), DICTO's call. Fallen Humpty
+6. (version 4) Shadow-17: DECIDED by DICTO, 28 October 2026: new construction from a known piece (J11), D86. Fallen Humpty
    (#63; Slice-48 in #62) is named but numeric only, so not in the dataset or the inventory yet; it would take the next free number.

@@ -16,12 +16,12 @@ is a cube root (stored exactly as a symbolic expression, with decimal corners).
     parameters of the paper's Figure 1: stacking ACBC, layer spacing² = (3/4)(2/3) (s = 3/4), weight λ = 1/10. 30 corners, 17 faces
     (6 triangles, 3 squares, 4 hexagons, 3 octagons, one 12-gon), C3v; exact in ℚ(√3), convex. New (D84).
   - #62 *Shadows of the Fourth Dimension*: **Shadow-17**, two J11 (Johnson's gyroelongated pentagonal pyramid) glued on their pentagons,
-    the equal-edged form of the 600-cell's outer edge-first slices: 17 corners, 30 unit triangles, D5h, non-convex; exact in ℚ(√5). Filed as
-    known pieces (not claimed new in #62), no D-number.
+    the equal-edged form of the 600-cell's outer edge-first slices: 17 corners, 30 unit triangles, D5h, non-convex; exact in ℚ(√5). New
+    construction from a known piece (J11), D86 (DICTO 2026-10-28).
   - #63 *The White Queen 600-cell*: **Humpty Dumpty**, the real 48-vertex cell-first slice of the 600-cell: 48 corners, 92 triangles, eight
     edge lengths, Td, convex; exact in ℚ(√5) (at the scale stated in its `scale_note`). New (D85).
 - **One more field**: `"Q(sqrt(3))"` (Ganesha). No new keys beyond `parameters` (Ganesha: stacking, spacing, weight, site).
-- **index.csv**: three new rows; D-numbers **D84** (Ganesha) and **D85** (Humpty Dumpty); D1–D83 unchanged. Every earlier file and check
+- **index.csv**: three new rows; D-numbers **D84** (Ganesha), **D85** (Humpty Dumpty) and **D86** (Shadow-17); D1–D83 unchanged. Every earlier file and check
   is unchanged and passes as before (998 checks; 1062 in all).
 
 ## What is new in version 3 (2026-10-27)
@@ -68,7 +68,7 @@ is a cube root (stored exactly as a symbolic expression, with decimal corners).
 | `packings/<slug>.json` | a published space-filling: lattice vectors and the cell's pieces (solid + exact rotation + exact translation) |
 | `packings-nonfilling/<slug>.json` | a published packing that does not fill space: the same format, with `"kind": "packing, not a fill"` and the exact density |
 | `index.csv` | inventory of every named shape (also the ones not in this dataset), with its universal number (if any), status, finding, DICTO DOI, whether it is in the dataset and in Polyhedraverse |
-| `d-numbers.md` | DICTO's D-numbers: the scheme, the list D1–D85, and the shapes without any number |
+| `d-numbers.md` | DICTO's D-numbers: the scheme, the list D1–D86, and the shapes without any number |
 | `check.py` | standalone verifier (python3 + sympy) |
 | `build/` | the scripts that generated the files (`exactlib.py`, `build_og.py`, `build_pv.py`, `build_extra.py`, `build_v2.py`, `build_v3.py`, `build_v4.py`, `make_index.py`), their logs, and copied source data (version 2: the three exact study scripts of #48 and #51 in `build/sources/`; version 3: `exact_a15.py` of #55 and the census engine `engine.py`, `networks.py`, `stackings.py` of #53/#56/#57; version 4: `splash.py` of #61, `q5.py` and `polytopes.py` of #62/#63, the #62 numerical Shadow-17 form and the #63 atlas row of the 48-vertex slice) |
 | `published/records.json` | the Zenodo records (latest versions) whose PDFs were used to check the published values |
@@ -263,7 +263,7 @@ Version 3 (twelve solids of #55, #56, #57, #59):
 | Icosaxes Hexa | – (cluster) | #59 The Icosaxes Hexa | 144, 228, 86 | Oh (48) | no | 9 + 17√5/3 | ℚ(√5) | `dicto-icosaxes-hexa` |
 | Lotus Hexa | – (cluster) | #59 The Icosaxes Hexa | 200, 564, 366 | Th (24) | no | 16 + 10√5/3 | ℚ(√5) | `dicto-lotus-hexa` |
 | Ganesha | D84 | #61 The Swap Rule | 30, 45, 17 | C3v (6) | yes | (68881403/165888000)√3 | ℚ(√3) | `dicto-ganesha` |
-| Shadow-17 | – (known pieces) | #62 Shadows of the Fourth Dimension | 17, 45, 30 | D5h (20) | no | 25/12 + 3√5/4 | ℚ(√5) | `dicto-shadow-17` |
+| Shadow-17 | D86 | #62 Shadows of the Fourth Dimension | 17, 45, 30 | D5h (20) | no | 25/12 + 3√5/4 | ℚ(√5) | `dicto-shadow-17` |
 | Humpty Dumpty | D85 | #63 The White Queen 600-cell | 48, 138, 92 | Td (24) | yes | 2627/60 + 1213√5/60 | ℚ(√5) | `dicto-humpty-dumpty` |
 
 Packings: `dicto-skewed-rhombic-dodecahedron-lattice` (F1, DICTO FCC), `dicto-skewed-ed-16-lattice`, `dicto-skewed-ed-18-lattice` (F7):
@@ -290,10 +290,10 @@ numbers are separated by "; ". Only numbers we are sure of are given.
 
 **D-numbers (DICTO 2026-10-24):** DICTO's permanent catalogue number, one per new solid or piece of his (status "new"), in the order of
 first publication, never reused: D1–D71 for single shapes, D72–D75 for the four rows that group several pieces (one number per group,
-DICTO 2026-10-24), and (version 3) D76–D83 for the eight new single solids of #56, #57 and #59, and (version 4) D84–D85 for Ganesha (#61) and Humpty Dumpty (#63). Known and rediscovered shapes get no D-number. A shape with an outside number that
+DICTO 2026-10-24), and (version 3) D76–D83 for the eight new single solids of #56, #57 and #59, and (version 4) D84–D86 for Ganesha (#61), Humpty Dumpty (#63) and Shadow-17 (#62). Known and rediscovered shapes get no D-number. A shape with an outside number that
 is also DICTO's new shape would show both, outside number first ("J1; D9"); none does today. Not to be confused with T1, T2, … (a piece's
-label within one piece set), #n (papers), Fn (findings) and t1–t6 (Mosseri–Sadoc tiles); see `d-numbers.md`. 90 of 137 rows have a
-number (5 outside, 85 D); the cell is empty for the other known or rediscovered shapes and for clusters, structures, compounds and
+label within one piece set), #n (papers), Fn (findings) and t1–t6 (Mosseri–Sadoc tiles); see `d-numbers.md`. 91 of 137 rows have a
+number (5 outside, 86 D); the cell is empty for the other known or rediscovered shapes and for clusters, structures, compounds and
 curved bodies.
 
 ## How to cite
