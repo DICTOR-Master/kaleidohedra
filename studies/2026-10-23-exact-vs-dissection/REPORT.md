@@ -2,7 +2,7 @@
 
 *DICTO's idea (2026-10-22); exact computation with Claude (Anthropic), 2026-10-23. DICTO · dictospheres.com*
 
-**In plain words.** The books describe several classical space-fillers by cutting and gluing: shave a belt off one solid, stick pyramids onto another, glue rhombohedra together. Kaleidohedra makes the same solids in one go, by moving the lattice: a shear (the six sliders), the Cell slider, and a stretch along one extra direction. Fedorov (1885) already named the moves (shear and stretch, Theorem 32, p. 239; shrinking a belt, § 83, p. 234). What this study adds: exact corners, exact slider values and exact checks, for five shapes. It complements the classical descriptions and does not correct them.
+The books describe several classical space-fillers by cutting and gluing: shave a belt off one solid, stick pyramids onto another, glue rhombohedra together. Kaleidohedra makes the same solids in one go, by moving the lattice: a shear (the six sliders), the Cell slider, and a stretch along one extra direction. Fedorov (1885) already named the moves (shear and stretch, Theorem 32, p. 239; shrinking a belt, § 83, p. 234). What this study adds: exact corners, exact slider values and exact checks, for five shapes. It complements the classical descriptions and does not correct them.
 
 ## Files
 

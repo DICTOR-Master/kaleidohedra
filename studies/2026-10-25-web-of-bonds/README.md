@@ -108,7 +108,7 @@ At t = 1/3 each RD rhombus trades its long diagonal (oct–oct) for its short on
 
 ## Main theorem (paper #52)
 
-**In plain words:** each DICTONIC loop is one fixed crowd of points of two kinds with one weight slid between the kinds. The bonds are the edges of the dual weighted-Delaunay web, and the bond between unlike pieces never breaks inside the loop. The two like bonds hand over: gradually in the golden loop (both alive all the way, equal at Kelvin), and all at once in the Delian loop (at the octet).
+each DICTONIC loop is one fixed crowd of points of two kinds with one weight slid between the kinds. The bonds are the edges of the dual weighted-Delaunay web, and the bond between unlike pieces never breaks inside the loop. The two like bonds hand over: gradually in the golden loop (both alive all the way, equal at Kelvin), and all at once in the Delian loop (at the octet).
 
 **Statement.**
 (i) For every x ∈ [0, ∞] the golden network is the power diagram of the bcc sites B ∪ S with w_B − w_S = (φ²/4)(x − 1)/(x + 1). For every t ∈ [0, 1] the Delian network is the power diagram of Q ∪ O with w_Q − w_O = (3/8)(2t − 1). At t = 0 the Q cells are points, and at t = 1 the O cells are points.

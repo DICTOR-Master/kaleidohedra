@@ -8,11 +8,11 @@ date: "October 2026"
 
 **Main theorem (proved in #57).** In every close-packed stacking, along the whole weight walk, each tetrahedral hole's piece is the piece of the cubic or the hexagonal stacking named by its nearest layer, and each octahedral hole's piece is a top half and a bottom half, each the half of the cubic or the hexagonal piece named by the layer on that side. So the pieces of all stackings are finite in kind, and an octahedral piece's volume is always the mean of its two parents' volumes.
 
-In plain words: however layers of balls are stacked, the gaps between them are filled by pieces taken from just two pure stackings, cubic and hexagonal. This paper tells how the series reached that rule, starting from the octet.
+However layers of balls are stacked, the gaps between them are filled by pieces taken from just two pure stackings, cubic and hexagonal. This paper tells how the series reached that rule, starting from the octet.
 
 ## 1. Pieces that fill space: #47 → #48 → #51
 
-*In plain words: mixing the Platonic solids, then cutting the awkward gaps in the right place, gives pairs of convex solids that fill space, and one cut gives a pair of equal volume.*
+*Mixing the Platonic solids, then cutting the awkward gaps in the right place, gives pairs of convex solids that fill space, and one cut gives a pair of equal volume.*
 
 Paper #47 showed that for each of the 31 sets of Platonic solids of edge 1 there is a filling of space using exactly those solids, with connectors from a kit of seven pieces.
 
@@ -22,7 +22,7 @@ Paper #51, the Delian Bond, turns to the octet of regular tetrahedra and octahed
 
 ## 2. The walk and the web of bonds: #52 → #53
 
-*In plain words: draw a line, a bond, between every two pieces that share a face. As one number slides, the pieces change but the web of bonds rewires in only two ways.*
+*Draw a line, a bond, between every two pieces that share a face. As one number slides, the pieces change but the web of bonds rewires in only two ways.*
 
 Paper #52 proves that both DICTONIC loops, the golden loop of #48 and the Delian loop of #51, are weighted Voronoi (power) diagrams of one fixed crowd of points of two kinds, with one weight slid between the kinds. The bonds are the edges of the dual weighted-Delaunay web. The bond between unlike pieces never breaks inside a loop, while the two like bonds hand over: gradually in the golden loop, and all at once, at the octet, in the Delian loop. Read physically, the weight is a ball radius squared: the golden loop is the caesium chloride structure, the Delian loop the fluorite structure, and the range where the balls can touch is bounded exactly by Pauling's classical radius-ratio limits.
 
@@ -30,7 +30,7 @@ DICTO proposed that these two hand-overs turn up elsewhere. Paper #53 computes t
 
 ## 3. Pairs along the walk: #55 → #56, with #42
 
-*In plain words: at special points of the walk, named pairs of solids appear.*
+*At special points of the walk, named pairs of solids appear.*
 
 Paper #55 proves that in the A15 (Cr$_3$Si) structure the power diagram with weight difference $3/4$ between the Si and Cr sites is exactly a face-to-face tiling of space by Goliath, the convex hull of Jessen's orthogonal icosahedron, and David, a tetragonal disphenoid, two Goliaths and six Davids per cubic cell; DICTO named the pair. The tiling itself is the known picture of A15 as icosahedra and tetrahedral holes; what we did not find in the sources searched is that the weight walk lands exactly on it, and the plain statement that the A15 icosahedron is Jessen's convex hull.
 
@@ -40,7 +40,7 @@ The keyed switch points of #56 also take in the space filling of paper #42, the 
 
 ## 4. Every stacking: #40 → #57
 
-*In plain words: the cubic and hexagonal stackings are only two of endlessly many; the rule of halves covers them all.*
+*The cubic and hexagonal stackings are only two of endlessly many; the rule of halves covers them all.*
 
 Paper #40 was an early signpost: two short rules, the twin rule and the fit rule, place DICTO's Ogdoecontahedron and its family in the tetrahedral–octahedral honeycomb stacked in any order, with one exact kit for the octet, the gyrated octet, the classical polytypes and a Fibonacci stacking that never repeats.
 

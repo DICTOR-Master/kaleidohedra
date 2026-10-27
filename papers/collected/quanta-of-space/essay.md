@@ -1,7 +1,7 @@
 # Quanta of Space
 ### An introduction to the geometric works of DICTO (draft 1, 22 October 2026)
 
-**In plain words.** Is space smooth all the way down, or is it built from pieces, as a wall is built from stones? Thinkers have asked this for two and a half thousand years. These works take the question literally: they look for exact sets of solid pieces that fit together, with no gaps, into shells, cycles and whole spaces.
+Is space smooth all the way down, or is it built from pieces, as a wall is built from stones? Thinkers have asked this for two and a half thousand years. These works take the question literally: they look for exact sets of solid pieces that fit together, with no gaps, into shells, cycles and whole spaces.
 
 ## 1. Atoms and the void
 Leucippus and Democritus taught that the world is made of indivisible atoms moving in the void. The atoms differ only in shape, arrangement and position. Lucretius put the teaching into verse: "nothing exists per se except atoms and the void". The atoms were pieces, but no one said what shapes they had.
