@@ -12,7 +12,7 @@
 
 **Step 3 done (proof/PROOF.md part II):** below s = ½ the volume Swap Rule holds because the piece volume is ADDITIVE in the two layer types: the octahedral hole of the next gap carves one fixed set out of a piece whenever the shared layer is c, out of reach of the far layer, so V = A(t) + B(t′). Proved for ¼ ≤ s < ½ (1706 certificates PASS); s1 = ¼ exactly (below it holes two gaps away cut; at s = 1/5 volumes depend on four layers). Swap Rule proved for every s ≥ ¼.
 
-**Status:** run 1 + step 1 + map + steps 2–3 (proof) done. Next: run 2 = the same finder on the #60 pyrochlore walk, relay census, Web of Bonds (#53), keyed web, #55 A15 walk and #56 twinned-octet walk.
+**Status:** run 1 + step 1 + map + steps 2–3 (proof) + run 2 (all 14 frameworks decided, below) done. Not yet run: Web of Bonds (#53), keyed web, #56 twinned-octet walk.
 
 ## Method (scripts/splash.py, exact, on dicto-big-brother)
 - Family: the #57 hole walk (octahedral hole weight 0, tetrahedral weight λ) on close-packed stackings, layer spacing scaled d² = s·⅔, s ∈ {½, ¾, 1, 3/2, 2}; s = 1 is #57.
@@ -36,12 +36,37 @@ No thirds appeared in run 1: the reach never exceeded one gap.
 ## Prior art (default step) — sources checked
 See prior-art.md.
 
-## Run 2 (2026-10-27): exact relations inside any one weight walk (run2/finder2.py)
-For each window: constant ratios between piece volumes and small integer relations among them (the plain total, pieces × volumes = cell, removed).
-- Two-kind networks of the relay census (A15, bcc, C15, Delian, hcp holes, honeycomb, kagome, NaCl, zinc blende, square): nothing beyond the total (two piece types per window leave no room for a rule).
-- #60 pyrochlore stackings (ABC, AB): nothing within one walk (its halves link different stackings, as in run 1).
-- #57 stackings ABAC, ABCACB: (i) oct − oct = tet(c) − tet(h) in every window, which is #57's "each layer takes the same space in c and h", re-found; (ii) **new small rule: in the last window, 5/24 < λ < 3/8, the three octahedral pieces have volumes in the exact ratio 4 : 5 : 6 (cubic : Janus : hexagonal)**, all proportional to (3 − 8λ)³ (they vanish together at λ = 3/8); 5 is the mean of 4 and 6, the halves rule. Not stated in #57.
-Conclusion run 2: no new rule in the two-kind networks; one new exact ratio (4 : 5 : 6) in the #57 walk.
+## Run 2 (2026-10-27): the finder on other frameworks
+**Conclusion run 2:** the rule of halves and the 4 : 5 : 6 end ratio belong to the octahedral holes of close packing only; the Swap Rule is the one rule that carries over (pyrochlore stackings, exact in every window); every other framework tested has a single arrangement, so there is nothing to mix, and no constant ratio between its own pieces either.
+
+Questions per framework: **halves** = every piece is a whole pure piece or ½ pure c + ½ pure h (exact constant mix); **swap** = V(c under h) + V(h under c) = V(c under c) + V(h under h); **end ratio** = a constant ratio between matching pieces of the arrangements in a window, like 4 : 5 : 6. N/A = not applicable, with the reason.
+
+| framework | arrangements compared | halves? | swap? | end ratio | evidence |
+|---|---|---|---|---|---|
+| close packing ABAC (4H), s = 1 (#57) | pure c (ABC) and pure h (AC), 6 words ≤ 6 layers | YES: octahedral pieces whole or ½ + ½; tetrahedral pieces whole (own layer) | YES (theorem, proof/PROOF.md, every s ≥ ¼; at s = 1 it follows from halves) | YES: 4 : 5 : 6 (cubic : Janus : hexagonal octahedral), 5/24 < λ < 3/8 | data/s_1.json, data/end_ratios.log, run2/run2c.log |
+| close packing ABCACB (6H), s = 1 | same | YES (same) | YES (same) | YES: 4 : 5 : 6; in this word's own walk oct/oct = 5/4 | same; run2/run2c.log |
+| pyrochlore (#60), ABC and AB + the 4 mixed words | pure 3C (ABC) and pure 2H (AC), 6 words ≤ 6 layers, 6 windows of −11/36 < λ < 1/4 | NO as volumes: O never a constant mix of the pure pieces, Y not for λ < −3/20 (from −3/20 on Y is whole, own lower layer); S, C whole (own layer). YES as cut halves (#60's exact theorem: each half congruent to the pure half), so for at least one pure O piece (c or h) the two halves differ in volume | YES, exact, all 6 windows, all 4 roles (follows from #60's cut theorem as in step 1) | NO: pure h / pure c and mixed / pure c vary with λ in every window | run2/pyro_mix.log, run2/out/pyro_mix.json, splash-run2.png; ../2026-10-27-pyrochlore-halves/exact/ |
+| Delian loop sites (fcc + all tetrahedral holes) | one; it IS run 1's pure c holes (s = 1): same volume functions in every window, all three roles, run 1 / relay = ½ (volume units differ) | N/A alone (one arrangement); with hcp holes = run 1 (YES) | N/A alone; with hcp holes = run 1 (YES) | N/A alone; with hcp holes = 4 : 5 : 6 | run2/relay_vs_run1.py, run2/relay_vs_run1.log; run2/run2c.log |
+| hcp holes (octahedral + tetrahedral holes of hcp) | one; it IS run 1's pure h holes (run 1 / relay = 2) | N/A alone, as above | N/A alone, as above | N/A alone, as above | run2/relay_vs_run1.log; run2/run2c.log |
+| A15 (Cr3Si) | one | N/A: one arrangement | N/A: one arrangement | N/A; no constant ratio between its pieces in any window | run2/run2c.log |
+| zinc blende / diamond | one | N/A | N/A | N/A; none in any window | run2/run2c.log |
+| square lattice + centres (2D) | one | N/A | N/A | N/A; none in any window | run2/run2c.log |
+| bcc two-kind (golden loop sites) | one | N/A | N/A | N/A; none in any window | run2/run2c.log |
+| C15 Laves (MgCu2) | one | N/A | N/A | N/A; none in any window | run2/run2c.log |
+| honeycomb + centres (2D) | one | N/A | N/A | N/A; none in any window | run2/run2c.log |
+| kagome + centres (2D) | one | N/A | N/A | N/A; none in any window | run2/run2c.log |
+| rock salt NaCl | one | N/A | N/A | N/A; none in any window | run2/run2c.log |
+| perovskite ABX3 (two weights λ, μ) | one | N/A | N/A | N/A; none in any of the 5 chambers | run2/run2c.log |
+
+**How each line was decided (all exact; floats only in the picture):**
+- *Single walks* (run2/finder2.py, run2/run2c.log, rerun 2026-10-27 on all 14 frameworks): per window, the distinct piece volumes as polynomials in λ; constant ratios V_i/V_j by exact cancellation; integer relations among [V_1 … V_k, 1] by exact null space, the plain total (counts × volumes = cell) removed. finder2.py now also reads two-weight chamber files (perovskite failed in run2.log for this reason). The two-kind networks show nothing beyond the total; run2.log printed the total itself (filter added for run2b.log).
+- *Pyrochlore mix* (run2/pyro_mix.py, new): #60's walk (~/kres-tmp/pyro/pyro_walk.py net, #57's census engine unchanged, 0 failed census checks on all 6 words) on every primitive stacking up to 6 layers; each piece labelled by role and the 3 layer steps round its gap (0 clashes: 4 layers fix every volume, as #60's locality bound says); each mixed volume fitted as a·V(pure c) + b·V(pure h) by coefficient matching in λ; the Swap identity checked by exact expansion.
+- *Delian and hcp holes = run 1's pure pieces:* run 1's pure c (Delian) or pure h (hcp holes) piece at s = 1 (data/s_1.json) divided by the relay volume of the same role is the constant ½ (Delian) or 2 (hcp holes) in every window, all three roles (run2/relay_vs_run1.py); the two runs use different volume units.
+- *Not tested:* the natural c/h partners of zinc blende (wurtzite) and rock salt (NiAs) were not in the run; with them, those two lines become c/h comparisons like the pyrochlore one.
+
+**Earlier run 2 notes (single walks, kept):**
+- #57 stackings ABAC, ABCACB: (i) oct − oct = tet(c) − tet(h) in every window, which is #57's "each layer takes the same space in c and h", re-found; (ii) **in the last window, 5/24 < λ < 3/8, the three octahedral pieces have volumes in the exact ratio 4 : 5 : 6 (cubic : Janus : hexagonal)**, all proportional to (3 − 8λ)³ (they vanish together at λ = 3/8); 5 is the mean of 4 and 6, the halves rule. Not stated in #57.
+
 **Why 4 : 5 : 6 (exact):** for 5/24 < λ < 3/8 each octahedral piece shrinks to its centre, bounded only by its tetrahedral neighbours, all at the same distance. Cubic: 8 tetrahedral face-neighbours → regular octahedron |x|+|y|+|z| ≤ 1 (volume 4/3). Hexagonal: octahedral holes stack face to face along the axis, so only 6 tetrahedral neighbours → rhombohedron |x+y−z|, |x−y+z|, |−x+y+z| ≤ 1 (volume 8/|det| = 2). Ratio 2 : 3 = 4 : 6; the Janus piece = half of each = 5. (DICTO asked about 3:4:5 → 6:8:10: coincidence of pattern only.) For #61 as a corollary.
 
 ## Scutoid test (DICTO 2026-10-27: "the scutoids are similar to Janus c/h"; scripts/scutoid_test.py, data/scutoid_test.log, exact)
