@@ -77,6 +77,36 @@ def atlas():
     fig.savefig("../renders/atlas600.png", dpi=130, facecolor=BG)
 
 
+def atlas_paper(wrap=11):
+    """the same atlas for an A4 page: each direction wraps after `wrap` panels."""
+    A = pickle.load(open("../data/atlas600.pkl", "rb"))
+    import json
+    J = json.load(open("../data/atlas600.json"))
+    lines = []
+    for d in ROWS:
+        items = sorted([o for o in J if o["direction"] == d], key=lambda o: o["h"])
+        for i in range(0, len(items), wrap):
+            lines.append((d if i == 0 else "", d, items[i:i + wrap]))
+    plt.rcParams["figure.facecolor"] = BG
+    fig = plt.figure(figsize=(1.2 * wrap, 1.42 * len(lines) + 0.7))
+    for r, (label, d, items) in enumerate(lines):
+        for c, o in enumerate(items):
+            ax = fig.add_subplot(len(lines), wrap, r * wrap + c + 1, projection="3d")
+            if "dim" in o:
+                panel(ax, tip_points(o), [], "tip", {0: "a vertex", 1: "an edge", 2: "a triangle"}[o["dim"]])
+                continue
+            k = next(a for a in A if a["item"]["direction"] == d and a["item"]["height"] == o["height"])
+            fs = o["face_sizes"]
+            sub = f"{o['V']} v · {fs.get('3', 0)} tri" + (f" · {fs['4']} sq" if fs.get("4") else "")
+            panel(ax, k["fV"], k["faces"], o["height"], sub, NAMED.get((d, o["height"])) if o["at_vertex_layer"] else None,
+                  o["at_vertex_layer"])
+        if label:
+            fig.text(0.004, 1 - (r + 0.5) / len(lines) * 0.95 - 0.02, label, color=GOLD, fontsize=8, rotation=90, va="center")
+    fig.subplots_adjust(left=0.025, right=0.998, top=0.985, bottom=0.01, wspace=0.0, hspace=0.32)
+    mark(fig)
+    fig.savefig("../renders/atlas600-page.png", dpi=170, facecolor=BG)
+
+
 def shadows():
     S = pickle.load(open("../data/solids.pkl", "rb"))
     plt.rcParams["figure.facecolor"] = BG
@@ -103,4 +133,5 @@ def shadows():
 
 if __name__ == "__main__":
     atlas()
+    atlas_paper()
     shadows()
