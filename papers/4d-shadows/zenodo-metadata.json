@@ -1,0 +1,50 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-27",
+ "access_right": "open",
+ "title": "Shadows of the Fourth Dimension: Deltahedra that Join Differently, from the Triangle-Faced Shadows and Slices of the 5-, 16-, 24- and 600-cell",
+ "description": "<p>A deltahedron is a solid whose faces are all equilateral triangles; only eight are convex. DICTO's idea was that the three-dimensional shadows and slices of the four triangle-faced regular solids of four-dimensional space (the 5-, 16-, 24- and 600-cell) might stand closer to a new family of deltahedra than to the eight regular ones, and would join to other pieces differently. We compute every shadow and slice of the four solids along their four main directions exactly, in numbers a + b√5, and find deltahedra of two new kinds. (a) <b>Variants that join differently</b>: the 5-cell's edge-first shadow (TBP-5) has the pattern of the triangular bipyramid J12, and three copies of it close round an edge; the 16-cell's edge-first shadow (OCT-16) has the pattern of the octahedron, and it fills space on its own. (b) <b>Equal-edged solids from the 600-cell</b>: four of its shadows and slices can be rebuilt exactly with every edge equal, keeping their pattern of triangles, and all four are non-convex: a 12-dented icosahedron; the excavated and the augmented dodecahedron; <b>Shadow-17</b>, two diminished icosahedra (J11) glued on their pentagons, identified through DICTO's idea of cutting the pattern in halves; and <b>Slice-48</b>, a solid of 92 triangles with tetrahedral symmetry, found by solving the 600-cell's six large slices exactly (Singular over Q(√5), every solution found and refined to 120 digits, embedding checked with exact orientation tests). Supporting results: apart from the solids' own cells and vertex figures, no shadow, layer or slice is a regular deltahedron; bipyramids over n-gons with n ≥ 6 have no equilateral form; the other five large slices have no equilateral form with their full symmetry.</p><p>The ideas are DICTO's. Computation and proofs with Claude (Anthropic). Sources checked are listed in the paper. The study (exact arithmetic, polytopes, shadows, classification, solvers, data and logs) is attached. Licence CC BY-SA 4.0. More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "deltahedra",
+  "600-cell",
+  "24-cell",
+  "16-cell",
+  "5-cell",
+  "4D polytopes",
+  "projections",
+  "sections",
+  "Shadow-17",
+  "Slice-48",
+  "J11",
+  "non-convex deltahedra",
+  "space filling"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23647898",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23551326",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23529497",
+   "relation": "references",
+   "scheme": "doi"
+  }
+ ]
+}
