@@ -28,3 +28,6 @@ Sources for the list: ProofWiki "Mathematician: Charles Lutwidge Dodgson"; Oxfor
 - Method credit: Dodgson, Condensation of Determinants (1866), Elementary Treatise on Determinants (1867).
 - (DICTO: it stays the WHITE Queen — no Red Queen quotations in #63; otherwise 'the 600 has to become red')
 - (DICTO 10-27: Carroll belongs to THIS paper only.) Also for #63, checked: "Down the Rabbit-Hole" (Alice ch. 1 title) — going down through the slices; "Curiouser and curiouser!" (Alice ch. 2); "… only the things go the other way" (Looking-Glass ch. 1) — the mirror slices at ±h; Fortunatus's Purse, "Whatever is inside that Purse, is outside it; and whatever is outside it, is inside it." (Sylvie and Bruno Concluded ch. 7 "Mein Herr") — an object not completable in three dimensions, like the 600-cell itself.
+
+## Naming (DICTO 2026-10-27)
+- Slice-48 (introduced under that name in #62, Shadows of the Fourth Dimension) is named **Humpty Dumpty** here in #63: the 48-vertex cell-first slice of the 600-cell, put back together with all edges equal (Td, 92 triangles, non-convex). Pair with the quotation already listed: "When I use a word, it means just what I choose it to mean" (Looking-Glass ch. 6). #62 keeps "Slice-48"; no Carroll in #62.
