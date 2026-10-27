@@ -186,3 +186,6 @@ vertex figures, which are not new.
   the numerical searches), `data/attachability.json`, `data/eqreal_600-cell_edge-first_slice_V17.npy` (Shadow-17's
   numerical equilateral coordinates)
 - `prior-art.md`: every source checked.
+
+## Shadow-17 pinned down (2026-10-27, DICTO: "maybe our rule of halves, swap rules or similar might help pin down Shadow-17")
+The halves idea: cut Shadow-17's pattern (5-fold; tips of degree 5, rings 5-5-5 with the middle ring of degree 6) at its middle ring. Each half is a **J11** (gyroelongated pentagonal pyramid = diminished icosahedron). **Shadow-17's equilateral form = two J11 glued on their pentagons**: all 136 corner-to-corner distances of the saved numerical form agree with 2 × J11 to 4e-16, and both have exactly 45 unit edges. 2 × J11 is exact by construction (edge 1, Q(√5) coordinates), so Shadow-17 HAS an exact equilateral (non-convex) form; its 5 reflex edges are the shared pentagon's edges, 2 × 100.81° = 201.62° (the J11 triangle–pentagon dihedral doubled). Not claimed new (an obvious gluing; not checked against non-convex deltahedron lists). The J11 is DICTO's starting piece (gaps of dodecahedra/icosahedra). Script: scripts/shadow17_j11.py (slice rebuild there is in other units; the congruence check is the one above).
