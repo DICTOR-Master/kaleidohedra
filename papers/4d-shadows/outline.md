@@ -9,6 +9,7 @@ Status: GROUNDWORK (2026-10-27). Waits for the six large 600-cell slices (studie
 5. Result 2, attachability: the variants join differently (three round an edge at 120°; space-filling alone).
 6. Result 3: 600-cell patterns of non-convex deltahedra: 12-dented icosahedron, augmented dodecahedron, excavated dodecahedron (known); Shadow-17 = two J11 base to base (halves method; DICTO's starting piece).
 7. Result 4: the six large slices (pending).
+7a. The 600-cell Atlas (DICTO 10-27): every section perpendicular to the 4 principal directions, complete (one per vertex height + one per interval), exact; dataset with check script; Coxeter credited for the vertex-first sections.
 8. Note: the true vertex-first sections of the 600-cell (edge midpoints included) vs the vertex-shell hulls often shown.
 9. Bipyramid obstruction: n-gonal bipyramids, n ≥ 6, have no deltahedral form (4 patterns).
 10. Prior art and sources checked. 11. Conclusion.
