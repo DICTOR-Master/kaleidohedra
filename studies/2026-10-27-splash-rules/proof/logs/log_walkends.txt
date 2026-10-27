@@ -1,0 +1,5 @@
+PASS (1) oct vs its 6 tets: moments [0, 0, 0], condition -lam + q/16 + 1/3 >= 0
+PASS (2) oct vs tets straight above/below: moments [0, 0, 0], condition -lam + 9*q/16 >= 0
+PASS (3) tet next to an h layer: moments [0, 0, 0], condition lam + 3*q/16 + 1/3 >= 0
+PASS (4) tet next to a c layer: moments [0, 0, 0], condition lam + 3*q/16 + 1/4 >= 0
+TOTAL 4 PASS, 0 FAIL

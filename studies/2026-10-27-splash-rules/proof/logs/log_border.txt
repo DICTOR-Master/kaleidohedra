@@ -1,0 +1,18 @@
+(a) s >= 1: gap-below sites never cut the far half of tetX (cell against its own gap)
+  type c: 19 gap-below sites; running 19 PASS 0 FAIL
+  type h: 19 gap-below sites; running 38 PASS 0 FAIL
+(a) TOTAL 38 PASS, 0 FAIL
+(b) 12 gap-below sites present for c only, 12 for h only
+  c-site ((Fraction(-2, 3), Fraction(1, 3)), Fraction(-1, 2), 0): g(1/3) = 1/12, g(2/3) = 0
+  c-site ((Fraction(1, 3), Fraction(-2, 3)), Fraction(-1, 2), 0): g(1/3) = 1/12, g(2/3) = 0
+  c-site ((Fraction(1, 3), Fraction(1, 3)), Fraction(-1, 2), 0): g(1/3) = 1/12, g(2/3) = 0
+  c-site ((Fraction(-1, 3), Fraction(-1, 3)), Fraction(-1, 4), 1): g(1/3) = 1/6, g(2/3) = 0
+  c-site ((Fraction(-1, 3), Fraction(2, 3)), Fraction(-1, 4), 1): g(1/3) = 1/6, g(2/3) = 0
+  c-site ((Fraction(2, 3), Fraction(-1, 3)), Fraction(-1, 4), 1): g(1/3) = 1/6, g(2/3) = 0
+(b) witnesses with g(1/3) > 0 and g(2/3) >= 0: 6  -> PASS
+  check: max g at q = 1999997/3000000: 1/2000000
+  check: max g at q = 1/2: 1/12
+(c) c far half inside every h-only halfspace: 12 PASS, 0 FAIL
+(d) q = 1/3: interior point lam, x, y, u = ['5/48', '-84454/911835', '-77317/585075', '1/12']: PASS
+(d) q = 2/3: interior point lam, x, y, u = ['81462/335603', '-12781/912075', '-12781/912075', '137279/682754']: PASS
+(d) 2 PASS, 0 FAIL

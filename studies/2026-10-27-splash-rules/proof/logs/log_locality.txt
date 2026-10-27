@@ -1,0 +1,32 @@
+tetY c: running 178 PASS 0 FAIL
+tetY h: running 355 PASS 0 FAIL
+oct c: running 533 PASS 0 FAIL
+oct h: running 712 PASS 0 FAIL
+tetX c: running 891 PASS 0 FAIL
+tetX h: running 1070 PASS 0 FAIL
+  ('oct', 'c', 'dn2'): 31 certificates, smallest margin 5/18
+  ('oct', 'c', 'dn3'): 57 certificates, smallest margin 1
+  ('oct', 'c', 'up1'): 32 certificates, smallest margin 0
+  ('oct', 'c', 'up2'): 57 certificates, smallest margin 5/6
+  ('oct', 'h', 'dn2'): 32 certificates, smallest margin 1/4
+  ('oct', 'h', 'dn3'): 57 certificates, smallest margin 17/12
+  ('oct', 'h', 'up1'): 32 certificates, smallest margin 0
+  ('oct', 'h', 'up2'): 57 certificates, smallest margin 5/6
+  ('tetX', 'c', 'dn2'): 32 certificates, smallest margin 1/3
+  ('tetX', 'c', 'dn3'): 57 certificates, smallest margin 3/2
+  ('tetX', 'c', 'up1'): 32 certificates, smallest margin 0
+  ('tetX', 'c', 'up2'): 57 certificates, smallest margin 5/6
+  ('tetX', 'h', 'dn2'): 32 certificates, smallest margin 1/3
+  ('tetX', 'h', 'dn3'): 57 certificates, smallest margin 3/2
+  ('tetX', 'h', 'up1'): 32 certificates, smallest margin 0
+  ('tetX', 'h', 'up2'): 57 certificates, smallest margin 5/6
+  ('tetY', 'c', 'dn2'): 32 certificates, smallest margin 0
+  ('tetY', 'c', 'dn3'): 57 certificates, smallest margin 5/6
+  ('tetY', 'c', 'up1'): 31 certificates, smallest margin 0
+  ('tetY', 'c', 'up2'): 57 certificates, smallest margin 5/6
+  ('tetY', 'h', 'dn2'): 31 certificates, smallest margin 1/4
+  ('tetY', 'h', 'dn3'): 57 certificates, smallest margin 17/12
+  ('tetY', 'h', 'up1'): 31 certificates, smallest margin 0
+  ('tetY', 'h', 'up2'): 57 certificates, smallest margin 5/6
+FAILS []
+TOTAL certificates 1070 PASS, 0 FAIL (q0 = 1/3, s0 = 1/2)
