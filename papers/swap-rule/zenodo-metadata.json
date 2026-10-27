@@ -1,0 +1,48 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-27",
+ "access_right": "open",
+ "title": "The Swap Rule: Ganesha, the Janus Tetrahedra of Squashed Stackings, and the Border at True Close Packing",
+ "description": "<p>Stack layers of balls, cubic or hexagonal in any order, and share the space between the balls' holes by weight, as in #57 (The Rule of Halves). Here the layers are squashed or stretched. We prove that for every layer spacing from half the close-packed squash upwards (d² ≥ ⅓), in every close-packed stacking, every hole piece cut at its gap's mid-plane is the lower half of the pure piece of the layer below and the upper half of the pure piece of the layer above, tetrahedral pieces included. Consequences: the <b>Swap Rule</b>, V(c|h) + V(h|c) = V(c|c) + V(h|h): the two mixed pieces always add up to the two pure ones; and a sharp <b>border at true close packing</b>: the tetrahedral pieces are whole exactly when the layers are at least as far apart as in close packing; squashed even slightly, each mixed tetrahedral piece takes its head from one side and its body from the other. DICTO named these pieces <b>Ganesha</b>. Also: at close packing the three octahedral pieces end the walk in the exact ratio 4 : 5 : 6 (regular octahedron, Janus piece, rhombohedron). Proof: the substitution u = d²ζ makes every piece, its halves and the whole range of spacings and weights one convex polyhedron in five variables; 1070 exact Farkas certificates; independent exact engine check 4992 of 4992. A map of eleven spacings shows which rule holds where; the rule was found by DICTO's idea of looking for simple rules in pictures of computed values (Splash Rules).</p><p>The ideas and names are DICTO's. Computation and proof with Claude (Anthropic). Sources checked are listed in the paper. The study (rule finder, map data, proof scripts and logs) is attached. Licence CC BY-SA 4.0. More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "Swap Rule",
+  "Ganesha",
+  "Janus c/h",
+  "rule of halves",
+  "close packing",
+  "stacking",
+  "polytypes",
+  "power diagram",
+  "Laguerre tessellation",
+  "Farkas certificate",
+  "space filling"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23647898",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23678750",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23665944",
+   "relation": "references",
+   "scheme": "doi"
+  }
+ ]
+}
