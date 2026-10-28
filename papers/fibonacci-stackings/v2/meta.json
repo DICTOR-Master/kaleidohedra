@@ -1,0 +1,60 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "version": "2",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-28",
+ "access_right": "open",
+ "title": "The Hexagonality Law and the Fibonacci Stacking: the Golden Ratio in the Volumes of a Never-Repeating Crystal",
+ "description": "<p>DICTO's long-standing aim is a bridge between repeating and never-repeating order. Close-packed layers can be stacked in a never-repeating Fibonacci order: layer types cubic (c) and hexagonal (h) following the substitution c → ch, h → c. We prove that in this stacking the share of hexagonal layers is exactly 1/φ² and that hexagonal layers never touch, so of the four kinds of piece between neighbouring layers only three occur, in the golden proportions 1/φ³ : 1/φ² : 1/φ² (cubic–cubic, cubic–hexagonal, hexagonal–cubic). By the Hexagonality Law (#66), every kind of piece then averages exactly V(cc) + (V(hh) − V(cc))/φ² per layer: the golden ratio enters the volumes of a crystal exactly. In rock salt at weight λ = 1/3 the ball piece averages 10999/20736 − (71/6912)√5 per layer. The Fibonacci order closes into periodic stackings of 15, 16, 26 and 63 layers with hexagonalities 2/5, 3/8, 5/13 and 8/21, ratios of Fibonacci numbers. On the first three, the Laves phases keep the law exactly in all 90 tests, including the foot atom for which the law is not proved. The stackings in which hexagonal layers never touch are exactly the configurations of the supersymmetric lattice fermions of Fendley, Schoutens and de Boer, whose ground states have the hexagonality of 6H.</p><p>Version 2 adds the 26-layer approximant (the law exact in all 90 tests) and a section on hard-core supersymmetric fermions (Fendley, Schoutens and de Boer).</p><p>The theorem is proved in the paper; the Laves walks are exact (rational arithmetic, #57's census engine), the law tested as polynomial identities.</p><p>The ideas and names are DICTO's. Computation and proof with Claude (Anthropic). Sources checked are listed in the paper. The study (scripts, exact results, the new weight walks) is attached. Licence CC BY-SA 4.0. More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "Hexagonality Law",
+  "Fibonacci stacking",
+  "golden ratio",
+  "quasiperiodic",
+  "aperiodic order",
+  "approximants",
+  "polytypes",
+  "close packing",
+  "rock salt",
+  "Laves phases",
+  "supersymmetric lattice fermions",
+  "hard-core fermions"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23717687",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23718636",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23396361",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23719275",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ]
+}
