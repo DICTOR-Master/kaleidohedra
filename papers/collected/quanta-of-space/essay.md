@@ -22,6 +22,8 @@ There is an honest difference. In that theory two neighbouring quanta share a fa
 
 This collection makes no claim about physics. It shares the question and the form: what are the smallest exact pieces from which space can be built, and how do they join?
 
+The rule of halves gives this form a precise case. However the layers of a close packing are stacked, repeating or never repeating, every hole is built from half-pieces of just two pure stackings, four kinds in all, each set by its own neighbouring layers (#57, #61). The Swap Rule is a conservation law: the two mixed pieces always add up to the two pure ones, so mixing moves volume between pieces but never creates or loses it. It holds in rock salt, cadmium iodide, zinc blende and the Laves phases (#64). The pieces are finite in kind, local in rule and conserved in sum.
+
 ## 6. The works as a study of quanta
 Read this way, the works fall into four chapters.
 
