@@ -1,4 +1,4 @@
-# Assemble the book "The Laws of Stacking" (placeholder title) from the published paper sources (DICTO 10-28).
+# Assemble the book "HexOct: The Laws of Stacking" (second edition, DICTO 10-29; first edition "The Laws of Stacking") from the published paper sources (DICTO 10-28).
 # Mechanical pass: each paper becomes a chapter (title, abstract, sections, theorems, figures kept word for word);
 # the meta line goes; "Sources checked", "Data and code" and "References" move to one appendix by chapter;
 # figures are copied into figures/<folder>/ and renumbered per chapter. Front matter and epilogue come from front.html
@@ -9,8 +9,9 @@ CH=[('Prologue','series-web-of-bonds',58),
     ('1','2026-10-26-rule-of-halves',57),('2','pyrochlore-halves',60),('3','swap-rule',61),('4','swap-crystals',64),
     ('5','the-focus',66),('6','random-stackings-faults',67),('7','fibonacci-stackings',69),
     ('8','real-polytypes',68),('9','real-materials-2',70),('10','real-materials-3',71),('11','real-materials-4',72),
-    ('12','real-materials-5',73),('13','magnets',74)]
-PART={'1':'Part I. The laws','8':'Part II. Real materials'}
+    ('12','real-materials-5',73),('13','magnets',74),
+    ('14','two-tiles',75)]
+PART={'1':'Part I. The laws','8':'Part II. Real materials','14':'Part III. HexOct'}
 styles=set(); chapters=[]; sources=[]; toc=[]
 cw=open(os.path.join(P,'collected','paper.html'),encoding='utf8').read()
 PAPERS={int(m.group(1)):(html.unescape(re.sub('<[^>]+>','',m.group(2))),m.group(3)) for m in re.finditer(r'<tr><td class="n">#(\d+)</td><td><b>(.*?)</b>.*?DICTO DOI: (10\.5281/zenodo\.\d+)',cw,re.S)}
@@ -34,12 +35,14 @@ def link_html(h):
     return ''.join(out)
 CORR=[('With this paper the series on real materials (#68, #70–#73) is complete.','The series on real materials (Chapters 8 to 12) was followed by a companion on magnets, Chapter 13.'),
       ('This study closes the line of work on materials.','This chapter closes the line of work on materials.')]
-INDEX_TERMS=['silicon carbide','silicon','germanium','diamond','lonsdaleite','ice','tin','cobalt','iron','titanium','zirconium','magnesium','hydrogen','CrCoNi','perovskite','BaRuO','BaMnO','LiCoO','cathode','GaAs','InP','nanowire','spin ice','kagome','pyrochlore','Mn<sub>3</sub>Sn','Mn<sub>3</sub>Ir','rock salt','cadmium iodide','zinc blende','Laves','Fibonacci','golden ratio','ANNNI','stacking fault','Pauling','Onsager','Jagodzinski','Ganesha','Janus','octet','rhombic dodecahedron']
+INDEX_TERMS=['HexOct','Wang','silicon carbide','silicon','germanium','diamond','lonsdaleite','ice','tin','cobalt','iron','titanium','zirconium','magnesium','hydrogen','CrCoNi','perovskite','BaRuO','BaMnO','LiCoO','cathode','GaAs','InP','nanowire','spin ice','kagome','pyrochlore','Mn<sub>3</sub>Sn','Mn<sub>3</sub>Ir','rock salt','cadmium iodide','zinc blende','Laves','Fibonacci','golden ratio','ANNNI','stacking fault','Pauling','Onsager','Jagodzinski','Ganesha','Janus','octet','rhombic dodecahedron']
 INDEX={}
 # pass 2 (DICTO 10-28 'remove unrelated content'): cut sections and clauses about other lines of work (4D solids, named
 # pairs, lists of other papers); theorems and proofs untouched. Sections renumbered after cuts.
 CUTSEC={'the-focus':['5. The map'],'series-web-of-bonds':['3. Named pairs along the way','The papers of the series']}
-EDITS={'the-focus':[
+EDITS={'two-tiles':[
+ ('The Endless Stack Cell: every close-packed stacking is a string of two layer tiles','HexOct: every close-packed stacking is a string of two layer tiles, the c-tile and the h-tile')],
+ 'the-focus':[
  (', the Swap Rule (#61), the White Queen 600-cell and its Cleo shells (#62, #63), and the Red Queen 120-cell with Aristotle\'s five pyramids at the cores of the four-dimensional solids (#65).',' and the Swap Rule (#61).'),
  ('space, in the flat stackings and in the four-dimensional solids alike, is shared out','space in the flat stackings is shared out'),
  ('when a stacking or a view changes, pieces change by swapping','when a stacking changes, pieces change by swapping'),
@@ -85,6 +88,8 @@ for label,folder,num in CH:
     for a,b in EDITS.get(folder,[]):
         if a not in body: print('EDIT MISS',folder,a[:50])
         body=body.replace(a,b)
+    if folder=='two-tiles':   # second edition (DICTO 10-29): the keyed HexOct study closes the chapter, before its conclusion
+        k=body.index('<h2>8. Conclusion</h2>'); body=body[:k]+open(os.path.join(HERE,'keyed.html'),encoding='utf8').read()+body[k:]
     body=cut_sections(body,folder)
     for a,b in CORR: body=body.replace(a,b)
     body=body.replace('this paper','this chapter').replace('This paper','This chapter')
@@ -110,7 +115,7 @@ table.toc td{border-bottom:1px dotted #ccc;padding:1.2mm 2mm} .titlepage{height:
 .titlepage h1{font-size:30pt} section.epi,section.app{break-before:page} section.app h3{font-size:10pt;margin-top:5mm} section.app p,section.app li{font-size:8.6pt}
 figure img{width:100%;display:block}'''
 doc=f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>The Laws of Stacking</title>
+<html lang="en"><head><meta charset="utf-8"><title>HexOct: The Laws of Stacking</title>
 <link rel="stylesheet" href="../paper.css"><style>{css}</style></head><body>
 <img class="watermark" src="../dicto-logo.png" alt="">
 {front.replace('__TOC__',tochtml)}
