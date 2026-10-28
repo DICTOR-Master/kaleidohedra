@@ -43,3 +43,19 @@ form in hexagonal stacking without blocked pairs; it needs locally cubic layers,
 layers cubic, #67). Consistent with the known hcp -> fcc shift of the metal in hydride formation; literature check next (sources
 to be listed) before any claim beyond the counts.
 Next: 4. Fe-Mn / high-entropy (fcc -> hcp epsilon by faults), 5. cobalt, 6. Zircaloy hydrides, 2. Ti-Nb-Zr limit.
+
+## Progress 10-28: 4. Fe-Mn TRIP/TWIP and high-entropy alloys (hea_faults.py, hea_faults.out) — DONE (reading)
+Standard model of these alloys (Olson and Cohen 1976): gamma_ISF = 2 rho dG(fcc->hcp) + 2 sigma; the intrinsic fault is a two-layer
+hcp embryo; low SFE -> epsilon-martensite (TRIP), medium -> twinning (TWIP). Read in the ANNNI form of #68 (Denteneer and van
+Haeringen's expressions): rho dG = 2(J1+J3), so 2 sigma = 4 J2 exactly and ESF - ISF = 4(J2+J3).
+CONCLUSION: the Olson-Cohen interface energy sigma is the measure of how far a material is from the Hexagonality Law: the law
+(two-layer roles) holds iff J2 = J3 = 0, i.e. sigma = 0 and ISF = ESF = 2 TSF = 2 rho dG. (Identification follows at once from the
+standard expressions; not claimed as new.)
+Data, CrCoNi DFT (Ding, Yu, Asta, Ritchie, arXiv 1806.00718 = PNAS 2018, read pp. 9-13): 2 sigma ~ 18 mJ/m^2 -> J2 ~ 4.5;
+random: ISF -42.9, ESF -27.8 (law off by 15); most ordered: ISF 30, ESF 66 (law off by 36); J1 between -14.5 and -1.5.
+So high-entropy alloys are the clearest case where the law FAILS: J2 is as large as J1 (local chemical order reaches across layers).
+Contrast: SiC volume (#68) J2 ~ 0; Si/Ge J2 ~ J1 too. Status: the law is exact for geometry (hole counts, hydrogen sites, this study
+step 1) and for volumes of SiC; energies of metals with low SFE need the second-neighbour term.
+Sources checked: arXiv 1806.00718 (Ding et al.); web search "first-principles intrinsic extrinsic stacking fault twin boundary energy
+CoCrNi CoCrFeMnNi Fe-Mn ANNNI" (also listed Ikeda et al. Entropy 2018, PMC7513178, not read). Library check to do for
+Olson-Cohen 1976 and Denteneer-van Haeringen 1987 before any paper text.
