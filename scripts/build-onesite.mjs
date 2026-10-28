@@ -23,9 +23,13 @@ export const DOORS = {
   'kaleidohedra.dictospheres.com': '_k',
   'rhombiverse.dictospheres.com': '_r',
   'polyhedraverse.dictospheres.com': '_p',
+  // test addresses of the one-site Vercel project, to check every door before (and after) the real addresses point here
+  'dicto-onesite-k.vercel.app': '_k',
+  'dicto-onesite-r.vercel.app': '_r',
+  'dicto-onesite-p.vercel.app': '_p',
 };
 const APP = { _k: 'kaleidohedra', _r: 'rhombiverse', _p: 'polyhedraverse' };
-const HOME = ['dictospheres.com', 'www.dictospheres.com'];
+const HOME = ['dictospheres.com', 'www.dictospheres.com', 'dicto-onesite.vercel.app'];
 const DOOR_FILES = ['index.html', 'guide.html', 'legal.html', 'robots.txt', 'sitemap.xml', 'googlec4db6e568a2c28ac.html'];
 const PRETTY = { '/guide': '/guide.html', '/terms': '/legal.html?doc=terms', '/privacy': '/legal.html?doc=privacy', '/security': '/legal.html?doc=security' };
 

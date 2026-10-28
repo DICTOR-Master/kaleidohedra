@@ -4,6 +4,7 @@
   "description": "Kaleidohedra and Rhombiverse by DICTO: one app with two front doors (KRP). devDependencies has esbuild, used ONLY by scripts/build.mjs at Vercel build time (SITE=kaleidohedra|rhombiverse picks the front door) to minify src/**/*.js -- local dev stays plain ES modules with no build step. three (the same version as index.html's import map, which the browser uses) is here only so the unit tests can import the DICTO screen.",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "build:onesite": "node scripts/build-onesite.mjs && rm -rf .vercel/output && mkdir -p .vercel && cp -r dist-onesite/.vercel/output .vercel/output",
     "verify:i18n": "node scripts/verify-i18n.mjs",
     "verify:targets": "node scripts/verify-targets.mjs",
     "verify:copy": "node scripts/verify-copy.mjs",
