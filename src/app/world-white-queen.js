@@ -27,6 +27,7 @@ export const WQ_SNAP = 40;
 export const WQ_DEFAULT = { from: 'vertex-first', to: 'cell-first' };
 export const WQ_MODES = ['shadow', 'slice', 'shells'];
 export const WQ_SHELLS = CLEO_SHELLS.length;   // 15
+export const WQ_CUT = [0.55, 0.45, 1];   // the Whole view's cut: its normal points at the Shells view's starting camera
 export const WQ_ARISTOTLE_ACTION = 'tool:aristotleWorld:icosahedron';   // the Cleo-Icos in Aristotle's Pyramid (paper #44)
 // the study picture's colours (matplotlib viridis from 0.15 to 0.95), the core gold
 const VIRIDIS = [[0, 0x440154], [0.125, 0x482878], [0.25, 0x3e4989], [0.375, 0x31688e], [0.5, 0x26828e], [0.625, 0x1f9e89], [0.75, 0x35b779], [0.875, 0x6ece58], [1, 0xfde725]];
@@ -86,7 +87,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
   group.visible = false;
   scene.add(group);
   // the view: Shadow (the turning from → to, the slider's place u) or Slice (a direction and its stop k)
-  const view = { mode: 'shadow', ...WQ_DEFAULT, u: 0, sliceDir: 'vertex-first', sliceK: 0, shells: 1, halves: false, apart: 0, lineUp: false };
+  const view = { mode: 'shadow', ...WQ_DEFAULT, u: 0, sliceDir: 'vertex-first', sliceK: 0, shells: 1, halves: false, apart: 0, lineUp: false, whole: false };
   try {
     const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (WQ_MODES.includes(d?.mode)) view.mode = d.mode;
@@ -96,6 +97,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     if (Number.isInteger(d?.shells)) view.shells = Math.max(1, Math.min(WQ_SHELLS, d.shells));
     view.halves = d?.halves === true;
     view.lineUp = d?.lineUp === true;
+    view.whole = d?.whole === true;
     if (Number.isFinite(d?.apart)) view.apart = Math.max(0, Math.min(1000, Math.round(d.apart)));
     if (Number.isInteger(d?.sliceK)) view.sliceK = Math.max(0, Math.min(SLICE_STOPS[DIRECTIONS.indexOf(view.sliceDir)].length - 1, d.sliceK));
   } catch { /* defaults */ }
@@ -237,10 +239,14 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
   group.add(halvesGroup, shellsGroup);
   const clear = (g) => { for (const c of [...g.children]) { g.remove(c); c.geometry.dispose(); c.material.dispose(); } };
   /** Cells (indices into CELLS) at points Q as one mesh (4 triangles each) and their edges. */
-  function cellsMesh(g, list, Q, hex, { opacity: op = 1, edge = SLICE_EDGE, edgeOpacity = 1, offset = [0, 0, 0], order = 3 } = {}) {
-    const pos = [], lines = [], at = (k) => Q[k].map((c, i) => c + offset[i]);
+  function cellsMesh(g, list, Q, hex, { opacity: op = 1, edge = SLICE_EDGE, edgeOpacity = 1, offset = [0, 0, 0], order = 3, glow = GLOW * 0.8, roughness = 0.6, shrink = 1 } = {}) {
+    const pos = [], lines = [];
     for (const ci of list) {
       const c = CELLS[ci];
+      // shrink < 1: each cell drawn a little smaller about its own centre, so shared faces never coincide (no flicker) and every
+      // cell reads as its own piece
+      const m = [0, 1, 2].map((i) => c.reduce((a, k) => a + Q[k][i], 0) / c.length);
+      const at = (k) => Q[k].map((x, i) => m[i] + shrink * (x - m[i]) + offset[i]);
       for (const [a, b, d] of [[0, 1, 2], [0, 1, 3], [0, 2, 3], [1, 2, 3]]) pos.push(...at(c[a]), ...at(c[b]), ...at(c[d]));
       for (let a = 0; a < 4; a++) for (let b = a + 1; b < 4; b++) lines.push(...at(c[a]), ...at(c[b]));
     }
@@ -249,7 +255,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
       const geo = new THREE.BufferGeometry();
       geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
       geo.computeVertexNormals();
-      const mat = new THREE.MeshStandardMaterial({ color: hex, side: THREE.DoubleSide, flatShading: true, roughness: 0.6, emissive: new THREE.Color(hex).multiplyScalar(GLOW * 0.8), transparent: see, opacity: op, depthWrite: !see, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
+      const mat = new THREE.MeshStandardMaterial({ color: hex, side: THREE.DoubleSide, flatShading: true, roughness, emissive: new THREE.Color(hex).multiplyScalar(glow), transparent: see, opacity: op, depthWrite: !see, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
       if (see) mat.userData.hollow = true;
       const m = new THREE.Mesh(geo, mat); m.frustumCulled = false; if (see) m.renderOrder = order; g.add(m);
     }
@@ -269,14 +275,28 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     cellsMesh(halvesGroup, h.back, P, BACK, { opacity: 0.55, edge: 0xcfe0ff, edgeOpacity: 0.7, offset: [0, 0, -off], order: 4 });
     halvesShown = { front: h.front.length, back: h.back.length, side: h.side.length };
   }
-  let shellsRadius = 1;
+  let shellsRadius = 1, wholeKept = [];
   function drawShells() {
     clear(shellsGroup);
     const Q = CLEO_POINTS.map((p) => p.map((c) => c * WS)), n = view.shells;
+    if (view.whole) {
+      // Whole (DICTO 2026-10-28): all 15 shells at once, cut open like an onion: the half facing the starting camera removed (a cell
+      // stays when its centre lies behind the cut through the centre), every shell solid in its own colour, lit (little glow) so the
+      // nested shells read in depth
+      const cut = new THREE.Vector3(...WQ_CUT).normalize(); wholeKept = [];
+      for (let k = 0; k < WQ_SHELLS; k++) {
+        const keep = CLEO_SHELLS[k].cells.filter((ci) => { const c = CELLS[ci]; let d = 0; for (const v of c) d += Q[v][0] * cut.x + Q[v][1] * cut.y + Q[v][2] * cut.z; return d < 0; });
+        wholeKept.push(keep.length);
+        cellsMesh(shellsGroup, keep, Q, shellColour(k), { opacity: 1, edge: 0x1d2027, edgeOpacity: 0.5, glow: 0.12, roughness: 0.45, shrink: 0.94 });
+      }
+      shellsRadius = Math.max(...Q.map((p) => Math.hypot(...p)).filter(Number.isFinite));
+      shown = { shells: WQ_SHELLS, whole: true };
+      return;
+    }
     // the newest shell solid (a touch see-through, so the gaps of shells 6 and 8 show what is inside), the ones inside it faint
     for (let k = 0; k < n; k++) {
       const newest = k === n - 1;
-      cellsMesh(shellsGroup, CLEO_SHELLS[k].cells, Q, shellColour(k), newest ? { opacity: 0.9, edge: 0xf3ead2, edgeOpacity: 0.85 } : { opacity: 0.1, edge: 0xffffff, edgeOpacity: 0.12 });
+      cellsMesh(shellsGroup, CLEO_SHELLS[k].cells, Q, shellColour(k), newest ? { opacity: 0.9, edge: 0xf3ead2, edgeOpacity: 0.85, glow: 0.16, roughness: 0.45 } : { opacity: 0.1, edge: 0xffffff, edgeOpacity: 0.12 });
     }
     shellsRadius = Math.max(...CLEO_SHELLS[n - 1].cells.flatMap((c) => CELLS[c]).map((k) => Math.hypot(...Q[k])));
     shown = { shells: n };
@@ -297,7 +317,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
   const R = 2 * WS;   // the 600-cell's circumradius: every shadow and slice fits inside it
   const fitShadow = () => fitView([0, 0, 0], R * 1.12, [0.3, 0.25, 1]);
   // the Shells view frames the newest shell (they grow from the small core to the outer wrap), zooming in as well as out
-  const fit = () => (view.mode === 'slice' && view.lineUp ? fitView([0, 0, 0], R * 1.12, [0, 0, 1], true) : view.mode === 'shells' ? fitView([0, 0, 0], shellsRadius * 1.15, [0.55, 0.45, 1], true) : view.mode === 'shadow' && view.halves && view.apart ? fitView([0, 0, 0], R * (1.12 + view.apart / 1000), [1, 0.35, 0.55], true) : fitShadow());
+  const fit = () => (view.mode === 'slice' && view.lineUp ? fitView([0, 0, 0], R * 1.12, [0, 0, 1], true) : view.mode === 'shells' ? fitView([0, 0, 0], shellsRadius * 1.15, WQ_CUT, true) : view.mode === 'shadow' && view.halves && view.apart ? fitView([0, 0, 0], R * (1.12 + view.apart / 1000), [1, 0.35, 0.55], true) : fitShadow());
 
   // ---- panel ----
   const panel = document.createElement('div');
@@ -316,6 +336,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     <div class="w4d-row w4d-options wq-link-row"><button type="button" data-wq-link></button></div>
     <div class="w4d-row w4d-options wq-lineup-row"><button type="button" data-wq-lineup></button></div>
     <div class="w4d-row st-note wq-legend"></div>
+    <div class="w4d-row w4d-options wq-whole-row"><button type="button" data-wq-whole></button></div>
     <div class="w4d-row wq-shells-row"><label class="hull-pick"><span class="wq-shells-label"></span> <input type="range" class="st-slider" min="1" max="${CLEO_SHELLS.length}" step="1"></label></div>
     <div class="w4d-row ch-param-caption" aria-live="polite"></div>
     <div class="w4d-row st-note fold"></div>`;
@@ -347,8 +368,12 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
       legend.innerHTML = [qk.kite ? sw(ROSE, 'wq.legend.kite') : '', qk.square ? sw(DEEP_BLUE, 'wq.legend.square') : '', sw(BLUE, 'wq.legend.quad'), sw(IVORY, 'wq.legend.triangle')].join('');
     }
     // at the Cleo core, the back link to the Cleo-Icos in Aristotle's Pyramid (each shape lives in one place, the others link)
-    panel.querySelector('.wq-link-row').hidden = !(shells && view.shells === 1);
+    panel.querySelector('.wq-link-row').hidden = !(shells && view.shells === 1 && !view.whole);
     panel.querySelector('[data-wq-link]').textContent = t('wq.link.aristotle', L);
+    const wb = panel.querySelector('[data-wq-whole]');
+    wb.textContent = t('wq.whole', L); wb.classList.toggle('active', view.whole); wb.setAttribute('aria-pressed', String(view.whole));
+    panel.querySelector('.wq-whole-row').hidden = !shells;
+    panel.querySelector('.wq-shells-row').hidden = !shells || view.whole;   // nothing unnecessary shown: the slider builds shells one by one
     halvesBtn.textContent = t('wq.halves', L); halvesBtn.classList.toggle('active', view.halves); halvesBtn.setAttribute('aria-pressed', String(view.halves));
     for (const end of ['from', 'to', 'slice']) {
       const lab = panel.querySelector(`[data-wq-label="${end}"]`);
@@ -362,7 +387,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
       });
     }
     const nm = slice ? namedAt(view.sliceDir, shown.stop.height) : null;
-    caption.classList.toggle('wq-gold', !!nm || (shells && view.shells === 1));
+    caption.classList.toggle('wq-gold', !!nm || (shells && view.shells === 1 && !view.whole));
     if (shadow) {
       panel.querySelector('.wq-param-label').textContent = t('wq.param', L, { a: t(`wq.dir.${view.from}`, L), b: t(`wq.dir.${view.to}`, L) });
       input.value = String(view.u);
@@ -370,6 +395,9 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
       note.textContent = t(view.halves ? 'wq.note.halves' : 'wq.note', L);
       panel.querySelector('.wq-apart-label').textContent = t('wq.halves.param', L);
       apartInput.value = String(view.apart);
+    } else if (shells && view.whole) {
+      caption.textContent = t('wq.shells.whole', L);
+      note.textContent = t('wq.note.shells', L);
     } else if (shells) {
       panel.querySelector('.wq-shells-label').textContent = t('wq.shells.param', L, { n: view.shells, total: WQ_SHELLS });
       shellsInput.value = String(view.shells);
@@ -391,6 +419,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
   });
   apartInput.addEventListener('input', () => { view.apart = Number(apartInput.value); save(); draw(); });
   apartInput.addEventListener('change', fit);
+  panel.querySelector('[data-wq-whole]').addEventListener('click', () => { view.whole = !view.whole; save(); draw(); fit(); });
   shellsInput.addEventListener('input', () => { const n = Number(shellsInput.value); if (n === view.shells) return; view.shells = n; save(); draw(); fit(); });
   // the slice slider stops only at the atlas's stops: the nearest one
   sliceInput.addEventListener('input', () => {
@@ -465,7 +494,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
       if (!shown) return null;
       if (view.mode === 'shells') {
         const k = view.shells - 1;
-        return { mode: 'shells', shells: view.shells, newest: { k, pieces: CLEO_SHELLS[k].cells.length }, colours: Array.from({ length: view.shells }, (_, i) => shellColour(i)), radius: shellsRadius };
+        return { mode: 'shells', whole: view.whole, wholeKept: view.whole ? wholeKept.slice() : null, shells: view.shells, newest: { k, pieces: CLEO_SHELLS[k].cells.length }, colours: Array.from({ length: view.shells }, (_, i) => shellColour(i)), radius: shellsRadius };
       }
       if (view.mode === 'slice') {
         const s = shown, nm = namedAt(view.sliceDir, s.stop.height);

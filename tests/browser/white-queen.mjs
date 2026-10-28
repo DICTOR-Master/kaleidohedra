@@ -152,6 +152,17 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
       assert.equal(await page.locator(`${P} .ch-param-caption.wq-gold`).count(), n === 1 ? 1 : 0);
     }
     checks++;
+    // Whole (DICTO 2026-10-28): all 15 shells cut open; the slider steps aside; every shell keeps cells on the far side of the cut
+    await page.tap(`${P} [data-wq-whole]`); await page.waitForTimeout(500);
+    st = await probe(page);
+    assert.ok(st.whole && st.wholeKept.length === 15 && st.wholeKept.every((n) => n > 0), `${tag}: Whole keeps cells of every shell ${JSON.stringify(st.wholeKept)}`);
+    const kept = st.wholeKept.reduce((a, b) => a + b, 0);
+    assert.ok(kept > 240 && kept < 360, `${tag}: Whole shows about half the 600 cells (${kept})`);
+    assert.ok(!(await page.locator(`${P} .wq-shells-row`).isVisible()), `${tag}: Whole hides the shells slider`);
+    assert.equal(await caption(), t('wq.shells.whole', 'en'), `${tag}: Whole caption`);
+    await page.tap(`${P} [data-wq-whole]`); await page.waitForTimeout(400);
+    st = await probe(page); assert.ok(!st.whole && (await page.locator(`${P} .wq-shells-row`).isVisible()), `${tag}: Whole off again`);
+    checks++;
     // the links both ways with Aristotle's Pyramid (paper #44): the back link only at the Cleo core
     assert.ok(!(await page.locator(`${P} [data-wq-link]`).isVisible()), `${tag}: no Aristotle link beyond the core`);
     await shl.fill('1'); await page.waitForTimeout(250);
@@ -258,6 +269,9 @@ for (const [dev, viewport] of Object.entries({ phone: { width: 390, height: 844 
     await page.locator(`${P} .wq-shells-row input`).fill(String(n)); await page.waitForTimeout(1100);
     await page.screenshot({ path: `${SH}/${dev}-shells-${n}.png` });
   }
+  await page.click(`${P} [data-wq-whole]`); await page.waitForTimeout(1100);
+  await page.screenshot({ path: `${SH}/${dev}-shells-whole.png` });
+  await page.click(`${P} [data-wq-whole]`); await page.waitForTimeout(300);
   // kite slices lined up, in normal perspective and in full reverse perspective
   await page.click(`${P} [data-wq-mode="slice"]`); await page.click(`${P} [data-wq-lineup]`);
   for (const [dir, h] of [['edge-first', '0'], ['cell-first', '11/8 + 5/8√5']]) {
