@@ -1,0 +1,71 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-28",
+ "access_right": "open",
+ "title": "The Hexagonality Law in Real Materials IV: Oxides",
+ "description": "<p>Chemists judge oxide structures with two rules of thumb: Pauling's third rule (octahedra that share faces are unstable) and Goldschmidt's tolerance factor (a large A cation pushes a perovskite towards hexagonal stacking). DICTO proposed that three-dimensional stacking rules can replace such rules of thumb. We show that both rules are measured by one number, the hexagonality h of the oxygen stacking (#66). In a hexagonal perovskite ABO<sub>3</sub> of any stacking, each B octahedron shares faces with 2h neighbours and corners with 6(1 − h). In a layered battery cathode LiMO<sub>2</sub>, the lithium–metal octahedra that share a face number 2h per lithium site on average. Measured data follow the law: the volumes of four BaRuO<sub>3</sub> polytypes lie on one straight line in h (within 0.2% for the three precisely measured ones), and pressure walks the structure down h, 9R → 4H → 6H → 3C. In Li<sub>x</sub>CoO<sub>2</sub> on charge, the H1-3 phase puts all its face-sharing into the empty gaps and keeps lithium only where it shares no face, giving the bound x ≤ 1 − h for the stable phases; its layer spacing, 4.52 Å, lies on the law line between O3 and O1 (4.525 Å). The law has limits: in BaMnO<sub>3</sub> the volume follows it but the energy does not.</p><p>The Theorem and Proposition are proved in the paper; the counts were checked from explicit coordinates; all material data are published values (sources listed).</p><p>The ideas and names are DICTO's. Computation and proof with Claude (Anthropic). Sources checked are listed in the paper. The study (scripts and results) is attached. Licence CC BY-SA 4.0. More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "Hexagonality Law",
+  "hexagonal perovskites",
+  "polytypism",
+  "Pauling's rules",
+  "tolerance factor",
+  "layered oxide cathodes",
+  "LiCoO2",
+  "lithium-ion batteries",
+  "stacking sequence",
+  "close-packed structures",
+  "BaRuO3"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23717687",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23719275",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23723565",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23726064",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ],
+ "subjects": [
+  {
+   "term": "MSC2020 52C17: Packing and covering in n dimensions",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C17",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 74E15: Crystalline structure",
+   "identifier": "https://zbmath.org/classification/?q=cc:74E15",
+   "scheme": "url"
+  }
+ ]
+}
