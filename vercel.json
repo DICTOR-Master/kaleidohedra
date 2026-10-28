@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "if [ -n \"$ONESITE\" ]; then npm run build:onesite; else npm run build; fi",
   "outputDirectory": "dist",
   "rewrites": [
     {
