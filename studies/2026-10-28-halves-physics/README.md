@@ -16,3 +16,16 @@ Rodriguez-Horta et al 2017; Ganesh-Nasr 2023; Bianchi-Dona-Speziale 2011; Rovell
 Surya 2019; Tsuda-Fujiwara 2020; De Felice-Fabri 2001; Blatov 2004. Web: arXiv cond-mat/9709191; arXiv 2306.17756
 (Ising-type additivity model for polytype band gaps); Pitt Choyke tribute; arXiv 1404.3588; PRB 49 7564;
 ECS 236 Paper124142; arXiv 2401.09399, 1111.6938, 1704.00577 (CDT); arXiv 1508.05937, 2303.01761 (Voronoi fcc/hcp).
+
+## Result 10-28: the Hexagonality Law (placeholder name) — exact check PASSED
+Script scripts/hexlaw.py (+ hexlaw_cdi2.py), on the exact weight walks of Splash Rules run 2 (dbb ~/kres-tmp/splash2/raw),
+every close-packed stacking up to 6 layers, every lam-window, every role:
+total volume of a role over one period = n_c·alpha(lam) + n_h·beta(lam), alpha from ABC, beta from AC, exact (sympy).
+- pyrochlore #60 96/96; rock salt/NiAs 80/80; zinc blende (MU ±1/20, ±1/10) 192+176+176+144; Laves 120/120.
+- CdCl2/CdI2: two alternating kinds of layer (filled/empty); linear in the hexagonality of EACH kind of layer
+  (4 unknowns per role, 6 words) consistent 80/80. (Single hexagonality fails only for ACBC, ACBCAC, whose h layers are all one kind.)
+- Total 1230 + 80 exact tests, 0 failures.
+- Holds even where the rule of halves does not (zinc blende empty holes; the Laves foot atom M0, which reads 3 layer types).
+- Proof where pieces read only the two layers round their gap: Swap Rule <=> V(xy)=f(x)+g(y) => sum telescopes to counts.
+  Wider-context roles: exact computation only (words up to 6 layers), proof open.
+Physics counterpart: linear-in-hexagonality laws of polytypes (Choyke-Hamilton-Patrick 1964 band gap; lattice constants).
