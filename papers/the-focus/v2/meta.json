@@ -1,0 +1,69 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "version": "2",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-28",
+ "access_right": "open",
+ "title": "The Focus: One Study of Space in Pieces, and the Hexagonality Law",
+ "description": "<p>DICTO concluded that “everything is the same study now: all aspects of everything we have been looking at have come to a focus”. This paper sets out that focus: one map of how the threads of the recent papers meet, with the status of every link, and one new theorem that ties the flat stackings together. Stack equal balls in layers, each layer cubic or hexagonal by its neighbours, and share space out among the balls and the holes between them by weight, as real crystals do. <b>The Hexagonality Law:</b> in every stacking, each kind of piece totals exactly what its layers would hold in their own pure stackings, so the total is a straight line in the number of hexagonal layers, whatever their order. We prove it from the Swap Rule (#61) wherever a piece is fixed by its two neighbouring layers, show that it is equivalent to the Swap Rule there, and check it exactly in 1064 cases across pyrochlore, rock salt, cadmium iodide, zinc blende and the Laves phases, with no failure; in cadmium iodide, whose filled and empty layers alternate, it holds for each kind of layer separately. It holds even for the one Laves piece that reads three layers, where it is not yet proved. In the physics of stacking variants, straight-line laws in the hexagonality have been measured for sixty years; this is an exact geometric law of that form.</p><p>Proof: the Hexagonality Law is proved from the Swap Rule (and shown equivalent to it) wherever a piece is fixed by its two neighbouring layers; exact check (sympy, rational arithmetic) on the weight walks of #60 and #64, every close-packed stacking up to six layers, 1064 tests, none failing. The paper also maps every thread of the recent papers with its status. DICTO's radial cell projection (Polyhedraverse) is listed as his independent rediscovery of the classical reflection construction (Coxeter), made when he did not yet know it; no priority is claimed.</p><p>Version 2 corrects the wording of the radial cell projection row: an independent rediscovery.</p><p>The ideas and names are DICTO's. Computation and proof with Claude (Anthropic). Sources checked are listed in the paper. The study (scripts, exact results, the weight walks used) is attached. Licence CC BY-SA 4.0. More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "The Focus",
+  "Hexagonality Law",
+  "Swap Rule",
+  "rule of halves",
+  "polytypes",
+  "hexagonality",
+  "close packing",
+  "power diagram",
+  "ANNNI",
+  "600-cell",
+  "120-cell",
+  "quanta of space"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23647898",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23678750",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23682596",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23709753",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23690856",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23716140",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ]
+}
