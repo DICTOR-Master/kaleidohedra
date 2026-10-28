@@ -1,0 +1,86 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-28",
+ "access_right": "open",
+ "title": "Spin Ice and Kagome Magnets on Every Stacking",
+ "description": "<p>Two families of magnets are built from corner-sharing triangles and tetrahedra: spin ice, whose magnetic atoms sit on the pyrochlore network of DICTO Janus c/h Pyrochlore (#60), and the kagome antiferromagnets Mn<sub>3</sub>X, whose manganese atoms form kagome nets. Both are close-packed layers, so both can stack cubic, hexagonal or any mixture. We count exactly what changes with the share h of hexagonal layers. On the pyrochlore network of any stacking, three quarters of the sites lie in kagome layers and one quarter in triangular layers; per tetrahedron the boat-shaped six-loops number 3h/2 and the chair-shaped 2 − 3h/2. Yet the closed loops of the network do not see the stacking at all: on five stackings the numbers of closed non-backtracking loops of every length from 6 to 34 bonds are identical, while the shells of neighbours differ by up to 5%. We call this the Loop Equality (computed, conjecture for all lengths). It gives a counting reason why the frozen-in entropy of spin ice and of water ice is the same for cubic and hexagonal stacking, as recent tensor-network work finds, and predicts the same value for every stacking, the disordered ice of clouds included. In the kagome magnets each manganese atom lies on exactly 1 + 3(1 − h) kagome planes: four in cubic Mn<sub>3</sub>Ir, kagome in all directions, one in hexagonal Mn<sub>3</sub>Sn, kagome in layers only.</p><p>Theorems 1 and 2 are proved in the paper and checked from explicit coordinates; the Loop Equality is computed through length 34 and stated as a conjecture for all lengths; sources are listed.</p><p>The ideas and names are DICTO's. Computation and proof with Claude (Anthropic). Sources checked are listed in the paper. The study (scripts and results) is attached. Licence CC BY-SA 4.0. More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "Hexagonality Law",
+  "spin ice",
+  "pyrochlore lattice",
+  "kagome lattice",
+  "residual entropy",
+  "ice rules",
+  "non-backtracking walks",
+  "Mn3Sn",
+  "Mn3Ir",
+  "anomalous Hall effect",
+  "polytypism"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23647898",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23678750",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23682596",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23709753",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23717687",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23728287",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23728921",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ],
+ "subjects": [
+  {
+   "term": "MSC2020 05C38: Paths and cycles",
+   "identifier": "https://zbmath.org/classification/?q=cc:05C38",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 82D40: Statistical mechanics of magnetic materials",
+   "identifier": "https://zbmath.org/classification/?q=cc:82D40",
+   "scheme": "url"
+  }
+ ]
+}
