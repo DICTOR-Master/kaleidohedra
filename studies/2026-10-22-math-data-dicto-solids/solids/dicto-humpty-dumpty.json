@@ -4,7 +4,7 @@
  "paper": "#63 The White Queen 600-cell",
  "dicto_doi": "10.5281/zenodo.23690856",
  "convex": true,
- "status": "new (the real 48-vertex cell-first slice of the 600-cell, a convex egg of 92 triangles; not found in the sources checked, #63)",
+ "status": "known (corrected in version 5): the cell-first section of the 600-cell at height 1 + sqrt5/2 is one of the sections drawn by Alicia Boole Stott (1900, her cell-first series through the corner layers), read for #63 version 3; the exact solid, the convex egg of 92 triangles and the name are #63's and DICTO's; D85 is kept (D-numbers are never reused)",
  "scale_note": "frame: the 600-cell of #62/#63 (vertices the permutations of (+-2, 0, 0, 0), (+-1, +-1, +-1, +-1) and the even permutations of (+-phi, +-1, +-1/phi, 0); circumradius 2, edge sqrt5 - 1), cut by the 3-space at height 1 + sqrt5/2 along the cell-first direction d = the centre of the cell (0, 24, 25, 40) = (7/8 + 3sqrt5/8, 3/8 + sqrt5/8, 0, 1/4). Coordinates: the imaginary part of the quaternion product conj(d) p of each point p of the cut, which is the slice turned into R^3 (centre at the origin) and scaled by |d| = sqrt((7 + 3sqrt5)/4) = 1.8512: the scale at which the slice is exact in Q(sqrt5) (unscaled, an orthonormal frame needs sqrt(7 + 3sqrt5) as well). Divide lengths by |d| and squared lengths by 7/4 + 3sqrt5/4 for the 600-cell of circumradius 2. Humpty Dumpty: 48 corners (12 of degree 8, 36 of degree 5), 138 edges of eight lengths (ratio up to (5 + sqrt5)/2), 92 triangles; tetrahedral symmetry Td (#63 section 7).",
  "source": {
   "app": "study",

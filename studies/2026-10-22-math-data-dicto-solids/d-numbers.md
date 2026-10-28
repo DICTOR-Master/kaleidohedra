@@ -169,3 +169,30 @@ D is for DICTO's new shapes, so these get none. Listed so DICTO can see them.
    and Rhombo-K (#56), and the Icosaxes Bloom, Bud and Seed, Lotus Jewel Bloom, Bud and Seed, and the Icosaxes Kagome (#59).
 6. (version 4) Shadow-17: DECIDED by DICTO, 28 October 2026: new construction from a known piece (J11), D86. Fallen Humpty
    (#63; Slice-48 in #62) is named but numeric only, so not in the dataset or the inventory yet; it would take the next free number.
+
+## D87–D101: version 5 (2026-10-28)
+
+The named slices of #63 (version 3) and #65 (version 2), DICTO's names of 28 October 2026, numbered in the order of the papers'
+appendix rows (W1–W62, then R1–R124). D1–D86 are unchanged.
+
+| D | name | kind | atlas row | paper |
+|---|---|---|---|---|
+| D87 | Lion | solid | W1 | #63 |
+| D88 | Jabberwock | solid | W3 | #63 |
+| D89 | Tweedledum | solid | W5 | #63 |
+| D90 | Tweedledee | solid | W22 | #63 |
+| D91 | Mad Hatter | solid | W28 | #63 |
+| D92 | March Hare | solid | W30 | #63 |
+| D93 | Jubjub | solid | W43 | #63 |
+| D94 | Alice | solid | W49 | #63 |
+| D95 | White Rabbit | solid | W51 | #63 |
+| D96 | Haigha | solid | R33 | #65 |
+| D97 | Hatta | solid | R35 | #65 |
+| D98 | Red King | solid | R77 | #65 |
+| D99 | Walrus | solid | R80 | #65 |
+| D100 | Red Knight | solid | R113 | #65 |
+| D101 | White Knight | solid | R115 | #65 |
+
+No D-number: Alicia (W48), the Unicorn (W58) and the Bandersnatch (W60) are cell-first sections through corner layers, which are in
+Alicia Boole Stott's 1900 series (read for #63 version 3), so they are known shapes; they are in the dataset with DICTO's names.
+Correction: Humpty Dumpty (W56, D85) is also one of her sections. Its status is now "known"; D85 is kept, as D-numbers are never reused.

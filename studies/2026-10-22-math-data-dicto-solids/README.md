@@ -1,6 +1,6 @@
 # DICTO solids: exact coordinates (math-data dataset)
 
-Created by DICTO · [dictospheres.com](https://dictospheres.com) · Licence CC BY-SA 4.0 · 2026-10-22 · Version 2: 2026-10-24 · Version 3: 2026-10-27 · **Version 4: 2026-10-28**
+Created by DICTO · [dictospheres.com](https://dictospheres.com) · Licence CC BY-SA 4.0 · 2026-10-22 · Version 2: 2026-10-24 · Version 3: 2026-10-27 · Version 4: 2026-10-28 · **Version 5: 2026-10-28**
 
 Exact geometry of named convex and non-convex polyhedra found or named by DICTO (artist, Osaka), taken from his published papers
 and the Kaleidohedra findings archive, with lattice packings where a published result says the solid tiles space, and the published
@@ -8,6 +8,22 @@ packings that do not fill space. Every number is exact in a real number field st
 and 2 except two, ℚ(∛2) for Samson and Delilah, version 2; version 3 adds ℚ and ℚ(t), t the root of an irreducible cubic, for Sonsam and
 Lahdeli; version 4 adds ℚ(√3) for Ganesha) and is re-proved by `check.py` from the data files alone; the only exception is the unit-volume copy of each solid, whose scale
 is a cube root (stored exactly as a symbolic expression, with decimal corners).
+
+## What is new in version 5 (2026-10-28)
+
+- **Eighteen named slices** of the two four-dimensional queens, DICTO's names, each with a unit-volume copy, all convex and exact in ℚ(√5).
+  Codes are the rows of the appendix tables of #63 *The White Queen 600-cell* (version 3, W1–W62) and #65 *The Red Queen 120-cell* (version 2,
+  R1–R124); a cut inside a gap is taken at the gap's midpoint:
+  - 600-cell: **Lion** (W1, D87), **Jabberwock** (W3, D88), **Tweedledum** (W5, D89), **Tweedledee** (W22, D90), **Mad Hatter** (W28, D91),
+    **March Hare** (W30, D92), **Jubjub** (W43, D93), **Alicia** (W48), **Alice** (W49, D94), **White Rabbit** (W51, D95), **Unicorn** (W58),
+    **Bandersnatch** (W60);
+  - 120-cell: **Haigha** (R33, D96), **Hatta** (R35, D97), **Red King** (R77, D98), **Walrus** (R80, D99), **Red Knight** (R113, D100),
+    **White Knight** (R115, D101).
+- Alicia, the Unicorn and the Bandersnatch are cell-first sections through corner layers, which are in Alicia Boole Stott's 1900 series:
+  known shapes, no D-number. **Correction:** Humpty Dumpty (W56, D85) is one of her sections too; its status is now "known", D85 kept.
+- Each slice is built by the studies' own exact code (`build/build_v5.py`; sources `q5.py`, `polytopes.py`, `atlas600.json`,
+  `atlas120.json`) and checked against the atlas row: f-vector, faces by sides, and every squared edge length, exactly (109 build checks).
+- Every earlier file and check is unchanged and passes as before (1458 checks in all, 62 solids).
 
 ## What is new in version 4 (2026-10-28)
 
@@ -70,7 +86,7 @@ is a cube root (stored exactly as a symbolic expression, with decimal corners).
 | `index.csv` | inventory of every named shape (also the ones not in this dataset), with its universal number (if any), status, finding, DICTO DOI, whether it is in the dataset and in Polyhedraverse |
 | `d-numbers.md` | DICTO's D-numbers: the scheme, the list D1–D86, and the shapes without any number |
 | `check.py` | standalone verifier (python3 + sympy) |
-| `build/` | the scripts that generated the files (`exactlib.py`, `build_og.py`, `build_pv.py`, `build_extra.py`, `build_v2.py`, `build_v3.py`, `build_v4.py`, `make_index.py`), their logs, and copied source data (version 2: the three exact study scripts of #48 and #51 in `build/sources/`; version 3: `exact_a15.py` of #55 and the census engine `engine.py`, `networks.py`, `stackings.py` of #53/#56/#57; version 4: `splash.py` of #61, `q5.py` and `polytopes.py` of #62/#63, the #62 numerical Shadow-17 form and the #63 atlas row of the 48-vertex slice) |
+| `build/` | the scripts that generated the files (`exactlib.py`, `build_og.py`, `build_pv.py`, `build_extra.py`, `build_v2.py`, `build_v3.py`, `build_v4.py`, `build_v5.py`, `make_index.py`), their logs, and copied source data (version 2: the three exact study scripts of #48 and #51 in `build/sources/`; version 3: `exact_a15.py` of #55 and the census engine `engine.py`, `networks.py`, `stackings.py` of #53/#56/#57; version 4: `splash.py` of #61, `q5.py` and `polytopes.py` of #62/#63, the #62 numerical Shadow-17 form and the #63 atlas row of the 48-vertex slice) |
 | `published/records.json` | the Zenodo records (latest versions) whose PDFs were used to check the published values |
 
 ## File format (solids)
@@ -95,7 +111,7 @@ is a cube root (stored exactly as a symbolic expression, with decimal corners).
   `kind` "tricap" (#48's Tricap of the Unborn at `unborn_centre`, as in the version 2 `decomposition`) or "mirrored tricap" (that Tricap
   mirrored in its base plane: a key of a big piece, krp-core golden-split.js INTO_SMALL), its `apex` and three `base` corners (exact), and
   `tricap_volume`. The solid is the union of the pieces, minus the dents, plus the keys.
-- `version_added`: 2 for the solids added in version 2, 3 for those added in version 3, 4 for those added in version 4.
+- `version_added`: 2 for the solids added in version 2, 3 for those added in version 3, 4 for those added in version 4, 5 for those added in version 5.
 - `scale_note`: the normalisation (each solid is given in the frame of the paper it comes from, so published values can be compared
   directly); `source`: where the geometry was taken from (`Polyhedraverse` id, a Kaleidohedra study, or the paper's closed form);
   `published_values`: values stated in the published paper or archive at this scale, each re-checked by `check.py`.
@@ -290,7 +306,7 @@ numbers are separated by "; ". Only numbers we are sure of are given.
 
 **D-numbers (DICTO 2026-10-24):** DICTO's permanent catalogue number, one per new solid or piece of his (status "new"), in the order of
 first publication, never reused: D1–D71 for single shapes, D72–D75 for the four rows that group several pieces (one number per group,
-DICTO 2026-10-24), and (version 3) D76–D83 for the eight new single solids of #56, #57 and #59, and (version 4) D84–D86 for Ganesha (#61), Humpty Dumpty (#63) and Shadow-17 (#62). Known and rediscovered shapes get no D-number. A shape with an outside number that
+DICTO 2026-10-24), and (version 3) D76–D83 for the eight new single solids of #56, #57 and #59, and (version 4) D84–D86 for Ganesha (#61), Humpty Dumpty (#63) and Shadow-17 (#62), and (version 5) D87–D101 for the fifteen new named slices of #63 and #65. Known and rediscovered shapes get no D-number. A shape with an outside number that
 is also DICTO's new shape would show both, outside number first ("J1; D9"); none does today. Not to be confused with T1, T2, … (a piece's
 label within one piece set), #n (papers), Fn (findings) and t1–t6 (Mosseri–Sadoc tiles); see `d-numbers.md`. 91 of 137 rows have a
 number (5 outside, 86 D); the cell is empty for the other known or rediscovered shapes and for clusters, structures, compounds and

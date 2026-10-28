@@ -18,7 +18,7 @@ P = {'8': '10.5281/zenodo.23284106', '13': '10.5281/zenodo.23284281', '14': '10.
      '45': '10.5281/zenodo.23529499', '47': '10.5281/zenodo.23551326',
      '48': '10.5281/zenodo.23596362', '51': '10.5281/zenodo.23606828',
      '55': '10.5281/zenodo.23632358', '56': '10.5281/zenodo.23635823', '57': '10.5281/zenodo.23647898', '59': '10.5281/zenodo.23677485',
-     '61': '10.5281/zenodo.23682596', '62': '10.5281/zenodo.23687223', '63': '10.5281/zenodo.23690856'}
+     '61': '10.5281/zenodo.23682596', '62': '10.5281/zenodo.23687223', '63': '10.5281/zenodo.23690856', '65': '10.5281/zenodo.23716140'}
 NEW, RED, KN = 'new', 'rediscovered', 'known'
 # name, kind, finding, paper (#), status, prior-art / note, dataset slug, Polyhedraverse id
 R = [
@@ -167,7 +167,29 @@ N_V3 = len(R)                                       # rows of versions 1-3: thei
 R += [
  ('Ganesha', 'solid', '', '61', NEW, 'not found in the sources checked (#61): the Janus c/h tetrahedral piece of a squashed stacking (cubic bottom, hexagonal top); in the dataset at the parameters of #61 Figure 1 (ACBC, layer spacing^2 = (3/4)(2/3), lambda = 1/10)', 'dicto-ganesha', ''),
  ('Shadow-17', 'solid', '', '62', NEW, 'new construction from a known piece (J11, Johnson\'s gyroelongated pentagonal pyramid, Johnson 1966): two J11 glued on their pentagons; #62 identifies it as the equal-edged form of the 600-cell\'s outer edge-first slices; status decided by DICTO 2026-10-28; placeholder name of #62', 'dicto-shadow-17', ''),
- ('Humpty Dumpty', 'solid', '', '63', NEW, 'not found in the sources checked (#63): the real 48-vertex cell-first slice of the 600-cell, a convex egg of 92 triangles (Td); its forced equal-edged form is Fallen Humpty (#63; Slice-48 in #62, numeric only, not in the dataset); the name is DICTO\'s', 'dicto-humpty-dumpty', ''),
+ ('Humpty Dumpty', 'solid', '', '63', KN, 'known (corrected in version 5): the cell-first section of the 600-cell at height 1 + sqrt5/2, one of the sections drawn by Alicia Boole Stott (1900, cell-first series through the corner layers), read for #63 version 3; the exact solid, the convex egg of 92 triangles (Td) and the name are #63\'s and DICTO\'s; D85 is kept (D-numbers are never reused); its forced equal-edged form is Fallen Humpty (#63; Slice-48 in #62, numeric only, not in the dataset)', 'dicto-humpty-dumpty', ''),
+]
+N_V4 = len(R)
+# version 5 (2026-10-28): the named slices of #63 (version 3) and #65 (version 2), DICTO's names; codes = the papers' appendix rows
+R += [
+ ('Lion', 'solid', '', '63', NEW, 'W1: the vertex-first central slice of the 600-cell (42 corners, 80 triangles, Ih); not found as a solid in the sources checked (#63)', 'dicto-lion', ''),
+ ('Jabberwock', 'solid', '', '63', NEW, 'W3: vertex-first, the largest all-triangle slice of the 600-cell (72 corners, 140 triangles); not found as a solid in the sources checked (#63)', 'dicto-jabberwock', ''),
+ ('Tweedledum', 'solid', '', '63', NEW, 'W5: vertex-first slice (32 corners, 60 triangles, Ih); not found as a solid in the sources checked (#63)', 'dicto-tweedledum', ''),
+ ('Tweedledee', 'solid', '', '63', NEW, 'W22: edge-first slice (32 corners, 60 triangles, D5h), another shape with Tweedledum\'s counts; not found as a solid in the sources checked (#63)', 'dicto-tweedledee', ''),
+ ('Mad Hatter', 'solid', '', '63', NEW, 'W28: face-first, in a gap (cut at its midpoint), one of the four 144-corner slices, all different; not found in the sources checked (#63)', 'dicto-mad-hatter', ''),
+ ('March Hare', 'solid', '', '63', NEW, 'W30: face-first, in a gap (cut at its midpoint), 144 corners; not found in the sources checked (#63)', 'dicto-march-hare', ''),
+ ('Jubjub', 'solid', '', '63', NEW, 'W43: face-first all-triangle slice (30 corners, 56 triangles); not found as a solid in the sources checked (#63)', 'dicto-jubjub', ''),
+ ('Alicia', 'solid', '', '63', KN, 'W48: the cell-first central slice of the 600-cell, the middle section of Alicia Boole Stott (1900, cell-first series through the corner layers); named after her by DICTO', 'dicto-alicia', ''),
+ ('Alice', 'solid', '', '63', NEW, 'W49: cell-first, in a gap (cut at its midpoint), 144 corners; a gap section, not in Boole Stott\'s series; not found in the sources checked (#63)', 'dicto-alice', ''),
+ ('White Rabbit', 'solid', '', '63', NEW, 'W51: cell-first, in a gap (cut at its midpoint), 144 corners; not found in the sources checked (#63)', 'dicto-white-rabbit', ''),
+ ('Unicorn', 'solid', '', '63', KN, 'W58: cell-first corner-layer section, one of the sections of Alicia Boole Stott (1900, cell-first series through the corner layers); same counts as the Lion, another shape', 'dicto-unicorn', ''),
+ ('Bandersnatch', 'solid', '', '63', KN, 'W60: cell-first corner-layer section, one of the sections of Alicia Boole Stott (1900, cell-first series through the corner layers)', 'dicto-bandersnatch', ''),
+ ('Haigha', 'solid', '', '65', NEW, 'R33: 120-cell edge-first slice, the only one with nine-sided faces; not found in the sources checked (#65)', 'dicto-haigha', ''),
+ ('Hatta', 'solid', '', '65', NEW, 'R35: 120-cell edge-first slice, the other 114-corner slice; not found in the sources checked (#65)', 'dicto-hatta', ''),
+ ('Red King', 'solid', '', '65', NEW, 'R77: 120-cell pentagon-first central slice, two regular decagons; the polar of the 600-cell\'s edge-first shadow; not found in the sources checked (#65)', 'dicto-red-king', ''),
+ ('Walrus', 'solid', '', '65', NEW, 'R80: 120-cell pentagon-first slice, 120 corners; not found in the sources checked (#65)', 'dicto-walrus', ''),
+ ('Red Knight', 'solid', '', '65', NEW, 'R113: 120-cell cell-first slice in a gap (cut at its midpoint), 120 corners; a gap section, not in Boole Stott\'s series; not found in the sources checked (#65)', 'dicto-red-knight', ''),
+ ('White Knight', 'solid', '', '65', NEW, 'R115: 120-cell cell-first slice in a gap (cut at its midpoint): the faces and symmetry of the truncated icosidodecahedron (30 squares, 20 hexagons, 12 decagons, Ih) with two edge lengths; not found in the sources checked (#65)', 'dicto-white-knight', ''),
 ]
 # universal_number (version 2, DICTO 2026-10-23): established catalogue numbers of earlier creators first (Johnson J, uniform U,
 # Wenninger W, Hart's stellation lists, Mosseri-Sadoc tiles); DICTO D-numbers (below) for DICTO's new shapes; see d-numbers.md. Empty = no number. Only numbers we are sure of.
@@ -196,7 +218,11 @@ DNUM.update({n: f'D{76 + i}' for i, n in enumerate(_v3)})
 # version 4 (2026-10-28): D84 Ganesha (#61), D85 Humpty Dumpty (#63); Shadow-17 (#62) D86, numbered after DICTO's decision of 2026-10-28
 # (new construction from a known piece), so it takes the next free number rather than its place in publication order.
 DNUM.update({'Ganesha': 'D84', 'Humpty Dumpty': 'D85', 'Shadow-17': 'D86'})
-assert sorted(r[0] for r in R[N_V3:] if r[1] in ('solid', 'piece') and r[4] == NEW) == ['Ganesha', 'Humpty Dumpty', 'Shadow-17']
+assert sorted(r[0] for r in R[N_V3:N_V4] if r[1] in ('solid', 'piece') and r[4] == NEW) == ['Ganesha', 'Shadow-17']   # Humpty Dumpty: known since version 5, D85 kept
+# version 5 (2026-10-28): D87 on, in the order of the papers' appendix rows (#63, then #65); the three slices of Boole Stott's 1900 series get none
+_v5 = [r[0] for r in R[N_V4:] if r[1] in ('solid', 'piece') and r[4] == NEW]
+assert len(_v5) == 15
+DNUM.update({n: f'D{87 + i}' for i, n in enumerate(_v5)})
 for n, d in DNUM.items(): UNUM[n] = UNUM[n] + '; ' + d if n in UNUM else d
 rows = []
 for name, kind, fnum, paper, status, note, slug, pv in R:
@@ -207,7 +233,7 @@ for name, kind, fnum, paper, status, note, slug, pv in R:
     assert set(UNUM) <= {r[0] for r in R}
     if slug: assert os.path.exists(os.path.join(ROOT, 'solids', slug + '.json')), slug
 with open(os.path.join(ROOT, 'index.csv'), 'w', newline='') as fh:
-    fh.write('# DICTO named-shape inventory · Created by DICTO · dictospheres.com · CC BY-SA 4.0 · 2026-10-22 (version 2: 2026-10-24; version 3: 2026-10-27; version 4: 2026-10-28)\n')
+    fh.write('# DICTO named-shape inventory · Created by DICTO · dictospheres.com · CC BY-SA 4.0 · 2026-10-22 (version 2: 2026-10-24; version 3: 2026-10-27; version 4: 2026-10-28; version 5: 2026-10-28)\n')
     w = csv.DictWriter(fh, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
 from collections import Counter
 print(len(rows), Counter(r['status'] for r in rows), Counter((r['kind'], r['status']) for r in rows), sum(r['in_dataset'] == 'y' for r in rows))
