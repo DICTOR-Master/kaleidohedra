@@ -1,4 +1,4 @@
-# Figure: the keyed HexOct layer that counts (counter.py), drawn on the layer's own lattice (60-degree axes u, v).
+# Figure: the HexOct-K layer that counts (counter.py), drawn on the layer's own lattice (60-degree axes u, v).
 # Each tile is a hexagon at its ball; gold = bit 1, pale = bit 0; row v spells v in binary (most significant bit at u = 0).
 import math, matplotlib
 matplotlib.use('Agg')
@@ -19,6 +19,6 @@ for v in range(H):
 ax.annotate('carry 1 enters every row', xy=(W - 0.45 + 0.0, -0.75), fontsize=8.5, color='#444')
 ax.set_aspect('equal'); ax.axis('off')
 ax.set_xlim(-0.8, W + H / 2 + 0.8); ax.set_ylim(-1.1, H * math.sqrt(3) / 2 + 0.3)
-ax.text(-0.7, H * math.sqrt(3) / 2 + 0.1, 'DICTO · keyed HexOct layer: 4 keyed tiles, one filling, rows count 0 to 15', fontsize=9, color='#333')
+ax.text(-0.7, H * math.sqrt(3) / 2 + 0.1, 'DICTO · HexOct-K layer: 4 keyed tiles, one filling, rows count 0 to 15', fontsize=9, color='#333')
 plt.savefig('../out/counter.png', dpi=200, bbox_inches='tight')
 print('written')

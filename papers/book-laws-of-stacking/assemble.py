@@ -35,7 +35,7 @@ def link_html(h):
     return ''.join(out)
 CORR=[('With this paper the series on real materials (#68, #70–#73) is complete.','The series on real materials (Chapters 8 to 12) was followed by a companion on magnets, Chapter 13.'),
       ('This study closes the line of work on materials.','This chapter closes the line of work on materials.')]
-INDEX_TERMS=['HexOct','Wang','silicon carbide','silicon','germanium','diamond','lonsdaleite','ice','tin','cobalt','iron','titanium','zirconium','magnesium','hydrogen','CrCoNi','perovskite','BaRuO','BaMnO','LiCoO','cathode','GaAs','InP','nanowire','spin ice','kagome','pyrochlore','Mn<sub>3</sub>Sn','Mn<sub>3</sub>Ir','rock salt','cadmium iodide','zinc blende','Laves','Fibonacci','golden ratio','ANNNI','stacking fault','Pauling','Onsager','Jagodzinski','Ganesha','Janus','octet','rhombic dodecahedron']
+INDEX_TERMS=['HexOct','HexOct-K','Wang','silicon carbide','silicon','germanium','diamond','lonsdaleite','ice','tin','cobalt','iron','titanium','zirconium','magnesium','hydrogen','CrCoNi','perovskite','BaRuO','BaMnO','LiCoO','cathode','GaAs','InP','nanowire','spin ice','kagome','pyrochlore','Mn<sub>3</sub>Sn','Mn<sub>3</sub>Ir','rock salt','cadmium iodide','zinc blende','Laves','Fibonacci','golden ratio','ANNNI','stacking fault','Pauling','Onsager','Jagodzinski','Ganesha','Janus','octet','rhombic dodecahedron']
 INDEX={}
 # pass 2 (DICTO 10-28 'remove unrelated content'): cut sections and clauses about other lines of work (4D solids, named
 # pairs, lists of other papers); theorems and proofs untouched. Sections renumbered after cuts.
@@ -88,7 +88,7 @@ for label,folder,num in CH:
     for a,b in EDITS.get(folder,[]):
         if a not in body: print('EDIT MISS',folder,a[:50])
         body=body.replace(a,b)
-    if folder=='two-tiles':   # second edition (DICTO 10-29): the keyed HexOct study closes the chapter, before its conclusion
+    if folder=='two-tiles':   # second edition (DICTO 10-29): the HexOct-K study closes the chapter, before its conclusion
         k=body.index('<h2>8. Conclusion</h2>'); body=body[:k]+open(os.path.join(HERE,'keyed.html'),encoding='utf8').read()+body[k:]
     body=cut_sections(body,folder)
     for a,b in CORR: body=body.replace(a,b)
