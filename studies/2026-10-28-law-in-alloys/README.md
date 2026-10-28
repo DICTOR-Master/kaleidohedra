@@ -13,3 +13,16 @@ Cases (DICTO approved order):
 6. Zircaloy (Zr-Sn): hydrides at faults, hydrogen hole space.
 Method: library + literature data (lattice parameters per phase, fault energies, LPSO stacking sequences), law predictions from layer
 types (Jagodzinski), exact hole shares where a weighted model is meaningful; no claims beyond geometry.
+
+## Progress 10-28: 3. Mg-Zn-Y LPSO (lpso.py) — DONE (structure)
+Source read: Egusa and Abe, "Polytypes of long-period stacking structures synchronized with chemical order in a dilute Mg-Zn-Y
+alloy", arXiv 1106.4944 (pp. 3-5, Fig. 2 text). LPSO = hcp Mg with a fault every k layers, each fault a local ABCA unit whose two
+middle layers are cubic (c) and Zn/Y-enriched (STEM).
+Exact sequences and hexagonalities (lpso.py, checked with Jagodzinski's rule):
+  10H ABCBCBACAC, h = 3/5; 18R ABCBCBCABABABCACAC, h = 2/3; 14H ABCBCBCBACACAC, h = 5/7; 24R ABCBCBCBCABABABABCACACAC, h = 3/4.
+The literature's own composition model is of the law's form: assuming the c layers are Mg85Zn5Y10 and the h layers pure Mg, the
+authors give Mg94.0(Zn,Y)6.0, Mg95.0(Zn,Y)5.0, Mg95.7(Zn,Y)4.3, Mg96.3(Zn,Y)3.7 for 10H, 18R, 14H, 24R = 15% x (1 - h) exactly:
+composition linear in the hexagonality, each layer type carrying a fixed share (their STEM: c-layer intensity identical in all polytypes).
+So LPSO alloys are a real material where a property is ASSUMED and observed to follow the law's form layer by layer; the
+Hexagonality Law adds that the geometric hole shares per layer are exactly linear too. Next: which hole kind the solutes prefer
+(c vs h shares) needs a model with two atom sizes -> after Ti-6Al-4V.
