@@ -26,3 +26,20 @@ composition linear in the hexagonality, each layer type carrying a fixed share (
 So LPSO alloys are a real material where a property is ASSUMED and observed to follow the law's form layer by layer; the
 Hexagonality Law adds that the geometric hole shares per layer are exactly linear too. Next: which hole kind the solutes prefer
 (c vs h shares) needs a model with two atom sizes -> after Ti-6Al-4V.
+
+## Progress 10-28: 1. Ti-6Al-4V, hydrogen sites (hydrogen_sites.py, hydrogen_sites.out) — DONE (geometry)
+Explicit coordinates (6x6 in-plane cell, periodic in all three directions, ideal close packing, ball diameter a), six stackings
+(3C, 2H, 4H, 6H, Mg LPSO 10H and 14H). Per ball, exact:
+  tetrahedral holes 2, octahedral holes 1 (every stacking);
+  face-sharing tetrahedral pairs (centres 0.408a apart) = h;  face-sharing octahedral pairs (0.816a apart) = h;
+  tetrahedral pairs 0.707a apart (sharing an edge) = 6 - 3h.
+All three are the law's form, linear in the hexagonality, exact on all six stackings.
+For alpha titanium (a = 2.95 A): the face-sharing tetrahedral pair is 1.20 A apart, far inside Switendick's 2.1 A H-H limit, so at
+most one hydrogen per pair: usable tetrahedral sites = 2 - h per ball (hcp alpha-Ti: 1; a cubic layer region: 2). The 0.707a class
+is 2.09 A, right at the limit (not used for claims). Real alpha-Ti has c/a = 1.587, not the ideal 1.633: the counts are exact
+(topology), the distances shift by ~3% along c.
+Consequence (geometry only): a fluorite-type hydride (delta-TiH2, all tetrahedral sites of a cubic metal stacking filled) cannot
+form in hexagonal stacking without blocked pairs; it needs locally cubic layers, which faults supply (I1, I2, E turn 1, 2, 3
+layers cubic, #67). Consistent with the known hcp -> fcc shift of the metal in hydride formation; literature check next (sources
+to be listed) before any claim beyond the counts.
+Next: 4. Fe-Mn / high-entropy (fcc -> hcp epsilon by faults), 5. cobalt, 6. Zircaloy hydrides, 2. Ti-Nb-Zr limit.

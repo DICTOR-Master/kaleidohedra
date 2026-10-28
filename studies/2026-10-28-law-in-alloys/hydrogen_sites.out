@@ -1,0 +1,13 @@
+stacking  h     tetra/ball  octa/ball  face-sharing tetra pairs/ball  face-sharing octa pairs/ball
+    ABC tetra-tetra distance classes < 0.75a (per ball): {np.float64(0.7071): '6'}
+ABC             0     2          1          0                      0   face tetra pairs = h: True; octa pairs = h: True
+    ABAB tetra-tetra distance classes < 0.75a (per ball): {np.float64(0.4082): '1', np.float64(0.7071): '3'}
+ABAB            1     2          1          1                      1   face tetra pairs = h: True; octa pairs = h: True
+    ABAC tetra-tetra distance classes < 0.75a (per ball): {np.float64(0.4082): '1/2', np.float64(0.7071): '9/2'}
+ABAC            1/2   2          1          1/2                    1/2   face tetra pairs = h: True; octa pairs = h: True
+    ABCACB tetra-tetra distance classes < 0.75a (per ball): {np.float64(0.4082): '1/3', np.float64(0.7071): '5'}
+ABCACB          1/3   2          1          1/3                    1/3   face tetra pairs = h: True; octa pairs = h: True
+    ABCBCBACAC tetra-tetra distance classes < 0.75a (per ball): {np.float64(0.4082): '3/5', np.float64(0.7071): '21/5'}
+ABCBCBACAC      3/5   2          1          3/5                    3/5   face tetra pairs = h: True; octa pairs = h: True
+    ABCBCBCBACACAC tetra-tetra distance classes < 0.75a (per ball): {np.float64(0.4082): '5/7', np.float64(0.7071): '27/7'}
+ABCBCBCBACACAC  5/7   2          1          5/7                    5/7   face tetra pairs = h: True; octa pairs = h: True
