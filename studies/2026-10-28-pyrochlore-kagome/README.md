@@ -45,3 +45,17 @@ included - the Hexagonality Law with zero slope. Searches: no source found on eq
 (web: Ihara zeta crystal nets; residual entropy Ih vs Ic).
 CONCLUSION B: spin-ice/ice entropy is stacking-blind (Loop Equality to length 34, conjecture for all lengths).
 Next: Step C kagome metals (literature).
+
+## Progress 10-28: Step C — DONE (a3b_counts.py, .out on dbb)
+Kagome magnets Mn3X = ordered A3B close-packed layers (same layers as AX3 in hexagonal perovskites, #72): L1_2 = 3C (Mn3Ir, Mn3Pt),
+D0_19 = 2H (Mn3Sn, Mn3Ge), D0_24 = 4H (TiNi3 type). Exact on 3C, 2H, 4H, 6H, 9R, per A (Mn) atom:
+ - unchanged by stacking: 8 A + 4 B neighbours; 2 basal + 6 tilted A3 triangles; 1/3 all-A octahedra; no all-A tetrahedra;
+ - kagome bow-ties (two coplanar triangles meeting at the atom): basal 1 always, tilted 3(1 - h).
+So every Mn lies on 1 + 3(1 - h) kagome planes: 4 in cubic Mn3Ir (kagome in all four {111} directions, 3D), 1 in hexagonal Mn3Sn
+(kagome only in the basal plane, 2D), linear in between: the Hexagonality Law counts the dimension of the kagome network.
+Structures checked: Chen, Niu, MacDonald arXiv 1309.4041 (Mn3Ir, kagome in each (111) plane; search summary); Mn3Sn D0_19 P63/mmc
+kagome in (0001) (search summary, Kubler and Felser; arXiv 2603.13718 caveat: basal-plane AHC forbidden in Mn3Sn).
+Swap Rule on kagome stackings: not pursued (the A3B layers are the AX3 layers of #72; the Swap Rule pieces were proved for such
+close-packed stackings in #64) - stated as a remark, no new test.
+CONCLUSION (study): pyrochlore/spin ice: Loop Equality to length 34 -> entropy stacking-blind; kagome Mn3X: kagome planes per Mn
+= 1 + 3(1 - h). Materials line ends here; ready for #74 (placeholder "Halves and Loops in Magnets", final title by DICTO).
