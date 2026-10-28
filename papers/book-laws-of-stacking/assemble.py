@@ -102,7 +102,7 @@ epi=open(os.path.join(HERE,'epilogue.html'),encoding='utf8').read()
 refhtml='<section class="app"><h1 class="chapter">Papers referred to, not in this book</h1><table>'+''.join(f'<tr><td>#{n}</td><td>{html.escape(PAPERS[n][0])}</td><td><a href="https://doi.org/{PAPERS[n][1]}">{PAPERS[n][1]}</a></td></tr>' for n in sorted(REFERRED))+'</table></section>'
 def nice(t): return re.sub('<[^>]+>','',t)
 idxhtml='<section class="app"><h1 class="chapter">Index</h1><p style="font-size:9pt">Chapters (P = Prologue) in which each term appears.</p><table>'+''.join(f'<tr><td>{nice(t)}</td><td>{", ".join(v)}</td></tr>' for t,v in sorted(INDEX.items(),key=lambda kv:nice(kv[0]).lower()))+'</table></section>'
-tochtml='<h2>Contents</h2><table class="toc">'+''.join(f'<tr><td>{html.escape(t)}</td><td>#{n}</td></tr>' for t,tag,n,d in toc)+'<tr><td>Epilogue. The laws and the materials, in one table</td><td></td></tr><tr><td>Appendix. Sources by chapter</td><td></td></tr><tr><td>Papers referred to, not in this book</td><td></td></tr><tr><td>Index</td><td></td></tr></table>'
+tochtml='<h2>Contents</h2><table class="toc">'+''.join(f'<tr><td>{html.escape(t)}</td><td>#{n}</td></tr>' for t,tag,n,d in toc)+'<tr><td>Epilogue. What has been shown</td><td></td></tr><tr><td>Appendix. Sources by chapter</td><td></td></tr><tr><td>Papers referred to, not in this book</td><td></td></tr><tr><td>Index</td><td></td></tr></table>'
 css='\n'.join(sorted(styles))+'''
 h1.chapter{break-before:page;font-size:19pt;margin-top:0} p.from{font-size:8.5pt;color:#777;margin:-2mm 0 4mm}
 .part{break-before:page;height:200mm;display:flex;align-items:center;justify-content:center} h1.partt{font-size:26pt;color:#b8962e}
