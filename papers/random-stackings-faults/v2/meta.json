@@ -1,0 +1,63 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan"
+  }
+ ],
+ "version": "2",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-28",
+ "access_right": "open",
+ "title": "Random Stackings and Stacking Faults: the Hexagonality Law at Work",
+ "description": "<p>The Hexagonality Law (#66) says that in a stacking of close-packed layers, where space is shared out by weight among atoms and holes, each kind of piece totals exactly what its layers hold in their own pure stackings. DICTO proposed to look for the conditions where this matters in real matter. Two follow at once, and both are exact. <b>Theorem 1 (any stacking):</b> however the layers are stacked, repeating, faulted or random, with any correlations, each kind of piece averages exactly V(cc) + h·(V(hh) − V(cc)) per layer, where h is the share of hexagonal layers; so the single number that diffraction measures in randomly stacked colloids and in stacking-disordered ice fixes every hole volume exactly. <b>Theorem 2 (faults):</b> a stacking fault changes the total of every kind of piece by exactly the number of layers it turns hexagonal (or cubic) times V(hh) − V(cc); the classical faults of cubic crystals (twin, intrinsic, extrinsic) turn 1, 2 and 2 layers hexagonal, those of hexagonal crystals (I1, I2, E) turn 1, 2 and 3 layers cubic. In rock salt the balls gain at each fault exactly what the holes lose. The one piece the law's proof does not cover, the Laves foot atom that reads three layers, keeps the law exactly on every stacking up to eight layers (390 of 390 exact tests).</p><p>Proofs from the Hexagonality Law (#66); fault layer counts by Jagodzinski's rule on the classical sequences; rock salt values exact in rational arithmetic; the Laves test walks nine further stackings of seven and eight layers exactly with #57's census engine.</p><p>Version 2 adds three figures: the pieces of rock salt and nickel arsenide (not to scale), the exact straight line for the diamond / ice framework with measured stacking-disordered ice, and the six classical faults as strips of layers.</p><p>The ideas and names are DICTO's. Computation and proof with Claude (Anthropic). Sources checked are listed in the paper. The study (scripts, exact results, the new weight walks) is attached. Licence CC BY-SA 4.0. More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "Hexagonality Law",
+  "Swap Rule",
+  "random stacking",
+  "random hexagonal close packing",
+  "colloidal crystals",
+  "stacking-disordered ice",
+  "stacking faults",
+  "polytypes",
+  "Laves phases",
+  "close packing",
+  "power diagram"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23717687",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23709753",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23678750",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23647898",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23682596",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ]
+}
