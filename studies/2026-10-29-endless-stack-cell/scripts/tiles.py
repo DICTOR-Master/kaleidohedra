@@ -82,6 +82,17 @@ def canon_joint(J):
         best = key if best is None or key < best else best
     return best
 
+def ctx_words():
+    """One (word, layer) for each of the 32 five-layer contexts (types of layers L-2..L+2)."""
+    ctx = {}
+    for n in range(2, 11):
+        for w in itertools.product('ABC', repeat=n):
+            if w[0] != 'A' or any(w[i] == w[(i + 1) % n] for i in range(n)): continue
+            w = ''.join(w); T = types(w)
+            for L in range(n):
+                ctx.setdefault(''.join(T[(L + j) % n] for j in range(-2, 3)), (w, L))
+        if len(ctx) == 32: return ctx
+
 if __name__ == '__main__':
     # words covering every five-layer context
     words, ctx = [], {}

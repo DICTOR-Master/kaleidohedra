@@ -13,3 +13,7 @@ Exact, 32 five-layer contexts (types of layers L−2..L+2 fix the tile: its two 
 - Joint: the octahedral section on the cut plane is one shape at each λ, shared by c and h — any tile sits on any tile.
 - Flat faces only at the low end (λ = −7/16, −5/12); from λ = −1/4 up the tetrahedral pieces cross the cut planes (to ±5/8 at −1/4, ±13/16 at −3/16, ±1 = the next ball's height for λ ≥ −1/16): tiles interlock. Switch point to pin (expect a stop, −3/8).
 Status: holds at sample λ; stretch-by-stretch proof not yet run. Picture: tiles_1_10.png.
+## Proof (29 Oct, scripts/prove.py → prove.out)
+All 32 contexts, whole walk −11/24 ≤ λ ≤ 3/8: on every sub-interval between breakpoints (of the tile's 4 cells and the pure tile's) the tile, mapped by one lattice symmetry, equals the pure tile as identical rational functions of λ (sympy); at every breakpoint exactly. 32/32 PASS, no failures.
+Flat/interlock switch: λ = −7/24 exactly, the same for c and h tiles: for λ ≤ −7/24 the tiles meet on flat planes (the octahedral cut planes); for λ > −7/24 the tetrahedral pieces cross into the next layer. Not a stop of the walk.
+STATUS: theorem proved (exact) — "Two-Tile Theorem" (placeholder). Conclusion: every close-packed stacking at every weight is a string of two layer tiles; any tile sits on any tile; flat below λ = −7/24, interlocking above.
