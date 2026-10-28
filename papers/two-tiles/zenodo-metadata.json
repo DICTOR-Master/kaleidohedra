@@ -1,0 +1,81 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-29",
+ "access_right": "open",
+ "title": "Two Tiles for Every Stacking",
+ "description": "<p>In the Rule of Halves (#57) every hole of every close-packed stacking gets a piece, and each piece is made from the pieces of the two pure stackings, cubic and hexagonal. Here we cut space into layer tiles: the tile of a layer is the share of space of that layer, made of four pieces, the top half of the octahedral piece below it, the two tetrahedral pieces next to it and the bottom half of the octahedral piece above it. We prove, exactly and along the whole weight walk of #57, that there are only two tiles. Every layer tile is carried onto the c-tile of the cubic stacking or the h-tile of the hexagonal stacking by one motion, all four pieces at once, and which of the two is decided by the layer's own type. Any tile sits on any tile, since the joint between two layers has the same shape for both types. So every close-packed stacking, periodic or not, is a string of two tiles, and a string of two tiles in any order is a stacking. The tiles meet on flat planes for weights up to λ = −7/24 and interlock above it, their tetrahedral pieces reaching into the neighbouring layer. At each weight all stackings together use five whole shapes.</p><p>The theorem is proved exactly over the whole weight walk (32 contexts, symbolic on every stretch, exact at every stop); sources checked are listed in the paper.</p><p>The idea is DICTO's. Computation, exact proof and drafting with Claude (Anthropic). The study (scripts and results) is attached. Licence CC BY-SA 4.0. More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "close packing",
+  "stacking sequences",
+  "polytypism",
+  "power diagram",
+  "tetrahedral and octahedral holes",
+  "space-filling tiles",
+  "layer tiles",
+  "order-disorder structures",
+  "Rule of Halves",
+  "interlocking tiles",
+  "Hexagonality Law"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23647898",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23631140",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23635823",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23284106",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1137/0216006",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1103/PhysRevE.86.041141",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/fcb20088/studies/2026-10-29-endless-stack-cell",
+   "relation": "isSupplementedBy",
+   "scheme": "url"
+  }
+ ],
+ "subjects": [
+  {
+   "term": "MSC2020 52C22: Tilings in n dimensions",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C22",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52C17: Packing and covering in n dimensions",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C17",
+   "scheme": "url"
+  }
+ ]
+}
