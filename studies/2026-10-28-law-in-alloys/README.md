@@ -15,7 +15,7 @@ Method: library + literature data (lattice parameters per phase, fault energies,
 types (Jagodzinski), exact hole shares where a weighted model is meaningful; no claims beyond geometry.
 
 ## Progress 10-28: 3. Mg-Zn-Y LPSO (lpso.py) — DONE (structure)
-Source read: Egusa and Abe, "Polytypes of long-period stacking structures synchronized with chemical order in a dilute Mg-Zn-Y
+Source read: Abe, Ono, Itoi, Yamasaki, Kawamura, "Polytypes of long-period stacking structures synchronized with chemical order in a dilute Mg-Zn-Y
 alloy", arXiv 1106.4944 (pp. 3-5, Fig. 2 text). LPSO = hcp Mg with a fault every k layers, each fault a local ABCA unit whose two
 middle layers are cubic (c) and Zn/Y-enriched (STEM).
 Exact sequences and hexagonalities (lpso.py, checked with Jagodzinski's rule):
@@ -91,4 +91,4 @@ outside. Conclusion: in beta titanium the law reaches only the alpha/alpha'' pro
 ## STUDY STATUS 10-28: all six cases done. Scale from exact to broken: hole and hydrogen counts exact (all stackings); Mg LPSO
 composition exactly linear in h (literature model); hydride bound h <= 2 - x; SiC volume (#68) exact; cobalt faults close (|J2/J1| 0.15);
 CrCoNi / Fe-Mn faults broken (Olson-Cohen sigma = 2 J2 ~ J1). Placeholder paper: #71 "The Hexagonality Law in Real Materials III:
-Alloys and Hydrogen". Library check for Olson-Cohen 1976, Denteneer-van Haeringen 1987, Carpenter 1973, Switendick, Egusa-Abe.
+Alloys and Hydrogen". Library check for Olson-Cohen 1976, Denteneer-van Haeringen 1987, Carpenter 1973, Switendick, Abe et al. (LPSO).

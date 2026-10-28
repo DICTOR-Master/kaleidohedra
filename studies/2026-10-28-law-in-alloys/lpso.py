@@ -1,4 +1,4 @@
-# Mg-Zn-Y LPSO phases (Egusa and Abe, arXiv 1106.4944): hcp Mg with a stacking fault every k layers (k = 5, 6, 7, 8 -> 10H, 18R,
+# Mg-Zn-Y LPSO phases (Abe, Ono, Itoi, Yamasaki, Kawamura, arXiv 1106.4944): hcp Mg with a stacking fault every k layers (k = 5, 6, 7, 8 -> 10H, 18R,
 # 14H, 24R), each fault making a local ABCA unit whose two middle layers are cubic (Jagodzinski c) and enriched in Zn and Y.
 # Build each from its type string (cc + h^(k-2)) repeated until it closes, check with Jagodzinski's rule, give the hexagonality.
 from fractions import Fraction as F

@@ -1,0 +1,12 @@
+3C   ABC         h = 0.000  <ss+n> = [1. 1. 1.]
+2H   AB          h = 1.000  <ss+n> = [-1.  1. -1.]
+4H   ABCB        h = 0.500  <ss+n> = [ 0. -1.  0.]
+6H1  ABCACB      h = 0.333  <ss+n> = [ 0.333 -0.333 -1.   ]
+6H2  ABCBCB      h = 0.667  <ss+n> = [-0.333 -0.333  0.333]
+10H  ABCBCBACAC  h = 0.600  <ss+n> = [-0.2  0.2 -0.2]
+
+volume V0 (Bohr^3): law fit (linear in h) slope -0.51, residuals {'3C': np.float64(-0.1), '2H': np.float64(-0.09), '4H': np.float64(0.06), '6H1': np.float64(0.07), '6H2': np.float64(0.04), '10H': np.float64(0.01)}
+  ANNNI to 3rd neighbour: E0 69.05, J1 -0.27, J2 0.08, J3 0.02; residuals [-0.01 -0.02 -0.03  0.01  0.02  0.02]  |J2/J1| = 0.31
+
+energy (meV/atom): law fit (linear in h) slope -77.85, residuals {'3C': np.float64(-3.22), '2H': np.float64(-4.37), '4H': np.float64(11.7), '6H1': np.float64(-3.27), '6H2': np.float64(1.68), '10H': np.float64(-2.51)}
+  ANNNI to 3rd neighbour: E0 71.31, J1 -36.28, J2 6.31, J3 -3.72; residuals [ 1.    2.01  4.38 -1.78 -3.56 -2.05]  |J2/J1| = 0.17
