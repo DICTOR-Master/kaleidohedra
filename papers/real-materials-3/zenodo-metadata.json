@@ -1,0 +1,71 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-28",
+ "access_right": "open",
+ "title": "The Hexagonality Law in Real Materials III: Alloys and Hydrogen",
+ "description": "<p>Hydrogen is the enemy of titanium implants and of the zirconium tubes that hold nuclear fuel: it gathers in the metal and turns it brittle. We show that the places hydrogen can sit follow the Hexagonality Law (#66) exactly. In a close-packed metal of any stacking, per metal atom, the pairs of tetrahedral holes that share a face, and the pairs of octahedral holes that share a face, both number h, the share of hexagonal layers. Two hydrogen atoms cannot sit in one face-sharing tetrahedral pair, so at most 2 − h tetrahedral sites per atom can be filled, and a hydride MH<sub>x</sub> with hydrogen in tetrahedral sites needs the metal locally to have h ≤ 2 − x: the brittle dihydrides need fully cubic stacking. DICTO proposed to test the law on alloys, starting from Ti-6Al-4V and Ti-Nb-Zr. Across six alloy families the law sorts them on one scale: exact for the hole and hydrogen counts; the composition of the magnesium LPSO alloys is a straight line in h in the authors' own model; the energies of cobalt and iron stackings come close (second-neighbour share 0.15–0.17); the faults of the high-entropy alloy CrCoNi depart clearly. In the standard fault model of these steels and alloys, Olson and Cohen's interface energy σ is exactly twice the second-neighbour layer coupling, so it measures the distance from the law.</p><p>The Theorem and Proposition are proved in the paper; all material data are published values (sources listed).</p><p>The ideas and names are DICTO's. Computation and proof with Claude (Anthropic). Sources checked are listed in the paper. The study (scripts and results) is attached. Licence CC BY-SA 4.0. More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "Hexagonality Law",
+  "hydrogen in metals",
+  "hydrides",
+  "stacking faults",
+  "polytypism",
+  "close-packed structures",
+  "LPSO magnesium alloys",
+  "titanium alloys",
+  "zirconium hydride",
+  "high-entropy alloys",
+  "ANNNI model"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23717687",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23718636",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23719275",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23723565",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ],
+ "subjects": [
+  {
+   "term": "MSC2020 52C17: Packing and covering in n dimensions",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C17",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 82D25: Statistical mechanics of crystals",
+   "identifier": "https://zbmath.org/classification/?q=cc:82D25",
+   "scheme": "url"
+  }
+ ]
+}
