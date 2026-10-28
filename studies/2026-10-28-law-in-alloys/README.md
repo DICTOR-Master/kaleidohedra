@@ -59,3 +59,13 @@ step 1) and for volumes of SiC; energies of metals with low SFE need the second-
 Sources checked: arXiv 1806.00718 (Ding et al.); web search "first-principles intrinsic extrinsic stacking fault twin boundary energy
 CoCrNi CoCrFeMnNi Fe-Mn ANNNI" (also listed Ikeda et al. Entropy 2018, PMC7513178, not read). Library check to do for
 Olson-Cohen 1976 and Denteneer-van Haeringen 1987 before any paper text.
+
+## Progress 10-28: 5. Cobalt (cobalt_faults.py, cobalt_faults.out) — DONE (reading)
+Data: Aas, Szunyogh, Evans, Chantrell, arXiv 1304.1353 (read pp. 3, 7): hcp Co fault energies I1 16, I2 48, E 62, T2 39 meV
+(40, 122, 160, 100 mJ/m^2), error ~0.2 meV. Cubic layers made (checked from their sequences): I1 1, I2 2, E 3, T2 2 (#67's 1:2:3).
+Law test (energy per cubic layer one constant): 16.0, 24.0, 20.7, 19.5 meV -> spread +/-20%: the law's ordering I1 < T2 ~ I2 < E holds,
+the ratios are off. ANNNI fit to third neighbours (#68 convention): J1 -12.3, J2 +1.9, J3 +2.9 meV; |J2/J1| 0.15 -> cobalt sits
+between SiC (J2 ~ 0, law exact) and CrCoNi (J2 ~ J1, law broken); fit residuals 1.6-3 meV (> stated error: longer-range terms too).
+CONCLUSION: cobalt is close to the law: about four fifths of each fault energy is the per-cubic-layer term.
+Sources checked: web search "cobalt fcc hcp first-principles stacking fault energies intrinsic extrinsic twin ANNNI J1 J2 polytypes dhcp
+energy difference"; arXiv 1304.1353 read; Lizarraga et al. Sci. Rep. 2017 (DOAJ 4f607be5...) listed, not read.

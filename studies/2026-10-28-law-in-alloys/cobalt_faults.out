@@ -1,0 +1,17 @@
+I1: BABABABCBCBCB  cubic layers made 1  change in <s s+n> sums (n=1,2,3) [ 2 -4  6]
+I2: ABABABCACACAC  cubic layers made 2  change in <s s+n> sums (n=1,2,3) [ 4 -4  4]
+E: ABABABCABABAB  cubic layers made 3  change in <s s+n> sums (n=1,2,3) [ 6 -4  6]
+T2: ABABABCBABABA  cubic layers made 2  change in <s s+n> sums (n=1,2,3) [ 4 -8  8]
+
+Law test (energy per cubic layer, should be one constant):
+  I1: 16 meV / 1 = 16.0 meV
+  I2: 48 meV / 2 = 24.0 meV
+  E: 62 meV / 3 = 20.7 meV
+  T2: 39 meV / 2 = 19.5 meV
+
+ANNNI fit (meV): J1 = -12.29, J2 = 1.86, J3 = 2.93
+  I1: computed 16 meV, fit 14.4 meV
+  I2: computed 48 meV, fit 44.9 meV
+  E: computed 62 meV, fit 63.6 meV
+  T2: computed 39 meV, fit 40.6 meV
+X(fcc) - X(hcp) per layer = -2(J1+J3) = 18.7 meV ; J2/J1 = -0.15
