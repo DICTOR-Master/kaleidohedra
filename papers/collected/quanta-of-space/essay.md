@@ -9,8 +9,8 @@ Leucippus and Democritus taught that the world is made of indivisible atoms movi
 ## 2. Plato's tile kit
 Plato gave them shapes. In the *Timaeus* the four elements are four regular solids: fire is the tetrahedron, air the octahedron, water the icosahedron and earth the cube. All four faces are built from just two right triangles. The fifth solid, the dodecahedron, was used "for the whole". It was the first tile kit for matter: a small set of exact pieces from which everything is assembled.
 
-## 3. Aristotle's mistake
-Aristotle answered that solid atoms must fill space. He claimed (*On the Heavens* III.8) that among solids only two do: the pyramid and the cube. The cube does. The regular tetrahedron does not, and the error stood for centuries. Paper #44, *Aristotle's Pyramid*, asks what he could have meant. It proves which face-pyramids of the Platonic solids can fill space.
+## 3. Aristotle's pyramids
+Aristotle answered that solid atoms must fill space. He wrote (*On the Heavens* III.8) that among solids two do: the pyramid and the cube. He did not say which pyramid. His commentators took it to be the regular tetrahedron, which on its own leaves a small gap, and argued over it for centuries. Read as he wrote it, he was right: many pyramids fill space. Paper #44, *Aristotle's Pyramid*, proves which pyramids cut from the centres of the Platonic solids do. One dimension up, even the regular tetrahedron closes, twenty round every corner of the 600-cell (#63). Paper #65, *The Red Queen 120-cell*, proves that all five of his pyramids are the cores of the regular four-dimensional solids, with exactly his proportions.
 
 ## 4. Kepler's packings
 Johannes Kepler nested the five solids between the planets' spheres (*Mysterium Cosmographicum*, 1596). In *The Six-Cornered Snowflake* (1611) he explained the snowflake by the packing of equal small units, the question that became the Kepler conjecture. Paper #8, *The Euclid–Kepler–Pacioli Cell*, finds all five Platonic solids nested on 13 points of one repeating cell.
