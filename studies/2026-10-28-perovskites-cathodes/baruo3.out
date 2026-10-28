@@ -1,0 +1,16 @@
+3C: h = 0.000  V = 64.28 A^3 per BaRuO3  (precise)
+6H: h = 0.333  V = 65.88 A^3 per BaRuO3  (approximate (c ~ 14 A))
+4H: h = 0.500  V = 67.51 A^3 per BaRuO3  (precise)
+9R: h = 0.667  V = 68.91 A^3 per BaRuO3  (precise)
+
+law line through the three precise phases: V = 64.25 + 6.82 h  (A^3)
+  3C: line 64.25, measured 64.28, off +0.06%
+  6H: line 66.52, measured 65.88, off -0.97%
+  4H: line 67.66, measured 67.51, off -0.22%
+  9R: line 68.79, measured 68.91, off +0.16%
+
+face-sharing clusters (runs of h layers + 1): 3C none; 6H dimers + single octahedra; 4H dimers; 9R trimers; 2H endless chains.
+Pair count = h is linear; the cluster sizes are not (they depend on runs, i.e. farther neighbours).
+
+pressure: if V is a straight line in h with slope 6.8 A^3 > 0, then P*V favours lower h at first order (#70 Proposition):
+the observed synthesis sequence 9R (ambient) -> 4H (3 GPa) -> 6H (5 GPa) -> 3C (18 GPa) (Jin et al.) runs down h step by step.
