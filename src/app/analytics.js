@@ -10,6 +10,10 @@ const LIVE = typeof location !== 'undefined' && /(\.vercel\.app|\.dictospheres\.
 
 if (LIVE) {
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  // One site, four doors (2026-10-29): the three apps share one Vercel project, and its Web Analytics keep only the path, so
+  // each visit's path is tagged with its door (/_k/guide = Kaleidohedra's guide); dicto-stats strips the tag per site.
+  const door = { kaleidohedra: '/_k', rhombiverse: '/_r', polyhedraverse: '/_p' }[location.hostname.split('.')[0]];
+  if (door) window.va('beforeSend', (e) => ({ ...e, url: e.url.replace(/^(https?:\/\/[^/]+)/, '$1' + door) }));
   const s = document.createElement('script');
   s.defer = true;
   s.src = '/_vercel/insights/script.js';
