@@ -1,0 +1,76 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-28",
+ "access_right": "open",
+ "title": "The Hexagonality Law in Real Materials V: Ice, Diamond and Nanowires",
+ "description": "<p>Ice, diamond and the semiconductor nanowires of new lasers and solar cells are all built from the same piece: a tetrahedron of bonds, in close-packed layers that stack cubic or hexagonal. We test the Hexagonality Law (#66) on them. The geometry is exact: in any stacking, the eclipsed bonds (whose neighbours face each other) number h/2 per atom, where h is the share of hexagonal layers. For six III-V semiconductors in four stackings each, computed by Belabbes et al., the conduction-band offset lies on the law's straight line within 4% of its full change and the crystal-field splitting within 7%. The polytype energies of the tetrahedral elements rank them by their distance from the law: tin 0.02, germanium 0.08, diamond 0.15, silicon 0.32, and silicon carbide 1.03; silicon carbide, the best-known material with many stacking forms, is the one furthest from the law. For ice, Tonauer et al. measured −37.7 J/mol for pure cubic ice turning hexagonal; the law predicts that the stacking-disordered ice of clouds releases 37.7 J/mol times its cubicity, and that its excess vapour pressure scales the same way. This closes the series on real materials.</p><p>The Theorem is proved in the paper and checked from explicit coordinates; all material data are published values (sources listed); the ice result is a stated prediction.</p><p>The ideas and names are DICTO's. Computation and proof with Claude (Anthropic). Sources checked are listed in the paper. The study (scripts and results) is attached. Licence CC BY-SA 4.0. More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "Hexagonality Law",
+  "polytypism",
+  "stacking-disordered ice",
+  "cubic ice",
+  "lonsdaleite",
+  "diamond polytypes",
+  "semiconductor nanowires",
+  "wurtzite zinc blende",
+  "band offsets",
+  "ANNNI model",
+  "silicon carbide"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23717687",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23719275",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23723565",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23726064",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23728287",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ],
+ "subjects": [
+  {
+   "term": "MSC2020 52C17: Packing and covering in n dimensions",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C17",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 82D25: Statistical mechanics of crystals",
+   "identifier": "https://zbmath.org/classification/?q=cc:82D25",
+   "scheme": "url"
+  }
+ ]
+}
