@@ -69,3 +69,26 @@ between SiC (J2 ~ 0, law exact) and CrCoNi (J2 ~ J1, law broken); fit residuals 
 CONCLUSION: cobalt is close to the law: about four fifths of each fault energy is the per-cubic-layer term.
 Sources checked: web search "cobalt fcc hcp first-principles stacking fault energies intrinsic extrinsic twin ANNNI J1 J2 polytypes dhcp
 energy difference"; arXiv 1304.1353 read; Lizarraga et al. Sci. Rep. 2017 (DOAJ 4f607be5...) listed, not read.
+
+## Progress 10-28: 6. Zircaloy hydrides (hydride_bound.py, hydride_bound.out) — DONE (geometry + reading)
+From step 1 (usable tetrahedral sites = 2 - h per metal atom): a hydride MH_x with H in tetrahedral sites needs local hexagonality
+h <= 2 - x. Zr (a = 3.23 A): face-sharing pair 1.32 A (forbidden), edge-sharing pair 2.28 A (allowed; cleaner than Ti, 2.09 A).
+  gamma-ZrH x = 1: h <= 1 (hcp itself allows the count); delta-ZrH1.5: h <= 0.50; delta-ZrH1.66: h <= 0.34; epsilon-ZrH2, delta-TiH2: h = 0.
+CONCLUSION (necessary condition, not sufficient): the hydrogen-rich hydrides that embrittle Zircaloy and titanium need the metal
+locally at least 2/3 cubic; the Hexagonality Law gives the bound from the counts. Consistent with the standard mechanism (Carpenter:
+hcp -> fcc by a/3<1-100> Shockley partials on alternate basal planes, i.e. I2-type faults making the cubic layers; experiments on
+fcc-Zr lamellae and hydride twins; newer MD finds three partials and composition-dependent routes). gamma-ZrH is fct (cubic
+stacking) though the count alone would allow hcp: the bound is only a bound.
+Sources checked: web search "zirconium delta hydride precipitation hcp to fcc transformation Shockley partial dislocations every second
+basal plane mechanism" (results: arXiv 1811.12442 Zircaloy-4 EBSD; PMC10532661 fatigue fcc-Zr; Osaka CompMatlSci 215 111769; PSU COMB
+MD; PMC12009237 review); Carpenter's primary paper NOT read (library check before paper text).
+
+## 2. Ti-Nb-Zr limit — DONE (reading)
+beta (bcc) is not close-packed: outside the law. alpha'' martensite is distorted hcp (orthorhombic, AB stacking): the law's counts
+apply to its stacking topology, distances shift. omega (AlB2-like, from collapse of bcc {111} planes) is not a close-packed stacking:
+outside. Conclusion: in beta titanium the law reaches only the alpha/alpha'' products.
+
+## STUDY STATUS 10-28: all six cases done. Scale from exact to broken: hole and hydrogen counts exact (all stackings); Mg LPSO
+composition exactly linear in h (literature model); hydride bound h <= 2 - x; SiC volume (#68) exact; cobalt faults close (|J2/J1| 0.15);
+CrCoNi / Fe-Mn faults broken (Olson-Cohen sigma = 2 J2 ~ J1). Placeholder paper: #71 "The Hexagonality Law in Real Materials III:
+Alloys and Hydrogen". Library check for Olson-Cohen 1976, Denteneer-van Haeringen 1987, Carpenter 1973, Switendick, Egusa-Abe.
