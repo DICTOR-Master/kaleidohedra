@@ -1,5 +1,5 @@
 # The HexOct square (DICTO 2026-10-29): book cover for "HexOct: The Laws of Stacking", after the DICTO square, 6 x 6.
-# Cyclic Latin square: row i, column j holds letter (i+j) mod 6 of HEXOCT, so HEXOCT reads across the top and down the left,
+# Letters after the B1NR logo; tiles matching their letter in teal (DICTO). Cyclic Latin square: row i, column j holds letter (i+j) mod 6 of HEXOCT, so HEXOCT reads across the top and down the left,
 # every letter once in each row and column. Shapes: H, E, X on the h-tile, O, C, T on the c-tile (the two HexOct tiles of #75,
 # at weight 1/10, built exactly by tiles.py). Pieces: tetrahedral gold, octahedral halves violet, as in #75.
 import math, os, numpy as np
@@ -37,6 +37,7 @@ for s, ps in T.items():
 span = max(float((hi - lo).max()) for lo, hi in ext.values())
 GROUND = (20, 15, 11); EDGE = (60, 40, 18)
 TONE = {'tet': (217, 165, 33), 'octup': (138, 92, 194), 'octdn': (180, 138, 224)}
+MATCH = (43, 179, 163)   # DICTO 10-29: pick out the cells where the tile matches its letter (H on the h-tile, C on the c-tile)
 N = 1800; SS = 2; W = N * SS; cell = 0.9 * W / 6; sc = 0.86 * cell / span; x0 = 0.05 * W
 light = np.array([-0.4, 0.55, 0.75]); light /= np.linalg.norm(light)
 img = Image.new('RGB', (W, W), GROUND); dr = ImageDraw.Draw(img)
@@ -48,26 +49,27 @@ for i in range(6):
             for nn, Q in sorted(F, key=lambda f: (f[1] @ d).mean()):
                 if nn @ d <= 1e-9: continue
                 b = 0.45 + 0.55 * max(0, (nn @ VIEW.T) @ light)
-                col = tuple(int(c * b) for c in TONE[kind])
+                col = tuple(int(c * b) for c in (MATCH if kind == 'tet' and M[i][j] in 'HC' else TONE[kind]))
                 V = Q @ VIEW.T
                 pts = [(cx + (v[0] - mid[0]) * sc, cy - (v[1] - mid[1]) * sc) for v in V]
                 dr.polygon(pts, fill=col); dr.line(pts + [pts[0]], fill=EDGE, width=2 * SS)
-# Trajan-style initials V-cut and gilded with platinum leaf, as in the DICTO square
-f = ImageFont.truetype('Cinzel.ttf', int(0.074 * W)); f.set_variation_by_name('Bold')
-Lc = np.array([-0.55, 0.6, 0.58]); Lc /= np.linalg.norm(Lc)
+# Letters after the B1NR logo (DICTO 10-29: "sixties distorted script like B1NR logo", the version centred on the spherical
+# security-ring icosidodecahedron, not the zip-tie one): heavy rounded letters (Righteous, OFL), white with a thick black
+# outline, swollen by a gentle bulge (barrel warp) for the sixties look.
+f = ImageFont.truetype('Righteous-Regular.ttf', int(0.056 * W))
 def carved(ch):
-    box = int(0.12 * W); m = Image.new('L', (box, box), 0); ImageDraw.Draw(m).text((box / 2, box / 2), ch, font=f, fill=255, anchor='mm')
-    Mk = np.array(m) / 255.0; ins = Mk > 0.5
-    dist = ndimage.gaussian_filter(ndimage.distance_transform_edt(ins), 0.8); gy, gx = np.gradient(dist); k = 1.6
-    nrm = np.dstack([gx * k, -gy * k, np.ones_like(dist)]); nrm /= np.linalg.norm(nrm, axis=2, keepdims=True)
-    lamb = np.clip(nrm @ Lc, 0, 1); h = np.clip(nrm @ (Lc + [0, 0, 1.0]) / np.linalg.norm(Lc + [0, 0, 1.0]), 0, 1) ** 40
-    dark = np.array([70, 74, 82.]); lite = np.array([226, 229, 235.]); rgb = dark + (lite - dark) * lamb[..., None] ** 1.3
-    rgb = rgb + (255 - rgb) * h[..., None] * 0.8
-    sh = ndimage.shift(ins.astype(float), (-2 * SS * 0.6, 2 * SS * 0.6), order=1); rgb *= (1 - 0.35 * np.clip(ins - sh, 0, 1))[..., None]
-    return Image.fromarray(np.clip(rgb, 0, 255).astype(np.uint8)), Image.fromarray((ndimage.gaussian_filter(Mk, 0.6) * 255).astype(np.uint8)), box
+    box = int(0.13 * W); fat, rim = int(0.0016 * W), int(0.0055 * W)
+    a_ = Image.new('L', (box, box), 0); ImageDraw.Draw(a_).text((box / 2, box / 2), ch, font=f, fill=255, anchor='mm', stroke_width=fat + rim, stroke_fill=255)
+    w_ = Image.new('L', (box, box), 0); ImageDraw.Draw(w_).text((box / 2, box / 2), ch, font=f, fill=255, anchor='mm', stroke_width=fat, stroke_fill=255)
+    A, Wh = np.array(a_, float) / 255, np.array(w_, float) / 255
+    yy, xx = np.mgrid[0:box, 0:box] / (box / 2) - 1; r2 = xx ** 2 + yy ** 2; k = 0.22    # bulge: sample nearer the centre
+    sx, sy = (xx / (1 + k * (1 - np.clip(r2, 0, 1))) + 1) * box / 2, (yy / (1 + k * (1 - np.clip(r2, 0, 1))) + 1) * box / 2
+    A = ndimage.map_coordinates(A, [sy, sx], order=1); Wh = ndimage.map_coordinates(Wh, [sy, sx], order=1)
+    rgb = np.dstack([Wh * 250 + (1 - Wh) * 12] * 3)
+    return Image.fromarray(np.clip(rgb, 0, 255).astype(np.uint8)), Image.fromarray((np.clip(A, 0, 1) * 255).astype(np.uint8)), (box, box)
 CARVE = {ch: carved(ch) for ch in WORD}
 for i in range(6):
     for j in range(6):
-        t, m, box = CARVE[M[i][j]]; cx, cy = x0 + (j + 0.5) * cell, x0 + (i + 0.5) * cell
-        img.paste(t, (int(cx - box / 2), int(cy - box / 2)), m)
+        t, m, (bw, bh) = CARVE[M[i][j]]; cx, cy = x0 + (j + 0.5) * cell, x0 + (i + 0.5) * cell
+        img.paste(t, (int(cx - bw / 2), int(cy - bh / 2)), m)
 img = img.resize((N, N), Image.LANCZOS); img.save('hexoct-square.png'); print('ok')
