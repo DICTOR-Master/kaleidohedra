@@ -1,0 +1,69 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-30",
+ "access_right": "open",
+ "title": "Between the Queens: the five stages from the 600-cell to the 120-cell, with their slices and shadows",
+ "description": "<p>In #63 the White Queen is the 600-cell, and in #65 the Red Queen, the 120-cell, is built exactly from her. DICTO proposed the four-dimensional icosahedron with hexagons, and the stages that lead from one queen to the other. Cut the White Queen's corners, deeper and deeper, and she passes through five uniform four-dimensional solids before she becomes the Red Queen: the truncated and rectified 600-cell, the bitruncated 600-cell (the midpoint, whose cells are 120 truncated icosahedra and 600 truncated tetrahedra), and the rectified and truncated 120-cell. All seven are classical: Alicia Boole Stott was the first to list the semiregular four-dimensional solids, in 1910, and they are Wythoff's and Coxeter's uniform polytopes. We build each stage from the White Queen's own corners, edges, triangles and cells, prove the cut positions that make every edge equal (1/3, 1/2, 3/5, the triangle centre and (5 − √5)/10), and give the complete atlas of their slices and shadows in the queens' four directions: 1402 slices from the centre to the tips, and 20 shadows. Main theorem: the numbers of slices and the shadows of Table 2, with both ends equal to the exact atlases of #63 and #65; and in every direction the shadows of the truncated and the rectified 600-cell have the same number of faces, and so do those of the rectified and the truncated 120-cell. The stages are in the app: a slider in the White Queen world runs from White to Red.</p><p>View in app: <a href=\"https://kaleidohedra.dictospheres.com/?open=whitequeen:t12\">Kaleidohedra, White Queen world, the bitruncated midpoint</a>. Computation, proofs and drafting with Claude (Anthropic). More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "White Queen",
+  "Red Queen",
+  "600-cell",
+  "120-cell",
+  "bitruncated 600-cell",
+  "truncated 600-cell",
+  "rectified 600-cell",
+  "rectified 120-cell",
+  "truncated 120-cell",
+  "uniform polytopes",
+  "Wythoff construction",
+  "Alicia Boole Stott",
+  "cross sections",
+  "projections"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23690856",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23716140",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23753305",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/3c3ae4f9635d5cadad2a25de513a812704c7da94/studies/2026-10-30-queen-stages",
+   "relation": "isSupplementedBy",
+   "scheme": "url"
+  }
+ ],
+ "subjects": [
+  {
+   "term": "MSC2020 52B11: n-dimensional polytopes",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B11",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 51M20: Polyhedra and polytopes; regular figures",
+   "identifier": "https://zbmath.org/classification/?q=cc:51M20",
+   "scheme": "url"
+  }
+ ]
+}
