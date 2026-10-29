@@ -8,7 +8,7 @@ API = 'https://zenodo.org/api/deposit/depositions'
 def req(url, method='GET', body=None, raw=None, ctype='application/json'):
     data = raw if raw is not None else (None if body is None else json.dumps(body).encode())
     r = urllib.request.Request(url, data=data, method=method, headers={'Authorization': f'Bearer {T}', 'Content-Type': ctype})
-    with urllib.request.urlopen(r, timeout=300) as f:
+    with urllib.request.urlopen(r, timeout=1800) as f:
         b = f.read(); return json.loads(b) if b else {}
 rid, pdf, meta = sys.argv[1], sys.argv[2], json.load(open(sys.argv[3]))
 nv = req(f'{API}/{rid}/actions/newversion', 'POST'); draft = req(nv['links']['latest_draft'])
