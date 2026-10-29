@@ -32,7 +32,7 @@ def para(x, y, text, font, width, fill=WHITE, lead=1.42):
     return y
 x = px(xb0 + 0.85); wid = px(TW - 1.7); y = px(BLEED + 1.0)
 d.text((x, y), 'The Golden Cycle', font=F('NimbusSans-Bold.otf', 30), fill=GOLD); y += px(0.62)
-d.text((x, y), 'Icosahedral Shells', font=F('NimbusSans-Regular.otf', 16), fill=WHITE); y += px(0.6)
+d.text((x, y), 'Icosahedral Shells', font=F('NimbusSans-Regular.otf', 16), fill=(180, 138, 224)); y += px(0.6)   # lilac, as on the front (DICTO 10-29)
 body = F('NimbusSans-Regular.otf', 11.5)
 y = para(x, y, 'Grow a solid in shells, every layer sitting exactly on the one below, and the solids of five-fold symmetry come '
          'back to themselves, a golden ratio larger each time. This book follows those cycles exactly: the icosahedron and the '
