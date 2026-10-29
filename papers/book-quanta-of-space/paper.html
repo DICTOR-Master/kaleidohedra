@@ -39,6 +39,16 @@ td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 /* DICTO 10-29: neutral sans-serif for the whole book, as in the series */
 body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs,p,li{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}
+
+/* DICTO 10-29: spacing. Entries flow on (a new page only at each chapter), titles stand clear of the text above and below */
+.page.entry { break-after: auto; break-before: auto; margin-top: 14mm; padding-top: 6mm; border-top: 1px solid #e3d7b5; }
+.page.entry[data-first="1"] { break-before: page; margin-top: 0; padding-top: 0; border-top: none; }
+.page.entry h1 { margin: 2mm 0 2mm; break-after: avoid; }
+.page.entry .sub { margin-bottom: 5mm; break-after: avoid; }
+.page.entry .chapter-mark { break-after: avoid; }
+.intro h3, .entry h3 { margin: 16pt 0 6pt !important; break-after: avoid; }
+.entry p, .intro p { orphans: 3; widows: 3; }
+figure { break-inside: avoid; }
 </style></head><body>
 <img class="watermark" src="../dicto-logo.png" alt="">
 
@@ -216,7 +226,7 @@ Licence CC BY-SA 4.0</p>
 </section>
 
 <!-- ============ #18 ============ -->
-<section class="page entry">
+<section class="page entry" data-first="1">
 <img class="logo" src="../dicto-logo.png" alt="DICTO">
 <p class="chapter-mark">Chapter 1 · Atoms · #18</p>
 <h1>The DICTO Hexa</h1>
@@ -751,7 +761,7 @@ Licence CC BY-SA 4.0</p>
 </table>
 </section>
 <!--ATOMS END-->
-<section class="page entry">
+<section class="page entry" data-first="1">
 <img class="logo" src="../dicto-logo.png" alt="DICTO">
 <p class="chapter-mark">Chapter 2 · Bonds · #8</p>
 <h1>The Euclid–Kepler–Pacioli Cell</h1>
@@ -1370,7 +1380,7 @@ Licence CC BY-SA 4.0</p>
 <p class="full">DICTO DOI 10.5281/zenodo.23677485</p></div>
 </section>
 <!--E59 END-->
-<section class="page entry">
+<section class="page entry" data-first="1">
 <img class="logo" src="../dicto-logo.png" alt="DICTO">
 <p class="chapter-mark">Chapter 3 · Shells · #22</p>
 <h1>The Chain of Karma</h1>
@@ -1583,7 +1593,7 @@ Licence CC BY-SA 4.0</p>
 </section>
 
 <!-- ============ #32 ============ -->
-<section class="page entry">
+<section class="page entry" data-first="1">
 <img class="logo" src="../dicto-logo.png" alt="DICTO">
 <p class="chapter-mark">Chapter 4 · Cycles · #32</p>
 <h1>Inverted Shells</h1>
@@ -1868,7 +1878,7 @@ Licence CC BY-SA 4.0</p>
 <!--SHORT 4D END-->
 
 <!--SHORT END-->
-<section class="page entry">
+<section class="page entry" data-first="1">
 <img class="logo" src="../dicto-logo.png" alt="DICTO">
 <p class="chapter-mark">Findings and apps</p>
 <h1>Kaleidohedra by DICTO</h1>
@@ -1891,7 +1901,7 @@ Licence CC BY-SA 4.0</p>
 <p class="doi">DICTO DOI: 10.5281/zenodo.23173809</p>
 </section>
 
-<section class="page entry">
+<section class="page entry" data-first="1">
 <img class="logo" src="../dicto-logo.png" alt="DICTO">
 <p class="chapter-mark">Findings and apps · data set</p>
 <h1>DICTO Solids: Exact Geometry</h1>
