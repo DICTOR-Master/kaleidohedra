@@ -21,7 +21,8 @@ def card(r):
     return (f'<div class="atom">{pic}<div class="an"><b>{e(num)}</b> {e(r["name"])}</div>'
             f'<div class="am">{e(r["kind"])} · {where(r)}</div><div class="ant">{note}</div></div>')
 new = sorted((r for r in rows if dnum(r)), key=dnum)
-other = [r for r in rows if not dnum(r)]
+newc = [r for r in rows if not dnum(r) and r['status'].startswith('new')]   # DICTO's new clusters, structures, networks: no D-number (D-numbers are for single solids and pieces)
+other = [r for r in rows if not dnum(r) and not r['status'].startswith('new')]   # known or rediscovered: at the end of the book
 css = '''<style>
 .atoms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm 4mm; }
 .atom { break-inside: avoid; font: 7.6pt/1.3 "Nimbus Sans", "Liberation Sans", sans-serif; }
@@ -33,7 +34,7 @@ css = '''<style>
 with open(out, 'w', encoding='utf8') as f:
     f.write(css)
     f.write('<section class="page catalogue">\n<p class="chapter-mark">Chapter 1 · Atoms · the catalogue</p>\n<h1>All the atoms</h1>\n')
-    f.write(f'<p>Every named shape of the work, one quantum of space each: first DICTO\'s new shapes, {len(new)} of them, D1 to D{dnum(new[-1])} (given in order of first publication, never reused); the {len(other)} known or rediscovered shapes the work builds with are listed at the end of the book. A shape whose exact geometry is in the dataset <i>DICTO Solids: Exact Geometry</i> is drawn, all in one pose: gold for DICTO\'s new shapes, silver for known ones. Under each: its kind, the paper or finding it comes from (linked to its DICTO DOI), and the status found by the prior-art search.</p>\n')
+    f.write(f'<p>Every named shape of the work, one quantum of space each: first DICTO\'s new shapes, {len(new)} of them, D1 to D{dnum(new[-1])} (given in order of first publication, never reused); then his {len(newc)} new clusters, structures and networks built from them; the {len(other)} known or rediscovered shapes the work builds with are listed at the end of the book. A shape whose exact geometry is in the dataset <i>DICTO Solids: Exact Geometry</i> is drawn, all in one pose: gold for DICTO\'s new shapes, silver for known ones. Under each: its kind, the paper or finding it comes from (linked to its DICTO DOI), and the status found by the prior-art search.</p>\n')
     def block(title, rs):
         pics = [r for r in rs if icon(r)]; rest = [r for r in rs if not icon(r)]
         f.write(f'<h2>{title}</h2>\n<div class="atoms">\n' + '\n'.join(card(r) for r in pics) + '\n</div>\n')
@@ -41,6 +42,8 @@ with open(out, 'w', encoding='utf8') as f:
             f.write('<p class="tl">Without an exact model in the dataset yet (made in the apps or described in the papers):</p>\n<table class="atl"><tr><th>No.</th><th>Shape</th><th>Kind</th><th>From</th><th>Status</th></tr>\n')
             f.write('\n'.join(f'<tr><td>{e(r["universal_number"] or "—")}</td><td>{e(r["name"])}</td><td>{e(r["kind"])}</td><td>{where(r)}</td><td>{e((r["prior_art_or_note"] or r["status"])[:140])}</td></tr>' for r in rest) + '\n</table>\n')
     block("DICTO's new atoms", new)
+    f.write('<p class="tl">D-numbers are given to single solids and pieces. DICTO\'s new clusters, structures and networks, built from them, follow without numbers.</p>\n')
+    block("DICTO's new clusters, structures and networks", newc)
     f.write('</section>\n')
 # the known and rediscovered shapes go to the very end of the book (DICTO 10-29), so nothing after the new atoms reads as known
 with open(out.replace('.html', '-known.html'), 'w', encoding='utf8') as f:
@@ -53,4 +56,4 @@ with open(out.replace('.html', '-known.html'), 'w', encoding='utf8') as f:
         f.write('<table class="atl"><tr><th>No.</th><th>Shape</th><th>Kind</th><th>From</th><th>Status</th></tr>\n')
         f.write('\n'.join(f'<tr><td>{e(r["universal_number"] or "—")}</td><td>{e(r["name"])}</td><td>{e(r["kind"])}</td><td>{where(r)}</td><td>{e((r["prior_art_or_note"] or r["status"])[:140])}</td></tr>' for r in rest) + '\n</table>\n')
     f.write('</section>\n')
-print('new', len(new), 'other', len(other), 'with icons', sum(1 for r in rows if icon(r)))
+print('new', len(new), 'new clusters', len(newc), 'other', len(other), 'with icons', sum(1 for r in rows if icon(r)))
