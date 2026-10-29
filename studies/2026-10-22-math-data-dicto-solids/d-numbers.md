@@ -192,6 +192,7 @@ appendix rows (W1–W62, then R1–R124). D1–D86 are unchanged.
 | D99 | Walrus | solid | R80 | #65 |
 | D100 | Red Knight | solid | R113 | #65 |
 | D101 | White Knight | solid | R115 | #65 |
+| D102 | Fallen Humpty (Slice-48 of #62; the equal-edged form of Humpty Dumpty's pattern, non-convex deltahedron) | solid | – | #62 |
 
 No D-number: Alicia (W48), the Unicorn (W58) and the Bandersnatch (W60) are cell-first sections through corner layers, which are in
 Alicia Boole Stott's 1900 series (read for #63 version 3), so they are known shapes; they are in the dataset with DICTO's names.
