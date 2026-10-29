@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>Quanta of Space: A Manifesto (draft)</title>
+<html lang="en"><head><meta charset="utf-8"><title>Quanta of Space: A Manifesto</title>
 <link rel="stylesheet" href="../paper.css">
 <style>
 body { font-size: 11pt; line-height: 1.55; }
@@ -36,10 +36,17 @@ body { font-size: 11pt; line-height: 1.55; }
 .appendix table { font-size: 8.6pt; }
 td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .licence { font: 8.4pt "DejaVu Sans", sans-serif; color: #555; }
+
+/* DICTO 10-29: neutral sans-serif for the whole book, as in the series */
+body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs,p,li{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}
 </style></head><body>
 <img class="watermark" src="../dicto-logo.png" alt="">
 
 <!-- ============ TITLE PAGE ============ -->
+<section class="page" style="text-align:center;padding-top:20mm">
+<img src="figures/cover/dicto-square.png" alt="Cover: the DICTO square, the five Platonic solids of DICTO's name, D I C T O" style="width:165mm;display:block;margin:0 auto 10mm">
+<h1 style="font-size:30pt;margin:0">Quanta of Space</h1><p style="font-size:14pt;margin:2mm 0 0">A Manifesto · DICTO</p>
+</section>
 <section class="page titlepage">
 <img class="big" src="../dicto-logo.png" alt="DICTO">
 <h1>Quanta of Space</h1>
@@ -49,15 +56,15 @@ td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
 <p class="small">artist, Osaka, Japan · contact@dictospheres.com · https://dictospheres.com<br>
 All works, findings and names are DICTO's. Computation, checking and drafting with Claude (Anthropic).<br>
 Licence CC BY-SA 4.0</p>
-<p class="sample"><b>Draft</b> · 25 October 2026 · title chosen by DICTO.<br>
-The book covers 44 works: 42 papers in four chapters, the Kaleidohedra findings and the data set <i>DICTO Solids: Exact Geometry</i>. This draft holds the whole book: the contents, the introduction, all 44 entries and their appendix sections. Each entry tells the work; every number, exact value and check is in the appendix at the back.</p>
+<p class="small" style="margin-top:8mm">Book draft · 29 October 2026 · __DOI__</p>
 </section>
 
+<section class="page" style="text-align:center;padding-top:80mm"><p style="font-size:14pt;font-style:italic">For my father, Alan Baker</p></section>
 <!-- ============ CONTENTS ============ -->
 <section class="page contents">
 <img class="logo" src="../dicto-logo.png" alt="DICTO" style="width:22mm">
 <h1>Contents</h1>
-<p style="font: 9.5pt 'DejaVu Sans', sans-serif;">What this work holds<br>Introduction: Quanta of Space<br>44 works: 42 papers in four chapters, then the Kaleidohedra findings and the data set (numbers are the paper numbers on dictospheres.com)<br>Appendix: the data, work by work</p>
+<p style="font: 9.5pt 'DejaVu Sans', sans-serif;">What this work holds<br>Introduction: Quanta of Space<br>68 works: 66 papers in six chapters, with the catalogue of all the atoms, then the Kaleidohedra findings and the data set (numbers are the paper numbers on dictospheres.com)<br>Appendix: the data, work by work</p>
 
 <h2>Atoms</h2><p class="chap">Single solids, each an exact new piece.</p>
 <ol>
@@ -73,6 +80,7 @@ The book covers 44 works: 42 papers in four chapters, the Kaleidohedra findings 
 <li><b>#41</b>The DICTO Jewel</li>
 <li><b>#45</b>The Reuleaux Platonic Solids</li>
 <li><b>#49</b>The Polyhedral Stretching Theorem</li>
+<li><b>—</b>All the atoms: the catalogue (D1–D101 and the known shapes)</li>
 </ol>
 
 <h2>Bonds</h2><p class="chap">How pieces fill space together: exact kits, packings and lattices.</p>
@@ -95,6 +103,11 @@ The book covers 44 works: 42 papers in four chapters, the Kaleidohedra findings 
 <li><b>#51</b>The Delian Bond: Samson, Delilah and the Octet Between Kepler's Rhombic Dodecahedron and the Cube</li>
 <li><b>#50</b>One Move Each: Classical Cut-and-Glue Space-Fillers Built Exactly</li>
 <li><b>—</b>Closing section: The DICTONIC SOLIDS and BONDS</li>
+<li><b>#52</b>The Web of Bonds: How the DICTONIC Bonds Hand Over</li>
+<li><b>#53</b>The Global Web of Bonds</li>
+<li><b>#55</b>David and Goliath</li>
+<li><b>#56</b>Sonsam and Lahdeli</li>
+<li><b>#59</b>The Icosaxes Hexa: Bloom, Bud and Seed</li>
 </ol>
 
 <h2>Shells</h2><p class="chap">Pieces closing into nested shells round a core, each layer filled exactly.</p>
@@ -116,6 +129,17 @@ The book covers 44 works: 42 papers in four chapters, the Kaleidohedra findings 
 <li><b>#38a</b>The DICTO Kepler–Poinsot–UP Cycle</li>
 <li><b>#39</b>The DICTO OG Family: Four Steps Up and Four Down</li>
 <li><b>#43</b>DICTO Kyushindo Cores</li>
+<li><b>#54</b>One Turn Is a Gnomon</li>
+</ol>
+
+<h2>Stacking</h2><p class="chap">Every close packing from a finite catalogue of pieces, and the two tiles that build it (in full in <i>HexOct: The Laws of Stacking</i>).</p>
+<ol>
+<li><b>#57</b>The Rule of Halves</li><li><b>#58</b>From the Octet to Every Stacking: the Web of Bonds</li><li><b>#60</b>DICTO Janus c/h Pyrochlore</li><li><b>#61</b>The Swap Rule</li><li><b>#64</b>The Swap Rule in Crystals</li><li><b>#66</b>The Focus</li><li><b>#67</b>Random Stackings and Stacking Faults</li><li><b>#69</b>The Fibonacci Stacking</li><li><b>#68</b>Real Polytypes and the Hexagonality Law</li><li><b>#70</b>Real Materials II: Entropy and Pressure</li><li><b>#71</b>Real Materials III: Alloys and Hydrogen</li><li><b>#72</b>Real Materials IV: Oxides</li><li><b>#73</b>Real Materials V: Ice, Diamond and Nanowires</li><li><b>#74</b>Spin Ice and Kagome Magnets on Every Stacking</li><li><b>#75</b>Two Tiles for Every Stacking: HexOct</li>
+</ol>
+
+<h2>Four dimensions</h2><p class="chap">The White and Red Queens by their shadows and slices (in full in <i>Alicia in Wonderland: The Red &amp; White Queens</i>).</p>
+<ol>
+<li><b>#62</b>Shadows of the Fourth Dimension</li><li><b>#63</b>The White Queen 600-cell</li><li><b>#65</b>The Red Queen 120-cell</li>
 </ol>
 
 <h2>Findings and apps</h2>
@@ -123,7 +147,7 @@ The book covers 44 works: 42 papers in four chapters, the Kaleidohedra findings 
 <li><b>—</b>Kaleidohedra by DICTO</li>
 <li><b>—</b>DICTO Solids: Exact Geometry (data set)</li>
 </ol>
-<p class="note">Order and chapters as in DICTO: Collected Geometric Works, Version 24 (DICTO DOI: 10.5281/zenodo.23345699).</p>
+<p class="note">Order and chapters as in DICTO: Collected Geometric Works (DICTO DOI: 10.5281/zenodo.23345699), with the Stacking and Four dimensions chapters added. Works from #52 on are told in short; the books HexOct, The Golden Cycle and Alicia in Wonderland hold them in full.</p>
 </section>
 
 <!-- ============ INTRODUCTION ============ -->
@@ -157,7 +181,7 @@ The book covers 44 works: 42 papers in four chapters, the Kaleidohedra findings 
 <p>Plato gave them shapes. In his dialogue the <i>Timaeus</i>, the four elements are four regular solids. Fire is the tetrahedron, air the octahedron, water the icosahedron and earth the cube. All their faces are built from just two kinds of right-angled triangle. The fifth regular solid, the dodecahedron, was used “for the whole”. This was the first kit for building matter: a small set of exact pieces from which everything is put together.</p>
 
 <h3>Aristotle's mistake</h3>
-<p>Aristotle replied that if atoms are solid, they must fill space with no gaps. He claimed that only two solids do this: the pyramid and the cube. He was right about the cube. He was wrong about the regular tetrahedron, which does not fill space, and his error stood for centuries. Our paper #44, <i>Aristotle's Pyramid</i>, asks what he could have meant, and proves which pyramids cut from the regular solids can fill space.</p>
+<p>Aristotle replied that if atoms are solid, they must fill space with no gaps. He claimed that only two solids do this: the pyramid and the cube. He was right about the cube. He was wrong about the regular tetrahedron, which does not fill space, and his error stood for centuries. Our paper #44, <i>Aristotle's Pyramid</i>, asks what he could have meant, and proves which pyramids cut from the regular solids can fill space; and #65 finds where all five of his pyramids belong: each is exactly the core of a regular solid of four-dimensional space, seen in perspective.</p>
 
 <h3>Kepler's packings</h3>
 <p>In 1596 Johannes Kepler nested the five regular solids between the spheres of the planets. In 1611, in a small book on the six-cornered snowflake, he explained the snowflake by how equal small units pack together. That became the famous question of how tightly equal balls can be stacked. Our paper #8, <i>The Euclid–Kepler–Pacioli Cell</i>, finds all five regular solids nested on 13 points of one repeating cell.</p>
@@ -167,20 +191,25 @@ The book covers 44 works: 42 papers in four chapters, the Kaleidohedra findings 
 <p>There is an honest difference. In that theory two neighbouring pieces share a face of the same area, but in general not of the same shape (Freidel and Speziale, 2010). Their pieces need not fit. Our pieces always fit exactly, corner to corner. Other approaches, such as causal sets, build space and time from points rather than from solids.</p>
 <p>So this book makes no claim about physics. It shares the question and the form: what are the smallest exact pieces from which space can be built, and how do they join?</p>
 
-<h3>Four chapters</h3>
-<p>Read this way, the works fall into four chapters.</p>
-<p><b>Atoms</b> are single solids, each an exact new piece: the DICTO Ogdoecontahedron (OG), the Hecatodihedron, the Jewel, the Hexa, AXE, CLEO and FUJI, the Reuleaux Platonic solids, and the six DICTONIC SOLIDS (Icosaxes, Unborn Axes, Lotus Jewel Axes, Dodecaxes, Samson and Delilah). Their exact shapes are gathered in the data set <i>DICTO Solids: Exact Geometry</i>, where every DICTO solid has a permanent D-number.</p>
+<h3>The centre: the quanta of every close packing</h3>
+<p>Stack oranges in a crate and each new layer sits in the hollows of the one below, in one of two ways. Repeat one choice and the stack is cubic; repeat the other and it is hexagonal; mix them in any order and it is still a perfect packing. Nature uses many of these mixtures, in metals, ice, silicon carbide and the oxides of batteries.</p>
+<p>DICTO's Rule of Halves (#57) shows that however the layers are stacked, periodic or not, the space between the balls is shared out into pieces of only finitely many kinds, every one borrowed whole or in half from the two pure stackings. That is a finite catalogue of quanta for every close packing there is: the clearest answer this work gives to the old question. Where a cubic layer meets a hexagonal one, a piece is half one and half the other: the Janus c/h pieces stand on the threshold between the two orders. The pieces change only by swapping (the Swap Rule, #61), so every count and every volume is a straight line in one number, the share of hexagonal layers (the Hexagonality Law, #66), and real crystals obey it (#67–#74). And the catalogue closes into just two tiles, one cubic and one hexagonal, that build every stacking in any order: HexOct (#75). <i>The Law gave the pieces; the pieces prove the law.</i></p>
+<h3>Six chapters</h3>
+<p>Read this way, the works fall into six chapters.</p>
+<p><b>Atoms</b> are single solids, each an exact new piece: the DICTO Ogdoecontahedron (OG), the Hecatodihedron, the Jewel, the Hexa, AXE, CLEO and FUJI, the Reuleaux Platonic solids, and the six DICTONIC SOLIDS (Icosaxes, Unborn Axes, Lotus Jewel Axes, Dodecaxes, Samson and Delilah). Their exact shapes are gathered in the data set <i>DICTO Solids: Exact Geometry</i>, where every DICTO solid has a permanent D-number; the chapter closes with the catalogue of all the atoms, 101 numbered shapes of DICTO's and the known shapes the work builds with.</p>
 <p><b>Bonds</b> are about how pieces fill space together: exact kits, packings and lattices, from the Euclid–Kepler–Pacioli Cell to the OG on every stacking. The clearest cases are the three DICTONIC BONDS (golden, keyed and Delian): pairs of solids that fill space together. A DICTONIC BOND is one such pair; the chapter Bonds holds every way pieces join.</p>
 <p><b>Shells</b> are pieces closing into nested layers round a core, like the skins of an onion, each layer filled exactly: the Chain of Karma, the Spheres of Dharma, the Bodhi Seed and Theaetetus.</p>
-<p><b>Cycles</b> are rules that turn one shell into the next and come back round, with or without end: Universal PiTet, the OG family steps, Kyushindo Cores and the shells turned inside out.</p>
+<p><b>Cycles</b> are rules that turn one shell into the next and come back round, with or without end: Universal PiTet, the OG family steps, Kyushindo Cores and the shells turned inside out. Shells and cycles are told in full in the book <i>The Golden Cycle</i>.</p>
+<p><b>Stacking</b> is the centre above: the Rule of Halves, the Swap Rule, the Hexagonality Law in real materials, and the two HexOct tiles, told in full in the book <i>HexOct: The Laws of Stacking</i>.</p>
+<p><b>Four dimensions</b> are seen by their shadows and slices: the 600-cell and the 120-cell, which DICTO named the White Queen and the Red Queen, told in full in the book <i>Alicia in Wonderland: The Red &amp; White Queens</i>.</p>
 
 <h3>Between the repeating and the never-repeating</h3>
 <p>Some patterns repeat, like the tiles of a bathroom floor. Others never repeat, yet are perfectly ordered, like the Penrose tiling. The works in this book use the same pieces to build both.</p>
 <p>For most of history, order in matter meant repetition. A crystal was one small cell copied without end, and five-fold symmetry was thought impossible in it. Then in 1982 Dan Shechtman found a metal alloy whose scattering pattern showed sharp five-fold symmetry. These quasicrystals, ordered but never repeating, earned him the Nobel Prize in 2011. Matter has two kinds of order, and the question became how they meet.</p>
-<p>The pieces in this book sit on that border. One exact kit builds the repeating octet and also a crystal that never repeats, in the Fibonacci pattern (#40, <i>The DICTO OG Family on Every Stacking</i>). In <i>A Fibonacci Spine</i> (#30), five repeating packings of the OG meet round a five-fold axis. The copies that have to be taken out along that axis make exactly the Fibonacci chain, the simplest order that never repeats. The golden shells of the Spheres of Dharma (#23) repeat only by growing larger by the same golden factor at each turn. One kit, two kinds of order: the pieces themselves are the bridge.</p>
+<p>The pieces in this book sit on that border. One exact kit builds the repeating octet and also a crystal that never repeats, in the Fibonacci pattern (#40, <i>The DICTO OG Family on Every Stacking</i>). In <i>A Fibonacci Spine</i> (#30), five repeating packings of the OG meet round a five-fold axis. The copies that have to be taken out along that axis make exactly the Fibonacci chain, the simplest order that never repeats. The golden shells of the Spheres of Dharma (#23) repeat only by growing larger by the same golden factor at each turn. In the Fibonacci stacking (#69) the pieces of every close packing come in golden proportions, and the two HexOct tiles build repeating and never-repeating stackings alike, by the order in which they are laid. One kit, two kinds of order: the pieces themselves are the bridge.</p>
 
 <h3>What the pieces show</h3>
-<p>Three things come back again and again. A small kit is enough: a handful of exact shapes builds shells and spaces without limit. The golden ratio appears wherever five-fold symmetry does, and it decides when shells close. And the pieces join the two kinds of order in matter, the repeating and the never-repeating.</p>
+<p>Four things come back again and again. A small kit is enough: a handful of exact shapes builds shells and spaces without limit, and for close packing the kit is finite and complete, down to two tiles. The golden ratio appears wherever five-fold symmetry does, and it decides when shells close. The pieces join the two kinds of order in matter, the repeating and the never-repeating. And the same pieces reach beyond our space: the five pyramids that Aristotle argued over are the cores of the regular solids of four dimensions.</p>
 <p>The ancients guessed that space was made of shaped pieces, and modern physics has come back to the idea. These works build such pieces exactly and test them, and each paper behind this book is checked exactly.</p>
 <p class="credit">Sources for the introduction: Plato, <i>Timaeus</i> (tr. B. Jowett); Lucretius, <i>On the Nature of Things</i> (tr. W. E. Leonard); Aristotle, <i>On the Heavens</i> III.8 (tr. J. L. Stocks); J. Kepler, <i>Mysterium Cosmographicum</i> (1596) and <i>Strena seu de nive sexangula</i> (1611); D. Shechtman, I. Blech, D. Gratias, J. W. Cahn, Phys. Rev. Lett. 53 (1984) 1951; C. Rovelli, L. Smolin, Nucl. Phys. B 442 (1995) 593; L. Freidel, S. Speziale, Phys. Rev. D 82 (2010) 084040; E. Bianchi, P. Doná, S. Speziale, Phys. Rev. D 83 (2011) 044035; S. Surya, Living Rev. Relativ. 22 (2019) 5. Rewritten from the essay <i>Quanta of Space</i> in DICTO: Collected Geometric Works (DICTO DOI: 10.5281/zenodo.23345699). Licence CC BY-SA 4.0.</p>
 </section>
@@ -1338,6 +1367,22 @@ The book covers 44 works: 42 papers in four chapters, the Kaleidohedra findings 
 </section>
 
 <!-- ============ #22 ============ -->
+<!--BONDS2 START-->
+<section class="shortch" style="break-before:auto;break-after:page">
+<div class="se"><h2><span class="n">#52</span>The Web of Bonds: How the DICTONIC Bonds Hand Over</h2>
+<p>Both DICTONIC loops are weighted tilings round fixed points, the caesium chloride and fluorite crystal structures, and the web of bonds, one bond per shared face, is their exact dual. The golden bonds hand over gradually; the Delian bonds hand over at the octet, the one point where a single kind of bond holds both pieces. The weights read as squared atom sizes, the touching ranges end at Pauling's limits, and real crystals sit on the loops.</p>
+<p class="full">DICTO DOI 10.5281/zenodo.23629252</p></div>
+<div class="se"><h2><span class="n">#53</span>The Global Web of Bonds</h2>
+<p>DICTO's idea that the hand-overs recur elsewhere, proved for ten crystal networks and the perovskite: every weight walk exactly, every switch, and the bonds on every stretch. The bond between unlike pieces can never break.</p>
+<p class="full">DICTO DOI 10.5281/zenodo.23631140</p></div>
+<div class="se"><h2><span class="n">#55</span>David and Goliath</h2>
+<p>In the A15 structure the weight walk lands exactly, at one weight, on Goliath, the convex hull of Jessen's icosahedron, and David, a tetrahedron, filling space two to six: the classical A15 picture of Frank and Kasper, reached by the global theorem. Names by DICTO.</p>
+<p class="full">DICTO DOI 10.5281/zenodo.23632358</p></div>
+<div class="se"><h2><span class="n">#56</span>Sonsam and Lahdeli</h2>
+<p>The web of bonds followed on the twinned, hexagonal octet: its own equal-volume pair, Sonsam and Lahdeli, the mirror of Samson and Delilah, then Ian Dury with the 60° rhombohedron and the Blockheads, stops the cubic side lacks; keys change the pieces, never the web. Names by DICTO. Their halves return in the stacking chapter as the h-side of every close packing.</p>
+<p class="full">DICTO DOI 10.5281/zenodo.23635823</p></div>
+</section>
+<!--BONDS2 END-->
 <!--E59 START-->
 <section class="shortch" style="break-before:auto;break-after:page">
 <div class="se"><h2><span class="n">#59</span>The Icosaxes Hexa: Bloom, Bud and Seed</h2>
@@ -1741,6 +1786,13 @@ The book covers 44 works: 42 papers in four chapters, the Kaleidohedra findings 
 </section>
 
 <!-- ============ FINDINGS ============ -->
+<!--E54 START-->
+<section class="shortch" style="break-before:auto;break-after:page">
+<div class="se"><h2><span class="n">#54</span>One Turn Is a Gnomon</h2>
+<p>DICTO's idea: carry the classical gnomon of Euclid and Heron, the piece that makes a figure into a larger copy of itself, into three dimensions through the golden cycle of twelve nested solids. The whole turn is a gnomon, the next icosahedron φ³ larger, and no single step or shorter run is. The step pieces, the Julias and Pimentels, are named by DICTO in tribute to Júlia Pimentel's square method.</p>
+<p class="full">Full chapter: The Golden Cycle, Chapter 13. DICTO DOI 10.5281/zenodo.23633365</p></div>
+</section>
+<!--E54 END-->
 <!--SHORT START-->
 <style>
 .shortch { break-before: page; break-after: page; }
@@ -2848,4 +2900,13 @@ The book covers 44 works: 42 papers in four chapters, the Kaleidohedra findings 
 <li>check.py (Python 3 + sympy): 712 checks, all passing, including the keyed solids as their convex hulls minus or plus 8 Tricaps.</li>
 </ul>
 </section>
+<!--ABOUT START-->
+<section class="page about" style="break-before:page">
+<h1 class="chapter">About the author</h1>
+<p>DICTO is the artist name of Alan Baker, an artist in Osaka, Japan. His background is architectural sculpture, stonecarving and Buddhist statuary. He trained as an architectural stonecarver at the City and Guilds of London Art School (1998–2001), worked at St James's Palace, and recarved the Roman lettering of the Civil Service Rifles War Memorial at Somerset House, London, for its rededication in 2002. Since 2009 he has worked in Japan in the sculpture and restoration of Buddhist statues, among them a statue at Takaosan Jingo-ji, Kyoto, traditionally attributed to Kōbō Daishi Kūkai.</p>
+<p>He builds geometric sculpture from recycled PET bottles with two modular systems of his own, B1NR and DICTOspheres, joined without glue. He holds six Japanese design registrations; five rest on spherical projections of the Platonic solids, the five forms behind his name: Dodecahedron, Icosahedron, Cube, Tetrahedron, Octahedron. His sculptures have been shown in Kyoto at the Kyoto Municipal Museum of Art (Interdependent Origination III, 2025), the Insho Domoto Museum of Fine Arts, the Kyoto Botanical Garden, the Kansho Exhibition and the Kyoto Takasegawa Art Festival.</p>
+<p>The geometry behind the sculptures led to seventy-five papers, gathered in <i>DICTO: Collected Geometric Works</i>, and to four books: <i>HexOct: The Laws of Stacking</i>, <i>The Golden Cycle</i>, <i>Alicia in Wonderland: The Red &amp; White Queens</i>, and this one (all 2026). Every paper and book is published openly with its own DICTO DOI at Zenodo. More at https://dictospheres.com.</p>
+</section>
+
+<!--ABOUT END-->
 </body></html>
