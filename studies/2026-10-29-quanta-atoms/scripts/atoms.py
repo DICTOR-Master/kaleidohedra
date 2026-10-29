@@ -44,7 +44,7 @@ with open(out, 'w', encoding='utf8') as f:
         pics = [r for r in rs if icon(r)]; rest = [r for r in rs if not icon(r)]
         f.write(f'<h2>{title}</h2>\n<div class="atoms">\n' + '\n'.join(card(r) for r in pics) + '\n</div>\n')
         if rest:
-            f.write('<table class="atl"><caption class="tl">Without an exact model in the dataset yet (made in the apps or described in the papers):</caption><thead><tr><th>No.</th><th>Shape</th><th>Kind</th><th>From</th><th>Status</th></tr></thead>\n')   # caption: the line never parts from its table (DICTO 10-29)
+            f.write('<table class="atl"><caption class="tl">Not drawn here: each is computed exactly in its paper or finding, but is not yet a model file in the data set:</caption><thead><tr><th>No.</th><th>Shape</th><th>Kind</th><th>From</th><th>Status</th></tr></thead>\n')   # caption: the line never parts from its table (DICTO 10-29)
             f.write('\n'.join(f'<tr><td>{e(r["universal_number"] or "—")}</td><td>{e(r["name"])}</td><td>{e(r["kind"])}</td><td>{where(r)}</td><td>{e((r["prior_art_or_note"] or r["status"])[:140])}</td></tr>' for r in rest) + '\n</table>\n')
     block("DICTO's new atoms", new)
     f.write('<p class="tl">D-numbers are given to single solids and pieces. DICTO\'s new clusters, structures and networks, built from them, follow without numbers.</p>\n')
