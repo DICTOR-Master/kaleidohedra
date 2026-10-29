@@ -110,7 +110,7 @@ doc=f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>The Golden Cycle</title>
 <link rel="stylesheet" href="../paper.css"><style>{css}</style></head><body>
 <img class="watermark" src="../dicto-logo.png" alt="">
-{front.replace('__TOC__',tochtml)}
+{(re.sub(r'<div class="coverpage".*?</div>\n', '', front, count=1, flags=re.S) if os.environ.get('KDP') else front).replace('__TOC__',tochtml)}
 {''.join(chapters)}
 <section class="epi">{epi}</section>
 <section class="app"><h1 class="chapter">Appendix. Sources by chapter</h1><p>Each chapter's own list of sources checked, data and code, as published with its paper.</p>{''.join(sources)}</section>
