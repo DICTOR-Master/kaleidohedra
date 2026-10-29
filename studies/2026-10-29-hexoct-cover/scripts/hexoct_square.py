@@ -65,10 +65,14 @@ def carved(ch):
     On, Rim, Ghost = lay(ch), lay(ch, edge), lay('~')
     glow = ndimage.gaussian_filter(On, 0.006 * W); glow /= glow.max()
     core = np.array([240, 252, 255.]); halo = np.array([140, 230, 255.]); dim = np.array([70, 62, 52.])
+    if ch in 'HC':   # DICTO: H and C, the letters on their own tile (teal), in the opposite colour, coral
+        core = np.array([255, 120, 104.]); halo = np.array([255, 150, 130.])
     rgb = (core * On[..., None] + halo * (1 - On[..., None])) * (On + 0.6 * glow)[..., None] / np.maximum(On + 0.6 * glow, 1e-6)[..., None]
-    # no dark edges (DICTO: let the colours come through): lit segments and their glow only; unlit segments a faint light veil
-    rgb = np.where(((Ghost - On) > 0.5)[..., None], halo, rgb)
-    alpha = np.clip(np.maximum.reduce([On, 0.45 * glow, 0.14 * Ghost]), 0, 1)
+    # dark edges at half strength (DICTO: "halfway back"), so the tile colours still come through; unlit segments a faint veil
+    rim = (Rim - On) > 0.3
+    rgb = np.where(rim[..., None], np.array([8, 6, 4.]), rgb)
+    rgb = np.where(((Ghost - Rim) > 0.5)[..., None], halo, rgb)
+    alpha = np.clip(np.maximum.reduce([On, 0.5 * rim, 0.45 * glow, 0.14 * Ghost]), 0, 1)
     return Image.fromarray(np.clip(rgb, 0, 255).astype(np.uint8)), Image.fromarray((alpha * 255).astype(np.uint8)), (box, box)
 CARVE = {ch: carved(ch) for ch in WORD}
 for i in range(6):
