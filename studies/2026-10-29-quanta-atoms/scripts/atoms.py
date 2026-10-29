@@ -33,13 +33,24 @@ css = '''<style>
 with open(out, 'w', encoding='utf8') as f:
     f.write(css)
     f.write('<section class="page catalogue">\n<p class="chapter-mark">Chapter 1 · Atoms · the catalogue</p>\n<h1>All the atoms</h1>\n')
-    f.write(f'<p>Every named shape of the work, one quantum of space each: first DICTO\'s new shapes, {len(new)} of them, in the order of their permanent catalogue numbers D1 to D{dnum(new[-1])} (given in order of first publication, never reused), then the {len(other)} known or rediscovered shapes the work builds with, which keep the numbers their first makers gave them. A shape whose exact geometry is in the dataset <i>DICTO Solids: Exact Geometry</i> is drawn, all in one pose: gold for DICTO\'s new shapes, silver for known ones. Under each: its kind, the paper or finding it comes from (linked to its DICTO DOI), and the status found by the prior-art search.</p>\n')
+    f.write(f'<p>Every named shape of the work, one quantum of space each: first DICTO\'s new shapes, {len(new)} of them, D1 to D{dnum(new[-1])} (given in order of first publication, never reused); the {len(other)} known or rediscovered shapes the work builds with are listed at the end of the book. A shape whose exact geometry is in the dataset <i>DICTO Solids: Exact Geometry</i> is drawn, all in one pose: gold for DICTO\'s new shapes, silver for known ones. Under each: its kind, the paper or finding it comes from (linked to its DICTO DOI), and the status found by the prior-art search.</p>\n')
     def block(title, rs):
         pics = [r for r in rs if icon(r)]; rest = [r for r in rs if not icon(r)]
         f.write(f'<h2>{title}</h2>\n<div class="atoms">\n' + '\n'.join(card(r) for r in pics) + '\n</div>\n')
         if rest:
             f.write('<p class="tl">Without an exact model in the dataset yet (made in the apps or described in the papers):</p>\n<table class="atl"><tr><th>No.</th><th>Shape</th><th>Kind</th><th>From</th><th>Status</th></tr>\n')
             f.write('\n'.join(f'<tr><td>{e(r["universal_number"] or "—")}</td><td>{e(r["name"])}</td><td>{e(r["kind"])}</td><td>{where(r)}</td><td>{e((r["prior_art_or_note"] or r["status"])[:140])}</td></tr>' for r in rest) + '\n</table>\n')
-    block("DICTO's new atoms", new); block('Known and rediscovered shapes in the work', other)
+    block("DICTO's new atoms", new)
+    f.write('</section>\n')
+# the known and rediscovered shapes go to the very end of the book (DICTO 10-29), so nothing after the new atoms reads as known
+with open(out.replace('.html', '-known.html'), 'w', encoding='utf8') as f:
+    f.write('<section class="page catalogue">\n<p class="chapter-mark">The known shapes</p>\n<h1>Known and rediscovered shapes in the work</h1>\n')
+    f.write(f'<p>The {len(other)} shapes the work builds with that were made first by others, or rediscovered by DICTO and found in the sources checked; each keeps the number its first maker gave it. Drawn in silver where its exact geometry is in the dataset.</p>\n')
+    block2 = block.__code__   # same layout as above
+    pics = [r for r in other if icon(r)]; rest = [r for r in other if not icon(r)]
+    f.write('<div class="atoms">\n' + '\n'.join(card(r) for r in pics) + '\n</div>\n')
+    if rest:
+        f.write('<table class="atl"><tr><th>No.</th><th>Shape</th><th>Kind</th><th>From</th><th>Status</th></tr>\n')
+        f.write('\n'.join(f'<tr><td>{e(r["universal_number"] or "—")}</td><td>{e(r["name"])}</td><td>{e(r["kind"])}</td><td>{where(r)}</td><td>{e((r["prior_art_or_note"] or r["status"])[:140])}</td></tr>' for r in rest) + '\n</table>\n')
     f.write('</section>\n')
 print('new', len(new), 'other', len(other), 'with icons', sum(1 for r in rows if icon(r)))
