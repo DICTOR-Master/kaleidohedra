@@ -47,7 +47,7 @@ def paste(canvas, img, cx, y):
     rgb, a = img; h, w = a.shape; x = int(cx - w / 2)
     c = canvas[y:y + h, x:x + w]; canvas[y:y + h, x:x + w] = c * (1 - a[..., None]) + rgb * a[..., None]; return y + h
 big = word('ALICIA IN WONDERLAND', int(N * 0.056), lambda ch: GOLD, big=(0, 10))
-sub = word('THE RED & WHITE QUEENS', int(N * 0.042), lambda ch, i: RED if 4 <= i <= 6 else LILAC if ch == '&' else WHITE, big=(0, 4, 10, 16))   # DICTO 10-29: RED red, & lilac, WHITE QUEENS white
+sub = word('THE RED & WHITE QUEENS', int(N * 0.042), lambda ch, i: RED if i <= 6 else LILAC if ch == '&' else WHITE, big=(0, 4, 10, 16))   # DICTO 10-29: THE RED red, & lilac, WHITE QUEENS white
 by = word('* DICTO *', int(N * 0.042), lambda ch: TEAL, big=(0, 2, 3, 4, 5, 6, 8))   # every letter of DICTO is an initial (DICTO)
 H = big[1].shape[0] + sub[1].shape[0] + by[1].shape[0] + int(N * 0.16)
 panel = np.ones((H, N, 3)) * np.array(GROUND, float)
