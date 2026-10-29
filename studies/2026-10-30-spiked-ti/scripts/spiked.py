@@ -1,7 +1,7 @@
-# Spiked football (DICTO, 2026-10-30): a new golden cycle beginning with a spiked core. The football (TI, station 7 of DICTO's
-# twelve-station golden cycle, #54) with its 32 face pyramids (study 2026-10-30-football-pyramids) turned outwards: each pyramid
+# Spiked TI (DICTO, 2026-10-30): a new golden cycle beginning with a spiked core. TI (TI, station 7 of DICTO's
+# twelve-station golden cycle, #54) with its 32 face pyramids (study 2026-10-30-ti-pyramids) turned outwards: each pyramid
 # reflected in its own face, tip at twice the face centre, as the Cleo star does to the icosahedron. Exact in Q(sqrt5) via sympy.
-# Checks: volume = 2 TI; the hull of the spiked football (faces, kinds); its place among the twelve stations (inside / outside,
+# Checks: volume = 2 TI; the hull of the spiked TI (faces, kinds); its place among the twelve stations (inside / outside,
 # corners or tips on faces); similarity of the hull to every station up to golden scale. -> data/spiked.json
 import json, itertools, math
 import numpy as np, sympy as sp
@@ -35,7 +35,7 @@ out['tip distances (pentagon, hexagon)'] = r
 volTI = ConvexHull(P).volume
 # spiked volume: TI + each pyramid again = 2 TI (each outward pyramid is the mirror of an inward one)
 out['volume TI'] = volTI; out['volume spiked'] = 2 * volTI
-# hull of the spiked football: tips + TI corners
+# hull of the spiked TI: tips + TI corners
 A = np.vstack([P, T]); hA = ConvexHull(A)
 on_hull = set(hA.vertices)
 out['hull corners: TI corners on hull'] = sum(1 for i in on_hull if i < len(P))
@@ -52,7 +52,7 @@ for k in ORDER:
     if signature(NUM[k]) == sigH:
         s = np.linalg.norm(NUM[k], axis=1).max() / np.linalg.norm(HP, axis=1).max(); sims.append((k, s, math.log(s) / math.log(float(phi))))
 out['hull similar to stations (name, scale, log_phi scale)'] = sims
-# nesting: is the spiked football inside each station, and the station inside its hull? tips on station faces?
+# nesting: is the spiked TI inside each station, and the station inside its hull? tips on station faces?
 def inside(Q, R):   # all of Q inside hull R (tolerance)
     h = ConvexHull(R); return bool(np.all(Q @ h.equations[:, :3].T + h.equations[:, 3] <= 1e-9))
 def touching(Q, R):

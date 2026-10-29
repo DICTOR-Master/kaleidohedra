@@ -1,4 +1,4 @@
-# The doubling cycle of the spiked football: TI -> spiked TI (TI + 32 outward pyramids) -> spike hull (60 triangles) -> 2 TI.
+# The doubling cycle of the spiked TI: TI -> spiked TI (TI + 32 outward pyramids) -> spike hull (60 triangles) -> 2 TI.
 # Candidate fill pieces, checked by volume and by pairwise overlap:
 #   layer 1 (spiked TI -> hull): at each TI corner v the tetrahedron (v, three tips over the faces at v); over each TI edge vw the
 #     tetrahedron (v, w, the two tips over the faces at vw);

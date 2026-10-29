@@ -1,5 +1,5 @@
-# Spiked football: exact contacts with the twelve stations scaled by phi^k (k = -2..4): spike tips on a station's faces, at its
-# corners, or a station's corners on the faces of the spike hull; and the snug fits (spiked football inside a scaled station with
+# Spiked TI: exact contacts with the twelve stations scaled by phi^k (k = -2..4): spike tips on a station's faces, at its
+# corners, or a station's corners on the faces of the spike hull; and the snug fits (spiked TI inside a scaled station with
 # tips touching, or a scaled station inside the spike hull touching it). Float screen at 1e-9 (the coordinates are exact in Q(sqrt5)).
 import json, numpy as np
 from fractions import Fraction as Fr

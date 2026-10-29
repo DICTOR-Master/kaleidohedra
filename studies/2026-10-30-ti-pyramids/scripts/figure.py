@@ -1,5 +1,5 @@
-# Football Pyramids figure: left, the football cut from its centre into 12 pentagonal (gold) and 20 hexagonal (violet) pyramids,
-# drawn apart; right, the hexagonal bipyramid: the football's hexagonal pyramid (violet) on the truncated tetrahedron's (teal).
+# TI Pyramids figure: left, TI cut from its centre into 12 pentagonal (gold) and 20 hexagonal (violet) pyramids,
+# drawn apart; right, the hexagonal bipyramid: TI's hexagonal pyramid (violet) on the truncated tetrahedron's (teal).
 # Run on dicto-big-brother: ~/geom/bin/python scripts/figure.py
 import itertools, numpy as np
 import matplotlib; matplotlib.use('Agg')
@@ -27,7 +27,7 @@ for ids in F.values():
 r = 3.1
 for s in 'xyz': getattr(ax, f'set_{s}lim')(-r, r)
 ax.set_box_aspect((1, 1, 1)); ax.set_axis_off(); ax.set_facecolor(BG); ax.view_init(18, 30)
-ax.set_title('the football from its centre:\n12 pentagonal (gold) + 20 hexagonal (violet) pyramids', color='#e8e2cc', fontsize=9)
+ax.set_title('TI from its centre:\n12 pentagonal (gold) + 20 hexagonal (violet) pyramids', color='#e8e2cc', fontsize=9)
 # hexagonal bipyramid
 ax = fig.add_subplot(1, 2, 2, projection='3d')
 H = np.array([[np.cos(k * np.pi / 3), np.sin(k * np.pi / 3), 0] for k in range(6)])
@@ -36,6 +36,6 @@ for apex, col in [(np.array([0, 0, hF]), VIOLET), (np.array([0, 0, -hT]), TEAL)]
     ax.add_collection3d(Poly3DCollection([np.array([apex, H[i], H[(i + 1) % 6]]) for i in range(6)], facecolor=col, edgecolor='#f5f0dc', linewidths=0.8, alpha=0.85))
 for s in 'xy': getattr(ax, f'set_{s}lim')(-1.5, 1.5)
 ax.set_zlim(-1.1, 1.9 + 0.4); ax.set_box_aspect((3, 3, 3.4)); ax.set_axis_off(); ax.set_facecolor(BG); ax.view_init(12, 25)
-ax.set_title('hexagonal bipyramid: the football\'s hexagonal pyramid\non the truncated tetrahedron\'s (teal)', color='#e8e2cc', fontsize=9)
+ax.set_title('hexagonal bipyramid: TI\'s hexagonal pyramid\non the truncated tetrahedron\'s (teal)', color='#e8e2cc', fontsize=9)
 fig.text(0.985, 0.02, 'DICTO', color=GOLD, ha='right', va='bottom', fontsize=11, fontweight='bold', family='serif')
-fig.savefig('figures/football-pyramids.png', dpi=200, facecolor=BG, bbox_inches='tight'); print('ok')
+fig.savefig('figures/ti-pyramids.png', dpi=200, facecolor=BG, bbox_inches='tight'); print('ok')

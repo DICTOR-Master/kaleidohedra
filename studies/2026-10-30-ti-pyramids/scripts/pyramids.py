@@ -1,4 +1,4 @@
-# Football Pyramids (DICTO, 2026-10-30): fill the truncated icosahedron ("football", the midpoint cell of #76) from its centre with
+# TI Pyramids (DICTO, 2026-10-30): fill the truncated icosahedron ("TI", the midpoint cell of #76) from its centre with
 # its 12 pentagonal and 20 hexagonal face pyramids; compare with the truncated tetrahedron's pyramids (the other midpoint cell);
 # test which faces can meet, and whether the four pyramids can tile space face to face (the #77 argument).
 # Exact in sympy; edge 1. Writes data/pyramids.json. Run on dicto-big-brother: ~/geom/bin/python scripts/pyramids.py
@@ -45,7 +45,7 @@ def describe(V, name):
     return F, res
 
 out = {}
-for name, V in [('football', TI), ('truncated tetrahedron', TT)]:
+for name, V in [('TI', TI), ('truncated tetrahedron', TT)]:
     F, R = describe(V, name); kinds = {}
     for r in R:
         k = r['n']; kinds.setdefault(k, r)
@@ -82,17 +82,17 @@ for name, V in [('football', TI), ('truncated tetrahedron', TT)]:
 
 # the icosahedron's dihedral, for comparison: cos = -sqrt5/3
 out['icosahedron dihedral cos'] = '-sqrt(5)/3'
-# the hexagonal bipyramid: the football's hexagon pyramid on the truncated tetrahedron's, base to base
-hF = sp.sympify(out['football']['pyramids']['6-gon pyramid']['height']); hT = sp.sympify(out['truncated tetrahedron']['pyramids']['6-gon pyramid']['height'])
+# the hexagonal bipyramid: TI's hexagon pyramid on the truncated tetrahedron's, base to base
+hF = sp.sympify(out['TI']['pyramids']['6-gon pyramid']['height']); hT = sp.sympify(out['truncated tetrahedron']['pyramids']['6-gon pyramid']['height'])
 out['hexagonal bipyramid'] = dict(height=str(sp.radsimp(hF + hT)), height_num=float(hF + hT), volume_num=float((hF + hT) * 3 * sp.sqrt(3) / 2 / 3))
 
 # which side faces can meet: congruent side triangles (base 1, legs = side edge)
-sides = {f'{s} {k}': out[s]['pyramids'][k]['side_edge_num'] for s in ['football', 'truncated tetrahedron'] for k in out[s]['pyramids']}
+sides = {f'{s} {k}': out[s]['pyramids'][k]['side_edge_num'] for s in ['TI', 'truncated tetrahedron'] for k in out[s]['pyramids']}
 out['side faces'] = sides
 
-# face-to-face tiling by footballs and truncated tetrahedra: angles round an edge must add to 2*pi
+# face-to-face tiling by TIs and truncated tetrahedra: angles round an edge must add to 2*pi
 A = {}
-for s in ['football', 'truncated tetrahedron']:
+for s in ['TI', 'truncated tetrahedron']:
     for k, d in out[s]['dihedrals'].items(): A[f'{s} {k}'] = math.radians(d['dihedral_deg'])
 stars = []
 names = list(A)
