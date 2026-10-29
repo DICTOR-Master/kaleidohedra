@@ -7,7 +7,8 @@
 // which depends only on the fraction of h layers (k-research studies/2026-10-26-rule-of-halves-census). Geometry: stackings-geometry.js.
 import { createLayeredWorld } from './world-chains.js';
 import { t } from './i18n.js';
-import { PRESETS, LAYER_H, LAM_LO, LAM_HI, stackingPieces, census, layerTypes } from './stackings-geometry.js';
+import { PRESETS, LAYER_H, LAM_LO, LAM_HI, stackingPieces, census, layerTypes, validWord } from './stackings-geometry.js';
+import { mountLaw } from './hexlaw-panel.js';
 
 export const STACKING_KINDS = Object.keys(PRESETS);
 const ROLE_OF = { c: 'stkC', h: 'stkH' };
@@ -35,6 +36,16 @@ export function flipLayer(kind, k) {
   state.words[kind] = w; state.picked = null; return true;
 }
 export function resetLayers(kind) { state.words[kind] = PRESETS[kind]; state.picked = null; }
+/** The standard polytype with the same layers as `word` (any rotation), or null. */
+export function presetOf(word) {
+  const ty = layerTypes(word).join('');
+  return STACKING_KINDS.find((k) => { const p = layerTypes(PRESETS[k]).join(''); return p.length === ty.length && (p + p).includes(ty); }) ?? null;
+}
+/** Put `word` into polytype `kind` (the Law panel's dots); false if it is not a stacking or too long. */
+export function setWord(kind, word) {
+  if (!validWord(word) || word.length > MAX_LAYERS) return false;
+  state.words[kind] = word; state.picked = null; return true;
+}
 
 // one column of holes, `size` periods tall, centred on the origin; pieces cached per word and λ
 const cache = new Map();
@@ -90,6 +101,14 @@ function mountLayers(panel, getWorld) {
   box.innerHTML = '<div class="stk-layers-label st-note"></div><div class="w4d-row w4d-options stk-chips"></div><div class="stk-info st-note"></div>';
   const cap = panel.querySelector('.ch-param-caption'); (cap?.parentElement ?? panel).insertBefore(box, cap?.nextSibling ?? null);
   let last = null;
+  // the Hexagonality Law panel (DICTO 2026-10-29): a dot of a standard polytype opens that polytype; any other named stacking is
+  // built in the polytype on show, with its "Back to" chip
+  const law = mountLaw(box, panel, { word: () => currentWord(last?.kind ?? '3C'), build: (w) => {
+    const kind = presetOf(w);
+    if (kind) { resetLayers(kind); if (kind !== last?.kind) panel.querySelector(`[data-chains-kind="${kind}"]`)?.click(); else getWorld()?.refresh(); return true; }
+    if (!last || !setWord(last.kind, w)) return false;
+    getWorld()?.refresh(); return true;
+  } });
   const paint = ({ kind, v, L }) => {
     last = { kind, v, L };
     const w = currentWord(kind), types = layerTypes(w);
@@ -98,9 +117,11 @@ function mountLayers(panel, getWorld) {
     types.forEach((ty, k) => { const b = document.createElement('button'); b.type = 'button'; b.dataset.stkLayer = String(k); b.className = `stk-chip stk-${ty}`; b.style.borderColor = ty === 'c' ? '#f2b84b' : '#d9d6cf'; b.textContent = `${k + 1} ${w[k]} ${ty}`; chips.append(b); });
     if (w !== PRESETS[kind]) { const r = document.createElement('button'); r.type = 'button'; r.dataset.stkReset = '1'; r.className = 'stk-chip'; r.textContent = t('stackings.reset', L, { k: kind }); chips.append(r); }
     box.querySelector('.stk-info').textContent = pickedInfo(kind, v, L);
+    law.update(L);
   };
   box.addEventListener('click', (e) => {
-    const b = e.target.closest('button'); if (!b || !last) return;
+    const b = e.target.closest('button'); if (!b || !last || b.dataset.stkLaw) return;
+    law.clearNote();
     if (b.dataset.stkReset) resetLayers(last.kind);
     else if (b.dataset.stkLayer && !flipLayer(last.kind, Number(b.dataset.stkLayer))) { box.querySelector('.stk-info').textContent = t('stackings.toolong', last.L, { n: MAX_LAYERS }); return; }
     getWorld()?.refresh();
