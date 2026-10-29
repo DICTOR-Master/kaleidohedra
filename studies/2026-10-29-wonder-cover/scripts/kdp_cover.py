@@ -35,7 +35,7 @@ def para(x, y, text, font, width, fill=WHITE, lead=1.42):
 x = px(xb0 + 0.85); wid = px(TW - 1.7); y = px(BLEED + 1.0)
 d.text((x, y), 'Alicia in Wonderland', font=F('NimbusSans-Bold.otf', 30), fill=GOLD); y += px(0.62)
 fs16 = F('NimbusSans-Regular.otf', 16); xx = x
-for part, colr in (('The Red', (205, 62, 40)), (' ', WHITE), ('&', (180, 138, 224)), (' White Queens', WHITE)):   # as the front (DICTO 10-29)
+for part, colr in (('The Red', (205, 62, 40)), (' ', WHITE), ('&', (74, 132, 230)), (' White Queens', WHITE)):   # as the front (DICTO 10-29)
     d.text((xx, y), part, font=fs16, fill=colr); xx += d.textlength(part, font=fs16)
 y += px(0.6)
 body = F('NimbusSans-Regular.otf', 11.5)
