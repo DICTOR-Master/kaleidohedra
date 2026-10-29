@@ -56,7 +56,7 @@ for i in range(6):
 # Letters as an LED display (DICTO 10-29: like his font Timer, DS-Digital and LED Real, "LED style script with stepped parts";
 # earlier tries, Trajan, dot-matrix, Righteous and Baumans, dropped): DSEG14 Classic Italic (OFL, keshikan), a slanted
 # 14-segment LED face. Lit segments glow cool white over a thin dark edge; unlit segments ('~' lights all 14) show faintly.
-f = ImageFont.truetype(os.environ.get('LEDFONT', 'DSEG14Classic-Italic.ttf'), int(0.072 * W))
+f = ImageFont.truetype(os.environ.get('LEDFONT', 'DSEG14Classic-Regular.ttf'), int(0.06 * W))
 def carved(ch):
     box = int(0.13 * W); edge = int(0.0022 * W)
     def lay(t, sw=0):
