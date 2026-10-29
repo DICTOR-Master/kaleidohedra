@@ -22,7 +22,7 @@ chain = [P]
 for _ in range(4):
     V, FL = facelist(chain[-1]); chain.append(np.array([t * (-eq[3]) * eq[:3] for eq, _ in FL]))
 L = np.array([-0.4, 0.5, 0.8]); L /= np.linalg.norm(L)
-names = ['TI', 'Star Halo', 'core (icosahedron\ntruncated at 1/φ³)', 'Halo II', 'TI again']
+names = ['TI', 'Star Halo', 'core (icosahedron\ntruncated at 1/φ³)', 'Catalan pentakis\ndodecahedron', 'TI again']
 fig = plt.figure(figsize=(16, 4), facecolor=BG)
 for k, Q in enumerate(chain):
     V, FL = facelist(Q); V = V / np.linalg.norm(V, axis=1).max()
