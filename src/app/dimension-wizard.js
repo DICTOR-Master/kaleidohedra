@@ -132,6 +132,7 @@ const CSS = `
   background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); color: var(--accent); font: var(--text-m, 14px) var(--font-ui, sans-serif); }
 .poly-detail-build { border-color: var(--accent-strong) !important; background: rgba(var(--accent-rgb), 0.25) !important; color: #fff !important; }
 .poly-detail-fav[aria-pressed="true"] { border-color: var(--accent-strong); }
+.poly-detail-exact { border-color: #e8c25a !important; color: #fff !important; }
 .poly-detail-stats { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 4px 0 0; width: 100%; font: var(--text-s, 13px) var(--font-ui, sans-serif); color: #ccd; }
 .poly-detail-stats dt { color: var(--pale); }
 .poly-detail-stats dd { margin: 0; min-width: 0; }
@@ -1213,6 +1214,9 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     input.addEventListener('input', () => { clearTimeout(searchTimer); searchTimer = setTimeout(run, 180); });
   }
 
+  // The exact builds beside RCP (DICTO 2026-10-29: keep both side by side): the 600-cell's and the 120-cell's cards open the queens'
+  // Shells at the core, built shell by shell from the exact models (the White Queen world; each shape lives in one place, others link).
+  const EXACT_BUILD = { POLYTOPE_600_CELL: { open: 'shells', label: 'polytope.exactWhite' }, POLYTOPE_120_CELL: { open: 'redcore', label: 'polytope.exactRed' } };
   // A 4D polytope's details (D5): its finished shadow turning, Schläfli symbol, cells, symmetry, dual;
   // Build grows it cell by cell from its seed (the 600-cell also from a vertex).
   function showPolytopeDetail(id, backTo) {
@@ -1229,11 +1233,13 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
         <div class="poly-detail-actions">
           <button type="button" class="poly-detail-build" data-target="${p.target}">${t('polytope.build', L)}</button>
           ${p.vertexFirstTarget ? `<button type="button" class="poly-detail-build" data-target="${p.vertexFirstTarget}">${t('polytope.buildVertexFirst', L)}</button>` : ''}
+          ${EXACT_BUILD[p.id] ? `<button type="button" class="poly-detail-exact" data-exact="${EXACT_BUILD[p.id].open}">${t(EXACT_BUILD[p.id].label, L)}</button>` : ''}
         </div>
       </div>`;
     previewDisposers.push(mountWireframePreview(bodyEl.querySelector('.poly-detail-preview'), polyShapeEdges(id), 200));
     bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => backTo());
     bodyEl.querySelectorAll('.poly-detail-build').forEach((b) => b.addEventListener('click', () => choose('3D', `tool:polytope:${p.seed}|${b.dataset.target}`, 'polyhedraverse')));
+    bodyEl.querySelector('.poly-detail-exact')?.addEventListener('click', (e) => choose('3D', `tool:whiteQueenWorld:${e.currentTarget.dataset.exact}`, 'kaleidohedra'));
   }
 
   // Where a shape came from or what it bridges to (the old site's details, step D6): the 3D+ Bridges
