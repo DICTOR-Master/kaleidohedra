@@ -1,0 +1,134 @@
+{
+ "phi": {
+  "checks": {
+   "rho": 2.0477702212863886,
+   "rho2_two_ways": [
+    4.193362879187306,
+    4.193362879187305
+   ],
+   "polar_Ip_is_Dh": true,
+   "polar_Dh_is_Ip": true,
+   "polar_K_is_core": true,
+   "polar_core_is_K": true
+  },
+  "placement": {
+   "polar(TI)": {
+    "TI": "contains",
+    "I_TI": "contains",
+    "D_TI": "contains",
+    "core": "contains",
+    "Ip": "contains",
+    "Dh": "contains",
+    "K": "contains",
+    "s·TI": "contains"
+   },
+   "polar(I_TI)": {
+    "TI": "contains",
+    "I_TI": "contains",
+    "D_TI": "contains",
+    "core": "contains",
+    "Ip": "contains",
+    "Dh": "contains",
+    "K": "contains",
+    "s·TI": "contains"
+   },
+   "polar(D_TI)": {
+    "TI": "contains",
+    "I_TI": "contains",
+    "D_TI": "contains",
+    "core": "contains",
+    "Ip": "contains",
+    "Dh": "contains",
+    "K": "contains",
+    "s·TI": "contains"
+   },
+   "polar(s·TI)": {
+    "TI": "contains",
+    "I_TI": "contains",
+    "D_TI": "contains",
+    "core": "inside",
+    "Ip": "inside",
+    "Dh": "inside",
+    "K": "inside",
+    "s·TI": "inside"
+   }
+  },
+  "volumes_over_TI": {
+   "polar(TI)": 7.010788,
+   "polar(I_TI)": 5.718965,
+   "polar(D_TI)": 4.814208,
+   "polar(core)": 3.212896,
+   "polar(Ip)": 2.487154,
+   "polar(Dh)": 2.449874,
+   "polar(K)": 2.172666,
+   "polar(s·TI)": 1.655022
+  },
+  "rho_over_TI_radius": 1.3371012389543355
+ },
+ "2": {
+  "checks": {
+   "rho": 2.531183195809763,
+   "rho2_two_ways": [
+    6.4068883707497255,
+    6.406888370749726
+   ],
+   "polar_Ip_is_Dh": true,
+   "polar_Dh_is_Ip": true,
+   "polar_K_is_core": true,
+   "polar_core_is_K": true
+  },
+  "placement": {
+   "polar(TI)": {
+    "TI": "contains",
+    "I_TI": "contains",
+    "D_TI": "contains",
+    "core": "contains",
+    "Ip": "contains",
+    "Dh": "contains",
+    "K": "contains",
+    "s·TI": "contains"
+   },
+   "polar(I_TI)": {
+    "TI": "contains",
+    "I_TI": "contains",
+    "D_TI": "contains",
+    "core": "contains",
+    "Ip": "contains",
+    "Dh": "contains",
+    "K": "contains",
+    "s·TI": "contains"
+   },
+   "polar(D_TI)": {
+    "TI": "contains",
+    "I_TI": "contains",
+    "D_TI": "contains",
+    "core": "contains",
+    "Ip": "contains",
+    "Dh": "contains",
+    "K": "contains",
+    "s·TI": "contains"
+   },
+   "polar(s·TI)": {
+    "TI": "contains",
+    "I_TI": "contains",
+    "D_TI": "contains",
+    "core": "inside",
+    "Ip": "inside",
+    "Dh": "inside",
+    "K": "inside",
+    "s·TI": "inside"
+   }
+  },
+  "volumes_over_TI": {
+   "polar(TI)": 25.004659,
+   "polar(I_TI)": 20.397247,
+   "polar(D_TI)": 17.170344,
+   "polar(core)": 6.067694,
+   "polar(Ip)": 4.697099,
+   "polar(Dh)": 4.626695,
+   "polar(K)": 4.103174,
+   "polar(s·TI)": 3.125582
+  },
+  "rho_over_TI_radius": 1.6527480241467485
+ }
+}

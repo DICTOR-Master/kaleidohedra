@@ -1,0 +1,183 @@
+{
+ "scale": "phi",
+ "family_volumes": {
+  "TI": 1.0,
+  "pent spikes": 0.179049,
+  "hex spikes": 0.438985,
+  "L1 corner": 0.884568,
+  "L1 edge ph": 0.473529,
+  "L1 edge hh": 0.236764,
+  "L2 corner": 0.554417,
+  "L2 edge ph": 0.277209,
+  "L2 edge hh": 0.191546
+ },
+ "unions": 256,
+ "convex_unions": [
+  {
+   "families": [
+    "TI"
+   ],
+   "volume": 1.0,
+   "corners": 60,
+   "faces": {
+    "5": 12,
+    "6": 20
+   }
+  },
+  {
+   "families": [
+    "TI",
+    "pent spikes",
+    "hex spikes",
+    "L1 corner",
+    "L1 edge ph",
+    "L1 edge hh"
+   ],
+   "volume": 3.212896,
+   "corners": 32,
+   "faces": {
+    "3": 60
+   }
+  },
+  {
+   "families": [
+    "TI",
+    "pent spikes",
+    "hex spikes",
+    "L1 corner",
+    "L1 edge ph",
+    "L1 edge hh",
+    "L2 corner",
+    "L2 edge ph",
+    "L2 edge hh"
+   ],
+   "volume": 4.236068,
+   "corners": 60,
+   "faces": {
+    "5": 12,
+    "6": 20
+   }
+  }
+ ],
+ "distinct_hulls": [
+  {
+   "volume": 1.0,
+   "corners": 60,
+   "faces": {
+    "5": 12,
+    "6": 20
+   },
+   "made_by": 1,
+   "example": [
+    "TI"
+   ]
+  },
+  {
+   "volume": 2.4498744,
+   "corners": 12,
+   "faces": {
+    "3": 20
+   },
+   "made_by": 1,
+   "example": [
+    "TI",
+    "pent spikes"
+   ]
+  },
+  {
+   "volume": 2.4871538,
+   "corners": 20,
+   "faces": {
+    "5": 12
+   },
+   "made_by": 3,
+   "example": [
+    "TI",
+    "hex spikes"
+   ]
+  },
+  {
+   "volume": 3.2128955,
+   "corners": 32,
+   "faces": {
+    "3": 60
+   },
+   "made_by": 27,
+   "example": [
+    "TI",
+    "L1 corner"
+   ]
+  },
+  {
+   "volume": 4.236068,
+   "corners": 60,
+   "faces": {
+    "5": 12,
+    "6": 20
+   },
+   "made_by": 224,
+   "example": [
+    "TI",
+    "L2 corner"
+   ]
+  }
+ ],
+ "growth_rule": [
+  {
+   "from_hull_volume": 1.0,
+   "from_corners": 60,
+   "grown_volume": 1.226821,
+   "grown_corners": 32,
+   "grown_faces": {
+    "3": 60
+   },
+   "equals_a_hull_of_the_turn": false,
+   "over_sTI": 0.289613
+  },
+  {
+   "from_hull_volume": 2.4498744,
+   "from_corners": 12,
+   "grown_volume": 5.361478,
+   "grown_corners": 20,
+   "grown_faces": {
+    "5": 12
+   },
+   "equals_a_hull_of_the_turn": false,
+   "over_sTI": 1.265673
+  },
+  {
+   "from_hull_volume": 2.4871538,
+   "from_corners": 20,
+   "grown_volume": 4.513277,
+   "grown_corners": 12,
+   "grown_faces": {
+    "3": 20
+   },
+   "equals_a_hull_of_the_turn": false,
+   "over_sTI": 1.06544
+  },
+  {
+   "from_hull_volume": 3.2128955,
+   "from_corners": 32,
+   "grown_volume": 4.236068,
+   "grown_corners": 60,
+   "grown_faces": {
+    "5": 12,
+    "6": 20
+   },
+   "equals_a_hull_of_the_turn": true,
+   "over_sTI": 1.0
+  },
+  {
+   "from_hull_volume": 4.236068,
+   "from_corners": 60,
+   "grown_volume": 5.196895,
+   "grown_corners": 32,
+   "grown_faces": {
+    "3": 60
+   },
+   "equals_a_hull_of_the_turn": false,
+   "over_sTI": 1.226821
+  }
+ ]
+}

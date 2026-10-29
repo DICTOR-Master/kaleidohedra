@@ -1,0 +1,244 @@
+{
+ "phi": [
+  {
+   "solid": "TI",
+   "polar_corners": 32,
+   "polar_faces": {
+    "3": 60
+   },
+   "polar_radii": [
+    0.97415,
+    1.0
+   ],
+   "polar_edge_lengths": [
+    0.63304,
+    0.71364
+   ],
+   "same_shape_as": []
+  },
+  {
+   "solid": "I_TI",
+   "polar_corners": 20,
+   "polar_faces": {
+    "5": 12
+   },
+   "polar_radii": [
+    1.0
+   ],
+   "polar_edge_lengths": [
+    0.71364
+   ],
+   "same_shape_as": [
+    "D_TI",
+    "Dh"
+   ]
+  },
+  {
+   "solid": "D_TI",
+   "polar_corners": 12,
+   "polar_faces": {
+    "3": 20
+   },
+   "polar_radii": [
+    1.0
+   ],
+   "polar_edge_lengths": [
+    1.05146
+   ],
+   "same_shape_as": [
+    "I_TI",
+    "Ip"
+   ]
+  },
+  {
+   "solid": "core",
+   "polar_corners": 32,
+   "polar_faces": {
+    "3": 60
+   },
+   "polar_radii": [
+    0.97415,
+    1.0
+   ],
+   "polar_edge_lengths": [
+    0.63304,
+    0.6952
+   ],
+   "same_shape_as": [
+    "K"
+   ]
+  },
+  {
+   "solid": "Ip",
+   "polar_corners": 20,
+   "polar_faces": {
+    "5": 12
+   },
+   "polar_radii": [
+    1.0
+   ],
+   "polar_edge_lengths": [
+    0.71364
+   ],
+   "same_shape_as": [
+    "D_TI",
+    "Dh"
+   ]
+  },
+  {
+   "solid": "Dh",
+   "polar_corners": 12,
+   "polar_faces": {
+    "3": 20
+   },
+   "polar_radii": [
+    1.0
+   ],
+   "polar_edge_lengths": [
+    1.05146
+   ],
+   "same_shape_as": [
+    "I_TI",
+    "Ip"
+   ]
+  },
+  {
+   "solid": "K",
+   "polar_corners": 60,
+   "polar_faces": {
+    "5": 12,
+    "6": 20
+   },
+   "polar_radii": [
+    1.0
+   ],
+   "polar_edge_lengths": [
+    0.22446
+   ],
+   "same_shape_as": [
+    "core"
+   ]
+  }
+ ],
+ "2": [
+  {
+   "solid": "TI",
+   "polar_corners": 32,
+   "polar_faces": {
+    "3": 60
+   },
+   "polar_radii": [
+    0.97415,
+    1.0
+   ],
+   "polar_edge_lengths": [
+    0.63304,
+    0.71364
+   ],
+   "same_shape_as": []
+  },
+  {
+   "solid": "I_TI",
+   "polar_corners": 20,
+   "polar_faces": {
+    "5": 12
+   },
+   "polar_radii": [
+    1.0
+   ],
+   "polar_edge_lengths": [
+    0.71364
+   ],
+   "same_shape_as": [
+    "D_TI",
+    "Dh"
+   ]
+  },
+  {
+   "solid": "D_TI",
+   "polar_corners": 12,
+   "polar_faces": {
+    "3": 20
+   },
+   "polar_radii": [
+    1.0
+   ],
+   "polar_edge_lengths": [
+    1.05146
+   ],
+   "same_shape_as": [
+    "I_TI",
+    "Ip"
+   ]
+  },
+  {
+   "solid": "core",
+   "polar_corners": 32,
+   "polar_faces": {
+    "3": 60
+   },
+   "polar_radii": [
+    0.97415,
+    1.0
+   ],
+   "polar_edge_lengths": [
+    0.63304,
+    0.6952
+   ],
+   "same_shape_as": [
+    "K"
+   ]
+  },
+  {
+   "solid": "Ip",
+   "polar_corners": 20,
+   "polar_faces": {
+    "5": 12
+   },
+   "polar_radii": [
+    1.0
+   ],
+   "polar_edge_lengths": [
+    0.71364
+   ],
+   "same_shape_as": [
+    "D_TI",
+    "Dh"
+   ]
+  },
+  {
+   "solid": "Dh",
+   "polar_corners": 12,
+   "polar_faces": {
+    "3": 20
+   },
+   "polar_radii": [
+    1.0
+   ],
+   "polar_edge_lengths": [
+    1.05146
+   ],
+   "same_shape_as": [
+    "I_TI",
+    "Ip"
+   ]
+  },
+  {
+   "solid": "K",
+   "polar_corners": 60,
+   "polar_faces": {
+    "5": 12,
+    "6": 20
+   },
+   "polar_radii": [
+    1.0
+   ],
+   "polar_edge_lengths": [
+    0.22446
+   ],
+   "same_shape_as": [
+    "core"
+   ]
+  }
+ ]
+}

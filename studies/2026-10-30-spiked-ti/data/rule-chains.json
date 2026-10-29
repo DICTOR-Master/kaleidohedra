@@ -1,0 +1,684 @@
+{
+ "phi": {
+  "TI": {
+   "linear_factor_per_two_steps": 1.172168456,
+   "steps": [
+    {
+     "step": 1,
+     "solid": "32 corners {3: 60}",
+     "volume_over_TI": 1.226821,
+     "relations": {
+      "TI": "contains (touching)",
+      "core": "inside",
+      "Ip": "inside",
+      "Dh": "inside",
+      "K": "inside",
+      "s·TI": "inside",
+      "core (next turn)": "inside",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 2,
+     "solid": "60 corners {5: 12, 6: 20}",
+     "volume_over_TI": 1.610535,
+     "relations": {
+      "TI": "contains",
+      "core": "inside",
+      "Ip": "inside",
+      "Dh": "inside",
+      "K": "inside",
+      "s·TI": "inside",
+      "core (next turn)": "inside",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 3,
+     "solid": "32 corners {3: 60}",
+     "volume_over_TI": 2.020589,
+     "relations": {
+      "TI": "contains",
+      "core": "crosses",
+      "Ip": "crosses",
+      "Dh": "crosses",
+      "K": "inside",
+      "s·TI": "inside",
+      "core (next turn)": "inside",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 4,
+     "solid": "60 corners {5: 12, 6: 20}",
+     "volume_over_TI": 2.664061,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "crosses",
+      "Dh": "crosses",
+      "K": "crosses",
+      "s·TI": "inside",
+      "core (next turn)": "inside",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 5,
+     "solid": "32 corners {3: 60}",
+     "volume_over_TI": 3.268325,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "crosses",
+      "Dh": "contains",
+      "K": "crosses",
+      "s·TI": "crosses",
+      "core (next turn)": "inside",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 6,
+     "solid": "60 corners {5: 12, 6: 20}",
+     "volume_over_TI": 4.290563,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "crosses",
+      "Dh": "contains",
+      "K": "crosses",
+      "s·TI": "crosses",
+      "core (next turn)": "inside",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    }
+   ]
+  },
+  "Ip": {
+   "linear_factor_per_two_steps": 1.583592135,
+   "steps": [
+    {
+     "step": 1,
+     "solid": "20 corners {5: 12}",
+     "volume_over_TI": 5.361478,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains (touching)",
+      "Dh": "contains",
+      "K": "contains (touching)",
+      "s·TI": "contains (touching)",
+      "core (next turn)": "inside",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 2,
+     "solid": "12 corners {3: 20}",
+     "volume_over_TI": 9.729126,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "crosses",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "crosses",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 3,
+     "solid": "20 corners {5: 12}",
+     "volume_over_TI": 21.291905,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "contains",
+      "Ip (next turn)": "crosses",
+      "Dh (next turn)": "contains",
+      "K (next turn)": "crosses",
+      "s·TI (next turn)": "crosses"
+     }
+    },
+    {
+     "step": 4,
+     "solid": "12 corners {3: 20}",
+     "volume_over_TI": 38.637039,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "contains",
+      "Ip (next turn)": "contains",
+      "Dh (next turn)": "contains",
+      "K (next turn)": "contains",
+      "s·TI (next turn)": "contains"
+     }
+    },
+    {
+     "step": 5,
+     "solid": "20 corners {5: 12}",
+     "volume_over_TI": 84.55602,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "contains",
+      "Ip (next turn)": "contains",
+      "Dh (next turn)": "contains",
+      "K (next turn)": "contains",
+      "s·TI (next turn)": "contains"
+     }
+    },
+    {
+     "step": 6,
+     "solid": "12 corners {3: 20}",
+     "volume_over_TI": 153.438324,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "contains",
+      "Ip (next turn)": "contains",
+      "Dh (next turn)": "contains",
+      "K (next turn)": "contains",
+      "s·TI (next turn)": "contains"
+     }
+    }
+   ]
+  },
+  "Dh": {
+   "linear_factor_per_two_steps": 1.583592135,
+   "steps": [
+    {
+     "step": 1,
+     "solid": "12 corners {3: 20}",
+     "volume_over_TI": 4.513277,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains (touching)",
+      "K": "contains (touching)",
+      "s·TI": "contains (touching)",
+      "core (next turn)": "inside",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 2,
+     "solid": "20 corners {5: 12}",
+     "volume_over_TI": 9.877173,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "crosses",
+      "Ip (next turn)": "crosses",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 3,
+     "solid": "12 corners {3: 20}",
+     "volume_over_TI": 17.923465,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "contains",
+      "Ip (next turn)": "contains",
+      "Dh (next turn)": "crosses",
+      "K (next turn)": "crosses",
+      "s·TI (next turn)": "crosses"
+     }
+    },
+    {
+     "step": 4,
+     "solid": "20 corners {5: 12}",
+     "volume_over_TI": 39.224974,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "contains",
+      "Ip (next turn)": "contains",
+      "Dh (next turn)": "contains",
+      "K (next turn)": "contains",
+      "s·TI (next turn)": "contains"
+     }
+    },
+    {
+     "step": 5,
+     "solid": "12 corners {3: 20}",
+     "volume_over_TI": 71.179015,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "contains",
+      "Ip (next turn)": "contains",
+      "Dh (next turn)": "contains",
+      "K (next turn)": "contains",
+      "s·TI (next turn)": "contains"
+     }
+    },
+    {
+     "step": 6,
+     "solid": "20 corners {5: 12}",
+     "volume_over_TI": 155.773174,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "contains",
+      "Ip (next turn)": "contains",
+      "Dh (next turn)": "contains",
+      "K (next turn)": "contains",
+      "s·TI (next turn)": "contains"
+     }
+    }
+   ]
+  }
+ },
+ "2": {
+  "TI": {
+   "linear_factor_per_two_steps": 1.172168456,
+   "steps": [
+    {
+     "step": 1,
+     "solid": "32 corners {3: 60}",
+     "volume_over_TI": 1.226821,
+     "relations": {
+      "TI": "contains (touching)",
+      "core": "inside",
+      "Ip": "inside",
+      "Dh": "inside",
+      "K": "inside",
+      "s·TI": "inside",
+      "core (next turn)": "inside",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 2,
+     "solid": "60 corners {5: 12, 6: 20}",
+     "volume_over_TI": 1.610535,
+     "relations": {
+      "TI": "contains",
+      "core": "inside",
+      "Ip": "inside",
+      "Dh": "inside",
+      "K": "inside",
+      "s·TI": "inside",
+      "core (next turn)": "inside",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 3,
+     "solid": "32 corners {3: 60}",
+     "volume_over_TI": 2.020589,
+     "relations": {
+      "TI": "contains",
+      "core": "inside",
+      "Ip": "inside",
+      "Dh": "inside",
+      "K": "inside",
+      "s·TI": "inside",
+      "core (next turn)": "inside",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 4,
+     "solid": "60 corners {5: 12, 6: 20}",
+     "volume_over_TI": 2.664061,
+     "relations": {
+      "TI": "contains",
+      "core": "inside",
+      "Ip": "inside",
+      "Dh": "inside",
+      "K": "inside",
+      "s·TI": "inside",
+      "core (next turn)": "inside",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 5,
+     "solid": "32 corners {3: 60}",
+     "volume_over_TI": 3.268325,
+     "relations": {
+      "TI": "contains",
+      "core": "crosses",
+      "Ip": "crosses",
+      "Dh": "crosses",
+      "K": "inside",
+      "s·TI": "inside",
+      "core (next turn)": "inside",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 6,
+     "solid": "60 corners {5: 12, 6: 20}",
+     "volume_over_TI": 4.290563,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "crosses",
+      "Dh": "crosses",
+      "K": "inside",
+      "s·TI": "inside",
+      "core (next turn)": "inside",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    }
+   ]
+  },
+  "Ip": {
+   "linear_factor_per_two_steps": 1.583592135,
+   "steps": [
+    {
+     "step": 1,
+     "solid": "20 corners {5: 12}",
+     "volume_over_TI": 10.125386,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains (touching)",
+      "Dh": "contains",
+      "K": "contains (touching)",
+      "s·TI": "contains (touching)",
+      "core (next turn)": "inside",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 2,
+     "solid": "12 corners {3: 20}",
+     "volume_over_TI": 18.373881,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "crosses",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "crosses",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 3,
+     "solid": "20 corners {5: 12}",
+     "volume_over_TI": 40.210696,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "contains",
+      "Ip (next turn)": "crosses",
+      "Dh (next turn)": "contains",
+      "K (next turn)": "crosses",
+      "s·TI (next turn)": "crosses"
+     }
+    },
+    {
+     "step": 4,
+     "solid": "12 corners {3: 20}",
+     "volume_over_TI": 72.967741,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "contains",
+      "Ip (next turn)": "contains",
+      "Dh (next turn)": "contains",
+      "K (next turn)": "contains",
+      "s·TI (next turn)": "contains"
+     }
+    },
+    {
+     "step": 5,
+     "solid": "20 corners {5: 12}",
+     "volume_over_TI": 159.68775,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "contains",
+      "Ip (next turn)": "contains",
+      "Dh (next turn)": "contains",
+      "K (next turn)": "contains",
+      "s·TI (next turn)": "contains"
+     }
+    },
+    {
+     "step": 6,
+     "solid": "12 corners {3: 20}",
+     "volume_over_TI": 289.774998,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "contains",
+      "Ip (next turn)": "contains",
+      "Dh (next turn)": "contains",
+      "K (next turn)": "contains",
+      "s·TI (next turn)": "contains"
+     }
+    }
+   ]
+  },
+  "Dh": {
+   "linear_factor_per_two_steps": 1.583592135,
+   "steps": [
+    {
+     "step": 1,
+     "solid": "12 corners {3: 20}",
+     "volume_over_TI": 8.523521,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains (touching)",
+      "K": "contains (touching)",
+      "s·TI": "contains (touching)",
+      "core (next turn)": "inside",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 2,
+     "solid": "20 corners {5: 12}",
+     "volume_over_TI": 18.653474,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "inside",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "inside",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 3,
+     "solid": "12 corners {3: 20}",
+     "volume_over_TI": 33.849248,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "crosses",
+      "Ip (next turn)": "inside",
+      "Dh (next turn)": "crosses",
+      "K (next turn)": "inside",
+      "s·TI (next turn)": "inside"
+     }
+    },
+    {
+     "step": 4,
+     "solid": "20 corners {5: 12}",
+     "volume_over_TI": 74.078082,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "contains",
+      "Ip (next turn)": "crosses",
+      "Dh (next turn)": "contains",
+      "K (next turn)": "crosses",
+      "s·TI (next turn)": "crosses"
+     }
+    },
+    {
+     "step": 5,
+     "solid": "12 corners {3: 20}",
+     "volume_over_TI": 134.424688,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "contains",
+      "Ip (next turn)": "contains",
+      "Dh (next turn)": "contains",
+      "K (next turn)": "contains",
+      "s·TI (next turn)": "contains"
+     }
+    },
+    {
+     "step": 6,
+     "solid": "20 corners {5: 12}",
+     "volume_over_TI": 294.184465,
+     "relations": {
+      "TI": "contains",
+      "core": "contains",
+      "Ip": "contains",
+      "Dh": "contains",
+      "K": "contains",
+      "s·TI": "contains",
+      "core (next turn)": "contains",
+      "Ip (next turn)": "contains",
+      "Dh (next turn)": "contains",
+      "K (next turn)": "contains",
+      "s·TI (next turn)": "contains"
+     }
+    }
+   ]
+  }
+ }
+}
