@@ -42,8 +42,7 @@ INDEX={}
 # pass 2 (DICTO 10-28 'remove unrelated content'): cut sections and clauses about other lines of work (4D solids, named
 # pairs, lists of other papers); theorems and proofs untouched. Sections renumbered after cuts.
 CUTSEC={'the-focus':['5. The map'],'series-web-of-bonds':['3. Named pairs along the way','The papers of the series']}
-EDITS={'two-tiles':[
- ('The Endless Stack Cell: every close-packed stacking is a string of two layer tiles','HexOct: every close-packed stacking is a string of two layer tiles, the c-tile and the h-tile')],
+EDITS={
  'the-focus':[
  (', the Swap Rule (#61), the White Queen 600-cell and its Cleo shells (#62, #63), and the Red Queen 120-cell with Aristotle\'s five pyramids at the cores of the four-dimensional solids (#65).',' and the Swap Rule (#61).'),
  ('space, in the flat stackings and in the four-dimensional solids alike, is shared out','space in the flat stackings is shared out'),
@@ -90,8 +89,7 @@ for label,folder,num in CH:
     for a,b in EDITS.get(folder,[]):
         if a not in body: print('EDIT MISS',folder,a[:50])
         body=body.replace(a,b)
-    if folder=='two-tiles':   # second edition (DICTO 10-29): the HexOct-K study closes the chapter, before its conclusion
-        k=body.index('<h2>8. Conclusion</h2>'); body=body[:k]+open(os.path.join(HERE,'keyed.html'),encoding='utf8').read()+body[k:]
+    # #75 v2 (DICTO 10-29) holds the HexOct-K section itself (with the stacking as the clock), so keyed.html is no longer inserted
     body=cut_sections(body,folder)
     for a,b in CORR: body=body.replace(a,b)
     body=body.replace('this paper','this chapter').replace('This paper','This chapter')
