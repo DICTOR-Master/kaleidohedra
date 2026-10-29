@@ -54,6 +54,7 @@ for label,folder,num,fname in CH:
     s=open(os.path.join(P,folder,fname),encoding='utf8').read()
     for st in re.findall(r'<style>(.*?)</style>',s,re.S): styles.add(st.strip())
     doi=re.search(r'DICTO DOI: (10\.5281/zenodo\.\d+)',s); doi=doi.group(1) if doi else ''
+    doi=doi or {27:'10.5281/zenodo.23345502'}.get(num,'')   # #27 Capturing the In-betweens: its HTML carries no DOI line (DICTO 10-29)
     body=s[s.index('<h1'):s.rindex('</body>')]
     title=html.unescape(re.sub('<[^>]+>','',re.search(r'<h1[^>]*>(.*?)</h1>',body,re.S).group(1))).strip()
     body=re.sub(r'<div class="meta">.*?</div>','',body,count=1,flags=re.S)
