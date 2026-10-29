@@ -1,0 +1,84 @@
+[
+ {
+  "stage": "600-cell (White Queen)",
+  "rings": "v",
+  "V": 120,
+  "E": 720,
+  "cells": 600,
+  "kinds": {
+   "4 corners 6 edges": 600
+  },
+  "edge_over_radius": 0.618033989
+ },
+ {
+  "stage": "truncated 600-cell",
+  "rings": "ve",
+  "V": 1440,
+  "E": 4320,
+  "cells": 720,
+  "kinds": {
+   "12 corners 30 edges": 120,
+   "12 corners 18 edges": 600
+  },
+  "edge_over_radius": 0.21535373
+ },
+ {
+  "stage": "rectified 600-cell",
+  "rings": "e",
+  "V": 720,
+  "E": 3600,
+  "cells": 720,
+  "kinds": {
+   "12 corners 30 edges": 120,
+   "6 corners 12 edges": 600
+  },
+  "edge_over_radius": 0.324919696
+ },
+ {
+  "stage": "bitruncated 600-cell / 120-cell",
+  "rings": "ef",
+  "V": 3600,
+  "E": 7200,
+  "cells": 720,
+  "kinds": {
+   "60 corners 90 edges": 120,
+   "12 corners 18 edges": 600
+  },
+  "edge_over_radius": 0.131932494
+ },
+ {
+  "stage": "rectified 120-cell",
+  "rings": "f",
+  "V": 1200,
+  "E": 3600,
+  "cells": 720,
+  "kinds": {
+   "30 corners 60 edges": 120,
+   "4 corners 6 edges": 600
+  },
+  "edge_over_radius": 0.220528179
+ },
+ {
+  "stage": "truncated 120-cell",
+  "rings": "fc",
+  "V": 2400,
+  "E": 4800,
+  "cells": 720,
+  "kinds": {
+   "60 corners 90 edges": 120,
+   "4 corners 6 edges": 600
+  },
+  "edge_over_radius": 0.121679157
+ },
+ {
+  "stage": "120-cell (Red Queen)",
+  "rings": "c",
+  "V": 600,
+  "E": 1200,
+  "cells": 120,
+  "kinds": {
+   "20 corners 30 edges": 120
+  },
+  "edge_over_radius": 0.270090757
+ }
+]
