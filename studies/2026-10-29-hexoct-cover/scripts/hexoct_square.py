@@ -55,7 +55,7 @@ for i in range(6):
                 dr.polygon(pts, fill=col); dr.line(pts + [pts[0]], fill=EDGE, width=2 * SS)
 # Letters as an LED display (DICTO 10-29: like his font Timer, DS-Digital and LED Real, "LED style script with stepped parts";
 # earlier tries, Trajan, dot-matrix, Righteous and Baumans, dropped): DSEG14 Classic Italic (OFL, keshikan), a slanted
-# 14-segment LED face. Lit segments glow cool white over a thin dark edge; unlit segments ('~' lights all 14) show faintly.
+# 14-segment LED face. Lit segments glow cool white, no dark edges so the tile colours come through (DICTO); unlit segments ('~' lights all 14) a faint veil.
 f = ImageFont.truetype(os.environ.get('LEDFONT', 'DSEG14Classic-Regular.ttf'), int(0.06 * W))
 def carved(ch):
     box = int(0.13 * W); edge = int(0.0022 * W)
@@ -66,9 +66,9 @@ def carved(ch):
     glow = ndimage.gaussian_filter(On, 0.006 * W); glow /= glow.max()
     core = np.array([240, 252, 255.]); halo = np.array([140, 230, 255.]); dim = np.array([70, 62, 52.])
     rgb = (core * On[..., None] + halo * (1 - On[..., None])) * (On + 0.6 * glow)[..., None] / np.maximum(On + 0.6 * glow, 1e-6)[..., None]
-    rgb = np.where((Rim - On)[..., None] > 0.3, np.array([8, 6, 4.]), rgb)
-    rgb = np.where(((Ghost - Rim) > 0.5)[..., None], dim, rgb)
-    alpha = np.clip(np.maximum.reduce([Rim, 0.5 * glow, 0.35 * Ghost]), 0, 1)
+    # no dark edges (DICTO: let the colours come through): lit segments and their glow only; unlit segments a faint light veil
+    rgb = np.where(((Ghost - On) > 0.5)[..., None], halo, rgb)
+    alpha = np.clip(np.maximum.reduce([On, 0.45 * glow, 0.14 * Ghost]), 0, 1)
     return Image.fromarray(np.clip(rgb, 0, 255).astype(np.uint8)), Image.fromarray((alpha * 255).astype(np.uint8)), (box, box)
 CARVE = {ch: carved(ch) for ch in WORD}
 for i in range(6):
