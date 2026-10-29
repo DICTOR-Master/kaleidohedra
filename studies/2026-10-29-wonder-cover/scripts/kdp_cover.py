@@ -48,7 +48,8 @@ y = para(x, y, 'On the way, three small pieces close the gaps between icosahedra
          'solids with equal triangular faces. At the end, the five pyramids that Aristotle said fill space turn out to be exactly '
          'the cores of the four-dimensional regular solids, seen in perspective.', body, wid) + px(0.35)
 y = para(x, y, 'DICTO is an artist in Osaka, Japan, with a background in architectural sculpture, stonecarving and Buddhist statuary. '
-         'He builds geometric sculpture from recycled PET bottles with his own modular systems, B1NR and DICTOspheres.', F('NimbusSans-Regular.otf', 10.5), wid)
+         'He builds geometric sculpture from recycled PET bottles with his own modular systems, B1NR and DICTOspheres. '
+         'He is also the author of HexOct: The Laws of Stacking and The Golden Cycle.', F('NimbusSans-Regular.otf', 10.5), wid)
 # ◆ DICTO ◆ in the cover's LED letters, centred in the free space between the text and the emblem (DICTO 10-29)
 mk = Image.open('dicto-mark.png'); mw = px(3.2); mk = mk.resize((mw, int(mk.height * mw / mk.width)), Image.LANCZOS)
 gap_top, gap_bot = y, px(BLEED + TH - 1.25) - px(0.75) - px(0.1)
