@@ -64,16 +64,16 @@ def carved(ch):
         return np.array(m, float) / 255
     On, Rim, Ghost = lay(ch), lay(ch, edge), lay('~')
     glow = ndimage.gaussian_filter(On, 0.006 * W); glow /= glow.max()
-    core = np.array([240, 252, 255.]); halo = np.array([140, 230, 255.]); dim = np.array([70, 62, 52.])
+    core = np.array([255, 255, 255.]); halo = np.array([170, 240, 255.])   # full brightness, glow kept soft (DICTO: "not too bright though"); dim = np.array([70, 62, 52.])
     # DICTO: H and C, the letters on their own tile (teal), in the pieces' colourway: H yellow (gold), C purple (violet)
-    if ch == 'H': core = np.array([255, 222, 96.]); halo = np.array([255, 205, 80.])
-    if ch == 'C': core = np.array([206, 160, 255.]); halo = np.array([180, 132, 240.])
+    if ch == 'H': core = np.array([255, 236, 110.]); halo = np.array([255, 215, 90.])
+    if ch == 'C': core = np.array([222, 180, 255.]); halo = np.array([196, 148, 255.])
     rgb = (core * On[..., None] + halo * (1 - On[..., None])) * (On + 0.6 * glow)[..., None] / np.maximum(On + 0.6 * glow, 1e-6)[..., None]
-    # dark edges at half strength (DICTO: "halfway back"), so the tile colours still come through; unlit segments a faint veil
+    # dark edges at full strength (DICTO, final: "back to the stronger black outline"); unlit segments a faint veil
     rim = (Rim - On) > 0.3
     rgb = np.where(rim[..., None], np.array([8, 6, 4.]), rgb)
     rgb = np.where(((Ghost - Rim) > 0.5)[..., None], halo, rgb)
-    alpha = np.clip(np.maximum.reduce([On, 0.5 * rim, 0.45 * glow, 0.14 * Ghost]), 0, 1)
+    alpha = np.clip(np.maximum.reduce([On, 1.0 * rim, 0.45 * glow, 0.14 * Ghost]), 0, 1)
     return Image.fromarray(np.clip(rgb, 0, 255).astype(np.uint8)), Image.fromarray((alpha * 255).astype(np.uint8)), (box, box)
 CARVE = {ch: carved(ch) for ch in WORD}
 for i in range(6):
