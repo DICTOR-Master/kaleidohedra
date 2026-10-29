@@ -3,6 +3,8 @@
 # the meta line goes; "Sources checked", "Data and code" and "References" move to one appendix by chapter;
 # figures are copied into figures/<folder>/ and renumbered per chapter. Front matter and epilogue come from front.html
 # and epilogue.html (written by hand). Output: paper.html (typeset by print.mjs).
+# KDP=1: Amazon paperback interior (DICTO 10-29): no cover page (it goes on the printed cover), one blank page at the end
+# so the count passes 79 (KDP allows spine text only above 79 pages).
 import re, os, shutil, html
 HERE=os.path.dirname(os.path.abspath(__file__)); P=os.path.dirname(HERE)
 CH=[('Prologue','series-web-of-bonds',58),
@@ -121,13 +123,14 @@ doc=f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>HexOct: The Laws of Stacking</title>
 <link rel="stylesheet" href="../paper.css"><style>{css}</style></head><body>
 <img class="watermark" src="../dicto-logo.png" alt="">
-{front.replace('__TOC__',tochtml)}
+{(re.sub(r'<div class="coverpage".*?</div>\n', '', front, count=1, flags=re.S) if os.environ.get('KDP') else front).replace('__TOC__',tochtml)}
 {''.join(chapters)}
 <section class="epi">{epi}</section>
 <section class="app"><h1 class="chapter">Appendix. Sources by chapter</h1><p>Each chapter's own list of sources checked, data and code, as published with its paper.</p>{''.join(sources)}</section>
 {refhtml}
 {idxhtml}
 {open(os.path.join(HERE,'about.html'),encoding='utf8').read()}
+{'<section style="break-before:page">&nbsp;</section>' if os.environ.get('KDP') else ''}
 </body></html>'''
 open(os.path.join(HERE,'paper.html'),'w',encoding='utf8').write(doc)
 print('referred',len(REFERRED),'index terms',len(INDEX),'chapters',len(toc),'figures',sum(len(fs) for _,_,fs in os.walk(os.path.join(HERE,'figures'))),'chars',len(doc))
