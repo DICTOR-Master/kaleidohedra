@@ -1,0 +1,76 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-30",
+ "access_right": "open",
+ "title": "Face to Face: A New Law of Aristotle's Pyramids",
+ "description": "<p>Cut a Platonic solid from its centre to each face and it falls into congruent face pyramids; the icosahedron's is the Cleo-Icos (DICTO's name). Paper #44 found which sets of the five fill space when they may touch in any way. DICTO proposed the face-to-face case, where pieces meet whole face to whole face, and a search for new deltahedra among his pieces.</p><p><b>Main theorem (new).</b> In every face-to-face tiling of space by face pyramids, the pyramids round each apex make up their whole solid, so the tiling is a face-to-face tiling by whole Platonic solids, each cut from its centre: either the cubic tiling or a tiling by regular tetrahedra and octahedra with two of each round every edge, such as the octet. The dodecahedron's pyramid and the Cleo-Icos occur in no such tiling, and two different pyramids meet only base to base. With #44 this completes the answer for Aristotle's pyramids, loose or face to face; face to face, the pyramids can only rebuild their own solids. The proof needs no computer.</p><p><b>Search (negative).</b> Gluing DICTO's pieces face to face, up to six pieces and 5,143,972 different clusters, gives only two solids with equilateral faces: the regular tetrahedron and the pentagonal bipyramid J13, from four Mosseri&ndash;Sadoc tiles t1 and two Hound Tooth (t2); the J13 is two pentagonal pyramids t1 + t2 + t1 (Koca, Koc, Koca and Al-Siyabi 2020) base to base, so neither is new. The search is a screening, complete to two pieces and restricted beyond. Extends Chapter 3 of the book <i>Alicia in Wonderland</i>.</p><p>View in app: <a href=\"https://kaleidohedra.dictospheres.com/?open=aristotle\">Kaleidohedra, Aristotle's Pyramid</a>. Computation and proof with Claude (Anthropic). More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "Aristotle's pyramids",
+  "face pyramids",
+  "Platonic solids",
+  "face-to-face tilings",
+  "space-filling",
+  "Cleo-Icos",
+  "octet truss",
+  "deltahedra",
+  "Mosseri-Sadoc tiles",
+  "pentagonal bipyramid",
+  "Dehn invariant"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23529497",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23357896",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23551326",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23753305",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/ec9de8d996c1948aa0591afc8c5fff139b27661c/studies/2026-10-27-five-pyramids",
+   "relation": "isSupplementedBy",
+   "scheme": "url"
+  },
+  {
+   "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/ec9de8d996c1948aa0591afc8c5fff139b27661c/studies/2026-10-30-face-to-face",
+   "relation": "isSupplementedBy",
+   "scheme": "url"
+  }
+ ],
+ "subjects": [
+  {
+   "term": "MSC2020 52C22: Tilings in n dimensions",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C22",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52B10: Three-dimensional polytopes",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B10",
+   "scheme": "url"
+  }
+ ]
+}
