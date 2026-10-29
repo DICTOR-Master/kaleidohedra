@@ -40,25 +40,26 @@ with open(out, 'w', encoding='utf8') as f:
     f.write(css)
     f.write('<section class="page catalogue">\n<p class="chapter-mark">Chapter 1 · Atoms · the catalogue</p>\n<h1>All the atoms</h1>\n')
     f.write(f'<p>Every named shape of the work, one quantum of space each: first DICTO\'s new shapes, {len(new)} of them, D1 to D{dnum(new[-1])} (given in order of first publication, never reused); then his {len(newc)} new clusters, structures and networks built from them; the {len(other)} known or rediscovered shapes the work builds with are listed at the end of the book. A shape whose model file is in the dataset <i>DICTO Solids: Exact Geometry</i> is drawn, all in one pose: gold for DICTO\'s new shapes, silver for known ones. Under each: its kind, the paper or finding it comes from (linked to its DICTO DOI), and the status found by the prior-art search.</p>\n')
-    def block(title, rs):
-        pics = [r for r in rs if icon(r)]; rest = [r for r in rs if not icon(r)]
-        f.write(f'<h2>{title}</h2>\n<div class="atoms">\n' + '\n'.join(card(r) for r in pics) + '\n</div>\n')
-        if rest:
-            f.write('<table class="atl"><caption class="tl">Not drawn here: each is computed exactly in its paper or finding, but is not yet a model file in the data set:</caption><thead><tr><th>No.</th><th>Shape</th><th>Kind</th><th>From</th><th>Status</th></tr></thead>\n')   # caption: the line never parts from its table (DICTO 10-29)
-            f.write('\n'.join(f'<tr><td>{e(r["universal_number"] or "—")}</td><td>{e(r["name"])}</td><td>{e(r["kind"])}</td><td>{where(r)}</td><td>{e((r["prior_art_or_note"] or r["status"])[:140])}</td></tr>' for r in rest) + '\n</table>\n')
-    block("DICTO's new atoms", new)
+    # DICTO 10-29: all the pictures first, then the shapes not yet drawn, in tables at the end of the catalogue
+    def row(r): return f'<tr><td>{e(r["universal_number"] or "—")}</td><td>{e(r["name"])}</td><td>{e(r["kind"])}</td><td>{where(r)}</td><td>{e((r["prior_art_or_note"] or r["status"])[:140])}</td></tr>'
+    def pics(title, rs): f.write(f'<h2>{title}</h2>\n<div class="atoms">\n' + '\n'.join(card(r) for r in rs if icon(r)) + '\n</div>\n')
+    pics("DICTO's new atoms", new)
     f.write('<p class="tl">D-numbers are given to single solids and pieces. DICTO\'s new clusters, structures and networks, built from them, follow without numbers.</p>\n')
-    block("DICTO's new clusters, structures and networks", newc)
+    pics("DICTO's new clusters, structures and networks", newc)
+    f.write('<h2>Not drawn here</h2>\n<p class="tl">Each of these is computed exactly in its paper or finding, but is not yet a model file in the data set.</p>\n')
+    for title, rs in (("DICTO's new atoms", new), ("DICTO's new clusters, structures and networks", newc)):
+        rest = [r for r in rs if not icon(r)]
+        if rest:
+            f.write(f'<table class="atl"><caption class="tl">{title}</caption><thead><tr><th>No.</th><th>Shape</th><th>Kind</th><th>From</th><th>Status</th></tr></thead>\n' + '\n'.join(row(r) for r in rest) + '\n</table>\n')
     f.write('</section>\n')
 # the known and rediscovered shapes go to the very end of the book (DICTO 10-29), so nothing after the new atoms reads as known
 with open(out.replace('.html', '-known.html'), 'w', encoding='utf8') as f:
     f.write('<section class="page catalogue">\n<p class="chapter-mark">The known shapes</p>\n<h1>Known and rediscovered shapes in the work</h1>\n')
     f.write(f'<p>The {len(other)} shapes the work builds with that were made first by others, or rediscovered by DICTO and found in the sources checked; each keeps the number its first maker gave it. Drawn in silver where its exact geometry is in the dataset.</p>\n')
-    block2 = block.__code__   # same layout as above
     pics = [r for r in other if icon(r)]; rest = [r for r in other if not icon(r)]
     f.write('<div class="atoms">\n' + '\n'.join(card(r) for r in pics) + '\n</div>\n')
     if rest:
-        f.write('<table class="atl"><tr><th>No.</th><th>Shape</th><th>Kind</th><th>From</th><th>Status</th></tr>\n')
+        f.write('<table class="atl"><caption class="tl">Not drawn here: computed in the sources, not yet a model file in the data set</caption><thead><tr><th>No.</th><th>Shape</th><th>Kind</th><th>From</th><th>Status</th></tr></thead>\n')
         f.write('\n'.join(f'<tr><td>{e(r["universal_number"] or "—")}</td><td>{e(r["name"])}</td><td>{e(r["kind"])}</td><td>{where(r)}</td><td>{e((r["prior_art_or_note"] or r["status"])[:140])}</td></tr>' for r in rest) + '\n</table>\n')
     f.write('</section>\n')
 print('new', len(new), 'new clusters', len(newc), 'other', len(other), 'with icons', sum(1 for r in rows if icon(r)))
