@@ -56,13 +56,13 @@ for i in range(6):
 # Letters after the B1NR logo (DICTO 10-29: "sixties distorted script like B1NR logo", the version centred on the spherical
 # security-ring icosidodecahedron, not the zip-tie one): heavy rounded letters (Righteous, OFL), white with a thick black
 # outline, swollen by a gentle bulge (barrel warp) for the sixties look.
-f = ImageFont.truetype('Righteous-Regular.ttf', int(0.056 * W))
+f = ImageFont.truetype('Baumans-Regular.ttf', int(0.066 * W))
 def carved(ch):
-    box = int(0.13 * W); fat, rim = int(0.0016 * W), int(0.0055 * W)
+    box = int(0.13 * W); fat, rim = 0, int(0.0035 * W)
     a_ = Image.new('L', (box, box), 0); ImageDraw.Draw(a_).text((box / 2, box / 2), ch, font=f, fill=255, anchor='mm', stroke_width=fat + rim, stroke_fill=255)
     w_ = Image.new('L', (box, box), 0); ImageDraw.Draw(w_).text((box / 2, box / 2), ch, font=f, fill=255, anchor='mm', stroke_width=fat, stroke_fill=255)
     A, Wh = np.array(a_, float) / 255, np.array(w_, float) / 255
-    yy, xx = np.mgrid[0:box, 0:box] / (box / 2) - 1; r2 = xx ** 2 + yy ** 2; k = 0.22    # bulge: sample nearer the centre
+    yy, xx = np.mgrid[0:box, 0:box] / (box / 2) - 1; r2 = xx ** 2 + yy ** 2; k = 0.12    # bulge: sample nearer the centre
     sx, sy = (xx / (1 + k * (1 - np.clip(r2, 0, 1))) + 1) * box / 2, (yy / (1 + k * (1 - np.clip(r2, 0, 1))) + 1) * box / 2
     A = ndimage.map_coordinates(A, [sy, sx], order=1); Wh = ndimage.map_coordinates(Wh, [sy, sx], order=1)
     rgb = np.dstack([Wh * 250 + (1 - Wh) * 12] * 3)
