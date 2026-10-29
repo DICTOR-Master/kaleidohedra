@@ -101,7 +101,10 @@ h1.chapter{break-before:page;font-size:19pt;margin-top:0} p.from{font-size:8.5pt
 .part{break-before:page;height:200mm;display:flex;align-items:center;justify-content:center} h1.partt{font-size:26pt;color:#b8962e}
 table.toc td{border-bottom:1px dotted #ccc;padding:1.2mm 2mm} .titlepage{height:240mm;display:flex;flex-direction:column;justify-content:center}
 .titlepage h1{font-size:30pt} section.epi,section.app{break-before:page} section.app h3{font-size:10pt;margin-top:5mm} section.app p,section.app li{font-size:8.6pt}
-figure img{width:100%;display:block}'''
+figure img{width:100%;display:block}
+/* DICTO 10-29: neutral sans-serif for the whole book, as in HexOct */
+body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}
+body{font-size:10pt}'''
 doc=f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>The Golden Cycle</title>
 <link rel="stylesheet" href="../paper.css"><style>{css}</style></head><body>
@@ -112,6 +115,7 @@ doc=f'''<!doctype html>
 <section class="app"><h1 class="chapter">Appendix. Sources by chapter</h1><p>Each chapter's own list of sources checked, data and code, as published with its paper.</p>{''.join(sources)}</section>
 {refhtml}
 {idxhtml}
+{open(os.path.join(HERE,'about.html'),encoding='utf8').read()}
 </body></html>'''
 open(os.path.join(HERE,'paper.html'),'w',encoding='utf8').write(doc)
 print('referred',len(REFERRED),'index terms',len(INDEX),'chapters',len(toc),'figures',sum(len(fs) for _,_,fs in os.walk(os.path.join(HERE,'figures'))),'chars',len(doc))
