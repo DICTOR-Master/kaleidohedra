@@ -1,5 +1,5 @@
 # The HexOct square (DICTO 2026-10-29): book cover for "HexOct: The Laws of Stacking", after the DICTO square, 6 x 6.
-# Letters after the B1NR logo; tiles matching their letter in teal (DICTO). Cyclic Latin square: row i, column j holds letter (i+j) mod 6 of HEXOCT, so HEXOCT reads across the top and down the left,
+# Letters as a slanted LED display; tiles matching their letter in teal (DICTO). Cyclic Latin square: row i, column j holds letter (i+j) mod 6 of HEXOCT, so HEXOCT reads across the top and down the left,
 # every letter once in each row and column. Shapes: H, E, X on the h-tile, O, C, T on the c-tile (the two HexOct tiles of #75,
 # at weight 1/10, built exactly by tiles.py). Pieces: tetrahedral gold, octahedral halves violet, as in #75.
 import math, os, numpy as np
@@ -53,23 +53,26 @@ for i in range(6):
                 V = Q @ VIEW.T
                 pts = [(cx + (v[0] - mid[0]) * sc, cy - (v[1] - mid[1]) * sc) for v in V]
                 dr.polygon(pts, fill=col); dr.line(pts + [pts[0]], fill=EDGE, width=2 * SS)
-# Letters after the B1NR logo (DICTO 10-29: "sixties distorted script like B1NR logo", the version centred on the spherical
-# security-ring icosidodecahedron, not the zip-tie one): heavy rounded letters (Righteous, OFL), white with a thick black
-# outline, swollen by a gentle bulge (barrel warp) for the sixties look.
-f = ImageFont.truetype('Baumans-Regular.ttf', int(0.066 * W))
+# Letters as an LED display (DICTO 10-29: like his font Timer, DS-Digital and LED Real, "LED style script with stepped parts";
+# earlier tries, Trajan, dot-matrix, Righteous and Baumans, dropped): DSEG14 Classic Italic (OFL, keshikan), a slanted
+# 14-segment LED face. Lit segments glow cool white over a thin dark edge; unlit segments ('~' lights all 14) show faintly.
+f = ImageFont.truetype(os.environ.get('LEDFONT', 'DSEG14Classic-Italic.ttf'), int(0.072 * W))
 def carved(ch):
-    box = int(0.13 * W); fat, rim = 0, int(0.0035 * W)
-    a_ = Image.new('L', (box, box), 0); ImageDraw.Draw(a_).text((box / 2, box / 2), ch, font=f, fill=255, anchor='mm', stroke_width=fat + rim, stroke_fill=255)
-    w_ = Image.new('L', (box, box), 0); ImageDraw.Draw(w_).text((box / 2, box / 2), ch, font=f, fill=255, anchor='mm', stroke_width=fat, stroke_fill=255)
-    A, Wh = np.array(a_, float) / 255, np.array(w_, float) / 255
-    yy, xx = np.mgrid[0:box, 0:box] / (box / 2) - 1; r2 = xx ** 2 + yy ** 2; k = 0.12    # bulge: sample nearer the centre
-    sx, sy = (xx / (1 + k * (1 - np.clip(r2, 0, 1))) + 1) * box / 2, (yy / (1 + k * (1 - np.clip(r2, 0, 1))) + 1) * box / 2
-    A = ndimage.map_coordinates(A, [sy, sx], order=1); Wh = ndimage.map_coordinates(Wh, [sy, sx], order=1)
-    rgb = np.dstack([Wh * 250 + (1 - Wh) * 12] * 3)
-    return Image.fromarray(np.clip(rgb, 0, 255).astype(np.uint8)), Image.fromarray((np.clip(A, 0, 1) * 255).astype(np.uint8)), (box, box)
+    box = int(0.13 * W); edge = int(0.0022 * W)
+    def lay(t, sw=0):
+        m = Image.new('L', (box, box), 0); ImageDraw.Draw(m).text((box / 2, box / 2), t, font=f, fill=255, anchor='mm', stroke_width=sw, stroke_fill=255)
+        return np.array(m, float) / 255
+    On, Rim, Ghost = lay(ch), lay(ch, edge), lay('~')
+    glow = ndimage.gaussian_filter(On, 0.006 * W); glow /= glow.max()
+    core = np.array([240, 252, 255.]); halo = np.array([140, 230, 255.]); dim = np.array([70, 62, 52.])
+    rgb = (core * On[..., None] + halo * (1 - On[..., None])) * (On + 0.6 * glow)[..., None] / np.maximum(On + 0.6 * glow, 1e-6)[..., None]
+    rgb = np.where((Rim - On)[..., None] > 0.3, np.array([8, 6, 4.]), rgb)
+    rgb = np.where(((Ghost - Rim) > 0.5)[..., None], dim, rgb)
+    alpha = np.clip(np.maximum.reduce([Rim, 0.5 * glow, 0.35 * Ghost]), 0, 1)
+    return Image.fromarray(np.clip(rgb, 0, 255).astype(np.uint8)), Image.fromarray((alpha * 255).astype(np.uint8)), (box, box)
 CARVE = {ch: carved(ch) for ch in WORD}
 for i in range(6):
     for j in range(6):
         t, m, (bw, bh) = CARVE[M[i][j]]; cx, cy = x0 + (j + 0.5) * cell, x0 + (i + 0.5) * cell
         img.paste(t, (int(cx - bw / 2), int(cy - bh / 2)), m)
-img = img.resize((N, N), Image.LANCZOS); img.save('hexoct-square.png'); print('ok')
+img = img.resize((N, N), Image.LANCZOS); img.save(os.environ.get('OUT', 'hexoct-square.png')); print('ok')

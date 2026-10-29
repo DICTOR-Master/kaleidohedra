@@ -2,10 +2,10 @@
 
 DICTO's idea (2026-10-29): a square cover for "HexOct: The Laws of Stacking" like the DICTO square, 6 × 6, letters H E X O C T, with the two HexOct tiles.
 
-**Conclusion:** version 2 made, hexoct-square.png (1800 px): B1NR-style letters, matching tiles in teal. Status: shown to DICTO, awaiting his read.
+**Conclusion:** LED versions made (italic and upright), matching tiles in teal. Status: shown to DICTO, awaiting his pick.
 
 - Cyclic Latin square: cell (i, j) holds letter (i + j) mod 6 of HEXOCT. HEXOCT reads across the top and down the left; each letter appears once in every row and every column and runs in one diagonal stripe.
 - Shapes: H, E, X on the h-tile and O, C, T on the c-tile (Hex | Oct). The tiles are the exact c-tile (from ABC) and h-tile (from AB) of #75 at λ = 1/10, built by tiles.py. Colours as in #75: tetrahedral pieces gold, octahedral halves violet. Same view and scale for both tiles.
-- Letters (DICTO 10-29: not classic DICTO Trajan; "a bit sixties distorted script like B1NR logo", the logo centred on the spherical security-ring icosidodecahedron, Flickr album B1NR Sculptures, not the zip-tie version): Baumans (OFL, Baumans-Regular.ttf + OFL-Baumans.txt), whose stepped B and R match the logo, monoline white with a thin black outline, slight barrel warp. Tried and dropped: Trajan V-cut platinum (v1), glowing 5 × 7 dot-matrix (hid the tiles), Righteous heavy outlined (DICTO: too fat, not stepped, "nothing like").
+- Letters (DICTO 10-29): an LED display like his font Timer (DS-Digital, LED Real): DSEG14 Classic (OFL, keshikan; DSEG-LICENSE.txt), 14 segments, lit segments glowing cool white on a thin dark edge, unlit segments faint. Italic (hexoct-square.png) and upright (hexoct-square-upright.png, LEDFONT=DSEG14Classic-Regular.ttf OUT=...) both made for DICTO. Tried and dropped: Trajan V-cut platinum, glowing dot-matrix, Righteous (too fat, not stepped), Baumans (after the B1NR logo).
 - Matches picked out (DICTO): where the tile matches its letter, H on the h-tile and C on the c-tile, the tetrahedral pieces are teal instead of gold: two diagonal stripes, 12 cells.
 - scripts/hexoct_square.py; run on dicto-big-brother (~/geom/bin/python) from scripts/.
