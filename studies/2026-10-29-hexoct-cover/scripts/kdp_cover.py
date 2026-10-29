@@ -44,6 +44,10 @@ y = para(x, y, 'The laws are tested on real materials, from silicon carbide, ice
 y = para(x, y, 'The Law gave the pieces, / The pieces prove the law.', F('NimbusSans-Italic.otf', 13), wid, fill=GOLD) + px(0.35)
 y = para(x, y, 'DICTO is an artist in Osaka, Japan, with a background in architectural sculpture, stonecarving and Buddhist statuary. '
          'He builds geometric sculpture from recycled PET bottles with his own modular systems, B1NR and DICTOspheres.', F('NimbusSans-Regular.otf', 10.5), wid)
+# ◆ DICTO ◆ in the cover's LED letters, centred in the free space between the text and the emblem (DICTO 10-29)
+mk = Image.open('dicto-mark.png'); mw = px(3.2); mk = mk.resize((mw, int(mk.height * mw / mk.width)), Image.LANCZOS)
+gap_top, gap_bot = y, px(BLEED + TH - 1.25) - px(0.75) - px(0.1)
+im.paste(mk, (px(xb0 + TW / 2) - mw // 2, int((gap_top + gap_bot) / 2) - mk.height // 2), mk)
 small = F('NimbusSans-Regular.otf', 9)
 d.text((x, px(BLEED + TH - 1.05)), 'Open access edition: DICTO DOI 10.5281/zenodo.23731359', font=small, fill=WHITE)
 d.text((x, px(BLEED + TH - 0.85)), 'Licence CC BY-SA 4.0  ·  dictospheres.com', font=small, fill=WHITE)
