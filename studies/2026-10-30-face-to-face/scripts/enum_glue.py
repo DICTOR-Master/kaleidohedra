@@ -270,6 +270,26 @@ def classify_faces(faces):
     if max(sides) - min(sides) > 1e-6: return 'mixed-size', sides
     return 'strict', sides
 
+def eval_cluster(lib, cl, k):
+    ex = exposed(lib, cl)
+    nb = [x for x in ex if not x['eq']]
+    if nb:
+        ok = all(sum(1 for y in ex if y is not x and abs(np.dot(y['n'], x['n']) - 1) < 1e-7 and abs(np.dot(y['n'], y['c'] - x['c'])) < 1e-7) for x in nb)
+        if not ok: return None
+    faces = surface_report(lib, cl); cls, sides = classify_faces(faces)
+    if cls == 'strict' or (not nb and faces is not None):
+        return dict(level=k, pieces=[lib[i]['name'] for i, _, _ in cl], cls=cls, nfaces=len(faces),
+                    sides=sorted(set(np.round(sides, 6))) if sides else None, cl=[(i, R.tolist(), t.tolist()) for i, R, t in cl],
+                    merged_faces=[P.tolist() for P in faces])
+    return None
+
+def extend_eval(args):
+    # the last level, all in the worker: extend, then sign and test each new cluster; only signatures and results go back
+    out = []
+    for cl in extend(args[:2]):
+        out.append((signature(LIB, cl), eval_cluster(LIB, cl, args[2])))
+    return out
+
 LIB = None
 def init_worker():
     global LIB
@@ -291,7 +311,7 @@ def extend(args):
     return out
 
 def run(maxlevel=4, nproc=4):
-    t0 = time.time(); lib = library()
+    t0 = time.time(); lib = library(); counts_last = 0
     print('library', len(lib), [p['name'] for p in lib], flush=True)
     levels = [[[(j, np.eye(3), np.zeros(3))] for j in range(len(lib))]]
     seen = set(); lev = []
@@ -318,6 +338,18 @@ def run(maxlevel=4, nproc=4):
     with Pool(nproc, initializer=init_worker) as pool:
         for k in range(2, maxlevel + 1):
             restrict = (k == maxlevel and maxlevel >= 4) or (DEEP and k >= 3)
+            if k == maxlevel:
+                # the last level is checked as it arrives and not kept (at 6 pieces about 5 million clusters would not fit in
+                # memory at once; #77 run of 2026-10-30)
+                n = 0
+                for ch in pool.imap_unordered(extend_eval, [(cl, restrict, k) for cl in levels[-1]], chunksize=16):
+                    for sg, r in ch:
+                        if sg in seen: continue
+                        seen.add(sg); n += 1
+                        if r is not None: results.append(r)
+                levels.append([None] * 0); counts_last = n
+                print('level', k, 'clusters', n, 'results so far', len(results), '%.0fs' % (time.time() - t0), flush=True)
+                break
             chunks = pool.map(extend, [(cl, restrict) for cl in levels[-1]], chunksize=4)
             lev = []
             for ch in chunks:
@@ -328,7 +360,7 @@ def run(maxlevel=4, nproc=4):
             print('level', k, 'clusters', len(lev), 'results so far', len(results), '%.0fs' % (time.time() - t0), flush=True)
             if k < maxlevel:
                 pickle.dump(lev, open('data/f2f-%slevel%d.pkl' % ('deep-' if DEEP else '', k), 'wb'))
-    json.dump(dict(library=[p['name'] for p in lib], counts=[len(l) for l in levels], results=results), open('data/f2f-%s-L%d-results.json' % ('deep' if DEEP else 'all', maxlevel), 'w'))
+    json.dump(dict(library=[p['name'] for p in lib], counts=[len(l) for l in levels[:-1]] + [counts_last if maxlevel >= 2 else len(levels[-1])], results=results), open('data/f2f-%s-L%d-results.json' % ('deep' if DEEP else 'all', maxlevel), 'w'))
     print('done', len(results), '%.0fs' % (time.time() - t0))
 
 if __name__ == '__main__':
