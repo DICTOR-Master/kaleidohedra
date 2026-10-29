@@ -23,3 +23,4 @@ elif cmd == 'publish':
     req(f"{API}/{s['id']}", 'PUT', {'metadata': meta})
     p = req(f"{API}/{s['id']}/actions/publish", 'POST')
     s.update(published=True, doi=p['doi']); json.dump(s, open(state, 'w')); print('published', p['doi'], 'concept', p['conceptdoi'], p['links']['html'])
+    __import__('subprocess').run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'zen_community.py'), str(p['id'])])   # join communities/dicto

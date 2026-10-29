@@ -16,3 +16,4 @@ for f in draft.get('files', []): req(f"{API}/{draft['id']}/files/{f['id']}", 'DE
 req(f"{draft['links']['bucket']}/{os.path.basename(pdf)}", 'PUT', raw=open(pdf, 'rb').read(), ctype='application/octet-stream')
 req(f"{API}/{draft['id']}", 'PUT', {'metadata': meta})
 p = req(f"{API}/{draft['id']}/actions/publish", 'POST'); print('published', p['id'], p['doi'], p['links']['html'])
+__import__('subprocess').run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'zen_community.py'), str(p['id'])])   # join communities/dicto
