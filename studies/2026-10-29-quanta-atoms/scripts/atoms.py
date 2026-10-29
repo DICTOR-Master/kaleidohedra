@@ -17,6 +17,11 @@ def where(r):
 def card(r):
     num = r['universal_number'] or '—'; ic = icon(r)
     note = e(r['prior_art_or_note'] or r['status'])
+    # DICTO 10-29: say clearly what "known" means for Alicia Boole Stott's sections: the shape is hers, the exact geometry DICTO's
+    w = re.match(r'(W\d+|R\d+):', r['prior_art_or_note'] or '')
+    if r['status'].startswith('known') and 'Boole Stott' in (r['prior_art_or_note'] or ''):
+        note = ((w.group(1) + '. ') if w else '') + ('Shape first found by Alicia Boole Stott (1900), by construction, drawn as a plan and built as a card model; '
+                'its exact geometry (coordinates, volume, symmetry, checked) computed by DICTO in #63.' + (' Named after her by DICTO.' if r['name'] == 'Alicia' else ''))
     pic = f'<img src="figures/atoms/{ic}" alt="{e(r["name"])}">' if ic else '<div class="noicon">no exact model in the dataset</div>'
     return (f'<div class="atom">{pic}<div class="an"><b>{e(num)}</b> {e(r["name"])}</div>'
             f'<div class="am">{e(r["kind"])} · {where(r)}</div><div class="ant">{note}</div></div>')
