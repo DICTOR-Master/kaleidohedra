@@ -5,7 +5,7 @@
 import numpy as np
 from scipy import ndimage
 from PIL import Image, ImageDraw, ImageFont
-GROUND = (20, 15, 11); GOLD = (217, 165, 33); VIOLET = (180, 138, 224); WHITE = (255, 255, 255); RED = (205, 62, 40)
+GROUND = (20, 15, 11); GOLD = (217, 165, 33); VIOLET = (180, 138, 224); WHITE = (255, 255, 255); RED = (205, 62, 40); TEAL = (43, 179, 163); LILAC = (180, 138, 224)
 sq = Image.open('../wonder-square.png').convert('RGB'); N = sq.width
 def glyph(ch, size, col):
     """One closed LED letter: (rgb, alpha) cropped to its ink, plus padding for glow."""
@@ -47,13 +47,13 @@ def paste(canvas, img, cx, y):
     rgb, a = img; h, w = a.shape; x = int(cx - w / 2)
     c = canvas[y:y + h, x:x + w]; canvas[y:y + h, x:x + w] = c * (1 - a[..., None]) + rgb * a[..., None]; return y + h
 big = word('ALICIA IN WONDERLAND', int(N * 0.056), lambda ch: GOLD, big=(0, 10))
-sub = word('THE RED & WHITE QUEENS', int(N * 0.042), lambda ch, i: RED if 4 <= i <= 6 else WHITE, big=(0, 4, 10, 16))   # RED in red, the rest white (the two Queens)
-by = word('* DICTO *', int(N * 0.042), lambda ch: RED, big=(0, 2, 3, 4, 5, 6, 8))   # every letter of DICTO is an initial (DICTO)
+sub = word('THE RED & WHITE QUEENS', int(N * 0.042), lambda ch, i: RED if 4 <= i <= 6 else LILAC if ch == '&' else WHITE, big=(0, 4, 10, 16))   # DICTO 10-29: RED red, & lilac, WHITE QUEENS white
+by = word('* DICTO *', int(N * 0.042), lambda ch: TEAL, big=(0, 2, 3, 4, 5, 6, 8))   # every letter of DICTO is an initial (DICTO)
 H = big[1].shape[0] + sub[1].shape[0] + by[1].shape[0] + int(N * 0.16)
 panel = np.ones((H, N, 3)) * np.array(GROUND, float)
 y = paste(panel, big, N / 2, int(N * 0.02)); y = paste(panel, sub, N / 2, y + int(N * 0.05)); paste(panel, by, N / 2, y + int(N * 0.035))
 out = Image.new('RGB', (N, N + H), GROUND); out.paste(sq, (0, 0)); out.paste(Image.fromarray(np.clip(panel, 0, 255).astype(np.uint8)), (0, N))
 out.save('wonder-cover-front.png'); print('ok', out.size)
 # the ◆ DICTO ◆ mark alone (transparent), for the back of the KDP cover (DICTO 10-29)
-mk = word('* DICTO *', int(N * 0.06), lambda ch: RED, big=(0, 2, 3, 4, 5, 6, 8))   # red on the back too (DICTO 10-29)
+mk = word('* DICTO *', int(N * 0.06), lambda ch: TEAL, big=(0, 2, 3, 4, 5, 6, 8))   # red on the back too (DICTO 10-29)
 Image.fromarray(np.dstack([np.clip(mk[0], 0, 255), mk[1] * 255]).astype(np.uint8), 'RGBA').save('dicto-mark.png')
