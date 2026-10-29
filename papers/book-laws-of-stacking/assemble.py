@@ -124,6 +124,7 @@ doc=f'''<!doctype html>
 <section class="app"><h1 class="chapter">Appendix. Sources by chapter</h1><p>Each chapter's own list of sources checked, data and code, as published with its paper.</p>{''.join(sources)}</section>
 {refhtml}
 {idxhtml}
+{open(os.path.join(HERE,'about.html'),encoding='utf8').read()}
 </body></html>'''
 open(os.path.join(HERE,'paper.html'),'w',encoding='utf8').write(doc)
 print('referred',len(REFERRED),'index terms',len(INDEX),'chapters',len(toc),'figures',sum(len(fs) for _,_,fs in os.walk(os.path.join(HERE,'figures'))),'chars',len(doc))
