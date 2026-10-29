@@ -21,7 +21,7 @@ const unit = (a) => { const l = Math.hypot(...a); return a.map((x) => x / l); };
 export const UNIT_DIRECTIONS = DIRECTIONS.map((k) => unit(SRC.directions[k].d_exact.map(q5)));
 
 /** Turn x by angle in the plane of the unit pair (a, w) (a towards w), leaving the plane's orthogonal complement fixed. */
-function turn(x, { a, w }, angle) {
+export function turn(x, { a, w }, angle) {
   const xa = dot(x, a), xw = dot(x, w), co = Math.cos(angle), si = Math.sin(angle);
   return x.map((c, k) => c + (xa * (co - 1) - xw * si) * a[k] + (xa * si + xw * (co - 1)) * w[k]);
 }
@@ -161,6 +161,9 @@ const EXACT = SRC.vertices_exact.map((v) => v.map(([a, b]) => [rParse(a), rParse
 const D_EXACT = DIRECTIONS.map((k) => SRC.directions[k].d_exact.map(([a, b]) => [rParse(a), rParse(b)]));
 const HEIGHTS = D_EXACT.map((d) => EXACT.map((v) => v.reduce((s, x, i) => qAdd(s, qMul(x, d[i])), [R(0), R(0)])));
 const D_FLOAT = D_EXACT.map((d) => d.map(qFloat));
+/** The exact arithmetic of Q(√5) and the exact vertices, for the Red Queen (red-queen-geometry.js), built from these. */
+export const Q5 = { R, rParse, qAdd, qMul, qFloat, qKey };
+export const VERTICES_EXACT = EXACT;
 
 /** The slice stops of one direction, from the centre (height 0) to the tip: every vertex height and the exact midpoint of every
  *  gap between two neighbouring ones (#63, Lemma: one pattern per gap). [{ h (exact), height (string), value (float), atVertex, tip }] */
