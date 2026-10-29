@@ -1,0 +1,134 @@
+{
+ "2": {
+  "volumes_over_TI": {
+   "TI": 1.0,
+   "TI+12 pentagonal spikes": 1.289707,
+   "TI+20 hexagonal spikes": 1.710293,
+   "TI Star": 2.0,
+   "Ip ∩ Dh": 4.103174,
+   "Ip (icosahedron of the 12 pentagon tips)": 4.626695,
+   "Dh (dodecahedron of the 20 hexagon tips)": 4.697099,
+   "K (hull of the 32 tips)": 6.067694,
+   "s·TI": 8.0
+  },
+  "nesting_covers": [
+   [
+    "TI",
+    "Ip ∩ Dh"
+   ],
+   [
+    "TI+12 pentagonal spikes",
+    "Ip (icosahedron of the 12 pentagon tips)"
+   ],
+   [
+    "TI+20 hexagonal spikes",
+    "Dh (dodecahedron of the 20 hexagon tips)"
+   ],
+   [
+    "TI Star",
+    "K (hull of the 32 tips)"
+   ],
+   [
+    "Ip ∩ Dh",
+    "Ip (icosahedron of the 12 pentagon tips)"
+   ],
+   [
+    "Ip ∩ Dh",
+    "Dh (dodecahedron of the 20 hexagon tips)"
+   ],
+   [
+    "Ip (icosahedron of the 12 pentagon tips)",
+    "K (hull of the 32 tips)"
+   ],
+   [
+    "Dh (dodecahedron of the 20 hexagon tips)",
+    "K (hull of the 32 tips)"
+   ],
+   [
+    "K (hull of the 32 tips)",
+    "s·TI"
+   ]
+  ],
+  "core": {
+   "corners": 60,
+   "faces": {
+    "5": 12,
+    "6": 20
+   },
+   "radius_spread": 4.440892098500626e-16,
+   "shortest_distances": [
+    0.5527864,
+    1.236068,
+    1.5864169
+   ],
+   "similar_to_TI": false
+  },
+  "K_also_Ip_plus_20_pyramids": true
+ },
+ "phi": {
+  "volumes_over_TI": {
+   "TI": 1.0,
+   "TI+12 pentagonal spikes": 1.179049,
+   "TI+20 hexagonal spikes": 1.438985,
+   "TI Star": 1.618034,
+   "Ip ∩ Dh": 2.172666,
+   "Ip (icosahedron of the 12 pentagon tips)": 2.449874,
+   "Dh (dodecahedron of the 20 hexagon tips)": 2.487154,
+   "K (hull of the 32 tips)": 3.212896,
+   "s·TI": 4.236068
+  },
+  "nesting_covers": [
+   [
+    "TI",
+    "Ip ∩ Dh"
+   ],
+   [
+    "TI+12 pentagonal spikes",
+    "Ip (icosahedron of the 12 pentagon tips)"
+   ],
+   [
+    "TI+20 hexagonal spikes",
+    "Dh (dodecahedron of the 20 hexagon tips)"
+   ],
+   [
+    "TI Star",
+    "K (hull of the 32 tips)"
+   ],
+   [
+    "Ip ∩ Dh",
+    "Ip (icosahedron of the 12 pentagon tips)"
+   ],
+   [
+    "Ip ∩ Dh",
+    "Dh (dodecahedron of the 20 hexagon tips)"
+   ],
+   [
+    "Ip (icosahedron of the 12 pentagon tips)",
+    "K (hull of the 32 tips)"
+   ],
+   [
+    "Dh (dodecahedron of the 20 hexagon tips)",
+    "K (hull of the 32 tips)"
+   ],
+   [
+    "K (hull of the 32 tips)",
+    "s·TI"
+   ]
+  ],
+  "core": {
+   "corners": 60,
+   "faces": {
+    "5": 12,
+    "6": 20
+   },
+   "radius_spread": 8.881784197001252e-16,
+   "shortest_distances": [
+    0.4472136,
+    1.0,
+    1.2834382
+   ],
+   "similar_to_TI": false
+  },
+  "K_also_Ip_plus_20_pyramids": true
+ }
+}

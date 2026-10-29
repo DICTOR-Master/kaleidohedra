@@ -29,7 +29,7 @@ ax = fig.add_subplot(1, 4, 1, projection='3d'); draw(ax, FT, [GOLD] * len(FT), t
 sp, sc = [], []
 for f, t in zip(FT, tips):
     for i in range(len(f)): sp.append(np.array([f[i], f[(i + 1) % len(f)], t])); sc.append(VIOLET if len(f) == 5 else TEAL)
-ax = fig.add_subplot(1, 4, 2, projection='3d'); draw(ax, sp, sc, title='spiked TI = φ · TI')
+ax = fig.add_subplot(1, 4, 2, projection='3d'); draw(ax, sp, sc, title='Golden TI Star = φ · TI')
 ax = fig.add_subplot(1, 4, 3, projection='3d'); HF = faces(np.array(tips)); draw(ax, sp + HF, sc + ['#f5f0dc'] * len(HF), title='pentakis hull of the 32 tips')
 for c in ax.collections[len(sp):]: c.set_alpha(0.18)
 ax = fig.add_subplot(1, 4, 4, projection='3d'); F2 = faces(P * phi); draw(ax, F2, [GOLD] * len(F2), alpha=0.35, title='TI × φ: the turn closes')
