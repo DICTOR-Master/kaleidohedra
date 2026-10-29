@@ -118,5 +118,9 @@ doc=f'''<!doctype html>
 {idxhtml}
 {open(os.path.join(HERE,'about.html'),encoding='utf8').read()}
 </body></html>'''
+# figures re-made for the book (DICTO 10-29: Figure 1.1, the pulled-apart Lotus seed, re-shot so it fits the frame) replace the
+# copies taken from the papers above, so a re-run can never put the old ones back
+for root,_,fs in os.walk(os.path.join(HERE,'figures-fixed')):
+    for f in fs: shutil.copy(os.path.join(root,f), os.path.join(HERE,'figures',os.path.relpath(os.path.join(root,f),os.path.join(HERE,'figures-fixed'))))
 open(os.path.join(HERE,'paper.html'),'w',encoding='utf8').write(doc)
 print('referred',len(REFERRED),'index terms',len(INDEX),'chapters',len(toc),'figures',sum(len(fs) for _,_,fs in os.walk(os.path.join(HERE,'figures'))),'chars',len(doc))
