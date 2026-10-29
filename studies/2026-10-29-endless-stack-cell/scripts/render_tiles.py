@@ -1,4 +1,4 @@
-# Picture of the two layer tiles (Endless Stack Cell, DICTO's idea 2026-10-29): the c-tile (from ABC) and the h-tile (from AB)
+# Picture of the two layer tiles (HexOct, DICTO's name 2026-10-29; was the placeholder Endless Stack Cell): the c-tile (from ABC) and the h-tile (from AB)
 # at one weight; left whole, right drawn apart along z. Octahedral halves violet, tetrahedral pieces gold; the layer's ball as a dot.
 import sys, numpy as np
 from fractions import Fraction as Fr
@@ -38,10 +38,10 @@ if __name__ == '__main__':
             ax.set_xlim(c[0] - r, c[0] + r); ax.set_ylim(c[1] - r, c[1] + r); ax.set_zlim(c[2] - r, c[2] + r)
             ax.set_box_aspect((1, 1, 1)); ax.view_init(elev=14, azim=-58); ax.set_axis_off()
             ax.set_title(name + (', drawn apart' if gap else ''), fontsize=11)
-    fig.text(0.5, 0.02, f'Endless Stack Cell (DICTO): the two layer tiles at λ = {lam}. Violet: octahedral halves (top half from the gap below, '
+    fig.text(0.5, 0.02, f'HexOct (DICTO): the two layer tiles at λ = {lam}. Violet: octahedral halves (top half from the gap below, '
              'bottom half from the gap above); gold: the two tetrahedral pieces of the layer. Dot: the layer\'s ball.', ha='center', fontsize=9, wrap=True)
     fig.text(0.98, 0.005, 'DICTO · dictospheres.com', ha='right', fontsize=8, color='#777')
     plt.subplots_adjust(left=0, right=1, top=0.95, bottom=0.06, wspace=0, hspace=0.08)
-    plt.savefig(f'tiles_{str(lam).replace("/", "_").replace("-", "m")}.png', dpi=130)
+    plt.savefig(f'../tiles_{str(lam).replace("/", "_").replace("-", "m")}.png', dpi=130)
     print('saved')
 
