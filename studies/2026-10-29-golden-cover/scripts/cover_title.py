@@ -55,5 +55,5 @@ y = paste(panel, big, N / 2, int(N * 0.02)); y = paste(panel, sub, N / 2, y + in
 out = Image.new('RGB', (N, N + H), GROUND); out.paste(sq, (0, 0)); out.paste(Image.fromarray(np.clip(panel, 0, 255).astype(np.uint8)), (0, N))
 out.save('golden-cover-front.png'); print('ok', out.size)
 # the ◆ DICTO ◆ mark alone (transparent), for the back of the KDP cover (DICTO 10-29)
-mk = word('* DICTO *', int(N * 0.06), lambda ch: WHITE, big=(0, 2, 3, 4, 5, 6, 8))
+mk = word('* DICTO *', int(N * 0.06), lambda ch: RED, big=(0, 2, 3, 4, 5, 6, 8))   # red on the back too (DICTO 10-29)
 Image.fromarray(np.dstack([np.clip(mk[0], 0, 255), mk[1] * 255]).astype(np.uint8), 'RGBA').save('dicto-mark.png')
