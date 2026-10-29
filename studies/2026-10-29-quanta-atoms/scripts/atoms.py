@@ -15,11 +15,24 @@ if os.path.exists(BOOK):
     for m in _re.finditer(r'<section class="page entry"[^>]*>(.*?)</section>', _t, _re.S):
         mk = _re.search(r'chapter-mark">[^<]*#(\d+[a-z]?)<', m.group(1)); im = _re.search(r'<img src="(figures/[^"]+)"', m.group(1))
         if mk and im and mk.group(1) not in FIGS: FIGS[mk.group(1)] = im.group(1)
-def borrowed(r):
+def _blank(src):   # a picture that is (almost) all white: a page, not a shape
+    try:
+        from PIL import Image, ImageStat
+        return sum(ImageStat.Stat(Image.open(os.path.join(os.path.dirname(BOOK), src)).convert('L').resize((64, 64))).mean) > 235
+    except Exception: return False
+def _entry(r):
     m = re.match(r'#(\d+[a-z]?)', r['paper'].strip())
     return (m.group(1), FIGS[m.group(1)]) if m and m.group(1) in FIGS else None
+def borrowed(r):
+    # DICTO 10-29 (D23–D27 showed #29's group picture): an entry's picture is borrowed only when no other shape without its own
+    # (drawn or not) comes from the same paper, and it is not a blank page; otherwise the shape is listed under "Not drawn here"
+    b = _entry(r)
+    if not b or icon(r) or _blank(b[1]): return None
+    return None if sum(1 for x in rows if _entry(x) == b) > 1 else b   # the paper's picture shows this shape only if it is the paper's one shape
 def icon(r):
     f = r['dataset_file'].replace('solids/', '').replace('.json', '.png') if r['dataset_file'] else ''
+    if not f:   # DICTO 10-29: a piece with no model file in the dataset drawn alone from its paper's exact data (piece-<name>.png), never a group picture
+        f = 'piece-' + re.sub(r'[^a-z0-9]+', '-', r['name'].lower()).strip('-') + '.png'
     return f if f and os.path.exists(os.path.join(icons, f)) else ''
 def where(r):
     p = r['paper'].strip(); doi = re.search(r'10\.5281/zenodo\.\d+', r['dicto_doi'] or '')
@@ -61,7 +74,7 @@ with open(out, 'w', encoding='utf8') as f:
     pics("DICTO's new atoms", new)
     f.write('<p class="tl">D-numbers are given to single solids and pieces. DICTO\'s new clusters, structures and networks, built from them, follow without numbers.</p>\n')
     pics("DICTO's new clusters, structures and networks", newc)
-    f.write('<h2>Not drawn here</h2>\n<p class=\"tl\">Each of these is computed exactly in its paper or finding; it has no model file in the data set yet and no figure in its entry here.</p>\n')
+    f.write('<h2>Not drawn here</h2>\n<p class=\"tl\">Each of these is computed exactly in its paper or finding. It has no model file in the dataset yet and no picture of it alone, so it is listed here without one.</p>\n')
     for title, rs in (("DICTO's new atoms", new), ("DICTO's new clusters, structures and networks", newc)):
         rest = [r for r in rs if not shown(r)]
         if rest:
