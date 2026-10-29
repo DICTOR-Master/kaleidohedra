@@ -1,0 +1,126 @@
+{
+ "football": {
+  "pyramids": {
+   "5-gon pyramid": {
+    "count": 12,
+    "height": "sqrt(410*sqrt(5) + 1250)/20",
+    "height_num": 2.327438436766327,
+    "volume": "sqrt(5 - 2*sqrt(5))*(2*sqrt(5) + 5)*sqrt(410*sqrt(5) + 1250)/240",
+    "volume_num": 1.3347684105728597,
+    "side_edge": "sqrt(18*sqrt(5) + 58)/4",
+    "side_edge_num": 2.4780186590676156,
+    "side_apex_cos": "9*sqrt(5)/109 + 80/109",
+    "side_apex_deg": 23.28144627354121
+   },
+   "6-gon pyramid": {
+    "count": 20,
+    "height": "sqrt(18*sqrt(5) + 42)/4",
+    "height_num": 2.267283942228512,
+    "volume": "3*sqrt(6*sqrt(5) + 14)/8",
+    "volume_num": 1.9635254915624212,
+    "side_edge": "sqrt(18*sqrt(5) + 58)/4",
+    "side_edge_num": 2.4780186590676156,
+    "side_apex_cos": "9*sqrt(5)/109 + 80/109",
+    "side_apex_deg": 23.28144627354121
+   }
+  },
+  "total_volume": "sqrt(5 - 2*sqrt(5))*(2*sqrt(5)*sqrt(410*sqrt(5) + 1250) + 5*sqrt(410*sqrt(5) + 1250) + 60*sqrt(5)*sqrt(2*sqrt(5) + 10) + 150*sqrt(2*sqrt(5) + 10))/20",
+  "total_volume_num": 55.28773075812274,
+  "dihedrals": {
+   "5-6": {
+    "dihedral_cos": "-sqrt(41*sqrt(5) + 125)*(5*sqrt(6) + 9*sqrt(30))/1140",
+    "dihedral_deg": 142.62263185935032,
+    "shares_deg": {
+     "5": 73.5277893072396,
+     "6": 69.0948425521107
+    },
+    "shares_cos2": {
+     "5": "sqrt(5)/90 + 1/18",
+     "6": "1/2 - sqrt(5)/6"
+    }
+   },
+   "6-6": {
+    "dihedral_cos": "-sqrt(5)/3",
+    "dihedral_deg": 138.1896851042214,
+    "shares_deg": {
+     "6": 69.0948425521107
+    },
+    "shares_cos2": {
+     "6": "1/2 - sqrt(5)/6"
+    }
+   }
+  }
+ },
+ "truncated tetrahedron": {
+  "pyramids": {
+   "3-gon pyramid": {
+    "count": 4,
+    "height": "5*sqrt(6)/12",
+    "height_num": 1.0206207261596576,
+    "volume": "5*sqrt(2)/48",
+    "volume_num": 0.1473139127471974,
+    "side_edge": "sqrt(22)/4",
+    "side_edge_num": 1.1726039399558574,
+    "side_apex_cos": "7/11",
+    "side_apex_deg": 50.47880364135783
+   },
+   "6-gon pyramid": {
+    "count": 4,
+    "height": "sqrt(6)/4",
+    "height_num": 0.6123724356957945,
+    "volume": "3*sqrt(2)/8",
+    "volume_num": 0.5303300858899106,
+    "side_edge": "sqrt(22)/4",
+    "side_edge_num": 1.1726039399558574,
+    "side_apex_cos": "7/11",
+    "side_apex_deg": 50.47880364135783
+   }
+  },
+  "total_volume": "23*sqrt(2)/12",
+  "total_volume_num": 2.710575994548432,
+  "dihedrals": {
+   "3-6": {
+    "dihedral_cos": "-1/3",
+    "dihedral_deg": 109.47122063449069,
+    "shares_deg": {
+     "3": 74.20683095173604,
+     "6": 35.264389682754654
+    },
+    "shares_cos2": {
+     "3": "2/27",
+     "6": "2/3"
+    }
+   },
+   "6-6": {
+    "dihedral_cos": "1/3",
+    "dihedral_deg": 70.52877936550931,
+    "shares_deg": {
+     "6": 35.264389682754654
+    },
+    "shares_cos2": {
+     "6": "2/3"
+    }
+   }
+  }
+ },
+ "icosahedron dihedral cos": "-sqrt(5)/3",
+ "hexagonal bipyramid": {
+  "height": "(sqrt(6) + sqrt(18*sqrt(5) + 42))/4",
+  "height_num": 2.8796563779243067,
+  "volume_num": 2.4938555774523317
+ },
+ "side faces": {
+  "football 5-gon pyramid": 2.4780186590676156,
+  "football 6-gon pyramid": 2.4780186590676156,
+  "truncated tetrahedron 3-gon pyramid": 1.1726039399558574,
+  "truncated tetrahedron 6-gon pyramid": 1.1726039399558574
+ },
+ "edge stars of whole solids (angles adding to 360 degrees)": [
+  [
+   "truncated tetrahedron 3-6",
+   "truncated tetrahedron 3-6",
+   "truncated tetrahedron 6-6",
+   "truncated tetrahedron 6-6"
+  ]
+ ]
+}
