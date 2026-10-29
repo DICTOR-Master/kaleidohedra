@@ -43,8 +43,9 @@ body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs,p,li{font-family:"N
 /* DICTO 10-29: spacing. Entries flow on (a new page only at each chapter), titles stand clear of the text above and below */
 .page.entry { break-after: auto; break-before: auto; margin-top: 14mm; padding-top: 6mm; border-top: 1px solid #e3d7b5; }
 .page.entry[data-first="1"] { break-before: page; margin-top: 0; padding-top: 0; border-top: none; }
-.page.entry h1 { margin: 2mm 0 2mm; break-after: avoid; }
-.page.entry .sub { margin-bottom: 5mm; break-after: avoid; }
+.page.entry h1 { margin: 5mm 0 3mm; break-after: avoid; }   /* DICTO 10-29: clear gap between the chapter line and the title */
+.page.entry .chapter-mark { margin-bottom: 0; }
+.page.entry .sub { margin-bottom: 7mm; break-after: avoid; }
 .page.entry .chapter-mark { break-after: avoid; }
 .intro h3, .entry h3 { margin: 16pt 0 6pt !important; break-after: avoid; }
 .entry p, .intro p { orphans: 3; widows: 3; }
