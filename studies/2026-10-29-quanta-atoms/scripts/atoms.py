@@ -33,7 +33,7 @@ css = '''<style>
 .atom { break-inside: avoid; font: 7.6pt/1.3 "Nimbus Sans", "Liberation Sans", sans-serif; }
 .atom img { width: 100%; display: block; border-radius: 2mm; }
 .atom .noicon { aspect-ratio: 1; border: 1px dashed #bbb; border-radius: 2mm; color: #999; font-size: 7pt; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2mm; }
-.atl { font: 7.4pt/1.3 "Nimbus Sans", "Liberation Sans", sans-serif; width: 100%; } .atl td, .atl th { padding: 1mm 1.5mm; vertical-align: top; } .tl { font-size: 9pt; margin-top: 4mm; }
+.atl { font: 7.4pt/1.3 "Nimbus Sans", "Liberation Sans", sans-serif; width: 100%; } .atl td, .atl th { padding: 1mm 1.5mm; vertical-align: top; } .tl { font-size: 9pt; margin-top: 4mm; text-align: left; caption-side: top; padding-bottom: 2mm; }
 .atom .an { margin-top: 1mm; font-size: 8.4pt; } .atom .am { color: #6b5310; } .atom .ant { color: #555; font-size: 7pt; }
 </style>'''
 with open(out, 'w', encoding='utf8') as f:
@@ -44,7 +44,7 @@ with open(out, 'w', encoding='utf8') as f:
         pics = [r for r in rs if icon(r)]; rest = [r for r in rs if not icon(r)]
         f.write(f'<h2>{title}</h2>\n<div class="atoms">\n' + '\n'.join(card(r) for r in pics) + '\n</div>\n')
         if rest:
-            f.write('<p class="tl">Without an exact model in the dataset yet (made in the apps or described in the papers):</p>\n<table class="atl"><tr><th>No.</th><th>Shape</th><th>Kind</th><th>From</th><th>Status</th></tr>\n')
+            f.write('<table class="atl"><caption class="tl">Without an exact model in the dataset yet (made in the apps or described in the papers):</caption><thead><tr><th>No.</th><th>Shape</th><th>Kind</th><th>From</th><th>Status</th></tr></thead>\n')   # caption: the line never parts from its table (DICTO 10-29)
             f.write('\n'.join(f'<tr><td>{e(r["universal_number"] or "—")}</td><td>{e(r["name"])}</td><td>{e(r["kind"])}</td><td>{where(r)}</td><td>{e((r["prior_art_or_note"] or r["status"])[:140])}</td></tr>' for r in rest) + '\n</table>\n')
     block("DICTO's new atoms", new)
     f.write('<p class="tl">D-numbers are given to single solids and pieces. DICTO\'s new clusters, structures and networks, built from them, follow without numbers.</p>\n')
