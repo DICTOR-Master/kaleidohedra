@@ -50,6 +50,10 @@ body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs,p,li{font-family:"N
 .intro h3, .entry h3 { margin: 16pt 0 6pt !important; break-after: avoid; }
 .entry p, .intro p { orphans: 3; widows: 3; }
 figure { break-inside: avoid; }
+
+/* DICTO 10-29: the same clear gap wherever a chapter line stands over a title (introduction, catalogue, short chapters, appendix) */
+.chapter-mark { margin-bottom: 0 !important; }
+.chapter-mark + h1 { margin-top: 5mm !important; margin-bottom: 4mm !important; }
 </style></head><body>
 <img class="watermark" src="../dicto-logo.png" alt="">
 
