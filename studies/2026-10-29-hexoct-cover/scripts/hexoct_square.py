@@ -66,8 +66,8 @@ def carved(ch):
     glow = ndimage.gaussian_filter(On, 0.006 * W); glow /= glow.max()
     core = np.array([255, 255, 255.]); halo = np.array([170, 240, 255.])   # full brightness, glow kept soft (DICTO: "not too bright though"); dim = np.array([70, 62, 52.])
     # DICTO: H and C, the letters on their own tile (teal), in the pieces' colourway: H yellow (gold), C purple (violet)
-    if ch == 'H': core = np.array([255, 236, 110.]); halo = np.array([255, 215, 90.])
-    if ch == 'C': core = np.array([222, 180, 255.]); halo = np.array([196, 148, 255.])
+    if ch == 'H': core = np.array(TONE['tet'], float); halo = core      # exactly the gold of the pieces (DICTO)
+    if ch == 'C': core = np.array(TONE['octdn'], float); halo = core    # exactly the (lighter) violet of the pieces
     rgb = (core * On[..., None] + halo * (1 - On[..., None])) * (On + 0.6 * glow)[..., None] / np.maximum(On + 0.6 * glow, 1e-6)[..., None]
     # dark edges at full strength (DICTO, final: "back to the stronger black outline"); unlit segments a faint veil
     rim = (Rim - On) > 0.3
