@@ -5,7 +5,7 @@
 import numpy as np
 from scipy import ndimage
 from PIL import Image, ImageDraw, ImageFont
-GROUND = (20, 15, 11); GOLD = (217, 165, 33); VIOLET = (180, 138, 224); WHITE = (255, 255, 255)
+GROUND = (20, 15, 11); GOLD = (217, 165, 33); VIOLET = (180, 138, 224); WHITE = (255, 255, 255); RED = (205, 62, 40)
 sq = Image.open('../golden-square.png').convert('RGB'); N = sq.width
 def glyph(ch, size, col):
     """One closed LED letter: (rgb, alpha) cropped to its ink, plus padding for glow."""
@@ -46,9 +46,9 @@ def word(text, size, colour_of, big=(), k=1.35):
 def paste(canvas, img, cx, y):
     rgb, a = img; h, w = a.shape; x = int(cx - w / 2)
     c = canvas[y:y + h, x:x + w]; canvas[y:y + h, x:x + w] = c * (1 - a[..., None]) + rgb * a[..., None]; return y + h
-big = word('THE GOLDEN CYCLE', int(N * 0.062), lambda ch: WHITE, big=(0, 4, 11))
-sub = word('ICOSAHEDRAL SHELLS', int(N * 0.042), lambda ch: WHITE, big=(0, 12))
-by = word('* DICTO *', int(N * 0.042), lambda ch: WHITE, big=(0, 2, 3, 4, 5, 6, 8))   # every letter of DICTO is an initial (DICTO)
+big = word('THE GOLDEN CYCLE', int(N * 0.062), lambda ch: GOLD, big=(0, 4, 11))   # DICTO 10-29: lines gold, lilac, red
+sub = word('ICOSAHEDRAL SHELLS', int(N * 0.042), lambda ch: VIOLET, big=(0, 12))
+by = word('* DICTO *', int(N * 0.042), lambda ch: RED, big=(0, 2, 3, 4, 5, 6, 8))   # every letter of DICTO is an initial (DICTO)
 H = big[1].shape[0] + sub[1].shape[0] + by[1].shape[0] + int(N * 0.16)
 panel = np.ones((H, N, 3)) * np.array(GROUND, float)
 y = paste(panel, big, N / 2, int(N * 0.02)); y = paste(panel, sub, N / 2, y + int(N * 0.05)); paste(panel, by, N / 2, y + int(N * 0.035))
