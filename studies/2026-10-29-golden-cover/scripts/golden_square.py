@@ -1,9 +1,9 @@
 # The GOLDEN square (DICTO 2026-10-29: "do the cover in HexOct style"): cover for the book "The Golden Cycle", after the HexOct
 # square. Cyclic Latin square: row i, column j holds letter (i+j) mod 6 of GOLDEN, so GOLDEN reads across the top and down the
 # left, every letter once in each row and column. Each letter is one station of the inside-out golden cycle (Spheres of Dharma
-# turned inside out, #32, chapter 6 of the book), in order: G dodecahedron, O icosidodecahedron, L DICTO Ogdoecontahedron,
-# D pentakis dodecahedron (polar of the truncated icosahedron), E icosahedron, N rhombic triacontahedron; then the dodecahedron
-# again, phi^3 larger. Six different solids, six colours (DICTO 10-29: no repeated solid or colour; "a different cycle of six").
+# turned inside out, #32, chapter 6 of the book), in nesting order, started at the gold triacontahedron so the first letter is
+# golden (DICTO 10-29): G rhombic triacontahedron, O dodecahedron (phi^3 larger), L icosidodecahedron, D DICTO Ogdoecontahedron,
+# E pentakis dodecahedron (polar of the truncated icosahedron), N icosahedron; then the triacontahedron again. Six different solids, six colours (DICTO 10-29: no repeated solid or colour; "a different cycle of six").
 # All drawn at one circumradius, one pose. Letters: the HexOct LED letters (DSEG14 Classic, OFL), white.
 import math, os, itertools, numpy as np
 from scipy.spatial import ConvexHull
@@ -27,8 +27,8 @@ def polar(V):   # the dual of a convex solid: one corner per face plane, n/d
 RTC = polar(IDO)
 import json
 OG = [tuple(v) for v in json.load(open('og-geometry.json'))['v']]   # = papers/ogdoecontahedron/data/hstar-render.json
-SOLID = {'G': DOD, 'O': IDO, 'L': OG, 'D': polar(TIC), 'E': ICO, 'N': RTC}
-COUNT = {'G': 12, 'O': 32, 'L': 80, 'D': 60, 'E': 20, 'N': 30}   # faces, as a check
+SOLID = {'G': RTC, 'O': DOD, 'L': IDO, 'D': OG, 'E': polar(TIC), 'N': ICO}
+COUNT = {'G': 30, 'O': 12, 'L': 32, 'D': 80, 'E': 60, 'N': 20}   # faces, as a check
 def faces(V):
     V = np.array(V, float); V = V / np.linalg.norm(V, axis=1).max(); h = ConvexHull(V); F = {}
     for sm, eq in zip(h.simplices, h.equations): F.setdefault(tuple(np.round(eq, 6)), set()).update(sm)
@@ -45,7 +45,7 @@ def rot(ax, a):
 VIEW = rot((1, 0.55, 0.15), 0.85)   # the DICTO square's general pose: every solid shows several faces
 d = VIEW.T @ np.array([0, 0, 1.0])
 GROUND = (20, 15, 11); EDGE = (60, 40, 18)
-TONE = {'G': (138, 92, 196), 'O': (43, 179, 163), 'L': (205, 62, 40), 'D': (196, 198, 208), 'E': (58, 112, 205), 'N': (217, 165, 33)}
+TONE = {'G': (217, 165, 33), 'O': (138, 92, 196), 'L': (43, 179, 163), 'D': (205, 62, 40), 'E': (196, 198, 208), 'N': (58, 112, 205)}
 N = 1800; SS = 2; W = N * SS; cell = 0.9 * W / 6; sc = 0.42 * cell; x0 = 0.05 * W
 light = np.array([-0.4, 0.55, 0.75]); light /= np.linalg.norm(light)
 img = Image.new('RGB', (W, W), GROUND); dr = ImageDraw.Draw(img)
