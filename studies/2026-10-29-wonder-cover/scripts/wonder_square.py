@@ -70,7 +70,10 @@ def carved(ch):
     On, Rim, Ghost = lay(ch), lay(ch, edge), lay('~')
     glow = ndimage.gaussian_filter(On, 0.006 * W); glow /= glow.max()
     core = np.array([255, 255, 255.]); halo = np.array([170, 240, 255.])   # full brightness, glow kept soft (DICTO: "not too bright though"); dim = np.array([70, 62, 52.])
-    if ch == 'W': core = np.array([205, 62, 40.]); halo = core   # DICTO 10-29: the W letters red, tiles unchanged
+    # DICTO 10-29: each letter in its partner's colour, in pairs of polarity: W red on white / R white on red, O blue on gold /
+    # N gold on blue, D lilac on teal / E teal on lilac (tiles unchanged)
+    LETTER = {'W': (205, 62, 40), 'O': (74, 132, 230), 'N': (217, 165, 33), 'D': (180, 138, 224), 'E': (43, 179, 163)}
+    if ch in LETTER: core = np.array(LETTER[ch], float); halo = core
     # DICTO: H and C, the letters on their own tile (teal), in the pieces' colourway: H yellow (gold), C purple (violet)
     rgb = (core * On[..., None] + halo * (1 - On[..., None])) * (On + 0.6 * glow)[..., None] / np.maximum(On + 0.6 * glow, 1e-6)[..., None]
     # dark edges at full strength (DICTO, final: "back to the stronger black outline"); unlit segments a faint veil
