@@ -1,0 +1,101 @@
+{
+ "upload_type": "dataset",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "version": "6",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-30",
+ "access_right": "open",
+ "title": "DICTO Solids: Exact Geometry",
+ "description": "<p>Exact geometry of the named polyhedra found or named by DICTO (artist, Osaka) in his published papers and the Kaleidohedra findings archive: 65 solids, among them the DICTO Ogdoecontahedron, the DICTO Hecatodihedron, the DICTO OG family, the DBT and OTT, the DICTO Jewel, the six DICTONIC SOLIDS of #48 and #51, the twelve solids of version 3 (#55, #56, #57, #59) <b>Ganesha</b> (#61 The Swap Rule: the Janus c/h tetrahedral piece of a squashed stacking, at the paper's Figure 1 parameters ACBC, layer spacing² = (3/4)(2/3), λ = 1/10; in ℚ(√3)), <b>Kagemusha</b> (first called Shadow-17; #62 Shadows of the Fourth Dimension: a new construction from a known piece, two J11, Johnson's gyroelongated pentagonal pyramid, glued on their pentagons, the equal-edged form of the 600-cell's outer edge-first slices; in ℚ(√5)) and <b>Humpty Dumpty</b> (#63 The White Queen 600-cell: the real 48-vertex cell-first slice of the 600-cell, a convex egg of 92 triangles with tetrahedral symmetry; in ℚ(√5)). New in version 5: eighteen named slices of the two four-dimensional queens, with DICTO's names: from #63 The White Queen 600-cell the <b>Lion</b>, <b>Jabberwock</b>, <b>Tweedledum</b>, <b>Tweedledee</b>, <b>Mad Hatter</b>, <b>March Hare</b>, <b>Jubjub</b>, <b>Alicia</b>, <b>Alice</b>, <b>White Rabbit</b>, <b>Unicorn</b> and <b>Bandersnatch</b>, and from #65 The Red Queen 120-cell <b>Haigha</b>, <b>Hatta</b>, the <b>Red King</b>, the <b>Walrus</b>, the <b>Red Knight</b> and the <b>White Knight</b> (D87–D101 for the fifteen new ones; Alicia, the Unicorn and the Bandersnatch are sections in Alicia Boole Stott's 1900 series, so known shapes; Humpty Dumpty's status is corrected to known for the same reason, D85 kept). New in version 6: the three solids of #78 The Truncated Icosahedron Star (TI Star), in ℚ(√5): the <b>Golden TI Star</b> (D103, the truncated icosahedron with its own face pyramids turned outwards at 1/φ of their height; 92 corners, 180 triangles, volume exactly φ times the truncated icosahedron), the <b>Star Halo</b> (D104, DICTO's name: the hull of its 32 tips, a pentakis dodecahedron that is not the Catalan one) and the <b>TI Star core</b> (D105, DICTO's name: the icosahedron truncated at 1/φ³ of each edge, its hexagon edges in the ratio √5); Shadow-17 (D86) now has DICTO's name, Kagemusha; D102, Fallen Humpty (#62), is listed in the inventory but has no model file yet. Every coordinate is exact, in ℚ, ℚ(√3), ℚ(√5), ℚ(∛2) or ℚ(t) (t the root of an irreducible cubic, stated with its isolating interval), and also given to 15 decimals; each solid comes with its faces (consistently wound), f-vector, exact volume, squared edge lengths, symmetry group and the values stated in its paper, as JSON and OFF, plus a copy scaled to volume 1.</p><p>Also included: 6 packings that fill space and 4 published packings that do not, each with exact lattice vectors and exact placements of its pieces; and an inventory (index.csv) of all 159 rows of shapes DICTO has named, with finding number, paper, status (new, rediscovered or known), prior art and a universal number: established catalogue numbers (Johnson, uniform, Wenninger, Hart, Mosseri–Sadoc) where they exist, and DICTO's own permanent catalogue numbers D1–D105 for his new shapes, in order of first publication (version 4: D84 Ganesha, D85 Humpty Dumpty, D86 Kagemusha; version 5: D87–D101; version 6: D102 Fallen Humpty, D103–D105).</p><p>A standalone checker (check.py, Python 3 + sympy) re-proves every stated value from the data files alone: 1505 checks, all passing, including closed outward-wound surfaces, exact planarity, convexity where stated, symmetry, the non-convex keyed solids as convex pieces minus or plus Tricaps, and exact separating planes showing that the pieces of each packing do not overlap.</p><p>Shapes and names by DICTO; data built and checked with Claude (Anthropic). More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "polyhedra",
+  "exact coordinates",
+  "golden ratio",
+  "Q(sqrt 5)",
+  "Q(sqrt 3)",
+  "space-filling",
+  "packings",
+  "symmetry",
+  "OFF files",
+  "mathematical data",
+  "truncated icosahedron",
+  "TI Star",
+  "Star Halo"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23716140",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  },
+  {
+   "identifier": "10.5281/zenodo.23596362",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23606828",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23632358",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23635823",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23647898",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23677485",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23682596",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23687223",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23690856",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23782577",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  }
+ ],
+ "notes": "Version 4 (28 October 2026): adds Ganesha (#61, D84), Humpty Dumpty (#63, D85) and Shadow-17 (#62, D86), and the field ℚ(√3). Built from the K repository branch math-data-dataset, commit bce2a61. Verify with: pip install sympy; python3 check.py. Version 3 (27 October 2026): twelve solids of #55, #56, #57, #59 (D76–D83), fields ℚ and ℚ(t). Version 2 (24 October 2026): the six DICTONIC SOLIDS (#48, #51), the three DICTONIC BONDS, ℚ(∛2), D-numbers D1–D75; commit d3d18ca. Version 1 (24 October 2026): 23 solids, 7 packings, inventory; commit 98e3fbb."
+}
