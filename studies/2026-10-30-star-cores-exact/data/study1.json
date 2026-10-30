@@ -1,0 +1,903 @@
+[
+ {
+  "solid": "DICTO GTI (golden truncated icosahedron)",
+  "field": "Q(sqrt(5))",
+  "symmetry": "Ih",
+  "steps": [
+   {
+    "step": 1,
+    "corners": 32,
+    "faces": {
+     "3": 60
+    },
+    "volume_over_start": "134000/549 + (-59600/549)*sqrt(5)",
+    "radius2_over_start": "5 + (-5/3)*sqrt(5)",
+    "radius_over_start_decimal": 1.1283705231440382
+   },
+   {
+    "step": 2,
+    "corners": 30,
+    "faces": {
+     "3": 20,
+     "5": 12
+    },
+    "volume_over_start": "193000/61 + (-258800/183)*sqrt(5)",
+    "radius2_over_start": "35 + (-15)*sqrt(5)",
+    "radius_over_start_decimal": 1.2078825843198293
+   },
+   {
+    "step": 3,
+    "corners": 32,
+    "faces": {
+     "4": 30
+    },
+    "volume_over_start": "3314000/61 + (-1482000/61)*sqrt(5)",
+    "radius2_over_start": "125 + (-55)*sqrt(5)",
+    "radius_over_start_decimal": 1.4199511391282298
+   },
+   {
+    "step": 4,
+    "corners": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "volume_over_start": "161000 + (-72000)*sqrt(5)",
+    "radius2_over_start": "2350 + (-1050)*sqrt(5)",
+    "radius_over_start_decimal": 1.458980337503157,
+    "returns_to_step": 0
+   }
+  ],
+  "enters_cycle_at_step": 0,
+  "period": 4,
+  "gain_radius_squared": "2350 + (-1050)*sqrt(5)",
+  "gain_volume": "161000 + (-72000)*sqrt(5)",
+  "gain_radius_decimal": 1.458980337503157,
+  "gain_radius": "35 + (-15)*sqrt(5)",
+  "polar": {
+   "2": {
+    "pieces": 267,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "1072000/549 + (-476800/549)*sqrt(5)"
+   },
+   "phi": {
+    "pieces": 267,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "-10000/183 + (14800/549)*sqrt(5)"
+   }
+  }
+ },
+ {
+  "solid": "DICTO FPD (flat pentakis dodecahedron)",
+  "field": "Q(sqrt(5))",
+  "symmetry": "Ih",
+  "steps": [
+   {
+    "step": 1,
+    "corners": 30,
+    "faces": {
+     "3": 20,
+     "5": 12
+    },
+    "volume_over_start": "57/8 + (-21/8)*sqrt(5)",
+    "radius2_over_start": "9/2 + (-3/2)*sqrt(5)",
+    "radius_over_start_decimal": 1.0704662693192697
+   },
+   {
+    "step": 2,
+    "corners": 32,
+    "faces": {
+     "4": 30
+    },
+    "volume_over_start": "225/2 + (-99/2)*sqrt(5)",
+    "radius2_over_start": "15 + (-6)*sqrt(5)",
+    "radius_over_start_decimal": 1.2584085723648186
+   },
+   {
+    "step": 3,
+    "corners": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "volume_over_start": "2655/8 + (-1179/8)*sqrt(5)",
+    "radius2_over_start": "270 + (-120)*sqrt(5)",
+    "radius_over_start_decimal": 1.2929975638125522
+   },
+   {
+    "step": 4,
+    "corners": 32,
+    "faces": {
+     "3": 60
+    },
+    "volume_over_start": "161000 + (-72000)*sqrt(5)",
+    "radius2_over_start": "2350 + (-1050)*sqrt(5)",
+    "radius_over_start_decimal": 1.458980337503157,
+    "returns_to_step": 0
+   }
+  ],
+  "enters_cycle_at_step": 0,
+  "period": 4,
+  "gain_radius_squared": "2350 + (-1050)*sqrt(5)",
+  "gain_volume": "161000 + (-72000)*sqrt(5)",
+  "gain_radius_decimal": 1.458980337503157,
+  "gain_radius": "35 + (-15)*sqrt(5)",
+  "polar": {
+   "2": {
+    "pieces": 267,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "35/3 + (1/3)*sqrt(5)"
+   },
+   "phi": {
+    "pieces": 267,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "25/8 + (37/24)*sqrt(5)"
+   }
+  }
+ },
+ {
+  "solid": "DICTO Palintriacontahedron",
+  "field": "Q(sqrt(5))",
+  "symmetry": "Ih",
+  "steps": [
+   {
+    "step": 1,
+    "corners": 30,
+    "faces": {
+     "3": 20,
+     "5": 12
+    },
+    "volume_over_start": "57/8 + (-21/8)*sqrt(5)",
+    "radius2_over_start": "9/2 + (-3/2)*sqrt(5)",
+    "radius_over_start_decimal": 1.0704662693192697
+   },
+   {
+    "step": 2,
+    "corners": 32,
+    "faces": {
+     "4": 30
+    },
+    "volume_over_start": "225/2 + (-99/2)*sqrt(5)",
+    "radius2_over_start": "15 + (-6)*sqrt(5)",
+    "radius_over_start_decimal": 1.2584085723648186
+   },
+   {
+    "step": 3,
+    "corners": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "volume_over_start": "2655/8 + (-1179/8)*sqrt(5)",
+    "radius2_over_start": "270 + (-120)*sqrt(5)",
+    "radius_over_start_decimal": 1.2929975638125522
+   },
+   {
+    "step": 4,
+    "corners": 32,
+    "faces": {
+     "3": 60
+    },
+    "volume_over_start": "161000 + (-72000)*sqrt(5)",
+    "radius2_over_start": "2350 + (-1050)*sqrt(5)",
+    "radius_over_start_decimal": 1.458980337503157,
+    "returns_to_step": 0
+   }
+  ],
+  "enters_cycle_at_step": 0,
+  "period": 4,
+  "gain_radius_squared": "2350 + (-1050)*sqrt(5)",
+  "gain_volume": "161000 + (-72000)*sqrt(5)",
+  "gain_radius_decimal": 1.458980337503157,
+  "gain_radius": "35 + (-15)*sqrt(5)",
+  "polar": {
+   "2": {
+    "pieces": 267,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "35/3 + (1/3)*sqrt(5)"
+   },
+   "phi": {
+    "pieces": 267,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "25/8 + (37/24)*sqrt(5)"
+   }
+  }
+ },
+ {
+  "solid": "Icosaxes",
+  "field": "Q(sqrt(5))",
+  "symmetry": "Oh",
+  "steps": [
+   {
+    "step": 1,
+    "corners": 14,
+    "faces": {
+     "3": 24
+    },
+    "volume_over_start": "675/22 + (-285/22)*sqrt(5)",
+    "radius2_over_start": "15 + (-6)*sqrt(5)",
+    "radius_over_start_decimal": 1.2584085723648186
+   },
+   {
+    "step": 2,
+    "corners": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "volume_over_start": "10200/11 + (-4545/11)*sqrt(5)",
+    "radius2_over_start": "65 + (-28)*sqrt(5)",
+    "radius_over_start_decimal": 1.5459937354355242
+   },
+   {
+    "step": 3,
+    "corners": 14,
+    "faces": {
+     "3": 24
+    },
+    "volume_over_start": "466775/22 + (-626045/66)*sqrt(5)",
+    "radius2_over_start": "4505/2 + (-2011/2)*sqrt(5)",
+    "radius_over_start_decimal": 2.0331376303540205
+   },
+   {
+    "step": 4,
+    "corners": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "volume_over_start": "1039025 + (-464660)*sqrt(5)",
+    "radius2_over_start": "8145 + (-3640)*sqrt(5)",
+    "radius_over_start_decimal": 2.3900966300057287,
+    "returns_to_step": 0
+   }
+  ],
+  "enters_cycle_at_step": 0,
+  "period": 4,
+  "gain_radius_squared": "8145 + (-3640)*sqrt(5)",
+  "gain_volume": "1039025 + (-464660)*sqrt(5)",
+  "gain_radius_decimal": 2.3900966300057287,
+  "gain_radius": "65 + (-28)*sqrt(5)",
+  "polar": {
+   "2": {
+    "pieces": 105,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "2700/11 + (-1140/11)*sqrt(5)"
+   },
+   "phi": {
+    "pieces": 105,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "-75/22 + (105/22)*sqrt(5)"
+   }
+  }
+ },
+ {
+  "solid": "Unborn Axes",
+  "field": "Q(sqrt(5))",
+  "symmetry": "Oh",
+  "steps": [
+   {
+    "step": 1,
+    "corners": 14,
+    "faces": {
+     "3": 24
+    },
+    "volume_over_start": "-81/5 + (81/10)*sqrt(5)",
+    "radius2_over_start": "9/5",
+    "radius_over_start_decimal": 1.3416407864998738
+   },
+   {
+    "step": 2,
+    "corners": 24,
+    "faces": {
+     "3": 8,
+     "8": 6
+    },
+    "volume_over_start": "6399/40 + (-14013/200)*sqrt(5)",
+    "radius2_over_start": "72/5 + (-27/5)*sqrt(5)",
+    "radius_over_start_decimal": 1.5248714442539524
+   },
+   {
+    "step": 3,
+    "corners": 14,
+    "faces": {
+     "3": 24
+    },
+    "volume_over_start": "-518319/100 + (290142/125)*sqrt(5)",
+    "radius2_over_start": "2349/50 + (-189/10)*sqrt(5)",
+    "radius_over_start_decimal": 2.172168323416483
+   },
+   {
+    "step": 4,
+    "corners": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "volume_over_start": "1160568/125 + (-518319/125)*sqrt(5)",
+    "radius2_over_start": "8829/25 + (-3888/25)*sqrt(5)",
+    "radius_over_start_decimal": 2.3252329215011356,
+    "returns_to_step": 0
+   }
+  ],
+  "enters_cycle_at_step": 0,
+  "period": 4,
+  "gain_radius_squared": "8829/25 + (-3888/25)*sqrt(5)",
+  "gain_volume": "1160568/125 + (-518319/125)*sqrt(5)",
+  "gain_radius_decimal": 2.3252329215011356,
+  "gain_radius": "72/5 + (-27/5)*sqrt(5)",
+  "polar": {
+   "2": {
+    "pieces": 105,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "-648/5 + (324/5)*sqrt(5)"
+   },
+   "phi": {
+    "pieces": 105,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "81/10"
+   }
+  }
+ },
+ {
+  "solid": "DICTO Metaxyhexecontahedron",
+  "field": "Q(sqrt(5))",
+  "symmetry": "Ih",
+  "steps": [
+   {
+    "step": 1,
+    "corners": 60,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "volume_over_start": "-12883 + (5762)*sqrt(5)",
+    "radius2_over_start": "9567 + (-4278)*sqrt(5)",
+    "radius_over_start_decimal": 1.0493770799379745
+   },
+   {
+    "step": 2,
+    "corners": 32,
+    "faces": {
+     "3": 60
+    },
+    "volume_over_start": "-497896661/30 + (222666179/30)*sqrt(5)",
+    "radius2_over_start": "119653/3 + (-267542/15)*sqrt(5)",
+    "radius_over_start_decimal": 1.235614927914214
+   },
+   {
+    "step": 3,
+    "corners": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "volume_over_start": "17309251473053/18 + (-38704662933299/90)*sqrt(5)",
+    "radius2_over_start": "1997726595 + (-2680231478/3)*sqrt(5)",
+    "radius_over_start_decimal": 1.2592680665614069
+   },
+   {
+    "step": 4,
+    "corners": 32,
+    "faces": {
+     "3": 60
+    },
+    "volume_over_start": "3319352303206149125/729 + (-164939942027543060/81)*sqrt(5)",
+    "radius2_over_start": "1766141793145/81 + (-263280873800/27)*sqrt(5)",
+    "radius_over_start_decimal": 1.4400360293649395,
+    "returns_to_step": 0
+   }
+  ],
+  "enters_cycle_at_step": 0,
+  "period": 4,
+  "gain_radius_squared": "1766141793145/81 + (-263280873800/27)*sqrt(5)",
+  "gain_volume": "3319352303206149125/729 + (-164939942027543060/81)*sqrt(5)",
+  "gain_radius_decimal": 1.4400360293649395,
+  "gain_radius": "939725/9 + (-140084/3)*sqrt(5)",
+  "polar": {
+   "2": {
+    "pieces": 267,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "1820/243 + (2876/1215)*sqrt(5)"
+   },
+   "phi": {
+    "pieces": 267,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "181/54 + (3713/2430)*sqrt(5)"
+   }
+  }
+ },
+ {
+  "solid": "Tweedledum",
+  "field": "Q(sqrt(5))",
+  "symmetry": "Ih",
+  "steps": [
+   {
+    "step": 1,
+    "corners": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "volume_over_start": "71/2 + (-153/10)*sqrt(5)",
+    "radius2_over_start": "25 + (-32/3)*sqrt(5)",
+    "radius_over_start_decimal": 1.0717314215801659
+   },
+   {
+    "step": 2,
+    "corners": 32,
+    "faces": {
+     "3": 60
+    },
+    "volume_over_start": "33239/9 + (-14858/9)*sqrt(5)",
+    "radius2_over_start": "229/3 + (-502/15)*sqrt(5)",
+    "radius_over_start_decimal": 1.2245781666926583
+   },
+   {
+    "step": 3,
+    "corners": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "volume_over_start": "3961723/10 + (-5315179/30)*sqrt(5)",
+    "radius2_over_start": "42839/3 + (-19156/3)*sqrt(5)",
+    "radius_over_start_decimal": 1.2756466352437288
+   },
+   {
+    "step": 4,
+    "corners": 32,
+    "faces": {
+     "3": 60
+    },
+    "volume_over_start": "499435201/5 + (-1116771028/25)*sqrt(5)",
+    "radius2_over_start": "854349/5 + (-382072/5)*sqrt(5)",
+    "radius_over_start_decimal": 1.41673573401999,
+    "returns_to_step": 0
+   }
+  ],
+  "enters_cycle_at_step": 0,
+  "period": 4,
+  "gain_radius_squared": "854349/5 + (-382072/5)*sqrt(5)",
+  "gain_volume": "499435201/5 + (-1116771028/25)*sqrt(5)",
+  "gain_radius_decimal": 1.41673573401999,
+  "gain_radius": "293 + (-652/5)*sqrt(5)",
+  "polar": {
+   "2": {
+    "pieces": 267,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "828/25 + (-1188/125)*sqrt(5)"
+   },
+   "phi": {
+    "pieces": 267,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "117/50 + (441/250)*sqrt(5)"
+   }
+  }
+ },
+ {
+  "solid": "Samson",
+  "field": "Q(2**(1/3))",
+  "symmetry": "Td",
+  "steps": [
+   {
+    "step": 1,
+    "corners": 14,
+    "faces": {
+     "4": 12
+    },
+    "volume_over_start": "-5199/230 + (-984/115)*2**(1/3) + (2802/115)*2**(2/3)",
+    "radius2_over_start": "721/529 + (794/529)*2**(1/3) + (-166/529)*2**(2/3)",
+    "radius_over_start_decimal": 1.660089014734673
+   },
+   {
+    "step": 2,
+    "corners": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "volume_over_start": "-706022079/3041750 + (408823857/3041750)*2**(1/3) + (136864719/3041750)*2**(2/3)",
+    "radius2_over_start": "558259/39675 + (-269222/39675)*2**(1/3) + (-62674/39675)*2**(2/3)",
+    "radius_over_start_decimal": 1.7360244842917478
+   },
+   {
+    "step": 3,
+    "corners": 14,
+    "faces": {
+     "3": 24
+    },
+    "volume_over_start": "2510685811467/40227143750 + (26931050618321/60340715625)*2**(1/3) + (-22420539692093/60340715625)*2**(2/3)",
+    "radius2_over_start": "770454857/62964225 + (502791394/62964225)*2**(1/3) + (-148611034/20988075)*2**(2/3)",
+    "radius_over_start_decimal": 3.325256784370766
+   },
+   {
+    "step": 4,
+    "corners": 12,
+    "faces": {
+     "3": 8,
+     "4": 6
+    },
+    "volume_over_start": "5999617687050529/4626121531250 + (5089571514076293/4626121531250)*2**(1/3) + (-7653560528967669/4626121531250)*2**(2/3)",
+    "radius2_over_start": "7238484323/524701875 + (-16739473178/174900625)*2**(1/3) + (13046404874/174900625)*2**(2/3)",
+    "radius_over_start_decimal": 3.4087660224112217
+   },
+   {
+    "step": 5,
+    "corners": 14,
+    "faces": {
+     "4": 12
+    },
+    "volume_over_start": "20528552254864981953/532003976093750 + (-1929686599423544412/266001988046875)*2**(1/3) + (-4883667196252140654/266001988046875)*2**(2/3)",
+    "radius2_over_start": "6123465992177/92522430625 + (-9972862154966/92522430625)*2**(1/3) + (6445672176378/92522430625)*2**(2/3)",
+    "radius_over_start_decimal": 6.400502451724712,
+    "returns_to_step": 1
+   }
+  ],
+  "enters_cycle_at_step": 1,
+  "period": 4,
+  "gain_radius_squared": "-8732015647/174900625 + (-680143024/174900625)*2**(1/3) + (7678489792/174900625)*2**(2/3)",
+  "gain_volume": "-1342953651318959/2313060765625 + (1200468842641272/2313060765625)*2**(1/3) + (-23293047086976/2313060765625)*2**(2/3)",
+  "gain_radius_decimal": 3.8555176227990913,
+  "polar": {
+   "2": {
+    "pieces": 69,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "1350/23 + (162/23)*2**(1/3) + (243/23)*2**(2/3)"
+   }
+  }
+ },
+ {
+  "solid": "David",
+  "field": "Q",
+  "symmetry": "D2d",
+  "steps": [
+   {
+    "step": 1,
+    "corners": 4,
+    "faces": {
+     "3": 4
+    },
+    "volume_over_start": "32",
+    "radius2_over_start": "10",
+    "radius_over_start_decimal": 3.1622776601683795
+   },
+   {
+    "step": 2,
+    "corners": 4,
+    "faces": {
+     "3": 4
+    },
+    "volume_over_start": "1000",
+    "radius2_over_start": "100",
+    "radius_over_start_decimal": 10.0,
+    "returns_to_step": 0
+   }
+  ],
+  "enters_cycle_at_step": 0,
+  "period": 2,
+  "gain_radius_squared": "100",
+  "gain_volume": "1000",
+  "gain_radius_decimal": 10.0,
+  "gain_radius": "10",
+  "polar": {
+   "2": {
+    "pieces": 15,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "256"
+   }
+  }
+ },
+ {
+  "solid": "Delilah",
+  "field": "Q(2**(1/3))",
+  "symmetry": "Oh",
+  "steps": [
+   {
+    "step": 1,
+    "corners": 8,
+    "faces": {
+     "4": 6
+    },
+    "volume_over_start": "6",
+    "radius2_over_start": "3",
+    "radius_over_start_decimal": 1.7320508075688772
+   },
+   {
+    "step": 2,
+    "corners": 6,
+    "faces": {
+     "3": 8
+    },
+    "volume_over_start": "27",
+    "radius2_over_start": "9",
+    "radius_over_start_decimal": 3.0,
+    "returns_to_step": 0
+   }
+  ],
+  "enters_cycle_at_step": 0,
+  "period": 2,
+  "gain_radius_squared": "9",
+  "gain_volume": "27",
+  "gain_radius_decimal": 3.0,
+  "polar": {
+   "2": {
+    "pieces": 33,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "48"
+   }
+  }
+ }
+]

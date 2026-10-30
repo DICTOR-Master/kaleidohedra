@@ -179,17 +179,17 @@ def valley_build(fn, t, steps=3):
     return out
 def fig_valley(t=2.0):
     rows = [('dicto-fpd.json', 'FPD (D41)'), ('dicto-lahdeli.json', 'Lahdeli (D77)')]
-    fig, axs = plt.subplots(2, 3, figsize=(8, 6.0), gridspec_kw=dict(wspace=0.02, hspace=0.28)); M = rot(*VIEW); info = []
+    fig, axs = plt.subplots(3, 2, figsize=(8, 10.6), gridspec_kw=dict(wspace=0.02, hspace=0.2)); M = rot(*VIEW); info = []   # portrait, a full page (DICTO 10-31)
     STEPC = {0: GOLD, 1: VIOLET, 2: TEAL, 3: LILAC}
     for r, (fn, nm) in enumerate(rows):
         st = valley_build('solids/' + fn, t); lim = 1.04 * max(s['R'] for s in st); _, V0_, F0_ = load('solids/' + fn); V0_ = V0_ - V0_.mean(0); R0 = np.linalg.norm(V0_, axis=1).max(); V0 = polyvol(V0_, F0_)
         for k, s in enumerate(st):
-            S = Scene(M); S.tris(s['V'], s['F'], [STEPC[x] for x in s['tag']]); S.draw(axs[r, k], lim)
+            S = Scene(M); S.tris(s['V'], s['F'], [STEPC[x] for x in s['tag']]); S.draw(axs[k, r], lim)
             prev = st[k - 1]['R'] if k else R0; pv = st[k - 1]['vol'] if k else V0
-            axs[r, k].set_title(f'{nm}, step {k + 1}: {len(s["F"])} triangles\n{s["full"]} of {s["spikes"]} spikes full height\nradius ×{s["R"] / prev:.3f}, volume ×{s["vol"] / pv:.3f}', fontsize=7.8)
+            axs[k, r].set_title(f'{nm}, step {k + 1}: {len(s["F"])} triangles\n{s["full"]} of {s["spikes"]} spikes full height\nradius ×{s["R"] / prev:.3f}, volume ×{s["vol"] / pv:.3f}', fontsize=7.8)
             info.append(dict(shape=nm, step=k + 1, triangles=len(s['F']), full=s['full'], flat=s['flat'], spikes=s['spikes'], radius_over_last=s['R'] / prev, volume_over_last=s['vol'] / pv))
     fig.text(0.5, 0.012, 'valley rule, t = 2: spikes shortened until they clear the pieces already built and each other\n'
-             'spikes of step 1 violet, step 2 teal, step 3 lilac (a face whose spike shrinks to nothing keeps its colour)', ha='center', fontsize=8)
+             'spikes of step 1 violet, step 2 teal, step 3 lilac (a face whose spike shrinks to nothing keeps its colour)', ha='center', fontsize=8.5)
     mark(fig); fig.savefig(os.path.join(OUT, 'valley.png'), dpi=300, facecolor='white'); plt.close(fig); return info
 
 if __name__ == '__main__':
