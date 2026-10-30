@@ -18,7 +18,7 @@ P = {'8': '10.5281/zenodo.23284106', '13': '10.5281/zenodo.23284281', '14': '10.
      '45': '10.5281/zenodo.23529499', '47': '10.5281/zenodo.23551326',
      '48': '10.5281/zenodo.23596362', '51': '10.5281/zenodo.23606828',
      '55': '10.5281/zenodo.23632358', '56': '10.5281/zenodo.23635823', '57': '10.5281/zenodo.23647898', '59': '10.5281/zenodo.23677485',
-     '61': '10.5281/zenodo.23682596', '62': '10.5281/zenodo.23687223', '63': '10.5281/zenodo.23690856', '65': '10.5281/zenodo.23716140'}
+     '61': '10.5281/zenodo.23682596', '62': '10.5281/zenodo.23687223', '63': '10.5281/zenodo.23690856', '65': '10.5281/zenodo.23716140', '78': '10.5281/zenodo.23782577'}
 NEW, RED, KN = 'new', 'rediscovered', 'known'
 # name, kind, finding, paper (#), status, prior-art / note, dataset slug, Polyhedraverse id
 R = [
@@ -191,6 +191,14 @@ R += [
  ('Red Knight', 'solid', '', '65', NEW, 'R113: 120-cell cell-first slice in a gap (cut at its midpoint), 120 corners; a gap section, not in Boole Stott\'s series; not found in the sources checked (#65)', 'dicto-red-knight', ''),
  ('White Knight', 'solid', '', '65', NEW, 'R115: 120-cell cell-first slice in a gap (cut at its midpoint): the faces and symmetry of the truncated icosidodecahedron (30 squares, 20 hexagons, 12 decagons, Ih) with two edge lengths; not found in the sources checked (#65)', 'dicto-white-knight', ''),
 ]
+N_V5 = len(R)
+# version 6 (2026-10-30): Fallen Humpty (#62, D102 given 2026-10-29; numeric only, no exact model file yet) and the three solids of #78
+R += [
+ ('Fallen Humpty', 'solid', '', '62', NEW, "the equal-edged form of Humpty Dumpty's pattern: 48 corners, 92 equilateral triangles, 138 equal edges, Td, non-convex (dihedrals 81.75°–243.20°); Slice-48 in #62, named Fallen Humpty in #63; not found in the sources checked (#62); number given 2026-10-29 (missed in versions 4–5, D-numbers never reused); numeric only, no exact model file yet", '', ''),
+ ('Golden TI Star', 'solid', '', '78', NEW, 'the truncated icosahedron with a pyramid on every face, tips at φ × the feet of the perpendiculars (92 corners, 180 triangles, volume φ × TI, Ih); the doubling form (2×) is the same construction; not found in the sources checked (#78)', 'dicto-golden-ti-star', ''),
+ ('Star Halo', 'solid', '', '78', NEW, "DICTO's name: the hull of the TI Star's 32 tips, a pentakis dodecahedron that is not the Catalan one (five-fold corners 1.0265 × further out than the six-fold ones); not found in the sources checked (#78)", 'dicto-star-halo', ''),
+ ('TI Star core', 'solid', '', '78', NEW, 'placeholder name: the icosahedron truncated at 1/φ³ of each edge (12 pentagons, 20 hexagons, hexagon edges in the ratio √5), the core of every turn of the TI Star cycles and the polar partner of the Star Halo (#78)', 'dicto-ti-star-core', ''),
+]
 # universal_number (version 2, DICTO 2026-10-23): established catalogue numbers of earlier creators first (Johnson J, uniform U,
 # Wenninger W, Hart's stellation lists, Mosseri-Sadoc tiles); DICTO D-numbers (below) for DICTO's new shapes; see d-numbers.md. Empty = no number. Only numbers we are sure of.
 UNUM = {
@@ -220,9 +228,13 @@ DNUM.update({n: f'D{76 + i}' for i, n in enumerate(_v3)})
 DNUM.update({'Ganesha': 'D84', 'Humpty Dumpty': 'D85', 'Shadow-17': 'D86'})
 assert sorted(r[0] for r in R[N_V3:N_V4] if r[1] in ('solid', 'piece') and r[4] == NEW) == ['Ganesha', 'Shadow-17']   # Humpty Dumpty: known since version 5, D85 kept
 # version 5 (2026-10-28): D87 on, in the order of the papers' appendix rows (#63, then #65); the three slices of Boole Stott's 1900 series get none
-_v5 = [r[0] for r in R[N_V4:] if r[1] in ('solid', 'piece') and r[4] == NEW]
+_v5 = [r[0] for r in R[N_V4:N_V5] if r[1] in ('solid', 'piece') and r[4] == NEW]
 assert len(_v5) == 15
 DNUM.update({n: f'D{87 + i}' for i, n in enumerate(_v5)})
+# version 6 (2026-10-30): D102 Fallen Humpty (given 2026-10-29), D103-D105 the solids of #78 in the order of the paper
+_v6 = [r[0] for r in R[N_V5:] if r[1] in ('solid', 'piece') and r[4] == NEW]
+assert _v6 == ['Fallen Humpty', 'Golden TI Star', 'Star Halo', 'TI Star core']
+DNUM.update({n: f'D{102 + i}' for i, n in enumerate(_v6)})
 for n, d in DNUM.items(): UNUM[n] = UNUM[n] + '; ' + d if n in UNUM else d
 rows = []
 for name, kind, fnum, paper, status, note, slug, pv in R:
@@ -233,7 +245,7 @@ for name, kind, fnum, paper, status, note, slug, pv in R:
     assert set(UNUM) <= {r[0] for r in R}
     if slug: assert os.path.exists(os.path.join(ROOT, 'solids', slug + '.json')), slug
 with open(os.path.join(ROOT, 'index.csv'), 'w', newline='') as fh:
-    fh.write('# DICTO named-shape inventory · Created by DICTO · dictospheres.com · CC BY-SA 4.0 · 2026-10-22 (version 2: 2026-10-24; version 3: 2026-10-27; version 4: 2026-10-28; version 5: 2026-10-28)\n')
+    fh.write('# DICTO named-shape inventory · Created by DICTO · dictospheres.com · CC BY-SA 4.0 · 2026-10-22 (version 2: 2026-10-24; version 3: 2026-10-27; version 4: 2026-10-28; version 5: 2026-10-28; version 6: 2026-10-30)\n')
     w = csv.DictWriter(fh, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
 from collections import Counter
 print(len(rows), Counter(r['status'] for r in rows), Counter((r['kind'], r['status']) for r in rows), sum(r['in_dataset'] == 'y' for r in rows))
