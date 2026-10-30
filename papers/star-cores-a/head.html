@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Star Cores of DICTO's Solids</title>
+<link rel="stylesheet" href="../paper.css">
+<style>figure img{width:100%;display:block;border-radius:2pt} table{border-collapse:collapse;font-size:7.6pt;margin:3mm 0;width:100%} td,th{border-bottom:1px solid #ddd;padding:0.8mm 1.2mm;text-align:left;vertical-align:top} td.n,th.n{text-align:right} td.c{text-align:center} p.prec{font-size:9pt;color:#3a3a3a;border-left:2px solid #b8962e;padding-left:3mm;margin:3mm 0} .thm{border-left:3px solid #b8962e;padding-left:3mm;margin:3mm 0} p.hook{font-style:italic;color:#444}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+
+<h1>Star Cores of DICTO's Solids</h1>
+<p class="sub">Polar spikes always fill: the star core treatment of every new convex shape</p>
+<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Paper #79 · Version 1 · 31 October 2026 (draft) · DICTO DOI: (at publication) · Licence CC BY-SA 4.0<br>
+The ideas and names are DICTO's. Computation and proof with Claude (Anthropic).</div>
+
+<div class="abstract"><b>Abstract.</b> In The Truncated Icosahedron Star (#78) DICTO turned a solid's own face pyramids outwards and wrapped the spikes in a hull, the Star Halo. DICTO proposed giving every one of his new shapes the same star core treatment. We do this for the 54 shapes of DICTO Solids (dataset v6) that are cut from their centre into face pyramids, 48 of them convex. With the tips at a fixed multiple of the face centres, as for TI, the space between the star and its halo fills with a corner piece and an edge piece only for 22 of the 48; for 26 the star sticks out of its halo or leaves a layer those pieces cannot fill. The main theorem gives the rule that always works: put each spike's tip at the pole of its face plane in a sphere larger than the solid. Then the halo is the solid's polar, and the layer between star and halo is tiled exactly by one pyramid over each corner and one tetrahedron over each edge, for every convex solid with its centre inside. At the midsphere the edge tetrahedra flatten into the rhombi of Conway's join; the theorem is the thick form of the join. It is proved, and checked numerically on all 48 shapes and exactly on ten. DICTO's sloping bases, pyramids over each corner whose bases slope to meet at the tips, close every shape tested: they fill the halo of the OCD Stella, the Belted Triacontahedron and the OTT, and give each of nine Queens' slices a skin of its own. Building a second and third star on the first, with DICTO's rule of shorter spikes in the valleys, every run ends without a clash; the symmetric shapes freeze into finished stars, while the eccentric pieces keep growing. A card for every shape closes the paper.</div>
+
+<h2>1. Introduction</h2>
+<p class="hook">Cut a solid from its centre into pyramids, one on every face, and turn them outwards. The solid becomes a star. Wrap the star in the tightest skin and a new, larger solid appears: the star's halo.</p>
+<p>The truncated icosahedron (TI) was the first solid to get this treatment in full (#78): its 32 face pyramids turned outwards make the TI Star, the hull of their tips is the Star Halo, and the space between them fills with tetrahedra of three kinds. DICTO's Cleo star (#35), the icosahedron with its twenty Cleo-Icos turned out, came before it. Taking the hull of the tips undoes DICTO's growth rule T of Universal PiTet (#38), T(S) = {x : v·x ≤ v·v for every corner v of S}, so every star step is a step of T read backwards (#78, Section 6).</p>
+<p>DICTO proposed the same treatment for all his new shapes: "all new shapes given the star core treatment". This paper reports it for the 54 shapes of the data set DICTO Solids: Exact Geometry (v6) that can be cut from their centre into face pyramids. It gives one card per shape (Section 8), and one theorem that explains which rule for the spikes always works (Section 3). Paper B of this series follows the cores of the turns, and paper C the exact growth of the chains.</p>
+
+<h2>2. The treatment</h2>
+<p>Let S be a solid with its centre O inside every face's pyramid, so that S is the union of the pyramids from O over its faces. The treatment has six steps:</p>
+<ol>
+<li><b>Pyramids.</b> Cut S from O into one pyramid per face.</li>
+<li><b>Spikes.</b> Turn each pyramid outwards across its face, its tip moved out from the face. In the <i>centre rule</i> of #78 the tip of face f is t·c<sub>f</sub>, with c<sub>f</sub> the foot of the perpendicular from O to the face and t = 2 (the pyramid mirrored in its face) or t = φ (the golden spike).</li>
+<li><b>Star and halo.</b> The star is S with its spikes; the halo is the convex hull of the tips. The layer between them is checked for an exact fill by the pieces of #78: over each corner a piece to the tips of its faces, over each edge a tetrahedron to the tips of its two faces, with no overlaps.</li>
+<li><b>Core.</b> The faces are grouped into families (same number of sides, same distance from O); the core is the intersection of the hulls of each family's tips (#78, Proposition 5).</li>
+<li><b>The core's own turn.</b> The core gets the same treatment, and so on (paper B).</li>
+<li><b>Chain.</b> The halo gets the treatment in its turn: the star chain, which is the orbit of T read backwards (paper C).</li>
+</ol>
+<p>Every shape falls into one of four groups under the centre rule: <b>A</b>, the star fills its halo and the core comes back to the shape; <b>B</b>, the star fills its halo, the core does not come back to the shape itself; <b>C</b>, the star lies inside its halo but the corner and edge pieces do not fill the layer; <b>D</b>, the star sticks out of its halo.</p>
+
+<h2>3. Main theorem: polar spikes always fill</h2>
+<p class="hook">Put every spike's tip not at a multiple of the face centre but at the face's partner point on the far side of a large sphere. Then the gaps between the spikes always fill, for every convex solid, with only two kinds of piece.</p>
+<p>For a face plane n·x = c (c &gt; 0) and a radius ρ, the <i>pole</i> of the plane in the sphere of radius ρ about O is p = ρ²n/c (for a unit normal n, the point on the face's axis at distance ρ²/c from O). Taking poles of all face planes is polar reciprocation, and the hull of the poles is the polar solid S* = {x : v·x ≤ ρ² for every corner v}.</p>
+<div class="thm"><p><b>Theorem (polar-spike fill).</b> Let S be a convex solid with O in its interior, R its circumradius and ρ &gt; R. Give every face f the spike with tip p<sub>f</sub>, the pole of its plane. Then:</p>
+<p>(a) the halo, the hull of the tips, is the polar solid S*; its facet over each corner v lies in the plane v·x = ρ² and has as corners the tips of the faces round v;</p>
+<p>(b) the layer between the star and the halo is tiled exactly, with no gaps and no overlaps, by one <i>corner pyramid</i> over each corner v (apex v, base the facet of S* over v) and one <i>edge tetrahedron</i> over each edge ab (corners a, b and the tips of the two faces at ab).</p>
+<p>So the pieces number V + E (corners plus edges), and the halo is the star plus V + E pieces.</p></div>
+<p><b>Proof.</b> (a) is the classical description of the polar: S* is bounded by the planes v·x = ρ², one per corner v of S, and its corners are the poles of the face planes of S; the corners on the facet of v are the poles of the faces through v.
+(b) Every piece has positive volume. A spike's tip lies beyond its face because its distance ρ²/c from O exceeds c (c ≤ R &lt; ρ). A corner pyramid's apex v lies on the inner side of its base plane because v·v ≤ R² &lt; ρ². For an edge tetrahedron, project along the edge ab: the line of ab becomes a point at distance d from O, the two face planes become lines through it, and the two tips the poles of those lines; a two-line calculation shows the tetrahedron's orientation is the sign of ρ² − d², and d ≤ R &lt; ρ because the edge's nearest point to O is no farther than its ends.
+The pieces fit face to face. Each spike side (a, b, p<sub>f</sub>) is shared with the edge tetrahedron of ab; each triangle (v, p<sub>f</sub>, p<sub>g</sub>), for faces f and g meeting at the edge from v, is shared by the corner pyramid of v and the edge tetrahedron of that edge; the faces left over are the spike sides' partners and the facets of S*. So the pieces, all of positive orientation, form a complex whose boundary is the boundary of S* together with the star's surface, and a complex of positively oriented pieces with that boundary covers each point between star and halo exactly once. ∎</p>
+<p><b>The join as the thin limit.</b> If S has a midsphere (every edge touching one sphere of radius ρ<sub>m</sub>), then at ρ = ρ<sub>m</sub> each edge has d = ρ, so every edge tetrahedron is flat: the edge of S and its dual edge cross, and the halo's faces become the rhombi of the join, the hull of S and its polar (Conway's jS). The theorem is the thick version of the join, valid for every convex solid and every ρ &gt; R. For ρ between the midsphere and R some pieces would turn inside out, which is why the bound ρ &gt; R is needed.</p>
+<p><b>Checks.</b> The fill was computed for all 48 convex shapes at ρ² = φR² and 2R² (float64, overlaps by the separating-axis test): every layer adds up to the halo minus the star to within 3 × 10<sup>−15</sup> of its volume and no two pieces overlap; the layer pieces number from 10 (the Dodeca-13 Needle: 4 corners, 6 edges) to 690 (DPHP: 270 corners, 420 edges). For the ten solids of paper C (GTI, FPD, Palintriacontahedron, Icosaxes, Unborn Axes, Metaxyhexecontahedron, Tweedledum, Samson, David, Delilah) every piece was also checked exactly, in each solid's own number field: nonzero volume, one orientation per kind, and the exact sum equal to the halo's volume.</p>
+<!--FIG1-->
+<!--FIG2-->
+
+<h2>4. The survey: what the centre rule gives</h2>
+<p class="hook">With the tips at a fixed multiple of the face centres, the trick of the TI Star works for fewer than half of the shapes. The polar rule mends all the rest.</p>
+<!--SURVEY-->
+
+<h2>5. DICTO's sloping bases</h2>
+<p class="hook">DICTO proposed keeping the centre-rule tips and filling the gap round each high corner with pyramids taken in order round the corner, their bases sloping to meet the tips.</p>
+<!--SLOPING-->
+
+<h2>6. The cores</h2>
+<!--CORES-->
+
+<h2>7. Building on the star</h2>
+<p class="hook">DICTO proposed taking the star itself as the next solid and spiking its triangles in turn. Done naively, the new spikes clash in the valleys; with DICTO's rule of shorter spikes in the valleys, the symmetric shapes stop growing and become finished stars.</p>
+<!--VALLEY-->
+
+<h2>8. The cards</h2>
+<!--CARDS-->
+
+<h2>9. What is new and what is known</h2>
+<ul>
+<li><b>Known, credited:</b> DICTO's growth rule T (#38) and the TI Star with its halo and fills (#78); polar reciprocation and the description of the polar by the poles of the face planes; Conway's join jS and the fact that a solid with a midsphere and its polar cross edge to edge, the hull having four-sided faces (G. W. Hart, Conway notation for polyhedra; D. Eppstein, "Triangles and squares", COMB01, Barcelona 2001, slides); the hull and core of a regular polytope and its reciprocal (H. S. M. Coxeter, "Reciprocating the regular polytopes", J. London Math. Soc. 55 (1997) 549–557, abstract read).</li>
+<li><b>New, as far as the sources checked show:</b> the polar-spike fill theorem for every ρ greater than the circumradius, with its count V + E of pieces and the sign ρ² − d² that makes the bound exact; the survey of DICTO's 54 shapes under both rules; DICTO's sloping bases and the skins they give the Queens' slices; DICTO's valley rule and the freezing of the symmetric stars.</li>
+<li><b>Not decided here:</b> the non-convex shapes under the polar rule (a pole needs the face plane to miss O, and the layer pieces may then overlap the solid); the shapes of the Queens' skins; whether the frozen stars are exactly stationary (the runs stop at three steps).</li>
+</ul>
+
+<h2>10. Conclusion</h2>
+<p>DICTO's star core treatment reaches all 48 of his convex shapes once the spikes follow the polar rule. With the tips at a fixed multiple of the face centres, the rule of the TI Star, fewer than half of the shapes fill; with the tips at the poles of the face planes in any sphere larger than the shape, every one does, with exactly one pyramid per corner and one tetrahedron per edge, and the halo is the shape's polar. This is the thick form of Conway's join, and it gives the book its standard star. DICTO's sloping bases close every shape tested, and his valley rule lets a star be built upon without clashes: the symmetric shapes freeze into finished stars, the eccentric pieces grow on. The cards record each shape's group, halo, pieces, core cycle, chain and valley growth.</p>
+<p class="prec"><b>Sources checked</b> (30–31 October 2026; full list with every query in study 2026-10-30-star-cores-exact, prior-art-study6.md and README section 3). <i>Reference library</i> (ask-library, 22 queries, among them "hull of a polyhedron and its dual / join", "polar spikes and Kleetope", "dissection between a polyhedron and its polar", "Conway notation, join, kis and the midsphere"): no source on the layer between a solid and its polar; nearest O'Rourke 2023 (polar zonohedra, unfolding), Cunningham and Mixer 2016 (abstract polytopes), Messer 1995 (stellation cores). <i>Web, read:</i> Wikipedia "Dual polyhedron", "Conway polyhedron notation", "Polytope compound"; G. W. Hart, "Conway notation for polyhedra" (georgehart.com); Antiprism documentation of conway and pol_recip; D. Eppstein, "Triangles and squares", COMB01 slides (2001). <i>Abstract only:</i> Coxeter 1997. DICTO's papers #35, #38 and #78 are cited for their results.</p>
+<p class="prec"><b>Data and code.</b> Study 2026-10-30-star-cores: scripts/star_core.py (the treatment, groups), polar_spikes.py (polar fill), sloping_bases.py (DICTO's sloping bases), star_build.py and star_valley.py (building on the star; valley rule), data/star-cores.json, polar-spikes.json, sloping-bases.json, star-build.json, star-build-local.json, star-valley.json. Study 2026-10-30-star-cores-exact: scripts/study1.py (exact polar fill on ten solids), study2b.py (exact core cycles), data/study1.json, study2b.json. Study 2026-10-30-star-chain-census: survey2.json (T-chains). Shapes from DICTO Solids: Exact Geometry v6 (10.5281/zenodo.23790799). Run on dicto-big-brother.</p>
+</body></html>

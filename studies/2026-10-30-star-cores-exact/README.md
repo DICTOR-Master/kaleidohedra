@@ -125,9 +125,11 @@ Archimedean solid and its Catalan dual always share a gain, since T alternates b
 2. **Quasi-regular series.** The cuboctahedron's gain is 10/2² and the icosidodecahedron's is 10/φ⁴, that is 10/(2cos π/n)⁴ for n = 4 and 5.
    At n = 3 the formula gives 10, which is David's two-step gain; the octahedron (the tetrahedral member) has 3 per two steps instead.
    Status: observation (two cases plus a coincidence), not a theorem.
-3. **The primes are split primes.** Every prime in a norm is 5 or ≡ ±1 mod 5 in Q(√5) (89, 109, 61, 241, 41, 101, 17401, 19, 2081, 2341),
-   and ≡ ±1 mod 8 in Q(√2) (17, 73, 433). Number theory forces this: an odd prime other than the field's own can divide the norm of an
-   element to the first power only if it splits. So 89 and 109 in TI (#78) are typical, not special. DICTO's series idea is better served
+3. **The primes are split primes.** Every prime that divides a norm to an odd power is 5 or ≡ ±1 mod 5 in Q(√5) (89, 109, 61, 241, 41,
+   101, 17401, 19, 2081, 2341), and ≡ ±1 mod 8 in Q(√2) (17, 73, 433). The other primes appear only to even powers (3⁴ in the gains of
+   Unborn Axes and the Metaxyhexecontahedron; 3 ≡ 3 mod 5 is inert). Number theory forces this: an odd prime other than the field's own
+   can divide the norm of an element to an odd power only if it splits (corrected 31 October after the study 6 check; the first wording
+   said every prime). So 89 and 109 in TI (#78) are typical, not special. DICTO's series idea is better served
    by the gains themselves (findings 1 and 2) than by their primes.
 4. **Omnitruncates never close.** The two omnitruncates (and their duals) are the only uniform solids that do not close: their corners
    sit at general points of the mirror triangle (orbits of 120 or 48), and T keeps making new corner orbits (corner counts 62 → 812). The

@@ -1,0 +1,166 @@
+{
+ "polar-fill": [
+  {
+   "shape": "GTI (D40)",
+   "rho2_over_R2": 1.618033988749895,
+   "R": 1.9543950758485484,
+   "rho": 2.486028939392893,
+   "star_over_solid": 2.01022610040863,
+   "halo_over_solid": 5.635348027316745,
+   "corner_pieces": 60,
+   "edge_pieces": 90
+  },
+  {
+   "shape": "OCD Stella (D29)",
+   "rho2_over_R2": 1.618033988749895,
+   "R": 0.783713669723298,
+   "rho": 0.9968991874808143,
+   "star_over_solid": 2.3837734310830836,
+   "halo_over_solid": 8.648618412222046,
+   "corner_pieces": 48,
+   "edge_pieces": 96
+  }
+ ],
+ "star-gallery": [
+  {
+   "shape": "GTI",
+   "D": "D40",
+   "faces": 32,
+   "halo_over_solid": 5.635348027316745,
+   "star_over_solid": 2.01022610040863
+  },
+  {
+   "shape": "FPD",
+   "D": "D41",
+   "faces": 60,
+   "halo_over_solid": 6.572271465312186,
+   "star_over_solid": 2.0601132958329837
+  },
+  {
+   "shape": "OG",
+   "D": "D28",
+   "faces": 80,
+   "halo_over_solid": 5.980072859372736,
+   "star_over_solid": 1.9306373408411537
+  },
+  {
+   "shape": "OCD Stella",
+   "D": "D29",
+   "faces": 50,
+   "halo_over_solid": 8.648618412222046,
+   "star_over_solid": 2.3837734310830836
+  },
+  {
+   "shape": "DBT",
+   "D": "D37",
+   "faces": 32,
+   "halo_over_solid": 7.870085208245574,
+   "star_over_solid": 2.2649052043925026
+  },
+  {
+   "shape": "OTT",
+   "D": "D38",
+   "faces": 38,
+   "halo_over_solid": 8.299318812578178,
+   "star_over_solid": 2.356059251438576
+  },
+  {
+   "shape": "TI Hecatodihedron",
+   "D": "D22",
+   "faces": 102,
+   "halo_over_solid": 5.805791980416298,
+   "star_over_solid": 1.8966549364824812
+  },
+  {
+   "shape": "Red King",
+   "D": "D98",
+   "faces": 52,
+   "halo_over_solid": 5.10555443495153,
+   "star_over_solid": 1.8371585667253882
+  },
+  {
+   "shape": "Tweedledum",
+   "D": "D89",
+   "faces": 60,
+   "halo_over_solid": 6.284423912309627,
+   "star_over_solid": 1.9957427527495581
+  },
+  {
+   "shape": "Lion",
+   "D": "D87",
+   "faces": 80,
+   "halo_over_solid": 5.578364502057039,
+   "star_over_solid": 1.878493822517035
+  },
+  {
+   "shape": "Star Halo",
+   "D": "D104",
+   "faces": 60,
+   "halo_over_solid": 6.175058971594909,
+   "star_over_solid": 1.978713763747792
+  },
+  {
+   "shape": "TI Star core",
+   "D": "D105",
+   "faces": 32,
+   "halo_over_solid": 5.314601862422755,
+   "star_over_solid": 1.9218983943338348
+  }
+ ],
+ "valley": [
+  {
+   "shape": "FPD (D41)",
+   "step": 1,
+   "triangles": 180,
+   "full": 60,
+   "flat": 0,
+   "spikes": 60,
+   "radius_over_last": 1.7724674288967552
+  },
+  {
+   "shape": "FPD (D41)",
+   "step": 2,
+   "triangles": 540,
+   "full": 0,
+   "flat": 0,
+   "spikes": 180,
+   "radius_over_last": 1.0
+  },
+  {
+   "shape": "FPD (D41)",
+   "step": 3,
+   "triangles": 660,
+   "full": 0,
+   "flat": 480,
+   "spikes": 540,
+   "radius_over_last": 1.0
+  },
+  {
+   "shape": "Lahdeli (D77)",
+   "step": 1,
+   "triangles": 36,
+   "full": 8,
+   "flat": 0,
+   "spikes": 8,
+   "radius_over_last": 1.508869007912017
+  },
+  {
+   "shape": "Lahdeli (D77)",
+   "step": 2,
+   "triangles": 108,
+   "full": 36,
+   "flat": 0,
+   "spikes": 36,
+   "radius_over_last": 1.3364052150380312
+  },
+  {
+   "shape": "Lahdeli (D77)",
+   "step": 3,
+   "triangles": 276,
+   "full": 12,
+   "flat": 24,
+   "spikes": 108,
+   "radius_over_last": 1.0
+  }
+ ]
+}
