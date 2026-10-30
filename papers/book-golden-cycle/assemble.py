@@ -9,12 +9,13 @@ CH=[('1','chain-of-karma',22,'paper.html'),('2','spheres-of-dharma',23,'paper.ht
     ('4','../studies/2026-10-13-fused-shells/paper',27,'paper.html'),('5','theaetetus',29,'paper.html'),
     ('6','dharma-inside-out',32,'paper.html'),('7','both-cycles',33,'paper.html'),('8','progenitors',34,'paper.html'),('9','progenitors-2',35,'paper.html'),
     ('10','2026-10-19-universal-pitet',38,'paper.html'),('11','2026-10-20-og-family-both-ways',39,'paper.html'),
-    ('12','2026-10-21-kyushindo-cores',43,'paper.html'),('13','2026-10-25-gnomon-polar',54,'paper.html'),
-    ('14','spiked-ti',78,'paper.html')]   # v2 (DICTO 10-30): #78 The Truncated Icosahedron Star as Chapter 14
+    ('12','2026-10-21-kyushindo-cores',43,'paper.html'),('13','spiked-ti',78,'paper.html'),
+    ('14','2026-10-25-gnomon-polar',54,'paper.html')]   # v2 (DICTO 10-30): #78 The Truncated Icosahedron Star as Chapter 13, before the gnomon, which closes the book
 PART={'1':'Part I. Shells round a core','6':'Part II. The cycle turned and seeded','10':'Part III. The rule that grows the shells'}
 styles=set(); chapters=[]; sources=[]; toc=[]
 cw=open(os.path.join(P,'collected','paper.html'),encoding='utf8').read()
 PAPERS={int(m.group(1)):(html.unescape(re.sub('<[^>]+>','',m.group(2))),m.group(3)) for m in re.finditer(r'<tr><td class="n">#(\d+)</td><td><b>(.*?)</b>.*?DICTO DOI: (10\.5281/zenodo\.\d+)',cw,re.S)}
+PAPERS.update({76:('Between the Queens','10.5281/zenodo.23780068'),77:('Face to Face','10.5281/zenodo.23779962'),78:('The Truncated Icosahedron Star (TI Star)','10.5281/zenodo.23782577')})   # papers newer than the Collected Works in use (v2)
 INBOOK={num:lab for lab,_,num,_ in CH}
 REFERRED=set()
 def link_text(t):
@@ -35,7 +36,7 @@ def link_html(h):
     return ''.join(out)
 CORR=[('In short. ',''),('With this paper the series on real materials (#68, #70–#73) is complete.','The series on real materials (Chapters 8 to 12) was followed by a companion on magnets, Chapter 13.'),
       ('This study closes the line of work on materials.','This chapter closes the line of work on materials.')]
-INDEX_TERMS=['icosahedron','dodecahedron','icosidodecahedron','rhombic triacontahedron','truncated icosahedron','Hecatodihedron','Ogdoecontahedron','Metaxyhexecontahedron','Palintriacontahedron','pentakis dodecahedron','great stellated dodecahedron','AXE','CLEO','Cleo','FUJI','Lotus seed','Bodhi','Spheres of Dharma','Chain of Karma','golden ratio','golden rhombohedra','Dehn invariant','polar','gnomon','Euclid','Heron','Theaetetus','Kepler','Mosseri','PiTet','Cleo star','Kyushindo','tower','fullerene','600-cell','quasicrystal']
+INDEX_TERMS=['TI Star','Star Halo','icosahedron','dodecahedron','icosidodecahedron','rhombic triacontahedron','truncated icosahedron','Hecatodihedron','Ogdoecontahedron','Metaxyhexecontahedron','Palintriacontahedron','pentakis dodecahedron','great stellated dodecahedron','AXE','CLEO','Cleo','FUJI','Lotus seed','Bodhi','Spheres of Dharma','Chain of Karma','golden ratio','golden rhombohedra','Dehn invariant','polar','gnomon','Euclid','Heron','Theaetetus','Kepler','Mosseri','PiTet','Cleo star','Kyushindo','tower','fullerene','600-cell','quasicrystal']
 INDEX={}
 # pass 2 (DICTO 10-28 'remove unrelated content'): cut sections and clauses about other lines of work (4D solids, named
 # pairs, lists of other papers); theorems and proofs untouched. Sections renumbered after cuts.
