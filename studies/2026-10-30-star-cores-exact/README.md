@@ -168,3 +168,33 @@ complexity; no step is similar to any earlier one. Status: closed at step 9 (DPH
    since conclusion 2 already settles the study.
 4. With study 5 (the omnitruncates) this gives the book its contrast: chains close when the solid's faces fall into few plane
    families, and spread when they don't. The OG's corners lie on mirrors, yet its chain spreads.
+
+## 7. Study 3: two families of planes, swept (scripts/study3.py; data/study3.json, study3-fine.json and logs)
+
+**Conclusion.** The cores keep the main statement: all 94 solids tested settle into a core cycle of period two. The chains of T do
+not. Whether a chain closes depends on how deep the planes cut, not on the number of plane families. Status: done (exact, in Q(√5)).
+
+Solids: the convex solids whose face planes lie on two kinds of symmetry axis (icosahedral 5+3, 5+2, 3+2; octahedral 4+3, 4+2, 3+2), with
+the first family at foot distance 1 along its axis vectors and the second at s, swept over s (coarse grid of 16 values, then steps of 1/80
+for 4+2 and 5+2), and three-family solids (5+3+2, 4+3+2) as contrast. Only solids on which every plane is a face are counted.
+
+| Axes | Solids tested | Chain of T closes | Chain open (8 steps) | Cores period two |
+|---|---|---|---|---|
+| Ih 5+3 (truncated icosahedra) | 6 | 6 | 0 | 6 |
+| Ih 3+2 | 2 | 2 | 0 | 2 |
+| Ih 5+2 (dodecahedron with edges cut back) | 34 | 20 | 14 | 34 |
+| Oh 4+3 (truncated cubes/octahedra) | 6 | 6 | 0 | 6 |
+| Oh 3+2 | 3 | 3 | 0 | 3 |
+| Oh 4+2 (cube with edges cut back) | 42 | 29 | 13 | 42 |
+| Oh 4+3+2 | 1 | 1 | 0 | 1 |
+
+1. **Three regimes for the edge-cut cube** (planes x = ±1 and (±1, ±1, 0)·x ≤ 2s): the chain closes with period four for s ≤ 3/5
+   (entering after three steps) and for s ≥ 3/4 (after one step), and spreads for every tested s strictly between (0.6125 to 0.7375,
+   including 1/φ). At s = 3/5 all 32 corners lie on one sphere (3s² = 1 + 2(2s − 1)², roots 3/5 and 1); above it T(S) has a general
+   corner orbit (42 corners), and from 3/4 on its 26 corners all lie on symmetry axes.
+2. **The edge-cut dodecahedron has the same three regimes:** it closes for s ≤ 43/40 (after three steps) and s ≥ 5/4 (after one), and
+   spreads for 87/80 ≤ s ≤ 99/80. The exact boundaries were not located.
+3. **The main statement's hull part fails as worded** ("two families give hulls of period four"); its core part (cores of period two)
+   holds in every case. The failing solids pair a 2-fold family with the 4- or 5-fold family.
+4. A non-Archimedean solid with the faces of the truncated cuboctahedron (s = (1, 1/φ, 3/4) on 4+3+2) closes with period four, while
+   the Archimedean truncated cuboctahedron does not (study 5): closing depends on the depths here too.
