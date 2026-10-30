@@ -331,7 +331,7 @@ if "wg" in which:
     geode("white", cell_W, GW, colsW, CFG.get("w_rind", [10, 9]), CFG.get("w_cry", [3, 4, 5, 6, 7, 8]), ax5W,
           CFG.get("w_sink", 0.0), CFG.get("w_tilt", 50), CFG.get("w_off", 17), os.path.join(OUT, "queen-geode-white.png"))
 if "wd" in which:
-    davinci("white", cell_W, GW, colsW, CFG.get("w_lines", [7]), CFG.get("w_fill", list(range(7))), ax5W,
+    davinci("white", cell_W, GW, colsW, CFG.get("w_lines", [7, 8]), CFG.get("w_fill", list(range(7))), ax5W,
             "The White Queen · 600-cell · Cleo shells", os.path.join(OUT, "queen-davinci-white.png"))
 if "rg" in which:
     geode("red", cell_R, GR, colsR, CFG.get("r_rind", [4]), CFG.get("r_cry", [1, 2, 3]), ax5R,
