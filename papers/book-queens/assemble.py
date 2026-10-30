@@ -7,9 +7,9 @@
 import re, os, shutil, html
 HERE=os.path.dirname(os.path.abspath(__file__)); P=os.path.dirname(HERE)
 CH=[('1','../studies/2026-10-14-axe-cleo-fuji/paper',19,'paper-house.html'),('2','2026-10-21-aristotles-pyramid',44,'paper.html'),
-    ('3','book-queens/five-pyramids',0,'paper.html'),('4','4d-shadows',62,'paper.html'),
-    ('5','white-queen-600',63,'paper.html'),('6','red-queen-120',65,'paper.html')]
-PART={'1':'Part I. The lead-up','4':'Part II. Shadows','5':'Part III. The Queens'}
+    ('3','book-queens/five-pyramids',0,'paper.html'),('4','face-to-face',77,'paper.html'),('5','4d-shadows',62,'paper.html'),
+    ('6','white-queen-600',63,'paper.html'),('7','queen-stages',76,'paper.html'),('8','red-queen-120',65,'paper.html')]   # v2 (DICTO 10-30): #77 after ch. 3, #76 between the Queens
+PART={'1':'Part I. The lead-up','5':'Part II. Shadows','6':'Part III. The Queens'}
 styles=set(); chapters=[]; sources=[]; toc=[]
 cw=open(os.path.join(P,'collected','paper.html'),encoding='utf8').read()
 PAPERS={int(m.group(1)):(html.unescape(re.sub('<[^>]+>','',m.group(2))),m.group(3)) for m in re.finditer(r'<tr><td class="n">#(\d+)</td><td><b>(.*?)</b>.*?DICTO DOI: (10\.5281/zenodo\.\d+)',cw,re.S)}
@@ -31,7 +31,7 @@ def link_html(h):
             out.append(p)
         else: out.append(p if inA else link_text(p))
     return ''.join(out)
-CORR=[]
+CORR=[('Chapter 3 of the book <i>Alicia in Wonderland</i>','Chapter 3'),('Chapter 3 of <i>Alicia in Wonderland</i>','Chapter 3'),('and the book <i>Alicia in Wonderland</i>, Chapter 3','and Chapter 3 of this book')]   # inside this book, #77's references to its Chapter 3 (v2)
 INDEX_TERMS=['600-cell','120-cell','5-cell','16-cell','24-cell','tesseract','Cleo-Icos','CLEO','AXE','FUJI','Lotus seed','Mosseri','Sadoc','Aristotle','Antonius','face pyramid','octet','deltahedron','deltahedra','Dehn','Schlegel','Coxeter','Cleo shell','White Queen','Red Queen','Humpty Dumpty','Shadow-17','Slice-48','TBP-5','OCT-16','icosahedron','dodecahedron','octahedron','tetrahedron','Admiral Cap','Hound Tooth','Tricap','Weirdstone','Tadpole','radial cell projection']
 INDEX={}
 # pass 2 (DICTO 10-28 'remove unrelated content'): cut sections and clauses about other lines of work (4D solids, named
@@ -120,5 +120,6 @@ doc=f'''<!doctype html>
 # copies taken from the papers above, so a re-run can never put the old ones back
 for root,_,fs in os.walk(os.path.join(HERE,'figures-fixed')):
     for f in fs: shutil.copy(os.path.join(root,f), os.path.join(HERE,'figures',os.path.relpath(os.path.join(root,f),os.path.join(HERE,'figures-fixed'))))
+for a,b in CORR: doc=doc.replace(a,b)   # also the appendix of sources (v2)
 open(os.path.join(HERE,'paper.html'),'w',encoding='utf8').write(doc)
 print('referred',len(REFERRED),'index terms',len(INDEX),'chapters',len(toc),'figures',sum(len(fs) for _,_,fs in os.walk(os.path.join(HERE,'figures'))),'chars',len(doc))
