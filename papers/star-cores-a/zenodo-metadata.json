@@ -1,0 +1,81 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-10-31",
+ "access_right": "open",
+ "title": "Star Cores of DICTO's Solids: polar spikes always fill, and the star core treatment of every new convex shape",
+ "description": "<p>In The Truncated Icosahedron Star (#78) DICTO turned a solid's own face pyramids outwards and wrapped the spikes in a hull, the Star Halo. DICTO proposed giving every one of his new shapes the same star core treatment. We do this for the 54 shapes of DICTO Solids (dataset v6) that are cut from their centre into face pyramids, 48 of them convex. With the tips at a fixed multiple of the face centres, as for TI, the space between the star and its halo fills with a corner piece and an edge piece only for 22 of the 48; for 26 the star sticks out of its halo or leaves a layer those pieces cannot fill. The main theorem gives the rule that always works: put each spike's tip at the pole of its face plane in a sphere larger than the solid. Then the halo is the solid's polar, and the layer between star and halo is tiled exactly by one pyramid over each corner and one tetrahedron over each edge, for every convex solid with its centre inside. At the midsphere the edge tetrahedra flatten into the rhombi of Conway's join; the theorem is the thick form of the join. It is proved, and checked numerically on all 48 shapes and exactly on ten. DICTO's sloping bases, pyramids over each corner whose bases slope to meet at the tips, close every shape tested: they fill the halo of the OCD Stella, the Belted Triacontahedron and the OTT, and give each of nine Queens' slices a skin of its own. Building a second and third star on the first, with DICTO's rule of shorter spikes in the valleys, every run ends without a clash; the symmetric shapes freeze into finished stars, while the eccentric pieces keep growing. A card for every shape closes the paper.</div> <h2>1. Introduction</h2> <p class=\"hook\">Cut a solid from its centre into pyramids, one on every face, and turn them outwards. The solid becomes a star. Wrap the star in the tightest skin and a new, larger solid appears: the star's halo.</p><p>DICTO's ideas: the star core treatment of every new shape, the sloping-base rule, the valley rule. Computation and proof with Claude (Anthropic). More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "star core",
+  "Star Halo",
+  "face pyramids",
+  "Kleetope",
+  "polar reciprocation",
+  "Conway's join",
+  "Universal PiTet",
+  "growth rule",
+  "valley rule",
+  "convex polyhedra",
+  "exact geometry"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23782577",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23463305",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23310833",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23633365",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23606967",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/72527ef839df4acc3a834a892bf0e0f7273ad484/studies/2026-10-30-star-cores",
+   "relation": "isSupplementedBy",
+   "scheme": "url"
+  },
+  {
+   "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/72527ef839df4acc3a834a892bf0e0f7273ad484/studies/2026-10-30-star-cores-exact",
+   "relation": "isSupplementedBy",
+   "scheme": "url"
+  }
+ ],
+ "subjects": [
+  {
+   "term": "MSC2020 52B10: Three-dimensional polytopes",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B10",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 51M20: Polyhedra and polytopes; regular figures",
+   "identifier": "https://zbmath.org/classification/?q=cc:51M20",
+   "scheme": "url"
+  }
+ ]
+}

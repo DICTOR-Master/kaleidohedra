@@ -32,13 +32,22 @@ def link_html(h):
         else: out.append(p if inA else link_text(p))
     return ''.join(out)
 CORR=[('Chapter 3 of the book <i>Alicia in Wonderland</i>','Chapter 3'),('Chapter 3 of <i>Alicia in Wonderland</i>','Chapter 3'),('and the book <i>Alicia in Wonderland</i>, Chapter 3','and Chapter 3 of this book')]   # inside this book, #77's references to its Chapter 3 (v2)
-INDEX_TERMS=['600-cell','120-cell','5-cell','16-cell','24-cell','tesseract','Cleo-Icos','CLEO','AXE','FUJI','Lotus seed','Mosseri','Sadoc','Aristotle','Antonius','face pyramid','octet','deltahedron','deltahedra','Dehn','Schlegel','Coxeter','Cleo shell','White Queen','Red Queen','Humpty Dumpty','Shadow-17','Slice-48','TBP-5','OCT-16','icosahedron','dodecahedron','octahedron','tetrahedron','Admiral Cap','Hound Tooth','Tricap','Weirdstone','Tadpole','radial cell projection']
+INDEX_TERMS=['600-cell','120-cell','5-cell','16-cell','24-cell','tesseract','Cleo-Icos','CLEO','AXE','FUJI','Lotus seed','Mosseri','Sadoc','Aristotle','Antonius','face pyramid','octet','deltahedron','deltahedra','Dehn','Schlegel','Coxeter','Cleo shell','White Queen','Red Queen','Humpty Dumpty','Kagemusha','Slice-48','TBP-5','OCT-16','icosahedron','dodecahedron','octahedron','tetrahedron','Admiral Cap','Hound Tooth','Tricap','Weirdstone','Tadpole','radial cell projection']
 INDEX={}
 # pass 2 (DICTO 10-28 'remove unrelated content'): cut sections and clauses about other lines of work (4D solids, named
 # pairs, lists of other papers); theorems and proofs untouched. Sections renumbered after cuts.
 CUTSEC={}
 MOVESEC=r'(\d+\. )?(Reproducibility|Data and reproducibility|Data, scripts and checks|Credits|Appendix[ AB]*\. The reference library searched)'
-EDITS={}
+EDITS={'queen-stages':[('the truncated icosahedron, the football: 12 pentagons','the truncated icosahedron: 12 pentagons'),
+                       ("Its 120 truncated icosahedra are the footballs of DICTO's proposal","Its 120 truncated icosahedra are those of DICTO's proposal")]}
+# v3: the book says 'truncated icosahedron', never the other word (DICTO's standing rule); #76's own text is unchanged
+# v3 (DICTO 2026-10-30/31): Shadow-17 (D86) is renamed Kagemusha; the papers keep the old name, the book uses the new one, with
+# '(first called Shadow-17)' once, at its first mention (Chapter 5)
+KAGE=[False]
+def kage(t):
+    if not KAGE[0] and 'Shadow-17' in t:
+        t=t.replace('Shadow-17','Kagemusha\x00',1); KAGE[0]=True
+    return t.replace('Shadow-17','Kagemusha').replace('Kagemusha\x00','Kagemusha (first called Shadow-17)')
 def cut_sections(body,folder):
     for t in CUTSEC.get(folder,[]):
         body=re.sub(r'<h2>'+re.escape(t)+r'</h2>.*?(?=<h2>|$)','',body,flags=re.S)
@@ -79,6 +88,7 @@ for label,folder,num,fname in CH:
         body=body.replace(a,b)
     body=cut_sections(body,folder)
     for a,b in CORR: body=body.replace(a,b)
+    body=kage(body)
     body=body.replace('this paper','this chapter').replace('This paper','This chapter')
     body=link_html(body)
     for term in INDEX_TERMS:
@@ -88,13 +98,14 @@ for label,folder,num,fname in CH:
     body=body.replace('</h1>',(f'</h1>\n<p class="from">From paper #{num}, DICTO DOI {doi}</p>' if num else '</h1>\n<p class="from">First published in this book, from DICTO\'s study of 27 October 2026 (studies/2026-10-27-five-pyramids).</p>'),1)
     if label in PART: chapters.append(f'<div class="part"><h1 class="partt">{PART[label]}</h1></div>')
     chapters.append(f'<section class="ch">{body}</section>'); toc.append((head+title,tag,num,doi))
-    sources.append(f'<h3>{head}{html.escape(title)} (#{num}, DICTO DOI {doi})</h3>'+''.join(out))
+    sources.append(kage(f'<h3>{head}{html.escape(title)} (#{num}, DICTO DOI {doi})</h3>'+''.join(out)))
 front=open(os.path.join(HERE,'front.html'),encoding='utf8').read()
+from plates_section import plates_html, PLATES_CSS   # v3 (DICTO 2026-10-31): full-page plates, before the epilogue
 epi=open(os.path.join(HERE,'epilogue.html'),encoding='utf8').read()
 refhtml='<section class="app"><h1 class="chapter">Papers referred to, not in this book</h1><table>'+''.join(f'<tr><td>{('#'+str(n)) if n else 'new'}</td><td>{html.escape(PAPERS[n][0])}</td><td><a href="https://doi.org/{PAPERS[n][1]}">{PAPERS[n][1]}</a></td></tr>' for n in sorted(REFERRED))+'</table></section>'
 def nice(t): return re.sub('<[^>]+>','',t)
 idxhtml='<section class="app"><h1 class="chapter">Index</h1><p style="font-size:9pt">Chapters in which each term appears.</p><table>'+''.join(f'<tr><td>{nice(t)}</td><td>{", ".join(v)}</td></tr>' for t,v in sorted(INDEX.items(),key=lambda kv:nice(kv[0]).lower()))+'</table></section>'
-tochtml='<h2>Contents</h2><table class="toc">'+''.join(f'<tr><td>{html.escape(t)}</td><td>#{n}</td></tr>' for t,tag,n,d in toc)+'<tr><td>Epilogue. What has been shown</td><td></td></tr><tr><td>Appendix. Sources by chapter</td><td></td></tr><tr><td>Papers referred to, not in this book</td><td></td></tr><tr><td>Index</td><td></td></tr></table>'
+tochtml='<h2>Contents</h2><table class="toc">'+''.join(f'<tr><td>{html.escape(t)}</td><td>#{n}</td></tr>' for t,tag,n,d in toc)+'<tr><td>Plates</td><td></td></tr><tr><td>Epilogue. What has been shown</td><td></td></tr><tr><td>Appendix. Sources by chapter</td><td></td></tr><tr><td>Papers referred to, not in this book</td><td></td></tr><tr><td>Index</td><td></td></tr></table>'
 css='\n'.join(sorted(styles))+'''
 h1.chapter{break-before:page;font-size:19pt;margin-top:0} p.from{font-size:8.5pt;color:#777;margin:-2mm 0 4mm}
 .part{break-before:page;height:200mm;display:flex;align-items:center;justify-content:center} h1.partt{font-size:26pt;color:#b8962e}
@@ -103,13 +114,14 @@ table.toc td{border-bottom:1px dotted #ccc;padding:1.2mm 2mm} .titlepage{height:
 figure img{width:100%;display:block}
 /* DICTO 10-29: neutral sans-serif for the whole book, as in HexOct */
 body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}
-body{font-size:10pt}'''
+body{font-size:10pt}'''+PLATES_CSS
 doc=f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>Alicia in Wonderland: The Red &amp; White Queens</title>
 <link rel="stylesheet" href="../paper.css"><style>{css}</style></head><body>
 <img class="watermark" src="../dicto-logo.png" alt="">
 {(re.sub(r'<div class="coverpage".*?</div>\n', '', front, count=1, flags=re.S) if os.environ.get('KDP') else front).replace('__TOC__',tochtml)}
 {''.join(chapters)}
+{plates_html()}
 <section class="epi">{epi}</section>
 <section class="app"><h1 class="chapter">Appendix. Sources by chapter</h1><p>Each chapter's own list of sources checked, data and code, as published with its paper.</p>{''.join(sources)}</section>
 {refhtml}

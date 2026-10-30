@@ -1,4 +1,4 @@
-# Paper A of Star Cores (#79 draft): fills head.html's placeholders from the study data. Usage: python3 build.py
+# Paper A of Star Cores (#79): fills head.html's placeholders from the study data. Usage: python3 build.py
 import json, os, html, collections
 H = os.path.dirname(os.path.abspath(__file__)); K = os.path.dirname(os.path.dirname(H))
 SC = os.path.join(K, 'studies/2026-10-30-star-cores/data'); EX = os.path.join(K, 'studies/2026-10-30-star-cores-exact/data')
@@ -75,7 +75,7 @@ for r in sc:
     val = lambda x: '–' if not x else ('freezes' if x['freezes'] else f"×{x['growth23']:.2f}")
     core = '–' if not c else (f"period {c['period']}" + (' at once' if c.get('enters_cycle_at_turn') == 0 else f" from turn {c['enters_cycle_at_turn']}") if c.get('period') else 'no core at turn ' + c['outcome'].split('turn ')[1].split(':')[0])
     crow.append(f"<tr><td>{D}</td><td>{e(nm(r))}</td><td>{e(r['symmetry'])}</td><td class=n>{r['corners']}</td><td class=n>{r['faces']}</td><td class=c>{G[r['verdict']]}</td><td class=n>{p['phi']['halo_over_solid']:.3f}</td><td class=n>{r['corners'] + r['corners'] + r['faces'] - 2}</td><td>{core}</td><td>{tchain(r)}</td><td>{val(gp)}</td><td>{val(g2)}</td></tr>")
-cards = f"""<p>One line per convex shape. Halo: the volume of the polar-spike halo at ρ² = φR² over the shape's. Pieces: corner pyramids plus edge tetrahedra of the polar fill (V + E). Core: the exact core cycle (paper B). T-chain: the star chain read as DICTO's rule T (paper C). Valley: growth over steps two and three under DICTO's valley rule, or 'freezes'.</p>
+cards = f"""<p>One line per convex shape. Halo: the volume of the polar-spike halo at ρ² = φR² over the shape's. Pieces: corner pyramids plus edge tetrahedra of the polar fill (V + E). Core: the exact core cycle (paper B). T-chain: the star chain read as DICTO's rule T (#80). Valley: growth over steps two and three under DICTO's valley rule, or 'freezes'.</p>
 <table class=cards><thead><tr><th>D</th><th>Shape</th><th>Sym.</th><th class=n>V</th><th class=n>F</th><th class=c>Group</th><th class=n>Halo</th><th class=n>Pieces</th><th>Core</th><th>T-chain</th><th>Valley φ</th><th>Valley ×2</th></tr></thead><tbody>{''.join(crow)}</tbody></table>
 <p class="dataref">Table 3. The cards. Group: the centre rule's group of Table 1. V, F: corners and faces (pieces V + E = 2V + F − 2 by Euler). '–': not run (over 200 faces, or no data).</p>"""
 out = out.replace('<!--CARDS-->', cards)

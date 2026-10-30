@@ -3,6 +3,8 @@
 # the meta line goes; "Sources checked", "Data and code" and "References" move to one appendix by chapter;
 # figures are copied into figures/<folder>/ and renumbered per chapter. Front matter and epilogue come from front.html
 # and epilogue.html (written by hand). Output: paper.html (typeset by print.mjs).
+# v6 (DICTO 2026-10-31): plates.html, full-page plates of the tiles, stackings and named pieces, after Chapter 14 and before the
+# epilogue; pictures from studies/2026-10-31-hexoct-plates (scripts/plates.py), kept in figures/plates/.
 # KDP=1: Amazon paperback interior (DICTO 10-29): no cover page (it goes on the printed cover), one blank page at the end
 # so the count passes 79 (KDP allows spine text only above 79 pages).
 import re, os, shutil, html
@@ -107,13 +109,15 @@ epi=open(os.path.join(HERE,'epilogue.html'),encoding='utf8').read()
 refhtml='<section class="app"><h1 class="chapter">Papers referred to, not in this book</h1><table>'+''.join(f'<tr><td>#{n}</td><td>{html.escape(PAPERS[n][0])}</td><td><a href="https://doi.org/{PAPERS[n][1]}">{PAPERS[n][1]}</a></td></tr>' for n in sorted(REFERRED))+'</table></section>'
 def nice(t): return re.sub('<[^>]+>','',t)
 idxhtml='<section class="app"><h1 class="chapter">Index</h1><p style="font-size:9pt">Chapters (P = Prologue) in which each term appears.</p><table>'+''.join(f'<tr><td>{nice(t)}</td><td>{", ".join(v)}</td></tr>' for t,v in sorted(INDEX.items(),key=lambda kv:nice(kv[0]).lower()))+'</table></section>'
-tochtml='<h2>Contents</h2><table class="toc">'+''.join(f'<tr><td>{html.escape(t)}</td><td>#{n}</td></tr>' for t,tag,n,d in toc)+'<tr><td>Epilogue. What has been shown</td><td></td></tr><tr><td>Appendix. Sources by chapter</td><td></td></tr><tr><td>Papers referred to, not in this book</td><td></td></tr><tr><td>Index</td><td></td></tr></table>'
+tochtml='<h2>Contents</h2><table class="toc">'+''.join(f'<tr><td>{html.escape(t)}</td><td>#{n}</td></tr>' for t,tag,n,d in toc)+'<tr><td>Plates</td><td></td></tr><tr><td>Epilogue. What has been shown</td><td></td></tr><tr><td>Appendix. Sources by chapter</td><td></td></tr><tr><td>Papers referred to, not in this book</td><td></td></tr><tr><td>Index</td><td></td></tr></table>'
 css='\n'.join(sorted(styles))+'''
 h1.chapter{break-before:page;font-size:19pt;margin-top:0} p.from{font-size:8.5pt;color:#777;margin:-2mm 0 4mm}
 .part{break-before:page;height:200mm;display:flex;align-items:center;justify-content:center} h1.partt{font-size:26pt;color:#b8962e}
 table.toc td{border-bottom:1px dotted #ccc;padding:1.2mm 2mm} .titlepage{height:240mm;display:flex;flex-direction:column;justify-content:center}
 .titlepage h1{font-size:30pt} section.epi,section.app{break-before:page} section.app h3{font-size:10pt;margin-top:5mm} section.app p,section.app li{font-size:8.6pt}
 figure img{width:100%;display:block}
+section.plate{break-before:page;break-inside:avoid} section.plate>img{display:block;width:180mm;height:200mm;margin:0 auto}
+.pcap h2{margin:3mm 0 1mm;font-size:13pt} .pcap p.pkey{font-size:8.6pt;color:#555;margin:0 0 1.5mm} .pcap ul{margin:0;padding-left:5mm} .pcap li{font-size:8.8pt;line-height:1.32;margin:0 0 .6mm}
 /* DICTO 10-29: neutral sans-serif for the whole book (the papers' DejaVu Serif read as Times-like) */
 body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}
 body{font-size:10pt}'''
@@ -123,6 +127,7 @@ doc=f'''<!doctype html>
 <img class="watermark" src="../dicto-logo.png" alt="">
 {(re.sub(r'<div class="coverpage".*?</div>\n', '', front, count=1, flags=re.S) if os.environ.get('KDP') else front).replace('__TOC__',tochtml)}
 {''.join(chapters)}
+{open(os.path.join(HERE,'plates.html'),encoding='utf8').read()}
 <section class="epi">{epi}</section>
 <section class="app"><h1 class="chapter">Appendix. Sources by chapter</h1><p>Each chapter's own list of sources checked, data and code, as published with its paper.</p>{''.join(sources)}</section>
 {refhtml}

@@ -1,0 +1,746 @@
+{
+ "slices": [
+  {
+   "slug": "lion",
+   "file": "solids/dicto-lion.json",
+   "name": "Lion",
+   "D": "D87",
+   "paper": "#63",
+   "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+   "note": "W1: the vertex-first central slice of the 600-cell (42 corners, 80 triangles, Ih); not found as a solid in the sources checked (#63)",
+   "status": "new",
+   "f_vector": {
+    "vertices": 42,
+    "edges": 120,
+    "faces": 80
+   },
+   "faces_by_sides": {
+    "3": 80
+   },
+   "symmetry": {
+    "schoenflies": "Ih",
+    "order": 120,
+    "rotations": 60,
+    "contains_inversion": true
+   },
+   "convex": true,
+   "scale_note": "frame: the 600-cell of #63 (circumradius 2, edge sqrt5 - 1), cut by the 3-space at height 0 along the vertex-first direction d (atlas row W1). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "320/3 + (160/3)*sqrt(5)",
+    "decimal": "225.923625466655450"
+   }
+  },
+  {
+   "slug": "jabberwock",
+   "file": "solids/dicto-jabberwock.json",
+   "name": "Jabberwock",
+   "D": "D88",
+   "paper": "#63",
+   "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+   "note": "W3: vertex-first, the largest all-triangle slice of the 600-cell (72 corners, 140 triangles); not found as a solid in the sources checked (#63)",
+   "status": "new",
+   "f_vector": {
+    "vertices": 72,
+    "edges": 210,
+    "faces": 140
+   },
+   "faces_by_sides": {
+    "3": 140
+   },
+   "symmetry": {
+    "schoenflies": "Ih",
+    "order": 120,
+    "rotations": 60,
+    "contains_inversion": true
+   },
+   "convex": true,
+   "scale_note": "frame: the 600-cell of #63 (circumradius 2, edge sqrt5 - 1), cut by the 3-space at height -1 + √5 along the vertex-first direction d (atlas row W3). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "-2480/3 + (1360/3)*sqrt(5)",
+    "decimal": "187.017483133237996"
+   }
+  },
+  {
+   "slug": "tweedledum",
+   "file": "solids/dicto-tweedledum.json",
+   "name": "Tweedledum",
+   "D": "D89",
+   "paper": "#63",
+   "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+   "note": "W5: vertex-first slice (32 corners, 60 triangles, Ih); not found as a solid in the sources checked (#63)",
+   "status": "new",
+   "f_vector": {
+    "vertices": 32,
+    "edges": 90,
+    "faces": 60
+   },
+   "faces_by_sides": {
+    "3": 60
+   },
+   "symmetry": {
+    "schoenflies": "Ih",
+    "order": 120,
+    "rotations": 60,
+    "contains_inversion": true
+   },
+   "convex": true,
+   "scale_note": "frame: the 600-cell of #63 (circumradius 2, edge sqrt5 - 1), cut by the 3-space at height 2 along the vertex-first direction d (atlas row W5). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "-400 + (240)*sqrt(5)",
+    "decimal": "136.656314599949527"
+   }
+  },
+  {
+   "slug": "tweedledee",
+   "file": "solids/dicto-tweedledee.json",
+   "name": "Tweedledee",
+   "D": "D90",
+   "paper": "#63",
+   "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+   "note": "W22: edge-first slice (32 corners, 60 triangles, D5h), another shape with Tweedledum's counts; not found as a solid in the sources checked (#63)",
+   "status": "new",
+   "f_vector": {
+    "vertices": 32,
+    "edges": 90,
+    "faces": 60
+   },
+   "faces_by_sides": {
+    "3": 60
+   },
+   "symmetry": {
+    "schoenflies": "D5h",
+    "order": 20,
+    "rotations": 10,
+    "contains_inversion": false
+   },
+   "convex": true,
+   "scale_note": "frame: the 600-cell of #63 (circumradius 2, edge sqrt5 - 1), cut by the 3-space at height 3/2 + 1/2√5 along the edge-first direction d (atlas row W22). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "1235/12 + (-75/4)*sqrt(5)",
+    "decimal": "60.990392088545610"
+   }
+  },
+  {
+   "slug": "mad-hatter",
+   "file": "solids/dicto-mad-hatter.json",
+   "name": "Mad Hatter",
+   "D": "D91",
+   "paper": "#63",
+   "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+   "note": "W28: face-first, in a gap (cut at its midpoint), one of the four 144-corner slices, all different; not found in the sources checked (#63)",
+   "status": "new",
+   "f_vector": {
+    "vertices": 144,
+    "edges": 360,
+    "faces": 218
+   },
+   "faces_by_sides": {
+    "3": 152,
+    "4": 66
+   },
+   "symmetry": {
+    "schoenflies": "D3h",
+    "order": 12,
+    "rotations": 6,
+    "contains_inversion": false
+   },
+   "convex": true,
+   "scale_note": "frame: the 600-cell of #63 (circumradius 2, edge sqrt5 - 1), cut by the 3-space at height -1/6 + 1/6√5 along the face-first direction d (atlas row W28, the midpoint of its gap). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "-1409/270 + (22433/270)*sqrt(5)",
+    "decimal": "180.565603478714008"
+   }
+  },
+  {
+   "slug": "march-hare",
+   "file": "solids/dicto-march-hare.json",
+   "name": "March Hare",
+   "D": "D92",
+   "paper": "#63",
+   "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+   "note": "W30: face-first, in a gap (cut at its midpoint), 144 corners; not found in the sources checked (#63)",
+   "status": "new",
+   "f_vector": {
+    "vertices": 144,
+    "edges": 360,
+    "faces": 218
+   },
+   "faces_by_sides": {
+    "3": 152,
+    "4": 66
+   },
+   "symmetry": {
+    "schoenflies": "D3h",
+    "order": 12,
+    "rotations": 6,
+    "contains_inversion": false
+   },
+   "convex": true,
+   "scale_note": "frame: the 600-cell of #63 (circumradius 2, edge sqrt5 - 1), cut by the 3-space at height 1/6 + 1/6√5 along the face-first direction d (atlas row W30, the midpoint of its gap). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "14167/270 + (14879/270)*sqrt(5)",
+    "decimal": "175.694279397108781"
+   }
+  },
+  {
+   "slug": "jubjub",
+   "file": "solids/dicto-jubjub.json",
+   "name": "Jubjub",
+   "D": "D93",
+   "paper": "#63",
+   "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+   "note": "W43: face-first all-triangle slice (30 corners, 56 triangles); not found as a solid in the sources checked (#63)",
+   "status": "new",
+   "f_vector": {
+    "vertices": 30,
+    "edges": 84,
+    "faces": 56
+   },
+   "faces_by_sides": {
+    "3": 56
+   },
+   "symmetry": {
+    "schoenflies": "D3h",
+    "order": 12,
+    "rotations": 6,
+    "contains_inversion": false
+   },
+   "convex": true,
+   "scale_note": "frame: the 600-cell of #63 (circumradius 2, edge sqrt5 - 1), cut by the 3-space at height 4/3 + 2/3√5 along the face-first direction d (atlas row W43). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "376/15 + (436/75)*sqrt(5)",
+    "decimal": "38.065675175865444"
+   }
+  },
+  {
+   "slug": "alicia",
+   "file": "solids/dicto-alicia.json",
+   "name": "Alicia",
+   "D": "",
+   "paper": "#63",
+   "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+   "note": "W48: the cell-first central slice of the 600-cell, the middle section of Alicia Boole Stott (1900, cell-first series through the corner layers); named after her by DICTO",
+   "status": "known",
+   "f_vector": {
+    "vertices": 84,
+    "edges": 240,
+    "faces": 158
+   },
+   "faces_by_sides": {
+    "3": 152,
+    "4": 6
+   },
+   "symmetry": {
+    "schoenflies": "Oh",
+    "order": 48,
+    "rotations": 24,
+    "contains_inversion": true
+   },
+   "convex": true,
+   "scale_note": "frame: the 600-cell of #63 (circumradius 2, edge sqrt5 - 1), cut by the 3-space at height 0 along the cell-first direction d (atlas row W48). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "891/10 + (2923/75)*sqrt(5)",
+    "decimal": "176.247022643091804"
+   }
+  },
+  {
+   "slug": "alice",
+   "file": "solids/dicto-alice.json",
+   "name": "Alice",
+   "D": "D94",
+   "paper": "#63",
+   "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+   "note": "W49: cell-first, in a gap (cut at its midpoint), 144 corners; a gap section, not in Boole Stott's series; not found in the sources checked (#63)",
+   "status": "new",
+   "f_vector": {
+    "vertices": 144,
+    "edges": 360,
+    "faces": 218
+   },
+   "faces_by_sides": {
+    "3": 152,
+    "4": 66
+   },
+   "symmetry": {
+    "schoenflies": "Td",
+    "order": 24,
+    "rotations": 12,
+    "contains_inversion": false
+   },
+   "convex": true,
+   "scale_note": "frame: the 600-cell of #63 (circumradius 2, edge sqrt5 - 1), cut by the 3-space at height 1/4 along the cell-first direction d (atlas row W49, the midpoint of its gap). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "7019/80 + (46969/1200)*sqrt(5)",
+    "decimal": "175.259064029323019"
+   }
+  },
+  {
+   "slug": "white-rabbit",
+   "file": "solids/dicto-white-rabbit.json",
+   "name": "White Rabbit",
+   "D": "D95",
+   "paper": "#63",
+   "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+   "note": "W51: cell-first, in a gap (cut at its midpoint), 144 corners; not found in the sources checked (#63)",
+   "status": "new",
+   "f_vector": {
+    "vertices": 144,
+    "edges": 360,
+    "faces": 218
+   },
+   "faces_by_sides": {
+    "3": 152,
+    "4": 66
+   },
+   "symmetry": {
+    "schoenflies": "Td",
+    "order": 24,
+    "rotations": 12,
+    "contains_inversion": false
+   },
+   "convex": true,
+   "scale_note": "frame: the 600-cell of #63 (circumradius 2, edge sqrt5 - 1), cut by the 3-space at height 3/8 + 1/8√5 along the cell-first direction d (atlas row W51, the midpoint of its gap). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "13639/160 + (29587/800)*sqrt(5)",
+    "decimal": "167.941929062857847"
+   }
+  },
+  {
+   "slug": "humpty-dumpty",
+   "file": "solids/dicto-humpty-dumpty.json",
+   "name": "Humpty Dumpty",
+   "D": "D85",
+   "paper": "#63",
+   "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+   "note": "known (corrected in version 5): the cell-first section of the 600-cell at height 1 + sqrt5/2, one of the sections drawn by Alicia Boole Stott (1900, cell-first series through the corner layers), read for #63 version 3; the exact solid, the convex egg of 92 triangles (Td) and the name are #63's and DICTO's; D85 is kept (D-numbers are never reused); its forced equal-edged form is Fallen Humpty (#63; Slice-48 in #62, numeric only, not in the dataset)",
+   "status": "known",
+   "f_vector": {
+    "vertices": 48,
+    "edges": 138,
+    "faces": 92
+   },
+   "faces_by_sides": {
+    "3": 92
+   },
+   "symmetry": {
+    "schoenflies": "Td",
+    "order": 24,
+    "rotations": 12,
+    "contains_inversion": false
+   },
+   "convex": true,
+   "scale_note": "frame: the 600-cell of #62/#63 (vertices the permutations of (+-2, 0, 0, 0), (+-1, +-1, +-1, +-1) and the even permutations of (+-phi, +-1, +-1/phi, 0); circumradius 2, edge sqrt5 - 1), cut by the 3-space at height 1 + sqrt5/2 along the cell-first direction d = the centre of the cell (0, 24, 25, 40) = (7/8 + 3sqrt5/8, 3/8 + sqrt5/8, 0, 1/4). Coordinates: the imaginary part of the quaternion product conj(d) p of each point p of the cut, which is the slice turned into R^3 (centre at the origin) and scaled by |d| = sqrt((7 + 3sqrt5)/4) = 1.8512: the scale at which the slice is exact in Q(sqrt5) (unscaled, an orthonormal frame needs sqrt(7 + 3sqrt5) as well). Divide lengths by |d| and squared lengths by 7/4 + 3sqrt5/4 for the 600-cell of circumradius 2. Humpty Dumpty: 48 corners (12 of degree 8, 36 of degree 5), 138 edges of eight lengths (ratio up to (5 + sqrt5)/2), 92 triangles; tetrahedral symmetry Td (#63 section 7).",
+   "volume": {
+    "exact": "2627/60 + (1213/60)*sqrt(5)",
+    "decimal": "88.989174278454082"
+   }
+  },
+  {
+   "slug": "unicorn",
+   "file": "solids/dicto-unicorn.json",
+   "name": "Unicorn",
+   "D": "",
+   "paper": "#63",
+   "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+   "note": "W58: cell-first corner-layer section, one of the sections of Alicia Boole Stott (1900, cell-first series through the corner layers); same counts as the Lion, another shape",
+   "status": "known",
+   "f_vector": {
+    "vertices": 42,
+    "edges": 120,
+    "faces": 80
+   },
+   "faces_by_sides": {
+    "3": 80
+   },
+   "symmetry": {
+    "schoenflies": "Td",
+    "order": 24,
+    "rotations": 12,
+    "contains_inversion": false
+   },
+   "convex": true,
+   "scale_note": "frame: the 600-cell of #63 (circumradius 2, edge sqrt5 - 1), cut by the 3-space at height 3/2 + 1/2√5 along the cell-first direction d (atlas row W58). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "311/12 + (133/12)*sqrt(5)",
+    "decimal": "50.699753417289336"
+   }
+  },
+  {
+   "slug": "bandersnatch",
+   "file": "solids/dicto-bandersnatch.json",
+   "name": "Bandersnatch",
+   "D": "",
+   "paper": "#63",
+   "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+   "note": "W60: cell-first corner-layer section, one of the sections of Alicia Boole Stott (1900, cell-first series through the corner layers)",
+   "status": "known",
+   "f_vector": {
+    "vertices": 28,
+    "edges": 78,
+    "faces": 52
+   },
+   "faces_by_sides": {
+    "3": 52
+   },
+   "symmetry": {
+    "schoenflies": "Td",
+    "order": 24,
+    "rotations": 12,
+    "contains_inversion": false
+   },
+   "convex": true,
+   "scale_note": "frame: the 600-cell of #63 (circumradius 2, edge sqrt5 - 1), cut by the 3-space at height 5/4 + 3/4√5 along the cell-first direction d (atlas row W60). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "61/3 + (10/3)*sqrt(5)",
+    "decimal": "27.786893258332632"
+   }
+  },
+  {
+   "slug": "haigha",
+   "file": "solids/dicto-haigha.json",
+   "name": "Haigha",
+   "D": "D96",
+   "paper": "#65",
+   "doi": "DICTO DOI: 10.5281/zenodo.23716140",
+   "note": "R33: 120-cell edge-first slice, the only one with nine-sided faces; not found in the sources checked (#65)",
+   "status": "new",
+   "f_vector": {
+    "vertices": 114,
+    "edges": 171,
+    "faces": 59
+   },
+   "faces_by_sides": {
+    "4": 15,
+    "5": 12,
+    "6": 20,
+    "8": 6,
+    "9": 6
+   },
+   "symmetry": {
+    "schoenflies": "D3h",
+    "order": 12,
+    "rotations": 6,
+    "contains_inversion": false
+   },
+   "convex": true,
+   "scale_note": "frame: the 120-cell of #65, its corners the centres of the cells of the 600-cell of #63 (corner radius^2 7/4 + 3sqrt5/4, edge 1/2), cut by the 3-space at height 3/64 + 1/64√5 along the edge-first direction d (atlas row R33, the midpoint of its gap). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "9539847/131072 + (21331881/655360)*sqrt(5)",
+    "decimal": "145.566972357080370"
+   }
+  },
+  {
+   "slug": "hatta",
+   "file": "solids/dicto-hatta.json",
+   "name": "Hatta",
+   "D": "D97",
+   "paper": "#65",
+   "doi": "DICTO DOI: 10.5281/zenodo.23716140",
+   "note": "R35: 120-cell edge-first slice, the other 114-corner slice; not found in the sources checked (#65)",
+   "status": "new",
+   "f_vector": {
+    "vertices": 114,
+    "edges": 171,
+    "faces": 59
+   },
+   "faces_by_sides": {
+    "3": 12,
+    "4": 3,
+    "6": 26,
+    "7": 6,
+    "8": 12
+   },
+   "symmetry": {
+    "schoenflies": "D3h",
+    "order": 12,
+    "rotations": 6,
+    "contains_inversion": false
+   },
+   "convex": true,
+   "scale_note": "frame: the 120-cell of #65, its corners the centres of the cells of the 600-cell of #63 (corner radius^2 7/4 + 3sqrt5/4, edge 1/2), cut by the 3-space at height 7/64 + 3/64√5 along the edge-first direction d (atlas row R35, the midpoint of its gap). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "9465351/131072 + (21165177/655360)*sqrt(5)",
+    "decimal": "144.429824108604532"
+   }
+  },
+  {
+   "slug": "red-king",
+   "file": "solids/dicto-red-king.json",
+   "name": "Red King",
+   "D": "D98",
+   "paper": "#65",
+   "doi": "DICTO DOI: 10.5281/zenodo.23716140",
+   "note": "R77: 120-cell pentagon-first central slice, two regular decagons; the polar of the 600-cell's edge-first shadow; not found in the sources checked (#65)",
+   "status": "new",
+   "f_vector": {
+    "vertices": 80,
+    "edges": 130,
+    "faces": 52
+   },
+   "faces_by_sides": {
+    "4": 20,
+    "5": 20,
+    "6": 10,
+    "10": 2
+   },
+   "symmetry": {
+    "schoenflies": "D10h",
+    "order": 40,
+    "rotations": 20,
+    "contains_inversion": true
+   },
+   "convex": true,
+   "scale_note": "frame: the 120-cell of #65, its corners the centres of the cells of the 600-cell of #63 (corner radius^2 7/4 + 3sqrt5/4, edge 1/2), cut by the 3-space at height 0 along the face-first direction d (atlas row R77). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "105673/1536 + (19691/640)*sqrt(5)",
+    "decimal": "137.595048768148477"
+   }
+  },
+  {
+   "slug": "walrus",
+   "file": "solids/dicto-walrus.json",
+   "name": "Walrus",
+   "D": "D99",
+   "paper": "#65",
+   "doi": "DICTO DOI: 10.5281/zenodo.23716140",
+   "note": "R80: 120-cell pentagon-first slice, 120 corners; not found in the sources checked (#65)",
+   "status": "new",
+   "f_vector": {
+    "vertices": 120,
+    "edges": 180,
+    "faces": 62
+   },
+   "faces_by_sides": {
+    "3": 20,
+    "5": 2,
+    "6": 10,
+    "7": 10,
+    "8": 20
+   },
+   "symmetry": {
+    "schoenflies": "D5h",
+    "order": 20,
+    "rotations": 10,
+    "contains_inversion": false
+   },
+   "convex": true,
+   "scale_note": "frame: the 120-cell of #65, its corners the centres of the cells of the 600-cell of #63 (corner radius^2 7/4 + 3sqrt5/4, edge 1/2), cut by the 3-space at height 5/32 + 11/160√5 along the face-first direction d (atlas row R80, the midpoint of its gap). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "1667107/24576 + (310647/10240)*sqrt(5)",
+    "decimal": "135.669504460258187"
+   }
+  },
+  {
+   "slug": "red-knight",
+   "file": "solids/dicto-red-knight.json",
+   "name": "Red Knight",
+   "D": "D100",
+   "paper": "#65",
+   "doi": "DICTO DOI: 10.5281/zenodo.23716140",
+   "note": "R113: 120-cell cell-first slice in a gap (cut at its midpoint), 120 corners; a gap section, not in Boole Stott's series; not found in the sources checked (#65)",
+   "status": "new",
+   "f_vector": {
+    "vertices": 120,
+    "edges": 180,
+    "faces": 62
+   },
+   "faces_by_sides": {
+    "3": 20,
+    "5": 12,
+    "8": 30
+   },
+   "symmetry": {
+    "schoenflies": "Ih",
+    "order": 120,
+    "rotations": 60,
+    "contains_inversion": true
+   },
+   "convex": true,
+   "scale_note": "frame: the 120-cell of #65, its corners the centres of the cells of the 600-cell of #63 (corner radius^2 7/4 + 3sqrt5/4, edge 1/2), cut by the 3-space at height 9/32 + 1/8√5 along the cell-first direction d (atlas row R113, the midpoint of its gap). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "1390915/24576 + (155509/6144)*sqrt(5)",
+    "decimal": "113.192943540529752"
+   }
+  },
+  {
+   "slug": "white-knight",
+   "file": "solids/dicto-white-knight.json",
+   "name": "White Knight",
+   "D": "D101",
+   "paper": "#65",
+   "doi": "DICTO DOI: 10.5281/zenodo.23716140",
+   "note": "R115: 120-cell cell-first slice in a gap (cut at its midpoint): the faces and symmetry of the truncated icosidodecahedron (30 squares, 20 hexagons, 12 decagons, Ih) with two edge lengths; not found in the sources checked (#65)",
+   "status": "new",
+   "f_vector": {
+    "vertices": 120,
+    "edges": 180,
+    "faces": 62
+   },
+   "faces_by_sides": {
+    "4": 30,
+    "6": 20,
+    "10": 12
+   },
+   "symmetry": {
+    "schoenflies": "Ih",
+    "order": 120,
+    "rotations": 60,
+    "contains_inversion": true
+   },
+   "convex": true,
+   "scale_note": "frame: the 120-cell of #65, its corners the centres of the cells of the 600-cell of #63 (corner radius^2 7/4 + 3sqrt5/4, edge 1/2), cut by the 3-space at height 29/64 + 13/64√5 along the cell-first direction d (atlas row R115, the midpoint of its gap). Coordinates: Im(conj(d) p) for each point p of the cut, the slice turned into R^3 and scaled by |d|; divide lengths by |d| for the polytope's own scale.",
+   "volume": {
+    "exact": "426925/8192 + (143195/6144)*sqrt(5)",
+    "decimal": "104.229736985364972"
+   }
+  }
+ ],
+ "shells": [
+  {
+   "shell": 0,
+   "cells": 20,
+   "so_far": 20,
+   "centre_height": 1.713525492
+  },
+  {
+   "shell": 1,
+   "cells": 20,
+   "so_far": 40,
+   "centre_height": 1.463525492
+  },
+  {
+   "shell": 2,
+   "cells": 30,
+   "so_far": 70,
+   "centre_height": 1.309016994
+  },
+  {
+   "shell": 3,
+   "cells": 60,
+   "so_far": 130,
+   "centre_height": 1.059016994
+  },
+  {
+   "shell": 4,
+   "cells": 60,
+   "so_far": 190,
+   "centre_height": 0.654508497
+  },
+  {
+   "shell": 5,
+   "cells": 60,
+   "so_far": 250,
+   "centre_height": 0.404508497
+  },
+  {
+   "shell": 6,
+   "cells": 20,
+   "so_far": 270,
+   "centre_height": 0.25
+  },
+  {
+   "shell": 7,
+   "cells": 60,
+   "so_far": 330,
+   "centre_height": 0.0
+  },
+  {
+   "shell": 8,
+   "cells": 20,
+   "so_far": 350,
+   "centre_height": -0.25
+  },
+  {
+   "shell": 9,
+   "cells": 60,
+   "so_far": 410,
+   "centre_height": -0.404508497
+  },
+  {
+   "shell": 10,
+   "cells": 60,
+   "so_far": 470,
+   "centre_height": -0.654508497
+  },
+  {
+   "shell": 11,
+   "cells": 60,
+   "so_far": 530,
+   "centre_height": -1.059016994
+  },
+  {
+   "shell": 12,
+   "cells": 30,
+   "so_far": 560,
+   "centre_height": -1.309016994
+  },
+  {
+   "shell": 13,
+   "cells": 20,
+   "so_far": 580,
+   "centre_height": -1.463525492
+  },
+  {
+   "shell": 14,
+   "cells": 20,
+   "so_far": 600,
+   "centre_height": -1.713525492
+  }
+ ],
+ "layers": [
+  {
+   "layer": 0,
+   "cells": 1,
+   "so_far": 1,
+   "centre_height": 2.0
+  },
+  {
+   "layer": 1,
+   "cells": 12,
+   "so_far": 13,
+   "centre_height": 1.618033989
+  },
+  {
+   "layer": 2,
+   "cells": 20,
+   "so_far": 33,
+   "centre_height": 1.0
+  },
+  {
+   "layer": 3,
+   "cells": 12,
+   "so_far": 45,
+   "centre_height": 0.618033989
+  },
+  {
+   "layer": 4,
+   "cells": 30,
+   "so_far": 75,
+   "centre_height": 0.0
+  },
+  {
+   "layer": 5,
+   "cells": 12,
+   "so_far": 87,
+   "centre_height": -0.618033989
+  },
+  {
+   "layer": 6,
+   "cells": 20,
+   "so_far": 107,
+   "centre_height": -1.0
+  },
+  {
+   "layer": 7,
+   "cells": 12,
+   "so_far": 119,
+   "centre_height": -1.618033989
+  },
+  {
+   "layer": 8,
+   "cells": 1,
+   "so_far": 120,
+   "centre_height": -2.0
+  }
+ ]
+}
