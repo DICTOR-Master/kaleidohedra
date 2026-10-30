@@ -93,7 +93,7 @@ test('all 62 slices of the atlas, live from the source: stops, heights, vertices
     });
   });
 });
-test('Humpty Dumpty (cell-first, 1 + 1/2√5): 48 vertices, 92 triangles; Shadow-17 (edge-first, 1 + √5): 17 vertices, 30 triangles', () => {
+test('Humpty Dumpty (cell-first, 1 + 1/2√5): 48 vertices, 92 triangles; Kagemusha (edge-first, 1 + √5): 17 vertices, 30 triangles', () => {
   for (const [dir, h, V, T] of [['cell-first', '1 + 1/2√5', 48, 92], ['edge-first', '1 + √5', 17, 30]]) {
     const k = SLICE_STOPS[DIRECTIONS.indexOf(dir)].findIndex((s) => s.height === h), s = sliceAt(dir, k);
     assert.ok(k >= 0 && s.stop.atVertex); assert.equal(s.vertices.length, V); assert.equal(s.faces.length, T); assert.ok(s.faces.every((f) => f.length === 3));

@@ -62,7 +62,7 @@ for (const door of (process.env.DOORS ?? 'kaleidohedra,rhombiverse').split(','))
     await page.tap(`${P} [data-wq-slice="vertex-first"]`); await page.waitForTimeout(800);
     const first = RQ.slices.find((s) => s.direction === 'vertex-first');
     st = await probe(page); assert.equal(st.V, first.V, `${tag}: vertex-first centre slice corners`); assert.deepEqual(st.faceSizes, first.face_sizes); checks++;
-    assert.ok(!/Humpty|Shadow-17/.test(await caption()), `${tag}: no White Queen names on the Red Queen`); checks++;
+    assert.ok(!/Humpty|Kagemusha|Shadow-17/.test(await caption()), `${tag}: no White Queen names on the Red Queen`); checks++;
     await page.screenshot({ path: `${SH}/${tag}-slice-vertex-centre.png` });
     // Shells: the nine cell layers
     await page.tap(`${P} [data-wq-mode="shells"]`); await page.waitForTimeout(1200);

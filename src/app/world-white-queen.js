@@ -7,7 +7,7 @@
 // circle, snapping at both ends; the caption gives the hull's vertices and faces. The Slice view (W3): one row of four directions and
 // one big slider from the centre to the tip that stops only at #63's slice patterns (every vertex height and the exact midpoint of
 // every gap), each slice computed live; the tips drawn small. Named stops in gold (W4, DICTO's names): Humpty Dumpty, the real
-// 48-vertex cell-first slice at 1 + √5/2 (shown larger, solid ivory with gold edges, turning slowly until touched), and Shadow-17,
+// 48-vertex cell-first slice at 1 + √5/2 (shown larger, solid ivory with gold edges, turning slowly until touched), and Kagemusha,
 // the edge-first slice at 1 + √5. Shells (W4b): the 600 cells round one vertex in 15 shells, each one kind of piece, in perspective
 // from just beyond the opposite vertex; one slider builds them from the gold Cleo core outwards, the newest shell solid, the inner ones
 // see-through, coloured as the study's picture (blue → green → yellow). Halves (W5) in the Shadow view: the front cells (centre·u > 0)

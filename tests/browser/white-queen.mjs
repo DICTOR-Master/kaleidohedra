@@ -5,9 +5,9 @@
 // position captioned "From → To"; ?open=whitequeen:<vertex|edge|face|cell>. No console errors. Screenshots ($SHOTS, default
 // /tmp/wq-shots) on a phone (390×844) and a desktop (1280×800) at the four main directions and halfway from vertex-first to cell-first.
 // The Slice view (W3, W4): Shadow | Slice toggle, the shadow's rows hidden there; for every direction the slider stops at exactly the
-// atlas's stops (tests/unit/white-queen-atlas.json), each with the atlas's vertices and face sizes; Humpty Dumpty and Shadow-17 in gold;
+// atlas's stops (tests/unit/white-queen-atlas.json), each with the atlas's vertices and face sizes; Humpty Dumpty and Kagemusha in gold;
 // Humpty Dumpty turns until the picture is touched. Every one of the 7 languages at phone width: the direction rows fit on one line.
-// Slice screenshots: Humpty Dumpty, Shadow-17, a gap slice, the cell-first tip, and the Slice panel in Russian.
+// Slice screenshots: Humpty Dumpty, Kagemusha, a gap slice, the cell-first tip, and the Slice panel in Russian.
 // Shells (W4b): the slider builds 1..15 shells (20, 20, 30, 60, …), the core caption gold. Halves (W5) in the Shadow view: off at first,
 // the four main views' front / back / side-on counts, the apart slider only while Halves is on. Screenshots of both.
 // W7: kites and squares counted in the caption with a legend only where present; Line up turns the slice's axis to the viewer; the app's
