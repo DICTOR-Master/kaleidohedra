@@ -906,7 +906,8 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
       openDim = openDim === dim ? null : dim;
       showDimensions(`[data-dim="${dim}"]`);
     }));
-    bodyEl.querySelectorAll('.dicto-dim-content [data-action]').forEach((el) => el.addEventListener('click', () => choose(openDim, el.dataset.action, el.dataset.app)));
+    bodyEl.querySelectorAll('.dicto-dim-content [data-action]:not([data-lattices])').forEach((el) => el.addEventListener('click', () => choose(openDim, el.dataset.action, el.dataset.app)));
+    bodyEl.querySelectorAll('[data-lattices]').forEach((el) => el.addEventListener('click', () => showRhombiLattices()));
     bodyEl.querySelectorAll('[data-family]').forEach((el) => el.addEventListener('click', () => showPolyFamily(el.dataset.family)));
     wireSearch(L);
     if (scrollTo) bodyEl.querySelector(scrollTo)?.scrollIntoView({ block: 'start' });
@@ -928,14 +929,19 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     }).filter(Boolean);
     // The other door's app, whose lattices are the door's own (its difference is the Shear, or its
     // absence): one row, so each app stays in sight with no list repeated (DICTO 2026-10-09).
+    // Rhombiverse's row opens its choice of lattices (DICTO 2026-10-31: the original app, not a jump to FCC).
     if (dim === '3D') for (const app of ['kaleidohedra', 'rhombiverse']) {
       if (app === SITE || !passes(app, filter) || entries.some((e) => e.app === app)) continue;
-      entries.push({ app, kind: 'family', fam: { id: 'otherApp', label: t(`wiz.other.${app}`, L), action: 'tool:pieceType:rd', preview: () => pieceEdges('tool:pieceType:rd') } });
+      entries.push({ app, kind: 'family', fam: { id: 'otherApp', label: t(`wiz.other.${app}`, L), action: 'tool:pieceType:rd', preview: () => pieceEdges('tool:pieceType:rd'), lattices: app === 'rhombiverse' } });
     }
     entries.sort((x, y) => rank(x.app) - rank(y.app)); // stable: each block keeps its own order
+    return blocksHtml(entries, d, L);
+  }
+  // Entries as app blocks, each in its app's colours, its kinds in order (3D+'s content, and Rhombiverse's lattices below).
+  function blocksHtml(entries, d, L) {
     const row = (e) => {
       if (e.kind === 'family') return `
-        <button type="button" class="dim-wizard-card-btn" data-action="${e.fam.action}" data-app="${e.app}">
+        <button type="button" class="dim-wizard-card-btn" data-action="${e.fam.action}" data-app="${e.app}"${e.fam.lattices ? ` data-lattices="${e.app}"` : ''}>
           ${previewSlot(e.fam.preview)}
           <span class="dim-wizard-row-text">
             <span class="dim-wizard-label">${e.fam.label}</span>
@@ -992,6 +998,23 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
       html += '</div>';
     }
     return html;
+  }
+
+  // Rhombiverse's choice of lattices (from another door's 3D+): the list its own door shows in its block, every lattice with its
+  // pieces, in its colours; each opens in Rhombiverse. Back returns to 3D+.
+  function showRhombiLattices() {
+    current = showRhombiLattices;
+    resetPreviews();
+    const L = getSettings().language;
+    const R = 'rhombiverse';
+    const entries = R_LATTICES.map((lat) => ({ app: R, kind: 'lattice', lat })).flatMap(splitDicto).filter((e) => !e.dicto);
+    bodyEl.innerHTML = `
+      ${back(L)}
+      <div class="dim-wizard-sub"><b>${t(`wiz.other.${R}`, L)}</b> · ${tFor(R, 'wiz.3d.otherApp', L)}</div>
+      ${blocksHtml(entries, '3d', L)}`;
+    mountPreviews();
+    bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => { openDim = '3D'; showDimensions('[data-lattices]'); });
+    bodyEl.querySelectorAll('[data-action]').forEach((el) => el.addEventListener('click', () => choose('3D', el.dataset.action, el.dataset.app)));
   }
 
   // 5D/6D: one world each (the tiling picks every piece's shape), so the
