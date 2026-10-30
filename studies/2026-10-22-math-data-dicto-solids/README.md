@@ -1,6 +1,6 @@
 # DICTO solids: exact coordinates (math-data dataset)
 
-Created by DICTO · [dictospheres.com](https://dictospheres.com) · Licence CC BY-SA 4.0 · 2026-10-22 · Version 2: 2026-10-24 · Version 3: 2026-10-27 · Version 4: 2026-10-28 · **Version 5: 2026-10-28**
+Created by DICTO · [dictospheres.com](https://dictospheres.com) · Licence CC BY-SA 4.0 · 2026-10-22 · Version 2: 2026-10-24 · Version 3: 2026-10-27 · Version 4: 2026-10-28 · Version 5: 2026-10-28 · **Version 6: 2026-10-30**
 
 Exact geometry of named convex and non-convex polyhedra found or named by DICTO (artist, Osaka), taken from his published papers
 and the Kaleidohedra findings archive, with lattice packings where a published result says the solid tiles space, and the published
@@ -8,6 +8,10 @@ packings that do not fill space. Every number is exact in a real number field st
 and 2 except two, ℚ(∛2) for Samson and Delilah, version 2; version 3 adds ℚ and ℚ(t), t the root of an irreducible cubic, for Sonsam and
 Lahdeli; version 4 adds ℚ(√3) for Ganesha) and is re-proved by `check.py` from the data files alone; the only exception is the unit-volume copy of each solid, whose scale
 is a cube root (stored exactly as a symbolic expression, with decimal corners).
+
+## What is new in version 6 (2026-10-30)
+
+Three solids of paper #78, The Truncated Icosahedron Star (TI Star), exact in ℚ(√5), with D-numbers D103–D105: the **Golden TI Star** (D103, non-convex, 92 corners, 180 triangles, volume exactly φ times the truncated icosahedron), the **Star Halo** (D104, DICTO's name: the hull of its 32 tips, a pentakis dodecahedron that is not the Catalan one) and the **TI Star core** (D105, placeholder name: the icosahedron truncated at 1/φ³ of each edge, its hexagon edges exactly 1/√5 and 1). Built by build/build_v6.py from the #54 frame; all checks pass (check.py: 1505 checks, 65 solids). D102 (Fallen Humpty, #62) still has no model file: its exact equal-edged form is not yet solved.
 
 ## What is new in version 5 (2026-10-28)
 
@@ -111,7 +115,7 @@ is a cube root (stored exactly as a symbolic expression, with decimal corners).
   `kind` "tricap" (#48's Tricap of the Unborn at `unborn_centre`, as in the version 2 `decomposition`) or "mirrored tricap" (that Tricap
   mirrored in its base plane: a key of a big piece, krp-core golden-split.js INTO_SMALL), its `apex` and three `base` corners (exact), and
   `tricap_volume`. The solid is the union of the pieces, minus the dents, plus the keys.
-- `version_added`: 2 for the solids added in version 2, 3 for those added in version 3, 4 for those added in version 4, 5 for those added in version 5.
+- `version_added`: 2 for the solids added in version 2, 3 for those added in version 3, 4 for those added in version 4, 5 for those added in version 5, 6 for those added in version 6.
 - `scale_note`: the normalisation (each solid is given in the frame of the paper it comes from, so published values can be compared
   directly); `source`: where the geometry was taken from (`Polyhedraverse` id, a Kaleidohedra study, or the paper's closed form);
   `published_values`: values stated in the published paper or archive at this scale, each re-checked by `check.py`.
@@ -306,7 +310,7 @@ numbers are separated by "; ". Only numbers we are sure of are given.
 
 **D-numbers (DICTO 2026-10-24):** DICTO's permanent catalogue number, one per new solid or piece of his (status "new"), in the order of
 first publication, never reused: D1–D71 for single shapes, D72–D75 for the four rows that group several pieces (one number per group,
-DICTO 2026-10-24), and (version 3) D76–D83 for the eight new single solids of #56, #57 and #59, and (version 4) D84–D86 for Ganesha (#61), Humpty Dumpty (#63) and Shadow-17 (#62), and (version 5) D87–D101 for the fifteen new named slices of #63 and #65. Known and rediscovered shapes get no D-number. A shape with an outside number that
+DICTO 2026-10-24), and (version 3) D76–D83 for the eight new single solids of #56, #57 and #59, and (version 4) D84–D86 for Ganesha (#61), Humpty Dumpty (#63) and Shadow-17 (#62), and (version 5) D87–D101 for the fifteen new named slices of #63 and #65, and (version 6) D103–D105 for the three solids of #78. Known and rediscovered shapes get no D-number. A shape with an outside number that
 is also DICTO's new shape would show both, outside number first ("J1; D9"); none does today. Not to be confused with T1, T2, … (a piece's
 label within one piece set), #n (papers), Fn (findings) and t1–t6 (Mosseri–Sadoc tiles); see `d-numbers.md`. 91 of 137 rows have a
 number (5 outside, 86 D); the cell is empty for the other known or rediscovered shapes and for clusters, structures, compounds and

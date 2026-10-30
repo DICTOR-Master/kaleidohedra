@@ -1,0 +1,14 @@
+[
+ "PASS TI from #54: 60 corners, 32 faces",
+ "PASS Golden TI Star volume = phi * TI exactly",
+ "PASS dicto-golden-ti-star: f-vector (92, 270, 180) vs published (92, 270, 180)",
+ "PASS dicto-golden-ti-star: faces {3: 180} vs published {'3': 180}",
+ "PASS dicto-golden-ti-star: 92, 270, 180 {3: 180}, volume 20 + (1/2)*sqrt(5), symmetry Ih (120)",
+ "PASS dicto-star-halo: f-vector (32, 90, 60) vs published (32, 90, 60)",
+ "PASS dicto-star-halo: faces {3: 60} vs published {'3': 60}",
+ "PASS dicto-star-halo: 32, 90, 60 {3: 60}, volume 85/4 + (37/4)*sqrt(5), symmetry Ih (120)",
+ "PASS core edges: two lengths, ratio^2 exactly 5 (['1/5', '1'])",
+ "PASS dicto-ti-star-core: f-vector (60, 90, 32) vs published (60, 90, 32)",
+ "PASS dicto-ti-star-core: faces {6: 20, 5: 12} vs published {'5': 12, '6': 20}",
+ "PASS dicto-ti-star-core: 60, 90, 32 {5: 12, 6: 20}, volume 169/12 + (383/60)*sqrt(5), symmetry Ih (120)"
+]

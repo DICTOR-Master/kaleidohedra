@@ -194,6 +194,14 @@ appendix rows (W1–W62, then R1–R124). D1–D86 are unchanged.
 | D101 | White Knight | solid | R115 | #65 |
 | D102 | Fallen Humpty (Slice-48 of #62; the equal-edged form of Humpty Dumpty's pattern, non-convex deltahedron) | solid | – | #62 |
 
+## D103–D105: version 6 (2026-10-30), paper #78 The Truncated Icosahedron Star (TI Star)
+
+| D | Name | Kind | Code | Paper |
+|---|---|---|---|---|
+| D103 | Golden TI Star (the truncated icosahedron with its face pyramids turned outwards at 1/φ of their height; the doubling form, at 2×, is the same construction and has no separate number) | solid | – | #78 |
+| D104 | Star Halo (DICTO's name; the hull of the TI Star's 32 tips, a non-Catalan pentakis dodecahedron) | solid | – | #78 |
+| D105 | TI Star core (placeholder name; the icosahedron truncated at 1/φ³, hexagon edges in the ratio √5) | solid | – | #78 |
+
 No D-number: Alicia (W48), the Unicorn (W58) and the Bandersnatch (W60) are cell-first sections through corner layers, which are in
 Alicia Boole Stott's 1900 series (read for #63 version 3), so they are known shapes; they are in the dataset with DICTO's names.
 Correction: Humpty Dumpty (W56, D85) is also one of her sections. Its status is now "known"; D85 is kept, as D-numbers are never reused.
