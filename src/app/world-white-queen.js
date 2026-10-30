@@ -14,6 +14,9 @@
 // gold-ivory, the back cells blue, each tiling the shadow once in the main views; a slider pulls the two layers apart along the
 // picture's depth (DICTO's Double Vision); side-on cells are flat and left out. Words in all 7 languages (i18n wq.*).
 import * as THREE from 'three';
+import { LineSegments2 } from 'three/addons/lines/LineSegments2.js';
+import { LineSegmentsGeometry } from 'three/addons/lines/LineSegmentsGeometry.js';
+import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
 import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
@@ -153,7 +156,9 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
 
   // ---- the Shadow view ----
   const shadowGroup = new THREE.Group();
-  const shellMat = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, flatShading: true, transparent: true, opacity: SHELL, depthWrite: false, roughness: 0.6, metalness: 0, emissive: 0x4e4a40 });
+  // Render standard (docs/RENDER-STANDARD.md, DICTO 10-30): solid faces with polygon offset in the app's Colour (solid) view, glass only
+  // in the Translucent view; no milky emissive wash; edges as antialiased screen-space lines (outline 2.4 px, inner 1.4 px).
+  const shellMat = new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, flatShading: true, transparent: true, opacity: SHELL, depthWrite: false, roughness: 0.5, metalness: 0, emissive: 0x16140f, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
   shellMat.userData.hollow = true;
   const innerMat = new THREE.LineBasicMaterial({ color: 0xb8c2d6, transparent: true, opacity: 0.3, depthWrite: false });   // the inner edges step back so the outline reads
   const hullMat = new THREE.LineBasicMaterial({ color: 0xfff4d6 });
@@ -175,7 +180,11 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
   const stageGeo = new THREE.BufferGeometry();
   stageGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(7200 * 6), 3));
   const stageLines = new THREE.LineSegments(stageGeo, innerMat);
-  shadowGroup.add(inner, stageLines, shell, hullLines);
+  const fat = (color, width, op = 1) => { const l = new LineSegments2(new LineSegmentsGeometry(), new LineMaterial({ color, linewidth: width, transparent: op < 1, opacity: op, depthWrite: op >= 1 })); l.frustumCulled = false; return l; };
+  const setFat = (l, arr, count) => { l.geometry.dispose(); l.geometry = new LineSegmentsGeometry(); if (count > 0) l.geometry.setPositions(arr.subarray(0, count)); l.visible = l.visible && count > 0; };
+  const fatInner = fat(0xb8c2d6, 1.4, 0.55), fatStage = fat(0xb8c2d6, 1.2, 0.5), fatHull = fat(0xfff4d6, 2.4);
+  fatInner.renderOrder = 1; fatStage.renderOrder = 1; fatHull.renderOrder = 3;
+  shadowGroup.add(fatInner, fatStage, shell, fatHull);
   for (const o of [inner, stageLines, shell, hullLines]) o.frustumCulled = false;
 
   // ---- the Slice view: rebuilt per stop, in its own turning group (Humpty Dumpty turns) ----
@@ -200,7 +209,8 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     E.forEach(([i, j], k) => { ep.set(P[i], k * 6); ep.set(P[j], k * 6 + 3); });
     geo.setDrawRange(0, E.length * 2);
     geo.attributes.position.needsUpdate = true;
-    inner.visible = !md; stageLines.visible = md;
+    fatInner.visible = !md; fatStage.visible = md;
+    setFat(md ? fatStage : fatInner, ep, E.length * 6);
     const sp = shellGeo.attributes.position.array, sc = shellGeo.attributes.color.array, sn = shellGeo.attributes.normal.array, hp = hullGeo.attributes.position.array;
     const col = new THREE.Color(), a = new THREE.Vector3(), b = new THREE.Vector3(), c = new THREE.Vector3();
     let n = 0, m = 0;
@@ -217,8 +227,11 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     hullGeo.setDrawRange(0, m);
     for (const x of ['position', 'color', 'normal']) shellGeo.attributes[x].needsUpdate = true;
     hullGeo.attributes.position.needsUpdate = true;
+    fatHull.visible = true; setFat(fatHull, hp, m * 3);
     shell.visible = !skeleton;
-    shellMat.opacity = SHELL * opacity;
+    const solid = opacity >= 1;   // Colour (solid): an opaque shell like the Polyhedraverse stars; Translucent: the glass shows the inside
+    if (shellMat.transparent === solid) { shellMat.transparent = !solid; shellMat.depthWrite = solid; shellMat.needsUpdate = true; }
+    shellMat.opacity = solid ? 1 : SHELL * opacity;
   }
   function drawSlice() {
     clearSpin();
@@ -269,7 +282,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     if (lines.length) {
       const lg = new THREE.BufferGeometry();
       lg.setAttribute('position', new THREE.Float32BufferAttribute(lines, 3));
-      spin.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: s.dim < 3 ? IVORY : edgeHex })));
+      const fl = fat(s.dim < 3 ? IVORY : edgeHex, 2); fl.geometry.setPositions(lines); spin.add(fl); lg.dispose();
     }
     for (const o of spin.children) o.frustumCulled = false;
     tickSpin();
@@ -317,8 +330,8 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     }
     const lg = new THREE.BufferGeometry();
     lg.setAttribute('position', new THREE.Float32BufferAttribute(lines, 3));
-    const l = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: skeleton ? 0xdfe6f0 : edge, transparent: edgeOpacity < 1, opacity: edgeOpacity, depthWrite: edgeOpacity >= 1 }));
-    l.frustumCulled = false; g.add(l);
+    const l = fat(skeleton ? 0xdfe6f0 : edge, 1.8, edgeOpacity); if (lines.length) l.geometry.setPositions(lines); lg.dispose();
+    g.add(l);
   }
   let halvesShown = null;
   function drawHalves() {
