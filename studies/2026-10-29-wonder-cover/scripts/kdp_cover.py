@@ -43,13 +43,13 @@ y = para(x, y, 'Four-dimensional space cannot be entered, but it can be seen, by
          'Stott, daughter of George Boole and a contemporary of Lewis Carroll, published the slices of the 600-cell, which she had '
          'learned to see without formal training. This book completes that picture: the White Queen 600-cell, with all 62 slice '
          'patterns in her four main directions, her shadows and her fifteen shells of cells; and her polar partner the Red Queen '
-         '120-cell, built exactly from her.', body, wid) + px(0.12)
-y = para(x, y, 'On the way, three small pieces close the gaps between icosahedra, and the shadows of four dimensions give new '
+         '120-cell, built exactly from her, with the five stages that lead from one Queen to the other.', body, wid) + px(0.12)
+y = para(x, y, 'On the way, three small pieces close the gaps between icosahedra, a new law shows that face to face Aristotle\'s pyramids keep to their own solids, and the shadows of four dimensions give new '
          'solids with equal triangular faces. At the end, the five pyramids that Aristotle said fill space turn out to be exactly '
          'the cores of the four-dimensional regular solids, seen in perspective.', body, wid) + px(0.35)
 y = para(x, y, 'DICTO is an artist in Osaka, Japan, with a background in architectural sculpture, stonecarving and Buddhist statuary. '
          'He builds geometric sculpture from recycled PET bottles with his own modular systems, B1NR and DICTOspheres. '
-         'He is also the author of HexOct: The Laws of Stacking and The Golden Cycle.', F('NimbusSans-Regular.otf', 10.5), wid)
+         'He is also the author of HexOct: The Hexagonality Law, The Golden Cycle and Quanta of Space: A Manifesto.', F('NimbusSans-Regular.otf', 10.5), wid)
 # ◆ DICTO ◆ in the cover's LED letters, centred in the free space between the text and the emblem (DICTO 10-29)
 mk = Image.open('dicto-mark.png'); mw = px(3.2); mk = mk.resize((mw, int(mk.height * mw / mk.width)), Image.LANCZOS)
 gap_top, gap_bot = y, px(BLEED + TH - 1.25) - px(0.75) - px(0.1)
