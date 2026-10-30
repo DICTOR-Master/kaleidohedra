@@ -4918,6 +4918,7 @@ async function init() {
     // ?open=roofFold, ?open=stellaJewel:hexa ... opens that DICTO world directly.
     const openWorld = new URLSearchParams(location.search).get('open')?.match(/^([a-zA-Z]+)(?::(\w+))?$/);
     const openKit = new URLSearchParams(location.search).get('open')?.match(/^kit:([\w.]+)$/);
+    const openStar = new URLSearchParams(location.search).get('open')?.match(/^starstep:(\w+)(?::(\d+))?$/i);
     const OPENABLE = ['octet', 'thirteens', 'chains', 'dodeca', 'theaetetus', 'up', 'upFilm', 'kpFilm', 'thirteens', 'octet', 'icosa', 'roofFold', 'stellaJewel', 'sunstar', 'octetBuild', 'breathing', 'bodhiPyro', 'doubleVision', 'vajrayana', 'ocdStella', 'octetTruss', 'reuleaux', 'aristotle', 'platonicMix', 'dictonic', 'globalWeb', 'stackings', 'bloom', 'bloom', 'whiteQueen', 'cycles', 'shells', 'golden', 'studies', 'targets'];
     if (openWorld?.[1] === 'whitequeen') openWorld[1] = 'whiteQueen';   // ?open=whitequeen (the paper's link, lower case)
     if (openWorld && OPENABLE.includes(openWorld[1])) {
@@ -4933,6 +4934,17 @@ async function init() {
     } else if (openKit && KITS13[openKit[1]]) {
       // ?open=kit:<id> (DICTO 2026-10-21, paper #44's "View in app"): a Polyhedraverse kit, started as the wizard starts it.
       setTimeout(() => dimensionWizard.go(`tool:polyKit:${openKit[1]}`), 0);
+    } else if (openStar && POLYHEDRA_ALL[openStar[1]]) {
+      // ?open=starstep:<id>[:<k>] (DICTO 2026-10-31, the Star Cores papers' "View in app"): Polyhedraverse on that solid, its
+      // ★ Star step k steps on (1 Star, 2 Halo, 3 Next, 4 the next Star …).
+      // Started once the shape's world has opened and any question about a saved build is answered (the question's check
+      // empties and restores the build, which would end a star step begun before it).
+      const action = `tool:polyShape:${openStar[1]}`;
+      const startStar = (tries = 0) => {
+        if (!(worldNow?.action === action && worldNow.keys && !worldNow.asking) && tries < 3000) { setTimeout(() => startStar(tries + 1), 100); return; }
+        if (!polyWorld?.openStarStep(openStar[1], Math.min(30, Number(openStar[2] ?? 0)))) console.info('star step: not a convex solid', openStar[1]);
+      };
+      setTimeout(() => { dimensionWizard.go(action); setTimeout(startStar, 100); }, 0);
     } else dimensionWizard.open();
 
     window.addEventListener('keydown', (e) => {
@@ -6103,7 +6115,7 @@ async function init() {
   polyWorld = createPolyWorld({
     scene,
     showHudPrompt,
-    fitView: (radius) => fitCameraTo([0, 0, 0], radius),
+    fitView: (radius, exact = false) => fitCameraTo([0, 0, 0], radius, null, exact),
     getMaterial: () => materialSelect.value,
     // D3's More…: DICTO's families, only the shapes that fit the tapped face.
     pickShape: (fits, onPick, opts) => openShapePicker(fits, onPick, opts),
@@ -6144,6 +6156,7 @@ async function init() {
     window.__stackingsProbe = () => stackingsWorld?.probe?.() ?? null;
     window.__bloomProbe = () => bloomWorld?.probe?.() ?? null;
     window.__whiteQueenProbe = () => whiteQueenWorld?.probe?.() ?? null;
+    window.__starStepProbe = () => polyWorld?.starProbe?.() ?? null;
     window.__platonicMixProbe = () => platonicMixWorld?.probe?.() ?? null;
     window.__studiesProbe = () => studiesWorld?.probe?.() ?? null;
     // the DICTO Icosahedral Octet and its build world: the network shown and its pieces by role (DICTO 2026-10-23: the AXE gap)

@@ -37,6 +37,8 @@ import { kitSlots, kitFrame, kitIcosahedron, goldenRectangles } from '../krp-cor
 import { t } from './i18n.js';
 import { polyShapeName } from './poly-shapes.js';
 import { softActive, softState, onSoftChange, puffedFor, finishMaterial, applyFinish, seamMaterial, seamLines } from './soft-finish.js';
+import { createStarStep } from './star-step.js';
+import { RULES as STAR_RULES, solidOf as starSolidOf } from './star-step-geometry.js';
 
 export { polyShapeEdges, polyShapeName } from './poly-shapes.js';
 
@@ -247,6 +249,37 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   }
   const sphereGeometry = new THREE.SphereGeometry(1, 32, 20);
   const outlineNode = () => ({ id: 'outline', shape: view.shape, transform: { position: [0, 0, 0], quaternion: [0, 0, 0, 1] } });
+  // ---- ★ Star step (DICTO's Star Cores papers, #79; star-step.js): for the convex solid on show (the build's one piece; the papers'
+  // link opens it on any convex shape), each tap one step of the star core treatment: Star, Halo, Next (the halo the new solid). While it runs,
+  // its own drawing stands in for the build; Reset (or any change to the build) goes back to the solid.
+  const starStep = createStarStep({
+    scene,
+    fitView: (r) => fitView?.(r),
+    look: () => ({ skeleton, opacity }),
+    onSettled: () => renderPanel(),
+  });
+  const starConvex = new Map();
+  const starOk = (id) => {
+    if (!starConvex.has(id)) { const s = POLYHEDRA[id]; starConvex.set(id, !!s && !s.curved && isConvex(s) && !!starSolidOf(s)); }
+    return starConvex.get(id);
+  };
+  /** The solid the star step works on: the build's one piece; null when there is none or it is not convex. */
+  function starTarget() {
+    if (!active || spherical || view.rcp || kitOn() || nodes.length !== 1) return null;
+    return starOk(nodes[0].shape) ? nodes[0] : null;
+  }
+  function starStart(n) {
+    return starStep.start(POLYHEDRA[n.shape], colorOf(n.shape, n.material, familiesFor(n.shape)[0]), n.transform);
+  }
+  function starReset() {
+    if (!starStep.on) return;
+    starStep.reset();
+    rebuild(); renderPanel();
+  }
+  function starRow(L) {
+    const on = starStep.on;
+    return `<div class="poly-golden poly-star"><button type="button" class="poly-star-go" data-star title="${t('poly.star.title', L)}">${t('poly.star', L)}</button>${on ? `<label>${t('poly.star.rule', L)} <select data-star-rule>${STAR_RULES.map((r) => `<option value="${r}"${r === starStep.rule ? ' selected' : ''}>${t(`poly.star.rule.${r}`, L)}</option>`).join('')}</select></label>${starStep.hasLayer ? `<button type="button" data-star-layer aria-pressed="${starStep.layer}" title="${t('poly.star.layer.title', L)}">${t('poly.star.layer', L)}</button>` : ''}<button type="button" data-star-reset title="${t('poly.star.reset.title', L)}">${t('poly.star.reset', L)}</button>` : ''}</div>${on ? `<div class="poly-star-caption" data-star-caption>${starStep.caption(L)}</div>` : ''}`;
+  }
   // ---- what comes next (DICTO 2026-10-09: "more visual clue help what comes next", "visible
   // patterning"): for pieces with a known pattern (krp-core HINT_RULES), the free spots next to the
   // build as faint ghosts in the colour of the piece that goes there, and the faces they touch glowing
@@ -453,7 +486,9 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
 
   function rebuild() {
     clearGroup();
+    starStep.setVisible(active);
     if (!active) return;
+    if (starStep.on) return; // the star step's own drawing stands in for the build (no tap targets)
     if (nodes.length && spherical) {
       for (const n of nodes) {
         const { centre, R } = sphereOf(n.shape);
@@ -733,7 +768,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     commit();
   }
 
-  function commit() { save(); rebuild(); onChange(); renderPanel(); renderName(); }
+  function commit() { if (starStep.on) starStep.reset(); save(); rebuild(); onChange(); renderPanel(); renderName(); }
   function handleTap(hit, mode) {
     const kind = hit.object.userData.poly;
     if (kind === 'outline') {
@@ -941,20 +976,24 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     const hasRcp = active && !spherical && rcpRoot() && nodes.length === 1;
     const hasHintRow = active && !spherical && hasHints();
     const hasBestRow = active && !spherical && nodes.length > 0;
-    const show = active && !spherical && (selection || chosen || isGolden || hasParts || hasRcp || hasHintRow || hasBestRow);
+    const hasStar = !!starTarget() || (active && starStep.on);
+    const show = active && !spherical && (selection || chosen || isGolden || hasParts || hasRcp || hasHintRow || hasBestRow || hasStar);
     panel.classList.toggle('visible', Boolean(show));
     if (!show) return;
     const L = lang();
+    // While the star step runs, its row alone: the build's helpers don't apply to the star.
+    if (starStep.on) { stripBody.innerHTML = starRow(L); return; }
     const offer = selection ? queue().filter((id) => fitsAt(id, selection)) : chosen ? [chosen] : [];
     stripBody.innerHTML = `<div class="poly-shapes">${offer.map((id) => { const pinned = isFavourite(id); return `<button type="button" class="poly-shape${id === chosen ? ' chosen' : ''}${pinned ? ' pinned' : ''}" data-shape="${id}" title="${polyShapeName(id).replaceAll('_', ' ')} · ${t(pinned ? 'poly.unpinHint' : 'poly.pinHint', L)}"><canvas></canvas></button>`; }).join('')}
       ${selection ? `<button type="button" class="poly-more" data-more>${t('poly.more', L)}</button>` : ''}
       ${selection && selection.face != null && FOURD.has(selection.node.shape) ? `<button type="button" class="poly-more" data-duoprism>${t('poly.duoprism', L)}</button>` : ''}
       ${selection && REWRITE_TARGET[selection.node.shape] ? `<button type="button" class="poly-more" data-transform>${t('poly.transform', L, { name: polyShapeName(REWRITE_TARGET[selection.node.shape]).replaceAll('_', ' ') })}</button>` : ''}
-      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${kitOn() ? `<div class="poly-golden poly-kit-row"><span>${t(kitDone() ? 'poly.kit.done' : 'poly.kit', L, { name: KITS13[view.kit].label })}</span>${kitCells() ? `<button type="button" data-cells aria-pressed="${!!view.cells}" title="${t('poly.cells.title', L)}">${t('poly.cells', L)}</button>` : ''}${kitIco() ? `<button type="button" data-pacioli aria-pressed="${!!view.pacioli}" title="${t('poly.pacioli.title', L)}">${t('poly.pacioli', L)}</button>` : ''}<button type="button" data-kit-off title="${t('poly.kit.off', L)}">✕</button></div>` : ''}${hasHintRow || hasBestRow ? `<div class="poly-golden">${hasHintRow ? `<button type="button" data-hints aria-pressed="${view.hints && !view.bestFits}" title="${t('poly.hints.title', L)}">${t('poly.hints', L)}</button>` : ''}${hasBestRow ? `<button type="button" data-best aria-pressed="${view.bestFits}" title="${t('poly.best.title', L)}">${t('poly.best', L)}</button>` : ''}</div>${hasBestRow && view.bestFits ? bestRow(L) : ''}` : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.filter((v) => v === 'solid' || nodes.some((n) => PART_PICK[n.shape]?.[v])).map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}`;
+      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${kitOn() ? `<div class="poly-golden poly-kit-row"><span>${t(kitDone() ? 'poly.kit.done' : 'poly.kit', L, { name: KITS13[view.kit].label })}</span>${kitCells() ? `<button type="button" data-cells aria-pressed="${!!view.cells}" title="${t('poly.cells.title', L)}">${t('poly.cells', L)}</button>` : ''}${kitIco() ? `<button type="button" data-pacioli aria-pressed="${!!view.pacioli}" title="${t('poly.pacioli.title', L)}">${t('poly.pacioli', L)}</button>` : ''}<button type="button" data-kit-off title="${t('poly.kit.off', L)}">✕</button></div>` : ''}${hasHintRow || hasBestRow ? `<div class="poly-golden">${hasHintRow ? `<button type="button" data-hints aria-pressed="${view.hints && !view.bestFits}" title="${t('poly.hints.title', L)}">${t('poly.hints', L)}</button>` : ''}${hasBestRow ? `<button type="button" data-best aria-pressed="${view.bestFits}" title="${t('poly.best.title', L)}">${t('poly.best', L)}</button>` : ''}</div>${hasBestRow && view.bestFits ? bestRow(L) : ''}` : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.filter((v) => v === 'solid' || nodes.some((n) => PART_PICK[n.shape]?.[v])).map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}${hasStar ? starRow(L) : ''}`;
     stripBody.querySelectorAll('.poly-shape canvas').forEach((cv) => disposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 34)));
   }
   panel.addEventListener('change', (e) => {
     if (e.target.matches('[data-golden-recipe]')) recipe = Number(e.target.value);
+    if (e.target.matches('[data-star-rule]')) { starStep.setRule(e.target.value); renderPanel(); }
     if (e.target.matches('[data-parts]')) { view.parts = e.target.value; save(); rebuild(); }
     if (e.target.matches('[data-rcp-target]')) { view.rcp.target = e.target.value; view.rcp.n = 1; view.rcp.open = true; save(); rebuild(); renderPanel(); }
   });
@@ -978,6 +1017,14 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     if (!b) return;
     if (pressed) { pressed = false; return; } // that was a long-press (pin), not a tap
     if ('clear' in b.dataset) { chosen = null; renderPanel(); return; }
+    if ('star' in b.dataset) {
+      if (!starStep.on) { const n = starTarget(); if (!n || !starStart(n)) return; selection = null; rebuild(); }
+      starStep.advance();
+      renderPanel();
+      return;
+    }
+    if ('starReset' in b.dataset) { starReset(); return; }
+    if ('starLayer' in b.dataset) { starStep.toggleLayer(); renderPanel(); return; }
     if (rcpAct(b)) return;
     if ('hints' in b.dataset) { if (view.bestFits) { view.bestFits = false; view.hints = true; } else view.hints = !view.hints; save(); rebuild(); renderPanel(); return; }
     if ('cells' in b.dataset) { view.cells = !view.cells; save(); rebuild(); renderPanel(); return; }
@@ -1035,13 +1082,13 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       renderPanel();
       renderName();
     },
-    setSkeleton(on) { skeleton = on; if (active) rebuild(); },
+    setSkeleton(on) { skeleton = on; if (active) { rebuild(); starStep.redraw(); } },
     /** Soft applies to the pieces as they are: not to Skeleton, Spherical or a 4D cell build (their own drawing). */
     softApplies: () => active && !skeleton && !spherical && !view.rcp,
-    setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) rebuild(); } },
+    setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) { rebuild(); starStep.redraw(); } } },
     setLatticeView() { /* no lattice here: shapes are placed freely */ },
     refresh() { if (active) rebuild(); },
-    setSpherical(on, scale = 1) { if (on === spherical && scale === sphereScale) return; spherical = on; sphereScale = scale; if (active) rebuild(); },
+    setSpherical(on, scale = 1) { if (on === spherical && scale === sphereScale) return; spherical = on; sphereScale = scale; const wasStar = starStep.on; if (on) starStep.reset(); if (active) { rebuild(); if (wasStar) renderPanel(); } },
     /** DICTO's shape list: build with this shape. An empty world shows its outline to tap; with a
      *  build, it becomes the chosen shape, going straight onto each face tapped. */
     startWith(id) {
@@ -1085,11 +1132,25 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       fittedRadius = 2.2 * Math.max(...POLYHEDRA[seed].vertices.map((v) => Math.hypot(...v)));
       fitView?.(fittedRadius);
     },
+    /** ?open=starstep:<id>[:<k>] (the Star Cores papers' "View in app"): the star step on shape `id`, k steps on (no animation).
+     *  The build is left as it is; an empty world shows `id`'s outline once the star step is reset. */
+    openStarStep(id, k = 0) {
+      if (!active || !starOk(id)) return false;
+      const n = nodes.length === 1 && nodes[0].shape === id ? nodes[0] : { ...outlineNode(), shape: id };
+      if (!starStart(n)) return false;
+      selection = null;
+      for (let i = 0; i < k; i++) starStep.advance(true);
+      fittedRadius = Math.max(...POLYHEDRA[id].vertices.map((v) => Math.hypot(...v)));
+      fitView?.(starStep.reach, true); // framed on what the link shows, nearer as well as farther
+      rebuild(); renderPanel();
+      return true;
+    },
+    starProbe: () => starStep.probe(),
     get shape() { return view.shape; },
     get isEmpty() { return nodes.length === 0; },
     clear() { nodes = []; connections = []; selection = null; chosen = null; commit(); },
     snapshot: toJSON,
-    restore(json) { setFromJSON(json); selection = null; save(); rebuild(); renderPanel(); renderName(); onChange(); },
+    restore(json) { starStep.reset(); setFromJSON(json); selection = null; save(); rebuild(); renderPanel(); renderName(); onChange(); },
     toJSON,
   };
 }
