@@ -11,7 +11,7 @@ is a cube root (stored exactly as a symbolic expression, with decimal corners).
 
 ## What is new in version 6 (2026-10-30)
 
-Three solids of paper #78, The Truncated Icosahedron Star (TI Star), exact in ℚ(√5), with D-numbers D103–D105: the **Golden TI Star** (D103, non-convex, 92 corners, 180 triangles, volume exactly φ times the truncated icosahedron), the **Star Halo** (D104, DICTO's name: the hull of its 32 tips, a pentakis dodecahedron that is not the Catalan one) and the **TI Star core** (D105, placeholder name: the icosahedron truncated at 1/φ³ of each edge, its hexagon edges exactly 1/√5 and 1). Built by build/build_v6.py from the #54 frame; all checks pass (check.py: 1505 checks, 65 solids). D102 (Fallen Humpty, #62) still has no model file: its exact equal-edged form is not yet solved.
+Three solids of paper #78, The Truncated Icosahedron Star (TI Star), exact in ℚ(√5), with D-numbers D103–D105: the **Golden TI Star** (D103, non-convex, 92 corners, 180 triangles, volume exactly φ times the truncated icosahedron), the **Star Halo** (D104, DICTO's name: the hull of its 32 tips, a pentakis dodecahedron that is not the Catalan one) and the **TI Star core** (D105, DICTO's name: the icosahedron truncated at 1/φ³ of each edge, its hexagon edges exactly 1/√5 and 1). Built by build/build_v6.py from the #54 frame; all checks pass (check.py: 1505 checks, 65 solids). D102 (Fallen Humpty, #62) still has no model file: its exact equal-edged form is not yet solved.
 
 ## What is new in version 5 (2026-10-28)
 

@@ -73,7 +73,7 @@ CV, CF = halfspace_solid(face_planes(IP, IPF) + face_planes(DH, DHF))
 el = sorted({dot(sub(CV[a], CV[b]), sub(CV[a], CV[b])) for a, b in edges_of(CF)}, key=lambda q: q.f())
 log(len(el) == 2 and el[1] == el[0] * Q(5), f'core edges: two lengths, ratio^2 exactly 5 ({[fmt(x) for x in el]})')
 emit('dicto-ti-star-core', {'name': 'TI Star core', 'finding': '', 'paper': '#78 The Truncated Icosahedron Star (TI Star)', 'dicto_doi': D78,
-      'status': 'new as a station (the icosahedron truncated at 1/phi^3 of each edge, hexagon edges in the ratio sqrt5; the core of every turn of the TI Star cycles and the polar partner of the Star Halo; #78). Placeholder name until DICTO names it.',
+      'status': 'new as a station (the icosahedron truncated at 1/phi^3 of each edge, hexagon edges in the ratio sqrt5; the core of every turn of the TI Star cycles and the polar partner of the Star Halo; #78).',
       'convex': True, 'symmetry_label': 'auto',
       'scale_note': 'frame of #54; the intersection of the icosahedron of the Golden TI Star\'s 12 pentagon tips and the dodecahedron of its 20 hexagon tips',
       'source': {'app': 'study', 'path': 'research:studies/2026-10-30-spiked-ti', 'id': None}},

@@ -200,7 +200,7 @@ appendix rows (W1–W62, then R1–R124). D1–D86 are unchanged.
 |---|---|---|---|---|
 | D103 | Golden TI Star (the truncated icosahedron with its face pyramids turned outwards at 1/φ of their height; the doubling form, at 2×, is the same construction and has no separate number) | solid | – | #78 |
 | D104 | Star Halo (DICTO's name; the hull of the TI Star's 32 tips, a non-Catalan pentakis dodecahedron) | solid | – | #78 |
-| D105 | TI Star core (placeholder name; the icosahedron truncated at 1/φ³, hexagon edges in the ratio √5) | solid | – | #78 |
+| D105 | TI Star core (DICTO's name; the icosahedron truncated at 1/φ³, hexagon edges in the ratio √5) | solid | – | #78 |
 
 No D-number: Alicia (W48), the Unicorn (W58) and the Bandersnatch (W60) are cell-first sections through corner layers, which are in
 Alicia Boole Stott's 1900 series (read for #63 version 3), so they are known shapes; they are in the dataset with DICTO's names.
