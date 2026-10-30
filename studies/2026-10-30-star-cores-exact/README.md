@@ -1,4 +1,4 @@
-# Star Cores study 1: exact gains and the polar-spike fill (DICTO, 2026-10-30)
+# Star Cores studies 1 and 2: exact gains, the polar-spike fill, and the cores' two-turn cycle (DICTO, 2026-10-30)
 
 **One-line conclusion.** All ten closed chains of DICTO's growth rule T (#38) are confirmed exactly, with exact gains. The polar-spike fill
 is proved for every convex solid with its centre inside, and checked exactly on all ten.
@@ -57,3 +57,38 @@ condition ρ > R. The papers present it as a lemma with its proof, not as a disc
 - Web queries: "convex hull of a polyhedron and its polar reciprocal dual compound triangulated faces kis join"; "Conway polyhedron notation
   join operator dual of ambo rhombic faces canonical compound"; "Eppstein Kuperberg Ziegler fat 4-polytopes edge-tangent"; "Reciprocating
   the regular polytopes".
+
+## 4. Study 2: the core of each turn, followed exactly (scripts/study2.py; data/study2.json, study2.log)
+
+**One-line conclusion.** For all ten solids the cores alternate with period two, either at once or after one turn. Two turns
+scale the core by t² cos²θ, where θ is the angle between the two kinds of symmetry axis that carry its faces. This proves the plan's
+main statement for two families of planes.
+
+| Solid | Core cycle from turn | Period | Cores (corners; faces) | Two-turn radius scale |
+|---|---|---|---|---|
+| GTI | 0 | 2 | GTI ↔ 30 corners (20 triangles, 12 pentagons) | t²(5+2√5)/15 |
+| FPD, Palintriacontahedron | 1 | 2 | 60 corners (12 pentagons, 20 hexagons) ↔ 30 corners (20 triangles, 12 pentagons) | t²(5+2√5)/15 |
+| Metaxyhexecontahedron | 1 | 2 | 60 corners (12 pentagons, 20 hexagons) ↔ 60 corners (20 triangles, 12 decagons) | t²(5+2√5)/15 |
+| Tweedledum | 1 | 2 | 60 corners (12 pentagons, 20 hexagons) ↔ the same kinds, other proportions | t²(5+2√5)/15 |
+| Icosaxes | 0 | 2 | 24 corners (6 squares, 8 hexagons), two proportions | t²/3 |
+| Unborn Axes | 0 | 2 | 24 corners (8 triangles, 6 octagons) ↔ 24 corners (6 squares, 8 hexagons) | t²/3 |
+| Delilah | 0 | 2 | cube ↔ octahedron | t²/3 |
+| Samson | 1 | 2 | 12 corners (4 triangles, 4 hexagons), two proportions | t²/9 |
+| David | 0 | 2 | its own 4-face shape (one family) | t²/10 |
+
+The face-transitive solids (one family of faces: FPD, Palintriacontahedron, Metaxyhexecontahedron, Tweedledum) take one turn to reach
+two families on the symmetry axes. From then on they alternate like everything else. Their T-chains have period four (study 1), while
+their cores have period two.
+
+**Proposition (two families on two kinds of axis).** Let a core's faces lie on two families: family A perpendicular to one kind of axis
+(say the 5-fold axes) at distance h_A, and family B perpendicular to another (the 3-fold axes) at distance h_B. Let θ be the angle from
+an axis of the first kind to the nearest axis of the second kind. Then the next core again has faces on the same two kinds of axis, with
+the distances swapped and scaled: h_A' = t cosθ · h_B and h_B' = t cosθ · h_A. So two turns scale the core by t² cos²θ and give back its
+shape.
+*Proof.* The tips of family A lie on the A-axes at distance t h_A. Their hull is the regular solid with corners on those axes (the
+icosahedron for the 5-fold axes), whose faces are perpendicular to the B-axes at distance t h_A cosθ. Likewise the hull of the B tips has
+faces perpendicular to the A-axes at distance t h_B cosθ. The core is the intersection of the two hulls. ∎
+The values: icosahedral (5-fold to 3-fold) cos²θ = (5+2√5)/15, which is #78's TI value, now seen to hold for every icosahedral two-family
+core; octahedral (4-fold to 3-fold) cos²θ = 1/3; tetrahedral (one 3-fold axis to the other kind of 3-fold axis) cos²θ = 1/9. The proof needs
+both families to cut the core, which holds for all ten. The exact runs match the formula in every case. David (D2d, one family of
+four faces) is the only case outside the proposition: its own two-turn scale is 1/10.
