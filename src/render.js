@@ -4943,6 +4943,9 @@ async function init() {
       const startStar = (tries = 0) => {
         if (!(worldNow?.action === action && worldNow.keys && !worldNow.asking) && tries < 3000) { setTimeout(() => startStar(tries + 1), 100); return; }
         if (!polyWorld?.openStarStep(openStar[1], Math.min(30, Number(openStar[2] ?? 0)))) console.info('star step: not a convex solid', openStar[1]);
+        // the shape's display name in the header ("Truncated icosahedron"), not its raw name
+        const name = polyShapeName(openStar[1]).replaceAll('_', ' ');
+        document.getElementById('hud-world-title').textContent = name.charAt(0).toUpperCase() + name.slice(1);
       };
       setTimeout(() => { dimensionWizard.go(action); setTimeout(startStar, 100); }, 0);
     } else dimensionWizard.open();

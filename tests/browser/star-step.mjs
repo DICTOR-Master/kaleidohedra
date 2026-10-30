@@ -3,7 +3,7 @@
 // go Star → Halo (the layer: 60 corner pyramids + 90 edge tetrahedra) → Next (the halo, 32 corners and 60 faces, the new solid);
 // Reset; a one-piece build offering the button (a tap starts the icosahedron's star); the link with a step (starstep:CUBE:2) and
 // the Rule choice (Doubling on the cube: the star sticks out of its halo, no layer);
-// no button for a non-convex solid. No console errors. Screenshots (SHOTS): star-step-phone.png, star-step-desktop.png (at the halo).
+// no button for a non-convex solid. No console errors. Screenshots (SHOTS): star-step-phone.png, star-step-desktop.png (at the halo), star-step-<phone|desktop>-star.png (the star).
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 const SH = process.env.SHOTS ?? '/tmp', BASE = process.env.BASE_URL ?? 'http://localhost:8000';
@@ -23,6 +23,7 @@ for (const [name, opts] of [['phone', { viewport: { width: 390, height: 844 }, h
   };
   await open('starstep:TRUNCATED_ICOSAHEDRON');
   assert.equal(await page.locator('.dim-wizard-overlay.open').count(), 0, `${name}: no wizard over it`);
+  assert.equal((await page.textContent('#hud-world-title')).trim(), 'Truncated icosahedron', `${name}: the shape's display name in the header`);
   let st = await probe();
   assert.ok(st, `${name}: the star step is on`);
   assert.deepEqual([st.n, st.phase, st.corners, st.faces], [0, 'solid', 60, 32], `${name}: the truncated icosahedron`);
@@ -42,6 +43,7 @@ for (const [name, opts] of [['phone', { viewport: { width: 390, height: 844 }, h
     console.log(name, `tap ${i + 1}:`, cap);
     assert.match(cap, new RegExp(`Step ${i + 1}`));
     assert.match(cap, new RegExp(`${v} corners, ${f} faces`));
+    if (phase === 'star') await page.screenshot({ path: `${SH}/star-step-${name}-star.png` });
     if (phase === 'halo') {
       assert.equal(st.layer, true, `${name}: the polar layer`);
       assert.match(cap, /layer: 60 corner pyramids \+ 90 edge tetrahedra/);

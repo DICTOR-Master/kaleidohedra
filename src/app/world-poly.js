@@ -1141,7 +1141,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       selection = null;
       for (let i = 0; i < k; i++) starStep.advance(true);
       fittedRadius = Math.max(...POLYHEDRA[id].vertices.map((v) => Math.hypot(...v)));
-      fitView?.(starStep.reach, true); // framed on what the link shows, nearer as well as farther
+      fitView?.(starStep.reach * 1.12, true); // framed on what the link shows (a little room for the tips), nearer as well as farther
       rebuild(); renderPanel();
       return true;
     },
