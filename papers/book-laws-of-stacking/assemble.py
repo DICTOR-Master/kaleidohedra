@@ -1,4 +1,4 @@
-# Assemble the book "HexOct: The Laws of Stacking" (second edition, DICTO 10-29; first edition "The Laws of Stacking") from the published paper sources (DICTO 10-28).
+# Assemble the book "HexOct: The Hexagonality Law" (retitled by DICTO 10-30; "HexOct: The Laws of Stacking" 10-29; first edition "The Laws of Stacking") from the published paper sources (DICTO 10-28).
 # Mechanical pass: each paper becomes a chapter (title, abstract, sections, theorems, figures kept word for word);
 # the meta line goes; "Sources checked", "Data and code" and "References" move to one appendix by chapter;
 # figures are copied into figures/<folder>/ and renumbered per chapter. Front matter and epilogue come from front.html
@@ -118,7 +118,7 @@ figure img{width:100%;display:block}
 body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}
 body{font-size:10pt}'''
 doc=f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>HexOct: The Laws of Stacking</title>
+<html lang="en"><head><meta charset="utf-8"><title>HexOct: The Hexagonality Law</title>
 <link rel="stylesheet" href="../paper.css"><style>{css}</style></head><body>
 <img class="watermark" src="../dicto-logo.png" alt="">
 {(re.sub(r'<div class="coverpage".*?</div>\n', '', front, count=1, flags=re.S) if os.environ.get('KDP') else front).replace('__TOC__',tochtml)}

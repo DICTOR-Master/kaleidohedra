@@ -1,4 +1,4 @@
-# Amazon KDP paperback wrap cover for "HexOct: The Laws of Stacking" (DICTO 10-29). A4 trim 8.27 x 11.69 in, 80 pages,
+# Amazon KDP paperback wrap cover for "HexOct: The Hexagonality Law" (DICTO 10-29; retitled 10-30). A4 trim 8.27 x 11.69 in, 80 pages,
 # standard colour on white paper: spine = 80 x 0.002252 in = 0.180 in (KDP's figure for white paper; check against KDP's
 # cover calculator before upload); bleed 0.125 in on the outer edges; 300 dpi. Left to right: back, spine, front.
 # Front: hexoct-cover-front.png on the dark ground. Spine: HEXOCT · DICTO, top to bottom. Back: text in Nimbus Sans, the
@@ -16,7 +16,7 @@ fr = Image.open('../hexoct-cover-front.png').convert('RGB'); sh = TH - 0.5; sw =
 fr = fr.resize((px(sw), px(sh)), Image.LANCZOS); im.paste(fr, (px(xf0 + (TW - sw) / 2), px(BLEED + 0.25)))
 # spine: text reads top to bottom
 fs = ImageFont.truetype('NimbusSans-Bold.otf', px(SPINE - 0.125) + 6)
-t = 'HEXOCT  ·  THE LAWS OF STACKING  ·  DICTO'; tw = d.textlength(t, font=fs)
+t = 'HEXOCT  ·  THE HEXAGONALITY LAW  ·  DICTO'; tw = d.textlength(t, font=fs)
 lab = Image.new('RGB', (int(tw) + 20, px(SPINE)), GROUND); ImageDraw.Draw(lab).text((10, px(SPINE) / 2), t, font=fs, fill=WHITE, anchor='lm')
 lab = lab.rotate(-90, expand=True); im.paste(lab, (px(xs0), px(BLEED + TH / 2) - lab.height // 2))
 # back
@@ -31,7 +31,7 @@ def para(x, y, text, font, width, fill=WHITE, lead=1.42):
     return y
 x = px(xb0 + 0.85); wid = px(TW - 1.7); y = px(BLEED + 1.0)
 d.text((x, y), 'HexOct', font=F('NimbusSans-Bold.otf', 30), fill=GOLD); y += px(0.62)
-d.text((x, y), 'The Laws of Stacking', font=F('NimbusSans-Regular.otf', 16), fill=WHITE); y += px(0.6)
+d.text((x, y), 'The Hexagonality Law', font=F('NimbusSans-Regular.otf', 16), fill=WHITE); y += px(0.6)
 body = F('NimbusSans-Regular.otf', 11.5)
 y = para(x, y, 'Stack equal balls in close-packed layers, each new layer in the hollows of the one below, and the space between them '
          'is shared out into a few kinds of piece. This book follows three laws found in this one setting. The Rule of Halves: the gaps of '
