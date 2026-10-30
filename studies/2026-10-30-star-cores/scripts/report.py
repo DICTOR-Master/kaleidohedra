@@ -11,7 +11,7 @@ def steps(r):
     if not r or 'error' in r: return '–'
     return ' · '.join(f"{x['volume_over_last']:.3f}" + ('' if x.get('overlaps_new', 0) == 0 else '✗') for x in r['steps'])
 def vsteps(r):
-    if not r: return 'running'
+    if not r: return 'not run (over 200 faces)'
     if 'error' in r: return '–'
     return ' · '.join(f"{x['volume_over_last']:.3f}" for x in r['steps'])
 rows = []
