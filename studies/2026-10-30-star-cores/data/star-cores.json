@@ -1,0 +1,6125 @@
+[
+ {
+  "name": "DICTO skewed rhombic dodecahedron",
+  "D": "D1",
+  "file": "solids/dicto-skewed-rhombic-dodecahedron.json",
+  "symmetry": "C2h",
+  "convex": true,
+  "corners": 14,
+  "faces": 12,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 4,
+  "phi": {
+   "star_over_solid": 1.618033988749895,
+   "halo": {
+    "V": 12,
+    "faces": {
+     "3": 20
+    },
+    "edges": [
+     0.49243,
+     0.54909,
+     0.59253,
+     0.85065,
+     0.96483,
+     1.02589,
+     1.20665,
+     1.30902,
+     1.45083
+    ],
+    "radii": [
+     0.67872,
+     0.80902,
+     0.88845,
+     1.0
+    ]
+   },
+   "halo_over_solid": 1.2740480449357425,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "2": {
+   "star_over_solid": 2.0000000000000004,
+   "halo": {
+    "V": 12,
+    "faces": {
+     "3": 20
+    },
+    "edges": [
+     0.49243,
+     0.54909,
+     0.59253,
+     0.85065,
+     0.96483,
+     1.02589,
+     1.20665,
+     1.30902,
+     1.45083
+    ],
+    "radii": [
+     0.67872,
+     0.80902,
+     0.88845,
+     1.0
+    ]
+   },
+   "halo_over_solid": 2.4060955616443347,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "verdict": "star outside its halo"
+ },
+ {
+  "name": "DICTO skewed elongated dodecahedron ED F16",
+  "D": "D2",
+  "file": "solids/dicto-skewed-ed-16.json",
+  "symmetry": "C2h",
+  "convex": true,
+  "corners": 18,
+  "faces": 12,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 4,
+  "phi": {
+   "star_over_solid": 1.618033988749895,
+   "halo": {
+    "V": 10,
+    "faces": {
+     "3": 12,
+     "4": 2
+    },
+    "edges": [
+     0.61803,
+     0.91059,
+     0.95745,
+     1.1547,
+     1.16523,
+     1.47337,
+     1.63299
+    ],
+    "radii": [
+     0.81446,
+     0.91059,
+     1.0
+    ]
+   },
+   "halo_over_solid": 1.559928248439111,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "2": {
+   "star_over_solid": 2.0,
+   "halo": {
+    "V": 10,
+    "faces": {
+     "3": 12,
+     "4": 2
+    },
+    "edges": [
+     0.61803,
+     0.91059,
+     0.95745,
+     1.1547,
+     1.16523,
+     1.47337,
+     1.63299
+    ],
+    "radii": [
+     0.81446,
+     0.91059,
+     1.0
+    ]
+   },
+   "halo_over_solid": 2.9459928532304827,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "verdict": "star outside its halo"
+ },
+ {
+  "name": "DICTO skewed elongated dodecahedron ED F18",
+  "D": "D3",
+  "file": "solids/dicto-skewed-ed-18.json",
+  "symmetry": "C2h",
+  "convex": true,
+  "corners": 18,
+  "faces": 12,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 4,
+  "phi": {
+   "star_over_solid": 1.618033988749895,
+   "halo": {
+    "V": 8,
+    "faces": {
+     "3": 12
+    },
+    "edges": [
+     0.54598,
+     0.94517,
+     1.06235,
+     1.16743,
+     1.33667,
+     1.4061
+    ],
+    "radii": [
+     0.5923,
+     0.81854,
+     1.0
+    ]
+   },
+   "halo_over_solid": 1.5775397995462235,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "2": {
+   "star_over_solid": 2.0000000000000004,
+   "halo": {
+    "V": 8,
+    "faces": {
+     "3": 12
+    },
+    "edges": [
+     0.54598,
+     0.94517,
+     1.06235,
+     1.16743,
+     1.33667,
+     1.4061
+    ],
+    "radii": [
+     0.5923,
+     0.81854,
+     1.0
+    ]
+   },
+   "halo_over_solid": 2.979253039234404,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "verdict": "star outside its halo"
+ },
+ {
+  "name": "DICTO Jewel (EKP windows; first called Dragon Jewel)",
+  "D": "D4",
+  "file": "solids/dicto-jewel.json",
+  "symmetry": "Th",
+  "convex": false,
+  "corners": 38,
+  "faces": 60,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 2,
+  "phi": {
+   "star_over_solid": 1.6180339887498947,
+   "halo": {
+    "V": 12,
+    "faces": {
+     "3": 20
+    },
+    "edges": [
+     1.05146
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 2.3343910549165567,
+   "star_inside_halo": true,
+   "core": {
+    "V": 8,
+    "faces": {
+     "4": 6
+    },
+    "edges": [
+     1.1547
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": null,
+   "core_core": {
+    "V": 6,
+    "faces": {
+     "3": 8
+    },
+    "edges": [
+     1.41421
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0000000000000004,
+   "halo": {
+    "V": 12,
+    "faces": {
+     "3": 20
+    },
+    "edges": [
+     1.05146
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 4.408599800222016,
+   "star_inside_halo": true,
+   "core": {
+    "V": 8,
+    "faces": {
+     "4": 6
+    },
+    "edges": [
+     1.1547
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": null,
+   "core_core": {
+    "V": 6,
+    "faces": {
+     "3": 8
+    },
+    "edges": [
+     1.41421
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star inside halo, layer does not fill"
+ },
+ {
+  "name": "DICTO Dodeca-13 Wedge",
+  "D": "D6",
+  "file": "solids/dicto-dodeca-13-wedge.json",
+  "symmetry": "C2v",
+  "convex": true,
+  "corners": 8,
+  "faces": 6,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 3,
+  "phi": {
+   "star_over_solid": 1.6180339887498945,
+   "halo": {
+    "V": 6,
+    "faces": {
+     "3": 8
+    },
+    "edges": [
+     0.75356,
+     0.86628,
+     1.00249,
+     1.04578,
+     1.90138
+    ],
+    "radii": [
+     0.10383,
+     0.73886,
+     1.0
+    ]
+   },
+   "halo_over_solid": 0.7056365517990878,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999996,
+   "halo": {
+    "V": 6,
+    "faces": {
+     "3": 8
+    },
+    "edges": [
+     0.75356,
+     0.86628,
+     1.00249,
+     1.04578,
+     1.90138
+    ],
+    "radii": [
+     0.10383,
+     0.73886,
+     1.0
+    ]
+   },
+   "halo_over_solid": 1.33262554906509,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "verdict": "star outside its halo"
+ },
+ {
+  "name": "DICTO Dodeca-13 Needle",
+  "D": "D7",
+  "file": "solids/dicto-dodeca-13-needle.json",
+  "symmetry": "C3v",
+  "convex": true,
+  "corners": 4,
+  "faces": 4,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 2,
+  "phi": {
+   "star_over_solid": 1.6180339887498951,
+   "halo": {
+    "V": 4,
+    "faces": {
+     "3": 4
+    },
+    "edges": [
+     0.25686,
+     1.01821
+    ],
+    "radii": [
+     0.14848,
+     1.0
+    ]
+   },
+   "halo_over_solid": 0.1492845940251693,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "2": {
+   "star_over_solid": 2.0,
+   "halo": {
+    "V": 4,
+    "faces": {
+     "3": 4
+    },
+    "edges": [
+     0.25686,
+     1.01821
+    ],
+    "radii": [
+     0.14848,
+     1.0
+    ]
+   },
+   "halo_over_solid": 0.2819304974671911,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "verdict": "star outside its halo"
+ },
+ {
+  "name": "DICTO Truncated-Icosahedral Hecatodihedron",
+  "D": "D22",
+  "file": "solids/dicto-hecatodihedron.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 80,
+  "faces": 102,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 3,
+  "phi": {
+   "star_over_solid": 1.6180339887498936,
+   "halo": {
+    "V": 90,
+    "faces": {
+     "3": 60,
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.33333,
+     0.35682
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.7949129739075076,
+   "star_inside_halo": true,
+   "layer_pieces": 260,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.2372,
+     0.68656
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "edges": [
+     0.0862,
+     0.54772
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999976,
+   "halo": {
+    "V": 90,
+    "faces": {
+     "3": 60,
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.33333,
+     0.35682
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 7.166859444304466,
+   "star_inside_halo": true,
+   "layer_pieces": 260,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.2372,
+     0.68656
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "edges": [
+     0.0862,
+     0.54772
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "DICTO Ogdoecontahedron (OG)",
+  "D": "D28",
+  "file": "solids/dicto-ogdoecontahedron.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 102,
+  "faces": 80,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 2,
+  "phi": {
+   "star_over_solid": 1.6180339887498942,
+   "halo": {
+    "V": 80,
+    "faces": {
+     "3": 120,
+     "5": 12
+    },
+    "edges": [
+     0.40355,
+     0.40541
+    ],
+    "radii": [
+     0.95379,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.831978762163977,
+   "star_inside_halo": true,
+   "layer_pieces": 282,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "edges": [
+     0.19127,
+     0.50296
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.08054,
+     0.93244
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999993,
+   "halo": {
+    "V": 80,
+    "faces": {
+     "3": 120,
+     "5": 12
+    },
+    "edges": [
+     0.40355,
+     0.40541
+    ],
+    "radii": [
+     0.95379,
+     1.0
+    ]
+   },
+   "halo_over_solid": 7.236859809649577,
+   "star_inside_halo": true,
+   "layer_pieces": 282,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "edges": [
+     0.19127,
+     0.50296
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.08054,
+     0.93244
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "DICTO OCD Stella",
+  "D": "D29",
+  "file": "solids/dicto-ocd-stella.json",
+  "symmetry": "Th",
+  "convex": true,
+  "corners": 48,
+  "faces": 50,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 4,
+  "phi": {
+   "star_over_solid": 1.618033988749895,
+   "halo": {
+    "V": 42,
+    "faces": {
+     "3": 44,
+     "5": 12
+    },
+    "edges": [
+     0.3597,
+     0.61803
+    ],
+    "radii": [
+     0.9796,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.192209813823165,
+   "star_inside_halo": true,
+   "layer_pieces": 144,
+   "layer_fills": false,
+   "overlaps": 5,
+   "core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.15689,
+     0.91847
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.45951,
+     0.7435
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0,
+   "halo": {
+    "V": 42,
+    "faces": {
+     "3": 44,
+     "5": 12
+    },
+    "edges": [
+     0.3597,
+     0.61803
+    ],
+    "radii": [
+     0.9796,
+     1.0
+    ]
+   },
+   "halo_over_solid": 6.02862811603372,
+   "star_inside_halo": true,
+   "layer_pieces": 144,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.15689,
+     0.91847
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.45951,
+     0.7435
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star inside halo, layer does not fill"
+ },
+ {
+  "name": "DICTO Metaxyhexecontahedron",
+  "D": "D30",
+  "file": "solids/dicto-metaxyhexecontahedron.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 32,
+  "faces": 60,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 1,
+  "phi": {
+   "star_over_solid": 1.6180339887498953,
+   "halo": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.22678,
+     0.70352
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.026662418893194,
+   "star_inside_halo": true,
+   "layer_pieces": 122,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.22678,
+     0.70352
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "edges": [
+     0.1137,
+     0.52505
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.000000000000001,
+   "halo": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.22678,
+     0.70352
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 5.715984606421901,
+   "star_inside_halo": true,
+   "layer_pieces": 122,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.22678,
+     0.70352
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "edges": [
+     0.1137,
+     0.52505
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "DICTO Palintriacontahedron",
+  "D": "D31",
+  "file": "solids/dicto-palintriacontahedron.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 32,
+  "faces": 60,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 1,
+  "phi": {
+   "star_over_solid": 1.6180339887498947,
+   "halo": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.27009,
+     0.63246
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.1842349084770385,
+   "star_inside_halo": true,
+   "layer_pieces": 122,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.27009,
+     0.63246
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 30,
+    "faces": {
+     "3": 20,
+     "5": 12
+    },
+    "edges": [
+     0.61803
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999998,
+   "halo": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.27009,
+     0.63246
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 6.013567157827217,
+   "star_inside_halo": true,
+   "layer_pieces": 122,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.27009,
+     0.63246
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 30,
+    "faces": {
+     "3": 20,
+     "5": 12
+    },
+    "edges": [
+     0.61803
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "DICTO Belted Triacontahedron (DBT)",
+  "D": "D37",
+  "file": "solids/dicto-dbt.json",
+  "symmetry": "D3d",
+  "convex": true,
+  "corners": 30,
+  "faces": 32,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 3,
+  "phi": {
+   "star_over_solid": 1.6180339887498942,
+   "halo": {
+    "V": 30,
+    "faces": {
+     "3": 20,
+     "5": 12
+    },
+    "edges": [
+     0.61803
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 2.9682031761126817,
+   "star_inside_halo": true,
+   "layer_pieces": 90,
+   "layer_fills": false,
+   "overlaps": 5,
+   "core": {
+    "V": 12,
+    "faces": {
+     "4": 6,
+     "6": 2
+    },
+    "edges": [
+     0.17774,
+     0.75294,
+     1.77026
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 6,
+    "faces": {
+     "3": 8
+    },
+    "edges": [
+     1.01346,
+     1.72421
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999993,
+   "halo": {
+    "V": 30,
+    "faces": {
+     "3": 20,
+     "5": 12
+    },
+    "edges": [
+     0.61803
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 5.605581764746982,
+   "star_inside_halo": true,
+   "layer_pieces": 90,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 12,
+    "faces": {
+     "4": 6,
+     "6": 2
+    },
+    "edges": [
+     0.17774,
+     0.75294,
+     1.77026
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 6,
+    "faces": {
+     "3": 8
+    },
+    "edges": [
+     1.01346,
+     1.72421
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star inside halo, layer does not fill"
+ },
+ {
+  "name": "DICTO OTT (Octahedrally Truncated Triacontahedron)",
+  "D": "D38",
+  "file": "solids/dicto-ott.json",
+  "symmetry": "Th",
+  "convex": true,
+  "corners": 24,
+  "faces": 38,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 3,
+  "phi": {
+   "star_over_solid": 1.6180339887498945,
+   "halo": {
+    "V": 30,
+    "faces": {
+     "3": 20,
+     "5": 12
+    },
+    "edges": [
+     0.61803
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.0876623620569577,
+   "star_inside_halo": true,
+   "layer_pieces": 84,
+   "layer_fills": false,
+   "overlaps": 5,
+   "core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.15689,
+     0.91847
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.45951,
+     0.7435
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999996,
+   "halo": {
+    "V": 30,
+    "faces": {
+     "3": 20,
+     "5": 12
+    },
+    "edges": [
+     0.61803
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 5.831185672104075,
+   "star_inside_halo": true,
+   "layer_pieces": 84,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.15689,
+     0.91847
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.45951,
+     0.7435
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star inside halo, layer does not fill"
+ },
+ {
+  "name": "DICTO GTI (golden truncated icosahedron)",
+  "D": "D40",
+  "file": "solids/dicto-gti.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 60,
+  "faces": 32,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 2,
+  "phi": {
+   "star_over_solid": 1.6180339887498947,
+   "halo": {
+    "V": 32,
+    "faces": {
+     "4": 30
+    },
+    "edges": [
+     0.61803
+    ],
+    "radii": [
+     0.91059,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.292772573196562,
+   "star_inside_halo": true,
+   "layer_pieces": 150,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 30,
+    "faces": {
+     "3": 20,
+     "5": 12
+    },
+    "edges": [
+     0.61803
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.27009,
+     0.63246
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": true
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999996,
+   "halo": {
+    "V": 32,
+    "faces": {
+     "4": 30
+    },
+    "edges": [
+     0.61803
+    ],
+    "radii": [
+     0.91059,
+     1.0
+    ]
+   },
+   "halo_over_solid": 6.218545293770323,
+   "star_inside_halo": true,
+   "layer_pieces": 150,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 30,
+    "faces": {
+     "3": 20,
+     "5": 12
+    },
+    "edges": [
+     0.61803
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.27009,
+     0.63246
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": true
+  },
+  "verdict": "star fills; core returns (period two)"
+ },
+ {
+  "name": "DICTO FPD (flat pentakis dodecahedron)",
+  "D": "D41",
+  "file": "solids/dicto-fpd.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 32,
+  "faces": 60,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 1,
+  "phi": {
+   "star_over_solid": 1.6180339887498947,
+   "halo": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.27009,
+     0.63246
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.1842349084770336,
+   "star_inside_halo": true,
+   "layer_pieces": 122,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.27009,
+     0.63246
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 30,
+    "faces": {
+     "3": 20,
+     "5": 12
+    },
+    "edges": [
+     0.61803
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999996,
+   "halo": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.27009,
+     0.63246
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 6.0135671578272145,
+   "star_inside_halo": true,
+   "layer_pieces": 122,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.27009,
+     0.63246
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 30,
+    "faces": {
+     "3": 20,
+     "5": 12
+    },
+    "edges": [
+     0.61803
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "DICTO KRE",
+  "D": "D45",
+  "file": "solids/dicto-kre.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 92,
+  "faces": 90,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 1,
+  "phi": {
+   "star_over_solid": 1.618033988749895,
+   "halo": {
+    "V": 90,
+    "faces": {
+     "3": 60,
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.33333,
+     0.35682
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.709771066590293,
+   "star_inside_halo": true,
+   "layer_pieces": 272,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 90,
+    "faces": {
+     "3": 60,
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.33333,
+     0.35682
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.22446,
+     0.5019
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0,
+   "halo": {
+    "V": 90,
+    "faces": {
+     "3": 60,
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.33333,
+     0.35682
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 7.006065221417664,
+   "star_inside_halo": true,
+   "layer_pieces": 272,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 90,
+    "faces": {
+     "3": 60,
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.33333,
+     0.35682
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.22446,
+     0.5019
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "DICTO PHE",
+  "D": "D46",
+  "file": "solids/dicto-phe.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 180,
+  "faces": 92,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 3,
+  "phi": {
+   "star_over_solid": 1.6180339887498938,
+   "halo": {
+    "V": 92,
+    "faces": {
+     "4": 90
+    },
+    "edges": [
+     0.33665,
+     0.40541
+    ],
+    "radii": [
+     0.95379,
+     0.97415,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.915133168365602,
+   "star_inside_halo": true,
+   "layer_pieces": 450,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.40355
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.22446,
+     0.5019
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999982,
+   "halo": {
+    "V": 92,
+    "faces": {
+     "4": 90
+    },
+    "edges": [
+     0.33665,
+     0.40541
+    ],
+    "radii": [
+     0.95379,
+     0.97415,
+     1.0
+    ]
+   },
+   "halo_over_solid": 7.3939005495872845,
+   "star_inside_halo": true,
+   "layer_pieces": 450,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.40355
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.22446,
+     0.5019
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "DICTO TPP",
+  "D": "D47",
+  "file": "solids/dicto-tpp.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 212,
+  "faces": 180,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 3,
+  "phi": {
+   "star_over_solid": 1.6180339887498951,
+   "halo": {
+    "V": 180,
+    "faces": {
+     "5": 12,
+     "6": 80
+    },
+    "edges": [
+     0.11043,
+     0.16337,
+     0.39275,
+     0.50296
+    ],
+    "radii": [
+     0.97812,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.7948657758479585,
+   "star_inside_halo": true,
+   "layer_pieces": 602,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 120,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "edges": [
+     0.1821,
+     0.30719
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.38393,
+     0.43817
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0,
+   "halo": {
+    "V": 180,
+    "faces": {
+     "5": 12,
+     "6": 80
+    },
+    "edges": [
+     0.11043,
+     0.16337,
+     0.39275,
+     0.50296
+    ],
+    "radii": [
+     0.97812,
+     1.0
+    ]
+   },
+   "halo_over_solid": 7.166770308700783,
+   "star_inside_halo": true,
+   "layer_pieces": 602,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 120,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "edges": [
+     0.1821,
+     0.30719
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.38393,
+     0.43817
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "DICTO DPHP",
+  "D": "D48",
+  "file": "solids/dicto-dphp.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 270,
+  "faces": 152,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 3,
+  "phi": {
+   "star_over_solid": 1.6180339887498945,
+   "halo": {
+    "V": 152,
+    "faces": {
+     "3": 240,
+     "4": 30
+    },
+    "edges": [
+     0.21582,
+     0.28887,
+     0.2902,
+     0.41242
+    ],
+    "radii": [
+     0.96753,
+     0.98517,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.9858863354311285,
+   "star_inside_halo": true,
+   "layer_pieces": 690,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.3757,
+     0.41918
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.25209,
+     0.48706
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999991,
+   "halo": {
+    "V": 152,
+    "faces": {
+     "3": 240,
+     "4": 30
+    },
+    "edges": [
+     0.21582,
+     0.28887,
+     0.2902,
+     0.41242
+    ],
+    "radii": [
+     0.96753,
+     0.98517,
+     1.0
+    ]
+   },
+   "halo_over_solid": 7.527521005994203,
+   "star_inside_halo": true,
+   "layer_pieces": 690,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.3757,
+     0.41918
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.25209,
+     0.48706
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "DICTO TPH",
+  "D": "D49",
+  "file": "solids/dicto-tph.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 80,
+  "faces": 132,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 2,
+  "phi": {
+   "star_over_solid": 1.6180339887498962,
+   "halo": {
+    "V": 132,
+    "faces": {
+     "3": 60,
+     "4": 60,
+     "6": 20
+    },
+    "edges": [
+     0.11043,
+     0.50296,
+     0.53271,
+     0.60612
+    ],
+    "radii": [
+     0.9908,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.6071381478751245,
+   "star_inside_halo": true,
+   "layer_pieces": 290,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.28831,
+     0.6021
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.02951,
+     0.60321
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.000000000000002,
+   "halo": {
+    "V": 132,
+    "faces": {
+     "3": 60,
+     "4": 60,
+     "6": 20
+    },
+    "edges": [
+     0.11043,
+     0.50296,
+     0.53271,
+     0.60612
+    ],
+    "radii": [
+     0.9908,
+     1.0
+    ]
+   },
+   "halo_over_solid": 6.8122384570497445,
+   "star_inside_halo": true,
+   "layer_pieces": 290,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.28831,
+     0.6021
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.02951,
+     0.60321
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "DICTO TQH",
+  "D": "D50",
+  "file": "solids/dicto-tqh.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 132,
+  "faces": 140,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 3,
+  "phi": {
+   "star_over_solid": 1.618033988749894,
+   "halo": {
+    "V": 140,
+    "faces": {
+     "3": 60,
+     "4": 90,
+     "5": 12
+    },
+    "edges": [
+     0.038,
+     0.34119,
+     0.3849,
+     0.40541
+    ],
+    "radii": [
+     0.94915,
+     0.95379,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.891167802835852,
+   "star_inside_halo": true,
+   "layer_pieces": 402,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.04519,
+     0.59528
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.29791,
+     0.586
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999991,
+   "halo": {
+    "V": 140,
+    "faces": {
+     "3": 60,
+     "4": 90,
+     "5": 12
+    },
+    "edges": [
+     0.038,
+     0.34119,
+     0.3849,
+     0.40541
+    ],
+    "radii": [
+     0.94915,
+     0.95379,
+     1.0
+    ]
+   },
+   "halo_over_solid": 7.348640906622073,
+   "star_inside_halo": true,
+   "layer_pieces": 402,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.04519,
+     0.59528
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.29791,
+     0.586
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "DICTO TQP",
+  "D": "D51",
+  "file": "solids/dicto-tqp.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 140,
+  "faces": 162,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 4,
+  "phi": {
+   "star_over_solid": 1.6180339887498962,
+   "halo": {
+    "V": 162,
+    "faces": {
+     "3": 120,
+     "4": 60,
+     "6": 20
+    },
+    "edges": [
+     0.03216,
+     0.25243,
+     0.29675,
+     0.33333,
+     0.35682
+    ],
+    "radii": [
+     0.96736,
+     0.99948,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.7883292394923616,
+   "star_inside_halo": true,
+   "layer_pieces": 440,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.25477,
+     0.65776
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "edges": [
+     0.04002,
+     0.58553
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.000000000000002,
+   "halo": {
+    "V": 162,
+    "faces": {
+     "3": 120,
+     "4": 60,
+     "6": 20
+    },
+    "edges": [
+     0.03216,
+     0.25243,
+     0.29675,
+     0.33333,
+     0.35682
+    ],
+    "radii": [
+     0.96736,
+     0.99948,
+     1.0
+    ]
+   },
+   "halo_over_solid": 7.154425773362239,
+   "star_inside_halo": true,
+   "layer_pieces": 440,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.25477,
+     0.65776
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "edges": [
+     0.04002,
+     0.58553
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "DICTO TQHD",
+  "D": "D52",
+  "file": "solids/dicto-tqhd.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 162,
+  "faces": 200,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 4,
+  "phi": {
+   "star_over_solid": 1.6180339887498942,
+   "halo": {
+    "V": 200,
+    "faces": {
+     "3": 120,
+     "4": 120,
+     "5": 12
+    },
+    "edges": [
+     0.0016,
+     0.03841,
+     0.3074,
+     0.36097,
+     0.40206,
+     0.40391
+    ],
+    "radii": [
+     0.95026,
+     0.98402,
+     0.9963,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.959891392652967,
+   "star_inside_halo": true,
+   "layer_pieces": 522,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.19198,
+     0.51919
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.38496,
+     0.43637
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999987,
+   "halo": {
+    "V": 200,
+    "faces": {
+     "3": 120,
+     "4": 120,
+     "5": 12
+    },
+    "edges": [
+     0.0016,
+     0.03841,
+     0.3074,
+     0.36097,
+     0.40206,
+     0.40391
+    ],
+    "radii": [
+     0.95026,
+     0.98402,
+     0.9963,
+     1.0
+    ]
+   },
+   "halo_over_solid": 7.478428417459282,
+   "star_inside_halo": true,
+   "layer_pieces": 522,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.19198,
+     0.51919
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.38496,
+     0.43637
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "Lotus Jewel Axes",
+  "D": "D69",
+  "file": "solids/dicto-lotus-jewel-axes.json",
+  "symmetry": "Th",
+  "convex": false,
+  "corners": 32,
+  "faces": 54,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 3,
+  "phi": {
+   "star_over_solid": 1.6180339887498956,
+   "halo": {
+    "V": 14,
+    "faces": {
+     "3": 24
+    },
+    "edges": [
+     0.89106,
+     1.07869
+    ],
+    "radii": [
+     0.93417,
+     1.0
+    ]
+   },
+   "halo_over_solid": 2.33439105491656,
+   "star_inside_halo": true,
+   "core": {
+    "V": 12,
+    "faces": {
+     "3": 20
+    },
+    "edges": [
+     1.05146
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": null,
+   "core_core": {
+    "V": 20,
+    "faces": {
+     "5": 12
+    },
+    "edges": [
+     0.71364
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.000000000000001,
+   "halo": {
+    "V": 14,
+    "faces": {
+     "3": 24
+    },
+    "edges": [
+     0.89106,
+     1.07869
+    ],
+    "radii": [
+     0.93417,
+     1.0
+    ]
+   },
+   "halo_over_solid": 4.408599800222023,
+   "star_inside_halo": true,
+   "core": {
+    "V": 12,
+    "faces": {
+     "3": 20
+    },
+    "edges": [
+     1.05146
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": null,
+   "core_core": {
+    "V": 20,
+    "faces": {
+     "5": 12
+    },
+    "edges": [
+     0.71364
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star inside halo, layer does not fill"
+ },
+ {
+  "name": "Dodecaxes",
+  "D": "D70",
+  "file": "solids/dicto-dodecaxes.json",
+  "symmetry": "Th",
+  "convex": false,
+  "corners": 32,
+  "faces": 54,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 3,
+  "phi": {
+   "star_over_solid": 1.618033988749895,
+   "halo": {
+    "V": 26,
+    "faces": {
+     "3": 48
+    },
+    "edges": [
+     0.52573,
+     0.53059,
+     0.84575,
+     0.91059
+    ],
+    "radii": [
+     0.79788,
+     0.85065,
+     1.0
+    ]
+   },
+   "halo_over_solid": 2.419536821145719,
+   "star_inside_halo": true,
+   "core": {
+    "V": 24,
+    "faces": {
+     "3": 8,
+     "8": 6
+    },
+    "edges": [
+     0.23983,
+     0.8232
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": null,
+   "core_core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.50462,
+     0.8165
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0,
+   "halo": {
+    "V": 26,
+    "faces": {
+     "3": 48
+    },
+    "edges": [
+     0.52573,
+     0.53059,
+     0.84575,
+     0.91059
+    ],
+    "radii": [
+     0.79788,
+     0.85065,
+     1.0
+    ]
+   },
+   "halo_over_solid": 4.569401310833119,
+   "star_inside_halo": true,
+   "core": {
+    "V": 24,
+    "faces": {
+     "3": 8,
+     "8": 6
+    },
+    "edges": [
+     0.23983,
+     0.8232
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": null,
+   "core_core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.50462,
+     0.8165
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star inside halo, layer does not fill"
+ },
+ {
+  "name": "Samson",
+  "D": "D71",
+  "file": "solids/dicto-samson.json",
+  "symmetry": "Td",
+  "convex": true,
+  "corners": 16,
+  "faces": 10,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 2,
+  "phi": {
+   "star_over_solid": 1.6180339887498951,
+   "halo": {
+    "V": 10,
+    "faces": {
+     "3": 16
+    },
+    "edges": [
+     0.85054,
+     1.41421
+    ],
+    "radii": [
+     0.81556,
+     1.0
+    ]
+   },
+   "halo_over_solid": 1.2774916432883987,
+   "star_inside_halo": false,
+   "core": {
+    "V": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edges": [
+     0.4851,
+     1.24423
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edges": [
+     0.4851,
+     1.24423
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999996,
+   "halo": {
+    "V": 10,
+    "faces": {
+     "3": 16
+    },
+    "edges": [
+     0.85054,
+     1.41421
+    ],
+    "radii": [
+     0.81556,
+     1.0
+    ]
+   },
+   "halo_over_solid": 2.412598948031802,
+   "star_inside_halo": false,
+   "core": {
+    "V": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edges": [
+     0.4851,
+     1.24423
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edges": [
+     0.4851,
+     1.24423
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star outside its halo"
+ },
+ {
+  "name": "Sonsam",
+  "D": "D76",
+  "file": "solids/dicto-sonsam.json",
+  "symmetry": "C3v",
+  "convex": true,
+  "corners": 19,
+  "faces": 13,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 4,
+  "phi": {
+   "star_over_solid": 1.618033988749895,
+   "halo": {
+    "V": 13,
+    "faces": {
+     "3": 22
+    },
+    "edges": [
+     0.60729,
+     0.6281,
+     0.70734,
+     1.0,
+     1.02563,
+     1.06866
+    ],
+    "radii": [
+     0.37686,
+     0.62817,
+     0.72523,
+     1.0
+    ]
+   },
+   "halo_over_solid": 2.1190903458970083,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "2": {
+   "star_over_solid": 2.0000000000000004,
+   "halo": {
+    "V": 13,
+    "faces": {
+     "3": 22
+    },
+    "edges": [
+     0.60729,
+     0.6281,
+     0.70734,
+     1.0,
+     1.02563,
+     1.06866
+    ],
+    "radii": [
+     0.37686,
+     0.62817,
+     0.72523,
+     1.0
+    ]
+   },
+   "halo_over_solid": 4.001994976761893,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "verdict": "star outside its halo"
+ },
+ {
+  "name": "Lahdeli",
+  "D": "D77",
+  "file": "solids/dicto-lahdeli.json",
+  "symmetry": "D3d",
+  "convex": true,
+  "corners": 12,
+  "faces": 8,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 2,
+  "phi": {
+   "star_over_solid": 1.6180339887498953,
+   "halo": {
+    "V": 8,
+    "faces": {
+     "3": 12
+    },
+    "edges": [
+     0.85848,
+     1.02815,
+     1.43122
+    ],
+    "radii": [
+     0.74347,
+     1.0
+    ]
+   },
+   "halo_over_solid": 1.0406453013832788,
+   "star_inside_halo": false,
+   "core": {
+    "V": 6,
+    "faces": {
+     "3": 8
+    },
+    "edges": [
+     1.1547,
+     1.63299
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 6,
+    "faces": {
+     "3": 8
+    },
+    "edges": [
+     1.41421
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0000000000000004,
+   "halo": {
+    "V": 8,
+    "faces": {
+     "3": 12
+    },
+    "edges": [
+     0.85848,
+     1.02815,
+     1.43122
+    ],
+    "radii": [
+     0.74347,
+     1.0
+    ]
+   },
+   "halo_over_solid": 1.965304252737677,
+   "star_inside_halo": false,
+   "core": {
+    "V": 6,
+    "faces": {
+     "3": 8
+    },
+    "edges": [
+     1.1547,
+     1.63299
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 6,
+    "faces": {
+     "3": 8
+    },
+    "edges": [
+     1.41421
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star outside its halo"
+ },
+ {
+  "name": "Ian Dury",
+  "D": "D78",
+  "file": "solids/dicto-ian-dury.json",
+  "symmetry": "C3v",
+  "convex": true,
+  "corners": 16,
+  "faces": 13,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 4,
+  "phi": {
+   "star_over_solid": 1.618033988749895,
+   "halo": {
+    "V": 13,
+    "faces": {
+     "3": 22
+    },
+    "edges": [
+     0.5863,
+     0.70956,
+     0.7592,
+     0.91667,
+     1.0,
+     1.12268
+    ],
+    "radii": [
+     0.51031,
+     0.64818,
+     0.91856,
+     1.0
+    ]
+   },
+   "halo_over_solid": 1.7674679664733333,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999998,
+   "halo": {
+    "V": 13,
+    "faces": {
+     "3": 22
+    },
+    "edges": [
+     0.5863,
+     0.70956,
+     0.7592,
+     0.91667,
+     1.0,
+     1.12268
+    ],
+    "radii": [
+     0.51031,
+     0.64818,
+     0.91856,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.3379407051282053,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "verdict": "star outside its halo"
+ },
+ {
+  "name": "Blockhead",
+  "D": "D79",
+  "file": "solids/dicto-blockhead.json",
+  "symmetry": "C3v",
+  "convex": true,
+  "corners": 10,
+  "faces": 10,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 3,
+  "phi": {
+   "star_over_solid": 1.618033988749895,
+   "halo": {
+    "V": 10,
+    "faces": {
+     "3": 10,
+     "4": 3
+    },
+    "edges": [
+     0.70711,
+     1.0,
+     1.08012
+    ],
+    "radii": [
+     0.40825,
+     0.70711,
+     1.0
+    ]
+   },
+   "halo_over_solid": 1.412022659166597,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999998,
+   "halo": {
+    "V": 10,
+    "faces": {
+     "3": 10,
+     "4": 3
+    },
+    "edges": [
+     0.70711,
+     1.0,
+     1.08012
+    ],
+    "radii": [
+     0.40825,
+     0.70711,
+     1.0
+    ]
+   },
+   "halo_over_solid": 2.6666666666666674,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "verdict": "star outside its halo"
+ },
+ {
+  "name": "Chucky",
+  "D": "D80",
+  "file": "solids/dicto-chucky.json",
+  "symmetry": "C3v",
+  "convex": true,
+  "corners": 19,
+  "faces": 13,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 4,
+  "phi": {
+   "star_over_solid": 1.618033988749895,
+   "halo": {
+    "V": 13,
+    "faces": {
+     "3": 16,
+     "4": 3
+    },
+    "edges": [
+     0.57913,
+     0.86186,
+     0.93734,
+     0.96456,
+     0.99794,
+     1.41276,
+     1.63299
+    ],
+    "radii": [
+     0.53704,
+     0.86186,
+     0.99794,
+     1.0
+    ]
+   },
+   "halo_over_solid": 1.8480307065525754,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "2": {
+   "star_over_solid": 2.0,
+   "halo": {
+    "V": 13,
+    "faces": {
+     "3": 16,
+     "4": 3
+    },
+    "edges": [
+     0.57913,
+     0.86186,
+     0.93734,
+     0.96456,
+     0.99794,
+     1.41276,
+     1.63299
+    ],
+    "radii": [
+     0.53704,
+     0.86186,
+     0.99794,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.4900869700269923,
+   "star_inside_halo": true,
+   "layer_pieces": 49,
+   "layer_fills": false,
+   "overlaps": 5,
+   "core": null
+  },
+  "verdict": "star outside its halo"
+ },
+ {
+  "name": "Fang",
+  "D": "D81",
+  "file": "solids/dicto-fang.json",
+  "symmetry": "C3v",
+  "convex": true,
+  "corners": 7,
+  "faces": 7,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 3,
+  "phi": {
+   "star_over_solid": 1.618033988749895,
+   "halo": {
+    "V": 7,
+    "faces": {
+     "3": 10
+    },
+    "edges": [
+     0.82462,
+     0.9798,
+     1.05198,
+     1.30639
+    ],
+    "radii": [
+     0.6,
+     0.8,
+     1.0
+    ]
+   },
+   "halo_over_solid": 0.7596654461755376,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "2": {
+   "star_over_solid": 2.0000000000000004,
+   "halo": {
+    "V": 7,
+    "faces": {
+     "3": 10
+    },
+    "edges": [
+     0.82462,
+     0.9798,
+     1.05198,
+     1.30639
+    ],
+    "radii": [
+     0.6,
+     0.8,
+     1.0
+    ]
+   },
+   "halo_over_solid": 1.4346614836410756,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "verdict": "star outside its halo"
+ },
+ {
+  "name": "Triskelion Tetrahedron",
+  "D": "D82",
+  "file": "solids/dicto-triskelion-tetrahedron.json",
+  "symmetry": "Td",
+  "convex": true,
+  "corners": 16,
+  "faces": 10,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 2,
+  "phi": {
+   "star_over_solid": 1.618033988749895,
+   "halo": {
+    "V": 10,
+    "faces": {
+     "3": 16
+    },
+    "edges": [
+     0.83299,
+     1.04978
+    ],
+    "radii": [
+     0.74231,
+     1.0
+    ]
+   },
+   "halo_over_solid": 1.2064750568828517,
+   "star_inside_halo": false,
+   "core": {
+    "V": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edges": [
+     0.39606,
+     1.18818
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edges": [
+     0.39606,
+     1.18818
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0000000000000004,
+   "halo": {
+    "V": 10,
+    "faces": {
+     "3": 16
+    },
+    "edges": [
+     0.83299,
+     1.04978
+    ],
+    "radii": [
+     0.74231,
+     1.0
+    ]
+   },
+   "halo_over_solid": 2.2784810126582284,
+   "star_inside_halo": false,
+   "core": {
+    "V": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edges": [
+     0.39606,
+     1.18818
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edges": [
+     0.39606,
+     1.18818
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star outside its halo"
+ },
+ {
+  "name": "Keyaxes",
+  "D": "D83",
+  "file": "solids/dicto-keyaxes.json",
+  "symmetry": "S6",
+  "convex": false,
+  "corners": 32,
+  "faces": 54,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 4,
+  "phi": {
+   "star_over_solid": 1.6180339887498951,
+   "halo": {
+    "V": 32,
+    "faces": {
+     "3": 60
+    },
+    "edges": [
+     0.12838,
+     0.39968,
+     0.60706,
+     0.71204,
+     0.89106,
+     1.08076
+    ],
+    "radii": [
+     0.93417,
+     0.95896,
+     1.0
+    ]
+   },
+   "halo_over_solid": 2.340460694256058,
+   "star_inside_halo": true,
+   "core": {
+    "V": 6,
+    "faces": {
+     "3": 8
+    },
+    "edges": [
+     1.05146,
+     1.7013
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": null,
+   "core_core": {
+    "V": 6,
+    "faces": {
+     "3": 8
+    },
+    "edges": [
+     1.05146,
+     1.7013
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0000000000000004,
+   "halo": {
+    "V": 32,
+    "faces": {
+     "3": 60
+    },
+    "edges": [
+     0.12838,
+     0.39968,
+     0.60706,
+     0.71204,
+     0.89106,
+     1.08076
+    ],
+    "radii": [
+     0.93417,
+     0.95896,
+     1.0
+    ]
+   },
+   "halo_over_solid": 4.420062580086252,
+   "star_inside_halo": true,
+   "core": {
+    "V": 6,
+    "faces": {
+     "3": 8
+    },
+    "edges": [
+     1.05146,
+     1.7013
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": null,
+   "core_core": {
+    "V": 6,
+    "faces": {
+     "3": 8
+    },
+    "edges": [
+     1.05146,
+     1.7013
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star inside halo, layer does not fill"
+ },
+ {
+  "name": "Ganesha",
+  "D": "D84",
+  "file": "solids/dicto-ganesha.json",
+  "symmetry": "C3v",
+  "convex": true,
+  "corners": 30,
+  "faces": 17,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 6,
+  "phi": {
+   "star_over_solid": 1.6180339887498942,
+   "halo": {
+    "V": 11,
+    "faces": {
+     "3": 18
+    },
+    "edges": [
+     0.56397,
+     0.86643,
+     1.0,
+     1.13377,
+     1.33204
+    ],
+    "radii": [
+     0.53426,
+     0.7729,
+     0.87996,
+     1.0
+    ]
+   },
+   "halo_over_solid": 2.7446878583426586,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999993,
+   "halo": {
+    "V": 11,
+    "faces": {
+     "3": 18
+    },
+    "edges": [
+     0.56397,
+     0.86643,
+     1.0,
+     1.13377,
+     1.33204
+    ],
+    "radii": [
+     0.53426,
+     0.7729,
+     0.87996,
+     1.0
+    ]
+   },
+   "halo_over_solid": 5.1834632926974455,
+   "star_inside_halo": false,
+   "core": null
+  },
+  "verdict": "star outside its halo"
+ },
+ {
+  "name": "Kagemusha",
+  "D": "D86",
+  "file": "solids/dicto-shadow-17.json",
+  "symmetry": "D5h",
+  "convex": false,
+  "corners": 17,
+  "faces": 30,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 3,
+  "phi": {
+   "star_over_solid": 1.6180339887498951,
+   "halo": {
+    "V": 20,
+    "faces": {
+     "4": 15,
+     "5": 2
+    },
+    "edges": [
+     0.28662,
+     0.66693,
+     0.71364,
+     0.88211
+    ],
+    "radii": [
+     0.76393,
+     1.0
+    ]
+   },
+   "halo_over_solid": 2.676412758580346,
+   "star_inside_halo": true,
+   "core": {
+    "V": 20,
+    "faces": {
+     "4": 10,
+     "10": 2
+    },
+    "edges": [
+     0.43812,
+     0.60302
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": null,
+   "core_core": null,
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0000000000000004,
+   "halo": {
+    "V": 20,
+    "faces": {
+     "4": 15,
+     "5": 2
+    },
+    "edges": [
+     0.28662,
+     0.66693,
+     0.71364,
+     0.88211
+    ],
+    "radii": [
+     0.76393,
+     1.0
+    ]
+   },
+   "halo_over_solid": 5.054522774981562,
+   "star_inside_halo": true,
+   "core": {
+    "V": 20,
+    "faces": {
+     "4": 10,
+     "10": 2
+    },
+    "edges": [
+     0.43812,
+     0.60302
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": null,
+   "core_core": null,
+   "core_returns_to_shape": false
+  },
+  "verdict": "star inside halo, layer does not fill"
+ },
+ {
+  "name": "Lion",
+  "D": "D87",
+  "file": "solids/dicto-lion.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 42,
+  "faces": 80,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 2,
+  "phi": {
+   "star_over_solid": 1.6180339887498951,
+   "halo": {
+    "V": 80,
+    "faces": {
+     "4": 60,
+     "5": 12
+    },
+    "edges": [
+     0.26762,
+     0.41563,
+     0.71364
+    ],
+    "radii": [
+     0.99084,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.606432911377438,
+   "star_inside_halo": true,
+   "layer_pieces": 162,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 120,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "edges": [
+     0.05946,
+     0.28861,
+     0.34807
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.19794,
+     0.74998
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0000000000000004,
+   "halo": {
+    "V": 80,
+    "faces": {
+     "4": 60,
+     "5": 12
+    },
+    "edges": [
+     0.26762,
+     0.41563,
+     0.71364
+    ],
+    "radii": [
+     0.99084,
+     1.0
+    ]
+   },
+   "halo_over_solid": 6.810906587020402,
+   "star_inside_halo": true,
+   "layer_pieces": 162,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 120,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "edges": [
+     0.05946,
+     0.28861,
+     0.34807
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.19794,
+     0.74998
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "Jabberwock",
+  "D": "D88",
+  "file": "solids/dicto-jabberwock.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 72,
+  "faces": 140,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 3,
+  "phi": {
+   "star_over_solid": 1.618033988749895,
+   "halo": {
+    "V": 140,
+    "faces": {
+     "3": 240,
+     "5": 12
+    },
+    "edges": [
+     0.23692,
+     0.25931,
+     0.28248,
+     0.38525,
+     0.44146
+    ],
+    "radii": [
+     0.97833,
+     0.98575,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.8315690472940944,
+   "star_inside_halo": true,
+   "layer_pieces": 282,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "edges": [
+     0.18922,
+     0.46218
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.19828,
+     0.74944
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0000000000000004,
+   "halo": {
+    "V": 140,
+    "faces": {
+     "3": 240,
+     "5": 12
+    },
+    "edges": [
+     0.23692,
+     0.25931,
+     0.28248,
+     0.38525,
+     0.44146
+    ],
+    "radii": [
+     0.97833,
+     0.98575,
+     1.0
+    ]
+   },
+   "halo_over_solid": 7.236086045164098,
+   "star_inside_halo": true,
+   "layer_pieces": 282,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "edges": [
+     0.18922,
+     0.46218
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.19828,
+     0.74944
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "Tweedledum",
+  "D": "D89",
+  "file": "solids/dicto-tweedledum.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 32,
+  "faces": 60,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 1,
+  "phi": {
+   "star_over_solid": 1.6180339887498945,
+   "halo": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.32929,
+     0.53281
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.348996630544045,
+   "star_inside_halo": true,
+   "layer_pieces": 122,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.32929,
+     0.53281
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.09715,
+     0.56873
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999991,
+   "halo": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.32929,
+     0.53281
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 6.32472688980914,
+   "star_inside_halo": true,
+   "layer_pieces": 122,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.32929,
+     0.53281
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.09715,
+     0.56873
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "Tweedledee",
+  "D": "D90",
+  "file": "solids/dicto-tweedledee.json",
+  "symmetry": "D5h",
+  "convex": true,
+  "corners": 32,
+  "faces": 60,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 4,
+  "phi": {
+   "star_over_solid": 1.6180339887498945,
+   "halo": {
+    "V": 60,
+    "faces": {
+     "3": 90,
+     "4": 10,
+     "5": 2
+    },
+    "edges": [
+     0.30415,
+     0.3271,
+     0.33809,
+     0.35606,
+     0.42581,
+     0.49381,
+     0.5404,
+     0.57651,
+     0.62636,
+     0.85744
+    ],
+    "radii": [
+     0.96808,
+     0.9719,
+     0.97634,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.2652238539400766,
+   "star_inside_halo": true,
+   "layer_pieces": 122,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 40,
+    "faces": {
+     "4": 15,
+     "8": 5,
+     "10": 2
+    },
+    "edges": [
+     0.13294,
+     0.23144,
+     0.38354,
+     0.53122,
+     0.7499
+    ],
+    "radii": [
+     0.98967,
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 10,
+    "faces": {
+     "4": 5,
+     "5": 2
+    },
+    "edges": [
+     1.01346
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999996,
+   "halo": {
+    "V": 60,
+    "faces": {
+     "3": 90,
+     "4": 10,
+     "5": 2
+    },
+    "edges": [
+     0.30415,
+     0.3271,
+     0.33809,
+     0.35606,
+     0.42581,
+     0.49381,
+     0.5404,
+     0.57651,
+     0.62636,
+     0.85744
+    ],
+    "radii": [
+     0.96808,
+     0.9719,
+     0.97634,
+     1.0
+    ]
+   },
+   "halo_over_solid": 6.166518330269618,
+   "star_inside_halo": true,
+   "layer_pieces": 122,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 40,
+    "faces": {
+     "4": 15,
+     "8": 5,
+     "10": 2
+    },
+    "edges": [
+     0.13294,
+     0.23144,
+     0.38354,
+     0.53122,
+     0.7499
+    ],
+    "radii": [
+     0.98967,
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 10,
+    "faces": {
+     "4": 5,
+     "5": 2
+    },
+    "edges": [
+     1.01346
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "Mad Hatter",
+  "D": "D91",
+  "file": "solids/dicto-mad-hatter.json",
+  "symmetry": "D3h",
+  "convex": true,
+  "corners": 144,
+  "faces": 218,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 17,
+  "phi": {
+   "star_over_solid": 1.6180339887498953,
+   "halo": {
+    "V": 206,
+    "faces": {
+     "3": 408
+    },
+    "edges": [
+     0.09384,
+     0.12884,
+     0.15126,
+     0.15586,
+     0.17358,
+     0.1739,
+     0.19932,
+     0.21029,
+     0.21315,
+     0.21341,
+     0.22699,
+     0.22934,
+     0.23955,
+     0.24504,
+     0.24629,
+     0.24949,
+     0.25431,
+     0.2549,
+     0.25577,
+     0.25626,
+     0.25795,
+     0.26195,
+     0.26305,
+     0.26941,
+     0.26942,
+     0.27269,
+     0.27814,
+     0.27818,
+     0.27883,
+     0.28114,
+     0.28143,
+     0.28493,
+     0.32216,
+     0.32633,
+     0.34345,
+     0.35998,
+     0.36084,
+     0.37106,
+     0.3775,
+     0.38334,
+     0.38906,
+     0.39757,
+     0.40775,
+     0.40976,
+     0.41604,
+     0.42142,
+     0.43533,
+     0.43786,
+     0.44019,
+     0.47233
+    ],
+    "radii": [
+     0.94534,
+     0.94544,
+     0.94696,
+     0.94742,
+     0.95078,
+     0.95426,
+     0.95557,
+     0.96176,
+     0.96392,
+     0.97046,
+     0.97909,
+     0.98353,
+     0.99333,
+     1.0
+    ]
+   },
+   "halo_over_solid": 4.095860656480704,
+   "star_inside_halo": true,
+   "layer_pieces": 504,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 12,
+    "faces": {
+     "4": 6,
+     "6": 2
+    },
+    "edges": [
+     0.63263,
+     0.75517,
+     1.12977
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": null,
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0000000000000004,
+   "halo": {
+    "V": 206,
+    "faces": {
+     "3": 408
+    },
+    "edges": [
+     0.09384,
+     0.12884,
+     0.15126,
+     0.15586,
+     0.17358,
+     0.1739,
+     0.19932,
+     0.21029,
+     0.21315,
+     0.21341,
+     0.22699,
+     0.22934,
+     0.23955,
+     0.24504,
+     0.24629,
+     0.24949,
+     0.25431,
+     0.2549,
+     0.25577,
+     0.25626,
+     0.25795,
+     0.26195,
+     0.26305,
+     0.26941,
+     0.26942,
+     0.27269,
+     0.27814,
+     0.27818,
+     0.27883,
+     0.28114,
+     0.28143,
+     0.28493,
+     0.32216,
+     0.32633,
+     0.34345,
+     0.35998,
+     0.36084,
+     0.37106,
+     0.3775,
+     0.38334,
+     0.38906,
+     0.39757,
+     0.40775,
+     0.40976,
+     0.41604,
+     0.42142,
+     0.43533,
+     0.43786,
+     0.44019,
+     0.47233
+    ],
+    "radii": [
+     0.94534,
+     0.94544,
+     0.94696,
+     0.94742,
+     0.95078,
+     0.95426,
+     0.95557,
+     0.96176,
+     0.96392,
+     0.97046,
+     0.97909,
+     0.98353,
+     0.99333,
+     1.0
+    ]
+   },
+   "halo_over_solid": 7.735212330370876,
+   "star_inside_halo": true,
+   "layer_pieces": 504,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 12,
+    "faces": {
+     "4": 6,
+     "6": 2
+    },
+    "edges": [
+     0.63263,
+     0.75517,
+     1.12977
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": null,
+   "core_returns_to_shape": false
+  },
+  "verdict": "star inside halo, layer does not fill"
+ },
+ {
+  "name": "March Hare",
+  "D": "D92",
+  "file": "solids/dicto-march-hare.json",
+  "symmetry": "D3h",
+  "convex": true,
+  "corners": 144,
+  "faces": 218,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 19,
+  "phi": {
+   "star_over_solid": 1.618033988749895,
+   "halo": {
+    "V": 182,
+    "faces": {
+     "3": 348,
+     "4": 6
+    },
+    "edges": [
+     0.07963,
+     0.14518,
+     0.16704,
+     0.16946,
+     0.19715,
+     0.20123,
+     0.20808,
+     0.21176,
+     0.22629,
+     0.2264,
+     0.23202,
+     0.23942,
+     0.24035,
+     0.24581,
+     0.25325,
+     0.25527,
+     0.25625,
+     0.25649,
+     0.25834,
+     0.25999,
+     0.26713,
+     0.27281,
+     0.27475,
+     0.27624,
+     0.27689,
+     0.2792,
+     0.28891,
+     0.31678,
+     0.32169,
+     0.32741,
+     0.33255,
+     0.34192,
+     0.34896,
+     0.35447,
+     0.36809,
+     0.3778,
+     0.38329,
+     0.39035,
+     0.39805,
+     0.40066,
+     0.41302,
+     0.41328,
+     0.41766,
+     0.42222,
+     0.42961,
+     0.46222,
+     0.46794
+    ],
+    "radii": [
+     0.93757,
+     0.9383,
+     0.94007,
+     0.94189,
+     0.94271,
+     0.94875,
+     0.95338,
+     0.95699,
+     0.96321,
+     0.9645,
+     0.97314,
+     0.9752,
+     0.9904,
+     1.0
+    ]
+   },
+   "halo_over_solid": 4.106508892548786,
+   "star_inside_halo": true,
+   "layer_pieces": 504,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 6,
+    "faces": {
+     "3": 2,
+     "4": 3
+    },
+    "edges": [
+     1.27789,
+     1.33238
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": null,
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0,
+   "halo": {
+    "V": 182,
+    "faces": {
+     "3": 348,
+     "4": 6
+    },
+    "edges": [
+     0.07963,
+     0.14518,
+     0.16704,
+     0.16946,
+     0.19715,
+     0.20123,
+     0.20808,
+     0.21176,
+     0.22629,
+     0.2264,
+     0.23202,
+     0.23942,
+     0.24035,
+     0.24581,
+     0.25325,
+     0.25527,
+     0.25625,
+     0.25649,
+     0.25834,
+     0.25999,
+     0.26713,
+     0.27281,
+     0.27475,
+     0.27624,
+     0.27689,
+     0.2792,
+     0.28891,
+     0.31678,
+     0.32169,
+     0.32741,
+     0.33255,
+     0.34192,
+     0.34896,
+     0.35447,
+     0.36809,
+     0.3778,
+     0.38329,
+     0.39035,
+     0.39805,
+     0.40066,
+     0.41302,
+     0.41328,
+     0.41766,
+     0.42222,
+     0.42961,
+     0.46222,
+     0.46794
+    ],
+    "radii": [
+     0.93757,
+     0.9383,
+     0.94007,
+     0.94189,
+     0.94271,
+     0.94875,
+     0.95338,
+     0.95699,
+     0.96321,
+     0.9645,
+     0.97314,
+     0.9752,
+     0.9904,
+     1.0
+    ]
+   },
+   "halo_over_solid": 7.755321990791135,
+   "star_inside_halo": true,
+   "layer_pieces": 504,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 6,
+    "faces": {
+     "3": 2,
+     "4": 3
+    },
+    "edges": [
+     1.27789,
+     1.33238
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": null,
+   "core_returns_to_shape": false
+  },
+  "verdict": "star inside halo, layer does not fill"
+ },
+ {
+  "name": "Jubjub",
+  "D": "D93",
+  "file": "solids/dicto-jubjub.json",
+  "symmetry": "D3h",
+  "convex": true,
+  "corners": 30,
+  "faces": 56,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 6,
+  "phi": {
+   "star_over_solid": 1.6180339887498947,
+   "halo": {
+    "V": 56,
+    "faces": {
+     "3": 96,
+     "4": 6
+    },
+    "edges": [
+     0.26447,
+     0.33226,
+     0.33726,
+     0.3719,
+     0.37296,
+     0.38307,
+     0.40662,
+     0.45881,
+     0.49757,
+     0.53563,
+     0.60844,
+     0.61931,
+     0.69098,
+     0.73027,
+     0.89472
+    ],
+    "radii": [
+     0.91287,
+     0.91605,
+     0.92539,
+     0.931,
+     0.97015,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.201728543469118,
+   "star_inside_halo": true,
+   "layer_pieces": 114,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 6,
+    "faces": {
+     "3": 2,
+     "4": 3
+    },
+    "edges": [
+     1.2281,
+     1.41033
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": null,
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0,
+   "halo": {
+    "V": 56,
+    "faces": {
+     "3": 96,
+     "4": 6
+    },
+    "edges": [
+     0.26447,
+     0.33226,
+     0.33726,
+     0.3719,
+     0.37296,
+     0.38307,
+     0.40662,
+     0.45881,
+     0.49757,
+     0.53563,
+     0.60844,
+     0.61931,
+     0.69098,
+     0.73027,
+     0.89472
+    ],
+    "radii": [
+     0.91287,
+     0.91605,
+     0.92539,
+     0.931,
+     0.97015,
+     1.0
+    ]
+   },
+   "halo_over_solid": 6.046604654080818,
+   "star_inside_halo": true,
+   "layer_pieces": 114,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 6,
+    "faces": {
+     "3": 2,
+     "4": 3
+    },
+    "edges": [
+     1.2281,
+     1.41033
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": null,
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "Alice",
+  "D": "D94",
+  "file": "solids/dicto-alice.json",
+  "symmetry": "Td",
+  "convex": true,
+  "corners": 144,
+  "faces": 218,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 11,
+  "phi": {
+   "star_over_solid": 1.6180339887498936,
+   "halo": {
+    "V": 206,
+    "faces": {
+     "3": 408
+    },
+    "edges": [
+     0.09548,
+     0.15952,
+     0.16026,
+     0.1629,
+     0.2117,
+     0.21527,
+     0.24048,
+     0.2424,
+     0.25243,
+     0.25546,
+     0.25683,
+     0.25731,
+     0.26117,
+     0.26315,
+     0.26637,
+     0.27821,
+     0.30179,
+     0.30276,
+     0.34768,
+     0.35721,
+     0.37014,
+     0.39105,
+     0.39612,
+     0.40584,
+     0.40964,
+     0.43617,
+     0.50685
+    ],
+    "radii": [
+     0.94861,
+     0.9509,
+     0.95161,
+     0.96192,
+     0.96418,
+     0.97331,
+     0.9773,
+     0.98776,
+     1.0
+    ]
+   },
+   "halo_over_solid": 4.083493911285498,
+   "star_inside_halo": true,
+   "layer_pieces": 504,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edges": [
+     0.7893,
+     0.90477
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edges": [
+     0.7893,
+     0.90477
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999973,
+   "halo": {
+    "V": 206,
+    "faces": {
+     "3": 408
+    },
+    "edges": [
+     0.09548,
+     0.15952,
+     0.16026,
+     0.1629,
+     0.2117,
+     0.21527,
+     0.24048,
+     0.2424,
+     0.25243,
+     0.25546,
+     0.25683,
+     0.25731,
+     0.26117,
+     0.26315,
+     0.26637,
+     0.27821,
+     0.30179,
+     0.30276,
+     0.34768,
+     0.35721,
+     0.37014,
+     0.39105,
+     0.39612,
+     0.40584,
+     0.40964,
+     0.43617,
+     0.50685
+    ],
+    "radii": [
+     0.94861,
+     0.9509,
+     0.95161,
+     0.96192,
+     0.96418,
+     0.97331,
+     0.9773,
+     0.98776,
+     1.0
+    ]
+   },
+   "halo_over_solid": 7.711857190158983,
+   "star_inside_halo": true,
+   "layer_pieces": 504,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edges": [
+     0.7893,
+     0.90477
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edges": [
+     0.7893,
+     0.90477
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star inside halo, layer does not fill"
+ },
+ {
+  "name": "White Rabbit",
+  "D": "D95",
+  "file": "solids/dicto-white-rabbit.json",
+  "symmetry": "Td",
+  "convex": true,
+  "corners": 144,
+  "faces": 218,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 13,
+  "phi": {
+   "star_over_solid": 1.6180339887498931,
+   "halo": {
+    "V": 212,
+    "faces": {
+     "3": 420
+    },
+    "edges": [
+     0.09508,
+     0.14267,
+     0.16096,
+     0.18177,
+     0.18782,
+     0.21186,
+     0.2411,
+     0.24235,
+     0.24615,
+     0.25039,
+     0.25684,
+     0.2586,
+     0.25892,
+     0.26267,
+     0.26315,
+     0.26324,
+     0.26891,
+     0.27593,
+     0.29814,
+     0.30832,
+     0.34489,
+     0.34899,
+     0.35758,
+     0.36129,
+     0.36872,
+     0.39047,
+     0.41447,
+     0.42291,
+     0.44131,
+     0.44187
+    ],
+    "radii": [
+     0.9405,
+     0.94164,
+     0.94431,
+     0.94731,
+     0.95296,
+     0.95745,
+     0.96605,
+     0.97939,
+     0.99769,
+     1.0
+    ]
+   },
+   "halo_over_solid": 4.115420399077422,
+   "star_inside_halo": true,
+   "layer_pieces": 504,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edges": [
+     0.08756,
+     1.36908
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edges": [
+     0.08756,
+     1.36908
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999973,
+   "halo": {
+    "V": 212,
+    "faces": {
+     "3": 420
+    },
+    "edges": [
+     0.09508,
+     0.14267,
+     0.16096,
+     0.18177,
+     0.18782,
+     0.21186,
+     0.2411,
+     0.24235,
+     0.24615,
+     0.25039,
+     0.25684,
+     0.2586,
+     0.25892,
+     0.26267,
+     0.26315,
+     0.26324,
+     0.26891,
+     0.27593,
+     0.29814,
+     0.30832,
+     0.34489,
+     0.34899,
+     0.35758,
+     0.36129,
+     0.36872,
+     0.39047,
+     0.41447,
+     0.42291,
+     0.44131,
+     0.44187
+    ],
+    "radii": [
+     0.9405,
+     0.94164,
+     0.94431,
+     0.94731,
+     0.95296,
+     0.95745,
+     0.96605,
+     0.97939,
+     0.99769,
+     1.0
+    ]
+   },
+   "halo_over_solid": 7.772151761372672,
+   "star_inside_halo": true,
+   "layer_pieces": 504,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edges": [
+     0.08756,
+     1.36908
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edges": [
+     0.08756,
+     1.36908
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star inside halo, layer does not fill"
+ },
+ {
+  "name": "Haigha",
+  "D": "D96",
+  "file": "solids/dicto-haigha.json",
+  "symmetry": "D3h",
+  "convex": true,
+  "corners": 114,
+  "faces": 59,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 9,
+  "phi": {
+   "star_over_solid": 1.6180339887498951,
+   "halo": {
+    "V": 59,
+    "faces": {
+     "3": 114
+    },
+    "edges": [
+     0.22732,
+     0.31434,
+     0.4039,
+     0.40661,
+     0.46598,
+     0.4697,
+     0.50588,
+     0.53566,
+     0.54083,
+     0.55113,
+     0.56563,
+     0.57608,
+     0.57779,
+     0.58967,
+     0.59913,
+     0.63096,
+     0.64052,
+     0.64209
+    ],
+    "radii": [
+     0.94293,
+     0.94599,
+     0.95144,
+     0.95385,
+     0.96276,
+     0.97746,
+     0.99226,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.6041160538426413,
+   "star_inside_halo": true,
+   "layer_pieces": 285,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 12,
+    "faces": {
+     "4": 6,
+     "6": 2
+    },
+    "edges": [
+     0.72181,
+     0.73435,
+     1.37097
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": null,
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0000000000000004,
+   "halo": {
+    "V": 59,
+    "faces": {
+     "3": 114
+    },
+    "edges": [
+     0.22732,
+     0.31434,
+     0.4039,
+     0.40661,
+     0.46598,
+     0.4697,
+     0.50588,
+     0.53566,
+     0.54083,
+     0.55113,
+     0.56563,
+     0.57608,
+     0.57779,
+     0.58967,
+     0.59913,
+     0.63096,
+     0.64052,
+     0.64209
+    ],
+    "radii": [
+     0.94293,
+     0.94599,
+     0.95144,
+     0.95385,
+     0.96276,
+     0.97746,
+     0.99226,
+     1.0
+    ]
+   },
+   "halo_over_solid": 6.806531100041247,
+   "star_inside_halo": true,
+   "layer_pieces": 285,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 12,
+    "faces": {
+     "4": 6,
+     "6": 2
+    },
+    "edges": [
+     0.72181,
+     0.73435,
+     1.37097
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": null,
+   "core_returns_to_shape": false
+  },
+  "verdict": "star inside halo, layer does not fill"
+ },
+ {
+  "name": "Hatta",
+  "D": "D97",
+  "file": "solids/dicto-hatta.json",
+  "symmetry": "D3h",
+  "convex": true,
+  "corners": 114,
+  "faces": 59,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 9,
+  "phi": {
+   "star_over_solid": 1.6180339887498942,
+   "halo": {
+    "V": 59,
+    "faces": {
+     "3": 114
+    },
+    "edges": [
+     0.22912,
+     0.30995,
+     0.40098,
+     0.40802,
+     0.46161,
+     0.4713,
+     0.49847,
+     0.5295,
+     0.54297,
+     0.54895,
+     0.56102,
+     0.56851,
+     0.57231,
+     0.57677,
+     0.5921,
+     0.59263,
+     0.59566,
+     0.64552
+    ],
+    "radii": [
+     0.93762,
+     0.93896,
+     0.94266,
+     0.95181,
+     0.96141,
+     0.96587,
+     0.98068,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.621507997368674,
+   "star_inside_halo": true,
+   "layer_pieces": 285,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 12,
+    "faces": {
+     "4": 6,
+     "6": 2
+    },
+    "edges": [
+     0.71417,
+     0.74711,
+     1.3654
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": null,
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999991,
+   "halo": {
+    "V": 59,
+    "faces": {
+     "3": 114
+    },
+    "edges": [
+     0.22912,
+     0.30995,
+     0.40098,
+     0.40802,
+     0.46161,
+     0.4713,
+     0.49847,
+     0.5295,
+     0.54297,
+     0.54895,
+     0.56102,
+     0.56851,
+     0.57231,
+     0.57677,
+     0.5921,
+     0.59263,
+     0.59566,
+     0.64552
+    ],
+    "radii": [
+     0.93762,
+     0.93896,
+     0.94266,
+     0.95181,
+     0.96141,
+     0.96587,
+     0.98068,
+     1.0
+    ]
+   },
+   "halo_over_solid": 6.839376547505088,
+   "star_inside_halo": true,
+   "layer_pieces": 285,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 12,
+    "faces": {
+     "4": 6,
+     "6": 2
+    },
+    "edges": [
+     0.71417,
+     0.74711,
+     1.3654
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": null,
+   "core_returns_to_shape": false
+  },
+  "verdict": "star inside halo, layer does not fill"
+ },
+ {
+  "name": "Red King",
+  "D": "D98",
+  "file": "solids/dicto-red-king.json",
+  "symmetry": "D10h",
+  "convex": true,
+  "corners": 80,
+  "faces": 52,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 4,
+  "phi": {
+   "star_over_solid": 1.618033988749895,
+   "halo": {
+    "V": 52,
+    "faces": {
+     "3": 60,
+     "4": 20
+    },
+    "edges": [
+     0.33676,
+     0.45444,
+     0.52099,
+     0.55935,
+     0.58307,
+     0.5963
+    ],
+    "radii": [
+     0.96483,
+     0.97782,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.5131910990530995,
+   "star_inside_halo": true,
+   "layer_pieces": 210,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 20,
+    "faces": {
+     "4": 10,
+     "10": 2
+    },
+    "edges": [
+     0.45725,
+     1.34555
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": null,
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0,
+   "halo": {
+    "V": 52,
+    "faces": {
+     "3": 60,
+     "4": 20
+    },
+    "edges": [
+     0.33676,
+     0.45444,
+     0.52099,
+     0.55935,
+     0.58307,
+     0.5963
+    ],
+    "radii": [
+     0.96483,
+     0.97782,
+     1.0
+    ]
+   },
+   "halo_over_solid": 6.634815338589827,
+   "star_inside_halo": true,
+   "layer_pieces": 210,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 20,
+    "faces": {
+     "4": 10,
+     "10": 2
+    },
+    "edges": [
+     0.45725,
+     1.34555
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": null,
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "Walrus",
+  "D": "D99",
+  "file": "solids/dicto-walrus.json",
+  "symmetry": "D5h",
+  "convex": true,
+  "corners": 120,
+  "faces": 62,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 7,
+  "phi": {
+   "star_over_solid": 1.6180339887498953,
+   "halo": {
+    "V": 62,
+    "faces": {
+     "3": 120
+    },
+    "edges": [
+     0.18113,
+     0.332,
+     0.44033,
+     0.44864,
+     0.44878,
+     0.50848,
+     0.55427,
+     0.5633,
+     0.56812,
+     0.58097,
+     0.61542,
+     0.64056,
+     0.67899
+    ],
+    "radii": [
+     0.93714,
+     0.94002,
+     0.94857,
+     0.96822,
+     0.9943,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.6991523966116873,
+   "star_inside_halo": true,
+   "layer_pieces": 300,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 20,
+    "faces": {
+     "4": 10,
+     "10": 2
+    },
+    "edges": [
+     0.36973,
+     0.61621,
+     1.19928
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": null,
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.000000000000001,
+   "halo": {
+    "V": 62,
+    "faces": {
+     "3": 120
+    },
+    "edges": [
+     0.18113,
+     0.332,
+     0.44033,
+     0.44864,
+     0.44878,
+     0.50848,
+     0.55427,
+     0.5633,
+     0.56812,
+     0.58097,
+     0.61542,
+     0.64056,
+     0.67899
+    ],
+    "radii": [
+     0.93714,
+     0.94002,
+     0.94857,
+     0.96822,
+     0.9943,
+     1.0
+    ]
+   },
+   "halo_over_solid": 6.98601139785297,
+   "star_inside_halo": true,
+   "layer_pieces": 300,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 20,
+    "faces": {
+     "4": 10,
+     "10": 2
+    },
+    "edges": [
+     0.36973,
+     0.61621,
+     1.19928
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": null,
+   "core_returns_to_shape": false
+  },
+  "verdict": "star inside halo, layer does not fill"
+ },
+ {
+  "name": "Red Knight",
+  "D": "D100",
+  "file": "solids/dicto-red-knight.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 120,
+  "faces": 62,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 3,
+  "phi": {
+   "star_over_solid": 1.6180339887498942,
+   "halo": {
+    "V": 62,
+    "faces": {
+     "3": 120
+    },
+    "edges": [
+     0.35758,
+     0.5206,
+     0.62596
+    ],
+    "radii": [
+     0.94731,
+     0.95745,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.672737300999157,
+   "star_inside_halo": true,
+   "layer_pieces": 300,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.34894,
+     0.49908
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.13022,
+     0.55161
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999993,
+   "halo": {
+    "V": 62,
+    "faces": {
+     "3": 120
+    },
+    "edges": [
+     0.35758,
+     0.5206,
+     0.62596
+    ],
+    "radii": [
+     0.94731,
+     0.95745,
+     1.0
+    ]
+   },
+   "halo_over_solid": 6.93612533227926,
+   "star_inside_halo": true,
+   "layer_pieces": 300,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.34894,
+     0.49908
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.13022,
+     0.55161
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star inside halo, layer does not fill"
+ },
+ {
+  "name": "White Knight",
+  "D": "D101",
+  "file": "solids/dicto-white-knight.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 120,
+  "faces": 62,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 3,
+  "phi": {
+   "star_over_solid": 1.6180339887498947,
+   "halo": {
+    "V": 62,
+    "faces": {
+     "3": 120
+    },
+    "edges": [
+     0.3593,
+     0.53523,
+     0.61803
+    ],
+    "radii": [
+     0.95106,
+     0.97629,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.6793620818533013,
+   "star_inside_halo": true,
+   "layer_pieces": 300,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.40355
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.22446,
+     0.5019
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999998,
+   "halo": {
+    "V": 62,
+    "faces": {
+     "3": 120
+    },
+    "edges": [
+     0.3593,
+     0.53523,
+     0.61803
+    ],
+    "radii": [
+     0.95106,
+     0.97629,
+     1.0
+    ]
+   },
+   "halo_over_solid": 6.948636521220196,
+   "star_inside_halo": true,
+   "layer_pieces": 300,
+   "layer_fills": false,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.40355
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.22446,
+     0.5019
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star inside halo, layer does not fill"
+ },
+ {
+  "name": "Golden TI Star",
+  "D": "D103",
+  "file": "solids/dicto-golden-ti-star.json",
+  "symmetry": "Ih",
+  "convex": false,
+  "corners": 92,
+  "faces": 180,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 2,
+  "phi": {
+   "star_over_solid": 1.6180339887498956,
+   "halo": {
+    "V": 120,
+    "faces": {
+     "3": 20,
+     "4": 60,
+     "10": 12
+    },
+    "edges": [
+     0.22053,
+     0.37518,
+     0.49112
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 1.3081301914109253,
+   "star_inside_halo": false,
+   "core": {
+    "V": 60,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "edges": [
+     0.21425,
+     0.44115
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": null,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.18887,
+     0.76446
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0000000000000018,
+   "halo": {
+    "V": 120,
+    "faces": {
+     "3": 20,
+     "4": 60,
+     "10": 12
+    },
+    "edges": [
+     0.22053,
+     0.37518,
+     0.49112
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 2.4704611887423185,
+   "star_inside_halo": false,
+   "core": {
+    "V": 60,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "edges": [
+     0.21425,
+     0.44115
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": null,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.18887,
+     0.76446
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star outside its halo"
+ },
+ {
+  "name": "Star Halo",
+  "D": "D104",
+  "file": "solids/dicto-star-halo.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 32,
+  "faces": 60,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 1,
+  "phi": {
+   "star_over_solid": 1.6180339887498947,
+   "halo": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.22446,
+     0.5019
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.37640944223411,
+   "star_inside_halo": true,
+   "layer_pieces": 122,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.22446,
+     0.5019
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.40355
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0,
+   "halo": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.22446,
+     0.5019
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "halo_over_solid": 6.376497185915191,
+   "star_inside_halo": true,
+   "layer_pieces": 122,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.22446,
+     0.5019
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.40355
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "TI Star core",
+  "D": "D105",
+  "file": "solids/dicto-ti-star-core.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 60,
+  "faces": 32,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 2,
+  "phi": {
+   "star_over_solid": 1.6180339887498947,
+   "halo": {
+    "V": 32,
+    "faces": {
+     "3": 60
+    },
+    "edges": [
+     0.63304,
+     0.71364
+    ],
+    "radii": [
+     0.97415,
+     1.0
+    ]
+   },
+   "halo_over_solid": 3.226813700959768,
+   "star_inside_halo": true,
+   "layer_pieces": 150,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.40355
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.22446,
+     0.5019
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": true
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999996,
+   "halo": {
+    "V": 32,
+    "faces": {
+     "3": 60
+    },
+    "edges": [
+     0.63304,
+     0.71364
+    ],
+    "radii": [
+     0.97415,
+     1.0
+    ]
+   },
+   "halo_over_solid": 6.093979073233468,
+   "star_inside_halo": true,
+   "layer_pieces": 150,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.40355
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.22446,
+     0.5019
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": true
+  },
+  "verdict": "star fills; core returns (period two)"
+ }
+]

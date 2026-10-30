@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Star Cores: results of the first runs</title>
+<link rel="stylesheet" href="../paper.css">
+<style>table{border-collapse:collapse;font-size:7.4pt;margin:3mm 0;width:100%} td,th{border-bottom:1px solid #ddd;padding:0.7mm 1mm;text-align:left;vertical-align:top} td.c{text-align:center} .pick{border-left:3px solid #b8962e;padding-left:3mm;margin:3mm 0}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>Star Cores: results of the first runs</h1>
+<p class="sub">Every new shape given the star core treatment, five ways of building on the spikes, and the old methods</p>
+<div class="meta"><b>DICTO</b> · study results of 30 October 2026 · for DICTO · not for publication</div>
+
+<h2>1. Conclusions</h2>
+<div class="pick"><b>1. Polar spikes always fill.</b> If each spike's tip is put at its face's polar point instead of above the face's centre, the layer between the star and its halo is filled exactly by one pyramid over each corner and one tetrahedron over each edge. This held for all 48 convex shapes tested, with no overlaps, for ×φ and ×2. It looks like a general theorem, close to Conway's "join" (to be checked in the prior-art search). It is the logical rule for group C.</div>
+<div class="pick"><b>2. DICTO's sloping bases close every convex shape tested.</b> For the OCD Stella, the DBT and the OTT they fill the convex halo exactly. For the nine Queens' slices they close with no overlaps but end in a skin of their own, slightly inside the convex halo: a new outer solid for each slice.</div>
+<div class="pick"><b>3. Only three cores return.</b> TI (#78), the GTI and the TI Star core have cores that come back every two turns. Twenty more shapes have stars that fill exactly but cores that don't return.</div>
+<div class="pick"><b>4. Building on the star: one clean step.</b> The first star always builds cleanly for the shapes whose own pyramids make them up. A second star, spiking the first star's triangles, clashes in the valleys under both the centre rule and the local rule. With DICTO's shorter spikes in the valleys, the stars grow three steps with no clash at all (all 75 runs finished so far reached the third step but one; the 21 runs on the largest Queens' slices are still going). Each spike is shortened just enough to clear its neighbours. The ridges keep full spikes, the valleys flatten, and the growth slows step by step. The most symmetric shapes freeze: at the third step most spikes of the FPD, the Palintriacontahedron and the Lion lie flat and the rest are too short to add any measurable volume (the OG adds 0.3 per cent), so the star stops growing. These are finished stars. The less symmetric pieces keep growing most: Lahdeli, Samson, Chucky, the Triskelion Tetrahedron and Fang.</div>
+<div class="pick"><b>5. The old methods confirm the network.</b> The duals give the known pairs (GTI with FPD and the Palintriacontahedron, OG with the Hecatodihedron, the Star Halo with the TI Star core). The tips of Tweedledum's first stellation make a regular dodecahedron. Nothing else came out with all edges equal or all faces regular.</div>
+
+<h2>2. Every shape (×φ)</h2>
+<p>Group: <b>A</b> star fills and the core returns · <b>B</b> star fills, core does not return · <b>C</b> star inside its halo, layer not filled by corner and edge pieces · <b>D</b> star sticks out of its halo. Building columns: the volume each step adds (× the step before); ✗ marks a step with clashes. Valley: the volume each step adds, with the spikes shortened in the valleys; 'running' marks the runs still going.</p>
+<table><thead><tr><th>D</th><th>Shape</th><th>Group</th><th>Polar spikes</th><th>Sloping bases</th><th>Build on star, centre rule</th><th>Build on star, local rule</th><th>Valley rule</th><th>Dual is</th></tr></thead><tbody>
+<!--ROWS-->
+</tbody></table>
+<p class="prec">Studies 2026-10-30-star-cores (star_core.py, star_build.py, polar_spikes.py, sloping_bases.py, star_valley.py, group2_diag.py) and 2026-10-30-old-methods (old_methods.py), run on dicto-big-brother; numerical (float64), overlaps by the separating-axis test. Exact confirmation follows for the results that go into papers.</p>
+</body></html>

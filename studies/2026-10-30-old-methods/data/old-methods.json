@@ -1,0 +1,4885 @@
+[
+ {
+  "name": "DICTO Dodeca-13 Needle",
+  "D": "D7",
+  "ops": {
+   "d": {
+    "V": 4,
+    "F": 4,
+    "faces": {
+     "3": 4
+    },
+    "edge_lengths": 2,
+    "radii": 2,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 6,
+    "F": 8,
+    "faces": {
+     "3": 8
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 2,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   },
+   "t": {
+    "V": 12,
+    "F": 8,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edge_lengths": 2,
+    "radii": 3,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 8,
+    "F": 12,
+    "faces": {
+     "3": 12
+    },
+    "edge_lengths": 5,
+    "radii": 4,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 8,
+    "F": 6,
+    "faces": {
+     "4": 6
+    },
+    "edge_lengths": 1,
+    "radii": 2,
+    "face_kinds": 1,
+    "flags": [
+     "EQUAL-EDGED",
+     "ONE-FACE-KIND"
+    ],
+    "match": null
+   },
+   "e": {
+    "V": 12,
+    "F": 14,
+    "faces": {
+     "3": 8,
+     "4": 6
+    },
+    "edge_lengths": 2,
+    "radii": 2,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 4,
+    "F": 4,
+    "faces": {
+     "3": 4
+    },
+    "edge_lengths": 2,
+    "radii": 2,
+    "face_kinds": 2,
+    "flags": [],
+    "match": "DICTO Dodeca-13 Needle"
+   }
+  }
+ },
+ {
+  "name": "DICTO Dodeca-13 Wedge",
+  "D": "D6",
+  "ops": {
+   "d": {
+    "V": 6,
+    "F": 8,
+    "faces": {
+     "3": 8
+    },
+    "edge_lengths": 5,
+    "radii": 3,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 12,
+    "F": 14,
+    "faces": {
+     "3": 10,
+     "4": 2,
+     "5": 2
+    },
+    "edge_lengths": 4,
+    "radii": 5,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 24,
+    "F": 14,
+    "faces": {
+     "3": 8,
+     "6": 2,
+     "8": 2,
+     "10": 2
+    },
+    "edge_lengths": 5,
+    "radii": 7,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 18,
+    "F": 24,
+    "faces": {
+     "3": 16,
+     "4": 8
+    },
+    "edge_lengths": 12,
+    "radii": 7,
+    "face_kinds": 8,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 14,
+    "F": 12,
+    "faces": {
+     "4": 12
+    },
+    "edge_lengths": 7,
+    "radii": 6,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 24,
+    "F": 30,
+    "faces": {
+     "3": 18,
+     "4": 10,
+     "5": 2
+    },
+    "edge_lengths": 8,
+    "radii": 7,
+    "face_kinds": 12,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "note": "some face region unbounded"
+   }
+  }
+ },
+ {
+  "name": "DICTO skewed elongated dodecahedron ED F16",
+  "D": "D2",
+  "ops": {
+   "d": {
+    "V": 12,
+    "F": 18,
+    "faces": {
+     "3": 16,
+     "4": 2
+    },
+    "edge_lengths": 8,
+    "radii": 4,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 28,
+    "F": 32,
+    "faces": {
+     "3": 20,
+     "4": 8,
+     "6": 4
+    },
+    "edge_lengths": 5,
+    "radii": 8,
+    "face_kinds": 9,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 56,
+    "F": 32,
+    "faces": {
+     "3": 20,
+     "8": 8,
+     "12": 4
+    },
+    "edge_lengths": 5,
+    "radii": 14,
+    "face_kinds": 9,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 46,
+    "F": 56,
+    "faces": {
+     "3": 24,
+     "4": 32
+    },
+    "edge_lengths": 20,
+    "radii": 15,
+    "face_kinds": 16,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 32,
+    "F": 28,
+    "faces": {
+     "4": 24,
+     "5": 4
+    },
+    "edge_lengths": 15,
+    "radii": 9,
+    "face_kinds": 8,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 58,
+    "F": 72,
+    "faces": {
+     "3": 40,
+     "4": 28,
+     "6": 4
+    },
+    "edge_lengths": 11,
+    "radii": 15,
+    "face_kinds": 20,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 16,
+    "F": 14,
+    "faces": {
+     "4": 14
+    },
+    "edge_lengths": 7,
+    "radii": 4,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO skewed elongated dodecahedron ED F18",
+  "D": "D3",
+  "ops": {
+   "d": {
+    "V": 12,
+    "F": 18,
+    "faces": {
+     "3": 16,
+     "4": 2
+    },
+    "edge_lengths": 8,
+    "radii": 4,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 28,
+    "F": 30,
+    "faces": {
+     "3": 16,
+     "4": 10,
+     "6": 4
+    },
+    "edge_lengths": 5,
+    "radii": 8,
+    "face_kinds": 9,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 56,
+    "F": 30,
+    "faces": {
+     "3": 16,
+     "4": 2,
+     "8": 8,
+     "12": 4
+    },
+    "edge_lengths": 5,
+    "radii": 14,
+    "face_kinds": 9,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 46,
+    "F": 56,
+    "faces": {
+     "3": 32,
+     "4": 16,
+     "5": 8
+    },
+    "edge_lengths": 21,
+    "radii": 14,
+    "face_kinds": 14,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 30,
+    "F": 28,
+    "faces": {
+     "4": 28
+    },
+    "edge_lengths": 16,
+    "radii": 10,
+    "face_kinds": 8,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 56,
+    "F": 68,
+    "faces": {
+     "3": 36,
+     "4": 28,
+     "6": 4
+    },
+    "edge_lengths": 11,
+    "radii": 16,
+    "face_kinds": 19,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 16,
+    "F": 26,
+    "faces": {
+     "3": 24,
+     "4": 2
+    },
+    "edge_lengths": 11,
+    "radii": 6,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO skewed rhombic dodecahedron",
+  "D": "D1",
+  "ops": {
+   "d": {
+    "V": 12,
+    "F": 14,
+    "faces": {
+     "3": 8,
+     "4": 6
+    },
+    "edge_lengths": 6,
+    "radii": 4,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 24,
+    "F": 28,
+    "faces": {
+     "3": 12,
+     "4": 16
+    },
+    "edge_lengths": 4,
+    "radii": 5,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 48,
+    "F": 28,
+    "faces": {
+     "3": 12,
+     "4": 4,
+     "8": 12
+    },
+    "edge_lengths": 4,
+    "radii": 12,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 34,
+    "F": 48,
+    "faces": {
+     "3": 32,
+     "4": 16
+    },
+    "edge_lengths": 16,
+    "radii": 11,
+    "face_kinds": 12,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 28,
+    "F": 24,
+    "faces": {
+     "4": 20,
+     "5": 4
+    },
+    "edge_lengths": 15,
+    "radii": 8,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 50,
+    "F": 56,
+    "faces": {
+     "3": 16,
+     "4": 40
+    },
+    "edge_lengths": 5,
+    "radii": 15,
+    "face_kinds": 13,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 24,
+    "F": 14,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edge_lengths": 4,
+    "radii": 8,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO Belted Triacontahedron (DBT)",
+  "D": "D37",
+  "ops": {
+   "d": {
+    "V": 32,
+    "F": 30,
+    "faces": {
+     "3": 18,
+     "5": 6,
+     "6": 6
+    },
+    "edge_lengths": 2,
+    "radii": 2,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 60,
+    "F": 68,
+    "faces": {
+     "3": 26,
+     "4": 36,
+     "5": 6
+    },
+    "edge_lengths": 3,
+    "radii": 2,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 120,
+    "F": 68,
+    "faces": {
+     "3": 18,
+     "4": 12,
+     "5": 6,
+     "6": 8,
+     "8": 24
+    },
+    "edge_lengths": 3,
+    "radii": 3,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 62,
+    "F": 120,
+    "faces": {
+     "3": 120
+    },
+    "edge_lengths": 7,
+    "radii": 5,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 68,
+    "F": 60,
+    "faces": {
+     "4": 48,
+     "5": 12
+    },
+    "edge_lengths": 5,
+    "radii": 5,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 126,
+    "F": 140,
+    "faces": {
+     "3": 38,
+     "4": 96,
+     "5": 6
+    },
+    "edge_lengths": 4,
+    "radii": 4,
+    "face_kinds": 10,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 18,
+    "F": 26,
+    "faces": {
+     "3": 20,
+     "4": 6
+    },
+    "edge_lengths": 5,
+    "radii": 2,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO Metaxyhexecontahedron",
+  "D": "D30",
+  "ops": {
+   "d": {
+    "V": 60,
+    "F": 32,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 2,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   },
+   "a": {
+    "V": 90,
+    "F": 152,
+    "faces": {
+     "3": 140,
+     "5": 12
+    },
+    "edge_lengths": 3,
+    "radii": 2,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 180,
+    "F": 152,
+    "faces": {
+     "3": 80,
+     "5": 12,
+     "6": 60
+    },
+    "edge_lengths": 3,
+    "radii": 3,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 92,
+    "F": 180,
+    "faces": {
+     "3": 180
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 152,
+    "F": 90,
+    "faces": {
+     "4": 60,
+     "8": 30
+    },
+    "edge_lengths": 3,
+    "radii": 4,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 240,
+    "F": 302,
+    "faces": {
+     "3": 140,
+     "4": 150,
+     "5": 12
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 60,
+    "F": 62,
+    "faces": {
+     "3": 20,
+     "4": 30,
+     "5": 12
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 3,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO Palintriacontahedron",
+  "D": "D31",
+  "ops": {
+   "d": {
+    "V": 60,
+    "F": 32,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 2,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": "DICTO GTI (golden truncated icosahedron)"
+   },
+   "a": {
+    "V": 90,
+    "F": 152,
+    "faces": {
+     "3": 140,
+     "5": 12
+    },
+    "edge_lengths": 3,
+    "radii": 2,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 180,
+    "F": 152,
+    "faces": {
+     "3": 80,
+     "5": 12,
+     "6": 60
+    },
+    "edge_lengths": 3,
+    "radii": 3,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 92,
+    "F": 180,
+    "faces": {
+     "3": 180
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 152,
+    "F": 90,
+    "faces": {
+     "4": 60,
+     "8": 30
+    },
+    "edge_lengths": 3,
+    "radii": 4,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 240,
+    "F": 302,
+    "faces": {
+     "3": 140,
+     "4": 150,
+     "5": 12
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 60,
+    "F": 62,
+    "faces": {
+     "3": 20,
+     "4": 30,
+     "5": 12
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 3,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO OTT (Octahedrally Truncated Triacontahedron)",
+  "D": "D38",
+  "ops": {
+   "d": {
+    "V": 38,
+    "F": 24,
+    "faces": {
+     "3": 12,
+     "7": 12
+    },
+    "edge_lengths": 2,
+    "radii": 2,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 60,
+    "F": 86,
+    "faces": {
+     "3": 56,
+     "4": 30
+    },
+    "edge_lengths": 3,
+    "radii": 2,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 120,
+    "F": 86,
+    "faces": {
+     "3": 24,
+     "4": 24,
+     "6": 32,
+     "8": 6
+    },
+    "edge_lengths": 3,
+    "radii": 3,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 62,
+    "F": 120,
+    "faces": {
+     "3": 120
+    },
+    "edge_lengths": 7,
+    "radii": 5,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 86,
+    "F": 60,
+    "faces": {
+     "4": 24,
+     "5": 24,
+     "6": 12
+    },
+    "edge_lengths": 5,
+    "radii": 5,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 144,
+    "F": 182,
+    "faces": {
+     "3": 80,
+     "4": 102
+    },
+    "edge_lengths": 5,
+    "radii": 4,
+    "face_kinds": 10,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 48,
+    "F": 62,
+    "faces": {
+     "3": 32,
+     "4": 30
+    },
+    "edge_lengths": 6,
+    "radii": 1,
+    "face_kinds": 5,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO OCD Stella",
+  "D": "D29",
+  "ops": {
+   "d": {
+    "V": 50,
+    "F": 48,
+    "faces": {
+     "3": 36,
+     "7": 12
+    },
+    "edge_lengths": 3,
+    "radii": 3,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 96,
+    "F": 122,
+    "faces": {
+     "3": 68,
+     "4": 48,
+     "6": 6
+    },
+    "edge_lengths": 5,
+    "radii": 3,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 192,
+    "F": 122,
+    "faces": {
+     "3": 48,
+     "4": 24,
+     "6": 20,
+     "8": 24,
+     "12": 6
+    },
+    "edge_lengths": 6,
+    "radii": 4,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 128,
+    "F": 192,
+    "faces": {
+     "3": 132,
+     "4": 60
+    },
+    "edge_lengths": 11,
+    "radii": 6,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 122,
+    "F": 96,
+    "faces": {
+     "4": 60,
+     "5": 24,
+     "6": 12
+    },
+    "edge_lengths": 6,
+    "radii": 6,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 216,
+    "F": 266,
+    "faces": {
+     "3": 116,
+     "4": 144,
+     "6": 6
+    },
+    "edge_lengths": 10,
+    "radii": 6,
+    "face_kinds": 13,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 48,
+    "F": 62,
+    "faces": {
+     "3": 32,
+     "4": 30
+    },
+    "edge_lengths": 6,
+    "radii": 1,
+    "face_kinds": 5,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO GTI (golden truncated icosahedron)",
+  "D": "D40",
+  "ops": {
+   "d": {
+    "V": 32,
+    "F": 60,
+    "faces": {
+     "3": 60
+    },
+    "edge_lengths": 2,
+    "radii": 2,
+    "face_kinds": 1,
+    "flags": [
+     "ONE-FACE-KIND"
+    ],
+    "match": "DICTO FPD (flat pentakis dodecahedron)"
+   },
+   "a": {
+    "V": 90,
+    "F": 92,
+    "faces": {
+     "3": 60,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 2,
+    "radii": 2,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 180,
+    "F": 92,
+    "faces": {
+     "3": 60,
+     "10": 12,
+     "12": 20
+    },
+    "edge_lengths": 4,
+    "radii": 2,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 152,
+    "F": 180,
+    "faces": {
+     "3": 120,
+     "5": 60
+    },
+    "edge_lengths": 5,
+    "radii": 4,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 92,
+    "F": 90,
+    "faces": {
+     "4": 90
+    },
+    "edge_lengths": 2,
+    "radii": 3,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 180,
+    "F": 182,
+    "faces": {
+     "3": 60,
+     "4": 90,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 5,
+    "radii": 2,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 60,
+    "F": 32,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 2,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO FPD (flat pentakis dodecahedron)",
+  "D": "D41",
+  "ops": {
+   "d": {
+    "V": 60,
+    "F": 32,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 2,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": "DICTO GTI (golden truncated icosahedron)"
+   },
+   "a": {
+    "V": 90,
+    "F": 152,
+    "faces": {
+     "3": 140,
+     "5": 12
+    },
+    "edge_lengths": 3,
+    "radii": 2,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 180,
+    "F": 152,
+    "faces": {
+     "3": 80,
+     "5": 12,
+     "6": 60
+    },
+    "edge_lengths": 3,
+    "radii": 3,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 92,
+    "F": 180,
+    "faces": {
+     "3": 180
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 152,
+    "F": 90,
+    "faces": {
+     "4": 60,
+     "8": 30
+    },
+    "edge_lengths": 3,
+    "radii": 4,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 240,
+    "F": 302,
+    "faces": {
+     "3": 140,
+     "4": 150,
+     "5": 12
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 60,
+    "F": 62,
+    "faces": {
+     "3": 20,
+     "4": 30,
+     "5": 12
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 3,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO Ogdoecontahedron (OG)",
+  "D": "D28",
+  "ops": {
+   "d": {
+    "V": 80,
+    "F": 102,
+    "faces": {
+     "3": 60,
+     "4": 30,
+     "5": 12
+    },
+    "edge_lengths": 2,
+    "radii": 2,
+    "face_kinds": 3,
+    "flags": [],
+    "match": "DICTO Truncated-Icosahedral Hecatodihedron"
+   },
+   "a": {
+    "V": 180,
+    "F": 182,
+    "faces": {
+     "3": 60,
+     "4": 90,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 3,
+    "radii": 2,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 360,
+    "F": 182,
+    "faces": {
+     "3": 60,
+     "4": 30,
+     "5": 12,
+     "8": 60,
+     "12": 20
+    },
+    "edge_lengths": 5,
+    "radii": 3,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 182,
+    "F": 360,
+    "faces": {
+     "3": 360
+    },
+    "edge_lengths": 6,
+    "radii": 4,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 182,
+    "F": 180,
+    "faces": {
+     "4": 180
+    },
+    "edge_lengths": 5,
+    "radii": 5,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 360,
+    "F": 482,
+    "faces": {
+     "3": 300,
+     "4": 150,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 7,
+    "radii": 4,
+    "face_kinds": 8,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 60,
+    "F": 32,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 2,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO Truncated-Icosahedral Hecatodihedron",
+  "D": "D22",
+  "ops": {
+   "d": {
+    "V": 102,
+    "F": 80,
+    "faces": {
+     "4": 60,
+     "6": 20
+    },
+    "edge_lengths": 2,
+    "radii": 2,
+    "face_kinds": 2,
+    "flags": [],
+    "match": "DICTO Ogdoecontahedron (OG)"
+   },
+   "a": {
+    "V": 180,
+    "F": 182,
+    "faces": {
+     "3": 60,
+     "4": 90,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 4,
+    "radii": 2,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 360,
+    "F": 182,
+    "faces": {
+     "4": 60,
+     "6": 80,
+     "8": 30,
+     "10": 12
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 182,
+    "F": 360,
+    "faces": {
+     "3": 360
+    },
+    "edge_lengths": 7,
+    "radii": 5,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 182,
+    "F": 180,
+    "faces": {
+     "4": 180
+    },
+    "edge_lengths": 4,
+    "radii": 4,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 360,
+    "F": 362,
+    "faces": {
+     "3": 60,
+     "4": 270,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 6,
+    "radii": 4,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 180,
+    "F": 182,
+    "faces": {
+     "3": 60,
+     "4": 90,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 5,
+    "radii": 2,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO KRE",
+  "D": "D45",
+  "ops": {
+   "d": {
+    "V": 90,
+    "F": 92,
+    "faces": {
+     "3": 60,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 3,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   },
+   "a": {
+    "V": 180,
+    "F": 182,
+    "faces": {
+     "3": 60,
+     "4": 90,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 3,
+    "radii": 2,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 360,
+    "F": 182,
+    "faces": {
+     "3": 60,
+     "5": 12,
+     "6": 20,
+     "8": 90
+    },
+    "edge_lengths": 5,
+    "radii": 4,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 182,
+    "F": 360,
+    "faces": {
+     "3": 360
+    },
+    "edge_lengths": 7,
+    "radii": 5,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 182,
+    "F": 180,
+    "faces": {
+     "4": 180
+    },
+    "edge_lengths": 3,
+    "radii": 4,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 360,
+    "F": 482,
+    "faces": {
+     "3": 300,
+     "4": 150,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 7,
+    "radii": 4,
+    "face_kinds": 8,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 120,
+    "F": 152,
+    "faces": {
+     "3": 120,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 4,
+    "radii": 1,
+    "face_kinds": 4,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO TPH",
+  "D": "D49",
+  "ops": {
+   "d": {
+    "V": 132,
+    "F": 80,
+    "faces": {
+     "5": 60,
+     "6": 20
+    },
+    "edge_lengths": 3,
+    "radii": 2,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 210,
+    "F": 332,
+    "faces": {
+     "3": 300,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 4,
+    "radii": 2,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 420,
+    "F": 332,
+    "faces": {
+     "3": 180,
+     "6": 140,
+     "10": 12
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 212,
+    "F": 420,
+    "faces": {
+     "3": 420
+    },
+    "edge_lengths": 7,
+    "radii": 5,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 332,
+    "F": 210,
+    "faces": {
+     "4": 120,
+     "6": 60,
+     "8": 30
+    },
+    "edge_lengths": 4,
+    "radii": 5,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 540,
+    "F": 722,
+    "faces": {
+     "3": 420,
+     "4": 270,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 7,
+    "radii": 4,
+    "face_kinds": 10,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 120,
+    "F": 92,
+    "faces": {
+     "4": 60,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 4,
+    "radii": 1,
+    "face_kinds": 3,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO PHE",
+  "D": "D46",
+  "ops": {
+   "d": {
+    "V": 92,
+    "F": 180,
+    "faces": {
+     "3": 180
+    },
+    "edge_lengths": 3,
+    "radii": 3,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 270,
+    "F": 272,
+    "faces": {
+     "3": 180,
+     "5": 12,
+     "6": 80
+    },
+    "edge_lengths": 5,
+    "radii": 4,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 540,
+    "F": 272,
+    "faces": {
+     "3": 180,
+     "10": 12,
+     "12": 80
+    },
+    "edge_lengths": 9,
+    "radii": 5,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 452,
+    "F": 540,
+    "faces": {
+     "3": 300,
+     "4": 180,
+     "6": 60
+    },
+    "edge_lengths": 10,
+    "radii": 6,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 272,
+    "F": 270,
+    "faces": {
+     "4": 270
+    },
+    "edge_lengths": 6,
+    "radii": 6,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 540,
+    "F": 662,
+    "faces": {
+     "3": 420,
+     "4": 150,
+     "5": 12,
+     "6": 80
+    },
+    "edge_lengths": 12,
+    "radii": 5,
+    "face_kinds": 11,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 60,
+    "F": 62,
+    "faces": {
+     "3": 20,
+     "4": 30,
+     "5": 12
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 3,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "Samson",
+  "D": "D71",
+  "ops": {
+   "d": {
+    "V": 10,
+    "F": 16,
+    "faces": {
+     "3": 16
+    },
+    "edge_lengths": 2,
+    "radii": 2,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 24,
+    "F": 26,
+    "faces": {
+     "3": 20,
+     "6": 6
+    },
+    "edge_lengths": 3,
+    "radii": 2,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 48,
+    "F": 26,
+    "faces": {
+     "3": 16,
+     "6": 4,
+     "12": 6
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 32,
+    "F": 48,
+    "faces": {
+     "3": 36,
+     "4": 12
+    },
+    "edge_lengths": 6,
+    "radii": 4,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 26,
+    "F": 24,
+    "faces": {
+     "4": 24
+    },
+    "edge_lengths": 3,
+    "radii": 4,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 48,
+    "F": 50,
+    "faces": {
+     "3": 20,
+     "4": 24,
+     "6": 6
+    },
+    "edge_lengths": 5,
+    "radii": 3,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 12,
+    "F": 8,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 2,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "Sonsam",
+  "D": "D76",
+  "ops": {
+   "d": {
+    "V": 13,
+    "F": 19,
+    "faces": {
+     "3": 16,
+     "4": 3
+    },
+    "edge_lengths": 6,
+    "radii": 4,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 30,
+    "F": 32,
+    "faces": {
+     "3": 22,
+     "4": 3,
+     "5": 3,
+     "6": 3,
+     "9": 1
+    },
+    "edge_lengths": 9,
+    "radii": 6,
+    "face_kinds": 9,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 60,
+    "F": 32,
+    "faces": {
+     "3": 16,
+     "4": 3,
+     "6": 6,
+     "10": 3,
+     "12": 3,
+     "18": 1
+    },
+    "edge_lengths": 10,
+    "radii": 11,
+    "face_kinds": 9,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 41,
+    "F": 60,
+    "faces": {
+     "3": 42,
+     "4": 18
+    },
+    "edge_lengths": 20,
+    "radii": 12,
+    "face_kinds": 11,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 32,
+    "F": 30,
+    "faces": {
+     "4": 30
+    },
+    "edge_lengths": 12,
+    "radii": 9,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 60,
+    "F": 86,
+    "faces": {
+     "3": 70,
+     "4": 9,
+     "5": 3,
+     "6": 3,
+     "9": 1
+    },
+    "edge_lengths": 20,
+    "radii": 12,
+    "face_kinds": 19,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "note": "some face region unbounded"
+   }
+  }
+ },
+ {
+  "name": "Lahdeli",
+  "D": "D77",
+  "ops": {
+   "d": {
+    "V": 8,
+    "F": 12,
+    "faces": {
+     "3": 12
+    },
+    "edge_lengths": 3,
+    "radii": 2,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 18,
+    "F": 20,
+    "faces": {
+     "3": 14,
+     "5": 6
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 36,
+    "F": 20,
+    "faces": {
+     "3": 12,
+     "6": 2,
+     "10": 6
+    },
+    "edge_lengths": 5,
+    "radii": 4,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 32,
+    "F": 36,
+    "faces": {
+     "3": 18,
+     "4": 12,
+     "5": 6
+    },
+    "edge_lengths": 8,
+    "radii": 5,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 20,
+    "F": 18,
+    "faces": {
+     "4": 18
+    },
+    "edge_lengths": 4,
+    "radii": 4,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 36,
+    "F": 44,
+    "faces": {
+     "3": 26,
+     "4": 12,
+     "5": 6
+    },
+    "edge_lengths": 8,
+    "radii": 4,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 8,
+    "F": 12,
+    "faces": {
+     "3": 12
+    },
+    "edge_lengths": 3,
+    "radii": 2,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "Ian Dury",
+  "D": "D78",
+  "ops": {
+   "d": {
+    "V": 13,
+    "F": 16,
+    "faces": {
+     "3": 10,
+     "4": 6
+    },
+    "edge_lengths": 5,
+    "radii": 4,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 27,
+    "F": 29,
+    "faces": {
+     "3": 16,
+     "4": 9,
+     "6": 4
+    },
+    "edge_lengths": 6,
+    "radii": 4,
+    "face_kinds": 9,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 54,
+    "F": 29,
+    "faces": {
+     "3": 10,
+     "4": 6,
+     "6": 6,
+     "8": 3,
+     "12": 4
+    },
+    "edge_lengths": 6,
+    "radii": 9,
+    "face_kinds": 9,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 32,
+    "F": 54,
+    "faces": {
+     "3": 48,
+     "4": 6
+    },
+    "edge_lengths": 14,
+    "radii": 9,
+    "face_kinds": 9,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 29,
+    "F": 27,
+    "faces": {
+     "4": 27
+    },
+    "edge_lengths": 12,
+    "radii": 9,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 54,
+    "F": 62,
+    "faces": {
+     "3": 28,
+     "4": 30,
+     "6": 4
+    },
+    "edge_lengths": 9,
+    "radii": 9,
+    "face_kinds": 15,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "note": "some face region unbounded"
+   }
+  }
+ },
+ {
+  "name": "Blockhead",
+  "D": "D79",
+  "ops": {
+   "d": {
+    "V": 10,
+    "F": 10,
+    "faces": {
+     "3": 4,
+     "4": 6
+    },
+    "edge_lengths": 3,
+    "radii": 3,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 18,
+    "F": 23,
+    "faces": {
+     "3": 16,
+     "4": 6,
+     "6": 1
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 36,
+    "F": 23,
+    "faces": {
+     "3": 10,
+     "4": 3,
+     "6": 6,
+     "8": 3,
+     "12": 1
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 20,
+    "F": 36,
+    "faces": {
+     "3": 36
+    },
+    "edge_lengths": 9,
+    "radii": 4,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 23,
+    "F": 18,
+    "faces": {
+     "4": 12,
+     "5": 6
+    },
+    "edge_lengths": 8,
+    "radii": 7,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 39,
+    "F": 50,
+    "faces": {
+     "3": 28,
+     "4": 21,
+     "6": 1
+    },
+    "edge_lengths": 7,
+    "radii": 5,
+    "face_kinds": 12,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "note": "some face region unbounded"
+   }
+  }
+ },
+ {
+  "name": "Chucky",
+  "D": "D80",
+  "ops": {
+   "d": {
+    "V": 13,
+    "F": 19,
+    "faces": {
+     "3": 16,
+     "4": 3
+    },
+    "edge_lengths": 6,
+    "radii": 4,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 30,
+    "F": 32,
+    "faces": {
+     "3": 19,
+     "4": 6,
+     "5": 6,
+     "9": 1
+    },
+    "edge_lengths": 7,
+    "radii": 6,
+    "face_kinds": 9,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 60,
+    "F": 32,
+    "faces": {
+     "3": 16,
+     "4": 3,
+     "6": 3,
+     "8": 3,
+     "10": 6,
+     "18": 1
+    },
+    "edge_lengths": 8,
+    "radii": 12,
+    "face_kinds": 9,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 47,
+    "F": 60,
+    "faces": {
+     "3": 39,
+     "4": 12,
+     "5": 9
+    },
+    "edge_lengths": 18,
+    "radii": 13,
+    "face_kinds": 11,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 32,
+    "F": 30,
+    "faces": {
+     "4": 30
+    },
+    "edge_lengths": 12,
+    "radii": 10,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 60,
+    "F": 68,
+    "faces": {
+     "3": 31,
+     "4": 30,
+     "5": 6,
+     "9": 1
+    },
+    "edge_lengths": 12,
+    "radii": 12,
+    "face_kinds": 16,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 16,
+    "F": 22,
+    "faces": {
+     "3": 16,
+     "4": 6
+    },
+    "edge_lengths": 6,
+    "radii": 4,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "Fang",
+  "D": "D81",
+  "ops": {
+   "d": {
+    "V": 7,
+    "F": 7,
+    "faces": {
+     "3": 4,
+     "4": 3
+    },
+    "edge_lengths": 3,
+    "radii": 3,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 12,
+    "F": 14,
+    "faces": {
+     "3": 8,
+     "4": 6
+    },
+    "edge_lengths": 2,
+    "radii": 3,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 24,
+    "F": 14,
+    "faces": {
+     "3": 4,
+     "4": 3,
+     "6": 4,
+     "8": 3
+    },
+    "edge_lengths": 2,
+    "radii": 5,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 14,
+    "F": 24,
+    "faces": {
+     "3": 24
+    },
+    "edge_lengths": 7,
+    "radii": 6,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 14,
+    "F": 12,
+    "faces": {
+     "4": 12
+    },
+    "edge_lengths": 6,
+    "radii": 6,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 24,
+    "F": 26,
+    "faces": {
+     "3": 8,
+     "4": 18
+    },
+    "edge_lengths": 4,
+    "radii": 5,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "note": "some face region unbounded"
+   }
+  }
+ },
+ {
+  "name": "Triskelion Tetrahedron",
+  "D": "D82",
+  "ops": {
+   "d": {
+    "V": 10,
+    "F": 16,
+    "faces": {
+     "3": 16
+    },
+    "edge_lengths": 2,
+    "radii": 2,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 24,
+    "F": 26,
+    "faces": {
+     "3": 20,
+     "6": 6
+    },
+    "edge_lengths": 3,
+    "radii": 2,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 48,
+    "F": 26,
+    "faces": {
+     "3": 16,
+     "6": 4,
+     "12": 6
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 32,
+    "F": 48,
+    "faces": {
+     "3": 36,
+     "4": 12
+    },
+    "edge_lengths": 6,
+    "radii": 4,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 26,
+    "F": 24,
+    "faces": {
+     "4": 24
+    },
+    "edge_lengths": 3,
+    "radii": 3,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 48,
+    "F": 50,
+    "faces": {
+     "3": 20,
+     "4": 24,
+     "6": 6
+    },
+    "edge_lengths": 5,
+    "radii": 3,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 12,
+    "F": 8,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 2,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "Ganesha",
+  "D": "D84",
+  "ops": {
+   "d": {
+    "V": 17,
+    "F": 30,
+    "faces": {
+     "3": 30
+    },
+    "edge_lengths": 10,
+    "radii": 6,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 45,
+    "F": 47,
+    "faces": {
+     "3": 36,
+     "4": 3,
+     "6": 4,
+     "8": 3,
+     "12": 1
+    },
+    "edge_lengths": 14,
+    "radii": 9,
+    "face_kinds": 11,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 90,
+    "F": 47,
+    "faces": {
+     "3": 30,
+     "6": 6,
+     "8": 3,
+     "12": 4,
+     "16": 3,
+     "24": 1
+    },
+    "edge_lengths": 19,
+    "radii": 14,
+    "face_kinds": 11,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 80,
+    "F": 90,
+    "faces": {
+     "3": 54,
+     "4": 6,
+     "5": 30
+    },
+    "edge_lengths": 32,
+    "radii": 20,
+    "face_kinds": 20,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 47,
+    "F": 45,
+    "faces": {
+     "4": 45
+    },
+    "edge_lengths": 15,
+    "radii": 11,
+    "face_kinds": 10,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 90,
+    "F": 122,
+    "faces": {
+     "3": 96,
+     "4": 18,
+     "6": 4,
+     "8": 3,
+     "12": 1
+    },
+    "edge_lengths": 33,
+    "radii": 15,
+    "face_kinds": 26,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "note": "some face region unbounded"
+   }
+  }
+ },
+ {
+  "name": "Lion",
+  "D": "D87",
+  "ops": {
+   "d": {
+    "V": 80,
+    "F": 42,
+    "faces": {
+     "5": 12,
+     "6": 30
+    },
+    "edge_lengths": 2,
+    "radii": 2,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 120,
+    "F": 122,
+    "faces": {
+     "3": 80,
+     "5": 12,
+     "6": 30
+    },
+    "edge_lengths": 2,
+    "radii": 2,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 240,
+    "F": 122,
+    "faces": {
+     "5": 12,
+     "6": 110
+    },
+    "edge_lengths": 2,
+    "radii": 3,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 122,
+    "F": 240,
+    "faces": {
+     "3": 240
+    },
+    "edge_lengths": 5,
+    "radii": 4,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 122,
+    "F": 120,
+    "faces": {
+     "4": 120
+    },
+    "edge_lengths": 3,
+    "radii": 4,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 240,
+    "F": 242,
+    "faces": {
+     "3": 80,
+     "4": 120,
+     "5": 12,
+     "6": 30
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 120,
+    "F": 62,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "edge_lengths": 3,
+    "radii": 1,
+    "face_kinds": 3,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO TQH",
+  "D": "D50",
+  "ops": {
+   "d": {
+    "V": 140,
+    "F": 132,
+    "faces": {
+     "3": 60,
+     "5": 72
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 270,
+    "F": 392,
+    "faces": {
+     "3": 300,
+     "4": 60,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 5,
+    "radii": 4,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 540,
+    "F": 392,
+    "faces": {
+     "3": 240,
+     "5": 12,
+     "6": 60,
+     "8": 60,
+     "12": 20
+    },
+    "edge_lengths": 7,
+    "radii": 5,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 332,
+    "F": 540,
+    "faces": {
+     "3": 420,
+     "4": 120
+    },
+    "edge_lengths": 10,
+    "radii": 5,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 392,
+    "F": 270,
+    "faces": {
+     "4": 90,
+     "5": 120,
+     "6": 60
+    },
+    "edge_lengths": 7,
+    "radii": 7,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 660,
+    "F": 1022,
+    "faces": {
+     "3": 780,
+     "4": 210,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 12,
+    "radii": 6,
+    "face_kinds": 14,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 120,
+    "F": 62,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "edge_lengths": 3,
+    "radii": 1,
+    "face_kinds": 3,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "Tweedledum",
+  "D": "D89",
+  "ops": {
+   "d": {
+    "V": 60,
+    "F": 32,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 2,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   },
+   "a": {
+    "V": 90,
+    "F": 92,
+    "faces": {
+     "3": 60,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 2,
+    "radii": 2,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 180,
+    "F": 92,
+    "faces": {
+     "5": 12,
+     "6": 80
+    },
+    "edge_lengths": 2,
+    "radii": 3,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 92,
+    "F": 180,
+    "faces": {
+     "3": 180
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 92,
+    "F": 90,
+    "faces": {
+     "4": 90
+    },
+    "edge_lengths": 2,
+    "radii": 3,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 180,
+    "F": 182,
+    "faces": {
+     "3": 60,
+     "4": 90,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 4,
+    "radii": 2,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 20,
+    "F": 12,
+    "faces": {
+     "5": 12
+    },
+    "edge_lengths": 1,
+    "radii": 1,
+    "face_kinds": 1,
+    "flags": [
+     "EQUAL-EDGED",
+     "REGULAR-FACED",
+     "ONE-SPHERE",
+     "ONE-FACE-KIND"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "Tweedledee",
+  "D": "D90",
+  "ops": {
+   "d": {
+    "V": 60,
+    "F": 32,
+    "faces": {
+     "5": 22,
+     "7": 10
+    },
+    "edge_lengths": 6,
+    "radii": 4,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 90,
+    "F": 112,
+    "faces": {
+     "3": 90,
+     "5": 12,
+     "7": 10
+    },
+    "edge_lengths": 8,
+    "radii": 6,
+    "face_kinds": 10,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 180,
+    "F": 112,
+    "faces": {
+     "3": 30,
+     "5": 12,
+     "6": 60,
+     "7": 10
+    },
+    "edge_lengths": 8,
+    "radii": 11,
+    "face_kinds": 10,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 92,
+    "F": 180,
+    "faces": {
+     "3": 180
+    },
+    "edge_lengths": 18,
+    "radii": 9,
+    "face_kinds": 11,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 112,
+    "F": 90,
+    "faces": {
+     "4": 65,
+     "5": 20,
+     "8": 5
+    },
+    "edge_lengths": 11,
+    "radii": 9,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 200,
+    "F": 222,
+    "faces": {
+     "3": 110,
+     "4": 85,
+     "5": 12,
+     "7": 10,
+     "8": 5
+    },
+    "edge_lengths": 13,
+    "radii": 12,
+    "face_kinds": 18,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 40,
+    "F": 47,
+    "faces": {
+     "3": 20,
+     "4": 25,
+     "5": 2
+    },
+    "edge_lengths": 7,
+    "radii": 3,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO TQP",
+  "D": "D51",
+  "ops": {
+   "d": {
+    "V": 162,
+    "F": 140,
+    "faces": {
+     "3": 60,
+     "5": 60,
+     "6": 20
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 300,
+    "F": 422,
+    "faces": {
+     "3": 300,
+     "4": 90,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 6,
+    "radii": 4,
+    "face_kinds": 8,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 600,
+    "F": 422,
+    "faces": {
+     "3": 240,
+     "6": 80,
+     "8": 90,
+     "10": 12
+    },
+    "edge_lengths": 8,
+    "radii": 6,
+    "face_kinds": 8,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 362,
+    "F": 600,
+    "faces": {
+     "3": 480,
+     "4": 120
+    },
+    "edge_lengths": 12,
+    "radii": 7,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 422,
+    "F": 300,
+    "faces": {
+     "4": 120,
+     "5": 120,
+     "6": 60
+    },
+    "edge_lengths": 7,
+    "radii": 7,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 720,
+    "F": 1082,
+    "faces": {
+     "3": 780,
+     "4": 270,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 14,
+    "radii": 7,
+    "face_kinds": 15,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "note": "some face region unbounded"
+   }
+  }
+ },
+ {
+  "name": "DICTO DPHP",
+  "D": "D48",
+  "ops": {
+   "d": {
+    "V": 152,
+    "F": 270,
+    "faces": {
+     "3": 240,
+     "4": 30
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 420,
+    "F": 452,
+    "faces": {
+     "3": 300,
+     "5": 120,
+     "6": 20,
+     "10": 12
+    },
+    "edge_lengths": 9,
+    "radii": 5,
+    "face_kinds": 8,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 840,
+    "F": 452,
+    "faces": {
+     "3": 300,
+     "10": 120,
+     "12": 20,
+     "20": 12
+    },
+    "edge_lengths": 14,
+    "radii": 9,
+    "face_kinds": 8,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 662,
+    "F": 840,
+    "faces": {
+     "3": 480,
+     "4": 240,
+     "5": 120
+    },
+    "edge_lengths": 15,
+    "radii": 9,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 452,
+    "F": 420,
+    "faces": {
+     "4": 360,
+     "5": 60
+    },
+    "edge_lengths": 10,
+    "radii": 8,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 870,
+    "F": 1232,
+    "faces": {
+     "3": 960,
+     "4": 120,
+     "5": 120,
+     "6": 20,
+     "10": 12
+    },
+    "edge_lengths": 19,
+    "radii": 9,
+    "face_kinds": 16,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 120,
+    "F": 62,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "edge_lengths": 3,
+    "radii": 1,
+    "face_kinds": 3,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "Jubjub",
+  "D": "D93",
+  "ops": {
+   "d": {
+    "V": 56,
+    "F": 30,
+    "faces": {
+     "5": 24,
+     "8": 6
+    },
+    "edge_lengths": 9,
+    "radii": 6,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 84,
+    "F": 110,
+    "faces": {
+     "3": 92,
+     "5": 12,
+     "8": 6
+    },
+    "edge_lengths": 11,
+    "radii": 8,
+    "face_kinds": 14,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 168,
+    "F": 110,
+    "faces": {
+     "3": 36,
+     "5": 12,
+     "6": 56,
+     "8": 6
+    },
+    "edge_lengths": 11,
+    "radii": 15,
+    "face_kinds": 14,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 86,
+    "F": 168,
+    "faces": {
+     "3": 168
+    },
+    "edge_lengths": 24,
+    "radii": 11,
+    "face_kinds": 16,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 110,
+    "F": 84,
+    "faces": {
+     "4": 54,
+     "5": 24,
+     "8": 6
+    },
+    "edge_lengths": 18,
+    "radii": 13,
+    "face_kinds": 10,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 192,
+    "F": 236,
+    "faces": {
+     "3": 128,
+     "4": 90,
+     "5": 12,
+     "8": 6
+    },
+    "edge_lengths": 19,
+    "radii": 18,
+    "face_kinds": 28,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 24,
+    "F": 20,
+    "faces": {
+     "4": 18,
+     "6": 2
+    },
+    "edge_lengths": 6,
+    "radii": 2,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "Jabberwock",
+  "D": "D88",
+  "ops": {
+   "d": {
+    "V": 140,
+    "F": 72,
+    "faces": {
+     "5": 60,
+     "10": 12
+    },
+    "edge_lengths": 3,
+    "radii": 3,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 210,
+    "F": 332,
+    "faces": {
+     "3": 320,
+     "10": 12
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 420,
+    "F": 332,
+    "faces": {
+     "3": 180,
+     "6": 140,
+     "10": 12
+    },
+    "edge_lengths": 4,
+    "radii": 4,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 212,
+    "F": 420,
+    "faces": {
+     "3": 420
+    },
+    "edge_lengths": 8,
+    "radii": 5,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 332,
+    "F": 210,
+    "faces": {
+     "4": 120,
+     "6": 60,
+     "8": 30
+    },
+    "edge_lengths": 6,
+    "radii": 6,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 540,
+    "F": 662,
+    "faces": {
+     "3": 440,
+     "4": 180,
+     "8": 30,
+     "10": 12
+    },
+    "edge_lengths": 5,
+    "radii": 6,
+    "face_kinds": 10,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 60,
+    "F": 62,
+    "faces": {
+     "3": 20,
+     "4": 30,
+     "5": 12
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 3,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO TPP",
+  "D": "D47",
+  "ops": {
+   "d": {
+    "V": 180,
+    "F": 212,
+    "faces": {
+     "3": 120,
+     "4": 60,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 5,
+    "radii": 2,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 390,
+    "F": 452,
+    "faces": {
+     "3": 300,
+     "5": 132,
+     "6": 20
+    },
+    "edge_lengths": 8,
+    "radii": 5,
+    "face_kinds": 8,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 780,
+    "F": 452,
+    "faces": {
+     "3": 240,
+     "5": 12,
+     "6": 80,
+     "10": 120
+    },
+    "edge_lengths": 11,
+    "radii": 8,
+    "face_kinds": 8,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 632,
+    "F": 780,
+    "faces": {
+     "3": 420,
+     "4": 240,
+     "5": 120
+    },
+    "edge_lengths": 15,
+    "radii": 9,
+    "face_kinds": 8,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 452,
+    "F": 390,
+    "faces": {
+     "4": 270,
+     "5": 120
+    },
+    "edge_lengths": 8,
+    "radii": 7,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 840,
+    "F": 1202,
+    "faces": {
+     "3": 900,
+     "4": 150,
+     "5": 132,
+     "6": 20
+    },
+    "edge_lengths": 18,
+    "radii": 8,
+    "face_kinds": 16,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 120,
+    "F": 92,
+    "faces": {
+     "4": 60,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 4,
+    "radii": 1,
+    "face_kinds": 3,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "DICTO TQHD",
+  "D": "D52",
+  "ops": {
+   "d": {
+    "V": 200,
+    "F": 162,
+    "faces": {
+     "4": 90,
+     "5": 72
+    },
+    "edge_lengths": 5,
+    "radii": 4,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 360,
+    "F": 542,
+    "faces": {
+     "3": 420,
+     "4": 90,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 8,
+    "radii": 5,
+    "face_kinds": 10,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 720,
+    "F": 542,
+    "faces": {
+     "3": 300,
+     "4": 30,
+     "5": 12,
+     "6": 120,
+     "8": 60,
+     "12": 20
+    },
+    "edge_lengths": 9,
+    "radii": 7,
+    "face_kinds": 10,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 422,
+    "F": 720,
+    "faces": {
+     "3": 600,
+     "4": 120
+    },
+    "edge_lengths": 13,
+    "radii": 7,
+    "face_kinds": 8,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 542,
+    "F": 360,
+    "faces": {
+     "4": 120,
+     "5": 120,
+     "6": 120
+    },
+    "edge_lengths": 10,
+    "radii": 10,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 900,
+    "F": 1382,
+    "faces": {
+     "3": 1020,
+     "4": 330,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 16,
+    "radii": 9,
+    "face_kinds": 19,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "note": "some face region unbounded"
+   }
+  }
+ },
+ {
+  "name": "Haigha",
+  "D": "D96",
+  "ops": {
+   "d": {
+    "V": 59,
+    "F": 114,
+    "faces": {
+     "3": 114
+    },
+    "edge_lengths": 18,
+    "radii": 8,
+    "face_kinds": 10,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 171,
+    "F": 173,
+    "faces": {
+     "3": 114,
+     "4": 15,
+     "5": 12,
+     "6": 20,
+     "8": 6,
+     "9": 6
+    },
+    "edge_lengths": 27,
+    "radii": 18,
+    "face_kinds": 19,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 342,
+    "F": 173,
+    "faces": {
+     "3": 114,
+     "8": 15,
+     "10": 12,
+     "12": 20,
+     "16": 6,
+     "18": 6
+    },
+    "edge_lengths": 44,
+    "radii": 29,
+    "face_kinds": 19,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 290,
+    "F": 342,
+    "faces": {
+     "3": 174,
+     "4": 102,
+     "5": 66
+    },
+    "edge_lengths": 59,
+    "radii": 30,
+    "face_kinds": 35,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 173,
+    "F": 171,
+    "faces": {
+     "4": 171
+    },
+    "edge_lengths": 29,
+    "radii": 18,
+    "face_kinds": 18,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 342,
+    "F": 476,
+    "faces": {
+     "3": 378,
+     "4": 54,
+     "5": 12,
+     "6": 20,
+     "8": 6,
+     "9": 6
+    },
+    "edge_lengths": 68,
+    "radii": 29,
+    "face_kinds": 48,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 13,
+    "F": 8,
+    "faces": {
+     "4": 5,
+     "5": 1,
+     "6": 2
+    },
+    "edge_lengths": 5,
+    "radii": 2,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "Hatta",
+  "D": "D97",
+  "ops": {
+   "d": {
+    "V": 59,
+    "F": 114,
+    "faces": {
+     "3": 114
+    },
+    "edge_lengths": 18,
+    "radii": 8,
+    "face_kinds": 10,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 171,
+    "F": 173,
+    "faces": {
+     "3": 126,
+     "4": 3,
+     "6": 26,
+     "7": 6,
+     "8": 12
+    },
+    "edge_lengths": 29,
+    "radii": 17,
+    "face_kinds": 19,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 342,
+    "F": 173,
+    "faces": {
+     "3": 114,
+     "6": 12,
+     "8": 3,
+     "12": 26,
+     "14": 6,
+     "16": 12
+    },
+    "edge_lengths": 42,
+    "radii": 28,
+    "face_kinds": 19,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 290,
+    "F": 342,
+    "faces": {
+     "3": 186,
+     "4": 90,
+     "5": 54,
+     "6": 12
+    },
+    "edge_lengths": 58,
+    "radii": 28,
+    "face_kinds": 35,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 173,
+    "F": 171,
+    "faces": {
+     "4": 171
+    },
+    "edge_lengths": 29,
+    "radii": 18,
+    "face_kinds": 18,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 342,
+    "F": 476,
+    "faces": {
+     "3": 390,
+     "4": 42,
+     "6": 26,
+     "7": 6,
+     "8": 12
+    },
+    "edge_lengths": 69,
+    "radii": 29,
+    "face_kinds": 48,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 12,
+    "F": 8,
+    "faces": {
+     "4": 6,
+     "6": 2
+    },
+    "edge_lengths": 3,
+    "radii": 1,
+    "face_kinds": 3,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "Red King",
+  "D": "D98",
+  "ops": {
+   "d": {
+    "V": 52,
+    "F": 80,
+    "faces": {
+     "3": 60,
+     "4": 20
+    },
+    "edge_lengths": 6,
+    "radii": 3,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 130,
+    "F": 132,
+    "faces": {
+     "3": 60,
+     "4": 40,
+     "5": 20,
+     "6": 10,
+     "10": 2
+    },
+    "edge_lengths": 7,
+    "radii": 5,
+    "face_kinds": 8,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 260,
+    "F": 132,
+    "faces": {
+     "3": 60,
+     "4": 20,
+     "8": 20,
+     "10": 20,
+     "12": 10,
+     "20": 2
+    },
+    "edge_lengths": 11,
+    "radii": 7,
+    "face_kinds": 8,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 152,
+    "F": 260,
+    "faces": {
+     "3": 220,
+     "4": 40
+    },
+    "edge_lengths": 13,
+    "radii": 7,
+    "face_kinds": 9,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 132,
+    "F": 130,
+    "faces": {
+     "4": 130
+    },
+    "edge_lengths": 8,
+    "radii": 7,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 260,
+    "F": 302,
+    "faces": {
+     "3": 140,
+     "4": 130,
+     "5": 20,
+     "6": 10,
+     "10": 2
+    },
+    "edge_lengths": 17,
+    "radii": 8,
+    "face_kinds": 15,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 60,
+    "F": 62,
+    "faces": {
+     "3": 20,
+     "4": 40,
+     "10": 2
+    },
+    "edge_lengths": 5,
+    "radii": 2,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "Walrus",
+  "D": "D99",
+  "ops": {
+   "d": {
+    "V": 62,
+    "F": 120,
+    "faces": {
+     "3": 120
+    },
+    "edge_lengths": 12,
+    "radii": 6,
+    "face_kinds": 8,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 180,
+    "F": 182,
+    "faces": {
+     "3": 140,
+     "5": 2,
+     "6": 10,
+     "7": 10,
+     "8": 20
+    },
+    "edge_lengths": 18,
+    "radii": 11,
+    "face_kinds": 15,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 360,
+    "F": 182,
+    "faces": {
+     "3": 120,
+     "6": 20,
+     "10": 2,
+     "12": 10,
+     "14": 10,
+     "16": 20
+    },
+    "edge_lengths": 26,
+    "radii": 18,
+    "face_kinds": 15,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 312,
+    "F": 360,
+    "faces": {
+     "3": 210,
+     "4": 70,
+     "5": 50,
+     "6": 30
+    },
+    "edge_lengths": 40,
+    "radii": 19,
+    "face_kinds": 23,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 182,
+    "F": 180,
+    "faces": {
+     "4": 180
+    },
+    "edge_lengths": 20,
+    "radii": 14,
+    "face_kinds": 13,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 360,
+    "F": 482,
+    "faces": {
+     "3": 380,
+     "4": 60,
+     "5": 2,
+     "6": 10,
+     "7": 10,
+     "8": 20
+    },
+    "edge_lengths": 41,
+    "radii": 20,
+    "face_kinds": 34,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 30,
+    "F": 27,
+    "faces": {
+     "4": 25,
+     "5": 2
+    },
+    "edge_lengths": 5,
+    "radii": 2,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "Red Knight",
+  "D": "D100",
+  "ops": {
+   "d": {
+    "V": 62,
+    "F": 120,
+    "faces": {
+     "3": 120
+    },
+    "edge_lengths": 3,
+    "radii": 3,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 180,
+    "F": 182,
+    "faces": {
+     "3": 140,
+     "5": 12,
+     "8": 30
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 360,
+    "F": 182,
+    "faces": {
+     "3": 120,
+     "6": 20,
+     "10": 12,
+     "16": 30
+    },
+    "edge_lengths": 6,
+    "radii": 4,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 332,
+    "F": 360,
+    "faces": {
+     "3": 240,
+     "5": 60,
+     "6": 60
+    },
+    "edge_lengths": 9,
+    "radii": 6,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 182,
+    "F": 180,
+    "faces": {
+     "4": 180
+    },
+    "edge_lengths": 4,
+    "radii": 5,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 360,
+    "F": 362,
+    "faces": {
+     "3": 140,
+     "4": 180,
+     "5": 12,
+     "8": 30
+    },
+    "edge_lengths": 8,
+    "radii": 4,
+    "face_kinds": 8,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 60,
+    "F": 32,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 2,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "Star Halo",
+  "D": "D104",
+  "ops": {
+   "d": {
+    "V": 60,
+    "F": 32,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 2,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": "TI Star core"
+   },
+   "a": {
+    "V": 90,
+    "F": 152,
+    "faces": {
+     "3": 140,
+     "5": 12
+    },
+    "edge_lengths": 3,
+    "radii": 2,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 180,
+    "F": 152,
+    "faces": {
+     "3": 80,
+     "5": 12,
+     "6": 60
+    },
+    "edge_lengths": 3,
+    "radii": 3,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 92,
+    "F": 180,
+    "faces": {
+     "3": 180
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 152,
+    "F": 90,
+    "faces": {
+     "4": 30,
+     "6": 60
+    },
+    "edge_lengths": 3,
+    "radii": 4,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 240,
+    "F": 302,
+    "faces": {
+     "3": 140,
+     "4": 150,
+     "5": 12
+    },
+    "edge_lengths": 4,
+    "radii": 3,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 60,
+    "F": 62,
+    "faces": {
+     "3": 20,
+     "4": 30,
+     "5": 12
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 3,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "White Knight",
+  "D": "D101",
+  "ops": {
+   "d": {
+    "V": 62,
+    "F": 120,
+    "faces": {
+     "3": 120
+    },
+    "edge_lengths": 3,
+    "radii": 3,
+    "face_kinds": 1,
+    "flags": [
+     "ONE-FACE-KIND"
+    ],
+    "match": null
+   },
+   "a": {
+    "V": 180,
+    "F": 182,
+    "faces": {
+     "3": 120,
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "edge_lengths": 2,
+    "radii": 2,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 360,
+    "F": 182,
+    "faces": {
+     "3": 120,
+     "8": 30,
+     "12": 20,
+     "20": 12
+    },
+    "edge_lengths": 4,
+    "radii": 2,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 332,
+    "F": 360,
+    "faces": {
+     "3": 180,
+     "4": 60,
+     "5": 120
+    },
+    "edge_lengths": 8,
+    "radii": 6,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 182,
+    "F": 180,
+    "faces": {
+     "4": 180
+    },
+    "edge_lengths": 3,
+    "radii": 4,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 360,
+    "F": 362,
+    "faces": {
+     "3": 120,
+     "4": 210,
+     "6": 20,
+     "10": 12
+    },
+    "edge_lengths": 6,
+    "radii": 3,
+    "face_kinds": 7,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 120,
+    "F": 62,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "edge_lengths": 3,
+    "radii": 1,
+    "face_kinds": 3,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "TI Star core",
+  "D": "D105",
+  "ops": {
+   "d": {
+    "V": 32,
+    "F": 60,
+    "faces": {
+     "3": 60
+    },
+    "edge_lengths": 2,
+    "radii": 2,
+    "face_kinds": 1,
+    "flags": [
+     "ONE-FACE-KIND"
+    ],
+    "match": "Star Halo"
+   },
+   "a": {
+    "V": 90,
+    "F": 92,
+    "faces": {
+     "3": 60,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 2,
+    "radii": 2,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 180,
+    "F": 92,
+    "faces": {
+     "3": 60,
+     "10": 12,
+     "12": 20
+    },
+    "edge_lengths": 4,
+    "radii": 2,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 152,
+    "F": 180,
+    "faces": {
+     "3": 120,
+     "5": 60
+    },
+    "edge_lengths": 5,
+    "radii": 4,
+    "face_kinds": 3,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 92,
+    "F": 90,
+    "faces": {
+     "4": 90
+    },
+    "edge_lengths": 2,
+    "radii": 3,
+    "face_kinds": 2,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 180,
+    "F": 182,
+    "faces": {
+     "3": 60,
+     "4": 90,
+     "5": 12,
+     "6": 20
+    },
+    "edge_lengths": 5,
+    "radii": 2,
+    "face_kinds": 5,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 60,
+    "F": 32,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "edge_lengths": 2,
+    "radii": 1,
+    "face_kinds": 2,
+    "flags": [
+     "ONE-SPHERE"
+    ],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "Alice",
+  "D": "D94",
+  "ops": {
+   "d": {
+    "V": 218,
+    "F": 144,
+    "faces": {
+     "5": 144
+    },
+    "edge_lengths": 16,
+    "radii": 9,
+    "face_kinds": 9,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 360,
+    "F": 626,
+    "faces": {
+     "3": 548,
+     "4": 66,
+     "5": 12
+    },
+    "edge_lengths": 34,
+    "radii": 19,
+    "face_kinds": 34,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 720,
+    "F": 626,
+    "faces": {
+     "3": 396,
+     "5": 12,
+     "6": 152,
+     "8": 66
+    },
+    "edge_lengths": 35,
+    "radii": 33,
+    "face_kinds": 34,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 428,
+    "F": 720,
+    "faces": {
+     "3": 588,
+     "4": 132
+    },
+    "edge_lengths": 55,
+    "radii": 24,
+    "face_kinds": 35,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 626,
+    "F": 360,
+    "faces": {
+     "4": 72,
+     "5": 120,
+     "6": 120,
+     "7": 24,
+     "8": 24
+    },
+    "edge_lengths": 44,
+    "radii": 29,
+    "face_kinds": 19,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 984,
+    "F": 1658,
+    "faces": {
+     "3": 1364,
+     "4": 282,
+     "5": 12
+    },
+    "edge_lengths": 66,
+    "radii": 44,
+    "face_kinds": 83,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 36,
+    "F": 32,
+    "faces": {
+     "3": 4,
+     "4": 24,
+     "6": 4
+    },
+    "edge_lengths": 5,
+    "radii": 2,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "Mad Hatter",
+  "D": "D91",
+  "ops": {
+   "d": {
+    "V": 218,
+    "F": 144,
+    "faces": {
+     "5": 144
+    },
+    "edge_lengths": 32,
+    "radii": 14,
+    "face_kinds": 16,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 360,
+    "F": 626,
+    "faces": {
+     "3": 548,
+     "4": 66,
+     "5": 12
+    },
+    "edge_lengths": 64,
+    "radii": 35,
+    "face_kinds": 61,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 720,
+    "F": 626,
+    "faces": {
+     "3": 396,
+     "5": 12,
+     "6": 152,
+     "8": 66
+    },
+    "edge_lengths": 66,
+    "radii": 63,
+    "face_kinds": 61,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 428,
+    "F": 720,
+    "faces": {
+     "3": 588,
+     "4": 132
+    },
+    "edge_lengths": 106,
+    "radii": 42,
+    "face_kinds": 67,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 626,
+    "F": 360,
+    "faces": {
+     "4": 72,
+     "5": 120,
+     "6": 120,
+     "7": 24,
+     "8": 24
+    },
+    "edge_lengths": 86,
+    "radii": 52,
+    "face_kinds": 36,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 984,
+    "F": 1694,
+    "faces": {
+     "3": 1448,
+     "4": 231,
+     "5": 12,
+     "8": 3
+    },
+    "edge_lengths": 127,
+    "radii": 86,
+    "face_kinds": 158,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 30,
+    "F": 35,
+    "faces": {
+     "3": 18,
+     "4": 15,
+     "6": 2
+    },
+    "edge_lengths": 8,
+    "radii": 3,
+    "face_kinds": 6,
+    "flags": [],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "March Hare",
+  "D": "D92",
+  "ops": {
+   "d": {
+    "V": 218,
+    "F": 144,
+    "faces": {
+     "5": 144
+    },
+    "edge_lengths": 32,
+    "radii": 15,
+    "face_kinds": 16,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 360,
+    "F": 626,
+    "faces": {
+     "3": 548,
+     "4": 66,
+     "5": 12
+    },
+    "edge_lengths": 62,
+    "radii": 32,
+    "face_kinds": 62,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 720,
+    "F": 626,
+    "faces": {
+     "3": 396,
+     "5": 12,
+     "6": 152,
+     "8": 66
+    },
+    "edge_lengths": 64,
+    "radii": 57,
+    "face_kinds": 62,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 428,
+    "F": 720,
+    "faces": {
+     "3": 588,
+     "4": 132
+    },
+    "edge_lengths": 103,
+    "radii": 38,
+    "face_kinds": 67,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 626,
+    "F": 360,
+    "faces": {
+     "4": 72,
+     "5": 120,
+     "6": 120,
+     "7": 24,
+     "8": 24
+    },
+    "edge_lengths": 86,
+    "radii": 53,
+    "face_kinds": 36,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 984,
+    "F": 1688,
+    "faces": {
+     "3": 1448,
+     "4": 219,
+     "5": 12,
+     "6": 6,
+     "8": 3
+    },
+    "edge_lengths": 125,
+    "radii": 85,
+    "face_kinds": 158,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 18,
+    "F": 17,
+    "faces": {
+     "3": 2,
+     "4": 15
+    },
+    "edge_lengths": 5,
+    "radii": 2,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   }
+  }
+ },
+ {
+  "name": "White Rabbit",
+  "D": "D95",
+  "ops": {
+   "d": {
+    "V": 218,
+    "F": 144,
+    "faces": {
+     "5": 144
+    },
+    "edge_lengths": 17,
+    "radii": 10,
+    "face_kinds": 9,
+    "flags": [],
+    "match": null
+   },
+   "a": {
+    "V": 360,
+    "F": 626,
+    "faces": {
+     "3": 548,
+     "4": 66,
+     "5": 12
+    },
+    "edge_lengths": 30,
+    "radii": 16,
+    "face_kinds": 34,
+    "flags": [],
+    "match": null
+   },
+   "t": {
+    "V": 720,
+    "F": 626,
+    "faces": {
+     "3": 396,
+     "5": 12,
+     "6": 152,
+     "8": 66
+    },
+    "edge_lengths": 30,
+    "radii": 28,
+    "face_kinds": 34,
+    "flags": [],
+    "match": null
+   },
+   "k": {
+    "V": 428,
+    "F": 720,
+    "faces": {
+     "3": 588,
+     "4": 132
+    },
+    "edge_lengths": 51,
+    "radii": 21,
+    "face_kinds": 35,
+    "flags": [],
+    "match": null
+   },
+   "j": {
+    "V": 626,
+    "F": 360,
+    "faces": {
+     "4": 72,
+     "5": 144,
+     "6": 72,
+     "7": 48,
+     "8": 24
+    },
+    "edge_lengths": 44,
+    "radii": 30,
+    "face_kinds": 19,
+    "flags": [],
+    "match": null
+   },
+   "e": {
+    "V": 984,
+    "F": 1634,
+    "faces": {
+     "3": 1316,
+     "4": 306,
+     "5": 12
+    },
+    "edge_lengths": 61,
+    "radii": 43,
+    "face_kinds": 82,
+    "flags": [],
+    "match": null
+   },
+   "K": {
+    "V": 36,
+    "F": 32,
+    "faces": {
+     "3": 4,
+     "4": 24,
+     "6": 4
+    },
+    "edge_lengths": 4,
+    "radii": 2,
+    "face_kinds": 4,
+    "flags": [],
+    "match": null
+   }
+  }
+ }
+]

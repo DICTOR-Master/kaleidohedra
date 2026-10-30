@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Star Cores: results of the first runs</title>
+<link rel="stylesheet" href="../paper.css">
+<style>table{border-collapse:collapse;font-size:7.4pt;margin:3mm 0;width:100%} td,th{border-bottom:1px solid #ddd;padding:0.7mm 1mm;text-align:left;vertical-align:top} td.c{text-align:center} .pick{border-left:3px solid #b8962e;padding-left:3mm;margin:3mm 0}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>Star Cores: results of the first runs</h1>
+<p class="sub">Every new shape given the star core treatment, five ways of building on the spikes, and the old methods</p>
+<div class="meta"><b>DICTO</b> · study results of 30 October 2026 · for DICTO · not for publication</div>
+
+<h2>1. Conclusions</h2>
+<div class="pick"><b>1. Polar spikes always fill.</b> If each spike's tip is put at its face's polar point instead of above the face's centre, the layer between the star and its halo is filled exactly by one pyramid over each corner and one tetrahedron over each edge. This held for all 48 convex shapes tested, with no overlaps, for ×φ and ×2. It looks like a general theorem, close to Conway's "join" (to be checked in the prior-art search). It is the logical rule for group C.</div>
+<div class="pick"><b>2. DICTO's sloping bases close every convex shape tested.</b> For the OCD Stella, the DBT and the OTT they fill the convex halo exactly. For the nine Queens' slices they close with no overlaps but end in a skin of their own, slightly inside the convex halo: a new outer solid for each slice.</div>
+<div class="pick"><b>3. Only three cores return.</b> TI (#78), the GTI and the TI Star core have cores that come back every two turns. Twenty more shapes have stars that fill exactly but cores that don't return.</div>
+<div class="pick"><b>4. Building on the star: one clean step.</b> The first star always builds cleanly for the shapes whose own pyramids make them up. A second star, spiking the first star's triangles, clashes in the valleys under both the centre rule and the local rule. With DICTO's shorter spikes in the valleys, the stars grow three steps with no clash at all (all 75 runs finished so far reached the third step but one; the 21 runs on the largest Queens' slices are still going). Each spike is shortened just enough to clear its neighbours. The ridges keep full spikes, the valleys flatten, and the growth slows step by step. The most symmetric shapes freeze: at the third step most spikes of the FPD, the Palintriacontahedron and the Lion lie flat and the rest are too short to add any measurable volume (the OG adds 0.3 per cent), so the star stops growing. These are finished stars. The less symmetric pieces keep growing most: Lahdeli, Samson, Chucky, the Triskelion Tetrahedron and Fang.</div>
+<div class="pick"><b>5. The old methods confirm the network.</b> The duals give the known pairs (GTI with FPD and the Palintriacontahedron, OG with the Hecatodihedron, the Star Halo with the TI Star core). The tips of Tweedledum's first stellation make a regular dodecahedron. Nothing else came out with all edges equal or all faces regular.</div>
+
+<h2>2. Every shape (×φ)</h2>
+<p>Group: <b>A</b> star fills and the core returns · <b>B</b> star fills, core does not return · <b>C</b> star inside its halo, layer not filled by corner and edge pieces · <b>D</b> star sticks out of its halo. Building columns: the volume each step adds (× the step before); ✗ marks a step with clashes. Valley: the volume each step adds, with the spikes shortened in the valleys; 'running' marks the runs still going.</p>
+<table><thead><tr><th>D</th><th>Shape</th><th>Group</th><th>Polar spikes</th><th>Sloping bases</th><th>Build on star, centre rule</th><th>Build on star, local rule</th><th>Valley rule</th><th>Dual is</th></tr></thead><tbody>
+<tr><td>D1</td><td>skewed rhombic dodecahedron</td><td class=c>D</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.472✗</td><td>1.618 · 1.128 · 1.077</td><td></td></tr>
+<tr><td>D2</td><td>skewed elongated dodecahedron ED F16</td><td class=c>D</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.671✗</td><td>1.618 · 1.472✗</td><td>1.618 · 1.115 · 1.015</td><td></td></tr>
+<tr><td>D3</td><td>skewed elongated dodecahedron ED F18</td><td class=c>D</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.642✗</td><td>1.618 · 1.472✗</td><td>1.618 · 1.090 · 1.084</td><td></td></tr>
+<tr><td>D4</td><td>Jewel (EKP windows; first called Dragon Jewel)</td><td class=c>C</td><td class=c>–</td><td class=c>–</td><td>1.618✗</td><td>1.618✗</td><td>1.412 · 1.361 · 1.187</td><td></td></tr>
+<tr><td>D6</td><td>Dodeca-13 Wedge</td><td class=c>D</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.564✗</td><td>1.618 · 1.344 · 1.285</td><td></td></tr>
+<tr><td>D7</td><td>Dodeca-13 Needle</td><td class=c>D</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618 · 1.830✗</td><td>1.618 · 1.708✗</td><td>1.618 · 1.177 · 1.279</td><td></td></tr>
+<tr><td>D22</td><td>Truncated-Icosahedral Hecatodihedron</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.574✗</td><td>1.618 · 1.041 · 1.002</td><td>Ogdoecontahedron (OG)</td></tr>
+<tr><td>D28</td><td>Ogdoecontahedron (OG)</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.486✗</td><td>1.618 · 1.031 · 1.003</td><td>Truncated-Icosahedral Hecatodihedron</td></tr>
+<tr><td>D29</td><td>OCD Stella</td><td class=c>C</td><td class=c>✓ fills</td><td class=c>✓ fills halo</td><td>1.618 · 1.618✗</td><td>1.618 · 1.635✗</td><td>1.618 · 1.034 · 1.000</td><td></td></tr>
+<tr><td>D30</td><td>Metaxyhexecontahedron</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.708✗</td><td>1.618 · 1.279 · 1.012</td><td></td></tr>
+<tr><td>D31</td><td>Palintriacontahedron</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.708✗</td><td>1.618 · 1.281 · 1.000</td><td>GTI (golden truncated icosahedron)</td></tr>
+<tr><td>D37</td><td>Belted Triacontahedron (DBT)</td><td class=c>C</td><td class=c>✓ fills</td><td class=c>✓ fills halo</td><td>1.618 · 1.618✗</td><td>1.618 · 1.517✗</td><td>1.618 · 1.301 · 1.000</td><td></td></tr>
+<tr><td>D38</td><td>OTT (Octahedrally Truncated Triacontahedron)</td><td class=c>C</td><td class=c>✓ fills</td><td class=c>✓ fills halo</td><td>1.618 · 1.618✗</td><td>1.618 · 1.658✗</td><td>1.618 · 1.015 · 1.000</td><td></td></tr>
+<tr><td>D40</td><td>GTI (golden truncated icosahedron)</td><td class=c>A</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.503✗</td><td>1.618 · 1.476 · 1.094</td><td>FPD (flat pentakis dodecahedron)</td></tr>
+<tr><td>D41</td><td>FPD (flat pentakis dodecahedron)</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.708✗</td><td>1.618 · 1.281 · 1.000</td><td>GTI (golden truncated icosahedron)</td></tr>
+<tr><td>D45</td><td>KRE</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.491✗</td><td>1.618 · 1.041 · 1.002</td><td></td></tr>
+<tr><td>D46</td><td>PHE</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.526✗</td><td>1.618 · 1.130 · 1.001</td><td></td></tr>
+<tr><td>D47</td><td>TPP</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.635✗</td><td>running</td><td></td></tr>
+<tr><td>D48</td><td>DPHP</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.504✗</td><td>1.618 · 1.096</td><td></td></tr>
+<tr><td>D49</td><td>TPH</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.657✗</td><td>1.618 · 1.192 · 1.000</td><td></td></tr>
+<tr><td>D50</td><td>TQH</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.711✗</td><td>1.618 · 1.636✗</td><td>1.618 · 1.095 · 1.000</td><td></td></tr>
+<tr><td>D51</td><td>TQP</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.571✗</td><td>1.618 · 1.041 · 1.002</td><td></td></tr>
+<tr><td>D52</td><td>TQHD</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.658✗</td><td>1.618 · 1.572✗</td><td>running</td><td></td></tr>
+<tr><td>D69</td><td>Lotus Jewel Axes</td><td class=c>C</td><td class=c>–</td><td class=c>–</td><td>1.618✗</td><td>1.618✗</td><td>1.447 · 1.191 · 1.213</td><td></td></tr>
+<tr><td>D70</td><td>Dodecaxes</td><td class=c>C</td><td class=c>–</td><td class=c>–</td><td>1.618✗</td><td>1.618✗</td><td>1.095 · 1.108 · 1.147</td><td></td></tr>
+<tr><td>D71</td><td>Samson</td><td class=c>D</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.577✗</td><td>1.618 · 1.116 · 1.064</td><td></td></tr>
+<tr><td>D76</td><td>Sonsam</td><td class=c>D</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.645✗</td><td>1.618 · 1.546✗</td><td>1.618 · 1.081 · 1.040</td><td></td></tr>
+<tr><td>D77</td><td>Lahdeli</td><td class=c>D</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.616✗</td><td>1.618 · 1.134 · 1.074</td><td></td></tr>
+<tr><td>D78</td><td>Ian Dury</td><td class=c>D</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.636✗</td><td>1.618 · 1.527✗</td><td>1.618 · 1.148 · 1.071</td><td></td></tr>
+<tr><td>D79</td><td>Blockhead</td><td class=c>D</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.551✗</td><td>1.618 · 1.165 · 1.167</td><td></td></tr>
+<tr><td>D80</td><td>Chucky</td><td class=c>D</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.493✗</td><td>1.618 · 1.266 · 1.257</td><td></td></tr>
+<tr><td>D81</td><td>Fang</td><td class=c>D</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.587✗</td><td>1.618 · 1.344 · 1.158</td><td></td></tr>
+<tr><td>D82</td><td>Triskelion Tetrahedron</td><td class=c>D</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.493✗</td><td>1.618 · 1.063 · 1.081</td><td></td></tr>
+<tr><td>D83</td><td>Keyaxes</td><td class=c>C</td><td class=c>–</td><td class=c>–</td><td>1.618✗</td><td>1.618✗</td><td>1.239 · 1.191 · 1.151</td><td></td></tr>
+<tr><td>D84</td><td>Ganesha</td><td class=c>D</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.656✗</td><td>1.618 · 1.503✗</td><td>1.618 · 1.112 · 1.089</td><td></td></tr>
+<tr><td>D86</td><td>Kagemusha</td><td class=c>C</td><td class=c>–</td><td class=c>–</td><td>1.618✗</td><td>1.618✗</td><td>1.458 · 1.504 · 1.189</td><td></td></tr>
+<tr><td>D87</td><td>Lion</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.708✗</td><td>1.618 · 1.169 · 1.000</td><td></td></tr>
+<tr><td>D88</td><td>Jabberwock</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.708✗</td><td>1.618 · 1.077 · 1.000</td><td></td></tr>
+<tr><td>D89</td><td>Tweedledum</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.708✗</td><td>1.618 · 1.235 · 1.000</td><td></td></tr>
+<tr><td>D90</td><td>Tweedledee</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.708✗</td><td>1.618 · 1.269 · 1.118</td><td></td></tr>
+<tr><td>D91</td><td>Mad Hatter</td><td class=c>C</td><td class=c>✓ fills</td><td class=c>closed, own skin</td><td>1.618 · 1.648✗</td><td>1.618 · 1.638✗</td><td>running</td><td></td></tr>
+<tr><td>D92</td><td>March Hare</td><td class=c>C</td><td class=c>✓ fills</td><td class=c>closed, own skin</td><td>1.618 · 1.639✗</td><td>1.618 · 1.643✗</td><td>running</td><td></td></tr>
+<tr><td>D93</td><td>Jubjub</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.708✗</td><td>1.618 · 1.251 · 1.063</td><td></td></tr>
+<tr><td>D94</td><td>Alice</td><td class=c>C</td><td class=c>✓ fills</td><td class=c>closed, own skin</td><td>1.618 · 1.648✗</td><td>1.618 · 1.632✗</td><td>running</td><td></td></tr>
+<tr><td>D95</td><td>White Rabbit</td><td class=c>C</td><td class=c>✓ fills</td><td class=c>closed, own skin</td><td>1.618 · 1.646✗</td><td>1.618 · 1.645✗</td><td>running</td><td></td></tr>
+<tr><td>D96</td><td>Haigha</td><td class=c>C</td><td class=c>✓ fills</td><td class=c>closed, own skin</td><td>1.618 · 1.618✗</td><td>1.618 · 1.499✗</td><td>running</td><td></td></tr>
+<tr><td>D97</td><td>Hatta</td><td class=c>C</td><td class=c>✓ fills</td><td class=c>closed, own skin</td><td>1.618 · 1.621✗</td><td>1.618 · 1.497✗</td><td>running</td><td></td></tr>
+<tr><td>D98</td><td>Red King</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.512✗</td><td>running</td><td></td></tr>
+<tr><td>D99</td><td>Walrus</td><td class=c>C</td><td class=c>✓ fills</td><td class=c>closed, own skin</td><td>1.618 · 1.621✗</td><td>1.618 · 1.489✗</td><td>running</td><td></td></tr>
+<tr><td>D100</td><td>Red Knight</td><td class=c>C</td><td class=c>✓ fills</td><td class=c>closed, own skin</td><td>1.618 · 1.618✗</td><td>1.618 · 1.497✗</td><td>running</td><td></td></tr>
+<tr><td>D101</td><td>White Knight</td><td class=c>C</td><td class=c>✓ fills</td><td class=c>closed, own skin</td><td>1.618 · 1.618✗</td><td>1.618 · 1.476✗</td><td>running</td><td></td></tr>
+<tr><td>D103</td><td>Golden TI Star</td><td class=c>D</td><td class=c>–</td><td class=c>–</td><td>1.618✗</td><td>1.618✗</td><td>running</td><td></td></tr>
+<tr><td>D104</td><td>Star Halo</td><td class=c>B</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.708✗</td><td>running</td><td>TI Star core</td></tr>
+<tr><td>D105</td><td>TI Star core</td><td class=c>A</td><td class=c>✓ fills</td><td class=c>–</td><td>1.618 · 1.618✗</td><td>1.618 · 1.510✗</td><td>running</td><td>Star Halo</td></tr>
+</tbody></table>
+<p class="prec">Studies 2026-10-30-star-cores (star_core.py, star_build.py, polar_spikes.py, sloping_bases.py, star_valley.py, group2_diag.py) and 2026-10-30-old-methods (old_methods.py), run on dicto-big-brother; numerical (float64), overlaps by the separating-axis test. Exact confirmation follows for the results that go into papers.</p>
+</body></html>
