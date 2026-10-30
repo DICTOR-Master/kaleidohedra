@@ -130,8 +130,9 @@ Archimedean solid and its Catalan dual always share a gain, since T alternates b
    element to the first power only if it splits. So 89 and 109 in TI (#78) are typical, not special. DICTO's series idea is better served
    by the gains themselves (findings 1 and 2) than by their primes.
 4. **Omnitruncates never close.** The two omnitruncates (and their duals) are the only uniform solids that do not close: their corners
-   sit at general points of the mirror triangle, and T keeps making new corner orbits (corner counts 62 → 812). The OG chain (study 4)
-   behaves the same way. Speculated: T closes only when the start's corners lie on mirrors.
+   sit at general points of the mirror triangle (orbits of 120 or 48), and T keeps making new corner orbits (corner counts 62 → 812). The
+   OG chain (study 4) also keeps growing, although the OG's corners (12 + 30 + 60) all lie on mirrors. So corners on mirrors are needed
+   for these uniform solids to close, but they are not enough in general.
 
 Correction made during the run: the first build used the icosahedral rotation of the other orientation (x and y swapped), which spoiled
 the icosahedral seeds. It was caught because TI's gain disagreed with #78, then fixed (the icosahedron's orbit is now asserted to have 12
