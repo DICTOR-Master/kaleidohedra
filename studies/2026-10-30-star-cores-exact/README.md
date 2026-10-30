@@ -40,3 +40,20 @@ rhombic faces of Conway's join. So the theorem is the "thick" version of the joi
 and the pieces add up exactly to the halo's volume (data/study1.json, `polar`).
 
 Files: scripts/study1.py (exact, uses the dataset's exactlib), scripts/gains.py; data/study1.json, study1.log, gains.txt. Run on dicto-big-brother.
+
+## 3. Prior art for the theorem (searched 2026-10-30)
+
+**Verdict:** the ingredients are classical, and the decomposition itself is elementary. We found no source that states it with the
+condition ρ > R. The papers present it as a lemma with its proof, not as a discovery.
+- Polar reciprocation, with the polar's corners at the poles of the face planes: classical (Wikipedia, "Dual polyhedron", read).
+- At the midsphere, a solid and its dual cross edge to edge, and the hull's faces are the rhombi of Conway's join, jX = daX (G. W. Hart,
+  "Conway Notation for Polyhedra", georgehart.com; Wikipedia, "Conway polyhedron notation"; Antiprism `conway` and `pol_recip` docs, read).
+- The hull Π+ of a regular polytope and its reciprocal, and their common core Π−: H. S. M. Coxeter, "Reciprocating the Regular Polytopes",
+  J. London Math. Soc. 55 (1997) 549–557. Only the abstract was read (the full text is paywalled).
+- Not read: D. Eppstein's COMB-01 slides (the fetch failed), which a search snippet links to hulls of a polytope and its polar.
+- Library (`ask-library`, 4 queries: hull of a polyhedron and its dual/join; polar spikes and Kleetope; dissection between a polyhedron and its
+  polar; Conway notation, join, kis and the midsphere): no relevant hit. The closest were O'Rourke 2023 "Polar Zonohedra Edge-Unfold to Nets"
+  (on unfolding) and Cunningham–Mixer 2016 "Internal and external duality in abstract polytopes" (combinatorial).
+- Web queries: "convex hull of a polyhedron and its polar reciprocal dual compound triangulated faces kis join"; "Conway polyhedron notation
+  join operator dual of ambo rhombic faces canonical compound"; "Eppstein Kuperberg Ziegler fat 4-polytopes edge-tangent"; "Reciprocating
+  the regular polytopes".
