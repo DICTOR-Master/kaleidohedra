@@ -753,7 +753,7 @@ export function worldTitle(dim, action) {
   const kit = action?.match(/^tool:polyKit:([\w.]+)$/)?.[1];
   if (kit && KITS13[kit]) return KITS13[kit].label;
   const shape = action?.match(/^tool:polyShape:(\w+)$/)?.[1];
-  if (shape && POLYHEDRA[shape]) return polyShapeName(shape);
+  if (shape && POLYHEDRA[shape]) return polyShapeName(shape).replaceAll('_', ' ');   // a few shapes have no display name yet: show the id readably
   for (const e of dimensionEntries(dim)) {
     if (e.fam?.action === action) return e.fam.label;
     const piece = e.lat?.pieces?.find((x) => x.action === action);
