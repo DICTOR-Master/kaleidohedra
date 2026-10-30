@@ -92,3 +92,48 @@ The values: icosahedral (5-fold to 3-fold) cos²θ = (5+2√5)/15, which is #78'
 core; octahedral (4-fold to 3-fold) cos²θ = 1/3; tetrahedral (one 3-fold axis to the other kind of 3-fold axis) cos²θ = 1/9. The proof needs
 both families to cut the core, which holds for all ten. The exact runs match the formula in every case. David (D2d, one family of
 four faces) is the only case outside the proposition: its own two-turn scale is 1/10.
+
+## 5. Study 5: the gains side by side (scripts/study5.py; data/study5.json)
+
+**One-line conclusion.** Every Platonic, Archimedean and Catalan solid closes under T except the two omnitruncates and their duals. The
+gains form a few clear series. The primes in them are the split primes of the field: this is forced by the arithmetic and has no further
+meaning on its own.
+The solids are built exactly as orbits of a seed corner under the symmetry group, and each is checked uniform (one edge length). An
+Archimedean solid and its Catalan dual always share a gain, since T alternates between them.
+
+| Solids (Archimedean / Catalan dual) | Period | Radius gain per period | Primes of the norm |
+|---|---|---|---|
+| tetrahedron | 2 | 9 | 3 |
+| cube, octahedron | 2 | 3 | 3 |
+| icosahedron, dodecahedron | 2 | 15 − 6√5 = 3√5/φ³ | 3, 5 |
+| truncated tetrahedron / triakis tetrahedron | 4 | 121/25 | 11 (÷5) |
+| cuboctahedron / rhombic dodecahedron = truncated octahedron / tetrakis hexahedron (one orbit) | 4 | 5/2 | 5 (÷2) |
+| icosidodecahedron / rhombic triacontahedron (with GTI, FPD, Palintriacontahedron) | 4 | 10/φ⁴ | 2, 5 |
+| truncated cube / triakis octahedron | 4 | 271 − 190√2 | 17, 73 |
+| rhombicuboctahedron / deltoidal icositetrahedron | 4 | (2281 − 1556√2)/49 | 17, 433 (÷7) |
+| truncated icosahedron / pentakis dodecahedron | 4 | (17745 − 7712√5)/361 (= #78) | 5, 89, 109 (÷19) |
+| truncated dodecahedron / triakis icosahedron | 4 | (5179 − 2238√5)/121 | 61, 241 (÷11) |
+| rhombicosidodecahedron / deltoidal hexecontahedron | 4 | (32269 − 13820√5)/1089 | 41, 17401 (÷3, 11) |
+| truncated cuboctahedron / disdyakis dodecahedron | none in 8 steps | (corners 26 → 552, still growing) | |
+| truncated icosidodecahedron / disdyakis triacontahedron | none in 8 steps | (corners 62 → 812, still growing) | |
+| DICTO: Icosaxes; Unborn Axes; Tweedledum; Metaxyhexecontahedron; Samson; David; Delilah | 4; 4; 4; 4; 4; 2; 2 | study 1 | 5·61; 19 (3, ÷5); 41·101; 2081·2341; cubic; 2·5; 3 |
+
+**Findings.**
+1. **Platonic gain = (R/r)².** For each Platonic pair the two-step gain is the square of circumradius over inradius: 9, 3 and
+   15/(5+2√5) = 15 − 6√5. This is the inverse of the core scale cos²θ of study 2: there T moves a corner's plane out to the corner, and the
+   core moves it back in.
+2. **Quasi-regular series.** The cuboctahedron's gain is 10/2² and the icosidodecahedron's is 10/φ⁴, that is 10/(2cos π/n)⁴ for n = 4 and 5.
+   At n = 3 the formula gives 10, which is David's two-step gain; the octahedron (the tetrahedral member) has 3 per two steps instead.
+   Status: observation (two cases plus a coincidence), not a theorem.
+3. **The primes are split primes.** Every prime in a norm is 5 or ≡ ±1 mod 5 in Q(√5) (89, 109, 61, 241, 41, 101, 17401, 19, 2081, 2341),
+   and ≡ ±1 mod 8 in Q(√2) (17, 73, 433). Number theory forces this: an odd prime other than the field's own can divide the norm of an
+   element to the first power only if it splits. So 89 and 109 in TI (#78) are typical, not special. DICTO's series idea is better served
+   by the gains themselves (findings 1 and 2) than by their primes.
+4. **Omnitruncates never close.** The two omnitruncates (and their duals) are the only uniform solids that do not close: their corners
+   sit at general points of the mirror triangle, and T keeps making new corner orbits (corner counts 62 → 812). The OG chain (study 4)
+   behaves the same way. Speculated: T closes only when the start's corners lie on mirrors.
+
+Correction made during the run: the first build used the icosahedral rotation of the other orientation (x and y swapped), which spoiled
+the icosahedral seeds. It was caught because TI's gain disagreed with #78, then fixed (the icosahedron's orbit is now asserted to have 12
+corners), and the truncated dodecahedron's seed was permuted to suit the frame. All sixteen seeds were then checked uniform. Every value
+above comes from the corrected run.
