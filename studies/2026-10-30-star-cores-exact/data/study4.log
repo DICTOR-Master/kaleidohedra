@@ -1,0 +1,20 @@
+library 45
+{'step': 1, 'corners': 92, 'faces': {'4': 90}, 'radius_kinds': 3, 'edge_kinds': 2, 'seconds': 0, 'is': 'DICTO KRE (Kite-Rhombic Enneacontahedron)'}
+{'step': 2, 'corners': 180, 'faces': {'5': 12, '6': 80}, 'radius_kinds': 2, 'edge_kinds': 4, 'seconds': 1, 'is': 'DICTO PHE (Pentagon-Hexagon Enneacontadihedron)'}
+{'step': 3, 'corners': 212, 'faces': {'3': 60, '5': 120}, 'radius_kinds': 4, 'edge_kinds': 5, 'seconds': 2, 'is': 'DICTO TPP (Triangle-Pentagon Polyhedron)'}
+{'step': 4, 'corners': 270, 'faces': {'5': 120, '6': 20, '10': 12}, 'radius_kinds': 4, 'edge_kinds': 5, 'seconds': 3, 'is': 'DICTO DPHP (Decagon-Pentagon-Hexagon Polyhedron)'}
+{'step': 5, 'corners': 452, 'faces': {'3': 60, '4': 30, '5': 120, '9': 60}, 'radius_kinds': 6, 'edge_kinds': 8, 'seconds': 9}
+{'step': 6, 'corners': 642, 'faces': {'4': 300, '6': 120, '12': 20}, 'radius_kinds': 10, 'edge_kinds': 12, 'seconds': 30}
+{'step': 7, 'corners': 1220, 'faces': {'3': 60, '4': 120, '5': 60, '6': 210, '7': 60, '8': 120, '10': 12}, 'radius_kinds': 14, 'edge_kinds': 20, 'seconds': 152}
+{'step': 8, 'corners': 1352, 'faces': {'3': 240, '4': 180, '5': 480, '13': 60}, 'radius_kinds': 19, 'edge_kinds': 26, 'seconds': 871}
+{'step': 9, 'corners': 2240, 'faces': {'3': 60, '4': 180, '5': 252, '6': 360, '7': 120, '9': 180}, 'radius_kinds': 24, 'edge_kinds': 35, 'seconds': 8418}
+Traceback (most recent call last):
+  File "/home/dicto/kres-tmp/star-cores-exact/scripts/study4.py", line 102, in <module>
+    t0 = time.time(); S, SF = ustep(S); r2 = rad2(S)
+                              ~~~~~^^^
+  File "/home/dicto/kres-tmp/dataset-v6/build/exactlib.py", line 449, in ustep
+    return halfspace_solid([(v, dot(v, v)) for v in V])
+  File "/home/dicto/kres-tmp/dataset-v6/build/exactlib.py", line 434, in halfspace_solid
+    assert all((dot(n, c) - h).sign() <= 0 for n, h in planes), 'corner outside'
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: corner outside

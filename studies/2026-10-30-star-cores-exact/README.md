@@ -138,3 +138,31 @@ Correction made during the run: the first build used the icosahedral rotation of
 the icosahedral seeds. It was caught because TI's gain disagreed with #78, then fixed (the icosahedron's orbit is now asserted to have 12
 corners), and the truncated dodecahedron's seed was permuted to suit the frame. All sixteen seeds were then checked uniform. Every value
 above comes from the corrected run.
+
+## 6. Study 4: the OG chain under T, exact (scripts/study4.py; data/study4.json, study4.log)
+
+Conclusion: the OG chain does not close. It runs through four of DICTO's named solids, then leaves the data set and keeps growing in
+complexity; no step is similar to any earlier one. Status: closed at step 9 (DPHP's chain answered; OG's chain open-ended).
+
+| Step | Corners | Faces (sides: count) | Corner radii | Edge lengths | Is |
+|---|---|---|---|---|---|
+| 0 | 90 | | | | OG |
+| 1 | 92 | 4: 90 | 3 | 2 | KRE |
+| 2 | 180 | 5: 12, 6: 80 | 2 | 4 | PHE |
+| 3 | 212 | 3: 60, 5: 120 | 4 | 5 | TPP |
+| 4 | 270 | 5: 120, 6: 20, 10: 12 | 4 | 5 | DPHP |
+| 5 | 452 | 3: 60, 4: 30, 5: 120, 9: 60 | 6 | 8 | new |
+| 6 | 642 | 4: 300, 6: 120, 12: 20 | 10 | 12 | new |
+| 7 | 1220 | 3: 60, 4: 120, 5: 60, 6: 210, 7: 60, 8: 120, 10: 12 | 14 | 20 | new |
+| 8 | 1352 | 3: 240, 4: 180, 5: 480, 13: 60 | 19 | 26 | new |
+| 9 | 2240 | 3: 60, 4: 180, 5: 252, 6: 360, 7: 120, 9: 180 | 24 | 35 | new |
+
+1. Steps 1–4 match the data set's KRE, PHE, TPP and DPHP exactly (corner matching against its 45 ℚ(√5) convex solids), confirming #39.
+2. From step 5 the corner count rises at every step and the numbers of distinct corner radii and edge lengths rise too
+   (3, 2, 4, 4, 6, 10, 14, 19, 24). A step similar to an earlier one would need the same corner count, so no return is possible
+   through step 9, and the rising number of corner kinds shows the chain is spreading, not settling.
+3. Step 10 was not completed: exactlib's half-space routine stopped on its own consistency check ('corner outside') after step 9,
+   which had taken 2 h 20 min. This is a limit of the tool on a 2,240-corner solid, not a geometric result; the run is not repeated,
+   since conclusion 2 already settles the study.
+4. With study 5 (the omnitruncates) this gives the book its contrast: chains close when the solid's faces fall into few plane
+   families, and spread when they don't. The OG's corners lie on mirrors, yet its chain spreads.
