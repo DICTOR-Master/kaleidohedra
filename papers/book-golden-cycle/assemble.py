@@ -9,7 +9,8 @@ CH=[('1','chain-of-karma',22,'paper.html'),('2','spheres-of-dharma',23,'paper.ht
     ('4','../studies/2026-10-13-fused-shells/paper',27,'paper.html'),('5','theaetetus',29,'paper.html'),
     ('6','dharma-inside-out',32,'paper.html'),('7','both-cycles',33,'paper.html'),('8','progenitors',34,'paper.html'),('9','progenitors-2',35,'paper.html'),
     ('10','2026-10-19-universal-pitet',38,'paper.html'),('11','2026-10-20-og-family-both-ways',39,'paper.html'),
-    ('12','2026-10-21-kyushindo-cores',43,'paper.html'),('13','2026-10-25-gnomon-polar',54,'paper.html')]
+    ('12','2026-10-21-kyushindo-cores',43,'paper.html'),('13','2026-10-25-gnomon-polar',54,'paper.html'),
+    ('14','spiked-ti',78,'paper.html')]   # v2 (DICTO 10-30): #78 The Truncated Icosahedron Star as Chapter 14
 PART={'1':'Part I. Shells round a core','6':'Part II. The cycle turned and seeded','10':'Part III. The rule that grows the shells'}
 styles=set(); chapters=[]; sources=[]; toc=[]
 cw=open(os.path.join(P,'collected','paper.html'),encoding='utf8').read()
