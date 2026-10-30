@@ -1,0 +1,86 @@
+{
+ "t": "phi",
+ "C": {
+  "V": 60,
+  "faces": {
+   "5": 12,
+   "6": 20
+  },
+  "edges": [
+   0.224457,
+   0.501901
+  ],
+  "radii": [
+   1.0
+  ]
+ },
+ "C_is_D105_shape": true,
+ "ratio_pent_over_hex_distance": {
+  "TI": 1.0265315229073024,
+  "C": 0.9741542059984695,
+  "product": 1.0000000006301628
+ },
+ "next_core": {
+  "V": 60,
+  "faces": {
+   "5": 12,
+   "6": 20
+  },
+  "edges": [
+   0.403548
+  ],
+  "radii": [
+   1.0
+  ]
+ },
+ "next_core_is_TI_shape": true,
+ "next_core_is_C_shape": false,
+ "next_core_over_TI_scale": 1.6532249250832571,
+ "C_over_TI_scale": 1.3009631023995152,
+ "hull_of_tips": {
+  "V": 32,
+  "faces": {
+   "3": 60
+  },
+  "edges": [
+   0.633044,
+   0.713644
+  ],
+  "radii": [
+   0.974154,
+   1.0
+  ]
+ },
+ "hull_of_tips_is_StarHalo_shape": false,
+ "Ip": {
+  "3": 20
+ },
+ "Dh": {
+  "5": 12
+ },
+ "tip_corners": {
+  "pentagon_tips": 12,
+  "hexagon_tips": 20
+ },
+ "tip_radii": {
+  "pentagon": 2.915223689058801,
+  "hexagon": 2.992569011457032
+ },
+ "volumes_over_C": {
+  "C": 1,
+  "star": 1.6180339887498945,
+  "hull": 3.2268137009597684
+ },
+ "star_inside_hull": true,
+ "layer1": {
+  "pieces": 150,
+  "kinds": [
+   0.129849497,
+   0.275537488,
+   0.419871203
+  ],
+  "sum": 45.62000636987289,
+  "needed": 45.62000636987287
+ },
+ "overlaps": 0
+}
