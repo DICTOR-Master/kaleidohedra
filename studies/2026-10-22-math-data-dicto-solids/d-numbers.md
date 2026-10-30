@@ -134,7 +134,7 @@ decision of 28 October 2026. D1–D83 are unchanged.
 |---|---|---|---|---|
 | D84 | Ganesha | solid | – | #61 |
 | D85 | Humpty Dumpty | solid | – | #63 |
-| D86 | Shadow-17 | solid | – | #62 |
+| D86 | Kagemusha (DICTO's name 2026-10-30, the shadow warrior; was Shadow-17) | solid | – | #62 |
 
 Shadow-17: status "new construction from a known piece (J11, Johnson's gyroelongated pentagonal pyramid)" (DICTO 2026-10-28).
 

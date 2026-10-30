@@ -166,7 +166,7 @@ N_V3 = len(R)                                       # rows of versions 1-3: thei
 # version 4 (2026-10-28): three named solids of #61, #62 and #63 (DICTO's names; status and notes from the papers)
 R += [
  ('Ganesha', 'solid', '', '61', NEW, 'not found in the sources checked (#61): the Janus c/h tetrahedral piece of a squashed stacking (cubic bottom, hexagonal top); in the dataset at the parameters of #61 Figure 1 (ACBC, layer spacing^2 = (3/4)(2/3), lambda = 1/10)', 'dicto-ganesha', ''),
- ('Shadow-17', 'solid', '', '62', NEW, 'new construction from a known piece (J11, Johnson\'s gyroelongated pentagonal pyramid, Johnson 1966): two J11 glued on their pentagons; #62 identifies it as the equal-edged form of the 600-cell\'s outer edge-first slices; status decided by DICTO 2026-10-28; placeholder name of #62', 'dicto-shadow-17', ''),
+ ('Kagemusha', 'solid', '', '62', NEW, 'DICTO\'s name 2026-10-30, the shadow warrior (was Shadow-17, a placeholder from the 2D view; file slug dicto-shadow-17 kept); new construction from a known piece (J11, Johnson\'s gyroelongated pentagonal pyramid, Johnson 1966): two J11 glued on their pentagons; #62 identifies it as the equal-edged form of the 600-cell\'s outer edge-first slices; status decided by DICTO 2026-10-28; placeholder name of #62', 'dicto-shadow-17', ''),
  ('Humpty Dumpty', 'solid', '', '63', KN, 'known (corrected in version 5): the cell-first section of the 600-cell at height 1 + sqrt5/2, one of the sections drawn by Alicia Boole Stott (1900, cell-first series through the corner layers), read for #63 version 3; the exact solid, the convex egg of 92 triangles (Td) and the name are #63\'s and DICTO\'s; D85 is kept (D-numbers are never reused); its forced equal-edged form is Fallen Humpty (#63; Slice-48 in #62, numeric only, not in the dataset)', 'dicto-humpty-dumpty', ''),
 ]
 N_V4 = len(R)
@@ -225,8 +225,8 @@ assert len(_v3) == 8
 DNUM.update({n: f'D{76 + i}' for i, n in enumerate(_v3)})
 # version 4 (2026-10-28): D84 Ganesha (#61), D85 Humpty Dumpty (#63); Shadow-17 (#62) D86, numbered after DICTO's decision of 2026-10-28
 # (new construction from a known piece), so it takes the next free number rather than its place in publication order.
-DNUM.update({'Ganesha': 'D84', 'Humpty Dumpty': 'D85', 'Shadow-17': 'D86'})
-assert sorted(r[0] for r in R[N_V3:N_V4] if r[1] in ('solid', 'piece') and r[4] == NEW) == ['Ganesha', 'Shadow-17']   # Humpty Dumpty: known since version 5, D85 kept
+DNUM.update({'Ganesha': 'D84', 'Humpty Dumpty': 'D85', 'Kagemusha': 'D86'})
+assert sorted(r[0] for r in R[N_V3:N_V4] if r[1] in ('solid', 'piece') and r[4] == NEW) == ['Ganesha', 'Kagemusha']   # Humpty Dumpty: known since version 5, D85 kept
 # version 5 (2026-10-28): D87 on, in the order of the papers' appendix rows (#63, then #65); the three slices of Boole Stott's 1900 series get none
 _v5 = [r[0] for r in R[N_V4:N_V5] if r[1] in ('solid', 'piece') and r[4] == NEW]
 assert len(_v5) == 15

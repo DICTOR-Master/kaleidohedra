@@ -11,7 +11,7 @@ is a cube root (stored exactly as a symbolic expression, with decimal corners).
 
 ## What is new in version 6 (2026-10-30)
 
-Three solids of paper #78, The Truncated Icosahedron Star (TI Star), exact in ℚ(√5), with D-numbers D103–D105: the **Golden TI Star** (D103, non-convex, 92 corners, 180 triangles, volume exactly φ times the truncated icosahedron), the **Star Halo** (D104, DICTO's name: the hull of its 32 tips, a pentakis dodecahedron that is not the Catalan one) and the **TI Star core** (D105, DICTO's name: the icosahedron truncated at 1/φ³ of each edge, its hexagon edges exactly 1/√5 and 1). Built by build/build_v6.py from the #54 frame; all checks pass (check.py: 1505 checks, 65 solids). D102 (Fallen Humpty, #62) still has no model file: its exact equal-edged form is not yet solved.
+Three solids of paper #78, The Truncated Icosahedron Star (TI Star), exact in ℚ(√5), with D-numbers D103–D105: the **Golden TI Star** (D103, non-convex, 92 corners, 180 triangles, volume exactly φ times the truncated icosahedron), the **Star Halo** (D104, DICTO's name: the hull of its 32 tips, a pentakis dodecahedron that is not the Catalan one) and the **TI Star core** (D105, DICTO's name: the icosahedron truncated at 1/φ³ of each edge, its hexagon edges exactly 1/√5 and 1). Built by build/build_v6.py from the #54 frame; all checks pass (check.py: 1505 checks, 65 solids). Shadow-17 (D86) now has DICTO's name, **Kagemusha**, the shadow warrior; its file keeps the slug `dicto-shadow-17`. D102 (Fallen Humpty, #62) still has no model file: its exact equal-edged form is not yet solved.
 
 ## What is new in version 5 (2026-10-28)
 
@@ -283,7 +283,7 @@ Version 3 (twelve solids of #55, #56, #57, #59):
 | Icosaxes Hexa | – (cluster) | #59 The Icosaxes Hexa | 144, 228, 86 | Oh (48) | no | 9 + 17√5/3 | ℚ(√5) | `dicto-icosaxes-hexa` |
 | Lotus Hexa | – (cluster) | #59 The Icosaxes Hexa | 200, 564, 366 | Th (24) | no | 16 + 10√5/3 | ℚ(√5) | `dicto-lotus-hexa` |
 | Ganesha | D84 | #61 The Swap Rule | 30, 45, 17 | C3v (6) | yes | (68881403/165888000)√3 | ℚ(√3) | `dicto-ganesha` |
-| Shadow-17 | D86 | #62 Shadows of the Fourth Dimension | 17, 45, 30 | D5h (20) | no | 25/12 + 3√5/4 | ℚ(√5) | `dicto-shadow-17` |
+| Kagemusha (was Shadow-17) | D86 | #62 Shadows of the Fourth Dimension | 17, 45, 30 | D5h (20) | no | 25/12 + 3√5/4 | ℚ(√5) | `dicto-shadow-17` |
 | Humpty Dumpty | D85 | #63 The White Queen 600-cell | 48, 138, 92 | Td (24) | yes | 2627/60 + 1213√5/60 | ℚ(√5) | `dicto-humpty-dumpty` |
 
 Packings: `dicto-skewed-rhombic-dodecahedron-lattice` (F1, DICTO FCC), `dicto-skewed-ed-16-lattice`, `dicto-skewed-ed-18-lattice` (F7):
