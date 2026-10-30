@@ -249,7 +249,7 @@ const camera = new THREE.PerspectiveCamera(
 );
 camera.position.set(6, 5, 8);
 
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+const renderer = new THREE.WebGLRenderer({ antialias: true, stencil: true });   // stencil: the Queens lens's round window
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio * QUALITY_PIXEL_RATIO_FACTOR[getSettings().quality]);
 document.getElementById('fps-meter')?.classList.toggle('visible', getSettings().showFPSMeter);
@@ -7217,6 +7217,7 @@ function animate(frameTime = performance.now()) {
     softFrame?.();
     if (projection === 'reverse') applyReverse();
     renderer.render(scene, camera);
+    if (own3DActive() && own3D === 'whiteQueen') whiteQueenWorld?.renderLens?.(renderer, camera);   // the Queens lens, over the picture
   }
   // Always renders, regardless of the modal wheel's open state -- it's
   // a persistent HUD element, not something that should disappear

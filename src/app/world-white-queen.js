@@ -25,7 +25,7 @@ import { ROOF_FOLD_WORLD_SCALE as WS } from '../krp-core/src/geometry-extensions
 import { DIRECTIONS, EDGES, CELLS, shadowAt, viewAt, SLICE_STOPS, sliceAt, CLEO_POINTS, CLEO_SHELLS, quadKind, quadKinds } from './white-queen-geometry.js';
 import * as WQG from './white-queen-geometry.js';
 import * as RQG from './red-queen-geometry.js';
-import { STAGE_KEYS, STAGE_FACTS, stageShadowAt } from './queen-stages-geometry.js';
+import { STAGE_KEYS, STAGE_FACTS, stageShadowAt, stage as stageModel } from './queen-stages-geometry.js';
 
 export const WQ_DIRECTIONS = DIRECTIONS;
 /** The slider: 0..1000 along the chosen turning, its two ends the stops (it snaps to one within WQ_SNAP). */
@@ -133,6 +133,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     view.lineUp = d?.lineUp === true;
     view.whole = d?.whole === true;
     view.rcp = d?.rcp === true;
+    view.lens = d?.lens === true;
     if (Number.isFinite(d?.apart)) view.apart = Math.max(0, Math.min(1000, Math.round(d.apart)));
     if (Number.isInteger(d?.sliceK)) view.sliceK = Math.max(0, Math.min((view.queen === 'red' ? RQG : WQG).SLICE_STOPS[DIRECTIONS.indexOf(view.sliceDir)].length - 1, d.sliceK));
   } catch { /* defaults */ }
@@ -187,6 +188,88 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
   shadowGroup.add(fatInner, fatStage, shell, fatHull);
   for (const o of [inner, stageLines, shell, hullLines]) o.frustumCulled = false;
 
+  // ---- the Lens (DICTO 2026-10-30: "a polarizing filter lens that makes it easier to read the surface and layers") ----
+  // A round lens dragged over the Shadow view. Inside it the outline is lifted away and every edge is drawn crisp (a dark rim under
+  // a coloured line), coloured by its layer of depth in the fourth dimension along the view direction, counted from the middle:
+  // LENS_BANDS bands, violet at the middle layer, yellow at the two ends. Outside the lens nothing changes. Drawn after the main picture by renderLens(): a stencil disc
+  // limits the lens picture to the circle.
+  const LENS_BANDS = 9;
+  let lensBands = null;   // edges per colour band (read by tests)
+  const lensScene = new THREE.Scene(), lensRoot = new THREE.Group();
+  lensRoot.matrixAutoUpdate = false; lensScene.add(lensRoot);
+  const stencilIn = (m) => Object.assign(m, { stencilWrite: true, stencilRef: 1, stencilFunc: THREE.EqualStencilFunc, stencilFail: THREE.KeepStencilOp, stencilZFail: THREE.KeepStencilOp, stencilZPass: THREE.KeepStencilOp });
+  const lensRim = new LineSegments2(new LineSegmentsGeometry(), stencilIn(new LineMaterial({ color: 0x07080c, linewidth: 4.2, depthWrite: false })));
+  const lensLine = new LineSegments2(new LineSegmentsGeometry(), stencilIn(new LineMaterial({ color: 0xffffff, linewidth: 2.2, vertexColors: true })));
+  lensRim.renderOrder = 1; lensLine.renderOrder = 2;
+  for (const l of [lensRim, lensLine]) { l.frustumCulled = false; lensRoot.add(l); }
+  const orthoCam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 2);
+  const discGeo = new THREE.CircleGeometry(1, 96);
+  const discMask = new THREE.Mesh(discGeo, new THREE.MeshBasicMaterial({ colorWrite: false, depthWrite: false, depthTest: false, stencilWrite: true, stencilRef: 1, stencilFunc: THREE.AlwaysStencilFunc, stencilZPass: THREE.ReplaceStencilOp }));
+  const discBack = new THREE.Mesh(discGeo, stencilIn(new THREE.MeshBasicMaterial({ color: 0x0c0d14, transparent: true, opacity: 0.93, depthWrite: false, depthTest: false })));
+  const maskScene = new THREE.Scene(), backScene = new THREE.Scene();
+  maskScene.add(discMask); backScene.add(discBack);
+  const lensEl = document.createElement('div');
+  lensEl.className = 'wq-lens'; lensEl.hidden = true;
+  lensEl.setAttribute('role', 'img');
+  document.body.appendChild(lensEl);
+  const lensPos = { x: 0.5, y: 0.45 };   // the lens centre as a fraction of the window
+  let lensToQueen = true;                 // on opening, the lens goes to the middle of the Queen
+  const lensR = () => Math.max(90, Math.min(window.innerWidth, window.innerHeight) * 0.2);
+  function placeLens() {
+    const r = lensR();
+    Object.assign(lensEl.style, { width: `${2 * r}px`, height: `${2 * r}px`, left: `${lensPos.x * window.innerWidth - r}px`, top: `${lensPos.y * window.innerHeight - r}px` });
+  }
+  let drag = null;
+  lensEl.addEventListener('pointerdown', (e) => { drag = { id: e.pointerId, dx: e.clientX - lensPos.x * window.innerWidth, dy: e.clientY - lensPos.y * window.innerHeight }; lensEl.setPointerCapture(e.pointerId); e.preventDefault(); e.stopPropagation(); });
+  lensEl.addEventListener('pointermove', (e) => {
+    if (!drag || e.pointerId !== drag.id) return;
+    lensPos.x = Math.max(0, Math.min(1, (e.clientX - drag.dx) / window.innerWidth)); lensPos.y = Math.max(0, Math.min(1, (e.clientY - drag.dy) / window.innerHeight)); placeLens();
+  });
+  const endDrag = (e) => { if (drag && e.pointerId === drag.id) drag = null; };
+  lensEl.addEventListener('pointerup', endDrag); lensEl.addEventListener('pointercancel', endDrag);
+  window.addEventListener('resize', placeLens);
+  const lensOn = () => active && view.lens && view.mode === 'shadow';
+  function fillLens(s, P, E, md) {
+    const V4 = md ? stageModel(stageKey()).vertices : M().VERTICES, u = s.u;
+    // depth from the middle (the 4D equator across the view direction): the front and back halves of a symmetric queen fall on the
+    // same lines of the shadow, so each line gets the colour of its distance from the middle, the same for both
+    const depth = V4.map((v) => v.reduce((a, c, i) => a + c * u[i], 0));
+    // the colours go by the distinct depth levels of the edges (not equal steps of depth), so every colour of the scale is used
+    const midOf = ([i, j]) => Math.round(Math.abs((depth[i] + depth[j]) / 2) * 1e5);
+    const levels = [...new Set(E.map(midOf))].sort((x, y) => x - y), rank = new Map(levels.map((v, n) => [v, n]));
+    const pos = new Float32Array(E.length * 6), col = new Float32Array(E.length * 6), c = new THREE.Color();
+    E.forEach(([i, j], k) => {
+      pos.set(P[i], k * 6); pos.set(P[j], k * 6 + 3);
+      const b = Math.min(LENS_BANDS - 1, Math.floor((rank.get(midOf([i, j])) / Math.max(1, levels.length)) * LENS_BANDS));
+      c.setHex(viridis(0.08 + (0.87 * b) / (LENS_BANDS - 1)));
+      col.set([c.r, c.g, c.b, c.r, c.g, c.b], k * 6);
+    });
+    for (const l of [lensRim, lensLine]) { l.geometry.dispose(); l.geometry = new LineSegmentsGeometry(); l.geometry.setPositions(pos); }
+    lensLine.geometry.setColors(col);
+    lensBands = Array.from({ length: LENS_BANDS }, (_, b) => E.filter(([i, j]) => Math.min(LENS_BANDS - 1, Math.floor((rank.get(midOf([i, j])) / Math.max(1, levels.length)) * LENS_BANDS)) === b).length);
+  }
+  /** Draws the lens over the finished picture (called by the app after its render). */
+  function renderLens(renderer, camera) {
+    lensEl.hidden = !lensOn();
+    if (!lensOn()) return;
+    if (lensToQueen) {
+      lensToQueen = false;
+      const o = new THREE.Vector3().setFromMatrixPosition(shadowGroup.matrixWorld).project(camera);
+      lensPos.x = Math.max(0.1, Math.min(0.9, (o.x + 1) / 2)); lensPos.y = Math.max(0.1, Math.min(0.9, (1 - o.y) / 2)); placeLens();
+    }
+    const W = window.innerWidth, H = window.innerHeight, r = lensR();
+    const sx = (2 * r) / W, sy = (2 * r) / H, cx = lensPos.x * 2 - 1, cy = 1 - lensPos.y * 2;
+    for (const m of [discMask, discBack]) { m.scale.set(sx / 2 * 2, sy / 2 * 2, 1); m.position.set(cx, cy, -1); }
+    lensRoot.matrix.copy(shadowGroup.matrixWorld); lensRoot.matrixWorldNeedsUpdate = true;
+    const auto = renderer.autoClear; renderer.autoClear = false;
+    renderer.clearStencil();
+    renderer.render(maskScene, orthoCam);
+    renderer.render(backScene, orthoCam);
+    renderer.clearDepth();
+    renderer.render(lensScene, camera);
+    renderer.autoClear = auto;
+  }
+
   // ---- the Slice view: rebuilt per stop, in its own turning group (Humpty Dumpty turns) ----
   // Line up (W7): the align group turns the slice so its direction's main symmetry axis (SLICE_AXES) points at the viewer
   const sliceGroup = new THREE.Group(), align = new THREE.Group(), spin = new THREE.Group();
@@ -232,6 +315,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     const solid = opacity >= 1;   // Colour (solid): an opaque shell like the Polyhedraverse stars; Translucent: the glass shows the inside
     if (shellMat.transparent === solid) { shellMat.transparent = !solid; shellMat.depthWrite = solid; shellMat.needsUpdate = true; }
     shellMat.opacity = solid ? 1 : SHELL * opacity;
+    fillLens(s, P, E, md);
   }
   function drawSlice() {
     clearSpin();
@@ -401,7 +485,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     ${row('from')}
     ${row('to')}
     ${row('slice', false)}
-    <div class="w4d-row w4d-options wq-halves-row"><button type="button" data-wq-halves></button></div>
+    <div class="w4d-row w4d-options wq-halves-row"><button type="button" data-wq-halves></button><button type="button" data-wq-lens></button></div>
     <div class="w4d-row wq-param-row"><label class="hull-pick"><span class="wq-param-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row wq-slice-row"><label class="hull-pick"><span class="wq-slice-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row wq-apart-row"><label class="hull-pick"><span class="wq-apart-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
@@ -434,7 +518,11 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     // nothing unnecessary shown: each view only its own rows
     panel.querySelector('[data-wq-row="from"]').hidden = panel.querySelector('[data-wq-row="to"]').hidden = panel.querySelector('.wq-param-row').hidden = !shadow;
     panel.querySelector('[data-wq-row="slice"]').hidden = panel.querySelector('.wq-slice-row').hidden = !slice;
-    panel.querySelector('.wq-halves-row').hidden = !shadow || mid();
+    panel.querySelector('.wq-halves-row').hidden = !shadow;
+    halvesBtn.hidden = mid();
+    const lb = panel.querySelector('[data-wq-lens]');
+    lb.textContent = t('wq.lens', L); lb.title = t('wq.lens.tip', L); lb.classList.toggle('active', view.lens); lb.setAttribute('aria-pressed', String(view.lens));
+    lensEl.setAttribute('aria-label', t('wq.lens.tip', L)); placeLens(); lensEl.hidden = !lensOn();
     panel.querySelector('.wq-apart-row').hidden = !(shadow && view.halves && !mid());
     panel.querySelector('.wq-shells-row').hidden = !shells;
     panel.querySelector('.wq-lineup-row').hidden = !slice;
@@ -527,6 +615,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     if (e.target.closest('[data-wq-link]')) { openAction(red() ? RQ_ARISTOTLE_ACTION : WQ_ARISTOTLE_ACTION); return; }
     const qb = e.target.closest('[data-wq-queen]');
     if (qb) { if (qb.dataset.wqQueen === view.queen && !mid()) return; view.queen = qb.dataset.wqQueen; view.stage = red() ? 6 : 0; clampToQueen(); save(); draw(); fit(); return; }
+    if (e.target.closest('[data-wq-lens]')) { view.lens = !view.lens; lensToQueen = view.lens; save(); renderPanel(); return; }
     if (e.target.closest('[data-wq-lineup]')) { view.lineUp = !view.lineUp; if (!view.lineUp) spinStopped = false; save(); draw(); fit(); return; }
     if (e.target.closest('[data-wq-halves]')) { view.halves = !view.halves; save(); draw(); fit(); return; }
     const b = e.target.closest('[data-wq-from], [data-wq-to], [data-wq-slice], [data-wq-mode]');
@@ -552,6 +641,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
 
   return {
     group,
+    renderLens,
     // Shells: tapping the picture adds the next shell, a shell per tap as in the RCP build (DICTO 2026-10-29)
     meshes: () => (active && view.mode === 'shells' && !view.whole ? shellsGroup.children.filter((c) => c.isMesh) : []),
     handleTap: () => {
@@ -582,7 +672,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
       if (on === active) return;
       active = on;
       group.visible = on;
-      if (!on) { panel.classList.remove('visible'); return; }
+      if (!on) { panel.classList.remove('visible'); lensEl.hidden = true; return; }
       draw(); fit();
       setTimeout(() => { if (active) renderPanel(); }, 0);   // after the entry has written the menu's title
     },
@@ -596,6 +686,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     /** For the browser tests (?probe): the view, and in it what is shown and its counts. */
     probe: () => {
       if (!shown) return null;
+      if (view.mode === 'shadow' && view.lens) return { mode: 'shadow', lens: true, lensBands, lensShown: !lensEl.hidden, lensColours: Array.from(lensLine.geometry.attributes.instanceColorStart?.data?.array?.slice(0, 18) ?? []) };
       if (view.mode === 'shells') {
         const k = view.shells - 1;
         return { queen: view.queen, mode: 'shells', rcp: view.rcp, whole: view.whole, wholeKept: view.whole ? wholeKept.slice() : null, shells: view.shells, total: totalShells(), newest: { k, pieces: shellList()[k].cells.length }, colours: Array.from({ length: view.shells }, (_, i) => shellColour(i, totalShells())), radius: shellsRadius };

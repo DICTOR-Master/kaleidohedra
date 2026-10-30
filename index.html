@@ -308,6 +308,9 @@
     #worldwhiteQueen-panel .wq-row > * { flex: none; }
     #worldwhiteQueen-panel .wq-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 12px; order: 11; }   /* under the caption */
     #worldwhiteQueen-panel .wq-legend[hidden] { display: none; }
+    /* the Queens lens (DICTO 2026-10-30): a round window dragged over the Shadow view; the picture inside is drawn by renderLens() */
+    .wq-lens { position: fixed; z-index: 5; border-radius: 50%; border: 2px solid #d4af37; box-shadow: 0 0 0 1px rgba(0,0,0,0.6), 0 6px 22px rgba(0,0,0,0.45); touch-action: none; cursor: grab; background: transparent; }
+    .wq-lens:active { cursor: grabbing; }
     #worldwhiteQueen-panel .wq-sw i { display: inline-block; width: 12px; height: 12px; margin-right: 5px; vertical-align: -1px; border-radius: 2px; }
     /* DICTONIC and The Global Web of Bonds on wide, short screens (TV, landscape; DICTO 2026-10-25): the controls stand in a column on the right, scrolling,
        and the picture is centred in the space to their left (render.js, readPanelCover). Upright tablets and phones keep the bottom panel. */
