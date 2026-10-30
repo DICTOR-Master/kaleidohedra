@@ -2,7 +2,7 @@
 
 DICTO's request (2026-10-31): "star cores cover for book 9x9?! matching current style"; then "maybe opposite letter colours on stars"; "make the title panel".
 
-**Conclusion:** cover fronts made in two versions (book stars / initials), letters in the colour opposite their star. Status: shown to DICTO, version to confirm.
+**Conclusion:** DICTO chose the book-stars square (left) with opposite letter colours and DICTO in red; KDP wrap with back cover made (spine for a provisional 120 pages). Status: shown to DICTO.
 
 - Cyclic Latin square 9 x 9 of STARCORES; each of the nine positions one star (face pyramids turned outwards, tips at twice the feet, #78's doubling rule), nine colours.
 - Book stars (left): Cleo star, TI Star, Star Halo, GTI, FPD, OG, TI Star core, Hecatodihedron, Tweedledum.
