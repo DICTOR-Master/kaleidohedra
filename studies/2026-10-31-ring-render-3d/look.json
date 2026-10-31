@@ -1,0 +1,114 @@
+{
+ "samples": 400,
+ "res": [
+  1134,
+  1512
+ ],
+ "exposure": -0.5,
+ "ring": {
+  "color": [
+   0.88,
+   0.9,
+   0.94
+  ],
+  "rough": 0.4,
+  "sss": 0.4,
+  "sss_scale": 0.0012
+ },
+ "wood": {
+  "scale": 6.0,
+  "rot": 20,
+  "c1": [
+   0.24,
+   0.11,
+   0.035
+  ],
+  "c2": [
+   0.38,
+   0.19,
+   0.06
+  ],
+  "c3": [
+   0.5,
+   0.28,
+   0.1
+  ],
+  "rough": 0.45
+ },
+ "world": {
+  "color": [
+   0.78,
+   0.84,
+   1.0
+  ],
+  "strength": 0.25
+ },
+ "light": {
+  "az": 135,
+  "el": 45,
+  "dist": 1.5,
+  "size": 0.35,
+  "power": 85,
+  "color": [
+   1.0,
+   0.82,
+   0.6
+  ]
+ },
+ "views": {
+  "1": {
+   "cam": "cam1_rest.json",
+   "obj": "bip.obj",
+   "light": {
+    "az": 140,
+    "el": 32
+   }
+  },
+  "2": {
+   "cam": "cam2_rest.json",
+   "obj": "bip.obj",
+   "light": {
+    "az": 45,
+    "el": 40
+   }
+  },
+  "3": {
+   "cam": "cam3_rest.json",
+   "obj": "bip.obj",
+   "light": {
+    "az": 135,
+    "el": 55
+   }
+  },
+  "clean": {
+   "cam": "cam2_rest.json",
+   "obj": "bip.obj",
+   "light": {
+    "az": 45,
+    "el": 40
+   }
+  },
+  "open": {
+   "cam": "cam2_rest.json",
+   "obj": "bipo.obj",
+   "light": {
+    "az": 45,
+    "el": 40
+   }
+  },
+  "htile": {
+   "cam": "cam_htile.json",
+   "obj": "htile.obj",
+   "res": [
+    1512,
+    1134
+   ],
+   "light": {
+    "az": 120,
+    "el": 45
+   }
+  }
+ },
+ "look": "AgX - Medium High Contrast",
+ "outdir": "final"
+}
