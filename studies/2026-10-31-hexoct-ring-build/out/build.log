@@ -1,0 +1,145 @@
+c {
+ "solids": [
+  {
+   "faces": 7,
+   "rings": 30,
+   "shared_sides_in_faces": 27,
+   "shared_sides_on_edges": 18,
+   "shared_sides": 45,
+   "ties": 90,
+   "corners": 10,
+   "sides": 15,
+   "euler": 2,
+   "height": 1.224744871391589,
+   "ring_sides_tied_flat": 35,
+   "ring_sides_tied_closing": 10,
+   "cut_face_sides": 9
+  },
+  {
+   "faces": 7,
+   "rings": 30,
+   "shared_sides_in_faces": 27,
+   "shared_sides_on_edges": 18,
+   "shared_sides": 45,
+   "ties": 90,
+   "corners": 10,
+   "sides": 15,
+   "euler": 2,
+   "height": 1.224744871391589
+  }
+ ],
+ "faces": 14,
+ "rings": 60,
+ "shared_sides": 90,
+ "ties": 180,
+ "kinds": {
+  "pentagon": {
+   "count": 6,
+   "rings_each": 7,
+   "sides": [
+    "1",
+    "1",
+    "1/2",
+    "1/2",
+    "1/2"
+   ]
+  },
+  "small triangle": {
+   "count": 6,
+   "rings_each": 1,
+   "sides": [
+    "1/2",
+    "1/2",
+    "1/2"
+   ]
+  },
+  "regular hexagon": {
+   "count": 2,
+   "rings_each": 6,
+   "sides": [
+    "1/2",
+    "1/2",
+    "1/2",
+    "1/2",
+    "1/2",
+    "1/2"
+   ]
+  }
+ },
+ "solids_touch_at": [
+  [
+   "0",
+   "0",
+   "0"
+  ]
+ ],
+ "solid2_is_minus_solid1": true,
+ "solid1_has_mirror": true
+}
+h {
+ "solids": [
+  {
+   "faces": 14,
+   "rings": 48,
+   "shared_sides_in_faces": 36,
+   "shared_sides_on_edges": 36,
+   "shared_sides": 72,
+   "ties": 144,
+   "corners": 18,
+   "sides": 30,
+   "euler": 2,
+   "height": 1.632993161855452,
+   "ring_sides_tied_flat": 56,
+   "ring_sides_tied_closing": 16,
+   "cut_face_sides": 15
+  }
+ ],
+ "faces": 14,
+ "rings": 48,
+ "shared_sides": 72,
+ "ties": 144,
+ "kinds": {
+  "pentagon": {
+   "count": 4,
+   "rings_each": 5,
+   "sides": [
+    "1/2",
+    "1/2",
+    "1/2",
+    "1",
+    "1"
+   ]
+  },
+  "small triangle": {
+   "count": 4,
+   "rings_each": 1,
+   "sides": [
+    "1/2",
+    "1/2",
+    "1/2"
+   ]
+  },
+  "trapezoid": {
+   "count": 4,
+   "rings_each": 3,
+   "sides": [
+    "1/2",
+    "1/2",
+    "1/2",
+    "1"
+   ]
+  },
+  "regular hexagon": {
+   "count": 2,
+   "rings_each": 6,
+   "sides": [
+    "1/2",
+    "1/2",
+    "1/2",
+    "1/2",
+    "1/2",
+    "1/2"
+   ]
+  }
+ }
+}

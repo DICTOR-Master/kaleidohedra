@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Building the HexOct tiles from rings</title>
+<link rel="stylesheet" href="../paper.css">
+<style>figure img{width:100%;display:block;border-radius:2pt} table{border-collapse:collapse;font-size:8pt;margin:3mm 0;width:100%} td,th{border-bottom:1px solid #ddd;padding:0.9mm 1.3mm;text-align:left;vertical-align:top} td.n,th.n{text-align:right} tr.best td{background:#faf1d2;font-weight:600} .thm{border-left:3px solid #b8962e;padding-left:3mm;margin:3mm 0} p.hook{font-style:italic;color:#444} .pb{break-before:page} ol.steps li{margin-bottom:1.2mm} .net{width:82%;margin:0 auto}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+
+<h1>Building the HexOct tiles from rings</h1>
+<p class="sub">One c-tile and one h-tile of HexOct (#75), from PET-bottle-cap security rings, at double scale</p>
+<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+DICTO · build sheet of 31 October 2026 · not for publication<br>
+The idea of the ring build is DICTO's. Computation with Claude (Anthropic). Study folder: studies/2026-10-31-hexoct-ring-build.</div>
+
+<div class="abstract"><b>Summary.</b> DICTO proposed to build one c-tile and one h-tile of HexOct: Two Tiles for Every Stacking (#75) from security rings. Each ring is pulled into a triangle and tied at six points, two per side. At double scale a unit triangle takes 4 rings, so a face can be built only if it is made of small triangles of side ½ on one triangular grid. The tiles change with the weight λ of the tetrahedral holes (−11/24 ≤ λ ≤ 3/8). We computed the faces of both tiles exactly over the whole walk. <b>Only λ = −1/8 works: there every face of both tiles can be laid with rings.</b> At every other weight tested, at most 8 faces of a tile can. At λ = −1/8 the four pieces of each tile are the classical ones: two unit tetrahedra and two halves of unit octahedra. The c-tile takes 60 rings and 180 zip ties; the h-tile takes 48 rings and 144 zip ties. No face is a square, and no face has to be left open or forced.</div>
+
+<h2>1. The rule for a ring face</h2>
+<p class="hook">A ring pulled tight into a triangle is a small equilateral triangle. Rings tied side to side make a flat sheet of triangles. A face of the tile can be built only if it is such a sheet.</p>
+<p>Lengths are in ball spacings: the edge of a tetrahedron of the close packing is 1. DICTO's double scale makes the side of one ring triangle ½. So a unit triangle is 4 rings (three corner rings and one upside-down middle ring), and a regular hexagon of side 1 is 24 rings. A face can be laid with rings exactly when (a) every side runs in one of three directions 60° apart, (b) every side has a length that is a multiple of ½, and (c) all corners sit on one triangular grid of spacing ½. Squares, rhombi with 70.5° corners, and sides of length ⅓ all fail. The program tests (a)–(c) exactly, in fractions; the number of rings in a face is its area divided by the area of one ring triangle.</p>
+
+<h2>2. The scan over the weight λ</h2>
+<p>For each weight, the tile engine of #75 gives the four pieces of each tile with exact coordinates: the c-tile is layer 1 of ABC, the h-tile is layer 0 of AB. We join the pieces into one solid: on every plane we overlay the faces of all pieces, cancel the glued parts, and merge what is left into faces. This replaces the approximate merge of the first script (tilefaces.py), which took the convex hull of coplanar points. Two checks run at every weight: the volume of the joined solid equals the sum of the pieces, and every side of every face is shared by exactly two faces. Both pass at all 82 weights tested: a grid of step 1/96 over the whole walk (81 weights) and the book's weight 1/10.</p>
+<table>
+<tr><th>λ</th><th class="n">weights</th><th>c-tile faces</th><th class="n">c: ring faces</th><th>h-tile faces</th><th class="n">h: ring faces</th></tr>
+<tr><td>−11/24</td><td class="n">1</td><td>20: 18 quad, 2 hex</td><td class="n">0/20</td><td>8: 6 quad, 2 hex</td><td class="n">0/8</td></tr>
+<tr><td>−43/96 … −3/8</td><td class="n">8</td><td>20: 18 quad, 2 hex</td><td class="n">0/20</td><td>16: 8 tri, 2 hex, 6 heptagons</td><td class="n">0/16</td></tr>
+<tr><td>−35/96 … −29/96</td><td class="n">7</td><td>32: 12 tri, 12 pent, 8 hex</td><td class="n">0/32</td><td>16: 8 tri, 2 hex, 6 heptagons</td><td class="n">0/16</td></tr>
+<tr><td>−7/24</td><td class="n">1</td><td>32: 12 tri, 12 quad, 8 hex</td><td class="n">0/32</td><td>16: 8 tri, 6 pent, 2 hex</td><td class="n">8/16</td></tr>
+<tr><td>−9/32 … −13/96</td><td class="n">15</td><td>38: 12 tri, 6 quad, 12 pent, 6 hex, 2 twelve-gons</td><td class="n">6/38 (at −1/4)</td><td>24: 12 tri, 4 quad, 6 heptagons, 2 twelve-gons</td><td class="n">0/24</td></tr>
+<tr class="best"><td>−1/8</td><td class="n">1</td><td>14: 6 tri, 6 pent, 2 hex</td><td class="n">14/14</td><td>14: 4 tri, 4 quad, 4 pent, 2 hex</td><td class="n">14/14</td></tr>
+<tr><td>−11/96 … 19/96</td><td class="n">32</td><td>32: 12 tri, 6 quad, 14 hex</td><td class="n">6/32 (at 1/8)</td><td>30: 8 tri, 6 quad, 4 pent, 12 hex</td><td class="n">0/30</td></tr>
+<tr><td>5/24</td><td class="n">1</td><td>32: 12 tri, 6 quad, 14 hex</td><td class="n">0/32</td><td>30: 8 tri, 10 quad, 4 pent, 8 hex</td><td class="n">0/30</td></tr>
+<tr><td>7/32 … 35/96</td><td class="n">15</td><td>32: 12 tri, 6 quad, 14 hex</td><td class="n">0/32</td><td>30: 8 tri, 4 quad, 10 pent, 8 hex</td><td class="n">0/30</td></tr>
+<tr><td>3/8</td><td class="n">1</td><td>12: 12 squares (two cubes)</td><td class="n">0/12</td><td>12: 6 tri, 6 quad</td><td class="n">0/12</td></tr>
+</table>
+<p>The face pattern changes only at −3/8, −7/24, −1/8 and 5/24 (and the two ends); all are multiples of 1/24 and all are in the grid. Between two changes the face planes and side directions stay fixed, so the corner angles stay fixed too. Inside every open stretch at least 6 faces of each tile have a corner angle other than 60° or 120° (file angles.txt), so no weight inside a stretch can work. The weights where the pattern changes were all tested exactly. Hence <b>λ = −1/8 is the only weight of the walk at which every face of both tiles can be built from rings</b>. It also gives the fewest faces of any weight inside the walk: 14 for each tile. The book's weight λ = 1/10 is not buildable: none of its 32 + 30 faces can be laid with rings.</p>
+
+<h2>3. The classical case at λ = −1/8</h2>
+<p>At λ = −1/8 the tetrahedral pieces are exactly the unit tetrahedra of the close packing, with balls at their corners. The octahedral pieces are exactly the unit octahedra. (From λ = −3/8 up to −1/8 the tetrahedral piece is a regular tetrahedron of edge 4(λ + 3/8); it reaches edge 1 at λ = −1/8.) So the tile is the classical one: two tetrahedra and two half-octahedra.</p>
+<p>The octahedron halves are <b>not</b> square pyramids. The tile cuts each octahedron with the layer's middle plane, and this plane is parallel to two faces of the octahedron. The cut is a regular hexagon of side ½, not a square. A square cut needs a plane through four corners of the octahedron; in this layered setting no such plane is horizontal. The hexagons are outer faces of the tile: its top and bottom, where it meets the next tiles of a stack. <b>No face of either tile is a square.</b></p>
+<p>The c-tile is not one solid. Its four pieces form two towers: a half-octahedron with a tetrahedron on top, and a second tower that is the first one upside down. The two towers touch at one point only, the centre of layer L's ball. This is true at every weight tested, not only at −1/8: the two halves of the c-tile never share a side or a face. The h-tile is one solid at every weight.</p>
+
+<div class="pb"></div>
+<h2>4. Build sheet: the c-tile (gold)</h2>
+<div class="figs two">
+<figure><img src="out/tile3d-c.png" alt="c-tile at lambda -1/8"><figcaption><b>Figure 1.</b> The finished c-tile, 60 rings. Thin lines: the sides of the rings. The two towers touch at one corner.</figcaption></figure>
+<figure><img src="out/tile3d-c-apart.png" alt="c-tile towers apart"><figcaption><b>Figure 2.</b> The two towers drawn apart. They are the same tower; the left one is upside down.</figcaption></figure>
+</div>
+<figure class="net"><img src="out/net-c-solid1.png" alt="net of one c-tower"><figcaption><b>Figure 3.</b> Net of one tower, 30 rings (make it twice). Each rounded triangle is one ring, with its six tie points. Green dashed: fold lines (tie flat, then fold). Black: open sides; sides with the same red letter are tied together when the tower is closed. The hexagon at the bottom is the tower's base.</figcaption></figure>
+<table>
+<tr><th>face of one tower</th><th class="n">per tower</th><th class="n">rings each</th><th class="n">rings (tile)</th><th class="n">shared sides inside each face</th><th class="n">zip ties inside faces (tile)</th></tr>
+<tr><td>pentagon, sides 1, 1, ½, ½, ½ (a unit triangle on a trapezoid)</td><td class="n">3</td><td class="n">7</td><td class="n">42</td><td class="n">7</td><td class="n">84</td></tr>
+<tr><td>regular hexagon, side ½ (the base)</td><td class="n">1</td><td class="n">6</td><td class="n">12</td><td class="n">6</td><td class="n">24</td></tr>
+<tr><td>small triangle, side ½</td><td class="n">3</td><td class="n">1</td><td class="n">6</td><td class="n">0</td><td class="n">0</td></tr>
+<tr><td><b>c-tile (2 towers)</b></td><td class="n">7 each</td><td class="n"></td><td class="n"><b>60</b></td><td class="n">54 inside faces + 36 on the tower edges = <b>90</b></td><td class="n"><b>180</b></td></tr>
+</table>
+<p>Every ring side is shared with one other ring, so a closed solid of N rings has 3N/2 shared sides and 3N zip ties. One tower: 30 rings, 45 shared sides, 90 ties. With the net of Figure 3, 35 shared sides (70 ties) are tied while the net lies flat and 10 (20 ties) when it is closed. Sizes, with s the side of one ring triangle: tetrahedron edge 2s, hexagon side s, tower height 2.45s.</p>
+<ol class="steps">
+<li>Lay out 30 rings as in Figure 3. Tie every pair of facing dots between neighbouring rings, across the fold lines too.</li>
+<li>Fold up along the green lines and tie the sides with matching letters, A to A, B to B, and so on. The tower closes: a hexagon base, three pentagons and three small triangles, rising to a point.</li>
+<li>Make a second tower the same way.</li>
+<li>Turn the second tower upside down. Set it beside the first so that one waist corner of each touches (a waist corner is where two pentagons and a small triangle meet). The two hexagons are then parallel, one layer apart, one facing down and one facing up. In a stack the neighbouring tiles hold the towers in place; to keep the pair together alone, add one extra tie through the two touching corners.</li>
+</ol>
+
+<div class="pb"></div>
+<h2>5. Build sheet: the h-tile (blue)</h2>
+<div class="figs two">
+<figure><img src="out/tile3d-h.png" alt="h-tile at lambda -1/8"><figcaption><b>Figure 4.</b> The finished h-tile, 48 rings, from above. Left: the two tetrahedra base to base (a double pyramid). Right: the two octahedron halves, glued on a unit triangle into a slab with a hexagon on top and below.</figcaption></figure>
+<figure><img src="out/tile3d-h-below.png" alt="h-tile from below"><figcaption><b>Figure 5.</b> The same h-tile from below. Inside, the double pyramid and the slab are glued on two trapezoids. Outside, the four pentagons run across from one to the other.</figcaption></figure>
+</div>
+<figure class="net"><img src="out/net-h-solid1.png" alt="net of the h-tile"><figcaption><b>Figure 6.</b> Net of the h-tile, 48 rings, one piece. Green dashed: fold lines. Sides with the same red letter are tied together when the tile is closed. The two hexagons are the top and the bottom.</figcaption></figure>
+<table>
+<tr><th>face</th><th class="n">count</th><th class="n">rings each</th><th class="n">rings</th><th class="n">shared sides inside each face</th><th class="n">zip ties inside faces</th></tr>
+<tr><td>pentagon, sides 1, 1, ½, ½, ½ (a unit triangle with one small triangle)</td><td class="n">4</td><td class="n">5</td><td class="n">20</td><td class="n">4</td><td class="n">32</td></tr>
+<tr><td>trapezoid, sides 1, ½, ½, ½</td><td class="n">4</td><td class="n">3</td><td class="n">12</td><td class="n">2</td><td class="n">16</td></tr>
+<tr><td>regular hexagon, side ½ (top and bottom)</td><td class="n">2</td><td class="n">6</td><td class="n">12</td><td class="n">6</td><td class="n">24</td></tr>
+<tr><td>small triangle, side ½</td><td class="n">4</td><td class="n">1</td><td class="n">4</td><td class="n">0</td><td class="n">0</td></tr>
+<tr><td><b>h-tile</b></td><td class="n">14</td><td class="n"></td><td class="n"><b>48</b></td><td class="n">36 inside faces + 36 on the edges = <b>72</b></td><td class="n"><b>144</b></td></tr>
+</table>
+<p>With the net of Figure 6, 56 shared sides (112 ties) are tied flat and 16 (32 ties) when the tile is closed. Height of the tile: 3.27s (two layers of the packing).</p>
+<ol class="steps">
+<li>Lay out 48 rings as in Figure 6 and tie every pair of facing dots, across the fold lines too.</li>
+<li>Fold along the green lines and tie the sides with matching letters.</li>
+</ol>
+
+<h2>6. The two tiles side by side</h2>
+<p class="thm"><b>The difference in one sentence.</b> The c-tile is two identical 30-ring towers that touch only at one corner, one upside down beside the other, while the h-tile is one 48-ring solid in which a double pyramid of two tetrahedra leans on a hexagon-topped slab of two octahedron halves.</p>
+<p>Both hold the same volume: two tetrahedra and one octahedron. The c-tile has more surface (60 rings against 48) because its pieces are glued in pairs only, while in the h-tile every piece is glued to two others.</p>
+
+<h2>7. Conclusion and status</h2>
+<p><b>Conclusion.</b> Build both tiles at λ = −1/8. It is the only weight of the walk where every face of both tiles is a sheet of ring triangles, and it gives the fewest faces (14 + 14). Nothing has to be left open or forced. The c-tile is 2 towers of 30 rings (60 rings, 90 shared sides, 180 zip ties); the h-tile is one solid of 48 rings (72 shared sides, 144 zip ties). Together: 108 rings and 324 zip ties.</p>
+<p class="status"><b>Status:</b> scan and build sheets done, exact; not for publication. Scripts: scan.py, angles.py, faces_at.py, build.py, tables.py, with the exact face module exactfaces.py; data in out/. Tile engine: #75 (tiles.py of studies/2026-10-29-endless-stack-cell).</p>
+</body></html>
