@@ -551,6 +551,9 @@ const K_WORLDS = [
   // salt, a button each and one weight slider, each handing over at a single switch point; next to DICTONIC, its parent (world-global-web.js).
   { key: 'globalWeb', label: 'The Global Web of Bonds', pieces: [{ label: 'The Global Web of Bonds', action: 'tool:globalWebWorld' }] },
   { key: 'stackings', label: 'The Stackings World', pieces: [{ label: 'The Stackings World', action: 'tool:stackingsWorld' }] },
+  // HexOct (DICTO 2026-10-31, paper #75; moved here from Polyhedraverse's DICTO's pieces 2026-11-01): the two layer tiles stacked into
+  // any close-packed stacking, beside the Stackings World whose pieces they are cut from (world-hexoct.js).
+  { key: 'hexoct', label: 'HexOct', pieces: [{ label: 'HexOct', action: 'tool:hexoctWorld', preview: hexoctPreviewEdges }] },
   // The Icosaxes Bloom (DICTO 2026-10-27; paper #59, DICTO DOI 10.5281/zenodo.23677485): twenty Icosaxes or Lotus Jewel Axes on a
   // dodecahedron's corners slid in to the golden stops Bloom, Bud and Seed; the Icosaxes Hexa, Lotus Hexa and Kagome network (world-bloom.js).
   { key: 'bloom', label: 'The Icosaxes Bloom', pieces: [{ label: 'The Icosaxes Bloom', action: 'tool:bloomWorld' }] },
@@ -666,7 +669,7 @@ const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'REULEAUX_PLATONIC', 'PLATONIC', 'A
 // DICTO's own work, shown in DICTO's livery (silver) at the top of its app's block (DICTO 2026-10-09);
 // it still opens in its app. Lattices and worlds by key, single pieces by action, and DICTO's
 // Polyhedraverse pieces gathered from across its families.
-const DICTO_WORK = new Set(['whiteQueen', 'bloom', 'stackings', 'dictonic', 'globalWeb', 'platonicMix', 'reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
+const DICTO_WORK = new Set(['whiteQueen', 'bloom', 'stackings', 'hexoct', 'dictonic', 'globalWeb', 'platonicMix', 'reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
 const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
 const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: ['DICTO_ICOSAXES', 'DICTO_UNBORN_AXES', 'DICTO_LOTUS_JEWEL_AXES', 'DICTO_DODECAXES', 'DICTO_SAMSON', 'DICTO_DELILAH', 'TETRAPOD_FIVE_TO', 'TETRAPOD_FOUR_RD', 'ANTONIUS', 'ICOSA_FACE_PYRAMID', 'PENTA_CLEO', 'CLEO_SPHERE_POCKET', 'HEX_AKTIS', 'DELTOID_AKTIS', 'OTT_CLEO_ICOS', 'OTT_TRIANGLE_RAY', 'OTT_RHOMBIC_RAY', 'DICTO_EDGE_ROOF', 'DICTO_UNBORN', 'DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER', ...KIT13_ADDITION_IDS] };
 export const DICTO_PIECE_IDS = DICTO_POLY.ids;
@@ -868,7 +871,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
   // in the app the action belongs to (Polyhedraverse's shapes; DICTO's lattices by the door; worlds Kaleidohedra's).
   const go = (action, app = null, label = null) => {
     lastLabel = label; // the title when the lists don't name it
-    choose('3D', action, app ?? (/^tool:(poly(Shape|Kit):|hexoctWorld)/.test(action) ? 'polyhedraverse' : action.startsWith('tool:pieceType:') ? dictoOpen(action) : 'kaleidohedra'));
+    choose('3D', action, app ?? (/^tool:(poly(Shape|Kit):|hexoctKit)/.test(action) ? 'polyhedraverse' : action.startsWith('tool:pieceType:') ? dictoOpen(action) : 'kaleidohedra'));
   };
 
   // ---- DICTO: the dimensions, one open in place ----
@@ -1177,17 +1180,18 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
         </button>`).join('');
     const kits = key === DICTO_POLY.key && !picker ? [['cleo', 'wiz.poly.kitsCleo'], ['sets', 'wiz.poly.kitsSets'], ['stars', 'wiz.poly.kitsStars'], ['13', 'wiz.poly.kits'], ['octet', 'wiz.poly.kitsOctet']].map(([g, title]) => `<div class="poly-section" data-section="kits-${g}"><div class="poly-section-title">${t(title, L)}</div>
           <div class="dim-wizard-grid dicto-block" style="${style}">${kitCards(g)}</div></div>`).join('') : '';
-    // HexOct (DICTO 2026-10-31, paper #75): the two layer tiles stacked into any close-packed stacking, first among DICTO's pieces
-    const hexoct = key === DICTO_POLY.key && !picker ? `<div class="poly-section" data-section="hexoct"><div class="poly-section-title">HexOct</div>
-          <div class="dim-wizard-grid dicto-block" style="${style}"><button type="button" class="dim-wizard-card-btn dim-wizard-piece dicto-gold" data-hexoct="tool:hexoctWorld">
+    // The HexOct kit (DICTO 2026-11-01, paper #75): the two layer tiles to place one at a time, with fill helpers; first among
+    // DICTO's pieces (the HexOct crystal itself is a Kaleidohedra world, beside the Stackings World).
+    const hexoct = key === DICTO_POLY.key && !picker ? `<div class="poly-section" data-section="hexoct-kit"><div class="poly-section-title">${t('hexkit.section', L)}</div>
+          <div class="dim-wizard-grid dicto-block" style="${style}"><button type="button" class="dim-wizard-card-btn dim-wizard-piece dicto-gold" data-hexoct-kit="tool:hexoctKit">
           ${previewSlot(hexoctPreviewEdges)}
-          <span class="dim-wizard-row-text"><span class="dim-wizard-label">HexOct</span><span class="dim-wizard-desc">${t('hexoct.card', L)}</span></span>
+          <span class="dim-wizard-row-text"><span class="dim-wizard-label">${t('hexkit.title', L)}</span><span class="dim-wizard-desc">${t('hexkit.card', L)}</span></span>
         </button></div></div>` : '';
     bodyEl.innerHTML = `
       ${back(L)}
       <div class="dim-wizard-sub"><b>${polyLabel(key)}</b> · ${t('wiz.poly.shapes', L)}</div>
       ${hexoct}${kits}${blocks}`;
-    bodyEl.querySelector('[data-hexoct]')?.addEventListener('click', () => { lastLabel = 'HexOct'; choose('3D', 'tool:hexoctWorld', 'polyhedraverse'); });
+    bodyEl.querySelector('[data-hexoct-kit]')?.addEventListener('click', () => { lastLabel = t('hexkit.title', L); choose('3D', 'tool:hexoctKit', 'polyhedraverse'); });
     bodyEl.querySelectorAll('[data-kit]').forEach((el) => el.addEventListener('click', () => choose('3D', `tool:polyKit:${el.dataset.kit}`, 'polyhedraverse')));
     mountPreviews();
     bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => { if (picker) { showShapePicker(); return; } openDim = '3D'; showDimensions(`[data-family="${key}"]`); });
