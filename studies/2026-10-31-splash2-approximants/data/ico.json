@@ -1,0 +1,351 @@
+{
+"limit_prolate_share": "-1/2 + 1/2*sqrt(5)",
+"rows": [
+{
+"approximant": "1/1",
+"prolate": 10,
+"oblate": 6,
+"vertices": 16,
+"sign_ok": true,
+"zero_minors": 4,
+"index_cubic_over_primitive": "2",
+"prolate_cubic": 20,
+"oblate_cubic": 12,
+"share_prolate": "5/8",
+"basis": [
+[
+-1,
+-1,
+-1,
+1,
+0,
+0
+],
+[
+1,
+0,
+1,
+0,
+1,
+0
+],
+[
+0,
+1,
+1,
+0,
+0,
+1
+]
+]
+},
+{
+"approximant": "2/1",
+"prolate": 84,
+"oblate": 52,
+"vertices": 136,
+"sign_ok": true,
+"zero_minors": 0,
+"index_cubic_over_primitive": "1",
+"prolate_cubic": 84,
+"oblate_cubic": 52,
+"share_prolate": "21/34",
+"basis": [
+[
+-4,
+0,
+-1,
+1,
+-4,
+4
+],
+[
+-1,
+1,
+0,
+0,
+-2,
+2
+],
+[
+8,
+0,
+4,
+0,
+9,
+-7
+]
+]
+},
+{
+"approximant": "3/2",
+"prolate": 356,
+"oblate": 220,
+"vertices": 576,
+"sign_ok": true,
+"zero_minors": 0,
+"index_cubic_over_primitive": "1",
+"prolate_cubic": 356,
+"oblate_cubic": 220,
+"share_prolate": "89/144",
+"basis": [
+[
+0,
+12,
+4,
+-4,
+-9,
+9
+],
+[
+0,
+0,
+3,
+3,
+2,
+2
+],
+[
+1,
+5,
+2,
+-2,
+-3,
+3
+]
+]
+},
+{
+"approximant": "5/3",
+"prolate": 754,
+"oblate": 466,
+"vertices": 1220,
+"sign_ok": true,
+"zero_minors": 0,
+"index_cubic_over_primitive": "2",
+"prolate_cubic": 1508,
+"oblate_cubic": 932,
+"share_prolate": "377/610",
+"basis": [
+[
+-75,
+0,
+-30,
+15,
+-67,
+58
+],
+[
+-26,
+1,
+-10,
+5,
+-24,
+21
+],
+[
+-15,
+0,
+-7,
+2,
+-14,
+11
+]
+]
+},
+{
+"approximant": "8/5",
+"prolate": 6388,
+"oblate": 3948,
+"vertices": 10336,
+"sign_ok": true,
+"zero_minors": 0,
+"index_cubic_over_primitive": "1",
+"prolate_cubic": 6388,
+"oblate_cubic": 3948,
+"share_prolate": "1597/2584",
+"basis": [
+[
+18,
+-2,
+5,
+-5,
+16,
+-16
+],
+[
+-10,
+10,
+8,
+8,
+-11,
+21
+],
+[
+13,
+3,
+13,
+3,
+13,
+-3
+]
+]
+},
+{
+"approximant": "13/8",
+"prolate": 27060,
+"oblate": 16724,
+"vertices": 43784,
+"sign_ok": true,
+"zero_minors": 0,
+"index_cubic_over_primitive": "1",
+"prolate_cubic": 27060,
+"oblate_cubic": 16724,
+"share_prolate": "6765/10946",
+"basis": [
+[
+-5,
+-21,
+5,
+21,
+21,
+-5
+],
+[
+-31,
+-47,
+-24,
+24,
+13,
+-13
+],
+[
+-49,
+-81,
+-40,
+40,
+26,
+-26
+]
+]
+},
+{
+"approximant": "21/13",
+"prolate": 57314,
+"oblate": 35422,
+"vertices": 92736,
+"sign_ok": true,
+"zero_minors": 0,
+"index_cubic_over_primitive": "2",
+"prolate_cubic": 114628,
+"oblate_cubic": 70844,
+"share_prolate": "28657/46368",
+"basis": [
+[
+871,
+1040,
+812,
+-371,
+0,
+273
+],
+[
+222,
+261,
+202,
+-97,
+1,
+64
+],
+[
+21,
+21,
+13,
+-13,
+0,
+0
+]
+]
+},
+{
+"approximant": "34/21",
+"prolate": 485572,
+"oblate": 300100,
+"vertices": 785672,
+"sign_ok": true,
+"zero_minors": 0,
+"index_cubic_over_primitive": "1",
+"prolate_cubic": 485572,
+"oblate_cubic": 300100,
+"share_prolate": "121393/196418",
+"basis": [
+[
+-34,
+-34,
+-21,
+21,
+0,
+0
+],
+[
+-375,
+171,
+-29,
+97,
+-421,
+463
+],
+[
+-21,
+21,
+0,
+0,
+-34,
+34
+]
+]
+},
+{
+"approximant": "55/34",
+"prolate": 2056916,
+"oblate": 1271244,
+"vertices": 3328160,
+"sign_ok": true,
+"zero_minors": 0,
+"index_cubic_over_primitive": "1",
+"prolate_cubic": 2056916,
+"oblate_cubic": 1271244,
+"share_prolate": "514229/832040",
+"basis": [
+[
+774,
+-994,
+-233,
+-97,
+1328,
+-1532
+],
+[
+1229,
+-1559,
+-432,
+-228,
+2051,
+-2459
+],
+[
+5201,
+-6631,
+-1707,
+-823,
+8788,
+-10352
+]
+]
+}
+],
+"formula": {
+"prolate": "4*(p**3 + 3*p**2*q + q**3)",
+"oblate": "4*(p**3 + 3*p*q**2 - q**3)"
+}
+}

@@ -1,0 +1,149 @@
+planes 335 ; t-family 95 ; random 240
+tile counts = Pluecker coordinates in every run: True
+planes whose offset-averaged stars are AB stars only: 35 (t-family 20 )
+  of these, counts independent of the offset: 23 ; counts = cell areas: 20
+planes with other stars: 300 ; offset-independent 83 ; = areas 75
+
+== AB-only planes: each star count (offset average) as a linear form in the six tile counts
+F 00100101 coefficients (01,02,03,12,13,23): None
+E 00101101 coefficients (01,02,03,12,13,23): None
+D 01011011 coefficients (01,02,03,12,13,23): None
+C 01101111 coefficients (01,02,03,12,13,23): None
+B 01111111 coefficients (01,02,03,12,13,23): None
+A 11111111 coefficients (01,02,03,12,13,23): None
+
+== in rhombs R and squares Q:
+F None
+E None
+D None
+C None
+B None
+A None
+
+== actual counts (each offset) on AB-only planes, as linear forms in R, Q:
+F not linear
+E not linear
+D not linear
+C not linear
+B not linear
+A not linear
+
+== t-family (square approximants), offset average
+t=1/2 N 7 R 4 Q 3 stars ['3', '2', '1', '0', '0', '0'] other {'01011111': '1'} offset-indep True =area True
+t=12/23 N 1921 R 1104 Q 817 stars ['817', '574', '286', '2', '41', '1'] other {'01011111': '200'} offset-indep True =area True
+t=11/21 N 1607 R 924 Q 683 stars ['683', '482', '240', '2', '37', '1'] other {'01011111': '162'} offset-indep True =area True
+t=10/19 N 1321 R 760 Q 561 stars ['561', '398', '198', '2', '33', '1'] other {'01011111': '128'} offset-indep True =area True
+t=9/17 N 1063 R 612 Q 451 stars ['451', '322', '160', '2', '29', '1'] other {'01011111': '98'} offset-indep True =area True
+t=8/15 N 833 R 480 Q 353 stars ['353', '254', '126', '2', '25', '1'] other {'01011111': '72'} offset-indep True =area True
+t=7/13 N 631 R 364 Q 267 stars ['267', '194', '96', '2', '21', '1'] other {'01011111': '50'} offset-indep True =area True
+t=13/24 N 1081 R 624 Q 457 stars ['457', '334', '165', '4', '38', '2'] other {'01011111': '81'} offset-indep True =area True
+t=6/11 N 457 R 264 Q 193 stars ['193', '142', '70', '2', '17', '1'] other {'01011111': '32'} offset-indep True =area True
+t=11/20 N 761 R 440 Q 321 stars ['321', '238', '117', '4', '30', '2'] other {'01011111': '49'} offset-indep True =area True
+t=5/9 N 311 R 180 Q 131 stars ['131', '98', '48', '2', '13', '1'] other {'01011111': '18'} offset-indep True =area True
+t=9/16 N 497 R 288 Q 209 stars ['209', '158', '77', '4', '22', '2'] other {'01011111': '25'} offset-indep True =area True
+t=13/23 N 2063 R 1196 Q 867 stars ['867', '658', '320', '18', '93', '9'] other {'01011111': '98'} offset-indep True =area True
+t=4/7 N 193 R 112 Q 81 stars ['81', '62', '30', '2', '9', '1'] other {'01011111': '8'} offset-indep True =area True
+t=11/19 N 1439 R 836 Q 603 stars ['603', '466', '224', '18', '69', '9'] other {'01011111': '50'} offset-indep True =area True
+t=7/12 N 289 R 168 Q 121 stars ['121', '94', '45', '4', '14', '2'] other {'01011111': '9'} offset-indep True =area True
+t=10/17 N 1169 R 680 Q 489 stars ['489', '382', '182', '18', '57', '9'] other {'01011111': '32'} offset-indep True =area True
+t=13/22 N 983 R 572 Q 411 stars ['411', '322', '153', '16', '48', '8'] other {'01011111': '25'} offset-indep True =area True
+t=3/5 N 103 R 60 Q 43 stars ['43', '34', '16', '2', '5', '1'] other {'01011111': '2'} offset-indep True =area True
+t=14/23 N 2209 R 1288 Q 921 stars ['921', '734', '342', '50', '105', '25'] other {'01011111': '32'} offset-indep True =area True
+t=11/18 N 679 R 396 Q 283 stars ['283', '226', '105', '16', '32', '8'] other {'01011111': '9'} offset-indep True =area True
+t=8/13 N 713 R 416 Q 297 stars ['297', '238', '110', '18', '33', '9'] other {'01011111': '8'} offset-indep True =area True
+t=13/21 N 1871 R 1092 Q 779 stars ['779', '626', '288', '50', '85', '25'] other {'01011111': '18'} offset-indep True =area True
+t=5/8 N 137 R 80 Q 57 stars ['57', '46', '21', '4', '6', '2'] other {'01011111': '1'} offset-indep True =area True
+t=12/19 N 1561 R 912 Q 649 stars ['649', '526', '238', '50', '65', '25'] other {'01011111': '8'} offset-indep True =area True
+t=7/11 N 527 R 308 Q 219 stars ['219', '178', '80', '18', '21', '9'] other {'01011111': '2'} offset-indep True =area True
+t=9/14 N 431 R 252 Q 179 stars ['179', '146', '65', '16', '16', '8'] other {'01011111': '1'} offset-indep True =area True
+t=11/17 N 1279 R 748 Q 531 stars ['531', '434', '192', '50', '45', '25'] other {'01011111': '2'} offset-indep True =area True
+t=13/20 N 889 R 520 Q 369 stars ['369', '302', '133', '36', '30', '18'] other {'01011111': '1'} offset-indep True =area True
+t=15/23 N 2359 R 1380 Q 979 stars ['979', '802', '352', '98', '77', '49'] other {'01011111': '2'} offset-indep True =area True
+t=2/3 N 41 R 24 Q 17 stars ['17', '14', '6', '2', '1', '1'] other {} offset-indep True =area True
+t=15/22 N 1127 R 660 Q 467 stars ['467', '386', '162', '62', '19', '31'] other {} offset-indep True =area True
+t=13/19 N 1687 R 988 Q 699 stars ['699', '578', '242', '94', '27', '47'] other {} offset-indep True =area True
+t=11/16 N 601 R 352 Q 249 stars ['249', '206', '86', '34', '9', '17'] other {} offset-indep True =area True
+t=9/13 N 799 R 468 Q 331 stars ['331', '274', '114', '46', '11', '23'] other {} offset-indep True =area True
+t=16/23 N 2513 R 1472 Q 1041 stars ['1041', '862', '358', '146', '33', '73'] other {} offset-indep True =area True
+t=7/10 N 239 R 140 Q 99 stars ['99', '82', '34', '14', '3', '7'] other {} offset-indep True =area True
+t=12/17 N 1393 R 816 Q 577 stars ['577', '478', '198', '82', '17', '41'] other {} offset-indep True =area True
+t=41/58 N 8119 R 4756 Q 3363 stars ['3363', '2786', '1154', '478', '99', '239'] other {} offset-indep True =area True
+t=70/99 N 47321 R 27720 Q 19601 stars ['19601', '16238', '6726', '2786', '577', '1393'] other {} offset-indep True =area True
+t=99/140 N 47321 R 27720 Q 19601 stars ['19601', '16238', '6726', '2786', '577', '1393'] other {} offset-indep True =area True
+t=29/41 N 8119 R 4756 Q 3363 stars ['3363', '2786', '1154', '478', '99', '239'] other {} offset-indep True =area True
+t=17/24 N 1393 R 816 Q 577 stars ['577', '478', '198', '82', '17', '41'] other {} offset-indep True =area True
+t=5/7 N 239 R 140 Q 99 stars ['99', '82', '34', '14', '3', '7'] other {} offset-indep True =area True
+t=13/18 N 799 R 468 Q 331 stars ['331', '274', '114', '46', '11', '23'] other {} offset-indep True =area True
+t=8/11 N 601 R 352 Q 249 stars ['249', '206', '86', '34', '9', '17'] other {} offset-indep True =area True
+t=11/15 N 1127 R 660 Q 467 stars ['467', '386', '162', '62', '19', '31'] other {} offset-indep True =area True
+t=14/19 N 1817 R 1064 Q 753 stars ['753', '622', '262', '98', '33', '49'] other {} offset-indep True =area True
+t=17/23 N 2671 R 1564 Q 1107 stars ['1107', '914', '386', '142', '51', '71'] other {} offset-indep True =area True
+t=3/4 N 41 R 24 Q 17 stars ['17', '14', '6', '2', '1', '1'] other {} offset-indep True =area True
+t=16/21 N 2297 R 1344 Q 953 stars ['953', '782', '341', '100', '70', '50'] other {'01011111': '1'} offset-indep True =area True
+t=13/17 N 1511 R 884 Q 627 stars ['627', '514', '225', '64', '48', '32'] other {'01011111': '1'} offset-indep True =area True
+t=10/13 N 889 R 520 Q 369 stars ['369', '302', '133', '36', '30', '18'] other {'01011111': '1'} offset-indep True =area True
+t=17/22 N 1279 R 748 Q 531 stars ['531', '434', '192', '50', '45', '25'] other {'01011111': '2'} offset-indep True =area True
+t=7/9 N 431 R 252 Q 179 stars ['179', '146', '65', '16', '16', '8'] other {'01011111': '1'} offset-indep True =area True
+t=18/23 N 2833 R 1656 Q 1177 stars ['1177', '958', '429', '100', '110', '50'] other {'01011111': '9'} offset-indep True =area True
+t=11/14 N 527 R 308 Q 219 stars ['219', '178', '80', '18', '21', '9'] other {'01011111': '2'} offset-indep True =area True
+t=15/19 N 1951 R 1140 Q 811 stars ['811', '658', '297', '64', '80', '32'] other {'01011111': '9'} offset-indep True =area True
+t=19/24 N 1561 R 912 Q 649 stars ['649', '526', '238', '50', '65', '25'] other {'01011111': '8'} offset-indep True =area True
+t=4/5 N 137 R 80 Q 57 stars ['57', '46', '21', '4', '6', '2'] other {'01011111': '1'} offset-indep True =area True
+t=17/21 N 2447 R 1428 Q 1019 stars ['1019', '818', '377', '64', '112', '32'] other {'01011111': '25'} offset-indep True =area True
+t=13/16 N 713 R 416 Q 297 stars ['297', '238', '110', '18', '33', '9'] other {'01011111': '8'} offset-indep True =area True
+t=9/11 N 679 R 396 Q 283 stars ['283', '226', '105', '16', '32', '8'] other {'01011111': '9'} offset-indep True =area True
+t=14/17 N 1633 R 952 Q 681 stars ['681', '542', '253', '36', '78', '18'] other {'01011111': '25'} offset-indep True =area True
+t=19/23 N 2999 R 1748 Q 1251 stars ['1251', '994', '465', '64', '144', '32'] other {'01011111': '49'} offset-indep True =area True
+t=5/6 N 103 R 60 Q 43 stars ['43', '34', '16', '2', '5', '1'] other {'01011111': '2'} offset-indep True =area True
+t=16/19 N 2089 R 1216 Q 873 stars ['873', '686', '325', '36', '102', '18'] other {'01011111': '49'} offset-indep True =area True
+t=11/13 N 983 R 572 Q 411 stars ['411', '322', '153', '16', '48', '8'] other {'01011111': '25'} offset-indep True =area True
+t=17/20 N 1169 R 680 Q 489 stars ['489', '382', '182', '18', '57', '9'] other {'01011111': '32'} offset-indep True =area True
+t=6/7 N 289 R 168 Q 121 stars ['121', '94', '45', '4', '14', '2'] other {'01011111': '9'} offset-indep True =area True
+t=19/22 N 1439 R 836 Q 603 stars ['603', '466', '224', '18', '69', '9'] other {'01011111': '50'} offset-indep True =area True
+t=13/15 N 1343 R 780 Q 563 stars ['563', '434', '209', '16', '64', '8'] other {'01011111': '49'} offset-indep True =area True
+t=20/23 N 3169 R 1840 Q 1329 stars ['1329', '1022', '493', '36', '150', '18'] other {'01011111': '121'} offset-indep True =area True
+t=7/8 N 193 R 112 Q 81 stars ['81', '62', '30', '2', '9', '1'] other {'01011111': '8'} offset-indep True =area True
+t=15/17 N 1759 R 1020 Q 739 stars ['739', '562', '273', '16', '80', '8'] other {'01011111': '81'} offset-indep True =area True
+t=8/9 N 497 R 288 Q 209 stars ['209', '158', '77', '4', '22', '2'] other {'01011111': '25'} offset-indep True =area True
+t=17/19 N 2231 R 1292 Q 939 stars ['939', '706', '345', '16', '96', '8'] other {'01011111': '121'} offset-indep True =area True
+t=9/10 N 311 R 180 Q 131 stars ['131', '98', '48', '2', '13', '1'] other {'01011111': '18'} offset-indep True =area True
+t=19/21 N 2759 R 1596 Q 1163 stars ['1163', '866', '425', '16', '112', '8'] other {'01011111': '169'} offset-indep True =area True
+t=10/11 N 761 R 440 Q 321 stars ['321', '238', '117', '4', '30', '2'] other {'01011111': '49'} offset-indep True =area True
+t=21/23 N 3343 R 1932 Q 1411 stars ['1411', '1042', '513', '16', '128', '8'] other {'01011111': '225'} offset-indep True =area True
+t=11/12 N 457 R 264 Q 193 stars ['193', '142', '70', '2', '17', '1'] other {'01011111': '32'} offset-indep True =area True
+t=12/13 N 1081 R 624 Q 457 stars ['457', '334', '165', '4', '38', '2'] other {'01011111': '81'} offset-indep True =area True
+t=13/14 N 631 R 364 Q 267 stars ['267', '194', '96', '2', '21', '1'] other {'01011111': '50'} offset-indep True =area True
+t=14/15 N 1457 R 840 Q 617 stars ['617', '446', '221', '4', '46', '2'] other {'01011111': '121'} offset-indep True =area True
+t=15/16 N 833 R 480 Q 353 stars ['353', '254', '126', '2', '25', '1'] other {'01011111': '72'} offset-indep True =area True
+t=16/17 N 1889 R 1088 Q 801 stars ['801', '574', '285', '4', '54', '2'] other {'01011111': '169'} offset-indep True =area True
+t=17/18 N 1063 R 612 Q 451 stars ['451', '322', '160', '2', '29', '1'] other {'01011111': '98'} offset-indep True =area True
+t=18/19 N 2377 R 1368 Q 1009 stars ['1009', '718', '357', '4', '62', '2'] other {'01011111': '225'} offset-indep True =area True
+t=19/20 N 1321 R 760 Q 561 stars ['561', '398', '198', '2', '33', '1'] other {'01011111': '128'} offset-indep True =area True
+t=20/21 N 2921 R 1680 Q 1241 stars ['1241', '878', '437', '4', '70', '2'] other {'01011111': '289'} offset-indep True =area True
+t=21/22 N 1607 R 924 Q 683 stars ['683', '482', '240', '2', '37', '1'] other {'01011111': '162'} offset-indep True =area True
+t=22/23 N 3521 R 2024 Q 1497 stars ['1497', '1054', '525', '4', '78', '2'] other {'01011111': '361'} offset-indep True =area True
+t=23/24 N 1921 R 1104 Q 817 stars ['817', '574', '286', '2', '41', '1'] other {'01011111': '200'} offset-indep True =area True
+t=1 N 7 R 4 Q 3 stars ['3', '2', '1', '0', '0', '0'] other {'01011111': '1'} offset-indep True =area True
+
+== split: t-family vs random AB-only planes
+F t-family in R, Q: [0, 1] ; random AB-only in six: None
+E t-family in R, Q: [2, -2] ; random AB-only in six: None
+D t-family in R, Q: [-4, 6] ; random AB-only in six: None
+C t-family in R, Q: [10, -14] ; random AB-only in six: None
+B t-family in R, Q: [-12, 17] ; random AB-only in six: None
+A t-family in R, Q: [5, -7] ; random AB-only in six: None
+r14 {'01': 15, '02': 30, '03': 20, '12': 27, '13': 31, '23': 26} {'A': '1589/585', 'B': '69026/18135', 'C': '203816/18135', 'D': '2864/155', 'E': '7676/155', 'F': '9802/155'} offset-indep False =area False [{'E': 48, 'F': 64, 'D': 20, 'C': 10, 'B': 4, 'A': 3}, {'F': 64, 'E': 48, 'D': 20, 'C': 10, 'B': 4, 'A': 3}, {'F': 63, 'E': 50, 'D': 18, 'C': 12, 'B': 3, 'A': 3}]
+r34 {'01': 24, '02': 30, '03': 18, '12': 21, '13': 31, '23': 23} {'A': '47531/11592', 'B': '343585/179676', 'C': '3189077/359352', 'D': '627/31', 'E': '1605/31', 'F': '3727/62'} offset-indep False =area False [{'F': 61, 'E': 50, 'D': 22, 'B': 3, 'C': 7, 'A': 4}, {'F': 61, 'E': 50, 'D': 22, 'B': 5, 'C': 6, 'A': 3}, {'F': 59, 'E': 54, 'D': 18, 'C': 11, 'A': 4, 'B': 1}]
+r57 {'01': 29, '02': 42, '03': 38, '12': 36, '13': 45, '23': 18} {'A': '9485/2204', 'B': '57187/16530', 'C': '468467/33060', 'D': '362/15', 'E': '1228/15', 'F': '1201/15'} offset-indep False =area False [{'F': 81, 'E': 80, 'D': 26, 'C': 13, 'B': 3, 'A': 5}, {'F': 79, 'E': 84, 'D': 22, 'C': 16, 'A': 4, 'B': 3}, {'F': 80, 'E': 82, 'D': 24, 'C': 15, 'B': 2, 'A': 5}]
+r68 {'01': 18, '02': 25, '03': 16, '12': 15, '13': 24, '23': 20} {'A': '233/72', 'B': '367/225', 'C': '12653/1800', 'D': '2431/150', 'E': '6269/150', 'F': '14431/300'} offset-indep False =area False [{'F': 49, 'E': 40, 'D': 18, 'C': 6, 'B': 1, 'A': 4}, {'F': 49, 'E': 40, 'D': 18, 'C': 6, 'B': 1, 'A': 4}, {'F': 46, 'E': 46, 'D': 12, 'C': 10, 'A': 2, 'B': 2}]
+r89 {'01': 139, '02': 157, '03': 103, '12': 62, '13': 154, '23': 128} {'A': '116746407/7101232', 'B': '32893665107/3902126984', 'C': '427827165821/7804253968', 'D': '90800/1099', 'E': '326820/1099', 'F': '311358/1099'} offset-indep False =area False [{'F': 285, 'E': 294, 'D': 86, 'C': 53, 'B': 7, 'A': 18}, {'F': 283, 'E': 298, 'D': 82, 'C': 54, 'B': 11, 'A': 15}, {'F': 283, 'E': 298, 'D': 82, 'C': 54, 'B': 11, 'A': 15}]
+r98 {'01': 9, '02': 15, '03': 15, '12': 9, '13': 15, '23': 10} {'A': '4/3', 'B': '26/15', 'C': '83/15', 'D': '44/5', 'E': '126/5', 'F': '152/5'} offset-indep True =area False [{'E': 26, 'F': 30, 'D': 8, 'C': 6, 'B': 2, 'A': 1}, {'E': 26, 'F': 30, 'D': 8, 'C': 6, 'B': 2, 'A': 1}, {'F': 30, 'E': 26, 'D': 8, 'C': 6, 'B': 2, 'A': 1}]
+r103 {'01': 15, '02': 25, '03': 20, '12': 15, '13': 24, '23': 20} {'A': '17/6', 'B': '19/8', 'C': '31/4', 'D': '193/12', 'E': '479/12', 'F': '1201/24'} offset-indep True =area False [{'F': 50, 'E': 40, 'D': 16, 'C': 8, 'B': 2, 'A': 3}, {'E': 40, 'F': 50, 'D': 16, 'C': 8, 'B': 2, 'A': 3}, {'F': 50, 'E': 40, 'D': 16, 'C': 8, 'B': 2, 'A': 3}]
+r126 {'01': 108, '02': 153, '03': 114, '12': 114, '13': 164, '23': 112} {'A': '10651/504', 'B': '2210045/175644', 'C': '14907307/351288', 'D': '229376/2091', 'E': '548476/2091', 'F': '662530/2091'} offset-indep False =area False [{'F': 316, 'E': 264, 'D': 108, 'C': 44, 'B': 12, 'A': 21}, {'F': 317, 'E': 262, 'D': 110, 'C': 42, 'A': 21, 'B': 13}, {'F': 317, 'E': 262, 'D': 110, 'C': 42, 'A': 21, 'B': 13}]
+r138 {'01': 1, '02': 2, '03': 2, '12': 1, '13': 2, '23': 2} {'B': '1/2', 'E': '3', 'C': '1', 'D': '1', 'F': '9/2'} offset-indep False =area False [{'F': 5, 'E': 2, 'D': 2, 'B': 1}, {'E': 4, 'F': 4, 'C': 2}, {'F': 5, 'D': 2, 'B': 1, 'E': 2}]
+r155 {'01': 107, '02': 153, '03': 109, '12': 133, '13': 150, '23': 79} {'A': '2191188679/122543141', 'B': '1784296601687/156242504775', 'C': '7580423196326/156242504775', 'D': '120314/1275', 'E': '333586/1275', 'F': '378907/1275'} offset-indep False =area False [{'F': 295, 'E': 266, 'D': 90, 'C': 51, 'B': 13, 'A': 16}, {'F': 296, 'E': 264, 'D': 92, 'C': 50, 'B': 12, 'A': 17}, {'F': 294, 'E': 268, 'D': 88, 'C': 53, 'B': 12, 'A': 16}]
+r163 {'01': 24, '02': 33, '03': 22, '12': 27, '13': 34, '23': 22} {'A': '9/2', 'B': '39/17', 'C': '337/34', 'D': '384/17', 'E': '942/17', 'F': '1144/17'} offset-indep False =area False [{'F': 68, 'E': 54, 'D': 24, 'C': 10, 'A': 6}, {'F': 67, 'E': 56, 'D': 22, 'C': 10, 'B': 3, 'A': 4}, {'F': 68, 'E': 54, 'D': 24, 'C': 10, 'A': 6}]
+r188 {'01': 6, '02': 41, '03': 39, '12': 40, '13': 42, '23': 27} {'A': '4763/2808', 'B': '581069/402948', 'C': '16945765/805896', 'D': '2775/287', 'E': '28221/287', 'F': '36067/574'} offset-indep False =area False [{'F': 61, 'E': 102, 'D': 6, 'C': 24, 'A': 1, 'B': 1}, {'F': 64, 'E': 96, 'D': 12, 'C': 19, 'B': 2, 'A': 2}, {'F': 63, 'E': 98, 'D': 10, 'C': 21, 'B': 1, 'A': 2}]
+r190 {'01': 10, '02': 25, '03': 20, '12': 20, '13': 24, '23': 20} {'A': '5/2', 'B': '2', 'C': '19/2', 'D': '14', 'E': '42', 'F': '49'} offset-indep True =area False [{'F': 49, 'E': 42, 'D': 14, 'C': 10, 'B': 1, 'A': 3}, {'F': 49, 'E': 42, 'D': 14, 'C': 10, 'B': 1, 'A': 3}, {'F': 49, 'E': 42, 'D': 14, 'C': 10, 'B': 1, 'A': 3}]
+r194 {'01': 42, '02': 63, '03': 35, '12': 51, '13': 65, '23': 55} {'A': '46296/6545', 'B': '76326/12155', 'C': '1805567/85085', 'D': '18588/455', 'E': '47842/455', 'F': '59344/455'} offset-indep False =area False [{'F': 131, 'E': 104, 'D': 42, 'C': 21, 'A': 8, 'B': 5}, {'F': 131, 'E': 104, 'D': 42, 'C': 20, 'B': 7, 'A': 7}, {'E': 104, 'F': 131, 'D': 42, 'C': 21, 'B': 5, 'A': 8}]
+r228 {'01': 23, '02': 31, '03': 21, '12': 22, '13': 29, '23': 19} {'A': '130544/33649', 'B': '75996754/30250451', 'C': '252190599/30250451', 'D': '18468/899', 'E': '44462/899', 'F': '54184/899'} offset-indep False =area False [{'F': 61, 'E': 48, 'D': 22, 'C': 7, 'B': 3, 'A': 4}, {'F': 60, 'E': 50, 'D': 20, 'C': 9, 'B': 2, 'A': 4}, {'F': 60, 'E': 50, 'D': 20, 'C': 9, 'B': 2, 'A': 4}]

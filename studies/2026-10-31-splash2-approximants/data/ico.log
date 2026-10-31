@@ -1,0 +1,13 @@
+irrational: prolate/oblate volumes 3 + 1*sqrt(5) 1 + 1*sqrt(5) ratio tau; triples prolate 10 oblate 10
+limit prolate share -1/2 + 1/2*sqrt(5) 0.6180339887498949  (1/tau = 0.6180339887498949 )
+1/1: per primitive cell prolate 10, oblate 6 (vertices 16); signs as in E: True; zero minors 4; cubic cell = 2 primitive cells -> 20 + 12; prolate share 5/8 = 0.625000
+2/1: per primitive cell prolate 84, oblate 52 (vertices 136); signs as in E: True; zero minors 0; cubic cell = 1 primitive cells -> 84 + 52; prolate share 21/34 = 0.617647
+3/2: per primitive cell prolate 356, oblate 220 (vertices 576); signs as in E: True; zero minors 0; cubic cell = 1 primitive cells -> 356 + 220; prolate share 89/144 = 0.618056
+5/3: per primitive cell prolate 754, oblate 466 (vertices 1220); signs as in E: True; zero minors 0; cubic cell = 2 primitive cells -> 1508 + 932; prolate share 377/610 = 0.618033
+8/5: per primitive cell prolate 6388, oblate 3948 (vertices 10336); signs as in E: True; zero minors 0; cubic cell = 1 primitive cells -> 6388 + 3948; prolate share 1597/2584 = 0.618034
+13/8: per primitive cell prolate 27060, oblate 16724 (vertices 43784); signs as in E: True; zero minors 0; cubic cell = 1 primitive cells -> 27060 + 16724; prolate share 6765/10946 = 0.618034
+21/13: per primitive cell prolate 57314, oblate 35422 (vertices 92736); signs as in E: True; zero minors 0; cubic cell = 2 primitive cells -> 114628 + 70844; prolate share 28657/46368 = 0.618034
+34/21: per primitive cell prolate 485572, oblate 300100 (vertices 785672); signs as in E: True; zero minors 0; cubic cell = 1 primitive cells -> 485572 + 300100; prolate share 121393/196418 = 0.618034
+55/34: per primitive cell prolate 2056916, oblate 1271244 (vertices 3328160); signs as in E: True; zero minors 0; cubic cell = 1 primitive cells -> 2056916 + 1271244; prolate share 514229/832040 = 0.618034
+cubic cell (rows of the rational projection times q): prolate 4*(p**3 + 3*p**2*q + q**3) ; oblate 4*(p**3 + 3*p*q**2 - q**3)
+cubic-cell formulas match every approximant

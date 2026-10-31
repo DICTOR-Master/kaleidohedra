@@ -1,0 +1,35 @@
+approximants p/q, 2 <= q <= 60 : 1101
+checks: balanced, complexity min(g+1, q), interval lengths = exact frequencies (mismatches: 0 ), <= 3 values: all 1101
+g=1: 2 factors over all slopes; Farey cells 1; lines on every cell: yes; globally linear: ['L', 'S']; kinks at []
+g=2: 4 factors over all slopes; Farey cells 2; lines on every cell: yes; globally linear: []; kinks at ['1/2']
+g=3: 8 factors over all slopes; Farey cells 4; lines on every cell: yes; globally linear: []; kinks at ['1/3', '1/2', '2/3']
+g=4: 14 factors over all slopes; Farey cells 6; lines on every cell: yes; globally linear: []; kinks at ['1/4', '1/3', '1/2', '2/3', '3/4']
+g=5: 24 factors over all slopes; Farey cells 10; lines on every cell: yes; globally linear: []; kinks at ['1/5', '1/4', '1/3', '2/5', '1/2', '3/5', '2/3', '3/4', '4/5']
+g=6: 36 factors over all slopes; Farey cells 12; lines on every cell: yes; globally linear: []; kinks at ['1/6', '1/5', '1/4', '1/3', '2/5', '1/2', '3/5', '2/3', '3/4', '4/5', '5/6']
+g=7: 54 factors over all slopes; Farey cells 18; lines on every cell: yes; globally linear: []; kinks at ['1/7', '1/6', '1/5', '1/4', '2/7', '1/3', '2/5', '3/7', '1/2', '4/7', '3/5', '2/3', '5/7', '3/4', '4/5', '5/6', '6/7']
+g=8: 76 factors over all slopes; Farey cells 22; lines on every cell: yes; globally linear: []; kinks at ['1/8', '1/7', '1/6', '1/5', '1/4', '2/7', '1/3', '3/8', '2/5', '3/7', '1/2', '4/7', '3/5', '5/8', '2/3', '5/7', '3/4', '4/5', '5/6', '6/7', '7/8']
+g=9: 104 factors over all slopes; Farey cells 28; lines on every cell: yes; globally linear: []; kinks at ['1/9', '1/8', '1/7', '1/6', '1/5', '2/9', '1/4', '2/7', '1/3', '3/8', '2/5', '3/7', '4/9', '1/2', '5/9', '4/7', '3/5', '5/8', '2/3', '5/7', '3/4', '7/9', '4/5', '5/6', '6/7', '7/8', '8/9']
+kink g=2 at 1/2: LL +2, LS -2, SL -2, SS +2
+kink g=3 at 1/3: LLL +3, LLS -3, SLL -3, SLS +3
+kink g=3 at 1/2: LLS +2, LSL -4, LSS +2, SLL +2, SLS -4, SSL +2
+kink g=3 at 2/3: LSL +3, LSS -3, SSL -3, SSS +3
+kink g=4 at 1/4: LLLL +4, LLLS -4, SLLL -4, SLLS +4
+kink g=4 at 1/3: LLLS +3, LLSL -3, LSLL -3, LSLS +3, SLLL +3, SLLS -6, SLSL +3
+kink g=4 at 1/2: LLSL +2, LSLL +2, LSLS -6, LSSL +2, SLLS +2, SLSL -6, SLSS +2, SSLS +2
+kink g=4 at 2/3: LSLS +3, LSSL -6, LSSS +3, SLSL +3, SLSS -3, SSLS -3, SSSL +3
+kink g=4 at 3/4: LSSL +4, LSSS -4, SSSL -4, SSSS +4
+window 2: kink at 1/2 = 2(F(LL) + F(SS) - F(LS) - F(SL)) = twice the Swap defect
+convergents F(n-2)/F(n): ['1/2', '1/3', '2/5', '3/8', '5/13', '8/21', '13/34', '21/55', '34/89', '55/144', '89/233', '144/377']
+g=1: limit cell [0, 1]; convergents on the limit line from q = 2; frequencies: L -1/2 + 1/2*sqrt(5)  (= 1 + -1a); S 3/2 + -1/2*sqrt(5)  (= 0 + 1a)
+g=2: limit cell [0, 1/2]; convergents on the limit line from q = 2; frequencies: LL -2 + 1*sqrt(5)  (= 1 + -2a); LS 3/2 + -1/2*sqrt(5)  (= 0 + 1a); SL 3/2 + -1/2*sqrt(5)  (= 0 + 1a)
+g=3: limit cell [1/3, 1/2]; convergents on the limit line from q = 2; frequencies: LLS -2 + 1*sqrt(5)  (= 1 + -2a); LSL 3/2 + -1/2*sqrt(5)  (= 0 + 1a); SLL -2 + 1*sqrt(5)  (= 1 + -2a); SLS 7/2 + -3/2*sqrt(5)  (= -1 + 3a)
+g=4: limit cell [1/3, 1/2]; convergents on the limit line from q = 2; frequencies: LLSL -2 + 1*sqrt(5)  (= 1 + -2a); LSLL -2 + 1*sqrt(5)  (= 1 + -2a); LSLS 7/2 + -3/2*sqrt(5)  (= -1 + 3a); SLLS -2 + 1*sqrt(5)  (= 1 + -2a); SLSL 7/2 + -3/2*sqrt(5)  (= -1 + 3a)
+g=5: limit cell [1/3, 2/5]; convergents on the limit line from q = 3; frequencies: LLSLL -11/2 + 5/2*sqrt(5)  (= 2 + -5a); LLSLS 7/2 + -3/2*sqrt(5)  (= -1 + 3a); LSLLS -2 + 1*sqrt(5)  (= 1 + -2a); LSLSL 7/2 + -3/2*sqrt(5)  (= -1 + 3a); SLLSL -2 + 1*sqrt(5)  (= 1 + -2a); SLSLL 7/2 + -3/2*sqrt(5)  (= -1 + 3a)
+g=6: limit cell [1/3, 2/5]; convergents on the limit line from q = 3; frequencies: LLSLLS -11/2 + 5/2*sqrt(5)  (= 2 + -5a); LLSLSL 7/2 + -3/2*sqrt(5)  (= -1 + 3a); LSLLSL -2 + 1*sqrt(5)  (= 1 + -2a); LSLSLL 7/2 + -3/2*sqrt(5)  (= -1 + 3a); SLLSLL -11/2 + 5/2*sqrt(5)  (= 2 + -5a); SLLSLS 7/2 + -3/2*sqrt(5)  (= -1 + 3a); SLSLLS 7/2 + -3/2*sqrt(5)  (= -1 + 3a)
+g=7: limit cell [1/3, 2/5]; convergents on the limit line from q = 3; frequencies: LLSLLSL -11/2 + 5/2*sqrt(5)  (= 2 + -5a); LLSLSLL 7/2 + -3/2*sqrt(5)  (= -1 + 3a); LSLLSLL -11/2 + 5/2*sqrt(5)  (= 2 + -5a); LSLLSLS 7/2 + -3/2*sqrt(5)  (= -1 + 3a); LSLSLLS 7/2 + -3/2*sqrt(5)  (= -1 + 3a); SLLSLLS -11/2 + 5/2*sqrt(5)  (= 2 + -5a); SLLSLSL 7/2 + -3/2*sqrt(5)  (= -1 + 3a); SLSLLSL 7/2 + -3/2*sqrt(5)  (= -1 + 3a)
+g=8: limit cell [3/8, 2/5]; convergents on the limit line from q = 5; frequencies: LLSLLSLS -11/2 + 5/2*sqrt(5)  (= 2 + -5a); LLSLSLLS 7/2 + -3/2*sqrt(5)  (= -1 + 3a); LSLLSLLS -11/2 + 5/2*sqrt(5)  (= 2 + -5a); LSLLSLSL 7/2 + -3/2*sqrt(5)  (= -1 + 3a); LSLSLLSL 7/2 + -3/2*sqrt(5)  (= -1 + 3a); SLLSLLSL -11/2 + 5/2*sqrt(5)  (= 2 + -5a); SLLSLSLL 7/2 + -3/2*sqrt(5)  (= -1 + 3a); SLSLLSLL -11/2 + 5/2*sqrt(5)  (= 2 + -5a); SLSLLSLS 9 + -4*sqrt(5)  (= -3 + 8a)
+g=9: limit cell [3/8, 2/5]; convergents on the limit line from q = 5; frequencies: LLSLLSLSL -11/2 + 5/2*sqrt(5)  (= 2 + -5a); LLSLSLLSL 7/2 + -3/2*sqrt(5)  (= -1 + 3a); LSLLSLLSL -11/2 + 5/2*sqrt(5)  (= 2 + -5a); LSLLSLSLL 7/2 + -3/2*sqrt(5)  (= -1 + 3a); LSLSLLSLL -11/2 + 5/2*sqrt(5)  (= 2 + -5a); LSLSLLSLS 9 + -4*sqrt(5)  (= -3 + 8a); SLLSLLSLS -11/2 + 5/2*sqrt(5)  (= 2 + -5a); SLLSLSLLS 7/2 + -3/2*sqrt(5)  (= -1 + 3a); SLSLLSLLS -11/2 + 5/2*sqrt(5)  (= 2 + -5a); SLSLLSLSL 9 + -4*sqrt(5)  (= -3 + 8a)
+phason strain: every window-g count of a convergent on the line differs from the limit by B * (p/q - 1/phi^2), exactly
+rule checked for g = 1..300: the approximant F(n-2)/F(n) is on the Fibonacci line of window g iff g < F(n+2)
+necklaces up to 12: 747 primitive, 47 balanced (= Christoffel); all balanced on the lower edge p_SS = max(0, 2a - 1); 157 words on the edge in all
+done
