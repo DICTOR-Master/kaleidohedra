@@ -1,0 +1,6 @@
+edge-cut cube s = 3/5 32 corners; {4: 6, 6: 12} faces; all planes faces: True ; inside all planes: True ; corner radii^2: ['27/25']
+dodeca spread min 5.470304209609367e-10 at d = 1.1757499999999999
+dodeca one-sphere depth float 1.175999966946519 exact guess -787/561 + 647*sqrt(5)/561
+edge-cut dodecahedron d = -787/561 + 647*sqrt(5)/561 20 corners; {5: 12} faces; all planes faces: False ; inside all planes: True ; corner radii^2: ['15 - 6*sqrt(5)']
+truncated cuboctahedron proportions (1, 1/phi, 3/4) 48 corners; {4: 12, 6: 8, 8: 6} faces; all planes faces: True ; inside all planes: True ; corner radii^2: ['43/2 - 9*sqrt(5)']
+done
