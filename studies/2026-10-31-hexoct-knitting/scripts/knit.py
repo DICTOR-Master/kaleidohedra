@@ -105,21 +105,20 @@ def clip(poly, axis, val, keep_le):
     return out if len(out) >= 3 and area2(out) != 0 else None
 
 
-def build():
+def build(S0=0, S1=REP * NREP, ngap=None):
     halves = []   # dict(kind, gap, layer, poly)
-    S0, S1 = 0, REP * NREP
-    for g in range(len(SEQ) - 1):
+    for g in range(ngap if ngap is not None else len(SEQ) - 1):
         P, Q = SEQ[g], SEQ[g + 1]
         Rl = ({'A', 'B', 'C'} - {P, Q}).pop()
         pieces = []
         for s in sites(Q, 6):
-            if -S1 - 4 <= s[1] <= 4 and abs(s[0]) <= 4:
+            if -S1 - 4 <= s[1] <= -S0 + 4 and abs(s[0]) <= 4:
                 pieces.append(('tet-up', [(x, y, g) for x, y in tri_around(P, s)] + [(s[0], s[1], g + 1)]))
         for s in sites(P, 6):
-            if -S1 - 4 <= s[1] <= 4 and abs(s[0]) <= 4:
+            if -S1 - 4 <= s[1] <= -S0 + 4 and abs(s[0]) <= 4:
                 pieces.append(('tet-down', [(x, y, g + 1) for x, y in tri_around(Q, s)] + [(s[0], s[1], g)]))
         for s in sites(Rl, 6):
-            if -S1 - 4 <= s[1] <= 4 and abs(s[0]) <= 4:
+            if -S1 - 4 <= s[1] <= -S0 + 4 and abs(s[0]) <= 4:
                 pieces.append(('oct', [(x, y, g) for x, y in tri_around(P, s)] + [(x, y, g + 1) for x, y in tri_around(Q, s)]))
         mid = F(2 * g + 1, 2)
         for kind, V in pieces:

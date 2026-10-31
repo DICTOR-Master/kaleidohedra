@@ -76,3 +76,12 @@ Status: done, exact; one chart awaiting DICTO's check. No other stackings, no fu
 `scripts/knit.py`; `out/slice-4H.png`, `out/chart-4H.png`, `out/slice-4H.json` (shapes incl. window-cut pieces, gauge,
 shift per row), `out/pieces-in-slice.json`, `out/run.log`. Copies: ~/Documents/papers-to-read/knit-slice-4H.png,
 knit-chart-4H.png.
+
+## Swatch sheet (added 31 Oct, after DICTO approved a swatch)
+
+`scripts/swatch.py` → `swatch/paper.html`, `swatch/fig/chart.png`, `swatch/fig/slice.png`, `out/swatch-rows.json`;
+printed on dicto-node → `swatch/knit-swatch-4H.pdf` (2 pages; copy in ~/Documents/papers-to-read). One period
+(A B C B A), 24 stitches × 29 rows, chart rows 1–29 with columns taken 6 stitches (half a repeat) later than in
+chart-4H.png so the bobbles sit at stitches 7 and 19, away from the edges. Bias right = decrease at the left edge,
+increase at the right (seen from the RS); 8 bias-right rows (3, 4, 6, 7, 10, 11, 13, 14), 8 bias-left rows (17, 18, 20,
+21, 24, 25, 27, 28). Colours: DG 192, LG 144, DB 186, LB 174 stitches.
