@@ -8,7 +8,7 @@ Geometry and renderer are copied from papers/book-queens/plates/render_plates.py
     the opposite cell, grouped into 9 layers (layers 7 and 8 are huge in this projection, so they are never drawn);
   - the z-buffer renderer (3x supersampled, solid faces, dark edges stamped where no face is in front), extended with per-edge
     colour and depth-graded line width, a parchment ground and a caption.
-Colours of the shells as the book (viridis 0.15-0.95 over the 15 shells / 9 layers, core gold).
+Colours: pale gems (diamond White Queen, ruby Red Queen), core gold, basalt rind; see README (round 2).
 
 The geode cut: every drawn cell is a convex polyhedron in the 3D picture; the rind cells are clipped by the cut plane (exactly, by
 the hull of their corners behind the plane and the points where their edges cross it) and their cut faces are drawn as polished
@@ -139,9 +139,30 @@ def perp(a, hint=(0.3, 0.5, 0.8)):
 
 
 # ------------------------------------------------------------------ renderer (render_plates.render, extended)
+HALF = LIGHT + np.array([0, 0, 1.0]); HALF /= np.linalg.norm(HALF)     # mirror direction for highlights (viewer along +z)
+
+
 def shade_solid(col, n):
     d = max(0.0, float(n @ LIGHT))
     return np.clip(np.asarray(col) * (0.34 + 0.58 * d + 0.18 * d ** 12) + 0.06 * d ** 12, 0, 1)
+
+
+def shade_stone(col, n):
+    """basalt: dark, matt, with enough light range that its edges and silhouette still read on the dark ground."""
+    d = max(0.0, float(n @ LIGHT))
+    return np.clip(np.asarray(col) * (0.62 + 0.52 * d), 0, 1)
+
+
+def gem_spec(n):
+    h = max(0.0, float(n @ HALF))
+    return min(1.0, 0.95 * h ** 40 + 0.20 * h ** 6)
+
+
+def shade_gem(col, n):
+    """pale crystal: soft body light, and faces near the mirror direction flash to near-white."""
+    d = max(0.0, float(n @ LIGHT))
+    base = np.asarray(col) * (0.76 + 0.24 * d)
+    return np.clip(base + (1 - base) * gem_spec(n), 0, 1)
 
 
 def shade_wash(col, n):
@@ -151,86 +172,141 @@ def shade_wash(col, n):
     return np.clip(base * (0.80 + 0.26 * d), 0, 1)
 
 
-def render(polys, cols, edgesets, R, bg, shader, fill=0.86, front=None, centre=None, ext=None):
-    """polys: (k,3) arrays; cols: rgb per poly; edgesets: list of dicts {segs, color, w (px) or (wnear, wfar)};
-    front: indices of polys that win depth ties (+2 supersampled px). Returns an RGB float image N x N (supersampled)."""
-    N = SIZE * SS
-    allp = np.vstack([np.vstack(polys)] + [np.vstack(es["segs"]) for es in edgesets if es["segs"]]) @ R.T
-    c = (allp.max(0) + allp.min(0)) / 2 if centre is None else centre
-    if ext is None: ext = max(allp[:, 0].max() - allp[:, 0].min(), allp[:, 1].max() - allp[:, 1].min()) / 2
-    sc = fill * N / 2 / ext
-    zlo, zhi = (allp[:, 2].min() - c[2]) * sc, (allp[:, 2].max() - c[2]) * sc
-    def scr(P):
-        Q = (P @ R.T - c)
-        return np.column_stack([N / 2 + Q[:, 0] * sc, N / 2 - Q[:, 1] * sc, Q[:, 2] * sc])
-    Z = np.full((N, N), -np.inf, np.float32); ID = np.full((N, N), -1, np.int32)
-    shade = []; fr = set(front or [])
-    for k, P in enumerate(polys):
-        Q = P @ R.T
-        n = np.cross(Q[1] - Q[0], Q[2] - Q[0])
-        for i in range(2, len(Q) - 1):
-            m = np.cross(Q[i] - Q[0], Q[i + 1] - Q[0])
-            if np.linalg.norm(m) > np.linalg.norm(n): n = m
-        n /= np.linalg.norm(n)
-        if n[2] < 0: n = -n
-        shade.append(shader(cols[k], n))
-        Sx = scr(P)
-        if k in fr: Sx[:, 2] += 2.0
-        for i in range(1, len(Sx) - 1):
-            A, Bv, C = Sx[0], Sx[i], Sx[i + 1]
-            x0, x1 = int(max(0, np.floor(min(A[0], Bv[0], C[0])))), int(min(N - 1, np.ceil(max(A[0], Bv[0], C[0]))))
-            y0, y1 = int(max(0, np.floor(min(A[1], Bv[1], C[1])))), int(min(N - 1, np.ceil(max(A[1], Bv[1], C[1]))))
-            if x1 < x0 or y1 < y0: continue
-            den = (Bv[1] - C[1]) * (A[0] - C[0]) + (C[0] - Bv[0]) * (A[1] - C[1])
-            if abs(den) < 1e-9: continue
-            X, Y = np.meshgrid(np.arange(x0, x1 + 1) + 0.5, np.arange(y0, y1 + 1) + 0.5)
-            l1 = ((Bv[1] - C[1]) * (X - C[0]) + (C[0] - Bv[0]) * (Y - C[1])) / den
-            l2 = ((C[1] - A[1]) * (X - C[0]) + (A[0] - C[0]) * (Y - C[1])) / den
-            l3 = 1 - l1 - l2
-            m = (l1 >= -1e-6) & (l2 >= -1e-6) & (l3 >= -1e-6)
-            z = l1 * A[2] + l2 * Bv[2] + l3 * C[2]
-            zb = Z[y0:y1 + 1, x0:x1 + 1]; ib = ID[y0:y1 + 1, x0:x1 + 1]
-            w = m & (z > zb)
-            zb[w] = z[w]; ib[w] = k
-    img = np.empty((N, N, 3), np.float32); img[:] = bg
-    SHd = np.array(shade); hit = ID >= 0
-    img[hit] = SHd[ID[hit]]
-    eps = 0.004 * N
-    for es in edgesets:
-        if not es["segs"]: continue
+class Scene:
+    """z-buffer of planar polygons. polys: (k,3) arrays; cols: rgb per poly; shaders: one shading function per poly;
+    front: indices of polys that win depth ties (+2 supersampled px); extra: further points that must fit in the frame."""
+
+    def __init__(self, polys, cols, shaders, R, bg, fill=0.86, front=None, extra=()):
+        N = self.N = SIZE * SS
+        allp = np.vstack([np.vstack(polys)] + [np.vstack(e) for e in extra if len(e)]) @ R.T
+        c = (allp.max(0) + allp.min(0)) / 2
+        ext = max(allp[:, 0].max() - allp[:, 0].min(), allp[:, 1].max() - allp[:, 1].min()) / 2
+        sc = fill * N / 2 / ext
+        self.zlo, self.zhi = (allp[:, 2].min() - c[2]) * sc, (allp[:, 2].max() - c[2]) * sc
+        self.scr = lambda P: np.column_stack([N / 2 + ((P @ R.T - c)[:, 0]) * sc, N / 2 - ((P @ R.T - c)[:, 1]) * sc,
+                                               ((P @ R.T - c)[:, 2]) * sc])
+        Z = np.full((N, N), -np.inf, np.float32); ID = np.full((N, N), -1, np.int32)
+        shade, spec = [], []; fr = set(front or [])
+        for k, P in enumerate(polys):
+            Q = P @ R.T
+            n = np.cross(Q[1] - Q[0], Q[2] - Q[0])
+            for i in range(2, len(Q) - 1):
+                m = np.cross(Q[i] - Q[0], Q[i + 1] - Q[0])
+                if np.linalg.norm(m) > np.linalg.norm(n): n = m
+            n /= np.linalg.norm(n)
+            if n[2] < 0: n = -n
+            shade.append(shaders[k](cols[k], n)); spec.append(gem_spec(n))
+            Sx = self.scr(P)
+            if k in fr: Sx[:, 2] += 2.0
+            for i in range(1, len(Sx) - 1):
+                A, Bv, C = Sx[0], Sx[i], Sx[i + 1]
+                x0, x1 = int(max(0, np.floor(min(A[0], Bv[0], C[0])))), int(min(N - 1, np.ceil(max(A[0], Bv[0], C[0]))))
+                y0, y1 = int(max(0, np.floor(min(A[1], Bv[1], C[1])))), int(min(N - 1, np.ceil(max(A[1], Bv[1], C[1]))))
+                if x1 < x0 or y1 < y0: continue
+                den = (Bv[1] - C[1]) * (A[0] - C[0]) + (C[0] - Bv[0]) * (A[1] - C[1])
+                if abs(den) < 1e-9: continue
+                X, Y = np.meshgrid(np.arange(x0, x1 + 1) + 0.5, np.arange(y0, y1 + 1) + 0.5)
+                l1 = ((Bv[1] - C[1]) * (X - C[0]) + (C[0] - Bv[0]) * (Y - C[1])) / den
+                l2 = ((C[1] - A[1]) * (X - C[0]) + (A[0] - C[0]) * (Y - C[1])) / den
+                l3 = 1 - l1 - l2
+                m = (l1 >= -1e-6) & (l2 >= -1e-6) & (l3 >= -1e-6)
+                z = l1 * A[2] + l2 * Bv[2] + l3 * C[2]
+                zb = Z[y0:y1 + 1, x0:x1 + 1]; ib = ID[y0:y1 + 1, x0:x1 + 1]
+                w = m & (z > zb)
+                zb[w] = z[w]; ib[w] = k
+        self.Z, self.ID, self.polys, self.spec = Z, ID, polys, np.array(spec)
+        img = np.empty((N, N, 3), np.float32); img[:] = bg
+        SHd = np.array(shade); hit = ID >= 0
+        img[hit] = SHd[ID[hit]]
+        self.img = img
+
+    def _samples(self, segs):
         pts = []
-        for E in es["segs"]:
-            Sx = scr(np.asarray(E, float))
+        for E in segs:
+            Sx = self.scr(np.asarray(E, float))
             Ln = np.hypot(*(Sx[1, :2] - Sx[0, :2])); n = max(2, int(Ln / 0.5))
             t = np.linspace(0, 1, n)[:, None]
             pts.append(Sx[0] * (1 - t) + Sx[1] * t)
-        P = np.vstack(pts)
-        xi = np.clip(P[:, 0].astype(int), 0, N - 1); yi = np.clip(P[:, 1].astype(int), 0, N - 1)
+        return np.vstack(pts)
+
+    def _front_z(self, xi, yi):
+        N, Z = self.N, self.Z
         zmin = Z[yi, xi]
         for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
             zmin = np.minimum(zmin, Z[np.clip(yi + dy, 0, N - 1), np.clip(xi + dx, 0, N - 1)])
-        vis = (P[:, 2] >= zmin - eps) | ~np.isfinite(zmin)
-        xi, yi, zz = xi[vis], yi[vis], P[vis, 2]
-        w = es["w"]
+        return zmin
+
+    def edges(self, segs, color, w, hidden=False, alpha=1.0, through=None, depth=None):
+        """stamp edges. Visible parts by default; hidden=True draws only the parts behind a face, and only where that face is
+        in `through` (a bool per poly: the crystal faces one sees through) and no deeper than `depth` (final px) behind it.
+        w: width in final px, or (near, far) for depth-graded lines. alpha < 1 blends the ink over what is there."""
+        if not segs: return
+        N = self.N; eps = 0.004 * N
+        P = self._samples(segs)
+        xi = np.clip(P[:, 0].astype(int), 0, N - 1); yi = np.clip(P[:, 1].astype(int), 0, N - 1)
+        zf = self._front_z(xi, yi)
+        vis = (P[:, 2] >= zf - eps) | ~np.isfinite(zf)
+        if hidden:
+            idf = self.ID[yi, xi]
+            sel = ~vis & (idf >= 0)
+            sel &= through[np.maximum(idf, 0)]
+            if depth is not None: sel &= (self.Z[yi, xi] - P[:, 2]) < depth * SS
+        else:
+            sel = vis
+        xi, yi, zz = xi[sel], yi[sel], P[sel, 2]
         if np.isscalar(w):
             groups = [(w, np.ones(len(xi), bool))]
         else:                                           # depth-graded: near lines heavy, far lines light (6 steps)
-            t = np.clip((zz - zlo) / max(zhi - zlo, 1e-9), 0, 1)
+            t = np.clip((zz - self.zlo) / max(self.zhi - self.zlo, 1e-9), 0, 1)
             q = np.minimum((t * 6).astype(int), 5)
             groups = [(w[1] + (w[0] - w[1]) * (j + 0.5) / 6, q == j) for j in range(6)]
         M = np.zeros((N, N), bool)
-        for wj, sel in groups:
+        for wj, s in groups:
             rad = wj * SS / 2; rr = int(np.ceil(rad))
             for dx in range(-rr, rr + 1):
                 for dy in range(-rr, rr + 1):
                     if dx * dx + dy * dy <= rad * rad:
-                        M[np.clip(yi[sel] + dy, 0, N - 1), np.clip(xi[sel] + dx, 0, N - 1)] = True
-        img[M] = es["color"]
-    return img
+                        M[np.clip(yi[s] + dy, 0, N - 1), np.clip(xi[s] + dx, 0, N - 1)] = True
+        self.img[M] = self.img[M] * (1 - alpha) + np.asarray(color) * alpha
+
+    def glints(self, which, count, size, outline=None, spacing=0.045):
+        """crisp four-pointed glints at the brightest visible corners of the polys in `which`: a corner's brightness is the
+        highest mirror highlight among its faces; corners are taken brightest first, at least `spacing` x picture apart."""
+        N = self.N; best = {}
+        for k in np.nonzero(which)[0]:
+            for p in self.polys[k]:
+                key = tuple(np.round(p, 6))
+                if self.spec[k] > best.get(key, (-1, None))[0]: best[key] = (self.spec[k], p)
+        cand = sorted(best.values(), key=lambda t: -t[0])
+        S = self.scr(np.array([p for _, p in cand])) if cand else np.zeros((0, 3))
+        chosen = []
+        for (s, p), (x, y, z) in zip(cand, S):
+            if len(chosen) >= count or s < 0.02: break
+            xi, yi = int(np.clip(x, 0, N - 1)), int(np.clip(y, 0, N - 1))
+            zf = self._front_z(np.array([xi]), np.array([yi]))[0]
+            if np.isfinite(zf) and z < zf - 0.004 * N: continue          # hidden corner
+            ids = self.ID[max(0, yi - 4):yi + 5, max(0, xi - 4):xi + 5].ravel()
+            if np.count_nonzero(which[ids[ids >= 0]]) < 0.4 * len(ids): continue   # a corner shown mostly on stone or paper
+            if any((x - a) ** 2 + (y - b) ** 2 < (spacing * N) ** 2 for a, b, _ in chosen): continue
+            chosen.append((x, y, s))
+        mask = Image.new("L", (N, N), 0); dm = ImageDraw.Draw(mask)
+        omask = Image.new("L", (N, N), 0); do = ImageDraw.Draw(omask)
+        for x, y, s in chosen:
+            L = size * SS * (0.6 + 0.4 * s); wst = L * 0.10
+            star = lambda L, wst: [(x + L, y), (x + wst, y + wst), (x, y + L), (x - wst, y + wst), (x - L, y),
+                                   (x - wst, y - wst), (x, y - L), (x + wst, y - wst)]
+            if outline is not None: do.polygon(star(L + 2.2 * SS, wst + 1.6 * SS), fill=255)
+            dm.polygon(star(L, wst), fill=255)
+        if outline is not None:
+            o = np.asarray(omask, np.float32)[..., None] / 255
+            self.img = self.img * (1 - o) + np.asarray(outline) * o
+        m = np.asarray(mask, np.float32)[..., None] / 255
+        self.img = self.img * (1 - m) + np.array([1.0, 1.0, 1.0]) * m
+        return len(chosen)
 
 
 def finish(img, path, caption=None, ink=SEPIA):
-    im = Image.fromarray((img * 255).round().astype(np.uint8)).resize((SIZE, SIZE), Image.LANCZOS).convert("RGBA")
+    im = Image.fromarray((np.clip(img, 0, 1) * 255).round().astype(np.uint8)).resize((SIZE, SIZE), Image.LANCZOS).convert("RGBA")
     logo = Image.open(LOGO).convert("RGBA"); w = int(SIZE * 0.07)
     logo = logo.resize((w, w), Image.LANCZOS)
     im.alpha_composite(logo, (SIZE - w - int(SIZE * 0.025), SIZE - w - int(SIZE * 0.025)))
@@ -243,17 +319,18 @@ def finish(img, path, caption=None, ink=SEPIA):
 
 
 # ------------------------------------------------------------------ the two pictures for one Queen
-STONE_OUT = [rgb("#6e675f"), rgb("#776f66"), rgb("#80776d")]     # rind outside, outer band first
-STONE_CUT = [rgb("#b3a998"), rgb("#c4b9a6"), rgb("#d2c7b3")]     # polished cut bands, outer band first
+BASALT_OUT = [rgb("#2f343e"), rgb("#343a44")]       # rind outside: deep blue-black grey, outer band first
+BASALT_CUT = [rgb("#565e6b"), rgb("#5e6673")]       # polished cut bands, a little lighter
+EDGE_ROCK = np.array([0x0e, 0x10, 0x14]) / 255
 
 
-def geode(name, cellf, groups, cols, rind, crystals, axis, sink, tilt, off, path):
+def geode(name, cellf, groups, cols, rind, crystals, axis, sink, tilt, off, path, glint_ink):
     """rind: group indices (outermost first) clipped at the plane x.n = 0; crystals: group indices kept whole when wholly below
-    x.n = -sink * R (R = radius of the drawn ball)."""
+    x.n = -sink * R (R = radius of the drawn ball). Crystals pale gems: highlights, their hidden edges faintly through, glints."""
     o = np.radians(off)                                   # the cut normal: the five-fold axis turned by `off` degrees
     n = np.cos(o) * axis + np.sin(o) * perp(axis, (0.9, -0.2, 0.4)); n /= np.linalg.norm(n)
     Rball = max(np.linalg.norm(cellf(c)[0], axis=1).max() for g in rind for c in groups[g])
-    polys, pc, segs_r, segs_c = [], [], [], []
+    polys, pc, sh, segs_r, segs_c = [], [], [], [], []
     kept = {"rind": {}, "crystals": {}}
     for j, g in enumerate(rind):
         cnt = 0
@@ -262,7 +339,7 @@ def geode(name, cellf, groups, cols, rind, crystals, axis, sink, tilt, off, path
             if r is None: continue
             cnt += 1
             for P, isc in zip(*r):
-                polys.append(P); pc.append(STONE_CUT[min(j, 2)] if isc else STONE_OUT[min(j, 2)])
+                polys.append(P); pc.append(BASALT_CUT[min(j, 1)] if isc else BASALT_OUT[min(j, 1)]); sh.append(shade_stone)
             segs_r += poly_edges(r[0])
         kept["rind"][g] = cnt
     ncut = len(polys)
@@ -272,80 +349,100 @@ def geode(name, cellf, groups, cols, rind, crystals, axis, sink, tilt, off, path
             V, F = cellf(c)
             if (V @ n).max() > -sink * Rball + 1e-9: continue
             cnt += 1
-            for f in F: polys.append(V[f]); pc.append(cols[g])
+            for f in F: polys.append(V[f]); pc.append(cols[g]); sh.append(shade_gem)
             segs_c += poly_edges([V[f] for f in F])
         kept["crystals"][g] = cnt
+    gem = np.array([i >= ncut for i in range(len(polys))])
     fwd = np.cos(np.radians(tilt)) * n + np.sin(np.radians(tilt)) * perp(n)
-    Rm = frame(fwd, n)
-    img = render(polys, pc, [{"segs": dedupe(segs_r + segs_c), "color": EDGE, "w": 2.0}], Rm, DARK, shade_solid,
-                 front=list(range(ncut)))
-    finish(img, path)
+    sc = Scene(polys, pc, sh, frame(fwd, n), DARK, front=list(range(ncut)))
+    segs_c = dedupe(segs_c)
+    sc.edges(segs_c, [1, 1, 1], 1.1, hidden=True, alpha=0.42, through=gem, depth=160)   # seen through the crystal in front
+    sc.edges(dedupe(segs_r), EDGE_ROCK, 2.0)
+    sc.edges(segs_c, EDGE, 1.8)
+    ng = sc.glints(gem, 32, 26, outline=glint_ink)
+    finish(sc.img, path)
     facts[name + "-geode"] = {"rind_groups": rind, "crystal_groups": crystals, "cells_drawn": kept, "sink": sink,
-                              "tilt_from_cut_normal_deg": tilt, "cut_normal_off_fivefold_deg": off, "polygons": len(polys)}
-    print(name, "geode", kept, flush=True)
+                              "tilt_from_cut_normal_deg": tilt, "cut_normal_off_fivefold_deg": off, "polygons": len(polys),
+                              "glints": ng}
+    print(name, "geode", kept, "glints", ng, flush=True)
 
 
-def davinci(name, cellf, groups, cols, lines, filled, axis, caption, path, cut=(1.0, 0.85, 0.45)):
+def davinci(name, cellf, groups, core_col, gem_col, gem_cut, glint_ink, lines, filled, axis, caption, path, cut=(0.7, 0.3, 1.0)):
     """isometric (orthographic, elevation arctan(1/sqrt 2) = 35.26 deg above the plane normal to the five-fold axis):
-    groups in `lines` as sepia edges only (whole, graded by depth: near lines heavy), groups in `filled` as soft washes with fine
-    sepia edges, cut open by a plane through the centre (normal = cut[0] towards the viewer + cut[1] right + cut[2] up), so the
-    nested shells show as bands on the cut face."""
+    groups in `lines` as sepia edges only (whole, graded by depth: near lines heavy); the core (group 0) whole, solid gold, standing
+    out of the cut; the other groups in `filled` cut open by a plane through the centre (normal = cut[0] towards the viewer + cut[1]
+    right + cut[2] up), all one pale crystal tone with light cut faces, highlights, hidden edges faintly through, glints."""
     up = axis; hz = perp(up)
     el = np.arctan(1 / np.sqrt(2))
     Rm = frame(np.cos(el) * hz + np.sin(el) * up, up)
     nc = cut[0] * Rm[2] + cut[1] * Rm[0] + cut[2] * Rm[1]; nc /= np.linalg.norm(nc)
-    polys, pc, segs_f, segs_l = [], [], [], []
-    kept = {}
+    polys, pc, sh, segs_core, segs_f, segs_l = [], [], [], [], [], []
+    for c in groups[0]:
+        V, F = cellf(c)
+        for f in F: polys.append(V[f]); pc.append(core_col); sh.append(shade_solid)
+        segs_core += poly_edges([V[f] for f in F])
+    ncore = len(polys)
+    kept = {0: len(groups[0])}
     for g in filled:
+        if g == 0: continue
         cnt = 0
         for c in groups[g]:
             V, F = cellf(c); r = clip(V, F, nc, 0.0)
             if r is None: continue
             cnt += 1
-            for P in r[0]: polys.append(P); pc.append(cols[g])
+            for P, isc in zip(*r):
+                polys.append(P); pc.append(gem_cut if isc else gem_col); sh.append(shade_gem)
             segs_f += poly_edges(r[0])
         kept[g] = cnt
     nl = {}
-    for g in lines:                                      # line cells: whole, but those with their centre in front of the cut
-        nl[g] = 0                                        # are left out, so the cut face is not drawn over
+    for g in lines:                                      # line cells: whole, but only the far half (centre behind the plane
+        nl[g] = 0                                        # through the centre facing the viewer), so nothing is drawn over the cut
         for c in groups[g]:
             V, F = cellf(c)
-            if V.mean(0) @ nc > 0: continue
+            if V.mean(0) @ Rm[2] > 0: continue
             nl[g] += 1; segs_l += poly_edges([V[f] for f in F])
-    segs_l = dedupe(segs_l); segs_f = dedupe(segs_f)
-    img = render(polys, pc, [{"segs": segs_f, "color": SEPIA_FILL, "w": 1.6}, {"segs": segs_l, "color": SEPIA, "w": (3.4, 1.5)}],
-                 Rm, PAPER, shade_wash, fill=0.80)
-    finish(img, path, caption)
-    facts[name + "-davinci"] = {"line_groups": lines, "filled_groups": filled, "filled_cells_drawn": kept, "line_cells_drawn": nl, "line_edges": len(segs_l),
-                                "filled_polygons": len(polys), "elevation_deg": float(np.degrees(el)), "cut_normal_camera": list(cut)}
-    print(name, "davinci", len(segs_l), "line edges", kept, flush=True)
+    segs_l = dedupe(segs_l); segs_f = dedupe(segs_f); segs_core = dedupe(segs_core)
+    gem = np.array([i >= ncore for i in range(len(polys))])
+    sc = Scene(polys, pc, sh, Rm, PAPER, fill=0.80, front=list(range(ncore)), extra=segs_l)
+    sc.edges(segs_f + segs_core, SEPIA_FILL, 1.0, hidden=True, alpha=0.28, through=gem, depth=90)
+    sc.edges(segs_f, SEPIA_FILL, 1.5)
+    sc.edges(segs_core, SEPIA_FILL, 1.9)
+    sc.edges(segs_l, SEPIA, (3.4, 1.5))
+    ng = sc.glints(gem, 16, 24, outline=glint_ink)
+    finish(sc.img, path, caption)
+    facts[name + "-davinci"] = {"line_groups": lines, "filled_groups": filled, "core_cells_whole": len(groups[0]),
+                                "filled_cells_drawn": kept, "line_cells_drawn": nl, "line_edges": len(segs_l),
+                                "filled_polygons": len(polys), "elevation_deg": float(np.degrees(el)),
+                                "cut_normal_camera": list(cut), "glints": ng}
+    print(name, "davinci", len(segs_l), "line edges", kept, "glints", ng, flush=True)
 
 
-# DICTO 2026-10-31: "the colours should speak": the White Queen as diamond (clear white to cool steel-blue outwards), the Red Queen
-# as ruby (bright pink-red to deep garnet outwards); the core stays gold. QG_PAL=book gives the book's viridis shells.
+# DICTO 2026-10-31: the White Queen as diamond, the Red Queen as ruby, the core gold. Round 2 ("stand out more ... pale translucent
+# sparkly"): pale crystals: diamond near-white to faint ice-blue outwards, ruby pale rose to clear pink-red outwards.
 def ramp(c0, c1, n): a, b = rgb(c0), rgb(c1); return [a + (b - a) * t for t in np.linspace(0, 1, n)]
-if os.environ.get("QG_PAL", "gems") == "gems":
-    colsW = [rgb(GOLD)] + ramp("#fbfdff", "#8fa6bd", 14)
-    colsR = [rgb(GOLD)] + ramp("#ff3d6e", "#5c0717", 8)
-else:
-    colsW = [rgb(GOLD)] + [COL[k] for k in range(1, 15)]
-    colsR = [rgb(GOLD)] + [COLR[k] for k in range(1, 9)]
+colsW = [rgb(GOLD)] + ramp("#f7fafd", "#c3d6e8", 14)
+colsR = [rgb(GOLD)] + ramp("#ffd3dd", "#e2456a", 8)
 GW = SH
 GR = L
 CFG = json.loads(os.environ.get("QG_CFG", "{}"))
 which = os.environ.get("QG_ONLY", "wg,wd,rg,rd").split(",")
+ICE, ROSE = rgb("#7f97ae"), rgb("#b34a66")            # glint outlines on paper
 if "wg" in which:
     geode("white", cell_W, GW, colsW, CFG.get("w_rind", [10, 9]), CFG.get("w_cry", [3, 4, 5, 6, 7, 8]), ax5W,
-          CFG.get("w_sink", 0.0), CFG.get("w_tilt", 50), CFG.get("w_off", 17), os.path.join(OUT, "queen-geode-white.png"))
+          CFG.get("w_sink", 0.0), CFG.get("w_tilt", 50), CFG.get("w_off", 17), os.path.join(OUT, "queen-geode-white.png"), ICE)
 if "wd" in which:
-    davinci("white", cell_W, GW, colsW, CFG.get("w_lines", [7, 8]), CFG.get("w_fill", list(range(7))), ax5W,
-            "The White Queen · 600-cell · Cleo shells", os.path.join(OUT, "queen-davinci-white.png"))
+    davinci("white", cell_W, GW, rgb(GOLD), rgb(CFG.get("w_gem", "#dbe7f2")), rgb(CFG.get("w_gemcut", "#f6f9fc")), ICE,
+            CFG.get("w_lines", [7, 8]), CFG.get("w_fill", list(range(7))), ax5W,
+            "The White Queen · 600-cell · Cleo shells", os.path.join(OUT, "queen-davinci-white.png"),
+            tuple(CFG.get("cut", (0.7, 0.3, 1.0))))
 if "rg" in which:
     geode("red", cell_R, GR, colsR, CFG.get("r_rind", [4]), CFG.get("r_cry", [1, 2, 3]), ax5R,
-          CFG.get("r_sink", 0.0), CFG.get("r_tilt", 50), CFG.get("r_off", 17), os.path.join(OUT, "queen-geode-red.png"))
+          CFG.get("r_sink", 0.0), CFG.get("r_tilt", 50), CFG.get("r_off", 17), os.path.join(OUT, "queen-geode-red.png"), ROSE)
 if "rd" in which:
-    davinci("red", cell_R, GR, colsR, CFG.get("r_lines", [4]), CFG.get("r_fill", [0, 1, 2, 3]), ax5R,
-            "The Red Queen · 120-cell · layers", os.path.join(OUT, "queen-davinci-red.png"))
+    davinci("red", cell_R, GR, rgb(GOLD), rgb(CFG.get("r_gem", "#f3b7c6")), rgb(CFG.get("r_gemcut", "#fce4ea")), ROSE,
+            CFG.get("r_lines", [4]), CFG.get("r_fill", [0, 1, 2, 3]), ax5R,
+            "The Red Queen · 120-cell · layers", os.path.join(OUT, "queen-davinci-red.png"),
+            tuple(CFG.get("cut", (0.7, 0.3, 1.0))))
 # ------------------------------------------------------------------ the 2 x 2 sheet (rows: White, Red; columns: geode, da Vinci)
 names = [["queen-geode-white.png", "queen-davinci-white.png"], ["queen-geode-red.png", "queen-davinci-red.png"]]
 labels = [["The White Queen · geode", "The White Queen · da Vinci"], ["The Red Queen · geode", "The Red Queen · da Vinci"]]

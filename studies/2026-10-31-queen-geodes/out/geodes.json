@@ -29,7 +29,8 @@
   "sink": 0.0,
   "tilt_from_cut_normal_deg": 50,
   "cut_normal_off_fivefold_deg": 17,
-  "polygons": 729
+  "polygons": 729,
+  "glints": 12
  },
  "white-davinci": {
   "line_groups": [
@@ -45,12 +46,13 @@
    5,
    6
   ],
+  "core_cells_whole": 20,
   "filled_cells_drawn": {
-   "0": 16,
-   "1": 16,
+   "0": 20,
+   "1": 15,
    "2": 21,
-   "3": 39,
-   "4": 39,
+   "3": 40,
+   "4": 40,
    "5": 39,
    "6": 13
   },
@@ -58,14 +60,15 @@
    "7": 30,
    "8": 10
   },
-  "line_edges": 138,
-  "filled_polygons": 792,
+  "line_edges": 136,
+  "filled_polygons": 808,
   "elevation_deg": 35.264389682754654,
   "cut_normal_camera": [
-   1.0,
-   0.85,
-   0.45
-  ]
+   0.7,
+   0.3,
+   1.0
+  ],
+  "glints": 16
  },
  "red-geode": {
   "rind_groups": [
@@ -89,7 +92,8 @@
   "sink": 0.0,
   "tilt_from_cut_normal_deg": 50,
   "cut_normal_off_fivefold_deg": 17,
-  "polygons": 368
+  "polygons": 368,
+  "glints": 23
  },
  "red-davinci": {
   "line_groups": [
@@ -101,23 +105,25 @@
    2,
    3
   ],
+  "core_cells_whole": 1,
   "filled_cells_drawn": {
    "0": 1,
-   "1": 9,
-   "2": 14,
-   "3": 9
+   "1": 10,
+   "2": 15,
+   "3": 8
   },
   "line_cells_drawn": {
    "4": 15
   },
   "line_edges": 337,
-  "filled_polygons": 351,
+  "filled_polygons": 361,
   "elevation_deg": 35.264389682754654,
   "cut_normal_camera": [
-   1.0,
-   0.85,
-   0.45
-  ]
+   0.7,
+   0.3,
+   1.0
+  ],
+  "glints": 16
  },
  "config": {}
 }
