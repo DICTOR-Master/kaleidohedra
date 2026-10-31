@@ -4,7 +4,7 @@ DICTO's idea: the shells of both Queens look like crystal geodes. Drawn here two
 (1) a split geode, (2) a da Vinci sheet: part sepia line drawing in Leonardo's skeletal *vacuus* manner (his polyhedra for
 Pacioli's *De Divina Proportione*), part filled.
 
-**Conclusion (round 2):** the pale gem crystals now stand out against the dark basalt rind, and the gold core stands up out of the one-tone crystal section in the da Vinci sheets. **Round 1:** both Queens read as geodes once the cut plane is turned off the five-fold axis and the innermost shells are left out as the hollow. The da Vinci sheets read once the filled part is cut open and the line cells in front of the cut are dropped.
+**Conclusion (round 3):** deep diamond and ruby-garnet crystals sparkle against the basalt rind; in the da Vinci sheets the pale core (White: fractured into its 20 Cleo-Icos tetrahedra) stands up out of the deep-gem section. Round 2 made all crystals pale (corrected). **Round 1:** both Queens read as geodes once the cut plane is turned off the five-fold axis and the innermost shells are left out as the hollow. The da Vinci sheets read once the filled part is cut open and the line cells in front of the cut are dropped.
 **Status:** round 2 (DICTO: stand out more, pale translucent sparkly, core alone in 3D) rendered; four pictures + 2×2 sheet delivered to `~/Documents/papers-to-read/` for DICTO to look at; not used in any paper yet.
 
 ## What was drawn
@@ -61,8 +61,16 @@ Counts drawn are in `out/geodes.json`.
   the cut plane; the line cells kept are now the far half (centre behind the plane through the centre facing the viewer), so the
   cage frames the section from behind and nothing is drawn over the cut. White: line shells 7 and 8 (DICTO), Red: layer 4.
 
+## Round 3 (DICTO 2026-10-31: "only the central cells were supposed to go pale ... back to deep ruby garnet red ... fractured into Cleo-Icosas")
+- **Geodes**: basalt rind, see-through edges and glints kept; crystals back to the deep ramps of 193bba22 (diamond #fbfdff to
+  steel-blue #8fa6bd, ruby #ff3d6e to garnet #5c0717); gem shading with more body contrast (0.62 + 0.38 diffuse) plus the mirror highlights.
+- **da Vinci**: the core cells alone in 3D standing out of the cut, now pale crystal with glints (White ice #eef5fb, Red pale rose
+  #ffd6df); White core fractured into its 20 Cleo-Icos tetrahedra, each moved out from the centre by 6 % of the core radius; Red core
+  one whole dodecahedron. Other filled shells in the deep ramps per shell, cut faces 28 % lighter. See-through edges only for the
+  shells (the core's own hidden edges hatched its gaps). Sepia line cage unchanged.
+
 ## Unsure
 - The geodes have no gold core: the hollow takes it out (the core is in the da Vinci sheets).
 - Round 2: the White geode has 12 glints, not a few dozen; more would need closer spacing (busier).
-- Round 2: on the parchment the diamond-pale section is close to the paper tone; it reads by its sepia edges and the cooler white.
+- Round 3: in the White da Vinci the pale core is close in tone to the near-white inner cut faces; it reads by its height, the fracture gaps and its glints.
 - The sheet is 1798 × 1984 px to stay ≤ 2000 px. The single pictures are 2000 px square.

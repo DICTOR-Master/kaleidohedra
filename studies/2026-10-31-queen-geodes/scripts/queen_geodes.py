@@ -161,7 +161,7 @@ def gem_spec(n):
 def shade_gem(col, n):
     """pale crystal: soft body light, and faces near the mirror direction flash to near-white."""
     d = max(0.0, float(n @ LIGHT))
-    base = np.asarray(col) * (0.76 + 0.24 * d)
+    base = np.asarray(col) * (0.62 + 0.38 * d)
     return np.clip(base + (1 - base) * gem_spec(n), 0, 1)
 
 
@@ -367,19 +367,23 @@ def geode(name, cellf, groups, cols, rind, crystals, axis, sink, tilt, off, path
     print(name, "geode", kept, "glints", ng, flush=True)
 
 
-def davinci(name, cellf, groups, core_col, gem_col, gem_cut, glint_ink, lines, filled, axis, caption, path, cut=(0.7, 0.3, 1.0)):
+def davinci(name, cellf, groups, core_col, cols, glint_ink, lines, filled, axis, caption, path, cut=(0.7, 0.3, 1.0), fracture=0.0):
     """isometric (orthographic, elevation arctan(1/sqrt 2) = 35.26 deg above the plane normal to the five-fold axis):
     groups in `lines` as sepia edges only (whole, graded by depth: near lines heavy); the core (group 0) whole, solid gold, standing
-    out of the cut; the other groups in `filled` cut open by a plane through the centre (normal = cut[0] towards the viewer + cut[1]
-    right + cut[2] up), all one pale crystal tone with light cut faces, highlights, hidden edges faintly through, glints."""
+    out of the cut, pale crystal (fracture > 0: each core cell moved out from the centre by fracture x core radius, so the pieces
+    read as a fractured gem); the other groups in `filled` cut open by a plane through the centre (normal = cut[0] towards the
+    viewer + cut[1] right + cut[2] up), in their deep gem colours with lighter cut faces; highlights, hidden edges through, glints."""
     up = axis; hz = perp(up)
     el = np.arctan(1 / np.sqrt(2))
     Rm = frame(np.cos(el) * hz + np.sin(el) * up, up)
     nc = cut[0] * Rm[2] + cut[1] * Rm[0] + cut[2] * Rm[1]; nc /= np.linalg.norm(nc)
     polys, pc, sh, segs_core, segs_f, segs_l = [], [], [], [], [], []
+    rcore = max(np.linalg.norm(cellf(c)[0], axis=1).max() for c in groups[0])
     for c in groups[0]:
         V, F = cellf(c)
-        for f in F: polys.append(V[f]); pc.append(core_col); sh.append(shade_solid)
+        m = V.mean(0)
+        if fracture and np.linalg.norm(m) > 1e-9: V = V + m / np.linalg.norm(m) * fracture * rcore
+        for f in F: polys.append(V[f]); pc.append(core_col); sh.append(shade_gem)
         segs_core += poly_edges([V[f] for f in F])
     ncore = len(polys)
     kept = {0: len(groups[0])}
@@ -391,7 +395,7 @@ def davinci(name, cellf, groups, core_col, gem_col, gem_cut, glint_ink, lines, f
             if r is None: continue
             cnt += 1
             for P, isc in zip(*r):
-                polys.append(P); pc.append(gem_cut if isc else gem_col); sh.append(shade_gem)
+                polys.append(P); pc.append(0.72 * cols[g] + 0.28 if isc else cols[g]); sh.append(shade_gem)
             segs_f += poly_edges(r[0])
         kept[g] = cnt
     nl = {}
@@ -402,9 +406,9 @@ def davinci(name, cellf, groups, core_col, gem_col, gem_cut, glint_ink, lines, f
             if V.mean(0) @ Rm[2] > 0: continue
             nl[g] += 1; segs_l += poly_edges([V[f] for f in F])
     segs_l = dedupe(segs_l); segs_f = dedupe(segs_f); segs_core = dedupe(segs_core)
-    gem = np.array([i >= ncore for i in range(len(polys))])
+    gem = np.ones(len(polys), bool)                     # core and shells are all crystal
     sc = Scene(polys, pc, sh, Rm, PAPER, fill=0.80, front=list(range(ncore)), extra=segs_l)
-    sc.edges(segs_f + segs_core, SEPIA_FILL, 1.0, hidden=True, alpha=0.28, through=gem, depth=90)
+    sc.edges(segs_f, SEPIA_FILL, 1.0, hidden=True, alpha=0.28, through=gem, depth=90)   # not the core's: they hatch its gaps
     sc.edges(segs_f, SEPIA_FILL, 1.5)
     sc.edges(segs_core, SEPIA_FILL, 1.9)
     sc.edges(segs_l, SEPIA, (3.4, 1.5))
@@ -413,15 +417,16 @@ def davinci(name, cellf, groups, core_col, gem_col, gem_cut, glint_ink, lines, f
     facts[name + "-davinci"] = {"line_groups": lines, "filled_groups": filled, "core_cells_whole": len(groups[0]),
                                 "filled_cells_drawn": kept, "line_cells_drawn": nl, "line_edges": len(segs_l),
                                 "filled_polygons": len(polys), "elevation_deg": float(np.degrees(el)),
-                                "cut_normal_camera": list(cut), "glints": ng}
+                                "cut_normal_camera": list(cut), "glints": ng, "core_fracture": fracture}
     print(name, "davinci", len(segs_l), "line edges", kept, "glints", ng, flush=True)
 
 
 # DICTO 2026-10-31: the White Queen as diamond, the Red Queen as ruby, the core gold. Round 2 ("stand out more ... pale translucent
 # sparkly"): pale crystals: diamond near-white to faint ice-blue outwards, ruby pale rose to clear pink-red outwards.
 def ramp(c0, c1, n): a, b = rgb(c0), rgb(c1); return [a + (b - a) * t for t in np.linspace(0, 1, n)]
-colsW = [rgb(GOLD)] + ramp("#f7fafd", "#c3d6e8", 14)
-colsR = [rgb(GOLD)] + ramp("#ffd3dd", "#e2456a", 8)
+# Round 3 (DICTO): the crystals back to the deep ramps (diamond to steel-blue, ruby to garnet); only the da Vinci core goes pale.
+colsW = [rgb(GOLD)] + ramp("#fbfdff", "#8fa6bd", 14)
+colsR = [rgb(GOLD)] + ramp("#ff3d6e", "#5c0717", 8)
 GW = SH
 GR = L
 CFG = json.loads(os.environ.get("QG_CFG", "{}"))
@@ -431,15 +436,15 @@ if "wg" in which:
     geode("white", cell_W, GW, colsW, CFG.get("w_rind", [10, 9]), CFG.get("w_cry", [3, 4, 5, 6, 7, 8]), ax5W,
           CFG.get("w_sink", 0.0), CFG.get("w_tilt", 50), CFG.get("w_off", 17), os.path.join(OUT, "queen-geode-white.png"), ICE)
 if "wd" in which:
-    davinci("white", cell_W, GW, rgb(GOLD), rgb(CFG.get("w_gem", "#dbe7f2")), rgb(CFG.get("w_gemcut", "#f6f9fc")), ICE,
+    davinci("white", cell_W, GW, rgb(CFG.get("w_core", "#eef5fb")), colsW, ICE,
             CFG.get("w_lines", [7, 8]), CFG.get("w_fill", list(range(7))), ax5W,
             "The White Queen · 600-cell · Cleo shells", os.path.join(OUT, "queen-davinci-white.png"),
-            tuple(CFG.get("cut", (0.7, 0.3, 1.0))))
+            tuple(CFG.get("cut", (0.7, 0.3, 1.0))), CFG.get("w_fracture", 0.06))
 if "rg" in which:
     geode("red", cell_R, GR, colsR, CFG.get("r_rind", [4]), CFG.get("r_cry", [1, 2, 3]), ax5R,
           CFG.get("r_sink", 0.0), CFG.get("r_tilt", 50), CFG.get("r_off", 17), os.path.join(OUT, "queen-geode-red.png"), ROSE)
 if "rd" in which:
-    davinci("red", cell_R, GR, rgb(GOLD), rgb(CFG.get("r_gem", "#f3b7c6")), rgb(CFG.get("r_gemcut", "#fce4ea")), ROSE,
+    davinci("red", cell_R, GR, rgb(CFG.get("r_core", "#ffd6df")), colsR, ROSE,
             CFG.get("r_lines", [4]), CFG.get("r_fill", [0, 1, 2, 3]), ax5R,
             "The Red Queen · 120-cell · layers", os.path.join(OUT, "queen-davinci-red.png"),
             tuple(CFG.get("cut", (0.7, 0.3, 1.0))))
