@@ -6,7 +6,7 @@
 # v6 (DICTO 2026-10-31): plates.html, full-page plates of the tiles, stackings and named pieces, after Chapter 14 and before the
 # epilogue; pictures from studies/2026-10-31-hexoct-plates (scripts/plates.py), kept in figures/plates/.
 # v7 (DICTO 2026-11-01): Part IV, Chapter 15 The Window Law, from the paper papers/window-law (not yet published: its number and DOI
-# are written [Window Law paper] / 'at publication'); one sentence added to the conclusions of Chapters 3-8 and 10-14 so the whole
+# were written [Window Law paper] until it was published as #84, 10.5281/zenodo.23848832, 1 November 2026); one sentence added to the conclusions of Chapters 3-8 and 10-14 so the whole
 # book reads within the Window Law; plates stay after Chapter 14, before Part IV.
 # KDP=1: Amazon paperback interior (DICTO 10-29): no cover page (it goes on the printed cover), one blank page at the end
 # so the count passes 79 (KDP allows spine text only above 79 pages).
@@ -18,7 +18,7 @@ CH=[('Prologue','series-web-of-bonds',58),
     ('8','real-polytypes',68),('9','real-materials-2',70),('10','real-materials-3',71),('11','real-materials-4',72),
     ('12','real-materials-5',73),('13','magnets',74),
     ('14','two-tiles',75),
-    ('15','window-law',None)]
+    ('15','window-law',84)]
 PART={'1':'Part I. The laws','8':'Part II. Real materials','14':'Part III. HexOct','15':'Part IV. The Window Law'}
 styles=set(); chapters=[]; sources=[]; toc=[]
 cw=open(os.path.join(P,'collected','paper.html'),encoding='utf8').read()
@@ -124,7 +124,7 @@ for label,folder,num in CH:
         if re.search(r'\b'+re.escape(term)+('' if term in ('BaRuO','BaMnO','LiCoO') or term.endswith('</sub>Sn') or term.endswith('</sub>Ir') else r'(s|es)?\b'),re.sub('<[^>]+>',' ',body) if '<' not in term else body): INDEX.setdefault(term,[]).append(tag)
     head=('Prologue. ' if label=='Prologue' else f'Chapter {label}. ')
     body=re.sub(r'<h1[^>]*>.*?</h1>',f'<h1 class="chapter" id="ch{tag}">{head}{title}</h1>',body,count=1,flags=re.S)
-    body=body.replace('</h1>',f'</h1>\n<p class="from">From paper #{num}, DICTO DOI {doi}</p>' if num else f'</h1>\n<p class="from">From DICTO\'s paper {WL}, DICTO DOI at publication. Numbers in brackets refer to the chapter\'s list of outside works in the Appendix.</p>',1)
+    body=body.replace('</h1>',f'</h1>\n<p class="from">From paper #{num}, DICTO DOI {doi}'+(". Numbers in brackets refer to the chapter's list of outside works in the Appendix." if folder=='window-law' else '')+'</p>' if num else f'</h1>\n<p class="from">From DICTO\'s paper {WL}, DICTO DOI at publication. Numbers in brackets refer to the chapter\'s list of outside works in the Appendix.</p>',1)
     if label in PART: chapters.append(f'<div class="part"><h1 class="partt">{PART[label]}</h1></div>')
     chapters.append(f'<section class="ch">{body}</section>'); toc.append((head+title,tag,num,doi))
     sources.append(f'<h3>{head}{html.escape(title)} ({pnum(num)}, DICTO DOI {doi or 'at publication'})</h3>'+''.join(out))
