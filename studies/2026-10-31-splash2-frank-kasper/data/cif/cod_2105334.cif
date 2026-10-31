@@ -1,0 +1,117 @@
+#------------------------------------------------------------------------------
+#$Date: 2016-02-14 16:26:36 +0200 (Sun, 14 Feb 2016) $
+#$Revision: 176435 $
+#$URL: file:///home/coder/svn-repositories/_RELOADED_COD/cod-reloaded/cif/2/10/53/2105334.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/. The original data for this entry
+# were provided by IUCr Journals, http://journals.iucr.org/.
+#
+# The file may be used within the scientific community so long as
+# proper attribution is given to the journal article from which the
+# data were obtained.
+#
+data_2105334
+loop_
+_publ_author_name
+'Kitano, Y.'
+'Komura, Y.'
+_publ_section_title
+;
+ Long-period stacking variants and their electron-concentration dependence
+ in the Mg-base friauf-laves phases
+;
+_journal_name_full               'Acta Crystallographica B (24,1968-38,1982)'
+_journal_page_first              2496
+_journal_page_last               2501
+_journal_paper_doi               10.1107/S0567740877008784
+_journal_volume                  33
+_journal_year                    1977
+_chemical_formula_sum            'Ag0.2 Mg Zn1.8'
+_chemical_name_systematic        'Magnesium silver zinc (1/0.2/1.8)'
+_space_group_IT_number           166
+_symmetry_space_group_name_Hall  '-R 3 2"'
+_symmetry_space_group_name_H-M   'R -3 m :H'
+_cell_angle_alpha                90
+_cell_angle_beta                 90
+_cell_angle_gamma                120
+_cell_formula_units_Z            42
+_cell_length_a                   5.21
+_cell_length_b                   5.21
+_cell_length_c                   90.3
+_cell_volume                     2122.725
+_citation_journal_id_ASTM        ACBCAR
+_cod_data_source_file            silver0-1_28.cif
+_cod_data_source_block           Ag0.2Mg1Zn1.8
+_cod_original_cell_volume        2122.726
+_cod_original_formula_sum        'Ag0.2 Mg1 Zn1.8'
+_cod_database_code               2105334
+loop_
+_symmetry_equiv_pos_as_xyz
+x,y,z
+-y,x-y,z
+-x+y,-x,z
+y,x,-z
+-x,-x+y,-z
+x-y,-y,-z
+-x,-y,-z
+y,-x+y,-z
+x-y,x,-z
+-y,-x,z
+x,x-y,z
+-x+y,y,z
+x+2/3,y+1/3,z+1/3
+-y+2/3,x-y+1/3,z+1/3
+-x+y+2/3,-x+1/3,z+1/3
+y+2/3,x+1/3,-z+1/3
+-x+2/3,-x+y+1/3,-z+1/3
+x-y+2/3,-y+1/3,-z+1/3
+-x+2/3,-y+1/3,-z+1/3
+y+2/3,-x+y+1/3,-z+1/3
+x-y+2/3,x+1/3,-z+1/3
+-y+2/3,-x+1/3,z+1/3
+x+2/3,x-y+1/3,z+1/3
+-x+y+2/3,y+1/3,z+1/3
+x+1/3,y+2/3,z+2/3
+-y+1/3,x-y+2/3,z+2/3
+-x+y+1/3,-x+2/3,z+2/3
+y+1/3,x+2/3,-z+2/3
+-x+1/3,-x+y+2/3,-z+2/3
+x-y+1/3,-y+2/3,-z+2/3
+-x+1/3,-y+2/3,-z+2/3
+y+1/3,-x+y+2/3,-z+2/3
+x-y+1/3,x+2/3,-z+2/3
+-y+1/3,-x+2/3,z+2/3
+x+1/3,x-y+2/3,z+2/3
+-x+y+1/3,y+2/3,z+2/3
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+Ag7 Ag 0.5 0.5 0.1905 0.1
+Ag8 Ag 0.5 0.5 0.381 0.1
+Ag3 Ag 0 0 0.3095 0.1
+Zn7 Zn 0.5 0.5 0.1905 0.9
+Zn8 Zn 0.5 0.5 0.381 0.9
+Mg4 Mg 0 0 0.17262 1
+Ag1 Ag 0 0 0.5 0.1
+Ag4 Ag 0 0 0.4524 0.1
+Mg1 Mg 0 0 0.01786 1
+Mg2 Mg 0 0 0.07738 1
+Ag5 Ag 0.5 0 0 0.1
+Zn6 Zn 0.5 0.5 0.0952 0.9
+Ag2 Ag 0 0 0.2619 0.1
+Mg6 Mg 0 0 0.3631 1
+Zn4 Zn 0 0 0.4524 0.9
+Mg7 Mg 0 0 0.39881 1
+Zn5 Zn 0.5 0 0 0.9
+Zn1 Zn 0 0 0.5 0.9
+Zn3 Zn 0 0 0.3095 0.9
+Zn2 Zn 0 0 0.2619 0.9
+Mg3 Mg 0 0 0.1131 1
+Ag6 Ag 0.5 0.5 0.0952 0.1
+Mg5 Mg 0 0 0.20833 1

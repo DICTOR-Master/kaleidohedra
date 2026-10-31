@@ -1,0 +1,279 @@
+structures 203 not TCP (unexpected): []
+  non-FK check chi (alpha-Mn) not TCP: ['site 34: bond folds [(4, 1)]']
+  non-FK check Mg17Al12 (alpha-Mn type) not TCP: ['site 34: bond folds [(4, 1)]']
+  non-FK check Mg23Al30 not TCP: ['site 0: bond folds [(4, 6)]']
+  non-FK check Mg21Zn25 not TCP: ['site 0: bond folds [(3, 1), (7, 1)]']
+TCP structures: physical 18 square-triangle 62 FK59 119
+
+GLOBAL (all TCP, per atom):
+  N                            all: constant                                      ['1']   | physical: constant
+  N12                          all: line in Zbar                                  ['34', '-5/2']   | physical: line in Zbar
+  N14                          all: site-additive (linear in x12, x14, x15, x16)  ['0', '1', '0', '0']   | physical: site-additive (linear in x12, x14, x15, x16)
+  N15                          all: site-additive (linear in x12, x14, x15, x16)  ['0', '0', '1', '0']   | physical: site-additive (linear in x12, x14, x15, x16)
+  N16                          all: site-additive (linear in x12, x14, x15, x16)  ['1/2', '-1/6', '-7/12', '0']   | physical: site-additive (linear in x12, x14, x15, x16)
+  T                            all: line in Zbar                                  ['-1', '1/2']   | physical: line in Zbar
+  Zsum                         all: line in Zbar                                  ['0', '1']   | physical: line in Zbar
+  bond                         all: line in Zbar                                  ['0', '1/2']   | physical: line in Zbar
+  bond5                        all: constant                                      ['6']   | physical: constant
+  bond5_12_12                  all: not site-additive                             None   | physical: not site-additive
+  bond5_12_14                  all: not site-additive                             None   | physical: not site-additive
+  bond5_12_15                  all: not site-additive                             None   | physical: not site-additive
+  bond5_12_16                  all: not site-additive                             None   | physical: not site-additive
+  bond5_14_14                  all: not site-additive                             None   | physical: not site-additive
+  bond5_14_15                  all: not site-additive                             None   | physical: not site-additive
+  bond5_14_16                  all: not site-additive                             None   | physical: not site-additive
+  bond5_15_15                  all: not site-additive                             None   | physical: not site-additive
+  bond5_15_16                  all: not site-additive                             None   | physical: not site-additive
+  bond6                        all: line in Zbar                                  ['-6', '1/2']   | physical: line in Zbar
+  bond6_14_14                  all: not site-additive                             None   | physical: not site-additive
+  bond6_14_15                  all: not site-additive                             None   | physical: not site-additive
+  bond6_14_16                  all: not site-additive                             None   | physical: not site-additive
+  bond6_15_15                  all: not site-additive                             None   | physical: not site-additive
+  bond6_15_16                  all: not site-additive                             None   | physical: not site-additive
+  bond6_16_16                  all: not site-additive                             None   | physical: not site-additive
+  nb_12_12                     all: not site-additive                             None   | physical: not site-additive
+  nb_12_14                     all: not site-additive                             None   | physical: not site-additive
+  nb_12_15                     all: not site-additive                             None   | physical: not site-additive
+  nb_12_16                     all: not site-additive                             None   | physical: not site-additive
+  nb_14_12                     all: not site-additive                             None   | physical: not site-additive
+  nb_14_14                     all: not site-additive                             None   | physical: not site-additive
+  nb_14_15                     all: not site-additive                             None   | physical: not site-additive
+  nb_14_16                     all: not site-additive                             None   | physical: not site-additive
+  nb_15_12                     all: not site-additive                             None   | physical: not site-additive
+  nb_15_14                     all: not site-additive                             None   | physical: not site-additive
+  nb_15_15                     all: not site-additive                             None   | physical: not site-additive
+  nb_15_16                     all: not site-additive                             None   | physical: not site-additive
+  nb_16_12                     all: not site-additive                             None   | physical: not site-additive
+  nb_16_14                     all: not site-additive                             None   | physical: not site-additive
+  nb_16_15                     all: not site-additive                             None   | physical: not site-additive
+  nb_16_16                     all: not site-additive                             None   | physical: not site-additive
+  ring6_Z12                    all: not site-additive                             None   | physical: not site-additive
+  ring_14_14_n12=0             all: not site-additive                             None   | physical: not site-additive
+  ring_14_14_n12=1             all: not site-additive                             None   | physical: not site-additive
+  ring_14_14_n12=2             all: not site-additive                             None   | physical: not site-additive
+  ring_14_14_n12=3             all: not site-additive                             None   | physical: not site-additive
+  ring_14_14_n12=4             all: not site-additive                             None   | physical: constant
+  ring_14_14_n12=6             all: not site-additive                             None   | physical: not site-additive
+  ring_14_15_n12=2             all: not site-additive                             None   | physical: not site-additive
+  ring_14_15_n12=4             all: not site-additive                             None   | physical: not site-additive
+  ring_14_15_n12=6             all: not site-additive                             None   | physical: not site-additive
+  ring_14_16_n12=3             all: not site-additive                             None   | physical: not site-additive
+  ring_14_16_n12=4             all: not site-additive                             None   | physical: not site-additive
+  ring_14_16_n12=6             all: not site-additive                             None   | physical: not site-additive
+  ring_15_15_n12=2             all: not site-additive                             None   | physical: not site-additive
+  ring_15_16_n12=3             all: not site-additive                             None   | physical: not site-additive
+  ring_15_16_n12=4             all: not site-additive                             None   | physical: not site-additive
+  ring_16_16_n12=4             all: not site-additive                             None   | physical: not site-additive
+  ring_16_16_n12=6             all: not site-additive                             None   | physical: not site-additive
+  shell6_Z12                   all: not site-additive                             None   | physical: not site-additive
+  shell6_Z14                   all: not site-additive                             None   | physical: not site-additive
+  shell6_Z15                   all: not site-additive                             None   | physical: not site-additive
+  shell6_Z16                   all: not site-additive                             None   | physical: not site-additive
+  tet_j0                       all: not site-additive                             None   | physical: not site-additive
+  tet_j1                       all: not site-additive                             None   | physical: not site-additive
+  tet_j2                       all: not site-additive                             None   | physical: not site-additive
+  tet_j2_opposite              all: not site-additive                             None   | physical: not site-additive
+  tet_v2222                    all: not site-additive                             None   | physical: not site-additive
+  tet_v2222_j0                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2224                    all: not site-additive                             None   | physical: not site-additive
+  tet_v2224_j0                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2225                    all: not site-additive                             None   | physical: not site-additive
+  tet_v2225_j0                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2226                    all: not site-additive                             None   | physical: not site-additive
+  tet_v2226_j0                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2244                    all: not site-additive                             None   | physical: not site-additive
+  tet_v2244_j0                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2244_j1                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2245                    all: not site-additive                             None   | physical: not site-additive
+  tet_v2245_j0                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2245_j1                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2246                    all: not site-additive                             None   | physical: not site-additive
+  tet_v2246_j0                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2246_j1                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2255                    all: not site-additive                             None   | physical: not site-additive
+  tet_v2255_j0                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2256                    all: not site-additive                             None   | physical: not site-additive
+  tet_v2256_j1                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2266                    all: not site-additive                             None   | physical: not site-additive
+  tet_v2266_j1                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2444                    all: not site-additive                             None   | physical: not site-additive
+  tet_v2444_j0                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2444_j1                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2445                    all: not site-additive                             None   | physical: not site-additive
+  tet_v2445_j1                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2446                    all: not site-additive                             None   | physical: not site-additive
+  tet_v2446_j1                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2455                    all: not site-additive                             None   | physical: not site-additive
+  tet_v2455_j1                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2456                    all: not site-additive                             None   | physical: not site-additive
+  tet_v2456_j1                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2466                    all: not site-additive                             None   | physical: not site-additive
+  tet_v2466_j1                 all: not site-additive                             None   | physical: not site-additive
+  tet_v2556                    all: not site-additive                             None   | physical: not site-additive
+  tet_v2556_j1                 all: not site-additive                             None   | physical: not site-additive
+  tet_v4444                    all: not site-additive                             None   | physical: not site-additive
+  tet_v4444_j2                 all: not site-additive                             None   | physical: not site-additive
+  tet_v4445                    all: not site-additive                             None   | physical: not site-additive
+  tet_v4445_j2                 all: not site-additive                             None   | physical: not site-additive
+  tet_v4446                    all: not site-additive                             None   | physical: not site-additive
+  tet_v4446_j2                 all: not site-additive                             None   | physical: not site-additive
+  tet_v4455                    all: not site-additive                             None   | physical: not site-additive
+  tet_v4455_j2                 all: not site-additive                             None   | physical: not site-additive
+  tet_v4456                    all: not site-additive                             None   | physical: not site-additive
+  tet_v4456_j2                 all: not site-additive                             None   | physical: not site-additive
+  tet_v4466                    all: not site-additive                             None   | physical: not site-additive
+  tet_v4466_j2                 all: not site-additive                             None   | physical: not site-additive
+  tet_v4556                    all: not site-additive                             None   | physical: not site-additive
+  tet_v4556_j2                 all: not site-additive                             None   | physical: not site-additive
+
+WINDOWS square-triangle rows (per row) / FK59 (per slab):
+  N                            ST m=1 {'S': Fraction(8, 1), 'T': Fraction(7, 1)}  | FK59 m=1 {'+': Fraction(6, 1), '0': Fraction(7, 1)}
+  N12                          ST m=1 {'S': Fraction(2, 1), 'T': Fraction(3, 1)}  | FK59 m=1 {'+': Fraction(4, 1), '0': Fraction(3, 1)}
+  N14                          ST m=1 {'S': Fraction(6, 1), 'T': Fraction(2, 1)}  | FK59 m=1 {'0': Fraction(2, 1)}
+  N15                          ST m=1 {'T': Fraction(2, 1)}  | FK59 m=1 {'0': Fraction(2, 1)}
+  N16                          ST m=0 {'': Fraction(0, 1)}  | FK59 m=1 {'+': Fraction(2, 1)}
+  T                            ST m=1 {'S': Fraction(46, 1), 'T': Fraction(40, 1)}  | FK59 m=1 {'+': Fraction(34, 1), '0': Fraction(40, 1)}
+  Zsum                         ST m=1 {'S': Fraction(108, 1), 'T': Fraction(94, 1)}  | FK59 m=1 {'+': Fraction(80, 1), '0': Fraction(94, 1)}
+  bond                         ST m=1 {'S': Fraction(54, 1), 'T': Fraction(47, 1)}  | FK59 m=1 {'+': Fraction(40, 1), '0': Fraction(47, 1)}
+  bond5                        ST m=1 {'S': Fraction(48, 1), 'T': Fraction(42, 1)}  | FK59 m=1 {'+': Fraction(36, 1), '0': Fraction(42, 1)}
+  bond5_12_12                  ST m=1 {'T': Fraction(6, 1)}  | FK59 m=1 {'+': Fraction(12, 1), '0': Fraction(6, 1)}
+  bond5_12_14                  ST m=1 {'S': Fraction(24, 1), 'T': Fraction(12, 1)}  | FK59 m=1 {'0': Fraction(12, 1)}
+  bond5_12_15                  ST m=1 {'T': Fraction(12, 1)}  | FK59 m=1 {'0': Fraction(12, 1)}
+  bond5_12_16                  ST m=0 {'': Fraction(0, 1)}  | FK59 m=1 {'+': Fraction(24, 1)}
+  bond5_14_14                  ST m=1 {'S': Fraction(24, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  bond5_14_15                  ST m=1 {'T': Fraction(12, 1)}  | FK59 m=1 {'0': Fraction(12, 1)}
+  bond5_14_16                  ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  bond5_15_15                  ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  bond5_15_16                  ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  bond6                        ST m=1 {'S': Fraction(6, 1), 'T': Fraction(5, 1)}  | FK59 m=1 {'+': Fraction(4, 1), '0': Fraction(5, 1)}
+  bond6_14_14                  ST m=2 {'SS': Fraction(6, 1), 'ST': Fraction(7, 2), 'TT': Fraction(2, 1)}  | FK59 m=2 {'+0': Fraction(1, 2), '00': Fraction(2, 1)}
+  bond6_14_15                  ST m=2 {'ST': Fraction(1, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  bond6_14_16                  ST m=0 {'': Fraction(0, 1)}  | FK59 m=2 {'+0': Fraction(1, 1)}
+  bond6_15_15                  ST m=2 {'ST': Fraction(1, 1), 'TT': Fraction(3, 1)}  | FK59 m=1 {'0': Fraction(3, 1)}
+  bond6_15_16                  ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  bond6_16_16                  ST m=0 {'': Fraction(0, 1)}  | FK59 m=2 {'++': Fraction(4, 1), '+-': Fraction(4, 1), '+0': Fraction(3, 2)}
+  nb_12_12                     ST m=1 {'T': Fraction(12, 1)}  | FK59 m=1 {'+': Fraction(24, 1), '0': Fraction(12, 1)}
+  nb_12_14                     ST m=1 {'S': Fraction(24, 1), 'T': Fraction(12, 1)}  | FK59 m=1 {'0': Fraction(12, 1)}
+  nb_12_15                     ST m=1 {'T': Fraction(12, 1)}  | FK59 m=1 {'0': Fraction(12, 1)}
+  nb_12_16                     ST m=0 {'': Fraction(0, 1)}  | FK59 m=1 {'+': Fraction(24, 1)}
+  nb_14_12                     ST m=1 {'S': Fraction(24, 1), 'T': Fraction(12, 1)}  | FK59 m=1 {'0': Fraction(12, 1)}
+  nb_14_14                     ST m=2 {'SS': Fraction(60, 1), 'ST': Fraction(31, 1), 'TT': Fraction(4, 1)}  | FK59 m=2 {'+0': Fraction(1, 1), '00': Fraction(4, 1)}
+  nb_14_15                     ST m=2 {'ST': Fraction(7, 1), 'TT': Fraction(12, 1)}  | FK59 m=1 {'0': Fraction(12, 1)}
+  nb_14_16                     ST m=0 {'': Fraction(0, 1)}  | FK59 m=2 {'+0': Fraction(1, 1)}
+  nb_15_12                     ST m=1 {'T': Fraction(12, 1)}  | FK59 m=1 {'0': Fraction(12, 1)}
+  nb_15_14                     ST m=2 {'ST': Fraction(7, 1), 'TT': Fraction(12, 1)}  | FK59 m=1 {'0': Fraction(12, 1)}
+  nb_15_15                     ST m=2 {'ST': Fraction(2, 1), 'TT': Fraction(6, 1)}  | FK59 m=1 {'0': Fraction(6, 1)}
+  nb_15_16                     ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  nb_16_12                     ST m=0 {'': Fraction(0, 1)}  | FK59 m=1 {'+': Fraction(24, 1)}
+  nb_16_14                     ST m=0 {'': Fraction(0, 1)}  | FK59 m=2 {'+0': Fraction(1, 1)}
+  nb_16_15                     ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  nb_16_16                     ST m=0 {'': Fraction(0, 1)}  | FK59 m=2 {'++': Fraction(8, 1), '+-': Fraction(8, 1), '+0': Fraction(3, 1)}
+  ring6_Z12                    ST m=0 {'': Fraction(12, 1)}  | FK59 m=1 {'+': Fraction(24, 1), '0': Fraction(12, 1)}
+  ring_14_14_n12=0             ST m=2 {'TT': Fraction(1, 1)}  | FK59 m=1 {'0': Fraction(1, 1)}
+  ring_14_14_n12=1             ST m=2 {'ST': Fraction(1, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  ring_14_14_n12=2             ST m=2 {'SS': Fraction(6, 1), 'ST': Fraction(3, 2)}  | FK59 m=0 {'': Fraction(0, 1)}
+  ring_14_14_n12=3             ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  ring_14_14_n12=4             ST m=2 {'ST': Fraction(1, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  ring_14_14_n12=6             ST m=2 {'TT': Fraction(1, 1)}  | FK59 m=2 {'00': Fraction(1, 1)}
+  ring_14_15_n12=2             ST m=2 {'ST': Fraction(1, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  ring_14_15_n12=4             ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  ring_14_15_n12=6             ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  ring_14_16_n12=3             ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  ring_14_16_n12=4             ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  ring_14_16_n12=6             ST m=0 {'': Fraction(0, 1)}  | FK59 m=2 {'+0': Fraction(1, 1)}
+  ring_15_15_n12=2             ST m=2 {'ST': Fraction(1, 1), 'TT': Fraction(3, 1)}  | FK59 m=1 {'0': Fraction(3, 1)}
+  ring_15_16_n12=3             ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  ring_15_16_n12=4             ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  ring_16_16_n12=4             ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  ring_16_16_n12=6             ST m=0 {'': Fraction(0, 1)}  | FK59 m=2 {'++': Fraction(4, 1), '+-': Fraction(4, 1), '+0': Fraction(3, 2)}
+  shell6_Z12                   ST m=0 {'': Fraction(12, 1)}  | FK59 m=1 {'+': Fraction(24, 1), '0': Fraction(12, 1)}
+  shell6_Z14                   ST m=1 {'S': Fraction(24, 1), 'T': Fraction(12, 1)}  | FK59 m=1 {'0': Fraction(12, 1)}
+  shell6_Z15                   ST m=1 {'T': Fraction(6, 1)}  | FK59 m=1 {'0': Fraction(6, 1)}
+  shell6_Z16                   ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_j0                       ST m=0 {'': Fraction(16, 1)}  | FK59 m=1 {'+': Fraction(10, 1), '0': Fraction(16, 1)}
+  tet_j1                       ST m=1 {'S': Fraction(24, 1), 'T': Fraction(18, 1)}  | FK59 m=1 {'+': Fraction(24, 1), '0': Fraction(18, 1)}
+  tet_j2                       ST m=0 {'': Fraction(6, 1)}  | FK59 m=1 {'0': Fraction(6, 1)}
+  tet_j2_opposite              ST m=0 {'': Fraction(6, 1)}  | FK59 m=1 {'0': Fraction(6, 1)}
+  tet_v2222                    ST m=0 {'': Fraction(0, 1)}  | FK59 m=1 {'+': Fraction(2, 1)}
+  tet_v2222_j0                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=1 {'+': Fraction(2, 1)}
+  tet_v2224                    ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2224_j0                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2225                    ST m=1 {'T': Fraction(4, 1)}  | FK59 m=1 {'0': Fraction(4, 1)}
+  tet_v2225_j0                 ST m=1 {'T': Fraction(4, 1)}  | FK59 m=1 {'0': Fraction(4, 1)}
+  tet_v2226                    ST m=0 {'': Fraction(0, 1)}  | FK59 m=1 {'+': Fraction(8, 1)}
+  tet_v2226_j0                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=1 {'+': Fraction(8, 1)}
+  tet_v2244                    ST m=1 {'T': Fraction(6, 1)}  | FK59 m=2 {'00': Fraction(6, 1)}
+  tet_v2244_j0                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2244_j1                 ST m=1 {'T': Fraction(6, 1)}  | FK59 m=2 {'00': Fraction(6, 1)}
+  tet_v2245                    ST m=1 {'T': Fraction(12, 1)}  | FK59 m=1 {'0': Fraction(12, 1)}
+  tet_v2245_j0                 ST m=1 {'T': Fraction(12, 1)}  | FK59 m=1 {'0': Fraction(12, 1)}
+  tet_v2245_j1                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2246                    ST m=0 {'': Fraction(0, 1)}  | FK59 m=2 {'+0': Fraction(6, 1)}
+  tet_v2246_j0                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2246_j1                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=2 {'+0': Fraction(6, 1)}
+  tet_v2255                    ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2255_j0                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2256                    ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2256_j1                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2266                    ST m=0 {'': Fraction(0, 1)}  | FK59 m=2 {'++': Fraction(24, 1), '+-': Fraction(24, 1), '+0': Fraction(9, 1)}
+  tet_v2266_j1                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=2 {'++': Fraction(24, 1), '+-': Fraction(24, 1), '+0': Fraction(9, 1)}
+  tet_v2444                    ST m=2 {'SS': Fraction(40, 1), 'ST': Fraction(18, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2444_j0                 ST m=1 {'S': Fraction(16, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2444_j1                 ST m=2 {'SS': Fraction(24, 1), 'ST': Fraction(10, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2445                    ST m=2 {'ST': Fraction(4, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2445_j1                 ST m=2 {'ST': Fraction(4, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2446                    ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2446_j1                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2455                    ST m=2 {'ST': Fraction(4, 1), 'TT': Fraction(12, 1)}  | FK59 m=1 {'0': Fraction(12, 1)}
+  tet_v2455_j1                 ST m=2 {'ST': Fraction(4, 1), 'TT': Fraction(12, 1)}  | FK59 m=1 {'0': Fraction(12, 1)}
+  tet_v2456                    ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2456_j1                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2466                    ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2466_j1                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2556                    ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v2556_j1                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v4444                    ST m=2 {'SS': Fraction(6, 1), 'ST': Fraction(2, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v4444_j2                 ST m=2 {'SS': Fraction(6, 1), 'ST': Fraction(2, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v4445                    ST m=2 {'ST': Fraction(2, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v4445_j2                 ST m=2 {'ST': Fraction(2, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v4446                    ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v4446_j2                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v4455                    ST m=2 {'ST': Fraction(2, 1), 'TT': Fraction(6, 1)}  | FK59 m=1 {'0': Fraction(6, 1)}
+  tet_v4455_j2                 ST m=2 {'ST': Fraction(2, 1), 'TT': Fraction(6, 1)}  | FK59 m=1 {'0': Fraction(6, 1)}
+  tet_v4456                    ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v4456_j2                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v4466                    ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v4466_j2                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v4556                    ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+  tet_v4556_j2                 ST m=0 {'': Fraction(0, 1)}  | FK59 m=0 {'': Fraction(0, 1)}
+
+TABLE (counts only):
+   {'name': 'K', 'desc': 'complex, Pmmm', 'counts': (14, 21, 6, 0), 'Zbar': '552/41', 'a0': '0', 'yk_line': '552/41'}
+   {'name': 'F', 'desc': 'complex, P6/mmm', 'counts': (9, 13, 4, 0), 'Zbar': '175/13', 'a0': '0', 'yk_line': '175/13'}
+   {'name': 'J', 'desc': 'complex, Pmmm', 'counts': (4, 5, 2, 0), 'Zbar': '148/11', 'a0': '0', 'yk_line': '148/11'}
+   {'name': 'H', 'desc': 'complex, Cmmm', 'counts': (5, 8, 2, 0), 'Zbar': '202/15', 'a0': '0', 'yk_line': '202/15'}
+   {'name': 'K*', 'desc': 'Mn77Fe4Si19, C2', 'counts': (25, 19, 4, 7), 'Zbar': '738/55', 'a0': '0', 'yk_line': '738/55'}
+   {'name': '-* (K7Cs6)', 'desc': 'K7Cs6, P63/mmc', 'counts': (7, 2, 2, 2), 'Zbar': '174/13', 'a0': '0', 'yk_line': '174/13'}
+   {'name': 'p-sigma', 'desc': 'Th6Cd7, Pbam', 'counts': (7, 2, 2, 2), 'Zbar': '174/13', 'a0': '0', 'yk_line': '174/13'}
+   {'name': 'M', 'desc': 'Nb48Ni39Al13, Pnam', 'counts': (7, 2, 2, 2), 'Zbar': '174/13', 'a0': '0', 'yk_line': '174/13'}
+   {'name': 'C', 'desc': 'V2(Co,Si)3, C2/m', 'counts': (15, 2, 2, 6), 'Zbar': '334/25', 'a0': '0', 'yk_line': '334/25'}
+   {'name': 'I', 'desc': 'V41Ni36Si23, Cc', 'counts': (11, 2, 2, 4), 'Zbar': '254/19', 'a0': '0', 'yk_line': '254/19'}
+   {'name': 'SM', 'desc': 'Mg32(Zn,Al)49, Pm-3n', 'counts': (49, 9, 0, 23), 'Zbar': '1082/81', 'a0': '0', 'yk_line': '1082/81'}
+   {'name': 'X', 'desc': 'Mn45Co40Si15, Pnnm', 'counts': (23, 2, 2, 10), 'Zbar': '494/37', 'a0': '0', 'yk_line': '494/37'}
+   {'name': 'Mg4Zn7', 'desc': 'Mg4Zn7, C2/m', 'counts': (35, 2, 2, 16), 'Zbar': '734/55', 'a0': '0', 'yk_line': '734/55'}
+   {'name': 'hyp. 7422', 'desc': 'computer search no. 1', 'counts': (7, 4, 2, 2), 'Zbar': '202/15', 'a0': '-2/45', 'yk_line': '1006/75'}
+   {'name': 'hyp. 6640', 'desc': 'computer search no. 40', 'counts': (6, 6, 4, 0), 'Zbar': '27/2', 'a0': '-1/24', 'yk_line': '269/20'}
+   {'name': 'hyp. 6840', 'desc': 'computer search nos. 18, 62, 63', 'counts': (6, 8, 4, 0), 'Zbar': '122/9', 'a0': '-2/27', 'yk_line': '202/15'}
+   {'name': 'hyp. 6602', 'desc': 'computer search, new', 'counts': (6, 6, 0, 2), 'Zbar': '94/7', 'a0': '0', 'yk_line': '94/7'}
+   {'name': 'hyp. 9223', 'desc': 'new', 'counts': (9, 2, 2, 3), 'Zbar': '107/8', 'a0': '0', 'yk_line': '107/8'}
+   {'name': 'hyp. 8522', 'desc': 'new', 'counts': (8, 5, 2, 2), 'Zbar': '228/17', 'a0': '0', 'yk_line': '228/17'}
+   {'name': 'hyp. 8441', 'desc': 'new', 'counts': (8, 4, 4, 1), 'Zbar': '228/17', 'a0': '0', 'yk_line': '228/17'}
+   {'name': 'hyp. 7821', 'desc': 'new', 'counts': (7, 8, 2, 1), 'Zbar': '121/9', 'a0': '0', 'yk_line': '121/9'}
+   {'name': 'hyp. 7740', 'desc': 'new', 'counts': (7, 7, 4, 0), 'Zbar': '121/9', 'a0': '0', 'yk_line': '121/9'}
+   {'name': 'hyp. 11224', 'desc': 'new', 'counts': (11, 2, 2, 4), 'Zbar': '254/19', 'a0': '0', 'yk_line': '254/19'}
+   {'name': 'hyp. 11143', 'desc': 'new', 'counts': (11, 1, 4, 3), 'Zbar': '254/19', 'a0': '0', 'yk_line': '254/19'}
+   {'name': 'hyp. 61120', 'desc': 'new', 'counts': (6, 11, 2, 0), 'Zbar': '256/19', 'a0': '0', 'yk_line': '256/19'}
+   {'name': 'hyp. 10604', 'desc': 'new', 'counts': (10, 6, 0, 4), 'Zbar': '67/5', 'a0': '0', 'yk_line': '67/5'}
+   {'name': 'hyp. 10523', 'desc': 'new', 'counts': (10, 5, 2, 3), 'Zbar': '67/5', 'a0': '0', 'yk_line': '67/5'}
+   {'name': 'hyp. 10442', 'desc': 'new', 'counts': (10, 4, 4, 2), 'Zbar': '67/5', 'a0': '0', 'yk_line': '67/5'}
+   {'name': 'hyp. 10361', 'desc': 'new', 'counts': (10, 3, 6, 1), 'Zbar': '67/5', 'a0': '0', 'yk_line': '67/5'}

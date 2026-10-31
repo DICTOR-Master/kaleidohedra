@@ -1,0 +1,89 @@
+#------------------------------------------------------------------------------
+#$Date: 2018-09-27 07:13:35 +0300 (Thu, 27 Sep 2018) $
+#$Revision: 211196 $
+#$URL: file:///home/coder/svn-repositories/_RELOADED_COD/cod-reloaded/cif/2/10/72/2107202.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/. The original data for this entry
+# were provided by IUCr Journals, http://journals.iucr.org/.
+#
+# The file may be used within the scientific community so long as
+# proper attribution is given to the journal article from which the
+# data were obtained.
+#
+data_2107202
+loop_
+_publ_author_name
+'Shoemaker, C.B.'
+'Shoemaker, D.P.'
+_publ_section_title
+;
+ Refinement of an R phase, Mn85.5 Si14.5
+;
+_journal_name_full               'Acta Crystallographica B (24,1968-38,1982)'
+_journal_page_first              701
+_journal_page_last               705
+_journal_volume                  34
+_journal_year                    1978
+_chemical_formula_sum            'Mn44.1 Si8.9'
+_space_group_IT_number           148
+_symmetry_space_group_name_Hall  '-R 3'
+_symmetry_space_group_name_H-M   'R -3 :H'
+_cell_angle_alpha                90
+_cell_angle_beta                 90
+_cell_angle_gamma                120
+_cell_formula_units_Z            3
+_cell_length_a                   10.871
+_cell_length_b                   10.871
+_cell_length_c                   19.18
+_cell_volume                     1962.991
+_citation_journal_id_ASTM        ACBCAR
+_cod_data_source_file            Shoemaker_ACBCAR_1978_652.cif
+_cod_data_source_block           Mn44.1Si8.9
+_cod_database_code               2107202
+loop_
+_symmetry_equiv_pos_as_xyz
+x,y,z
+-y,x-y,z
+-x+y,-x,z
+-x,-y,-z
+y,-x+y,-z
+x-y,x,-z
+x+2/3,y+1/3,z+1/3
+-y+2/3,x-y+1/3,z+1/3
+-x+y+2/3,-x+1/3,z+1/3
+-x+2/3,-y+1/3,-z+1/3
+y+2/3,-x+y+1/3,-z+1/3
+x-y+2/3,x+1/3,-z+1/3
+x+1/3,y+2/3,z+2/3
+-y+1/3,x-y+2/3,z+2/3
+-x+y+1/3,-x+2/3,z+2/3
+-x+1/3,-y+2/3,-z+2/3
+y+1/3,-x+y+2/3,-z+2/3
+x-y+1/3,x+2/3,-z+2/3
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+_atom_site_U_iso_or_equiv
+Si6 Si 0.22082 0.19384 0.26438 0.29 0.0
+Mn3 Mn 0.82738 0.58083 0.33475 0.67 0.0
+Mn1 Mn 0 0 0.5 0.1 0.0
+Si1 Si 0 0 0.5 0.9 0.0
+Si3 Si 0.82738 0.58083 0.33475 0.33 0.0
+Mn11 Mn 0.93499 0.55747 0.45581 1 0.0
+Si4 Si 0.7192 0.61397 0.43464 0.28 0.0
+Si2 Si 0 0 0.30574 0.73 0.0
+Mn10 Mn 0.03583 0.25793 0.31676 1 0.0
+Mn7 Mn 0 0 0.07392 1 0.0
+Mn4 Mn 0.7192 0.61397 0.43464 0.72 0.0
+Si5 Si 0.01953 0.13943 0.1946 0.19 0.0
+Mn9 Mn 0.11075 0.26495 0.46582 1 0.0
+Mn6 Mn 0.22082 0.19384 0.26438 0.71 0.0
+Mn2 Mn 0 0 0.30574 0.27 0.0
+Mn5 Mn 0.01953 0.13943 0.1946 0.81 0.0
+Mn8 Mn 0.17434 0.12859 0.39824 1 0.0
