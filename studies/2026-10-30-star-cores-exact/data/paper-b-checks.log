@@ -1,0 +1,126 @@
+ok   direction sets 12, 20, 6, 8, 4, 4
+ok   Ih (icosahedron 5-fold / dodecahedron 3-fold): one nearest-axis cosine, both ways
+ok   Ih (icosahedron 5-fold / dodecahedron 3-fold): c^2 = 2*sqrt(5)/15 + 1/3 (0.631476), angle 37.3774 deg
+ok   Ih (icosahedron 5-fold / dodecahedron 3-fold): hull of the |U| = 12 unit tips has exactly |W| = 20 faces, each w.x = c
+ok   Oh (octahedron 4-fold / cube 3-fold): one nearest-axis cosine, both ways
+ok   Oh (octahedron 4-fold / cube 3-fold): c^2 = 1/3 (0.333333), angle 54.7356 deg
+ok   Oh (octahedron 4-fold / cube 3-fold): hull of the |U| = 6 unit tips has exactly |W| = 8 faces, each w.x = c
+ok   Td (tetrahedron / reflected tetrahedron): one nearest-axis cosine, both ways
+ok   Td (tetrahedron / reflected tetrahedron): c^2 = 1/9 (0.111111), angle 70.5288 deg
+ok   Td (tetrahedron / reflected tetrahedron): hull of the |U| = 4 unit tips has exactly |W| = 4 faces, each w.x = c
+ok   Ih: c^2 = phi^3/(3 sqrt 5)
+ok   Ih: c^2 = phi^4/(3(phi+2))
+ok   Ih (icosahedron 5-fold / dodecahedron 3-fold): b/a = 0.7152: U-faces 0, W-faces 20; window (0.7947, 1.2584) says one
+ok   Ih (icosahedron 5-fold / dodecahedron 3-fold): b/a = 0.8344: U-faces 12, W-faces 20; window (0.7947, 1.2584) says both
+ok      t = 1.0000: core = K(tcb, tca); two turns = 0.631476 x S
+ok      t = 1.6180: core = K(tcb, tca); two turns = 1.653225 x S
+ok      t = 2.0000: core = K(tcb, tca); two turns = 2.525903 x S
+ok   Ih (icosahedron 5-fold / dodecahedron 3-fold): b/a = 0.9000: U-faces 12, W-faces 20; window (0.7947, 1.2584) says both
+ok      t = 1.0000: core = K(tcb, tca); two turns = 0.631476 x S
+ok      t = 1.6180: core = K(tcb, tca); two turns = 1.653225 x S
+ok      t = 2.0000: core = K(tcb, tca); two turns = 2.525903 x S
+ok   Ih (icosahedron 5-fold / dodecahedron 3-fold): b/a = 1.0000: U-faces 12, W-faces 20; window (0.7947, 1.2584) says both
+ok      t = 1.0000: core = K(tcb, tca); two turns = 0.631476 x S
+ok      t = 1.6180: core = K(tcb, tca); two turns = 1.653225 x S
+ok      t = 2.0000: core = K(tcb, tca); two turns = 2.525903 x S
+ok   Ih (icosahedron 5-fold / dodecahedron 3-fold): b/a = 1.2000: U-faces 12, W-faces 20; window (0.7947, 1.2584) says both
+ok      t = 1.0000: core = K(tcb, tca); two turns = 0.631476 x S
+ok      t = 1.6180: core = K(tcb, tca); two turns = 1.653225 x S
+ok      t = 2.0000: core = K(tcb, tca); two turns = 2.525903 x S
+ok   Ih (icosahedron 5-fold / dodecahedron 3-fold): b/a = 1.3842: U-faces 12, W-faces 0; window (0.7947, 1.2584) says one
+ok   Oh (octahedron 4-fold / cube 3-fold): b/a = 0.5196: U-faces 0, W-faces 8; window (0.5774, 1.7321) says one
+ok   Oh (octahedron 4-fold / cube 3-fold): b/a = 0.6062: U-faces 6, W-faces 8; window (0.5774, 1.7321) says both
+ok      t = 1.0000: core = K(tcb, tca); two turns = 0.333333 x S
+ok      t = 1.6180: core = K(tcb, tca); two turns = 0.872678 x S
+ok      t = 2.0000: core = K(tcb, tca); two turns = 1.333333 x S
+ok   Oh (octahedron 4-fold / cube 3-fold): b/a = 0.9000: U-faces 6, W-faces 8; window (0.5774, 1.7321) says both
+ok      t = 1.0000: core = K(tcb, tca); two turns = 0.333333 x S
+ok      t = 1.6180: core = K(tcb, tca); two turns = 0.872678 x S
+ok      t = 2.0000: core = K(tcb, tca); two turns = 1.333333 x S
+ok   Oh (octahedron 4-fold / cube 3-fold): b/a = 1.0000: U-faces 6, W-faces 8; window (0.5774, 1.7321) says both
+ok      t = 1.0000: core = K(tcb, tca); two turns = 0.333333 x S
+ok      t = 1.6180: core = K(tcb, tca); two turns = 0.872678 x S
+ok      t = 2.0000: core = K(tcb, tca); two turns = 1.333333 x S
+ok   Oh (octahedron 4-fold / cube 3-fold): b/a = 1.2000: U-faces 6, W-faces 8; window (0.5774, 1.7321) says both
+ok      t = 1.0000: core = K(tcb, tca); two turns = 0.333333 x S
+ok      t = 1.6180: core = K(tcb, tca); two turns = 0.872678 x S
+ok      t = 2.0000: core = K(tcb, tca); two turns = 1.333333 x S
+ok   Oh (octahedron 4-fold / cube 3-fold): b/a = 1.9053: U-faces 6, W-faces 0; window (0.5774, 1.7321) says one
+ok   Td (tetrahedron / reflected tetrahedron): b/a = 0.3000: U-faces 0, W-faces 4; window (0.3333, 3.0000) says one
+ok   Td (tetrahedron / reflected tetrahedron): b/a = 0.3500: U-faces 4, W-faces 4; window (0.3333, 3.0000) says both
+ok      t = 1.0000: core = K(tcb, tca); two turns = 0.111111 x S
+ok      t = 1.6180: core = K(tcb, tca); two turns = 0.290893 x S
+ok      t = 2.0000: core = K(tcb, tca); two turns = 0.444444 x S
+ok   Td (tetrahedron / reflected tetrahedron): b/a = 0.9000: U-faces 4, W-faces 4; window (0.3333, 3.0000) says both
+ok      t = 1.0000: core = K(tcb, tca); two turns = 0.111111 x S
+ok      t = 1.6180: core = K(tcb, tca); two turns = 0.290893 x S
+ok      t = 2.0000: core = K(tcb, tca); two turns = 0.444444 x S
+ok   Td (tetrahedron / reflected tetrahedron): b/a = 1.0000: U-faces 4, W-faces 4; window (0.3333, 3.0000) says both
+ok      t = 1.0000: core = K(tcb, tca); two turns = 0.111111 x S
+ok      t = 1.6180: core = K(tcb, tca); two turns = 0.290893 x S
+ok      t = 2.0000: core = K(tcb, tca); two turns = 0.444444 x S
+ok   Td (tetrahedron / reflected tetrahedron): b/a = 1.2000: U-faces 4, W-faces 4; window (0.3333, 3.0000) says both
+ok      t = 1.0000: core = K(tcb, tca); two turns = 0.111111 x S
+ok      t = 1.6180: core = K(tcb, tca); two turns = 0.290893 x S
+ok      t = 2.0000: core = K(tcb, tca); two turns = 0.444444 x S
+ok   Td (tetrahedron / reflected tetrahedron): b/a = 3.3000: U-faces 4, W-faces 0; window (0.3333, 3.0000) says one
+      5 DICTO Truncated-Icosahedral Hecato sym Ih   enters 1 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+      6 DICTO Ogdoecontahedron (OG)        sym Ih   enters 1 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+      7 DICTO OCD Stella                   sym Th   enters 1 period 2 gain r^2 1/9                                      = c^4 of Oh
+      8 DICTO Metaxyhexecontahedron        sym Ih   enters 1 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+      9 DICTO Palintriacontahedron         sym Ih   enters 1 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     10 DICTO Belted Triacontahedron (DBT) sym D3d  enters 2 period 2 gain r^2 207/3362 + (-85/3362)*sqrt(5)            = c^4 of other
+     11 DICTO OTT (Octahedrally Truncated  sym Th   enters 1 period 2 gain r^2 1/9                                      = c^4 of Oh
+     12 DICTO GTI (golden truncated icosah sym Ih   enters 0 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     13 DICTO FPD (flat pentakis dodecahed sym Ih   enters 1 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     14 DICTO KRE (Kite-Rhombic Enneaconta sym Ih   enters 2 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     15 DICTO PHE (Pentagon-Hexagon Enneac sym Ih   enters 1 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     16 DICTO TPP (Triangle-Pentagon Polyh sym Ih   enters 2 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     17 DICTO DPHP (Decagon-Pentagon-Hexag sym Ih   enters 1 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     18 DICTO TPH                          sym Ih   enters 1 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     19 DICTO TQH                          sym Ih   enters 1 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     20 DICTO TQP                          sym Ih   enters 1 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     21 DICTO TQHD                         sym Ih   enters 1 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     22 Samson                             sym Td   enters 1 period 2 gain r^2 1/81                                     = c^4 of Td
+     24 Lahdeli                            sym D3d  enters 2 period 2 gain r^2 1/9                                      = c^4 of Oh
+     29 Triskelion Tetrahedron             sym Td   enters 1 period 2 gain r^2 1/81                                     = c^4 of Td
+     31 Lion                               sym Ih   enters 2 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     32 Jabberwock                         sym Ih   enters 1 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     33 Tweedledum                         sym Ih   enters 1 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     38 Alice                              sym Td   enters 1 period 2 gain r^2 1/81                                     = c^4 of Td
+     39 White Rabbit                       sym Td   enters 1 period 2 gain r^2 1/81                                     = c^4 of Td
+     44 Red Knight                         sym Ih   enters 1 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     45 White Knight                       sym Ih   enters 1 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     46 Star Halo                          sym Ih   enters 1 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     47 TI Star core                       sym Ih   enters 0 period 2 gain r^2 1/5 + (4/45)*sqrt(5)                     = c^4 of Ih
+     48 Icosaxes                           sym Oh   enters 0 period 2 gain r^2 1/9                                      = c^4 of Oh
+     49 Unborn Axes                        sym Oh   enters 0 period 2 gain r^2 1/9                                      = c^4 of Oh
+     50 David                              sym D2d  enters 0 period 2 gain r^2 1/100                                    = c^4 of other
+     51 Delilah                            sym Oh   enters 0 period 2 gain r^2 1/9                                      = c^4 of Oh
+     Ih: 21: Truncated-Icosahedral Hecato, Ogdoecontahedron (OG), Metaxyhexecontahedron, Palintriacontahedron, GTI (golden truncated icosah, FPD (flat pentakis dodecahed, KRE (Kite-Rhombic Enneaconta, PHE (Pentagon-Hexagon Enneac, TPP (Triangle-Pentagon Polyh, DPHP (Decagon-Pentagon-Hexag, TPH, TQH, TQP, TQHD, Lion, Jabberwock, Tweedledum, Red Knight, White Knight, Star Halo, TI Star core
+     Oh: 6: OCD Stella, OTT (Octahedrally Truncated , Lahdeli, Icosaxes, Unborn Axes, Delilah
+     other: 2: Belted Triacontahedron (DBT), David
+     Td: 4: Samson, Triskelion Tetrahedron, Alice, White Rabbit
+ok   study 2b: 33 rows reach period two (29 of the 48 convex shapes + 4 study-2 extras)
+ok   study 3: all 88 distinct swept solids have cores of period two with gain c^4 of their group
+     study 3 ('Ih', (3, 2)): cores enter at turn [1]
+     study 3 ('Ih', (5, 2)): cores enter at turn [1]
+     study 3 ('Ih', (5, 3)): cores enter at turn [0]
+     study 3 ('Oh', (3, 2)): cores enter at turn [1]
+     study 3 ('Oh', (4, 2)): cores enter at turn [1]
+     study 3 ('Oh', (4, 3)): cores enter at turn [0]
+     study 3 ('Oh', (4, 3, 2)): cores enter at turn [1]
+     D3d antiprism, side-face distance^2 = 9*h**2*r**2/(16*h**2 + r**2) ; equal to h^2 at r = [sqrt(2)*h]
+ok   D3d octahedron with equidistant faces: r = sqrt2 h only, the regular octahedron
+ok   DBT: squared-radius ratio per turn constant from turn 2: 17/82 - 5*sqrt(5)/82 = 0.070971
+ok   DBT: two-turn gain = (per-turn ratio)^2
+     Lahdeli turns: [(1, 6, {'3': 8}, 2, 1), (2, 6, {'3': 8}, 2, 1), (3, 8, {'4': 6}, 1, 1), (4, 6, {'3': 8}, 1, 1)]
+ok   Td Samson: squared radius x 1/9 at every turn from turn 1 (one shape, turned)
+ok   Td Triskelion Tetrahedron: squared radius x 1/9 at every turn from turn 1 (one shape, turned)
+ok   Td Alice: squared radius x 1/9 at every turn from turn 1 (one shape, turned)
+ok   Td White Rabbit: squared radius x 1/9 at every turn from turn 1 (one shape, turned)
+ok   #78: q(TI) q(core) = 1
+ok   TI core ratio b/a = 0.974154 lies in the window
+     two-turn scale t^2 c^2 at t = 1/2 + sqrt(5)/2 : 11*sqrt(5)/30 + 5/6 1.6532249250832562
+     two-turn scale t^2 c^2 at t = 2 : 8*sqrt(5)/15 + 4/3 2.525902921333221
+FAILED: none
