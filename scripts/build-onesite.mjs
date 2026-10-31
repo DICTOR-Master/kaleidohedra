@@ -90,10 +90,13 @@ async function main() {
   // 5. Vercel routing (Build Output API v3) and headers
   const vj = JSON.parse(await readFile(path.join(root, 'vercel.json'), 'utf8'));
   const appHeaders = Object.fromEntries(vj.headers[0].headers.map((h) => [h.key, h.value]));
-  const homeHeaders = {};   // dictospheres.com sends no headers of its own today (its tetrapod heap talks to Supabase): keep it so
+  // dictospheres.com has its own policy (vercel.json rules 2 and 3, DICTO 2026-10-31): the app's would block the tetrapod heap's
+  // three.js, fonts, Supabase and weather.
+  const homeHeaders = Object.fromEntries(vj.headers[1].headers.map((h) => [h.key, h.value]));
   const host = (h) => [{ type: 'host', value: h }];
   const routes = [];
   for (const h of Object.keys(DOORS)) routes.push({ src: '/(.*)', has: host(h), headers: appHeaders, continue: true });
+  for (const h of HOME) routes.push({ src: '/(.*)', has: host(h), headers: homeHeaders, continue: true });
   for (const [h, dir] of Object.entries(DOORS)) {
     routes.push({ src: '^/$', has: host(h), dest: `/${dir}/index.html` });
     for (const [p, d] of Object.entries(PRETTY)) routes.push({ src: `^${p}$`, has: host(h), dest: `/${dir}${d}` });
