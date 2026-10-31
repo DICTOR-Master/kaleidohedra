@@ -321,8 +321,15 @@ def davinci(name, cellf, groups, cols, lines, filled, axis, caption, path, cut=(
     print(name, "davinci", len(segs_l), "line edges", kept, flush=True)
 
 
-colsW = [rgb(GOLD)] + [COL[k] for k in range(1, 15)]
-colsR = [rgb(GOLD)] + [COLR[k] for k in range(1, 9)]
+# DICTO 2026-10-31: "the colours should speak": the White Queen as diamond (clear white to cool steel-blue outwards), the Red Queen
+# as ruby (bright pink-red to deep garnet outwards); the core stays gold. QG_PAL=book gives the book's viridis shells.
+def ramp(c0, c1, n): a, b = rgb(c0), rgb(c1); return [a + (b - a) * t for t in np.linspace(0, 1, n)]
+if os.environ.get("QG_PAL", "gems") == "gems":
+    colsW = [rgb(GOLD)] + ramp("#fbfdff", "#8fa6bd", 14)
+    colsR = [rgb(GOLD)] + ramp("#ff3d6e", "#5c0717", 8)
+else:
+    colsW = [rgb(GOLD)] + [COL[k] for k in range(1, 15)]
+    colsR = [rgb(GOLD)] + [COLR[k] for k in range(1, 9)]
 GW = SH
 GR = L
 CFG = json.loads(os.environ.get("QG_CFG", "{}"))
