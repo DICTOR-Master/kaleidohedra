@@ -1,0 +1,71 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-11-01",
+ "access_right": "open",
+ "title": "HexOct: Knitting Crystals: the edge-on slice of every close-packed stacking as a knitted pattern",
+ "description": "<p>DICTO proposed that a knitted fabric can be an exact edge-on slice through a stacking of balls. We prove that one plane does this for every close-packed stacking. The plane perpendicular to a row of touching balls (a {11-20} plane) meets every layer in one ball centre per repeat, at a third of the repeat apart for the three layer positions A, B, C, and cuts the pieces between the balls into just two shapes: each tetrahedron into an isosceles triangle and each octahedron into a rhombus. The mid-planes between the layers cut these into the halves of DICTO's Rule of Halves, and in every layer the tetrahedral and octahedral halves take exactly equal areas, so the share of blue (hexagonal) colour in the slice is the hexagonality itself. Knitting places each layer by bias rows: the row moves a third of a repeat across every gap, the same way again after a cubic layer and back after a hexagonal one, so cubic stretches knit as a straight slant and hexagonal ones as a chevron. A generator turns any stacking into a four-colour chart with row-by-row instructions; five swatches (4H, 3C, 2H, 6H and the Fibonacci stacking) are given in full.</p><p>DICTO's idea: a knitted fabric that is an exact slice through a crystal. Computation and proofs with Claude (Anthropic). More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p><p>Kaleidohedra, HexOct: <a href=\"https://kaleidohedra.dictospheres.com/?open=hexoct:fib\">View in the app</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "HexOct",
+  "knitting",
+  "close-packed stacking",
+  "hexagonality",
+  "Rule of Halves",
+  "Fibonacci stacking",
+  "polytypes",
+  "tetrahedra and octahedra",
+  "textile mathematics",
+  "knitting charts",
+  "crystallography"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23647898",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23721038",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23737639",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23731359",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/b5f15f5c8ee30601f02c1cd8e0bc881703b3dd9c/studies/2026-10-31-hexoct-knitting",
+   "relation": "isSupplementedBy",
+   "scheme": "url"
+  }
+ ],
+ "subjects": [
+  {
+   "term": "MSC2020 52C22: Tilings in n dimensions",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C22",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 00A66: Mathematics and visual arts",
+   "identifier": "https://zbmath.org/classification/?q=cc:00A66",
+   "scheme": "url"
+  }
+ ]
+}

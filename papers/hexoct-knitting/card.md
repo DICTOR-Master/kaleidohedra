@@ -1,4 +1,4 @@
-# dictospheres.com card (draft, not on the site)
+# dictospheres.com card (not on the site yet)
 
 **HexOct: Knitting Crystals**
 
@@ -11,4 +11,4 @@ for hexagonal ones. Bias rows place each layer, so cubic stacking knits as a str
 Five swatch patterns (4H, 3C, 2H, 6H and the never-repeating Fibonacci stacking), with full row-by-row instructions.
 Swatches not yet knitted: photos to come.
 
-Link: (DICTO DOI at publication)
+Link: DICTO DOI 10.5281/zenodo.23848271 (#83)

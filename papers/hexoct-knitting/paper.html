@@ -5,7 +5,7 @@
 .top{display:grid;grid-template-columns:62% 36%;gap:2%;align-items:start} .top img{width:100%;display:block}
 .two{display:grid;grid-template-columns:44% 54%;gap:2%;align-items:end}
 table.rows{border-collapse:collapse;font:7.6pt/1.22 "DejaVu Sans",sans-serif;width:100%;margin:2mm 0}
-table.rows td,table.rows th{border-bottom:1px solid #ddd;padding:0.45mm 1.1mm} table.rows td.n{text-align:right}
+table.rows td,table.rows th{border-bottom:1px solid #ddd;padding:0.45mm 1.1mm} table.rows td.n{text-align:right} table.rows{break-inside:auto} table.rows tr{break-inside:avoid} table.rows thead{display:table-header-group}
 span.sw{display:inline-block;width:9pt;height:9pt;border:1px solid #333;vertical-align:-1pt}
 p.small{font-size:8.8pt} .app{break-before:page} h3{font:600 11pt "DejaVu Sans",sans-serif;color:#6b5310;margin:10pt 0 4pt}
 ul{margin:2pt 0 2pt 14pt;padding:0} li{margin:1pt 0} code{font-size:8.6pt}</style>
@@ -16,10 +16,10 @@ ul{margin:2pt 0 2pt 14pt;padding:0} li{margin:1pt 0} code{font-size:8.6pt}</styl
 <h1>HexOct: Knitting Crystals</h1>
 <p class="sub">The edge-on slice of every close-packed stacking as a knitted pattern</p>
 <div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
-Paper · Version 1 · 31 October 2026 (draft) · DICTO DOI: (at publication) · Licence CC BY-SA 4.0<br>
-The idea is DICTO's. The method and the generator are ours, made with DICTO; computation and proofs with Claude (Anthropic).</div>
+Paper #83 · Version 1 · 1 November 2026 · DICTO DOI: 10.5281/zenodo.23848271 · Licence CC BY-SA 4.0<br>
+DICTO proposed the idea. The method and the generator are ours, made with DICTO; computation and proofs with Claude (Anthropic).</div>
 
-<div class="abstract"><b>Abstract.</b> DICTO's idea is that a knitted fabric can be an exact edge-on slice through a stacking
+<div class="abstract"><b>Abstract.</b> DICTO proposed that a knitted fabric can be an exact edge-on slice through a stacking
 of balls. We prove that one plane does this for every close-packed stacking. The plane perpendicular to a row of touching
 balls (a {11-20} plane) meets every layer in one ball centre per repeat, at a third of the repeat apart for the three
 layer positions A, B, C, and cuts the pieces between the balls into just two shapes: each tetrahedron into an isosceles
@@ -51,7 +51,7 @@ half of an h layer blue; a piece whose two layers differ in kind (a Janus piece)
 <p><b>The Hexagonality Law.</b> DICTO's law, in the form he approved, is a law of structural crystallography: in every
 close-packed crystal structure, however its layers are stacked, every count of the structure (its pieces, holes, bonds
 and swaps) is a straight line in the structure's hexagonality (#69 and the book <i>HexOct: The Hexagonality Law</i>).</p>
-<p><b>The idea (DICTO, 31 October 2026).</b> Read the HexOct structure as a knitted fabric. The fabric is an exact edge-on
+<p><b>DICTO's proposal (31 October 2026).</b> Read the HexOct structure as a knitted fabric. The fabric is an exact edge-on
 slice through the stacking: stitch = ball, rows = layer; A, B and C appear as sideways offsets of 0, 1/3 and 2/3 of the
 repeat; the knitting places every layer by bias shifting (a decrease at one end of a row and an increase at the other move
 the row one stitch sideways); a c layer shifts the same way as the step before it and an h layer shifts back, so cubic
@@ -259,6 +259,7 @@ sources show.</p>
 shapes, triangles and rhombi, whose halves carry the colours of their layers in exactly equal dark and light shares; the
 c and h letters of the stacking become the knitter's "keep going" and "turn back". Status: theorems proved and checked
 exactly; generator done; five swatches charted, none knitted yet.</p>
+<p><b>In the app.</b> Kaleidohedra, HexOct (<a href="https://kaleidohedra.dictospheres.com/?open=hexoct:fib">kaleidohedra.dictospheres.com/?open=hexoct:fib</a>), opens the Fibonacci stacking, whose edge-on slice is swatch E.</p>
 
 <h2>References</h2>
 <p class="small">[#57] DICTO, The Rule of Halves: the Holes of Every Close-Packed Stacking, 2026, DICTO DOI: 10.5281/zenodo.23647898.
