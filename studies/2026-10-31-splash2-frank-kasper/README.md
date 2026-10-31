@@ -4,7 +4,7 @@
 the known local ones. Second outside run, after the perovskites (study 2026-10-31-splash2-perovskite, the Window Law).
 
 **Conclusion:** one number covers the known rules, but the rule is old. Every topological count per atom is a line in the
-disclination density ρ = six-fold bonds per atom (identity Z̄ = 12 + 2ρ). DICTO's candidate "hexagonality of tetrahedral packing",
+disclination density ρ = six-fold bonds per atom (identity Z̄ = 12 + 2ρ). The study plan's candidate (ours, not DICTO's) "hexagonality of tetrahedral packing",
 the non-icosahedral share m = 1 − x12, also works on every real phase: Z̄ = 66/5 + (2/5)m exactly (Yarmolyuk–Kripyakevich 1974,
 Z̄ = 13.6 − 0.4·x12; gives Frank–Kasper's range 13⅓–13½). Not a theorem: three hypothetical structures (Dutour Sikirić, Delgado
 Friedrichs, Deza 2010) leave the line, only through the YK defect a0: Z̄ = 68/5 − (2/5)x12 − (6/5)a0 — the Window-Law shape with a0
