@@ -1,0 +1,82 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "version": "1",
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "publication_date": "2026-11-01",
+ "access_right": "open",
+ "title": "The Window Law: the Hexagonality Law beyond one layer, one elementary theorem for every count of a two-letter stacking, tested on perovskites, Frank–Kasper phases and quasicrystal approximants",
+ "description": "<p>DICTO's Hexagonality Law says that in every close-packed crystal structure, however its layers are stacked, every count of its pieces, holes, bonds and swaps is a straight line in its hexagonality h, the share of hexagonal layers. We prove the law that contains it and marks its exact reach: every count read from one layer, and every pair count that obeys the Swap Rule. For a layer sequence over two letters, c and h, any quantity fixed by g consecutive layers has a mean that is a linear function of the shares of the c/h words of length g, which have exactly 2<sup>g−1</sup> free values; the mean drops to a window of g − 1 layers exactly when certain Swap defects vanish. At g = 1 this is the Hexagonality Law. At g = 2 exactly one new number enters, the share p<sub>hh</sub> of neighbouring hexagonal pairs, and its coefficient is Δ = F(cc) + F(hh) − F(ch) − F(hc), the Swap defect: DICTO's Swap Rule is exactly the condition for a pair count to stay a straight line in h. The proof is elementary, and the frame is classical in substance. We test it on three kinds of crystal, with exact counts throughout. In the hexagonal perovskites (all 505 polytypes up to twelve layers and 50 random stackings) 16 of 36 counts are lines in h, 9 are planes in (h, p<sub>hh</sub>) with coefficient Δ, and 11 need longer windows; new exact counts include face-sharing clusters per B = 1 − h, A neighbours per B = 8 − 2h, the same holes in every gap, and the B–B distance shells. In the Frank–Kasper phases (18 real phases and 181 layered stackings) the classical identities and the 1974 Yarmolyuk–Kripyakevich line hold, and three hypothetical structures leave that line through a single defect, the same shape; the layered families carry Swap defects in the pattern +1, −2, +1 and cannot see the c/h letter of their Laves slabs. In the periodic approximants of quasicrystals one number, the share of one tile, orders everything: on the chamber that holds the quasicrystal the defect is zero and the quasicrystal lies on every line; beyond its walls the defect appears, in one dimension as a kink of twice the Swap defect, in the Ammann–Beenker tiling as a forbidden vertex star growing as a square. Approximants carry zero defect window after window, up to a length that grows with their period; zero defect at window 2 alone does not single them out. This is the bridge to DICTO's aim.</p><p>The ideas are DICTO's: Splash Rules, the Hexagonality Law, the Swap Rule, the Rule of Halves, the aim of a bridge between periodic and aperiodic order, and the definition of the law by crystallography. Computation and proof with Claude (Anthropic). More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "keywords": [
+  "DICTO",
+  "Window Law",
+  "Hexagonality Law",
+  "Swap Rule",
+  "Rule of Halves",
+  "close-packed stacking",
+  "polytypes",
+  "hexagonal perovskites",
+  "Frank–Kasper phases",
+  "quasicrystal approximants",
+  "Ammann–Beenker tiling",
+  "factor frequencies",
+  "crystallography"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23647898",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23682596",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23709753",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23717687",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23721038",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23728287",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23731359",
+   "relation": "references",
+   "scheme": "doi"
+  }
+ ],
+ "subjects": [
+  {
+   "term": "MSC2020 52C23: Quasicrystals and aperiodic tilings in discrete geometry",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C23",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 82D25: Statistical mechanics of crystals",
+   "identifier": "https://zbmath.org/classification/?q=cc:82D25",
+   "scheme": "url"
+  }
+ ]
+}
