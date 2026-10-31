@@ -92,7 +92,7 @@ export function createHexoctWorld({ scene, fitView = () => {} }) {
     shown = { types, pieces: pieces.length, tiles: pieces.length / 4, c: [...types].filter((x) => x === 'c').length, h: [...types].filter((x) => x === 'h').length };
     renderPanel();
   }
-  const fit = () => fitView([0, 0, 0], radius, [1, 0.32, 1.25]);
+  const fit = () => fitView([0, 0, 0], radius * 0.75, [1, 0.32, 1.25]);
 
   // ---- panel ----
   const panel = document.createElement('div');
