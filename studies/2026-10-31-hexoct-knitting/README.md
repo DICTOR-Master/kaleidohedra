@@ -131,3 +131,16 @@ Rule-of-Halves pieces) was not found. Sources were judged from search summaries 
 ~/k-research/papers/hexoct-knitting/ (paper.src.html + assemble.py → paper.html; fig/; card-hexoct-knitting.png +
 card.md for dictospheres.com, not on the site). DRAFT PDF: ~/Documents/papers-to-read/DRAFT-hexoct-knitting.pdf
 (17 pages: 6 of paper, 11 of swatch appendix). Not published; awaiting DICTO's read.
+
+## Rhombic dodecahedron cushion (DICTO's idea, 31 Oct)
+
+`scripts/rd.py` (exact checks, charts, net, 3D view, 2H Voronoi check) → `rd/`; `scripts/rd_sheet.py` → `rd/paper.html`;
+PDF `rd/knit-rd-cushion.pdf` (copy in ~/Documents/papers-to-read). Verified exactly: (a) the slice plane is a {110}
+plane; (b) all 12 RD faces lie in {110} lattice planes, their edges run along the two <111> directions of the plane, the
+long diagonal along a row of touching balls; for edge = n × 3 layers (m = 4n) the corners are ball centres and fall on grid
+points (0,0), (16n,7n), (16n,28n), (0,21n) of the 12-stitch/7-row gauge; face colouring symmetric under both diagonals;
+(c) on all 24 seams the two faces show the same 3D piece (0 mismatches, n = 1, 2, 3). Correction: the RD face has the
+octahedron section's shape but turned a quarter turn and 2√2 times larger at n = 1. The bias is not used for the RD
+(edges at 0° and 70.53° to the columns; bias edges at 51° at this gauge). Sizes (22 sts × 27 rows / 10 cm): faces
+17 × 29, 33 × 57, 49 × 85 sts × rows; edge 7.7 / 15.4 / 23.1 cm. 2H: trapezo-rhombic dodecahedron, 6 vertical
+trapezoids in slice planes (2H pattern), 6 rhombi oblique.
