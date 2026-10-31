@@ -1,0 +1,4027 @@
+{
+ "title": "Quanta of Space in Japanese: glossary",
+ "date": "2026-10-31",
+ "book": "Quanta of Space: A Manifesto (Book v1.4, DICTO DOI 10.5281/zenodo.23754454)",
+ "entries": 536,
+ "groups": [
+  {
+   "key": "titles",
+   "title": "Book, chapter and section titles",
+   "entries": [
+    {
+     "en": "Quanta of Space: A Manifesto",
+     "ja": "『空間の量子 ― マニフェスト』",
+     "reading": "くうかんのりょうし",
+     "note": "the book title; the English title also on the title page (plan, decision 2)",
+     "section": "Book and front matter"
+    },
+    {
+     "en": "The geometric works of DICTO",
+     "ja": "DICTO の幾何学作品",
+     "reading": "きかがくさくひん",
+     "note": "subtitle line of the title page",
+     "section": "Book and front matter"
+    },
+    {
+     "en": "DICTO",
+     "ja": "DICTO",
+     "reading": "",
+     "note": "always in Latin capitals (the emblem key D·I·C·T·O); never transliterated in the text; reading ディクト if one is ever needed",
+     "section": "Book and front matter"
+    },
+    {
+     "en": "DICTO is the artist name of (Alan) J. Baker",
+     "ja": "DICTO は（アラン・）J・ベイカーの作家名である。",
+     "reading": "さっかめい",
+     "note": "credit line found only in this book (About the author); Baker = ベイカー (alt. ベーカー)",
+     "section": "Book and front matter"
+    },
+    {
+     "en": "For my father, Alan Baker",
+     "ja": "父、アラン・ベイカーに捧ぐ",
+     "reading": "ちち、…にささぐ",
+     "note": "dedication; only in this book",
+     "section": "Book and front matter"
+    },
+    {
+     "en": "artist, Osaka, Japan",
+     "ja": "美術作家（大阪）",
+     "reading": "びじゅつさっか（おおさか）",
+     "note": "meta line; \"Japan\" dropped as self-evident in a Japanese edition (or 日本・大阪)",
+     "section": "Book and front matter"
+    },
+    {
+     "en": "All works, findings and names are DICTO's. Computation, checking and drafting with Claude (Anthropic).",
+     "ja": "作品・発見・名称はすべて DICTO による。計算・検証・草稿は Claude（Anthropic）と共に行った。",
+     "reading": "",
+     "note": "credit line of the title page",
+     "section": "Book and front matter"
+    },
+    {
+     "en": "The papers, apps and data of this work are free to use … under the licence CC BY-SA 4.0",
+     "ja": "本作品の論文・アプリ・データは自由に利用できる。すべてオープンアクセスで、CC BY-SA 4.0 ライセンスのもと、読む・共有する・発展させることができる。",
+     "reading": "",
+     "note": "front-matter line",
+     "section": "Book and front matter"
+    },
+    {
+     "en": "William Blake, Auguries of Innocence",
+     "ja": "ウィリアム・ブレイク「無垢の予兆」",
+     "reading": "むくのよちょう",
+     "note": "epigraph source; the usual Japanese title",
+     "section": "Book and front matter"
+    },
+    {
+     "en": "To see a World in a Grain of Sand … And Eternity in an hour.",
+     "ja": "一粒の砂に世界を見、一輪の野の花に天国を見る。てのひらに無限を、ひとときのうちに永遠を握る。",
+     "reading": "",
+     "note": "epigraph; our own rendering; a published translation may be quoted instead, with credit",
+     "section": "Book and front matter"
+    },
+    {
+     "en": "Contents",
+     "ja": "目次",
+     "reading": "もくじ",
+     "note": "",
+     "section": "Book and front matter"
+    },
+    {
+     "en": "What this work holds",
+     "ja": "この作品が示すこと",
+     "reading": "",
+     "note": "opening statement",
+     "section": "Book and front matter"
+    },
+    {
+     "en": "Introduction: Quanta of Space",
+     "ja": "序論 ― 空間の量子",
+     "reading": "じょろん",
+     "note": "",
+     "section": "Book and front matter"
+    },
+    {
+     "en": "Appendix: the data, work by work",
+     "ja": "付録 ― 作品ごとのデータ",
+     "reading": "ふろく",
+     "note": "",
+     "section": "Book and front matter"
+    },
+    {
+     "en": "About the author",
+     "ja": "著者について",
+     "reading": "ちょしゃ",
+     "note": "",
+     "section": "Book and front matter"
+    },
+    {
+     "en": "Order and chapters as in DICTO: Collected Geometric Works",
+     "ja": "順序と章立ては『DICTO 幾何学作品集』に従う",
+     "reading": "",
+     "note": "contents note",
+     "section": "Book and front matter"
+    },
+    {
+     "en": "Atoms and the empty space between them",
+     "ja": "原子と、そのあいだの空虚",
+     "reading": "げんし／くうきょ",
+     "note": "",
+     "section": "Introduction sections"
+    },
+    {
+     "en": "Plato's kit of pieces",
+     "ja": "プラトンのピースの一式",
+     "reading": "いっしき",
+     "note": "",
+     "section": "Introduction sections"
+    },
+    {
+     "en": "Aristotle's pyramids",
+     "ja": "アリストテレスの角錐",
+     "reading": "かくすい",
+     "note": "",
+     "section": "Introduction sections"
+    },
+    {
+     "en": "Kepler's packings",
+     "ja": "ケプラーの充填",
+     "reading": "じゅうてん",
+     "note": "",
+     "section": "Introduction sections"
+    },
+    {
+     "en": "The quanta of modern science",
+     "ja": "現代科学の量子",
+     "reading": "げんだいかがくのりょうし",
+     "note": "",
+     "section": "Introduction sections"
+    },
+    {
+     "en": "The centre: the quanta of every close packing",
+     "ja": "中心 ― あらゆる最密充填の量子",
+     "reading": "さいみつじゅうてん",
+     "note": "",
+     "section": "Introduction sections"
+    },
+    {
+     "en": "Six chapters",
+     "ja": "六つの章",
+     "reading": "むっつのしょう",
+     "note": "",
+     "section": "Introduction sections"
+    },
+    {
+     "en": "Between the repeating and the never-repeating",
+     "ja": "繰り返すものと、決して繰り返さないもののあいだ",
+     "reading": "くりかえす",
+     "note": "",
+     "section": "Introduction sections"
+    },
+    {
+     "en": "What the pieces show",
+     "ja": "ピースが示すこと",
+     "reading": "しめす",
+     "note": "",
+     "section": "Introduction sections"
+    },
+    {
+     "en": "Chapter 1 · Atoms",
+     "ja": "第1章 原子",
+     "reading": "だいいっしょう げんし",
+     "note": "DICTO's sense: single exact solids, after the Greek atomos (alt. アトム); see the confirm list",
+     "section": "Chapters"
+    },
+    {
+     "en": "Chapter 2 · Bonds",
+     "ja": "第2章 結合",
+     "reading": "けつごう",
+     "note": "how pieces fill space together",
+     "section": "Chapters"
+    },
+    {
+     "en": "Chapter 3 · Shells",
+     "ja": "第3章 殻",
+     "reading": "かく",
+     "note": "nested layers round a core (alt. シェル)",
+     "section": "Chapters"
+    },
+    {
+     "en": "Chapter 4 · Cycles",
+     "ja": "第4章 サイクル",
+     "reading": "",
+     "note": "rules that turn one shell into the next and return (alt. 循環)",
+     "section": "Chapters"
+    },
+    {
+     "en": "Chapter 5 · Stacking",
+     "ja": "第5章 積層",
+     "reading": "せきそう",
+     "note": "standard crystallographic term",
+     "section": "Chapters"
+    },
+    {
+     "en": "Chapter 6 · Four dimensions",
+     "ja": "第6章 四次元",
+     "reading": "よじげん",
+     "note": "",
+     "section": "Chapters"
+    },
+    {
+     "en": "Findings and apps",
+     "ja": "発見とアプリ",
+     "reading": "はっけん",
+     "note": "",
+     "section": "Chapters"
+    },
+    {
+     "en": "All the atoms",
+     "ja": "すべての原子",
+     "reading": "",
+     "note": "the catalogue",
+     "section": "Chapters"
+    },
+    {
+     "en": "DICTO's new atoms",
+     "ja": "DICTO の新しい原子",
+     "reading": "",
+     "note": "",
+     "section": "Chapters"
+    },
+    {
+     "en": "DICTO's new clusters, structures and networks",
+     "ja": "DICTO の新しいクラスター・構造・ネットワーク",
+     "reading": "こうぞう",
+     "note": "",
+     "section": "Chapters"
+    },
+    {
+     "en": "Not drawn here",
+     "ja": "ここに図のないもの",
+     "reading": "ず",
+     "note": "",
+     "section": "Chapters"
+    },
+    {
+     "en": "Known and rediscovered shapes in the work",
+     "ja": "本作品の既知の形と再発見された形",
+     "reading": "きち／さいはっけん",
+     "note": "",
+     "section": "Chapters"
+    },
+    {
+     "en": "Closing section: The DICTONIC SOLIDS and BONDS",
+     "ja": "結びの節 ― ディクトニック立体とディクトニック結合",
+     "reading": "むすびのせつ",
+     "note": "",
+     "section": "Chapters"
+    },
+    {
+     "en": "If you held it / If you held them / If you held one",
+     "ja": "手に取れば",
+     "reading": "てにとれば",
+     "note": "the opening of every entry",
+     "section": "Recurring headings of each entry"
+    },
+    {
+     "en": "Where it started",
+     "ja": "始まり",
+     "reading": "はじまり",
+     "note": "",
+     "section": "Recurring headings of each entry"
+    },
+    {
+     "en": "How it was found",
+     "ja": "見つかった経緯",
+     "reading": "けいい",
+     "note": "",
+     "section": "Recurring headings of each entry"
+    },
+    {
+     "en": "How it is made",
+     "ja": "作り方",
+     "reading": "つくりかた",
+     "note": "",
+     "section": "Recurring headings of each entry"
+    },
+    {
+     "en": "The problem they solve",
+     "ja": "解く問題",
+     "reading": "とくもんだい",
+     "note": "",
+     "section": "Recurring headings of each entry"
+    },
+    {
+     "en": "What we found",
+     "ja": "わかったこと",
+     "reading": "",
+     "note": "",
+     "section": "Recurring headings of each entry"
+    },
+    {
+     "en": "What it adds",
+     "ja": "新たに加えるもの",
+     "reading": "あらたにくわえる",
+     "note": "",
+     "section": "Recurring headings of each entry"
+    },
+    {
+     "en": "Full chapter: …",
+     "ja": "全章は『…』第 n 章",
+     "reading": "ぜんしょう",
+     "note": "pointer line of the short entries",
+     "section": "Recurring headings of each entry"
+    },
+    {
+     "en": "From paper #n, Version v, date. Licence CC BY-SA 4.0.",
+     "ja": "論文 #n（第 v 版、日付）より。ライセンス CC BY-SA 4.0。",
+     "reading": "ろんぶん／だい v はん",
+     "note": "end line of every entry",
+     "section": "Recurring headings of each entry"
+    },
+    {
+     "en": "HexOct: The Hexagonality Law",
+     "ja": "『HexOct ― 六方性の法則』",
+     "reading": "ろっぽうせいのほうそく",
+     "note": "",
+     "section": "The other books"
+    },
+    {
+     "en": "HexOct: The Laws of Stacking",
+     "ja": "『HexOct ― 積層の法則』",
+     "reading": "せきそうのほうそく",
+     "note": "the subtitle used in the Stacking chapter head",
+     "section": "The other books"
+    },
+    {
+     "en": "The Golden Cycle",
+     "ja": "『黄金サイクル』",
+     "reading": "おうごんサイクル",
+     "note": "",
+     "section": "The other books"
+    },
+    {
+     "en": "Alicia in Wonderland: The Red & White Queens",
+     "ja": "『不思議の国のアリシア ― 赤の女王と白の女王』",
+     "reading": "ふしぎのくにの／あかのじょおう／しろのじょおう",
+     "note": "不思議の国のアリス is the standard Japanese title of Carroll's book",
+     "section": "The other books"
+    },
+    {
+     "en": "DICTO: Collected Geometric Works",
+     "ja": "『DICTO 幾何学作品集』",
+     "reading": "きかがくさくひんしゅう",
+     "note": "",
+     "section": "The other books"
+    },
+    {
+     "en": "DICTO Solids: Exact Geometry (data set)",
+     "ja": "DICTO の立体 ― 厳密な幾何（データセット）",
+     "reading": "げんみつなきか",
+     "note": "",
+     "section": "The other books"
+    },
+    {
+     "en": "Kaleidohedra by DICTO",
+     "ja": "Kaleidohedra（カレイドヘドラ）",
+     "reading": "",
+     "note": "app names (Kaleidohedra, Polyhedraverse, Rhombiverse) stay in Latin; world names inside the apps stay in English as on screen",
+     "section": "The other books"
+    },
+    {
+     "en": "#18 The DICTO Hexa",
+     "ja": "DICTO ヘクサ",
+     "reading": "",
+     "note": "",
+     "section": "The works, Chapter 1 Atoms"
+    },
+    {
+     "en": "#19 AXE, CLEO and FUJI",
+     "ja": "AXE、CLEO、FUJI",
+     "reading": "",
+     "note": "二十面体の三つの隙間ピース (subtitle: The three gap pieces of the icosahedron)",
+     "section": "The works, Chapter 1 Atoms"
+    },
+    {
+     "en": "#20 The FUJI Family",
+     "ja": "FUJI ファミリー",
+     "reading": "",
+     "note": "",
+     "section": "The works, Chapter 1 Atoms"
+    },
+    {
+     "en": "#28 The DICTO Truncated-Icosahedral Hecatodihedron",
+     "ja": "DICTO 切頂二十面体型ヘカトディヘドロン",
+     "reading": "せっちょうにじゅうめんたいがた",
+     "note": "",
+     "section": "The works, Chapter 1 Atoms"
+    },
+    {
+     "en": "#31 The DICTO Ogdoecontahedron",
+     "ja": "DICTO オグドエコンタヘドロン",
+     "reading": "",
+     "note": "",
+     "section": "The works, Chapter 1 Atoms"
+    },
+    {
+     "en": "#31a The DICTO OCD Stella",
+     "ja": "DICTO OCD ステラ",
+     "reading": "",
+     "note": "",
+     "section": "The works, Chapter 1 Atoms"
+    },
+    {
+     "en": "#34a The DICTO Hecatogdoecontahedron",
+     "ja": "DICTO ヘカトグドエコンタヘドロン",
+     "reading": "",
+     "note": "",
+     "section": "The works, Chapter 1 Atoms"
+    },
+    {
+     "en": "#35a The DICTO Metaxyhexecontahedron",
+     "ja": "DICTO メタクシヘキセコンタヘドロン",
+     "reading": "",
+     "note": "",
+     "section": "The works, Chapter 1 Atoms"
+    },
+    {
+     "en": "#35b The DICTO Palintriacontahedron",
+     "ja": "DICTO パリントリアコンタヘドロン",
+     "reading": "",
+     "note": "",
+     "section": "The works, Chapter 1 Atoms"
+    },
+    {
+     "en": "#41 The DICTO Jewel",
+     "ja": "DICTO ジュエル",
+     "reading": "",
+     "note": "",
+     "section": "The works, Chapter 1 Atoms"
+    },
+    {
+     "en": "#45 The Reuleaux Platonic Solids",
+     "ja": "ルーローの正多面体",
+     "reading": "せいためんたい",
+     "note": "",
+     "section": "The works, Chapter 1 Atoms"
+    },
+    {
+     "en": "#49 The Polyhedral Stretching Theorem",
+     "ja": "多面体伸長定理",
+     "reading": "ためんたいしんちょうていり",
+     "note": "",
+     "section": "The works, Chapter 1 Atoms"
+    },
+    {
+     "en": "#8 The Euclid–Kepler–Pacioli Cell",
+     "ja": "ユークリッド＝ケプラー＝パチョーリ・セル（EKP セル）",
+     "reading": "",
+     "note": "Cell = セル (not 胞, kept for four-dimensional cells)",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#13 The DICTO Dodeca-13",
+     "ja": "DICTO ドデカ13",
+     "reading": "",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#14 The DICTO-Star",
+     "ja": "DICTO スター",
+     "reading": "",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#17 Kagome Hulls",
+     "ja": "カゴメ凸包",
+     "reading": "とつほう",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#25 DICTO Spheroid-13 RD",
+     "ja": "DICTO スフェロイド13 RD",
+     "reading": "",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#26 DICTO ATOM-13×13",
+     "ja": "DICTO ATOM-13×13",
+     "reading": "",
+     "note": "ATOM in capitals, as written",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#30 A Fibonacci Spine",
+     "ja": "フィボナッチの背骨",
+     "reading": "せぼね",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#36 Golden Bodhi Pyrochlore",
+     "ja": "黄金菩提パイロクロア",
+     "reading": "おうごんぼだい",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#37 The DICTO Ogdoecontahedron on the Octet Truss",
+     "ja": "オクテット・トラス上の DICTO オグドエコンタヘドロン",
+     "reading": "じょう",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#37a The DICTO Ogdoecontahedron on the Gyrated Octet",
+     "ja": "回転オクテット上の DICTO オグドエコンタヘドロン",
+     "reading": "かいてん",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#40 The DICTO OG Family on Every Stacking",
+     "ja": "あらゆる積層上の DICTO OG ファミリー",
+     "reading": "",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#42 The DICTO Sunstar",
+     "ja": "DICTO サンスター",
+     "reading": "",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#44 Aristotle's Pyramid",
+     "ja": "アリストテレスの角錐",
+     "reading": "かくすい",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#47 Every Mix of the Platonic Solids Fills Space",
+     "ja": "正多面体のどの組み合わせも空間を充填する",
+     "reading": "じゅうてん",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#48 The Golden Split: Icosahedra, Unborns and AXE Become Two Convex Space-Fillers",
+     "ja": "黄金の切り分け ― 二十面体、アンボーン、AXE が二つの凸な空間充填体になる",
+     "reading": "きりわけ／くうかんじゅうてんたい",
+     "note": "not 黄金分割, which is the golden section",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#51 The Delian Bond: Samson, Delilah and the Octet Between Kepler's Rhombic Dodecahedron and the Cube",
+     "ja": "デロスの結合 ― ケプラーの菱形十二面体と立方体のあいだのサムソン、デリラとオクテット",
+     "reading": "デロス",
+     "note": "Delian as in デロスの問題 (doubling the cube)",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#50 One Move Each: Classical Cut-and-Glue Space-Fillers Built Exactly",
+     "ja": "一手ずつ ― 古典的な切り貼りの空間充填体を厳密に組む",
+     "reading": "いってずつ／きりばり",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#52 The Web of Bonds: How the DICTONIC Bonds Hand Over",
+     "ja": "結合の網 ― ディクトニック結合はどう受け渡されるか",
+     "reading": "あみ／うけわたす",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#53 The Global Web of Bonds",
+     "ja": "結合の大域的な網",
+     "reading": "たいいきてき",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#55 David and Goliath",
+     "ja": "ダビデとゴリアテ",
+     "reading": "",
+     "note": "Japanese Bible forms",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#56 Sonsam and Lahdeli",
+     "ja": "ソンサムとラデリ",
+     "reading": "",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#77 Face to Face: A New Law of Aristotle's Pyramids",
+     "ja": "面と面 ― アリストテレスの角錐の新しい法則",
+     "reading": "めんとめん",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#59 The Icosaxes Hexa: Bloom, Bud and Seed",
+     "ja": "イコサックス・ヘクサ ― 花、蕾、種",
+     "reading": "はな、つぼみ、たね",
+     "note": "",
+     "section": "Chapter 2 Bonds"
+    },
+    {
+     "en": "#22 The Chain of Karma",
+     "ja": "業の連鎖",
+     "reading": "ごうのれんさ",
+     "note": "Karma = 業 (ja Wikipedia 業); alt. カルマの連鎖",
+     "section": "Chapter 3 Shells"
+    },
+    {
+     "en": "#23 Spheres of Dharma",
+     "ja": "法の球",
+     "reading": "ほうのきゅう",
+     "note": "Dharma = 法; alt. ダルマの球 (ダルマ also suggests the Daruma doll)",
+     "section": "Chapter 3 Shells"
+    },
+    {
+     "en": "#24 The Bodhi Seed",
+     "ja": "菩提の種",
+     "reading": "ぼだいのたね",
+     "note": "菩提子 (ぼだいし) are the seeds used for rosary beads",
+     "section": "Chapter 3 Shells"
+    },
+    {
+     "en": "#27 Capturing the In-betweens",
+     "ja": "あいだを捉える",
+     "reading": "とらえる",
+     "note": "",
+     "section": "Chapter 3 Shells"
+    },
+    {
+     "en": "#29 Theaetetus",
+     "ja": "テアイテトス",
+     "reading": "",
+     "note": "ja Wikipedia テアイテトス (数学者)",
+     "section": "Chapter 3 Shells"
+    },
+    {
+     "en": "#34 Progenitors",
+     "ja": "始祖",
+     "reading": "しそ",
+     "note": "",
+     "section": "Chapter 3 Shells"
+    },
+    {
+     "en": "#35 Vajrayana",
+     "ja": "金剛乗",
+     "reading": "こんごうじょう",
+     "note": "ja Wikipedia 金剛乗",
+     "section": "Chapter 3 Shells"
+    },
+    {
+     "en": "#32 Inverted Shells: The Spheres of Dharma Turned Inside Out",
+     "ja": "裏返しの殻 ― 裏返された法の球",
+     "reading": "うらがえし",
+     "note": "",
+     "section": "Chapter 4 Cycles"
+    },
+    {
+     "en": "#33 Double Vision – Both Cycles in One Space",
+     "ja": "ダブル・ヴィジョン ― 一つの空間に二つのサイクル",
+     "reading": "",
+     "note": "",
+     "section": "Chapter 4 Cycles"
+    },
+    {
+     "en": "#38 Universal PiTet: The DICTO PiTet Proposition",
+     "ja": "ユニバーサル・パイテト ― DICTO パイテト命題",
+     "reading": "めいだい",
+     "note": "",
+     "section": "Chapter 4 Cycles"
+    },
+    {
+     "en": "#38a The DICTO Kepler–Poinsot–UP Cycle",
+     "ja": "DICTO ケプラー・ポアンソ・UP サイクル",
+     "reading": "",
+     "note": "",
+     "section": "Chapter 4 Cycles"
+    },
+    {
+     "en": "#39 The DICTO OG Family: Four Steps Up and Four Down",
+     "ja": "DICTO OG ファミリー ― 上へ四段、下へ四段",
+     "reading": "よんだん",
+     "note": "",
+     "section": "Chapter 4 Cycles"
+    },
+    {
+     "en": "#43 DICTO Kyushindo Cores",
+     "ja": "DICTO 求心道コア",
+     "reading": "きゅうしんどう",
+     "note": "",
+     "section": "Chapter 4 Cycles"
+    },
+    {
+     "en": "#54 One Turn Is a Gnomon",
+     "ja": "一巡りはグノモン",
+     "reading": "ひとめぐり",
+     "note": "",
+     "section": "Chapter 4 Cycles"
+    },
+    {
+     "en": "#78 The Truncated Icosahedron Star (TI Star)",
+     "ja": "切頂二十面体の星（TI スター）",
+     "reading": "せっちょうにじゅうめんたいのほし",
+     "note": "",
+     "section": "Chapter 4 Cycles"
+    },
+    {
+     "en": "#57 The Rule of Halves",
+     "ja": "半分の規則",
+     "reading": "はんぶんのきそく",
+     "note": "",
+     "section": "Chapter 5 Stacking"
+    },
+    {
+     "en": "#58 From the Octet to Every Stacking: the Web of Bonds",
+     "ja": "オクテットからあらゆる積層へ ― 結合の網",
+     "reading": "",
+     "note": "",
+     "section": "Chapter 5 Stacking"
+    },
+    {
+     "en": "#60 DICTO Janus c/h Pyrochlore",
+     "ja": "DICTO ヤヌス c/h パイロクロア",
+     "reading": "",
+     "note": "",
+     "section": "Chapter 5 Stacking"
+    },
+    {
+     "en": "#61 The Swap Rule",
+     "ja": "入れ替えの規則",
+     "reading": "いれかえのきそく",
+     "note": "",
+     "section": "Chapter 5 Stacking"
+    },
+    {
+     "en": "#64 The Swap Rule in Crystals",
+     "ja": "結晶における入れ替えの規則",
+     "reading": "けっしょう",
+     "note": "",
+     "section": "Chapter 5 Stacking"
+    },
+    {
+     "en": "#66 The Focus",
+     "ja": "焦点",
+     "reading": "しょうてん",
+     "note": "",
+     "section": "Chapter 5 Stacking"
+    },
+    {
+     "en": "#67 Random Stackings and Stacking Faults",
+     "ja": "ランダム積層と積層欠陥",
+     "reading": "せきそうけっかん",
+     "note": "",
+     "section": "Chapter 5 Stacking"
+    },
+    {
+     "en": "#69 The Fibonacci Stacking",
+     "ja": "フィボナッチ積層",
+     "reading": "",
+     "note": "",
+     "section": "Chapter 5 Stacking"
+    },
+    {
+     "en": "#68 Real Polytypes and the Hexagonality Law",
+     "ja": "実在のポリタイプと六方性の法則",
+     "reading": "じつざい",
+     "note": "",
+     "section": "Chapter 5 Stacking"
+    },
+    {
+     "en": "#70 Real Materials II: Entropy and Pressure",
+     "ja": "実在の物質 II ― エントロピーと圧力",
+     "reading": "ぶっしつ／あつりょく",
+     "note": "",
+     "section": "Chapter 5 Stacking"
+    },
+    {
+     "en": "#71 Real Materials III: Alloys and Hydrogen",
+     "ja": "実在の物質 III ― 合金と水素",
+     "reading": "ごうきん／すいそ",
+     "note": "",
+     "section": "Chapter 5 Stacking"
+    },
+    {
+     "en": "#72 Real Materials IV: Oxides",
+     "ja": "実在の物質 IV ― 酸化物",
+     "reading": "さんかぶつ",
+     "note": "",
+     "section": "Chapter 5 Stacking"
+    },
+    {
+     "en": "#73 Real Materials V: Ice, Diamond and Nanowires",
+     "ja": "実在の物質 V ― 氷、ダイヤモンド、ナノワイヤ",
+     "reading": "こおり",
+     "note": "",
+     "section": "Chapter 5 Stacking"
+    },
+    {
+     "en": "#74 Spin Ice and Kagome Magnets on Every Stacking",
+     "ja": "あらゆる積層上のスピンアイスとカゴメ磁性体",
+     "reading": "じせいたい",
+     "note": "",
+     "section": "Chapter 5 Stacking"
+    },
+    {
+     "en": "#75 Two Tiles for Every Stacking: HexOct",
+     "ja": "あらゆる積層のための二つのタイル ― HexOct",
+     "reading": "",
+     "note": "",
+     "section": "Chapter 5 Stacking"
+    },
+    {
+     "en": "#62 Shadows of the Fourth Dimension",
+     "ja": "四次元の影",
+     "reading": "よじげんのかげ",
+     "note": "",
+     "section": "Chapter 6 Four dimensions"
+    },
+    {
+     "en": "#63 The White Queen 600-cell",
+     "ja": "白の女王 ― 600胞体",
+     "reading": "しろのじょおう／ろっぴゃくほうたい",
+     "note": "",
+     "section": "Chapter 6 Four dimensions"
+    },
+    {
+     "en": "#76 Between the Queens",
+     "ja": "女王たちのあいだ",
+     "reading": "じょおう",
+     "note": "",
+     "section": "Chapter 6 Four dimensions"
+    },
+    {
+     "en": "#65 The Red Queen 120-cell",
+     "ja": "赤の女王 ― 120胞体",
+     "reading": "あかのじょおう／ひゃくにじゅうほうたい",
+     "note": "",
+     "section": "Chapter 6 Four dimensions"
+    }
+   ]
+  },
+  {
+   "key": "laws",
+   "title": "DICTO's laws, rules and concepts",
+   "entries": [
+    {
+     "en": "Quanta of Space",
+     "ja": "空間の量子",
+     "reading": "くうかんのりょうし",
+     "note": "the book's idea; DICTO's framing of the whole work",
+     "section": "The frame of the book"
+    },
+    {
+     "en": "quantum, quanta (of space)",
+     "ja": "量子",
+     "reading": "りょうし",
+     "note": "the physics word, used as the book uses it (smallest exact pieces of space)",
+     "section": "The frame of the book"
+    },
+    {
+     "en": "piece, pieces",
+     "ja": "ピース",
+     "reading": "",
+     "note": "the book's central word: an exact solid piece that fills space with others (alt. 断片, 部品)",
+     "section": "The frame of the book"
+    },
+    {
+     "en": "kit (of pieces)",
+     "ja": "一式（キット）",
+     "reading": "いっしき",
+     "note": "\"a small kit is enough\" → 小さな一式で足りる",
+     "section": "The frame of the book"
+    },
+    {
+     "en": "atom (DICTO's sense)",
+     "ja": "原子",
+     "reading": "げんし",
+     "note": "a single exact new solid; one quantum of space each",
+     "section": "The frame of the book"
+    },
+    {
+     "en": "bond",
+     "ja": "結合",
+     "reading": "けつごう",
+     "note": "pieces that fill space together",
+     "section": "The frame of the book"
+    },
+    {
+     "en": "shell",
+     "ja": "殻",
+     "reading": "かく",
+     "note": "",
+     "section": "The frame of the book"
+    },
+    {
+     "en": "cycle",
+     "ja": "サイクル",
+     "reading": "",
+     "note": "",
+     "section": "The frame of the book"
+    },
+    {
+     "en": "core",
+     "ja": "コア",
+     "reading": "",
+     "note": "DICTO's cores (Kyushindo Cores, TI Star core); コア, not 核, so that it does not sound like 殻 (かく)",
+     "section": "The frame of the book"
+    },
+    {
+     "en": "hull (convex hull of a cluster)",
+     "ja": "凸包",
+     "reading": "とつほう",
+     "note": "",
+     "section": "The frame of the book"
+    },
+    {
+     "en": "core and hull (of a compound)",
+     "ja": "コアと凸包",
+     "reading": "",
+     "note": "",
+     "section": "The frame of the book"
+    },
+    {
+     "en": "D-number (D1 … D105)",
+     "ja": "D番号",
+     "reading": "ディーばんごう",
+     "note": "numbers unchanged, never reused",
+     "section": "The frame of the book"
+    },
+    {
+     "en": "finding F1 … F21",
+     "ja": "発見 F1 … F21",
+     "reading": "はっけん",
+     "note": "Kaleidohedra findings; numbers unchanged",
+     "section": "The frame of the book"
+    },
+    {
+     "en": "paper #n",
+     "ja": "論文 #n",
+     "reading": "ろんぶん",
+     "note": "numbers as on dictospheres.com",
+     "section": "The frame of the book"
+    },
+    {
+     "en": "DICTO DOI",
+     "ja": "DICTO DOI",
+     "reading": "",
+     "note": "label kept in Latin",
+     "section": "The frame of the book"
+    },
+    {
+     "en": "DICTO's idea / DICTO proposed",
+     "ja": "DICTO の発案 / DICTO が提案した",
+     "reading": "はつあん／ていあん",
+     "note": "never rendered as a question or a request",
+     "section": "The frame of the book"
+    },
+    {
+     "en": "Hexagonality Law",
+     "ja": "六方性の法則",
+     "reading": "ろっぽうせいのほうそく",
+     "note": "main theorem of #66: every count and volume of the pieces is a straight line in h",
+     "section": "Stacking: the laws"
+    },
+    {
+     "en": "hexagonality, h (share of hexagonal layers)",
+     "ja": "六方性 h（六方的な層の割合）",
+     "reading": "ろっぽうせい",
+     "note": "no fixed Japanese term found for the crystallographers' \"hexagonality\" (sources checked below); 六方性 chosen, glossed at first use; alt. 六方晶性, ヘキサゴナリティ",
+     "section": "Stacking: the laws"
+    },
+    {
+     "en": "Rule of Halves",
+     "ja": "半分の規則",
+     "reading": "はんぶんのきそく",
+     "note": "Rule = 規則, Law = 法則, as in the English",
+     "section": "Stacking: the laws"
+    },
+    {
+     "en": "Swap Rule",
+     "ja": "入れ替えの規則",
+     "reading": "いれかえのきそく",
+     "note": "not 交換則 (that is commutativity)",
+     "section": "Stacking: the laws"
+    },
+    {
+     "en": "The Law gave the pieces; the pieces prove the law.",
+     "ja": "法則がピースを与え、ピースが法則を証明する。",
+     "reading": "",
+     "note": "DICTO's line (#75)",
+     "section": "Stacking: the laws"
+    },
+    {
+     "en": "Janus c/h pieces",
+     "ja": "ヤヌス c/h ピース",
+     "reading": "",
+     "note": "two-faced pieces, half cubic, half hexagonal; ヤヌス (ja Wikipedia ヤーヌス; ヤヌス is the common form)",
+     "section": "Stacking: the laws"
+    },
+    {
+     "en": "c-tile, h-tile",
+     "ja": "c タイル、h タイル",
+     "reading": "",
+     "note": "",
+     "section": "Stacking: the laws"
+    },
+    {
+     "en": "HexOct (also Hex-Oct)",
+     "ja": "HexOct",
+     "reading": "ヘクスオクト",
+     "note": "DICTO's name for the two tiles; kept in Latin",
+     "section": "Stacking: the laws"
+    },
+    {
+     "en": "HexOct-K (keyed HexOct tiles)",
+     "ja": "HexOct-K",
+     "reading": "",
+     "note": "keyed = キー付き",
+     "section": "Stacking: the laws"
+    },
+    {
+     "en": "pure stacking (cubic, hexagonal)",
+     "ja": "純粋な積層（立方、六方）",
+     "reading": "じゅんすい",
+     "note": "",
+     "section": "Stacking: the laws"
+    },
+    {
+     "en": "the quanta of every close packing",
+     "ja": "あらゆる最密充填の量子",
+     "reading": "",
+     "note": "",
+     "section": "Stacking: the laws"
+    },
+    {
+     "en": "finite catalogue of pieces",
+     "ja": "ピースの有限な目録",
+     "reading": "ゆうげんなもくろく",
+     "note": "",
+     "section": "Stacking: the laws"
+    },
+    {
+     "en": "borrowed whole or in half",
+     "ja": "丸ごとか半分ずつ借りる",
+     "reading": "まるごと",
+     "note": "",
+     "section": "Stacking: the laws"
+    },
+    {
+     "en": "threshold between the two orders",
+     "ja": "二つの秩序の境",
+     "reading": "ちつじょのさかい",
+     "note": "",
+     "section": "Stacking: the laws"
+    },
+    {
+     "en": "DICTONIC SOLIDS",
+     "ja": "ディクトニック立体（DICTONIC SOLIDS）",
+     "reading": "りったい",
+     "note": "the six: Icosaxes, Unborn Axes, Lotus Jewel Axes, Dodecaxes, Samson, Delilah; Latin capitals at first use",
+     "section": "Bonds"
+    },
+    {
+     "en": "DICTONIC BONDS / a DICTONIC BOND",
+     "ja": "ディクトニック結合",
+     "reading": "けつごう",
+     "note": "a pair of solids that fill space together",
+     "section": "Bonds"
+    },
+    {
+     "en": "golden bond",
+     "ja": "黄金の結合",
+     "reading": "おうごんのけつごう",
+     "note": "Icosaxes and Unborn Axes",
+     "section": "Bonds"
+    },
+    {
+     "en": "keyed bond",
+     "ja": "キー付きの結合",
+     "reading": "",
+     "note": "Lotus Jewel Axes and Dodecaxes",
+     "section": "Bonds"
+    },
+    {
+     "en": "Delian bond",
+     "ja": "デロスの結合",
+     "reading": "",
+     "note": "Samson and Delilah; デロス as in デロスの問題",
+     "section": "Bonds"
+    },
+    {
+     "en": "the DICTONIC world",
+     "ja": "ディクトニックの世界",
+     "reading": "せかい",
+     "note": "",
+     "section": "Bonds"
+    },
+    {
+     "en": "web of bonds",
+     "ja": "結合の網",
+     "reading": "けつごうのあみ",
+     "note": "",
+     "section": "Bonds"
+    },
+    {
+     "en": "hand over (bonds hand over)",
+     "ja": "受け渡す",
+     "reading": "うけわたす",
+     "note": "soft / hard hand-over → 穏やかな受け渡し / 急な受け渡し",
+     "section": "Bonds"
+    },
+    {
+     "en": "golden split",
+     "ja": "黄金の切り分け",
+     "reading": "きりわけ",
+     "note": "not 黄金分割 (golden section)",
+     "section": "Bonds"
+    },
+    {
+     "en": "golden envelope",
+     "ja": "黄金の包み",
+     "reading": "つつみ",
+     "note": "",
+     "section": "Bonds"
+    },
+    {
+     "en": "golden-key octet",
+     "ja": "黄金キー・オクテット",
+     "reading": "おうごん",
+     "note": "",
+     "section": "Bonds"
+    },
+    {
+     "en": "golden kit",
+     "ja": "黄金の一式",
+     "reading": "いっしき",
+     "note": "",
+     "section": "Bonds"
+    },
+    {
+     "en": "shadow forms",
+     "ja": "影の形",
+     "reading": "かげのかたち",
+     "note": "DICTO's term: other ways of breaking up the same space",
+     "section": "Bonds"
+    },
+    {
+     "en": "unit pieces without odd protrusions",
+     "ja": "余計な突起のない単位ピース",
+     "reading": "とっき",
+     "note": "DICTO's aim (#48), a quotation",
+     "section": "Bonds"
+    },
+    {
+     "en": "golden cycle",
+     "ja": "黄金サイクル",
+     "reading": "おうごん",
+     "note": "",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "golden step (factor φ)",
+     "ja": "黄金の一段",
+     "reading": "いちだん",
+     "note": "\"a golden step larger\" → 黄金の一段だけ大きい",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "golden ratio φ",
+     "ja": "黄金比 φ",
+     "reading": "おうごんひ",
+     "note": "standard",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "star core",
+     "ja": "スター・コア",
+     "reading": "",
+     "note": "the core of every turn of the TI Star cycles",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "Star Halo",
+     "ja": "スター・ハロー",
+     "reading": "",
+     "note": "DICTO's name (D104); alt. 星の光輪",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "TI Star",
+     "ja": "TI スター",
+     "reading": "",
+     "note": "DICTO's name for the truncated icosahedron with its face pyramids turned out; TI = 切頂二十面体 (never any ball-game name)",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "Star Chain Reaction",
+     "ja": "スター連鎖反応",
+     "reading": "れんさはんのう",
+     "note": "",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "gnomon",
+     "ja": "グノモン",
+     "reading": "",
+     "note": "ja Wikipedia グノモン; グノーモン also seen",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "beat (one step of the Universal PiTet rule)",
+     "ja": "拍",
+     "reading": "はく",
+     "note": "\"Fibonacci beats\" → フィボナッチの拍",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "PiTet",
+     "ja": "パイテト",
+     "reading": "",
+     "note": "DICTO's name; Universal PiTet → ユニバーサル・パイテト",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "opposite structures throughout",
+     "ja": "全体を通して対をなす構造",
+     "reading": "ついをなす",
+     "note": "DICTO's phrase, PiTet's principle",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "the upward shapes",
+     "ja": "上向きの形",
+     "reading": "うわむき",
+     "note": "DICTO's phrase (#39)",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "frog chorus",
+     "ja": "かえるの合唱",
+     "reading": "かえるのがっしょう",
+     "note": "DICTO's term (#30); the round every Japanese reader knows; voice → 声部 (せいぶ)",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "Ritsudō (律動, rhythm)",
+     "ja": "律動",
+     "reading": "りつどう",
+     "note": "already Japanese in the English text (#23)",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "Nenrin (年輪, tree rings)",
+     "ja": "年輪",
+     "reading": "ねんりん",
+     "note": "already Japanese in the English text (#23)",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "Kyushindo (Kenshiro Abbe's philosophy)",
+     "ja": "求心道",
+     "reading": "きゅうしんどう",
+     "note": "form used by ja Wikipedia 阿部謙四郎; Otani reads kyū as \"sphere\" (球心道); see the confirm list",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "banbutsu ruten, ritsudō, chōwa",
+     "ja": "万物流転、律動、調和",
+     "reading": "ばんぶつるてん、りつどう、ちょうわ",
+     "note": "Kyushindo's three principles (#22, #43)",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "Kyushindo series",
+     "ja": "求心道シリーズ",
+     "reading": "",
+     "note": "",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "yin and yang",
+     "ja": "陰陽",
+     "reading": "いんよう",
+     "note": "DICTO's comparison (#22)",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "flat-ended triangle",
+     "ja": "角切り三角形",
+     "reading": "かどきりさんかっけい",
+     "note": "DICTO's term: a triangle with its corners cut flat",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "DICTO stretched solids (equal-edged, telescoped)",
+     "ja": "DICTO 伸長立体（等辺形、伸縮形）",
+     "reading": "しんちょうりったい（とうへんけい、しんしゅくけい）",
+     "note": "#49",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "names by look (Reuleaux bodies)",
+     "ja": "見た目による名",
+     "reading": "みため",
+     "note": "",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "Double Vision",
+     "ja": "ダブル・ヴィジョン",
+     "reading": "",
+     "note": "DICTO's view of both cycles in one space",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "dictospheres / DICTOspheres",
+     "ja": "DICTOspheres",
+     "reading": "",
+     "note": "DICTO's sculpture system; kept in Latin (also B1NR, DeltaZip)",
+     "section": "Shells and cycles"
+    },
+    {
+     "en": "solid / piece / cluster / structure / network / compound / curved",
+     "ja": "立体 / ピース / クラスター / 構造 / ネットワーク / 複合体 / 曲面体",
+     "reading": "りったい／こうぞう／ふくごうたい／きょくめんたい",
+     "note": "the \"kind\" column",
+     "section": "Kinds and status words of the catalogue"
+    },
+    {
+     "en": "not found (in the sources checked)",
+     "ja": "調べた資料には見つからない",
+     "reading": "しりょう",
+     "note": "",
+     "section": "Kinds and status words of the catalogue"
+    },
+    {
+     "en": "new member of a known family",
+     "ja": "既知の族の新しい一員",
+     "reading": "きちのぞく",
+     "note": "",
+     "section": "Kinds and status words of the catalogue"
+    },
+    {
+     "en": "known shape / rediscovered",
+     "ja": "既知の形 / 再発見",
+     "reading": "さいはっけん",
+     "note": "",
+     "section": "Kinds and status words of the catalogue"
+    },
+    {
+     "en": "derived from a known solid",
+     "ja": "既知の立体から導かれる",
+     "reading": "みちびかれる",
+     "note": "",
+     "section": "Kinds and status words of the catalogue"
+    },
+    {
+     "en": "placeholder name",
+     "ja": "仮の名",
+     "reading": "かりのな",
+     "note": "",
+     "section": "Kinds and status words of the catalogue"
+    }
+   ]
+  },
+  {
+   "key": "names",
+   "title": "DICTO's named shapes and pieces, A–Z",
+   "entries": [
+    {
+     "d": "D16",
+     "en": "Admiral Cap (icosahedron edge roof)",
+     "ja": "提督帽（二十面体の辺の屋根）",
+     "reading": "",
+     "note": "ていとくぼう; common-noun name translated; six on an icosahedron make an octahedron",
+     "section": ""
+    },
+    {
+     "d": "D25",
+     "en": "Aetos",
+     "ja": "アエトス",
+     "reading": "",
+     "note": "Greek \"eagle\", the pediment (#29)",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Aktis (Hex Aktis, Deltoid Aktis)",
+     "ja": "アクティス",
+     "reading": "",
+     "note": "Greek \"ray\"; the OG's 80 face pyramids",
+     "section": ""
+    },
+    {
+     "d": "D94",
+     "en": "Alice",
+     "ja": "アリス",
+     "reading": "",
+     "note": "600-cell slice W49",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Alicia",
+     "ja": "アリシア",
+     "reading": "",
+     "note": "known shape (Boole Stott 1900, W48), named after her by DICTO",
+     "section": ""
+    },
+    {
+     "d": "D65",
+     "en": "Antonius",
+     "ja": "アントニウス",
+     "reading": "",
+     "note": "partner of the Cleo-Icos (after Cleopatra's Antony)",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Atom 13",
+     "ja": "アトム13",
+     "reading": "",
+     "note": "twelve OCD Stellas round one (#31a)",
+     "section": ""
+    },
+    {
+     "d": "D24",
+     "en": "Atraktos",
+     "ja": "アトラクトス",
+     "reading": "",
+     "note": "Greek \"spindle\"",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "AXE",
+     "ja": "AXE（アックス）",
+     "reading": "",
+     "note": "Mosseri–Sadoc tile t6; Latin capitals kept",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Bandersnatch",
+     "ja": "バンダースナッチ",
+     "reading": "",
+     "note": "known shape (Boole Stott, W60)",
+     "section": ""
+    },
+    {
+     "d": "D37",
+     "en": "DICTO Belted Triacontahedron (DBT)",
+     "ja": "DICTO 帯つき三十面体（DBT）",
+     "reading": "",
+     "note": "おびつきさんじゅうめんたい; a descriptive name from classical words, translated",
+     "section": ""
+    },
+    {
+     "d": "D79",
+     "en": "Blockhead",
+     "ja": "ブロックヘッド",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Bodhi seed",
+     "ja": "菩提の種",
+     "reading": "",
+     "note": "ぼだいのたね; the structure of #24",
+     "section": ""
+    },
+    {
+     "d": "D33",
+     "en": "Bull-horns OG adaptor",
+     "ja": "ブルホーン OG アダプター",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Chatra (Bodhi piece)",
+     "ja": "傘蓋",
+     "reading": "",
+     "note": "さんがい; the parasol of a stupa",
+     "section": ""
+    },
+    {
+     "d": "D80",
+     "en": "Chucky",
+     "ja": "チャッキー",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "CLEO",
+     "ja": "CLEO（クレオ）",
+     "reading": "",
+     "note": "Mosseri–Sadoc tile t4; after Cleopatra's Needle",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Cleo star / CLEO sphere",
+     "ja": "クレオ・スター / クレオ球",
+     "reading": "",
+     "note": "クレオきゅう",
+     "section": ""
+    },
+    {
+     "d": "D74",
+     "en": "Cleo Towers (8 tower pieces)",
+     "ja": "クレオ・タワー",
+     "reading": "",
+     "note": "#43",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Cleo-Icos",
+     "ja": "クレオ・イコス",
+     "reading": "",
+     "note": "the icosahedron's central face pyramid; also the Oktaktis",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Cleo-low",
+     "ja": "クレオ・ロー",
+     "reading": "",
+     "note": "a Bodhi piece (#27)",
+     "section": ""
+    },
+    {
+     "d": "D17",
+     "en": "Crown Jewel",
+     "ja": "冠の宝珠",
+     "reading": "",
+     "note": "かんむりのほうじゅ; Kit B of the Bodhi seed",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "David",
+     "ja": "ダビデ",
+     "reading": "",
+     "note": "known shape, DICTO's name (#55)",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Delilah",
+     "ja": "デリラ",
+     "reading": "",
+     "note": "known shape (regular octahedron at the Delian bond), DICTO's name",
+     "section": ""
+    },
+    {
+     "d": "D55",
+     "en": "DICTO Deltoid Aktis",
+     "ja": "DICTO デルトイド・アクティス",
+     "reading": "",
+     "note": "60 in the OG",
+     "section": ""
+    },
+    {
+     "d": "D72",
+     "en": "Dented tetrahedron L/R (golden-key octet)",
+     "ja": "くぼみ付き四面体 L/R",
+     "reading": "",
+     "note": "くぼみつきしめんたい",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "DESHI",
+     "ja": "DESHI",
+     "reading": "",
+     "note": "R. W. Gray's arrangement, DICTO's name; Latin capitals kept (whether 弟子 is meant: confirm list)",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Diadem (L/R)",
+     "ja": "宝冠（L/R）",
+     "reading": "",
+     "note": "ほうかん; Kit B of the Bodhi seed",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "DICTO-ICOSA star",
+     "ja": "DICTO イコサ・スター",
+     "reading": "",
+     "note": "#29",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "DICTO-Star",
+     "ja": "DICTO スター",
+     "reading": "",
+     "note": "#14",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "DICTO Dodeca-13 (cluster)",
+     "ja": "DICTO ドデカ13",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D7",
+     "en": "DICTO Dodeca-13 Needle",
+     "ja": "DICTO ドデカ13 針",
+     "reading": "",
+     "note": "はり",
+     "section": ""
+    },
+    {
+     "d": "D9",
+     "en": "DICTO Dodeca-13 Star",
+     "ja": "DICTO ドデカ13 星",
+     "reading": "",
+     "note": "ほし",
+     "section": ""
+    },
+    {
+     "d": "D8",
+     "en": "DICTO Dodeca-13 Unit (finned unit)",
+     "ja": "DICTO ドデカ13 ユニット（ひれ付き）",
+     "reading": "",
+     "note": "ひれつき",
+     "section": ""
+    },
+    {
+     "d": "D6",
+     "en": "DICTO Dodeca-13 Wedge",
+     "ja": "DICTO ドデカ13 楔",
+     "reading": "",
+     "note": "くさび",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Dodecahedral Chain",
+     "ja": "十二面体の連鎖",
+     "reading": "",
+     "note": "じゅうにめんたいのれんさ",
+     "section": ""
+    },
+    {
+     "d": "D70",
+     "en": "Dodecaxes",
+     "ja": "ドデカックス",
+     "reading": "",
+     "note": "-axes as in AXE (アックス)",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Dogstar",
+     "ja": "ドッグスター",
+     "reading": "",
+     "note": "Hart's stellation no. 8, DICTO's name; alt. 天狼星 (the Dog Star, Sirius)",
+     "section": ""
+    },
+    {
+     "d": "D48",
+     "en": "DICTO DPHP",
+     "ja": "DICTO DPHP",
+     "reading": "",
+     "note": "abbreviation unchanged; likewise KRE, PHE, TPP, TPH, TQH, TQP, TQHD",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Dragon Jewel",
+     "ja": "ドラゴン・ジュエル",
+     "reading": "",
+     "note": "first name of the DICTO Jewel (D4), mentioned once",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Euclid–Kepler–Pacioli Cell (EKP) / network",
+     "ja": "ユークリッド＝ケプラー＝パチョーリ・セル（EKP）/ ネットワーク",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D102",
+     "en": "Fallen Humpty",
+     "ja": "落ちたハンプティ",
+     "reading": "",
+     "note": "おちた",
+     "section": ""
+    },
+    {
+     "d": "D81",
+     "en": "Fang",
+     "ja": "ファング",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D73",
+     "en": "DICTO Fill set 1 / 2 (grown bipyramid, grown tetrahedra L/R)",
+     "ja": "DICTO 充填セット 1 / 2（成長した双角錐、成長した四面体 L/R）",
+     "reading": "",
+     "note": "じゅうてん／せいちょう／そうかくすい",
+     "section": ""
+    },
+    {
+     "d": "D42",
+     "en": "Five-sided Vajra",
+     "ja": "五面の金剛杵",
+     "reading": "",
+     "note": "ごめんのこんごうしょ",
+     "section": ""
+    },
+    {
+     "d": "D41",
+     "en": "DICTO FPD (flat pentakis dodecahedron)",
+     "ja": "DICTO FPD（平たい五方十二面体）",
+     "reading": "",
+     "note": "ひらたいごほうじゅうにめんたい",
+     "section": ""
+    },
+    {
+     "d": "D12",
+     "en": "FUJI",
+     "ja": "FUJI（フジ）",
+     "reading": "",
+     "note": "Latin capitals kept; フジ carries both 富士 (Mount Fuji, the shape) and 藤 (wisteria, the colour)",
+     "section": ""
+    },
+    {
+     "d": "D84",
+     "en": "Ganesha",
+     "ja": "ガネーシャ",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D32",
+     "en": "GBPC (Golden Bodhi Pyrochlore Corner)",
+     "ja": "GBPC（黄金菩提パイロクロアの角）",
+     "reading": "",
+     "note": "かど",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Golden Bodhi Pyrochlore",
+     "ja": "黄金菩提パイロクロア",
+     "reading": "",
+     "note": "おうごんぼだい",
+     "section": ""
+    },
+    {
+     "d": "D103",
+     "en": "Golden TI Star",
+     "ja": "黄金 TI スター",
+     "reading": "",
+     "note": "おうごん; the doubling form: 二倍 TI スター",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Goliath",
+     "ja": "ゴリアテ",
+     "reading": "",
+     "note": "known shape (Z12 icosahedron of A15), DICTO's name",
+     "section": ""
+    },
+    {
+     "d": "D40",
+     "en": "DICTO GTI (golden truncated icosahedron)",
+     "ja": "DICTO GTI（黄金切頂二十面体）",
+     "reading": "",
+     "note": "おうごんせっちょうにじゅうめんたい",
+     "section": ""
+    },
+    {
+     "d": "D96",
+     "en": "Haigha",
+     "ja": "ヘイヤ",
+     "reading": "",
+     "note": "as in Japanese translations of Through the Looking-Glass",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Hasu",
+     "ja": "ハス",
+     "reading": "",
+     "note": "蓮, already a Japanese word in DICTO's English",
+     "section": ""
+    },
+    {
+     "d": "D97",
+     "en": "Hatta",
+     "ja": "ハッタ",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "DICTO Hecatogdoecontahedron",
+     "ja": "DICTO ヘカトグドエコンタヘドロン",
+     "reading": "",
+     "note": "compound of 102 and 80 faces (百八十二面体)",
+     "section": ""
+    },
+    {
+     "d": "D54",
+     "en": "DICTO Hex Aktis",
+     "ja": "DICTO ヘクス・アクティス",
+     "reading": "",
+     "note": "20 in the OG",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "DICTO Hexa",
+     "ja": "DICTO ヘクサ",
+     "reading": "",
+     "note": "cube of eight Jewels (#18)",
+     "section": ""
+    },
+    {
+     "d": "D11",
+     "en": "DICTO Hexa Jewel",
+     "ja": "DICTO ヘクサ・ジュエル",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D10",
+     "en": "DICTO Hexa-Key",
+     "ja": "DICTO ヘクサ・キー",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D43",
+     "en": "Hexagonal Cleo",
+     "ja": "六角クレオ",
+     "reading": "",
+     "note": "ろっかく",
+     "section": ""
+    },
+    {
+     "d": "D85",
+     "en": "Humpty Dumpty",
+     "ja": "ハンプティ・ダンプティ",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": ""
+    },
+    {
+     "d": "D78",
+     "en": "Ian Dury",
+     "ja": "イアン・デューリー",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "DICTO Icosa-13",
+     "ja": "DICTO イコサ13",
+     "reading": "",
+     "note": "the Lotus seed as a thirteen",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Icosahedral octet",
+     "ja": "二十面体オクテット",
+     "reading": "",
+     "note": "にじゅうめんたい",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Icosaxes",
+     "ja": "イコサックス",
+     "reading": "",
+     "note": "known shape (Koca et al. 2015), DICTO's name",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Icosaxes Bloom / Bud / Seed",
+     "ja": "イコサックスの花 / 蕾 / 種",
+     "reading": "",
+     "note": "はな／つぼみ／たね",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Icosaxes Hexa",
+     "ja": "イコサックス・ヘクサ",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Inner Eye",
+     "ja": "内なる目",
+     "reading": "",
+     "note": "うちなるめ",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "DICTO Interlock set 1 (Dharma-Ends) / set 2 (Dharma-Middle)",
+     "ja": "DICTO インターロック・セット 1（法・端）/ 2（法・中）",
+     "reading": "",
+     "note": "ほう・はし／ほう・なか",
+     "section": ""
+    },
+    {
+     "d": "D88",
+     "en": "Jabberwock",
+     "ja": "ジャバウォック",
+     "reading": "",
+     "note": "ja Wikipedia ジャバウォックの詩",
+     "section": ""
+    },
+    {
+     "d": "D4",
+     "en": "DICTO Jewel",
+     "ja": "DICTO ジュエル",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Jewel chain",
+     "ja": "ジュエルの連鎖",
+     "reading": "",
+     "note": "れんさ",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "DICTO Jewel-Tetra / Jewel-Octa / Jewel-Rhombi",
+     "ja": "DICTO ジュエル・テトラ / ジュエル・オクタ / ジュエル・ロンビ",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D93",
+     "en": "Jubjub",
+     "ja": "ジャブジャブ",
+     "reading": "",
+     "note": "the Jubjub bird (ジャブジャブ鳥)",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Julias and Pimentels",
+     "ja": "ジュリアとピメンテル",
+     "reading": "",
+     "note": "step pieces of #54, after Júlia Pimentel",
+     "section": ""
+    },
+    {
+     "d": "D86",
+     "en": "Kagemusha (was Shadow-17)",
+     "ja": "影武者",
+     "reading": "",
+     "note": "かげむしゃ; DICTO's name of 30 October 2026, already Japanese; \"Kagemusha\" in Latin at first use; book v1.4 still says Shadow-17",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Kagome hulls (six hull networks)",
+     "ja": "カゴメ凸包",
+     "reading": "",
+     "note": "とつほう",
+     "section": ""
+    },
+    {
+     "d": "D83",
+     "en": "Keyaxes",
+     "ja": "キーアックス",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D34",
+     "en": "Keyed octahedron (golden-key octet)",
+     "ja": "キー付き八面体",
+     "reading": "",
+     "note": "キーつきはちめんたい",
+     "section": ""
+    },
+    {
+     "d": "D14",
+     "en": "King of Pentacles",
+     "ja": "ペンタクルのキング",
+     "reading": "",
+     "note": "the tarot card, in the Japanese tarot convention",
+     "section": ""
+    },
+    {
+     "d": "D23",
+     "en": "Kion",
+     "ja": "キオン",
+     "reading": "",
+     "note": "Greek \"column\"",
+     "section": ""
+    },
+    {
+     "d": "D45",
+     "en": "DICTO KRE",
+     "ja": "DICTO KRE",
+     "reading": "",
+     "note": "abbreviation unchanged",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "DICTO Kyushindo Cores",
+     "ja": "DICTO 求心道コア",
+     "reading": "",
+     "note": "きゅうしんどう",
+     "section": ""
+    },
+    {
+     "d": "D77",
+     "en": "Lahdeli",
+     "ja": "ラデリ",
+     "reading": "",
+     "note": "the syllables of デリラ swapped, as Lahdeli swaps De-li-lah",
+     "section": ""
+    },
+    {
+     "d": "D87",
+     "en": "Lion",
+     "ja": "ライオン",
+     "reading": "",
+     "note": "as in ライオンと一角獣 (Through the Looking-Glass)",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Lotus Hexa",
+     "ja": "ロータス・ヘクサ",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D15",
+     "en": "Lotus Jewel (clawed icosahedron)",
+     "ja": "ロータス・ジュエル（鉤爪の二十面体）",
+     "reading": "",
+     "note": "かぎづめ",
+     "section": ""
+    },
+    {
+     "d": "D69",
+     "en": "Lotus Jewel Axes",
+     "ja": "ロータス・ジュエル・アックス",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Lotus seed",
+     "ja": "蓮の実",
+     "reading": "",
+     "note": "はすのみ; the 113-piece cluster (#19)",
+     "section": ""
+    },
+    {
+     "d": "D91",
+     "en": "Mad Hatter",
+     "ja": "帽子屋",
+     "reading": "",
+     "note": "ぼうしや; the usual Japanese name in translations",
+     "section": ""
+    },
+    {
+     "d": "D92",
+     "en": "March Hare",
+     "ja": "三月ウサギ",
+     "reading": "",
+     "note": "さんがつうさぎ; ja Wikipedia",
+     "section": ""
+    },
+    {
+     "d": "D30",
+     "en": "DICTO Metaxyhexecontahedron",
+     "ja": "DICTO メタクシヘキセコンタヘドロン",
+     "reading": "",
+     "note": "Greek metaxy \"between\" + 60 faces",
+     "section": ""
+    },
+    {
+     "d": "D39",
+     "en": "Mirror middle piece Mg",
+     "ja": "鏡の中間ピース Mg",
+     "reading": "",
+     "note": "かがみのちゅうかん",
+     "section": ""
+    },
+    {
+     "d": "D20",
+     "en": "Monkey Staff",
+     "ja": "モンキー・スタッフ",
+     "reading": "",
+     "note": "alt. 如意棒 (the Monkey King's staff); see the confirm list",
+     "section": ""
+    },
+    {
+     "d": "D44",
+     "en": "Monkey Staff B",
+     "ja": "モンキー・スタッフ B",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Mudra (Bodhi piece)",
+     "ja": "印相",
+     "reading": "",
+     "note": "いんぞう; Buddhist term (ja Wikipedia 印相)",
+     "section": ""
+    },
+    {
+     "d": "D29",
+     "en": "DICTO OCD Stella",
+     "ja": "DICTO OCD ステラ",
+     "reading": "",
+     "note": "OCD kept as published; OG is the short name in new text",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "DICTO OG Family",
+     "ja": "DICTO OG ファミリー",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D28",
+     "en": "DICTO Ogdoecontahedron (OG)",
+     "ja": "DICTO オグドエコンタヘドロン（OG）",
+     "reading": "",
+     "note": "Greek \"80 faces\" (八十面体)",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Oktaktis",
+     "ja": "オクタクティス",
+     "reading": "",
+     "note": "the OTT's octahedral ray, exactly a Cleo-Icos",
+     "section": ""
+    },
+    {
+     "d": "D38",
+     "en": "DICTO OTT (Octahedrally Truncated Triacontahedron)",
+     "ja": "DICTO OTT（八面体切頂三十面体）",
+     "reading": "",
+     "note": "はちめんたいせっちょうさんじゅうめんたい",
+     "section": ""
+    },
+    {
+     "d": "D31",
+     "en": "DICTO Palintriacontahedron",
+     "ja": "DICTO パリントリアコンタヘドロン",
+     "reading": "",
+     "note": "Greek palin \"again\" + triacontahedron",
+     "section": ""
+    },
+    {
+     "d": "D66",
+     "en": "Penta-cleo",
+     "ja": "ペンタ・クレオ",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D46",
+     "en": "DICTO PHE",
+     "ja": "DICTO PHE",
+     "reading": "",
+     "note": "abbreviation unchanged",
+     "section": ""
+    },
+    {
+     "d": "D75",
+     "en": "Polar Cleo Towers",
+     "ja": "極クレオ・タワー",
+     "reading": "",
+     "note": "きょく",
+     "section": ""
+    },
+    {
+     "d": "D98",
+     "en": "Red King",
+     "ja": "赤の王",
+     "reading": "",
+     "note": "あかのおう",
+     "section": ""
+    },
+    {
+     "d": "D100",
+     "en": "Red Knight",
+     "ja": "赤の騎士",
+     "reading": "",
+     "note": "あかのきし",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Red Queen (the 120-cell)",
+     "ja": "赤の女王",
+     "reading": "",
+     "note": "あかのじょおう",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Reuleaux octahedron / cube / icosahedron / dodecahedron",
+     "ja": "ルーローの八面体 / 立方体 / 二十面体 / 十二面体",
+     "reading": "",
+     "note": "names by look; not Reuleaux polyhedra in the strict sense",
+     "section": ""
+    },
+    {
+     "d": "D71",
+     "en": "Samson",
+     "ja": "サムソン",
+     "reading": "",
+     "note": "ja Wikipedia サムソンとデリラ",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Sevenfold-blade",
+     "ja": "七重の刃",
+     "reading": "",
+     "note": "ななえのは",
+     "section": ""
+    },
+    {
+     "d": "D21",
+     "en": "Shield",
+     "ja": "盾",
+     "reading": "",
+     "note": "たて; common-noun name translated",
+     "section": ""
+    },
+    {
+     "d": "D2",
+     "en": "DICTO skewed elongated dodecahedron ED F16",
+     "ja": "DICTO 斜交長菱形十二面体 ED F16",
+     "reading": "",
+     "note": "しゃこうちょうひしがた",
+     "section": ""
+    },
+    {
+     "d": "D3",
+     "en": "DICTO skewed elongated dodecahedron ED F18",
+     "ja": "DICTO 斜交長菱形十二面体 ED F18",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D1",
+     "en": "DICTO skewed rhombic dodecahedron",
+     "ja": "DICTO 斜交菱形十二面体",
+     "reading": "",
+     "note": "しゃこうひしがたじゅうにめんたい",
+     "section": ""
+    },
+    {
+     "d": "D76",
+     "en": "Sonsam",
+     "ja": "ソンサム",
+     "reading": "",
+     "note": "the syllables of サムソン swapped",
+     "section": ""
+    },
+    {
+     "d": "D26",
+     "en": "Sphen",
+     "ja": "スフェン",
+     "reading": "",
+     "note": "Greek \"wedge\"",
+     "section": ""
+    },
+    {
+     "d": "D27",
+     "en": "Sphenion",
+     "ja": "スフェニオン",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "DICTO Spheroid-13 RD",
+     "ja": "DICTO スフェロイド13 RD",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D104",
+     "en": "Star Halo",
+     "ja": "スター・ハロー",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "DICTO Stella-Corona",
+     "ja": "DICTO ステラ・コロナ",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Stella–Jewel Lattice",
+     "ja": "ステラ＝ジュエル格子",
+     "reading": "",
+     "note": "こうし",
+     "section": ""
+    },
+    {
+     "d": "D5",
+     "en": "Stretched dodecahedron",
+     "ja": "伸長十二面体",
+     "reading": "",
+     "note": "しんちょうじゅうにめんたい",
+     "section": ""
+    },
+    {
+     "d": "D19",
+     "en": "Stupa",
+     "ja": "仏塔",
+     "reading": "",
+     "note": "ぶっとう; Buddhist term",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "DICTO Sunstar",
+     "ja": "DICTO サンスター",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Sunstar Lattice",
+     "ja": "サンスター格子",
+     "reading": "",
+     "note": "こうし",
+     "section": ""
+    },
+    {
+     "d": "D53",
+     "en": "DICTO Sunstar-Hexa-Key",
+     "ja": "DICTO サンスター・ヘクサ・キー",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "DICTO Sunstar-Tetra / -Octa / -Rhombi / -Hexa",
+     "ja": "DICTO サンスター・テトラ / オクタ / ロンビ / ヘクサ",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D36",
+     "en": "Tetartoid core (golden envelope network)",
+     "ja": "テタルトイドのコア",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D57",
+     "en": "DICTO Tetraktis (OTT rhombic ray)",
+     "ja": "DICTO テトラクティス",
+     "reading": "",
+     "note": "not the Pythagorean tetractys (テトラクテュス)",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Theaetetus (the structure of #29)",
+     "ja": "テアイテトス",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D105",
+     "en": "TI Star core",
+     "ja": "TI スター・コア",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D49",
+     "en": "DICTO TPH",
+     "ja": "DICTO TPH",
+     "reading": "",
+     "note": "abbreviation unchanged",
+     "section": ""
+    },
+    {
+     "d": "D47",
+     "en": "DICTO TPP",
+     "ja": "DICTO TPP",
+     "reading": "",
+     "note": "abbreviation unchanged",
+     "section": ""
+    },
+    {
+     "d": "D59",
+     "en": "DICTO TQ-320",
+     "ja": "DICTO TQ-320",
+     "reading": "",
+     "note": "name by its faces, unchanged (#43)",
+     "section": ""
+    },
+    {
+     "d": "D61",
+     "en": "DICTO TQ-500",
+     "ja": "DICTO TQ-500",
+     "reading": "",
+     "note": "name by its faces, unchanged (#43)",
+     "section": ""
+    },
+    {
+     "d": "D62",
+     "en": "DICTO TQD-732",
+     "ja": "DICTO TQD-732",
+     "reading": "",
+     "note": "name by its faces, unchanged (#43)",
+     "section": ""
+    },
+    {
+     "d": "D50",
+     "en": "DICTO TQH",
+     "ja": "DICTO TQH",
+     "reading": "",
+     "note": "abbreviation unchanged",
+     "section": ""
+    },
+    {
+     "d": "D52",
+     "en": "DICTO TQHD",
+     "ja": "DICTO TQHD",
+     "reading": "",
+     "note": "abbreviation unchanged",
+     "section": ""
+    },
+    {
+     "d": "D63",
+     "en": "DICTO TQHD-662",
+     "ja": "DICTO TQHD-662",
+     "reading": "",
+     "note": "name by its faces, unchanged (#43)",
+     "section": ""
+    },
+    {
+     "d": "D51",
+     "en": "DICTO TQP",
+     "ja": "DICTO TQP",
+     "reading": "",
+     "note": "abbreviation unchanged",
+     "section": ""
+    },
+    {
+     "d": "D58",
+     "en": "DICTO TQP-252",
+     "ja": "DICTO TQP-252",
+     "reading": "",
+     "note": "name by its faces, unchanged (#43)",
+     "section": ""
+    },
+    {
+     "d": "D60",
+     "en": "DICTO TQP-402",
+     "ja": "DICTO TQP-402",
+     "reading": "",
+     "note": "name by its faces, unchanged (#43)",
+     "section": ""
+    },
+    {
+     "d": "D64",
+     "en": "DICTO TQP-672",
+     "ja": "DICTO TQP-672",
+     "reading": "",
+     "note": "name by its faces, unchanged (#43)",
+     "section": ""
+    },
+    {
+     "d": "D56",
+     "en": "DICTO Triaktis (OTT triangle ray)",
+     "ja": "DICTO トリアクティス",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Tricap",
+     "ja": "トリキャップ",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Triskelion / Triskelion Hex",
+     "ja": "トリスケリオン / トリスケリオン・ヘクス",
+     "reading": "",
+     "note": "ja Wikipedia 三脚巴 is the symbol; the piece names stay katakana",
+     "section": ""
+    },
+    {
+     "d": "D82",
+     "en": "Triskelion Tetrahedron",
+     "ja": "トリスケリオン四面体",
+     "reading": "",
+     "note": "しめんたい",
+     "section": ""
+    },
+    {
+     "d": "D22",
+     "en": "DICTO Truncated-Icosahedral Hecatodihedron",
+     "ja": "DICTO 切頂二十面体型ヘカトディヘドロン",
+     "reading": "",
+     "note": "Greek \"102 faces\" (百二面体); katakana for DICTO's Greek coinage",
+     "section": ""
+    },
+    {
+     "d": "D90",
+     "en": "Tweedledee",
+     "ja": "トゥイードルディー",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": ""
+    },
+    {
+     "d": "D89",
+     "en": "Tweedledum",
+     "ja": "トゥイードルダム",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Unborn",
+     "ja": "アンボーン",
+     "reading": "",
+     "note": "alt. 不生 / 無生 (Buddhist \"unborn\"); see the confirm list",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Unborn Axes",
+     "ja": "アンボーン・アックス",
+     "reading": "",
+     "note": "known shape (Koca et al. 2015), DICTO's name",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "Unicorn",
+     "ja": "一角獣",
+     "reading": "",
+     "note": "いっかくじゅう; known shape (Boole Stott, W58)",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "UNITY / VENUS",
+     "ja": "UNITY（ユニティ）/ VENUS（ヴィーナス）",
+     "reading": "",
+     "note": "Latin capitals kept",
+     "section": ""
+    },
+    {
+     "d": "D13",
+     "en": "VAJRA",
+     "ja": "VAJRA（ヴァジュラ）",
+     "reading": "",
+     "note": "the piece of #19; Latin capitals kept",
+     "section": ""
+    },
+    {
+     "d": "D18",
+     "en": "Vajra (fine)",
+     "ja": "金剛杵（細）",
+     "reading": "",
+     "note": "こんごうしょ（さい）; Buddhist term (ja Wikipedia 金剛杵); also Vajra (twist) 金剛杵（ねじれ）, Vajra-blade 金剛杵の刃",
+     "section": ""
+    },
+    {
+     "d": "D35",
+     "en": "W (one-piece glue)",
+     "ja": "W（一体の接着ピース）",
+     "reading": "",
+     "note": "いったいのせっちゃく; also WOG, Wstar, keyed W unchanged",
+     "section": ""
+    },
+    {
+     "d": "D99",
+     "en": "Walrus",
+     "ja": "セイウチ",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "d": "D101",
+     "en": "White Knight",
+     "ja": "白の騎士",
+     "reading": "",
+     "note": "しろのきし",
+     "section": ""
+    },
+    {
+     "d": "",
+     "en": "White Queen (the 600-cell)",
+     "ja": "白の女王",
+     "reading": "",
+     "note": "しろのじょおう",
+     "section": ""
+    },
+    {
+     "d": "D95",
+     "en": "White Rabbit",
+     "ja": "白ウサギ",
+     "reading": "",
+     "note": "しろうさぎ; ja Wikipedia",
+     "section": ""
+    },
+    {
+     "d": "D67",
+     "en": "X (cube of edge φ minus one Euclid roof)",
+     "ja": "X",
+     "reading": "",
+     "note": "letter name unchanged; 辺 φ の立方体からユークリッドの屋根を一つ除いたもの (#47 connector)",
+     "section": ""
+    },
+    {
+     "d": "D68",
+     "en": "Y (cube of edge φ plus one Euclid roof)",
+     "ja": "Y",
+     "reading": "",
+     "note": "letter name unchanged; 辺 φ の立方体にユークリッドの屋根を一つ加えたもの (#47 connector)",
+     "section": ""
+    }
+   ]
+  },
+  {
+   "key": "classical",
+   "title": "Classical terms by field",
+   "entries": [
+    {
+     "en": "polyhedron",
+     "ja": "多面体",
+     "reading": "ためんたい",
+     "note": "standard",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "solid (a polyhedron as a body)",
+     "ja": "立体",
+     "reading": "りったい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "regular polyhedron, Platonic solid",
+     "ja": "正多面体（プラトンの立体）",
+     "reading": "せいためんたい",
+     "note": "ja Wikipedia 正多面体",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "tetrahedron (regular)",
+     "ja": "正四面体",
+     "reading": "せいしめんたい",
+     "note": "the book's \"tetrahedron\" is regular unless said; a general one 四面体",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "cube",
+     "ja": "立方体",
+     "reading": "りっぽうたい",
+     "note": "正六面体 also standard",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "octahedron (regular)",
+     "ja": "正八面体",
+     "reading": "せいはちめんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "dodecahedron (regular)",
+     "ja": "正十二面体",
+     "reading": "せいじゅうにめんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "icosahedron (regular)",
+     "ja": "正二十面体",
+     "reading": "せいにじゅうめんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "Archimedean solid",
+     "ja": "半正多面体（アルキメデスの立体）",
+     "reading": "はんせいためんたい",
+     "note": "ja Wikipedia: semi-regular = 半正多面体; 準正多面体 is reserved for the quasi-regular (cuboctahedron, icosidodecahedron)",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "quasi-regular",
+     "ja": "準正",
+     "reading": "じゅんせい",
+     "note": "cuboctahedron and icosidodecahedron only (ja Wikipedia 半正多面体)",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "uniform polyhedron",
+     "ja": "一様多面体",
+     "reading": "いちようためんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "Catalan solid",
+     "ja": "カタランの立体",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "Johnson solid",
+     "ja": "ジョンソンの立体",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "J11, gyroelongated pentagonal pyramid",
+     "ja": "正五角錐反柱（J11）",
+     "reading": "せいごかくすいはんちゅう",
+     "note": "ja Wikipedia",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "Kepler–Poinsot polyhedra",
+     "ja": "星型正多面体（ケプラー・ポアンソの立体）",
+     "reading": "ほしがたせいためんたい",
+     "note": "ja Wikipedia",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "stellation; star polyhedron",
+     "ja": "星型化；星型多面体",
+     "reading": "ほしがたか",
+     "note": "ja Wikipedia 星型多面体",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "small stellated dodecahedron",
+     "ja": "小星型十二面体",
+     "reading": "しょうほしがたじゅうにめんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "great stellated dodecahedron",
+     "ja": "大星型十二面体",
+     "reading": "だいほしがたじゅうにめんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "great dodecahedron; great icosahedron",
+     "ja": "大十二面体；大二十面体",
+     "reading": "だいじゅうにめんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "stella octangula",
+     "ja": "星型八面体（ステラ・オクタングラ）",
+     "reading": "ほしがたはちめんたい",
+     "note": "ja Wikipedia 星型八面体; \"stellas\" in the text → ステラ",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "excavated dodecahedron",
+     "ja": "くり抜き十二面体",
+     "reading": "くりぬき",
+     "note": "no standard Japanese name found (no ja Wikipedia page); descriptive",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "rhombic dodecahedron (RD)",
+     "ja": "菱形十二面体",
+     "reading": "ひしがたじゅうにめんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "rhombic triacontahedron (RT)",
+     "ja": "菱形三十面体",
+     "reading": "ひしがたさんじゅうめんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "rhombic hexecontahedron",
+     "ja": "菱形六十面体",
+     "reading": "ひしがたろくじゅうめんたい",
+     "note": "formed like the others (no ja page)",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "rhombic enneacontahedron",
+     "ja": "菱形九十面体",
+     "reading": "ひしがたきゅうじゅうめんたい",
+     "note": "ja Wikipedia",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "rhombic icosahedron",
+     "ja": "菱形二十面体",
+     "reading": "ひしがたにじゅうめんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "Bilinski dodecahedron",
+     "ja": "ビリンスキーの十二面体（菱形十二面体第2種）",
+     "reading": "だいにしゅ",
+     "note": "ja Wikipedia title 菱形十二面体第2種",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "elongated dodecahedron (ED)",
+     "ja": "長菱形十二面体",
+     "reading": "ちょうひしがたじゅうにめんたい",
+     "note": "ja Wikipedia",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "truncated icosahedron (TI)",
+     "ja": "切頂二十面体",
+     "reading": "せっちょうにじゅうめんたい",
+     "note": "never a ball-game name",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "truncated octahedron",
+     "ja": "切頂八面体",
+     "reading": "せっちょうはちめんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "truncated tetrahedron",
+     "ja": "切頂四面体",
+     "reading": "せっちょうしめんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "truncated cube; truncated dodecahedron",
+     "ja": "切頂六面体；切頂十二面体",
+     "reading": "",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "truncated icosidodecahedron",
+     "ja": "斜方切頂二十・十二面体",
+     "reading": "しゃほうせっちょうにじゅう・じゅうにめんたい",
+     "note": "ja Wikipedia",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "icosidodecahedron (ID)",
+     "ja": "二十・十二面体",
+     "reading": "にじゅう・じゅうにめんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "cuboctahedron",
+     "ja": "立方八面体",
+     "reading": "りっぽうはちめんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "rhombicuboctahedron; rhombicosidodecahedron",
+     "ja": "斜方立方八面体；斜方二十・十二面体",
+     "reading": "しゃほう",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "pentakis dodecahedron (PD)",
+     "ja": "五方十二面体",
+     "reading": "ごほうじゅうにめんたい",
+     "note": "ja Wikipedia; \"the Catalan one\" → カタランの立体の五方十二面体",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "triakis icosahedron",
+     "ja": "三方二十面体",
+     "reading": "さんぽうにじゅうめんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "deltoidal hexecontahedron",
+     "ja": "凧形六十面体",
+     "reading": "たこがたろくじゅうめんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "hexakis truncated icosahedron (Conway)",
+     "ja": "六方切頂二十面体",
+     "reading": "ろっぽう",
+     "note": "六方 here = hexakis, not \"hexagonal\"; give the English at first use",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "joined truncated icosahedron (jtI)",
+     "ja": "ジョイン切頂二十面体（jtI）",
+     "reading": "",
+     "note": "Conway's join; jtI kept",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "chamfered icosahedron",
+     "ja": "面取り二十面体",
+     "reading": "めんとり",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "Goldberg polyhedron GP(3,0)",
+     "ja": "ゴールドバーグ多面体 GP(3,0)",
+     "reading": "",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "Kleetope",
+     "ja": "クレートープ",
+     "reading": "",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "small triambic icosahedron",
+     "ja": "小三角六辺形二十面体",
+     "reading": "しょうさんかくろくへんけいにじゅうめんたい",
+     "note": "ja Wikipedia",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "compound (of polyhedra)",
+     "ja": "複合多面体",
+     "reading": "ふくごうためんたい",
+     "note": "ja Wikipedia; \"the compound of icosahedron and dodecahedron\" → 正二十面体と正十二面体の複合体",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "compound of five octahedra",
+     "ja": "五つの正八面体の複合体",
+     "reading": "いつつ",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "antiprism",
+     "ja": "反角柱",
+     "reading": "はんかくちゅう",
+     "note": "ja Wikipedia; pentagonal / square antiprism → 正五角反柱 / 正四角反柱",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "prism",
+     "ja": "角柱",
+     "reading": "かくちゅう",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "pyramid",
+     "ja": "角錐",
+     "reading": "かくすい",
+     "note": "Aristotle's \"pyramid\" too",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "central face pyramid (from the centre to a face)",
+     "ja": "中心角錐",
+     "reading": "ちゅうしんかくすい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "square / pentagonal / hexagonal pyramid",
+     "ja": "四角錐 / 五角錐 / 六角錐",
+     "reading": "しかくすい／ごかくすい／ろっかくすい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "bipyramid; triangular bipyramid",
+     "ja": "双角錐；双三角錐",
+     "reading": "そうかくすい",
+     "note": "ja Wikipedia",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "rhombohedron; golden rhombohedron",
+     "ja": "菱面体；黄金菱面体",
+     "reading": "りょうめんたい；おうごんりょうめんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "parallelepiped",
+     "ja": "平行六面体",
+     "reading": "へいこうろくめんたい",
+     "note": "ja Wikipedia",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "parallelohedron",
+     "ja": "平行多面体",
+     "reading": "へいこうためんたい",
+     "note": "Fedorov's term",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "zonohedron",
+     "ja": "ゾーン多面体",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "tetragonal disphenoid",
+     "ja": "正方等面四面体",
+     "reading": "せいほうとうめんしめんたい",
+     "note": "等面四面体 = disphenoid",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "tetartoid",
+     "ja": "テタルトイド（四分面像の十二面体）",
+     "reading": "しぶんめんぞう",
+     "note": "crystallographers' word; T symmetry",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "pyritohedral (symmetry Th)",
+     "ja": "黄鉄鉱型（対称性 Th）",
+     "reading": "おうてっこうがた",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "deltahedron",
+     "ja": "デルタ面体",
+     "reading": "デルタめんたい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "Reuleaux tetrahedron",
+     "ja": "ルーローの四面体",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "face; edge; corner (vertex)",
+     "ja": "面；辺；頂点",
+     "reading": "めん；へん；ちょうてん",
+     "note": "the book's \"corner\" → 頂点",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "dihedral angle",
+     "ja": "二面角",
+     "reading": "にめんかく",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "regular / equilateral triangle; isosceles triangle",
+     "ja": "正三角形；二等辺三角形",
+     "reading": "せいさんかっけい；にとうへんさんかっけい",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "kite; rhombus; regular pentagon / hexagon / decagon",
+     "ja": "凧形；菱形；正五角形 / 正六角形 / 正十角形",
+     "reading": "たこがた；ひしがた",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "golden rhombus; golden rectangle; golden triangle",
+     "ja": "黄金菱形；黄金長方形；黄金三角形",
+     "reading": "おうごん",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "Penrose rhombus (thick); Penrose tiling",
+     "ja": "ペンローズの太い菱形；ペンローズ・タイル",
+     "reading": "",
+     "note": "ja Wikipedia ペンローズ・タイル",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "Mosseri–Sadoc tiles",
+     "ja": "モッセリ＝サドックのタイル",
+     "reading": "",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "Euclid's roofs (on the cube)",
+     "ja": "ユークリッドの屋根",
+     "reading": "やね",
+     "note": "Elements XIII.17",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "dual; dual polyhedron; partner (= dual)",
+     "ja": "双対；双対多面体；双対の相手",
+     "reading": "そうつい",
+     "note": "ja Wikipedia 双対多面体",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "polar reciprocation; the polar of a solid",
+     "ja": "極変換；極双対",
+     "reading": "きょくへんかん；きょくそうつい",
+     "note": "ja Wikipedia 極と極線; alt. 極反転",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "convex; convex hull",
+     "ja": "凸；凸包",
+     "reading": "とつ；とつほう",
+     "note": "ja Wikipedia 凸包",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "symmetry (Ih, Td, Th, D5h)",
+     "ja": "対称性（Ih, Td, Th, D5h）",
+     "reading": "たいしょうせい",
+     "note": "Schoenflies symbols unchanged; icosahedral symmetry → 正二十面体対称",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "Schläfli symbol",
+     "ja": "シュレーフリ記号",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "Dehn invariant",
+     "ja": "デーン不変量",
+     "reading": "ふへんりょう",
+     "note": "ja Wikipedia",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "pedal / antipedal (polygon)",
+     "ja": "垂足多角形 / 反垂足多角形",
+     "reading": "すいそく",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "gnomon (Euclid, Heron)",
+     "ja": "グノモン",
+     "reading": "",
+     "note": "see laws",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "nets (printable)",
+     "ja": "展開図",
+     "reading": "てんかいず",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "cut-and-glue (dissection)",
+     "ja": "切り貼り（分割合同）",
+     "reading": "きりばり（ぶんかつごうどう）",
+     "note": "",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "silver ratio",
+     "ja": "白銀比（1 + √2）",
+     "reading": "はくぎんひ",
+     "note": "in Japanese design 白銀比 often means √2 (大和比); give the value at first use",
+     "section": "Polyhedra"
+    },
+    {
+     "en": "four-dimensional",
+     "ja": "四次元",
+     "reading": "よじげん",
+     "note": "4次元 also standard",
+     "section": "Four dimensions"
+    },
+    {
+     "en": "polytope; 4-polytope",
+     "ja": "ポリトープ；多胞体",
+     "reading": "たほうたい",
+     "note": "ja Wikipedia 多胞体",
+     "section": "Four dimensions"
+    },
+    {
+     "en": "cell (of a 4-polytope)",
+     "ja": "胞",
+     "reading": "ほう",
+     "note": "",
+     "section": "Four dimensions"
+    },
+    {
+     "en": "regular 4-polytope",
+     "ja": "正多胞体",
+     "reading": "せいたほうたい",
+     "note": "ja Wikipedia",
+     "section": "Four dimensions"
+    },
+    {
+     "en": "600-cell",
+     "ja": "600胞体（正六百胞体）",
+     "reading": "ろっぴゃくほうたい",
+     "note": "ja Wikipedia 正六百胞体; full form at first use",
+     "section": "Four dimensions"
+    },
+    {
+     "en": "120-cell; hecatonicosachoron",
+     "ja": "120胞体（正百二十胞体）",
+     "reading": "ひゃくにじゅうほうたい",
+     "note": "ja Wikipedia 正百二十胞体",
+     "section": "Four dimensions"
+    },
+    {
+     "en": "5-cell; 16-cell; 24-cell; tesseract",
+     "ja": "正五胞体；正十六胞体；正二十四胞体；正八胞体",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": "Four dimensions"
+    },
+    {
+     "en": "simplex",
+     "ja": "単体",
+     "reading": "たんたい",
+     "note": "ja Wikipedia 単体 (数学)",
+     "section": "Four dimensions"
+    },
+    {
+     "en": "truncated 600-cell",
+     "ja": "切頂600胞体",
+     "reading": "せっちょう",
+     "note": "as in Kyoto University's 切頂六百胞体 model notes (Tsuiki)",
+     "section": "Four dimensions"
+    },
+    {
+     "en": "rectified 600-cell / 120-cell",
+     "ja": "中点切頂600胞体 / 120胞体",
+     "reading": "ちゅうてんせっちょう",
+     "note": "no fixed Japanese term found; English in brackets at first use",
+     "section": "Four dimensions"
+    },
+    {
+     "en": "bitruncated 600-cell",
+     "ja": "二重切頂600胞体",
+     "reading": "にじゅうせっちょう",
+     "note": "likewise",
+     "section": "Four dimensions"
+    },
+    {
+     "en": "slice; shadow (projection)",
+     "ja": "断面；影（射影）",
+     "reading": "だんめん；かげ（しゃえい）",
+     "note": "vertex-first / edge-first / face-first / cell-first → 頂点先行 / 辺先行 / 面先行 / 胞先行",
+     "section": "Four dimensions"
+    },
+    {
+     "en": "space-filling; space-filler",
+     "ja": "空間充填；空間充填体",
+     "reading": "くうかんじゅうてん",
+     "note": "ja Wikipedia 空間充填",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "honeycomb",
+     "ja": "空間充填形（ハニカム）",
+     "reading": "くうかんじゅうてんけい",
+     "note": "ja Wikipedia 空間充填",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "tiling; tile",
+     "ja": "タイル張り；タイル",
+     "reading": "タイルばり",
+     "note": "ja Wikipedia タイル張り",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "close packing (of equal balls)",
+     "ja": "最密充填",
+     "reading": "さいみつじゅうてん",
+     "note": "ja Wikipedia 球充填",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "close-packed layer",
+     "ja": "最密層",
+     "reading": "さいみつそう",
+     "note": "",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "stacking; stacking sequence",
+     "ja": "積層；積層順",
+     "reading": "せきそう；せきそうじゅん",
+     "note": "Mitsubishi Electric SiC lecture 3",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "stacking fault",
+     "ja": "積層欠陥",
+     "reading": "せきそうけっかん",
+     "note": "ja Wikipedia",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "cubic close packing, face-centred cubic (fcc)",
+     "ja": "立方最密充填（面心立方）",
+     "reading": "りっぽうさいみつじゅうてん（めんしんりっぽう）",
+     "note": "ja Wikipedia 球充填",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "hexagonal close packing (hcp)",
+     "ja": "六方最密充填",
+     "reading": "ろっぽうさいみつじゅうてん",
+     "note": "ja Wikipedia 六方最密充填構造",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "body-centred cubic (bcc)",
+     "ja": "体心立方",
+     "reading": "たいしんりっぽう",
+     "note": "",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "cubic / hexagonal / rhombohedral (crystal)",
+     "ja": "立方晶 / 六方晶 / 菱面体晶",
+     "reading": "りっぽうしょう／ろっぽうしょう／りょうめんたいしょう",
+     "note": "3C, 4H, 6H, 15R unchanged",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "polytype",
+     "ja": "ポリタイプ（結晶多形）",
+     "reading": "けっしょうたけい",
+     "note": "ja Wikipedia 炭化ケイ素",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "periodic / aperiodic; repeating / never-repeating order",
+     "ja": "周期的 / 非周期的；繰り返す秩序 / 決して繰り返さない秩序",
+     "reading": "しゅうきてき；ちつじょ",
+     "note": "",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "quasicrystal",
+     "ja": "準結晶",
+     "reading": "じゅんけっしょう",
+     "note": "ja Wikipedia",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "crystal; lattice; unit cell",
+     "ja": "結晶；格子；単位胞",
+     "reading": "けっしょう；こうし；たんいほう",
+     "note": "",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "tetrahedral hole / octahedral hole",
+     "ja": "四面体空隙 / 八面体空隙",
+     "reading": "しめんたいくうげき／はちめんたいくうげき",
+     "note": "空隙 (sites: 四面体サイト / 八面体サイト)",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "octet (tetrahedral–octahedral honeycomb)",
+     "ja": "オクテット（正四面体・正八面体の空間充填）",
+     "reading": "",
+     "note": "",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "octet truss",
+     "ja": "オクテット・トラス",
+     "reading": "",
+     "note": "",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "gyrated octet",
+     "ja": "回転オクテット",
+     "reading": "かいてん",
+     "note": "gyrated as in the gyrate Johnson solids",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "Voronoi cell; Voronoi diagram",
+     "ja": "ボロノイ領域；ボロノイ図",
+     "reading": "りょういき",
+     "note": "ja Wikipedia ボロノイ図",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "power diagram (weighted Voronoi)",
+     "ja": "パワー図（重み付きボロノイ図）",
+     "reading": "おもみつき",
+     "note": "",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "weighted Delaunay cells",
+     "ja": "重み付きドロネー分割の胞",
+     "reading": "",
+     "note": "ja Wikipedia ドロネー図",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "Kagome lattice; kagome layer; kagome magnet",
+     "ja": "カゴメ格子；カゴメ層；カゴメ磁性体",
+     "reading": "こうし；そう；じせいたい",
+     "note": "ja Wikipedia カゴメ格子",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "pyrochlore (network); breathing pyrochlore",
+     "ja": "パイロクロア（格子）；ブリージング・パイロクロア",
+     "reading": "",
+     "note": "ja Wikipedia パイロクロア",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "spin ice",
+     "ja": "スピンアイス",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "perovskite; hexagonal perovskite",
+     "ja": "ペロブスカイト；六方晶ペロブスカイト",
+     "reading": "ろっぽうしょう",
+     "note": "ja Wikipedia ペロブスカイト構造",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "rock salt; zinc blende; cadmium iodide; fluorite; CsCl",
+     "ja": "岩塩型；閃亜鉛鉱型；ヨウ化カドミウム型；蛍石型；塩化セシウム型",
+     "reading": "がんえんがた；せんあえんこうがた；ほたるいしがた",
+     "note": "ja Wikipedia 閃亜鉛鉱 etc.",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "Laves phases",
+     "ja": "ラーベス相",
+     "reading": "そう",
+     "note": "ja Wikipedia",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "Frank–Kasper phases; A15",
+     "ja": "フランク・カスパー相；A15 構造",
+     "reading": "",
+     "note": "",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "Tsai cluster; Bergman cluster; Mackay icosahedron",
+     "ja": "ツァイ型クラスター；バーグマン・クラスター；マッカイ正二十面体",
+     "reading": "",
+     "note": "",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "coordination icosahedron (Z12)",
+     "ja": "配位二十面体",
+     "reading": "はいいにじゅうめんたい",
+     "note": "",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "silicon carbide (SiC); silicon; germanium; cerium; tin",
+     "ja": "炭化ケイ素；ケイ素；ゲルマニウム；セリウム；スズ",
+     "reading": "たんかケイそ",
+     "note": "ja Wikipedia",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "diamond; hexagonal diamond (lonsdaleite)",
+     "ja": "ダイヤモンド；六方晶ダイヤモンド（ロンズデーライト）",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "ice; stacking-disordered ice",
+     "ja": "氷；積層不規則氷",
+     "reading": "こおり；せきそうふきそくごおり",
+     "note": "",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "nanowire; band gap; band offset; semiconductor",
+     "ja": "ナノワイヤ；バンドギャップ；バンドオフセット；半導体",
+     "reading": "はんどうたい",
+     "note": "ja Wikipedia",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "hydride (titanium, zirconium); hydrogen site",
+     "ja": "水素化物（チタン、ジルコニウム）；水素サイト",
+     "reading": "すいそかぶつ",
+     "note": "",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "oxide; layered battery cathode",
+     "ja": "酸化物；層状電池正極",
+     "reading": "さんかぶつ；そうじょうでんちせいきょく",
+     "note": "",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "entropy; hard spheres; colloid",
+     "ja": "エントロピー；剛体球；コロイド",
+     "reading": "ごうたいきゅう",
+     "note": "",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "eclipsed bonds",
+     "ja": "重なり型の結合",
+     "reading": "かさなりがた",
+     "note": "",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "alloy",
+     "ja": "合金",
+     "reading": "ごうきん",
+     "note": "",
+     "section": "Space-filling and crystallography"
+    },
+    {
+     "en": "atomism; atoms and the void",
+     "ja": "原子論；原子と空虚",
+     "reading": "げんしろん；くうきょ",
+     "note": "ja Wikipedia 原子論",
+     "section": "Physics and philosophy (introduction)"
+    },
+    {
+     "en": "loop quantum gravity",
+     "ja": "ループ量子重力理論",
+     "reading": "ループりょうしじゅうりょくりろん",
+     "note": "ja Wikipedia",
+     "section": "Physics and philosophy (introduction)"
+    },
+    {
+     "en": "causal sets",
+     "ja": "因果集合",
+     "reading": "いんがしゅうごう",
+     "note": "ja Wikipedia",
+     "section": "Physics and philosophy (introduction)"
+    },
+    {
+     "en": "energy comes in quanta (Planck)",
+     "ja": "エネルギーは量子として現れる",
+     "reading": "",
+     "note": "",
+     "section": "Physics and philosophy (introduction)"
+    },
+    {
+     "en": "Nobel Prize",
+     "ja": "ノーベル賞",
+     "reading": "ノーベルしょう",
+     "note": "",
+     "section": "Physics and philosophy (introduction)"
+    },
+    {
+     "en": "Fibonacci numbers",
+     "ja": "フィボナッチ数",
+     "reading": "フィボナッチすう",
+     "note": "ja Wikipedia",
+     "section": "Numbers and sequences"
+    },
+    {
+     "en": "Fibonacci chain / word / stacking",
+     "ja": "フィボナッチ列 / フィボナッチ積層",
+     "reading": "れつ",
+     "note": "ja Wikipedia フィボナッチ列",
+     "section": "Numbers and sequences"
+    },
+    {
+     "en": "golden section / golden ratio",
+     "ja": "黄金分割 / 黄金比",
+     "reading": "おうごんぶんかつ／おうごんひ",
+     "note": "",
+     "section": "Numbers and sequences"
+    }
+   ]
+  },
+  {
+   "key": "people",
+   "title": "People, works and places named in the running text",
+   "entries": [
+    {
+     "en": "Plato; Timaeus",
+     "ja": "プラトン；『ティマイオス』",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": ""
+    },
+    {
+     "en": "Aristotle; On the Heavens",
+     "ja": "アリストテレス；『天体論』",
+     "reading": "てんたいろん",
+     "note": "ja Wikipedia 天体論 (アリストテレス)",
+     "section": ""
+    },
+    {
+     "en": "Leucippus; Democritus; Lucretius, On the Nature of Things",
+     "ja": "レウキッポス；デモクリトス；ルクレティウス『事物の本性について』",
+     "reading": "じぶつのほんせいについて",
+     "note": "ja Wikipedia",
+     "section": ""
+    },
+    {
+     "en": "Euclid; Elements",
+     "ja": "ユークリッド（エウクレイデス）；『原論』",
+     "reading": "げんろん",
+     "note": "ja Wikipedia エウクレイデス, ユークリッド原論",
+     "section": ""
+    },
+    {
+     "en": "Hypsicles; Heron; Theaetetus of Athens",
+     "ja": "ヒュプシクレス；ヘロン；アテナイのテアイテトス",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "en": "Johannes Kepler; Mysterium Cosmographicum; On the Six-Cornered Snowflake",
+     "ja": "ヨハネス・ケプラー；『宇宙の神秘』；『六角形の雪について』",
+     "reading": "うちゅうのしんぴ；ろっかっけいのゆき",
+     "note": "ja Wikipedia ヨハネス・ケプラー",
+     "section": ""
+    },
+    {
+     "en": "Luca Pacioli; Louis Poinsot",
+     "ja": "ルカ・パチョーリ；ルイ・ポワンソ",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": ""
+    },
+    {
+     "en": "Max Planck; Dan Shechtman",
+     "ja": "マックス・プランク；ダニエル・シェヒトマン",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": ""
+    },
+    {
+     "en": "Carlo Rovelli; Lee Smolin",
+     "ja": "カルロ・ロヴェッリ；リー・スモーリン",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "en": "Alicia Boole Stott",
+     "ja": "アリシア・ブール・ストット",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": ""
+    },
+    {
+     "en": "Penrose; Fibonacci; Frank; Kasper; Mackay",
+     "ja": "ペンローズ；フィボナッチ；フランク；カスパー；マッカイ",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "en": "Fedorov; Coxeter; Conway; Hart; Gray; Koca; Lalvani; Kabai; Odom",
+     "ja": "フョードロフ；コクセター；コンウェイ；ハート；グレイ；コジャ；ラルヴァーニ；カバイ；オドム",
+     "reading": "",
+     "note": "in running text only; reference lists stay in Latin",
+     "section": ""
+    },
+    {
+     "en": "Buckminster Fuller; Jitterbug",
+     "ja": "バックミンスター・フラー；ジッターバグ",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": ""
+    },
+    {
+     "en": "Júlia Pimentel",
+     "ja": "ジュリア・ピメンテル",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "en": "Kenshiro Abbe",
+     "ja": "阿部謙四郎",
+     "reading": "あべけんしろう",
+     "note": "ja Wikipedia",
+     "section": ""
+    },
+    {
+     "en": "Kōbō Daishi Kūkai",
+     "ja": "弘法大師空海",
+     "reading": "こうぼうだいしくうかい",
+     "note": "ja Wikipedia 空海",
+     "section": ""
+    },
+    {
+     "en": "Takaosan Jingo-ji, Kyoto",
+     "ja": "京都・高雄山神護寺",
+     "reading": "たかおさんじんごじ",
+     "note": "ja Wikipedia 神護寺",
+     "section": ""
+    },
+    {
+     "en": "Kyoto Municipal Museum of Art",
+     "ja": "京都市美術館（京都市京セラ美術館）",
+     "reading": "",
+     "note": "the museum's present name includes 京セラ",
+     "section": ""
+    },
+    {
+     "en": "Insho Domoto Museum of Fine Arts",
+     "ja": "京都府立堂本印象美術館",
+     "reading": "どうもといんしょう",
+     "note": "",
+     "section": ""
+    },
+    {
+     "en": "Kyoto Botanical Garden",
+     "ja": "京都府立植物園",
+     "reading": "しょくぶつえん",
+     "note": "ja Wikipedia",
+     "section": ""
+    },
+    {
+     "en": "Kansho Exhibition",
+     "ja": "カンショウ展",
+     "reading": "",
+     "note": "kanji of the official title to be given by DICTO",
+     "section": ""
+    },
+    {
+     "en": "Kyoto Takasegawa Art Festival",
+     "ja": "京都高瀬川アートフェスティバル",
+     "reading": "たかせがわ",
+     "note": "official Japanese title to be confirmed by DICTO",
+     "section": ""
+    },
+    {
+     "en": "Interdependent Origination III (exhibition, 2025)",
+     "ja": "「縁起 III」",
+     "reading": "えんぎ",
+     "note": "Interdependent Origination = 縁起; official title to be confirmed by DICTO",
+     "section": ""
+    },
+    {
+     "en": "City and Guilds of London Art School",
+     "ja": "シティ・アンド・ギルズ・オブ・ロンドン・アート・スクール",
+     "reading": "",
+     "note": "",
+     "section": ""
+    },
+    {
+     "en": "St James's Palace; Somerset House",
+     "ja": "セント・ジェームズ宮殿；サマセット・ハウス",
+     "reading": "きゅうでん",
+     "note": "ja Wikipedia",
+     "section": ""
+    },
+    {
+     "en": "Civil Service Rifles War Memorial",
+     "ja": "公務員ライフル連隊戦争記念碑",
+     "reading": "こうむいんライフルれんたいせんそうきねんひ",
+     "note": "",
+     "section": ""
+    },
+    {
+     "en": "architectural stonecarver; Buddhist statuary; restoration",
+     "ja": "建築石彫師；仏像彫刻；修復",
+     "reading": "けんちくせきちょうし；ぶつぞうちょうこく；しゅうふく",
+     "note": "",
+     "section": ""
+    },
+    {
+     "en": "six Japanese design registrations",
+     "ja": "意匠登録6件",
+     "reading": "いしょうとうろく",
+     "note": "",
+     "section": ""
+    },
+    {
+     "en": "Cleopatra's Needle (London)",
+     "ja": "クレオパトラの針（ロンドン）",
+     "reading": "はり",
+     "note": "",
+     "section": ""
+    },
+    {
+     "en": "Mount Fuji; fuji flower (Japanese wisteria)",
+     "ja": "富士山；藤（ノダフジ）",
+     "reading": "ふじさん；ふじ",
+     "note": "ja Wikipedia フジ (植物)",
+     "section": ""
+    },
+    {
+     "en": "Alice's Adventures in Wonderland; Through the Looking-Glass",
+     "ja": "『不思議の国のアリス』；『鏡の国のアリス』",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": ""
+    },
+    {
+     "en": "Samson and Delilah; David and Goliath; Janus; Ganesha",
+     "ja": "サムソンとデリラ；ダビデとゴリアテ；ヤヌス；ガネーシャ",
+     "reading": "",
+     "note": "ja Wikipedia",
+     "section": ""
+    }
+   ]
+  }
+ ],
+ "confirm": [
+  {
+   "item": "Credit line",
+   "pick": "「作家名」 for artist name (alt. アーティスト名) and ベイカー for Baker (alt. ベーカー)."
+  },
+  {
+   "item": "Chapter words",
+   "pick": "原子 · 結合 · 殻 · サイクル · 積層 · 四次元 (alt. アトム, シェル, 循環)."
+  },
+  {
+   "item": "Pieces",
+   "pick": "ピース for the book's central word (alt. 断片, 部品)."
+  },
+  {
+   "item": "Hexagonality",
+   "pick": "六方性 (h) for hexagonality, so the law is 「六方性の法則」; no fixed Japanese term was found (alt. 六方晶性, ヘキサゴナリティ)."
+  },
+  {
+   "item": "Rule and Law",
+   "pick": "規則 for Rule (半分の規則, 入れ替えの規則) and 法則 for Law, as in the English."
+  },
+  {
+   "item": "Greek names",
+   "pick": "katakana for DICTO's Greek coinages (オグドエコンタヘドロン, ヘカトディヘドロン …) with the face count (八十面体, 百二面体) as a gloss at first use, not as the name."
+  },
+  {
+   "item": "Buddhist titles",
+   "pick": "業の連鎖, 法の球, 菩提の種, 金剛乗; Buddhist piece names 金剛杵, 仏塔, 傘蓋, 印相 (alt. カルマの連鎖, ダルマの球, ヴァジュラ, ストゥーパ)."
+  },
+  {
+   "item": "Kyushindo",
+   "pick": "求心道, the form in Japanese Wikipedia's article on 阿部謙四郎; Otani's reading of kyū as 'sphere' would give 球心道."
+  },
+  {
+   "item": "Capital names",
+   "pick": "AXE, CLEO, FUJI, VAJRA, UNITY, VENUS, DESHI and ATOM kept in Latin capitals with a katakana reading; and is DESHI meant as 弟子?"
+  },
+  {
+   "item": "Unborn",
+   "pick": "アンボーン (alt. 不生 or 無生, the Buddhist 'unborn'; the local model's choice was 無生)."
+  },
+  {
+   "item": "Monkey Staff",
+   "pick": "モンキー・スタッフ (alt. 如意棒, the Monkey King's staff)."
+  },
+  {
+   "item": "Common-noun names",
+   "pick": "translated: 盾 (Shield), 提督帽 (Admiral Cap), 宝冠 (Diadem), 冠の宝珠 (Crown Jewel), 内なる目 (Inner Eye), 楔 · 針 (Dodeca-13 pieces); the other option is katakana for all."
+  },
+  {
+   "item": "Lotus",
+   "pick": "蓮の実 for the Lotus seed but ロータス in the Jewel family (ロータス・ジュエル, ロータス・ジュエル・アックス)."
+  },
+  {
+   "item": "Lahdeli",
+   "pick": "ラデリ, the syllables of デリラ swapped as Sonsam = ソンサム swaps サムソン (alt. ラーデリ)."
+  },
+  {
+   "item": "Exhibitions",
+   "pick": "the official Japanese titles of the Kansho Exhibition, the Kyoto Takasegawa Art Festival and Interdependent Origination III (縁起 III?)."
+  }
+ ],
+ "sources_checked": [
+  "Japanese Wikipedia, titles reached through the English Wikipedia language links (about 230 English articles queried on 31 October 2026), and these Japanese pages read in full or in part: 半正多面体 (for 半正多面体 vs 準正多面体), 星型正多面体, 正六百胞体, 空間充填, グノモン, 双対多面体, 球充填, 切頂五胞体, 多胞体, 菱形十二面体第2種, 正五角錐反柱, 炭化ケイ素, 阿部謙四郎.",
+  "Existence checks on Japanese Wikipedia for about 160 candidate titles (e.g. 準正多面体 redirects to 半正多面体; no pages for 菱形六十面体, 黄金菱面体, 600胞体, 結晶多形, 四面体空隙).",
+  "Mitsubishi Electric, SiC lecture series 3, 『SiC の結晶構造とエネルギーバンド』 (積層, 積層順, ポリタイプ, 積層欠陥, 最稠密).",
+  "Kyoto University (Tsuiki), notes on the truncated 600-cell model (切頂六百胞体).",
+  "Web searches (31 October 2026): 「六方晶性」 ポリタイプ; 「六方性」 SiC; 「ヘキサゴナリティ」 OR 「六方晶度」; SiC 4H 六方晶性 50%; 阿部謙四郎 求心道; rectified 600-cell in Japanese. None gave a fixed Japanese word for hexagonality or for rectified.",
+  "English Wikipedia, Kyūshindō and Kenshiro Abbe (Otani's reading; the three principles).",
+  "Second opinion: the local model (Qwen3.5-35B workhorse on dicto-big-brother; gpt-oss-120b was not running as a service) on 26 items; taken where it agreed with the checked usage (業の連鎖, 法の球, 菩提の種), set aside where it was wrong (e.g. 余角形 for gnomon, 整流 for rectified)."
+ ]
+}
