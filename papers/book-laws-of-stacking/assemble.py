@@ -140,7 +140,7 @@ h1.chapter{break-before:page;font-size:19pt;margin-top:0} p.from{font-size:8.5pt
 .part{break-before:page;height:200mm;display:flex;align-items:center;justify-content:center} h1.partt{font-size:26pt;color:#b8962e}
 table.toc td{border-bottom:1px dotted #ccc;padding:1.2mm 2mm} .titlepage{height:240mm;display:flex;flex-direction:column;justify-content:center}
 .titlepage h1{font-size:30pt} section.epi,section.app{break-before:page} section.app h3{font-size:10pt;margin-top:5mm} section.app p,section.app li{font-size:8.6pt}
-figure img{width:100%;display:block} figure.mid{width:auto}
+figure img{width:100%;display:block} figure.mid{width:auto} table.rules{font-size:8.6pt;margin:2mm 0 3mm} table.rules th{text-align:left} h2,h3{break-after:avoid}
 section.plate{break-before:page;break-inside:avoid} section.plate>img{display:block;width:180mm;height:200mm;margin:0 auto}
 .pcap h2{margin:3mm 0 1mm;font-size:13pt} .pcap p.pkey{font-size:8.6pt;color:#555;margin:0 0 1.5mm} .pcap ul{margin:0;padding-left:5mm} .pcap li{font-size:8.8pt;line-height:1.32;margin:0 0 .6mm}
 /* DICTO 10-29: neutral sans-serif for the whole book (the papers' DejaVu Serif read as Times-like) */

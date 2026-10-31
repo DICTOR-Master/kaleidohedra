@@ -1,5 +1,6 @@
-# v7 (DICTO 2026-11-01, "Yup sounds good"): the subtitle line WITH THE WINDOW LAW, THE RULE OF HALVES AND THE SWAP RULE
+# v7 (DICTO 2026-11-01, "Yup sounds good"): the subtitle line WITH THE WINDOW LAW, THE RULE OF HALVES & THE SWAP RULE (ampersand as on the Alicia cover, DICTO 2026-11-01)
 # in smaller letters under the title, otherwise exactly cover_title.py; writes hexoct-cover-front-v7.png (book PDF, Zenodo, site).
+# Colours (DICTO 2026-11-01, as the other covers): HEXOCT wordmark unchanged; title line gold, subtitle teal, DICTO violet.
 # The KDP cover (kdp_cover.py, hexoct-cover-front.png) is untouched: KDP is on hold.
 # Book cover title panel (DICTO 10-29: "bigger text on the front ... same style letters but no LED breaks"): DSEG14 Classic
 # letters with the gaps between segments closed (morphological closing per letter), lit as on the HexOct square: H gold,
@@ -8,6 +9,7 @@
 import numpy as np
 from scipy import ndimage
 from PIL import Image, ImageDraw, ImageFont
+TEAL = (43, 179, 163)   # the tiles' teal (hexoct_square.py MATCH), also the Alicia cover's TEAL
 GROUND = (20, 15, 11); GOLD = (217, 165, 33); VIOLET = (180, 138, 224); WHITE = (255, 255, 255)
 sq = Image.open('../hexoct-square.png').convert('RGB'); N = sq.width
 def glyph(ch, size, col):
@@ -50,13 +52,14 @@ def paste(canvas, img, cx, y):
     rgb, a = img; h, w = a.shape; x = int(cx - w / 2)
     c = canvas[y:y + h, x:x + w]; canvas[y:y + h, x:x + w] = c * (1 - a[..., None]) + rgb * a[..., None]; return y + h
 big = word('HEXOCT', int(N * 0.11), lambda ch: GOLD if ch == 'H' else VIOLET if ch == 'C' else WHITE, big=(0, 3))
-sub = word('THE HEXAGONALITY LAW', int(N * 0.042), lambda ch: WHITE, big=(0, 4, 17))   # DICTO 10-30: book retitled HexOct: The Hexagonality Law
-sub2 = [word(t, int(N * 0.028), lambda ch: WHITE) for t in ('WITH THE WINDOW LAW, THE RULE OF HALVES', 'AND THE SWAP RULE')]
-by = word('* DICTO *', int(N * 0.042), lambda ch: WHITE, big=(0, 2, 3, 4, 5, 6, 8))   # every letter of DICTO is an initial (DICTO)
+sub = word('THE HEXAGONALITY LAW', int(N * 0.042), lambda ch: GOLD, big=(0, 4, 17))   # DICTO 10-30: book retitled HexOct: The Hexagonality Law
+sub2 = [word(t, int(N * 0.032), lambda ch: TEAL) for t in ('WITH THE WINDOW LAW, THE RULE OF HALVES', '& THE SWAP RULE')]
+by = word('* DICTO *', int(N * 0.042), lambda ch: VIOLET, big=(0, 2, 3, 4, 5, 6, 8))   # every letter of DICTO is an initial (DICTO)
 H = big[1].shape[0] + sub[1].shape[0] + sum(w_[1].shape[0] for w_ in sub2) + by[1].shape[0] + int(N * 0.21)
 panel = np.ones((H, N, 3)) * np.array(GROUND, float)
 y = paste(panel, big, N / 2, int(N * 0.02)); y = paste(panel, sub, N / 2, y + int(N * 0.05))
 for w_ in sub2: y = paste(panel, w_, N / 2, y + int(N * 0.018))
 paste(panel, by, N / 2, y + int(N * 0.035))
 out = Image.new('RGB', (N, N + H), GROUND); out.paste(sq, (0, 0)); out.paste(Image.fromarray(np.clip(panel, 0, 255).astype(np.uint8)), (0, N))
+print('subtitle widths',[w_[1].shape[1] for w_ in sub2],'of',N)
 out.save('hexoct-cover-front-v7.png'); print('ok', out.size)
