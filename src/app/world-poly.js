@@ -114,7 +114,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       if (data.view?.hints === false) view.hints = false;
       view.bestFits = data.view?.bestFits === true;
       view.kit = KITS13[data.view?.kit] ? data.view.kit : null;
-      if (data.view?.rcp && typeof data.view.rcp.target === 'string') view.rcp = { target: data.view.rcp.target, n: Math.max(1, data.view.rcp.n | 0), open: data.view.rcp.open !== false, coords: !!data.view.rcp.coords };
+      if (data.view?.rcp && typeof data.view.rcp.target === 'string') view.rcp = { target: data.view.rcp.target, n: Math.max(1, data.view.rcp.n | 0), open: data.view.rcp.open !== false, coords: !!data.view.rcp.coords, ...(data.view.rcp.dicto === true ? { dicto: true } : {}) };
       if (data.version === undefined) save(); // the old site's build, now kept here
     }
   } catch { /* corrupt or blocked storage: start empty */ }
@@ -813,6 +813,9 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   // rcpBuild): shell 1 a cell at a time, then a whole shell per tap; Open shows shell 1 as true copies of
   // the seed on its faces, Closed their real projected positions (locked once shell 2 is built, which is
   // anchored there); RCP-Coordinates marks each cell's own 4D coordinate. Shells in their own colours.
+  // RCP v4 (DICTO's adjusted RCP, DICTO 2026-10-31, to try out beside the RCP view): the eye beyond the far side instead of
+  // on the seed's side (krp-core eyeSide 'far'), the seed still at its true size, so each shell opens out a
+  // little larger than the one before; saved as view.rcp.dicto (absent when off).
   const rcpRoot = () => (nodes[0] && FOUR_D_SHAPE_PARAMS[nodes[0].shape] ? nodes[0] : null);
   const rcpTargets = (id) => rcpTargetOptions((FOUR_D_SHAPE_PARAMS[id] ?? []).map((o) => o.name));
   const complexCache = new Map();
@@ -820,8 +823,8 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     const root = rcpRoot();
     if (!root || !view.rcp) return null;
     if (!rcpTargets(root.shape).includes(view.rcp.target)) view.rcp.target = rcpTargets(root.shape)[0];
-    const k = `${root.shape}|${view.rcp.target}`;
-    if (!complexCache.has(k)) complexCache.set(k, buildRcpComplex(root.shape, view.rcp.target));
+    const eyeSide = view.rcp.dicto ? 'far' : 'seed', k = `${root.shape}|${view.rcp.target}|${eyeSide}`;
+    if (!complexCache.has(k)) complexCache.set(k, buildRcpComplex(root.shape, view.rcp.target, { eyeSide }));
     return complexCache.get(k);
   }
   // The build order: shell by shell, cell by cell; n cells built (cell 0 is the root itself).
@@ -900,6 +903,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     const locked = shell >= 2;
     return `<div class="poly-golden"><span>${t('poly.rcp.title', L)}</span>
       <select data-rcp-target aria-label="${t('poly.rcp.target', L)}">${targets.map((x) => `<option value="${x}"${x === view.rcp.target ? ' selected' : ''}>${x}</option>`).join('')}</select>
+      <button type="button" data-rcp-dicto aria-pressed="${!!view.rcp.dicto}" title="${t('poly.rcp.dicto.title', L)}">${t('poly.rcp.dicto', L)}</button>
       <button type="button" data-rcp-next${done ? ' disabled' : ''}>${next}</button>
       <button type="button" data-rcp-back${n <= 1 ? ' disabled' : ''}>${t('poly.rcp.remove', L)}</button>
       <button type="button" data-rcp-open${locked ? ' disabled' : ''} title="${locked ? t('poly.rcp.locked', L) : ''}">${view.rcp.open && !locked ? t('poly.rcp.open', L) : t('poly.rcp.closed', L)}</button>
@@ -918,8 +922,18 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       view.rcp.n = shell >= 2 ? order.filter((c) => c.shell < shell).length : Math.max(1, view.rcp.n - 1);
     } else if ('rcpOpen' in b.dataset) view.rcp.open = !view.rcp.open;
     else if ('rcpCoords' in b.dataset) view.rcp.coords = !view.rcp.coords;
+    else if ('rcpDicto' in b.dataset) { if (view.rcp.dicto) delete view.rcp.dicto; else view.rcp.dicto = true; }
     else return false;
     save(); rebuild(); renderPanel();
+    // RCP v4 grows to 1.5× the seed's size at the far side, past the 4D build's usual frame: keep the built cells in view (the
+    // frame only widens, so turning RCP v4 off shows the RCP view in the same frame, to compare).
+    if (view.rcp?.dicto) {
+      const cxNow = cx(), root = rcpRoot(), seedR = Math.max(...POLYHEDRA[root.shape].vertices.map((v) => Math.hypot(...v)));
+      const q = new THREE.Quaternion(...root.transform.quaternion), p0 = new THREE.Vector3(...root.transform.position);
+      const built = rcpOrder(cxNow).slice(0, Math.min(view.rcp.n, cxNow.cells.length));
+      const r = Math.max(2.2 * seedR, 1.02 * Math.max(...built.flatMap((c) => c.vertices3D.map((v) => new THREE.Vector3(...v).applyQuaternion(q).add(p0).length()))));
+      if (r > fittedRadius) { fittedRadius = r; fitView?.(r); }
+    }
     return true;
   }
 
