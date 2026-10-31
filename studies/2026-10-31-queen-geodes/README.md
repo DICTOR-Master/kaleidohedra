@@ -69,8 +69,21 @@ Counts drawn are in `out/geodes.json`.
   one whole dodecahedron. Other filled shells in the deep ramps per shell, cut faces 28 % lighter. See-through edges only for the
   shells (the core's own hidden edges hatched its gaps). Sepia line cage unchanged.
 
+## Round 4 (DICTO: "a stray black line cutting a dodecahedron in half on the flat plane"; "sparkles too regular")
+- **The line** (Red Queen da Vinci, on the cut face just under the core): checked edge by edge, every line on every cut face bounds
+  the cut faces of two different cells; no cell's cut face is split, no face lies in the plane. The line was a true boundary between
+  mirror-image cells (layer 1: 25|34 and 26|33; layer 2: 10|76 and 13|73) along the line where the cut plane meets a mirror plane of
+  the Red Queen. The cut stood nearly square to that mirror, so each pair left almost mirror-equal cut faces (areas 0.158 / 0.157)
+  that read as one dodecahedron halved by a stray line. Fix: the Red cut tipped more upward (normal 0.5 view + 0.3 right + 1.0 up);
+  the pairs now differ (0.179 / 0.116) and read as two cells. Also hardened: section and core edges use a tight depth tolerance
+  (1.5 px instead of 8) and the core's edges are drawn only above the cut plane, so no buried edge can show through a cut face.
+- **Glints** irregular and gem-like: each its own size (15 % large, 35 % medium, 50 % small), a random turn, rays of unequal length
+  (a long pair and a short pair, or six mixed rays), tapering to points, a small soft bright centre, some faint (opacity 0.45-1);
+  fixed seed per picture. Up to 40 per geode, 26 per da Vinci.
+
 ## Unsure
 - The geodes have no gold core: the hollow takes it out (the core is in the da Vinci sheets).
 - Round 2: the White geode has 12 glints, not a few dozen; more would need closer spacing (busier).
+- Round 4: the tipped Red cut leaves a small notch of paper visible in a crevice at the lower left of the section (the outer layer is drawn as lines only).
 - Round 3: in the White da Vinci the pale core is close in tone to the near-white inner cut faces; it reads by its height, the fracture gaps and its glints.
 - The sheet is 1798 × 1984 px to stay ≤ 2000 px. The single pictures are 2000 px square.

@@ -119,6 +119,18 @@ def poly_edges(polys):
     return [np.array([P[i], P[(i + 1) % len(P)]]) for P in polys for i in range(len(P))]
 
 
+def above(segs, n, d=0.0):
+    """the parts of segments on the side x.n >= d."""
+    out = []
+    for E in segs:
+        a, b = float(E[0] @ n) - d, float(E[1] @ n) - d
+        if a >= 0 and b >= 0: out.append(E)
+        elif a > 0 or b > 0:
+            t = a / (a - b); m = E[0] + (E[1] - E[0]) * t
+            out.append(np.array([E[0], m]) if a > 0 else np.array([m, E[1]]))
+    return out
+
+
 def dedupe(segs):
     seen, out = set(), []
     for E in segs:
@@ -236,12 +248,12 @@ class Scene:
             zmin = np.minimum(zmin, Z[np.clip(yi + dy, 0, N - 1), np.clip(xi + dx, 0, N - 1)])
         return zmin
 
-    def edges(self, segs, color, w, hidden=False, alpha=1.0, through=None, depth=None):
+    def edges(self, segs, color, w, hidden=False, alpha=1.0, through=None, depth=None, tol=None):
         """stamp edges. Visible parts by default; hidden=True draws only the parts behind a face, and only where that face is
         in `through` (a bool per poly: the crystal faces one sees through) and no deeper than `depth` (final px) behind it.
         w: width in final px, or (near, far) for depth-graded lines. alpha < 1 blends the ink over what is there."""
         if not segs: return
-        N = self.N; eps = 0.004 * N
+        N = self.N; eps = 0.004 * N if tol is None else tol * SS        # tol: depth tolerance in final px
         P = self._samples(segs)
         xi = np.clip(P[:, 0].astype(int), 0, N - 1); yi = np.clip(P[:, 1].astype(int), 0, N - 1)
         zf = self._front_z(xi, yi)
@@ -269,8 +281,8 @@ class Scene:
                         M[np.clip(yi[s] + dy, 0, N - 1), np.clip(xi[s] + dx, 0, N - 1)] = True
         self.img[M] = self.img[M] * (1 - alpha) + np.asarray(color) * alpha
 
-    def glints(self, which, count, size, outline=None, spacing=0.045):
-        """crisp four-pointed glints at the brightest visible corners of the polys in `which`: a corner's brightness is the
+    def glints(self, which, count, size, outline=None, spacing=0.035, seed=0):
+        """irregular gem glints at the brightest visible corners of the polys in `which`: a corner's brightness is the
         highest mirror highlight among its faces; corners are taken brightest first, at least `spacing` x picture apart."""
         N = self.N; best = {}
         for k in np.nonzero(which)[0]:
@@ -289,18 +301,46 @@ class Scene:
             if np.count_nonzero(which[ids[ids >= 0]]) < 0.4 * len(ids): continue   # a corner shown mostly on stone or paper
             if any((x - a) ** 2 + (y - b) ** 2 < (spacing * N) ** 2 for a, b, _ in chosen): continue
             chosen.append((x, y, s))
-        mask = Image.new("L", (N, N), 0); dm = ImageDraw.Draw(mask)
-        omask = Image.new("L", (N, N), 0); do = ImageDraw.Draw(omask)
+        # irregular gem glints (DICTO: not "coordinate crosses"): each its own size (few large, many small), turned to a random
+        # angle, rays of unequal length (a long pair and a short pair, or six rays of mixed length), tapering to a point, a small
+        # soft bright centre; some faint. A fixed seed per picture keeps it reproducible.
+        rng = np.random.default_rng(seed)
+        A = np.zeros((N, N), np.float32); O = np.zeros((N, N), np.float32)
         for x, y, s in chosen:
-            L = size * SS * (0.6 + 0.4 * s); wst = L * 0.10
-            star = lambda L, wst: [(x + L, y), (x + wst, y + wst), (x, y + L), (x - wst, y + wst), (x - L, y),
-                                   (x - wst, y - wst), (x, y - L), (x + wst, y - wst)]
-            if outline is not None: do.polygon(star(L + 2.2 * SS, wst + 1.6 * SS), fill=255)
-            dm.polygon(star(L, wst), fill=255)
+            u = rng.random()
+            f, al = ((rng.uniform(0.8, 1.0), 1.0) if u < 0.15 else (rng.uniform(0.45, 0.7), rng.uniform(0.85, 1.0)) if u < 0.5
+                     else (rng.uniform(0.2, 0.4), rng.uniform(0.45, 0.9)))
+            L = size * SS * f * (0.7 + 0.3 * s)
+            a0 = rng.uniform(0, np.pi)
+            if rng.random() < 0.65:                                  # four rays: a long pair and a short pair
+                sh = rng.uniform(0.3, 0.6)
+                rays = [(a0 + k * np.pi / 2, L * (1.0 if k % 2 == 0 else sh)) for k in range(4)]
+            else:                                                    # six rays of mixed length
+                rays = [(a0 + k * np.pi / 3 + rng.uniform(-0.12, 0.12), L * (1.0 if k % 3 == 0 else rng.uniform(0.25, 0.65)))
+                        for k in range(6)]
+            R = int(L + 4 * SS) + 2
+            x0, y0 = int(x) - R, int(y) - R
+            pm = Image.new("L", (2 * R + 1, 2 * R + 1), 0); dp = ImageDraw.Draw(pm)
+            po = Image.new("L", (2 * R + 1, 2 * R + 1), 0); do = ImageDraw.Draw(po)
+            cx, cy = x - x0, y - y0
+            for ang, ln in rays:
+                w = max(1.3 * SS, 0.075 * ln)
+                d = np.array([np.cos(ang), np.sin(ang)]); q = np.array([-d[1], d[0]])
+                tri = lambda ln, w: [tuple(np.array([cx, cy]) + q * w), tuple(np.array([cx, cy]) + d * ln),
+                                     tuple(np.array([cx, cy]) - q * w)]
+                if outline is not None: do.polygon(tri(ln + 1.8 * SS, w + 1.2 * SS), fill=255)
+                dp.polygon(tri(ln, w), fill=255)
+            yy, xx = np.mgrid[0:2 * R + 1, 0:2 * R + 1]
+            rc = max(1.5 * SS, 0.11 * L)
+            core = np.exp(-((xx - cx) ** 2 + (yy - cy) ** 2) / (2 * rc ** 2))     # the small soft bright centre
+            m = np.maximum(np.asarray(pm, np.float32) / 255, core) * al
+            o = np.asarray(po, np.float32) / 255 * al * 0.85
+            ys, xs = slice(max(0, y0), min(N, y0 + 2 * R + 1)), slice(max(0, x0), min(N, x0 + 2 * R + 1))
+            sy, sx = slice(ys.start - y0, ys.stop - y0), slice(xs.start - x0, xs.stop - x0)
+            A[ys, xs] = np.maximum(A[ys, xs], m[sy, sx]); O[ys, xs] = np.maximum(O[ys, xs], o[sy, sx])
         if outline is not None:
-            o = np.asarray(omask, np.float32)[..., None] / 255
-            self.img = self.img * (1 - o) + np.asarray(outline) * o
-        m = np.asarray(mask, np.float32)[..., None] / 255
+            o = O[..., None]; self.img = self.img * (1 - o) + np.asarray(outline) * o
+        m = A[..., None]
         self.img = self.img * (1 - m) + np.array([1.0, 1.0, 1.0]) * m
         return len(chosen)
 
@@ -357,9 +397,9 @@ def geode(name, cellf, groups, cols, rind, crystals, axis, sink, tilt, off, path
     sc = Scene(polys, pc, sh, frame(fwd, n), DARK, front=list(range(ncut)))
     segs_c = dedupe(segs_c)
     sc.edges(segs_c, [1, 1, 1], 1.1, hidden=True, alpha=0.42, through=gem, depth=160)   # seen through the crystal in front
-    sc.edges(dedupe(segs_r), EDGE_ROCK, 2.0)
-    sc.edges(segs_c, EDGE, 1.8)
-    ng = sc.glints(gem, 32, 26, outline=glint_ink)
+    sc.edges(dedupe(segs_r), EDGE_ROCK, 2.0, tol=1.5)
+    sc.edges(segs_c, EDGE, 1.8, tol=1.5)
+    ng = sc.glints(gem, 40, 34, outline=glint_ink, seed=len(name) * 101 + 1)
     finish(sc.img, path)
     facts[name + "-geode"] = {"rind_groups": rind, "crystal_groups": crystals, "cells_drawn": kept, "sink": sink,
                               "tilt_from_cut_normal_deg": tilt, "cut_normal_off_fivefold_deg": off, "polygons": len(polys),
@@ -406,13 +446,17 @@ def davinci(name, cellf, groups, core_col, cols, glint_ink, lines, filled, axis,
             if V.mean(0) @ Rm[2] > 0: continue
             nl[g] += 1; segs_l += poly_edges([V[f] for f in F])
     segs_l = dedupe(segs_l); segs_f = dedupe(segs_f); segs_core = dedupe(segs_core)
+    # the core's edges below the cut plane are buried in the section; within the visibility tolerance their stretches just under
+    # the cut face showed through it as a stray dark line (DICTO round 3), so only the parts above the plane are drawn
+    segs_core = above(segs_core, nc)
     gem = np.ones(len(polys), bool)                     # core and shells are all crystal
     sc = Scene(polys, pc, sh, Rm, PAPER, fill=0.80, front=list(range(ncore)), extra=segs_l)
     sc.edges(segs_f, SEPIA_FILL, 1.0, hidden=True, alpha=0.28, through=gem, depth=90)   # not the core's: they hatch its gaps
-    sc.edges(segs_f, SEPIA_FILL, 1.5)
-    sc.edges(segs_core, SEPIA_FILL, 1.9)
+    # tight depth tolerance: with the default (8 px) edges lying just under the cut face showed through it as stray lines
+    sc.edges(segs_f, SEPIA_FILL, 1.5, tol=1.5)
+    sc.edges(segs_core, SEPIA_FILL, 1.9, tol=1.5)
     sc.edges(segs_l, SEPIA, (3.4, 1.5))
-    ng = sc.glints(gem, 16, 24, outline=glint_ink)
+    ng = sc.glints(gem, 26, 32, outline=glint_ink, seed=len(name) * 101 + 2)
     finish(sc.img, path, caption)
     facts[name + "-davinci"] = {"line_groups": lines, "filled_groups": filled, "core_cells_whole": len(groups[0]),
                                 "filled_cells_drawn": kept, "line_cells_drawn": nl, "line_edges": len(segs_l),
@@ -447,7 +491,11 @@ if "rd" in which:
     davinci("red", cell_R, GR, rgb(CFG.get("r_core", "#ffd6df")), colsR, ROSE,
             CFG.get("r_lines", [4]), CFG.get("r_fill", [0, 1, 2, 3]), ax5R,
             "The Red Queen · 120-cell · layers", os.path.join(OUT, "queen-davinci-red.png"),
-            tuple(CFG.get("cut", (0.7, 0.3, 1.0))))
+            tuple(CFG.get("r_cut", (0.5, 0.3, 1.0))))
+# Red cut (round 4): with (0.7, 0.3, 1.0) the cut plane stood nearly square to a mirror plane of the Red Queen, so pairs of
+# mirror-image cells (layer 1: 25|34, 26|33; layer 2: 10|76, 13|73) left almost mirror-equal cut faces meeting on one straight
+# line under the core: a true cell boundary, but it read as one dodecahedron cut in half by a stray line (DICTO). Tipped more
+# upward, the pairs' cut faces differ (areas 0.179 vs 0.116 instead of 0.158 vs 0.157) and read as two cells.
 # ------------------------------------------------------------------ the 2 x 2 sheet (rows: White, Red; columns: geode, da Vinci)
 names = [["queen-geode-white.png", "queen-davinci-white.png"], ["queen-geode-red.png", "queen-davinci-red.png"]]
 labels = [["The White Queen · geode", "The White Queen · da Vinci"], ["The Red Queen · geode", "The Red Queen · da Vinci"]]
