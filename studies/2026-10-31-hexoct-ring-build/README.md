@@ -78,4 +78,5 @@ Status: done, exact; build sheet printed (not for publication), awaiting DICTO's
 - `paper.html`, `hexoct-ring-build.pdf` — the build sheet.
 - `out/scan.txt`, `out/scan.json` — full scan; `out/angles.txt` — angle check per stretch; `out/tables.md` — tables.
 - `out/faces--1_8.json` — every face at λ = −1/8, exact; `out/counts.json` — counts; `out/build.log`.
+- `scripts/mockup.py` → `out/mockup-sheet.png`, `out/mockup-c.png`, `out/mockup-h.png`: ring mock-up (translucent rounded-triangle bands, zip ties as dark bars, three views per tile; DICTO 10-31).
 - `out/net-c-solid1.png` (one tower, make twice), `out/net-h-solid1.png`, `out/tile3d-*.png`.
