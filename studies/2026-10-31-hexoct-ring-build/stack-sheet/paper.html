@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>A small HexOct stack from rings</title>
+<link rel="stylesheet" href="../paper.css">
+<style>figure img{width:100%;display:block;border-radius:2pt} table{border-collapse:collapse;font-size:8pt;margin:3mm 0;width:100%} td,th{border-bottom:1px solid #ddd;padding:0.9mm 1.3mm;text-align:left;vertical-align:top} td.n,th.n{text-align:right} tr.best td{background:#faf1d2;font-weight:600} .thm{border-left:3px solid #b8962e;padding-left:3mm;margin:3mm 0} p.hook{font-style:italic;color:#444} .pb{break-before:page} ol.steps li{margin-bottom:1.2mm}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+
+<h1>A small HexOct stack from rings</h1>
+<p class="sub">Six tiles of the 4H stacking at λ = −1/8, built from PET-bottle-cap security rings at double scale</p>
+<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+DICTO · build sheet of 31 October 2026 · not for publication<br>
+The idea of the ring build and of starting with a small stack is DICTO's. Computation with Claude (Anthropic). Companion to “Building the HexOct tiles from rings”.</div>
+
+<div class="abstract"><b>Summary.</b> A lone c-tile is two towers that touch at one point. DICTO proposed to build a small stack first, where every piece leans on its neighbours. We tested stacks exactly. One string of tiles, one on top of the other, is never one piece: it comes apart at every c-tile. A stack that ends in a c-tile leaves that tile's end tower held by a point, in every patch we tried (up to 7 strings). The smallest stack that holds together is <b>two strings side by side, each h-tile, c-tile, h-tile</b> (layers A, B, C of the 4H stacking ABCB). Its 8 parts are joined over area into one piece. It takes <b>262 rings and 728 zip ties</b>. Six tiles built one by one would take 312 rings and 936 ties: building every shared wall once saves 50 rings and 208 ties.</div>
+
+<h2>1. Which stack</h2>
+<p class="hook">In a stack every tile meets the tile above and the tile below in a hexagon: the two halves of one octahedron meet there. The question is whether these joints, and the joints to the next string, hold every piece in place.</p>
+<p>A <b>part</b> is a piece of a tile that holds together by itself: the whole h-tile, or one tower of a c-tile. Two parts are <b>joined</b> when they share a wall of positive area; a shared point or edge does not count. All checks below are exact, in fractions, with the tile engine of #75 at λ = −1/8.</p>
+<p><b>Tile to tile.</b> In a string of 4H (ABCB, types h c h c) each tile is placed so that its lower octahedron half is the other half of the octahedron of the tile below. Then consecutive tiles meet in a full regular hexagon of side ½ (6 rings), checked corner by corner at all three joints. They also share one small triangle (1 ring): the top of a tetrahedron face of the lower tile lies against the other half of the octahedron. Nothing else touches over area.</p>
+<p><b>The c-tile in a string.</b> Its lower tower (half-octahedron with a tetrahedron on top) is joined to the tile below. Its upper tower (tetrahedron with a half-octahedron on top) is joined to the tile above. This is as the coordinator proposed. But the two towers still meet each other only at one point. So a string falls apart at every c-tile: the string h c h c is 3 separate pieces, and h c h is 2.</p>
+<p><b>Strings side by side.</b> The tetrahedra of a c-tile lean sideways on the octahedra of the next string, so a second string ties the towers together. We tried patches of 1, 2, 3, 4 and 7 strings (each string a lattice copy of the first):</p>
+<table>
+<tr><th>layers</th><th>strings</th><th class="n">parts</th><th class="n">joins</th><th class="n">pieces</th><th>left over</th></tr>
+<tr><td>h c h c (one period of 4H)</td><td>1</td><td class="n">6</td><td class="n">3</td><td class="n">3</td><td>the string breaks at both c-tiles</td></tr>
+<tr><td>h c h c</td><td>2, 3, 4 (side by side)</td><td class="n">12–24</td><td class="n">16–57</td><td class="n">2–3</td><td>an end tower of the top c-tile, held by one point</td></tr>
+<tr><td>c h c h</td><td>1 to 7</td><td class="n">6–42</td><td class="n">3–111</td><td class="n">2–3</td><td>the single string breaks; with more strings, one or two end towers of c-tiles stay loose</td></tr>
+<tr><td>h c h</td><td>1</td><td class="n">4</td><td class="n">2</td><td class="n">2</td><td>the string breaks at the c-tile</td></tr>
+<tr class="best"><td>h c h</td><td>2</td><td class="n">8</td><td class="n">11</td><td class="n">1</td><td>none: one piece</td></tr>
+<tr><td>h c h</td><td>3 (three ways)</td><td class="n">12</td><td class="n">20</td><td class="n">1</td><td>none</td></tr>
+<tr><td>h c h c h (a full period, closed by an h-tile)</td><td>2 or 3</td><td class="n">14 / 21</td><td class="n">21 / 38</td><td class="n">1</td><td>none</td></tr>
+</table>
+<p>A c-tile at the end of a stack has one tower whose only full joint is the hexagon of the missing next tile; its sideways contacts in the patches we tried were points or edges. So the stack must begin and end with h-tiles. <b>Choice: two strings of h c h, side by side</b> (6 tiles: 4 h-tiles, 2 c-tiles). It is the smallest stack that shows both tiles and holds together as one piece, and every part is joined over area to at least one other part (11 joins among 8 parts). The next step up, to show a whole period of 4H, is two strings of h c h c h (10 tiles), also one piece.</p>
+<p><b>Standing.</b> The bottom is not flat. The lowest points are the tips of the two lower tetrahedra of the bottom h-tiles, half a layer below the bottom hexagons, and 2s apart (s = side of one ring triangle). On a table the stack rests on these two tips and falls over. Push the two tips into a block of foam, or through two holes in a box lid, at least 0.82s deep, until the two bottom hexagons sit on it. Height of the stack: 6.53s (four layers of the packing).</p>
+
+<div class="pb"></div>
+<h2>2. Assembly, layer by layer</h2>
+<figure style="width:86%;margin:2mm auto"><img src="fig/stack-assembly.png" alt="layer by layer assembly"><figcaption><b>Figure 1.</b> The stack drawn apart by layer (left) and closed (right). Colours as in the book: c-tiles gold, h-tiles blue, tetrahedral pieces darker, octahedron halves lighter; the layer letters A, B, C are the positions of 4H (ABCB). Thin lines: the sides of the ring triangles.</figcaption></figure>
+<p>Build each tile with the nets of the tile build sheet, but do not build a wall twice: where a new tile meets one already built, use the wall that is there and tie the new rings to its rim.</p>
+<table>
+<tr><th>step</th><th>tile</th><th class="n">rings of the tile</th><th class="n">walls already there</th><th class="n">new rings</th></tr>
+<tr><td>1</td><td>layer 0 (A), h-tile, string 1</td><td class="n">48</td><td class="n">—</td><td class="n">48</td></tr>
+<tr><td>2</td><td>layer 0 (A), h-tile, string 2</td><td class="n">48</td><td class="n">6 (side wall with step 1)</td><td class="n">42</td></tr>
+<tr><td>3</td><td>layer 1 (B), c-tile, string 1</td><td class="n">60</td><td class="n">7 (hexagon + small triangle on step 1) + 1 (step 2)</td><td class="n">52</td></tr>
+<tr><td>4</td><td>layer 1 (B), c-tile, string 2</td><td class="n">60</td><td class="n">7 (on step 2) + 1 (step 1) + 6 (side wall with step 3)</td><td class="n">46</td></tr>
+<tr><td>5</td><td>layer 2 (C), h-tile, string 1</td><td class="n">48</td><td class="n">7 (on step 3) + 1 (step 4)</td><td class="n">40</td></tr>
+<tr><td>6</td><td>layer 2 (C), h-tile, string 2</td><td class="n">48</td><td class="n">7 (on step 4) + 1 (step 3) + 6 (side wall with step 5)</td><td class="n">34</td></tr>
+<tr><td><b>total</b></td><td></td><td class="n"><b>312</b></td><td class="n"><b>50</b> shared</td><td class="n"><b>262</b></td></tr>
+</table>
+<p>In step 3 and step 4 the c-tile's two towers are first held only at their touching corner. Close the lower tower onto the hexagon below, then close the upper tower; the tiles of steps 4 to 6 then join each tower over area to its neighbours.</p>
+<p><b>Shared walls (each built once, tied to both tiles).</b> Four hexagon joints between layers, each a regular hexagon of 6 rings plus one small triangle (28 rings). Three side walls between the two strings, one per layer, 6 rings each (18 rings). Four single small triangles between a tile and the next string one layer up or down (4 rings). Total 50 rings.</p>
+<p><b>Zip ties.</b> Two ties per ring side, through every ring that meets there. The stack has 364 ring sides: 318 where two rings meet, 34 where three meet and 12 where four meet (along the rims of the shared walls; there one tie goes through three or four rings). That makes 728 ties, against 936 for six separate tiles.</p>
+
+<div class="pb"></div>
+<h2>3. The finished stack in rings</h2>
+<figure><img src="fig/stack-mockup.png" alt="ring mock-up of the stack"><figcaption><b>Figure 2.</b> Mock-up of the finished stack: 262 rings drawn as translucent rounded triangles (gold tint: c-tiles, blue tint: h-tiles), the zip ties as short dark bars at ¼ and ¾ of every ring side. Shared walls are drawn once. Rings seen from behind are lighter.</figcaption></figure>
+
+<h2>4. Conclusion and status</h2>
+<p><b>Conclusion.</b> Build two strings of h c h side by side (layers A, B, C of 4H), at λ = −1/8: 6 tiles, 262 rings, 728 zip ties, saving 50 rings and 208 ties over separate tiles. One string never holds together, and a stack that ends in a c-tile leaves an end tower held by a point; two strings of h c h are the smallest stack that is one piece. It needs a foot for its two lower tips.</p>
+<p class="status"><b>Status:</b> done, exact; not for publication. Scripts in studies/2026-10-31-hexoct-ring-build/scripts: stack.py (strings, joints, contact test), stack_probe.py (patches), stack_build.py (counts, drawings); data in out/stack-build.json, out/stack_probe.txt, out/stack.log.</p>
+</body></html>

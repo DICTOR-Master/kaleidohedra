@@ -80,3 +80,16 @@ Status: done, exact; build sheet printed (not for publication), awaiting DICTO's
 - `out/faces--1_8.json` — every face at λ = −1/8, exact; `out/counts.json` — counts; `out/build.log`.
 - `scripts/mockup.py` → `out/mockup-sheet.png`, `out/mockup-c.png`, `out/mockup-h.png`: ring mock-up (translucent rounded-triangle bands, zip ties as dark bars, three views per tile; DICTO 10-31).
 - `out/net-c-solid1.png` (one tower, make twice), `out/net-h-solid1.png`, `out/tile3d-*.png`.
+
+## Small stack (DICTO 2026-10-31, second sheet: `stack-sheet/hexoct-ring-stack.pdf`)
+
+- Exact (stack.py, pairwise facet test): in a 4H string (ABCB) consecutive tiles meet in a full regular hexagon (6 rings)
+  plus one small triangle (1 ring). Each c-tower is joined to the tile below or above, but the towers still meet only at a
+  point: one string is never one piece (h c h c: 3 pieces; h c h: 2).
+- A stack ending in a c-tile leaves an end tower held by a point in every patch tried (1–7 strings; `out/stack_probe.txt`).
+- Chosen: two strings of h c h side by side (layers A B C of 4H), 6 tiles: one piece, 8 parts, 11 joins.
+  262 rings, 728 zip ties (separate tiles: 312 rings, 936 ties; shared walls save 50 rings, 208 ties). Ring sides: 318 with
+  2 rings, 34 with 3, 12 with 4. Needs a foot: lowest points are two tetrahedron tips half a layer below the bottom hexagons.
+- `scripts/stack_build.py` → `out/stack-build.json`, `out/stack-assembly.png`, `out/stack-mockup.png`.
+  (`stack.py`'s own main run was stopped for time; its checks were rerun through stack_probe.py and stack_build.py;
+  `out/stack.log` holds its hexagon-joint and one-string output.)
