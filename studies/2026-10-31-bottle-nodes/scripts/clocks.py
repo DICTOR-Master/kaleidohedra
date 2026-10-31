@@ -25,11 +25,11 @@ def ties(dn):
         out.append((NAMES[i], t))
     return dict(out)
 def layout(T):
-    L = {f'W{i+1}': (i * 1.75, 1.0) for i in range(6)}
+    L = {f'W{i+1}': (i * 2.15, 1.0) for i in range(6)}
     for k in ('T1', 'T2', 'T3', 'B1', 'B2', 'B3'):
         ws = [L[n][0] for c, n in T[k] if n[0] == 'W']
         xs = sorted(ws)
-        x = (xs[0] + xs[-1]) / 2 if xs[-1] - xs[0] < 5 else (xs[-1] + 1.75 * 6 + xs[0]) / 2 % (1.75 * 6)
+        x = (xs[0] + xs[-1]) / 2 if xs[-1] - xs[0] < 5 else (xs[-1] + 2.15 * 6 + xs[0]) / 2 % (2.15 * 6)
         L[k] = (x, 2.45 if k[0] == 'T' else -0.45)
     return L
 def panel(ax, T, square, title):
@@ -43,8 +43,8 @@ def panel(ax, T, square, title):
             sq = square and waist
             ax.plot(px, py, 's' if sq else 'o', ms=8, color='#c8102e' if sq else '#111', mec='white', mew=.8, zorder=5)
             ax.text(x + (R + .27) * np.cos(a), y + (R + .27) * np.sin(a), f'{(round(clock) % 12) or 12}' + f'\n→{nb}', ha='center', va='center', fontsize=9, color='#c8102e' if sq else '#111')
-    ax.set_title(title, fontsize=11, loc='left'); ax.set_xlim(-1.0, 11.0); ax.set_ylim(-1.3, 3.3); ax.set_aspect('equal'); ax.axis('off')
-fig, axs = plt.subplots(2, 1, figsize=(12, 12))
+    ax.set_title(title, fontsize=11, loc='left'); ax.set_xlim(-1.1, 13.4); ax.set_ylim(-1.3, 3.3); ax.set_aspect('equal'); ax.axis('off')
+fig, axs = plt.subplots(2, 1, figsize=(14, 12))
 panel(axs[0], ties([90, 210, 330]), False, 'RD node, c layers (the octet): top caps T, waist caps W, bottom caps B')
 panel(axs[1], ties([30, 150, 270]), True, 'Turned node (trapezo-rhombic dodecahedron), h layers (gyrated octet)')
 fig.text(.5, .03, "On every cap 12 o'clock points to the top of the node. Each tie point shows its clock hour and the cap it ties to (→).\n"
