@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>HexOct: Knitting Crystals</title>
+<link rel="stylesheet" href="../paper.css">
+<style>figure img{width:100%;display:block;border-radius:2pt} table{border-collapse:collapse;font-size:8pt;margin:3mm 0;width:100%} td,th{border-bottom:1px solid #ddd;padding:0.9mm 1.3mm;text-align:left;vertical-align:top} td.n,th.n{text-align:right} .thm{border-left:3px solid #b8962e;padding-left:3mm;margin:3mm 0} p.hook{font-style:italic;color:#444}
+.top{display:grid;grid-template-columns:62% 36%;gap:2%;align-items:start} .top img{width:100%;display:block}
+.two{display:grid;grid-template-columns:44% 54%;gap:2%;align-items:end}
+table.rows{border-collapse:collapse;font:7.6pt/1.22 "DejaVu Sans",sans-serif;width:100%;margin:2mm 0}
+table.rows td,table.rows th{border-bottom:1px solid #ddd;padding:0.45mm 1.1mm} table.rows td.n{text-align:right}
+span.sw{display:inline-block;width:9pt;height:9pt;border:1px solid #333;vertical-align:-1pt}
+p.small{font-size:8.8pt} .app{break-before:page} h3{font:600 11pt "DejaVu Sans",sans-serif;color:#6b5310;margin:10pt 0 4pt}
+ul{margin:2pt 0 2pt 14pt;padding:0} li{margin:1pt 0} code{font-size:8.6pt}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+
+<h1>HexOct: Knitting Crystals</h1>
+<p class="sub">The edge-on slice of every close-packed stacking as a knitted pattern</p>
+<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Paper · Version 1 · 31 October 2026 (draft) · DICTO DOI: (at publication) · Licence CC BY-SA 4.0<br>
+The idea is DICTO's. The method and the generator are ours, made with DICTO; computation and proofs with Claude (Anthropic).</div>
+
+<div class="abstract"><b>Abstract.</b> DICTO's idea is that a knitted fabric can be an exact edge-on slice through a stacking
+of balls. We prove that one plane does this for every close-packed stacking. The plane perpendicular to a row of touching
+balls (a {11-20} plane) meets every layer in one ball centre per repeat, at a third of the repeat apart for the three
+layer positions A, B, C, and cuts the pieces between the balls into just two shapes: each tetrahedron into an isosceles
+triangle and each octahedron into a rhombus. The mid-planes between the layers cut these into the halves of DICTO's Rule
+of Halves, and in every layer the tetrahedral and octahedral halves take exactly equal areas, so the share of blue
+(hexagonal) colour in the slice is the hexagonality itself. Knitting places each layer by bias rows: the row moves a third
+of a repeat across every gap, the same way again after a cubic layer and back after a hexagonal one, so cubic stretches
+knit as a straight slant and hexagonal ones as a chevron. A generator turns any stacking into a four-colour chart with
+row-by-row instructions; five swatches (4H, 3C, 2H, 6H and the Fibonacci stacking) are given in full.</div>
+
+<p class="hook">Stack oranges in layers and cut the pile straight down with a very sharp knife. On the cut face you see
+the oranges in rows, each layer shifted a little to the side of the one below, and between them small triangles and
+diamonds of empty space. Colour the triangles and diamonds, and the cut face becomes a pattern a knitter can follow,
+stitch by stitch, row by row.</p>
+
+<h2>1. Context</h2>
+<p><b>Layers of balls.</b> Equal balls packed as tightly as possible in a flat layer touch six neighbours each; the
+centres form a triangular grid. The next layer rests in the hollows of the first, and there are two kinds of hollow.
+With three positions in all, called A, B and C, every close-packed crystal is a word in these letters with no letter
+repeated next to itself: ABCABC… is the cubic (face-centred) packing 3C, ABAB… the hexagonal packing 2H, ABCB… the
+four-layer 4H, ABCACB… the six-layer 6H. A layer is <i>c</i> (cubic) when its two neighbours differ, as B in ABC, and
+<i>h</i> (hexagonal) when they agree, as B in ABA; the stacking is equally well written as its word of c and h. The
+share of h layers is its <i>hexagonality</i>: 0 for 3C, 1 for 2H, 1/2 for 4H, 1/3 for 6H.</p>
+<p><b>The pieces.</b> Between two layers the space left by the balls splits into tetrahedra (three balls below and one
+above, or one below and three above) and octahedra (three below and three above). DICTO's Rule of Halves (#57) cuts every
+such piece at the mid-plane between its two layers and gives the half nearer a layer to that layer; his HexOct tiles
+(#75) collect a layer's halves into one c-tile or h-tile. In the HexOct drawings the half of a c layer is gold and the
+half of an h layer blue; a piece whose two layers differ in kind (a Janus piece) is half gold and half blue.</p>
+<p><b>The Hexagonality Law.</b> DICTO's law, in the form he approved, is a law of structural crystallography: in every
+close-packed crystal structure, however its layers are stacked, every count of the structure (its pieces, holes, bonds
+and swaps) is a straight line in the structure's hexagonality (#69 and the book <i>HexOct: The Hexagonality Law</i>).</p>
+<p><b>The idea (DICTO, 31 October 2026).</b> Read the HexOct structure as a knitted fabric. The fabric is an exact edge-on
+slice through the stacking: stitch = ball, rows = layer; A, B and C appear as sideways offsets of 0, 1/3 and 2/3 of the
+repeat; the knitting places every layer by bias shifting (a decrease at one end of a row and an increase at the other move
+the row one stitch sideways); a c layer shifts the same way as the step before it and an h layer shifts back, so cubic
+knits as a straight bias slant and hexagonal as a chevron. Every area of the slice is coloured by the piece it belongs to,
+each half in its own layer's colour: gold for c, blue for h; tetrahedral pieces dark, octahedral pieces light.</p>
+<div class="two">
+<figure><img src="fig/4H-2p/slice.png" alt="Exact 4H slice"><figcaption><b>Figure 1.</b> The exact slice of the 4H
+stacking ABCB, two periods, two repeats wide. Dots are ball centres; dashed lines are the mid-planes. Gold: halves of c
+layers; blue: halves of h layers; dark: tetrahedral; light: octahedral.</figcaption></figure>
+<figure><img src="fig/4H-2p/chart.png" alt="4H knitting chart"><figcaption><b>Figure 2.</b> The same slice as a knitting
+chart, 24 stitches by 57 rows, in the knitted (fabric) grid: dots are the ball stitches, <i>dec</i>/<i>inc</i> mark the
+bias rows. Knitted, every bias row moves its row one stitch and the chart takes the shape of Figure 1.</figcaption></figure>
+</div>
+
+<h2>2. Main theorems</h2>
+<p>Ball spacing a = 1, layer spacing h = √(2/3). Take coordinates with the layers horizontal, the x-axis along a row of
+touching balls and the y-axis across it in the layer; then the A centres are (m + n/2, n√3/2, z), B = A + (1/2, √3/6, 0)
+and C = A + (1, √3/3, 0). Let P be the vertical plane x = 0, perpendicular to a row of touching balls: a {11-20} plane,
+seen along ⟨11-20⟩. On P use the sideways coordinate s = −y.</p>
+<div class="thm"><p><b>Theorem 1 (the slice).</b> For every close-packed stacking:
+(a) P meets each layer in exactly one ball centre per repeat √3, at s = 0, √3/3, 2√3/3 (0, 1/3, 2/3 of the repeat) for
+A, B, C; every other ball centre lies at distance 1/2, so those balls touch P at one point only.
+(b) P is a mirror plane of the stacking. Every tetrahedron that P cuts meets it in an isosceles triangle with sides
+1, √3/2, √3/2 (angles 70.53°, 54.74°, 54.74°) whose side 1 is a whole edge joining touching balls of the two layers;
+every octahedron that P cuts meets it in a rhombus of side √3/2 and angles arccos(1/3) = 70.53° and 109.47°, with two sides
+in the layer planes.
+(c) The mid-planes cut each triangle into a small triangle (1/2, √3/4, √3/4) at its tip and a trapezoid (√3/2, √3/4, 1/2,
+√3/4) at its base, and each rhombus into two congruent parallelograms (√3/2, √3/4): these are the halves of the Rule of
+Halves, and they tile the slice.
+(d) In the band of every layer (from the mid-plane below to the mid-plane above) the tetrahedral and the octahedral halves
+have equal area. So exactly half of the slice is dark and half light, and the blue share is exactly the hexagonality.</p></div>
+<p><b>Proof.</b> (a) A centre lies on P when m + n/2 = 0 for A, m + n/2 + 1/2 = 0 for B and m + n/2 + 1 = 0 for C,
+that is n even for A and C and n odd for B. Then y = n√3/2 runs through multiples of √3 for A, and y = n√3/2 + √3/6
+(n odd) and y = n√3/2 + √3/3 (n even) give s ≡ √3/3 and 2√3/3 modulo √3 for B and C. All other centres have x a nonzero
+multiple of 1/2, so they are at least 1/2, one ball radius, from P.
+(b) x ↦ −x maps each layer's set of centres to itself (for A, (m, n) ↦ (−m−n, n); for B and C the same with the shift
+absorbed), so it is a symmetry of every stacking and of its tiling by pieces. A piece that P cuts in a region of positive
+area meets its own mirror image in that region, so it is its own mirror image, and P is one of its mirror planes. The
+mirror planes of a regular tetrahedron of edge 1 each contain one edge and the midpoint of the opposite edge, giving the
+triangle 1, √3/2, √3/2. A regular octahedron has mirror planes of two kinds: through four corners, cutting a square, and
+through two opposite corners and the midpoints of two opposite edges, cutting a rhombus of side √3/2 with diagonals √2 and
+1. The octahedra of a close packing have a three-fold axis along the stacking direction, and the square planes, each
+perpendicular to a four-fold axis, are tilted to it; P is vertical, so it is of the second kind.
+(c) The mid-plane lies at half the height of every piece; in the triangle it cuts the two sides √3/2 at their midpoints,
+leaving a similar triangle of half size at the tip; in the rhombus it joins the midpoints of the two slanting sides. The
+pieces tile space, so their sections tile P, and so do their halves.
+(d) The triangle has area √2/4, its tip triangle √2/16 and its base trapezoid 3√2/16; the rhombus has area √2/2 and each
+parallelogram √2/4. Per repeat, a gap holds one area √3·h = √2; by the exact computation (Section 3) it holds one rhombus
+and two triangles, one standing on the lower layer and one hanging from the upper. The lower half of the gap is then a
+base trapezoid, a tip triangle and a parallelogram: 3√2/16 + √2/16 = √2/4 dark against √2/4 light, and the same for the
+upper half. So every half-gap, and every layer band, is half dark and half light; and every band has the same area √2 per
+repeat, so the blue share is the share of h layers. ∎</p>
+
+<div class="thm"><p><b>Theorem 2 (bias placement).</b> Let a chart repeat be 3k stitches and move the knitting k stitches
+sideways across every gap, to the right when the stacking steps A→B, B→C or C→A and to the left otherwise. Then
+(a) the ball stitches of every layer fall in the same chart columns; and (b) the step out of a c layer goes the same way
+as the step into it, and the step out of an h layer goes back: a run of c layers knits as one straight slant, a run of h
+layers as a zigzag (chevron).</p></div>
+<p><b>Proof.</b> (a) By Theorem 1(a) a step to the next letter in the cycle A→B→C→A moves the ball centres by +1/3 of the
+repeat and a step back by −1/3; the chart moves by ±k stitches = ±1/3 of 3k, the same amount, so the true position of a
+ball stitch minus the accumulated shift is the same for all layers. (b) If layer k is h, layer k+1 repeats layer k−1, so
+the step out undoes the step in. If it is c, layers k−1, k, k+1 are the three different letters, so the step out
+continues around the cycle in the same direction. ∎</p>
+<p>So a stacking's word of c and h is read directly as its knitting: c means "keep going", h means "turn back". Over a
+cubic stretch the shifts add up, and a 3C fabric leans by k stitches per layer; a hexagonal stretch returns to its
+column every two layers.</p>
+
+<h2>3. Method and exact checks</h2>
+<p><b>Pieces.</b> The pieces are the classical tetrahedra and octahedra of the close packing (the HexOct pieces at weight
+λ = −1/8 of #75, the ones DICTO's ring builds use). For each gap, up-tetrahedra, down-tetrahedra and octahedra are built from
+the exact centres; the section of each with P is computed in exact rational coordinates (s in units of √3/6, height in
+units of h), cut at the mid-plane, and coloured by its layer. Checks, all exact: the halves cover the window exactly once
+(4H: area 96 = 96 in these units); the whole sections are exactly the triangle and the rhombus of Theorem 1 (table of all
+sections with corners, sides and angles in <code>pieces-in-slice.json</code>); every layer band has equal tetrahedral and
+octahedral area for 4H, 3C, 2H, 6H and the Fibonacci stacking (<code>areas.py</code>).</p>
+<p><b>Gauge.</b> The true ratio of repeat to layer height is √3 : √(2/3) = 3/√2 = 2.121. With a repeat of 12 stitches
+(k = 4), 7 rows per layer and stitches 5 wide to 4 tall (a common stockinette gauge, e.g. 22 stitches and 28 rows to 10 cm),
+the chart gives 12 × 1.25 / 7 = 2.143, 1.0 % wide. The ball row of layer k is row 7k + 1, so each mid-plane falls on a row
+boundary and the halves change between rows. Across each gap the 4 bias rows are gap rows 2, 3, 5 and 6, symmetric about
+the mid-plane.</p>
+<p><b>Chart.</b> Each stitch takes the colour that covers most of it (4 × 4 sample points); where two colours cover
+exactly half each, which happens mainly in the ball rows, the dark shade is taken. This choice changes shade only, never
+hue, and it is why the charts count somewhat more dark than light stitches although the exact areas are equal
+(Theorem 1(d)). The chart is drawn in the knitted grid: the true position of a stitch is its chart column plus the shift
+accumulated by the bias rows. The 24-stitch window starts half a repeat after a ball, so the ball stitches, knitted as
+bobbles, sit at stitches 7 and 19, away from the edges. A knitter needs four colours: dark gold, light gold, dark blue,
+light blue (a purely cubic or purely hexagonal stacking needs two).</p>
+
+<h2>4. The generator</h2>
+<p><code>hexknit.py</code> takes a stacking as a word of c and h or of A, B and C (repeated) and a number of layers, and
+writes the exact slice, the chart, the row-by-row instructions (colour runs in working order, bias edges, bobbles) and a
+printable swatch sheet:</p>
+<p><code>hexknit.py --ch hchc --layers 5 --name 4H</code> · <code>--abc ABC --layers 7 --name 3C</code> ·
+<code>--ch chcchchcchcch --layers 13 --name Fibonacci</code></p>
+<p>Its 4H output is identical, row by row, to the first 4H swatch sheet, made before the generator.</p>
+
+<h2>5. Five swatches</h2>
+<table><tr><th>Swatch</th><th>Stacking (c/h)</th><th class=n>Layers</th><th class=n>Stitches × rows</th><th>Colours</th><th>Character</th></tr>
+<tr><td>4H</td><td>ABCBA (hchch)</td><td class=n>5</td><td class=n>24 × 29</td><td>4</td><td>alternating gold and blue bands; R R then L L: a zigzag of period four layers</td></tr>
+<tr><td>3C</td><td>ABCABCA (all c)</td><td class=n>7</td><td class=n>24 × 43</td><td>2 (gold)</td><td>bias always right: one straight slant, 24 stitches over the swatch</td></tr>
+<tr><td>2H</td><td>ABABA (all h)</td><td class=n>5</td><td class=n>24 × 29</td><td>2 (blue)</td><td>right, left, right, left: the simplest chevron</td></tr>
+<tr><td>6H</td><td>ABCACBA (hcchcc)</td><td class=n>7</td><td class=n>24 × 43</td><td>4</td><td>two-layer slants turning at each h layer</td></tr>
+<tr><td>Fibonacci</td><td>ABACBCACBABCA (chcchchcchcch)</td><td class=n>13</td><td class=n>24 × 85</td><td>4</td><td>never-repeating: slants of one and two steps in the Fibonacci order</td></tr>
+</table>
+<p>The Fibonacci word is the one of #69 (c → ch, h → c), its first 13 letters. The swatches are given in full in the
+appendix. None has been knitted yet: they are an invitation, and photographs of the knitted swatches will follow. The
+swatches will test whether the bias rows place the fabric as Theorem 2 assumes at this gauge, and how the colours read.</p>
+
+<h2>6. Prior art</h2>
+<p>We looked for the idea (a knitted fabric as the exact edge-on slice of a close-packed stacking, placed by bias shifts,
+coloured by the Rule-of-Halves pieces) and for its parts. Sources checked:</p>
+<ul>
+<li><b>DICTO's reference library</b> (302 items, searched by meaning with six queries: knitting mathematics; crochet
+hyperbolic plane; textile representation of crystal structure; stacking sequence polytype visualisation zigzag projection;
+close packing polytypes Zhdanov notation; Delaunay tetrahedra octahedra slice of close packing). No knitting source in the
+library. Nearest items: Krishnamurthy, Akleman et al. 2020 and 2022, space-filling tiles from woven fabric (weaving, not
+knitting, not stackings); Hart, Hansen and Kuhs 2021, Markov stacking of disordered ice (stacking notation); Ganesh and
+Nasr 2023, randomly stacked solids; Fedorov 1885 on layers of a lattice.</li>
+<li><b>Mathematical knitting and crochet:</b> belcastro and Yackel (eds.), <i>Making Mathematics with Needlework</i> (2008),
+<i>Crafting by Concepts</i> (2011) and <i>Figuring Fibers</i> (2018), from publisher and library contents listings (surfaces,
+tori, knots and links, helix striping, the Chinese remainder theorem and stitch patterns); belcastro, "Every topological
+surface can be knit: a proof", J. Math. Arts 3 (2009) 67–83; Taimiņa, <i>Crocheting Adventures with Hyperbolic Planes</i>
+and Bridges 2022 "What I learned in 25 years crocheting hyperbolic planes"; Bridges papers: Taalman and Yackel 2020,
+"Wallpaper patterns for lattice designs"; Markande and Matsumoto 2020, "Knotty knits are tangles in tori"; "Knitting on
+helicoid scaffolds" (2024); Baker and Goldstine, crystallographic bead crochet (Bridges 2017); Morton and Grishanov,
+"Doubly periodic textile patterns" (arXiv 0806.2824). None treats close-packed stackings.</li>
+<li><b>Knitted crystal models:</b> Alexander Crum Brown's 1883 model of rock salt from knitting needles and wool balls
+(University of Edinburgh collections) and his knitted pieces on interpenetrating surfaces: three-dimensional models, not a
+fabric that is a slice; Clare Bryden's Particulart knitted atoms and molecules; the Ravelry "Crystallography Socks"
+(inspired by crystallisation, cable charts); Philip Ball, "Weaving is believing", Chemistry World.</li>
+<li><b>Bias knitting and stackings:</b> the Wikipedia article on bias knitting (chevrons as bias that reverses at intervals);
+web searches pairing bias knitting, chevrons, stacking faults, fcc/hcp, polytypes and Zhdanov notation with knitting,
+crochet or textiles. Stacking diagrams of polytypes (Ramsdell's zigzag plots, as cited in the mineralogy literature) are
+drawings, not textiles.</li>
+</ul>
+<p><b>Verdict.</b> We found nowhere a knitted fabric used as an exact slice of a close-packed stacking, nor bias shifts used
+to place its layers, nor its colouring by the pieces between the balls. Knitted models of crystals (Crum Brown) and
+mathematical knitting of surfaces and lattices exist; the slice, the bias rule and the colouring are new as far as these
+sources show.</p>
+
+<h2>7. Conclusion</h2>
+<p>One plane, perpendicular to a row of touching balls, turns every close-packed stacking into a flat pattern of two
+shapes, triangles and rhombi, whose halves carry the colours of their layers in exactly equal dark and light shares; the
+c and h letters of the stacking become the knitter's "keep going" and "turn back". Status: theorems proved and checked
+exactly; generator done; five swatches charted, none knitted yet.</p>
+
+<h2>References</h2>
+<p class="small">[#57] DICTO, The Rule of Halves: the Holes of Every Close-Packed Stacking, 2026, DICTO DOI: 10.5281/zenodo.23647898.
+[#69] DICTO, The Hexagonality Law and the Fibonacci Stacking, 2026, DICTO DOI: 10.5281/zenodo.23721038.
+[#75] DICTO, Two Tiles for Every Stacking, 2026, DICTO DOI: 10.5281/zenodo.23737639.
+DICTO, <i>HexOct: The Hexagonality Law</i> (book), 2026, DICTO DOI: 10.5281/zenodo.23823003.
+Prior-art sources as listed in Section 6.</p>
+
+<div class="app"><h2>Appendix: the five swatches</h2><h3>How to knit every swatch</h3>
+<ul>
+<li>Stockinette. Stitches 1 and the last are edge stitches, worked in the chart colour, not slipped, so the edges show the
+bias steps.</li>
+<li>Colour changes: intarsia with small bobbins, twisting at every change; carry a colour along the back only where its next
+block is 1–2 stitches away.</li>
+<li>Every bias row keeps the stitch count: one decrease and one increase, each one stitch in from its edge. In the colour
+runs the increased and decreased stitches are counted as they finish; work each in the colour of its run.</li>
+<li>Bobble (MB), in the colour of the stitch. RS rows: (k1, yo, k1) into the stitch, turn, p3, turn, k3, turn, p3, turn,
+sl1-k2tog-psso. WS rows: (p1, yo, p1) into the stitch, turn, k3, turn, p3, turn, k3, turn, p3tog, and push it to the RS;
+if it sits badly, purl the stitch plain and sew a bobble or French knot there afterwards.</li>
+<li>Abbreviations: DG dark gold, LG light gold, DB dark blue, LB light blue. Runs are given in working order (RS from the
+last stitch to stitch 1, WS from stitch 1 to the last).</li>
+</ul><h3>A. 4H: ABCBA (hchch), 24 stitches × 29 rows</h3>
+<div class="top">
+<figure><img src="fig/4H/chart.png" alt="4H chart"><figcaption><b>Chart.</b> Seen from the RS, row 1 at the bottom;
+RS rows read right to left, WS rows left to right. Dots = bobbles. <i>dec</i>/<i>inc</i>: which edge of a bias row gets
+the decrease and which the increase.</figcaption></figure>
+<div><figure><img src="fig/4H/slice.png" alt="4H exact slice"><figcaption><b>The exact slice</b> for this window
+(dots = ball centres; letters = layers; c gold, h blue; dark = tetrahedral, light = octahedral pieces).</figcaption></figure>
+<p class=small><span class=sw style="background:#d9a521"></span> DG dark gold: 192 sts · <span class=sw style="background:#f1d98a"></span> LG light gold: 144 sts · <span class=sw style="background:#3f7fc4"></span> DB dark blue: 186 sts · <span class=sw style="background:#a9c9ec"></span> LB light blue: 174 sts. Total 696 stitches.</p></div></div>
+<p class=small><b>Cast on</b> 24 sts in DB; row 1 is a RS row. <b>Bias right</b> (decrease at the left edge, increase
+at the right, seen from the RS): rows 3, 4, 6, 7, 10, 11, 13, 14. <b>Bias left</b>: rows 17, 18, 20, 21, 24, 25, 27, 28. Net shift at the top: +0
+stitches. <b>Bobbles</b> on RS rows 1, 15, 29; on WS rows 8, 22. Bind off in DB on the WS after row 29.</p>
+<table class=rows><tr><th class=n>Row</th><th>Side</th><th>Colour runs (working order)</th><th>Bias (edge stitches)</th><th>Bobble</th></tr>
+<tr><td class=n>1</td><td>RS</td><td>6 DB, 5 LB, 7 DB, 5 LB, 1 DB</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>2</td><td>WS</td><td>6 LB, 6 DB, 6 LB, 6 DB</td><td></td><td></td></tr>
+<tr><td class=n>3</td><td>RS</td><td>1 LB, 6 DB, 6 LB, 6 DB, 5 LB</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>4</td><td>WS</td><td>4 LB, 6 DB, 6 LB, 6 DB, 2 LB</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>5</td><td>RS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td></td><td></td></tr>
+<tr><td class=n>6</td><td>WS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>7</td><td>RS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>8</td><td>WS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>9</td><td>RS</td><td>6 DG, 6 LG, 6 DG, 6 LG</td><td></td><td></td></tr>
+<tr><td class=n>10</td><td>WS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>11</td><td>RS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>12</td><td>WS</td><td>3 LB, 6 DB, 6 LB, 6 DB, 3 LB</td><td></td><td></td></tr>
+<tr><td class=n>13</td><td>RS</td><td>4 LB, 6 DB, 6 LB, 6 DB, 2 LB</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>14</td><td>WS</td><td>1 LB, 6 DB, 6 LB, 6 DB, 5 LB</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>15</td><td>RS</td><td>5 LB, 7 DB, 5 LB, 7 DB</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>16</td><td>WS</td><td>1 LB, 6 DB, 6 LB, 6 DB, 5 LB</td><td></td><td></td></tr>
+<tr><td class=n>17</td><td>RS</td><td>4 LB, 6 DB, 6 LB, 6 DB, 2 LB</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>18</td><td>WS</td><td>3 LB, 6 DB, 6 LB, 6 DB, 3 LB</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>19</td><td>RS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td></td><td></td></tr>
+<tr><td class=n>20</td><td>WS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>21</td><td>RS</td><td>6 DG, 6 LG, 6 DG, 6 LG</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>22</td><td>WS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>23</td><td>RS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td></td><td></td></tr>
+<tr><td class=n>24</td><td>WS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>25</td><td>RS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>26</td><td>WS</td><td>4 LB, 6 DB, 6 LB, 6 DB, 2 LB</td><td></td><td></td></tr>
+<tr><td class=n>27</td><td>RS</td><td>1 LB, 6 DB, 6 LB, 6 DB, 5 LB</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>28</td><td>WS</td><td>6 LB, 6 DB, 6 LB, 6 DB</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>29</td><td>RS</td><td>6 DB, 5 LB, 7 DB, 5 LB, 1 DB</td><td></td><td>MB at st 7, 19</td></tr>
+</table></div>
+<div class="app"><h3>B. 3C: ABCABCA (ccccccc), 24 stitches × 43 rows</h3>
+<div class="top">
+<figure><img src="fig/3C/chart.png" alt="3C chart"><figcaption><b>Chart.</b> Seen from the RS, row 1 at the bottom;
+RS rows read right to left, WS rows left to right. Dots = bobbles. <i>dec</i>/<i>inc</i>: which edge of a bias row gets
+the decrease and which the increase.</figcaption></figure>
+<div><figure><img src="fig/3C/slice.png" alt="3C exact slice"><figcaption><b>The exact slice</b> for this window
+(dots = ball centres; letters = layers; c gold, h blue; dark = tetrahedral, light = octahedral pieces).</figcaption></figure>
+<p class=small><span class=sw style="background:#d9a521"></span> DG dark gold: 580 sts · <span class=sw style="background:#f1d98a"></span> LG light gold: 452 sts. Total 1032 stitches.</p></div></div>
+<p class=small><b>Cast on</b> 24 sts in DG; row 1 is a RS row. <b>Bias right</b> (decrease at the left edge, increase
+at the right, seen from the RS): rows 3, 4, 6, 7, 10, 11, 13, 14, 17, 18, 20, 21, 24, 25, 27, 28, 31, 32, 34, 35, 38, 39, 41, 42. <b>Bias left</b>: rows none. Net shift at the top: +24
+stitches. <b>Bobbles</b> on RS rows 1, 15, 29, 43; on WS rows 8, 22, 36. Bind off in LG on the WS after row 43.</p>
+<table class=rows><tr><th class=n>Row</th><th>Side</th><th>Colour runs (working order)</th><th>Bias (edge stitches)</th><th>Bobble</th></tr>
+<tr><td class=n>1</td><td>RS</td><td>6 DG, 5 LG, 7 DG, 5 LG, 1 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>2</td><td>WS</td><td>6 LG, 6 DG, 6 LG, 6 DG</td><td></td><td></td></tr>
+<tr><td class=n>3</td><td>RS</td><td>1 LG, 6 DG, 6 LG, 6 DG, 5 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>4</td><td>WS</td><td>4 LG, 6 DG, 6 LG, 6 DG, 2 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>5</td><td>RS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td></td><td></td></tr>
+<tr><td class=n>6</td><td>WS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>7</td><td>RS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>8</td><td>WS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>9</td><td>RS</td><td>6 DG, 6 LG, 6 DG, 6 LG</td><td></td><td></td></tr>
+<tr><td class=n>10</td><td>WS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>11</td><td>RS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>12</td><td>WS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td></td><td></td></tr>
+<tr><td class=n>13</td><td>RS</td><td>4 LG, 6 DG, 6 LG, 6 DG, 2 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>14</td><td>WS</td><td>1 LG, 6 DG, 6 LG, 6 DG, 5 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>15</td><td>RS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>16</td><td>WS</td><td>6 LG, 6 DG, 6 LG, 6 DG</td><td></td><td></td></tr>
+<tr><td class=n>17</td><td>RS</td><td>1 LG, 6 DG, 6 LG, 6 DG, 5 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>18</td><td>WS</td><td>4 LG, 6 DG, 6 LG, 6 DG, 2 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>19</td><td>RS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td></td><td></td></tr>
+<tr><td class=n>20</td><td>WS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>21</td><td>RS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>22</td><td>WS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>23</td><td>RS</td><td>6 DG, 6 LG, 6 DG, 6 LG</td><td></td><td></td></tr>
+<tr><td class=n>24</td><td>WS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>25</td><td>RS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>26</td><td>WS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td></td><td></td></tr>
+<tr><td class=n>27</td><td>RS</td><td>4 LG, 6 DG, 6 LG, 6 DG, 2 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>28</td><td>WS</td><td>1 LG, 6 DG, 6 LG, 6 DG, 5 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>29</td><td>RS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>30</td><td>WS</td><td>6 LG, 6 DG, 6 LG, 6 DG</td><td></td><td></td></tr>
+<tr><td class=n>31</td><td>RS</td><td>1 LG, 6 DG, 6 LG, 6 DG, 5 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>32</td><td>WS</td><td>4 LG, 6 DG, 6 LG, 6 DG, 2 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>33</td><td>RS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td></td><td></td></tr>
+<tr><td class=n>34</td><td>WS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>35</td><td>RS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>36</td><td>WS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>37</td><td>RS</td><td>6 DG, 6 LG, 6 DG, 6 LG</td><td></td><td></td></tr>
+<tr><td class=n>38</td><td>WS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>39</td><td>RS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>40</td><td>WS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td></td><td></td></tr>
+<tr><td class=n>41</td><td>RS</td><td>4 LG, 6 DG, 6 LG, 6 DG, 2 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>42</td><td>WS</td><td>1 LG, 6 DG, 6 LG, 6 DG, 5 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>43</td><td>RS</td><td>5 LG, 7 DG, 5 LG, 7 DG</td><td></td><td>MB at st 7, 19</td></tr>
+</table></div>
+<div class="app"><h3>C. 2H: ABABA (hhhhh), 24 stitches × 29 rows</h3>
+<div class="top">
+<figure><img src="fig/2H/chart.png" alt="2H chart"><figcaption><b>Chart.</b> Seen from the RS, row 1 at the bottom;
+RS rows read right to left, WS rows left to right. Dots = bobbles. <i>dec</i>/<i>inc</i>: which edge of a bias row gets
+the decrease and which the increase.</figcaption></figure>
+<div><figure><img src="fig/2H/slice.png" alt="2H exact slice"><figcaption><b>The exact slice</b> for this window
+(dots = ball centres; letters = layers; c gold, h blue; dark = tetrahedral, light = octahedral pieces).</figcaption></figure>
+<p class=small><span class=sw style="background:#3f7fc4"></span> DB dark blue: 358 sts · <span class=sw style="background:#a9c9ec"></span> LB light blue: 338 sts. Total 696 stitches.</p></div></div>
+<p class=small><b>Cast on</b> 24 sts in DB; row 1 is a RS row. <b>Bias right</b> (decrease at the left edge, increase
+at the right, seen from the RS): rows 3, 4, 6, 7, 17, 18, 20, 21. <b>Bias left</b>: rows 10, 11, 13, 14, 24, 25, 27, 28. Net shift at the top: +0
+stitches. <b>Bobbles</b> on RS rows 1, 15, 29; on WS rows 8, 22. Bind off in DB on the WS after row 29.</p>
+<table class=rows><tr><th class=n>Row</th><th>Side</th><th>Colour runs (working order)</th><th>Bias (edge stitches)</th><th>Bobble</th></tr>
+<tr><td class=n>1</td><td>RS</td><td>6 DB, 5 LB, 7 DB, 5 LB, 1 DB</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>2</td><td>WS</td><td>6 LB, 6 DB, 6 LB, 6 DB</td><td></td><td></td></tr>
+<tr><td class=n>3</td><td>RS</td><td>1 LB, 6 DB, 6 LB, 6 DB, 5 LB</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>4</td><td>WS</td><td>4 LB, 6 DB, 6 LB, 6 DB, 2 LB</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>5</td><td>RS</td><td>3 LB, 6 DB, 6 LB, 6 DB, 3 LB</td><td></td><td></td></tr>
+<tr><td class=n>6</td><td>WS</td><td>2 LB, 6 DB, 6 LB, 6 DB, 4 LB</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>7</td><td>RS</td><td>5 LB, 6 DB, 6 LB, 6 DB, 1 LB</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>8</td><td>WS</td><td>7 DB, 5 LB, 7 DB, 5 LB</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>9</td><td>RS</td><td>5 LB, 6 DB, 6 LB, 6 DB, 1 LB</td><td></td><td></td></tr>
+<tr><td class=n>10</td><td>WS</td><td>2 LB, 6 DB, 6 LB, 6 DB, 4 LB</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>11</td><td>RS</td><td>3 LB, 6 DB, 6 LB, 6 DB, 3 LB</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>12</td><td>WS</td><td>4 LB, 6 DB, 6 LB, 6 DB, 2 LB</td><td></td><td></td></tr>
+<tr><td class=n>13</td><td>RS</td><td>1 LB, 6 DB, 6 LB, 6 DB, 5 LB</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>14</td><td>WS</td><td>6 LB, 6 DB, 6 LB, 6 DB</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>15</td><td>RS</td><td>6 DB, 5 LB, 7 DB, 5 LB, 1 DB</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>16</td><td>WS</td><td>6 LB, 6 DB, 6 LB, 6 DB</td><td></td><td></td></tr>
+<tr><td class=n>17</td><td>RS</td><td>1 LB, 6 DB, 6 LB, 6 DB, 5 LB</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>18</td><td>WS</td><td>4 LB, 6 DB, 6 LB, 6 DB, 2 LB</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>19</td><td>RS</td><td>3 LB, 6 DB, 6 LB, 6 DB, 3 LB</td><td></td><td></td></tr>
+<tr><td class=n>20</td><td>WS</td><td>2 LB, 6 DB, 6 LB, 6 DB, 4 LB</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>21</td><td>RS</td><td>5 LB, 6 DB, 6 LB, 6 DB, 1 LB</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>22</td><td>WS</td><td>7 DB, 5 LB, 7 DB, 5 LB</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>23</td><td>RS</td><td>5 LB, 6 DB, 6 LB, 6 DB, 1 LB</td><td></td><td></td></tr>
+<tr><td class=n>24</td><td>WS</td><td>2 LB, 6 DB, 6 LB, 6 DB, 4 LB</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>25</td><td>RS</td><td>3 LB, 6 DB, 6 LB, 6 DB, 3 LB</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>26</td><td>WS</td><td>4 LB, 6 DB, 6 LB, 6 DB, 2 LB</td><td></td><td></td></tr>
+<tr><td class=n>27</td><td>RS</td><td>1 LB, 6 DB, 6 LB, 6 DB, 5 LB</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>28</td><td>WS</td><td>6 LB, 6 DB, 6 LB, 6 DB</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>29</td><td>RS</td><td>6 DB, 5 LB, 7 DB, 5 LB, 1 DB</td><td></td><td>MB at st 7, 19</td></tr>
+</table></div>
+<div class="app"><h3>D. 6H: ABCACBA (hcchcch), 24 stitches × 43 rows</h3>
+<div class="top">
+<figure><img src="fig/6H/chart.png" alt="6H chart"><figcaption><b>Chart.</b> Seen from the RS, row 1 at the bottom;
+RS rows read right to left, WS rows left to right. Dots = bobbles. <i>dec</i>/<i>inc</i>: which edge of a bias row gets
+the decrease and which the increase.</figcaption></figure>
+<div><figure><img src="fig/6H/slice.png" alt="6H exact slice"><figcaption><b>The exact slice</b> for this window
+(dots = ball centres; letters = layers; c gold, h blue; dark = tetrahedral, light = octahedral pieces).</figcaption></figure>
+<p class=small><span class=sw style="background:#d9a521"></span> DG dark gold: 384 sts · <span class=sw style="background:#f1d98a"></span> LG light gold: 288 sts · <span class=sw style="background:#3f7fc4"></span> DB dark blue: 186 sts · <span class=sw style="background:#a9c9ec"></span> LB light blue: 174 sts. Total 1032 stitches.</p></div></div>
+<p class=small><b>Cast on</b> 24 sts in DB; row 1 is a RS row. <b>Bias right</b> (decrease at the left edge, increase
+at the right, seen from the RS): rows 3, 4, 6, 7, 10, 11, 13, 14, 17, 18, 20, 21. <b>Bias left</b>: rows 24, 25, 27, 28, 31, 32, 34, 35, 38, 39, 41, 42. Net shift at the top: +0
+stitches. <b>Bobbles</b> on RS rows 1, 15, 29, 43; on WS rows 8, 22, 36. Bind off in DB on the WS after row 43.</p>
+<table class=rows><tr><th class=n>Row</th><th>Side</th><th>Colour runs (working order)</th><th>Bias (edge stitches)</th><th>Bobble</th></tr>
+<tr><td class=n>1</td><td>RS</td><td>6 DB, 5 LB, 7 DB, 5 LB, 1 DB</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>2</td><td>WS</td><td>6 LB, 6 DB, 6 LB, 6 DB</td><td></td><td></td></tr>
+<tr><td class=n>3</td><td>RS</td><td>1 LB, 6 DB, 6 LB, 6 DB, 5 LB</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>4</td><td>WS</td><td>4 LB, 6 DB, 6 LB, 6 DB, 2 LB</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>5</td><td>RS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td></td><td></td></tr>
+<tr><td class=n>6</td><td>WS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>7</td><td>RS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>8</td><td>WS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>9</td><td>RS</td><td>6 DG, 6 LG, 6 DG, 6 LG</td><td></td><td></td></tr>
+<tr><td class=n>10</td><td>WS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>11</td><td>RS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>12</td><td>WS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td></td><td></td></tr>
+<tr><td class=n>13</td><td>RS</td><td>4 LG, 6 DG, 6 LG, 6 DG, 2 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>14</td><td>WS</td><td>1 LG, 6 DG, 6 LG, 6 DG, 5 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>15</td><td>RS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>16</td><td>WS</td><td>6 LG, 6 DG, 6 LG, 6 DG</td><td></td><td></td></tr>
+<tr><td class=n>17</td><td>RS</td><td>1 LG, 6 DG, 6 LG, 6 DG, 5 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>18</td><td>WS</td><td>4 LG, 6 DG, 6 LG, 6 DG, 2 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>19</td><td>RS</td><td>3 LB, 6 DB, 6 LB, 6 DB, 3 LB</td><td></td><td></td></tr>
+<tr><td class=n>20</td><td>WS</td><td>2 LB, 6 DB, 6 LB, 6 DB, 4 LB</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>21</td><td>RS</td><td>5 LB, 6 DB, 6 LB, 6 DB, 1 LB</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>22</td><td>WS</td><td>7 DB, 5 LB, 7 DB, 5 LB</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>23</td><td>RS</td><td>5 LB, 6 DB, 6 LB, 6 DB, 1 LB</td><td></td><td></td></tr>
+<tr><td class=n>24</td><td>WS</td><td>2 LB, 6 DB, 6 LB, 6 DB, 4 LB</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>25</td><td>RS</td><td>3 LB, 6 DB, 6 LB, 6 DB, 3 LB</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>26</td><td>WS</td><td>4 LG, 6 DG, 6 LG, 6 DG, 2 LG</td><td></td><td></td></tr>
+<tr><td class=n>27</td><td>RS</td><td>1 LG, 6 DG, 6 LG, 6 DG, 5 LG</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>28</td><td>WS</td><td>6 LG, 6 DG, 6 LG, 6 DG</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>29</td><td>RS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>30</td><td>WS</td><td>1 LG, 6 DG, 6 LG, 6 DG, 5 LG</td><td></td><td></td></tr>
+<tr><td class=n>31</td><td>RS</td><td>4 LG, 6 DG, 6 LG, 6 DG, 2 LG</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>32</td><td>WS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>33</td><td>RS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td></td><td></td></tr>
+<tr><td class=n>34</td><td>WS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>35</td><td>RS</td><td>6 DG, 6 LG, 6 DG, 6 LG</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>36</td><td>WS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>37</td><td>RS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td></td><td></td></tr>
+<tr><td class=n>38</td><td>WS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>39</td><td>RS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>40</td><td>WS</td><td>4 LB, 6 DB, 6 LB, 6 DB, 2 LB</td><td></td><td></td></tr>
+<tr><td class=n>41</td><td>RS</td><td>1 LB, 6 DB, 6 LB, 6 DB, 5 LB</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>42</td><td>WS</td><td>6 LB, 6 DB, 6 LB, 6 DB</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>43</td><td>RS</td><td>6 DB, 5 LB, 7 DB, 5 LB, 1 DB</td><td></td><td>MB at st 7, 19</td></tr>
+</table></div>
+<div class="app"><h3>E. Fibonacci: ABACBCACBABCA (chcchchcchcch), 24 stitches × 85 rows</h3>
+<div class="top">
+<figure><img src="fig/Fibonacci/chart.png" alt="Fibonacci chart"><figcaption><b>Chart.</b> Seen from the RS, row 1 at the bottom;
+RS rows read right to left, WS rows left to right. Dots = bobbles. <i>dec</i>/<i>inc</i>: which edge of a bias row gets
+the decrease and which the increase.</figcaption></figure>
+<div><figure><img src="fig/Fibonacci/slice.png" alt="Fibonacci exact slice"><figcaption><b>The exact slice</b> for this window
+(dots = ball centres; letters = layers; c gold, h blue; dark = tetrahedral, light = octahedral pieces).</figcaption></figure>
+<p class=small><span class=sw style="background:#d9a521"></span> DG dark gold: 722 sts · <span class=sw style="background:#f1d98a"></span> LG light gold: 550 sts · <span class=sw style="background:#3f7fc4"></span> DB dark blue: 394 sts · <span class=sw style="background:#a9c9ec"></span> LB light blue: 374 sts. Total 2040 stitches.</p></div></div>
+<p class=small><b>Cast on</b> 24 sts in DG; row 1 is a RS row. <b>Bias right</b> (decrease at the left edge, increase
+at the right, seen from the RS): rows 3, 4, 6, 7, 31, 32, 34, 35, 38, 39, 41, 42, 66, 67, 69, 70, 73, 74, 76, 77, 80, 81, 83, 84. <b>Bias left</b>: rows 10, 11, 13, 14, 17, 18, 20, 21, 24, 25, 27, 28, 45, 46, 48, 49, 52, 53, 55, 56, 59, 60, 62, 63. Net shift at the top: +0
+stitches. <b>Bobbles</b> on RS rows 1, 15, 29, 43, 57, 71, 85; on WS rows 8, 22, 36, 50, 64, 78. Bind off in LB on the WS after row 85.</p>
+<table class=rows><tr><th class=n>Row</th><th>Side</th><th>Colour runs (working order)</th><th>Bias (edge stitches)</th><th>Bobble</th></tr>
+<tr><td class=n>1</td><td>RS</td><td>6 DG, 5 LG, 7 DG, 5 LG, 1 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>2</td><td>WS</td><td>6 LG, 6 DG, 6 LG, 6 DG</td><td></td><td></td></tr>
+<tr><td class=n>3</td><td>RS</td><td>1 LG, 6 DG, 6 LG, 6 DG, 5 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>4</td><td>WS</td><td>4 LG, 6 DG, 6 LG, 6 DG, 2 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>5</td><td>RS</td><td>3 LB, 6 DB, 6 LB, 6 DB, 3 LB</td><td></td><td></td></tr>
+<tr><td class=n>6</td><td>WS</td><td>2 LB, 6 DB, 6 LB, 6 DB, 4 LB</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>7</td><td>RS</td><td>5 LB, 6 DB, 6 LB, 6 DB, 1 LB</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>8</td><td>WS</td><td>7 DB, 5 LB, 7 DB, 5 LB</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>9</td><td>RS</td><td>5 LB, 6 DB, 6 LB, 6 DB, 1 LB</td><td></td><td></td></tr>
+<tr><td class=n>10</td><td>WS</td><td>2 LB, 6 DB, 6 LB, 6 DB, 4 LB</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>11</td><td>RS</td><td>3 LB, 6 DB, 6 LB, 6 DB, 3 LB</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>12</td><td>WS</td><td>4 LG, 6 DG, 6 LG, 6 DG, 2 LG</td><td></td><td></td></tr>
+<tr><td class=n>13</td><td>RS</td><td>1 LG, 6 DG, 6 LG, 6 DG, 5 LG</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>14</td><td>WS</td><td>6 LG, 6 DG, 6 LG, 6 DG</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>15</td><td>RS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>16</td><td>WS</td><td>1 LG, 6 DG, 6 LG, 6 DG, 5 LG</td><td></td><td></td></tr>
+<tr><td class=n>17</td><td>RS</td><td>4 LG, 6 DG, 6 LG, 6 DG, 2 LG</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>18</td><td>WS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>19</td><td>RS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td></td><td></td></tr>
+<tr><td class=n>20</td><td>WS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>21</td><td>RS</td><td>6 DG, 6 LG, 6 DG, 6 LG</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>22</td><td>WS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>23</td><td>RS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td></td><td></td></tr>
+<tr><td class=n>24</td><td>WS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>25</td><td>RS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>26</td><td>WS</td><td>4 LB, 6 DB, 6 LB, 6 DB, 2 LB</td><td></td><td></td></tr>
+<tr><td class=n>27</td><td>RS</td><td>1 LB, 6 DB, 6 LB, 6 DB, 5 LB</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>28</td><td>WS</td><td>6 LB, 6 DB, 6 LB, 6 DB</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>29</td><td>RS</td><td>6 DB, 5 LB, 7 DB, 5 LB, 1 DB</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>30</td><td>WS</td><td>6 LB, 6 DB, 6 LB, 6 DB</td><td></td><td></td></tr>
+<tr><td class=n>31</td><td>RS</td><td>1 LB, 6 DB, 6 LB, 6 DB, 5 LB</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>32</td><td>WS</td><td>4 LB, 6 DB, 6 LB, 6 DB, 2 LB</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>33</td><td>RS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td></td><td></td></tr>
+<tr><td class=n>34</td><td>WS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>35</td><td>RS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>36</td><td>WS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>37</td><td>RS</td><td>6 DG, 6 LG, 6 DG, 6 LG</td><td></td><td></td></tr>
+<tr><td class=n>38</td><td>WS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>39</td><td>RS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>40</td><td>WS</td><td>3 LB, 6 DB, 6 LB, 6 DB, 3 LB</td><td></td><td></td></tr>
+<tr><td class=n>41</td><td>RS</td><td>4 LB, 6 DB, 6 LB, 6 DB, 2 LB</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>42</td><td>WS</td><td>1 LB, 6 DB, 6 LB, 6 DB, 5 LB</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>43</td><td>RS</td><td>5 LB, 7 DB, 5 LB, 7 DB</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>44</td><td>WS</td><td>1 LB, 6 DB, 6 LB, 6 DB, 5 LB</td><td></td><td></td></tr>
+<tr><td class=n>45</td><td>RS</td><td>4 LB, 6 DB, 6 LB, 6 DB, 2 LB</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>46</td><td>WS</td><td>3 LB, 6 DB, 6 LB, 6 DB, 3 LB</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>47</td><td>RS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td></td><td></td></tr>
+<tr><td class=n>48</td><td>WS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>49</td><td>RS</td><td>6 DG, 6 LG, 6 DG, 6 LG</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>50</td><td>WS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>51</td><td>RS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td></td><td></td></tr>
+<tr><td class=n>52</td><td>WS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>53</td><td>RS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>54</td><td>WS</td><td>4 LG, 6 DG, 6 LG, 6 DG, 2 LG</td><td></td><td></td></tr>
+<tr><td class=n>55</td><td>RS</td><td>1 LG, 6 DG, 6 LG, 6 DG, 5 LG</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>56</td><td>WS</td><td>6 LG, 6 DG, 6 LG, 6 DG</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>57</td><td>RS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>58</td><td>WS</td><td>1 LG, 6 DG, 6 LG, 6 DG, 5 LG</td><td></td><td></td></tr>
+<tr><td class=n>59</td><td>RS</td><td>4 LG, 6 DG, 6 LG, 6 DG, 2 LG</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>60</td><td>WS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>61</td><td>RS</td><td>2 LB, 6 DB, 6 LB, 6 DB, 4 LB</td><td></td><td></td></tr>
+<tr><td class=n>62</td><td>WS</td><td>5 LB, 6 DB, 6 LB, 6 DB, 1 LB</td><td><b>bias left</b>: p1, M1P, … ssp, p1</td><td></td></tr>
+<tr><td class=n>63</td><td>RS</td><td>6 DB, 6 LB, 6 DB, 6 LB</td><td><b>bias left</b>: k1, ssk, … M1, k1</td><td></td></tr>
+<tr><td class=n>64</td><td>WS</td><td>1 DB, 5 LB, 7 DB, 5 LB, 6 DB</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>65</td><td>RS</td><td>6 DB, 6 LB, 6 DB, 6 LB</td><td></td><td></td></tr>
+<tr><td class=n>66</td><td>WS</td><td>5 LB, 6 DB, 6 LB, 6 DB, 1 LB</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>67</td><td>RS</td><td>2 LB, 6 DB, 6 LB, 6 DB, 4 LB</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>68</td><td>WS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td></td><td></td></tr>
+<tr><td class=n>69</td><td>RS</td><td>4 LG, 6 DG, 6 LG, 6 DG, 2 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>70</td><td>WS</td><td>1 LG, 6 DG, 6 LG, 6 DG, 5 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>71</td><td>RS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>72</td><td>WS</td><td>6 LG, 6 DG, 6 LG, 6 DG</td><td></td><td></td></tr>
+<tr><td class=n>73</td><td>RS</td><td>1 LG, 6 DG, 6 LG, 6 DG, 5 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>74</td><td>WS</td><td>4 LG, 6 DG, 6 LG, 6 DG, 2 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>75</td><td>RS</td><td>3 LG, 6 DG, 6 LG, 6 DG, 3 LG</td><td></td><td></td></tr>
+<tr><td class=n>76</td><td>WS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>77</td><td>RS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>78</td><td>WS</td><td>24 DG</td><td></td><td>MB at st 7, 19</td></tr>
+<tr><td class=n>79</td><td>RS</td><td>6 DG, 6 LG, 6 DG, 6 LG</td><td></td><td></td></tr>
+<tr><td class=n>80</td><td>WS</td><td>5 LG, 6 DG, 6 LG, 6 DG, 1 LG</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>81</td><td>RS</td><td>2 LG, 6 DG, 6 LG, 6 DG, 4 LG</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>82</td><td>WS</td><td>3 LB, 6 DB, 6 LB, 6 DB, 3 LB</td><td></td><td></td></tr>
+<tr><td class=n>83</td><td>RS</td><td>4 LB, 6 DB, 6 LB, 6 DB, 2 LB</td><td><b>bias right</b>: k1, M1, … k2tog, k1</td><td></td></tr>
+<tr><td class=n>84</td><td>WS</td><td>1 LB, 6 DB, 6 LB, 6 DB, 5 LB</td><td><b>bias right</b>: p1, p2tog, … M1P, p1</td><td></td></tr>
+<tr><td class=n>85</td><td>RS</td><td>5 LB, 7 DB, 5 LB, 7 DB</td><td></td><td>MB at st 7, 19</td></tr>
+</table></div>
+</body></html>

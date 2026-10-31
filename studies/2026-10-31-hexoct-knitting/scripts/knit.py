@@ -406,3 +406,12 @@ def whole_catalogue():
 
 if __name__ == '__main__' and os.environ.get('CATALOGUE'):
     json.dump(whole_catalogue(), open(os.path.join(OUT, 'pieces-in-slice.json'), 'w'), indent=1)
+
+
+def configure(seq, types):
+    """Set the stacking used by build/chart: seq = layer letters, types = 'c'/'h' per layer (same length)."""
+    global SEQ, NROW, ltype
+    assert len(seq) == len(types) and all(a != b for a, b in zip(seq, seq[1:]))
+    SEQ = seq
+    NROW = RW * (len(SEQ) - 1) + 1
+    ltype = lambda k: types[k]

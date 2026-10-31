@@ -85,3 +85,49 @@ printed on dicto-node → `swatch/knit-swatch-4H.pdf` (2 pages; copy in ~/Docume
 chart-4H.png so the bobbles sit at stitches 7 and 19, away from the edges. Bias right = decrease at the left edge,
 increase at the right (seen from the RS); 8 bias-right rows (3, 4, 6, 7, 10, 11, 13, 14), 8 bias-left rows (17, 18, 20,
 21, 24, 25, 27, 28). Colours: DG 192, LG 144, DB 186, LB 174 stitches.
+
+## Generator (`scripts/hexknit.py`)
+
+`hexknit.py --ch <c/h word> | --abc <A/B/C word>  --layers N --name NAME [--stitches 24] [--outdir ../gen]`
+(the word is repeated; layer 0 = A, layer 1 = B). Writes `gen/NAME/`: slice.png, chart.png, rows.json, rows.md,
+section.html (for the paper) and paper.html (stand-alone swatch sheet). Same conventions as the 4H swatch (12-stitch
+repeat, 7 rows per layer, bias rows at gap rows 2, 3, 5, 6, 4 colours, tie → dark, bobbles at stitches 7 and 19).
+`knit.configure(seq, types)` sets the stacking for the geometry. Check: `--ch hchc --layers 5` reproduces
+`out/swatch-rows.json` row by row; `--layers 9` reproduces the colour counts of chart-4H.png.
+
+| Swatch | Input | Stacking | Size | Colours (DG/LG/DB/LB) | Net shift |
+|---|---|---|---|---|---|
+| 4H | `--ch hchc --layers 5` | ABCBA | 24 × 29 | 192/144/186/174 | 0 |
+| 3C | `--ch c --layers 7` | ABCABCA | 24 × 43 | 580/452/–/– | +24 |
+| 2H | `--ch h --layers 5` | ABABA | 24 × 29 | –/–/358/338 | 0 |
+| 6H | `--ch hcchcc --layers 7` | ABCACBA | 24 × 43 | 384/288/186/174 | 0 |
+| Fibonacci | `--ch chcchchcchcch --layers 13` | ABACBCACBABCA | 24 × 85 | 722/550/394/374 | 0 |
+
+Fibonacci word as in #69 (c → ch, h → c), first 13 letters. Swatch PDFs: `gen/<name>/knit-swatch-<name>.pdf` (copies in
+~/Documents/papers-to-read).
+
+## Exact area check (`scripts/areas.py`)
+
+In every layer band of all five stackings the tetrahedral and octahedral halves have exactly equal area (exact
+Fractions), so the slice is half dark, half light, and its blue share equals the share of h layers.
+Proof in the paper (Theorem 1(d)): per repeat a gap holds one rhombus (√2/2) and two triangles (√2/4 each), one standing,
+one hanging; each half-gap = trapezoid 3√2/16 + tip √2/16 dark against a parallelogram √2/4 light.
+
+## Prior art (31 Oct)
+
+Library (ask-library, 6 queries: knitting mathematics; crochet hyperbolic plane; textile representation of crystal
+structure; stacking sequence polytype visualisation zigzag projection; close packing polytypes Zhdanov notation; Delaunay
+tetrahedra octahedra slice of close packing): no knitting source; nearest Krishnamurthy–Akleman et al. 2020/2022 (woven
+tiles), Hart–Hansen–Kuhs 2021, Ganesh–Nasr 2023, Fedorov 1885. Web: belcastro & Yackel 2008, 2011, 2018 (contents
+listings); belcastro 2009 J. Math. Arts 3:67–83; Taimiņa (book; Bridges 2022); Bridges: Taalman & Yackel 2020, Markande &
+Matsumoto 2020, helicoid scaffolds 2024, Baker & Goldstine bead crochet 2017; Morton & Grishanov arXiv 0806.2824; Crum Brown
+1883 knitted-needle NaCl model (Edinburgh); Particulart (Bryden); Ravelry Crystallography Socks; Ball, Chemistry World;
+Wikipedia bias knitting; searches pairing bias knitting / chevrons / stacking faults / polytypes / Zhdanov with textiles.
+Verdict: the idea (knitted fabric = exact edge-on slice of a close-packed stacking, placed by bias, coloured by the
+Rule-of-Halves pieces) was not found. Sources were judged from search summaries and listings, not full texts.
+
+## Paper draft
+
+~/k-research/papers/hexoct-knitting/ (paper.src.html + assemble.py → paper.html; fig/; card-hexoct-knitting.png +
+card.md for dictospheres.com, not on the site). DRAFT PDF: ~/Documents/papers-to-read/DRAFT-hexoct-knitting.pdf
+(17 pages: 6 of paper, 11 of swatch appendix). Not published; awaiting DICTO's read.
