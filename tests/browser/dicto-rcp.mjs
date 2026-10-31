@@ -84,7 +84,7 @@ for (const dev of Object.keys(DEVICES)) {
   await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1200);
   await h.press(`${P} [data-wq-mode="shells"]`); await page.waitForTimeout(1200);
   // the third toggle in the Whole / RCP view row
-  assert.deepEqual(await page.evaluate((p) => [...document.querySelectorAll(`${p} .wq-whole-row button`)].map((x) => Object.keys(x.dataset)[0]), P), ['wqWhole', 'wqRcp', 'wqDictoRcp']);
+  assert.deepEqual(await page.evaluate((p) => [...document.querySelectorAll(`${p} .wq-whole-row button`)].map((x) => Object.keys(x.dataset)[0]), P), ['wqWhole', 'wqRcp', 'wqDictoRcp', 'wqSectors']);
   assert.equal(await page.locator(`${P} [data-wq-dicto-rcp]`).textContent(), 'RCP v4');
   assert.equal(await page.locator(`${P} [data-wq-whole]`).textContent(), 'Cut open');
   if (dev === 'phone') await touchable(page, `${P} [data-wq-dicto-rcp]`, dev);

@@ -27,6 +27,7 @@ import * as WQG from './white-queen-geometry.js';
 import * as RQG from './red-queen-geometry.js';
 import { farEyePoints } from './dicto-rcp.js';
 import { STAGE_KEYS, STAGE_FACTS, stageShadowAt, stage as stageModel } from './queen-stages-geometry.js';
+import { sectorCones, cellWedges, cellFaceLoops, SECTOR_COUNT } from './queen-sectors.js';
 
 export const WQ_DIRECTIONS = DIRECTIONS;
 /** The slider: 0..1000 along the chosen turning, its two ends the stops (it snaps to one within WQ_SNAP). */
@@ -57,6 +58,11 @@ const DICTO_RCP_POINTS = {
   white: farEyePoints(WQG.VERTICES, 2, CLEO_SHELLS[0].cells.map((ci) => CELLS[ci]), UP, RCP_MARGIN),
   red: farEyePoints(RQG.VERTICES, RQG.RADIUS, RQG.CELL_LAYERS[0].cells.map((ci) => RQG.CELLS[ci].corners), UP, RCP_MARGIN),
 };
+// Sectors (DICTO 2026-10-31, "twelve sectors for red queen and 20 sectors for white"; queen-sectors.js): every drawn cell cut by the
+// planes through the seed axis over the core's faces into wedges, each sector pulled out along its own axis by up to SECTOR_PULL × the
+// picture's radius; the cuts drawn with crisp dark edges
+const SECTOR_PULL = 0.5, SECTOR_EDGE = 0x1d2027;
+const CONES = { white: sectorCones('white'), red: sectorCones('red') };
 const RED_FACES = { 5: 0xc8504a, 6: 0xd9a441, 7: 0x7fae7a, 8: 0x8b78c4, 9: 0x4fa3a5, 10: 0xd07fb0 };   // #65's figures (render_atlas120.py), by sides
 // the study picture's colours (matplotlib viridis from 0.15 to 0.95), the core gold
 const VIRIDIS = [[0, 0x440154], [0.125, 0x482878], [0.25, 0x3e4989], [0.375, 0x31688e], [0.5, 0x26828e], [0.625, 0x1f9e89], [0.75, 0x35b779], [0.875, 0x6ece58], [1, 0xfde725]];
@@ -127,7 +133,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
   group.visible = false;
   scene.add(group);
   // the view: Shadow (the turning from → to, the slider's place u) or Slice (a direction and its stop k)
-  const view = { queen: 'white', stage: 0, mode: 'shadow', ...WQ_DEFAULT, u: 0, sliceDir: 'vertex-first', sliceK: 0, shells: 1, halves: false, apart: 0, lineUp: false, whole: false, rcp: false, dictoRcp: false };
+  const view = { queen: 'white', stage: 0, mode: 'shadow', ...WQ_DEFAULT, u: 0, sliceDir: 'vertex-first', sliceK: 0, shells: 1, halves: false, apart: 0, lineUp: false, whole: false, rcp: false, dictoRcp: false, sectors: false, sectorsApart: 0 };
   try {
     const d = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
     if (WQ_QUEENS.includes(d?.queen)) view.queen = d.queen;
@@ -144,6 +150,8 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     view.rcp = d?.rcp === true;
     view.dictoRcp = d?.dictoRcp === true && !view.rcp;   // one perspective at a time
     view.lens = d?.lens === true;
+    view.sectors = d?.sectors === true;
+    if (Number.isFinite(d?.sectorsApart)) view.sectorsApart = Math.max(0, Math.min(1000, Math.round(d.sectorsApart)));
     if (Number.isFinite(d?.apart)) view.apart = Math.max(0, Math.min(1000, Math.round(d.apart)));
     if (Number.isInteger(d?.sliceK)) view.sliceK = Math.max(0, Math.min((view.queen === 'red' ? RQG : WQG).SLICE_STOPS[DIRECTIONS.indexOf(view.sliceDir)].length - 1, d.sliceK));
   } catch { /* defaults */ }
@@ -413,6 +421,22 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
         f.forEach((k, i) => { const l = f[(i + 1) % f.length]; if (red() || k < l) lines.push(...at(k), ...at(l)); });
       }
     }
+    meshFrom(g, pos, lines, hex, { opacity: op, edge, edgeOpacity, order, glow, roughness });
+  }
+  /** Sectors: wedges ({ sector, faces as point loops }) as one mesh and their edges, each sector moved out along its axis by `pull`. */
+  function wedgesMesh(g, wedges, cones, pull, hex, { shrink = 1, ...opts } = {}) {
+    const pos = [], lines = [];
+    for (const w of wedges) {
+      const o = cones[w.sector].axis.map((x) => x * pull), all = w.faces.flat(), m = [0, 1, 2].map((i) => all.reduce((a, p) => a + p[i], 0) / all.length);
+      const at = (p) => p.map((x, i) => m[i] + shrink * (x - m[i]) + o[i]);
+      for (const f of w.faces) {
+        for (let i = 1; i + 1 < f.length; i++) pos.push(...at(f[0]), ...at(f[i]), ...at(f[i + 1]));
+        f.forEach((p, i) => lines.push(...at(p), ...at(f[(i + 1) % f.length])));
+      }
+    }
+    meshFrom(g, pos, lines, hex, opts);
+  }
+  function meshFrom(g, pos, lines, hex, { opacity: op = 1, edge = SLICE_EDGE, edgeOpacity = 1, order = 3, glow = GLOW * 0.8, roughness = 0.6, width = 1.8 } = {}) {
     const see = op < 1;
     if (!skeleton) {
       const geo = new THREE.BufferGeometry();
@@ -424,7 +448,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     }
     const lg = new THREE.BufferGeometry();
     lg.setAttribute('position', new THREE.Float32BufferAttribute(lines, 3));
-    const l = fat(skeleton ? 0xdfe6f0 : edge, 1.8, edgeOpacity); if (lines.length) l.geometry.setPositions(lines); lg.dispose();
+    const l = fat(skeleton ? 0xdfe6f0 : edge, width, edgeOpacity); if (lines.length) l.geometry.setPositions(lines); lg.dispose();
     g.add(l);
   }
   let halvesShown = null;
@@ -438,10 +462,31 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     cellsMesh(halvesGroup, h.back, P, BACK, { opacity: 0.55, edge: 0xcfe0ff, edgeOpacity: 0.7, offset: [0, 0, -off], order: 4 });
     halvesShown = { front: h.front.length, back: h.back.length, side: h.side.length };
   }
-  let shellsRadius = 1, wholeKept = [];
+  let shellsRadius = 1, wholeKept = [], sectorsShown = null;
+  // the wedges of each cell, by picture (queen and perspective), computed once each
+  const wedgeCache = new Map();
+  const picture = () => `${view.queen}:${view.rcp ? 'rcp' : view.dictoRcp ? 'dictoRcp' : 'shells'}`;
+  function wedgesOf(ci, Q) {
+    const key = picture();
+    if (!wedgeCache.has(key)) wedgeCache.set(key, new Map());
+    const m = wedgeCache.get(key);
+    if (!m.has(ci)) m.set(ci, cellWedges(cellFaceLoops(view.queen, ci).map((f) => f.map((k) => Q[k])), CONES[view.queen]));
+    return m.get(ci);
+  }
+  /** The cells drawn, as cells or (Sectors on) as their wedges pulled apart by `pull`. */
+  function piecesMesh(list, Q, hex, opts, pull) {
+    if (!view.sectors) { cellsMesh(shellsGroup, list, Q, hex, opts); return; }
+    const W = list.flatMap((ci) => wedgesOf(ci, Q));
+    sectorsShown.wedges += W.length;
+    wedgesMesh(shellsGroup, W, CONES[view.queen], pull, hex, opts);
+  }
   function drawShells() {
     clear(shellsGroup);
     const Q = (view.rcp ? RCP_POINTS[view.queen] : view.dictoRcp ? DICTO_RCP_POINTS[view.queen] : red() ? RQG.LAYER_POINTS : CLEO_POINTS).map((p) => p.map((c) => c * WS)), n = view.shells, SH = shellList(), N = totalShells();
+    sectorsShown = view.sectors ? { count: SECTOR_COUNT[view.queen], wedges: 0, apart: view.sectorsApart } : null;
+    // Sectors pulled apart: each moves out along its own axis, by up to SECTOR_PULL × the radius of what is drawn
+    const R0 = view.whole ? Math.max(...Q.map((p) => Math.hypot(...p)).filter(Number.isFinite)) : Math.max(...SH[n - 1].cells.flatMap((c) => cornersOf(c)).map((k) => Math.hypot(...Q[k])));
+    const pull = view.sectors ? (view.sectorsApart / 1000) * SECTOR_PULL * R0 : 0, grow = 1 + pull / R0;
     if (view.whole) {
       // Whole (DICTO 2026-10-28): all 15 shells at once, cut open like an onion: the half facing the starting camera removed (a cell
       // stays when its centre lies behind the cut through the centre), every shell solid in its own colour, lit (little glow) so the
@@ -452,18 +497,19 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
         wholeKept.push(keep.length);
         // the Red Queen's far dodecahedron wraps all the others in this perspective, whole (no cut opens it): it stays see-through
         const wrap = red() && k === N - 1 && !view.rcp && !view.dictoRcp;
-        cellsMesh(shellsGroup, wrap ? SH[k].cells : keep, Q, shellColour(k, N), wrap ? { opacity: 0.08, edge: 0xffffff, edgeOpacity: 0.25 } : { opacity: 1, edge: 0x1d2027, edgeOpacity: 0.5, glow: 0.12, roughness: 0.45, shrink: 0.94 });
+        piecesMesh(wrap ? SH[k].cells : keep, Q, shellColour(k, N), wrap ? { opacity: 0.08, edge: 0xffffff, edgeOpacity: 0.25 } : view.sectors ? { opacity: 1, edge: SECTOR_EDGE, edgeOpacity: 1, glow: 0.12, roughness: 0.45, shrink: 0.94 } : { opacity: 1, edge: 0x1d2027, edgeOpacity: 0.5, glow: 0.12, roughness: 0.45, shrink: 0.94 }, pull);
       }
-      shellsRadius = Math.max(...Q.map((p) => Math.hypot(...p)).filter(Number.isFinite));
+      shellsRadius = R0 * grow;
       shown = { shells: N, whole: true };
       return;
     }
     // the newest shell solid (a touch see-through, so the gaps of shells 6 and 8 show what is inside), the ones inside it faint
     for (let k = 0; k < n; k++) {
       const newest = k === n - 1;
-      cellsMesh(shellsGroup, SH[k].cells, Q, shellColour(k, N), newest ? { opacity: 0.9, edge: 0xf3ead2, edgeOpacity: 0.85, glow: 0.16, roughness: 0.45 } : { opacity: 0.1, edge: 0xffffff, edgeOpacity: 0.12 });
+      // Sectors: the newest shell solid with crisp dark edges along every cut
+      piecesMesh(SH[k].cells, Q, shellColour(k, N), newest ? (view.sectors ? { opacity: 1, edge: SECTOR_EDGE, edgeOpacity: 1, glow: 0.16, roughness: 0.45, width: 2 } : { opacity: 0.9, edge: 0xf3ead2, edgeOpacity: 0.85, glow: 0.16, roughness: 0.45 }) : { opacity: 0.1, edge: 0xffffff, edgeOpacity: 0.12 }, pull);
     }
-    shellsRadius = Math.max(...SH[n - 1].cells.flatMap((c) => cornersOf(c)).map((k) => Math.hypot(...Q[k])));
+    shellsRadius = R0 * grow;
     shown = { shells: n };
   }
   function draw() {
@@ -502,13 +548,15 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     <div class="w4d-row w4d-options wq-link-row"><button type="button" data-wq-link></button></div>
     <div class="w4d-row w4d-options wq-lineup-row"><button type="button" data-wq-lineup></button></div>
     <div class="w4d-row st-note wq-legend"></div>
-    <div class="w4d-row w4d-options wq-whole-row"><button type="button" data-wq-whole></button><button type="button" data-wq-rcp></button><button type="button" data-wq-dicto-rcp></button></div>
+    <div class="w4d-row w4d-options wq-whole-row"><button type="button" data-wq-whole></button><button type="button" data-wq-rcp></button><button type="button" data-wq-dicto-rcp></button><button type="button" data-wq-sectors></button></div>
     <div class="w4d-row wq-shells-row"><label class="hull-pick"><span class="wq-shells-label"></span> <input type="range" class="st-slider" min="1" max="${CLEO_SHELLS.length}" step="1"></label></div>
+    <div class="w4d-row wq-sectors-row"><label class="hull-pick"><span class="wq-sectors-label"></span> <input type="range" class="st-slider" min="0" max="1000" step="1"></label></div>
     <div class="w4d-row ch-param-caption" aria-live="polite"></div>
     <div class="w4d-row st-note fold"></div>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, 'whiteQueen');
   const input = panel.querySelector('.wq-param-row input'), sliceInput = panel.querySelector('.wq-slice-row input');
+  const sectorsInput = panel.querySelector('.wq-sectors-row input');
   const apartInput = panel.querySelector('.wq-apart-row input'), shellsInput = panel.querySelector('.wq-shells-row input'), halvesBtn = panel.querySelector('[data-wq-halves]');
   const caption = panel.querySelector('.ch-param-caption'), note = panel.querySelector('.st-note.fold'), stageInput = panel.querySelector('.wq-stage-row input');
   note.addEventListener('click', () => note.classList.toggle('open'));
@@ -556,6 +604,13 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     const db = panel.querySelector('[data-wq-dicto-rcp]');
     db.textContent = t('wq.dictoRcp', L); db.classList.toggle('active', view.dictoRcp); db.setAttribute('aria-pressed', String(view.dictoRcp));
     panel.querySelector('.wq-shells-row').hidden = !shells || view.whole;   // nothing unnecessary shown: the slider builds shells one by one
+    const sb = panel.querySelector('[data-wq-sectors]');
+    sb.textContent = t('wq.sectors', L); sb.title = t(red() ? 'rq.sectors.tip' : 'wq.sectors.tip', L); sb.classList.toggle('active', view.sectors); sb.setAttribute('aria-pressed', String(view.sectors));
+    panel.querySelector('.wq-sectors-row').hidden = !(shells && view.sectors);
+    panel.querySelector('.wq-sectors-label').textContent = t('wq.sectors.param', L);
+    sectorsInput.value = String(view.sectorsApart);
+    const sectorsNote = view.sectors ? ` ${t(red() ? 'rq.note.sectors' : 'wq.note.sectors', L)}` : '';
+    const sectorsCaption = shells && sectorsShown ? ` · ${t('wq.sectors.count', L, { n: sectorsShown.count, w: sectorsShown.wedges })}` : '';
     halvesBtn.textContent = t('wq.halves', L); halvesBtn.classList.toggle('active', view.halves); halvesBtn.setAttribute('aria-pressed', String(view.halves));
     for (const end of ['from', 'to', 'slice']) {
       const lab = panel.querySelector(`[data-wq-label="${end}"]`);
@@ -579,14 +634,14 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
       panel.querySelector('.wq-apart-label').textContent = t('wq.halves.param', L);
       apartInput.value = String(view.apart);
     } else if (shells && view.whole) {
-      caption.textContent = t(red() ? 'rq.layers.whole' : 'wq.shells.whole', L);
-      note.textContent = `${t(red() ? 'rq.note.layers' : 'wq.note.shells', L)} ${t('wq.note.rcp', L)} ${t('wq.note.dictoRcp', L)}`;
+      caption.textContent = t(red() ? 'rq.layers.whole' : 'wq.shells.whole', L) + sectorsCaption;
+      note.textContent = `${t(red() ? 'rq.note.layers' : 'wq.note.shells', L)} ${t('wq.note.rcp', L)} ${t('wq.note.dictoRcp', L)}${sectorsNote}`;
     } else if (shells) {
       panel.querySelector('.wq-shells-label').textContent = t(red() ? 'rq.layers.param' : 'wq.shells.param', L, { n: view.shells, total: totalShells() });
       shellsInput.max = String(totalShells());
       shellsInput.value = String(view.shells);
-      caption.textContent = wqShellsCaption(view.shells, L, red());
-      note.textContent = `${t(red() ? 'rq.note.layers' : 'wq.note.shells', L)} ${t('wq.note.tapNext', L)} ${t('wq.note.rcp', L)} ${t('wq.note.dictoRcp', L)}`;
+      caption.textContent = wqShellsCaption(view.shells, L, red()) + sectorsCaption;
+      note.textContent = `${t(red() ? 'rq.note.layers' : 'wq.note.shells', L)} ${t('wq.note.tapNext', L)} ${t('wq.note.rcp', L)} ${t('wq.note.dictoRcp', L)}${sectorsNote}`;
     } else {
       panel.querySelector('.wq-slice-label').textContent = t('wq.slice.param', L, { d: t(`wq.dir.${view.sliceDir}`, L) });
       sliceInput.value = String(sliceU(view.sliceDir, view.sliceK, red()));
@@ -612,6 +667,9 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
   panel.querySelector('[data-wq-whole]').addEventListener('click', () => { view.whole = !view.whole; save(); draw(); fit(); });
   panel.querySelector('[data-wq-rcp]').addEventListener('click', () => { view.rcp = !view.rcp; if (view.rcp) view.dictoRcp = false; save(); draw(); fit(); });
   panel.querySelector('[data-wq-dicto-rcp]').addEventListener('click', () => { view.dictoRcp = !view.dictoRcp; if (view.dictoRcp) view.rcp = false; save(); draw(); fit(); });
+  panel.querySelector('[data-wq-sectors]').addEventListener('click', () => { view.sectors = !view.sectors; save(); draw(); fit(); });
+  sectorsInput.addEventListener('input', () => { const v = Number(sectorsInput.value); if (v === view.sectorsApart) return; view.sectorsApart = v; save(); draw(); });
+  sectorsInput.addEventListener('change', fit);
   shellsInput.addEventListener('input', () => { const n = Number(shellsInput.value); if (n === view.shells) return; view.shells = n; save(); draw(); fit(); });
   // the slice slider stops only at the atlas's stops: the nearest one
   sliceInput.addEventListener('input', () => {
@@ -664,13 +722,15 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
     },
     /** ?open=whitequeen:<vertex|edge|face|cell>: the Shadow view at that main direction (turning to cell-first, or vertex-first from
      *  cell-first); ?open=whitequeen:slice | :shells those views; ?open=whitequeen:humpty the Slice view at Humpty Dumpty;
-     *  ?open=whitequeen:red | :white that queen (as she was left); ?open=whitequeen:redcore the Red Queen's core dodecahedron. */
+     *  ?open=whitequeen:red | :white that queen (as she was left); ?open=whitequeen:redcore the Red Queen's core dodecahedron;
+     *  ?open=whitequeen:sectors | :redsectors that queen's Shells cut open, in her sectors pulled apart. */
     setChain(kind) {
       const k = SHORT[kind] ?? kind;
       if (kind === 'red' || kind === 'white') { view.queen = kind; view.stage = kind === 'red' ? 6 : 0; clampToQueen(); }
       else if (STAGE_KEYS.includes(kind)) Object.assign(view, { mode: 'shadow', stage: STAGE_KEYS.indexOf(kind), halves: false });   // ?open=whitequeen:t12 (a stage)
       else if (kind === 'redcore') Object.assign(view, { queen: 'red', stage: 6, mode: 'shells', shells: 1, whole: false });
       else if (kind === 'slice') view.mode = kind;
+      else if (kind === 'sectors' || kind === 'redsectors') { const q = kind === 'sectors' ? 'white' : 'red'; Object.assign(view, { queen: q, stage: q === 'red' ? 6 : 0, mode: 'shells', shells: q === 'red' ? RQ_LAYERS : WQ_SHELLS, whole: true, sectors: true, sectorsApart: 500 }); }
       else if (kind === 'shells') Object.assign(view, { queen: 'white', stage: 0, mode: 'shells', shells: 1, whole: false });   // the link from Aristotle's Pyramid: the Cleo core
       else if (kind === 'humpty') {
         view.queen = 'white'; view.stage = 0;
@@ -689,7 +749,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
       draw(); fit();
       setTimeout(() => { if (active) renderPanel(); }, 0);   // after the entry has written the menu's title
     },
-    resetView() { Object.assign(view, { mode: 'shadow', stage: red() ? 6 : 0, ...WQ_DEFAULT, u: 0, sliceDir: 'vertex-first', sliceK: 0, shells: 1, halves: false, apart: 0, lineUp: false }); save(); if (active) { draw(); fit(); } },
+    resetView() { Object.assign(view, { mode: 'shadow', stage: red() ? 6 : 0, ...WQ_DEFAULT, u: 0, sliceDir: 'vertex-first', sliceK: 0, shells: 1, halves: false, apart: 0, lineUp: false, sectors: false, sectorsApart: 0 }); save(); if (active) { draw(); fit(); } },
     setSkeleton(on) { if (on !== skeleton) { skeleton = on; if (active) draw(); } },
     setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) draw(); } },
     setLatticeView() {},
@@ -702,7 +762,7 @@ export function createWhiteQueenWorld({ scene, fitView = () => {}, openAction = 
       if (view.mode === 'shadow' && view.lens) return { mode: 'shadow', lens: true, lensBands, lensShown: !lensEl.hidden, lensColours: Array.from(lensLine.geometry.attributes.instanceColorStart?.data?.array?.slice(0, 18) ?? []) };
       if (view.mode === 'shells') {
         const k = view.shells - 1;
-        return { queen: view.queen, mode: 'shells', rcp: view.rcp, dictoRcp: view.dictoRcp, whole: view.whole, wholeKept: view.whole ? wholeKept.slice() : null, shells: view.shells, total: totalShells(), newest: { k, pieces: shellList()[k].cells.length }, colours: Array.from({ length: view.shells }, (_, i) => shellColour(i, totalShells())), radius: shellsRadius };
+        return { queen: view.queen, mode: 'shells', rcp: view.rcp, dictoRcp: view.dictoRcp, whole: view.whole, wholeKept: view.whole ? wholeKept.slice() : null, shells: view.shells, total: totalShells(), newest: { k, pieces: shellList()[k].cells.length }, colours: Array.from({ length: view.shells }, (_, i) => shellColour(i, totalShells())), radius: shellsRadius, sectors: sectorsShown ? { ...sectorsShown } : null };
       }
       if (view.mode === 'slice') {
         const s = shown, nm = red() ? null : namedAt(view.sliceDir, s.stop.height);
