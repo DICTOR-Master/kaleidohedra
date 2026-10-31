@@ -107,3 +107,14 @@ export function hexoctPreviewEdges() {
   }
   return out;
 }
+
+// ---- one tile at a time (the HexOct kit in Polyhedraverse, DICTO 2026-11-01) ----
+export { third as thirdLetter };
+/** The ball of tile (i, j) of layer k on position `letter` (z up, the same frame as hexoctCrystal before it is centred). */
+export const hexoctBall = (letter, i, j, k) => [POS[letter][0] + i * A1[0] + j * A2[0], POS[letter][1] + i * A1[1] + j * A2[1], k * LAYER_H];
+/** One tile of `type` at ball (i, j) of layer k whose layers below, at and above sit on the letters given: its four pieces
+ *  [{ type, role, vertices, faces }], placed exactly as hexoctCrystal places them (by tileMotion). */
+export function hexoctTileAt(type, below, at, above, i, j, k) {
+  const M = tileMotion(type, below, at, above), o = hexoctBall(at, i, j, k);
+  return hexoctTile(type).map((p) => ({ type, role: p.role, vertices: p.vertices.map((v) => apply(M, v).map((x, c) => x + o[c])), faces: p.faces }));
+}

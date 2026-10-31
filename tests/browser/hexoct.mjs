@@ -1,8 +1,9 @@
-// HexOct (DICTO 2026-10-31; paper #75) through the real UI, phone (390×844, touch) and desktop (1280×800, mouse), Polyhedraverse door:
-// DICTO's pieces list HexOct first; it opens in Polyhedraverse on the c-tiles (3C); each fill button (3C, 2H, 4H, 6H, Fibonacci) stacks
+// HexOct (DICTO 2026-10-31; paper #75) through the real UI, phone (390×844, touch) and desktop (1280×800, mouse), Kaleidohedra door:
+// a Kaleidohedra world since 2026-11-01, listed right after the Stackings World (and no longer among Polyhedraverse's DICTO's pieces,
+// whose first section is now the HexOct kit); it opens in Kaleidohedra on the c-tiles (3C); each fill button (3C, 2H, 4H, 6H, Fibonacci) stacks
 // its layers, 3 × 3 tiles of 4 pieces each; the field takes the viewer's own c/h sequence (Enter or Stack) and refuses anything else;
 // Helpers turns the pieces to glass and back; edges ≥ 1.5 px; no paint, shear or lattice-view controls. The deep links
-// ?open=hexoct:fib and ?open=hexoct:chh. No console errors.
+// ?open=hexoct:fib and ?open=hexoct:chh, from the Kaleidohedra and the Polyhedraverse door, open it in Kaleidohedra. No console errors.
 // Screenshots in $SHOTS (default /tmp/hexoct-shots): <dev>-<fill>.png, <dev>-fib-helpers.png, <dev>-own.png.
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
@@ -21,18 +22,29 @@ for (const dev of Object.keys(DEVICES)) {
   page.on('console', (m) => { if (m.type() === 'error' && !/favicon|Failed to load resource/.test(m.text())) errors.push(m.text()); });
   const press = (sel) => (dev === 'phone' ? page.tap(sel) : page.click(sel));
   const probe = () => page.evaluate(() => window.__hexoctProbe());
+  const site = () => page.evaluate(async () => (await import('./src/app/site.js')).activeSite());
+  // Polyhedraverse's DICTO's pieces: no HexOct world there any more (the kit is first)
   await page.goto(`${BASE}/index.html?probe&site=polyhedraverse`);
   await page.waitForSelector('#welcome-overlay', { state: 'visible', timeout: 30000 }); await page.keyboard.press('Enter');
   await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
   if (!(await page.locator('[data-family="DICTO_PIECES"]').count())) await press('.dim-wizard-card-btn[data-dim="3D"]');
   const fam = page.locator('[data-family="DICTO_PIECES"]').first(); await fam.scrollIntoViewIfNeeded(); await fam[dev === 'phone' ? 'tap' : 'click'](); await page.waitForTimeout(800);
-  // HexOct is the first section of DICTO's pieces
-  assert.equal(await page.locator('.poly-section').first().getAttribute('data-section'), 'hexoct', `${dev}: HexOct first`); checks++;
-  await page.locator('[data-hexoct]').first()[dev === 'phone' ? 'tap' : 'click'](); await page.waitForTimeout(400);
+  assert.equal(await page.locator('[data-hexoct], [data-action="tool:hexoctWorld"]').count(), 0, `${dev}: not among DICTO's pieces`);
+  assert.equal(await page.locator('.poly-section').first().getAttribute('data-section'), 'hexoct-kit', `${dev}: the kit first`); checks++;
+  // the Kaleidohedra door: HexOct right after the Stackings World
+  await page.goto(`${BASE}/index.html?probe&site=kaleidohedra`);
+  await page.waitForSelector('#welcome-overlay', { state: 'visible', timeout: 30000 }); await page.keyboard.press('Enter');
+  await page.waitForSelector('.dim-wizard-overlay.open'); await page.waitForTimeout(400);
+  if (!(await page.locator('[data-action="tool:hexoctWorld"]').count())) await press('.dim-wizard-card-btn[data-dim="3D"]');
+  await page.waitForTimeout(500);
+  const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
+  assert.deepEqual(worlds.slice(2, 4), ['tool:stackingsWorld', 'tool:hexoctWorld'], `${dev}: after the Stackings World`); checks++;
+  const card = page.locator('[data-action="tool:hexoctWorld"]').first(); await card.scrollIntoViewIfNeeded(); await card[dev === 'phone' ? 'tap' : 'click'](); await page.waitForTimeout(400);
   if (await page.locator('#leave-dialog:not([hidden])').count()) await press('#leave-dialog [data-choice="keep"]');
   await page.waitForSelector(`${P}.visible`); await page.waitForTimeout(1200);
   assert.equal((await page.textContent('#hud-world-title')).trim(), 'HexOct', `${dev}: title`);
-  // Polyhedraverse's space; nothing that does not apply
+  assert.equal(await site(), 'kaleidohedra', `${dev}: in Kaleidohedra`);
+  // nothing that does not apply
   for (const sel of ['#hud-quick-lattice-view', '#shear-panel']) assert.ok(!(await page.locator(sel).isVisible().catch(() => false)), `${dev}: ${sel} hidden`);
   checks++;
   let st = await probe();
@@ -71,12 +83,13 @@ for (const dev of Object.keys(DEVICES)) {
   await page.screenshot({ path: `${SH}/${dev}-own.png` });
   assert.deepEqual(errors, [], `${dev}: console errors`); checks++;
   // the deep links
-  for (const [link, kind, types] of [['hexoct:fib', 'fib', FILLS.fib], ['hexoct:chh', 'own', 'chhchh']]) {
-    await page.goto(`${BASE}/index.html?probe&open=${link}`);
+  for (const [link, kind, types, door] of [['hexoct:fib', 'fib', FILLS.fib, 'polyhedraverse'], ['hexoct:chh', 'own', 'chhchh', 'kaleidohedra']]) {
+    await page.goto(`${BASE}/index.html?probe&site=${door}&open=${link}`);
     await page.waitForSelector('#welcome-overlay', { state: 'visible', timeout: 8000 }).then(() => page.keyboard.press('Enter')).catch(() => {});
     await page.waitForSelector(`${P}.visible`, { timeout: 30000 }); await page.waitForTimeout(1500);
     st = await probe();
     assert.deepEqual([st.kind, st.types], [kind, types], `${dev}: ?open=${link}`);
+    assert.equal(await site(), 'kaleidohedra', `${dev}: ?open=${link} from ${door} opens in Kaleidohedra`);
     assert.equal(await page.locator('.dim-wizard-overlay.open').count(), 0, `${dev}: no wizard over it`); checks++;
   }
   assert.deepEqual(errors, [], `${dev}: console errors`); checks++;
