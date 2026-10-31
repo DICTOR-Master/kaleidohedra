@@ -93,3 +93,11 @@ Status: done, exact; build sheet printed (not for publication), awaiting DICTO's
 - `scripts/stack_build.py` → `out/stack-build.json`, `out/stack-assembly.png`, `out/stack-mockup.png`.
   (`stack.py`'s own main run was stopped for time; its checks were rerun through stack_probe.py and stack_build.py;
   `out/stack.log` holds its hexagon-joint and one-string output.)
+
+## How the real build looks (DICTO, 2026-10-31, confirmed)
+In each big triangle of four security rings:
+1. The three corner rings lie flat face outward, the face with the slits; their sloping sides tuck in very slightly at the edges.
+2. The central ring is the other way up and shows its L-shaped section (flat band + sloping flange); the zip-tie heads (small cubes)
+   are tucked into the angle of the L.
+3. On the corner rings the zip ties show only as flat bands threaded through the slits, blending in; from outside they are hardly seen.
+DICTO's photos are the record of the real build (private, ~/Documents/ring-photos). No photo-fitted renders (DICTO 10-31).
