@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Splash Rules II: perovskite polytypes</title>
+<link rel="stylesheet" href="../paper.css">
+<style>figure img{width:100%;display:block;border-radius:2pt} table{border-collapse:collapse;font-size:8pt;margin:3mm 0;width:100%} td,th{border-bottom:1px solid #ddd;padding:0.9mm 1.3mm;text-align:left;vertical-align:top} td.n,th.n{text-align:right} .thm{border-left:3px solid #b8962e;padding-left:3mm;margin:3mm 0;break-inside:avoid} .verdict{border:1.5px solid #b8962e;border-radius:3pt;padding:2.5mm 3.5mm;margin:3mm 0;background:#fbf8ef} tr.grp td{background:#f4efe0;font-weight:bold}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+
+<h1>Splash Rules II: perovskite polytypes</h1>
+<p class="sub">Every count of the hexagonal perovskites ABX<sub>3</sub> on every stacking up to twelve layers, exactly, and the one rule behind them</p>
+<div class="meta"><b>DICTO</b> · study of 31 October 2026 · results for DICTO, not for publication<br>
+DICTO's idea (Splash Rules, 27 October): plot a whole family of exact values and look for one rule that covers the local ones. Computation with Claude (Anthropic).</div>
+
+<div class="verdict"><b>Verdict.</b> Yes, one rule covers every local rule found: the <b>Window Law</b> (placeholder name). <i>A count read from g neighbouring layers is a straight line in the shares of the c/h words of length g.</i> For g = 1 this is DICTO's Hexagonality Law. For g = 2 exactly one new number enters, the share p<sub>hh</sub> of neighbouring pairs of hexagonal layers, and its coefficient is the Swap defect F(cc) + F(hh) − F(ch) − F(hc): the Swap Rule is precisely the test that a pair count falls back to a line in h.
+<br><b>What is new.</b> The law itself is elementary and classical in substance (stacking-disorder theory; the J<sub>1</sub>–J<sub>2</sub> energies of polytypes). New are the exact perovskite results: face-sharing clusters per B = 1 − h, so the mean cluster has 1/(1 − h) octahedra; every gap of every polytype holds the same empty holes; A neighbours per B = 8 − 2h; the B–B distance shells, each with its own window; and the full table of which count needs which window. Known before: face-sharing 2h and corner-sharing 6(1 − h) per B (#72, classical in substance).</div>
+
+<h2>1. Set-up</h2>
+<p>X and A are equal close-packed balls (X–X = 1). Each close-packed layer is AX<sub>3</sub>, A on a 2 × 2 sublattice. B sits in the octahedral holes made of X only. A layer is h when its two neighbours sit on the same position, c otherwise; h is the share of h layers, p<sub>hh</sub> the share of neighbouring layer pairs that are both h.</p>
+<p>The structure is forced by the stacking. In each gap exactly one octahedral hole per cell avoids the A of the lower layer, and the A of the upper layer must avoid it too, which fixes its position. So each c/h word gives one perovskite, and the A pattern never doubles the period (checked on every stacking). Coordinates are integers in thirds of the lattice and quarters of the layer spacing, so 72·r² = 8(x² + xy + y²) + 3z² is an integer and every distance and count below is exact.</p>
+<p>The family: all 505 polytypes up to period 12 (every primitive c/h word, up to turning over) and 50 random stackings of 48 layers from a two-state chain, chosen so that h and p<sub>hh</sub> vary independently: 555 stackings. Each quantity, per formula unit, was tested exactly as a line in h, as a plane in (h, p<sub>hh</sub>), and as a linear form in the shares of longer c/h words, by exact elimination over all 555 rows.</p>
+
+<h2>2. The Window Law</h2>
+<div class="thm"><p><b>Theorem (g = 2).</b> Let F be a quantity of a gap that is fixed by the types of the gap's two layers. Its mean over any stacking is</p>
+<p style="text-align:center">F̄ = F(cc) + [F(ch) + F(hc) − 2F(cc)]·h + Δ·p<sub>hh</sub>, &nbsp; Δ = F(cc) + F(hh) − F(ch) − F(hc).</p>
+<p>So F̄ is a straight line in h exactly when Δ = 0, the Swap Rule.</p></div>
+<p><b>Proof.</b> The gap types occur with shares f(cc) = 1 − 2h + p<sub>hh</sub>, f(ch) = f(hc) = h − p<sub>hh</sub>, f(hh) = p<sub>hh</sub>. Multiply out. ∎</p>
+<p>The direction Δ = 0 ⇒ line in h is #66's result. The perovskite splash shows both directions: the six per-gap quantities that pass the Swap test are lines in h, the three that fail are planes with coefficient Δ = +1, −2, +1 (B with 0, 1, 2 shared faces). In general a count fixed by g layers is a linear form in the shares of the c/h words of length g, which have 2<sup>g−1</sup> free values; for the B–B pairs g is the number of layers between the two B.</p>
+
+<h2>3. Results</h2>
+<table>
+<tr><th>quantity (per B = per ABX<sub>3</sub>)</th><th>exact on all 555 stackings</th><th class="n">window</th><th>status</th></tr>
+<tr class="grp"><td colspan="4">Straight lines in h (Swap Rule holds)</td></tr>
+<tr><td>face-sharing partners</td><td>2h</td><td class="n">1</td><td>known (#72)</td></tr>
+<tr><td>corner-sharing partners</td><td>6(1 − h)</td><td class="n">1</td><td>known (#72)</td></tr>
+<tr><td>X in a shared face, B–X–B = arccos(1/3) = 70.53°</td><td>share h</td><td class="n">1</td><td>classical in substance</td></tr>
+<tr><td>X on a straight B–X–B (180°)</td><td>share 1 − h</td><td class="n">1</td><td>classical in substance</td></tr>
+<tr><td>A in a cuboctahedron / anticuboctahedron</td><td>1 − h / h</td><td class="n">1</td><td>classical</td></tr>
+<tr><td>A neighbours of B (r² = 3/2)</td><td>8 − 2h</td><td class="n">1</td><td>new (elementary)</td></tr>
+<tr><td>B–B at r² = 2/3, 2, 14/3</td><td>2h, 6 − 6h, 12h</td><td class="n">1</td><td>first two = face/corner counts; 14/3 new</td></tr>
+<tr><td>face-sharing clusters (single octahedra included)</td><td>1 − h</td><td class="n">1</td><td>new</td></tr>
+<tr class="grp"><td colspan="4">Constants: the same in every stacking</td></tr>
+<tr><td>neighbours of X; of A</td><td>8 X + 4 A (2 in the layer, 1 above, 1 below); 12 X</td><td class="n">0</td><td>classical for 3C, here for all</td></tr>
+<tr><td>empty octahedral holes per gap</td><td>3, each A<sub>2</sub>X<sub>4</sub> with the two A opposite (r² = 2)</td><td class="n">0</td><td>new</td></tr>
+<tr><td>tetrahedral holes per gap</td><td>8, each AX<sub>3</sub> (6 with A in the base, 2 with A at the tip)</td><td class="n">0</td><td>new</td></tr>
+<tr class="grp"><td colspan="4">Planes in (h, p<sub>hh</sub>) (Swap Rule fails; coefficient of p<sub>hh</sub> = Δ)</td></tr>
+<tr><td>B with 0 / 1 / 2 shared faces</td><td>1 − 2h + p<sub>hh</sub> / 2h − 2p<sub>hh</sub> / p<sub>hh</sub></td><td class="n">2</td><td>new as stated</td></tr>
+<tr><td>strings of two or more octahedra</td><td>h − p<sub>hh</sub></td><td class="n">2</td><td>new as stated</td></tr>
+<tr><td>B–B at r² = 8/3, 4, 20/3, 8</td><td>2p<sub>hh</sub>, 12 − 6p<sub>hh</sub>, 12p<sub>hh</sub>, 6 − 6p<sub>hh</sub></td><td class="n">2</td><td>new</td></tr>
+<tr class="grp"><td colspan="4">Longer windows</td></tr>
+<tr><td>B–B at r² = 6, 22/3, 10, 34/3</td><td>linear in the shares of 3-layer words</td><td class="n">3</td><td>new</td></tr>
+<tr><td>B–B at r² = 32/3, 12</td><td>linear in the shares of 4-layer words</td><td class="n">4</td><td>new</td></tr>
+<tr><td>clusters of L octahedra</td><td>share of the word c h<sup>L−1</sup> c (L = 1: cc)</td><td class="n">L + 1</td><td>classical in substance</td></tr>
+</table>
+<p>Of 36 quantities, 16 are lines in h (6 of them constants), 9 are planes in (h, p<sub>hh</sub>) and 11 need windows of 3 to 6 layers. No quantity needed anything outside the Window Law.</p>
+<p><b>Clusters.</b> The face-sharing octahedra form chains, one B per gap and one shared face per h layer. In a chain the pieces number octahedra minus shared faces, so clusters per B = 1 − h exactly, and the mean cluster holds 1/(1 − h) octahedra: one number, though not a line. 9R (h = 2/3): trimers, 1/3 per B. 12R (h = 1/2): a trimer and a single octahedron, 1/2 per B. 2H is the limit: one endless chain.</p>
+<p><b>Holes.</b> The three corners of every hole triangle lie on three different A positions of the 2 × 2 pattern, and each layer has one A per cell. The B hole avoids the A of both its layers, so each of the other three octahedral holes takes exactly one A from each layer, and each tetrahedral hole exactly one A. This holds in every gap of every stacking: in the AX<sub>3</sub> net the kinds and numbers of holes do not see the stacking at all, so the rule of halves of #57 has nothing to mix here at the level of counts.</p>
+
+<figure><img src="figures/splash2-perovskite.png" alt="Splash of perovskite counts against hexagonality"><figcaption><b>Figure 1.</b> The splash, 555 stackings (dots: all polytypes up to period 12; rings: random stackings of 48 layers; gold diamonds: 3C, 2H, 4H, 6H, 9R). (a) Four counts lie exactly on straight lines in h. (b) The three kinds of B fill bands: h alone does not fix them. (c) The same three, the strings and the B–B shell at r² = 4 fall exactly on the diagonal once p<sub>hh</sub> is added. (d) Clusters of a given size need a window of size + 1 layers.</figcaption></figure>
+
+<figure><img src="figures/shells.png" alt="B-B distance shells"><figcaption><b>Figure 2.</b> B–B distance shells. (a) Count per B in each shell over all 555 stackings, coloured by the window the shell needs: the number of layers between the two B. (b) A B straight above another, 1, 2 and 4 gaps apart: a line in h (2h), a line in p<sub>hh</sub> (2p<sub>hh</sub>), and a spread that needs 4-layer words.</figcaption></figure>
+
+<h2>4. Known polytypes</h2>
+<p>Two pairs show the second number at work: 4H (hc) and 12R (hhcc) share h = 1/2 but have p<sub>hh</sub> = 0 and 1/4; the two 10H stackings (hhhcc, tetramers; hhchc, trimers and dimers) share h = 3/5 but have p<sub>hh</sub> = 2/5 and 1/5. Same number of shared faces, different kinds of B and different strings.</p>
+<table>
+<tr><th>polytype</th><th>c/h</th><th>examples</th><th class="n">h</th><th class="n">p<sub>hh</sub></th><th class="n">faces</th><th class="n">B, 0 faces</th><th class="n">B, 2 faces</th><th class="n">clusters</th><th class="n">strings</th></tr>
+<tr><td>3C</td><td>c</td><td>SrTiO<sub>3</sub>, BaRuO<sub>3</sub> (18 GPa)</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">1</td><td class="n">0</td><td class="n">1</td><td class="n">0</td></tr>
+<tr><td>2H</td><td>h</td><td>BaNiO<sub>3</sub>, BaCoO<sub>3</sub></td><td class="n">1</td><td class="n">1</td><td class="n">2</td><td class="n">0</td><td class="n">1</td><td class="n">0</td><td class="n">0</td></tr>
+<tr><td>4H</td><td>hc</td><td>4H-BaRuO<sub>3</sub>, SrMnO<sub>3</sub></td><td class="n">1/2</td><td class="n">0</td><td class="n">1</td><td class="n">0</td><td class="n">0</td><td class="n">1/2</td><td class="n">1/2</td></tr>
+<tr><td>6H</td><td>hcc</td><td>hexagonal BaTiO<sub>3</sub></td><td class="n">1/3</td><td class="n">0</td><td class="n">2/3</td><td class="n">1/3</td><td class="n">0</td><td class="n">2/3</td><td class="n">1/3</td></tr>
+<tr><td>9R</td><td>hhc</td><td>BaRuO<sub>3</sub></td><td class="n">2/3</td><td class="n">1/3</td><td class="n">4/3</td><td class="n">0</td><td class="n">1/3</td><td class="n">1/3</td><td class="n">1/3</td></tr>
+<tr><td>8H</td><td>hhhc</td><td>BaMnO<sub>3−x</sub></td><td class="n">3/4</td><td class="n">1/2</td><td class="n">3/2</td><td class="n">0</td><td class="n">1/2</td><td class="n">1/4</td><td class="n">1/4</td></tr>
+<tr><td>10H</td><td>hhhcc</td><td>Ba<sub>5</sub>Sb<sub>1−x</sub>Mn<sub>4+x</sub>O<sub>15</sub></td><td class="n">3/5</td><td class="n">2/5</td><td class="n">6/5</td><td class="n">1/5</td><td class="n">2/5</td><td class="n">2/5</td><td class="n">1/5</td></tr>
+<tr><td>10H′</td><td>hhchc</td><td>Ba<sub>5</sub>Fe<sub>4</sub>NiO<sub>13.5</sub></td><td class="n">3/5</td><td class="n">1/5</td><td class="n">6/5</td><td class="n">0</td><td class="n">1/5</td><td class="n">2/5</td><td class="n">2/5</td></tr>
+<tr><td>12R</td><td>hhcc</td><td>Ba<sub>4</sub>Fe<sub>3</sub>NiO<sub>12</sub></td><td class="n">1/2</td><td class="n">1/4</td><td class="n">1</td><td class="n">1/4</td><td class="n">1/4</td><td class="n">1/2</td><td class="n">1/4</td></tr>
+<tr><td>15R</td><td>hhhhc</td><td>BaMnO<sub>3−x</sub></td><td class="n">4/5</td><td class="n">3/5</td><td class="n">8/5</td><td class="n">0</td><td class="n">3/5</td><td class="n">1/5</td><td class="n">1/5</td></tr>
+<tr><td>5H</td><td>hhccc</td><td>Ba<sub>5</sub>Ta<sub>4</sub>O<sub>15</sub></td><td class="n">2/5</td><td class="n">1/5</td><td class="n">4/5</td><td class="n">2/5</td><td class="n">1/5</td><td class="n">3/5</td><td class="n">1/5</td></tr>
+</table>
+<p style="font-size:8.5pt">Ramsdell symbols recomputed from the layer letters: all eleven match. Sequences: Cava et al. (arXiv 2006.05864) for 2H, 4H, 6H, 9R, 10H, 10H′, 12R, 5H; Jin et al. (PNAS 2008) for BaRuO<sub>3</sub>; 8H and 15R (Adkin and Hayward, Chem. Mater. 2007) from the Ramsdell symbol together with "strings share corners" (Cava et al.). Real compounds with vacancies or two kinds of B are modelled by their stacking only.</p>
+
+<h2>5. Prior art: sources checked</h2>
+<p style="font-size:8.5pt"><b>Reference library</b> (four searches: perovskite polytypes and face-sharing share; Katz–Ward and Jagodzinski notation; stacking-disorder correlations; face-sharing clusters): Keller et al. 2023 (Si/Ge polytypes, hexagonality, generalized Ising model); Kawanishi and Mizoguchi 2015 (SiC hexagonality); Yi and Canright 1995; Ganesh and Nasr 2023 (correlations between layers n apart in random stackings, through a one-dimensional Ising model); Hart, Hansen and Kuhs 2021 (Markov description of stacking disorder); Rodriguez-Horta et al. 2017. None treats the B network of perovskites.
+<b>Web</b>: Cava et al., Hexagonal perovskites as quantum materials, arXiv 2006.05864 (read: notation, dimers to tetramers, strings sharing corners or bridged by single octahedra); Jin et al., PNAS 105, 7115 (2008); Adkin and Hayward, Chem. Mater. 19, 755 (2007) (abstract: 15R, 8H, 6H′, 10H; ordering temperatures depend on the share of cubic layers); Darriet and Subramanian, J. Mater. Chem. 5, 543 (1995) (abstract); arXiv 2105.05206; Katz and Ward, Inorg. Chem. 3, 205 (1964) not reachable, cited through Cava et al. Searches: perovskite polytype sequences 2H–15R; Adkin–Hayward BaMnO<sub>3−x</sub>; Katz–Ward 1964; Darriet–Subramanian 1995.
+<b>In-house</b>: #57, #64, #66 (Swap ⇔ line in h), #72, studies of 25 and 28 October.
+<b>Classical, cited not read</b>: Hendricks and Teller (1942) and Jagodzinski (1949) on stacking disorder (layer correlations depend on the word between the layers); the ANNNI J<sub>1</sub>, J<sub>2</sub>, J<sub>3</sub> energies of polytypes, the energy form of the same law.</p>
+
+<h2>6. Conclusion and status</h2>
+<p><b>Conclusion:</b> in the perovskite polytypes every count obeys the Window Law; the Hexagonality Law is its first step and the Swap Rule decides when a pair count stays on it. <b>Status:</b> done for counts (scripts and exact data in study 2026-10-31-splash2-perovskite). Not run, by decision: the weight walk (volumes) on the perovskite net, because the hole kinds are the same in every gap and the counts already fix the shape of the law. Next in Splash Rules II: Frank–Kasper phases.</p>
+</body></html>
