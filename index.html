@@ -368,6 +368,14 @@
     .sig-sym svg { display: block; margin: 0 auto; }
     .sig-send { white-space: nowrap; font-weight: 600; color: var(--highlight) !important; border-color: var(--highlight) !important; }
     .sig-send[hidden], .sig-sym[hidden] { display: none !important; }
+    /* HexOct: the field for the viewer's own c/h sequence (16 px so iOS does not zoom into it). */
+    .hx-own-row { align-items: center; flex-wrap: nowrap; justify-content: center; }
+    .hx-own {
+      flex: 1; min-width: 0; max-width: 320px; min-height: var(--touch-compact); box-sizing: border-box;
+      background: rgba(0, 0, 0, 0.55); border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #eaf6ff; font: 600 16px/1.2 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: 0.12em; border-radius: var(--radius-s); padding: 6px 10px;
+    }
+    .hx-own-go { white-space: nowrap; font-weight: 600; }
     /* Nets: its solids row, and the fold slider once a net is complete. */
     .nets-fold-row[hidden], .nets-cell-row[hidden], .nets-next-row[hidden] { display: none !important; }
     .nets-cell-row, .nets-next-row { justify-content: center; }

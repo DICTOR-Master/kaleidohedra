@@ -57,6 +57,7 @@ import { polyShapeEdges, polyShapeName } from './poly-shapes.js';
 import { FAMILY_META, familyIds, familiesFor, pairPartners } from '../krp-core/src/polyhedra/families.js';
 import { TRANSITIONAL_IDS } from '../krp-core/src/polyhedra/transitional.js';
 import { POLYHEDRA, KITS13, KIT13_ADDITION_IDS, mosseriSadocTile, REULEAUX_ADDITION_IDS } from '../krp-core/src/polyhedra/index.js';
+import { hexoctPreviewEdges } from './hexoct-geometry.js';
 import { isConvex } from '../krp-core/src/assembly/faceRegistration.js';
 import { favourites, recent, isFavourite, toggleFavourite } from './poly-prefs.js';
 import { netEligible, mountNetViewer } from './net-viewer.js';
@@ -867,7 +868,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
   // in the app the action belongs to (Polyhedraverse's shapes; DICTO's lattices by the door; worlds Kaleidohedra's).
   const go = (action, app = null, label = null) => {
     lastLabel = label; // the title when the lists don't name it
-    choose('3D', action, app ?? (/^tool:poly(Shape|Kit):/.test(action) ? 'polyhedraverse' : action.startsWith('tool:pieceType:') ? dictoOpen(action) : 'kaleidohedra'));
+    choose('3D', action, app ?? (/^tool:(poly(Shape|Kit):|hexoctWorld)/.test(action) ? 'polyhedraverse' : action.startsWith('tool:pieceType:') ? dictoOpen(action) : 'kaleidohedra'));
   };
 
   // ---- DICTO: the dimensions, one open in place ----
@@ -1176,10 +1177,17 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
         </button>`).join('');
     const kits = key === DICTO_POLY.key && !picker ? [['cleo', 'wiz.poly.kitsCleo'], ['sets', 'wiz.poly.kitsSets'], ['stars', 'wiz.poly.kitsStars'], ['13', 'wiz.poly.kits'], ['octet', 'wiz.poly.kitsOctet']].map(([g, title]) => `<div class="poly-section" data-section="kits-${g}"><div class="poly-section-title">${t(title, L)}</div>
           <div class="dim-wizard-grid dicto-block" style="${style}">${kitCards(g)}</div></div>`).join('') : '';
+    // HexOct (DICTO 2026-10-31, paper #75): the two layer tiles stacked into any close-packed stacking, first among DICTO's pieces
+    const hexoct = key === DICTO_POLY.key && !picker ? `<div class="poly-section" data-section="hexoct"><div class="poly-section-title">HexOct</div>
+          <div class="dim-wizard-grid dicto-block" style="${style}"><button type="button" class="dim-wizard-card-btn dim-wizard-piece dicto-gold" data-hexoct="tool:hexoctWorld">
+          ${previewSlot(hexoctPreviewEdges)}
+          <span class="dim-wizard-row-text"><span class="dim-wizard-label">HexOct</span><span class="dim-wizard-desc">${t('hexoct.card', L)}</span></span>
+        </button></div></div>` : '';
     bodyEl.innerHTML = `
       ${back(L)}
       <div class="dim-wizard-sub"><b>${polyLabel(key)}</b> · ${t('wiz.poly.shapes', L)}</div>
-      ${kits}${blocks}`;
+      ${hexoct}${kits}${blocks}`;
+    bodyEl.querySelector('[data-hexoct]')?.addEventListener('click', () => { lastLabel = 'HexOct'; choose('3D', 'tool:hexoctWorld', 'polyhedraverse'); });
     bodyEl.querySelectorAll('[data-kit]').forEach((el) => el.addEventListener('click', () => choose('3D', `tool:polyKit:${el.dataset.kit}`, 'polyhedraverse')));
     mountPreviews();
     bodyEl.querySelector('.dim-wizard-back').addEventListener('click', () => { if (picker) { showShapePicker(); return; } openDim = '3D'; showDimensions(`[data-family="${key}"]`); });
