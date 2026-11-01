@@ -49,3 +49,13 @@ Wikipedia Tetrahedral-octahedral honeycomb p.1, Koskinen 2011 p.2, Krishnamurthy
 Web, 1 query: en.wikipedia.org/wiki/Space-filling_polyhedron, en.wikipedia.org/wiki/Honeycomb_(geometry),
 mathworld.wolfram.com/topics/Space-FillingPolyhedra.html, close-packing teaching pages. No twisted cube found; brick and 60°
 rhombohedron classical. Not claimed new until a fuller check.
+
+## #86 draft: The HexOct Family (DICTO 2026-11-02: keep all pairs as one family; full prior art; draft, NOT published)
+- `scripts/dense.py` → `data/dense.jsonl`: the tower shift checked exactly at 402 weights (λ = −11/24 + k/480, k = 0..400, all break
+  points included, plus 1/10): c-tile connected and pinch-free 402/402; h-tile 402/402. Least contact < 1e-4 only where a piece vanishes.
+- `scripts/plate.py` → `figs/family-plate.png` (all five members, three views each), `figs/family-stacks.png`.
+- Draft: papers/2026-11-02-hexoct-family (paper #86), `DRAFT-hexoct-family.pdf` also in ~/Documents/papers-to-read. Theorem: (i) proved
+  for all λ (the shift keeps each layer's piece set; transported by the #75 motion); (ii) one solid: exact at 402 weights, stretch proof open;
+  (iii) λ = 3/8 both convex. Prior art: 6 library queries + 7 web queries, all sources listed in the draft §8; twisted cube not found;
+  Goldberg's space-filling dodecahedra lists not read (open). Placeholder names: HexOct family; members by weight.
+Status: draft printed, awaiting DICTO's read; not published.

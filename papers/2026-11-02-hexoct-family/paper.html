@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>The HexOct Family</title>
+<link rel="stylesheet" href="../paper.css">
+<style>table{border-collapse:collapse;font-size:8.4pt;margin:3mm 0;width:100%} td,th{border-bottom:1px solid #ddd;padding:1mm 1.5mm;text-align:left;vertical-align:top}
+td.n,th.n{text-align:right} p.prec{font-size:9pt;color:#3a3a3a;border-left:2px solid #b8962e;padding-left:3mm;margin:3mm 0} .thm{border-left:3px solid #b8962e;padding-left:3mm;margin:3mm 0}
+p.hook{font-style:italic;color:#4a3f2a;border-left:2px solid #c9a24a;padding-left:3mm} figure{margin:3mm 0} figure img{width:100%;display:block} figcaption{font-size:8.4pt;color:#444;margin-top:1.5mm}
+.draft{color:#a00;font-weight:600}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+
+<h1>The HexOct Family</h1>
+<p class="sub">Every close-packed stacking from two single solids, at every weight</p>
+<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>
+Paper #86 · <span class="draft">DRAFT of 2 November 2026, not published</span> · DICTO DOI: reserved on publication · Licence CC BY-SA 4.0 · Scripts, exact checks and data: studies/2026-11-02-hexoct-connected (research branch)<br>
+DICTO proposed making the two HexOct tiles of #75 into two true simple pieces, and keeping all the single-solid pairs found as one family. "HexOct family" and the member names by weight are placeholders until DICTO names them. Computation, exact checks and drafting with Claude (Anthropic).</div>
+
+<div class="abstract"><b>Abstract.</b> In HexOct (#75 [1]) every close-packed stacking is a string of two layer tiles, the c-tile and the h-tile. Each tile is four pieces cut by DICTO's Rule of Halves (#57 [2]) at a weight λ, −11/24 ≤ λ ≤ 3/8. The h-tile is one solid, but the c-tile is two towers that touch only at a point. We show that moving one tower by one lattice step along its own layer joins the towers along a face. The layer is filled exactly as before, so every stacking is still a string of the two tiles, and any tile still sits on any tile. The move works at all 402 weights we checked exactly, a grid of step 1/480 over the whole walk that includes every break point. An exact check of all 42 stackings of period 2 to 6 finds no gap and no overlap. At the end of the walk, λ = 3/8, both tiles are convex: the c-tile is a brick of two cubes and the h-tile is a 12-faced solid we call the twisted cube (placeholder), with 6 squares and 6 triangles. Five single-solid pairs, at λ = 3/8, −1/8 (two ways), −11/24 and 1/10, make up the HexOct family.</div>
+
+<p class="hook">Build a crystal from layers of balls and share out the space between them, one tile per ball. Paper #75 found that only two tiles are ever needed, one for each way a layer can sit between its neighbours. But one of the two came apart into two towers that touched at a single point, like two cones tip to tip. Slide one tower over by one ball and the two towers lean on each other along a whole face. Nothing else changes, so the two tiles still build every stacking. At one weight both tiles become as plain as a brick.</p>
+
+<h2>1. Set-up</h2>
+<p>As in #57 and #75: unit balls sit in close-packed layers (triangular lattices of spacing 1) at heights kd, d = √(2/3). A layer is <i>h</i> if the layers above and below it sit on the same position, and <i>c</i> otherwise. The tile of layer L, for one ball, is four pieces: the top half of the octahedral piece of the gap below, the two tetrahedral pieces next to the layer, and the bottom half of the octahedral piece of the gap above. All cuts follow the Rule of Halves at weight λ. Some pieces vanish: the octahedral halves at λ = 3/8, the c-tile's tetrahedral parts for λ ≤ −3/8 and the h-tile's at λ = −11/24. The two-tile theorem of #75: in every stacking, each tile is carried onto the c-tile or the h-tile by one motion that maps its layer to itself.</p>
+<p><b>The move.</b> Let Λ be the lattice of in-layer translations (integer combinations of two ball spacings). Replace any piece of the c-tile, or of the h-tile, by its translate by a vector of Λ. For a tile type, the <i>shift</i> is the choice of one vector per piece.</p>
+
+<h2>2. Main theorem</h2>
+<div class="thm"><b>Theorem (HexOct family).</b> Let the c-tile take the shift that moves one of its two towers (an octahedral half with the tetrahedral piece on it) by one lattice step, and let the h-tile keep its pieces. Then:<br>
+(i) <i>Every stacking, any tile on any tile.</i> For every λ in the walk, every close-packed stacking is still a string of copies of the shifted c-tile and h-tile, one per ball and layer, without gaps or overlaps. Any tile sits on any tile.<br>
+(ii) <i>One solid.</i> The shifted c-tile is a single solid whose pieces are joined along faces of positive area. Its surface has no pinch: every side is shared by exactly two faces. This holds at all 402 weights checked exactly: λ = −11/24 + k/480 for k = 0, …, 400 (every break point of the walk is a multiple of 1/96 and is included), and λ = 1/10.<br>
+(iii) <i>Convex at the end.</i> At λ = 3/8 both tiles are convex: the c-tile is a 1 × 1 × 2 brick of two cubes of edge 1/√2, and the h-tile is the twisted cube (Section 5).</div>
+<p>Part (i) is proved below for every λ. Part (ii) is an exact computation at each listed weight. A proof over whole stretches, in the manner of #75 [1], is not yet done (Section 7). Part (iii) is exact.</p>
+
+<h2>3. Proof</h2>
+<p><b>Lemma (the move keeps the layer).</b> Fix a layer. Its tiles are the Λ-translates of one tile T = P<sub>1</sub> ∪ … ∪ P<sub>4</sub>, so the pieces of the layer are the translates P<sub>i</sub> + v, v ∈ Λ. If each P<sub>i</sub> is replaced by P<sub>i</sub> + t<sub>i</sub> with t<sub>i</sub> ∈ Λ, the set {P<sub>i</sub> + t<sub>i</sub> + v} is the same set of pieces. So the new tile T′ is again a fundamental region for Λ in the layer, and its Λ-translates fill the layer exactly as T's did. □</p>
+<p><b>Part (i).</b> By the two-tile theorem of #75, the tile of layer L in any stacking is M(T<sub>c</sub>) or M(T<sub>h</sub>) for a motion M that maps the layer to itself. Its linear part is a symmetry of the triangular lattice, so it maps Λ to Λ. Give that tile the shift M(t<sub>i</sub>) ∈ Λ. It is then the image under M of the shifted reference tile, so it is congruent to the shifted c-tile or h-tile. By the Lemma, the layer is still filled by the same pieces. The layers of #75 fill space, so the shifted tiles do too. Where two layers meet, nothing has changed, so any tile still sits on any tile. □</p>
+<p><b>Part (ii).</b> At each weight, exact rational arithmetic in lattice coordinates (exactfaces.py of the ring-build study [3]):</p>
+<ul>
+<li>the facets of each piece are found exactly;</li>
+<li>two pieces are joined if a facet of one and a facet of the other lie in the same plane with opposite normals and overlap in a polygon of positive area;</li>
+<li>the four pieces must form one connected group;</li>
+<li>the merged surface is checked: every side is used by exactly two faces.</li>
+</ul>
+<p>All 402 weights pass. □ At the 12 weights where we drew the joining faces (from −11/24 to 3/8), the face that joins the towers lies in a plane through the layer's ball and contains the edge from that ball to a neighbouring ball. For λ ≤ −1/4 the two octahedral halves meet there; at −1/8 an octahedral half meets a tetrahedral piece; for λ ≥ 0 the two tetrahedral pieces meet.</p>
+<p><b>Part (iii).</b> Exact: every merged face of each tile is a facet of the convex hull of its corners, and the face counts match (6 and 12). □</p>
+<p class="prec"><b>Independent check of (i).</b> For each pair of the family we checked, without using #75, all 42 stackings of period 2 to 6 (words in A, B, C, starting with A, with no letter twice in a row). For each layer, every piece of the shifted tile is matched to exactly one piece of the census engine up to a vector of Λ. Every tile has the volume of one layer cell. Every piece of the tile is tested against every piece of every other tile copy nearby (layers L − 2 to L + 2 within the period, in-layer copies −3 to 3), and an exact separating plane must be found. Tiles that do not overlap and each have one cell's volume fill space. Result: 0 overlaps in 7 472 (λ = 3/8), 6 480 (−1/8, whole octahedra), 11 232 (−1/8), 4 080 (−11/24) and 13 520 (1/10) piece pairs.</p>
+
+<h2>4. The family</h2>
+<p>The shifts in the theorem were found by search, not guessed. For each tile type, piece 0 stayed put and the other pieces took every lattice shift (a, b) with −2 ≤ a, b ≤ 2: 15 625 choices with four pieces, 25 at the ends. This was done at 16 weights covering every stretch of the walk. We kept the face-joined choices, merged congruent ones, and ranked them by face count (coplanar faces merged), hull ratio (volume over convex-hull volume) and neck (the least contact area over all ways to split a tile's pieces into two groups, in unit triangles √3/4). The c-tile was joined at every weight; the best choice was always the tower shift of the theorem. The h-tile was already one solid. DICTO proposed keeping every pair found as one family. Its five members:</p>
+<table>
+<tr><th>member (placeholder)</th><th>λ</th><th>split</th><th class="n">c faces</th><th class="n">h faces</th><th>hull ratio c, h</th><th>notes</th></tr>
+<tr><td>A · HexOct 3/8</td><td>3/8</td><td>Rule of Halves</td><td class="n">6</td><td class="n">12</td><td>1, 1</td><td>both convex: brick + twisted cube</td></tr>
+<tr><td>B · HexOct −1/8 (whole octahedra)</td><td>−1/8</td><td>whole octahedra (§6)</td><td class="n">8</td><td class="n">10</td><td>6/7, 6/7</td><td>regular octahedron + two regular tetrahedra, two ways</td></tr>
+<tr><td>C · HexOct −1/8</td><td>−1/8</td><td>Rule of Halves</td><td class="n">10</td><td class="n">14</td><td>0.800, 0.735</td><td>the ring-build weight; towers joined along two trapezoids</td></tr>
+<tr><td>D · HexOct −11/24</td><td>−11/24</td><td>Rule of Halves</td><td class="n">18</td><td class="n">8</td><td>0.783, 1</td><td>h-tile a regular hexagonal prism</td></tr>
+<tr><td>E · HexOct 1/10</td><td>1/10</td><td>Rule of Halves</td><td class="n">24</td><td class="n">30</td><td>0.745, 0.778</td><td>the tiles of #75, made whole</td></tr>
+</table>
+<figure><img src="figures/family-plate.png"><figcaption><b>Plate 1.</b> The HexOct family. One row per member; c-tiles gold, h-tiles blue; each from above, from the side and from below. Merged faces are drawn solid with their edges.</figcaption></figure>
+<p>At the 16 search weights the c-tile has 18 faces (λ ≤ −3/8), 26 (−1/3, −7/24), 34 (−1/4, −3/16), 10 (−1/8), 24 (from −1/16 to 1/3) and 6 at 3/8. Only the ends give convex tiles. On the dense grid the least contact area falls below 10<sup>−4</sup> unit triangles just above λ = −3/8 (c), just above −11/24 (h) and just below 3/8 (both). These are not thin necks of the shape: there a whole piece shrinks to nothing (the c-tile's tetrahedral parts, the h-tile's tetrahedral parts, and the octahedral halves). The members chosen sit away from such points, except A, where the vanishing pieces are already gone.</p>
+
+<h2>5. The convex member: brick and twisted cube</h2>
+<figure><img src="figures/pair-A-3_8-views.png" style="width:82%;margin:0 auto"><figcaption><b>Figure 2.</b> Member A (λ = 3/8). Top: c-tile, a brick of two cubes. Bottom: h-tile, the twisted cube. Views from above, from the side and from below.</figcaption></figure>
+<p>At λ = 3/8 the octahedral halves are gone, and the tetrahedral pieces of the cubic stacking are cubes of edge 1/√2. Their body diagonals are upright. The two cubes of a c-layer, joined face to face by the shift, make a 1 × 1 × 2 brick, so every c-layer is a layer of bricks. The h-tile is two pieces that already share a face. Their union is convex, with 12 faces, 11 corners and 21 edges:</p>
+<ul>
+<li>6 squares of side 1/√2;</li>
+<li>6 isosceles triangles with sides 1/√2, 1/√2 and √(2/3), and angles 54.74°, 54.74° and 70.53°;</li>
+<li>corners at heights −1, −½, 0, ½, 1 (in layers), 1 + 3 + 3 + 3 + 1 of them.</li>
+</ul>
+<p>Three squares meet at the top corner and three at the bottom corner, as at two opposite corners of a cube. The six triangles form a band between them. Both tiles have the volume of one layer cell, 1/√2. Every close-packed stacking at λ = 3/8 is therefore a stack of layers of bricks (c) and layers of twisted cubes (h), in any order.</p>
+<p>The twisted cube tiles space (for example in hcp, as a layer of h-tiles on h-tiles) but is not a parallelohedron. Its triangles are not centrally symmetric, and every face of a parallelohedron is (Minkowski [6]). So it does not tile by translations alone; in hcp, consecutive layers of twisted cubes are not translates of each other.</p>
+<figure><img src="figures/family-stacks.png"><figcaption><b>Figure 3.</b> Small stacks: member A in 2H (h h h h), 3C (c c c c) and 4H (h c h c), and member C in 4H. Four layers, 2 × 2 tiles per layer, drawn slightly apart (bottom to top).</figcaption></figure>
+
+<h2>6. Other splits between layers</h2>
+<p>A two-tile system needs each layer's tile to depend on that layer's letter alone. For each whole piece we found exactly which layers its shape depends on, over words covering all contexts, at λ = −1/3, −1/8, 1/10 and 1/4. At −1/3, 1/10 and 1/4 the whole octahedral piece takes 3 shapes and depends on both layers around its gap. Each tetrahedral piece depends on the layer of its base. So, of the splits into whole pieces and mid-plane halves, only the Rule of Halves gives two layer tiles at these weights. At λ = −1/8 every piece is a regular tetrahedron or octahedron, whatever the stacking, and two more splits work:</p>
+<ul>
+<li><b>Whole octahedra (member B):</b> each layer takes its two tetrahedra and the whole octahedron of the gap above. The tile depends only on the layer's letter (checked exactly over all 42 stackings above).</li>
+<li><b>Gap slabs:</b> one tile for every stacking. The octahedron and both tetrahedra of a gap, shifted, form the convex 60° rhombohedron, the octet unit cell of Lalvani [4]. It has no c/h distinction, so it is not a two-tile system, and it is known.</li>
+</ul>
+
+<h2>7. Limits</h2>
+<ul>
+<li>Part (ii) of the theorem is checked exactly at 402 weights, not proved over whole stretches.</li>
+<li>Shifts were searched within two lattice steps of the fixed piece.</li>
+<li>Cut planes other than the mid-plane of the octahedral piece were not tried.</li>
+<li>Splits other than the Rule of Halves were tried only at λ = −1/8 (Section 6).</li>
+<li>Prior art: Goldberg's lists of space-filling dodecahedra were not read (Section 8).</li>
+</ul>
+
+<h2>8. Prior art</h2>
+<p><b>Library</b> (ask-library over the 302-reference library; 6 queries):</p>
+<ol>
+<li>"convex space-filling polyhedron with six squares and six triangles, twisted cube, hexagonal close packing";</li>
+<li>"convex polyhedra that fill space with congruent copies, Goldberg list of space-filling polyhedra";</li>
+<li>"space-filling polyhedra Grünbaum Shephard tilings by congruent convex polyhedra";</li>
+<li>"cell of hexagonal close packing between layers, twinned cube, tetrahedral interstice region of hcp";</li>
+<li>"stacking of close-packed layers as layers of polyhedral units, layer tiles for polytypes";</li>
+<li>"Wills polyhedra Lalvani octet truss rhombohedron unit cell".</li>
+</ol>
+<p><b>Read:</b></p>
+<ul>
+<li>Gabbrielli–Jiao–Torquato 2012 [5], pp. 1–9 (text searched): layers of the fcc tetrahedra–octahedra tiling can be stacked into hcp and other stackings; we found no single-solid layer tiles and no brick or twisted-cube layers.</li>
+<li>Grünbaum–Shephard 1980 [7] (full text, web copy): Goldberg's lists of space-fillers (1972–1979) are not claimed complete. Parallelohedra (Fedorov) have at most 14 faces. No polyhedron with 6 squares and 6 triangles is named.</li>
+<li>Fedorov 1885, ch. 13 (library notes) [8]: the five parallelohedra, among them the hexagonal prism of member D.</li>
+<li>Lalvani 1990 [4] (pp. 5–6, as in #75): the octet rhombohedron.</li>
+<li>Wikipedia, "Tetrahedral-octahedral honeycomb", p. 1.</li>
+</ul>
+<p><b>Hits, not relevant or not read:</b></p>
+<ul>
+<li>Goldberg, "Three infinite families of tetrahedral space-fillers"; Sommerville 1922; "Which tetrahedra fill space?"; Torquato–Jiao 2009; Kramer 1982 (all tetrahedra or packings).</li>
+<li>Kerckhoff–Storm 2008; Zong 2012; Fang et al. 2013; Koskinen 2011 p. 2; Krishnamurthy–Akleman–Subramanian 2020 p. 3; Akpanya et al. 2024 p. 4; Cadotte et al. 2016 p. 4; Hart–Hansen–Kuhs 2021 p. 6; Damasceno–Engel–Glotzer 2012 p. 23; Garber 2019 p. 38; Grünbaum 2010 (Bilinski dodecahedron) pp. 25–27; Lagarias–Zong 2012 p. 10; Kepler 1619, Harmonices Mundi p. 271 (hit, not read).</li>
+<li>No library item on Wills polyhedra came up.</li>
+</ul>
+<p><b>Web</b> (7 queries; pages seen in the search results, not read in full, except Grünbaum–Shephard above):</p>
+<ul>
+<li>Wikipedia "Space-filling polyhedron" and "Honeycomb (geometry)".</li>
+<li>MathWorld "Space-Filling Polyhedron", "Space-Filling Hexahedron" and "Space-Filling Pentahedron" and its topic page.</li>
+<li>Wikipedia "Ten-of-diamonds decahedron" (Goldberg's list of 26 decahedra).</li>
+<li>Bibliographic entries only, not read: Goldberg, "On the space-filling hexahedra", Geom. Dedicata 6 (1977), and "On the space-filling heptahedra", Geom. Dedicata 7 (1978).</li>
+<li>Klitzing, trapezo-rhombic dodecahedron (the hcp Voronoi cell: 6 rhombi and 6 trapezoids, not our solid).</li>
+<li>IUCr teaching pamphlet 5 on close packing.</li>
+<li>Close-packing teaching pages (Sydney, Liverpool, Wisconsin, UMass Lowell, Iowa State).</li>
+</ul>
+<p><b>Verdict.</b> The brick, the hexagonal prism and the rhombohedron are classical. The twisted cube was not found in any source checked. The layer statement, that every close-packed stacking is a string of bricks and twisted cubes, was not found either. Goldberg's lists of space-filling dodecahedra have not been read, so nothing here is claimed as new until they are.</p>
+
+<h2>9. Conclusion</h2>
+<p>One lattice step of one tower turns the HexOct c-tile into a single solid, and the move keeps every stacking and every joint. The h-tile was already one solid. At λ = 3/8 both tiles are convex: every close-packed stacking is a string of layers of two-cube bricks and of twisted cubes. Five such pairs, A to E, form the HexOct family (placeholder names).</p>
+
+<p class="prec"><b>Computational methods.</b> Python 3 with exact rationals on dicto-big-brother. Census engine of #53 and tiles.py of #75 unchanged. connect.py (search over shifts), dense.py (402 weights), verify.py (42 stackings), split_check.py and alt_split.py (Section 6), describe.py (exact faces and convexity), render.py and plate.py (figures: z-buffer renderer with solid faces and crisp edges). Floating point is used only for areas in rankings, hull ratios and drawings.</p>
+
+<h2>References</h2>
+<p class="prec">[1] DICTO, "HexOct: Two Tiles for Every Stacking", paper #75, DICTO DOI: 10.5281/zenodo.23737639 (2026).<br>
+[2] DICTO, "The Rule of Halves: the Holes of Every Close-Packed Stacking", paper #57, DICTO DOI: 10.5281/zenodo.23647898 (2026).<br>
+[3] DICTO, "Building the HexOct tiles from rings", build sheet, studies/2026-10-31-hexoct-ring-build (2026), not published.<br>
+[4] H. Lalvani, "Transformational part-count in layered octahedral-tetrahedral truss configurations", NASA Technical Memorandum 102635 (1990).<br>
+[5] R. Gabbrielli, Y. Jiao and S. Torquato, "Families of tessellations of space by elementary polyhedra via retessellations of face-centered-cubic and related tilings", Physical Review E 86 (2012) 041141.<br>
+[6] H. Minkowski, "Allgemeine Lehrsätze über die konvexen Polyeder", Nachrichten der Gesellschaft der Wissenschaften zu Göttingen (1897) 198–219.<br>
+[7] B. Grünbaum and G. C. Shephard, "Tilings with congruent tiles", Bulletin of the American Mathematical Society (N.S.) 3 (1980) 951–973.<br>
+[8] E. S. Fedorov, Elements of the Study of Figures (1885), chapter 13 (library notes in English).</p>
+</body></html>
