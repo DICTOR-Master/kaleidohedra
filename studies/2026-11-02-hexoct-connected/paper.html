@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>HexOct as two single pieces</title>
+<link rel="stylesheet" href="../paper.css">
+<style>figure img{width:100%;display:block;border-radius:2pt} figure{margin:2mm 0 3mm} figcaption{font-size:8pt;color:#444}
+table{border-collapse:collapse;font-size:8pt;margin:3mm 0;width:100%} td,th{border-bottom:1px solid #ddd;padding:0.8mm 1.2mm;text-align:left;vertical-align:top}
+td.n,th.n{text-align:right} tr.best td{background:#faf1d2;font-weight:600} .rec{border-left:3px solid #b8962e;padding-left:3mm;margin:3mm 0} p.hook{font-style:italic;color:#444} .pb{break-before:page}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+
+<h1>HexOct as two single pieces</h1>
+<p class="sub">Moving the pieces of each HexOct tile within its layer, so that the c-tile and the h-tile are each one solid</p>
+<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+DICTO · study sheet of 2 November 2026 · not for publication<br>
+The aim is DICTO's ("really want to sort out HexOct into two true simple pieces"). Computation with Claude (Anthropic). Study folder: studies/2026-11-02-hexoct-connected.</div>
+
+<div class="abstract"><b>Summary.</b> In HexOct: Two Tiles for Every Stacking (#75), every close-packed stacking is a string of two layer tiles, and each tile is made of four pieces cut by DICTO's Rule of Halves. The h-tile is one solid, but the c-tile is two towers that touch at a single point. Any piece of a tile may be swapped for a copy of itself shifted along its own layer: the layer is still filled the same way, so every stacking still works. We tried every such shift within two lattice steps, at 16 weights covering every stretch of the walk −11/24 ≤ λ ≤ 3/8. <b>At every weight, shifting one of the c-tile's two towers by one lattice step makes the c-tile one solid, joined along faces.</b> The simplest pair is at the end of the walk, λ = 3/8: <b>both tiles are convex</b>. The c-tile is a brick of two cubes (6 faces) and the h-tile is a "twisted cube" (6 squares and 6 triangles, 12 faces). An exact check over all 42 stackings of period 2 to 6 finds no overlap and no gap.</div>
+
+<div class="rec"><b>Recommendation: pair A, λ = 3/8.</b> Placeholder name <b>HexOct II</b> (DICTO names it). c-tile: a 1 × 1 × 2 brick of two cubes (edge 1/√2 of the ball spacing). h-tile: the twisted cube, a convex 12-hedron. Both are convex, have no necks and are face-to-face. Any tile sits on any tile. Caveat: at λ = 3/8 the octahedral halves have shrunk to nothing, so each tile is made of its two tetrahedral parts only. If the octahedra must stay, the next pick is pair C (λ = −1/8, the ring-build weight): a 10-face c-tile and the 14-face h-tile, which is unchanged.</div>
+
+<h2>1. The move</h2>
+<p class="hook">A layer of HexOct is filled by copies of one tile, side by side. Each tile is four pieces. If you take one piece from every tile and slide each one over by the same step along the layer, the layer is filled exactly as before. Only the grouping of the pieces into tiles changes.</p>
+<p>For each tile type, piece 0 stays put and pieces 1–3 each take a lattice shift (a, b) with −2 ≤ a, b ≤ 2, which gives 25³ = 15 625 choices (25 at the ends of the walk, where the tile has 2 pieces). A choice is kept if the pieces are joined by face contacts of positive area, so the union has a connected interior. The surface is also checked: every side must be used by exactly two faces, so there are no edge or point pinches. Choices that give congruent tiles (12 lattice symmetries, z kept or flipped, any shift) are merged. Coplanar faces are merged before faces are counted. All of this is exact, in rational lattice coordinates.</p>
+<p>The shift does not change which pieces a layer holds, so the stacked tiles still fill space. Every c-layer gets the same shift through the one motion that carries it onto the reference c-tile (#75), and likewise for h. So c sits on c, c on h, h on c and h on h exactly as before.</p>
+
+<h2>2. Results over the walk</h2>
+<table>
+<tr><th>λ</th><th class="n">c: joined choices</th><th class="n">c faces</th><th class="n">c hull ratio</th><th class="n">h faces</th><th class="n">h hull ratio</th><th class="n">neck (unit triangles)</th></tr>
+<tr><td>−11/24 (end)</td><td class="n">3/25</td><td class="n">18</td><td class="n">0.783</td><td class="n">8 (hexagonal prism)</td><td class="n">1 (convex)</td><td class="n">0.82 / –</td></tr>
+<tr><td>−5/12, −3/8</td><td class="n">3/25</td><td class="n">18</td><td class="n">0.783</td><td class="n">16</td><td class="n">0.97, 0.95</td><td class="n">0.82 / 0.03, 0.13</td></tr>
+<tr><td>−1/3</td><td class="n">27/15625</td><td class="n">26</td><td class="n">0.785</td><td class="n">16</td><td class="n">0.923</td><td class="n">0.06 / 0.28</td></tr>
+<tr><td>−7/24 (flat / interlock)</td><td class="n">27/15625</td><td class="n">26</td><td class="n">0.794</td><td class="n">16</td><td class="n">0.900</td><td class="n">0.22 / 0.50</td></tr>
+<tr><td>−1/4, −3/16</td><td class="n">27/15625</td><td class="n">34</td><td class="n">0.76, 0.74</td><td class="n">24</td><td class="n">0.81, 0.74</td><td class="n">0.48–1.13</td></tr>
+<tr class="best"><td>−1/8 (ring build)</td><td class="n">15/15625</td><td class="n">10</td><td class="n">0.800</td><td class="n">14</td><td class="n">0.735</td><td class="n">1.50 / 1.50</td></tr>
+<tr><td>−1/16, 0, 1/10 (#75), 1/8</td><td class="n">27/15625</td><td class="n">24</td><td class="n">0.73–0.76</td><td class="n">30</td><td class="n">0.74–0.79</td><td class="n">0.44–1.34</td></tr>
+<tr><td>5/24, 1/4, 1/3</td><td class="n">27/15625</td><td class="n">24</td><td class="n">0.81–0.95</td><td class="n">30</td><td class="n">0.84–0.95</td><td class="n">0.19 → 0.01</td></tr>
+<tr class="best"><td>3/8 (end)</td><td class="n">3/25</td><td class="n">6 (brick)</td><td class="n">1 (convex)</td><td class="n">12 (twisted cube)</td><td class="n">1 (convex)</td><td class="n">–</td></tr>
+</table>
+<p>The hull ratio is the tile's volume divided by the volume of its convex hull, so 1 means convex. The neck is the smallest total contact area across any split of the tile into two groups of pieces, in unit triangles (√3/4). The c-tile was joined at every weight; the h-tile was already one solid. At every weight the best c-choice is the same: one of the two towers of #75 (an octahedral half with its tetrahedral part) is shifted one lattice step, so that the towers meet along faces instead of at the ball. Exact convexity was confirmed for the 3/8 pair and the −11/24 h-tile: every merged face is a facet of the convex hull. Only the two ends of the walk give convex tiles. The neck shrinks to almost nothing near 1/3 and near −5/12, so those weights are poor choices.</p>
+
+<h2>3. The five pairs</h2>
+<table>
+<tr><th>pair</th><th>λ</th><th>split</th><th class="n">c faces</th><th class="n">h faces</th><th>convex</th><th>fill check (all 42 stackings, period ≤ 6)</th></tr>
+<tr class="best"><td>A · HexOct II</td><td>3/8</td><td>Rule of Halves</td><td class="n">6</td><td class="n">12</td><td>both</td><td>42 words, 216 layers, 7 472 piece pairs: 0 overlaps</td></tr>
+<tr><td>B</td><td>−1/8</td><td>whole octahedra (§5)</td><td class="n">8</td><td class="n">10</td><td>no (0.857, 0.857)</td><td>6 480 pairs: 0 overlaps</td></tr>
+<tr><td>C</td><td>−1/8</td><td>Rule of Halves</td><td class="n">10</td><td class="n">14</td><td>no (0.800, 0.735)</td><td>11 232 pairs: 0 overlaps</td></tr>
+<tr><td>D</td><td>−11/24</td><td>Rule of Halves</td><td class="n">18</td><td class="n">8</td><td>h only</td><td>4 080 pairs: 0 overlaps</td></tr>
+<tr><td>E</td><td>1/10 (#75)</td><td>Rule of Halves</td><td class="n">24</td><td class="n">30</td><td>no (0.745, 0.778)</td><td>13 520 pairs: 0 overlaps</td></tr>
+</table>
+<p>The fill check is independent of the #75 census. For each stacking and each layer, every piece is matched to exactly one engine piece up to an in-layer lattice shift. Every tile has the volume of one layer cell. Every piece is tested against every piece of every other tile copy nearby (layers L−2 … L+2, in-layer copies −3 … 3), and a separating plane must be found exactly. Disjoint tiles that each have one cell's volume fill space.</p>
+
+<div class="pb"></div>
+<h2>Pair A · λ = 3/8 · HexOct II (recommended)</h2>
+<figure><img src="figs/pair-A-3_8-views.png"><figcaption>Top: c-tile, a brick of two cubes (faces: 2 squares of side 1/√2 and 4 rectangles 1/√2 × √2). Bottom: h-tile, the twisted cube: 6 squares of side 1/√2 and 6 isosceles triangles (sides 1/√2, 1/√2, √(2/3); angles 54.7°, 54.7°, 70.5°), 11 corners at heights −1, −½, 0, ½, 1 (1 + 3 + 3 + 3 + 1). Views from above, from the side and from below.</figcaption></figure>
+<p>The twisted cube is two cube corners, each made of three squares (around the top and bottom corners), joined by a band of six triangles. Each tile has two pieces (the tetrahedral parts; at 3/8 the octahedral halves have shrunk to nothing). Volume: one layer cell, 1/√2 (ball spacing 1).</p>
+<figure><img src="figs/pair-A-3_8-stacks.png"><figcaption>Small stacks built from pair A, 2 × 2 tiles per layer, four layers drawn slightly apart (bottom to top): 2H (h h h h), 3C (c c c c), 4H (h c h c).</figcaption></figure>
+
+<div class="pb"></div>
+<h2>Pair C · λ = −1/8 (keeps the octahedral halves)</h2>
+<figure><img src="figs/pair-C--1_8-views.png"><figcaption>Top: c-tile, one solid with 10 faces (4 small triangles of side ½; 2 regular hexagons of side ½, the octahedral cuts; 4 hexagons with sides 1, ½, ½, 1, ½, ½). The two towers of #75 now meet along two trapezoids (¾ of a unit triangle each). Bottom: h-tile as in #75 (14 faces). Regular tetrahedra and octahedron halves, as in the ring build.</figcaption></figure>
+<figure><img src="figs/pair-C--1_8-stacks.png"><figcaption>2H, 3C, 4H from pair C.</figcaption></figure>
+
+<div class="pb"></div>
+<h2>Pair B · λ = −1/8, whole octahedra</h2>
+<figure><img src="figs/pair-B-W-1_8-views.png"><figcaption>Top: c-tile, a regular octahedron with two regular tetrahedra (8 faces: 4 triangles, 4 quadrilaterals). Bottom: h-tile, octahedron + two tetrahedra arranged the other way (10 faces: 8 triangles, 2 quadrilaterals). Hull ratio 6/7 for both.</figcaption></figure>
+<figure><img src="figs/pair-B-W-1_8-stacks.png"><figcaption>2H, 3C, 4H from pair B.</figcaption></figure>
+
+<div class="pb"></div>
+<h2>Pair D · λ = −11/24</h2>
+<figure><img src="figs/pair-D--11_24-views.png"><figcaption>Top: c-tile, 18 faces (16 quadrilaterals, 2 regular hexagons), hull ratio 0.783. Bottom: h-tile, a regular hexagonal prism (convex, 8 faces). Two pieces each (the tetrahedral parts vanish at this end).</figcaption></figure>
+<figure><img src="figs/pair-D--11_24-stacks.png"><figcaption>2H, 3C, 4H from pair D.</figcaption></figure>
+
+<div class="pb"></div>
+<h2>Pair E · λ = 1/10 (the weight of #75)</h2>
+<figure><img src="figs/pair-E-1_10-views.png"><figcaption>Top: c-tile, one solid with 24 faces, hull ratio 0.745, neck 0.53 unit triangles. Bottom: h-tile as in #75 (30 faces).</figcaption></figure>
+<figure><img src="figs/pair-E-1_10-stacks.png"><figcaption>2H, 3C, 4H from pair E.</figcaption></figure>
+
+<div class="pb"></div>
+<h2>4. Other splits between layers</h2>
+<p>A two-tile system needs each layer's tile to depend on that layer's letter alone. We checked exactly, for every gap in words that cover all contexts, which layer's letter fixes the shape of each whole piece (at λ = −1/3, −1/8, 1/10, 1/4). At −1/3, 1/10 and 1/4, the whole octahedral piece takes 3 shapes and depends on both neighbouring layers. Each tetrahedral piece depends on the layer of its base. So the Rule of Halves is the only split of whole pieces and mid-plane halves that gives two layer tiles there, and the move of §1 is the only freedom left. At λ = −1/8 every piece has one shape (regular tetrahedra and octahedra), and two more splits are possible:</p>
+<ul>
+<li><b>Whole octahedra (pair B):</b> layer L takes its two tetrahedra and the whole octahedron of the gap above. The tile depends only on L's letter. It works only at λ = −1/8.</li>
+<li><b>Whole gap slabs:</b> one tile for every stacking: octahedron + both tetrahedra of a gap, shifted, form the convex 60° rhombohedron (6 rhombi). This is the known octet unit cell (Lalvani 1990, NASA TM-102635). It has no c/h distinction, so it is outside the two-tile frame and is not proposed.</li>
+</ul>
+<p>Cut planes other than the mid-plane were not tried.</p>
+
+<h2>5. Prior art checked (2 November 2026)</h2>
+<p>Library (ask-library, 1 query: "convex space-filling polyhedron with six squares and six triangles, twisted cube, hexagonal close packing"): hits Kerckhoff–Storm 2008, Zong 2012, Fang et al. 2013, Sommerville 1922, Torquato–Jiao 2009, Kramer 1982 (catalogue); Wikipedia "Tetrahedral-octahedral honeycomb" p.1, Koskinen 2011 p.2, Krishnamurthy–Akleman–Subramanian 2020 p.3, Fedorov 1885 ch. 13 notes. None shows the twisted cube. Web (1 query, same words): Wikipedia "Space-filling polyhedron" and "Honeycomb (geometry)", MathWorld "Space-Filling Polyhedra" topic page, close-packing teaching pages; no match. The two-cube brick and the 60° rhombohedron are classical. The twisted cube as a convex tile of hcp-type layers was not found in these sources. It is not claimed as new until a fuller check.</p>
+
+<h2>Conclusion and status</h2>
+<p><b>Conclusion:</b> shifting one tower of the c-tile by one lattice step makes it one solid at every weight. At λ = 3/8 both tiles are convex (a brick of two cubes and the twisted cube), and this pair is recommended as HexOct II (placeholder name). <b>Status:</b> exact enumeration done over 16 weights; exact fill check over all 42 stackings of period ≤ 6 for the five pairs; awaiting DICTO's read and name.</p>
+</body></html>

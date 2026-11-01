@@ -1,0 +1,224 @@
+{
+ "W_c": {
+  "n_pieces": 3,
+  "connected_choices": 3,
+  "total_choices": 625,
+  "classes": [
+   {
+    "faces": 8,
+    "sizes": [
+     3,
+     3,
+     3,
+     3,
+     4,
+     4,
+     4,
+     4
+    ],
+    "holes": 0,
+    "manifold": true,
+    "vol_ok": true,
+    "volume": 0.7071067811865475,
+    "hull_ratio": 0.8571428571428574,
+    "convex": false,
+    "neck": 1.0,
+    "extent": [
+     1.5,
+     1.1547005383792515,
+     1.632993161855452
+    ],
+    "sym": 2,
+    "translates": [
+     [
+      0,
+      0
+     ],
+     [
+      -1,
+      -1
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "choices": 3,
+    "contacts": {
+     "0-2": 1.0,
+     "1-2": 1.0
+    }
+   }
+  ],
+  "split": "W",
+  "tile": "c",
+  "pieces": [
+   "tet",
+   "tet",
+   "oct (whole, gap above)"
+  ]
+ },
+ "W_h": {
+  "n_pieces": 3,
+  "connected_choices": 3,
+  "total_choices": 625,
+  "classes": [
+   {
+    "faces": 10,
+    "sizes": [
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     4,
+     4
+    ],
+    "holes": 0,
+    "manifold": true,
+    "vol_ok": true,
+    "volume": 0.7071067811865475,
+    "hull_ratio": 0.8571428571428572,
+    "convex": false,
+    "neck": 1.0,
+    "extent": [
+     1.5,
+     1.1547005383792515,
+     1.632993161855452
+    ],
+    "sym": 2,
+    "translates": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ],
+     [
+      -1,
+      0
+     ]
+    ],
+    "choices": 3,
+    "contacts": {
+     "0-1": 1.0,
+     "1-2": 1.0
+    }
+   }
+  ],
+  "split": "W",
+  "tile": "h",
+  "pieces": [
+   "tet",
+   "tet",
+   "oct (whole, gap above)"
+  ]
+ },
+ "G": {
+  "n_pieces": 3,
+  "connected_choices": 9,
+  "total_choices": 625,
+  "classes": [
+   {
+    "faces": 6,
+    "sizes": [
+     4,
+     4,
+     4,
+     4,
+     4,
+     4
+    ],
+    "holes": 0,
+    "manifold": true,
+    "vol_ok": true,
+    "volume": 0.7071067811865475,
+    "hull_ratio": 1.0,
+    "convex": true,
+    "neck": 1.0,
+    "extent": [
+     2.0,
+     1.1547005383792515,
+     0.816496580927726
+    ],
+    "sym": 4,
+    "translates": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "choices": 3,
+    "contacts": {
+     "0-1": 1.0,
+     "0-2": 1.0
+    }
+   },
+   {
+    "faces": 8,
+    "sizes": [
+     3,
+     3,
+     3,
+     3,
+     4,
+     4,
+     4,
+     4
+    ],
+    "holes": 0,
+    "manifold": true,
+    "vol_ok": true,
+    "volume": 0.7071067811865475,
+    "hull_ratio": 0.8571428571428572,
+    "convex": false,
+    "neck": 1.0,
+    "extent": [
+     1.5,
+     1.1547005383792515,
+     0.816496580927726
+    ],
+    "sym": 2,
+    "translates": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "choices": 6,
+    "contacts": {
+     "0-1": 1.0,
+     "0-2": 1.0
+    }
+   }
+  ],
+  "split": "G",
+  "tile": "gap",
+  "pieces": [
+   "oct",
+   "tet tip-down",
+   "tet tip-up"
+  ]
+ }
+}
