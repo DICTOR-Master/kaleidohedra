@@ -1,0 +1,520 @@
+[
+ {
+  "name": "Cube Pearl",
+  "D": "D106",
+  "file": "solids/dicto-cube-pearl.json",
+  "symmetry": "Oh",
+  "convex": true,
+  "corners": 32,
+  "faces": 18,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 2,
+  "phi": {
+   "star_over_solid": 1.6180339887498947,
+   "halo": {
+    "V": 18,
+    "faces": {
+     "3": 32
+    },
+    "edges": [
+     0.72111,
+     0.84853
+    ],
+    "radii": [
+     0.84853,
+     1.0
+    ]
+   },
+   "halo_over_solid": 2.517663043231006,
+   "star_inside_halo": true,
+   "layer_pieces": 80,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.39223,
+     0.78446
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.22086,
+     0.88345
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999998,
+   "halo": {
+    "V": 18,
+    "faces": {
+     "3": 32
+    },
+    "edges": [
+     0.72111,
+     0.84853
+    ],
+    "radii": [
+     0.84853,
+     1.0
+    ]
+   },
+   "halo_over_solid": 4.754716981132074,
+   "star_inside_halo": true,
+   "layer_pieces": 80,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.39223,
+     0.78446
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.22086,
+     0.88345
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "Golden Clasp",
+  "D": "D107",
+  "file": "solids/dicto-golden-clasp.json",
+  "symmetry": "Oh",
+  "convex": true,
+  "corners": 48,
+  "faces": 26,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 3,
+  "phi": {
+   "star_over_solid": 1.6180339887498953,
+   "halo": {
+    "V": 26,
+    "faces": {
+     "3": 48
+    },
+    "edges": [
+     0.6031,
+     0.73853,
+     0.89106
+    ],
+    "radii": [
+     0.93417,
+     0.99084,
+     1.0
+    ]
+   },
+   "halo_over_solid": 2.8920654513432713,
+   "star_inside_halo": true,
+   "layer_pieces": 120,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.45951,
+     0.7435
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.15689,
+     0.91847
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.0000000000000004,
+   "halo": {
+    "V": 26,
+    "faces": {
+     "3": 48
+    },
+    "edges": [
+     0.6031,
+     0.73853,
+     0.89106
+    ],
+    "radii": [
+     0.93417,
+     0.99084,
+     1.0
+    ]
+   },
+   "halo_over_solid": 5.461792335164981,
+   "star_inside_halo": true,
+   "layer_pieces": 120,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.45951,
+     0.7435
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "edges": [
+     0.15689,
+     0.91847
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "Hamlet",
+  "D": "D108",
+  "file": "solids/dicto-hamlet.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 452,
+  "faces": 270,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 4,
+  "phi": {
+   "star_over_solid": 1.6180339887498953,
+   "halo": {
+    "V": 270,
+    "faces": {
+     "5": 120,
+     "6": 20,
+     "10": 12
+    },
+    "edges": [
+     0.11899,
+     0.13784,
+     0.18339,
+     0.22346,
+     0.25474
+    ],
+    "radii": [
+     0.99445,
+     0.99543,
+     0.99812,
+     1.0
+    ]
+   },
+   "halo_over_solid": 4.003355447240673,
+   "star_inside_halo": true,
+   "layer_pieces": 1172,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 120,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "edges": [
+     0.14098,
+     0.21383,
+     0.39197
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.34534,
+     0.50529
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 2.000000000000001,
+   "halo": {
+    "V": 270,
+    "faces": {
+     "5": 120,
+     "6": 20,
+     "10": 12
+    },
+    "edges": [
+     0.11899,
+     0.13784,
+     0.18339,
+     0.22346,
+     0.25474
+    ],
+    "radii": [
+     0.99445,
+     0.99543,
+     0.99812,
+     1.0
+    ]
+   },
+   "halo_over_solid": 7.560512189142971,
+   "star_inside_halo": true,
+   "layer_pieces": 1172,
+   "layer_fills": true,
+   "overlaps": 0,
+   "core": {
+    "V": 120,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "edges": [
+     0.14098,
+     0.21383,
+     0.39197
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.34534,
+     0.50529
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ },
+ {
+  "name": "Ophelia",
+  "D": "D109",
+  "file": "solids/dicto-ophelia.json",
+  "symmetry": "Ih",
+  "convex": true,
+  "corners": 642,
+  "faces": 440,
+  "centre_inside_every_face": true,
+  "pyramids_add_up": true,
+  "face_families": 5,
+  "phi": {
+   "star_over_solid": 1.618033988749892,
+   "halo": {
+    "V": 440,
+    "faces": {
+     "3": 60,
+     "4": 30,
+     "5": 132,
+     "8": 60
+    },
+    "edges": [
+     0.05656,
+     0.07652,
+     0.08083,
+     0.09513,
+     0.18121,
+     0.21609,
+     0.2674,
+     0.29714
+    ],
+    "radii": [
+     0.97935,
+     0.98265,
+     0.98294,
+     0.99664,
+     1.0
+    ]
+   },
+   "halo_over_solid": 4.100202966009907,
+   "star_inside_halo": true,
+   "layer_pieces": 1722,
+   "layer_fills": true,
+   "overlaps": null,
+   "core": {
+    "V": 120,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "edges": [
+     0.10724,
+     0.17786,
+     0.439
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.33682,
+     0.51993
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "2": {
+   "star_over_solid": 1.9999999999999953,
+   "halo": {
+    "V": 440,
+    "faces": {
+     "3": 60,
+     "4": 30,
+     "5": 132,
+     "8": 60
+    },
+    "edges": [
+     0.05656,
+     0.07652,
+     0.08083,
+     0.09513,
+     0.18121,
+     0.21609,
+     0.2674,
+     0.29714
+    ],
+    "radii": [
+     0.97935,
+     0.98265,
+     0.98294,
+     0.99664,
+     1.0
+    ]
+   },
+   "halo_over_solid": 7.7434129721967615,
+   "star_inside_halo": true,
+   "layer_pieces": 1722,
+   "layer_fills": true,
+   "overlaps": null,
+   "core": {
+    "V": 120,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "edges": [
+     0.10724,
+     0.17786,
+     0.439
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_is_shape": false,
+   "core_core": {
+    "V": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "edges": [
+     0.33682,
+     0.51993
+    ],
+    "radii": [
+     1.0
+    ]
+   },
+   "core_returns_to_shape": false
+  },
+  "verdict": "star fills; core does not return"
+ }
+]

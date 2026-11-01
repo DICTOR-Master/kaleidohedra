@@ -1,0 +1,3643 @@
+{
+ "dicto-alice": {
+  "name": "Alice",
+  "D": "D94",
+  "symmetry": "Td",
+  "order": 24,
+  "f_vector": {
+   "vertices": 144,
+   "edges": 360,
+   "faces": 218
+  },
+  "faces_by_sides": {
+   "3": 152,
+   "4": 66
+  },
+  "volume": {
+   "exact": "7019/80 + (46969/1200)*sqrt(5)",
+   "decimal": "175.259064029323019"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#63",
+  "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+  "status": "new",
+  "note": "W49: cell-first, in a gap (cut at its midpoint), 144 corners; a gap section, not in Boole Stott's series; not found in the sources checked (#63)",
+  "sq_edges": [
+   {
+    "exact": "1/10",
+    "decimal": "0.100000000000000",
+    "count": 12
+   },
+   {
+    "exact": "7/2 + (-3/2)*sqrt(5)",
+    "decimal": "0.145898033750315",
+    "count": 24
+   },
+   {
+    "exact": "3/4 + (-1/4)*sqrt(5)",
+    "decimal": "0.190983005625053",
+    "count": 12
+   },
+   {
+    "exact": "3/2 + (-1/2)*sqrt(5)",
+    "decimal": "0.381966011250105",
+    "count": 48
+   },
+   {
+    "exact": "15/2 + (-25/8)*sqrt(5)",
+    "decimal": "0.512287570313157",
+    "count": 24
+   },
+   {
+    "exact": "5/8",
+    "decimal": "0.625000000000000",
+    "count": 12
+   },
+   {
+    "exact": "9/10",
+    "decimal": "0.900000000000000",
+    "count": 12
+   },
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 24
+   },
+   {
+    "exact": "3/5 + (1/5)*sqrt(5)",
+    "decimal": "1.047213595499958",
+    "count": 24
+   },
+   {
+    "exact": "11/4 + (-3/4)*sqrt(5)",
+    "decimal": "1.072949016875158",
+    "count": 12
+   },
+   {
+    "exact": "9/10 + (3/10)*sqrt(5)",
+    "decimal": "1.570820393249937",
+    "count": 12
+   },
+   {
+    "exact": "1 + (3/8)*sqrt(5)",
+    "decimal": "1.838525491562421",
+    "count": 24
+   },
+   {
+    "exact": "15/8",
+    "decimal": "1.875000000000000",
+    "count": 24
+   },
+   {
+    "exact": "15/2 + (-5/2)*sqrt(5)",
+    "decimal": "1.909830056250526",
+    "count": 24
+   },
+   {
+    "exact": "9/8 + (1/2)*sqrt(5)",
+    "decimal": "2.243033988749895",
+    "count": 12
+   },
+   {
+    "exact": "3/2 + (1/2)*sqrt(5)",
+    "decimal": "2.618033988749895",
+    "count": 24
+   },
+   {
+    "exact": "7/5 + (3/5)*sqrt(5)",
+    "decimal": "2.741640786499874",
+    "count": 24
+   },
+   {
+    "exact": "81/10 + (-21/10)*sqrt(5)",
+    "decimal": "3.404257247250442",
+    "count": 12
+   }
+  ]
+ },
+ "dicto-alicia": {
+  "name": "Alicia",
+  "D": "",
+  "symmetry": "Oh",
+  "order": 48,
+  "f_vector": {
+   "vertices": 84,
+   "edges": 240,
+   "faces": 158
+  },
+  "faces_by_sides": {
+   "3": 152,
+   "4": 6
+  },
+  "volume": {
+   "exact": "891/10 + (2923/75)*sqrt(5)",
+   "decimal": "176.247022643091804"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#63",
+  "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+  "status": "known",
+  "note": "W48: the cell-first central slice of the 600-cell, the middle section of Alicia Boole Stott (1900, cell-first series through the corner layers); named after her by DICTO",
+  "sq_edges": [
+   {
+    "exact": "2/5",
+    "decimal": "0.400000000000000",
+    "count": 24
+   },
+   {
+    "exact": "11/4 + (-3/4)*sqrt(5)",
+    "decimal": "1.072949016875158",
+    "count": 48
+   },
+   {
+    "exact": "3/4 + (1/4)*sqrt(5)",
+    "decimal": "1.309016994374947",
+    "count": 24
+   },
+   {
+    "exact": "12/5",
+    "decimal": "2.400000000000000",
+    "count": 24
+   },
+   {
+    "exact": "9/4 + (3/4)*sqrt(5)",
+    "decimal": "3.927050983124842",
+    "count": 24
+   },
+   {
+    "exact": "4",
+    "decimal": "4.000000000000000",
+    "count": 48
+   },
+   {
+    "exact": "12/5 + (4/5)*sqrt(5)",
+    "decimal": "4.188854381999832",
+    "count": 48
+   }
+  ]
+ },
+ "dicto-bandersnatch": {
+  "name": "Bandersnatch",
+  "D": "",
+  "symmetry": "Td",
+  "order": 24,
+  "f_vector": {
+   "vertices": 28,
+   "edges": 78,
+   "faces": 52
+  },
+  "faces_by_sides": {
+   "3": 52
+  },
+  "volume": {
+   "exact": "61/3 + (10/3)*sqrt(5)",
+   "decimal": "27.786893258332632"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#63",
+  "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+  "status": "known",
+  "note": "W60: cell-first corner-layer section, one of the sections of Alicia Boole Stott (1900, cell-first series through the corner layers)",
+  "sq_edges": [
+   {
+    "exact": "3 - sqrt(5)",
+    "decimal": "0.763932022500210",
+    "count": 18
+   },
+   {
+    "exact": "6 + (-2)*sqrt(5)",
+    "decimal": "1.527864045000421",
+    "count": 24
+   },
+   {
+    "exact": "4",
+    "decimal": "4.000000000000000",
+    "count": 36
+   }
+  ]
+ },
+ "dicto-blockhead": {
+  "name": "Blockhead",
+  "D": "D79",
+  "symmetry": "C3v",
+  "order": 6,
+  "f_vector": {
+   "vertices": 10,
+   "edges": 18,
+   "faces": 10
+  },
+  "faces_by_sides": {
+   "3": 6,
+   "4": 3,
+   "6": 1
+  },
+  "volume": {
+   "exact": "1",
+   "decimal": "1.000000000000000"
+  },
+  "field": "Q",
+  "convex": true,
+  "paper": "#56",
+  "doi": "DICTO DOI: 10.5281/zenodo.23635823",
+  "status": "new",
+  "note": "not found in the sources checked (#56): the twinned octet's tetrahedral-hole piece at 3/8, the twin of the cube",
+  "sq_edges": [
+   {
+    "exact": "1/3",
+    "decimal": "0.333333333333333",
+    "count": 3
+   },
+   {
+    "exact": "2/3",
+    "decimal": "0.666666666666667",
+    "count": 6
+   },
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 9
+   }
+  ]
+ },
+ "dicto-chucky": {
+  "name": "Chucky",
+  "D": "D80",
+  "symmetry": "C3v",
+  "order": 6,
+  "f_vector": {
+   "vertices": 19,
+   "edges": 30,
+   "faces": 13
+  },
+  "faces_by_sides": {
+   "3": 3,
+   "4": 3,
+   "5": 6,
+   "9": 1
+  },
+  "volume": {
+   "exact": "383/192",
+   "decimal": "1.994791666666667"
+  },
+  "field": "Q",
+  "convex": true,
+  "paper": "#57",
+  "doi": "DICTO DOI: 10.5281/zenodo.23647898",
+  "status": "new",
+  "note": "not found in the sources checked (#57): a Janus c/h piece of ABAC at -3/8 (hexagonal top half, cubic bottom half); its volume is the mean of its two parents'",
+  "sq_edges": [
+   {
+    "exact": "1/8",
+    "decimal": "0.125000000000000",
+    "count": 9
+   },
+   {
+    "exact": "3/8",
+    "decimal": "0.375000000000000",
+    "count": 6
+   },
+   {
+    "exact": "3/4",
+    "decimal": "0.750000000000000",
+    "count": 15
+   }
+  ]
+ },
+ "dicto-cube-pearl": {
+  "name": "Cube Pearl",
+  "D": "D106",
+  "symmetry": "Oh",
+  "order": 48,
+  "f_vector": {
+   "vertices": 32,
+   "edges": 48,
+   "faces": 18
+  },
+  "faces_by_sides": {
+   "4": 6,
+   "6": 12
+  },
+  "volume": {
+   "exact": "424/125",
+   "decimal": "3.392000000000000"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#80",
+  "doi": "DICTO DOI: 10.5281/zenodo.23822907",
+  "status": "new",
+  "note": "the cube with its edges cut back by the planes (±1, ±1, 0)·x ≤ 6/5 (depth s = 3/5): 32 corners all on one sphere, 6 squares and 12 hexagons, Oh; the chamfered-cube family is classical, this depth was not found in the sources checked; its chain of T closes with period four (#80)",
+  "sq_edges": [
+   {
+    "exact": "4/25",
+    "decimal": "0.160000000000000",
+    "count": 24
+   },
+   {
+    "exact": "12/25",
+    "decimal": "0.480000000000000",
+    "count": 24
+   }
+  ]
+ },
+ "dicto-david": {
+  "name": "David",
+  "D": "",
+  "symmetry": "D2d",
+  "order": 8,
+  "f_vector": {
+   "vertices": 4,
+   "edges": 6,
+   "faces": 4
+  },
+  "faces_by_sides": {
+   "3": 4
+  },
+  "volume": {
+   "exact": "1/6",
+   "decimal": "0.166666666666667"
+  },
+  "field": "Q",
+  "convex": true,
+  "paper": "#55",
+  "doi": "DICTO DOI: 10.5281/zenodo.23632358",
+  "status": "known",
+  "note": "known shape: a tetragonal disphenoid, the empty Cr4 tetrahedron of A15 moved by half a body diagonal (#55 Corollary 1); the name is DICTO's",
+  "sq_edges": [
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 2
+   },
+   {
+    "exact": "3/2",
+    "decimal": "1.500000000000000",
+    "count": 4
+   }
+  ]
+ },
+ "dicto-dbt": {
+  "name": "DICTO Belted Triacontahedron (DBT)",
+  "D": "D37",
+  "symmetry": "D3d",
+  "order": 12,
+  "f_vector": {
+   "vertices": 30,
+   "edges": 60,
+   "faces": 32
+  },
+  "faces_by_sides": {
+   "3": 8,
+   "4": 24
+  },
+  "volume": {
+   "exact": "-872/81 + (440/81)*sqrt(5)",
+   "decimal": "1.381110001233426"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#37a",
+  "doi": "DICTO DOI: 10.5281/zenodo.23484012",
+  "status": "new",
+  "note": "not found",
+  "sq_edges": [
+   {
+    "exact": "20/9 + (-8/9)*sqrt(5)",
+    "decimal": "0.234606242222409",
+    "count": 54
+   },
+   {
+    "exact": "8/3 + (-8/9)*sqrt(5)",
+    "decimal": "0.679050686666854",
+    "count": 6
+   }
+  ]
+ },
+ "dicto-delilah": {
+  "name": "Delilah",
+  "D": "U5; W2",
+  "symmetry": "Oh",
+  "order": 48,
+  "f_vector": {
+   "vertices": 6,
+   "edges": 12,
+   "faces": 8
+  },
+  "faces_by_sides": {
+   "3": 8
+  },
+  "volume": {
+   "exact": "2/3",
+   "decimal": "0.666666666666667"
+  },
+  "field": "Q(2**(1/3))",
+  "convex": true,
+  "paper": "#51",
+  "doi": "DICTO DOI: 10.5281/zenodo.23606828",
+  "status": "known",
+  "note": "known shape (regular octahedron), of edge 2^(-1/3) at octet edge 1; DICTO's name for it at the Delian bond (#51)",
+  "sq_edges": [
+   {
+    "exact": "2**(1/3)",
+    "decimal": "1.259921049894873",
+    "count": 12
+   }
+  ]
+ },
+ "dicto-dodeca-13-needle": {
+  "name": "DICTO Dodeca-13 Needle",
+  "D": "D7",
+  "symmetry": "C3v",
+  "order": 6,
+  "f_vector": {
+   "vertices": 4,
+   "edges": 6,
+   "faces": 4
+  },
+  "faces_by_sides": {
+   "3": 4
+  },
+  "volume": {
+   "exact": "3/40 + (-19/600)*sqrt(5)",
+   "decimal": "0.004191180712507"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#13",
+  "doi": "DICTO DOI: 10.5281/zenodo.23284281",
+  "status": "new",
+  "note": "not found",
+  "sq_edges": [
+   {
+    "exact": "7/10 + (-3/10)*sqrt(5)",
+    "decimal": "0.029179606750063",
+    "count": 3
+   },
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 3
+   }
+  ]
+ },
+ "dicto-dodeca-13-wedge": {
+  "name": "DICTO Dodeca-13 Wedge",
+  "D": "D6",
+  "symmetry": "C2v",
+  "order": 4,
+  "f_vector": {
+   "vertices": 8,
+   "edges": 12,
+   "faces": 6
+  },
+  "faces_by_sides": {
+   "3": 2,
+   "4": 2,
+   "5": 2
+  },
+  "volume": {
+   "exact": "1/10 + (1/20)*sqrt(5)",
+   "decimal": "0.211803398874989"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#13",
+  "doi": "DICTO DOI: 10.5281/zenodo.23284281",
+  "status": "new",
+  "note": "not found",
+  "sq_edges": [
+   {
+    "exact": "7/10 + (-3/10)*sqrt(5)",
+    "decimal": "0.029179606750063",
+    "count": 2
+   },
+   {
+    "exact": "3/10 + (-1/10)*sqrt(5)",
+    "decimal": "0.076393202250021",
+    "count": 1
+   },
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 9
+   }
+  ]
+ },
+ "dicto-dodecaxes": {
+  "name": "Dodecaxes",
+  "D": "D70",
+  "symmetry": "Th",
+  "order": 24,
+  "f_vector": {
+   "vertices": 32,
+   "edges": 84,
+   "faces": 54
+  },
+  "faces_by_sides": {
+   "3": 48,
+   "4": 6
+  },
+  "volume": {
+   "exact": "2",
+   "decimal": "2.000000000000000"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": false,
+  "paper": "#48",
+  "doi": "DICTO DOI: 10.5281/zenodo.23596362",
+  "status": "new",
+  "note": "not found; the Unborn Axes with 8 Tricap keys, holding a whole regular dodecahedron (#48 Theorem 3)",
+  "sq_edges": [
+   {
+    "exact": "3/4 + (-1/4)*sqrt(5)",
+    "decimal": "0.190983005625053",
+    "count": 24
+   },
+   {
+    "exact": "3/2 + (-1/2)*sqrt(5)",
+    "decimal": "0.381966011250105",
+    "count": 24
+   },
+   {
+    "exact": "1/2",
+    "decimal": "0.500000000000000",
+    "count": 12
+   },
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 24
+   }
+  ]
+ },
+ "dicto-dphp": {
+  "name": "DICTO DPHP (Decagon-Pentagon-Hexagon Polyhedron)",
+  "D": "D48",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 270,
+   "edges": 420,
+   "faces": 152
+  },
+  "faces_by_sides": {
+   "5": 120,
+   "6": 20,
+   "10": 12
+  },
+  "volume": {
+   "exact": "-14900661388229463716320/1064860352965629261 + (741665577198656722816/118317816996181029)*sqrt(5)",
+   "decimal": "23.543403030308706"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#39",
+  "doi": "DICTO DOI: 10.5281/zenodo.23488944",
+  "status": "new",
+  "note": "not found",
+  "sq_edges": [
+   {
+    "exact": "48142264862/3473918523 + (-21457848314/3473918523)*sqrt(5)",
+    "decimal": "0.046361876350992",
+    "count": 60
+   },
+   {
+    "exact": "29506775260990/1182176289243 + (-13162941097850/1182176289243)*sqrt(5)",
+    "decimal": "0.062210842021525",
+    "count": 60
+   },
+   {
+    "exact": "120805108491188031266/134990925955898769 + (-270095195176952296882/674954629779493845)*sqrt(5)",
+    "decimal": "0.110119467179243",
+    "count": 120
+   },
+   {
+    "exact": "2662100/789507 + (-377600/263169)*sqrt(5)",
+    "decimal": "0.163497214195996",
+    "count": 120
+   },
+   {
+    "exact": "26676827701723427470526/45937482664449058929 + (-59629374205744272901006/229687413322245294645)*sqrt(5)",
+    "decimal": "0.212481511696687",
+    "count": 60
+   }
+  ]
+ },
+ "dicto-fang": {
+  "name": "Fang",
+  "D": "D81",
+  "symmetry": "C3v",
+  "order": 6,
+  "f_vector": {
+   "vertices": 7,
+   "edges": 12,
+   "faces": 7
+  },
+  "faces_by_sides": {
+   "3": 4,
+   "4": 3
+  },
+  "volume": {
+   "exact": "5/81",
+   "decimal": "0.061728395061728"
+  },
+  "field": "Q",
+  "convex": true,
+  "paper": "#57",
+  "doi": "DICTO DOI: 10.5281/zenodo.23647898",
+  "status": "new",
+  "note": "not found in the sources checked (#57): a Janus c/h piece of ABAC at 5/24 (hexagonal top half, cubic bottom half); its volume is the mean of its two parents'",
+  "sq_edges": [
+   {
+    "exact": "2/9",
+    "decimal": "0.222222222222222",
+    "count": 12
+   }
+  ]
+ },
+ "dicto-fpd": {
+  "name": "DICTO FPD (flat pentakis dodecahedron)",
+  "D": "D41",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 32,
+   "edges": 90,
+   "faces": 60
+  },
+  "faces_by_sides": {
+   "3": 60
+  },
+  "volume": {
+   "exact": "130000/9 + (-58000/9)*sqrt(5)",
+   "decimal": "34.228589445799734"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#38",
+  "doi": "DICTO DOI: 10.5281/zenodo.23463305",
+  "status": "new",
+  "note": "as above",
+  "sq_edges": [
+   {
+    "exact": "300 + (-400/3)*sqrt(5)",
+    "decimal": "1.857603000028040",
+    "count": 60
+   },
+   {
+    "exact": "400 + (-1600/9)*sqrt(5)",
+    "decimal": "2.476804000037387",
+    "count": 30
+   }
+  ]
+ },
+ "dicto-ganesha": {
+  "name": "Ganesha",
+  "D": "D84",
+  "symmetry": "C3v",
+  "order": 6,
+  "f_vector": {
+   "vertices": 30,
+   "edges": 45,
+   "faces": 17
+  },
+  "faces_by_sides": {
+   "3": 6,
+   "4": 3,
+   "6": 4,
+   "8": 3,
+   "12": 1
+  },
+  "volume": {
+   "exact": "(68881403/165888000)*sqrt(3)",
+   "decimal": "0.719196624786768"
+  },
+  "field": "Q(sqrt(3))",
+  "convex": true,
+  "paper": "#61",
+  "doi": "DICTO DOI: 10.5281/zenodo.23682596",
+  "status": "new",
+  "note": "not found in the sources checked (#61): the Janus c/h tetrahedral piece of a squashed stacking (cubic bottom, hexagonal top); in the dataset at the parameters of #61 Figure 1 (ACBC, layer spacing^2 = (3/4)(2/3), lambda = 1/10)",
+  "sq_edges": [
+   {
+    "exact": "1/72",
+    "decimal": "0.013888888888889",
+    "count": 9
+   },
+   {
+    "exact": "30899/1036800",
+    "decimal": "0.029802276234568",
+    "count": 6
+   },
+   {
+    "exact": "2809/51840",
+    "decimal": "0.054185956790123",
+    "count": 6
+   },
+   {
+    "exact": "2809/38400",
+    "decimal": "0.073151041666667",
+    "count": 6
+   },
+   {
+    "exact": "1/8",
+    "decimal": "0.125000000000000",
+    "count": 3
+   },
+   {
+    "exact": "961/5760",
+    "decimal": "0.166840277777778",
+    "count": 6
+   },
+   {
+    "exact": "4489/12800",
+    "decimal": "0.350703125000000",
+    "count": 3
+   },
+   {
+    "exact": "125939/259200",
+    "decimal": "0.485875771604938",
+    "count": 6
+   }
+  ]
+ },
+ "dicto-golden-clasp": {
+  "name": "Golden Clasp",
+  "D": "D107",
+  "symmetry": "Oh",
+  "order": 48,
+  "f_vector": {
+   "vertices": 48,
+   "edges": 72,
+   "faces": 26
+  },
+  "faces_by_sides": {
+   "4": 12,
+   "6": 8,
+   "8": 6
+  },
+  "volume": {
+   "exact": "-613/2 + (279/2)*sqrt(5)",
+   "decimal": "5.431482861220663"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "Star Cores (studies 2026-10-31-star-cores-names)",
+  "doi": "",
+  "status": "new",
+  "note": "the faces of the truncated cuboctahedron at depths 1 : 1/φ : 3/4 on the 4-, 3- and 2-fold axes (48 corners, 26 faces, Oh); its chain of T closes with period four, while the Archimedean truncated cuboctahedron's does not (Star Cores study 3)",
+  "sq_edges": [
+   {
+    "exact": "47 + (-21)*sqrt(5)",
+    "decimal": "0.042572472504416",
+    "count": 24
+   },
+   {
+    "exact": "1/2",
+    "decimal": "0.500000000000000",
+    "count": 24
+   },
+   {
+    "exact": "81 + (-36)*sqrt(5)",
+    "decimal": "0.501552810007571",
+    "count": 24
+   }
+  ]
+ },
+ "dicto-golden-ti-star": {
+  "name": "Golden TI Star",
+  "D": "D103",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 92,
+   "edges": 270,
+   "faces": 180
+  },
+  "faces_by_sides": {
+   "3": 180
+  },
+  "volume": {
+   "exact": "20 + (1/2)*sqrt(5)",
+   "decimal": "21.118033988749895"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": false,
+  "paper": "#78",
+  "doi": "DICTO DOI: 10.5281/zenodo.23782577",
+  "status": "new",
+  "note": "the truncated icosahedron with a pyramid on every face, tips at φ × the feet of the perpendiculars (92 corners, 180 triangles, volume φ × TI, Ih); the doubling form (2×) is the same construction; not found in the sources checked (#78)",
+  "sq_edges": [
+   {
+    "exact": "3/2 + (-1/2)*sqrt(5)",
+    "decimal": "0.381966011250105",
+    "count": 90
+   },
+   {
+    "exact": "15/4 + (-6/5)*sqrt(5)",
+    "decimal": "1.066718427000252",
+    "count": 60
+   },
+   {
+    "exact": "9/4 + (-1/2)*sqrt(5)",
+    "decimal": "1.131966011250105",
+    "count": 120
+   }
+  ]
+ },
+ "dicto-goliath": {
+  "name": "Goliath",
+  "D": "",
+  "symmetry": "Th",
+  "order": 24,
+  "f_vector": {
+   "vertices": 12,
+   "edges": 30,
+   "faces": 20
+  },
+  "faces_by_sides": {
+   "3": 20
+  },
+  "volume": {
+   "exact": "7/2",
+   "decimal": "3.500000000000000"
+  },
+  "field": "Q",
+  "convex": true,
+  "paper": "#55",
+  "doi": "DICTO DOI: 10.5281/zenodo.23632358",
+  "status": "known",
+  "note": "known shape: the classical Z12 coordination icosahedron of A15 (Frank and Kasper 1958), the convex hull of Jessen's orthogonal icosahedron (Jessen 1967) scaled by 1/2; here the A15 power cell at weight difference 3/4 (#55: the tiling is the classical picture of A15 shifted by half a body diagonal); the name is DICTO's",
+  "sq_edges": [
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 6
+   },
+   {
+    "exact": "3/2",
+    "decimal": "1.500000000000000",
+    "count": 24
+   }
+  ]
+ },
+ "dicto-gti": {
+  "name": "DICTO GTI (golden truncated icosahedron)",
+  "D": "D40",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 60,
+   "edges": 90,
+   "faces": 32
+  },
+  "faces_by_sides": {
+   "5": 12,
+   "6": 20
+  },
+  "volume": {
+   "exact": "85/2 + (-15/2)*sqrt(5)",
+   "decimal": "25.729490168751577"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#38",
+  "doi": "DICTO DOI: 10.5281/zenodo.23463305",
+  "status": "new",
+  "note": "cycle and pieces not found; Bergman US 4,719,726 has octet-like shells",
+  "sq_edges": [
+   {
+    "exact": "45 + (-20)*sqrt(5)",
+    "decimal": "0.278640450004206",
+    "count": 60
+   },
+   {
+    "exact": "6 + (-2)*sqrt(5)",
+    "decimal": "1.527864045000421",
+    "count": 30
+   }
+  ]
+ },
+ "dicto-haigha": {
+  "name": "Haigha",
+  "D": "D96",
+  "symmetry": "D3h",
+  "order": 12,
+  "f_vector": {
+   "vertices": 114,
+   "edges": 171,
+   "faces": 59
+  },
+  "faces_by_sides": {
+   "4": 15,
+   "5": 12,
+   "6": 20,
+   "8": 6,
+   "9": 6
+  },
+  "volume": {
+   "exact": "9539847/131072 + (21331881/655360)*sqrt(5)",
+   "decimal": "145.566972357080370"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#65",
+  "doi": "DICTO DOI: 10.5281/zenodo.23716140",
+  "status": "new",
+  "note": "R33: 120-cell edge-first slice, the only one with nine-sided faces; not found in the sources checked (#65)",
+  "sq_edges": [
+   {
+    "exact": "21/512 + (9/512)*sqrt(5)",
+    "decimal": "0.080321507416988",
+    "count": 6
+   },
+   {
+    "exact": "111/2560 + (99/5120)*sqrt(5)",
+    "decimal": "0.086595845658687",
+    "count": 12
+   },
+   {
+    "exact": "15/256 + (3/128)*sqrt(5)",
+    "decimal": "0.111001593222651",
+    "count": 12
+   },
+   {
+    "exact": "135/1024 + (15/256)*sqrt(5)",
+    "decimal": "0.262855545556628",
+    "count": 6
+   },
+   {
+    "exact": "645/2048 + (285/2048)*sqrt(5)",
+    "decimal": "0.626112975384492",
+    "count": 12
+   },
+   {
+    "exact": "999/2560 + (891/5120)*sqrt(5)",
+    "decimal": "0.779362610928186",
+    "count": 12
+   },
+   {
+    "exact": "483/1024 + (27/128)*sqrt(5)",
+    "decimal": "0.943350276503862",
+    "count": 9
+   },
+   {
+    "exact": "135/256 + (15/64)*sqrt(5)",
+    "decimal": "1.051422182226513",
+    "count": 6
+   },
+   {
+    "exact": "1389/2560 + (621/2560)*sqrt(5)",
+    "decimal": "1.084999302354441",
+    "count": 12
+   },
+   {
+    "exact": "5859/10240 + (2619/10240)*sqrt(5)",
+    "decimal": "1.144068557917183",
+    "count": 12
+   },
+   {
+    "exact": "675/1024 + (75/256)*sqrt(5)",
+    "decimal": "1.314277727783142",
+    "count": 6
+   },
+   {
+    "exact": "1569/2048 + (681/2048)*sqrt(5)",
+    "decimal": "1.509649556971366",
+    "count": 12
+   },
+   {
+    "exact": "7851/10240 + (3507/10240)*sqrt(5)",
+    "decimal": "1.532508827840992",
+    "count": 12
+   },
+   {
+    "exact": "795/1024 + (177/512)*sqrt(5)",
+    "decimal": "1.549382875034107",
+    "count": 12
+   },
+   {
+    "exact": "807/1024 + (45/128)*sqrt(5)",
+    "decimal": "1.574203585839770",
+    "count": 6
+   },
+   {
+    "exact": "1875/2048 + (825/2048)*sqrt(5)",
+    "decimal": "1.816287149139320",
+    "count": 12
+   },
+   {
+    "exact": "9519/10240 + (4257/10240)*sqrt(5)",
+    "decimal": "1.859173962911778",
+    "count": 12
+   }
+  ]
+ },
+ "dicto-hamlet": {
+  "name": "Hamlet",
+  "D": "D108",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 452,
+   "edges": 720,
+   "faces": 270
+  },
+  "faces_by_sides": {
+   "3": 60,
+   "4": 30,
+   "5": 120,
+   "9": 60
+  },
+  "volume": {
+   "exact": "-10815898051575395266355505352323119591180607285617639084795086813293677113408/390561835118618424672832021663937369789018288960426387078355029774715 + (322467797370532414260675309209515990275628051165197381615601563348377403200/26037455674574561644855468110929157985934552597361759138557001984981)*sqrt(5)",
+   "decimal": "1.742494068294532"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#80",
+  "doi": "DICTO DOI: 10.5281/zenodo.23822907",
+  "status": "new",
+  "note": "step 5 of the chain of DICTO's growth rule T from the Ogdoecontahedron, after KRE, PHE, TPP and DPHP: 452 corners, 270 faces, Ih (#80, Section 6)",
+  "sq_edges": [
+   {
+    "exact": "33410829390176/3546528867729 + (-1659868867552/394058763081)*sqrt(5)",
+    "decimal": "0.001864582578016",
+    "count": 60
+   },
+   {
+    "exact": "102337302556676592147422537195869311508/22547275360825328490070603765437165 + (-1235698162667965406469575967840195614656/608776434742283869231906301666803455)*sqrt(5)",
+    "decimal": "0.003412801458599",
+    "count": 120
+   },
+   {
+    "exact": "315471584829910766105279337655307472518056/41433387791761775269218727863844574931 + (-47027703725189250880288143891856728211960/13811129263920591756406242621281524977)*sqrt(5)",
+    "decimal": "0.003807658253707",
+    "count": 120
+   },
+   {
+    "exact": "680619250958320405800723398592273212945617424/4464497916444195801156075896919487871025 + (-1521910871488820464740263766145018685517366368/22322489582220979005780379484597439355125)*sqrt(5)",
+    "decimal": "0.004051817453816",
+    "count": 60
+   },
+   {
+    "exact": "3707094284187777067119231374416803632/805922461743261808586225325648615 + (-4973568197572445401831696060924451456/2417767385229785425758675976945845)*sqrt(5)",
+    "decimal": "0.019138342473076",
+    "count": 60
+   },
+   {
+    "exact": "3333537322309488367694656/413437343980041530361 + (-496932726599585861309440/137812447993347176787)*sqrt(5)",
+    "decimal": "0.027214635243988",
+    "count": 60
+   },
+   {
+    "exact": "3659478295716235104547428305175589281348148/112726963494266476319934328143005783175 + (-24548495180929894449869614519200842282105048/1690904452413997144799014922145086747625)*sqrt(5)",
+    "decimal": "0.041673471367914",
+    "count": 120
+   },
+   {
+    "exact": "9027519041825743314842518237488250145080/1865763493020086793205016297617659531 + (-1345728770074771544305719741126920988280/621921164340028931068338765872553177)*sqrt(5)",
+    "decimal": "0.051461148736564",
+    "count": 120
+   }
+  ]
+ },
+ "dicto-hatta": {
+  "name": "Hatta",
+  "D": "D97",
+  "symmetry": "D3h",
+  "order": 12,
+  "f_vector": {
+   "vertices": 114,
+   "edges": 171,
+   "faces": 59
+  },
+  "faces_by_sides": {
+   "3": 12,
+   "4": 3,
+   "6": 26,
+   "7": 6,
+   "8": 12
+  },
+  "volume": {
+   "exact": "9465351/131072 + (21165177/655360)*sqrt(5)",
+   "decimal": "144.429824108604532"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#65",
+  "doi": "DICTO DOI: 10.5281/zenodo.23716140",
+  "status": "new",
+  "note": "R35: 120-cell edge-first slice, the other 114-corner slice; not found in the sources checked (#65)",
+  "sq_edges": [
+   {
+    "exact": "21/2048 + (9/2048)*sqrt(5)",
+    "decimal": "0.020080376854247",
+    "count": 6
+   },
+   {
+    "exact": "51/2048 + (21/2048)*sqrt(5)",
+    "decimal": "0.047830775159910",
+    "count": 12
+   },
+   {
+    "exact": "59/512 + (79/1536)*sqrt(5)",
+    "decimal": "0.230240475405263",
+    "count": 12
+   },
+   {
+    "exact": "249/2048 + (111/2048)*sqrt(5)",
+    "decimal": "0.242775168702381",
+    "count": 12
+   },
+   {
+    "exact": "75/512 + (33/512)*sqrt(5)",
+    "decimal": "0.290605943862291",
+    "count": 12
+   },
+   {
+    "exact": "531/2560 + (237/2560)*sqrt(5)",
+    "decimal": "0.414432855729473",
+    "count": 12
+   },
+   {
+    "exact": "141/512 + (63/512)*sqrt(5)",
+    "decimal": "0.550531801918919",
+    "count": 6
+   },
+   {
+    "exact": "195/512 + (87/512)*sqrt(5)",
+    "decimal": "0.760816238364222",
+    "count": 12
+   },
+   {
+    "exact": "1149/2048 + (513/2048)*sqrt(5)",
+    "decimal": "1.121143980692086",
+    "count": 9
+   },
+   {
+    "exact": "369/512 + (165/512)*sqrt(5)",
+    "decimal": "1.441310969311456",
+    "count": 6
+   },
+   {
+    "exact": "479/640 + (257/768)*sqrt(5)",
+    "decimal": "1.496705039345633",
+    "count": 12
+   },
+   {
+    "exact": "795/1024 + (177/512)*sqrt(5)",
+    "decimal": "1.549382875034107",
+    "count": 12
+   },
+   {
+    "exact": "1845/2048 + (825/2048)*sqrt(5)",
+    "decimal": "1.801638711639320",
+    "count": 12
+   },
+   {
+    "exact": "1911/2048 + (849/2048)*sqrt(5)",
+    "decimal": "1.860069195750645",
+    "count": 12
+   },
+   {
+    "exact": "9669/10240 + (4323/10240)*sqrt(5)",
+    "decimal": "1.888234557298007",
+    "count": 12
+   },
+   {
+    "exact": "505/512 + (1355/3072)*sqrt(5)",
+    "decimal": "1.972614618981841",
+    "count": 12
+   }
+  ]
+ },
+ "dicto-hecatodihedron": {
+  "name": "DICTO Truncated-Icosahedral Hecatodihedron (DICTO Hecatodihedron, TIH)",
+  "D": "D22",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 80,
+   "edges": 180,
+   "faces": 102
+  },
+  "faces_by_sides": {
+   "3": 60,
+   "4": 30,
+   "5": 12
+  },
+  "volume": {
+   "exact": "-365/4 + (189/4)*sqrt(5)",
+   "decimal": "14.404211936865063"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#28",
+  "doi": "DICTO DOI: 10.5281/zenodo.23360857",
+  "status": "new",
+  "note": "derived from a known solid (jtI with 12 five-fold corners cut flat; #28 V2); not found named",
+  "sq_edges": [
+   {
+    "exact": "3/2 + (-1/2)*sqrt(5)",
+    "decimal": "0.381966011250105",
+    "count": 60
+   },
+   {
+    "exact": "33/4 + (-7/2)*sqrt(5)",
+    "decimal": "0.423762078750736",
+    "count": 120
+   }
+  ]
+ },
+ "dicto-humpty-dumpty": {
+  "name": "Humpty Dumpty",
+  "D": "D85",
+  "symmetry": "Td",
+  "order": 24,
+  "f_vector": {
+   "vertices": 48,
+   "edges": 138,
+   "faces": 92
+  },
+  "faces_by_sides": {
+   "3": 92
+  },
+  "volume": {
+   "exact": "2627/60 + (1213/60)*sqrt(5)",
+   "decimal": "88.989174278454082"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#63",
+  "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+  "status": "known",
+  "note": "known (corrected in version 5): the cell-first section of the 600-cell at height 1 + sqrt5/2, one of the sections drawn by Alicia Boole Stott (1900, cell-first series through the corner layers), read for #63 version 3; the exact solid, the convex egg of 92 triangles (Td) and the name are #63's and DICTO's; D85 is kept (D-numbers are never reused); its forced equal-edged form is Fallen Humpty (#63; Slice-48 in #62, numeric only, not in the dataset)",
+  "sq_edges": [
+   {
+    "exact": "2/5",
+    "decimal": "0.400000000000000",
+    "count": 6
+   },
+   {
+    "exact": "12/5 + (-4/5)*sqrt(5)",
+    "decimal": "0.611145618000168",
+    "count": 24
+   },
+   {
+    "exact": "3/4 + (1/4)*sqrt(5)",
+    "decimal": "1.309016994374947",
+    "count": 12
+   },
+   {
+    "exact": "9/4 + (-1/4)*sqrt(5)",
+    "decimal": "1.690983005625053",
+    "count": 12
+   },
+   {
+    "exact": "9/4 + (3/4)*sqrt(5)",
+    "decimal": "3.927050983124842",
+    "count": 24
+   },
+   {
+    "exact": "4",
+    "decimal": "4.000000000000000",
+    "count": 24
+   },
+   {
+    "exact": "12/5 + (4/5)*sqrt(5)",
+    "decimal": "4.188854381999832",
+    "count": 24
+   },
+   {
+    "exact": "3 + sqrt(5)",
+    "decimal": "5.236067977499790",
+    "count": 12
+   }
+  ]
+ },
+ "dicto-ian-dury": {
+  "name": "Ian Dury",
+  "D": "D78",
+  "symmetry": "C3v",
+  "order": 6,
+  "f_vector": {
+   "vertices": 16,
+   "edges": 27,
+   "faces": 13
+  },
+  "faces_by_sides": {
+   "3": 6,
+   "4": 3,
+   "6": 4
+  },
+  "volume": {
+   "exact": "26/27",
+   "decimal": "0.962962962962963"
+  },
+  "field": "Q",
+  "convex": true,
+  "paper": "#56",
+  "doi": "DICTO DOI: 10.5281/zenodo.23635823",
+  "status": "new",
+  "note": "not found in the sources checked (#56): the twinned octet's tetrahedral-hole piece at the stop 5/24, beside the classical 60 deg rhombohedron",
+  "sq_edges": [
+   {
+    "exact": "2/9",
+    "decimal": "0.222222222222222",
+    "count": 12
+   },
+   {
+    "exact": "4/9",
+    "decimal": "0.444444444444444",
+    "count": 9
+   },
+   {
+    "exact": "2/3",
+    "decimal": "0.666666666666667",
+    "count": 6
+   }
+  ]
+ },
+ "dicto-icosaxes-hexa": {
+  "name": "Icosaxes Hexa",
+  "D": "",
+  "symmetry": "Oh",
+  "order": 48,
+  "f_vector": {
+   "vertices": 144,
+   "edges": 228,
+   "faces": 86
+  },
+  "faces_by_sides": {
+   "4": 30,
+   "6": 56
+  },
+  "volume": {
+   "exact": "9 + (17/3)*sqrt(5)",
+   "decimal": "21.671051872498808"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": false,
+  "paper": "#59",
+  "doi": "DICTO DOI: 10.5281/zenodo.23677485",
+  "status": "new",
+  "note": "eight Icosaxes round an Unborn Axes as one solid (= nine Icosaxes passing through each other), the node of the Icosaxes Kagome network; the network was not found in the sources searched (#59)",
+  "sq_edges": [
+   {
+    "exact": "3/4 + (-1/4)*sqrt(5)",
+    "decimal": "0.190983005625053",
+    "count": 96
+   },
+   {
+    "exact": "1/2",
+    "decimal": "0.500000000000000",
+    "count": 132
+   }
+  ]
+ },
+ "dicto-icosaxes": {
+  "name": "Icosaxes",
+  "D": "",
+  "symmetry": "Oh",
+  "order": 48,
+  "f_vector": {
+   "vertices": 24,
+   "edges": 36,
+   "faces": 14
+  },
+  "faces_by_sides": {
+   "4": 6,
+   "6": 8
+  },
+  "volume": {
+   "exact": "1 + (2/3)*sqrt(5)",
+   "decimal": "2.490711984999860"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#48",
+  "doi": "DICTO DOI: 10.5281/zenodo.23596362",
+  "status": "known",
+  "note": "known shape: Koca et al. 2015 non-regular truncated octahedron x = tau (semi-uniform truncated octahedron); new route (the golden split of the AXE in the icosahedron lattice, #48); the name is DICTO's",
+  "sq_edges": [
+   {
+    "exact": "3/4 + (-1/4)*sqrt(5)",
+    "decimal": "0.190983005625053",
+    "count": 12
+   },
+   {
+    "exact": "1/2",
+    "decimal": "0.500000000000000",
+    "count": 24
+   }
+  ]
+ },
+ "dicto-jabberwock": {
+  "name": "Jabberwock",
+  "D": "D88",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 72,
+   "edges": 210,
+   "faces": 140
+  },
+  "faces_by_sides": {
+   "3": 140
+  },
+  "volume": {
+   "exact": "-2480/3 + (1360/3)*sqrt(5)",
+   "decimal": "187.017483133237996"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#63",
+  "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+  "status": "new",
+  "note": "W3: vertex-first, the largest all-triangle slice of the 600-cell (72 corners, 140 triangles); not found as a solid in the sources checked (#63)",
+  "sq_edges": [
+   {
+    "exact": "144 + (-64)*sqrt(5)",
+    "decimal": "0.891649440013459",
+    "count": 60
+   },
+   {
+    "exact": "56 + (-24)*sqrt(5)",
+    "decimal": "2.334368540005047",
+    "count": 30
+   },
+   {
+    "exact": "112 + (-48)*sqrt(5)",
+    "decimal": "4.668737080010095",
+    "count": 120
+   }
+  ]
+ },
+ "dicto-jewel": {
+  "name": "DICTO Jewel (EKP windows; first called Dragon Jewel)",
+  "D": "D4",
+  "symmetry": "Th",
+  "order": 24,
+  "f_vector": {
+   "vertices": 38,
+   "edges": 96,
+   "faces": 60
+  },
+  "faces_by_sides": {
+   "3": 48,
+   "4": 12
+  },
+  "volume": {
+   "exact": "3 + (3/2)*sqrt(5)",
+   "decimal": "6.354101966249685"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": false,
+  "paper": "#41",
+  "doi": "DICTO DOI: 10.5281/zenodo.23496353",
+  "status": "new",
+  "note": "not found",
+  "sq_edges": [
+   {
+    "exact": "3/4 + (-1/4)*sqrt(5)",
+    "decimal": "0.190983005625053",
+    "count": 12
+   },
+   {
+    "exact": "1/2",
+    "decimal": "0.500000000000000",
+    "count": 12
+   },
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 48
+   },
+   {
+    "exact": "3/4 + (1/4)*sqrt(5)",
+    "decimal": "1.309016994374947",
+    "count": 24
+   }
+  ]
+ },
+ "dicto-jubjub": {
+  "name": "Jubjub",
+  "D": "D93",
+  "symmetry": "D3h",
+  "order": 12,
+  "f_vector": {
+   "vertices": 30,
+   "edges": 84,
+   "faces": 56
+  },
+  "faces_by_sides": {
+   "3": 56
+  },
+  "volume": {
+   "exact": "376/15 + (436/75)*sqrt(5)",
+   "decimal": "38.065675175865444"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#63",
+  "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+  "status": "new",
+  "note": "W43: face-first all-triangle slice (30 corners, 56 triangles); not found as a solid in the sources checked (#63)",
+  "sq_edges": [
+   {
+    "exact": "8/5 + (-8/15)*sqrt(5)",
+    "decimal": "0.407430412000112",
+    "count": 6
+   },
+   {
+    "exact": "8/5 + (-4/15)*sqrt(5)",
+    "decimal": "1.003715206000056",
+    "count": 12
+   },
+   {
+    "exact": "16 + (-20/3)*sqrt(5)",
+    "decimal": "1.092880150001402",
+    "count": 6
+   },
+   {
+    "exact": "4/3",
+    "decimal": "1.333333333333333",
+    "count": 3
+   },
+   {
+    "exact": "32/3 + (-4)*sqrt(5)",
+    "decimal": "1.722394756667508",
+    "count": 12
+   },
+   {
+    "exact": "4",
+    "decimal": "4.000000000000000",
+    "count": 24
+   },
+   {
+    "exact": "16 + (-16/3)*sqrt(5)",
+    "decimal": "4.074304120001122",
+    "count": 12
+   },
+   {
+    "exact": "64/15",
+    "decimal": "4.266666666666667",
+    "count": 6
+   },
+   {
+    "exact": "16/3",
+    "decimal": "5.333333333333333",
+    "count": 3
+   }
+  ]
+ },
+ "dicto-keyaxes": {
+  "name": "Keyaxes",
+  "D": "D83",
+  "symmetry": "S6",
+  "order": 6,
+  "f_vector": {
+   "vertices": 32,
+   "edges": 84,
+   "faces": 54
+  },
+  "faces_by_sides": {
+   "3": 48,
+   "4": 6
+  },
+  "volume": {
+   "exact": "3/2 + (1/2)*sqrt(5)",
+   "decimal": "2.618033988749895"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": false,
+  "paper": "#59",
+  "doi": "DICTO DOI: 10.5281/zenodo.23677485",
+  "status": "new",
+  "note": "the piece of the keyed Icosaxes Kagome network (the Icosaxes with 2 Tricap dents and 6 mirrored Tricap keys, volume phi^2); the network was not found in the sources searched (#59)",
+  "sq_edges": [
+   {
+    "exact": "3/4 + (-1/4)*sqrt(5)",
+    "decimal": "0.190983005625053",
+    "count": 12
+   },
+   {
+    "exact": "3/2 + (-1/2)*sqrt(5)",
+    "decimal": "0.381966011250105",
+    "count": 24
+   },
+   {
+    "exact": "1/2",
+    "decimal": "0.500000000000000",
+    "count": 24
+   },
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 24
+   }
+  ]
+ },
+ "dicto-kre": {
+  "name": "DICTO KRE (Kite-Rhombic Enneacontahedron)",
+  "D": "D45",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 92,
+   "edges": 180,
+   "faces": 90
+  },
+  "faces_by_sides": {
+   "4": 90
+  },
+  "volume": {
+   "exact": "920/57 + (20/19)*sqrt(5)",
+   "decimal": "18.494106642982235"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#39",
+  "doi": "DICTO DOI: 10.5281/zenodo.23488944",
+  "status": "new",
+  "note": "combinatorics of the rhombic enneacontahedron (known type); this metric solid new",
+  "sq_edges": [
+   {
+    "exact": "1505/6498 + (35/722)*sqrt(5)",
+    "decimal": "0.340006373178275",
+    "count": 60
+   },
+   {
+    "exact": "29/18 + (-1/2)*sqrt(5)",
+    "decimal": "0.493077122361216",
+    "count": 120
+   }
+  ]
+ },
+ "dicto-lahdeli": {
+  "name": "Lahdeli",
+  "D": "D77",
+  "symmetry": "D3d",
+  "order": 12,
+  "f_vector": {
+   "vertices": 12,
+   "edges": 18,
+   "faces": 8
+  },
+  "faces_by_sides": {
+   "3": 2,
+   "5": 6
+  },
+  "volume": {
+   "exact": "2/3",
+   "decimal": "0.666666666666667"
+  },
+  "field": "Q(t)",
+  "convex": true,
+  "paper": "#56",
+  "doi": "DICTO DOI: 10.5281/zenodo.23635823",
+  "status": "new",
+  "note": "not found in the sources checked (#56): the twinned octet's octahedral-hole piece at its equal-volume point, Delilah's twin",
+  "sq_edges": [
+   {
+    "exact": "1/32 + (1/2)*t + (2)*t**2",
+    "decimal": "0.032904824507400",
+    "count": 6
+   },
+   {
+    "exact": "25/32 + (-15/2)*t + (18)*t**2",
+    "decimal": "0.756939936769613",
+    "count": 6
+   },
+   {
+    "exact": "9/8 + (-6)*t + (8)*t**2",
+    "decimal": "1.105483642164942",
+    "count": 6
+   }
+  ]
+ },
+ "dicto-lion": {
+  "name": "Lion",
+  "D": "D87",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 42,
+   "edges": 120,
+   "faces": 80
+  },
+  "faces_by_sides": {
+   "3": 80
+  },
+  "volume": {
+   "exact": "320/3 + (160/3)*sqrt(5)",
+   "decimal": "225.923625466655450"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#63",
+  "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+  "status": "new",
+  "note": "W1: the vertex-first central slice of the 600-cell (42 corners, 80 triangles, Ih); not found as a solid in the sources checked (#63)",
+  "sq_edges": [
+   {
+    "exact": "18 + (-6)*sqrt(5)",
+    "decimal": "4.583592135001262",
+    "count": 60
+   },
+   {
+    "exact": "24 + (-8)*sqrt(5)",
+    "decimal": "6.111456180001682",
+    "count": 60
+   }
+  ]
+ },
+ "dicto-lotus-hexa": {
+  "name": "Lotus Hexa",
+  "D": "",
+  "symmetry": "Th",
+  "order": 24,
+  "f_vector": {
+   "vertices": 200,
+   "edges": 564,
+   "faces": 366
+  },
+  "faces_by_sides": {
+   "3": 336,
+   "4": 30
+  },
+  "volume": {
+   "exact": "16 + (10/3)*sqrt(5)",
+   "decimal": "23.453559924999299"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": false,
+  "paper": "#59",
+  "doi": "DICTO DOI: 10.5281/zenodo.23677485",
+  "status": "new",
+  "note": "the keyed Icosaxes Hexa: eight corner pieces dented towards a Dodecaxes and keyed outward (mirrored Tricaps) on their other seven hexagons (#59)",
+  "sq_edges": [
+   {
+    "exact": "3/4 + (-1/4)*sqrt(5)",
+    "decimal": "0.190983005625053",
+    "count": 96
+   },
+   {
+    "exact": "3/2 + (-1/2)*sqrt(5)",
+    "decimal": "0.381966011250105",
+    "count": 168
+   },
+   {
+    "exact": "1/2",
+    "decimal": "0.500000000000000",
+    "count": 132
+   },
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 168
+   }
+  ]
+ },
+ "dicto-lotus-jewel-axes": {
+  "name": "Lotus Jewel Axes",
+  "D": "D69",
+  "symmetry": "Th",
+  "order": 24,
+  "f_vector": {
+   "vertices": 32,
+   "edges": 84,
+   "faces": 54
+  },
+  "faces_by_sides": {
+   "3": 48,
+   "4": 6
+  },
+  "volume": {
+   "exact": "sqrt(5)",
+   "decimal": "2.236067977499790"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": false,
+  "paper": "#48",
+  "doi": "DICTO DOI: 10.5281/zenodo.23596362",
+  "status": "new",
+  "note": "not found; the Icosaxes with 8 Tricap dents (#48 Theorem 3)",
+  "sq_edges": [
+   {
+    "exact": "3/4 + (-1/4)*sqrt(5)",
+    "decimal": "0.190983005625053",
+    "count": 12
+   },
+   {
+    "exact": "3/2 + (-1/2)*sqrt(5)",
+    "decimal": "0.381966011250105",
+    "count": 24
+   },
+   {
+    "exact": "1/2",
+    "decimal": "0.500000000000000",
+    "count": 24
+   },
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 24
+   }
+  ]
+ },
+ "dicto-mad-hatter": {
+  "name": "Mad Hatter",
+  "D": "D91",
+  "symmetry": "D3h",
+  "order": 12,
+  "f_vector": {
+   "vertices": 144,
+   "edges": 360,
+   "faces": 218
+  },
+  "faces_by_sides": {
+   "3": 152,
+   "4": 66
+  },
+  "volume": {
+   "exact": "-1409/270 + (22433/270)*sqrt(5)",
+   "decimal": "180.565603478714008"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#63",
+  "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+  "status": "new",
+  "note": "W28: face-first, in a gap (cut at its midpoint), one of the four 144-corner slices, all different; not found in the sources checked (#63)",
+  "sq_edges": [
+   {
+    "exact": "12 + (-16/3)*sqrt(5)",
+    "decimal": "0.074304120001122",
+    "count": 6
+   },
+   {
+    "exact": "9/10 + (-11/30)*sqrt(5)",
+    "decimal": "0.080108408250077",
+    "count": 12
+   },
+   {
+    "exact": "7/3 - sqrt(5)",
+    "decimal": "0.097265355833544",
+    "count": 6
+   },
+   {
+    "exact": "2/5 + (-2/15)*sqrt(5)",
+    "decimal": "0.101857603000028",
+    "count": 6
+   },
+   {
+    "exact": "7/2 + (-3/2)*sqrt(5)",
+    "decimal": "0.145898033750315",
+    "count": 12
+   },
+   {
+    "exact": "13/2 + (-17/6)*sqrt(5)",
+    "decimal": "0.164474063750596",
+    "count": 12
+   },
+   {
+    "exact": "2/5 + (-1/15)*sqrt(5)",
+    "decimal": "0.250928801500014",
+    "count": 12
+   },
+   {
+    "exact": "1 + (-1/3)*sqrt(5)",
+    "decimal": "0.254644007500070",
+    "count": 12
+   },
+   {
+    "exact": "160/3 + (-640/27)*sqrt(5)",
+    "decimal": "0.330240533338318",
+    "count": 12
+   },
+   {
+    "exact": "60 + (-80/3)*sqrt(5)",
+    "decimal": "0.371520600005608",
+    "count": 6
+   },
+   {
+    "exact": "28/3 + (-4)*sqrt(5)",
+    "decimal": "0.389061423334175",
+    "count": 12
+   },
+   {
+    "exact": "9/2 + (-11/6)*sqrt(5)",
+    "decimal": "0.400542041250386",
+    "count": 12
+   },
+   {
+    "exact": "2 + (-2/3)*sqrt(5)",
+    "decimal": "0.509288015000140",
+    "count": 6
+   },
+   {
+    "exact": "81/10 + (-33/10)*sqrt(5)",
+    "decimal": "0.720975674250694",
+    "count": 12
+   },
+   {
+    "exact": "18/5 + (-6/5)*sqrt(5)",
+    "decimal": "0.916718427000252",
+    "count": 6
+   },
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 12
+   },
+   {
+    "exact": "16 + (-20/3)*sqrt(5)",
+    "decimal": "1.092880150001402",
+    "count": 12
+   },
+   {
+    "exact": "3/2 + (-1/6)*sqrt(5)",
+    "decimal": "1.127322003750035",
+    "count": 18
+   },
+   {
+    "exact": "32/27",
+    "decimal": "1.185185185185185",
+    "count": 12
+   },
+   {
+    "exact": "4/3",
+    "decimal": "1.333333333333333",
+    "count": 6
+   },
+   {
+    "exact": "23/30 + (3/10)*sqrt(5)",
+    "decimal": "1.437487059916604",
+    "count": 12
+   },
+   {
+    "exact": "8/5",
+    "decimal": "1.600000000000000",
+    "count": 12
+   },
+   {
+    "exact": "86/27 + (-2/3)*sqrt(5)",
+    "decimal": "1.694473200185325",
+    "count": 3
+   },
+   {
+    "exact": "140/3 + (-20)*sqrt(5)",
+    "decimal": "1.945307116670873",
+    "count": 12
+   },
+   {
+    "exact": "70/9 + (-70/27)*sqrt(5)",
+    "decimal": "1.980564502778323",
+    "count": 12
+   },
+   {
+    "exact": "18/5 + (-3/5)*sqrt(5)",
+    "decimal": "2.258359213500126",
+    "count": 12
+   },
+   {
+    "exact": "9 + (-3)*sqrt(5)",
+    "decimal": "2.291796067500631",
+    "count": 12
+   },
+   {
+    "exact": "107/2 + (-137/6)*sqrt(5)",
+    "decimal": "2.443114513754802",
+    "count": 12
+   },
+   {
+    "exact": "3/2 + (1/2)*sqrt(5)",
+    "decimal": "2.618033988749895",
+    "count": 12
+   },
+   {
+    "exact": "8/3",
+    "decimal": "2.666666666666667",
+    "count": 12
+   },
+   {
+    "exact": "301/54 + (-7/6)*sqrt(5)",
+    "decimal": "2.965328100324319",
+    "count": 12
+   },
+   {
+    "exact": "127/30 + (-1/2)*sqrt(5)",
+    "decimal": "3.115299344583438",
+    "count": 12
+   },
+   {
+    "exact": "2 + (14/27)*sqrt(5)",
+    "decimal": "3.159442654999891",
+    "count": 3
+   },
+   {
+    "exact": "232/5 + (-96/5)*sqrt(5)",
+    "decimal": "3.467494832004038",
+    "count": 12
+   },
+   {
+    "exact": "229/6 + (-31/2)*sqrt(5)",
+    "decimal": "3.507613015419926",
+    "count": 6
+   }
+  ]
+ },
+ "dicto-march-hare": {
+  "name": "March Hare",
+  "D": "D92",
+  "symmetry": "D3h",
+  "order": 12,
+  "f_vector": {
+   "vertices": 144,
+   "edges": 360,
+   "faces": 218
+  },
+  "faces_by_sides": {
+   "3": 152,
+   "4": 66
+  },
+  "volume": {
+   "exact": "14167/270 + (14879/270)*sqrt(5)",
+   "decimal": "175.694279397108781"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#63",
+  "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+  "status": "new",
+  "note": "W30: face-first, in a gap (cut at its midpoint), 144 corners; not found in the sources checked (#63)",
+  "sq_edges": [
+   {
+    "exact": "752/27 + (-112/9)*sqrt(5)",
+    "decimal": "0.025228131854469",
+    "count": 12
+   },
+   {
+    "exact": "94/3 + (-14)*sqrt(5)",
+    "decimal": "0.028381648336278",
+    "count": 6
+   },
+   {
+    "exact": "49/54 + (-7/18)*sqrt(5)",
+    "decimal": "0.037825416157489",
+    "count": 12
+   },
+   {
+    "exact": "7/6 + (-1/2)*sqrt(5)",
+    "decimal": "0.048632677916772",
+    "count": 6
+   },
+   {
+    "exact": "7/2 + (-3/2)*sqrt(5)",
+    "decimal": "0.145898033750315",
+    "count": 12
+   },
+   {
+    "exact": "24 + (-32/3)*sqrt(5)",
+    "decimal": "0.148608240002243",
+    "count": 12
+   },
+   {
+    "exact": "98/27 + (-14/9)*sqrt(5)",
+    "decimal": "0.151301664629957",
+    "count": 24
+   },
+   {
+    "exact": "8/3 - sqrt(5)",
+    "decimal": "0.430598689166877",
+    "count": 12
+   },
+   {
+    "exact": "2 + (-2/3)*sqrt(5)",
+    "decimal": "0.509288015000140",
+    "count": 6
+   },
+   {
+    "exact": "2/5 + (1/15)*sqrt(5)",
+    "decimal": "0.549071198499986",
+    "count": 12
+   },
+   {
+    "exact": "12/5 + (-4/5)*sqrt(5)",
+    "decimal": "0.611145618000168",
+    "count": 12
+   },
+   {
+    "exact": "2/3",
+    "decimal": "0.666666666666667",
+    "count": 6
+   },
+   {
+    "exact": "2 + (-14/27)*sqrt(5)",
+    "decimal": "0.840557345000109",
+    "count": 3
+   },
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 24
+   },
+   {
+    "exact": "4 + (-4/3)*sqrt(5)",
+    "decimal": "1.018576030000280",
+    "count": 24
+   },
+   {
+    "exact": "3/2 + (-1/6)*sqrt(5)",
+    "decimal": "1.127322003750035",
+    "count": 12
+   },
+   {
+    "exact": "28 + (-12)*sqrt(5)",
+    "decimal": "1.167184270002524",
+    "count": 12
+   },
+   {
+    "exact": "32/27",
+    "decimal": "1.185185185185185",
+    "count": 6
+   },
+   {
+    "exact": "7/2 + (-49/54)*sqrt(5)",
+    "decimal": "1.470975353750191",
+    "count": 12
+   },
+   {
+    "exact": "86/15 + (-9/5)*sqrt(5)",
+    "decimal": "1.708410973833712",
+    "count": 12
+   },
+   {
+    "exact": "40/3 + (-5)*sqrt(5)",
+    "decimal": "2.152993445834385",
+    "count": 6
+   },
+   {
+    "exact": "46/15 + (-2/5)*sqrt(5)",
+    "decimal": "2.172239475666751",
+    "count": 6
+   },
+   {
+    "exact": "80/9 + (-80/27)*sqrt(5)",
+    "decimal": "2.263502288889512",
+    "count": 12
+   },
+   {
+    "exact": "10 + (-10/3)*sqrt(5)",
+    "decimal": "2.546440075000701",
+    "count": 6
+   },
+   {
+    "exact": "26/15 + (2/5)*sqrt(5)",
+    "decimal": "2.627760524333249",
+    "count": 12
+   },
+   {
+    "exact": "8/3",
+    "decimal": "2.666666666666667",
+    "count": 12
+   },
+   {
+    "exact": "2 + (1/3)*sqrt(5)",
+    "decimal": "2.745355992499930",
+    "count": 24
+   },
+   {
+    "exact": "10/3",
+    "decimal": "3.333333333333333",
+    "count": 12
+   },
+   {
+    "exact": "2 + (2/3)*sqrt(5)",
+    "decimal": "3.490711984999860",
+    "count": 6
+   },
+   {
+    "exact": "55/6 + (-5/2)*sqrt(5)",
+    "decimal": "3.576496722917192",
+    "count": 12
+   },
+   {
+    "exact": "24 + (-9)*sqrt(5)",
+    "decimal": "3.875388202501893",
+    "count": 12
+   },
+   {
+    "exact": "86/27 + (2/3)*sqrt(5)",
+    "decimal": "4.675897170185045",
+    "count": 3
+   }
+  ]
+ },
+ "dicto-metaxyhexecontahedron": {
+  "name": "DICTO Metaxyhexecontahedron",
+  "D": "D30",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 32,
+   "edges": 90,
+   "faces": 60
+  },
+  "faces_by_sides": {
+   "3": 60
+  },
+  "volume": {
+   "exact": "410/27 + (550/81)*sqrt(5)",
+   "decimal": "30.368362810183757"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#35a",
+  "doi": "DICTO DOI: 10.5281/zenodo.23430864",
+  "status": "new",
+  "note": "new as a named, distinguished member; the dodecahedron-icosahedron hull family is known",
+  "sq_edges": [
+   {
+    "exact": "14/9 + (2/27)*sqrt(5)",
+    "decimal": "1.721190220555540",
+    "count": 60
+   },
+   {
+    "exact": "94/81 + (14/27)*sqrt(5)",
+    "decimal": "2.319936482160385",
+    "count": 30
+   }
+  ]
+ },
+ "dicto-ocd-stella": {
+  "name": "DICTO OCD Stella",
+  "D": "D29",
+  "symmetry": "Th",
+  "order": 24,
+  "f_vector": {
+   "vertices": 48,
+   "edges": 96,
+   "faces": 50
+  },
+  "faces_by_sides": {
+   "3": 20,
+   "4": 24,
+   "6": 6
+  },
+  "volume": {
+   "exact": "-4064/729 + (2240/729)*sqrt(5)",
+   "decimal": "1.296011343757927"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#31a",
+  "doi": "DICTO DOI: 10.5281/zenodo.23430870",
+  "status": "new",
+  "note": "not found",
+  "sq_edges": [
+   {
+    "exact": "20/81 + (-8/81)*sqrt(5)",
+    "decimal": "0.026067360246934",
+    "count": 36
+   },
+   {
+    "exact": "32/27 + (-32/81)*sqrt(5)",
+    "decimal": "0.301800305185268",
+    "count": 36
+   },
+   {
+    "exact": "8/3 + (-8/9)*sqrt(5)",
+    "decimal": "0.679050686666854",
+    "count": 24
+   }
+  ]
+ },
+ "dicto-ogdoecontahedron": {
+  "name": "DICTO Ogdoecontahedron (OG)",
+  "D": "D28",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 102,
+   "edges": 180,
+   "faces": 80
+  },
+  "faces_by_sides": {
+   "4": 60,
+   "6": 20
+  },
+  "volume": {
+   "exact": "-1000/1539 + (1240/1539)*sqrt(5)",
+   "decimal": "1.151867636192163"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#31",
+  "doi": "DICTO DOI: 10.5281/zenodo.23404688",
+  "status": "new",
+  "note": "face arrangement known (dual of L0(D), Antiprism); derived from the canonical pentakis dodecahedron (#31 V2)",
+  "sq_edges": [
+   {
+    "exact": "86/3249 + (2/361)*sqrt(5)",
+    "decimal": "0.038857871220374",
+    "count": 60
+   },
+   {
+    "exact": "2/9 + (-2/27)*sqrt(5)",
+    "decimal": "0.056587557222238",
+    "count": 120
+   }
+  ]
+ },
+ "dicto-ophelia": {
+  "name": "Ophelia",
+  "D": "D109",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 642,
+   "edges": 1080,
+   "faces": 440
+  },
+  "faces_by_sides": {
+   "4": 300,
+   "6": 120,
+   "12": 20
+  },
+  "volume": {
+   "exact": "-2703315790363790341926619803440762619678198768601783055445592502015208243492176279501265658980068326066075789528805135460492574805915241665454401104250875464838152376427367569636227041342084962495547756828517688/477775204677701338242514903145658582900094092575181848575778347980059675776839558350179888230476327794056097992095061355184741689620444729506699878722455735543244416198322153156976813142841403849979325 + (18134393621473949038618954082838926186632153016232359378100683920173520584726910022172430017316233842676471631801657865826846536454055851212819331644731972859995694070212522942113998348530676367814222449084381264/7166628070165520073637723547184878743501411388627727728636675219700895136652593375252698323457144916910841469881425920327771125344306670942600498180836836033148666242974832297354652197142621057749689875)*sqrt(5)",
+   "decimal": "1.799658753384913"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#80",
+  "doi": "DICTO DOI: 10.5281/zenodo.23822907",
+  "status": "new",
+  "note": "step 6 of the same chain, after Hamlet: 642 corners, 440 faces, Ih (#80, Section 6); the chain does not close",
+  "sq_edges": [
+   {
+    "exact": "7724321742386117407927860616511892830292841905653889424011962956021053421160121303743/14574140038974220333083149882955610023997545632634040842460108496977015746150 + (-1151473899736877289823809473833067882443356713192144499972516794343750155968111691951/4858046679658073444361049960985203341332515210878013614153369498992338582050)*sqrt(5)",
+    "decimal": "0.000055779232753",
+    "count": 120
+   },
+   {
+    "exact": "902481353097445611361647522182661119599403960304355932927608032168851156722501473426263219919221819269864/157360155426691242613059082598147339795449270054310172936075348945777931801253361576167063232506984625 + (-4170551918148374861136758014512460604311149250689256784481373760452014182313892383724961149274017755815656/1626054939409142840334943853514189177886309123894538453672778605773038628612951402953726320069238841125)*sqrt(5)",
+    "decimal": "0.001879396338676",
+    "count": 120
+   },
+   {
+    "exact": "1753789188938898284819525209768675073023830846300631293177778221116737621467591971899/27311054550601526648386196523925800068623244873023186095184236469694467516282050 + (-3921591572313920482952394418798269177709219716986393688180369652195645949027861224589/136555272753007633241930982619629000343116224365115930475921182348472337581410250)*sqrt(5)",
+    "decimal": "0.004459807890985",
+    "count": 120
+   },
+   {
+    "exact": "27600408451588450453670154261691584066310996156696/3897534173257900506920667648289524530644980735 + (-822884385296871964277527031853801381306059196040/259835611550526700461377843219301635376332049)*sqrt(5)",
+    "decimal": "0.006954239073464",
+    "count": 120
+   },
+   {
+    "exact": "441547100653964399134394746238973686202007534678959920186309624885834448832/1019283399140374034071355055829774454086188907593813439673116138138329 + (-197465862950752585311127922896313189132129423836518995812642193220751061312/1019283399140374034071355055829774454086188907593813439673116138138329)*sqrt(5)",
+    "decimal": "0.007711716307755",
+    "count": 60
+   },
+   {
+    "exact": "36836216481843521853104478218360636903354905411267516658541079395368681371609002080/95871600701621302396419301569312604878084956529241541810611430023434872764563 + (-16473656401003183982690638425301039614494542904628725399784383928538358040124544960/95871600701621302396419301569312604878084956529241541810611430023434872764563)*sqrt(5)",
+    "decimal": "0.009713260871081",
+    "count": 60
+   },
+   {
+    "exact": "18302912925455542571788723465396683078279328122112402706228834562501623461629950038233687165604695842/16937010751510135576108209758170055258763428765606030896993456256176571615607291637178604695565225 + (-13642041825142632060814236384628230335105206749942288718321020058450380616181153412906841118479989094/28228351252516892626847016263616758764605714609343384828322427093627619359345486061964341159275375)*sqrt(5)",
+    "decimal": "0.011407072348370",
+    "count": 60
+   },
+   {
+    "exact": "28585626598444641616088444403117400785410738874436970346035854166943742489103689846842692231620006992517827056/46570204412398559321679621832357051499793447034813154348304701732540353970937986794141466600655294679125 + (-242893728964685995360739916226078944915161333077582679520617579786197192795308265978887686696655182782277837008/884833883835572627111912814814783978496075493661449932617789332918266725447821749088687865412450598903375)*sqrt(5)",
+    "decimal": "0.018192116038530",
+    "count": 120
+   },
+   {
+    "exact": "163649320632419718237666187704761463197119764985985284745433017120131013770339129103612711739021120824/1707276481322611568786259307889871015609414370984559400205431218391445433908986910202105115618615 + (-219558554775357356060573293989039407363436823132172149666894195942412375446988746815062331261655203976/5121829443967834706358777923669613046828243112953678200616293655174336301726960730606315346855845)*sqrt(5)",
+    "decimal": "0.021160007420064",
+    "count": 60
+   },
+   {
+    "exact": "67698618780109449828063122266639283931187840855932928389073816066649935489261591744797137594/2660300694223370739746542007912259223685993034595878462591291185080527089258578212618045 + (-756892728001193420871379137907836794806421533335773199760841675879070280292531994351739969634/66507517355584268493663550197806480592149825864896961564782279627013177231464455315451125)*sqrt(5)",
+    "decimal": "0.028237662205791",
+    "count": 60
+   },
+   {
+    "exact": "7204432262091166679755703046109131430953905594180157782693801396668715554567922608/337403991546207096850337023596833647762300933450969440838038466581480605701125 + (-1073971410893263534559935164322529372128988988941133395002780909867280243461542352/112467997182069032283445674532277882587433644483656480279346155527160201900375)*sqrt(5)",
+    "decimal": "0.038589185091773",
+    "count": 120
+   },
+   {
+    "exact": "245701582298834731444730738985958068018246243272859144684193728239457587529892034697314441/477781952620344485283521688221426128988545378903211421154286036931113974218770349 + (-8241081601569215854344920659420249747322982925343638240046268076158992775231889627779750287/35833646446525836396264126616606959674140903417740856586571452769833548066407776175)*sqrt(5)",
+    "decimal": "0.088771335913829",
+    "count": 60
+   }
+  ]
+ },
+ "dicto-ott": {
+  "name": "DICTO OTT (Octahedrally Truncated Triacontahedron)",
+  "D": "D38",
+  "symmetry": "Th",
+  "order": 24,
+  "f_vector": {
+   "vertices": 24,
+   "edges": 60,
+   "faces": 38
+  },
+  "faces_by_sides": {
+   "3": 32,
+   "4": 6
+  },
+  "volume": {
+   "exact": "-608/81 + (320/81)*sqrt(5)",
+   "decimal": "1.327675960492996"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#37a",
+  "doi": "DICTO DOI: 10.5281/zenodo.23484012",
+  "status": "new",
+  "note": "not found (closest: Kabai 54-faced)",
+  "sq_edges": [
+   {
+    "exact": "20/9 + (-8/9)*sqrt(5)",
+    "decimal": "0.234606242222409",
+    "count": 36
+   },
+   {
+    "exact": "8/3 + (-8/9)*sqrt(5)",
+    "decimal": "0.679050686666854",
+    "count": 24
+   }
+  ]
+ },
+ "dicto-palintriacontahedron": {
+  "name": "DICTO Palintriacontahedron",
+  "D": "D31",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 32,
+   "edges": 90,
+   "faces": 60
+  },
+  "faces_by_sides": {
+   "3": 60
+  },
+  "volume": {
+   "exact": "50/3 + (50/9)*sqrt(5)",
+   "decimal": "29.089266541665498"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#35b",
+  "doi": "DICTO DOI: 10.5281/zenodo.23430866",
+  "status": "new",
+  "note": "new as a named, distinguished member; the dodecahedron-icosahedron hull family is known",
+  "sq_edges": [
+   {
+    "exact": "5/3",
+    "decimal": "1.666666666666667",
+    "count": 60
+   },
+   {
+    "exact": "20/9",
+    "decimal": "2.222222222222222",
+    "count": 30
+   }
+  ]
+ },
+ "dicto-phe": {
+  "name": "DICTO PHE (Pentagon-Hexagon Enneacontadihedron)",
+  "D": "D46",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 180,
+   "edges": 270,
+   "faces": 92
+  },
+  "faces_by_sides": {
+   "5": 12,
+   "6": 80
+  },
+  "volume": {
+   "exact": "95875/4617 + (-520/1539)*sqrt(5)",
+   "decimal": "20.010122147520106"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#39",
+  "doi": "DICTO DOI: 10.5281/zenodo.23488944",
+  "status": "new",
+  "note": "face counts of Goldberg GP(3,0); this solid new",
+  "sq_edges": [
+   {
+    "exact": "1/27",
+    "decimal": "0.037037037037037",
+    "count": 120
+   },
+   {
+    "exact": "35/18 + (-5/6)*sqrt(5)",
+    "decimal": "0.081054463194620",
+    "count": 60
+   },
+   {
+    "exact": "482/1083 + (34/3249)*sqrt(5)",
+    "decimal": "0.468459929589102",
+    "count": 60
+   },
+   {
+    "exact": "140/27 + (-160/81)*sqrt(5)",
+    "decimal": "0.768260785185601",
+    "count": 30
+   }
+  ]
+ },
+ "dicto-red-king": {
+  "name": "Red King",
+  "D": "D98",
+  "symmetry": "D10h",
+  "order": 40,
+  "f_vector": {
+   "vertices": 80,
+   "edges": 130,
+   "faces": 52
+  },
+  "faces_by_sides": {
+   "4": 20,
+   "5": 20,
+   "6": 10,
+   "10": 2
+  },
+  "volume": {
+   "exact": "105673/1536 + (19691/640)*sqrt(5)",
+   "decimal": "137.595048768148477"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#65",
+  "doi": "DICTO DOI: 10.5281/zenodo.23716140",
+  "status": "new",
+  "note": "R77: 120-cell pentagon-first central slice, two regular decagons; the polar of the 600-cell's edge-first shadow; not found in the sources checked (#65)",
+  "sq_edges": [
+   {
+    "exact": "17/64 + (19/160)*sqrt(5)",
+    "decimal": "0.531158072328100",
+    "count": 20
+   },
+   {
+    "exact": "411/640 + (919/3200)*sqrt(5)",
+    "decimal": "1.284358272288221",
+    "count": 40
+   },
+   {
+    "exact": "17/20 + (19/50)*sqrt(5)",
+    "decimal": "1.699705831449920",
+    "count": 10
+   },
+   {
+    "exact": "123/128 + (55/128)*sqrt(5)",
+    "decimal": "1.921747959081941",
+    "count": 40
+   },
+   {
+    "exact": "17/16 + (19/40)*sqrt(5)",
+    "decimal": "2.124632289312400",
+    "count": 20
+   }
+  ]
+ },
+ "dicto-red-knight": {
+  "name": "Red Knight",
+  "D": "D100",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 120,
+   "edges": 180,
+   "faces": 62
+  },
+  "faces_by_sides": {
+   "3": 20,
+   "5": 12,
+   "8": 30
+  },
+  "volume": {
+   "exact": "1390915/24576 + (155509/6144)*sqrt(5)",
+   "decimal": "113.192943540529752"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#65",
+  "doi": "DICTO DOI: 10.5281/zenodo.23716140",
+  "status": "new",
+  "note": "R113: 120-cell cell-first slice in a gap (cut at its midpoint), 120 corners; a gap section, not in Boole Stott's series; not found in the sources checked (#65)",
+  "sq_edges": [
+   {
+    "exact": "65/512 + (29/512)*sqrt(5)",
+    "decimal": "0.253605412788074",
+    "count": 60
+   },
+   {
+    "exact": "123/512 + (55/512)*sqrt(5)",
+    "decimal": "0.480436989770485",
+    "count": 60
+   },
+   {
+    "exact": "423/512 + (189/512)*sqrt(5)",
+    "decimal": "1.651595405756758",
+    "count": 60
+   }
+  ]
+ },
+ "dicto-samson": {
+  "name": "Samson",
+  "D": "D71",
+  "symmetry": "Td",
+  "order": 24,
+  "f_vector": {
+   "vertices": 16,
+   "edges": 24,
+   "faces": 10
+  },
+  "faces_by_sides": {
+   "3": 4,
+   "6": 6
+  },
+  "volume": {
+   "exact": "2/3",
+   "decimal": "0.666666666666667"
+  },
+  "field": "Q(2**(1/3))",
+  "convex": true,
+  "paper": "#51",
+  "doi": "DICTO DOI: 10.5281/zenodo.23606828",
+  "status": "new",
+  "note": "new proportion: the cube with four alternate corners cut, at the Delian bond; not found in the sources (#51)",
+  "sq_edges": [
+   {
+    "exact": "1 + (1/2)*2**(1/3) - 2**(2/3)",
+    "decimal": "0.042559472979237",
+    "count": 12
+   },
+   {
+    "exact": "2**(1/3)",
+    "decimal": "1.259921049894873",
+    "count": 12
+   }
+  ]
+ },
+ "dicto-shadow-17": {
+  "name": "Kagemusha",
+  "D": "D86",
+  "symmetry": "D5h",
+  "order": 20,
+  "f_vector": {
+   "vertices": 17,
+   "edges": 45,
+   "faces": 30
+  },
+  "faces_by_sides": {
+   "3": 30
+  },
+  "volume": {
+   "exact": "25/12 + (3/4)*sqrt(5)",
+   "decimal": "3.760384316458176"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": false,
+  "paper": "#62",
+  "doi": "DICTO DOI: 10.5281/zenodo.23687223",
+  "status": "new",
+  "note": "DICTO's name 2026-10-30, the shadow warrior (was Shadow-17, a placeholder from the 2D view; file slug dicto-shadow-17 kept); new construction from a known piece (J11, Johnson's gyroelongated pentagonal pyramid, Johnson 1966): two J11 glued on their pentagons; #62 identifies it as the equal-edged form of the 600-cell's outer edge-first slices; status decided by DICTO 2026-10-28; placeholder name of #62",
+  "sq_edges": [
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 45
+   }
+  ]
+ },
+ "dicto-skewed-ed-16": {
+  "name": "DICTO skewed elongated dodecahedron (ED F16)",
+  "D": "D2",
+  "symmetry": "C2h",
+  "order": 4,
+  "f_vector": {
+   "vertices": 18,
+   "edges": 28,
+   "faces": 12
+  },
+  "faces_by_sides": {
+   "4": 8,
+   "6": 4
+  },
+  "volume": {
+   "exact": "7/2 + (1/2)*sqrt(5)",
+   "decimal": "4.618033988749895"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "",
+  "doi": "DICTO DOI: 10.5281/zenodo.23173809",
+  "status": "new",
+  "note": "new member of a known family (ED parallelohedra: Fedorov; Lalvani US 5,623,790)",
+  "sq_edges": [
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 28
+   }
+  ]
+ },
+ "dicto-skewed-ed-18": {
+  "name": "DICTO skewed elongated dodecahedron (ED F18)",
+  "D": "D3",
+  "symmetry": "C2h",
+  "order": 4,
+  "f_vector": {
+   "vertices": 18,
+   "edges": 28,
+   "faces": 12
+  },
+  "faces_by_sides": {
+   "4": 8,
+   "6": 4
+  },
+  "volume": {
+   "exact": "5/2 + sqrt(5)",
+   "decimal": "4.736067977499790"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "",
+  "doi": "DICTO DOI: 10.5281/zenodo.23173809",
+  "status": "new",
+  "note": "new member of a known family (ED parallelohedra: Fedorov; Lalvani US 5,623,790)",
+  "sq_edges": [
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 28
+   }
+  ]
+ },
+ "dicto-skewed-rhombic-dodecahedron": {
+  "name": "DICTO skewed rhombic dodecahedron",
+  "D": "D1",
+  "symmetry": "C2h",
+  "order": 4,
+  "f_vector": {
+   "vertices": 14,
+   "edges": 24,
+   "faces": 12
+  },
+  "faces_by_sides": {
+   "4": 12
+  },
+  "volume": {
+   "exact": "3/2 + (1/2)*sqrt(5)",
+   "decimal": "2.618033988749895"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "",
+  "doi": "DICTO DOI: 10.5281/zenodo.23173809",
+  "status": "new",
+  "note": "new member of a known family (RD parallelohedra: Fedorov 1885; Lalvani US 5,623,790, 1997)",
+  "sq_edges": [
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 24
+   }
+  ]
+ },
+ "dicto-sonsam": {
+  "name": "Sonsam",
+  "D": "D76",
+  "symmetry": "C3v",
+  "order": 6,
+  "f_vector": {
+   "vertices": 19,
+   "edges": 30,
+   "faces": 13
+  },
+  "faces_by_sides": {
+   "3": 6,
+   "5": 3,
+   "6": 3,
+   "9": 1
+  },
+  "volume": {
+   "exact": "2/3",
+   "decimal": "0.666666666666667"
+  },
+  "field": "Q(t)",
+  "convex": true,
+  "paper": "#56",
+  "doi": "DICTO DOI: 10.5281/zenodo.23635823",
+  "status": "new",
+  "note": "not found in the sources checked (#56): the twinned octet's tetrahedral-hole piece at its equal-volume point (19 corners, a nine-sided face on the mirror plane); #56: easy to compute, so an unnamed drawing may exist",
+  "sq_edges": [
+   {
+    "exact": "1/32 + (1/2)*t + (2)*t**2",
+    "decimal": "0.032904824507400",
+    "count": 6
+   },
+   {
+    "exact": "1/16 + t + (4)*t**2",
+    "decimal": "0.065809649014799",
+    "count": 9
+   },
+   {
+    "exact": "3/32 + (3/2)*t + (6)*t**2",
+    "decimal": "0.098714473522199",
+    "count": 6
+   },
+   {
+    "exact": "25/32 + (-15/2)*t + (18)*t**2",
+    "decimal": "0.756939936769613",
+    "count": 3
+   },
+   {
+    "exact": "9/8 + (-6)*t + (8)*t**2",
+    "decimal": "1.105483642164942",
+    "count": 6
+   }
+  ]
+ },
+ "dicto-star-halo": {
+  "name": "Star Halo",
+  "D": "D104",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 32,
+   "edges": 90,
+   "faces": 60
+  },
+  "faces_by_sides": {
+   "3": 60
+  },
+  "volume": {
+   "exact": "85/4 + (37/4)*sqrt(5)",
+   "decimal": "41.933628791873055"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#78",
+  "doi": "DICTO DOI: 10.5281/zenodo.23782577",
+  "status": "new",
+  "note": "DICTO's name: the hull of the TI Star's 32 tips, a pentakis dodecahedron that is not the Catalan one (five-fold corners 1.0265 × further out than the six-fold ones); not found in the sources checked (#78)",
+  "sq_edges": [
+   {
+    "exact": "3/2 + (3/10)*sqrt(5)",
+    "decimal": "2.170820393249937",
+    "count": 60
+   },
+   {
+    "exact": "3/2 + (1/2)*sqrt(5)",
+    "decimal": "2.618033988749895",
+    "count": 30
+   }
+  ]
+ },
+ "dicto-ti-star-core": {
+  "name": "TI Star core",
+  "D": "D105",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 60,
+   "edges": 90,
+   "faces": 32
+  },
+  "faces_by_sides": {
+   "5": 12,
+   "6": 20
+  },
+  "volume": {
+   "exact": "169/12 + (383/60)*sqrt(5)",
+   "decimal": "28.356900589706991"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#78",
+  "doi": "DICTO DOI: 10.5281/zenodo.23782577",
+  "status": "new",
+  "note": "the icosahedron truncated at 1/φ³ of each edge (12 pentagons, 20 hexagons, hexagon edges in the ratio √5), the core of every turn of the TI Star cycles and the polar partner of the Star Halo (#78)",
+  "sq_edges": [
+   {
+    "exact": "1/5",
+    "decimal": "0.200000000000000",
+    "count": 30
+   },
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 60
+   }
+  ]
+ },
+ "dicto-tph": {
+  "name": "DICTO TPH",
+  "D": "D49",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 80,
+   "edges": 210,
+   "faces": 132
+  },
+  "faces_by_sides": {
+   "3": 120,
+   "5": 12
+  },
+  "volume": {
+   "exact": "10437930/1295029 + (3959694/1295029)*sqrt(5)",
+   "decimal": "14.897021575654331"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#39",
+  "doi": "DICTO DOI: 10.5281/zenodo.23488944",
+  "status": "new",
+  "note": "not found",
+  "sq_edges": [
+   {
+    "exact": "4014/11881 + (378/11881)*sqrt(5)",
+    "decimal": "0.408991978410481",
+    "count": 90
+   },
+   {
+    "exact": "223/654 + (7/218)*sqrt(5)",
+    "decimal": "0.412778941173541",
+    "count": 120
+   }
+  ]
+ },
+ "dicto-tpp": {
+  "name": "DICTO TPP (Triangle-Pentagon Polyhedron)",
+  "D": "D47",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 212,
+   "edges": 390,
+   "faces": 180
+  },
+  "faces_by_sides": {
+   "3": 60,
+   "5": 120
+  },
+  "volume": {
+   "exact": "-1142247902494640/32258276241813 + (10284735282640/398250323973)*sqrt(5)",
+   "decimal": "22.336557512637929"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#39",
+  "doi": "DICTO DOI: 10.5281/zenodo.23488944",
+  "status": "new",
+  "note": "not found",
+  "sq_edges": [
+   {
+    "exact": "1579685748226/104418119709 + (-234799415858/34806039903)*sqrt(5)",
+    "decimal": "0.044086059312682",
+    "count": 120
+   },
+   {
+    "exact": "13201241060984/1264619449809 + (-647047439720/140513272201)*sqrt(5)",
+    "decimal": "0.142068447611712",
+    "count": 30
+   },
+   {
+    "exact": "764540896/347412321 + (-33427040/38601369)*sqrt(5)",
+    "decimal": "0.264339192680961",
+    "count": 60
+   },
+   {
+    "exact": "191135224/86056263 + (-8356760/9561807)*sqrt(5)",
+    "decimal": "0.266786777798377",
+    "count": 120
+   },
+   {
+    "exact": "11894571215450/939763077381 + (-5056064869310/939763077381)*sqrt(5)",
+    "decimal": "0.626611624990998",
+    "count": 60
+   }
+  ]
+ },
+ "dicto-tqh": {
+  "name": "DICTO TQH",
+  "D": "D50",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 132,
+   "edges": 270,
+   "faces": 140
+  },
+  "faces_by_sides": {
+   "3": 60,
+   "4": 60,
+   "6": 20
+  },
+  "volume": {
+   "exact": "770805045/120198224 + (337172409/120198224)*sqrt(5)",
+   "decimal": "12.685257909146494"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#39",
+  "doi": "DICTO DOI: 10.5281/zenodo.23488944",
+  "status": "new",
+  "note": "not found",
+  "sq_edges": [
+   {
+    "exact": "189/13448 + (81/13448)*sqrt(5)",
+    "decimal": "0.027522420150021",
+    "count": 120
+   },
+   {
+    "exact": "1215/3362 + (315/3362)*sqrt(5)",
+    "decimal": "0.570898695095905",
+    "count": 30
+   },
+   {
+    "exact": "827847/1948484 + (939303/9742420)*sqrt(5)",
+    "decimal": "0.640454872554200",
+    "count": 60
+   },
+   {
+    "exact": "81/164 + (252/1681)*sqrt(5)",
+    "decimal": "0.829113105490748",
+    "count": 60
+   }
+  ]
+ },
+ "dicto-tqhd": {
+  "name": "DICTO TQHD",
+  "D": "D52",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 162,
+   "edges": 360,
+   "faces": 200
+  },
+  "faces_by_sides": {
+   "3": 120,
+   "4": 60,
+   "6": 20
+  },
+  "volume": {
+   "exact": "270305422263352121003895663/51860885574873804704126416 + (120804282361507036859626617/51860885574873804704126416)*sqrt(5)",
+   "decimal": "10.420801797079142"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#39",
+  "doi": "DICTO DOI: 10.5281/zenodo.23488944",
+  "status": "new",
+  "note": "not found",
+  "sq_edges": [
+   {
+    "exact": "1183436217/316475852020 + (-61109343/79118963005)*sqrt(5)",
+    "decimal": "0.002012341961959",
+    "count": 60
+   },
+   {
+    "exact": "825994695014588673/13258004123441840005 + (365635102744610523/13258004123441840005)*sqrt(5)",
+    "decimal": "0.123968858691603",
+    "count": 60
+   },
+   {
+    "exact": "76809107910123/886106122490410 + (33540602066631/886106122490410)*sqrt(5)",
+    "decimal": "0.171320534058293",
+    "count": 60
+   },
+   {
+    "exact": "729/6724 + (81/1681)*sqrt(5)",
+    "decimal": "0.216163894216230",
+    "count": 60
+   },
+   {
+    "exact": "1701/13448 + (729/13448)*sqrt(5)",
+    "decimal": "0.247701781350189",
+    "count": 120
+   }
+  ]
+ },
+ "dicto-tqp": {
+  "name": "DICTO TQP",
+  "D": "D51",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 140,
+   "edges": 300,
+   "faces": 162
+  },
+  "faces_by_sides": {
+   "3": 60,
+   "4": 90,
+   "5": 12
+  },
+  "volume": {
+   "exact": "120305817389620301905755/20607697986465930772682 + (53586855308159545924323/20607697986465930772682)*sqrt(5)",
+   "decimal": "11.652425647775662"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#39",
+  "doi": "DICTO DOI: 10.5281/zenodo.23488944",
+  "status": "new",
+  "note": "not found",
+  "sq_edges": [
+   {
+    "exact": "29532033/7137404968 + (-2929437/7137404968)*sqrt(5)",
+    "decimal": "0.003219883534034",
+    "count": 60
+   },
+   {
+    "exact": "39277227780/281686009081 + (15126403680/281686009081)*sqrt(5)",
+    "decimal": "0.259511982515832",
+    "count": 60
+   },
+   {
+    "exact": "567/3362 + (243/3362)*sqrt(5)",
+    "decimal": "0.330269041800252",
+    "count": 60
+   },
+   {
+    "exact": "1377/6724 + (243/3362)*sqrt(5)",
+    "decimal": "0.366408244655696",
+    "count": 120
+   }
+  ]
+ },
+ "dicto-triskelion-tetrahedron": {
+  "name": "Triskelion Tetrahedron",
+  "D": "D82",
+  "symmetry": "Td",
+  "order": 24,
+  "f_vector": {
+   "vertices": 16,
+   "edges": 24,
+   "faces": 10
+  },
+  "faces_by_sides": {
+   "3": 4,
+   "6": 6
+  },
+  "volume": {
+   "exact": "79/81",
+   "decimal": "0.975308641975309"
+  },
+  "field": "Q",
+  "convex": true,
+  "paper": "#57",
+  "doi": "DICTO DOI: 10.5281/zenodo.23647898",
+  "status": "new",
+  "note": "the cubic octet's tetrahedral piece at 5/24, a member of Samson's sliding family (#51); met in ABAC and named in #57 (the name marks that member)",
+  "sq_edges": [
+   {
+    "exact": "2/9",
+    "decimal": "0.222222222222222",
+    "count": 12
+   },
+   {
+    "exact": "4/9",
+    "decimal": "0.444444444444444",
+    "count": 12
+   }
+  ]
+ },
+ "dicto-tweedledee": {
+  "name": "Tweedledee",
+  "D": "D90",
+  "symmetry": "D5h",
+  "order": 20,
+  "f_vector": {
+   "vertices": 32,
+   "edges": 90,
+   "faces": 60
+  },
+  "faces_by_sides": {
+   "3": 60
+  },
+  "volume": {
+   "exact": "1235/12 + (-75/4)*sqrt(5)",
+   "decimal": "60.990392088545610"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#63",
+  "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+  "status": "new",
+  "note": "W22: edge-first slice (32 corners, 60 triangles, D5h), another shape with Tweedledum's counts; not found as a solid in the sources checked (#63)",
+  "sq_edges": [
+   {
+    "exact": "50 + (-22)*sqrt(5)",
+    "decimal": "0.806504495004627",
+    "count": 5
+   },
+   {
+    "exact": "85/2 + (-37/2)*sqrt(5)",
+    "decimal": "1.132742416253891",
+    "count": 20
+   },
+   {
+    "exact": "5/2 + (-1/2)*sqrt(5)",
+    "decimal": "1.381966011250105",
+    "count": 5
+   },
+   {
+    "exact": "15/2 + (-3/2)*sqrt(5)",
+    "decimal": "4.145898033750315",
+    "count": 20
+   },
+   {
+    "exact": "40 + (-16)*sqrt(5)",
+    "decimal": "4.222912360003365",
+    "count": 20
+   },
+   {
+    "exact": "8 + (-8/5)*sqrt(5)",
+    "decimal": "4.422291236000336",
+    "count": 10
+   },
+   {
+    "exact": "10 + (-2)*sqrt(5)",
+    "decimal": "5.527864045000421",
+    "count": 10
+   }
+  ]
+ },
+ "dicto-tweedledum": {
+  "name": "Tweedledum",
+  "D": "D89",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 32,
+   "edges": 90,
+   "faces": 60
+  },
+  "faces_by_sides": {
+   "3": 60
+  },
+  "volume": {
+   "exact": "-400 + (240)*sqrt(5)",
+   "decimal": "136.656314599949527"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#63",
+  "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+  "status": "new",
+  "note": "W5: vertex-first slice (32 corners, 60 triangles, Ih); not found as a solid in the sources checked (#63)",
+  "sq_edges": [
+   {
+    "exact": "112 + (-48)*sqrt(5)",
+    "decimal": "4.668737080010095",
+    "count": 60
+   },
+   {
+    "exact": "24 + (-8)*sqrt(5)",
+    "decimal": "6.111456180001682",
+    "count": 30
+   }
+  ]
+ },
+ "dicto-unborn-axes": {
+  "name": "Unborn Axes",
+  "D": "",
+  "symmetry": "Oh",
+  "order": 48,
+  "f_vector": {
+   "vertices": 24,
+   "edges": 36,
+   "faces": 14
+  },
+  "faces_by_sides": {
+   "4": 6,
+   "6": 8
+  },
+  "volume": {
+   "exact": "1 + (1/3)*sqrt(5)",
+   "decimal": "1.745355992499930"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#48",
+  "doi": "DICTO DOI: 10.5281/zenodo.23596362",
+  "status": "known",
+  "note": "known shape: Koca et al. 2015 non-regular truncated octahedron x = 1/tau; new route (#48); the name is DICTO's",
+  "sq_edges": [
+   {
+    "exact": "3/4 + (-1/4)*sqrt(5)",
+    "decimal": "0.190983005625053",
+    "count": 24
+   },
+   {
+    "exact": "1/2",
+    "decimal": "0.500000000000000",
+    "count": 12
+   }
+  ]
+ },
+ "dicto-unicorn": {
+  "name": "Unicorn",
+  "D": "",
+  "symmetry": "Td",
+  "order": 24,
+  "f_vector": {
+   "vertices": 42,
+   "edges": 120,
+   "faces": 80
+  },
+  "faces_by_sides": {
+   "3": 80
+  },
+  "volume": {
+   "exact": "311/12 + (133/12)*sqrt(5)",
+   "decimal": "50.699753417289336"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#63",
+  "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+  "status": "known",
+  "note": "W58: cell-first corner-layer section, one of the sections of Alicia Boole Stott (1900, cell-first series through the corner layers); same counts as the Lion, another shape",
+  "sq_edges": [
+   {
+    "exact": "3/4 + (-1/4)*sqrt(5)",
+    "decimal": "0.190983005625053",
+    "count": 12
+   },
+   {
+    "exact": "9/4 + (-3/4)*sqrt(5)",
+    "decimal": "0.572949016875158",
+    "count": 24
+   },
+   {
+    "exact": "6 + (-2)*sqrt(5)",
+    "decimal": "1.527864045000421",
+    "count": 12
+   },
+   {
+    "exact": "2",
+    "decimal": "2.000000000000000",
+    "count": 12
+   },
+   {
+    "exact": "4",
+    "decimal": "4.000000000000000",
+    "count": 48
+   },
+   {
+    "exact": "11/4 + (3/4)*sqrt(5)",
+    "decimal": "4.427050983124842",
+    "count": 12
+   }
+  ]
+ },
+ "dicto-walrus": {
+  "name": "Walrus",
+  "D": "D99",
+  "symmetry": "D5h",
+  "order": 20,
+  "f_vector": {
+   "vertices": 120,
+   "edges": 180,
+   "faces": 62
+  },
+  "faces_by_sides": {
+   "3": 20,
+   "5": 2,
+   "6": 10,
+   "7": 10,
+   "8": 20
+  },
+  "volume": {
+   "exact": "1667107/24576 + (310647/10240)*sqrt(5)",
+   "decimal": "135.669504460258187"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#65",
+  "doi": "DICTO DOI: 10.5281/zenodo.23716140",
+  "status": "new",
+  "note": "R80: 120-cell pentagon-first slice, 120 corners; not found in the sources checked (#65)",
+  "sq_edges": [
+   {
+    "exact": "5/128 + (11/640)*sqrt(5)",
+    "decimal": "0.077494918363278",
+    "count": 10
+   },
+   {
+    "exact": "15/128 + (67/1280)*sqrt(5)",
+    "decimal": "0.234231683197255",
+    "count": 30
+   },
+   {
+    "exact": "81/640 + (181/3200)*sqrt(5)",
+    "decimal": "0.253040094977332",
+    "count": 20
+   },
+   {
+    "exact": "9/64 + (1/16)*sqrt(5)",
+    "decimal": "0.280379248593737",
+    "count": 20
+   },
+   {
+    "exact": "17/64 + (19/160)*sqrt(5)",
+    "decimal": "0.531158072328100",
+    "count": 10
+   },
+   {
+    "exact": "15/32 + (67/320)*sqrt(5)",
+    "decimal": "0.936926732789018",
+    "count": 20
+   },
+   {
+    "exact": "389/640 + (869/3200)*sqrt(5)",
+    "decimal": "1.215044710139787",
+    "count": 5
+   },
+   {
+    "exact": "161/256 + (9/32)*sqrt(5)",
+    "decimal": "1.257800368671816",
+    "count": 20
+   },
+   {
+    "exact": "89/128 + (199/640)*sqrt(5)",
+    "decimal": "1.390589886753841",
+    "count": 10
+   },
+   {
+    "exact": "101/128 + (1129/3200)*sqrt(5)",
+    "decimal": "1.577975233311645",
+    "count": 5
+   },
+   {
+    "exact": "583/640 + (2607/6400)*sqrt(5)",
+    "decimal": "1.821785815209680",
+    "count": 20
+   },
+   {
+    "exact": "505/512 + (1129/2560)*sqrt(5)",
+    "decimal": "1.972469041639556",
+    "count": 10
+   }
+  ]
+ },
+ "dicto-white-knight": {
+  "name": "White Knight",
+  "D": "D101",
+  "symmetry": "Ih",
+  "order": 120,
+  "f_vector": {
+   "vertices": 120,
+   "edges": 180,
+   "faces": 62
+  },
+  "faces_by_sides": {
+   "4": 30,
+   "6": 20,
+   "10": 12
+  },
+  "volume": {
+   "exact": "426925/8192 + (143195/6144)*sqrt(5)",
+   "decimal": "104.229736985364972"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#65",
+  "doi": "DICTO DOI: 10.5281/zenodo.23716140",
+  "status": "new",
+  "note": "R115: 120-cell cell-first slice in a gap (cut at its midpoint): the faces and symmetry of the truncated icosidodecahedron (30 squares, 20 hexagons, 12 decagons, Ih) with two edge lengths; not found in the sources checked (#65)",
+  "sq_edges": [
+   {
+    "exact": "123/512 + (55/512)*sqrt(5)",
+    "decimal": "0.480436989770485",
+    "count": 120
+   },
+   {
+    "exact": "161/256 + (9/32)*sqrt(5)",
+    "decimal": "1.257800368671816",
+    "count": 60
+   }
+  ]
+ },
+ "dicto-white-rabbit": {
+  "name": "White Rabbit",
+  "D": "D95",
+  "symmetry": "Td",
+  "order": 24,
+  "f_vector": {
+   "vertices": 144,
+   "edges": 360,
+   "faces": 218
+  },
+  "faces_by_sides": {
+   "3": 152,
+   "4": 66
+  },
+  "volume": {
+   "exact": "13639/160 + (29587/800)*sqrt(5)",
+   "decimal": "167.941929062857847"
+  },
+  "field": "Q(sqrt(5))",
+  "convex": true,
+  "paper": "#63",
+  "doi": "DICTO DOI: 10.5281/zenodo.23690856",
+  "status": "new",
+  "note": "W51: cell-first, in a gap (cut at its midpoint), 144 corners; not found in the sources checked (#63)",
+  "sq_edges": [
+   {
+    "exact": "61/16 + (-27/16)*sqrt(5)",
+    "decimal": "0.039135287969105",
+    "count": 24
+   },
+   {
+    "exact": "3/16 + (-1/16)*sqrt(5)",
+    "decimal": "0.047745751406263",
+    "count": 24
+   },
+   {
+    "exact": "9/16 + (-3/16)*sqrt(5)",
+    "decimal": "0.143237254218789",
+    "count": 24
+   },
+   {
+    "exact": "7/2 + (-3/2)*sqrt(5)",
+    "decimal": "0.145898033750315",
+    "count": 24
+   },
+   {
+    "exact": "3/5",
+    "decimal": "0.600000000000000",
+    "count": 12
+   },
+   {
+    "exact": "1",
+    "decimal": "1.000000000000000",
+    "count": 72
+   },
+   {
+    "exact": "3/5 + (1/5)*sqrt(5)",
+    "decimal": "1.047213595499958",
+    "count": 24
+   },
+   {
+    "exact": "11/16 + (3/16)*sqrt(5)",
+    "decimal": "1.106762745781211",
+    "count": 24
+   },
+   {
+    "exact": "9/2 + (-3/2)*sqrt(5)",
+    "decimal": "1.145898033750315",
+    "count": 12
+   },
+   {
+    "exact": "3/4 + (1/4)*sqrt(5)",
+    "decimal": "1.309016994374947",
+    "count": 12
+   },
+   {
+    "exact": "27/20 + (7/20)*sqrt(5)",
+    "decimal": "2.132623792124926",
+    "count": 12
+   },
+   {
+    "exact": "3/2 + (1/2)*sqrt(5)",
+    "decimal": "2.618033988749895",
+    "count": 48
+   },
+   {
+    "exact": "45/16 + (5/16)*sqrt(5)",
+    "decimal": "3.511271242968684",
+    "count": 36
+   },
+   {
+    "exact": "35/16 + (15/16)*sqrt(5)",
+    "decimal": "4.283813728906053",
+    "count": 12
+   }
+  ]
+ }
+}
