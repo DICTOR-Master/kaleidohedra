@@ -370,6 +370,11 @@
     .sig-send[hidden], .sig-sym[hidden] { display: none !important; }
     /* HexOct: the field for the viewer's own c/h sequence (16 px so iOS does not zoom into it). */
     .hx-own-row { align-items: center; flex-wrap: nowrap; justify-content: center; }
+    /* The Star Cores world (DICTO 2026-11-02): the step slider long, for a finger on a phone or iPad; the shape list fits the phone */
+    #worldstarCores-panel .sc-step-row .hull-pick { display: flex; flex: 1; align-items: center; gap: 10px; }
+    #worldstarCores-panel .sc-step-row .st-slider { flex: 1; min-width: 0; min-height: 44px; }
+    #worldstarCores-panel .hull-select { max-width: min(78vw, 420px); }
+    #worldstarCores-panel [hidden] { display: none !important; }
     .hx-own {
       flex: 1; min-width: 0; max-width: 320px; min-height: var(--touch-compact); box-sizing: border-box;
       background: rgba(0, 0, 0, 0.55); border: 1px solid rgba(255, 255, 255, 0.25);

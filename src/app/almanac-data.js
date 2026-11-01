@@ -232,6 +232,7 @@ export const LATTICE_CONCEPT_ENTRIES = [
 // action: what Open does, the same action the DICTO wizard dispatches; app: where it opens when the
 // action alone doesn't say (the Shear's results open in Kaleidohedra).
 export const DICTO_ENTRIES = [
+  ['starCores', '#80', '10.5281/zenodo.23822907', null, 'tool:starCoresWorld'],   // Star Cores (#79–#81; the DOI is #80's, The Gains of DICTO's Growth Rule; studies 2026-10-30-star-cores, 2026-11-01-star-cores-book)
   ['whiteQueen', '#63', null, null, 'tool:whiteQueenWorld'],   // The White Queen 600-cell (#63, DOI not yet assigned; study 2026-10-27-white-queen-600)
   ['bloom', '#59', '10.5281/zenodo.23677485', null, 'tool:bloomWorld'],   // The Icosaxes Bloom (#59; study 2026-10-27-icosaxes-twenty)
   ['stackings', '#57', '10.5281/zenodo.23647898', null, 'tool:stackingsWorld'],   // The Stackings World (#57; studies 2026-10-25-stackings, 2026-10-26-rule-of-halves-census)
