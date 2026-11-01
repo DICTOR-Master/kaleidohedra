@@ -7,9 +7,10 @@ pos = {}
 for i in range(6): a = np.radians(90 - 60 * i - 30); pos[f'W{i+1}'] = 1.75 * np.array([np.cos(a), np.sin(a)])
 for k in range(3):
     a = np.radians(90 - 120 * k - 60); pos[f'T{k+1}'] = 0.62 * np.array([np.cos(a), np.sin(a)]); pos[f'B{k+1}'] = pos[f'T{k+1}']
+for k in pos: pos[k] = pos[k] * np.array([-1, 1])   # true top view: W1 → W2 → W3 runs anticlockwise seen from above
 COL = {'W': '#2e8b57', 'T': '#c9a227', 'B': '#3f7fc4'}
 fig, axs = plt.subplots(1, 2, figsize=(14, 7.4), facecolor='white')
-for ax, half, title in [(axs[0], 'T', 'Top half: waist band W1–W6 and top caps T1–T3'), (axs[1], 'B', 'Bottom half: waist band W1–W6 and bottom caps B1–B3')]:
+for ax, half, title in [(axs[0], 'T', 'Top half, seen from above'), (axs[1], 'B', 'Bottom half, seen from above through the node')]:
     names = [n for n in T if n[0] in ('W', half)]
     done = set()
     for a in names:
@@ -23,7 +24,7 @@ for ax, half, title in [(axs[0], 'T', 'Top half: waist band W1–W6 and top caps
     for n in names:
         ax.add_patch(plt.Circle(pos[n], 0.2, color=COL[n[0]], zorder=2)); ax.text(*pos[n], n, ha='center', va='center', color='white', fontsize=12, fontweight='bold', zorder=4)
     ax.set_title(title, fontsize=13); ax.set_aspect('equal'); ax.axis('off'); ax.set_xlim(-2.2, 2.2); ax.set_ylim(-2.2, 2.2)
-fig.suptitle("Turned node (trapezo-rhombic dodecahedron): every cap's ties, with the clock hour at each end (12 = top of the node)", fontsize=13)
+fig.suptitle("Turned node (trapezo-rhombic dodecahedron): the ties, clock hour at each end (read from outside each cap, 12 = top)", fontsize=13)
 fig.text(0.5, 0.03, "Waist band: a closed ring at 3 and 9 o'clock, up at 12, down at 6. Top caps: a triangle at 2 and 10, down at 4 and 8. Bottom caps: a triangle at 4 and 8, up at 2 and 10.\n"
          "Each bottom cap sits directly under the top cap of the same number and holds the same waist pair (mirror through the waist). 12 caps, 24 ties.", ha='center', fontsize=10)
 lg = plt.imread('dicto-logo.png'); la = fig.add_axes([0.92, 0.06, 0.06, 0.1]); la.imshow(lg); la.axis('off')
