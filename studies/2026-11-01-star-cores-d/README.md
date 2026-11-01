@@ -98,4 +98,4 @@ Run on dicto-big-brother (~/kres-tmp/star-cores-d, ~/geom/bin/python, one proces
 - Chain: over three steps no variant closes except sloping bases at t = 2, which freezes at step three (its 10 cut spikes add nothing
   measurable); the other three keep growing. The core-turn cycle of the new solids was not computed.
 - Named or new: no known name fits; the conjoined octahedron has outer edges 0.507, 0.764, 0.851, 1 (t = 2), the dipyramid 0.729,
-  0.927, 1 (t = 2). Placeholder names: Notch Octahedron (conjoined piece), Notch Dipyramid (sloping pair); DICTO to confirm.
+  0.927, 1 (t = 2). Names (DICTO 2026-11-01): MAEDATE (前立, the front crest of a samurai helmet) = the conjoined piece; KUWAGATA (鍬形, the V-shaped helmet horns) = the sloping-base pair; DICTO confirmed this reading of his sloping-base rule. Placeholders Notch Octahedron / Notch Dipyramid withdrawn.

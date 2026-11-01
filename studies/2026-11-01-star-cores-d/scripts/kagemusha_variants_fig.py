@@ -14,7 +14,7 @@ for k, r in enumerate(R):
         c = np.array(matplotlib.colors.to_rgb(col[kd])) * sh; polys.append(P); fc.append(np.clip(c, 0, 1))
     ax.add_collection3d(Poly3DCollection(polys, facecolors=fc, edgecolors='#1a1a1a', linewidths=0.9))
     m = 0.62 * np.abs(V).max(); ax.set_xlim(-m, m); ax.set_ylim(-m, m); ax.set_zlim(-m, m); ax.set_box_aspect((1, 1, 1)); ax.view_init(18, 30); ax.axis('off')
-    ax.set_title(('conjoined' if r['variant'] == 'conjoined' else 'sloping bases') + ', t = ' + ('φ' if r['t'] == 'phi' else '2') + f"\nafter step 1: ×{r['steps'][0]['volume_over_last']:.4f}", fontsize=9)
+    ax.set_title(('Maedate' if r['variant'] == 'conjoined' else 'Kuwagata') + ', t = ' + ('φ' if r['t'] == 'phi' else '2') + f"\nafter step 1: ×{r['steps'][0]['volume_over_last']:.4f}", fontsize=9)
 plt.subplots_adjust(0, 0, 1, 0.9, 0.02, 0); plt.savefig(os.path.join(D, 'kagemusha-variants.png'), facecolor='white')
 # notch-piece shapes: faces of the union of notch pieces round one notch, from the step-1 surface
 for r in R:
