@@ -1,4 +1,6 @@
 # Assemble the book "The Golden Cycle" (placeholder title) from the published paper sources (DICTO 10-28).
+# v3 (DICTO 2026-11-01): front.html names the book Part I of Cycles of Growth; paper.html for v3 was patched with the front-page lines only,
+# because re-assembling now would pull in later changes to the chapter papers (the v3 text must equal v2).
 # Mechanical pass: each paper becomes a chapter (title, abstract, sections, theorems, figures kept word for word);
 # the meta line goes; "Sources checked", "Data and code" and "References" move to one appendix by chapter;
 # figures are copied into figures/<folder>/ and renumbered per chapter. Front matter and epilogue come from front.html
