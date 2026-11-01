@@ -1,8 +1,7 @@
-# Assemble DICTO's book "Star Cores: Spikes, Halos and Cycles" (Cycles of Growth, Part II) from the published paper sources (DRAFT, DICTO
-# 2026-11-01). Modelled on book-golden-cycle/assemble.py: each paper becomes a chapter (title, abstract, sections, theorems, tables and
+# Assemble DICTO's book "Star Cores: Spikes, Halos and Cycles" (Cycles of Growth, Part II) from the published paper sources (DICTO
+# 2026-11-01; version 1 published 2 November 2026, concept DOI 10.5281/zenodo.23867732). Modelled on book-golden-cycle/assemble.py: each paper becomes a chapter (title, abstract, sections, theorems, tables and
 # figures kept word for word); the meta line goes; "Sources checked", "Data and code" and "Sources"/"References" move to one appendix by
-# chapter; figures are copied into figures/ch<n>/ and renumbered per chapter. #85 is version 2 (published 1 November 2026, record
-# 23857908), with the sloping bases at the six convex pieces as ordinary text. Front matter,
+# chapter; figures are copied into figures/ch<n>/ and renumbered per chapter. #85 is its latest published version (v3, record 23866680), with the sloping bases at the six convex pieces as ordinary text. Front matter,
 # plates, closing chapter and About from front.html, plates.html, epilogue.html, about.html (by hand); the cards are built here from the
 # study data (cards.py pictures, studies/2026-11-01-star-cores-book). Output: paper.html (typeset by ../print.mjs).
 import re, os, shutil, html, json, subprocess
