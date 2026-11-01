@@ -38,7 +38,7 @@ sheet `hexoct-connected-tiles.pdf` (also in ~/Documents/papers-to-read), awaitin
 | E | 1/10 (#75) | Rule of Halves | 24 | 30 | no (0.745, 0.778) | (0,0) (0,1) (0,0) (0,1) | unchanged | 13 520, 0 |
 
 Findings: the c-tile becomes one solid at every weight tested (best choice always: shift one tower one step); the h-tile was already one
-solid (between 5/24 and 1/3 the best h-choice shifts its top half one step). Only the two ends of the walk give convex tiles. Necks
+solid (between 5/24 and 1/3 the best h-choice shifts its upper octahedral half (piece 3) one step). Only the two ends of the walk give convex tiles. Necks
 shrink to near zero near 1/3 and near −5/12. At 3/8 the octahedral halves have vanished: each tile is its two tetrahedral parts.
 Twisted cube: 6 squares of side 1/√2, 6 isosceles triangles (1/√2, 1/√2, √(2/3)), 11 corners at heights −1, −½, 0, ½, 1 (1+3+3+3+1).
 
