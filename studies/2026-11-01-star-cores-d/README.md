@@ -66,3 +66,36 @@ Run on dicto-big-brother (~/kres-tmp/star-cores-d, ~/geom/bin/python, one proces
    A valleys; the step-3 ridge growth is the open point the paper already lists (ridges of the stars).
 - The other six eccentric pieces (Lahdeli, Chucky, Triskelion Tetrahedron, Dodeca-13 Wedge, Samson, Fang): convex, 0 reflex edges
   (normals check, v7 flags agree); the corollary concerns Kagemusha only.
+
+## 2026-11-01 (evening) Kagemusha's notches filled: conjoined spikes and sloping bases (DICTO's proposal)
+
+Conclusion: both variants fill the five notches at step one (no notch piece meets the solid or another piece; every surface closed,
+Euler 2, volumes add up exactly). Conjoined spikes make Kagemusha grow more (×3.058 after three steps at t = 2, against ×2.563 with
+today's rule) and it keeps growing at both t. With sloping bases it grows less at t = 2 and FREEZES there at step three (×1.000000000),
+while at t = φ it grows most (×2.715 against ×2.607). Neither notch piece is a named shape: the conjoined piece is an irregular
+combinatorial octahedron, the sloping pair an irregular triangular dipyramid. Status: study only (variants of the rule, not in paper D).
+
+Run on dicto-big-brother (~/kres-tmp/star-cores-d, ~/geom/bin/python, one process, float64), DICTO Solids v7.
+- scripts/kagemusha_variants.py → data/kagemusha-variants.json (+ step-1 surfaces), kagemusha-variants.log;
+  scripts/kagemusha_variants_fig.py → data/kagemusha-variants.png (step-1 surfaces; gold solid, violet cap spikes, teal notch pieces).
+- Notch e = (a, b), notch faces (a, b, c), (a, b, c′), full step-1 tips T, T′. (a) Conjoined: one piece hull(a, b, c, c′, T, T′) per
+  notch; it lies outside the solid, so no clipping was needed. (b) Sloping bases (DICTO's sloping-base rule read for a notch: pyramids
+  whose sloping sides meet at a shared point): each notch face keeps a pyramid with apex X, where the line c → T meets the notch's mirror
+  plane (the pentagon plane); the two pyramids meet face to face on (a, b, X) (X = X′ to 0). The 20 cap faces: valley-rule spikes,
+  all full at step one in every run. Steps 2–3: the valley rule unchanged.
+
+| variant, t | step 1 × | step 2 × | step 3 × | after 3 steps | surface after step 1 (V, E, F) | notch piece |
+|---|---|---|---|---|---|---|
+| today's rule, 2 | 1.7405 | 1.3115 | 1.1227 | 2.563 | 37, 105, 70 | none (flat) |
+| conjoined, 2 | 2.0354 | 1.3216 | 1.1368 | 3.058 | 47, 135, 90 | octahedron (6 corners, 8 triangles), vol 0.2218 |
+| sloping, 2 | 1.9404 | 1.3102 | 1.0000 | 2.542 | 42, 120, 80 | 2 tetrahedra = triangular dipyramid, 2 × 0.0752 |
+| today's rule, φ | 1.4577 | 1.5045 | 1.1889 | 2.607 | 37, 105, 70 | none (flat) |
+| conjoined, φ | 1.6236 | 1.4830 | 1.1032 | 2.656 | 47, 135, 90 | octahedron, vol 0.1248 |
+| sloping, φ | 1.5869 | 1.4521 | 1.1784 | 2.715 | 42, 120, 80 | triangular dipyramid, 2 × 0.0486 |
+
+  (Kagemusha's own volume = 1; "after 3 steps" = volume over the solid.) Full / cut / flat spikes, steps 2 and 3: conjoined t = 2
+  10/80/0, 20/20/230; conjoined φ 30/60/0, 40/70/160; sloping t = 2 0/80/0, 0/10/230; sloping φ 20/40/20, 40/70/90.
+- Chain: over three steps no variant closes except sloping bases at t = 2, which freezes at step three (its 10 cut spikes add nothing
+  measurable); the other three keep growing. The core-turn cycle of the new solids was not computed.
+- Named or new: no known name fits; the conjoined octahedron has outer edges 0.507, 0.764, 0.851, 1 (t = 2), the dipyramid 0.729,
+  0.927, 1 (t = 2). Placeholder names: Notch Octahedron (conjoined piece), Notch Dipyramid (sloping pair); DICTO to confirm.
