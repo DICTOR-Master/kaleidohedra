@@ -1,0 +1,41 @@
+D77 Lahdeli convex flag True reflex edges 0 min dihedral 70.529
+D80 Chucky convex flag True reflex edges 0 min dihedral 90.000
+D82 Triskelion Tetrahedron convex flag True reflex edges 0 min dihedral 90.000
+D6 DICTO Dodeca-13 Wedge convex flag True reflex edges 0 min dihedral 10.305
+D71 Samson convex flag True reflex edges 0 min dihedral 90.000
+D81 Fang convex flag True reflex edges 0 min dihedral 70.529
+D86 Kagemusha convex flag False reflex edges 5 min dihedral 138.190
+{'count': 20, 'reflex': False, 'cos_dihedral_convex_reading': '-sqrt(5)/3', 'tan_alpha': ['(-sqrt(5)*sqrt(30*sqrt(5) + 70) + 15*sqrt(30*sqrt(5) + 70))/110', '(sqrt(5)*sqrt(10*sqrt(5) + 30) + 5*sqrt(10*sqrt(5) + 30))/5'], 'alpha_deg': [53.64440546578487, 84.54527963843654], 'delta_deg': 138.1896851042214, 'dihedral_from_normals': 138.18968510422138, 'notch_deg': None, 'rho_signs': [1, 1], 'beta_deg': {'2': [83.62062979155716, -54.56905531266424, -192.75874041688564], 'phi': [100.57529628576646, -2.814506144549133, -88.57257620452195]}}
+{'count': 5, 'reflex': True, 'cos_dihedral_convex_reading': '-4*sqrt(5)/15 - 1/3', 'tan_alpha': ['-sqrt(6*sqrt(5) + 14)', '-sqrt(6*sqrt(5) + 14)'], 'alpha_deg': [100.81231696357172, 100.81231696357172], 'delta_deg': 201.62463392714344, 'dihedral_from_normals': 201.6246339271434, 'notch_deg': 158.37536607285656, 'rho_signs': [-1, -1], 'beta_deg': {'2': [-43.24926785428684, -244.87390178143025, -446.4985357085737], 'phi': [-55.96870962817109, -289.09881198232705, -547.0457066560583]}}
+{'count': 10, 'reflex': False, 'cos_dihedral_convex_reading': '-sqrt(5)/3', 'tan_alpha': ['(-2*sqrt(5)*sqrt(10*sqrt(5) + 30) + 20*sqrt(10*sqrt(5) + 30))/95', '(4*sqrt(5)*sqrt(20*sqrt(5) + 45) + 10*sqrt(20*sqrt(5) + 45))/5'], 'alpha_deg': [49.78576430043736, 88.40392080378406], 'delta_deg': 138.1896851042214, 'dihedral_from_normals': 138.18968510422138, 'notch_deg': None, 'rho_signs': [1, 1], 'beta_deg': {'2': [83.62062979155719, -54.56905531266419, -192.7587404168856], 'phi': [98.22583824291861, -11.913811687323022, -110.7822667493746]}}
+{'count': 10, 'reflex': False, 'cos_dihedral_convex_reading': '-sqrt(5)/3', 'tan_alpha': ['(-sqrt(5)*sqrt(20*sqrt(5) + 45) + 5*sqrt(20*sqrt(5) + 45))/10', '(-sqrt(5)*sqrt(20*sqrt(5) + 45) + 5*sqrt(20*sqrt(5) + 45))/10'], 'alpha_deg': [69.0948425521107, 69.0948425521107], 'delta_deg': 138.1896851042214, 'dihedral_from_normals': 138.18968510422138, 'notch_deg': None, 'rho_signs': [1, 1], 'beta_deg': {'2': [83.62062979155716, -54.56905531266424, -192.75874041688564], 'phi': [105.2452637187006, 15.245263718700594, -48.189685104221425]}}
+2 step 1 vol x1.7405 gained 2.78470 sum 2.78470 reflex opening [158.375366]
+   why flat {'0': [{'frac': 9.999999999177334e-07, 'clashes': ['mirror notch face 5'], 'tip_angle_from_face_deg': None}, {'frac': 0.25, 'clashes': [], 'tip_angle_from_face_deg': None}, {'frac': 0.5, 'clashes': [], 'tip_angle_from_face_deg': None}, {'frac': 1.0, 'clashes': [], 'tip_angle_from_face_deg': None}], '5': [{'frac': 9.999999999177334e-07, 'clashes': ['mirror notch face 0'], 'tip_angle_from_face_deg': None}, {'frac': 0.25, 'clashes': [], 'tip_angle_from_face_deg': None}, {'frac': 0.5, 'clashes': [], 'tip_angle_from_face_deg': None}, {'frac': 1.0, 'clashes': [], 'tip_angle_from_face_deg': None}]}
+    notch face {'spikes': 10, 'full': 0, 'cut': 0, 'flat': 10, 'volume': 0.0} share 0.000
+    other face {'spikes': 20, 'full': 20, 'cut': 0, 'flat': 0, 'volume': 2.7847006554165605} share 1.000
+2 step 2 vol x1.3115 gained 2.03902 sum 2.03902 reflex opening [158.375366]
+    notch face, still flat {'spikes': 10, 'full': 0, 'cut': 0, 'flat': 10, 'volume': 0.0} share 0.000
+    valley, convex edge alpha 49.79/88.40 {'spikes': 20, 'full': 0, 'cut': 20, 'flat': 0, 'volume': 0.31256793170765873} share 0.153
+    valley, convex edge alpha 53.64/84.55 {'spikes': 20, 'full': 0, 'cut': 9, 'flat': 11, 'volume': 0.6477648807796909} share 0.318
+    valley, convex edge alpha 69.09/69.09 {'spikes': 20, 'full': 0, 'cut': 20, 'flat': 0, 'volume': 1.0786895868084552} share 0.529
+2 step 3 vol x1.1227 gained 1.05285 sum 1.05285 reflex opening [158.375366]
+    notch face, still flat {'spikes': 10, 'full': 0, 'cut': 0, 'flat': 10, 'volume': 0.0} share 0.000
+    valley, convex edge alpha 49.79/88.40 {'spikes': 20, 'full': 0, 'cut': 10, 'flat': 10, 'volume': 6.303581723879789e-10} share 0.000
+    ridge, other face {'spikes': 98, 'full': 5, 'cut': 13, 'flat': 80, 'volume': 0.6325872200817856} share 0.601
+    valley, convex edge alpha 53.64/84.55 {'spikes': 20, 'full': 0, 'cut': 14, 'flat': 6, 'volume': 0.420264502003391} share 0.399
+    valley, convex edge alpha 69.09/69.09 {'spikes': 20, 'full': 0, 'cut': 0, 'flat': 20, 'volume': 0.0} share 0.000
+phi step 1 vol x1.4577 gained 1.72104 sum 1.72104 reflex opening [158.375366]
+   why flat {'0': [{'frac': 1.6180339886167845e-06, 'clashes': ['mirror notch face 5'], 'tip_angle_from_face_deg': None}, {'frac': 0.25, 'clashes': [], 'tip_angle_from_face_deg': None}, {'frac': 0.5, 'clashes': [], 'tip_angle_from_face_deg': None}, {'frac': 1.0, 'clashes': [], 'tip_angle_from_face_deg': None}], '5': [{'frac': 1.6180339886167845e-06, 'clashes': ['mirror notch face 0'], 'tip_angle_from_face_deg': None}, {'frac': 0.25, 'clashes': [], 'tip_angle_from_face_deg': None}, {'frac': 0.5, 'clashes': [], 'tip_angle_from_face_deg': None}, {'frac': 1.0, 'clashes': [], 'tip_angle_from_face_deg': None}]}
+    notch face {'spikes': 10, 'full': 0, 'cut': 0, 'flat': 10, 'volume': 0.0} share 0.000
+    other face {'spikes': 20, 'full': 20, 'cut': 0, 'flat': 0, 'volume': 1.721039653541543} share 1.000
+phi step 2 vol x1.5045 gained 2.76527 sum 2.76527 reflex opening [158.375366]
+    notch face, still flat {'spikes': 10, 'full': 0, 'cut': 0, 'flat': 10, 'volume': 0.0} share 0.000
+    valley, convex edge alpha 49.79/88.40 {'spikes': 20, 'full': 0, 'cut': 20, 'flat': 0, 'volume': 0.637949544201194} share 0.231
+    valley, convex edge alpha 53.64/84.55 {'spikes': 20, 'full': 20, 'cut': 0, 'flat': 0, 'volume': 0.9213106741667365} share 0.333
+    valley, convex edge alpha 69.09/69.09 {'spikes': 20, 'full': 20, 'cut': 0, 'flat': 0, 'volume': 1.206011329583298} share 0.436
+phi step 3 vol x1.1889 gained 1.55774 sum 1.55774 reflex opening [158.375366]
+    notch face, still flat {'spikes': 10, 'full': 0, 'cut': 0, 'flat': 10, 'volume': 0.0} share 0.000
+    valley, convex edge alpha 49.79/88.40 {'spikes': 20, 'full': 0, 'cut': 10, 'flat': 10, 'volume': 4.0176702078520246e-08} share 0.000
+    ridge, other face {'spikes': 120, 'full': 40, 'cut': 40, 'flat': 40, 'volume': 1.4521248021961095} share 0.932
+    valley, convex edge alpha 53.64/84.55 {'spikes': 20, 'full': 0, 'cut': 9, 'flat': 11, 'volume': 0.1056170470289624} share 0.068
+    valley, convex edge alpha 69.09/69.09 {'spikes': 20, 'full': 0, 'cut': 0, 'flat': 20, 'volume': 0.0} share 0.000

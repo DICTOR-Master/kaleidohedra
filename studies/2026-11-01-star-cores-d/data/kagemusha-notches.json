@@ -1,0 +1,659 @@
+{
+ "part1": {
+  "D77": {
+   "name": "Lahdeli",
+   "convex_flag": true,
+   "edges": 18,
+   "reflex": [],
+   "min_dihedral": 70.52877936550928
+  },
+  "D80": {
+   "name": "Chucky",
+   "convex_flag": true,
+   "edges": 30,
+   "reflex": [],
+   "min_dihedral": 90.0
+  },
+  "D82": {
+   "name": "Triskelion Tetrahedron",
+   "convex_flag": true,
+   "edges": 24,
+   "reflex": [],
+   "min_dihedral": 89.99999999999999
+  },
+  "D6": {
+   "name": "DICTO Dodeca-13 Wedge",
+   "convex_flag": true,
+   "edges": 12,
+   "reflex": [],
+   "min_dihedral": 10.304846468766074
+  },
+  "D71": {
+   "name": "Samson",
+   "convex_flag": true,
+   "edges": 24,
+   "reflex": [],
+   "min_dihedral": 90.0
+  },
+  "D81": {
+   "name": "Fang",
+   "convex_flag": true,
+   "edges": 12,
+   "reflex": [],
+   "min_dihedral": 70.52877936550931
+  },
+  "D86": {
+   "name": "Kagemusha",
+   "convex_flag": false,
+   "edges": 45,
+   "reflex": [
+    {
+     "e": [
+      1,
+      5
+     ],
+     "dihedral": 201.6246339271434
+    },
+    {
+     "e": [
+      1,
+      7
+     ],
+     "dihedral": 201.62463392714344
+    },
+    {
+     "e": [
+      5,
+      13
+     ],
+     "dihedral": 201.6246339271435
+    },
+    {
+     "e": [
+      7,
+      15
+     ],
+     "dihedral": 201.62463392714344
+    },
+    {
+     "e": [
+      13,
+      15
+     ],
+     "dihedral": 201.6246339271434
+    }
+   ],
+   "min_dihedral": 138.18968510422133
+  },
+  "D86_exact": [
+   {
+    "count": 20,
+    "reflex": false,
+    "cos_dihedral_convex_reading": "-sqrt(5)/3",
+    "tan_alpha": [
+     "(-sqrt(5)*sqrt(30*sqrt(5) + 70) + 15*sqrt(30*sqrt(5) + 70))/110",
+     "(sqrt(5)*sqrt(10*sqrt(5) + 30) + 5*sqrt(10*sqrt(5) + 30))/5"
+    ],
+    "alpha_deg": [
+     53.64440546578487,
+     84.54527963843654
+    ],
+    "delta_deg": 138.1896851042214,
+    "dihedral_from_normals": 138.18968510422138,
+    "notch_deg": null,
+    "rho_signs": [
+     1,
+     1
+    ],
+    "beta_deg": {
+     "2": [
+      83.62062979155716,
+      -54.56905531266424,
+      -192.75874041688564
+     ],
+     "phi": [
+      100.57529628576646,
+      -2.814506144549133,
+      -88.57257620452195
+     ]
+    }
+   },
+   {
+    "count": 5,
+    "reflex": true,
+    "cos_dihedral_convex_reading": "-4*sqrt(5)/15 - 1/3",
+    "tan_alpha": [
+     "-sqrt(6*sqrt(5) + 14)",
+     "-sqrt(6*sqrt(5) + 14)"
+    ],
+    "alpha_deg": [
+     100.81231696357172,
+     100.81231696357172
+    ],
+    "delta_deg": 201.62463392714344,
+    "dihedral_from_normals": 201.6246339271434,
+    "notch_deg": 158.37536607285656,
+    "rho_signs": [
+     -1,
+     -1
+    ],
+    "beta_deg": {
+     "2": [
+      -43.24926785428684,
+      -244.87390178143025,
+      -446.4985357085737
+     ],
+     "phi": [
+      -55.96870962817109,
+      -289.09881198232705,
+      -547.0457066560583
+     ]
+    }
+   },
+   {
+    "count": 10,
+    "reflex": false,
+    "cos_dihedral_convex_reading": "-sqrt(5)/3",
+    "tan_alpha": [
+     "(-2*sqrt(5)*sqrt(10*sqrt(5) + 30) + 20*sqrt(10*sqrt(5) + 30))/95",
+     "(4*sqrt(5)*sqrt(20*sqrt(5) + 45) + 10*sqrt(20*sqrt(5) + 45))/5"
+    ],
+    "alpha_deg": [
+     49.78576430043736,
+     88.40392080378406
+    ],
+    "delta_deg": 138.1896851042214,
+    "dihedral_from_normals": 138.18968510422138,
+    "notch_deg": null,
+    "rho_signs": [
+     1,
+     1
+    ],
+    "beta_deg": {
+     "2": [
+      83.62062979155719,
+      -54.56905531266419,
+      -192.7587404168856
+     ],
+     "phi": [
+      98.22583824291861,
+      -11.913811687323022,
+      -110.7822667493746
+     ]
+    }
+   },
+   {
+    "count": 10,
+    "reflex": false,
+    "cos_dihedral_convex_reading": "-sqrt(5)/3",
+    "tan_alpha": [
+     "(-sqrt(5)*sqrt(20*sqrt(5) + 45) + 5*sqrt(20*sqrt(5) + 45))/10",
+     "(-sqrt(5)*sqrt(20*sqrt(5) + 45) + 5*sqrt(20*sqrt(5) + 45))/10"
+    ],
+    "alpha_deg": [
+     69.0948425521107,
+     69.0948425521107
+    ],
+    "delta_deg": 138.1896851042214,
+    "dihedral_from_normals": 138.18968510422138,
+    "notch_deg": null,
+    "rho_signs": [
+     1,
+     1
+    ],
+    "beta_deg": {
+     "2": [
+      83.62062979155716,
+      -54.56905531266424,
+      -192.75874041688564
+     ],
+     "phi": [
+      105.2452637187006,
+      15.245263718700594,
+      -48.189685104221425
+     ]
+    }
+   }
+  ]
+ },
+ "part2": [
+  {
+   "t": "2",
+   "steps": [
+    {
+     "step": 1,
+     "volume_over_last": 1.7405361848863927,
+     "volume_over_solid": 1.7405361848863927,
+     "gained": 2.7847006554165605,
+     "spikes_sum": 2.7847006554165605,
+     "sites": {
+      "notch face": {
+       "spikes": 10,
+       "full": 0,
+       "cut": 0,
+       "flat": 10,
+       "volume": 0.0
+      },
+      "other face": {
+       "spikes": 20,
+       "full": 20,
+       "cut": 0,
+       "flat": 0,
+       "volume": 2.7847006554165605
+      }
+     },
+     "share": {
+      "notch face": 0.0,
+      "other face": 1.0
+     },
+     "reflex_opening_deg": [
+      158.375366
+     ],
+     "notch_flat_why": {
+      "0": [
+       {
+        "frac": 9.999999999177334e-07,
+        "clashes": [
+         "mirror notch face 5"
+        ],
+        "tip_angle_from_face_deg": null
+       },
+       {
+        "frac": 0.25,
+        "clashes": [],
+        "tip_angle_from_face_deg": null
+       },
+       {
+        "frac": 0.5,
+        "clashes": [],
+        "tip_angle_from_face_deg": null
+       },
+       {
+        "frac": 1.0,
+        "clashes": [],
+        "tip_angle_from_face_deg": null
+       }
+      ],
+      "5": [
+       {
+        "frac": 9.999999999177334e-07,
+        "clashes": [
+         "mirror notch face 0"
+        ],
+        "tip_angle_from_face_deg": null
+       },
+       {
+        "frac": 0.25,
+        "clashes": [],
+        "tip_angle_from_face_deg": null
+       },
+       {
+        "frac": 0.5,
+        "clashes": [],
+        "tip_angle_from_face_deg": null
+       },
+       {
+        "frac": 1.0,
+        "clashes": [],
+        "tip_angle_from_face_deg": null
+       }
+      ]
+     }
+    },
+    {
+     "step": 2,
+     "volume_over_last": 1.311534901083455,
+     "volume_over_solid": 2.2827739530771494,
+     "gained": 2.0390223992958028,
+     "spikes_sum": 2.0390223992958045,
+     "sites": {
+      "notch face, still flat": {
+       "spikes": 10,
+       "full": 0,
+       "cut": 0,
+       "flat": 10,
+       "volume": 0.0
+      },
+      "valley, convex edge alpha 49.79/88.40": {
+       "spikes": 20,
+       "full": 0,
+       "cut": 20,
+       "flat": 0,
+       "volume": 0.31256793170765873
+      },
+      "valley, convex edge alpha 53.64/84.55": {
+       "spikes": 20,
+       "full": 0,
+       "cut": 9,
+       "flat": 11,
+       "volume": 0.6477648807796909
+      },
+      "valley, convex edge alpha 69.09/69.09": {
+       "spikes": 20,
+       "full": 0,
+       "cut": 20,
+       "flat": 0,
+       "volume": 1.0786895868084552
+      }
+     },
+     "share": {
+      "notch face, still flat": 0.0,
+      "valley, convex edge alpha 49.79/88.40": 0.1532930348463103,
+      "valley, convex edge alpha 53.64/84.55": 0.31768404359040053,
+      "valley, convex edge alpha 69.09/69.09": 0.5290229215632901
+     },
+     "reflex_opening_deg": [
+      158.375366
+     ]
+    },
+    {
+     "step": 3,
+     "volume_over_last": 1.1226512760373326,
+     "volume_over_solid": 2.5627590913268476,
+     "gained": 1.0528517227155394,
+     "spikes_sum": 1.0528517227155347,
+     "sites": {
+      "notch face, still flat": {
+       "spikes": 10,
+       "full": 0,
+       "cut": 0,
+       "flat": 10,
+       "volume": 0.0
+      },
+      "valley, convex edge alpha 49.79/88.40": {
+       "spikes": 20,
+       "full": 0,
+       "cut": 10,
+       "flat": 10,
+       "volume": 6.303581723879789e-10
+      },
+      "ridge, other face": {
+       "spikes": 98,
+       "full": 5,
+       "cut": 13,
+       "flat": 80,
+       "volume": 0.6325872200817856
+      },
+      "valley, convex edge alpha 53.64/84.55": {
+       "spikes": 20,
+       "full": 0,
+       "cut": 14,
+       "flat": 6,
+       "volume": 0.420264502003391
+      },
+      "valley, convex edge alpha 69.09/69.09": {
+       "spikes": 20,
+       "full": 0,
+       "cut": 0,
+       "flat": 20,
+       "volume": 0.0
+      }
+     },
+     "share": {
+      "notch face, still flat": 0.0,
+      "valley, convex edge alpha 49.79/88.40": 5.987150505506555e-10,
+      "ridge, other face": 0.6008322030857318,
+      "valley, convex edge alpha 53.64/84.55": 0.3991677963155487,
+      "valley, convex edge alpha 69.09/69.09": 0.0
+     },
+     "reflex_opening_deg": [
+      158.375366
+     ]
+    }
+   ],
+   "reflex_edges": [
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     5,
+     13
+    ],
+    [
+     7,
+     15
+    ],
+    [
+     13,
+     15
+    ]
+   ],
+   "notch_faces": [
+    0,
+    5,
+    6,
+    8,
+    16,
+    17,
+    20,
+    21,
+    28,
+    29
+   ]
+  },
+  {
+   "t": "phi",
+   "steps": [
+    {
+     "step": 1,
+     "volume_over_last": 1.4576765321589673,
+     "volume_over_solid": 1.4576765321589673,
+     "gained": 1.721039653541545,
+     "spikes_sum": 1.721039653541543,
+     "sites": {
+      "notch face": {
+       "spikes": 10,
+       "full": 0,
+       "cut": 0,
+       "flat": 10,
+       "volume": 0.0
+      },
+      "other face": {
+       "spikes": 20,
+       "full": 20,
+       "cut": 0,
+       "flat": 0,
+       "volume": 1.721039653541543
+      }
+     },
+     "share": {
+      "notch face": 0.0,
+      "other face": 0.9999999999999989
+     },
+     "reflex_opening_deg": [
+      158.375366
+     ],
+     "notch_flat_why": {
+      "0": [
+       {
+        "frac": 1.6180339886167845e-06,
+        "clashes": [
+         "mirror notch face 5"
+        ],
+        "tip_angle_from_face_deg": null
+       },
+       {
+        "frac": 0.25,
+        "clashes": [],
+        "tip_angle_from_face_deg": null
+       },
+       {
+        "frac": 0.5,
+        "clashes": [],
+        "tip_angle_from_face_deg": null
+       },
+       {
+        "frac": 1.0,
+        "clashes": [],
+        "tip_angle_from_face_deg": null
+       }
+      ],
+      "5": [
+       {
+        "frac": 1.6180339886167845e-06,
+        "clashes": [
+         "mirror notch face 0"
+        ],
+        "tip_angle_from_face_deg": null
+       },
+       {
+        "frac": 0.25,
+        "clashes": [],
+        "tip_angle_from_face_deg": null
+       },
+       {
+        "frac": 0.5,
+        "clashes": [],
+        "tip_angle_from_face_deg": null
+       },
+       {
+        "frac": 1.0,
+        "clashes": [],
+        "tip_angle_from_face_deg": null
+       }
+      ]
+     }
+    },
+    {
+     "step": 2,
+     "volume_over_last": 1.5044805078180017,
+     "volume_over_solid": 2.1930459293369067,
+     "gained": 2.765271547951224,
+     "spikes_sum": 2.7652715479512286,
+     "sites": {
+      "notch face, still flat": {
+       "spikes": 10,
+       "full": 0,
+       "cut": 0,
+       "flat": 10,
+       "volume": 0.0
+      },
+      "valley, convex edge alpha 49.79/88.40": {
+       "spikes": 20,
+       "full": 0,
+       "cut": 20,
+       "flat": 0,
+       "volume": 0.637949544201194
+      },
+      "valley, convex edge alpha 53.64/84.55": {
+       "spikes": 20,
+       "full": 20,
+       "cut": 0,
+       "flat": 0,
+       "volume": 0.9213106741667365
+      },
+      "valley, convex edge alpha 69.09/69.09": {
+       "spikes": 20,
+       "full": 20,
+       "cut": 0,
+       "flat": 0,
+       "volume": 1.206011329583298
+      }
+     },
+     "share": {
+      "notch face, still flat": 0.0,
+      "valley, convex edge alpha 49.79/88.40": 0.23070050558826585,
+      "valley, convex edge alpha 53.64/84.55": 0.3331718633019354,
+      "valley, convex edge alpha 69.09/69.09": 0.4361276311098003
+     },
+     "reflex_opening_deg": [
+      158.375366
+     ]
+    },
+    {
+     "step": 3,
+     "volume_over_last": 1.1888928584802212,
+     "volume_over_solid": 2.6072966437077683,
+     "gained": 1.5577418894017807,
+     "spikes_sum": 1.557741889401774,
+     "sites": {
+      "notch face, still flat": {
+       "spikes": 10,
+       "full": 0,
+       "cut": 0,
+       "flat": 10,
+       "volume": 0.0
+      },
+      "valley, convex edge alpha 49.79/88.40": {
+       "spikes": 20,
+       "full": 0,
+       "cut": 10,
+       "flat": 10,
+       "volume": 4.0176702078520246e-08
+      },
+      "ridge, other face": {
+       "spikes": 120,
+       "full": 40,
+       "cut": 40,
+       "flat": 40,
+       "volume": 1.4521248021961095
+      },
+      "valley, convex edge alpha 53.64/84.55": {
+       "spikes": 20,
+       "full": 0,
+       "cut": 9,
+       "flat": 11,
+       "volume": 0.1056170470289624
+      },
+      "valley, convex edge alpha 69.09/69.09": {
+       "spikes": 20,
+       "full": 0,
+       "cut": 0,
+       "flat": 20,
+       "volume": 0.0
+      }
+     },
+     "share": {
+      "notch face, still flat": 0.0,
+      "valley, convex edge alpha 49.79/88.40": 2.5791629763483663e-08,
+      "ridge, other face": 0.932198595977777,
+      "valley, convex edge alpha 53.64/84.55": 0.06780137823058895,
+      "valley, convex edge alpha 69.09/69.09": 0.0
+     },
+     "reflex_opening_deg": [
+      158.375366
+     ]
+    }
+   ],
+   "reflex_edges": [
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     5,
+     13
+    ],
+    [
+     7,
+     15
+    ],
+    [
+     13,
+     15
+    ]
+   ],
+   "notch_faces": [
+    0,
+    5,
+    6,
+    8,
+    16,
+    17,
+    20,
+    21,
+    28,
+    29
+   ]
+  }
+ ]
+}
