@@ -21,3 +21,20 @@ Run on dicto-big-brother (~/kres-tmp/star-cores-book, ~/geom/bin/python, float64
 - scripts/polar_quick.py -> data/polar-quick-new4.json (halo and layer volumes without the overlap test, for the cards).
 - scripts/dihedral_new4.py -> data/dihedral-new4.log (sharpest dihedral angle of D106-D109).
 - scripts/typeset.sh: prints the book with papers/print.mjs (playwright from ~/kaleidohedra-check/node_modules).
+
+## 2026-11-01 (later) Gaps closed for the book (DICTO: "tighten up anything lost or missing")
+
+Conclusion: (1) Ophelia's polar layer has no overlaps (all 2163 pieces, 278,222 / 510,722 close pairs at rho^2 = phi R^2 / 2 R^2;
+scripts/ovl_ophelia.py in 8 chunks per radius). (2) Hamlet and Ophelia under the valley rule: scripts/valley_big.py and valley_par.py
+(star_valley.run with a k-d-tree prefilter and no 2500-triangle cap; valley_par shares the first bisection out over workers); results in
+data/gaps/valley*-<shape>-<t>.json. (3) Exact chains of T (study1.py of 2026-10-30-star-cores-exact, SOLIDS from the environment:
+scripts/study1_new.py): Cube Pearl period four entered after three steps, radius gain 21811/11025 = 17*1283/(3^2 5^2 7^2); Golden Clasp
+period four at once, radius gain (3715 - 1635 sqrt5)/36, norm 5^2*19*229/(2^2 3^4); exact polar fill of both (data/gaps/study1-new.json).
+(4) Kuwagata's star, t = 2, exact (scripts/kuwagata_exact.py): the 80 step-two heights are three values, 3 sqrt5/5 (20), 57/64 + ((1335 -
+597 sqrt5) sqrt(816129 + 364984 sqrt5) + 9 sqrt5)/320 (40) and 81/64 + ((270381 - 120897 sqrt5) sqrt(11985980005 + 5360252664 sqrt5) -
+6365529 sqrt5)/45265984 (20), each from a pair contact (quadratic), within 3.1e-7 of the bisection, strictly free below and overlapping
+above; the ten step-three spikes left at 7.5e-9 have exact height zero (linear contact at s = 1): the star stops exactly. Finished star:
+122 corners, 320 edges, 200 faces (160 triangles, 40 quadrilaterals; the 40 coplanar pairs proved with sympy), Euler 2; no v7 solid has
+122 corners, so it is new within v7 (the float study's 132 corners / 250 faces counted the ten flat spikes). Its core turn
+(scripts/kcore: kagemusha_variants.py with heights below 1e-6 flat, kuwagata_cycle.py): decagonal prism, then no core (as before).
+Status: in the book draft; not in a paper.

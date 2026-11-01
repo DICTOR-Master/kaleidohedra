@@ -1,16 +1,16 @@
 # Assemble DICTO's book "Star Cores: Spikes, Halos and Cycles" (Cycles of Growth, Part II) from the published paper sources (DRAFT, DICTO
 # 2026-11-01). Modelled on book-golden-cycle/assemble.py: each paper becomes a chapter (title, abstract, sections, theorems, tables and
 # figures kept word for word); the meta line goes; "Sources checked", "Data and code" and "Sources"/"References" move to one appendix by
-# chapter; figures are copied into figures/ch<n>/ and renumbered per chapter. #85 is taken as published (version 1, commit 75016d54); the
-# section on sloping bases at the six convex pieces from its prepared version 2 (not published) is added in a marked box. Front matter,
+# chapter; figures are copied into figures/ch<n>/ and renumbered per chapter. #85 is version 2 (published 1 November 2026, record
+# 23857908), with the sloping bases at the six convex pieces as ordinary text. Front matter,
 # plates, closing chapter and About from front.html, plates.html, epilogue.html, about.html (by hand); the cards are built here from the
 # study data (cards.py pictures, studies/2026-11-01-star-cores-book). Output: paper.html (typeset by ../print.mjs).
 import re, os, shutil, html, json, subprocess
 HERE = os.path.dirname(os.path.abspath(__file__)); P = os.path.dirname(HERE); ROOT = os.path.dirname(P); ST = os.path.join(ROOT, 'studies')
 CH = [('1', 'spiked-ti', 78), ('2', 'star-cores-a', 79), ('3', 'star-cores-b', 81), ('4', 'star-cores-c', 80), ('5', 'star-cores-d', 85)]
-D_V1 = '75016d54'                                   # #85 version 1 as published (record 23850491)
 PART = {'1': 'Part I. The TI Star', '2': 'Part II. The star of every solid', '5': 'Part III. Eccentric pieces'}
-CORR = [('and asked whether such factors form a series.', 'and proposed that such factors might form a series.')]
+CORR = [('and asked whether such factors form a series.', 'and proposed that such factors might form a series.'),
+        ('DICTO asked whether his sloping bases also stop the six convex pieces.', 'DICTO proposed his sloping bases for the six convex pieces as well.')]
 INDEX_TERMS = ['TI Star', 'Star Halo', 'TI Star core', 'truncated icosahedron', 'icosahedron', 'dodecahedron', 'icosidodecahedron',
     'rhombic triacontahedron', 'pentakis dodecahedron', 'Platonic', 'Archimedean', 'Catalan', 'polar', 'polar spikes', 'halo', 'core',
     'star chain', 'growth rule', 'Universal PiTet', 'gnomon', 'Cleo star', 'golden ratio', 'golden spike', 'doubling', 'Conway', 'join',
@@ -29,11 +29,17 @@ PAPERS.update({76: ('Between the Queens', '10.5281/zenodo.23780068'), 77: ('Face
                80: ("The Gains of DICTO's Growth Rule", '10.5281/zenodo.23822907'), 81: ('Core Cycles', '10.5281/zenodo.23846772'),
                85: ('Eccentric Pieces', '10.5281/zenodo.23850490')})
 INBOOK = {num: lab for lab, _, num in CH}
+# Part I of the series, The Golden Cycle (v3, concept DOI 10.5281/zenodo.23752452): its chapters by paper number (book-golden-cycle/assemble.py)
+PARTI = {22: 1, 23: 2, 24: 3, 27: 4, 29: 5, 32: 6, 33: 7, 34: 8, 35: 9, 38: 10, 39: 11, 43: 12, 54: 14}
+SEEN_PARTI = set()
 REFERRED = set()
 def link_text(t):
     def r(mo):
         n = int(mo.group(1))
         if n in INBOOK: return f'<a href="#ch{INBOOK[n]}">#{n}</a>'
+        if n in PARTI and n not in SEEN_PARTI:
+            SEEN_PARTI.add(n); REFERRED.add(n)
+            return f'<a href="https://doi.org/{PAPERS[n][1]}">#{n}</a> (Part I, Chapter {PARTI[n]})'
         if n in PAPERS: REFERRED.add(n); return f'<a href="https://doi.org/{PAPERS[n][1]}">#{n}</a>'
         return mo.group(0)
     return re.sub(r'(?<![&\w])#(\d{1,2})\b', r, t)
@@ -47,25 +53,14 @@ def link_html(h):
         else: out.append(p if inA else link_text(p))
     return ''.join(out)
 MOVESEC = r'(\d+\. )?(Reproducibility|Data and reproducibility|Data, scripts and checks|Credits|Appendix[ AB]*\. The reference library searched)'
-def addendum():
-    """#85 version 2 (prepared, not published): the subsection on sloping bases at the six convex pieces and its conclusion sentence"""
-    s = open(os.path.join(P, 'star-cores-d', 'paper.html'), encoding='utf8').read()
-    sec = s[s.index('<h3>Sloping bases on the six convex pieces</h3>'):s.index('<h2>7. What is new and what is known</h2>')]
-    sec = sec.replace('DICTO asked whether his sloping bases also stop the six convex pieces.', 'DICTO proposed his sloping bases for the six convex pieces as well.')
-    concl = re.search(r'The six convex eccentric pieces keep growing with sloping bases.*?next test\.', s, re.S).group(0)
-    return ('<div class="added"><p class="addk">Added for this book: the new result of paper D version 2 (prepared 1 November 2026, '
-            'not yet published). It extends the chapter as published; the published text above and below is unchanged.</p>' + sec +
-            f'<p>With this result, version 2 ends the conclusion of the chapter thus: “{concl}”</p></div>\n')
 for label, folder, num in CH:
-    if num == 85: s = subprocess.run(['git', '-C', ROOT, 'show', f'{D_V1}:papers/{folder}/paper.html'], capture_output=True, text=True, check=True).stdout
-    else: s = open(os.path.join(P, folder, 'paper.html'), encoding='utf8').read()
+    s = open(os.path.join(P, folder, 'paper.html'), encoding='utf8').read()
     for st in re.findall(r'<style>(.*?)</style>', s, re.S): styles.add(st.strip())
     doi = re.search(r'DICTO DOI: (10\.5281/zenodo\.\d+)', s).group(1)
     ver = re.search(r'Paper #\d+ · Version (\d+)', s).group(1)
     body = s[s.index('<h1'):s.rindex('</body>')]
     title = html.unescape(re.sub('<[^>]+>', '', re.search(r'<h1[^>]*>(.*?)</h1>', body, re.S).group(1))).strip()
     body = re.sub(r'<div class="meta">.*?</div>', '', body, count=1, flags=re.S)
-    if num == 85: body = body.replace('<h2>7. What is new and what is known</h2>', addendum() + '<h2>7. What is new and what is known</h2>', 1)
     out = [m.group(0) for m in re.finditer(r'<p class="prec">.*?</p>', body, re.S)]
     body = re.sub(r'<p class="prec">.*?</p>', '', body, flags=re.S)
     for m in list(re.finditer(r'<h2>(' + MOVESEC + r'|References)</h2>(.*?)(?=<h2|$)', body, re.S)):
@@ -79,13 +74,13 @@ for label, folder, num in CH:
     body = re.sub(r'\bFig\. (\d+)', lambda mo: f'Fig. {label}.{mo.group(1)}', body)
     for a, b in CORR: body = body.replace(a, b)
     body = body.replace('this paper', 'this chapter').replace('This paper', 'This chapter')
-    body = link_html(body)
+    SEEN_PARTI.clear(); body = link_html(body)
     plain = re.sub('<[^>]+>', ' ', body)
     for term in INDEX_TERMS:
         if re.search(r'\b' + re.escape(term) + r'(s|es)?\b', plain): INDEX.setdefault(term, []).append(label)
     head = f'Chapter {label}. '
     body = re.sub(r'<h1[^>]*>.*?</h1>', f'<h1 class="chapter" id="ch{label}">{head}{title}</h1>', body, count=1, flags=re.S)
-    note = ' (version 1, as published; one section of the prepared version 2 added in a marked box)' if num == 85 else f' (version {ver})'
+    note = f' (version {ver})'
     body = body.replace('</h1>', f'</h1>\n<p class="from">From paper #{num}{note}, DICTO DOI {doi}</p>', 1)
     if label in PART: chapters.append(f'<div class="part"><h1 class="partt">{PART[label]}</h1></div>')
     chapters.append(f'<section class="ch">{body}</section>')
@@ -94,7 +89,7 @@ for label, folder, num in CH:
 
 # ------------------------------------------------------------------ the cards ------------------------------------------------------------
 import cards_data as CD
-cards_main, cards_ecc, card_names = CD.build(ST, HERE)
+cards_main, cards_ecc, card_names, summary = CD.build(ST, HERE)
 for name, D, anchor in card_names:
     for term in INDEX_TERMS:
         if term.lower() in name.lower(): INDEX.setdefault(term, []).append(f'<a href="#{anchor}">card {D}</a>')
@@ -104,13 +99,34 @@ chapters = [c if c != '__ECCENTRIC_CARDS__' else ecc for c in chapters]
 catalogue = ('<section class="cathead" id="catalogue"><h1 class="partt">Part IV. The catalogue of star cores</h1><p class="partsub">One card for every '
              'shape, in the order of DICTO\'s numbers</p>' + open(os.path.join(HERE, 'cards-intro.html'), encoding='utf8').read() + '</section>' + ''.join(cards_main))
 
+def short_core(c):
+    m = re.match(r'period two (at once|from turn \d)', c)
+    if m: sc = re.search(r'by (t\S*(?: \S+)*?) in length', c); return f"2, {m.group(1).replace('from turn', 'turn')}" + (f"; {sc.group(1)}" if sc else '')
+    return re.sub(r' \(.*', '', c).replace('no core at turn', 'no core, turn').replace('not run: Chapter 3 treats the convex shapes', '–')
+def short_chain(c):
+    if c.startswith('period four, radius gain'): return 'period 4, gain ' + c.split('radius gain ')[1].split(' ≈')[0].split(' (')[0]
+    if c.startswith('period four'): return 'period 4'
+    if c.startswith('step five') or c.startswith('step six') or c.startswith('the chain of the Ogdoecontahedron'): return 'OG chain, open (9 steps)'
+    if c.startswith('the chain of T runs TQHD'): return 'into the OG chain'
+    if not c: return '–'
+    return {'not closed in eight steps (screened)': 'open (8 steps)', 'not run: no centre fixed by every symmetry': 'no centre', 'not run': '–'}.get(c, c[:40])
+def short_valley(c):
+    m = re.search(r'three: (.*?) at t = φ, (.*?) at t = 2', c)
+    return (m.group(1) + ' / ' + m.group(2)) if m else ('not run' if 'not run' in c else '')
+glance = ('<section class="app" id="glance"><h1 class="chapter">Every shape at a glance</h1><p style="font-size:9pt">The cards in one table, in the order of '
+          'DICTO\'s numbers. Group: the centre rule of Chapter 2 (A–D). Core: period, turn at which the cycle is entered, and the two-turn length scale '
+          '(Chapter 3). Chain of T: Chapter 4, or the screening of Chapter 2, Table 3. Valley: volume added over steps two and three, t = φ / t = 2 '
+          '(Chapter 2, Section 7). Rows D106–D109 and the notch pieces come from the book\'s own runs.</p><table class="glance"><tr><th>D</th><th>shape</th><th>group</th><th>core</th><th>chain of T</th><th>valley</th></tr>' +
+          ''.join(f'<tr><td><a href="#card-{D}">{D}</a></td><td>{html.escape(n)}</td><td>{g}</td><td>{short_core(c)}</td><td>{short_chain(ch)}</td><td>{short_valley(v)}</td></tr>' for _, D, n, g, c, ch, v in summary) +
+          '<tr><td>Notch 1</td><td>Maedate</td><td>–</td><td>decagonal prism, then none (study)</td><td>–</td><td>keeps growing (Chapter 5)</td></tr>'
+          '<tr><td>Notch 2</td><td>Kuwagata</td><td>–</td><td>decagonal prism, then none (study)</td><td>–</td><td>stops at step three, t = 2, exactly (Chapter 5; exact: the book\'s own runs)</td></tr></table></section>')
 front = open(os.path.join(HERE, 'front.html'), encoding='utf8').read()
 epi = open(os.path.join(HERE, 'epilogue.html'), encoding='utf8').read().replace('__NEW4__', open(os.path.join(HERE, 'new4.html'), encoding='utf8').read())
 plates = open(os.path.join(HERE, 'plates.html'), encoding='utf8').read()
 for t in INDEX_TERMS:
     if re.search(r'\b' + re.escape(t) + r'(s|es)?\b', re.sub('<[^>]+>', ' ', epi)): INDEX.setdefault(t, []).append('Closing')
 refhtml = ('<section class="app"><h1 class="chapter" id="refs">Papers referred to, not in this book</h1><table>' +
-           ''.join(f'<tr><td>#{n}</td><td>{html.escape(PAPERS[n][0])}</td><td><a href="https://doi.org/{PAPERS[n][1]}">{PAPERS[n][1]}</a></td></tr>' for n in sorted(REFERRED)) +
+           ''.join(f'<tr><td>#{n}</td><td>{html.escape(PAPERS[n][0])}{(" (Part I, The Golden Cycle, Chapter " + str(PARTI[n]) + ")") if n in PARTI else ""}</td><td><a href="https://doi.org/{PAPERS[n][1]}">{PAPERS[n][1]}</a></td></tr>' for n in sorted(REFERRED)) +
            '</table></section>')
 def nice(t): return re.sub('<[^>]+>', '', t)
 def refs(v):
@@ -125,7 +141,7 @@ idxhtml = ('<section class="app"><h1 class="chapter" id="index">Index</h1><p sty
 tochtml = ('<h2>Contents</h2><table class="toc">' + ''.join(f'<tr><td><a href="#ch{tag}">{html.escape(t)}</a></td><td>#{n}</td></tr>' for t, tag, n, d in toc) +
            '<tr><td><a href="#ecc-cards">Cards of the eccentric pieces (9)</a></td><td></td></tr>'
            '<tr><td><a href="#plates">Plates</a></td><td></td></tr><tr><td><a href="#catalogue">Part IV. The catalogue of star cores (' + str(len(cards_main)) + ' cards)</a></td><td></td></tr>'
-           '<tr><td><a href="#closing">Closing. Spikes, halos and cycles</a></td><td></td></tr><tr><td><a href="#app">Appendix. Sources by chapter</a></td><td></td></tr>'
+           '<tr><td><a href="#glance">Every shape at a glance</a></td><td></td></tr><tr><td><a href="#closing">Closing. Spikes, halos and cycles</a></td><td></td></tr><tr><td><a href="#app">Appendix. Sources by chapter</a></td><td></td></tr>'
            '<tr><td><a href="#refs">Papers referred to, not in this book</a></td><td></td></tr><tr><td><a href="#index">Index</a></td><td></td></tr></table>')
 css = '\n'.join(sorted(styles)) + '''
 h1.chapter{break-before:page;font-size:19pt;margin-top:0} p.from{font-size:8.5pt;color:#777;margin:-2mm 0 4mm}
@@ -143,6 +159,7 @@ section.card table.cd{font-size:8.5pt;line-height:1.28;margin:0;width:100%} sect
 section.card table.cd td{padding:0.8mm 0} section.card p.cnote{font-size:7.6pt;color:#555;margin:1mm 0 0}
 section.cathead{break-before:page;padding-top:30mm} section.cathead h1.partt{margin-bottom:2mm} section.cathead p.partsub{text-align:center;margin-bottom:14mm}
 div.idx2{column-count:2;column-gap:8mm;font-size:8.6pt;line-height:1.35} div.idx2 div{break-inside:avoid;margin:0 0 .5mm} div.idx2 a{color:inherit;text-decoration:none}
+table.glance{break-inside:auto;width:100%} table.glance tr{break-inside:avoid} table.glance td,table.glance th{font-size:7.6pt;padding:0.3mm 1.5mm;border-bottom:1px dotted #ddd} table.glance a{color:inherit;text-decoration:none}
 table.idx{width:100%} table.idx td{padding:0.3mm 1.5mm;font-size:8.4pt;border-bottom:1px dotted #ddd} table.idx td.gap{width:6mm;border:none}
 /* DICTO 10-29: neutral sans-serif for the whole book, as in HexOct */
 body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}
@@ -155,6 +172,7 @@ doc = f'''<!doctype html>
 {''.join(chapters)}
 {plates}
 {catalogue}
+{glance}
 <section class="epi" id="closing">{epi}</section>
 <section class="app" id="app"><h1 class="chapter">Appendix. Sources by chapter</h1><p>Each chapter's own list of sources checked, data and code, as published with its paper.</p>{''.join(sources)}
 <h3>The cards and plates</h3><p>Pictures: studies/2026-11-01-star-cores-book, scripts/cards.py and plates.py (painter and constructions imported from figs_paper_a.py, star_core.py and star_valley.py of study 2026-10-30-star-cores, and the notch pieces as in kagemusha_variants.py of study 2026-11-01-star-cores-d), rendered on dicto-big-brother at 300 dpi. Card data: DICTO Solids v7 (dataset concept DOI 10.5281/zenodo.23606967, version 10.5281/zenodo.23850845); star-cores.json, polar-spikes.json, sloping-bases.json, star-valley.json (study 2026-10-30-star-cores); study2b.json and gains (study 2026-10-30-star-cores-exact); valley-law-predict.json, kagemusha-variants.json, kuwagata-cycle.json and sloping-six (study 2026-11-01-star-cores-d); the treatment of Cube Pearl, Golden Clasp, Hamlet and Ophelia (scripts/new4.py, run_new4.sh of the book study).</p></section>

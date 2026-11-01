@@ -37,6 +37,22 @@ GROUP = {'star fills; core returns (period two)': 'A', 'star fills; core does no
 GROUPTXT = {'A': 'the star fills its halo and the core comes back to the shape', 'B': 'the star fills its halo; the core does not come back to the shape itself',
             'C': 'the star lies inside its halo, but corner and edge pieces do not fill the layer', 'D': 'the star sticks out of its halo'}
 NEWDELTA = {'D106': 120.0, 'D107': 125.264, 'D108': 160.151, 'D109': 161.095}   # dihedral_new4.py (book study)
+CH_OG = ('the chain of the Ogdoecontahedron runs OG → KRE → PHE → TPP → DPHP (#39; Part I, Chapter 11) → Hamlet → Ophelia and does not close '
+         'within nine steps (Ch. 4, Sect. 6; Hamlet and Ophelia named by DICTO on 31 October 2026)')
+CH_TQ = 'the chain of T runs TQHD → TQP → TQH → TPH → OG through DICTO\'s named solids (#39; Part I, Chapter 11), then on as the chain of the Ogdoecontahedron'
+SAME = ('one shape with the Palintriacontahedron (D31), found in the survey of the approved plan (30 October 2026): DICTO\'s decision keeps FPD, '
+        'the first name (#38; Part I, Chapter 10), with "Palintriacontahedron" noted as its other name; the two cards show the same numbers')
+EXTRA = {'D28': ('Long chain (Ch. 4)', CH_OG), 'D45': ('Long chain (Ch. 4)', CH_OG), 'D46': ('Long chain (Ch. 4)', CH_OG), 'D47': ('Long chain (Ch. 4)', CH_OG),
+         'D48': ('Long chain (Ch. 4)', CH_OG), 'D49': ('Long chain (#39)', CH_TQ), 'D50': ('Long chain (#39)', CH_TQ), 'D51': ('Long chain (#39)', CH_TQ),
+         'D52': ('Long chain (#39)', CH_TQ), 'D41': ('Same shape', SAME), 'D31': ('Same shape', SAME.replace('with the Palintriacontahedron (D31)', 'with the FPD (D41)'))}
+SUMMARY = []
+# exact polar fill of D106 and D107 (study1.py part 2 on these two; book's own runs, data/gaps/study1-new.json): every piece of nonzero volume,
+# one orientation per kind, the pieces adding up to the halo exactly
+POLX = {'D106': 'ρ² = φR²: the halo is the polar, 1701/530 + (1701/1060)√5 ≈ 6.798 × the solid; ρ² = 2R²: 3402/265 ≈ 12.838 ×. The layer of 80 corner pyramids '
+                'and edge tetrahedra checked exactly: every piece of nonzero volume, one orientation per kind, the pieces adding up to the halo exactly (from the book\'s own runs)',
+        'D107': 'ρ² = φR²: the halo is the polar, −368974/30231 + (81308/10077)√5 ≈ 5.837 × the solid; ρ² = 2R²: 15660544/30231 − (6854576/30231)√5 ≈ 11.023 ×. '
+                'The layer of 120 pieces checked exactly as for Cube Pearl (from the book\'s own runs)'}
+PART1 = {f'#{n}': f' (Part I, Chapter {c})' for n, c in {22: 1, 23: 2, 24: 3, 27: 4, 29: 5, 32: 6, 33: 7, 34: 8, 35: 9, 38: 10, 39: 11, 43: 12, 54: 14, 78: 13}.items()}
 def valley_growth(rec):
     st = rec['steps']
     if len(st) < 3: return None
@@ -53,10 +69,16 @@ def build(ST, HERE):
     ov = {l.split()[0]: (None if l.split('| phi ')[1].split()[1] == 'None' else int(l.split('| phi ')[1].split()[1])) for l in open(os.path.join(b, 'polar-new4.log')) if '| phi ' in l}
     for r in load(os.path.join(b, 'polar-quick-new4.json')):
         r['phi']['overlaps'] = r['2']['overlaps'] = ov.get(r['D']); pol[r['D']] = r
+    # Ophelia: the overlap test of polar_spikes.py run on all 2163 pieces in chunks (ovl_ophelia.py): 0 overlaps at both radii
+    if 'D109' in pol: pol['D109']['phi']['overlaps'] = pol['D109']['2']['overlaps'] = 0
     slo = {r['D']: r for r in load(os.path.join(a, 'sloping-bases.json'))}
     val = {}
     for r in load(os.path.join(a, 'star-valley.json')) + (load(os.path.join(b, 'valley-new4', 'star-valley.json')) if os.path.exists(os.path.join(b, 'valley-new4', 'star-valley.json')) else []):
         if 'steps' in r: val[(r['D'], r['t'])] = r
+    for fn_ in sorted(os.listdir(os.path.join(b, 'gaps'))) if os.path.isdir(os.path.join(b, 'gaps')) else []:
+        if fn_.startswith('valleyfast-') and fn_.endswith('.json'):      # Hamlet, Ophelia (valley_fast.py; the book's own runs)
+            r = load(os.path.join(b, 'gaps', fn_))
+            if len(r['steps']) == 3: val[(r['D'], r['t'])] = r
     cor = {r['D']: r for r in load(os.path.join(x, 'study2b.json')) + (load(os.path.join(b, 'study2b-new4.json')) if os.path.exists(os.path.join(b, 'study2b-new4.json')) else []) if r.get('D')}
     law = {r['D']: r for r in load(os.path.join(d, 'valley-law-predict.json'))}
     t3 = table3(P)
@@ -67,7 +89,7 @@ def build(ST, HERE):
         conv = m.get('convex') in (True, 'True', 'true'); NEW = D in ('D106', 'D107', 'D108', 'D109')
         fv = m['f_vector']; g = GROUP.get(r['verdict'], '?')
         key = (f"{m['symmetry']} (order {m['order']}) · {fv['vertices']} corners, {fv['edges']} edges, {fv['faces']} faces: {faces_txt(m['faces_by_sides'])} · "
-               f"{'convex' if conv else 'non-convex'} · exact in {field(m['field'])} · {'first in ' + m['paper'] if m.get('paper') else ''}"
+               f"{'convex' if conv else 'non-convex'} · exact in {field(m['field'])} · {'first in ' + m['paper'] + PART1.get(re.sub(r'[a-z]$', '', m['paper']), '') if m.get('paper') else ''}"
                f"{(', ' + m['doi'].replace('DICTO DOI: ', 'DICTO DOI ')) if m.get('doi') else ''}")
         rows = []
         vol = m['volume']; edges = m.get('sq_edges') or []
@@ -76,13 +98,15 @@ def build(ST, HERE):
         vx = ex(vol['exact']); rows.append(('Exact data', (f"volume {vx} ≈ {float(vol['decimal']):.6f}" if len(vx) < 90 else f"volume ≈ {float(vol['decimal']):.6f} (exact value in DICTO Solids v7, too long to print here)") + (f"; squared edge lengths {ed}" if ed else '') + ' (DICTO Solids v7)'))
         ph, tw = r.get('phi', {}), r.get('2', {})
         if r.get('pyramids_add_up'):
-            rows.append(('Centre rule (Ch. 2, Table 1)' if not NEW else 'Centre rule (Ch. 2, run for this book)', f"group {g}: {GROUPTXT.get(g, '')}. Halo of the tips {ph.get('halo_over_solid', 0):.4f} × the solid at t = φ, "
+            rows.append(('Centre rule (Ch. 2, Table 1)' if not NEW else 'Centre rule (Ch. 2; from the book\'s own runs)', f"group {g}: {GROUPTXT.get(g, '')}. Halo of the tips {ph.get('halo_over_solid', 0):.4f} × the solid at t = φ, "
                          f"{tw.get('halo_over_solid', 0):.4f} × at t = 2; {r['face_families']} face famil{'y' if r['face_families'] == 1 else 'ies'}"))
         else:
             rows.append(('Centre rule (Ch. 2)', 'the centre is not inside every face pyramid: no star from the centre'))
         p = pol.get(D)
-        if p:
-            q = p['phi']; rows.append(('Polar spikes (Ch. 2, Main theorem)' if not NEW else 'Polar spikes (Ch. 2 theorem, run for this book)', f"ρ² = φR²: the halo is the polar, {q['halo_over_solid']:.3f} × the solid; the layer is "
+        if p and D in POLX:
+            rows.append(('Polar spikes, exact (Ch. 2, Main theorem)', POLX[D]))
+        elif p:
+            q = p['phi']; rows.append(('Polar spikes (Ch. 2, Main theorem)' if not NEW else 'Polar spikes (Ch. 2; from the book\'s own runs)', f"ρ² = φR²: the halo is the polar, {q['halo_over_solid']:.3f} × the solid; the layer is "
                                        f"{fv['vertices'] + fv['edges']} pieces, one pyramid per corner and one tetrahedron per edge, {(str(q['overlaps']) + ' overlaps') if q.get('overlaps') is not None else 'overlap test not run (polar_spikes.py tests layers of fewer than 1200 pieces)'}, volumes adding up "
                                        f"(ρ² = 2R²: halo {p['2']['halo_over_solid']:.3f} ×)"))
         elif not conv:
@@ -97,7 +121,7 @@ def build(ST, HERE):
                 k = c['enters_cycle_at_turn']; lin = CORE_LIN.get(c['gain_radius_squared_t1'])
                 when = 'at once' if k == 0 else f'from turn {k}'
                 thm = 'the Theorem' if D != 'D37' else 'the one exception to the Theorem, computed'
-                rows.append(('Core (Ch. 3)' if not NEW else 'Core (Ch. 3 rule, exact, run for this book)', f"period two {when} ({thm}); two turns scale the core by {('t²/' + lin[2:]) if lin and lin.startswith('1/') else 't²·' + str(lin)} in length"
+                rows.append(('Core (Ch. 3)' if not NEW else 'Core (Ch. 3, exact; from the book\'s own runs)', f"period two {when} ({thm}); two turns scale the core by {('t²/' + lin[2:]) if lin and lin.startswith('1/') else 't²·' + str(lin)} in length"
                              + ('' if lin else f" (squared radius {ex(c['gain_radius_squared_t1'])})")))
             else:
                 o = c.get('outcome') or c.get('error', '')
@@ -107,8 +131,12 @@ def build(ST, HERE):
         elif not conv:
             rows.append(('Core (Ch. 3)', 'not run: Chapter 3 treats the convex shapes'))
         ch = (t or {}).get('chain')
-        NEWCH = {'D106': 'period four: the cube with its edges cut back closes at the depth s = 3/5 (Ch. 4, Sect. 6)',
-                 'D107': 'period four, while the Archimedean truncated cuboctahedron does not close (Ch. 4, Sect. 6; study 3)',
+        NEWCH = {'D106': 'period four, entered after three steps: steps 3 and 7 are similar, with radius gain 21811/11025 = 17·1283/(3²·5²·7²) ≈ 1.978322, exact '
+                         '(the script of Ch. 4, study1.py; from the book\'s own runs). Step 2 has Cube Pearl\'s faces (6 squares, 12 hexagons) at another depth. '
+                         'Ch. 4, Sect. 6: the cube cut back at depth 3/5 closes',
+                 'D107': 'period four at once: step 4 is the Golden Clasp again, with radius gain (3715 − 1635√5)/36 ≈ 1.639690, norm 5²·19·229/(2²·3⁴), exact '
+                         '(the script of Ch. 4, study1.py; from the book\'s own runs); 19 and 229 are ≡ ±1 (mod 5), as Ch. 4, Proposition 3 requires. '
+                         'The Archimedean truncated cuboctahedron does not close (Ch. 4, Sect. 6)',
                  'D108': 'step five of the chain of the Ogdoecontahedron, after KRE, PHE, TPP and DPHP; that chain does not close within nine steps (Ch. 4, Sect. 6)',
                  'D109': 'step six of the chain of the Ogdoecontahedron, after Hamlet; that chain does not close within nine steps (Ch. 4, Sect. 6)'}
         if D in NEWCH: rows.append(('Chain of T (Ch. 4)', NEWCH[D]))
@@ -120,7 +148,7 @@ def build(ST, HERE):
         if t and t['vphi'] != '–': gp, g2 = t['vphi'], t['v2']
         else: gp, g2 = (valley_growth(vp) if vp else None), (valley_growth(v2) if v2 else None)
         if gp or g2:
-            rows.append(("Building on the star (Ch. 2, Sect. 7)", f"DICTO's valley rule, volume added over steps two and three: {gp or 'not run'} at t = φ, {g2 or 'not run'} at t = 2"
+            rows.append(("Building on the star (Ch. 2, Sect. 7)" if D not in ('D108', 'D109') else "Building on the star (Ch. 2 rule; from the book's own runs)", f"DICTO's valley rule, volume added over steps two and three: {gp or 'not run'} at t = φ, {g2 or 'not run'} at t = 2"
                          + (' (freezes: less than 0.1 per cent at step three)' if 'freezes' in (gp or '') + (g2 or '') else '')))
         else:
             rows.append(("Building on the star (Ch. 2, Sect. 7)", 'not run (over 200 faces)' if fv['faces'] > 200 else 'not run'))
@@ -131,12 +159,17 @@ def build(ST, HERE):
                          'blunter than 120°, so every valley at t = 2 is closed by step two')))
         if D in SLOPE6:
             sh, used, s3, a2, ap = SLOPE6[D]
-            rows.append(('Sloping bases at sharp edges (Ch. 5, added section)', f"sharp edges {sh} (t = 2 / φ); used / not possible at step 3, t = 2: {used}; step 3 {s3}; "
+            rows.append(('Sloping bases at sharp edges (Ch. 5, Table 6)', f"sharp edges {sh} (t = 2 / φ); used / not possible at step 3, t = 2: {used}; step 3 {s3}; "
                          f"steps 1–3: ×{a2} at t = 2, ×{ap} at t = φ. No piece stops."))
         if D == 'D86':
             rows.append(('Notches (Ch. 5, Sect. 6)', "the faces at its five reflex edges never take a spike under the valley rule (notch open at 158.38° throughout); "
                          "it grows ×2.563 over three steps at t = 2 and ×2.607 at t = φ; with Maedate ×3.058 and ×2.656, with Kuwagata ×2.542 (stops at step three) and ×2.715"))
-        rows.append(('Note (inventory)', html.escape(m.get('note') or '')))
+        if D in EXTRA: rows.append(EXTRA[D])
+        note = (m.get('note') or '').strip()
+        if note and note.lower() not in ('as above', 'not found'): rows.append(('Note (inventory)', html.escape(note)))
+        elif note.lower() == 'not found': rows.append(('Note (inventory)', 'not found in the sources checked (DICTO Solids v7 inventory)'))
+        SUMMARY.append((int(D[1:]), D, nm, g, next((v for h, v in rows if h.startswith('Core')), ''), next((v for h, v in rows if h.startswith('Long chain')), next((v for h, v in rows if h.startswith('Chain')), '')),
+                        next((v for h, v in rows if h.startswith('Building')), '')))
         return D, nm, anchor, key, rows
     def html_card(D, nm, anchor, key, rows, img, alt):
         names.append((nm, D, anchor))
@@ -150,7 +183,7 @@ def build(ST, HERE):
         slug = os.path.basename(r['file'])[:-5]; D, nm, anc, key, rows = card(slug, r)
         conv = meta[slug].get('convex') in (True, 'True', 'true')
         h = html_card(D, nm, anc, key, rows, f'figures/cards/{slug}.png', f'{nm}: ' + (PANEL_C if conv else PANEL_N))
-        h = h.replace('</h2>', '</h2>', 1).replace('<table class="cd">', f'<table class="cd"><tr><th>Picture</th><td>{PANEL_C if conv and "pyramids_add_up" in r and r["pyramids_add_up"] else PANEL_N}</td></tr>', 1)
+        # the four panels are explained once, in 'How to read a card'
         (ecc if D in ECC else main).append((ECC.index(D) if D in ECC else 0, h))
     ecc = [h for _, h in sorted(ecc, key=lambda x: x[0])]; main = [h for _, h in main]
     # the notch pieces (#85, Section 6; study 2026-11-01-star-cores-d)
@@ -176,7 +209,28 @@ def build(ST, HERE):
                 ('Core of the turn (study, not in a paper)', f"the core rule of Chapter 3 at t = 2 gives a decagonal prism ({faces_txt(cyc['core_sequence'][0]['faces'])}, all corners on one sphere); "
                  "the next turn has no core, its families of tips lying in planes: the sequence ends after one turn (study 2026-11-01-star-cores-d, kuwagata_cycle.py)"),
                 ('Name', f"DICTO's name, 1 November 2026: {nm} ({jp}). {'Maedate makes Kagemusha grow most at t = 2' if var == 'conjoined' else 'With Kuwagata the star of mirrored spikes reaches a finished form'} (Chapter 5, #85).")]
-        ecc.append(html_card(D, f'{nm} ({jp.split(",")[0]})', 'card-' + nm.lower(), f"DICTO's notch piece of Kagemusha (D86) · {'conjoined spikes' if var == 'conjoined' else 'sloping bases'} · float64 study (2026-11-01-star-cores-d, kagemusha_variants.py)",
+        if var == 'sloping':
+            # the book's own exact run (kuwagata_exact.py) and the core turn of the exactly finished star (kuwagata_cycle.py with the ten
+            # step-three spikes flat; data/gaps/kuwagata-cycle-exactflat.json)
+            kx = load(os.path.join(b, 'gaps', 'kuwagata-exact.json')); fx = kx['final']
+            kf = os.path.join(b, 'gaps', 'kuwagata-cycle-exactflat.json'); cf = load(kf)['sloping'] if os.path.exists(kf) else None
+            rows = [r_ for r_ in rows if not r_[0].startswith(('Finished star', 'Core of the turn', 'Picture', 'Placed'))]
+            rows.insert(-1, ('Exact heights (from the book\'s own runs)', 'step two: all 80 spikes are cut back, each where it first touches its neighbour as the two are shortened together '
+                 '(a quadratic equation); the heights, as fractions s of the step (s = 2 full, s = 1 flat), take three exact values: 3√5/5 (20 spikes), '
+                 '57/64 + ((1335 − 597√5)√(816129 + 364984√5) + 9√5)/320 ≈ 1.222678 (40) and 81/64 + ((270381 − 120897√5)√(11985980005 + 5360252664√5) − 6365529√5)/45265984 ≈ 1.112244 (20), '
+                 'each within 3.1 × 10⁻⁷ of the bisection, free just below and overlapping just above. Step three: the ten spikes that the bisection left at 7.5 × 10⁻⁹ '
+                 'touch an older piece at height exactly zero (a linear equation, s = 1), so they are flat; the other 230 were flat already in the float run.'))
+            rows.insert(-1, ('Finished star (exact)', f"at t = 2 the star stops at step three exactly: step three adds nothing. The finished star has {fx['corners']} corners, {fx['edges']} edges and "
+                 f"{fx['faces']} faces ({faces_txt({int(k): v for k, v in fx['faces_by_sides'].items()})}), Euler characteristic {fx['euler']}; its {fx['coplanar_pairs']} pairs of coplanar triangles are proved coplanar exactly. "
+                 f"No solid of DICTO Solids v7 has {fx['corners']} corners, so it is similar to none of them: a new solid within v7. "
+                 "(The float study counted 132 corners and 250 faces, the ten flat spikes standing 7.5 × 10⁻⁹ high.)"))
+            if cf:
+                cs = cf['core_sequence']; first = cs[0]
+                txt = (f"the core rule of Chapter 3 at t = 2 on the exact finished star: first core {first.get('corners')} corners, {faces_txt({int(k): v for k, v in first.get('faces', {}).items()})}"
+                       + ('; the next turn has no core' if len(cs) > 1 and cs[1].get('core', 0) is None else '') +
+                       (f"; period {cf['core_period']['period']} from turn {cf['core_period']['first_turn']}" if cf.get('core_period') else '') + f" (float; symmetry of order {cf['symmetry_order']})")
+                rows.insert(-1, ('Core of the turn (from the book\'s own runs)', txt))
+        ecc.append(html_card(D, f'{nm} ({jp.split(",")[0]})', 'card-' + nm.lower(), f"DICTO's notch piece of Kagemusha (D86) · {'conjoined spikes' if var == 'conjoined' else 'sloping bases'} · float64 study (2026-11-01-star-cores-d, kagemusha_variants.py) · picture: one piece (t = 2), Kagemusha (gold) with its five notch pieces (teal), the star after step one at t = 2 and t = φ",
                              rows, f'figures/cards/{nm.lower()}.png', f'{nm}: one piece, Kagemusha with five, and the star after step one'))
     names[:] = [(n.split(' (')[0] if n.startswith(('Maedate', 'Kuwagata')) else n, D, a) for n, D, a in names]
-    return main, ecc, names
+    return main, ecc, names, sorted(SUMMARY)

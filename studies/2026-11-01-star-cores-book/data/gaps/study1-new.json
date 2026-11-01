@@ -1,0 +1,236 @@
+[
+ {
+  "solid": "Cube Pearl",
+  "field": "Q(sqrt(5))",
+  "symmetry": "Oh",
+  "steps": [
+   {
+    "step": 1,
+    "corners": 18,
+    "faces": {
+     "3": 32
+    },
+    "volume_over_start": "1701/1060",
+    "radius2_over_start": "3/2",
+    "radius_over_start_decimal": 1.224744871391589
+   },
+   {
+    "step": 2,
+    "corners": 32,
+    "faces": {
+     "4": 6,
+     "6": 12
+    },
+    "volume_over_start": "67797/26500",
+    "radius2_over_start": "9/4",
+    "radius_over_start_decimal": 1.5
+   },
+   {
+    "step": 3,
+    "corners": 26,
+    "faces": {
+     "4": 24
+    },
+    "volume_over_start": "1193859/231875",
+    "radius2_over_start": "289/75",
+    "radius_over_start_decimal": 1.9629909152447276
+   },
+   {
+    "step": 4,
+    "corners": 48,
+    "faces": {
+     "4": 12,
+     "6": 8,
+     "8": 6
+    },
+    "volume_over_start": "1899960273/284046875",
+    "radius2_over_start": "370787/91875",
+    "radius_over_start_decimal": 2.0089243068737805
+   },
+   {
+    "step": 5,
+    "corners": 26,
+    "faces": {
+     "3": 48
+    },
+    "volume_over_start": "10375922834731/695914843750",
+    "radius2_over_start": "475719721/62015625",
+    "radius_over_start_decimal": 2.7696507936507935
+   },
+   {
+    "step": 6,
+    "corners": 24,
+    "faces": {
+     "3": 8,
+     "4": 18
+    },
+    "volume_over_start": "1442253274027609/73071058593750",
+    "radius2_over_start": "8087235257/1012921875",
+    "radius_over_start_decimal": 2.8256089878448636
+   },
+   {
+    "step": 7,
+    "corners": 26,
+    "faces": {
+     "4": 24
+    },
+    "volume_over_start": "50976908887033403/1278743525390625",
+    "radius2_over_start": "137482999369/9116296875",
+    "radius_over_start_decimal": 3.8834281045263266,
+    "returns_to_step": 3
+   }
+  ],
+  "enters_cycle_at_step": 3,
+  "period": 4,
+  "gain_radius_squared": "475719721/121550625",
+  "gain_volume": "10375922834731/1340095640625",
+  "gain_radius_decimal": 1.9783219954648525,
+  "gain_radius": "21811/11025",
+  "polar": {
+   "2": {
+    "pieces": 141,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "3402/265"
+   },
+   "phi": {
+    "pieces": 141,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "1701/530 + (1701/1060)*sqrt(5)"
+   }
+  }
+ },
+ {
+  "solid": "Golden Clasp",
+  "field": "Q(sqrt(5))",
+  "symmetry": "Oh",
+  "steps": [
+   {
+    "step": 1,
+    "corners": 26,
+    "faces": {
+     "3": 48
+    },
+    "volume_over_start": "1957568/30231 + (-856822/30231)*sqrt(5)",
+    "radius2_over_start": "43/2 + (-9)*sqrt(5)",
+    "radius_over_start_decimal": 1.172769458377004
+   },
+   {
+    "step": 2,
+    "corners": 48,
+    "faces": {
+     "4": 12,
+     "6": 8,
+     "8": 6
+    },
+    "volume_over_start": "921661787/362772 + (-45761927/40308)*sqrt(5)",
+    "radius2_over_start": "3715/36 + (-545/12)*sqrt(5)",
+    "radius_over_start_decimal": 1.2805039891890224
+   },
+   {
+    "step": 3,
+    "corners": 26,
+    "faces": {
+     "3": 48
+    },
+    "volume_over_start": "439946533625/6529896 + (-196741281875/6529896)*sqrt(5)",
+    "radius2_over_start": "15825/4 + (-190975/108)*sqrt(5)",
+    "radius_over_start_decimal": 1.496656758744959
+   },
+   {
+    "step": 4,
+    "corners": 48,
+    "faces": {
+     "4": 12,
+     "6": 8,
+     "8": 6
+    },
+    "volume_over_start": "12514813375/2916 + (-1243730875/648)*sqrt(5)",
+    "radius2_over_start": "13583675/648 + (-2024675/216)*sqrt(5)",
+    "radius_over_start_decimal": 1.639690466328818,
+    "returns_to_step": 0
+   }
+  ],
+  "enters_cycle_at_step": 0,
+  "period": 4,
+  "gain_radius_squared": "13583675/648 + (-2024675/216)*sqrt(5)",
+  "gain_volume": "12514813375/2916 + (-1243730875/648)*sqrt(5)",
+  "gain_radius_decimal": 1.639690466328818,
+  "gain_radius": "3715/36 + (-545/12)*sqrt(5)",
+  "polar": {
+   "2": {
+    "pieces": 213,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "15660544/30231 + (-6854576/30231)*sqrt(5)"
+   },
+   "phi": {
+    "pieces": 213,
+    "signs_by_kind": {
+     "solid": [
+      1
+     ],
+     "spike": [
+      -1
+     ],
+     "corner": [
+      -1
+     ],
+     "edge": [
+      1
+     ]
+    },
+    "zero": 0,
+    "consistent": true,
+    "sum_equals_halo": true,
+    "halo_over_solid": "-368974/30231 + (81308/10077)*sqrt(5)"
+   }
+  }
+ }
+]
