@@ -1,6 +1,6 @@
 # DICTO solids: exact coordinates (math-data dataset)
 
-Created by DICTO · [dictospheres.com](https://dictospheres.com) · Licence CC BY-SA 4.0 · 2026-10-22 · Version 2: 2026-10-24 · Version 3: 2026-10-27 · Version 4: 2026-10-28 · Version 5: 2026-10-28 · **Version 6: 2026-10-30**
+Created by DICTO · [dictospheres.com](https://dictospheres.com) · Licence CC BY-SA 4.0 · 2026-10-22 · Version 2: 2026-10-24 · Version 3: 2026-10-27 · Version 4: 2026-10-28 · Version 5: 2026-10-28 · Version 6: 2026-10-30 · **Version 7: 2026-11-01**
 
 Exact geometry of named convex and non-convex polyhedra found or named by DICTO (artist, Osaka), taken from his published papers
 and the Kaleidohedra findings archive, with lattice packings where a published result says the solid tiles space, and the published
@@ -8,6 +8,16 @@ packings that do not fill space. Every number is exact in a real number field st
 and 2 except two, ℚ(∛2) for Samson and Delilah, version 2; version 3 adds ℚ and ℚ(t), t the root of an irreducible cubic, for Sonsam and
 Lahdeli; version 4 adds ℚ(√3) for Ganesha) and is re-proved by `check.py` from the data files alone; the only exception is the unit-volume copy of each solid, whose scale
 is a cube root (stored exactly as a symbolic expression, with decimal corners).
+
+## What is new in version 7 (2026-11-01)
+
+Four solids DICTO named on 31 October 2026 in the Star Cores series, exact in ℚ(√5), with D-numbers D106–D109 (DICTO's names):
+
+- **Cube Pearl** (D106): the cube with its edges cut back by the planes (±1, ±1, 0)·x ≤ 6/5 (depth s = 3/5), the one depth at which all 32 corners lie on one sphere; 6 squares and 12 hexagons, Oh, convex, volume 424/125 (cube of edge 2). The chamfered-cube family is classical; this depth was not found in the sources checked. Its chain of DICTO's growth rule T closes with period four: #80 The Gains of DICTO's Growth Rule (DICTO DOI: 10.5281/zenodo.23822907), Section 6.
+- **Golden Clasp** (D107): the faces of the truncated cuboctahedron at depths 1 : 1/φ : 3/4 on the 4-, 3- and 2-fold axes (48 corners, 26 faces, Oh, convex); its chain of T closes with period four, while the Archimedean truncated cuboctahedron's does not. From study 3 of the Star Cores series; no published paper states these depths yet.
+- **Hamlet** (D108) and **Ophelia** (D109): steps 5 and 6 of the chain of T from the DICTO Ogdoecontahedron, after the KRE, PHE, TPP and DPHP (452 corners, 270 faces; 642 corners, 440 faces; both Ih, convex). #80, Section 6 gives their corner counts; the chain does not close.
+
+Built by `build/build_v7.py` (14 build checks); credit: DICTO (idea, names); exact computation with Claude (Anthropic); source: studies 2026-10-31-star-cores-names. `check.py` now rounds each value of ℚ(√5) to a float once, from a 40-digit value of √5, because Hamlet's and Ophelia's coordinates nearly cancel (a + b√5 with large a and b); every check is otherwise unchanged. All checks pass (check.py: 1569 checks, 69 solids).
 
 ## What is new in version 6 (2026-10-30)
 
@@ -310,7 +320,7 @@ numbers are separated by "; ". Only numbers we are sure of are given.
 
 **D-numbers (DICTO 2026-10-24):** DICTO's permanent catalogue number, one per new solid or piece of his (status "new"), in the order of
 first publication, never reused: D1–D71 for single shapes, D72–D75 for the four rows that group several pieces (one number per group,
-DICTO 2026-10-24), and (version 3) D76–D83 for the eight new single solids of #56, #57 and #59, and (version 4) D84–D86 for Ganesha (#61), Humpty Dumpty (#63) and Shadow-17 (#62), and (version 5) D87–D101 for the fifteen new named slices of #63 and #65, and (version 6) D103–D105 for the three solids of #78. Known and rediscovered shapes get no D-number. A shape with an outside number that
+DICTO 2026-10-24), and (version 3) D76–D83 for the eight new single solids of #56, #57 and #59, and (version 4) D84–D86 for Ganesha (#61), Humpty Dumpty (#63) and Shadow-17 (#62), and (version 5) D87–D101 for the fifteen new named slices of #63 and #65, and (version 6) D103–D105 for the three solids of #78, and (version 7) D106–D109 for the four Star Cores solids. Known and rediscovered shapes get no D-number. A shape with an outside number that
 is also DICTO's new shape would show both, outside number first ("J1; D9"); none does today. Not to be confused with T1, T2, … (a piece's
 label within one piece set), #n (papers), Fn (findings) and t1–t6 (Mosseri–Sadoc tiles); see `d-numbers.md`. 91 of 137 rows have a
 number (5 outside, 86 D); the cell is empty for the other known or rediscovered shapes and for clusters, structures, compounds and

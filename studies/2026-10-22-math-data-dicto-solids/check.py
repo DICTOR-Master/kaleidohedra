@@ -77,7 +77,8 @@ class QF:
         return (1 if a > 0 else -1) if a * a > d * b * b else (1 if b > 0 else -1)
     def __eq__(s, o): o = s._c(o); return s.a == o.a and s.b == o.b
     def __hash__(s): return hash((s.a, s.b))
-    def f(s): return float(s.a) + float(s.b) * math.sqrt(s.d)
+    # version 7: rounded once, from a 40-digit rational value of the square root (float(a) + float(b)*sqrt(d) loses digits when a and b*sqrt(d) nearly cancel, as in Hamlet and Ophelia)
+    def f(s): return float(s.a + s.b * Fr(math.isqrt(s.d * 10 ** 80), 10 ** 40))
 
 
 class KC:

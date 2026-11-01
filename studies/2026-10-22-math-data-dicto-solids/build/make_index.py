@@ -18,7 +18,7 @@ P = {'8': '10.5281/zenodo.23284106', '13': '10.5281/zenodo.23284281', '14': '10.
      '45': '10.5281/zenodo.23529499', '47': '10.5281/zenodo.23551326',
      '48': '10.5281/zenodo.23596362', '51': '10.5281/zenodo.23606828',
      '55': '10.5281/zenodo.23632358', '56': '10.5281/zenodo.23635823', '57': '10.5281/zenodo.23647898', '59': '10.5281/zenodo.23677485',
-     '61': '10.5281/zenodo.23682596', '62': '10.5281/zenodo.23687223', '63': '10.5281/zenodo.23690856', '65': '10.5281/zenodo.23716140', '78': '10.5281/zenodo.23782577'}
+     '61': '10.5281/zenodo.23682596', '62': '10.5281/zenodo.23687223', '63': '10.5281/zenodo.23690856', '65': '10.5281/zenodo.23716140', '78': '10.5281/zenodo.23782577', '80': '10.5281/zenodo.23822907'}
 NEW, RED, KN = 'new', 'rediscovered', 'known'
 # name, kind, finding, paper (#), status, prior-art / note, dataset slug, Polyhedraverse id
 R = [
@@ -199,6 +199,15 @@ R += [
  ('Star Halo', 'solid', '', '78', NEW, "DICTO's name: the hull of the TI Star's 32 tips, a pentakis dodecahedron that is not the Catalan one (five-fold corners 1.0265 × further out than the six-fold ones); not found in the sources checked (#78)", 'dicto-star-halo', ''),
  ('TI Star core', 'solid', '', '78', NEW, 'the icosahedron truncated at 1/φ³ of each edge (12 pentagons, 20 hexagons, hexagon edges in the ratio √5), the core of every turn of the TI Star cycles and the polar partner of the Star Halo (#78)', 'dicto-ti-star-core', ''),
 ]
+N_V6 = len(R)
+# version 7 (2026-11-01): the four solids DICTO named on 2026-10-31 in the Star Cores series (studies 2026-10-31-star-cores-names);
+# paper '80' where #80 The Gains of DICTO's Growth Rule states the solid, 'SC' (the studies, no paper yet) for the Golden Clasp
+R += [
+ ('Cube Pearl', 'solid', '', '80', NEW, "the cube with its edges cut back by the planes (±1, ±1, 0)·x ≤ 6/5 (depth s = 3/5): 32 corners all on one sphere, 6 squares and 12 hexagons, Oh; the chamfered-cube family is classical, this depth was not found in the sources checked; its chain of T closes with period four (#80)", 'dicto-cube-pearl', ''),
+ ('Golden Clasp', 'solid', '', 'SC', NEW, "the faces of the truncated cuboctahedron at depths 1 : 1/φ : 3/4 on the 4-, 3- and 2-fold axes (48 corners, 26 faces, Oh); its chain of T closes with period four, while the Archimedean truncated cuboctahedron's does not (Star Cores study 3)", 'dicto-golden-clasp', ''),
+ ('Hamlet', 'solid', '', '80', NEW, "step 5 of the chain of DICTO's growth rule T from the Ogdoecontahedron, after KRE, PHE, TPP and DPHP: 452 corners, 270 faces, Ih (#80, Section 6)", 'dicto-hamlet', ''),
+ ('Ophelia', 'solid', '', '80', NEW, "step 6 of the same chain, after Hamlet: 642 corners, 440 faces, Ih (#80, Section 6); the chain does not close", 'dicto-ophelia', ''),
+]
 # universal_number (version 2, DICTO 2026-10-23): established catalogue numbers of earlier creators first (Johnson J, uniform U,
 # Wenninger W, Hart's stellation lists, Mosseri-Sadoc tiles); DICTO D-numbers (below) for DICTO's new shapes; see d-numbers.md. Empty = no number. Only numbers we are sure of.
 UNUM = {
@@ -232,20 +241,24 @@ _v5 = [r[0] for r in R[N_V4:N_V5] if r[1] in ('solid', 'piece') and r[4] == NEW]
 assert len(_v5) == 15
 DNUM.update({n: f'D{87 + i}' for i, n in enumerate(_v5)})
 # version 6 (2026-10-30): D102 Fallen Humpty (given 2026-10-29), D103-D105 the solids of #78 in the order of the paper
-_v6 = [r[0] for r in R[N_V5:] if r[1] in ('solid', 'piece') and r[4] == NEW]
+_v6 = [r[0] for r in R[N_V5:N_V6] if r[1] in ('solid', 'piece') and r[4] == NEW]
 assert _v6 == ['Fallen Humpty', 'Golden TI Star', 'Star Halo', 'TI Star core']
 DNUM.update({n: f'D{102 + i}' for i, n in enumerate(_v6)})
+# version 7 (2026-11-01): D106 Cube Pearl, D107 Golden Clasp, D108 Hamlet, D109 Ophelia (DICTO's names and order)
+_v7 = [r[0] for r in R[N_V6:] if r[1] in ('solid', 'piece') and r[4] == NEW]
+assert _v7 == ['Cube Pearl', 'Golden Clasp', 'Hamlet', 'Ophelia']
+DNUM.update({n: f'D{106 + i}' for i, n in enumerate(_v7)})
 for n, d in DNUM.items(): UNUM[n] = UNUM[n] + '; ' + d if n in UNUM else d
 rows = []
 for name, kind, fnum, paper, status, note, slug, pv in R:
-    doi = P[paper] if paper else K
-    rows.append({'name': name, 'universal_number': UNUM.get(name, ''), 'kind': kind, 'finding': fnum, 'paper': ('#' + paper) if paper else '', 'status': status, 'prior_art_or_note': note,
-                 'dicto_doi': 'DICTO DOI: ' + doi, 'in_dataset': 'y' if slug else 'n', 'dataset_file': f'solids/{slug}.json' if slug else '',
+    doi = P[paper] if paper in P else (None if paper == 'SC' else K)
+    rows.append({'name': name, 'universal_number': UNUM.get(name, ''), 'kind': kind, 'finding': fnum, 'paper': 'Star Cores (studies 2026-10-31-star-cores-names)' if paper == 'SC' else ('#' + paper) if paper else '', 'status': status, 'prior_art_or_note': note,
+                 'dicto_doi': ('DICTO DOI: ' + doi) if doi else '', 'in_dataset': 'y' if slug else 'n', 'dataset_file': f'solids/{slug}.json' if slug else '',
                  'in_polyhedraverse': 'y' if pv else 'n', 'polyhedraverse_id': pv})
     assert set(UNUM) <= {r[0] for r in R}
     if slug: assert os.path.exists(os.path.join(ROOT, 'solids', slug + '.json')), slug
 with open(os.path.join(ROOT, 'index.csv'), 'w', newline='') as fh:
-    fh.write('# DICTO named-shape inventory · Created by DICTO · dictospheres.com · CC BY-SA 4.0 · 2026-10-22 (version 2: 2026-10-24; version 3: 2026-10-27; version 4: 2026-10-28; version 5: 2026-10-28; version 6: 2026-10-30)\n')
+    fh.write('# DICTO named-shape inventory · Created by DICTO · dictospheres.com · CC BY-SA 4.0 · 2026-10-22 (version 2: 2026-10-24; version 3: 2026-10-27; version 4: 2026-10-28; version 5: 2026-10-28; version 6: 2026-10-30; version 7: 2026-11-01)\n')
     w = csv.DictWriter(fh, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
 from collections import Counter
 print(len(rows), Counter(r['status'] for r in rows), Counter((r['kind'], r['status']) for r in rows), sum(r['in_dataset'] == 'y' for r in rows))

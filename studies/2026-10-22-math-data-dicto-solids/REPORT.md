@@ -3,6 +3,10 @@
 Created by DICTO · dictospheres.com · CC BY-SA 4.0. Branch `math-data-dataset` (local only, not pushed). Nothing on Zenodo, the
 apps, the papers, DISCOVERIES.md or the website was changed.
 
+## Version 7 (2026-11-01)
+
+Released on DICTO's word (2026-11-01, "all publish ok"). Adds D106 Cube Pearl, D107 Golden Clasp, D108 Hamlet and D109 Ophelia (DICTO's names, 31 October 2026), exact in ℚ(√5), built by `build/build_v7.py` (14/14 build checks) from the study code of studies 2026-10-31-star-cores-names; credit line as version 6. Paper field (agent, 2026-11-01): #80 The Gains of DICTO's Growth Rule (10.5281/zenodo.23822907) for the Cube Pearl (Section 6: the edge-cut cube at s = 3/5, all 32 corners on one sphere) and for Hamlet and Ophelia (Section 6: the OG chain's steps five and six, 452 and 642 corners); the Golden Clasp's depths 1 : 1/φ : 3/4 are in no published paper (#80 says only that the truncated cuboctahedron's faces at other depths close in four steps), so its paper field names the studies and it has no DICTO DOI. #81 Core Cycles restates the edge-cut cube result (s ≤ 3/5) but names none of the four; #85 is not yet published. check.py: one change, the float rounding of a + b√5 (now from a 40-digit √5; Hamlet's and Ophelia's coordinates failed the 1e-14 decimal test only through cancellation in the old float formula); 1569 checks, all pass. index.csv: four rows (163 in all).
+
 ## Version 4 (2026-10-28)
 
 Version 3 is published (Zenodo record 23680729). Version 4 is built on the same branch (local only, not pushed) and is **not released**:

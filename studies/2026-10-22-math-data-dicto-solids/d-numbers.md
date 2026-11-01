@@ -1,6 +1,6 @@
 # DICTO D-numbers
 
-Created by DICTO · dictospheres.com · CC BY-SA 4.0 · math-data dataset version 2, 2026-10-24; version 3, 2026-10-27; version 4, 2026-10-28.
+Created by DICTO · dictospheres.com · CC BY-SA 4.0 · math-data dataset version 2, 2026-10-24; version 3, 2026-10-27; version 4, 2026-10-28; version 6, 2026-10-30; version 7, 2026-11-01.
 
 **The scheme (DICTO 2026-10-24).** A D-number is DICTO's permanent catalogue number: one per new solid or piece of DICTO's, given in the
 order of first publication, used once and never reused (even if a shape is retired or renamed). Numbers given by earlier creators come
@@ -201,6 +201,15 @@ appendix rows (W1–W62, then R1–R124). D1–D86 are unchanged.
 | D103 | Golden TI Star (the truncated icosahedron with its face pyramids turned outwards at 1/φ of their height; the doubling form, at 2×, is the same construction and has no separate number) | solid | – | #78 |
 | D104 | Star Halo (DICTO's name; the hull of the TI Star's 32 tips, a non-Catalan pentakis dodecahedron) | solid | – | #78 |
 | D105 | TI Star core (DICTO's name; the icosahedron truncated at 1/φ³, hexagon edges in the ratio √5) | solid | – | #78 |
+
+## D106–D109: version 7 (2026-11-01), the Star Cores series (DICTO's names, 31 October 2026)
+
+| D | Name | Kind | Code | Paper |
+|---|---|---|---|---|
+| D106 | Cube Pearl (the cube with its edges cut back at depth 3/5, all 32 corners on one sphere) | solid | – | #80 |
+| D107 | Golden Clasp (the truncated cuboctahedron's faces at depths 1 : 1/φ : 3/4) | solid | – | Star Cores (studies 2026-10-31-star-cores-names) |
+| D108 | Hamlet (step 5 of the chain of T from the Ogdoecontahedron) | solid | – | #80 |
+| D109 | Ophelia (step 6 of the same chain) | solid | – | #80 |
 
 No D-number: Alicia (W48), the Unicorn (W58) and the Bandersnatch (W60) are cell-first sections through corner layers, which are in
 Alicia Boole Stott's 1900 series (read for #63 version 3), so they are known shapes; they are in the dataset with DICTO's names.
