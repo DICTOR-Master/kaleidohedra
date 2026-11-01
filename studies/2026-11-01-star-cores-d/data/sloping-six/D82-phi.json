@@ -1,0 +1,54 @@
+{
+ "D": "D82",
+ "name": "Triskelion Tetrahedron",
+ "t": "phi",
+ "sharp_edges": 24,
+ "bound": 142.0786,
+ "steps": [
+  {
+   "step": 1,
+   "volume_over_last": 1.6180339887498956,
+   "volume_over_solid": 1.6180339887498956,
+   "closed": true,
+   "euler": 2,
+   "corners": 26,
+   "faces": 48,
+   "volume_check": -4.440892098500626e-16,
+   "sloping_pairs": 0,
+   "refused": 0,
+   "full": 10,
+   "cut": 0,
+   "flat": 0
+  },
+  {
+   "step": 2,
+   "volume_over_last": 1.0627522471834883,
+   "volume_over_solid": 1.7195692575632147,
+   "closed": true,
+   "euler": 2,
+   "corners": 38,
+   "faces": 72,
+   "volume_check": 1.6653345369377348e-16,
+   "sloping_pairs": 0,
+   "refused": 0,
+   "full": 12,
+   "cut": 0,
+   "flat": 36
+  },
+  {
+   "step": 3,
+   "volume_over_last": 1.0813715404394018,
+   "volume_over_solid": 1.8594932569433718,
+   "closed": true,
+   "euler": 2,
+   "corners": 65,
+   "faces": 126,
+   "volume_check": 1.6375789613221059e-15,
+   "sloping_pairs": 0,
+   "refused": 12,
+   "full": 24,
+   "cut": 3,
+   "flat": 45
+  }
+ ]
+}

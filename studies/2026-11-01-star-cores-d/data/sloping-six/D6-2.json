@@ -1,0 +1,54 @@
+{
+ "D": "D6",
+ "name": "DICTO Dodeca-13 Wedge",
+ "t": "2",
+ "sharp_edges": 12,
+ "bound": 120.0,
+ "steps": [
+  {
+   "step": 1,
+   "volume_over_last": 1.9999999999999991,
+   "volume_over_solid": 1.9999999999999991,
+   "closed": true,
+   "euler": 2,
+   "corners": 14,
+   "faces": 24,
+   "volume_check": 5.551115123125783e-17,
+   "sloping_pairs": 0,
+   "refused": 0,
+   "full": 6,
+   "cut": 0,
+   "flat": 0
+  },
+  {
+   "step": 2,
+   "volume_over_last": 1.7280056647916489,
+   "volume_over_solid": 3.4560113295832964,
+   "closed": true,
+   "euler": 2,
+   "corners": 28,
+   "faces": 52,
+   "volume_check": 1.1102230246251565e-16,
+   "sloping_pairs": 0,
+   "refused": 0,
+   "full": 14,
+   "cut": 0,
+   "flat": 10
+  },
+  {
+   "step": 3,
+   "volume_over_last": 1.4838043618801628,
+   "volume_over_solid": 5.128044685542956,
+   "closed": true,
+   "euler": 2,
+   "corners": 61,
+   "faces": 118,
+   "volume_check": -5.551115123125783e-17,
+   "sloping_pairs": 1,
+   "refused": 6,
+   "full": 12,
+   "cut": 20,
+   "flat": 18
+  }
+ ]
+}

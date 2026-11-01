@@ -139,7 +139,7 @@ def run(variant, t):
         steps.append(describe(V, F, vols[-2], VOL0, k, dict(full=sum(x > 1 - 1e-9 for x in fr), cut=sum(1e-9 <= x <= 1 - 1e-9 for x in fr),
                                                          flat=sum(x < 1e-9 for x in fr), spikes_vs_gain=added - (vols[-1] - vols[-2]))))
     steps[0]['volume_over_last'] = vols[1] / vols[0]; steps[0]['volume_check'] = vols[1] - VOL0 - sum(vol(Q) for Q, _ in pieces) - sum(vol(sp(i, S[i])) for i in caps if S[i] > 1 + 1e-9)
-    return dict(variant=variant, t='phi' if t == phi else '2', steps=steps, step1=snap)
+    return dict(variant=variant, t='phi' if t == phi else '2', steps=steps, step1=snap, final=dict(V=V.tolist(), F=F))
 
 def describe(V, F, vlast, v0, k, extra):
     E = {}

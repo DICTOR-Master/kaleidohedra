@@ -99,3 +99,40 @@ Run on dicto-big-brother (~/kres-tmp/star-cores-d, ~/geom/bin/python, one proces
   measurable); the other three keep growing. The core-turn cycle of the new solids was not computed.
 - Named or new: no known name fits; the conjoined octahedron has outer edges 0.507, 0.764, 0.851, 1 (t = 2), the dipyramid 0.729,
   0.927, 1 (t = 2). Names (DICTO 2026-11-01): MAEDATE (前立, the front crest of a samurai helmet) = the conjoined piece; KUWAGATA (鍬形, the V-shaped helmet horns) = the sloping-base pair; DICTO confirmed this reading of his sloping-base rule. Placeholders Notch Octahedron / Notch Dipyramid withdrawn.
+
+## 2026-11-01 (night) Sloping bases on the six convex pieces; the core turn of Kuwagata's finished star
+
+Conclusion: (1) DICTO's sloping bases at the sharp edges of the six convex eccentric pieces change almost nothing. They act only
+where two full spikes at a sharp edge would overlap, which by the valley law happens first at step three (t = 2, 90° < δ ≤ 120°).
+That happened at 31 valleys; the rule could be used at one (the Dodeca-13 Wedge: step 3 ×1.4838 instead of ×1.4701). No piece stops.
+(2) Kuwagata's finished star (t = 2) is a new solid within this check: 132 corners, 250 faces (240 triangles, 10 quads), symmetry
+order 20 (D5h, Kagemusha's own). It is not similar to any v7 solid (one solid has 132 corners, the TQH, with 140 faces). Its core turn
+(paper B's rule, t = 2) gives a decagonal prism, and the next turn has no core: its tip families lie in planes. So the core-turn
+sequence does not close; it ends after one turn. Maedate's star (still growing) does the same: a decagonal prism, then no core.
+Status: (1) prepared for paper D v2 (paper.html, not published; DICTO reads first); (2) study only.
+
+Run on dicto-big-brother (~/kres-tmp/star-cores-d, ~/geom/bin/python, float64), DICTO Solids v7; one background process per piece and
+t for (1), one for (2), all finished.
+- scripts/sloping_six.py → data/sloping-six/<D>-<t>.json, sloping-six.log. Sharp edges: δ ≤ 120° (t = 2), ≤ 142.0786° (t = φ).
+  At every step, where the two full spikes at a sharp edge overlap, each keeps a pyramid over its whole face, with its apex moved along
+  the line from the face's far corner towards its tip to the valley's bisecting plane. This is used only if the two apexes coincide
+  (to 1e-9) and the pyramids clear the old pieces; otherwise the valley rule as before ("not possible").
+
+| piece | sharp edges t = 2 / φ | used / not possible (step 3, t = 2) | step 3 × (t = 2) | steps 1–3, t = 2 | steps 1–3, t = φ |
+|---|---|---|---|---|---|
+| Lahdeli (D77) | 18 / 18 | 0 / 12 | 1.3346 | 6.154 | 1.971 |
+| Chucky (D80) | 24 / 24 | 0 / 3 | 1.4356 | 5.383 | 2.575 |
+| Triskelion Tetrahedron (D82) | 12 / 24 | 0 / 0 | 1.3859 | 5.350 | 1.859 |
+| Dodeca-13 Wedge (D6) | 12 / 12 | 1 / 6 | 1.4838 (valley rule 1.4701) | 5.128 | 2.793 |
+| Samson (D71) | 12 / 24 | 0 / 0 | 1.2600 | 4.934 | 1.922 |
+| Fang (D81) | 12 / 12 | 0 / 9 | 1.3720 | 4.743 | 2.519 |
+
+  Every other figure equals star-valley.json (the valley rule). At t = φ only the Triskelion Tetrahedron meets overlapping sharp
+  spikes (12 at step 3, not possible). All surfaces closed, Euler 2, volume check ≤ 1e-14. Next test (not made): sloping bases at the
+  blunter valleys, where the rule cuts spikes back.
+- scripts/kuwagata_cycle.py → data/kuwagata-cycle.json, kuwagata-cycle.log (reruns kagemusha_variants.run, which now also returns
+  the final surface). Exact Q(√5) identification is not available: the cut-back heights come from bisection (2^-30). Similarity is
+  tested to 1e-6 by corner and face counts and sorted scaled distances. Kuwagata t = 2: step 3 ×1.0000000001. Core turn 1: 14 face
+  families → 20 corners, 10 quads + 2 decagons (all corners on one sphere; edges 0.2545, 0.2572, 0.9481 at radius 1). Turn 2: 3
+  families, none solid, so no core. Maedate t = 2 (×1.1368 at step 3): 177 corners, 340 faces (330 triangles, 10 quads), order 20;
+  turn 1 → decagonal prism (edges 0.0392, 0.9858, 1.0007), turn 2 → no core.

@@ -1,0 +1,54 @@
+{
+ "D": "D81",
+ "name": "Fang",
+ "t": "2",
+ "sharp_edges": 12,
+ "bound": 120.0,
+ "steps": [
+  {
+   "step": 1,
+   "volume_over_last": 1.9999999999999996,
+   "volume_over_solid": 1.9999999999999996,
+   "closed": true,
+   "euler": 2,
+   "corners": 14,
+   "faces": 24,
+   "volume_check": 3.469446951953614e-17,
+   "sloping_pairs": 0,
+   "refused": 0,
+   "full": 7,
+   "cut": 0,
+   "flat": 0
+  },
+  {
+   "step": 2,
+   "volume_over_last": 1.7285714285714289,
+   "volume_over_solid": 3.4571428571428573,
+   "closed": true,
+   "euler": 2,
+   "corners": 26,
+   "faces": 48,
+   "volume_check": -1.3877787807814457e-17,
+   "sloping_pairs": 0,
+   "refused": 0,
+   "full": 12,
+   "cut": 0,
+   "flat": 12
+  },
+  {
+   "step": 3,
+   "volume_over_last": 1.3720172923936407,
+   "volume_over_solid": 4.7432597822751585,
+   "closed": true,
+   "euler": 2,
+   "corners": 61,
+   "faces": 118,
+   "volume_check": -8.326672684688674e-17,
+   "sloping_pairs": 0,
+   "refused": 9,
+   "full": 0,
+   "cut": 35,
+   "flat": 13
+  }
+ ]
+}

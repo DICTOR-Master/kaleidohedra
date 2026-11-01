@@ -1,0 +1,54 @@
+{
+ "D": "D77",
+ "name": "Lahdeli",
+ "t": "phi",
+ "sharp_edges": 18,
+ "bound": 142.0786,
+ "steps": [
+  {
+   "step": 1,
+   "volume_over_last": 1.6180339887498953,
+   "volume_over_solid": 1.6180339887498953,
+   "closed": true,
+   "euler": 2,
+   "corners": 20,
+   "faces": 36,
+   "volume_check": 1.1102230246251565e-16,
+   "sloping_pairs": 0,
+   "refused": 0,
+   "full": 8,
+   "cut": 0,
+   "flat": 0
+  },
+  {
+   "step": 2,
+   "volume_over_last": 1.1340169599715157,
+   "volume_over_solid": 1.8348779850527417,
+   "closed": true,
+   "euler": 2,
+   "corners": 26,
+   "faces": 48,
+   "volume_check": 1.942890293094024e-16,
+   "sloping_pairs": 0,
+   "refused": 0,
+   "full": 6,
+   "cut": 0,
+   "flat": 30
+  },
+  {
+   "step": 3,
+   "volume_over_last": 1.0742242756551172,
+   "volume_over_solid": 1.9710704744088026,
+   "closed": true,
+   "euler": 2,
+   "corners": 44,
+   "faces": 84,
+   "volume_check": 1.6653345369377348e-16,
+   "sloping_pairs": 0,
+   "refused": 0,
+   "full": 6,
+   "cut": 12,
+   "flat": 30
+  }
+ ]
+}

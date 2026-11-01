@@ -1,0 +1,54 @@
+{
+ "D": "D80",
+ "name": "Chucky",
+ "t": "2",
+ "sharp_edges": 24,
+ "bound": 120.0,
+ "steps": [
+  {
+   "step": 1,
+   "volume_over_last": 2.000000000000001,
+   "volume_over_solid": 2.000000000000001,
+   "closed": true,
+   "euler": 2,
+   "corners": 32,
+   "faces": 60,
+   "volume_check": -1.7763568394002505e-15,
+   "sloping_pairs": 0,
+   "refused": 0,
+   "full": 13,
+   "cut": 0,
+   "flat": 0
+  },
+  {
+   "step": 2,
+   "volume_over_last": 1.874738911944677,
+   "volume_over_solid": 3.749477823889355,
+   "closed": true,
+   "euler": 2,
+   "corners": 86,
+   "faces": 168,
+   "volume_check": 2.220446049250313e-15,
+   "sloping_pairs": 0,
+   "refused": 0,
+   "full": 42,
+   "cut": 12,
+   "flat": 6
+  },
+  {
+   "step": 3,
+   "volume_over_last": 1.4356261033796134,
+   "volume_over_solid": 5.382848238018547,
+   "closed": true,
+   "euler": 2,
+   "corners": 200,
+   "faces": 396,
+   "volume_check": -9.325873406851315e-15,
+   "sloping_pairs": 0,
+   "refused": 3,
+   "full": 24,
+   "cut": 90,
+   "flat": 54
+  }
+ ]
+}

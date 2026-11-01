@@ -1,0 +1,90 @@
+{
+ "sloping": {
+  "volume_steps": [
+   1.9404093387971133,
+   1.3101535714716024,
+   1.0000000001055014
+  ],
+  "corners": 132,
+  "faces_built": 260,
+  "faces": 250,
+  "faces_by_sides": {
+   "3": 240,
+   "4": 10
+  },
+  "symmetry_order": 20,
+  "dataset_same_corner_count": [
+   {
+    "file": "dicto-tqh.json",
+    "faces": 140,
+    "similar": false
+   }
+  ],
+  "core_sequence": [
+   {
+    "turn": 1,
+    "families": 14,
+    "corners": 20,
+    "faces": {
+     "4": 10,
+     "10": 2
+    },
+    "radii": [
+     1.0
+    ],
+    "edges": [
+     0.25454,
+     0.25717,
+     0.94811
+    ]
+   },
+   {
+    "turn": 2,
+    "core": null,
+    "families": 3
+   }
+  ],
+  "core_period": null
+ },
+ "conjoined": {
+  "volume_steps": [
+   2.035389523328324,
+   1.3215906245174187,
+   1.1367957578338694
+  ],
+  "corners": 177,
+  "faces_built": 350,
+  "faces": 340,
+  "faces_by_sides": {
+   "3": 330,
+   "4": 10
+  },
+  "symmetry_order": 20,
+  "dataset_same_corner_count": [],
+  "core_sequence": [
+   {
+    "turn": 1,
+    "families": 18,
+    "corners": 20,
+    "faces": {
+     "4": 10,
+     "10": 2
+    },
+    "radii": [
+     1.0
+    ],
+    "edges": [
+     0.03923,
+     0.98583,
+     1.00073
+    ]
+   },
+   {
+    "turn": 2,
+    "core": null,
+    "families": 3
+   }
+  ],
+  "core_period": null
+ }
+}

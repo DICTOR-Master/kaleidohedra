@@ -1,0 +1,54 @@
+{
+ "D": "D71",
+ "name": "Samson",
+ "t": "2",
+ "sharp_edges": 12,
+ "bound": 120.0,
+ "steps": [
+  {
+   "step": 1,
+   "volume_over_last": 2.0,
+   "volume_over_solid": 2.0,
+   "closed": true,
+   "euler": 2,
+   "corners": 26,
+   "faces": 48,
+   "volume_check": -1.1102230246251565e-16,
+   "sloping_pairs": 0,
+   "refused": 0,
+   "full": 10,
+   "cut": 0,
+   "flat": 0
+  },
+  {
+   "step": 2,
+   "volume_over_last": 1.9580726197603158,
+   "volume_over_solid": 3.9161452395206315,
+   "closed": true,
+   "euler": 2,
+   "corners": 74,
+   "faces": 144,
+   "volume_check": -6.661338147750939e-16,
+   "sloping_pairs": 0,
+   "refused": 0,
+   "full": 24,
+   "cut": 24,
+   "flat": 0
+  },
+  {
+   "step": 3,
+   "volume_over_last": 1.2600148649048488,
+   "volume_over_solid": 4.934401214922355,
+   "closed": true,
+   "euler": 2,
+   "corners": 134,
+   "faces": 264,
+   "volume_check": -3.3306690738754696e-16,
+   "sloping_pairs": 0,
+   "refused": 0,
+   "full": 24,
+   "cut": 36,
+   "flat": 84
+  }
+ ]
+}
