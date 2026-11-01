@@ -6,11 +6,14 @@ DS, OUT = sys.argv[1], sys.argv[2]   # usage: pv_solids.py <DICTO Solids v7 soli
 def load(n):
     d = json.load(open(f'{DS}/dicto-{n}.json'))
     return d, np.array([[float(x) for x in v['decimal']] for v in d['vertices']]), d['faces']
+DISPLAY_R = 1.1
 R = lambda x: round(float(x), 12) + 0.0
 RAW = {}
 for key, n, nm in [('DICTO_CUBE_PEARL', 'cube-pearl', 'Cube Pearl'), ('DICTO_GOLDEN_CLASP', 'golden-clasp', 'Golden Clasp'),
                    ('DICTO_HAMLET', 'hamlet', 'Hamlet'), ('DICTO_OPHELIA', 'ophelia', 'Ophelia')]:
     d, V, F = load(n); assert d['name'] == nm
+    if key in ('DICTO_HAMLET', 'DICTO_OPHELIA'):   # shown at circumradius 1.1, the size of Cube Pearl and Golden Clasp (DICTO 2026-11-02)
+        V = V * (DISPLAY_R / np.linalg.norm(V, axis=1).max())
     RAW[key] = dict(name=nm, vertices=[[R(x) for x in v] for v in V], faces=F)
 # Kagemusha (D86, file dicto-shadow-17) about its corner centroid, its five notches (reflex edges)
 d, V0, F0 = load('shadow-17'); V0 = V0 - V0.mean(0); t = 2.0

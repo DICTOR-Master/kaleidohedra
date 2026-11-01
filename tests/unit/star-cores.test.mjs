@@ -3,10 +3,12 @@
 // 2026-10-30-star-cores / 2026-11-01-star-cores-book (star-cores.json, star-cores-new4.json).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { POLYHEDRA, STAR_CORES_SOLID_IDS, KAGEMUSHA_CREST_IDS } from '../../src/krp-core/src/polyhedra/index.js';
-import { STAR_CORES_SHAPES } from '../../src/app/star-cores-data.js';
-import { starCoresChain, coreOf, positionsOf, phaseAt, sameShape, findStarCoresShape } from '../../src/app/star-cores-geometry.js';
-import { solidOf } from '../../src/app/star-step-geometry.js';
+import { POLYHEDRA, STAR_CORES_SOLID_IDS, KAGEMUSHA_CREST_IDS, STAR_CORES_SHAPE_IDS, STAR_CORES_LIST } from '../../src/krp-core/src/polyhedra/index.js';
+import { starCoresChain, coreOf, positionsOf, phaseAt, sameShape, findStarCoresShape, starCounts } from '../../src/app/star-cores-geometry.js';
+import { solidOf, tipsOf } from '../../src/app/star-step-geometry.js';
+
+const STAR_CORES_SHAPES = STAR_CORES_LIST;
+const specOf = (s) => POLYHEDRA[s.id];
 
 const volume = (s) => s.faces.reduce((t, f) => { for (let k = 1; k + 1 < f.length; k++) { const [a, b, c] = [s.vertices[f[0]], s.vertices[f[k]], s.vertices[f[k + 1]]]; t += a[0] * (b[1] * c[2] - b[2] * c[1]) - a[1] * (b[0] * c[2] - b[2] * c[0]) + a[2] * (b[0] * c[1] - b[1] * c[0]); } return t; }, 0) / 6;
 // closed and oriented: every directed edge once, its reverse once
@@ -23,8 +25,9 @@ test('the four Star Cores solids: names, f-vectors, faces by sides and volumes o
   const want = {
     DICTO_CUBE_PEARL: ['Cube Pearl', 32, 48, 18, { 4: 6, 6: 12 }, 424 / 125],
     DICTO_GOLDEN_CLASP: ['Golden Clasp', 48, 72, 26, { 4: 12, 6: 8, 8: 6 }, -613 / 2 + (279 / 2) * Math.sqrt(5)],
-    DICTO_HAMLET: ['Hamlet', 452, 720, 270, { 3: 60, 4: 30, 5: 120, 9: 60 }, 1.742494068294532],
-    DICTO_OPHELIA: ['Ophelia', 642, 1080, 440, { 4: 300, 6: 120, 12: 20 }, 1.799658753384913],
+    // Hamlet and Ophelia shown at circumradius 1.1 (dataset circumradii 0.77626…, 0.76639…): the volume scales by the cube
+    DICTO_HAMLET: ['Hamlet', 452, 720, 270, { 3: 60, 4: 30, 5: 120, 9: 60 }, 1.742494068294532 * (1.1 / 0.7762610742062294) ** 3],
+    DICTO_OPHELIA: ['Ophelia', 642, 1080, 440, { 4: 300, 6: 120, 12: 20 }, 1.799658753384913 * (1.1 / 0.7663939105162879) ** 3],
   };
   for (const [id, [name, v, e, f, by, vol]] of Object.entries(want)) {
     const s = POLYHEDRA[id];
@@ -58,13 +61,18 @@ test("Kagemusha's crests: MAEDATE an octahedron, KUWAGATA a dipyramid, volumes o
   }
 });
 
-test('the Star Cores world: 52 convex shapes, D-numbers unique, newest first, the four new ones taken from Polyhedraverse', () => {
+test('the Star Cores shapes: all 52 in Polyhedraverse, D-numbers unique, newest first, each convex (★ Star step), 42 new at circumradius 1.1', () => {
   assert.equal(STAR_CORES_SHAPES.length, 52);
   const D = STAR_CORES_SHAPES.map((s) => Number(s.D.slice(1)));
   assert.equal(new Set(D).size, 52);
   assert.deepEqual(D, [...D].sort((a, b) => b - a));
-  for (const s of STAR_CORES_SHAPES) assert.ok(solidOf(s.pv ? POLYHEDRA[s.pv] : s), `${s.D} ${s.name}`);
-  assert.deepEqual(STAR_CORES_SHAPES.filter((s) => s.pv).map((s) => s.pv), ['DICTO_OPHELIA', 'DICTO_HAMLET', 'DICTO_GOLDEN_CLASP', 'DICTO_CUBE_PEARL']);
+  for (const s of STAR_CORES_SHAPES) { assert.ok(POLYHEDRA[s.id], `${s.D} in PV`); assert.ok(solidOf(specOf(s)), `${s.D} ${s.name}`); }
+  assert.equal(new Set(STAR_CORES_SHAPES.map((s) => s.id)).size, 52, 'one PV id each');
+  // the ones PV had already keep their ids (one name per shape)
+  assert.deepEqual(STAR_CORES_SHAPES.filter((s) => !STAR_CORES_SHAPE_IDS.includes(s.id)).map((s) => s.id), ['DICTO_OPHELIA', 'DICTO_HAMLET', 'DICTO_GOLDEN_CLASP', 'DICTO_CUBE_PEARL', 'DICTO_SAMSON', 'DICTO_DODECA13_NEEDLE', 'DICTO_DODECA13_WEDGE', 'DICTO_SKEWED_ED_18', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_RD']);
+  assert.equal(STAR_CORES_SHAPE_IDS.length, 42);
+  for (const id of STAR_CORES_SHAPE_IDS) { const r = Math.max(...POLYHEDRA[id].vertices.map((v) => Math.hypot(...v))); assert.ok(Math.abs(r - 1.1) < 1e-9, `${id} circumradius ${r}`); assert.ok(closed(POLYHEDRA[id]), `${id} closed`); }
+  assert.equal(POLYHEDRA.DICTO_SC_OGDOECONTAHEDRON.faces.length, 80);
   assert.equal(findStarCoresShape(STAR_CORES_SHAPES, 'd106').name, 'Cube Pearl');
   assert.equal(findStarCoresShape(STAR_CORES_SHAPES, 'ti_star_core').D, 'D105');
 });
@@ -78,7 +86,7 @@ const STUDY = {
 };
 test('the core of the turn and of the core agree with the Star Cores study, at t = 2 and t = φ', () => {
   for (const [D, [c1, c2]] of Object.entries(STUDY)) {
-    const s = findStarCoresShape(STAR_CORES_SHAPES, D), spec = s.pv ? POLYHEDRA[s.pv] : s;
+    const s = findStarCoresShape(STAR_CORES_SHAPES, D), spec = specOf(s);
     for (const tk of ['2', 'phi']) {
       const ch = starCoresChain(spec, tk), T = ch.turns;
       const got1 = T[0].core ? [T[0].core.vertices.length, T[0].core.faces.length] : null;
@@ -91,14 +99,14 @@ test('the core of the turn and of the core agree with the Star Cores study, at t
 
 test('period two (the book): the cores of Cube Pearl and Golden Clasp from turn 1, of Hamlet and Ophelia from turn 2; the GTI and the TI Star core return', () => {
   for (const [D, from] of [['D106', 1], ['D107', 1], ['D108', 2], ['D109', 2]]) {
-    const T = starCoresChain(POLYHEDRA[findStarCoresShape(STAR_CORES_SHAPES, D).pv], '2').turns;
+    const T = starCoresChain(specOf(findStarCoresShape(STAR_CORES_SHAPES, D)), '2').turns;
     assert.equal(T.length, 5);
     assert.ok(sameShape(T[from + 2].solid, T[from].solid), `${D}: turn ${from + 3} = turn ${from + 1}`);
     assert.ok(!sameShape(T[from + 1].solid, T[from].solid), `${D}: period two, not one`);
     if (from === 2) assert.ok(!sameShape(T[3].solid, T[1].solid), `${D}: not yet at turn 2`);
   }
   for (const D of ['D40', 'D105']) {
-    const s = findStarCoresShape(STAR_CORES_SHAPES, D), S = solidOf(s), C = coreOf(S, 2);
+    const s = specOf(findStarCoresShape(STAR_CORES_SHAPES, D)), S = solidOf(s), C = coreOf(S, 2);
     assert.ok(!sameShape(C, S), `${D}: the core is another solid`);
     const T = starCoresChain(s, 'phi').turns;
     assert.ok(sameShape(T[2].solid, T[0].solid), `${D}: the core's core is the solid again`);
@@ -107,7 +115,7 @@ test('period two (the book): the cores of Cube Pearl and Golden Clasp from turn 
 
 test('the core is the common part of the family hulls: every core corner inside every family hull, on at least three of their planes', () => {
   for (const D of ['D106', 'D28', 'D45']) {
-    const s = findStarCoresShape(STAR_CORES_SHAPES, D), solid = solidOf(s.pv ? POLYHEDRA[s.pv] : s);
+    const solid = solidOf(specOf(findStarCoresShape(STAR_CORES_SHAPES, D)));
     const core = coreOf(solid, 2);
     const tips = solid.planes.map(({ n, c }) => n.map((x) => 2 * c * x));
     // each core corner is at most as far out as the farthest tip of every family in every direction it lies in (a hull test by support)
@@ -125,7 +133,14 @@ test('the slider: four phases a turn, ending on the last core, or on the halo of
   assert.equal(positionsOf(cp), 19);
   assert.deepEqual(phaseAt(0), { turn: 0, phase: 'solid' });
   assert.deepEqual(phaseAt(7), { turn: 1, phase: 'core' });
-  const fang = starCoresChain(findStarCoresShape(STAR_CORES_SHAPES, 'D81'), '2');
+  const fang = starCoresChain(specOf(findStarCoresShape(STAR_CORES_SHAPES, 'D81')), '2');
   assert.equal(fang.turns.length, 1); assert.equal(positionsOf(fang), 2);
   assert.equal(phaseAt(positionsOf(fang)).phase, 'halo');
+});
+
+test("the star's own counts: corners = the solid's + one tip per face; the GTI's star is the Golden TI Star's 92 corners, 180 faces", () => {
+  for (const [id, v, f] of [['DICTO_CUBE_PEARL', 50, 96], ['DICTO_GOLDEN_CLASP', 74, 144], ['DICTO_SC_GTI', 92, 180], ['DICTO_SC_OGDOECONTAHEDRON', 182, 360]]) {
+    const S = solidOf(POLYHEDRA[id]);
+    for (const r of ['doubling', 'golden']) assert.deepEqual(starCounts(S, tipsOf(S, r)), { v, f }, `${id} ${r}`);
+  }
 });

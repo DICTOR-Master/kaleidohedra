@@ -162,3 +162,17 @@ export function sameShape(a, b) {
 
 /** A shape of the list by D-number (D109) or key (ophelia, ti_star_core), any case. */
 export const findStarCoresShape = (shapes, id) => shapes.find((s) => s.D.toLowerCase() === String(id).toLowerCase() || s.key === String(id).toLowerCase().replaceAll('_', '-'));
+
+/** The star's own corners and faces (the solid with its spikes): the solid's corners and one tip per face; the spikes' triangles,
+ *  two neighbouring spikes' triangles over a shared edge counted once where they lie in one plane. */
+export function starCounts(solid, tips) {
+  const tol = 1e-9 * solid.R, owner = new Map();
+  solid.faces.forEach((f, fi) => f.forEach((a, i) => owner.set(`${a},${f[(i + 1) % f.length]}`, fi)));
+  let faces = solid.faces.reduce((n, f) => n + f.length, 0);
+  for (const [a, b] of solid.edges) {
+    const i = owner.get(`${a},${b}`), j = owner.get(`${b},${a}`), A = solid.vertices[a], B = solid.vertices[b];
+    const n = cross(sub(B, A), sub(tips[i], A)), l = norm(n);
+    if (l > 0 && Math.abs(dot(n, sub(tips[j], A))) / l < tol) faces -= 1;
+  }
+  return { v: solid.vertices.length + tips.length, f: faces };
+}

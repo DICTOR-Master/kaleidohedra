@@ -1,6 +1,6 @@
 // DICTO's four Star Cores solids and Kagemusha's crests in Polyhedraverse, and the Star Cores world in Kaleidohedra (DICTO 2026-11-02),
 // through the real UI on a phone (390 × 844) and an iPad (820 × 1180), both touch:
-// - Polyhedraverse door, DICTO's pieces: Cube Pearl, Golden Clasp, Hamlet, Ophelia first in DICTO's own section; a "Kagemusha's crests"
+// - Polyhedraverse door, DICTO's pieces (and the 42 Star Cores shapes new to PV in their own section, two of them built): Cube Pearl, Golden Clasp, Hamlet, Ophelia first in DICTO's own section; a "Kagemusha's crests"
 //   section after it with Kagemusha + MAEDATE, Kagemusha + KUWAGATA, MAEDATE, KUWAGATA; each card's details, Build and a tap on the outline place that one piece (★ Star step
 //   offered on the four convex solids);
 // - Kaleidohedra door: the Star Cores card right after HexOct opens the world in Kaleidohedra; the shape list (52, newest first), the
@@ -21,6 +21,8 @@ const DEVICES = {
 const P = '#worldstarCores-panel';
 const NEW4 = ['DICTO_CUBE_PEARL', 'DICTO_GOLDEN_CLASP', 'DICTO_HAMLET', 'DICTO_OPHELIA'];
 const CRESTS = ['KAGEMUSHA_MAEDATE', 'KAGEMUSHA_KUWAGATA', 'DICTO_MAEDATE', 'DICTO_KUWAGATA'];
+// two of the 42 Star Cores shapes new to PV (the section "Star Cores shapes", newest first: the TI Star core D105 first)
+const SC_PICK = ['DICTO_SC_TI_STAR_CORE', 'DICTO_SC_OGDOECONTAHEDRON'];
 const b = await chromium.launch();
 let checks = 0;
 for (const dev of Object.keys(DEVICES)) {
@@ -59,10 +61,14 @@ for (const dev of Object.keys(DEVICES)) {
   assert.deepEqual(own.slice(0, 4), NEW4, `${dev}: the four new solids first in DICTO's own`);
   const sections = await page.locator('.poly-section').evaluateAll((els) => els.map((e) => e.dataset.section));
   assert.equal(sections[sections.indexOf('dicto') + 1], 'crests', `${dev}: the crests right after DICTO's own`);
+  assert.equal(sections[sections.indexOf('dicto') + 2], 'starCores', `${dev}: then the Star Cores shapes`);
+  const sc = await page.locator('.poly-section[data-section="starCores"] [data-action]').evaluateAll((els) => els.map((e) => e.dataset.action.replace('tool:polyShape:', '')));
+  assert.equal(sc.length, 42, `${dev}: 42 Star Cores shapes`); assert.equal(sc[0], 'DICTO_SC_TI_STAR_CORE', `${dev}: newest first`);
+  assert.equal((await page.textContent('.poly-section[data-section="starCores"] .poly-section-title')).trim(), 'Star Cores shapes');
   assert.equal((await page.textContent('.poly-section[data-section="crests"] .poly-section-title')).trim(), "Kagemusha's crests");
   const crests = await page.locator('.poly-section[data-section="crests"] [data-action]').evaluateAll((els) => els.map((e) => e.dataset.action.replace('tool:polyShape:', '')));
   assert.deepEqual(crests, CRESTS, `${dev}: the crests`); checks += 3;
-  for (const id of [...NEW4, ...CRESTS]) {
+  for (const id of [...NEW4, ...CRESTS, ...SC_PICK]) {
     if (id !== NEW4[0]) await openPieces();
     const card = page.locator(`[data-action="tool:polyShape:${id}"]`).first();
     await card.scrollIntoViewIfNeeded();
@@ -138,6 +144,7 @@ for (const dev of Object.keys(DEVICES)) {
     assert.ok(st.glass >= glassMin, `${dev} ${phase}: see-through helpers (${st.glass})`);
     const cap = await page.textContent(`${P} .sc-caption`);
     assert.match(cap, new RegExp(`Turn 1 · ${phase[0].toUpperCase()}${phase.slice(1)}`), `${dev}: caption ${cap}`);
+    if (phase === 'star') { assert.deepEqual(st.star, { v: 50, f: 96 }); assert.match(cap, /50 corners, 96 faces/, `${dev}: the star's own counts`); }
     if (phase === 'core') { assert.deepEqual(st.core, { corners: 24, faces: 14 }); assert.match(cap, /24 corners, 14 faces/); }
     await page.screenshot({ path: `${SH}/${dev}-sc-${phase}.png` });
     checks++;

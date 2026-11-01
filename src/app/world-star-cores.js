@@ -1,5 +1,5 @@
 // The Star Cores world (DICTO 2026-11-02; DICTO's Star Cores papers #79–#81 and the Star Cores book): any of the 52 convex Star
-// Cores shapes (star-cores-data.js; the four of 31 October 2026 from Polyhedraverse's catalogue) given the star core treatment one
+// Cores shapes (all in Polyhedraverse's catalogue, krp-core star-cores-shapes.js STAR_CORES_LIST) given the star core treatment one
 // step at a time on a slider: the solid, its star (every face's pyramid from the centre turned outwards, tip t × the foot, t = 2 or
 // φ), the halo (the hull of the tips, see-through), the core of the turn (the common part of the face families' tip hulls), and on
 // through the chain, each core scaled back to the solid's size as the next solid. Helpers (the star, at the core) are coloured glass,
@@ -13,18 +13,15 @@ import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey } from './site.js';
-import { POLYHEDRA } from '../krp-core/src/polyhedra/index.js';
-import { starCoresChain, positionsOf, phaseAt, sameShape, findStarCoresShape } from './star-cores-geometry.js';
+import { POLYHEDRA, STAR_CORES_LIST } from '../krp-core/src/polyhedra/index.js';
+import { starCoresChain, positionsOf, phaseAt, sameShape, findStarCoresShape, starCounts } from './star-cores-geometry.js';
 
 const SOLID = 0xd9a520, SPIKE = 0x8f5bd8, CORE = 0x2bb7c4, HALO = 0xcfe0ff;
 const EDGE = 0x0b1220, HALO_EDGE = 0xe8eefc;
 const HALO_GLASS = 0.24, HELPER_GLASS = 0.3;
 const DEFAULT_SHAPE = 'D109';
 const lang = () => getSettings().language;
-let shapesPromise = null;
-/** The shapes, loaded on first use (≈190 kB): [{ D, key, name, symmetry, vertices, faces } or { …, pv }]. */
-export const loadStarCoresShapes = () => (shapesPromise ??= import('./star-cores-data.js').then((m) => m.STAR_CORES_SHAPES));
-const specOf = (s) => (s.pv ? POLYHEDRA[s.pv] : s);
+const specOf = (s) => POLYHEDRA[s.id];
 
 export function createStarCoresWorld({ scene, fitView = () => {} }) {
   const STORAGE_KEY = storageKey('star-cores-world');
@@ -39,7 +36,7 @@ export function createStarCoresWorld({ scene, fitView = () => {} }) {
     if (Number.isInteger(d?.pos) && d.pos >= 0) view.pos = d.pos;
   } catch { /* corrupt or blocked storage: defaults */ }
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(view)); } catch { /* best-effort */ } };
-  let active = false, skeleton = false, opacity = 1, shapes = null, chain = null, chainKey = '', radius = 1;
+  let active = false, skeleton = false, opacity = 1, shapes = STAR_CORES_LIST, chain = null, chainKey = '', radius = 1;
 
   const solidMat = (color) => new THREE.MeshStandardMaterial({ color, flatShading: true, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1, roughness: 0.5, metalness: 0.1 });
   const glassMat = (color, o) => { const m = new THREE.MeshStandardMaterial({ color, flatShading: true, side: THREE.DoubleSide, transparent: true, opacity: o, depthWrite: false, roughness: 0.4 }); m.userData.hollow = true; return m; };
@@ -132,11 +129,11 @@ export function createStarCoresWorld({ scene, fitView = () => {} }) {
     if (!active) return;
     const L = lang();
     panel.querySelector('.sc-shape-label').textContent = t('sc.shape', L);
-    if (shapes && listed !== L) {
+    if (listed !== L) {
       listed = L;
       select.innerHTML = shapes.map((s) => `<option value="${s.D}">${s.D} · ${s.name}</option>`).join('');
     }
-    if (shapes) select.value = view.shape;
+    select.value = view.shape;
     panel.querySelectorAll('[data-sc-t]').forEach((b) => { const on = b.dataset.scT === view.t; b.textContent = t(`sc.t.${b.dataset.scT}`, L); b.classList.toggle('active', on); b.setAttribute('aria-pressed', String(on)); });
     panel.querySelector('.sc-step-label').textContent = t('sc.step', L);
     const max = positionsOf(chain);
@@ -145,14 +142,14 @@ export function createStarCoresWorld({ scene, fitView = () => {} }) {
     // the slider only when there is a chain to step through
     panel.querySelector('.sc-step-row').hidden = !chain;
     panel.querySelector('.sc-caption').textContent = caption(L);
-    panel.querySelector('.sc-note').textContent = t(chain || !shapes ? 'sc.note' : 'sc.notConvex', L);
+    panel.querySelector('.sc-note').textContent = t(chain ? 'sc.note' : 'sc.notConvex', L);
   }
   function caption(L) {
-    if (!shapes) return t('sc.loading', L);
     if (!chain) return '';
     const { turn, phase } = phaseAt(view.pos), T = chain.turns[turn];
-    const S = phase === 'core' ? T.core : phase === 'halo' ? T.step.halo : T.solid;
-    const parts = [t('sc.turn', L, { n: turn + 1 }), t(`sc.phase.${phase}`, L), t('sc.counts', L, { v: S.vertices.length, f: S.faces.length })];
+    // the counts of what the step shows: the solid, the star itself (solid + spikes), the halo, the core
+    const c = phase === 'star' ? starCounts(T.solid, T.step.tips) : (({ vertices, faces }) => ({ v: vertices.length, f: faces.length }))(phase === 'core' ? T.core : phase === 'halo' ? T.step.halo : T.solid);
+    const parts = [t('sc.turn', L, { n: turn + 1 }), t(`sc.phase.${phase}`, L), t('sc.counts', L, c)];
     if (phase === 'core') {
       if (sameShape(T.core, T.solid)) parts.push(t('sc.period1', L));
       else if (turn >= 1 && sameShape(T.core, chain.turns[turn - 1].solid)) parts.push(t('sc.period2', L, { n: turn }));
@@ -161,7 +158,6 @@ export function createStarCoresWorld({ scene, fitView = () => {} }) {
     return parts.join(' · ');
   }
   function rebuild() {
-    if (!shapes) return;
     const s = findStarCoresShape(shapes, view.shape) ?? findStarCoresShape(shapes, DEFAULT_SHAPE);
     view.shape = s.D;
     const key = `${s.D}|${view.t}`;
@@ -193,7 +189,7 @@ export function createStarCoresWorld({ scene, fitView = () => {} }) {
       if (tk === '2' || tk?.toLowerCase() === 'phi') view.t = tk.toLowerCase();
       view.pos = Number.isInteger(Number(k)) && Number(k) >= 0 ? Number(k) : 0;
       save();
-      if (active && shapes) show();
+      if (active) show();
     },
     setActive(on) {
       if (on === active) return;
@@ -201,8 +197,7 @@ export function createStarCoresWorld({ scene, fitView = () => {} }) {
       group.visible = on;
       if (!on) { panel.classList.remove('visible'); clear(); return; }
       renderPanel();
-      if (shapes) { show(); return; }
-      loadStarCoresShapes().then((list) => { shapes = list; show(); });
+      show();
     },
     resetView() { Object.assign(view, { shape: DEFAULT_SHAPE, t: '2', pos: 0 }); save(); if (active) show(); },
     setSkeleton(on) { if (on !== skeleton) { skeleton = on; if (active) draw(); } },
@@ -213,10 +208,10 @@ export function createStarCoresWorld({ scene, fitView = () => {} }) {
     clear() {},
     /** For the browser tests (?probe): the shape, t, slider position and what is drawn. */
     probe() {
-      if (!chain) return { shape: view.shape, t: view.t, pos: view.pos, loaded: !!shapes, chain: false };
+      if (!chain) return { shape: view.shape, t: view.t, pos: view.pos, chain: false };
       const { turn, phase } = phaseAt(view.pos), T = chain.turns[turn];
-      return { shape: view.shape, t: view.t, pos: view.pos, max: positionsOf(chain), loaded: true, chain: true, turn, phase, turns: chain.turns.length,
-        corners: T.solid.vertices.length, faces: T.solid.faces.length, haloCorners: T.step.halo.vertices.length, core: T.core ? { corners: T.core.vertices.length, faces: T.core.faces.length } : null,
+      return { shape: view.shape, t: view.t, pos: view.pos, max: positionsOf(chain), chain: true, turn, phase, turns: chain.turns.length,
+        corners: T.solid.vertices.length, faces: T.solid.faces.length, star: starCounts(T.solid, T.step.tips), haloCorners: T.step.halo.vertices.length, core: T.core ? { corners: T.core.vertices.length, faces: T.core.faces.length } : null,
         glass: group.children.filter((c) => c.isMesh && c.material.transparent && c.material.userData.hollow).length, meshes: group.children.filter((c) => c.isMesh).length,
         lineWidths: lineMats.map((m) => m.linewidth), radius };
     },

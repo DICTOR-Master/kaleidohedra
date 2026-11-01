@@ -56,7 +56,7 @@ import { t, tn, tFor } from './i18n.js';
 import { polyShapeEdges, polyShapeName } from './poly-shapes.js';
 import { FAMILY_META, familyIds, familiesFor, pairPartners } from '../krp-core/src/polyhedra/families.js';
 import { TRANSITIONAL_IDS } from '../krp-core/src/polyhedra/transitional.js';
-import { POLYHEDRA, KITS13, KIT13_ADDITION_IDS, mosseriSadocTile, REULEAUX_ADDITION_IDS, STAR_CORES_SOLID_IDS, KAGEMUSHA_CREST_IDS } from '../krp-core/src/polyhedra/index.js';
+import { POLYHEDRA, KITS13, KIT13_ADDITION_IDS, mosseriSadocTile, REULEAUX_ADDITION_IDS, STAR_CORES_SOLID_IDS, KAGEMUSHA_CREST_IDS, STAR_CORES_SHAPE_IDS } from '../krp-core/src/polyhedra/index.js';
 import { hexoctPreviewEdges } from './hexoct-geometry.js';
 import { isConvex } from '../krp-core/src/assembly/faceRegistration.js';
 import { favourites, recent, isFavourite, toggleFavourite } from './poly-prefs.js';
@@ -675,8 +675,9 @@ const POLY_FAMILIES = ['DICTO_TRANSITIONAL', 'REULEAUX_PLATONIC', 'PLATONIC', 'A
 // Polyhedraverse pieces gathered from across its families.
 const DICTO_WORK = new Set(['starCores', 'whiteQueen', 'bloom', 'stackings', 'hexoct', 'dictonic', 'globalWeb', 'platonicMix', 'reuleaux', 'aristotle', 'up', 'octetTruss', 'vajrayana', 'ocdStella', 'doubleVision', 'cycles', 'theaetetus', 'chains', 'thirteens', 'octet', 'octetBuild', 'icosa', 'dodeca', 'roofFold', 'studies', 'stellaJewel', 'sunstar', 'targets', 'shells', 'golden', 'dictofcc', 'djTetra', 'djOcta', 'djOctet', 'djKagome', 'ssTetra', 'ssOcta', 'ssOctet', 'ssKagome', 'djHexa']);
 const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
-// DICTO's newest first (DICTO 2026-11-02): the four Star Cores solids D106–D109 (named 2026-10-31), then Kagemusha's crests in their own section.
-const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: [...STAR_CORES_SOLID_IDS, ...KAGEMUSHA_CREST_IDS, 'DICTO_ICOSAXES', 'DICTO_UNBORN_AXES', 'DICTO_LOTUS_JEWEL_AXES', 'DICTO_DODECAXES', 'DICTO_SAMSON', 'DICTO_DELILAH', 'TETRAPOD_FIVE_TO', 'TETRAPOD_FOUR_RD', 'ANTONIUS', 'ICOSA_FACE_PYRAMID', 'PENTA_CLEO', 'CLEO_SPHERE_POCKET', 'HEX_AKTIS', 'DELTOID_AKTIS', 'OTT_CLEO_ICOS', 'OTT_TRIANGLE_RAY', 'OTT_RHOMBIC_RAY', 'DICTO_EDGE_ROOF', 'DICTO_UNBORN', 'DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER', ...KIT13_ADDITION_IDS] };
+// DICTO's newest first (DICTO 2026-11-02): the four Star Cores solids D106–D109 (named 2026-10-31), then Kagemusha's crests and the other
+// Star Cores shapes not in PV before (D105 down to D22, newest first), each in its own section.
+const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: [...STAR_CORES_SOLID_IDS, ...KAGEMUSHA_CREST_IDS, ...STAR_CORES_SHAPE_IDS, 'DICTO_ICOSAXES', 'DICTO_UNBORN_AXES', 'DICTO_LOTUS_JEWEL_AXES', 'DICTO_DODECAXES', 'DICTO_SAMSON', 'DICTO_DELILAH', 'TETRAPOD_FIVE_TO', 'TETRAPOD_FOUR_RD', 'ANTONIUS', 'ICOSA_FACE_PYRAMID', 'PENTA_CLEO', 'CLEO_SPHERE_POCKET', 'HEX_AKTIS', 'DELTOID_AKTIS', 'OTT_CLEO_ICOS', 'OTT_TRIANGLE_RAY', 'OTT_RHOMBIC_RAY', 'DICTO_EDGE_ROOF', 'DICTO_UNBORN', 'DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER', ...KIT13_ADDITION_IDS] };
 export const DICTO_PIECE_IDS = DICTO_POLY.ids;
 // The shape a face was tapped on, while picking: its space-filling partners come first (as the old site).
 let partnerIds = [];
@@ -1153,8 +1154,9 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     if (key === 'BRIDGES_3D') return BRIDGE_SECTIONS.map((sec) => ({ id: sec.id, title: t(`pv.bridges.section.${sec.id}`, L), ids: sec.ids }));
     if (key === 'POLYTOPES_4D') return SYMMETRIES_4D.map((g) => ({ id: g, title: t('polytope.symmetry', L, { group: g }), ids: POLYTOPES_4D.filter((p) => p.symmetry === g).map((p) => p.id) }));
     // DICTO's pieces, then the 13s' kit pieces (DICTO 2026-10-13) in their own section.
-    // Kagemusha's crests (DICTO 2026-11-01): MAEDATE and KUWAGATA, the notch pieces, each also on Kagemusha, in a section after DICTO's own.
-    if (key === DICTO_POLY.key) return [{ id: 'dicto', title: t('wiz.poly.dictoOwn', L), ids: DICTO_POLY.ids.filter((id) => !KIT13_ADDITION_IDS.includes(id) && !KAGEMUSHA_CREST_IDS.includes(id)) }, { id: 'crests', title: t('wiz.poly.crests', L), ids: KAGEMUSHA_CREST_IDS }, { id: 'kits13', title: t('wiz.poly.kitPieces', L), ids: KIT13_ADDITION_IDS }];
+    // Kagemusha's crests (DICTO 2026-11-01): MAEDATE and KUWAGATA, the notch pieces, each also on Kagemusha, in a section after DICTO's own;
+    // then the Star Cores shapes (DICTO 2026-11-02, every shape in PV first), each with the ★ Star step.
+    if (key === DICTO_POLY.key) return [{ id: 'dicto', title: t('wiz.poly.dictoOwn', L), ids: DICTO_POLY.ids.filter((id) => !KIT13_ADDITION_IDS.includes(id) && !KAGEMUSHA_CREST_IDS.includes(id) && !STAR_CORES_SHAPE_IDS.includes(id)) }, { id: 'crests', title: t('wiz.poly.crests', L), ids: KAGEMUSHA_CREST_IDS }, { id: 'starCores', title: t('wiz.poly.starCores', L), ids: STAR_CORES_SHAPE_IDS }, { id: 'kits13', title: t('wiz.poly.kitPieces', L), ids: KIT13_ADDITION_IDS }];
     if (key === 'SPACE_FILLING_PAIRS') return SPACE_FILLING_PAIR_LIST.map((p) => ({ id: p.ids.join('+'), title: p.honeycomb, ids: p.ids, pair: true }));
     return null;
   }
