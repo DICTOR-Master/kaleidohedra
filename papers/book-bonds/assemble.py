@@ -6,7 +6,7 @@
 # move to one appendix by chapter; figures are copied into figures/ch<n>/ and renumbered per chapter (Figure 3 -> Figure 5.3); paper
 # numbers link to the chapter when the paper is in the book, else to its DICTO DOI. Front matter, epilogue and About from front.html,
 # epilogue.html, about.html (by hand). pages.json (written after a first print, from the PDF) fills the page numbers of the contents.
-# Output: paper.html, typeset on dicto-big-brother with ../print.mjs:  node print.mjs book-bonds <pdf> "DICTONIC Bonds" "–" "–"
+# The front cover is page 1 of the open-access PDF; KDP=1 drops it (as book-golden-cycle). Output: paper.html, typeset on dicto-big-brother with ../print.mjs:  node print.mjs book-bonds <pdf> "DICTONIC Bonds" "–" "–"
 import re, os, shutil, html, json
 HERE = os.path.dirname(os.path.abspath(__file__)); P = os.path.dirname(HERE)
 # Order: DICTO's own sequence of 26 October 2026 (the series building to the Rule of Halves); part names are placeholders.
@@ -150,7 +150,7 @@ doc = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>DICTONIC Bonds: from the Octet to the Rule of Halves</title>
 <link rel="stylesheet" href="../paper.css"><style>{css}</style></head><body>
 <img class="watermark" src="../dicto-logo.png" alt="">
-{front.replace('__TOC__', tochtml)}
+{(re.sub(r'<div class="coverpage".*?</div>\n', '', front, count=1, flags=re.S) if os.environ.get('KDP') else front).replace('__TOC__', tochtml)}
 {''.join(chapters)}
 <section class="epi" id="epilogue">{epi}</section>
 <section class="app" id="app"><h1 class="chapter">Appendix. Sources by chapter</h1><p>Each chapter's own list of sources checked, its data and code, and its references, as published with its paper.</p>{''.join(sources)}</section>
