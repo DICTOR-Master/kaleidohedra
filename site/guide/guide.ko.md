@@ -305,6 +305,10 @@ DICTO의 Polyhedraverse 칸 맨 위에서 **검색**으로 이름, 가족, 면 �
 
 **◌ DICTO Vacuus**(DICTO 2026-11-03)는 입체를 중심에서 봅니다. 중심이 모든 면의 평면 안쪽에 있는 입체(모든 볼록 입체와 스텔라 옥탕굴라 같은 별 모양 입체)를 하나 놓고 스트립의 **◌ DICTO Vacuus**를 누르세요. 다른 입체에는 버튼이 없습니다. 다섯 가지 보기: **피라미드**(중심에서 각 면으로), **분해**(슬라이더로 벌림), **별**(각 피라미드를 면 바깥으로 뒤집음, 안쪽은 빔), **시트**(중심과 각 모서리의 핀; 같은 색은 같은 모양), **스트럿**(중심에서 꼭짓점까지의 막대, 길이별 색). 피라미드에서 Kaleidohedra의 Aristotle's Pyramid로, 그곳에서 다시 돌아오는 링크가 있습니다. [polyhedraverse.dictospheres.com/?open=vacuus:CUBE](https://polyhedraverse.dictospheres.com/?open=vacuus:CUBE)로 바로 엽니다(보기는 `:exploded`, `:star`, `:sheets`, `:struts`를 붙여서).
 
+## 황금 절단
+
+**✂ 황금 절단**(논문 #88)은 정다면체의 모든 꼭짓점을 같은 깊이 x로 자릅니다. 정십이면체, 정이십면체, 정육면체, 정사면체, 정팔면체 중 하나를 놓고 스트립의 **✂ 황금 절단**을 탭하세요. 다른 입체에는 버튼이 없습니다. 각 꼭짓점은 금색 정다각형이, 각 면은 입체 색의 깎은 다각형이 됩니다. 슬라이더를 움직이거나 멈춤점을 탭하세요: **작은 황금 절단**(원래 변이 김), **아르키메데스**(모든 변이 같음), **큰 황금 절단**(꼭짓점 변이 김). 두 황금 멈춤점에서 긴/짧은 비는 φ이고 이름이 표시됩니다(정팔면체에서는 DICTO의 **Unborn Axes**와 **Icosaxes**). **입체**로 다섯 가지를 바꿉니다. 링크 [polyhedraverse.dictospheres.com/?open=goldencut:DODECAHEDRON](https://polyhedraverse.dictospheres.com/?open=goldencut:DODECAHEDRON)로 바로 엽니다(`:lesser`, `:archimedean`, `:greater`를 붙여서).
+
 ## DICTO의 조각
 
 **스타 코어 모양**(최신, DICTO 2026-11-02): DICTO가 2026년 10월 31일에 이름 붙인 네 입체 **Cube Pearl**(D106), **Golden Clasp**(D107), **Hamlet**(D108), **Ophelia**(D109)가 DICTO의 조각 맨 앞에 있습니다. PV에 아직 없던 나머지 스타 코어 모양(TI Star core, Star Halo, Alice 가족, OG와 그 사슬, GTI 등 모두 42개)은 별도 구역에 최신순으로 이어집니다. 모두 ★ Star step이 있습니다. **Kagemusha의 투구 장식**: 첫 별 단계에서 Kagemusha의 다섯 홈을 채우는 **MAEDATE**와 **KUWAGATA**, 단독으로도 Kagemusha에 붙인 모양으로도 있습니다(Kagemusha는 금색, 장식은 청록).

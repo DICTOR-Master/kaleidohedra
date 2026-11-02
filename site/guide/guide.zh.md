@@ -305,6 +305,10 @@ Polyhedraverse 是肖像画廊：按家族排列的每一个形状，一次一�
 
 **◌ DICTO Vacuus**（DICTO 2026-11-03）从中心观看一个立体。放一个中心位于所有面所在平面内侧的立体（所有凸立体，以及星形八面体这样的星状立体），点条带中的 **◌ DICTO Vacuus**；其他立体没有这个按钮。五种视图：**棱锥**（从中心到每个面的棱锥）、**分解**（滑块把它们分开）、**星形**（每个棱锥翻到面外，内部是空的）、**薄片**（中心到每条棱的鳍；同色即同形）和 **支杆**（从中心到顶点的杆，按长度着色）。棱锥视图链接到 Kaleidohedra 的 Aristotle's Pyramid，那里也链接回来。链接 [polyhedraverse.dictospheres.com/?open=vacuus:CUBE](https://polyhedraverse.dictospheres.com/?open=vacuus:CUBE) 可直接打开（加 `:exploded`、`:star`、`:sheets` 或 `:struts` 选视图）。
 
+## 黄金截角
+
+**✂ 黄金截角**（论文 #88）把正多面体的每个顶点截去同样深度 x。放一个正十二面体、正二十面体、立方体、正四面体或正八面体，点条带中的 **✂ 黄金截角**；其他立体没有这个按钮。每个顶点变成金色正多边形，每个面变成立体颜色的截角多边形。拖动滑块，或点停靠点：**小黄金截角**（原边长）、**阿基米德**（所有边相等）、**大黄金截角**（顶点边长）；在两个黄金停靠点，长/短为 φ，并显示名称（正八面体上是 DICTO 的 **Unborn Axes** 和 **Icosaxes**）。**立体** 在五种之间切换。链接 [polyhedraverse.dictospheres.com/?open=goldencut:DODECAHEDRON](https://polyhedraverse.dictospheres.com/?open=goldencut:DODECAHEDRON) 可直接打开（加 `:lesser`、`:archimedean` 或 `:greater`）。
+
 ## DICTO 的部件
 
 **星核形体**（最新，DICTO 2026-11-02）：DICTO 于 2026 年 10 月 31 日命名的四个立体 **Cube Pearl**（D106）、**Golden Clasp**（D107）、**Hamlet**（D108）和 **Ophelia**（D109）排在 DICTO 的部件最前；PV 尚未收录的其他星核形体（TI Star core、Star Halo、Alice 一族、OG 及其链、GTI 等，共 42 个）按从新到旧列在单独的分区。每个都有 ★ Star step。**Kagemusha 的盔饰**：在第一步星中填满 Kagemusha 五个凹口的 **MAEDATE** 和 **KUWAGATA**，既可单独，也可装在 Kagemusha 上（Kagemusha 为金色，盔饰为青绿色）。

@@ -959,6 +959,18 @@
     .vac-chip { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
     .vac-chip i { display: inline-block; width: 14px; height: 14px; border-radius: 3px; border: 1px solid rgba(255, 255, 255, 0.5); }
     .vac-apart-row { display: flex; flex-direction: column; align-self: stretch; gap: 2px; color: var(--accent); font: 600 var(--text-s) var(--font-ui); text-align: center; }
+    /* ✂ Golden Cut (golden-cut-lens.js, paper #88): the name at a stop in gold, the three stops a row of full touch targets (the golden
+       ones edged gold), the cut slider the full width of the panel, lowest, with each stop marked on its track under the thumb. */
+    .poly-star .poly-gcut-go { border-color: rgba(var(--accent-rgb), 0.7); }
+    .gcut-name { max-width: 100%; text-align: center; color: #f2c14e; font: 700 var(--text-m, 16px) var(--font-ui); }
+    .poly-gcut [aria-pressed="true"] { background: rgba(var(--accent-rgb), 0.3); border-color: var(--accent-strong); }
+    .gcut-stops .gcut-stop-lesser, .gcut-stops .gcut-stop-greater { border-color: rgba(217, 165, 32, 0.8); }
+    .gcut-stops .gcut-stop[aria-pressed="true"] { background: rgba(217, 165, 32, 0.35); border-color: #f2c14e; color: #fff; }
+    .gcut-slider-row { display: flex; flex-direction: column; align-self: stretch; gap: 2px; color: var(--accent); font: 600 var(--text-s) var(--font-ui); text-align: center; }
+    .gcut-track { position: relative; display: block; }
+    .gcut-track input[type=range] { position: relative; z-index: 1; display: block; }
+    .gcut-tick { position: absolute; top: 50%; width: 4px; height: 30px; margin-top: -15px; transform: translateX(-50%); border-radius: 2px; background: #f2c14e; pointer-events: none; z-index: 0; }
+    .gcut-tick-archimedean { background: var(--accent); }
     .poly-shape.pinned { box-shadow: inset 0 -3px 0 var(--accent-strong); }
     /* The running build name (D3b), where 1D's toggle sits (never shown together): one line, a tap for
        all of it; clear of the tools column on the right. */

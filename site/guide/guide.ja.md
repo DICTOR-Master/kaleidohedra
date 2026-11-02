@@ -305,6 +305,10 @@ DICTO の Polyhedraverse の欄の上部では、**検索** で名前、ファ�
 
 **◌ DICTO Vacuus**（DICTO 2026-11-03）は立体をその中心から見ます。中心がすべての面の平面の内側にある立体（凸な立体すべてと、ステラ・オクタンギュラのような星形のもの）を 1 つ置き、ストリップの **◌ DICTO Vacuus** をタップします。それ以外の立体にはボタンが出ません。見方は 5 つ：**ピラミッド**（中心から各面へのピラミッド）、**分解**（スライダーで離す）、**スター**（各ピラミッドを面の外へ折り返し、内側は空）、**シート**（中心と各辺のフィン。同じ色は同じ形）、**ストラット**（中心から頂点への棒、長さで色分け）。ピラミッドから Kaleidohedra の Aristotle's Pyramid へ、そこから戻るリンクもあります。[polyhedraverse.dictospheres.com/?open=vacuus:CUBE](https://polyhedraverse.dictospheres.com/?open=vacuus:CUBE) で直接開きます（見方は `:exploded`、`:star`、`:sheets`、`:struts` を付けて）。
 
+## 黄金カット
+
+**✂ 黄金カット**（論文 #88）は正多面体の各頂点を同じ深さ x で切ります。正十二面体、正二十面体、立方体、正四面体、正八面体のどれかを 1 つ置き、ストリップの **✂ 黄金カット** をタップします。ほかの立体にはボタンが出ません。各頂点は金色の正多角形に、各面は立体の色の切頂多角形になります。スライダーを動かすか、止まる点をタップします：**小黄金カット**（元の辺が長い）、**アルキメデス**（すべての辺が等しい）、**大黄金カット**（頂点側の辺が長い）。二つの黄金の点では長/短が φ になり、その名前が出ます（正八面体では DICTO の **Unborn Axes** と **Icosaxes**）。**立体** で 5 つを切り替えます。[polyhedraverse.dictospheres.com/?open=goldencut:DODECAHEDRON](https://polyhedraverse.dictospheres.com/?open=goldencut:DODECAHEDRON) で直接開きます（`:lesser`、`:archimedean`、`:greater` を付けて）。
+
 ## DICTO のピース
 
 **スターコアの形**（最新、DICTO 2026-11-02）：2026 年 10 月 31 日に DICTO が名づけた四つの立体、**Cube Pearl**（D106）、**Golden Clasp**（D107）、**Hamlet**（D108）、**Ophelia**（D109）が DICTO の部品の先頭にあります。PV にまだなかったほかのスターコアの形（TI Star core、Star Halo、Alice の一族、OG とその連鎖、GTI など全 42 個）は、専用の区分に新しい順で続きます。どれにも ★ Star step があります。**Kagemusha の兜飾り**：最初の星のステップで Kagemusha の五つの切れ込みを埋める **MAEDATE** と **KUWAGATA**。単独でも、Kagemusha に付けた形でもあります（Kagemusha は金、兜飾りは青緑）。

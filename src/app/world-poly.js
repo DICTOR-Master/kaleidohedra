@@ -42,6 +42,8 @@ import { RULES as STAR_RULES, solidOf as starSolidOf } from './star-step-geometr
 import { createVacuusLens } from './vacuus-lens.js';
 import { VACUUS_VIEWS, vacuusSolidOf } from './vacuus-geometry.js';
 import { SOLID_KEYS as ARISTOTLE_SOLIDS, SOLID_IDS as ARISTOTLE_IDS } from './aristotle-geometry.js';
+import { createGoldenCutLens } from './golden-cut-lens.js';
+import { GCUT_SOLIDS, GCUT_IDS, GCUT_STOPS, X_MIN as GCUT_X_MIN, X_MAX as GCUT_X_MAX, stopX as gcutStopX, gcutKeyOfId } from './golden-cut-geometry.js';
 
 export { polyShapeEdges, polyShapeName } from './poly-shapes.js';
 
@@ -297,7 +299,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     return vacOk(nodes[0].shape) ? nodes[0] : null;
   }
   function vacStart(n, v = 'pyramids') {
-    starStep.reset();
+    starStep.reset(); gcut.reset(); gcutNode = null;
     vacShape = n.shape;
     return vacuus.start(POLYHEDRA[n.shape], colorOf(n.shape, n.material, familiesFor(n.shape)[0]), n.transform, v);
   }
@@ -319,6 +321,59 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       + (legend.length ? `<div class="vac-legend">${chips}</div>` : '')
       + (v === 'pyramids' ? `<div class="poly-golden poly-star"><button type="button" data-vac-aristotle>${t('poly.vac.aristotle', L)}</button></div>` : '')
       + (v === 'exploded' ? `<label class="vac-apart-row"><span>${t('poly.vac.apart', L)}</span><input type="range" min="0" max="100" step="1" value="${vacuus.apart}" data-vac-apart aria-label="${t('poly.vac.apart', L)}"></label>` : '');
+  }
+  // ---- ✂ Golden Cut (DICTO, paper #88; golden-cut-lens.js): the Platonic solid on show cut the same depth x at every corner, a big
+  // slider for x with three marked stops (Lesser Golden Cut, Archimedean, Greater Golden Cut; for the octahedron DICTO's Unborn Axes
+  // and Icosaxes). Only for the five Platonic solids (else no button). Like DICTO Vacuus, its drawing stands in for the build.
+  const gcut = createGoldenCutLens({ scene, look: () => ({ skeleton, opacity }) });
+  let gcutNode = null;   // the piece (or outline) the cut is drawn on
+  /** The solid the cut works on: the build's one piece when it is one of the five Platonic solids, else null. */
+  function gcutTarget() {
+    if (!active || spherical || view.rcp || kitOn() || nodes.length !== 1) return null;
+    return gcutKeyOfId(nodes[0].shape) ? nodes[0] : null;
+  }
+  function gcutStart(n, at = 'greater') {
+    starStep.reset(); vacuus.reset(); vacShape = null;
+    gcutNode = n;
+    return gcut.start(gcutKeyOfId(n.shape), colorOf(n.shape, n.material, familiesFor(n.shape)[0]), n.transform, at);
+  }
+  function gcutReset() {
+    if (!gcut.on) return;
+    gcut.reset(); gcutNode = null;
+    rebuild(); renderPanel();
+  }
+  const gcutEntry = (L) => `<div class="poly-golden poly-star"><button type="button" class="poly-gcut-go" data-gcut title="${t('poly.gcut.title', L)}">${t('poly.gcut', L)}</button></div>`;
+  // The stops' marks on the slider's track: the thumb's centre runs from half a thumb in from each end (THUMB px wide).
+  const GCUT_THUMB = 40;
+  const gcutFrac = (x) => (x - GCUT_X_MIN) / (GCUT_X_MAX - GCUT_X_MIN);
+  const gcutStopLabel = (s, L) => (gcut.key === 'octahedron' && s !== 'archimedean' ? t(`poly.gcut.oct.${s}`, L) : t(`poly.gcut.stop.${s}`, L));
+  function gcutRow(L) {
+    const key = gcut.key, now = gcut.stop;
+    // one wrapping row: the solid, the three stops, Close (on a wide screen one line, so the panel stays low); the name and numbers above
+    return `<div class="gcut-name" data-gcut-name>${gcut.title(L)}</div>`
+      + `<div class="poly-star-caption" data-gcut-caption>${gcut.caption(L)}</div>`
+      + `<div class="poly-golden poly-star poly-gcut gcut-stops" role="group" aria-label="${t('poly.gcut.title', L)}"><label>${t('poly.gcut.solid', L)} <select data-gcut-solid>${GCUT_SOLIDS.map((k) => `<option value="${k}"${k === key ? ' selected' : ''}>${t(`ar.solid.${k}`, L)}</option>`).join('')}</select></label>${GCUT_STOPS.map((s) => `<button type="button" class="gcut-stop gcut-stop-${s}" data-gcut-stop="${s}" aria-pressed="${s === now}">${gcutStopLabel(s, L)}</button>`).join('')}<button type="button" data-gcut-off title="${t('poly.gcut.close.title', L)}">${t('poly.vac.close', L)}</button></div>`
+      + `<label class="gcut-slider-row"><span class="gcut-track"><input type="range" min="${GCUT_X_MIN}" max="${GCUT_X_MAX}" step="any" value="${gcut.x}" data-gcut-x aria-label="${t('poly.gcut.x', L)}">${GCUT_STOPS.map((s) => `<i class="gcut-tick gcut-tick-${s}" aria-hidden="true" style="left:calc(${GCUT_THUMB / 2}px + ${gcutFrac(gcutStopX(key, s)).toFixed(5)} * (100% - ${GCUT_THUMB}px))"></i>`).join('')}</span></label>`;
+  }
+  // The solid picker (the five in D·I·C·T·O order): the same stop (or the same x between stops) on another of the five, where the
+  // cut stood; the header names it.
+  function gcutSolid(key) {
+    if (!gcut.on || !GCUT_IDS[key] || key === gcut.key) return;
+    const at = gcut.stop ?? gcut.x, id = GCUT_IDS[key];
+    const n = nodes.length === 1 && nodes[0].shape === id ? nodes[0] : { ...gcutNode, id: 'outline', shape: id, material: undefined };
+    gcutStart(n, at);
+    const h = document.getElementById('hud-world-title');
+    if (h) h.textContent = t(`ar.solid.${key}`, lang());
+    rebuild(); renderPanel();
+    fitView?.(gcut.reach * 1.12, true);
+  }
+  // While the slider is dragged only the readouts change (the panel stays, so the drag goes on).
+  function gcutReadouts() {
+    const L = lang(), now = gcut.stop;
+    const nm = stripBody.querySelector('[data-gcut-name]'), cap = stripBody.querySelector('[data-gcut-caption]');
+    if (nm) nm.textContent = gcut.title(L);
+    if (cap) cap.textContent = gcut.caption(L);
+    stripBody.querySelectorAll('[data-gcut-stop]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.gcutStop === now)));
   }
   // ---- what comes next (DICTO 2026-10-09: "more visual clue help what comes next", "visible
   // patterning"): for pieces with a known pattern (krp-core HINT_RULES), the free spots next to the
@@ -528,8 +583,9 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     clearGroup();
     starStep.setVisible(active);
     vacuus.setVisible(active);
+    gcut.setVisible(active);
     if (!active) return;
-    if (starStep.on || vacuus.on) return; // the star step's or the lens's own drawing stands in for the build (no tap targets)
+    if (starStep.on || vacuus.on || gcut.on) return; // the star step's or a lens's own drawing stands in for the build (no tap targets)
     if (nodes.length && spherical) {
       for (const n of nodes) {
         const { centre, R } = sphereOf(n.shape);
@@ -809,7 +865,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     commit();
   }
 
-  function commit() { if (starStep.on) starStep.reset(); if (vacuus.on) { vacuus.reset(); vacShape = null; } save(); rebuild(); onChange(); renderPanel(); renderName(); }
+  function commit() { if (starStep.on) starStep.reset(); if (vacuus.on) { vacuus.reset(); vacShape = null; } if (gcut.on) { gcut.reset(); gcutNode = null; } save(); rebuild(); onChange(); renderPanel(); renderName(); }
   function handleTap(hit, mode) {
     const kind = hit.object.userData.poly;
     if (kind === 'outline') {
@@ -1033,29 +1089,35 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     const hasBestRow = active && !spherical && nodes.length > 0;
     const hasStar = !!starTarget() || (active && starStep.on);
     const hasVac = !!vacTarget() || (active && vacuus.on);
-    const show = active && !spherical && (selection || chosen || isGolden || hasParts || hasRcp || hasHintRow || hasBestRow || hasStar || hasVac);
+    const hasGcut = !!gcutTarget() || (active && gcut.on);
+    const show = active && !spherical && (selection || chosen || isGolden || hasParts || hasRcp || hasHintRow || hasBestRow || hasStar || hasVac || hasGcut);
     panel.classList.toggle('visible', Boolean(show));
     if (!show) return;
     const L = lang();
     // While the star step runs, its row alone: the build's helpers don't apply to the star.
     if (starStep.on) { stripBody.innerHTML = starRow(L); return; }
     if (vacuus.on) { stripBody.innerHTML = vacRow(L); return; }
+    if (gcut.on) { stripBody.innerHTML = gcutRow(L); return; }
     const offer = selection ? queue().filter((id) => fitsAt(id, selection)) : chosen ? [chosen] : [];
     stripBody.innerHTML = `<div class="poly-shapes">${offer.map((id) => { const pinned = isFavourite(id); return `<button type="button" class="poly-shape${id === chosen ? ' chosen' : ''}${pinned ? ' pinned' : ''}" data-shape="${id}" title="${polyShapeName(id).replaceAll('_', ' ')} · ${t(pinned ? 'poly.unpinHint' : 'poly.pinHint', L)}"><canvas></canvas></button>`; }).join('')}
       ${selection ? `<button type="button" class="poly-more" data-more>${t('poly.more', L)}</button>` : ''}
       ${selection && selection.face != null && FOURD.has(selection.node.shape) ? `<button type="button" class="poly-more" data-duoprism>${t('poly.duoprism', L)}</button>` : ''}
       ${selection && REWRITE_TARGET[selection.node.shape] ? `<button type="button" class="poly-more" data-transform>${t('poly.transform', L, { name: polyShapeName(REWRITE_TARGET[selection.node.shape]).replaceAll('_', ' ') })}</button>` : ''}
-      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${kitOn() ? `<div class="poly-golden poly-kit-row"><span>${t(kitDone() ? 'poly.kit.done' : 'poly.kit', L, { name: KITS13[view.kit].label })}</span>${kitCells() ? `<button type="button" data-cells aria-pressed="${!!view.cells}" title="${t('poly.cells.title', L)}">${t('poly.cells', L)}</button>` : ''}${kitIco() ? `<button type="button" data-pacioli aria-pressed="${!!view.pacioli}" title="${t('poly.pacioli.title', L)}">${t('poly.pacioli', L)}</button>` : ''}<button type="button" data-kit-off title="${t('poly.kit.off', L)}">✕</button></div>` : ''}${hasHintRow || hasBestRow ? `<div class="poly-golden">${hasHintRow ? `<button type="button" data-hints aria-pressed="${view.hints && !view.bestFits}" title="${t('poly.hints.title', L)}">${t('poly.hints', L)}</button>` : ''}${hasBestRow ? `<button type="button" data-best aria-pressed="${view.bestFits}" title="${t('poly.best.title', L)}">${t('poly.best', L)}</button>` : ''}</div>${hasBestRow && view.bestFits ? bestRow(L) : ''}` : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.filter((v) => v === 'solid' || nodes.some((n) => PART_PICK[n.shape]?.[v])).map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}${hasStar ? starRow(L) : ''}${hasVac ? vacEntry(L) : ''}`;
+      ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${kitOn() ? `<div class="poly-golden poly-kit-row"><span>${t(kitDone() ? 'poly.kit.done' : 'poly.kit', L, { name: KITS13[view.kit].label })}</span>${kitCells() ? `<button type="button" data-cells aria-pressed="${!!view.cells}" title="${t('poly.cells.title', L)}">${t('poly.cells', L)}</button>` : ''}${kitIco() ? `<button type="button" data-pacioli aria-pressed="${!!view.pacioli}" title="${t('poly.pacioli.title', L)}">${t('poly.pacioli', L)}</button>` : ''}<button type="button" data-kit-off title="${t('poly.kit.off', L)}">✕</button></div>` : ''}${hasHintRow || hasBestRow ? `<div class="poly-golden">${hasHintRow ? `<button type="button" data-hints aria-pressed="${view.hints && !view.bestFits}" title="${t('poly.hints.title', L)}">${t('poly.hints', L)}</button>` : ''}${hasBestRow ? `<button type="button" data-best aria-pressed="${view.bestFits}" title="${t('poly.best.title', L)}">${t('poly.best', L)}</button>` : ''}</div>${hasBestRow && view.bestFits ? bestRow(L) : ''}` : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.filter((v) => v === 'solid' || nodes.some((n) => PART_PICK[n.shape]?.[v])).map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}${hasStar ? starRow(L) : ''}${hasVac ? vacEntry(L) : ''}${hasGcut ? gcutEntry(L) : ''}`;
     stripBody.querySelectorAll('.poly-shape canvas').forEach((cv) => disposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 34)));
   }
   panel.addEventListener('change', (e) => {
     if (e.target.matches('[data-golden-recipe]')) recipe = Number(e.target.value);
     if (e.target.matches('[data-star-rule]')) { starStep.setRule(e.target.value); renderPanel(); }
+    if (e.target.matches('[data-gcut-solid]')) gcutSolid(e.target.value);
     if (e.target.matches('[data-parts]')) { view.parts = e.target.value; save(); rebuild(); }
     if (e.target.matches('[data-rcp-target]')) { view.rcp.target = e.target.value; view.rcp.n = 1; view.rcp.open = true; save(); rebuild(); renderPanel(); }
   });
   // DICTO Vacuus's Apart slider: the drawing follows it (the panel stays, so the drag goes on).
   // The frame follows it (the camera eases after the slider; each new call takes over from the last, so it glides rather than jumps).
+  // Golden Cut's slider: the cut follows it live, landing on a stop near one; the thumb then sits on the stop.
+  panel.addEventListener('input', (e) => { if (e.target.matches('[data-gcut-x]')) { gcut.setX(e.target.value); gcutReadouts(); } });
+  panel.addEventListener('change', (e) => { if (e.target.matches('[data-gcut-x]') && gcut.stop) e.target.value = gcut.x; });
   panel.addEventListener('input', (e) => { if (e.target.matches('[data-vac-apart]')) { vacuus.setApart(e.target.value); fitView?.(vacuus.reach * 1.12, true); } });
   // Long-press a shape in the strip to pin it (always offered) or unpin it.
   let pressTimer = 0, pressed = false;
@@ -1078,7 +1140,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     if (pressed) { pressed = false; return; } // that was a long-press (pin), not a tap
     if ('clear' in b.dataset) { chosen = null; renderPanel(); return; }
     if ('star' in b.dataset) {
-      if (!starStep.on) { const n = starTarget(); if (!n) return; vacuus.reset(); vacShape = null; if (!starStart(n)) return; selection = null; rebuild(); }
+      if (!starStep.on) { const n = starTarget(); if (!n) return; vacuus.reset(); vacShape = null; gcut.reset(); gcutNode = null; if (!starStart(n)) return; selection = null; rebuild(); }
       starStep.advance();
       renderPanel();
       return;
@@ -1087,6 +1149,9 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     if ('vac' in b.dataset) { const n = vacTarget(); if (!n || !vacStart(n)) return; selection = null; rebuild(); renderPanel(); fitView?.(vacuus.reach * 1.12, true); return; }
     if (b.dataset.vacView) { vacuus.setView(b.dataset.vacView); renderPanel(); fitView?.(vacuus.reach * 1.12, true); return; }   // each view framed on its own shape
     if ('vacOff' in b.dataset) { vacReset(); return; }
+    if ('gcut' in b.dataset) { const n = gcutTarget(); if (!n || !gcutStart(n)) return; selection = null; rebuild(); renderPanel(); fitView?.(gcut.reach * 1.12, true); return; }
+    if (b.dataset.gcutStop) { gcut.setStop(b.dataset.gcutStop); const s = stripBody.querySelector('[data-gcut-x]'); if (s) s.value = gcut.x; gcutReadouts(); return; }
+    if ('gcutOff' in b.dataset) { gcutReset(); return; }
     if ('vacAristotle' in b.dataset) { openAction(`tool:aristotleWorld:${aristotleKey()}`); return; }
     if ('starLayer' in b.dataset) { starStep.toggleLayer(); renderPanel(); return; }
     if (rcpAct(b)) return;
@@ -1146,13 +1211,13 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       renderPanel();
       renderName();
     },
-    setSkeleton(on) { skeleton = on; if (active) { rebuild(); starStep.redraw(); vacuus.redraw(); } },
+    setSkeleton(on) { skeleton = on; if (active) { rebuild(); starStep.redraw(); vacuus.redraw(); gcut.redraw(); } },
     /** Soft applies to the pieces as they are: not to Skeleton, Spherical or a 4D cell build (their own drawing). */
     softApplies: () => active && !skeleton && !spherical && !view.rcp,
-    setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) { rebuild(); starStep.redraw(); vacuus.redraw(); } } },
+    setTranslucent(o) { if (o !== opacity) { opacity = o; if (active) { rebuild(); starStep.redraw(); vacuus.redraw(); gcut.redraw(); } } },
     setLatticeView() { /* no lattice here: shapes are placed freely */ },
     refresh() { if (active) rebuild(); },
-    setSpherical(on, scale = 1) { if (on === spherical && scale === sphereScale) return; spherical = on; sphereScale = scale; const wasStar = starStep.on || vacuus.on; if (on) { starStep.reset(); vacuus.reset(); vacShape = null; } if (active) { rebuild(); if (wasStar) renderPanel(); } },
+    setSpherical(on, scale = 1) { if (on === spherical && scale === sphereScale) return; spherical = on; sphereScale = scale; const wasStar = starStep.on || vacuus.on || gcut.on; if (on) { starStep.reset(); vacuus.reset(); vacShape = null; gcut.reset(); gcutNode = null; } if (active) { rebuild(); if (wasStar) renderPanel(); } },
     /** DICTO's shape list: build with this shape. An empty world shows its outline to tap; with a
      *  build, it becomes the chosen shape, going straight onto each face tapped. */
     startWith(id) {
@@ -1201,7 +1266,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     openStarStep(id, k = 0) {
       if (!active || !starOk(id)) return false;
       const n = nodes.length === 1 && nodes[0].shape === id ? nodes[0] : { ...outlineNode(), shape: id };
-      vacuus.reset(); vacShape = null;
+      vacuus.reset(); vacShape = null; gcut.reset(); gcutNode = null;
       if (!starStart(n)) return false;
       selection = null;
       for (let i = 0; i < k; i++) starStep.advance(true);
@@ -1224,11 +1289,24 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
       return true;
     },
     vacuusProbe: () => vacuus.probe(),
+    /** ?open=goldencut:<SOLID>[:<stop>]: the ✂ Golden Cut on Platonic solid `id` (a registry id) at `stop`. The build is left as it is;
+     *  an empty world shows `id`'s outline once the cut is closed. */
+    openGoldenCut(id, stop = 'greater') {
+      if (!active || !gcutKeyOfId(id)) return false;
+      const n = nodes.length === 1 && nodes[0].shape === id ? nodes[0] : { ...outlineNode(), shape: id };
+      if (!gcutStart(n, stop)) return false;
+      selection = null;
+      fittedRadius = gcut.reach;
+      fitView?.(gcut.reach * 1.12, true);
+      rebuild(); renderPanel();
+      return true;
+    },
+    goldenCutProbe: () => gcut.probe(),
     get shape() { return view.shape; },
     get isEmpty() { return nodes.length === 0; },
     clear() { nodes = []; connections = []; selection = null; chosen = null; commit(); },
     snapshot: toJSON,
-    restore(json) { starStep.reset(); vacuus.reset(); vacShape = null; setFromJSON(json); selection = null; save(); rebuild(); renderPanel(); renderName(); onChange(); },
+    restore(json) { starStep.reset(); vacuus.reset(); vacShape = null; gcut.reset(); gcutNode = null; setFromJSON(json); selection = null; save(); rebuild(); renderPanel(); renderName(); onChange(); },
     toJSON,
   };
 }

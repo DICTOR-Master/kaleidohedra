@@ -52,6 +52,7 @@ import { loadWorld, createWorldStore } from './core/worldstate-core.js';
 import { createBuildController } from './core/build.js';
 import { getSettings, updateSettings, onSettingsChange, QUALITY_PIXEL_RATIO_FACTOR, QUALITY_LEVELS_ASCENDING } from './app/settings.js';
 import { t, tFor, LANG_ORDER, LANG_META } from './app/i18n.js';
+import { GCUT_IDS, gcutKeyOf } from './app/golden-cut-geometry.js';
 import { playPlaceSound, playRemoveSound, playMenuSound } from './app/sfx.js';
 import { createWheelPickers, PAINT_ICON } from './app/wheel-pickers.js';
 import { MARKS, iconFrame, swatchMark, PACKING_ICONS } from './app/wheel-icons.js';
@@ -4259,6 +4260,7 @@ async function init() {
   // Open on an entry goes through the DICTO wizard (created further down), as a tap there would.
   let openFromAlmanac = null;
   let openVacuusLens = null; // DICTO Vacuus on a Polyhedraverse solid (?open=vacuus:<id>[:<view>], and Aristotle's Pyramid's link)
+  let openGoldenCut = null; // ✂ Golden Cut on a Platonic solid (?open=goldencut:<SOLID>[:<stop>], paper #88's View in app)
   const almanac = createAlmanac({ onOpen: (entry, label) => openFromAlmanac?.(entry, label) });
   // 📖 the Almanac's own button (its wheel face went with the wheels, DICTO 2026-10-08), last in the
   // tools column: at the bottom it met the world panels and, on a phone, the paint slot.
@@ -4958,6 +4960,20 @@ async function init() {
       dimensionWizard.go(action);
       setTimeout(start, 100);
     };
+    // ✂ Golden Cut (DICTO, paper #88): Polyhedraverse on Platonic solid `key` (golden-cut-geometry.js), cut at `stop`; started as the
+    // lens above is, once the shape's world has opened.
+    openGoldenCut = (key, stop = 'greater') => {
+      const id = GCUT_IDS[key];
+      if (!id || !POLYHEDRA_ALL[id]) return;
+      const action = `tool:polyShape:${id}`;
+      const start = (tries = 0) => {
+        if (!(worldNow?.action === action && worldNow.keys && !worldNow.asking) && tries < 3000) { setTimeout(() => start(tries + 1), 100); return; }
+        if (!polyWorld?.openGoldenCut(id, stop)) return;
+        document.getElementById('hud-world-title').textContent = t(`ar.solid.${key}`, getSettings().language);
+      };
+      dimensionWizard.go(action);
+      setTimeout(start, 100);
+    };
     openShapePicker = dimensionWizard.openShapePicker;
 
     // The app's entry gate: every load opens the DICTO wizard on the app you came in by -- unless the address names a
@@ -4967,6 +4983,7 @@ async function init() {
     const openKit = new URLSearchParams(location.search).get('open')?.match(/^kit:([\w.]+)$/);
     const openStar = new URLSearchParams(location.search).get('open')?.match(/^starstep:(\w+)(?::(\d+))?$/i);
     const openVacuus = new URLSearchParams(location.search).get('open')?.match(/^vacuus:(\w+)(?::(pyramids|exploded|star|sheets|struts))?$/i);
+    const openGcut = new URLSearchParams(location.search).get('open')?.match(/^goldencut:(\w+)(?::(greater|lesser|archimedean))?$/i);
     const openHexoct = new URLSearchParams(location.search).get('open')?.match(/^hexoct(?::(\w+))?$/i);
     const openStarCores = new URLSearchParams(location.search).get('open')?.match(/^starcores(?::([\w-]+(?::(?:2|phi)(?::\d+)?)?))?$/i);
     const OPENABLE = ['octet', 'thirteens', 'chains', 'dodeca', 'theaetetus', 'up', 'upFilm', 'kpFilm', 'thirteens', 'octet', 'icosa', 'roofFold', 'stellaJewel', 'sunstar', 'octetBuild', 'breathing', 'bodhiPyro', 'doubleVision', 'vajrayana', 'ocdStella', 'octetTruss', 'reuleaux', 'aristotle', 'platonicMix', 'dictonic', 'globalWeb', 'stackings', 'bloom', 'bloom', 'whiteQueen', 'cycles', 'shells', 'golden', 'studies', 'targets'];
@@ -5001,6 +5018,10 @@ async function init() {
     } else if (openVacuus && POLYHEDRA_ALL[openVacuus[1]]) {
       // ?open=vacuus:<id>[:<pyramids|exploded|star|sheets|struts>] (DICTO 2026-11-03): Polyhedraverse on that solid, its ◌ DICTO Vacuus lens.
       setTimeout(() => openVacuusLens(openVacuus[1], (openVacuus[2] ?? 'pyramids').toLowerCase()), 0);
+    } else if (openGcut && gcutKeyOf(openGcut[1])) {
+      // ?open=goldencut:<SOLID>[:<greater|lesser|archimedean>] (paper #88's View in app): Polyhedraverse on that Platonic solid (by name,
+      // DODECAHEDRON … OCTAHEDRON, or registry id), its ✂ Golden Cut at that stop (the Greater Golden Cut when none is given).
+      setTimeout(() => openGoldenCut(gcutKeyOf(openGcut[1]), (openGcut[2] ?? 'greater').toLowerCase()), 0);
     } else if (openStarCores) {
       // ?open=starcores[:<D-number or key>[:<2|phi>[:<step>]]] (DICTO 2026-11-02, the Star Cores book's "View in app"): the Star
       // Cores world in Kaleidohedra on that shape (e.g. starcores:D106, starcores:cube-pearl:phi:3).
@@ -6228,6 +6249,7 @@ async function init() {
     window.__hexoctKitProbe = () => hexoctKitWorld?.probe?.() ?? null;
     window.__starStepProbe = () => polyWorld?.starProbe?.() ?? null;
     window.__vacuusProbe = () => polyWorld?.vacuusProbe?.() ?? null;
+    window.__goldenCutProbe = () => polyWorld?.goldenCutProbe?.() ?? null;
     window.__platonicMixProbe = () => platonicMixWorld?.probe?.() ?? null;
     window.__studiesProbe = () => studiesWorld?.probe?.() ?? null;
     // the DICTO Icosahedral Octet and its build world: the network shown and its pieces by role (DICTO 2026-10-23: the AXE gap)
