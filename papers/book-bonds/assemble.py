@@ -10,14 +10,15 @@
 import re, os, shutil, html, json
 HERE = os.path.dirname(os.path.abspath(__file__)); P = os.path.dirname(HERE)
 # Order: DICTO's own sequence of 26 October 2026 (the series building to the Rule of Halves); part names are placeholders.
-CH = [('1', '2026-10-22-platonic-mixes', 47), ('2', '2026-10-22-swept-dodecahedra', 49), ('3', '2026-10-23-exact-vs-dissection', 50),
-      ('4', '2026-10-23-golden-split', 48), ('5', '2026-10-24-delian-bond', 51),
-      ('6', '2026-10-25-web-of-bonds', 52), ('7', '2026-10-25-relay-census', 53),
-      ('8', '2026-10-25-david-goliath', 55), ('9', '2026-10-25-keyed-switch', 56), ('10', 'icosaxes-hexa', 59),
-      ('11', 'series-web-of-bonds', 58), ('12', '2026-10-26-rule-of-halves', 57)]
-PART = {'1': ('Part I. Filling', 'Chapters 1 to 3'), '4': ('Part II. The bonds', 'Chapters 4 and 5'),
-        '6': ('Part III. The web', 'Chapters 6 and 7'), '8': ("Part IV. The weight walk's bonds", 'Chapters 8 to 10'),
-        '11': ('Part V. The law', 'Chapters 11 and 12')}
+# #49 The Polyhedral Stretching Theorem left out (DICTO, 3 November 2026: it goes into the future Laws book).
+CH = [('1', '2026-10-22-platonic-mixes', 47), ('2', '2026-10-23-exact-vs-dissection', 50),
+      ('3', '2026-10-23-golden-split', 48), ('4', '2026-10-24-delian-bond', 51),
+      ('5', '2026-10-25-web-of-bonds', 52), ('6', '2026-10-25-relay-census', 53),
+      ('7', '2026-10-25-david-goliath', 55), ('8', '2026-10-25-keyed-switch', 56), ('9', 'icosaxes-hexa', 59),
+      ('10', 'series-web-of-bonds', 58), ('11', '2026-10-26-rule-of-halves', 57)]
+PART = {'1': ('Part I. Filling', 'Chapters 1 and 2'), '3': ('Part II. The bonds', 'Chapters 3 and 4'),
+        '5': ('Part III. The web', 'Chapters 5 and 6'), '7': ("Part IV. The weight walk's bonds", 'Chapters 7 to 9'),
+        '10': ('Part V. The law', 'Chapters 10 and 11')}
 # Corrections inside the chapters, as in book-star-cores (current practice; the published papers stay the record):
 # "DICTO asked" -> "DICTO proposed"; the banned opening label "In short." dropped (the sentence kept); "this paper" -> "this chapter"
 # where it means the chapter itself (KEEP lists the places where it means the published paper or its build).
@@ -26,8 +27,7 @@ CORR = [('DICTO asked for the same move with icosahedral symmetry.', 'DICTO prop
 KEEP = ['when this paper is built', 'of the proof and of this paper']
 # Appendix letters after the move: old letter -> new letter, or None when that appendix moved to the book's Appendix
 # (in-text pointers to it then name the book's Appendix and the chapter). Numbered sections renumbered where one moved.
-APPMAP = {'2026-10-22-platonic-mixes': {'B': None}, '2026-10-22-swept-dodecahedra': {'C': None},
-          '2026-10-23-exact-vs-dissection': {'B': None}, '2026-10-23-golden-split': {'A': None, 'B': 'A'},
+APPMAP = {'2026-10-22-platonic-mixes': {'B': None}, '2026-10-23-exact-vs-dissection': {'B': None}, '2026-10-23-golden-split': {'A': None, 'B': 'A'},
           '2026-10-24-delian-bond': {'A': None, 'B': 'A'}, '2026-10-25-web-of-bonds': {'A': None, 'B': 'A'},
           '2026-10-25-relay-census': {'A': None, 'B': 'A', 'C': 'B'}}
 SECMAP = {'icosaxes-hexa': {'9': '8'}}
@@ -142,7 +142,7 @@ table.toc{width:100%} table.toc td{border-bottom:1px dotted #ccc;padding:1.1mm 2
 .titlepage{height:235mm;display:flex;flex-direction:column;justify-content:center} .titlepage h1{font-size:30pt}
 .statusbox{border:1.5px solid #b8962e;background:#fbf7ec;padding:3mm 5mm;margin:8mm 0 0;font-size:9pt;line-height:1.4} .statusbox p{margin:0 0 1.5mm}
 section.epi,section.app{break-before:page} section.app h3{font-size:10pt;margin-top:5mm} section.app p,section.app li{font-size:8.6pt}
-figure img{width:100%;display:block} h2,h3{break-after:avoid}
+figure img{width:100%;display:block} h2,h3,h4{break-after:avoid}
 table.idx{width:100%} table.idx td{padding:0.3mm 1.5mm;font-size:8.4pt;border-bottom:1px dotted #ddd} table.idx td.gap{width:6mm;border:none}
 body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}
 body{font-size:10pt}'''
