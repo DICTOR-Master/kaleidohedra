@@ -6,7 +6,7 @@
 import os, numpy as np
 from scipy import ndimage
 from PIL import Image, ImageDraw, ImageFont
-GROUND = (20, 15, 11); GOLD = (217, 165, 33); VIOLET = (180, 138, 224); WHITE = (255, 255, 255); RED = (205, 62, 40); TEAL = (72, 206, 188)
+GROUND = (20, 15, 11); GOLD = (217, 165, 33); VIOLET = (180, 138, 224); WHITE = (255, 255, 255); RED = (205, 62, 40); TEAL = (72, 206, 188); BLUE = (96, 156, 255)   # BLUE: the square's brightened blue letters
 sq = Image.open(os.environ.get('SQUARE', '../bonds-square.png')).convert('RGB'); N = sq.width
 def glyph(ch, size, col):
     """One closed LED letter: (rgb, alpha) cropped to its ink, plus padding for glow."""
@@ -53,12 +53,12 @@ def fit(text, size, col, big):
     print(text, 'size', round(size / N, 4)); return w
 big = fit('DICTONIC BONDS', int(N * 0.075), GOLD, tuple(range(14)))   # DICTO 11-03: full capitals, every letter at the large capital size   # lines gold, teal, red (as Star Cores; DICTO red, as the other books)
 sub = fit('FROM THE OCTET TO THE RULE OF HALVES', int(N * 0.040), TEAL, (0, 9, 22, 30))   # initials of From, Octet, Rule, Halves
-by = word('* DICTO *', int(N * 0.042), lambda ch: RED, big=(0, 2, 3, 4, 5, 6, 8))   # every letter of DICTO is an initial (DICTO)
+by = word('* DICTO *', int(N * 0.042), lambda ch: BLUE, big=(0, 2, 3, 4, 5, 6, 8))   # DICTO 11-03: 'dicto name in blue please' (was red); every letter of DICTO is an initial (DICTO)
 H = big[1].shape[0] + sub[1].shape[0] + by[1].shape[0] + int(N * 0.16)
 panel = np.ones((H, N, 3)) * np.array(GROUND, float)
 y = paste(panel, big, N / 2, int(N * 0.02)); y = paste(panel, sub, N / 2, y + int(N * 0.05)); paste(panel, by, N / 2, y + int(N * 0.035))
 out = Image.new('RGB', (N, N + H), GROUND); out.paste(sq, (0, 0)); out.paste(Image.fromarray(np.clip(panel, 0, 255).astype(np.uint8)), (0, N))
 out.save(os.environ.get('OUT', '../bonds-cover-front.png')); print('ok', out.size)
 # the ◆ DICTO ◆ mark alone (transparent), for the back of the KDP cover (DICTO 10-29)
-mk = word('* DICTO *', int(N * 0.06), lambda ch: RED, big=(0, 2, 3, 4, 5, 6, 8))   # red on the back too
+mk = word('* DICTO *', int(N * 0.06), lambda ch: BLUE, big=(0, 2, 3, 4, 5, 6, 8))   # blue on the back too (DICTO 11-03)
 Image.fromarray(np.dstack([np.clip(mk[0], 0, 255), mk[1] * 255]).astype(np.uint8), 'RGBA').save('../dicto-mark.png')
