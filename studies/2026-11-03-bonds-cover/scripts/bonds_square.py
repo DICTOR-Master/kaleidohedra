@@ -94,7 +94,7 @@ for i in range(n):
 img = Image.fromarray(np.clip(img, 0, 255).astype(np.uint8))
 f = ImageFont.truetype('DSEG14Classic-Regular.ttf', int(0.047 * W))
 def carved(ch, col):   # Star Cores' carved LED letter (DICTO 10-31: opposite letter colours)
-    box = int(0.1 * W); edge = int(0.002 * W)
+    box = int(0.1 * W); edge = int(round(1.5 * int(0.002 * W)))   # DICTO 11-03 'slightly more black around letter outlines': rim 1.5x (9 -> 14 px at W = 4800)
     def lay(t, sw=0):
         m = Image.new('L', (box, box), 0); ImageDraw.Draw(m).text((box / 2, box / 2), t, font=f, fill=255, anchor='mm', stroke_width=sw, stroke_fill=255)
         return np.array(m, float) / 255
