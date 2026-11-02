@@ -61,7 +61,7 @@ for i in range(6):
 f = ImageFont.truetype(os.environ.get('LEDFONT', 'DSEG14Classic-Regular.ttf'), int(0.06 * W))
 # DICTO 11-03: letters in the reciprocal colours, as on Star Cores (Part II): each letter in the palette colour opposite its solid's
 # (gold/violet, teal/red, blue/orange), brightened to read; the silver solid takes a dark letter with a light rim. LETTERS=opposite.
-LETTER = {'G': (190, 140, 255), 'O': (255, 205, 70), 'L': (255, 96, 72), 'D': (90, 232, 212), 'E': None, 'N': (255, 158, 64)}
+LETTER = {'G': (190, 140, 255), 'O': (255, 205, 70), 'L': (255, 96, 72), 'D': (90, 232, 212), 'E': (110, 160, 255), 'N': (236, 238, 245)}   # DICTO 11-03: reciprocal = swap within the cover's own colours: gold/violet, teal/red, silver/blue
 def carved(ch, col=None):
     box = int(0.13 * W); edge = int(0.0022 * W)
     def lay(t, sw=0):
