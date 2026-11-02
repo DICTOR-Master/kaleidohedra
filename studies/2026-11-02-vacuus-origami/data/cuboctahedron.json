@@ -1,0 +1,564 @@
+{
+ "src": "cuboctahedron.json",
+ "name": "Cuboctahedron",
+ "field": "Q",
+ "exact": true,
+ "R": 1.4142135623730951,
+ "V": 12,
+ "E": 24,
+ "F": 14,
+ "points": [
+  [
+   1.0,
+   1.0,
+   0.0
+  ],
+  [
+   1.0,
+   -1.0,
+   0.0
+  ],
+  [
+   -1.0,
+   1.0,
+   0.0
+  ],
+  [
+   -1.0,
+   -1.0,
+   0.0
+  ],
+  [
+   1.0,
+   0.0,
+   1.0
+  ],
+  [
+   1.0,
+   0.0,
+   -1.0
+  ],
+  [
+   -1.0,
+   0.0,
+   1.0
+  ],
+  [
+   -1.0,
+   0.0,
+   -1.0
+  ],
+  [
+   0.0,
+   1.0,
+   1.0
+  ],
+  [
+   0.0,
+   1.0,
+   -1.0
+  ],
+  [
+   0.0,
+   -1.0,
+   1.0
+  ],
+  [
+   0.0,
+   -1.0,
+   -1.0
+  ]
+ ],
+ "faces": [
+  {
+   "corners": [
+    9,
+    0,
+    5
+   ],
+   "type": 0,
+   "start": 0
+  },
+  {
+   "corners": [
+    5,
+    1,
+    11
+   ],
+   "type": 0,
+   "start": 0
+  },
+  {
+   "corners": [
+    7,
+    2,
+    9
+   ],
+   "type": 0,
+   "start": 0
+  },
+  {
+   "corners": [
+    11,
+    3,
+    7
+   ],
+   "type": 0,
+   "start": 0
+  },
+  {
+   "corners": [
+    4,
+    0,
+    8
+   ],
+   "type": 0,
+   "start": 0
+  },
+  {
+   "corners": [
+    8,
+    2,
+    6
+   ],
+   "type": 0,
+   "start": 0
+  },
+  {
+   "corners": [
+    10,
+    1,
+    4
+   ],
+   "type": 0,
+   "start": 0
+  },
+  {
+   "corners": [
+    6,
+    3,
+    10
+   ],
+   "type": 0,
+   "start": 0
+  },
+  {
+   "corners": [
+    5,
+    0,
+    4,
+    1
+   ],
+   "type": 1,
+   "start": 0
+  },
+  {
+   "corners": [
+    9,
+    5,
+    11,
+    7
+   ],
+   "type": 1,
+   "start": 0
+  },
+  {
+   "corners": [
+    6,
+    2,
+    7,
+    3
+   ],
+   "type": 1,
+   "start": 0
+  },
+  {
+   "corners": [
+    8,
+    0,
+    9,
+    2
+   ],
+   "type": 1,
+   "start": 0
+  },
+  {
+   "corners": [
+    10,
+    4,
+    8,
+    6
+   ],
+   "type": 1,
+   "start": 0
+  },
+  {
+   "corners": [
+    11,
+    1,
+    10,
+    3
+   ],
+   "type": 1,
+   "start": 0
+  }
+ ],
+ "strut_no": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "struts": [
+  {
+   "no": 1,
+   "count": 12,
+   "L": 1.4142135623730951,
+   "L2_exact": "2"
+  }
+ ],
+ "fins": [
+  {
+   "letter": "a",
+   "count": 24,
+   "OA2_exact": "2",
+   "OB2_exact": "2",
+   "AB2_exact": "2",
+   "OA": 1.4142135623730951,
+   "OB": 1.4142135623730951,
+   "AB": 1.4142135623730951,
+   "apex_deg": 59.99999999999999,
+   "disc": true
+  }
+ ],
+ "types": [
+  {
+   "id": 0,
+   "name": "N1",
+   "sides": 3,
+   "face": "equilateral triangle",
+   "count": 8,
+   "faces": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "mirror_of": null,
+   "self_mirror": true,
+   "tri": [
+    {
+     "a": 9,
+     "b": 0,
+     "ra2": 2.0,
+     "rb2": 2.0,
+     "ra2_exact": "2",
+     "rb2_exact": "2",
+     "ab2": 2.0,
+     "ab2_exact": "2",
+     "theta": 1.0471975511965976,
+     "cos2theta_exact": "1/4",
+     "sign_cos_theta": 1,
+     "fin": "a",
+     "nbr_face": 11,
+     "disc": true,
+     "nbr_type": 1,
+     "strut_a": 1,
+     "strut_b": 1
+    },
+    {
+     "a": 0,
+     "b": 5,
+     "ra2": 2.0,
+     "rb2": 2.0,
+     "ra2_exact": "2",
+     "rb2_exact": "2",
+     "ab2": 2.0,
+     "ab2_exact": "2",
+     "theta": 1.0471975511965976,
+     "cos2theta_exact": "1/4",
+     "sign_cos_theta": 1,
+     "fin": "a",
+     "nbr_face": 8,
+     "disc": true,
+     "nbr_type": 1,
+     "strut_a": 1,
+     "strut_b": 1
+    },
+    {
+     "a": 5,
+     "b": 9,
+     "ra2": 2.0,
+     "rb2": 2.0,
+     "ra2_exact": "2",
+     "rb2_exact": "2",
+     "ab2": 2.0,
+     "ab2_exact": "2",
+     "theta": 1.0471975511965976,
+     "cos2theta_exact": "1/4",
+     "sign_cos_theta": 1,
+     "fin": "a",
+     "nbr_face": 9,
+     "disc": true,
+     "nbr_type": 1,
+     "strut_a": 1,
+     "strut_b": 1
+    }
+   ],
+   "psi": [
+    1.2309594173407747,
+    1.2309594173407747,
+    1.2309594173407747
+   ],
+   "cos2psi_exact": [
+    "1/9",
+    "1/9",
+    "1/9"
+   ],
+   "sign_cos_psi": [
+    1,
+    1,
+    1
+   ],
+   "fan_sum_deg": 180.0,
+   "fold_err": 4.710277376051325e-16,
+   "closure_err": 2.237726045655905e-16,
+   "fold_sense": -1
+  },
+  {
+   "id": 1,
+   "name": "N2",
+   "sides": 4,
+   "face": "square",
+   "count": 6,
+   "faces": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "mirror_of": null,
+   "self_mirror": true,
+   "tri": [
+    {
+     "a": 5,
+     "b": 0,
+     "ra2": 2.0,
+     "rb2": 2.0,
+     "ra2_exact": "2",
+     "rb2_exact": "2",
+     "ab2": 2.0,
+     "ab2_exact": "2",
+     "theta": 1.0471975511965976,
+     "cos2theta_exact": "1/4",
+     "sign_cos_theta": 1,
+     "fin": "a",
+     "nbr_face": 0,
+     "disc": true,
+     "nbr_type": 0,
+     "strut_a": 1,
+     "strut_b": 1
+    },
+    {
+     "a": 0,
+     "b": 4,
+     "ra2": 2.0,
+     "rb2": 2.0,
+     "ra2_exact": "2",
+     "rb2_exact": "2",
+     "ab2": 2.0,
+     "ab2_exact": "2",
+     "theta": 1.0471975511965976,
+     "cos2theta_exact": "1/4",
+     "sign_cos_theta": 1,
+     "fin": "a",
+     "nbr_face": 4,
+     "disc": true,
+     "nbr_type": 0,
+     "strut_a": 1,
+     "strut_b": 1
+    },
+    {
+     "a": 4,
+     "b": 1,
+     "ra2": 2.0,
+     "rb2": 2.0,
+     "ra2_exact": "2",
+     "rb2_exact": "2",
+     "ab2": 2.0,
+     "ab2_exact": "2",
+     "theta": 1.0471975511965976,
+     "cos2theta_exact": "1/4",
+     "sign_cos_theta": 1,
+     "fin": "a",
+     "nbr_face": 6,
+     "disc": true,
+     "nbr_type": 0,
+     "strut_a": 1,
+     "strut_b": 1
+    },
+    {
+     "a": 1,
+     "b": 5,
+     "ra2": 2.0,
+     "rb2": 2.0,
+     "ra2_exact": "2",
+     "rb2_exact": "2",
+     "ab2": 2.0,
+     "ab2_exact": "2",
+     "theta": 1.0471975511965976,
+     "cos2theta_exact": "1/4",
+     "sign_cos_theta": 1,
+     "fin": "a",
+     "nbr_face": 1,
+     "disc": true,
+     "nbr_type": 0,
+     "strut_a": 1,
+     "strut_b": 1
+    }
+   ],
+   "psi": [
+    1.9106332362490186,
+    1.9106332362490186,
+    1.9106332362490186,
+    1.9106332362490186
+   ],
+   "cos2psi_exact": [
+    "1/9",
+    "1/9",
+    "1/9",
+    "1/9"
+   ],
+   "sign_cos_psi": [
+    -1,
+    -1,
+    -1,
+    -1
+   ],
+   "fan_sum_deg": 239.99999999999997,
+   "fold_err": 3.14018491736755e-16,
+   "closure_err": 2.5589376332604516e-16,
+   "fold_sense": -1
+  }
+ ],
+ "disc_fins": [
+  [
+   0,
+   4
+  ],
+  [
+   0,
+   5
+  ],
+  [
+   0,
+   8
+  ],
+  [
+   0,
+   9
+  ],
+  [
+   1,
+   4
+  ],
+  [
+   1,
+   5
+  ],
+  [
+   1,
+   10
+  ],
+  [
+   1,
+   11
+  ],
+  [
+   2,
+   6
+  ],
+  [
+   2,
+   7
+  ],
+  [
+   2,
+   8
+  ],
+  [
+   2,
+   9
+  ],
+  [
+   3,
+   6
+  ],
+  [
+   3,
+   7
+  ],
+  [
+   3,
+   10
+  ],
+  [
+   3,
+   11
+  ],
+  [
+   4,
+   8
+  ],
+  [
+   4,
+   10
+  ],
+  [
+   5,
+   9
+  ],
+  [
+   5,
+   11
+  ],
+  [
+   6,
+   8
+  ],
+  [
+   6,
+   10
+  ],
+  [
+   7,
+   9
+  ],
+  [
+   7,
+   11
+  ]
+ ],
+ "checks": {
+  "fold_err": 4.710277376051325e-16,
+  "closure_err": 2.5589376332604516e-16,
+  "side_err": 5.551115123125783e-16,
+  "fan_sum_max_deg": 239.99999999999997,
+  "fan_sum_min_deg": 180.0,
+  "half_tabs_per_edge": 2
+ }
+}

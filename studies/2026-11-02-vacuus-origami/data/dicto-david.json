@@ -1,0 +1,214 @@
+{
+ "src": "dicto-david.json",
+ "name": "David",
+ "field": "Q",
+ "exact": true,
+ "R": 0.7071067811865476,
+ "V": 4,
+ "E": 6,
+ "F": 4,
+ "points": [
+  [
+   -0.5,
+   -0.5,
+   0.0
+  ],
+  [
+   -0.5,
+   0.5,
+   0.0
+  ],
+  [
+   0.5,
+   0.0,
+   -0.5
+  ],
+  [
+   0.5,
+   0.0,
+   0.5
+  ]
+ ],
+ "faces": [
+  {
+   "corners": [
+    0,
+    1,
+    2
+   ],
+   "type": 0,
+   "start": 1
+  },
+  {
+   "corners": [
+    0,
+    2,
+    3
+   ],
+   "type": 0,
+   "start": 2
+  },
+  {
+   "corners": [
+    0,
+    3,
+    1
+   ],
+   "type": 0,
+   "start": 0
+  },
+  {
+   "corners": [
+    1,
+    3,
+    2
+   ],
+   "type": 0,
+   "start": 2
+  }
+ ],
+ "strut_no": [
+  1,
+  1,
+  1,
+  1
+ ],
+ "struts": [
+  {
+   "no": 1,
+   "count": 4,
+   "L": 0.7071067811865476,
+   "L2_exact": "1/2"
+  }
+ ],
+ "fins": [
+  {
+   "letter": "a",
+   "count": 4,
+   "OA2_exact": "1/2",
+   "OB2_exact": "1/2",
+   "AB2_exact": "3/2",
+   "OA": 0.7071067811865476,
+   "OB": 0.7071067811865476,
+   "AB": 1.224744871391589,
+   "apex_deg": 120.00000000000001,
+   "disc": false
+  },
+  {
+   "letter": "b",
+   "count": 2,
+   "OA2_exact": "1/2",
+   "OB2_exact": "1/2",
+   "AB2_exact": "1",
+   "OA": 0.7071067811865476,
+   "OB": 0.7071067811865476,
+   "AB": 1.0,
+   "apex_deg": 90.0,
+   "disc": false
+  }
+ ],
+ "types": [
+  {
+   "id": 0,
+   "name": "N1",
+   "sides": 3,
+   "face": "triangle",
+   "count": 4,
+   "faces": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "mirror_of": null,
+   "self_mirror": true,
+   "tri": [
+    {
+     "a": 1,
+     "b": 2,
+     "ra2": 0.5,
+     "rb2": 0.5,
+     "ra2_exact": "1/2",
+     "rb2_exact": "1/2",
+     "ab2": 1.5,
+     "ab2_exact": "3/2",
+     "theta": 2.0943951023931957,
+     "cos2theta_exact": "1/4",
+     "sign_cos_theta": -1,
+     "fin": "a",
+     "nbr_face": 3,
+     "disc": false,
+     "nbr_type": 0,
+     "strut_a": 1,
+     "strut_b": 1
+    },
+    {
+     "a": 2,
+     "b": 0,
+     "ra2": 0.5,
+     "rb2": 0.5,
+     "ra2_exact": "1/2",
+     "rb2_exact": "1/2",
+     "ab2": 1.5,
+     "ab2_exact": "3/2",
+     "theta": 2.0943951023931957,
+     "cos2theta_exact": "1/4",
+     "sign_cos_theta": -1,
+     "fin": "a",
+     "nbr_face": 1,
+     "disc": false,
+     "nbr_type": 0,
+     "strut_a": 1,
+     "strut_b": 1
+    },
+    {
+     "a": 0,
+     "b": 1,
+     "ra2": 0.5,
+     "rb2": 0.5,
+     "ra2_exact": "1/2",
+     "rb2_exact": "1/2",
+     "ab2": 1.0,
+     "ab2_exact": "1",
+     "theta": 1.5707963267948966,
+     "cos2theta_exact": "0",
+     "sign_cos_theta": 0,
+     "fin": "b",
+     "nbr_face": 2,
+     "disc": false,
+     "nbr_type": 0,
+     "strut_a": 1,
+     "strut_b": 1
+    }
+   ],
+   "psi": [
+    2.186276035465284,
+    1.9106332362490186,
+    2.186276035465284
+   ],
+   "cos2psi_exact": [
+    "1/3",
+    "1/9",
+    "1/3"
+   ],
+   "sign_cos_psi": [
+    -1,
+    -1,
+    -1
+   ],
+   "fan_sum_deg": 330.00000000000006,
+   "fold_err": 4.963308025477792e-16,
+   "closure_err": 4.682416888573704e-16,
+   "fold_sense": -1
+  }
+ ],
+ "disc_fins": [],
+ "checks": {
+  "fold_err": 4.963308025477792e-16,
+  "closure_err": 4.682416888573704e-16,
+  "side_err": 4.440892098500626e-16,
+  "fan_sum_max_deg": 330.00000000000006,
+  "fan_sum_min_deg": 330.00000000000006,
+  "half_tabs_per_edge": 2
+ }
+}
