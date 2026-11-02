@@ -1,0 +1,112 @@
+[
+ {
+  "solid": "dodecahedron",
+  "x": 0.3333333333333333,
+  "side": "corner sides long",
+  "faces": {
+   "3-gon sides [np.float64(0.539344663)]": 20,
+   "10-gon sides [np.float64(0.333333333), np.float64(0.539344663)]": 12
+  },
+  "volume": 7.563240319343775,
+  "golden_ok": false
+ },
+ {
+  "solid": "dodecahedron",
+  "x": 0.21654236465910046,
+  "side": "original sides long",
+  "faces": {
+   "3-gon sides [np.float64(0.350372906)]": 20,
+   "10-gon sides [np.float64(0.350372906), np.float64(0.566915271)]": 12
+  },
+  "volume": 7.6357369701616395,
+  "golden_ok": false
+ },
+ {
+  "solid": "icosahedron",
+  "x": 0.38196601125010515,
+  "side": "corner sides long",
+  "faces": {
+   "6-gon sides [np.float64(0.236067977), np.float64(0.381966011)]": 20,
+   "5-gon sides [np.float64(0.381966011)]": 12
+  },
+  "volume": 1.9800688668737563,
+  "golden_ok": false
+ },
+ {
+  "solid": "icosahedron",
+  "x": 0.276393202250021,
+  "side": "original sides long",
+  "faces": {
+   "5-gon sides [np.float64(0.276393202)]": 12,
+   "6-gon sides [np.float64(0.276393202), np.float64(0.447213595)]": 20
+  },
+  "volume": 2.105301788374892,
+  "golden_ok": true
+ },
+ {
+  "solid": "cube",
+  "x": 0.3479432320121684,
+  "side": "corner sides long",
+  "faces": {
+   "3-gon sides [np.float64(0.492066038)]": 8,
+   "8-gon sides [np.float64(0.304113536), np.float64(0.492066038)]": 6
+  },
+  "volume": 0.943835238835972,
+  "golden_ok": false
+ },
+ {
+  "solid": "cube",
+  "x": 0.23319559807202128,
+  "side": "original sides long",
+  "faces": {
+   "3-gon sides [np.float64(0.329788377)]": 8,
+   "8-gon sides [np.float64(0.329788377), np.float64(0.533608804)]": 6
+  },
+  "volume": 0.9830917063714071,
+  "golden_ok": false
+ },
+ {
+  "solid": "tetrahedron",
+  "x": 0.38196601125010515,
+  "side": "corner sides long",
+  "faces": {
+   "3-gon sides [np.float64(0.381966011)]": 4,
+   "6-gon sides [np.float64(0.236067977), np.float64(0.381966011)]": 4
+  },
+  "volume": 0.09158065663631187,
+  "golden_ok": false
+ },
+ {
+  "solid": "tetrahedron",
+  "x": 0.276393202250021,
+  "side": "original sides long",
+  "faces": {
+   "3-gon sides [np.float64(0.276393202)]": 4,
+   "6-gon sides [np.float64(0.276393202), np.float64(0.447213595)]": 4
+  },
+  "volume": 0.10789763031070837,
+  "golden_ok": true
+ },
+ {
+  "solid": "octahedron",
+  "x": 0.38196601125010515,
+  "side": "corner sides long",
+  "faces": {
+   "6-gon sides [np.float64(0.236067977), np.float64(0.381966011)]": 8,
+   "4-gon sides [np.float64(0.381966011)]": 6
+  },
+  "volume": 0.3925931001066935,
+  "golden_ok": false
+ },
+ {
+  "solid": "octahedron",
+  "x": 0.276393202250021,
+  "side": "original sides long",
+  "faces": {
+   "4-gon sides [np.float64(0.276393202)]": 6,
+   "6-gon sides [np.float64(0.276393202), np.float64(0.447213595)]": 8
+  },
+  "volume": 0.44154402112988295,
+  "golden_ok": true
+ }
+]
