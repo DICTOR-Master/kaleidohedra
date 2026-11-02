@@ -652,6 +652,7 @@ let refreshHudIndicator = () => {};
 let isMenuOpen = () => false;
 // D3's More… (the Polyhedraverse world): DICTO's fitting-shape picker, set once the wizard exists.
 let openShapePicker = () => {};
+let fitRun = 0; // fitCameraTo's glides: a newer one takes over from the last
 
 // Module-level (not init()-local) since enterWalk/exitWalk, defined
 // before init() runs, need it too -- has no dependency on any init()
@@ -4451,7 +4452,7 @@ async function init() {
         }
         // The Reuleaux Platonic Solids: tool:reuleauxWorld:<film|build|tetrahedron|octahedron|cube|icosahedron|dodecahedron>.
         if (action?.startsWith('tool:reuleauxWorld:')) { reuleauxWorld?.open(action.slice('tool:reuleauxWorld:'.length)); action = 'tool:reuleauxWorld'; }
-        // Aristotle's Pyramid: tool:aristotleWorld:<pyramids|fills|cube|tetrahedron|octahedron|dodecahedron|icosahedron|octet|golden>.
+        // Aristotle's Pyramid: tool:aristotleWorld:<pyramids|fills|dodecahedron|icosahedron|cube|tetrahedron|octahedron|octet|golden>.
         // Every Mix of the Platonic Solids: tool:platonicMixWorld:<letters of the mix, e.g. DIC>.
         if (action?.startsWith('tool:platonicMixWorld:')) { platonicMixWorld?.open(action.slice('tool:platonicMixWorld:'.length)); action = 'tool:platonicMixWorld'; }
         if (action?.startsWith('tool:aristotleWorld:')) { aristotleWorld?.open(action.slice('tool:aristotleWorld:'.length)); action = 'tool:aristotleWorld'; }
@@ -6156,8 +6157,9 @@ async function init() {
     const toPosition = centre.clone().addScaledVector(dir, exact ? need : Math.max(now, need));
     const fromTarget = controls.target.clone();
     const fromPosition = camera.position.clone();
-    const t0 = performance.now();
+    const t0 = performance.now(), run = ++fitRun;   // a newer fit takes over from this one (no two glides pulling the camera at once)
     const step = (t) => {
+      if (run !== fitRun) return;
       const u = Math.min(1, (t - t0) / 400);
       const ease = u * u * (3 - 2 * u);
       controls.target.lerpVectors(fromTarget, toTarget, ease);

@@ -1,7 +1,8 @@
 // ◌ DICTO Vacuus through the real UI, on a phone (390 × 844, touch) and an iPad (1024 × 1366, touch) and a desktop:
 //   - the link ?site=polyhedraverse&open=vacuus:CUBE opens Polyhedraverse on the cube with the lens on Pyramids;
 //   - each of the five views is chosen by tapping its button, and each is measured on the screen (the scene alone, the panels hidden
-//     for the shot): something is drawn, Exploded's slider at 100 reaches farther than at 0, Star reaches farther than Pyramids, and
+//     for the shot): something is drawn, each view is framed on its own shape (re-framed on every switch and as Exploded's slider moves), Exploded at
+//     100 is drawn apart, and
 //     Star shows the spikes' purple, Sheets and Struts their class colours;
 //   - the link with a view (vacuus:D20:sheets);
 //   - a one-piece build offers the lens button (tap: Pyramids; Close: back, the button again); a solid whose centre is outside a face
@@ -98,22 +99,31 @@ for (const [name, opts] of DEVICES) {
       assert.ok(sb.width >= Math.min(0.8 * vp.width, 600), `${name}: a long slider (${sb.width})`);
       assert.ok(sb.y + sb.height > vp.height - 160, `${name}: the slider low on the screen (${sb.y + sb.height} of ${vp.height})`);
       assert.ok(sb.height >= 40, `${name}: a thick slider (${sb.height})`);
-      await slider.fill('0'); await page.waitForTimeout(300);
+      await slider.fill('0'); await settle();
       m.exploded0 = await measure('exploded-0');
-      await slider.fill('100'); await page.waitForTimeout(300);
+      await slider.fill('100'); await settle();
       assert.equal((await probe()).apart, 100, `${name}: slider moved the pyramids`);
+      if (!opts.hasTouch) {   // a real drag on the desktop, 100 → 20 in small steps: the drawing and the frame follow it
+        const y = sb.y + sb.height / 2;
+        await page.mouse.move(sb.x + sb.width - 20, y); await page.mouse.down();
+        await page.mouse.move(sb.x + 20 + 0.2 * (sb.width - 40), y, { steps: 25 }); await page.mouse.up(); await settle();
+        const a = (await probe()).apart;
+        assert.ok(a > 5 && a < 40, `${name}: dragged to ${a}`);
+        await slider.fill('100'); await settle();
+      }
       m.exploded = await measure('exploded');
     } else m[v] = await measure(v);
     if (v === 'sheets') assert.match(await page.textContent('.vac-legend'), /0\.866 · 0\.866 · 1 ×12/, `${name}: one fin shape`);
     if (v === 'struts') assert.match(await page.textContent('.vac-legend'), /0\.866 ×8/, `${name}: one strut length`);
   }
-  // the camera only ever widens (for Exploded and Star), so Pyramids again, in the same frame as the Star, to compare their reach
-  await press('[data-vac-view="pyramids"]'); await settle();
-  m.pyramidsAgain = await measure('pyramids-again');
   console.log(name, JSON.stringify(m));
   for (const [k, r] of Object.entries(m)) assert.ok(r.pixels > 2000 && r.w > 40 && r.h > 40, `${name}: ${k} draws something (${JSON.stringify(r)})`);
-  assert.ok(m.exploded.w > 1.3 * m.exploded0.w, `${name}: Exploded at 100 reaches farther than at 0 (${m.exploded.w} vs ${m.exploded0.w})`);
-  assert.ok(m.star.w > 1.05 * m.pyramidsAgain.w, `${name}: the Star reaches farther than the Pyramids (${m.star.w} vs ${m.pyramidsAgain.w})`);
+  // each view framed on its own shape: about the size of the first (Pyramids), never left small after Exploded or Star; the frame
+  // follows the slider too, so Exploded at 100 is as big on screen as at 0, but with the gaps between the pyramids (less filled)
+  const size = (r) => Math.max(r.w, r.h);
+  for (const [k, r] of Object.entries(m)) assert.ok(size(r) > 0.8 * size(m.pyramids) && size(r) < 1.25 * size(m.pyramids), `${name}: ${k} framed on its own shape (${size(r)} vs Pyramids ${size(m.pyramids)})`);
+  const fill = (r) => r.pixels / (r.w * r.h);
+  assert.ok(fill(m.exploded) < 0.8 * fill(m.exploded0), `${name}: Exploded at 100 drawn apart (fill ${fill(m.exploded).toFixed(2)} vs ${fill(m.exploded0).toFixed(2)} at 0)`);
   assert.ok(m.star.bands.purple > 20 * m.pyramids.bands.purple + 500, `${name}: the Star's purple spikes (${m.star.bands.purple})`);
   assert.ok(m.sheets.bands.gold > 500, `${name}: the fins in their class colour (${m.sheets.bands.gold})`);
   assert.ok(m.struts.bands.gold > 200, `${name}: the struts in their length colour (${m.struts.bands.gold})`);

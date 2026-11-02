@@ -301,6 +301,10 @@ Polyhedraverse 是肖像画廊：按家族排列的每一个形状，一次一�
 
 **提示：接下来。** 用有固定图案的部件搭建时，在你最后放的部件周围，淡淡的影子显示下一个部件该去的位置，每种部件各有颜色；它们会接触的面以同样的颜色发光，相配的面颜色相同。图案包括：DICTO Hexa 与 Hexa-Key 的棋盘格；DICTO Dodeca-13 的镜像柱和 bcc 堆叠；以及每个空间填充配对的蜂窝（Sunstar 与 Stella–Jewel 晶格、八面体-四面体桁架、烧绿石、截半与截角立方蜂窝、三种棱柱蜂窝）。属于多个配对的部件（正四面体、正八面体、立方体、三棱柱）在它的搭档进入作品后才显示。轻点影子或发光的面，即把那个部件放到那里。条带上的 **提示** 可以关闭它们，以便连接别的形状。部件绝不会放在会穿过已有部件的地方；放不下时会提示。
 
+## DICTO Vacuus
+
+**◌ DICTO Vacuus**（DICTO 2026-11-03）从中心观看一个立体。放一个中心位于所有面所在平面内侧的立体（所有凸立体，以及星形八面体这样的星状立体），点条带中的 **◌ DICTO Vacuus**；其他立体没有这个按钮。五种视图：**棱锥**（从中心到每个面的棱锥）、**分解**（滑块把它们分开）、**星形**（每个棱锥翻到面外，内部是空的）、**薄片**（中心到每条棱的鳍；同色即同形）和 **支杆**（从中心到顶点的杆，按长度着色）。棱锥视图链接到 Kaleidohedra 的 Aristotle's Pyramid，那里也链接回来。链接 [polyhedraverse.dictospheres.com/?open=vacuus:CUBE](https://polyhedraverse.dictospheres.com/?open=vacuus:CUBE) 可直接打开（加 `:exploded`、`:star`、`:sheets` 或 `:struts` 选视图）。
+
 ## DICTO 的部件
 
 **星核形体**（最新，DICTO 2026-11-02）：DICTO 于 2026 年 10 月 31 日命名的四个立体 **Cube Pearl**（D106）、**Golden Clasp**（D107）、**Hamlet**（D108）和 **Ophelia**（D109）排在 DICTO 的部件最前；PV 尚未收录的其他星核形体（TI Star core、Star Halo、Alice 一族、OG 及其链、GTI 等，共 42 个）按从新到旧列在单独的分区。每个都有 ★ Star step。**Kagemusha 的盔饰**：在第一步星中填满 Kagemusha 五个凹口的 **MAEDATE** 和 **KUWAGATA**，既可单独，也可装在 Kagemusha 上（Kagemusha 为金色，盔饰为青绿色）。

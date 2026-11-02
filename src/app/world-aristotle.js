@@ -168,7 +168,7 @@ export function createAristotleWorld({ scene, fitView = () => {}, showHudPrompt 
     group,
     meshes: () => pickTargets.filter((m) => m.visible),
     handleTap,
-    /** ?open=aristotle:<pyramids|fills|cube|tetrahedron|octahedron|dodecahedron|icosahedron|octet|golden>. */
+    /** ?open=aristotle:<pyramids|fills|dodecahedron|icosahedron|cube|tetrahedron|octahedron|octet|golden>. */
     open(arg) {
       if (arg === 'pyramids' || arg === 'fills') view.mode = arg;
       else if (SOLID_KEYS.includes(arg)) { view.mode = 'pyramids'; view.solid = arg; }

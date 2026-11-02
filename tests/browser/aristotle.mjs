@@ -31,7 +31,8 @@ const probe = () => page.evaluate(() => window.__aristotleProbe());
 if ((await probe()).mode !== 'pyramids') { await panel.locator('[data-ar-mode="pyramids"]').tap(); await page.waitForTimeout(600); }
 assert.equal(await panel.locator('[data-ar-solid]').count(), 5, 'five cards');
 assert.equal(await panel.locator('[data-ar="build"]').isVisible(), false, 'no kit button among the pyramids');
-const FACES = { cube: 6, tetrahedron: 4, octahedron: 8, dodecahedron: 12, icosahedron: 20 };
+const FACES = { dodecahedron: 12, icosahedron: 20, cube: 6, tetrahedron: 4, octahedron: 8 };
+assert.deepEqual(await panel.locator('[data-ar-solid]').evaluateAll((bs) => bs.map((x) => x.dataset.arSolid)), Object.keys(FACES), 'the cards in D·I·C·T·O order');
 for (const k of Object.keys(FACES)) {
   await panel.locator(`[data-ar-solid="${k}"]`).tap(); await page.waitForTimeout(400);
   const st = await probe(); assert.equal(st.solid, k); assert.equal(st.pieces, FACES[k], `${k}: its face pyramids`);

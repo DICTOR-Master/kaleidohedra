@@ -1054,8 +1054,9 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     if (e.target.matches('[data-parts]')) { view.parts = e.target.value; save(); rebuild(); }
     if (e.target.matches('[data-rcp-target]')) { view.rcp.target = e.target.value; view.rcp.n = 1; view.rcp.open = true; save(); rebuild(); renderPanel(); }
   });
-  // DICTO Vacuus's Apart slider: only the drawing follows it (the panel stays, so the drag goes on).
-  panel.addEventListener('input', (e) => { if (e.target.matches('[data-vac-apart]')) vacuus.setApart(e.target.value); });
+  // DICTO Vacuus's Apart slider: the drawing follows it (the panel stays, so the drag goes on).
+  // The frame follows it (the camera eases after the slider; each new call takes over from the last, so it glides rather than jumps).
+  panel.addEventListener('input', (e) => { if (e.target.matches('[data-vac-apart]')) { vacuus.setApart(e.target.value); fitView?.(vacuus.reach * 1.12, true); } });
   // Long-press a shape in the strip to pin it (always offered) or unpin it.
   let pressTimer = 0, pressed = false;
   panel.addEventListener('pointerdown', (e) => {
@@ -1084,7 +1085,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     }
     if ('starReset' in b.dataset) { starReset(); return; }
     if ('vac' in b.dataset) { const n = vacTarget(); if (!n || !vacStart(n)) return; selection = null; rebuild(); renderPanel(); fitView?.(vacuus.reach * 1.12, true); return; }
-    if (b.dataset.vacView) { vacuus.setView(b.dataset.vacView); renderPanel(); fitView?.(vacuus.reach * 1.12); return; }
+    if (b.dataset.vacView) { vacuus.setView(b.dataset.vacView); renderPanel(); fitView?.(vacuus.reach * 1.12, true); return; }   // each view framed on its own shape
     if ('vacOff' in b.dataset) { vacReset(); return; }
     if ('vacAristotle' in b.dataset) { openAction(`tool:aristotleWorld:${aristotleKey()}`); return; }
     if ('starLayer' in b.dataset) { starStep.toggleLayer(); renderPanel(); return; }

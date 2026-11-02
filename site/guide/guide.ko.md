@@ -301,6 +301,10 @@ DICTO의 Polyhedraverse 칸 맨 위에서 **검색**으로 이름, 가족, 면 �
 
 **힌트: 다음에 올 것.** 정해진 무늬가 있는 조각으로 조립하면, 마지막에 놓은 조각 주변에 다음 조각이 들어갈 자리가 옅은 모양으로 보입니다(종류마다 색이 다름). 그것이 닿을 면도 같은 색으로 빛나, 맞는 면끼리 같은 색이 됩니다. 무늬: DICTO Hexa와 Hexa-Key의 체커보드, DICTO Dodeca-13의 거울 기둥과 bcc 쌓기, 그리고 모든 공간 채움 짝의 벌집(Sunstar와 Stella–Jewel 격자, 옥텟 트러스, 파이로클로어, 정류·깎은 정육면체 벌집, 세 가지 각기둥 벌집). 여러 짝에 속하는 조각(정사면체, 정팔면체, 정육면체, 삼각기둥)은 짝이 작품에 들어오면 보입니다. 옅은 모양이나 빛나는 면을 탭하면 그 조각이 그 자리에 놓입니다. 띠의 **힌트**로 끄면 다른 모양을 붙일 수 있습니다. 조각은 이미 놓인 조각을 뚫고 지나가는 곳에는 절대 놓이지 않으며, 들어갈 수 없으면 알려 줍니다.
 
+## DICTO Vacuus
+
+**◌ DICTO Vacuus**(DICTO 2026-11-03)는 입체를 중심에서 봅니다. 중심이 모든 면의 평면 안쪽에 있는 입체(모든 볼록 입체와 스텔라 옥탕굴라 같은 별 모양 입체)를 하나 놓고 스트립의 **◌ DICTO Vacuus**를 누르세요. 다른 입체에는 버튼이 없습니다. 다섯 가지 보기: **피라미드**(중심에서 각 면으로), **분해**(슬라이더로 벌림), **별**(각 피라미드를 면 바깥으로 뒤집음, 안쪽은 빔), **시트**(중심과 각 모서리의 핀; 같은 색은 같은 모양), **스트럿**(중심에서 꼭짓점까지의 막대, 길이별 색). 피라미드에서 Kaleidohedra의 Aristotle's Pyramid로, 그곳에서 다시 돌아오는 링크가 있습니다. [polyhedraverse.dictospheres.com/?open=vacuus:CUBE](https://polyhedraverse.dictospheres.com/?open=vacuus:CUBE)로 바로 엽니다(보기는 `:exploded`, `:star`, `:sheets`, `:struts`를 붙여서).
+
 ## DICTO의 조각
 
 **스타 코어 모양**(최신, DICTO 2026-11-02): DICTO가 2026년 10월 31일에 이름 붙인 네 입체 **Cube Pearl**(D106), **Golden Clasp**(D107), **Hamlet**(D108), **Ophelia**(D109)가 DICTO의 조각 맨 앞에 있습니다. PV에 아직 없던 나머지 스타 코어 모양(TI Star core, Star Halo, Alice 가족, OG와 그 사슬, GTI 등 모두 42개)은 별도 구역에 최신순으로 이어집니다. 모두 ★ Star step이 있습니다. **Kagemusha의 투구 장식**: 첫 별 단계에서 Kagemusha의 다섯 홈을 채우는 **MAEDATE**와 **KUWAGATA**, 단독으로도 Kagemusha에 붙인 모양으로도 있습니다(Kagemusha는 금색, 장식은 청록).

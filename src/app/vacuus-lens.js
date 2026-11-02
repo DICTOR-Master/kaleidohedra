@@ -175,12 +175,16 @@ export function createVacuusLens({ scene, look = () => ({ skeleton: false, opaci
     reset() { st = null; clear(); root.visible = false; },
     setVisible(on) { root.visible = on && !!st; if (root.visible) draw(); },
     redraw() { if (st) draw(); },
-    /** How far the picture reaches from O (for framing): the star's tips, the exploded pyramids at the slider's far end, else R. */
+    /** How far the picture now reaches from O, for framing each view on its own shape: the star's tips; the pyramids as far as they
+     *  are drawn apart (Pyramids' small gap, Exploded's slider); else the solid's circumradius. */
     get reach() {
       if (!st) return 0;
       const R = st.solid.R;
       if (st.view === 'star') return Math.max(R, ...st.tips.map((p) => Math.hypot(...p)));
-      if (st.view === 'exploded') return R * (1 + APART_MAX);
+      if (st.view === 'pyramids' || st.view === 'exploded') {
+        const d = (st.view === 'pyramids' ? GAP : (st.apart / 100) * APART_MAX) * R;
+        return Math.max(d, ...pyramidsOf(st.solid).flatMap(({ base, n }) => base.map((p) => Math.hypot(p[0] + d * n[0], p[1] + d * n[1], p[2] + d * n[2]))));
+      }
       return R;
     },
     caption(L) {

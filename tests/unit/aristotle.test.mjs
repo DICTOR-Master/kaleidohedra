@@ -9,8 +9,12 @@ import { SOLID_KEYS, FILL_KEYS, facePyramids, fillPieces, goldenCells, pieceVolu
 const close = (a, b, msg, eps = 1e-9) => assert.ok(Math.abs(a - b) < eps, `${msg}: ${a} vs ${b}`);
 const sum = (P) => P.reduce((a, p) => a + pieceVolume(p), 0);
 const s5 = Math.sqrt(5), PHI = (1 + s5) / 2;
-const VOLUME = { cube: 1, tetrahedron: Math.SQRT2 / 12, octahedron: Math.SQRT2 / 3, dodecahedron: (15 + 7 * s5) / 4, icosahedron: 5 * PHI * PHI / 6 };
-const FACES = { cube: 6, tetrahedron: 4, octahedron: 8, dodecahedron: 12, icosahedron: 20 };
+const VOLUME = { dodecahedron: (15 + 7 * s5) / 4, icosahedron: 5 * PHI * PHI / 6, cube: 1, tetrahedron: Math.SQRT2 / 12, octahedron: Math.SQRT2 / 3 };
+const FACES = { dodecahedron: 12, icosahedron: 20, cube: 6, tetrahedron: 4, octahedron: 8 };
+
+test('the five in DICTO\'s order, D·I·C·T·O', () => {
+  assert.deepEqual(SOLID_KEYS, ['dodecahedron', 'icosahedron', 'cube', 'tetrahedron', 'octahedron']);
+});
 
 test('each solid is its face pyramids, tips at the centre', () => {
   for (const k of SOLID_KEYS) {
