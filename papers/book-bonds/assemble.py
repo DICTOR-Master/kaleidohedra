@@ -9,13 +9,37 @@
 # Output: paper.html, typeset on dicto-big-brother with ../print.mjs:  node print.mjs book-bonds <pdf> "Bonds" "–" "–"
 import re, os, shutil, html, json
 HERE = os.path.dirname(os.path.abspath(__file__)); P = os.path.dirname(HERE)
+# Order: DICTO's own sequence of 26 October 2026 (the series building to the Rule of Halves); part names are placeholders.
 CH = [('1', '2026-10-22-platonic-mixes', 47), ('2', '2026-10-22-swept-dodecahedra', 49), ('3', '2026-10-23-exact-vs-dissection', 50),
-      ('4', '2026-10-23-golden-split', 48), ('5', '2026-10-24-delian-bond', 51), ('6', '2026-10-25-keyed-switch', 56),
-      ('7', '2026-10-25-david-goliath', 55), ('8', 'icosaxes-hexa', 59),
-      ('9', '2026-10-25-web-of-bonds', 52), ('10', '2026-10-25-relay-census', 53), ('11', 'series-web-of-bonds', 58),
-      ('12', '2026-10-26-rule-of-halves', 57)]
-PART = {'1': ('Part I. Filling', 'Chapters 1 to 3'), '4': ('Part II. The bonds', 'Chapters 4 to 8'),
-        '9': ('Part III. The web', 'Chapters 9 to 11'), '12': ('Part IV. The law', 'Chapter 12')}
+      ('4', '2026-10-23-golden-split', 48), ('5', '2026-10-24-delian-bond', 51),
+      ('6', '2026-10-25-web-of-bonds', 52), ('7', '2026-10-25-relay-census', 53),
+      ('8', '2026-10-25-david-goliath', 55), ('9', '2026-10-25-keyed-switch', 56), ('10', 'icosaxes-hexa', 59),
+      ('11', 'series-web-of-bonds', 58), ('12', '2026-10-26-rule-of-halves', 57)]
+PART = {'1': ('Part I. Filling', 'Chapters 1 to 3'), '4': ('Part II. The bonds', 'Chapters 4 and 5'),
+        '6': ('Part III. The web', 'Chapters 6 and 7'), '8': ("Part IV. The weight walk's bonds", 'Chapters 8 to 10'),
+        '11': ('Part V. The law', 'Chapters 11 and 12')}
+# Corrections inside the chapters, as in book-star-cores (current practice; the published papers stay the record):
+# "DICTO asked" -> "DICTO proposed"; the banned opening label "In short." dropped (the sentence kept); "this paper" -> "this chapter"
+# where it means the chapter itself (KEEP lists the places where it means the published paper or its build).
+CORR = [('DICTO asked for the same move with icosahedral symmetry.', 'DICTO proposed the same move with icosahedral symmetry.'),
+        ('<b>In short.</b> ', ''), ('<b>Plain words:</b> ', '')]
+KEEP = ['when this paper is built', 'of the proof and of this paper']
+# Appendix letters after the move: old letter -> new letter, or None when that appendix moved to the book's Appendix
+# (in-text pointers to it then name the book's Appendix and the chapter). Numbered sections renumbered where one moved.
+APPMAP = {'2026-10-22-platonic-mixes': {'B': None}, '2026-10-22-swept-dodecahedra': {'C': None},
+          '2026-10-23-exact-vs-dissection': {'B': None}, '2026-10-23-golden-split': {'A': None, 'B': 'A'},
+          '2026-10-24-delian-bond': {'A': None, 'B': 'A'}, '2026-10-25-web-of-bonds': {'A': None, 'B': 'A'},
+          '2026-10-25-relay-census': {'A': None, 'B': 'A', 'C': 'B'}}
+SECMAP = {'icosaxes-hexa': {'9': '8'}}
+def remap(t, folder, label, inbody):
+    m = APPMAP.get(folder, {})
+    def r(mo):
+        old = mo.group(1)
+        if old not in m: return mo.group(0)
+        if m[old] is None: return mo.group(0) if not inbody else f'the Appendix under Chapter {label}'
+        return 'Appendix ' + m[old]
+    parts = re.split(r'(<[^>]+>)', t)
+    return ''.join(p if p.startswith('<') else re.sub(r'\bAppendix ([A-C])\b', r, p) for p in parts)
 INDEX_TERMS = ['DICTONIC', 'bond', 'web of bonds', 'Icosaxes', 'Unborn Axes', 'Unborn', 'AXE', 'Lotus Jewel Axes', 'Dodecaxes', 'Samson', 'Delilah',
     'Sonsam', 'Lahdeli', 'Ian Dury', 'Blockhead', 'David', 'Goliath', 'Jessen', 'Icosaxes Hexa', 'Icosaxes Bloom', 'Icosaxes Bud', 'Icosaxes Seed',
     'Keyaxes', 'Janus', 'Chucky', 'Fang', 'rule of halves', 'octet', 'twinned octet', 'golden point', 'golden ratio', 'Delian', 'power diagram',
@@ -61,6 +85,13 @@ for label, folder, num in CH:
         out.append(m.group(0)); body = body.replace(m.group(0), '', 1)
     for m in list(re.finditer(r'<h2[^>]*>(' + MOVESEC + r')</h2>(.*?)(?=<h2|$)', body, re.S)):
         out.append('<h4>' + m.group(1) + '</h4>' + m.group(2)); body = body.replace(m.group(0), '', 1)
+    body = remap(body, folder, label, True); out = [remap(o, folder, label, False) for o in out]
+    for a, b in SECMAP.get(folder, {}).items():
+        body = re.sub(r'(<h2[^>]*>)' + a + r'\. ', r'\g<1>' + b + '. ', body); body = re.sub(r'§' + a + r'\b', '§' + b, body)
+    for a, b in CORR: body = body.replace(a, b)
+    for i, k in enumerate(KEEP): body = body.replace(k, f'@KEEP{i}@')
+    body = body.replace('this paper', 'this chapter').replace('This paper', 'This chapter')
+    for i, k in enumerate(KEEP): body = body.replace(f'@KEEP{i}@', k)
     def fig(mo):
         src = mo.group(2); dst = f'figures/ch{label}/{os.path.basename(src)}'; path = os.path.join(P, folder, src)
         if not os.path.exists(path): raise SystemExit(f'FIG MISSING ch{label} {src}')
