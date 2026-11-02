@@ -6,7 +6,7 @@
 import os, numpy as np
 from scipy import ndimage
 from PIL import Image, ImageDraw, ImageFont
-GROUND = (20, 15, 11); GOLD = (217, 165, 33); VIOLET = (180, 138, 224); WHITE = (255, 255, 255); RED = (205, 62, 40); TEAL = (72, 206, 188); BLUE = (96, 156, 255)   # BLUE: the square's brightened blue letters
+GROUND = (20, 15, 11); GOLD = (217, 165, 33); VIOLET = (180, 138, 224); WHITE = (255, 255, 255); RED = (205, 62, 40); TEAL = (72, 206, 188); BLUE = (58, 112, 205)   # BLUE: the Twinned Delian pieces' blue (DICTO 11-03: 'the blue of the solids slightly darker'; was the letters' 96, 156, 255)
 sq = Image.open(os.environ.get('SQUARE', '../bonds-square.png')).convert('RGB'); N = sq.width
 def glyph(ch, size, col):
     """One closed LED letter: (rgb, alpha) cropped to its ink, plus padding for glow."""
