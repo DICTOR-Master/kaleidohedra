@@ -28,7 +28,7 @@ def notes(r):
     if not r['well_defined']: f.append(f'not defined: O outside {r["faces_O_not_inside"]} face planes')
     if r['all_congruent']: f.append('Isofin')
     if r['central_discs']: f.append('Disc: ' + ', '.join(f'{v} × {k}-fin disc' for k, v in r['central_discs'].items()))
-    if r['family'] == 'DICTO Solids v7' and r['strut_lengths'] == 1 and r['well_defined']: f.append('One-Strut')
+    if r['family'] == 'DICTO Solids v7' and r['strut_lengths'] == 1 and r['well_defined']: f.append('Mono-Strut')
     if r['apex_rational']: f.append('apex ' + ', '.join(pif(x) for x in r['apex_rational']) + ('' if r['exact'] else ' (float64)'))
     if r['right']: f.append('right-angled fins')
     if r['convex'] is False: f.append('non-convex')
