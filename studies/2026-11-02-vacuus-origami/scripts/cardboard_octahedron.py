@@ -41,10 +41,10 @@ with PdfPages(out) as pdf:
     slot(ax, 0, a, 0, a / 2, *cB); slot(ax, 0, -a, 0, -a / 2, *cB)
     # C halves: triangles with the x-axis as base (trimmed by t/2 where they rest on A), apex on the z-axis;
     #           slot along z from the base up to half-way
-    for k, (cx, cy) in enumerate(((55, 115), (155, 115))):
-        P = np.array([[-a, t / 2], [a, t / 2], [0, a], [-a, t / 2]]) @ R.T + [cx, cy]; ax.plot(P[:, 0], P[:, 1], color=INK, lw=0.8)
-        slot(ax, 0, t / 2, 0, a / 2, cx, cy)
-        ax.text(cx, cy - s / 2 - 5, f'C{k + 1}  (half of plane y = 0): one slot, base to half-way', ha='center', va='top', fontsize=8)
+    # C: drawn whole, as DICTO laid it out; cut out the strip along its x-diagonal (both halves then rest on A), and the
+    #    slots along the z-diagonal from that strip to half-way, one in each half
+    cC = (105, 115); square(ax, *cC, 'C  (plane y = 0): cut in two along the long red strip; one slot in each half')
+    slot(ax, -a, 0, a, 0, *cC); slot(ax, 0, w / 2, 0, a / 2, *cC); slot(ax, 0, -w / 2, 0, -a / 2, *cC)
     # scale check bar
     ax.plot([20, 120], [30, 30], color=INK, lw=1); ax.plot([20, 20], [28, 32], color=INK, lw=1); ax.plot([120, 120], [28, 32], color=INK, lw=1)
     ax.text(70, 33, '100 mm: measure after printing', ha='center', fontsize=7)
