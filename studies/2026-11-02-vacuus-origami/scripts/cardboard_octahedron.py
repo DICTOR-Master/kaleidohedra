@@ -1,5 +1,5 @@
-# Cardboard Vacuus of the octahedron (DICTO's slot-together build, 2026): the 12 fins lie in the three coordinate planes and
-# close into three squares (half-diagonal a). Glue-free exact scheme (no flexing): square A (plane z = 0) and square B
+# Cardboard Vacuus of the octahedron: DICTO's own four-piece slot-together build (2026), drawn to measure: the 12 fins lie in the three coordinate planes and
+# close into three squares (half-diagonal a). DICTO's glue-free scheme: square A (plane z = 0) and square B
 # (plane x = 0) cross by a half-lap along the y-axis; square C (plane y = 0) is cut in two along the x-axis, and each half
 # slides onto B by a half-lap along the z-axis and rests on A. Board thickness t, slot width t + clearance.
 # Page 1: cut sheet at 1:1 (A4). Page 2: assembly in three steps. Usage: cardboard_octahedron.py <out.pdf> [edge mm] [t mm] [clearance mm]
@@ -63,7 +63,7 @@ with PdfPages(out) as pdf:
         ax.add_collection3d(Poly3DCollection([np.array(p) for p in polys], facecolors=cols, edgecolors=INK, linewidths=0.6, alpha=0.85))
         ax.set_xlim(-a, a); ax.set_ylim(-a, a); ax.set_zlim(-a, a); ax.set_box_aspect((1, 1, 1)); ax.view_init(20, 30); ax.axis('off')
         fig.text(0.52, 0.80 - 0.3 * i, txt, fontsize=9, va='center')
-    fig.text(0.5, 0.04, 'DICTO · dictospheres.com · DICTO\'s own first build used three whole squares and let the board flex at the centre.',
+    fig.text(0.5, 0.04, 'DICTO · dictospheres.com · Four pieces, as in DICTO\'s own cardboard build.',
              ha='center', fontsize=6.5, color='#555')
     pdf.savefig(fig); plt.close(fig)
 print('written', out, 'edge', s, 'a', round(a, 2), 'slot', w)
