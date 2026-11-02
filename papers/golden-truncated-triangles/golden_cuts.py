@@ -41,8 +41,9 @@ for col, name in enumerate(ORDER):
         for Pf, n in A.hull_faces(Q):
             S.convex(np.vstack([Pf, Pf.mean(0) * 0.999]), A.GOLD if len(Pf) in (3, 4, 5) and len(set(np.round([np.linalg.norm(Pf[(i+1)%len(Pf)]-Pf[i]) for i in range(len(Pf))], 9))) == 1 else A.VIOLET)
         S.draw(axs[row, col], 1.05 * np.linalg.norm(Q, axis=1).max())
-        axs[row, col].set_title(f'{name}, x = {x:.4f}\n{side}', fontsize=8.5)
-fig.suptitle('The ten golden truncations: each Platonic solid cut so its faces become truncated polygons with sides in ratio φ (gold: regular corner cuts)', fontsize=10.5)
+        nm = ({'octahedron': 'Icosaxes'} if row == 0 else {'octahedron': 'Unborn Axes'}).get(name, f"{'Greater' if row == 0 else 'Lesser'} Golden Cut {name.capitalize()}")
+        axs[row, col].set_title(f'{nm}\nx = {x:.4f}', fontsize=8.5)
+fig.suptitle('The ten DICTO-Kepler golden truncations. Top: Greater Golden Cut (deeper cut); bottom: Lesser Golden Cut (lighter cut). Gold: regular corner cuts', fontsize=10.5)
 A.mark(fig); fig.savefig(os.path.join(OUT, 'golden-truncations-ten.png'), dpi=200, facecolor='white')
 json.dump(rep, open(os.path.join(OUT, 'golden-truncations-ten.json'), 'w'), indent=1)
 for r in rep: print(f"{r['solid']:13s} x={r['x']:.6f} {r['side']:20s} golden={r['golden_ok']} vol={r['volume']:.6f} faces={r['faces']}")
