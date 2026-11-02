@@ -1,12 +1,12 @@
-# Assemble a first DRAFT of DICTO's book on the bond papers "DICTONIC Bonds: from the Octet to the Rule of Halves"
-# (title named by DICTO, 3 November 2026), from the published paper sources (DICTO's idea, 26 October 2026: "the bond papers are really ONE SERIES building
+# Assemble DICTO's book on the bond papers "DICTONIC Bonds: from the Octet to the Rule of Halves"
+# (title named by DICTO, 3 November 2026; version 1 of 3 November 2026, concept DOI 10.5281/zenodo.23898027, record 23898028), from the published paper sources (DICTO's idea, 26 October 2026: "the bond papers are really ONE SERIES building
 # to the rule of halves"). Modelled on book-laws-of-stacking/assemble.py and book-star-cores/assemble.py (chapter corrections as there, see CORR):
 # each published paper becomes a chapter word for word (title, abstract, sections, theorems, tables and figures); the meta line goes;
 # "Sources checked", "Data and code"/"Data and reproducibility"/"Methods and data", the reference-library appendices and "References"
 # move to one appendix by chapter; figures are copied into figures/ch<n>/ and renumbered per chapter (Figure 3 -> Figure 5.3); paper
 # numbers link to the chapter when the paper is in the book, else to its DICTO DOI. Front matter, epilogue and About from front.html,
 # epilogue.html, about.html (by hand). pages.json (written after a first print, from the PDF) fills the page numbers of the contents.
-# The front cover is page 1 of the open-access PDF; KDP=1 drops it (as book-golden-cycle). Output: paper.html, typeset on dicto-big-brother with ../print.mjs:  node print.mjs book-bonds <pdf> "DICTONIC Bonds" "–" "–"
+# The front cover is page 1 of the open-access PDF; KDP=1 drops it (as book-golden-cycle). Output: paper.html, typeset on dicto-big-brother with ../print.mjs:  node print.mjs book-bonds dicto-dictonic-bonds.pdf "DICTONIC Bonds" "10.5281/zenodo.23898027" 1 (concept DOI, as Star Cores)
 import re, os, shutil, html, json
 HERE = os.path.dirname(os.path.abspath(__file__)); P = os.path.dirname(HERE)
 # Order: DICTO's own sequence of 26 October 2026 (the series building to the Rule of Halves); part names are placeholders.
@@ -113,7 +113,7 @@ for label, folder, num in CH:
     sources.append(f'<h3>{head}{html.escape(title)} (#{num}, DICTO DOI {doi})</h3>' + (''.join(out) or '<p>The paper has no separate list of sources, data or references; it names the papers it tells, which are the chapters of this book.</p>'))
 
 PG = json.load(open(os.path.join(HERE, 'pages.json'))) if os.path.exists(os.path.join(HERE, 'pages.json')) else {}
-def pg(k): return str(PG.get(k, ''))
+def pg(k): return str(PG[k] - (1 if os.environ.get('KDP') else 0)) if k in PG else ''   # KDP interior has no cover page
 front = open(os.path.join(HERE, 'front.html'), encoding='utf8').read()
 epi = open(os.path.join(HERE, 'epilogue.html'), encoding='utf8').read()
 for t in INDEX_TERMS:
