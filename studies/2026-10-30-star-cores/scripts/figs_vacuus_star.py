@@ -28,8 +28,8 @@ def star(faces):
     return [(np.vstack([Q, 2 * d * n]), Q, d) for Q, n, d in faces]
 
 COLS = [A.VIOLET, A.TEAL, A.GOLD]
-ROWS = [[('tetrahedron', 'Tetrahedron', '2δ = 141.06°'), ('cube', 'Cube', '2δ = 180°: rhombic dodecahedron'),
-         ('octahedron', 'Octahedron', '2δ = 218.94°'), ('dodecahedron', 'Dodecahedron', '2δ = 233.13°'), ('icosahedron', 'Icosahedron', '2δ = 276.38°')],
+ROWS = [[('dodecahedron', 'Dodecahedron', '2δ = 233.13°'), ('icosahedron', 'Icosahedron', '2δ = 276.38°'), ('cube', 'Cube', '2δ = 180°: rhombic dodecahedron'),
+         ('tetrahedron', 'Tetrahedron', '2δ = 141.06°'), ('octahedron', 'Octahedron', '2δ = 218.94°')],   # DICTO order D·I·C·T·O
         [('dicto-shadow-17.json', 'Kagemusha (D86)', ''), ('dicto-lion.json', 'Lion (D87)', ''), ('dicto-ogdoecontahedron.json', 'OG (D28)', ''),
          ('dicto-cube-pearl.json', 'Cube Pearl', ''), ('dicto-golden-clasp.json', 'Golden Clasp', '')]]
 

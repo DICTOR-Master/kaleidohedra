@@ -14,7 +14,7 @@ def short(n):
     return {'Truncated-Icosahedral Hecatodihedron': 'DICTO Hecatodihedron', 'GTI': 'DICTO GTI', 'Ogdoecontahedron': 'DICTO Ogdoecontahedron (OG)'}.get(n, n)
 
 # ---------- the one table ----------
-TAB = [('tetrahedron', 'Tetrahedron'), ('cube', 'Cube'), ('octahedron', 'Octahedron'), ('dodecahedron', 'Dodecahedron'), ('icosahedron', 'Icosahedron'),
+TAB = [('dodecahedron', 'Dodecahedron'), ('icosahedron', 'Icosahedron'), ('cube', 'Cube'), ('tetrahedron', 'Tetrahedron'), ('octahedron', 'Octahedron'),
        ('cuboctahedron', 'Cuboctahedron'), ('dicto-shadow-17', 'Kagemusha'), ('dicto-lion', 'Lion'), ('dicto-david', 'David'), ('dicto-delilah', 'Delilah'),
        ('dicto-ogdoecontahedron', 'DICTO Ogdoecontahedron (OG)'), ('dicto-cube-pearl', 'Cube Pearl'), ('dicto-golden-clasp', 'Golden Clasp'),
        ('dicto-ti-star-core', 'TI Star core'), ('dicto-gti', 'DICTO GTI'), ('dicto-goliath', 'Goliath'), ('dicto-icosaxes', 'Icosaxes'),
@@ -43,7 +43,7 @@ for slug, nm in TAB:
              f"<td class=n>{r['V']}</td><td class=n>{r['strut_lengths']}</td><td class=n>{r['edge_lengths']}</td><td class=n>{r['frame_lengths']}</td><td>{notes(r)}</td></tr>")
 
 # ---------- plates ----------
-PL = [('tetrahedron', 'Tetrahedron'), ('cube', 'Cube'), ('octahedron', 'Octahedron'), ('dodecahedron', 'Dodecahedron'), ('icosahedron', 'Icosahedron'),
+PL = [('dodecahedron', 'Dodecahedron'), ('icosahedron', 'Icosahedron'), ('cube', 'Cube'), ('tetrahedron', 'Tetrahedron'), ('octahedron', 'Octahedron'),
       ('dicto-shadow-17', 'Kagemusha (D86)'), ('dicto-lion', 'Lion (D87)'), ('dicto-ogdoecontahedron', 'DICTO Ogdoecontahedron (OG, D28)'),
       ('dicto-cube-pearl', 'Cube Pearl (D106)'), ('dicto-golden-clasp', 'Golden Clasp (D107)'), ('dicto-ti-star-core', 'TI Star core (D105)')]
 def sw(c): return f'<span class=sw style="background:{c}"></span>'
