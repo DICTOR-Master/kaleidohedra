@@ -34,7 +34,8 @@ def para(x, y, text, font, width, fill=WHITE, lead=1.42):
     if line: d.text((x, y), line, font=font, fill=fill); y += font.size * lead
     return y
 x = px(xb0 + 0.85); wid = px(TW - 1.7); y = px(BLEED + 1.0)
-d.text((x, y), 'DICTONIC Bonds', font=F('NimbusSans-Bold.otf', 30), fill=GOLD); y += px(0.62)
+d.text((x, y), 'DICTONIC BONDS',   # DICTO 11-03: full capitals, as the front
+       font=F('NimbusSans-Bold.otf', 30), fill=GOLD); y += px(0.62)
 d.text((x, y), 'from the Octet to the Rule of Halves', font=F('NimbusSans-Regular.otf', 16), fill=TEAL); y += px(0.6)   # teal, as on the front
 body = F('NimbusSans-Regular.otf', 11.5)
 # blurb from the book's preface (front.html); claims only from the book

@@ -51,7 +51,7 @@ def fit(text, size, col, big):
     w = word(text, size, lambda ch: col, big=big)
     while w[1].shape[1] > 0.92 * N: size = int(size * 0.97); w = word(text, size, lambda ch: col, big=big)
     print(text, 'size', round(size / N, 4)); return w
-big = fit('DICTONIC BONDS', int(N * 0.075), GOLD, (0, 9))   # lines gold, teal, red (as Star Cores; DICTO red, as the other books)
+big = fit('DICTONIC BONDS', int(N * 0.075), GOLD, tuple(range(14)))   # DICTO 11-03: full capitals, every letter at the large capital size   # lines gold, teal, red (as Star Cores; DICTO red, as the other books)
 sub = fit('FROM THE OCTET TO THE RULE OF HALVES', int(N * 0.040), TEAL, (0, 9, 22, 30))   # initials of From, Octet, Rule, Halves
 by = word('* DICTO *', int(N * 0.042), lambda ch: RED, big=(0, 2, 3, 4, 5, 6, 8))   # every letter of DICTO is an initial (DICTO)
 H = big[1].shape[0] + sub[1].shape[0] + by[1].shape[0] + int(N * 0.16)
