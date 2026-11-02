@@ -4257,6 +4257,7 @@ async function init() {
   // scope just needs a stable reference to call into from onAction.
   // Open on an entry goes through the DICTO wizard (created further down), as a tap there would.
   let openFromAlmanac = null;
+  let openVacuusLens = null; // DICTO Vacuus on a Polyhedraverse solid (?open=vacuus:<id>[:<view>], and Aristotle's Pyramid's link)
   const almanac = createAlmanac({ onOpen: (entry, label) => openFromAlmanac?.(entry, label) });
   // 📖 the Almanac's own button (its wheel face went with the wheels, DICTO 2026-10-08), last in the
   // tools column: at the bottom it met the world panels and, on a phone, the paint slot.
@@ -4942,6 +4943,20 @@ async function init() {
     }
     isMenuOpen = () => dimensionWizard.isOpen;
     openFromAlmanac = (entry, label) => dimensionWizard.go(entry.action, entry.app, label);
+    // DICTO Vacuus (DICTO 2026-11-03): Polyhedraverse on solid `id`, its ◌ DICTO Vacuus lens at `view`. Started, as the star step's
+    // link is, once the shape's world has opened and any question about a saved build is answered.
+    openVacuusLens = (id, view = 'pyramids') => {
+      if (!POLYHEDRA_ALL[id]) return;
+      const action = `tool:polyShape:${id}`;
+      const start = (tries = 0) => {
+        if (!(worldNow?.action === action && worldNow.keys && !worldNow.asking) && tries < 3000) { setTimeout(() => start(tries + 1), 100); return; }
+        if (!polyWorld?.openVacuus(id, view)) { console.info('DICTO Vacuus: centre not inside every face plane', id); return; }
+        const name = polyShapeName(id).replaceAll('_', ' ');
+        document.getElementById('hud-world-title').textContent = name.charAt(0).toUpperCase() + name.slice(1);
+      };
+      dimensionWizard.go(action);
+      setTimeout(start, 100);
+    };
     openShapePicker = dimensionWizard.openShapePicker;
 
     // The app's entry gate: every load opens the DICTO wizard on the app you came in by -- unless the address names a
@@ -4950,6 +4965,7 @@ async function init() {
     const openWorld = new URLSearchParams(location.search).get('open')?.match(/^([a-zA-Z]+)(?::(\w+))?$/);
     const openKit = new URLSearchParams(location.search).get('open')?.match(/^kit:([\w.]+)$/);
     const openStar = new URLSearchParams(location.search).get('open')?.match(/^starstep:(\w+)(?::(\d+))?$/i);
+    const openVacuus = new URLSearchParams(location.search).get('open')?.match(/^vacuus:(\w+)(?::(pyramids|exploded|star|sheets|struts))?$/i);
     const openHexoct = new URLSearchParams(location.search).get('open')?.match(/^hexoct(?::(\w+))?$/i);
     const openStarCores = new URLSearchParams(location.search).get('open')?.match(/^starcores(?::([\w-]+(?::(?:2|phi)(?::\d+)?)?))?$/i);
     const OPENABLE = ['octet', 'thirteens', 'chains', 'dodeca', 'theaetetus', 'up', 'upFilm', 'kpFilm', 'thirteens', 'octet', 'icosa', 'roofFold', 'stellaJewel', 'sunstar', 'octetBuild', 'breathing', 'bodhiPyro', 'doubleVision', 'vajrayana', 'ocdStella', 'octetTruss', 'reuleaux', 'aristotle', 'platonicMix', 'dictonic', 'globalWeb', 'stackings', 'bloom', 'bloom', 'whiteQueen', 'cycles', 'shells', 'golden', 'studies', 'targets'];
@@ -4981,6 +4997,9 @@ async function init() {
         document.getElementById('hud-world-title').textContent = name.charAt(0).toUpperCase() + name.slice(1);
       };
       setTimeout(() => { dimensionWizard.go(action); setTimeout(startStar, 100); }, 0);
+    } else if (openVacuus && POLYHEDRA_ALL[openVacuus[1]]) {
+      // ?open=vacuus:<id>[:<pyramids|exploded|star|sheets|struts>] (DICTO 2026-11-03): Polyhedraverse on that solid, its ◌ DICTO Vacuus lens.
+      setTimeout(() => openVacuusLens(openVacuus[1], (openVacuus[2] ?? 'pyramids').toLowerCase()), 0);
     } else if (openStarCores) {
       // ?open=starcores[:<D-number or key>[:<2|phi>[:<step>]]] (DICTO 2026-11-02, the Star Cores book's "View in app"): the Star
       // Cores world in Kaleidohedra on that shape (e.g. starcores:D106, starcores:cube-pearl:phi:3).
@@ -6163,6 +6182,8 @@ async function init() {
     getMaterial: () => materialSelect.value,
     // D3's More…: DICTO's families, only the shapes that fit the tapped face.
     pickShape: (fits, onPick, opts) => openShapePicker(fits, onPick, opts),
+    // DICTO Vacuus's link back to Aristotle's Pyramid (tool:aristotleWorld:<solid|fills>)
+    openAction: (action) => openFromAlmanac?.({ action, app: null }, null),
     colorOf: (shape, material, family) => (colorView.mode === 'type' ? new THREE.Color(FAMILY_COLORS[family] ?? theme().pieceHex)
       : colorView.mode === 'pick' && material ? materialColor(material) : new THREE.Color(theme().pieceHex)),
     onChange: () => { if (historyRestorers.has('worldpoly')) recordHistory('worldpoly', polyWorld.snapshot()); },
@@ -6204,6 +6225,7 @@ async function init() {
     window.__starCoresProbe = () => starCoresWorld?.probe?.() ?? null;
     window.__hexoctKitProbe = () => hexoctKitWorld?.probe?.() ?? null;
     window.__starStepProbe = () => polyWorld?.starProbe?.() ?? null;
+    window.__vacuusProbe = () => polyWorld?.vacuusProbe?.() ?? null;
     window.__platonicMixProbe = () => platonicMixWorld?.probe?.() ?? null;
     window.__studiesProbe = () => studiesWorld?.probe?.() ?? null;
     // the DICTO Icosahedral Octet and its build world: the network shown and its pieces by role (DICTO 2026-10-23: the AXE gap)
@@ -6383,7 +6405,7 @@ async function init() {
   whiteQueenWorld = createWhiteQueenWorld({ scene: realScene, fitView: fitCameraTo, openAction: (action) => openFromAlmanac?.({ action, app: null }, null) });
   bloomWorld = createBloomWorld({ scene: realScene, fitView: fitCameraTo, openAction: (action) => openFromAlmanac?.({ action, app: null }, null) });
   stackingsWorld = createStackingsWorld({ scene: realScene, fitView: fitCameraTo, openAction: (action) => openFromAlmanac?.({ action, app: null }, null) });
-  aristotleWorld = createAristotleWorld({ scene: realScene, showHudPrompt, fitView: fitCameraTo, openAction: (action) => openFromAlmanac?.({ action, app: null }, null) });
+  aristotleWorld = createAristotleWorld({ scene: realScene, showHudPrompt, fitView: fitCameraTo, openAction: (action) => openFromAlmanac?.({ action, app: null }, null), openVacuus: (id) => openVacuusLens?.(id) });
   reuleauxWorld = createReuleauxWorld({
     scene: realScene,
     showHudPrompt,

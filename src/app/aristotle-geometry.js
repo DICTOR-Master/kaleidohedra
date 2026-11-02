@@ -8,7 +8,7 @@
 import { POLYHEDRA, KITS13 } from '../krp-core/src/polyhedra/index.js';
 
 export const SOLID_KEYS = ['cube', 'tetrahedron', 'octahedron', 'dodecahedron', 'icosahedron'];
-const SOLID_IDS = { cube: 'CUBE', tetrahedron: 'D4', octahedron: 'D8', dodecahedron: 'DODECAHEDRON', icosahedron: 'D20' };
+export const SOLID_IDS = { cube: 'CUBE', tetrahedron: 'D4', octahedron: 'D8', dodecahedron: 'DODECAHEDRON', icosahedron: 'D20' };
 export const GOLDEN_KIT = 'antonius.block';
 
 const add = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];

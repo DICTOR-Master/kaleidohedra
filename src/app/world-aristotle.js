@@ -6,6 +6,7 @@
 //     the dodecahedron's and the Cleo-Icos never, with face pyramids).
 //     With the icosahedron, a link to where twenty Cleo-Icos close perfectly round a vertex: the White Queen 600-cell's Cleo core
 //     (its Shells view; DICTO 2026-10-27: each shape lives in one place, the others link).
+//     With any of the five, a link to the same solid in Polyhedraverse's DICTO Vacuus lens (DICTO 2026-11-03), whose Pyramids view links back.
 //   - Fills: three ready-made blocks: cube pyramids filling cubes; the octet cut up; the golden fix (2 Cleo-Icos + 1 Antonius make a
 //     prolate golden rhombohedron; rhombohedra fill space), each piece kind its own tone; "Build it yourself" opens the
 //     Polyhedraverse kit 'antonius.block'.
@@ -16,7 +17,7 @@ import { t } from './i18n.js';
 import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey, theme } from './site.js';
-import { SOLID_KEYS, FILL_KEYS, GOLDEN_KIT, facePyramids, fillPieces } from './aristotle-geometry.js';
+import { SOLID_KEYS, SOLID_IDS, FILL_KEYS, GOLDEN_KIT, facePyramids, fillPieces } from './aristotle-geometry.js';
 
 export const ARISTOTLE_KIT_ACTION = `tool:polyKit:${GOLDEN_KIT}`;
 export const ARISTOTLE_WHITE_QUEEN_ACTION = 'tool:whiteQueenWorld:shells';   // the White Queen's Cleo core
@@ -37,7 +38,7 @@ function pieceGeometry(p) {
 }
 const reach = (pieces) => Math.max(...pieces.flatMap((p) => p.faces.flat().map((v) => Math.hypot(...v))));
 
-export function createAristotleWorld({ scene, fitView = () => {}, showHudPrompt = () => {}, openAction = () => {} }) {
+export function createAristotleWorld({ scene, fitView = () => {}, showHudPrompt = () => {}, openAction = () => {}, openVacuus = () => {} }) {
   const STORAGE_KEY = storageKey('aristotle');
   const group = new THREE.Group(); group.visible = false; scene.add(group);
   const view = { ...PRESET };
@@ -116,7 +117,7 @@ export function createAristotleWorld({ scene, fitView = () => {}, showHudPrompt 
     <div class="w4d-row w4d-options ar-modes"><button type="button" data-ar-mode="pyramids"></button><button type="button" data-ar-mode="fills"></button></div>
     <div class="w4d-row ar-cards"></div>
     <div class="w4d-row ar-apart-row"><label class="hull-pick"><span class="ar-apart-label"></span> <input type="range" class="st-slider" min="0" max="100" step="1"></label></div>
-    <div class="w4d-row w4d-options"><button type="button" data-ar="build"></button><button type="button" data-ar="whiteQueen"></button></div>`;
+    <div class="w4d-row w4d-options"><button type="button" data-ar="build"></button><button type="button" data-ar="whiteQueen"></button><button type="button" data-ar="vacuus"></button></div>`;
   document.body.appendChild(panel);
   addPanelMinimiser(panel, 'aristotle');
   const slider = panel.querySelector('.ar-apart-row input');
@@ -139,6 +140,9 @@ export function createAristotleWorld({ scene, fitView = () => {}, showHudPrompt 
     const wq = panel.querySelector('[data-ar="whiteQueen"]');
     wq.hidden = !pyr || view.solid !== 'icosahedron';   // only where the Cleo-Icos is shown
     wq.textContent = t('ar.link.whiteQueen', L);
+    const vac = panel.querySelector('[data-ar="vacuus"]');
+    vac.hidden = !pyr;   // the solid on show, in Polyhedraverse's DICTO Vacuus lens
+    vac.textContent = t('ar.link.vacuus', L);
   }
   panel.addEventListener('click', (e) => {
     const b = e.target.closest('button');
@@ -153,6 +157,7 @@ export function createAristotleWorld({ scene, fitView = () => {}, showHudPrompt 
     if (b.dataset.arFill) { if (b.dataset.arFill === view.fill) return; view.fill = b.dataset.arFill; save(); draw(); renderPanel(); return; }
     if (b.dataset.ar === 'build') openAction(ARISTOTLE_KIT_ACTION);
     if (b.dataset.ar === 'whiteQueen') openAction(ARISTOTLE_WHITE_QUEEN_ACTION);
+    if (b.dataset.ar === 'vacuus') openVacuus(SOLID_IDS[view.solid]);
   });
   slider.addEventListener('input', () => { view.apart = Number(slider.value); applyApart(); });
   slider.addEventListener('change', save);
