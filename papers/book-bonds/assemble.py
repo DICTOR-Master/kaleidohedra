@@ -1,12 +1,12 @@
-# Assemble a first DRAFT of DICTO's book on the bond papers (working title "Bonds: from the Octet to the Rule of Halves", a placeholder:
-# DICTO names his books), from the published paper sources (DICTO's idea, 26 October 2026: "the bond papers are really ONE SERIES building
-# to the rule of halves"). Modelled on book-laws-of-stacking/assemble.py and book-star-cores/assemble.py, with no edits to the chapters:
+# Assemble a first DRAFT of DICTO's book on the bond papers "DICTONIC Bonds: from the Octet to the Rule of Halves"
+# (title named by DICTO, 3 November 2026), from the published paper sources (DICTO's idea, 26 October 2026: "the bond papers are really ONE SERIES building
+# to the rule of halves"). Modelled on book-laws-of-stacking/assemble.py and book-star-cores/assemble.py (chapter corrections as there, see CORR):
 # each published paper becomes a chapter word for word (title, abstract, sections, theorems, tables and figures); the meta line goes;
 # "Sources checked", "Data and code"/"Data and reproducibility"/"Methods and data", the reference-library appendices and "References"
 # move to one appendix by chapter; figures are copied into figures/ch<n>/ and renumbered per chapter (Figure 3 -> Figure 5.3); paper
 # numbers link to the chapter when the paper is in the book, else to its DICTO DOI. Front matter, epilogue and About from front.html,
 # epilogue.html, about.html (by hand). pages.json (written after a first print, from the PDF) fills the page numbers of the contents.
-# Output: paper.html, typeset on dicto-big-brother with ../print.mjs:  node print.mjs book-bonds <pdf> "Bonds" "–" "–"
+# Output: paper.html, typeset on dicto-big-brother with ../print.mjs:  node print.mjs book-bonds <pdf> "DICTONIC Bonds" "–" "–"
 import re, os, shutil, html, json
 HERE = os.path.dirname(os.path.abspath(__file__)); P = os.path.dirname(HERE)
 # Order: DICTO's own sequence of 26 October 2026 (the series building to the Rule of Halves); part names are placeholders.
@@ -147,7 +147,7 @@ table.idx{width:100%} table.idx td{padding:0.3mm 1.5mm;font-size:8.4pt;border-bo
 body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}
 body{font-size:10pt}'''
 doc = f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>Bonds: from the Octet to the Rule of Halves</title>
+<html lang="en"><head><meta charset="utf-8"><title>DICTONIC Bonds: from the Octet to the Rule of Halves</title>
 <link rel="stylesheet" href="../paper.css"><style>{css}</style></head><body>
 <img class="watermark" src="../dicto-logo.png" alt="">
 {front.replace('__TOC__', tochtml)}
