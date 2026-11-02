@@ -36,7 +36,7 @@ for col, name in enumerate(ORDER):
         for n, L in F: kinds[(n, tuple(L))] = kinds.get((n, tuple(L)), 0) + 1
         ok = all((len(L) == 1) or abs(max(L) / min(L) - g) < 1e-9 for n, L in F)
         side = 'corner sides long' if row == 0 else 'original sides long'
-        rep.append(dict(solid=name, x=x, side=side, faces={f'{n}-gon sides {list(L)}': c for (n, L), c in kinds.items()}, volume=h.volume, golden_ok=ok))
+        rep.append(dict(solid=name, x=x, side=side, faces={f'{n}-gon sides {list(L)}': c for (n, L), c in kinds.items()}, volume=h.volume, golden_ok=bool(all(len(L) == 1 or abs(max(L) / min(L) - g) < 1e-6 for n, L in F))))
         S = A.Scene(M)
         for Pf, n in A.hull_faces(Q):
             S.convex(np.vstack([Pf, Pf.mean(0) * 0.999]), A.GOLD if len(Pf) in (3, 4, 5) and len(set(np.round([np.linalg.norm(Pf[(i+1)%len(Pf)]-Pf[i]) for i in range(len(Pf))], 9))) == 1 else A.VIOLET)

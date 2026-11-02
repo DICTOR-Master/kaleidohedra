@@ -26,7 +26,7 @@ def section(d, h):
         L = [np.linalg.norm(Q[(i + 1) % len(Q)] - Q[i]) for i in range(len(Q))]; sizes.append(len(Q))
         if len(Q) == 6: ratios.append(max(L) / min(L))
     return sorted(sizes), ratios
-for name, d in (('vertex-first', np.array([1., 0, 0, 0])), ('cell-first', np.array([1., 1, 1, 1]))):
+for name, d in (('cell-first (cell centre (1,0,0,0))', np.array([1., 0, 0, 0])), ('cell-first (cell centre (1,1,1,1)/2)', np.array([1., 1, 1, 1]))):
     prev = None
     for h in np.linspace(0, np.linalg.norm(V[0]) * 0.999 / 1, 4001):
         hh = h if name == 'vertex-first' else h * 1.0
