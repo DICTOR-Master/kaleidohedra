@@ -1,0 +1,29 @@
+1. links, a = 1, d = sqrt(2/3)
+  A(i,j) -> B(i-1,j+0): horizontal offset (-1/2, sqrt(3)/6), length 1, tilt above sheet 54.7356 deg
+  A(i,j) -> B(i+0,j-1): horizontal offset (0, -sqrt(3)/3), length 1, tilt above sheet 54.7356 deg
+  A(i,j) -> B(i+0,j+0): horizontal offset (1/2, sqrt(3)/6), length 1, tilt above sheet 54.7356 deg
+  B(i,j) -> C(i-1,j+0): horizontal offset (-1/2, sqrt(3)/6), length 1, tilt above sheet 54.7356 deg
+  B(i,j) -> C(i+0,j-1): horizontal offset (0, -sqrt(3)/3), length 1, tilt above sheet 54.7356 deg
+  B(i,j) -> C(i+0,j+0): horizontal offset (1/2, sqrt(3)/6), length 1, tilt above sheet 54.7356 deg
+  B(i,j) -> A(i+0,j+0): horizontal offset (-1/2, -sqrt(3)/6), length 1, tilt above sheet 54.7356 deg
+  B(i,j) -> A(i+0,j+1): horizontal offset (0, sqrt(3)/3), length 1, tilt above sheet 54.7356 deg
+  B(i,j) -> A(i+1,j+0): horizontal offset (1/2, -sqrt(3)/6), length 1, tilt above sheet 54.7356 deg
+  A(i,j) -> C(i-1,j-1): horizontal offset (-1/2, -sqrt(3)/6), length 1, tilt above sheet 54.7356 deg
+  A(i,j) -> C(i-1,j+0): horizontal offset (0, sqrt(3)/3), length 1, tilt above sheet 54.7356 deg
+  A(i,j) -> C(i+0,j-1): horizontal offset (1/2, -sqrt(3)/6), length 1, tilt above sheet 54.7356 deg
+  sheet B c (A-B-C): up-links collinear with a down-link: 3/3; mirror images of a down-link in the sheet: 0/3
+  sheet B h (A-B-A): up-links collinear with a down-link: 0/3; mirror images of a down-link in the sheet: 3/3
+2. self-centring: 20000 random sideways shifts |t|<=0.42, largest (allowed spacing - sqrt(2/3)) = 0.000e+00 (<= 0: spacing is greatest only at t = 0)
+3. test piece ABC: nodes 27, links 42 (gap 1: 21, gap 2: 21), middle-sheet nodes with all 6 links: 1
+   sheet 0 A links per node: [[1, 2, 2], [2, 3, 3], [2, 3, 3]]
+   sheet 1 B links per node: [[4, 5, 4], [5, 6, 5], [4, 5, 4]]
+   sheet 2 C links per node: [[3, 3, 2], [3, 3, 2], [2, 2, 1]]
+3. test piece ABA: nodes 27, links 42 (gap 1: 21, gap 2: 21), middle-sheet nodes with all 6 links: 4
+   sheet 0 A links per node: [[1, 2, 2], [2, 3, 3], [2, 3, 3]]
+   sheet 1 B links per node: [[6, 6, 4], [6, 6, 4], [4, 4, 2]]
+   sheet 2 A links per node: [[1, 2, 2], [2, 3, 3], [2, 3, 3]]
+4. lambda=-1/8, layer 1 of ABC (c): oct-top half OK (3 nodes + 6 link midpoints); tet OK (4 nodes, all 6 edges = a); tet OK (4 nodes, all 6 edges = a); oct-bottom half OK (3 nodes + 6 link midpoints)
+4. lambda=-1/8, layer 1 of AB (h): oct-top half OK (3 nodes + 6 link midpoints); tet OK (4 nodes, all 6 edges = a); tet OK (4 nodes, all 6 edges = a); oct-bottom half OK (3 nodes + 6 link midpoints)
+4. lambda=-1/8, layer 1 of ABCB (c): oct-top half OK (3 nodes + 6 link midpoints); tet OK (4 nodes, all 6 edges = a); tet OK (4 nodes, all 6 edges = a); oct-bottom half OK (3 nodes + 6 link midpoints)
+4. lambda=-1/8, layer 2 of ABCB (h): oct-top half OK (3 nodes + 6 link midpoints); tet OK (4 nodes, all 6 edges = a); tet OK (4 nodes, all 6 edges = a); oct-bottom half OK (3 nodes + 6 link midpoints)
+4. lambda=-1/8, layer 3 of ABCACB (h): oct-top half OK (3 nodes + 6 link midpoints); tet OK (4 nodes, all 6 edges = a); tet OK (4 nodes, all 6 edges = a); oct-bottom half OK (3 nodes + 6 link midpoints)
