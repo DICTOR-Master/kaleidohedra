@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>HexOct: Knitting Crystals</title>
+<link rel="stylesheet" href="../paper.css">
+<style>table{border-collapse:collapse;font-size:8pt;margin:3mm 0;width:100%} td,th{border-bottom:1px solid #ddd;padding:0.7mm 1.2mm;text-align:left} td.n,th.n{text-align:right}
+p.prec{font-size:9pt;color:#3a3a3a;border-left:2px solid #b8962e;padding-left:3mm;margin:3mm 0} .thm{border-left:3px solid #b8962e;padding-left:3mm;margin:3mm 0}
+p.hook{font-style:italic;color:#4a3f2a;border-left:2px solid #c9a24a;padding-left:3mm} h2{break-after:avoid}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>HexOct: Knitting Crystals</h1>
+<p class="sub">A knitted HexOct fabric: its construction, its mechanics and its comfort, for every close-packed stacking</p>
+<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>
+Paper #83 · Version 4 · 3 November 2026 (Version 3: withdrawn for revision, 2 November 2026; Versions 1–2: 1 November 2026) · DICTO DOI: 10.5281/zenodo.23848271 (concept) · Licence CC BY-SA 4.0<br>
+The Knitted HexOct, its idea and its name are DICTO's. Design, computation, checks and drafting with Claude (Anthropic).</div>
+
+<div class="abstract"><b>Abstract.</b> DICTO proposed a fabric that is a crystal: one continuous multi-layer knitted fabric whose knitted sheets are the close-packed layers of balls and whose linking yarns join each node to the three nodes of the next sheet that its ball touches, turning on in the same sense at a c layer and back at an h layer. The cells it closes off are the pieces of the HexOct tiles (#75), so any close-packed stacking can be knitted into the fabric's own thickness. Part 1 gives the construction: geometry, yarn and stitch plan by hand and by machine, and two test pieces. Part 2 tests whether the stacking is a design dial at equal density. Part 3 (this front section) adds comfort: vapour transfer, conduction along the yarn and direct radiation.</div>
+<p class="hook">Knit the layers of a crystal as layers of fabric and tie them together as the crystal is tied. Every way of stacking the layers weighs the same and squashes the same; what changes is how much you can see straight through it and how easily it shears.</p>
+
+<h2>Main result</h2>
+<p class="thm"><b>Result.</b> In the idealised Knitted HexOct, all close-packed stackings have the same density; through-thickness compression, buckling onset, rigidity, vapour transfer, conduction along the yarn and direct radiation through twelve sheets are the same in every stacking. The stacking changes only two things: the straight see-through area (up to 10.7 times larger in 2H than in 3C at link radius 0.05 a) and, when the sheets are much softer than the links, the free transverse shear (3C up to 17.5 times softer than 2H), which is set by the stack's net turning (its mean Hägg sum), not by the share of c layers.</p>
+
+<h2>Version history</h2>
+<p>Versions 1 and 2 knitted an edge-on slice of the stackings: a picture of the crystal on a flat fabric. DICTO proposed instead a fabric that is the crystal in three dimensions, and Version 3 withdrew the earlier version for that revision. Version 4 is the revision: the Knitted HexOct itself, specified and analysed. The fabric has not yet been knitted; the two test pieces of Part 1 (a c stack and an h stack, 27 nodes and 42 links each, about 210 m of DK cotton each) are the next step, and the knitted pieces will be added in a later version.</p>
+
+<h2>Contents</h2>
+<p>Front section: abstract, main result, version history, Part 3 (comfort). Part 1: <i>Knitted HexOct, construction specification</i> (5 pages). Part 2: <i>Knitted HexOct: is the c/h stacking a design dial?</i> (lattice mechanics and a see-through proxy, 4 pages).</p>
+
+<h2>Part 3. Comfort: vapour, conduction and radiation</h2>
+<p>On the same voxel model as Part 2 (members as capsules of radius r on the periodic cell, twelve sheets), we computed for seven stackings: the effective diffusivity of vapour through the air spaces (a Laplace solve, D<sub>eff</sub>/D<sub>air</sub>), conduction along the yarn alone (the same solve in the solid, k<sub>eff</sub>/k<sub>yarn</sub>), and the share of diffuse (cosine-weighted) rays that pass through all twelve sheets without touching a member.</p>
+<table><thead><tr><th>Stacking (r = 0.05 a)</th><th class="n">Porosity</th><th class="n">D<sub>eff</sub>/D<sub>air</sub></th><th class="n">Tortuosity factor</th><th class="n">k<sub>eff</sub>/k<sub>yarn</sub></th><th class="n">Direct radiation</th></tr></thead><tbody>
+<tr><td>3C</td><td class="n">0.9395</td><td class="n">0.8821</td><td class="n">1.065</td><td class="n">0.01852</td><td class="n">0.14 %</td></tr>
+<tr><td>2H</td><td class="n">0.9395</td><td class="n">0.8823</td><td class="n">1.065</td><td class="n">0.01852</td><td class="n">0.14 %</td></tr>
+<tr><td>4H</td><td class="n">0.9395</td><td class="n">0.8822</td><td class="n">1.065</td><td class="n">0.01852</td><td class="n">0.04 %</td></tr>
+<tr><td>6H</td><td class="n">0.9395</td><td class="n">0.8822</td><td class="n">1.065</td><td class="n">0.01852</td><td class="n">0.03 %</td></tr>
+<tr><td>Fibonacci</td><td class="n">0.9395</td><td class="n">0.8822</td><td class="n">1.065</td><td class="n">0.01852</td><td class="n">0.03 %</td></tr>
+<tr><td>Graded (c top, h bottom)</td><td class="n">0.9395</td><td class="n">0.8822</td><td class="n">1.065</td><td class="n">0.01852</td><td class="n">0.03 %</td></tr>
+<tr><td>Graded (h top, c bottom)</td><td class="n">0.9395</td><td class="n">0.8822</td><td class="n">1.065</td><td class="n">0.01852</td><td class="n">0.02 %</td></tr>
+</tbody></table>
+<p class="prec">Table 1. Comfort proxies, grid 0.025 a (3C and 2H also at 0.0167 a: 0.8855 and 0.8856, conduction 0.0201). At r = 0.1 a the same holds: D<sub>eff</sub>/D<sub>air</sub> 0.640–0.641 and conduction 0.0898 in every stacking, direct radiation at most 0.04 %.</p>
+<p>So in the idealised fabric the stacking does not change how well it breathes or insulates: vapour passes about equally well through every stacking (88 % of open air at this yarn thickness), conduction along the yarn is the same, and with twelve sheets almost no radiation passes straight through in any stacking, so the extra see-through area of 2H along the stacking axis does not carry over to diffuse radiation. Comfort is set by the yarn and the thickness, not by the stacking. The limits are those of Part 2: idealised straight members, no yarn mechanics, no moisture in the fibre, no air flow solved.</p>
+
+<p class="prec"><b>Data and code.</b> Studies 2026-11-02-knitted-hexoct (Part 1), 2026-11-02-hexoct-knit-mechanics (Part 2; scripts/therm.py and run_therm.sh for Part 3, results data/therm-summary.md), research branch of the kaleidohedra repository; runs on dicto-big-brother.</p>
+<p class="prec"><b>References.</b> DICTO, "The Rule of Halves: the Holes of Every Close-Packed Stacking", paper #57, DICTO DOI: 10.5281/zenodo.23647898 (2026). DICTO, "HexOct: Two Tiles for Every Stacking", paper #75, DICTO DOI: 10.5281/zenodo.23737639 (2026). DICTO, "The Window Law", paper #84, DICTO DOI: 10.5281/zenodo.23848832 (2026). Further references in Parts 1 and 2.</p>
+</body></html>
