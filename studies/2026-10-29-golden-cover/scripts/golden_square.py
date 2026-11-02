@@ -59,23 +59,28 @@ for i in range(6):
             pts = [(cx + v[0] * sc, cy - v[1] * sc) for v in V]
             dr.polygon(pts, fill=col); dr.line(pts + [pts[0]], fill=EDGE, width=2 * SS)
 f = ImageFont.truetype(os.environ.get('LEDFONT', 'DSEG14Classic-Regular.ttf'), int(0.06 * W))
-def carved(ch):
+# DICTO 11-03: letters in the reciprocal colours, as on Star Cores (Part II): each letter in the palette colour opposite its solid's
+# (gold/violet, teal/red, blue/orange), brightened to read; the silver solid takes a dark letter with a light rim. LETTERS=opposite.
+LETTER = {'G': (190, 140, 255), 'O': (255, 205, 70), 'L': (255, 96, 72), 'D': (90, 232, 212), 'E': None, 'N': (255, 158, 64)}
+def carved(ch, col=None):
     box = int(0.13 * W); edge = int(0.0022 * W)
     def lay(t, sw=0):
         m = Image.new('L', (box, box), 0); ImageDraw.Draw(m).text((box / 2, box / 2), t, font=f, fill=255, anchor='mm', stroke_width=sw, stroke_fill=255)
         return np.array(m, float) / 255
     On, Rim, Ghost = lay(ch), lay(ch, edge), lay('~')
     glow = ndimage.gaussian_filter(On, 0.006 * W); glow /= glow.max()
-    core = np.array([255, 255, 255.]); halo = np.array([170, 240, 255.])   # full brightness, glow kept soft (DICTO: "not too bright though"); dim = np.array([70, 62, 52.])
+    core = np.array([255, 255, 255.]) if col is None else np.array(col, float); halo = np.array([170, 240, 255.]) if col is None else 0.55 * core + 0.45 * 255
+    dark = os.environ.get('LETTERS') == 'opposite' and col is None
+    if dark: core = np.array(GROUND, float) * 0.6; halo = np.array([90, 90, 96.])   # full brightness, glow kept soft (DICTO: "not too bright though"); dim = np.array([70, 62, 52.])
     # DICTO: H and C, the letters on their own tile (teal), in the pieces' colourway: H yellow (gold), C purple (violet)
     rgb = (core * On[..., None] + halo * (1 - On[..., None])) * (On + 0.6 * glow)[..., None] / np.maximum(On + 0.6 * glow, 1e-6)[..., None]
     # dark edges at full strength (DICTO, final: "back to the stronger black outline"); unlit segments a faint veil
     rim = (Rim - On) > 0.3
-    rgb = np.where(rim[..., None], np.array([8, 6, 4.]), rgb)
+    rgb = np.where(rim[..., None], np.array([235, 235, 240.]) if dark else np.array([8, 6, 4.]), rgb)
     rgb = np.where(((Ghost - Rim) > 0.5)[..., None], halo, rgb)
     alpha = np.clip(np.maximum.reduce([On, 1.0 * rim, 0.45 * glow, 0.14 * Ghost]), 0, 1)
     return Image.fromarray(np.clip(rgb, 0, 255).astype(np.uint8)), Image.fromarray((alpha * 255).astype(np.uint8)), (box, box)
-CARVE = {ch: carved(ch) for ch in WORD}
+CARVE = {ch: carved(ch, LETTER[ch]) for ch in WORD} if os.environ.get('LETTERS') == 'opposite' else {ch: carved(ch) for ch in WORD}
 for i in range(6):
     for j in range(6):
         t, m, (bw, bh) = CARVE[M[i][j]]; cx, cy = x0 + (j + 0.5) * cell, x0 + (i + 0.5) * cell
