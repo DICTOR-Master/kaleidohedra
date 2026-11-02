@@ -49,18 +49,17 @@ ax = fig.add_axes([0.50, 0.56, 0.48, 0.36], projection='3d'); draw3d(ax, True)
 fig.text(0.54, 0.55, '2. Flat feet', fontsize=10, weight='bold')
 fig.text(0.54, 0.475, 'Cut the three ground corners back to short\nflats (part of the outline, nothing added).\nThe piece stands on three small feet instead\nof three points: steadier, kinder to floors.', fontsize=7.5, va='bottom')
 
-# 3. drop-lock slot, drawn in the plane of one plate
+# 3. drop-in tabs (side view): a half of C slides down onto B; its tab drops through a tab slot in A
 ax = fig.add_axes([0.06, 0.13, 0.40, 0.30]); ax.set_aspect('equal'); ax.axis('off')
-L, w, d = 6.0, 1.0, 0.8                                       # slot length, width, drop (in plate thicknesses)
-plate = np.array([[-1, -3], [L + 3, -3], [L + 3, 3], [-1, 3]]); ax.fill(*plate.T, color='#e8e8ee', ec=INK, lw=0.8)
-slotP = np.array([[-1, w / 2], [L, w / 2], [L, -w / 2 - d], [L - w, -w / 2 - d], [L - w, -w / 2], [-1, -w / 2]])
-ax.fill(*slotP.T, color='white', ec=RED, lw=1.0)
-ax.annotate('', xy=(L - 1.6, 0), xytext=(0.5, 0), arrowprops=dict(arrowstyle='->', color=INK, lw=1))
-ax.annotate('', xy=(L - w / 2, -w / 2 - d + 0.1), xytext=(L - w / 2, 0.3), arrowprops=dict(arrowstyle='->', color=RED, lw=1))
-ax.text(2.5, 0.9, 'slide in', fontsize=7.5, ha='center'); ax.text(L + 0.3, -1.3, 'drops in', fontsize=7.5, color=RED)
-ax.set_xlim(-1.5, L + 3.5); ax.set_ylim(-3.5, 3.5)
-fig.text(0.06, 0.115, '3. Drop-lock slot', fontsize=10, weight='bold')
-fig.text(0.06, 0.04, 'The end of each slot steps down by a few mm.\nA piece slides in, then settles into the step.\nIt must be lifted before it can slide back out:\nproof against bumps and earthquake jolts.', fontsize=7.5, va='bottom')
+ax.fill([-4, 4, 4, -4], [-0.5, -0.5, 0.5, 0.5], color='#e8e8ee', ec=INK, lw=0.8)                       # A, edge-on
+ax.fill([1.4, 2.6, 2.6, 1.4], [-0.5, -0.5, 0.5, 0.5], color='white', ec=TEAL, lw=1.0)                   # tab slot in A
+ax.fill([-3, 3, 0], [0.75, 0.75, 3.6], color='#d8d8e0', ec=INK, lw=0.8)                                  # half of C above
+ax.fill([1.5, 2.5, 2.5, 1.5], [-0.9, -0.9, 0.75, 0.75], color=TEAL, ec=INK, lw=0.6)                      # its tab, dropped in
+ax.annotate('', xy=(0, 1.2), xytext=(0, 3.0), arrowprops=dict(arrowstyle='->', color=RED, lw=1))
+ax.text(0.3, 2.2, 'slides down\nalong B', fontsize=7, color=RED); ax.text(2.8, -0.9, 'tab through A', fontsize=7, color=TEAL)
+ax.set_xlim(-4.5, 5.5); ax.set_ylim(-1.5, 4)
+fig.text(0.06, 0.115, '3. Drop-in tabs', fontsize=10, weight='bold')
+fig.text(0.06, 0.04, 'Each half of the cut square carries two short\ntabs that drop through slots in A as it slides\nonto B. Nothing can shift sideways; a half\ncomes out only by lifting it straight back.', fontsize=7.5, va='bottom')
 
 # 4. slot lining, cross-section
 ax = fig.add_axes([0.54, 0.13, 0.40, 0.30]); ax.set_aspect('equal'); ax.axis('off')
