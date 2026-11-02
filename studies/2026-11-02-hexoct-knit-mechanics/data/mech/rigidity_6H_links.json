@@ -1,0 +1,25 @@
+{
+ "task": "rigidity:6H:links",
+ "periodic": {
+  "bars": 1296,
+  "nodes": 432,
+  "dof_w": 1296,
+  "rank_w": 1242,
+  "rank_with_strain": 1245,
+  "mechanisms_w": 51,
+  "self_stress": 54,
+  "soft_macro_strains": 3,
+  "maxwell_bars_minus_3N": 0
+ },
+ "block": {
+  "bars": 1188,
+  "nodes": 432,
+  "dof_w": 1296,
+  "rank_w": 1188,
+  "rank_with_strain": 1188,
+  "mechanisms_w": 105,
+  "self_stress": 0,
+  "soft_macro_strains": 3,
+  "maxwell_bars_minus_3N": -108
+ }
+}

@@ -1,0 +1,85 @@
+Stiffness in units of 1e-3 E_s (rod modulus); rods r = 0.05 a; 12 sheets, 6 x 6 nodes per sheet, in-plane periodic.
+
+Block (rigid joints, links only): rho = 0.0305
+sequence                  <Hagg> C33 bond  E3 free G13 bond G13 free G23 free    E1 in    E2 in   G12 in
+3C                         1.000   14.865    0.492    3.715    0.193    0.193    0.051    0.051    0.023
+2H                         0.091   14.865    0.492    3.715    3.378    3.378    0.063    0.063    0.035
+4H                        -0.091   14.865    0.492    3.715    3.283    3.283    0.055    0.055    0.027
+6H                        -0.091   14.865    0.492    3.715    3.276    3.276    0.055    0.055    0.026
+Fibonacci                 -0.091   14.865    0.492    3.715    3.275    3.275    0.055    0.055    0.026
+Graded c-top/h-bottom     -0.455   14.865    0.492    3.715    0.927    0.927    0.057    0.057    0.029
+Graded h-top/c-bottom      0.455   14.865    0.492    3.715    0.927    0.927    0.057    0.057    0.029
+
+Block (pin joints, links + in-sheet members (3C = octet truss)): rho = 0.0639
+sequence                  <Hagg> C33 bond  E3 free G13 bond G13 free G23 free    E1 in    E2 in   G12 in
+3C                         1.000   14.810   13.441    3.702    3.360    3.360   11.107   11.107    4.165
+2H                         0.091   14.810   13.441    3.702    3.699    3.699   11.107   11.107    4.165
+4H                        -0.091   14.810   13.441    3.702    3.699    3.699   11.107   11.107    4.165
+6H                        -0.091   14.810   13.441    3.702    3.699    3.699   11.107   11.107    4.165
+Fibonacci                 -0.091   14.810   13.441    3.702    3.699    3.699   11.107   11.107    4.165
+Graded c-top/h-bottom     -0.455   14.810   13.441    3.702    3.626    3.626   11.107   11.107    4.165
+Graded h-top/c-bottom      0.455   14.810   13.441    3.702    3.626    3.626   11.107   11.107    4.165
+
+Block (rigid joints, links + in-sheet members): rho = 0.0639
+sequence                  <Hagg> C33 bond  E3 free G13 bond G13 free G23 free    E1 in    E2 in   G12 in
+3C                         1.000   14.865   13.519    3.764    3.426    3.426   11.226   11.226    4.225
+2H                         0.091   14.865   13.519    3.764    3.757    3.757   11.240   11.240    4.233
+4H                        -0.091   14.865   13.519    3.764    3.757    3.757   11.232   11.232    4.228
+6H                        -0.091   14.865   13.519    3.764    3.757    3.757   11.231   11.231    4.228
+Fibonacci                 -0.091   14.865   13.519    3.764    3.757    3.757   11.231   11.231    4.228
+Graded c-top/h-bottom     -0.455   14.865   13.519    3.764    3.686    3.686   11.233   11.233    4.229
+Graded h-top/c-bottom      0.455   14.865   13.519    3.764    3.686    3.686   11.233   11.233    4.229
+
+Periodic bulk (3D-periodic 6 x 6 x 12 cell), 1/S55 = free transverse shear, C14 = shear-stretch coupling, units 1e-3 E_s
+3C  pin   links C33   14.810 C44    3.702 C14    1.309 C11    1.388 C66    0.463 singular (3 zero-energy macro strains)
+2H  pin   links C33   14.810 C44    3.702 C14    0.000 C11    0.926 C66    0.000 singular (3 zero-energy macro strains)
+4H  pin   links C33   14.810 C44    3.702 C14    0.000 C11    0.926 C66    0.000 singular (3 zero-energy macro strains)
+6H  pin   links C33   14.810 C44    3.702 C14   -0.000 C11    0.926 C66    0.000 singular (3 zero-energy macro strains)
+3C  pin   full  C33   14.810 C44    3.702 C14    1.309 C11   13.884 C66    4.628 E3   13.329 1/S55    3.332 E1   11.107
+2H  pin   full  C33   14.810 C44    3.702 C14    0.000 C11   13.421 C66    4.165 E3   13.329 1/S55    3.702 E1   11.107
+4H  pin   full  C33   14.810 C44    3.702 C14    0.000 C11   13.421 C66    4.165 E3   13.329 1/S55    3.702 E1   11.107
+6H  pin   full  C33   14.810 C44    3.702 C14    0.000 C11   13.421 C66    4.165 E3   13.329 1/S55    3.702 E1   11.107
+3C  frame links C33   14.865 C44    3.708 C14    1.299 C11    1.420 C66    0.480 E3    0.492 1/S55    0.193 E1    0.055
+2H  frame links C33   14.865 C44    3.708 C14   -0.000 C11    0.980 C66    0.041 E3    0.492 1/S55    3.708 E1    0.071
+4H  frame links C33   14.865 C44    3.708 C14    0.000 C11    0.969 C66    0.029 E3    0.492 1/S55    3.708 E1    0.061
+6H  frame links C33   14.865 C44    3.708 C14    0.000 C11    0.968 C66    0.028 E3    0.492 1/S55    3.708 E1    0.059
+3C  frame full  C33   14.865 C44    3.758 C14    1.299 C11   13.946 C66    4.677 E3   13.409 1/S55    3.397 E1   11.231
+2H  frame full  C33   14.865 C44    3.758 C14    0.000 C11   13.507 C66    4.237 E3   13.409 1/S55    3.758 E1   11.249
+4H  frame full  C33   14.865 C44    3.758 C14    0.000 C11   13.501 C66    4.231 E3   13.409 1/S55    3.758 E1   11.238
+6H  frame full  C33   14.865 C44    3.758 C14    0.000 C11   13.500 C66    4.230 E3   13.409 1/S55    3.758 E1   11.236
+
+Pin-jointed rigidity (compatibility-matrix rank): mechanisms / self-stress states / zero-energy macro strains
+3C                       links block:  105 /    0 / 3   3D-periodic:   33 /   36 / 3 (bars - 3N = 0)
+3C                       full  block:    0 / 1191 / 0   3D-periodic:    0 / 1299 / 0 (bars - 3N = 1296)
+2H                       links block:  105 /    0 / 3   3D-periodic:   39 /   42 / 3 (bars - 3N = 0)
+2H                       full  block:    0 / 1191 / 0   3D-periodic:    0 / 1299 / 0 (bars - 3N = 1296)
+4H                       links block:  105 /    0 / 3   3D-periodic:   37 /   40 / 3 (bars - 3N = 0)
+4H                       full  block:    0 / 1191 / 0   3D-periodic:    0 / 1299 / 0 (bars - 3N = 1296)
+6H                       links block:  105 /    0 / 3   3D-periodic:   51 /   54 / 3 (bars - 3N = 0)
+6H                       full  block:    0 / 1191 / 0   3D-periodic:    0 / 1299 / 0 (bars - 3N = 1296)
+Fibonacci                links block:  105 /    0 / 3
+Fibonacci                full  block:    0 / 1191 / 0
+Graded c-top/h-bottom    links block:  105 /    0 / 3
+Graded c-top/h-bottom    full  block:    0 / 1191 / 0
+Graded h-top/c-bottom    links block:  105 /    0 / 3
+Graded h-top/c-bottom    full  block:    0 / 1191 / 0
+
+Energy proxy (pin, links + in-sheet members, bonded platens): first buckling strain/stress (1e-3 E_s), work to 5 % strain (1e-6 E_s)
+3C                       compress: 0.0093/0.1370/6.218  compress_free: 0.0102/0.1370/6.153  shear13: 0.0151/0.0559/3.501  shear23: 0.0131/0.0484/2.946
+2H                       compress: 0.0093/0.1370/6.218  compress_free: 0.0102/0.1370/6.153  shear13: 0.0151/0.0559/3.276  shear23: 0.0131/0.0484/2.946
+4H                       compress: 0.0093/0.1370/6.218  compress_free: 0.0102/0.1370/6.153  shear13: 0.0151/0.0559/3.276  shear23: 0.0131/0.0484/2.946
+6H                       compress: 0.0093/0.1370/6.218  compress_free: 0.0102/0.1370/6.153  shear13: 0.0151/0.0559/3.276  shear23: 0.0131/0.0484/2.946
+Fibonacci                compress: 0.0093/0.1370/6.218  compress_free: 0.0102/0.1370/6.153  shear13: 0.0151/0.0559/3.276  shear23: 0.0131/0.0484/2.946
+Graded c-top/h-bottom    compress: 0.0093/0.1370/6.218  compress_free: 0.0102/0.1370/6.153  shear13: 0.0151/0.0559/3.276  shear23: 0.0131/0.0484/2.946
+Graded h-top/c-bottom    compress: 0.0093/0.1370/6.218  compress_free: 0.0102/0.1370/6.153  shear13: 0.0151/0.0559/3.276  shear23: 0.0131/0.0484/2.946
+
+Airflow proxy: straight line-of-sight open fraction along the stacking axis (exact, capsule rods), porosity, tortuosity (voxel h = 0.02 a)
+3C                       ABCABCABCABC  r=0.05: open 0.0325 porosity 0.9406 tau mean 1.0031 straight 0.057 | r=0.1: open 0.0000 porosity 0.7869 tau mean 1.0394
+2H                       ABABABABABAB  r=0.05: open 0.3466 porosity 0.9406 tau mean 1.0011 straight 0.505 | r=0.1: open 0.1426 porosity 0.7869 tau mean 1.0079
+4H                       ABACABACABAC  r=0.05: open 0.0989 porosity 0.9406 tau mean 1.0025 straight 0.145 | r=0.1: open 0.0000 porosity 0.7869 tau mean 1.0215
+6H                       ABACBCABACBC  r=0.05: open 0.0325 porosity 0.9406 tau mean 1.0031 straight 0.057 | r=0.1: open 0.0000 porosity 0.7869 tau mean 1.0333
+Fibonacci                ABCBACABACBC  r=0.05: open 0.0325 porosity 0.9406 tau mean 1.0031 straight 0.057 | r=0.1: open 0.0000 porosity 0.7869 tau mean 1.0324
+Graded c-top/h-bottom    ABABABACBACB  r=0.05: open 0.0325 porosity 0.9406 tau mean 1.0031 straight 0.057 | r=0.1: open 0.0000 porosity 0.7869 tau mean 1.0222
+Graded h-top/c-bottom    ABCABCACACAC  r=0.05: open 0.0325 porosity 0.9406 tau mean 1.0031 straight 0.057 | r=0.1: open 0.0000 porosity 0.7869 tau mean 1.0270
+  resolution check 3C h = 0.0125: voxel open columns 0.0318, tau mean 1.0030
+  resolution check 2H h = 0.0125: voxel open columns 0.3432, tau mean 1.0011

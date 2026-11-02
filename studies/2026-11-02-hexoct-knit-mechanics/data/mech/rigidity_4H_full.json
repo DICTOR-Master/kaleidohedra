@@ -1,0 +1,25 @@
+{
+ "task": "rigidity:4H:full",
+ "periodic": {
+  "bars": 2592,
+  "nodes": 432,
+  "dof_w": 1296,
+  "rank_w": 1293,
+  "rank_with_strain": 1299,
+  "mechanisms_w": 0,
+  "self_stress": 1299,
+  "soft_macro_strains": 0,
+  "maxwell_bars_minus_3N": 1296
+ },
+ "block": {
+  "bars": 2484,
+  "nodes": 432,
+  "dof_w": 1296,
+  "rank_w": 1293,
+  "rank_with_strain": 1296,
+  "mechanisms_w": 0,
+  "self_stress": 1191,
+  "soft_macro_strains": 0,
+  "maxwell_bars_minus_3N": 1188
+ }
+}
