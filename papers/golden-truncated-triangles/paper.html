@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>The Two Golden Truncated Octahedra</title>
+<link rel="stylesheet" href="../paper.css">
+<style>table{border-collapse:collapse;font-size:7.6pt;margin:3mm 0;width:100%} td,th{border-bottom:1px solid #ddd;padding:0.7mm 1.2mm;text-align:left;vertical-align:top}
+td.n,th.n{text-align:right} p.prec{font-size:9pt;color:#3a3a3a;border-left:2px solid #b8962e;padding-left:3mm;margin:3mm 0} .thm{border-left:3px solid #b8962e;padding-left:3mm;margin:3mm 0}
+p.hook{font-style:italic;color:#4a3f2a;border-left:2px solid #c9a24a;padding-left:3mm} figure{margin:3mm 0;break-inside:avoid} figure img{width:100%;display:block} figcaption{font-size:8.2pt;color:#333;margin-top:1.5mm}
+.sw{display:inline-block;width:2.4mm;height:2.4mm;border:0.6px solid #222;margin:0 0.8mm 0 1.2mm;vertical-align:-0.3mm} .plates{break-before:page} figure.pl{margin:0 0 5mm}
+ul.src li{font-size:8.6pt} .draft{color:#a00;font-weight:600} h2,h3{break-after:avoid} table{break-inside:avoid} table.big{break-inside:auto} table.big tr{break-inside:avoid} table.big th:last-child{width:27%} thead{display:table-header-group}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>The Two Golden Truncated Octahedra</h1>
+<p class="sub">Three DICTO families, from Kepler's truncations to Aristotle's space-fillers</p>
+<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>
+Paper #88 · <span class="draft">DRAFT of 3 November 2026, not published</span> · DICTO DOI: reserved on publication · Licence CC BY-SA 4.0 · Scripts and exact checks: papers/golden-truncated-triangles (research branch)<br>
+The observation that DICTO's new solids keep showing the same 3-fold hexagon, the solids themselves and the names of the families are DICTO's. Computation, proofs, exact checks and drafting with Claude (Anthropic).</div>
+
+<div class="abstract"><b>Abstract.</b> A truncated triangle is a hexagon with all six angles 120° and sides alternating between two lengths. DICTO observed that this face runs through his recent solids. We show by exact computation over Q(√5) that among the 69 solids of the DICTO Solids dataset every hexagonal face with 3-fold symmetry is a truncated triangle whose two side lengths have a ratio in Q(√5); nine solids carry such faces (the DICTO-GTT-Solids). We then prove that cutting the corners of a Platonic solid so that every original face becomes a truncated polygon with sides in the golden ratio φ gives exactly two solids for each Platonic solid, ten in all (the DICTO-Kepler golden truncations). For the octahedron the two are DICTO's Icosaxes and Unborn Axes, which by #48 fill space together. Four of DICTO's solids are exact truncations of the icosahedron or octahedron at golden cutting depths, and two more follow the great Archimedean truncation patterns with rectangles in place of squares.</div>
+<p class="hook">Cut the corners off a regular solid and its faces change shape. Cut every corner by the same golden amount and each face keeps exactly one golden proportion. For each regular solid there are just two such cuts, and for the octahedron they give two of DICTO's own solids, which pack together to fill space.</p>
+
+<h2>1. Introduction</h2>
+<p>DICTO noticed that many of his newly found solids have faces of one particular kind: a hexagon that looks like a triangle with its corners cut off. The shape is the <b>truncated triangle</b> (Coxeter t{3}): six angles of 120°, sides alternating a, b, a, b, a, b, with ditrigonal symmetry. DICTO first used it in #20, <i>The FUJI Family</i> [1]. This paper asks why it recurs. The answer has three parts: it recurs exactly (Section 3), it is what golden cuts of the regular solids produce (Section 4), and at the octahedron those cuts are DICTO's space-filling pair (Section 5).</p>
+
+<h2>2. Definitions</h2>
+<p>A <b>truncated polygon</b> is a 2n-gon cut from a regular n-gon by cutting every corner equally; its sides alternate between two lengths. For n = 3 it is a truncated triangle. Its <b>ratio</b> is long side over short side; the regular case has ratio 1. A Platonic solid of edge 1 <b>cut at x</b> (0 &lt; x &lt; ½) is what remains after every corner is cut off by the plane through the points at distance x from that corner along its edges. Each corner then becomes a regular polygon of side kx, with k = 1 for solids of triangles, √2 for the cube and φ for the dodecahedron, and each original face becomes a truncated polygon with sides kx (shared with a corner) and 1 − 2x (shared with another original face). The Archimedean truncations are the cuts at which these two sides are equal.</p>
+
+<h2>3. The census: every 3-fold hexagon is a golden-field truncated triangle</h2>
+<p class="thm"><b>Theorem 1.</b> Among the 69 solids of the DICTO Solids dataset (v7 [2]), every hexagonal face with 3-fold symmetry is a truncated triangle, and its ratio lies in Q(√5). Nine solids carry such faces (Table 1). No other hexagon in the dataset has 3-fold symmetry: the others are centrally symmetric (9 solids), have a single mirror (4) or no symmetry (2).</p>
+<p><b>Proof.</b> Exact computation in sympy from the dataset's exact coordinates in Q(√5): for every hexagonal face the six angles are tested for exactly 120° ((u·v)² = |u|²|v|²/4 with u·v &lt; 0), the sides for exact alternation, and the ratio is simplified exactly. ∎</p>
+<table><thead><tr><th>Solid</th><th class="n">Faces</th><th>Ratio (exact)</th></tr></thead><tbody>
+<tr><td>Icosaxes Hexa</td><td class="n">56</td><td>φ = (1+√5)/2</td></tr>
+<tr><td>White Knight</td><td class="n">20</td><td>φ</td></tr>
+<tr><td>Icosaxes</td><td class="n">8</td><td>φ</td></tr>
+<tr><td>Unborn Axes</td><td class="n">8</td><td>φ</td></tr>
+<tr><td>TI Star core</td><td class="n">20</td><td>√5</td></tr>
+<tr><td>DICTO GTI</td><td class="n">20</td><td>1 + 3√5/5</td></tr>
+<tr><td>Golden Clasp</td><td class="n">8</td><td>(7 + 3√5)/4 = φ⁴/2</td></tr>
+<tr><td>Haigha</td><td class="n">2</td><td>(1 + 2√5)/5</td></tr>
+<tr><td>Hatta</td><td class="n">2</td><td>(5 + 4√5)/11</td></tr>
+</tbody></table>
+<p class="prec">Table 1. The nine DICTO-GTT-Solids and their truncated-triangle faces.</p>
+<figure><img src="figures/golden-truncated-triangles-nine.png" alt="The nine solids with their golden truncated triangles in gold"><figcaption><b>Figure 1.</b> The nine DICTO-GTT-Solids, golden truncated triangles in gold. Haigha and Hatta are turned so that one of their two such faces faces the viewer.</figcaption></figure>
+
+<h2>4. Main theorem: exactly two golden cuts for each Platonic solid</h2>
+<p class="thm"><b>Theorem 2.</b> For each Platonic solid there are exactly two cuts x at which every original face becomes a truncated polygon with ratio φ: x = φ/(k + 2φ), where the sides shared with the corners are the long ones, and x = 1/(φk + 2), where the original sides are the long ones. This gives ten solids, the <b>DICTO-Kepler golden truncations</b> (Table 2). For the octahedron (k = 1) they are DICTO's Icosaxes (x = 1/φ²) and Unborn Axes (x = 1/(φ√5)).</p>
+<p><b>Proof.</b> The two sides of a truncated face are kx and 1 − 2x. The ratio is φ exactly when kx = φ(1 − 2x) or 1 − 2x = φkx. Each equation is linear in x with one root, and both roots lie in (0, ½). For k = 1, φ/(1 + 2φ) = 1/φ² and 1/(φ + 2) = 1/(φ√5), using φ + 2 = φ√5. The identification with Icosaxes and Unborn Axes: in coordinates where the octahedron is |x| + |y| + |z| ≤ 1 and the cut is |x|, |y|, |z| ≤ c, the hexagon sides are √2(2c − 1) and √2(1 − c); c = 1/φ and c = φ²/(φ + 2) give the squared cutting depths 3/φ² and 3φ²/5, the exact depths of Icosaxes and Unborn Axes computed independently from the dataset. All ten ratios were also checked symbolically equal to φ, and all ten volumes computed exactly. ∎</p>
+<table><thead><tr><th>Solid (DICTO order)</th><th>Cut x, corner sides long</th><th>Cut x, original sides long</th><th>Faces</th></tr></thead><tbody>
+<tr><td>Dodecahedron</td><td>1/3</td><td>(7 − √5)/22 ≈ 0.2165</td><td>20 triangles, 12 truncated pentagons</td></tr>
+<tr><td>Icosahedron</td><td>(3 − √5)/2 = 1/φ²</td><td>1/2 − √5/10 = 1/(φ√5)</td><td>12 pentagons, 20 truncated triangles</td></tr>
+<tr><td>Cube</td><td>≈ 0.3479</td><td>≈ 0.2332</td><td>8 triangles, 6 truncated squares</td></tr>
+<tr><td>Tetrahedron</td><td>1/φ²</td><td>1/(φ√5)</td><td>4 triangles, 4 truncated triangles</td></tr>
+<tr><td>Octahedron</td><td>1/φ²: <b>Icosaxes</b></td><td>1/(φ√5): <b>Unborn Axes</b></td><td>6 squares, 8 truncated triangles</td></tr>
+</tbody></table>
+<p class="prec">Table 2. The ten DICTO-Kepler golden truncations (edge 1). Exact cuts and volumes for the cube pair are in golden-cuts-exact.md. The dodecahedron's golden cut x = 1/3 trisects every edge, the same fraction that gives the Archimedean truncated icosahedron from the icosahedron.</p>
+<figure><img src="figures/golden-truncations-ten.png" alt="The ten golden truncations"><figcaption><b>Figure 2.</b> The ten DICTO-Kepler golden truncations, in DICTO order. Top: cut so the corner sides are long; bottom: so the original sides are long. Regular corner polygons in gold.</figcaption></figure>
+
+<h2>5. Aristotle's question: the golden pair fills space</h2>
+<p>Aristotle wrote that among solids the pyramid and the cube fill space (#44 [3]). The Archimedean truncated octahedron fills space alone. Its two golden cuts do it together: in #48 [4] DICTO's Icosaxes and Unborn Axes arise from the icosahedra and Unborns by one cut at the golden point, as "two convex truncated octahedra, the Icosaxes and the Unborn Axes, which fill space", that cut being the only one at which both are convex; their volumes there are 1 + 2√5/3 and 1 + √5/3. Theorem 2 now explains the pair from the other side: among all truncated octahedra they are exactly the two whose hexagons are golden. #48 found the pair by cutting a filling; the golden rule forces it.</p>
+
+<h2>6. Golden depths in DICTO's other solids</h2>
+<p>Four of the nine are exact truncations of a Platonic solid, at golden cutting depths (the ratio of the distances from the centre of the two kinds of face plane; squared, exact):</p>
+<table><thead><tr><th>Solid</th><th>Pattern</th><th>Depth²</th><th>Archimedean</th></tr></thead><tbody>
+<tr><td>Icosaxes</td><td>truncated octahedron</td><td>(9 − 3√5)/2 = 3/φ²</td><td>4/3</td></tr>
+<tr><td>Unborn Axes</td><td>truncated octahedron</td><td>(9 + 3√5)/10 = 3φ²/5</td><td>4/3</td></tr>
+<tr><td>DICTO GTI</td><td>truncated icosahedron</td><td>(5 + √5)/6 = φ√5/3</td><td>13/3 − 22√5/15</td></tr>
+<tr><td>TI Star core</td><td>truncated icosahedron</td><td>(195 + 66√5)/361</td><td>13/3 − 22√5/15</td></tr>
+</tbody></table>
+<p>The other two follow the great truncation patterns with rectangles in place of squares: White Knight has 12 regular decagons, 20 golden truncated triangles and 30 rectangles (the truncated icosidodecahedron's pattern), and Golden Clasp 6 octagons, 8 truncated triangles of ratio φ⁴/2 and 12 rectangles (the truncated cuboctahedron's). Two cross-links: Golden Clasp's hexagon-to-octagon depth² is 3/φ², the depth of Icosaxes; and White Knight's hexagon-to-decagon depth² is 13/3 − 22√5/15, the Archimedean truncated icosahedron's own value.</p>
+
+<h2>7. Three families</h2>
+<p>Following DICTO's naming rule (DICTO plus the defining feature): the <b>DICTO-GTT-Solids</b> are the nine solids of Theorem 1; the <b>DICTO-Kepler golden truncations</b> are the ten of Theorem 2, named for Kepler, who described the Archimedean truncations in <i>Harmonices Mundi</i> (1619) [5]; and the <b>DICTO-Aristotle space-fillers</b> gather DICTO's solids proved to fill space. Icosaxes and Unborn Axes belong to all three.</p>
+
+<h2>8. What is known and what is new</h2>
+<p>Known: truncation at any depth is classical; Kepler [5] described the Archimedean truncations, and non-uniform truncations of the Platonic and Archimedean solids have been studied (Zefiro 2011 [6]; the historical survey of Barbaro's perspective solids [7]; golden cutting depths that reach the Archimedean solids, arXiv:2404.15142 [8]). Lalvani's patent [9] speaks of a "φ-truncated icosahedron" in a building system; the text we read does not define its depth or faces, so we cannot say whether it is one of the ten. New within these checks: the rule that every original face be golden, its exactly-two solutions per Platonic solid, the identification of the octahedral pair with DICTO's space-filling pair, the census of Theorem 1, and the golden depths of Section 6. Where an earlier source turns out to describe a member, that member stays in DICTO's family, found independently, with the earlier source cited.</p>
+<p class="prec"><b>Sources checked</b> (2–3 November 2026). Reference library (ask-library, meaning search, top hits per query), queries: one query under DICTO's earlier informal name for the shape; "truncated triangle face semiregular hexagon alternating sides"; "hexagonal faces with alternating edge lengths golden ratio polyhedron"; "polyhedra with ditrigonal or 3-fold symmetric hexagonal faces"; "golden hexagon icosahedral polyhedron faces"; "truncated tetrahedron non-regular hexagon faces golden"; "truncation of Platonic solid at golden ratio depth"; "truncated icosahedron hexagons with edge lengths in golden ratio"; "golden truncated tetrahedron non-regular hexagons"; "truncated cube octagons alternating edge lengths golden ratio"; "truncated dodecahedron edges trisected decagons"; "non-Archimedean truncation depth of polyhedra family parameter"; "polyhedra with two edge lengths in golden ratio icosahedral"; "truncated octahedron golden ratio space filling pair". Hits read for relevance: Kepler 1619 (pp. 72, 88, 89, 271–273); Pacioli 1509 (pp. 107, 115); Goldberg 1937; Al-Siyabi, Koca and Koca 2020; Johnson 1966; Senechal 2004; Betke–Henk 2000; Torquato–Jiao 2009; Fedorov 1885 ch. 13. Web: Wikipedia "Truncated octahedron", "Truncated cube", "Ditrigonal polyhedron", "Truncated triangular trapezohedron"; MathWorld "Truncation"; Zefiro 2011 (Visual Mathematics); Springer 2023 chapter on Barbaro's solids; arXiv:2404.15142; US patent 4,723,382; matematicasvisuales truncated octahedron page. Still to read in full before release: Al-Siyabi–Koca–Koca 2020 and US 4,723,382.</p>
+
+<h2>9. Conclusion</h2>
+<p>The truncated triangle recurs in DICTO's solids because golden cuts of the regular solids make it. For each regular solid exactly two golden cuts exist; for the octahedron they are DICTO's Icosaxes and Unborn Axes, the pair he had already shown to fill space.</p>
+<p class="prec"><b>Data and code.</b> papers/golden-truncated-triangles: fet_proof.py (Theorem 1, exact), trunc_exact.py (cutting depths, exact), golden_cuts.py and golden_cuts_exact.py (Theorem 2: the ten solids, exact sides, ratios and volumes), tt_figs.py (Figure 1). DICTO Solids v7 [2]. Run on dicto-big-brother. View in app: to come with the next app batch.</p>
+
+<h2>References</h2>
+<p class="prec">[1] DICTO, "The FUJI Family", paper #20, DICTO DOI: 10.5281/zenodo.23357896 (2026).<br>
+[2] DICTO, "DICTO Solids: exact geometry", dataset, version 7, DICTO DOI: 10.5281/zenodo.23850845 (concept 10.5281/zenodo.23606967) (2026).<br>
+[3] DICTO, "Aristotle's Pyramid", paper #44, DICTO DOI: 10.5281/zenodo.23529497 (2026).<br>
+[4] DICTO, "The Golden Split: Icosahedra, Unborns and AXE Become Two Convex Space-Fillers", paper #48, DICTO DOI: 10.5281/zenodo.23596362 (2026).<br>
+[5] J. Kepler, <i>Harmonices Mundi</i>, Linz (1619), Book II.<br>
+[6] L. Zefiro, "Vertex- and edge-truncation of the Platonic and Archimedean solids leading to vertex-transitive polyhedra", Visual Mathematics (2011).<br>
+[7] Springer (2023), chapter on Barbaro's <i>La pratica della perspettiva</i> and its truncated solids, doi:10.1007/978-3-031-29483-9_6.<br>
+[8] "Face embeddings of Archimedean solids", arXiv:2404.15142.<br>
+[9] H. Lalvani, "Building structures based on polygonal members and icosahedral", US patent 4,723,382 (filed 1986, granted 1988).</p>
+</body></html>
