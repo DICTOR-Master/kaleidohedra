@@ -46,19 +46,19 @@ report, show = [], []
 for nm, P in SOLIDS.items():
     D = discs(P); ok = all(c for _, _, c in D)
     report.append(f'{nm}: {len(D)} planes, fins per plane {sorted({len(E) for _, E, _ in D})}, all closed discs: {ok}')
-    if ok: show.append((nm, P, D))
+    if ok and (not os.environ.get('ONLY') or nm == os.environ['ONLY']): show.append((nm, P, D))
 print('\n'.join(report))
 
 # ---- room: floor 5 x 4 m, back and left walls 2.6 m; pieces 1.27 m across, standing on a face (lowest point at the floor)
-M = A.rot(16, -30); S = A.Scene(M)
+M = A.rot(30, -22) if os.environ.get('ONLY') else A.rot(16, -30); S = A.Scene(M)
 W, Dp, H = 5.0, 4.0, 2.6
 def quad(P, col, layer): S.items.append((layer, 0, (np.array(P) @ M.T)[:, :2], col, (0.55, 0.57, 0.62, 1), 0.3))
 quad([[0, 0, 0], [W, 0, 0], [W, Dp, 0], [0, Dp, 0]], (0.93, 0.92, 0.89, 1), -3)
 quad([[0, Dp, 0], [W, Dp, 0], [W, Dp, H], [0, Dp, H]], (0.97, 0.97, 0.96, 1), -2)
 quad([[0, 0, 0], [0, Dp, 0], [0, Dp, H], [0, 0, H]], (0.95, 0.95, 0.94, 1), -2)
-spots = [(1.0, 2.6), (2.6, 1.6), (4.1, 2.5)]
+spots = [(2.3, 2.0)] if os.environ.get('ONLY') else [(1.0, 2.6), (2.6, 1.6), (4.1, 2.5)]
 LABELS = []
-COLS = [A.GOLD, A.VIOLET, A.TEAL, '#d4823a', '#5b8ed6', '#c4a6ee']
+COLS = {'corten': ['#8a4a26', '#9c5630', '#7a3f1f'], 'alu': ['#b8bcc4', '#a9aeb7', '#c7cad1']}.get(os.environ.get('METAL', ''), None) or [A.GOLD, A.VIOLET, A.TEAL, '#d4823a', '#5b8ed6', '#c4a6ee']
 for (nm, P, D), (x, y) in zip(show, spots):
     P = P / np.linalg.norm(P, axis=1).max() * 0.635                     # 1.27 m across
     faces = A.hull_faces(P); Q, n = min(faces, key=lambda f: -len(f[0]) * 0 + f[1][2])   # rest on the face whose normal points most down
@@ -72,15 +72,18 @@ for (nm, P, D), (x, y) in zip(show, spots):
     S.tris(np.array(TV), TF, TC)
     LABELS.append(((np.array([[x, y, 0]]) @ M.T)[0, :2], nm))
 # visitor: a simple 1.7 m silhouette (two quads, front and side)
-vx, vy = 4.5, 0.6
+vx, vy = (3.75, 1.9) if os.environ.get('ONLY') else (4.5, 0.6)
 for P in ([[vx - .22, vy, 0], [vx + .22, vy, 0], [vx + .22, vy, 1.45], [vx - .22, vy, 1.45]],
           [[vx - .11, vy, 1.45], [vx + .11, vy, 1.45], [vx + .11, vy, 1.7], [vx - .11, vy, 1.7]]):
     quad(P, (0.45, 0.47, 0.52, 1), 4)
 fig = plt.figure(figsize=(10, 6.6)); ax = fig.add_axes([0, 0.05, 1, 0.88])
 S.draw(ax, 4.2)
-c = (np.array([[W / 2, Dp / 2, 0.8]]) @ M.T)[0, :2]; ax.set_xlim(c[0] - 3.6, c[0] + 3.6); ax.set_ylim(c[1] - 2.2, c[1] + 2.5)
+if os.environ.get('ONLY'):
+    c = (np.array([[2.9, 2.0, 0.85]]) @ M.T)[0, :2]; ax.set_xlim(c[0] - 1.9, c[0] + 1.9); ax.set_ylim(c[1] - 1.15, c[1] + 1.35)
+else:
+    c = (np.array([[W / 2, Dp / 2, 0.8]]) @ M.T)[0, :2]; ax.set_xlim(c[0] - 3.6, c[0] + 3.6); ax.set_ylim(c[1] - 2.2, c[1] + 2.5)
 for p, nm in LABELS: ax.text(p[0], p[1] - 0.1, nm, ha='center', va='top', fontsize=9)
-fig.text(0.5, 0.95, 'DICTO Vacuus: slot-together pieces in a 5 m x 4 m room (each 1.27 m across; visitor 1.7 m)', ha='center', fontsize=11, weight='bold')
-fig.text(0.5, 0.045, 'Whole discs through the centre (slot-together possible): ' + ', '.join(r.split(':')[0] for r in report if 'True' in r), ha='center', fontsize=8.5)
-fig.text(0.5, 0.02, 'Not discs (fins meet only at the centre): ' + ', '.join(r.split(':')[0] for r in report if 'True' not in r), ha='center', fontsize=8.5)
+fig.text(0.5, 0.95, os.environ.get('TITLE', 'DICTO Vacuus: slot-together pieces in a 5 m x 4 m room (each 1.27 m across; visitor 1.7 m)'), ha='center', fontsize=11, weight='bold')
+if not os.environ.get('ONLY'): fig.text(0.5, 0.045, 'Whole discs through the centre (slot-together possible): ' + ', '.join(r.split(':')[0] for r in report if 'True' in r), ha='center', fontsize=8.5)
+if not os.environ.get('ONLY'): fig.text(0.5, 0.02, 'Not discs (fins meet only at the centre): ' + ', '.join(r.split(':')[0] for r in report if 'True' not in r), ha='center', fontsize=8.5)
 A.mark(fig); fig.savefig(OUTP, dpi=200, facecolor='white'); print('written', OUTP)
