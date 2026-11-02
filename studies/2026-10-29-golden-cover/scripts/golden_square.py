@@ -63,7 +63,7 @@ f = ImageFont.truetype(os.environ.get('LEDFONT', 'DSEG14Classic-Regular.ttf'), i
 # (gold/violet, teal/red, blue/orange), brightened to read; the silver solid takes a dark letter with a light rim. LETTERS=opposite.
 LETTER = {'G': (190, 140, 255), 'O': (255, 205, 70), 'L': (255, 96, 72), 'D': (90, 232, 212), 'E': (110, 160, 255), 'N': (236, 238, 245)}   # DICTO 11-03: reciprocal = swap within the cover's own colours: gold/violet, teal/red, silver/blue
 def carved(ch, col=None):
-    box = int(0.13 * W); edge = int(0.0022 * W)
+    box = int(0.13 * W); edge = int(round(1.5 * int(0.0022 * W)))   # DICTO 11-03: rim 1.5x, as on DICTONIC Bonds
     def lay(t, sw=0):
         m = Image.new('L', (box, box), 0); ImageDraw.Draw(m).text((box / 2, box / 2), t, font=f, fill=255, anchor='mm', stroke_width=sw, stroke_fill=255)
         return np.array(m, float) / 255
