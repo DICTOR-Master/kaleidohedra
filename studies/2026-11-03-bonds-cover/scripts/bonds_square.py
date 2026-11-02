@@ -7,7 +7,8 @@
 # circumradius in the squares' one pose. One colour per bond (the squares' palette): Golden gold, Keyed violet, Delian teal, Twinned
 # Delian blue. Two pieces are not convex (the Lotus Jewel Axes' dents, the Dodecaxes' keys), so the pieces are drawn with a depth
 # buffer, not by sorting faces; edges are the borders between visible face planes (coplanar parts of one face are one face).
-# Letters: the HexOct LED letters (DSEG14 Classic, OFL) in the palette colour opposite the piece's, as on Star Cores (DICTO 10-31).
+# Letters: the HexOct LED letters (DSEG14 Classic, OFL), reciprocal colours (DICTO 11-03): Golden and Keyed swap gold/violet, Delian and
+# Twinned Delian swap teal/blue, so the letters use only the four piece colours.
 # Usage: bonds_square.py <dataset solids dir>
 import math, os, sys, json, numpy as np
 from scipy import ndimage
@@ -22,7 +23,8 @@ PIECES = [('Icosaxes', 'dicto-icosaxes', 14), ('Unborn Axes', 'dicto-unborn-axes
           ('Sonsam', 'dicto-sonsam', 13), ('Lahdeli', 'dicto-lahdeli', 8)]   # name, dataset slug, faces (as a check)
 BOND = [0, 0, 1, 1, 2, 2, 3, 3]
 BONDTONE = [(217, 165, 33), (138, 92, 196), (43, 179, 163), (58, 112, 205)]          # gold, violet, teal, blue
-BONDLETTER = [(190, 140, 255), (255, 205, 70), (255, 96, 72), (255, 158, 64)]         # opposites: violet, gold, red, orange (Star Cores' LETTER values)
+BONDLETTER = [(190, 140, 255), (255, 205, 70), (96, 156, 255), (90, 232, 212)]        # reciprocal (DICTO 11-03): each bond's letters in its partner bond's
+# piece colour, brightened as the Star Cores letters (same values): Golden violet, Keyed gold, Delian blue, Twinned Delian teal
 def load(slug):
     m = json.load(open(os.path.join(SOL, slug + '.json')))
     return np.array([[float(x) for x in v['decimal']] for v in m['vertices']]), [list(f) for f in m['faces']]
