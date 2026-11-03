@@ -64,12 +64,12 @@ def cutA(name, x):
 xL3, xG5 = 1 / (G + 2), 1 / 3
 # Figure 1: the icosidodecahedron and snub dodecahedron cuts, White Knight, and the depth chart
 fig, axs = plt.subplots(2, 3, figsize=(10.5, 7.2), gridspec_kw=dict(wspace=0.22, hspace=0.2))
-render(axs[0, 0], cutA('icosidodecahedron', xL3), 'icosidodecahedron, x = 1/(φ√5)\ntriangles golden, decagons regular')
-render(axs[0, 1], cutA('icosidodecahedron', xG5), 'icosidodecahedron, x = 1/3\npentagons golden, hexagons regular')
+render(axs[0, 0], cutA('icosidodecahedron', xL3), 'Lesser Golden Cut Icosidodecahedron\nx = 1/(φ√5): triangles golden, decagons regular')
+render(axs[0, 1], cutA('icosidodecahedron', xG5), 'Greater Golden Cut Icosidodecahedron\nx = 1/3: pentagons golden, hexagons regular')
 wk = json.load(open(os.path.expanduser('~/kres-tmp/dataset-v7/solids/dicto-white-knight.json')))
 render(axs[0, 2], np.array([[float(c) for c in v['decimal']] for v in wk['vertices']]), "White Knight (DICTO)\nsame faces, rectangles turned")
-render(axs[1, 0], cutA('snub dodecahedron', xL3), 'snub dodecahedron, x = 1/(φ√5)\ntriangles golden, decagons regular')
-render(axs[1, 1], cutA('snub dodecahedron', xG5), 'snub dodecahedron, x = 1/3\npentagons golden, hexagons regular')
+render(axs[1, 0], cutA('snub dodecahedron', xL3), 'Lesser Golden Cut Snub Dodecahedron\nx = 1/(φ√5): triangles golden, decagons regular')
+render(axs[1, 1], cutA('snub dodecahedron', xG5), 'Greater Golden Cut Snub Dodecahedron\nx = 1/3: pentagons golden, hexagons regular')
 ax = axs[1, 2]
 ns = [3, 4, 5, 6, 8, 10]; k = [2 * np.cos(np.pi / n) for n in ns]
 ax.plot(ns, [G / (c + 2 * G) for c in k], 'o-', color='#8e5bd6', label='greater: corner sides long')
@@ -87,7 +87,7 @@ i = 0
 for cat, r in rh.items():
     for c in r['cuts']:
         lab = c['cut'].split()[0]
-        render(axs[i], np.array(c['vertices_edge1']), f'{cat}\n{lab}: a/b = {"φ" if lab == "greater" else "1/φ"}'); i += 1
+        render(axs[i], np.array(c['vertices_edge1']), f'{lab.capitalize()} Golden Cut\n{cat.title()}\na/b = {"φ" if lab == "greater" else "1/φ"}'); i += 1
 mark(fig); fig.savefig(os.path.join(OUT, 'fig2-rhombic.png'), dpi=220, facecolor='white'); plt.close(fig)
 
 # Figure 3: sections. Tesseract vertex-first at h = 1/phi^2, 1/2, 1/phi; 120-cell cell-first golden dodecahedra
