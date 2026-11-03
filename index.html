@@ -381,6 +381,18 @@
       color: #eaf6ff; font: 600 16px/1.2 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: 0.12em; border-radius: var(--radius-s); padding: 6px 10px;
     }
     .hx-own-go { white-space: nowrap; font-weight: 600; }
+    /* HexOct's tile pairs (world and kit; paper #86's HexOct family): every pair a full touch target by its paper name, all shown, wrapping */
+    .hx-set-title { justify-content: center; color: var(--accent); font: 600 var(--text-s) var(--font-ui); margin-bottom: 0; }
+    .hx-sets { flex-wrap: wrap; justify-content: center; }
+    .hx-sets button { min-height: 44px; white-space: nowrap; }
+    /* on a phone the pairs are a two-column grid kept clear of the tools column at the right, names wrapping, so the panel stays low
+       enough to leave the tiles in view; the buttons' names say what they are, so no title there */
+    @media (max-width: 600px) {
+      .hx-set-title { display: none !important; }
+      .hx-sets { display: grid !important; grid-template-columns: 1fr 1fr; gap: 6px; max-width: calc(100% - 128px); margin-left: auto; margin-right: auto; }
+      .hx-sets button { white-space: normal; line-height: 1.2; padding: 4px 6px; margin: 0; }
+      .hx-set-note { font-size: 13px; }
+    }
     /* Nets: its solids row, and the fold slider once a net is complete. */
     .nets-fold-row[hidden], .nets-cell-row[hidden], .nets-next-row[hidden] { display: none !important; }
     .nets-cell-row, .nets-next-row { justify-content: center; }

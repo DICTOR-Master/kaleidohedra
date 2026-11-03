@@ -8,6 +8,9 @@
 // glass places it, so the viewer builds that stacking by hand, tile by tile (as PV's kits: taps go to the outline while it shows).
 // Free (no helper) builds with the tile picked on the panel. Drawn to the render standard: solid faces with polygon offset, crisp
 // screen-space edges ≥ 1.5 px; the ghost transparent in its tile's colour. Geometry: hexoct-geometry.js (λ = 1/10).
+// Tiles (DICTO 2026-11-03): the same pair picker as the world (world-hexoct.js): the kit places the chosen pair's c- and h-tiles, a
+// HexOct family pair (paper #86) drawn as one solid per tile; switching keeps the build (the same places, the new pair's tiles).
+// ?open=hexoctkit:<fill>:<pair> opens it (e.g. hexoctkit:3C:A).
 import * as THREE from 'three';
 import { LineSegments2 } from 'three/addons/lines/LineSegments2.js';
 import { LineSegmentsGeometry } from 'three/addons/lines/LineSegmentsGeometry.js';
@@ -17,8 +20,8 @@ import { getSettings, onSettingsChange } from './settings.js';
 import { addPanelMinimiser } from './panel-minimiser.js';
 import { storageKey } from './site.js';
 import { ROOF_FOLD_WORLD_SCALE as WS } from '../krp-core/src/geometry-extensions/roof-fold.js';
-import { HEXOCT_FILLS, parseTypes, lettersOf, thirdLetter, hexoctBall, hexoctTileAt } from './hexoct-geometry.js';
-import { HEXOCT_COLOURS, hexoctLayers } from './world-hexoct.js';
+import { HEXOCT_FILLS, HEXOCT_SETS, parseTypes, lettersOf, thirdLetter, hexoctBall, hexoctTileAt, hexoctPlace, placedSurface } from './hexoct-geometry.js';
+import { HEXOCT_COLOURS, hexoctLayers, parseSetChain, setPickerHtml, renderSetPicker } from './world-hexoct.js';
 
 export const HEXKIT_FILLS = ['free', ...HEXOCT_FILLS, 'own'];
 const EDGE = 0x0b1220, GHOST = 0.32, COLS = 3, ROWS = 3;
@@ -68,8 +71,10 @@ export function removeTile(b, key) {
   if (!b.tiles.size) { b.letters.clear(); b.letters.set(0, 'A'); b.letters.set(1, 'B'); }
   return true;
 }
-/** A tile's four pieces where the build puts it (study frame, z up). */
-export const tilePieces = (b, { k, i, j, type }) => hexoctTileAt(type, b.letters.get(k - 1), b.letters.get(k), b.letters.get(k + 1), i, j, k);
+/** A tile's pieces where the build puts it (study frame, z up), of tile set `set` (#75's by default, or a member of #86's family). */
+export const tilePieces = (b, { k, i, j, type }, set = '75') => hexoctTileAt(type, b.letters.get(k - 1), b.letters.get(k), b.letters.get(k + 1), i, j, k, set);
+/** A tile's merged surface (triangles and edges, study frame) where the build puts it: the HexOct family's tiles drawn as one solid. */
+export const tileSurfaceAt = (b, { k, i, j, type }, set) => placedSurface(type, set, hexoctPlace(type, b.letters.get(k - 1), b.letters.get(k), b.letters.get(k + 1), i, j, k));
 
 /** A fill helper's plan: the K demo's crystal, layer by layer bottom up, each layer's 3 × 3 tiles row by row. */
 export function kitPlan(types) {
@@ -114,9 +119,14 @@ export function freeTarget(b, from, dir, type) {
 }
 const snapshotOf = (b) => ({ tiles: [...b.tiles.values()].map((x) => [x.k, x.i, x.j, x.type]), letters: [...b.letters.entries()] });
 /** A tile's pieces as they would be once placed (a new layer's letter beyond it set as placing it would): the ghost's shape. */
-export function previewPieces(b, tile) {
+export function previewPieces(b, tile, set = '75') {
   const c = { tiles: new Map(b.tiles), letters: new Map(b.letters) };
-  return placeTile(c, tile) ? tilePieces(c, tile) : [];
+  return placeTile(c, tile) ? tilePieces(c, tile, set) : [];
+}
+/** The ghost's merged surface (a HexOct family member's tile), or null when the tile cannot go there. */
+export function previewSurface(b, tile, set) {
+  const c = { tiles: new Map(b.tiles), letters: new Map(b.letters) };
+  return placeTile(c, tile) ? tileSurfaceAt(c, tile, set) : null;
 }
 /** A build from its snapshot: the tiles and letters as saved when they agree (every layer one kind, its letters known, no empty
  *  layer between), else the tiles placed again from layer 0 out; an empty build when neither works. */
@@ -144,16 +154,17 @@ export function createHexoctKitWorld({ scene, fitView = () => {}, showHudPrompt 
   const group = new THREE.Group();
   group.visible = false;
   scene.add(group);
-  const view = { fill: 'free', own: 'cchch', piece: 'c' };
+  const view = { fill: 'free', own: 'cchch', piece: 'c', set: '75' };
   let build = emptyBuild();
   function read(d) {
     if (HEXKIT_FILLS.includes(d?.fill)) view.fill = d.fill;
     if (parseTypes(d?.own)) view.own = parseTypes(d.own);
     if (d?.piece === 'c' || d?.piece === 'h') view.piece = d.piece;
+    if (HEXOCT_SETS.includes(d?.set)) view.set = d.set;
     build = buildFrom(d);
   }
   try { read(JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null')); } catch { /* corrupt or blocked storage: an empty kit */ }
-  const snapshot = () => ({ version: 1, fill: view.fill, own: view.own, piece: view.piece, ...snapshotOf(build) });
+  const snapshot = () => ({ version: 1, fill: view.fill, own: view.own, piece: view.piece, set: view.set, ...snapshotOf(build) });
   const save = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot())); } catch { /* best-effort */ } };
   let active = false, skeleton = false, opacity = 1, pickTargets = [], ghostMesh = null, ghostTile = null, helper = null, lastPlaced = null;
 
@@ -189,6 +200,12 @@ export function createHexoctKitWorld({ scene, fitView = () => {}, showHudPrompt 
     const pos = [], col = [], rec = [], edges = [], colour = new THREE.Color();
     for (const [key, x] of build.tiles) {
       colour.setHex(HEXOCT_COLOURS[x.type]);
+      if (view.set !== '75') {   // a HexOct family tile: its merged faces and edges, one solid (no seams between its pieces)
+        const S = tileSurfaceAt(build, x, view.set);
+        for (const tri of S.tris) { for (const v of tri) { pos.push(...toApp(v)); col.push(colour.r, colour.g, colour.b); } rec.push(key); }
+        for (const [u, v] of S.edges) edges.push(...toApp(u), ...toApp(v));
+        continue;
+      }
       for (const p of tilePieces(build, x)) {
         const P = p.vertices.map(toApp);
         for (const f of p.faces) {
@@ -212,8 +229,9 @@ export function createHexoctKitWorld({ scene, fitView = () => {}, showHudPrompt 
     }
     ghostTile = ghostFor();
     if (ghostTile) {
-      const gp = [], ge = [];
-      for (const p of previewPieces(build, ghostTile)) {
+      const gp = [], ge = [], GS = view.set !== '75' ? previewSurface(build, ghostTile, view.set) : null;
+      if (GS) { for (const tri of GS.tris) for (const v of tri) gp.push(...toApp(v)); for (const [u, v] of GS.edges) ge.push(...toApp(u), ...toApp(v)); }
+      else for (const p of previewPieces(build, ghostTile)) {
         const P = p.vertices.map(toApp);
         for (const f of p.faces) {
           for (let i = 1; i + 1 < f.length; i++) for (const q of [f[0], f[i], f[i + 1]]) gp.push(...P[q]);
@@ -276,6 +294,7 @@ export function createHexoctKitWorld({ scene, fitView = () => {}, showHudPrompt 
   panel.id = 'worldhexoctkit-panel';
   panel.className = 'qc-panel';
   panel.innerHTML = `
+    ${setPickerHtml('hk')}
     <div class="w4d-row w4d-options hk-fills">${HEXKIT_FILLS.map((k) => `<button type="button" data-hk-fill="${k}"></button>`).join('')}</div>
     <div class="w4d-row hx-own-row hk-own-row"><input type="text" class="hx-own hk-own" maxlength="40" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="go"><button type="button" data-hk-own-go></button></div>
     <div class="w4d-row w4d-options"><span class="hk-pieces"><button type="button" data-hk-piece="c"></button><button type="button" data-hk-piece="h"></button></span><button type="button" data-hk-clear></button></div>
@@ -289,6 +308,7 @@ export function createHexoctKitWorld({ scene, fitView = () => {}, showHudPrompt 
     panel.classList.toggle('visible', active);
     if (!active) return;
     const L = lang(), T = types();
+    renderSetPicker(panel, view.set, L);
     panel.querySelectorAll('[data-hk-fill]').forEach((b) => {
       const k = b.dataset.hkFill;
       b.textContent = k === 'free' ? t('hexkit.fill.free', L) : t(`hexoct.kind.${k}`, L);
@@ -324,6 +344,7 @@ export function createHexoctKitWorld({ scene, fitView = () => {}, showHudPrompt 
     view.fill = k; typing = false; save(); draw(); fit();
     return true;
   }
+  panel.querySelector('.hx-sets').addEventListener('click', (e) => { const k = e.target.closest('[data-hx-set]')?.dataset.hxSet; if (k && k !== view.set && HEXOCT_SETS.includes(k)) { view.set = k; commit(); } });
   panel.querySelector('.hk-fills').addEventListener('click', (e) => { const k = e.target.closest('[data-hk-fill]')?.dataset.hkFill; if (k && k !== view.fill) setFill(k); });
   function useOwn() {
     const s = parseTypes(ownInput.value);
@@ -343,12 +364,15 @@ export function createHexoctKitWorld({ scene, fitView = () => {}, showHudPrompt 
     // while the helper shows the next tile, taps go to it (through the tiles in front), as PV's kit outlines
     meshes: () => (types() && ghostMesh ? [ghostMesh] : ghostMesh ? [...pickTargets, ghostMesh] : pickTargets),
     handleTap,
-    /** tool:hexoctKit:<free|3C|2H|4H|6H|fib|c/h sequence>: the helper (a c/h sequence as the viewer's own). */
-    setChain(kind) {
+    /** tool:hexoctKit:<free|3C|2H|4H|6H|fib|c/h sequence>[:<75|A|B|C|D|E>]: the helper (a c/h sequence as the viewer's own) and,
+     *  when given, the tile set (#75's tiles or a #86 HexOct family pair). */
+    setChain(chain) {
+      const [kind, set] = parseSetChain(chain);
+      if (set) view.set = set;
       const k = HEXKIT_FILLS.find((x) => x.toLowerCase() === String(kind).toLowerCase());
       if (k && k !== 'own') view.fill = k;
       else if (parseTypes(kind)) { view.own = parseTypes(kind); view.fill = 'own'; }
-      else return;
+      else if (!set) return;
       typing = false; save();
       if (active) { draw(); fit(); }
     },
@@ -371,14 +395,14 @@ export function createHexoctKitWorld({ scene, fitView = () => {}, showHudPrompt 
     /** For the browser tests (?probe): a point inside the ghost, and every tile face's mid-point and outward normal (app frame). */
     ghostCentre() {   // inside its first piece (a convex piece, so a ray through it meets the ghost)
       if (!ghostTile) return null;
-      const V = previewPieces(build, ghostTile)[0].vertices.map(toApp);
+      const V = previewPieces(build, ghostTile, view.set)[0].vertices.map(toApp);
       return V.reduce((a, v) => a.map((c, q) => c + v[q] / V.length), [0, 0, 0]);
     },
     tileFaces() {
       const out = [];
       for (const [key, x] of build.tiles) {
         const ball = toApp(hexoctBall(build.letters.get(x.k), x.i, x.j, x.k));
-        for (const p of tilePieces(build, x)) {
+        for (const p of tilePieces(build, x, view.set)) {
           const P = p.vertices.map(toApp), m = P.reduce((a, v) => a.map((c, q) => c + v[q] / P.length), [0, 0, 0]);
           for (const f of p.faces) {
             const F = f.map((q) => P[q]), mid = F.reduce((a, v) => a.map((c, q) => c + v[q] / F.length), [0, 0, 0]);
@@ -393,10 +417,10 @@ export function createHexoctKitWorld({ scene, fitView = () => {}, showHudPrompt 
       return out;
     },
     /** For the browser tests (?probe): the helper, the build, and the ghost (its tile and its pieces' corners, study frame). */
-    probe: () => ({ fill: view.fill, own: view.own, piece: view.piece, types: types(), tiles: snapshotOf(build).tiles, letters: Object.fromEntries(build.letters),
-      ghost: ghostTile ? { ...ghostTile } : null, ghostCorners: ghostTile ? previewPieces(build, ghostTile).map((p) => p.vertices) : null,
+    probe: () => ({ set: view.set, fill: view.fill, own: view.own, piece: view.piece, types: types(), tiles: snapshotOf(build).tiles, letters: Object.fromEntries(build.letters),
+      ghost: ghostTile ? { ...ghostTile } : null, ghostCorners: ghostTile ? previewPieces(build, ghostTile, view.set).map((p) => p.vertices) : null,
       next: helper?.tile ? { ...helper.tile } : null, lastPlaced,
-      lastCorners: lastPlaced && build.tiles.has(`${lastPlaced.k},${lastPlaced.i},${lastPlaced.j}`) ? tilePieces(build, lastPlaced).map((p) => p.vertices) : null, done: !!helper?.done, conflict: helper?.conflict ?? null,
+      lastCorners: lastPlaced && build.tiles.has(`${lastPlaced.k},${lastPlaced.i},${lastPlaced.j}`) ? tilePieces(build, lastPlaced, view.set).map((p) => p.vertices) : null, done: !!helper?.done, conflict: helper?.conflict ?? null,
       ghostOpacity: ghostMat.opacity, lineWidth: lineMats[0]?.linewidth ?? null, solid: !solidMat.transparent }),
   };
 }

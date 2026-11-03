@@ -4984,7 +4984,8 @@ async function init() {
     const openStar = new URLSearchParams(location.search).get('open')?.match(/^starstep:(\w+)(?::(\d+))?$/i);
     const openVacuus = new URLSearchParams(location.search).get('open')?.match(/^vacuus:(\w+)(?::(pyramids|exploded|star|sheets|struts))?$/i);
     const openGcut = new URLSearchParams(location.search).get('open')?.match(/^goldencut:(\w+)(?::(greater|lesser|archimedean))?$/i);
-    const openHexoct = new URLSearchParams(location.search).get('open')?.match(/^hexoct(?::(\w+))?$/i);
+    const openHexoct = new URLSearchParams(location.search).get('open')?.match(/^hexoct(?::(\w+(?::\w+)?))?$/i);
+    const openHexoctKit = new URLSearchParams(location.search).get('open')?.match(/^hexoctkit(?::(\w+(?::\w+)?))?$/i);
     const openStarCores = new URLSearchParams(location.search).get('open')?.match(/^starcores(?::([\w-]+(?::(?:2|phi)(?::\d+)?)?))?$/i);
     const OPENABLE = ['octet', 'thirteens', 'chains', 'dodeca', 'theaetetus', 'up', 'upFilm', 'kpFilm', 'thirteens', 'octet', 'icosa', 'roofFold', 'stellaJewel', 'sunstar', 'octetBuild', 'breathing', 'bodhiPyro', 'doubleVision', 'vajrayana', 'ocdStella', 'octetTruss', 'reuleaux', 'aristotle', 'platonicMix', 'dictonic', 'globalWeb', 'stackings', 'bloom', 'bloom', 'whiteQueen', 'cycles', 'shells', 'golden', 'studies', 'targets'];
     if (openWorld?.[1] === 'whitequeen') openWorld[1] = 'whiteQueen';   // ?open=whitequeen (the paper's link, lower case)
@@ -5026,9 +5027,14 @@ async function init() {
       // ?open=starcores[:<D-number or key>[:<2|phi>[:<step>]]] (DICTO 2026-11-02, the Star Cores book's "View in app"): the Star
       // Cores world in Kaleidohedra on that shape (e.g. starcores:D106, starcores:cube-pearl:phi:3).
       setTimeout(() => dimensionWizard.go(`tool:starCoresWorld${openStarCores[1] ? `:${openStarCores[1]}` : ''}`, 'kaleidohedra', 'Star Cores'), 0);
+    } else if (openHexoctKit) {
+      // ?open=hexoctkit[:<free|3C|2H|4H|6H|fib|c/h sequence>[:<75|A|B|C|D|E>]] (DICTO 2026-11-03, paper #86): the HexOct kit in
+      // Polyhedraverse on that helper and tile set (#75's tiles or a #86 HexOct family pair, e.g. hexoctkit:3C:A).
+      setTimeout(() => dimensionWizard.go(`tool:hexoctKit${openHexoctKit[1] ? `:${openHexoctKit[1]}` : ''}`, 'polyhedraverse', t('hexkit.title', getSettings().language)), 0);
     } else if (openHexoct) {
-      // ?open=hexoct[:<3C|2H|4H|6H|fib|c/h sequence>] (DICTO 2026-10-31, paper #75's "View in app"): HexOct in Kaleidohedra (since
-      // 2026-11-01, beside the Stackings World), on that fill.
+      // ?open=hexoct[:<3C|2H|4H|6H|fib|c/h sequence>[:<75|A|B|C|D|E>]] (DICTO 2026-10-31, paper #75's "View in app"; the pair from
+      // 2026-11-03, paper #86's: hexoct:3C:A): HexOct in Kaleidohedra (since 2026-11-01, beside the Stackings World), on that fill and
+      // tile set (#75's tiles when none is given, so #75's links show what they always did).
       setTimeout(() => dimensionWizard.go(`tool:hexoctWorld${openHexoct[1] ? `:${openHexoct[1]}` : ''}`, 'kaleidohedra', 'HexOct'), 0);
     } else dimensionWizard.open();
 
