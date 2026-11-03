@@ -52,7 +52,7 @@ H(mu) = conv(P cup mu P*) = mu polar(S(mu)). nu = mu/r^2.
   - Golden relatives Q(sqrt5, phi^2) and Q((13 + 6sqrt5)/11, phi^2) have the same combinatorics as OG.
   - Lift into the Z^6 shadow module (smallest integer scale): OG 228 in our frame and 342 = 2 x 171 in the chain frame (the
     bridge study found 171; the factor 2 is presumably a module convention). The truncated icosahedron and the pentakis
-    dodecahedron need 38, the dodecahedron and the Lesser GCI need 2, and the Golden OG (DICTO's name, 11-03; the golden relative at sqrt5) needs **4**. The 19
+    dodecahedron need 38, the dodecahedron and the Lesser GCI need 2, and the Lesser Golden OG (DICTO's name, 11-03; at sqrt5) needs **4**. The 19
     comes from mu_TI.
 - **4D first look (s5, 17/17).**
   - Tesseract x 16-cell: at mu = phi^2 the cells are Icosaxes + Lesser GCT; at 2 + 1/phi^2 they are Unborn Axes + Greater GCT.
@@ -111,7 +111,7 @@ cells, or the golden tight cycles.
 - The 171 vs 342 module factor is not re-derived.
 
 Naming candidates (for DICTO):
-- Golden OG = the golden relative at mu = sqrt5 (NAMED by DICTO 11-03); the second relative at mu = (13+6sqrt5)/11 still unnamed;
+- NAMED by DICTO 11-03: Lesser Golden OG (mu = sqrt5) and Greater Golden OG (mu = (13+6sqrt5)/11), together the Golden OGs;
 - the all-golden 4D polytopes;
 - the golden tight cycles.
 
