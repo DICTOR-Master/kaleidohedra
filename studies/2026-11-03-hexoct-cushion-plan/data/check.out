@@ -1,0 +1,31 @@
+a = 36.36 mm, d = 29.69 mm, row pitch ideal 31.49 mm, knitted 31.82 mm (+1.04 %)
+link tilt 54.7356 deg; plan offset a/sqrt3 = 20.99 mm
+sheet 400.0 x 400.0 mm; depth (3 sheets, mid-plane spacing d, plus one sheet thickness) 62.9 mm
+free cord length between sheet faces a - 1.22 t = 32.1 mm
+sheet A: 126 nodes, node rows at ridges [4, 11, 18]... (12 rows), true ridges [4.0, 11.0, 18.0]
+sheet B: 126 nodes, node rows at ridges [6, 13, 20]... (12 rows), true ridges [6.33, 13.33, 20.33]
+sheet C: 136 nodes, node rows at ridges [2, 9, 16]... (13 rows), true ridges [1.67, 8.67, 15.67]
+links per gap [355, 366], total 721
+gap 1: lower nodes with 3 links 105, fewer 21
+gap 2: lower nodes with 3 links 114, fewer 12
+gap 1: max |link length - a| (ideal plan positions) 2.84e-14 mm
+gap 2: max |link length - a| (ideal plan positions) 3.55e-14 mm
+sheet B is c: link pairs (down, up) through a B node that continue in one straight line: 343 (each B node with both: 3)
+gap 1: V pieces 114, single pieces 127, links 355, catches 596, longest open span 5 ridges
+gap 2: V pieces 114, single pieces 138, links 366, catches 618, longest open span 4 ridges
+cord pieces 493, catches 1214
+stitches: sheets 3 x 15488, side walls 2 x 4576; yarn at 1 cm/stitch 556 m
+link cord 56 m (links x a + 2 x 25 mm per piece for catch and knot, +10 %); fill volume 9.5 L
+pressure 1 kPa: 1.15 N per node area; if links alone held it: 0.47 N per link
+pressure 6 kPa: 6.87 N per node area; if links alone held it: 2.81 N per link
+time: knitting at 25 st/min 37 h (+25 % for working three needles in step 46 h); cord work at 30 s per catch and 30 s per piece 14 h
+mech c_links {'C33_bonded': 14.8651, 'E3_free': 0.4924, 'G13_bonded': 3.745, 'G13_free': 0.1927}
+mech c_full {'C33_bonded': 14.8651, 'E3_free': 13.8601, 'G13_bonded': 3.7897, 'G13_free': 3.5193}
+mech h_links {'C33_bonded': 14.8651, 'E3_free': 0.4924, 'G13_bonded': 3.745, 'G13_free': 3.708}
+mech h_full {'C33_bonded': 14.8651, 'E3_free': 13.8601, 'G13_bonded': 3.7897, 'G13_free': 3.7684}
+mech cc_links {'C33_bonded': 14.8651, 'E3_free': 0.4924, 'G13_bonded': 3.7359, 'G13_free': 0.1927}
+mech cc_full {'C33_bonded': 14.8651, 'E3_free': 13.7443, 'G13_bonded': 3.7797, 'G13_free': 3.4872}
+mech hh_links {'C33_bonded': 14.8651, 'E3_free': 0.4924, 'G13_bonded': 3.7359, 'G13_free': 1.4532}
+mech hh_full {'C33_bonded': 14.8651, 'E3_free': 13.7443, 'G13_bonded': 3.7797, 'G13_free': 3.7323}
+3 sheets, links only, rigid joints: free shear h/c = 19.2; 4 sheets hh/cc = 7.5; sheets as stiff as links (3): 1.071
+figures written

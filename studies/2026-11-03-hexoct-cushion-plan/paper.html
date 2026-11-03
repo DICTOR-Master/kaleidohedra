@@ -1,0 +1,121 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Knitted HexOct Cushion: Plan</title><link rel="stylesheet" href="../paper.css">
+<style>table{border-collapse:collapse;font-size:7.8pt;margin:1.5mm 0;width:100%} td,th{border-bottom:1px solid #ddd;padding:0.5mm 1.1mm;text-align:left;vertical-align:top}
+body,p,li{font-size:8.7pt;line-height:1.34} h1{font-size:17pt} .logo{width:22mm}
+h2{font-size:11pt;margin:3mm 0 1mm} h3{font:600 9.4pt "DejaVu Sans",sans-serif;margin:2mm 0 0.5mm} h2,h1,h3{break-after:avoid} ol,ul{margin:1mm 0 1mm 5mm;padding-left:3mm} li{margin:0.4mm 0}
+figure{margin:2mm 0;break-inside:avoid;text-align:center} figure img{width:100%;display:block;margin:0 auto} figcaption{font-size:7.8pt;line-height:1.33;color:#333;margin-top:1mm;text-align:left}
+.status{border:1px solid #b8962e;background:#faf6ea;padding:2mm 3mm;font:8pt "DejaVu Sans",sans-serif;margin:0 0 3mm} .status ol{margin:0.5mm 0 0 4mm}
+td.v{white-space:nowrap} tr.rec td{background:#f1f6ec} .two{display:grid;grid-template-columns:1.45fr 1fr;gap:4mm;align-items:start} .brk{break-before:page}</style></head><body>
+<img class="watermark" src="../dicto-logo.png" alt=""><img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>Knitted HexOct Cushion: Plan</h1>
+<p class="sub">One square cushion, for sitting on and for the head, knitted by hand as one continuous three-sheet HexOct</p>
+<div class="meta"><b>DICTO</b> · dictospheres.com · 3 November 2026 · study 2026-11-03-hexoct-cushion-plan · plan for approval, not published</div>
+<div class="status"><b>Status.</b> Plan for DICTO's approval; the full pattern is written only after approval. Nothing knitted yet. Open points:
+<ol><li>Sequence A-B-C (middle sheet c) is the one pick below; A-B-A (h) would be the steadier, firmer-sideways cushion.</li>
+<li>Depth about 6.5 cm, not 5 cm: 5 cm needs a finer yarn and about 1.7 times the work (§1).</li>
+<li>The in-step hand method (§2) is untried; a small trial pair (c and h) comes first.</li>
+<li>Whether the shear difference of #83 part 2 survives with cords that only pull and a fill that carries the weight is not known; the trial pair measures it (§5).</li>
+<li>Yarn, cord and fill amounts and the hours are estimates; the gauge (22 stitches and 22 ridges per 10 cm) must be measured on a swatch.</li></ol></div>
+<p>DICTO proposed the Knitted HexOct (#83): one continuous multi-layer knitted fabric whose knitted sheets are close-packed layers and whose linking
+yarns join each node to the 3 nodes of the next sheet, at 54.74°, with length <i>a</i>, holding the sheets √(2/3)&nbsp;<i>a</i> apart. DICTO chose the object
+to be made from it: one square cushion that serves both as a seat cushion and as a pillow. This plan states what will be made, how it is knitted as one
+piece, how the geometry is kept, what it costs, and how the knitter can check it against #83. Every number below comes from <code>scripts/plan.py</code>
+(checks in <code>data/check.out</code>).</p>
+
+<h2>1. The object</h2>
+<table><tr><th>Finished size</th><td>40 × 40 cm, about 6.5 cm deep (sheet mid-planes 2 × 29.7 mm apart, one sheet thickness, a little bulge of the fill)</td></tr>
+<tr><th>HexOct layers</th><td>3 knitted sheets A, B, C (2 gaps of links); 126, 126 and 136 nodes; 721 links (355 + 366)</td></tr>
+<tr><th>Lattice</th><td>node spacing <i>a</i> = 36.4 mm (8 stitches), sheet spacing <i>d</i> = √(2/3)&nbsp;<i>a</i> = 29.7 mm, links of length <i>a</i> at 54.74°</td></tr>
+<tr><th>Sequence</th><td><b>A-B-C</b>: the middle sheet is c, every link runs straight on through it (343 of 343 link pairs through B checked)</td></tr>
+<tr><th>Faces</th><td>both faces plain garter, showing the nodes as small dimples in a triangular lattice; turned over the stack is C-B-A, still c, so both faces are alike</td></tr></table>
+<p><b>Why three sheets.</b> Three is the smallest stack with a sheet that has a type (c or h). We ran the block tests of #83 part 2 (idealised rods, links only,
+rigid joints) on three- and four-sheet stacks. Compression is the same in every case (14.865 × 10<sup>−3</sup>&nbsp;<i>E</i><sub>s</sub>). Free transverse shear is
+0.193 in A-B-C and 3.708 in A-B-A: the c stack is 19.2 times softer sideways. Four sheets give less contrast (A-B-C-A against A-B-A-B: 7.5 times), because
+an h stack of four sheets keeps one net turn. Sheets as stiff as the links reduce the contrast to 7 %. Three sheets also give the depth closest to 5 cm at a
+hand-knittable scale; a 5 cm cushion would need <i>a</i> ≈ 29 mm (fingering yarn, 8 stitches), with about 224 nodes per sheet and about 1.7 times the work.</p>
+<p><b>Why c.</b> What the sitter feels, from #83 part 2: the sink under weight is the same for c and h, because compression loads every link alike. What changes is the
+sideways give: the c cushion lets its top move a little with the body when the sitter shifts or the head turns, instead of the skin rubbing on the surface;
+the h cushion holds the top steadier. For a cushion that is also a pillow we pick the give, so c. This choice is a reading of model results; the trial pair
+(§5) shows whether the real cushion feels the difference before the large piece is begun.</p>
+<figure><img src="figs/cushion.svg" alt="" style="width:86%"><figcaption><b>Figure 1.</b> (a) The finished cushion, true proportions; the dots are the nodes of the top sheet, seen as
+dimples. (b) The front quarter cut away: sheet A (blue) at the bottom, sheet B (gold, c) in the middle, sheet C (red) on top, and the links between them; the
+fill and the cover are left out. True geometry from the plan script.</figcaption></figure>
+
+<h2>2. The construction method: one continuous piece by hand</h2>
+<table><tr><th>Technique</th><th>What it gives</th><th>For this cushion</th></tr>
+<tr><td>Double knitting (two layers on one needle, joined at chosen stitches); triple knitting (three layers, published hand patterns exist [1])</td><td>layers that touch: no gap between them</td><td>links cannot have length <i>a</i>; not usable for the links (#83 part 1)</td></tr>
+<tr><td>Tubular knitting</td><td>two layers joined at their edges; the cells are prisms</td><td>no tetrahedra or octahedra; used only for the side walls (§5)</td></tr>
+<tr class="rec"><td><b>Spacer-fabric principle by hand, sheets knitted in step</b> (recommended)</td><td>a spacer machine catches a spacer yarn alternately in two faces knitted at the same time [2, 3]; by hand, three sheets grow together and each link cord is knitted into a node of one sheet and, a measured length <i>a</i> later, into a node of the next</td><td>continuous: every link is knitted in at both ends while the sheets are knitted, nothing is sewn; practical for 3 sheets; untried</td></tr>
+<tr><td>#83 part 1 method: i-cords knitted out of the lower sheet, upper end sewn</td><td>exact links, but separate cords</td><td>upper ends are sewn, so not one continuous piece; 721 i-cords would take well over 100 hours</td></tr>
+<tr><td>Hand-operated double-bed machine (domestic machine with ribber)</td><td>two faces knitted at once and tied, gap of a few millimetres</td><td>cannot form 32 mm links; no machine found that knits three or more spaced faces (#83 part 1); research on knitted spacers treats them as a machine-only structure [3]</td></tr></table>
+<p><b>How practical.</b> The in-step method is plain garter knitting plus one extra action at each node; the difficulty is handling three needles and the open
+cords at once, mostly at the start. It is our judgement, not yet tested, that it works for three sheets, is still workable for four, and becomes impractical
+beyond about four (weight on the needles, many open cords). If the trial shows that even three sheets cannot be managed, the honest fall-back is the
+#83 part 1 method, which is not one continuous piece; there is no machine route for the links.</p>
+<h3>The recommended method, step by step</h3>
+<ol><li>Three 3.5 mm circular needles, one ball for each sheet. Provisional cast-on of 88 stitches on each needle. The sheets lie stacked as in the cushion: A at the bottom, C on top, same side up.</li>
+<li>Knit garter, one ridge of A, one of B, one of C, and repeat, 88 ridges in all (40 cm at the assumed gauge).</li>
+<li>Node rows: A on ridges 4, 11, 18, … (every 7th), B on ridges 6, 13, 20, …, C on ridges 2, 9, 16, …. Node stitches every 8th stitch, moved over by 4 on alternate node rows, and by 4 more in sheet B. (The true rows of B and C fall a third of a ridge from these; the links put the sheets in place, see §3.)</li>
+<li>At a node, knit the node stitch with the yarn and the link cord held together (Figure 2, right); at most 3 cords per row, so a node is one stitch on the two rows of its ridge.</li>
+<li>For each node and gap: one V, a cord whose middle is caught at the node that comes first and whose two arms are caught at the two nodes of the other sheet on that sheet's next node row; and one single link. Each arm is measured on a card gauge (length <i>a</i> between catches) before its end is caught; the tail is knotted on the inside.</li>
+<li>The two ends of any link are at most 5 ridges apart, so only the cords of the last node rows hang open and no bobbins are needed. In all: 493 cord pieces, 1214 catches.</li></ol>
+<figure><img src="figs/instep.svg" alt="" style="width:78%"><figcaption><b>Figure 2.</b> Left: the work seen from the side along one column of nodes, shown flattened (on the needles the sheets lie close and the cords hang slack; they straighten when the cushion is filled).
+Thick: the V of each node, caught first at its lower end here; dashed: the single link, running from a node row of the upper sheet to the next node row of the lower sheet. Right: the catch, and the card gauge for each arm.</figcaption></figure>
+
+<h2>3. How the HexOct geometry survives in real yarn</h2>
+<p><b>The links set the geometry.</b> #83 part 1 proves that when the sheets are pushed apart and every link is taut and of length <i>a</i>, the sheets sit exactly
+√(2/3)&nbsp;<i>a</i> apart and exactly over their places. So the knitter has to get three things right: equal link lengths, the right nodes, and something that
+pushes the sheets apart. The rounding of the node rows in §2 is then taken up by the links.</p>
+<p><b>Fill pushes, cords pull.</b> Each gap is filled firmly with carded wool, so that every link is taut when nobody sits on the cushion. The fill carries the
+weight; the links carry pull only (a cord cannot push). A head (about 1 kPa) puts 1.15 N on the area of one node, sitting (about 6 kPa) 6.9 N; even if the
+links alone held that, each would carry 2.8 N, far below the strength of a 1 mm polyester cord. Under a sitter the fill is squeezed and the links slacken;
+when the load is gone the fill pushes the sheets back and the links return the exact geometry.</p>
+<p><b>Lengths.</b> Non-stretch link cord (1 mm waxed polyester), every arm measured on the same card gauge under the same light pull: equal lengths matter more than
+the exact value. <b>Triangle of nodes.</b> 8 stitches by 7 ridges gives the row spacing 1.0 % too large at square gauge (31.8 mm against 31.5 mm). Garter
+stretches crosswise; the side walls and the cover hold the outline at 40 × 40 cm. <b>Cover.</b> A boxed cover of 40 × 40 × 6.5 cm holds the outer sheets flat
+at their size and the depth at its value, and the fill presses out against it.</p>
+<p><b>What is not known.</b> #83 part 2 modelled rods that push and pull, with stiff joints. Here cords only pull and the fill pushes. Whether the c/h shear
+difference survives this change is open; the trial pair answers it before the cushion is knitted.</p>
+<figure><img src="figs/section.svg" alt="" style="width:74%"><figcaption><b>Figure 3.</b> Section seen along a row of nodes, true scale, near one edge. Thick lines: a pair of links, one in front of and one behind
+the drawing plane (shown shortened); thin lines: one link in the drawing plane (true length <i>a</i>, at 54.74°). The dark line follows one pair of links straight on
+through the c sheet B. Dots: the wool fill; grey at the left: the knitted side wall.</figcaption></figure>
+
+<h2>4. Materials and time (estimates)</h2>
+<div class="two"><table><tr><th>Item</th><th>Amount</th></tr>
+<tr><td>DK mercerised cotton (sheets 3 × 155 m, side walls 2 × 46 m, at 1 cm per stitch)</td><td class="v">about 560 m: 6 balls of 100 m / 50 g, buy 7</td></tr>
+<tr><td>Link cord, 1 mm waxed polyester (721 links of 36 mm + 25 mm per end for catch and knot, +10 %)</td><td class="v">about 56 m, buy 70 m</td></tr>
+<tr><td>Carded wool fill for 9.5 L of gaps</td><td class="v">about 400–500 g (fixed on the trial)</td></tr>
+<tr><td>Three 3.5 mm circular needles (60–80 cm) and a fourth for the joins; 2.5 mm crochet hook; card gauge; waste yarn; tapestry needle</td><td class="v">—</td></tr>
+<tr><td>Cover: cotton cloth and a 40 cm zip</td><td class="v">about 0.5 m</td></tr></table>
+<table><tr><th>Work</th><th>Hours</th></tr>
+<tr><td>Swatch and gauge</td><td class="v">2</td></tr>
+<tr><td>Trial pair, c and h (3 sheets of 4 × 4 nodes each)</td><td class="v">12–16</td></tr>
+<tr><td>Sheets and side walls, 55 600 stitches (37 h at 25 stitches a minute, plus a quarter for working in step)</td><td class="v">about 46</td></tr>
+<tr><td>Cord work: 493 pieces, 1214 catches (30 s each)</td><td class="v">about 14</td></tr>
+<tr><td>Filling, closing, cover, tests</td><td class="v">about 6</td></tr>
+<tr><td><b>Cushion</b> (without the trial)</td><td class="v"><b>about 65</b></td></tr></table></div>
+<p>Difficulty: the knitting is plain garter; the counting of node rows and the gauge for each arm need steady attention. Suited to an experienced knitter.</p>
+
+<h2>5. Shaping, finishing, and the check against #83</h2>
+<p><b>Edges.</b> Each gap gets its own side wall: pick up stitches along the four edges of the lower sheet (the provisional cast-on gives live stitches on
+one side), knit a garter band in the round to height <i>d</i> (a short tube), and join it to the upper sheet's edge with a three-needle bind-off, which is
+knitting, not sewing. Gap 1 first: three sides closed, fill packed in through the fourth, then closed; then gap 2 the same way. <b>Closure.</b> The knitted
+HexOct is closed for good; the cover has a zip on one side so that it can be taken off and washed. If the links slacken over the years, the last wall
+of each gap can be opened and fill added. <b>Use.</b> Both faces are the same; the cushion can be sat on or slept on either way up.</p>
+<p><b>Check against #83 (the knitter can do all of this).</b></p>
+<ol><li><b>Geometry.</b> Before the last wall is closed, measure the sheet spacing (expect 29.7 mm between sheet middles) and look along a row of nodes:
+the links must run straight on through sheet B, as in Figure 3.</li>
+<li><b>Trial pair first.</b> Knit two small pieces by the same method, T-c (A-B-C) and T-h (A-B-A), each 3 sheets of 4 × 4 nodes (about 16 × 15 cm),
+filled the same way. <i>Press test</i>: the same weight should sink both by the same amount (#83: compression is the same in every stacking).
+<i>Shear test</i>: T-c should move further sideways per newton than T-h (#83: in the model the c stack is 19 times softer; the real ratio is not known).
+If the difference is clear, the cushion is knitted as c; if not, DICTO picks c or h from how the two pieces feel.</li>
+<li><b>Cushion.</b> Repeat both tests on the finished cushion (Figure 4) and record sink and sideways shift; these are the first measurements of a Knitted HexOct.</li></ol>
+<figure><img src="figs/test.svg" alt="" style="width:62%"><figcaption><b>Figure 4.</b> The press and shear tests: the cushion on a non-slip mat, a board on top, a 5 kg bag of rice as load, a ruler at the side;
+for shear the board is pulled sideways with a luggage scale and the shift read at several pulls.</figcaption></figure>
+<p><b>Order of work.</b> Swatch and gauge → trial pair T-c and T-h → press and shear tests → DICTO confirms the sequence → full pattern → cushion → tests.</p>
+<p class="small" style="font-size:7.6pt"><b>Sources.</b> #83 HexOct: Knitting Crystals, v4, DICTO DOI: 10.5281/zenodo.23848271 (front, part 1, part 2), and its studies
+2026-11-02-knitted-hexoct, 2026-11-02-hexoct-knit-mechanics (block tests rerun here for 3 and 4 sheets, <code>data/out_*.json</code>) and 2026-11-02-knitted-octet.
+[1] N. Stine, "Arrrgyle" (triple-knitted cowl), Ravelry pattern; search result only. [2] US 6779369, weft-knitted spacer fabrics, and the double-needle-bar
+Raschel notes cited in the knitted-octet note; summaries only. [3] Spacer-fabric research paper, par.nsf.gov/servlets/purl/10227085 (filler yarn caught by
+tuck loops; multilayer spacers a machine-only capability); search summary only. Hand techniques (double, tubular knitting, three-needle bind-off, provisional
+cast-on) are standard; no source checked.</p>
+</body></html>
