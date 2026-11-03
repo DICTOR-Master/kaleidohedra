@@ -1,0 +1,35 @@
+PASS 600-cell edge^2 = 1/phi^2 = (3-sqrt5)/2
+PASS truncated 600-cell (x=1/3): mu = (9+sqrt5)/12
+PASS a.b = phi/2
+PASS bitruncated (l=3/5): mu = a.q = (11+3sqrt5)/20
+PASS bitruncated: c.q < mu (q is cut only by a and b)
+PASS truncated 120-cell (t=(5-sqrt5)/10): mu = (15+8sqrt5)/38
+PASS t = 1/(phi+2) (regular decagons)
+PASS 120-cell e/R = 1/(sqrt2 phi^2)
+PASS 600-cell r^2 = (7+3sqrt5)/16 matches cos^2(pi/5)... numeric 0.85676
+PASS All-Golden stations lie either side of the bitruncated midpoint
+PASS core turn: mu' = r^2 R^2 / mu
+PASS in nu: nu' = (R/r)^2 / nu
+PASS C.O: mu -> 3/mu
+PASS C.O: fixed point sqrt3 (a = b there)
+PASS C.O: 3/mu pairs 3/2 (truncated octahedron) with 2 (cuboctahedron)
+PASS C.O window c < b/a < 1/c  <=>  1 < mu < 3 (c = 1/sqrt3)
+PASS T.T: mu -> 1/mu (the self-duality)
+PASS D.I: (R/r)^2 = 3/(1+2/sqrt5) = 15-6sqrt5
+PASS CsCl partner 3-mu fixes 3/2
+PASS Icosaxes: corners inside C and mC*; polar pyramid height m-1 = (1/2 + sqrt(5)/2)*(1 - 1/(1/2 + sqrt(5)/2))
+PASS Unborn Axes: corners inside C and mC*; polar pyramid height m-1 = (1 - 1/(5/2 - sqrt(5)/2))*(5/2 - sqrt(5)/2)
+PASS RD: corners inside C and mC*; polar pyramid height m-1 = 1
+PASS #48 T(x) at mu = 1 + x/(1+x): height x/(1+x); partner 3 - mu: height 1/(1+x); sum 1
+PASS T(1/x) is at 3 - mu
+PASS lambda = w_A - w_B = -h^2 + (1-h)^2 = 1 - 2h
+PASS rock-salt stop lambda = 4 - 2sqrt3 at h = sqrt3 - 3/2
+PASS CsCl: h = 1/phi^2 gives lambda = sqrt5 - 2
+PASS #53 golden loop lambda = (x-1)/(x+1): lambda = sqrt5-2 is x = phi
+PASS h = 0 -> lambda = 1 (flip / end), h = 1/2 -> 0, h = 1 -> -1
+PASS cell-first (CsCl): 4D nearest site distance = 3D power of the two lanes' kinds (4000 random points)
+PASS vertex-first (rock salt): 4D nearest site distance = 3D power of the two lanes' kinds (4000 random points)
+PASS coding of k = 2..300 equals the fixed point of c -> ch, h -> c (k = 1 gives one extra leading h)
+PASS share of h in 300 letters within 0.01 of 1/phi^2
+PASS #92 cube: 4 sqrt2/48 + 4 sqrt2/24 = (1/sqrt2)^3 = sqrt2/4
+34 PASS, 0 FAIL
