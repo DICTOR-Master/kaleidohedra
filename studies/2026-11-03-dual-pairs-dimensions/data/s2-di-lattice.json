@@ -1,0 +1,60 @@
+{
+ "obstruction": "trace of a 5-fold rotation on V is phi; diagonal action on V+V has irrational character -> no invariant lattice",
+ "voronoi_sections": {
+  "Z6": "dodecahedron",
+  "D6*": "icosidodecahedron",
+  "D6": "rhombic triacontahedron"
+ },
+ "half_vector_shadow_classes": {
+  "3": 20,
+  "9/2 + 3/2\u221a5": 20,
+  "5/2 - 1/2\u221a5": 12,
+  "5 + 2\u221a5": 12
+ },
+ "half_vector_shadow_kinds": {
+  "3": "dodecahedron",
+  "9/2 + 3/2\u221a5": "dodecahedron",
+  "5/2 - 1/2\u221a5": "icosahedron",
+  "5 + 2\u221a5": "icosahedron"
+ },
+ "selected_by_Z6": "icosahedron (norm 1), icosidodecahedron (roots; also D6* Voronoi section), dodecahedron (Z^6 Voronoi section), RT (D6 Voronoi section): the ends and the rectified stage only; no golden cut, no continuous mu",
+ "checks": [
+  {
+   "check": "A: 5-fold rotation (A^5 = I: True) has trace 1/2 + 1/2\u221a5 = phi, irrational; on V + V the trace 2 phi is irrational, so no lattice in R^6 is invariant under the diagonal icosahedral action on D x D*",
+   "pass": true
+  },
+  {
+   "check": "A: on V + V' (Galois twin) the trace is phi + (1 - phi) = 1, rational (the icosahedral Z^6)",
+   "pass": true
+  },
+  {
+   "check": "B: the six 5-fold axes form a tight frame: sum u u^T = 5 + \u221a5 I",
+   "pass": true
+  },
+  {
+   "check": "B: Z^6 Voronoi cell (6-cube) central section = regular dodecahedron (20 corners)",
+   "pass": true
+  },
+  {
+   "check": "B: D6* Voronoi cell central section = icosidodecahedron (30 corners)",
+   "pass": true
+  },
+  {
+   "check": "B: D6 Voronoi cell central section = rhombic triacontahedron (32 corners, faces {4: 30}: 30 rhombi)",
+   "pass": true
+  },
+  {
+   "check": "B: shadows of the 12 Z^6 vectors of norm 1: one radius class, a regular icosahedron",
+   "pass": true
+  },
+  {
+   "check": "B: shadows of the 60 D6 roots: two icosidodecahedra of 30 corners, squared radii ratio 2.618034 = phi^2",
+   "pass": true
+  },
+  {
+   "check": "B: the 64 vectors (+-1/2)^6 cast only dodecahedra and icosahedra (radius classes), i.e. 3-fold and 5-fold corners",
+   "pass": true
+  }
+ ],
+ "all_pass": true
+}

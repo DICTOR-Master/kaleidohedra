@@ -1,0 +1,408 @@
+{
+ "pair": [
+  "tetrahedron",
+  "tetrahedron (polar)"
+ ],
+ "r2": {
+  "exact": "1/3",
+  "float": 0.3333333333333333,
+  "norm": "1/9",
+  "phi_power": null,
+  "a_plus_b_phi": "1/3 + 0 phi"
+ },
+ "rho2": {
+  "exact": "1",
+  "float": 1.0,
+  "norm": "1",
+  "phi_power": 0,
+  "a_plus_b_phi": "1 + 0 phi"
+ },
+ "R2": {
+  "exact": "3",
+  "float": 3.0,
+  "norm": "9",
+  "phi_power": null,
+  "a_plus_b_phi": "3 + 0 phi"
+ },
+ "nu_rect": {
+  "exact": "3",
+  "float": 3.0,
+  "norm": "9",
+  "phi_power": null,
+  "a_plus_b_phi": "3 + 0 phi"
+ },
+ "nu_P_end": {
+  "exact": "9",
+  "float": 9.0,
+  "norm": "81",
+  "phi_power": null,
+  "a_plus_b_phi": "9 + 0 phi"
+ },
+ "stages": [
+  {
+   "stage": "tetrahedron (polar) (dual end)",
+   "side": "S",
+   "x": "0",
+   "mu": {
+    "exact": "1/3",
+    "float": 0.3333333333333333,
+    "norm": "1/9",
+    "phi_power": null,
+    "a_plus_b_phi": "1/3 + 0 phi"
+   },
+   "nu": {
+    "exact": "1",
+    "float": 1.0,
+    "norm": "1",
+    "phi_power": 0,
+    "a_plus_b_phi": "1 + 0 phi"
+   },
+   "kappa": {
+    "exact": "1/3",
+    "float": 0.3333333333333333,
+    "norm": "1/9",
+    "phi_power": null,
+    "a_plus_b_phi": "1/3 + 0 phi"
+   },
+   "h_layer": "1",
+   "ratio_corner_over_remaining": null,
+   "corners": 4,
+   "hull_corners": 4
+  },
+  {
+   "stage": "Lesser Golden Cut Tetrahedron (dual side)",
+   "side": "S",
+   "x": "1/2 - 1/10\u221a5",
+   "mu": {
+    "exact": "5 - 2\u221a5",
+    "float": 0.5278640450004204,
+    "norm": "5",
+    "phi_power": null,
+    "a_plus_b_phi": "7 + -4 phi"
+   },
+   "nu": {
+    "exact": "15 - 6\u221a5",
+    "float": 1.5835921350012612,
+    "norm": "45",
+    "phi_power": null,
+    "a_plus_b_phi": "21 + -12 phi"
+   },
+   "kappa": {
+    "exact": "5 - 2\u221a5",
+    "float": 0.5278640450004204,
+    "norm": "5",
+    "phi_power": null,
+    "a_plus_b_phi": "7 + -4 phi"
+   },
+   "h_layer": "1/5\u221a5",
+   "ratio_corner_over_remaining": "-1/2 + 1/2\u221a5",
+   "corners": 12,
+   "hull_corners": 8
+  },
+  {
+   "stage": "truncated tetrahedron (Archimedean, dual side)",
+   "side": "S",
+   "x": "1/3",
+   "mu": {
+    "exact": "3/5",
+    "float": 0.6,
+    "norm": "9/25",
+    "phi_power": null,
+    "a_plus_b_phi": "3/5 + 0 phi"
+   },
+   "nu": {
+    "exact": "9/5",
+    "float": 1.8,
+    "norm": "81/25",
+    "phi_power": null,
+    "a_plus_b_phi": "9/5 + 0 phi"
+   },
+   "kappa": {
+    "exact": "3/5",
+    "float": 0.6,
+    "norm": "9/25",
+    "phi_power": null,
+    "a_plus_b_phi": "3/5 + 0 phi"
+   },
+   "h_layer": "1/3",
+   "ratio_corner_over_remaining": "1",
+   "corners": 12,
+   "hull_corners": 8
+  },
+  {
+   "stage": "Greater Golden Cut Tetrahedron (dual side)",
+   "side": "S",
+   "x": "3/2 - 1/2\u221a5",
+   "mu": {
+    "exact": "3/11 + 2/11\u221a5",
+    "float": 0.6792850868181436,
+    "norm": "-1/11",
+    "phi_power": null,
+    "a_plus_b_phi": "1/11 + 4/11 phi"
+   },
+   "nu": {
+    "exact": "9/11 + 6/11\u221a5",
+    "float": 2.037855260454431,
+    "norm": "-9/11",
+    "phi_power": null,
+    "a_plus_b_phi": "3/11 + 12/11 phi"
+   },
+   "kappa": {
+    "exact": "3/11 + 2/11\u221a5",
+    "float": 0.6792850868181436,
+    "norm": "-1/11",
+    "phi_power": null,
+    "a_plus_b_phi": "1/11 + 4/11 phi"
+   },
+   "h_layer": "-2 + \u221a5",
+   "ratio_corner_over_remaining": "1/2 + 1/2\u221a5",
+   "corners": 12,
+   "hull_corners": 8
+  },
+  {
+   "stage": "rectified (octahedron)",
+   "side": "P",
+   "x": "1/2",
+   "mu": {
+    "exact": "1",
+    "float": 1.0,
+    "norm": "1",
+    "phi_power": 0,
+    "a_plus_b_phi": "1 + 0 phi"
+   },
+   "nu": {
+    "exact": "3",
+    "float": 3.0,
+    "norm": "9",
+    "phi_power": null,
+    "a_plus_b_phi": "3 + 0 phi"
+   },
+   "kappa": {
+    "exact": "1",
+    "float": 1.0,
+    "norm": "1",
+    "phi_power": 0,
+    "a_plus_b_phi": "1 + 0 phi"
+   },
+   "h_layer": "0",
+   "ratio_corner_over_remaining": null,
+   "corners": 6,
+   "hull_corners": 8
+  },
+  {
+   "stage": "Greater Golden Cut Tetrahedron",
+   "side": "P",
+   "x": "3/2 - 1/2\u221a5",
+   "mu": {
+    "exact": "-3 + 2\u221a5",
+    "float": 1.4721359549995796,
+    "norm": "-11",
+    "phi_power": null,
+    "a_plus_b_phi": "-5 + 4 phi"
+   },
+   "nu": {
+    "exact": "-9 + 6\u221a5",
+    "float": 4.416407864998739,
+    "norm": "-99",
+    "phi_power": null,
+    "a_plus_b_phi": "-15 + 12 phi"
+   },
+   "kappa": {
+    "exact": "-3 + 2\u221a5",
+    "float": 1.4721359549995796,
+    "norm": "-11",
+    "phi_power": null,
+    "a_plus_b_phi": "-5 + 4 phi"
+   },
+   "h_layer": "-2 + \u221a5",
+   "ratio_corner_over_remaining": "1/2 + 1/2\u221a5",
+   "corners": 12,
+   "hull_corners": 8
+  },
+  {
+   "stage": "truncated tetrahedron (Archimedean)",
+   "side": "P",
+   "x": "1/3",
+   "mu": {
+    "exact": "5/3",
+    "float": 1.6666666666666667,
+    "norm": "25/9",
+    "phi_power": null,
+    "a_plus_b_phi": "5/3 + 0 phi"
+   },
+   "nu": {
+    "exact": "5",
+    "float": 5.0,
+    "norm": "25",
+    "phi_power": null,
+    "a_plus_b_phi": "5 + 0 phi"
+   },
+   "kappa": {
+    "exact": "5/3",
+    "float": 1.6666666666666667,
+    "norm": "25/9",
+    "phi_power": null,
+    "a_plus_b_phi": "5/3 + 0 phi"
+   },
+   "h_layer": "1/3",
+   "ratio_corner_over_remaining": "1",
+   "corners": 12,
+   "hull_corners": 8
+  },
+  {
+   "stage": "Lesser Golden Cut Tetrahedron",
+   "side": "P",
+   "x": "1/2 - 1/10\u221a5",
+   "mu": {
+    "exact": "1 + 2/5\u221a5",
+    "float": 1.894427190999916,
+    "norm": "1/5",
+    "phi_power": null,
+    "a_plus_b_phi": "3/5 + 4/5 phi"
+   },
+   "nu": {
+    "exact": "3 + 6/5\u221a5",
+    "float": 5.683281572999748,
+    "norm": "9/5",
+    "phi_power": null,
+    "a_plus_b_phi": "9/5 + 12/5 phi"
+   },
+   "kappa": {
+    "exact": "1 + 2/5\u221a5",
+    "float": 1.894427190999916,
+    "norm": "1/5",
+    "phi_power": null,
+    "a_plus_b_phi": "3/5 + 4/5 phi"
+   },
+   "h_layer": "1/5\u221a5",
+   "ratio_corner_over_remaining": "-1/2 + 1/2\u221a5",
+   "corners": 12,
+   "hull_corners": 8
+  },
+  {
+   "stage": "tetrahedron (P end)",
+   "side": "P",
+   "x": "0",
+   "mu": {
+    "exact": "3",
+    "float": 3.0,
+    "norm": "9",
+    "phi_power": null,
+    "a_plus_b_phi": "3 + 0 phi"
+   },
+   "nu": {
+    "exact": "9",
+    "float": 9.0,
+    "norm": "81",
+    "phi_power": null,
+    "a_plus_b_phi": "9 + 0 phi"
+   },
+   "kappa": {
+    "exact": "3",
+    "float": 3.0,
+    "norm": "9",
+    "phi_power": null,
+    "a_plus_b_phi": "3 + 0 phi"
+   },
+   "h_layer": "1",
+   "ratio_corner_over_remaining": null,
+   "corners": 4,
+   "hull_corners": 4
+  }
+ ],
+ "golden_mu_fields": {
+  "Lesser Golden Cut Tetrahedron (dual side)": "Q(sqrt5)",
+  "Greater Golden Cut Tetrahedron (dual side)": "Q(sqrt5)",
+  "Greater Golden Cut Tetrahedron": "Q(sqrt5)",
+  "Lesser Golden Cut Tetrahedron": "Q(sqrt5)"
+ },
+ "golden_mu_phi_powers": {
+  "Lesser Golden Cut Tetrahedron (dual side)": null,
+  "Greater Golden Cut Tetrahedron (dual side)": null,
+  "Greater Golden Cut Tetrahedron": null,
+  "Lesser Golden Cut Tetrahedron": null
+ },
+ "checks": [
+  {
+   "check": "tt: polar P* = conv(N) has 4 corners, midradii multiply to 1 (rho^2 rho*^2 = 1)",
+   "pass": true
+  },
+  {
+   "check": "tt: S(mu) at mu = 1/3 (~0.333333) is the tetrahedron (polar) (dual end) (4 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (4 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt: S(mu) at mu = 5 - 2\u221a5 (~0.527864) is the Lesser Golden Cut Tetrahedron (dual side) (12 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (8 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt: S(mu) at mu = 3/5 (~0.600000) is the truncated tetrahedron (Archimedean, dual side) (12 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (8 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt: S(mu) at mu = 3/11 + 2/11\u221a5 (~0.679285) is the Greater Golden Cut Tetrahedron (dual side) (12 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (8 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt: S(mu) at mu = 1 (~1.000000) is the rectified (octahedron) (6 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (8 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt: S(mu) at mu = -3 + 2\u221a5 (~1.472136) is the Greater Golden Cut Tetrahedron (12 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (8 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt: S(mu) at mu = 5/3 (~1.666667) is the truncated tetrahedron (Archimedean) (12 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (8 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt: S(mu) at mu = 1 + 2/5\u221a5 (~1.894427) is the Lesser Golden Cut Tetrahedron (12 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (8 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt: S(mu) at mu = 3 (~3.000000) is the tetrahedron (P end) (4 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt:   H(mu) = conv(P cup mu P*) = mu * polar(S(mu)) (4 corners)",
+   "pass": true
+  },
+  {
+   "check": "tt: the stages are in increasing mu order (dual end -> P end), sweep monotone",
+   "pass": true
+  }
+ ],
+ "all_pass": true
+}

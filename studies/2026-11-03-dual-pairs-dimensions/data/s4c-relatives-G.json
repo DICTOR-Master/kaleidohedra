@@ -1,0 +1,32 @@
+{
+ "label": "Q(mu, phi^2) at the Greater Golden Cut Icosahedron mu",
+ "mu": {
+  "exact": "13/11 + 6/11\u221a5",
+  "float": 2.401491624090794,
+  "norm": "-1/11",
+  "phi_power": null,
+  "a_plus_b_phi": "7/11 + 12/11 phi"
+ },
+ "hull_faces": {
+  "3": 60
+ },
+ "corners": 102,
+ "faces": {
+  "4": 60,
+  "6": 20
+ },
+ "hexagons_regular": true,
+ "quads_kites": true,
+ "smallest_integer_scale_in_M": 220,
+ "checks": [
+  {
+   "check": "D: M (Z-span of the 12 corners (0, +-1, +-phi), = shadow of Z^6) closed under phi: False (recorded; the admissible scales still form a lattice in Q^2)",
+   "pass": true
+  },
+  {
+   "check": "C: Q(mu, phi^2) at mu = 13/11 + 6/11\u221a5 (Greater GCI): hull faces {3: 60}, 102 corners, faces {4: 60, 6: 20}, hexagons regular True, kites True, smallest integer lift scale 220 (OG: 228)",
+   "pass": true
+  }
+ ],
+ "all_pass": true
+}

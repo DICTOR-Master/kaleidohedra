@@ -1,0 +1,855 @@
+{
+ "tesseract_heights": [
+  {
+   "h": "3/2 - 1/2\u221a5",
+   "s": "3 - \u221a5",
+   "mu": {
+    "exact": "-3 + 2\u221a5",
+    "float": 1.4721359549995796,
+    "norm": "-11",
+    "phi_power": null,
+    "a_plus_b_phi": "-5 + 4 phi"
+   },
+   "stage": "Greater Golden Cut Tetrahedron"
+  },
+  {
+   "h": "1/2",
+   "s": "1",
+   "mu": {
+    "exact": "5/3",
+    "float": 1.6666666666666667,
+    "norm": "25/9",
+    "phi_power": null,
+    "a_plus_b_phi": "5/3 + 0 phi"
+   },
+   "stage": "truncated tetrahedron"
+  },
+  {
+   "h": "-1/2 + 1/2\u221a5",
+   "s": "-1 + \u221a5",
+   "mu": {
+    "exact": "1 + 2/5\u221a5",
+    "float": 1.894427190999916,
+    "norm": "1/5",
+    "phi_power": null,
+    "a_plus_b_phi": "3/5 + 4/5 phi"
+   },
+   "stage": "Lesser Golden Cut Tetrahedron"
+  }
+ ],
+ "selected_mu": [
+  {
+   "side": "dual",
+   "mu": "-1/2 + sqrt(3)/2",
+   "mu_float": 0.36602540378443865,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    0,
+    -1,
+    -1,
+    -2
+   ],
+   "norm": 14
+  },
+  {
+   "side": "dual",
+   "mu": "-5/2 + sqrt(33)/2",
+   "mu_float": 0.3722813232690143,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    2
+   ],
+   "norm": 9
+  },
+  {
+   "side": "dual",
+   "mu": "3/2 - sqrt(5)/2",
+   "mu_float": 0.38196601125010515,
+   "degree": 2,
+   "v": [
+    -2,
+    0,
+    0,
+    2,
+    -1,
+    -1
+   ],
+   "norm": 10
+  },
+  {
+   "side": "dual",
+   "mu": "-1/8 + sqrt(17)/8",
+   "mu_float": 0.3903882032022076,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    0,
+    0,
+    0,
+    -1
+   ],
+   "norm": 9
+  },
+  {
+   "side": "dual",
+   "mu": "2/5",
+   "mu_float": 0.4,
+   "degree": 1,
+   "v": [
+    -2,
+    -2,
+    -1,
+    -1,
+    -1,
+    -2
+   ],
+   "norm": 15
+  },
+  {
+   "side": "dual",
+   "mu": "-1 + sqrt(2)",
+   "mu_float": 0.41421356237309503,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    -1,
+    0,
+    0,
+    1
+   ],
+   "norm": 4
+  },
+  {
+   "side": "dual",
+   "mu": "-1/6 + sqrt(13)/6",
+   "mu_float": 0.4342585459106649,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    -2,
+    -2,
+    -1,
+    -1
+   ],
+   "norm": 18
+  },
+  {
+   "side": "dual",
+   "mu": "5/2 - sqrt(17)/2",
+   "mu_float": 0.4384471871911697,
+   "degree": 2,
+   "v": [
+    -1,
+    0,
+    0,
+    2,
+    -1,
+    -1
+   ],
+   "norm": 7
+  },
+  {
+   "side": "dual",
+   "mu": "sqrt(5)/5",
+   "mu_float": 0.4472135954999579,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    -1,
+    0,
+    0,
+    -1
+   ],
+   "norm": 10
+  },
+  {
+   "side": "dual",
+   "mu": "-1/2 + sqrt(33)/6",
+   "mu_float": 0.4574271077563381,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    -1,
+    -2,
+    -1,
+    -1
+   ],
+   "norm": 9
+  },
+  {
+   "side": "dual",
+   "mu": "1/2",
+   "mu_float": 0.5,
+   "degree": 1,
+   "v": [
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    -1
+   ],
+   "norm": 3
+  },
+  {
+   "side": "dual",
+   "mu": "-1/10 + sqrt(41)/10",
+   "mu_float": 0.5403124237432849,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    -1,
+    0,
+    0,
+    -2
+   ],
+   "norm": 13
+  },
+  {
+   "side": "dual",
+   "mu": "-3/2 + sqrt(17)/2",
+   "mu_float": 0.5615528128088303,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    -1,
+    0,
+    0,
+    2
+   ],
+   "norm": 7
+  },
+  {
+   "side": "dual",
+   "mu": "sqrt(3)/3",
+   "mu_float": 0.5773502691896257,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    -1,
+    -1,
+    0,
+    0
+   ],
+   "norm": 4
+  },
+  {
+   "side": "dual",
+   "mu": "3/5",
+   "mu_float": 0.6,
+   "degree": 1,
+   "v": [
+    -2,
+    -2,
+    -1,
+    1,
+    1,
+    0
+   ],
+   "norm": 11
+  },
+  {
+   "side": "dual",
+   "mu": "-1/2 + sqrt(5)/2",
+   "mu_float": 0.6180339887498949,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    -2
+   ],
+   "norm": 6
+  },
+  {
+   "side": "dual",
+   "mu": "1/8 + sqrt(17)/8",
+   "mu_float": 0.6403882032022076,
+   "degree": 2,
+   "v": [
+    -2,
+    -1,
+    -1,
+    -1,
+    0,
+    0
+   ],
+   "norm": 7
+  },
+  {
+   "side": "dual",
+   "mu": "2/3",
+   "mu_float": 0.6666666666666666,
+   "degree": 1,
+   "v": [
+    -1,
+    -1,
+    -1,
+    -2,
+    0,
+    0
+   ],
+   "norm": 7
+  },
+  {
+   "side": "dual",
+   "mu": "1/5 + sqrt(6)/5",
+   "mu_float": 0.6898979485566357,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    -1,
+    1,
+    1,
+    -1
+   ],
+   "norm": 12
+  },
+  {
+   "side": "dual",
+   "mu": "sqrt(2)/2",
+   "mu_float": 0.7071067811865476,
+   "degree": 2,
+   "v": [
+    -2,
+    -1,
+    -1,
+    -2,
+    0,
+    0
+   ],
+   "norm": 10
+  },
+  {
+   "side": "dual",
+   "mu": "1/4 + sqrt(33)/12",
+   "mu_float": 0.728713553878169,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    -2,
+    -1,
+    1,
+    1
+   ],
+   "norm": 15
+  },
+  {
+   "side": "dual",
+   "mu": "1/10 + sqrt(41)/10",
+   "mu_float": 0.7403124237432849,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    -1,
+    1,
+    1,
+    -2
+   ],
+   "norm": 15
+  },
+  {
+   "side": "dual",
+   "mu": "1/6 + sqrt(13)/6",
+   "mu_float": 0.7675918792439982,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    -2,
+    -2,
+    1,
+    1
+   ],
+   "norm": 18
+  },
+  {
+   "side": "T",
+   "mu": "-1/2 + sqrt(13)/2",
+   "mu_float": 1.3027756377319946,
+   "degree": 2,
+   "v": [
+    -2,
+    -1,
+    -1,
+    -2,
+    2,
+    2
+   ],
+   "norm": 18
+  },
+  {
+   "side": "T",
+   "mu": "-1/4 + sqrt(41)/4",
+   "mu_float": 1.3507810593582121,
+   "degree": 2,
+   "v": [
+    -2,
+    -1,
+    -1,
+    -1,
+    2,
+    2
+   ],
+   "norm": 15
+  },
+  {
+   "side": "T",
+   "mu": "-3/2 + sqrt(33)/2",
+   "mu_float": 1.3722813232690143,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    -1,
+    -2,
+    2,
+    2
+   ],
+   "norm": 15
+  },
+  {
+   "side": "T",
+   "mu": "sqrt(2)",
+   "mu_float": 1.4142135623730951,
+   "degree": 2,
+   "v": [
+    -2,
+    0,
+    0,
+    -2,
+    -1,
+    -1
+   ],
+   "norm": 10
+  },
+  {
+   "side": "T",
+   "mu": "-1 + sqrt(6)",
+   "mu_float": 1.449489742783178,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    -1,
+    -1,
+    2,
+    2
+   ],
+   "norm": 12
+  },
+  {
+   "side": "T",
+   "mu": "3/2",
+   "mu_float": 1.5,
+   "degree": 1,
+   "v": [
+    -2,
+    0,
+    0,
+    -1,
+    -1,
+    -1
+   ],
+   "norm": 7
+  },
+  {
+   "side": "T",
+   "mu": "-1/2 + sqrt(17)/2",
+   "mu_float": 1.5615528128088303,
+   "degree": 2,
+   "v": [
+    -1,
+    0,
+    0,
+    -2,
+    -1,
+    -1
+   ],
+   "norm": 7
+  },
+  {
+   "side": "T",
+   "mu": "1/2 + sqrt(5)/2",
+   "mu_float": 1.618033988749895,
+   "degree": 2,
+   "v": [
+    -2,
+    0,
+    0,
+    0,
+    -1,
+    -1
+   ],
+   "norm": 6
+  },
+  {
+   "side": "T",
+   "mu": "5/3",
+   "mu_float": 1.6666666666666667,
+   "degree": 1,
+   "v": [
+    -1,
+    -1,
+    0,
+    2,
+    2,
+    -1
+   ],
+   "norm": 11
+  },
+  {
+   "side": "T",
+   "mu": "sqrt(3)",
+   "mu_float": 1.7320508075688772,
+   "degree": 2,
+   "v": [
+    -1,
+    0,
+    0,
+    -1,
+    -1,
+    -1
+   ],
+   "norm": 4
+  },
+  {
+   "side": "T",
+   "mu": "3/4 + sqrt(17)/4",
+   "mu_float": 1.7807764064044151,
+   "degree": 2,
+   "v": [
+    -2,
+    -1,
+    -1,
+    -1,
+    0,
+    0
+   ],
+   "norm": 7
+  },
+  {
+   "side": "T",
+   "mu": "1/4 + sqrt(41)/4",
+   "mu_float": 1.8507810593582121,
+   "degree": 2,
+   "v": [
+    -2,
+    0,
+    0,
+    -1,
+    -2,
+    -2
+   ],
+   "norm": 13
+  },
+  {
+   "side": "T",
+   "mu": "2",
+   "mu_float": 2.0,
+   "degree": 1,
+   "v": [
+    -1,
+    0,
+    0,
+    0,
+    -1,
+    -1
+   ],
+   "norm": 3
+  },
+  {
+   "side": "T",
+   "mu": "3/4 + sqrt(33)/4",
+   "mu_float": 2.186140661634507,
+   "degree": 2,
+   "v": [
+    -2,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1
+   ],
+   "norm": 9
+  },
+  {
+   "side": "T",
+   "mu": "sqrt(5)",
+   "mu_float": 2.23606797749979,
+   "degree": 2,
+   "v": [
+    -1,
+    0,
+    0,
+    -1,
+    -2,
+    -2
+   ],
+   "norm": 10
+  },
+  {
+   "side": "T",
+   "mu": "sqrt(17)/4 + 5/4",
+   "mu_float": 2.2807764064044154,
+   "degree": 2,
+   "v": [
+    -2,
+    -1,
+    -1,
+    1,
+    0,
+    0
+   ],
+   "norm": 7
+  },
+  {
+   "side": "T",
+   "mu": "1/2 + sqrt(13)/2",
+   "mu_float": 2.302775637731995,
+   "degree": 2,
+   "v": [
+    -2,
+    -1,
+    -1,
+    -2,
+    -2,
+    -2
+   ],
+   "norm": 18
+  },
+  {
+   "side": "T",
+   "mu": "1 + sqrt(2)",
+   "mu_float": 2.414213562373095,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    -1,
+    -1,
+    0,
+    0
+   ],
+   "norm": 4
+  },
+  {
+   "side": "T",
+   "mu": "5/2",
+   "mu_float": 2.5,
+   "degree": 1,
+   "v": [
+    -2,
+    -1,
+    -1,
+    -1,
+    -2,
+    -2
+   ],
+   "norm": 15
+  },
+  {
+   "side": "T",
+   "mu": "1/2 + sqrt(17)/2",
+   "mu_float": 2.5615528128088303,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    -1,
+    -2,
+    -1,
+    -1
+   ],
+   "norm": 9
+  },
+  {
+   "side": "T",
+   "mu": "sqrt(5)/2 + 3/2",
+   "mu_float": 2.618033988749895,
+   "degree": 2,
+   "v": [
+    -2,
+    -1,
+    -1,
+    2,
+    0,
+    0
+   ],
+   "norm": 10
+  },
+  {
+   "side": "T",
+   "mu": "5/4 + sqrt(33)/4",
+   "mu_float": 2.686140661634507,
+   "degree": 2,
+   "v": [
+    -2,
+    -1,
+    -1,
+    1,
+    -1,
+    -1
+   ],
+   "norm": 9
+  },
+  {
+   "side": "T",
+   "mu": "1 + sqrt(3)",
+   "mu_float": 2.732050807568877,
+   "degree": 2,
+   "v": [
+    -2,
+    -1,
+    -1,
+    0,
+    -2,
+    -2
+   ],
+   "norm": 14
+  }
+ ],
+ "sweep_orbits_min": [
+  {
+   "v": [
+    -2,
+    -1,
+    -1,
+    0,
+    1,
+    1
+   ],
+   "norm": 8,
+   "sides": [
+    "dual"
+   ]
+  },
+  {
+   "v": [
+    -1,
+    -1,
+    0,
+    1,
+    1,
+    -2
+   ],
+   "norm": 8,
+   "sides": [
+    "T"
+   ]
+  }
+ ],
+ "target_min_norm_in_box": {
+  "Greater GCT (T side) 2sqrt5 - 3": null,
+  "Lesser GCT (T side) 1 + 2/sqrt5": null,
+  "Greater GCT (dual side)": null,
+  "Lesser GCT (dual side) 5 - 2sqrt5": null,
+  "truncated tetrahedron 5/3": 11,
+  "truncated tetrahedron (dual) 3/5": 11
+ },
+ "shortest_isolated_selector": {
+  "Greater GCT (T side)": {
+   "norm": 46,
+   "v": [
+    -1,
+    1,
+    1,
+    -5,
+    -3,
+    -3
+   ]
+  },
+  "Lesser GCT (T side)": {
+   "norm": 34,
+   "v": [
+    -5,
+    -2,
+    -2,
+    1,
+    0,
+    0
+   ]
+  },
+  "Lesser GCT (dual side)": {
+   "norm": 34,
+   "v": [
+    -1,
+    0,
+    0,
+    5,
+    2,
+    2
+   ]
+  },
+  "Greater GCT (dual side)": {
+   "norm": 46,
+   "v": [
+    -5,
+    -3,
+    -3,
+    -1,
+    1,
+    1
+   ]
+  }
+ },
+ "checks": [
+  {
+   "check": "A: tesseract section at height h = 3/2 - 1/2\u221a5 (s = 3 - \u221a5) = S(mu), mu = (4+s)/(4-s) = -3 + 2\u221a5: the Greater Golden Cut Tetrahedron (12 corners); ratio (1-h)/h",
+   "pass": true
+  },
+  {
+   "check": "A: tesseract section at height h = 1/2 (s = 1) = S(mu), mu = (4+s)/(4-s) = 5/3: the truncated tetrahedron (12 corners); ratio (1-h)/h",
+   "pass": true
+  },
+  {
+   "check": "A: tesseract section at height h = -1/2 + 1/2\u221a5 (s = -1 + \u221a5) = S(mu), mu = (4+s)/(4-s) = 1 + 2/5\u221a5: the Lesser Golden Cut Tetrahedron (12 corners); ratio (1-h)/h",
+   "pass": true
+  },
+  {
+   "check": "A: the Mobius map h -> mu = (2 + h)/(2 - h) sends h = 0, 1/2, 1 to the octahedron (1), Archimedean (5/3), tetrahedron (3)",
+   "pass": true
+  },
+  {
+   "check": "B: 46 isolated mu, all of degree <= 2",
+   "pass": true
+  },
+  {
+   "check": "B: smallest selecting norms in the box recorded for the golden and Archimedean stages: {'Greater GCT (T side) 2sqrt5 - 3': None, 'Lesser GCT (T side) 1 + 2/sqrt5': None, 'Greater GCT (dual side)': None, 'Lesser GCT (dual side) 5 - 2sqrt5': None, 'truncated tetrahedron 5/3': 11, 'truncated tetrahedron (dual) 3/5': 11}",
+   "pass": true
+  },
+  {
+   "check": "B: sweep orbits exist? True (smallest norm 8)",
+   "pass": true
+  },
+  {
+   "check": "C: sweep vectors (0,1,1 | 2,-1,-1) and (-2,1,1 | 0,-1,-1) (norm 8) cast the corners of T cap mu(-T) at every mu on the T side and the dual side (identically)",
+   "pass": true
+  },
+  {
+   "check": "C: shortest isolated selectors of the golden cut tetrahedra have norm [46, 34, 34, 46], against 3 (mu = 2), 4 (sqrt3, 1 + sqrt2), 6 (phi) and 11 (Archimedean 5/3)",
+   "pass": true
+  }
+ ],
+ "all_pass": true
+}

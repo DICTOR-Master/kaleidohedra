@@ -1,0 +1,465 @@
+{
+ "pair": "di",
+ "max_links": 5,
+ "sweep_cycle": {
+  "stations": [
+   "S:Pstar",
+   "S:L*",
+   "S:A*",
+   "S:G*",
+   "S:rect",
+   "S:G",
+   "S:A",
+   "S:L",
+   "S:P",
+   "S:Pstar"
+  ],
+  "closure": {
+   "exact": "15 - 6\u221a5",
+   "float": 1.5835921350012612,
+   "norm": "45",
+   "phi_power": null,
+   "a_plus_b_phi": "21 + -12 phi"
+  }
+ },
+ "dharma_pattern_cycle": {
+  "stations": [
+   "S:P",
+   "S:rect",
+   "Q(A*,rect)",
+   "H:A*",
+   "S:Pstar",
+   "H:rect",
+   "S:P"
+  ],
+  "factors": [
+   {
+    "exact": "9/2 - 3/2\u221a5",
+    "float": 1.1458980337503153,
+    "norm": "9",
+    "phi_power": null,
+    "a_plus_b_phi": "6 + -3 phi"
+   },
+   {
+    "exact": "1",
+    "float": 1.0,
+    "norm": "1",
+    "phi_power": 0,
+    "a_plus_b_phi": "1 + 0 phi"
+   },
+   {
+    "exact": "1",
+    "float": 1.0,
+    "norm": "1",
+    "phi_power": 0,
+    "a_plus_b_phi": "1 + 0 phi"
+   },
+   {
+    "exact": "15 - 6\u221a5",
+    "float": 1.5835921350012612,
+    "norm": "45",
+    "phi_power": null,
+    "a_plus_b_phi": "21 + -12 phi"
+   },
+   {
+    "exact": "1/2 + 1/10\u221a5",
+    "float": 0.7236067977499789,
+    "norm": "1/5",
+    "phi_power": null,
+    "a_plus_b_phi": "2/5 + 1/5 phi"
+   },
+   {
+    "exact": "5/2 - 1/2\u221a5",
+    "float": 1.381966011250105,
+    "norm": "5",
+    "phi_power": null,
+    "a_plus_b_phi": "3 + -1 phi"
+   }
+  ],
+  "closure": {
+   "exact": "225/2 - 99/2\u221a5",
+   "float": 1.8146351137604029,
+   "norm": "405",
+   "phi_power": null,
+   "a_plus_b_phi": "162 + -99 phi"
+  }
+ },
+ "golden_dharma_pattern_cycle": {
+  "stations": [
+   "S:P",
+   "S:rect",
+   "Q(L*,rect)",
+   "H:L*",
+   "S:Pstar",
+   "H:rect",
+   "S:P"
+  ],
+  "factors": [
+   {
+    "exact": "9/2 - 3/2\u221a5",
+    "float": 1.1458980337503153,
+    "norm": "9",
+    "phi_power": null,
+    "a_plus_b_phi": "6 + -3 phi"
+   },
+   {
+    "exact": "1",
+    "float": 1.0,
+    "norm": "1",
+    "phi_power": 0,
+    "a_plus_b_phi": "1 + 0 phi"
+   },
+   {
+    "exact": "1",
+    "float": 1.0,
+    "norm": "1",
+    "phi_power": 0,
+    "a_plus_b_phi": "1 + 0 phi"
+   },
+   {
+    "exact": "15 - 6\u221a5",
+    "float": 1.5835921350012612,
+    "norm": "45",
+    "phi_power": null,
+    "a_plus_b_phi": "21 + -12 phi"
+   },
+   {
+    "exact": "1/2 + 1/10\u221a5",
+    "float": 0.7236067977499789,
+    "norm": "1/5",
+    "phi_power": null,
+    "a_plus_b_phi": "2/5 + 1/5 phi"
+   },
+   {
+    "exact": "5/2 - 1/2\u221a5",
+    "float": 1.381966011250105,
+    "norm": "5",
+    "phi_power": null,
+    "a_plus_b_phi": "3 + -1 phi"
+   }
+  ],
+  "closure": {
+   "exact": "225/2 - 99/2\u221a5",
+   "float": 1.8146351137604029,
+   "norm": "405",
+   "phi_power": null,
+   "a_plus_b_phi": "162 + -99 phi"
+  }
+ },
+ "search_counts_by_target": {
+  "(R/r)^2": 8349,
+  "phi^1": 119
+ },
+ "search_examples": {
+  "(R/r)^2": [
+   {
+    "stations": [
+     "S:P",
+     "S:Pstar",
+     "S:P"
+    ],
+    "factors": [
+     "15 - 6\u221a5",
+     "1"
+    ],
+    "closure": "15 - 6\u221a5",
+    "exact_match": true
+   },
+   {
+    "stations": [
+     "S:P",
+     "S:Pstar",
+     "S:L*",
+     "S:P"
+    ],
+    "factors": [
+     "15 - 6\u221a5",
+     "1",
+     "1"
+    ],
+    "closure": "15 - 6\u221a5",
+    "exact_match": true
+   },
+   {
+    "stations": [
+     "S:P",
+     "S:Pstar",
+     "S:A*",
+     "S:P"
+    ],
+    "factors": [
+     "15 - 6\u221a5",
+     "1",
+     "1"
+    ],
+    "closure": "15 - 6\u221a5",
+    "exact_match": true
+   },
+   {
+    "stations": [
+     "S:P",
+     "S:Pstar",
+     "S:G*",
+     "S:P"
+    ],
+    "factors": [
+     "15 - 6\u221a5",
+     "1",
+     "1"
+    ],
+    "closure": "15 - 6\u221a5",
+    "exact_match": true
+   },
+   {
+    "stations": [
+     "S:P",
+     "S:Pstar",
+     "S:rect",
+     "S:P"
+    ],
+    "factors": [
+     "15 - 6\u221a5",
+     "1",
+     "1"
+    ],
+    "closure": "15 - 6\u221a5",
+    "exact_match": true
+   },
+   {
+    "stations": [
+     "S:P",
+     "S:Pstar",
+     "S:G",
+     "S:P"
+    ],
+    "factors": [
+     "15 - 6\u221a5",
+     "1",
+     "1"
+    ],
+    "closure": "15 - 6\u221a5",
+    "exact_match": true
+   }
+  ],
+  "phi^1": [
+   {
+    "stations": [
+     "S:P",
+     "S:rect",
+     "S:G",
+     "H:A",
+     "S:P"
+    ],
+    "factors": [
+     "9/2 - 3/2\u221a5",
+     "1",
+     "16/33 + 7/33\u221a5",
+     "-3 + 2\u221a5"
+    ],
+    "closure": "1/2 + 1/2\u221a5",
+    "exact_match": true
+   },
+   {
+    "stations": [
+     "S:P",
+     "S:rect",
+     "S:A",
+     "H:G",
+     "S:P"
+    ],
+    "factors": [
+     "9/2 - 3/2\u221a5",
+     "1",
+     "15/31 + 34/155\u221a5",
+     "20/3 - 7/3\u221a5"
+    ],
+    "closure": "1/2 + 1/2\u221a5",
+    "exact_match": true
+   },
+   {
+    "stations": [
+     "S:P",
+     "H:rect",
+     "S:rect",
+     "S:L*",
+     "S:P"
+    ],
+    "factors": [
+     "1",
+     "5/2 - 1/2\u221a5",
+     "1/2 + 3/10\u221a5",
+     "1"
+    ],
+    "closure": "1/2 + 1/2\u221a5",
+    "exact_match": true
+   },
+   {
+    "stations": [
+     "S:P",
+     "H:rect",
+     "Q(L*,rect)",
+     "S:Pstar",
+     "S:P"
+    ],
+    "factors": [
+     "1",
+     "1/2 + 3/10\u221a5",
+     "5/2 - 1/2\u221a5",
+     "1"
+    ],
+    "closure": "1/2 + 1/2\u221a5",
+    "exact_match": true
+   },
+   {
+    "stations": [
+     "S:P",
+     "H:rect",
+     "Q(L*,rect)",
+     "H:G",
+     "S:P"
+    ],
+    "factors": [
+     "1",
+     "1/2 + 3/10\u221a5",
+     "39/62 + 9/62\u221a5",
+     "20/3 - 7/3\u221a5"
+    ],
+    "closure": "1/2 + 1/2\u221a5",
+    "exact_match": true
+   },
+   {
+    "stations": [
+     "S:P",
+     "H:rect",
+     "Q(L*,rect)",
+     "H:A",
+     "S:P"
+    ],
+    "factors": [
+     "1",
+     "1/2 + 3/10\u221a5",
+     "5/22 + 7/22\u221a5",
+     "-3 + 2\u221a5"
+    ],
+    "closure": "1/2 + 1/2\u221a5",
+    "exact_match": true
+   }
+  ]
+ },
+ "two_link_closures": {
+  "L*": {
+   "closure": {
+    "exact": "-10 + 5\u221a5",
+    "float": 1.180339887498949,
+    "norm": "-25",
+    "phi_power": null,
+    "a_plus_b_phi": "-15 + 10 phi"
+   }
+  },
+  "A*": {
+   "closure": {
+    "exact": "30/19 - 3/19\u221a5",
+    "float": 1.2258840035526648,
+    "norm": "45/19",
+    "phi_power": null,
+    "a_plus_b_phi": "33/19 + -6/19 phi"
+   }
+  },
+  "G*": {
+   "closure": {
+    "exact": "5/11 + 4/11\u221a5",
+    "float": 1.2676610827271964,
+    "norm": "-5/11",
+    "phi_power": null,
+    "a_plus_b_phi": "1/11 + 8/11 phi"
+   }
+  },
+  "rect": {
+   "closure": {
+    "exact": "5/2 - 1/2\u221a5",
+    "float": 1.381966011250105,
+    "norm": "5",
+    "phi_power": null,
+    "a_plus_b_phi": "3 + -1 phi"
+   }
+  },
+  "G": {
+   "closure": {
+    "exact": "20/3 - 7/3\u221a5",
+    "float": 1.4491747191671571,
+    "norm": "155/9",
+    "phi_power": null,
+    "a_plus_b_phi": "9 + -14/3 phi"
+   }
+  },
+  "A": {
+   "closure": {
+    "exact": "-3 + 2\u221a5",
+    "float": 1.4721359549995796,
+    "norm": "-11",
+    "phi_power": null,
+    "a_plus_b_phi": "-5 + 4 phi"
+   }
+  },
+  "L": {
+   "closure": {
+    "exact": "50/11 - 15/11\u221a5",
+    "float": 1.4962709397730145,
+    "norm": "125/11",
+    "phi_power": null,
+    "a_plus_b_phi": "65/11 + -30/11 phi"
+   }
+  }
+ },
+ "checks": [
+  {
+   "check": "A(i) sweep cycle S:Pstar -> S:L* -> S:A* -> S:G* -> S:rect -> S:G -> S:A -> S:L -> S:P -> S:Pstar: every link but the last has tight factor 1 (shared P-facets); closure 15 - 6\u221a5 = (R/r)^2",
+   "pass": true
+  },
+  {
+   "check": "A(ii) Dharma-pattern cycle S:P -> S:rect -> Q(A*,rect) -> H:A* -> S:Pstar -> H:rect -> S:P: tight factors ['9/2 - 3/2\u221a5', '1', '1', '15 - 6\u221a5', '1/2 + 1/10\u221a5', '5/2 - 1/2\u221a5']; closure 225/2 - 99/2\u221a5 (~1.814635)",
+   "pass": true
+  },
+  {
+   "check": "A(ii) D.I: the Dharma-pattern tight closure equals the polar-Dharma all-tight closure 225/2 - 99/2 sqrt5 (s4)",
+   "pass": true
+  },
+  {
+   "check": "A(iii) D.I golden Dharma-pattern cycle (OG replaced by its golden relative at mu = sqrt5): factors ['9/2 - 3/2\u221a5', '1', '1', '15 - 6\u221a5', '1/2 + 1/10\u221a5', '5/2 - 1/2\u221a5'], closure 225/2 - 99/2\u221a5 (~1.814635)",
+   "pass": true
+  },
+  {
+   "check": "two-link cycle P -> H(L*) -> P closes at nu = mu/r^2 = -10 + 5\u221a5",
+   "pass": true
+  },
+  {
+   "check": "two-link cycle P -> H(A*) -> P closes at nu = mu/r^2 = 30/19 - 3/19\u221a5",
+   "pass": true
+  },
+  {
+   "check": "two-link cycle P -> H(G*) -> P closes at nu = mu/r^2 = 5/11 + 4/11\u221a5",
+   "pass": true
+  },
+  {
+   "check": "two-link cycle P -> H(rect) -> P closes at nu = mu/r^2 = 5/2 - 1/2\u221a5",
+   "pass": true
+  },
+  {
+   "check": "two-link cycle P -> H(G) -> P closes at nu = mu/r^2 = 20/3 - 7/3\u221a5",
+   "pass": true
+  },
+  {
+   "check": "two-link cycle P -> H(A) -> P closes at nu = mu/r^2 = -3 + 2\u221a5",
+   "pass": true
+  },
+  {
+   "check": "two-link cycle P -> H(L) -> P closes at nu = mu/r^2 = 50/11 - 15/11\u221a5",
+   "pass": true
+  },
+  {
+   "check": "B: search finished; all reported examples re-checked exactly (exact_match flags in data)",
+   "pass": true
+  }
+ ],
+ "all_pass": true
+}

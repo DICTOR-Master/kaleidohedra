@@ -1,0 +1,266 @@
+{
+ "group": "H4",
+ "results": [
+  {
+   "rings": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "corners": 1200,
+   "direction": "600-cell corner direction (H3)",
+   "n_signatures": 6,
+   "target_signature_heights": [],
+   "target_found": false
+  },
+  {
+   "rings": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "corners": 120,
+   "direction": "600-cell corner direction (H3)",
+   "n_signatures": 3,
+   "target_signature_heights": [],
+   "target_found": false
+  },
+  {
+   "rings": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "corners": 3600,
+   "direction": "600-cell corner direction (H3)",
+   "n_signatures": 15,
+   "target_signature_heights": [],
+   "target_found": false
+  },
+  {
+   "rings": [
+    0,
+    1,
+    0,
+    0
+   ],
+   "corners": 600,
+   "direction": "600-cell corner direction (H3)",
+   "n_signatures": 6,
+   "target_signature_heights": [
+    1.028115294937453,
+    1.0738093080457844,
+    1.1195033211541157,
+    1.1651973342624469,
+    1.210891347370778
+   ],
+   "target_found": true
+  },
+  {
+   "rings": [
+    0,
+    1,
+    0,
+    1
+   ],
+   "corners": 2400,
+   "direction": "600-cell corner direction (H3)",
+   "n_signatures": 10,
+   "target_signature_heights": [
+    1.0728366544874486,
+    1.1750115739624438,
+    1.2771864934374388,
+    1.379361412912434,
+    1.481536332387429
+   ],
+   "target_found": true
+  },
+  {
+   "rings": [
+    0,
+    1,
+    1,
+    0
+   ],
+   "corners": 2400,
+   "direction": "600-cell corner direction (H3)",
+   "n_signatures": 12,
+   "target_signature_heights": [],
+   "target_found": false
+  },
+  {
+   "rings": [
+    0,
+    1,
+    1,
+    1
+   ],
+   "corners": 7200,
+   "direction": "600-cell corner direction (H3)",
+   "n_signatures": 22,
+   "target_signature_heights": [],
+   "target_found": false
+  },
+  {
+   "rings": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "corners": 720,
+   "direction": "600-cell corner direction (H3)",
+   "n_signatures": 7,
+   "target_signature_heights": [],
+   "target_found": false
+  },
+  {
+   "rings": [
+    1,
+    0,
+    0,
+    1
+   ],
+   "corners": 3600,
+   "direction": "600-cell corner direction (H3)",
+   "n_signatures": 16,
+   "target_signature_heights": [],
+   "target_found": false
+  },
+  {
+   "rings": [
+    1,
+    0,
+    1,
+    0
+   ],
+   "corners": 1440,
+   "direction": "600-cell corner direction (H3)",
+   "n_signatures": 14,
+   "target_signature_heights": [],
+   "target_found": false
+  },
+  {
+   "rings": [
+    1,
+    0,
+    1,
+    1
+   ],
+   "corners": 7200,
+   "direction": "600-cell corner direction (H3)",
+   "n_signatures": 24,
+   "target_signature_heights": [],
+   "target_found": false
+  },
+  {
+   "rings": [
+    1,
+    1,
+    0,
+    0
+   ],
+   "corners": 3600,
+   "direction": "600-cell corner direction (H3)",
+   "n_signatures": 15,
+   "target_signature_heights": [],
+   "target_found": false
+  },
+  {
+   "rings": [
+    1,
+    1,
+    0,
+    1
+   ],
+   "corners": 7200,
+   "direction": "600-cell corner direction (H3)",
+   "n_signatures": 20,
+   "target_signature_heights": [],
+   "target_found": false
+  },
+  {
+   "rings": [
+    1,
+    1,
+    1,
+    0
+   ],
+   "corners": 7200,
+   "direction": "600-cell corner direction (H3)",
+   "n_signatures": 23,
+   "target_signature_heights": [],
+   "target_found": false
+  },
+  {
+   "rings": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "corners": 14400,
+   "direction": "600-cell corner direction (H3)",
+   "n_signatures": 29,
+   "target_signature_heights": [],
+   "target_found": false
+  }
+ ],
+ "hits": [
+  {
+   "rings": [
+    0,
+    1,
+    0,
+    0
+   ],
+   "corners": 600,
+   "direction": "600-cell corner direction (H3)",
+   "n_signatures": 6,
+   "target_signature_heights": [
+    1.028115294937453,
+    1.0738093080457844,
+    1.1195033211541157,
+    1.1651973342624469,
+    1.210891347370778
+   ],
+   "target_found": true
+  },
+  {
+   "rings": [
+    0,
+    1,
+    0,
+    1
+   ],
+   "corners": 2400,
+   "direction": "600-cell corner direction (H3)",
+   "n_signatures": 10,
+   "target_signature_heights": [
+    1.0728366544874486,
+    1.1750115739624438,
+    1.2771864934374388,
+    1.379361412912434,
+    1.481536332387429
+   ],
+   "target_found": true
+  }
+ ],
+ "checks": [
+  {
+   "check": "H4: 4 simple roots; group order check via a generic orbit",
+   "pass": true
+  },
+  {
+   "check": "H4: orbit of a generic point has 14400 points (group order 14400)",
+   "pass": true
+  },
+  {
+   "check": "H4: sections with the golden-cut signature {3: 20, 5: 12, 8: 30}: 2 (polytope, direction) pairs",
+   "pass": true
+  }
+ ]
+}
