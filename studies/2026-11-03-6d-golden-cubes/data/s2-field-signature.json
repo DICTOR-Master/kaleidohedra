@@ -1,0 +1,155 @@
+{
+ "solids": {
+  "greater golden cut dodecahedron": {
+   "corners": 60,
+   "cut_x": "1/3",
+   "distance_field_degree": "2",
+   "distance_field": "Q(sqrt5)",
+   "module_rank": 6,
+   "golden_inflation_k": 3
+  },
+  "lesser golden cut dodecahedron": {
+   "corners": 60,
+   "cut_x": "7/22 - 1/22\u221a5",
+   "distance_field_degree": "2",
+   "distance_field": "Q(sqrt5)",
+   "module_rank": 6,
+   "golden_inflation_k": 3
+  },
+  "greater golden cut icosahedron": {
+   "corners": 60,
+   "cut_x": "3/2 - 1/2\u221a5",
+   "distance_field_degree": "2",
+   "distance_field": "Q(sqrt5)",
+   "module_rank": 6,
+   "golden_inflation_k": 3
+  },
+  "lesser golden cut icosahedron": {
+   "corners": 60,
+   "cut_x": "1/2 - 1/10\u221a5",
+   "distance_field_degree": "2",
+   "distance_field": "Q(sqrt5)",
+   "module_rank": 6,
+   "golden_inflation_k": 3
+  },
+  "greater golden cut cube": {
+   "corners": 24,
+   "cut_x": "-1/2 - 3/4\u221a2 + 1/2\u221a5 + 1/4\u221a10",
+   "distance_field_degree": "4",
+   "distance_field": "Q(sqrt2, sqrt5)",
+   "module_rank": 6,
+   "golden_inflation_k": null
+  },
+  "lesser golden cut cube": {
+   "corners": 24,
+   "cut_x": "-1/2 + 3/4\u221a2 - 1/2\u221a5 + 1/4\u221a10",
+   "distance_field_degree": "4",
+   "distance_field": "Q(sqrt2, sqrt5)",
+   "module_rank": 6,
+   "golden_inflation_k": null
+  },
+  "greater golden cut tetrahedron": {
+   "corners": 12,
+   "cut_x": "3/2 - 1/2\u221a5",
+   "distance_field_degree": "2",
+   "distance_field": "Q(sqrt5)",
+   "module_rank": 6,
+   "golden_inflation_k": 6
+  },
+  "lesser golden cut tetrahedron": {
+   "corners": 12,
+   "cut_x": "1/2 - 1/10\u221a5",
+   "distance_field_degree": "2",
+   "distance_field": "Q(sqrt5)",
+   "module_rank": 6,
+   "golden_inflation_k": 6
+  },
+  "greater golden cut octahedron": {
+   "corners": 24,
+   "cut_x": "3/2 - 1/2\u221a5",
+   "distance_field_degree": "2",
+   "distance_field": "Q(sqrt5)",
+   "module_rank": 6,
+   "golden_inflation_k": 3
+  },
+  "lesser golden cut octahedron": {
+   "corners": 24,
+   "cut_x": "1/2 - 1/10\u221a5",
+   "distance_field_degree": "2",
+   "distance_field": "Q(sqrt5)",
+   "module_rank": 6,
+   "golden_inflation_k": 3
+  }
+ },
+ "truncated_cube": {
+  "tG_minpoly": "z**4 - 8*z**3 + 4*z - 1",
+  "tL_minpoly": "z**4 - 8*z**3 + 4*z - 1"
+ },
+ "checks": [
+  {
+   "check": "greater golden cut dodecahedron: distance field inside Q(sqrt5), module rank 6, golden inflation phi^3",
+   "pass": true
+  },
+  {
+   "check": "lesser golden cut dodecahedron: distance field inside Q(sqrt5), module rank 6, golden inflation phi^3",
+   "pass": true
+  },
+  {
+   "check": "greater golden cut icosahedron: distance field inside Q(sqrt5), module rank 6, golden inflation phi^3",
+   "pass": true
+  },
+  {
+   "check": "lesser golden cut icosahedron: distance field inside Q(sqrt5), module rank 6, golden inflation phi^3",
+   "pass": true
+  },
+  {
+   "check": "greater Golden Cut Cube: distance field Q(sqrt2, sqrt5) (degree 4), module rank 6, no phi^k (k <= 6) maps the corner module into itself",
+   "pass": true
+  },
+  {
+   "check": "lesser Golden Cut Cube: distance field Q(sqrt2, sqrt5) (degree 4), module rank 6, no phi^k (k <= 6) maps the corner module into itself",
+   "pass": true
+  },
+  {
+   "check": "greater golden cut tetrahedron: distance field inside Q(sqrt5), module rank 6, golden inflation phi^6",
+   "pass": true
+  },
+  {
+   "check": "lesser golden cut tetrahedron: distance field inside Q(sqrt5), module rank 6, golden inflation phi^6",
+   "pass": true
+  },
+  {
+   "check": "greater golden cut octahedron: distance field inside Q(sqrt5), module rank 6, golden inflation phi^3",
+   "pass": true
+  },
+  {
+   "check": "lesser golden cut octahedron: distance field inside Q(sqrt5), module rank 6, golden inflation phi^3",
+   "pass": true
+  },
+  {
+   "check": "truncated cube corners (+-1,+-1,+-t) perms: squared distances include 4, 4t^2 and 2(1-t)^2, so the distance field is Q(t)",
+   "pass": true
+  },
+  {
+   "check": "greater t = 1/(1 + sqrt2 phi): minimal polynomial z**4 - 8*z**3 + 4*z - 1 (degree 4); lesser t = 1/(1 + sqrt2/phi): z**4 - 8*z**3 + 4*z - 1 (degree 4)",
+   "pass": true
+  },
+  {
+   "check": "t = 1 - 2x agrees with #88 x_G(4), x_L(4)",
+   "pass": true
+  },
+  {
+   "check": "octagon corner side / original side = (1 - t)/(sqrt2 t): phi at t_G, 1/phi at t_L",
+   "pass": true
+  },
+  {
+   "check": "Icosaxes (greater golden cut octahedron) ~ all perms of (+-phi, +-1, 0) = corners of the two twin icosahedra",
+   "pass": true
+  },
+  {
+   "check": "Unborn Axes (lesser golden cut octahedron) ~ all perms of (+-phi^2, +-1, 0) = the 24 non-cube corners of the two twin dodecahedra",
+   "pass": true
+  }
+ ],
+ "all_pass": true
+}

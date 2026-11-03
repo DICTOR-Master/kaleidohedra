@@ -1,0 +1,77 @@
+{
+ "shadow_physical": {
+  "corners": 32,
+  "faces": 30
+ },
+ "shadow_internal": {
+  "corners": 32,
+  "faces": 30
+ },
+ "central_section": {
+  "corners": 20,
+  "R2": "21/2 - 9/2\u221a5"
+ },
+ "stabiliser_order": 120,
+ "E8": {
+  "gram_det": 1,
+  "shadow_radii2": {
+   "1": 120,
+   "3/2 - 1/2\u221a5": 120
+  }
+ },
+ "checks": [
+  {
+   "check": "|a_i|^2 = 2 + phi for all six axes",
+   "pass": true
+  },
+  {
+   "check": "Gram off-diagonal entries are +-1/sqrt5",
+   "pass": true
+  },
+  {
+   "check": "sum a_i a_i^T = 2(2 + phi) I_3 (tight frame)",
+   "pass": true
+  },
+  {
+   "check": "P_par^2 = P_par, symmetric, trace 3",
+   "pass": true
+  },
+  {
+   "check": "P_perp = I - P_par is the Galois conjugate of P_par",
+   "pass": true
+  },
+  {
+   "check": "physical shadow of the 6-cube: 32 corners, 30 faces, all rhombi with diagonal ratio phi (rhombic triacontahedron)",
+   "pass": true
+  },
+  {
+   "check": "internal shadow of the 6-cube: 32 corners, 30 faces, all rhombi with diagonal ratio phi (rhombic triacontahedron)",
+   "pass": true
+  },
+  {
+   "check": "central section of the 6-cube by physical space: 20 corners on one sphere, 3 edges at each, 12 regular pentagon faces (regular dodecahedron)",
+   "pass": true
+  },
+  {
+   "check": "stabiliser of physical space in B6 (order 46080) has order 120 = |I_h|",
+   "pass": true
+  },
+  {
+   "check": "Z-span of the 120 unit icosians has rank 8",
+   "pass": true
+  },
+  {
+   "check": "icosian lattice with the norm 2F: Gram determinant 1, even, integral (E8)",
+   "pass": true
+  },
+  {
+   "check": "the 240 vectors {u, u/phi} lie in the lattice and all have F = 1 (2F = 2: the 240 roots of E8)",
+   "pass": true
+  },
+  {
+   "check": "their H4 shadows: two 600-cells, squared radii {'1': 120, '3/2 - 1/2\u221a5': 120} (ratio phi^2), coordinates in Q(sqrt5)",
+   "pass": true
+  }
+ ],
+ "all_pass": true
+}

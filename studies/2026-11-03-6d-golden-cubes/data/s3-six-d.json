@@ -1,0 +1,838 @@
+{
+ "face_directions": 7,
+ "cube_x_cube_example": {
+  "corners": 8,
+  "faces": {
+   "3": 12
+  },
+  "directions": 6,
+  "cube_symmetries_kept": 6
+ },
+ "sections": [
+  {
+   "name": "octahedron",
+   "mu": "1",
+   "mu_float": 1.0,
+   "slope_1_over_mu": "1",
+   "corners": 6,
+   "mu_field": "Q"
+  },
+  {
+   "name": "Unborn Axes",
+   "mu": "5/2 - 1/2\u221a5",
+   "mu_float": 1.381966011250105,
+   "slope_1_over_mu": "1/2 + 1/10\u221a5",
+   "corners": 24,
+   "mu_field": "Q(sqrt5)"
+  },
+  {
+   "name": "truncated octahedron (Archimedean)",
+   "mu": "3/2",
+   "mu_float": 1.5,
+   "slope_1_over_mu": "2/3",
+   "corners": 24,
+   "mu_field": "Q"
+  },
+  {
+   "name": "Icosaxes",
+   "mu": "1/2 + 1/2\u221a5",
+   "mu_float": 1.618033988749895,
+   "slope_1_over_mu": "-1/2 + 1/2\u221a5",
+   "corners": 24,
+   "mu_field": "Q(sqrt5)"
+  },
+  {
+   "name": "cuboctahedron",
+   "mu": "2",
+   "mu_float": 2.0,
+   "slope_1_over_mu": "1/2",
+   "corners": 12,
+   "mu_field": "Q"
+  },
+  {
+   "name": "cut cube at golden height 2 + 1/phi^2",
+   "mu": "7/2 - 1/2\u221a5",
+   "mu_float": 2.381966011250105,
+   "slope_1_over_mu": "7/22 + 1/22\u221a5",
+   "corners": 24,
+   "mu_field": "Q(sqrt5)",
+   "octagon_ratio": "1/4\u221a2 + 1/4\u221a10",
+   "octagon_ratio_over_sqrt2": "1/4 + 1/4\u221a5"
+  },
+  {
+   "name": "Lesser Golden Cut Cube",
+   "mu": "4 - 3/2\u221a2 + \u221a5 - 1/2\u221a10",
+   "mu_float": 2.533608803855957,
+   "slope_1_over_mu": "31/71 + 17/142\u221a2 - 6/71\u221a5 - 1/142\u221a10",
+   "corners": 24,
+   "mu_field": "Q(sqrt2, sqrt5)",
+   "octagon_ratio": "-1/2 + 1/2\u221a5",
+   "octagon_ratio_over_sqrt2": "-1/4\u221a2 + 1/4\u221a10"
+  },
+  {
+   "name": "Greater Golden Cut Cube",
+   "mu": "4 + 3/2\u221a2 - \u221a5 - 1/2\u221a10",
+   "mu_float": 2.304113535975663,
+   "slope_1_over_mu": "31/71 - 17/142\u221a2 + 6/71\u221a5 - 1/142\u221a10",
+   "corners": 24,
+   "mu_field": "Q(sqrt2, sqrt5)",
+   "octagon_ratio": "1/2 + 1/2\u221a5",
+   "octagon_ratio_over_sqrt2": "1/4\u221a2 + 1/4\u221a10"
+  },
+  {
+   "name": "truncated cube (Archimedean)",
+   "mu": "1 + \u221a2",
+   "mu_float": 2.414213562373095,
+   "slope_1_over_mu": "-1 + \u221a2",
+   "corners": 24,
+   "mu_field": "Q(sqrt2)",
+   "octagon_ratio": "1",
+   "octagon_ratio_over_sqrt2": "1/2\u221a2"
+  },
+  {
+   "name": "cut cube at golden height 2 + 1/phi",
+   "mu": "3/2 + 1/2\u221a5",
+   "mu_float": 2.618033988749895,
+   "slope_1_over_mu": "3/2 - 1/2\u221a5",
+   "corners": 24,
+   "mu_field": "Q(sqrt5)",
+   "octagon_ratio": "-1/4\u221a2 + 1/4\u221a10",
+   "octagon_ratio_over_sqrt2": "-1/4 + 1/4\u221a5"
+  },
+  {
+   "name": "cube",
+   "mu": "3",
+   "mu_float": 3.0,
+   "slope_1_over_mu": "1/3",
+   "corners": 8,
+   "mu_field": "Q"
+  }
+ ],
+ "selected_mu": [
+  {
+   "side": "cube",
+   "mu": "1/2 + sqrt(11)/2",
+   "mu_float": 2.1583123951777,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    0,
+    -2,
+    -2,
+    -1
+   ],
+   "norm": 17
+  },
+  {
+   "side": "cube",
+   "mu": "3/4 + sqrt(33)/4",
+   "mu_float": 2.186140661634507,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    0,
+    -1,
+    -1,
+    -1
+   ],
+   "norm": 11
+  },
+  {
+   "side": "cube",
+   "mu": "1 + sqrt(6)/2",
+   "mu_float": 2.224744871391589,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    0,
+    0,
+    0,
+    -1
+   ],
+   "norm": 9
+  },
+  {
+   "side": "cube",
+   "mu": "sqrt(5)",
+   "mu_float": 2.23606797749979,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    0,
+    -2,
+    -2,
+    -1
+   ],
+   "norm": 11
+  },
+  {
+   "side": "cube",
+   "mu": "sqrt(17)/4 + 5/4",
+   "mu_float": 2.2807764064044154,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    -1,
+    0,
+    0,
+    1
+   ],
+   "norm": 10
+  },
+  {
+   "side": "cube",
+   "mu": "1/2 + sqrt(13)/2",
+   "mu_float": 2.302775637731995,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    0,
+    -1,
+    -1,
+    -1
+   ],
+   "norm": 5
+  },
+  {
+   "side": "cube",
+   "mu": "3/4 + sqrt(41)/4",
+   "mu_float": 2.350781059358212,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    0,
+    -1,
+    -1,
+    -2
+   ],
+   "norm": 14
+  },
+  {
+   "side": "cube",
+   "mu": "sqrt(3)/2 + 3/2",
+   "mu_float": 2.366025403784439,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    -1,
+    1,
+    1,
+    1
+   ],
+   "norm": 12
+  },
+  {
+   "side": "cube",
+   "mu": "1 + sqrt(2)",
+   "mu_float": 2.414213562373095,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    -1
+   ],
+   "norm": 3
+  },
+  {
+   "side": "cube",
+   "mu": "sqrt(6)",
+   "mu_float": 2.449489742783178,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    0,
+    -2,
+    -2,
+    -2
+   ],
+   "norm": 14
+  },
+  {
+   "side": "cube",
+   "mu": "5/2",
+   "mu_float": 2.5,
+   "degree": 1,
+   "v": [
+    -2,
+    -2,
+    -1,
+    0,
+    0,
+    0
+   ],
+   "norm": 9
+  },
+  {
+   "side": "cube",
+   "mu": "1/2 + sqrt(17)/2",
+   "mu_float": 2.5615528128088303,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    0,
+    -1,
+    -1,
+    -2
+   ],
+   "norm": 8
+  },
+  {
+   "side": "cube",
+   "mu": "1 + sqrt(10)/2",
+   "mu_float": 2.5811388300841895,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    -1,
+    -1,
+    -1,
+    -1
+   ],
+   "norm": 12
+  },
+  {
+   "side": "cube",
+   "mu": "sqrt(5)/2 + 3/2",
+   "mu_float": 2.618033988749895,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    -1,
+    0,
+    0,
+    1
+   ],
+   "norm": 4
+  },
+  {
+   "side": "cube",
+   "mu": "3/4 + sqrt(57)/4",
+   "mu_float": 2.6374586088176875,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    -1,
+    -2,
+    -2,
+    -2
+   ],
+   "norm": 21
+  },
+  {
+   "side": "cube",
+   "mu": "5/4 + sqrt(33)/4",
+   "mu_float": 2.686140661634507,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    -1,
+    0,
+    0,
+    -1
+   ],
+   "norm": 10
+  },
+  {
+   "side": "cube",
+   "mu": "1 + sqrt(3)",
+   "mu_float": 2.732050807568877,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    0
+   ],
+   "norm": 5
+  },
+  {
+   "side": "cube",
+   "mu": "sqrt(17)/4 + 7/4",
+   "mu_float": 2.7807764064044154,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    -1,
+    2,
+    2,
+    0
+   ],
+   "norm": 17
+  },
+  {
+   "side": "cube",
+   "mu": "1/2 + sqrt(21)/2",
+   "mu_float": 2.79128784747792,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    -1,
+    -2,
+    -2,
+    -1
+   ],
+   "norm": 12
+  },
+  {
+   "side": "cube",
+   "mu": "sqrt(7)/2 + 3/2",
+   "mu_float": 2.8228756555322954,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    -1,
+    1,
+    1,
+    -1
+   ],
+   "norm": 12
+  },
+  {
+   "side": "cube",
+   "mu": "5/4 + sqrt(41)/4",
+   "mu_float": 2.850781059358212,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    -1,
+    0,
+    0,
+    -2
+   ],
+   "norm": 13
+  },
+  {
+   "side": "cube",
+   "mu": "1 + sqrt(14)/2",
+   "mu_float": 2.870828693386971,
+   "degree": 2,
+   "v": [
+    -2,
+    -2,
+    -2,
+    -2,
+    -2,
+    -1
+   ],
+   "norm": 21
+  },
+  {
+   "side": "octa",
+   "mu": "-1/4 + sqrt(33)/4",
+   "mu_float": 1.1861406616345072,
+   "degree": 2,
+   "v": [
+    -2,
+    -1,
+    0,
+    -2,
+    2,
+    0
+   ],
+   "norm": 13
+  },
+  {
+   "side": "octa",
+   "mu": "sqrt(6)/2",
+   "mu_float": 1.224744871391589,
+   "degree": 2,
+   "v": [
+    -2,
+    0,
+    0,
+    -2,
+    -1,
+    0
+   ],
+   "norm": 9
+  },
+  {
+   "side": "octa",
+   "mu": "-1 + sqrt(5)",
+   "mu_float": 1.2360679774997898,
+   "degree": 2,
+   "v": [
+    -1,
+    -1,
+    0,
+    -2,
+    2,
+    0
+   ],
+   "norm": 10
+  },
+  {
+   "side": "octa",
+   "mu": "1/4 + sqrt(17)/4",
+   "mu_float": 1.2807764064044151,
+   "degree": 2,
+   "v": [
+    -2,
+    0,
+    0,
+    -1,
+    -1,
+    0
+   ],
+   "norm": 6
+  },
+  {
+   "side": "octa",
+   "mu": "-1/2 + sqrt(13)/2",
+   "mu_float": 1.3027756377319946,
+   "degree": 2,
+   "v": [
+    -1,
+    0,
+    0,
+    -2,
+    -1,
+    0
+   ],
+   "norm": 6
+  },
+  {
+   "side": "octa",
+   "mu": "4/3",
+   "mu_float": 1.3333333333333333,
+   "degree": 1,
+   "v": [
+    -1,
+    0,
+    0,
+    2,
+    -2,
+    0
+   ],
+   "norm": 9
+  },
+  {
+   "side": "octa",
+   "mu": "1/2 + sqrt(3)/2",
+   "mu_float": 1.3660254037844386,
+   "degree": 2,
+   "v": [
+    -2,
+    0,
+    0,
+    0,
+    -1,
+    0
+   ],
+   "norm": 5
+  },
+  {
+   "side": "octa",
+   "mu": "sqrt(2)",
+   "mu_float": 1.4142135623730951,
+   "degree": 2,
+   "v": [
+    -1,
+    0,
+    0,
+    -1,
+    -1,
+    0
+   ],
+   "norm": 3
+  },
+  {
+   "side": "octa",
+   "mu": "3/2",
+   "mu_float": 1.5,
+   "degree": 1,
+   "v": [
+    -2,
+    -1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "norm": 5
+  },
+  {
+   "side": "octa",
+   "mu": "-1/2 + sqrt(17)/2",
+   "mu_float": 1.5615528128088303,
+   "degree": 2,
+   "v": [
+    -1,
+    0,
+    0,
+    -2,
+    -2,
+    0
+   ],
+   "norm": 9
+  },
+  {
+   "side": "octa",
+   "mu": "1/2 + sqrt(5)/2",
+   "mu_float": 1.618033988749895,
+   "degree": 2,
+   "v": [
+    -1,
+    0,
+    0,
+    0,
+    -1,
+    0
+   ],
+   "norm": 2
+  },
+  {
+   "side": "octa",
+   "mu": "1/4 + sqrt(33)/4",
+   "mu_float": 1.6861406616345072,
+   "degree": 2,
+   "v": [
+    -2,
+    -1,
+    0,
+    -2,
+    -2,
+    0
+   ],
+   "norm": 13
+  },
+  {
+   "side": "octa",
+   "mu": "sqrt(2)/2 + 1",
+   "mu_float": 1.7071067811865475,
+   "degree": 2,
+   "v": [
+    -2,
+    -1,
+    0,
+    1,
+    0,
+    0
+   ],
+   "norm": 6
+  },
+  {
+   "side": "octa",
+   "mu": "sqrt(3)",
+   "mu_float": 1.7320508075688772,
+   "degree": 2,
+   "v": [
+    -1,
+    0,
+    0,
+    -1,
+    -2,
+    0
+   ],
+   "norm": 6
+  },
+  {
+   "side": "octa",
+   "mu": "3/4 + sqrt(17)/4",
+   "mu_float": 1.7807764064044151,
+   "degree": 2,
+   "v": [
+    -2,
+    -1,
+    0,
+    0,
+    -1,
+    0
+   ],
+   "norm": 6
+  },
+  {
+   "side": "octa",
+   "mu": "1/2 + sqrt(7)/2",
+   "mu_float": 1.8228756555322954,
+   "degree": 2,
+   "v": [
+    -2,
+    -1,
+    0,
+    -1,
+    -2,
+    0
+   ],
+   "norm": 10
+  }
+ ],
+ "sweep_orbits_min": [
+  {
+   "v": [
+    -1,
+    0,
+    0,
+    1,
+    -1,
+    0
+   ],
+   "norm": 3,
+   "sides": [
+    "octa"
+   ]
+  },
+  {
+   "v": [
+    -1,
+    0,
+    0,
+    2,
+    -1,
+    -1
+   ],
+   "norm": 7,
+   "sides": [
+    "cube"
+   ]
+  },
+  {
+   "v": [
+    -2,
+    0,
+    0,
+    2,
+    -2,
+    0
+   ],
+   "norm": 12,
+   "sides": [
+    "octa"
+   ]
+  }
+ ],
+ "golden_height_form": {
+  "Greater": {
+   "mu": "4 + 3/2\u221a2 - \u221a5 - 1/2\u221a10",
+   "a": "1",
+   "b": "3 + \u221a2"
+  },
+  "Lesser": {
+   "mu": "4 - 3/2\u221a2 + \u221a5 - 1/2\u221a10",
+   "a": "7 - 3\u221a2",
+   "b": "5 - 2\u221a2"
+  }
+ },
+ "checks": [
+  {
+   "check": "Greater Golden Cut Cube: 14 faces {3: 8, 8: 6} in 7 directions (3 octagon + 4 triangle pairs) > 6",
+   "pass": true
+  },
+  {
+   "check": "Lesser Golden Cut Cube: 14 faces {3: 8, 8: 6} in 7 directions (3 octagon + 4 triangle pairs) > 6",
+   "pass": true
+  },
+  {
+   "check": "A (icosahedral 5-fold rotation) is orthogonal, det 1, A^5 = I, entries in Q(sqrt5)",
+   "pass": true
+  },
+  {
+   "check": "C cap A^-1 C (two cubes of the compound of five): 8 corners, faces {3: 12}, 6 directions (<= 6), 6 of the 48 cube symmetries",
+   "pass": true
+  },
+  {
+   "check": "section of cube x octahedron at mu = 1 (~1.000000) is the octahedron (6 corners)",
+   "pass": true
+  },
+  {
+   "check": "section of cube x octahedron at mu = 5/2 - 1/2\u221a5 (~1.381966) is the Unborn Axes (24 corners)",
+   "pass": true
+  },
+  {
+   "check": "section of cube x octahedron at mu = 3/2 (~1.500000) is the truncated octahedron (Archimedean) (24 corners)",
+   "pass": true
+  },
+  {
+   "check": "section of cube x octahedron at mu = 1/2 + 1/2\u221a5 (~1.618034) is the Icosaxes (24 corners)",
+   "pass": true
+  },
+  {
+   "check": "section of cube x octahedron at mu = 4 - 3/2\u221a2 + \u221a5 - 1/2\u221a10 (~2.533609) is the Lesser Golden Cut Cube (24 corners)",
+   "pass": true
+  },
+  {
+   "check": "section of cube x octahedron at mu = 4 + 3/2\u221a2 - \u221a5 - 1/2\u221a10 (~2.304114) is the Greater Golden Cut Cube (24 corners)",
+   "pass": true
+  },
+  {
+   "check": "section of cube x octahedron at mu = 1 + \u221a2 (~2.414214) is the truncated cube (Archimedean) (24 corners)",
+   "pass": true
+  },
+  {
+   "check": "octahedron pair at mu in Q(sqrt5), Archimedean truncated cube at mu in Q(sqrt2), Golden Cut Cubes at mu of degree 4",
+   "pass": true
+  },
+  {
+   "check": "golden heights on the cube side give octagon ratios 1/4\u221a2 + 1/4\u221a10 = phi/sqrt2 and -1/4\u221a2 + 1/4\u221a10 = 1/(sqrt2 phi), not phi^+-1",
+   "pass": true
+  },
+  {
+   "check": "D6: 60 roots in four orbits of the diagonal cube group: 12 + 12 + 12 + 24",
+   "pass": true
+  },
+  {
+   "check": "mixed D6 roots on F_mu, mu = phi: shadows similar to the section corners: True",
+   "pass": true
+  },
+  {
+   "check": "mixed D6 roots on F_mu, mu = 3 - phi: shadows similar to the section corners: False",
+   "pass": true
+  },
+  {
+   "check": "mixed D6 roots on F_mu, mu = 3/2: shadows similar to the section corners: False",
+   "pass": true
+  },
+  {
+   "check": "on the golden flat F_phi the 24 mixed roots cast Icosaxes, and the section of C x C* there is Icosaxes: the same corners (section corner (1, 1/phi, 0) = shadow of e_1 + f_2)",
+   "pass": true
+  },
+  {
+   "check": "38 isolated mu found, all of degree <= 2; neither Golden Cut Cube (mu_G ~ 2.304114, mu_L ~ 2.533609) is among them",
+   "pass": true
+  },
+  {
+   "check": "mu = phi (Icosaxes) is selected by a root (norm 2): smallest selecting norm 2",
+   "pass": true
+  },
+  {
+   "check": "among roots (norm 2) the only isolated mu is phi",
+   "pass": true
+  },
+  {
+   "check": "sweep orbits exist (shadow = section for every mu); smallest norm 3",
+   "pass": true
+  },
+  {
+   "check": "mu_G = 4 + 3/2\u221a2 - \u221a5 - 1/2\u221a10 = a + (b - a)/phi^2 with a = 1 (~1.0000), b = 3 + \u221a2 (~4.4142); not two of the layers 1, 2, 3",
+   "pass": true
+  },
+  {
+   "check": "mu_L = 4 - 3/2\u221a2 + \u221a5 - 1/2\u221a10 = a + (b - a)/phi^2 with a = 7 - 3\u221a2 (~2.7574), b = 5 - 2\u221a2 (~2.1716); not two of the layers 1, 2, 3",
+   "pass": true
+  }
+ ],
+ "all_pass": true
+}
