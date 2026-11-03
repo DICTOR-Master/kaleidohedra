@@ -148,7 +148,7 @@ box2 = f'''<div class="status" style="text-align:left;margin-top:5mm;break-insid
 </ul></div>'''
 title2 = f'''<!-- ============ COVER ============ -->
 <section class="page coverpage" style="height:252mm;display:flex;justify-content:center;align-items:center">
-<img src="figures/cover/dictonary-cover-front-golden.png" alt="Cover: The DICTOnary of Atoms, Quanta of Space II, DICTO, under the DICTO square of the Greater Golden Cut solids of the five Platonic solids of DICTO's name, D I C T O" style="height:248mm;display:block">
+<img src="figures/cover/dictonary-cover-front-golden.png" alt="Cover: The DICTOnary of Atoms, Quanta of Space II, DICTO, under the DICTO square of the Greater Golden Cut solids of the five Platonic solids of DICTO's name, D I C T O" style="width:100%;height:auto;display:block">
 </section>
 <section class="page titlepage">
 <img class="big" src="../dicto-logo.png" alt="DICTO">
