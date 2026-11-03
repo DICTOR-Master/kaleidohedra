@@ -6,7 +6,7 @@ import * as THREE from 'three';
 import { LineSegments2 } from 'three/addons/lines/LineSegments2.js';
 import { LineSegmentsGeometry } from 'three/addons/lines/LineSegmentsGeometry.js';
 import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
-import { VACUUS_VIEWS, vacuusSolidOf, pyramidsOf, starTipsOf, finsOf, strutsOf } from './vacuus-geometry.js';
+import { VACUUS_VIEWS, vacuusSolidOf, pyramidsOf, starTipsOf, finsOf, strutsOf, isCube } from './vacuus-geometry.js';
 import { t } from './i18n.js';
 
 const EDGE = 0x0b1220, SPIKE = 0x8f5bd8, GREY_ROD = 0x8a93a6, CENTRE_BALL = 0x1a1f2b;
@@ -193,7 +193,8 @@ export function createVacuusLens({ scene, look = () => ({ skeleton: false, opaci
       const one = (k) => (k === 1 ? '1' : '');   // all congruent / all one length: its own wording
       if (v === 'sheets') return t(`poly.vac.cap.sheets${one(st.fins.classes.length)}`, L, { e: s.edges.length, k: st.fins.classes.length });
       if (v === 'struts') return t(`poly.vac.cap.struts${one(st.struts.classes.length)}`, L, { v: s.vertices.length, k: st.struts.classes.length });
-      return t(`poly.vac.cap.${v}`, L, { n: s.faces.length });
+      const cap = t(`poly.vac.cap.${v}`, L, { n: s.faces.length });
+      return v === 'star' && isCube(s) ? cap + t('poly.vac.cap.starCube', L) : cap;   // DICTO 11-04: name the cube's Star
     },
     /** The colour key for Sheets and Struts: [{ colour, label }]. */
     legend: legendOf,

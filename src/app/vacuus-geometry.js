@@ -64,6 +64,14 @@ export function vacuusSolidOf(spec) {
   return { vertices: V, faces: F, edges: E, planes, R };
 }
 
+/** True when the solid is a cube: six four-sided faces, all edges one length, all corners one distance from O (a rhombohedron
+ *  in a sphere has square faces). Its Star then closes into the rhombic dodecahedron (#87 Proposition 2: every edge angle 90°). */
+export function isCube(solid) {
+  if (!solid || solid.faces.length !== 6 || solid.vertices.length !== 8 || solid.faces.some((f) => f.length !== 4)) return false;
+  const P = solid.vertices, L = solid.edges.map(([a, b]) => norm(sub(P[a], P[b]))), r = P.map(norm), tol = 1e-6;
+  return L.every((l) => Math.abs(l - L[0]) < tol * solid.R) && r.every((x) => Math.abs(x - solid.R) < tol * solid.R);
+}
+
 /** The centre pyramids, one per face: { base (the face's corners, outward loop), n (unit outward normal), c (height) }; apex O. */
 export const pyramidsOf = (solid) => solid.faces.map((f, i) => ({ base: f.map((k) => solid.vertices[k]), n: solid.planes[i].n, c: solid.planes[i].c }));
 

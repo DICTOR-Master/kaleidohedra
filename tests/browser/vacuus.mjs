@@ -89,6 +89,7 @@ for (const [name, opts] of DEVICES) {
     assert.equal(await page.locator(`[data-vac-view="${v}"]`).getAttribute('aria-pressed'), 'true', `${name}: ${v} shown as chosen`);
     const cap = await page.textContent('[data-vac-caption]');
     console.log(name, v, '-', cap);
+    if (v === 'star') assert.ok(cap.includes('rhombic dodecahedron'), `${name}: the cube's Star named as the rhombic dodecahedron (${cap})`);
     // only the controls that apply: the slider in Exploded, the Aristotle link in Pyramids, the colour key in Sheets and Struts
     assert.equal(await page.locator('[data-vac-apart]').count(), v === 'exploded' ? 1 : 0, `${name}: ${v} slider`);
     assert.equal(await page.locator('[data-vac-aristotle]').count(), v === 'pyramids' ? 1 : 0, `${name}: ${v} Aristotle link`);
