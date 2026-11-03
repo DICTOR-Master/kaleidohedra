@@ -4,3 +4,10 @@ links: length a, tilt atan(sqrt 2) = 54.7356 deg, sheet spacing sqrt(2/3) a (exa
 c: 3/3 links up collinear with a link down; h: 3/3 links up mirror a link down
 T-c (ABC): nodes 27, links 42 (21 + 21), degrees as spec check.out; cells gap 1 {'tet_lo': 4, 'tet_hi': 4, 'oct': 4}, gap 2 {'tet_lo': 4, 'tet_hi': 4, 'oct': 4}; #75 tile of the middle sheet at lambda=-1/8 found complete as cells around ['B5']
 T-h (ABA): nodes 27, links 42 (21 + 21), degrees as spec check.out; cells gap 1 {'tet_lo': 4, 'tet_hi': 4, 'oct': 4}, gap 2 {'tet_lo': 4, 'tet_hi': 4, 'oct': 4}; #75 tile of the middle sheet at lambda=-1/8 found complete as cells around ['B5']
+3C ABCABCA: inner c/h ccccc (agrees with #83 'c'), 7 sheets, 63 nodes, 126 links (21 per gap), steps ++++++, cells per gap as T-c (forward) / T-h gap 2 (backward)
+2H ABABA: inner c/h hhh (agrees with #83 'h'), 5 sheets, 45 nodes, 84 links (21 per gap), steps +-+-, cells per gap as T-c (forward) / T-h gap 2 (backward)
+4H ABCBA: inner c/h chc (agrees with #83 'hchch'), 5 sheets, 45 nodes, 84 links (21 per gap), steps ++--, cells per gap as T-c (forward) / T-h gap 2 (backward)
+6H ABCACBA: inner c/h cchcc (agrees with #83 'hcchcc'), 7 sheets, 63 nodes, 126 links (21 per gap), steps +++---, cells per gap as T-c (forward) / T-h gap 2 (backward)
+Fibonacci ABACBCACBABCA: inner c/h hcchchcchcc (agrees with #83 'chcchchcchcch'), 13 sheets, 117 nodes, 252 links (21 per gap), steps +---++---+++, cells per gap as T-c (forward) / T-h gap 2 (backward)
+Fibonacci: a -> ab, b -> a gives abaababaabaab; a -> c, b -> h: chcchchcchcch (#83); part 2 words checked (c/h and mean Hagg symbol)
+cells per forward gap {'tet_lo': 4, 'tet_hi': 4, 'oct': 4}, per backward gap {'tet_lo': 4, 'tet_hi': 4, 'oct': 4}
