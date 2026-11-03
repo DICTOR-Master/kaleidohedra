@@ -1,8 +1,11 @@
 # ALTERNATIVE for the Quanta of Space II (The DICTOnary of Atoms) cover, 2026-11-03, comparison only: the DICTO square of
 # studies/2026-10-22-dicto-square/dicto_square.py with each Platonic solid replaced by its Greater Golden Cut solid of #88
 # (every corner cut at x_G(n) = phi/(2cos(pi/n) + 2 phi) along each edge, n = sides of a face: D 1/3, I T O 1/phi^2 (O = Icosaxes),
-# C ~0.347943). Same letters, tones, poses, scale (equal circumsphere 0.44). The golden faces (the original faces, now golden
-# 2n-gons) are drawn a shade lighter than the new corner faces so the cut reads. Below: the original header.
+# C ~0.347943). Same letters, poses, scale (equal circumsphere 0.44). v2 (DICTO 11-03: "golden cover in full strength colours
+# with golden letters instead of platinum"): the golden faces (the original faces, now golden 2n-gons) keep exactly the Volume I
+# tones at full strength; the new corner faces are drawn DARK=0.12 toward black so the cut reads; the carved letters are gilded
+# with gold leaf (was platinum) and ringed by a thin dark-bronze outline so they read on every tone, the gold O included.
+# Below: the original header.
 # The DICTO square (DICTO's idea, 2026-10-22): a 5x5 word square like SATOR AREPO, built from the five Platonic
 # solids of DICTO's emblem key, D-I-C-T-O = Dodecahedron, Icosahedron, Cube, Tetrahedron, Octahedron.
 # Cyclic Latin square: row i, column j holds letter (i+j) mod 5, so DICTO reads across the top and down the left,
@@ -81,7 +84,7 @@ def tet_pose():
         if P[o[0],1]<min(top[:,1])-0.5 and (best is None or sc_<best[0]): best=(sc_,t)
     return rot((0,0,1),best[1])@B
 POSE['T']=tet_pose()
-LIFT=float(os.environ.get('LIFT','0.12'))
+DARK=float(os.environ.get('DARK','0.12'))   # corner faces this much toward black
 GROUND=(20,15,11); GOLD=(214,168,74)
 # Plato's elements (Timaeus): fire tetrahedron, air octahedron, water icosahedron, earth cube; the dodecahedron for the whole (aether)
 TONE={'T':(205,62,40),'O':(232,200,82),'I':(58,112,205),'C':(72,142,72),'D':(138,92,196)}
@@ -116,10 +119,10 @@ for _,k,Vv,F in sorted(items,key=lambda t:t[0]):
         if n[2]<=1e-9: continue
         b=0.45+0.55*max(0,n@light)
         col=tuple(int(c*b+GROUND[m]*(1-b)*0.2) for m,c in enumerate(TONE[k]))
-        if gf: col=tuple(int(c+(255-c)*LIFT) for c in col)      # golden faces a shade lighter
+        if not gf: col=tuple(int(c*(1-DARK)) for c in col)      # corner faces a shade darker; golden faces at full strength
         pts=[(ox+Vv[q,0]*sc, oy-Vv[q,1]*sc) for q in idx]
         d.polygon(pts,fill=col); d.line(pts+[pts[0]],fill=EDGE,width=2*SS)
-# Roman (Trajan-style) initials V-cut into each form, the groove gilded with platinum leaf:
+# Roman (Trajan-style) initials V-cut into each form, the groove gilded with gold leaf (v2; was platinum):
 # the groove depth is the distance to the letter's edge, so the two walls meet in a ridge-free V along the stroke's middle;
 # light from the upper left lights one wall and leaves the other in shadow.
 from scipy import ndimage
@@ -133,13 +136,19 @@ def carved(ch):
     n=np.dstack([gx*k, -gy*k, np.ones_like(dist)])   # depth = -dist: a groove; n/=np.linalg.norm(n,axis=2,keepdims=True)
     lam=np.clip(n@Lc,0,1)
     h=n@(Lc+np.array([0,0,1.0])); h=np.clip(h/np.linalg.norm(Lc+[0,0,1.0]),0,1)**40
-    dark=np.array([70,74,82.]); lite=np.array([226,229,235.]); spec=np.array([255,255,255.])
-    rgb=dark+(lite-dark)*lam[...,None]**1.3; rgb=rgb+(spec-rgb)*h[...,None]*0.8
+    dark=np.array([120,85,20.]); mid=np.array([212,170,60.]); lite=np.array([255,225,140.]); spec=np.array([255,236,170.])
+    t=lam[...,None]**GAMMA                                    # gold: shadow -> mid -> highlight
+    rgb=np.where(t<0.5, dark+(mid-dark)*(2*t), mid+(lite-mid)*(2*t-1)); rgb=rgb+(spec-rgb)*h[...,None]*0.5
     # a thin cast shadow just inside the lit-side edge (the block's lip shades the groove)
     sh=ndimage.shift(ins.astype(float),(-2*SS*0.6,2*SS*0.6),order=1)
     rgb*= (1-0.35*np.clip(ins-sh,0,1))[...,None]
-    tile=Image.fromarray(np.clip(rgb,0,255).astype(np.uint8)); mask=Image.fromarray((ndimage.gaussian_filter(M,0.6)*255).astype(np.uint8))
+    # a thin dark-bronze outline round the letter (the groove's cut lip), so gold reads on every tone, gold O included
+    r=int(OUTLINE*SS); yy,xx=np.mgrid[-r:r+1,-r:r+1]; ring=ndimage.binary_dilation(ins,structure=xx**2+yy**2<=r*r)
+    rgb=np.where(ins[...,None],rgb,np.array(RIM)); al=np.maximum(ndimage.gaussian_filter(ring.astype(float),0.6),ndimage.gaussian_filter(M,0.6))
+    tile=Image.fromarray(np.clip(rgb,0,255).astype(np.uint8)); mask=Image.fromarray((al*255).astype(np.uint8))
     return tile,mask,box
+GAMMA=float(os.environ.get('GAMMA','1.6'))   # gold tone curve (1.3 = platinum's; steeper = deeper gold)
+OUTLINE=float(os.environ.get('OUTLINE','2.5')); RIM=(58,38,8)    # outline width (output px) and colour
 CARVE={ch:carved(ch) for ch in 'DICTO'}
 for i in range(5):
     for j in range(5):
