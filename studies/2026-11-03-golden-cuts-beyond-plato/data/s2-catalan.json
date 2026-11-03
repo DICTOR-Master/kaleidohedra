@@ -1,0 +1,657 @@
+{
+ "catalan": [
+  {
+   "catalan": "triakis tetrahedron",
+   "dual_of": "truncated tetrahedron",
+   "vertices": 8,
+   "faces": 12,
+   "face_size": 3,
+   "orbits": {
+    "3|666": 4,
+    "6|333666": 4
+   },
+   "unknowns": 4,
+   "rank": 4,
+   "rank_augmented": 4,
+   "alternating_cuts": "exactly one",
+   "ratio_float": -1.5773502691896268,
+   "long_sides": "corner",
+   "y_float": {
+    "3|666": 0.5653456503197283,
+    "6|333666": 1.632012316986395
+   },
+   "golden_cuts": 0,
+   "valid": false,
+   "ratio_exact_minimal_polynomial": "3*x**2 + 6*x + 2",
+   "ratio_exact": "-1 - sqrt(3)/3",
+   "y_exact": {
+    "3|666": "(6*sqrt(2) + 10*sqrt(6))/165",
+    "6|333666": "(2*sqrt(6) + 10*sqrt(2))/33"
+   }
+  },
+  {
+   "catalan": "rhombic dodecahedron",
+   "dual_of": "cuboctahedron",
+   "vertices": 14,
+   "faces": 12,
+   "face_size": 4,
+   "orbits": {
+    "3|444": 8,
+    "4|3333": 6
+   },
+   "unknowns": 4,
+   "rank": 3,
+   "rank_augmented": 3,
+   "alternating_cuts": "a 1-parameter family",
+   "golden": [
+    {
+     "cut": "greater (corner sides long)",
+     "y_float": {
+      "3|444": 0.35775072191742724,
+      "4|3333": 0.505935922884391
+     },
+     "a": 0.5842044825400102,
+     "b": 0.36105822658977077,
+     "unique": true,
+     "positive": true,
+     "convex_truncation_faces": 26,
+     "valid": true,
+     "y_exact_edge1": {
+      "3|444": "-675/2591 + (-1236*sqrt(3) - 981*sqrt(2) - 449*sqrt(6) + 84*sqrt(15) + 444*sqrt(10) + 876*sqrt(5) + 433*sqrt(30))/2591",
+      "4|3333": "-1962/2591 + (-1236*sqrt(6) - 898*sqrt(3) - 675*sqrt(2) + 84*sqrt(30) + 888*sqrt(5) + 876*sqrt(10) + 866*sqrt(15))/2591"
+     },
+     "a_exact_edge1": "-1796/2591 + (-2472*sqrt(2) - 1308*sqrt(3) - 450*sqrt(6) + 168*sqrt(10) + 592*sqrt(15) + 584*sqrt(30) + 1732*sqrt(5))/2591",
+     "b_exact_edge1": "(-1320*sqrt(10) - 1764*sqrt(5) - 950*sqrt(15) - 517*sqrt(30) + 1656*sqrt(2) + 2134*sqrt(3) + 1685*sqrt(6))/2591 + 5228/2591",
+     "cap_depth_edge1": {
+      "3|444": 0.09736741375666833,
+      "4|3333": 0.2385004812782848
+     },
+     "plane_distance_edge1": {
+      "3|444": 0.9026325862433316,
+      "4|3333": 0.9162000571009667
+     },
+     "equal_cap_depths": false,
+     "equal_plane_distances": false
+    },
+    {
+     "cut": "lesser (original sides long)",
+     "y_float": {
+      "3|444": 0.24221427811271654,
+      "4|3333": 0.34254271710741246
+     },
+     "a": 0.39553425986182095,
+     "b": 0.6399878761714604,
+     "unique": true,
+     "positive": true,
+     "convex_truncation_faces": 26,
+     "valid": true,
+     "y_exact_edge1": {
+      "3|444": "2**(853/921)*3**(667/921)*5**(484/921)*7**(683/921)/210",
+      "4|3333": "-1962/2591 + (-876*sqrt(10) - 888*sqrt(5) - 675*sqrt(2) + 84*sqrt(30) + 898*sqrt(3) + 1236*sqrt(6) + 866*sqrt(15))/2591"
+     },
+     "a_exact_edge1": "(-584*sqrt(30) - 592*sqrt(15) - 1308*sqrt(3) - 450*sqrt(6) + 168*sqrt(10) + 2472*sqrt(2) + 1732*sqrt(5))/2591 + 1796/2591",
+     "b_exact_edge1": "(-1685*sqrt(6) - 2134*sqrt(3) - 950*sqrt(15) - 517*sqrt(30) + 1656*sqrt(2) + 1764*sqrt(5) + 1320*sqrt(10))/2591 + 5228/2591",
+     "cap_depth_edge1": {
+      "3|444": 0.06592237664363684,
+      "4|3333": 0.1614761854084778
+     },
+     "plane_distance_edge1": {
+      "3|444": 0.9340776233563631,
+      "4|3333": 0.9932243529707737
+     },
+     "equal_cap_depths": false,
+     "equal_plane_distances": false
+    }
+   ],
+   "golden_cuts": 2
+  },
+  {
+   "catalan": "triakis octahedron",
+   "dual_of": "truncated cube",
+   "vertices": 14,
+   "faces": 24,
+   "face_size": 3,
+   "orbits": {
+    "3|888": 8,
+    "8|33338888": 6
+   },
+   "unknowns": 4,
+   "rank": 4,
+   "rank_augmented": 4,
+   "alternating_cuts": "exactly one",
+   "ratio_float": -1.5411961001462058,
+   "long_sides": "corner",
+   "y_float": {
+    "3|888": 0.22525944009458657,
+    "8|33338888": 0.7105408143330413
+   },
+   "golden_cuts": 0,
+   "valid": false,
+   "ratio_exact_minimal_polynomial": "2*x**4 + 8*x**3 + 8*x**2 - 1",
+   "ratio_exact": "(-7*sqrt(2) - 5*sqrt(2 - sqrt(2)) - 2*sqrt(4 - 2*sqrt(2)) + 8)/(-7*sqrt(2) - 2*sqrt(2)*sqrt(2 - sqrt(2)) + 8 + 12*sqrt(2 - sqrt(2)))",
+   "y_exact": {
+    "3|888": "-30/17 + (-sqrt(2)*sqrt(2 - sqrt(2)) + 6*sqrt(2 - sqrt(2)) + 22*sqrt(2))/17",
+    "8|33338888": "4/17 + (-sqrt(2)*sqrt(2 - sqrt(2)) + 6*sqrt(2 - sqrt(2)) + 5*sqrt(2))/17"
+   }
+  },
+  {
+   "catalan": "tetrakis hexahedron",
+   "dual_of": "truncated octahedron",
+   "vertices": 14,
+   "faces": 24,
+   "face_size": 3,
+   "orbits": {
+    "4|6666": 6,
+    "6|444666": 8
+   },
+   "unknowns": 4,
+   "rank": 4,
+   "rank_augmented": 4,
+   "alternating_cuts": "exactly one",
+   "ratio_float": -1.8164965809277296,
+   "long_sides": "corner",
+   "y_float": {
+    "4|6666": 0.3723614639131595,
+    "6|444666": 0.6080637243086754
+   },
+   "golden_cuts": 0,
+   "valid": false,
+   "ratio_exact_minimal_polynomial": "3*x**2 + 6*x + 1",
+   "ratio_exact": "-1 - sqrt(6)/3",
+   "y_exact": {
+    "4|6666": "1/10 + sqrt(6)/15",
+    "6|444666": "sqrt(6)/15 + 4/15"
+   }
+  },
+  {
+   "catalan": "deltoidal icositetrahedron",
+   "dual_of": "rhombicuboctahedron",
+   "vertices": 26,
+   "faces": 24,
+   "face_size": 4,
+   "orbits": {
+    "3|444": 8,
+    "4|4444": 6,
+    "4|3344": 12
+   },
+   "unknowns": 5,
+   "rank": 5,
+   "rank_augmented": 5,
+   "alternating_cuts": "exactly one",
+   "ratio_float": -1.3065629648763766,
+   "long_sides": "corner",
+   "y_float": {
+    "3|444": 0.49041224897621505,
+    "4|3344": 0.6340506711244042,
+    "4|4444": 0.6340506711244077
+   },
+   "golden_cuts": 0,
+   "valid": false,
+   "ratio_exact_minimal_polynomial": "2*x**4 - 4*x**2 + 1",
+   "ratio_exact": "-sqrt(sqrt(2)/2 + 1)",
+   "y_exact": {
+    "3|444": "sqrt(68/49 - 46*sqrt(2)/49)",
+    "4|3344": "sqrt(10 - 7*sqrt(2))",
+    "4|4444": "sqrt(10 - 7*sqrt(2))"
+   }
+  },
+  {
+   "catalan": "disdyakis dodecahedron",
+   "dual_of": "truncated cuboctahedron",
+   "vertices": 26,
+   "faces": 48,
+   "face_size": 3,
+   "orbits": {
+    "4|6688": 12,
+    "6|444888": 8,
+    "8|44446666": 6
+   },
+   "unknowns": 5,
+   "rank": 5,
+   "rank_augmented": 6,
+   "alternating_cuts": "none (equations inconsistent)",
+   "golden_cuts": 0,
+   "least_squares_residual": 0.019374480705621203
+  },
+  {
+   "catalan": "pentagonal icositetrahedron",
+   "dual_of": "snub cube",
+   "vertices": 38,
+   "faces": 24,
+   "face_size": 5,
+   "orbits": {
+    "3|334": 24,
+    "3|333": 8,
+    "4|3333": 6
+   },
+   "unknowns": 5,
+   "rank": 5,
+   "rank_augmented": 5,
+   "alternating_cuts": "exactly one",
+   "ratio_float": -1.312581388154451,
+   "long_sides": "corner",
+   "y_float": {
+    "3|333": 0.5326460211574608,
+    "3|334": 0.5326460211574576,
+    "4|3333": 0.6927445740857454
+   },
+   "golden_cuts": 0,
+   "valid": false
+  },
+  {
+   "catalan": "rhombic triacontahedron",
+   "dual_of": "icosidodecahedron",
+   "vertices": 32,
+   "faces": 30,
+   "face_size": 4,
+   "orbits": {
+    "5|33333": 12,
+    "3|555": 20
+   },
+   "unknowns": 4,
+   "rank": 3,
+   "rank_augmented": 3,
+   "alternating_cuts": "a 1-parameter family",
+   "golden": [
+    {
+     "cut": "greater (corner sides long)",
+     "y_float": {
+      "3|555": 0.12236774492101464,
+      "5|33333": 0.1979951704088779
+     },
+     "a": 0.20818444226655416,
+     "b": 0.12866506124967053,
+     "unique": true,
+     "positive": true,
+     "convex_truncation_faces": 62,
+     "valid": true,
+     "y_exact_edge1": {
+      "3|555": "sqrt(25 - 11*sqrt(5))*(-840*sqrt(2) - 200*sqrt(10) + 275*sqrt(10)*sqrt(50 - 22*sqrt(5)) + 625*sqrt(2)*sqrt(50 - 22*sqrt(5)) + 231*sqrt(10)*sqrt(250 - 110*sqrt(5)) + 525*sqrt(2)*sqrt(250 - 110*sqrt(5)))/6320",
+      "5|33333": "sqrt(25 - 11*sqrt(5))*(-520*sqrt(10) - 920*sqrt(2) + 253*sqrt(10)*sqrt(250 - 110*sqrt(5)) + 575*sqrt(2)*sqrt(250 - 110*sqrt(5)) + 715*sqrt(10)*sqrt(50 - 22*sqrt(5)) + 1625*sqrt(2)*sqrt(50 - 22*sqrt(5)))/6320"
+     },
+     "a_exact_edge1": "sqrt(25 - 11*sqrt(5))*(-475*sqrt(2)*sqrt(50 - 22*sqrt(5)) - 209*sqrt(10)*sqrt(50 - 22*sqrt(5)) + 33*sqrt(10)*sqrt(250 - 110*sqrt(5)) + 75*sqrt(2)*sqrt(250 - 110*sqrt(5)) + 670*sqrt(2) + 310*sqrt(10))/1580",
+     "b_exact_edge1": "sqrt(25 - 11*sqrt(5))*(-275*sqrt(2)*sqrt(250 - 110*sqrt(5)) - 121*sqrt(10)*sqrt(250 - 110*sqrt(5)) + 187*sqrt(10)*sqrt(50 - 22*sqrt(5)) + 425*sqrt(2)*sqrt(50 - 22*sqrt(5)) + 180*sqrt(10) + 440*sqrt(2))/1580",
+     "cap_depth_edge1": {
+      "3|555": 0.05112213317487489,
+      "5|33333": 0.19719513408646577
+     },
+     "plane_distance_edge1": {
+      "3|555": 1.4222482863903942,
+      "5|33333": 1.4208388546634292
+     },
+     "equal_cap_depths": false,
+     "equal_plane_distances": false
+    },
+    {
+     "cut": "lesser (original sides long)",
+     "y_float": {
+      "3|555": 0.0836054513348337,
+      "5|33333": 0.1352764619045354
+     },
+     "a": 0.1422380895212266,
+     "b": 0.230146063340194,
+     "unique": true,
+     "positive": true,
+     "convex_truncation_faces": 62,
+     "valid": true,
+     "y_exact_edge1": {
+      "3|555": "-sqrt(25 - 11*sqrt(5))*(-80*sqrt(10) - 160*sqrt(2) + 11*sqrt(10)*sqrt(250 - 110*sqrt(5)) + 25*sqrt(2)*sqrt(250 - 110*sqrt(5)) + 55*sqrt(10)*sqrt(50 - 22*sqrt(5)) + 125*sqrt(2)*sqrt(50 - 22*sqrt(5)))/80",
+      "5|33333": "-sqrt(25 - 11*sqrt(5))*(-280*sqrt(2) - 120*sqrt(10) + 55*sqrt(10)*sqrt(50 - 22*sqrt(5)) + 125*sqrt(2)*sqrt(50 - 22*sqrt(5)) + 33*sqrt(10)*sqrt(250 - 110*sqrt(5)) + 75*sqrt(2)*sqrt(250 - 110*sqrt(5)))/80"
+     },
+     "a_exact_edge1": "(-35*sqrt(2)*sqrt(25 - 11*sqrt(5)) - 15*sqrt(10)*sqrt(25 - 11*sqrt(5)) + 20 + 11*sqrt(5)*sqrt(25 - 11*sqrt(5))*sqrt(125 - 55*sqrt(5)) + 25*sqrt(25 - 11*sqrt(5))*sqrt(125 - 55*sqrt(5)))/10",
+     "b_exact_edge1": "(-25*sqrt(10)*sqrt(25 - 11*sqrt(5)) - 55*sqrt(2)*sqrt(25 - 11*sqrt(5)) + 11*sqrt(5)*sqrt(25 - 11*sqrt(5))*sqrt(125 - 55*sqrt(5)) + 25*sqrt(25 - 11*sqrt(5))*sqrt(125 - 55*sqrt(5)) + 60)/10",
+     "cap_depth_edge1": {
+      "3|555": 0.034928232272676954,
+      "5|33333": 0.13472985219245223
+     },
+     "plane_distance_edge1": {
+      "3|555": 1.438442187292592,
+      "5|33333": 1.4833041365574426
+     },
+     "equal_cap_depths": false,
+     "equal_plane_distances": false
+    }
+   ],
+   "golden_cuts": 2
+  },
+  {
+   "catalan": "triakis icosahedron",
+   "dual_of": "truncated dodecahedron",
+   "vertices": 32,
+   "faces": 60,
+   "face_size": 3,
+   "orbits": {
+    "10|333331010101010": 12,
+    "3|101010": 20
+   },
+   "unknowns": 4,
+   "rank": 4,
+   "rank_augmented": 4,
+   "alternating_cuts": "exactly one",
+   "ratio_float": -1.525731112119144,
+   "long_sides": "corner",
+   "y_float": {
+    "10|333331010101010": 0.2550955935290901,
+    "3|101010": 0.07780874980176025
+   },
+   "golden_cuts": 0,
+   "valid": false,
+   "ratio_exact_minimal_polynomial": "5*x**4 + 20*x**3 + 25*x**2 + 10*x + 1",
+   "ratio_exact": "(-73*sqrt(10 - 2*sqrt(5)) - 74*sqrt(5) + 23*sqrt(50 - 10*sqrt(5)) + 150)/(-38*sqrt(10)*sqrt(5 - sqrt(5)) - 74*sqrt(5) + 150 + 110*sqrt(2)*sqrt(5 - sqrt(5)))",
+   "y_exact": {
+    "10|333331010101010": "-23/61 + (-19*sqrt(10)*sqrt(5 - sqrt(5)) + 55*sqrt(2)*sqrt(5 - sqrt(5)) + 146*sqrt(5))/610",
+    "3|101010": "-131/671 + (-209*sqrt(10)*sqrt(5 - sqrt(5)) + 630*sqrt(5) + 605*sqrt(2)*sqrt(5 - sqrt(5)))/6710"
+   }
+  },
+  {
+   "catalan": "pentakis dodecahedron",
+   "dual_of": "truncated icosahedron",
+   "vertices": 32,
+   "faces": 60,
+   "face_size": 3,
+   "orbits": {
+    "5|66666": 12,
+    "6|555666": 20
+   },
+   "unknowns": 4,
+   "rank": 4,
+   "rank_augmented": 4,
+   "alternating_cuts": "exactly one",
+   "ratio_float": -1.9341723589627122,
+   "long_sides": "corner",
+   "y_float": {
+    "5|66666": 0.1719350407215294,
+    "6|555666": 0.20748436063368336
+   },
+   "golden_cuts": 0,
+   "valid": false,
+   "ratio_exact_minimal_polynomial": "9*x**4 + 36*x**3 + 45*x**2 + 18*x + 1",
+   "ratio_exact": "(-6 - sqrt(15) - sqrt(3))/6",
+   "y_exact": {
+    "5|66666": "-11/2071 + (-171*sqrt(15) + 123*sqrt(5) + 551*sqrt(3))/6213",
+    "6|555666": "-214/327 + (-9*sqrt(15) + 29*sqrt(3) + 104*sqrt(5))/327"
+   }
+  },
+  {
+   "catalan": "deltoidal hexecontahedron",
+   "dual_of": "rhombicosidodecahedron",
+   "vertices": 62,
+   "faces": 60,
+   "face_size": 4,
+   "orbits": {
+    "5|44444": 12,
+    "3|444": 20,
+    "4|3355": 30
+   },
+   "unknowns": 5,
+   "rank": 5,
+   "rank_augmented": 5,
+   "alternating_cuts": "exactly one",
+   "ratio_float": -1.376381920471173,
+   "long_sides": "corner",
+   "y_float": {
+    "3|444": 0.1699705300300051,
+    "4|3355": 0.21200225254392138,
+    "5|44444": 0.26164322825480024
+   },
+   "golden_cuts": 0,
+   "valid": false,
+   "ratio_exact_minimal_polynomial": "5*x**4 - 10*x**2 + 1",
+   "ratio_exact": "-sqrt(2*sqrt(5)/5 + 1)",
+   "y_exact": {
+    "3|444": "(-19*sqrt(45 - 9*sqrt(5)) + 9*sqrt(5)*sqrt(45 - 9*sqrt(5)))/66",
+    "4|3355": "sqrt(445/2 - 199*sqrt(5)/2)",
+    "5|44444": "(-2*sqrt(45 - 9*sqrt(5)) + sqrt(5)*sqrt(45 - 9*sqrt(5)))/9"
+   }
+  },
+  {
+   "catalan": "disdyakis triacontahedron",
+   "dual_of": "truncated icosidodecahedron",
+   "vertices": 62,
+   "faces": 120,
+   "face_size": 3,
+   "orbits": {
+    "10|4444466666": 12,
+    "6|444101010": 20,
+    "4|661010": 30
+   },
+   "unknowns": 5,
+   "rank": 5,
+   "rank_augmented": 6,
+   "alternating_cuts": "none (equations inconsistent)",
+   "golden_cuts": 0,
+   "least_squares_residual": 0.015188304951211777
+  },
+  {
+   "catalan": "pentagonal hexecontahedron",
+   "dual_of": "snub dodecahedron",
+   "vertices": 92,
+   "faces": 60,
+   "face_size": 5,
+   "orbits": {
+    "3|335": 60,
+    "3|333": 20,
+    "5|33333": 12
+   },
+   "unknowns": 5,
+   "rank": 5,
+   "rank_augmented": 5,
+   "alternating_cuts": "exactly one",
+   "ratio_float": -1.3473135332596944,
+   "long_sides": "corner",
+   "y_float": {
+    "3|333": 0.18240277631840335,
+    "3|335": 0.18240277631840338,
+    "5|33333": 0.28179454788524383
+   },
+   "golden_cuts": 0,
+   "valid": false
+  }
+ ],
+ "checks": [
+  {
+   "check": "triakis tetrahedron: exact Archimedean seed gives 12 corners, 8 faces",
+   "pass": true
+  },
+  {
+   "check": "triakis tetrahedron: exact model has the same rank structure (4,4) as the float model (4,4)",
+   "pass": true
+  },
+  {
+   "check": "triakis tetrahedron: exact alternating cut satisfies all face equations (residual 7.0e-192)",
+   "pass": true
+  },
+  {
+   "check": "triakis tetrahedron: alternating ratio -1.577350269 agrees with float -1.577350269",
+   "pass": true
+  },
+  {
+   "check": "triakis tetrahedron: ratio is not phi (minimal polynomial 3*x**2 + 6*x + 2 != x^2 - x - 1)",
+   "pass": true
+  },
+  {
+   "check": "rhombic dodecahedron: exact Archimedean seed gives 12 corners, 14 faces",
+   "pass": true
+  },
+  {
+   "check": "rhombic dodecahedron: exact model has the same rank structure (3,3) as the float model (3,3)",
+   "pass": true
+  },
+  {
+   "check": "rhombic dodecahedron greater: exact golden cut satisfies all equations (residual 5.6e-191)",
+   "pass": true
+  },
+  {
+   "check": "rhombic dodecahedron greater: y float {'3|444': 0.35775072191742724, '4|3333': 0.505935922884391} vs exact {'3|444': '-675/2591 + (-1236*sqrt(3) - 981*sqrt(2) - 449*sqrt(6) + 84*sqrt(15) + 444*sqrt(10) + 876*sqrt(5) + 433*sqrt(30))/2591', '4|3333': '-1962/2591 + (-1236*sqrt(6) - 898*sqrt(3) - 675*sqrt(2) + 84*sqrt(30) + 888*sqrt(5) + 876*sqrt(10) + 866*sqrt(15))/2591'} (scaled)",
+   "pass": true
+  },
+  {
+   "check": "rhombic dodecahedron lesser: exact golden cut satisfies all equations (residual 2.2e-190)",
+   "pass": true
+  },
+  {
+   "check": "rhombic dodecahedron lesser: y float {'3|444': 0.24221427811271654, '4|3333': 0.34254271710741246} vs exact {'3|444': '2**(853/921)*3**(667/921)*5**(484/921)*7**(683/921)/210', '4|3333': '-1962/2591 + (-876*sqrt(10) - 888*sqrt(5) - 675*sqrt(2) + 84*sqrt(30) + 898*sqrt(3) + 1236*sqrt(6) + 866*sqrt(15))/2591'} (scaled)",
+   "pass": true
+  },
+  {
+   "check": "triakis octahedron: exact Archimedean seed gives 24 corners, 14 faces",
+   "pass": true
+  },
+  {
+   "check": "triakis octahedron: exact model has the same rank structure (4,4) as the float model (4,4)",
+   "pass": true
+  },
+  {
+   "check": "triakis octahedron: exact alternating cut satisfies all face equations (residual 1.1e-190)",
+   "pass": true
+  },
+  {
+   "check": "triakis octahedron: alternating ratio -1.541196100 agrees with float -1.541196100",
+   "pass": true
+  },
+  {
+   "check": "triakis octahedron: ratio is not phi (minimal polynomial 2*x**4 + 8*x**3 + 8*x**2 - 1 != x^2 - x - 1)",
+   "pass": true
+  },
+  {
+   "check": "tetrakis hexahedron: exact Archimedean seed gives 24 corners, 14 faces",
+   "pass": true
+  },
+  {
+   "check": "tetrakis hexahedron: exact model has the same rank structure (4,4) as the float model (4,4)",
+   "pass": true
+  },
+  {
+   "check": "tetrakis hexahedron: exact alternating cut satisfies all face equations (residual 7.0e-192)",
+   "pass": true
+  },
+  {
+   "check": "tetrakis hexahedron: alternating ratio -1.816496581 agrees with float -1.816496581",
+   "pass": true
+  },
+  {
+   "check": "tetrakis hexahedron: ratio is not phi (minimal polynomial 3*x**2 + 6*x + 1 != x^2 - x - 1)",
+   "pass": true
+  },
+  {
+   "check": "deltoidal icositetrahedron: exact Archimedean seed gives 24 corners, 26 faces",
+   "pass": true
+  },
+  {
+   "check": "deltoidal icositetrahedron: exact model has the same rank structure (5,5) as the float model (5,5)",
+   "pass": true
+  },
+  {
+   "check": "deltoidal icositetrahedron: exact alternating cut satisfies all face equations (residual 5.6e-191)",
+   "pass": true
+  },
+  {
+   "check": "deltoidal icositetrahedron: alternating ratio -1.306562965 agrees with float -1.306562965",
+   "pass": true
+  },
+  {
+   "check": "deltoidal icositetrahedron: ratio is not phi (minimal polynomial 2*x**4 - 4*x**2 + 1 != x^2 - x - 1)",
+   "pass": true
+  },
+  {
+   "check": "disdyakis dodecahedron: exact Archimedean seed gives 48 corners, 26 faces",
+   "pass": true
+  },
+  {
+   "check": "disdyakis dodecahedron: exact model has the same rank structure (5,6) as the float model (5,6)",
+   "pass": true
+  },
+  {
+   "check": "rhombic triacontahedron: exact Archimedean seed gives 30 corners, 32 faces",
+   "pass": true
+  },
+  {
+   "check": "rhombic triacontahedron: exact model has the same rank structure (3,3) as the float model (3,3)",
+   "pass": true
+  },
+  {
+   "check": "rhombic triacontahedron greater: exact golden cut satisfies all equations (residual 1.4e-191)",
+   "pass": true
+  },
+  {
+   "check": "rhombic triacontahedron greater: y float {'3|555': 0.12236774492101464, '5|33333': 0.1979951704088779} vs exact {'3|555': 'sqrt(25 - 11*sqrt(5))*(-840*sqrt(2) - 200*sqrt(10) + 275*sqrt(10)*sqrt(50 - 22*sqrt(5)) + 625*sqrt(2)*sqrt(50 - 22*sqrt(5)) + 231*sqrt(10)*sqrt(250 - 110*sqrt(5)) + 525*sqrt(2)*sqrt(250 - 110*sqrt(5)))/6320', '5|33333': 'sqrt(25 - 11*sqrt(5))*(-520*sqrt(10) - 920*sqrt(2) + 253*sqrt(10)*sqrt(250 - 110*sqrt(5)) + 575*sqrt(2)*sqrt(250 - 110*sqrt(5)) + 715*sqrt(10)*sqrt(50 - 22*sqrt(5)) + 1625*sqrt(2)*sqrt(50 - 22*sqrt(5)))/6320'} (scaled)",
+   "pass": true
+  },
+  {
+   "check": "rhombic triacontahedron lesser: exact golden cut satisfies all equations (residual 1.1e-190)",
+   "pass": true
+  },
+  {
+   "check": "rhombic triacontahedron lesser: y float {'3|555': 0.0836054513348337, '5|33333': 0.1352764619045354} vs exact {'3|555': '-sqrt(25 - 11*sqrt(5))*(-80*sqrt(10) - 160*sqrt(2) + 11*sqrt(10)*sqrt(250 - 110*sqrt(5)) + 25*sqrt(2)*sqrt(250 - 110*sqrt(5)) + 55*sqrt(10)*sqrt(50 - 22*sqrt(5)) + 125*sqrt(2)*sqrt(50 - 22*sqrt(5)))/80', '5|33333': '-sqrt(25 - 11*sqrt(5))*(-280*sqrt(2) - 120*sqrt(10) + 55*sqrt(10)*sqrt(50 - 22*sqrt(5)) + 125*sqrt(2)*sqrt(50 - 22*sqrt(5)) + 33*sqrt(10)*sqrt(250 - 110*sqrt(5)) + 75*sqrt(2)*sqrt(250 - 110*sqrt(5)))/80'} (scaled)",
+   "pass": true
+  },
+  {
+   "check": "triakis icosahedron: exact Archimedean seed gives 60 corners, 32 faces",
+   "pass": true
+  },
+  {
+   "check": "triakis icosahedron: exact model has the same rank structure (4,4) as the float model (4,4)",
+   "pass": true
+  },
+  {
+   "check": "triakis icosahedron: exact alternating cut satisfies all face equations (residual 5.6e-191)",
+   "pass": true
+  },
+  {
+   "check": "triakis icosahedron: alternating ratio -1.525731112 agrees with float -1.525731112",
+   "pass": true
+  },
+  {
+   "check": "triakis icosahedron: ratio is not phi (minimal polynomial 5*x**4 + 20*x**3 + 25*x**2 + 10*x + 1 != x^2 - x - 1)",
+   "pass": true
+  },
+  {
+   "check": "pentakis dodecahedron: exact Archimedean seed gives 60 corners, 32 faces",
+   "pass": true
+  },
+  {
+   "check": "pentakis dodecahedron: exact model has the same rank structure (4,4) as the float model (4,4)",
+   "pass": true
+  },
+  {
+   "check": "pentakis dodecahedron: exact alternating cut satisfies all face equations (residual 1.1e-190)",
+   "pass": true
+  },
+  {
+   "check": "pentakis dodecahedron: alternating ratio -1.934172359 agrees with float -1.934172359",
+   "pass": true
+  },
+  {
+   "check": "pentakis dodecahedron: ratio is not phi (minimal polynomial 9*x**4 + 36*x**3 + 45*x**2 + 18*x + 1 != x^2 - x - 1)",
+   "pass": true
+  },
+  {
+   "check": "deltoidal hexecontahedron: exact Archimedean seed gives 60 corners, 62 faces",
+   "pass": true
+  },
+  {
+   "check": "deltoidal hexecontahedron: exact model has the same rank structure (5,5) as the float model (5,5)",
+   "pass": true
+  },
+  {
+   "check": "deltoidal hexecontahedron: exact alternating cut satisfies all face equations (residual 1.1e-190)",
+   "pass": true
+  },
+  {
+   "check": "deltoidal hexecontahedron: alternating ratio -1.376381920 agrees with float -1.376381920",
+   "pass": true
+  },
+  {
+   "check": "deltoidal hexecontahedron: ratio is not phi (minimal polynomial 5*x**4 - 10*x**2 + 1 != x^2 - x - 1)",
+   "pass": true
+  },
+  {
+   "check": "disdyakis triacontahedron: exact Archimedean seed gives 120 corners, 62 faces",
+   "pass": true
+  },
+  {
+   "check": "disdyakis triacontahedron: exact model has the same rank structure (5,6) as the float model (5,6)",
+   "pass": true
+  }
+ ]
+}

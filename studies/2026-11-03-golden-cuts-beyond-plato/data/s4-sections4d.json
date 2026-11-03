@@ -1,0 +1,491 @@
+{
+ "matches": [
+  {
+   "solid": "tetrahedron greater golden cut (#88)",
+   "polytope": "8-cell",
+   "direction": "vertex-first",
+   "height": 0.38196601129999996,
+   "height_over_top": 0.19098300564999998,
+   "mismatch": 1.667863624987831e-09
+  },
+  {
+   "solid": "tetrahedron lesser golden cut (#88)",
+   "polytope": "8-cell",
+   "direction": "vertex-first",
+   "height": 0.6180339888333333,
+   "height_over_top": 0.30901699441666663,
+   "mismatch": 2.0255916943767716e-09
+  },
+  {
+   "solid": "octahedron greater golden cut (#88)",
+   "polytope": "24-cell",
+   "direction": "cell-first",
+   "height": 0.3819660115,
+   "height_over_top": 0.3819660115,
+   "mismatch": 1.8966230808104e-09
+  },
+  {
+   "solid": "octahedron lesser golden cut (#88)",
+   "polytope": "24-cell",
+   "direction": "cell-first",
+   "height": 0.6180339895,
+   "height_over_top": 0.6180339895,
+   "mismatch": 3.332853992787932e-09
+  },
+  {
+   "solid": "tetrahedron greater golden cut (#88)",
+   "polytope": "120-cell",
+   "direction": "vertex-first",
+   "height": 0.837226446209715,
+   "height_over_top": 0.9045084976777116,
+   "mismatch": 2.5267361314362802e-08
+  },
+  {
+   "solid": "tetrahedron lesser golden cut (#88)",
+   "polytope": "120-cell",
+   "direction": "vertex-first",
+   "height": 0.8645399471428945,
+   "height_over_top": 0.9340169942227438,
+   "mismatch": 1.8932934331417073e-08
+  },
+  {
+   "solid": "octahedron greater golden cut (#88)",
+   "polytope": "120-cell",
+   "direction": "vertex-first",
+   "height": 0.7488380986940126,
+   "height_over_top": 0.8090169950076951,
+   "mismatch": 1.7163686472088102e-08
+  },
+  {
+   "solid": "dodecahedron greater golden cut (#88)",
+   "polytope": "120-cell",
+   "direction": "cell-first",
+   "height": 0.6840169946295411,
+   "height_over_top": 0.7983738763421223,
+   "mismatch": 7.0979260247128195e-09
+  },
+  {
+   "solid": "dodecahedron lesser golden cut (#88)",
+   "polytope": "120-cell",
+   "direction": "cell-first",
+   "height": 0.702254248752425,
+   "height_over_top": 0.8196601124769552,
+   "mismatch": 7.165868787240015e-09
+  },
+  {
+   "solid": "icosahedron greater golden cut (#88)",
+   "polytope": "120-cell",
+   "direction": "cell-first",
+   "height": 0.32725425042705103,
+   "height_over_top": 0.3819660132923789,
+   "mismatch": 7.706334237411738e-09
+  },
+  {
+   "solid": "icosahedron greater golden cut (#88)",
+   "polytope": "120-cell",
+   "direction": "cell-first",
+   "height": 0.5920084963819683,
+   "height_over_top": 0.6909830045084246,
+   "mismatch": 8.008241625390156e-09
+  },
+  {
+   "solid": "icosahedron lesser golden cut (#88)",
+   "polytope": "120-cell",
+   "direction": "cell-first",
+   "height": 0.5295084973090172,
+   "height_over_top": 0.6180339887339326,
+   "mismatch": 8.161379128068802e-09
+  },
+  {
+   "solid": "White Knight (dataset, sanity)",
+   "polytope": "120-cell",
+   "direction": "cell-first",
+   "height": 0.2647542479999999,
+   "height_over_top": 0.3090169936030341,
+   "mismatch": 4.6300723255399134e-09
+  }
+ ],
+ "targets": {
+  "dodecahedron greater golden cut (#88)": {
+   "kind": "platonic",
+   "x": 0.3333333333333333,
+   "corners": 60
+  },
+  "dodecahedron lesser golden cut (#88)": {
+   "kind": "platonic",
+   "x": 0.21654236465910046,
+   "corners": 60
+  },
+  "icosahedron greater golden cut (#88)": {
+   "kind": "platonic",
+   "x": 0.38196601125010515,
+   "corners": 60
+  },
+  "icosahedron lesser golden cut (#88)": {
+   "kind": "platonic",
+   "x": 0.276393202250021,
+   "corners": 60
+  },
+  "cube greater golden cut (#88)": {
+   "kind": "platonic",
+   "x": 0.3479432320121684,
+   "corners": 24
+  },
+  "cube lesser golden cut (#88)": {
+   "kind": "platonic",
+   "x": 0.23319559807202128,
+   "corners": 24
+  },
+  "tetrahedron greater golden cut (#88)": {
+   "kind": "platonic",
+   "x": 0.38196601125010515,
+   "corners": 12
+  },
+  "tetrahedron lesser golden cut (#88)": {
+   "kind": "platonic",
+   "x": 0.276393202250021,
+   "corners": 12
+  },
+  "octahedron greater golden cut (#88)": {
+   "kind": "platonic",
+   "x": 0.38196601125010515,
+   "corners": 24
+  },
+  "octahedron lesser golden cut (#88)": {
+   "kind": "platonic",
+   "x": 0.276393202250021,
+   "corners": 24
+  },
+  "truncated tetrahedron: 3-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.38196601125010515,
+   "corners": 36
+  },
+  "truncated tetrahedron: 3-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.276393202250021,
+   "corners": 36
+  },
+  "truncated tetrahedron: 6-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3256834344647279,
+   "corners": 36
+  },
+  "truncated tetrahedron: 6-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.20822414246321908,
+   "corners": 36
+  },
+  "cuboctahedron: 3-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.38196601125010515,
+   "corners": 48
+  },
+  "cuboctahedron: 3-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.276393202250021,
+   "corners": 48
+  },
+  "cuboctahedron: 4-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3479432320121684,
+   "corners": 48
+  },
+  "cuboctahedron: 4-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.23319559807202128,
+   "corners": 48
+  },
+  "truncated cube: 3-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.38196601125010515,
+   "corners": 72
+  },
+  "truncated cube: 3-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.276393202250021,
+   "corners": 72
+  },
+  "truncated cube: 8-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3182708568203178,
+   "corners": 72
+  },
+  "truncated cube: 8-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.20041136556231265,
+   "corners": 72
+  },
+  "truncated octahedron: 4-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3479432320121684,
+   "corners": 72
+  },
+  "truncated octahedron: 4-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.23319559807202128,
+   "corners": 72
+  },
+  "truncated octahedron: 6-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3256834344647279,
+   "corners": 72
+  },
+  "truncated octahedron: 6-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.20822414246321908,
+   "corners": 72
+  },
+  "rhombicuboctahedron: 3-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.38196601125010515,
+   "corners": 96
+  },
+  "rhombicuboctahedron: 3-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.276393202250021,
+   "corners": 96
+  },
+  "rhombicuboctahedron: 4-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3479432320121684,
+   "corners": 96
+  },
+  "rhombicuboctahedron: 4-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.23319559807202128,
+   "corners": 96
+  },
+  "truncated cuboctahedron: 4-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3479432320121684,
+   "corners": 144
+  },
+  "truncated cuboctahedron: 4-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.23319559807202128,
+   "corners": 144
+  },
+  "truncated cuboctahedron: 6-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3256834344647279,
+   "corners": 144
+  },
+  "truncated cuboctahedron: 6-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.20822414246321908,
+   "corners": 144
+  },
+  "truncated cuboctahedron: 8-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3182708568203178,
+   "corners": 144
+  },
+  "truncated cuboctahedron: 8-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.20041136556231265,
+   "corners": 144
+  },
+  "snub cube: 3-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.38196601125010515,
+   "corners": 120
+  },
+  "snub cube: 3-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.276393202250021,
+   "corners": 120
+  },
+  "snub cube: 4-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3479432320121684,
+   "corners": 120
+  },
+  "snub cube: 4-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.23319559807202128,
+   "corners": 120
+  },
+  "icosidodecahedron: 3-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.38196601125010515,
+   "corners": 120
+  },
+  "icosidodecahedron: 3-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.276393202250021,
+   "corners": 120
+  },
+  "icosidodecahedron: 5-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3333333333333333,
+   "corners": 120
+  },
+  "icosidodecahedron: 5-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.21654236465910046,
+   "corners": 120
+  },
+  "truncated dodecahedron: 3-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.38196601125010515,
+   "corners": 180
+  },
+  "truncated dodecahedron: 3-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.276393202250021,
+   "corners": 180
+  },
+  "truncated dodecahedron: 10-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.31490404592062493,
+   "corners": 180
+  },
+  "truncated dodecahedron: 10-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.19694019776512225,
+   "corners": 180
+  },
+  "truncated icosahedron: 5-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3333333333333333,
+   "corners": 180
+  },
+  "truncated icosahedron: 5-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.21654236465910046,
+   "corners": 180
+  },
+  "truncated icosahedron: 6-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3256834344647279,
+   "corners": 180
+  },
+  "truncated icosahedron: 6-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.20822414246321908,
+   "corners": 180
+  },
+  "rhombicosidodecahedron: 3-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.38196601125010515,
+   "corners": 240
+  },
+  "rhombicosidodecahedron: 3-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.276393202250021,
+   "corners": 240
+  },
+  "rhombicosidodecahedron: 4-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3479432320121684,
+   "corners": 240
+  },
+  "rhombicosidodecahedron: 4-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.23319559807202128,
+   "corners": 240
+  },
+  "rhombicosidodecahedron: 5-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3333333333333333,
+   "corners": 240
+  },
+  "rhombicosidodecahedron: 5-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.21654236465910046,
+   "corners": 240
+  },
+  "truncated icosidodecahedron: 4-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3479432320121684,
+   "corners": 360
+  },
+  "truncated icosidodecahedron: 4-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.23319559807202128,
+   "corners": 360
+  },
+  "truncated icosidodecahedron: 6-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3256834344647279,
+   "corners": 360
+  },
+  "truncated icosidodecahedron: 6-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.20822414246321908,
+   "corners": 360
+  },
+  "truncated icosidodecahedron: 10-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.31490404592062493,
+   "corners": 360
+  },
+  "truncated icosidodecahedron: 10-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.19694019776512225,
+   "corners": 360
+  },
+  "snub dodecahedron: 3-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.38196601125010515,
+   "corners": 300
+  },
+  "snub dodecahedron: 3-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.276393202250021,
+   "corners": 300
+  },
+  "snub dodecahedron: 5-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3333333333333333,
+   "corners": 300
+  },
+  "snub dodecahedron: 5-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.21654236465910046,
+   "corners": 300
+  },
+  "elongated square gyrobicupola: 3-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.38196601125010515,
+   "corners": 96
+  },
+  "elongated square gyrobicupola: 3-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.276393202250021,
+   "corners": 96
+  },
+  "elongated square gyrobicupola: 4-gons golden, greater": {
+   "kind": "archimedean",
+   "x": 0.3479432320121684,
+   "corners": 96
+  },
+  "elongated square gyrobicupola: 4-gons golden, lesser": {
+   "kind": "archimedean",
+   "x": 0.23319559807202128,
+   "corners": 96
+  },
+  "rhombic dodecahedron greater golden cut": {
+   "kind": "catalan",
+   "corners": 48
+  },
+  "rhombic dodecahedron lesser golden cut": {
+   "kind": "catalan",
+   "corners": 48
+  },
+  "rhombic triacontahedron greater golden cut": {
+   "kind": "catalan",
+   "corners": 120
+  },
+  "rhombic triacontahedron lesser golden cut": {
+   "kind": "catalan",
+   "corners": 120
+  },
+  "White Knight (dataset, sanity)": {
+   "kind": "sanity",
+   "corners": 120
+  }
+ },
+ "N": 2400
+}

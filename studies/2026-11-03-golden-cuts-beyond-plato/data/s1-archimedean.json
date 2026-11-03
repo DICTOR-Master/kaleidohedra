@@ -1,0 +1,2553 @@
+{
+ "platonic": [
+  {
+   "solid": "dodecahedron",
+   "cut": "greater",
+   "x": "1/3",
+   "x_decimal": 0.3333333333333333
+  },
+  {
+   "solid": "dodecahedron",
+   "cut": "lesser",
+   "x": "7/22 - sqrt(5)/22",
+   "x_decimal": 0.21654236465910046
+  },
+  {
+   "solid": "icosahedron",
+   "cut": "greater",
+   "x": "3/2 - sqrt(5)/2",
+   "x_decimal": 0.38196601125010515
+  },
+  {
+   "solid": "icosahedron",
+   "cut": "lesser",
+   "x": "1/2 - sqrt(5)/10",
+   "x_decimal": 0.276393202250021
+  },
+  {
+   "solid": "cube",
+   "cut": "greater",
+   "x": "-3*sqrt(2)/4 - 1/2 + sqrt(10)/4 + sqrt(5)/2",
+   "x_decimal": 0.34794323201216837
+  },
+  {
+   "solid": "cube",
+   "cut": "lesser",
+   "x": "-sqrt(5)/2 - 1/2 + sqrt(10)/4 + 3*sqrt(2)/4",
+   "x_decimal": 0.23319559807202128
+  },
+  {
+   "solid": "tetrahedron",
+   "cut": "greater",
+   "x": "3/2 - sqrt(5)/2",
+   "x_decimal": 0.38196601125010515
+  },
+  {
+   "solid": "tetrahedron",
+   "cut": "lesser",
+   "x": "1/2 - sqrt(5)/10",
+   "x_decimal": 0.276393202250021
+  },
+  {
+   "solid": "octahedron",
+   "cut": "greater",
+   "x": "3/2 - sqrt(5)/2",
+   "x_decimal": 0.38196601125010515
+  },
+  {
+   "solid": "octahedron",
+   "cut": "lesser",
+   "x": "1/2 - sqrt(5)/10",
+   "x_decimal": 0.276393202250021
+  }
+ ],
+ "archimedean": [
+  {
+   "solid": "truncated tetrahedron",
+   "faces": {
+    "3": 4,
+    "6": 4
+   },
+   "vertices": 12,
+   "cuts": [
+    {
+     "face": 3,
+     "cut": "greater",
+     "x": "3/2 - sqrt(5)/2",
+     "x_decimal": 0.38196601125010515,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      },
+      "6": {
+       "ratio_long_over_short": "sqrt(3*sqrt(5)/2 + 9/2)",
+       "decimal": 2.802517076888147,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 3,
+     "cut": "lesser",
+     "x": "1/2 - sqrt(5)/10",
+     "x_decimal": 0.276393202250021,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      },
+      "6": {
+       "ratio_long_over_short": "sqrt(9/2 - 3*sqrt(5)/2)",
+       "decimal": 1.0704662693192697,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 6,
+     "cut": "greater",
+     "x": "-7*sqrt(3)/22 + 1/11 + sqrt(15)/22 + 3*sqrt(5)/11",
+     "x_decimal": 0.3256834344647279,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "sqrt(9/2 - 3*sqrt(5)/2)",
+       "decimal": 1.0704662693192697,
+       "long_sides": "orig"
+      },
+      "6": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 6,
+     "cut": "lesser",
+     "x": "-3*sqrt(5)/11 + 1/11 + sqrt(15)/22 + 7*sqrt(3)/22",
+     "x_decimal": 0.20822414246321908,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "sqrt(3*sqrt(5)/2 + 9/2)",
+       "decimal": 2.802517076888147,
+       "long_sides": "orig"
+      },
+      "6": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    }
+   ],
+   "all_golden_count": 0,
+   "golden_or_regular": []
+  },
+  {
+   "solid": "cuboctahedron",
+   "faces": {
+    "3": 8,
+    "4": 6
+   },
+   "vertices": 12,
+   "cuts": [
+    {
+     "face": 3,
+     "cut": "greater",
+     "x": "3/2 - sqrt(5)/2",
+     "x_decimal": 0.38196601125010515,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      },
+      "4": {
+       "ratio_long_over_short": "sqrt(sqrt(5) + 3)",
+       "decimal": 2.288245611270737,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 3,
+     "cut": "lesser",
+     "x": "1/2 - sqrt(5)/10",
+     "x_decimal": 0.276393202250021,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      },
+      "4": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/4 + 3/4)",
+       "decimal": 1.1441228056353685,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 4,
+     "cut": "greater",
+     "x": "-3*sqrt(2)/4 - 1/2 + sqrt(10)/4 + sqrt(5)/2",
+     "x_decimal": 0.34794323201216837,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/4 + 3/4)",
+       "decimal": 1.1441228056353685,
+       "long_sides": "corner"
+      },
+      "4": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 4,
+     "cut": "lesser",
+     "x": "-sqrt(5)/2 - 1/2 + sqrt(10)/4 + 3*sqrt(2)/4",
+     "x_decimal": 0.23319559807202128,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "sqrt(sqrt(5) + 3)",
+       "decimal": 2.288245611270737,
+       "long_sides": "orig"
+      },
+      "4": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    }
+   ],
+   "all_golden_count": 0,
+   "golden_or_regular": []
+  },
+  {
+   "solid": "truncated cube",
+   "faces": {
+    "3": 8,
+    "8": 6
+   },
+   "vertices": 24,
+   "cuts": [
+    {
+     "face": 3,
+     "cut": "greater",
+     "x": "3/2 - sqrt(5)/2",
+     "x_decimal": 0.38196601125010515,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      },
+      "8": {
+       "ratio_long_over_short": "(1 + sqrt(5))*sqrt(sqrt(2) + 2)/2",
+       "decimal": 2.9897369702272507,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 3,
+     "cut": "lesser",
+     "x": "1/2 - sqrt(5)/10",
+     "x_decimal": 0.276393202250021,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      },
+      "8": {
+       "ratio_long_over_short": "(-1 + sqrt(5))*sqrt(sqrt(2) + 2)/2",
+       "decimal": 1.1419779052046775,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 8,
+     "cut": "greater",
+     "x": "-23*sqrt(2*sqrt(2) + 4)/124 - 5*sqrt(5*sqrt(2) + 10)/62 - 11*sqrt(2)/62 - sqrt(sqrt(2) + 2)/62 + 3*sqrt(5)/31 + 7*sqrt(10)/62 + 13/31 + 9*sqrt(10*sqrt(2) + 20)/124",
+     "x_decimal": 0.3182708568203178,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "(-18*sqrt(10*sqrt(2) + 20) - 28*sqrt(10) - 24*sqrt(5) + 4*sqrt(sqrt(2) + 2) + 20 + 44*sqrt(2) + 20*sqrt(5*sqrt(2) + 10) + 46*sqrt(2*sqrt(2) + 4))/(-23*sqrt(2)*sqrt(sqrt(2) + 2) - 10*sqrt(5)*sqrt(sqrt(2) + 2) - 22*sqrt(2) - 2*sqrt(sqrt(2) + 2) + 12*sqrt(5) + 14*sqrt(10) + 52 + 9*sqrt(10)*sqrt(sqrt(2) + 2))",
+       "decimal": 1.1419779052046775,
+       "long_sides": "orig"
+      },
+      "8": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 8,
+     "cut": "lesser",
+     "x": "2/(4 + (1 + sqrt(5))*sqrt(sqrt(2) + 2))",
+     "x_decimal": 0.20041136556231265,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "(1 + sqrt(5))*sqrt(sqrt(2) + 2)/2",
+       "decimal": 2.9897369702272507,
+       "long_sides": "orig"
+      },
+      "8": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    }
+   ],
+   "all_golden_count": 0,
+   "golden_or_regular": []
+  },
+  {
+   "solid": "truncated octahedron",
+   "faces": {
+    "4": 6,
+    "6": 8
+   },
+   "vertices": 24,
+   "cuts": [
+    {
+     "face": 4,
+     "cut": "greater",
+     "x": "-3*sqrt(2)/4 - 1/2 + sqrt(10)/4 + sqrt(5)/2",
+     "x_decimal": 0.34794323201216837,
+     "other_faces": {
+      "4": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      },
+      "6": {
+       "ratio_long_over_short": "sqrt(3*sqrt(5)/4 + 9/4)",
+       "decimal": 1.9816788294587098,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 4,
+     "cut": "lesser",
+     "x": "-sqrt(5)/2 - 1/2 + sqrt(10)/4 + 3*sqrt(2)/4",
+     "x_decimal": 0.23319559807202128,
+     "other_faces": {
+      "4": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      },
+      "6": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/3 + 1)",
+       "decimal": 1.32111921963914,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 6,
+     "cut": "greater",
+     "x": "-7*sqrt(3)/22 + 1/11 + sqrt(15)/22 + 3*sqrt(5)/11",
+     "x_decimal": 0.3256834344647279,
+     "other_faces": {
+      "4": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/3 + 1)",
+       "decimal": 1.32111921963914,
+       "long_sides": "corner"
+      },
+      "6": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 6,
+     "cut": "lesser",
+     "x": "-3*sqrt(5)/11 + 1/11 + sqrt(15)/22 + 7*sqrt(3)/22",
+     "x_decimal": 0.20822414246321908,
+     "other_faces": {
+      "4": {
+       "ratio_long_over_short": "sqrt(3*sqrt(5)/4 + 9/4)",
+       "decimal": 1.9816788294587098,
+       "long_sides": "orig"
+      },
+      "6": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    }
+   ],
+   "all_golden_count": 0,
+   "golden_or_regular": []
+  },
+  {
+   "solid": "rhombicuboctahedron",
+   "faces": {
+    "3": 8,
+    "4": 18
+   },
+   "vertices": 24,
+   "cuts": [
+    {
+     "face": 3,
+     "cut": "greater",
+     "x": "3/2 - sqrt(5)/2",
+     "x_decimal": 0.38196601125010515,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      },
+      "4": {
+       "ratio_long_over_short": "sqrt(sqrt(5) + 3)",
+       "decimal": 2.288245611270737,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 3,
+     "cut": "lesser",
+     "x": "1/2 - sqrt(5)/10",
+     "x_decimal": 0.276393202250021,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      },
+      "4": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/4 + 3/4)",
+       "decimal": 1.1441228056353685,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 4,
+     "cut": "greater",
+     "x": "-3*sqrt(2)/4 - 1/2 + sqrt(10)/4 + sqrt(5)/2",
+     "x_decimal": 0.34794323201216837,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/4 + 3/4)",
+       "decimal": 1.1441228056353685,
+       "long_sides": "corner"
+      },
+      "4": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 4,
+     "cut": "lesser",
+     "x": "-sqrt(5)/2 - 1/2 + sqrt(10)/4 + 3*sqrt(2)/4",
+     "x_decimal": 0.23319559807202128,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "sqrt(sqrt(5) + 3)",
+       "decimal": 2.288245611270737,
+       "long_sides": "orig"
+      },
+      "4": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    }
+   ],
+   "all_golden_count": 0,
+   "golden_or_regular": []
+  },
+  {
+   "solid": "truncated cuboctahedron",
+   "faces": {
+    "4": 12,
+    "6": 8,
+    "8": 6
+   },
+   "vertices": 48,
+   "cuts": [
+    {
+     "face": 4,
+     "cut": "greater",
+     "x": "-3*sqrt(2)/4 - 1/2 + sqrt(10)/4 + sqrt(5)/2",
+     "x_decimal": 0.34794323201216837,
+     "other_faces": {
+      "4": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      },
+      "6": {
+       "ratio_long_over_short": "sqrt(3*sqrt(5)/4 + 9/4)",
+       "decimal": 1.9816788294587098,
+       "long_sides": "corner"
+      },
+      "8": {
+       "ratio_long_over_short": "sqrt(sqrt(2) + 2)*(sqrt(2) + sqrt(10))/4",
+       "decimal": 2.1140632856118122,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 4,
+     "cut": "lesser",
+     "x": "-sqrt(5)/2 - 1/2 + sqrt(10)/4 + 3*sqrt(2)/4",
+     "x_decimal": 0.23319559807202128,
+     "other_faces": {
+      "4": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      },
+      "6": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/3 + 1)",
+       "decimal": 1.32111921963914,
+       "long_sides": "orig"
+      },
+      "8": {
+       "ratio_long_over_short": "sqrt(sqrt(2) + 2)*(-sqrt(5) - 1 + sqrt(2) + sqrt(10))/2",
+       "decimal": 1.2383896009963735,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 6,
+     "cut": "greater",
+     "x": "-7*sqrt(3)/22 + 1/11 + sqrt(15)/22 + 3*sqrt(5)/11",
+     "x_decimal": 0.3256834344647279,
+     "other_faces": {
+      "4": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/3 + 1)",
+       "decimal": 1.32111921963914,
+       "long_sides": "corner"
+      },
+      "6": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      },
+      "8": {
+       "ratio_long_over_short": "sqrt(sqrt(2) + 2)*(sqrt(3) + sqrt(15))/6",
+       "decimal": 1.7261254445668794,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 6,
+     "cut": "lesser",
+     "x": "-3*sqrt(5)/11 + 1/11 + sqrt(15)/22 + 7*sqrt(3)/22",
+     "x_decimal": 0.20822414246321908,
+     "other_faces": {
+      "4": {
+       "ratio_long_over_short": "sqrt(3*sqrt(5)/4 + 9/4)",
+       "decimal": 1.9816788294587098,
+       "long_sides": "orig"
+      },
+      "6": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      },
+      "8": {
+       "ratio_long_over_short": "sqrt(sqrt(2) + 2)*(-sqrt(30) - sqrt(6) + 2*sqrt(3) + 2*sqrt(15))/4",
+       "decimal": 1.516711312604985,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 8,
+     "cut": "greater",
+     "x": "-23*sqrt(2*sqrt(2) + 4)/124 - 5*sqrt(5*sqrt(2) + 10)/62 - 11*sqrt(2)/62 - sqrt(sqrt(2) + 2)/62 + 3*sqrt(5)/31 + 7*sqrt(10)/62 + 13/31 + 9*sqrt(10*sqrt(2) + 20)/124",
+     "x_decimal": 0.3182708568203178,
+     "other_faces": {
+      "4": {
+       "ratio_long_over_short": "(-9*sqrt(5*sqrt(2) + 10) - 26*sqrt(2) - 14*sqrt(5) - 6*sqrt(10) + sqrt(2*sqrt(2) + 4) + 22 + 5*sqrt(10*sqrt(2) + 20) + 23*sqrt(sqrt(2) + 2))/(-23*sqrt(2)*sqrt(sqrt(2) + 2) - 10*sqrt(5)*sqrt(sqrt(2) + 2) - 22*sqrt(2) - 10 - 2*sqrt(sqrt(2) + 2) + 12*sqrt(5) + 14*sqrt(10) + 9*sqrt(10)*sqrt(sqrt(2) + 2))",
+       "decimal": 1.2383896009963735,
+       "long_sides": "corner"
+      },
+      "6": {
+       "ratio_long_over_short": "sqrt(3)*(-23*sqrt(2*sqrt(2) + 4)/2 - 5*sqrt(5*sqrt(2) + 10) - 11*sqrt(2) - sqrt(sqrt(2) + 2) + 6*sqrt(5) + 7*sqrt(10) + 26 + 9*sqrt(10*sqrt(2) + 20)/2)/(-9*sqrt(10)*sqrt(sqrt(2) + 2) - 14*sqrt(10) - 12*sqrt(5) + 2*sqrt(sqrt(2) + 2) + 10 + 22*sqrt(2) + 10*sqrt(5)*sqrt(sqrt(2) + 2) + 23*sqrt(2)*sqrt(sqrt(2) + 2))",
+       "decimal": 1.516711312604985,
+       "long_sides": "corner"
+      },
+      "8": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 8,
+     "cut": "lesser",
+     "x": "2/(4 + (1 + sqrt(5))*sqrt(sqrt(2) + 2))",
+     "x_decimal": 0.20041136556231265,
+     "other_faces": {
+      "4": {
+       "ratio_long_over_short": "sqrt(sqrt(2) + 2)*(sqrt(2) + sqrt(10))/4",
+       "decimal": 2.1140632856118122,
+       "long_sides": "orig"
+      },
+      "6": {
+       "ratio_long_over_short": "sqrt(sqrt(2) + 2)*(sqrt(3) + sqrt(15))/6",
+       "decimal": 1.7261254445668794,
+       "long_sides": "orig"
+      },
+      "8": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    }
+   ],
+   "all_golden_count": 0,
+   "golden_or_regular": []
+  },
+  {
+   "solid": "snub cube",
+   "faces": {
+    "3": 32,
+    "4": 6
+   },
+   "vertices": 24,
+   "cuts": [
+    {
+     "face": 3,
+     "cut": "greater",
+     "x": "3/2 - sqrt(5)/2",
+     "x_decimal": 0.38196601125010515,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      },
+      "4": {
+       "ratio_long_over_short": "sqrt(sqrt(5) + 3)",
+       "decimal": 2.288245611270737,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 3,
+     "cut": "lesser",
+     "x": "1/2 - sqrt(5)/10",
+     "x_decimal": 0.276393202250021,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      },
+      "4": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/4 + 3/4)",
+       "decimal": 1.1441228056353685,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 4,
+     "cut": "greater",
+     "x": "-3*sqrt(2)/4 - 1/2 + sqrt(10)/4 + sqrt(5)/2",
+     "x_decimal": 0.34794323201216837,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/4 + 3/4)",
+       "decimal": 1.1441228056353685,
+       "long_sides": "corner"
+      },
+      "4": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 4,
+     "cut": "lesser",
+     "x": "-sqrt(5)/2 - 1/2 + sqrt(10)/4 + 3*sqrt(2)/4",
+     "x_decimal": 0.23319559807202128,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "sqrt(sqrt(5) + 3)",
+       "decimal": 2.288245611270737,
+       "long_sides": "orig"
+      },
+      "4": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    }
+   ],
+   "all_golden_count": 0,
+   "golden_or_regular": []
+  },
+  {
+   "solid": "icosidodecahedron",
+   "faces": {
+    "3": 20,
+    "5": 12
+   },
+   "vertices": 30,
+   "cuts": [
+    {
+     "face": 3,
+     "cut": "greater",
+     "x": "3/2 - sqrt(5)/2",
+     "x_decimal": 0.38196601125010515,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      },
+      "5": {
+       "ratio_long_over_short": "sqrt(5)/2 + 3/2",
+       "decimal": 2.618033988749895,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 3,
+     "cut": "lesser",
+     "x": "1/2 - sqrt(5)/10",
+     "x_decimal": 0.276393202250021,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      },
+      "5": {
+       "ratio_long_over_short": "1",
+       "decimal": 1.0,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": true
+    },
+    {
+     "face": 5,
+     "cut": "greater",
+     "x": "1/3",
+     "x_decimal": 0.3333333333333333,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1",
+       "decimal": 1.0,
+       "long_sides": "equal"
+      },
+      "5": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": true
+    },
+    {
+     "face": 5,
+     "cut": "lesser",
+     "x": "7/22 - sqrt(5)/22",
+     "x_decimal": 0.21654236465910046,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "sqrt(5)/2 + 3/2",
+       "decimal": 2.618033988749895,
+       "long_sides": "orig"
+      },
+      "5": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    }
+   ],
+   "all_golden_count": 0,
+   "golden_or_regular": [
+    [
+     3,
+     "lesser",
+     "1/2 - sqrt(5)/10"
+    ],
+    [
+     5,
+     "greater",
+     "1/3"
+    ]
+   ]
+  },
+  {
+   "solid": "truncated dodecahedron",
+   "faces": {
+    "3": 20,
+    "10": 12
+   },
+   "vertices": 60,
+   "cuts": [
+    {
+     "face": 3,
+     "cut": "greater",
+     "x": "3/2 - sqrt(5)/2",
+     "x_decimal": 0.38196601125010515,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      },
+      "10": {
+       "ratio_long_over_short": "sqrt(2*sqrt(5) + 5)",
+       "decimal": 3.0776835371752536,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 3,
+     "cut": "lesser",
+     "x": "1/2 - sqrt(5)/10",
+     "x_decimal": 0.276393202250021,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      },
+      "10": {
+       "ratio_long_over_short": "sqrt(5/2 - sqrt(5)/2)",
+       "decimal": 1.1755705045849463,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 10,
+     "cut": "greater",
+     "x": "-sqrt(10*sqrt(5) + 50)/2 - sqrt(5) + 3 + sqrt(2*sqrt(5) + 10)",
+     "x_decimal": 0.31490404592062493,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "sqrt(5/2 - sqrt(5)/2)",
+       "decimal": 1.1755705045849463,
+       "long_sides": "orig"
+      },
+      "10": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 10,
+     "cut": "lesser",
+     "x": "2*sqrt(2)/(4*sqrt(2) + (1 + sqrt(5))*sqrt(sqrt(5) + 5))",
+     "x_decimal": 0.19694019776512228,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "sqrt(2*sqrt(5) + 5)",
+       "decimal": 3.0776835371752536,
+       "long_sides": "orig"
+      },
+      "10": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    }
+   ],
+   "all_golden_count": 0,
+   "golden_or_regular": []
+  },
+  {
+   "solid": "truncated icosahedron",
+   "faces": {
+    "5": 12,
+    "6": 20
+   },
+   "vertices": 60,
+   "cuts": [
+    {
+     "face": 5,
+     "cut": "greater",
+     "x": "1/3",
+     "x_decimal": 0.3333333333333333,
+     "other_faces": {
+      "5": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      },
+      "6": {
+       "ratio_long_over_short": "sqrt(3)",
+       "decimal": 1.7320508075688772,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 5,
+     "cut": "lesser",
+     "x": "7/22 - sqrt(5)/22",
+     "x_decimal": 0.21654236465910046,
+     "other_faces": {
+      "5": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      },
+      "6": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/2 + 7/6)",
+       "decimal": 1.5115226281523415,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 6,
+     "cut": "greater",
+     "x": "-7*sqrt(3)/22 + 1/11 + sqrt(15)/22 + 3*sqrt(5)/11",
+     "x_decimal": 0.3256834344647279,
+     "other_faces": {
+      "5": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/2 + 7/6)",
+       "decimal": 1.5115226281523415,
+       "long_sides": "corner"
+      },
+      "6": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 6,
+     "cut": "lesser",
+     "x": "-3*sqrt(5)/11 + 1/11 + sqrt(15)/22 + 7*sqrt(3)/22",
+     "x_decimal": 0.20822414246321908,
+     "other_faces": {
+      "5": {
+       "ratio_long_over_short": "sqrt(3)",
+       "decimal": 1.7320508075688772,
+       "long_sides": "orig"
+      },
+      "6": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    }
+   ],
+   "all_golden_count": 0,
+   "golden_or_regular": []
+  },
+  {
+   "solid": "rhombicosidodecahedron",
+   "faces": {
+    "3": 20,
+    "4": 30,
+    "5": 12
+   },
+   "vertices": 60,
+   "cuts": [
+    {
+     "face": 3,
+     "cut": "greater",
+     "x": "3/2 - sqrt(5)/2",
+     "x_decimal": 0.38196601125010515,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      },
+      "4": {
+       "ratio_long_over_short": "sqrt(sqrt(5) + 3)",
+       "decimal": 2.288245611270737,
+       "long_sides": "corner"
+      },
+      "5": {
+       "ratio_long_over_short": "sqrt(5)/2 + 3/2",
+       "decimal": 2.618033988749895,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 3,
+     "cut": "lesser",
+     "x": "1/2 - sqrt(5)/10",
+     "x_decimal": 0.276393202250021,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      },
+      "4": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/4 + 3/4)",
+       "decimal": 1.1441228056353685,
+       "long_sides": "orig"
+      },
+      "5": {
+       "ratio_long_over_short": "1",
+       "decimal": 1.0,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 4,
+     "cut": "greater",
+     "x": "-3*sqrt(2)/4 - 1/2 + sqrt(10)/4 + sqrt(5)/2",
+     "x_decimal": 0.34794323201216837,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/4 + 3/4)",
+       "decimal": 1.1441228056353685,
+       "long_sides": "corner"
+      },
+      "4": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      },
+      "5": {
+       "ratio_long_over_short": "sqrt(3*sqrt(5)/4 + 7/4)",
+       "decimal": 1.8512295868219162,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 4,
+     "cut": "lesser",
+     "x": "-sqrt(5)/2 - 1/2 + sqrt(10)/4 + 3*sqrt(2)/4",
+     "x_decimal": 0.23319559807202128,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "sqrt(sqrt(5) + 3)",
+       "decimal": 2.288245611270737,
+       "long_sides": "orig"
+      },
+      "4": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      },
+      "5": {
+       "ratio_long_over_short": "sqrt(2)",
+       "decimal": 1.4142135623730951,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 5,
+     "cut": "greater",
+     "x": "1/3",
+     "x_decimal": 0.3333333333333333,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1",
+       "decimal": 1.0,
+       "long_sides": "equal"
+      },
+      "4": {
+       "ratio_long_over_short": "sqrt(2)",
+       "decimal": 1.4142135623730951,
+       "long_sides": "corner"
+      },
+      "5": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 5,
+     "cut": "lesser",
+     "x": "7/22 - sqrt(5)/22",
+     "x_decimal": 0.21654236465910046,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "sqrt(5)/2 + 3/2",
+       "decimal": 2.618033988749895,
+       "long_sides": "orig"
+      },
+      "4": {
+       "ratio_long_over_short": "sqrt(3*sqrt(5)/4 + 7/4)",
+       "decimal": 1.8512295868219162,
+       "long_sides": "orig"
+      },
+      "5": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    }
+   ],
+   "all_golden_count": 0,
+   "golden_or_regular": []
+  },
+  {
+   "solid": "truncated icosidodecahedron",
+   "faces": {
+    "4": 30,
+    "6": 20,
+    "10": 12
+   },
+   "vertices": 120,
+   "cuts": [
+    {
+     "face": 4,
+     "cut": "greater",
+     "x": "-3*sqrt(2)/4 - 1/2 + sqrt(10)/4 + sqrt(5)/2",
+     "x_decimal": 0.34794323201216837,
+     "other_faces": {
+      "4": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      },
+      "6": {
+       "ratio_long_over_short": "sqrt(3*sqrt(5)/4 + 9/4)",
+       "decimal": 1.9816788294587098,
+       "long_sides": "corner"
+      },
+      "10": {
+       "ratio_long_over_short": "sqrt(sqrt(5) + 5/2)",
+       "decimal": 2.1762508994828216,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 4,
+     "cut": "lesser",
+     "x": "-sqrt(5)/2 - 1/2 + sqrt(10)/4 + 3*sqrt(2)/4",
+     "x_decimal": 0.23319559807202128,
+     "other_faces": {
+      "4": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      },
+      "6": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/3 + 1)",
+       "decimal": 1.32111921963914,
+       "long_sides": "orig"
+      },
+      "10": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/5 + 1)",
+       "decimal": 1.2030019100150913,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 6,
+     "cut": "greater",
+     "x": "-7*sqrt(3)/22 + 1/11 + sqrt(15)/22 + 3*sqrt(5)/11",
+     "x_decimal": 0.3256834344647279,
+     "other_faces": {
+      "4": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/3 + 1)",
+       "decimal": 1.32111921963914,
+       "long_sides": "corner"
+      },
+      "6": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      },
+      "10": {
+       "ratio_long_over_short": "sqrt(2*sqrt(5)/3 + 5/3)",
+       "decimal": 1.776901418668612,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 6,
+     "cut": "lesser",
+     "x": "-3*sqrt(5)/11 + 1/11 + sqrt(15)/22 + 7*sqrt(3)/22",
+     "x_decimal": 0.20822414246321908,
+     "other_faces": {
+      "4": {
+       "ratio_long_over_short": "sqrt(3*sqrt(5)/4 + 9/4)",
+       "decimal": 1.9816788294587098,
+       "long_sides": "orig"
+      },
+      "6": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      },
+      "10": {
+       "ratio_long_over_short": "sqrt(3*sqrt(5)/10 + 3/2)",
+       "decimal": 1.473370419565269,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 10,
+     "cut": "greater",
+     "x": "-sqrt(10*sqrt(5) + 50)/2 - sqrt(5) + 3 + sqrt(2*sqrt(5) + 10)",
+     "x_decimal": 0.31490404592062493,
+     "other_faces": {
+      "4": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/5 + 1)",
+       "decimal": 1.2030019100150913,
+       "long_sides": "corner"
+      },
+      "6": {
+       "ratio_long_over_short": "sqrt(3*sqrt(5)/10 + 3/2)",
+       "decimal": 1.473370419565269,
+       "long_sides": "corner"
+      },
+      "10": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 10,
+     "cut": "lesser",
+     "x": "2*sqrt(2)/(4*sqrt(2) + (1 + sqrt(5))*sqrt(sqrt(5) + 5))",
+     "x_decimal": 0.19694019776512228,
+     "other_faces": {
+      "4": {
+       "ratio_long_over_short": "sqrt(sqrt(5) + 5/2)",
+       "decimal": 2.1762508994828216,
+       "long_sides": "orig"
+      },
+      "6": {
+       "ratio_long_over_short": "sqrt(2*sqrt(5)/3 + 5/3)",
+       "decimal": 1.776901418668612,
+       "long_sides": "orig"
+      },
+      "10": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    }
+   ],
+   "all_golden_count": 0,
+   "golden_or_regular": []
+  },
+  {
+   "solid": "snub dodecahedron",
+   "faces": {
+    "3": 80,
+    "5": 12
+   },
+   "vertices": 60,
+   "cuts": [
+    {
+     "face": 3,
+     "cut": "greater",
+     "x": "3/2 - sqrt(5)/2",
+     "x_decimal": 0.38196601125010515,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      },
+      "5": {
+       "ratio_long_over_short": "sqrt(5)/2 + 3/2",
+       "decimal": 2.618033988749895,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 3,
+     "cut": "lesser",
+     "x": "1/2 - sqrt(5)/10",
+     "x_decimal": 0.276393202250021,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      },
+      "5": {
+       "ratio_long_over_short": "1",
+       "decimal": 1.0,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": true
+    },
+    {
+     "face": 5,
+     "cut": "greater",
+     "x": "1/3",
+     "x_decimal": 0.3333333333333333,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1",
+       "decimal": 1.0,
+       "long_sides": "equal"
+      },
+      "5": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": true
+    },
+    {
+     "face": 5,
+     "cut": "lesser",
+     "x": "7/22 - sqrt(5)/22",
+     "x_decimal": 0.21654236465910046,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "sqrt(5)/2 + 3/2",
+       "decimal": 2.618033988749895,
+       "long_sides": "orig"
+      },
+      "5": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    }
+   ],
+   "all_golden_count": 0,
+   "golden_or_regular": [
+    [
+     3,
+     "lesser",
+     "1/2 - sqrt(5)/10"
+    ],
+    [
+     5,
+     "greater",
+     "1/3"
+    ]
+   ]
+  },
+  {
+   "solid": "elongated square gyrobicupola",
+   "faces": {
+    "3": 8,
+    "4": 18
+   },
+   "vertices": 24,
+   "cuts": [
+    {
+     "face": 3,
+     "cut": "greater",
+     "x": "3/2 - sqrt(5)/2",
+     "x_decimal": 0.38196601125010515,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      },
+      "4": {
+       "ratio_long_over_short": "sqrt(sqrt(5) + 3)",
+       "decimal": 2.288245611270737,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 3,
+     "cut": "lesser",
+     "x": "1/2 - sqrt(5)/10",
+     "x_decimal": 0.276393202250021,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      },
+      "4": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/4 + 3/4)",
+       "decimal": 1.1441228056353685,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 4,
+     "cut": "greater",
+     "x": "-3*sqrt(2)/4 - 1/2 + sqrt(10)/4 + sqrt(5)/2",
+     "x_decimal": 0.34794323201216837,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "sqrt(sqrt(5)/4 + 3/4)",
+       "decimal": 1.1441228056353685,
+       "long_sides": "corner"
+      },
+      "4": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "corner"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    },
+    {
+     "face": 4,
+     "cut": "lesser",
+     "x": "-sqrt(5)/2 - 1/2 + sqrt(10)/4 + 3*sqrt(2)/4",
+     "x_decimal": 0.23319559807202128,
+     "other_faces": {
+      "3": {
+       "ratio_long_over_short": "sqrt(sqrt(5) + 3)",
+       "decimal": 2.288245611270737,
+       "long_sides": "orig"
+      },
+      "4": {
+       "ratio_long_over_short": "1/2 + sqrt(5)/2",
+       "decimal": 1.618033988749895,
+       "long_sides": "orig"
+      }
+     },
+     "all_faces_golden": false,
+     "every_face_golden_or_regular": false
+    }
+   ],
+   "all_golden_count": 0,
+   "golden_or_regular": []
+  }
+ ],
+ "icosidodecahedron_exact": {
+  "triangles golden (lesser), decagons regular": {
+   "x": "1/2 - sqrt(5)/10",
+   "x_decimal": 0.276393202250021,
+   "edge_length2_counts": {
+    "1/5": 120,
+    "3/10 - sqrt(5)/10": 60
+   },
+   "volume_edge1": "13/2 + 97*sqrt(5)/30",
+   "volume_decimal": 13.72995312724932
+  },
+  "pentagons golden (greater), hexagons regular": {
+   "x": "1/3",
+   "x_decimal": 0.3333333333333333,
+   "edge_length2_counts": {
+    "1/9": 120,
+    "sqrt(5)/18 + 1/6": 60
+   },
+   "volume_edge1": "17*sqrt(5)/6 + 395/54",
+   "volume_decimal": 13.650340751064219
+  }
+ },
+ "checks": [
+  {
+   "check": "c_3 = 2cos(pi/3) exactly",
+   "pass": true
+  },
+  {
+   "check": "c_4 = 2cos(pi/4) exactly",
+   "pass": true
+  },
+  {
+   "check": "c_5 = 2cos(pi/5) exactly",
+   "pass": true
+  },
+  {
+   "check": "c_6 = 2cos(pi/6) exactly",
+   "pass": true
+  },
+  {
+   "check": "c_8 = 2cos(pi/8) exactly",
+   "pass": true
+  },
+  {
+   "check": "c_10 = 2cos(pi/10) exactly",
+   "pass": true
+  },
+  {
+   "check": "#88 reproduced: dodecahedron greater x = 1/3",
+   "pass": true
+  },
+  {
+   "check": "#88 reproduced: dodecahedron lesser x = 7/22 - sqrt(5)/22",
+   "pass": true
+  },
+  {
+   "check": "dodecahedron greater: convex truncation (32 faces), every face ratio phi (float)",
+   "pass": true
+  },
+  {
+   "check": "dodecahedron lesser: convex truncation (32 faces), every face ratio phi (float)",
+   "pass": true
+  },
+  {
+   "check": "#88 reproduced: icosahedron greater x = 3/2 - sqrt(5)/2",
+   "pass": true
+  },
+  {
+   "check": "#88 reproduced: icosahedron lesser x = 1/2 - sqrt(5)/10",
+   "pass": true
+  },
+  {
+   "check": "icosahedron greater: convex truncation (32 faces), every face ratio phi (float)",
+   "pass": true
+  },
+  {
+   "check": "icosahedron lesser: convex truncation (32 faces), every face ratio phi (float)",
+   "pass": true
+  },
+  {
+   "check": "#88 reproduced: cube greater x = -3*sqrt(2)/4 - 1/2 + sqrt(10)/4 + sqrt(5)/2",
+   "pass": true
+  },
+  {
+   "check": "#88 reproduced: cube lesser x = -sqrt(5)/2 - 1/2 + sqrt(10)/4 + 3*sqrt(2)/4",
+   "pass": true
+  },
+  {
+   "check": "cube greater: convex truncation (14 faces), every face ratio phi (float)",
+   "pass": true
+  },
+  {
+   "check": "cube lesser: convex truncation (14 faces), every face ratio phi (float)",
+   "pass": true
+  },
+  {
+   "check": "#88 reproduced: tetrahedron greater x = 3/2 - sqrt(5)/2",
+   "pass": true
+  },
+  {
+   "check": "#88 reproduced: tetrahedron lesser x = 1/2 - sqrt(5)/10",
+   "pass": true
+  },
+  {
+   "check": "tetrahedron greater: convex truncation (8 faces), every face ratio phi (float)",
+   "pass": true
+  },
+  {
+   "check": "tetrahedron lesser: convex truncation (8 faces), every face ratio phi (float)",
+   "pass": true
+  },
+  {
+   "check": "#88 reproduced: octahedron greater x = 3/2 - sqrt(5)/2",
+   "pass": true
+  },
+  {
+   "check": "#88 reproduced: octahedron lesser x = 1/2 - sqrt(5)/10",
+   "pass": true
+  },
+  {
+   "check": "octahedron greater: convex truncation (14 faces), every face ratio phi (float)",
+   "pass": true
+  },
+  {
+   "check": "octahedron lesser: convex truncation (14 faces), every face ratio phi (float)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(3) != x_L(3)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(3) != x_G(4)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(3) != x_L(4)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(3) != x_G(5)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(3) != x_L(5)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(3) != x_G(6)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(3) != x_L(6)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(3) != x_G(8)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(3) != x_L(8)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(3) != x_G(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(3) != x_L(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(3) != x_G(4)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(3) != x_L(4)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(3) != x_G(5)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(3) != x_L(5)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(3) != x_G(6)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(3) != x_L(6)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(3) != x_G(8)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(3) != x_L(8)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(3) != x_G(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(3) != x_L(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(4) != x_L(4)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(4) != x_G(5)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(4) != x_L(5)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(4) != x_G(6)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(4) != x_L(6)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(4) != x_G(8)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(4) != x_L(8)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(4) != x_G(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(4) != x_L(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(4) != x_G(5)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(4) != x_L(5)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(4) != x_G(6)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(4) != x_L(6)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(4) != x_G(8)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(4) != x_L(8)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(4) != x_G(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(4) != x_L(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(5) != x_L(5)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(5) != x_G(6)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(5) != x_L(6)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(5) != x_G(8)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(5) != x_L(8)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(5) != x_G(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(5) != x_L(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(5) != x_G(6)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(5) != x_L(6)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(5) != x_G(8)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(5) != x_L(8)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(5) != x_G(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(5) != x_L(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(6) != x_L(6)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(6) != x_G(8)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(6) != x_L(8)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(6) != x_G(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(6) != x_L(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(6) != x_G(8)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(6) != x_L(8)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(6) != x_G(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(6) != x_L(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(8) != x_L(8)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(8) != x_G(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(8) != x_L(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(8) != x_G(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_L(8) != x_L(10)",
+   "pass": true
+  },
+  {
+   "check": "golden depths distinct: x_G(10) != x_L(10)",
+   "pass": true
+  },
+  {
+   "check": "only golden/regular coincidences: [('L', 3, 5), ('G', 5, 3)]",
+   "pass": true
+  },
+  {
+   "check": "truncated tetrahedron: 3-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "truncated tetrahedron: greater cut of the 3-gons (x=0.381966) builds as a convex truncation with 20 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated tetrahedron: 3-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "truncated tetrahedron: lesser cut of the 3-gons (x=0.276393) builds as a convex truncation with 20 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated tetrahedron: 6-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "truncated tetrahedron: greater cut of the 6-gons (x=0.325683) builds as a convex truncation with 20 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated tetrahedron: 6-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "truncated tetrahedron: lesser cut of the 6-gons (x=0.208224) builds as a convex truncation with 20 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated tetrahedron: 0 cuts make all faces golden (theorem: 0)",
+   "pass": true
+  },
+  {
+   "check": "cuboctahedron: 3-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "cuboctahedron: greater cut of the 3-gons (x=0.381966) builds as a convex truncation with 26 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "cuboctahedron: 3-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "cuboctahedron: lesser cut of the 3-gons (x=0.276393) builds as a convex truncation with 26 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "cuboctahedron: 4-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "cuboctahedron: greater cut of the 4-gons (x=0.347943) builds as a convex truncation with 26 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "cuboctahedron: 4-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "cuboctahedron: lesser cut of the 4-gons (x=0.233196) builds as a convex truncation with 26 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "cuboctahedron: 0 cuts make all faces golden (theorem: 0)",
+   "pass": true
+  },
+  {
+   "check": "truncated cube: 3-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "truncated cube: greater cut of the 3-gons (x=0.381966) builds as a convex truncation with 38 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated cube: 3-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "truncated cube: lesser cut of the 3-gons (x=0.276393) builds as a convex truncation with 38 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated cube: 8-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "truncated cube: greater cut of the 8-gons (x=0.318271) builds as a convex truncation with 38 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated cube: 8-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "truncated cube: lesser cut of the 8-gons (x=0.200411) builds as a convex truncation with 38 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated cube: 0 cuts make all faces golden (theorem: 0)",
+   "pass": true
+  },
+  {
+   "check": "truncated octahedron: 4-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "truncated octahedron: greater cut of the 4-gons (x=0.347943) builds as a convex truncation with 38 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated octahedron: 4-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "truncated octahedron: lesser cut of the 4-gons (x=0.233196) builds as a convex truncation with 38 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated octahedron: 6-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "truncated octahedron: greater cut of the 6-gons (x=0.325683) builds as a convex truncation with 38 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated octahedron: 6-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "truncated octahedron: lesser cut of the 6-gons (x=0.208224) builds as a convex truncation with 38 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated octahedron: 0 cuts make all faces golden (theorem: 0)",
+   "pass": true
+  },
+  {
+   "check": "rhombicuboctahedron: 3-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "rhombicuboctahedron: greater cut of the 3-gons (x=0.381966) builds as a convex truncation with 50 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "rhombicuboctahedron: 3-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "rhombicuboctahedron: lesser cut of the 3-gons (x=0.276393) builds as a convex truncation with 50 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "rhombicuboctahedron: 4-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "rhombicuboctahedron: greater cut of the 4-gons (x=0.347943) builds as a convex truncation with 50 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "rhombicuboctahedron: 4-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "rhombicuboctahedron: lesser cut of the 4-gons (x=0.233196) builds as a convex truncation with 50 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "rhombicuboctahedron: 0 cuts make all faces golden (theorem: 0)",
+   "pass": true
+  },
+  {
+   "check": "truncated cuboctahedron: 4-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "truncated cuboctahedron: greater cut of the 4-gons (x=0.347943) builds as a convex truncation with 74 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated cuboctahedron: 4-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "truncated cuboctahedron: lesser cut of the 4-gons (x=0.233196) builds as a convex truncation with 74 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated cuboctahedron: 6-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "truncated cuboctahedron: greater cut of the 6-gons (x=0.325683) builds as a convex truncation with 74 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated cuboctahedron: 6-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "truncated cuboctahedron: lesser cut of the 6-gons (x=0.208224) builds as a convex truncation with 74 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated cuboctahedron: 8-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "truncated cuboctahedron: greater cut of the 8-gons (x=0.318271) builds as a convex truncation with 74 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated cuboctahedron: 8-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "truncated cuboctahedron: lesser cut of the 8-gons (x=0.200411) builds as a convex truncation with 74 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated cuboctahedron: 0 cuts make all faces golden (theorem: 0)",
+   "pass": true
+  },
+  {
+   "check": "snub cube: 3-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "snub cube: greater cut of the 3-gons (x=0.381966) builds as a convex truncation with 62 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "snub cube: 3-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "snub cube: lesser cut of the 3-gons (x=0.276393) builds as a convex truncation with 62 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "snub cube: 4-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "snub cube: greater cut of the 4-gons (x=0.347943) builds as a convex truncation with 62 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "snub cube: 4-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "snub cube: lesser cut of the 4-gons (x=0.233196) builds as a convex truncation with 62 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "snub cube: 0 cuts make all faces golden (theorem: 0)",
+   "pass": true
+  },
+  {
+   "check": "icosidodecahedron: 3-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "icosidodecahedron: greater cut of the 3-gons (x=0.381966) builds as a convex truncation with 62 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "icosidodecahedron: 3-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "icosidodecahedron: lesser cut of the 3-gons (x=0.276393) builds as a convex truncation with 62 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "icosidodecahedron: 5-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "icosidodecahedron: greater cut of the 5-gons (x=0.333333) builds as a convex truncation with 62 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "icosidodecahedron: 5-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "icosidodecahedron: lesser cut of the 5-gons (x=0.216542) builds as a convex truncation with 62 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "icosidodecahedron: 0 cuts make all faces golden (theorem: 0)",
+   "pass": true
+  },
+  {
+   "check": "truncated dodecahedron: 3-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "truncated dodecahedron: greater cut of the 3-gons (x=0.381966) builds as a convex truncation with 92 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated dodecahedron: 3-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "truncated dodecahedron: lesser cut of the 3-gons (x=0.276393) builds as a convex truncation with 92 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated dodecahedron: 10-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "truncated dodecahedron: greater cut of the 10-gons (x=0.314904) builds as a convex truncation with 92 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated dodecahedron: 10-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "truncated dodecahedron: lesser cut of the 10-gons (x=0.196940) builds as a convex truncation with 92 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated dodecahedron: 0 cuts make all faces golden (theorem: 0)",
+   "pass": true
+  },
+  {
+   "check": "truncated icosahedron: 5-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "truncated icosahedron: greater cut of the 5-gons (x=0.333333) builds as a convex truncation with 92 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated icosahedron: 5-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "truncated icosahedron: lesser cut of the 5-gons (x=0.216542) builds as a convex truncation with 92 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated icosahedron: 6-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "truncated icosahedron: greater cut of the 6-gons (x=0.325683) builds as a convex truncation with 92 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated icosahedron: 6-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "truncated icosahedron: lesser cut of the 6-gons (x=0.208224) builds as a convex truncation with 92 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated icosahedron: 0 cuts make all faces golden (theorem: 0)",
+   "pass": true
+  },
+  {
+   "check": "rhombicosidodecahedron: 3-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "rhombicosidodecahedron: greater cut of the 3-gons (x=0.381966) builds as a convex truncation with 122 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "rhombicosidodecahedron: 3-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "rhombicosidodecahedron: lesser cut of the 3-gons (x=0.276393) builds as a convex truncation with 122 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "rhombicosidodecahedron: 4-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "rhombicosidodecahedron: greater cut of the 4-gons (x=0.347943) builds as a convex truncation with 122 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "rhombicosidodecahedron: 4-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "rhombicosidodecahedron: lesser cut of the 4-gons (x=0.233196) builds as a convex truncation with 122 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "rhombicosidodecahedron: 5-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "rhombicosidodecahedron: greater cut of the 5-gons (x=0.333333) builds as a convex truncation with 122 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "rhombicosidodecahedron: 5-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "rhombicosidodecahedron: lesser cut of the 5-gons (x=0.216542) builds as a convex truncation with 122 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "rhombicosidodecahedron: 0 cuts make all faces golden (theorem: 0)",
+   "pass": true
+  },
+  {
+   "check": "truncated icosidodecahedron: 4-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "truncated icosidodecahedron: greater cut of the 4-gons (x=0.347943) builds as a convex truncation with 182 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated icosidodecahedron: 4-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "truncated icosidodecahedron: lesser cut of the 4-gons (x=0.233196) builds as a convex truncation with 182 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated icosidodecahedron: 6-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "truncated icosidodecahedron: greater cut of the 6-gons (x=0.325683) builds as a convex truncation with 182 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated icosidodecahedron: 6-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "truncated icosidodecahedron: lesser cut of the 6-gons (x=0.208224) builds as a convex truncation with 182 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated icosidodecahedron: 10-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "truncated icosidodecahedron: greater cut of the 10-gons (x=0.314904) builds as a convex truncation with 182 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated icosidodecahedron: 10-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "truncated icosidodecahedron: lesser cut of the 10-gons (x=0.196940) builds as a convex truncation with 182 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "truncated icosidodecahedron: 0 cuts make all faces golden (theorem: 0)",
+   "pass": true
+  },
+  {
+   "check": "snub dodecahedron: 3-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "snub dodecahedron: greater cut of the 3-gons (x=0.381966) builds as a convex truncation with 152 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "snub dodecahedron: 3-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "snub dodecahedron: lesser cut of the 3-gons (x=0.276393) builds as a convex truncation with 152 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "snub dodecahedron: 5-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "snub dodecahedron: greater cut of the 5-gons (x=0.333333) builds as a convex truncation with 152 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "snub dodecahedron: 5-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "snub dodecahedron: lesser cut of the 5-gons (x=0.216542) builds as a convex truncation with 152 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "snub dodecahedron: 0 cuts make all faces golden (theorem: 0)",
+   "pass": true
+  },
+  {
+   "check": "elongated square gyrobicupola: 3-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "elongated square gyrobicupola: greater cut of the 3-gons (x=0.381966) builds as a convex truncation with 50 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "elongated square gyrobicupola: 3-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "elongated square gyrobicupola: lesser cut of the 3-gons (x=0.276393) builds as a convex truncation with 50 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "elongated square gyrobicupola: 4-gons golden at greater x",
+   "pass": true
+  },
+  {
+   "check": "elongated square gyrobicupola: greater cut of the 4-gons (x=0.347943) builds as a convex truncation with 50 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "elongated square gyrobicupola: 4-gons golden at lesser x",
+   "pass": true
+  },
+  {
+   "check": "elongated square gyrobicupola: lesser cut of the 4-gons (x=0.233196) builds as a convex truncation with 50 faces; float ratios agree",
+   "pass": true
+  },
+  {
+   "check": "elongated square gyrobicupola: 0 cuts make all faces golden (theorem: 0)",
+   "pass": true
+  },
+  {
+   "check": "icosidodecahedron exact: 30 corners",
+   "pass": true
+  },
+  {
+   "check": "icosidodecahedron exact: 60 unit edges",
+   "pass": true
+  },
+  {
+   "check": "icosidodecahedron, triangles golden (lesser), decagons regular: exactly two squared edge lengths {'1/5': 120, '3/10 - sqrt(5)/10': 60}, ratio of lengths phi exactly",
+   "pass": true
+  },
+  {
+   "check": "icosidodecahedron, pentagons golden (greater), hexagons regular: exactly two squared edge lengths {'1/9': 120, 'sqrt(5)/18 + 1/6': 60}, ratio of lengths phi exactly",
+   "pass": true
+  }
+ ]
+}

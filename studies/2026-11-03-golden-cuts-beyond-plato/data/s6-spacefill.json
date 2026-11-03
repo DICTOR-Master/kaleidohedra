@@ -1,0 +1,96 @@
+{
+ "fills": [
+  {
+   "fill": "greater golden cut tetrahedra + Icosaxes + cuboctahedra (edge x)",
+   "x": 0.38196601125010515,
+   "per_lattice_point": "2 tetrahedra, 1 octahedron, 1 cuboctahedron"
+  },
+  {
+   "fill": "greater golden cut cubes + octahedra (edge sqrt2 x)",
+   "x": 0.3479432320121684,
+   "per_lattice_point": "1 cube, 1 octahedron"
+  },
+  {
+   "fill": "lesser golden cut tetrahedra + Unborn Axes + cuboctahedra (edge x)",
+   "x": 0.276393202250021,
+   "per_lattice_point": "2 tetrahedra, 1 octahedron, 1 cuboctahedron"
+  },
+  {
+   "fill": "lesser golden cut cubes + octahedra (edge sqrt2 x)",
+   "x": 0.23319559807202128,
+   "per_lattice_point": "1 cube, 1 octahedron"
+  },
+  {
+   "fill": "rhombic dodecahedron greater (corner sides long) + cubes + regular tetrahedra (edge a)",
+   "a": 0.4770009625565696,
+   "per_cell": "1 cut rhombic dodecahedron, 1 cube, 2 tetrahedra"
+  },
+  {
+   "fill": "rhombic dodecahedron lesser (original sides long) + cubes + regular tetrahedra (edge a)",
+   "a": 0.3229523708169556,
+   "per_cell": "1 cut rhombic dodecahedron, 1 cube, 2 tetrahedra"
+  },
+  {
+   "fill": "truncated octahedron cut with its 4-gons golden (greater) + tetragonal disphenoids",
+   "x": 0.3479432320121684,
+   "per_cell": "1 cut cell, 6 disphenoids"
+  },
+  {
+   "fill": "truncated octahedron cut with its 4-gons golden (lesser) + tetragonal disphenoids",
+   "x": 0.23319559807202128,
+   "per_cell": "1 cut cell, 6 disphenoids"
+  },
+  {
+   "fill": "truncated octahedron cut with its 6-gons golden (greater) + tetragonal disphenoids",
+   "x": 0.32568343446472797,
+   "per_cell": "1 cut cell, 6 disphenoids"
+  },
+  {
+   "fill": "truncated octahedron cut with its 6-gons golden (lesser) + tetragonal disphenoids",
+   "x": 0.20822414246321908,
+   "per_cell": "1 cut cell, 6 disphenoids"
+  }
+ ],
+ "checks": [
+  {
+   "check": "(1) greater: 8 tetrahedron caps + 6 octahedron caps = cuboctahedron of edge x=0.381966 (0.131352367807 vs 0.131352367807)",
+   "pass": true
+  },
+  {
+   "check": "(2) greater: 8 cube caps = octahedron of edge sqrt2 x (0.056164761164 vs 0.056164761164)",
+   "pass": true
+  },
+  {
+   "check": "(1) lesser: 8 tetrahedron caps + 6 octahedron caps = cuboctahedron of edge x=0.276393 (0.049767499435 vs 0.049767499435)",
+   "pass": true
+  },
+  {
+   "check": "(2) lesser: 8 cube caps = octahedron of edge sqrt2 x (0.016908293629 vs 0.016908293629)",
+   "pass": true
+  },
+  {
+   "check": "(3) rhombic dodecahedron greater (corner sides long): 6 sharp caps = cube a^3 (0.108531990030 vs 0.108531990030); 4 blunt caps = regular tetrahedron (0.012790617688 vs 0.012790617688)",
+   "pass": true
+  },
+  {
+   "check": "(3) rhombic dodecahedron lesser (original sides long): 6 sharp caps = cube a^3 (0.033683361883 vs 0.033683361883); 4 blunt caps = regular tetrahedron (0.003969622267 vs 0.003969622267)",
+   "pass": true
+  },
+  {
+   "check": "(4) truncated octahedron, 4-gons golden greater: 4 caps = disphenoid (sqrt2 x, sqrt3 x) (0.019857241741 vs 0.019857241741)",
+   "pass": true
+  },
+  {
+   "check": "(4) truncated octahedron, 4-gons golden lesser: 4 caps = disphenoid (sqrt2 x, sqrt3 x) (0.005977984542 vs 0.005977984542)",
+   "pass": true
+  },
+  {
+   "check": "(4) truncated octahedron, 6-gons golden greater: 4 caps = disphenoid (sqrt2 x, sqrt3 x) (0.016284737063 vs 0.016284737063)",
+   "pass": true
+  },
+  {
+   "check": "(4) truncated octahedron, 6-gons golden lesser: 4 caps = disphenoid (sqrt2 x, sqrt3 x) (0.004255856635 vs 0.004255856635)",
+   "pass": true
+  }
+ ]
+}

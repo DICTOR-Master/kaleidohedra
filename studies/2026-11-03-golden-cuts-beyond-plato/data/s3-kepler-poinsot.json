@@ -1,0 +1,186 @@
+{
+ "kepler_poinsot": [
+  {
+   "solid": "great dodecahedron",
+   "face": "{5}",
+   "faces": 12,
+   "corner_polygon": "{5/2}",
+   "k": "1/2 + sqrt(5)/2",
+   "cuts": [
+    {
+     "cut": "greater (corner sides long)",
+     "x": "1/3",
+     "x_decimal": 0.3333333333333333
+    },
+    {
+     "cut": "lesser (original sides long)",
+     "x": "(7 - sqrt(5))/22",
+     "x_decimal": 0.21654236465910046
+    }
+   ]
+  },
+  {
+   "solid": "great icosahedron",
+   "face": "{3}",
+   "faces": 20,
+   "corner_polygon": "{5/2}",
+   "k": "1",
+   "cuts": [
+    {
+     "cut": "greater (corner sides long)",
+     "x": "(3 - sqrt(5))/2",
+     "x_decimal": 0.38196601125010515
+    },
+    {
+     "cut": "lesser (original sides long)",
+     "x": "(5 - sqrt(5))/10",
+     "x_decimal": 0.276393202250021
+    }
+   ]
+  },
+  {
+   "solid": "small stellated dodecahedron",
+   "face": "{5/2}",
+   "faces": 12,
+   "corner_polygon": "{5}",
+   "k": "1/(1/2 + sqrt(5)/2)",
+   "cuts": [
+    {
+     "cut": "greater (corner sides long)",
+     "x": "(1 + sqrt(5))**2*(4 - sqrt(5))/44",
+     "x_decimal": 0.41982127170453587,
+     "passes_crossings": true,
+     "crossing_at": "1/phi^2 = (1 - sqrt(5))**2/4"
+    },
+    {
+     "cut": "lesser (original sides long)",
+     "x": "1/3",
+     "x_decimal": 0.3333333333333333,
+     "passes_crossings": false,
+     "crossing_at": "1/phi^2 = (1 - sqrt(5))**2/4"
+    }
+   ]
+  },
+  {
+   "solid": "great stellated dodecahedron",
+   "face": "{5/2}",
+   "faces": 12,
+   "corner_polygon": "{3}",
+   "k": "1/(1/2 + sqrt(5)/2)",
+   "cuts": [
+    {
+     "cut": "greater (corner sides long)",
+     "x": "(1 + sqrt(5))**2*(4 - sqrt(5))/44",
+     "x_decimal": 0.41982127170453587,
+     "passes_crossings": true,
+     "crossing_at": "1/phi^2 = (1 - sqrt(5))**2/4"
+    },
+    {
+     "cut": "lesser (original sides long)",
+     "x": "1/3",
+     "x_decimal": 0.3333333333333333,
+     "passes_crossings": false,
+     "crossing_at": "1/phi^2 = (1 - sqrt(5))**2/4"
+    }
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "check": "great dodecahedron: 12 faces found (expected 12)",
+   "pass": true
+  },
+  {
+   "check": "great dodecahedron: 30 edges, all equal",
+   "pass": true
+  },
+  {
+   "check": "great dodecahedron: every edge meets its corner's centre line at the same angle (cos 0.525731112)",
+   "pass": true
+  },
+  {
+   "check": "great dodecahedron: k = 2cos(pi/5) = 1/2 + sqrt(5)/2",
+   "pass": true
+  },
+  {
+   "check": "great dodecahedron greater (corner sides long): x = 1/3 (~0.333333); every cut face alternates kx, 1-2x with ratio phi (exact True, float True)",
+   "pass": true
+  },
+  {
+   "check": "great dodecahedron lesser (original sides long): x = (7 - sqrt(5))/22 (~0.216542); every cut face alternates kx, 1-2x with ratio phi (exact True, float True)",
+   "pass": true
+  },
+  {
+   "check": "great icosahedron: 20 faces found (expected 20)",
+   "pass": true
+  },
+  {
+   "check": "great icosahedron: 30 edges, all equal",
+   "pass": true
+  },
+  {
+   "check": "great icosahedron: every edge meets its corner's centre line at the same angle (cos 0.850650808)",
+   "pass": true
+  },
+  {
+   "check": "great icosahedron: k = 2cos(pi/3) = 1",
+   "pass": true
+  },
+  {
+   "check": "great icosahedron greater (corner sides long): x = (3 - sqrt(5))/2 (~0.381966); every cut face alternates kx, 1-2x with ratio phi (exact True, float True)",
+   "pass": true
+  },
+  {
+   "check": "great icosahedron lesser (original sides long): x = (5 - sqrt(5))/10 (~0.276393); every cut face alternates kx, 1-2x with ratio phi (exact True, float True)",
+   "pass": true
+  },
+  {
+   "check": "small stellated dodecahedron: 12 faces found (expected 12)",
+   "pass": true
+  },
+  {
+   "check": "small stellated dodecahedron: 30 edges, all equal",
+   "pass": true
+  },
+  {
+   "check": "small stellated dodecahedron: every edge meets its corner's centre line at the same angle (cos 0.850650808)",
+   "pass": true
+  },
+  {
+   "check": "small stellated dodecahedron: k = 2cos(pi/5/2) = 1/(1/2 + sqrt(5)/2)",
+   "pass": true
+  },
+  {
+   "check": "small stellated dodecahedron greater (corner sides long): x = (1 + sqrt(5))**2*(4 - sqrt(5))/44 (~0.419821); every cut face alternates kx, 1-2x with ratio phi (exact True, float True)",
+   "pass": true
+  },
+  {
+   "check": "small stellated dodecahedron lesser (original sides long): x = 1/3 (~0.333333); every cut face alternates kx, 1-2x with ratio phi (exact True, float True)",
+   "pass": true
+  },
+  {
+   "check": "great stellated dodecahedron: 12 faces found (expected 12)",
+   "pass": true
+  },
+  {
+   "check": "great stellated dodecahedron: 30 edges, all equal",
+   "pass": true
+  },
+  {
+   "check": "great stellated dodecahedron: every edge meets its corner's centre line at the same angle (cos 0.934172359)",
+   "pass": true
+  },
+  {
+   "check": "great stellated dodecahedron: k = 2cos(pi/5/2) = 1/(1/2 + sqrt(5)/2)",
+   "pass": true
+  },
+  {
+   "check": "great stellated dodecahedron greater (corner sides long): x = (1 + sqrt(5))**2*(4 - sqrt(5))/44 (~0.419821); every cut face alternates kx, 1-2x with ratio phi (exact True, float True)",
+   "pass": true
+  },
+  {
+   "check": "great stellated dodecahedron lesser (original sides long): x = 1/3 (~0.333333); every cut face alternates kx, 1-2x with ratio phi (exact True, float True)",
+   "pass": true
+  }
+ ]
+}
