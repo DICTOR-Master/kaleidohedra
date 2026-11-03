@@ -1,0 +1,148 @@
+# ALTERNATIVE for the Quanta of Space II (The DICTOnary of Atoms) cover, 2026-11-03, comparison only: the DICTO square of
+# studies/2026-10-22-dicto-square/dicto_square.py with each Platonic solid replaced by its Greater Golden Cut solid of #88
+# (every corner cut at x_G(n) = phi/(2cos(pi/n) + 2 phi) along each edge, n = sides of a face: D 1/3, I T O 1/phi^2 (O = Icosaxes),
+# C ~0.347943). Same letters, tones, poses, scale (equal circumsphere 0.44). The golden faces (the original faces, now golden
+# 2n-gons) are drawn a shade lighter than the new corner faces so the cut reads. Below: the original header.
+# The DICTO square (DICTO's idea, 2026-10-22): a 5x5 word square like SATOR AREPO, built from the five Platonic
+# solids of DICTO's emblem key, D-I-C-T-O = Dodecahedron, Icosahedron, Cube, Tetrahedron, Octahedron.
+# Cyclic Latin square: row i, column j holds letter (i+j) mod 5, so DICTO reads across the top and down the left,
+# every solid appears once in each row and column, and each solid runs in one diagonal stripe.
+# Solids sit on a square lattice (spacing 1), each scaled to the same circumsphere (radius 0.44).
+import os, itertools, math, numpy as np
+from scipy.spatial import ConvexHull
+from PIL import Image, ImageDraw, ImageFont
+phi=(1+5**.5)/2
+def cyc(v): return [v,(v[1],v[2],v[0]),(v[2],v[0],v[1])]
+S={}
+S['T']=[(1,1,1),(1,-1,-1),(-1,1,-1),(-1,-1,1)]
+S['C']=list(itertools.product((-1,1),repeat=3))
+S['O']=[tuple(s*(i==k) for k in range(3)) for i in range(3) for s in (1,-1)]
+S['I']=[p for a in (1,-1) for b in (phi,-phi) for p in cyc((0,a,b))]
+S['D']=list(itertools.product((-1,1),repeat=3))+[p for a in (1/phi,-1/phi) for b in (phi,-phi) for p in cyc((0,a,b))]
+assert [len(S[k]) for k in 'DICTO']==[20,12,8,4,6]
+S0={k:np.array(v,float) for k,v in S.items()}       # the plain solids (poses below are set on these)
+NSIDE={'D':5,'I':3,'C':4,'T':3,'O':3}
+def golden_cut(V,n):
+    V=np.array(V,float); D=np.linalg.norm(V[:,None]-V[None],axis=2); e=D[D>1e-9].min()
+    x=phi/(2*math.cos(math.pi/n)+2*phi)*e; P=[]
+    for a in range(len(V)):
+        for b in range(len(V)):
+            if abs(D[a,b]-e)<1e-9*e: P.append(V[a]+x*(V[b]-V[a])/e)
+    return P
+S={k:golden_cut(v,NSIDE[k]) for k,v in S.items()}
+assert [len(S[k]) for k in 'DICTO']==[60,60,24,12,24]
+def faces(V):
+    V=np.array(V,float); V=V/np.linalg.norm(V,axis=1).max()
+    h=ConvexHull(V); F={}
+    for s,eq in zip(h.simplices,h.equations):
+        F.setdefault(tuple(np.round(eq,6)),set()).update(s)
+    out=[]
+    for eq,idx in F.items():
+        n=np.array(eq[:3]); idx=list(idx); c=V[idx].mean(0)
+        u=V[idx[0]]-c; u/=np.linalg.norm(u); w=np.cross(n,u)
+        idx.sort(key=lambda i: math.atan2((V[i]-c)@w,(V[i]-c)@u)); out.append((n,idx))
+    return V,out
+SOL={k:faces(v) for k,v in S.items()}
+assert [len(SOL[k][1]) for k in 'DICTO']==[32,32,14,8,14]
+# golden face = parallel to a face of the plain solid; check each is a golden 2n-gon (corner side / original side = phi)
+def plain_normals(k):
+    h=ConvexHull(S0[k]); return np.unique(np.round(h.equations[:,:3],6),axis=0)
+GOLDF={}
+for k in 'DICTO':
+    V,F=SOL[k]; PN=plain_normals(k); GOLDF[k]=set()
+    for fi,(n,idx) in enumerate(F):
+        if np.abs(PN@n-1).min()<1e-5:
+            GOLDF[k].add(fi); L=[np.linalg.norm(V[idx[q]]-V[idx[q-1]]) for q in range(len(idx))]
+            assert len(idx)==2*NSIDE[k] and abs(max(L)/min(L)-phi)<1e-9, (k,L)
+    assert len(GOLDF[k])==len(PN)
+WORD='DICTO'; M=[[WORD[(i+j)%5] for j in range(5)] for i in range(5)]
+assert M[0]==list(WORD) and [r[0] for r in M]==list(WORD)
+assert all(len(set(r))==5 for r in M) and all(len({M[i][j] for i in range(5)})==5 for j in range(5))
+# turn each solid to a pleasing pose (same for all copies of a solid)
+def rot(ax,a):
+    ax=np.array(ax,float); ax/=np.linalg.norm(ax); K=np.array([[0,-ax[2],ax[1]],[ax[2],0,-ax[0]],[-ax[1],ax[0],0]])
+    return np.eye(3)+math.sin(a)*K+(1-math.cos(a))*K@K
+G=rot((1,0.55,0.15),0.85)   # one general pose shows three or more faces of every solid
+def align(u,v):   # rotation taking direction u to direction v
+    u=np.array(u,float)/np.linalg.norm(u); v=np.array(v,float)/np.linalg.norm(v); ax=np.cross(u,v)
+    return rot(ax,math.acos(np.clip(u@v,-1,1)))
+POSE={'D':G,'I':G,'C':rot((1,0,0),-0.5)@rot((0,1,0),0.62),
+      'T':None,     # a corner towards the viewer: three faces show
+      'O':align((1,1,1),(0.3,0.38,0.875))@rot((1,1,1),0.2)}    # nearly face-on: a hexagonal outline
+# tetrahedron (DICTO): a corner towards the viewer, turned so its top edge lies level and the point is down,
+# like the bar and stem of the T
+def tet_pose():
+    B=align((1,1,1),(0.0,0.3,0.954)); Vt=S0['T']@B.T
+    best=None
+    for t in np.linspace(0,2*np.pi,7201):
+        P=(Vt@rot((0,0,1),t).T)[:,:2]; o=np.argsort(P[:,1])          # lowest ... highest
+        top=P[o[-2:]]; slope=abs(top[0,1]-top[1,1]); lowx=abs(P[o[0],0]-top[:,0].mean())
+        sc_=slope+0.3*lowx
+        if P[o[0],1]<min(top[:,1])-0.5 and (best is None or sc_<best[0]): best=(sc_,t)
+    return rot((0,0,1),best[1])@B
+POSE['T']=tet_pose()
+LIFT=float(os.environ.get('LIFT','0.12'))
+GROUND=(20,15,11); GOLD=(214,168,74)
+# Plato's elements (Timaeus): fire tetrahedron, air octahedron, water icosahedron, earth cube; the dodecahedron for the whole (aether)
+TONE={'T':(205,62,40),'O':(232,200,82),'I':(58,112,205),'C':(72,142,72),'D':(138,92,196)}
+N=1800; SS=2; W=N*SS
+view=np.eye(3)                   # straight-on view: true grid squares
+light=np.array([-0.4,0.55,0.75]); light/=np.linalg.norm(light)
+img=Image.new('RGB',(W,W),GROUND); d=ImageDraw.Draw(img)
+# fit the board and its letters to the canvas
+B=np.array([[x,y,z] for x in (-2.5,2.5) for y in (-2.5,2.5) for z in (-0.5,0.5)])@view.T
+sc=0.9*W/max(np.ptp(B[:,0]),np.ptp(B[:,1])); ox=W/2-sc*(B[:,0].max()+B[:,0].min())/2; oy=W/2+sc*(B[:,1].max()+B[:,1].min())/2
+P=lambda x,y,z: (lambda v:(ox+v[0]*sc, oy-v[1]*sc))(np.array([x,y,z])@view.T)
+import os
+GRID=os.environ.get('GRID','0')=='1'   # grid squares off by default (DICTO: better on any colour underneath)
+EDGE={'ivory':(250,232,190),'gold':(222,178,80)}[os.environ.get('EDGE','gold')]
+for t in (range(6) if GRID else []):
+    d.line([P(t-2.5,-2.5,-0.5),P(t-2.5,2.5,-0.5)],fill=GOLD,width=3*SS); d.line([P(-2.5,t-2.5,-0.5),P(2.5,t-2.5,-0.5)],fill=GOLD,width=3*SS)
+items=[]
+for i in range(5):
+    for j in range(5):
+        k=M[i][j]; V,F=SOL[k]; R=POSE[k]
+        pos=np.array([j-2,2-i,0.0])
+        Vb=(V@R.T)*0.44; Fv=[(n@R.T@view.T,idx) for n,idx in F]
+        def pc(P):   # area and centroid of a projected polygon
+            x,y=P[:,0],P[:,1]; c=x*np.roll(y,-1)-np.roll(x,-1)*y; A=c.sum()/2
+            return abs(A), np.array([((x+np.roll(x,-1))*c).sum(),((y+np.roll(y,-1))*c).sum()])/(6*A)
+        ac=[pc((Vb@view.T)[idx][:,:2]) for n,idx in Fv if n[2]>1e-9]
+        off=sum(a*c for a,c in ac)/sum(a for a,c in ac)          # centre of the visible outline's area
+        Vw=Vb-np.array([off[0],off[1],0])+pos; Vv=Vw@view.T
+        items.append((Vv[:,2].mean(),k,Vv,[(n@R.T@view.T,idx,fi in GOLDF[k]) for fi,(n,idx) in enumerate(F)]))
+for _,k,Vv,F in sorted(items,key=lambda t:t[0]):
+    for n,idx,gf in sorted(F,key=lambda f:Vv[f[1]][:,2].mean()):
+        if n[2]<=1e-9: continue
+        b=0.45+0.55*max(0,n@light)
+        col=tuple(int(c*b+GROUND[m]*(1-b)*0.2) for m,c in enumerate(TONE[k]))
+        if gf: col=tuple(int(c+(255-c)*LIFT) for c in col)      # golden faces a shade lighter
+        pts=[(ox+Vv[q,0]*sc, oy-Vv[q,1]*sc) for q in idx]
+        d.polygon(pts,fill=col); d.line(pts+[pts[0]],fill=EDGE,width=2*SS)
+# Roman (Trajan-style) initials V-cut into each form, the groove gilded with platinum leaf:
+# the groove depth is the distance to the letter's edge, so the two walls meet in a ridge-free V along the stroke's middle;
+# light from the upper left lights one wall and leaves the other in shadow.
+from scipy import ndimage
+f=ImageFont.truetype('Cinzel.ttf',int(0.075*W)); f.set_variation_by_name('Bold')
+Lc=np.array([-0.55,0.6,0.58]); Lc/=np.linalg.norm(Lc)
+def carved(ch):
+    box=int(0.12*W); m=Image.new('L',(box,box),0); ImageDraw.Draw(m).text((box/2,box/2),ch,font=f,fill=255,anchor='mm')
+    M=np.array(m)/255.0; ins=M>0.5
+    dist=ndimage.distance_transform_edt(ins); dist=ndimage.gaussian_filter(dist,0.8)
+    gy,gx=np.gradient(dist); k=1.6                          # wall slope of the V
+    n=np.dstack([gx*k, -gy*k, np.ones_like(dist)])   # depth = -dist: a groove; n/=np.linalg.norm(n,axis=2,keepdims=True)
+    lam=np.clip(n@Lc,0,1)
+    h=n@(Lc+np.array([0,0,1.0])); h=np.clip(h/np.linalg.norm(Lc+[0,0,1.0]),0,1)**40
+    dark=np.array([70,74,82.]); lite=np.array([226,229,235.]); spec=np.array([255,255,255.])
+    rgb=dark+(lite-dark)*lam[...,None]**1.3; rgb=rgb+(spec-rgb)*h[...,None]*0.8
+    # a thin cast shadow just inside the lit-side edge (the block's lip shades the groove)
+    sh=ndimage.shift(ins.astype(float),(-2*SS*0.6,2*SS*0.6),order=1)
+    rgb*= (1-0.35*np.clip(ins-sh,0,1))[...,None]
+    tile=Image.fromarray(np.clip(rgb,0,255).astype(np.uint8)); mask=Image.fromarray((ndimage.gaussian_filter(M,0.6)*255).astype(np.uint8))
+    return tile,mask,box
+CARVE={ch:carved(ch) for ch in 'DICTO'}
+for i in range(5):
+    for j in range(5):
+        p=np.array([j-2,2-i,0.0])@view.T; tile,mask,box=CARVE[M[i][j]]
+        img.paste(tile,(int(ox+p[0]*sc-box/2),int(oy-p[1]*sc-box/2)),mask)
+img=img.resize((N,N),Image.LANCZOS); img.save(os.environ.get('OUT','dicto-square-golden.png')); print('ok')

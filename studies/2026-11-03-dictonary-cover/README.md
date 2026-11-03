@@ -6,3 +6,5 @@ DICTO 11-03: "yes split it with that title": Quanta of Space splits into Volume 
 
 - scripts/cover_title.py (functions from the DICTONIC Bonds cover script) -> dictonary-cover-front.png (1800 x 2520). Run on dicto-big-brother with ~/geom/bin/python in ~/kres-tmp/dictonary-cover/scripts.
 - Copied into papers/book-quanta-dictonary/figures/cover/.
+
+**Alternative (comparison only, 2026-11-03):** scripts/dicto_square_golden.py -> dicto-square-golden.png: the same square, letters, tones and poses with each solid replaced by its Greater Golden Cut solid of #88 (D at 1/3, I/T/O (Icosaxes) at 1/phi^2, C at ~0.347943; asserted: every original face a golden 2n-gon, ratio phi). The golden faces are drawn a shade lighter (LIFT 0.12 toward white) than the new corner faces so the cut reads. Then cover_title.py with SQUARE=../dicto-square-golden.png OUT=../dictonary-cover-front-golden.png -> dictonary-cover-front-golden.png (1800 x 2520). Side by side with the approved front: ~/Documents/papers-to-read/dictonary-cover-compare.png. The approved cover is unchanged.
