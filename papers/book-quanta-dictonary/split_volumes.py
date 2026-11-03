@@ -16,6 +16,12 @@ DATE = '3 November 2026'
 DOI1 = '10.5281/zenodo.23754454'
 T2 = '<i>Quanta of Space II: The DICTOnary of Atoms</i>'
 n_sub = 0
+import csv
+_rows = list(csv.DictReader(l for l in open(f'{ATOMS}/index.csv', encoding='utf8') if not l.startswith('#')))
+_D = sorted(int(r['universal_number'][1:]) for r in _rows if re.fullmatch(r'D\d+', r['universal_number']))
+assert _D == list(range(1, len(_D) + 1)), 'D-numbers: duplicate or missing'   # one per new solid or piece, never reused, none skipped
+NNEW, DMAX = len(_D), _D[-1]
+NCL = sum(1 for r in _rows if not r['universal_number'] and r['status'].startswith('new'))
 def rep(t, a, b, n=1):
     global n_sub
     c = t.count(a); assert c == n, (a[:80], c); n_sub += c
@@ -31,8 +37,9 @@ STYLE = v1[:head_end]
 # status box: one box under the meta line, the open items of this version
 box1 = f'''<div class="status" style="text-align:left;margin-top:5mm;break-inside:avoid"><b>DRAFT, Volume I, Version 2.0, {DATE}, for DICTO's reading. Not published.</b> Delete this box at publication.
 <ul style="margin:1mm 0 0;padding-left:5mm">
-<li>Works #79 to #87 are not yet told in short in this book: they come in the next version (DICTO, 3 November 2026), and their new shapes then join the catalogue in Volume II.</li>
-<li><b>Volume II</b>, {T2}: its front cover is a DRAFT for DICTO's approval (in the style of this cover: the same DICTO square, the title below; see Volume II's status box). Its DICTO DOI is to be reserved; then it is named on this title page, in the pointer at the end of Chapter 1 and in this record (related identifier isSupplementedBy).</li>
+<li><b>Names for DICTO (#86, placeholders):</b> the new HexOct family tiles are in the catalogue as D112 A · HexOct 3/8 h-tile, the twisted cube; D113 and D114 B · HexOct −1/8 (whole octahedra) c-tile and h-tile; D115 and D116 C · HexOct −1/8 c-tile and h-tile; D117 D · HexOct −11/24 c-tile; D118 E · HexOct 1/10 c-tile; and, as known shapes, A's c-tile (the brick of two cubes) and D's h-tile (the regular hexagonal prism). E's h-tile is #75's h-tile (D111), corners matched. Each carries “(placeholder name)” until DICTO names it.</li>
+<li>Works #79 to #87 are not yet told in short in this book: they come in the next version (DICTO, 3 November 2026). The new shapes of #86 and the Vacuus forms of #87 are already in the catalogue of Volume II.</li>
+<li><b>Volume II</b>, {T2}: its DICTO DOI is to be reserved; then it is named on this title page, in the pointer at the end of Chapter 1 and in this record (related identifier isSupplementedBy).</li>
 <li>D·I·C·T·O order: set in the #44 lead and the A.45 lists (now in Volume II); left as they are because they follow a picture or an order in space: the captions of Figures 44 (panel order) and 47 (bottom to top), Plato's elements, nesting orders and tables of the published papers.</li>
 </ul></div>'''
 i = v1.index('<p class="small" style="margin-top:8mm">Book · Version 1.5'); j = v1.index('</ul></div>', i) + len('</ul></div>')
@@ -49,7 +56,7 @@ v1 = rep(v1, '<li><b>—</b>At the end: known and rediscovered shapes in the wor
          '<li><b>—</b>Known and rediscovered shapes in the work: in Volume II</li>')
 # introduction
 v1 = rep(v1, "where every DICTO solid has a permanent D-number; the chapter closes with the catalogue of all the atoms, 123 new shapes of DICTO's and the known shapes the work builds with.</p>",
-         f"where every DICTO solid has a permanent D-number. The catalogue of all the atoms, 123 new shapes of DICTO's and the known shapes the work builds with, is Volume II, {T2}.</p>")
+         f"where every DICTO solid has a permanent D-number. The catalogue of all the atoms, {NNEW} new shapes of DICTO's and the known shapes the work builds with, is Volume II, {T2}.</p>")
 # #88 short entry, then the pointer where the catalogue stood
 v1 = rep(v1, 'and stand in the catalogue that follows.', 'and stand in the catalogue of Volume II.')
 v1 = rep(v1, '<!--E88 START-->\n<section class="shortch" style="break-before:page;break-after:page">', '<!--E88 START-->\n<section class="shortch" style="break-before:page;break-after:auto">')
@@ -57,7 +64,7 @@ a, b = v1.index('<!--ATOMS START-->'), v1.index('<!--ATOMS END-->') + len('<!--A
 POINTER = f'''<!--ATOMS POINTER START (the catalogue is Volume II since version 2.0)-->
 <section class="shortch" style="break-before:auto;break-after:page">
 <div class="se"><h2>All the atoms</h2>
-<p>The catalogue of all the atoms, which closed this chapter up to version 1.4, is now a book of its own: Volume II, {T2}. It lists every named shape of the work, one quantum of space each: DICTO's 123 new shapes with their D-numbers, his 31 new clusters, structures and networks, and the known and rediscovered shapes the work builds with, each with its picture, data and source. It also holds the data, work by work, cited in this volume as “Data: Volume II, A.n”.</p></div>
+<p>The catalogue of all the atoms, which closed this chapter up to version 1.4, is now a book of its own: Volume II, {T2}. It lists every named shape of the work, one quantum of space each: DICTO's {NNEW} new shapes with their D-numbers, his {NCL} new clusters, structures and networks, and the known and rediscovered shapes the work builds with, each with its picture, data and source. It also holds the data, work by work, cited in this volume as “Data: Volume II, A.n”.</p></div>
 </section>
 <!--ATOMS POINTER END-->'''
 v1 = v1[:a] + POINTER + v1[b:]
@@ -77,8 +84,8 @@ r = subprocess.run([sys.executable, f'{ATOMS}/scripts/atoms.py', f'{ATOMS}/index
 assert r.returncode == 0
 cat = open('book-quanta-dictonary/atoms-catalogue.html', encoding='utf8').read()
 known = open('book-quanta-dictonary/atoms-catalogue-known.html', encoding='utf8').read()
-m = re.search(r'new (\d+) new clusters (\d+) other (\d+)', r.stdout); NNEW, NCL, NKN = map(int, m.groups())
-assert (NNEW, NCL) == (123, 31), (NNEW, NCL)   # the counts written in Volume I
+m = re.search(r'new (\d+) new clusters (\d+) other (\d+)', r.stdout); NKN = int(m.group(3))
+assert tuple(map(int, m.groups()[:2])) == (NNEW, NCL), (m.groups(), NNEW, NCL)   # the counts written in Volume I
 
 # Volume I chapters (same reading as atoms.py)
 sys.path.insert(0, f'{ATOMS}/scripts')
@@ -131,10 +138,10 @@ style2 = style2.replace('</style></head>', '''.appendix p.told { font: italic 8.
 </style></head>''')
 box2 = f'''<div class="status" style="text-align:left;margin-top:5mm;break-inside:avoid"><b>DRAFT, Volume II, Version 1.0, {DATE}, for DICTO's reading. Not published.</b> Delete this box at publication.
 <ul style="margin:1mm 0 0;padding-left:5mm">
-<li><b>Cover (DRAFT, for DICTO's approval):</b> the front cover is made as Volume I's: the same DICTO square, the title panel below in the same letters and colours (QUANTA OF SPACE II gold, THE DICTONARY OF ATOMS white with the five letters of DICTO at the initial size so the coinage shows, ◆ DICTO ◆ red). One option to tell the volumes apart at a glance: the same five by five square drawn with each Platonic solid's Greater Golden Cut solid of #88 in its place (same letters, colours and order), so Volume I shows the solids and Volume II their first new atoms. Keep the square as it is, or take this option?</li>
-<li>Works #79 to #87 are not yet told in short in Volume I, and their new shapes are not yet in this catalogue: next version (DICTO, 3 November 2026).</li>
+<li><b>Names for DICTO (#86, placeholders):</b> the new HexOct family tiles are in the catalogue as D112 A · HexOct 3/8 h-tile, the twisted cube; D113 and D114 B · HexOct −1/8 (whole octahedra) c-tile and h-tile; D115 and D116 C · HexOct −1/8 c-tile and h-tile; D117 D · HexOct −11/24 c-tile; D118 E · HexOct 1/10 c-tile; and, as known shapes, A's c-tile (the brick of two cubes) and D's h-tile (the regular hexagonal prism). E's h-tile is #75's h-tile (D111), corners matched. Each carries “(placeholder name)” until DICTO names it.</li>
+<li>Works #79 to #87 are not yet told in short in Volume I: next version (DICTO, 3 November 2026). The new shapes of #86 and the Vacuus forms of #87 are already in this catalogue; the shapes of #79 to #85 come with their short entries.</li>
 <li><b>DICTO DOI to be reserved</b> for this book (new record, type Book, isSupplementTo Volume I's concept DOI {DOI1}); then named on this title page, in the footer and in Volume I.</li>
-<li>The pictures of the 16 golden cut solids are drawn from the construction of #88 and #89 (floating point); they are not yet model files in DICTO Solids (next data set version).</li>
+<li>The pictures of the 16 golden cut solids are drawn from the construction of #88 and #89 (floating point); they are not yet model files in DICTO Solids (next data set version). The HexOct tiles of #75 and #86 (D110 to D118) and the Vacuus forms of #87 have no picture of their own yet and stand under “Not drawn here”.</li>
 <li>D·I·C·T·O order: set in the A.45 lists; left as they are where they follow a picture or an order in space, as in Volume I.</li>
 </ul></div>'''
 title2 = f'''<!-- ============ COVER ============ -->
@@ -190,7 +197,7 @@ contents = f'''<!-- ============ CONTENTS ============ -->
 <p style="font: 9.5pt 'DejaVu Sans', sans-serif;">How to read an entry</p>
 <h2>All the atoms</h2><p class="chap">The catalogue: every named shape of the work, with its picture, data and source.</p>
 <ol>
-<li><b>—</b>DICTO's new atoms: {NNEW} new shapes, D1 to D123</li>
+<li><b>—</b>DICTO's new atoms: {NNEW} new shapes, D1 to D{DMAX}</li>
 <li><b>—</b>DICTO's new clusters, structures and networks: {NCL}</li>
 <li><b>—</b>Not drawn here: the shapes with no model file yet</li>
 </ol>
@@ -202,7 +209,7 @@ contents = f'''<!-- ============ CONTENTS ============ -->
 v2 = (style2 + '<body>\n<img class="watermark" src="../dicto-logo.png" alt="">\n\n' + title2 + howto + contents +
       '<!--ATOMS START-->\n' + cat + '<!--ATOMS END-->\n' + app + '\n<!--KNOWN START-->\n' + known + '<!--KNOWN END-->\n' + about + '\n</body></html>\n')
 open(V2, 'w', encoding='utf8').write(v2)
-assert 'D1 to D123' in v2 and re.search(r'<b>D123</b>', v2) and 'D—' not in v2
+assert f'D1 to D{DMAX}' in v2 and re.search(rf'<b>D{DMAX}</b>', v2) and 'D—' not in v2
 
 # ------------------------------------------------------------------ checks: no dangling references
 codes2 = set(re.findall(r'<h2[^>]*>(A\.[0-9A-Za-z]+) ', v2))
