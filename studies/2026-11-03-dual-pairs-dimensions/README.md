@@ -122,5 +122,8 @@ Naming candidates (for DICTO):
 - data/: every json carries its checks (all pass); reversed-chain*.json are copied from studies/2026-10-16-polar-dharma.
 - figures/: fig1-sweeps, fig2-og-dharma, fig3-fourd, fig4-honeycomb-slices.
 
+- mock-up of the proposed Dual-Pair Cycles world (11-03, not built): scripts/mockup_render.py (exact renders) and
+  scripts/mockup_page.py (app-style pages) -> ~/Documents/papers-to-read/dual-pair-cycles-mockup.pdf (footer "mock-up, not built").
+
 Run on dicto-big-brother (~/kres-tmp/dual-pairs) with ~/geom/bin/python, each step under 170 s. Arguments:
 s1/s6 `co|di|tt` (s6 also takes max path length 6), s4c `L|G`, s9 `B4|F4|H4`, s9b `F4|H4`; figs: `python figs.py <out> <logo>`.
