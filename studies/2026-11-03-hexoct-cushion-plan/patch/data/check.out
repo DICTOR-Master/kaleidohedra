@@ -1,0 +1,68 @@
+ok  a = 36.36 mm (plan 36.4 mm, 8 stitches)
+ok  d = sqrt(2/3) a = 29.69 mm (plan 29.7 mm)
+A-B-C: sheet 3 node rows [-1, 0, 1, 2]: links [40, 37]
+A-B-C: sheet 3 node rows [0, 1, 2, 3]: links [40, 40]
+ok  sheet A row 0: 4 node stitches [4, 12, 20, 28]
+ok  sheet A row 1: 4 node stitches [8, 16, 24, 32]
+ok  sheet A row 2: 4 node stitches [4, 12, 20, 28]
+ok  sheet A row 3: 4 node stitches [8, 16, 24, 32]
+ok  sheet B row 0: 4 node stitches [8, 16, 24, 32]
+ok  sheet B row 1: 4 node stitches [4, 12, 20, 28]
+ok  sheet B row 2: 4 node stitches [8, 16, 24, 32]
+ok  sheet B row 3: 4 node stitches [4, 12, 20, 28]
+ok  sheet C row 0: 4 node stitches [4, 12, 20, 28]
+ok  sheet C row 1: 4 node stitches [8, 16, 24, 32]
+ok  sheet C row 2: 4 node stitches [4, 12, 20, 28]
+ok  sheet C row 3: 4 node stitches [8, 16, 24, 32]
+sheet A: node ridges [4, 11, 18, 25] (before rounding [4.0, 11.0, 18.0, 25.0]), stitches [4, 8, 12, 16, 20, 24, 28, 32]
+sheet B: node ridges [6, 13, 20, 27] (before rounding [6.33, 13.33, 20.33, 27.33]), stitches [4, 8, 12, 16, 20, 24, 28, 32]
+sheet C: node ridges [9, 16, 23, 30] (before rounding [8.67, 15.67, 22.67, 29.67]), stitches [4, 8, 12, 16, 20, 24, 28, 32]
+ok  each sheet has 4 x 4 = 16 nodes
+ok  node ridges 4..30: 3 plain ridges before and after in 33 ridges
+ok  twelve node ridges, no two sheets on the same ridge
+links: gap 1 (A-B) 40, gap 2 (B-C) 40, total 80
+ok  every link has length a in the ideal geometry
+ok  every link has length a in the ideal geometry
+ok  every link rises at 54.74 deg to the sheets
+ok  no node has more than 3 links per gap
+ok  sheet B is c: 32 link pairs run straight on through a B node (every pair that lines up in plan does)
+ok  24 V pieces and 32 single pieces make 80 links
+cord pieces 56, catches 136
+gap 1: V 12, single 16, links 40
+gap 2: V 12, single 16, links 40
+ok  longest open cord: 5 ridges between first and far catch (plan: at most 5)
+ok  every far node lies within 23.0 mm of its first catch while knitting (< a = 36.4 mm): the measured cord always reaches, slack
+ok  every far catch is made after its first catch (order of work)
+ok  136 catches at 64 node stitches
+ok  sheet A catches only on row 1, sheet C only on row 2
+ok  at most 3 cords meet in one node stitch on one row (3 cord strands at most, a V fold counting as 2)
+ok  cut lengths: V 14 cm (2a + 2 x 25 mm + 10 mm = 132.7 mm), single 9 cm (a + 2 x 25 mm = 86.4 mm)
+A-B-A': sheet 3 node rows [-1, 0, 1, 2]: links [40, 29]
+A-B-A': sheet 3 node rows [0, 1, 2, 3]: links [40, 40]
+ok  sheet A row 0: 4 node stitches [4, 12, 20, 28]
+ok  sheet A row 1: 4 node stitches [8, 16, 24, 32]
+ok  sheet A row 2: 4 node stitches [4, 12, 20, 28]
+ok  sheet A row 3: 4 node stitches [8, 16, 24, 32]
+ok  sheet B row 0: 4 node stitches [8, 16, 24, 32]
+ok  sheet B row 1: 4 node stitches [4, 12, 20, 28]
+ok  sheet B row 2: 4 node stitches [8, 16, 24, 32]
+ok  sheet B row 3: 4 node stitches [4, 12, 20, 28]
+ok  sheet A' row 0: 4 node stitches [4, 12, 20, 28]
+ok  sheet A' row 1: 4 node stitches [8, 16, 24, 32]
+ok  sheet A' row 2: 4 node stitches [4, 12, 20, 28]
+ok  sheet A' row 3: 4 node stitches [8, 16, 24, 32]
+ok  h patch: sheet 3 (A') has exactly sheet A's node stitches and ridges
+ok  h patch: no link pair runs straight on through B (B is h)
+h patch: links [40, 40] total 80; sheet 3 rows [(4, (4, 12, 20, 28)), (11, (8, 16, 24, 32)), (18, (4, 12, 20, 28)), (25, (8, 16, 24, 32))]
+h patch: cord pieces 56 (24 V, 32 single)
+ok  h patch fits the same 35 x 33 sheet
+ok  patch 159.1 x 150.0 mm, depth 2d + t = 62.9 mm
+yarn 69 m (6930 stitches at 1 cm), cord 6.24 m, test fill 60-75 g, time 7.4 h, press 2.50 kPa
+row spacing error at ridge gauge 21/22/23: 21: +5.8 %, 22: +1.0 %, 23: -3.4 %
+whole cells inside the patch: 36 tetrahedra, 18 octahedra
+ok  tetrahedra and octahedra present (ratio near 2 : 1 in the interior)
+ok  card figure: card 90 mm and 50 mm check bar lie inside the 160 mm wide drawing (printed at true size)
+figures written
+ok  ridge table: 16 sheet-rows with catches (A and C 4 each, B 8)
+ok  link table: 56 pieces, 136 tick boxes for catches
+ok  paper.html written, every placeholder filled
