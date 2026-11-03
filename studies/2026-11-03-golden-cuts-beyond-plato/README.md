@@ -82,6 +82,20 @@ volume: (1) Greater (Lesser) Golden Cut Tetrahedra + Icosaxes (Unborn Axes) + cu
 Cubes + octahedra; (3) golden cut rhombic dodecahedra + cubes + regular tetrahedra of edge a; (4) truncated octahedra
 cut with one face kind golden + tetragonal disphenoids. These are the golden members of classical patterns (Andreini 1905).
 
+**Exact recheck for #88 v2 (s7, 2026-11-03, after the study).** #88 compared Icosaxes with the 120-cell's vertex-first
+section at phi/2 of the way to the tip (atlas height 11/8 + 5 sqrt5/8) in floating point. s7_icosaxes_exact.py redoes it
+exactly in Q(sqrt5): the hyperplane meets no edge in its interior, the section is the layer of 24 corners at that height,
+and a bijection to Icosaxes (DICTO Solids v7, exact) scales all 276 squared distances by 3 - sqrt5 exactly (also against
+the octahedron cut at 1/phi^2). **HOLDS** (10/10 checks; data/s7-icosaxes-exact.json).
+
+**Bijection proofs for the 120-cell sections (s8).** s5 compared sorted distance lists; s8_sections_bijection.py finds
+for each of the four 120-cell sections (golden cut tetrahedra vertex-first, golden cut dodecahedra cell-first) a bijection
+of corners scaling every squared distance by one factor, exact (4/4; data/s8-sections-bijection.json). Layers: cell-first
+9/8 + sqrt5/2 has 30 corners (icosidodecahedron), 5/4 + 9 sqrt5/16 has 20 (dodecahedron); vertex-first 25/16 + 11 sqrt5/16
+has 12, 13/8 + 3 sqrt5/4 has 4. Float-only extra: the search also matched the greater golden cut icosahedron at 120-cell
+cell-first h/top 0.690983 (not checked exactly). fig5_tesseract.py: the tesseract strip for paper #89
+(papers/golden-cuts-beyond-plato).
+
 ## Prior art (web + library, 2026-11-03)
 - Zefiro 2011 (Visual Mathematics 13(2)): the icosidodecahedron truncated by a rhombic triacontahedron, stages with
   regular decagons at d = (4 tau + 3)/10 and regular hexagons at d = (tau + 4)/6. These are exactly the two cuts of
@@ -100,5 +114,5 @@ cut with one face kind golden + tetragonal disphenoids. These are the golden mem
 ## Files
 scripts/: gcb.py, gcb_exact.py (geometry), s1 ... s6, figs.py. data/: s1-archimedean.json, s2-catalan.json,
 s2b-rhombic.json (incl. corner coordinates at unit edge), s3-kepler-poinsot.json, s4-sections4d.json (+ run log),
-s5-exact4d.json, s6-spacefill.json; every file carries its checks (all pass: 235, 51, 12, 24, -, 7, 10).
+s5-exact4d.json, s6-spacefill.json, s7-icosaxes-exact.json, s8-sections-bijection.json; every file carries its checks (all pass: 235, 51, 12, 24, -, 7, 10, 10, 4).
 Run on dicto-big-brother with ~/geom/bin/python from scripts/ (s4 and s5 need ~/kres-tmp/dataset-v7 and the #65 atlas code).
