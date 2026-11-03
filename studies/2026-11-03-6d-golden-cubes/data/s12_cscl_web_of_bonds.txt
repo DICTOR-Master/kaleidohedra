@@ -1,0 +1,12 @@
+A|B wall: -p2 - p3 + w_A/2 - w_B/2 + 3/2  -> x+y+z = w_A/2 - w_B/2 + 3/2
+A|A wall: x = 1
+octahedron                 mu=1  partner 3-mu=2  volumes sum 8 (one A + one B per 2x2x2 cell)
+Unborn Axes                mu=5/2 - sqrt(5)/2  partner 3-mu=1/2 + sqrt(5)/2  volumes sum 8 (one A + one B per 2x2x2 cell)
+truncated octahedron       mu=3/2  partner 3-mu=3/2  volumes sum 8 (one A + one B per 2x2x2 cell)
+Icosaxes                   mu=1/2 + sqrt(5)/2  partner 3-mu=5/2 - sqrt(5)/2  volumes sum 8 (one A + one B per 2x2x2 cell)
+cuboctahedron              mu=2  partner 3-mu=1  volumes sum 8 (one A + one B per 2x2x2 cell)
+Greater Golden Cut Cube    mu=-sqrt(5) - sqrt(10)/2 + 3*sqrt(2)/2 + 4  partner 3-mu=-3*sqrt(2)/2 - 1 + sqrt(10)/2 + sqrt(5)  volumes sum 8 (one A + one B per 2x2x2 cell)
+truncated cube             mu=1 + sqrt(2)  partner 3-mu=2 - sqrt(2)  volumes sum 8 (one A + one B per 2x2x2 cell)
+Lesser Golden Cut Cube     mu=-3*sqrt(2)/2 - sqrt(10)/2 + sqrt(5) + 4  partner 3-mu=-sqrt(5) - 1 + sqrt(10)/2 + 3*sqrt(2)/2  volumes sum 8 (one A + one B per 2x2x2 cell)
+cube                       mu=3  partner 3-mu=0  volumes sum 8 (one A + one B per 2x2x2 cell)
+T(x) = section at mu = 1 + x/(1+x); T(1/x) at 3 - mu; Icosaxes x=tau <-> mu=phi; Unborn x=1/tau <-> 3-phi; Kelvin x=1 <-> 3/2. ALL OK
