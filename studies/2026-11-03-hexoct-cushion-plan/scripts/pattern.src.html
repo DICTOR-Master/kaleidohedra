@@ -10,20 +10,21 @@ table.rt th{font-size:7.6pt} table.rt .sh{display:inline-block;min-width:3.2mm;f
 .cols2{display:grid;grid-template-columns:1fr 1fr;gap:3mm} table.lt{font-size:7.2pt} table.lt td,table.lt th{padding:0.45mm 0.8mm;white-space:nowrap}
 .box{display:inline-block;width:2.6mm;height:2.6mm;border:0.25mm solid #333;vertical-align:-0.4mm;margin-right:0.6mm;background:#fff}
 table.res td{height:5.2mm} table.res td.e{color:#333} table.res th{font-size:7.6pt} .card{width:{{cardsvgw}}mm;margin:2mm 0 1mm} .card img{width:{{cardsvgw}}mm} .small{font-size:7.6pt}
-.steps li{margin:0.6mm 0}</style></head><body>
+.steps li{margin:0.6mm 0}body,*{font-variant-ligatures:none;font-feature-settings:"liga" 0,"clig" 0}
+</style></head><body>
 <img class="watermark" src="../dicto-logo.png" alt=""><img class="logo" src="../dicto-logo.png" alt="DICTO">
 <h1>Knitted HexOct Patch: Pattern</h1>
 <p class="sub">One small three-sheet patch, A-B-C, knitted in step with its link cords knitted in: the trial piece c of the cushion plan</p>
-<div class="meta"><b>DICTO</b> · dictospheres.com · 3 November 2026 · study 2026-11-03-hexoct-cushion-plan (scripts/pattern.py) · pattern, not published</div>
+<div class="meta"><b>DICTO</b>, dictospheres.com, 3 November 2026, study 2026-11-03-hexoct-cushion-plan (scripts/pattern.py), pattern, not published</div>
 <div class="status"><b>Status.</b> Pattern for DICTO; nothing knitted yet. Open points:
 <ol><li>The in-step method and the cord catches are untried; this patch is their first test.</li>
 <li>The press and shear checks need something that pushes the sheets apart. The pattern uses a loose wool test fill (about {{fill}} g), pushed in for the checks and taken out afterwards; the patch itself has no fill, side walls or cover.</li>
 <li>The gauge (22 stitches and 22 ridges per 10 cm) is the plan's assumption and must be measured on the swatch.</li>
-<li>There are no expected values for sink and shift: these are the first measurements. Comparing c with h needs the h patch (§7).</li>
+<li>There are no expected values for sink and shift: these are the first measurements. Comparing c with h needs the h patch (section 7).</li>
 <li>Whether an overhand stopper knot in 1 mm cord holds in a DK garter stitch is not tested; the fall-back is a second overhand on top.</li>
-<li>The card gauge must be printed at 100 % (check bar beside it, §3.3).</li></ol></div>
+<li>The card gauge must be printed at 100 % (check bar beside it, section 3.3).</li></ol></div>
 <p>DICTO proposed the Knitted HexOct (#83): knitted sheets as close-packed layers, each node joined to 3 nodes of the next sheet by a link of length
-<i>a</i> at {{tilt}}°, which holds the sheets √(2/3)&nbsp;<i>a</i> apart. After the cushion plan DICTO chose to start with one patch. This is the plan's
+<i>a</i> at {{tilt}} degrees, which holds the sheets root(2/3)&nbsp;<i>a</i> apart. After the cushion plan DICTO chose to start with one patch. This is the plan's
 trial piece c: three garter sheets knitted at the same time on three needles, joined by {{NL}} link cords that are knitted in at both ends, nothing sewn.
 Every number below comes from <code>scripts/pattern.py</code>, on the plan's lattice (checks in <code>patch/data/check.out</code>).</p>
 
@@ -32,35 +33,35 @@ Every number below comes from <code>scripts/pattern.py</code>, on the plan's lat
 from above. Three sheets, 16 nodes each; teal: the {{NL}} link cords. One tetrahedron (gold) and one octahedron (violet) are shaded in each gap; the patch
 holds {{nt}} whole tetrahedra and {{no}} whole octahedra. Every link pair through the middle sheet B that lines up runs straight on ({{straight}} pairs):
 B is a c sheet.</figcaption></figure>
-<table><tr><th>Size</th><td>{{W}} stitches × {{H}} ridges, {{Wc}} × {{Hc}} cm; with the gaps pushed apart about {{depth}} cm deep</td></tr>
-<tr><th>Sheets</th><td>A (bottom), B (middle, c), C (top); 4 × 4 nodes each; node spacing <i>a</i> = {{a}} mm (8 stitches), sheet spacing <i>d</i> = {{d}} mm</td></tr>
+<table><tr><th>Size</th><td>{{W}} stitches x {{H}} ridges, {{Wc}} x {{Hc}} cm; with the gaps pushed apart about {{depth}} cm deep</td></tr>
+<tr><th>Sheets</th><td>A (bottom), B (middle, c), C (top); 4 x 4 nodes each; node spacing <i>a</i> = {{a}} mm (8 stitches), sheet spacing <i>d</i> = {{d}} mm</td></tr>
 <tr><th>Links</th><td>{{NL}} ({{nl0}} between A and B, {{nl1}} between B and C), made from {{NP}} cord pieces ({{NV}} V pieces, {{NSI}} singles) with {{NC}} catches</td></tr>
-<tr><th>Skill</th><td>experienced knitter: garter stitch, long-tail cast-on, bind-off; new here: three needles in step and the cord catches (§3)</td></tr>
+<tr><th>Skill</th><td>experienced knitter: garter stitch, long-tail cast-on, bind-off; new here: three needles in step and the cord catches (section 3)</td></tr>
 <tr><th>Time</th><td>about {{hours}} hours (plan rates: 25 stitches a minute plus a quarter for working in step; 30 s per catch and per piece)</td></tr></table>
 
 <h2>2. Materials, gauge, abbreviations</h2>
 <div class="two"><div><table><tr><th>Item</th><th>Amount</th></tr>
 <tr><td>DK mercerised cotton, 100 m / 50 g</td><td>{{yarn}} m in all, about {{ysheet}} m per sheet: one ball wound into three, or three colours (easier to tell the sheets apart)</td></tr>
 <tr><td>Link cord, 1 mm waxed polyester (non-stretch)</td><td>{{cord}} m: {{NV}} pieces of {{cutV}} cm and {{NSI}} of {{cutS}} cm; buy {{cordbuy}} m</td></tr>
-<tr><td>Three 3.5 mm circular needles, 40–60 cm</td><td>one per sheet</td></tr>
-<tr><td>Card gauge (§3.3), thin card, glue</td><td>1</td></tr>
+<tr><td>Three 3.5 mm circular needles, 40-60 cm</td><td>one per sheet</td></tr>
+<tr><td>Card gauge (section 3.3), thin card, glue</td><td>1</td></tr>
 <tr><td>Locking stitch markers; scissors; tapestry needle; a bag or bowl for each ball</td><td>3 markers</td></tr>
-<tr><td>For the checks: carded wool (test fill), a board {{board}} × {{board}} cm, a 5 kg bag of rice, a luggage scale, a ruler, a non-slip mat</td><td>wool about {{fill}} g</td></tr></table>
+<tr><td>For the checks: carded wool (test fill), a board {{board}} x {{board}} cm, a 5 kg bag of rice, a luggage scale, a ruler, a non-slip mat</td><td>wool about {{fill}} g</td></tr></table>
 <figure style="margin-top:2mm"><img src="figs/pieces.svg" alt="" style="width:92%"><figcaption><b>Figure 2.</b> The two cord pieces. Cut them all before you start and keep them in two piles.</figcaption></figure></div>
 <div><h3>Gauge</h3><p>Garter stitch on 3.5 mm needles: <b>22 stitches and 22 ridges to 10 cm</b> (one ridge = two rows). Cast on 30 stitches, knit 30 ridges, lay
 the swatch flat without stretching and count over 10 cm. More stitches than 22: change to a larger needle; fewer: a smaller one. The stitch gauge must match,
 because the card sets the link length: 8 stitches must span the card's length <i>a</i> = {{a}} mm. For the ridges, 22 gives a node-row spacing {{e22}} from
-the ideal, 23 gives {{e23}}, 21 gives {{e21}}; write your count in the results table (§6).</p>
+the ideal, 23 gives {{e23}}, 21 gives {{e21}}; write your count in the results table (section 6).</p>
 <h3>Abbreviations</h3>
 <table><tr><td><b>st</b></td><td>stitch; stitch numbers are fixed on the sheet, st 1 at the marked edge</td></tr>
-<tr><td><b>CK</b></td><td>knit the stitch with the yarn and the cord(s) held together (§3.2)</td></tr>
+<tr><td><b>CK</b></td><td>knit the stitch with the yarn and the cord(s) held together (section 3.2)</td></tr>
 <tr><td><b>V3, S5</b></td><td>cord pieces: a V piece (caught by its fold, two arms) or a single (two ends), numbered in the order they start</td></tr>
-<tr><td><b>at card</b></td><td>caught at the card length <i>a</i> from its earlier catch (§3.3)</td></tr>
+<tr><td><b>at card</b></td><td>caught at the card length <i>a</i> from its earlier catch (section 3.3)</td></tr>
 <tr><td><b>r 9/2</b></td><td>ridge 9, row 2</td></tr></table>
 <h3>How to read the chart and the tables</h3>
 <p>The chart (Figure 8) shows the three sheets on one grid, as you hold the work for row 1: one square is one stitch by one ridge, st 1 at the right, the
 cast-on edge at the bottom; circles, squares and triangles are the node stitches of A, B and C; teal lines join the two ends of each link. The ridge table
-(§4) says what to do on every ridge, row by row, sheet by sheet; a ridge listed as "knit" is plain knitting. The link table (§5) lists every cord piece with a box
+(section 4) says what to do on every ridge, row by row, sheet by sheet; a ridge listed as "knit" is plain knitting. The link table (section 5) lists every cord piece with a box
 for each catch.</p></div></div>
 
 <h2>3. Techniques</h2>
@@ -83,23 +84,23 @@ the card length, so that every link is exactly <i>a</i> long between its two sti
 <figure><img src="figs/catch.svg" alt=""><figcaption><b>Figure 5.</b> The catch at card length. For a V arm, start the card at the V knot; for a
 single, at the stitch of its first catch.</figcaption></figure>
 <div class="card"><img src="figs/card.svg" alt=""></div>
-<p class="small"><b>Figure 6.</b> The card gauge, true size ({{cardw}} × {{cardh}} mm). Check that the bar measures 50 mm, cut the card out on its outline and
-glue it to thin card. The violet mark <i>d</i> is for the measure check (§6).</p>
+<p class="small"><b>Figure 6.</b> The card gauge, true size ({{cardw}} x {{cardh}} mm). Check that the bar measures 50 mm, cut the card out on its outline and
+glue it to thin card. The violet mark <i>d</i> is for the measure check (section 6).</p>
 <h3>3.4 Stopper knot and V knot</h3>
 <figure><img src="figs/knot.svg" alt=""><figcaption><b>Figure 7.</b> Tie a stopper knot in the tail at every end catch (the first end of a single and every
 catch at card length) as soon as the stitch is made, snug against the back of the stitch, so the cord cannot slide through. Tie a V knot after every fold
 catch. Leave the tails long until finishing.</figcaption></figure>
 
 <h2>4. The patch, ridge by ridge</h2>
-<p><b>Cast on</b> {{W}} stitches on each of the three needles (long-tail), each with its own ball, and set up the stack (§3.1). Ridge 1 is the first two
-rows after the cast-on. Work {{H}} ridges as in the table, all three sheets in step; every catch is a CK (§3.2), every catch marked "at card" is measured
-(§3.3), and every catch is knotted (§3.4). When you reach a stitch that holds a cord loop from the row before, lock it (§3.2, step 4). <b>Bind off</b> after
+<p><b>Cast on</b> {{W}} stitches on each of the three needles (long-tail), each with its own ball, and set up the stack (section 3.1). Ridge 1 is the first two
+rows after the cast-on. Work {{H}} ridges as in the table, all three sheets in step; every catch is a CK (section 3.2), every catch marked "at card" is measured
+(section 3.3), and every catch is knotted (section 3.4). When you reach a stitch that holds a cord loop from the row before, lock it (section 3.2, step 4). <b>Bind off</b> after
 ridge {{H}}, in the row-1 position: bind off A knitwise, loosely, then B, then C. Cut the yarns leaving 15 cm.</p>
 <figure><img src="figs/chart.svg" alt="" style="width:94%"><figcaption><b>Figure 8.</b> The node chart: all three sheets on one grid, as you hold the
 work for row 1. Shaded rows are node ridges. The cord piece name stands beside the stitch of its first catch; the longest a cord hangs open is {{span}} ridges.</figcaption></figure>
 <table class="rt"><tr><th>Ridge</th><th>Row 1: A, then B, then C</th><th>Row 2: C, then B, then A</th></tr>
 {{RIDGE_TABLE}}</table>
-<p class="small">At most {{maxc}} cords meet in one stitch on one row (see §3.2 for several cords at one stitch).</p>
+<p class="small">At most {{maxc}} cords meet in one stitch on one row (see section 3.2 for several cords at one stitch).</p>
 
 <h2>5. Link table</h2>
 <p>Tick each box as the catch is made and knotted. "B st 8, r 6/2" = sheet B, stitch 8, ridge 6, row 2. A V piece has two far catches, one for each arm; take
@@ -119,7 +120,7 @@ Take the bag off, wait one minute, read again.</li>
 the board and pull level, slowly. Mark the board's start on a strip of tape and read its shift at 0.5, 1.0, 1.5 and 2.0 kg on the scale.</li>
 <li><b>After the checks</b>, pull the test fill out, trim the cord tails to 5 mm beyond the knots, and keep the patch flat.</li></ol>
 <figure><img src="figs/check.svg" alt="" style="width:92%"><figcaption><b>Figure 9.</b> The measure, press and shear checks (side view).</figcaption></figure>
-<table class="res"><tr><th>Check</th><th>Expected (#83 geometry)</th><th>c patch (this pattern)</th><th>h patch (later, §7)</th></tr>
+<table class="res"><tr><th>Check</th><th>Expected (#83 geometry)</th><th>c patch (this pattern)</th><th>h patch (later, section 7)</th></tr>
 <tr><td>Gauge: stitches / ridges per 10 cm</td><td class="e">22 / 22</td><td></td><td></td></tr>
 <tr><td>4 nodes along a row, outer to outer (3 spacings), sheets A and C</td><td class="e">{{sp3}} mm</td><td></td><td></td></tr>
 <tr><td>4 node rows, first to last (3 row spacings)</td><td class="e">{{row3t}} mm ideal ({{row3}} mm knitted)</td><td></td><td></td></tr>

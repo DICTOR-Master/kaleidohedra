@@ -203,7 +203,7 @@ YARN, YLINE, INK, GREY = '#efe9da', '#6f6a5e', '#222', '#8d877a'
 SHEET_FILL = {'A': '#e4e0d6', 'B': '#ece6d6', 'C': '#f1ede4', "A'": '#f1ede4'}
 def svg(w, h, body, wmm):
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{wmm}mm" height="{wmm * h / w:.3f}mm" viewBox="0 0 {w} {h}" '
-            f'font-family="DejaVu Sans, sans-serif">{body}</svg>')
+            f'font-family="DejaVu Sans, sans-serif" style="font-variant-ligatures:none;font-feature-settings:&quot;liga&quot; 0;text-rendering:optimizeSpeed">{body}</svg>')
 def line(x1, y1, x2, y2, w=1.0, c='#000', dash=None, op=1):
     return (f'<line x1="{x1:.2f}" y1="{y1:.2f}" x2="{x2:.2f}" y2="{y2:.2f}" stroke="{c}" stroke-width="{w}" stroke-linecap="round"'
             + (f' stroke-dasharray="{dash}"' if dash else '') + (f' stroke-opacity="{op}"' if op < 1 else '') + '/>')
@@ -425,7 +425,7 @@ def fig_card():
     b.append(text(x0 + a + TAIL + 1.0, y0 + 5.0, 'tail at least', 2.0, 'start'))
     b.append(text(x0 + a + TAIL + 1.0, y0 + 7.6, 'to here (25 mm)', 2.0, 'start'))
     b.append(text(x0 + d - 0.6, y0 + CARD_H - 2.0, f'd = {d:.1f} mm (check only)', 2.0, 'end', c=VIOL))
-    b.append(text(x0 + CARD_W - 1.5, y0 + CARD_H - 2.0, 'DICTO · card gauge · cut on the outline', 1.9, 'end', 'bold', '#b8962e'))
+    b.append(text(x0 + CARD_W - 1.5, y0 + CARD_H - 2.0, 'DICTO, card gauge, cut on the outline', 1.9, 'end', 'bold', '#b8962e'))
     # print check bar
     bx = x0 + CARD_W + 8; b.append(line(bx, y0 + 4, bx + 50, y0 + 4, 0.4)); b.append(line(bx, y0 + 2.5, bx, y0 + 5.5, 0.4)); b.append(line(bx + 50, y0 + 2.5, bx + 50, y0 + 5.5, 0.4))
     for q in range(1, 5): b.append(line(bx + 10 * q, y0 + 3.2, bx + 10 * q, y0 + 4.8, 0.25))
@@ -534,7 +534,7 @@ def fig_chart():
         b.append(text(X0 - 4, Y(r) + 3, str(r), 7.5, 'end', 'bold' if k else 'normal'))
         if k: b.append(text(X0 + W * s + 4, Y(r) + 3, f"{'ABC'[k[0]]}  " + ('row 1' if k[0] == 0 else 'row 2' if k[0] == 2 else 'rows 1 + 2'), 7.5, 'start', 'bold'))
     b.append(text(X0 - 26, Y0 + H * s / 2, 'ridge', 8.5, 'middle', rot=-90))
-    b.append(text(X0 + W * s / 2, Y0 + H * s + 24, 'stitch number (stitch 1 at the right, where row 1 starts) · cast-on edge at the bottom', 8.5))
+    b.append(text(X0 + W * s / 2, Y0 + H * s + 24, 'stitch number (stitch 1 at the right, where row 1 starts), cast-on edge at the bottom', 8.5))
     for gi, g in enumerate(G):
         for u, v in g:
             b.append(line(X(u['s']), Y(u['ridge']), X(v['s']), Y(v['ridge']), 1.4 if gi == 0 else 1.4, TEAL, None if gi == 0 else '4 2.5'))
@@ -599,7 +599,7 @@ def ordinal(i): return f"{i}{'th' if 10 <= i % 100 <= 20 else {1: 'st', 2: 'nd',
 rows_html = []; plain = []
 def flush_plain():
     if plain:
-        rng = f"{plain[0]}" if len(plain) == 1 else f"{plain[0]}–{plain[-1]}"
+        rng = f"{plain[0]}" if len(plain) == 1 else f"{plain[0]}-{plain[-1]}"
         rows_html.append(f'<tr class="plain"><td class="r">{rng}</td><td colspan="2">knit, all three sheets in step</td></tr>'); plain.clear()
 n_entries = 0
 for r in range(1, H + 1):
@@ -640,7 +640,7 @@ json.dump(dict(a=a, d=d, W=W, H=H, size_mm=[W_mm, H_mm], nodes=[16, 16, 16], lin
 # ---------------------------------------------------------------- the pattern (HTML)
 V = dict(a=f'{a:.1f}', d=f'{d:.1f}', W=W, H=H, Wc=f'{W_mm / 10:.1f}', Hc=f'{H_mm / 10:.1f}', depth=f'{(2 * d + t) / 10:.1f}', NL=NL, nl0=nl[0], nl1=nl[1],
          NV=NV, NSI=NSI, NP=NP, NC=NCATCH, cutV=cutV, cutS=cutS, cord=f'{cord_m:.1f}', yarn=f'{yarn_m:.0f}', ysheet=f'{yarn_m / 3:.0f}',
-         fill=f'{5 * round(fill_lo / 5):.0f}–{5 * round(fill_hi / 5):.0f}', fillgap=f'{5 * round(fill_lo / 10):.0f}–{5 * round(fill_hi / 10):.0f}', hours=f'{mins / 60:.0f}',
+         fill=f'{5 * round(fill_lo / 5):.0f}-{5 * round(fill_hi / 5):.0f}', fillgap=f'{5 * round(fill_lo / 10):.0f}-{5 * round(fill_hi / 10):.0f}', hours=f'{mins / 60:.0f}',
          kpa=f'{press_kpa:.1f}', straight=NSTRAIGHT, tilt=f'{TILT:.2f}', e23=f'{row_err[23]:+.1f} %', e22=f'{row_err[22]:+.1f} %', e21=f'{row_err[21]:+.1f} %',
          row3=f'{3 * M * rg:.1f}', row3t=f'{3 * pitch_true:.1f}', sp3=f'{3 * a:.1f}', board=f'{BOARD / 10:.0f}', nlh=sum(nlh), ph=pieces_h, span=span,
          nt=nt, no=no, maxc=maxc, cordbuy=math.ceil(cord_m * 1.2), cardw=f'{CARD_W:.0f}', cardsvgw=f'{CARD_SVG_W:.0f}', cardh=f'{CARD_H:.0f}')
