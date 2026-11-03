@@ -2,7 +2,7 @@
 # every named shape of DICTO's work from DICTO Solids (dataset v5, index.csv): DICTO's new shapes in D-number order, then
 # the known and rediscovered shapes the work uses. A shape with exact geometry in the dataset gets its icon (render_atoms.py).
 # Output: atoms-catalogue.html (a block of pages for the book). Usage: atoms.py <index.csv> <icons dir> <out html> [<Volume I paper.html>]
-# Since 2026-11-03 (DICTO: "yes split it with that title") the catalogue is Volume II, Quanta of Space II: The DICTOnary of Atoms
+# Since 2026-11-03 (DICTO: "yes split it with that title") the catalogue is Volume II, The DICTOnary of Atoms: Quanta of Space II
 # (papers/book-quanta-dictonary, icons in its figures/atoms); each entry names the chapter of Volume I (papers/book-quanta-of-space)
 # that tells its work, read from Volume I's paper.html (4th argument; default ../book-quanta-of-space/paper.html beside the icons' book).
 import csv, html, os, re, sys, shutil

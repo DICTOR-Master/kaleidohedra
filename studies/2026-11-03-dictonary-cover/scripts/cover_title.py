@@ -1,9 +1,11 @@
-# Quanta of Space II: The DICTOnary of Atoms, front cover DRAFT (2026-11-03), for DICTO's approval. Same style as the Quanta of Space
-# cover (studies/2026-10-30-quanta-cover, DICTO 10-30: "new matching black cover like others"): the same DICTO square (dicto-square.png,
-# unchanged), the title panel below it in DSEG14 Classic letters with the gaps between segments closed, black outline, soft glow, on the
-# square's dark ground. Lines and colours as Volume I: title gold, subtitle white, DICTO red. Capitals, larger initial capitals (DICTO
-# 10-29). DICTOnary (DICTO's coinage, "DICTO" in "Dictionary"): on the cover in capitals as every line, with the five letters of DICTO at
-# the large initial size and "NARY" at the small size, so the coinage shows. Each line is shrunk if needed to fit 0.92 of the width.
+# The DICTOnary of Atoms: Quanta of Space II, front cover (title order swapped 2026-11-03, DICTO: "The DICTOnary of Atoms" is the MAIN
+# title, "Quanta of Space II" the SUBTITLE). Same style as the Quanta of Space cover (studies/2026-10-30-quanta-cover, DICTO 10-30: "new
+# matching black cover like others"): the DICTO square (SQUARE: dicto-square.png, or the golden dicto-square-golden.png), the title panel
+# below it in DSEG14 Classic letters with the gaps between segments closed, black outline, soft glow, on the square's dark ground. Main
+# title gold, subtitle white, DICTO red, as Volume I. Capitals, larger initial capitals (DICTO 10-29). DICTOnary (DICTO's coinage, "DICTO"
+# in "Dictionary"): in capitals as every line, with the five letters of DICTO at the large initial size and "NARY" at the small size, so
+# the coinage shows. Each line is shrunk if needed to fit 0.92 of the width; the main title stays on one line. The panel keeps the
+# height of the first draft (0.4 N, cover 1800 x 2520) with the spare height shared between the gaps.
 # Functions glyph/word/paste/fit copied from the DICTONIC Bonds cover script (2026-11-03-bonds-cover). Run on dicto-big-brother.
 import os, numpy as np
 from scipy import ndimage
@@ -53,11 +55,12 @@ def fit(text, size, col, big):
     w = word(text, size, lambda ch: col, big=big)
     while w[1].shape[1] > 0.92 * N: size = int(size * 0.97); w = word(text, size, lambda ch: col, big=big)
     print(text, 'size', round(size / N, 4)); return w
-big = fit('QUANTA OF SPACE II', int(N * 0.066), GOLD, (0, 7, 10, 16, 17))     # Q O S as Volume I, and both I of the volume number
-sub = fit('THE DICTONARY OF ATOMS', int(N * 0.042), WHITE, (0, 4, 5, 6, 7, 8, 14, 17))   # T, the five letters of DICTO, O, A
+big = fit('THE DICTONARY OF ATOMS', int(N * 0.066), GOLD, (0, 4, 5, 6, 7, 8, 14, 17))   # T, the five letters of DICTO, O, A
+sub = fit('QUANTA OF SPACE II', int(N * 0.034), WHITE, (0, 7, 10, 16, 17))     # Q O S as Volume I, and both I of the volume number
 by = word('* DICTO *', int(N * 0.042), lambda ch: RED, big=(0, 2, 3, 4, 5, 6, 8))   # every letter of DICTO is an initial (DICTO)
-H = big[1].shape[0] + sub[1].shape[0] + by[1].shape[0] + int(N * 0.16)
+H = int(N * 0.4); ink = big[1].shape[0] + sub[1].shape[0] + by[1].shape[0]; g = (H - ink) / 4   # top margin, two gaps, bottom margin
+assert g > N * 0.02, g
 panel = np.ones((H, N, 3)) * np.array(GROUND, float)
-y = paste(panel, big, N / 2, int(N * 0.02)); y = paste(panel, sub, N / 2, y + int(N * 0.05)); paste(panel, by, N / 2, y + int(N * 0.035))
+y = paste(panel, big, N / 2, int(g)); y = paste(panel, sub, N / 2, y + int(g * 0.8)); paste(panel, by, N / 2, y + int(g * 0.8))
 out = Image.new('RGB', (N, N + H), GROUND); out.paste(sq, (0, 0)); out.paste(Image.fromarray(np.clip(panel, 0, 255).astype(np.uint8)), (0, N))
-out.save(os.environ.get('OUT', '../dictonary-cover-front.png')); print('ok', out.size)
+out.save(os.environ.get('OUT', '../dictonary-cover-front.png')); print('ok', out.size, 'gap', round(g / N, 4))

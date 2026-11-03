@@ -1,4 +1,4 @@
-# ALTERNATIVE for the Quanta of Space II (The DICTOnary of Atoms) cover, 2026-11-03, comparison only: the DICTO square of
+# ALTERNATIVE for The DICTOnary of Atoms (Quanta of Space II) cover, 2026-11-03, comparison only: the DICTO square of
 # studies/2026-10-22-dicto-square/dicto_square.py with each Platonic solid replaced by its Greater Golden Cut solid of #88
 # (every corner cut at x_G(n) = phi/(2cos(pi/n) + 2 phi) along each edge, n = sides of a face: D 1/3, I T O 1/phi^2 (O = Icosaxes),
 # C ~0.347943). Same letters, poses, scale (equal circumsphere 0.44). v2 (DICTO 11-03: "golden cover in full strength colours

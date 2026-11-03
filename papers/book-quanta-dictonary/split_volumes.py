@@ -2,7 +2,8 @@
 #   Volume I  (book-quanta-of-space/paper.html): "Quanta of Space: A Manifesto", version 2.0, same concept DOI 10.5281/zenodo.23754454:
 #             front matter, Introduction, Chapters 1-6 with their narrative entries, Findings and apps (narrative: Kaleidohedra and the
 #             data set told as entries), About the author. Where the catalogue stood at the end of Chapter 1: a short pointer.
-#   Volume II (book-quanta-dictonary/paper.html): "Quanta of Space II: The DICTOnary of Atoms", new book, DOI to be reserved:
+#   Volume II (book-quanta-dictonary/paper.html): "The DICTOnary of Atoms: Quanta of Space II" (title order since 2026-11-03, DICTO: main title The DICTOnary
+#             of Atoms, subtitle Quanta of Space II), new book, DOI to be reserved:
 #             cover, title page, how to read an entry, contents, the catalogue of all the atoms (with Not drawn here and the clusters,
 #             structures and networks), the data work by work (A.xx), the known and rediscovered shapes, About the author.
 # Source: the v1.5 draft (git 8b71279c). Cross-references: "Data: Appendix A.n" -> "Data: Volume II, A.n" in Volume I; every catalogue
@@ -14,7 +15,8 @@ V1, V2 = 'book-quanta-of-space/paper.html', 'book-quanta-dictonary/paper.html'
 ATOMS = '../studies/2026-10-29-quanta-atoms'
 DATE = '3 November 2026'
 DOI1 = '10.5281/zenodo.23754454'
-T2 = '<i>Quanta of Space II: The DICTOnary of Atoms</i>'
+T2 = '<i>The DICTOnary of Atoms: Quanta of Space II</i>'
+T2S = '<i>The DICTOnary of Atoms</i>'   # in running text where the full form is clumsy
 n_sub = 0
 import csv
 _rows = list(csv.DictReader(l for l in open(f'{ATOMS}/index.csv', encoding='utf8') if not l.startswith('#')))
@@ -64,7 +66,7 @@ a, b = v1.index('<!--ATOMS START-->'), v1.index('<!--ATOMS END-->') + len('<!--A
 POINTER = f'''<!--ATOMS POINTER START (the catalogue is Volume II since version 2.0)-->
 <section class="shortch" style="break-before:auto;break-after:page">
 <div class="se"><h2>All the atoms</h2>
-<p>The catalogue of all the atoms, which closed this chapter up to version 1.4, is now a book of its own: Volume II, {T2}. It lists every named shape of the work, one quantum of space each: DICTO's {NNEW} new shapes with their D-numbers, his {NCL} new clusters, structures and networks, and the known and rediscovered shapes the work builds with, each with its picture, data and source. It also holds the data, work by work, cited in this volume as “Data: Volume II, A.n”.</p></div>
+<p>The catalogue of all the atoms, which closed this chapter up to version 1.4, is now a book of its own: Volume II, {T2S}. It lists every named shape of the work, one quantum of space each: DICTO's {NNEW} new shapes with their D-numbers, his {NCL} new clusters, structures and networks, and the known and rediscovered shapes the work builds with, each with its picture, data and source. It also holds the data, work by work, cited in this volume as “Data: Volume II, A.n”.</p></div>
 </section>
 <!--ATOMS POINTER END-->'''
 v1 = v1[:a] + POINTER + v1[b:]
@@ -130,7 +132,7 @@ n_sub += n_told
 about = cut(SRC, '<!--ABOUT START-->', '<!--ABOUT END-->')
 about = rep(about, ABOUT_OLD, f"and to seven books: <i>Quanta of Space: A Manifesto</i> and its second volume, {T2} (this one), ")
 
-style2 = STYLE.replace('<title>Quanta of Space: A Manifesto</title>', '<title>Quanta of Space II: The DICTOnary of Atoms</title>')
+style2 = STYLE.replace('<title>Quanta of Space: A Manifesto</title>', '<title>The DICTOnary of Atoms: Quanta of Space II</title>')
 style2 = style2.replace('</style></head>', '''.appendix p.told { font: italic 8.8pt "Nimbus Sans", "Liberation Sans", sans-serif; color: #6b5310; margin: -1pt 0 4pt; }
 .howto dt { font-weight: 600; color: #6b5310; margin-top: 6pt; } .howto dd { margin: 1pt 0 0 6mm; }
 .contents ul.app { list-style: none; padding: 0; margin: 0 0 4pt; columns: 2; column-gap: 8mm; font: 8.8pt/1.45 "DejaVu Sans", sans-serif; }
@@ -146,12 +148,12 @@ box2 = f'''<div class="status" style="text-align:left;margin-top:5mm;break-insid
 </ul></div>'''
 title2 = f'''<!-- ============ COVER ============ -->
 <section class="page coverpage" style="height:252mm;display:flex;justify-content:center;align-items:center">
-<img src="figures/cover/dictonary-cover-front.png" alt="Cover: Quanta of Space II, The DICTOnary of Atoms, DICTO, under the DICTO square of the five Platonic solids of DICTO's name, D I C T O" style="height:248mm;display:block">
+<img src="figures/cover/dictonary-cover-front-golden.png" alt="Cover: The DICTOnary of Atoms, Quanta of Space II, DICTO, under the DICTO square of the Greater Golden Cut solids of the five Platonic solids of DICTO's name, D I C T O" style="height:248mm;display:block">
 </section>
 <section class="page titlepage">
 <img class="big" src="../dicto-logo.png" alt="DICTO">
-<h1>Quanta of Space II</h1>
-<p class="sub">The DICTOnary of Atoms</p>
+<h1>The DICTOnary of Atoms</h1>
+<p class="sub">Quanta of Space II</p>
 <p class="by">DICTO</p>
 <p class="small">artist, Osaka, Japan · contact@dictospheres.com · https://dictospheres.com<br>
 All works, findings and names are DICTO's. Computation, checking and drafting with Claude (Anthropic).<br>
