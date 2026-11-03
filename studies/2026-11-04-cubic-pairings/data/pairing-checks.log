@@ -1,0 +1,79 @@
+== Part A: angle algebra
+PASS alpha = arccos(1/3) = 2 arcsin(1/sqrt3) (the half angle s of the paper)
+PASS alpha/pi irrational: 2cos(alpha) = 2/3 is not an algebraic integer (min. poly 3x - 2 not monic)   [2/3 is rational and not an integer, so not an algebraic integer]
+PASS cos(beta = pi/2 + alpha/2) = -sqrt(3)/3
+PASS cos(gamma = pi - alpha) = -1/3
+PASS cos(right = pi/2) = 0
+PASS cos(alpha) = 1/3
+PASS cos(2pi/3) = -1/2
+PASS cos(pi/3) = 1/2
+PASS cos(pi/4) = sqrt(2)/2
+PASS half angles: sin^2(alpha/2) = (1 - cos alpha)/2 = 1/3, cos^2(alpha/2) = 2/3, so cos(pi - alpha/2) = -sqrt(2/3), cos((pi + alpha)/2) = -1/sqrt3
+   CsCl walk, 1 < mu <= 2 (beta, gamma): 2pi -> [(2, 1)];  pi (on a face) -> []
+   CsCl walk, 2 < mu < 3 (beta, gamma, right): 2pi -> [(0, 0, 4), (2, 1, 0)];  pi (on a face) -> [(0, 0, 2)]
+   Delian walk, 0 < t < 1/3 (alpha, pi - alpha/2, 2pi/3): 2pi -> [(0, 0, 3), (1, 2, 0)];  pi (on a face) -> []
+   Delian walk, 1/3 < t < 1 (pi - alpha, (pi+alpha)/2, right): 2pi -> [(0, 0, 4), (1, 2, 0)];  pi (on a face) -> [(0, 0, 2)]
+   cube pyramid C6 (pi/4 base, 2pi/3 lateral): 2pi -> [(0, 3), (8, 0)];  pi (on a face) -> [(4, 0)]
+   RD pyramid R12 (pi/3 base, pi/2 long lateral, 2pi/3 short lateral): 2pi -> [(0, 0, 3), (0, 4, 0), (1, 2, 1), (2, 0, 2), (3, 2, 0), (4, 0, 1), (6, 0, 0)];  pi (on a face) -> [(0, 2, 0), (1, 0, 1), (3, 0, 0)]
+PASS CsCl walk mu in (1,2]: only 2 beta + gamma round an edge, nothing on a face
+PASS CsCl walk mu in (2,3): 2 beta + gamma or 4 right; on a face only 2 right
+PASS Delian walk t in (0,1/3): alpha + 2(pi - alpha/2) or 3 x 2pi/3; nothing on a face
+PASS Delian walk t in (1/3,1): (pi - alpha) + 2(pi+alpha)/2 or 4 right; on a face only 2 right
+PASS C6: 8 base or 3 lateral wedges round an edge; on a face only 4 base
+== Part B: the CsCl walk (cube C = [-1,1]^3, P = C n muC*, Q = C n (3-mu)C*, Q centred at (1,1,1))
+PASS 1<mu<2: square edge of P = sqrt2 (mu-1), hexagon-hexagon edge = sqrt2 (2-mu)
+PASS    and the hexagon-hexagon edge
+PASS    Q = P(3-mu) swaps them: its square edge is P's hexagon-hexagon edge
+PASS    the two edge lengths are equal only at Kelvin, mu = 3/2
+PASS 2<mu<3: octagon-octagon edge 2(mu-2), octagon-triangle edge sqrt2 (3-mu) = edge of the octahedron (3-mu)C*
+PASS    equal only at the silver ratio mu = 1 + sqrt2 (Archimedean truncated cube)
+PASS dihedral square/octagon-hexagon/triangle: cos = -1/sqrt3 (beta); hexagon-hexagon cos = -1/3 (gamma); octagon-octagon 0
+PASS mu = 5/4: P 6x4-gon+8x6-gon, Q 6x4-gon+8x6-gon; vol P + vol Q = 8; every facet of P and Q matched by exactly one CsCl tile; every face stabiliser = isometry group of the face with its edge kinds (orders: stabiliser, labelled, plain)   [pairing {P4->[('P', 4)], P6->[('Q', 6)], Q4->[('Q', 4)], Q6->[('P', 6)]}; orders {('P', 4): (8, 8, 8), ('P', 6): (6, 6, 6), ('Q', 4): (8, 8, 8), ('Q', 6): (6, 6, 6)}]
+PASS mu = 4/3: P 6x4-gon+8x6-gon, Q 6x4-gon+8x6-gon; vol P + vol Q = 8; every facet of P and Q matched by exactly one CsCl tile; every face stabiliser = isometry group of the face with its edge kinds (orders: stabiliser, labelled, plain)   [pairing {P4->[('P', 4)], P6->[('Q', 6)], Q4->[('Q', 4)], Q6->[('P', 6)]}; orders {('P', 4): (8, 8, 8), ('P', 6): (6, 6, 6), ('Q', 4): (8, 8, 8), ('Q', 6): (6, 6, 6)}]
+PASS mu = 3/2 Kelvin: P 6x4-gon+8x6-gon, Q 6x4-gon+8x6-gon; vol P + vol Q = 8; every facet of P and Q matched by exactly one CsCl tile; every face stabiliser = isometry group of the face with its edge kinds (orders: stabiliser, labelled, plain)   [pairing {P4->[('P', 4)], P6->[('Q', 6)], Q4->[('Q', 4)], Q6->[('P', 6)]}; orders {('P', 4): (8, 8, 8), ('P', 6): (6, 6, 12), ('Q', 4): (8, 8, 8), ('Q', 6): (6, 6, 12)}]
+PASS mu = 7/4: P 6x4-gon+8x6-gon, Q 6x4-gon+8x6-gon; vol P + vol Q = 8; every facet of P and Q matched by exactly one CsCl tile; every face stabiliser = isometry group of the face with its edge kinds (orders: stabiliser, labelled, plain)   [pairing {P4->[('P', 4)], P6->[('Q', 6)], Q4->[('Q', 4)], Q6->[('P', 6)]}; orders {('P', 4): (8, 8, 8), ('P', 6): (6, 6, 6), ('Q', 4): (8, 8, 8), ('Q', 6): (6, 6, 6)}]
+PASS mu = 2 cuboctahedron: P 8x3-gon+6x4-gon, Q 8x3-gon; vol P + vol Q = 8; every facet of P and Q matched by exactly one CsCl tile; every face stabiliser = isometry group of the face with its edge kinds (orders: stabiliser, labelled, plain)   [pairing {P4->[('P', 4)], P3->[('Q', 3)], Q3->[('P', 3)]}; orders {('P', 4): (8, 8, 8), ('P', 3): (6, 6, 6), ('Q', 3): (6, 6, 6)}]
+PASS mu = 9/4: P 8x3-gon+6x8-gon, Q 8x3-gon; vol P + vol Q = 8; every facet of P and Q matched by exactly one CsCl tile; every face stabiliser = isometry group of the face with its edge kinds (orders: stabiliser, labelled, plain)   [pairing {P8->[('P', 8)], P3->[('Q', 3)], Q3->[('P', 3)]}; orders {('P', 8): (8, 8, 8), ('P', 3): (6, 6, 6), ('Q', 3): (6, 6, 6)}]
+PASS mu = 5/2: P 8x3-gon+6x8-gon, Q 8x3-gon; vol P + vol Q = 8; every facet of P and Q matched by exactly one CsCl tile; every face stabiliser = isometry group of the face with its edge kinds (orders: stabiliser, labelled, plain)   [pairing {P8->[('P', 8)], P3->[('Q', 3)], Q3->[('P', 3)]}; orders {('P', 8): (8, 8, 8), ('P', 3): (6, 6, 6), ('Q', 3): (6, 6, 6)}]
+PASS mu = 11/4: P 8x3-gon+6x8-gon, Q 8x3-gon; vol P + vol Q = 8; every facet of P and Q matched by exactly one CsCl tile; every face stabiliser = isometry group of the face with its edge kinds (orders: stabiliser, labelled, plain)   [pairing {P8->[('P', 8)], P3->[('Q', 3)], Q3->[('P', 3)]}; orders {('P', 8): (8, 8, 8), ('P', 3): (6, 6, 6), ('Q', 3): (6, 6, 6)}]
+PASS mu = 3 - phi Unborn Axes: P 6x4-gon+8x6-gon, Q 6x4-gon+8x6-gon; vol P + vol Q = 8; every facet of P and Q matched by exactly one CsCl tile; every face stabiliser = isometry group of the face with its edge kinds (orders: stabiliser, labelled, plain)   [pairing {P4->[('P', 4)], P6->[('Q', 6)], Q4->[('Q', 4)], Q6->[('P', 6)]}; orders {('P', 4): (8, 8, 8), ('P', 6): (6, 6, 6), ('Q', 4): (8, 8, 8), ('Q', 6): (6, 6, 6)}]
+PASS mu = phi Icosaxes: P 6x4-gon+8x6-gon, Q 6x4-gon+8x6-gon; vol P + vol Q = 8; every facet of P and Q matched by exactly one CsCl tile; every face stabiliser = isometry group of the face with its edge kinds (orders: stabiliser, labelled, plain)   [pairing {P4->[('P', 4)], P6->[('Q', 6)], Q4->[('Q', 4)], Q6->[('P', 6)]}; orders {('P', 4): (8, 8, 8), ('P', 6): (6, 6, 6), ('Q', 4): (8, 8, 8), ('Q', 6): (6, 6, 6)}]
+PASS mu = mu_G Greater Golden Cut Cube: P 8x3-gon+6x8-gon, Q 8x3-gon; vol P + vol Q = 8; every facet of P and Q matched by exactly one CsCl tile; every face stabiliser = isometry group of the face with its edge kinds (orders: stabiliser, labelled, plain)   [pairing {P8->[('P', 8)], P3->[('Q', 3)], Q3->[('P', 3)]}; orders {('P', 8): (8, 8, 8), ('P', 3): (6, 6, 6), ('Q', 3): (6, 6, 6)}]
+PASS mu = mu_L Lesser Golden Cut Cube: P 8x3-gon+6x8-gon, Q 8x3-gon; vol P + vol Q = 8; every facet of P and Q matched by exactly one CsCl tile; every face stabiliser = isometry group of the face with its edge kinds (orders: stabiliser, labelled, plain)   [pairing {P8->[('P', 8)], P3->[('Q', 3)], Q3->[('P', 3)]}; orders {('P', 8): (8, 8, 8), ('P', 3): (6, 6, 6), ('Q', 3): (6, 6, 6)}]
+PASS mu = 1 + sqrt2 silver: P 8x3-gon+6x8-gon, Q 8x3-gon; vol P + vol Q = 8; every facet of P and Q matched by exactly one CsCl tile; every face stabiliser = isometry group of the face with its edge kinds (orders: stabiliser, labelled, plain)   [pairing {P8->[('P', 8)], P3->[('Q', 3)], Q3->[('P', 3)]}; orders {('P', 8): (8, 8, 16), ('P', 3): (6, 6, 6), ('Q', 3): (6, 6, 6)}]
+PASS mu = 2 + 1/phi^2: P 8x3-gon+6x8-gon, Q 8x3-gon; vol P + vol Q = 8; every facet of P and Q matched by exactly one CsCl tile; every face stabiliser = isometry group of the face with its edge kinds (orders: stabiliser, labelled, plain)   [pairing {P8->[('P', 8)], P3->[('Q', 3)], Q3->[('P', 3)]}; orders {('P', 8): (8, 8, 8), ('P', 3): (6, 6, 6), ('Q', 3): (6, 6, 6)}]
+PASS mu = 2 + 1/phi: P 8x3-gon+6x8-gon, Q 8x3-gon; vol P + vol Q = 8; every facet of P and Q matched by exactly one CsCl tile; every face stabiliser = isometry group of the face with its edge kinds (orders: stabiliser, labelled, plain)   [pairing {P8->[('P', 8)], P3->[('Q', 3)], Q3->[('P', 3)]}; orders {('P', 8): (8, 8, 8), ('P', 3): (6, 6, 6), ('Q', 3): (6, 6, 6)}]
+PASS mu = 3 - phi Unborn Axes: vol P + vol Q = 8 exactly (closed form)   [vol P = -8/3 + 8*sqrt(5)/3]
+PASS mu = phi Icosaxes: vol P + vol Q = 8 exactly (closed form)   [vol P = 32/3 - 8*sqrt(5)/3]
+PASS mu = mu_G Greater Golden Cut Cube: vol P + vol Q = 8 exactly (closed form)   [vol P = -152*sqrt(5)/3 - 104*sqrt(10)/3 + 80*sqrt(2) + 352/3]
+PASS mu = mu_L Lesser Golden Cut Cube: vol P + vol Q = 8 exactly (closed form)   [vol P = -80*sqrt(2) - 104*sqrt(10)/3 + 152*sqrt(5)/3 + 352/3]
+PASS mu = 1 + sqrt2 silver: vol P + vol Q = 8 exactly (closed form)   [vol P = -56/3 + 56*sqrt(2)/3]
+PASS mu = 2 + 1/phi^2: vol P + vol Q = 8 exactly (closed form)   [vol P = 32/3 - 4*sqrt(5)/3]
+PASS mu = 2 + 1/phi: vol P + vol Q = 8 exactly (closed form)   [vol P = -4 + 16*sqrt(5)/3]
+== Part C: the Delian walk of #51 (octet edge sqrt2: octahedron centred 0, tetrahedron centred (1/2,1/2,1/2))
+PASS the symmetry group of the cube with alternate corners cut has order 24 (Td)
+PASS t = 1/5: O(t) 8x3-gon+12x6-gon, T(t) 4x3-gon; vol O + 2 vol T = 2 (one octahedron and two tetrahedra of the octet); every face stabiliser = polygon isometry group   [orders {('O', 6): (4, 4, 4), ('O', 3): (6, 6, 6), ('T', 3): (6, 6, 6)}]
+PASS t = 1/4: O(t) 8x3-gon+12x6-gon, T(t) 4x3-gon; vol O + 2 vol T = 2 (one octahedron and two tetrahedra of the octet); every face stabiliser = polygon isometry group   [orders {('O', 6): (4, 4, 4), ('O', 3): (6, 6, 6), ('T', 3): (6, 6, 6)}]
+PASS t = 1/2: O(t) 8x3-gon, T(t) 4x3-gon+6x6-gon; vol O + 2 vol T = 2 (one octahedron and two tetrahedra of the octet); every face stabiliser = polygon isometry group   [orders {('O', 3): (6, 6, 6), ('T', 6): (4, 4, 4), ('T', 3): (6, 6, 6)}]
+PASS t = 2/3: O(t) 8x3-gon, T(t) 4x3-gon+6x6-gon; vol O + 2 vol T = 2 (one octahedron and two tetrahedra of the octet); every face stabiliser = polygon isometry group   [orders {('O', 3): (6, 6, 6), ('T', 6): (4, 4, 4), ('T', 3): (6, 6, 6)}]
+PASS t = 5/6: O(t) 8x3-gon, T(t) 4x3-gon+6x6-gon; vol O + 2 vol T = 2 (one octahedron and two tetrahedra of the octet); every face stabiliser = polygon isometry group   [orders {('O', 3): (6, 6, 6), ('T', 6): (4, 4, 4), ('T', 3): (6, 6, 6)}]
+PASS t = (2sqrt6-3)/15 equal edges: O(t) 8x3-gon+12x6-gon, T(t) 4x3-gon; vol O + 2 vol T = 2 (one octahedron and two tetrahedra of the octet); every face stabiliser = polygon isometry group   [orders {('O', 6): (4, 4, 4), ('O', 3): (6, 6, 6), ('T', 3): (6, 6, 6)}]
+PASS t = 5/3 - (2/3)sqrt2 equal edges: O(t) 8x3-gon, T(t) 4x3-gon+6x6-gon; vol O + 2 vol T = 2 (one octahedron and two tetrahedra of the octet); every face stabiliser = polygon isometry group   [orders {('O', 3): (6, 6, 6), ('T', 6): (4, 4, 4), ('T', 3): (6, 6, 6)}]
+PASS t = 1 - cbrt6/3 half and half: O(t) 8x3-gon, T(t) 4x3-gon+6x6-gon; vol O + 2 vol T = 2 (one octahedron and two tetrahedra of the octet); every face stabiliser = polygon isometry group   [orders {('O', 3): (6, 6, 6), ('T', 6): (4, 4, 4), ('T', 3): (6, 6, 6)}]
+PASS t = Delian bond 1 - (2/3)2^(-1/3) Samson + Delilah: O(t) 8x3-gon, T(t) 4x3-gon+6x6-gon; vol O + 2 vol T = 2 (one octahedron and two tetrahedra of the octet); every face stabiliser = polygon isometry group   [orders {('O', 3): (6, 6, 6), ('T', 6): (4, 4, 4), ('T', 3): (6, 6, 6)}]
+== Part D: the cube pyramid C6, the RD pyramid R12 and the bipyramid B (cube lattice Z^3, centres Z^3 + 1/2)
+PASS B (square of edge 1, apexes 1/2 above and below) has volume 1/3; C6 and R12 have volume 1/6
+PASS B = C6 + C6 (equator) = R12 + R12 (either diagonal plane): volumes add and the halves are mirror images
+PASS the rhombic dodecahedron |x|+|y|, |y|+|z|, |z|+|x| <= 1 has volume 2 = 12 x vol R12, and R12 (apex 0) is its face pyramid over x + y = 1
+PASS C6: base edges 1, lateral edges sqrt3/2; R12: base (rhombus) edges sqrt3/2, lateral edges 1 and sqrt3/2
+PASS every lateral face of C6 and of R12 is the triangle (1, sqrt3/2, sqrt3/2); in C6 the legs meet at the apex, in R12 at a three-fold corner
+PASS C6 dihedrals: base edges (1) pi/4, lateral edges (sqrt3/2) 2pi/3   [[(Fraction(3, 4), -1, Fraction(1, 4)), (Fraction(1, 1), 1, Fraction(1, 2))]]
+PASS R12 dihedrals: rhombus edges (sqrt3/2) pi/3, short lateral (sqrt3/2) 2pi/3, long lateral (1) pi/2   [[('lateral', Fraction(3, 4), -1, Fraction(1, 4)), ('lateral', Fraction(1, 1), 0, Fraction(0, 1)), ('rhombus', Fraction(3, 4), 1, Fraction(1, 4))]]
+PASS B tiling of the box [-2,2]^3, all R12, random diagonal on every face: 384 tiles, total volume 64 = 64; inner tiles: facets matched exactly, no foreign corner in any tile
+PASS B tiling of the box [-2,2]^3, C6 and R12 mixed, random: 384 tiles, total volume 64 = 64; inner tiles: facets matched exactly, no foreign corner in any tile
+PASS B tiling of the box [-2,2]^3, all equator (the cube lattice cut into C6): 384 tiles, total volume 64 = 64; inner tiles: facets matched exactly, no foreign corner in any tile
+PASS all cuts through the even corners: every even corner inside the box is the apex of 12 R12 (a whole RD, the fcc RD tiling); no odd corner is an apex   [13 inner RDs]
+PASS R12 is kept by the reflections in x = y and z = 0 (order-4 group acting as the rhombus's 4 isometries), and the rhombus has exactly 4; so the tile across the rhombus is the mirror image, and R12 + mirror = B
+   faces whose plain isometry group exceeds the stabiliser (label, piece, n-gon, index): [('1 + sqrt2 silver', 'P', 8, 2), ('3/2 Kelvin', 'P', 6, 2), ('3/2 Kelvin', 'Q', 6, 2)]
+PASS the plain isometry group of a face exceeds its stabiliser only for Kelvin's regular hexagons and the silver regular octagons
+== 67 PASS, 0 FAIL
