@@ -1,0 +1,58 @@
+== Part A: the two pyramids (base edge 1)
+PASS T pyramid: base edge 1, lateral edges sqrt6/4   [sqrt(6)/4]
+PASS O pyramid: base edge 1, lateral edges sqrt2/2   [sqrt(2)/2]
+PASS the three edge lengths sqrt6/4 < sqrt2/2 < 1 are distinct
+PASS faces: T lateral (1, .612, .612), O lateral (1, .707, .707), base (1, 1, 1): pairwise not congruent
+PASS O lateral face is right-angled at the apex
+PASS T base-edge dihedral = alpha/2: cos^2 = (1 + 1/3)/2 = 2/3   [cos=sqrt(6)/3]
+PASS T lateral-edge dihedral = 2pi/3 (cos = -1/2)   [-1/2]
+PASS O base-edge dihedral = (pi - alpha)/2: cos^2 = (1 - 1/3)/2 = 1/3   [cos=sqrt(3)/3]
+PASS O lateral-edge dihedral = pi/2
+PASS T base + O base wedges make pi/2: cos(a+b) = cos a cos b - sin a sin b = 0
+PASS alpha/pi irrational: 2cos(alpha) = 2/3 is not an algebraic integer (not an integer rational)
+   full turn (nT-base, nO-base, k T-lateral, l O-lateral): [(0, 0, 0, 4), (0, 0, 3, 0), (1, 1, 0, 3), (2, 2, 0, 2), (3, 3, 0, 1), (4, 4, 0, 0)]
+   flat (edge on a face of another tile): [(0, 0, 0, 2), (1, 1, 0, 1), (2, 2, 0, 0)]
+PASS full-turn configurations: exactly 6
+PASS flat configurations: exactly 3, none with a T lateral edge
+PASS a T lateral wedge occurs only as 3 T lateral wedges, alone
+PASS whole solids face to face: every edge has exactly 2 tetrahedra and 2 octahedra
+PASS vertex star: 3t = 4s and t(3a - pi) + s(2pi - 4a) = 4pi give t = 8, s = 6 (12 neighbours)
+PASS upper half of a flat hexagon: 3 rim tets + 3 rim octs leave 2pi - 3(3a-pi) - 3(2pi-4a) = 3a - pi, one tetrahedron
+PASS volumes: T pyramid = sqrt2/48 = tetrahedron/4, O pyramid = sqrt2/24 = octahedron/8 (base edge 1)   [sqrt(2)/48, sqrt(2)/24]
+   solid angles: T apex pi, O apex pi/2, T base corner alpha - pi/3, O base corner pi/2 - alpha
+== Part B: Barlow stackings, built layer by layer, cut into pyramids (exact)
+PASS fcc ABCABC: every inner face is shared by exactly two solids, one on each side
+PASS fcc ABCABC: every inner vertex has 8 tetrahedra, 6 octahedra, 12 neighbours, 2T + 2O round every edge
+PASS fcc ABCABC: a vertex has twisted (TTOO) edges iff its layer is h (neighbour layers equal); then exactly its 6 in-layer edges   [h=0 c=201]
+PASS fcc ABCABC cut into pyramids: every inner pyramid face shared by exactly two pyramids on opposite sides (face to face)
+PASS fcc ABCABC cut into pyramids: every lateral face joins two pyramids of one kind with one apex
+PASS fcc ABCABC cut into pyramids: edge configurations only (4,4,0,0), (0,0,3,0), (0,0,0,4)   [{(4, 4, 0, 0): 912, (0, 0, 3, 0): 1184, (0, 0, 0, 4): 874}]
+   fcc ABCABC: 4332 tetrahedra, 2166 octahedra -> 17328 T and 17328 O pyramids in the patch
+PASS hcp ABAB: every inner face is shared by exactly two solids, one on each side
+PASS hcp ABAB: every inner vertex has 8 tetrahedra, 6 octahedra, 12 neighbours, 2T + 2O round every edge
+PASS hcp ABAB: a vertex has twisted (TTOO) edges iff its layer is h (neighbour layers equal); then exactly its 6 in-layer edges   [h=207 c=0]
+PASS hcp ABAB cut into pyramids: every inner pyramid face shared by exactly two pyramids on opposite sides (face to face)
+PASS hcp ABAB cut into pyramids: every lateral face joins two pyramids of one kind with one apex
+PASS hcp ABAB cut into pyramids: edge configurations only (4,4,0,0), (0,0,3,0), (0,0,0,4)   [{(4, 4, 0, 0): 943, (0, 0, 3, 0): 1224, (0, 0, 0, 4): 860}]
+   hcp ABAB: 4332 tetrahedra, 2166 octahedra -> 17328 T and 17328 O pyramids in the patch
+PASS dhcp ABCB: every inner face is shared by exactly two solids, one on each side
+PASS dhcp ABCB: every inner vertex has 8 tetrahedra, 6 octahedra, 12 neighbours, 2T + 2O round every edge
+PASS dhcp ABCB: a vertex has twisted (TTOO) edges iff its layer is h (neighbour layers equal); then exactly its 6 in-layer edges   [h=123 c=117]
+PASS dhcp ABCB cut into pyramids: every inner pyramid face shared by exactly two pyramids on opposite sides (face to face)
+PASS dhcp ABCB cut into pyramids: every lateral face joins two pyramids of one kind with one apex
+PASS dhcp ABCB cut into pyramids: edge configurations only (4,4,0,0), (0,0,3,0), (0,0,0,4)   [{(4, 4, 0, 0): 1109, (0, 0, 3, 0): 1470, (0, 0, 0, 4): 1096}]
+   dhcp ABCB: 5054 tetrahedra, 2527 octahedra -> 20216 T and 20216 O pyramids in the patch
+PASS random 14 layers: every inner face is shared by exactly two solids, one on each side
+PASS random 14 layers: every inner vertex has 8 tetrahedra, 6 octahedra, 12 neighbours, 2T + 2O round every edge
+PASS random 14 layers: a vertex has twisted (TTOO) edges iff its layer is h (neighbour layers equal); then exactly its 6 in-layer edges   [h=117 c=369]
+PASS random 14 layers cut into pyramids: every inner pyramid face shared by exactly two pyramids on opposite sides (face to face)
+PASS random 14 layers cut into pyramids: every lateral face joins two pyramids of one kind with one apex
+PASS random 14 layers cut into pyramids: edge configurations only (4,4,0,0), (0,0,3,0), (0,0,0,4)   [{(4, 4, 0, 0): 2346, (0, 0, 3, 0): 3246, (0, 0, 0, 4): 2407}]
+   random 14 layers: 9386 tetrahedra, 4693 octahedra -> 37544 T and 37544 O pyramids in the patch
+   random sequence: ABCBCABCABCBAC
+== Part C: the cube of edge 1/sqrt2 is 4 T + 4 O pyramids (two ways); coordinates x sqrt2, cube [0,1]^3
+PASS cube cut by its even tetrahedron: 4 T + 4 O pyramids, inside the cube, disjoint interiors, volumes add to the cube
+PASS cube cut by its odd tetrahedron: 4 T + 4 O pyramids, inside the cube, disjoint interiors, volumes add to the cube
+PASS cube (even cut): each of its 6 faces is exactly two O lateral faces (right isosceles, area 1/2 each)
+PASS cube (odd cut): each of its 6 faces is exactly two O lateral faces (right isosceles, area 1/2 each)
+== 46 PASS, 0 FAIL
