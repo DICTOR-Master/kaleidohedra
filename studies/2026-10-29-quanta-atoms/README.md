@@ -6,3 +6,4 @@ DICTO 2026-10-29: Quanta of Space is the overview book, with "all the atoms" as 
 
 - scripts/render_atoms.py (dicto-big-brother): icons from solids/*.json (polygon faces, Newell normals).
 - scripts/atoms.py: index.csv → papers/book-quanta-of-space/atoms-catalogue.html, inserted between <!--ATOMS START--> and <!--ATOMS END--> in paper.html.
+- Quanta v1.5 draft (2026-11-03): index.csv brought to DICTO Solids v7 (Kagemusha, D106–D109) plus the 16 golden cut solids of #88 and #89 (14 new ones with D— until DICTO confirms the numbers; the two Golden Cut Icosidodecahedra rediscovered, Zefiro 2011). scripts/new_atoms.py (dicto-big-brother, with gcb.py and data/s2b-rhombic.json of studies/2026-11-03-golden-cuts-beyond-plato) writes their models, drawn by render_atoms.py as icons/piece-*.png; atoms.py lists D— rows with the atoms.
