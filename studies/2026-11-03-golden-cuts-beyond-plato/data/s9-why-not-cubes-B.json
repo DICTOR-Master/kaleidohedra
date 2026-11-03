@@ -1,0 +1,103 @@
+{
+ "part": "B",
+ "result": {
+  "B4": {
+   "order": 384,
+   "diagram_bonds": [
+    4,
+    3,
+    3
+   ],
+   "rank3_parabolic_orders": {
+    "omit node 1": 24,
+    "omit node 2": 12,
+    "omit node 3": 16,
+    "omit node 4": 48
+   },
+   "stabiliser_orders": {
+    "(1,0,0,0): tesseract cell-first, 16-cell corner-first": 48,
+    "(1,1,1,1): tesseract corner-first, 16-cell cell-first": 24,
+    "(1,1,0,0): tesseract face-first, 16-cell edge-first": 16,
+    "(1,1,1,0): tesseract edge-first, 16-cell face-first": 12
+   }
+  },
+  "F4": {
+   "order": 1152,
+   "diagram_bonds": [
+    3,
+    4,
+    3
+   ],
+   "rank3_parabolic_orders": {
+    "omit node 1": 48,
+    "omit node 2": 12,
+    "omit node 3": 12,
+    "omit node 4": 48
+   },
+   "stabiliser_orders": {
+    "(1,0,0,0): 24-cell cell-first (same orbit as (1,1,1,1))": 48,
+    "(1,1,0,0): 24-cell corner-first": 48,
+    "(2,1,1,0): 24-cell face-first": 12,
+    "(3,1,1,1): 24-cell edge-first": 12
+   }
+  },
+  "H4": {
+   "order": 14400,
+   "diagram_bonds": [
+    5,
+    3,
+    3
+   ],
+   "rank3_parabolic_orders": {
+    "omit node 1": 24,
+    "omit node 2": 12,
+    "omit node 3": 20,
+    "omit node 4": 120
+   },
+   "stabiliser_orders": {
+    "600-cell corner (= 120-cell cell centre; = (1,0,0,0), a corner of the inscribed 24-cells)": 120,
+    "600-cell cell centre (= 120-cell corner)": 24,
+    "600-cell edge midpoint (= 120-cell pentagon centre)": 20,
+    "600-cell triangle centre (= 120-cell edge midpoint)": 12,
+    "(1,1,0,0): cell centre of the inscribed 24-cell with corners (\u00b11,0,0,0), (\u00b11/2,...)": 24
+   }
+  },
+  "A4": {
+   "order": 120,
+   "diagram_bonds": [
+    3,
+    3,
+    3
+   ],
+   "rank3_parabolic_orders": {
+    "omit node 1": 24,
+    "omit node 2": 12,
+    "omit node 3": 12,
+    "omit node 4": 24
+   }
+  }
+ },
+ "checks": [
+  {
+   "check": "group orders: A4 120, B4 384, F4 1152, H4 14400 (H4 orbits counted in floating point)",
+   "pass": true
+  },
+  {
+   "check": "rank-3 parabolic orders: B4 {48, 24, 16, 12}; F4 {48, 48, 12, 12}; H4 {120, 24, 20, 12}; A4 {24, 12, 12, 24}",
+   "pass": true
+  },
+  {
+   "check": "only B4 and F4 have a parabolic subgroup of order divisible by 48 (B3, C3); for H4 and A4 none, and H4 has only one of order 24 (A3, the stabiliser of a 120-cell corner)",
+   "pass": true
+  },
+  {
+   "check": "H4 stabilisers: 600-cell corner 120 (icosahedral), 120-cell corner 24 (A3), inscribed 24-cell cell centre (1,1,0,0) 24",
+   "pass": true
+  },
+  {
+   "check": "B4 stabiliser of (1,0,0,0) has order 48 and of (1,1,1,1) order 24; F4 stabilisers of (1,0,0,0) and (1,1,0,0) have order 48",
+   "pass": true
+  }
+ ],
+ "seconds": 5
+}

@@ -1,0 +1,958 @@
+{
+ "part": "C",
+ "result": {
+  "tesseract (1,0,0,0) cell-first": [
+   {
+    "where": "layer",
+    "height": "0",
+    "corners": 8,
+    "faces": {
+     "4": 6
+    },
+    "name": "cube",
+    "layer_corners": 0
+   },
+   {
+    "where": "gap",
+    "height": "1/2",
+    "corners": 8,
+    "faces": {
+     "4": 6
+    },
+    "name": "cube"
+   },
+   {
+    "where": "layer",
+    "height": "1",
+    "corners": 8,
+    "faces": {
+     "4": 6
+    },
+    "name": "cube",
+    "layer_corners": 8
+   }
+  ],
+  "tesseract (1,1,1,1) corner-first, centre": [
+   {
+    "where": "centre",
+    "height": "0",
+    "corners": 6,
+    "faces": {
+     "3": 8
+    },
+    "name": "octahedron"
+   }
+  ],
+  "16-cell (1,0,0,0) corner-first": [
+   {
+    "where": "layer",
+    "height": "0",
+    "corners": 6,
+    "faces": {
+     "3": 8
+    },
+    "name": "octahedron",
+    "layer_corners": 6
+   },
+   {
+    "where": "gap",
+    "height": "1/2",
+    "corners": 6,
+    "faces": {
+     "3": 8
+    },
+    "name": "octahedron"
+   },
+   {
+    "where": "layer",
+    "height": "1",
+    "corners": 1,
+    "layer_corners": 1
+   }
+  ],
+  "16-cell (1,1,1,1) cell-first, centre": [
+   {
+    "where": "centre",
+    "height": "0",
+    "corners": 12,
+    "faces": {
+     "3": 8,
+     "4": 6
+    },
+    "name": "cuboctahedron"
+   }
+  ],
+  "24-cell (1,0,0,0) cell-first": [
+   {
+    "where": "layer",
+    "height": "0",
+    "corners": 12,
+    "faces": {
+     "3": 8,
+     "4": 6
+    },
+    "name": "cuboctahedron",
+    "layer_corners": 12
+   },
+   {
+    "where": "gap",
+    "height": "1/2",
+    "corners": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "name": "octahedron cut at the corners (truncated-octahedron type)"
+   },
+   {
+    "where": "layer",
+    "height": "1",
+    "corners": 6,
+    "faces": {
+     "3": 8
+    },
+    "name": "octahedron",
+    "layer_corners": 6
+   }
+  ],
+  "24-cell (1,1,0,0) corner-first": [
+   {
+    "where": "layer",
+    "height": "0",
+    "corners": 14,
+    "faces": {
+     "4": 12
+    },
+    "name": "rhombic dodecahedron",
+    "layer_corners": 6
+   },
+   {
+    "where": "gap",
+    "height": "1/2",
+    "corners": 32,
+    "faces": {
+     "4": 6,
+     "6": 12
+    },
+    "name": "cube cut along its edges (chamfered cube)"
+   },
+   {
+    "where": "layer",
+    "height": "1",
+    "corners": 8,
+    "faces": {
+     "4": 6
+    },
+    "name": "cube",
+    "layer_corners": 8
+   },
+   {
+    "where": "gap",
+    "height": "3/2",
+    "corners": 8,
+    "faces": {
+     "4": 6
+    },
+    "name": "cube"
+   },
+   {
+    "where": "layer",
+    "height": "2",
+    "corners": 1,
+    "layer_corners": 1
+   }
+  ],
+  "600-cell (1,0,0,0) corner-first (icosahedral; the inscribed 24-cells' corner direction)": [
+   {
+    "where": "layer",
+    "height": "0",
+    "corners": 42,
+    "faces": {
+     "3": 80
+    },
+    "name": "",
+    "layer_corners": 30
+   },
+   {
+    "where": "gap",
+    "height": "-1/8 + 1/8\u221a5",
+    "corners": 132,
+    "faces": {
+     "3": 140,
+     "4": 60
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "-1/4 + 1/4\u221a5",
+    "corners": 72,
+    "faces": {
+     "3": 140
+    },
+    "name": "",
+    "layer_corners": 12
+   },
+   {
+    "where": "gap",
+    "height": "1/8 + 1/8\u221a5",
+    "corners": 132,
+    "faces": {
+     "3": 140,
+     "4": 60
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "1/2",
+    "corners": 32,
+    "faces": {
+     "3": 60
+    },
+    "name": "",
+    "layer_corners": 20
+   },
+   {
+    "where": "gap",
+    "height": "3/8 + 1/8\u221a5",
+    "corners": 72,
+    "faces": {
+     "3": 80,
+     "4": 30
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "1/4 + 1/4\u221a5",
+    "corners": 12,
+    "faces": {
+     "3": 20
+    },
+    "name": "icosahedron",
+    "layer_corners": 12
+   },
+   {
+    "where": "gap",
+    "height": "5/8 + 1/8\u221a5",
+    "corners": 12,
+    "faces": {
+     "3": 20
+    },
+    "name": "icosahedron"
+   },
+   {
+    "where": "layer",
+    "height": "1",
+    "corners": 1,
+    "layer_corners": 1
+   }
+  ],
+  "600-cell (1,1,0,0) cell-first (A3: the inscribed 24-cell's cell direction)": [
+   {
+    "where": "layer",
+    "height": "0",
+    "corners": 84,
+    "faces": {
+     "3": 152,
+     "4": 6
+    },
+    "name": "",
+    "layer_corners": 12
+   },
+   {
+    "where": "gap",
+    "height": "3/8 - 1/8\u221a5",
+    "corners": 144,
+    "faces": {
+     "3": 152,
+     "4": 66
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "3/4 - 1/4\u221a5",
+    "corners": 124,
+    "faces": {
+     "3": 160,
+     "4": 42
+    },
+    "name": "",
+    "layer_corners": 4
+   },
+   {
+    "where": "gap",
+    "height": "1/4",
+    "corners": 144,
+    "faces": {
+     "3": 152,
+     "4": 66
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "-1/4 + 1/4\u221a5",
+    "corners": 84,
+    "faces": {
+     "3": 140,
+     "4": 12
+    },
+    "name": "",
+    "layer_corners": 12
+   },
+   {
+    "where": "gap",
+    "height": "1/8 + 1/8\u221a5",
+    "corners": 132,
+    "faces": {
+     "3": 140,
+     "4": 60
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "1/2",
+    "corners": 72,
+    "faces": {
+     "3": 116,
+     "4": 12
+    },
+    "name": "",
+    "layer_corners": 12
+   },
+   {
+    "where": "gap",
+    "height": "3/8 + 1/8\u221a5",
+    "corners": 108,
+    "faces": {
+     "3": 116,
+     "4": 48
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "1/4 + 1/4\u221a5",
+    "corners": 48,
+    "faces": {
+     "3": 92
+    },
+    "name": "",
+    "layer_corners": 12
+   },
+   {
+    "where": "gap",
+    "height": "5/8 + 1/8\u221a5",
+    "corners": 84,
+    "faces": {
+     "3": 92,
+     "4": 36
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "1",
+    "corners": 42,
+    "faces": {
+     "3": 80
+    },
+    "name": "",
+    "layer_corners": 6
+   },
+   {
+    "where": "gap",
+    "height": "1/2 + 1/4\u221a5",
+    "corners": 60,
+    "faces": {
+     "3": 68,
+     "4": 24
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "1/2\u221a5",
+    "corners": 28,
+    "faces": {
+     "3": 52
+    },
+    "name": "",
+    "layer_corners": 4
+   },
+   {
+    "where": "gap",
+    "height": "3/8 + 3/8\u221a5",
+    "corners": 36,
+    "faces": {
+     "3": 44,
+     "4": 12
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "3/4 + 1/4\u221a5",
+    "corners": 4,
+    "faces": {
+     "3": 4
+    },
+    "name": "regular tetrahedron",
+    "layer_corners": 4
+   }
+  ],
+  "120-cell (1,0,0,0) cell-first (icosahedral)": [
+   {
+    "where": "layer",
+    "height": "0",
+    "corners": 80,
+    "faces": {
+     "5": 12,
+     "6": 30
+    },
+    "name": "",
+    "layer_corners": 60
+   },
+   {
+    "where": "gap",
+    "height": "1/4",
+    "corners": 80,
+    "faces": {
+     "5": 12,
+     "6": 30
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "1/2",
+    "corners": 80,
+    "faces": {
+     "5": 12,
+     "6": 30
+    },
+    "name": "",
+    "layer_corners": 20
+   },
+   {
+    "where": "gap",
+    "height": "3/8 + 1/8\u221a5",
+    "corners": 120,
+    "faces": {
+     "3": 20,
+     "5": 12,
+     "8": 30
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "1/4 + 1/4\u221a5",
+    "corners": 60,
+    "faces": {
+     "3": 20,
+     "4": 30,
+     "5": 12
+    },
+    "name": "",
+    "layer_corners": 60
+   },
+   {
+    "where": "gap",
+    "height": "1/2 + 1/4\u221a5",
+    "corners": 120,
+    "faces": {
+     "4": 30,
+     "6": 20,
+     "10": 12
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "3/4 + 1/4\u221a5",
+    "corners": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "name": "",
+    "layer_corners": 60
+   },
+   {
+    "where": "gap",
+    "height": "7/8 + 3/8\u221a5",
+    "corners": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "1 + 1/2\u221a5",
+    "corners": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "name": "",
+    "layer_corners": 60
+   },
+   {
+    "where": "gap",
+    "height": "5/4 + 1/2\u221a5",
+    "corners": 60,
+    "faces": {
+     "5": 12,
+     "6": 20
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "3/2 + 1/2\u221a5",
+    "corners": 30,
+    "faces": {
+     "3": 20,
+     "5": 12
+    },
+    "name": "icosidodecahedron",
+    "layer_corners": 30
+   },
+   {
+    "where": "gap",
+    "height": "11/8 + 5/8\u221a5",
+    "corners": 60,
+    "faces": {
+     "3": 20,
+     "10": 12
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "5/4 + 3/4\u221a5",
+    "corners": 20,
+    "faces": {
+     "5": 12
+    },
+    "name": "dodecahedron",
+    "layer_corners": 20
+   },
+   {
+    "where": "gap",
+    "height": "3/2 + 3/4\u221a5",
+    "corners": 20,
+    "faces": {
+     "5": 12
+    },
+    "name": "dodecahedron"
+   },
+   {
+    "where": "layer",
+    "height": "7/4 + 3/4\u221a5",
+    "corners": 20,
+    "faces": {
+     "5": 12
+    },
+    "name": "dodecahedron",
+    "layer_corners": 20
+   }
+  ],
+  "120-cell (1,1,0,0) corner-first (A3)": [
+   {
+    "where": "layer",
+    "height": "0",
+    "corners": 78,
+    "faces": {
+     "5": 24,
+     "6": 20
+    },
+    "name": "",
+    "layer_corners": 54
+   },
+   {
+    "where": "gap",
+    "height": "1/4",
+    "corners": 108,
+    "faces": {
+     "4": 12,
+     "5": 12,
+     "6": 20,
+     "8": 12
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "1/2",
+    "corners": 84,
+    "faces": {
+     "3": 12,
+     "4": 12,
+     "6": 32
+    },
+    "name": "",
+    "layer_corners": 24
+   },
+   {
+    "where": "gap",
+    "height": "3/8 + 1/8\u221a5",
+    "corners": 108,
+    "faces": {
+     "3": 12,
+     "6": 32,
+     "8": 12
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "1/4 + 1/4\u221a5",
+    "corners": 72,
+    "faces": {
+     "3": 4,
+     "5": 24,
+     "6": 16
+    },
+    "name": "",
+    "layer_corners": 24
+   },
+   {
+    "where": "gap",
+    "height": "1/2 + 1/4\u221a5",
+    "corners": 84,
+    "faces": {
+     "3": 4,
+     "5": 12,
+     "6": 16,
+     "7": 12
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "3/4 + 1/4\u221a5",
+    "corners": 76,
+    "faces": {
+     "5": 12,
+     "6": 28
+    },
+    "name": "",
+    "layer_corners": 28
+   },
+   {
+    "where": "gap",
+    "height": "5/8 + 3/8\u221a5",
+    "corners": 100,
+    "faces": {
+     "4": 12,
+     "5": 12,
+     "6": 16,
+     "8": 12
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "1/2 + 1/2\u221a5",
+    "corners": 76,
+    "faces": {
+     "3": 12,
+     "4": 12,
+     "6": 28
+    },
+    "name": "",
+    "layer_corners": 24
+   },
+   {
+    "where": "gap",
+    "height": "7/8 + 3/8\u221a5",
+    "corners": 100,
+    "faces": {
+     "3": 12,
+     "6": 28,
+     "8": 12
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "5/4 + 1/4\u221a5",
+    "corners": 76,
+    "faces": {
+     "5": 12,
+     "6": 28
+    },
+    "name": "",
+    "layer_corners": 12
+   },
+   {
+    "where": "gap",
+    "height": "9/8 + 3/8\u221a5",
+    "corners": 76,
+    "faces": {
+     "5": 12,
+     "6": 28
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "1 + 1/2\u221a5",
+    "corners": 64,
+    "faces": {
+     "3": 4,
+     "5": 24,
+     "6": 12
+    },
+    "name": "",
+    "layer_corners": 24
+   },
+   {
+    "where": "gap",
+    "height": "5/4 + 1/2\u221a5",
+    "corners": 88,
+    "faces": {
+     "3": 4,
+     "4": 6,
+     "5": 12,
+     "7": 24
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "3/2 + 1/2\u221a5",
+    "corners": 56,
+    "faces": {
+     "3": 12,
+     "4": 6,
+     "5": 12,
+     "6": 12
+    },
+    "name": "",
+    "layer_corners": 32
+   },
+   {
+    "where": "gap",
+    "height": "11/8 + 5/8\u221a5",
+    "corners": 88,
+    "faces": {
+     "3": 16,
+     "6": 12,
+     "8": 18
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "5/4 + 3/4\u221a5",
+    "corners": 52,
+    "faces": {
+     "3": 4,
+     "4": 12,
+     "6": 18
+    },
+    "name": "",
+    "layer_corners": 24
+   },
+   {
+    "where": "gap",
+    "height": "3/2 + 3/4\u221a5",
+    "corners": 64,
+    "faces": {
+     "4": 12,
+     "6": 10,
+     "7": 12
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "7/4 + 3/4\u221a5",
+    "corners": 40,
+    "faces": {
+     "5": 12,
+     "6": 10
+    },
+    "name": "",
+    "layer_corners": 24
+   },
+   {
+    "where": "gap",
+    "height": "13/8 + 7/8\u221a5",
+    "corners": 40,
+    "faces": {
+     "5": 12,
+     "6": 10
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "3/2 + \u221a5",
+    "corners": 40,
+    "faces": {
+     "5": 12,
+     "6": 10
+    },
+    "name": "",
+    "layer_corners": 4
+   },
+   {
+    "where": "gap",
+    "height": "15/8 + 7/8\u221a5",
+    "corners": 48,
+    "faces": {
+     "3": 4,
+     "6": 22
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "9/4 + 3/4\u221a5",
+    "corners": 36,
+    "faces": {
+     "3": 4,
+     "4": 12,
+     "6": 10
+    },
+    "name": "",
+    "layer_corners": 12
+   },
+   {
+    "where": "gap",
+    "height": "17/8 + 7/8\u221a5",
+    "corners": 48,
+    "faces": {
+     "4": 12,
+     "6": 8,
+     "8": 6
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "2 + \u221a5",
+    "corners": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "name": "octahedron cut at the corners (truncated-octahedron type)",
+    "layer_corners": 24
+   },
+   {
+    "where": "gap",
+    "height": "9/4 + \u221a5",
+    "corners": 24,
+    "faces": {
+     "4": 6,
+     "6": 8
+    },
+    "name": "octahedron cut at the corners (truncated-octahedron type)"
+   },
+   {
+    "where": "layer",
+    "height": "5/2 + \u221a5",
+    "corners": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "name": "",
+    "layer_corners": 12
+   },
+   {
+    "where": "gap",
+    "height": "19/8 + 9/8\u221a5",
+    "corners": 12,
+    "faces": {
+     "3": 4,
+     "6": 4
+    },
+    "name": ""
+   },
+   {
+    "where": "layer",
+    "height": "9/4 + 5/4\u221a5",
+    "corners": 4,
+    "faces": {
+     "3": 4
+    },
+    "name": "regular tetrahedron",
+    "layer_corners": 4
+   },
+   {
+    "where": "gap",
+    "height": "21/8 + 9/8\u221a5",
+    "corners": 4,
+    "faces": {
+     "3": 4
+    },
+    "name": "regular tetrahedron"
+   },
+   {
+    "where": "layer",
+    "height": "3 + \u221a5",
+    "corners": 1,
+    "layer_corners": 1
+   }
+  ]
+ },
+ "checks": [
+  {
+   "check": "(1,1,0,0) is the direction of a 120-cell corner (some corner has x1 = x2 > 0, x3 = x4 = 0), so its stabiliser is the A3 of Part B",
+   "pass": true
+  },
+  {
+   "check": "tesseract (1,0,0,0) cell-first: no section in this sequence is a cube cut at the corners (8 triangles, 6 octagons)",
+   "pass": true
+  },
+  {
+   "check": "tesseract (1,1,1,1) corner-first, centre: no section in this sequence is a cube cut at the corners (8 triangles, 6 octagons)",
+   "pass": true
+  },
+  {
+   "check": "16-cell (1,0,0,0) corner-first: no section in this sequence is a cube cut at the corners (8 triangles, 6 octagons)",
+   "pass": true
+  },
+  {
+   "check": "16-cell (1,1,1,1) cell-first, centre: no section in this sequence is a cube cut at the corners (8 triangles, 6 octagons)",
+   "pass": true
+  },
+  {
+   "check": "24-cell (1,0,0,0) cell-first: no section in this sequence is a cube cut at the corners (8 triangles, 6 octagons)",
+   "pass": true
+  },
+  {
+   "check": "24-cell (1,1,0,0) corner-first: no section in this sequence is a cube cut at the corners (8 triangles, 6 octagons)",
+   "pass": true
+  },
+  {
+   "check": "600-cell (1,0,0,0) corner-first (icosahedral; the inscribed 24-cells' corner direction): no section in this sequence is a cube cut at the corners (8 triangles, 6 octagons)",
+   "pass": true
+  },
+  {
+   "check": "600-cell (1,1,0,0) cell-first (A3: the inscribed 24-cell's cell direction): no section in this sequence is a cube cut at the corners (8 triangles, 6 octagons)",
+   "pass": true
+  },
+  {
+   "check": "120-cell (1,0,0,0) cell-first (icosahedral): no section in this sequence is a cube cut at the corners (8 triangles, 6 octagons)",
+   "pass": true
+  },
+  {
+   "check": "120-cell (1,1,0,0) corner-first (A3): no section in this sequence is a cube cut at the corners (8 triangles, 6 octagons)",
+   "pass": true
+  }
+ ],
+ "seconds": 44
+}

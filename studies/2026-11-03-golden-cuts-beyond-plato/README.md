@@ -116,3 +116,25 @@ scripts/: gcb.py, gcb_exact.py (geometry), s1 ... s6, figs.py. data/: s1-archime
 s2b-rhombic.json (incl. corner coordinates at unit edge), s3-kepler-poinsot.json, s4-sections4d.json (+ run log),
 s5-exact4d.json, s6-spacefill.json, s7-icosaxes-exact.json, s8-sections-bijection.json; every file carries its checks (all pass: 235, 51, 12, 24, -, 7, 10, 10, 4).
 Run on dicto-big-brother with ~/geom/bin/python from scripts/ (s4 and s5 need ~/kres-tmp/dataset-v7 and the #65 atlas code).
+
+## Why not the cubes, and where they live (s9-s11, 2026-11-03 evening)
+
+- **Theorem A (s9 A, exact).** No hyperplane section of the six regular 4D polytopes is a corner-cut cube (any depth).
+  Faces of a section are plane sections of cells: tetrahedra <= 4 sides, cubes and octahedra <= 6; a regular
+  dodecahedron has no equiangular-octagon plane section (Groebner basis {1} for all 45 four-axis configurations over Q(phi);
+  positive control passes).
+- **Directions (s9 B, C).** Rank-3 parabolic orders: B4 48/24/16/12, F4 48/48/12/12, H4 120/24/20/12, A4 24/24/12/12.
+  Inherited O_h: tesseract/16-cell (1,0,0,0) all heights, (1,1,1,1) centre only; 24-cell (1,0,0,0) and (1,1,0,0);
+  600-cell/120-cell only the central section perpendicular to a 120-cell corner (= (1,1,0,0), stabiliser A3 of order 24).
+  Sequences exact (s9-why-not-cubes-C.json): 24-cell cell-first = cuboctahedron, octahedra cut at the corners, octahedron;
+  corner-first = rhombic dodecahedron, chamfered cubes (6 squares, 12 hexagons), cube, cubes.
+- **Theorem B (s9 D, s10, exact).** Rectified tesseract {|x_i| <= 1, sum |x_i| <= 3}: section x1 = h is the cube cut at
+  x = h/2; Greater/Lesser Golden Cut Cubes at h = 2x_G, 2x_L. Nine uniform B4/F4 polytopes have golden cube sections
+  (14 exact hits, s9-why-not-cubes-D.json). H4 family: no central O_h section has 24 corners (float).
+- **Proposition C / Corollary D (s10, exact).** Cut cubes (any depth) + octahedra fill space (DICTO proposed); the filling
+  is the section y1 = h of the rectified tesseractic honeycomb, x = h/2. Regular honeycombs: no cut cube (Theorem A).
+- **Star polytopes (s11, float).** 38 chord classes of the 600-cell and 120-cell corners (incl. all ten Schlaefli-Hess edge
+  classes; {5/2,3,3} = the class with 36-degree edge angles), icosahedral direction, 3000 heights: no star section has the
+  corner set of a golden cut star polyhedron; no golden cube centrally. Non-star coincidences: the convex 120-cell's own
+  edges and one non-polytope chord class.
+- fig6_cubes.py: Figure 3 of #89. cubes_lib.py: exact field Q(sqrt2, sqrt5) and tools.

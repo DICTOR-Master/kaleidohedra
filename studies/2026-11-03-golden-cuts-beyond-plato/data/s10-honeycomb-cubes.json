@@ -1,0 +1,93 @@
+{
+ "result": {
+  "golden_depths": {
+   "greater": "-1/2 - 3/4\u221a2 + 1/2\u221a5 + 1/4\u221a10",
+   "lesser": "-1/2 + 3/4\u221a2 - 1/2\u221a5 + 1/4\u221a10"
+  },
+  "rectified_tesseractic_honeycomb": [
+   {
+    "solid": "Greater Golden Cut Cube",
+    "x": "-1/2 - 3/4\u221a2 + 1/2\u221a5 + 1/4\u221a10",
+    "height_h": "-1 - 3/2\u221a2 + \u221a5 + 1/2\u221a10",
+    "height_float": 0.6958864640243367,
+    "cut_cube_corners": 24,
+    "octahedron_corners": 6
+   },
+   {
+    "solid": "Lesser Golden Cut Cube",
+    "x": "-1/2 + 3/4\u221a2 - 1/2\u221a5 + 1/4\u221a10",
+    "height_h": "-1 + 3/2\u221a2 - \u221a5 + 1/2\u221a10",
+    "height_float": 0.4663911961440428,
+    "cut_cube_corners": 24,
+    "octahedron_corners": 6
+   }
+  ],
+  "regular_honeycombs": "no octagon in any section of a tesseract, 16-cell or 24-cell (s9 Part A), so no corner-cut cube in any section"
+ },
+ "checks": [
+  {
+   "check": "x_G(4) = -1/2 - 3/4\u221a2 + 1/2\u221a5 + 1/4\u221a10 = 0.347943232, x_L(4) = -1/2 + 3/4\u221a2 - 1/2\u221a5 + 1/4\u221a10 = 0.233195598; corner/original side ratios phi and 1/phi (side sqrt2 x against 1 - 2x)",
+   "pass": true
+  },
+  {
+   "check": "3D, Greater Golden Cut Cube (edge 1): its corner triangle at a lattice point is exactly a face of the regular octahedron with corners at distance x from that point (edge x sqrt2)",
+   "pass": true
+  },
+  {
+   "check": "3D, Greater: volume per lattice point, cut cube 1 - 8 x^3/6 plus octahedron 4 x^3/3, is exactly 1",
+   "pass": true
+  },
+  {
+   "check": "3D, Greater: the cut unit cube is the Greater Golden Cut Cube (corner-to-corner, exact)",
+   "pass": true
+  },
+  {
+   "check": "3D, Lesser Golden Cut Cube (edge 1): its corner triangle at a lattice point is exactly a face of the regular octahedron with corners at distance x from that point (edge x sqrt2)",
+   "pass": true
+  },
+  {
+   "check": "3D, Lesser: volume per lattice point, cut cube 1 - 8 x^3/6 plus octahedron 4 x^3/3, is exactly 1",
+   "pass": true
+  },
+  {
+   "check": "3D, Lesser: the cut unit cube is the Lesser Golden Cut Cube (corner-to-corner, exact)",
+   "pass": true
+  },
+  {
+   "check": "rectified tesseract: 32 corners, all permutations of (\u00b11,\u00b11,\u00b11,0); each satisfies |y|_inf <= 1 and |y|_1 = 3",
+   "pass": true
+  },
+  {
+   "check": "rectified tesseract: 96 edges of length sqrt2",
+   "pass": true
+  },
+  {
+   "check": "4D, Greater: the rectified tesseract cut by y1 = h = 2x = -1 - 3/2\u221a2 + \u221a5 + 1/2\u221a10 = 0.695886464 has 24 corners and is the Greater Golden Cut Cube of edge 2 (corner-to-corner, all 276 squared distances equal, exact)",
+   "pass": true
+  },
+  {
+   "check": "4D, Greater: the 16-cell at (1,1,1,1) cut by y1 = h is the regular octahedron with corners (1,1,1) \u00b1 h e_j (edge h sqrt2)",
+   "pass": true
+  },
+  {
+   "check": "4D, Greater: the corner triangle of the cut cube at (1,1,1) is exactly a face of that octahedron (face to face)",
+   "pass": true
+  },
+  {
+   "check": "4D, Lesser: the rectified tesseract cut by y1 = h = 2x = -1 + 3/2\u221a2 - \u221a5 + 1/2\u221a10 = 0.466391196 has 24 corners and is the Lesser Golden Cut Cube of edge 2 (corner-to-corner, all 276 squared distances equal, exact)",
+   "pass": true
+  },
+  {
+   "check": "4D, Lesser: the 16-cell at (1,1,1,1) cut by y1 = h is the regular octahedron with corners (1,1,1) \u00b1 h e_j (edge h sqrt2)",
+   "pass": true
+  },
+  {
+   "check": "4D, Lesser: the corner triangle of the cut cube at (1,1,1) is exactly a face of that octahedron (face to face)",
+   "pass": true
+  },
+  {
+   "check": "4D volume per point of 2Z^4: rectified tesseract 16 - 16 (1/24) plus one 16-cell 16/24 = 16 = 2^4 (the honeycomb fills space)",
+   "pass": true
+  }
+ ]
+}

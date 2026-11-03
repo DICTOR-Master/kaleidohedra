@@ -1,0 +1,3587 @@
+{
+ "part": "D",
+ "result": {
+  "polytopes": [
+   {
+    "family": "B4",
+    "rings": [
+     1
+    ],
+    "polytope": "tesseract",
+    "direction": "B3 direction (1,0,0,0)",
+    "corners": 16,
+    "edges": 32,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 8,
+      "faces": {
+       "4": 6
+      },
+      "name": "cube"
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 8,
+      "faces": {
+       "4": 6
+      },
+      "name": "cube"
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 8,
+      "faces": {
+       "4": 6
+      },
+      "name": "cube"
+     }
+    ],
+    "central_(1,1,1,1)": {
+     "corners": 6,
+     "faces": {
+      "3": 8
+     },
+     "name": "octahedron"
+    }
+   },
+   {
+    "family": "B4",
+    "rings": [
+     2
+    ],
+    "polytope": "rectified tesseract",
+    "direction": "B3 direction (1,0,0,0)",
+    "corners": 32,
+    "edges": 96,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 8,
+      "faces": {
+       "4": 6
+      },
+      "name": "cube"
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x_range": [
+       "0",
+       "1/2"
+      ],
+      "x_range_float": [
+       0.0,
+       0.5
+      ],
+      "golden": [
+       "Greater",
+       "Lesser"
+      ]
+     },
+     {
+      "where": "layer",
+      "height": "1/2\u221a2",
+      "corners": 12,
+      "faces": {
+       "3": 8,
+       "4": 6
+      },
+      "name": "cuboctahedron"
+     }
+    ],
+    "central_(1,1,1,1)": {
+     "corners": 24,
+     "faces": {
+      "4": 6,
+      "6": 8
+     },
+     "name": "octahedron cut at the corners (truncated-octahedron type)"
+    }
+   },
+   {
+    "family": "B4",
+    "rings": [
+     3
+    ],
+    "polytope": "rectified 16-cell (= 24-cell)",
+    "direction": "B3 direction (1,0,0,0)",
+    "corners": 24,
+    "edges": 96,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 12,
+      "faces": {
+       "3": 8,
+       "4": 6
+      },
+      "name": "cuboctahedron"
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "layer",
+      "height": "1/2\u221a2",
+      "corners": 6,
+      "faces": {
+       "3": 8
+      },
+      "name": "octahedron"
+     }
+    ],
+    "central_(1,1,1,1)": {
+     "corners": 12,
+     "faces": {
+      "3": 8,
+      "4": 6
+     },
+     "name": "cuboctahedron"
+    }
+   },
+   {
+    "family": "B4",
+    "rings": [
+     4
+    ],
+    "polytope": "16-cell",
+    "direction": "B3 direction (1,0,0,0)",
+    "corners": 8,
+    "edges": 24,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 6,
+      "faces": {
+       "3": 8
+      },
+      "name": "octahedron"
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2\u221a2",
+      "corners": 6,
+      "faces": {
+       "3": 8
+      },
+      "name": "octahedron"
+     }
+    ],
+    "central_(1,1,1,1)": {
+     "corners": 12,
+     "faces": {
+      "3": 8,
+      "4": 6
+     },
+     "name": "cuboctahedron"
+    }
+   },
+   {
+    "family": "B4",
+    "rings": [
+     1,
+     2
+    ],
+    "polytope": "truncated tesseract",
+    "direction": "B3 direction (1,0,0,0)",
+    "corners": 64,
+    "edges": 128,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 8,
+      "faces": {
+       "4": 6
+      },
+      "name": "cube"
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 8,
+      "faces": {
+       "4": 6
+      },
+      "name": "cube"
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 8,
+      "faces": {
+       "4": 6
+      },
+      "name": "cube"
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1/2 + 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x_range": [
+       "0",
+       "1 - 1/2\u221a2"
+      ],
+      "x_range_float": [
+       0.0,
+       0.2928932188134524
+      ],
+      "golden": [
+       "Lesser"
+      ]
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x": "1 - 1/2\u221a2"
+     }
+    ],
+    "central_(1,1,1,1)": {
+     "corners": 24,
+     "faces": {
+      "4": 6,
+      "6": 8
+     },
+     "name": "octahedron cut at the corners (truncated-octahedron type)"
+    }
+   },
+   {
+    "family": "B4",
+    "rings": [
+     1,
+     3
+    ],
+    "polytope": "cantellated tesseract",
+    "direction": "B3 direction (1,0,0,0)",
+    "corners": 96,
+    "edges": 288,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x": "1 - 1/2\u221a2"
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x_range": [
+       "1 - 1/2\u221a2",
+       "1 - 1/2\u221a2"
+      ],
+      "x_range_float": [
+       0.2928932188134524,
+       0.2928932188134524
+      ]
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x": "1 - 1/2\u221a2"
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1/2 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     }
+    ],
+    "central_(1,1,1,1)": {
+     "corners": 24,
+     "faces": {
+      "4": 6,
+      "6": 8
+     },
+     "name": "octahedron cut at the corners (truncated-octahedron type)"
+    }
+   },
+   {
+    "family": "B4",
+    "rings": [
+     1,
+     4
+    ],
+    "polytope": "runcinated tesseract",
+    "direction": "B3 direction (1,0,0,0)",
+    "corners": 64,
+    "edges": 192,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1/2 + 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 1/2\u221a2",
+      "corners": 8,
+      "faces": {
+       "4": 6
+      },
+      "name": "cube"
+     }
+    ],
+    "central_(1,1,1,1)": {
+     "corners": 48,
+     "faces": {
+      "3": 32,
+      "4": 6,
+      "6": 12
+     },
+     "name": ""
+    }
+   },
+   {
+    "family": "B4",
+    "rings": [
+     2,
+     3
+    ],
+    "polytope": "bitruncated tesseract",
+    "direction": "B3 direction (1,0,0,0)",
+    "corners": 96,
+    "edges": 192,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x": "1/4"
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x_range": [
+       "1/4",
+       "1/2"
+      ],
+      "x_range_float": [
+       0.25,
+       0.5
+      ],
+      "golden": [
+       "Greater"
+      ]
+     },
+     {
+      "where": "layer",
+      "height": "1/2\u221a2",
+      "corners": 12,
+      "faces": {
+       "3": 8,
+       "4": 6
+      },
+      "name": "cuboctahedron"
+     },
+     {
+      "where": "gap",
+      "height": "1/2\u221a2 .. \u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "layer",
+      "height": "\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     }
+    ],
+    "central_(1,1,1,1)": {
+     "corners": 24,
+     "faces": {
+      "4": 6,
+      "6": 8
+     },
+     "name": "octahedron cut at the corners (truncated-octahedron type)"
+    }
+   },
+   {
+    "family": "B4",
+    "rings": [
+     2,
+     4
+    ],
+    "polytope": "cantellated 16-cell (= rectified 24-cell)",
+    "direction": "B3 direction (1,0,0,0)",
+    "corners": 96,
+    "edges": 288,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "gap",
+      "height": "1/2\u221a2 .. \u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "layer",
+      "height": "\u221a2",
+      "corners": 12,
+      "faces": {
+       "3": 8,
+       "4": 6
+      },
+      "name": "cuboctahedron"
+     }
+    ],
+    "central_(1,1,1,1)": {
+     "corners": 24,
+     "faces": {
+      "3": 8,
+      "4": 18
+     },
+     "name": ""
+    }
+   },
+   {
+    "family": "B4",
+    "rings": [
+     3,
+     4
+    ],
+    "polytope": "truncated 16-cell",
+    "direction": "B3 direction (1,0,0,0)",
+    "corners": 48,
+    "edges": 120,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "layer",
+      "height": "1/2\u221a2",
+      "corners": 6,
+      "faces": {
+       "3": 8
+      },
+      "name": "octahedron"
+     },
+     {
+      "where": "gap",
+      "height": "1/2\u221a2 .. \u221a2",
+      "corners": 6,
+      "faces": {
+       "3": 8
+      },
+      "name": "octahedron"
+     },
+     {
+      "where": "layer",
+      "height": "\u221a2",
+      "corners": 6,
+      "faces": {
+       "3": 8
+      },
+      "name": "octahedron"
+     }
+    ],
+    "central_(1,1,1,1)": {
+     "corners": 12,
+     "faces": {
+      "3": 8,
+      "4": 6
+     },
+     "name": "cuboctahedron"
+    }
+   },
+   {
+    "family": "B4",
+    "rings": [
+     1,
+     2,
+     3
+    ],
+    "polytope": "cantitruncated tesseract",
+    "direction": "B3 direction (1,0,0,0)",
+    "corners": 192,
+    "edges": 384,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x": "2/7 - 1/14\u221a2"
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x_range": [
+       "2/7 - 1/14\u221a2",
+       "2/7 - 1/14\u221a2"
+      ],
+      "x_range_float": [
+       0.18469903125906462,
+       0.18469903125906462
+      ]
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x": "2/7 - 1/14\u221a2"
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1/2 + 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x_range": [
+       "2/7 - 1/14\u221a2",
+       "4/7 - 1/7\u221a2"
+      ],
+      "x_range_float": [
+       0.18469903125906462,
+       0.36939806251812923
+      ],
+      "golden": [
+       "Greater",
+       "Lesser"
+      ]
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x": "4/7 - 1/7\u221a2"
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + 1/2\u221a2 .. 1/2 + \u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + \u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     }
+    ],
+    "central_(1,1,1,1)": {
+     "corners": 24,
+     "faces": {
+      "4": 6,
+      "6": 8
+     },
+     "name": "octahedron cut at the corners (truncated-octahedron type)"
+    }
+   },
+   {
+    "family": "B4",
+    "rings": [
+     1,
+     2,
+     4
+    ],
+    "polytope": "runcitruncated tesseract",
+    "direction": "B3 direction (1,0,0,0)",
+    "corners": 192,
+    "edges": 480,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1/2 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + 1/2\u221a2 .. 1/2 + \u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + \u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x": "1 - 1/2\u221a2"
+     }
+    ],
+    "central_(1,1,1,1)": {
+     "corners": 24,
+     "faces": {
+      "3": 8,
+      "4": 18
+     },
+     "name": ""
+    }
+   },
+   {
+    "family": "B4",
+    "rings": [
+     1,
+     3,
+     4
+    ],
+    "polytope": "runcitruncated 16-cell",
+    "direction": "B3 direction (1,0,0,0)",
+    "corners": 192,
+    "edges": 480,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1/2 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + 1/2\u221a2 .. 1/2 + \u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + \u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     }
+    ],
+    "central_(1,1,1,1)": {
+     "corners": 72,
+     "faces": {
+      "4": 30,
+      "6": 20
+     },
+     "name": ""
+    }
+   },
+   {
+    "family": "B4",
+    "rings": [
+     2,
+     3,
+     4
+    ],
+    "polytope": "cantitruncated 16-cell (= truncated 24-cell)",
+    "direction": "B3 direction (1,0,0,0)",
+    "corners": 192,
+    "edges": 384,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "gap",
+      "height": "1/2\u221a2 .. \u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "layer",
+      "height": "\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "gap",
+      "height": "\u221a2 .. 3/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "layer",
+      "height": "3/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     }
+    ],
+    "central_(1,1,1,1)": {
+     "corners": 48,
+     "faces": {
+      "4": 12,
+      "6": 8,
+      "8": 6
+     },
+     "name": ""
+    }
+   },
+   {
+    "family": "B4",
+    "rings": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "polytope": "omnitruncated tesseract",
+    "direction": "B3 direction (1,0,0,0)",
+    "corners": 384,
+    "edges": 768,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1/2 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + 1/2\u221a2 .. 1/2 + \u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + \u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + \u221a2 .. 1/2 + 3/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 3/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     }
+    ],
+    "central_(1,1,1,1)": {
+     "corners": 48,
+     "faces": {
+      "4": 12,
+      "6": 8,
+      "8": 6
+     },
+     "name": ""
+    }
+   },
+   {
+    "family": "F4",
+    "rings": [
+     1
+    ],
+    "polytope": "24-cell",
+    "direction": "cell-type B3 direction (1,0,0,0)",
+    "corners": 24,
+    "edges": 96,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 12,
+      "faces": {
+       "3": 8,
+       "4": 6
+      },
+      "name": "cuboctahedron"
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "layer",
+      "height": "1/2\u221a2",
+      "corners": 6,
+      "faces": {
+       "3": 8
+      },
+      "name": "octahedron"
+     }
+    ],
+    "central_(1,1,1,1)": null
+   },
+   {
+    "family": "F4",
+    "rings": [
+     2
+    ],
+    "polytope": "rectified 24-cell",
+    "direction": "cell-type B3 direction (1,0,0,0)",
+    "corners": 96,
+    "edges": 288,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "gap",
+      "height": "1/2\u221a2 .. \u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "layer",
+      "height": "\u221a2",
+      "corners": 12,
+      "faces": {
+       "3": 8,
+       "4": 6
+      },
+      "name": "cuboctahedron"
+     }
+    ],
+    "central_(1,1,1,1)": null
+   },
+   {
+    "family": "F4",
+    "rings": [
+     3
+    ],
+    "polytope": "rectified 24-cell",
+    "direction": "corner-type C3 direction (1,0,0,0) of the diagram-reversed copy",
+    "corners": 96,
+    "edges": 288,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 32,
+      "faces": {
+       "4": 6,
+       "6": 12
+      },
+      "name": "cube cut along its edges (chamfered cube)"
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 48,
+      "faces": {
+       "3": 8,
+       "4": 6,
+       "8": 12
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1",
+      "corners": 12,
+      "faces": {
+       "3": 8,
+       "4": 6
+      },
+      "name": "cuboctahedron"
+     },
+     {
+      "where": "gap",
+      "height": "1 .. 3/2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x_range": [
+       "1/2",
+       "0"
+      ],
+      "x_range_float": [
+       0.5,
+       0.0
+      ],
+      "golden": [
+       "Greater",
+       "Lesser"
+      ]
+     },
+     {
+      "where": "layer",
+      "height": "3/2",
+      "corners": 8,
+      "faces": {
+       "4": 6
+      },
+      "name": "cube"
+     }
+    ],
+    "central_(1,1,1,1)": null
+   },
+   {
+    "family": "F4",
+    "rings": [
+     4
+    ],
+    "polytope": "24-cell",
+    "direction": "corner-type C3 direction (1,0,0,0) of the diagram-reversed copy",
+    "corners": 24,
+    "edges": 96,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 14,
+      "faces": {
+       "4": 12
+      },
+      "name": "rhombic dodecahedron"
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 32,
+      "faces": {
+       "4": 6,
+       "6": 12
+      },
+      "name": "cube cut along its edges (chamfered cube)"
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 8,
+      "faces": {
+       "4": 6
+      },
+      "name": "cube"
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1",
+      "corners": 8,
+      "faces": {
+       "4": 6
+      },
+      "name": "cube"
+     }
+    ],
+    "central_(1,1,1,1)": null
+   },
+   {
+    "family": "F4",
+    "rings": [
+     1,
+     2
+    ],
+    "polytope": "truncated 24-cell",
+    "direction": "cell-type B3 direction (1,0,0,0)",
+    "corners": 192,
+    "edges": 384,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "gap",
+      "height": "1/2\u221a2 .. \u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "layer",
+      "height": "\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "gap",
+      "height": "\u221a2 .. 3/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "layer",
+      "height": "3/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     }
+    ],
+    "central_(1,1,1,1)": null
+   },
+   {
+    "family": "F4",
+    "rings": [
+     1,
+     3
+    ],
+    "polytope": "cantellated 24-cell",
+    "direction": "cell-type B3 direction (1,0,0,0)",
+    "corners": 288,
+    "edges": 864,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 72,
+      "faces": {
+       "3": 8,
+       "4": 24,
+       "6": 12,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 96,
+      "faces": {
+       "4": 24,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1",
+      "corners": 96,
+      "faces": {
+       "4": 36,
+       "8": 6,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1",
+      "corners": 60,
+      "faces": {
+       "3": 24,
+       "8": 6,
+       "9": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1 .. 1/2 + 1/2\u221a2",
+      "corners": 72,
+      "faces": {
+       "3": 24,
+       "8": 6,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "3": 24,
+       "4": 6,
+       "9": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + 1/2\u221a2 .. 1 + 1/2\u221a2",
+      "corners": 72,
+      "faces": {
+       "3": 24,
+       "8": 6,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1 + 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "gap",
+      "height": "1 + 1/2\u221a2 .. 3/2 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "3/2 + 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     }
+    ],
+    "central_(1,1,1,1)": null
+   },
+   {
+    "family": "F4",
+    "rings": [
+     1,
+     4
+    ],
+    "polytope": "runcinated 24-cell",
+    "direction": "cell-type B3 direction (1,0,0,0)",
+    "corners": 144,
+    "edges": 576,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 48,
+      "faces": {
+       "3": 8,
+       "4": 42
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 96,
+      "faces": {
+       "3": 32,
+       "4": 54,
+       "6": 12
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 48,
+      "faces": {
+       "3": 32,
+       "4": 30
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1/2\u221a2",
+      "corners": 72,
+      "faces": {
+       "3": 24,
+       "4": 42,
+       "6": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2\u221a2",
+      "corners": 54,
+      "faces": {
+       "3": 48,
+       "4": 12,
+       "6": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2\u221a2 .. 1/2 + 1/2\u221a2",
+      "corners": 72,
+      "faces": {
+       "3": 24,
+       "4": 42,
+       "6": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + 1/2\u221a2 .. 1 + 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1 + 1/2\u221a2",
+      "corners": 6,
+      "faces": {
+       "3": 8
+      },
+      "name": "octahedron"
+     }
+    ],
+    "central_(1,1,1,1)": null
+   },
+   {
+    "family": "F4",
+    "rings": [
+     2,
+     3
+    ],
+    "polytope": "bitruncated 24-cell",
+    "direction": "cell-type B3 direction (1,0,0,0)",
+    "corners": 288,
+    "edges": 576,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 48,
+      "faces": {
+       "3": 8,
+       "4": 6,
+       "8": 12
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 48,
+      "faces": {
+       "3": 8,
+       "4": 6,
+       "8": 12
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1/2 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + 1/2\u221a2 .. 1 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1 + 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "gap",
+      "height": "1 + 1/2\u221a2 .. 1 + \u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "layer",
+      "height": "1 + \u221a2",
+      "corners": 12,
+      "faces": {
+       "3": 8,
+       "4": 6
+      },
+      "name": "cuboctahedron"
+     },
+     {
+      "where": "gap",
+      "height": "1 + \u221a2 .. 3/2 + \u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x_range": [
+       "1/2",
+       "1 - 1/2\u221a2"
+      ],
+      "x_range_float": [
+       0.5,
+       0.2928932188134524
+      ],
+      "golden": [
+       "Greater"
+      ]
+     },
+     {
+      "where": "layer",
+      "height": "3/2 + \u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x": "1 - 1/2\u221a2"
+     }
+    ],
+    "central_(1,1,1,1)": null
+   },
+   {
+    "family": "F4",
+    "rings": [
+     2,
+     4
+    ],
+    "polytope": "cantellated 24-cell",
+    "direction": "corner-type C3 direction (1,0,0,0) of the diagram-reversed copy",
+    "corners": 288,
+    "edges": 864,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 48,
+      "faces": {
+       "3": 8,
+       "4": 6,
+       "8": 12
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 96,
+      "faces": {
+       "3": 32,
+       "8": 6,
+       "12": 12
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 72,
+      "faces": {
+       "3": 32,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1/2\u221a2",
+      "corners": 96,
+      "faces": {
+       "4": 24,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2\u221a2",
+      "corners": 72,
+      "faces": {
+       "4": 30,
+       "6": 20
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2\u221a2 .. 1/2 + 1/2\u221a2",
+      "corners": 96,
+      "faces": {
+       "4": 24,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + 1/2\u221a2 .. 1/2 + \u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + \u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x": "1 - 1/2\u221a2"
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + \u221a2 .. 1 + \u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x_range": [
+       "1 - 1/2\u221a2",
+       "1/2"
+      ],
+      "x_range_float": [
+       0.2928932188134524,
+       0.5
+      ],
+      "golden": [
+       "Greater"
+      ]
+     },
+     {
+      "where": "layer",
+      "height": "1 + \u221a2",
+      "corners": 12,
+      "faces": {
+       "3": 8,
+       "4": 6
+      },
+      "name": "cuboctahedron"
+     }
+    ],
+    "central_(1,1,1,1)": null
+   },
+   {
+    "family": "F4",
+    "rings": [
+     3,
+     4
+    ],
+    "polytope": "truncated 24-cell",
+    "direction": "corner-type C3 direction (1,0,0,0) of the diagram-reversed copy",
+    "corners": 192,
+    "edges": 384,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 32,
+      "faces": {
+       "4": 6,
+       "6": 12
+      },
+      "name": "cube cut along its edges (chamfered cube)"
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 32,
+      "faces": {
+       "4": 6,
+       "6": 12
+      },
+      "name": "cube cut along its edges (chamfered cube)"
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 32,
+      "faces": {
+       "4": 6,
+       "6": 12
+      },
+      "name": "cube cut along its edges (chamfered cube)"
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1",
+      "corners": 48,
+      "faces": {
+       "3": 8,
+       "4": 6,
+       "8": 12
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1 .. 3/2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "3/2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x": "1/3"
+     },
+     {
+      "where": "gap",
+      "height": "3/2 .. 2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x_range": [
+       "1/3",
+       "0"
+      ],
+      "x_range_float": [
+       0.3333333333333333,
+       0.0
+      ],
+      "golden": [
+       "Lesser"
+      ]
+     },
+     {
+      "where": "layer",
+      "height": "2",
+      "corners": 8,
+      "faces": {
+       "4": 6
+      },
+      "name": "cube"
+     },
+     {
+      "where": "gap",
+      "height": "2 .. 5/2",
+      "corners": 8,
+      "faces": {
+       "4": 6
+      },
+      "name": "cube"
+     },
+     {
+      "where": "layer",
+      "height": "5/2",
+      "corners": 8,
+      "faces": {
+       "4": 6
+      },
+      "name": "cube"
+     }
+    ],
+    "central_(1,1,1,1)": null
+   },
+   {
+    "family": "F4",
+    "rings": [
+     1,
+     2,
+     3
+    ],
+    "polytope": "cantitruncated 24-cell",
+    "direction": "cell-type B3 direction (1,0,0,0)",
+    "corners": 576,
+    "edges": 1152,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 96,
+      "faces": {
+       "4": 24,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 96,
+      "faces": {
+       "4": 24,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1/2 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + 1/2\u221a2 .. 1 + 1/2\u221a2",
+      "corners": 96,
+      "faces": {
+       "4": 36,
+       "8": 6,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1 + 1/2\u221a2",
+      "corners": 72,
+      "faces": {
+       "3": 24,
+       "8": 6,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1 + 1/2\u221a2 .. 1/2 + \u221a2",
+      "corners": 72,
+      "faces": {
+       "3": 24,
+       "8": 6,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + \u221a2",
+      "corners": 72,
+      "faces": {
+       "3": 24,
+       "8": 6,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + \u221a2 .. 1 + \u221a2",
+      "corners": 72,
+      "faces": {
+       "3": 24,
+       "8": 6,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1 + \u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "gap",
+      "height": "1 + \u221a2 .. 1 + 3/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "layer",
+      "height": "1 + 3/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     },
+     {
+      "where": "gap",
+      "height": "1 + 3/2\u221a2 .. 3/2 + 3/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "3/2 + 3/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     }
+    ],
+    "central_(1,1,1,1)": null
+   },
+   {
+    "family": "F4",
+    "rings": [
+     1,
+     2,
+     4
+    ],
+    "polytope": "runcitruncated 24-cell",
+    "direction": "cell-type B3 direction (1,0,0,0)",
+    "corners": 576,
+    "edges": 1440,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 96,
+      "faces": {
+       "4": 24,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 144,
+      "faces": {
+       "4": 48,
+       "6": 8,
+       "8": 6,
+       "12": 12
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 96,
+      "faces": {
+       "4": 24,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1/2\u221a2",
+      "corners": 96,
+      "faces": {
+       "4": 24,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2\u221a2",
+      "corners": 72,
+      "faces": {
+       "4": 30,
+       "6": 20
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2\u221a2 .. 1/2 + 1/2\u221a2",
+      "corners": 120,
+      "faces": {
+       "3": 24,
+       "4": 6,
+       "6": 32,
+       "8": 12
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 1/2\u221a2",
+      "corners": 72,
+      "faces": {
+       "3": 24,
+       "4": 42,
+       "6": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + 1/2\u221a2 .. \u221a2",
+      "corners": 72,
+      "faces": {
+       "3": 24,
+       "4": 42,
+       "6": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "\u221a2",
+      "corners": 72,
+      "faces": {
+       "3": 24,
+       "4": 42,
+       "6": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "\u221a2 .. 1/2 + \u221a2",
+      "corners": 96,
+      "faces": {
+       "4": 60,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + \u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + \u221a2 .. 1/2 + 3/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 3/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + 3/2\u221a2 .. 1 + 3/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1 + 3/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "4": 6,
+       "6": 8
+      },
+      "name": "octahedron cut at the corners (truncated-octahedron type)"
+     }
+    ],
+    "central_(1,1,1,1)": null
+   },
+   {
+    "family": "F4",
+    "rings": [
+     1,
+     3,
+     4
+    ],
+    "polytope": "runcitruncated 24-cell",
+    "direction": "corner-type C3 direction (1,0,0,0) of the diagram-reversed copy",
+    "corners": 576,
+    "edges": 1440,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 72,
+      "faces": {
+       "3": 8,
+       "4": 24,
+       "6": 12,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 72,
+      "faces": {
+       "3": 8,
+       "4": 24,
+       "6": 12,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 72,
+      "faces": {
+       "3": 8,
+       "4": 24,
+       "6": 12,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1",
+      "corners": 144,
+      "faces": {
+       "4": 72,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1",
+      "corners": 96,
+      "faces": {
+       "4": 60,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1 .. 1/2 + 1/2\u221a2",
+      "corners": 144,
+      "faces": {
+       "4": 36,
+       "6": 24,
+       "8": 6,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 1/2\u221a2",
+      "corners": 120,
+      "faces": {
+       "3": 24,
+       "4": 18,
+       "6": 24,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + 1/2\u221a2 .. 3/2",
+      "corners": 120,
+      "faces": {
+       "3": 24,
+       "4": 18,
+       "6": 24,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "3/2",
+      "corners": 96,
+      "faces": {
+       "3": 24,
+       "4": 6,
+       "6": 24,
+       "9": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "3/2 .. 1 + 1/2\u221a2",
+      "corners": 120,
+      "faces": {
+       "3": 24,
+       "4": 18,
+       "6": 24,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1 + 1/2\u221a2",
+      "corners": 72,
+      "faces": {
+       "4": 42,
+       "9": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1 + 1/2\u221a2 .. 3/2 + 1/2\u221a2",
+      "corners": 96,
+      "faces": {
+       "4": 36,
+       "8": 6,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "3/2 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "3/2 + 1/2\u221a2 .. 2 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "2 + 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "2 + 1/2\u221a2 .. 5/2 + 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "5/2 + 1/2\u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "4": 18
+      },
+      "name": ""
+     }
+    ],
+    "central_(1,1,1,1)": null
+   },
+   {
+    "family": "F4",
+    "rings": [
+     2,
+     3,
+     4
+    ],
+    "polytope": "cantitruncated 24-cell",
+    "direction": "corner-type C3 direction (1,0,0,0) of the diagram-reversed copy",
+    "corners": 576,
+    "edges": 1152,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 48,
+      "faces": {
+       "3": 8,
+       "4": 6,
+       "8": 12
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 48,
+      "faces": {
+       "3": 8,
+       "4": 6,
+       "8": 12
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 48,
+      "faces": {
+       "3": 8,
+       "4": 6,
+       "8": 12
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1",
+      "corners": 96,
+      "faces": {
+       "3": 32,
+       "8": 6,
+       "12": 12
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1",
+      "corners": 72,
+      "faces": {
+       "3": 32,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1 .. 1/2 + 1/2\u221a2",
+      "corners": 96,
+      "faces": {
+       "4": 24,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 1/2\u221a2",
+      "corners": 96,
+      "faces": {
+       "4": 24,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + 1/2\u221a2 .. 1 + 1/2\u221a2",
+      "corners": 96,
+      "faces": {
+       "4": 24,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1 + 1/2\u221a2 .. 3/2 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "3/2 + 1/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "3/2 + 1/2\u221a2 .. 3/2 + \u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "3/2 + \u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x": "2/7 + 1/14\u221a2"
+     },
+     {
+      "where": "gap",
+      "height": "3/2 + \u221a2 .. 2 + \u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x_range": [
+       "2/7 + 1/14\u221a2",
+       "-1/2 + 1/2\u221a2"
+      ],
+      "x_range_float": [
+       0.3867295401695068,
+       0.20710678118654757
+      ],
+      "golden": [
+       "Greater",
+       "Lesser"
+      ]
+     },
+     {
+      "where": "layer",
+      "height": "2 + \u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x": "-1/2 + 1/2\u221a2"
+     },
+     {
+      "where": "gap",
+      "height": "2 + \u221a2 .. 5/2 + \u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x_range": [
+       "-1/2 + 1/2\u221a2",
+       "1 - 1/2\u221a2"
+      ],
+      "x_range_float": [
+       0.20710678118654757,
+       0.2928932188134524
+      ],
+      "golden": [
+       "Lesser"
+      ]
+     },
+     {
+      "where": "layer",
+      "height": "5/2 + \u221a2",
+      "corners": 24,
+      "faces": {
+       "3": 8,
+       "8": 6
+      },
+      "name": "cube cut at the corners (truncated-cube type)",
+      "x": "1 - 1/2\u221a2"
+     }
+    ],
+    "central_(1,1,1,1)": null
+   },
+   {
+    "family": "F4",
+    "rings": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "polytope": "omnitruncated 24-cell",
+    "direction": "cell-type B3 direction (1,0,0,0)",
+    "corners": 1152,
+    "edges": 2304,
+    "sequence": [
+     {
+      "where": "layer",
+      "height": "0",
+      "corners": 96,
+      "faces": {
+       "4": 24,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "0 .. 1/2",
+      "corners": 96,
+      "faces": {
+       "4": 24,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2",
+      "corners": 96,
+      "faces": {
+       "4": 24,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 .. 1",
+      "corners": 144,
+      "faces": {
+       "4": 48,
+       "6": 8,
+       "8": 6,
+       "12": 12
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1",
+      "corners": 96,
+      "faces": {
+       "4": 24,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1 .. 1/2 + 1/2\u221a2",
+      "corners": 96,
+      "faces": {
+       "4": 24,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + 1/2\u221a2",
+      "corners": 96,
+      "faces": {
+       "4": 24,
+       "6": 8,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + 1/2\u221a2 .. 1 + 1/2\u221a2",
+      "corners": 144,
+      "faces": {
+       "4": 24,
+       "6": 32,
+       "8": 18
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1 + 1/2\u221a2",
+      "corners": 96,
+      "faces": {
+       "4": 60,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1 + 1/2\u221a2 .. 1/2 + \u221a2",
+      "corners": 144,
+      "faces": {
+       "4": 36,
+       "6": 24,
+       "8": 6,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1/2 + \u221a2",
+      "corners": 144,
+      "faces": {
+       "4": 36,
+       "6": 24,
+       "8": 6,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1/2 + \u221a2 .. 3/2 + 1/2\u221a2",
+      "corners": 144,
+      "faces": {
+       "4": 36,
+       "6": 24,
+       "8": 6,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "3/2 + 1/2\u221a2",
+      "corners": 144,
+      "faces": {
+       "4": 36,
+       "6": 24,
+       "8": 6,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "3/2 + 1/2\u221a2 .. 1 + \u221a2",
+      "corners": 144,
+      "faces": {
+       "4": 36,
+       "6": 24,
+       "8": 6,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "1 + \u221a2",
+      "corners": 96,
+      "faces": {
+       "4": 36,
+       "8": 6,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "1 + \u221a2 .. 3/2 + \u221a2",
+      "corners": 96,
+      "faces": {
+       "4": 36,
+       "8": 6,
+       "12": 8
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "3/2 + \u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "3/2 + \u221a2 .. 3/2 + 3/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "3/2 + 3/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "3/2 + 3/2\u221a2 .. 2 + 3/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "2 + 3/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "gap",
+      "height": "2 + 3/2\u221a2 .. 5/2 + 3/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     },
+     {
+      "where": "layer",
+      "height": "5/2 + 3/2\u221a2",
+      "corners": 48,
+      "faces": {
+       "4": 12,
+       "6": 8,
+       "8": 6
+      },
+      "name": ""
+     }
+    ],
+    "central_(1,1,1,1)": null
+   }
+  ],
+  "golden_hits": [
+   {
+    "polytope": "rectified tesseract",
+    "family": "B4",
+    "rings": [
+     2
+    ],
+    "direction": "B3 direction (1,0,0,0)",
+    "height": "-3/2 - 1/2\u221a2 + 1/2\u221a5 + 1/2\u221a10",
+    "height_float": 0.4920660376475372,
+    "gap": [
+     "0",
+     "1/2\u221a2"
+    ],
+    "solid": "Greater Golden Cut Cube",
+    "x": "-1/2 - 3/4\u221a2 + 1/2\u221a5 + 1/4\u221a10",
+    "corners": 24,
+    "similar_exact": true,
+    "scale_squared": "2"
+   },
+   {
+    "polytope": "rectified tesseract",
+    "family": "B4",
+    "rings": [
+     2
+    ],
+    "direction": "B3 direction (1,0,0,0)",
+    "height": "3/2 - 1/2\u221a2 + 1/2\u221a5 - 1/2\u221a10",
+    "height_float": 0.3297883774791577,
+    "gap": [
+     "0",
+     "1/2\u221a2"
+    ],
+    "solid": "Lesser Golden Cut Cube",
+    "x": "-1/2 + 3/4\u221a2 - 1/2\u221a5 + 1/4\u221a10",
+    "corners": 24,
+    "similar_exact": true,
+    "scale_squared": "2"
+   },
+   {
+    "polytope": "truncated tesseract",
+    "family": "B4",
+    "rings": [
+     1,
+     2
+    ],
+    "direction": "B3 direction (1,0,0,0)",
+    "height": "3/2 + 1/4\u221a2 - 1/4\u221a10",
+    "height_float": 1.062983975551179,
+    "gap": [
+     "1/2",
+     "1/2 + 1/2\u221a2"
+    ],
+    "solid": "Lesser Golden Cut Cube",
+    "x": "-1/2 + 3/4\u221a2 - 1/2\u221a5 + 1/4\u221a10",
+    "corners": 24,
+    "similar_exact": true,
+    "scale_squared": "12 - 8\u221a2"
+   },
+   {
+    "polytope": "bitruncated tesseract",
+    "family": "B4",
+    "rings": [
+     2,
+     3
+    ],
+    "direction": "B3 direction (1,0,0,0)",
+    "height": "-3 - 3/2\u221a2 + \u221a5 + \u221a10",
+    "height_float": 0.2770252941085265,
+    "gap": [
+     "0",
+     "1/2\u221a2"
+    ],
+    "solid": "Greater Golden Cut Cube",
+    "x": "-1/2 - 3/4\u221a2 + 1/2\u221a5 + 1/4\u221a10",
+    "corners": 24,
+    "similar_exact": true,
+    "scale_squared": "1/2"
+   },
+   {
+    "polytope": "cantitruncated tesseract",
+    "family": "B4",
+    "rings": [
+     1,
+     2,
+     3
+    ],
+    "direction": "B3 direction (1,0,0,0)",
+    "height": "-3 - 9/4\u221a2 + 3/2\u221a5 + 5/4\u221a10",
+    "height_float": 1.1249685261206945,
+    "gap": [
+     "1/2",
+     "1/2 + 1/2\u221a2"
+    ],
+    "solid": "Greater Golden Cut Cube",
+    "x": "-1/2 - 3/4\u221a2 + 1/2\u221a5 + 1/4\u221a10",
+    "corners": 24,
+    "similar_exact": true,
+    "scale_squared": "36/49 - 16/49\u221a2"
+   },
+   {
+    "polytope": "cantitruncated tesseract",
+    "family": "B4",
+    "rings": [
+     1,
+     2,
+     3
+    ],
+    "direction": "B3 direction (1,0,0,0)",
+    "height": "3 - 3/4\u221a2 + 1/2\u221a5 - 3/4\u221a10",
+    "height_float": 0.6856655718437885,
+    "gap": [
+     "1/2",
+     "1/2 + 1/2\u221a2"
+    ],
+    "solid": "Lesser Golden Cut Cube",
+    "x": "-1/2 + 3/4\u221a2 - 1/2\u221a5 + 1/4\u221a10",
+    "corners": 24,
+    "similar_exact": true,
+    "scale_squared": "36/49 - 16/49\u221a2"
+   },
+   {
+    "polytope": "rectified 24-cell",
+    "family": "F4",
+    "rings": [
+     3
+    ],
+    "direction": "corner-type C3 direction (1,0,0,0) of the diagram-reversed copy",
+    "height": "1/2 + 3/4\u221a2 - 1/2\u221a5 + 1/4\u221a10",
+    "height_float": 1.2331955980720215,
+    "gap": [
+     "1",
+     "3/2"
+    ],
+    "solid": "Greater Golden Cut Cube",
+    "x": "-1/2 - 3/4\u221a2 + 1/2\u221a5 + 1/4\u221a10",
+    "corners": 24,
+    "similar_exact": true,
+    "scale_squared": "21 + 14\u221a2 - 9\u221a5 - 6\u221a10"
+   },
+   {
+    "polytope": "rectified 24-cell",
+    "family": "F4",
+    "rings": [
+     3
+    ],
+    "direction": "corner-type C3 direction (1,0,0,0) of the diagram-reversed copy",
+    "height": "1/2 - 3/4\u221a2 + 1/2\u221a5 + 1/4\u221a10",
+    "height_float": 1.3479432320121685,
+    "gap": [
+     "1",
+     "3/2"
+    ],
+    "solid": "Lesser Golden Cut Cube",
+    "x": "-1/2 + 3/4\u221a2 - 1/2\u221a5 + 1/4\u221a10",
+    "corners": 24,
+    "similar_exact": true,
+    "scale_squared": "21 - 14\u221a2 + 9\u221a5 - 6\u221a10"
+   },
+   {
+    "polytope": "bitruncated 24-cell",
+    "family": "F4",
+    "rings": [
+     2,
+     3
+    ],
+    "direction": "cell-type B3 direction (1,0,0,0)",
+    "height": "5/4 + 3/2\u221a2 - 1/4\u221a5",
+    "height_float": 2.8123033491846954,
+    "gap": [
+     "1 + \u221a2",
+     "3/2 + \u221a2"
+    ],
+    "solid": "Greater Golden Cut Cube",
+    "x": "-1/2 - 3/4\u221a2 + 1/2\u221a5 + 1/4\u221a10",
+    "corners": 24,
+    "similar_exact": true,
+    "scale_squared": "14 - 6\u221a5"
+   },
+   {
+    "polytope": "cantellated 24-cell",
+    "family": "F4",
+    "rings": [
+     2,
+     4
+    ],
+    "direction": "corner-type C3 direction (1,0,0,0) of the diagram-reversed copy",
+    "height": "5/4 + \u221a2 - 1/4\u221a5",
+    "height_float": 2.1051965679981475,
+    "gap": [
+     "1/2 + \u221a2",
+     "1 + \u221a2"
+    ],
+    "solid": "Greater Golden Cut Cube",
+    "x": "-1/2 - 3/4\u221a2 + 1/2\u221a5 + 1/4\u221a10",
+    "corners": 24,
+    "similar_exact": true,
+    "scale_squared": "26 + 16\u221a2 - 10\u221a5 - 8\u221a10"
+   },
+   {
+    "polytope": "truncated 24-cell",
+    "family": "F4",
+    "rings": [
+     3,
+     4
+    ],
+    "direction": "corner-type C3 direction (1,0,0,0) of the diagram-reversed copy",
+    "height": "-3/2\u221a2 + \u221a5 + 1/2\u221a10",
+    "height_float": 1.6958864640243367,
+    "gap": [
+     "3/2",
+     "2"
+    ],
+    "solid": "Lesser Golden Cut Cube",
+    "x": "-1/2 + 3/4\u221a2 - 1/2\u221a5 + 1/4\u221a10",
+    "corners": 24,
+    "similar_exact": true,
+    "scale_squared": "21/4 - 7/2\u221a2 + 9/4\u221a5 - 3/2\u221a10"
+   },
+   {
+    "polytope": "cantitruncated 24-cell",
+    "family": "F4",
+    "rings": [
+     2,
+     3,
+     4
+    ],
+    "direction": "corner-type C3 direction (1,0,0,0) of the diagram-reversed copy",
+    "height": "3/4 + 9/4\u221a2 - 3/4\u221a5 + 1/4\u221a10",
+    "height_float": 3.045498947256717,
+    "gap": [
+     "3/2 + \u221a2",
+     "2 + \u221a2"
+    ],
+    "solid": "Greater Golden Cut Cube",
+    "x": "-1/2 - 3/4\u221a2 + 1/2\u221a5 + 1/4\u221a10",
+    "corners": 24,
+    "similar_exact": true,
+    "scale_squared": "22/7 + 12/7\u221a2 - 66/49\u221a5 - 36/49\u221a10"
+   },
+   {
+    "polytope": "cantitruncated 24-cell",
+    "family": "F4",
+    "rings": [
+     2,
+     3,
+     4
+    ],
+    "direction": "corner-type C3 direction (1,0,0,0) of the diagram-reversed copy",
+    "height": "-3/4 - 3/4\u221a2 + 5/4\u221a5 + 3/4\u221a10",
+    "height_float": 3.356133045221201,
+    "gap": [
+     "3/2 + \u221a2",
+     "2 + \u221a2"
+    ],
+    "solid": "Lesser Golden Cut Cube",
+    "x": "-1/2 + 3/4\u221a2 - 1/2\u221a5 + 1/4\u221a10",
+    "corners": 24,
+    "similar_exact": true,
+    "scale_squared": "86/7 - 60/7\u221a2 + 258/49\u221a5 - 180/49\u221a10"
+   },
+   {
+    "polytope": "cantitruncated 24-cell",
+    "family": "F4",
+    "rings": [
+     2,
+     3,
+     4
+    ],
+    "direction": "corner-type C3 direction (1,0,0,0) of the diagram-reversed copy",
+    "height": "11/4 + \u221a2 - 1/4\u221a5",
+    "height_float": 3.6051965679981475,
+    "gap": [
+     "2 + \u221a2",
+     "5/2 + \u221a2"
+    ],
+    "solid": "Lesser Golden Cut Cube",
+    "x": "-1/2 + 3/4\u221a2 - 1/2\u221a5 + 1/4\u221a10",
+    "corners": 24,
+    "similar_exact": true,
+    "scale_squared": "26 - 16\u221a2 + 10\u221a5 - 8\u221a10"
+   }
+  ]
+ },
+ "checks": [
+  {
+   "check": "rectified tesseract (B4 rings (2,)), B3 direction (1,0,0,0), height -3/2 - 1/2\u221a2 + 1/2\u221a5 + 1/2\u221a10 = 0.492066038: 24 corners, corner-to-corner similar to the Greater Golden Cut Cube, all 276 squared distances scaled by one factor (exact)",
+   "pass": true
+  },
+  {
+   "check": "rectified tesseract (B4 rings (2,)), B3 direction (1,0,0,0), height 3/2 - 1/2\u221a2 + 1/2\u221a5 - 1/2\u221a10 = 0.329788377: 24 corners, corner-to-corner similar to the Lesser Golden Cut Cube, all 276 squared distances scaled by one factor (exact)",
+   "pass": true
+  },
+  {
+   "check": "truncated tesseract (B4 rings (1, 2)), B3 direction (1,0,0,0), height 3/2 + 1/4\u221a2 - 1/4\u221a10 = 1.062983976: 24 corners, corner-to-corner similar to the Lesser Golden Cut Cube, all 276 squared distances scaled by one factor (exact)",
+   "pass": true
+  },
+  {
+   "check": "bitruncated tesseract (B4 rings (2, 3)), B3 direction (1,0,0,0), height -3 - 3/2\u221a2 + \u221a5 + \u221a10 = 0.277025294: 24 corners, corner-to-corner similar to the Greater Golden Cut Cube, all 276 squared distances scaled by one factor (exact)",
+   "pass": true
+  },
+  {
+   "check": "cantitruncated tesseract (B4 rings (1, 2, 3)), B3 direction (1,0,0,0), height -3 - 9/4\u221a2 + 3/2\u221a5 + 5/4\u221a10 = 1.124968526: 24 corners, corner-to-corner similar to the Greater Golden Cut Cube, all 276 squared distances scaled by one factor (exact)",
+   "pass": true
+  },
+  {
+   "check": "cantitruncated tesseract (B4 rings (1, 2, 3)), B3 direction (1,0,0,0), height 3 - 3/4\u221a2 + 1/2\u221a5 - 3/4\u221a10 = 0.685665572: 24 corners, corner-to-corner similar to the Lesser Golden Cut Cube, all 276 squared distances scaled by one factor (exact)",
+   "pass": true
+  },
+  {
+   "check": "rectified 24-cell (F4 rings (3,)), corner-type C3 direction (1,0,0,0) of the diagram-reversed copy, height 1/2 + 3/4\u221a2 - 1/2\u221a5 + 1/4\u221a10 = 1.233195598: 24 corners, corner-to-corner similar to the Greater Golden Cut Cube, all 276 squared distances scaled by one factor (exact)",
+   "pass": true
+  },
+  {
+   "check": "rectified 24-cell (F4 rings (3,)), corner-type C3 direction (1,0,0,0) of the diagram-reversed copy, height 1/2 - 3/4\u221a2 + 1/2\u221a5 + 1/4\u221a10 = 1.347943232: 24 corners, corner-to-corner similar to the Lesser Golden Cut Cube, all 276 squared distances scaled by one factor (exact)",
+   "pass": true
+  },
+  {
+   "check": "bitruncated 24-cell (F4 rings (2, 3)), cell-type B3 direction (1,0,0,0), height 5/4 + 3/2\u221a2 - 1/4\u221a5 = 2.812303349: 24 corners, corner-to-corner similar to the Greater Golden Cut Cube, all 276 squared distances scaled by one factor (exact)",
+   "pass": true
+  },
+  {
+   "check": "cantellated 24-cell (F4 rings (2, 4)), corner-type C3 direction (1,0,0,0) of the diagram-reversed copy, height 5/4 + \u221a2 - 1/4\u221a5 = 2.105196568: 24 corners, corner-to-corner similar to the Greater Golden Cut Cube, all 276 squared distances scaled by one factor (exact)",
+   "pass": true
+  },
+  {
+   "check": "truncated 24-cell (F4 rings (3, 4)), corner-type C3 direction (1,0,0,0) of the diagram-reversed copy, height -3/2\u221a2 + \u221a5 + 1/2\u221a10 = 1.695886464: 24 corners, corner-to-corner similar to the Lesser Golden Cut Cube, all 276 squared distances scaled by one factor (exact)",
+   "pass": true
+  },
+  {
+   "check": "cantitruncated 24-cell (F4 rings (2, 3, 4)), corner-type C3 direction (1,0,0,0) of the diagram-reversed copy, height 3/4 + 9/4\u221a2 - 3/4\u221a5 + 1/4\u221a10 = 3.045498947: 24 corners, corner-to-corner similar to the Greater Golden Cut Cube, all 276 squared distances scaled by one factor (exact)",
+   "pass": true
+  },
+  {
+   "check": "cantitruncated 24-cell (F4 rings (2, 3, 4)), corner-type C3 direction (1,0,0,0) of the diagram-reversed copy, height -3/4 - 3/4\u221a2 + 5/4\u221a5 + 3/4\u221a10 = 3.356133045: 24 corners, corner-to-corner similar to the Lesser Golden Cut Cube, all 276 squared distances scaled by one factor (exact)",
+   "pass": true
+  },
+  {
+   "check": "cantitruncated 24-cell (F4 rings (2, 3, 4)), corner-type C3 direction (1,0,0,0) of the diagram-reversed copy, height 11/4 + \u221a2 - 1/4\u221a5 = 3.605196568: 24 corners, corner-to-corner similar to the Lesser Golden Cut Cube, all 276 squared distances scaled by one factor (exact)",
+   "pass": true
+  },
+  {
+   "check": "uniform B4 and F4 families: 14 golden cube sections found and every one proved exactly",
+   "pass": true
+  }
+ ],
+ "seconds": 104
+}
