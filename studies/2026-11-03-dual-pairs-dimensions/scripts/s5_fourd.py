@@ -99,8 +99,20 @@ cc = cube_cell(1 + muGCC) if False else None
 # golden cube cells: exact in K, via the C.O section (cell = C cap (mu - 1) O)
 ok = similar(CO3(muGCC), cut_cube(xG4))[0] and similar(CO3(muLCC), cut_cube(xL4))[0]
 check('t16 truncated-tesseract stage: cube cells = C cap (mu - 1) O are the Golden Cut Cubes at mu = 1 + mu_G, 1 + mu_L (degree 4)', ok)
-# hexagon ratio swap: in the bitruncated stage the shared hexagons have ratio r on one cell and 1/r on the other
-check('t16: at mu = phi^2 the octahedral-side cells are Greater (ratio phi) and the tetrahedral cells Lesser (ratio 1/phi): the shared hexagons swap the roles', True)
+# hexagon ratio swap: the hexagon shared by a cube cell and a tetrahedral cell (face x4 = 1, s = (1,1,1,1)),
+# computed from the exact corners: 3 sides of length^2 2h^2 and 3 of 2(1-h)^2, so the ratio of the two side kinds is (1-h)/h
+def shared_hexagon_ratio2(mu):
+    hexa = [v[:3] for v in t16_vertices(mu) if v[3] == ONE and all(not (c < ZERO) for c in v) and sum(v, ZERO) == mu]
+    d2 = lambda a, b: sum(((x - y) * (x - y) for x, y in zip(a, b)), ZERO)
+    h = mu - 2
+    sa, sb = 2 * h * h, 2 * (ONE - h) * (ONE - h)
+    na = sum(1 for i, j in itertools.combinations(range(len(hexa)), 2) if d2(hexa[i], hexa[j]) == sa)
+    nb = sum(1 for i, j in itertools.combinations(range(len(hexa)), 2) if d2(hexa[i], hexa[j]) == sb)
+    return len(hexa), na, nb, sb * sa.inv()
+n1, a1, b1, r1 = shared_hexagon_ratio2(PHI * PHI)
+n2, a2, b2, r2 = shared_hexagon_ratio2(2 + PHI.inv() * PHI.inv())
+check('t16: the shared hexagon is a truncated triangle (6 corners, 3 + 3 sides sqrt2*h and sqrt2*(1-h)); its squared side ratio (1-h)^2/h^2 is 1/phi^2 at mu = phi^2 and phi^2 at mu = 2 + 1/phi^2, so the two cells see inverse ratios',
+      (n1, a1, b1) == (6, 3, 3) and (n2, a2, b2) == (6, 3, 3) and r1 == PHI.inv() * PHI.inv() and r2 == PHI * PHI)
 
 # ------------------------------------------------------------------ 24-cell x 24-cell
 H24n = np.array([e for i in range(4) for e in (np.eye(4)[i], -np.eye(4)[i])] + [np.array(s) for s in itertools.product((1, -1), repeat=4)], float)
