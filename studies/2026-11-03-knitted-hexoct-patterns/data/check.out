@@ -1,0 +1,6 @@
+gauge: N=16, M=14, cast on 64, 42 ridges = 84 rows; node rows [13, 41, 69], node stitches [[9, 25, 41], [17, 33, 49], [25, 41, 57]]
+reference sizes: a = 72.7 mm, d = 59.4 mm, l(t=3.5) = 68.4 mm
+links: length a, tilt atan(sqrt 2) = 54.7356 deg, sheet spacing sqrt(2/3) a (exact)
+c: 3/3 links up collinear with a link down; h: 3/3 links up mirror a link down
+T-c (ABC): nodes 27, links 42 (21 + 21), degrees as spec check.out; cells gap 1 {'tet_lo': 4, 'tet_hi': 4, 'oct': 4}, gap 2 {'tet_lo': 4, 'tet_hi': 4, 'oct': 4}; #75 tile of the middle sheet at lambda=-1/8 found complete as cells around ['B5']
+T-h (ABA): nodes 27, links 42 (21 + 21), degrees as spec check.out; cells gap 1 {'tet_lo': 4, 'tet_hi': 4, 'oct': 4}, gap 2 {'tet_lo': 4, 'tet_hi': 4, 'oct': 4}; #75 tile of the middle sheet at lambda=-1/8 found complete as cells around ['B5']
