@@ -8,7 +8,7 @@ import { POLYHEDRA, NARCISSUS_IDS } from '../../src/krp-core/src/polyhedra/index
 const N = POLYHEDRA.DICTO_NARCISSUS, B = POLYHEDRA.DICTO_NARCISSUS_TOGETHER;
 const v3 = (p) => (Array.isArray(p) ? p : [p.x, p.y, p.z]);
 test('both entries are registered, Narcissus first', () => {
-  assert.deepEqual(NARCISSUS_IDS, ['DICTO_NARCISSUS', 'DICTO_NARCISSUS_TOGETHER', 'RHOMBOHEDRA_ANY_STACKING']);
+  assert.deepEqual(NARCISSUS_IDS, ['DICTO_NARCISSUS', 'DICTO_NARCISSUS_TOGETHER']);
   assert.ok(N && B);
   assert.equal(N.name, 'Narcissus');
 });
@@ -39,8 +39,4 @@ test('the block: 112 pieces, 42 Narcissus (gold) and 70 cubes', () => {
   assert.equal(B.parts.length, 112);
   const gold = B.parts.filter(([a]) => B.faceColours[a] === 0xd4a020).length;
   assert.equal(gold, 42);
-});
-test('the rhombohedra block: 73 blocks, all congruent 60° rhombohedra (8 corners, 6 faces)', () => {
-  const R = POLYHEDRA.RHOMBOHEDRA_ANY_STACKING; assert.equal(R.parts.length, 73);
-  for (const [a, b] of R.parts) assert.equal(b - a, 6);
 });

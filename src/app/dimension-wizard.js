@@ -1295,7 +1295,6 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     if (DICTO_SKEWED_ED_IDS.includes(id)) out.push(`<div class="poly-credit" data-credit="skewed-ed">${t('pv.detail.dictoSkewedEdCredit', L)}</div>`);
     if (REGULAR_NINE_ADDITION_IDS.includes(id)) out.push(`<div class="poly-credit" data-credit="regular-nine">${t('pv.detail.regularNineCredit', L)}</div>`);
     if (id === 'DICTO_NARCISSUS' || id === 'DICTO_NARCISSUS_TOGETHER') out.push(`<div class="poly-credit" data-credit="narcissus">${t('pv.detail.narcissusCredit', L)}</div>`);
-    if (id === 'RHOMBOHEDRA_ANY_STACKING') out.push(`<div class="poly-credit" data-credit="rhombo-stack">${t('pv.detail.rhomboStackCredit', L)}</div>`);
     if (id === 'DOGSTAR' || id === 'SEAMED_DODECAHEDRON') out.push(`<div class="poly-credit" data-credit="dogstar">${t('pv.detail.dogstarCredit', L)}</div>`);
     // The two families on one lattice (DICTO 2026-10-20: the Sunstar and Jewel pieces looked the same to him), the papers #41 and #42.
     if (['SEAMED_DODECAHEDRON', 'DOGSTAR', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER'].includes(id)) out.push(`<div class="poly-credit" data-credit="sunstar-family">${t('pv.detail.sunstarFamily', L)}</div>`);
