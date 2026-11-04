@@ -4798,6 +4798,15 @@
     "retry": "never; use exact_dehn.py for all HexOct Dehn questions",
     "study": "2026-11-04-lqg-bridge",
     "date": "2026-11-04"
+   },
+   {
+    "question": "Rejoined halves: Dehn by additivity; hybrids Narcissus + half-RD",
+    "method": "exact_dehn.py + additivity; angle count with coplanar faces merged",
+    "status": "SETTLED (corrections) / OPEN (hybrid tilings)",
+    "result": "every rejoining of Dehn-zero halves is Dehn-zero (float screen wrong on rejoined solids: phantom seam edges). Twisted B3 permutohedron Dehn zero but angle count fails. \"RD/TRD isolated\" and \"only matching halves fill alone\" WITHDRAWN. Narcissus + half-RD hybrids (0°, 60°): dihedrals 90/120/135 only, pass both tests: tiling candidates",
+    "retry": "tiling search for the two hybrids; rerun the (μ,ν) twist map with the angle count",
+    "study": "2026-11-04-halves",
+    "date": "2026-11-04"
    }
   ]
  },

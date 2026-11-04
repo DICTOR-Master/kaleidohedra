@@ -41,3 +41,10 @@ E13 Covenant tiles by the fcc LATTICE itself: 6 face-to-face translations, all l
    is not (2/3 of a lattice vector) — so Covenant is an fcc fundamental domain, NOT a ball-tied c-layer cell. Ball-tied: Narcissus fills h layers,
    the cube c layers (HexOct pairing, every stacking). Free of the balls: Narcissus alone fills space as the h-tiling and as Covenant (fcc lattice).
    "One piece for everything, ball-tied" -> the Narcissus–cube common-dissection study (2026-11-04-narcissus-cube).
+CORRECTIONS (4 Nov, late; exact_hybrids.py, angle_hybrids.py): the Dehn invariant is ADDITIVE, so every rejoining of two Dehn-zero halves is Dehn-zero;
+   the float screen's "nonzero" for rejoined solids came from phantom seam edges (coplanar faces split in two). Hence:
+   - E4: the twisted B3 permutohedron IS Dehn-zero; it still cannot tile — the edge-angle count fails (135° with no 90° partner).
+   - E5: "RD/TRD isolated" WITHDRAWN — every convex twist of a Dehn-zero member is Dehn-zero; the deciding filter is the angle count (map to be rerun).
+   - "only matching halves fill space alone" WITHDRAWN.
+E14 NEW CANDIDATES: the two Narcissus + half-RD hybrids (on their shared hexagon, straight and turned 60°): 12 faces each, dihedrals 90/120/135° only,
+   Dehn zero exactly, angle count passes — genuine tiling candidates (not centrally symmetric: not by translation). Tiling search to run.
