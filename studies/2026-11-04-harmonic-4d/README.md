@@ -20,3 +20,12 @@ LEADS: exact heights of these zeros; are the corner-first Q6-silent slices named
   PRELIMINARY (float; corners merged at 1e-5; one corner count, 1536, is not an H4 orbit sum and must be checked):
   Q12 dips to 0.008 near μ ≈ 0.925 (close to r = 0.9256); Q20 dips to 0.001 near μ ≈ 0.887 (3600 corners) and 0.007 near 0.955.
   Exact check needed before any claim of a "deep silence" station.
+
+## Queens path, exact corners (4 Nov) — resolves the 1536 anomaly
+For μ in ((1 + φ/2)/2, 1) = (0.904508, 1) the section is the 600-cell with its 120 corners cut: 1440 corners, exactly the points
+v + s(w − v) on the 1440 directed edges, s = (1 − μ)/(1 − φ/2). (The hull routine had produced 1536 because every corner lies on 6 walls.)
+- Q12 = 0 at μ* ≈ 0.924165 (Q 9e-5 on a 400-point scan): with H4 symmetry every degree 1..11 and 13..19 is silent (no H4 harmonics there),
+  so these 1440 points would form a spherical 19-design — the deepest silence on the path. LIKELY KNOWN: H4 orbits tuned to kill the degree-12
+  invariant are the classical route to 19-designs (Goethals–Seidel 1981, Sobolev's theorem; Hardin–Sloane) — to check and credit.
+- Q20 = 0 near μ ≈ 0.9540 (Q12 ≠ 0 there).
+- Earlier "1536"-based dips are superseded by these values. Exact μ* (root in Q(√5)?) still to compute.
