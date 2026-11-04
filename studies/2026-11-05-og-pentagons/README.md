@@ -41,3 +41,13 @@ Patch of 49 copies: no overlap (residual 2e-5 at volume 89 = float noise). The e
 against its point reflection the corners miss by 0.0475 edge, so touching copies meet on full planes but corners do not match.
 A thin twisted hexagonal connector at each joint (hull of the two hexagons; gaps 0.05–0.2 tried, no overlap) makes every join face to face; the connectors sit exactly on the pyrochlore sites.
 Open: what fills the space between (compare Golden Bodhi Pyrochlore and the 10-16 OCD-pyrochlore study).
+
+## 11-05 Where the pyrochlore network goes (pyro_fill.py, pyro_jacket.py; float; equal-edge cut OG, edge 1)
+Diamond nodes (cut OGs) + the empty second diamond together form a bcc lattice; its truncated octahedra (TO) split space.
+- Each cut OG lies wholly inside its own TO and touches it on 8 hexagons: the 4 joints (pyrochlore sites) and the 4 facing empty cells.
+- The empty cells are WHOLE TOs (nothing enters them) → fill with truncated octahedra.
+- Cut OG fills 75.43% of its TO (gap 0); with connectors gap 0.1: 71.78%, 0.3: 65.18%.
+- Jacket (TO − cut OG, 29.067) split by the 14 face pyramids: 8 hexagon pieces 2.2898 (rings round the touching hexagon, genus 1)
+  + 6 square pieces 1.7914 (solid, genus 0). Symmetry of the arrangement = Th (24): squares one rotation orbit, achiral;
+  hexagon pieces one Th orbit with only C3 on each → left/right pair, 4 + 4 (by symmetry; float matcher noisy on this data).
+KIT: cut OG (equal-edge) + truncated octahedron + hexagon ring L/R + square piece = 4 shapes (5 with mirrors) fill space; pyrochlore sites = the joint hexagons.
