@@ -39,3 +39,11 @@ Readings: the cubic tone Q4 is silent exactly at the golden interval (833 cents)
 the sixth tone Q6 is nearly silent near the perfect fourth (its exact zero is at μ ≈ 1.3454, 514 cents, not 4/3). Kelvin's cell is the perfect fifth.
 Cube half (SO(7)): μ from 2 to 3 is from the octave to the twelfth (octave + fifth); the silver point 1 + √2 is 326 cents above the octave.
 App idea: a tuning instrument — the sweep slider sounds two tones at ratio μ while the solid morphs and a meter shows Q4, Q6; just intervals marked with their multiplets.
+
+## Four dimensions: SO(9) (B4) and the 4D sweep K ∩ μK* (#91), 4 Nov — orbit = sweep section, fingerprints equal (5 cases)
+Highest weight (a, b, c, d) = (a+b+c+d/2, b+c+d/2, c+d/2, d/2); walls x1 = λ1 and |x|_1 = Σλ, so μ = Σλ/λ1.
+Stations: vector 9 = 16-cell (μ = 1) · adjoint 36 = 24-cell (μ = 2) · 84 = rectified tesseract (μ = 3) · spinor 16 = tesseract (μ = 4).
+DICTO ALL-GOLDEN POLYTOPES AS LIMITS OF FIBONACCI MULTIPLETS: in the stretch μ ∈ [2, 3], weights (0, b, c, 0) sit at μ = 2 + c/(b + c);
+(0, F_n, F_{n+1}, 0) — dims 1650, 27027, 1527552, 142074933, 27491692800, 8195406055200 — give μ = 2.5, 2.667, 2.6, 2.625, 2.6154, 2.6190 → φ²
+(All-Golden with 8 Icosaxes cells); the reversed (0, F_{n+1}, F_n, 0) give μ → 2 + 1/φ² (All-Golden with 8 Unborn Axes cells).
+So in 3D (SU(4) ≅ SO(6), SO(7)) and in 4D (SO(9)) the golden solids are the limits of Fibonacci ladders of multiplets.
