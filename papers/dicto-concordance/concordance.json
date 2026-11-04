@@ -4657,6 +4657,24 @@
     "retry": "never; only if a layered tiling by the same piece is found",
     "study": "2026-11-04-tetra-sweep",
     "date": "2026-11-04"
+   },
+   {
+    "question": "Does Narcissus fill c (ABC) layers too, i.e. every stacking (incl. Fibonacci)?",
+    "method": "congruence of c-tile pieces at λ = 3/8, 2/5, 1/2 with Narcissus",
+    "status": "SETTLED (within HexOct)",
+    "result": "NO: the c-tile is made of a different 8-corner piece (same volume √2/4). Narcissus tilings known: periodic (AB) only",
+    "retry": "never in HexOct; other arrangements unknown (not ruled out)",
+    "study": "2026-11-04-dehn-screen",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Does the 8-corner c-piece (λ ≥ 3/8) tile space alone?",
+    "method": "—",
+    "status": "OPEN",
+    "result": "same volume as Narcissus; c-tile = two such pieces",
+    "retry": "run congruence + symmetry check (as for Narcissus)",
+    "study": "2026-11-04-dehn-screen",
+    "date": "2026-11-04"
    }
   ]
  },
