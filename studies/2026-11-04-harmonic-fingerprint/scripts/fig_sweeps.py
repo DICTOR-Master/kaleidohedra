@@ -22,10 +22,10 @@ g1 = np.linspace(1.002, 2.998, 500); g2 = np.linspace(1.002, 1.998, 250)
 for l in (4, 6, 8):
     ax[0].plot(g1, [Q(co(m), l) for m in g1], color=cols[l], lw=1.8, label=f'Q{l}')
     ax[1].plot(g2, [Q(cord(m), l) for m in g2], color=cols[l], lw=1.8, label=f'Q{l}')
-st = {'Unborn Axes\n3 − φ': 3-phi, 'Kelvin\n3/2': 1.5, 'Icosaxes\nφ': phi, 'cubocta-\nhedron 2': 2.0,
+st = {'Unborn Axes\n3 − φ': 3-phi, 'Kelvin\n3/2': 1.5, 'Icosaxes\nφ': phi, 'cuboctahedron 2': 2.0,
       'Greater\nGolden\nCut Cube': 4+1.5*2**.5-5**.5-.5*10**.5, 'Lesser\nGolden\nCut Cube': 4-1.5*2**.5+5**.5-.5*10**.5}
 for k, (n, m) in enumerate(st.items()):
-    ax[0].axvline(m, color='#bbb', lw=.8, zorder=0); ax[0].text(m + 0.01, 0.84 - 0.13*(k % 2), n.replace(chr(10), ' '), ha='left', va='top', fontsize=7, color='#444', rotation=0)
+    ax[0].axvline(m, color='#bbb', lw=.8, zorder=0); ax[0].text(m + 0.01, 0.84 - 0.09*(k % 3), n.replace(chr(10), ' '), ha='left', va='top', fontsize=7, color='#444', rotation=0)
 ax[0].plot([phi], [0], 'o', color='#b8862e', ms=7, zorder=5)
 m0 = 1 + math.sqrt((6*math.sqrt(30)-31)/17); ax[1].plot([m0], [0], 'o', color='#b8862e', ms=7)
 ax[1].text(m0, 0.04, 'Q4 = 0 at\n1 + √((6√30 − 31)/17)', fontsize=7.5, ha='left')
