@@ -56,7 +56,7 @@ import { t, tn, tFor } from './i18n.js';
 import { polyShapeEdges, polyShapeName } from './poly-shapes.js';
 import { FAMILY_META, familyIds, familiesFor, pairPartners } from '../krp-core/src/polyhedra/families.js';
 import { TRANSITIONAL_IDS } from '../krp-core/src/polyhedra/transitional.js';
-import { POLYHEDRA, KITS13, KIT13_ADDITION_IDS, mosseriSadocTile, REULEAUX_ADDITION_IDS, STAR_CORES_SOLID_IDS, KAGEMUSHA_CREST_IDS, STAR_CORES_SHAPE_IDS } from '../krp-core/src/polyhedra/index.js';
+import { POLYHEDRA, KITS13, KIT13_ADDITION_IDS, mosseriSadocTile, REULEAUX_ADDITION_IDS, STAR_CORES_SOLID_IDS, KAGEMUSHA_CREST_IDS, STAR_CORES_SHAPE_IDS, NARCISSUS_IDS } from '../krp-core/src/polyhedra/index.js';
 import { hexoctPreviewEdges } from './hexoct-geometry.js';
 import { isConvex } from '../krp-core/src/assembly/faceRegistration.js';
 import { favourites, recent, isFavourite, toggleFavourite } from './poly-prefs.js';
@@ -677,7 +677,7 @@ const DICTO_WORK = new Set(['starCores', 'whiteQueen', 'bloom', 'stackings', 'he
 const DICTO_PIECE_ACTIONS = new Set(['tool:pieceType:dictohex']);
 // DICTO's newest first (DICTO 2026-11-02): the four Star Cores solids D106–D109 (named 2026-10-31), then Kagemusha's crests and the other
 // Star Cores shapes not in PV before (D105 down to D22, newest first), each in its own section.
-const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: [...STAR_CORES_SOLID_IDS, ...KAGEMUSHA_CREST_IDS, ...STAR_CORES_SHAPE_IDS, 'DICTO_ICOSAXES', 'DICTO_UNBORN_AXES', 'DICTO_LOTUS_JEWEL_AXES', 'DICTO_DODECAXES', 'DICTO_SAMSON', 'DICTO_DELILAH', 'TETRAPOD_FIVE_TO', 'TETRAPOD_FOUR_RD', 'ANTONIUS', 'ICOSA_FACE_PYRAMID', 'PENTA_CLEO', 'CLEO_SPHERE_POCKET', 'HEX_AKTIS', 'DELTOID_AKTIS', 'OTT_CLEO_ICOS', 'OTT_TRIANGLE_RAY', 'OTT_RHOMBIC_RAY', 'DICTO_EDGE_ROOF', 'DICTO_UNBORN', 'DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER', ...KIT13_ADDITION_IDS] };
+const DICTO_POLY = { key: 'DICTO_PIECES', label: "DICTO's pieces", ids: [...NARCISSUS_IDS, ...STAR_CORES_SOLID_IDS, ...KAGEMUSHA_CREST_IDS, ...STAR_CORES_SHAPE_IDS, 'DICTO_ICOSAXES', 'DICTO_UNBORN_AXES', 'DICTO_LOTUS_JEWEL_AXES', 'DICTO_DODECAXES', 'DICTO_SAMSON', 'DICTO_DELILAH', 'TETRAPOD_FIVE_TO', 'TETRAPOD_FOUR_RD', 'ANTONIUS', 'ICOSA_FACE_PYRAMID', 'PENTA_CLEO', 'CLEO_SPHERE_POCKET', 'HEX_AKTIS', 'DELTOID_AKTIS', 'OTT_CLEO_ICOS', 'OTT_TRIANGLE_RAY', 'OTT_RHOMBIC_RAY', 'DICTO_EDGE_ROOF', 'DICTO_UNBORN', 'DICTO_DODECA13', 'DICTO_DODECA13_STAR', 'DICTO_DODECA13_UNIT', 'DICTO_DODECA13_WEDGE', 'DICTO_DODECA13_NEEDLE', 'DICTO_HEXA', 'DICTO_HEXA_KEY', 'DICTO_HEXA_RHOMBO_CLUSTER', 'DICTO_HEXA_DIAMOND_CLUSTER', 'DICTO_HEXA_TRIMMED_JEWEL', 'DICTO_HEXA_ROOF', 'DICTO_SKEWED_RD', 'DICTO_SQUARE_FACED_BLOCK', 'DICTO_ALL_RHOMBUS_BLOCK', 'DICTO_FLATTENED_RHOMBOHEDRON', 'DICTO_LEANING_HEX_PRISM', 'DICTO_SKEWED_ED_16', 'DICTO_SKEWED_ED_18', 'DRAGON_JEWEL', 'DJ_TETRAHEDRAL_CLUSTER', 'DJ_OCTAHEDRAL_CLUSTER', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER', ...KIT13_ADDITION_IDS] };
 export const DICTO_PIECE_IDS = DICTO_POLY.ids;
 // The shape a face was tapped on, while picking: its space-filling partners come first (as the old site).
 let partnerIds = [];
@@ -1294,6 +1294,8 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     if (ZOME_PARALLELOHEDRA_ADDITION_IDS.includes(id) && !DICTO_SKEWED_ED_IDS.includes(id)) out.push(`<div class="poly-credit" data-credit="zome">${t('pv.detail.zomeCredit', L)}</div>`);
     if (DICTO_SKEWED_ED_IDS.includes(id)) out.push(`<div class="poly-credit" data-credit="skewed-ed">${t('pv.detail.dictoSkewedEdCredit', L)}</div>`);
     if (REGULAR_NINE_ADDITION_IDS.includes(id)) out.push(`<div class="poly-credit" data-credit="regular-nine">${t('pv.detail.regularNineCredit', L)}</div>`);
+    if (id === 'DICTO_NARCISSUS' || id === 'DICTO_NARCISSUS_TOGETHER') out.push(`<div class="poly-credit" data-credit="narcissus">${t('pv.detail.narcissusCredit', L)}</div>`);
+    if (id === 'RHOMBOHEDRA_ANY_STACKING') out.push(`<div class="poly-credit" data-credit="rhombo-stack">${t('pv.detail.rhomboStackCredit', L)}</div>`);
     if (id === 'DOGSTAR' || id === 'SEAMED_DODECAHEDRON') out.push(`<div class="poly-credit" data-credit="dogstar">${t('pv.detail.dogstarCredit', L)}</div>`);
     // The two families on one lattice (DICTO 2026-10-20: the Sunstar and Jewel pieces looked the same to him), the papers #41 and #42.
     if (['SEAMED_DODECAHEDRON', 'DOGSTAR', 'DODECA_TETRAHEDRAL_CLUSTER', 'DODECA_OCTAHEDRAL_CLUSTER'].includes(id)) out.push(`<div class="poly-credit" data-credit="sunstar-family">${t('pv.detail.sunstarFamily', L)}</div>`);

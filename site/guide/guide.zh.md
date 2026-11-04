@@ -316,6 +316,8 @@ Polyhedraverse 是肖像画廊：按家族排列的每一个形状，一次一�
 
 ## DICTO 的部件
 
+**那喀索斯**（最新，DICTO 2026-11-04）：HexOct 的 h 瓦片在 λ = 3/8 时变成的块，位于 DICTO's pieces 最前面。它是自己的镜像，仅用它的复制就能填满空间；两块组成 HexOct 套件 A 组的扭转立方体。**那喀索斯与立方体**展示了只用两种块填满的斐波那契堆叠：那喀索斯（h 层）和立方体（c 层），每块都是一个球所占空间的一半。 **菱面体：一种块填任何堆叠**用单一一种块——经典的 60° 菱面体（一个八面体加两个四面体）——每个球一块，填满同一个堆叠。
+
 **星核形体**（最新，DICTO 2026-11-02）：DICTO 于 2026 年 10 月 31 日命名的四个立体 **Cube Pearl**（D106）、**Golden Clasp**（D107）、**Hamlet**（D108）和 **Ophelia**（D109）排在 DICTO 的部件最前；PV 尚未收录的其他星核形体（TI Star core、Star Halo、Alice 一族、OG 及其链、GTI 等，共 42 个）按从新到旧列在单独的分区。每个都有 ★ Star step。**Kagemusha 的盔饰**：在第一步星中填满 Kagemusha 五个凹口的 **MAEDATE** 和 **KUWAGATA**，既可单独，也可装在 Kagemusha 上（Kagemusha 为金色，盔饰为青绿色）。
 
 DICTO 的部件以 **DICTO Hexa** 家族开头：DICTO Hexa（八个 DICTO 宝石组成的立方体，内部相互穿插，为一个实体）、**DICTO Hexa-Key**（Hexa 之间的空隙：Hexa 与 Hexa-Key 一起填满空间）、两种由八个 Hexa 组成的簇（菱面体形，内部封有一个 Hexa-Key；以及共享角宝石的金刚石形），以及拆分出的修剪宝石和屋顶。构建中有它们时，**部件** 可显示为其宝石，或拆成互不重叠的部件：A（立方体和屋顶）或 B（完整宝石和修剪宝石）。
