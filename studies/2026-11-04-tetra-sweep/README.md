@@ -35,3 +35,6 @@ EXPLANATION (classical): at μ = √n every facet, cube and cross-polytope, is a
 and for NO station on the CO–RD sweep (the CO's facets never all touch one sphere).
 CORRECTION for the record: the "exact √3 coincidence" (mahler-sweep, #94 v2 draft, Concordance waiting list) is Lindelöf's theorem, not a new coincidence;
 the core turn μ ↔ 3/μ has √3 as fixed point for the same reason (it swaps the two facet distances). Wording in #94 v2 must say so.
+
+## Q6 on the tetrahedron sweep (scripts/tetra_q6.py)
+m = 0 coefficient about the 3-fold axis (the cubic l = 6 invariant is one-dimensional, so a zero would be a sign change): Q4 changes sign once, μ ≈ 1.8055 (and 1/μ); Q6 never — the sweep is never silent in degree 6.
