@@ -29,3 +29,8 @@ Piece kinds Q′ (4 corners), I (icosahedron), A (Admiral Cap, 5 corners): Dehn 
 
 ## Delian walk O(t) (scripts/delian_dehn.py)
 Dehn(O(t)) = (total triangle–rhombus edge length) ⊗ arccos(−√(2/3)) (144.74°; RD edges 120° rational): nonzero for every t > 0, zero only at t = 0 (the RD). Checked at 5 t.
+
+## Batch IQ / Mahler / Q6 (scripts/batch_iq_mahler.py, data/batch-iq-mahler.json) — filled 13 grid cells
+Delian O(t): IQ max at t ≈ 0.18325 = Lindelöf point t = 1 − √6/3 ≈ 0.1835 (rhombi at 1/√2, triangles at √3(1−t)/2 equal) — Lindelöf again. Mahler max 13.852 at t ≈ 0.135, no station.
+CO–RD sweep: Q6 changes sign once, μ ≈ 1.65. OG family: IQ 0.938–0.969, Mahler 16.59–17.13 (DPHP roundest by both; ball (4π/3)² = 17.55).
+Admiral: A cap IQ 0.414, Mahler ≈ 9.000 (exact value?), Q6 0.358. Pyramids: T Mahler 64/9 (any tetrahedron), C6 = R12 8.681 (affine images: calibration). Fixed HexOct h-piece: IQ 0.487, Mahler ≈ 34/3 (to confirm exactly).
