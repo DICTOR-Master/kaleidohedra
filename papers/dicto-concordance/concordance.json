@@ -4533,8 +4533,8 @@
     "question": "Does an h-piece tile alone for 5/24 ≤ λ < 3/8?",
     "method": "—",
     "status": "OPEN",
-    "result": "Dehn zero (necessary only)",
-    "retry": "tiling search",
+    "result": "Dehn zero (necessary only) · 4 Nov: the local edge-angle count passes for every λ tested (dihedrals pair: 70.5+109.5 = 180, 125.3+144.7 = 270) and the tet h-piece is Dehn-zero throughout — so BOTH necessary tests pass: a genuine candidate stretch ending at Narcissus (3/8). Needs a constructive search.",
+    "retry": "constructive tiling search for the tet h-piece at a sample λ (e.g. 1/4, 1/3)",
     "study": "2026-11-04-dehn-screen",
     "date": "2026-11-04"
    },
@@ -4787,6 +4787,15 @@
     "status": "SETTLED",
     "result": "Dehn zero on 1 ≤ μ ≤ 4/3 (cube-trimmed RDs: dihedrals 90/120/135°) and at 5/3; corrects \"only at 5/3\"; no member tiles (angle count)",
     "retry": "never",
+    "study": "2026-11-04-lqg-bridge",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Dehn screen fragility on HexOct pieces (sums ~1e-10)",
+    "method": "hpiece_angles.py vs hexoct_quarter.py",
+    "status": "METHOD-FAILED (float)",
+    "result": "oct pieces flip zero/nonzero at λ = 1/4, 17/48 between runs; sums ~1e-10 sit at the tolerance edge",
+    "retry": "only with an EXACT Dehn computation (exact HexOct coordinates)",
     "study": "2026-11-04-lqg-bridge",
     "date": "2026-11-04"
    }
