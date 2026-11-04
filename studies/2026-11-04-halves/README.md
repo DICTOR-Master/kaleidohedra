@@ -21,3 +21,9 @@ E7 (cut_shadow.py, DICTO "solids with a central band"): a band between the halve
 E8 (slant_band.py, DICTO "slanted hexagonal prisms with a double angle"): a LEANING band dents at every lean and height (the half's walls meet the
    hexagon vertically — cut = shadow — so any lean kinks); the chevron (out and back) is worse. Leaning the WHOLE cell (a shear) stays convex and keeps
    the tiling: each layer slid along its lean (DICTO Hex Prism; Kaleidohedra's shear). Again: the option lives on the layer.
+E2 progress: fair test (twist_word.py) clean for ABC (fcc), AB (hcp), ABCB (c h c h); ABCACB and the Fibonacci approximant running.
+E6 census (classical): only the CO (-> J27) and the RD (-> TRD) twist convexly; every other classical solid's twist dents. OG family: incomplete
+   (3 of 9 processed, no 5-fold axes found: tolerance on float data) — rerun with tolerance 1e-4 (halves-og.log).
+E9 PRIOR ART: banded STRAIGHT join = the known general trapezo-rhombic dodecahedron ("tall hexagonal prism with 3 angled cuts top and bottom",
+   space-filling; hcp Voronoi cell only at long side = 2 × short side). Banded TWISTED join (RD banded along its 3-fold axis) not found; the known
+   elongated dodecahedron is banded along the 4-fold axis (Fedorov). Fuller search before any claim.

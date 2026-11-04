@@ -31,7 +31,10 @@ def frame(a):
 def sig(P): D = np.linalg.norm(P[:, None] - P[None], axis=2); return tuple(sorted(np.round(D.ravel(), 5)))
 def rz(t): return np.array([[math.cos(t), -math.sin(t), 0], [math.sin(t), math.cos(t), 0], [0, 0, 1]])
 out = []
+import os
+ONLY = os.environ.get('ONLY')
 for name, V in SOL.items():
+    if ONLY and ONLY not in name: continue
     P = np.unique(np.round(np.array(V, float), 10), axis=0); P = P - P[ConvexHull(P).vertices].mean(0); h = ConvexHull(P); P = P[h.vertices]; h = ConvexHull(P)
     cand = [p for p in P] + [P[s].mean(0) for s in h.simplices] + [(p + q)/2 for p, q in itertools.combinations(P, 2) if abs(np.linalg.norm(p - q) - min(np.linalg.norm(x - y) for x, y in itertools.combinations(P, 2))) < 1e-6]
     axes = []
@@ -43,7 +46,7 @@ for name, V in SOL.items():
     seen = set()
     for a in axes:
         F = frame(a); Q = P @ F.T
-        n = max([k for k in (2, 3, 4, 5, 6) if sig(Q @ rz(2*math.pi/k).T) == sig(Q) and all(np.min(np.linalg.norm(Q - p, axis=1)) < 1e-6 for p in Q @ rz(2*math.pi/k).T)], default=1)
+        n = max([k for k in (2, 3, 4, 5, 6) if all(np.min(np.linalg.norm(Q - p, axis=1)) < 1e-4 for p in Q @ rz(2*math.pi/k).T)], default=1)
         if n < 2: continue
         hq = ConvexHull(Q)
         def half(top):
@@ -51,7 +54,7 @@ for name, V in SOL.items():
             return np.unique(np.round(x, 9), axis=0)
         try: T, B = half(True), half(False)
         except Exception: continue
-        if sig(T) != sig(B): continue
+        if not (len(T) == len(B) and all(np.min(np.linalg.norm(B - p, axis=1)) < 1e-4 for p in -T)): continue
         sec = T[np.abs(T[:, 2]) < 1e-9]
         key = (n, len(sec), sig(T)[:40])
         if key in seen: continue
