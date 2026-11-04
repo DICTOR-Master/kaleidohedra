@@ -24,3 +24,12 @@ Hull of the two-icosahedra node star (icosahedron edge 1): 8 equilateral triangl
 + 4 hexagons with sides among √2/2, 1, √2, 1.144, 1.851, 2.288; symmetry order 4; hull volume 6.937 > star 6.263 (the star is not convex).
 Verdict: an irregular convex hull of mixed edges and low symmetry, not a solid in the sense of the papers (no equal edges, no regular faces beyond the triangles).
 The real find is the NODE: two icosahedra sharing a corner where the golden twins change (a twin boundary of the Admiral network).
+
+## Best twin pattern (ground state), 4 Nov
+scripts/twin_ground_state.py (exhaustive side 2; annealing sides 4, 6, 8), data/twin-ground-state.json.
+- The local bound 2/3 of shared edges is reached exactly, already with period 2 (4 octahedra classes; 6 optimal patterns: two classes per twin).
+- Ground states found: twin(c) = parity(c_a) XOR f(c_b) for two different cube axes a, b and ANY function f of the layer index c_b:
+  the twins alternate layer by layer along one axis, and every layer across a second axis may be flipped freely. Checked: all 96 (side 4) and 384 (side 6) such patterns are optimal;
+  all 42 distinct optima met by annealing on side 4 are of this form (completeness not proved).
+- So the ground states are uncountably many, one free bit per layer: a layer law like the close-packed stackings (#92), here on the cube's layers.
+LEADS: prove completeness; fingerprint the twin-boundary layers (where f flips); does a physical Admiral build prefer one layer word?
