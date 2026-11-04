@@ -17,3 +17,10 @@ Open: half-octahedron layers can slide on square slabs (as #92 Theorem D's cubes
 - Same method for the other quasi-regular solid: icosidodecahedron pyramids (circumradius = edge·φ, not regular pieces) — and the rhombic duals (RD done in #93; RT open).
 - The octahedron's three cut choices are a 3-colouring problem on the octet: counting the choices that give a given set of CO centres.
 - Physical: DICTO's node work (CO = fcc coordination shell, J27 = hcp) — the c vertex builds the CO, the h vertex its twin.
+
+## The twin of the rectified cubic honeycomb on every stacking (4 Nov) — scripts/j27_tiling.py (+ whole-octahedra condition, run inline)
+Integer program on periodic boxes (≥ 4 layers; 2–3-layer boxes fold neighbours and are invalid): choose centres so every tetrahedron has exactly one centre
+corner and every octahedron serves both ends of one axis or none. FEASIBLE on ABCABC (fcc, control), ABAB and ABABAB (hcp), ABCB, ABCACB (mixed),
+boxes 4×4 and 6×6: centres = 1/4 of the balls, no half-octahedron left over. So on every stacking tested, space is tiled by whole cuboctahedra
+(at straight centres), anticuboctahedra J27 (at twisted centres) and whole octahedra; on hcp by J27 and octahedra alone — the twisted twin of the
+rectified cubic honeycomb. PRIOR ART to check (Johnson-solid space-fillers; tilings with triangular orthobicupolae).
