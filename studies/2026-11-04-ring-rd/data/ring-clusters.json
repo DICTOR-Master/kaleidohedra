@@ -1,0 +1,62 @@
+{
+ "r_over_R": 0.5,
+ "ring_plane_over_R": 0.8660254037844386,
+ "centre_distance_over_R": 1.7320508075688772,
+ "clusters": [
+  {
+   "cluster": "1",
+   "cells": 1,
+   "contacts": 0,
+   "opt1_rings_shared": 12,
+   "opt1_tie_points": 24,
+   "opt1_rings_per_tie": {
+    "2": 24
+   },
+   "opt2_rings_separate": 12,
+   "opt2_ties_in_cells": 24,
+   "opt2_extra_ties_per_contact": "k (2-4, to confirm)"
+  },
+  {
+   "cluster": "4 tetrahedral",
+   "cells": 4,
+   "contacts": 6,
+   "opt1_rings_shared": 42,
+   "opt1_tie_points": 76,
+   "opt1_rings_per_tie": {
+    "2": 60,
+    "3": 16
+   },
+   "opt2_rings_separate": 48,
+   "opt2_ties_in_cells": 96,
+   "opt2_extra_ties_per_contact": "k (2-4, to confirm)"
+  },
+  {
+   "cluster": "6 octahedral",
+   "cells": 6,
+   "contacts": 12,
+   "opt1_rings_shared": 60,
+   "opt1_tie_points": 104,
+   "opt1_rings_per_tie": {
+    "2": 72,
+    "3": 32
+   },
+   "opt2_rings_separate": 72,
+   "opt2_ties_in_cells": 144,
+   "opt2_extra_ties_per_contact": "k (2-4, to confirm)"
+  },
+  {
+   "cluster": "14 fcc cube",
+   "cells": 14,
+   "contacts": 36,
+   "opt1_rings_shared": 132,
+   "opt1_tie_points": 224,
+   "opt1_rings_per_tie": {
+    "2": 144,
+    "3": 80
+   },
+   "opt2_rings_separate": 168,
+   "opt2_ties_in_cells": 336,
+   "opt2_extra_ties_per_contact": "k (2-4, to confirm)"
+  }
+ ]
+}
