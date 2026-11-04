@@ -4356,8 +4356,8 @@
     "n/a (outside the test’s competence)"
    ],
    "HexOct tiles (#75)": [
-    "—",
-    "—",
+    "no Q4 silence on the λ walk (min 0.025 h, 0.167 c)",
+    "no silence; h-tile Q6 minimum at λ ≈ 0.2084 ≈ 5/24 (Dehn onset) — to confirm",
     "fixed h-piece (λ ≥ 3/8): 0.487",
     "fixed h-piece: 34/3 (≈ 11.3333) — exact value to confirm",
     "n/a (outside the test’s competence)",
@@ -4368,5 +4368,208 @@
   },
   "note": "— = not yet run (a gap in understanding, or outside the test's competence). DICTO 4 Nov 2026: tests and methods group the results into sets and subsets and show where further gaps lie. · 4 Nov: cells outside a test’s competence marked n/a (DICTO)."
  },
- "overlaps_note": "Cross-thread overlaps found on 4 Nov 2026: the involution fixed points (√3, 3/2, 24-cell μ = 2) are singled out by roundness, foam and 4D harmonics; φ appears as Icosaxes (harmonic silence), Fibonacci multiplets (SU(4)), the golden interval (tuning) and the Fibonacci stacking word; layer words govern stackings (#92), the Admiral network ground states and the J27/CO tilings. The golden solids in 3D (Icosaxes, Unborn Axes) and in 4D (DICTO All-Golden Polytopes) are all limits of Fibonacci ladders of particle multiplets (SU(4), SO(9))."
+ "overlaps_note": "Cross-thread overlaps found on 4 Nov 2026: the involution fixed points (√3, 3/2, 24-cell μ = 2) are singled out by roundness, foam and 4D harmonics; φ appears as Icosaxes (harmonic silence), Fibonacci multiplets (SU(4)), the golden interval (tuning) and the Fibonacci stacking word; layer words govern stackings (#92), the Admiral network ground states and the J27/CO tilings. The golden solids in 3D (Icosaxes, Unborn Axes) and in 4D (DICTO All-Golden Polytopes) are all limits of Fibonacci ladders of particle multiplets (SU(4), SO(9)).",
+ "ledger": {
+  "note": "DICTO 4 Nov 2026: log every attempt so that only possibilities are ever retried. status: SETTLED (never retry), UNDECIDED (retry ONLY with the named better method), METHOD-FAILED (retry only after the named fix), OPEN (not yet tried). Read before starting any test.",
+  "entries": [
+   {
+    "question": "Tetrahedron sweep: IQ, Mahler, Dehn",
+    "method": "measures.py exact",
+    "status": "SETTLED",
+    "result": "IQ max at octahedron; Mahler 4(μ³−9μ²+27μ−11)/(3μ), max (11−√33)/4; Dehn zero only μ=2, 1/2",
+    "retry": "never",
+    "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Does T(4) minus corners tile alone?",
+    "method": "octet exact cover N≤30 + verify",
+    "status": "SETTLED",
+    "result": "yes (N=20, 2 orientations) — KNOWN Damasceno–Engel–Glotzer 2012",
+    "retry": "never",
+    "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Roundness max on cube ∩ μ·cross in n dims",
+    "method": "sqrt_n.py exact n=2..12",
+    "status": "SETTLED",
+    "result": "μ=√n = Lindelöf's theorem (classical); √3 'coincidence' corrected",
+    "retry": "never",
+    "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "4D sweep IQ, Mahler",
+    "method": "sweep4d.py",
+    "status": "SETTLED",
+    "result": "IQ max 24-cell (2⁻¹¹); Mahler max μ≈2.2837 no station",
+    "retry": "never",
+    "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Golden Dehn-zero truncated tetrahedra: list",
+    "method": "golden_cuts.py exact Z[φ], powers to φ⁻⁸",
+    "status": "SETTLED to φ⁻⁸",
+    "result": "7 cut vectors",
+    "retry": "only to extend beyond φ⁻⁸",
+    "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Golden truncated tetrahedra: harmonic silence",
+    "method": "golden_harmonic.py Q3–Q8",
+    "status": "SETTLED",
+    "result": "none silent; Q4 ≈ 0.127–0.130 cluster (note only)",
+    "retry": "never",
+    "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Census n≤4: (1,1,0,0)",
+    "method": "patch + periodic",
+    "status": "SETTLED",
+    "result": "tiles (N=2)",
+    "retry": "never",
+    "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Census: (1,1,1,0) n=3, (2,1,0,0) n=3, (2,1,1,0) n=4, (3,2,0,0) n=5",
+    "method": "patch search, 900 s cap, DLX",
+    "status": "UNDECIDED",
+    "result": "timeout (8–24 orientations too many for plain DLX)",
+    "retry": "ONLY with a SAT solver (pysat/kissat on dicto-big-brother) or larger cap with symmetry breaking",
+    "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Census rest: n=4 (2,2,0,0),(3,1,0,0); n=5 others; n=8 golden approximants",
+    "method": "—",
+    "status": "OPEN",
+    "result": "not reached (runs stopped: same method would time out)",
+    "retry": "with SAT method",
+    "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Dehn screen method v1 (lengths in Q(√2,√5))",
+    "method": "PSLQ on lengths",
+    "status": "METHOD-FAILED",
+    "result": "failed calibration",
+    "retry": "never (replaced by angle-relation method v2)",
+    "study": "2026-11-04-dehn-screen",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "OG family Dehn",
+    "method": "dehn.py v2, tol 1e-8/1e-9",
+    "status": "SETTLED (numerical, calibrated 11/11)",
+    "result": "all nine nonzero",
+    "retry": "only for an exact proof",
+    "study": "2026-11-04-dehn-screen",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "HexOct pieces Dehn along λ",
+    "method": "hexoct_dehn/quarter",
+    "status": "SETTLED",
+    "result": "c-pieces nonzero; h-pieces zero exactly from λ=5/24; tiles zero",
+    "retry": "never",
+    "study": "2026-11-04-dehn-screen",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Fixed h-piece (λ≥3/8) tiles alone",
+    "method": "congruence of the h-tile's two pieces",
+    "status": "SETTLED",
+    "result": "yes (two mirror copies per h-tile)",
+    "retry": "never; OPEN: its identity / prior art",
+    "study": "2026-11-04-dehn-screen",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Does an h-piece tile alone for 5/24 ≤ λ < 3/8?",
+    "method": "—",
+    "status": "OPEN",
+    "result": "Dehn zero (necessary only)",
+    "retry": "tiling search",
+    "study": "2026-11-04-dehn-screen",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Admiral kinds, Delian O(t), CsCl Dehn",
+    "method": "dehn.py v2 / by hand",
+    "status": "SETTLED",
+    "result": "all nonzero alone (Delian zero only at RD; CsCl single piece only Kelvin)",
+    "retry": "never",
+    "study": "2026-11-04-dehn-screen",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Batch IQ/Mahler/Q6 (Delian, CO–RD, OG, Admiral, pyramids, h-piece)",
+    "method": "batch_iq_mahler.py",
+    "status": "SETTLED (float)",
+    "result": "Delian IQ max = Lindelöf t=1−√6/3; CO–RD Q6 zero μ≈1.65; others in grid",
+    "retry": "never",
+    "study": "2026-11-04-dehn-screen",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Exact Mahler: A cap (≈9.0002) and h-piece (≈34/3)",
+    "method": "sympy exact hull",
+    "status": "METHOD-FAILED",
+    "result": "timeout 600 s (symbolic too slow)",
+    "retry": "only with rational-affine + Fraction arithmetic (no sympy simplify)",
+    "study": "2026-11-04-dehn-screen",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "HexOct tiles harmonic along λ",
+    "method": "hexoct_harmonic.py (399 λ)",
+    "status": "SETTLED (float)",
+    "result": "no Q4/Q6 silence; h-tile Q6 MIN at λ≈0.2084 ≈ 5/24 (= Dehn onset)",
+    "retry": "OPEN: confirm the Q6 minimum is exactly 5/24",
+    "study": "2026-11-04-dehn-screen",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Tetrahedron sweep Q6",
+    "method": "tetra_q6.py",
+    "status": "SETTLED",
+    "result": "never silent; Q4 zero μ≈1.8055",
+    "retry": "never",
+    "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "RT centre pyramids tile?",
+    "method": "rt_pyramids.py edge-to-edge",
+    "status": "UNDECIDED",
+    "result": "alive to 31 pieces; overnight 60/100/150 running (re-queued after mkdir bug)",
+    "retry": "read result; then aperiodic clue checklist",
+    "study": "2026-11-04-rt-pyramids",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Interlocking: tetra-sweep tiling (β-tin) and CsCl pair slabs",
+    "method": "interlock_rot.py",
+    "status": "OPEN",
+    "result": "—",
+    "retry": "run",
+    "study": "—",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "600-cell slices: IQ, Mahler, Dehn",
+    "method": "—",
+    "status": "OPEN",
+    "result": "—",
+    "retry": "run",
+    "study": "—",
+    "date": "2026-11-04"
+   }
+  ]
+ }
 }
