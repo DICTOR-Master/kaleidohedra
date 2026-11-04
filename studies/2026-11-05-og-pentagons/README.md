@@ -20,3 +20,10 @@
   Middle-layer octahedra: leftover = 6 twin corner pieces (0.07707 each; touching ones merge in the boolean: 0.3083 = 4x, 0.23122 = 3x).
   Tetrahedra: all 12 are twin dented tetrahedra (0.4059). So any stacking uses at most 7 shapes: cut OG, octet connector, twin connector,
   corner piece, twin corner piece, dented tetrahedron (L/R), twin dented tetrahedron. TODO: chirality/congruence of the twin pieces; exact volumes; a sample mixed stacking (e.g. hcp-like ABAC).
+
+## 11-05 Left/right test of the twin pieces (gyro_chiral.py, fully gyrated patch, float)
+Corners = true corners only (boolean mesh artefacts on flat faces/straight edges dropped); match tolerance 1e-4.
+- Twin connector: 40 of 40 congruent by rotation; 9 corners; its mirror image is a rotation of itself -> ONE achiral shape.
+- Twin corner piece: 5 sampled; 3 one hand, 2 the other; not equal to its mirror -> chiral LEFT/RIGHT pair.
+- Twin dented tetrahedron: 12; 6 + 6; chiral LEFT/RIGHT pair.
+Kit for any stacking: 7 shapes, 10 counting mirror images (cut OG, octet connector, twin connector, corner piece achiral; twin corner L/R, dented tetrahedron L/R, twin dented tetrahedron L/R).
