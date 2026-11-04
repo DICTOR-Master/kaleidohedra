@@ -4569,6 +4569,24 @@
     "retry": "run",
     "study": "—",
     "date": "2026-11-04"
+   },
+   {
+    "question": "SAT patch method (census.py --sat, CaDiCaL, seqcounter at-most-one)",
+    "method": "calibration on (1,1,1,1) and the undecided (1,1,1,0)",
+    "status": "SETTLED",
+    "result": "(1,1,1,1) patch 0.2 s (known tiler); (1,1,1,0) patch EXISTS in 2.1 s (was DLX timeout)",
+    "retry": "never; use SAT for all patch tests",
+    "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "SAT patch census: all n<=5 + n=8 golden approximants",
+    "method": "census.py --sat, patch only",
+    "status": "RUNNING",
+    "result": "data/census-sat.log on dicto-big-brother",
+    "retry": "read result; then periodic test (SAT on tori) only for patch=true",
+    "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
    }
   ]
  }

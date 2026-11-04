@@ -6,7 +6,7 @@ T(n) minus corner tetrahedra of sizes k1..k4: Dehn = 6(n - Σk)⊗α, and (tetra
  (b) periodic exact cover on tori fcc/L of index m·(cells/3), m = 1..MMAX (all HNF sublattices), stop at the first found.
 Calibration: (1,1,1,1) at n = 4 must tile (known, Damasceno–Engel–Glotzer 2012)."""
 import sys, itertools, json, time, numpy as np
-A = sys.argv; sys.argv, NMAX, MMAX, NCAP = A[:1], int(A[1]), int(A[2]), int(A[3])
+A = sys.argv; SAT = '--sat' in A; A = [a for a in A if a != '--sat']; sys.argv, NMAX, MMAX, NCAP = A[:1], int(A[1]), int(A[2]), int(A[3])
 ONLY = json.loads(A[4]) if len(A) > 4 else None; OUT = A[5] if len(A) > 5 else 'data/census.json'
 exec(open('scripts/tile_octet.py').read().split("if __name__")[0])
 V = np.array([(0,0,0),(1,1,0),(1,0,1),(0,1,1)], float)
@@ -45,6 +45,21 @@ def patch(orients, R):
     rows = list(rows); base = tuple(sorted(ck(a, q) for a, q in zip(kinds, P0)))
     allc = sorted({c for r in rows for c in r}); idx = {c: i for i, c in enumerate(allc)}
     rws = [tuple(idx[c] for c in r) for r in rows]; prim = {idx[c] for c in ball}
+    if SAT:
+        from pysat.solvers import Cadical153
+        from pysat.card import CardEnc, EncType
+        cov = {}
+        for i, r in enumerate(rws):
+            for j in r: cov.setdefault(j, []).append(i + 1)
+        cnf = []; top = len(rws)
+        for j, lits in cov.items():
+            am = CardEnc.atmost(lits, 1, top_id=top, encoding=EncType.seqcounter); top = max(top, am.nv); cnf += am.clauses
+            if j in prim: cnf.append(lits)
+        b = rows.index(base) + 1; cnf.append([b])
+        t0 = time.time()
+        with Cadical153(bootstrap_with=cnf) as S:
+            ok = S.solve()
+        return ok, round(time.time() - t0, 1), len(ball)
     X = {j: set() for j in range(len(allc))}
     for i, r in enumerate(rws):
         for j in r: X[j].add(i)
