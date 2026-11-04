@@ -20,3 +20,11 @@ Special points of the sweep by unrelated measures:
 | Mahler product maximum (convex geometry) | root of 2μ³ − 9μ + 6 (≈ 1.6316) | none; within 1% of Icosaxes |
 | diamond growth α = 3/μ (crystal growth) | α ↔ μ is the core turn itself | the turn's fixed point √3 again |
 Two of the measures land exactly on stations our own work had named; the core turn's fixed point √3 is singled out twice (roundness, and as the point where α = μ).
+
+## Second dual sweep CO ∩ μRD (RD at μ = 1, CO at μ = 2), 4 Nov
+Exact pieces (fit to 1e-9, coefficients identified): (1, 4/3): V = −6μ³ + 24μ² − 24μ + 8, |S°| = 4(3μ + 2)/(3μ³); (4/3, 3/2): V = −24μ³ + 96μ² − 120μ + 152/3, |S°| = 6/μ²;
+(3/2, 2): V = 8μ³ − 48μ² + 96μ − 172/3, |S°| = 4/μ.
+- Ends: Mahler product 40/3 at the RD and at the CO (a polar pair; same value as the CO station of the first sweep).
+- Mahler maximum ≈ 15.387 at the root μ ≈ 1.5997 of 12μ³ − 36μ² + 43 = 0: no named station.
+- Isoperimetric maximum at μ ≈ 1.5227 (0.8525): no named station.
+So on the second sweep neither roundness nor polar balance lands on a station: the exact √3 coincidence belongs to the cube–octahedron pair.
