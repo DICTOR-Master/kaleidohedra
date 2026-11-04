@@ -4717,6 +4717,15 @@
     "retry": "never; prior-art check",
     "study": "2026-11-04-dehn-screen",
     "date": "2026-11-04"
+   },
+   {
+    "question": "DICTO 4 Nov: a cross between the RD and the TRD that fills space alone, aperiodically",
+    "method": "reasoning (by hand)",
+    "status": "OPEN (direction set)",
+    "result": "(a) The cross exists: RD and TRD share the same half-cell (TRD = RD with one half turned 60°), so the half-cell is ONE piece filling every stacking — to verify formally. (b) OBSTRUCTION: if the only freedom is the stacking (a 1D c/h word), shape can only enforce a finite-range rule, and every nonempty 1D subshift of finite type contains a periodic word (pigeonhole) — so no such piece can force aperiodicity; this is why SCD keeps a screw and Tsiokos forces in all 3 directions. (c) Route: force non-periodicity within the layers too (3D hierarchy on the close-packed lattice, Tsiokos open Q8), e.g. the half-cell with face features.",
+    "retry": "verify (a); (c) is a research project — DICTO to decide",
+    "study": "—",
+    "date": "2026-11-04"
    }
   ]
  },
