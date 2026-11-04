@@ -9,3 +9,8 @@ Results (sympy, exact):
 - Triangle-faced (T, O, I): σ(x1) = φ² and σ(x2) = 1/2 + √5/10 both exceed 1/2 — the twins over-cut (corner triangles overlap): no solid.
 So Double Vision pairs the cube's golden cuts with each other, fixes the dodecahedron's greater cut, sends its lesser cut to a φ³ cut, and has no solid partner for the triangle-faced solids.
 Chapter material for The Golden Ladder (cuts thread). LEADS: the φ³-cut dodecahedron (φ³ = the golden cycle's step, #54); the RD/RT golden cuts of #89 under σ.
+
+## φ³-cut dodecahedron in the golden cycle? (checked 4 Nov) — NO
+- No station of the cycle (I, Cleo star, D′, ID, OG, rTI, TI, H, jtI, RT, M, I·φ³; gnomon-all12.txt) is a truncated dodecahedron.
+- As a section D ∩ μ·D* (midsphere 1; ID at μ = 1), the φ³ cut sits at μ = (65 − 19√5)/22 ≈ 1.0234, not a golden power or a ratio of station sizes
+  (greater golden cut μ = 13/6 − √5/2, lesser 35/22 − 5√5/22). So the φ³ in its side ratio and the cycle's φ³ step share the number only.
