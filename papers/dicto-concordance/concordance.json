@@ -4587,6 +4587,24 @@
     "retry": "read result; then periodic test (SAT on tori) only for patch=true",
     "study": "2026-11-04-tetra-sweep",
     "date": "2026-11-04"
+   },
+   {
+    "question": "SAT periodic test (sat_periodic.py)",
+    "method": "CaDiCaL exact cover on every HNF torus",
+    "status": "SETTLED (method)",
+    "result": "calibrated: (1,1,1,1) N=20 and (1,1,0,0) N=2 found as before (3.8 s); two script bugs fixed (exec split inside a function; argv clobbered)",
+    "retry": "never",
+    "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Periodic test: (1,1,1,0), (2,1,0,0), (2,2,0,0), (2,1,1,0)",
+    "method": "sat_periodic.py m<=4",
+    "status": "RUNNING",
+    "result": "data/satper-1.log",
+    "retry": "read; patch=true + no torus => aperiodic-clue candidate (checklist)",
+    "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
    }
   ]
  }
