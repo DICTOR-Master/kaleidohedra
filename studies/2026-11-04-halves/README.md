@@ -35,3 +35,6 @@ E11 NARCISSUS AS A SPLIT-AND-ROTATE PIECE: two Narcissus on their hexagons — s
    Fills space alone by translation. Prior art: the family is classical; its c = 1/3 member splitting into two copies of a self-mirroring piece
    (that also gives the twisted cube) — to check. NAMED COVENANT by DICTO (4 Nov).
 E12 PRIOR ART (Covenant): tiling classical (Fedorov via Grünbaum 2010); c = 1/3 member unnamed, faces not rhombi; the Narcissus split (and the twisted-cube relation) not found — the chapter's claim.
+E13 Covenant tiles by the fcc LATTICE itself: 6 face-to-face translations, all length 1 (ball spacing); 12 nearest at 1, 6 at √2; one Covenant per
+   ball. So NARCISSUS FILLS BOTH PURE STACKINGS ALONE: fcc as Covenant pairs (turned 60°), hcp as h-tiles. Mixed stackings: open (next fair test).
+   (Corrects "the cube is needed for c layers": not for pure fcc.)
