@@ -4726,6 +4726,15 @@
     "retry": "verify (a); (c) is a research project — DICTO to decide",
     "study": "—",
     "date": "2026-11-04"
+   },
+   {
+    "question": "Uniform mirror-pair construction on REAL golden cuts",
+    "method": "verify_real.py: P + σ_z P + w, lattice B·diag(1−α,1−β,1−γ); real polytopes, overlaps + coverage",
+    "status": "RUNNING (partial)",
+    "result": "calibration OK (2 known pass, wrong offset fails); golden (φ⁻¹, φ⁻², 0, 0) with w = 0 FAILS (436 overlaps) — w = 0 worked for integer cuts by coincidence mod the lattice; offset scans for the 3-cut golden pieces running",
+    "retry": "scan w for the 2-cut golden piece too; if no w works, conjecture may hold only for lattice cuts",
+    "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
    }
   ]
  },
