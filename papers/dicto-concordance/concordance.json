@@ -4771,6 +4771,15 @@
     "retry": "never",
     "study": "2026-11-04-halves",
     "date": "2026-11-04"
+   },
+   {
+    "question": "Common dissection of Narcissus and the cube (DICTO: \"by being halved\") — one piece set for c and h layers",
+    "method": "Sydler guarantees one exists (equal volume, both Dehn zero); stage 1: 2-piece search over ~105k placements (common.py)",
+    "status": "RUNNING",
+    "result": "flat central halvings: no common half (Narcissus 1 half shape; cube 451 half shapes; no match)",
+    "retry": "read common.log; stage 2 from near-misses",
+    "study": "2026-11-04-narcissus-cube",
+    "date": "2026-11-04"
    }
   ]
  },
