@@ -4585,9 +4585,9 @@
    },
    {
     "question": "RT centre pyramids tile?",
-    "method": "rt_pyramids.py edge-to-edge",
+    "method": "rt_pyramids.py edge-to-edge DFS with progress logging",
     "status": "UNDECIDED",
-    "result": "alive to 31 pieces; overnight 60/100/150 running (re-queued after mkdir bug)",
+    "result": "alive to 31 pieces; overnight 60/100/150 running (re-queued after mkdir bug) · 4 Nov evening: overnight run WASTED by design (prints only at the end; 60-piece run hit its 4 h limit, empty log). Fixed: progress lines every 50k nodes + best patch saved; restarted as one 150-piece run, 12 h cap (data/progress-RT-150.log, RT-best-150.json).",
     "retry": "read result; then aperiodic clue checklist",
     "study": "2026-11-04-rt-pyramids",
     "date": "2026-11-04"
