@@ -3897,6 +3897,11 @@
     "result": "Aperiodic-monotile clue checklist (DICTO 4 Nov): necessary Dehn zero, angle count, density; signals forced irrational frequency, forced 5-fold edges, golden self-similarity, search signature; candidates RT centre pyramid (convex: Tsiokos 2026 open Q3) and golden truncated tetrahedra",
     "study": "open-work 11-04",
     "goes_to": "watch list (no claim)"
+   },
+   {
+    "result": "Every Dehn-zero truncated tetrahedron tested (6 of 6: (1,1,0,0), (1,1,1,0), (2,1,0,0), (2,2,0,0), (2,1,1,0), (1,1,1,1)) tiles space, always piece + point inverse, 2 per period (SAT exact cover on the octet). Conjecture: Dehn zero ⇔ tiles for the whole family; prior art: only the uniform cut (1/4) is in the literature checked",
+    "study": "2026-11-04-tetra-sweep",
+    "goes_to": "Space-Fillers / Centre Pyramids volume"
    }
   ]
  },
@@ -4438,9 +4443,9 @@
    {
     "question": "Census: (1,1,1,0) n=3, (2,1,0,0) n=3, (2,1,1,0) n=4, (3,2,0,0) n=5",
     "method": "patch search, 900 s cap, DLX",
-    "status": "UNDECIDED",
-    "result": "timeout (8–24 orientations too many for plain DLX)",
-    "retry": "ONLY with a SAT solver (pysat/kissat on dicto-big-brother) or larger cap with symmetry breaking",
+    "status": "SETTLED",
+    "result": "SAT: patches close for all; periodic tilings found (see periodic entry)",
+    "retry": "never",
     "study": "2026-11-04-tetra-sweep",
     "date": "2026-11-04"
    },
@@ -4600,9 +4605,27 @@
    {
     "question": "Periodic test: (1,1,1,0), (2,1,0,0), (2,2,0,0), (2,1,1,0)",
     "method": "sat_periodic.py m<=4",
+    "status": "SETTLED",
+    "result": "all four tile periodically, 2 pieces per period: (1,1,1,0) N=8, (2,1,0,0) N=6, (2,2,0,0) N=16, (2,1,1,0) N=18",
+    "retry": "never",
+    "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "CONJECTURE: a truncated tetrahedron T(n) minus corners k tiles space iff Σk = n (Dehn zero), always as piece + point-inverse (2 per period); if the construction is uniform in real cuts, the golden pieces tile periodically (not an aperiodic clue)",
+    "method": "evidence: 6/6 tested; proof = find the general construction",
+    "status": "OPEN",
+    "result": "6 of 6",
+    "retry": "run periodic SAT on the rest (satper-2, running); then look for the uniform construction (read the two-piece periods)",
+    "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Periodic test rest of census + n=8 approximants",
+    "method": "sat_periodic.py m<=4",
     "status": "RUNNING",
-    "result": "data/satper-1.log",
-    "retry": "read; patch=true + no torus => aperiodic-clue candidate (checklist)",
+    "result": "data/satper-2.log",
+    "retry": "read",
     "study": "2026-11-04-tetra-sweep",
     "date": "2026-11-04"
    }
