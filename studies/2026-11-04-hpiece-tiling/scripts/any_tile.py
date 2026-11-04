@@ -14,7 +14,14 @@ Hh = math.sqrt(2/3); s3 = math.sqrt(3)
 def rz(t): return np.array([[math.cos(t), -math.sin(t), 0], [math.sin(t), math.cos(t), 0], [0, 0, 1]])
 N = np.array([[0,0,0],[0,1/s3,-Hh/2],[0,1/s3,0],[.5,-1/(2*s3),-Hh/2],[.5,-1/(2*s3),0],[.5,1/(2*s3),-Hh],[.5,s3/2,0],[1,0,0],[1,1/s3,-Hh/2],[1,1/s3,0]])
 cN = np.array([.5, 1/(2*s3), 0]); Nc = N - cN; T = half(RD, True)
-PIECES = {'covenant': np.vstack([Nc, (Nc*np.array([1, 1, -1])) @ rz(math.pi/3).T]), 'twistedcube': np.vstack([Nc, Nc*np.array([1, 1, -1])]),
+import itertools as _it
+_PP = np.array(sorted({tuple(s*v for s, v in zip(sg, p)) for p in _it.permutations((1, 2, 3)) for sg in _it.product((1, -1), repeat=3)}), float)
+_a = np.array([1, 1, 1])/math.sqrt(3); _z = np.array([0, 0, 1.]); _v = np.cross(_a, _z); _K = np.array([[0, -_v[2], _v[1]], [_v[2], 0, -_v[0]], [-_v[1], _v[0], 0]]); _R = np.eye(3) + _K + _K @ _K*((1 - _a @ _z)/np.linalg.norm(_v)**2)
+_PP = _PP @ _R.T; _hp = ConvexHull(_PP)
+def _halfP(top):
+    Hs = np.vstack([_hp.equations, [0, 0, -1 if top else 1, 0]]); return HalfspaceIntersection(Hs, np.array([0, 0, 1e-3 if top else -1e-3])).intersections
+_TP = np.vstack([_halfP(True), _halfP(False) @ rz(math.pi/3).T]); _TP = _TP*(math.sqrt(2)/2/ConvexHull(_TP).volume)**(1/3)
+PIECES = {'twistedB3': _TP, 'covenant': np.vstack([Nc, (Nc*np.array([1, 1, -1])) @ rz(math.pi/3).T]), 'twistedcube': np.vstack([Nc, Nc*np.array([1, 1, -1])]),
           'hyb0': np.vstack([Nc, T]), 'hyb60': np.vstack([Nc, T @ rz(math.pi/3).T])}
 P0 = PIECES[name]; P0 = np.unique(np.round(P0[ConvexHull(P0).vertices], 9), axis=0) + cN   # hexagon corners back on lattice points
 vol = ConvexHull(P0).volume
@@ -60,5 +67,7 @@ if ok:
         return 0.0 if (not r.success or r.x[3] < 1e-6) else ConvexHull(HalfspaceIntersection(H, r.x[:3]).intersections).volume
     near = [i for i in range(len(cop)) if np.linalg.norm(cen[i] - Lm @ np.array([.5, .5, .5])) < 2.5]
     ov = sum(1 for i, j in itertools.combinations(near, 2) if np.linalg.norm(cen[i] - cen[j]) < 2.2 and ivol(cop[i], cop[j]) > 1e-7)
-    res.update(verify_overlaps=int(ov))
+    X = (Lm @ np.random.default_rng(99).random((3, 20000))).T; cnt = np.zeros(len(X), int)
+    for p in cop: cnt += Delaunay(p).find_simplex(X) >= 0
+    res.update(verify_overlaps=int(ov), fresh_coverage={int(k): int(v) for k, v in zip(*np.unique(cnt, return_counts=True))})
 print(json.dumps(res), flush=True)
