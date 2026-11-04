@@ -37,4 +37,7 @@ E11 NARCISSUS AS A SPLIT-AND-ROTATE PIECE: two Narcissus on their hexagons — s
 E12 PRIOR ART (Covenant): tiling classical (Fedorov via Grünbaum 2010); c = 1/3 member unnamed, faces not rhombi; the Narcissus split (and the twisted-cube relation) not found — the chapter's claim.
 E13 Covenant tiles by the fcc LATTICE itself: 6 face-to-face translations, all length 1 (ball spacing); 12 nearest at 1, 6 at √2; one Covenant per
    ball. So NARCISSUS FILLS BOTH PURE STACKINGS ALONE: fcc as Covenant pairs (turned 60°), hcp as h-tiles. Mixed stackings: open (next fair test).
-   (Corrects "the cube is needed for c layers": not for pure fcc.)
+   CAUTION (checked): in the Covenant tiling, with the lower Narcissus point on a ball, its 3 hexagon ball-corners are fcc balls but the UPPER point
+   is not (2/3 of a lattice vector) — so Covenant is an fcc fundamental domain, NOT a ball-tied c-layer cell. Ball-tied: Narcissus fills h layers,
+   the cube c layers (HexOct pairing, every stacking). Free of the balls: Narcissus alone fills space as the h-tiling and as Covenant (fcc lattice).
+   "One piece for everything, ball-tied" -> the Narcissus–cube common-dissection study (2026-11-04-narcissus-cube).
