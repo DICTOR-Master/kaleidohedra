@@ -48,7 +48,7 @@ out = []
 w = out.append
 w('<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><title>The DICTO Concordance</title>\n<link rel="stylesheet" href="../paper.css">\n<style>'
   'p.hook{font-style:italic;color:#4a3f2a;border-left:2px solid #c9a24a;padding-left:3mm}'
-  'table.grid{font-size:7.4pt;border-collapse:collapse;width:100%}table.grid td,table.grid th{border:1px solid #ccc;padding:0.6mm 1mm}td.gap{background:#fbeede}ol.rk li{margin-bottom:1mm}'
+  'table.grid{font-size:7.4pt;border-collapse:collapse;width:100%}table.grid td,table.grid th{border:1px solid #ccc;padding:0.6mm 1mm}td.gap{background:#fbeede}ol.rk li{margin-bottom:1mm}span.out{color:#4a3f2a}'
   '.status{border:2px solid #a00;border-radius:2mm;padding:2mm 3mm;margin:3mm 0;font-size:8.6pt;color:#300;background:#fff6f6}.status ul{margin:1mm 0 0 4mm;padding:0}'
   'h2{break-before:page}h2.first{break-before:auto}h3{font:600 10.5pt "DejaVu Sans",sans-serif;color:#6b5310;margin:9pt 0 2pt;break-after:avoid}'
   'p.about{margin:0 0 2pt;font-style:italic}ul.th{margin:0 0 2pt;padding-left:4mm;font-size:9.2pt}ul.th li{margin:0 0 1pt;break-inside:avoid}'
@@ -132,9 +132,13 @@ w('<table class="grid"><thead><tr><th>Solid</th>' + ''.join(f'<th>{e(x)}</th>' f
 for r in G['rows']:
     w('<tr><td>' + e(r[0]) + '</td>' + ''.join(f'<td class="{"gap" if v == "—" else ""}">{e(v)}</td>' for v in r[1:]) + '</tr>')
 w('</tbody></table>')
-w('<h3>5.2 The nearest gaps, ranked</h3><p>Ranked by how directly each follows from what is already proved (DICTO: most of the calculations are already done; the rest is arrangement and interpretation).</p><ol class="rk">')
-for a, why, to in G['ranked']:
-    w(f'<li><b>{e(a)}</b>. Why near: {e(why)}. Leads to: {e(to)}.</li>')
+w('<h3>5.2 The nearest gaps, ranked, inside and outside</h3><p>Ranked by how directly each follows from what is already proved (DICTO: most of the calculations are already done; the rest is arrangement and interpretation). '
+  'DICTO\'s observation: the gaps inside the work are directly analogous to the gaps outside it, so it is one study. Each gap therefore names the outside work that bears on it (5.5); a gap with none is where to search outside next.</p><ol class="rk">')
+def short(x):
+    return e(x['cite'].split(',')[0] + ' … ' + x['cite'].split(',')[-1].strip() if x['cite'].count(',') > 1 else x['cite'])
+for a, why, to, outs in G['ranked']:
+    o = '; '.join(short(D['outside'][i]) for i in outs) if outs else '<i>none found yet: a search target</i>'
+    w(f'<li><b>{e(a)}</b>. Why near: {e(why)}. Leads to: {e(to)}. <span class="out">Outside: {o}.</span></li>')
 w('</ol>')
 w('<h3>5.3 Open points left by the papers</h3>')
 w(f'<p>{e(G["open_count"])}</p><table class="big"><thead><tr><th>Paper</th><th>Open point</th><th>Status</th></tr></thead><tbody>')
