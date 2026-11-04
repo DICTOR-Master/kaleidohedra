@@ -3728,6 +3728,11 @@
     "result": "Octahedron pyramids: reversed neighbours DO occur (a cube of the octet's cube lattice cut the other way, #92 Prop. 8). Conjecture: every O pyramid lies in a whole octahedron or is a corner of a whole cube with its tetrahedron. Needs an argument controlling sliding edges (as #92 Cor. 9); not a queue job yet",
     "study": "2026-11-04-reversed-neighbour",
     "goes_to": "open: next session"
+   },
+   {
+    "result": "Mahler volume product on the cube–octahedron sweep: exact formula; 32/3 at the ends; maximum at 2μ³ − 9μ + 6 = 0 (μ ≈ 1.6316), near but not at Icosaxes",
+    "study": "2026-11-04-mahler-sweep",
+    "goes_to": "#94 v2 or The Golden Ladder (sweep)"
    }
   ]
  },
@@ -3925,12 +3930,12 @@
   {
    "field": "Convex geometry",
    "cite": "H. Iriyeh, M. Shibata, Duke Math. J. 169 (2020) 1077",
-   "says": "Mahler's volume product |K|·|K°| is least exactly at the cube and the octahedron in 3D.",
+   "says": "Mahler's volume product |K|·|K°| is least exactly at the cube and the octahedron in 3D. Tested 4 Nov 2026 (study 2026-11-04-mahler-sweep): along the sweep the product is 32/3 at both ends and largest at the root μ ≈ 1.6316 of 2μ³ − 9μ + 6 = 0, just past Icosaxes, not golden.",
    "touches": "sweep (test along μ)",
    "kind": "test",
    "lib": false,
    "conf": "abstract",
-   "status": "to read"
+   "status": "tested"
   },
   {
    "field": "Chemistry",
