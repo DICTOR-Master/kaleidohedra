@@ -1,0 +1,13 @@
+PASS CO has 12 vertices, all at squared radius 2 = squared edge 2
+PASS T = 1/3, S = 2/3, O = 4/3 (edge sqrt2)  [(Fraction(1, 3), Fraction(2, 3), Fraction(4, 3))]
+PASS 8T + 6S = 20/3 = CO volume (5 sqrt2/3 a^3 at a = sqrt2)
+PASS S + mirror S across its square = octahedron (apex heights ±1 over the square of half-diagonal 1)
+PASS every unit cube carries one regular tetrahedron (4 even corners, edges sqrt2)
+PASS every v in 2Z^3 (interior) is the centre of a whole CO: 8 T at v inside its hull + 6 half-octahedra with apex v  [125/125]
+PASS every tetrahedron has exactly one corner in 2Z^3, so lies in exactly one CO  [216]
+PASS octahedra with one odd coordinate: both halves go to the COs at its two axis ends (both in 2Z^3)
+PASS left over: octahedra at all-odd points; per cube of side 2: one CO (20/3) + one octahedron (4/3) = 8: the rectified cubic honeycomb
+PASS density: each tetrahedron lies in at most one whole CO, tetrahedra : vertices = 2 : 1, a CO takes 8, so at most 1/4 of vertices are CO centres; 2Z^3 is exactly 1/4 (every tetrahedron used)
+PASS c vertex (ABC): 12 neighbours, 8 tetrahedra, 0 face-sharing pairs, 6 octahedra -> the CO  [(12, 8, 0, 6)]
+PASS h vertex (ABA): 12 neighbours, 8 tetrahedra, 3 face-sharing pairs, 6 octahedra -> the anticuboctahedron (J27)  [(12, 8, 3, 6)]
+12 PASS 0 FAIL
