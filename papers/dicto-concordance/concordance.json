@@ -4274,7 +4274,8 @@
    "Foam wall area",
    "Forced-sector search (tiling)",
    "Dehn (space-filling screen)",
-   "Interlocking (kinematic)"
+   "Interlocking (kinematic)",
+   "Halves (ortho / gyro)"
   ],
   "families": {
    "Cube–octahedron sweep": [
@@ -4285,7 +4286,8 @@
     "n/a (outside the test’s competence)",
     "n/a (outside the test’s competence)",
     "zero only at Kelvin 3/2 and the cube (the lone tilers)",
-    "n/a (outside the test’s competence)"
+    "n/a (outside the test’s competence)",
+    "twist convex only at the CO (→ J27); TO twist dented"
    ],
    "CO–RD sweep": [
     "one Q4 zero, not golden",
@@ -4295,7 +4297,8 @@
     "n/a (outside the test’s competence)",
     "only Dehn-zero member (B3 permutohedron) killed by angle count",
     "zero only at μ = 5/3: B3 permutohedron (±1,±2,±3); angle count: cannot tile alone",
-    "n/a (outside the test’s competence)"
+    "n/a (outside the test’s competence)",
+    "twist convex along the whole sweep (RD→TRD … CO→J27); B3 permutohedron twist convex, Dehn nonzero"
    ],
    "Tetrahedron sweep T ∩ μ(−T)": [
     "Q4 zero at a quartic root, not golden",
@@ -4305,7 +4308,8 @@
     "n/a (outside the test’s competence)",
     "μ = 2 tiles alone (octet exact cover, N = 20, two orientations) — KNOWN: Damasceno–Engel–Glotzer 2012 (β-tin)",
     "zero only at μ = 2 (and 1/2): T(4) minus corners",
-    "n/a: the β-tin tiling has no flat one-tile-thick layer (jagged slabs gave 20/31 locked, free tiles = protruding ones)"
+    "n/a: the β-tin tiling has no flat one-tile-thick layer (jagged slabs gave 20/31 locked, free tiles = protruding ones)",
+    "—"
    ],
    "Delian walk (#51)": [
     "Q4 at t = 1/9 exactly; no joint Q4/Q8",
@@ -4315,7 +4319,8 @@
     "n/a (outside the test’s competence)",
     "rigid except octet (#93)",
     "O(t): nonzero for all t > 0 (one irrational angle 144.74°, no cancellation); zero only at the RD",
-    "n/a (outside the test’s competence)"
+    "n/a (outside the test’s competence)",
+    "—"
    ],
    "CsCl pairs (#90)": [
     "as the sweep: Icosaxes φ silent (pieces are cube–octahedron sweep members P_μ, P_{3−μ}: see that row)",
@@ -4325,7 +4330,8 @@
     "max at Kelvin 3/2, min at CO+O",
     "rigid (#93 Thm A)",
     "pair sum zero (they tile); a single piece zero only at Kelvin μ = 3/2 (the equal pair)",
-    "n/a: no flat one-tile-thick layer (same reason)"
+    "n/a: no flat one-tile-thick layer (same reason)",
+    "—"
    ],
    "4D sweep tesseract ∩ μ·16-cell": [
     "Q4 at 24-cell (μ = 2)",
@@ -4335,7 +4341,8 @@
     "n/a (outside the test’s competence)",
     "n/a (outside the test’s competence)",
     "n/a (3D screen; 4D Dehn invariants not built)",
-    "n/a (outside the test’s competence)"
+    "n/a (outside the test’s competence)",
+    "—"
    ],
    "600-cell slices": [
     "corner-first always silent; cell-first never jointly",
@@ -4345,7 +4352,8 @@
     "n/a (outside the test’s competence)",
     "n/a (outside the test’s competence)",
     "nonzero at all 800 heights tested",
-    "n/a (outside the test’s competence)"
+    "n/a (outside the test’s competence)",
+    "—"
    ],
    "Centre pyramids T, C6, R12, RT": [
     "none silent (T 0.528, C6 0.721, R12 0.632)",
@@ -4355,7 +4363,8 @@
     "n/a (outside the test’s competence)",
     "T, C6 whole solids; R12 free + slides; RT open",
     "zero for C6, R12, RT (cube, RD, RT the only isohedral)",
-    "base-outward on a free surface: free; otherwise locked"
+    "base-outward on a free surface: free; otherwise locked",
+    "—"
    ],
    "Admiral Cap network": [
     "nodes: fcc vs twin pattern heard",
@@ -4365,7 +4374,8 @@
     "n/a (outside the test’s competence)",
     "frustration 8/12; ground-state layers",
     "all three kinds nonzero alone (Q′, I, A cap): only the mix can fill",
-    "slab: all caps and icosahedra locked (slides and twists)"
+    "slab: all caps and icosahedra locked (slides and twists)",
+    "—"
    ],
    "Golden nests / OG / AXE networks": [
     "OG family: Q4 = Q8 = 0 (icosahedral); W6 sign splits corner-type (TQHD, TQP, OG, KRE) from face-type (TQH, TPH, PHE, TPP, DPHP), changing in pairs",
@@ -4375,7 +4385,8 @@
     "n/a (outside the test’s competence)",
     "none: Dehn nonzero for all nine OG solids",
     "OG family (9 solids): all nonzero — none tiles alone (calibrated screen, 11/11)",
-    "n/a (outside the test’s competence)"
+    "n/a (outside the test’s competence)",
+    "—"
    ],
    "HexOct tiles (#75)": [
     "no Q4 silence on the λ walk (min 0.025 h, 0.167 c)",
@@ -4385,10 +4396,11 @@
     "n/a (outside the test’s competence)",
     "n/a (outside the test’s competence)",
     "tiles zero (calibration); c-pieces nonzero; h-pieces zero exactly for λ ≥ 5/24",
-    "one layer of c-tiles or h-tiles: all locked (slides and twists)"
+    "one layer of c-tiles or h-tiles: all locked (slides and twists)",
+    "—"
    ]
   },
-  "note": "— = not yet run (a gap in understanding, or outside the test's competence). DICTO 4 Nov 2026: tests and methods group the results into sets and subsets and show where further gaps lie. · 4 Nov: cells outside a test’s competence marked n/a (DICTO)."
+  "note": "— = not yet run (a gap in understanding, or outside the test's competence). DICTO 4 Nov 2026: tests and methods group the results into sets and subsets and show where further gaps lie. · 4 Nov: cells outside a test’s competence marked n/a (DICTO). · 4 Nov: column \"Halves (ortho / gyro)\" added (DICTO: half pieces were a blind spot); classical operation (Johnson 1966 ortho/gyro; gyrated honeycombs)."
  },
  "overlaps_note": "Cross-thread overlaps found on 4 Nov 2026: the involution fixed points (√3, 3/2, 24-cell μ = 2) are singled out by roundness, foam and 4D harmonics; φ appears as Icosaxes (harmonic silence), Fibonacci multiplets (SU(4)), the golden interval (tuning) and the Fibonacci stacking word; layer words govern stackings (#92), the Admiral network ground states and the J27/CO tilings. The golden solids in 3D (Icosaxes, Unborn Axes) and in 4D (DICTO All-Golden Polytopes) are all limits of Fibonacci ladders of particle multiplets (SU(4), SO(9)).",
  "ledger": {
@@ -4734,6 +4746,15 @@
     "result": "calibration OK (2 known pass, wrong offset fails); golden (φ⁻¹, φ⁻², 0, 0) with w = 0 FAILS (436 overlaps) — w = 0 worked for integer cuts by coincidence mod the lattice; offset scans for the 3-cut golden pieces running",
     "retry": "scan w for the 2-cut golden piece too; if no w works, conjecture may hold only for lattice cuts",
     "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Halves (ortho/gyro) as a test on every family (DICTO: blind spot)",
+    "method": "halves.py census + sweep_twist.py + permuto_twist.py",
+    "status": "RUNNING (census) / partial results",
+    "result": "PRIOR ART: classical operation (Johnson 1966 ortho/gyro, gyrate; CO/J27, RD/TRD duals; gyrated honeycombs). Ours: twisted CO–RD sweep convex throughout (candidate: = J27 ∩ μTRD sweep, check exactly); twisted B3 permutohedron convex, Dehn nonzero; cube–octa sweep twist convex only at CO; census over DICTO/OG solids running",
+    "retry": "read census; exact check of the twisted-sweep identity",
+    "study": "2026-11-04-halves",
     "date": "2026-11-04"
    }
   ]
