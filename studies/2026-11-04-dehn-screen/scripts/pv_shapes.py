@@ -39,3 +39,36 @@ print('Echo faces parallelograms:', [para(f) for f in F])
 L = sorted({round(float(np.linalg.norm(E[f[i]] - E[f[(i + 1) % 4]])), 9) for f in F for i in range(4)}); print('Echo edge lengths:', L)
 ang = sorted({round(math.degrees(math.acos(np.clip((E[f[1]] - E[f[0]]) @ (E[f[3]] - E[f[0]])/np.linalg.norm(E[f[1]] - E[f[0]])/np.linalg.norm(E[f[3]] - E[f[0]]), -1, 1))), 4) for f in F})
 print('Echo face corner angles:', ang)
+# ---- "together": a block of a Fibonacci c/h stacking (8 layers, Fibonacci approximant c h c c h c h c), 7 tiles per layer, at λ = 3/8 -> one compound with parts
+def word_for(types):
+    for L0 in ('AB',):
+        w = list(L0)
+        for i in range(1, len(types)*3):
+            t = types[i % len(types)]
+            w.append(w[-2] if t == 'h' else ({'A', 'B', 'C'} - {w[-1], w[-2]}).pop())
+        for per in range(len(types), len(w), len(types)):
+            cand = ''.join(w[:per])
+            try:
+                if ''.join(T.types(cand)) == ''.join(types[i % len(types)] for i in range(per)) if hasattr(T, 'types') else True: return cand
+            except Exception: pass
+    return None
+TYPES = list('chcchchc'); W = word_for(TYPES); print('stacking word', W, 'types', ''.join(T.types(W)) if W else None)
+U = np.array([1., 0, 0]); Vv = np.array([.5, math.sqrt(3)/2, 0]); parts = []; colours = []
+for L in range(len(TYPES)):
+    os.chdir(HEX); pcs, _ = T.tile(W, L, Fr(3, 8)); os.chdir(here)
+    for u, v in ((0, 0), (1, 0), (0, 1), (-1, 1), (-1, 0), (0, -1), (1, -1)):
+        for k, up, s_, P, J in pcs:
+            X = np.unique(np.round(np.array([cart(p) for p in P]), 12), axis=0) + u*U + v*Vv + cart((*T.POS[W[L]], L))
+            parts.append(X); colours.append(0xd4a020 if len(X) == 10 else 0x7a5fb0)
+allV = np.vstack(parts); c0 = allV.mean(0); s = 1.6/np.max(np.linalg.norm(allV - c0, axis=1))
+V_all, F_all, FC, PR = [], [], [], []
+for X, col in zip(parts, colours):
+    Y = (X - c0)*s; h = ConvexHull(Y); fs = {}
+    for eq, sm in zip(h.equations, h.simplices): fs.setdefault(tuple(np.round(eq, 7)), set()).update(sm)
+    base = len(V_all); V_all += np.round(Y, 10).tolist(); start = len(F_all)
+    for kk, idx in fs.items():
+        n = np.array(kk[:3]); idx = list(idx); cc = Y[idx].mean(0); uu = Y[idx[0]] - cc; ww = np.cross(n, uu)
+        F_all.append([base + int(i) for i in sorted(idx, key=lambda i: math.atan2((Y[i] - cc) @ ww, (Y[i] - cc) @ uu))]); FC.append(col)
+    PR.append([start, len(F_all)])
+print('together block:', len(parts), 'pieces,', sum(1 for c in colours if c == 0xd4a020), 'Narcissus,', sum(1 for c in colours if c != 0xd4a020), 'cubes')
+json.dump({'word': W, 'types': TYPES, 'vertices': V_all, 'faces': F_all, 'faceColours': FC, 'parts': PR}, open('data/narcissus-together.json', 'w'))

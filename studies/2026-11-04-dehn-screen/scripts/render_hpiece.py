@@ -24,7 +24,7 @@ for k, (el, az, title) in enumerate(((22, -60, 'from above'), (-18, -60, 'from b
         ax.add_collection3d(Poly3DCollection([V], facecolor=np.clip(base*sh, 0, 1), edgecolor='#222', linewidths=1.2, alpha=0.97))
     ax.scatter(*Q.T, s=10, c='k'); ax.set_box_aspect((1, 1, H/1.0*1.2)); r = .7
     ax.set_xlim(-r, r); ax.set_ylim(-r, r); ax.set_zlim(-.55, .45); ax.view_init(el, az); ax.set_axis_off(); ax.set_title(title, fontsize=11)
-fig.suptitle('HexOct h-piece (λ ≥ 3/8): tiles space with copies of itself — 10 corners · 1 hexagon (gold) · 3 quadrilaterals (purple) · 6 triangles (teal)', fontsize=10)
+fig.suptitle('Narcissus (DICTO, 4 Nov 2026): its own mirror image; copies of it fill space; two make the twisted cube — 10 corners · 1 hexagon (gold) · 3 quadrilaterals (purple) · 6 triangles (teal)', fontsize=10)
 try:
     m = plt.imread('dicto-mark.png'); a = fig.add_axes([0.9, 0.02, 0.08, 0.1]); a.imshow(m); a.axis('off')
 except Exception as e: print('mark', e)
