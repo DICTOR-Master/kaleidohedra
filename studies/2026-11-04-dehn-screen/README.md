@@ -26,3 +26,6 @@ alternate hexagon corners; apex at z = −h on the ball centre below the hexagon
 
 ## Admiral Cap network (scripts/admiral_dehn.py, data/admiral-dehn.json)
 Piece kinds Q′ (4 corners), I (icosahedron), A (Admiral Cap, 5 corners): Dehn nonzero for each — none fills space alone; only the mixture can.
+
+## Delian walk O(t) (scripts/delian_dehn.py)
+Dehn(O(t)) = (total triangle–rhombus edge length) ⊗ arccos(−√(2/3)) (144.74°; RD edges 120° rational): nonzero for every t > 0, zero only at t = 0 (the RD). Checked at 5 t.
