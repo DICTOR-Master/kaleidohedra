@@ -48,6 +48,7 @@ out = []
 w = out.append
 w('<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><title>The DICTO Concordance</title>\n<link rel="stylesheet" href="../paper.css">\n<style>'
   'p.hook{font-style:italic;color:#4a3f2a;border-left:2px solid #c9a24a;padding-left:3mm}'
+  'table.grid{font-size:7.4pt;border-collapse:collapse;width:100%}table.grid td,table.grid th{border:1px solid #ccc;padding:0.6mm 1mm}td.gap{background:#fbeede}ol.rk li{margin-bottom:1mm}'
   '.status{border:2px solid #a00;border-radius:2mm;padding:2mm 3mm;margin:3mm 0;font-size:8.6pt;color:#300;background:#fff6f6}.status ul{margin:1mm 0 0 4mm;padding:0}'
   'h2{break-before:page}h2.first{break-before:auto}h3{font:600 10.5pt "DejaVu Sans",sans-serif;color:#6b5310;margin:9pt 0 2pt;break-after:avoid}'
   'p.about{margin:0 0 2pt;font-style:italic}ul.th{margin:0 0 2pt;padding-left:4mm;font-size:9.2pt}ul.th li{margin:0 0 1pt;break-inside:avoid}'
@@ -118,6 +119,42 @@ for r in D['triangle']:
 w('</tbody></table>')
 w('<p>The golden cuts reach furthest, to the E8 lattice in eight dimensions (#90); OG and the cube–octahedron sweep reach six (#90, #91). '
   'The flat triangle (p = 6) carries the stackings, where φ enters through the Fibonacci stacking (#69). The placement is the compiler\'s reading of the papers named in the last column.</p>')
+# 5. What is missing
+G = D['gaps']
+w('<h2>5. What Is Missing</h2>')
+w('<p class="hook">Parts 1–4 hold what we know. This part holds what we do not: gaps inside the work, the open points the papers left, and, from other fields, '
+  'results we did not know of that bear on ours. DICTO\'s point: the Concordance, the reference library and the Kaleidohedra engine together are the tool. '
+  'Each entry is to carry three legs, the map (threads and papers it touches), the source (a library copy) and the engine (a view or test in the app); '
+  'a missing leg is itself a gap (draft 2 carries the library leg for the outside finds; the engine leg follows), and each outside find moves from <i>to read</i> to <i>credited</i>, <i>tested</i>, and finally <i>ours</i>.</p>')
+w('<h3>5.1 The grid: solids against operations</h3>')
+w(f'<p>Papers where each operation is done for each solid; — marks a gap, ? an unsure entry. {e(G["colnames"])}.</p>')
+w('<table class="grid"><thead><tr><th>Solid</th>' + ''.join(f'<th>{e(x)}</th>' for x in G['cols']) + '</tr></thead><tbody>')
+for r in G['rows']:
+    w('<tr><td>' + e(r[0]) + '</td>' + ''.join(f'<td class="{"gap" if v == "—" else ""}">{e(v)}</td>' for v in r[1:]) + '</tr>')
+w('</tbody></table>')
+w('<h3>5.2 The nearest gaps, ranked</h3><p>Ranked by how directly each follows from what is already proved (DICTO: most of the calculations are already done; the rest is arrangement and interpretation).</p><ol class="rk">')
+for a, why, to in G['ranked']:
+    w(f'<li><b>{e(a)}</b>. Why near: {e(why)}. Leads to: {e(to)}.</li>')
+w('</ol>')
+w('<h3>5.3 Open points left by the papers</h3>')
+w(f'<p>{e(G["open_count"])}</p><table class="big"><thead><tr><th>Paper</th><th>Open point</th><th>Status</th></tr></thead><tbody>')
+for x in G['loose']:
+    w(f'<tr><td>{e(x["src"])}</td><td>{e(x["what"])}</td><td>{e(x["status"])}</td></tr>')
+w('</tbody></table>')
+w('<h3>5.4 Weak joins</h3><ul class="th">' + ''.join(f'<li>{e(x)}</li>' for x in G['weak']) + '</ul>')
+w('<h3>5.5 From elsewhere: what other fields hold</h3>')
+w('<p>Results from other fields, under other names, that bear on the threads and are not cited in any paper. Kind: <b>credit</b>, earlier or parallel work to cite; '
+  '<b>test</b>, a check to run in the engine; <b>lead</b>, a direction to follow; <b>anchor</b>, the same mathematics in a real object or measurement. '
+  'The strongest: the big bang billiard is the one triangle at p = ∞, so the ladder runs sphere (p = 3, 4, 5), plane (6), hyperbolic (7 and up), big bang (∞); '
+  'the numbers 2 cos(π/p) are measured particle and anyon dimensions; and diamond growers\' shape dial is α = 3/μ, our core turn.</p>')
+w('<table class="big"><thead><tr><th>Field</th><th>Source</th><th>What it holds</th><th>Touches</th><th>Kind</th><th>Library</th><th>Checked</th><th>Status</th></tr></thead><tbody>')
+for x in D['outside']:
+    w(f'<tr><td>{e(x["field"])}</td><td>{e(x["cite"])}</td><td>{e(x["says"])}</td><td>{e(x["touches"])}</td><td>{e(x["kind"])}</td>'
+      f'<td>{"yes" if x["lib"] else "to fetch"}</td><td>{e(x["conf"])}</td><td>{e(x["status"])}</td></tr>')
+w('</tbody></table>')
+w('<p>Fields not yet consulted, named by the search: dislocation theory (each h ↔ c swap is a partial-dislocation glide); commensurate–incommensurate transitions; '
+  'semi-discrete optimal transport (the weight walk); martensitic paths (Burgers, Kurdjumov–Sachs); topological interlocking and architected materials; '
+  'realisation spaces of polytopes; hypersimplices (the octahedron is Δ(2, 4)); fulleride and cluster chemistry; multiply-twinned nanoparticles; hyperbolic tilings and holography.</p>')
 w('</body></html>')
 open(os.path.join(HERE, 'paper.html'), 'w').write('\n'.join(out))
 print('paper.html:', len(D['strands']), 'threads,', len(D['names']), 'names,', len(D['concepts']), 'concepts')

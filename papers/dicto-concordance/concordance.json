@@ -1,16 +1,17 @@
 {
  "status": [
-  "Draft 1 for DICTO's reading, 4 November 2026. Sources: every paper.src.html (else paper.html) in papers/, the paper cards of dictospheres.com, the DICTOnary atom cards (book-quanta-dictonary) and the cross-links audit of 4 November. #90 and #91 are published (4 November); #92 is a draft and may change.",
+  "Draft 2 for DICTO's reading, 4 November 2026. Sources: every paper.src.html (else paper.html) in papers/, the paper cards of dictospheres.com, the DICTOnary atom cards (book-quanta-dictonary) and the cross-links audit of 4 November. #90–#93 are published (4 November). New in draft 2: Part 5 (what is missing, inside and from elsewhere).",
   "Not yet covered: the books as entries of their own; the findings F1–F21 except where a paper, card or DICTOnary entry names them; the Kaleidohedra app Almanac (alm.c.*), whose concept ids these could feed later; every piece of every kit (only pieces with a name are listed).",
   "To check (threads): the seed list of the four-dimensional queens named #64, which is The Swap Rule in Crystals; it is replaced here by #62 and #63. There is no card numbered #82, #46 or #21.",
   "To check (dates): for #8–#38a the local texts carry only the date of their current version (20 October 2026, the licence change); #1–#20, #27 and #31a–#35b have no text of their own in papers/ (findings, book chapters or short records): their lines come from the site cards.",
   "Names: every name is DICTO's choice unless a paper says otherwise (DICTO, 4 November 2026). Fallen Humpty (D102): the DICTOnary gives #62, the name is also in #63. Golden Clasp (D107) first appears in a study, not a paper.",
   "Name clash: “golden tetrahedra” of #38a (Danzer, Mosseri–Sadoc) are not the Golden Cut Tetrahedra of #88/#89. The TI Star core (D105) is cut at (10 − √5)/19 of each edge (#78 version 3); the DICTOnary draft is corrected, the published Golden Cycle and Star Cores books at their next versions.",
-  "To check (the triangle): the placement of each thread on page “The Singularity” is the compiler's reading of the papers, for DICTO to confirm."
+  "To check (the triangle): the placement of each thread on page “The Singularity” is the compiler's reading of the papers, for DICTO to confirm.",
+  "Part 5B: every outside find was checked against its abstract or a reliable record (column “checked”); none is yet read in full, all stand “to read”. Unrefereed preprints found by the search are left out. Library copies: only Hermann is held so far."
  ],
  "title": "The DICTO Concordance",
  "date": "2026-11-04",
- "version": "draft 1",
+ "version": "draft 2",
  "papers": {
   "1": {
    "title": "DICTO skewed rhombic dodecahedron",
@@ -554,10 +555,16 @@
   },
   "92": {
    "title": "Aristotle's Pyramid in Layers",
-   "doi": null,
+   "doi": "10.5281/zenodo.23931608",
    "date": "2026-11-04",
    "date_first": true,
-   "draft": true
+   "draft": false
+  },
+  "93": {
+   "title": "One Double Pyramid, Two Splits",
+   "doi": "10.5281/zenodo.23933666",
+   "date": "2026-11-04",
+   "date_first": true
   }
  },
  "strands": [
@@ -801,6 +808,10 @@
     {
      "n": "50",
      "adds": "classical cut-and-glue space-fillers built exactly by one setting of Kaleidohedra's three lattice moves."
+    },
+    {
+     "n": "93",
+     "adds": "every caesium chloride pair and every Delian pair except the octet fills space in one way only."
     }
    ],
    "links": []
@@ -841,6 +852,10 @@
     {
      "n": "58",
      "adds": "the series told in plain words, from the octet to every stacking."
+    },
+    {
+     "n": "93",
+     "adds": "the bonds' pairs are rigid: each tiles only as its own crystal (Theorems A, B)."
     }
    ],
    "links": [
@@ -930,7 +945,7 @@
     },
     {
      "n": "92",
-     "adds": "draft: the face-to-face tilings by the octet’s pyramids are exactly the stackings of octet layers."
+     "adds": "the face-to-face tilings by the octet’s pyramids are exactly the stackings of octet layers."
     }
    ],
    "links": [
@@ -981,7 +996,11 @@
     },
     {
      "n": "92",
-     "adds": "draft: the octet's pyramid tilings layer by layer, settling the question #77 left open."
+     "adds": "the octet's pyramid tilings layer by layer, settling the question #77 left open."
+    },
+    {
+     "n": "93",
+     "adds": "the cube's and the rhombic dodecahedron's centre pyramids: one double pyramid, split across its square into cube pyramids that build only cubes, or along a free diagonal on every square into rhombic dodecahedron pyramids that never close into a cube; #77's law fails for the rhombic dodecahedron."
     }
    ],
    "links": [
@@ -3194,6 +3213,692 @@
     "6D"
    ],
    "why": "C·O sweep; rectified tesseract (#89); cube × octahedron (#90 draft)"
+  }
+ ],
+ "gaps": {
+  "cols": [
+   "PYR",
+   "STAR",
+   "VAC",
+   "GC",
+   "SWP",
+   "NEST",
+   "TWIN",
+   "CH",
+   "DEHN",
+   "4D"
+  ],
+  "colnames": "PYR centre pyramids and their tilings · STAR Star and Star Halo · VAC Vacuus · GC golden cut · SWP polar sweep P ∩ μP* · NEST nesting and golden cycles · TWIN Galois twin (Double Vision) · CH c/h stackings · DEHN Dehn count · 4D four-dimensional lift or slice",
+  "rows": [
+   [
+    "Dodecahedron",
+    "44, 65",
+    "35, 78, 80",
+    "87",
+    "88, 89",
+    "91",
+    "22, 23, 33, 34, 91",
+    "33, 38a",
+    "—",
+    "22, 44",
+    "65, 89, 91"
+   ],
+   [
+    "Icosahedron",
+    "44, 65",
+    "78, 80",
+    "87",
+    "88, 89",
+    "91",
+    "19, 22, 23, 38a, 91",
+    "33, 38a",
+    "—",
+    "22, 44",
+    "63, 65, 89, 91"
+   ],
+   [
+    "Cube",
+    "44, 65, 93",
+    "80, 81, 87",
+    "87",
+    "88, 89, 90",
+    "90, 91",
+    "8, 91",
+    "90",
+    "86 (?)",
+    "44",
+    "65, 89, 90, 91"
+   ],
+   [
+    "Tetrahedron",
+    "44, 77, 92",
+    "80, 81",
+    "87",
+    "88, 89",
+    "91",
+    "8, 91",
+    "—",
+    "40, 57–75, 92",
+    "44",
+    "65, 89, 91"
+   ],
+   [
+    "Octahedron",
+    "44, 77, 92",
+    "80",
+    "87",
+    "48, 88, 89",
+    "90, 91",
+    "8, 91",
+    "—",
+    "40, 57–75, 92",
+    "44",
+    "65, 89, 90"
+   ],
+   [
+    "Rhombic dodecahedron",
+    "93",
+    "80, 87",
+    "87",
+    "89",
+    "station only",
+    "91",
+    "—",
+    "—",
+    "—",
+    "91 (classical)"
+   ],
+   [
+    "Cuboctahedron",
+    "—",
+    "80",
+    "87",
+    "none exists (89)",
+    "station only",
+    "?",
+    "—",
+    "—",
+    "—",
+    "91 (?)"
+   ],
+   [
+    "Rhombic triacontahedron",
+    "—",
+    "38, 80",
+    "87",
+    "89",
+    "station only",
+    "23, 24, 38, 91",
+    "33 (?)",
+    "—",
+    "38 (?)",
+    "—"
+   ],
+   [
+    "Icosidodecahedron",
+    "35b (star)",
+    "38, 80",
+    "87",
+    "golden-regular only (89)",
+    "station only",
+    "23, 38, 91",
+    "33 (?)",
+    "—",
+    "—",
+    "63, 89"
+   ]
+  ],
+  "ranked": [
+   [
+    "The cuboctahedron's centre pyramids",
+    "its circumradius equals its edge, so its pyramids are regular tetrahedra and half-octahedra, the pieces #92 classified; #77's reduction applies directly",
+    "a third member beside #92 and #93"
+   ],
+   [
+    "The second dual sweeps, cuboctahedron–rhombic dodecahedron and icosidodecahedron–triacontahedron",
+    "#91 proves P ∩ μP* holds every corner cut, so #89's golden rhombic cuts must sit on these sweeps",
+    "the next rung of the dual ladder; tight cycles through the rhombic solids"
+   ],
+   [
+    "The reversed neighbour (#92 open point 1, #93 open point 1)",
+    "the same local question for the tetrahedron pyramid and the cube pyramid; one argument may close both",
+    "every tiling falls into whole solids, settling #44 for all tilings"
+   ],
+   [
+    "#91 Lemma 6 exact",
+    "#76's exact constructions are the stations needed (cross-link)",
+    "#91's 600 × 120 result as a theorem"
+   ],
+   [
+    "#43 Conjecture 2 (octahedral constant 3)",
+    "#80's gain 3 and #81's involution μ ↦ 3/μ give the same constant",
+    "an octahedral twin of #43 Theorem 2"
+   ],
+   [
+    "The Hexagonality Law for the Laves big atom (#66, #67)",
+    "#84 shows the Swap Rule is the condition to stay on the line; check it on the three-layer window",
+    "the last exception of the law explained"
+   ],
+   [
+    "Star and Star Halo of the classical solids",
+    "the census scripts exist and #80 has the gains",
+    "a full map of known and new stars and halos"
+   ],
+   [
+    "Galois twins of every golden cut",
+    "#88 and #89 give the depths in closed form; only their minimal polynomials are needed, as in #90",
+    "a Double Vision column for every golden pair"
+   ],
+   [
+    "Dehn counts of the rhombic dodecahedron, cuboctahedron, triacontahedron and icosidodecahedron pyramids",
+    "#44's counting carries over",
+    "which pyramids can fill space beyond Plato"
+   ],
+   [
+    "The TRD as the rhombic dodecahedron's h partner",
+    "the Rule of Halves (#57) and #93's Theorem C give the template",
+    "the TRD DICTOnode in a paper; the rhombic dodecahedron on every stacking"
+   ],
+   [
+    "#53 Observation 1 (diagonal swap)",
+    "switch points of power diagrams are flips of regular triangulations (Edelsbrunner–Shah, below)",
+    "a general switch theorem for the bonds"
+   ],
+   [
+    "The golden split in the other AXE networks (#48)",
+    "the method and uniqueness theorem exist",
+    "new convex pairs"
+   ],
+   [
+    "Archimedean stretches (#49)",
+    "the Polyhedral Stretching Theorem covers every equal-edged solid; listing and prior-art check remain",
+    "new equal-edged solids"
+   ],
+   [
+    "The loose step O ⊂ rTI (#35)",
+    "a golden-cut station of #91 may fit it (unsure)",
+    "the Vajrayana cycle complete"
+   ],
+   [
+    "Joining the fill thread to the cuts and the sweep",
+    "#89 §7 and #93 are already fillings by the sweep's pieces",
+    "#47 questions 1 and 3; the isolated fill thread tied in"
+   ]
+  ],
+  "weak": [
+   "Concepts in one paper only: Window Law (#84), tower move (#86), knitting slice (#83), Vacuus (#87), field obstruction and cut equals shadow (#90), polyhedral stretching (#49), lattice moves (#50).",
+   "Cross-links still only suggestive: #48 ↔ #55 (one pyritohedral family at t = φ, φ², 2); #89/#91 ↔ #51/#53/#57 (the tesseract slice meets the fluorite lane only at the octet); #43 Conjecture 2 ↔ #80 (constant 3); #12 ↔ #38a.",
+   "Threads that share no paper and no concept: fill with kepler, cycles, og, bonds, stack, queens, cuts and sweep; kepler with queens. The fill thread is the isolated one, partly a matter of tagging (#89 §7 and #93 are fillings)."
+  ],
+  "open_count": "Of about 60 open points stated in the papers and studies, 9 are closed by later papers (among them #77 and #44 face to face by #92, #38 by #38a and #39, #48 by #51, #56 by #57). The rest are listed here.",
+  "loose": [
+   {
+    "src": "#92, #93",
+    "what": "reversed neighbour of the T and C6 pyramids; undecided rows of #92 Table 2; tilings not face to face (#93: 7 edge and 3 face combinations); TRD centre pyramids",
+    "status": "open"
+   },
+   {
+    "src": "#38a",
+    "what": "do its shells fill by one pattern",
+    "status": "open"
+   },
+   {
+    "src": "#48",
+    "what": "golden split in the other AXE networks; printed keyed sets",
+    "status": "open"
+   },
+   {
+    "src": "#35",
+    "what": "closing solid for the loose step O ⊂ rTI; the 9/φ⁴ coincidence; a physical build",
+    "status": "open"
+   },
+   {
+    "src": "#36",
+    "what": "golden fill G′ of the bcc gap",
+    "status": "paused"
+   },
+   {
+    "src": "#36",
+    "what": "golden Bull-horns adaptor; rhombic division of the 72-piece gap; Cleo-Ico adapters; oblique layers at the seams",
+    "status": "open"
+   },
+   {
+    "src": "#30",
+    "what": "spine = thinned cut-and-project chain; seams as model sets; off-plane core rings; other solids with five inscribed cubes",
+    "status": "open"
+   },
+   {
+    "src": "#40",
+    "what": "space DBT and OTT leave on mixed stackings; OG on aperiodic stackings with diffraction",
+    "status": "open"
+   },
+   {
+    "src": "#41",
+    "what": "third level of Hexas; physical puzzle",
+    "status": "queued"
+   },
+   {
+    "src": "#42",
+    "what": "what fills between the great star and the Sunstar",
+    "status": "open"
+   },
+   {
+    "src": "#43",
+    "what": "Conjectures 1 and 2; shell 5 exact; the full flip",
+    "status": "open"
+   },
+   {
+    "src": "#43",
+    "what": "shell ratios against Tsai clusters and virus capsids",
+    "status": "queued"
+   },
+   {
+    "src": "#45",
+    "what": "Conjecture 1 (largest width)",
+    "status": "open"
+   },
+   {
+    "src": "#47",
+    "what": "C + T + O without connectors; smallest kit; face to face; periodic in three directions",
+    "status": "open"
+   },
+   {
+    "src": "#49",
+    "what": "Archimedean stretches and caps; prior art for the five-fold stretch",
+    "status": "open"
+   },
+   {
+    "src": "#50",
+    "what": "catalogue of perfect points; which dissection fillers (Hill, Sommerville, Goldberg) the moves reach",
+    "status": "open"
+   },
+   {
+    "src": "#51",
+    "what": "one solid per bond that fills alone; printed Samson and Delilah",
+    "status": "open"
+   },
+   {
+    "src": "#52",
+    "what": "scale anomaly; web of the keyed bond",
+    "status": "open"
+   },
+   {
+    "src": "#53",
+    "what": "Observations 1–4; exact walks of three-kind networks; a common reason for the switch points",
+    "status": "open"
+   },
+   {
+    "src": "#54",
+    "what": "a shorter run as a classical gnomon; capped cubes at other sizes",
+    "status": "open"
+   },
+   {
+    "src": "#55",
+    "what": "weight walks of σ, Z, C15 and other Frank–Kasper phases; 4D two-kind walks",
+    "status": "partly queued"
+   },
+   {
+    "src": "#56, #57",
+    "what": "self-keyed Blockhead; three-kind walk; keyed Chucky and Fang",
+    "status": "open"
+   },
+   {
+    "src": "#61",
+    "what": "Swap Rule for s < 1/4",
+    "status": "open"
+   },
+   {
+    "src": "#66, #67",
+    "what": "Hexagonality Law for the Laves big atom on every stacking (exact to 6 layers)",
+    "status": "open"
+   },
+   {
+    "src": "#74",
+    "what": "Loop Equality for all lengths (to length 34)",
+    "status": "open"
+   },
+   {
+    "src": "#76",
+    "what": "exact atlas in Q(√5); proof of part (3)",
+    "status": "open"
+   },
+   {
+    "src": "#78",
+    "what": "why the prime 89; matching the dodecahedra to the Red Queen's nine layers",
+    "status": "open"
+   },
+   {
+    "src": "#80",
+    "what": "proof that Archimedean chains close in four steps; omnitruncates; the quasi-regular formula",
+    "status": "open"
+   },
+   {
+    "src": "#80, #81",
+    "what": "exact edges of the open windows (cube s 49/80–59/80; dodecahedron 87/80–99/80)",
+    "status": "open"
+   },
+   {
+    "src": "#86",
+    "what": "proof over whole stretches (exact at 402 weights)",
+    "status": "open"
+   },
+   {
+    "src": "#87",
+    "what": "other centres for solids of low symmetry",
+    "status": "open"
+   },
+   {
+    "src": "#87",
+    "what": "cardboard sheets for the other solids",
+    "status": "queued"
+   },
+   {
+    "src": "#91",
+    "what": "Lemma 6 in general; off-base prism sections; exact stations of the tilted slice; TRD outside the cubic sweep; the factor 2 between 342 and 171",
+    "status": "open"
+   },
+   {
+    "src": "#89, #91",
+    "what": "sections of the ten Schläfli–Hess star polytopes",
+    "status": "queued"
+   },
+   {
+    "src": "#90",
+    "what": "structure over Q(√2, √5) beyond natural projections",
+    "status": "open"
+   },
+   {
+    "src": "#8",
+    "what": "database search for the 1b + 12j point set",
+    "status": "open"
+   },
+   {
+    "src": "#62",
+    "what": "six all-triangle 600-cell slices (28, 30, 32, 42, 48, 72 vertices); equilateral forms of five patterns",
+    "status": "open"
+   }
+  ]
+ },
+ "outside": [
+  {
+   "field": "Physics: the big bang",
+   "cite": "T. Damour, M. Henneaux, H. Nicolai, Cosmological billiards, Class. Quantum Grav. 20 (2003) R145, arXiv:hep-th/0212256",
+   "says": "Near the big bang singularity gravity becomes a ball bouncing in a mirror chamber of the Kac–Moody group AE3; its angles are 90°, 60° and 0°, the (2, 3, ∞) triangle (checked from the Cartan matrix).",
+   "touches": "one triangle (§4); all threads",
+   "kind": "lead",
+   "lib": false,
+   "conf": "abstract; angles checked",
+   "status": "to read"
+  },
+  {
+   "field": "Physics: the big bang",
+   "cite": "A. J. Feingold, A. Kleinschmidt, H. Nicolai, Hyperbolic Weyl groups and the four normed division algebras, J. Algebra 322 (2009) 1295, arXiv:0805.3018",
+   "says": "The billiard groups of ranks 3, 4, 6, 10 are modular groups over the integers, Gaussian integers, Hurwitz quaternions (the 24-cell) and octonions.",
+   "touches": "queens; one triangle",
+   "kind": "lead",
+   "lib": false,
+   "conf": "abstract",
+   "status": "to read"
+  },
+  {
+   "field": "Physics: particles",
+   "cite": "A. B. Zamolodchikov 1989; R. Coldea et al., Quantum criticality in an Ising chain: experimental evidence for emergent E8 symmetry, Science 327 (2010) 177",
+   "says": "In a critical magnetic chain the first two particle masses are in the ratio 2 cos(π/5) = φ, measured in CoNb2O6.",
+   "touches": "one triangle (p = 5)",
+   "kind": "anchor",
+   "lib": false,
+   "conf": "abstract",
+   "status": "to read"
+  },
+  {
+   "field": "Physics: quantum matter",
+   "cite": "A. Feiguin et al., Interacting anyons in topological quantum liquids: the golden chain, Phys. Rev. Lett. 98 (2007) 160409; V. F. R. Jones, Index for subfactors, Invent. Math. 72 (1983) 1",
+   "says": "Anyon dimensions 2 cos(π/(k + 2)) are 1, √2, φ, √3 for k = 1 … 4, our p = 3 … 6; Jones's indices are their squares.",
+   "touches": "one triangle",
+   "kind": "anchor",
+   "lib": false,
+   "conf": "abstract; standard",
+   "status": "to read"
+  },
+  {
+   "field": "Physics: quantum matter",
+   "cite": "M. Freedman et al., Galois conjugates of topological phases, Phys. Rev. B 85 (2012) 045414",
+   "says": "The sign swap √5 ↦ −√5 sends the Fibonacci theory (φ) to a non-unitary Yang–Lee partner (−1/φ): Double Vision in physics, with only one twin physical.",
+   "touches": "cuts (Galois twins); Double Vision",
+   "kind": "lead",
+   "lib": false,
+   "conf": "abstract",
+   "status": "to read"
+  },
+  {
+   "field": "Physics: antimatter",
+   "cite": "Charge conjugation as −w0 (J. E. Humphreys, Reflection Groups and Coxeter Groups, 1990)",
+   "says": "For the cube, octahedron, dodecahedron and icosahedron symmetries the antiparticle map is trivial; only the tetrahedron's differs: its point mirror −T, which is also its polar (the 4 and 4̄ of SU(4)).",
+   "touches": "kepler (stella octangula); sweep",
+   "kind": "lead",
+   "lib": false,
+   "conf": "standard; geometry checked",
+   "status": "to read"
+  },
+  {
+   "field": "Physics: particles",
+   "cite": "P. P. Dechant, The birth of E8 out of the spinors of the icosahedron, Proc. R. Soc. A 472 (2016) 20150504; Dechant, Adv. Appl. Clifford Algebras 23 (2013) 301",
+   "says": "The 3D symmetries induce the 4D ones: tetrahedral → 24-cell, cube–octahedron → F4, icosahedral → 600-cell and 120-cell, and E8 arises from the icosahedron.",
+   "touches": "queens",
+   "kind": "credit",
+   "lib": false,
+   "conf": "abstract",
+   "status": "to read"
+  },
+  {
+   "field": "Physics: particles",
+   "cite": "P. P. Dechant, C. Bœhm, R. Twarock, Novel Kac–Moody-type affine extensions of non-crystallographic Coxeter groups, J. Phys. A 45 (2012) 285202",
+   "says": "Golden affine extensions of the icosahedral group with translations classified by Fibonacci recursions.",
+   "touches": "cycles (φ³ step: test)",
+   "kind": "test",
+   "lib": false,
+   "conf": "abstract",
+   "status": "to read"
+  },
+  {
+   "field": "Physics: holography",
+   "cite": "F. Pastawski et al., JHEP 06 (2015) 149; L. Boyle, M. Dickens, F. Flicker, Conformal quasicrystals and holography, Phys. Rev. X 10 (2020) 011009",
+   "says": "Regular hyperbolic tilings carry quantum codes whose boundary is a quasicrystal: periodic inside, aperiodic on the edge.",
+   "touches": "one triangle (p ≥ 7); periodic–aperiodic aim",
+   "kind": "lead",
+   "lib": false,
+   "conf": "abstract",
+   "status": "to read"
+  },
+  {
+   "field": "Physics: particles",
+   "cite": "L. Boyle, P. J. Steinhardt, Coxeter pairs, Ammann patterns and Penrose-like tilings, Phys. Rev. B 106 (2022) 144113",
+   "says": "Pairs H3/D6 and H4/E8 give Penrose-like tilings in 3D and 4D from six- and eight-dimensional lattices.",
+   "touches": "sweep (6D sections); queens",
+   "kind": "test",
+   "lib": false,
+   "conf": "abstract",
+   "status": "to read"
+  },
+  {
+   "field": "Crystal growth",
+   "cite": "C. Wild et al., Oriented CVD diamond films: twin formation, structure and morphology, Diamond Relat. Mater. 3 (1994) 373; K. Hermann, J. Phys.: Condens. Matter 36 (2024) 045303",
+   "says": "Diamond growers set crystal shape by α = √3 v100/v111 from cube (1) through cuboctahedron (1.5) to octahedron (3). For our sweep α = 3/μ exactly, so the core turn μ ↔ 3/μ is the switch between the two dials. Hermann maps the wider {100}{110}{111} shape diagram.",
+   "touches": "sweep",
+   "kind": "anchor",
+   "lib": true,
+   "conf": "abstract; α = 3/μ checked; Hermann in library",
+   "status": "to read"
+  },
+  {
+   "field": "Materials",
+   "cite": "J. B. Berger, H. N. G. Wadley, R. M. McMeeking, Mechanical metamaterials at the theoretical limit of isotropic elastic stiffness, Nature 543 (2017) 533",
+   "says": "Walls on the cube and octet planes make the stiffest possible lattice.",
+   "touches": "pyr (Vacuus SHEETS); fill",
+   "kind": "credit",
+   "lib": false,
+   "conf": "secondary",
+   "status": "to read"
+  },
+  {
+   "field": "Materials",
+   "cite": "A. V. Dyskin et al., Topological interlocking of platonic solids, Phil. Mag. Lett. 83 (2003) 197",
+   "says": "Layers of each Platonic solid can lock so that no block can be lifted out.",
+   "touches": "pyr (Vacuus); kepler; DICTOnodes",
+   "kind": "test",
+   "lib": false,
+   "conf": "abstract",
+   "status": "to read"
+  },
+  {
+   "field": "Materials",
+   "cite": "J. T. B. Overvelde et al., Rational design of reconfigurable prismatic architected materials, Nature 541 (2017) 347",
+   "says": "Space-filling tessellations extruded into folding materials.",
+   "touches": "fill (#47 kits)",
+   "kind": "lead",
+   "lib": false,
+   "conf": "abstract",
+   "status": "to read"
+  },
+  {
+   "field": "Tilings",
+   "cite": "M. Goldberg, Three infinite families of tetrahedral space-fillers, J. Combin. Theory A 16 (1974) 348; A. L. Edmonds, Sommerville's missing tetrahedra, Discrete Comput. Geom. 37 (2007)",
+   "says": "Families of space-filling tetrahedra; the face-to-face orientation-preserving ones are exactly Sommerville's four.",
+   "touches": "pyr (face-to-face law)",
+   "kind": "test",
+   "lib": false,
+   "conf": "secondary",
+   "status": "to read"
+  },
+  {
+   "field": "Scissors congruence",
+   "cite": "J.-P. Sydler, Comment. Math. Helv. 40 (1965) 43",
+   "says": "Equal volume and equal Dehn invariant imply cut-and-glue equality: the converse of Dehn.",
+   "touches": "fill (#50 exact vs cut-and-glue)",
+   "kind": "credit",
+   "lib": false,
+   "conf": "secondary",
+   "status": "to read"
+  },
+  {
+   "field": "Stacking statistics",
+   "cite": "T. J. McLarnan, Z. Kristallogr. 155 (1981) 269; E. Estevez-Rams et al., Acta Cryst. A 73 (2017); M. E. Fisher, W. Selke, Phys. Rev. Lett. 44 (1980) 1502; P. Bak, Rep. Prog. Phys. 45 (1982) 587",
+   "says": "Counts of stackings by period; block statistics of faulted stackings; devil's staircases with irrational (Fibonacci-like) points.",
+   "touches": "stack (Window Law, Swap Rule, Fibonacci stacking)",
+   "kind": "credit",
+   "lib": false,
+   "conf": "abstract / secondary",
+   "status": "to read"
+  },
+  {
+   "field": "Four dimensions",
+   "cite": "T. Denney et al., The geometry of H4 polytopes, Adv. Geom. 20 (2020) 433; H. S. M. Coxeter, The simplicial helix, Canad. Math. Bull. 28 (1985) 385",
+   "says": "The 25 24-cells in the 600-cell and its decagons; the tetrahelix rings (Hopf fibration).",
+   "touches": "queens; cycles",
+   "kind": "test",
+   "lib": false,
+   "conf": "abstract",
+   "status": "to read"
+  },
+  {
+   "field": "Polytope theory",
+   "cite": "K. A. Adiprasito, G. M. Ziegler, Many projectively unique polytopes, Invent. Math. 199 (2015) 581",
+   "says": "Polytopes realisable over a given number field and no smaller one.",
+   "touches": "cuts (#90 field obstruction)",
+   "kind": "credit",
+   "lib": false,
+   "conf": "abstract",
+   "status": "to read"
+  },
+  {
+   "field": "Convex geometry",
+   "cite": "H. Iriyeh, M. Shibata, Duke Math. J. 169 (2020) 1077",
+   "says": "Mahler's volume product |K|·|K°| is least exactly at the cube and the octahedron in 3D.",
+   "touches": "sweep (test along μ)",
+   "kind": "test",
+   "lib": false,
+   "conf": "abstract",
+   "status": "to read"
+  },
+  {
+   "field": "Chemistry",
+   "cite": "M. J. Moses, J. C. Fettinger, B. W. Eichhorn, Science 300 (2003) 778",
+   "says": "The ion [As@Ni12@As20]3−: an atom in an icosahedron in a dodecahedron, Kepler's nest as a molecule.",
+   "touches": "kepler; cycles",
+   "kind": "anchor",
+   "lib": false,
+   "conf": "secondary",
+   "status": "to read"
+  },
+  {
+   "field": "Chemistry",
+   "cite": "W. I. F. David et al., Nature 353 (1991) 147; O. Zhou et al., Nature 351 (1991) 462; A. Y. Ganin et al., Nature Materials 7 (2008) 367",
+   "says": "C60 (20 hexagons) packs fcc with hexagons on the octet's octahedra; doped forms pack bcc and A15.",
+   "touches": "og (#30, #36, #37); bonds (#55)",
+   "kind": "anchor",
+   "lib": false,
+   "conf": "abstract",
+   "status": "to read"
+  },
+  {
+   "field": "Nanoparticles",
+   "cite": "S. Ino, J. Phys. Soc. Japan 27 (1969) 941",
+   "says": "Five fcc wedges round a five-fold axis leave a 7.35° gap.",
+   "touches": "og (#30)",
+   "kind": "credit",
+   "lib": false,
+   "conf": "abstract",
+   "status": "to read"
+  },
+  {
+   "field": "Quasicrystals",
+   "cite": "T. Ogawa, J. Phys. Soc. Japan 54 (1985) 3205",
+   "says": "A 3D Penrose inflation with step φ³ in length.",
+   "touches": "cycles (φ³ step)",
+   "kind": "credit",
+   "lib": false,
+   "conf": "abstract",
+   "status": "to read"
+  },
+  {
+   "field": "Quasicrystals",
+   "cite": "L. Danzer, Discrete Math. 76 (1989) 1; A. L. Mackay, Physica A 114 (1982) 609; A. Janner, Acta Cryst. A 62 (2006)",
+   "says": "The ABCK golden tetrahedra under inflation; the 3D Penrose pattern from interpenetrating triacontahedra; nested golden polyhedra in virus capsids.",
+   "touches": "cycles (#24 check against Mackay)",
+   "kind": "test",
+   "lib": false,
+   "conf": "abstract / secondary",
+   "status": "to read"
+  },
+  {
+   "field": "Computational geometry",
+   "cite": "F. Aurenhammer, F. Hoffmann, B. Aronov, Algorithmica 20 (1998) 61; H. Edelsbrunner, N. R. Shah, Algorithmica 15 (1996) 223",
+   "says": "Weights giving prescribed cell volumes always exist (optimal transport); regular triangulations change by flips.",
+   "touches": "bonds (#51 equal volume; #52, #53 stops)",
+   "kind": "credit",
+   "lib": false,
+   "conf": "abstract",
+   "status": "to read"
+  },
+  {
+   "field": "Metallurgy",
+   "cite": "W. G. Burgers, Physica 1 (1934) 561",
+   "says": "The bcc → hcp path, companion of Bain's fcc ↔ bcc.",
+   "touches": "bonds (#56, #57)",
+   "kind": "credit",
+   "lib": false,
+   "conf": "secondary",
+   "status": "to read"
+  },
+  {
+   "field": "Art and stellation",
+   "cite": "Escher's solid (M. C. Escher, Waterfall, 1961; G. W. Hart, The polyhedra of M. C. Escher)",
+   "says": "The first stellation of the rhombic dodecahedron fills space alone.",
+   "touches": "kepler (DICTO Jewel fills)",
+   "kind": "test",
+   "lib": false,
+   "conf": "secondary",
+   "status": "to read"
   }
  ]
 }
