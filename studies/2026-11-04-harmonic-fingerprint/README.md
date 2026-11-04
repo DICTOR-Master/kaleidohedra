@@ -15,3 +15,9 @@ Validation: CO (fcc) .191/.575, J27 (hcp) .097/.485, bcc .036/.511, icosahedron 
 - Fingerprint of the golden nests and OG shells (corner sets from the engine) — Q6 of the nests against Mackay/Bergman clusters.
 - Odd-l fingerprint (l = 3, 7, 9) for the tetrahedral and chiral pieces.
 - Q4 = 0 as a test for "icosahedral inside cubic" on other walks (Delian walk, #51; the golden cuts of #88/#89).
+
+## Delian walk (#51), 4 Nov — harmonic test in its competence (icosahedral order hidden in cubic)
+O(t) = RD cut at its 3-fold corners (planes s·x = 3(1−t)/2), T(t) = the tetrahedral piece (#93 pairing_checks.py definitions).
+- O(t): Q4 = 0 exactly at t = 1/9 (factor (t − 1/9) of the exact sum over the 30 corners (±1,0,0), ((1+3t)/2, (1−3t)/2, (1−3t)/2)); Q8 = 0 near t ≈ 0.095 and 0.205 — not together.
+- T(t): Q4 never zero; Q6 zero near t ≈ 0.560 and 0.774.
+So the Delian walk has no hidden icosahedral station (unlike Icosaxes on the cube–octahedron sweep); its cubic tone is silent once, at the rational point t = 1/9.
