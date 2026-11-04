@@ -1,6 +1,6 @@
 {
  "status": [
-  "Draft 2 for DICTO's reading, 4 November 2026. Sources: every paper.src.html (else paper.html) in papers/, the paper cards of dictospheres.com, the DICTOnary atom cards (book-quanta-dictonary) and the cross-links audit of 4 November. #90–#93 are published (4 November). New in draft 2: Part 5 (what is missing, inside and from elsewhere).",
+  "Version 1, 4 November 2026. Sources: every paper.src.html (else paper.html) in papers/, the paper cards of dictospheres.com, the DICTOnary atom cards and the cross-links audit of 4 November; papers to #94. Each new paper, read or test is one edit to concordance.json and a rebuild; new versions are batched.",
   "Not yet covered: the books as entries of their own; the findings F1–F21 except where a paper, card or DICTOnary entry names them; the Kaleidohedra app Almanac (alm.c.*), whose concept ids these could feed later; every piece of every kit (only pieces with a name are listed).",
   "To check (threads): the seed list of the four-dimensional queens named #64, which is The Swap Rule in Crystals; it is replaced here by #62 and #63. There is no card numbered #82, #46 or #21.",
   "To check (dates): for #8–#38a the local texts carry only the date of their current version (20 October 2026, the licence change); #1–#20, #27 and #31a–#35b have no text of their own in papers/ (findings, book chapters or short records): their lines come from the site cards.",
@@ -11,7 +11,7 @@
  ],
  "title": "The DICTO Concordance",
  "date": "2026-11-04",
- "version": "draft 2",
+ "version": "version 1",
  "papers": {
   "1": {
    "title": "DICTO skewed rhombic dodecahedron",
@@ -565,6 +565,12 @@
    "doi": "10.5281/zenodo.23933666",
    "date": "2026-11-04",
    "date_first": true
+  },
+  "94": {
+   "title": "The Silent Golden Station",
+   "doi": "10.5281/zenodo.23934349",
+   "date": "2026-11-04",
+   "date_first": true
   }
  },
  "strands": [
@@ -1075,6 +1081,10 @@
     {
      "n": "91",
      "adds": "draft: four-dimensional solids whose every cell is a golden cut."
+    },
+    {
+     "n": "94",
+     "adds": "golden and bronze ratios as the zeros of the cubic harmonics on the sweep."
     }
    ],
    "links": []
@@ -1115,6 +1125,10 @@
     {
      "n": "91",
      "adds": "draft: S(μ) = P ∩ μP*; all ten golden cuts lie on the three sweeps D·I, C·O and T·T."
+    },
+    {
+     "n": "94",
+     "adds": "the harmonic fingerprint of the sweep: the cubic tone Q4 is silent only at Icosaxes (μ = φ), whose corners are two icosahedra; Q8 also at the bronze station (√13 − 1)/2."
     }
    ],
    "links": [
@@ -4001,5 +4015,6 @@
    "conf": "abstract; Steinhardt et al. standard",
    "status": "tested"
   }
- ]
+ ],
+ "doi": "10.5281/zenodo.23934363"
 }

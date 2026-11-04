@@ -62,10 +62,9 @@ w('<img class="watermark" src="../dicto-logo.png" alt="">\n<img class="logo" src
 w('<h1>The DICTO Concordance</h1>')
 w('<p class="sub">A map and almanac of the work: threads, names, concepts and the one triangle</p>')
 w(f'<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>'
-  f'{date(D["date"])} · {e(D["version"])} · Licence CC BY-SA 4.0 · Compiled with Claude (Anthropic) from the papers, the site cards and the DICTOnary, generated from concordance.json by build.py<br>'
+  f'{date(D["date"])} · {e(D["version"])} · DICTO DOI: {D.get("doi", "to be reserved")} (concept) · Licence CC BY-SA 4.0 · Compiled with Claude (Anthropic) from the papers, the site cards and the DICTOnary, generated from concordance.json by build.py<br>'
   'The work, its ideas and its names are DICTO\'s, as each paper\'s credit line says; this map only gathers them.</div>')
-w('<div class="status"><b>Status</b> (first draft for DICTO\'s reading; this box is deleted when the Concordance is published)<ul>'
-  + ''.join(f'<li>{x}</li>' for x in D['status']) + '</ul></div>')
+
 w('<p class="hook">This is a map of DICTO\'s work in one place, so that no detail has to be carried in the head. '
   '<b>Threads</b> follow one idea from paper to paper; <b>Names</b> lists every named solid, piece, family and rule with who named it and where it first appears; '
   'the <b>Almanac of Concepts</b> says in plain words what each operation, law and method is and where it is used; '
@@ -159,6 +158,7 @@ w('</tbody></table>')
 w('<p>Fields not yet consulted, named by the search: dislocation theory (each h ↔ c swap is a partial-dislocation glide); commensurate–incommensurate transitions; '
   'semi-discrete optimal transport (the weight walk); martensitic paths (Burgers, Kurdjumov–Sachs); topological interlocking and architected materials; '
   'realisation spaces of polytopes; hypersimplices (the octahedron is Δ(2, 4)); fulleride and cluster chemistry; multiply-twinned nanoparticles; hyperbolic tilings and holography.</p>')
+w('<h2>Notes on this version</h2><ul class="th">' + ''.join(f'<li>{x}</li>' for x in D['status']) + '</ul>')
 w('</body></html>')
 open(os.path.join(HERE, 'paper.html'), 'w').write('\n'.join(out))
 print('paper.html:', len(D['strands']), 'threads,', len(D['names']), 'names,', len(D['concepts']), 'concepts')
