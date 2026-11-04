@@ -4615,8 +4615,8 @@
     "question": "CONJECTURE: a truncated tetrahedron T(n) minus corners k tiles space iff Σk = n (Dehn zero), always as piece + point-inverse (2 per period); if the construction is uniform in real cuts, the golden pieces tile periodically (not an aperiodic clue)",
     "method": "evidence: 6/6 tested; proof = find the general construction",
     "status": "OPEN",
-    "result": "6 of 6",
-    "retry": "run periodic SAT on the rest (satper-2, running); then look for the uniform construction (read the two-piece periods)",
+    "result": "6 of 6 · REFORMULATION (4 Nov, by hand): corner cut c_i = (3 − μ_i)/4 with cut planes v_i·x ≤ μ_i; these bound an inverted tetrahedron whose size depends only on Σμ_i (Σv_i = 0), so Σc_i = 1 ⇔ Σμ_i = 8 ⇔ the cutter is 2(−T): the Dehn-zero family is exactly P(t) = T ∩ (2(−T) + t), one translation parameter t (uniform tiler t = 0; golden pieces = particular t). Conjecture: P(t) tiles with −P(t) for every admissible t — look for one construction continuous in t.",
+    "retry": "read satper-2; extract the two-piece tilings as functions of t; test a golden t directly (real polytopes, overlap + coverage as verify_tiling.py)",
     "study": "2026-11-04-tetra-sweep",
     "date": "2026-11-04"
    },

@@ -38,3 +38,7 @@ the core turn μ ↔ 3/μ has √3 as fixed point for the same reason (it swaps 
 
 ## Q6 on the tetrahedron sweep (scripts/tetra_q6.py)
 m = 0 coefficient about the 3-fold axis (the cubic l = 6 invariant is one-dimensional, so a zero would be a sign change): Q4 changes sign once, μ ≈ 1.8055 (and 1/μ); Q6 never — the sweep is never silent in degree 6.
+
+## Reformulation (4 Nov): the Dehn-zero truncated tetrahedra are exactly P(t) = T ∩ (2(−T) + t)
+Cut c_i = (3 − μ_i)/4 with planes v_i·x ≤ μ_i; the four planes bound an inverted tetrahedron of size fixed by Σμ_i (Σv_i = 0); Σc = 1 ⇔ Σμ = 8 ⇔ cutter = 2(−T).
+So the family is one translation parameter t. Conjecture: P(t) tiles with −P(t) for all admissible t (6/6 lattice cases do, 2 per period).
