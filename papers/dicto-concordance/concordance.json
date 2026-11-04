@@ -4587,7 +4587,7 @@
     "question": "RT centre pyramids tile?",
     "method": "rt_pyramids.py edge-to-edge DFS with progress logging",
     "status": "UNDECIDED",
-    "result": "alive to 31 pieces; overnight 60/100/150 running (re-queued after mkdir bug) · 4 Nov evening: overnight run WASTED by design (prints only at the end; 60-piece run hit its 4 h limit, empty log). Fixed: progress lines every 50k nodes + best patch saved; restarted as one 150-piece run, 12 h cap (data/progress-RT-150.log, RT-best-150.json).",
+    "result": "alive to 31 pieces; overnight 60/100/150 running (re-queued after mkdir bug) · 4 Nov evening: overnight run WASTED by design (prints only at the end; 60-piece run hit its 4 h limit, empty log). Fixed: progress lines every 50k nodes + best patch saved; restarted as one 150-piece run, 12 h cap (data/progress-RT-150.log, RT-best-150.json). · 4 Nov 21:57: best patch 56 pyramids round 18 centres (20, 12, 3, 3, 3, 3, then single pieces) — still growing, never closing whole RTs: the \"search signature\" clue (aperiodic checklist), no claim.",
     "retry": "read result; then aperiodic clue checklist",
     "study": "2026-11-04-rt-pyramids",
     "date": "2026-11-04"
@@ -4776,7 +4776,7 @@
     "question": "Common dissection of Narcissus and the cube (DICTO: \"by being halved\") — one piece set for c and h layers",
     "method": "Sydler guarantees one exists (equal volume, both Dehn zero); stage 1: 2-piece search over ~105k placements (common.py)",
     "status": "RUNNING",
-    "result": "flat central halvings: no common half (Narcissus 1 half shape; cube 451 half shapes; no match)",
+    "result": "flat central halvings: no common half (Narcissus 1 half shape; cube 451 half shapes; no match) · stage 1, body-diagonal family: 105,456 placements, 0 two-piece hits, 0 convex near-misses; edge-up family running.",
     "retry": "read common.log; stage 2 from near-misses",
     "study": "2026-11-04-narcissus-cube",
     "date": "2026-11-04"
