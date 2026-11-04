@@ -8,7 +8,7 @@ import { POLYHEDRA, NARCISSUS_IDS } from '../../src/krp-core/src/polyhedra/index
 const N = POLYHEDRA.DICTO_NARCISSUS, B = POLYHEDRA.DICTO_NARCISSUS_TOGETHER;
 const v3 = (p) => (Array.isArray(p) ? p : [p.x, p.y, p.z]);
 test('both entries are registered, Narcissus first', () => {
-  assert.deepEqual(NARCISSUS_IDS, ['DICTO_NARCISSUS', 'DICTO_NARCISSUS_TOGETHER']);
+  assert.deepEqual(NARCISSUS_IDS, ['DICTO_NARCISSUS', 'DICTO_NARCISSUS_TOGETHER', 'RD_TRD_HALF_CELL']);
   assert.ok(N && B);
   assert.equal(N.name, 'Narcissus');
 });
@@ -39,4 +39,9 @@ test('the block: 112 pieces, 42 Narcissus (gold) and 70 cubes', () => {
   assert.equal(B.parts.length, 112);
   const gold = B.parts.filter(([a]) => B.faceColours[a] === 0xd4a020).length;
   assert.equal(gold, 42);
+});
+test('the RD/TRD half-cell: 13 corners, one hexagon, two-colour seam (3 gold, 3 purple)', () => {
+  const P = POLYHEDRA.RD_TRD_HALF_CELL; assert.equal(P.vertices.length, 13);
+  const sizes = P.faces.map((f) => (f.vertices ?? f).length); assert.equal(sizes.filter((n) => n === 6).length, 1); assert.equal(sizes.length, 10);
+  assert.equal(P.faceColours.filter((c) => c === 0xd4a020).length, 3); assert.equal(P.faceColours.filter((c) => c === 0x7a5fb0).length, 3);
 });

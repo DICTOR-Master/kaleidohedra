@@ -833,17 +833,46 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   }
   const attachAt = (id, sel) => (sel.corner != null ? attachCorner(id, sel.node, sel.corner) : attach(id, sel.node, sel.face));
   // Attach shape `id` on face fi of node n, the best fit first; false if it doesn't fit there.
+  let lastTurns = null;   // the last face-attached piece's clean turns, for ⟳ Turn
+  function turnLast() {
+    const node = lastTurns && nodes.find((x) => x.id === lastTurns.node); if (!node) { lastTurns = null; return false; }
+    lastTurns.at = (lastTurns.at + 1) % lastTurns.options.length; const o = lastTurns.options[lastTurns.at];
+    node.transform = { position: o.position, quaternion: o.quaternion };
+    const c = connections.find((x) => x.nodeB === node.id && x.kind === 'face'); if (c) c.vertexB = o.face;
+    commit(); return true;
+  }
+  // test hook (only with ?probe): attach a piece to a face of a placed piece, read the placed pieces (browser tests of ⟳ Turn)
+  if (typeof location !== 'undefined' && new URLSearchParams(location.search).has('probe')) (window.__polyBuildProbes ??= []).push({
+    attach: (nodeIndex, face, id) => { const n = nodes[nodeIndex]; const ok = n && attach(id ?? n.shape, n, face); renderPanel(); return !!ok; },
+    hexFace: (nodeIndex) => { const n = nodes[nodeIndex]; return POLYHEDRA[n.shape].faces.findIndex((f) => (f.vertices ?? f).length === 6); },
+    points: () => nodes.map((n) => worldPoints(n).map((v) => [v.x, v.y, v.z])),
+    count: () => nodes.length,
+  });
   function attach(id, n, fi) {
     const spec = POLYHEDRA[id];
     const options = cleanOptions(id, n, fi);
     if (!options.length) { if (fittingFaces(id, n, fi).length) showHudPrompt(t('poly.noRoom', lang()), 3000); return false; }
     const built = nodes.map((x) => ({ spec: POLYHEDRA[x.shape], matrixWorld: matrixOf(x) }));
-    const ranked = rankFaceAttachOptions(options, spec, built, nodes.indexOf(n), fi, id === n.shape && PARALLELOHEDRA.has(id));
+    let ranked = rankFaceAttachOptions(options, spec, built, nodes.indexOf(n), fi, id === n.shape && PARALLELOHEDRA.has(id));
+    // RD/TRD half-cell on a half-cell's hexagon (DICTO 2026-11-04): the plain join is the RD (centrally symmetric pair), ⟳ Turn gives the TRD
+    if (id === 'RD_TRD_HALF_CELL' && n.shape === id && (spec.faces[fi].vertices ?? spec.faces[fi]).length === 6) {
+      const pts = (o) => { const m = new THREE.Matrix4().compose(o.position, o.quaternion, new THREE.Vector3(1, 1, 1)); return spec.vertices.map((v) => new THREE.Vector3(...(Array.isArray(v) ? v : [v.x, v.y, v.z])).applyMatrix4(m)); };
+      const mine = worldPoints(n), f = spec.faces[fi].vertices ?? spec.faces[fi];
+      const c = f.reduce((a, k) => a.add(mine[k].clone()), new THREE.Vector3()).divideScalar(f.length);
+      const rd = (o) => { const all = [...mine, ...pts(o)]; return all.every((p) => all.some((q) => q.clone().add(p).sub(c).sub(c).length() < 1e-6)); };
+      ranked = [...ranked.filter((r) => rd(r.option)), ...ranked.filter((r) => !rd(r.option))];
+    }
     const best = ranked[0].option;
     remember(id);
     const node = { id: `n${nextId++}`, shape: id, transform: { position: best.position.toArray(), quaternion: best.quaternion.toArray() }, material: getMaterial() };
     nodes.push(node);
     connections.push({ nodeA: n.id, vertexA: fi, nodeB: node.id, vertexB: best.incomingFaceIndex, kind: 'face' });
+    // the other clean turns on this face (DICTO 2026-11-04: "a half that can be rotated"): ⟳ Turn steps through them
+    // turns that place the piece on the same points are one option (a 3-fold piece has 3 equal turns of each kind)
+    const keyOf = (o) => { const m = new THREE.Matrix4().compose(o.position, o.quaternion, new THREE.Vector3(1, 1, 1));
+      return spec.vertices.map((v) => new THREE.Vector3(...(Array.isArray(v) ? v : [v.x, v.y, v.z])).applyMatrix4(m)).map((p) => [p.x, p.y, p.z].map((x) => (Math.abs(x) < 5e-4 ? 0 : x).toFixed(3)).join(',')).sort().join(';'); };
+    const seen = new Set(), distinct = ranked.filter((r) => { const k = keyOf(r.option); if (seen.has(k)) return false; seen.add(k); return true; });
+    lastTurns = distinct.length > 1 ? { node: node.id, at: 0, options: distinct.map((r) => ({ position: r.option.position.toArray(), quaternion: r.option.quaternion.toArray(), face: r.option.incomingFaceIndex })) } : null;
     selection = null;
     commit();
     refitIfGrown();
@@ -1102,6 +1131,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
     stripBody.innerHTML = `<div class="poly-shapes">${offer.map((id) => { const pinned = isFavourite(id); return `<button type="button" class="poly-shape${id === chosen ? ' chosen' : ''}${pinned ? ' pinned' : ''}" data-shape="${id}" title="${polyShapeName(id).replaceAll('_', ' ')} · ${t(pinned ? 'poly.unpinHint' : 'poly.pinHint', L)}"><canvas></canvas></button>`; }).join('')}
       ${selection ? `<button type="button" class="poly-more" data-more>${t('poly.more', L)}</button>` : ''}
       ${selection && selection.face != null && FOURD.has(selection.node.shape) ? `<button type="button" class="poly-more" data-duoprism>${t('poly.duoprism', L)}</button>` : ''}
+      ${lastTurns && nodes.some((x) => x.id === lastTurns.node) ? `<button type="button" class="poly-more" data-turn>${t('poly.turn', L)}</button>` : ''}
       ${selection && REWRITE_TARGET[selection.node.shape] ? `<button type="button" class="poly-more" data-transform>${t('poly.transform', L, { name: polyShapeName(REWRITE_TARGET[selection.node.shape]).replaceAll('_', ' ') })}</button>` : ''}
       ${chosen ? `<button type="button" class="poly-clear" data-clear title="${t('poly.clear', L, { name: polyShapeName(chosen).replaceAll('_', ' ') })}">✕</button>` : ''}</div>${isGolden ? goldenRow(L) : ''}${hasRcp ? rcpRow(L) : ''}${kitOn() ? `<div class="poly-golden poly-kit-row"><span>${t(kitDone() ? 'poly.kit.done' : 'poly.kit', L, { name: KITS13[view.kit].label })}</span>${kitCells() ? `<button type="button" data-cells aria-pressed="${!!view.cells}" title="${t('poly.cells.title', L)}">${t('poly.cells', L)}</button>` : ''}${kitIco() ? `<button type="button" data-pacioli aria-pressed="${!!view.pacioli}" title="${t('poly.pacioli.title', L)}">${t('poly.pacioli', L)}</button>` : ''}<button type="button" data-kit-off title="${t('poly.kit.off', L)}">✕</button></div>` : ''}${hasHintRow || hasBestRow ? `<div class="poly-golden">${hasHintRow ? `<button type="button" data-hints aria-pressed="${view.hints && !view.bestFits}" title="${t('poly.hints.title', L)}">${t('poly.hints', L)}</button>` : ''}${hasBestRow ? `<button type="button" data-best aria-pressed="${view.bestFits}" title="${t('poly.best.title', L)}">${t('poly.best', L)}</button>` : ''}</div>${hasBestRow && view.bestFits ? bestRow(L) : ''}` : ''}${hasParts ? `<label class="poly-golden">${t('poly.parts', L)} <select data-parts>${PART_VIEWS.filter((v) => v === 'solid' || nodes.some((n) => PART_PICK[n.shape]?.[v])).map((v) => `<option value="${v}"${v === view.parts ? ' selected' : ''}>${t(`poly.parts.${v}`, L)}</option>`).join('')}</select></label>` : ''}${hasStar ? starRow(L) : ''}${hasVac ? vacEntry(L) : ''}${hasGcut ? gcutEntry(L) : ''}`;
     stripBody.querySelectorAll('.poly-shape canvas').forEach((cv) => disposers.push(mountWireframePreview(cv, polyShapeEdges(cv.parentElement.dataset.shape), 34)));
@@ -1136,6 +1166,7 @@ export function createPolyWorld({ scene, colorOf, getMaterial, onChange = () => 
   for (const ev of ['pointerup', 'pointerleave', 'pointercancel']) panel.addEventListener(ev, () => clearTimeout(pressTimer));
   panel.addEventListener('click', (e) => {
     const b = e.target.closest('button');
+    if (b?.dataset.turn != null) { turnLast(); renderPanel(); return; }
     if (!b) return;
     if (pressed) { pressed = false; return; } // that was a long-press (pin), not a tap
     if ('clear' in b.dataset) { chosen = null; renderPanel(); return; }

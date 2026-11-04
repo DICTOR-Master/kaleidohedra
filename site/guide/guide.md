@@ -314,7 +314,7 @@ The **HexOct kit** (first in DICTO's pieces) places HexOct tiles one at a time: 
 
 ## DICTO's pieces
 
-**Narcissus** (newest, DICTO 2026-11-04): the piece the HexOct h-tile becomes at λ = 3/8, first in DICTO's pieces. It is its own mirror image, and copies of it fill space; two Narcissus make the twisted cube of the HexOct kit's pair A. **Narcissus and cubes** shows a Fibonacci stacking filled by just two pieces, Narcissus (h layers) and cubes (c layers), each half a ball cell.
+**Narcissus** (newest, DICTO 2026-11-04): the piece the HexOct h-tile becomes at λ = 3/8, first in DICTO's pieces. It is its own mirror image, and copies of it fill space; two Narcissus make the twisted cube of the HexOct kit's pair A. **Narcissus and cubes** shows a Fibonacci stacking filled by just two pieces, Narcissus (h layers) and cubes (c layers), each half a ball cell. The **RD/TRD half-cell** is the half of the RD and of the TRD alike: attach a second half to its hexagon for the RD, then tap **⟳ Turn** for the TRD (the two-colour seam shows which).
 
 **Star Cores shapes** (newest, DICTO 2026-11-02): DICTO's four solids of 31 October 2026, **Cube Pearl** (D106), **Golden Clasp** (D107), **Hamlet** (D108) and **Ophelia** (D109), come first in DICTO's pieces; the other Star Cores shapes PV did not have yet (the TI Star core, Star Halo, the Alice family, the OG and its chain, the GTI and more, 42 in all) follow in their own section, newest first. Each has the ★ Star step. **Kagemusha's crests**: **MAEDATE** and **KUWAGATA**, the pieces that fill Kagemusha's five notches at its first star step, each alone and on Kagemusha (Kagemusha gold, the crests teal).
 
