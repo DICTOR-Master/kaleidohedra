@@ -22,7 +22,7 @@ pieces are mirror images, and so are the two tetrahedral pieces.
 λ ≥ 3/8: the octahedral pieces are gone and the h-tile is TWO MIRROR COPIES of one fixed solid (identical corners at 3/8, 2/5, 9/20, 1/2: the stretch saturates).
 So that solid TILES SPACE ALONE (with its mirror image). Corners (layer height h = √(2/3)): a regular hexagon of side 1/√3 at z = 0; three corners at z = −h/2 under
 alternate hexagon corners; apex at z = −h on the ball centre below the hexagon's centre. Faces 6 triangles, 3 quadrilaterals, 1 hexagon; dihedrals 90° (9), 135° (6),
-120° (3); volume √2/4 = half the volume per ball (= half a TRD). NEXT: identify it (a regrouped half of the TRD? known space-filler?) — prior-art check before any claim.
+120° (3); volume √2/4 = half the volume per ball (= half a TRD). NAMED Narcissus by DICTO (4 Nov): it is its own mirror image (3 mirror planes, C3v), so copies of ONE piece tile space by rotations. NEXT: prior-art check before any claim of novelty.
 
 ## Admiral Cap network (scripts/admiral_dehn.py, data/admiral-dehn.json)
 Piece kinds Q′ (4 corners), I (icosahedron), A (Admiral Cap, 5 corners): Dehn nonzero for each — none fills space alone; only the mixture can.
