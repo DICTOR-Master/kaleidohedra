@@ -10,3 +10,9 @@
 - Bull-horns adaptor for the cut OG (hole_piece_cut.py; calibration reproduces the OG adaptor 0.111898): bcc double network, hole Voronoi cell minus 6 cut OGs.
   Volume 0.118230 = gap/3 exactly; one solid, genus 0; centrosymmetric with a mirror (no left/right); sphericity 0.514 (OG adaptor 0.502).
   Two shapes fill space: cut OG 76.16%, adaptors 23.84%.
+- GYRATED OCTET (gyro_kit2.py, gyro_twin.py): a single twin layer x+y+z = R, with the mirror image below.
+  Octet connectors on all 230 edge-sharing pairs, no overlaps. Face-sharing mirror pairs across the twin layer have no octet connector on the 3 twin-face edges.
+  The freed space is 3 bits of 0.005923 per octahedron (the halves of the absent connectors), wedged between corner pieces.
+  TWIN CONNECTOR = hull of the two mirror pentagons facing a twin-face edge (axes dot -0.263): volume 0.015495, 51 in the patch, no overlaps.
+  With it, a twin-layer octahedron holds 3 octet corner pieces (0.07826) + 3 TWIN CORNER PIECES (0.07707), all separate; a twin-layer tetrahedron holds one TWIN DENTED TETRAHEDRON (0.4059).
+  So the gyrated kit = octet kit + 3 new shapes. TODO: a fully gyrated test (every layer twinned); chirality and congruence of the new pieces; exact volumes.
