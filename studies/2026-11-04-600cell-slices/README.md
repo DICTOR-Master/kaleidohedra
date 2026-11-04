@@ -1,0 +1,2 @@
+# 600-cell slices: IQ, Mahler, Dehn (4 Nov 2026) — scripts/slices.py, data/slices.json
+Corner-first and cell-first, 400 heights each. Corner-first: IQ max 0.9747 at h ≈ 0.163, Mahler max 17.077 at h ≈ 0.170; cell-first: IQ max 0.9708 at h ≈ 0.104, Mahler 16.979 at h ≈ 0.090. No named station (Q6-silent heights 0.128/0.396/0.638 differ). Dehn: zero at none of the 800 heights (none can fill space alone). Grid step ≈ 0.0025.
