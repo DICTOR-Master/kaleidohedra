@@ -4302,7 +4302,7 @@
     "max 12μ³−36μ²+43=0, no station",
     "n/a (outside the test’s competence)",
     "only Dehn-zero member (B3 permutohedron) killed by angle count",
-    "zero only at μ = 5/3: B3 permutohedron (±1,±2,±3); angle count: cannot tile alone",
+    "zero for 1 ≤ μ ≤ 4/3 (cube-trimmed RDs, rational angles) and at μ = 5/3 (B3 permutohedron); none tile (angle count) — corrected 4 Nov",
     "n/a (outside the test’s competence)",
     "twist convex along the whole sweep (RD→TRD … CO→J27); B3 permutohedron twist convex, Dehn nonzero"
    ],
@@ -4779,6 +4779,15 @@
     "result": "flat central halvings: no common half (Narcissus 1 half shape; cube 451 half shapes; no match)",
     "retry": "read common.log; stage 2 from near-misses",
     "study": "2026-11-04-narcissus-cube",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "CO–RD sweep Dehn zeros (LQG bridge flag)",
+    "method": "coefficient sums along the sweep",
+    "status": "SETTLED",
+    "result": "Dehn zero on 1 ≤ μ ≤ 4/3 (cube-trimmed RDs: dihedrals 90/120/135°) and at 5/3; corrects \"only at 5/3\"; no member tiles (angle count)",
+    "retry": "never",
+    "study": "2026-11-04-lqg-bridge",
     "date": "2026-11-04"
    }
   ]
