@@ -60,7 +60,9 @@ cnf += CardEnc.equals(list(range(1, len(places) + 1)), npc, top_id=top, encoding
 with Cadical153(bootstrap_with=cnf) as Sv: ok = Sv.solve(); model = Sv.get_model() if ok else None
 res = {'piece': name, 'n': n, 'samples': NS, 'placements': len(places), 'pieces': npc, 'sat': bool(ok)}
 if ok:
-    ch = [places[i] for i in range(len(places)) if model[i] > 0]; cop = [P + sh for P in ch for sh in imgs]; cen = [p.mean(0) for p in cop]
+    ch = [places[i] for i in range(len(places)) if model[i] > 0]
+    np.save(f'data/solution-{name}-n{n}.npy', np.array(ch)); np.save(f'data/box-{name}-n{n}.npy', Lm)
+    cop = [P + sh for P in ch for sh in imgs]; cen = [p.mean(0) for p in cop]
     def ivol(A, B):
         H = np.vstack([ConvexHull(A).equations, ConvexHull(B).equations]); nr = np.linalg.norm(H[:, :3], axis=1)
         r = linprog([0, 0, 0, -1], A_ub=np.c_[H[:, :3], nr], b_ub=-H[:, 3], bounds=[(None, None)]*3 + [(0, None)])
