@@ -3763,6 +3763,11 @@
     "result": "Foam test on the CsCl pairs: wall area per cell is symmetric under μ ↔ 3 − μ, largest exactly at Kelvin's cell (μ = 3/2, the only equal-volume pair), smallest at the cuboctahedron + octahedron end ((3 + 2√3)/4)",
     "study": "2026-11-04-mahler-sweep",
     "goes_to": "#93 v2 / Space-Fillers volume"
+   },
+   {
+    "result": "OG family fingerprinted: icosahedral (Q4 = Q8 = 0); W6 sign splits it into corner-type TQHD, TQP, OG, KRE and face-type TQH, TPH, PHE, TPP, DPHP, changing in pairs along the chain; KRE the quietest",
+    "study": "2026-11-04-nest-fingerprint",
+    "goes_to": "OG volume"
    }
   ]
  },
@@ -4192,7 +4197,7 @@
     "frustration 8/12; ground-state layers"
    ],
    "Golden nests / OG / AXE networks": [
-    "—",
+    "OG family: Q4 = Q8 = 0 (icosahedral); W6 sign splits corner-type (TQHD, TQP, OG, KRE) from face-type (TQH, TPH, PHE, TPP, DPHP), changing in pairs",
     "—",
     "—",
     "—",
