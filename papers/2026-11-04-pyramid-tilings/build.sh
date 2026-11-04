@@ -5,5 +5,5 @@ cd "$(dirname "$0")"
 cp paper.src.html paper.html
 ssh dicto-big-brother 'mkdir -p ~/kres-tmp/cw-print/pyramid-tilings-92'
 rsync -a --delete --exclude '*.pdf' ./ dicto-big-brother:kres-tmp/cw-print/pyramid-tilings-92/
-ssh dicto-big-brother "cd ~/kres-tmp/cw-print && node figcheck.mjs pyramid-tilings-92 && node print.mjs pyramid-tilings-92 aristotles-pyramid-in-layers.pdf \"Aristotle's Pyramid in Layers\" '10.5281/zenodo.23931608' 1"
+ssh dicto-big-brother "cd ~/kres-tmp/cw-print && node figcheck.mjs pyramid-tilings-92 && node print.mjs pyramid-tilings-92 aristotles-pyramid-in-layers.pdf \"Aristotle's Pyramid in Layers\" '10.5281/zenodo.23931608' 2"
 rsync -a dicto-big-brother:kres-tmp/cw-print/pyramid-tilings-92/aristotles-pyramid-in-layers.pdf ./
