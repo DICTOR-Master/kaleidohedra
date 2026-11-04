@@ -4686,8 +4686,26 @@
     "question": "Narcissus + Echo fill EVERY stacking (incl. Fibonacci → non-periodic by two pieces)?",
     "method": "tiles.py checks (flat, one tile per type, joints) at λ = 3/8, 2/5 over all 32 five-layer contexts",
     "status": "SETTLED",
-    "result": "YES at λ = 3/8 and 2/5: in all 32 five-layer contexts each layer tile is one motion of the pure c-tile (two cubes) or h-tile (two Narcissus) — so every stacking word, incl. Fibonacci, is tiled by Narcissus + cubes (non-periodic for non-periodic words). Tiles NOT flat (pieces span z = L−1 … L+1/2): layers interlock, they are not slabs.",
+    "result": "YES at λ = 3/8 and 2/5: in all 32 five-layer contexts each layer tile is one motion of the pure c-tile (two cubes) or h-tile (two Narcissus) — so every stacking word, incl. Fibonacci, is tiled by Narcissus + cubes (non-periodic for non-periodic words). Tiles NOT flat (pieces span z = L−1 … L+1/2): layers interlock, they are not slabs. · FACT-CHECK vs our own work (4 Nov): ALREADY KNOWN in another grouping — 2026-11-02-hexoct-connected / #86 draft (unpublished; awaiting read) and the PV HexOct kit pair A (shipped 3 Nov): brick of two cubes + \"twisted cube\" fill every stacking. Two Narcissus glued on the hexagon = the twisted cube exactly (11 corners, 6 squares + 6 triangles, convex, checked).",
     "retry": "never; prior art check pending",
+    "study": "2026-11-04-dehn-screen",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Narcissus = half of the twisted cube",
+    "method": "hull of Narcissus ∪ its copy turned over about the hexagon plane",
+    "status": "SETTLED",
+    "result": "turn 0°: union = twisted cube exactly (convex, 11 corners, 6 squares + 6 triangles). NEW vs #86: the twisted cube splits into two congruent self-mirroring halves, each of which tiles space alone",
+    "retry": "never",
+    "study": "2026-11-04-dehn-screen",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Two Narcissus glued on the hexagon with a 60° turn: what solid?",
+    "method": "hull + distance-multiset comparison with RD and TRD",
+    "status": "OPEN",
+    "result": "convex, 14 corners, 12 quadrilaterals, volume 1/√2 (one ball cell); NOT the RD, NOT the TRD",
+    "retry": "identify (library); does it tile?",
     "study": "2026-11-04-dehn-screen",
     "date": "2026-11-04"
    }
