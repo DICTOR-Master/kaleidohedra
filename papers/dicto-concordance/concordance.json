@@ -3369,13 +3369,13 @@
   "ranked": [
    [
     "The cuboctahedron's centre pyramids",
-    "its circumradius equals its edge, so its pyramids are regular tetrahedra and half-octahedra, the pieces #92 classified; #77's reduction applies directly (settled face to face on 4 November 2026: #92 version 2, §5)",
+    "its circumradius equals its edge, so its pyramids are regular tetrahedra and half-octahedra, the pieces #92 classified; #77's reduction applies directly (settled face to face on 4 November 2026: #92 version 2, §5) — published in #92 v2, Theorem 10",
     "a third member beside #92 and #93",
     []
    ],
    [
     "The second dual sweeps, cuboctahedron–rhombic dodecahedron and icosidodecahedron–triacontahedron",
-    "#91 proves P ∩ μP* holds every corner cut, so #89's golden rhombic cuts must sit on these sweeps",
+    "#91 proves P ∩ μP* holds every corner cut, so #89's golden rhombic cuts must sit on these sweeps — BEGUN 4 Nov 2026 (studies/2026-11-04-co-rd-sweep): CO–RD sweep face census; harmonic Q4 zero once at a non-golden point",
     "the next rung of the dual ladder; tight cycles through the rhombic solids",
     [
      10
@@ -3383,7 +3383,7 @@
    ],
    [
     "The reversed neighbour (#92 open point 1, #93 open point 1)",
-    "the same local question for the tetrahedron pyramid and the cube pyramid; one argument may close both",
+    "the same local question for the tetrahedron pyramid and the cube pyramid; one argument may close both — SETTLED 4 Nov 2026 (studies/2026-11-04-reversed-neighbour): impossible for T and C6, search proof with overlap margin 0.20; T pyramids form whole tetrahedra, C6 whole cubes, in every tiling; to #92 v3, #93 v2",
     "every tiling falls into whole solids, settling #44 for all tilings",
     [
      14
@@ -3419,7 +3419,7 @@
    ],
    [
     "Galois twins of every golden cut",
-    "#88 and #89 give the depths in closed form; only their minimal polynomials are needed, as in #90",
+    "#88 and #89 give the depths in closed form; only their minimal polynomials are needed, as in #90 — SETTLED 4 Nov 2026 (studies/2026-11-04-golden-twins): only the cube's two golden cuts are twins; the dodecahedron's greater cut (x = 1/3) is its own twin, its lesser cut's twin is the φ³-cut dodecahedron (not a golden-cycle station); T, O, I twins over-cut",
     "a Double Vision column for every golden pair",
     [
      4,
@@ -3436,7 +3436,7 @@
    ],
    [
     "The TRD as the rhombic dodecahedron's h partner",
-    "the Rule of Halves (#57) and #93's Theorem C give the template",
+    "the Rule of Halves (#57) and #93's Theorem C give the template — STUDIED 4 Nov 2026 (studies/2026-11-04-trd, note The Turned Twin, read ok): RD/TRD = ½ polar of CO/anticuboctahedron; TRD = RD half-turned 60°; equal pyramid volumes; DICTO's turned node = the twisted ball; ring cells drawn",
     "the TRD DICTOnode in a paper; the rhombic dodecahedron on every stacking",
     [
      26
@@ -3671,6 +3671,53 @@
     "src": "#62",
     "what": "six all-triangle 600-cell slices (28, 30, 32, 42, 48, 72 vertices); equilateral forms of five patterns",
     "status": "open"
+   }
+  ],
+  "waiting": [
+   {
+    "result": "Reversed neighbour impossible for T and C6: whole tetrahedra, whole cubes in every tiling",
+    "study": "2026-11-04-reversed-neighbour",
+    "goes_to": "#92 v3 and #93 v2 (Centre Pyramids volume)"
+   },
+   {
+    "result": "RD pyramids not face to face: planes of faces and slides (in progress)",
+    "study": "2026-11-04-reversed-neighbour",
+    "goes_to": "#93 v2"
+   },
+   {
+    "result": "Admiral Cap network: frustrated (at most 8 of 12 shared edges round an octet corner); ground states alternate along one axis with a free flip per layer across another; twin-boundary node of two icosahedra",
+    "study": "2026-11-04-network-fingerprint",
+    "goes_to": "Space-Fillers and Lattice Moves volume (#47 world)"
+   },
+   {
+    "result": "Galois twins of the golden cuts (cube only; dodecahedron self-twin and φ³ cut); φ³ cut not a golden-cycle station",
+    "study": "2026-11-04-golden-twins",
+    "goes_to": "The Golden Ladder"
+   },
+   {
+    "result": "Golden Ladder chapter 1, One Triangle, Three Numbers (read ok)",
+    "study": "2026-11-04-golden-ladder-ch1",
+    "goes_to": "The Golden Ladder v1"
+   },
+   {
+    "result": "The Turned Twin: TRD, turned node, ring cells (read ok)",
+    "study": "2026-11-04-trd, 2026-11-04-ring-rd",
+    "goes_to": "HexOct volume"
+   },
+   {
+    "result": "Harmonic fingerprint: CO–RD sweep, tetrahedron sweep, network reading of c/h; #94 Figure 1 labels fixed",
+    "study": "2026-11-04-harmonic-fingerprint, 2026-11-04-co-rd-sweep",
+    "goes_to": "#94 v2"
+   },
+   {
+    "result": "PET-ring RD cells: tetrapod of 4 RDs, build sheet for 1/4/6/14 cells, RD and TRD ring cells",
+    "study": "2026-11-04-ring-rd",
+    "goes_to": "Quanta (nodes) / HexOct volume"
+   },
+   {
+    "result": "Consolidation: one living volume per thread",
+    "study": "2026-11-04-consolidation/PLAN.md",
+    "goes_to": "all volumes"
    }
   ]
  },
