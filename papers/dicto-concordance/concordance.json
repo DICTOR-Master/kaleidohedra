@@ -2477,6 +2477,12 @@
    "what": "fixed HexOct h-piece (λ ≥ 3/8); self-mirroring (C3v); tiles space alone",
    "date": "2026-11-04",
    "by": "DICTO"
+  },
+  {
+   "name": "Echo",
+   "what": "DICTO 4 Nov 2026: the 8-corner c-tile piece (λ ≥ 3/8), Narcissus’s companion; fills c (ABC) layers; volume √2/4 (same as Narcissus)",
+   "date": "2026-11-04",
+   "by": "DICTO"
   }
  ],
  "concepts": [
@@ -4668,11 +4674,20 @@
     "date": "2026-11-04"
    },
    {
-    "question": "Does the 8-corner c-piece (λ ≥ 3/8) tile space alone?",
+    "question": "Echo (8-corner c-piece, λ ≥ 3/8): two copies per c-tile? achiral? tiles alone?",
     "method": "—",
-    "status": "OPEN",
+    "status": "RUNNING",
     "result": "same volume as Narcissus; c-tile = two such pieces",
-    "retry": "run congruence + symmetry check (as for Narcissus)",
+    "retry": "echo_check.py running",
+    "study": "2026-11-04-dehn-screen",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Narcissus + Echo fill EVERY stacking (incl. Fibonacci → non-periodic by two pieces)?",
+    "method": "tiles.py checks (flat, one tile per type, joints) at λ = 3/8, 2/5 over all 32 five-layer contexts",
+    "status": "RUNNING",
+    "result": "—",
+    "retry": "read",
     "study": "2026-11-04-dehn-screen",
     "date": "2026-11-04"
    }
@@ -4693,7 +4708,8 @@
    "HexOct: The Hexagonality Law (next version)": [
     "h-pieces Dehn-zero from λ = 5/24",
     "fixed h-piece (λ ≥ 3/8) tiles alone; Mahler exactly 34/3",
-    "harmonic scan: no silence; 5/24 jump is a corner-set artefact"
+    "harmonic scan: no silence; 5/24 jump is a corner-set artefact",
+    "NEW CHAPTER (DICTO 4 Nov: short addition to HexOct): Narcissus and Echo — the saturated tiles (λ ≥ 3/8); one self-mirroring piece per layer type; Dehn onset 5/24; Fibonacci stacking → non-periodic tiling by two pieces (pending checks + prior art)"
    ],
    "The Golden Ladder (in progress)": [
     "Roundness law μ = √n (Lindelöf) on cube ∩ cross sweeps; tetra-sweep and Delian roundness also Lindelöf",
