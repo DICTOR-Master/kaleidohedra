@@ -1,0 +1,12 @@
+PASS every site of ABC, AB, ABCB, ABCACB: c -> RD (12 rhombi), h -> TRD (6 rhombi + 6 trapezoids), volume sqrt2/2  [{'ABC': [('c', 14)], 'AB': [('h', 14)], 'ABCB': [('c', 14), ('h', 14)], 'ABCACB': [('c', 14), ('h', 14)]}]
+PASS TRD: 12 nearest neighbours, 14 vertices (8 three-fold, 6 four-fold) like the RD  [14]
+PASS face normals of the TRD = the 12 neighbour directions (each face on the bisector at distance 1/2): TRD = 1/2 polar(J27)
+PASS the 6 rhombi are the RD rhombus, edge sqrt6/4  [[0.612372, 0.612372, 0.612372, 0.612372]]
+PASS 6 trapezoids, all congruent  [[0.408248, 0.612372, 0.612372, 0.816497]]
+PASS RD with its upper half turned 60 deg about the 3-fold axis has exactly the TRD corners
+PASS the turning plane through the centre holds no RD corner: it cuts six edges, so the turn needs no new corners
+PASS RD: 12 equal centre pyramids R12 of volume sqrt2/24  [0.058925565]
+PASS TRD: 12 centre pyramids, all of the same volume sqrt2/24 (6 rhombic = R12, 6 trapezoidal)  [0.058925565]
+PASS each trapezoid has 2 corners above and 2 below the waist; its plane is that of one RD rhombus below and of the next RD rhombus (turned 60 deg) above, so a trapezoid is the lower part of one cut rhombus and the upper part of another, and its pyramid the matching parts of two R12
+PASS trapezoid: parallel sides 1/sqrt6 and 2/sqrt6 (ratio 1 : 2), legs sqrt6/4 = the rhombus edge
+11 PASS 0 FAIL

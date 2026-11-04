@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>The Turned Twin: the Trapezo-Rhombic Dodecahedron</title>
+<link rel="stylesheet" href="../paper.css">
+<style>p.hook { font-style: italic; color: #4a3f2a; border-left: 2px solid #c9a24a; padding-left: 3mm; margin: 2mm 0 2mm; } table { font-size: 8.6pt; border-collapse: collapse; } td, th { border: 1px solid #ccc; padding: 1mm 2mm; } .status{border:1px solid #b8962e;padding:4pt 8pt;margin:0 0 10pt;background:#fffdf5} .status ul{margin:2pt 0;padding-left:14pt}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>The Turned Twin<br><span style="font-size:0.72em;font-weight:normal">The Trapezo-Rhombic Dodecahedron, the Rhombic Dodecahedron's Partner on Twisted Layers, and DICTO's Turned Node</span></h1>
+<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com<br>
+Study note · 4 November 2026 · study 2026-11-04-trd (trd_checks.py, 11 PASS) and 2026-11-04-cuboctahedron-pyramids (12 PASS) · Licence CC BY-SA 4.0<br>
+The TRD DICTOnode and its turned layout are DICTO's work; this note explains the geometry under it. Computation and drafting with Claude (Anthropic).</div>
+<div class="status"><b>Status</b> (study note for DICTO's reading, not a paper; from the DICTO Concordance, Part 5, gap 10)<ul><li>Everything here is checked numerically to 10<sup>−9</sup> (float, scipy) on four stackings, and the node's ties from DICTO's own script turned_node_network.py. Classical parts are marked as such.</li></ul></div>
+
+<p class="hook">Stack layers of balls. Each ball either sits straight between the layer above and the layer below (c), or the two layers are mirror images of each other across it (h). Give each ball the space that is nearer to it than to any other ball: a straight ball gets the rhombic dodecahedron, a twisted ball gets its turned twin, the trapezo-rhombic dodecahedron (TRD). Everything below follows from that one picture.</p>
+
+<h2>1. Twelve neighbours decide the cell</h2>
+<p>Every ball in a close packing touches twelve others: six in its own layer, three above, three below. The cell of a ball (its Voronoi cell) is bounded by the twelve planes halfway to these neighbours, one face per neighbour, each face at distance ½. So the cell is exactly half the polar of the shape made by the twelve neighbours:</p>
+<table><tr><th>Ball</th><th>Layers above and below</th><th>12 neighbours make</th><th>Cell (½ × polar)</th><th>Faces</th></tr>
+<tr><td>straight (c)</td><td>different (A B C)</td><td>cuboctahedron</td><td>rhombic dodecahedron</td><td>12 rhombi</td></tr>
+<tr><td>twisted (h)</td><td>mirror images (A B A)</td><td>anticuboctahedron (triangular orthobicupola)</td><td>trapezo-rhombic dodecahedron</td><td>6 rhombi + 6 trapezoids</td></tr></table>
+<p>Checked on the stackings ABC, AB, ABCB and ABCACB: every straight ball has the rhombic dodecahedron, every twisted one the TRD, both of volume √2/2 for balls of diameter 1, with 14 corners each. So <b>every close-packed stacking is a tiling by rhombic dodecahedra and TRDs, one per ball, the TRDs exactly at the h letters</b> (classical for the two pure packings; the mixed case follows because the cell sees only the twelve neighbours). The c/h words of the Hexagonality Law papers are therefore also words in RD and TRD.</p>
+
+<h2>2. The TRD is the rhombic dodecahedron with one half turned</h2>
+<p>Stand the rhombic dodecahedron on a three-fold corner and cut it through its centre by a level plane. The plane meets no corner; it cuts six edges in a regular hexagon. Turn the upper half by 60° on the lower: the corners land exactly on the TRD's corners. The three rhombi at the top and the three at the bottom are untouched; the six rhombi round the waist are cut, and after the turn the lower part of one meets the upper part of the next in a single plane, making a trapezoid.</p>
+<p><b>Sizes</b> (balls of diameter 1): rhombus edge √6/4 ≈ 0.612, as in the rhombic dodecahedron; trapezoid with parallel sides 1/√6 ≈ 0.408 and 2/√6 ≈ 0.816 (exactly 1 : 2) and legs √6/4.</p>
+
+<h2>3. Its centre pyramids</h2>
+<p>Cut from the centre, the TRD falls into twelve pyramids of the same volume, √2/24, as the rhombic dodecahedron's twelve (the R12 of #93): six rhombic pyramids that are R12 themselves, and six trapezoid pyramids, each made of the lower part of one R12 and the upper part of its neighbour, cut at the waist and turned. Equal volume because every face lies at the same distance ½ and the rhombus and trapezoid have equal area.</p>
+<p>This is the same pattern as the cuboctahedron's pyramids in #92 version 2 (§5): eight tetrahedra and six half-octahedra build the cuboctahedron round a straight ball and the anticuboctahedron round a twisted one. The two results are polar to each other: <b>the straight layer builds the cuboctahedron and its polar, the rhombic dodecahedron; the twisted layer builds the anticuboctahedron and its polar, the TRD.</b></p>
+
+<h2>4. DICTO's turned node</h2>
+<p>DICTO's turned node (the TRD DICTOnode) has twelve caps: six round the waist at every 60°, three above at 54.74° (= arctan √2) and three below, each directly under one above. These are exactly the twelve neighbour directions of a twisted ball, the TRD's face centres. Its ties join caps 60° apart: from DICTO's own layout (turned_node_network.py) there are 24 ties, forming 8 triangles, and three pairs of triangles share a tie: that is the anticuboctahedron, the twisted shell of §1 (the straight one, the cuboctahedron, has no two triangles sharing an edge). So Node A and the turned node are the straight and the twisted ball: with both, any c/h word can be built at full size, ball by ball, as DICTO's node work intends.</p>
+
+<h2>5. Leads</h2>
+<ul>
+<li>Do the TRD's centre pyramids, face to face, tile only as the stackings' cells, or do they share #93's freedom (the R12 halves can turn)? The trapezoid pyramid is new; its faces decide.</li>
+<li>Can anticuboctahedra and octahedra fill space, as cuboctahedra and octahedra do in the rectified cubic honeycomb (the twisted twin of the sweep's middle)?</li>
+<li>Outside (Concordance 5.5): the Burgers path from body-centred to hexagonal packing is the metallurgists' route to the twisted layer; the C60 and Laves crystals carry the same c/h shells.</li>
+<li>For the nodes: a strut-length table for the turned node in the hexagonal packing, and a mixed build (Node A on c balls, turned nodes on h balls) of a short word such as ABCB.</li>
+</ul>
+</body></html>
