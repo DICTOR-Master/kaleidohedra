@@ -4532,8 +4532,8 @@
    {
     "question": "Does an h-piece tile alone for 5/24 ≤ λ < 3/8?",
     "method": "—",
-    "status": "OPEN",
-    "result": "Dehn zero (necessary only) · 4 Nov: the local edge-angle count passes for every λ tested (dihedrals pair: 70.5+109.5 = 180, 125.3+144.7 = 270) and the tet h-piece is Dehn-zero throughout — so BOTH necessary tests pass: a genuine candidate stretch ending at Narcissus (3/8). Needs a constructive search.",
+    "status": "SETTLED (ball-tied) / OPEN (general)",
+    "result": "Dehn zero (necessary only) · 4 Nov: the local edge-angle count passes for every λ tested (dihedrals pair: 70.5+109.5 = 180, 125.3+144.7 = 270) and the tet h-piece is Dehn-zero throughout — so BOTH necessary tests pass: a genuine candidate stretch ending at Narcissus (3/8). Needs a constructive search. · 4 Nov late (hp_tile.py, SAT + exact overlap volume): calibration Narcissus λ = 3/8 TILES (16 copies, 0 overlaps, full cover). VOLUME ARGUMENT: a ball-tied tiling by copies alone (k pieces per ball) needs volume = ball cell / k; along the h walk only λ ≥ 3/8 (k = 2, Narcissus) qualifies (λ = 1/4: 63/128 of the half-cell). So Narcissus is the ONLY ball-tied single-piece tiler of the h family. Non-ball-tied tilings for λ < 3/8: open, would need periods ≥ 63 balls (out of reach).",
     "retry": "constructive tiling search for the tet h-piece at a sample λ (e.g. 1/4, 1/3)",
     "study": "2026-11-04-dehn-screen",
     "date": "2026-11-04"

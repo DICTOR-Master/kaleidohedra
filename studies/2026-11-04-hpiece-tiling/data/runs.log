@@ -1,0 +1,24 @@
+== h 3/8 2 3000
+candidate placements 214
+coverage built 0 s; uncovered samples 0
+{"kind": "h", "lam": "3/8", "n": 2, "samples": 3000, "placements": 214, "pieces": 16, "sat": true, "verify_overlaps": 0, "verify_coverage": {"1": 3000}, "chosen": 16}
+== c 1/4 2 3000
+c-piece λ=1/4: corners 16, volume 0.349871, distinct orientations 4, reference corners 156
+pieces per box 24.252632
+volume does not divide the box: UNSAT trivially
+== h 1/4 2 4000
+h-piece λ=1/4: corners 19, volume 0.348029, distinct orientations 4, reference corners 128
+pieces per box 16.253968
+volume does not divide the box: UNSAT trivially
+== h 1/3 2 4000
+h-piece λ=1/3: corners 19, volume 0.353349, distinct orientations 4, reference corners 128
+pieces per box 16.009265
+volume does not divide the box: UNSAT trivially
+== h 1/4 3 6000
+h-piece λ=1/4: corners 19, volume 0.348029, distinct orientations 4, reference corners 288
+pieces per box 36.571429
+volume does not divide the box: UNSAT trivially
+== h 1/3 3 6000
+h-piece λ=1/3: corners 19, volume 0.353349, distinct orientations 4, reference corners 288
+pieces per box 36.020845
+volume does not divide the box: UNSAT trivially
