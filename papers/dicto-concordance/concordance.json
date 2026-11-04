@@ -4896,5 +4896,594 @@
   "NEW PAPER: Pentagons for the Kites (draft, working title; DICTO to name and number)": [
    "Story of DICTO's pentagons-for-kites idea: Theorem 1 (OG sphere corners = football edge midpoints), equal-edge and chiral truncated-triangle versions, Dehn and packing, octet kit, Bull-horns adaptor adapted; what it settled, did not settle, opened; shapes on the way. Then disperses as one-line pointers into OG #31 v5, Bull-horns, Golden Bodhi Pyrochlore and gyrated-octet versions (batched)."
   ]
+ },
+ "house_rules": {
+  "note": "DICTO 5 Nov 2026: 'get all these notes into concordance'. Every standing rule for papers, publishing, naming, wording and work, in one place. Where a tool enforces a rule it is named; the rest must be checked by hand before each PDF/publish. Add new rules HERE and in the memory at once.",
+  "count": 116,
+  "rules": [
+   {
+    "rule": "Sort, don't pile",
+    "what": "DICTO 11-05 — he explores lots of new output; I sort each result to its proper paper or chapter via the Concordance, never pile it into the paper that is open",
+    "source": "memory/feedback-sort-not-pile.md"
+   },
+   {
+    "rule": "Overnight runs must yield",
+    "what": "\"DICTO 11-05 — overnight runs too often end stopped/failed with nothing; pilot first, always leave a result line\"",
+    "source": "memory/feedback-overnight-runs-yield.md"
+   },
+   {
+    "rule": "Creativity first",
+    "what": "FIRM 11-04 evening: protocols were bunging up DICTO's creativity — keep safeguards silent, ask only names/publish/deploy, short replies, ideas explored first",
+    "source": "memory/feedback-creativity-first.md"
+   },
+   {
+    "rule": "Ledger: retry only possibilities",
+    "what": "FIRM 11-04: log every research attempt in the Concordance ledger (status + retry rule); retry only open possibilities, never settled ones",
+    "source": "memory/feedback-ledger-retry-only-possibilities.md"
+   },
+   {
+    "rule": "Capture every query",
+    "what": "\"DICTO 10-23 — he blurts ideas/queries mid-work so he doesn't lose them; capture each at once in open-work, answer it, keep the main work going\"",
+    "source": "memory/feedback-capture-every-query.md"
+   },
+   {
+    "rule": "Silence means go",
+    "what": "\"DICTO 10-23 STANDING — if he doesn't answer a recommendation, go ahead with it; log the non-answer and the alternatives so they can be revisited\"",
+    "source": "memory/feedback-silence-means-go.md"
+   },
+   {
+    "rule": "D·I·C·T·O order",
+    "what": "FIRM — list the five Platonic solids in DICTO order D·I·C·T·O (dodecahedron, icosahedron, cube, tetrahedron, octahedron), never the textbook order",
+    "source": "memory/feedback-dicto-order-platonic.md"
+   },
+   {
+    "rule": "Never move memory",
+    "what": "FIRM — Pi disk cleanups must never touch ~/.claude/projects/*/memory/ (11-02 incident: memory moved to dbb with old logs, restored)",
+    "source": "memory/feedback-never-move-memory.md"
+   },
+   {
+    "rule": "Independent ideas count",
+    "what": "FIRM — DICTO's ideas count even when others found the same earlier; write them as his idea plus the prior art, never drop them as \"known\"",
+    "source": "memory/feedback-independent-ideas.md"
+   },
+   {
+    "rule": "Protect Zenodo",
+    "what": "FIRM 11-02 — Zenodo is DICTO's biggest boon; avoid anything that could look like spam, churn or controversy there",
+    "source": "memory/feedback-protect-zenodo.md"
+   },
+   {
+    "rule": "Status box",
+    "what": "FIRM 11-03 — every draft keeps ALL self-referencing status (DRAFT/not published, DOI reserved, placeholders, open items, app link to come) in ONE status box near the top, never scattered through the paper",
+    "source": "memory/feedback-status-box.md",
+    "enforced_by": "papers/print.mjs refuses a DRAFT without the red status box (exit 3); red box style in papers/paper.css"
+   },
+   {
+    "rule": "Check practice before asking",
+    "what": "FIRM 11-03 — check every proposal against the CURRENT agreed rules before offering it or asking DICTO's okay; never put to him an option that breaks current practice",
+    "source": "memory/feedback-check-practice-before-asking.md"
+   },
+   {
+    "rule": "Frugal week 10-27",
+    "what": "DICTO 2026-10-27 evening: 22% of the WEEKLY limit used in one day (worth it) — be FRUGAL for the rest of the week",
+    "source": "memory/budget-frugal-2026-10-27.md"
+   },
+   {
+    "rule": "Present before sending",
+    "what": "DICTO 10-23 FIRM: never hand him raw .md/.txt to read; every report/list/draft is a properly presented PDF (house style, DICTO mark) first",
+    "source": "memory/feedback-present-before-sending.md"
+   },
+   {
+    "rule": "Reading folder tidy",
+    "what": "DICTO 10-30: papers-to-read top level holds ONLY what awaits his read; move read/published items into read-earlier/",
+    "source": "memory/feedback-reading-folder-tidy.md"
+   },
+   {
+    "rule": "Common-sense fixes first",
+    "what": "DICTO 10-23 STANDING: proactively tell him about simple common-sense fixes that bring noticeable user benefit",
+    "source": "memory/feedback-common-sense-fixes.md"
+   },
+   {
+    "rule": "One name per shape",
+    "what": "DICTO 10-23 FIRM: one shape = one name; the first name he chose wins; an established literature name wins with his beside it",
+    "source": "memory/feedback-one-name-per-shape.md"
+   },
+   {
+    "rule": "Deploy queue question",
+    "what": "DICTO 10-23 FIRM: when work is ready ask \"move into the deploy queue?\", never \"push live now?\"",
+    "source": "memory/feedback-deploy-queue-question.md"
+   },
+   {
+    "rule": "Verify commit contents",
+    "what": "After committing, confirm the working tree is clean (git status) -- never silence git add errors; a failed add once pushed a half-commit to the live site",
+    "source": "memory/feedback-verify-commit-contents.md"
+   },
+   {
+    "rule": "Mindful of Vercel+GitHub",
+    "what": "DICTO 10-30 FIRM: keep it tight — be really mindful of Vercel and GitHub use (pushes, preview builds, CI)",
+    "source": "memory/feedback-mindful-vercel-github.md"
+   },
+   {
+    "rule": "Vercel deploy limit",
+    "what": "Vercel Hobby = 100 deployments/rolling 24h (100 builds/h); a K push = 3 deploys; DICTO 2026-10-16 rule: batch pushes, up to ~8 a day",
+    "source": "memory/feedback-vercel-deploy-limit.md"
+   },
+   {
+    "rule": "Collected Works rule",
+    "what": "STANDING RULE (DICTO 2026-10-16): every time a DICTO paper is published or gets a new DOI, also release a new version of \"DICTO: Collected Geometric Works\" so the site's top DICTO DOI badge stays current",
+    "source": "memory/feedback-collected-works-update.md"
+   },
+   {
+    "rule": "Keyed W DROPPED",
+    "what": "FIRM DICTO 10-24 — the keyed W (#37 W keys, wallpaper/Penrose) is dropped for good; never propose or restart it",
+    "source": "memory/keyed-w-dropped.md"
+   },
+   {
+    "rule": "Dual Vision is the standard",
+    "what": "\"DICTO 10-19 (firm): Dual/Double Vision's film is THE standard for every layered-world film — reuse its design, never invent a different one\"",
+    "source": "memory/feedback-dual-vision-standard.md"
+   },
+   {
+    "rule": "Exact details",
+    "what": "DICTO 10-19 FIRM: \"careless with the figures, and this showed itself in more serious ways\": audit every number, identity, figure and caption before showing or publishing",
+    "source": "memory/feedback-exact-details.md"
+   },
+   {
+    "rule": "DICTO proposed, never asked",
+    "what": "\"FIRM — in papers write \\\"DICTO proposed\\\" for his contributions, never \\\"DICTO asked\\\"; his ideas are \\\"DICTO's idea\\\", not \\\"the question\\\"\"",
+    "source": "memory/feedback-dicto-proposed.md"
+   },
+   {
+    "rule": "Brand identity",
+    "what": "\"DICTO 10-22 FIRM: never redesign DICTO's emblem/brand (only minor corrections he asks for); its key D-I-C-T-O = Dodecahedron, Icosahedron, Cube, Tetrahedron, Octahedron\"",
+    "source": "memory/feedback-brand-identity.md"
+   },
+   {
+    "rule": "Design right first",
+    "what": "\"DICTO 10-22 FIRM: get a design right (agreed in words, one picture) before building anything on it — no mock-ups, site pages, commits or follow-on steps until he approves\"",
+    "source": "memory/feedback-design-right-first.md"
+   },
+   {
+    "rule": "Transparent constructions",
+    "what": "\"DICTO 10-22 STANDING RULE: construction/helper pieces (Admiral Caps, Dogstars, X/Y, P/Q, adaptors, roofs) are drawn transparent (coloured glass) so the underlying structure shows through\"",
+    "source": "memory/feedback-transparent-constructions.md"
+   },
+   {
+    "rule": "Save personal facts at once",
+    "what": "FIRM 10-25 — any bio/exhibition/personal fact DICTO gives is written to memory (user-pronouns.md bio section) in the same turn, verbatim",
+    "source": "memory/feedback-save-personal-facts-at-once.md"
+   },
+   {
+    "rule": "Decide, name, conclude",
+    "what": "FIRM DICTO 10-27 — bring decisions not open questions; give every new shape a high-quality logical placeholder name; close each study with a one-line conclusion + status; he feels he is drowning in his own output",
+    "source": "memory/feedback-decide-name-conclude.md"
+   },
+   {
+    "rule": "List sources checked",
+    "what": "FIRM DICTO 10-27 — every paper's prior-art section lists the actual sources checked (library items, web pages, searches), never just \"302 references and the web\"",
+    "source": "memory/feedback-list-sources-checked.md"
+   },
+   {
+    "rule": "BANNED: 'in plain words'",
+    "what": "FIRM 10-27 BANNED PHRASE \"in plain words\" (and kin: \"plainly\", \"simply put\", \"in plain terms\", \"in short\" as a label) in every paper, metadata, README, app text and message",
+    "source": "memory/feedback-banned-plain-words.md",
+    "enforced_by": "papers/print.mjs refuses to print (exit 2)"
+   },
+   {
+    "rule": "Ask where to place",
+    "what": "FIRM 10-27 — when unsure WHICH paper/place DICTO wants something put (quotes, references, themes), ask one line first; don't spread it across papers",
+    "source": "memory/feedback-ask-where-to-place.md"
+   },
+   {
+    "rule": "Delete superseded files",
+    "what": "\"FIRM 2026-10-31: transitional files (superseded drafts etc.) are identified and DELETED, not archived; archive only what has no other copy\"",
+    "source": "memory/feedback-delete-superseded.md"
+   },
+   {
+    "rule": "Don't flatten his ideas",
+    "what": "FIRM 2026-10-31: don't turn DICTO's ideas into the nearest easy product; when the idea isn't clear, ask for it in his words before proposing anything",
+    "source": "memory/feedback-dont-flatten-ideas.md"
+   },
+   {
+    "rule": "No photo re-renders",
+    "what": "FIRM 10-31: stop trying to re-render DICTO's physical builds from his photos; the 2D ring mock-ups were the accurate ones",
+    "source": "memory/feedback-no-photo-rerenders.md"
+   },
+   {
+    "rule": "Don't suggest stopping",
+    "what": "FIRM 10-31: never propose stopping for the night while DICTO is working; thrift = leaner work, not halting",
+    "source": "memory/feedback-dont-suggest-stopping.md"
+   },
+   {
+    "rule": "Lean, DBB to max",
+    "what": "DICTO 11-01: be as careful as possible with tokens — few parallel jobs, push computation onto dicto-big-brother as much as possible",
+    "source": "memory/feedback-lean-dbb-max.md"
+   },
+   {
+    "rule": "Churn = CW list",
+    "what": "FIRM 11-03 — papers AND books update as soon as ready (on read ok); only the Collected Works (+dataset) gathers all changes weekly",
+    "source": "memory/feedback-churn-is-cw-list.md"
+   },
+   {
+    "rule": "Yes if straightforward",
+    "what": "STANDING 11-03 — DICTO's default answer to my yes/no questions: YES when it is the most straightforward option (or no less straightforward); otherwise the simpler choice",
+    "source": "memory/feedback-yes-if-straightforward.md"
+   },
+   {
+    "rule": "Figure bounds check",
+    "what": "STANDING 11-03 — check every figure sits within its bounds before any PDF goes to DICTO or out; run papers/figcheck.mjs",
+    "source": "memory/feedback-figure-bounds-check.md",
+    "enforced_by": "papers/figcheck.mjs (run before every PDF)"
+   },
+   {
+    "rule": "Names default to DICTO",
+    "what": "FIRM 11-04: every name is DICTO's choice unless explicit info says otherwise",
+    "source": "memory/feedback-names-default-dicto.md"
+   },
+   {
+    "rule": "Concordance tool",
+    "what": "DICTO 11-04: the Concordance + reference library + Kaleidohedra engine together ARE the research tool; every entry has three legs",
+    "source": "memory/concordance-tool.md"
+   },
+   {
+    "rule": "Publish rhythm",
+    "what": "STANDING 11-04 (DICTO): standalone records only for major theorems; smaller results as sections of next versions or book chapters; batch weekly; 'is part of' links — but never hamstring research, no shame about headway",
+    "source": "memory/feedback-publish-rhythm.md"
+   },
+   {
+    "rule": "No site polling",
+    "what": "Never poll dictospheres.com with curl loops — 11-02 a 15 s Monitor loop got the home IP a Vercel Security Checkpoint (403) for all user agents",
+    "source": "memory/feedback-no-site-polling.md"
+   },
+   {
+    "rule": "Term: truncated triangle",
+    "what": "DICTO 11-02 — use the recognised term \"truncated triangle\" (equiangular hexagon, alternating sides, t{3}) from now on, not \"flat-ended triangle\" / \"FET\"",
+    "source": "memory/feedback-term-truncated-triangle.md"
+   },
+   {
+    "rule": "Group naming",
+    "what": "DICTO 11-02 — new groups of his solids are named \"DICTO + defining feature\" (e.g. DICTO golden truncated triangle solids); never his family name",
+    "source": "memory/feedback-group-naming.md"
+   },
+   {
+    "rule": "New work at the top",
+    "what": "DICTO (2026-10-08): \"put new originalish work close to top of App wizards\" — list DICTO's original worlds/pieces near the top of Wizard lists and family/pair lists",
+    "source": "memory/feedback-new-work-top.md"
+   },
+   {
+    "rule": "Reason before code (4D)",
+    "what": "\"User feedback: for 4D/architecture features specifically, insist on full reasoning/discussion rounds before any code — the user iterates in small corrections and the final design is usually very different from (and better than) the first plan.\"",
+    "source": "memory/feedback-reason-before-code-4d.md"
+   },
+   {
+    "rule": "Confirm design choices",
+    "what": "\"User feedback: confirm scale/proportion/normalization/design choices before baking them in, don't silently pick a convenient default — they are very particular and don't make arbitrary judgments themselves.\"",
+    "source": "memory/feedback-confirm-design-choices.md"
+   },
+   {
+    "rule": "Verify with measurements",
+    "what": "\"When an e2e test fails after a change, get precise numeric/visual evidence (screenshots, bounding-box diffs, A/B against a clean git-stash baseline) before proposing a fix — don't theorize from reading CSS/code alone.\"",
+    "source": "memory/feedback-verify-with-measurements.md"
+   },
+   {
+    "rule": "Review the review",
+    "what": "DICTO 10-25 - my sharpest cutting is on others' work; final review = me judging the peer review (local 120B / Fable), not self-review of my own drafts",
+    "source": "memory/feedback-review-the-review.md"
+   },
+   {
+    "rule": "Narrow choices",
+    "what": "DICTO 10-25 - when he asks for choices or refines a request, narrow to fewer options (ideally one pick), never add more",
+    "source": "memory/feedback-narrow-choices.md"
+   },
+   {
+    "rule": "Offer only what's ready",
+    "what": "DICTO 10-25 - only offer to open/show things that already exist; say \"I'll prepare X\" separately",
+    "source": "memory/feedback-offer-only-ready.md"
+   },
+   {
+    "rule": "Use the budget",
+    "what": "DICTO 10-25 - main aim is to make full use of the token budget on valuable work; speed rarely matters",
+    "source": "memory/feedback-use-token-budget.md"
+   },
+   {
+    "rule": "Token thrift",
+    "what": "User wants token-economical sessions — keep responses and investigation tight",
+    "source": "memory/feedback-token-thrift.md"
+   },
+   {
+    "rule": "No unprompted renames",
+    "what": "\"Don't rename/relabel shapes or features for \\\"thematic consistency\\\" or speculative future work unless the user actually asked — it creates repeated wasted churn.\"",
+    "source": "memory/feedback-no-unprompted-renames.md"
+   },
+   {
+    "rule": "Full names",
+    "what": "DICTO 10-24 — use names exactly as he gives them (machines, shapes, files); never invent shorthands",
+    "source": "memory/feedback-full-names.md"
+   },
+   {
+    "rule": "Scoped verification",
+    "what": "\"When a user reports a specific, limited bug, verify the fix against just that case first — don't run broad/unrelated regression sweeps unprompted\"",
+    "source": "memory/feedback-scoped-verification.md"
+   },
+   {
+    "rule": "Commit before claiming fixed",
+    "what": "\"Don't let a bug-fix session run long on local-only verification without committing (and pushing if a deploy depends on it) — ask/confirm early where the user actually tests\"",
+    "source": "memory/feedback-commit-before-claiming-fixed.md"
+   },
+   {
+    "rule": "Specify test target",
+    "what": "\"When asking the user to test/verify a fix, always state explicitly whether it's local (dev server, uncommitted) or deployed/pushed — never leave it ambiguous\"",
+    "source": "memory/feedback-specify-test-target.md"
+   },
+   {
+    "rule": "Mobile-first priority",
+    "what": "\"Always prioritize phone/iPad (touch) support in these codebases — treat touch as a first-class input, not an afterthought verified only via mouse-click testing\"",
+    "source": "memory/feedback-mobile-first-priority.md"
+   },
+   {
+    "rule": "Changelog each ship",
+    "what": "\"Rhombiverse data/changelog.json is for user-facing FEATURES only, newest first, added in the same push; never log quick fixes for things that should have worked\"",
+    "source": "memory/feedback-changelog-each-ship.md"
+   },
+   {
+    "rule": "Nothing unnecessary shown",
+    "what": "UI ethos — controls that don't apply in the current mode are hidden, not greyed out",
+    "source": "memory/feedback-nothing-unnecessary-shown.md"
+   },
+   {
+    "rule": "Reuse existing geometry",
+    "what": "Before writing any geometry/wireframe code, look for it in Rhombiverse's own render geometry and Polyhedraverse's registry first",
+    "source": "memory/feedback-reuse-existing-geometry.md"
+   },
+   {
+    "rule": "Delete, don't archive",
+    "what": "\"When removing features, delete the code outright (git history is the archive) -- dead/archived code and history-laden comments obscure the current code for other developers\"",
+    "source": "memory/feedback-delete-not-archive.md"
+   },
+   {
+    "rule": "Watch CI",
+    "what": "Check both repos' GitHub CI after pushing -- a red CI once went unnoticed for 10 days and hid e2e regressions",
+    "source": "memory/feedback-watch-ci.md"
+   },
+   {
+    "rule": "Search visibility",
+    "what": "every new user-facing feature must reach the search-visible surfaces (meta tags, JSON-LD featureList, README, guide, welcome); stale \"2D to 4D\" text lingered online",
+    "source": "memory/feedback-search-visibility.md"
+   },
+   {
+    "rule": "Ask design Qs up front",
+    "what": "When planning a feature, ask the user the design questions up front (views, controls, staging, look) instead of discovering them through many rounds of rework",
+    "source": "memory/feedback-plan-ask-upfront.md"
+   },
+   {
+    "rule": "Use dicto-node (feedback)",
+    "what": "The user repeatedly has to remind me to run heavy jobs on dicto-node; it keeps being overlooked. Check this before ANY Playwright/browser test, screen walk, perf run or big build",
+    "source": "memory/feedback-use-dicto-node.md"
+   },
+   {
+    "rule": "Beyond Zome",
+    "what": "\"NEVER frame shapes in Zome terms (blue/yellow/red, Zome-buildable, strut lengths) — said 3x on 2026-10-01; \\\"it robs us of any novelty\\\"\"",
+    "source": "memory/feedback-beyond-zome.md"
+   },
+   {
+    "rule": "Commit means push",
+    "what": "When the user says \"commit\", commit AND push in the same step — don't stop at a local commit",
+    "source": "memory/feedback-commit-means-push.md"
+   },
+   {
+    "rule": "Short answers",
+    "what": "For simple yes/no questions, answer in one line; no re-examining, re-verifying or recapping unless asked",
+    "source": "memory/feedback-short-answers.md"
+   },
+   {
+    "rule": "Preview default view",
+    "what": "\"A preview of new geometry must open on the view asked about (or say which view shows), and its data must be checked against the app before saying it matches\"",
+    "source": "memory/feedback-preview-default-view.md"
+   },
+   {
+    "rule": "Test through the UI",
+    "what": "smoke/e2e must reach features through the real UI control, not by calling the module from code — a code-path test hid an unreachable Almanac",
+    "source": "memory/feedback-test-through-ui.md"
+   },
+   {
+    "rule": "No arrows",
+    "what": "DICTO hates ◀ ▶ step/cycle arrows in the UI (\"lose them everywhere\", even though he once agreed); use automatic good placement and pickers instead",
+    "source": "memory/feedback-no-arrows.md"
+   },
+   {
+    "rule": "Fable conventions",
+    "what": "DICTO wants every study filed and presented the way Fable delivered on 2026-10-09: a dated study folder with data, checks, app-style renders and a report, included in Zenodo releases",
+    "source": "memory/feedback-fable-conventions.md"
+   },
+   {
+    "rule": "No crossover",
+    "what": "\"DICTO 2026-10-10: each shape/family lives in ONE app place only, no crossover between Polyhedraverse and Kaleidohedra, because all apps are reachable anyway\"",
+    "source": "memory/feedback-no-crossover.md"
+   },
+   {
+    "rule": "Fable: crucial only",
+    "what": "\"DICTO 2026-10-10: Fable burns tokens; use Fable ONLY for the most crucial deep thinking/planning, never for extras or follow-ups I offered\"",
+    "source": "memory/feedback-fable-crucial-only.md"
+   },
+   {
+    "rule": "See-through shells",
+    "what": "DICTO loved the see-through \"crystal\" shell AND the exploding (pull-apart) view; both are standard for nested/growing structures",
+    "source": "memory/feedback-see-through-shells.md"
+   },
+   {
+    "rule": "Serious + verifiable",
+    "what": "DICTO 2026-10-11: the Chain of Karma (and his findings) must be taken seriously — public text states only verifiable, checked claims in a professional tone; interpretation (yin-yang, Kyushindo) kept out of abstracts/front page",
+    "source": "memory/feedback-serious-verifiable.md"
+   },
+   {
+    "rule": "Node + tokens",
+    "what": "DICTO 2026-10-12: be mindful of token levels — push as much work as possible through dicto-node (long jobs, logs), keep chat turns short",
+    "source": "memory/feedback-node-and-tokens.md"
+   },
+   {
+    "rule": "Credit: few background jobs",
+    "what": "DICTO 2026-10-12 — too many background shells/agents drained half his credit; keep background work minimal and stop it when done",
+    "source": "memory/feedback-credit-background-jobs.md"
+   },
+   {
+    "rule": "Discuss before acting",
+    "what": "DICTO 2026-10-13 — \"please discuss and clarify before acting\": for app/UI changes, explain the finding and the intended change, get his OK, then edit",
+    "source": "memory/feedback-discuss-before-acting.md"
+   },
+   {
+    "rule": "Reference library always",
+    "what": "DICTO 2026-10-13: always search the reference library first for any paper/prior-art work, and add every new reference found (both private repo manifests and public SOURCES.md)",
+    "source": "memory/feedback-reference-library-always.md"
+   },
+   {
+    "rule": "DICTO mark on everything",
+    "what": "DICTO 2026-10-13: everything we make (nets, figures, renders, PDFs, pages, kits, data files) must bear the DICTO mark (name + dictospheres.com, gold emblem where it fits)",
+    "source": "memory/feedback-dicto-mark-on-everything.md"
+   },
+   {
+    "rule": "iPad sliders + languages",
+    "what": "\"DICTO 2026-10-13 iPad demo: sliders too small — must be big and long for adult fingers, as close to the bottom as possible; languages must be easy to find everywhere\"",
+    "source": "memory/feedback-ipad-sliders-languages.md"
+   },
+   {
+    "rule": "Smoke both doors",
+    "what": "\"Before any K push that touches the wizard or world lists, run the smoke test for BOTH doors (kaleidohedra and rhombiverse) on dicto-node\"",
+    "source": "memory/feedback-smoke-both-doors.md"
+   },
+   {
+    "rule": "Paper voice",
+    "what": "\"Paper voice (updated 2026-10-15): 'we' for the joint work, 'DICTO' where the idea/decision is his; published papers stay as they are\"",
+    "source": "memory/feedback-papers-we-voice.md"
+   },
+   {
+    "rule": "DICTO DOI label",
+    "what": "Label DOIs of DICTO's work as \"DICTO DOI\" (from 2026-10-14 on)",
+    "source": "memory/feedback-dicto-doi-label.md"
+   },
+   {
+    "rule": "Keep plan perspective",
+    "what": "\"DICTO wants off-plan ideas welcome but clearly LABELLED as outside the plan; never carry favourite motifs (TO, RD…) into worlds silently\"",
+    "source": "memory/feedback-keep-plan-perspective.md"
+   },
+   {
+    "rule": "Geometry accuracy rules",
+    "what": "\"Strict checks for every geometry study step (frames, both orders, orbit counts, exact gates, known-case sanity) — from the 2026-10-16 polar Dharma errors\"",
+    "source": "memory/feedback-geometry-accuracy-rules.md"
+   },
+   {
+    "rule": "Fact-check vs published",
+    "what": "When restating DICTO's published results in another paper, fact-check every sentence against the PUBLISHED Zenodo PDF, not research-branch drafts; keep every qualifier",
+    "source": "memory/feedback-fact-check-published.md"
+   },
+   {
+    "rule": "Brainstorm roles",
+    "what": "\"DICTO 2026-10-17: in brainstorms DICTO brings the ideas (often left field); Claude brings ways to implement them and variations, and says early and plainly when an idea looks mistaken\"",
+    "source": "memory/feedback-brainstorm-roles.md"
+   },
+   {
+    "rule": "Render cuts: fill under review",
+    "what": "\"STANDING (DICTO 2026-10-17, refined same evening) — fill on spikes looks smudgy; core-only fill PROPOSED, ON HOLD until a better standard is agreed with DICTO next render session; glass shells hollow; render thoroughly\"",
+    "source": "memory/feedback-render-cuts-solid.md"
+   },
+   {
+    "rule": "Chunky = equant",
+    "what": "\"DICTO 2026-10-17 — \\\"short and fat\\\" / \\\"compact\\\" pieces means equant like a cube or dodecahedron (no twigs, no slabs); score by sphericity\"",
+    "source": "memory/feedback-chunky-means-equant.md"
+   },
+   {
+    "rule": "Picture first for shape ideas",
+    "what": "\"DICTO 2026-10-17 — turning his spatial ideas into a construction is my weak spot (\\\"your Achilles heel\\\"); get a picture from him and show a quick 2D sketch before any search\"",
+    "source": "memory/feedback-picture-first-for-shape-ideas.md"
+   },
+   {
+    "rule": "Restate before building",
+    "what": "DICTO 10-18: two wrong \"keyed Penrose\" drawings in a row (\"not what i meant atall\", \"what the ....\"); restate in one sentence and get a yes BEFORE any drawing or build, even for small follow-ups",
+    "source": "memory/feedback-restate-before-building.md"
+   },
+   {
+    "rule": "Figurative speech",
+    "what": "\"DICTO often speaks figuratively (\\\"new symmetries\\\"); read the intent and answer that, without lecturing on the literal impossibility\"",
+    "source": "memory/feedback-figurative-speech.md"
+   },
+   {
+    "rule": "Play first",
+    "what": "\"DICTO 10-19: explore by playing with the existing app models until a decision junction; don't open long computed studies first\"",
+    "source": "memory/feedback-play-first.md"
+   },
+   {
+    "rule": "Not flatter",
+    "what": "DICTO 10-19 \"always things end up flatter\": my default rules (tightest hull, faces through corners) make thin shells and flat pieces; offer rules that set true, tall pyramids",
+    "source": "memory/feedback-not-flatter.md"
+   },
+   {
+    "rule": "Congruence test",
+    "what": "Same-shape claims need corner-matching congruence, never sorted edge lists (10-19: flawed test wrongly said CLEO returns / UP ID->RT 3-pyramid = CLEO)",
+    "source": "memory/feedback-congruence-test.md"
+   },
+   {
+    "rule": "DBT by its own name",
+    "what": "once a solid is cut into a new form, call it by its own name (DBT), not by its parent (\"golden envelope\")",
+    "source": "memory/feedback-dbt-own-name.md"
+   },
+   {
+    "rule": "Read before release",
+    "what": "before publishing a paper, confirm DICTO has read the final PDF, even when he says \"publish\"",
+    "source": "memory/feedback-read-before-release.md"
+   },
+   {
+    "rule": "Read ok = publish",
+    "what": "DICTO 10-24 — \"<paper> read ok\" is the release go-ahead; publish, don't ask again",
+    "source": "memory/feedback-read-ok-means-publish.md"
+   },
+   {
+    "rule": "No scope creep",
+    "what": "do exactly what DICTO asks; any widening (extra wording changes, extra edits) needs his OK first",
+    "source": "memory/feedback-no-scope-creep.md"
+   },
+   {
+    "rule": "No release delays",
+    "what": "\"DICTO 2026-10-20: don't stage or delay releases; delayed items get forgotten and the backlog grows. Release each paper as soon as it is ready\"",
+    "source": "memory/feedback-no-release-delays.md"
+   },
+   {
+    "rule": "Jewel gold+purple",
+    "what": "DICTO 2026-10-20 likes the app's gold Jewels + purple stellas; #41 site card redone in them; the paper switches only at its next version",
+    "source": "memory/feedback-jewel-gold-purple.md"
+   },
+   {
+    "rule": "Theorem-driven papers",
+    "what": "\"DICTO 2026-10-21: papers feel cobbled together; each needs a driving theorem (stated, proved) or an explicit conjecture, not a list of computed facts\"",
+    "source": "memory/feedback-theorem-driven-papers.md"
+   },
+   {
+    "rule": "No negative fill tests",
+    "what": "\"DICTO 2026-10-21: don't run space-filling tests on the piece inventory to prove pieces DON'T fill; not useful at present\"",
+    "source": "memory/feedback-no-negative-fill-tests.md"
+   },
+   {
+    "rule": "Agents: no own background work",
+    "what": "\"DICTO 2026-10-21: subagents (esp. Fable) must not start their own background jobs; work in the foreground and report\"",
+    "source": "memory/feedback-agents-no-own-background.md"
+   },
+   {
+    "rule": "Layman hook",
+    "what": "\"DICTO 10-22: every paper needs a layman hook: a plain, clearest-terms explanation at the start of each theorem/proposition, its evidence and its conclusion\"",
+    "source": "memory/feedback-layman-hook.md"
+   },
+   {
+    "rule": "Garbled answer: check first",
+    "what": "\"DICTO 10-22 — when his answer is typo'd/garbled, check the reading in one line before running anything\"",
+    "source": "memory/feedback-garbled-answer-check.md"
+   },
+   {
+    "rule": "Look at the picture whole",
+    "what": "DICTO 10-22: when he points at a shape in his photo, look at the whole picture first; don't trace from text notes or pixels",
+    "source": "memory/feedback-look-at-picture-whole.md"
+   },
+   {
+    "rule": "Close details → leads",
+    "what": "DICTO 11-04: closing up small open details of big results is valued; each closing study should report leads to next areas",
+    "source": "memory/feedback-close-details-for-leads.md"
+   }
+  ]
  }
 }

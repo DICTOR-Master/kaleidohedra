@@ -13,7 +13,7 @@ figcaption { font: 8.6pt/1.35 "DejaVu Sans", sans-serif; color: #333; margin-top
 table { border-collapse: collapse; font: 9pt "DejaVu Sans", sans-serif; margin: 6pt 0; break-inside: avoid; }
 td, th { border-bottom: 1px solid #ddd; padding: 2.5pt 7pt 2.5pt 0; text-align: left; vertical-align: top; }
 th { color: #6b5310; }
-.status { font: 9pt "DejaVu Sans", sans-serif; }
+.status { font: 9pt "DejaVu Sans", sans-serif; border: 2px solid #a00; border-radius: 2mm; padding: 2mm 3mm; margin: 3mm 0; color: #300; background: #fff6f6; break-inside: avoid; } /* DICTO FIRM: red box round ALL temporary draft text */
 .k { font-weight: 600; }
 ol.refs { font-size: 9pt; padding-left: 16pt; }
 code { font: 8.8pt "DejaVu Sans Mono", monospace; }

@@ -10,13 +10,15 @@ import fs from 'node:fs';
 { const txt = fs.readFileSync(path.join(here, dir, 'paper.html'), 'utf8').replace(/<[^>]+>/g, ' ');
   const BAN = /in plain words|in plain terms|put simply|simply put|\bplainly\b|layman|\bin short\s*[:.]|DICTO asked|asked by DICTO|DICTO's question|flat-ended|やさしい日本語|平たく言えば|簡単に言えば|わかりやすく言えば/gi;
   const hits = [...txt.matchAll(BAN)].map(m => txt.slice(Math.max(0, m.index - 40), m.index + 50).replace(/\s+/g, ' '));
+  const raw = fs.readFileSync(path.join(here, dir, 'paper.html'), 'utf8');
+  if (/\bDRAFT\b/.test(pdf + raw) && !/class="status/.test(raw) && !process.env.ALLOW_BANNED) { console.error('DRAFT without the red status box - not printed'); process.exit(3); }
   if (hits.length && !process.env.ALLOW_BANNED) { console.error('BANNED PHRASE — not printed:\n  ' + hits.join('\n  ')); process.exit(2); } }
 const b = await chromium.launch();
 const page = await b.newPage();
 await page.goto('file://' + path.join(here, dir, 'paper.html'), { waitUntil: 'load' });
 await page.pdf({ path: path.join(here, dir, pdf), ...(process.env.PAGE_W ? { width: process.env.PAGE_W, height: process.env.PAGE_H } : { format: 'A4' }), printBackground: true, displayHeaderFooter: true,
   headerTemplate: '<span></span>',
-  footerTemplate: `<div style="font:8px sans-serif;width:100%;padding:0 15mm;display:flex;justify-content:space-between;color:#666"><span>${title} · DICTO · dictospheres.com · DICTO DOI: ${doi} · v${ver}</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`,
+  footerTemplate: `<div style="font:8px sans-serif;width:100%;padding:0 15mm;display:flex;justify-content:space-between;color:#666"><span>${title} · DICTO · dictospheres.com${doi && doi !== 'draft' ? ' · DICTO DOI: ' + doi : ''}${ver ? ' · v' + ver : ''}</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`,
   margin: { top: '16mm', bottom: '18mm', left: '15mm', right: '15mm' } });
 await b.close();
 console.log(dir + '/' + pdf + ' written');
