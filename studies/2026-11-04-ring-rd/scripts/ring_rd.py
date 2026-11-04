@@ -17,8 +17,11 @@ for i, j in itertools.combinations(range(3), 2):
         short = np.zeros(3); short[3 - i - j] = 1.0                    # short diagonal direction
         faces.append((c, long * math.sqrt(2), short * 1.0))            # half-diagonals: sqrt2 (long), 1 (short)
 Rm = math.sqrt(2.75)   # radius of the edge midpoints
+_z = np.array([1, 1, 1]) / math.sqrt(3); _x = np.array([1, -1, 0]) / math.sqrt(2); _y = np.cross(_z, _x)
+ROT = np.array([_x, _y, _z])            # rows: new x, y, z; the three-fold axis (1,1,1) becomes vertical
+band = lambda c: abs(c @ np.array([1, 1, 1])) < 1e-9   # the 6 faces whose normals are perpendicular to the axis
 def bow(p):            # rings lie flat in their face planes; they touch exactly at the edge midpoints
-    return p
+    return ROT @ p
 def ring(c, L, S, w=0.15, nseg=120):
     p, q = np.linalg.norm(L) / math.sqrt(2), np.linalg.norm(S) / math.sqrt(2)
     lu, su = L / np.linalg.norm(L), S / np.linalg.norm(S)
@@ -38,7 +41,7 @@ V3 = [np.array(v, float) for v in itertools.product((1, -1), repeat=3)]
 for a in V4:
     for b in V3:
         if abs(np.linalg.norm(a - b) - math.sqrt(3)) < 1e-9:
-            m = (a + b) / 2
+            m = ROT @ ((a + b) / 2)
             ties.append(m)
 assert len(ties) == 24
 def draw(ax, elev, azim, title):
@@ -47,10 +50,11 @@ def draw(ax, elev, azim, title):
     polys, cols = [], []
     for c, L, S in faces:
         quads, lugs = ring(c, L, S)
-        front = (c / np.linalg.norm(c)) @ view
+        front = (ROT @ c / np.linalg.norm(c)) @ view
         al = 1.0 if front > -0.05 else 0.22
         shade = 0.86 + 0.12 * max(front, 0)
-        for qd in quads: polys.append(qd); cols.append((shade, shade * 0.97, shade * 0.92, al))
+        col = (0.93 * shade, 0.80 * shade, 0.50 * shade, al) if band(c) else (shade, shade * 0.97, shade * 0.92, al)
+        for qd in quads: polys.append(qd); cols.append(col)
         for lg in lugs: polys.append(lg); cols.append((0.55, 0.42, 0.25, al))
     pc = Poly3DCollection(polys, facecolors=cols, edgecolors='none')
     ax.add_collection3d(pc)
@@ -58,8 +62,8 @@ def draw(ax, elev, azim, title):
     lim = 1.55; ax.set_xlim(-lim, lim); ax.set_ylim(-lim, lim); ax.set_zlim(-lim, lim)
     ax.set_title(title, fontsize=11)
 fig = plt.figure(figsize=(12, 6.4))
-draw(fig.add_subplot(1, 2, 1, projection='3d'), 0, 0, 'four-fold view: a square gap at the centre')
-draw(fig.add_subplot(1, 2, 2, projection='3d'), 35.26, 45.0, 'three-fold view: a triangular gap at the centre')
-fig.suptitle("Rhombic dodecahedron of 8-notch rings: 12 crescent rings (one per face), 24 ties (blue), notches brown, 14 open corners", fontsize=12)
+draw(fig.add_subplot(1, 2, 1, projection='3d'), 90, -90, 'from the top: 3 rings round a triangular gap')
+draw(fig.add_subplot(1, 2, 2, projection='3d'), 12, -60, 'side, axis upright: 3 top, 6 band rings (gold), 3 bottom')
+fig.suptitle("Rhombic dodecahedron of 8-notch rings, held on its three-fold axis: each band ring is tied to two band rings and to one ring above and one below", fontsize=11)
 fig.text(0.99, 0.01, 'DICTO · dictospheres.com', ha='right', fontsize=9, color='#888')
 fig.savefig(os.path.join(OUT, 'ring-rd.png'), dpi=170, bbox_inches='tight'); print('ok')
