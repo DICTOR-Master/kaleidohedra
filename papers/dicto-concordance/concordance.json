@@ -4708,6 +4708,15 @@
     "retry": "identify (library); does it tile?",
     "study": "2026-11-04-dehn-screen",
     "date": "2026-11-04"
+   },
+   {
+    "question": "DICTO 4 Nov: one single block that fills EVERY stacking (instead of Narcissus + cube)?",
+    "method": "all convex gluings of an octahedron + one up + one down tetrahedron within one slab (hull volume test)",
+    "status": "SETTLED",
+    "result": "YES: exactly 3 gluings, all the same block — the 60° rhombohedron (O + 2T, all edges 1, corners on balls, one face in each layer plane), volume one ball (1/√2). Each slab between neighbouring layers is tiled by its translates; slabs meet along the layer’s rhombus pattern, independent of the stacking → one block per ball fills every stacking word. Likely CLASSICAL (the fcc primitive cell used slab by slab) — prior art to check; no claim.",
+    "retry": "never; prior-art check",
+    "study": "2026-11-04-dehn-screen",
+    "date": "2026-11-04"
    }
   ]
  },
