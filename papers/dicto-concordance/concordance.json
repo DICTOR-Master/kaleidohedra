@@ -3857,6 +3857,16 @@
     "result": "HexOct tiles interlock: a single layer of c-tiles or of h-tiles (#75, λ = 1/10) is locked against slides and twists (all inner tiles), with positive (Dyskin) and negative (upright cubes free) controls — HexOct tiles are interlocking tiles",
     "study": "2026-11-04-hopf-interlock",
     "goes_to": "HexOct volume"
+   },
+   {
+    "result": "Tetrahedron sweep tests: roundness max at the octahedron; Mahler exact, max at (11−√33)/4; Dehn zero only at μ = 2 (T(4) minus corners), which tiles space alone (octet exact cover, verified with real polytopes) — a KNOWN tiling (Damasceno–Engel–Glotzer 2012, β-tin; Gabbrielli–Jiao–Torquato 2012 Fig. 15); new link: Dehn zero = octet 2:1 ratio at n = 4",
+    "study": "2026-11-04-tetra-sweep",
+    "goes_to": "Centre Pyramids / Space-Fillers volume (Dehn screen calibration) and #94 v2"
+   },
+   {
+    "result": "Roundness on the cube ∩ μ·cross sweep in n dimensions: maximum exactly at μ = √n (n = 2..12 exact; octagon, √3, 24-cell) — explained by Lindelöf's theorem (facets tangent to one ball). CORRECTION: the earlier '√3 exact coincidence' is this classical theorem; #94 v2 wording to change",
+    "study": "2026-11-04-tetra-sweep",
+    "goes_to": "#94 v2 / The Golden Ladder (sweep)"
    }
   ]
  },
@@ -4218,7 +4228,7 @@
    "Cube–octahedron sweep": [
     "Icosaxes φ, exact (Q4, Q8); bronze (Q8)",
     "zeros not at stations",
-    "√3 = core-turn fixed point, exact",
+    "√3 exact = Lindelöf (all facets tangent to one sphere); √n in n dimensions",
     "max near φ, cubic; ends 32/3",
     "—",
     "—",
@@ -4238,11 +4248,11 @@
    "Tetrahedron sweep T ∩ μ(−T)": [
     "Q4 zero at a quartic root, not golden",
     "—",
+    "max exactly at the octahedron (Lindelöf: facets tangent to one sphere)",
+    "f = 4(μ³−9μ²+27μ−11)/(3μ); octahedron a local min 32/3; max at (11−√33)/4, no station",
     "—",
-    "—",
-    "—",
-    "—",
-    "—",
+    "μ = 2 tiles alone (octet exact cover, N = 20, two orientations) — KNOWN: Damasceno–Engel–Glotzer 2012 (β-tin)",
+    "zero only at μ = 2 (and 1/2): T(4) minus corners",
     "—"
    ],
    "Delian walk (#51)": [
@@ -4268,8 +4278,8 @@
    "4D sweep tesseract ∩ μ·16-cell": [
     "Q4 at 24-cell (μ = 2)",
     "Q6 at √2, 1+√3 exact",
-    "—",
-    "—",
+    "max exactly at the 24-cell μ = 2 = √n (Lindelöf); all n: √n",
+    "max ≈ 16.747 at μ ≈ 2.2837, no station; 24-cell 16; ends 32/3",
     "—",
     "—",
     "—",
