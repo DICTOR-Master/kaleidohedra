@@ -3902,6 +3902,11 @@
     "result": "Every Dehn-zero truncated tetrahedron tested (6 of 6: (1,1,0,0), (1,1,1,0), (2,1,0,0), (2,2,0,0), (2,1,1,0), (1,1,1,1)) tiles space, always piece + point inverse, 2 per period (SAT exact cover on the octet). Conjecture: Dehn zero ⇔ tiles for the whole family; prior art: only the uniform cut (1/4) is in the literature checked",
     "study": "2026-11-04-tetra-sweep",
     "goes_to": "Space-Fillers / Centre Pyramids volume"
+   },
+   {
+    "result": "Outside lead (CMB): the White Queen's 120 icosians are the Poincaré dodecahedral space's group; from our corners the invariant-harmonic counts match Aurich–Lustig–Steiner at every degree k ≤ 120; our 11-design result = the PDS's missing low modes (classical, cross-checked; no cosmology claim)",
+    "study": "2026-11-04-pds-modes",
+    "goes_to": "Alicia (Queens) volume / #94 v2 (outside link)"
    }
   ]
  },
@@ -4627,6 +4632,15 @@
     "result": "data/satper-2.log",
     "retry": "read",
     "study": "2026-11-04-tetra-sweep",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Lead 1: PDS (CMB) and the 600-cell",
+    "method": "read Planck 2015 XVIII + Aurich–Lustig–Steiner; character count from our icosians",
+    "status": "SETTLED",
+    "result": "mode multiplicities agree at all k = 0..120; first mode k = 12 = our 11-design; Planck 2015 tests flat spaces only",
+    "retry": "never",
+    "study": "2026-11-04-pds-modes",
     "date": "2026-11-04"
    }
   ]
