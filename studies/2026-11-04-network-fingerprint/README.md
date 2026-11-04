@@ -18,3 +18,9 @@ NOTE: the Admiral Cap is not convex (two tetrahedra over an icosahedron edge, a 
 - Best global twin pattern: does a pattern reach the local bound 8/12 at every corner? (spin-glass-like frustration; ANNNI link, Concordance 5.5)
 - The two-icosahedra node and its 18-corner hull: exact shape, prior art, name for DICTO.
 - Same fingerprint on the golden nests and OG networks; physical: frustration explains why the I world in #47 is a single slab.
+
+## The 18-corner candidate (4 Nov, follow-up)
+Hull of the two-icosahedra node star (icosahedron edge 1): 8 equilateral triangles (icosahedron faces) + 4 quadrilaterals (sides √2/2, φ√2/2, 1, 1)
++ 4 hexagons with sides among √2/2, 1, √2, 1.144, 1.851, 2.288; symmetry order 4; hull volume 6.937 > star 6.263 (the star is not convex).
+Verdict: an irregular convex hull of mixed edges and low symmetry, not a solid in the sense of the papers (no equal edges, no regular faces beyond the triangles).
+The real find is the NODE: two icosahedra sharing a corner where the golden twins change (a twin boundary of the Admiral network).
