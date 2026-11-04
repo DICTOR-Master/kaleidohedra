@@ -25,3 +25,10 @@ ROTATIONS (4 Nov, interlock_rot.py; exact contact polygons by clipping, infinite
 calibration Dyskin tetrahedra: all 21 locked. #47 Admiral slab: ALL 21 Admiral Caps LOCKED, all 3 icosahedra locked; tetrahedron face pyramids 18 locked / 4 free (same as translations).
 So the Admiral Caps and icosahedra of the #47 slab interlock against every small rigid motion, slides and twists: the slab holds itself together by shape alone
 (Dyskin's topological interlocking), apart from a skin of 4 tetrahedron pyramids on the free surfaces. (First-order test; finite motions follow from it for convex contacts.)
+
+## HexOct tiles (4 Nov) — interlock_hexoct.py, interlock-hexoct.json
+#75's exact c-tile (ABC, layer 1) and h-tile (AB, layer 0) at λ = 1/10 (tiles.py of 2026-10-29-hexoct-cover), each a rigid union of its 4 pieces; one layer as a plate
+over the triangular lattice, outer ring fixed, slides and twists: c-tile plate ALL 7 inner tiles LOCKED; h-tile plate ALL 7 LOCKED.
+Controls: Dyskin tetrahedra locked (positive); a layer of upright cubes FREE (negative: each cube lifts out) — the test separates the two.
+So a single HexOct layer of either type holds itself together by shape alone: the HexOct tiles are interlocking tiles (layer-wise), as well as stacking tiles.
+LEAD: mixed layers / thin plates of several layers; lower λ; the knitted and plate builds (2026-10-31-hexoct-plates).
