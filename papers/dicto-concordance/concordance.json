@@ -2480,7 +2480,7 @@
   },
   {
    "name": "Echo",
-   "what": "DICTO 4 Nov 2026: the 8-corner c-tile piece (λ ≥ 3/8), Narcissus’s companion; fills c (ABC) layers; volume √2/4 (same as Narcissus)",
+   "what": "ECHO IS A CUBE (checked 4 Nov: 8 corners, 6 square faces, all edges 1/√2 in ball units, all face angles 90°) — the fcc lattice’s small cube on its body diagonal; by \"one name per shape\" Echo names its ROLE (the c-layer piece, Narcissus’s companion), not a new shape — DICTO to confirm",
    "date": "2026-11-04",
    "by": "DICTO"
   }
@@ -4676,9 +4676,9 @@
    {
     "question": "Echo (8-corner c-piece, λ ≥ 3/8): two copies per c-tile? achiral? tiles alone?",
     "method": "—",
-    "status": "RUNNING",
-    "result": "same volume as Narcissus; c-tile = two such pieces",
-    "retry": "echo_check.py running",
+    "status": "SETTLED",
+    "result": "Echo = cube (exact faces, edges, angles); tiles alone trivially",
+    "retry": "never",
     "study": "2026-11-04-dehn-screen",
     "date": "2026-11-04"
    },
