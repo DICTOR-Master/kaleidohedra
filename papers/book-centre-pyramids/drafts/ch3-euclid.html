@@ -1,0 +1,39 @@
+<h2>Chapter 3. Euclid: the third of a prism</h2>
+
+<p>Imagine a solid shape floating in space, like a box or a ball, and pick a single point right in its middle. If you connect that middle point to every corner and every edge of the shape, you create a collection of smaller pyramids that fit together perfectly to fill the whole object. This simple idea of building from the center outward is the key to understanding how ancient geometry connects to the modern work of DICTO.</p>
+
+<h3>The Ancient Foundation</h3>
+<p>Euclid established in Book XII, Proposition 7 that a pyramid is exactly one third of a prism that shares the same base and height [CHECK]. This fundamental ratio allows us to calculate volumes by breaking complex shapes into simpler pyramidal parts. In Book XIII, Euclid builds the five regular solids inside a sphere, arranging them around a central point [CHECK]. These classical constructions provide the stage upon which DICTO proposed a new way to view the internal structure of these forms.</p>
+
+<p class="fig">[FIGURE: A cube with a central point O connected to all eight corners, showing the six pyramids that fill the cube]</p>
+
+<h3>The Centre Pyramid and the Vacuus</h3>
+<p>Let P be a solid bounded by a closed polyhedral surface, and let O be a point defined as the corner centroid, the mean of all the corners. The centre pyramid of a face f is the pyramid that has f as its base and O as its apex. DICTO proposed that if O lies strictly on the inner side of every face plane, these centre pyramids fill the solid P without overlapping. If O lies on or beyond any face plane, the pyramids fail to fill the space correctly, as rays from O would cross the surface multiple times.</p>
+
+<p>When the centre pyramids exist, two neighbouring pyramids meeting at an edge AB share a triangular face called the fin of the edge. The angle at O within this fin is the fin's apex angle, and the segment from O to a corner is called a strut. Two fins that share a strut and belong to the same pyramid form a dihedral angle along that strut, known as the wedge. The wedges around one strut add up to 2π, while the wedges of one pyramid add up to (n − 2)π plus the pyramid's solid angle at O.</p>
+
+<p>DICTO proposed the definition of the DICTO Vacuus of P as the union of its fins, one per edge. This structure is built in two forms: SHEETS, where the fins are thin plates, and STRUTS, which are rods from O to every corner. The DICTO Vacuus Solids are the solids taken in these forms. A flat sheet that closes all the way round O is called a central disc, a flat central polygon of the solid.</p>
+
+<h3>The Polar Law</h3>
+<p>The main theorem, the polar law, connects a convex solid P with its polar P* about the point O. A face f of P with outward unit normal n f and distance h f from O has a pole f* = n f /h f, which is a corner of P*. An edge e of P corresponds to an edge e* of P*, and a corner v of P corresponds to a face v* of P*. We take the Vacuus of P* about the same point O, though it is in general not the corner centroid of P*.</p>
+
+<p>The theorem states that the apex angle of the fin of e* in the Vacuus of P* is π minus the dihedral angle δ(e) of P at the edge e. Furthermore, the wedge along the strut O–f* in the pyramid of P* over v* is π minus the face angle φ f (v) of the face f at the corner v. The fin of e and the fin of e* lie in perpendicular planes, which meet in the line through O and the foot of the perpendicular from O to the line of e.</p>
+
+<p class="fig">[FIGURE: Two perpendicular planes intersecting at a line, showing the relationship between the fin of a solid and the fin of its polar]</p>
+
+<p>Since P** = P, the same holds with P and P* exchanged: the apex angles of P's fins are π minus the dihedral angles of P*, and P's wedges are π minus the face angles of P*. The proof relies on the classical statement that the face fan of P* is the normal fan of P. By the classical theorem on polar spherical polygons, the sides of the polar polygon are π minus the angles of the original, and its angles are π minus the original's sides.</p>
+
+<h3>The Star Law and the Five Solids</h3>
+<p>The Star law of #87 (Proposition 2) describes the volume and angles of the Star solids. The volume is exactly twice the original, and the dihedral angle is 2 delta at each old edge. The Star surface is the reflected Vacuus. When the cube forms a Star, it becomes a rhombic dodecahedron.</p>
+
+<p>In DICTO order, the five Platonic solids behave differently when folded into their Star forms. The dodecahedron and icosahedron fold inward. The cube lies flat. The tetrahedron keeps convex edges. The octahedron folds inward.</p>
+
+<p class="fig">[FIGURE: The five Platonic solids listed in DICTO order: dodecahedron, icosahedron, cube, tetrahedron, octahedron, with arrows indicating their Star folding behavior]</p>
+
+<p>We computed the Vacuus of 100 solids, including the 69 solids of DICTO Solids v7 and 31 classical solids. The Platonic and Archimedean solids except the snubs come from textbook coordinates, exact in Q, Q(√2) and Q(√5). The two snubs and their duals, and Delilah, Samson, Lahdeli and Sonsam of DICTO Solids v7, are in float64.</p>
+
+<p>The census checked the existence of the Vacuus. By Proposition 1, the Vacuus is defined for 99 of the 100 solids, among them the seven non-convex DICTO Jewel, Dodecaxes, Golden TI Star, Icosaxes Hexa, Kagemusha, Keyaxes and Lotus Jewel Axes. The one failure is Lotu. For the seven non-convex solids whose Vacuus is defined, the polar law holds for fins and crossing fins, but fails for wedges at non-convex corners.</p>
+
+<p>In the origami of Section 6, the wedges are the fold angles of the nets, so the polar law also says how the nets of a solid and of its polar fold. The cube's dihedral angle of 90° is the octahedron's fin apex of 90°, and the octahedron's wedges of 90° are π minus the cube's face angles of 90°. The dodecahedron's dihedral angle of 116.57° gives the icosahedron's fin apex of 63.43° (arctan 2).</p>
+
+<p>A solid and its polar share no fin shapes in general; what they share is these supplementary angles and the crossed fins of the polar law. The DICTO Vacuus provides a unified language to describe the internal geometry of these ancient forms, linking the volume ratios of Euclid to the angular symmetries of Kepler.</p>
