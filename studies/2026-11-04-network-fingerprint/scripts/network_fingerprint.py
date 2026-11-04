@@ -43,9 +43,14 @@ def fp(U):
             if 6 not in W3: W3[6] = [(a, b, -a-b, float(wigner_3j(6, 6, 6, a, b, -a-b))) for a in range(-6, 7) for b in range(-6, 7) if abs(a+b) <= 6]
             w = sum(c*q[a+6]*q[b+6]*q[cc+6] for a, b, cc, c in W3[6]); out['W6'] = round(float(np.real(w))/s**1.5, 4) if s > 1e-14 else 0.0
     return out
+cent = np.array([p['V'].mean(0) for p in pieces]); rad = np.array([np.max(np.linalg.norm(p['V'] - p['V'].mean(0), axis=1)) for p in pieces])
 types = {}
-for v, ks in nodes.items():
+tj = 0
+for v, ks0 in nodes.items():
     x = np.array(v)
+    near = np.where(np.linalg.norm(cent - x, axis=1) <= rad + 1e-6)[0]
+    ks = {int(k) for k in near if np.all(pieces[k]['H'][:, :3] @ x + pieces[k]['H'][:, 3] <= 1e-7)}
+    if ks - set(ks0): tj += 1
     eps = 0.04
     if not all(any(inside(pieces[k], x + eps*d) for k in ks) for d in S): continue   # incomplete (block boundary)
     U = np.array([np.array(w) - x for w in nb[v]])
@@ -65,6 +70,7 @@ for v, ks in nodes.items():
                                'star_corners': int(len(hull.vertices)), 'example': v})
     t['count'] += 1
 out = sorted(types.values(), key=lambda t: -t['count'])
+print('nodes lying inside an edge or face of another piece (T-junctions):', tj)
 for t in out:
     print(t['count'], 'nodes |', t['composition'], '| edges', t['edge_neighbours'], '|', t['fingerprint'], '| star convex' if t['star_convex'] else '| star not convex',
           t['star_corners'], 'corners, faces', t['star_faces'], 'vol', t['star_volume'])

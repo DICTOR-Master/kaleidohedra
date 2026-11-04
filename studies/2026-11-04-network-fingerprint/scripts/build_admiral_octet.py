@@ -29,7 +29,7 @@ for c in itertools.product(range(-R, R+1), repeat=3):
     for i in range(3):
         for s in (1, -1):
             e = np.zeros(3); e[i] = s; corner = c + e
-            near = [v for v in I if abs(np.abs(v - c).sum() - 1) < 1e-9 and abs((v - c) @ e) > 1e-9 and np.sign((v - c) @ e) == s]
+            near = [v for v in I if abs(np.abs(v - c).sum() - 1) < 1e-9 and (v - c) @ e > 1e-9]
             # the Admiral Cap is NOT convex: two tetrahedra over the icosahedron edge among the 4 points (edgeRoof.js)
             pr = [(i1, i2) for i1, i2 in itertools.combinations(range(4), 2) if abs(np.linalg.norm(near[i1] - near[i2]) - 2*a) < 1e-9 and abs((near[i1] - near[i2]) @ e) < 1e-9]
             assert len(pr) == 1, pr
