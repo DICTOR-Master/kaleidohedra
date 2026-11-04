@@ -13,3 +13,11 @@ E5 (twist_map.py, family cube ∩ μ·octahedron ∩ ν·RD, 2,045 points, golde
    convex twist except the RD itself (ν = 1, calibration -> TRD); just off it (ν = 1.0005) Dehn nonzero. => RD/TRD looks ISOLATED. Caution: the
    numerical Dehn screen is fragile near tiny edges; the count of Dehn-zero solids (586) needs re-checking before use.
 E6 (halves.py census, all classical + OG family): calibration CO -> J27, RD -> TRD; OG family twists all dented so far (2- and 3-fold axes); 5-fold to check.
+E7 (cut_shadow.py, DICTO "solids with a central band"): a band between the halves keeps every twist convex iff the central cut equals the shadow.
+   RD: cut = shadow on its 2-, 3- and 4-fold axes; TO and cube: on 2- and 4-fold, NOT 3-fold (0.84, 0.75 — why the TO's 3-fold twist dents);
+   elongated dodecahedron: 2- and 4-fold. Only a hexagon cut (3-fold) gives a real twist option in a tiling (each cut tile turned in place still
+   tiles the plane); so the RD gives banded space-fillers half + hexagonal-prism band + half, straight or twisted, any band height, any stacking.
+   Prior art for the 3-fold-banded RD/TRD to check (the known elongated dodecahedron is banded along the 4-fold axis).
+E8 (slant_band.py, DICTO "slanted hexagonal prisms with a double angle"): a LEANING band dents at every lean and height (the half's walls meet the
+   hexagon vertically — cut = shadow — so any lean kinks); the chevron (out and back) is worse. Leaning the WHOLE cell (a shear) stays convex and keeps
+   the tiling: each layer slid along its lean (DICTO Hex Prism; Kaleidohedra's shear). Again: the option lives on the layer.
