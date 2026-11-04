@@ -20,3 +20,22 @@ golden ladder (Fibonacci multiplets → Icosaxes, Unborn Axes) on the octahedron
 "golden on the octahedron, silver on the cube" (#90's title) in the language of particle multiplets.
 The Golden Cut Cubes need c/b = 0.87403… (greater) and 2.28825… (lesser), quartic irrationals in Q(√2, √5) with irregular continued fractions
 ([0;1,6,1,15,3,1,2,…], [2;3,2,7,1,1,1,2,…]): no simple ladder — consistent with #90's field obstruction.
+
+## Tuning (DICTO 4 Nov: "can harmonics be brought in for tuning") — the first half of the sweep is one octave
+μ = 1 + a/(a + b) runs from the unison (octahedron, 6) to the octave (cuboctahedron, 15); every just interval is a self-conjugate SU(4) multiplet:
+| interval | ratio | cents | multiplet (dim) | Q4 | Q6 |
+| unison | 1 | 0 | (0,1,0) 6 | .764 | .354 |
+| minor third | 6/5 | 316 | (1,4,1) 735 | .623 | .216 |
+| major third | 5/4 | 386 | (1,3,1) 384 | .552 | .148 |
+| perfect fourth | 4/3 | 498 | (1,2,1) 175 | .420 | .019 |
+| tritone 7/5 | 7/5 | 583 | (2,3,2) 1470 | .310 | .088 |
+| perfect fifth (Kelvin) | 3/2 | 702 | (1,1,1) 64 | .153 | .240 |
+| minor sixth | 8/5 | 814 | (3,2,3) 2156 | .020 | .369 |
+| golden interval (Icosaxes) | φ | 833 | limit | .000 | .389 |
+| major sixth | 5/3 | 884 | (2,1,2) 300 | .050 | .437 |
+| harmonic seventh | 7/4 | 969 | (3,1,3) 960 | .116 | .502 |
+| octave | 2 | 1200 | (1,0,1) 15 | .191 | .575 |
+Readings: the cubic tone Q4 is silent exactly at the golden interval (833 cents), between the minor and major sixths, whose multiplets are its Fibonacci approximants;
+the sixth tone Q6 is nearly silent near the perfect fourth (its exact zero is at μ ≈ 1.3454, 514 cents, not 4/3). Kelvin's cell is the perfect fifth.
+Cube half (SO(7)): μ from 2 to 3 is from the octave to the twelfth (octave + fifth); the silver point 1 + √2 is 326 cents above the octave.
+App idea: a tuning instrument — the sweep slider sounds two tones at ratio μ while the solid morphs and a meter shows Q4, Q6; just intervals marked with their multiplets.
