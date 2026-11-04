@@ -21,3 +21,7 @@ Calibration: Dyskin et al.'s tetrahedron layer (square midsections, neighbours t
 Pattern: a pyramid with its base on a free surface, narrowing inward, can always slide out through that surface; turned the other way it is locked.
 So the Admiral Cap slab is translationally interlocking (Dyskin's sense) apart from a thin skin of tetrahedron pyramids — relevant to building it in cardboard or stone without glue.
 NEXT: rotational test (small rotations, LP on twists), and the same test on the Vacuus builds, HexOct tiles and DICTO's node/ring builds.
+ROTATIONS (4 Nov, interlock_rot.py; exact contact polygons by clipping, infinitesimal motions (v, ω) in R^6):
+calibration Dyskin tetrahedra: all 21 locked. #47 Admiral slab: ALL 21 Admiral Caps LOCKED, all 3 icosahedra locked; tetrahedron face pyramids 18 locked / 4 free (same as translations).
+So the Admiral Caps and icosahedra of the #47 slab interlock against every small rigid motion, slides and twists: the slab holds itself together by shape alone
+(Dyskin's topological interlocking), apart from a skin of 4 tetrahedron pyramids on the free surfaces. (First-order test; finite motions follow from it for convex contacts.)
