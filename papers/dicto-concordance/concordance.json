@@ -4685,9 +4685,9 @@
    {
     "question": "Narcissus + Echo fill EVERY stacking (incl. Fibonacci → non-periodic by two pieces)?",
     "method": "tiles.py checks (flat, one tile per type, joints) at λ = 3/8, 2/5 over all 32 five-layer contexts",
-    "status": "RUNNING",
-    "result": "—",
-    "retry": "read",
+    "status": "SETTLED",
+    "result": "YES at λ = 3/8 and 2/5: in all 32 five-layer contexts each layer tile is one motion of the pure c-tile (two cubes) or h-tile (two Narcissus) — so every stacking word, incl. Fibonacci, is tiled by Narcissus + cubes (non-periodic for non-periodic words). Tiles NOT flat (pieces span z = L−1 … L+1/2): layers interlock, they are not slabs.",
+    "retry": "never; prior art check pending",
     "study": "2026-11-04-dehn-screen",
     "date": "2026-11-04"
    }
