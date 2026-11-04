@@ -13,3 +13,10 @@ LEADS: fingerprint the 600-cell's slices and the Queens' paths (#62, #63, #76); 
 - Cell-first (tetrahedral slices): Q4 silent at |h| ≈ 0.157, 0.330, 0.583, 0.737; Q8 silent at |h| ≈ 0.137, 0.453, 0.829, 0.854 — never at the same height.
   So no cell-first slice hides icosahedral order the way Icosaxes does on the cube–octahedron sweep (there Q4 and Q8 vanish together).
 LEADS: exact heights of these zeros; are the corner-first Q6-silent slices named solids in #62's atlas; edge-first and face-first directions; the 120-cell.
+
+## Red Queen and the path between the Queens (4 Nov) — scripts/queens_path.py, queens-path.json
+- 120-cell (600 corners): silent in degrees 2..11, first tone at 12 (Q12 0.087, Q20 0.106) — an 11-design like the 600-cell (calibration passes).
+- Path S(μ) = 600-cell ∩ μ·120-cell, μ from r² ≈ 0.8567 to 1 (r = 600-cell inradius 0.92562): degrees 1..11 silent throughout (H4).
+  PRELIMINARY (float; corners merged at 1e-5; one corner count, 1536, is not an H4 orbit sum and must be checked):
+  Q12 dips to 0.008 near μ ≈ 0.925 (close to r = 0.9256); Q20 dips to 0.001 near μ ≈ 0.887 (3600 corners) and 0.007 near 0.955.
+  Exact check needed before any claim of a "deep silence" station.
