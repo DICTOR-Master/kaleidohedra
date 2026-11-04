@@ -14,3 +14,7 @@ Search status (4 Nov): controls pass (C6 reaches 31; RD no collapse in 25 min); 
   Archimedean truncated cuboctahedron). It is the orbit of (3, 2, 1) = ρ of Sp(6) (C3) — a weight shape again (Golden Ladder ch. 2).
   Its hexagons are not centrally symmetric, so it is not a parallelohedron: no lattice tiling. Whether it tiles space alone in another way is OPEN — the sweeps' only Dehn-zero
   candidate besides the known tilers (and the RD at μ = 1).
+- SETTLED (4 Nov): the B3 permutohedron does NOT tile space alone, in any tiling. Dihedrals: rectangle–octagon 3π/4, rectangle–hexagon π/2 + β, octagon–hexagon π − β,
+  β = arccos(1/√3) with β/π irrational (cos²β = 1/3). Round a generic point of a rectangle–octagon edge: x(3π/4) + y(π/2 + β) + z(π − β) + wπ = 2π (or π) forces y = z and
+  (3/4)x + (3/2)y + w ∈ {2, 1} with x ≥ 1: no non-negative integer solution. So Dehn zero (necessary) is not sufficient here; the local angle count kills it.
+  (Same angles as the Archimedean truncated cuboctahedron, which tiles only with cubes: 3π/4 + 3π/4 + π/2.) Test competence: Dehn = global, angle count = local.
