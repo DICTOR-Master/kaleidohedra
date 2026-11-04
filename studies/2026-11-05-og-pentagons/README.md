@@ -16,3 +16,7 @@
   TWIN CONNECTOR = hull of the two mirror pentagons facing a twin-face edge (axes dot -0.263): volume 0.015495, 51 in the patch, no overlaps.
   With it, a twin-layer octahedron holds 3 octet corner pieces (0.07826) + 3 TWIN CORNER PIECES (0.07707), all separate; a twin-layer tetrahedron holds one TWIN DENTED TETRAHEDRON (0.4059).
   So the gyrated kit = octet kit + 3 new shapes. TODO: a fully gyrated test (every layer twinned); chirality and congruence of the new pieces; exact volumes.
+- FULLY GYRATED (gyro_full.py; 4 layers, 3 twin planes): 168 octet connectors + 171 twin connectors, every edge pair served, no overlaps.
+  Middle-layer octahedra: leftover = 6 twin corner pieces (0.07707 each; touching ones merge in the boolean: 0.3083 = 4x, 0.23122 = 3x).
+  Tetrahedra: all 12 are twin dented tetrahedra (0.4059). So any stacking uses at most 7 shapes: cut OG, octet connector, twin connector,
+  corner piece, twin corner piece, dented tetrahedron (L/R), twin dented tetrahedron. TODO: chirality/congruence of the twin pieces; exact volumes; a sample mixed stacking (e.g. hcp-like ABAC).
