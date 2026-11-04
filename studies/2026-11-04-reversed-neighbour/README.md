@@ -20,3 +20,11 @@ LEADS: the R12 pieces (two kinds of lateral edge, #93 Thm C) by the same search;
 - Plane of faces: in the Theorem C tiling where every square perpendicular to z is cut along its diagonal on x + y = integer (other squares either way),
   the plane x + y = 1 cuts no piece (384 pieces checked): it is made of faces. Every plane x + y = k is, so each half-space can slide along it by any amount.
   Hence uncountably many R12 tilings that are not face to face, with continuous parameters: no finite list describes them (as for C6, #93 Thm D, and #92 Cor. 9).
+
+## Consequence for #92 Table 2 (4 Nov) — open point 2 closed
+At a point inside an edge, the T base wedges come from whole tetrahedra (theorem above), two per tetrahedron (the two face pyramids on that edge).
+So nT is even. The three undecided rows of Table 2 — (nT, nO, k, l) = (1,1,0,3), (3,3,0,1), and (1,1,0,1) on a face — have nT odd: none occurs.
+Table 2 is complete: exactly six edge configurations occur, each realised (octet edge; inside a tetrahedron; inside an octahedron or a cube edge;
+cube half-spaces glued at 45°; cube face diagonal against a cube cut the other way; cube edge inside a face of a slid cube).
+Around every tetrahedron edge only: octet edge (2 tetrahedra + 4 O base wedges), cube-face diagonal (1 tetrahedron + 2 O base + 2 O lateral), or on a face (1 tetrahedron + 2 O base).
+Observation for the O question: an O pyramid on a tetrahedron face sits in the same place whether it belongs to an octahedron (octet) or is a cube corner (#92 Prop. 8) — same piece, same height √6/6.
