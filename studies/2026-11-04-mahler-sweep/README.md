@@ -28,3 +28,10 @@ Exact pieces (fit to 1e-9, coefficients identified): (1, 4/3): V = −6μ³ + 24
 - Mahler maximum ≈ 15.387 at the root μ ≈ 1.5997 of 12μ³ − 36μ² + 43 = 0: no named station.
 - Isoperimetric maximum at μ ≈ 1.5227 (0.8525): no named station.
 So on the second sweep neither roundness nor polar balance lands on a station: the exact √3 coincidence belongs to the cube–octahedron pair.
+
+## Foam test (Kelvin's problem) on the CsCl pairs, 4 Nov
+Tiling by P_μ and Q_μ = P_{3−μ} (#90 Prop. 6), two cells per lattice cell of volume 8; wall area per unit volume W(μ) = (A_P + A_Q)/16.
+W is symmetric under μ ↔ 3 − μ (the pair swap) and is LARGEST at its fixed point μ = 3/2, Kelvin's foam (W = 1.67404),
+decreasing to the end μ → 1, the cuboctahedron + octahedron honeycomb: W = (3 + 2√3)/4 ≈ 1.61603.
+So within the family Kelvin's cell has the most wall area per cell; the unequal pairs have less. Kelvin's problem asks for EQUAL volumes,
+which only μ = 3/2 satisfies; relaxing it, unequal cells win — the fixed point of the swap is again singled out, here as the maximum.
