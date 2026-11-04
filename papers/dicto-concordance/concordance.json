@@ -3847,6 +3847,11 @@
     "result": "Interlocking test: in an octet (111) slab every octahedron is locked, every tetrahedron free (slides out obliquely); lead: Vacuus, HexOct and DICTO's builds",
     "study": "2026-11-04-hopf-interlock",
     "goes_to": "Space-Fillers volume"
+   },
+   {
+    "result": "Interlocking (translations): every Admiral Cap in the #47 slab is locked (with the icosahedra); only surface tetrahedron pyramids escape; pyramids based on a free surface always slide out, turned inward they lock; calibration: Dyskin tetrahedra locked. Rotations next",
+    "study": "2026-11-04-hopf-interlock",
+    "goes_to": "Space-Fillers volume (#47 chapter) / builds"
    }
   ]
  },
@@ -4201,7 +4206,8 @@
    "Mahler (polar balance)",
    "Foam wall area",
    "Forced-sector search (tiling)",
-   "Dehn (space-filling screen)"
+   "Dehn (space-filling screen)",
+   "Interlocking (kinematic)"
   ],
   "families": {
    "Cube–octahedron sweep": [
@@ -4211,7 +4217,8 @@
     "max near φ, cubic; ends 32/3",
     "—",
     "—",
-    "zero only at Kelvin 3/2 and the cube (the lone tilers)"
+    "zero only at Kelvin 3/2 and the cube (the lone tilers)",
+    "—"
    ],
    "CO–RD sweep": [
     "one Q4 zero, not golden",
@@ -4220,10 +4227,12 @@
     "max 12μ³−36μ²+43=0, no station",
     "—",
     "—",
-    "zero only at μ = 5/3: B3 permutohedron (±1,±2,±3); angle count: cannot tile alone"
+    "zero only at μ = 5/3: B3 permutohedron (±1,±2,±3); angle count: cannot tile alone",
+    "—"
    ],
    "Tetrahedron sweep T ∩ μ(−T)": [
     "Q4 zero at a quartic root, not golden",
+    "—",
     "—",
     "—",
     "—",
@@ -4238,6 +4247,7 @@
     "—",
     "—",
     "rigid except octet (#93)",
+    "—",
     "—"
    ],
    "CsCl pairs (#90)": [
@@ -4247,11 +4257,13 @@
     "—",
     "max at Kelvin 3/2, min at CO+O",
     "rigid (#93 Thm A)",
+    "—",
     "—"
    ],
    "4D sweep tesseract ∩ μ·16-cell": [
     "Q4 at 24-cell (μ = 2)",
     "Q6 at √2, 1+√3 exact",
+    "—",
     "—",
     "—",
     "—",
@@ -4265,6 +4277,7 @@
     "—",
     "—",
     "—",
+    "—",
     "—"
    ],
    "Centre pyramids T, C6, R12, RT": [
@@ -4274,7 +4287,8 @@
     "—",
     "—",
     "T, C6 whole solids; R12 free + slides; RT open",
-    "zero for C6, R12, RT (cube, RD, RT the only isohedral)"
+    "zero for C6, R12, RT (cube, RD, RT the only isohedral)",
+    "base-outward on a free surface: free; otherwise locked"
    ],
    "Admiral Cap network": [
     "nodes: fcc vs twin pattern heard",
@@ -4283,10 +4297,12 @@
     "—",
     "—",
     "frustration 8/12; ground-state layers",
-    "—"
+    "—",
+    "slab: all caps locked (translations)"
    ],
    "Golden nests / OG / AXE networks": [
     "OG family: Q4 = Q8 = 0 (icosahedral); W6 sign splits corner-type (TQHD, TQP, OG, KRE) from face-type (TQH, TPH, PHE, TPP, DPHP), changing in pairs",
+    "—",
     "—",
     "—",
     "—",

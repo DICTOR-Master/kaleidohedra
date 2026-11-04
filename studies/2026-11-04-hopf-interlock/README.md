@@ -12,3 +12,12 @@ App view: the Queen as 12 rings over the icosahedron (and 20, 30).
 (6) Not computed today, recorded as statements to check: Aurenhammer–Hoffmann–Aronov 1998 guarantee that #51's equal-volume weight (Samson and Delilah) exists and is unique
   up to a constant; #53's stops should be bistellar flips of the weighted Delaunay triangulation (Edelsbrunner–Shah 1996) — test by counting the change at each stop;
   Dechant–Bœhm–Twarock's golden affine translations vs the φ³ cycle step — open.
+
+## Interlocking of DICTO's pieces (4 Nov) — interlock_pieces.py, interlock-pieces.json (translational test; rotations not yet)
+Calibration: Dyskin et al.'s tetrahedron layer (square midsections, neighbours turned 90°): all 21 interior blocks locked — as published.
+- #47 Admiral slab (engine data): ALL 21 interior Admiral Caps LOCKED (each cap a rigid pair of tetrahedra); all 3 icosahedra locked; tetrahedron face pyramids 18 locked, 4 free.
+- Octet slab cut into centre pyramids: T pyramids 39 locked / 13 free; O pyramids 33 / 12.
+- Cube layer cut into C6 pyramids: pyramids inside the layer all locked (32); pyramids with base on the layer surface all free (24).
+Pattern: a pyramid with its base on a free surface, narrowing inward, can always slide out through that surface; turned the other way it is locked.
+So the Admiral Cap slab is translationally interlocking (Dyskin's sense) apart from a thin skin of tetrahedron pyramids — relevant to building it in cardboard or stone without glue.
+NEXT: rotational test (small rotations, LP on twists), and the same test on the Vacuus builds, HexOct tiles and DICTO's node/ring builds.
