@@ -4620,7 +4620,7 @@
     "question": "CONJECTURE: a truncated tetrahedron T(n) minus corners k tiles space iff Σk = n (Dehn zero), always as piece + point-inverse (2 per period); if the construction is uniform in real cuts, the golden pieces tile periodically (not an aperiodic clue)",
     "method": "evidence: 6/6 tested; proof = find the general construction",
     "status": "OPEN",
-    "result": "6 of 6 · REFORMULATION (4 Nov, by hand): corner cut c_i = (3 − μ_i)/4 with cut planes v_i·x ≤ μ_i; these bound an inverted tetrahedron whose size depends only on Σμ_i (Σv_i = 0), so Σc_i = 1 ⇔ Σμ_i = 8 ⇔ the cutter is 2(−T): the Dehn-zero family is exactly P(t) = T ∩ (2(−T) + t), one translation parameter t (uniform tiler t = 0; golden pieces = particular t). Conjecture: P(t) tiles with −P(t) for every admissible t — look for one construction continuous in t. · 8/8 after satper-2 partial ((3,1,0,0) N=12, (2,1,1,1) N=38). Construction: solver returns arbitrary periods — NEEDS A CONSTRUCTION IDEA (park; do not rerun searches for it).",
+    "result": "6 of 6 · REFORMULATION (4 Nov, by hand): corner cut c_i = (3 − μ_i)/4 with cut planes v_i·x ≤ μ_i; these bound an inverted tetrahedron whose size depends only on Σμ_i (Σv_i = 0), so Σc_i = 1 ⇔ Σμ_i = 8 ⇔ the cutter is 2(−T): the Dehn-zero family is exactly P(t) = T ∩ (2(−T) + t), one translation parameter t (uniform tiler t = 0; golden pieces = particular t). Conjecture: P(t) tiles with −P(t) for every admissible t — look for one construction continuous in t. · 8/8 after satper-2 partial ((3,1,0,0) N=12, (2,1,1,1) N=38). Construction: solver returns arbitrary periods — NEEDS A CONSTRUCTION IDEA (park; do not rerun searches for it). · 12/12 by 4 Nov evening (all n ≤ 5 incl. golden approximant (3,2,0,0), N = 6–38, always 2 per period). n = 8 approximants: satper-2 still running.",
     "retry": "read satper-2; extract the two-piece tilings as functions of t; test a golden t directly (real polytopes, overlap + coverage as verify_tiling.py)",
     "study": "2026-11-04-tetra-sweep",
     "date": "2026-11-04"
@@ -4629,7 +4629,7 @@
     "question": "Periodic test rest of census + n=8 approximants",
     "method": "sat_periodic.py m<=4",
     "status": "RUNNING",
-    "result": "data/satper-2.log",
+    "result": "n ≤ 5 done: (3,1,0,0) N12, (2,1,1,1) N38, (2,2,1,0) N36, (3,1,1,0) N32, (3,2,0,0) N30, (4,1,0,0) N20 — all tile; n = 8 running",
     "retry": "read",
     "study": "2026-11-04-tetra-sweep",
     "date": "2026-11-04"
