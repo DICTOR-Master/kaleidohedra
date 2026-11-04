@@ -11,7 +11,7 @@ def identify(x):
     r = mp.pslq([mp.mpf(x)] + [mp.mpf(b) for b in BASIS], maxcoeff=10**6, maxsteps=10**5, tol=mp.mpf(10)**-11)
     if r is None or r[0] == 0: return None
     return [Fraction(-c, r[0]) for c in r[1:]]
-def dehn(Vx, F, name=''):
+def dehn(Vx, F, name='', extra_rows=None, rows_only=False):
     V = np.asarray(Vx, float)
     vol = sum(np.dot(V[f[0]], np.cross(V[f[i]], V[f[i+1]])) for f in F for i in range(1, len(f) - 1))/6
     if vol < 0: F = [f[::-1] for f in F]
@@ -33,6 +33,8 @@ def dehn(Vx, F, name=''):
         theta = math.pi - ang   # interior dihedral; ang>0 convex (theta<pi) with this orientation convention, checked on the cube
         if abs(ang) < 1e-9: continue    # flat edge (coplanar faces) contributes nothing
         rows.append((L, theta))
+    if extra_rows: rows = rows + extra_rows
+    if rows_only: return rows
     # distinct angles; integer relations among them and pi (PSLQ, small coefficients) -> reduce to a basis beta_j independent mod Q*pi
     angs = []
     for L, th in rows:
