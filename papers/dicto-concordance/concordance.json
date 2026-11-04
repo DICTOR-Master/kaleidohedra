@@ -4766,9 +4766,9 @@
    {
     "question": "Narcissus as a split-and-rotate piece",
     "method": "hull of two Narcissus on their hexagons, straight and turned 60°; zone vectors from merged faces",
-    "status": "SETTLED (geometry) / prior art OPEN",
-    "result": "straight = twisted cube; 60° = parallelogram dodecahedron (4-zone parallelohedron, c = 1/3: cube edges 1/√2 + 1/3 body diagonal), fills space alone by translation; HexOct walk never passes through RD/TRD (dictionary structural)",
-    "retry": "prior-art search (named Covenant by DICTO)",
+    "status": "SETTLED (geometry + prior art)",
+    "result": "straight = twisted cube; 60° = parallelogram dodecahedron (4-zone parallelohedron, c = 1/3: cube edges 1/√2 + 1/3 body diagonal), fills space alone by translation; HexOct walk never passes through RD/TRD (dictionary structural) · PRIOR ART (4 Nov): tiling by translation classical (Fedorov: every zonohedron of the five parallelohedron types; Grünbaum 2010 Bilinski paper); Covenant = ordinary member c = 1/3, faces not rhombi (edges 1/√2, 1/√6), not an isozonohedron; NOT FOUND: Covenant as a named member, its split into two congruent self-mirroring halves (Narcissus) that also make the twisted cube. Claim for the chapter: the pieces and their relations, not the tiling.",
+    "retry": "never",
     "study": "2026-11-04-halves",
     "date": "2026-11-04"
    }
