@@ -33,4 +33,4 @@ E11 NARCISSUS AS A SPLIT-AND-ROTATE PIECE: two Narcissus on their hexagons — s
    a convex, centrally symmetric dodecahedron with 12 PARALLELOGRAM faces (14 corners, volume one ball) = a 4-zone parallelohedron: three orthogonal
    edges 1/√2 (the small fcc cube's) + one along the body diagonal, 1/3 of it (c = 1/3 in the family Z(e1, e2, e3, c·(1,1,1)): c = 0 cube, c = 1 RD).
    Fills space alone by translation. Prior art: the family is classical; its c = 1/3 member splitting into two copies of a self-mirroring piece
-   (that also gives the twisted cube) — to check. Name: DICTO to choose.
+   (that also gives the twisted cube) — to check. NAMED COVENANT by DICTO (4 Nov).
