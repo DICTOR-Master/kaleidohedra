@@ -160,6 +160,8 @@ w('<p>Fields not yet consulted, named by the search: dislocation theory (each h 
   'semi-discrete optimal transport (the weight walk); martensitic paths (Burgers, Kurdjumov–Sachs); topological interlocking and architected materials; '
   'realisation spaces of polytopes; hypersimplices (the octahedron is Δ(2, 4)); fulleride and cluster chemistry; multiply-twinned nanoparticles; hyperbolic tilings and holography.</p>')
 w('<h2>Notes on this version</h2><ul class="th">' + ''.join(f'<li>{x}</li>' for x in D['status']) + '</ul>')
+if D.get('overlaps_note'):
+    w('<h3>5.7 Overlaps across threads (4 November 2026)</h3><p>' + e(D['overlaps_note']) + '</p>')
 # 6. Methods and code map
 import os as _os
 _cm = _os.path.join(HERE, 'code_map.json')
