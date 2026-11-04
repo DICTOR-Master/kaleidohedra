@@ -4293,7 +4293,7 @@
     "n/a (outside the test’s competence)",
     "μ = 2 tiles alone (octet exact cover, N = 20, two orientations) — KNOWN: Damasceno–Engel–Glotzer 2012 (β-tin)",
     "zero only at μ = 2 (and 1/2): T(4) minus corners",
-    "—"
+    "n/a: the β-tin tiling has no flat one-tile-thick layer (jagged slabs gave 20/31 locked, free tiles = protruding ones)"
    ],
    "Delian walk (#51)": [
     "Q4 at t = 1/9 exactly; no joint Q4/Q8",
@@ -4313,7 +4313,7 @@
     "max at Kelvin 3/2, min at CO+O",
     "rigid (#93 Thm A)",
     "pair sum zero (they tile); a single piece zero only at Kelvin μ = 3/2 (the equal pair)",
-    "—"
+    "n/a: no flat one-tile-thick layer (same reason)"
    ],
    "4D sweep tesseract ∩ μ·16-cell": [
     "Q4 at 24-cell (μ = 2)",
@@ -4641,6 +4641,15 @@
     "result": "mode multiplicities agree at all k = 0..120; first mode k = 12 = our 11-design; Planck 2015 tests flat spaces only",
     "retry": "never",
     "study": "2026-11-04-pds-modes",
+    "date": "2026-11-04"
+   },
+   {
+    "question": "Interlocking of the β-tin tiling (and CsCl pairs)",
+    "method": "interlock_rot.py on jagged slabs ⊥ (001), (111), (110)",
+    "status": "SETTLED (outside competence)",
+    "result": "5/9, 7/11, 8/11 locked; meaningless without a flat one-tile-thick layer (enclosed tiles lock trivially, protruding ones are free)",
+    "retry": "never; only if a layered tiling by the same piece is found",
+    "study": "2026-11-04-tetra-sweep",
     "date": "2026-11-04"
    }
   ]
