@@ -29,3 +29,6 @@ v + s(w − v) on the 1440 directed edges, s = (1 − μ)/(1 − φ/2). (The hul
   invariant are the classical route to 19-designs (Goethals–Seidel 1981, Sobolev's theorem; Hardin–Sloane) — to check and credit.
 - Q20 = 0 near μ ≈ 0.9540 (Q12 ≠ 0 there).
 - Earlier "1536"-based dips are superseded by these values. Exact μ* (root in Q(√5)?) still to compute.
+CREDIT (4 Nov, checked): the 19-design is the classical construction — an orbit of the reflection group W(H4) through a suitable point on S³ is a spherical 19-design
+(Bannai's survey of spherical designs; Goethals & Seidel, "Cubature formulae, polytopes, and spherical designs", 1981). Our 1440 points are the W(H4) orbit of a point on a
+600-cell edge (stabiliser of order 10, orbit 14400/10 = 1440). What is ours: that this design is a station of the path between the Queens, the truncated 600-cell at μ ≈ 0.92417.
