@@ -27,3 +27,17 @@ Corners = true corners only (boolean mesh artefacts on flat faces/straight edges
 - Twin corner piece: 5 sampled; 3 one hand, 2 the other; not equal to its mirror -> chiral LEFT/RIGHT pair.
 - Twin dented tetrahedron: 12; 6 + 6; chiral LEFT/RIGHT pair.
 Kit for any stacking: 7 shapes, 10 counting mirror images (cut OG, octet connector, twin connector, corner piece achiral; twin corner L/R, dented tetrahedron L/R, twin dented tetrahedron L/R).
+
+## 11-05 Exact Dehn of the cut OG (dehn_exact_cut.py, exact Q(√5) coordinates)
+Two edge classes: 60 triangle–pentagon edges, length² = 4/81, interior dihedral 159.923249°, cos²(normal angle) = 89/109 + 16√5/545;
+120 triangle–hexagon edges, length² = 2/9 − 2√5/27, dihedral 156.199817°, cos² = 51/109 + 18√5/109.
+Length ratio² = 9/2 − 3√5/2, not a square in Q(√5) → the two lengths are Q-independent, so Dehn = 0 iff both dihedrals are rational multiples of π.
+cos² of degree 2 → cos of degree ≤ 4 → a rational angle kπ/n needs φ(n) ≤ 8 (n ∈ {1..10,12,14,15,16,18,20,24,30}); neither angle is any such kπ/n.
+PROOF: Dehn(cut OG) ≠ 0 exactly.
+
+## 11-05 DICTO idea: regular-triangle cut OG on a pyrochlore network (pyro_eq.py, float, edge = 1)
+Copies at the nodes of a diamond net, joined through 4 hexagons pointing to the corners of a regular tetrahedron; joints at the bond midpoints = the pyrochlore sites.
+Patch of 49 copies: no overlap (residual 2e-5 at volume 89 = float noise). The equal-edge hexagon (angles 124.72/115.28) is not centrally symmetric:
+against its point reflection the corners miss by 0.0475 edge, so touching copies meet on full planes but corners do not match.
+A thin twisted hexagonal connector at each joint (hull of the two hexagons; gaps 0.05–0.2 tried, no overlap) makes every join face to face; the connectors sit exactly on the pyrochlore sites.
+Open: what fills the space between (compare Golden Bodhi Pyrochlore and the 10-16 OCD-pyrochlore study).
