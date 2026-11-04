@@ -5,6 +5,12 @@ import { chromium } from 'playwright';
 import path from 'node:path';
 const here = path.dirname(new URL(import.meta.url).pathname);
 const [dir, pdf, title, doi, ver] = process.argv.slice(2);
+// BANNED-PHRASE GUARD (DICTO FIRM rules; built in 5 Nov 2026 so no PDF can carry them). Override only with ALLOW_BANNED=1.
+import fs from 'node:fs';
+{ const txt = fs.readFileSync(path.join(here, dir, 'paper.html'), 'utf8').replace(/<[^>]+>/g, ' ');
+  const BAN = /in plain words|in plain terms|put simply|simply put|\bplainly\b|layman|\bin short\s*[:.]|DICTO asked|asked by DICTO|DICTO's question|flat-ended|やさしい日本語|平たく言えば|簡単に言えば|わかりやすく言えば/gi;
+  const hits = [...txt.matchAll(BAN)].map(m => txt.slice(Math.max(0, m.index - 40), m.index + 50).replace(/\s+/g, ' '));
+  if (hits.length && !process.env.ALLOW_BANNED) { console.error('BANNED PHRASE — not printed:\n  ' + hits.join('\n  ')); process.exit(2); } }
 const b = await chromium.launch();
 const page = await b.newPage();
 await page.goto('file://' + path.join(here, dir, 'paper.html'), { waitUntil: 'load' });
