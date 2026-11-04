@@ -8,3 +8,4 @@ RESULT (necessary conditions; calibrations cube, TO, RD, T(4) minus corners all 
   tolerance missed it by rounding). CORRECTS the earlier 'zero only at μ = 5/3' (rt-pyramids study, Concordance grid): none tile (135° needs a 90° partner).
 - tetrahedron ∩ μ·(−tetrahedron) (199): ONE member, μ = 2 (T(4) minus corners): T-face share 13/14 (exact).
 => In LQG's area space, flat-space tilers are ISOLATED POINTS with exact shares. No physics claim; a geometric statement about the shapes LQG uses.
+EXACT DEHN (exact_dehn.py): h pieces 36(5/24 − λ)⊗β for λ < 5/24 and 0 for λ ≥ 5/24; c pieces 24(3/8 − λ)⊗β (zero at 3/8, the cubes); β = arccos(1/√3). Slopes 36 : 24 = 3 : 2. For the HexOct chapter.
