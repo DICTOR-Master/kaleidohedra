@@ -27,3 +27,10 @@ E6 census (classical): only the CO (-> J27) and the RD (-> TRD) twist convexly; 
 E9 PRIOR ART: banded STRAIGHT join = the known general trapezo-rhombic dodecahedron ("tall hexagonal prism with 3 angled cuts top and bottom",
    space-filling; hcp Voronoi cell only at long side = 2 × short side). Banded TWISTED join (RD banded along its 3-fold axis) not found; the known
    elongated dodecahedron is banded along the 4-fold axis (Fedorov). Fuller search before any claim.
+E10 (hexoct_voronoi.py): along the whole HexOct walk neither tile is ever the RD / TRD (never a convex 14-corner solid) — the dictionary HexOct <->
+   half-cells is STRUCTURAL (same one-bit-per-layer law, different pieces), not an identity.
+E11 NARCISSUS AS A SPLIT-AND-ROTATE PIECE: two Narcissus on their hexagons — straight = the twisted cube (11 corners; fills with the brick); turned 60° =
+   a convex, centrally symmetric dodecahedron with 12 PARALLELOGRAM faces (14 corners, volume one ball) = a 4-zone parallelohedron: three orthogonal
+   edges 1/√2 (the small fcc cube's) + one along the body diagonal, 1/3 of it (c = 1/3 in the family Z(e1, e2, e3, c·(1,1,1)): c = 0 cube, c = 1 RD).
+   Fills space alone by translation. Prior art: the family is classical; its c = 1/3 member splitting into two copies of a self-mirroring piece
+   (that also gives the twisted cube) — to check. Name: DICTO to choose.
