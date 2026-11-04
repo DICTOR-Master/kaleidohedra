@@ -4357,7 +4357,7 @@
    ],
    "HexOct tiles (#75)": [
     "no Q4 silence on the λ walk (min 0.025 h, 0.167 c)",
-    "no silence; h-tile Q6 minimum at λ ≈ 0.2084 ≈ 5/24 (Dehn onset) — to confirm",
+    "no silence; jump at 5/24 from the corner-set change (artefact; same event as the Dehn onset)",
     "fixed h-piece (λ ≥ 3/8): 0.487",
     "fixed h-piece: exactly 34/3",
     "n/a (outside the test’s competence)",
@@ -4529,8 +4529,8 @@
     "question": "HexOct tiles harmonic along λ",
     "method": "hexoct_harmonic.py (399 λ)",
     "status": "SETTLED (float)",
-    "result": "no Q4/Q6 silence; h-tile Q6 MIN at λ≈0.2084 ≈ 5/24 (= Dehn onset)",
-    "retry": "OPEN: confirm the Q6 minimum is exactly 5/24",
+    "result": "no Q4/Q6 silence; h-tile Q6 MIN at λ≈0.2084 ≈ 5/24 (= Dehn onset) — SETTLED 4 Nov (q6_kink.py): the minimum is a JUMP at exactly 5/24 caused by the corner set changing (44 → 40 → 46); an artefact of the point-set fingerprint, not separate evidence; the real event is the piece shape change (Dehn onset)",
+    "retry": "never",
     "study": "2026-11-04-dehn-screen",
     "date": "2026-11-04"
    },
