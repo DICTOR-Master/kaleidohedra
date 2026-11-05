@@ -87,12 +87,7 @@ css = '\n'.join(sorted(styles)) + '''
 table.toc td{border-bottom:1px dotted #ccc;padding:1.2mm 2mm} table.toc a{color:inherit;text-decoration:none}
 figure img, .figs img{max-width:100%}
 body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}'''
-status = ('<div class="status"><b>Status</b> (DRAFT of version 2 for DICTO\'s reading; this box is deleted at release)<ul>'
-          '<li>Version 2 adds the opening (Map of the Ladder), Chapters 3 to 8 (DICTO\'s published papers #20 and #48, #88, #65, #89, #90 and #91, set word for word '
-          'with their figures and references) and the closing Chapter 9. Chapters 1 and 2 are as in version 1.</li>'
-          '<li>Chapter order as proposed in the Map; Chapter 3 holds two papers (3A, 3B). The title of Chapter 9 (“The Top Rung”) is a working title, DICTO\'s to choose.</li>'
-          '<li>Chapter 3A: #20\'s earlier term replaced by “truncated triangle” throughout (DICTO\'s term rule), including the subtitle; the search report keeps the old term once, as searched. Chapter 3B: its opening summary label removed.</li>'
-          '<li>Cover: ladder version A, series colours (DICTO\'s choice, 6 November).</li></ul></div>')
+status = ''   # deleted at release (v2 released 6 November 2026 after DICTO's read ok)
 doc = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>The Golden Ladder</title>
 <link rel="stylesheet" href="../paper.css"><style>{css}</style></head><body>
