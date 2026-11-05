@@ -96,3 +96,13 @@ placements; (b) carrying the row direction through the relays by shape (would al
 - DECISION: route (a) continues with mirror copies allowed (6 placements per site) and tile+relay pairs. Next step (2): a SAT search for ONE key
   pattern on N (keys on the 10 faces, with positions, so mirror placements can be told apart) together with a decoding of pair placements to
   (Kari tile, row direction). Contact compatibility must imply Kari compatibility, and every Kari adjacency must be realised. Pilot first (<= 5 min, dicto-big-brother).
+
+## Route (a), step 2 pre-check (11-06): pairs fail per piece
+- Split a tile over a pair: the down piece shows the digit n and takes carry w; the up piece takes m = qn + w, shows s and gives carry e.
+  Kari x2/3: the down piece needs 8 states and the up piece 8 (scripts/mult_scan.py); one piece offers <= 6. So PAIRS FAIL locally;
+  step 1's 36 >= 30 count was too coarse (each piece must show its own faces).
+- Other multiplier pairs, as (tiles, down states, up states):
+    Culik-type x3 (6,4,6) / x1/2 (6,6,4) fits <= 6 everywhere but has the all-zero tile (rejected 11-05);
+    x3/2 + x1/2 still needs 8; x2 [1,2] + x1/3 needs 9.
+- So route (a) needs tiles spread over >= 3 sites (carry in bits, using the slab's second direction), or a fix for the Culik zero tile.
+  Next: (i) whether a marker can forbid the all-zero periodic tiling in the Culik set (that set fits 6 per piece); (ii) a 3-site split for Kari.
