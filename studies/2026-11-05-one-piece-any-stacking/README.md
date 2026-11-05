@@ -50,3 +50,24 @@ Count: one keyed N per Kari tile (Kari: 14; our generated set: see kari-key.json
 Open for 3c (one piece): fold the ~14 key patterns into a single key pattern on N, as Socolar–Taylor fold their rules into one hexagon (their
 R2 is realised by heights in a corrugated slab: a model for using N's height in the layer). Check first with SAT: N-shaped cells on the actual
 close-packed vertical-plane neighbourhoods (2 in-layer, 2 above, 2 below) instead of the square Wang grid.
+
+## Step 3b RESULTS (11-05 evening; scripts n_slabs.py, n_faces.py, reversed_rows.py, keyed_n_sat.py)
+1. NARCISSUS ALONE, ONE FREE BIT PER LAYER (n_slabs.py): a slab of N (down-N on X, up-N on Y, mid corners over Z) has both faces tiled by
+   the hexagons; the next slab = mirror in the top plane (STRAIGHT) or mirror + 60° turn about a hexagon centre (TURNED). Every word fills:
+   10 words incl. SSSSS (= h-tiling), TTTTT (= Covenant pairs), random mixes: every sample point in exactly one N (20 000 points each).
+   Exactly two choices per interface (the 60° turn is a honeycomb symmetry but not a slab symmetry). Closes "mixed stackings: open" (halves E13).
+2. FACE MAP (n_faces.py): hexagon -> the N across the interface; 3 quads -> the 3 opposite-pointing N of the slab; 6 vertical triangles ->
+   the 6 same-pointing N (triangular lattice). Turned slabs rotate pieces by 60°, a piece can turn only by 120°: rows read reversed there.
+3. REVERSED ROWS (reversed_rows.py): Kari's 14 tiles also tile right-to-left rows (carries K - g, K = -1 for x2, 1/3 for x2/3): no extra pieces.
+4. KEYED SET = 17 copies of N: 14 tile pieces (hexagon: input digit n + 3 bumps, x2 at the corners not over mid corners -> mates only TURNED,
+   x2/3 at the corners over mid corners -> only STRAIGHT; quad Q0 = output digit s; Q1,Q2 'p'; triangles az 0 / 180 = carry out / in, tagged
+   by q; others 'side') + 3 relays d = 0,1,2 (hexagon digit d + 3 holes over mid corners; one quad receives d; two 'r'; triangles 'rt').
+   p<->r forces every slab to be tiles on one sublattice and relays on the other.
+5. THEOREM (density argument, Kari's): in a slab every tile piece has q n + in = s + out, carries bounded -> dens(s) = q dens(n);
+   relays carry s down to n one slab lower by a lattice bijection -> x_{k-1} = q_k x_k, q = 2 (turned) or 2/3 (straight), x in [1/2, 2].
+   A periodic word multiplies x by 2^a/3^b != 1 per period: impossible. So EVERY tiling by the 17 keyed Narcissus has a NON-PERIODIC
+   stacking word (no tiling has a period with a vertical component). Existence: Kari's tilings (rows reversed in turned slabs) give one.
+6. SAT ON REAL GEOMETRY (keyed_n_sat.py; proper rotations only, actual face contacts; pilot W=6, D=2, 3 interfaces): 7 of 8 words SAT,
+   TTT UNSAT (three x2 rows exceed the range) as Kari predicts. Bug found and fixed first: coplanar triangles at other heights were taken as contacts.
+   Full scan (64 words, W=10): DBB study-runs/2026-11-05-one-piece/keyed-n-scan.log.
+Next (3c): fold the 17 keys into ONE keyed N (or few), as Socolar–Taylor fold theirs; physical key shapes (bumps/notches) for a print.
