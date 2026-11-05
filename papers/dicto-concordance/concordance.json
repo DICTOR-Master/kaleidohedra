@@ -10,8 +10,8 @@
   "Part 5B: every outside find was checked against its abstract or a reliable record (column “checked”); none is yet read in full, all stand “to read”. Unrefereed preprints found by the search are left out. Library copies: only Hermann is held so far."
  ],
  "title": "The DICTO Concordance",
- "date": "2026-11-04",
- "version": "version 1",
+ "date": "2026-11-05",
+ "version": "version 2",
  "papers": {
   "1": {
    "title": "DICTO skewed rhombic dodecahedron",
@@ -571,6 +571,18 @@
    "doi": "10.5281/zenodo.23934349",
    "date": "2026-11-04",
    "date_first": true
+  },
+  "95": {
+   "title": "Pentagons for the Kites",
+   "doi": "10.5281/zenodo.23968270",
+   "date": "2026-11-05",
+   "date_first": true
+  },
+  "96": {
+   "title": "Reading the Voids",
+   "doi": "10.5281/zenodo.23968272",
+   "date": "2026-11-05",
+   "date_first": true
   }
  },
  "strands": [
@@ -770,6 +782,10 @@
     {
      "n": "91",
      "adds": "draft: OG = H(μTI) ∩ φ²D*, and the Lesser and Greater Golden OG at the golden levels."
+    },
+    {
+     "n": "95",
+     "adds": "DICTO's pentagons for the kites: the cut OG (rectified truncated icosahedron, corners at the C60 bond centres), exact nonzero Dehn invariant, kits for the octet and every stacking (seven shapes), its Bull-horns adaptor, the pyrochlore network."
     }
    ],
    "links": [
@@ -820,6 +836,10 @@
     {
      "n": "93",
      "adds": "every caesium chloride pair and every Delian pair except the octet fills space in one way only."
+    },
+    {
+     "n": "96",
+     "adds": "reading the voids of a packing with spherical waves, harmonics and golden bricks; exact Dehn obstructions for the OG and its adaptors; the DICTO Void Keeper and the DICTO Golden Skin."
     }
    ],
    "links": []
@@ -859,7 +879,7 @@
     },
     {
      "n": "58",
-     "adds": "the series told in plain words, from the octet to every stacking."
+     "adds": "the series told from the octet to every stacking."
     },
     {
      "n": "93",
@@ -1139,6 +1159,10 @@
     {
      "n": "94",
      "adds": "the harmonic fingerprint of the sweep: the cubic tone Q4 is silent only at Icosaxes (μ = φ), whose corners are two icosahedra; Q8 also at the bronze station (√13 − 1)/2."
+    },
+    {
+     "n": "96",
+     "adds": "from the harmonic fingerprint (#94) to waves through a whole packing: the resonance line that led to Reading the Voids."
     }
    ],
    "links": [
@@ -2476,19 +2500,46 @@
    "name": "Narcissus",
    "what": "fixed HexOct h-piece (λ ≥ 3/8); self-mirroring (C3v); tiles space alone",
    "date": "2026-11-04",
-   "by": "DICTO"
+   "by": "DICTO",
+   "first": "HexOct: Narcissus and Covenant"
   },
   {
    "name": "Echo",
    "what": "ECHO IS A CUBE (checked 4 Nov: 8 corners, 6 square faces, all edges 1/√2 in ball units, all face angles 90°) — the fcc lattice’s small cube on its body diagonal; by \"one name per shape\" Echo names its ROLE (the c-layer piece, Narcissus’s companion), not a new shape — DICTO to confirm",
    "date": "2026-11-04",
-   "by": "DICTO"
+   "by": "DICTO",
+   "first": "HexOct: Narcissus and Covenant"
   },
   {
    "name": "Covenant",
    "what": "DICTO 4 Nov 2026: two Narcissus joined on their hexagons with a 60° turn — a convex dodecahedron of 12 parallelograms (14 corners, volume one ball), a 4-zone parallelohedron with c = 1/3 (three cube edges 1/√2 + one third of the body diagonal); fills space alone by translation. (Straight join = the twisted cube.)",
    "date": "2026-11-04",
-   "by": "DICTO"
+   "by": "DICTO",
+   "first": "HexOct: Narcissus and Covenant"
+  },
+  {
+   "name": "DICTO Void Keeper",
+   "what": "D133: the room adaptor of the densest lattice packing of the cut OG; with the cut OG it fills space by translation (#96).",
+   "date": "2026-11-05",
+   "by": "DICTO",
+   "first": "#96",
+   "d": "D133"
+  },
+  {
+   "name": "DICTO Golden Skin",
+   "what": "D134: the golden rhombohedra touching an OG on a lattice of its own five-fold axes, minus the OG; OG + skin + golden rhombohedron fill space, the skin as thin as wished, never zero (#96).",
+   "date": "2026-11-05",
+   "by": "DICTO",
+   "first": "#96",
+   "d": "D134"
+  },
+  {
+   "name": "DICTO Void set 1 (cut OG), DICTO Void set 2 (OG)",
+   "what": "Piece sets V1 cut OG + V2 Void Keeper; V3 OG + V4 Golden Skin + V5 prolate golden rhombohedron (#96).",
+   "date": "2026-11-05",
+   "by": "DICTO",
+   "first": "#96",
+   "d": ""
   }
  ],
  "concepts": [
@@ -3179,6 +3230,33 @@
     "fill"
    ],
    "by": "DICTO's idea (#45)"
+  },
+  {
+   "id": "spherical-waves",
+   "name": "spherical-wave reading",
+   "definition": "Every point of solid sends out a wave sin(kr)/(kr); at the packing's own wavelength the waves cancel in the gaps, so the dark places are the voids (#96).",
+   "first": "#96",
+   "used": [
+    "96"
+   ],
+   "strands": [
+    "fill",
+    "sweep"
+   ],
+   "by": "DICTO's idea (#96)"
+  },
+  {
+   "id": "rooms-windows",
+   "name": "rooms and windows",
+   "definition": "Reading the wave field like the electron density of a crystal: peaks are atoms, saddles bonds and rings (windows), minima cages (rooms); atoms − bonds + rings − cages = 0 (#96).",
+   "first": "#96",
+   "used": [
+    "96"
+   ],
+   "strands": [
+    "fill"
+   ],
+   "by": "DICTO's idea (#96)"
   }
  ],
  "triangle": [
@@ -5118,8 +5196,8 @@
     "source": "memory/feedback-list-sources-checked.md"
    },
    {
-    "rule": "BANNED: 'in plain words'",
-    "what": "FIRM 10-27 BANNED PHRASE \"in plain words\" (and kin: \"plainly\", \"simply put\", \"in plain terms\", \"in short\" as a label) in every paper, metadata, README, app text and message",
+    "rule": "BANNED: ''",
+    "what": "FIRM 10-27 BANNED PHRASE \"\" (and kin: \"plainly\", \"simply put\", \"in plain terms\", \"in short\" as a label) in every paper, metadata, README, app text and message",
     "source": "memory/feedback-banned-plain-words.md",
     "enforced_by": "papers/print.mjs refuses to print (exit 2)"
    },

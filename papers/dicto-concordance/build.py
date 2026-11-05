@@ -67,7 +67,7 @@ w(f'<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictosphere
 
 w('<p class="hook">This is a map of DICTO\'s work in one place, so that no detail has to be carried in the head. '
   '<b>Threads</b> follow one idea from paper to paper; <b>Names</b> lists every named solid, piece, family and rule with who named it and where it first appears; '
-  'the <b>Almanac of Concepts</b> says in plain words what each operation, law and method is and where it is used; '
+  'the <b>Almanac of Concepts</b> says what each operation, law and method is and where it is used; '
   'the last page puts every thread on the one triangle of mirrors. To find anything, look it up in Names or the Almanac and follow the paper numbers.</p>')
 
 # 1. Threads
@@ -105,7 +105,7 @@ for c in sorted(D['concepts'], key=lambda c: c['name'].lower()):
 
 # 4. Singularity
 w('<h2>4. The Singularity: One Triangle</h2>')
-w('<p>The Golden Ladder, chapter 1 (One Triangle, Three Numbers, draft of 4 November 2026) shows that the five Platonic solids come from three kaleidoscopes, '
+w('<p>The Golden Ladder, chapter 1 (One Triangle, Three Numbers; The Golden Ladder, DICTO DOI: 10.5281/zenodo.23966554) shows that the five Platonic solids come from three kaleidoscopes, '
   'the spherical triangles with angles 90°, 60° and 180°/p for p = 3, 4, 5, and that each carries one number, 2 cos(180°/p): φ for the dodecahedron and icosahedron (p = 5), '
   '√2 for the cube and octahedron (p = 4), 1 for the tetrahedron (p = 3). At p = 6 the triangle is flat and tiles the plane under the close-packed layer of balls, the setting of the stacking papers. '
   'The table places each thread by its number world and by the dimensions its papers reach.</p>')
@@ -155,7 +155,7 @@ for x in D['outside']:
     w(f'<tr><td>{e(x["field"])}</td><td>{e(x["cite"])}</td><td>{e(x["says"])}</td><td>{e(x["touches"])}</td><td>{e(x["kind"])}</td>'
       f'<td>{"yes" if x["lib"] else "to fetch"}</td><td>{e(x["conf"])}</td><td>{e(x["status"])}</td></tr>')
 w('</tbody></table>')
-w('<h3>5.6 Waiting for their volume</h3><p>Results found since the last version, with their study folder and the volume or version they go into (weekly batch).</p><table class="big"><thead><tr><th>Result</th><th>Study</th><th>Goes to</th></tr></thead><tbody>' + ''.join(f'<tr><td>{e(x["result"])}</td><td>{e(x["study"])}</td><td>{e(x["goes_to"])}</td></tr>' for x in G.get('waiting', [])) + '</tbody></table>')
+w('<h3>5.6 Waiting for their volume</h3><p>Results found since the last version, with their study folder and the volume or version they go into (released as soon as DICTO has read them).</p><table class="big"><thead><tr><th>Result</th><th>Study</th><th>Goes to</th></tr></thead><tbody>' + ''.join(f'<tr><td>{e(x["result"])}</td><td>{e(x["study"])}</td><td>{e(x["goes_to"])}</td></tr>' for x in G.get('waiting', [])) + '</tbody></table>')
 w('<p>Fields not yet consulted, named by the search: dislocation theory (each h ↔ c swap is a partial-dislocation glide); commensurate–incommensurate transitions; '
   'semi-discrete optimal transport (the weight walk); martensitic paths (Burgers, Kurdjumov–Sachs); topological interlocking and architected materials; '
   'realisation spaces of polytopes; hypersimplices (the octahedron is Δ(2, 4)); fulleride and cluster chemistry; multiply-twinned nanoparticles; hyperbolic tilings and holography.</p>')
