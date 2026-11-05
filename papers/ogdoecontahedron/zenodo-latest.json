@@ -1,0 +1,131 @@
+{
+ "latest": 23484398,
+ "meta": {
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "title": "The DICTO Ogdoecontahedron",
+  "creators": [
+   {
+    "name": "DICTO",
+    "affiliation": "Independent artist, Osaka, Japan",
+    "orcid": "0009-0001-2620-2036"
+   }
+  ],
+  "description": "<p>DICTO proposed turning the Spheres of Dharma, an exact endless nesting of six icosahedral solids, inside out. We include the cycle's in-between stage, the DICTO Truncated-Icosahedral Hecatodihedron, as a seventh station and take every station's polar reciprocal: the nesting reverses, and every station becomes a classical solid except one. The polar of the Hecatodihedron is new, and DICTO named it the <b>Ogdoecontahedron</b> for its 80 faces. It has 20 regular hexagons and 60 kites, 102 corners and 180 edges, only two edge lengths and two dihedral angles, no insphere and no midsphere, and 90 of its corners on one sphere, the inside-out image of the Hecatodihedron's 90 faces touching one sphere; every coordinate is exact in ℚ(√5). It is the pentakis dodecahedron with its 20 six-fold corners cut off flat. In the reversed cycle its 90 sphere corners lie on the icosidodecahedron's sphere, its hexagons hold the icosidodecahedron's triangles and its kites lie in the pentakis dodecahedron's faces. Its face arrangement is known (the dual of L0 applied to the dodecahedron, in the notation of the Antiprism software), but the metric solid was not found in the sources checked. Copies joined face to face on hexagons form a diamond network whose joints lie on a pyrochlore lattice; two such networks together are a body-centred cubic packing filling exactly (9225 − 3915√5)/608 ≈ 77.43% of space. It is neither a patch nor a cluster of the canonical (primitive) icosahedral quasicrystal; five of its periodic packings meeting round a five-fold axis are the subject of a separate paper (#30).</p><p>Data, scripts and exact check outputs are included (see README.md); the full studies are at https://github.com/DICTOR-Master/kaleidohedra (branch research: studies/2026-10-16-polar-dharma, studies/2026-10-16-ocd-pyrochlore, studies/2026-10-16-ogdoecontahedron-bridge). Computation, exact arithmetic and checking with Claude (Anthropic); an independent pre-publication check by Claude Fable. Explore DICTO's worlds in the apps: https://dictospheres.com</p><p><b>Version 2.</b> Version 2 adds one exact relation: the Ogdoecontahedron is the canonical pentakis dodecahedron with its 20 three-fold corners cut off at the truncated icosahedron's hexagon planes, an unnamed solid derived from a known one (see the Hecatodihedron paper, Version 2, DICTO DOI: 10.5281/zenodo.23360857).</p><p>View in the app: <a href=\"https://kaleidohedra.dictospheres.com/?open=bodhiPyro\">https://kaleidohedra.dictospheres.com/?open=bodhiPyro</a></p>",
+  "keywords": [
+   "Ogdoecontahedron",
+   "Hecatodihedron",
+   "polar reciprocation",
+   "dual polyhedron",
+   "icosahedral symmetry",
+   "pentakis dodecahedron",
+   "regular hexagon",
+   "kite",
+   "pyrochlore",
+   "body-centred cubic packing",
+   "lattice packing",
+   "exact arithmetic",
+   "golden ratio",
+   "Spheres of Dharma",
+   "quasicrystals",
+   "aperiodic order",
+   "Fibonacci chain",
+   "polyhedra",
+   "crystal structures"
+  ],
+  "related_identifiers": [
+   {
+    "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/research/studies/2026-10-16-polar-dharma",
+    "relation": "isSupplementedBy",
+    "resource_type": "dataset",
+    "scheme": "url"
+   },
+   {
+    "identifier": "10.5281/zenodo.23173809",
+    "relation": "isPartOf",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23360858",
+    "relation": "references",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23310833",
+    "relation": "references",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23345502",
+    "relation": "references",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23396361",
+    "relation": "references",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.1080/10586458.2014.956374",
+    "relation": "references",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.1016/S0925-7721(00)00007-9",
+    "relation": "references",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.1038/nmat1799",
+    "relation": "references",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23405029",
+    "relation": "isReferencedBy",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23345699",
+    "relation": "isPartOf",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23407107",
+    "relation": "isReferencedBy",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "https://dictospheres.com",
+    "relation": "isDocumentedBy",
+    "scheme": "url"
+   }
+  ],
+  "license": "cc-by-sa-4.0",
+  "access_right": "open",
+  "language": "eng",
+  "communities": [
+   {
+    "identifier": "dicto"
+   }
+  ],
+  "subjects": [
+   {
+    "term": "MSC2020 52B10: Three-dimensional polytopes",
+    "identifier": "https://zbmath.org/classification/?q=cc:52B10",
+    "scheme": "url"
+   },
+   {
+    "term": "MSC2020 52C23: Quasicrystals and aperiodic tilings",
+    "identifier": "https://zbmath.org/classification/?q=cc:52C23",
+    "scheme": "url"
+   },
+   {
+    "term": "MSC2020 82D25: Statistical mechanics of crystals",
+    "identifier": "https://zbmath.org/classification/?q=cc:82D25",
+    "scheme": "url"
+   }
+  ],
+  "notes": "Version 4 (20 October 2026): DICTO's ideas are now credited as his proposals (\"DICTO proposed …\" in place of \"DICTO asked …\"); the results are unchanged."
+ }
+}
