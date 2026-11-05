@@ -28,3 +28,11 @@ Greedy growth, darkest wave points first. One size: golden 27/33/39% (edges 0.16
 Growing in phi-steps (edges 0.16, /phi, /phi^2, ...): golden 27 -> 42 -> 58 -> 78 -> 84%; regular 21 -> 37 -> 53 -> 68 -> 81%; golden + regular together 84.2% (regular adds almost nothing).
 Golden beats regular although the room's tone is cubic (golden rhombohedra share the cut OG's five-fold directions). The smallest step (edge 0.023) is near the voxel size: treat the last step as rough.
 Dehn: golden and regular rhombohedra have dihedral angles that are rational multiples of pi (Dehn 0); the room's adaptor has Dehn = −Dehn(cut OG) ≠ 0 (exact, Theorem 2 of Pentagons for the Kites) → rhombi can never fill the room exactly; the leftover slivers carry the Dehn invariant.
+
+## Golden fill rendered, leftover traced (golden_fill.py, render_golden_fill.py; float, voxels N=72)
+4377 golden rhombohedra in 5 phi-steps fill 83.7%. Leftover 0.0534 of 0.3266: 371 pieces, but ONE connected piece holds 93% (it runs through the
+whole packing); 274 pieces of 1-2 voxels (grid dust) hold 2.5%. Skin test: 42% of the leftover lies within 1 voxel of the cut-OG surface
+(19% of all gap does), 58% within 2 (37%), 73% within 3 (58%). So the leftover = a skin on the cut-OG walls + a web through the room centre
+where rhombi grown from different seeds meet (grain boundaries, the cross in the picture). Next: grow ONE coherent golden grain (a patch of
+an icosahedral rhombohedral tiling, cut-and-project) to remove the grain boundaries; what remains is then the skin that carries the Dehn invariant.
+Figure: golden-fill.png.
