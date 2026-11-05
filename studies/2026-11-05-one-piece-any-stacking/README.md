@@ -143,3 +143,9 @@ placements; (b) carrying the row direction through the relays by shape (would al
 - What this leaves: (1) a separate down piece per slab type (with up pieces: 4 keyed pieces in all); (2) carries routed through the up pieces
   (zigzag over the quads), where C3v does not act simply transitively and the count differs; (3) multiplier pairs whose carry groups have the
   same sizes in both slab types (none among the scales tried with <= 6 tiles); (4) edge keys where 3+ pieces meet (no one-to-one mating).
+- Step 2b (carry_scan.py, dicto-big-brother, FINAL in 191 s, carry-scan.log): 791 two-branch maps (q1 in {2,3,3/2,4/3,5/2,5/3}, q2 < 1,
+  7 scales, 5 interval ratios). NONE has <= 6 tiles in both branches without a zero tile (n = s = 0), so the joint carry test never ran.
+  Small tile sets come only with zero tiles (as in Culik a = 1/3), and the zero tiles bring back the flag. CONCLUSION (a) so far: in this
+  Kari/Culik architecture, one keyed Narcissus is blocked twice, by the carry partitions (2a) and by the zero-tile flag (count); 3-4 keyed pieces is
+  the count's best. A single piece needs a new mechanism: edge keys where 3+ pieces meet (Socolar–Taylor), or a non-arithmetic aperiodic set
+  (e.g. a substitution or Jeandel–Rao-type set) whose per-site states fit 6.
