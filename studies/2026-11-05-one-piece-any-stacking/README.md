@@ -83,3 +83,16 @@ Next (3c): fold the 17 keys into ONE keyed N (or few), as Socolar–Taylor fold 
 CONCLUSION 3c (so far): with layered Kari keying, 17 keyed Narcissus is where this architecture stands (14 tiles + 3 relays); fewer needs a
 new mechanism: (a) Socolar–Taylor-type rules reaching second neighbours (shape features across a neighbour), folding tile identity into
 placements; (b) carrying the row direction through the relays by shape (would allow the single relay -> 15); (c) mirror placements (6 per site).
+
+## Route (a), step 1 (11-06): how much one piece can carry per site
+- In an N-only slab every site is fixed as down (X) or up (Y); a keyed piece fits a site in at most 6 ways (3 turns, and 3 mirror placements
+  if mirror copies of the keyed piece are allowed), only 3 ways without mirror copies.
+- Kari's set has 4 tiles for x2 and 10 tiles for x2/3 (keyed_n_sat.py list). In this design, tiles sit on down sites, so a x2/3 slab needs 10 states per down site.
+  10 > 6: ONE KEYED PIECE CANNOT CARRY ONE KARI TILE PER SITE. This holds with or without mirror copies; it is a count, not a search.
+- Way out: spread each tile over a PAIR of sites. The pair is the down tile piece plus the up piece at its output quad Q0, which is the relay already joined
+  to it in the 17-piece set. The pair must carry the tile (10) and the slab's row direction (3), which is 30 states:
+    with mirror copies 6 x 6 = 36 >= 30: the count passes;
+    without mirror copies 3 x 3 = 9 < 30, and even 3^3 = 27 < 30: it needs clusters of 4 or more sites.
+- DECISION: route (a) continues with mirror copies allowed (6 placements per site) and tile+relay pairs. Next step (2): a SAT search for ONE key
+  pattern on N (keys on the 10 faces, with positions, so mirror placements can be told apart) together with a decoding of pair placements to
+  (Kari tile, row direction). Contact compatibility must imply Kari compatibility, and every Kari adjacency must be realised. Pilot first (<= 5 min, dicto-big-brother).
