@@ -11,3 +11,19 @@ DICTO's aim (5 Nov): a single RD/TRD-cross piece that fills space alone and can 
    (Aubrun–Sablik 2013; Durand–Romashchenko–Shen 2012: every effective 1D subshift is a row projection of a 2D SFT). So the stacking can be forced
    only if the in-plane pattern carries hierarchical information and the turn reads it. Hard, but not ruled out.
 NEXT (step 3): read Socolar–Taylor, then map their markings onto the Narcissus layer and SAT-test.
+
+## Step 3 (11-05, DICTO "go ahead with 1")
+Socolar–Taylor digest (DBB study-runs/2026-11-05-one-piece/digest.md, from arXiv 1003.4279 and 1009.1419):
+- 2D monotile: R1 stripes continuous across edges; R2 flags agree between SECOND neighbours (tiles one edge apart); mirror image required
+  (Narcissus is self-mirroring: free); hierarchical, scale factor 2, limit-periodic; paperfolding sequences along rays.
+- Their 3D tile ("congruent to its reflection", can be a topological sphere): "corrugated slabs of the limit-periodic pattern that stack
+  PERIODICALLY in the direction orthogonal to the nonperiodic tiling plane"; one slab = three sublattices at different heights (R2 made geometric).
+=> ROUTE 3 ALONE CLOSED for the aim: an in-layer ST key gives aperiodic layers but allows periodic stacking (their own 3D tile does exactly that).
+DESIGN for ROUTE 4 ("the hierarchy on its side"): in a close-packed stacking, a vertical plane along a row of touching pieces is combinatorially a
+triangular lattice (2 neighbours in-layer, 2 above, 2 below) = ST's hexagon tiling with its ROWS = our LAYERS. Put a scale-2 hierarchical SFT
+(ST or Robinson type) into that plane; add a ROW label equal along each row and tied to the row's level parity (v2 of the row index mod 2);
+tie the layer's c/h choice to that label → the stacking word is forced to be the PERIOD-DOUBLING sequence (aperiodic). Planes repeat
+periodically sideways. This is the Aubrun–Sablik / Durand–Romashchenko–Shen escape from the 1D obstruction, made concrete.
+NEXT: (a) SAT model of the combinatorial key (vertical-plane hierarchy + row label + c/h), test: no periodic solution on tori up to a size,
+patches exist, stacking word forced; (b) geometry: can the c/h layer shift be read by Narcissus faces in the vertical plane; (c) compress the
+labels into keys on ONE piece (as ST compress Robinson-like rules into one hexagon).
