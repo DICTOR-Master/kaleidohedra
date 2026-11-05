@@ -38,3 +38,15 @@ the vertical plane decides c/h (c iff consecutive shifts equal).
   map itself is allowed and only ONE extra appears (the tie at x = 1, which both multipliers accept).
 Overnight (DBB study-runs/2026-11-05-one-piece/kari-overnight.log): tori to 30x30, words to height 16 at width 40, orbit comparison.
 Next: 3b geometry (Narcissus faces in the vertical plane carrying the shift and the tile colours as keys); 3c one piece.
+
+## Step 3b (11-05): where the key sits on Narcissus (design note, no computation yet)
+Narcissus N (HexOct chapter): two N joined on their hexagonal faces, the upper turned over, make the twisted cube when put on STRAIGHT and Covenant
+when TURNED by 60°. So the stacking choice at each layer interface is already a join type of N on its hexagon: straight or turned.
+Mapping of the Kari key: (1) vertical Wang colours (north/south digits 0, 1, 2) and the row's multiplier tag sit as keys on N's hexagonal faces;
+(2) horizontal carries (tagged by multiplier) sit on the lateral faces along one in-layer row direction (the vertical plane's rows); the other
+in-layer directions carry no key, so planes repeat sideways; (3) the multiplier ↔ join type coupling: hexagon keys drawn so that x2-tagged keys
+mate only when the join is straight and x2/3-tagged keys only when turned by 60° (a key pattern with 3-fold symmetry plus a 60°-distinguishing mark).
+Count: one keyed N per Kari tile (Kari: 14; our generated set: see kari-key.json), so step 3b gives ~14 keyed copies of ONE shape.
+Open for 3c (one piece): fold the ~14 key patterns into a single key pattern on N, as Socolar–Taylor fold their rules into one hexagon (their
+R2 is realised by heights in a corrugated slab: a model for using N's height in the layer). Check first with SAT: N-shaped cells on the actual
+close-packed vertical-plane neighbourhoods (2 in-layer, 2 above, 2 below) instead of the square Wang grid.
