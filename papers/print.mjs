@@ -5,6 +5,7 @@ import { chromium } from 'playwright';
 import path from 'node:path';
 const here = path.dirname(new URL(import.meta.url).pathname);
 const [dir, pdf, title, doi, ver] = process.argv.slice(2);
+if (!title || title === 'undefined') { console.error('GUARD: short title missing (arg 3): footer would read "undefined"'); process.exit(4); }
 // BANNED-PHRASE GUARD (DICTO FIRM rules; built in 5 Nov 2026 so no PDF can carry them). Override only with ALLOW_BANNED=1.
 import fs from 'node:fs';
 { const txt = fs.readFileSync(path.join(here, dir, 'paper.html'), 'utf8').replace(/<[^>]+>/g, ' ');
