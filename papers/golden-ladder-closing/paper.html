@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>The Top Rung</title>
+<link rel="stylesheet" href="../paper.css">
+<style>table{border-collapse:collapse;font-size:8.4pt;margin:3mm 0;width:100%} td,th{border-bottom:1px solid #ddd;padding:0.8mm 1.4mm;text-align:left;vertical-align:top}
+p.hook{font-style:italic;color:#4a3f2a;border-left:2px solid #c9a24a;padding-left:3mm} figure{margin:3mm 0;break-inside:avoid} figure img{width:100%;display:block} figcaption{font-size:8.2pt;color:#333;margin-top:1.5mm}
+.status{border:2px solid #a00;border-radius:2mm;padding:2mm 3mm;margin:3mm 0;font-size:9pt;color:#300;background:#fff6f6} .status ul{margin:1mm 0 0 4mm;padding:0} h2,h3{break-after:avoid} table{break-inside:avoid}
+.thm{border-left:3px solid #b8962e;padding-left:3mm;margin:3mm 0}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>The Top Rung<br><span style="font-size:0.72em;font-weight:normal">E8 and Its Golden Twist · The Golden Ladder, closing chapter</span></h1>
+<p class="sub">In eight dimensions the 240 roots of E8 fold down into two 600-cells, one the golden ratio times the other; the twist that swaps them is the golden twist of the whole book, and the eight rings of the E8 picture stand in the ratios of the eight particle masses of E8</p>
+<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>
+The Golden Ladder: Golden Cuts from Plato to the Fourth Dimension · closing chapter · 5 November 2026 · Licence CC BY-SA 4.0 · Study: studies/2026-11-05-golden-ladder-e8 (research branch)<br>
+DICTO proposed an opening and a closing chapter to frame the book, with the 8D rung, E8 and its golden twist, at the top of the ladder. Computation and drafting with Claude (Anthropic).</div>
+<div class="status"><b>Status</b> (draft for DICTO's reading; this box is deleted when the chapter goes into the volume)<ul>
+<li>Title “The Top Rung” is a working title: DICTO's to choose.</li>
+<li>Goes into The Golden Ladder as its last chapter, after the rung chapters (#20 and #48, #88, #65, #89, #90, #91) and “Silence Is Golden”; the book's next version only after DICTO's read ok of the whole.</li>
+<li>Everything here is classical except the reading of it as the ladder's top rung; no new theorem is claimed. All numbers recomputed (scripts e8_icosian.py).</li></ul></div>
+
+<p class="hook">Climb the ladder of this book: a golden bond in the plane, two golden cuts on every Platonic solid, golden pairs as slices of four-dimensional solids. At the top, in eight dimensions, stands one of the most symmetric arrangements of points known, the 240 roots of E8. Fold it down to four dimensions and it splits cleanly into two 600-cells, one the golden ratio times the other. The ladder ends where it began: on one golden step.</p>
+
+<h2>1. Two 600-cells in one</h2>
+<p>The 600-cell is the four-dimensional solid of 120 corners that the Alicia chapters walk through as the White Queen (#63). Written as quaternions, its 120 corners are the <b>unit icosians</b>: eight of the form (±1, 0, 0, 0), sixteen of the form ½(±1, ±1, ±1, ±1), and ninety-six even permutations of ½(±φ, ±1, ±1/φ, 0). Sums and products of icosians stay among the numbers a + b√5 with rational a and b, and Conway and Sloane read the size N(q) = a + b√5 of an icosian simply as a + b. With that reading the icosians become the E8 lattice.</p>
+<div class="thm"><b>Theorem (classical).</b> The 240 shortest vectors of E8, its roots, are the 120 unit icosians and the 120 unit icosians divided by φ. In four dimensions they are two concentric 600-cells, of radius 1 and of radius 1/φ.</div>
+<p><b>Check.</b> A unit icosian has N = 1, read as 1. One divided by φ has N = 1/φ² = (3 − √5)/2, read as 3/2 − 1/2 = 1: the same length. Multiplied by φ instead, N = φ² is read as 2, longer, so these are not roots. We built the 240 vectors in eight dimensions (the icosian and its golden conjugate side by side, weighted so that the reading a + b becomes ordinary length) and checked: all 240 have the same length; any two meet at 0°, 60°, 90°, 120° or 180°; each has exactly 56 neighbours at 60°; together they span all eight dimensions. These are the properties that single out the root system of E8. In four dimensions the two groups of 120 lie on spheres of radius 1 and 1/φ = 0.618034; in each, every point has 12 nearest neighbours at distance radius/φ, 720 edges in all: two 600-cells, in golden ratio.</p>
+
+<h2>2. The golden twist</h2>
+<p>Every number of this book has a golden twin: replace √5 by −√5, and φ = 1.618… becomes −1/φ = −0.618…. Applied to the icosians, the twist keeps the unit icosians on a sphere of radius 1 but turns the small 600-cell, of radius 1/φ, into a large one, of radius φ. The eight-dimensional root is the icosian and its twin side by side; looked at from the twin's side, the small 600-cell is the large one. This is the same golden twist that DICTO's Double Vision shows for his golden cycles (#33): two exact settings of one structure, swapped by φ ↔ −1/φ.</p>
+
+<h2>3. Thirty, and the eight masses</h2>
+<p>The best-known picture of E8 looks straight down its Coxeter plane, the plane in which its fundamental symmetry of order 30 is a rotation. The 240 roots fall on eight rings of 30 (Figure 1). Measured in this picture the ring radii stand in the ratios</p>
+<p style="text-align:center">1 : 1.618034 : 1.989044 : 2.404867 : 2.956295 : 3.218340 : 3.891157 : 4.783386,</p>
+<p>which are, to five decimals, the eight particle masses that Zamolodchikov (1989) found for a chain of magnetic spins at its critical point, a theory with E8 symmetry; Koca and Koca (2012) note the equality of these masses with the ring radii. The second mass is φ times the first, and the ratio close to 1.6 was measured in the magnet cobalt niobate by Coldea and colleagues (2010). Four of the eight are golden pairs: m₂ = φ·m₁, m₆ = φ·m₃, m₇ = φ·m₄ and m₈ = φ·m₅. In each ring the roots of both 600-cells mix; the golden step lives in the radii.</p>
+<figure><img src="figures/e8-two-600-cells.png" alt="The 240 roots of E8 on its Coxeter plane, eight rings of thirty, coloured gold and violet by the 600-cell they belong to"><figcaption>Figure 1. The 240 roots of E8 on its Coxeter plane: eight rings of 30. Gold: the 600-cell of radius 1 (the unit icosians); violet: the 600-cell of radius 1/φ. Grey lines join roots at 60°. The ring radii are in the ratios of the eight E8 masses.</figcaption></figure>
+
+<h2>4. Looking down the ladder</h2>
+<table><tr><th>rung</th><th>what is golden</th><th>chapter</th></tr>
+<tr><td>2D</td><td>the truncated triangle and the golden bond</td><td>#20, #48</td></tr>
+<tr><td>3D</td><td>every Platonic solid has exactly two golden cuts</td><td>#88</td></tr>
+<tr><td>4D</td><td>the 120-cell and its polar, the 600-cell</td><td>#65</td></tr>
+<tr><td>4D</td><td>all five golden pairs are slices of four-dimensional solids</td><td>#89</td></tr>
+<tr><td>6D</td><td>golden on the octahedron, silver on the cube</td><td>#90</td></tr>
+<tr><td>4D</td><td>solids whose every cell is a golden cut</td><td>#91</td></tr>
+<tr><td>4D</td><td>the golden stations of the sweeps as limits of multiplets</td><td>Silence Is Golden</td></tr>
+<tr><td>8D</td><td>E8: two 600-cells in golden ratio, swapped by the golden twist</td><td>this chapter</td></tr></table>
+<p>Chapter 1 began with one triangle of mirrors carrying one number, 1, √2 or φ. The φ triangle builds the icosahedron and dodecahedron; its four-dimensional cousin builds the 600-cell and 120-cell; and E8, the largest of the exceptional symmetries, holds two 600-cells in golden ratio. Read from the top, the whole ladder is the φ triangle climbing.</p>
+
+<h2>5. Known and new</h2>
+<p><b>Known:</b> the icosians and their reading as E8 (Conway and Sloane, ch. 8); the four-dimensional quasicrystal from E8 (Elser and Sloane 1987; Moody and Patera 1993); E8 grown from the icosahedron (Dechant 2016; Baez 2018); the E8 masses (Zamolodchikov 1989), their measurement (Coldea et al. 2010) and their equality with the ring radii (Koca and Koca 2012). <b>This chapter:</b> the reading of these as the top rung of the book's ladder and as its golden twist; every number above recomputed (study 2026-11-05-golden-ladder-e8).</p>
+<p class="small"><b>Sources checked:</b> the reference library (search “E8 icosians 600-cell golden ratio Elser Sloane Moody Patera Dechant”, 5 Nov 2026; the E8 works were then added to it); arXiv records of Dechant 2016, Baez 2018 and Koca–Koca 2012, read.</p>
+
+<h2>Sources</h2>
+<p class="small">J. H. Conway, N. J. A. Sloane, Sphere Packings, Lattices and Groups, 3rd ed., Springer (1999), ch. 8 §2. V. Elser, N. J. A. Sloane, A highly symmetric four-dimensional quasicrystal, J. Phys. A 20 (1987) 6161–6168. R. V. Moody, J. Patera, Quasicrystals and icosians, J. Phys. A 26 (1993) 2829–2853. P.-P. Dechant, The birth of E8 out of the spinors of the icosahedron, Proc. R. Soc. A 472 (2016) 20150504, arXiv:1602.05985. J. C. Baez, From the icosahedron to E8, London Math. Soc. Newsletter 476 (2018), arXiv:1712.06436. A. B. Zamolodchikov, Integrals of motion and S-matrix of the (scaled) T = Tc Ising model with magnetic field, Int. J. Mod. Phys. A 4 (1989) 4235–4248. R. Coldea et al., Quantum criticality in an Ising chain: experimental evidence for emergent E8 symmetry, Science 327 (2010) 177–180. M. Koca, N. O. Koca, Radii of the E8 Gosset circles as the mass excitations in the Ising model, arXiv:1204.4567 (2012). DICTO, Double Vision, #33, DICTO DOI: 10.5281/zenodo.23407107. DICTO, The White Queen 600-cell, #63, DICTO DOI: 10.5281/zenodo.23690856. DICTO, The Red Queen 120-cell, #65, DICTO DOI: 10.5281/zenodo.23716140.</p>
+</body></html>
