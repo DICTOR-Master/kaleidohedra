@@ -48,7 +48,7 @@ out = []
 w = out.append
 w('<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><title>The DICTO Concordance</title>\n<link rel="stylesheet" href="../paper.css">\n<style>'
   'p.hook{font-style:italic;color:#4a3f2a;border-left:2px solid #c9a24a;padding-left:3mm}'
-  'table.grid{font-size:7.4pt;border-collapse:collapse;width:100%}table.grid td,table.grid th{border:1px solid #ccc;padding:0.6mm 1mm}td.gap{background:#fbeede}ol.rk li{margin-bottom:1mm}span.out{color:#4a3f2a}'
+  'table.grid{font-size:7.4pt;border-collapse:collapse;width:100%;table-layout:fixed}table.grid td,table.grid th{overflow-wrap:anywhere;word-break:break-word}table.grid td,table.grid th{border:1px solid #ccc;padding:0.6mm 1mm}td.gap{background:#fbeede}ol.rk li{margin-bottom:1mm}span.out{color:#4a3f2a}'
   '.status{border:2px solid #a00;border-radius:2mm;padding:2mm 3mm;margin:3mm 0;font-size:8.6pt;color:#300;background:#fff6f6}.status ul{margin:1mm 0 0 4mm;padding:0}'
   'h2{break-before:page}h2.first{break-before:auto}h3{font:600 10.5pt "DejaVu Sans",sans-serif;color:#6b5310;margin:9pt 0 2pt;break-after:avoid}'
   'p.about{margin:0 0 2pt;font-style:italic}ul.th{margin:0 0 2pt;padding-left:4mm;font-size:9.2pt}ul.th li{margin:0 0 1pt;break-inside:avoid}'
@@ -85,7 +85,7 @@ for i, s in enumerate(D['strands'], 1):
 # 2. Names
 w('<h2>2. Names</h2>')
 w(f'<p>{len(D["names"])} entries, alphabetical (a leading “DICTO” is passed over in the order). “Named by” is taken from the paper\'s credit line or text; '
-  '“see #N” means the text read for this draft does not say who chose the name; “placeholder” marks a name waiting for DICTO\'s choice. '
+  '“see #N” means the text read for this draft does not say who chose the name; '
   'First: the paper or finding (F) where the name first appears; D: the number in the DICTOnary.</p>')
 w('<table class="big"><thead><tr><th>Name</th><th>Named by</th><th>First</th><th>D</th><th>Also called · note</th></tr></thead><tbody>')
 for x in D['names']:
