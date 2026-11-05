@@ -92,15 +92,17 @@ status = ('<div class="status"><b>Status</b> (DRAFT of version 2 for DICTO\'s re
           'with their figures and references) and the closing Chapter 9. Chapters 1 and 2 are as in version 1.</li>'
           '<li>Chapter order as proposed in the Map; Chapter 3 holds two papers (3A, 3B). The title of Chapter 9 (“The Top Rung”) is a working title, DICTO\'s to choose.</li>'
           '<li>Chapter 3A: #20\'s earlier term replaced by “truncated triangle” throughout (DICTO\'s term rule), including the subtitle; the search report keeps the old term once, as searched. Chapter 3B: its opening summary label removed.</li>'
-          '<li>Cover still to design (DICTO\'s yes needed).</li></ul></div>')
+          '<li>Cover: ladder version A, series colours (DICTO\'s choice, 6 November).</li></ul></div>')
 doc = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>The Golden Ladder</title>
 <link rel="stylesheet" href="../paper.css"><style>{css}</style></head><body>
+<div class="coverpage" style="height:252mm;display:flex;justify-content:center;align-items:center;break-after:page">
+<img src="figures/cover/golden-ladder-cover-front.png" alt="Cover: The Golden Ladder, DICTO, a ladder whose rungs are golden shapes from 2D to 8D" style="height:248mm;display:block"></div>
 <img class="watermark" src="../dicto-logo.png" alt="">
 <img class="logo" src="../dicto-logo.png" alt="DICTO">
 <h1>The Golden Ladder<br><span style="font-size:0.72em;font-weight:normal">Golden Cuts from Plato to the Fourth Dimension</span></h1>
 <div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>
-Book · Version 2 · 6 November 2026 · DICTO DOI: 10.5281/zenodo.23966554 · Licence CC BY-SA 4.0 · Part of DICTO: Collected Geometric Works (DICTO DOI: 10.5281/zenodo.23345699)</div>
+Book · Version 2 · 6 November 2026 · DICTO DOI: 10.5281/zenodo.23966554 · Licence CC BY-SA 4.0 · Part of DICTO: Collected Geometric Works (DICTO DOI: 10.5281/zenodo.23345699)<br>Cover (DICTO's choice): a ladder of golden rails whose rungs climb the dimensions: the truncated triangle with sides in the golden ratio (2D); Icosaxes and Unborn Axes (3D); the 120-cell (4D); and E8 as two 600-cells, one φ times the other, in the Coxeter plane (8D).</div>
 {status}
 {tochtml}
 <div class="chapter">{mapbody}</div>
