@@ -21,3 +21,10 @@ lattice minus all cut-OG copies. Result: ONE solid, genus 0, volume 0.326555 = g
 cut OGs 0; cut OG (77.6%) + adaptor (22.4%) fill space, both by translation only. Adaptor / convex hull 0.307, sphericity 0.374.
 Central symmetry about the room centre holds by the packing's symmetry (the vertex check failed on boolean mesh artefacts; corner filter to do).
 Figure room-adaptor.png. Open: exact form, name (DICTO's), whether a flatter split (wave basins instead of Voronoi) gives a nicer piece.
+
+## Growing rhombi into the room (DICTO: "together with harmonics, with growing golden or regular rhombi"; grow_rhombi.py, grow_rhombi2.py; float, voxels N=72)
+Harmonics of the room (radius from the room centre): odd l all 0 (room symmetric through its centre); l=4 holds 0.50 of the non-round part (cubic tone), l=6 0.14, l=8 0.11, l=10 0.08.
+Greedy growth, darkest wave points first. One size: golden 27/33/39% (edges 0.16/0.11/0.075), regular 20/29/37%.
+Growing in phi-steps (edges 0.16, /phi, /phi^2, ...): golden 27 -> 42 -> 58 -> 78 -> 84%; regular 21 -> 37 -> 53 -> 68 -> 81%; golden + regular together 84.2% (regular adds almost nothing).
+Golden beats regular although the room's tone is cubic (golden rhombohedra share the cut OG's five-fold directions). The smallest step (edge 0.023) is near the voxel size: treat the last step as rough.
+Dehn: golden and regular rhombohedra have dihedral angles that are rational multiples of pi (Dehn 0); the room's adaptor has Dehn = −Dehn(cut OG) ≠ 0 (exact, Theorem 2 of Pentagons for the Kites) → rhombi can never fill the room exactly; the leftover slivers carry the Dehn invariant.
