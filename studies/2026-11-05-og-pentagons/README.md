@@ -66,3 +66,12 @@ Golden rhombohedra add only rational multiples of π. PSLQ (80 digits, coefficie
 angles (hexagon rim 156.1998°, kite ridge 156.7186°, cut-OG pentagon edge 159.9232°) and β, δ, π; none jointly either.
 → Golden pieces (rhombohedra + golden tetrahedra, any scales) cannot cancel the OG's Dehn invariant: no completely golden fill (strong numerical
 evidence; a proof would need a Conway–Radin–Sadun-type independence result for angles with cos² in Q(√5)). Answers #96 §6's open question (for a v3).
+
+## 11-05 Mixed stackings close with the same seven shapes (gyro_mixed.py; float, manifold booleans)
+Layers −1..3; boundary −1|0 twin, then 0|1, 1|2, 2|3 = t/o patterns (o = octet continuation, t = twin mirror). Every edge pair gets a connector
+(0 without), overlap 0, in all runs:
+- "tot": 95 octahedra, 270 tetrahedra; 257 octet + 171 twin connectors. Octahedra between a twin and an octet boundary keep 3 twin corner pieces
+  (0.07707) + 3 corner pieces (0.07826); tetrahedra: twin dented (0.4059) next to twin planes, dented (0.39725) elsewhere.
+- "oto": 304 octet + 114 twin connectors; the same pieces (merged groups 0.15652 = 2×0.07826, 0.15533 = 0.07707 + 0.07826).
+- "ttt": as the fully gyrated test.
+=> "Any stacking with 7 shapes (10 with mirrors)" now tested directly on mixed stackings, not only argued. Closes #95 §5's "mixed-stacking test".
