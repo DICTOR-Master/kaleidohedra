@@ -71,3 +71,15 @@ close-packed vertical-plane neighbourhoods (2 in-layer, 2 above, 2 below) instea
    TTT UNSAT (three x2 rows exceed the range) as Kari predicts. Bug found and fixed first: coplanar triangles at other heights were taken as contacts.
    Full scan (64 words, W=10): DBB study-runs/2026-11-05-one-piece/keyed-n-scan.log.
 Next (3c): fold the 17 keys into ONE keyed N (or few), as Socolar–Taylor fold theirs; physical key shapes (bumps/notches) for a print.
+
+## Step 3b full scan (DBB keyed-n-scan.log, W=10, D=2, 6 interfaces): 48/64 words SAT; all 16 UNSAT words contain TTT (Kari: no three x2 rows);
+   4 words with TTT stay SAT where the TTT touches the free top slab. FINAL ok 433 s.
+## Step 3c (11-05 late): reductions tried
+- Culik-type set (x3 on [1/3,2/3], x1/2 on (2/3,2]; culik_tiles.py): 12 q-tagged tiles, reversed rows OK (K=-2, 1/2), BUT it contains the
+  all-zero tile (n=s=0, carries 0) in x1/2 rows: an all-zero, all-straight tiling is periodic. REJECTED (Kari's digit sets keep x >= 1/2).
+- One relay instead of three (digit = relay rotation, mark on hexagon): the slab below reads the mark relative to ITS OWN row direction, and
+  row directions of consecutive slabs are independent (3 choices each), so digits could be read cyclically shifted: proof breaks. A relay would
+  need digit x orientation = 9 states > 3 rotations. REJECTED in this architecture.
+CONCLUSION 3c (so far): with layered Kari keying, 17 keyed Narcissus is where this architecture stands (14 tiles + 3 relays); fewer needs a
+new mechanism: (a) Socolar–Taylor-type rules reaching second neighbours (shape features across a neighbour), folding tile identity into
+placements; (b) carrying the row direction through the relays by shape (would allow the single relay -> 15); (c) mirror placements (6 per site).
