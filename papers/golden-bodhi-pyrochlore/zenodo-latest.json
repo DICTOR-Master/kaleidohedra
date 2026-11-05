@@ -1,0 +1,108 @@
+{
+ "latest": 23484394,
+ "meta": {
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "title": "Golden Bodhi Pyrochlore",
+  "creators": [
+   {
+    "name": "DICTO",
+    "affiliation": "Independent artist, Osaka, Japan",
+    "orcid": "0009-0001-2620-2036"
+   }
+  ],
+  "description": "<p>Copies of the DICTO Ogdoecontahedron joined face to face on their hexagons form a body-centred cubic packing that fills (9225 − 3915√5)/608 ≈ 77.43% of space (DICTO DOI: 10.5281/zenodo.23404688). This paper is about the remaining 22.57%. Exactly, in ℚ(√5): each copy&#x27;s share of the gap is its Voronoi cell, a truncated octahedron, minus the solid, and cones from the centre over the 72 free faces cut it into 72 convex pieces of 3 kinds whose volumes add up with remainder 0. Asking what could fill the gap more naturally, DICTO proposed partners, bridges, hexagonal limbs and adapters. The limbs are tilted hexagonal prisms, one per free hexagon, which cross in pairs at the centres of the cell&#x27;s square faces; their crossing zone has exactly two golden-rhombus faces, the faces of the rhombic triacontahedron and the golden rhombohedra. From there a golden fill suggests itself: golden rhombohedra, DICTO&#x27;s Cleo-Icos as adapters from hexagons to golden planes, and the Bodhi pieces, which are all bounded by golden-rhombus planes. Each copy&#x27;s golden envelope is a rhombic triacontahedron; cut at the joints, the envelopes divide the packing into 77.4% solid, 11.8% non-golden shell and 10.7% golden region. But the golden region does not divide naturally into Bodhi pieces: cut canonically by every golden plane, even in DICTO&#x27;s five-fold chorus arrangement, it shatters into 8,027 pieces (exact), with only five Bodhi pieces among them. So we ask what any golden fill must contain. Exactly: the golden region&#x27;s walls are golden planes except for 24 small star-tip triangles per cell, which lie in the three-fold joint planes and meet the neighbouring golden faces at 20.905° (cos² = φ²/3), so golden rhombohedra and Bodhi pieces alone can never fill it. One adapter removes the obstruction: the GBPC (Golden Bodhi Pyrochlore Corner), a low triangular pyramid shaped like the rhombic triacontahedron&#x27;s three-fold corner and the golden conjugate of DICTO&#x27;s Cleo-Ico, 24 per cell, overlapping nothing. What remains has only golden walls and five-fold edges, and no local obstruction is left. But it has no face-to-face tiling by golden rhombohedra: for one size, its walls fix the edge at a rational multiple of φ and a Galois-conjugate count then demands a negative number of oblate rhombohedra (exact; the counting step checked independently); and a face-to-face tiling cannot mix sizes. Whether it tiles other than face to face is open; random and symmetric searches fill at most 66.9% of it, and flat slabs between second neighbours need golden layers of sizes our searches did not use. DICTO&#x27;s own answer to the gap is not golden but whole: cut point by point at the octahedral holes of the bcc lattice, three per copy, each between six copies, the gap falls into identical pieces, the Bull-horns OG adaptor, partly golden-faced, each exactly one third of a copy&#x27;s gap, (18728 − 6296√5)/41553 ≈ 0.111898 or 7.5223% of space; copies and adaptors fill space exactly with two shapes. Float explorations are labelled as such.</p><p>More of DICTO's geometry: <a href=\"https://dictospheres.com\">https://dictospheres.com</a></p><p>View in the app: <a href=\"https://kaleidohedra.dictospheres.com/?open=bodhiPyro\">https://kaleidohedra.dictospheres.com/?open=bodhiPyro</a></p>",
+  "keywords": [
+   "Ogdoecontahedron",
+   "Golden Bodhi Pyrochlore",
+   "GBPC",
+   "Bull-horns OG adaptor",
+   "body-centred cubic packing",
+   "space filling",
+   "rhombic triacontahedron",
+   "golden rhombohedra",
+   "pyrochlore",
+   "octahedral holes",
+   "icosahedral symmetry",
+   "exact arithmetic",
+   "polyhedra",
+   "Voronoi tessellation",
+   "power diagram",
+   "space-filling polyhedra",
+   "tilings",
+   "golden ratio",
+   "crystal structures"
+  ],
+  "related_identifiers": [
+   {
+    "identifier": "https://github.com/DICTOR-Master/kaleidohedra/tree/research/studies/2026-10-16-ocd-pyrochlore",
+    "relation": "isSupplementedBy",
+    "resource_type": "dataset",
+    "scheme": "url"
+   },
+   {
+    "identifier": "10.5281/zenodo.23173809",
+    "relation": "isPartOf",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23404688",
+    "relation": "references",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23396361",
+    "relation": "references",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23378070",
+    "relation": "references",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23311353",
+    "relation": "references",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23351291",
+    "relation": "references",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23360858",
+    "relation": "references",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "https://dictospheres.com",
+    "relation": "isDocumentedBy",
+    "scheme": "url"
+   }
+  ],
+  "license": "cc-by-sa-4.0",
+  "access_right": "open",
+  "language": "eng",
+  "subjects": [
+   {
+    "term": "MSC2020 52B10: Three-dimensional polytopes",
+    "identifier": "https://zbmath.org/classification/?q=cc:52B10",
+    "scheme": "url"
+   },
+   {
+    "term": "MSC2020 52C22: Tilings in n dimensions",
+    "identifier": "https://zbmath.org/classification/?q=cc:52C22",
+    "scheme": "url"
+   },
+   {
+    "term": "MSC2020 82D25: Statistical mechanics of crystals",
+    "identifier": "https://zbmath.org/classification/?q=cc:82D25",
+    "scheme": "url"
+   }
+  ],
+  "notes": "Version 3 (20 October 2026): DICTO's ideas are now credited as his proposals (\"DICTO proposed …\" in place of \"DICTO asked …\"); the results are unchanged.",
+  "version": "3",
+  "publication_date": "2026-10-20"
+ }
+}
