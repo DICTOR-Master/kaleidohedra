@@ -36,3 +36,13 @@ whole packing); 274 pieces of 1-2 voxels (grid dust) hold 2.5%. Skin test: 42% o
 where rhombi grown from different seeds meet (grain boundaries, the cross in the picture). Next: grow ONE coherent golden grain (a patch of
 an icosahedral rhombohedral tiling, cut-and-project) to remove the grain boundaries; what remains is then the skin that carries the Dehn invariant.
 Figure: golden-fill.png.
+
+## The room completed (complete_room2.py; float, manifold booleans)
+One coherent golden tiling (de Bruijn dual grid on the cut OG's six five-fold axes), 3 phi-steps (tile edges 0.100, 0.062, 0.038), tiles kept only
+when wholly inside the room (checked one by one) and clear of every kept tile (checked pair by pair: 0 overlaps; the all-at-once union of
+1055 face-sharing tiles loses 0.05% to the boolean tool, so it is not used for accounting).
+COMPLETE: room 0.326554827 = 1055 whole golden rhombohedra (0.125707) + 12172 golden rhombohedra of the finest step trimmed by the cut-OG walls
+and the room faces (0.200871); sum 0.326578, diff 2.4e-05 (7e-5 relative, float accumulation over 12k pieces).
+Every piece is a golden rhombohedron, whole or trimmed; only the trimmed ones carry the Dehn invariant. Trimmed pieces hold 61.5% of the room
+at this depth (coarse tiles may not cross the room faces). Practical kit not yet: too many trimmed pieces; deeper steps and tiles crossing room
+faces would raise the whole share.
