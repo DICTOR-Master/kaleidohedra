@@ -58,3 +58,11 @@ Two edge classes: 60 kite–kite, length (9+√5)/57, dihedral 156.718554°, cos
 angle is not a rational multiple of π (shown for the cut OG); the kite–kite angle neither (cos of degree 2, n ≤ 12 checked). PROOF: Dehn(OG) ≠ 0.
 Consequence (DICTO 11-05, "completely golden solution"): golden rhombohedra (Dehn 0) can never complete any packing of the OG or the cut OG;
 the obstruction sits only on the edges (kite ridges, hexagon rims) → a near-golden completion needs edge wedges carrying exactly these angles.
+
+## 11-05 Golden tetrahedra cannot complete the OG either (numerical, strong)
+Ogievetsky–Papadopolos 1999 (library): every dihedral angle of the six golden tetrahedra is, modulo π, a rational combination of two angles
+β = arccos((τ+1)/(√3√(τ+2))), δ = arccos((τ−1)/(√3√(τ+2))) (their Lemma 1 re-checked to 81 digits); Mosseri–Sadoc tiles (AXE, CLEO) are in the same span.
+Golden rhombohedra add only rational multiples of π. PSLQ (80 digits, coefficients ≤ 10^6): NO integer relation between any of the OG / cut-OG
+angles (hexagon rim 156.1998°, kite ridge 156.7186°, cut-OG pentagon edge 159.9232°) and β, δ, π; none jointly either.
+→ Golden pieces (rhombohedra + golden tetrahedra, any scales) cannot cancel the OG's Dehn invariant: no completely golden fill (strong numerical
+evidence; a proof would need a Conway–Radin–Sadun-type independence result for angles with cos² in Q(√5)). Answers #96 §6's open question (for a v3).
