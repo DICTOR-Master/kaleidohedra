@@ -119,3 +119,14 @@ placements; (b) carrying the row direction through the relays by shape (would al
   zero tiles. Every zero-free scale needs 8-12 states per piece. So (i) ends at: Culik a = 1/3 + key, with the key's flag costing 8. Open: carry the flag
   through the vertical neighbour or a third site, which is (ii).
 - (ii) flag carried by the UP pieces through their side contacts (culik_flag_on_up.py): down 6 / up 7 in x1/2 rows (x3: 4 / 6). ONE STATE SHORT of 6; next: merge two of the up states (e.g. drop z_prev where the check cannot fire).
+- Split B (culik_split2.py): the DOWN piece holds the whole tile (6 states in x3 rows, 6 in x1/2 rows: fits); the UP piece shows s, passes
+  carry e and the key flag. Up piece: 6 (x3), and 5 (x1/2) WITHOUT the flag, 7 with it. The flag alone costs the extra state: a rigid key
+  cannot "accept either value" (a hole facing a flat face leaves a cavity, a bump facing a flat face overlaps), so every receiver needs one
+  placement per value it accepts.
+- So by count: one keyed piece fails by exactly the zero-key's flag. Without the zero-key, the Culik set fits 6 everywhere but tiles
+  periodically. THREE keyed pieces pass the count (down piece; up piece for x3 slabs and up piece for x1/2 slabs, or the x1/2 up role split
+  over two pieces), against 17 now.
+- Ways round the flag for ONE piece: (1) a key at an EDGE where three or more pieces meet (Socolar–Taylor-type, second neighbours), so that a bump can
+  go into either of two pieces and "accept either" becomes possible; (2) a scale or multiplier pair with no zero digits that still fits 6
+  (scale_scan: none among the families tried).
+- Next: SAT on real Narcissus geometry for a 3-piece key pattern (counts allow it), then try the edge key (1) to merge to one.
