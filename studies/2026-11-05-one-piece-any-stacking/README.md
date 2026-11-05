@@ -115,3 +115,6 @@ placements; (b) carrying the row direction through the relays by shape (would al
   below; all densities are bounded away from 0 and Theorem 2's argument applies. WORKS as a Wang set (12 tiles + key).
 - Cost (culik_rule_counts.py): the key's flag makes the x1/2 down piece need 8 states (> 6). Not yet one piece.
 - Next: rescale the interval so that zero digits cannot arise at all (scale_scan.py).
+- Rescaling (scale_scan.py, a = 1/4 ... 1, both families): ONLY Culik at a = 1/3 keeps every piece at <= 6 states, and it is the one with the
+  zero tiles. Every zero-free scale needs 8-12 states per piece. So (i) ends at: Culik a = 1/3 + key, with the key's flag costing 8. Open: carry the flag
+  through the vertical neighbour or a third site, which is (ii).
