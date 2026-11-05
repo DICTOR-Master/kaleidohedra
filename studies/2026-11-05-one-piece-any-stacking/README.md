@@ -106,3 +106,12 @@ placements; (b) carrying the row direction through the relays by shape (would al
     x3/2 + x1/2 still needs 8; x2 [1,2] + x1/3 needs 9.
 - So route (a) needs tiles spread over >= 3 sites (carry in bits, using the slab's second direction), or a fix for the Culik zero tile.
   Next: (i) whether a marker can forbid the all-zero periodic tiling in the Culik set (that set fits 6 per piece); (ii) a 3-site split for Kari.
+
+## Route (a)(i) (11-06): repairing the Culik-type set (dicto-big-brother, culik_nozero.py, culik_rule.py; each FINAL in 6-22 s)
+- Removing only the all-zero tile: 11 tiles; tori 2x2..6x6 are still SAT, because (n=0,s=0,w=e=1/2) gives an x=0 row. REJECTED.
+- Removing both n=s=0 tiles: tori UNSAT, but the 16x16 square is UNSAT, so the set no longer tiles. REJECTED.
+- KEY "no two side-by-side n=0 in x1/2 rows" (true rows have x >= 2/3, so two steps add >= 1): tori 2x2..6x6 all UNSAT; free squares
+  8..64 all SAT. Proof idea: a vertical period gives densities; x1/2 rows have n-density >= 1/2 by the key, and x3 rows put s >= 1 into the row
+  below; all densities are bounded away from 0 and Theorem 2's argument applies. WORKS as a Wang set (12 tiles + key).
+- Cost (culik_rule_counts.py): the key's flag makes the x1/2 down piece need 8 states (> 6). Not yet one piece.
+- Next: rescale the interval so that zero digits cannot arise at all (scale_scan.py).
