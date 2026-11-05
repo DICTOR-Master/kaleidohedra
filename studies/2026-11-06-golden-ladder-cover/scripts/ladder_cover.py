@@ -142,5 +142,6 @@ def make(version):
     yy = L.paste(panel, big, N / 2, 70); yy = L.paste(panel, sub, N / 2, yy + 70); L.paste(panel, by, N / 2, yy + 80)
     out = Image.new('RGB', (W, Hc), GROUND); out.paste(lad, (0, 0)); out.paste(Image.fromarray(np.clip(panel, 0, 255).astype(np.uint8)), (0, LADH))
     out.save(f'../golden-ladder-cover-{version}.png'); print('saved', version, flush=True)
-for v in sys.argv[1:] or ['A', 'B']: make(v)
-print('FINAL OK')
+if __name__ == '__main__':
+    for v in sys.argv[1:] or ['A', 'B']: make(v)
+    print('FINAL OK')
