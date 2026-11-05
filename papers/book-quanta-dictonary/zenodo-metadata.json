@@ -1,6 +1,7 @@
 {
  "upload_type": "publication",
  "publication_type": "book",
+ "title": "The DICTOnary of Atoms: Quanta of Space II",
  "creators": [
   {
    "name": "DICTO",
@@ -8,25 +9,7 @@
    "orcid": "0009-0001-2620-2036"
   }
  ],
- "language": "eng",
- "license": "cc-by-sa-4.0",
- "access_right": "open",
- "subjects": [
-  {
-   "term": "MSC2020 52C22: Tilings in n dimensions",
-   "identifier": "https://zbmath.org/classification/?q=cc:52C22",
-   "scheme": "url"
-  },
-  {
-   "term": "MSC2020 51M20: Polyhedra and polytopes; regular figures, division of spaces",
-   "identifier": "https://zbmath.org/classification/?q=cc:51M20",
-   "scheme": "url"
-  }
- ],
- "version": "1.0",
- "publication_date": "2026-11-05",
- "title": "The DICTOnary of Atoms: Quanta of Space II",
- "description": "<p>The DICTOnary of Atoms (DICTO's word: “DICTO” in “Dictionary”) is Volume II of DICTO's book Quanta of Space. Volume I, Quanta of Space: A Manifesto, tells the works in six chapters, Atoms, Bonds, Shells, Cycles, Stacking and Four dimensions; this volume holds their shapes and their numbers.</p><p>Each entry is read like an entry in a dictionary. The headword is the D-number and the name: D1, D2 … are DICTO's permanent numbers for his new single solids and pieces, in order of first publication and never reused; known shapes keep the numbers their first makers gave them. The definition is the picture, drawn from the exact model file in the data set DICTO Solids: Exact Geometry, the data, and the source: the paper by number and DICTO DOI, with the chapter of Volume I that tells it.</p><p>It holds the catalogue of all the atoms: DICTO's 132 new shapes, D1 to D132 (the HexOct tiles of #75 and #86 are D110 to D118, the 14 golden cut solids of #88 and #89 D119 to D132), and his 37 new clusters, structures and networks, with those not yet drawn; the data, work by work, one section per work (A.8 to A.51, A.DB for the DICTONIC SOLIDS and BONDS, A.K for the Kaleidohedra findings, A.D for the data set), with the exact values, volumes, proof sketches and checks as published; and the 27 known and rediscovered shapes the work builds with.</p><p>The cover is the DICTO square of Volume I, the five Platonic solids of DICTO's name, D I C T O, in a five by five square, with each solid cut to its Greater Golden Cut solid of #88 and gold letters, and the title below. DICTO is the artist name of (Alan) J. Baker. The papers, apps and data of this work are free to use; every one is open access, under the licence CC BY-SA 4.0. Computation, checking and drafting with Claude (Anthropic). More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
+ "description": "<p>The DICTOnary of Atoms (DICTO's word: \"DICTO\" in \"Dictionary\") is Volume II of DICTO's book Quanta of Space. Volume I, Quanta of Space: A Manifesto, tells the works in six chapters, Atoms, Bonds, Shells, Cycles, Stacking and Four dimensions; this volume holds their shapes and their numbers.</p><p>Each entry is read like an entry in a dictionary. The headword is the D-number and the name: D1, D2 … are DICTO's permanent numbers for his new single solids and pieces, in order of first publication and never reused; known shapes keep the numbers their first makers gave them. The definition is the picture, drawn from the exact model file in the data set DICTO Solids: Exact Geometry, the data, and the source: the paper by number and DICTO DOI, with the chapter of Volume I that tells it.</p><p>It holds the catalogue of all the atoms: DICTO's 132 new shapes, D1 to D132 (the HexOct tiles of #75 and #86 are D110 to D118, the 14 golden cut solids of #88 and #89 D119 to D132), and his 37 new clusters, structures and networks, with those not yet drawn; the data, work by work, one section per work (A.8 to A.51, A.DB for the DICTONIC SOLIDS and BONDS, A.K for the Kaleidohedra findings, A.D for the data set), with the exact values, volumes, proof sketches and checks as published; and the 27 known and rediscovered shapes the work builds with.</p><p>The cover is the DICTO square of Volume I, the five Platonic solids of DICTO's name, D I C T O, in a five by five square, with each solid cut to its Greater Golden Cut solid of #88 and gold letters, and the title below. DICTO is the artist name of (Alan) J. Baker. The papers, apps and data of this work are free to use; every one is open access, under the licence CC BY-SA 4.0. Computation, checking and drafting with Claude (Anthropic). More at <a href=\"https://dictospheres.com\">dictospheres.com</a>.</p>",
  "keywords": [
   "DICTO",
   "quanta of space",
@@ -419,6 +402,29 @@
    "identifier": "https://dictospheres.com",
    "relation": "isDocumentedBy",
    "scheme": "url"
+  },
+  {
+   "identifier": "10.5281/zenodo.23968272",
+   "relation": "references",
+   "scheme": "doi"
   }
- ]
+ ],
+ "license": "cc-by-sa-4.0",
+ "access_right": "open",
+ "language": "eng",
+ "subjects": [
+  {
+   "term": "MSC2020 52C22: Tilings in n dimensions",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C22",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 51M20: Polyhedra and polytopes; regular figures, division of spaces",
+   "identifier": "https://zbmath.org/classification/?q=cc:51M20",
+   "scheme": "url"
+  }
+ ],
+ "version": "1.1",
+ "publication_date": "2026-11-05",
+ "notes": "Version 1.1 (5 November 2026): adds D133 DICTO Void Keeper and D134 DICTO Golden Skin (from #96 Reading the Voids)."
 }
