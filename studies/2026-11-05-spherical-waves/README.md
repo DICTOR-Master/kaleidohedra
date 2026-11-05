@@ -52,3 +52,6 @@ Room = the Bull-horns OG adaptor rebuilt from its definition (Voronoi cell of th
 (The stored mesh bh-full.json is rounded to 6 decimals; on import the boolean tool re-joins nearly flat triangles and gains 0.4% → always rebuild.)
 One coherent golden tiling on the OG's five-fold axes, 3 phi-steps (edges 0.080, 0.049, 0.031): 994 whole golden rhombohedra = 48.7% of the
 adaptor; 7473 trimmed = 51.3%; sum = adaptor within 7e-5 (float). Deeper run (5 steps) on DBB: bh-golden-5.log.
+5 phi-steps (bh-golden-5.log): steps 4, 5 (edges 0.019, 0.012): whole golden bricks 58.1%, 66.3%. COMPLETE: adaptor 0.111898443 = 12483 whole golden
+rhombohedra (0.074140) + 83924 trimmed (0.037761); diff 3.3e-06 (3e-5 relative). Render bh-golden-fill.png (3 steps): the bricks fill the body of the
+adaptor; its horns (thin arms reaching between OGs) are where the trimmed pieces sit.
