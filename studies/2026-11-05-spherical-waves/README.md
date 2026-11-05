@@ -14,3 +14,10 @@ Critical points of the wave field per cell (read as in electron density): 1 atom
 - One gap ROOM per copy (cage at fractional (1, ½, ½)); four window points per cell in the gap → each room opens through 8 windows: the gap is one connected network of rooms.
 - 12 contacts per copy = 6 pairs: 5 read as bonds; the 6th pair (lattice direction b1 + b3) reads as a ring point inside the pieces — probably the 2 triangle-to-triangle contacts (to check).
 Views inside the cell through the room: lattice-views.png.
+
+## Closing the room (close_room.py, render_room_adaptor.py; float, manifold booleans)
+Room centre = fractional (0, ½, ½) (grid index offset corrected), an inversion centre of the packing. Adaptor = Voronoi cell of the room-centre
+lattice minus all cut-OG copies. Result: ONE solid, genus 0, volume 0.326555 = gap per copy exactly; adaptor copies overlap 0, overlap with the
+cut OGs 0; cut OG (77.6%) + adaptor (22.4%) fill space, both by translation only. Adaptor / convex hull 0.307, sphericity 0.374.
+Central symmetry about the room centre holds by the packing's symmetry (the vertex check failed on boolean mesh artefacts; corner filter to do).
+Figure room-adaptor.png. Open: exact form, name (DICTO's), whether a flatter split (wave basins instead of Voronoi) gives a nicer piece.
