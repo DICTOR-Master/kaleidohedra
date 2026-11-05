@@ -51,3 +51,10 @@ Diamond nodes (cut OGs) + the empty second diamond together form a bcc lattice; 
   + 6 square pieces 1.7914 (solid, genus 0). Symmetry of the arrangement = Th (24): squares one rotation orbit, achiral;
   hexagon pieces one Th orbit with only C3 on each → left/right pair, 4 + 4 (by symmetry; float matcher noisy on this data).
 KIT: cut OG (equal-edge) + truncated octahedron + hexagon ring L/R + square piece = 4 shapes (5 with mirrors) fill space; pyrochlore sites = the joint hexagons.
+
+## 11-05 Exact Dehn of the ORIGINAL OG (dehn_exact_og.py)
+Two edge classes: 60 kite–kite, length (9+√5)/57, dihedral 156.718554°, cos(normal angle) = (80+9√5)/109; 120 kite–hexagon, length² = 2/9 − 2√5/27
+(= the cut OG's triangle–hexagon edges: same length, same 156.199817°). L2 involves √3, L1 lies in Q(√5): rationally independent. The hexagon-rim
+angle is not a rational multiple of π (shown for the cut OG); the kite–kite angle neither (cos of degree 2, n ≤ 12 checked). PROOF: Dehn(OG) ≠ 0.
+Consequence (DICTO 11-05, "completely golden solution"): golden rhombohedra (Dehn 0) can never complete any packing of the OG or the cut OG;
+the obstruction sits only on the edges (kite ridges, hexagon rims) → a near-golden completion needs edge wedges carrying exactly these angles.
