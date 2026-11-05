@@ -46,3 +46,9 @@ and the room faces (0.200871); sum 0.326578, diff 2.4e-05 (7e-5 relative, float 
 Every piece is a golden rhombohedron, whole or trimmed; only the trimmed ones carry the Dehn invariant. Trimmed pieces hold 61.5% of the room
 at this depth (coarse tiles may not cross the room faces). Practical kit not yet: too many trimmed pieces; deeper steps and tiles crossing room
 faces would raise the whole share.
+
+## Bull-horns basis (DICTO 5 Nov: "how about using bullhorns as basis"; bh_golden.py)
+Room = the Bull-horns OG adaptor rebuilt from its definition (Voronoi cell of the hole among all holes minus the 6 OGs): volume 0.111898 = published.
+(The stored mesh bh-full.json is rounded to 6 decimals; on import the boolean tool re-joins nearly flat triangles and gains 0.4% → always rebuild.)
+One coherent golden tiling on the OG's five-fold axes, 3 phi-steps (edges 0.080, 0.049, 0.031): 994 whole golden rhombohedra = 48.7% of the
+adaptor; 7473 trimmed = 51.3%; sum = adaptor within 7e-5 (float). Deeper run (5 steps) on DBB: bh-golden-5.log.
