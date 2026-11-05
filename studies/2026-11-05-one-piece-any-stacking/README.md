@@ -27,3 +27,14 @@ periodically sideways. This is the Aubrun–Sablik / Durand–Romashchenko–She
 NEXT: (a) SAT model of the combinatorial key (vertical-plane hierarchy + row label + c/h), test: no periodic solution on tori up to a size,
 patches exist, stacking word forced; (b) geometry: can the c/h layer shift be read by Narcissus faces in the vertical plane; (c) compress the
 labels into keys on ONE piece (as ST compress Robinson-like rules into one hexagon).
+
+## Step 3a: the combinatorial key works (kari_key.py; exact arithmetic, SAT)
+Engine: Kari's aperiodic Wang tiles (rows multiply by 2 or 2/3), generated exactly; carries tagged by multiplier so a row cannot mix (first run
+without tags let periodic tilings through: caught by the calibration). Rows = layers; x2 row = c, x2/3 row = h; each row's left/right shift in
+the vertical plane decides c/h (c iff consecutive shifts equal).
+- Calibration: open 24x24 block exists; NO periodic tiling on any torus up to 10x10 (100 tori).
+- Key: on a 12x12 torus UNSAT (no periodic stacking survives).
+- Stacking words allowed (width 24): height 6: 9, height 8: 12, height 10: 18 (unkeyed: 64, 256, 1024). Read top-down, every word of Kari's
+  map itself is allowed and only ONE extra appears (the tie at x = 1, which both multipliers accept).
+Overnight (DBB study-runs/2026-11-05-one-piece/kari-overnight.log): tori to 30x30, words to height 16 at width 40, orbit comparison.
+Next: 3b geometry (Narcissus faces in the vertical plane carrying the shift and the tile colours as keys); 3c one piece.
