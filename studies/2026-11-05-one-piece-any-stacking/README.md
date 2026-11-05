@@ -130,3 +130,16 @@ placements; (b) carrying the row direction through the relays by shape (would al
   go into either of two pieces and "accept either" becomes possible; (2) a scale or multiplier pair with no zero digits that still fits 6
   (scale_scan: none among the families tried).
 - Next: SAT on real Narcissus geometry for a 3-piece key pattern (counts allow it), then try the edge key (1) to merge to one.
+
+## Route (a), step 2a (11-06): the carry channel of ONE keyed down piece (carry_channel.py, brute force, < 1 min on the Pi)
+- Model: the down piece in all 6 placements (C3v: 3 turns, 3 mirrors); placement g plays tile t3(g) in x3 slabs and t2(g) in x1/2 slabs (Culik
+  a = 1/3); row neighbours meet OUT triangle to IN triangle (opposite azimuths, all 6 row directions tried); one key per triangle, mating by an
+  involution (rigid bumps and holes: each key has exactly one mate).
+- Each slab type alone: 48 of 720 assignments work, for every row direction. Both at once: NONE.
+- PROOF (it is a count): C3v acts simply transitively on the 6 side triangles, so every triangle is the OUT face of exactly one placement. Keys
+  that mate one-to-one force: two triangles have equal keys exactly when their placements give equal outgoing carries. So the 6 placements
+  must split into the same groups by carry in both slab types. Culik x3: carries -2, -1, 0, each on 2 tiles (groups 2+2+2); x1/2: 0, 1/2,
+  each on 3 tiles (3+3). These cannot be the same partition. ONE KEYED DOWN PIECE CANNOT CARRY THE ROW CARRIES THROUGH ITS SIDE TRIANGLES.
+- What this leaves: (1) a separate down piece per slab type (with up pieces: 4 keyed pieces in all); (2) carries routed through the up pieces
+  (zigzag over the quads), where C3v does not act simply transitively and the count differs; (3) multiplier pairs whose carry groups have the
+  same sizes in both slab types (none among the scales tried with <= 6 tiles); (4) edge keys where 3+ pieces meet (no one-to-one mating).
