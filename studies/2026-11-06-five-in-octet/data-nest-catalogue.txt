@@ -1,0 +1,30 @@
+Inscriptions (outer > inner): edge ratio inner/outer, volume share of outer
+  cube         > icosahedron   edge x0.618034  volume 0.5150  (icosahedron touching all six faces (golden))
+  cube         > octahedron    edge x0.707107  volume 0.1667  (face centres)
+  cube         > tetrahedron   edge x1.414214  volume 0.3333  (four corners)
+  dodecahedron > cube          edge x1.618034  volume 0.5528  (eight corners)
+  dodecahedron > icosahedron   edge x1.170820  volume 0.4569  (face centres)
+  dodecahedron > tetrahedron   edge x2.288246  volume 0.1843  (four corners)
+  icosahedron  > dodecahedron  edge x0.539345  volume 0.5511  (face centres)
+  icosahedron  > octahedron    edge x1.144123  volume 0.3236  (six edge midpoints (on the axes))
+  octahedron   > cube          edge x0.471405  volume 0.2222  (face centres)
+  octahedron   > icosahedron   edge x0.540182  volume 0.7295  (Pacioli: golden points of the edges)
+  octahedron   > tetrahedron   edge x0.666667  volume 0.0741  (four face centres)
+  tetrahedron  > octahedron    edge x0.500000  volume 0.5000  (edge midpoints)
+
+Chains through all five (14), sizes (edge) with the outer solid of edge 1:
+  D 1.0000 > I 1.1708 > O 1.3396 > C 0.6315 > T 0.8930
+  D 1.0000 > C 1.6180 > I 1.0000 > O 1.1441 > T 0.7627
+  D 1.0000 > C 1.6180 > T 2.2882 > O 1.1441 > I 0.6180
+  D 1.0000 > T 2.2882 > O 1.1441 > C 0.5393 > I 0.3333
+  I 1.0000 > D 0.5393 > C 0.8727 > T 1.2342 > O 0.6171
+  I 1.0000 > D 0.5393 > C 0.8727 > O 0.6171 > T 0.4114
+  I 1.0000 > D 0.5393 > T 1.2342 > O 0.6171 > C 0.2909
+  C 1.0000 > I 0.6180 > D 0.3333 > T 0.7627 > O 0.3814
+  C 1.0000 > T 1.4142 > O 0.7071 > I 0.3820 > D 0.2060
+  C 1.0000 > O 0.7071 > I 0.3820 > D 0.2060 > T 0.4714
+  T 1.0000 > O 0.5000 > I 0.2701 > D 0.1457 > C 0.2357
+  T 1.0000 > O 0.5000 > C 0.2357 > I 0.1457 > D 0.0786
+  O 1.0000 > I 0.5402 > D 0.2913 > C 0.4714 > T 0.6667
+  O 1.0000 > C 0.4714 > I 0.2913 > D 0.1571 > T 0.3596
+FINAL ok
