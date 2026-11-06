@@ -35,4 +35,4 @@ vball = ConvexHull(ball(0, 0)[0]).volume
 f_ball = 2 * vball / cellvol                              # two balls per in-plane cell (checkerboard)
 print(f"layer periods |P1| {np.linalg.norm(P1):.4f}, |P2| {np.linalg.norm(P2):.4f}; best stacking: h = {h:.4f} at shift ({a:.3f}, {b:.3f}) of the cell")
 print(f"balls fill {f_ball:.4f} of space (ball volume {vball:.4f}); the rest, {1 - f_ball:.4f}, is bridges + gap to cut into pieces")
-print("FINAL ok")
+print("FINAL ok" if np.isfinite(h) and 0.5 < h < 6.0 else "FINAL FAIL (no stacking found in range)")

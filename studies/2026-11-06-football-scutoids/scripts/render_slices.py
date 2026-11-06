@@ -1,6 +1,6 @@
 """Figure for step 2b: slices of the football crystal's cells parallel to the layers, below the layer's middle plane, at the scutoid move,
 and at the middle plane. Cell X(0,0,0) outlined; colours: this layer light/dark (X/Y), layer below and above in two other tones."""
-import sys, numpy as np, matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
+import os, sys, numpy as np, matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 sys.argv = [sys.argv[0], sys.argv[1] if len(sys.argv) > 1 else '0.12']
 exec(open('cut_cells.py').read().split('# slices')[0])
 WS = [(-0.30, 'low: 8 neighbours'), (-0.14, 'just before the move'), (-0.10, 'just after: the diagonal\nneighbours meet, the blue cell is pushed out'), (0.0, 'middle plane: hexagons, 6 neighbours')]
@@ -27,4 +27,4 @@ fig.suptitle('Footballs in pentagon-hexagon layers: the cells sliced parallel to
 fig.text(0.5, 0.06, 'sand / brown: this layer (two orientations)   blue: layer below (the panels climb to the middle plane; above it the picture mirrors with the layer above)   DICTO · dictospheres.com',
          ha='center', fontsize=9, family='serif', color='#5a4630')
 plt.savefig('../football-slices.png', dpi=130, facecolor=fig.get_facecolor(), bbox_inches='tight')
-print('FINAL ok')
+print("FINAL ok" if os.path.getsize("../football-slices.png") > 10000 else "FINAL FAIL (figure missing or empty)")

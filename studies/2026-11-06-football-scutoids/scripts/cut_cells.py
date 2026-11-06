@@ -14,7 +14,12 @@ exec(open('grid_layer.py').read().split('# overlap test')[0].replace('print(', '
 from football import F
 n = np.cross(e1, e2); n /= np.linalg.norm(n)
 P1, P2 = 2 * D * e1, D * (e1 + e2)
-h, A, B = 3.6224, 0.0, 0.444                    # data-stack.txt
+import os, json
+if os.environ.get('STACK', 'loose') == 'tight':   # closest stacking (stack_exact.py / stack_solve.py, bridges included)
+    _S = json.load(open('../data-stack-exact.json')); h, A, B = _S['h'], _S['a'], _S['b']
+else:                                            # step 2a stacking (coarse grid, balls only; free of overlaps with bridges too)
+    h, A, B = 3.6224, 0.0, 0.444
+print(f"stacking {os.environ.get('STACK', 'loose')}: h {h:.6f}, shift ({A:.6f}, {B:.6f})")
 T = h * n + A * P1 + B * P2
 M = np.array([P1, P2, T])                        # rows: cell vectors; two balls per cell: (0,0) X and (1,0) Y
 def tri_samples(P, step):
@@ -91,4 +96,4 @@ for k1, k2 in itertools.combinations(same, 2):
     if s1 and s2 and not (s1 & s2) and len(s1 | s2) >= N3 - 2: swaps.append((k1, k2))
 print(f"same-layer contacts that hand over to another pair through the layer (scutoid move candidates): {len(swaps)}")
 for k1, k2 in swaps: print(f"  {k1} slices {min(contacts[k1])}..{max(contacts[k1])}  <->  {k2} slices {min(contacts[k2])}..{max(contacts[k2])}")
-print("FINAL ok")
+print("FINAL ok" if len(contacts) > 0 else "FINAL FAIL (no contacts found)")

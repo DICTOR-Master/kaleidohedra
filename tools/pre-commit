@@ -8,4 +8,9 @@ for f in $(git diff --cached --name-only --diff-filter=AM | grep -E '(^|/)[^/]*d
     echo "BLOCKED: $f holds a crash or failed run (re-run with tools/runjob.py)"; bad=1; fi
 done
 for f in $(git diff --cached --name-only --diff-filter=A | grep -E '\.(part|FAILED)$'); do echo "BLOCKED: $f is a runjob scratch file"; bad=1; done
+# DICTO only-happens-once (7 Nov 2026): "FINAL ok" must be earned by a check, never printed unconditionally.
+for f in $(git diff --cached --name-only --diff-filter=AM | grep -E '^studies/.*\.py$'); do
+  if git show ":$f" | grep -qE "^[[:space:]]*print\((\"FINAL ok\"|'FINAL ok')\)[[:space:]]*(#.*)?$"; then
+    echo "BLOCKED: $f prints FINAL ok unconditionally - make it print(\"FINAL ok\" if <check> else \"FINAL FAIL ...\")"; bad=1; fi
+done
 exit $bad

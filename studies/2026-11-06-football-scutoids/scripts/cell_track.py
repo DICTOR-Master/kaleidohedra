@@ -40,4 +40,4 @@ for r, nm in ref.items():
         swaps_total += sum(1 for s in kind if s.startswith('SWAP'))
         print(f"   slice {k} (w {-1 + (k + 0.5) * 2 / NS:+.3f}): " + "; ".join(sorted(kind)))
 print(f"SWAP events (neighbour changes among cells present on both sides): {swaps_total}")
-print("FINAL ok")
+print("FINAL ok" if all(len(hist[r][k]) >= 3 for r in ref for k in range(NS) if r in pres[k]) and swaps_total > 0 else "FINAL FAIL (a cell section with fewer than 3 neighbours, or no events)")

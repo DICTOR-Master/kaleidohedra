@@ -1,0 +1,10 @@
+stacking tight: h 3.437002, shift (0.500000, 0.561074)
+candidate quartets 6
+X(+0,-1,+1) + Y(+0,-1,+0) gain / Y(-1,+1,+0) + Y(+0,+0,+0) lose, near w +0.1030: rejected at w = +0.0730000000 (+0.25090118 above the middle plane); common distance 2.5047254350 (spread 5.6e-01; nearest other cell 0.000000); features ['corner', 'face', 'face', 'face']
+X(+0,-1,+1) + Y(+0,-1,+0) gain / X(+0,+0,+0) + X(+1,-1,+0) lose, near w +0.1030: CORNER at w = +0.0992526709 (+0.34113167 above the middle plane); common distance 1.0258287742 (spread 1.3e-15; nearest other cell 1.365452); features ['face', 'face', 'face', 'edge']
+X(+0,-1,+1) + Y(+0,-1,+0) gain / X(+0,+0,+0) + Y(-1,+0,+0) lose, near w +0.1070: rejected at w = +0.1370000000 (+0.47086933 above the middle plane); common distance 1.7032649246 (spread 2.4e+00; nearest other cell 1.600132); features ['corner', 'face', 'inside', 'edge']
+X(+0,+0,+0) + Y(-1,+0,+1) gain / Y(-1,+1,+0) + Y(+0,+0,+0) lose, near w +0.1050: CORNER at w = +0.0992526690 (+0.34113166 above the middle plane); common distance 1.0258287758 (spread 2.2e-16; nearest other cell 1.365452); features ['face', 'face', 'edge', 'face']
+X(+0,+0,+0) + Y(-1,+0,+1) gain / Y(-1,+0,+0) + Y(+0,-1,+0) lose, near w +0.1050: rejected at w = +0.1350000000 (+0.46399533 above the middle plane); common distance 0.0000000000 (spread 3.5e+00; nearest other cell 1.676790); features ['inside', 'corner', 'face', 'face']
+X(+0,+0,+0) + Y(-1,+0,+1) gain / X(+0,-1,+1) + Y(+0,-1,+0) lose, near w +0.1090: rejected at w = +0.1367435024 (+0.46998775 above the middle plane); common distance 0.4278615906 (spread 2.2e+00; nearest other cell 0.424790); features ['face', 'corner', 'face', 'edge']
+true corners 2 of 6 candidates
+FINAL ok

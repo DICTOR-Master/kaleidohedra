@@ -4,7 +4,8 @@ Reading A: footballs (truncated icosahedra, edge 1) joined face to face by bridg
 
 **Conclusion so far:** a layer exists: every ball on two link lines (its 5-fold axis and a 3-fold axis at 79.19 deg), checkerboard of two
 orientations, every link pentagon-to-hexagon. Step 2b (7 Nov): the space is cut into one cell per ball (nearest body, each bridge split between its balls) - a space-fill of
-football cells - and every cell makes the SCUTOID MOVE twice (below and above its layer's middle plane). Status: step 2 of 3 (numerical).
+football cells - and every cell makes the SCUTOID MOVE twice (below and above its layer's middle plane). Status: step 3 (7 Nov): closest stacking found continuously with bridges included and solved at 60 digits (h = 3.43700237509909..., shift
+(1/2, 0.56107350871...)); the scutoid corners located from exact distances at +-0.34113 of the middle plane, all four one orbit.
 
 - football.py: centre to pentagon 2.327438, to hexagon 2.267284 (edge 1). Axis angles (as lines): 5-5 only 63.43; 3-3 only 41.81, 70.53;
   5-3 only 37.38, 79.19.
@@ -39,3 +40,31 @@ the slab from w = -0.3 to 0 its bottom is an octagon, its top a hexagon, with a 
 et al., Nature Communications 9 (2018) 2960) - though here the other layer's cells end inside the slab rather than spanning it.
 NEXT (step 3): exact positions of the move (planes of the nearest-body faces), the cells as solids (volume, faces), and whether a gap
 other than 0.6 or a different stacking shift turns the 9-neighbour band into a clean prism - or makes the move the whole story.
+
+## Step 3 (exact geometry; DICTO 11-07 "move to step 3 exact geometry")
+(a) CLOSEST STACKING, bridges included (scripts/stack_exact.py -> data-stack-exact.txt; stack_solve.py -> data-stack-solve.txt).
+The step 2a stacking (coarse 9 x 9 grid, balls only) is free of overlaps with bridges too, but NOT the closest. Searching every shift
+continuously (Minkowski differences of all 6 bodies of a cell: 2 balls, 4 bridges; least free height per shift; Nelder-Mead from the
+12 best of a 40 x 40 grid) gives
+   h = 3.437002375099093176690586445664303449286 (layer spacing), shift a = 1/2 exactly, b = 0.5610735087101498959736905116890006
+   (and its mirror twin 1 - b), held by four ball-ball contacts on three distinct planes (no bridge touches).
+   Balls fill 0.606881 of space (was 0.5758), bridges 0.029405, gap pieces 0.363714.
+The 60-digit values solve the three contact planes built from exact football corners (coordinates in Q(sqrt 5); gap g = 3/5); the float
+search agrees to 4e-8 (its normals are rounded to 1e-7). No integer polynomial of degree <= 16 with coefficients < 1e7 fits h or b
+(the numbers mix sqrt 5, sqrt 3 and the unit-axis radicals); a closed form in radicals is still open (sympy run timed out).
+(b) CELLS AT THE CLOSEST STACKING (cell_track.py with STACK=tight -> data-track-tight.txt): the same story as in step 2b - 4, 6, 8, 9
+neighbours, the move, then hexagons - but the pure-hexagon band shrinks to (almost) the middle plane itself.
+(c) THE SCUTOID CORNERS, from exact distances (move_refine.py: slices every 0.002 of a period, all pair contacts tracked ->
+data-move-events-*.json; corner_solve.py: a gained and a lost pair with no common cell -> solve "distance equal to all four",
+accepted only if spread < 1e-9 AND no other cell nearer -> data-corners-tight-*.json):
+   four true corners round the reference cell, at w = -0.0992527 and +0.0992527 of a period, i.e. 0.341132 below and above the middle
+   plane, common distance to the four bodies 1.0258288 (next cell 1.365452 away):
+     below: X(0,0,0)+X(-1,1,0) meet, X(0,1,-1)|Y(-1,1,0) part;   Y(-1,0,0)+Y(0,-1,0) meet, X(0,0,0)|Y(0,0,-1) part;
+     above: the same mirrored with the layer above.
+   All four have one common distance and height: ONE orbit of corners under the crystal's symmetry. The voxel heights (-0.094/+0.118)
+   were off by resolution; the move is symmetric about the middle plane. At each corner the nearest features are three faces and one
+   edge, so its exact position is the meeting point of two bisector planes and one parabolic sheet (a quadratic: closed form next).
+Guards (DICTO's only-happens-once law): every script here prints FINAL ok only after a check of its own result; runs go through
+tools/runjob.py. Two corner runs that did not converge were caught as FAIL, not OK.
+NEXT: closed forms (corner: quadratic from the edge; stacking: radicals); the cells as solids (volume and faces) at the closest stacking;
+the figure redrawn at the closest stacking with the four corners marked.

@@ -1,0 +1,36 @@
+stacking tight: h 3.437002, shift (0.500000, 0.561074)
+voxel 0.08; bodies 200; surface samples 14944200; cell |P1| 10.389 |P2| 8.006 h 3.4370024143160753
+  slice 1/85
+  slice 11/85
+  slice 21/85
+  slice 31/85
+  slice 41/85
+  slice 51/85
+  slice 61/85
+  slice 71/85
+  slice 81/85
+voxel 0.08: 85 slices over two layer periods (w = -1..1, height 6.874), one slice 0.081
+cell X: present in slices 1..83 (height 6.71); neighbours per slice: 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 6 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 9 9 9 9 6 9 9 9 9 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 6 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 3 3 3 3
+   slice 4 (w -0.894): SWAP-gain Y(+0,+0,-1)
+   slice 21 (w -0.494): SWAP-gain Y(+0,+0,+0); SWAP-gain Y(-1,+0,+0)
+   slice 22 (w -0.471): SWAP-gain Y(+0,-1,+0); SWAP-gain Y(-1,+1,+0)
+   slice 38 (w -0.094): SWAP-gain X(+1,-1,+0); SWAP-gain X(-1,+1,+0); SWAP-lose Y(+0,+0,-1)
+   slice 42 (w +0.000): ends X(+0,+1,-1); ends X(+1,+0,-1); ends Y(+0,+1,-1)
+   slice 43 (w +0.024): enters X(+0,-1,+1); enters X(-1,+0,+1); enters Y(-1,-1,+1)
+   slice 47 (w +0.118): SWAP-gain Y(-1,+0,+1); SWAP-lose X(+1,-1,+0); SWAP-lose X(-1,+1,+0)
+   slice 63 (w +0.494): SWAP-lose Y(+0,-1,+0); SWAP-lose Y(-1,+1,+0)
+   slice 64 (w +0.518): SWAP-lose Y(+0,+0,+0); SWAP-lose Y(-1,+0,+0)
+   slice 80 (w +0.894): SWAP-lose Y(-1,+0,+1)
+cell Y: present in slices 1..83 (height 6.71); neighbours per slice: 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 6 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 9 9 9 9 6 9 9 9 9 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 5 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 3 3 3
+   slice 5 (w -0.871): SWAP-gain X(+1,+0,-1)
+   slice 21 (w -0.494): SWAP-gain X(+0,+0,+0); SWAP-gain X(+1,+0,+0)
+   slice 22 (w -0.471): SWAP-gain X(+0,+1,+0); SWAP-gain X(+1,-1,+0)
+   slice 38 (w -0.094): SWAP-gain Y(+1,-1,+0); SWAP-gain Y(-1,+1,+0); SWAP-lose X(+1,+0,-1)
+   slice 42 (w +0.000): ends X(+1,+1,-1); ends Y(+0,+1,-1); ends Y(+1,+0,-1)
+   slice 43 (w +0.024): enters X(+0,-1,+1); enters Y(+0,-1,+1); enters Y(-1,+0,+1)
+   slice 47 (w +0.118): SWAP-gain X(+0,+0,+1); SWAP-lose Y(+1,-1,+0); SWAP-lose Y(-1,+1,+0)
+   slice 63 (w +0.494): SWAP-lose X(+0,+1,+0); SWAP-lose X(+1,+0,+0); SWAP-lose X(+1,-1,+0)
+   slice 64 (w +0.518): SWAP-lose X(+0,+0,+0)
+   slice 81 (w +0.918): SWAP-lose X(+0,+0,+1)
+SWAP events (neighbour changes among cells present on both sides): 32
+FINAL ok
