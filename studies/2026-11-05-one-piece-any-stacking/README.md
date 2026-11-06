@@ -168,3 +168,12 @@ placements; (b) carrying the row direction through the relays by shape (would al
   settle into a three-site rotation pattern. Next (if pursued): the whole count-feasible edge-key space (~65 000 designs up to symmetry),
   periodic test first; and why period 3 (the three turns of N cycling over the three cosets of the triangular lattice) may block every
   three-fold-symmetric edge rule.
+
+## Zigzag variant (DICTO 11-06: "how about a zig zag variant"; spiral_keys.py 5 3 4 3 zigzag, FINAL in 193 s)
+- Strands: edge paths and closed loops whose turns round the axis alternate (125, incl. the crown of six diagonal edges hexagon corner -
+  middle corner - hexagon corner); designs = zigzag alone or with its mirror image, rods and notches in the count ratio: 47 up to symmetry.
+- RESULT: 45 cannot fill even a small patch (any stacking word, with or without mirror copies), including the crown; the other 2 are the
+  three-edge designs shared with the spiral run (one rod, two notches on apex/diagonal edges) and REPEAT at in-plane period 3.
+- Pattern across spiral and zigzag: every edge key so far is either too tight (no filling) or loose enough to settle into the three-site
+  rotation (period 3). Next: test whether that three-site rotation is a general obstruction for three-fold edge keys (a proof would close
+  the edge route); otherwise the full count-feasible scan.

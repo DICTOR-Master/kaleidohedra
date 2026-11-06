@@ -9,11 +9,16 @@ or mirror copies too):
   (a) PATCH: some stacking word of K slabs admits a keyed filling of an n x n patch (interior lines only);
   (b) PERIODIC: for periodic words (period <= PMAX) and in-plane periods m <= MMAX, a keyed filling that repeats (torus) exists.
 A design that passes (a) and fails every (b) is a CANDIDATE (to be pushed to larger sizes). Heartbeat per design; FINAL line always.
-Usage: spiral_keys.py [K n PMAX MMAX]"""
+Usage: spiral_keys.py [K n PMAX MMAX [zigzag]]
+zigzag (DICTO 11-06 "how about a zig zag variant"): strands are edge paths or closed loops whose turns round the axis ALTERNATE
+(left, right, left ...), e.g. the crown of six diagonal edges hexagon corner - middle corner - hexagon corner; designs = a zigzag alone
+or with its mirror image, rods and notches spread in the count ratio."""
 import sys, time, itertools
 import numpy as np
 from scipy.spatial import ConvexHull
-from pysat.solvers import Cadical153
+try:
+    from pysat.solvers import Cadical153
+except ImportError: Cadical153 = None
 sys.path.insert(0, __file__.rsplit('/', 1)[0])
 from n_slabs import narc, build, SITE, H
 t0 = time.time()
@@ -69,6 +74,23 @@ def walk(path, sgn):
 for s in range(6):
     for sgn in (1, -1): walk([s], sgn)
 strands = sorted(strands)
+ZIG = len(sys.argv) > 5 and sys.argv[5] == 'zigzag'
+if ZIG:
+    strands = set()
+    def zwalk(path, last):
+        a = path[-1]
+        if len(path) >= 3:
+            strands.add(tuple(sorted(tuple(sorted(e)) for e in zip(path, path[1:]))))
+            if path[0] in adj[a] and len(path) >= 4:
+                t = turn(a, path[0])
+                if t == 0 or t != last: strands.add(tuple(sorted(tuple(sorted(e)) for e in zip(path, path[1:] + [path[0]]))))
+        for b in adj[a]:
+            if b in path: continue
+            t = turn(a, b)
+            if t != 0 and t == last: continue          # zigzag: no two turns the same way in a row
+            zwalk(path + [b], t if t != 0 else last)
+    for s0 in range(10): zwalk([s0], 0)
+    strands = sorted(strands)
 mirrors = [p for p in SYM if handed(P0, P0, p) < 0]
 designs = set()
 # COUNT (pilot 11-06): a rod on an edge line takes space from every other piece there, so per edge-length class the notches must be
@@ -78,16 +100,35 @@ designs = set()
 LEN = [round(float(np.linalg.norm(P0[a] - P0[b])), 4) for a, b in E0]
 VAL = {L: (4 if abs(L - 0.5774) < 1e-3 else 3) for L in set(LEN)}
 def canon(lab): return min(tuple(lab[EI[tuple(sorted((p[a], p[b])))]] for a, b in E0) for p in SYM)
+USETS = set()
 for st in strands:
-    for mp in mirrors:
-        ms = tuple(sorted(tuple(sorted((mp[a], mp[b]))) for a, b in st))
-        U = sorted(set(st) | set(ms), key=lambda e: EI[e])
-        if len(U) > 14: continue
-        for bits in itertools.product((1, 2), repeat=len(U)):
-            lab = [0] * 18
-            for e, x in zip(U, bits): lab[EI[e]] = x
-            ok = all(sum(1 for i in range(18) if LEN[i] == L and lab[i] == 2) == (VAL[L] - 1) * sum(1 for i in range(18) if LEN[i] == L and lab[i] == 1) for L in VAL)
-            if ok: designs.add(canon(lab))
+    for mp in mirrors + ([None] if ZIG else []):
+        ms = () if mp is None else tuple(sorted(tuple(sorted((mp[a], mp[b]))) for a, b in st))
+        U = frozenset(set(st) | set(ms))
+        if len(U) > 12: continue
+        cu = min(tuple(sorted(EI[tuple(sorted((p[a], p[b])))] for a, b in U)) for p in SYM)
+        USETS.add(cu)
+print(f"edge sets (zigzag {'yes' if ZIG else 'no'}) up to symmetry: {len(USETS)}", flush=True)
+for U in USETS:
+    byL = {}
+    for e in U: byL.setdefault(LEN[e], []).append(e)
+    per = []
+    for L, es in byL.items():
+        opts = []
+        k = VAL[L] - 1
+        for r in range(0, len(es) // (k + 1) + 1):
+            for R in itertools.combinations(es, r):
+                rest = [e for e in es if e not in R]
+                for Nn in itertools.combinations(rest, k * r):
+                    if r == 0 and Nn: continue
+                    opts.append((R, Nn))
+        per.append(opts)
+    for combo in itertools.product(*per):
+        lab = [0] * 18
+        for R, Nn in combo:
+            for e in R: lab[e] = 1
+            for e in Nn: lab[e] = 2
+        if any(lab) and set(i for i in range(18) if lab[i]) == set(U): designs.add(canon(lab))
 designs.add(tuple([0] * 18))   # control: no key, must give PATCH and PERIODIC
 designs = sorted(designs)
 print(f"strands {len(strands)}, double-spiral designs (count-feasible, + control) up to symmetry {len(designs)}; K={K} n={NP} PMAX={PMAX} MMAX={MMAX}", flush=True)
