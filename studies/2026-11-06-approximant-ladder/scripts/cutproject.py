@@ -22,7 +22,9 @@ print(f"approximant {qn}/{qd}: {ok.sum()} points from Z^6 box R={R}")
 # period of the physical set: the vectors of Z^6 with zero perpendicular... for the approximant, the cubic period is the smallest
 # integer combination of Epar rows that is a multiple of (1,0,0); find it by scanning small integer vectors
 per = []
-for v in itertools.product(range(-3, 4), repeat=6):
+import os
+PR = int(os.environ.get('PR', '3'))
+for v in itertools.product(range(-PR, PR + 1), repeat=6):
     v = np.array(v)
     if not v.any() or np.linalg.norm(v @ Eperp) > 1e-9: continue
     per.append(v @ Epar)
