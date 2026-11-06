@@ -1,0 +1,53 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "access_right": "open",
+ "subjects": [
+  {
+   "term": "MSC2020 52C22: Tilings in n dimensions",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C22",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52C23: Quasicrystals and aperiodic tilings in discrete geometry",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C23",
+   "scheme": "url"
+  }
+ ],
+ "version": "1",
+ "publication_date": "2026-11-06",
+ "title": "Narcissus Keyed: Seventeen Keyed Copies of One Convex Space-Filler Force a Stacking That Never Repeats",
+ "description": "<p>Narcissus, the ten-cornered piece of the HexOct h-tile, is its own mirror image and fills space alone. Theorem 1: copies of Narcissus fill space in layers, and each layer may be put on the one below in exactly two ways, straight or turned by 60°, freely and independently, so every sequence of straight and turned joins is a tiling. Theorem 2: there is a set of seventeen keyed copies of Narcissus (fourteen carrying Kari&#x27;s aperiodic Wang tiles, three relays) such that keyed tilings exist and in every one the sequence of joins is not periodic; no keyed tiling has a period with a vertical component. The proof is Kari&#x27;s density argument, carried on the real faces: the join type is the row&#x27;s multiplier. We check both theorems on the actual solids (sampling, and a SAT search over all six-layer sequences). Narcissus is Goldberg&#x27;s space-filler type 10-XII.</p><p>DICTO set the aim (one piece, any stacking), found and named Narcissus, proposed that it might be halved and turned, and chose to carry the layer key on Narcissus. Computation, proofs and drafting with Claude (Anthropic).</p>",
+ "keywords": [
+  "DICTO",
+  "Narcissus",
+  "HexOct",
+  "space-filling polyhedra",
+  "aperiodic tilings",
+  "Wang tiles",
+  "Kari",
+  "stacking",
+  "Goldberg 10-XII"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ]
+}
