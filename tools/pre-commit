@@ -1,0 +1,11 @@
+#!/bin/sh
+# DICTO standing rule 7 Nov 2026: no data file holding a crash or a failed run may be committed.
+# Installed into the shared hooks folder by tools/install-hooks.sh. Override (never by Claude): git commit --no-verify
+bad=0
+for f in $(git diff --cached --name-only --diff-filter=AM | grep -E '(^|/)[^/]*data[^/]*\.txt$'); do
+  c=$(git show ":$f")
+  if printf '%s' "$c" | grep -qE 'Traceback \(most recent call last\)|^FINAL (FAIL|TIMEOUT)|No such file or directory'; then
+    echo "BLOCKED: $f holds a crash or failed run (re-run with tools/runjob.py)"; bad=1; fi
+done
+for f in $(git diff --cached --name-only --diff-filter=A | grep -E '\.(part|FAILED)$'); do echo "BLOCKED: $f is a runjob scratch file"; bad=1; done
+exit $bad

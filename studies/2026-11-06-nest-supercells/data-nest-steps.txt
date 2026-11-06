@@ -1,5 +1,8 @@
-Traceback (most recent call last):
-  File "/home/dicto/k-research/studies/2026-11-06-nest-supercells/scripts/nest_steps.py", line 10, in <module>
-    U = json.load(open('../unity-nests.json')); ID = np.array(U['ID']); icos = [np.array(I) for I in U['icos']]; caps = [np.array(c) for c in U['caps']]
-                  ~~~~^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '../unity-nests.json'
+1. heart icosahedron (edge 0.894427): points inside a cap 0.000000
+   ID 13.835526 = caps 3.618034 + heart 1.561094 + rest of core 8.656398
+2. Dodeca-13: dodecahedra 99.620546, wedges + needles 6.437926 (0.0607 of the filled cluster)
+   600-cell corner: tetrahedra 2.357023, gap inside their hull 0.388167 (0.1414)
+   UNITY: ID + 12 J11 36.397835; its hull 56.643427; gap round it inside the hull 20.245592 (0.3574)
+3. largest UNITY inside its heart icosahedron: x0.295686 (1/phi^2.5321); inside one of its icosahedra (same orientation as UNITY): x0.285260
+   largest Dodeca-13 inside its central dodecahedron: x0.333333 (1/phi^2.2830)
+FINAL ok

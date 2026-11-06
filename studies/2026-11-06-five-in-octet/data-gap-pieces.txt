@@ -1,5 +1,8 @@
-Traceback (most recent call last):
-  File "/home/dicto/k-research/studies/2026-11-06-five-in-octet/scripts/gap_pieces.py", line 7, in <module>
-    exec(open('nest.py').read().split("def inside")[0])
-         ~~~~^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'nest.py'
+I - D = 0.154379; 12 caps + 30 wedges = 0.154379
+C - T = 0.069838; 4 corners = 0.069838
+I-D pentagonal caps (I corner over D face): 12 pieces, volume each 0.009216; matches: ['no match']
+I-D edge wedges (I edge + 2 D corners): 30 pieces, volume each 0.001459; matches: ['no match']
+C-T corner pyramids: 4 pieces, volume each 0.017459; matches: ['octahedron centre pyramid x0.666667']
+I over D: cap height 0.189327 vs inner centre-pyramid height 0.324416 (ratio 0.583592)
+C over T: cap height 0.272166 vs inner centre-pyramid height 0.136083 (ratio 2.000000)
+FINAL ok
