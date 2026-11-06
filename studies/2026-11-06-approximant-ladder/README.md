@@ -14,3 +14,13 @@ icosahedron, 0.476716. 8 of the icosahedron's 20 faces lie in the truncated octa
 - Every icosahedron carries the five-solid nest (as in nest-supercells/unity.py).
 Next: fill the gap (truncated octahedron - icosahedron) with pieces or gravel; rung 2 (2/1): a larger cubic cell with clusters at the
 Fibonacci-related positions.
+
+## Seats for the nests, by harmonics (DICTO "then put nests in the clusters, harmonics?"; scripts/seats.py)
+Bond-order harmonics of each point's neighbourhood (all points within 2.0): Q4 (cubic tone) and Q6 (icosahedral tone; perfect icosahedron
+Q4 = 0, Q6 = 0.6633).
+- 2/1: exactly ONE perfect icosahedral point per cell (Q4 0.0000, Q6 0.6633; its 12 neighbours form a regular icosahedron of edge 2);
+  every other point scores far lower (best Q6 0.50). The seats form a simple cubic lattice of side 2 phi^3.
+- 3/2 (577 points per cell, density converged): 6 seats per cell (Q4 < 0.05, Q6 > 0.55), nearest 4.5346 apart (= the 1/1 rung's
+  nearest-neighbour distance).
+- A nest at each seat: the icosahedron of the 12 neighbours (edge 2, radius 1.902) holding D > C > T and O; nests of neighbouring seats
+  cannot meet (2 x 1.902 < 4.53). Golden rhombohedra (the golden skin) everywhere else.
