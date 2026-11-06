@@ -20,3 +20,11 @@ at two scales a factor 2 apart. Status: nest exact-checked (float), catalogue do
   and the octet lattice of nests: to check before any claim.
 - Next: gravel ("shake into the spaces"): pieces placed at the 3D wave field's darkest points and turned by the gaps' harmonics; mixes
   of nests at near-matching scales.
+
+## Gap pieces of the nest O > I > D > C > T (DICTO: "fractal pieces of the same solids to fill the gaps: Cleo-Icos, pentagonal pyramids, Antonius")
+- O - I: the six Admiral Caps (DICTO, F21).
+- I - D: 12 pentagonal caps (an I corner over each D face; base edge 0.29134, sides 0.31187: near-equilateral, not J2) + 30 thin edge wedges
+  (an I edge + the two D corners beside it); volumes 0.009216 and 0.001459, sum = I - D exactly. Not any solid's centre pyramid. New shapes; names DICTO's.
+- D - C: Euclid's six roofs (classical).
+- C - T: four corner pyramids = the OCTAHEDRON's own centre pyramid at 2/3 size (trirectangular). So this gap is made of another solid's pieces.
+- scripts/gap_pieces.py -> data-gap-pieces.txt. Next: the other 13 chains' gaps against all named pieces (Cleo-Icos, Antonius, FUJI, CLEO, AXE, Q, P).
