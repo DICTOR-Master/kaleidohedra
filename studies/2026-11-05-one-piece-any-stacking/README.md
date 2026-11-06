@@ -162,3 +162,9 @@ placements; (b) carrying the row direction through the relays by shape (would al
 - Pilot (spiral_keys.py 3 2 2 1, 11 s): control (no key) PATCH + PERIODIC as it must; all 8 designs fill a patch and have no repeat on the
   smallest torus (SS, period 1 in-plane). Too small to mean anything: full run (5 slabs, n=3, stacking periods <= 4, in-plane periods <= 3)
   running on dicto-big-brother, study-runs/2026-11-06-spiral/spiral-full.log.
+- FULL RUN (spiral_keys.py 5 3 4 3, dicto-big-brother, FINAL in 95 s, log copied here): all 8 double-spiral designs REPEAT, with or
+  without mirror copies: each has a keyed filling of the plain straight stacking (SS) that repeats every 3 sites in the plane (in-plane
+  period 3). Control repeats at period 1. RESULT: DICTO's double spiral as edge rods/notches, one strand pair, does not force order; the rods
+  settle into a three-site rotation pattern. Next (if pursued): the whole count-feasible edge-key space (~65 000 designs up to symmetry),
+  periodic test first; and why period 3 (the three turns of N cycling over the three cosets of the triangular lattice) may block every
+  three-fold-symmetric edge rule.

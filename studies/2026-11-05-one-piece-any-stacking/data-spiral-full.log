@@ -1,0 +1,23 @@
+strands 69, double-spiral designs (count-feasible, + control) up to symmetry 9; K=5 n=3 PMAX=4 MMAX=3
+HEARTBEAT 87s periodic instances 9: SS/m1, SS/m2, SS/m3, SSTTSSTTSSTT/m1, SSTTSSTTSSTT/m2, SSTTSSTTSSTT/m3, STTTSTTT/m1, STTTSTTT/m2, STTTSTTT/m3
+HEARTBEAT 88s design 0 labels 000000000000000000 mirrors=no: PERIODIC SS/m1 (patch word SSSS)
+HEARTBEAT 88s design 0 labels 000000000000000000 mirrors=yes: PERIODIC SS/m1 (patch word SSSS)
+HEARTBEAT 88s design 1 labels 00000000R000N000N0 mirrors=no: PERIODIC SS/m3 (patch word SSSS)
+HEARTBEAT 89s design 1 labels 00000000R000N000N0 mirrors=yes: PERIODIC SS/m3 (patch word SSSS)
+HEARTBEAT 89s design 2 labels 00000000N000N000R0 mirrors=no: PERIODIC SS/m3 (patch word SSSS)
+HEARTBEAT 90s design 2 labels 00000000N000N000R0 mirrors=yes: PERIODIC SS/m3 (patch word SSSS)
+HEARTBEAT 90s design 3 labels 0RR000NN0N0N000N00 mirrors=no: PERIODIC SS/m3 (patch word SSSS)
+HEARTBEAT 91s design 3 labels 0RR000NN0N0N000N00 mirrors=yes: PERIODIC SS/m3 (patch word SSSS)
+HEARTBEAT 91s design 4 labels 0RN000NR0N0N000N00 mirrors=no: PERIODIC SS/m3 (patch word SSSS)
+HEARTBEAT 91s design 4 labels 0RN000NR0N0N000N00 mirrors=yes: PERIODIC SS/m3 (patch word SSSS)
+HEARTBEAT 92s design 5 labels 0RN000NN0N0N000R00 mirrors=no: PERIODIC SS/m3 (patch word SSSS)
+HEARTBEAT 92s design 5 labels 0RN000NN0N0N000R00 mirrors=yes: PERIODIC SS/m3 (patch word SSSS)
+HEARTBEAT 93s design 6 labels 0NR000NN0R0N000N00 mirrors=no: PERIODIC SS/m3 (patch word SSSS)
+HEARTBEAT 93s design 6 labels 0NR000NN0R0N000N00 mirrors=yes: PERIODIC SS/m3 (patch word SSSS)
+HEARTBEAT 94s design 7 labels 0NR000NN0N0R000N00 mirrors=no: PERIODIC SS/m3 (patch word SSSS)
+HEARTBEAT 94s design 7 labels 0NR000NN0N0R000N00 mirrors=yes: PERIODIC SS/m3 (patch word SSSS)
+HEARTBEAT 94s design 8 labels 0NN000NN0R0N000R00 mirrors=no: PERIODIC SS/m3 (patch word SSSS)
+HEARTBEAT 95s design 8 labels 0NN000NN0R0N000R00 mirrors=yes: PERIODIC SS/m3 (patch word SSSS)
+SUMMARY {(False, 'PERIODIC'): 9, (True, 'PERIODIC'): 9}
+FINAL no candidate 95s
+EXIT 0
