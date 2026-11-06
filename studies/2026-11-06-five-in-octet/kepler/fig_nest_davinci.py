@@ -12,7 +12,12 @@ def rot(ax, ay):
     a, b = math.radians(ax), math.radians(ay)
     Rx = np.array([[1, 0, 0], [0, math.cos(a), -math.sin(a)], [0, math.sin(a), math.cos(a)]])
     Ry = np.array([[math.cos(b), 0, math.sin(b)], [0, 1, 0], [-math.sin(b), 0, math.cos(b)]]); return Rx @ Ry
-R = rot(-24, 33)
+def look(dirv, upv):
+    z = np.array(dirv, float); z /= np.linalg.norm(z); u = np.array(upv, float); u = u - (u @ z) * z; u /= np.linalg.norm(u); x = np.cross(u, z)
+    return np.array([x, u, z])   # rows: screen x, screen y, toward viewer
+import os
+VIEW = os.environ.get('VIEW', '3fold')
+R = look((1, 1, 1), (0, 0, 1)) if VIEW == '3fold' else look((0.12, 1, 0.22), (0, 0, 1))
 sc = 0.34 * W * 1.55
 def P(p): q = R @ p; return (W / 2 + q[0] * sc, W * 0.48 - q[1] * sc), q[2]
 img = Image.new('RGB', (W, W), PARCH); y, x = np.mgrid[0:W, 0:W]
@@ -67,4 +72,4 @@ try:
     logo = Image.open('/home/dicto/k-research/papers/dicto-logo.png').convert('RGBA').resize((70, 70)); logo.putalpha(logo.split()[3].point(lambda a: int(a * 0.5)))
     img.paste(logo, (W // S2 - 100, W // S2 - 100), logo)
 except Exception: pass
-img.save('../kepler-nest-davinci.png'); print('ok')
+img.save(os.environ.get('OUT', '../kepler-nest-davinci.png')); print('ok')
