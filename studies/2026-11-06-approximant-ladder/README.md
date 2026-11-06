@@ -24,3 +24,10 @@ Q4 = 0, Q6 = 0.6633).
   nearest-neighbour distance).
 - A nest at each seat: the icosahedron of the 12 neighbours (edge 2, radius 1.902) holding D > C > T and O; nests of neighbouring seats
   cannot meet (2 x 1.902 < 4.53). Golden rhombohedra (the golden skin) everywhere else.
+
+## Rung 5/3 seats and nests (DICTO "keep climbing, put nests in the 5/3 seats"; memory-light generator, box R = 9 one slice at a time)
+1220 points per (primitive) cell = the 754 + 466 rhombohedra (points and tiles are equal in number on every rung: 16, 136, ~576, 1220),
+confirming the 5/3 count. 16 icosahedral seats per cell, nearest 4.5346 apart; all 16 carry a regular icosahedron of their 12
+neighbours (radius 1.9021, edge 2), so every seat holds a nest (I > D > C > T, O).
+Seats per cell: 1/1 1 (of 16 points), 2/1 1 (of 136), 3/2 6 (of 577), 5/3 16 (of 1220): share 0.0074 -> 0.0104 -> 0.0131, rising toward the
+quasilattice's own share. Seat spacing 4.5346 on every rung from 3/2 on.

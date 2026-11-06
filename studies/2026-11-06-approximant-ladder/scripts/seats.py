@@ -29,4 +29,12 @@ if len(good) > 1:
     # nearest seat distance (periodic: include images)
     imgs = np.array([P + B.T @ np.array(s) for s in itertools.product((-1, 0, 1), repeat=3)]).reshape(-1, 3)
     d = min(np.sort(np.linalg.norm(imgs - p, axis=1))[1] for p in P); print(f"nearest seats {d:.4f} apart")
+# nests at the seats (DICTO 11-06 "put nests in the 5/3 seats"): the 12 nearest neighbours of each seat must form a regular icosahedron
+phi_ = (1 + 5 ** .5) / 2
+def ico_ok(i):
+    d, j = T.query(X[i], 13); P = X[j[1:]]
+    D_ = np.linalg.norm(P[:, None] - P[None], axis=2); e = np.sort(D_[np.triu_indices(12, 1)])
+    return len(set(np.round(d[1:], 5))) == 1 and np.allclose(e[:30], e[0], atol=1e-6) and np.allclose(e[30:60], e[0] * phi_, atol=1e-6), d[1]
+res = [ico_ok(r[0]) for r in good]
+print(f"nests: {sum(1 for ok_, _ in res if ok_)} of {len(good)} seats carry a regular icosahedron (radius {res[0][1]:.4f}, edge {res[0][1]/0.9510565:.4f})" if res else "nests: none")
 print("FINAL ok")

@@ -15,10 +15,15 @@ Epar = dirs(phi); Eperp = dirs(-q)                # standard approximant: physic
                                                   # shadow become exact periods of the physical set
 W = ConvexHull(np.array([np.array(s) @ Eperp for s in itertools.product((0, 1), repeat=6)]) - 0.5 * Eperp.sum(0))
 def in_window(P): return ((P @ W.equations[:, :3].T + W.equations[:, 3]) <= 1e-9).all(1)
-pts = np.array(list(itertools.product(range(-R, R + 1), repeat=6)))
 gamma = np.array([0.1, 0.07, 0.03, -0.05, 0.02, -0.08])          # generic shift so no point sits on the window's boundary
-ok = in_window((pts + gamma) @ Eperp); V = pts[ok]; X = V @ Epar
-print(f"approximant {qn}/{qd}: {ok.sum()} points from Z^6 box R={R}")
+# memory-light (DICTO 11-06: dicto-big-brother ran short): the 6D box is built one slice of the first coordinate at a time
+Vs = []; nbox = 0
+rest = np.array(list(itertools.product(range(-R, R + 1), repeat=5)), dtype=np.int16)
+for x1 in range(-R, R + 1):
+    pts = np.c_[np.full(len(rest), x1, dtype=np.int16), rest].astype(np.int32); nbox += len(pts)
+    ok = in_window((pts + gamma) @ Eperp); Vs.append(pts[ok])
+V = np.vstack(Vs); X = V @ Epar; ok = np.zeros(nbox, bool)
+print(f"approximant {qn}/{qd}: {len(V)} points from Z^6 box R={R}")
 # period of the physical set: the vectors of Z^6 with zero perpendicular... for the approximant, the cubic period is the smallest
 # integer combination of Epar rows that is a multiple of (1,0,0); find it by scanning small integer vectors
 per = []
