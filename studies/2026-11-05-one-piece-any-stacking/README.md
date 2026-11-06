@@ -149,3 +149,16 @@ placements; (b) carrying the row direction through the relays by shape (would al
   Kari/Culik architecture, one keyed Narcissus is blocked twice, by the carry partitions (2a) and by the zero-tile flag (count); 3-4 keyed pieces is
   the count's best. A single piece needs a new mechanism: edge keys where 3+ pieces meet (Socolar–Taylor), or a non-arithmetic aperiodic set
   (e.g. a substitution or Jeandel–Rao-type set) whose per-site states fit 6.
+
+## DICTO's double spiral (11-06, DICTO: "a key that spiralled round the faces"; "go ahead with the double spiral first")
+- Census (scripts/edge_census.py, 16 s): in every stacking (SS, ST, TS, TT) each face of N touches exactly ONE neighbour, whole face to
+  whole face, so a stripe across a face is a face key (one-to-one). Every EDGE is shared: the 6 hexagon edges by 4 pieces, the other 12 by 3.
+  So the spiral key runs ALONG edges: a rod on the edge line (R), a notch (N), or plain (0). Rigid rule per edge line: all plain, or one rod
+  and every other piece notched. A notch takes the rod of whichever neighbour owns it: the "accept either" freedom face keys lack.
+- Strands: edge paths from a hexagon corner down to the apex turning one way (69); double spiral = strand + its mirror image.
+- COUNT: a rod pushes into every other piece on its line, so per edge class notches = (valence - 1) x rods (hexagon edges N = 3R, others N = 2R).
+  Rods on one strand and notches on its mirror (equal numbers) can never tile (pilot: all 10 such designs NO PATCH, with or without mirror copies).
+  Rods and notches must be spread over both strands in that ratio: 8 such double-spiral designs up to symmetry.
+- Pilot (spiral_keys.py 3 2 2 1, 11 s): control (no key) PATCH + PERIODIC as it must; all 8 designs fill a patch and have no repeat on the
+  smallest torus (SS, period 1 in-plane). Too small to mean anything: full run (5 slabs, n=3, stacking periods <= 4, in-plane periods <= 3)
+  running on dicto-big-brother, study-runs/2026-11-06-spiral/spiral-full.log.
