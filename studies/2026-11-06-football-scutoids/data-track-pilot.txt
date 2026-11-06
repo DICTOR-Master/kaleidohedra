@@ -1,0 +1,29 @@
+voxel 0.25; bodies 200; surface samples 2186700; cell |P1| 10.389 |P2| 8.006 h 3.6224
+  slice 1/28
+  slice 11/28
+  slice 21/28
+voxel 0.25: 28 slices over two layer periods (w = -1..1, height 7.245), one slice 0.259
+cell X: present in slices 1..26 (height 6.73); neighbours per slice: 3 4 4 4 4 4 6 8 8 8 8 9 6 6 9 8 8 8 8 6 4 4 4 4 4 3
+   slice 2 (w -0.821): SWAP-gain X(+0,+1,-1)
+   slice 7 (w -0.464): SWAP-gain Y(-1,+0,+0); SWAP-gain Y(-1,+1,+0)
+   slice 8 (w -0.393): SWAP-gain Y(+0,+0,+0); SWAP-gain Y(+0,-1,+0)
+   slice 12 (w -0.107): SWAP-gain X(+1,-1,+0); SWAP-gain X(-1,+1,+0); SWAP-lose X(+0,+1,-1)
+   slice 13 (w -0.036): ends X(+0,+0,-1); ends Y(+0,+0,-1); ends Y(-1,+1,-1)
+   slice 15 (w +0.107): enters X(+0,+0,+1); enters Y(+0,-1,+1); enters Y(-1,+0,+1)
+   slice 16 (w +0.179): SWAP-gain X(+0,-1,+1); SWAP-lose X(+1,-1,+0); SWAP-lose X(-1,+1,+0)
+   slice 20 (w +0.464): SWAP-lose Y(-1,+0,+0); SWAP-lose Y(-1,+1,+0)
+   slice 21 (w +0.536): SWAP-lose Y(+0,+0,+0); SWAP-lose Y(+0,-1,+0)
+   slice 26 (w +0.893): SWAP-lose X(+0,-1,+1)
+cell Y: present in slices 1..26 (height 6.73); neighbours per slice: 3 4 4 4 4 4 6 8 8 8 8 9 6 6 8 8 8 8 8 6 4 4 4 4 4 3
+   slice 2 (w -0.821): SWAP-gain Y(+0,+1,-1)
+   slice 7 (w -0.464): SWAP-gain X(+1,+0,+0); SWAP-gain X(+1,-1,+0)
+   slice 8 (w -0.393): SWAP-gain X(+0,+0,+0); SWAP-gain X(+0,+1,+0)
+   slice 12 (w -0.107): SWAP-gain Y(+1,-1,+0); SWAP-gain Y(-1,+1,+0); SWAP-lose Y(+0,+1,-1)
+   slice 13 (w -0.036): ends X(+0,+1,-1); ends X(+1,+0,-1); ends Y(+0,+0,-1)
+   slice 15 (w +0.107): SWAP-lose Y(+1,-1,+0); enters X(+0,+0,+1); enters X(+1,-1,+1); enters Y(+0,+0,+1)
+   slice 16 (w +0.179): SWAP-gain Y(+0,-1,+1); SWAP-lose Y(-1,+1,+0)
+   slice 20 (w +0.464): SWAP-lose X(+1,+0,+0); SWAP-lose X(+1,-1,+0)
+   slice 21 (w +0.536): SWAP-lose X(+0,+0,+0); SWAP-lose X(+0,+1,+0)
+   slice 26 (w +0.893): SWAP-lose Y(+0,-1,+1)
+SWAP events (neighbour changes among cells present on both sides): 32
+FINAL ok

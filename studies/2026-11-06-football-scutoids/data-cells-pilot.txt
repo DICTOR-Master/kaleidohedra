@@ -1,0 +1,22 @@
+voxel 0.25; bodies 200; surface samples 2186700; cell |P1| 10.389 |P2| 8.006 h 3.6224
+  slice 1/14 done
+  slice 6/14 done
+  slice 11/14 done
+slices 14 (layer period h = 3.6224, one slice 0.259); contact pairs found 14
+  X-Y offset (-1,+1,+0) layers same: touch in slices 0..13 (13 of 14)  [gaps]
+  Y-Y offset (-1,+1,+0) layers same: touch in slices 0..13 (2 of 14)  [gaps]
+  X-Y offset (+0,-1,+0) layers same: touch in slices 0..13 (13 of 14)  [gaps]
+  X-Y offset (+0,+0,+0) layers same: touch in slices 0..13 (14 of 14)
+  X-Y offset (-1,+0,+0) layers same: touch in slices 0..13 (14 of 14)
+  X-X offset (-1,+1,+0) layers same: touch in slices 0..13 (2 of 14)  [gaps]
+  X-X offset (+0,+0,-1) layers next: touch in slices 1..12 (12 of 14)
+  X-Y offset (-1,+1,-1) layers next: touch in slices 1..12 (12 of 14)
+  X-Y offset (+0,+0,-1) layers next: touch in slices 1..12 (12 of 14)
+  X-Y offset (+0,-1,+1) layers next: touch in slices 1..12 (12 of 14)
+  Y-Y offset (+0,+0,-1) layers next: touch in slices 1..12 (12 of 14)
+  X-Y offset (-1,+0,+1) layers next: touch in slices 1..12 (12 of 14)
+  X-X offset (+0,-1,+1) layers next: touch in slices 2..11 (10 of 14)
+  Y-Y offset (+0,-1,+1) layers next: touch in slices 2..11 (10 of 14)
+ball layers present per slice range: {'X r=0': (0, 12), 'X r=1': (1, 13), 'Y r=0': (0, 12), 'Y r=1': (1, 13)}
+same-layer contacts that hand over to another pair through the layer (scutoid move candidates): 0
+FINAL ok

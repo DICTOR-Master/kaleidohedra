@@ -1,0 +1,4 @@
+/home/dicto/k-research/studies/2026-11-06-football-scutoids/scripts/render_slices.py:19: UserWarning: The input coordinates to pcolormesh are interpreted as cell centers, but are not monotonically increasing or decreasing. This may lead to incorrectly calculated cell edges, in which case, please supply explicit cell edges to pcolormesh.
+  ax.pcolormesh(xy[..., 0], xy[..., 1], img, shading='auto')
+voxel 0.12; bodies 200; surface samples 7317600; cell |P1| 10.389 |P2| 8.006 h 3.6224
+FINAL ok
