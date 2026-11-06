@@ -87,7 +87,7 @@ css = '\n'.join(sorted(styles)) + '''
 table.toc td{border-bottom:1px dotted #ccc;padding:1.2mm 2mm} table.toc a{color:inherit;text-decoration:none}
 figure img, .figs img{max-width:100%}
 body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}'''
-status = '<div class="status">DRAFT, version 3, for DICTO\'s read. Changes from version 2: the cover only (more room for the top rung, the ladder centred with the dimension marks on both sides, A4 proportions), the cover line now reads "Cover by DICTO", and the subtitle now reaches the eighth dimension, where the book ends (E8). Text and chapters unchanged. Delete this box at release.</div>'   # v2 released 6 November 2026; v3 draft (DICTO 11-06 cover notes)
+status = ''   # deleted at release (v3 released 6 November 2026 after DICTO's read ok: cover re-laid, subtitle to the eighth dimension)
 doc = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>The Golden Ladder</title>
 <link rel="stylesheet" href="../paper.css"><style>{css}</style></head><body>
