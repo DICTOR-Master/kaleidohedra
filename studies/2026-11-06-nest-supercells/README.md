@@ -11,3 +11,15 @@ corners of C); all 13 nests regular and nested, the 13 dodecahedra disjoint. Sta
   turned cell by cell (DICTO's "combis"); the figure uses the first found in each cell, so they point different ways.
 - Next: choose the turns so the 13 nests line up (shared axes through the face-sharing pairs); then the 600-cell side (20 tetrahedra round
   a corner, each T > O > I > D > C) and the middle slice (icosidodecahedron); gaps by wedges/needles and the named pieces.
+
+## Turns aligned (DICTO "align the turns"; scripts/align13.py -> nest13-aligned.json, nested-dodeca-13-aligned.png)
+Central nest: its octahedron on the axes. Each outer nest = the MIRROR of the central nest in the pentagon they share; checked to be one of
+that dodecahedron's own 10 nest choices (mirrored icosahedron = the outer one's face centres exactly). Six outer octahedra come out parallel
+to the central one, six turned by 26.57 deg.
+
+## The 600-cell side (DICTO "then do the 600 side"; scripts/tets600.py -> nest600.json, render600.py -> nested-600-corner.png)
+The 600-cell's 20 tetrahedra round one corner, built with regular tetrahedra (edge 1), corner at the centre, far faces square-on to an
+icosahedron's faces: pairwise disjoint; thin gaps 0.388167 = 14.1% of their hull (the 3D trace of the 4D curvature, like the Dodeca-13's
+wedges). Every tetrahedron holds the six-solid nest T > TT 1/3 > O 1/2 > I (Pacioli) > D > C; all checked. The nest has the tetrahedron's
+three-fold symmetry about its axis, so no turn choice arises on this side.
+Next: the middle slice (the 600-cell's equatorial icosidodecahedron); gap pieces of the 20-tetrahedra corner.

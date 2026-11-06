@@ -3,7 +3,7 @@
 import json, math, itertools, numpy as np
 from PIL import Image, ImageDraw
 from scipy.spatial import ConvexHull
-d = json.load(open('../nest13.json'))
+d = json.load(open(__import__('sys').argv[1] if len(__import__('sys').argv) > 1 else '../nest13.json'))
 COL = {'D': (150, 90, 200), 'I': (70, 120, 220), 'O': (232, 200, 82), 'C': (72, 160, 72), 'T': (205, 62, 40)}
 def rx(t): return np.array([[1, 0, 0], [0, math.cos(t), -math.sin(t)], [0, math.sin(t), math.cos(t)]])
 def rz(t): return np.array([[math.cos(t), -math.sin(t), 0], [math.sin(t), math.cos(t), 0], [0, 0, 1]])
@@ -32,4 +32,4 @@ for z, kind, dd in sorted(items, key=lambda t: t[0]):
         a, b, col, w = dd; dr.line([P(a), P(b)], fill=tuple(int(c * f) for c in col), width=w)
     else:
         pts, col = dd; dr.polygon([P(p) for p in pts], fill=tuple(int(c * (0.6 + 0.4 * f)) for c in col))
-img.resize((1200, 1200), Image.LANCZOS).save('../nested-dodeca-13.png'); print('ok')
+img.resize((1200, 1200), Image.LANCZOS).save(__import__('sys').argv[2] if len(__import__('sys').argv) > 2 else '../nested-dodeca-13.png'); print('ok')
