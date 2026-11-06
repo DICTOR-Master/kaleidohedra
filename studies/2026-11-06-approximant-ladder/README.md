@@ -31,3 +31,17 @@ confirming the 5/3 count. 16 icosahedral seats per cell, nearest 4.5346 apart; a
 neighbours (radius 1.9021, edge 2), so every seat holds a nest (I > D > C > T, O).
 Seats per cell: 1/1 1 (of 16 points), 2/1 1 (of 136), 3/2 6 (of 577), 5/3 16 (of 1220): share 0.0074 -> 0.0104 -> 0.0131, rising toward the
 quasilattice's own share. Seat spacing 4.5346 on every rung from 3/2 on.
+
+## The climb measured by harmonics: diffraction (DICTO "harmonics, other tools"; scripts/diffraction.py, same ball size on every rung)
+Bond directions are exactly icosahedral on every rung; the rungs differ in the arrangement, which diffraction (3D waves) shows. Pattern
+square-on to a five-fold axis; ten-fold score = correlation with itself turned 36 deg (1 = perfectly ten-fold); four-fold = turned 90 deg.
+| rung | ten-fold | four-fold | top-50 spot share |
+|---|---|---|---|
+| 1/1 | 0.9158 | 0.9155 | 0.594 |
+| 2/1 | 0.9736 | 0.8733 | 0.412 |
+| 3/2 | 0.9937 | 0.8377 | 0.382 |
+| 5/3 | 0.9969 | 0.8324 | 0.374 |
+| 8/5 | 0.9974 | 0.8266 | 0.370 |
+| quasilattice (golden, the top) | 0.9977 | 0.8254 | 0.369 |
+Every rung moves toward the quasilattice in all three measures: the cubic tone fades, the ten-fold order grows. 8/5 reached by harmonics
+without building its exact cell (side 2 phi^6 = 35.89). Figure diffraction-ladder.png (2/1, 3/2, 8/5, quasilattice).

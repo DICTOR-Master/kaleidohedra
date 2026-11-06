@@ -10,7 +10,8 @@ phi = (1 + 5 ** .5) / 2
 qn, qd = (int(sys.argv[1]), int(sys.argv[2])) if len(sys.argv) > 2 else (1, 1)
 q = qd / qn; R = int(sys.argv[3]) if len(sys.argv) > 3 else 3
 def dirs(t): return np.array([[1, t, 0], [-1, t, 0], [0, 1, t], [0, -1, t], [t, 0, 1], [t, 0, -1]], float)
-Epar = dirs(phi); Eperp = dirs(-q)                # standard approximant: physical space keeps the golden directions, the hidden (perp) space
+import os as _os
+Epar = dirs(phi); Eperp = dirs(-1 / phi) if _os.environ.get('GOLDEN') else dirs(-q)   # GOLDEN=1: the true quasilattice (the ladder's top)                # standard approximant: physical space keeps the golden directions, the hidden (perp) space
                                                   # uses the rational q ~ 1/phi (1/1 -> 1, 2/1 -> 1/2, 3/2 -> 2/3, 5/3 -> 3/5): Z^6 vectors with zero perp
                                                   # shadow become exact periods of the physical set
 W = ConvexHull(np.array([np.array(s) @ Eperp for s in itertools.product((0, 1), repeat=6)]) - 0.5 * Eperp.sum(0))
@@ -29,11 +30,25 @@ print(f"approximant {qn}/{qd}: {len(V)} points from Z^6 box R={R}")
 per = []
 import os
 PR = int(os.environ.get('PR', '3'))
-for v in itertools.product(range(-PR, PR + 1), repeat=6):
+if os.environ.get('PERIODS') == 'exact':   # integer null space of the (rational) perp projection: exact periods for any rung
+    import sympy as sp
+    Q = sp.Rational(qd, qn)
+    Mp = sp.Matrix([[1, -Q, 0], [-1, -Q, 0], [0, 1, -Q], [0, -1, -Q], [-Q, 0, 1], [-Q, 0, -1]])
+    ns = Mp.T.nullspace(); B6 = []
+    for v in ns:
+        den = sp.ilcm(*[sp.fraction(x)[1] for x in v]); B6.append([int(x * den) for x in v])
+    B6 = np.array(B6)
+    # small integer combinations of the basis, keep the shortest physical vectors
+    cand = [np.array(c) @ B6 for c in itertools.product(range(-3, 4), repeat=3) if any(c)]
+    PRANGE = []
+    per_override = sorted([v @ Epar for v in cand if not np.any(v % 1)], key=lambda p: np.linalg.norm(p))
+else:
+    per_override = None
+for v in (itertools.product(range(-PR, PR + 1), repeat=6) if per_override is None else []):
     v = np.array(v)
     if not v.any() or np.linalg.norm(v @ Eperp) > 1e-9: continue
     per.append(v @ Epar)
-per = sorted(per, key=lambda p: np.linalg.norm(p))
+per = sorted(per, key=lambda p: np.linalg.norm(p)) if per_override is None else per_override
 L = np.linalg.norm(per[0]) if per else None
 axes = [p for p in per if abs(np.linalg.norm(p) - L) < 1e-6] if per else []
 print("shortest periods:", len(axes), "of length", None if L is None else round(L, 6), "e.g.", [tuple(np.round(p, 4)) for p in axes[:3]])
