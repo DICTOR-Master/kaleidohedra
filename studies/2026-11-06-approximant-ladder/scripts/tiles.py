@@ -23,7 +23,7 @@ starc = [s for s in star if f(np.array([s]))[0]]
 sp = {tuple(np.round(s, 6)) for s in starc}; around = {k: 0 for k in sp}
 for t in tiles:
     if abs(t[2] - vols[-1]) > 1e-6: continue
-    corners = [t[0] + Epar[list(t[1])] @ np.array(b) for b in itertools.product((0, 1), repeat=3)]
+    corners = [t[0] + np.array(b) @ Epar[list(t[1])] for b in itertools.product((0, 1), repeat=3)]   # fixed 11-06 (Fable review): combination of the three edge vectors
     for c in corners:
         key = tuple(np.round(c, 6))
         if key in around: around[key] += 1

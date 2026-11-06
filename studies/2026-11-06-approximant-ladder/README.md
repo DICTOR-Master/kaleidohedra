@@ -46,3 +46,19 @@ square-on to a five-fold axis; ten-fold score = correlation with itself turned 3
 | quasilattice (golden, the top) | 0.9977 | 0.8254 | 0.369 |
 Every rung moves toward the quasilattice in all three measures: the cubic tone fades, the ten-fold order grows. 8/5 reached by harmonics
 without building its exact cell (side 2 phi^6 = 35.89). Figure diffraction-ladder.png (2/1, 3/2, 8/5, quasilattice).
+
+## Corrections and proofs from the independent review (REPORT-fable.md, 6 Nov 2026; my own recheck where marked)
+- BUG FIXED (rechecked): tiles.py built rhombohedron corners wrongly (Epar[ijk] @ b instead of b @ Epar[ijk]); with the fix the 2/1 seat
+  IS a full rhombic triacontahedron (20 prolate round it; recheck: [12, 12, 14, 20] prolate round the four star points). The sentence
+  "no full rhombic triacontahedra" above is WITHDRAWN. Seats = triacontahedron vertices (proved in the report).
+- 1/1: 1 star point but 0 seats (the seat window has no interior there; recheck seats.py 1 1: see below). The "1/1: 1 seat" above is wrong.
+- 3/2: 576 points per cell (577 was a boundary double count) = 356 + 220 tiles.
+- PROVED (report): points per cell = tiles per cell on every rung (lattice parallelepiped + zonotope dissection); 8/5: 10336 = 6388 + 3948;
+  13/8: 43784.
+- PROVED (report): no two seats closer than sqrt3 phi^2 = 4.5346 (= the prolate rhombohedron's long body diagonal), attained from 3/2 on.
+- Seat counts 1, 6, 16 are generic, not exact: expected N x (window share) = 1.38, 6.8, 15.8; they depend on the shift gamma. The seat share
+  tends to tau^-9 = 0.01316, the KNOWN frequency of the triacontahedral vertex (Baake and Grimm 2012; Henley 1986); our 5/3 share 0.0131.
+- KNOWN (report): the rational-perp cubic approximants (Elser and Henley 1985); cell sides 2 phi^n follow Ishimasa's rule (2019).
+- PROVED (report, exact): the Dodeca-13 fits its own central dodecahedron at exactly 1/3.
+- Kepler-nest: Pacioli's icosahedron known; "the nest's cube is the octahedron's dual cube" not found in the sources checked; it follows
+  from eight icosahedron faces lying in the octahedron's face planes (shared insphere).
