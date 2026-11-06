@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Five in the Octet</title>
+<link rel="stylesheet" href="../paper.css">
+<style>table.t{border-collapse:collapse;font-size:9pt;margin:3mm 0;width:100%} table.t td,table.t th{border-bottom:1px solid #ccc;padding:1.2mm 2mm;text-align:left;vertical-align:top}
+.status{border:2px solid #c0392b;background:#fdecea;padding:2mm 3mm;margin:3mm 0;font-size:9pt} .thm{margin:6pt 0;padding:4pt 0 4pt 9pt;border-left:2px solid #b8962e}
+figure img{width:100%} .figs{display:grid;grid-template-columns:1fr 1fr;gap:3mm}</style></head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>Five in the Octet<br><span style="font-size:0.72em;font-weight:normal">Nested Platonic solids in every cell, and a golden ladder of crystals to the quasilattice</span></h1>
+<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>
+Paper (number at publication) · 6 November 2026 · DICTO DOI: at publication · Licence CC BY-SA 4.0 · Studies: 2026-11-06-five-in-octet, 2026-11-06-nest-supercells, 2026-11-06-approximant-ladder<br>
+DICTO proposed putting all five Platonic solids into the octet with the solids' own pieces as adaptors, nesting them in several combinations, the supercells from the 120-cell, the 600-cell and the middle slice (UNITY, his 13-cell), filling gaps with harmonics, waves and golden skin, and the ladder to a universal lattice. Computation, proofs and drafting with Claude (Anthropic).</div>
+<div class="status">DRAFT SKELETON for DICTO's reading. Not published; title and number are placeholders (DICTO names). Sections 5 (known and new) and the proofs in 4.3 wait for the independent prior-art and proof report (REPORT-fable.md). Figures are working renders. After reading: decide whether Part 2 becomes the closing chapter or an epilogue of The Golden Ladder. Delete this box at publication.</div>
+
+<p class="hook">Plato's five solids do not fill space together. But the octet, the honeycomb of tetrahedra and octahedra, can hold all five at once: inside every octahedron sits an icosahedron, inside that a dodecahedron, then a cube, then a tetrahedron, and every tetrahedron of the octet holds the same nest at half the size. From there a ladder of crystals, each a golden ratio larger than the last, climbs towards the five-fold order of quasicrystals.</p>
+
+<div class="abstract"><b>Abstract.</b> <b>Theorem 1 (Five in the octet).</b> In the octet of edge 1 every octahedron holds the nest octahedron &gt; icosahedron (Pacioli, edge √2/φ²) &gt; dodecahedron &gt; cube &gt; tetrahedron (edge 2/3), whose cube is exactly the octahedron's dual cube; every tetrahedron holds the same nest at half size through its midpoint octahedron, with the truncated tetrahedron (edge 1/3) between. So all five Platonic solids sit in every cell of a structure periodic in three directions. Exact in Q(√2, √5). We list the inscriptions between the five (twelve), the chains through all five (fourteen; eighteen with the truncated tetrahedron), the gap pieces, and supercells from the 120-cell, the 600-cell and the middle slice. Part 2: the cubic approximants of the icosahedral quasilattice, rungs 1/1 to 13/8, each tiled by golden rhombohedra, carry nests on their icosahedral seats (found by harmonics: 1, 1, 6, 16 per cell up to 5/3); their diffraction becomes ten-fold, 0.916 at 1/1 to 0.9976 at 13/8 against 0.9977 for the quasilattice.</div>
+
+<h2>1. Five in the octet</h2>
+<div class="thm"><b>Theorem 1.</b> [statement as in the abstract; exact check proof/exact_nest.py]</div>
+<p><b>Proof.</b> [to write from THEOREM.md: Pacioli's icosahedron; D on its face centres; the eight corners (±t, ±t, ±t) with t = 1/(3√2), equal to the octahedron's face centres; T on alternate corners, edge 2/3; midpoint octahedron and truncation in the tetrahedron; periodicity of the octet.]</p>
+<figure><img src="figures/five-nest.png" alt="Kepler's nest in one octahedron of the octet" style="width:55%;margin:0 auto;display:block"><figcaption><b>Figure 1.</b> The nest in one octahedron of the octet: octahedron (yellow), icosahedron (blue), dodecahedron (violet), cube (green), tetrahedron (red).</figcaption></figure>
+
+<h2>2. Combinations and gap pieces</h2>
+<p>[table of the twelve inscriptions and the fourteen / eighteen chains (data-nest-catalogue*.txt); gap pieces: Admiral Caps (O − I), twelve pentagonal caps and thirty wedges (I − D, new shapes, names DICTO's), Euclid's roofs (D − C), four octahedron centre pyramids at 2/3 (C − T).]</p>
+
+<h2>3. Supercells</h2>
+<p>[nested Dodeca-13 with turns aligned by mirroring; the 600-cell corner (20 nested tetrahedra, gap 14.1%); UNITY with nests and its heart icosahedron (edge 2/√5); the Dodeca-13 fits its own central dodecahedron at ×1/3 (proof pending).]</p>
+<div class="figs"><img src="figures/nested-dodeca-13-aligned.png" alt="nested Dodeca-13"><img src="figures/unity-nests.png" alt="UNITY with nests"></div>
+<p style="font-size:9pt"><b>Figure 2.</b> Left: the nested Dodeca-13 (the 120-cell's 1 + 12). Right: UNITY (the 600-cell's middle slice) with a nest in each of its twelve icosahedra.</p>
+
+<h2>4. Part 2. The golden ladder of crystals</h2>
+<h3>4.1 The rungs</h3>
+<table class="t"><tr><th>rung</th><th>cell</th><th>golden rhombohedra per cell</th><th>icosahedral seats per cell</th><th>ten-fold score</th></tr>
+<tr><td>1/1</td><td>body-centred cubic, side 2φ²</td><td>10 + 6</td><td>1</td><td>0.9158</td></tr>
+<tr><td>2/1</td><td>cubic, side 2φ³</td><td>84 + 52</td><td>1</td><td>0.9736</td></tr>
+<tr><td>3/2</td><td>cubic, side 2φ⁴</td><td>356 + 220</td><td>6</td><td>0.9937</td></tr>
+<tr><td>5/3</td><td>body-centred cubic, side 2φ⁵</td><td>754 + 466</td><td>16</td><td>0.9969</td></tr>
+<tr><td>8/5</td><td>side 2φ⁶</td><td></td><td></td><td>0.9974</td></tr>
+<tr><td>13/8</td><td></td><td></td><td></td><td>0.9976</td></tr>
+<tr><td>quasilattice</td><td>not periodic</td><td>ratio φ</td><td></td><td>0.9977</td></tr></table>
+<h3>4.2 Nests on the seats</h3>
+<p>[seats by bond-order harmonics Q4 = 0, Q6 = 0.6633; each seat's twelve neighbours form a regular icosahedron of edge 2 holding a nest; seats 4.5346 apart; golden rhombohedra (the golden skin) between.]</p>
+<h3>4.3 The climb, measured</h3>
+<figure><img src="figures/diffraction-ladder.png" alt="diffraction of rungs 2/1, 3/2, 8/5 and the quasilattice"><figcaption><b>Figure 3.</b> Diffraction square-on to a five-fold axis: rungs 2/1, 3/2, 8/5 and the quasilattice; rows and columns give way to ten-fold rings.</figcaption></figure>
+<p>[proofs or exact checks from the report: points = tiles per cell; seat counts and spacing.]</p>
+
+<h2>5. What is known and what is new</h2>
+<p>[from REPORT-fable.md, with every source checked listed.]</p>
+<h2>6. Open</h2>
+<p>[names for the new gap pieces; the Dodeca-13 by thirds as a proof; seats on higher rungs; whether the nests can be joined across seats; the physics comparison with real 1/1 and 2/1 approximants.]</p>
+<h2>References</h2>
+<p class="small">[Euclid, Elements XIII; L. Pacioli, De divina proportione (1509); J. Kepler, Mysterium cosmographicum (1596) and Harmonices mundi (1619); H. S. M. Coxeter, Regular Polytopes; V. Elser, C. L. Henley 1985; A. I. Goldman, K. F. Kelton 1993; V. Elser, N. J. A. Sloane 1987; DICTO #47, #96, Dodeca-13, The Golden Ladder - full list from the report.]</p>
+</body></html>
