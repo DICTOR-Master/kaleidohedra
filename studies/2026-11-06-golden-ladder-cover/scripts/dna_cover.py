@@ -35,7 +35,7 @@ for z, kind, data in sorted(items, key=lambda it: it[0]):
 pic = img.resize((W, TOP), Image.LANCZOS).convert('RGB')
 Nw = W
 big = L.word('THE GOLDEN LADDER', int(Nw * 0.058), lambda ch: GOLD, big=(0, 4, 11))
-sub = L.word('GOLDEN CUTS FROM PLATO TO THE FOURTH DIMENSION', int(Nw * 0.023), lambda ch: TEAL, big=(0, 12, 17, 23, 27, 34))
+sub = L.word('GOLDEN CUTS FROM PLATO TO THE EIGHTH DIMENSION', int(Nw * 0.023), lambda ch: TEAL, big=(0, 12, 17, 23, 27, 34))
 by = L.word('* DICTO *', int(Nw * 0.040), lambda ch: BLUE, big=(0, 2, 3, 4, 5, 6, 8))
 panel = np.ones((Hc - TOP, Nw, 3)) * np.array(GROUND, float)
 yy = L.paste(panel, big, Nw / 2, 50); yy = L.paste(panel, sub, Nw / 2, yy + 60); L.paste(panel, by, Nw / 2, yy + 70)

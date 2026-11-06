@@ -137,7 +137,7 @@ def make(version):
     # title panel (series style)
     N = W
     big = L.word('THE GOLDEN LADDER', int(N * 0.058), lambda ch: GOLD, big=(0, 4, 11))
-    sub = L.word('GOLDEN CUTS FROM PLATO TO THE FOURTH DIMENSION', int(N * 0.023), lambda ch: GOLD if mono else TEAL, big=(0, 12, 17, 23, 27, 34))
+    sub = L.word('GOLDEN CUTS FROM PLATO TO THE EIGHTH DIMENSION', int(N * 0.023), lambda ch: GOLD if mono else TEAL, big=(0, 12, 17, 23, 27, 34))
     by = L.word('* DICTO *', int(N * 0.040), lambda ch: GOLD if mono else BLUE, big=(0, 2, 3, 4, 5, 6, 8))
     panel = np.ones((Hc - LADH, N, 3)) * np.array(GROUND, float)
     yy = L.paste(panel, big, N / 2, 70); yy = L.paste(panel, sub, N / 2, yy + 70); L.paste(panel, by, N / 2, yy + 80)
