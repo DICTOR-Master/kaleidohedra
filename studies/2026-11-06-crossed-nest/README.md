@@ -11,3 +11,13 @@ Every level a Kepler-style compound of crossed solids whose common core is the n
   icosahedron > 5 octahedra > icosahedron > ..., shrinking by 1/phi each turn.
 All these compounds and cores are classical (Kepler, Coxeter's compounds). Next (DICTO's EKP point): the overlap version - let solids cross
 the octet's cell walls as EKP's dodecahedra cross the cube faces, and look for faces continuing through the lattice (roofs, golden rectangles).
+
+## The overlap version (scripts/overlap.py -> data-overlap.txt; float, the three thresholds checked to machine precision)
+In the octet of edge 1, grow every Pacioli icosahedron about its centre by s:
+- at s = 1 its 8 faces lie in the octet's (111) layer planes (the octahedron's faces), and its 3 golden rectangles lie in the cube planes
+  through the octahedral sites, which hold whole square arrays of sites: the rectangles of all those cells share one plane (EKP's rectangles);
+- neighbours first touch at s = sqrt5/2 (1.118034);
+- the tetrahedral holes' centres are reached at s = 3/2;
+- the grown icosahedra cover ALL of space exactly at s = phi; the last points covered are the octet's own corners (gauge = phi exactly).
+So between sqrt5/2 and phi the icosahedra overlap EKP-fashion; at phi they alone fill space with overlaps (78% of space counted twice).
+Next: where faces of overlapping neighbours become coplanar and continue (EKP's roofs); the same for the grown dodecahedra.

@@ -1,0 +1,12 @@
+(1) icosahedron faces square-on to the octet's (111) layers: 8 of 20 (they lie in the octahedron's faces, i.e. in the layer planes)
+    golden rectangle in the plane x = 0 (through the centre): corners [[0.0, -0.2701, -0.437], [0.0, -0.2701, 0.437], [0.0, 0.2701, -0.437], [0.0, 0.2701, 0.437]], sides 0.5402 x 0.8740 (ratio 1.6180)
+    sites in the same x-plane: nearest at [1.0, 1.0, 1.0, 1.0]: every icosahedron there has a golden rectangle in that plane
+(2) grown icosahedra first touch their neighbours at s = 1.118034 (edge 0.603941); 1/(phi^2 sqrt2)... compare phi = 1.618034
+    s = 1.0000: icosahedra cover 0.4874 of space, overlap (counted twice) 0.0000; with the tetrahedra the cover is 0.8201
+    s = 1.1180: icosahedra cover 0.6810 of space, overlap (counted twice) 0.0000; with the tetrahedra the cover is 0.9087
+    s = 1.2000: icosahedra cover 0.8058 of space, overlap (counted twice) 0.0352; with the tetrahedra the cover is 0.9467
+    s = 1.3000: icosahedra cover 0.9199 of space, overlap (counted twice) 0.1498; with the tetrahedra the cover is 0.9764
+    s = 1.4000: icosahedra cover 0.9784 of space, overlap (counted twice) 0.3502; with the tetrahedra the cover is 0.9924
+    s = 1.5000: icosahedra cover 0.9972 of space, overlap (counted twice) 0.5842; with the tetrahedra the cover is 0.9989
+    s = 1.6000: icosahedra cover 1.0000 of space, overlap (counted twice) 0.7817; with the tetrahedra the cover is 1.0000
+FINAL ok
