@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>One Keyed Narcissus: plan</title>
+<link rel="stylesheet" href="../paper.css">
+<style>table{border-collapse:collapse;font-size:8.8pt;margin:3mm 0;width:100%} td,th{border-bottom:1px solid #ddd;padding:1mm 1.4mm;text-align:left;vertical-align:top} .pick{border-left:3px solid #b8962e;padding-left:3mm;margin:3mm 0}
+.status{border:2px solid #c0392b;background:#fdecea;padding:2mm 3mm;margin:3mm 0;font-size:9pt}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>One Keyed Narcissus: plan</h1>
+<p class="sub">From seventeen keyed pieces to one</p>
+<div class="meta"><b>DICTO</b> · plan of 6 November 2026 · for DICTO's decision · not for publication</div>
+<div class="status">PLAN, not a paper. Steps 1 and 2 run unless DICTO says otherwise; any new record is asked for first. Study folder: studies/2026-11-05-one-piece-any-stacking (README holds every result below, with scripts).</div>
+
+<div class="pick"><b>The aim (DICTO, 5 November).</b> One piece, Narcissus with keys on its faces, that fills space alone and can do so only in a stacking that never repeats.</div>
+
+<h2>1. Where we stand</h2>
+<table><thead><tr><th>Result</th><th>Status</th></tr></thead><tbody>
+<tr><td>#97 Narcissus Keyed: 17 keyed copies of Narcissus force a non-repeating stacking (Kari's multiplication tiles, carried layer by layer)</td><td>proved; draft read by DICTO</td></tr>
+<tr><td>One keyed piece carrying one Kari tile per site: a site takes at most 6 placements (3 turns, 3 mirrors), Kari needs 10</td><td>impossible (a count)</td></tr>
+<tr><td>Block 1, the carries: a keyed piece meets its row neighbours triangle to triangle, one key mating one key. Its 6 placements must group by outgoing carry in the same way in both kinds of layer; the Culik-type tiles group 2+2+2 in ×3 layers and 3+3 in ×½ layers</td><td>proved: one down piece cannot carry the carries</td></tr>
+<tr><td>Block 2, the zero tile: the only small tile set (Culik type, scale 1/3) contains tiles with zero digits, which allow a repeating tiling; the key that forbids them costs one extra state (7 &gt; 6), because a rigid bump or hole cannot "accept either" value</td><td>proved by count; 791 other multiplier pairs scanned, none small without zero tiles</td></tr>
+<tr><td>By the counts, 3 or 4 keyed pieces suffice (down piece; up piece per layer kind)</td><td>count passes; not yet built on the real geometry</td></tr>
+</tbody></table>
+<p>Prior art for the aim: a single three-dimensional tile with matching rules that tiles only non-periodically has been announced (Flicker 2026, preprint), and the Schmitt–Conway–Danzer prototile tiles only with a screw (weakly). What would be new here is a <i>convex</i> piece from the HexOct walk, keyed on its faces, whose forced order is the stacking itself.</p>
+
+<h2>2. The two ways round the blocks</h2>
+<p><b>Edge keys (Socolar–Taylor type).</b> Both blocks come from one fact: a face key mates with exactly one face of one neighbour. A key placed on an edge where three or more pieces meet is shared, so a bump can sit in either of two neighbours. That removes the "accept either" cost (Block 2) and breaks the one-to-one mating behind the 2+2+2 against 3+3 count (Block 1). Socolar and Taylor's hexagonal monotile works this way in the plane: its rules reach second neighbours.</p>
+<p><b>A different tile set.</b> Kari and Culik sets carry numbers; other aperiodic Wang sets (Jeandel–Rao's 11 tiles, Ammann's, substitution sets) carry no carries at all. If one of them splits over a down site and an up site with at most 6 states each and without a zero-type repeating tiling, Block 1 does not arise.</p>
+
+<h2>3. Steps</h2>
+<table><thead><tr><th>#</th><th>Step</th><th>How</th><th>Decides</th></tr></thead><tbody>
+<tr><td>1</td><td>Desk count of the other tile sets: Jeandel–Rao 11, Ammann, Culik 13, two substitution sets; states per down and up site, repeating sub-tilings</td><td>exact count, dicto-big-brother, pilot ≤ 5 min</td><td>whether "a different tile set" is open at all</td></tr>
+<tr><td>2</td><td>3-piece keyed Narcissus on the real geometry (keys on the 10 faces, real placements in the stacking), SAT: no repeating tiling on tori, large patches exist</td><td>SAT on dicto-big-brother, heartbeat and FINAL line</td><td>17 → 3 (or 4): a real result in hand</td></tr>
+<tr><td>3</td><td>Edge-key model: list the edges of Narcissus where 3 or 4 pieces meet in a stacking; abstract SAT that merges the 3 pieces of step 2 into one with edge keys</td><td>SAT, tori up to 8×8×8, then patches</td><td>whether one piece is possible in this design</td></tr>
+<tr><td>4</td><td>If 3 succeeds: shape the edge keys on Narcissus (bumps and notches that keep every face contact), check by overlap tests</td><td>geometry, exact</td><td>the piece itself</td></tr>
+<tr><td>5</td><td>If 3 fails on all tori: write the impossibility as a short closing result, with the counts above</td><td>proof from the SAT certificates</td><td>closes the aim honestly</td></tr>
+</tbody></table>
+
+<h2>4. What comes out</h2>
+<p>Step 2 working gives #97 a new version (17 → 3 keyed pieces). One piece (step 4) would be a paper of its own; DICTO is asked before any new record. Every step leaves its result in the Concordance at once, success or failure.</p>
+
+<h2>Sources</h2>
+<p class="small">J. Kari, A small aperiodic set of Wang tiles, Discrete Mathematics 160 (1996) 259–264. — K. Culik II, An aperiodic set of 13 Wang tiles, Discrete Mathematics 160 (1996) 245–251. — E. Jeandel, M. Rao, An aperiodic set of 11 Wang tiles, Advances in Combinatorics (2021). — J. E. S. Socolar, J. M. Taylor, An aperiodic hexagonal tile, Journal of Combinatorial Theory A 118 (2011) 2207–2231. — B. Grünbaum, G. C. Shephard, Tilings and Patterns, W. H. Freeman (1987), ch. 11 (Ammann's sets). — L. Danzer, A family of 3D-spacefillers not permitting any periodic or quasiperiodic tiling, in Aperiodic '94 (World Scientific, 1995). — F. Flicker, Matching rules for a three-dimensional strongly aperiodic monotile, arXiv:2609.23783 (2026, preprint). — DICTO, Narcissus Keyed (#97, draft); Narcissus and Covenant (draft).</p>
+</body></html>
