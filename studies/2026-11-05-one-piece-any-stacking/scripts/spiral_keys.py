@@ -75,7 +75,7 @@ for s in range(6):
     for sgn in (1, -1): walk([s], sgn)
 strands = sorted(strands)
 ZIG = len(sys.argv) > 5 and sys.argv[5] == 'zigzag'
-WK, NW = (int(sys.argv[6]), int(sys.argv[7])) if len(sys.argv) > 7 else (0, 1)
+WK, NW = (int(sys.argv[6]), int(sys.argv[7])) if len(sys.argv) > 7 and sys.argv[5] == 'all' else (0, 1)
 if ZIG:
     strands = set()
     def zwalk(path, last):
@@ -131,7 +131,9 @@ for U in USETS:
             for e in Nn: lab[e] = 2
         if any(lab) and set(i for i in range(18) if lab[i]) == set(U): designs.add(canon(lab))
 MODE = sys.argv[5] if len(sys.argv) > 5 else ''
-if MODE == 'all':   # DICTO 11-06 "go ahead with the three-site check": every count-feasible edge labelling, not only strands
+if MODE == 'one':   # follow-up of one design: labels as a string of 0/R/N (edge order E0)
+    designs = {tuple('0RN'.index(ch) for ch in sys.argv[6])}
+elif MODE == 'all':   # DICTO 11-06 "go ahead with the three-site check": every count-feasible edge labelling, not only strands
     designs = set(); per = []
     for L in sorted(VAL):
         es = [i for i in range(18) if LEN[i] == L]; k = VAL[L] - 1; opts = []
@@ -202,7 +204,11 @@ def solve(lab, recs, inner, mirror_ok, classes=None):
     r = s.solve(); s.delete(); return r
 # ---------- periodic classes: in-plane period m, vertical period from the word
 a1 = np.array([1, 0.]); a2 = np.array([.5, np.sqrt(3) / 2]); Mlat = np.array([a1, a2]).T
-def classes_for(Ps, word_unit, reps, m):
+def classes_for(Ps, word_unit, reps, m, skew=np.zeros(2)):   # skew (Fable review 11-06): sideways shift of the vertical period
+    if isinstance(m, tuple):
+        ha, hb, hd = m; ML = np.array([ha * a1, hb * a1 + hd * a2]).T
+    else:
+        ML = Mlat * m
     p = len(word_unit)
     nl = len(word_unit) * reps + 1; per_layer = len(Ps) // nl
     layer = [i // per_layer for i in range(len(Ps))]
@@ -211,7 +217,7 @@ def classes_for(Ps, word_unit, reps, m):
     L0 = [cen[i] for i in range(len(Ps)) if layer[i] == 0]; Lp = [cen[i] for i in range(len(Ps)) if layer[i] == p]
     tz = p * H
     def red(x):
-        cc = np.linalg.solve(Mlat, x[:2]) / m; f = cc - np.floor(cc + 1e-7); return tuple(np.round(f, 4))
+        cc = np.linalg.solve(ML, x[:2]); f = cc - np.floor(cc + 1e-7); f = np.where(f > 1 - 1e-6, 0, f); return tuple(np.round(f, 4))
     # find in-plane shift t such that Lp = L0 + (t, tz) mod lattice: try t = Lp[j] - L0[0] for down-N of same orientation
     S0 = {red(x) + (round(x[2] % (2 * H), 4),) for x in L0}
     cand = None
@@ -220,6 +226,7 @@ def classes_for(Ps, word_unit, reps, m):
         if all((red(np.r_[x[:2] + t, 0]) + (round((x[2] + tz) % (2 * H), 4),)) in {red(z) + (round(z[2] % (2 * H), 4),) for z in Lp} for x in L0):
             cand = t; break
     if cand is None: return None
+    cand = cand + skew
     # piece shapes must also match (orientation): compare corner sets
     key = {}
     cls = []
@@ -256,9 +263,15 @@ for wu in periodic_words(PMAX):
         u = wu * mult; reps = 2
         Ps, recs, inner = get(u * reps, max(3, MMAX + 1))
         ok = None
-        for m in range(1, MMAX + 1):
-            cl = classes_for(Ps, u, reps, m)
-            if cl is not None: PER.append((u, m, recs, inner, cl)); ok = True
+        import os
+        IMAX = int(os.environ.get('HNF', '0'))
+        MS = [(ha, hb, hd) for ha in range(1, IMAX + 1) for hd in range(1, IMAX + 1) if ha * hd <= IMAX for hb in range(ha)] if IMAX else range(1, MMAX + 1)
+        for m in MS:
+            if isinstance(m, tuple): RS = [(p_, q_) for p_ in range(m[0]) for q_ in range(m[2])]
+            else: RS = [(p_, q_) for p_ in range(m) for q_ in range(m)]
+            for (p_, q_) in RS:
+                cl = classes_for(Ps, u, reps, m, skew=p_ * a1 + q_ * a2)
+                if cl is not None: PER.append((u, f"{m}+skew({p_},{q_})", recs, inner, cl)); ok = True
         if ok: break
 hb(f"periodic instances {len(PER)}: " + ', '.join(sorted({f'{u}/m{m}' for u, m, *_ in PER})))
 res = []

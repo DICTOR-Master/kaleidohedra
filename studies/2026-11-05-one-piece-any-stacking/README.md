@@ -184,3 +184,8 @@ placements; (b) carrying the row direction through the relays by shape (would al
   then the patch test (5 slabs, every word) only if nothing repeats. Mirror copies first; proper motions only when mirrors already fill.
 - Pilot (1/500 sample, dicto-big-brother): ~4.7 s per design, control repeats, no find in the sample. Full scan: 22 workers,
   study-runs/2026-11-06-spiral/all/w*.log, ~3.5 h, each worker ends with FINAL and EXIT.
+- CORRECTION (11-06 evening, independent review REPORT-fable-candidate.md): the periodic test used one vertical translation per in-plane
+  sublattice and missed SKEWED periods. Candidate 13931 repeats: three-site rotation with a one-site sideways shift every two slabs
+  (sublattice (3,1,1), skew a1). Test fixed (every skew representative); all 82 distinct candidates of the scan rechecked with it
+  (index <= 3): ALL 82 periodic, none survives. The scan was stopped part-way (its CANDIDATE lines were artefacts). Lesson for any rerun:
+  test the skewed three-site torus first; it is the escape every three-fold edge key has used.
