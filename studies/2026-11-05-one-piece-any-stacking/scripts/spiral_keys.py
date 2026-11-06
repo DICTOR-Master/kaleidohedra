@@ -75,6 +75,7 @@ for s in range(6):
     for sgn in (1, -1): walk([s], sgn)
 strands = sorted(strands)
 ZIG = len(sys.argv) > 5 and sys.argv[5] == 'zigzag'
+WK, NW = (int(sys.argv[6]), int(sys.argv[7])) if len(sys.argv) > 7 else (0, 1)
 if ZIG:
     strands = set()
     def zwalk(path, last):
@@ -129,6 +130,22 @@ for U in USETS:
             for e in R: lab[e] = 1
             for e in Nn: lab[e] = 2
         if any(lab) and set(i for i in range(18) if lab[i]) == set(U): designs.add(canon(lab))
+MODE = sys.argv[5] if len(sys.argv) > 5 else ''
+if MODE == 'all':   # DICTO 11-06 "go ahead with the three-site check": every count-feasible edge labelling, not only strands
+    designs = set(); per = []
+    for L in sorted(VAL):
+        es = [i for i in range(18) if LEN[i] == L]; k = VAL[L] - 1; opts = []
+        for r in range(0, len(es) // (k + 1) + 1):
+            for R in itertools.combinations(es, r):
+                rest = [e for e in es if e not in R]
+                for Nn in (itertools.combinations(rest, k * r) if r else [()]): opts.append((R, Nn))
+        per.append(opts)
+    for combo in itertools.product(*per):
+        lab = [0] * 18
+        for R, Nn in combo:
+            for e in R: lab[e] = 1
+            for e in Nn: lab[e] = 2
+        designs.add(canon(lab))
 designs.add(tuple([0] * 18))   # control: no key, must give PATCH and PERIODIC
 designs = sorted(designs)
 print(f"strands {len(strands)}, double-spiral designs (count-feasible, + control) up to symmetry {len(designs)}; K={K} n={NP} PMAX={PMAX} MMAX={MMAX}", flush=True)
@@ -246,18 +263,23 @@ for wu in periodic_words(PMAX):
 hb(f"periodic instances {len(PER)}: " + ', '.join(sorted({f'{u}/m{m}' for u, m, *_ in PER})))
 res = []
 for di, lab in enumerate(designs):
-    for mirror_ok in (False, True):
-        patch = None
-        for w in itertools.product('ST', repeat=K - 1):
-            w = ''.join(w); Ps, recs, inner = get(w, NP)
-            if solve(lab, recs, inner, mirror_ok): patch = w; break
+    if di % NW != WK: continue
+    seen_nopatch_mirror = False
+    for mirror_ok in (True, False):
+        if not mirror_ok and seen_nopatch_mirror: res.append((di, mirror_ok, 'NO PATCH')); continue
         per = None
-        if patch:
-            for u, m, recs, inner, cl in PER:
-                if solve(lab, recs, inner, mirror_ok, cl): per = f'{u}/m{m}'; break
-        verdict = 'NO PATCH' if not patch else ('PERIODIC ' + per if per else 'CANDIDATE')
+        for u, m, recs, inner, cl in PER:
+            if solve(lab, recs, inner, mirror_ok, cl): per = f'{u}/m{m}'; break
+        patch = 'periodic' if per else None
+        if not per:
+            for w in itertools.product('ST', repeat=K - 1):
+                w = ''.join(w); Ps, recs, inner = get(w, NP)
+                if solve(lab, recs, inner, mirror_ok): patch = w; break
+        verdict = ('PERIODIC ' + per) if per else ('CANDIDATE' if patch else 'NO PATCH')
+        if mirror_ok and verdict == 'NO PATCH': seen_nopatch_mirror = True
         res.append((di, mirror_ok, verdict))
-        hb(f"design {di} labels {''.join('0RN'[x] for x in lab)} mirrors={'yes' if mirror_ok else 'no'}: {verdict}" + (f" (patch word {patch})" if patch else ''))
+        if verdict != 'NO PATCH' or di % 200 == 0:
+            hb(f"design {di} labels {''.join('0RN'[x] for x in lab)} mirrors={'yes' if mirror_ok else 'no'}: {verdict}" + (f" (patch word {patch})" if patch else ''))
 from collections import Counter
 print('SUMMARY', dict(Counter((mo, v.split()[0]) for _, mo, v in res)), flush=True)
 cands = [(d, mo) for d, mo, v in res if v == 'CANDIDATE']

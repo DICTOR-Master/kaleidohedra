@@ -177,3 +177,10 @@ placements; (b) carrying the row direction through the relays by shape (would al
 - Pattern across spiral and zigzag: every edge key so far is either too tight (no filling) or loose enough to settle into the three-site
   rotation (period 3). Next: test whether that three-site rotation is a general obstruction for three-fold edge keys (a proof would close
   the edge route); otherwise the full count-feasible scan.
+
+## The three-site check (DICTO 11-06 "go ahead with the three-site check")
+- Question: is the three-site rotation (in-plane period 3) a general way round every edge key on N? Test: EVERY count-feasible rod/notch
+  labelling of the 18 edges (64 967 up to symmetry, spiral_keys.py mode 'all'), repeat test first (stacking periods <= 4, in-plane <= 3),
+  then the patch test (5 slabs, every word) only if nothing repeats. Mirror copies first; proper motions only when mirrors already fill.
+- Pilot (1/500 sample, dicto-big-brother): ~4.7 s per design, control repeats, no find in the sample. Full scan: 22 workers,
+  study-runs/2026-11-06-spiral/all/w*.log, ~3.5 h, each worker ends with FINAL and EXIT.
