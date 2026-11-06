@@ -28,3 +28,9 @@ at two scales a factor 2 apart. Status: nest exact-checked (float), catalogue do
 - D - C: Euclid's six roofs (classical).
 - C - T: four corner pyramids = the OCTAHEDRON's own centre pyramid at 2/3 size (trirectangular). So this gap is made of another solid's pieces.
 - scripts/gap_pieces.py -> data-gap-pieces.txt. Next: the other 13 chains' gaps against all named pieces (Cleo-Icos, Antonius, FUJI, CLEO, AXE, Q, P).
+
+## With the truncated tetrahedron (DICTO 11-06: "maybe the truncated tetrahedron too"; scripts/nest_catalogue6.py)
+- New inscriptions: T > TT (corners cut at 1/3, edge 1/3); TT > O (its six hexagon-hexagon edge midpoints = T's midpoint octahedron,
+  edge 3/2 of TT); TT > T (four hexagon centres, edge 5/3). So in every octet tetrahedron: T 1 > TT 1/3 > O 1/2 > ... (TT slots between).
+- 18 chains through all six. Notable: TT 1 > O 3/2 > I > D > C sqrt2/2 > T 1: the innermost tetrahedron has the outer truncated
+  tetrahedron's own edge. TT and T also tile space together (the quarter cubic honeycomb, classical): a second frame besides the octet.
