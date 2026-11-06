@@ -1,0 +1,15 @@
+I > D (face centres)                       = 1/6 + sqrt(5)/6   claim 1/6 + sqrt(5)/6   OK
+I > O (six edge midpoints on the axes)     = sqrt(sqrt(5)/4 + 3/4)   claim sqrt(2)*(1/2 + sqrt(5)/2)/2   OK
+D > C (eight corners)                      = 1/2 + sqrt(5)/2   claim 1/2 + sqrt(5)/2   OK
+D > T (four corners)                       = sqrt(sqrt(5) + 3)   claim sqrt(2)*(1/2 + sqrt(5)/2)   OK
+D > I (face centres)                       = 1/2 + 3*sqrt(5)/10   claim sqrt(5)*(1/2 + sqrt(5)/2)**2/5   OK
+C > I (touching the faces)                 = -1/2 + sqrt(5)/2   claim 1/(1/2 + sqrt(5)/2)   OK
+O > T (four face centres)                  = 2/3   claim 2/3   OK
+Dodeca-13 chain I                          = 1/2 + 3*sqrt(5)/10   claim sqrt(5)*(1/2 + sqrt(5)/2)**2/5   OK
+Dodeca-13 chain O                          = sqrt(2*sqrt(5)/5 + 9/10)   claim sqrt(10)*(1/2 + sqrt(5)/2)**3/10   OK
+Dodeca-13 chain C                          = 2*sqrt(5)/15 + 1/3   claim sqrt(5)*(1/2 + sqrt(5)/2)**3/15   OK
+Dodeca-13 chain T                          = sqrt(10)*(1 + sqrt(5))**3/120   claim sqrt(10)*(1/2 + sqrt(5)/2)**3/15   OK
+I-D pentagonal cap: side / base            = sqrt(9/2 - 3*sqrt(5)/2)   claim sqrt(9/2 - 3*sqrt(5)/2)   OK
+cap side/base squared = 9/2 - 3*sqrt(5)/2 ~ 1.0704662693192697
+UNITY heart edge (pentagon circumradius 1/(2 sin 36)) -> icosahedron of that circumradius has edge: 2*sqrt(5)/5  claim 2/sqrt5 = 0.8944271909999159
+FINAL ok
