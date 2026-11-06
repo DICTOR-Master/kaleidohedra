@@ -8,7 +8,8 @@ from scipy.optimize import linprog
 import ledtext as L
 phi = (1 + 5 ** 0.5) / 2
 GROUND = (20, 15, 11); GOLD = (217, 165, 33); VIOLET = (150, 105, 205); TEAL = (40, 165, 150); BLUE = (55, 115, 205); LILAC = (180, 138, 224)
-W, Hc = 2400, 3346; SS = 2   # supersampling for the shapes
+W, Hc = 2400, 3394; SS = 2   # A4 (DICTO 11-06: cover centred, like the other books)
+   # supersampling for the shapes
 # ------------------------------------------------------------------ geometry
 def rot(a, b, c):
     Rx = np.array([[1, 0, 0], [0, np.cos(a), -np.sin(a)], [0, np.sin(a), np.cos(a)]])
@@ -97,12 +98,12 @@ def glow_layer(img, mask_draw_fn, col, radius):
 def make(version):
     mono = version == 'B'
     C2, C3a, C3b, C4, C8a, C8b = ((GOLD,) * 6) if mono else (GOLD, GOLD, VIOLET, VIOLET, GOLD, TEAL)
-    LADH = 2420; img = Image.new('RGBA', (W * SS, LADH * SS), GROUND + (255,))
-    xl, xr = 330 * SS, (W - 330) * SS; rungs = [2190, 1640, 1110, 520]   # 2D (bottom) ... 8D (top), centre y
-    rail = lambda d: [d.line([(x, 60 * SS), (x, (LADH - 20) * SS)], fill=255, width=26 * SS) for x in (xl, xr)]
+    LADH = 2500; img = Image.new('RGBA', (W * SS, LADH * SS), GROUND + (255,))
+    xl, xr = 330 * SS, (W - 330) * SS; rungs = [2440, 1930, 1440, 860]   # DICTO 11-06: much more space for the top rung (8D)   # 2D (bottom) ... 8D (top), centre y
+    rail = lambda d: [d.line([(x, 160 * SS), (x, (LADH - 20) * SS)], fill=255, width=26 * SS) for x in (xl, xr)]
     glow_layer(img, rail, GOLD, 22 * SS)
     d = ImageDraw.Draw(img)
-    for x in (xl, xr): d.line([(x, 60 * SS), (x, (LADH - 20) * SS)], fill=GOLD + (255,), width=22 * SS)
+    for x in (xl, xr): d.line([(x, 160 * SS), (x, (LADH - 20) * SS)], fill=GOLD + (255,), width=22 * SS)
     for y in rungs:
         d.line([(xl, y * SS), (xr, y * SS)], fill=(150, 112, 22, 255), width=18 * SS)
     # 2D: truncated triangle, long/short = phi (Chapter 3, #88), lying on its rung, seen slightly from above
@@ -111,27 +112,27 @@ def make(version):
     for i in range(3):
         p, q = T[i], T[(i + 1) % 3]; u = (q - p) / Lt; hexv += [p + u * b, q - u * b]
     hexv = np.array(hexv); V2 = np.c_[hexv, np.zeros(6)]; V2 = np.r_[V2, V2 + [0, 0, -0.16]]
-    R = rot(np.radians(-20), 0, 0); draw_solid(d, V2, W / 2 * SS, (rungs[0] - 110) * SS, 200 * SS, C2, R)
+    R = rot(np.radians(-20), 0, 0); draw_solid(d, V2, W / 2 * SS, (rungs[0] - 205) * SS, 175 * SS, C2, R)
     # 3D: Icosaxes (x = 1/phi^2) and Unborn Axes (x = 1/(phi sqrt5)) as truncated octahedra T(x) (#48, #88); scaled to one edge
     for xx, dx, col in ((phi, -330, C3a), (1 / phi, 330, C3b)):
         V = Tx(xx); V = V / np.linalg.norm(V, axis=1).max()
-        draw_solid(d, V, (W / 2 + dx) * SS, (rungs[1] - 170) * SS, 215 * SS, col, rot(np.radians(-24), np.radians(32), np.radians(10)))
+        draw_solid(d, V, (W / 2 + dx) * SS, (rungs[1] - 235) * SS, 215 * SS, col, rot(np.radians(-24), np.radians(32), np.radians(10)))
     # 4D: the 120-cell (Chapter 5), orthographic shadow after a 4D turn
     C, E2 = cell120(); w0 = C[:, 3].max()   # a cell centre lies on the w axis; project from just beyond that cell
     X3 = C[:, :3] / (1.08 * w0 - C[:, 3])[:, None]; X3 /= np.linalg.norm(X3, axis=1).max(); X3 = X3 @ rot(np.radians(-18), np.radians(22), 0).T
-    draw_wire(img, X3[:, :2], E2, X3[:, 2], W / 2 * SS, (rungs[2] - 275) * SS, 265 * SS, C4, 4 * SS, (0.30, 1.0))
+    draw_wire(img, X3[:, :2], E2, X3[:, 2], W / 2 * SS, (rungs[2] - 290) * SS, 265 * SS, C4, 4 * SS, (0.30, 1.0))
     # 8D: E8 as two 600-cells, one phi times the other, in the H4 Coxeter plane (8 rings of 30; Chapter 9)
     V6, E6 = cell600(); x, y = coxeter_plane(V6)
     for scale, col, wd, ar in ((phi, C8a, 2, (0.12, 0.30)), (1.0, C8b, 2, (0.15, 0.40))):
         P2 = np.c_[V6 @ x, V6 @ y] * scale / phi
-        draw_wire(img, P2, E6, np.zeros(120) + np.linspace(0, 1, 120), W / 2 * SS, (rungs[3] - 235) * SS, 215 * SS, col, wd * SS, ar)
+        draw_wire(img, P2, E6, np.zeros(120) + np.linspace(0, 1, 120), W / 2 * SS, (rungs[3] - 330) * SS, 255 * SS, col, wd * SS, ar)
         dd = ImageDraw.Draw(img); r = 6 * SS
-        for px, py in P2: X0, Y0 = W / 2 * SS + 215 * SS * px, (rungs[3] - 235) * SS - 215 * SS * py; dd.ellipse([X0 - r, Y0 - r, X0 + r, Y0 + r], fill=col + (255,))
+        for px, py in P2: X0, Y0 = W / 2 * SS + 255 * SS * px, (rungs[3] - 330) * SS - 255 * SS * py; dd.ellipse([X0 - r, Y0 - r, X0 + r, Y0 + r], fill=col + (255,))
     lad = img.resize((W, LADH), Image.LANCZOS).convert('RGB')
     # dimension marks, LED letters, left of the left rail
     can = np.array(lad, float)
     for y, t in zip(rungs, ('2D', '3D', '4D', '8D')):
-        g = L.word(t, 60, lambda ch: GOLD if mono else (255, 255, 255)); L.paste(can, g, 165, y - 140)
+        g = L.word(t, 60, lambda ch: GOLD if mono else (255, 255, 255)); L.paste(can, g, 165, y - 140); L.paste(can, g, W - 165, y - 140)   # both sides, so the ladder stands centred
     lad = Image.fromarray(np.clip(can, 0, 255).astype(np.uint8))
     # title panel (series style)
     N = W

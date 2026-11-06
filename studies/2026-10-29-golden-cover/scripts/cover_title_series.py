@@ -2,11 +2,11 @@
 # letters with the gaps between segments closed (morphological closing per letter), lit as on the HexOct square: H gold,
 # C violet (exactly the pieces' colours), the rest white, black outline, soft glow; on the square's dark ground, joined
 # below the square -> hexoct-cover-front.png. Capitals, with larger initial capitals (DICTO): H and O of HexOct, T L S, D.
-import numpy as np
+import os, numpy as np
 from scipy import ndimage
 from PIL import Image, ImageDraw, ImageFont
 GROUND = (20, 15, 11); GOLD = (217, 165, 33); VIOLET = (180, 138, 224); WHITE = (255, 255, 255); RED = (205, 62, 40)
-sq = Image.open('../golden-square.png').convert('RGB'); N = sq.width
+sq = Image.open(os.environ.get('SQUARE', '../golden-square.png')).convert('RGB'); N = sq.width
 def glyph(ch, size, col):
     """One closed LED letter: (rgb, alpha) cropped to its ink, plus padding for glow."""
     f = ImageFont.truetype('DSEG14Classic-Regular.ttf', size); pad = size // 2; w, h = size + 2 * pad, int(size * 1.4) + 2 * pad
@@ -54,7 +54,7 @@ H = ser[1].shape[0] + int(N * 0.03) + big[1].shape[0] + sub[1].shape[0] + by[1].
 panel = np.ones((H, N, 3)) * np.array(GROUND, float)
 y = paste(panel, ser, N / 2, int(N * 0.02)); y = paste(panel, big, N / 2, y + int(N * 0.03)); y = paste(panel, sub, N / 2, y + int(N * 0.05)); paste(panel, by, N / 2, y + int(N * 0.035))
 out = Image.new('RGB', (N, N + H), GROUND); out.paste(sq, (0, 0)); out.paste(Image.fromarray(np.clip(panel, 0, 255).astype(np.uint8)), (0, N))
-out.save('../golden-cover-front-series.png')
+out.save(os.environ.get('OUT', '../golden-cover-front-series.png'))
 # the ◆ DICTO ◆ mark alone (transparent), for the back of the KDP cover (DICTO 10-29)
 mk = word('* DICTO *', int(N * 0.06), lambda ch: RED, big=(0, 2, 3, 4, 5, 6, 8))   # red on the back too (DICTO 10-29)
 Image.fromarray(np.dstack([np.clip(mk[0], 0, 255), mk[1] * 255]).astype(np.uint8), 'RGBA').save('dicto-mark.png')
