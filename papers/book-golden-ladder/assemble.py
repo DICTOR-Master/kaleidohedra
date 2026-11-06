@@ -87,7 +87,7 @@ css = '\n'.join(sorted(styles)) + '''
 table.toc td{border-bottom:1px dotted #ccc;padding:1.2mm 2mm} table.toc a{color:inherit;text-decoration:none}
 figure img, .figs img{max-width:100%}
 body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}'''
-status = '<div class="status">DRAFT, version 4, for DICTO\'s read. Change from version 3: Figure 3A.1 (photographs of DICTO\'s work), panel (c): the rough cut-out outline round the dictosphere design replaced by a clean circular edge fitted to its silhouette; panel (a): the patch of brown floor under the DeltaZips removed. Nothing else changed. Delete this box at release.</div>'   # v3 released 6 November 2026 (Zenodo 24000692)
+status = ''   # deleted at release (v4 released 6 November 2026 after DICTO's read ok: Figure 3A.1 photographs cleaned)
 doc = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>The Golden Ladder</title>
 <link rel="stylesheet" href="../paper.css"><style>{css}</style></head><body>
