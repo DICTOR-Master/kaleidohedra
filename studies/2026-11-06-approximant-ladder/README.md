@@ -42,6 +42,7 @@ square-on to a five-fold axis; ten-fold score = correlation with itself turned 3
 | 3/2 | 0.9937 | 0.8377 | 0.382 |
 | 5/3 | 0.9969 | 0.8324 | 0.374 |
 | 8/5 | 0.9974 | 0.8266 | 0.370 |
+| 13/8 | 0.9976 | 0.8257 | 0.370 |
 | quasilattice (golden, the top) | 0.9977 | 0.8254 | 0.369 |
 Every rung moves toward the quasilattice in all three measures: the cubic tone fades, the ten-fold order grows. 8/5 reached by harmonics
 without building its exact cell (side 2 phi^6 = 35.89). Figure diffraction-ladder.png (2/1, 3/2, 8/5, quasilattice).
