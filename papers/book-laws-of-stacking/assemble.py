@@ -18,8 +18,9 @@ CH=[('Prologue','series-web-of-bonds',58),
     ('8','real-polytypes',68),('9','real-materials-2',70),('10','real-materials-3',71),('11','real-materials-4',72),
     ('12','real-materials-5',73),('13','magnets',74),
     ('14','two-tiles',75),
-    ('15','window-law',84)]
-PART={'1':'Part I. The laws','8':'Part II. Real materials','14':'Part III. HexOct','15':'Part IV. The Window Law'}
+    ('15','window-law',84),
+    ('16','2026-11-04-hexoct-narcissus',98)]   # v8 (DICTO 2026-11-06 'both separate paper and chapter'): #98 Narcissus and Covenant, Part V
+PART={'1':'Part I. The laws','8':'Part II. Real materials','14':'Part III. HexOct','15':'Part IV. The Window Law','16':'Part V. The end of the walk'}
 styles=set(); chapters=[]; sources=[]; toc=[]
 cw=open(os.path.join(P,'collected','paper.html'),encoding='utf8').read()
 PAPERS={int(m.group(1)):(html.unescape(re.sub('<[^>]+>','',m.group(2))),m.group(3)) for m in re.finditer(r'<tr><td class="n">#(\d+)</td><td><b>(.*?)</b>.*?DICTO DOI: (10\.5281/zenodo\.\d+)',cw,re.S)}
@@ -43,7 +44,9 @@ def link_html(h):
             out.append(p)
         else: out.append(p if inA else link_text(p))
     return ''.join(out)
-CORR=[('With this paper the series on real materials (#68, #70–#73) is complete.','The series on real materials (Chapters 8 to 12) was followed by a companion on magnets, Chapter 13.'),
+CORR=[('<div class="abstract"><b>In short.</b> ','<div class="abstract">'),   # v8: banned label (print guard)
+      ('DICTO asked whether they belong to that one structure or to stacking itself.','Do they belong to that one structure, or to stacking itself?'),   # v8: banned phrase (print guard)
+      ('With this paper the series on real materials (#68, #70–#73) is complete.','The series on real materials (Chapters 8 to 12) was followed by a companion on magnets, Chapter 13.'),
       ('This study closes the line of work on materials.','This chapter closes the series on single materials; Part IV returns to the perovskites and adds the Frank–Kasper phases and the approximants of quasicrystals, under one theorem (Chapter 15).')]
 INDEX_TERMS=['Window Law','Swap defect','Frank–Kasper','Yarmolyuk','quasicrystal','approximant','Ammann–Beenker','HexOct','HexOct-K','Wang','silicon carbide','silicon','germanium','diamond','lonsdaleite','ice','tin','cobalt','iron','titanium','zirconium','magnesium','hydrogen','CrCoNi','perovskite','BaRuO','BaMnO','LiCoO','cathode','GaAs','InP','nanowire','spin ice','kagome','pyrochlore','Mn<sub>3</sub>Sn','Mn<sub>3</sub>Ir','rock salt','cadmium iodide','zinc blende','Laves','Fibonacci','golden ratio','ANNNI','stacking fault','Pauling','Onsager','Jagodzinski','Ganesha','Janus','octet','rhombic dodecahedron']
 INDEX={}
@@ -88,7 +91,7 @@ for label,folder,num in CH:
     for st in re.findall(r'<style>(.*?)</style>',s,re.S): styles.add(st.strip())
     doi=re.search(r'DICTO DOI: (10\.5281/zenodo\.\d+)',s); doi=doi.group(1) if doi else ''
     body=s[s.index('<h1'):s.rindex('</body>')]
-    title=html.unescape(re.sub('<[^>]+>','',re.search(r'<h1[^>]*>(.*?)</h1>',body,re.S).group(1))).strip()
+    title=html.unescape(re.sub('<[^>]+>','',re.sub(r'<br>\s*',': ',re.search(r'<h1[^>]*>(.*?)</h1>',body,re.S).group(1)))).strip()
     body=re.sub(r'<div class="meta">.*?</div>','',body,count=1,flags=re.S)
     # move sources / data / references out
     out=[]
