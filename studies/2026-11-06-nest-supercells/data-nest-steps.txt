@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/dicto/k-research/studies/2026-11-06-nest-supercells/scripts/nest_steps.py", line 10, in <module>
+    U = json.load(open('../unity-nests.json')); ID = np.array(U['ID']); icos = [np.array(I) for I in U['icos']]; caps = [np.array(c) for c in U['caps']]
+                  ~~~~^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../unity-nests.json'

@@ -30,3 +30,12 @@ The 600-cell's equatorial slice is the icosidodecahedron (ID); DICTO's UNITY = I
 sampling); the cap apexes sit at 0.850651 (= the pentagon's circumradius) and form a regular icosahedron; ID 13.835526 = 12 caps 3.618034 +
 core 10.217492. Every icosahedron holds D > C > T and an octahedron (through six of its edge midpoints), all checked.
 Open: a nest in the ID's core (its six axis corners give an octahedron; to check against the caps); gap pieces round UNITY.
+
+## Steps 1-3 (DICTO "proceed 1 2 3"; scripts/nest_steps.py -> data-nest-steps.txt)
+1. UNITY's heart: the icosahedron of the 12 cap tips (edge 2/sqrt5 = 0.894427) stays clear of every cap (0 of 200 000 sample points
+   inside a cap), so it holds its own nest. ID 13.835526 = 12 caps 3.618034 + heart 1.561094 + rest of the core 8.656398.
+2. Gaps: Dodeca-13 wedges + needles 6.07% of the filled cluster; the 600-cell corner 14.1% of its hull; UNITY 35.7% of its hull (open
+   spaces between the J11s).
+3. Supercells inside cells: the largest Dodeca-13 inside its own central dodecahedron is x1/3 (0.333333, float; exactness to prove) -
+   so every dodecahedron can hold a Dodeca-13 at a third of the size, and so on (self-similar, factor 3). UNITY inside its heart
+   icosahedron x0.295686, inside one of its 12 icosahedra x0.285260 (no clean ratio found).
