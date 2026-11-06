@@ -1,0 +1,12 @@
+== icosahedron (Pacioli): 20 faces
+   faces with |normal| (np.float64(0.5774), np.float64(0.5774), np.float64(0.5774)): 8 per cell, coplanar with 18 neighbours; neighbours' faces meet at s = 2.118034; plane covered 0.682 there, 0.418 at s = phi
+   faces with |normal| (np.float64(0.3568), np.float64(0.0), np.float64(0.9342)): 4 per cell, coplanar with 2 neighbours; neighbours' faces meet at s = 2.618034; plane covered 0.310 there, 0.099 at s = phi
+   faces with |normal| (np.float64(0.0), np.float64(0.9342), np.float64(0.3568)): 4 per cell, coplanar with 2 neighbours; neighbours' faces meet at s = 2.618034; plane covered 0.310 there, 0.099 at s = phi
+   faces with |normal| (np.float64(0.9342), np.float64(0.3568), np.float64(0.0)): 4 per cell, coplanar with 2 neighbours; neighbours' faces meet at s = 2.618034; plane covered 0.254 there, 0.083 at s = phi
+   neighbours first touch at s = 1.118034
+== dodecahedron (the nest): 12 faces
+   faces with |normal| (np.float64(0.5257), np.float64(0.8507), np.float64(0.0)): 4 per cell, coplanar with 2 neighbours; neighbours' faces meet at s = 3.000000; plane covered 0.410 there, 0.096 at s = phi
+   faces with |normal| (np.float64(0.0), np.float64(0.5257), np.float64(0.8507)): 4 per cell, coplanar with 2 neighbours; neighbours' faces meet at s = 3.000000; plane covered 0.445 there, 0.097 at s = phi
+   faces with |normal| (np.float64(0.8507), np.float64(0.0), np.float64(0.5257)): 4 per cell, coplanar with 2 neighbours; neighbours' faces meet at s = 3.000000; plane covered 0.410 there, 0.096 at s = phi
+   neighbours first touch at s = 1.500000
+FINAL ok

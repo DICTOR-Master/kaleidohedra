@@ -21,3 +21,10 @@ In the octet of edge 1, grow every Pacioli icosahedron about its centre by s:
 - the grown icosahedra cover ALL of space exactly at s = phi; the last points covered are the octet's own corners (gauge = phi exactly).
 So between sqrt5/2 and phi the icosahedra overlap EKP-fashion; at phi they alone fill space with overlaps (78% of space counted twice).
 Next: where faces of overlapping neighbours become coplanar and continue (EKP's roofs); the same for the grown dodecahedra.
+
+## Roofs (scripts/roofs.py on dicto-big-brother -> data-roofs.txt)
+Coplanar faces of neighbouring cells (offset perpendicular to the face normal) meet edge to edge at:
+- icosahedra (touch at sqrt5/2): the 8 faces in the (111) layer planes at s = 1 + sqrt5/2 (2.118034, 18 coplanar neighbours); the other
+  12 (golden) faces at s = phi^2 (2.618034, 2 coplanar neighbours each);
+- dodecahedra: touch at s = 3/2; coplanar faces meet at s = 3 exactly.
+So the octet's roofs form deep in the overlap (beyond phi, where the icosahedra already fill space): a stronger-overlap analogue of EKP.
