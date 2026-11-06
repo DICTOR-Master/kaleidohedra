@@ -189,3 +189,14 @@ placements; (b) carrying the row direction through the relays by shape (would al
   (sublattice (3,1,1), skew a1). Test fixed (every skew representative); all 82 distinct candidates of the scan rechecked with it
   (index <= 3): ALL 82 periodic, none survives. The scan was stopped part-way (its CANDIDATE lines were artefacts). Lesson for any rerun:
   test the skewed three-site torus first; it is the escape every three-fold edge key has used.
+
+## Edge keys to shrink #97 (independent attempt, 6-7 Nov night; REPORT-fable-edgekeys.md)
+VERDICT: 17 -> 14 by edge keys is impossible; 17 (14 Kari tile pieces + 3 relays) is the floor of the Kari architecture; #97 stands.
+- Root cause: with tile pieces on both sublattices each slab holds two Kari rows, the up row divides, slab multiplier q_down/q_up in
+  {1, 3, 1/3}, so Kari's "no product is 1" fails. Flip lemma: a 180-degree turn about a horizontal axis swaps down/up and makes every key
+  relation across a contact symmetric. SAT on real geometry: the 14-piece designs tested are PERIODIC (Covenant stacking; alternating 3, 1/3).
+- Relays cannot be removed (their rotation is fixed by the receiving quad); hexagon-edge keys read only rotation-invariant patterns (2
+  values, not 3); "accept either" frees who owns the rod, never which value a rigid piece shows.
+- Control: the 17-piece set of #97 has NO periodic tiling on 133 tori (words up to 6 slabs, in-plane index <= 3, every skew
+  representative) - this closes the skew gap for #97 itself.
+- What could still lower the count: counting mirror copies as one piece, or a non-Kari aperiodic engine; not edge keys.
