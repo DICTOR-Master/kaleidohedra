@@ -23,3 +23,10 @@ icosahedron's faces: pairwise disjoint; thin gaps 0.388167 = 14.1% of their hull
 wedges). Every tetrahedron holds the six-solid nest T > TT 1/3 > O 1/2 > I (Pacioli) > D > C; all checked. The nest has the tetrahedron's
 three-fold symmetry about its axis, so no turn choice arises on this side.
 Next: the middle slice (the 600-cell's equatorial icosidodecahedron); gap pieces of the 20-tetrahedra corner.
+
+## The middle slice: UNITY with nests (DICTO 11-06 "sounds perfect"; scripts/unity.py -> unity-nests.json, render_unity.py -> unity-nests.png)
+The 600-cell's equatorial slice is the icosidodecahedron (ID); DICTO's UNITY = ID + 12 J11 on its pentagons. Each J11 + its pentagonal cap
+(pointing into the ID) = a regular icosahedron (edge 1). Checks: the 12 icosahedra and the 12 caps are pairwise disjoint (no overlap in
+sampling); the cap apexes sit at 0.850651 (= the pentagon's circumradius) and form a regular icosahedron; ID 13.835526 = 12 caps 3.618034 +
+core 10.217492. Every icosahedron holds D > C > T and an octahedron (through six of its edge midpoints), all checked.
+Open: a nest in the ID's core (its six axis corners give an octahedron; to check against the caps); gap pieces round UNITY.
