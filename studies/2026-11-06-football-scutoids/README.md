@@ -17,3 +17,9 @@ orientations, every link pentagon-to-hexagon. Not yet a space-fill (the rest of 
 - Figure football-layer.png (also in papers-to-read).
 - NEXT: stack layers and cut the remaining space; find where pieces change neighbours top to bottom (the scutoids); the bridge itself is a
   pentagon-hexagon prismatoid (no middle vertex) unless its sides meet different pieces above and below.
+
+## Step 2a: stacking the layers (scripts/stack_layers.py -> data-stack.txt; overnight 6-7 Nov)
+Layer periods 2D e1 (10.389) and D(e1 + e2) (8.006). The closest stacking found (shift grid 9 x 9 of the cell, separating-plane overlap
+test): layer spacing h = 3.6224 at shift (0, 0.444) of the cell - less than a ball's diameter, so each layer's balls sit in the hollows of
+the one below. Balls fill 0.5758 of space; bridges + gap 0.4242. Next (2b): cut the gap into pieces (power/Voronoi cells of the balls and
+bridges, or wave basins) and find the pieces whose neighbours change from bottom to top: the scutoids. Coarse shift grid: refine before any claim.

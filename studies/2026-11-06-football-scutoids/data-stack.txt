@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/dicto/k-research/studies/2026-11-06-football-scutoids/scripts/stack_layers.py", line 8, in <module>
+    exec(open('grid_layer.py').read().split('# overlap test')[0].replace('print(', '(lambda *a, **k: None)('))
+         ~~~~^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'grid_layer.py'
