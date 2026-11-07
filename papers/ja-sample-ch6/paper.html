@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="ja"><head><meta charset="utf-8"/><title>空間の量子 ― マニフェスト（第1巻）</title>
+<link href="../paper.css" rel="stylesheet"/>
+<style>
+body { font-size: 11pt; line-height: 1.55; }
+.page { break-after: page; }
+.titlepage { text-align: center; padding-top: 38mm; }
+.titlepage img.big { width: 62mm; margin: 0 auto 12mm; display: block; }
+.titlepage h1 { font-size: 34pt; margin: 0 0 6pt; letter-spacing: .5pt; }
+.titlepage .sub { font-size: 13pt; margin: 0 0 22mm; }
+.titlepage .by { font: 600 15pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 0 0 4pt; }
+.titlepage .small { font: 9pt/1.6 "DejaVu Sans", sans-serif; color: #444; margin: 0 auto; max-width: 140mm; }
+.titlepage .sample { margin: 18mm auto 0; max-width: 130mm; font: 9.5pt/1.5 "DejaVu Sans", sans-serif; color: #333; border-top: 1px solid #b8962e; border-bottom: 1px solid #b8962e; padding: 6pt 0; }
+.contents h2 { margin-top: 10pt; }
+.contents ol { list-style: none; padding: 0; margin: 0 0 4pt; columns: 2; column-gap: 8mm; font: 8.8pt/1.45 "DejaVu Sans", sans-serif; }
+.contents li { break-inside: avoid; margin: 0 0 1.5pt; padding-left: 9mm; text-indent: -9mm; }
+.contents li b { display: inline-block; width: 9mm; text-indent: 0; color: #6b5310; }
+.contents li.here { font-weight: 600; }
+.contents p.chap { margin: 0 0 2pt; font-style: italic; font-size: 9.5pt; }
+.contents .note { font: 8.6pt "DejaVu Sans", sans-serif; color: #444; margin-top: 6pt; }
+.intro h3, .entry h3 { font: 600 11pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 11pt 0 3pt; break-after: avoid; }
+.chapter-mark { font: 600 9pt "DejaVu Sans", sans-serif; letter-spacing: 1.5pt; text-transform: uppercase; color: #b8962e; margin: 0 0 2pt; }
+.entry h1 { font-size: 20pt; }
+.entry .logo, .intro .logo { width: 22mm; }
+.lead { font-size: 12pt; line-height: 1.5; color: #222; }
+.dataref { font: 8.8pt "DejaVu Sans", sans-serif; color: #6b5310; }
+.credit { font: 8.8pt/1.5 "DejaVu Sans", sans-serif; color: #333; border-top: 1px solid #b8962e; padding-top: 4pt; margin-top: 10pt; }
+.doi { font: 600 9.5pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 6pt 0 0; }
+.figs.wide { grid-template-columns: 1fr; width: 100%; }
+.appendix { font-size: 9.6pt; line-height: 1.45; }
+.appendix h2 { break-before: auto; margin-top: 16pt; border-top: 1px solid #b8962e; padding-top: 6pt; }
+.appendix h2.first { break-before: auto; }
+.appendix h3 { font: 600 10pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 9pt 0 2pt; break-after: avoid; }
+.appendix ul { padding-left: 5mm; margin: 2pt 0; }
+.appendix li { margin: 0 0 2pt; }
+.appendix table { font-size: 8.6pt; }
+td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.licence { font: 8.4pt "DejaVu Sans", sans-serif; color: #555; }
+
+/* DICTO 10-29: neutral sans-serif for the whole book, as in the series */
+body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs,p,li{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}
+
+/* DICTO 10-29: spacing. Entries flow on (a new page only at each chapter), titles stand clear of the text above and below */
+.page.entry { break-after: auto; break-before: auto; margin-top: 14mm; padding-top: 6mm; border-top: 1px solid #e3d7b5; }
+.page.entry[data-first="1"] { break-before: page; margin-top: 0; padding-top: 0; border-top: none; }
+.page.entry h1 { margin: 5mm 0 3mm; break-after: avoid; }   /* DICTO 10-29: clear gap between the chapter line and the title */
+.page.entry .chapter-mark { margin-bottom: 0; }
+.page.entry .sub { margin-bottom: 7mm; break-after: avoid; }
+.page.entry .chapter-mark { break-after: avoid; }
+.intro h3, .entry h3 { margin: 16pt 0 6pt !important; break-after: avoid; }
+.entry p, .intro p { orphans: 3; widows: 3; }
+figure { break-inside: avoid; }
+
+/* DICTO 10-29: the same clear gap wherever a chapter line stands over a title (introduction, catalogue, short chapters, appendix) */
+.chapter-mark { margin-bottom: 0 !important; }
+.chapter-mark + h1 { margin-top: 5mm !important; margin-bottom: 4mm !important; }
+.status { border: 2px solid #a00; border-radius: 2mm; padding: 2mm 3mm; margin: 3mm 0; font-size: 8.6pt; line-height: 1.35; color: #300; background: #fff6f6; }
+.status li { margin: 0 0 1mm; }
+</style><style>body{font-family:'Noto Serif CJK JP','Noto Sans CJK JP',serif;line-break:strict}</style><style>
+.status{border:2px solid #b22;background:#fff4f2;padding:2mm 3mm;margin:3mm 0;font:9pt 'Noto Sans CJK JP',sans-serif}
+.se{margin:0 0 5mm;padding-top:2mm;border-top:1px solid #e3d7b5}
+.se h2 .n{color:#b8962e;margin-right:2mm}
+.full{font-size:8.5pt;color:#555}
+.note{border-left:3px solid #b8962e;background:#fbf6e8;padding:2mm 4mm;margin:4mm 0;font-size:9.5pt}
+table.t{border-collapse:collapse;font-size:8.6pt;width:100%} table.t td,table.t th{border:1px solid #ddd;padding:1.2mm 2mm;vertical-align:top}
+h1.sample{font-size:15pt} .small{font-size:8.6pt;color:#444}
+</style></head><body>
+<h1 class="sample">日本語版『空間の量子』第2版　試訳：第6章「四次元」</h1>
+<p class="small">DICTO · 2026年11月7日 · 見本（Japanese sample chapter for a native reader）</p>
+<div class="status"><b>Status</b> (draft for DICTO and the native reader; not for release): Chapter 6 of the Japanese Quanta reworked as a sample, before the whole book is redone. First the new chapter, with the translator's note on the Alice names; then the term choices and their sources; last the faults found in the published version 1 of this chapter. Register chosen: である調 (expository, as in Japanese Wikipedia and Miyazaki Kōji's writing); the reader may prefer です・ます調. Katakana title on the cover: クォンタ・オブ・スペース.</div>
+
+<p class="chapter-mark">第6章　四次元</p>
+<h1>四次元</h1>
+<p class="lead">四次元空間の正多胞体は、その影と断面を通してしか見ることができない。本章の四篇は、そのうちの二つ、正六百胞体と正百二十胞体（DICTO はこれを「白の女王」「赤の女王」と名付けた）と、両者をつなぐ途中の段階を追う。五篇目（#89）は、四次元の立体の断面のなかにプラトンの立体の黄金切断を見いだす。四篇の全章は『不思議の国のアリシア ― 赤の女王と白の女王』（DICTO DOI 10.5281/zenodo.23753305）に収められている。</p>
+
+<div class="note"><p><b>訳注　アリスの名前について</b>　白の女王と赤の女王は、ルイス・キャロル『鏡の国のアリス』（1871年）に登場する二人の女王である。物語の国はチェス盤のように区切られ、鏡の中ではあらゆるものが逆向きに進む。DICTO は、600個の正四面体でできた正六百胞体を「白の女王」、その双対で、120個の正十二面体でできた正百二十胞体を「赤の女王」と名付けた。一方の頂点は他方の胞の中心にあたり、赤の女王は白の女王からそのまま正確に組み立てられる。キャロルの本名はチャールズ・ラトウィッジ・ドジソン（1832–1898）で、オックスフォード大学クライスト・チャーチで数学を教えていた。</p>
+<p>書名の『不思議の国のアリシア』は、キャロルのアリスと、論理学者ジョージ・ブールの娘アリシア・ブール・ストット（1860–1940）を重ねたものである。彼女は正規の数学教育を受けないまま、四次元の六つの正多胞体を独力で見いだし、1900年には正六百胞体と正百二十胞体の断面を、色分けした図と厚紙の模型で発表した。「ポリトープ（polytope）」という語は彼女によるものとされる。同書では、彼女による正六百胞体の断面列のちょうど真ん中の断面に「アリシア」の名が与えられ、そこで見つかったほかの形にも、ハンプティ・ダンプティ、白ウサギ、帽子屋など、キャロルの登場人物の名が付けられている。</p></div>
+
+<div class="se"><h2><span class="n">#62</span>四次元の影</h2>
+<p>DICTO の着想による。四次元空間にあって三角形の面をもつ四つの立体の影と断面から、面がすべて等しい正三角形の新しい立体が得られる。そのうち二つは既知の立体の変種で、つながり方が異なる。一つは一本の辺のまわりに三つ集まって閉じ、もう一つは単独で空間を充填する。正六百胞体からは四つの形が、すべての辺を等しくして正確に組み直される。そのなかに影武者（当初の名は Shadow-17）がある。</p>
+<p class="full">全章：『不思議の国のアリシア』第5章　DICTO DOI 10.5281/zenodo.23687223</p></div>
+
+<div class="se"><h2><span class="n">#63</span>白の女王 ― 正六百胞体</h2>
+<p>正六百胞体のあらゆる断面と影を正確にまとめた図録である。断面の型は62通りあり、そのうち12通りは三角形だけでできている。影はどれも、正確に二つの半分に分かれる。一つの頂点のまわりでは、600個の胞が15層の殻をなし、各層はただ一種類のピースからなる。その中心には、20個のクレオ・イコスでできた核がある。これらの断面の最初のものは、1900年にアリシア・ブール・ストットが見ている。</p>
+<p class="full">全章：『不思議の国のアリシア』第6章　DICTO DOI 10.5281/zenodo.23690856</p></div>
+
+<div class="se"><h2><span class="n">#76</span>女王たちのあいだ</h2>
+<p>DICTO の着想による、六角形をもつ四次元の二十面体と、一方の女王から他方の女王へ至る段階。白の女王の頂点をしだいに深く切り落としていくと、五つの一様多胞体を順に通る。切頂六百胞体、頂点を辺の中点まで切り落とした六百胞体（rectified 600-cell）、その中間点にあたる二重切頂六百胞体（胞は切頂二十面体と切頂四面体）、そして頂点を辺の中点まで切り落とした百二十胞体（rectified 120-cell）と切頂百二十胞体である。いずれも白の女王自身の頂点から組み立てられ、切断の位置は正確に求められている。1402枚の断面とその影からなる完全な図録がある。</p>
+<p class="full">全章：『不思議の国のアリシア』第7章　DICTO DOI 10.5281/zenodo.23780068</p></div>
+
+<div class="se"><h2><span class="n">#65</span>赤の女王 ― 正百二十胞体</h2>
+<p>白の女王の双対であり、白の女王から正確に組み立てられる。120個の正十二面体が、一つを中心に9層に重なる。アリストテレスの五つの角錐は、どれも四次元の正多胞体の核を透視図として見たものであり、双対どうしで対をなす。</p>
+<p class="full">全章：『不思議の国のアリシア』第8章　DICTO DOI 10.5281/zenodo.23716140</p></div>
+
+<div class="se"><h2><span class="n">#89</span>五つの黄金の対は、すべて四次元の立体の断面である</h2>
+<p>DICTO は、#88 の黄金切断をプラトンの立体の外へ広げ、残る黄金の対を四次元に探すことを提案した。四次元の立方体である正八胞体（テッセラクト）を、いちばん長い対角線に垂直に切ると、中央の二つの頂点層のあいだの断面はすべて、頂点を切り落とした四面体になる。高さ 1/φ² と 1/φ の断面が大黄金切断四面体と小黄金切断四面体で、高さ 1/2 のアルキメデスの立体、切頂四面体をはさんで両側に位置する。黄金の十二面体と四面体は正百二十胞体の断面としても現れるので、正十二面体、正二十面体、正四面体、正八面体の黄金の対は、すべて四次元の正多胞体の断面である。例外は立方体で、これは証明されている。四次元の正多胞体のどの断面も、頂点を切り落とした立方体にはならない。それらは一歩外側、正八胞体を辺の中点まで切り戻した rectified tesseract のなかにあり、切断した立方体と正八面体による DICTO の充填は、その空間充填形（ハニカム）の断面である。</p>
+<p>プラトンの立体の外では、黄金切断はまれである。アルキメデスの立体にはない。二十・十二面体と変形十二面体には、面がすべて黄金の形か正多角形になる DICTO 黄金正則切断がそれぞれ二つある（二十・十二面体については、Zefiro が2011年に示した段階を DICTO が独立に見いだした）。菱形十二面体と菱形三十面体にもそれぞれ二つ、ケプラー・ポアンソの四つの星型正多面体（大十二面体、大二十面体、小星型十二面体、大星型十二面体）にもそれぞれ二つ（大黄金切断と小黄金切断）ある。DICTO は二つの小黄金正則切断を DICTO-GTT 立体に加え、その数は五つになった。名称は DICTO による。</p>
+<p class="full">DICTO DOI 10.5281/zenodo.23917931</p></div>
+
+<section style="break-before:page">
+<h2>訳語の選び方（style sheet）</h2>
+<p class="small">Sources: Japanese Wikipedia (正多胞体, 正六百胞体, 正百二十胞体, 正八胞体, 空間充填, 正多面体, 半正多面体, 二十・十二面体, 変形十二面体, 菱形十二面体, 鏡の国のアリス); 宮崎興二, 高次元多胞体の建築的特性とその応用に関する研究 (Osaka Univ. thesis 1988, abstract); the book's glossary (536 entries, 31 Oct 2026). Copies in the reference library, japanese-models/.</p>
+<table class="t">
+<tr><th>English</th><th>訳語</th><th>Why</th></tr>
+<tr><td>regular polytope</td><td>正多胞体</td><td>Wikipedia, Miyazaki; v1 wrote 正多面体 (= regular polyhedron) by mistake</td></tr>
+<tr><td>600-cell / 120-cell</td><td>正六百胞体 / 正百二十胞体</td><td>Wikipedia titles; 600胞体 only inside compound names</td></tr>
+<tr><td>tesseract</td><td>正八胞体（テッセラクト）</td><td>Wikipedia</td></tr>
+<tr><td>cell / face / edge / corner</td><td>胞 / 面 / 辺 / 頂点</td><td>Wikipedia counts (胞・面・辺・頂点); Miyazaki uses 稜 for edge, but 辺 is the general-reader word</td></tr>
+<tr><td>polar (partner)</td><td>双対</td><td>Wikipedia (双対：正六百胞体); v1 wrote 極</td></tr>
+<tr><td>slice / shadow</td><td>断面 / 影</td><td>v1 mixed 断面, 切り口, スライス</td></tr>
+<tr><td>uniform polytope</td><td>一様多胞体</td><td>by analogy with 一様多面体 (Wikipedia); v1 wrote 正多面体</td></tr>
+<tr><td>rectified</td><td>頂点を辺の中点まで切り落とした… (rectified …)</td><td>no settled Japanese term found; described, English kept once</td></tr>
+<tr><td>icosidodecahedron / snub dodecahedron</td><td>二十・十二面体 / 変形十二面体</td><td>Wikipedia; v1 wrote 二十面体 and いぶし十二面体 (both wrong)</td></tr>
+<tr><td>Kepler–Poinsot</td><td>ケプラー・ポアンソの星型正多面体</td><td>glossary; v1 wrote ポアン</td></tr>
+<tr><td>golden cut</td><td>黄金切断</td><td>a cut of a solid; not 黄金分割 (= golden section)</td></tr>
+<tr><td>Kagemusha</td><td>影武者</td><td>DICTO's name is already Japanese (glossary); v1 left it in Latin letters</td></tr>
+<tr><td>White / Red Queen</td><td>白の女王 / 赤の女王</td><td>standard in 鏡の国のアリス translations; v1 also wrote 白い女王</td></tr>
+<tr><td>Alicia in Wonderland</td><td>『不思議の国のアリシア ― 赤の女王と白の女王』</td><td>glossary; v1 used three different renderings and the English title</td></tr>
+<tr><td>Full chapter:</td><td>全章：『…』第n章</td><td>v1 mixed 全章, フル章</td></tr>
+<tr><td>register</td><td>である調</td><td>expository register of Wikipedia and Miyazaki; short, exact sentences</td></tr>
+</table>
+<h2>第1版のこの章で見つかった誤り（faults in version 1 of this chapter）</h2>
+<table class="t">
+<tr><td>1</td><td>Chapter heading printed a stray HTML fragment ("4 次元" inside a nested page).</td></tr>
+<tr><td>2</td><td>The lead attached the queen names to "the stages between them" (as in the English before v2.1).</td></tr>
+<tr><td>3</td><td>正多面体 (regular polyhedra) for the regular four-dimensional solids, twice; 正の四次元立体 (meaningless) in #89.</td></tr>
+<tr><td>4</td><td>#89: "icosidodecahedron" translated as 二十面体 (icosahedron), a wrong statement; "snub" as いぶし.</td></tr>
+<tr><td>5</td><td>English words left in the text (rectified ×2, Kagemusha) and the Alicia book under three names plus its English title.</td></tr>
+<tr><td>6</td><td>"…の詳細は英語版をご覧ください" repeated after short entries where no formula had been left out.</td></tr>
+<tr><td>7</td><td>Glossary not applied: 影武者, 双対, ポアンソ and the book title were all in the glossary of 31 October but not in the text.</td></tr>
+</table>
+<p class="small">Guard for the whole book: a checker will compare every section with the glossary and flag leftover English words before any Japanese PDF is printed.</p>
+</section>
+</body></html>
