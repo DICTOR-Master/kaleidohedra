@@ -126,7 +126,7 @@ main{{max-width:760px;margin:0 auto;padding:24px 16px 64px}}
 <div class="photo">DICTO's photo here: a PET-bottle sculpture, or B1NR "Int-aerium &amp; Ext-aerium" at Fumin Hall ALTI, Kyoto</div>
 
 <section>
-<h2><span class="n">1</span>There are five perfect shapes</h2>
+<h2 id="rule-1"><span class="n">1</span>There are five perfect shapes</h2>
 <p>Take one flat shape, the same every time, and build a closed solid where every corner looks the same. It can be done in exactly five ways, and no more. They are the five dice in a role-playing set. DICTO's name carries them, one letter each: <b>D</b>odecahedron, <b>I</b>cosahedron, <b>C</b>ube, <b>T</b>etrahedron, <b>O</b>ctahedron.</p>
 <div class="five">{five}</div>
 <p class="word">The word: <i>Platonic solids</i>. Plato wrote about them around 360 BC; the proof that there are only five is in Euclid.</p>
@@ -134,7 +134,7 @@ main{{max-width:760px;margin:0 auto;padding:24px 16px 64px}}
 </section>
 
 <section>
-<h2><span class="n">2</span>Fill space with no gaps</h2>
+<h2 id="rule-2"><span class="n">2</span>Fill space with no gaps</h2>
 <p>Squares cover a bathroom floor: four meet at every corner and close up. Pentagons cannot: three leave a gap, four overlap. The same holds one step up. Pack a car boot so perfectly that no air is left between the boxes, and you have filled space. Of the five perfect shapes, only the cube does it alone. Tetrahedra and octahedra do it together, two to one, the frame of many roofs and climbing frames.</p>
 <div class="pic">{rule2}</div>
 <p>Most shapes cannot fill space. DICTO hunts for the ones that can, and has found new ones: the HexOct pieces, and Narcissus, a single piece that fills space all by itself.</p>
@@ -143,7 +143,7 @@ main{{max-width:760px;margin:0 auto;padding:24px 16px 64px}}
 </section>
 
 <section>
-<h2><span class="n">3</span>Layers can stack in any order</h2>
+<h2 id="rule-3"><span class="n">3</span>Layers can stack in any order</h2>
 <p>Stack oranges on a market stall: each new layer sits in the dips of the one below. There are only three places a layer can sit, A, B and C. Look at any layer and its two neighbours. If they match (…A B A…) the layer turns back: call it <b>h</b>. If they differ (…A B C…) it carries straight on: call it <b>c</b>.</p>
 <div class="pic">{rule3}</div>
 <p>Every string of c's and h's is a stacking that can be built, and real crystals use many of them. DICTO found what stays the same whatever the order. One example: in the diamond-like network built on any stacking, every atom sits on exactly the same number of closed loops of each length (the Loop Equality, paper #102). And DICTO turned the rule into cloth: in Knitting Crystals (#83) the knitted sheets are the layers, and the linking yarns run straight on at a c layer and turn back at an h layer, so the fabric is the crystal.</p>
@@ -152,7 +152,7 @@ main{{max-width:760px;margin:0 auto;padding:24px 16px 64px}}
 
 <section>
 <h2>Try it with your hands</h2>
-<p>Print the sheet below at 100%, cut, fold and glue. You get a tetrahedron and an octahedron with the same edge. Make two tetrahedra and one octahedron, and you hold rule 2: they fit face to face with no gaps, and the pattern goes on for ever.</p>
+<p>Print the sheet below at 100%, cut, fold and glue, or download <a href="build-the-five.pdf">Build the Five</a>, a kit of all five perfect shapes and the rhombic dodecahedron, one A4 page each. You get a tetrahedron and an octahedron with the same edge. Make two tetrahedra and one octahedron, and you hold rule 2: they fit face to face with no gaps, and the pattern goes on for ever.</p>
 </section>
 
 <section>
@@ -160,7 +160,7 @@ main{{max-width:760px;margin:0 auto;padding:24px 16px 64px}}
 <ul class="next">
 <li><b>Before the Ladder</b>: short lessons from the very beginning, one idea each, with a picture, a memory hook and something to try. <span class="small">(in preparation)</span></li>
 <li><b>Play</b>: <a href="https://rhombiverse.dictospheres.com/rhombis.html">RHOMBIS</a>, the puzzle app, and the three apps on the home page.</li>
-<li><b>Read</b>: the books, each with its own cover on the home page, in seven languages.</li>
+<li><b>Read</b>: <a href="../#books">the books</a>, each with its own cover on the home page, in seven languages.</li>
 <li><b>Words</b>: an everyday glossary of the geometry words used on this site. <span class="small">(in preparation)</span></li>
 </ul>
 <p class="small">DICTO · dictospheres.com</p>
@@ -172,4 +172,12 @@ main{{max-width:760px;margin:0 auto;padding:24px 16px 64px}}
 </section>
 </main></body></html>'''
 open('/home/dicto/k-research/papers/start-here/paper.html', 'w').write(page)
+import re as _re
+live = _re.sub(r'<div class="status">.*?</div>\n', '', page, flags=_re.S)
+live = _re.sub(r'<div class="photo">.*?</div>\n', '', live, flags=_re.S)
+live = _re.sub(r'<li>[^\n]*\(in preparation\)</span></li>\n', '', live)
+live = live.replace('<title>Start Here · DICTO</title>', '<title>Start Here · DICTO</title>\n<meta name="description" content="Start here: DICTO\'s geometry in three rules, five perfect shapes, filling space with no gaps, and layers that stack in any order, with nets to print and build.">\n<link rel="canonical" href="https://dictospheres.com/start-here/">\n<link rel="icon" href="../favicon.png">')
+live = live.replace('src="../dicto-logo.png"', 'src="../dicto-logo.png?v=2"').replace('<p class="small">DICTO · dictospheres.com</p>', '<p class="small"><a href="../">DICTO · dictospheres.com</a></p>')
+assert 'status' not in live.split('</style>')[1] and 'class="photo"' not in live.split('</style>')[1] and 'in preparation' not in live
+open('/home/dicto/k-research/papers/start-here/live-index.html', 'w').write(live)
 print('ok', len(page))
