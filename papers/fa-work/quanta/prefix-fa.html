@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="fa" dir="rtl"><head><meta charset="utf-8"><title>کوانتوم‌های فضا — یک مانیفست (جلد I)</title>
+<link rel="stylesheet" href="../paper.css">
+<style>
+.namesbox { border-left: 3px solid #b8962e; background: #fbf6e8; padding: 2mm 4mm; margin: 4mm 0; font-size: 9.5pt; }
+.status { border: 2px solid #b22; background: #fff4f2; padding: 2mm 3mm; margin: 3mm 0; font-size: 9pt; }
+body { font-size: 11pt; line-height: 1.55; }
+.page { break-after: page; }
+.titlepage { text-align: center; padding-top: 38mm; }
+.titlepage img.big { width: 62mm; margin: 0 auto 12mm; display: block; }
+.titlepage h1 { font-size: 34pt; margin: 0 0 6pt; letter-spacing: .5pt; }
+.titlepage .sub { font-size: 13pt; margin: 0 0 22mm; }
+.titlepage .by { font: 600 15pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 0 0 4pt; }
+.titlepage .small { font: 9pt/1.6 "DejaVu Sans", sans-serif; color: #444; margin: 0 auto; max-width: 140mm; }
+.titlepage .sample { margin: 18mm auto 0; max-width: 130mm; font: 9.5pt/1.5 "DejaVu Sans", sans-serif; color: #333; border-top: 1px solid #b8962e; border-bottom: 1px solid #b8962e; padding: 6pt 0; }
+.contents h2 { margin-top: 10pt; }
+.contents ol { list-style: none; padding: 0; margin: 0 0 4pt; columns: 2; column-gap: 8mm; font: 8.8pt/1.45 "DejaVu Sans", sans-serif; }
+.contents li { break-inside: avoid; margin: 0 0 1.5pt; padding-left: 9mm; text-indent: -9mm; }
+.contents li b { display: inline-block; width: 9mm; text-indent: 0; color: #6b5310; }
+.contents li.here { font-weight: 600; }
+.contents p.chap { margin: 0 0 2pt; font-style: italic; font-size: 9.5pt; }
+.contents .note { font: 8.6pt "DejaVu Sans", sans-serif; color: #444; margin-top: 6pt; }
+.intro h3, .entry h3 { font: 600 11pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 11pt 0 3pt; break-after: avoid; }
+.chapter-mark { font: 600 9pt "DejaVu Sans", sans-serif; letter-spacing: 1.5pt; text-transform: uppercase; color: #b8962e; margin: 0 0 2pt; }
+.entry h1 { font-size: 20pt; }
+.entry .logo, .intro .logo { width: 22mm; }
+.lead { font-size: 12pt; line-height: 1.5; color: #222; }
+.dataref { font: 8.8pt "DejaVu Sans", sans-serif; color: #6b5310; }
+.credit { font: 8.8pt/1.5 "DejaVu Sans", sans-serif; color: #333; border-top: 1px solid #b8962e; padding-top: 4pt; margin-top: 10pt; }
+.doi { font: 600 9.5pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 6pt 0 0; }
+.figs.wide { grid-template-columns: 1fr; width: 100%; }
+.appendix { font-size: 9.6pt; line-height: 1.45; }
+.appendix h2 { break-before: auto; margin-top: 16pt; border-top: 1px solid #b8962e; padding-top: 6pt; }
+.appendix h2.first { break-before: auto; }
+.appendix h3 { font: 600 10pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 9pt 0 2pt; break-after: avoid; }
+.appendix ul { padding-left: 5mm; margin: 2pt 0; }
+.appendix li { margin: 0 0 2pt; }
+.appendix table { font-size: 8.6pt; }
+td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.licence { font: 8.4pt "DejaVu Sans", sans-serif; color: #555; }
+
+/* DICTO 10-29: neutral sans-serif for the whole book, as in the series */
+body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs,p,li{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}
+
+/* DICTO 10-29: spacing. Entries flow on (a new page only at each chapter), titles stand clear of the text above and below */
+.page.entry { break-after: auto; break-before: auto; margin-top: 14mm; padding-top: 6mm; border-top: 1px solid #e3d7b5; }
+.page.entry[data-first="1"] { break-before: page; margin-top: 0; padding-top: 0; border-top: none; }
+.page.entry h1 { margin: 5mm 0 3mm; break-after: avoid; }   /* DICTO 10-29: clear gap between the chapter line and the title */
+.page.entry .chapter-mark { margin-bottom: 0; }
+.page.entry .sub { margin-bottom: 7mm; break-after: avoid; }
+.page.entry .chapter-mark { break-after: avoid; }
+.intro h3, .entry h3 { margin: 16pt 0 6pt !important; break-after: avoid; }
+.entry p, .intro p { orphans: 3; widows: 3; }
+figure { break-inside: avoid; }
+
+/* DICTO 10-29: the same clear gap wherever a chapter line stands over a title (introduction, catalogue, short chapters, appendix) */
+.chapter-mark { margin-bottom: 0 !important; }
+.chapter-mark + h1 { margin-top: 5mm !important; margin-bottom: 4mm !important; }
+.status { border: 2px solid #a00; border-radius: 2mm; padding: 2mm 3mm; margin: 3mm 0; font-size: 8.6pt; line-height: 1.35; color: #300; background: #fff6f6; }
+.status li { margin: 0 0 1mm; }
+</style></head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+
+<!-- ============ TITLE PAGE ============ -->
+<section class="page coverpage" style="height:252mm;display:flex;justify-content:center;align-items:center">
+<img src="figures/cover/quanta-cover-front.png" alt="جلد: کوانتوم‌های فضا، یک مانیفست، DICTO، زیر مربع DICTO از پنج جسم افلاطونیِ نام DICTO، D I C T O" style="width:100%;height:auto;display:block">
+</section>
+<section class="page" style="text-align:center;padding-top:62mm">
+<p style="font-size:15pt;font-style:italic;line-height:1.7;margin:0">جهانی را در دانه‌ای شن دیدن<br>و بهشتی را در گلی وحشی،<br>بی‌کرانگی را در کف دستت نگه داشتن<br>و ابدیت را در یک ساعت.</p>
+<p style="font-size:10pt;color:#555;margin-top:5mm">ویلیام بلیک، «پیشگویی‌های معصومیت»</p>
+<p style="font-size:10.5pt;margin:40mm auto 0;max-width:150mm;line-height:1.6">مقاله‌ها، برنامه‌ها و داده‌های این اثر آزادانه قابل استفاده‌اند؛ همهٔ آن‌ها با دسترسی آزاد، تحت مجوز <span dir="ltr">CC BY-SA 4.0</span>، منتشر شده‌اند و خواندن، هم‌رسانی و ساختن بر پایهٔ آن‌ها آزاد است.</p>
+</section>
+<section class="page titlepage">
+<img class="big" src="../dicto-logo.png" alt="DICTO">
+<h1>کوانتوم‌های فضا</h1>
+<p class="sub">یک مانیفست</p>
+<p class="sub">آثار هندسی DICTO</p>
+<p class="by">DICTO</p>
+<p class="small">هنرمند، اوساکا، ژاپن · <span dir="ltr">contact@dictospheres.com</span> · <span dir="ltr">https://dictospheres.com</span><br>
+همهٔ آثار، یافته‌ها و نام‌ها از آنِ DICTO است. محاسبه، بررسی و پیش‌نویس با همکاری Claude (Anthropic).<br>
+ترجمه با همکاری Claude (Anthropic)<br>
+مجوز <span dir="ltr">CC BY-SA 4.0</span></p>
+<p class="small" style="margin-top:8mm">کتاب · جلد I · نسخهٔ 2.1 · 7 نوامبر 2026 · <span dir="ltr">DICTO DOI: 10.5281/zenodo.23754454</span></p>
+<p class="small" style="margin-top:2mm">جلد II: «فرهنگ اتم‌های DICTO — کوانتوم‌های فضا II»، فهرست همهٔ اتم‌ها، داده‌ها اثر به اثر، و شکل‌های شناخته‌شده و بازیافته (<span dir="ltr">DICTO DOI: 10.5281/zenodo.23966395</span>).</p>
+</section>
+
+<section class="page" style="text-align:center;padding-top:80mm"><p style="font-size:14pt;font-style:italic">تقدیم به پدرم، آلن بیکر</p></section>
+<!-- ============ CONTENTS ============ -->
+<section class="page contents">
+<img class="logo" src="../dicto-logo.png" alt="DICTO" style="width:22mm">
+<h1>فهرست مطالب</h1>
+<p style="font: 9.5pt 'DejaVu Sans', sans-serif;">آنچه این اثر در بر دارد<br>درآمد: کوانتوم‌های فضا<br>73 اثر: 71 مقاله در شش فصل، سپس یافته‌های Kaleidohedra و مجموعه‌داده (شماره‌ها همان شماره‌های مقاله‌ها در <span dir="ltr">dictospheres.com</span> هستند)<br>در جلد II، «فرهنگ اتم‌های DICTO — کوانتوم‌های فضا II»: فهرست همهٔ اتم‌ها، داده‌ها اثر به اثر، و شکل‌های شناخته‌شده و بازیافته</p>
+
+<h2>اتم‌ها</h2><p class="chap">جسم‌های منفرد، هر یک قطعه‌ای دقیق و تازه.</p>
+<ol>
+<li><b>#18</b>هکسای DICTO</li>
+<li><b>#19</b>AXE، CLEO و FUJI</li>
+<li><b>#20</b>خانوادهٔ FUJI</li>
+<li><b>#28</b>صدودووجهی بریده‌بیست‌وجهی DICTO</li>
+<li><b>#31</b>هشتادوجهی DICTO</li>
+<li><b>#31a</b>ستاره‌پیکر OCD از DICTO</li>
+<li><b>#34a</b>صدودو-هشتادوجهی DICTO</li>
+<li><b>#35a</b>میان‌شصت‌وجهی DICTO</li>
+<li><b>#35b</b>بازسی‌وجهی DICTO</li>
+<li><b>#41</b>گوهر DICTO</li>
+<li><b>#45</b>جسم‌های افلاطونی رولو</li>
+<li><b>#49</b>قضیهٔ کشش چندوجهی‌ها</li>
+<li><b>#88</b>هر جسم افلاطونی دقیقاً دو برش طلایی دارد</li>
+<li><b>—</b>همهٔ اتم‌ها: فهرست در جلد II است</li>
+</ol>
+
+<h2>پیوندها</h2><p class="chap">قطعه‌ها چگونه با هم فضا را پر می‌کنند: مجموعه‌ها، چینش‌ها و شبکه‌های دقیق.</p>
+<ol>
+<li><b>#8</b>سلول اقلیدس–کپلر–پاچولی</li>
+<li><b>#13</b>دوازده‌وجهی-13 DICTO</li>
+<li><b>#14</b>ستارهٔ DICTO</li>
+<li><b>#17</b>پوش‌های کاگومه</li>
+<li><b>#25</b>کره‌وار-13 RD از DICTO</li>
+<li><b>#26</b><span dir="ltr">ATOM-13×13</span> از DICTO</li>
+<li><b>#30</b>یک ستون فقرات فیبوناچی</li>
+<li><b>#36</b>پیروکلر طلایی بودی</li>
+<li><b>#37</b>هشتادوجهی DICTO بر خرپای اکتت</li>
+<li><b>#37a</b>هشتادوجهی DICTO بر اکتت چرخیده</li>
+<li><b>#40</b>خانوادهٔ OG از DICTO بر هر انباشت</li>
+<li><b>#42</b>خورشیدستارهٔ DICTO</li>
+<li><b>#44</b>هرم ارسطو</li>
+<li><b>#47</b>هر آمیزه‌ای از جسم‌های افلاطونی فضا را پر می‌کند</li>
+<li><b>#48</b>شکافت طلایی: بیست‌وجهی‌ها، نازاده‌ها و AXE به دو فضاپرکن محدب بدل می‌شوند</li>
+<li><b>#51</b>پیوند دلوسی: شمشون، دلیله و اکتت میان دوازده‌لوزوجهی کپلر و مکعب</li>
+<li><b>#50</b>هر کدام یک حرکت: فضاپرکن‌های کلاسیک برش‌وچسب، به‌دقت ساخته‌شده</li>
+<li><b>#89</b>برش‌های طلایی در پرکردن‌های آندرئینی</li>
+<li><b>—</b>بخش پایانی: جسم‌ها و پیوندهای DICTONIC</li>
+<li><b>#52</b>تار پیوندها: پیوندهای DICTONIC چگونه دست‌به‌دست می‌شوند</li>
+<li><b>#53</b>تار سراسری پیوندها</li>
+<li><b>#55</b>داوود و جالوت</li>
+<li><b>#56</b>شونشم و لهدلی</li><li><b>#77</b>رودررو: قانونی تازه برای هرم‌های ارسطو</li>
+<li><b>#59</b>هکسای بیست‌تبر: شکوفه، غنچه و دانه</li>
+</ol>
+
+<h2>پوسته‌ها</h2><p class="chap">قطعه‌هایی که به پوسته‌هایی تودرتو گرداگرد یک هسته بسته می‌شوند، و هر لایه دقیقاً پر شده است.</p>
+<ol>
+<li><b>#22</b>زنجیرهٔ کارما</li>
+<li><b>#23</b>کره‌های دارما</li>
+<li><b>#24</b>دانهٔ بودی</li>
+<li><b>#27</b>به دام انداختن میانه‌ها</li>
+<li><b>#29</b>تئایتتوس</li>
+<li><b>#34</b>نیاکان</li>
+<li><b>#35</b>وجره‌یانه</li>
+</ol>
+
+<h2>چرخه‌ها</h2><p class="chap">قاعده‌هایی که یک پوسته را به پوستهٔ بعدی بدل می‌کنند و بازمی‌گردند، با پایان یا بی‌پایان.</p>
+<ol>
+<li><b>#32</b>پوسته‌های وارونه: کره‌های دارما، درون به بیرون</li>
+<li><b>#33</b>دوبینی – هر دو چرخه در یک فضا</li>
+<li><b>#38</b><span dir="ltr">PiTet</span> فراگیر: گزارهٔ <span dir="ltr">PiTet</span> از DICTO</li>
+<li><b>#38a</b>چرخهٔ کپلر–پوآنسو–<span dir="ltr">UP</span> از DICTO</li>
+<li><b>#39</b>خانوادهٔ OG از DICTO: چهار گام بالا و چهار گام پایین</li>
+<li><b>#43</b>هسته‌های کیوشیندو از DICTO</li>
+<li><b>#54</b>یک دور یک گنومون است</li><li><b>#78</b>ستارهٔ بیست‌وجهی بریده‌شده (ستارهٔ TI)</li>
+</ol>
+
+<h2>انباشت</h2><p class="chap">هر چینش فشرده از فهرستی متناهی از قطعه‌ها، و دو کاشی‌ای که آن را می‌سازند (به‌تفصیل در «<span dir="ltr">HexOct</span>: قانون شش‌گوشگی»).</p>
+<ol>
+<li><b>#57</b>قاعدهٔ نیمه‌ها</li><li><b>#58</b>از اکتت تا هر انباشت: تار پیوندها</li><li><b>#60</b>پیروکلر ژانوس <span dir="ltr">c/h</span> از DICTO</li><li><b>#61</b>قاعدهٔ جابه‌جایی</li><li><b>#64</b>قاعدهٔ جابه‌جایی در بلورها</li><li><b>#66</b>کانون</li><li><b>#67</b>انباشت‌های تصادفی و نقص‌های انباشت</li><li><b>#69</b>انباشت فیبوناچی</li><li><b>#68</b>پلی‌تایپ‌های واقعی و قانون شش‌گوشگی</li><li><b>#70</b>مواد واقعی II: آنتروپی و فشار</li><li><b>#71</b>مواد واقعی III: آلیاژها و هیدروژن</li><li><b>#72</b>مواد واقعی IV: اکسیدها</li><li><b>#73</b>مواد واقعی V: یخ، الماس و نانوسیم‌ها</li><li><b>#74</b>یخ اسپینی و آهن‌رباهای کاگومه بر هر انباشت</li><li><b>#75</b>دو کاشی برای هر انباشت: <span dir="ltr">HexOct</span></li>
+</ol>
+
+<h2>چهار بعد</h2><p class="chap">ملکه‌های سفید و سرخ از راه سایه‌ها و مقطع‌هایشان (به‌تفصیل در «آلیشیا در سرزمین عجایب: ملکه‌های سرخ و سفید»)، و برش‌های طلایی در میان مقطع‌ها.</p>
+<ol>
+<li><b>#62</b>سایه‌های بعد چهارم</li><li><b>#63</b>600-خانهٔ ملکهٔ سفید</li><li><b>#76</b>میان ملکه‌ها</li><li><b>#65</b>120-خانهٔ ملکهٔ سرخ</li><li><b>#89</b>هر پنج جفت طلایی مقطع‌هایی از جسم‌های چهاربعدی‌اند</li>
+</ol>
+
+<h2>یافته‌ها و برنامه‌ها</h2>
+<ol>
+<li><b>—</b>Kaleidohedra اثر DICTO</li>
+<li><b>—</b>جسم‌های DICTO: هندسهٔ دقیق (مجموعه‌داده)</li>
+<li><b>—</b>شکل‌های شناخته‌شده و بازیافته در این اثر: در جلد II</li>
+</ol>
+<p class="note">ترتیب و فصل‌ها مطابق «DICTO: مجموعهٔ آثار هندسی» (<span dir="ltr">DICTO DOI: 10.5281/zenodo.23345699</span>)، با افزوده‌شدن فصل‌های انباشت و چهار بعد. آثار از #52 به بعد به کوتاهی روایت شده‌اند؛ کتاب‌های «<span dir="ltr">HexOct</span>»، «چرخهٔ طلایی» و «آلیشیا در سرزمین عجایب» آن‌ها را به‌تفصیل در بر دارند.</p>
+</section>
+
+<!-- ============ INTRODUCTION ============ -->
+<section class="page principles">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>آنچه این اثر در بر دارد</h1>
+
+<ol class="principles">
+<li>فضا از قطعه‌ها ساخته شده است.</li>
+<li>هر قطعه باید دقیق باشد: شکلی که بتوانید بسازید و در دست بگیرید، بررسی‌شده تا آخرین رأس.</li>
+<li>یک مجموعهٔ کوچک کافی است: مشتی شکل، پوسته‌ها و فضاهایی بی‌پایان می‌سازد.</li>
+<li>نسبت طلایی تعیین می‌کند که پوسته‌ها کی بسته شوند.</li>
+<li>قطعه‌ها در پیوندها به هم می‌پیوندند، و تار پیوندها به اندازهٔ خودِ قطعه‌ها واقعی است.</li>
+<li>نظم تکرارشونده و نظم هرگز‌تکرارنشونده در قطعه‌ها به هم می‌رسند.</li>
+<li>همه‌چیز باز است: برنامه‌ها، داده‌ها و مقاله‌ها، آزاد برای استفاده و برای ساختن بر پایهٔ آن‌ها.</li>
+</ol>
+<p style="text-align:right">DICTO</p>
+</section>
+
