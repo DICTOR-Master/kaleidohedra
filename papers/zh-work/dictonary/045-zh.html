@@ -1,0 +1,19 @@
+<h2>A.38 通用PiTet <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23463305）</span></h2>
+<p class="told">讲述见第 I 卷第4章 · 循环。</p>
+<p>规则：T(S) = {x : 对 S 的所有顶点 v 有 v·x ≤ v·v}。在 ℚ(√5) 中精确。</p>
+<p><b>命题。</b>外接球半径为 φ 的 ID：T(ID) = RT，T(RT) = GTI，T(GTI) = FPD，T(FPD) = (10/φ⁴)·ID = (35 − 15√5)·ID；T<sup>4n</sup>(ID) = (10/φ⁴)<sup>n</sup>·ID。每一个都位于下一个之内；每个壳层在内侧立体的每个面上一个块体，分属一个或两个全等类；关于半径² 15 − 5√5 = 10/φ² 自配极（GTI ↔ FPD，RT ↔ ID·10/φ⁴，ID ↔ RT·10/φ⁴）。证明方法：精确的顶点、面，V − E + F = 2，以 60 个旋转判定全等，余量 0。</p>
+<table><tr><th>站</th><th>面</th><th>顶点（半径）</th></tr>
+<tr><td>ID</td><td>20 个三角形，12 个五边形</td><td>30（φ）</td></tr>
+<tr><td>RT</td><td>30 个菱形</td><td>12（2R<sub>I</sub> ≈ 1.902），20（√3）</td></tr>
+<tr><td>DICTO GTI</td><td>12 个正五边形，20 个六边形，边长 1 : φ（在每条棱的 1/(2 + φ) 处截切的正二十面体）</td><td>60（√10/φ ≈ 1.954）</td></tr>
+<tr><td>DICTO FPD</td><td>60 个等腰三角形</td><td>12（≈ 2.008），20（≈ 2.205）</td></tr></table>
+<table><tr><th>壳层</th><th>块体</th><th>每个的精确体积</th><th>间隙（精确）</th></tr>
+<tr><td>ID → RT</td><td>五边形上 12 个，三角形上 20 个</td><td class="n">5/12；3/8 − 17√5/120</td><td class="n">25/2 − 17√5/6</td></tr>
+<tr><td>RT → GTI</td><td>菱形上 30 个</td><td class="n">(3 − √5)/4 = 1/(2φ²)</td><td class="n">45/2 − 15√5/2</td></tr>
+<tr><td>GTI → FPD</td><td>五边形上 12 个，六边形上 20 个</td><td class="n">(67475 − 30175√5)/72 ≈ 0.0229；(5681 − 2534√5)/36 ≈ 0.4112</td><td class="n">(259235 − 115865√5)/18</td></tr>
+<tr><td>FPD → ID·10/φ⁴</td><td>三角形上 60 个</td><td class="n">(77875 − 34825√5)/27 ≈ 0.1457</td><td class="n">(1557500 − 696500√5)/9</td></tr></table>
+<ul>
+<li>阶段 1：82 个块体填满外接球半径为 φ²/√3 的 D′。阶段 2：猴棒 B，12 个全等的扭转棱台，每个 (145 + 37√5)/648。阶段 3：12 个五边棱锥与 20 个三边棱锥以及 60 个谷四面体（92 个块体）；三边棱锥不是 CLEO（高约为底面半径的 2.17 倍，而 φ² ≈ 2.618；自第1版更正）。五面金刚杵 55/108 + 5√5/36。</li>
+<li>ID 与 RT 之间的 OG：顶点为 ID 的 30 个顶点、60 个点 2c − v、12 个尖顶；ID → OG 12 个全等块体；OG → RT 20 个六角Cleo（1/4 − √5/12），60 个筝形棱锥（1/76 + √5/684），120 个四面体（1/24 − √5/72）。</li>
+</ul>
+<p><b>来源与脚本。</b>Kepler；Pacioli and Leonardo；Bergman（连续球面桁架）；Lalvani；Kramer；Mosseri and Sadoc；Hart（典范多面体）；Smarandache 2010（面垂足多面体）；迭代垂足三角形；Mackay；正六百胞体。检索：87 种藏书资料与网络，2026年10月19日。脚本：exact_cycle.py、exact_shells.py、exact_inner.py、exact_polar.py（studies/2026-10-19-five-fold-octet）。</p>

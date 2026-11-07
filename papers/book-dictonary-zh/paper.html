@@ -1,0 +1,1436 @@
+<!doctype html>
+<html lang="zh-Hans"><head><meta charset="utf-8"><title>DICTO原子辞典——空间的量子 II</title>
+<link rel="stylesheet" href="../paper.css">
+<style>
+body { font-size: 11pt; line-height: 1.55; }
+.page { break-after: page; }
+.titlepage { text-align: center; padding-top: 38mm; }
+.titlepage img.big { width: 62mm; margin: 0 auto 12mm; display: block; }
+.titlepage h1 { font-size: 34pt; margin: 0 0 6pt; letter-spacing: .5pt; }
+.titlepage .sub { font-size: 13pt; margin: 0 0 22mm; }
+.titlepage .by { font: 600 15pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 0 0 4pt; }
+.titlepage .small { font: 9pt/1.6 "DejaVu Sans", sans-serif; color: #444; margin: 0 auto; max-width: 140mm; }
+.titlepage .sample { margin: 18mm auto 0; max-width: 130mm; font: 9.5pt/1.5 "DejaVu Sans", sans-serif; color: #333; border-top: 1px solid #b8962e; border-bottom: 1px solid #b8962e; padding: 6pt 0; }
+.contents h2 { margin-top: 10pt; }
+.contents ol { list-style: none; padding: 0; margin: 0 0 4pt; columns: 2; column-gap: 8mm; font: 8.8pt/1.45 "DejaVu Sans", sans-serif; }
+.contents li { break-inside: avoid; margin: 0 0 1.5pt; padding-left: 9mm; text-indent: -9mm; }
+.contents li b { display: inline-block; width: 9mm; text-indent: 0; color: #6b5310; }
+.contents li.here { font-weight: 600; }
+.contents p.chap { margin: 0 0 2pt; font-style: italic; font-size: 9.5pt; }
+.contents .note { font: 8.6pt "DejaVu Sans", sans-serif; color: #444; margin-top: 6pt; }
+.intro h3, .entry h3 { font: 600 11pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 11pt 0 3pt; break-after: avoid; }
+.chapter-mark { font: 600 9pt "DejaVu Sans", sans-serif; letter-spacing: 1.5pt; text-transform: uppercase; color: #b8962e; margin: 0 0 2pt; }
+.entry h1 { font-size: 20pt; }
+.entry .logo, .intro .logo { width: 22mm; }
+.lead { font-size: 12pt; line-height: 1.5; color: #222; }
+.dataref { font: 8.8pt "DejaVu Sans", sans-serif; color: #6b5310; }
+.credit { font: 8.8pt/1.5 "DejaVu Sans", sans-serif; color: #333; border-top: 1px solid #b8962e; padding-top: 4pt; margin-top: 10pt; }
+.doi { font: 600 9.5pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 6pt 0 0; }
+.figs.wide { grid-template-columns: 1fr; width: 100%; }
+.appendix { font-size: 9.6pt; line-height: 1.45; }
+.appendix h2 { break-before: auto; margin-top: 16pt; border-top: 1px solid #b8962e; padding-top: 6pt; }
+.appendix h2.first { break-before: auto; }
+.appendix h3 { font: 600 10pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 9pt 0 2pt; break-after: avoid; }
+.appendix ul { padding-left: 5mm; margin: 2pt 0; }
+.appendix li { margin: 0 0 2pt; }
+.appendix table { font-size: 8.6pt; }
+td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.licence { font: 8.4pt "DejaVu Sans", sans-serif; color: #555; }
+
+/* DICTO 10-29: neutral sans-serif for the whole book, as in the series */
+body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs,p,li{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}
+
+/* DICTO 10-29: spacing. Entries flow on (a new page only at each chapter), titles stand clear of the text above and below */
+.page.entry { break-after: auto; break-before: auto; margin-top: 14mm; padding-top: 6mm; border-top: 1px solid #e3d7b5; }
+.page.entry[data-first="1"] { break-before: page; margin-top: 0; padding-top: 0; border-top: none; }
+.page.entry h1 { margin: 5mm 0 3mm; break-after: avoid; }   /* DICTO 10-29: clear gap between the chapter line and the title */
+.page.entry .chapter-mark { margin-bottom: 0; }
+.page.entry .sub { margin-bottom: 7mm; break-after: avoid; }
+.page.entry .chapter-mark { break-after: avoid; }
+.intro h3, .entry h3 { margin: 16pt 0 6pt !important; break-after: avoid; }
+.entry p, .intro p { orphans: 3; widows: 3; }
+figure { break-inside: avoid; }
+
+/* DICTO 10-29: the same clear gap wherever a chapter line stands over a title (introduction, catalogue, short chapters, appendix) */
+.chapter-mark { margin-bottom: 0 !important; }
+.chapter-mark + h1 { margin-top: 5mm !important; margin-bottom: 4mm !important; }
+.status { border: 2px solid #a00; border-radius: 2mm; padding: 2mm 3mm; margin: 3mm 0; font-size: 8.6pt; line-height: 1.35; color: #300; background: #fff6f6; }
+.status li { margin: 0 0 1mm; }
+.appendix p.told { font: italic 8.8pt "Nimbus Sans", "Liberation Sans", sans-serif; color: #6b5310; margin: -1pt 0 4pt; }
+.howto dt { font-weight: 600; color: #6b5310; margin-top: 6pt; } .howto dd { margin: 1pt 0 0 6mm; }
+.contents ul.app { list-style: none; padding: 0; margin: 0 0 4pt; columns: 2; column-gap: 8mm; font: 8.8pt/1.45 "DejaVu Sans", sans-serif; }
+.contents ul.app li { break-inside: avoid; margin: 0 0 1.5pt; padding-left: 11mm; text-indent: -11mm; } .contents ul.app li b { display: inline-block; width: 11mm; text-indent: 0; color: #6b5310; }
+</style><style>body,h1,h2,h3,h4,p,li,td,th,figcaption,.sub,.meta,.status{font-family:"Noto Sans CJK SC","Noto Serif CJK SC","Noto Sans CJK JP",sans-serif !important;line-break:strict} table{max-width:100%} td,th{overflow-wrap:anywhere}</style></head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+
+<!-- ============ COVER ============ -->
+<section class="page coverpage" style="height:252mm;display:flex;justify-content:center;align-items:center">
+<img src="figures/cover/dictonary-cover-front-golden-zh.png" alt="封面：《DICTO原子辞典——空间的量子 II》，DICTO，位于DICTO方阵之下；方阵由DICTO之名所含五种柏拉图立体的大黄金截切立体组成，D I C T O" style="width:100%;height:auto;display:block">
+</section>
+<section class="page titlepage">
+<img class="big" src="../dicto-logo.png" alt="DICTO">
+<h1>DICTO原子辞典</h1>
+<p class="sub">空间的量子 II</p>
+<p class="by">DICTO</p>
+<p class="small">艺术家，日本大阪 · contact@dictospheres.com · https://dictospheres.com<br>
+所有作品、发现与名称均属DICTO。计算、核验与起草与Claude（Anthropic）共同完成。翻译与Claude（Anthropic）共同完成。<br>
+许可协议CC BY-SA 4.0</p>
+<p class="small" style="margin-top:8mm">书籍 · 第 II 卷（中文译本）· 第 1 版 · 2026年11月7日 · DICTO DOI：发布时预留 · 原著（英文，第 1.2 版）：10.5281/zenodo.23966395</p>
+<div class="status" style="border:2px solid #a00;background:#fff4f2;padding:2mm 3mm;margin:3mm 0;font-size:9pt;text-align:left"><b>Status</b> (draft for DICTO's reading; this box is deleted at publication): the Chinese (simplified) edition of The DICTOnary of Atoms, translated from the English Version 1.2 unit by unit for accuracy, all 134 atom names from one binding name list; title cover DICTO原子辞典. Its own record; DOI reserved at release. Three number errors found in the English during translation (A.37a, A.22, A.43) are in the Concordance errata; the Chinese follows the English as published until the English is corrected.</div>
+<p class="small" style="margin-top:2mm">第 I 卷：《空间的量子——宣言》（DICTO DOI: 10.5281/zenodo.23754454），即宣言以及分六章讲述的作品。本卷收录它们的原子及其数据。</p>
+</section>
+<!-- ============ HOW TO READ AN ENTRY ============ -->
+<section class="page intro howto">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<p class="chapter-mark">引言</p>
+<h1>如何阅读词条</h1>
+<p class="lead">这是一部空间原子的辞典：DICTO几何作品中每一个有名称的形体，各为一个空间量子。第 I 卷《空间的量子——宣言》分六章讲述这些作品；本卷收录它们的形体与数值。名称出自DICTO：DICTOnary。</p>
+<p>每个词条都像辞典中的词条那样阅读。</p>
+<dl>
+<dt>词目：D编号与名称</dt>
+<dd>D1、D2……是DICTO为其新的单个立体与块体所定的永久编号，按首次发表的顺序给出，永不重复使用。已知形体保留其最初创造者所给的编号（约翰逊、均匀多面体、韦宁格、哈特、莫塞里-萨多克）。由块体构成的团簇、结构与网络不带编号（—）。</dd>
+<dt>释义：图、数据与出处</dt>
+<dd><b>图。</b>依据数据集《DICTO立体——精确几何》中的精确模型文件绘制，全部采用同一姿态：DICTO的新形体为金色，已知形体为银色。尚无模型文件的形体列在“此处未绘出”下的表中。<br>
+<b>数据。</b>其类型（立体、块体、团簇、结构、网络、复合体或曲面体）以及先前成果检索所得的状态。“未见”仅表示所检索的资料中没有出现它；这并非新颖性的证明。每部作品的精确数值，包括其体积、证明概要与核验，见“逐部作品的数据”，每部作品一节：A.18 即论文#18的数据。<br>
+<b>出处。</b>论文编号（#41）或Kaleidohedra发现（F1），链接到其DICTO DOI，以及讲述它的第 I 卷章节（第 I 卷第1章）。</dd>
+</dl>
+<h3>本卷的组成部分</h3>
+<p><b>全部原子：</b>DICTO的134种新形体，然后是他的37种新团簇、结构与网络，再后是尚未绘出者。<b>逐部作品的数据：</b>A.8至A.51各节，另有A.DB（DICTONIC立体与DICTONIC键）、A.K（Kaleidohedra发现）与A.D（数据集）。<b>已知形体与再发现形体：</b>本作品用以构建、最初由他人创造的27种形体。每个数值都可以依据数据集重建并核验，数据集的核验程序仅凭数据文件即可重新证明它。</p>
+<p class="credit">形体、名称与D编号出自DICTO；名录与数据的构建和核验与Claude（Anthropic）共同完成。许可协议CC BY-SA 4.0。</p>
+</section>
+<!-- ============ CONTENTS ============ -->
+<section class="page contents">
+<img class="logo" src="../dicto-logo.png" alt="DICTO" style="width:22mm">
+<h1>目录</h1>
+<p style="font: 9.5pt 'DejaVu Sans', sans-serif;">如何阅读词条</p>
+<h2>全部原子</h2><p class="chap">名录：本作品中每一个有名称的形体，附其图、数据与出处。</p>
+<ol>
+<li><b>—</b>DICTO的新原子：134种新形体，D1至D134</li>
+<li><b>—</b>DICTO的新团簇、结构与网络：37种</li>
+<li><b>—</b>此处未绘出：尚无模型文件的形体</li>
+</ol>
+<h2>逐部作品的数据</h2><p class="chap">每部作品一节，内容依照其论文所发表的。</p>
+<h3 style="margin:6pt 0 2pt;font-size:9.5pt">讲述于第 I 卷第1章 · 原子</h3>
+<ul class="app">
+<li><b>A.18</b>DICTO赫克萨</li>
+<li><b>A.19</b>AXE、CLEO与FUJI</li>
+<li><b>A.20</b>FUJI家族</li>
+<li><b>A.28</b>DICTO截角二十面体型一百零二面体</li>
+<li><b>A.31</b>DICTO八十面体</li>
+<li><b>A.31a</b>DICTO OCD星形体</li>
+<li><b>A.34a</b>DICTO一百零二·八十面体</li>
+<li><b>A.35a</b>DICTO间六十面体</li>
+<li><b>A.35b</b>DICTO复三十面体</li>
+<li><b>A.41</b>DICTO宝石</li>
+<li><b>A.45</b>勒洛柏拉图立体</li>
+<li><b>A.49</b>多面体拉伸定理</li>
+</ul>
+<h3 style="margin:6pt 0 2pt;font-size:9.5pt">讲述于第 I 卷第2章 · 键</h3>
+<ul class="app">
+<li><b>A.8</b>欧几里得-开普勒-帕乔利单元</li>
+<li><b>A.13</b>DICTO十二面体-13</li>
+<li><b>A.14</b>DICTO星</li>
+<li><b>A.17</b>笼目凸包</li>
+<li><b>A.25</b>DICTO类球体-13 RD</li>
+<li><b>A.26</b>DICTO ATOM-13×13</li>
+<li><b>A.30</b>斐波那契脊柱</li>
+<li><b>A.36</b>黄金菩提烧绿石</li>
+<li><b>A.37</b>八隅桁架上的DICTO八十面体</li>
+<li><b>A.37a</b>旋转八隅结构上的DICTO八十面体</li>
+<li><b>A.40</b>一切堆垛上的DICTO OG家族</li>
+<li><b>A.42</b>DICTO日星</li>
+<li><b>A.44</b>亚里士多德的棱锥</li>
+<li><b>A.47</b>柏拉图立体的任意混合都能填充空间</li>
+<li><b>A.48</b>黄金剖分</li>
+<li><b>A.51</b>提洛键</li>
+<li><b>A.50</b>每块一步</li>
+<li><b>A.DB</b>DICTONIC立体与DICTONIC键</li>
+</ul>
+<h3 style="margin:6pt 0 2pt;font-size:9.5pt">讲述于第 I 卷第3章 · 壳层</h3>
+<ul class="app">
+<li><b>A.22</b>业之链</li>
+<li><b>A.23</b>法之球</li>
+<li><b>A.24</b>菩提子</li>
+<li><b>A.27</b>捕捉中间之物</li>
+<li><b>A.29</b>泰阿泰德</li>
+<li><b>A.34</b>始祖</li>
+<li><b>A.35</b>金刚乘</li>
+</ul>
+<h3 style="margin:6pt 0 2pt;font-size:9.5pt">讲述于第 I 卷第4章 · 循环</h3>
+<ul class="app">
+<li><b>A.32</b>翻转的壳层</li>
+<li><b>A.33</b>双重视界</li>
+<li><b>A.38</b>通用PiTet</li>
+<li><b>A.38a</b>DICTO开普勒-庞索-UP循环</li>
+<li><b>A.39</b>DICTO OG家族</li>
+<li><b>A.43</b>DICTO求心道核心</li>
+</ul>
+<h3 style="margin:6pt 0 2pt;font-size:9.5pt">讲述于第 I 卷“发现与应用程序”</h3>
+<ul class="app">
+<li><b>A.K</b>Kaleidohedra</li>
+<li><b>A.D</b>DICTO立体——精确几何</li>
+</ul>
+<h2>本作品中的已知形体与再发现形体</h2><p class="chap">最初由他人创造或由DICTO再发现的27种形体。</p>
+<h2>关于作者</h2>
+</section>
+<!--ATOMS START-->
+<style>
+.atoms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm 4mm; }
+.atom { break-inside: avoid; font: 7.6pt/1.3 "Nimbus Sans", "Liberation Sans", sans-serif; }
+.atom img { width: 100%; display: block; border-radius: 2mm; }
+.atom img.bw { aspect-ratio: 1; object-fit: cover; } .atom .bwn { font-size: 6.4pt; color: #888; }
+.atom .noicon { aspect-ratio: 1; border: 1px dashed #bbb; border-radius: 2mm; color: #999; font-size: 7pt; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2mm; }
+.atl { font: 7.4pt/1.3 "Nimbus Sans", "Liberation Sans", sans-serif; width: 100%; } .atl td, .atl th { padding: 1mm 1.5mm; vertical-align: top; } .tl { font-size: 9pt; margin-top: 4mm; text-align: left; caption-side: top; padding-bottom: 2mm; }
+.atom .an { margin-top: 1mm; font-size: 8.4pt; } .atom .am { color: #6b5310; } .atom .ant { color: #555; font-size: 7pt; }
+.atom .av { color: #6b5310; font-size: 7pt; font-style: italic; }
+</style><section class="page catalogue">
+<p class="chapter-mark">DICTO原子辞典 · 名录</p>
+<h1>全部原子</h1>
+<p>本作品中每一个有名称的形体，各为一个空间量子：首先是DICTO的新形体，共134种，D1至D134（按首次发表的顺序给出，永不重复使用）；然后是由它们构成的、他的37种新团簇、结构与网络；本作品用以构建的27种已知形体或再发现形体列于本卷末尾。模型文件已收入数据集《DICTO立体——精确几何》的形体均已绘出，全部采用同一姿态：DICTO的新形体为金色，已知形体为银色。每个形体下方列出：其类型、其所出自的论文或发现（链接到其DICTO DOI）、讲述它的第 I 卷章节，以及先前成果检索所得的状态。</p>
+<h2>DICTO的新原子</h2>
+<div class="atoms">
+<div class="atom"><img src="figures/atoms/dicto-skewed-rhombic-dodecahedron.png" alt="DICTO斜菱形十二面体"><div class="an"><b>D1</b> DICTO斜菱形十二面体（DICTO skewed rhombic dodecahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23173809">发现 F1</a></div><div class="av">第 I 卷“发现与应用程序”</div><div class="ant">已知族的新成员（菱形十二面体型平行多面体：费奥多罗夫 1885；拉尔瓦尼 US 5,623,790，1997）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-skewed-ed-16.png" alt="DICTO斜伸长十二面体 ED F16"><div class="an"><b>D2</b> DICTO斜伸长十二面体 ED F16（DICTO skewed elongated dodecahedron ED F16）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23173809">发现 F7</a></div><div class="ant">已知族的新成员（伸长十二面体型平行多面体：费奥多罗夫；拉尔瓦尼 US 5,623,790）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-skewed-ed-18.png" alt="DICTO斜伸长十二面体 ED F18"><div class="an"><b>D3</b> DICTO斜伸长十二面体 ED F18（DICTO skewed elongated dodecahedron ED F18）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23173809">发现 F7</a></div><div class="ant">已知族的新成员（伸长十二面体型平行多面体：费奥多罗夫；拉尔瓦尼 US 5,623,790）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-jewel.png" alt="DICTO宝石（EKP窗口；最初称为龙宝石）"><div class="an"><b>D4</b> DICTO宝石（DICTO Jewel；EKP窗口；最初称为龙宝石，Dragon Jewel）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23496353">#41</a></div><div class="av">第 I 卷第1章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/dicto-dodeca-13-wedge.png" alt="DICTO十二面体-13楔"><div class="an"><b>D6</b> DICTO十二面体-13楔（DICTO Dodeca-13 Wedge）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23284281">#13</a></div><div class="av">第 I 卷第2章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/dicto-dodeca-13-needle.png" alt="DICTO十二面体-13针"><div class="an"><b>D7</b> DICTO十二面体-13针（DICTO Dodeca-13 Needle）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23284281">#13</a></div><div class="av">第 I 卷第2章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-dodeca-13-unit-finned-unit.png" alt="DICTO十二面体-13单元（带鳍单元）"><div class="an"><b>D8</b> DICTO十二面体-13单元（带鳍单元）（DICTO Dodeca-13 Unit）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23284281">#13</a></div><div class="av">第 I 卷第2章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-hexa-key.png" alt="DICTO赫克萨钥"><div class="an"><b>D10</b> DICTO赫克萨钥（DICTO Hexa-Key）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23376320">#18</a></div><div class="av">第 I 卷第1章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/piece-fuji.png" alt="FUJI"><div class="an"><b>D12</b> FUJI</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23351291">#19</a></div><div class="av">第 I 卷第1章</div><div class="ant">不是莫塞里-萨多克瓦片；其族见#20</div></div>
+<div class="atom"><img src="figures/atoms/piece-vajra.png" alt="VAJRA"><div class="an"><b>D13</b> VAJRA</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23351291">#19</a></div><div class="av">第 I 卷第1章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/piece-admiral-cap-icosahedron-edge-roof.png" alt="提督帽（二十面体棱上的屋顶）"><div class="an"><b>D16</b> 提督帽（二十面体棱上的屋顶）（Admiral Cap）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23551326">#47</a></div><div class="av">第 I 卷第2章</div><div class="ant">DICTO的形体；正二十面体 + 6个帽 = 正八面体</div></div>
+<div class="atom"><img src="figures/atoms/piece-crown-jewel.png" alt="王冠宝石"><div class="an"><b>D17</b> 王冠宝石（Crown Jewel）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23311353">#24</a></div><div class="av">第 I 卷第3章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/piece-vajra-fine.png" alt="金刚杵（细）"><div class="an"><b>D18</b> 金刚杵（细）（Vajra）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23311353">#24</a></div><div class="av">第 I 卷第3章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/dicto-hecatodihedron.png" alt="DICTO截角二十面体型一百零二面体"><div class="an"><b>D22</b> DICTO截角二十面体型一百零二面体（DICTO Truncated-Icosahedral Hecatodihedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23360857">#28</a></div><div class="av">第 I 卷第1章</div><div class="ant">由已知立体导出（jtI 的12个五重顶点被削平；#28 第2版）；未见有人命名</div></div>
+<div class="atom"><img src="figures/atoms/piece-kion.png" alt="基昂"><div class="an"><b>D23</b> 基昂（Kion）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23378070">#29</a></div><div class="av">第 I 卷第3章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/piece-atraktos.png" alt="阿特拉克托斯"><div class="an"><b>D24</b> 阿特拉克托斯（Atraktos）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23378070">#29</a></div><div class="av">第 I 卷第3章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/piece-aetos.png" alt="埃托斯"><div class="an"><b>D25</b> 埃托斯（Aetos）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23378070">#29</a></div><div class="av">第 I 卷第3章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/piece-sphen.png" alt="斯芬"><div class="an"><b>D26</b> 斯芬（Sphen）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23378070">#29</a></div><div class="av">第 I 卷第3章</div><div class="ant">空心剖分是克利青 K-4.137 的影</div></div>
+<div class="atom"><img src="figures/atoms/piece-sphenion.png" alt="斯芬尼昂"><div class="an"><b>D27</b> 斯芬尼昂（Sphenion）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23378070">#29</a></div><div class="av">第 I 卷第3章</div><div class="ant">空心剖分是克利青 K-4.137 的影</div></div>
+<div class="atom"><img src="figures/atoms/dicto-ogdoecontahedron.png" alt="DICTO八十面体（OG）"><div class="an"><b>D28</b> DICTO八十面体（OG）（DICTO Ogdoecontahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23404688">#31</a></div><div class="av">第 I 卷第1章</div><div class="ant">面的排布已知（L0(D) 的对偶，Antiprism）；由典范五角化十二面体导出（#31 第2版）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-ocd-stella.png" alt="DICTO OCD星形体"><div class="an"><b>D29</b> DICTO OCD星形体（DICTO OCD Stella）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23430870">#31a</a></div><div class="av">第 I 卷第1章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/dicto-metaxyhexecontahedron.png" alt="DICTO间六十面体"><div class="an"><b>D30</b> DICTO间六十面体（DICTO Metaxyhexecontahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23430864">#35a</a></div><div class="av">第 I 卷第1章</div><div class="ant">作为一个有名称、被特别区分的成员为新；正十二面体-正二十面体凸包族是已知的</div></div>
+<div class="atom"><img src="figures/atoms/dicto-palintriacontahedron.png" alt="DICTO复三十面体"><div class="an"><b>D31</b> DICTO复三十面体（DICTO Palintriacontahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23430866">#35b</a></div><div class="av">第 I 卷第1章</div><div class="ant">作为一个有名称、被特别区分的成员为新；正十二面体-正二十面体凸包族是已知的</div></div>
+<div class="atom"><img src="figures/atoms/dicto-dbt.png" alt="DICTO束带三十面体（DBT）"><div class="an"><b>D37</b> DICTO束带三十面体（DBT）（DICTO Belted Triacontahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23484012">#37a</a></div><div class="av">第 I 卷第2章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/dicto-ott.png" alt="DICTO OTT（八面体截角三十面体）"><div class="an"><b>D38</b> DICTO OTT（八面体截角三十面体）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23484012">#37a</a></div><div class="av">第 I 卷第2章</div><div class="ant">未见（最接近者：卡拜的54面体）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-gti.png" alt="DICTO GTI（黄金截角二十面体）"><div class="an"><b>D40</b> DICTO GTI（黄金截角二十面体）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23463305">#38</a></div><div class="av">第 I 卷第4章</div><div class="ant">循环与块体均未见；伯格曼 US 4,719,726 中有类似八隅结构的壳层</div></div>
+<div class="atom"><img src="figures/atoms/dicto-fpd.png" alt="DICTO FPD（扁平五角化十二面体）"><div class="an"><b>D41</b> DICTO FPD（扁平五角化十二面体）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23463305">#38</a></div><div class="av">第 I 卷第4章</div><div class="ant">同上</div></div>
+<div class="atom"><img src="figures/atoms/dicto-kre.png" alt="DICTO KRE"><div class="an"><b>D45</b> DICTO KRE</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23488944">#39</a></div><div class="av">第 I 卷第4章</div><div class="ant">组合结构同菱形九十面体（已知类型）；此度量立体为新</div></div>
+<div class="atom"><img src="figures/atoms/dicto-phe.png" alt="DICTO PHE"><div class="an"><b>D46</b> DICTO PHE</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23488944">#39</a></div><div class="av">第 I 卷第4章</div><div class="ant">面数同戈德堡多面体 GP(3,0)；此立体为新</div></div>
+<div class="atom"><img src="figures/atoms/dicto-tpp.png" alt="DICTO TPP"><div class="an"><b>D47</b> DICTO TPP</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23488944">#39</a></div><div class="av">第 I 卷第4章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/dicto-dphp.png" alt="DICTO DPHP"><div class="an"><b>D48</b> DICTO DPHP</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23488944">#39</a></div><div class="av">第 I 卷第4章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/dicto-tph.png" alt="DICTO TPH"><div class="an"><b>D49</b> DICTO TPH</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23488944">#39</a></div><div class="av">第 I 卷第4章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/dicto-tqh.png" alt="DICTO TQH"><div class="an"><b>D50</b> DICTO TQH</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23488944">#39</a></div><div class="av">第 I 卷第4章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/dicto-tqp.png" alt="DICTO TQP"><div class="an"><b>D51</b> DICTO TQP</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23488944">#39</a></div><div class="av">第 I 卷第4章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/dicto-tqhd.png" alt="DICTO TQHD"><div class="an"><b>D52</b> DICTO TQHD</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23488944">#39</a></div><div class="av">第 I 卷第4章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-hex-aktis.png" alt="DICTO六边阿克提斯"><div class="an"><b>D54</b> DICTO六边阿克提斯（DICTO Hex Aktis）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23532013">#43</a></div><div class="av">第 I 卷第4章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-deltoid-aktis.png" alt="DICTO筝形阿克提斯"><div class="an"><b>D55</b> DICTO筝形阿克提斯（DICTO Deltoid Aktis）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23532013">#43</a></div><div class="av">第 I 卷第4章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-triaktis-ott-triangle-ray.png" alt="DICTO特里阿克提斯（OTT的三角形射线）"><div class="an"><b>D56</b> DICTO特里阿克提斯（OTT的三角形射线）（DICTO Triaktis）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23532013">#43</a></div><div class="av">第 I 卷第4章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-tetraktis-ott-rhombic-ray.png" alt="DICTO泰特拉克提斯（OTT的菱形射线）"><div class="an"><b>D57</b> DICTO泰特拉克提斯（OTT的菱形射线）（DICTO Tetraktis）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23532013">#43</a></div><div class="av">第 I 卷第4章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/piece-antonius.png" alt="安东尼乌斯"><div class="an"><b>D65</b> 安东尼乌斯（Antonius）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23529497">#44</a></div><div class="av">第 I 卷第2章</div><div class="ant">Cleo-Icos与安东尼乌斯：源自黄金菱面体的一对新的空间填充体（#20、#44）</div></div>
+<div class="atom"><img src="figures/atoms/piece-penta-cleo.png" alt="五角Cleo"><div class="an"><b>D66</b> 五角Cleo（Penta-cleo）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23357896">#20</a></div><div class="av">第 I 卷第1章</div><div class="ant">命名于#20</div></div>
+<div class="atom"><img src="figures/atoms/dicto-lotus-jewel-axes.png" alt="莲花宝石斧"><div class="an"><b>D69</b> 莲花宝石斧（Lotus Jewel Axes）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23596362">#48</a></div><div class="av">第 I 卷第2章</div><div class="ant">未见；带8个三帽体（Tricap）凹痕的二十面斧（Icosaxes）（#48 定理3）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-dodecaxes.png" alt="十二面斧"><div class="an"><b>D70</b> 十二面斧（Dodecaxes）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23596362">#48</a></div><div class="av">第 I 卷第2章</div><div class="ant">未见；带8个三帽体钥的未生斧（Unborn Axes），内含一个完整的正十二面体（#48 定理3）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-samson.png" alt="参孙"><div class="an"><b>D71</b> 参孙（Samson）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23606828">#51</a></div><div class="av">第 I 卷第2章</div><div class="ant">新的比例：切去四个相间顶点的立方体，处于提洛键；在资料中未见（#51）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-sonsam.png" alt="孙参"><div class="an"><b>D76</b> 孙参（Sonsam）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23635823">#56</a></div><div class="av">第 I 卷第2章</div><div class="ant">在所查资料中未见（#56）：孪晶八隅结构的四面体空隙块体，处于其等体积点（19个顶点，镜面上有一个九边形面）；#56：易于计算，因此可能存在未命名的图</div></div>
+<div class="atom"><img src="figures/atoms/dicto-lahdeli.png" alt="拉大利"><div class="an"><b>D77</b> 拉大利（Lahdeli）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23635823">#56</a></div><div class="av">第 I 卷第2章</div><div class="ant">在所查资料中未见（#56）：孪晶八隅结构的八面体空隙块体，处于其等体积点，是大利拉的孪生体</div></div>
+<div class="atom"><img src="figures/atoms/dicto-ian-dury.png" alt="伊恩·杜里"><div class="an"><b>D78</b> 伊恩·杜里（Ian Dury）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23635823">#56</a></div><div class="av">第 I 卷第2章</div><div class="ant">在所查资料中未见（#56）：孪晶八隅结构在停点 5/24 处的四面体空隙块体，与经典的60°菱面体并列</div></div>
+<div class="atom"><img src="figures/atoms/dicto-blockhead.png" alt="木头人"><div class="an"><b>D79</b> 木头人（Blockhead）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23635823">#56</a></div><div class="av">第 I 卷第2章</div><div class="ant">在所查资料中未见（#56）：孪晶八隅结构在 3/8 处的四面体空隙块体，是立方体的孪生体</div></div>
+<div class="atom"><img src="figures/atoms/dicto-chucky.png" alt="恰吉"><div class="an"><b>D80</b> 恰吉（Chucky）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23647898">#57</a></div><div class="av">第 I 卷第5章</div><div class="ant">在所查资料中未见（#57）：ABAC 中位于 -3/8 的雅努斯 c/h 块体（上半为六方，下半为立方）；其体积是其两个母体体积的平均值</div></div>
+<div class="atom"><img src="figures/atoms/dicto-fang.png" alt="獠牙"><div class="an"><b>D81</b> 獠牙（Fang）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23647898">#57</a></div><div class="av">第 I 卷第5章</div><div class="ant">在所查资料中未见（#57）：ABAC 中位于 5/24 的雅努斯 c/h 块体（上半为六方，下半为立方）；其体积是其两个母体体积的平均值</div></div>
+<div class="atom"><img src="figures/atoms/dicto-triskelion-tetrahedron.png" alt="三曲腿四面体"><div class="an"><b>D82</b> 三曲腿四面体（Triskelion Tetrahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23647898">#57</a></div><div class="av">第 I 卷第5章</div><div class="ant">立方八隅结构在 5/24 处的四面体块体，是参孙滑移族的一员（#51）；在 ABAC 中出现并命名于#57（该名称标记这一成员）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-keyaxes.png" alt="钥斧"><div class="an"><b>D83</b> 钥斧（Keyaxes）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23677485">#59</a></div><div class="av">第 I 卷第2章</div><div class="ant">带钥二十面斧笼目网络的块体（带2个三帽体凹痕与6个镜像三帽体钥的二十面斧，体积 phi^2）；该网络在所检索的资料中未见（#59）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-ganesha.png" alt="伽内什"><div class="an"><b>D84</b> 伽内什（Ganesha）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23682596">#61</a></div><div class="av">第 I 卷第5章</div><div class="ant">在所查资料中未见（#61）：压扁堆垛的雅努斯 c/h 四面体块体（下部为立方，上部为六方）；数据集中按#61图1的参数给出（ACBC，层间距^2 = (3/4)(2/3)，lambda = 1/10）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-humpty-dumpty.png" alt="矮胖子"><div class="an"><b>D85</b> 矮胖子（Humpty Dumpty）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 卷第6章</div><div class="ant">该形体最早由艾丽西亚·布尔·斯托特（1900）通过作图发现，绘成平面图并制成卡纸模型；其精确几何（坐标、体积、对称性，经核验）由DICTO在#63中计算。</div></div>
+<div class="atom"><img src="figures/atoms/dicto-shadow-17.png" alt="影武者"><div class="an"><b>D86</b> 影武者（Kagemusha）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23687223">#62</a></div><div class="av">第 I 卷第6章</div><div class="ant">DICTO于2026-10-30所取的名称，意为影子武士（先前称为 Shadow-17，得自二维视图；文件标识 dicto-shadow-17 保留不变）；由已知块体构成的新构造（J11，约翰逊的旋转延伸五角锥，约翰逊 1966）：两个 J11 以其五边形面相粘合；#62 将其认定为正六百胞体外侧棱优先截面的等棱形式；其状态由DICTO于2026-10-28确定，首次命名于#62</div></div>
+<div class="atom"><img src="figures/atoms/dicto-lion.png" alt="狮子"><div class="an"><b>D87</b> 狮子（Lion）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 卷第6章</div><div class="ant">W1：正六百胞体顶点优先的中心截面（42个顶点，80个三角形，Ih）；在所查资料中未见作为立体出现（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-jabberwock.png" alt="炸脖龙"><div class="an"><b>D88</b> 炸脖龙（Jabberwock）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 卷第6章</div><div class="ant">W3：顶点优先，正六百胞体最大的全三角形截面（72个顶点，140个三角形）；在所查资料中未见作为立体出现（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-tweedledum.png" alt="特威德敦"><div class="an"><b>D89</b> 特威德敦（Tweedledum）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 卷第6章</div><div class="ant">W5：顶点优先截面（32个顶点，60个三角形，Ih）；在所查资料中未见作为立体出现（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-tweedledee.png" alt="特威德迪"><div class="an"><b>D90</b> 特威德迪（Tweedledee）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 卷第6章</div><div class="ant">W22：棱优先截面（32个顶点，60个三角形，D5h），是与特威德敦计数相同的另一形体；在所查资料中未见作为立体出现（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-mad-hatter.png" alt="疯帽匠"><div class="an"><b>D91</b> 疯帽匠（Mad Hatter）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 卷第6章</div><div class="ant">W28：面优先，位于间隙中（在其中点处截取），是四个144顶点截面之一，四者各不相同；在所查资料中未见（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-march-hare.png" alt="三月兔"><div class="an"><b>D92</b> 三月兔（March Hare）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 卷第6章</div><div class="ant">W30：面优先，位于间隙中（在其中点处截取），144个顶点；在所查资料中未见（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-jubjub.png" alt="朱布朱布"><div class="an"><b>D93</b> 朱布朱布（Jubjub）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 卷第6章</div><div class="ant">W43：面优先的全三角形截面（30个顶点，56个三角形）；在所查资料中未见作为立体出现（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-alice.png" alt="爱丽丝"><div class="an"><b>D94</b> 爱丽丝（Alice）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 卷第6章</div><div class="ant">W49：胞优先，位于间隙中（在其中点处截取），144个顶点；为间隙截面，不在布尔·斯托特的系列中；在所查资料中未见（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-white-rabbit.png" alt="白兔"><div class="an"><b>D95</b> 白兔（White Rabbit）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 卷第6章</div><div class="ant">W51：胞优先，位于间隙中（在其中点处截取），144个顶点；在所查资料中未见（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-haigha.png" alt="海亚"><div class="an"><b>D96</b> 海亚（Haigha）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23716140">#65</a></div><div class="av">第 I 卷第6章</div><div class="ant">R33：正一百二十胞体的棱优先截面，唯一具有九边形面者；在所查资料中未见（#65）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-hatta.png" alt="哈塔"><div class="an"><b>D97</b> 哈塔（Hatta）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23716140">#65</a></div><div class="av">第 I 卷第6章</div><div class="ant">R35：正一百二十胞体的棱优先截面，另一个114顶点截面；在所查资料中未见（#65）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-red-king.png" alt="红国王"><div class="an"><b>D98</b> 红国王（Red King）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23716140">#65</a></div><div class="av">第 I 卷第6章</div><div class="ant">R77：正一百二十胞体五边形优先的中心截面，含两个正十边形；是正六百胞体棱优先影的配极对偶；在所查资料中未见（#65）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-walrus.png" alt="海象"><div class="an"><b>D99</b> 海象（Walrus）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23716140">#65</a></div><div class="av">第 I 卷第6章</div><div class="ant">R80：正一百二十胞体五边形优先截面，120个顶点；在所查资料中未见（#65）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-red-knight.png" alt="红骑士"><div class="an"><b>D100</b> 红骑士（Red Knight）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23716140">#65</a></div><div class="av">第 I 卷第6章</div><div class="ant">R113：正一百二十胞体位于间隙中的胞优先截面（在其中点处截取），120个顶点；为间隙截面，不在布尔·斯托特的系列中；在所查资料中未见（#65）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-white-knight.png" alt="白骑士"><div class="an"><b>D101</b> 白骑士（White Knight）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23716140">#65</a></div><div class="av">第 I 卷第6章</div><div class="ant">R115：正一百二十胞体位于间隙中的胞优先截面（在其中点处截取）：具有大斜方截半二十面体的面与对称性（30个正方形，20个六边形，12个十边形，Ih），但有两种棱长；在所查资料中未见（#65）；所属族：DICTO-GTT立体（#88）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-fallen-humpty.png" alt="跌落的矮胖子"><div class="an"><b>D102</b> 跌落的矮胖子（Fallen Humpty）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23687223">#62</a></div><div class="av">第 I 卷第6章</div><div class="ant">矮胖子图样的等棱形式：48个顶点，92个正三角形，138条等长的棱，Td，非凸（二面角 81.75°–243.20°）；在#62中称为 Slice-48，在#63中命名为跌落的矮胖子；在所查资料中未见（#62）；编号于2026-10-29给出（第4–5版中遗漏；D编号永不重复使用）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-golden-ti-star.png" alt="黄金TI星"><div class="an"><b>D103</b> 黄金TI星（Golden TI Star）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23782577">#78</a></div><div class="av">第 I 卷第4章</div><div class="ant">每个面上都加一个棱锥的截角二十面体，锥尖位于垂足的 φ 倍处（92个顶点，180个三角形，体积为 φ × TI，Ih）；倍增形式（2×）是同一构造；在所查资料中未见（#78）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-star-halo.png" alt="星晕"><div class="an"><b>D104</b> 星晕（Star Halo）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23782577">#78</a></div><div class="av">第 I 卷第4章</div><div class="ant">DICTO所取的名称：TI星32个锥尖的凸包，一个并非卡塔兰立体的五角化十二面体（五重顶点比六重顶点远 1.0265 倍）；在所查资料中未见（#78）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-ti-star-core.png" alt="TI星核"><div class="an"><b>D105</b> TI星核（TI Star core）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23782577">#78</a></div><div class="av">第 I 卷第4章</div><div class="ant">在每条棱的 (10 − √5)/19 处截角的正二十面体（12个五边形，20个六边形，六边形的两种边长之比为 √5），是TI星各循环每一圈的核心，也是星晕的配极伙伴（#78）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-cube-pearl.png" alt="立方珍珠"><div class="an"><b>D106</b> 立方珍珠（Cube Pearl）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23822907">#80</a></div><div class="ant">用平面 (±1, ±1, 0)·x ≤ 6/5 削去各棱的立方体（深度 s = 3/5）：32个顶点全在同一球面上，6个正方形与12个六边形，Oh；倒角立方体族是经典的，此深度在所查资料中未见；其 T 链以周期4闭合（#80）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-golden-clasp.png" alt="黄金扣"><div class="an"><b>D107</b> 黄金扣（Golden Clasp）</div><div class="am">立体 · 《星核》（研究 2026-10-31-star-cores-names）</div><div class="ant">大斜方截半立方体的各面，在四重、三重与二重轴上的深度为 1 : 1/φ : 3/4（48个顶点，26个面，Oh）；其 T 链以周期4闭合，而阿基米德大斜方截半立方体的 T 链则不闭合（《星核》研究3）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-hamlet.png" alt="哈姆雷特"><div class="an"><b>D108</b> 哈姆雷特（Hamlet）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23822907">#80</a></div><div class="ant">从八十面体出发、按DICTO的生长规则 T 所得之链的第5步，位于KRE、PHE、TPP与DPHP之后：452个顶点，270个面，Ih（#80，第6节）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-ophelia.png" alt="奥菲利娅"><div class="an"><b>D109</b> 奥菲利娅（Ophelia）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23822907">#80</a></div><div class="ant">同一链的第6步，位于哈姆雷特之后：642个顶点，440个面，Ih（#80，第6节）；该链不闭合</div></div>
+<div class="atom"><img src="figures/atoms/piece-greater-golden-cut-dodecahedron.png" alt="大黄金截切十二面体"><div class="an"><b>D119</b> 大黄金截切十二面体（Greater Golden Cut Dodecahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23896439">#88</a></div><div class="av">第 I 卷第1章</div><div class="ant">DICTO-开普勒黄金截角：每个顶点在棱的 x = 1/3 处截去，五边形变为黄金十边形（截顶所生的边较长）；12个十边形，20个三角形，60个顶点，Ih；在#88的核验范围内为新</div></div>
+<div class="atom"><img src="figures/atoms/piece-lesser-golden-cut-dodecahedron.png" alt="小黄金截切十二面体"><div class="an"><b>D120</b> 小黄金截切十二面体（Lesser Golden Cut Dodecahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23896439">#88</a></div><div class="av">第 I 卷第1章</div><div class="ant">DICTO-开普勒黄金截角：每个顶点在 x = (7 − √5)/22 ≈ 0.2165 处截去，五边形变为黄金十边形（原有的边较长）；12个十边形，20个三角形，60个顶点，Ih；在#88的核验范围内为新</div></div>
+<div class="atom"><img src="figures/atoms/piece-greater-golden-cut-icosahedron.png" alt="大黄金截切二十面体"><div class="an"><b>D121</b> 大黄金截切二十面体（Greater Golden Cut Icosahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23896439">#88</a></div><div class="av">第 I 卷第1章</div><div class="ant">DICTO-开普勒黄金截角：每个顶点在 x = 1/φ² ≈ 0.3820 处截去，三角形变为黄金截角三角形（截顶所生的边较长）；20个截角三角形，12个五边形，60个顶点，Ih；在#88的核验范围内为新</div></div>
+<div class="atom"><img src="figures/atoms/piece-lesser-golden-cut-icosahedron.png" alt="小黄金截切二十面体"><div class="an"><b>D122</b> 小黄金截切二十面体（Lesser Golden Cut Icosahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23896439">#88</a></div><div class="av">第 I 卷第1章</div><div class="ant">DICTO-开普勒黄金截角：每个顶点在 x = 1/(φ√5) ≈ 0.2764 处截去，三角形变为黄金截角三角形（原有的边较长）；20个截角三角形，12个五边形，60个顶点，Ih；在#88的核验范围内为新</div></div>
+<div class="atom"><img src="figures/atoms/piece-greater-golden-cut-cube.png" alt="大黄金截切立方体"><div class="an"><b>D123</b> 大黄金截切立方体（Greater Golden Cut Cube）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23896439">#88</a></div><div class="av">第 I 卷第1章</div><div class="ant">DICTO-开普勒黄金截角：每个顶点在 x ≈ 0.3479 处截去，正方形变为黄金八边形（截顶所生的边较长）；6个八边形，8个三角形，24个顶点，Oh；在#88的核验范围内为新</div></div>
+<div class="atom"><img src="figures/atoms/piece-lesser-golden-cut-cube.png" alt="小黄金截切立方体"><div class="an"><b>D124</b> 小黄金截切立方体（Lesser Golden Cut Cube）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23896439">#88</a></div><div class="av">第 I 卷第1章</div><div class="ant">DICTO-开普勒黄金截角：每个顶点在 x ≈ 0.2332 处截去，正方形变为黄金八边形（原有的边较长）；6个八边形，8个三角形，24个顶点，Oh；在#88的核验范围内为新</div></div>
+<div class="atom"><img src="figures/atoms/piece-greater-golden-cut-tetrahedron.png" alt="大黄金截切四面体"><div class="an"><b>D125</b> 大黄金截切四面体（Greater Golden Cut Tetrahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23896439">#88</a></div><div class="av">第 I 卷第1章</div><div class="ant">DICTO-开普勒黄金截角：每个顶点在 x = 1/φ² ≈ 0.3820 处截去，三角形变为黄金截角三角形（截顶所生的边较长）；4个截角三角形，4个三角形，12个顶点，Td；在#88的核验范围内为新</div></div>
+<div class="atom"><img src="figures/atoms/piece-lesser-golden-cut-tetrahedron.png" alt="小黄金截切四面体"><div class="an"><b>D126</b> 小黄金截切四面体（Lesser Golden Cut Tetrahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23896439">#88</a></div><div class="av">第 I 卷第1章</div><div class="ant">DICTO-开普勒黄金截角：每个顶点在 x = 1/(φ√5) ≈ 0.2764 处截去，三角形变为黄金截角三角形（原有的边较长）；4个截角三角形，4个三角形，12个顶点，Td；在#88的核验范围内为新</div></div>
+<div class="atom"><img src="figures/atoms/piece-greater-golden-cut-rhombic-dodecahedron.png" alt="大黄金截切菱形十二面体"><div class="an"><b>D127</b> 大黄金截切菱形十二面体（Greater Golden Cut Rhombic Dodecahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23917931">#89</a></div><div class="av">第 I 卷第2章与第6章</div><div class="ant">DICTO-开普勒黄金截角：开普勒的菱形十二面体（棱长1）经截切使每个菱形都成为黄金八边形，截顶所生的边 a = 0.477001，原有的边 b = 0.294803（a/b = φ）；12个八边形，6个正方形，8个三角形，48个顶点，Oh；在#89的核验范围内为新</div></div>
+<div class="atom"><img src="figures/atoms/piece-lesser-golden-cut-rhombic-dodecahedron.png" alt="小黄金截切菱形十二面体"><div class="an"><b>D128</b> 小黄金截切菱形十二面体（Lesser Golden Cut Rhombic Dodecahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23917931">#89</a></div><div class="av">第 I 卷第2章与第6章</div><div class="ant">DICTO-开普勒黄金截角：菱形十二面体（棱长1）经截切使每个菱形都成为黄金八边形，截顶所生的边 a = 0.322952，原有的边 b = 0.522548（a/b = 1/φ）；12个八边形，6个正方形，8个三角形，48个顶点，Oh；在#89的核验范围内为新</div></div>
+<div class="atom"><img src="figures/atoms/piece-greater-golden-cut-rhombic-triacontahedron.png" alt="大黄金截切菱形三十面体"><div class="an"><b>D129</b> 大黄金截切菱形三十面体（Greater Golden Cut Rhombic Triacontahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23917931">#89</a></div><div class="av">第 I 卷第2章与第6章</div><div class="ant">DICTO-开普勒黄金截角：菱形三十面体（棱长1）经截切使每个菱形都成为黄金八边形，a = 0.463634，b = 0.286541（a/b = φ）；30个八边形，12个五边形，20个三角形，120个顶点，Ih；在#89的核验范围内为新</div></div>
+<div class="atom"><img src="figures/atoms/piece-lesser-golden-cut-rhombic-triacontahedron.png" alt="小黄金截切菱形三十面体"><div class="an"><b>D130</b> 小黄金截切菱形三十面体（Lesser Golden Cut Rhombic Triacontahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23917931">#89</a></div><div class="av">第 I 卷第2章与第6章</div><div class="ant">DICTO-开普勒黄金截角：菱形三十面体（棱长1）经截切使每个菱形都成为黄金八边形，a = 0.316769，b = 0.512543（a/b = 1/φ）；30个八边形，12个五边形，20个三角形，120个顶点，Ih；在#89的核验范围内为新</div></div>
+<div class="atom"><img src="figures/atoms/piece-greater-golden-cut-snub-dodecahedron-l-r.png" alt="大黄金截切扭棱十二面体 L/R"><div class="an"><b>D131</b> 大黄金截切扭棱十二面体 L/R（Greater Golden Cut Snub Dodecahedron L/R）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23917931">#89</a></div><div class="av">第 I 卷第2章与第6章</div><div class="ant">DICTO黄金正则截切，左右两种手性：扭棱十二面体的每个顶点在 x = 1/3 处截去，五边形变为黄金十边形（截顶所生的边较长），三角形变为正六边形；12个十边形，80个六边形，60个截顶五边形，300个顶点，I；在#89的核验范围内为新</div></div>
+<div class="atom"><img src="figures/atoms/piece-lesser-golden-cut-snub-dodecahedron-l-r.png" alt="小黄金截切扭棱十二面体 L/R"><div class="an"><b>D132</b> 小黄金截切扭棱十二面体 L/R（Lesser Golden Cut Snub Dodecahedron L/R）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23917931">#89</a></div><div class="av">第 I 卷第2章与第6章</div><div class="ant">DICTO黄金正则截切，左右两种手性：扭棱十二面体的每个顶点在 x = 1/(φ√5) 处截去，三角形变为黄金截角三角形（原有的边较长），五边形变为正十边形；80个截角三角形，12个十边形，60个截顶五边形，300个顶点，I；也是一个DICTO-GTT立体（#89）；在#89的核验范围内为新</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-void-keeper.png" alt="DICTO空隙守护者"><div class="an"><b>D133</b> DICTO空隙守护者（DICTO Void Keeper）</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23968272">#96</a></div><div class="ant">截切OG最密格堆积的空室转接块：以间隙空室中心为点的沃罗诺伊胞减去截切OG；单一实体，亏格0，体积 0.326555；截切OG + 空隙守护者经平移填充空间（DICTO空隙组 1）；在#96的核验范围内为新</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-golden-skin.png" alt="DICTO黄金之皮，穿过OG及其皮的截面"><div class="an"><b>D134</b> DICTO黄金之皮（DICTO Golden Skin）</div><div class="am">块体（一个族，每种砖尺寸各一个） · <a href="https://doi.org/10.5281/zenodo.23968272">#96</a></div><div class="ant">在由OG自身的五重轴构成的晶格上与OG接触的黄金菱面体，减去OG；OG + 黄金之皮 + 长形黄金菱面体填充空间（DICTO空隙组 2）；砖棱长为 t/96 时，皮占空间的2.9%，永不为零；以截面绘出（蓝绿色为OG，橙色为皮，金色为完整的砖）；在#96的核验范围内为新</div></div>
+</div>
+<p class="tl">D编号只给予单个立体与块体。由它们构成的DICTO新团簇、结构与网络随后列出，不带编号。</p>
+<h2>DICTO的新团簇、结构与网络</h2>
+<div class="atoms">
+<div class="atom"><img src="figures/atoms/piece-dicto-dodeca-13.png" alt="DICTO十二面体-13"><div class="an"><b>—</b> DICTO十二面体-13（DICTO Dodeca-13）</div><div class="am">团簇 · <a href="https://doi.org/10.5281/zenodo.23284281">#13</a></div><div class="av">第 I 卷第2章</div><div class="ant">未见（10.3°的间隙是众所周知的）</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-hexa.png" alt="DICTO赫克萨"><div class="an"><b>—</b> DICTO赫克萨（DICTO Hexa）</div><div class="am">团簇 · <a href="https://doi.org/10.5281/zenodo.23376320">#18</a></div><div class="av">第 I 卷第1章</div><div class="ant">未见</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-jewel-tetra.png" alt="DICTO宝石-四面"><div class="an"><b>—</b> DICTO宝石-四面（DICTO Jewel-Tetra）</div><div class="am">团簇 · <a href="https://doi.org/10.5281/zenodo.23496353">#41</a></div><div class="av">第 I 卷第1章</div><div class="ant">未见；最初称为DICTO宝石四面体团簇（F15），为同一立体（经顶点匹配核验，比例 φ/2）；DICTO选用了#41中的简洁名称</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-jewel-octa.png" alt="DICTO宝石-八面"><div class="an"><b>—</b> DICTO宝石-八面（DICTO Jewel-Octa）</div><div class="am">团簇 · <a href="https://doi.org/10.5281/zenodo.23496353">#41</a></div><div class="av">第 I 卷第1章</div><div class="ant">未见；最初称为DICTO宝石八面体团簇（F15），为同一立体（经顶点匹配核验，比例 φ/2）；DICTO选用了#41中的简洁名称</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-sunstar-tetra.png" alt="DICTO日星-四面"><div class="an"><b>—</b> DICTO日星-四面（DICTO Sunstar-Tetra）</div><div class="am">团簇 · <a href="https://doi.org/10.5281/zenodo.23497702">#42</a></div><div class="av">第 I 卷第2章</div><div class="ant">未见；最初称为日星四面体团簇（4个正十二面体）（F16），为同一立体（经顶点匹配核验，比例 φ/2）；DICTO选用了#42中的简洁名称</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-sunstar-octa.png" alt="DICTO日星-八面"><div class="an"><b>—</b> DICTO日星-八面（DICTO Sunstar-Octa）</div><div class="am">团簇 · <a href="https://doi.org/10.5281/zenodo.23497702">#42</a></div><div class="av">第 I 卷第2章</div><div class="ant">未见；最初称为日星八面体团簇（6个正十二面体围绕一个天狼星）（F16），为同一立体（经顶点匹配核验，比例 φ/2）；DICTO选用了#42中的简洁名称</div></div>
+<div class="atom"><img src="figures/atoms/dicto-icosaxes-hexa.png" alt="二十面斧赫克萨"><div class="an"><b>—</b> 二十面斧赫克萨（Icosaxes Hexa）</div><div class="am">团簇 · <a href="https://doi.org/10.5281/zenodo.23677485">#59</a></div><div class="av">第 I 卷第2章</div><div class="ant">八个二十面斧围绕一个未生斧组成的单一立体（= 九个相互贯穿的二十面斧），是二十面斧笼目网络的节点；该网络在所检索的资料中未见（#59）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-lotus-hexa.png" alt="莲花赫克萨"><div class="an"><b>—</b> 莲花赫克萨（Lotus Hexa）</div><div class="am">团簇 · <a href="https://doi.org/10.5281/zenodo.23677485">#59</a></div><div class="av">第 I 卷第2章</div><div class="ant">带钥的二十面斧赫克萨：八个角块朝向一个十二面斧带凹痕，并在其另外七个六边形上向外带钥（镜像三帽体）（#59）</div></div>
+</div>
+<h2>此处未绘出</h2>
+<p class="tl">以下每一项都已在其论文或发现中精确计算。它在数据集中尚无模型文件，也没有单独的图，因此在此列出而不附图。</p>
+<table class="atl"><caption class="tl">DICTO的新原子</caption><thead><tr><th>编号</th><th>形体</th><th>类型</th><th>出处</th><th>讲述于</th><th>状态</th></tr></thead>
+<tr><td>D5</td><td>拉伸十二面体（Stretched dodecahedron）</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23173809">发现 F11</a></td><td>第 I 卷“发现与应用程序”</td><td>候选；构造简单，可能见于他处（晶体习性）</td></tr>
+<tr><td>D9</td><td>DICTO十二面体-13星（DICTO Dodeca-13 Star）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23284281">#13</a></td><td>第 I 卷第2章</td><td>未见</td></tr>
+<tr><td>D11</td><td>DICTO赫克萨宝石（DICTO Hexa Jewel）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23376320">#18</a></td><td>第 I 卷第1章</td><td>未见</td></tr>
+<tr><td>D14</td><td>星币国王（King of Pentacles）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23351291">#19</a></td><td>第 I 卷第1章</td><td>未见</td></tr>
+<tr><td>D15</td><td>莲花宝石（爪形二十面体）（Lotus Jewel）</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23173809">发现 F21</a></td><td></td><td>未见</td></tr>
+<tr><td>D19</td><td>佛塔（Stupa）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23345502">#27</a></td><td>第 I 卷第3章</td><td>法系列块体的名称</td></tr>
+<tr><td>D20</td><td>猴棒（Monkey Staff）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23345502">#27</a></td><td>第 I 卷第3章</td><td>法系列块体的名称</td></tr>
+<tr><td>D21</td><td>盾（Shield）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23360857">#28</a></td><td>第 I 卷第1章</td><td>截角二十面体六边形面上的棱锥，高度取一百零二面体的高度</td></tr>
+<tr><td>D32</td><td>GBPC（黄金菩提烧绿石角块）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23451210">#36</a></td><td>第 I 卷第2章</td><td>未见</td></tr>
+<tr><td>D33</td><td>牛角OG转接块（Bull-horns OG adaptor）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23451210">#36</a></td><td>第 I 卷第2章</td><td>未见</td></tr>
+<tr><td>D34</td><td>带钥八面体（黄金钥八隅结构）（Keyed octahedron）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23457016">#37</a></td><td>第 I 卷第2章</td><td>未见</td></tr>
+<tr><td>D35</td><td>W（一体粘合块）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23457016">#37</a></td><td>第 I 卷第2章</td><td>未见</td></tr>
+<tr><td>D36</td><td>五角三四面体核心（黄金包络网络）（Tetartoid core）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23457016">#37</a></td><td>第 I 卷第2章</td><td>未见</td></tr>
+<tr><td>D39</td><td>镜像中间块 Mg（Mirror middle piece Mg）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23484012">#37a</a></td><td>第 I 卷第2章</td><td>未见</td></tr>
+<tr><td>D42</td><td>五面金刚杵（Five-sided Vajra）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23463305">#38</a></td><td>第 I 卷第4章</td><td>未见</td></tr>
+<tr><td>D43</td><td>六角Cleo（Hexagonal Cleo）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23463305">#38</a></td><td>第 I 卷第4章</td><td>未见</td></tr>
+<tr><td>D44</td><td>猴棒 B（Monkey Staff B）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23463305">#38</a></td><td>第 I 卷第4章</td><td>未见</td></tr>
+<tr><td>D53</td><td>DICTO日星-赫克萨钥（DICTO Sunstar-Hexa-Key）</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23497702">#42</a></td><td>第 I 卷第2章</td><td>未见</td></tr>
+<tr><td>D58</td><td>DICTO TQP-252</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 卷第4章</td><td>未见</td></tr>
+<tr><td>D59</td><td>DICTO TQ-320</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 卷第4章</td><td>未见</td></tr>
+<tr><td>D60</td><td>DICTO TQP-402</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 卷第4章</td><td>未见</td></tr>
+<tr><td>D61</td><td>DICTO TQ-500</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 卷第4章</td><td>未见</td></tr>
+<tr><td>D62</td><td>DICTO TQD-732</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 卷第4章</td><td>未见</td></tr>
+<tr><td>D63</td><td>DICTO TQHD-662</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 卷第4章</td><td>未见</td></tr>
+<tr><td>D64</td><td>DICTO TQP-672</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 卷第4章</td><td>未见</td></tr>
+<tr><td>D67</td><td>X（棱长为 φ 的立方体减去一个欧几里得屋顶）（#47）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23551326">#47</a></td><td>第 I 卷第2章</td><td>#47中有名称的连接块</td></tr>
+<tr><td>D68</td><td>Y（棱长为 φ 的立方体加上一个欧几里得屋顶）（#47）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23551326">#47</a></td><td>第 I 卷第2章</td><td>#47中有名称的连接块</td></tr>
+<tr><td>D72</td><td>凹陷四面体 L/R（黄金钥八隅结构）（Dented tetrahedron L/R）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23457016">#37</a></td><td>第 I 卷第2章</td><td>未见</td></tr>
+<tr><td>D73</td><td>DICTO填充组 1 / 2 的块体（生长双锥、生长四面体 L/R）（DICTO Fill set 1 / 2 pieces）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23484012">#37a</a></td><td>第 I 卷第2章</td><td>未见</td></tr>
+<tr><td>D74</td><td>Cleo塔（8块塔块）（Cleo Towers）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 卷第4章</td><td>未见</td></tr>
+<tr><td>D75</td><td>极Cleo塔（7块塔块＋核心射线）（Polar Cleo Towers）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 卷第4章</td><td>未见</td></tr>
+<tr><td>D110</td><td>HexOct c 瓦片（λ = 1/10）（HexOct c-tile）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23737639">#75</a></td><td>第 I 卷第5章</td><td>#75中 λ = 1/10 时的 c 瓦片，即该论文插图所用的权重（瓦片沿权重路径 −11/24 ≤ λ ≤ 3/8 变化）：一个 c 层中一个球所占的份额，四个对半规则块体，两座塔在该层的球处相接；体积 1/√2；未见此类瓦片的更早表述（#75）</td></tr>
+<tr><td>D111</td><td>HexOct h 瓦片（λ = 1/10）（HexOct h-tile）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23737639">#75</a></td><td>第 I 卷第5章</td><td>#75中 λ = 1/10 时的 h 瓦片，即该论文插图所用的权重：一个 h 层中一个球所占的份额，四个对半规则块体，单一实体；体积 1/√2；也是#86中成员 E 的 h 瓦片（经顶点匹配核验）；未见此类瓦片的更早表述（#75）</td></tr>
+<tr><td>D112</td><td>A · HexOct 3/8 h 瓦片，扭转立方体（A · HexOct 3/8 h-tile, the twisted cube）</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>凸，12个面（6个边长为 1/√2 的正方形，6个等腰三角形），11个顶点，21条棱；可密铺空间，但不是平行多面体；在所查资料中未见；戈德堡的空间填充十二面体列表尚未查阅（#86）</td></tr>
+<tr><td>D113</td><td>B · HexOct −1/8（完整正八面体）c 瓦片（B · HexOct −1/8 (whole octahedra) c-tile）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>一个正八面体与两个正四面体，8个面，凸包比 6/7；成员 B 的 c 瓦片（#86）</td></tr>
+<tr><td>D114</td><td>B · HexOct −1/8（完整正八面体）h 瓦片（B · HexOct −1/8 (whole octahedra) h-tile）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>一个正八面体与两个正四面体以另一种方式相接，10个面，凸包比 6/7；成员 B 的 h 瓦片（#86）</td></tr>
+<tr><td>D115</td><td>C · HexOct −1/8 c 瓦片（C · HexOct −1/8 c-tile）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>环形构建所用的权重；两座塔沿两个梯形相接；10个面，凸包比 0.800（#86）</td></tr>
+<tr><td>D116</td><td>C · HexOct −1/8 h 瓦片（C · HexOct −1/8 h-tile）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>14个面，凸包比 0.735（#86）</td></tr>
+<tr><td>D117</td><td>D · HexOct −11/24 c 瓦片（D · HexOct −11/24 c-tile）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>18个面，凸包比 0.783（#86）</td></tr>
+<tr><td>D118</td><td>E · HexOct 1/10 c 瓦片（E · HexOct 1/10 c-tile）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>将#75中 λ = 1/10 时的 c 瓦片补成一个整体：一座塔移动一个晶格步长，两塔沿一个面相接；24个面，凸包比 0.745（#86）；与D110不全等（经顶点匹配核验）</td></tr>
+</table>
+<table class="atl"><caption class="tl">DICTO的新团簇、结构与网络</caption><thead><tr><th>编号</th><th>形体</th><th>类型</th><th>出处</th><th>讲述于</th><th>状态</th></tr></thead>
+<tr><td>—</td><td>欧几里得-开普勒-帕乔利单元（EKP单元；Euclid-Kepler-Pacioli cell）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23284106">#8</a></td><td>第 I 卷第2章</td><td>周期性近似相型结构；未见</td></tr>
+<tr><td>—</td><td>欧几里得-开普勒-帕乔利网络（Euclid-Kepler-Pacioli network）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23284106">#8</a></td><td>第 I 卷第2章</td><td>未见</td></tr>
+<tr><td>—</td><td>星链式反应（Star Chain Reaction）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23497702">#42</a></td><td>第 I 卷第2章</td><td>未见（网络层面的检索）</td></tr>
+<tr><td>—</td><td>宝石链（Jewel chain）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23173809">发现 F12a</a></td><td></td><td>F12的研究</td></tr>
+<tr><td>—</td><td>DICTO星（DICTO-Star）</td><td>团簇</td><td><a href="https://doi.org/10.5281/zenodo.23284213">#14</a></td><td>第 I 卷第2章</td><td>未见（由完整正二十面体相互重叠的版本见奥斯汀 2014）</td></tr>
+<tr><td>—</td><td>笼目凸包（六种凸包网络）（Kagome hulls）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23376317">#17</a></td><td>第 I 卷第2章</td><td>共享顶点的八面体/四面体是已知的（钙钛矿、烧绿石）</td></tr>
+<tr><td>—</td><td>DICTO二十面体-13（DICTO Icosa-13）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23351291">#19</a></td><td>第 I 卷第1章</td><td>未见作为剖分/填充出现</td></tr>
+<tr><td>—</td><td>UNITY（截半二十面体＋12个J11）</td><td>团簇</td><td><a href="https://doi.org/10.5281/zenodo.23351291">#19</a></td><td>第 I 卷第1章</td><td>未见</td></tr>
+<tr><td>—</td><td>DICTO星形冠（DICTO Stella-Corona）</td><td>团簇</td><td><a href="https://doi.org/10.5281/zenodo.23351291">#19</a></td><td>第 I 卷第1章</td><td>由20个正二十面体组成的壳层见于一个Wolfram演示（Wolfram Demonstration）</td></tr>
+<tr><td>—</td><td>二十面体八隅结构（Icosahedral octet）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23173809">发现 F21</a></td><td></td><td>以黄金分割内接于正八面体的正二十面体是经典的（帕乔利；富勒）</td></tr>
+<tr><td>—</td><td>业之链（Chain of Karma）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23310541">#22</a></td><td>第 I 卷第3章</td><td>嵌套的黄金正二十面体：格雷 2002；点壳层：蔡氏团簇</td></tr>
+<tr><td>—</td><td>法之球（Spheres of Dharma）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23310833">#23</a></td><td>第 I 卷第3章</td><td>蔡氏团簇族的壳层（高仓（Takakura）等 2007）</td></tr>
+<tr><td>—</td><td>DICTO类球体-13 RD（DICTO Spheroid-13 RD）</td><td>团簇</td><td><a href="https://doi.org/10.5281/zenodo.23332821">#25</a></td><td>第 I 卷第2章</td><td>该密铺是已知的（A3 完美码：Kovacevic-Tan 2018；辛格 1938）；该块体未见</td></tr>
+<tr><td>—</td><td>DICTO ATOM-13×13</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23333183">#26</a></td><td>第 I 卷第2章</td><td>该密铺已知；该组与各套件未见</td></tr>
+<tr><td>—</td><td>DICTO一百零二·八十面体（DICTO Hecatogdoecontahedron）</td><td>复合体</td><td><a href="https://doi.org/10.5281/zenodo.23430868">#34a</a></td><td>第 I 卷第1章</td><td>核心与凸包同经典的TI-PD复合体；各组成部分在本数据集中</td></tr>
+<tr><td>—</td><td>DICTO互锁组 1 与组 2（块体组）（DICTO Interlock set 1 and set 2）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23407106">#33</a></td><td>第 I 卷第4章</td><td>公共加细是标准的</td></tr>
+<tr><td>—</td><td>Cleo星（Cleo star）</td><td>团簇</td><td><a href="https://doi.org/10.5281/zenodo.23429911">#35</a></td><td>第 I 卷第3章</td><td>未见</td></tr>
+<tr><td>—</td><td>黄金菩提烧绿石（Golden Bodhi Pyrochlore）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23451210">#36</a></td><td>第 I 卷第2章</td><td>未见</td></tr>
+<tr><td>—</td><td>DICTO开普勒-庞索-UP循环（DICTO Kepler-Poinsot-UP cycle）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23464021">#38a</a></td><td>第 I 卷第4章</td><td>未见</td></tr>
+<tr><td>—</td><td>DICTO宝石-菱形（DICTO Jewel-Rhombi）</td><td>团簇</td><td><a href="https://doi.org/10.5281/zenodo.23496353">#41</a></td><td>第 I 卷第1章</td><td>未见</td></tr>
+<tr><td>—</td><td>DICTO日星-菱形（DICTO Sunstar-Rhombi）</td><td>团簇</td><td><a href="https://doi.org/10.5281/zenodo.23497702">#42</a></td><td>第 I 卷第2章</td><td>未见</td></tr>
+<tr><td>—</td><td>DICTO日星-赫克萨（DICTO Sunstar-Hexa）</td><td>团簇</td><td><a href="https://doi.org/10.5281/zenodo.23497702">#42</a></td><td>第 I 卷第2章</td><td>未见</td></tr>
+<tr><td>—</td><td>勒洛八面体、勒洛立方体、勒洛二十面体、勒洛十二面体（Reuleaux octahedron, Reuleaux cube, Reuleaux icosahedron, Reuleaux dodecahedron）（以立方体、正八面体、正十二面体、正二十面体的顶点为球心的球；按外观命名）</td><td>曲面体</td><td><a href="https://doi.org/10.5281/zenodo.23529499">#45</a></td><td>第 I 卷第1章</td><td>四个立体；并非严格意义上的勒洛多面体（#45）</td></tr>
+<tr><td>—</td><td>DICTO镂空立体（DICTO Vacuus Solids）（每个立体被掏空至只剩其鳍：SHEETS（面板）与STRUTS（支柱））</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23896016">#87</a></td><td></td><td>面扇是经典的；列奥纳多为帕乔利所绘的镂空体（vacuus，1509）是没有中心的棱框架；没有任何资料把从中心到棱的鳍或中心支柱作为实体构建（#87）</td></tr>
+<tr><td>—</td><td>单一支柱镂空体（Mono-Strut Vacuus）（木头人、立方珍珠、DICTO GTI、大卫、大利拉、十二面斧、黄金扣、歌利亚、二十面斧、TI星核、未生斧、白骑士）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23896016">#87</a></td><td></td><td>子族：所有中心支柱长度相同，顶点位于以中心为球心的同一球面上；DICTO的十二个立体（#87）</td></tr>
+<tr><td>—</td><td>单一长度镂空体（Mono-Length Vacuus）（立方八面体）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23896016">#87</a></td><td></td><td>子族：支柱与棱全部等长；在普查范围内只有立方八面体，即富勒的向量平衡体（#87）</td></tr>
+<tr><td>—</td><td>圆盘镂空体（Disc Vacuus）：影武者五边形圆盘（Kagemusha Pentagon Disc）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23896016">#87</a></td><td></td><td>子族：有一个平的中心圆盘；影武者（D86）有一个，为由五片72°鳍组成的正五边形（#87）</td></tr>
+<tr><td>—</td><td>圆盘镂空体：狮子圆盘镂空体（Lion Disc Vacuus）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23896016">#87</a></td><td></td><td>子族：狮子（D87）有六个中心十边形，每个由十片36°鳍组成（#87）；经典的圆盘镂空体有正八面体、立方八面体、截半二十面体和五种卡塔兰立体，以及大利拉</td></tr>
+<tr><td>—</td><td>等鳍镂空体（Isofin Vacuus）（5种柏拉图立体、13种阿基米德立体、菱形十二面体、菱形三十面体、大利拉）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23896016">#87</a></td><td></td><td>子族：所有鳍全等；普查中恰有21个，其中没有DICTO的新立体（#87）</td></tr>
+</table>
+</section>
+<!--ATOMS END-->
+<!-- ============ APPENDIX ============ -->
+<section class="appendix">
+<img class="logo" src="../dicto-logo.png" alt="DICTO" style="width:22mm">
+<p class="chapter-mark">DICTO原子辞典 · 数据</p>
+<h1>逐部作品的数据</h1>
+<p>每部作品一节，列出其论文中所发表的精确值、体积、证明概要与核验，按第 I 卷各章的顺序排列；每个标题下注明第 I 卷中讲述该作品的一章。精确值采用论文所给出的形式；小数（≈）与论文所印相同。许可协议CC BY-SA 4.0。</p>
+
+<h2 class="first">A.18 DICTO赫克萨 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23376320）</span></h2>
+<p class="told">讲述于第 I 卷，第1章 · 原子。</p>
+<h3>DICTO宝石（比例：每个单元的立方体棱长为 2）</h3>
+<p>欧几里得-开普勒-帕乔利单元的正十二面体（棱长为 2 的立方体上的欧几里得屋顶），被其六个面相邻单元的星形八面体刻削而成。它保留整个立方体以及六个屋顶各自的 2/3：体积恰为 12。其表面保留 12 个彭罗斯粗菱形（72°/108°），每条立方体棱上一个（即窗口），四周由位于星形八面体平面内的 48 个三角形围成。偶单元上的宝石与奇单元上的星形八面体（体积 4）填充空间：即星形体-宝石晶格（Stella–Jewel Lattice），体积比 3 : 1。</p>
+<h3>赫克萨与赫克萨钥</h3>
+<ul>
+<li>赫克萨：八个DICTO赫克萨宝石位于一个 2 × 2 × 2 的块上，内部总计重叠 16（8 × 12 = 96）；合为一个立体，即棱长为 4、带 24 个向外屋顶的立方体，体积 64 + 24 × 2/3 = 80（6⅔ 个宝石）。其内部有两个四面体宝石团簇相互贯穿。</li>
+<li>任何剪切都不能使八个精确的宝石面对面相接而成为立方体：晶格剪切是对称的，而没有任何对称映射能把立方体的棱变为宝石的接触方向（即使三个方向中的两个也做不到）。</li>
+<li>赫克萨之间只能窗口对窗口地配合，与每个邻居共两个完整窗口。在间距为 4 的面心立方排列中：12 个邻居，共享 24 个完整窗口。</li>
+<li>赫克萨钥：8 个星形八面体与 12 个双屋顶，体积 48（4 个宝石）。赫克萨与赫克萨钥以棋盘格方式填充空间，体积比 5 : 3（宝石与星形八面体：3 : 1）。</li>
+<li>分解 A：8 个立方体 + 24 个屋顶（屋顶为 2/3）。分解 B：4 个完整宝石 + 4 个修剪宝石（去掉 3 个屋顶，体积恰为 8）。赫克萨钥：8 个星形八面体 + 24 个屋顶。</li>
+</ul>
+<h3>团簇、网络、转动</h3>
+<ul>
+<li>八个赫克萨的菱方团簇：窗口对窗口，共享 36 个完整窗口，内部封有一个赫克萨钥，体积 688 = 57⅓ 个宝石。</li>
+<li>金刚石型团簇：赫克萨共享 7 个角宝石，体积 556。</li>
+<li>不可能使每个宝石都恰好属于两个赫克萨；最好的是金刚石网络，每个赫克萨与 4 个邻居共享其 8 个角赫克萨宝石中的 4 个，星形八面体填充其间的每个单元。</li>
+<li>这些堆积中的任何接合都不能按其面的对称性转动后仍然吻合；转动只存在于仅挂在一个邻居上的块体（在窗口上：180° 与一次翻转）。</li>
+</ul>
+<h3>核验</h3>
+<p>data/checks-hexa.txt：来自 krp-core v0.16.0 的 16 项核验，于2026年10月15日重新运行，全部通过：表面封闭且朝外；精确体积（赫克萨 80，赫克萨钥 48，团簇 688 与 556，修剪宝石 8，屋顶 2/3）；赫克萨上的 24 个完整宝石窗口以及与星形八面体吻合的壁；每个部件视图的总和都相符。网络、堆积与转动结果来自设计研究（以采样检验重叠、精确接触面积、配合扫描与转动表）。</p>
+<h3>资料来源</h3>
+<p>已知：由星形八面体与正八面体构成的空间填充；内接于菱形十二面体的立方体、正八面体与星形八面体；作为沿一条对角线压扁的立方体的面心立方原胞。Lalvani，US 4,723,382（1988）：窗口菱形是其十个块体之一；宝石的 48 个壁与每条正二十面体二重轴都偏离 22.24°。Pearce，US 3,974,600（1976）：带面板的支杆，而非实心块体。在所查资料中未见（网络搜索2026年10月9日；参考文献库2026年10月15日）：由刻削的十二面体构成的立方体，或这个由八块组成的块。这并非新颖性的证明；不主张优先权。另见：欧几里得《几何原本》XIII.17；Coxeter，Regular Polytopes。</p>
+
+<h2>A.19 AXE、CLEO与FUJI <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23351291）</span></h2>
+<p class="told">讲述于第 I 卷，第1章 · 原子。</p>
+<p>单位：棱长为 1 的正二十面体；φ = τ = (1 + √5)/2。所有体积、角度与计数均由研究数据（CHECKS.json）重新计算。</p>
+<h3>块体</h3>
+<table><tr><th>块体</th><th>形状</th><th>棱</th><th>体积</th><th>出处</th></tr>
+<tr><td><b>AXE</b></td><td>四面体</td><td>五条长为 1，一条长为 1/φ</td><td class="n">1/12</td><td>莫塞里-萨多克 t6，比例 1/τ</td></tr>
+<tr><td><b>CLEO</b></td><td>三棱锥</td><td>底面为边长 1/φ 的正三角形，侧棱 1</td><td class="n">(√5 − 1)/24</td><td>莫塞里-萨多克 t4，比例 1/τ</td></tr>
+<tr><td><b>FUJI</b></td><td>六棱锥</td><td>底边 1 与 1/φ 交替，六条侧棱均为 1</td><td class="n">(1 + 3√5)/24</td><td>新</td></tr></table>
+<ul>
+<li>AXE：两个正三角形以 41.81° 铰接（cos = √5/3）。共享一条棱的两个正二十面体留下 360° − 2 × 138.19° = 83.62°，即两个 41.81° 的间隙。</li>
+<li>CLEO：各面沿其长棱以 63.43° 相交。</li>
+<li>FUJI：底面各角均为 120°；底面顶点位于半径为 √(2/3) 的圆上；锥顶高度 1/√3。</li>
+<li>所有二面角都由 α = arccos(√5/3) = 41.81° 与 δ = 37.38° 得出：41.81° = α；37.38° = δ；63.43° = π − α − 2δ；79.19° = α + δ；116.57° = α + 2δ（正十二面体的）；142.62° = π − δ（FUJI的侧棱）。这些关系在 120 位数字内成立（整数关系搜索）。</li>
+</ul>
+<h3>莲子</h3>
+<ul>
+<li>I(φ²) = 12 I(1) + I(1/φ) + 60 AXE + 20 FUJI + 20 CLEO：113 个块体，无重叠，体积 (235 + 105√5)/12 = φ⁶ V(I)。莲子（Lotus seed）的 20 个大面中，每一个由三个正二十面体面与一个FUJI底面组成。</li>
+<li>I(φ²) = 正十二面体 + 12 J11 + 30 AXE + 20 FUJI：63 个块体。</li>
+<li>这 12 个正二十面体共享 30 条完整的棱；它们的内环是一个棱长为 1 的正十二面体的 12 个面（DESHI笼；Gray 2002）。</li>
+<li>三曲腿（CLEO + 3 AXE）的体积与帽 J2 相同，为 (5 + √5)/24。内在之眼（Inner Eye）= I(1/φ) + 30 AXE + 20 CLEO，体积 5φ/2。</li>
+<li>D(1) = I(1/φ) + 12 J2 + 30 AXE + 20 CLEO（经过大星形十二面体与挖空十二面体的十二面体链（Dodecahedral Chain））。</li>
+<li>业之链第 1–3 步：113、1,569 与 20,497 个块体。星形冠体积 (120 + 47√5)/3。</li>
+</ul>
+<h3>FUJI不由莫塞里-萨多克瓦片构成</h3>
+<ul>
+<li>FUJI的体积恰与比例 1/τ 下的 3 AXE + CLEO + t1 相同，但德恩不变量不同。以 (α, δ) 表示：FUJI 的 1 部分为 (3, −15/2)，√5 部分为 (0, 3/2)；3 AXE + CLEO + t1′ 的 1 部分为 (27/2, 15/2)，√5 部分为 (−1/2, 1/2)。两者的 √5 部分相差 (α + 2δ)/2 = (π − arctan 2)/2；cos²(arctan 2) = 1/5，因此 arctan 2 不是 π 的有理倍数。</li>
+<li>具有FUJI的体积与德恩不变量的其他组合（全部六种瓦片，四种比例）由底面排除：每个 120° 的角必须是 60° + 60°，所以底面必须在长边上放边长为 1 的三角形、在短边上放边长为 1/τ 的三角形；它们的总面积 1.795 超过六边形的 1.669。</li>
+<li>更小瓦片的组合：尚未解决。CLEO可放入FUJI内部，并可在其中增长到其尺寸的 1.023 倍。</li>
+</ul>
+<h3>展开图与资料来源</h3>
+<p>展开图以每单位 45 mm 打印在 A4 纸上（莲子的棱约 118 mm），每张都经过核验（面全等，每条棱都是折线或编号的粘合对，无重叠）。参考文献：Frank 1952；Mosseri &amp; Sadoc 1982；Sadoc &amp; Mosseri 1999；Kramer 1982；Koca et al. 2020；Gray 2002；Coxeter et al. 1938；Wenninger 1971；Dehn 1901；Kepler 1619。脚本：studies/2026-10-10-icosa-13 与 studies/2026-10-14-axe-cleo-fuji。</p>
+
+<h2>A.20 FUJI家族 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23357896）</span></h2>
+<p class="told">讲述于第 I 卷，第1章 · 原子。</p>
+<h3>FUJI(r) 家族</h3>
+<ul>
+<li>底面：边长为 1 与 r 的截角三角形（边长为 1 + 2r 的正三角形切去边长为 r 的三个角；即顶点可递六边形，或截角三角形 t{3}）；顶点位于半径平方为 (1 + r + r²)/3 的圆上。</li>
+<li>当 h² = (2 − r − r²)/3 时侧棱为 1。体积 (√3/12)(1 + 4r + r²)h。侧面：三个正三角形，三个边长为 1、1、r 的等腰三角形。</li>
+<li>底角：cos L = (1 + 2r)/3（长边）；cos² S = (2 + r)/(3(2 − r))（短边）。证明：长边的距离为 s/(2√3)，其中 s = 1 + 2r，斜高 √3/2；切线的距离为 (2 + r)/(2√3)，斜高 √(1 − r²/4)。</li>
+</ul>
+<table><tr><th>r</th><th>成员</th><th>高</th><th>L</th><th>S</th></tr>
+<tr><td class="n">0</td><td>正四面体</td><td class="n">√(2/3)</td><td class="n">70.53°</td><td>–（极限 54.74°，无此面）</td></tr>
+<tr><td class="n">1/4</td><td></td><td class="n">3/4</td><td class="n">60°</td><td class="n">49.11°</td></tr>
+<tr><td class="n">1/2</td><td></td><td class="n">0.6455</td><td class="n">48.19°</td><td class="n">41.81°</td></tr>
+<tr><td class="n">1/φ</td><td><b>FUJI</b></td><td class="n">1/√3</td><td class="n">41.81°</td><td class="n">37.38°</td></tr>
+<tr><td class="n">1</td><td>扁平</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr></table>
+<p>在 r = 1/φ 时 cos² L 恰为 5/9，在 r = 1/2 时 cos² S 恰为 5/9：即莲子的 41.81° 间隙角。</p>
+<h3>奥多姆与反棱柱规则</h3>
+<ul>
+<li>将正三角形的每条边在两端各延长 e，得到边长为 e 与 1 + e 的截角三角形，r = e/(1 + e)；e = φ 给出FUJI的底面（Kabai 2008，继 Odom 之后）；e = 1 给出 r = 1/2。这只是参数的变换，不是新结果。</li>
+<li>面平面条件 L + D<sub>X</sub> = 180°：r = (−3 cos D<sub>X</sub> − 1)/2。正二十面体（138.19°）：1/φ；立方八面体，三角形–正方形（125.26°）：(√3 − 1)/2；正四角反棱柱（127.55°）：√2 − 1；小斜方截半立方体（144.74°）：(√6 − 1)/2；正八面体（109.47°）：0。</li>
+<li>命题 1：对于 n 角反棱柱，r = 2 cos(π/n) − 1，因此 1 + r 是正 n 边形的短对角线。证明：顶点 T<sub>k</sub>、B<sub>k</sub>，θ = π/n，R = 1/(2 sin θ)；(T₁ − M)·(B₋₁ − M) = −(4 cos θ − 1)/4，故 cos D<sub>n</sub> = (1 − 4 cos(π/n))/3（标准的反棱柱二面角，见 OEIS）。数值核验 n = 3 至 12，精度 10⁻¹²。</li>
+<li>n = 3：正四面体；n = 4：√2 − 1（白银比的倒数）；n = 5：1/φ，FUJI；n = 6：√3 − 1。截角 k 边形仅在 k = 3、4 与 5 时给出家族（在 r = 2 sin(π/k − π/6) 时变为扁平）；正方形家族中的小斜方截半立方体成员为 r = 1 − 1/√2。与八次对称准晶体的联系尚未解决。</li>
+</ul>
+<h3>各成员出现之处</h3>
+<ul>
+<li>Damasceno、Engel 与 Glotzer（2012）：t = 1/2 的截角四面体填充空间；其六边形的边长比为 2 : 1，即 r = 1/2 的底面。</li>
+<li>呼吸型烧绿石（棱长 1 与 r）：每个笼目六边形的边长为 1 与 r；用两种截角四面体，对每个 r 都能填充空间（Ã₃ 中的维特霍夫构造）；在 r = 0.2、0.382、0.5、0.618、0.8、1 处作了数值核验。r = 1/φ：黄金呼吸型烧绿石。</li>
+<li>等深立方体–八面体立体（|x|, |y|, |z| ≤ 1, |x| + |y| + |z| ≤ √3）：6 个正方形，8 个 r = (√3 − 1)/2 = 0.366 的截角三角形，全部 14 个面都与同一个内切球相切；其立方体顶点是放大 √2(√3 − 1) ≈ 1.035 倍的 FUJI((√3 − 1)/2) 的锥顶。证明：长面为正三角形当且仅当 2(S − 1)² = (2 − S)² + 1，即 S² = 3。</li>
+</ul>
+<h3>轮、CLEO球、Cleo-Icos与安东尼乌斯</h3>
+<ul>
+<li>轮的界：n 个各有 2m 根辐条的轮需满足 n − 1 ≤ m：至多 3 个（正方形）、4 个（六边形）、6 个（十边形）。五个八边形轮：简单排列中的三角形（边长 45°）的角为 65.53°，迫使五边形的角为 114.47°，而边长 45° 的等边等角球面五边形的角为 122.25°。</li>
+<li>CLEO球（CLEO sphere）：棱长为 1/φ（外接球半径 1）的截半二十面体 = 20 CLEO + 12 个五棱锥（每个体积 √5/12）；总计 (11√5 − 5)/6。每个五棱锥 = 5 个体积为 √5/60 的直棱锥。</li>
+<li>Cleo-Icos：侧棱 0.851，底棱 2/√5 = 0.894；麦凯的单位四面体（棱长比 1/sin 72° = 1.0515）；许普西克勒斯的棱锥（内切球半径 ÷ 外接球半径 = 0.79465）。二面角 72°（侧棱）与 69.09°（底棱）。</li>
+<li>长形黄金菱面体（棱长 0.851，二面角 72° 与 108°），0 ≤ x, y, z ≤ 1，被 x + y + z = 1 与 2 切开：Cleo-Icos + 安东尼乌斯 + Cleo-Icos。安东尼乌斯：三角反棱柱，两个正三角形面（棱长 2/√5），六个侧面（0.851、0.851、0.894）；体积为 4 × Cleo-Icos 的体积；菱面体为 6 ×。安东尼乌斯的二面角 110.91° + 69.09° = 180°。核验了 2,187 个块体的拼片。安东尼乌斯的德恩不变量恰为 Cleo-Icos 的 −2 倍。</li>
+<li>正八面体 = 20 Cleo-Icos + 12 个半提督帽（正二十面体棱长为 1 时，体积分别为 φ²/24、φ/24、φ⁶/6）= 8 Cleo-Icos + 12 个筝形棱锥；Cleo-Icos 与半帽（无论有无安东尼乌斯）都不能填充空间（π、arccos(−√5/3)、arccos(1/√3) 有理无关）。</li>
+</ul>
+<h3>资料来源</h3>
+<p>检索于2026年10月14日：参考文献库、网络、OEIS。已知并注明出处：顶点可递六边形、反棱柱的角（OEIS A394077）、Odom and van de Craats 1983、Kabai 2008 与 2014、Damasceno et al. 2012、Okamoto et al. 2013、Coxeter 1973、Mackay 1962、Ino 1969、Marks 1984、Hypsicles、Hafner and Žitko、Hafner and Komatar 2008、Prodan et al. 2017、Fang et al.。脚本：studies/2026-10-14-fuji-family、-icosa-cleo-pair、-half-cap。</p>
+<h2>A.28 DICTO截角二十面体型一百零二面体 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23360857）</span></h2>
+<p class="told">讲述于第 I 卷，第1章 · 原子。</p>
+<p>比例：棱长为 1/φ 的截角二十面体（法之球构建所用的比例）。</p>
+<table><tr><th>面</th><th>数目</th><th>形状</th><th>到中心的距离</th></tr>
+<tr><td>正五边形</td><td class="n">12</td><td>边长 1/φ = 0.61803</td><td class="n">1.4384</td></tr>
+<tr><td>菱形</td><td class="n">30</td><td>边长 0.65097，角 56.68° 与 123.32°</td><td class="n">1.5</td></tr>
+<tr><td>等腰三角形</td><td class="n">60</td><td>边长 0.61803、0.65097、0.65097</td><td class="n">1.5</td></tr></table>
+<ul>
+<li>顶点 80 个：截角二十面体的 60 个（距离 1.5315）与 20 个盾的顶尖（1.6057），后者构成棱长为 3/φ² = 1.14590 的正十二面体。棱 180 条；棱上的角有两种，159.45° 与 163.53°。80 − 180 + 102 = 2。体积 14.4042。</li>
+<li>90 个面（菱形与三角形）位于距离 1.5 处，即截角二十面体的中分球；12 个五边形位于 1.4384 处：无内切球。（《捕捉中间之物》第3版更正了先前的说法。）</li>
+<li>精确，在 ℚ(√5) 中（data/tih_v2_check.py）：标准五角化十二面体（截角二十面体在其自身中分球——半径 3/2——中的配极）有 12 个五重顶点与 20 个三重顶点；20 个盾的顶尖就是它的 20 个三重顶点。一百零二面体是截角二十面体与这 20 个点的凸包。其面平面是连接截角二十面体 jtI（拓扑上即菱形九十面体）的 90 个面平面与 12 个五边形平面：102 = 90 + 12。它就是在五边形平面处切去 12 个五重顶点的 jtI。</li>
+<li>组合上：康威的 k6tI（80 个顶点，132 个面），其中 30 对共面三角形合并为 30 个菱形（第2版把“60 对”更正为 30）。</li>
+<li>一百零二·八十面体：与其在同一球中的配极——DICTO八十面体——构成有 182 个面与 182 个顶点的自对偶复合体；其凸包为 jtI，公共核心为截半截角二十面体（见 A.34a）。</li>
+</ul>
+<h3>资料来源与脚本</h3>
+<p>检索于2026年10月13–14日（第2版的补充于2026年10月16日）：康威记号（Conway et al. 2008；Hart）：k6tI 80 个顶点/132 个面，k5tI 72/132，ktI 92/180；约翰逊多面体与近似约翰逊多面体（Johnson 1966；Zalgaller 1969；Kaplan 的截半截角二十面体，92 个面）；MathWorld 与 PolyhedronData；Polytope Wiki；菱形九十面体（jtI）；截角二十面体–五角化十二面体复合体；McCooey 的 Visual Polyhedra。未见有命名；这是我们查找范围的报告，而非声称该立体未知。脚本：data/tih_v2_check.py、tih-v2-check.txt、tih_check.py、tih-checks.json（来自 Polyhedraverse 的形体 TRANS_DHARMA_80）、tih_fig.py。</p>
+<h2>A.31 DICTO八十面体 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23404688）</span></h2>
+<p class="told">讲述于第 I 卷，第1章 · 原子。</p>
+<h3>比例与精确性</h3>
+<p>坐标采用逆向循环的比例（在单位球中作配极变换）；除标注“浮点”者外，均在 ℚ(√5) 中精确。</p>
+<h3>逆向循环</h3>
+<p>法之球（律动循环）：正二十面体 ⊂ 截半二十面体 ⊂ 正十二面体 ⊂ 截角二十面体 ⊂ 菱形三十面体 ⊂ 大 φ³ 倍的正二十面体。以一百零二面体为第七站，在 ℚ(√5) 中精确配极后：</p>
+<p style="text-align:center">正十二面体 ⊂ 截半二十面体 ⊂ 八十面体 ⊂ 五角化十二面体 ⊂ 正二十面体 ⊂ 菱形三十面体 ⊂ 大 φ³ 倍的正十二面体。</p>
+<p>仅对循环中的六个立体作配极，只得到经典立体。（论文#30 把 OG 称为第二站，将内层正十二面体计为第 0 站。）</p>
+<h3>立体</h3>
+<ul>
+<li>80 个面，102 个顶点，180 条棱（102 − 180 + 80 = 2）。20 个正六边形（来自一百零二面体的 20 个盾顶尖）与 60 个筝形（来自截角二十面体的 60 个顶点）。顶点：12 个处五个面相交，30 个处四个面相交，60 个处三个面相交。</li>
+<li>棱：六边形边长的平方为 2/9 − 2√5/27（边长 0.237881）；每个筝形有两条该长度的边，与六边形相邻，另两条边长的平方为 86/3249 + 2√5/361（边长 0.197124）。第一种长度的棱 120 条，第二种 60 条。</li>
+<li>角：六边形为正六边形（均为 120°）；筝形的角为 117.85°（两个）、68.62° 与 55.69°。</li>
+<li>球：90 个顶点恰位于半径为 2/3 的球上；其余 12 个位于半径平方为 (170 + 2√5)/361 处。（一百零二面体有 90 个面与同一个球相切，其 12 个五边形略在该球之内。）</li>
+<li>面的距离，无内切球：六边形位于距离平方 2/9 + 2√5/27（0.6228）处，筝形位于 (42 + 2√5)/109（0.6529）处。</li>
+<li>无中分球：120 条六边形棱与半径平方为 7/18 + √5/54（0.65597）的球相切；60 条短筝形棱最近处为其内端，位于半径为 2/3 的球上。</li>
+<li>二面角（浮点）：120 条筝形–六边形棱上为 156.20°，60 条筝形–筝形棱上为 156.72°。</li>
+<li>体积 (−1000 + 1240√5)/1539。凸且中心对称（已精确核验）；具有完全的正二十面体对称。</li>
+<li>关系（第2版）：标准五角化十二面体（截角二十面体在其中分球中的配极，取相应大小）在截角二十面体的六边形平面处切去其 20 个三重顶点；这是由已知立体导出的一个未命名立体（#28，第2版）。</li>
+</ul>
+<h3>在逆向循环中</h3>
+<ul>
+<li>其 90 个球面顶点恰位于截半二十面体的外接球（半径 2/3）上；其中 30 个，即其二重顶点，就是截半二十面体本身的顶点。</li>
+<li>其 20 个六边形位于截半二十面体 20 个三角形的平面内，每个六边形容纳一个三角形；其 60 个筝形位于外围五角化十二面体的面内。</li>
+</ul>
+<h3>面的排列</h3>
+<p>组合上是把 20 个六重顶点削到棱中点的五角化十二面体；在 Antiprism 记法（Rossiter）中，为 L0 作用于正十二面体所得结果的对偶（首次报告于 #30，§2）。以面图上的精确同构搜索核验（允许镜像），并设对照：随机重新标记顶点后仍然匹配；交换一个六边形的两个顶点则破坏匹配。L0 是按 Antiprism 的书面定义构建的；该程序本身未运行。McCooey 的 Visual Polyhedra（553 个立体，已全部扫描）中没有与其计数或其对偶的计数相同的立体；目录中最近的亲属是 6-截角五角化十二面体（20 个六边形，60 个五边形）。印刷目录（Wenninger、Holden、Pugh）因范围原因被排除，未阅读。</p>
+<h3>堆积</h3>
+<ul>
+<li>平移 t = 2dn/|n|²（n 为六边形的法向量，d 为其距离）的副本使其对面的六边形恰好落在共享的六边形上，无需转动（中心对称）。</li>
+<li>金刚石网络：经由呈四面体排列的四个六边形（两两余弦 −1/3）接合，|t|² = 8/9 + 8√5/27。在 60 个位点（1,770 对）中没有两个副本重叠（精确检验：两个副本重叠当且仅当其偏移的一半位于立体内部，因为 K − K = 2K）；唯一的接触是整个六边形的接合。接合六边形的中心位于一个正四面体的顶点上；各接合位于金刚石键的中点，构成烧绿石晶格。</li>
+<li>体心立方晶格堆积（两个网络）：密度恰为 (9225 − 3915√5)/608 ≈ 77.43%；等球的最密堆积为 74.05%（Hales 1998）。</li>
+<li>局部晶格搜索（Betke–Henk 式，200 个起点，浮点）：密度 0.789260，每个副本与 12 个邻居接触（10 个在六边形上，2 个在筝形上）；全部 200 个起点都收敛于此；对至多为 4 的晶格系数作为堆积核验过（浮点）；未证明为最密。</li>
+</ul>
+<h3>准晶体检验（标准正二十面体准晶体：初基六维晶格，三十面体窗口）</h3>
+<ul>
+<li>先检验已知情形：由六个单位向量张成的三十面体适合窗口，所有棱都沿五重轴。</li>
+<li>提升：顶点仅在放大 171 倍后才在六维中为整数；垂直像的半径达 116，而窗口为 1.9；在九次黄金膨胀之后首次适合（立体半径约为 4,750 个密铺棱长）。任何有限的黄金点集最终都会适合。</li>
+<li>棱：180 条棱中没有一条沿对称轴（每条密铺棱都沿五重轴）。</li>
+<li>壳层：30 个二重顶点就是截半二十面体的顶点，即蔡氏团簇与麦凯团簇的 30 原子壳层（Takakura et al. 2007）；其余 60 个球面顶点与最近的五重轴相距 16.47°（伯格曼 60 壳层 20.08°，蔡氏 60 壳层 17.78°）。</li>
+<li>面：在一个顶点处至多六块瓦片时，任何面角都不能由黄金菱形的角（63.43°、116.57°）或彭罗斯角（36° 的倍数）组成。</li>
+<li>未检验：其他六维晶格（面心或体心）、其他窗口、装饰密铺。20 个六边形方向恰好包含五个内接立方体，因此有五种体心立方堆积（#30）。</li>
+</ul>
+<h3>资料来源与脚本</h3>
+<p>在DICTO的参考文献库、McCooey 的目录与网络搜索（2026年10月16日；印刷目录因范围原因被排除，未阅读）中未见：度量意义上的八十面体；其精确的六边形接合堆积。脚本（github.com/DICTOR-Master/kaleidohedra 的 research 分支）：studies/2026-10-16-polar-dharma（<code>polar.py</code>、<code>hstar_render.py</code>、<code>render_hstar.html</code>）；studies/2026-10-16-flip-test（<code>flip.py</code>）；studies/2026-10-16-ocd-pyrochlore（<code>ocd_dl0d.py</code>、<code>ocd_catalogue_scan.py</code>、<code>network.py</code>、<code>densest.py</code>）；studies/2026-10-16-ogdoecontahedron-bridge（<code>bridge.py</code>、<code>bridge.txt</code>；提交 3fd407f）。论文中的参考文献：Firsching 2015；Betke &amp; Henk 2000；Hales 1998；Rossiter, Antiprism；McCooey, Visual Polyhedra；Takakura et al. 2007。</p>
+
+<h2>A.31a DICTO OCD星形体 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23430870）</span></h2>
+<p class="told">讲述于第 I 卷，第1章 · 原子。</p>
+<p>除标注“浮点”者外，均在 ℚ(√5) 中精确。OCD = DICTO八十面体，处于其体心立方堆积中（单元体积 512/729 + 256√5/729）。</p>
+<h3>伴随体 C 与OCD星形体 S</h3>
+<ul>
+<li>C：环绕一个 OCD 的 60 个黄金转接块的凸包（每单元 24 个的完整轨道）：72 个顶点，30 个六边形位于 OCD 包络的黄金平面内，20 个三角形位于穿过转接块外顶点的三重平面内（距离平方 14/27 − 10√5/243）；体积 (−18880 + 9760√5)/2187。组合类型为康威 t3jD（Antiprism）。</li>
+<li>S = C 被堆积的沃罗诺伊胞切割（沿 8 个接合处）：48 个顶点；50 个面（6 个黄金六边形，24 个黄金四边形，12 个 C 的三角形，8 个位于接合六边形平面内的三角形）；体积 (−4064 + 2240√5)/729 ≈ 1.296011；黄铁矿型（24 个对称）。堆积填充率 151/2 − 267√5/8 ≈ 87.12%，跨越 8 个接合处面对面相接。</li>
+</ul>
+<h3>种子</h3>
+<p>外层 S 取比例 φ²，12 个副本位于其五重轴上，一个取比例 1/φ 位于中心。在 66 对中，30 对的规距恰为 1（相切，沿正二十面体的棱），36 对恰为 φ：种子恰在 φ² 处闭合（闵可夫斯基论证）；间隙 −69 + 31√5 ≈ 31.8%。</p>
+<h3>晶体</h3>
+<table><tr><th>晶体</th><th>填充率（精确）</th><th>空间群（浮点）</th></tr>
+<tr><td>仅OCD星形体（两个网络）</td><td class="n">151/2 − 267√5/8 ≈ 87.12%</td><td>Im-3（第204号）</td></tr>
+<tr><td>+ 正二十面体（烧绿石）</td><td class="n">1523/32 − 669√5/32 ≈ 84.60%</td><td>Fd-3（第203号）</td></tr>
+<tr><td>+ 正八面体（烧绿石）</td><td class="n">1423/32 − 3113√5/160 ≈ 96.33%</td><td>Fd-3（第203号）</td></tr>
+<tr><td>+ 正八面体（岩盐型，四分之一的位点）</td><td class="n">3839/64 − 8453√5/320 ≈ 91.72%</td><td>Fm-3（第202号）</td></tr></table>
+<ul>
+<li>由 OCD 的 20 个六边形平面围成的正二十面体：体积 (−80 + 80√5)/81。间隙块体（从每个中心向自由面所作的锥）：每个正二十面体 12 个楔，(308 − 116√5)/2187（6 个顶点，5 个面）；每个OCD星形体 12 个帽，(346204 − 143140√5)/2381643（9 个顶点，7 个面），6 个板，(39896 − 17240√5)/216513（16 个顶点，12 个面），24 个薄楔，(12596 − 5596√5)/88209（6 个顶点，5 个面）。正二十面体在间隙中所占份额 (961 + 209√5)/2454 ≈ 58.2%。</li>
+<li>由八个接合平面围成的正八面体，|x| + |y| + |z| ≤ R，R = 2φ/3（立方体轴）：单元的 9/8；六个尖端中每个 (32 + 16√5)/2187 = 1/48 单元，超出一个正方形壁。凹口 392/2187 − 88√5/1215 ≈ 0.017287（六个凹口：星形体的 8.00%）；带凹口的OCD星形体 −1616/243 + 12784√5/3645 ≈ 1.192289。任何两个正八面体都不得是正方形邻居。</li>
+<li>原子13（Atom 13）（浮点）：十二个星形体位于距中心 1.56743 处，相互间隙 0.31，轮廓的 49.82% 被填充；二十个正二十面体至多可放到晶体中正二十面体的 0.4878；33 个立体填充其轮廓的 58.20%。</li>
+</ul>
+<h3>资料来源与脚本</h3>
+<p>已知：C 的类型（t3jD，倒角二十面体）；Kabai 的 54-Faced Space-Filling Polyhedron（6 个黄金菱形，48 个三角形，体心立方，填充空间）；Cadotte et al. 2016；Torquato and Jiao 2009。已查：Wikipedia（Chamfer）、Klitzing、McCooey、SageMath、netlib（142 个条目）、Antiprism 0.29、对填充率与名称的网络搜索（2026年10月17日）；DICTO参考文献库中的 64 个全文条目（共 234 个条目；12 个仅图像、158 个仅链接的条目未作文本搜索）。未运行：Wolfram PolyhedronData、Stella / Great Stella。脚本：studies/2026-10-16-ocd-pyrochlore（stella_cut_exact.py、stella_seed_exact.py、pyro_icosahedra.py、crystal_gap_exact.py、stella_octa_pyro.py、crystal_symmetry.py、stella_atom13.py）与 studies/2026-10-20-stella-octahedra（stella_octa_exact.py）。</p>
+<h2>A.34a DICTO一百零二·八十面体 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23430868）</span></h2>
+<p class="told">讲述于第 I 卷，第1章 · 原子。</p>
+<p>除标注“浮点”者外，均在 ℚ(√5) 中精确。H = DICTO一百零二面体，O = DICTO八十面体。在半径平方为 9/4 的球中作配极，该球即法之球的截角二十面体的中分球（与 H 的 90 个菱形与三角形相切）；H 的配极是取复合体大小的 O。精确：O 的 90 个球面顶点就是截角二十面体的 90 个棱中点；H 没有顶点位于 O 内，O 也没有顶点位于 H 内。</p>
+<table><tr><th>部分</th><th>顶点</th><th>面</th></tr>
+<tr><td>H，DICTO一百零二面体</td><td class="n">80</td><td>102：12 个五边形，30 个菱形，60 个三角形</td></tr>
+<tr><td>O，DICTO八十面体</td><td class="n">102</td><td>80：20 个正六边形，60 个筝形</td></tr>
+<tr><td>复合体</td><td class="n">182</td><td>182；自对偶</td></tr>
+<tr><td>公共核心 H ∩ O</td><td class="n">90</td><td>92：截半截角二十面体（12 个正五边形，20 个正六边形，60 个三角形），所有顶点都位于中分球上</td></tr>
+<tr><td>凸包</td><td class="n">92</td><td>90 个菱形：连接截角二十面体（菱形九十面体），即核心的配极</td></tr></table>
+<p>顶点与面的计数为精确值，体积为浮点（oh_compound.py）。在《始祖》中：黄金循环 I ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ I·φ³。</p>
+<h3>资料来源与脚本</h3>
+<p>2026年10月17日已查：MathWorld（截角二十面体–五角化十二面体复合体）；Wikipedia（截半截角二十面体；截角二十面体）；McCooey；Hart 的 Virtual Polyhedra；对名称的网络搜索（无结果）；SageMath；netlib；Antiprism 0.29；《始祖》§4 与 SEARCH-LOG.md；DICTO的参考文献库。未运行：Wolfram PolyhedronData、Stella / Great Stella。脚本：studies/2026-10-16-progenitors（oh_compound.py → oh-compound.txt、core_hull_in_cycle.py）。</p>
+<h2>A.35a DICTO间六十面体 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23430864）</span></h2>
+<p class="told">讲述于第 I 卷，第1章 · 原子。</p>
+<p>在 ℚ(√5) 中精确。正二十面体 (0, ±1, ±φ) 及其循环置换（棱长 2）；正十二面体 (±1, ±1, ±1) 及 (0, ±φ, ±1/φ) 的循环置换，其顶点位于正二十面体各面中心的上方（棱长 2/φ），缩放 k 倍；凸包的棱长比（正二十面体 : 正十二面体）为 φ/k。M：k = φ⁵/9 = 11/18 + 5√5/18，比 9/φ⁴ ≈ 1.31308（平方 81/φ⁸）。闭合形式：(0, ±1, ±φ) 与 (φ⁵/9)·{(±1, ±1, ±1), (0, ±φ, ±1/φ)}（循环）的凸包。</p>
+<table><tr><th>性质</th><th>值（精确）</th></tr>
+<tr><td>顶点</td><td>32：12 个五重顶点（正二十面体的），20 个三重顶点（正十二面体的）</td></tr>
+<tr><td>面、棱</td><td>60 个全等的等腰三角形，90 条棱；五角化十二面体的组合结构</td></tr>
+<tr><td>棱长平方</td><td>94/81 + 14√5/27（60 条棱，五重到三重）；14/9 + 2√5/27（30 条棱，三重到三重）</td></tr>
+<tr><td>顶点半径平方</td><td>5/2 + √5/2（五重）；41/18 + 55√5/54（三重）</td></tr>
+<tr><td>内切球</td><td>全部 60 个面位于距离平方 7249/4162 + 16209√5/20810 处</td></tr>
+<tr><td>中分球</td><td>无：棱位于距离平方 2 + 20√5/27 与 161/81 + 8√5/9 处</td></tr>
+<tr><td>体积</td><td>410/27 + 550√5/81 ≈ 30.3684</td></tr></table>
+<h3>在循环中</h3>
+<ul>
+<li>三十面体只达到 RT → I·φ³ 这一步的 0.812；没有任何具有正二十面体对称的凸立体同时与两个邻居相切（《金刚乘》，表 3，浮点）。</li>
+<li>以循环的单位表示：RT 的 12 个五重顶点与 I·φ³ 的 20 个面中心的凸包（半径平方 45/8 − 9√5/8 与 47/24 + 7√5/8）；为同一立体，已精确核验。</li>
+<li>RT → M：30 个同一种类的块体；M → I·φ³：60 个同一种类的块体（三角双锥形状）；M 占该步体积的 0.356。</li>
+<li>配极：12 个正五边形与 20 个六边形，六边形的边长按 (14 + 9√5)/11 之比交替。</li>
+<li>家族：棱长比在 (5 + 3√5)/10 至 φ 之间时具有完全对称；卡塔兰立体五角化十二面体 3(7 + 5√5)/38 ≈ 1.435；复三十面体 3/√5 ≈ 1.342；间六十面体 9/φ⁴ ≈ 1.313。9/φ⁴ 也恰是最紧的始祖循环每一轮的增益（仅作记录，未作解释）。</li>
+</ul>
+<h3>资料来源与脚本</h3>
+<p>2026年10月17日已查：Polytope Wiki、Wikipedia 与 MathWorld（Pentakis Dodecahedron；Dodecahedron–Small Triambic Icosahedron Compound）、McCooey、OEIS（9/φ⁴ 不与任何数列匹配）、Bridges 2017、Wassell and Benito 2012、arXiv（最接近的为 arXiv:2008.00862）、对名称的网络搜索、SageMath、netlib、Antiprism 0.29、DICTO的参考文献库。未运行：Wolfram PolyhedronData、Stella / Great Stella。脚本：scripts/hull_family_exact.py → data-hull-family-exact.txt（每个面平面与顶点均经精确检验）；studies/2026-10-16-progenitors（gap_member.py、gap_pieces_exact.py、metaxy_dual.py）。</p>
+<h2>A.35b DICTO复三十面体 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23430866）</span></h2>
+<p class="told">讲述于第 I 卷，第1章 · 原子。</p>
+<p>除标注“浮点”者外，均在 ℚ(√5) 中精确。设定与 A.35a 相同；X：k = φ√5/3 = 5/6 + √5/6，棱长比 3/√5（平方 9/5）。闭合形式：(0, ±1, ±φ) 与 ((5 + √5)/6)·{(±1, ±1, ±1), (0, ±φ, ±1/φ)}（循环）的凸包。</p>
+<table><tr><th>性质</th><th>值（精确）</th></tr>
+<tr><td>顶点</td><td>32：12 个五重，20 个三重，均为全高截半二十面体星的尖端</td></tr>
+<tr><td>面、棱</td><td>60 个三角形，每个为菱形十二面体之菱形的一半（面角的 cos² 为 1/9、1/3、1/3）；90 条棱</td></tr>
+<tr><td>棱长平方</td><td>20/9（60 条棱）与 5/3（30 条棱）</td></tr>
+<tr><td>顶点半径平方</td><td>5/2 + √5/2（五重）；5/2 + 5√5/6（三重）</td></tr>
+<tr><td>内切球</td><td>全部 60 个面位于距离平方 7/4 + 3√5/4 处</td></tr>
+<tr><td>中分球</td><td>无（棱位于距离平方 25/12 + 2√5/3 与 35/18 + 5√5/6 处）</td></tr>
+<tr><td>体积</td><td>50/3 + 50√5/9 ≈ 29.0893</td></tr></table>
+<ul>
+<li>浮点（如《金刚乘》中所标注）：X 位于下一圈的 D′ 之内；其体积的 99.46%（20,000 个采样点）位于下一个正二十面体的Cleo星之内。正二十面体的第一次星形化把其尖端置于面距离的 3/√5 倍处。</li>
+<li>家族：卡塔兰立体五角化十二面体 3(7 + 5√5)/38 ≈ 1.435；X 3/√5 ≈ 1.342；间六十面体 9/φ⁴ ≈ 1.313。</li>
+</ul>
+<h3>资料来源与脚本</h3>
+<p>已知：该凸包家族及其完全对称的范围（Polytope Wiki）、菱形三十面体、截半二十面体的中心棱锥。核验方式同 A.35a（《金刚乘》§5，SEARCH-LOG.md；网络与文献库，2026年10月17日）。脚本：scripts/hull_family_exact.py（精确）。</p>
+<h2>A.41 DICTO宝石 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23496353）</span></h2>
+<p class="told">讲述于第 I 卷，第1章 · 原子。</p>
+<p>除标注“浮点”者外，均在 ℚ(√5) 中精确。比例：赫克萨的立方体棱长为 1，因此一个单元的棱长为 1/2，体积为 1/8（脚本使用棱长为 2 的单元，所有体积都大 64 倍）。单元按指标之和的奇偶性分为偶单元与奇单元；偶单元构成面心立方晶格。</p>
+<h3>宝石</h3>
+<ul>
+<li>欧几里得屋顶：屋脊为单元棱长的 1/φ 倍，高为单元棱长的 (φ − 1)/2 倍；屋顶 (1 + √5)/192；正十二面体 (5 + √5)/32。相邻的星形八面体（体积 1/16）占去 (√5 − 1)/192，留下恰为 1/96 的刻削屋顶。宝石 = 1/8 + 6/96 = 3/16。</li>
+<li>每个刻削屋顶由四个四面体组成（立方体面的每个四分之一一个）。38 个顶点（立方体 8 个，屋脊点 12 个，面中心 6 个，补全窗口的点 12 个）；60 个面（12 个窗口，48 个位于星形八面体平面内的三角形）；38 − 96 + 60 = 2。</li>
+<li>窗口：彭罗斯粗菱形，边长 (√5 − 1)/4 = 1/(2φ)，长对角线 1/2，在屋脊顶点处为 108°（cos 108° = (1 − √5)/4），在立方体顶点处为 72°。</li>
+<li>对称性：阶 24，黄铁矿型（中心对称，三重转动，三个坐标镜面；无对角镜面，无四重转动，无 (111) 镜面）。</li>
+</ul>
+<h3>星形体-宝石晶格</h3>
+<p>奇单元 = 星形八面体 + 六个刻削屋顶：1/16 + 6/96 = 1/8（未刻削的屋顶相交部分的体积恰为 0）。宝石与星形八面体密铺空间，3/16 : 1/16 = 3 : 1。</p>
+<h3>团簇</h3>
+<table><tr><th>块体</th><th>面</th><th>体积</th><th>宝石数</th><th>内含星形八面体</th><th>每块的游离星形八面体</th><th>晶格</th><th>在对称意义下</th></tr>
+<tr><td>宝石-四面</td><td class="n">228（192 个三角形，36 个窗口）</td><td class="n">3/4</td><td class="n">4</td><td class="n">0</td><td class="n">4</td><td class="n">4（指数 8）</td><td class="n">2</td></tr>
+<tr><td>宝石-八面</td><td class="n">288（240，48）</td><td class="n">19/16</td><td class="n">6</td><td class="n">1</td><td class="n">5</td><td class="n">12（指数 12）</td><td class="n">1</td></tr>
+<tr><td>宝石-菱形</td><td class="n">396（336，60）</td><td class="n">25/16</td><td class="n">8</td><td class="n">1</td><td class="n">7</td><td class="n">25（指数 16）</td><td class="n">9</td></tr></table>
+<ul>
+<li>相邻的宝石（相距一个面对角线步长）恰好共享一个窗口；沿一个轴相隔两个单元的则不共享。宝石-菱形：18 个窗口（12 条棱，6 条短面对角线）；8⅓ 个宝石。</li>
+<li>宝石-八面的示例晶格：以单元为单位的埃尔米特基 (1,0,3)、(0,1,5)、(0,0,12)。八隅结构排列：每个宝石属于 8 个宝石-四面与 6 个宝石-八面；在无重叠的条件下，至多每六个星形八面体中有一个位于宝石-八面之内，这由 12 个晶格达到。</li>
+<li>以单个宝石顶点对顶点相连的宝石-四面构成烧绿石网络（DICTO的笼目网络）。</li>
+</ul>
+<h3>赫克萨与赫克萨钥</h3>
+<p>赫克萨 = 块（棱长 1）+ 24 个刻削屋顶 = 1 + 24/96 = 5/4（6⅔ 个宝石）。赫克萨钥 = 1 − 24/96 = 3/4 = 8/16 + 12 × 2/96（八个星形八面体，十二个双屋顶）。赫克萨位于相间的块上（岩盐型）；5 : 3。每个赫克萨与 12 个邻居中的每一个恰好在两个完整窗口上相接（共 24 个）；没有两个赫克萨的屋顶重叠。</p>
+<h3>孪晶</h3>
+<p>孪晶规则：具有三重轴的中心对称立体，其镜像就是转动 60° 后的同一立体。堆积：(111) 孪晶留下约 4% 的点未被覆盖，4% 被覆盖两次（浮点，#37a）；(111) 镜面把单元步长 (1, 0, 0) 变为 (1/3, −2/3, −2/3)，不在立方晶格上。</p>
+<h3>核验与资料来源</h3>
+<p>jewel_exact.py（21 PASS）与 cluster_exact.py（24 PASS），精确；lalvani_edges.py（浮点）：全部 48 条窗口棱都位于正二十面体二重轴上，其他 48 条均不在。面数由精确共享的窗口与星形八面体计数得出。已检索：80 个文献库资料的全文与网络，2026年10月20日。参考文献：Euclid XIII.17 (Heath 1908)；Kepler 1619；Penrose 1979；Bragg 1913；Lalvani US 4,723,382 (1988)；DICTO #8、#17、#18、#37、#37a、#40，Kaleidohedra 发现 #10、#10b、#15、#16。研究：studies/2026-10-20-dicto-jewel，提交 d475b59。</p>
+<h2>A.45 勒洛柏拉图立体 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23529499）</span></h2>
+<p class="told">讲述于第 I 卷，第1章 · 原子。</p>
+<p>对于顶点集为 X、直径为 D 的柏拉图立体 S，B = ∩<sub>v∈X</sub> B(v, D)，即一个球多面体。正四面体：D 为棱长（勒洛四面体）。正十二面体、正二十面体、立方体、正八面体：D = 2R。长度均取 D = 1。</p>
+<h3>主定理</h3>
+<p>(i) B 的每个宽度都至少为 1，且沿穿过任意两个距离为 1 的顶点的直线的宽度恰为 1。(ii) 对于外接球半径为 ½、内切球半径为 r 的正十二面体、正二十面体、立方体与正八面体，沿穿过面中心的轴的宽度恰为 2√(3/4 + r²) − 2r。</p>
+<p><b>证明概要。</b> (i) 由帕尔定理，X 位于某个宽度为 1 的定宽体 K 中；K ⊂ B。对于距离为 1 的顶点 v、w 及 u = v − w，u·x 在 B 上的极值为 u·v 与 u·w。(ii) 绕该轴的转动固定 u，因此 u·x 的最大值在轴上某点 zu 处取得；|zu − v|² = ¼ + z² − 2z h<sub>v</sub>，在 h<sub>v</sub> = −r（对面）处最大；zu ∈ B 当且仅当 z ≤ √(3/4 + r²) − r；中心对称使其加倍。</p>
+<h3>推论</h3>
+<ul>
+<li>对偶对：(r/R)² = 1/3（立方体、正八面体）与 (5 + 2√5)/15（正十二面体、正二十面体）。立方体与正八面体：r² = 1/12，w = (√30 − √3)/3 ≈ 1.248392。正十二面体与正二十面体：r² = (5 + 2√5)/60，w = (√(50 + 2√5) − √(5 + 2√5))/√15 ≈ 1.110989。</li>
+<li>正四面体：(ii) 不适用；沿棱中点轴的宽度为 2√(3/4) − 1/√2 = √3 − √2/2 ≈ 1.024944（精确）。</li>
+<li>不是勒洛多面体：直径对数为 4、3、10、6，而瓦松伊界为 14、10、38、22；每个顶点恰好位于另外一个球面上，因此不是 B 的顶点。</li>
+<li>猜想 1：面轴宽度（正四面体：√3 − √2/2）是最大的宽度。数值：3000 个随机方向加局部细化给出 1.248391589161、1.110988655456 与 1.024944026382。</li>
+</ul>
+<table><tr><th>体（DICTO的命名）</th><th>球心位于</th><th>面</th><th>弧</th><th>直径对（2m − 2）</th><th>最少颜色数</th><th>宽度范围</th><th>体积 ≈</th></tr>
+<tr><td>勒洛四面体</td><td>正四面体</td><td class="n">4</td><td class="n">6</td><td class="n">6 (6)</td><td class="n">4</td><td class="n">1 .. 1.024944</td><td class="n">0.42216</td></tr>
+<tr><td>勒洛八面体</td><td>立方体</td><td class="n">8</td><td class="n">12</td><td class="n">4 (14)</td><td class="n">2</td><td class="n">1 .. 1.248392</td><td class="n">0.64940</td></tr>
+<tr><td>勒洛立方体</td><td>正八面体</td><td class="n">6</td><td class="n">12</td><td class="n">3 (10)</td><td class="n">3</td><td class="n">1 .. 1.248392</td><td class="n">0.68764</td></tr>
+<tr><td>勒洛二十面体</td><td>正十二面体</td><td class="n">20</td><td class="n">30</td><td class="n">10 (38)</td><td class="n">3</td><td class="n">1 .. 1.110989</td><td class="n">0.57188</td></tr>
+<tr><td>勒洛十二面体</td><td>正二十面体</td><td class="n">12</td><td class="n">30</td><td class="n">6 (22)</td><td class="n">4</td><td class="n">1 .. 1.110989</td><td class="n">0.59679</td></tr></table>
+<p>直径为 1。弧为数值结果；直径对为精确结果；宽度的最小值已证明，最大值由数值求得，已证明可以达到，并猜想为最大；体积由径向求积得出。勒洛四面体：Harbourne 的 8π/3 + √2/4 − (27/4) arccos(1/3)（据 Hynd 引述）与我们的 0.4221577 相符至 1.1 × 10⁻⁸。</p>
+<h3>核验与资料来源</h3>
+<p>reuleaux_checks.py（45 PASS）：A 部分在 ℚ(√5) 中精确（直径、直径对、位于另一个球面上的顶点、顶点高度、(r/R)²、闭合形式、正四面体的轴）；B 部分为 float64（宽度；以高斯-勒让德法求体积，N = 1000 与 2000 相差在 6 × 10⁻⁷ 以内；弧以每圆 7200 个点计算；颜色以回溯法求得）。widths.py；reuleaux_platonic.py。已知：Bezdek, Lángi, Naszódi and Papez 2007；Montejano and Roldán-Pensado 2017；Hynd 2023；Sallee 1970（未阅读）。已检索：81 个带文本层的文献库资料，2026年10月21日（175 个仅链接的条目未检索）。研究提交 f193a56。</p>
+<h2>A.49 多面体拉伸定理 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23566671）</span></h2>
+<p class="told">讲述于第 I 卷，第1章 · 原子。</p>
+<h3>定理</h3>
+<p>设 P 为所有棱长均为 1 的凸多面体，沿方向 u 滑动距离 1。扫过的形体（P 与 P + u 的凸包）的每条棱长都为 1，除非 u 平行于 P 的某条棱。面：P 的每个不平行于 u 的面保持完整（位于它所朝向的那一端）；每个平行于 u 的 n 边面被拉伸为 (n + 2) 边形，其每有一条棱平行于 u 就少一条边；P 沿 u 看去的轮廓的每条棱对应一个平行四边形（滑动距离为 1 时为菱形）。对于正十二面体，平行于滑动方向的五边形，若 u 沿其某条棱则变为六边形，否则变为七边形；若没有五边形平行于滑动方向，则环带有 10 或 12 个菱形（在 2 000 个随机方向中；此数目为观察所得，等棱已证明）。</p>
+<p><b>证明概要。</b> 扫过的形体是闵可夫斯基和 P ⊕ S，S 为从 0 到 u 的线段。闵可夫斯基和的每个面都是各加数在同一外法向 n 上的面之和：S 贡献 u（n·u &gt; 0）、0（n·u &lt; 0）或 S 本身（n·u = 0）。棱是 P 的棱（长 1）或 S（长 1）的平移，但 P 的棱平行于 u 时除外：此时 e ⊕ S 是一条长为 2 的线段。推论（帽）：把 S 换成边长为 1 的三角形或四面体，结论相同。</p>
+<table><tr><th>滑动方向</th><th>面</th><th>每条棱都为 1？</th></tr>
+<tr><td>立方体轴（DICTO的 F11）</td><td>8 个五边形，4 个六边形，2 个矩形（滑动 1 时为正方形）</td><td>否：滑动沿两条棱</td></tr>
+<tr><td>欧几里得立方体的面对角线</td><td>12 个五边形，10 个菱形</td><td>是</td></tr>
+<tr><td>体对角线（三重轴）</td><td>12 个五边形，12 个菱形（其中六个为正方形）</td><td>是</td></tr>
+<tr><td>五重轴</td><td>12 个五边形，10 个菱形，全部相同（角 58° 与 122°）</td><td>是</td></tr>
+<tr><td>平行于两个五边形（示例）</td><td>10 个五边形，6 个菱形，2 个七边形</td><td>是</td></tr></table>
+<ul>
+<li>滑动长度为 1 的面对角线滑动：三种形状的菱形（2 个 45°/135°，4 个 55°/125°，4 个 69°/111°）；伸缩至 φ√2 ≈ 2.288，即到下一个正十二面体。</li>
+<li>三个帽：12 个五边形，15 个菱形，2 个正三角形（29 个面）；四个帽：12 个五边形，18 个菱形，4 个正三角形（34 个面）。</li>
+<li>转动的帽：没有三角形环带；最差的棱最好也偏差 0.336。</li>
+<li>其他柏拉图立体（每种 1 000 次随机拉伸）：带四个帽的正四面体（相对的四面体）= 立方八面体；带四个帽的正八面体 = 截角四面体；穿过一个顶点拉伸的正四面体 = 延伸三角锥（J7）；在三角形上逆着其底面转动的三个帽 = 三角帐塔（J3）；穿过一个顶点拉伸的正八面体 = 延伸四角双锥（J15）；拉伸的立方体是长方体、六棱柱或带状多面体。</li>
+</ul>
+<table><tr><th>正二十面体</th><th>面</th></tr>
+<tr><td>五重轴</td><td>20 个三角形，10 个菱形</td></tr>
+<tr><td>面对角线</td><td>16 个三角形，2 个菱形，4 个五边形</td></tr>
+<tr><td>体对角线</td><td>20 个三角形，6 个菱形</td></tr>
+<tr><td>立方体轴</td><td>16 个三角形，4 个梯形，2 个正方形；非等棱（两条棱变为长 2）</td></tr>
+<tr><td>三个帽</td><td>15 个三角形，3 个菱形，3 个五边形，2 个六边形</td></tr>
+<tr><td>四个帽</td><td>16 个三角形，6 个菱形，4 个六边形</td></tr></table>
+<h3>核验与资料来源</h3>
+<p>void_volume.py（位于共享棱的立方体上的两个正十二面体之间的空隙：体积 φ³ + ½，无重叠）；sweep_theorem.py；caps34.py；gyro_caps.py；ring1.py 与 identify.py；icosa_family.py；nets.py 与 telescope.py（展开图经核验为平面且无重叠）。伸缩模型可延伸至约 2.7 个棱长。已知：闵可夫斯基和（Deza and Pournin 2018；Erdahl and Grishukhin 2015）；Hart and Picciotto；Arseneva, Langerman and Zolotov 2020；Baumann 的近似约翰逊多面体；Grünbaum 2010（继 Fedorov 之后）。已检索：参考文献库（论文附录 C）与网络，2026年10月22日。研究提交 014b5ee。</p>
+<h2>A.8 欧几里得-开普勒-帕乔利单元 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23284106）</span></h2>
+<p class="told">讲述于第 I 卷，第2章 · 键。</p>
+<p>立方体 (±1, ±1, ±1)，φ = (1 + √5)/2。屋脊顶点 (0, ±1/φ, ±φ) 及其循环置换：与立方体的 8 个顶点一起构成棱长为 2/φ 的正十二面体。折叠 (0, ±1/φ, ±φ) → (0, ±1/φ, ±(2 − φ)) = (0, ±1/φ, ±1/φ²)：棱长为 2/φ² 的正二十面体。立方体以长度 2 的平移重复。</p>
+<ul>
+<li>棱：立方体 2，正十二面体 2/φ，正二十面体 2/φ²（φ² : φ : 1）；每条棱都沿正二十面体 15 条二重轴之一。</li>
+<li>每单元 13 个节点；空间群 Pm-3（第200号），点式；威科夫位置 1b 与 12j (0, y, z)，y = 1/(2φ) ≈ 0.3090，z = 1/(2φ²) ≈ 0.1910。</li>
+<li>每个单元中的立体都带有正二十面体的 31 条旋转轴，在每个单元中都平行；其中 7 条是晶轴（3 条二重，4 条三重）。</li>
+<li>尖刺：在每个正二十面体面的上方距离 2/φ 处有一个节点（黄金三角形，顶角 36°）；大星形十二面体体积 ≈ 2.918，其凸包为该正十二面体。</li>
+<li>正十二面体的覆盖：覆盖一次（19.1%）或两次（80.9%），平均 (5 + √5)/4 ≈ 1.809。面相邻单元的正十二面体恰好重叠两个屋顶；棱相邻的相切；顶点相邻的共享一个顶点。</li>
+<li>着色：x+y+z 奇偶性 → Fm-3（第202号）；x+y → Cmmm（第65号）；z → Pmmm（第47号）。</li>
+<li>正二十面体的顶点按黄金比分割正八面体的 12 条棱；八个正二十面体面位于正八面体的面平面内。</li>
+<li>偶单元上的正十二面体：密度恰为 (5 + √5)/8 ≈ 0.9045（Betke &amp; Henk 2000；Torquato &amp; Jiao 2009）。EKP网络：对 294 对块体进行精确的分离轴检验，无重叠。</li>
+<li>蔡型 1/1 近似相：AuGeYb (0, 0.187, 0.305)，ZnAuYb (0, 0.188, 0.301)，而 EKP 点为 (0, 0.309, 0.191)，y 与 z 互换；比值 0.613 与 0.626，而 1/φ = 0.618。</li>
+</ul>
+<p><b>核验与资料来源。</b> data/checks.txt：来自 scripts/verify-roof-fold.mjs 的 48 项检验（krp-core v0.16.0，2026年10月15日重新运行），全部通过。已知：Euclid XIII.17；Pacioli 1509；Kepler；α-AlMnSi、方钴矿、I 型笼合物；Deguchi et al. 2015；Ishimasa 2019；de Graaf, van Roij &amp; Dijkstra 2011；Koca et al. 2016（已通读全文）。已检索：网络 2026年10月6日；参考文献库 2026年10月15日。未查：Bilbao、ICSD。</p>
+
+<h2>A.13 DICTO十二面体-13 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23284281）</span></h2>
+<p class="told">讲述于第 I 卷，第2章 · 键。</p>
+<p>棱长 1。围绕一条棱的三个正十二面体的间隙：360° − 3 × 116.565° = 10.3048°。</p>
+<table><tr><th>块体</th><th>数目</th><th>形状</th><th>体积</th></tr>
+<tr><td>楔</td><td class="n">30</td><td>两个以 10.3048° 铰接的正五边形，两个端部三角形，两个外侧梯形（边长 1、1/(φ²√5)、1、1/(φ√5)）</td><td class="n">φ³/20</td></tr>
+<tr><td>针</td><td class="n">20</td><td>四面体，三条长棱为 1，底面为边长 1/(φ²√5) 的正三角形</td><td class="n">(45 − 19√5)/600</td></tr></table>
+<ul>
+<li>总计：13(15 + 7√5)/4 + 30·φ³/20 + 20·(45 − 19√5)/600 ≈ 106.058472；外表面有 72 个五边形，60 个梯形，20 个三角形。</li>
+<li>带鳍单元：一个外层正十二面体加 5 个半楔与 5 个三分之一针。</li>
+<li>凸包：截角二十面体的拓扑，12 个正五边形（棱长 1），20 个边长 1 与 √((27 + 7√5)/10) ≈ 2.065248 交替的六边形；体积 142.955；填满的团簇占其 74.19%。</li>
+<li>最密平移堆积（54 406 个晶格）：体心立方，密度 0.7154。</li>
+<li>与DICTO星的关系：每个外层正十二面体转动 36° 并向外移动 0.262866。</li>
+<li>至多 3 个共享顶点的邻居，无晶格；面对面相接只能形成沿五重轴的柱。第二壳层（已研究，不作主张）：至多约 68%；1/1 近似相在每单元 162 个正十二面体时饱和（67.35%）。</li>
+</ul>
+<p><b>核验与资料来源。</b> checks-dodeca13.txt（10 项核验）与 checks-dodeca-cluster.txt（11 项核验：全等、精确体积、以分离轴检验 63 个立体之间无重叠、每个间隙面都有着落），krp-core v0.16.0，2026年10月15日重新运行。已知：Sadoc and Mosseri；Fang, Irwin et al. 2018；Jenczyk 2024；Vorthmann 2014；Koca et al. 2020；Al Raisi et al. 2026（其瓦片的面相交角最小为 10.81°）。已检索：网络 2026年10月9日；参考文献库 2026年10月15日。</p>
+
+<h2>A.14 DICTO星 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23284213）</span></h2>
+<p class="told">讲述于第 I 卷，第2章 · 键。</p>
+<table><tr><th>块体</th><th>数目</th><th>附着于</th><th>中心体各棱处的二面角</th></tr>
+<tr><td>截半二十面体</td><td class="n">1</td><td>—</td><td class="n">142.6226°</td></tr>
+<tr><td>正十二面体</td><td class="n">12</td><td>每个五边形</td><td class="n">116.5651°</td></tr>
+<tr><td>三削二十面体（J63）</td><td class="n">20</td><td>每个三角形，以其仅与五边形相邻的那个三角形相接</td><td class="n">100.8123°</td></tr></table>
+<ul>
+<li>在 60 条棱的每一条处，142.6226° + 116.5651° + 100.8123° = 360°。</li>
+<li>体积：截半二十面体 (45 + 17√5)/6；正十二面体每个 (15 + 7√5)/4；J63 每个 5(3 + √5)/12 − (5 + √5)/8；总计恰为 (195 + 89√5)/3 ≈ 131.3367。</li>
+<li>堆积：间隙连成一个迷宫（约 26%）；沿五重轴共享一个正十二面体的两个星，其中心相距 4.97980。对10月4日壳层（245 个块体）的精确重建：隐藏的间隙为棱长的 0.0067 至 0.263，占其凸包的 76.2%。</li>
+</ul>
+<p><b>核验与资料来源。</b> checks-id-star.txt：7 项核验（scripts/verify-id-star.mjs，krp-core v0.16.0，2026年10月15日重新运行）：33 个立体之间无重叠，全部 60 条棱闭合，每个顶点都被填满，精确体积，完整的正二十面体确实会重叠。已知：Austin 2014（Stella 4D）；正十二面体-正二十面体蜂巢；Koca, Al-Ajmi and Koca 2009；Klitzing 的分段多胞体（segmentochora）；一个亏格为 11 的斯图尔特环形多面体；Elser–Sloane 截面。已检索：网络与文献库 2026年10月9日；文献库 2026年10月15日。</p>
+<h2>A.17 笼目凸包 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23376317）</span></h2>
+<p class="told">讲述于第 I 卷，第2章 · 键。</p>
+<p>EKP单元：立方体棱长 2，单元位于整数点，按 x + y + z 的奇偶性分为偶单元与奇单元；偶单元构成面心立方晶格。星形体-宝石晶格：宝石（体积 12）与星形八面体（体积 4），3 : 1。日星晶格（Sunstar Lattice）：正十二面体与天狼星（Hart 的十二面体星形化第 8 号，1996；Polyhedra-World 2004；Walser）。</p>
+<table><tr><th>凸包</th><th>块体</th><th>锚点</th><th>邻居</th><th>备注</th></tr>
+<tr><td>菱面体</td><td>8 个，位于面心立方原胞的顶点，其奇单元在内</td><td>体心立方</td><td class="n">8</td><td>完美的笼目；四分之一的奇单元被封在内部；8⅓ 个宝石</td></tr>
+<tr><td>立方八面体，空心</td><td>12 个，环绕一个偶单元</td><td>面心立方</td><td class="n">12</td><td>带中心孔的笼</td></tr>
+<tr><td>立方八面体，实心</td><td>13</td><td>面心立方</td><td class="n">12</td><td>13 个正十二面体团簇的周期性孪生体；以宝石构成时即DICTO宝石 13</td></tr>
+<tr><td>立方体</td><td>14 个，即环绕一个奇单元的面心立方惯用晶胞</td><td>体心立方</td><td class="n">8</td><td>最不像笼目</td></tr>
+<tr><td>菱形十二面体</td><td>19 个偶 + 14 个奇</td><td>体心立方加次近邻</td><td class="n">14</td><td>无单个块体</td></tr>
+<tr><td>正八面体</td><td>6 个，环绕一个奇单元，其星形八面体（或天狼星）在内</td><td>简单立方</td><td class="n">6</td><td>钙钛矿网</td></tr></table>
+<ul>
+<li>例外（十二面体-13）：共享一个外层正十二面体的团簇只能跨越相对的面相接，即沿五重轴平移 4 × 内切球半径；相邻的轴（63.43°）总是重叠，相隔 116.57° 的轴从不重叠；至多 3 个邻居（20 个这样的组）；由三个五重平移生成的每个晶格都会重叠。面对面的柱的间距为 6 × 内切球半径。最密堆垛为体心立方，密度 0.71537。</li>
+</ul>
+<p><b>核验与资料来源。</b> checks-kagome-hulls.txt（18 项核验）与 checks-dicto-jewel-cluster.txt（25 项核验），krp-core v0.16.0，2026年10月15日重新运行，全部通过；设计研究中在 13³ 窗口上检验了重叠、绕向与欧拉示性数。已知：ReO₃ 与钙钛矿；烧绿石；Molecules 24(7) (2019) 1221；Hart 1996；Walser。已检索：网络 2026年10月9日；文献库 2026年10月15日。</p>
+
+<h2>A.25 DICTO类球体-13 RD <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23332821）</span></h2>
+<p class="told">讲述于第 I 卷，第2章 · 键。</p>
+<p>面心立方晶格：坐标和为偶数的整数点；邻居相距 √2；沃罗诺伊胞（菱形十二面体）体积 2。在 183 个指数为 13 的子晶格中，恰有 8 个以这 13 个点为一组完全代表系，它们都是同一种排列的转动。一组基 (−3, 0, 1)、(0, −1, 3)、(1, −3, 0)；格拉姆矩阵 [[10, 3, −3], [3, 10, 3], [−3, 3, 10]]；余体积 26；最短向量：6 个长 √10，2 个长 √12，6 个长 √14。点群的阶为 6。码 {x : x₁ + 3x₂ + 9x₃ ≡ 0 (mod 13)}；0、1、3、9 是模 13 的辛格差集。</p>
+<p>圆化：39 个顶点类；中心块由尺寸 s 与中点确定；面为平面，各块为凸并有最小厚度；外表面积最小化（固定体积 26）；圆度 36πV²/S³；从五个起点出发的序列二次规划。</p>
+<table><tr><th>最小厚度</th><th>外表面积</th><th>圆度</th><th>中心</th><th>中心体积</th><th>外部体积（A / B）</th><th>占其凸包</th></tr>
+<tr><td>原形</td><td class="n">59.3970</td><td class="n">0.365</td><td>× 1</td><td class="n">2</td><td class="n">2 / 2</td><td class="n">0.672</td></tr>
+<tr><td class="n">0.08</td><td class="n">47.0285</td><td class="n">0.735</td><td>× 1.589</td><td class="n">8.03</td><td class="n">1.72 / 1.28</td><td>—</td></tr>
+<tr><td class="n">0.15</td><td class="n">47.6397</td><td class="n">0.707</td><td>× 1.525</td><td class="n">7.10</td><td class="n">1.78 / 1.37</td><td class="n">0.886</td></tr>
+<tr><td class="n">0.25</td><td class="n">48.8894</td><td class="n">0.654</td><td>× 1.433</td><td class="n">5.89</td><td class="n">1.85 / 1.51</td><td>—</td></tr>
+<tr><td class="n">0.35</td><td class="n">50.5260</td><td class="n">0.593</td><td>× 1.342</td><td class="n">4.84</td><td class="n">1.90 / 1.63</td><td class="n">0.793</td></tr></table>
+<ul>
+<li>块晶格的沃罗诺伊胞：14 个面，表面积 46.7464，圆度 0.748。单个菱形十二面体 0.741。</li>
+<li>0.15 时的块体：中心 7.0959（表面积 19.7387，圆度 0.740，棱 1.321，二面角 120°）；外部 A 1.7801（8.5047，0.583，棱 0.411–1.321，88.7°–163.4°）；外部 B 1.3706（7.5322，0.497，0.497–1.321，78.1°–162.3°）。0.35 时：中心 4.8351；外部 A 1.8952；外部 B 1.6323。</li>
+<li>自由中心变体：圆度 0.739、0.715、0.664、0.600（对比 0.735、0.707、0.654、0.593）；0.15 时中心 7.18，面与平行四边形相差约棱长的 1.5%。</li>
+<li>面：内部 36 个；外部 84 个（54 个朝向位于 √10 处的六个最近的块，12 个朝向位于 √12 处的两个，18 个朝向位于 √14 处的六个）：14 个邻居。</li>
+<li>展开图：0.15 以每单位 28.5 mm（块约 12.5 cm）；0.35 以 32.4 mm（约 14.4 cm）；自由中心 0.15 以 24.0 mm（约 10.4 cm）；共十五张纸。</li>
+</ul>
+<p><b>核验与资料来源。</b> 面的平整度达 10⁻¹³；十三个体积之和恰为 26；84 个外部面均已配对；另外 40 个起点（27 个收敛）给出同一个块。脚本在 studies/2026-10-13-rd13-block。已知：Kovačević and Tan 2018；Kovačević 2026；Singer 1938；Golomb and Welch 1970；Etzion 2011；Campello et al. 2015；Gravier, Mollard and Payan 1998；Dejter, Fuentes and Araujo 2025；Schütte and van der Waerden 1952；Fedorov 1885；Grünbaum 2010。</p>
+
+<h2>A.26 DICTO ATOM-13×13 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23333183）</span></h2>
+<p class="told">讲述于第 I 卷，第2章 · 键。</p>
+<table><tr><th>团簇</th><th>中心到十二个的距离</th><th>中心与十二个</th><th>十二个之间</th></tr>
+<tr><td>二十面体-13（莲子），DESHI</td><td class="n">1.5388</td><td>12 处以顶点相接</td><td>30 处沿棱相接</td></tr>
+<tr><td>十二面体-13</td><td class="n">2.2270</td><td>12 处以整个面相接</td><td>30 处沿棱相接</td></tr>
+<tr><td>UNITY / VENUS</td><td class="n">1.8882</td><td>12 处以整个面相接</td><td>30 处以顶点相接</td></tr>
+<tr><td>DICTO星</td><td class="n">2.4899</td><td>12 处以整个面相接</td><td>30 处沿棱相接</td></tr>
+<tr><td>菩提子（Bodhi seed）</td><td class="n">φ² = 2.6180</td><td>12 处以顶点相接</td><td>30 处以整个面相接</td></tr>
+<tr><td>菱形十二面体 13</td><td class="n">√2</td><td>12</td><td>24 处以面相接，12 处以顶点相接</td></tr>
+<tr><td>DICTO斜菱形十二面体 13</td><td class="n">1.1756–1.7321</td><td>12</td><td>24 处以面相接，12 处以顶点相接</td></tr>
+<tr><td>贝恩菱形十二面体 13</td><td class="n">1.4142–1.7321</td><td>12</td><td>24 处以面相接，12 处以顶点相接</td></tr>
+<tr><td>比林斯基十二面体 13</td><td class="n">1.0515–1.7013</td><td>12</td><td>24 处以面相接，12 处以顶点相接</td></tr>
+<tr><td>正六边形伸长十二面体 13</td><td class="n">1.7321–2.4495</td><td>12（其中 4 个隔着六边形）</td><td>24 处以面相接，8 处沿棱相接</td></tr>
+<tr><td>截角八面体 13</td><td class="n">2.4495–2.8284</td><td>12（8 个六边形，4 个正方形）</td><td>28 处以面相接</td></tr>
+<tr><td>DICTO宝石 13</td><td class="n">2.2882</td><td>12，窗口对窗口</td><td>24 处以面相接</td></tr></table>
+<table><tr><th>套件</th><th>块体</th><th>体积</th><th>占其凸包</th></tr>
+<tr><td>二十面体-13 块体 / 63 块构建 / 单元</td><td class="n">113 / 63 / 13</td><td class="n">39.148929</td><td>恰为 1</td></tr>
+<tr><td>十二面体-13 块体 / 单元 / 星</td><td class="n">63 / 13 / 33</td><td class="n">106.0585 / 106.0585 / 112.4126</td><td class="n">0.742 / 0.742 / 0.786</td></tr>
+<tr><td>UNITY / VENUS</td><td class="n">13 / 33</td><td class="n">36.3978 / 46.9352</td><td class="n">0.643 / 0.829</td></tr>
+<tr><td>DICTO星</td><td class="n">33</td><td class="n">131.3367</td><td class="n">0.724</td></tr>
+<tr><td>DESHI</td><td class="n">13</td><td class="n">26.6954</td><td class="n">0.682</td></tr>
+<tr><td>菩提子 / 套件 A / 套件 B</td><td class="n">13 / 193 / 213</td><td class="n">150.6347 / 220.9069 / 220.9070</td><td>0.703 / 1 / 1</td></tr>
+<tr><td>菱形十二面体 13 原形；类球体 0.15、0.35；自由中心</td><td class="n">各 13</td><td class="n">各 26</td><td class="n">0.672；0.886、0.793；0.897</td></tr>
+<tr><td>其他五种周期型</td><td class="n">各 13</td><td>13 个单元</td><td class="n">0.672（菱形十二面体形式），0.690（伸长十二面体），0.719（截角八面体）</td></tr>
+<tr><td>DICTO宝石 13 单独 / 含星形八面体</td><td class="n">13 / 19</td><td class="n">82.6033 / 95.3115</td><td class="n">0.557 / 0.642</td></tr></table>
+<p><b>核验与资料来源。</b> 每个块体都封闭、绕向一致、面平整（最差为 1.5 × 10⁻⁵，见于菩提子套件，其坐标为五位小数；其他处为 10⁻¹³）；放置误差在 10⁻⁴ 以内；每个周期成员：13 个点模 183 个子晶格中的 8 个互不同余，七个块中没有点同时位于两个单元中（20,000 个采样），与面心立方邻域的线性等价以显式整数矩阵给出。已知：Schütte and van der Waerden 1952；Frank 1952；Mackay 1962；Gray 2002；Kabai；Fedorov 1885；Grünbaum 2010；A₃ 完备码（同 A.25）。</p>
+<h2>A.30 斐波那契脊柱 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23396361）</span></h2>
+<p class="told">讲述于第 I 卷，第2章 · 键。</p>
+<p>“精确”指以有理算术在 ℚ(√5) 中核验；“浮点”指以浮点运算计算，未经证明。</p>
+<ul>
+<li>六边形的键向量 2d·n/|n|²；20 个六边形方向恰好包含五组各八个构成立方体的方向（两两余弦 ±1/3 与 −1）：五个体心立方声部。72° 的楔（起始角 59°）；相邻声部绕一条共享的三重轴相差 44.4775°。</li>
+<li>重叠检验：K − K = 2K；位于 X、Y 的副本不相交当且仅当某个面平面 n·x = d 满足 n·(X − Y) ≥ 2d。</li>
+</ul>
+<table><tr><th>半径</th><th>位点</th><th>移除</th><th>近邻对</th><th>重叠</th><th>接触</th></tr>
+<tr><td class="n">5</td><td class="n">336</td><td class="n">80</td><td class="n">620</td><td class="n">0</td><td class="n">620</td></tr>
+<tr><td class="n">8</td><td class="n">1471</td><td class="n">240</td><td class="n">3630</td><td class="n">0</td><td class="n">3605</td></tr>
+<tr><td class="n">10</td><td class="n">2756</td><td class="n">385</td><td class="n">7465</td><td class="n">0</td><td class="n">7390</td></tr></table>
+<ul>
+<li>在半径 5 处，具有五重对称的最小移除为 16 个环（80 个副本），与贪心法相同；不要求对称时为 72。</li>
+<li>黄金高度：每个键的高度为 (m + nφ)u，u² = 8/81 − 8√5/405（u ≈ 0.233658），(m, n) = (±1, 0)、±(1, 2)。</li>
+<li>核心平面：移除 11 个副本（另有位于 1.0042 的平面外环，以及位于 1.084、1.136 的副本）；73 个位点；轴的斜率 −φ。</li>
+<li>间隙 S = 1.22345，L = 1.97958，T = 3.20304；L/S = φ，T = L + S。标准窗口 [0, W)，W² = 64/81 + 128√5/405（W = 1.223451 = S）。至高度 ±45：54 个点，33 个长间隙与 20 个短间隙。</li>
+<li>环碰撞距离 tc² = 8/9 + 8√5/45，tc = 1.134201；被移除的最大 t 为 1.113132；棱副本的面函数 28/81 − 4√5/27 &gt; 0。对于 |h| &lt; 12.812，没有平面点满足 tc ≤ t &lt; W；最初的这类高度为 12.812、−22.71、34.77、−44.66。</li>
+<li>分岔（1135 个位点，精确）：位于 h = 12.8121（t = 1.1553）的核心副本与其位于 h = 13.8019 的竞争者重叠（距离 1.1690），面函数 232/81 − 104√5/81 &lt; 0；重叠薄片 0.71%（浮点）。整数规划：43 对 44、46 对 47、45 对 46、42 对 43 个环。保持斐波那契序列的贪心法移除 555 个，而非 385 个。</li>
+<li>接缝（浮点）：半径 3 至 9 内的移除数为 5、20、60、95、145、205、275；一条接缝的 66 个空位：最强峰 I/N = 46.6（完美时 66，随机时 11.8 ± 2.0）。</li>
+</ul>
+<p><b>资料来源与脚本。</b> Sutton 1988–1992；Rivier &amp; Lawrence 1988；Gratias &amp; Thalal 1988；Xiong et al. 2026；Ranganathan, Srivastava &amp; Lord 2006；Pauling 1985；Prodan et al. 2017；Baake &amp; Grimm 2013；Katz &amp; Gratias 1993（未阅读）；Hubbard 1978；van Enter, Koivusalo &amp; Miękisz 2019；Hofmeister 1998；Lee &amp; Glotzer 2022。脚本：studies/2026-10-16-ocd-pyrochlore（chorus_exact_big.py、chorus_heights_exact.py、chorus_modelset.py、chorus_canonical.py、chorus_window_why.py、chorus_fork_*.py、chorus_boundary.py）。</p>
+<h2>A.36 黄金菩提烧绿石 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23451210）</span></h2>
+<p class="told">讲述于第 I 卷，第2章 · 键。</p>
+<p>除标注“浮点”者外，均在 ℚ(√5) 中精确。堆积填充率 (9225 − 3915√5)/608 ≈ 77.43%。</p>
+<ul>
+<li>沃罗诺伊胞：截角八面体，512/729 + 256√5/729。每个副本的间隙 V − OCD = 18728/13851 − 6296√5/13851 ≈ 0.335695（22.57%）。锥填充：筝形上方 48 个块体（6 个顶点；0.001891），筝形上方 12 个（11 个顶点；0.004409），自由六边形上方 12 个（13 个顶点；0.016001）；余量 0。</li>
+<li>浮点：伙伴块（每个位点间隙的三分之一，其凸包为其体积的两倍）；孪生接合转动 15.52°，接触 94.4%；八面体桥 0.021229，每个副本三个，占间隙的 19.0%。肢长 0.522476（2.196 个六边形棱长），倾斜 79.19°；每个副本 3 条肢填充 12.9%，全部六条填充 23.8%。交叉区（精确）：12 个顶点，10 个四边形，恰好两个黄金菱形。</li>
+<li>黄金交接角：六边形上 20.905°（cos² = φ²/3），筝形上 11.6407°（浮点）。12 个自由六边形上的 Cleo-Icos：间隙的 27.3%。包络（菱形三十面体）1.398921。划分：OCD 77.4%，壳层 11.8%，黄金区域 10.7%。</li>
+<li>合唱中的标准切割：41 个位点，100 个平面，16,204 个单元，总和为 2440/2187 + 1288√5/2187；黄金区域 8,027 个块体，(22420 − 8972√5)/2187 ≈ 1.078188；561 种，5 种菩提块体。</li>
+<li>每单元 G 为 (5984 − 2624√5)/729（10.75%）；24 个星尖（每个接合三角形的 1/3）。GBPC：底棱与侧棱的平方为 8/27 − 8√5/81 与 20/81 − 8√5/81，体积 (−44 + 20√5)/2187；底/侧的平方 2 + 2√5/5；侧/底的平方 (5 − √5)/8（Cleo-Ico 为 (5 + √5)/8）；254 个邻近对，无重叠。</li>
+<li>每单元 G′ = 704/81 − 928√5/243（10.22%）；48 条 36° 的凸棱（浮点）。包络重叠 (−704 + 320√5)/729。在 λ = φ/9 处计数：每单元 66 个长形与 −30 个扁形；任何尺寸的黄金菱面体都不能面对面地密铺。贪心精确构建 46.5%；随机最佳 63.1%，加入菩提块体后 66.9%（每单元 390 个手印（Mudra））；解谜式搜索 72 个块体，(−59 + 29√5)/243，15.83%；板厚 0.104919，面棱 3φe，e = 0.099780。</li>
+<li>牛角OG转接块：空隙 (a/2)(i, j, k)，a = 8φ/9；一个空隙的沃罗诺伊胞（10 个顶点）减去六个副本（窄的一对在 0.7191，宽的四个在 1.0170）；球形度 0.515；体积 (18728 − 6296√5)/41553 ≈ 0.111898；每单元副本占 77.4332%，三个转接块 (−8617 + 3915√5)/608 = 22.5668%（每个 7.5223%），余量 0；黄金壁占其表面的 22.7%（浮点）。</li>
+<li>体心立方中无彭罗斯联系（精确偏移为尖端半径的 2/3 与 4/3）。最密晶格堆积 0.789260 留下一个连通的迷宫（浮点）。</li>
+</ul>
+<p><b>资料来源与脚本。</b> 已知：金刚石、烧绿石与体心立方晶格；黄金菱面体与三十面体（Kepler 1619；Messer 1995；Hart 1999；Levine and Steinhardt；Socolar and Steinhardt；Henley 1991）；Ranganathan et al. 2006；Betke and Henk 2000；Torquato and Jiao 2009, 2012；Lin and Corbett 2006；Kabai 2007, 2015；Hafner and Zitko 2002；Koca et al. 2015；Lalvani 1995, 1997；Koskinen 2011；Conway and Torquato 2006。已检索：文献库与网络，2026年10月16日与18日。脚本：studies/2026-10-16-ocd-pyrochlore、-18-slab-cover、-18-bcc-golden-kit、-18-bcc-hole-pieces。</p>
+<h2>A.37 八隅桁架上的DICTO八十面体 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23457016）</span></h2>
+<p class="told">讲述于第 I 卷，第2章 · 键。</p>
+<p>除标注“浮点”者外，均在 ℚ(√5) 中精确。</p>
+<ul>
+<li>正八面体 |x| + |y| + |z| = R，R = 2φ/3（棱长 2√2φ/3 ≈ 1.5255）；48 个 OG 顶点位于其上。OG (−1000 + 1240√5)/1539 ≈ 1.151868，占其正八面体的 68.83%；六个帽，每个 (1108 − 316√5)/4617 ≈ 0.086940。</li>
+<li>单元：(64 + 32√5)/81 + 2 · (16 + 8√5)/81 = (32 + 16√5)/27 ≈ 2.510263；仅 OG 占 (1025 − 435√5)/114 ≈ 45.886%。</li>
+<li>套件 1：钥（内切球半径为 2/3 的菱形三十面体的三重顶点，位于 |x| + |y| + |z| = 2/φ 处）(−44 + 20√5)/81 ≈ 0.008906；侧面为半个黄金菱形（31.72°、31.72°、116.57°）。带钥 OG (−7688 + 4280√5)/1539 ≈ 1.223113；凹陷四面体 64/27 − 8√5/9 ≈ 0.382754（15.25%，ψ 0.620，手性）；带钥八面体 −32/9 + 64√5/27 ≈ 1.744754（69.50%，ψ 0.852）。</li>
+<li>套件 2：星尖半径 0.350487；半转 36°；c2 沿轴近 0.0943。彭罗斯菱形的棱长为尖端半径 ÷ φ ≈ 0.2166，较小的 ≈ 0.1339。凸包 H 4√5/81；中间块 M0 (310 + 26√5)/4617 ≈ 0.079735；中心核心 (−36734 + 16658√5)/50787 ≈ 0.010129；侧翼核心每个 4114/1539 − 9182√5/7695 ≈ 0.004993（一个镜像对）；其余部分 −231380/50787 + 524152√5/253935 ≈ 0.059620。带凹口正八面体 8/57 + 104√5/171 ≈ 1.500299（59.77%）；带凹口四面体 26/81 − 2√5/81 ≈ 0.265776。每单元 1.151868 + 6 × 0.058072 + 6 × 0.079735 + 2 × 0.265776 = 该单元。</li>
+<li>套件 3：包络 (−320 + 160√5)/27 ≈ 1.398921；最近距离 2/(3φ³√(φ√5)) ≈ 0.0827；填充率 90 − 40√5 = 10/φ⁶ ≈ 55.728%。顶点立方八面体（缩放 φ⁻²）(−320 + 160√5)/81，18.576%。生长块 G = 立方体 − RT/2 = (176 − 72√5)/27 ≈ 0.555671：44 个顶点，72 条棱，30 个面，二面角 90°、108°、216°，ψ = 0.6025，对称性 T。五角三四面体 (−146 + 66√5)/27 ≈ 0.058537，棱 ≈ 0.157（= R/φ⁴）、0.242、0.299。</li>
+<li>套件 4：W (352 − 144√5)/27 = 2G，m3̄，ψ 0.574，最锐的棱 77.4°。WOG = 单元 − OG = (2824 − 328√5)/1539 ≈ 1.358395（54.11%），132 个面（120 个印痕 = 一个完整的 OG 表面），最锐的棱 86.9°，插座间距 √(70/81 − 10√5/27) ≈ 0.18980，ψ 0.648。带钥 W（浮点）：筝形钥的棱 0.2379 与 0.1971；6 000 000 个采样点；600 个方向，无一自由（无钥时：41）。</li>
+<li>腔室（计划之外）：半径 2.4 与 5.4 之间的 230 个单元（R ≈ 1.0787）；仅几何。</li>
+</ul>
+<table><tr><th>套件</th><th>形状（镜像对计一次）</th><th>份额</th><th>状态</th></tr>
+<tr><td>黄金钥八隅结构</td><td>带钥八面体，凹陷四面体 L/R（2）</td><td class="n">69.50% / 30.50%</td><td>精确，已证明</td></tr>
+<tr><td>彭罗斯核心八隅结构</td><td>带凹口正八面体，中间块，带凹口四面体 L/R（3）</td><td class="n">59.77% / 19.06% / 21.18%</td><td>精确，已证明</td></tr>
+<tr><td>无钥套件，三个核心</td><td>OG，帽，中心核心，侧翼核心 L/R，其余部分，四面体 L/R（5）</td><td class="n">OG 45.89%</td><td>精确，已证明</td></tr>
+<tr><td>黄金包络八隅结构</td><td>包络，生长块 G L/R（2）</td><td class="n">55.73% / 44.27%</td><td>精确，已证明</td></tr>
+<tr><td>双形黄金八隅结构</td><td>包络，转接块半块（2）</td><td class="n">55.73% / 44.27%</td><td>精确</td></tr>
+<tr><td>包络 + W</td><td>包络，W（2）</td><td class="n">55.73% / 44.27%</td><td>精确，已证明</td></tr>
+<tr><td>OG + WOG</td><td>OG，WOG（2）</td><td class="n">45.89% / 54.11%</td><td>精确，已证明</td></tr>
+<tr><td>OG + Wstar</td><td>OG，Wstar（2）</td><td class="n">45.89% / 54.11%</td><td>精确，已证明</td></tr>
+<tr><td>OG + 带钥 Wstar</td><td>OG，带钥 W（2）</td><td class="n">45.89% / 54.11%</td><td>设计；网格与采样</td></tr></table>
+<p><b>资料来源。</b> Fuller 1961；Conway, Jiao and Torquato 2011；Lalvani 1990, 1995, 1997；Penrose 1974；Torquato and Jiao 2012；Betke and Henk 2000；Akpanya, Goertzen and Niemeyer 2024；Krishnamurthy, Akleman et al. 2022；Kabai 2007, 2008；Koskinen 2011。已检索：文献库与网络，2026年10月18–19日。主要套件由一个独立引擎精确证明，并以数百万个采样点核验。</p>
+<h2>A.37a 旋转八隅结构上的DICTO八十面体 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23484012）</span></h2>
+<p class="told">讲述见第 I 卷第2章 · 键。</p>
+<p>除标注为浮点者外，均在 ℚ(√5) 中精确。框架同 A.37：正八面体 |x| + |y| + |z| ≤ R，R = 2φ/3，体积 (64 + 32√5)/81；正四面体 (16 + 8√5)/81；晶胞 (32 + 16√5)/27；孪晶层 x + y + z = R。</p>
+<ul>
+<li>接合六边形边长² 2/9 − 2√5/27，占该面的 (7 − 3√5)/2 ≈ 14.59%。孪晶 = 转过 60° 的 OG（有理旋转 (1,0,0) → (2/3, 2/3, −1/3)）。六边形周围的楔角：余弦 (7 − 36√5)/109，约 47.6°。</li>
+<li>帽块 (正八面体 − OG)/8 = (277 − 79√5)/1539 ≈ 0.065205；OG 占其正八面体的 (1025 − 435√5)/76 ≈ 68.83%；帽块 4 + 4 个，分属两种手性。孪晶帽块 (554 − 158√5)/1539 ≈ 0.130410（位于该面的 (3√5 − 5)/2 ≈ 85.41% 之上）；双锥 (32 + 16√5)/81 ≈ 0.836754。</li>
+<li>浮点：孪晶层处的八隅结构中间块：0.0797 中有 0.0399 越出该层，0.0198 位于孪晶 OG 内部；孪晶的五重顶点相距 0.1407，轴转过 105.25°。</li>
+<li>镜像中间块：凸包 (2 + 2√5)/81，每个 OG 与它相交的体积为 (−155 + 101√5)/4617；Mg = (424 − 88√5)/4617 ≈ 0.049215。边界帽块 23/162 − 47√5/1215 ≈ 0.055477（八隅结构的帽块 (32 − 8√5)/243 ≈ 0.058072）；边界四面体 41/162 + 4√5/135 ≈ 0.319340（八隅结构 (26 − 2√5)/81 ≈ 0.265776）。彭罗斯核心：旋转八隅结构中每个晶胞三个，八隅结构中为六个。</li>
+<li>OCD星形体：占正八面体的 (604 − 267√5)/9 ≈ 77.44%；接合三角形边长² 8/3 − 8√5/9，占该面的 (7 − 3√5) ≈ 29.18%。黄金包络（浮点）：顶点越出各面 0.0909；每个共享面的重叠约 0.0175。</li>
+<li>宝石堆积孪晶（浮点）：穿过宝石层处 4.0% 未覆盖、4.2% 双重覆盖；星形八面体层 5.1% 与 5.9%；层与层之间 18–19%。</li>
+<li>DBT：30 个顶点，60 条棱，32 个面（24 个黄金菱形，6 个半菱形，2 个极点三角形，边长² 8/3 − 8√5/9，边长 ≈ 0.824045）；体积 (−872 + 440√5)/81 ≈ 1.381110；切去的顶点 (−44 + 20√5)/81 ≈ 0.008906 = 扁菱面体 (−88 + 40√5)/27 的 1/6；D3d；球度 0.959（浮点）；其表面上有 36 个 OG 顶点；核验了 56 个相邻块；填充率 (493 − 219√5)/6 ≈ 55.02%（各正八面体的 82.53%）。</li>
+<li>OTT：24 个顶点，60 条棱，38 个面（6 个黄金菱形，24 个半菱形，8 个三角形）；体积 (−608 + 320√5)/81 ≈ 1.327676；Th；填充率 176/3 − 26√5 ≈ 52.89%（占其正八面体的 (−608 + 320√5)/(64 + 32√5) ≈ 79.33%）。尺寸（浮点）：s = φ²/3 ≈ 0.873 时相切；1 &lt; s &lt; φ²/√5 ≈ 1.171 时出现 48 个新顶点（62.44%）；s = φ 时为正八面体。</li>
+</ul>
+<table><tr><th>组（DICTO的命名）</th><th>晶格</th><th>块体</th><th>体积</th><th>手性</th><th>球度（浮点）</th></tr>
+<tr><td>DICTO填充组 1（DBT）</td><td>旋转八隅结构</td><td>F1，生长双锥</td><td class="n">(968 − 392√5)/81 ≈ 1.129153</td><td>单一</td><td class="n">0.586</td></tr>
+<tr><td>DICTO填充组 2（OTT）</td><td>旋转八隅结构</td><td>F1，生长双锥</td><td class="n">(704 − 272√5)/81 ≈ 1.182587</td><td>单一</td><td class="n">0.612</td></tr>
+<tr><td>DICTO填充组 2（OTT）</td><td>八隅结构</td><td>F2、F3，生长四面体</td><td class="n">(352 − 136√5)/81 ≈ 0.591293</td><td>左、右</td><td class="n">0.638</td></tr></table>
+<p><b>来源。</b>Fuller；旋转蜂巢及其堆垛（经典）；四面体与八面体的二元组合；尖晶石律；Kabai（黄金八隅桁架；54 面空间填充体）；截角菱形三十面体（五重顶点，42 个面）。检索：80 种藏书资料与网络，2026年10月20日。待解决：每个边界块与填充块均为单一立体的精确证明。研究提交 56fc236。</p>
+<h2>A.40 一切堆垛上的DICTO OG家族 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23490114）</span></h2>
+<p class="told">讲述见第 I 卷第2章 · 键。</p>
+<p>框架：正八面体 |x| + |y| + |z| ≤ R，R = 2φ/3；晶胞 (32 + 16√5)/27；层 (2k − 1)R ≤ x + y + z ≤ (2k + 1)R。步骤 c（平移）与 h（关于共享平面的镜像）；Jagodzinski 记号。</p>
+<p><b>孪晶规则，证明。</b>关于过中心的平面的镜像 M 等于 −H（反演与绕 n 的半周旋转 H 的复合）。由 S = −S，得 M(S) = H(S)；H = T⁶⁰∘T¹²⁰ 且 T¹²⁰(S) = S，故 H(S) = T⁶⁰(S)。<b>嵌合规则，证明。</b>各层是互不相交的板层；每一层都是参考层经平移或镜像所得，后者给出转过 60° 的立体。</p>
+<table><tr><th>立体</th><th>在其正八面体内</th><th>在其层内</th><th>适配</th><th>所占空间比例</th></tr>
+<tr><td>OG</td><td>是</td><td>是</td><td>一切堆垛</td><td class="n">1025/114 − 145√5/38 ≈ 45.89%</td></tr>
+<tr><td>OCD星形体</td><td>是</td><td>是</td><td>一切堆垛</td><td class="n">(1208 − 534√5)/27 ≈ 51.63%</td></tr>
+<tr><td>DICTO OTT</td><td>是</td><td>是</td><td>一切堆垛</td><td class="n">176/3 − 26√5 ≈ 52.89%</td></tr>
+<tr><td>DBT</td><td>否</td><td>是</td><td>一切堆垛</td><td class="n">493/6 − 73√5/2 ≈ 55.02%</td></tr>
+<tr><td>黄金包络</td><td>否</td><td>否</td><td>仅八隅结构</td><td class="n">90 − 40√5 = 10/φ⁶ ≈ 55.73%</td></tr></table>
+<p>全部中心对称，具有绕 (1,1,1) 的 120° 旋转，且没有跨层的镜面（OCD星形体的对称性为浮点结果）。黄金包络在 h 平面处的重叠恰为 (−88 + 40√5)/81 ≈ 0.017811（取代 #37a 的浮点值 0.0175），即 DBT 切去的两个尖端。DBT：在 cc、ch、hc、hh 下均无重叠。</p>
+<table><tr><th>多型体</th><th>词</th><th>堆积</th><th>f</th><th>帽块</th><th>孪晶帽块</th><th>正四面体</th><th>双锥</th></tr>
+<tr><td>3C（八隅结构）</td><td>c</td><td>ABC</td><td class="n">0</td><td class="n">8</td><td class="n">0</td><td class="n">2</td><td class="n">0</td></tr>
+<tr><td>2H（旋转八隅结构）</td><td>h</td><td>AB</td><td class="n">1</td><td class="n">6</td><td class="n">1</td><td class="n">0</td><td class="n">1</td></tr>
+<tr><td>4H</td><td>hc</td><td>ABCB</td><td class="n">1/2</td><td class="n">7</td><td class="n">1/2</td><td class="n">1</td><td class="n">1/2</td></tr>
+<tr><td>6H</td><td>hcc</td><td>ABCACB</td><td class="n">1/3</td><td class="n">22/3</td><td class="n">1/3</td><td class="n">4/3</td><td class="n">1/3</td></tr>
+<tr><td>9R</td><td>hhc</td><td>ABACACBCB</td><td class="n">2/3</td><td class="n">20/3</td><td class="n">2/3</td><td class="n">2/3</td><td class="n">2/3</td></tr>
+<tr><td>15R</td><td>hcchc</td><td>ABCACBCABACABCB</td><td class="n">2/5</td><td class="n">36/5</td><td class="n">2/5</td><td class="n">6/5</td><td class="n">2/5</td></tr>
+<tr><td>斐波那契</td><td>c → ch, h → c</td><td>永不重复</td><td class="n">(3 − √5)/2</td><td class="n">5 + √5</td><td class="n">(3 − √5)/2</td><td class="n">√5 − 1</td><td class="n">(3 − √5)/2</td></tr></table>
+<p>每个晶胞：f 个孪晶帽块，f 个双锥，8 − 2f 个帽块（每种手性 4 − f 个），2 − 2f 个正四面体，一个 OG。斐波那契词：h 所占比例趋于 1/φ²（前 6765 个字母中恰有 2584 个）；孪晶面相隔 2 层或 3 层。</p>
+<p><b>核验与来源。</b>polytype_exact.py（29 PASS，精确；有理 60° 旋转 (1,0,0) → (2/3, 2/3, −1/3)）；jewel_symmetry.py（浮点）。已知：这些堆垛（Conway、Jiao and Torquato 等）、Jagodzinski、Ramsdell、IUCr 记号、尖晶石律、斐波那契词与纯点衍射。检索：80 种藏书资料与网络，2026年10月20日。研究提交 b7c6307。</p>
+<h2>A.42 DICTO日星 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23497702）</span></h2>
+<p class="told">讲述见第 I 卷第2章 · 键。</p>
+<p>在 ℚ(√5) 中精确。尺度同 A.41：2 × 2 × 2 的块棱长为 1，晶胞棱长为 1/2（脚本中：晶胞棱长为 2，体积大 64 倍）。屋顶 (1 + √5)/192；正十二面体 (5 + √5)/32。</p>
+<ul>
+<li>天狼星 = 1/8 − 6 × (1 + √5)/192 = (3 − √5)/32，在正十二面体棱长为 1 时恰为 φ/2。六个屋顶两两相交的体积为 0。正十二面体占空间的 (5 + √5)/8（Betke and Henk）。</li>
+<li>核心：正十二面体，为晶格中正十二面体的 1/φ³；其 12 个面所在平面给出 63 个有界胞腔（核心、12 个棱锥、30 个楔、20 个尖刺）；天狼星 = 核心 + 12 个棱锥 + 24 个楔 + 8 个尖刺。位于其自身立方体的星形八面体之内。</li>
+<li>日星 (23 − 5√5)/32。星链式反应：正十二面体 ⊃ 大星 ⊃ 日星(1/φ³) ⊃ 大星(1/φ³) ⊃ …；24 个尖刺顶端位于大星的表面上（紧密嵌合）；比值 φ³。</li>
+<li>接触：一个彭罗斯粗菱形，脊点处为 108°。日星-四面 (5 + √5)/8（6 个菱形）；日星-八面 (33 + 5√5)/32（12 个菱形）；日星-菱形 (43 + 7√5)/32（18 个菱形）。含松散天狼星的密铺：4、12、25 种晶格（在对称意义下为 2、1、9 种），每个块体分别配 4、5、7 个松散天狼星。</li>
+<li>日星-赫克萨 1 + 24 × (1 + √5)/192 = (9 + √5)/8；日星-赫克萨钥 (7 − √5)/8；比值 (17 + 4√5)/11 ≈ 2.358；每个相邻块两个菱形（共 24 个）。</li>
+<li>对应关系：屋顶尖端 (√5 − 1)/192。日星：正十二面体 (5 + √5)/32，天狼星 (3 − √5)/32；星形体-宝石：宝石 3/16，星形八面体 1/16；赫克萨比值 (17 + 4√5)/11 与 5 : 3。</li>
+</ul>
+<p><b>核验与来源。</b>sunstar_exact.py（12 PASS）与 sunstar_clusters.py（16 PASS），精确。已知：Hart 1996；Walser；Polyhedra-World；Betke and Henk；Euclid；Kepler；Fuller；P 型二十面体密铺的 φ³ 膨胀。检索：藏书资料与网络，2026年10月8–9日及20日。研究提交 dc78106。</p>
+<h2>A.44 亚里士多德的棱锥 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23529497）</span></h2>
+<p class="told">讲述见第 I 卷第2章 · 键。</p>
+<table><tr><th>中心棱锥</th><th>底棱数</th><th>底棱处二面角</th><th>侧棱数</th><th>侧棱处二面角</th></tr>
+<tr><td>立方体（C）</td><td class="n">4</td><td class="n">45° = π/4</td><td class="n">4</td><td class="n">120°</td></tr>
+<tr><td>正四面体（T）</td><td class="n">3</td><td class="n">α/2 ≈ 35.26°</td><td class="n">3</td><td class="n">120°</td></tr>
+<tr><td>正八面体（O）</td><td class="n">3</td><td class="n">(π − α)/2 ≈ 54.74°</td><td class="n">3</td><td class="n">90°</td></tr>
+<tr><td>正十二面体（D）</td><td class="n">5</td><td class="n">θ<sub>D</sub>/2 ≈ 58.28°</td><td class="n">5</td><td class="n">120°</td></tr>
+<tr><td>正二十面体（I，Cleo-Icos）</td><td class="n">3</td><td class="n">θ<sub>I</sub>/2 ≈ 69.09°</td><td class="n">3</td><td class="n">72°</td></tr></table>
+<p>α = arccos(1/3) ≈ 70.53°，θ<sub>D</sub> = arccos(−1/√5)，θ<sub>I</sub> = arccos(−√5/3)。</p>
+<p><b>主定理。</b>由这五种中心棱锥组成的非空集合 U 能填充空间，当且仅当 U 为 {C}、{T, O} 或 {C, T, O}。在每一种由中心棱锥构成的密铺中，(a) 没有瓦片是 D 或 I；(b) T 出现当且仅当 O 出现。</p>
+<p><b>证明概要。</b>引理 1：在一条棱上除有限个点外的所有点处，各楔角之和为 2π（在面上为 π）。引理 2：π、α、θ<sub>D</sub>、θ<sub>I</sub> 在 ℚ 上线性无关（cos² 为 1/9、1/5、5/9；正切 2√2、−2、−2/√5 分属三个平方类；(2 cos θ)² = 4/9、4/5、20/9 不是整数；Conway、Radin 与 Sadun 的分裂定理）。取满足 h(π) = 0 的加性函数 h：h(θ<sub>D</sub>) = 1 排除 D（底棱各带 ½）；h(θ<sub>I</sub>) = 1 排除 I；h(α) = 1 给出 T +½、O −½。构造：六个 C 组成一个立方体；八隅结构的晶胞（晶格向量 (1, 1, 0)、(1, 0, 1)、(0, 1, 1)；正八面体 4/3，正四面体 1/3，晶胞 2）切分为 8 个 O 与 8 个 T；围绕八隅结构的每条棱 4 × α/2 + 4 × (π − α)/2 = 2π；{C, T, O} 由板层 k ≤ z ≤ k + 1 得到。</p>
+<ul>
+<li>推论 2：|a N<sub>T</sub>(R) − b N<sub>O</sub>(R)| ≤ C R²。</li>
+<li>推论 3：安东尼乌斯的三角形棱 π − θ<sub>I</sub>/2 ≈ 110.91°，锯齿形棱 108°；Cleo-Icos 带 3 × ½，安东尼乌斯带 6 × (−½)；安东尼乌斯为 Cleo-Icos 的 4 倍，菱面体为 6 倍；菱面体的面角 arccos(1/√5) ≈ 63.43°。</li>
+</ul>
+<table><tr><th>立体</th><th>与之一同填充空间的</th><th>来源</th></tr>
+<tr><td>立方体</td><td>单独</td><td>经典</td></tr>
+<tr><td>正四面体、正八面体</td><td>彼此，两个正四面体配一个正八面体</td><td>Maurolico (1529)；富勒的八隅桁架</td></tr>
+<tr><td>正十二面体</td><td>天狼星；正十二面体占 (5 + √5)/8 ≈ 90.45%</td><td>Hart (1996)；#42 中精确</td></tr>
+<tr><td>正二十面体</td><td>DICTO的二十面体八隅结构：正二十面体 + 6 个提督帽 = 正八面体；棱长 1/2 的正二十面体，正四面体中配顶点帽与棱帽；正二十面体占 (175 − 75√5)/12 ≈ 60.79%</td><td>精确（发现 F21）；Pacioli；富勒的吉特巴变换</td></tr></table>
+<p>五个正四面体围绕一条棱，留下 7.36°。PSLQ（angle_relations.py，80 位）在 π、α、θ<sub>D</sub>、θ<sub>I</sub> 之间未找到整数关系（仅为证据；证明见引理 2）。</p>
+<p><b>核验与来源。</b>pyramid_checks.py（47 PASS）：每个角均以精确算术计算，对全部 31 个非空集合的检验，八隅结构的晶胞，在含 112 个 O 与 32 个 T 的局部上检验板层。Lagarias and Zong（历史）。来源：Aristotle, On the Heavens III.8；Maurolico（八隅结构）；Conway, Radin and Sadun；Debrunner；Lagarias and Moews；DICTO #19、#20。研究提交 f193a56。</p>
+<h2>A.47 柏拉图立体的任意混合都能填充空间 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23551326）</span></h2>
+<p class="told">讲述见第 I 卷第2章 · 键。</p>
+<p>所有立体均为正多面体，棱长 1；φ = (1 + √5)/2；31 种混合。瓦片不必面对面相接。</p>
+<table><tr><th>连接块</th><th>是什么</th><th>体积</th></tr>
+<tr><td>P</td><td>棱长 1 的半个正八面体</td><td class="n">√2/6 ≈ 0.23570</td></tr>
+<tr><td>Q</td><td>棱长 1 的正四面体的中心棱锥（#44）</td><td class="n">√2/48 ≈ 0.02946</td></tr>
+<tr><td>Q′</td><td>尺寸为 L = φ²/√2 ≈ 1.8512 的 Q</td><td class="n">φ⁶/96 ≈ 0.18692</td></tr>
+<tr><td>A</td><td>DICTO的六个提督帽之一（棱长 L 的正八面体减去处于帕乔利位置的正二十面体，每个顶点一部分）</td><td class="n">φ/12 ≈ 0.13484</td></tr>
+<tr><td>S</td><td>天狼星（棱长 φ 的立方体减去六个屋顶）</td><td class="n">φ/2 ≈ 0.80902</td></tr>
+<tr><td>X</td><td>棱长 φ 的立方体减去一个屋顶</td><td class="n">φ³ − (1 + 3φ/2)/6 ≈ 3.66489</td></tr>
+<tr><td>Y</td><td>棱长 φ 的立方体加上一个屋顶</td><td class="n">φ³ + (1 + 3φ/2)/6 ≈ 4.80724</td></tr></table>
+<p>屋顶 (1 + 3φ/2)/6 ≈ 0.57118。P、Q、Q′、Y 为凸；A、S、X 不是。六个提督帽 = 一个天狼星 = φ/2。</p>
+<ul>
+<li>引理 1（堆垛）：板层以任意顺序堆垛并重复，即可密铺空间。</li>
+<li>引理 2（立方体板层）：厚度为整数。</li>
+<li>引理 3（八隅结构板层）：s = 1/√2；顶点 s(x, y, z)，x + y + z 为偶数；正八面体位于和为奇数处；平面 z = ks 由正八面体的正方形赤道面密铺；板层的面上带有半个正八面体 P；缺 O 时 → 两个 P；缺 T 时 → 四个 Q。</li>
+<li>引理 4（正二十面体板层）：正二十面体 ½(0, ±1, ±φ) 位于 |x| + |y| + |z| ≤ φ²/2（棱长 L）之内，其顶点按黄金比分其棱；棱长 L 的八隅结构，其中正八面体 = 正二十面体 + 6 A，正四面体 = 4 Q′。</li>
+<li>引理 5（正十二面体板层）：棱长 φ 的立方晶格，三层，厚度 3φ；屋顶高 ½ &lt; φ。</li>
+<li>推论 1 由 #44 的计数映射得出（h(θ<sub>D</sub>) = 1，h(θ<sub>I</sub>) = 1，h(α) = 1）。推论 2：五种全用，配以 P、Q′、A、S、X、Y。</li>
+</ul>
+<p>推论 3：棱长 L 的正八面体 φ⁶/6 = (8φ + 5)/6；正二十面体 5φ²/6 = (5φ + 5)/6；六个帽块 = φ/2；天狼星 = 2φ³ − (2 + 7φ/2) = φ/2（立方体的两倍减去正十二面体）；原因未知。待解决：不用连接块的 C + T + O；最小套件；面对面；三个方向上的周期性（基于 1、φ 与 φ²/√2 构建的板层周期不必相合）。桥接（§5）：正四面体 + 截角四面体，以及正八面体 + 立方八面体（均匀蜂巢）。</p>
+<p><b>核验与来源。</b>mixes3.py：全部 31 种堆叠，每种 40 000 个随机点，每个点都被覆盖且总和恰为 1（数值抽查）；volumes.py。已知：Gabbrielli, Jiao and Torquato（一种或两种立体）；Hart（天狼星密铺）；Pacioli；Euclid。研究提交 cea1e4a。</p>
+<h2>A.48 黄金剖分 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23596362）</span></h2>
+<p class="told">讲述见第 I 卷第2章 · 键。</p>
+<p>φ = τ = (1 + √5)/2。棱长 1 的正二十面体位于 φℤ³，顶点 (0, ±½, ±φ/2) 及其轮换。晶胞 φ³ = 2 + √5。</p>
+<ul>
+<li>正二十面体 (15 + 5√5)/12。未生体位于 c = (φ/2, φ/2, φ/2)，顶点 c + (±φ/2, ±1/(2φ), 0) 及其轮换：24 条棱长 1，6 条棱长 1/φ；8 个正三角形与 12 个等腰三角形 (1, 1, 1/φ) 面；体积 (3 + 7√5)/12（Koca et al.，x = 1/τ）。AXE：按 1/τ 缩放的莫塞里-萨多克瓦片 t6，五条棱长 1，一条 1/φ，体积 1/12，每个晶胞六个。</li>
+<li>三帽体（按 1/τ 缩放的 t3）(3 − √5)/24；莲花宝石 J (1 + 3√5)/4；正十二面体 D（棱长 1/φ）(15 + 3√5)/12。每个晶胞 I + U + 6 AXE = J + D + 6 AXE = φ³。</li>
+<li>在 p(t) = m1 + t(m2 − m1) 处剖分；黄金剖分 t = 1/φ。</li>
+<li>二十面斧：截角八面体，顶点为 (±½, ±φ/2, 0) 的全部排列；体积 1 + 2√5/3。未生斧：顶点 c + (±1/(2φ), ±φ/2, 0) 的全部排列；体积 1 + √5/3。合计 φ³。六边形等角，边长交替为 1/√2 与 1/(φ√2)；正方形 1/√2 与 1/(φ√2)。尖顶是核心关于 x = y 的镜像的顶点。</li>
+<li>唯一性：对于顶点为 (∓½, φ/2, 0)、(0, φ/2 ± 1/(2φ), φ/2) 的 AXE，平面 x + y + z = φ²/2、−x + y + z = φ²/2、x − y + z = −1/(2φ)、−x − y + z = −1/(2φ) 仅交于 (0, φ/2, ½) = p(1/φ)；24 个尖顶-面对，距离恰在 t = 1/φ 时为零。</li>
+<li>凸包填充率（浮点）：I(t) 在 t ≤ 1/φ 时为 100%，93.6%（0.7），86.9%（0.8），76.0%（1）；U(t) 58.2%（0），67.6%（0.2），79.8%（0.4），97.9%（0.6），t ≥ 1/φ 时为 100%。整块 AXE 归入正二十面体：一个星形，68.2%。</li>
+<li>带钥对：莲花宝石斧 1 + 2√5/3 − 8(3 − √5)/24 = √5；十二面斧 1 + √5/3 + 8(3 − √5)/24 = 2。</li>
+<li>定理 4：T(x) = (±(1 + x), ±x, 0) 全部排列的凸包，正方形位于距离 L/2 处；位于 Lℤ³ 的 T(x) 与位于 (L/2)(1, 1, 1) + Lℤ³ 的 T(1/x) 面对面地填充空间，体积之和为 L³。T(x) = 立方体 |p<sub>i</sub>| ≤ L/2 ∩ 正八面体 |p1| + |p2| + |p3| ≤ k(x)，k(x) = L(1 + 2x)/(2(1 + x))；k(x) + k(1/x) = 3L/2；在小立方体 [0, L/2]³ 中，切面为 p1 + p2 + p3 = k(x)。在 x = 0.3、0.5、1/τ、0.8、1、1.25、τ、2、3 处做 300,000 点检验。x → 0：正八面体与立方八面体（截半立方蜂巢）；x = 1：开尔文；x = τ：黄金对。</li>
+<li>已知：Koca, Koca, Al-Mukhaini and Al-Qanobi（式 39、49：伪二十面体及其镜像 = 截角八面体；x = τ 与 1/τ）；Polytope Wiki（半均匀截角八面体；交错给出黄铁矿型二十面体，在棱长比 (√5 − 1)/2 时为正二十面体）；加权沃罗诺伊胞；α-(AlMnSi)（Pm3̄）；该填充具有 Pm3̄m。</li>
+</ul>
+<p><b>核验与来源。</b>全部在 ℚ(√5) 中精确，无浮点运算（研究 [8a]）；凸性由并集与凸包体积相等确认。已知：Koca et al.（伪二十面体，截角八面体）；莫塞里-萨多克瓦片；Kelvin；DICTO #19、#47，Kaleidohedra F21。研究提交 066a46a。</p>
+<h2>A.51 提洛键 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23606828）</span></h2>
+<p class="told">讲述见第 I 卷第2章 · 键。</p>
+<h3>设定</h3>
+<p>棱长 1 的八隅结构：正四面体，体积 V<sub>T</sub> = √2/12，与正八面体，V<sub>O</sub> = √2/3 = 4V<sub>T</sub>，每个正八面体配两个正四面体。每个正四面体是从其中心 c<sub>T</sub> 出发的 4 个锥体，每个正八面体是从其中心 c<sub>O</sub> 出发的 8 个锥体（即中心棱锥，它们共同填充空间，#44）。对于共享面 F，双锥体 B<sub>F</sub> 从 c<sub>T</sub> 经 F 延伸到 c<sub>O</sub>；c<sub>T</sub>c<sub>O</sub> 垂直于 F 并交于其中心；F 位于从 c<sub>T</sub> 到 c<sub>O</sub> 的三分之一处（内切球半径 1/(2√6) 与 1/√6）。</p>
+<p>所用的经典事实：菱形十二面体是在正八面体的各面上加上 8 个正四面体锥体（其 8 个三重顶点位于相邻正四面体的中心；体积 V<sub>O</sub> + 8·V<sub>T</sub>/4 = 6V<sub>T</sub>），同样也是立方体加上六个四棱锥；棱长 1/√2 的立方体是在正四面体的各面上加上 4 个正八面体锥体（另外四个顶点位于相邻正八面体的中心；体积 V<sub>T</sub> + 4·V<sub>O</sub>/8 = 3V<sub>T</sub>）。</p>
+<h3>主定理</h3>
+<p>对 0 ≤ t ≤ 1，用过 c<sub>T</sub> + t(c<sub>O</sub> − c<sub>T</sub>) 且平行于 F 的平面切割每个 B<sub>F</sub>；T(t) = 靠近一个正四面体中心的 4 个部分，O(t) = 靠近一个正八面体中心的 8 个部分。它们面对面地填充空间，且两者均为凸。</p>
+<ul>
+<li>(a) 0 &lt; t ≤ 1/3：T(t) 为棱长 3t 的正四面体，体积 27t³·V<sub>T</sub>；O(t) 为菱形十二面体，其 8 个三重顶点被平行于正八面体各面的平面切去（t &lt; 1/3 时有 8 个三角形与 12 个六边形），体积 (6 − 54t³)·V<sub>T</sub>。</li>
+<li>(b) 1/3 ≤ t &lt; 1，a = 3(1 − t)/2：O(t) 为棱长 a 的正八面体，体积 4a³·V<sub>T</sub>；T(t) 为立方体，其位于正八面体中心的 4 个顶点被切去（t &gt; 1/3 时有 4 个三角形与 6 个六边形），体积 (3 − 2a³)·V<sub>T</sub>。</li>
+<li>(c) t = 0：仅菱形十二面体；t = 1/3：八隅结构；t = 1：仅立方体。</li>
+</ul>
+<p><b>证明概要。</b>双锥体填充空间，且每个双锥体被一个平面分割，故各块填充空间。t ≤ 1/3 时，该平面位于正四面体的锥体内，处于从 c<sub>T</sub> 到 F 的 3t 处：靠近 c<sub>T</sub> 的各部分组成按 3t 缩放的正四面体；靠近 c<sub>O</sub> 的各部分是被 8 个平面切割的菱形十二面体（c<sub>T</sub> 是它在 F 所在平面之外唯一的顶点），作为凸集之交而为凸；每个平面在一个三重顶点处的三条棱的 3t 处切割它们。t ≥ 1/3 时，该平面位于从 c<sub>O</sub> 到 F 的 (3/2)(1 − t) = a 处，角色互换（按 a 缩放的正八面体；被 4 个平面切割的立方体）。体积：(a) 27t³V<sub>T</sub> 与 6V<sub>T</sub> − 8·(V<sub>T</sub>/4)·27t³；(b) a³V<sub>O</sub> = 4a³V<sub>T</sub> 与 3V<sub>T</sub> − 4·(V<sub>O</sub>/8)·a³。面对面：每个三角形都是其另一类相邻块的切面；六边形由同类相邻块共享，被同一组平面切出。</p>
+<p><b>核验。</b>在 t = 1/10、1/5、1/3、1/2、4/5、9/10 处以有理算术精确核验（octet/octet_exact.py → octet-exact.txt）。</p>
+<h3>定理 2（特殊成员）</h3>
+<ul>
+<li>(a) t = (2√6 − 3)/15：每条棱（正四面体与切割后的菱形十二面体）长 (2√6 − 3)/5。由 3t = (√6/4)(1 − 3t) 得出，菱形十二面体的棱长为 √6/4。</li>
+<li>(b) t = 5/3 − (2/3)√2：每条棱（切割后的立方体与正八面体）长 √2 − 1。由 a = (1 − a)/√2 得出，立方体的棱长为 1/√2。</li>
+<li>(c) t = 1 − ∛6/3：四面体块与八面体块各恰好填充空间的一半。由 2(3 − 2a³) = 4a³，a³ = 3/4 得出（t ≤ 1/3 时四面体块至多占三分之一）。</li>
+<li>(d) 对任何 t，六边形都不是正六边形：切割立方体的六边形各角为 90°、135°、135°、90°、135°、135°；切割菱形十二面体的六边形保留约 70.5° 的锐角（切去的顶点处为 144.7°）。</li>
+</ul>
+<p><b>核验。</b>(a)–(c) 分别在 ℚ(√6)、ℚ(√2) 与 ℚ(∛6) 中精确核验，任何等式均不用浮点（octet/octet_special_exact.py → octet-special-exact.txt）。</p>
+<h3>定理 3（提洛键）</h3>
+<p>T(t) 与 O(t) 恰在一个位置体积相等，t<sub>D</sub> = 1 − (2/3)·2<sup>−1/3</sup>。在该处，参孙（切割后的立方体 T(t<sub>D</sub>)）与大利拉（正八面体 O(t<sub>D</sub>)）的体积均为 √2/6 = 2V<sub>T</sub> = V<sub>O</sub>/2。大利拉是八隅结构的正八面体缩小 2<sup>−1/3</sup> 倍：棱长 1/∛2。参孙的棱：1/∛2（他的三角形面，即大利拉的面）与 (1 − 2<sup>−1/3</sup>)/√2。</p>
+<p><b>证明概要。</b>t ≤ 1/3 时，vol T(t) ≤ V<sub>T</sub> 且 vol O(t) ≥ 4V<sub>T</sub>：永不相等。t ≥ 1/3 时，(3 − 2a³)V<sub>T</sub> 随 a 递减而 4a³V<sub>T</sub> 随 a 递增，故至多一个解：3 − 2a³ = 4a³，a³ = 1/2，a = 2<sup>−1/3</sup>，t<sub>D</sub> = 1 − 2a/3。<b>核验：</b>在 ℚ(∛2) 中精确：体积相等、大利拉的棱、参孙的两种棱长。</p>
+<h3>表：滑块（八隅结构棱长 1，V<sub>T</sub> = √2/12）</h3>
+<table><tr><th>位置</th><th>t</th><th>四面体块</th><th>八面体块</th></tr>
+<tr><td>菱形十二面体</td><td class="n">0</td><td>—</td><td>菱形十二面体，6V<sub>T</sub></td></tr>
+<tr><td>等棱 (a)</td><td class="n">(2√6 − 3)/15 ≈ 0.1266</td><td>正四面体，棱长 (2√6 − 3)/5</td><td>切割后的菱形十二面体，棱长相同</td></tr>
+<tr><td>八隅结构</td><td class="n">1/3</td><td>正四面体，棱长 1，V<sub>T</sub></td><td>正八面体，棱长 1，4V<sub>T</sub></td></tr>
+<tr><td>各占一半</td><td class="n">1 − ∛6/3 ≈ 0.3943</td><td>切割后的立方体，3V<sub>T</sub>/2</td><td>正八面体，a = ∛6/2，3V<sub>T</sub></td></tr>
+<tr><td><b>提洛键</b></td><td class="n">1 − (2/3)·2<sup>−1/3</sup> ≈ 0.4709</td><td><b>参孙</b>，2V<sub>T</sub></td><td><b>大利拉</b>，棱长 2<sup>−1/3</sup>，2V<sub>T</sub></td></tr>
+<tr><td>等棱 (b)</td><td class="n">5/3 − (2/3)√2 ≈ 0.7239</td><td>切割后的立方体，棱长 √2 − 1</td><td>正八面体，棱长 √2 − 1</td></tr>
+<tr><td>立方体</td><td class="n">1</td><td>立方体，棱长 1/√2，3V<sub>T</sub></td><td>—</td></tr></table>
+<h3>三种DICTONIC键（DICTO命名）</h3>
+<table><tr><th>键</th><th>立体</th><th>来自</th><th>体积</th></tr>
+<tr><td><b>黄金键</b></td><td>二十面斧 + 未生斧</td><td>正二十面体、未生体与 AXE，在黄金点处切割（#48）</td><td class="n">1 + 2√5/3 与 1 + √5/3</td></tr>
+<tr><td><b>带钥键</b></td><td>莲花宝石斧 + 十二面斧</td><td>莲花宝石网络，以同样方式切割（#48）</td><td class="n">√5 与 2</td></tr>
+<tr><td><b>提洛键</b></td><td>参孙 + 大利拉</td><td>八隅结构，在体积相等处切割（#51）</td><td class="n">各 √2/6</td></tr></table>
+<p>黄金键与带钥键的体积取正二十面体棱长 1，提洛键取八隅结构棱长 1。二十面斧与未生斧即 Koca et al. 的截角八面体（x = τ 与 x = 1/τ），经由一条新途径得到；莲花宝石斧与十二面斧是新的（#48）。</p>
+<h3>注：立方体</h3>
+<p>在立方体晶格与其立方体中心之间做同样的加权切割，权重为 w（幂图）：w = 1/4 − 1/√2 时为正截角立方体配正八面体（立方体棱长 1 时每条棱长 √2 − 1）；w = −1/4 时为立方八面体配正八面体（#48 的 x → 0）；w = 0 时为开尔文的截角八面体（x = 1）；其间为 #48 的 T(x) 与 T(1/x)，w = (x − 1)/(4(x + 1))。等棱成员是均匀截角立方蜂巢与截半立方蜂巢；仅开尔文的胞体积相等。比值 2 : 1 出现在 x ≈ 0.3747，即 16u³ − 36u² + 18u − 1 = 0 的一个根，该多项式不可约且有三个实根，因此无法用实根式表示。没有新的键；已精确核验（changeover/changeover_exact.py → changeover-exact.txt）。</p>
+<h3>注：黄金键的配极</h3>
+<p>DICTO的构想：将立体内外翻转（关于其中心的配极变换）。#48 的 T(x)（正方形位于距离 (1 + x)s 处，六边形位于 (1 + 2x)s/√3 处，尺度 s）的配极是每个面上有一个低棱锥的立方体（14 个顶点，24 个三角形，四角化六面体的类型），棱锥高以其自身的半个立方体棱长计为 x/(1 + x)：二十面斧（x = τ）为 1/φ，未生斧（x = 1/τ）为 1/φ²，开尔文的胞为 1/2；对每一对 x、1/x，高度之和为 1，即把立方体变为菱形十二面体的棱锥的高度。这是关于比例的陈述（两个配极的立方体大小不同）。大利拉的配极：立方体；参孙的配极：在四个交替的面上有低棱锥的正八面体；带钥立体不是凸的，没有配极立体。不主张这些配极立体能填充空间。</p>
+<h3>来源与脚本</h3>
+<p>已知：八隅结构（正四面体-正八面体蜂巢）；菱形十二面体作为带六个棱锥的立方体以及带八个四分之一正四面体的正八面体；立方体作为带四个顶点的正四面体；Knoll and Morgan 2003（立方体堆积、八隅结构与菱形十二面体堆积，作为彼此分开的步骤相关联）；幂（Laguerre）图（Aurenhammer 1987），其中正四面体中心与正八面体中心的幂平分面即此处的切割平面；Conway, Jiao and Torquato 2011；Gabbrielli, Jiao and Torquato 2012；Kelvin 1887；均匀截角立方蜂巢与截半立方蜂巢。已查：DICTO的参考文献库（无关于此族的内容；为本次核查阅读了 Gabbrielli–Jiao–Torquato 2012）；通读 Knoll and Morgan 2003；网络检索，2026年10月23日（四个交替顶点被截去的立方体配正八面体；三重顶点被截去的菱形十二面体配正四面体；面心立方晶格的四面体空隙与八面体空隙的幂图；体积相等的正四面体与正八面体，2 的立方根），仅找到经典的八隅结构及其相关结构。未查：Wolfram PolyhedronData、Stella / Great Stella 库。在上述资料中未见：该族本身、它的两个等棱成员、各占一半的成员、提洛键，以及配极黄金键对菱形十二面体棱锥按黄金比的划分。脚本：研究 2026-10-23-shadow-forms，提交 4e98aa8，github.com/DICTOR-Master/kaleidohedra（research 分支）。倍立方问题：Heath 1921；尺规作图不可能性：Wantzel 1837。</p>
+<h2>A.50 每块一步 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23606894）</span></h2>
+<p class="told">讲述见第 I 卷第2章 · 键。</p>
+<p>RD 型：Z(h1, …, h4) = {Σ t<sub>i</sub>h<sub>i</sub> : |t<sub>i</sub>| ≤ ½}，线性相关关系 Σ μ<sub>i</sub>h<sub>i</sub> = 0。FCC：h<sub>i</sub> = ½(±1, ±1, ±1)，相关关系 (1, 1, 1, 1)。引理 1：若中心对称的凸体 P 的体积为 |det L|，且 L 中没有非零向量位于 2P 内部，则 P 按 L 密铺空间。</p>
+<table><tr><th>立体</th><th>一步</th><th>面；对称性</th><th>体积（棱长 1）</th><th>经典构造</th></tr>
+<tr><td>贝恩菱形十二面体</td><td>剪切 diag(1, 1, √2)；Cell = 1</td><td>4 个正方形，8 个 60° 菱形；D4h</td><td class="n">2√2 ≈ 2.8284</td><td>立方八面体 + 2 个四棱锥；两条相互垂直的带被收缩的截角八面体</td></tr>
+<tr><td>正六边形伸长十二面体（F5）</td><td>贝恩一步，沿 (1, 0, 0) 拉伸，s = 1</td><td>4 个正六边形，4 个正方形，4 个 60° 菱形；D2h</td><td class="n">4√2 ≈ 5.6569</td><td>一条带被收缩的截角八面体</td></tr>
+<tr><td>经典伸长十二面体</td><td>FCC，Cell = 1，沿 (1, 0, 0) 拉伸一个棱长</td><td>8 个 70.53° 菱形，4 个六边形（125.26°、125.26°、109.47°）；D4h</td><td class="n">8/3 + 16√3/9 ≈ 5.7459</td><td>以菱形十二面体的两半为两端帽的正四棱柱</td></tr>
+<tr><td>比林斯基十二面体</td><td>γ 由 60° 变为 36°（cos γ = φ/2）；Cell = 1</td><td>12 个黄金菱形；D2h</td><td class="n">(4/5)√(5 + 2√5) ≈ 2.4621</td><td>删去两条带的菱形三十面体；黄金菱面体</td></tr>
+<tr><td>60° 菱面体</td><td>α = β = γ = 60°</td><td>6 个 60° 菱形；D3d</td><td class="n">1/√2 ≈ 0.7071</td><td>正四面体 + 正八面体 + 正四面体（Maurolico）</td></tr></table>
+<ul>
+<li>顶点位于 ℚ(√2)（贝恩情形、60° 菱面体）、ℚ(√3)（经典伸长十二面体）、ℚ(√5)（比林斯基）。粘合核验：立方八面体 5√2/3 与棱锥 √2/6；正四面体 √2/12 与正八面体 √2/3。</li>
+<li>定理 2：Z + [0, s·u] 是平行多面体，当且仅当 u ∥ u<sub>ij|kl</sub> = μ<sub>i</sub>h<sub>i</sub> + μ<sub>j</sub>h<sub>j</sub>；此时有 18 个顶点、28 条棱、12 个面（闵可夫斯基-文科夫条件）。贝恩晶格的第三条线 (0, 0, 1)：8 个 60° 菱形，4 个六边形（135°、135°、90°），体积 2 + 2√2。</li>
+<li>F1：6 个 60° 菱形，6 个 72° 菱形，体积 φ²，相关关系 (φ, φ, 1, 1)。自由方向线在 60°、60°、36°、36°（12|34）；36°、36°、72°、72°（14|23）；37.76°、37.76°、82.24°、82.24°（13|24）。F7（s = 1，C2h）：12|34 体积 φ² + 2；14|23 体积 φ³ + ½。</li>
+</ul>
+<p>命题 3：比林斯基晶格的格拉姆矩阵 ∝ [[1, φ/2, ½], [φ/2, 1, ½], [½, ½, 1]]；B = 由六个五重向量 (0, ±1, φ)、(±1, φ, 0)、(φ, 0, ±1) 中的四个生成的带状多面体（棱长 √(φ + 2)，体积 8 + 4√5 = 4φ³）；与删去其六条带中任意两条的菱形三十面体全等（全部 15 对）；由两个锐角（2φ²）与两个钝角（2φ）黄金菱面体粘合而成，2·2φ² + 2·2φ = 4φ³，有两种方式；相关关系 (φ, φ, 1, 1)，对比开普勒的 (1, 1, 1, 1)，为一仿射不变量。应用程序的角度滑块范围 20°–150°，步长 0.1°。60° 菱面体：顶点 ½√2·(0, 0, 0) 至 ½√2·(1, 1, 1)，沿 (0, 1, 1)/√2、(1, 0, 1)/√2、(1, 1, 0)/√2；√2/12 + √2/3 + √2/12 = √2/2。核验：build.py 93 项中 93 项；check.py 223 项中 223 项，54 处人为篡改中 54 处被捕获；应用程序交叉核验 12 项中 12 项。未读：Bilinski 的论文；贝恩菱形十二面体的最早描述。</p>
+<p><b>来源。</b>Fedorov 1885（§ 83，p. 234；p. 239；页面图像已核对）；Grünbaum 2010；Delone（自由方向）；Minkowski, Venkov, McMullen；Maurolico；Bilinski；Wikipedia（elongated dodecahedron）。研究提交 bdc063d。</p>
+<h2>A.DB DICTONIC立体与DICTONIC键 <span style="font-weight:400">（论文#52，DICTO DOI: 10.5281/zenodo.23629252）</span></h2>
+<p class="told">讲述见第 I 卷第2章 · 键。</p>
+<p>立体与体积：A.48、A.51。黄金键：T(x) = (±(1 + x), ±x, 0) 全部排列的凸包，正方形位于 L/2 处，L = φ；大 T(x) 位于 φZ³，小 T(1/x) 位于立方体中心；s = x/(1 + x)。提洛键：四面体块位于 (Z + ½)³，八面体块位于奇整数点，a = 3(1 − t)/2；应用程序尺度 1/√2，八隅结构棱长 1。</p>
+<h3>两条回路都是固定位点的幂图</h3>
+<table><tr><th>回路</th><th>位点（应用程序单位）</th><th>权重差</th><th>范围</th></tr>
+<tr><td>黄金键</td><td>B = φZ³（大），S = φZ³ + (φ/2)(1,1,1)（小）：体心立方的点</td><td class="n">w<sub>B</sub> − w<sub>S</sub> = (φ²/4)·(x − 1)/(x + 1) = (L/2)²(2s − 1)</td><td>−φ²/4（x = 0）… 0（开尔文）… +φ²/4（x = ∞）；在 τ 处：1/(4φ)</td></tr>
+<tr><td>提洛键</td><td>Q = ((Z + ½)³)/√2（四面体），O = {n ∈ Z³ : Σn 为奇数}/√2（八面体）</td><td class="n">w<sub>Q</sub> − w<sub>O</sub> = (3/8)(2t − 1)</td><td>−3/8（RD）… −1/8（八隅结构）… +3/8（立方体）；在提洛键处：3/8 − 2<sup>2/3</sup>/4</td></tr></table>
+<p>幂胞：|p − c<sub>i</sub>|² − w<sub>i</sub> ≤ |p − c<sub>j</sub>|² − w<sub>j</sub>。键网是对偶正则（加权德洛内）剖分的 1-骨架。</p>
+<h3>键面及其面积（应用程序单位：黄金键 L = φ，提洛键八隅结构棱长 1）</h3>
+<table><tr><th>键</th><th>面</th><th>面积</th><th>出现 / 消失</th><th>单调？</th></tr>
+<tr><td>黄金 大–小</td><td>六边形（x = 0、∞ 时为三角形）</td><td class="n">(√3/8)φ²·(x² + 4x + 1)/(1 + x)²</td><td>从不消失：两端均 ≥ (√3/8)φ² ≈ 0.5668</td><td>否：在开尔文处取最大值 (3√3/16)φ² ≈ 0.8502</td></tr>
+<tr><td>黄金 大–大</td><td>正方形，对角线 sL</td><td class="n">φ²x²/(2(1 + x)²)</td><td>在 x = 0⁺ 出现，x → ∞ 时 → φ²/2</td><td>严格递增</td></tr>
+<tr><td>黄金 小–小</td><td>正方形，对角线 (1 − s)L</td><td class="n">φ²/(2(1 + x)²)</td><td>x = 0 时为 φ²/2，x → ∞ 时消失</td><td>严格递减</td></tr>
+<tr><td>提洛 八面体–四面体</td><td>三角形</td><td class="n">t ≤ 1/3 时 (9√3/4)t²；t ≥ 1/3 时 (9√3/16)(1 − t)²</td><td>恰在 (0, 1) 上存在</td><td>否：在 1/3 处升至 √3/4（尖点；斜率 3√3/2 与 −3√3/4），然后下降</td></tr>
+<tr><td>提洛 八面体–八面体</td><td>六边形（t = 0 时为菱形）</td><td class="n">(√2/4)(1 − 9t²)</td><td>t = 0 时为 √2/4，恰在 t = 1/3 时消失</td><td>严格递减</td></tr>
+<tr><td>提洛 四面体–四面体</td><td>六边形（t = 1 时为正方形）</td><td class="n">(3t − 1)(5 − 3t)/8 = (1 − a²)/2</td><td>恰在 t = 1/3 时出现，t = 1 时 → 1/2</td><td>严格递增</td></tr></table>
+<p>开尔文，x = 1：大–大 = 小–小 = φ²/8 ≈ 0.32725。x = τ：大–大 = 1/2，小–小 = 1/(2φ²) ≈ 0.19098，大–小 = (√3 + 3√15)/16 ≈ 0.8344。提洛键：八面体–四面体 = 2<sup>1/3</sup>√3/8 ≈ 0.2728，四面体–四面体 = 1/2 − 2<sup>1/3</sup>/4 ≈ 0.1850。黄金键体积，以 (L/2)³ 为单位：(4/3)(1 + u)³ − 4u³，u = s（大）或 1 − s（小）。互换 x ↔ 1/x：平移 (φ/2)(1,1,1)。大–大/小–小 = x²。</p>
+<h3>每个块体的键数</h3>
+<table><tr><th></th><th>x = 0</th><th>0 &lt; x &lt; ∞</th><th>x = ∞</th></tr>
+<tr><td>黄金 大</td><td>8（8 个大–小；正八面体）</td><td>14 = 8 个大–小 + 6 个大–大</td><td>14 = 8 + 6（立方八面体）</td></tr>
+<tr><td>黄金 小</td><td>14 = 8 + 6 个小–小（立方八面体）</td><td>14 = 8 个大–小 + 6 个小–小</td><td>8（正八面体）</td></tr></table>
+<table><tr><th></th><th>t = 0</th><th>0 &lt; t &lt; 1/3</th><th>t = 1/3</th><th>1/3 &lt; t &lt; 1</th><th>t = 1</th></tr>
+<tr><td>提洛 八面体块</td><td>12 个八面体–八面体（RD）</td><td>20 = 12 个八面体–八面体 + 8 个八面体–四面体</td><td>8 个八面体–四面体</td><td>8 个八面体–四面体</td><td>无（点）</td></tr>
+<tr><td>提洛 四面体块</td><td>无（点）</td><td>4 个八面体–四面体</td><td>4 个八面体–四面体</td><td>10 = 4 个八面体–四面体 + 6 个四面体–四面体</td><td>6 个四面体–四面体（立方体）</td></tr></table>
+<h3>对偶的加权德洛内胞</h3>
+<ul>
+<li>黄金键，0 &lt; x &lt; ∞：体心立方的双楔四面体（2 个大 + 2 个小，体积 2/3），无翻转；x = 0 与 ∞：四角双锥（2 + 4 个位点，体积 8/3）。</li>
+<li>提洛键，t &lt; 1/3：正八面体（6 个 O，体积 4/3）与四面体（3 个 O + 1 个 Q，体积 1/12）；t = 1/3：菱形十二面体（6 个 O + 8 个 Q，体积 2）；t &gt; 1/3：立方体（8 个 Q，体积 1）与四棱锥（1 个 O + 4 个 Q，体积 1/6）。在 t = 1/3 处，每个 RD 菱形以其长对角线（八面体–八面体）换成短对角线（四面体–四面体）：单一翻转。</li>
+<li>提洛键权重 3/8 − 2<sup>2/3</sup>/4 ≈ −0.0218；八面体–四面体/四面体–四面体 = 2<sup>1/3</sup>√3/(4 − 2·2<sup>1/3</sup>)。</li>
+</ul>
+<h3>物理锚点：权重 = 半径²，接触映射</h3>
+<table><tr><th>回路</th><th>接触映射</th><th>逆映射</th><th>d（应用程序单位）</th></tr>
+<tr><td>黄金键</td><td class="n">ρ = r<sub>small</sub>/r<sub>big</sub> = (x + 2)/(2x + 1) = (2 − s)/(1 + s)</td><td class="n">x = (2 − ρ)/(2ρ − 1)</td><td>(√3/2)φ，立方体棱长 a = φ</td></tr>
+<tr><td>提洛键</td><td class="n">ρ = r<sub>tet-site</sub>/r<sub>oct-site</sub> = t/(1 − t)</td><td class="n">t = ρ/(1 + ρ) = r<sub>tet</sub>/d</td><td>√6/4，八隅结构棱长 1</td></tr></table>
+<p>r<sub>big</sub>/d = (1 + s)/3，r<sub>small</sub>/d = (2 − s)/3；x ↔ 1/x 使 ρ ↔ 1/ρ；dρ/dx = −3/(2x + 1)²。</p>
+<table><tr><th></th><th>黄金键</th><th>提洛键</th></tr>
+<tr><td>相切窗口</td><td>x ∈ [(√3 − 1)/2, √3 + 1] ≈ [0.366, 2.732]，ρ ∈ [√3 − 1, (√3 + 1)/2] ≈ [0.732, 1.366]</td><td>t ∈ [1 − √(2/3), 1/√3] ≈ [0.1835, 0.5774]，ρ ∈ [√(3/2) − 1, (√3 + 1)/2] ≈ [0.2247, 1.366]</td></tr>
+<tr><td>窗口端点</td><td>同类球相切；ρ = √3 − 1 即鲍林的 8 配位极限 0.732</td><td>t = 1 − √(2/3)：√(3/2) − 1，鲍林的 4 配位极限 0.225；t = 1/√3：又是 0.732 极限</td></tr>
+<tr><td>任意无重叠堆积</td><td>每个 x ∈ [0, ∞]</td><td>仅 t ∈ [1/6, 2/3]</td></tr></table>
+<p>停靠点：黄金键 x = τ：ρ = √5/φ² = (3√5 − 5)/2 ≈ 0.8541（在窗口内）；开尔文 ρ = 1；提洛键八隅结构 ρ = 1/2；提洛键 ρ = (3/2)·2<sup>1/3</sup> − 1 ≈ 0.8899；t = 1/2：ρ = 1。结构：黄金键 = 氯化铯型（B2，Pm-3m；1a 与 1b；应用程序单位中 a = φ）；提洛键 = 萤石型（C1，Fm-3m；4a 与 8c；应用程序单位中 a = √2；离子互换即为反萤石型）。八面体–四面体面积恒等式：t ≥ 1/3 时为 (3√3/2)·r<sub>oct</sub>²，t ≤ 1/3 时为 6√3·r<sub>tet</sub>²。</p>
+<table><tr><th>氯化铯型</th><th>r（阳离子）CN</th><th>r（阴离子）CN</th><th>ρ</th><th>x（精确）</th><th>大–小</th><th>大–大</th><th>小–小</th><th>窗口</th></tr>
+<tr><td>CsCl</td><td>Cs⁺ 1.74 VIII</td><td>Cl⁻ 1.81 VI（代用；标记 P）</td><td class="n">0.9613</td><td class="n">188/167 ≈ 1.126</td><td class="n">0.8492</td><td class="n">0.3671</td><td class="n">0.2897</td><td>内</td></tr>
+<tr><td>CsBr</td><td>Cs⁺ 1.74 VIII</td><td>Br⁻ 1.96 VI（代用；标记 P）</td><td class="n">0.8878</td><td class="n">109/76 ≈ 1.434</td><td class="n">0.8412</td><td class="n">0.4544</td><td class="n">0.2209</td><td>内</td></tr>
+<tr><td>CsI</td><td>Cs⁺ 1.74 VIII</td><td>I⁻ 2.20 VI（代用；标记 A）</td><td class="n">0.7909</td><td class="n">133/64 ≈ 2.078</td><td class="n">0.8155</td><td class="n">0.5966</td><td class="n">0.1382</td><td>内</td></tr>
+<tr><td>TlCl</td><td>Tl⁺ 1.59 VIII（标记 R）</td><td>Cl⁻ 1.81 VI（代用）</td><td class="n">0.8785</td><td class="n">203/137 ≈ 1.482</td><td class="n">0.8396</td><td class="n">0.4666</td><td class="n">0.2125</td><td>内</td></tr>
+<tr><td>TlBr</td><td>Tl⁺ 1.59 VIII（标记 R）</td><td>Br⁻ 1.96 VI（代用）</td><td class="n">0.8112</td><td class="n">233/122 ≈ 1.910</td><td class="n">0.8225</td><td class="n">0.5639</td><td class="n">0.1546</td><td>内</td></tr></table>
+<table><tr><th>萤石型</th><th>八面体块位点（CN 8）</th><th>四面体块位点（CN 4）</th><th>ρ</th><th>t</th><th>位于八隅结构的哪一侧</th><th>八面体–四面体</th><th>同类键</th><th>窗口</th></tr>
+<tr><td>CaF₂</td><td>Ca²⁺ 1.12（标记 *）</td><td>F⁻ 1.31</td><td class="n">1.1696</td><td class="n">0.5391</td><td>&gt; 1/3</td><td class="n">0.2070</td><td>四面体–四面体 0.2610</td><td>内</td></tr>
+<tr><td>SrF₂</td><td>Sr²⁺ 1.26</td><td>F⁻ 1.31</td><td class="n">1.0397</td><td class="n">0.5097</td><td>&gt; 1/3</td><td class="n">0.2342</td><td>四面体–四面体 0.2296</td><td>内</td></tr>
+<tr><td>BaF₂</td><td>Ba²⁺ 1.42</td><td>F⁻ 1.31</td><td class="n">0.9225</td><td class="n">0.4799</td><td>&gt; 1/3</td><td class="n">0.2636</td><td>四面体–四面体 0.1956</td><td>内</td></tr>
+<tr><td>CdF₂</td><td>Cd²⁺ 1.10（标记 C）</td><td>F⁻ 1.31</td><td class="n">1.1909</td><td class="n">0.5436</td><td>&gt; 1/3</td><td class="n">0.2030</td><td>四面体–四面体 0.2656</td><td>内</td></tr>
+<tr><td>PbF₂ (β)</td><td>Pb²⁺ 1.29（标记 C）</td><td>F⁻ 1.31</td><td class="n">1.0155</td><td class="n">0.5038</td><td>&gt; 1/3</td><td class="n">0.2398</td><td>四面体–四面体 0.2231</td><td>内</td></tr>
+<tr><td>UO₂</td><td>U⁴⁺ 1.00（标记 R*）</td><td>O²⁻ 1.38</td><td class="n">1.3800</td><td class="n">0.5798</td><td>&gt; 1/3</td><td class="n">0.1720</td><td>四面体–四面体 0.3014</td><td>外（四面体–四面体重叠）</td></tr>
+<tr><td>ThO₂</td><td>Th⁴⁺ 1.05（标记 RC）</td><td>O²⁻ 1.38</td><td class="n">1.3143</td><td class="n">0.5679</td><td>&gt; 1/3</td><td class="n">0.1819</td><td>四面体–四面体 0.2900</td><td>内</td></tr>
+<tr><td>CeO₂</td><td>Ce⁴⁺ 0.97（标记 R）</td><td>O²⁻ 1.38</td><td class="n">1.4227</td><td class="n">0.5872</td><td>&gt; 1/3</td><td class="n">0.1660</td><td>四面体–四面体 0.3083</td><td>外</td></tr>
+<tr><td>ZrO₂（立方）</td><td>Zr⁴⁺ 0.84（标记 *）</td><td>O²⁻ 1.38</td><td class="n">1.6429</td><td class="n">0.6216</td><td>&gt; 1/3</td><td class="n">0.1395</td><td>四面体–四面体 0.3389</td><td>外（堆积仍存在：t &lt; 2/3）</td></tr>
+<tr><td>Li₂O（反型）</td><td>O²⁻ 1.42</td><td>Li⁺ 0.59（标记 *）</td><td class="n">0.4155</td><td class="n">0.2935</td><td>&lt; 1/3</td><td class="n">0.3358</td><td>八面体–八面体 0.0794</td><td>内</td></tr>
+<tr><td>Na₂O（反型）</td><td>O²⁻ 1.42</td><td>Na⁺ 0.99</td><td class="n">0.6972</td><td class="n">0.4108</td><td>&gt; 1/3</td><td class="n">0.3382</td><td>四面体–四面体 0.1094</td><td>内</td></tr>
+<tr><td>K₂O（反型）</td><td>O²⁻ 1.42</td><td>K⁺ 1.37</td><td class="n">0.9648</td><td class="n">0.4910</td><td>&gt; 1/3</td><td class="n">0.2524</td><td>四面体–四面体 0.2086</td><td>内</td></tr></table>
+<p>半径单位为 Å：Shannon (1976) 的有效离子半径，转录自帝国理工学院离子半径数据库（Imperial College Database of Ionic Radii）（未与印刷版表格核对）；Cl⁻、Br⁻、I⁻ 仅给出 CN VI 的值，用作 CN VIII 的代用值。面积以应用程序单位计。晶体半径（CR = IR ± 0.14）：UO₂、CeO₂、ZrO₂ 移入窗口（t = 0.521、0.528、0.559）；Li₂O 移至 t = 0.363，越过八隅结构，因此其所在一侧不构成结论。未列入：NH₄Cl、CuZn、NiAl、FeAl、CoAl、Rb₂O。</p>
+<p><b>核验。</b>键的研究：371 PASS，0 FAIL（符号 55，精确样本 211，应用程序交叉核验 105）。物理锚点：61 PASS，0 FAIL。<b>来源。</b>Aurenhammer 1987；Gelfand–Kapranov–Zelevinsky 1994；De Loera–Rambau–Santos 2010；Gellatly and Finney 1982；Imai, Iri and Murota 1985；Shannon 1976；Pauling 1929；Blatov 2004；O'Keeffe 1979；Leunissen et al. 2005；Hynninen et al. 2006；Shevchenko et al. 2006；Nykypanchuk et al. 2008；Park et al. 2008；Macfarlane et al. 2011；Knoll and Morgan 2003；Koca et al. 2015（DOI 已在 Crossref 上核对；这些论文在研究中未阅读）。DICTO的文献库中未见：键面积的闭合形式、平缓交接与急剧交接、比值 x² 与对角线之和 φ、对偶胞序列、八隅结构作为唯一的单一类型成员、接触映射、鲍林窗口、范围 t ∈ [1/6, 2/3]；在主张任何新颖性之前须做网络检索。研究：~/k-research/studies/2026-10-25-web-of-bonds、2026-10-25-physical-anchors。</p>
+<h2>A.22 业之链 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23310541）</span></h2>
+<p class="told">讲述见第 I 卷第3章 · 壳层。</p>
+<p>φ = (1 + √5)/2；棱长相对于 D(1)。D(1) = I(1/φ) + 12 J2 + 30 AXE + 20 CLEO；I(φ²) = D(1) + 12 J11 + 30 AXE + 20 FUJI。嵌套 I(1/φ) ⊂ D(1) ⊂ I(φ²) ⊂ D(φ³) ⊂ …，每个循环 φ³。</p>
+<ul>
+<li>J2 的尖顶落在 I(1/φ) 上：内切球半径 1.113516 − 高 0.525731 = 0.587785。</li>
+<li>体积：0.515028 + 12 × 0.301503 + 30 × 0.083333 + 20 × 0.051503 = 7.663119 = D(1)；7.663119 + 12 × 1.880192 + 30 × 0.083333 + 20 × 0.321175 = 39.148928 = I(φ²) = φ⁶ I(1)。</li>
+<li>块体：AXE，五条棱长 1，一条 1/φ；CLEO，底边 1/φ，侧棱 1；FUJI，高 1/√3，底边 1 与 1/φ，侧棱 1，尖顶为立方体的一个顶点；J2 所有棱长 1。角 α = arccos(√5/3) = 41.810°，δ = arctan(3 − √5) = 37.377°；正二十面体 180° − α = 138.19°。</li>
+<li>链：n 步之后有 13ⁿ 个正二十面体与 100(13ⁿ − 1)/12 个间隙块体，AXE : FUJI : CLEO = 3 : 1 : 1；第 1–3 步：113、1,569、20,497 个块体，体积误差在 3 × 10⁻⁹ 以内。正二十面体所占比例每步乘以 (12 + φ⁻³)/φ⁶ = 0.6823（68.19%、46.50%、31.71%）。分形维数 D 满足 12 φ⁻²ᴰ + φ⁻³ᴰ = 1，D ≈ 2.6063（谢尔宾斯基二十面体 log 12 / log φ² ≈ 2.5819）。</li>
+<li>德恩筛查：φ²·AXE 的体积等于 9 AXE + 2 FUJI + 2 CLEO，但没有任何整数组合与其德恩不变量相符（PSLQ，坐标在 ℚ(√5) 中）。</li>
+<li>FUJI = 立方体顶角（1/6）+ 三个与 CLEO 体积相同的块：1/6 + 3 × 0.051503 = 0.321175；也可分为 12 个直角块，倾角为 41.81° 与 37.38°。</li>
+<li>十二面体链：D(1)、D(φ²)、D(φ⁴) 分别为 63、175、1,631 个块体。</li>
+<li>正六百胞体（外接球半径 1，棱长 1/φ）：壳层 1、12、20、12、30、…；第一壳层半径 0.587785；莲子的正二十面体中心半径 1.538842，间距 φ（cell600_match.py）。</li>
+<li>表面：60 个三角形与 20 个截角三角形（fullerene_surface.py）；第 2 步：60 个小的与 20 个大的（边长 φ、φ²）截角三角形；C180 的 80 个六边形，不是戈德堡多面体。</li>
+</ul>
+<p><b>来源。</b>Pacioli；Kepler；Gray 2002；Al Raisi, Koca, Koca and Koc 2026；Mosseri and Sadoc 1982；Kramer 1982；Papadopolos and Ogievetsky 1999；Koca et al. 2020；Mackay 1962；Frank 1952；Takakura et al. 2007；Deguchi et al. 2015；Ishimasa 2019；Caspar and Klug 1962；Keef and Twarock 2009；Twarock, Valiunas and Zappa 2015；Dechant et al. 2014；Kroto et al. 1985；Goldberg 1937；Ugarte 1992。</p>
+<h2>A.23 法之球 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23310833）</span></h2>
+<p class="told">讲述见第 I 卷第3章 · 壳层。</p>
+<table><tr><th>壳层</th><th>棱长</th><th>从内侧壳层起填充所用的块体</th></tr>
+<tr><td>正二十面体</td><td class="n">1/φ</td><td>（中心）</td></tr>
+<tr><td>截半二十面体</td><td class="n">φ/2</td><td>12 个五棱锥（0.197336）+ 20 个扭转三棱台（侧棱 √3/2；0.222148）</td></tr>
+<tr><td>正十二面体</td><td class="n">1</td><td>20 个三棱锥</td></tr>
+<tr><td>截角二十面体</td><td class="n">1/φ</td><td>12 个扭转五棱台（转过 36°；0.399864）+ 30 个按 1/φ 缩放的 t1（0.019672）；间隙 5.388544</td></tr>
+<tr><td>菱形三十面体</td><td class="n">½√(45 − 18√5) = 1.089814</td><td>12 个五边形帽 + 20 个六边形帽 + 60 个楔</td></tr>
+<tr><td>正二十面体</td><td class="n">φ²</td><td>30 个棱块（0.527864）+ 20 个面块（0.368921）</td></tr></table>
+<ul>
+<li>共享核心：正二十面体（棱长 1）= 截半二十面体（棱长 ½）1.729441 + 12 个棱锥 0.452254 = 2.181695；正十二面体（棱长 1）= 截半二十面体（棱长 φ/2）7.326029 + 20 个棱锥 0.337090 = 7.663119。</li>
+<li>菱形三十面体（棱长 1）中的笼：笼的棱长 0.567101；10.083445 + 1.704813 + 60 × 0.008708 = 12.310734。</li>
+<li>外层正二十面体为内层的 φ³ 倍；每个循环 237 个块体。</li>
+<li>正十二面体的五个立方体位于接缝中；五个正八面体容纳一个处于帕乔利位置、棱长为 1 的正二十面体。</li>
+</ul>
+<p><b>核验与来源。</b>sod_overlap.py：全部 237 个块体两两无重叠（分离轴），全部位于外层正二十面体之内，总体积 = I(φ²)，精确到 10⁻¹²。已知：对偶复合体、五正八面体复合体、Pacioli；Takakura et al. 2007；Keef and Twarock 2009。</p>
+<h2>A.24 菩提子 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23311353）</span></h2>
+<p class="told">讲述见第 I 卷第3章 · 壳层。</p>
+<ul>
+<li>十二个 RT(1) 的中心距中点 φ²，位于棱长 2.752764（RT(1) 的内切球半径 1.376382 的两倍）的正二十面体上；30 处接触。体积：RT(φ²) 220.907161；十二个 RT(1) 147.728810；RT(1/φ) 2.906170；间隙 70.272181（31.8%）。</li>
+<li>空腔：RH(1) = 20 个长菱面体；RH(1) − RT(1/φ) = 20φO − 10O/φ = 10φ²O = RT(1)；扁菱面体 O = 0.470228，长菱面体 φO。间隙 = 80P + 20O；外腔 70P + 10O；内腔 10P + 10O。</li>
+</ul>
+<table><tr><th>块体</th><th>套件</th><th>数量</th><th>体积</th><th>形状</th></tr>
+<tr><td>金刚杵</td><td>A、B</td><td class="n">60</td><td class="n">φ²O/6 = 0.205179</td><td>三角双锥；棱长 1、1/φ、1.0515、1.4734、1.7013；二面角 72°、90°、108°、120°</td></tr>
+<tr><td>王冠宝石</td><td>B</td><td class="n">20</td><td class="n">(7φ − 3)O/2 = 1.957616</td><td>14 个顶点，9 个面；二面角 36°、90°、120°、144°</td></tr>
+<tr><td>冠冕 L、R</td><td>B</td><td class="n">60 + 60</td><td class="n">O/3 = 0.156743</td><td>6 个顶点，5 个面；手性；二面角 36°、60°、90°、108°</td></tr>
+<tr><td>B2</td><td>A</td><td class="n">60</td><td class="n">(3 + 5φ)O/6 = 0.869152</td><td>7 个顶点</td></tr>
+<tr><td>B3</td><td>A</td><td class="n">60</td><td class="n">O/(3φ) = 0.096872</td><td>黄金菱形上的棱锥；二面角 36°、120°、144°</td></tr></table>
+<p>生长：n 步之后有 13ⁿ 个菱形三十面体；维数 D 满足 12φ⁻²ᴰ + φ⁻³ᴰ = 1，D ≈ 2.6063。</p>
+<p><b>核验与来源。</b>两套套件：无重叠（分离轴）；体积精确到 6 × 10⁻¹⁴；236,269 个随机点每个恰被覆盖一次；全等；在 120 个对称操作下不变。套件 B 独立核验：235,529 个点。seeding.py（形状与轴，k = 1 … 4）。已知：Kabai（Wolfram Demonstrations）；Kabai, Bérczi and Szilassi。</p>
+<h2>A.27 捕捉中间之物 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23345502）</span></h2>
+<p class="told">讲述见第 I 卷第3章 · 壳层。</p>
+<table><tr><th>结构</th><th>主路线步数</th><th>整环阶段（凸）</th><th>部分环阶段</th></tr>
+<tr><td>法之球（一个循环）</td><td class="n">11</td><td class="n">107 (8)</td><td class="n">5,569</td></tr>
+<tr><td>业之链，莲子</td><td class="n">6</td><td class="n">7 (2)</td><td class="n">124</td></tr>
+<tr><td>菩提子，套件 B</td><td class="n">6</td><td class="n">10 (2)</td><td class="n">363</td></tr></table>
+<table><tr><th>块体</th><th>所在处，数量</th><th>类型</th><th>内二面角</th><th>体积</th></tr>
+<tr><td>AXE</td><td>莲子 60</td><td>四面体，五条棱长 1，一条 1/φ</td><td>41.81°、63.43°、79.19°</td><td class="n">1/12</td></tr>
+<tr><td>CLEO</td><td>莲子 20</td><td>三棱锥，底边 1/φ，侧棱 1</td><td>63.43°、79.19°</td><td class="n">(√5 − 1)/24</td></tr>
+<tr><td>FUJI</td><td>莲子 20</td><td>六棱锥</td><td>37.38°、41.81°、142.62°</td><td class="n">(1 + 3√5)/24</td></tr>
+<tr><td>佛塔</td><td>法之球 12</td><td>五棱锥，底边 φ/2，侧棱 √3/2，尖顶朝内</td><td>43.36°、132.40°</td><td class="n">0.19734</td></tr>
+<tr><td>金刚杵（扭）</td><td>法之球 20</td><td>扭转三棱台</td><td>99.26°、110.91°、113.80°</td><td class="n">0.22215</td></tr>
+<tr><td>低Cleo</td><td>法之球 20</td><td>三棱锥，底边 φ/2，侧棱 1/2</td><td>37.38°、116.57°</td><td class="n">0.016855</td></tr>
+<tr><td>猴棒</td><td>法之球 12</td><td>扭转五棱台</td><td>63.43°、142.62°</td><td class="n">(11√5 − 15)/24</td></tr>
+<tr><td>t1</td><td>法之球 30</td><td>四面体，五条棱长 1/φ，一条 1</td><td>37.38°、116.57°、138.19°</td><td class="n">(√5 − 2)/12</td></tr>
+<tr><td>盾</td><td>法之球 20</td><td>极低的正六棱锥</td><td>20.91°、159.45°</td><td class="n">0.06763</td></tr>
+<tr><td>金刚杵刃</td><td>法之球 60</td><td>具有一个镜面的四面体</td><td>20.55°、20.91°、144°、159.10°</td><td class="n">0.011271</td></tr>
+<tr><td>七重刃</td><td>法之球 30</td><td>6 个三角形 + 1 个四边形</td><td>72°、85.66°、108°、112.53°</td><td class="n">5 − 2√5</td></tr>
+<tr><td>低Cleo 2</td><td>法之球 20</td><td>位于外层正二十面体面上的三棱锥</td><td>26.26°、134.93°</td><td class="n">0.36892</td></tr>
+<tr><td>J11</td><td>法之球 铰链 12</td><td>旋转延伸五角锥</td><td>100.81°、138.19°</td><td class="n">(25 + 9√5)/24</td></tr>
+<tr><td>金刚杵（细）</td><td>菩提子 60</td><td>不规则三角双锥</td><td>72°、90°、108°、120°</td><td class="n">0.20518</td></tr>
+<tr><td>伞盖</td><td>套件 A 60</td><td>3 个三角形，2 个四边形，1 个五边形</td><td>60°、72°、90°、108°、120°</td><td class="n">0.86915</td></tr>
+<tr><td>手印</td><td>套件 A 60</td><td>四棱锥</td><td>36°、120°、144°</td><td class="n">0.09687</td></tr>
+<tr><td>王冠宝石</td><td>套件 B 20</td><td>3 个三角形，3 个五边形，3 个六边形</td><td>36°、90°、120°、144°</td><td class="n">1.95764</td></tr>
+<tr><td>冠冕 L / R</td><td>套件 B 60 + 60</td><td>2 个三角形，3 个四边形；手性</td><td>36°、60°、90°、108°</td><td class="n">0.15674</td></tr></table>
+<p>另有：正二十面体（138.19°）、五角帽 J2（37.38°、138.19°）、菱形三十面体（144°）。低Cleo 的形状为半尺寸的莫塞里-萨多克瓦片 t3。</p>
+<ul>
+<li>莲子阶段 2 = 大星形十二面体（60 个面，90 条棱，32 个顶点；黄金三角形，顶角 36°）；阶段 3 = 挖空十二面体（Ef1g1；Wenninger 模型 28），同样 32 个顶点，体积 = 正十二面体 − 12 J2。</li>
+<li>菩提子套件 B 阶段 2 = 菱形六十面体（62 个顶点，60 个黄金菱形位于 30 个平面上）。</li>
+<li>法之球阶段 7：菱形边长 0.65097，角 56.68° 与 123.32°；90 个面位于半径 1.5 处，五边形位于 1.4384 处（第3版中更正）。</li>
+<li>45 个凸的部分阶段，36 种面型，17 至 86 个面。</li>
+</ul>
+<p><b>核验。</b>identify.py：25 项核验，容差 10⁻⁴；每种情形下融合体积都等于各块体之和；nets.py（12 页 A4，四个壳层，无重叠）。来源：Kepler 1619；Coxeter et al. 1938；Wenninger 1971；Unkelbach 1940；Messer 1995；Mosseri and Sadoc 1982；Koca et al. 2020。</p>
+<h2>A.29 泰阿泰德 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23378070）</span></h2>
+<p class="told">讲述见第 I 卷第3章 · 壳层。</p>
+<ul>
+<li>DICTO-ICOSA星：152 个棱锥（72 个五棱锥，80 个四面体），185 个块体。空心形式：核心棱长 2/√5；朝内的四面体差 φ²/√3 − √(2/3) − φ²/√15 = 0.019053 而未达；核心首次接触时的转角为 13.7°、14.3°、13.45°、13.5°（五重轴、三重轴、二重轴、随机轴）；496 对，无重叠。</li>
+<li>Cleo-Ico（棱长 1）：侧棱 √(10 + 2√5)/4 = 0.951057；高 φ²/(2√3) = 0.755761。壳层三角形位于 φ²/√3 处；尖点位于各面中心，精确到 10⁻¹⁶。锁定：303 个方向，转动 0.5°、1°、2° 与平移 0.001 均发生碰撞（0.5° 时深度 2.9 × 10⁻⁵）；四十个 Cleo-Icos，每类 1 200 次测试中自由运动为 0；两个正二十面体留下 5 + 2√5 的空隙。</li>
+<li>埃托斯：核心顶点位于 0.951057，窗口位于 √((5 + 2√5)/5) = 1.376382（间隙 0.425325）；侧棱 0.951057。</li>
+<li>反棱柱距离 φ²/(2√3)；侧面三角形 1、0.951057、0.951057。Klitzing K-4.137（ikaid），高 1/(2φ)；侧棱 √(1 − 1/(4φ²)) = √((5 + √5)/8) = 0.951057（投影中）。斯芬：棱 1、四条 0.951057、1/√3；斯芬尼昂：1、三条 0.951057、两条 1/√3。</li>
+<li>融合搜索：三种凸的并（阿特拉克托斯；Cleo-Ico + 斯芬，60 种选择；t1 + 棱台，24 种选择）。法之球第一步比值 φ²/2 = 1.309，此处为 1。法之球各层按 2/φ 缩放。</li>
+<li>正十二面体的顶点锥 = Cleo-Ico + 基昂 = 1/2 + √5/10，即 10 + 2√5 的二十分之一。基昂：10 个顶点，7 个面。</li>
+</ul>
+<table><tr><th>块体</th><th>数量（各站 / 102）</th><th>体积（精确）</th><th>体积</th></tr>
+<tr><td>核心正二十面体（棱长 1）</td><td>1 / —</td><td class="n">5/4 + 5√5/12</td><td class="n">2.181695</td></tr>
+<tr><td>Cleo-Ico</td><td>（在阿特拉克托斯中）/ 20</td><td class="n">1/16 + √5/48</td><td class="n">0.109085</td></tr>
+<tr><td>埃托斯</td><td>12 / —</td><td class="n">5/48 + √5/16</td><td class="n">0.243921</td></tr>
+<tr><td>斯芬</td><td>60 / —</td><td class="n">1/24 + √5/72</td><td class="n">0.072723</td></tr>
+<tr><td>斯芬尼昂</td><td>60 / —</td><td class="n">1/48 + √5/144</td><td class="n">0.036362</td></tr>
+<tr><td>阿特拉克托斯</td><td>20 / —</td><td class="n">3/16 − √5/48</td><td class="n">0.140915</td></tr>
+<tr><td>基昂</td><td>— / 20</td><td class="n">7/16 + 19√5/240</td><td class="n">0.614522</td></tr>
+<tr><td>扭转五棱台</td><td>12 / 12</td><td class="n">85/3 − 37√5/3</td><td class="n">0.755162</td></tr>
+<tr><td>t1</td><td>30 / 30</td><td class="n">6 − 8√5/3</td><td class="n">0.037152</td></tr>
+<tr><td>帽块</td><td>20 / 20</td><td class="n">141 − 63√5</td><td class="n">0.127717</td></tr>
+<tr><td>一百零二面体</td><td>215 / 102</td><td class="n">3350 − 1486√5</td><td class="n">27.202985</td></tr></table>
+<p>空心形式的各块体之和为截半二十面体 15/2 + 17√5/6；两种叙述之和均为一百零二面体，余量恰为零。<b>来源。</b>Klitzing 2000；Kepler 1596；Euclid XIII；Hypsicles；Mackay 1962；Ino 1969；Marks 1984；Takakura et al. 2007；Deguchi et al. 2015；Hart；Levin 2024；Koca et al. 2020；Al Raisi et al. 2026。脚本：studies/2026-10-15-icosa-star-hollow。</p>
+<h2>A.34 始祖 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23413184）</span></h2>
+<p class="told">讲述见第 I 卷第3章 · 壳层。</p>
+<p>在 ℚ(√5) 中精确；每个嵌套与体积均经核验，余量为 0。法之球尺寸（正二十面体棱长 1/φ）。</p>
+<ul>
+<li>一对：H ⊂ s·O，s = 81/8 − 27√5/8（20 个顶点相接）；O ⊂ t·H，t = (170 + 2√5)/361（12 个相接）；s·t = (3375 − 1107√5)/722 ≈ 1.246，不是 φ 的幂。</li>
+<li>四元组 TI、H、O、PD：六种循环顺序，均非黄金；最紧的 TI ⊂ H ⊂ O ⊂ PD ⊂ TI 每轮增大 (63 − 27√5)/2 = 9/φ⁴ = (3/φ²)²。</li>
+<li>搜索：经过 TI、H、O、PD 并可含 I、ID、D、RT 中任意者的 8,742 个循环；没有一个以 φ 的幂闭合。</li>
+<li>黄金循环，O 位于 3φ²/4：I ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ I·φ³；体积上 I·φ³/I = 38 + 17√5 = φ⁹。</li>
+</ul>
+<table><tr><th>步</th><th>接触（精确）</th></tr>
+<tr><td>I ⊂ ID</td><td>松（12 个顶点中 0 个位于 ID 的面上）</td></tr>
+<tr><td>ID ⊂ O</td><td>紧：ID 的全部 30 个顶点位于 O 的面上</td></tr>
+<tr><td>O ⊂ rTI</td><td>松</td></tr>
+<tr><td>rTI ⊂ TI</td><td>紧：rTI 的全部 90 个顶点位于 TI 的棱上</td></tr>
+<tr><td>TI ⊂ H</td><td>紧：TI 的全部 60 个顶点位于 H 的面上</td></tr>
+<tr><td>H ⊂ jtI</td><td>紧：H 的全部 80 个顶点位于 jtI 的面上</td></tr>
+<tr><td>jtI ⊂ RT</td><td>紧：jtI 的 80 个顶点位于 RT 的面上</td></tr>
+<tr><td>RT ⊂ I·φ³</td><td>松（32 个顶点中 0 个）</td></tr></table>
+<p>十二站循环（金刚乘）：I ⊂ Cleo星 ⊂ D′ ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ M ⊂ I·φ³。</p>
+<p><b>来源与脚本。</b>Kepler 1596；Dechant et al. 2014；MathWorld；Wikipedia；McCooey；Hart；Polytope Wiki；Klitzing；OEIS；Wenninger 的列表；arXiv；DICTO的文献库（2026年10月16日）。Antiprism 0.29：在 I 与 D 上施加至多两个算子的 840 种康威形式，均与 H 和 O 不符；核心与凸包分别具有 atI 与 jtI 的结构。未读：Wenninger、Coxeter、Cromwell、Holden 的印刷本；未运行 Stella。脚本：studies/2026-10-16-progenitors（pair_chain.py、quartet.py、golden_search.py、o_dharma.py、oh_compound.py、core_hull_in_cycle.py）。</p>
+<h2>A.35 金刚乘 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23429911）</span></h2>
+<p class="told">讲述见第 I 卷第3章 · 壳层。</p>
+<p>除标注为浮点者外，均在 ℚ(√5) 中精确，余量 0。十二站：I ⊂ Cleo星 ⊂ D′ ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ M ⊂ I·φ³（九站的接触同 A.34）。</p>
+<table><tr><th>块体（以 Cleo星 构建 D′ = (2/3)·D）</th><th>数量</th><th>总体积（精确）</th></tr>
+<tr><td>Cleo-Ico，核心（正二十面体）</td><td class="n">20</td><td class="n">−5/12 + 5√5/12</td></tr>
+<tr><td>Cleo-Ico，尖刺</td><td class="n">20</td><td class="n">−5/12 + 5√5/12</td></tr>
+<tr><td>朝内五棱锥</td><td class="n">12</td><td class="n">5/9 − √5/27</td></tr>
+<tr><td>谷四面体</td><td class="n">30</td><td class="n">25/18 − 5√5/18</td></tr>
+<tr><td>D′</td><td class="n">82</td><td class="n">10/9 + 14√5/27</td></tr></table>
+<p>Cleo星 体积为 2·I；它是某一高度下的三角化二十面体，而非星形化体；间隙是一个连通区域（浮点）。</p>
+<table><tr><th>恰好能容纳 RT 的立体</th><th>向 I·φ³ 各面伸展的程度（浮点）</th></tr>
+<tr><td>一百零二面体</td><td class="n">0.9948</td></tr>
+<tr><td>截半二十面体；复三十面体</td><td class="n">0.9787</td></tr>
+<tr><td>筝形六十面体</td><td class="n">0.9443</td></tr>
+<tr><td>截角十二面体</td><td class="n">0.9325</td></tr>
+<tr><td>五角化十二面体</td><td class="n">0.9149</td></tr>
+<tr><td>小斜方截半二十面体</td><td class="n">0.8754</td></tr>
+<tr><td>截角二十面体</td><td class="n">0.8682</td></tr>
+<tr><td>正十二面体；三角化二十面体</td><td>过大</td></tr>
+<tr><td>DICTO间六十面体</td><td class="n">1（精确）</td></tr></table>
+<ul>
+<li>RT 伸展到全程的 0.812。M：比值 9/φ⁴ ≈ 1.31308（平方为 81(47 − 21√5)/2 = 81/φ⁸）；顶点半径的平方为 45/8 − 9√5/8 与 47/24 + 7√5/8；vol M = 145/12 + 65√5/12（该步的 0.356）。RT → M：30 个块体，每个 353/72 − 149√5/72；M → I·φ³：60 个块体，每个 1/8 + √5/18。</li>
+<li>M 的配极：12 个正五边形，20 个六边形，边长之比 (14 + 9√5)/11 ≈ 3.102；在双重视界的端点球（ρ² = φ²/4）中，它闭合反向的一步。</li>
+<li>复三十面体 X：比值 3/√5（平方为 9/5）；面角 cos² 为 1/9、1/3、1/3；浮点：位于下一个 D′ 之内，99.46% 位于下一个 Cleo星 之内（20,000 个点）。</li>
+</ul>
+<p><b>来源与脚本。</b>同 A.34，另加 Wassell and Benito 2012、Bridges 2017、Grünbaum（Kleetopes）、Hypsicles。Antiprism 0.29：M、X 与 M 的对偶具有文中所述的结构。脚本：cleo_star_station.py、inward_pyramids.py、progenitors_exact.py、gap_member.py、gap_chain.py、gap_pieces_exact.py、metaxy_dual.py、id_star.py。</p>
+<h2>A.32 翻转的壳层 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23405029）</span></h2>
+<p class="told">讲述见第 I 卷第4章 · 循环。</p>
+<p>反向链 D ⊂ ID ⊂ 八十面体 ⊂ PD ⊂ I ⊂ RT ⊂ D·φ³；体积在 38 + 17√5 = φ⁹ 处闭合。配极在 ℚ(√5) 中精确。</p>
+<table><tr><th>皮层（翻转测试，浮点）</th><th>块体数</th><th>中途覆盖</th><th>双重覆盖</th><th>最深重叠</th></tr>
+<tr><td>I → ID</td><td class="n">32</td><td class="n">100%</td><td class="n">35.1%</td><td class="n">0.369</td></tr>
+<tr><td>ID → D</td><td class="n">20</td><td class="n">3.1%</td><td class="n">0</td><td>无</td></tr>
+<tr><td>D → TI</td><td class="n">42</td><td class="n">67.1%</td><td class="n">4.4%</td><td class="n">0.163</td></tr>
+<tr><td>TI → H</td><td class="n">20</td><td class="n">7.7%</td><td class="n">0</td><td>无</td></tr>
+<tr><td>H → RT</td><td class="n">72</td><td class="n">17.8%</td><td class="n">0.1%</td><td class="n">0.070</td></tr>
+<tr><td>RT → I·φ³</td><td class="n">50</td><td class="n">100%</td><td class="n">36.4%</td><td class="n">0.309</td></tr></table>
+<table><tr><th>层</th><th>块体数</th><th>每个块体</th><th>精确体积</th></tr>
+<tr><td>D → ID</td><td class="n">12</td><td>正十二面体每个面上的柱</td><td class="n">(−144185 + 64487√5)/243</td></tr>
+<tr><td>ID → O</td><td class="n">12</td><td>截半二十面体每个五边形上的帽</td><td class="n">(−155 + 101√5)/4617</td></tr>
+<tr><td>O → PD</td><td class="n">20</td><td>每个正六边形上的低棱锥</td><td class="n">(−22 + 10√5)/81</td></tr>
+<tr><td>PD → I</td><td class="n">60</td><td>不规则楔，5 个顶点，6 个三角形</td><td class="n">(−6560 + 2936√5)/513</td></tr>
+<tr><td>I → RT</td><td class="n">20</td><td>正二十面体每个面上的三棱锥</td><td class="n">(−796 + 356√5)/3</td></tr>
+<tr><td>RT → D·φ³</td><td class="n">30</td><td>每个菱形上的屋顶</td><td class="n">200 − 1336√5/15</td></tr></table>
+<ul>
+<li>松端（浮点）：RT 可增大 ×1.894，内层 D 可增大 ×1.232。紧嵌套：内层 D × (11/18 + 5√5/18)，外层 × (5 − 2√5)；内切球半径 0.495、0.567、0.623、0.653、0.714、0.764、0.898；外层 25.2 → 1.9；柱 (−35/729 + 71√5/2187)，楔 (−7352/3 + 1096√5)；线性比 1.8146（平方为 49815/2 − 22275√5/2）。</li>
+<li>作为实心体的星形：密度 3、3、7、7。大星形十二面体：体积为 3 个正二十面体；60 个四面体（188/3 − 28√5）与 60 个五棱锥（112/3 − 248√5/15）；尖点/谷点半径² 之比 3φ³/√5。</li>
+<li>内部间隙：六角化二十面体 × (9 − 3√5) = 6/φ²，大斜方截半二十面体 × 2/15；余隙 5/9 + 2√5/9 = √5·φ³/9 ≈ 1.0525；块体 12 个、120 个，以及两类帽共 50 个。最近的锁定：筝形六十面体中的小斜方截半二十面体，余隙 62/123 + 137√5/615 ≈ 1.00218。</li>
+<li>框架：顶点半径² 10 + 2√5，棱中点半径² 4；长棱为正十二面体棱的 φ³ 倍（1 + 2φ = φ³）。</li>
+<li>Hafner 2007：在同一棱长上，我们的四面体的体积恰为他的 φ² 倍。</li>
+</ul>
+<p><b>核验与来源。</b>geomcheck.py（框架、两种嵌套顺序、先核验已知情形、按对称性分类、精确关卡、标签）；所有脚本均已重新运行。Firsching 2015；Croft 1980；Takakura et al. 2007；Twarock, Valiunas and Zappa 2015；Dechant et al. 2014；Kepler 1619；Poinsot 1810；Hafner 2007。脚本：studies/2026-10-16-polar-dharma、-flip-test。</p>
+<h2>A.33 双重视界 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23407107）</span></h2>
+<p class="told">讲述见第 I 卷第4章 · 循环。</p>
+<ul>
+<li>配极把 r 变为 ρ²/r；结合 φ³ 的重复，镜像球在半径上每隔 φ<sup>3/2</sup> 出现一次。端点设置 ρ² = φ²/4 = (3 + √5)/8（半径 φ/2）：I 与 D 共享；反向一圈的最后一层约容纳其体积的 93%（浮点）。中间设置 ρ² = 3φ²/4（半径 √3·φ/2）：ID 与 RT 共享；反向的正二十面体恰为 3·I。</li>
+<li>二者永不兼得：φ<sup>k</sup> = (L<sub>k</sub> + F<sub>k</sub>√5)/2 对 k ≠ 0 是无理数。正二十面体的弯曲范围 [(45√5 − 99)/2, 1 + 2√5/5] ≈ [0.8115, 1.8944]；两对同时共享将需要 3/φ³ ≈ 0.708 或 3。</li>
+<li>锥切割：每圈 154 个反向块体与 174 个原块体；每个交集均为凸；每个块体与每层的余量为 0；按精确体积分类与按对称轨道分类结果一致。</li>
+</ul>
+<table><tr><th>组 1（端点）</th><th>数量</th><th>原层</th><th>反向层</th><th>体积（精确）</th></tr>
+<tr><td>I1·1 12f</td><td class="n">12</td><td>D → TI</td><td>D → ID</td><td class="n">−25/24 + 2√5/3</td></tr>
+<tr><td>I1·2 TBP</td><td class="n">60</td><td>RT → I·φ³</td><td>PD → I</td><td class="n">145/1368 + 97√5/2052</td></tr>
+<tr><td>I1·3 7f</td><td class="n">60</td><td>I → ID</td><td>RT → D·φ³</td><td class="n">83/576 − 41√5/2880</td></tr>
+<tr><td>I1·4 7f</td><td class="n">60</td><td>RT → I·φ³</td><td>D → ID</td><td class="n">−11221/5184 + 15629√5/15552</td></tr>
+<tr><td>I1·5 12f</td><td class="n">12</td><td>H → RT</td><td>D → ID</td><td class="n">550235/24624 − 245243√5/24624</td></tr>
+<tr><td>I1·6 7f</td><td class="n">60</td><td>RT → I·φ³</td><td>ID → O</td><td class="n">151655/32832 − 602341√5/295488</td></tr>
+<tr><td>I1·7 QPy</td><td class="n">60</td><td>RT → I·φ³</td><td>O → PD</td><td class="n">41/2592 + 55√5/7776</td></tr>
+<tr><td>I1·8 PPy</td><td class="n">60</td><td>TI → H</td><td>D → ID</td><td class="n">−11/8 + 5√5/8</td></tr>
+<tr><td>I1·9 PPy</td><td class="n">12</td><td>H → RT</td><td>ID → O</td><td class="n">−3715/162 + 1663√5/162</td></tr>
+<tr><td>I1·10 Tet</td><td class="n">60</td><td>H → RT</td><td>D → ID</td><td class="n">−93/152 + 21√5/76</td></tr>
+<tr><td>I1·11 QPy</td><td class="n">60</td><td>ID → D</td><td>RT → D·φ³</td><td class="n">1/576 + √5/576</td></tr>
+<tr><td>I1·12 Tet</td><td class="n">20</td><td>I → ID</td><td>I → RT</td><td class="n">−11/48 + 5√5/48</td></tr></table>
+<table><tr><th>组 2（中间）</th><th>数量</th><th>原层</th><th>反向层</th><th>体积（精确）</th></tr>
+<tr><td>I2·1 7f</td><td class="n">30</td><td>RT → I·φ³</td><td>RT → D·φ³</td><td class="n">371/72 − 47√5/24</td></tr>
+<tr><td>I2·2 11f</td><td class="n">12</td><td>D → TI</td><td>ID → O</td><td class="n">625/10944 + 289√5/10944</td></tr>
+<tr><td>I2·3 7f</td><td class="n">60</td><td>I → ID</td><td>D → ID</td><td class="n">−1585/576 + 3643√5/2880</td></tr>
+<tr><td>I2·4 HPy</td><td class="n">20</td><td>TI → H</td><td>I → RT</td><td class="n">−33/8 + 15√5/8</td></tr>
+<tr><td>I2·5 7f</td><td class="n">60</td><td>D → TI</td><td>PD → I</td><td class="n">−101/456 + 12√5/95</td></tr>
+<tr><td>I2·6 6f</td><td class="n">60</td><td>I → ID</td><td>RT → D·φ³</td><td class="n">203/72 − 56√5/45</td></tr>
+<tr><td>I2·7 Tet</td><td class="n">20</td><td>ID → D</td><td>O → PD</td><td class="n">1/192 + √5/192</td></tr>
+<tr><td>I2·8 QPy</td><td class="n">60</td><td>H → RT</td><td>PD → I</td><td class="n">−1/24 + √5/40</td></tr>
+<tr><td>I2·9 Tet</td><td class="n">60</td><td>H → RT</td><td>I → RT</td><td class="n">−93/152 + 21√5/76</td></tr>
+<tr><td>I2·10 Tet</td><td class="n">60</td><td>D → TI</td><td>O → PD</td><td class="n">1/576 + √5/576</td></tr>
+<tr><td>I2·11 Tet</td><td class="n">60</td><td>H → RT</td><td>I → RT</td><td class="n">−23/304 + 11√5/304</td></tr></table>
+<table><tr><th>原层</th><th>之前</th><th>端点</th><th>中间</th></tr>
+<tr><td>I → ID</td><td class="n">20</td><td class="n">80</td><td class="n">120</td></tr>
+<tr><td>ID → D</td><td class="n">20</td><td class="n">60</td><td class="n">20（整块）</td></tr>
+<tr><td>D → TI</td><td class="n">12</td><td class="n">12（整块）</td><td class="n">132</td></tr>
+<tr><td>TI → H</td><td class="n">20</td><td class="n">60</td><td class="n">20（整块）</td></tr>
+<tr><td>H → RT</td><td class="n">72</td><td class="n">84</td><td class="n">180</td></tr>
+<tr><td>RT → I·φ³</td><td class="n">30</td><td class="n">240</td><td class="n">30（整块）</td></tr>
+<tr><td>一圈</td><td class="n">174</td><td class="n">536</td><td class="n">502</td></tr></table>
+<p>I1·10 = I2·9，在两种设置下都整块通过。I1·11 与 I2·10 体积相同，均为 (1 + √5)/576，但分别有 5 个与 4 个顶点。<b>来源。</b>Kepler 1596；Firsching 2015；Takakura et al. 2007；Dechant et al. 2014；Twarock et al. 2015。脚本：studies/2026-10-16-interlock。</p>
+<h2>A.38 通用PiTet <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23463305）</span></h2>
+<p class="told">讲述见第 I 卷第4章 · 循环。</p>
+<p>规则：T(S) = {x : 对 S 的所有顶点 v 有 v·x ≤ v·v}。在 ℚ(√5) 中精确。</p>
+<p><b>命题。</b>外接球半径为 φ 的 ID：T(ID) = RT，T(RT) = GTI，T(GTI) = FPD，T(FPD) = (10/φ⁴)·ID = (35 − 15√5)·ID；T<sup>4n</sup>(ID) = (10/φ⁴)<sup>n</sup>·ID。每一个都位于下一个之内；每个壳层在内侧立体的每个面上一个块体，分属一个或两个全等类；关于半径² 15 − 5√5 = 10/φ² 自配极（GTI ↔ FPD，RT ↔ ID·10/φ⁴，ID ↔ RT·10/φ⁴）。证明方法：精确的顶点、面，V − E + F = 2，以 60 个旋转判定全等，余量 0。</p>
+<table><tr><th>站</th><th>面</th><th>顶点（半径）</th></tr>
+<tr><td>ID</td><td>20 个三角形，12 个五边形</td><td>30（φ）</td></tr>
+<tr><td>RT</td><td>30 个菱形</td><td>12（2R<sub>I</sub> ≈ 1.902），20（√3）</td></tr>
+<tr><td>DICTO GTI</td><td>12 个正五边形，20 个六边形，边长 1 : φ（在每条棱的 1/(2 + φ) 处截切的正二十面体）</td><td>60（√10/φ ≈ 1.954）</td></tr>
+<tr><td>DICTO FPD</td><td>60 个等腰三角形</td><td>12（≈ 2.008），20（≈ 2.205）</td></tr></table>
+<table><tr><th>壳层</th><th>块体</th><th>每个的精确体积</th><th>间隙（精确）</th></tr>
+<tr><td>ID → RT</td><td>五边形上 12 个，三角形上 20 个</td><td class="n">5/12；3/8 − 17√5/120</td><td class="n">25/2 − 17√5/6</td></tr>
+<tr><td>RT → GTI</td><td>菱形上 30 个</td><td class="n">(3 − √5)/4 = 1/(2φ²)</td><td class="n">45/2 − 15√5/2</td></tr>
+<tr><td>GTI → FPD</td><td>五边形上 12 个，六边形上 20 个</td><td class="n">(67475 − 30175√5)/72 ≈ 0.0229；(5681 − 2534√5)/36 ≈ 0.4112</td><td class="n">(259235 − 115865√5)/18</td></tr>
+<tr><td>FPD → ID·10/φ⁴</td><td>三角形上 60 个</td><td class="n">(77875 − 34825√5)/27 ≈ 0.1457</td><td class="n">(1557500 − 696500√5)/9</td></tr></table>
+<ul>
+<li>阶段 1：82 个块体填满外接球半径为 φ²/√3 的 D′。阶段 2：猴棒 B，12 个全等的扭转棱台，每个 (145 + 37√5)/648。阶段 3：12 个五边棱锥与 20 个三边棱锥以及 60 个谷四面体（92 个块体）；三边棱锥不是 CLEO（高约为底面半径的 2.17 倍，而 φ² ≈ 2.618；自第1版更正）。五面金刚杵 55/108 + 5√5/36。</li>
+<li>ID 与 RT 之间的 OG：顶点为 ID 的 30 个顶点、60 个点 2c − v、12 个尖顶；ID → OG 12 个全等块体；OG → RT 20 个六角Cleo（1/4 − √5/12），60 个筝形棱锥（1/76 + √5/684），120 个四面体（1/24 − √5/72）。</li>
+</ul>
+<p><b>来源与脚本。</b>Kepler；Pacioli and Leonardo；Bergman（连续球面桁架）；Lalvani；Kramer；Mosseri and Sadoc；Hart（典范多面体）；Smarandache 2010（面垂足多面体）；迭代垂足三角形；Mackay；正六百胞体。检索：87 种藏书资料与网络，2026年10月19日。脚本：exact_cycle.py、exact_shells.py、exact_inner.py、exact_polar.py（studies/2026-10-19-five-fold-octet）。</p>
+<h2>A.38a DICTO开普勒-庞索-UP循环 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23464021）</span></h2>
+<p class="told">讲述见第 I 卷第4章 · 循环。</p>
+<table><tr><th></th><th>棱长</th><th>尖塔高 ÷ 面半径</th><th>星 ÷ 核心（体积）</th></tr>
+<tr><td>I（核心）</td><td class="n">1</td><td></td><td></td></tr>
+<tr><td>I 上的大星形星</td><td></td><td class="n">φ²</td><td class="n">3（每个尖刺 = I/10）</td></tr>
+<tr><td>D1（其凸包）</td><td class="n">φ</td><td></td><td></td></tr>
+<tr><td>D1 上的小星形星</td><td></td><td class="n">φ</td><td class="n">√5（12 个尖塔 = (√5 − 1)·D1）</td></tr>
+<tr><td>I·φ³（其凸包）</td><td class="n">φ³</td><td></td><td>一圈：×φ⁹</td></tr></table>
+<p>尖刺伸至面距离的 3 倍；尖塔伸至 √5 倍。长度上每圈 φ³ ≈ 4.24。</p>
+<table><tr><th>壳层</th><th>块体</th><th>每个的精确体积</th><th>即</th></tr>
+<tr><td>I → 大星 → D1</td><td>20 个尖刺</td><td class="n">1/8 + √5/24</td><td>CLEO</td></tr>
+<tr><td></td><td>12 个朝内棱锥</td><td class="n">5/8 + 7√5/24</td><td>帽</td></tr>
+<tr><td></td><td>30 个谷四面体</td><td class="n">1/6 + √5/12</td><td>AXE</td></tr>
+<tr><td>D1 → 小星 → I·φ³</td><td>12 个尖塔</td><td class="n">5/3 + 3√5/4</td><td>新</td></tr>
+<tr><td></td><td>20 个朝内棱锥</td><td class="n">29/24 + 13√5/24</td><td>新：CLEO 的倒数形</td></tr>
+<tr><td></td><td>30 个谷四面体</td><td class="n">3/4 + √5/3</td><td>新</td></tr></table>
+<table><tr><th>尖端</th><th>(高 ÷ 底面半径)²</th><th>其倒数形</th><th>(高 ÷ 底面半径)²</th></tr>
+<tr><td>大星的尖刺（CLEO）</td><td class="n">7/2 + 3√5/2 = φ⁴</td><td>小星壳层的朝内棱锥</td><td class="n">7/2 − 3√5/2 = φ⁻⁴</td></tr>
+<tr><td>小星的尖塔</td><td class="n">3/2 + √5/2 = φ²</td><td>大星壳层的朝内棱锥（帽）</td><td class="n">3/2 − √5/2 = φ⁻²</td></tr></table>
+<p>透视模型（浮点）：从外部看，修正为 ×0.94 与 ×1.03；从内部看，矮胖 2.9 倍（大星）与 2.1 倍（小星）。每个壳层中余量恰为 0；每一对相近块体均有精确的分离平面。<b>来源。</b>Kepler；Poinsot；Coxeter；Messer；Mosseri and Sadoc；Papadopolos and Ogievetsky；Kramer；Koca et al.；Al Raisi et al.。检索：87 种藏书资料与网络，2026年10月19日。脚本：exact_kp.py、exact_reciprocal.py、perspective.py。</p>
+<h2>A.39 DICTO OG家族 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23488944）</span></h2>
+<p class="told">讲述见第 I 卷第4章 · 循环。</p>
+<p>框架：外接球半径为 φ 的 ID ⊂ OG ⊂ RT。T(S) = {x : v·x ≤ v·v}；P(S) = 垂足点 (d/n·n) n 的凸包。对全部四个下行步，T(P(S)) = S（精确）；P(KRE) 是 OG 其余 90 个顶点的凸包。</p>
+<table><tr><th>立体</th><th>顶点</th><th>面</th><th>棱</th><th>体积</th><th>顶点半径</th></tr>
+<tr><td>OG</td><td class="n">102</td><td>60 个筝形 + 20 个正六边形</td><td class="n">180</td><td class="n">(525 + 185√5)/57 ≈ 16.4679</td><td class="n">1.6180–1.6873</td></tr>
+<tr><td>KRE</td><td class="n">92</td><td>30 个菱形 + 60 个筝形</td><td class="n">180</td><td class="n">(920 + 60√5)/57 ≈ 18.4941</td><td class="n">1.6520–1.7321</td></tr>
+<tr><td>PHE</td><td class="n">180</td><td>12 个正五边形 + 20 个正六边形 + 60 个六边形</td><td class="n">270</td><td class="n">(95875 − 1560√5)/4617 ≈ 20.0101</td><td class="n">1.7046–1.7427</td></tr>
+<tr><td>TPP</td><td class="n">212</td><td>60 个三角形 + 120 个五边形（两类）</td><td class="n">390</td><td class="n">≈ 22.3366</td><td class="n">1.7220–1.8104</td></tr>
+<tr><td>DPHP</td><td class="n">270</td><td>12 个等边十边形 + 20 个正六边形 + 120 个五边形</td><td class="n">420</td><td class="n">≈ 23.5434</td><td class="n">1.7995–1.8095</td></tr>
+<tr><td>TPH</td><td class="n">80</td><td>120 个等腰三角形 + 12 个正五边形</td><td class="n">210</td><td class="n">(10437930 + 3959694√5)/109³ ≈ 14.8970</td><td class="n">1.5115–1.5848</td></tr>
+<tr><td>TQH</td><td class="n">132</td><td>60 个三角形 + 60 个四边形 + 20 个正六边形</td><td class="n">270</td><td class="n">(770805045 + 337172409√5)/(2⁴·41³·109) ≈ 12.6853</td><td class="n">1.4885–1.5023</td></tr>
+<tr><td>TQP</td><td class="n">140</td><td>60 个三角形 + 30 个菱形 + 60 个四边形 + 12 个正五边形</td><td class="n">300</td><td class="n">≈ 11.6524</td><td class="n">1.4172–1.4931</td></tr>
+<tr><td>TQHD</td><td class="n">162</td><td>120 个三角形（两类）+ 60 个四边形 + 20 个正六边形</td><td class="n">360</td><td class="n">≈ 10.4208</td><td class="n">1.3493–1.3948</td></tr></table>
+<ul>
+<li>KRE 菱形边长² 29/18 − √5/2（≈ 0.7022）；筝形短边² (1505 + 315√5)/6498（≈ 0.5831）。PHE 五边形边长² 35/18 − 5√5/6；正六边形边长² 1/27（√3/9）。TPH 五边形边长² (4014 + 378√5)/109²。每个三角形都是等腰三角形。</li>
+<li>壳层（余量 0）：OG ⊂ KRE（筝形上 60 个 (230 + 15√5)/37278 ≈ 0.00707，六边形上 20 个 (429 − 145√5)/1308 ≈ 0.08010；间隙 ≈ 2.02617）；KRE ⊂ PHE（菱形上 30 个 235/2916 − √5/36 ≈ 0.01848，筝形上 60 个 ≈ 0.01603；≈ 1.51602）；PHE ⊂ TPP（≈ 0.00218，≈ 0.03805，409/476766 ≈ 0.000858；≈ 2.32644）；TPH ⊂ OG（≈ 0.006748，≈ 0.06343；≈ 1.57092）；TQH ⊂ TPH（≈ 0.02937，≈ 0.007311，≈ 0.000550；≈ 2.21176）；TQHD ⊂ TQP（≈ 0.000016，0.003318，0.000090，0.05131；≈ 1.23162）。</li>
+<li>断裂：60 个 TPP 顶点位于 DPHP 之外，至多 0.0185（DPHP 有 212 − 60 = 152 个面）；60 个 TQP 顶点位于 TQH 之外，至多 0.0058。圆度离散：DPHP 0.56%，OG 4.28%，TPP 5.13%。</li>
+</ul>
+<p><b>来源与脚本。</b>反垂足与垂足构造；Smarandache 2010；Goldberg GP(3,0)；菱形九十面体。检索：80 种藏书资料与网络，2026年10月20日。脚本：exact_upward.py、exact_downward.py、family_facts.py（提交 058c2fb）。</p>
+<h2>A.43 DICTO求心道核心 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23532013）</span></h2>
+<p class="told">讲述见第 I 卷第4章 · 循环。</p>
+<p><b>定理 1（一般情形）。</b>对内部含 O 的凸多胞形 S：max<sub>v</sub> |v|²/h<sub>P</sub>(v) ≤ t<sub>min</sub>(S) ≤ R(S)/r(P(S)) ≤ (R(S)/r(S))²。柏拉图立体取等号（9；3, 3；15 − 6√5, 15 − 6√5）。细长的四角双锥：t<sub>min</sub> → ∞。</p>
+<p><b>定理 2（主定理）。</b>每个具有正二十面体旋转对称的凸多面体都满足 S ⊂ (15 − 6√5)·P(S) ⊂ φ·P(S)；15 − 6√5 ≈ 1.583592 &lt; φ（841 &lt; 845）；该界是最优的。证明：r(S) ≥ cR(S)，c = √((5 + 2√5)/15) ≈ 0.794654；覆盖半径 θ* = arccos c ≈ 37.377°；(2, 3, 5) 默比乌斯三角形的边为 20.905°、31.717°、37.377°；筝形的对角线为 θ* 与 36°（sin 20.905° sin 31.717°/sin 37.377° = sin 18°）。</p>
+<ul>
+<li>推论 1：S<sub>k</sub> = φ<sup>k</sup>·D<sub>k</sub>，对每个 k 都嵌套；在 k ≤ 9 中，仅 k = 1、2、4 时 D<sub>k</sub> ⊂ D<sub>k−1</sub>。余量 t<sub>min</sub>(D<sub>k</sub>)，k = 0 … 8：1.134、1.117、1.103、1.146、1.042、1.087、1.026、1.060、1.138（全部 ≤ 3/φ² ≈ 1.1459；猜想 1）。</li>
+<li>定理 3：关于半径² 15 − 5√5 = cφ²（c = 10/φ⁴）的配极变换把第 k 拍映为第 5 − k 拍。引理 3：polar(P(S)) = T(polar S)。</li>
+<li>Cleo塔：边界位于第 0 | 1 | 2 | 4 | 7 | 12 拍；32、30、32、32、60 座塔（186）；外层 ID 为核心的 c³ ≈ 3.11 倍。极Cleo塔：5 | 4 | 3 | 1 | −2 | −7；核心 RT/c²（30 条射线）；30、32、30、60、32 座塔（184）。</li>
+<li>OG（#37 的框架）：体积 (−1000 + 1240√5)/1539。六边阿克提斯 (−2 + 2√5)/81 ≈ 0.030520，高 √((6 + 2√5)/27) ≈ 0.622782，20 个占 ≈ 52.99%；筝形阿克提斯 (−4 + 8√5)/1539 ≈ 0.009024，高 √((42 + 2√5)/109) ≈ 0.652955，60 个占 ≈ 47.01%。</li>
+<li>OTT：38 条射线；奥克塔克提斯与 Cleo-Icos 相似（高²/棱² = φ⁴/12，侧棱²/棱² = (φ² + 1)/4）；OG 六边形外接圆半径² = 三角形内切圆半径² = (6 − 2√5)/27。</li>
+<li>外翻的 OG：塔 80、132、140 座，分别为 2、3、3 种形状；外半径每拍增长 1.52、1.53、1.61、1.51；完全翻转（浮点）约每拍 1.9。壳层 4：200 座塔（≈ 570.644662、889.860165、147.140716、5699.759901），壳层 ≈ 210453.9306。配极：80、132、162 座塔，分别为 2、3、4 种形状。</li>
+<li>TQH 带条：梯形平行边² 为 (38367 + 17019√5)/13448 与 (6615 + 2925√5)/3362（≈ 2.3839 与 1.9781），腰 ≈ 0.4343，角 ≈ 62.15° 与 117.85°，高 ≈ 0.3840，弯折 ≈ 23.28°（浮点）。带条在下行 8 与下行 9 处再现。下行 5 至下行 11：TQP-252、TQ-320、TQP-402、TQ-500、TQD-732、TQHD-662、TQP-672。</li>
+</ul>
+<p><b>来源。</b>Smarandache；Kepler；Mackay；Takakura et al.；Bergman；Kramer；Hypsicles；Caspar and Klug；Kroto et al.（C60）；Iijima（纳米管）；Kenshiro Abbe。检索：77 种带文本层的藏书资料，2026年10月21日。脚本：研究 2026-10-20-cleo-towers、-og-spires、-ott-rays、2026-10-21-og-turned-out、2026-10-21-nesting-proof（提交 c3c8ff7）。</p>
+<h2>A.K Kaleidohedra <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23173809）</span></h2>
+<p class="told">讲述见第 I 卷，发现与应用程序。</p>
+<ul>
+<li>F1：棱的方向三次以 60° 相交，三次以 72° 相交；体积 2·φ/2 + 2·½ = φ²；密铺剪切后的面心立方晶格（DICTO FCC）。该族为已知（Fedorov；Lalvani US 5,623,790 与 US 4,723,382；Grünbaum 2010 仅对菱形单面体做了分类）；此成员在所查资料中未见。</li>
+<li>F5：已知（Grünbaum 2010，Fig. 2(b)）；DICTO的途径，即贝恩拉伸，是新的（2026-10-01）。</li>
+<li>F10（EKP单元，立方体棱长 2）：12 个棱长 2/φ 的菱形，长对角线 2，角 72° 与 108°；48 面壁（24 面边长为 √2/φ、2/φ、√2；24 面为 √2/φ²、2/φ、√2）；体积恰为 12（每个屋顶保留自身的 1/φ）；壁与每条正二十面体二重轴都偏离 22.24°（核验了 165 条棱）。</li>
+<li>F11：对每个 s &gt; 0，8 个正五边形，4 个六边形（108°、108°、108°、108°、144°、144°），2 个矩形；s = 2/φ 时为正方形；体积 = 正十二面体 + s × 7.236068。</li>
+<li>F12：天狼星的棱长 2/φ⁴、2/φ³、2/φ²、2/φ；体积 1.527864（立方体棱长 2），正十二面体棱长 1 时为 φ/2。</li>
+<li>F15：四面体团簇 228 个面（192 个三角形，36 个菱形），体积为 4 个宝石；八面体团簇围绕一个封闭的星形八面体。F16：正十二面体与天狼星的同样情形。</li>
+</ul>
+<p>核验：verify-kaleido.mjs 与 verify-roof-fold.mjs（krp-core）、verify-zome-parallelohedra（Polyhedraverse）、verify-dicto-fcc（Rhombiverse），每次推送时运行。</p>
+
+<h2>A.D DICTO立体——精确几何 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23606967）</span></h2>
+<p class="told">讲述见第 I 卷，发现与应用程序。</p>
+<ul>
+<li>第2版（2026年10月24日）：29 个立体；坐标在 ℚ(√5) 中精确（参孙与大利拉为 ℚ(∛2)），并给出 15 位小数；各面定向一致；f 向量、精确体积、棱长的平方、对称群、所述数值；JSON 与 OFF 格式；另附一份缩放至体积 1 的副本。</li>
+<li>堆积：6 种能填充空间（DICTO的斜立体的三种格堆积；黄金键、带钥键与提洛键）与 4 种不能填充空间的堆积，附精确的晶格向量与放置位置。</li>
+<li>清单 index.csv：122 行；既有的目录编号（Johnson、均匀多面体、Wenninger、Hart、Mosseri–Sadoc）与DICTO的 D1–D75。</li>
+<li>check.py（Python 3 + sympy）：712 项核验，全部通过，包括以凸包减去或加上 8 个三帽体表示的带钥立体。</li>
+</ul>
+</section>
+<!--KNOWN START-->
+<section class="page catalogue">
+<p class="chapter-mark">DICTO原子辞典 · 已知形体</p>
+<h1>本作品中的已知形体与再发现形体</h1>
+<p>本作品用以构建的27种形体，它们最初由他人创造，或由DICTO再发现且见于所查资料；每一种都保留其最初创造者所给的编号。凡精确几何已收入数据集者，以银色绘出。</p>
+<div class="atoms">
+<div class="atom"><img src="figures/atoms/piece-dogstar.png" alt="天狼星"><div class="an"><b>哈特 1996，正十二面体的四面体对称星形化，第8号</b> 天狼星（Dogstar）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23497702">#42</a></div><div class="av">第 I 卷第2章</div><div class="ant">G. W. 哈特 1996，正十二面体的第8号星形化</div></div>
+<div class="atom"><img src="figures/atoms/piece-axe.png" alt="AXE"><div class="an"><b>莫塞里-萨多克 t6（按 1/tau 缩放）</b> AXE</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23351291">#19</a></div><div class="av">第 I 卷第1章</div><div class="ant">莫塞里-萨多克瓦片</div></div>
+<div class="atom"><img src="figures/atoms/piece-cleo.png" alt="CLEO"><div class="an"><b>莫塞里-萨多克 t4（按 1/tau 缩放）</b> CLEO</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23351291">#19</a></div><div class="av">第 I 卷第1章</div><div class="ant">莫塞里-萨多克瓦片</div></div>
+<div class="atom"><img src="figures/atoms/piece-cleo-icos.png" alt="Cleo-Icos"><div class="an"><b>—</b> Cleo-Icos</div><div class="am">块体 · <a href="https://doi.org/10.5281/zenodo.23378070">#29</a></div><div class="av">第 I 卷第3章</div><div class="ant">正二十面体的中心棱锥（经典形体；名称出自DICTO）；在#43中作为OTT的八面体射线出现，在那里称为奥克塔克提斯（Oktaktis）（DICTO DOI: 10.5281/zenodo.23532013）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-icosaxes.png" alt="二十面斧"><div class="an"><b>—</b> 二十面斧（Icosaxes）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23596362">#48</a></div><div class="av">第 I 卷第2章</div><div class="ant">已知形体：科贾等 2015 的非正截角八面体 x = tau（半均匀截角八面体）；新途径（二十面体晶格中AXE的黄金剖分，#48）；名称出自DICTO；所属族（#88）：DICTO-开普勒黄金截角（正八面体的大黄金截切，x = 1/φ²）与DICTO-GTT立体</div></div>
+<div class="atom"><img src="figures/atoms/dicto-unborn-axes.png" alt="未生斧"><div class="an"><b>—</b> 未生斧（Unborn Axes）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23596362">#48</a></div><div class="av">第 I 卷第2章</div><div class="ant">已知形体：科贾等 2015 的非正截角八面体 x = 1/tau；新途径（#48）；名称出自DICTO；所属族（#88）：DICTO-开普勒黄金截角（正八面体的小黄金截切，x = 1/(φ√5)）与DICTO-GTT立体</div></div>
+<div class="atom"><img src="figures/atoms/dicto-delilah.png" alt="大利拉"><div class="an"><b>U5; W2</b> 大利拉（Delilah）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23606828">#51</a></div><div class="av">第 I 卷第2章</div><div class="ant">已知形体（正八面体），在八隅结构棱长为1时其棱长为 2^(-1/3)；这是DICTO为其在提洛键中所取的名称（#51）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-goliath.png" alt="歌利亚"><div class="an"><b>—</b> 歌利亚（Goliath）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23632358">#55</a></div><div class="av">第 I 卷第2章</div><div class="ant">已知形体：A15结构中经典的Z12配位二十面体（弗兰克与卡斯珀 1958），即按 1/2 缩放的耶森正交二十面体（耶森 1967）的凸包；在此为权重差 3/4 时的A15幂胞（#55：该密铺是A15的经典图像平移半条体对角线）；名称出自DICTO</div></div>
+<div class="atom"><img src="figures/atoms/dicto-david.png" alt="大卫"><div class="an"><b>—</b> 大卫（David）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23632358">#55</a></div><div class="av">第 I 卷第2章</div><div class="ant">已知形体：一个四方双楔，即A15中空的Cr4四面体平移半条体对角线（#55 推论1）；名称出自DICTO</div></div>
+<div class="atom"><img src="figures/atoms/dicto-alicia.png" alt="艾丽西亚"><div class="an"><b>—</b> 艾丽西亚（Alicia）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 卷第6章</div><div class="ant">W48。该形体最早由艾丽西亚·布尔·斯托特（1900）通过作图发现，绘成平面图并制成卡纸模型；其精确几何（坐标、体积、对称性，经核验）由DICTO在#63中计算。DICTO以她的名字为其命名。</div></div>
+<div class="atom"><img src="figures/atoms/dicto-unicorn.png" alt="独角兽"><div class="an"><b>—</b> 独角兽（Unicorn）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 卷第6章</div><div class="ant">W58。该形体最早由艾丽西亚·布尔·斯托特（1900）通过作图发现，绘成平面图并制成卡纸模型；其精确几何（坐标、体积、对称性，经核验）由DICTO在#63中计算。</div></div>
+<div class="atom"><img src="figures/atoms/dicto-bandersnatch.png" alt="班德斯纳奇"><div class="an"><b>—</b> 班德斯纳奇（Bandersnatch）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 卷第6章</div><div class="ant">W60。该形体最早由艾丽西亚·布尔·斯托特（1900）通过作图发现，绘成平面图并制成卡纸模型；其精确几何（坐标、体积、对称性，经核验）由DICTO在#63中计算。</div></div>
+<div class="atom"><img src="figures/atoms/piece-greater-golden-cut-icosidodecahedron.png" alt="大黄金截切截半二十面体"><div class="an"><b>—</b> 大黄金截切截半二十面体（Greater Golden Cut Icosidodecahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23917931">#89</a></div><div class="av">第 I 卷第2章与第6章</div><div class="ant">DICTO黄金正则截切，由DICTO独立发现：即泽菲罗 2011 中截半二十面体的正六边形阶段，在 x = 1/3 处截切；在#89中被解读为黄金形式（五边形为黄金十边形，三角形为正六边形；30个矩形，120个顶点，Ih）；名称出自DICTO</div></div>
+<div class="atom"><img src="figures/atoms/piece-lesser-golden-cut-icosidodecahedron.png" alt="小黄金截切截半二十面体"><div class="an"><b>—</b> 小黄金截切截半二十面体（Lesser Golden Cut Icosidodecahedron）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23917931">#89</a></div><div class="av">第 I 卷第2章与第6章</div><div class="ant">DICTO黄金正则截切，由DICTO独立发现：即泽菲罗 2011 中截半二十面体的正十边形阶段，在 x = 1/(φ√5) 处截切；在#89中被解读为黄金形式（三角形为黄金截角三角形，五边形为正十边形；30个矩形，120个顶点，Ih）；名称出自DICTO；也是一个DICTO-GTT立体（#89）；不是白骑士（面相同，但长边与短边互换）</div></div>
+</div>
+<table class="atl"><caption class="tl">此处未绘出：已在资料中计算，但尚未成为数据集中的模型文件</caption><thead><tr><th>编号</th><th>形体</th><th>类型</th><th>出处</th><th>讲述于</th><th>状态</th></tr></thead>
+<tr><td>—</td><td>DICTO全菱形块（DICTO all-rhombus block）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23173809">发现 F1</a></td><td>第 I 卷“发现与应用程序”</td><td>一个平行六面体（F1的一部分）；未单独评估</td></tr>
+<tr><td>—</td><td>DICTO扁菱面体（DICTO flattened rhombohedron）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23173809">发现 F1</a></td><td>第 I 卷“发现与应用程序”</td><td>一个菱面体（F1的一部分）；未单独评估</td></tr>
+<tr><td>—</td><td>贝恩双楔（Bain disphenoid）</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23173809">发现 F3</a></td><td></td><td>贝恩 1924（应用程序中展示的已知结果，并非DICTO的）</td></tr>
+<tr><td>—</td><td>贝恩菱形十二面体（Bain rhombic dodecahedron）</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23173809">发现 F4</a></td><td></td><td>已知（正方形 + 60°菱形）；并非DICTO的</td></tr>
+<tr><td>—</td><td>正六边形伸长十二面体（Regular-hexagon elongated dodecahedron）</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23173809">发现 F5</a></td><td>第 I 卷“发现与应用程序”</td><td>由DICTO独立发现；格林鲍姆 2010 图2(b)（费奥多罗夫伸长十二面体）</td></tr>
+<tr><td>—</td><td>日星晶格（正十二面体与天狼星）（Sunstar Lattice）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23497702">#42</a></td><td>第 I 卷第2章</td><td>该蜂巢出自哈特（1996）</td></tr>
+<tr><td>—</td><td>DESHI排列（DESHI arrangement）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23351291">#19</a></td><td>第 I 卷第1章</td><td>格雷 2002</td></tr>
+<tr><td>—</td><td>菩提子（Bodhi seed）</td><td>结构</td><td><a href="https://doi.org/10.5281/zenodo.23311353">#24</a></td><td>第 I 卷第3章</td><td>部分已知：卡拜的菱形三十面体团簇层；闭合、中心与套件未见</td></tr>
+<tr><td>—</td><td>勒洛四面体（Reuleaux tetrahedron）</td><td>曲面体</td><td><a href="https://doi.org/10.5281/zenodo.23529499">#45</a></td><td>第 I 卷第1章</td><td>勒洛四面体（经典）</td></tr>
+<tr><td>J1</td><td>半八面体 P（#47的连接块）（Half octahedron P）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23551326">#47</a></td><td>第 I 卷第2章</td><td>四棱锥，正八面体的一半</td></tr>
+<tr><td>—</td><td>正四面体中心棱锥 Q 与 Q&#x27;（#44、#47的连接块）（Tetrahedron face pyramid Q and Q&#x27;）</td><td>块体</td><td><a href="https://doi.org/10.5281/zenodo.23551326">#47</a></td><td>第 I 卷第2章</td><td>正四面体的中心棱锥</td></tr>
+<tr><td>—</td><td>A · HexOct 3/8 c 瓦片，由两个立方体组成的砖（A · HexOct 3/8 c-tile, brick of two cubes）</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>经典：由两个棱长为 1/√2 的立方体组成的 1 × 1 × 2 砖（#86）</td></tr>
+<tr><td>—</td><td>D · HexOct −11/24 h 瓦片，正六棱柱（D · HexOct −11/24 h-tile, regular hexagonal prism）</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>经典：正六棱柱，费奥多罗夫五种平行多面体之一（1885）（#86）</td></tr>
+</table>
+</section>
+<!--KNOWN END-->
+<!--ABOUT START-->
+<section class="page about" style="break-before:page">
+<h1 class="chapter">关于作者</h1>
+<p>DICTO是（艾伦·）J·贝克的艺名，他是一位在日本大阪的艺术家。他的专业背景是建筑雕塑、石雕与佛像雕刻。他曾在伦敦城市与行会艺术学院（1998–2001）接受建筑石雕师训练，在圣詹姆斯宫工作过，并为伦敦萨默塞特宫的公务员步枪团战争纪念碑于2002年重新揭幕而重刻了其罗马字体铭文。自2009年起，他在日本从事佛像的雕刻与修复工作，其中包括京都高雄山神护寺的一尊传为弘法大师空海所作的佛像。</p>
+<p>他用回收的PET瓶，以自创的两种模块化系统B1NR与DICTOspheres构建几何雕塑，各部件无需胶水即可连接。他拥有六项日本外观设计注册；其中五项基于柏拉图立体的球面投影，即其名字背后的五种形体：正十二面体（Dodecahedron）、正二十面体（Icosahedron）、立方体（Cube）、正四面体（Tetrahedron）、正八面体（Octahedron）。他的雕塑曾在京都展出，展出地点包括京都市美术馆（京都市京瓷美术馆；《缘起 III》，2025）、京都府立堂本印象美术馆、京都府立植物园、Kansho展以及京都高濑川艺术节。</p>
+<p>雕塑背后的几何学催生了八十九篇论文（收录于《DICTO几何作品集》）以及七部书：《空间的量子——宣言》及其第二卷《DICTO原子辞典——空间的量子 II》（即本书）、《HexOct——六方性定律》、《奇境中的艾丽西亚——红王后与白王后》、《黄金循环》、《星核——尖刺、晕与循环》以及《DICTONIC键——从八隅结构到对半规则》（均为2026年）。每篇论文和每部书都以各自的DICTO DOI在Zenodo上公开发表。更多内容见 https://dictospheres.com。</p>
+</section>
+
+<!--ABOUT END-->
+</body></html>

@@ -16,17 +16,17 @@ import fs from 'node:fs';
   const lang = (raw.match(/<html[^>]*lang="([^"]+)"/) || [])[1] || 'en';   // (native-review requirement dropped 11-07: DICTO's reader already checked; accuracy is guarded by the ja text guard)
   // KATAKANA-COVER GUARD (DICTO 11-07: "any japanese language version gets a katakana cover"): a final ja book needs its own cover
   // image (file name with -ja) whose alt text carries the katakana title.
-  if (/^ja/i.test(lang) && !/^DRAFT/i.test(path.basename(pdf))) { const cv = raw.match(/class="page coverpage"[\s\S]*?<img[^>]*>/);
+  if (!/^en/i.test(lang) && !/^DRAFT/i.test(path.basename(pdf))) { const cv = raw.match(/class="page coverpage"[\s\S]*?<img[^>]*>/);
     const img = cv ? cv[0].match(/<img[^>]*>/)[0] : '';
-    if (!/src="[^"]*-ja[^"]*"/.test(img) || !/alt="[^"]*[\u30A0-\u30FF]{3,}/.test(img)) { console.error('GUARD: Japanese book without its katakana cover (cover img src must contain -ja and alt the katakana title)'); process.exit(6); } }
+    if (!new RegExp('src="[^"]*-' + lang.slice(0, 2) + '[^"]*"').test(img) || !/alt="[^"]*[\u0600-\u06FF\u3040-\u30FF\u4E00-\u9FFF]{3,}/.test(img)) { console.error(`GUARD: ${lang} edition without its own-script title cover (cover img src must contain -${lang.slice(0, 2)} and alt the title in its script)`); process.exit(6); } }
   // JA TEXT GUARD (11-07, reader: "reads like machine translation"): a final ja book may not carry leftover English words outside
   // （…） glosses, nor the known bad variants found in Quanta-ja v1.
-  if (/^ja/i.test(lang) && !/^DRAFT/i.test(path.basename(pdf))) {
-    const body = raw.replace(/<style[\s\S]*?<\/style>/g, '').replace(/<(sub|sup|code|a)\b[^>]*>[\s\S]*?<\/\1>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/（[^（）]*）|\([^()]*\)|「[ -~]*」/g, ' ');
+  if (!/^en/i.test(lang) && !/^DRAFT/i.test(path.basename(pdf))) {
+    const body = raw.replace(/<style[\s\S]*?<\/style>/g, '').replace(/<(sub|sup|code|a|i|em)\b[^>]*>[\s\S]*?<\/\1>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/（[^（）]*）|\([^()]*\)|「[ -~]*」/g, ' ');
     const latin = [...new Set((body.match(/(?<![\p{L}\w.\-@\/_])[a-z]{4,}(?![\p{L}\w.\-@\/_(])/gu) || []).filter(w => !/^(zenodo|https?|www|dictospheres|com|org|arccos|arcsin|arctan|netlib|diag|[hc]+)$/.test(w)))];
     const BADJA = /白い女王|フル章|アリシアの不思議の国|いぶし十二面体|ポアン(?!ソ)|正の四次元|四次元の正多面体/g;
     const bad = [...new Set(body.match(BADJA) || [])];
-    if ((latin.length || bad.length) && !process.env.ALLOW_BANNED) { console.error('GUARD (ja text): leftover English ' + latin.slice(0, 30).join(', ') + (bad.length ? '; bad variants ' + bad.join(', ') : '')); process.exit(7); } }
+    if ((latin.length || bad.length) && !process.env.ALLOW_BANNED) { console.error(`GUARD (${lang} text): leftover English ` + '' + latin.slice(0, 30).join(', ') + (bad.length ? '; bad variants ' + bad.join(', ') : '')); process.exit(7); } }
   if (hits.length && !process.env.ALLOW_BANNED) { console.error('BANNED PHRASE — not printed:\n  ' + hits.join('\n  ')); process.exit(2); } }
 const b = await chromium.launch();
 const page = await b.newPage();

@@ -1,0 +1,22 @@
+<h2>A.44 亚里士多德的棱锥 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23529497）</span></h2>
+<p class="told">讲述见第 I 卷第2章 · 键。</p>
+<table><tr><th>中心棱锥</th><th>底棱数</th><th>底棱处二面角</th><th>侧棱数</th><th>侧棱处二面角</th></tr>
+<tr><td>立方体（C）</td><td class="n">4</td><td class="n">45° = π/4</td><td class="n">4</td><td class="n">120°</td></tr>
+<tr><td>正四面体（T）</td><td class="n">3</td><td class="n">α/2 ≈ 35.26°</td><td class="n">3</td><td class="n">120°</td></tr>
+<tr><td>正八面体（O）</td><td class="n">3</td><td class="n">(π − α)/2 ≈ 54.74°</td><td class="n">3</td><td class="n">90°</td></tr>
+<tr><td>正十二面体（D）</td><td class="n">5</td><td class="n">θ<sub>D</sub>/2 ≈ 58.28°</td><td class="n">5</td><td class="n">120°</td></tr>
+<tr><td>正二十面体（I，Cleo-Icos）</td><td class="n">3</td><td class="n">θ<sub>I</sub>/2 ≈ 69.09°</td><td class="n">3</td><td class="n">72°</td></tr></table>
+<p>α = arccos(1/3) ≈ 70.53°，θ<sub>D</sub> = arccos(−1/√5)，θ<sub>I</sub> = arccos(−√5/3)。</p>
+<p><b>主定理。</b>由这五种中心棱锥组成的非空集合 U 能填充空间，当且仅当 U 为 {C}、{T, O} 或 {C, T, O}。在每一种由中心棱锥构成的密铺中，(a) 没有瓦片是 D 或 I；(b) T 出现当且仅当 O 出现。</p>
+<p><b>证明概要。</b>引理 1：在一条棱上除有限个点外的所有点处，各楔角之和为 2π（在面上为 π）。引理 2：π、α、θ<sub>D</sub>、θ<sub>I</sub> 在 ℚ 上线性无关（cos² 为 1/9、1/5、5/9；正切 2√2、−2、−2/√5 分属三个平方类；(2 cos θ)² = 4/9、4/5、20/9 不是整数；Conway、Radin 与 Sadun 的分裂定理）。取满足 h(π) = 0 的加性函数 h：h(θ<sub>D</sub>) = 1 排除 D（底棱各带 ½）；h(θ<sub>I</sub>) = 1 排除 I；h(α) = 1 给出 T +½、O −½。构造：六个 C 组成一个立方体；八隅结构的晶胞（晶格向量 (1, 1, 0)、(1, 0, 1)、(0, 1, 1)；正八面体 4/3，正四面体 1/3，晶胞 2）切分为 8 个 O 与 8 个 T；围绕八隅结构的每条棱 4 × α/2 + 4 × (π − α)/2 = 2π；{C, T, O} 由板层 k ≤ z ≤ k + 1 得到。</p>
+<ul>
+<li>推论 2：|a N<sub>T</sub>(R) − b N<sub>O</sub>(R)| ≤ C R²。</li>
+<li>推论 3：安东尼乌斯的三角形棱 π − θ<sub>I</sub>/2 ≈ 110.91°，锯齿形棱 108°；Cleo-Icos 带 3 × ½，安东尼乌斯带 6 × (−½)；安东尼乌斯为 Cleo-Icos 的 4 倍，菱面体为 6 倍；菱面体的面角 arccos(1/√5) ≈ 63.43°。</li>
+</ul>
+<table><tr><th>立体</th><th>与之一同填充空间的</th><th>来源</th></tr>
+<tr><td>立方体</td><td>单独</td><td>经典</td></tr>
+<tr><td>正四面体、正八面体</td><td>彼此，两个正四面体配一个正八面体</td><td>Maurolico (1529)；富勒的八隅桁架</td></tr>
+<tr><td>正十二面体</td><td>天狼星；正十二面体占 (5 + √5)/8 ≈ 90.45%</td><td>Hart (1996)；#42 中精确</td></tr>
+<tr><td>正二十面体</td><td>DICTO的二十面体八隅结构：正二十面体 + 6 个提督帽 = 正八面体；棱长 1/2 的正二十面体，正四面体中配顶点帽与棱帽；正二十面体占 (175 − 75√5)/12 ≈ 60.79%</td><td>精确（发现 F21）；Pacioli；富勒的吉特巴变换</td></tr></table>
+<p>五个正四面体围绕一条棱，留下 7.36°。PSLQ（angle_relations.py，80 位）在 π、α、θ<sub>D</sub>、θ<sub>I</sub> 之间未找到整数关系（仅为证据；证明见引理 2）。</p>
+<p><b>核验与来源。</b>pyramid_checks.py（47 PASS）：每个角均以精确算术计算，对全部 31 个非空集合的检验，八隅结构的晶胞，在含 112 个 O 与 32 个 T 的局部上检验板层。Lagarias and Zong（历史）。来源：Aristotle, On the Heavens III.8；Maurolico（八隅结构）；Conway, Radin and Sadun；Debrunner；Lagarias and Moews；DICTO #19、#20。研究提交 f193a56。</p>

@@ -1,0 +1,25 @@
+<h2>A.32 翻转的壳层 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23405029）</span></h2>
+<p class="told">讲述见第 I 卷第4章 · 循环。</p>
+<p>反向链 D ⊂ ID ⊂ 八十面体 ⊂ PD ⊂ I ⊂ RT ⊂ D·φ³；体积在 38 + 17√5 = φ⁹ 处闭合。配极在 ℚ(√5) 中精确。</p>
+<table><tr><th>皮层（翻转测试，浮点）</th><th>块体数</th><th>中途覆盖</th><th>双重覆盖</th><th>最深重叠</th></tr>
+<tr><td>I → ID</td><td class="n">32</td><td class="n">100%</td><td class="n">35.1%</td><td class="n">0.369</td></tr>
+<tr><td>ID → D</td><td class="n">20</td><td class="n">3.1%</td><td class="n">0</td><td>无</td></tr>
+<tr><td>D → TI</td><td class="n">42</td><td class="n">67.1%</td><td class="n">4.4%</td><td class="n">0.163</td></tr>
+<tr><td>TI → H</td><td class="n">20</td><td class="n">7.7%</td><td class="n">0</td><td>无</td></tr>
+<tr><td>H → RT</td><td class="n">72</td><td class="n">17.8%</td><td class="n">0.1%</td><td class="n">0.070</td></tr>
+<tr><td>RT → I·φ³</td><td class="n">50</td><td class="n">100%</td><td class="n">36.4%</td><td class="n">0.309</td></tr></table>
+<table><tr><th>层</th><th>块体数</th><th>每个块体</th><th>精确体积</th></tr>
+<tr><td>D → ID</td><td class="n">12</td><td>正十二面体每个面上的柱</td><td class="n">(−144185 + 64487√5)/243</td></tr>
+<tr><td>ID → O</td><td class="n">12</td><td>截半二十面体每个五边形上的帽</td><td class="n">(−155 + 101√5)/4617</td></tr>
+<tr><td>O → PD</td><td class="n">20</td><td>每个正六边形上的低棱锥</td><td class="n">(−22 + 10√5)/81</td></tr>
+<tr><td>PD → I</td><td class="n">60</td><td>不规则楔，5 个顶点，6 个三角形</td><td class="n">(−6560 + 2936√5)/513</td></tr>
+<tr><td>I → RT</td><td class="n">20</td><td>正二十面体每个面上的三棱锥</td><td class="n">(−796 + 356√5)/3</td></tr>
+<tr><td>RT → D·φ³</td><td class="n">30</td><td>每个菱形上的屋顶</td><td class="n">200 − 1336√5/15</td></tr></table>
+<ul>
+<li>松端（浮点）：RT 可增大 ×1.894，内层 D 可增大 ×1.232。紧嵌套：内层 D × (11/18 + 5√5/18)，外层 × (5 − 2√5)；内切球半径 0.495、0.567、0.623、0.653、0.714、0.764、0.898；外层 25.2 → 1.9；柱 (−35/729 + 71√5/2187)，楔 (−7352/3 + 1096√5)；线性比 1.8146（平方为 49815/2 − 22275√5/2）。</li>
+<li>作为实心体的星形：密度 3、3、7、7。大星形十二面体：体积为 3 个正二十面体；60 个四面体（188/3 − 28√5）与 60 个五棱锥（112/3 − 248√5/15）；尖点/谷点半径² 之比 3φ³/√5。</li>
+<li>内部间隙：六角化二十面体 × (9 − 3√5) = 6/φ²，大斜方截半二十面体 × 2/15；余隙 5/9 + 2√5/9 = √5·φ³/9 ≈ 1.0525；块体 12 个、120 个，以及两类帽共 50 个。最近的锁定：筝形六十面体中的小斜方截半二十面体，余隙 62/123 + 137√5/615 ≈ 1.00218。</li>
+<li>框架：顶点半径² 10 + 2√5，棱中点半径² 4；长棱为正十二面体棱的 φ³ 倍（1 + 2φ = φ³）。</li>
+<li>Hafner 2007：在同一棱长上，我们的四面体的体积恰为他的 φ² 倍。</li>
+</ul>
+<p><b>核验与来源。</b>geomcheck.py（框架、两种嵌套顺序、先核验已知情形、按对称性分类、精确关卡、标签）；所有脚本均已重新运行。Firsching 2015；Croft 1980；Takakura et al. 2007；Twarock, Valiunas and Zappa 2015；Dechant et al. 2014；Kepler 1619；Poinsot 1810；Hafner 2007。脚本：studies/2026-10-16-polar-dharma、-flip-test。</p>

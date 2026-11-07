@@ -1,0 +1,19 @@
+<h2>A.39 DICTO OG家族 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23488944）</span></h2>
+<p class="told">讲述见第 I 卷第4章 · 循环。</p>
+<p>框架：外接球半径为 φ 的 ID ⊂ OG ⊂ RT。T(S) = {x : v·x ≤ v·v}；P(S) = 垂足点 (d/n·n) n 的凸包。对全部四个下行步，T(P(S)) = S（精确）；P(KRE) 是 OG 其余 90 个顶点的凸包。</p>
+<table><tr><th>立体</th><th>顶点</th><th>面</th><th>棱</th><th>体积</th><th>顶点半径</th></tr>
+<tr><td>OG</td><td class="n">102</td><td>60 个筝形 + 20 个正六边形</td><td class="n">180</td><td class="n">(525 + 185√5)/57 ≈ 16.4679</td><td class="n">1.6180–1.6873</td></tr>
+<tr><td>KRE</td><td class="n">92</td><td>30 个菱形 + 60 个筝形</td><td class="n">180</td><td class="n">(920 + 60√5)/57 ≈ 18.4941</td><td class="n">1.6520–1.7321</td></tr>
+<tr><td>PHE</td><td class="n">180</td><td>12 个正五边形 + 20 个正六边形 + 60 个六边形</td><td class="n">270</td><td class="n">(95875 − 1560√5)/4617 ≈ 20.0101</td><td class="n">1.7046–1.7427</td></tr>
+<tr><td>TPP</td><td class="n">212</td><td>60 个三角形 + 120 个五边形（两类）</td><td class="n">390</td><td class="n">≈ 22.3366</td><td class="n">1.7220–1.8104</td></tr>
+<tr><td>DPHP</td><td class="n">270</td><td>12 个等边十边形 + 20 个正六边形 + 120 个五边形</td><td class="n">420</td><td class="n">≈ 23.5434</td><td class="n">1.7995–1.8095</td></tr>
+<tr><td>TPH</td><td class="n">80</td><td>120 个等腰三角形 + 12 个正五边形</td><td class="n">210</td><td class="n">(10437930 + 3959694√5)/109³ ≈ 14.8970</td><td class="n">1.5115–1.5848</td></tr>
+<tr><td>TQH</td><td class="n">132</td><td>60 个三角形 + 60 个四边形 + 20 个正六边形</td><td class="n">270</td><td class="n">(770805045 + 337172409√5)/(2⁴·41³·109) ≈ 12.6853</td><td class="n">1.4885–1.5023</td></tr>
+<tr><td>TQP</td><td class="n">140</td><td>60 个三角形 + 30 个菱形 + 60 个四边形 + 12 个正五边形</td><td class="n">300</td><td class="n">≈ 11.6524</td><td class="n">1.4172–1.4931</td></tr>
+<tr><td>TQHD</td><td class="n">162</td><td>120 个三角形（两类）+ 60 个四边形 + 20 个正六边形</td><td class="n">360</td><td class="n">≈ 10.4208</td><td class="n">1.3493–1.3948</td></tr></table>
+<ul>
+<li>KRE 菱形边长² 29/18 − √5/2（≈ 0.7022）；筝形短边² (1505 + 315√5)/6498（≈ 0.5831）。PHE 五边形边长² 35/18 − 5√5/6；正六边形边长² 1/27（√3/9）。TPH 五边形边长² (4014 + 378√5)/109²。每个三角形都是等腰三角形。</li>
+<li>壳层（余量 0）：OG ⊂ KRE（筝形上 60 个 (230 + 15√5)/37278 ≈ 0.00707，六边形上 20 个 (429 − 145√5)/1308 ≈ 0.08010；间隙 ≈ 2.02617）；KRE ⊂ PHE（菱形上 30 个 235/2916 − √5/36 ≈ 0.01848，筝形上 60 个 ≈ 0.01603；≈ 1.51602）；PHE ⊂ TPP（≈ 0.00218，≈ 0.03805，409/476766 ≈ 0.000858；≈ 2.32644）；TPH ⊂ OG（≈ 0.006748，≈ 0.06343；≈ 1.57092）；TQH ⊂ TPH（≈ 0.02937，≈ 0.007311，≈ 0.000550；≈ 2.21176）；TQHD ⊂ TQP（≈ 0.000016，0.003318，0.000090，0.05131；≈ 1.23162）。</li>
+<li>断裂：60 个 TPP 顶点位于 DPHP 之外，至多 0.0185（DPHP 有 212 − 60 = 152 个面）；60 个 TQP 顶点位于 TQH 之外，至多 0.0058。圆度离散：DPHP 0.56%，OG 4.28%，TPP 5.13%。</li>
+</ul>
+<p><b>来源与脚本。</b>反垂足与垂足构造；Smarandache 2010；Goldberg GP(3,0)；菱形九十面体。检索：80 种藏书资料与网络，2026年10月20日。脚本：exact_upward.py、exact_downward.py、family_facts.py（提交 058c2fb）。</p>

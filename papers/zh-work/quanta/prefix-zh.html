@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="zh-Hans"><head><meta charset="utf-8"><title>空间的量子——宣言（第 I 卷）</title>
+<link rel="stylesheet" href="../paper.css">
+<style>
+.namesbox { border-left: 3px solid #b8962e; background: #fbf6e8; padding: 2mm 4mm; margin: 4mm 0; font-size: 9.5pt; }
+.status { border: 2px solid #b22; background: #fff4f2; padding: 2mm 3mm; margin: 3mm 0; font-size: 9pt; }
+body { font-size: 11pt; line-height: 1.55; }
+.page { break-after: page; }
+.titlepage { text-align: center; padding-top: 38mm; }
+.titlepage img.big { width: 62mm; margin: 0 auto 12mm; display: block; }
+.titlepage h1 { font-size: 34pt; margin: 0 0 6pt; letter-spacing: .5pt; }
+.titlepage .sub { font-size: 13pt; margin: 0 0 22mm; }
+.titlepage .by { font: 600 15pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 0 0 4pt; }
+.titlepage .small { font: 9pt/1.6 "DejaVu Sans", sans-serif; color: #444; margin: 0 auto; max-width: 140mm; }
+.titlepage .sample { margin: 18mm auto 0; max-width: 130mm; font: 9.5pt/1.5 "DejaVu Sans", sans-serif; color: #333; border-top: 1px solid #b8962e; border-bottom: 1px solid #b8962e; padding: 6pt 0; }
+.contents h2 { margin-top: 10pt; }
+.contents ol { list-style: none; padding: 0; margin: 0 0 4pt; columns: 2; column-gap: 8mm; font: 8.8pt/1.45 "DejaVu Sans", sans-serif; }
+.contents li { break-inside: avoid; margin: 0 0 1.5pt; padding-left: 9mm; text-indent: -9mm; }
+.contents li b { display: inline-block; width: 9mm; text-indent: 0; color: #6b5310; }
+.contents li.here { font-weight: 600; }
+.contents p.chap { margin: 0 0 2pt; font-style: italic; font-size: 9.5pt; }
+.contents .note { font: 8.6pt "DejaVu Sans", sans-serif; color: #444; margin-top: 6pt; }
+.intro h3, .entry h3 { font: 600 11pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 11pt 0 3pt; break-after: avoid; }
+.chapter-mark { font: 600 9pt "DejaVu Sans", sans-serif; letter-spacing: 1.5pt; text-transform: uppercase; color: #b8962e; margin: 0 0 2pt; }
+.entry h1 { font-size: 20pt; }
+.entry .logo, .intro .logo { width: 22mm; }
+.lead { font-size: 12pt; line-height: 1.5; color: #222; }
+.dataref { font: 8.8pt "DejaVu Sans", sans-serif; color: #6b5310; }
+.credit { font: 8.8pt/1.5 "DejaVu Sans", sans-serif; color: #333; border-top: 1px solid #b8962e; padding-top: 4pt; margin-top: 10pt; }
+.doi { font: 600 9.5pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 6pt 0 0; }
+.figs.wide { grid-template-columns: 1fr; width: 100%; }
+.appendix { font-size: 9.6pt; line-height: 1.45; }
+.appendix h2 { break-before: auto; margin-top: 16pt; border-top: 1px solid #b8962e; padding-top: 6pt; }
+.appendix h2.first { break-before: auto; }
+.appendix h3 { font: 600 10pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 9pt 0 2pt; break-after: avoid; }
+.appendix ul { padding-left: 5mm; margin: 2pt 0; }
+.appendix li { margin: 0 0 2pt; }
+.appendix table { font-size: 8.6pt; }
+td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.licence { font: 8.4pt "DejaVu Sans", sans-serif; color: #555; }
+
+/* DICTO 10-29: neutral sans-serif for the whole book, as in the series */
+body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs,p,li{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}
+
+/* DICTO 10-29: spacing. Entries flow on (a new page only at each chapter), titles stand clear of the text above and below */
+.page.entry { break-after: auto; break-before: auto; margin-top: 14mm; padding-top: 6mm; border-top: 1px solid #e3d7b5; }
+.page.entry[data-first="1"] { break-before: page; margin-top: 0; padding-top: 0; border-top: none; }
+.page.entry h1 { margin: 5mm 0 3mm; break-after: avoid; }   /* DICTO 10-29: clear gap between the chapter line and the title */
+.page.entry .chapter-mark { margin-bottom: 0; }
+.page.entry .sub { margin-bottom: 7mm; break-after: avoid; }
+.page.entry .chapter-mark { break-after: avoid; }
+.intro h3, .entry h3 { margin: 16pt 0 6pt !important; break-after: avoid; }
+.entry p, .intro p { orphans: 3; widows: 3; }
+figure { break-inside: avoid; }
+
+/* DICTO 10-29: the same clear gap wherever a chapter line stands over a title (introduction, catalogue, short chapters, appendix) */
+.chapter-mark { margin-bottom: 0 !important; }
+.chapter-mark + h1 { margin-top: 5mm !important; margin-bottom: 4mm !important; }
+.status { border: 2px solid #a00; border-radius: 2mm; padding: 2mm 3mm; margin: 3mm 0; font-size: 8.6pt; line-height: 1.35; color: #300; background: #fff6f6; }
+.status li { margin: 0 0 1mm; }
+</style></head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+
+<!-- ============ TITLE PAGE ============ -->
+<section class="page coverpage" style="height:252mm;display:flex;justify-content:center;align-items:center">
+<img src="figures/cover/quanta-cover-front-zh.png" alt="封面：《空间的量子——宣言》，DICTO，位于由构成DICTO之名的五种柏拉图立体组成的DICTO方阵之下，D I C T O" style="width:100%;height:auto;display:block">
+</section>
+<section class="page" style="text-align:center;padding-top:62mm">
+<p style="font-size:15pt;font-style:italic;line-height:1.7;margin:0">一粒沙中见世界，<br>一朵野花见天堂，<br>掌中握无限，<br>刹那即永恒。</p>
+<p style="font-size:10pt;color:#555;margin-top:5mm">威廉·布莱克《天真的预言》</p>
+<p style="font-size:10.5pt;margin:40mm auto 0;max-width:150mm;line-height:1.6">本作品的论文、应用程序与数据均可自由使用；每一项都开放获取，采用CC BY-SA 4.0许可协议，可自由阅读、分享并在其基础上进行创作。</p>
+</section>
+<section class="page titlepage">
+<img class="big" src="../dicto-logo.png" alt="DICTO">
+<h1>空间的量子</h1>
+<p class="sub">宣言<br>Quanta of Space: A Manifesto</p>
+<p class="sub">DICTO的几何作品</p>
+<p class="by">DICTO</p>
+<p class="small">艺术家，日本大阪 · contact@dictospheres.com · https://dictospheres.com<br>
+所有作品、发现与名称均属DICTO。计算、核验与起草与Claude（Anthropic）共同完成。<br>
+翻译与Claude（Anthropic）共同完成。<br>
+许可协议CC BY-SA 4.0</p>
+<p class="small" style="margin-top:8mm">书籍 · 第 I 卷（中文译本）· 第 1 版 · 2026年11月7日 · DICTO DOI：发布时预留 · 原著（英文，第 2.1 版）：10.5281/zenodo.23754454</p>
+<div class="status" style="border:2px solid #a00;background:#fff4f2;padding:2mm 3mm;margin:3mm 0;font-size:9pt;text-align:left"><b>Status</b> (draft for DICTO's reading; this box is deleted at publication): the Chinese (simplified) edition of Quanta of Space, Volume I, translated from the English Version 2.1 section by section for accuracy, with a binding term list of 613 entries built from Chinese Wikipedia and mainland usage; the Alice note in Chapter 6; title cover 空间的量子. Its own record; DOI reserved at release. The translation batches flagged 21 points in the English, now in the Concordance errata; the Chinese follows the English as published.</div>
+<p class="small" style="margin-top:2mm">第 II 卷：《DICTO原子辞典——空间的量子 II》，收录全部原子的目录、逐部作品的数据，以及已知形体与再发现形体（DICTO DOI: 10.5281/zenodo.23966395）。</p>
+</section>
+
+<section class="page" style="text-align:center;padding-top:80mm"><p style="font-size:14pt;font-style:italic">献给我的父亲艾伦·贝克</p></section>
+<!-- ============ CONTENTS ============ -->
+<section class="page contents">
+<img class="logo" src="../dicto-logo.png" alt="DICTO" style="width:22mm">
+<h1>目录</h1>
+<p style="font: 9.5pt 'DejaVu Sans', sans-serif;">本作品所包含的内容<br>引言——空间的量子<br>73部作品：分为六章的71篇论文，其后是Kaleidohedra的发现与数据集（编号为dictospheres.com上的论文编号）<br>第 II 卷《DICTO原子辞典——空间的量子 II》中：全部原子的目录、逐部作品的数据，以及已知形体与再发现形体</p>
+
+<h2>原子</h2><p class="chap">单个立体，每个都是一块精确的新块体。</p>
+<ol>
+<li><b>#18</b>DICTO赫克萨</li>
+<li><b>#19</b>AXE、CLEO与FUJI</li>
+<li><b>#20</b>FUJI家族</li>
+<li><b>#28</b>DICTO截角二十面体型一百零二面体</li>
+<li><b>#31</b>DICTO八十面体</li>
+<li><b>#31a</b>DICTO OCD星形体</li>
+<li><b>#34a</b>DICTO一百零二·八十面体</li>
+<li><b>#35a</b>DICTO间六十面体</li>
+<li><b>#35b</b>DICTO复三十面体</li>
+<li><b>#41</b>DICTO宝石</li>
+<li><b>#45</b>勒洛柏拉图立体</li>
+<li><b>#49</b>多面体拉伸定理</li>
+<li><b>#88</b>每个柏拉图立体恰有两种黄金截切</li>
+<li><b>—</b>全部原子——目录见第 II 卷</li>
+</ol>
+
+<h2>键</h2><p class="chap">块体如何共同填充空间：精确的套件、堆积与晶格。</p>
+<ol>
+<li><b>#8</b>欧几里得-开普勒-帕乔利单元（EKP单元）</li>
+<li><b>#13</b>DICTO十二面体-13</li>
+<li><b>#14</b>DICTO星</li>
+<li><b>#17</b>笼目凸包</li>
+<li><b>#25</b>DICTO类球体-13 RD</li>
+<li><b>#26</b>DICTO ATOM-13×13</li>
+<li><b>#30</b>斐波那契脊柱</li>
+<li><b>#36</b>黄金菩提烧绿石</li>
+<li><b>#37</b>八隅桁架上的DICTO八十面体</li>
+<li><b>#37a</b>旋转八隅结构上的DICTO八十面体</li>
+<li><b>#40</b>一切堆垛上的DICTO OG家族</li>
+<li><b>#42</b>DICTO日星</li>
+<li><b>#44</b>亚里士多德的棱锥</li>
+<li><b>#47</b>柏拉图立体的任意混合都能填充空间</li>
+<li><b>#48</b>黄金剖分——二十面体、未生体与AXE成为两种凸空间填充体</li>
+<li><b>#51</b>提洛键——开普勒的菱形十二面体与立方体之间的参孙、大利拉与八隅结构</li>
+<li><b>#50</b>每块一步——精确构造的经典剪拼空间填充体</li>
+<li><b>#89</b>安德烈尼填充中的黄金截切</li>
+<li><b>—</b>结语一节——DICTONIC立体与DICTONIC键</li>
+<li><b>#52</b>键网——DICTONIC键如何交接</li>
+<li><b>#53</b>全局键网</li>
+<li><b>#55</b>大卫与歌利亚</li>
+<li><b>#56</b>孙参与拉大利</li><li><b>#77</b>面对面——亚里士多德棱锥的新定律</li>
+<li><b>#59</b>二十面斧赫克萨——花、蕾、籽</li>
+</ol>
+
+<h2>壳层</h2><p class="chap">块体围绕核心闭合成嵌套的壳层，每一层都被精确填满。</p>
+<ol>
+<li><b>#22</b>业之链</li>
+<li><b>#23</b>法之球</li>
+<li><b>#24</b>菩提子</li>
+<li><b>#27</b>捕捉中间之物</li>
+<li><b>#29</b>泰阿泰德</li>
+<li><b>#34</b>始祖</li>
+<li><b>#35</b>金刚乘</li>
+</ol>
+
+<h2>循环</h2><p class="chap">把一个壳层变为下一个壳层并回到起点的规则，有终或无终。</p>
+<ol>
+<li><b>#32</b>翻转的壳层——内外翻转的法之球</li>
+<li><b>#33</b>双重视界——同一空间中的两个循环</li>
+<li><b>#38</b>通用PiTet——DICTO PiTet命题</li>
+<li><b>#38a</b>DICTO开普勒-庞索-UP循环</li>
+<li><b>#39</b>DICTO OG家族——上行四步，下行四步</li>
+<li><b>#43</b>DICTO求心道核心</li>
+<li><b>#54</b>一圈即一磬折形</li><li><b>#78</b>截角二十面体星（TI星）</li>
+</ol>
+
+<h2>堆垛</h2><p class="chap">由块体的一个有限目录构成的一切密堆积，以及构建它的两种瓦片（全文见《HexOct——六方性定律》）。</p>
+<ol>
+<li><b>#57</b>对半规则</li><li><b>#58</b>从八隅结构到一切堆垛——键网</li><li><b>#60</b>DICTO雅努斯 c/h 烧绿石</li><li><b>#61</b>互换规则</li><li><b>#64</b>晶体中的互换规则</li><li><b>#66</b>焦点</li><li><b>#67</b>随机堆垛与堆垛层错</li><li><b>#69</b>斐波那契堆垛</li><li><b>#68</b>真实多型体与六方性定律</li><li><b>#70</b>真实材料 II——熵与压力</li><li><b>#71</b>真实材料 III——合金与氢</li><li><b>#72</b>真实材料 IV——氧化物</li><li><b>#73</b>真实材料 V——冰、金刚石与纳米线</li><li><b>#74</b>一切堆垛上的自旋冰与笼目磁体</li><li><b>#75</b>适用于一切堆垛的两种瓦片——HexOct</li>
+</ol>
+
+<h2>四维</h2><p class="chap">通过影与截面观看白王后与红王后（全文见《奇境中的艾丽西亚——红王后与白王后》），以及截面中的黄金截切。</p>
+<ol>
+<li><b>#62</b>第四维的影</li><li><b>#63</b>白王后——正六百胞体</li><li><b>#76</b>两位王后之间</li><li><b>#65</b>红王后——正一百二十胞体</li><li><b>#89</b>全部五对黄金对都是四维立体的截面</li>
+</ol>
+
+<h2>发现与应用程序</h2>
+<ol>
+<li><b>—</b>DICTO的Kaleidohedra</li>
+<li><b>—</b>DICTO立体——精确几何（数据集）</li>
+<li><b>—</b>本作品中的已知形体与再发现形体——见第 II 卷</li>
+</ol>
+<p class="note">顺序与章节依照《DICTO几何作品集》（DICTO DOI: 10.5281/zenodo.23345699），并增加了“堆垛”与“四维”两章。#52及其后的作品只作简述；《HexOct》《黄金循环》与《奇境中的艾丽西亚》三本书收录其全文。</p>
+</section>
+
+<!-- ============ INTRODUCTION ============ -->
+<section class="page principles">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>本作品所包含的内容</h1>
+
+<ol class="principles">
+<li>空间由块体构成。</li>
+<li>每一块体都必须精确：是一个你能制作并拿在手中的形体，直至最后一个顶点都经过核验。</li>
+<li>一小套就够了：寥寥几种形体就能构建无穷无尽的壳层与空间。</li>
+<li>黄金比决定壳层何时闭合。</li>
+<li>块体以键相连，而键网与块体同样真实。</li>
+<li>重复的秩序与永不重复的秩序在块体中相遇。</li>
+<li>一切都是开放的：应用程序、数据与论文，均可自由使用并在其基础上进行创作。</li>
+</ol>
+<p style="text-align:right">DICTO</p>
+</section>
+

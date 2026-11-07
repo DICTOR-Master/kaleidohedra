@@ -1,0 +1,21 @@
+<h2>A.40 一切堆垛上的DICTO OG家族 <span style="font-weight:400">（DICTO DOI: 10.5281/zenodo.23490114）</span></h2>
+<p class="told">讲述见第 I 卷第2章 · 键。</p>
+<p>框架：正八面体 |x| + |y| + |z| ≤ R，R = 2φ/3；晶胞 (32 + 16√5)/27；层 (2k − 1)R ≤ x + y + z ≤ (2k + 1)R。步骤 c（平移）与 h（关于共享平面的镜像）；Jagodzinski 记号。</p>
+<p><b>孪晶规则，证明。</b>关于过中心的平面的镜像 M 等于 −H（反演与绕 n 的半周旋转 H 的复合）。由 S = −S，得 M(S) = H(S)；H = T⁶⁰∘T¹²⁰ 且 T¹²⁰(S) = S，故 H(S) = T⁶⁰(S)。<b>嵌合规则，证明。</b>各层是互不相交的板层；每一层都是参考层经平移或镜像所得，后者给出转过 60° 的立体。</p>
+<table><tr><th>立体</th><th>在其正八面体内</th><th>在其层内</th><th>适配</th><th>所占空间比例</th></tr>
+<tr><td>OG</td><td>是</td><td>是</td><td>一切堆垛</td><td class="n">1025/114 − 145√5/38 ≈ 45.89%</td></tr>
+<tr><td>OCD星形体</td><td>是</td><td>是</td><td>一切堆垛</td><td class="n">(1208 − 534√5)/27 ≈ 51.63%</td></tr>
+<tr><td>DICTO OTT</td><td>是</td><td>是</td><td>一切堆垛</td><td class="n">176/3 − 26√5 ≈ 52.89%</td></tr>
+<tr><td>DBT</td><td>否</td><td>是</td><td>一切堆垛</td><td class="n">493/6 − 73√5/2 ≈ 55.02%</td></tr>
+<tr><td>黄金包络</td><td>否</td><td>否</td><td>仅八隅结构</td><td class="n">90 − 40√5 = 10/φ⁶ ≈ 55.73%</td></tr></table>
+<p>全部中心对称，具有绕 (1,1,1) 的 120° 旋转，且没有跨层的镜面（OCD星形体的对称性为浮点结果）。黄金包络在 h 平面处的重叠恰为 (−88 + 40√5)/81 ≈ 0.017811（取代 #37a 的浮点值 0.0175），即 DBT 切去的两个尖端。DBT：在 cc、ch、hc、hh 下均无重叠。</p>
+<table><tr><th>多型体</th><th>词</th><th>堆积</th><th>f</th><th>帽块</th><th>孪晶帽块</th><th>正四面体</th><th>双锥</th></tr>
+<tr><td>3C（八隅结构）</td><td>c</td><td>ABC</td><td class="n">0</td><td class="n">8</td><td class="n">0</td><td class="n">2</td><td class="n">0</td></tr>
+<tr><td>2H（旋转八隅结构）</td><td>h</td><td>AB</td><td class="n">1</td><td class="n">6</td><td class="n">1</td><td class="n">0</td><td class="n">1</td></tr>
+<tr><td>4H</td><td>hc</td><td>ABCB</td><td class="n">1/2</td><td class="n">7</td><td class="n">1/2</td><td class="n">1</td><td class="n">1/2</td></tr>
+<tr><td>6H</td><td>hcc</td><td>ABCACB</td><td class="n">1/3</td><td class="n">22/3</td><td class="n">1/3</td><td class="n">4/3</td><td class="n">1/3</td></tr>
+<tr><td>9R</td><td>hhc</td><td>ABACACBCB</td><td class="n">2/3</td><td class="n">20/3</td><td class="n">2/3</td><td class="n">2/3</td><td class="n">2/3</td></tr>
+<tr><td>15R</td><td>hcchc</td><td>ABCACBCABACABCB</td><td class="n">2/5</td><td class="n">36/5</td><td class="n">2/5</td><td class="n">6/5</td><td class="n">2/5</td></tr>
+<tr><td>斐波那契</td><td>c → ch, h → c</td><td>永不重复</td><td class="n">(3 − √5)/2</td><td class="n">5 + √5</td><td class="n">(3 − √5)/2</td><td class="n">√5 − 1</td><td class="n">(3 − √5)/2</td></tr></table>
+<p>每个晶胞：f 个孪晶帽块，f 个双锥，8 − 2f 个帽块（每种手性 4 − f 个），2 − 2f 个正四面体，一个 OG。斐波那契词：h 所占比例趋于 1/φ²（前 6765 个字母中恰有 2584 个）；孪晶面相隔 2 层或 3 层。</p>
+<p><b>核验与来源。</b>polytype_exact.py（29 PASS，精确；有理 60° 旋转 (1,0,0) → (2/3, 2/3, −1/3)）；jewel_symmetry.py（浮点）。已知：这些堆垛（Conway、Jiao and Torquato 等）、Jagodzinski、Ramsdell、IUCr 记号、尖晶石律、斐波那契词与纯点衍射。检索：80 种藏书资料与网络，2026年10月20日。研究提交 b7c6307。</p>
