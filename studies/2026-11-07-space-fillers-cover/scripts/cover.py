@@ -45,7 +45,7 @@ def pieces(R):
         P0, hull = cell(i); kind = T[k] if role == 'S' else T[k] + T[(k + 1) % n]
         faces = {}
         for simp, eq in zip(hull.simplices, hull.equations): faces.setdefault(tuple(np.round(eq, 6)), set()).update(simp)
-        for i_, j_ in itertools.product(range(-4, 5), repeat=2):
+        for i_, j_ in itertools.product(range(-int(2 * R) - 3, int(2 * R) + 4), repeat=2):
             shift = i_ * a1 + j_ * a2; c = P0.mean(0) + shift
             if hexd(c - AX) > R: continue
             P = P0 + shift; F = []
@@ -63,7 +63,7 @@ def rot(a, b, c):
     Ry = np.array([[np.cos(b), 0, np.sin(b)], [0, 1, 0], [-np.sin(b), 0, np.cos(b)]])
     Rz = np.array([[np.cos(c), -np.sin(c), 0], [np.sin(c), np.cos(c), 0], [0, 0, 1]])
     return Rz @ Ry @ Rx
-def render(PC, M, box, SS):
+def render(PC, M, box, SS, letters=None):
     """Z-buffer painting of the pieces PC under the linear view M (world -> screen x right, y up, z towards the viewer),
     scaled to fit box = (x0, y0, x1, y1) of the cover; returns rgb, alpha (cover size of the box) and the map world -> pixel."""
     allv = np.vstack([f[0] for F, _, _ in PC for f in F]) @ M.T
@@ -71,7 +71,7 @@ def render(PC, M, box, SS):
     s = min(bw / (hi[0] - lo[0]), bh / (hi[1] - lo[1])); ox = box[0] + (bw - s * (hi[0] - lo[0])) / 2; oy = box[1] + (bh - s * (hi[1] - lo[1])) / 2
     to_px = lambda V: np.c_[ox + s * ((V @ M.T)[:, 0] - lo[0]), oy + s * (hi[1] - (V @ M.T)[:, 1])]
     Wb, Hb = int(bw) * SS, int(bh) * SS
-    zb = np.full((Hb, Wb), -np.inf, np.float32); ib = np.full((Hb, Wb), -1, np.int32); nrm, cols, pid = [], [], []
+    zb = np.full((Hb, Wb), -np.inf, np.float32); ib = np.full((Hb, Wb), -1, np.int32); nrm, cols, pid, rec = [], [], [], []
     for pi, (F, col, k) in enumerate(PC):
         for pts, nv in F:
             nn = M @ nv
@@ -88,7 +88,7 @@ def render(PC, M, box, SS):
             z = zz[0] - (nn[0] * (xx - q[0, 0]) - nn[1] * (yy - q[0, 1])) / nn[2]
             sub = zb[y0:y1, x0:x1]; win = inside & (z > sub)
             sub[win] = z[win]; ib[y0:y1, x0:x1][win] = len(nrm)
-            nrm.append(nn); cols.append(col); pid.append(pi)
+            nrm.append(nn); cols.append(col); pid.append(pi); rec.append((q, zz, nn, (x0, x1, y0, y1)))
     nrm, cols, pid = np.array(nrm), np.array(cols), np.array(pid)
     # glossy shading: key light from upper left front, a point-light highlight, faint rim from below right
     fg = ib >= 0; N = np.zeros((Hb, Wb, 3), np.float32); N[fg] = nrm[ib[fg]]; C = np.zeros((Hb, Wb, 3), np.float32); C[fg] = cols[ib[fg]]
@@ -100,6 +100,7 @@ def render(PC, M, box, SS):
     spec = np.clip(np.sum(N * Hv, -1), 0, 1) ** 30
     rgb = C * (0.32 + 0.58 * diff)[..., None] + 255 * (0.24 * spec + 0.05 * rim ** 3)[..., None]
     rgb[~fg] = GROUND
+    if letters: paint_letters(rgb, zb, ib, rec, pid, PC, M, SS, letters)
     # light edges: boundaries of the face buffer (creases, piece seams and the silhouette), widened to ~2 px
     e = np.zeros((Hb, Wb), bool); e[:, :-1] |= ib[:, :-1] != ib[:, 1:]; e[:-1] |= ib[:-1] != ib[1:]
     e = ndimage.binary_dilation(e, iterations=max(1, SS - 1))
@@ -110,6 +111,55 @@ def render(PC, M, box, SS):
     rgb = np.array(Image.fromarray(rgb).resize((int(bw), int(bh)), Image.LANCZOS), float)
     al = np.array(Image.fromarray(a8).resize((int(bw), int(bh)), Image.LANCZOS), float) / 255
     return rgb, np.clip(al, 0, 1), to_px
+def glyph_masks(ch, size=320):
+    """LED letter (DSEG14, closed as in ledtext.glyph) as ink and outline masks, cropped to the ink plus the outline."""
+    from PIL import ImageDraw, ImageFont
+    f = ImageFont.truetype('DSEG14Classic-Regular.ttf', size); pad = size // 2
+    m = Image.new('L', (size + 2 * pad, int(size * 1.4) + 2 * pad), 0); ImageDraw.Draw(m).text((pad, pad), ch, font=f, fill=255)
+    a = np.array(m) > 128; r = max(2, int(size * 0.05)); yy, xx = np.mgrid[-r:r + 1, -r:r + 1]
+    a = ndimage.binary_closing(np.pad(a, r + 2), structure=xx ** 2 + yy ** 2 <= r * r)[r + 2:-(r + 2), r + 2:-(r + 2)]
+    e = max(3, size // 16); ys, xs = np.where(a); a = a[ys.min() - e:ys.max() + e + 1, xs.min() - e:xs.max() + e + 1]
+    yy, xx = np.mgrid[-e:e + 1, -e:e + 1]; o = ndimage.binary_dilation(a, structure=xx ** 2 + yy ** 2 <= e * e) & ~a
+    return ndimage.gaussian_filter(a.astype(np.float32), 1.0), ndimage.gaussian_filter(o.astype(np.float32), 1.0)
+GLYPHS = {}
+INK, OUTLINE = np.array([248, 243, 230.]), np.array([14, 10, 7.])   # light LED glyph with a thin dark outline (reads on blue and gold)
+def paint_letters(rgb, zb, ib, rec, pid, PC, M, SS, letters):
+    """The layer's letter on every visible face of every lettered piece: upright along the stacking axis, as large as fits the face."""
+    ax = M @ np.array([0, 0, 1.0]); n_done = 0
+    l = np.array([-0.45, 0.62, 0.64]); l /= np.linalg.norm(l)
+    best = {}   # one face per piece (DICTO 11-07: "natural places, not fake"): its face most turned to the viewer, if visible
+    for fid, (q, zz, nn, bb) in enumerate(rec):
+        if letters(PC[pid[fid]]) is None: continue
+        area = abs(np.sum(q[:, 0] * np.roll(q[:, 1], -1) - np.roll(q[:, 0], -1) * q[:, 1])) / 2
+        if (ib[bb[2]:bb[3], bb[0]:bb[1]] == fid).sum() < 0.6 * area: continue   # mostly hidden by pieces in front
+        sc = nn[2] / np.linalg.norm(nn) * area ** 0.5
+        if sc > best.get(pid[fid], (-1, None))[0]: best[pid[fid]] = (sc, fid)
+    for _, fid in best.values():
+        q, zz, nn, (x0, x1, y0, y1) = rec[fid]; ch = letters(PC[pid[fid]])
+        if nn[2] < 0.22: continue
+        n_ = nn / np.linalg.norm(nn); up = ax - (ax @ n_) * n_
+        if np.linalg.norm(up) < 0.35: up = np.array([0, 1.0, 0]) - n_[1] * n_
+        up /= np.linalg.norm(up); rt = np.cross(up, n_)
+        Q = np.c_[q[:, 0], -q[:, 1], zz]; c = Q.mean(0); U = np.c_[(Q - c) @ rt, (Q - c) @ up]
+        if ch not in GLYPHS: GLYPHS[ch] = glyph_masks(ch)
+        ink, out = GLYPHS[ch]; gh, gw = ink.shape; w, h = gw / gh, 1.0
+        sg = np.sign(np.sum(U[:, 0] * np.roll(U[:, 1], -1) - np.roll(U[:, 0], -1) * U[:, 1])); t = np.inf
+        for a, b in zip(U, np.roll(U, -1, axis=0)):
+            m = sg * np.array([-(b[1] - a[1]), b[0] - a[0]])
+            for cx, cy in ((w / 2, h / 2), (-w / 2, h / 2), (w / 2, -h / 2), (-w / 2, -h / 2)):
+                mc = m @ (cx, cy)
+                if mc < 0: t = min(t, (m @ a) / mc)
+        t *= 0.78
+        if not np.isfinite(t) or t * nn[2] < 15 * SS: continue   # too small or too slanted to read: leave the face plain
+        sub = ib[y0:y1, x0:x1] == fid
+        if not sub.any(): continue
+        yy, xx = np.nonzero(sub); P = np.c_[xx + x0 + 0.5, -(yy + y0 + 0.5), zb[y0:y1, x0:x1][sub]] - c
+        u, v = P @ rt, P @ up; gx = (u / (t * w) + 0.5) * (gw - 1); gy = (0.5 - v / t) * (gh - 1)
+        ai = ndimage.map_coordinates(ink, [gy, gx], order=1, cval=0); ao = ndimage.map_coordinates(out, [gy, gx], order=1, cval=0)
+        px = rgb[y0:y1, x0:x1][sub]; px = px * (1 - 0.92 * ao[:, None]) + OUTLINE * 0.92 * ao[:, None]
+        shade = 0.42 + 0.58 * max(0.0, (nn / np.linalg.norm(nn)) @ l)   # the glyph is lit like its face (darker on faces turned away)
+        px = px * (1 - 0.95 * ai[:, None]) + INK * shade * 0.95 * ai[:, None]; rgb[y0:y1, x0:x1][sub] = px; n_done += 1
+    print('letters painted on', n_done, 'faces', flush=True)
 def put(canvas, rgb, al, x, y):
     h_, w_ = al.shape; c = canvas[y:y + h_, x:x + w_]; canvas[y:y + h_, x:x + w_] = c * (1 - al[..., None]) + rgb * al[..., None]
 def title_panel(canvas, top):
@@ -123,11 +173,17 @@ def title_panel(canvas, top):
 VIEW = {   # version: (rod apothem, view, picture box (x0, x1, max height))
     'A': (2.6, lambda: rot(np.radians(-26), 0, 0) @ rot(0, np.radians(-14), 0) @ np.array([[0, 0, 1], [1, 0, 0], [0, 1, 0]], float), (90, W - 90, 1700)),
     'B': (2.05, lambda: rot(np.radians(20), 0, 0) @ rot(0, np.radians(30), 0) @ np.array([[1, 0, 0], [0, 0, 1], [0, -1, 0]], float), (300, W - 300, 1780)),
+    'C': (float(os.environ.get('CR', 8.0)), lambda: rot(np.radians(float(os.environ.get('CA', 13))), 0, 0) @ rot(0, np.radians(30), 0) @ np.array([[1, 0, 0], [0, 0, 1], [0, -1, 0]], float), (180, W - 180, 2060)),
 }   # A: stacking axis to the right (as tower69); B: stacking axis up (in-plane x right)
 def make(version, SS=3):
     R, Mf, (bx0, bx1, bh) = VIEW[version]; M = Mf(); PC = pieces(R); can = np.ones((Hc, W, 3)) * np.array(GROUND, float)
     TOP = 2200   # picture area (65 %)
-    rgb, al, to_px = render(PC, M, (bx0, 0, bx1, bh), SS)
+    letters = None
+    if version == 'C':   # the fat pillar: hidden inner pieces dropped (speed only); every ball piece carries its layer's letter
+        cen = lambda F: np.vstack([f[0] for f in F]).mean(0)
+        PC = [p for p in PC if hexd(cen(p[0]) - AX) > R - 1.8 or p[2] >= n - 3]
+        letters = lambda p: T[p[2]].upper() if tuple(p[1]) in (tuple(BLUE_C), tuple(GOLD_H)) else None
+    rgb, al, to_px = render(PC, M, (bx0, 0, bx1, bh), SS, letters)
     ys, xs_ = np.where(al > 0.01); y0, y1 = ys.min(), ys.max() + 1; rgb, al = rgb[y0:y1], al[y0:y1]
     # the basis: the layer-type word, one LED letter per layer, in the order of the layers shown
     lsz = 108 if version == 'A' else 104
@@ -142,15 +198,17 @@ def make(version, SS=3):
         xs = xs + np.mean(off)
     else:                # the foundation line under the standing tower, first layer (the bottom one) on the left
         xs = list(W / 2 + (np.arange(n) - 7.5) * 116)
+    print(version, 'picture', al.shape[1] if False else int(np.ptp(xs_)) + 1, 'x', y1 - y0, 'px', flush=True)
     gs = [L.word(T[k].upper(), lsz, lambda ch: BLUE_C if ch == 'C' else GOLD_H) for k in range(n)]
-    gap = 70; wh = max(g[1].shape[0] for g in gs); group = (y1 - y0) + gap + wh
-    top = int((TOP - group) / 2) + 50; assert top >= 60, ('picture too tall', top)
+    if version == 'C': gs = []   # DICTO 11-07: no word underneath ("those that know know"); the letters live on the pieces
+    gap = 70 if gs else 0; wh = max([g[1].shape[0] for g in gs] + [0]); group = (y1 - y0) + gap + wh
+    top = int((TOP - group) / 2) + (50 if gs else 30); assert top >= 60, ('picture too tall', top)
     put(can, rgb, al, bx0, top)
     for g, x in zip(gs, xs): L.paste(can, g, x, top + (y1 - y0) + gap + (wh - g[1].shape[0]))
     title_panel(can, TOP + 40)
     fn = f'../space-fillers-cover-{version}.png'; Image.fromarray(np.clip(can, 0, 255).astype(np.uint8)).save(fn); print('saved', fn, 'rod pieces', len(PC), flush=True)
 if __name__ == '__main__':
-    vs = sys.argv[1:] or ['A', 'B']
+    vs = sys.argv[1:] or ['A', 'B', 'C']
     print('layer word', ''.join(T), 'from', WORD, flush=True)
     for v in vs: make(v)
     ok = all(os.path.exists(f'../space-fillers-cover-{v}.png') and Image.open(f'../space-fillers-cover-{v}.png').size == (W, Hc) for v in vs)
