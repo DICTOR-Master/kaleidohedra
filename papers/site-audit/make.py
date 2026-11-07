@@ -16,6 +16,7 @@ FULL={'truncat':'truncated','rhombohedr':'rhombohedron','rhombic dodecahedr':'rh
 for r in rows: r['jargon']=sorted({FULL.get(j,j) for j in r['jargon']})
 cj=Counter(j for r in rows for j in r['jargon'] if j not in ('Proved','proved')).most_common(20)
 alts=re.findall(r'alt="([^"]*)"',body); FA=re.compile(r'[√φπ⊗ℤ²³μ]|\d+/\d+|\bcos\b|\bsin\b')
+assert not FA.search('icosahedron Icosaxes dodecahedron'), 'formula check must not match words'  # guard 11-08: cos inside icosahedron
 na=len(alts); naf=sum(bool(FA.search(a)) for a in alts); nae=sum(a=='' for a in alts)
 li=lambda xs:''.join(f'<li>{x}</li>' for x in xs)
 toprows=''.join(f'<tr><td>{html.escape(r["title"])}</td><td>{r["formula"]}</td><td>{html.escape(", ".join(r["jargon"]))}</td></tr>' for r in top)
