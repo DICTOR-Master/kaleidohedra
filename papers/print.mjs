@@ -13,6 +13,11 @@ import fs from 'node:fs';
   const hits = [...txt.matchAll(BAN)].map(m => txt.slice(Math.max(0, m.index - 40), m.index + 50).replace(/\s+/g, ' '));
   const raw = fs.readFileSync(path.join(here, dir, 'paper.html'), 'utf8');
   if (/^DRAFT/i.test(path.basename(pdf)) && !/class="status/.test(raw) && !process.env.ALLOW_BANNED) { console.error('DRAFT without the red status box - not printed'); process.exit(3); }
+  // NATIVE-REVIEW GUARD (11-07): a non-English book prints only as DRAFT-… until native-review.json says verdict ok.
+  const lang = (raw.match(/<html[^>]*lang="([^"]+)"/) || [])[1] || 'en';
+  if (!/^en/i.test(lang) && !/^DRAFT/i.test(path.basename(pdf))) { const f = path.join(here, dir, 'native-review.json');
+    let ok = false; try { const j = JSON.parse(fs.readFileSync(f, 'utf8')); ok = j.verdict === 'ok' && !!j.reviewer; } catch (e) {}
+    if (!ok) { console.error(`GUARD: lang ${lang} needs ${f} with a native reader's verdict ok - print it as DRAFT-… instead`); process.exit(5); } }
   if (hits.length && !process.env.ALLOW_BANNED) { console.error('BANNED PHRASE — not printed:\n  ' + hits.join('\n  ')); process.exit(2); } }
 const b = await chromium.launch();
 const page = await b.newPage();
