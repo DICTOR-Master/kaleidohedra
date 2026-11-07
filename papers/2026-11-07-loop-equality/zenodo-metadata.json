@@ -1,0 +1,92 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "access_right": "open",
+ "subjects": [
+  {
+   "term": "MSC2020 05C38: Paths and cycles",
+   "identifier": "https://zbmath.org/classification/?q=cc:05C38",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 05C81: Random walks on graphs",
+   "identifier": "https://zbmath.org/classification/?q=cc:05C81",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 82B20: Lattice systems (Ising, dimer, Potts, etc.) and systems on graphs arising in equilibrium statistical mechanics",
+   "identifier": "https://zbmath.org/classification/?q=cc:82B20",
+   "scheme": "url"
+  }
+ ],
+ "version": "1",
+ "publication_date": "2026-11-07",
+ "title": "Every Site Hears the Same: the Loop Equality Is a Theorem",
+ "description": "<p><b>Theorem 1 (the Loop Equality, DICTO's conjecture in #74).</b> On the tetrahedral network of every close-packed stacking (diamond 3C, lonsdaleite 2H, the polytypes 4H, 6H, 9R and every other stacking, periodic or not), at every site, the number of closed non-backtracking loops of each length m equals the number for diamond: 24, 48, 480, 3432, 25704, ... for m = 6, 8, 10, 12, 14, ..., given by the Ihara–Bass formula from the Domb numbers. In Fourier space over the layers the stacking only decides whether a step across a bond layer uses a triangle of bond directions or its point mirror, and a closed walk crosses every bond layer as often upwards as downwards, so the choice cancels; non-backtracking loops are reduced to ordinary walks between the two ends of a bond. Corollaries: the same holds on the pyrochlore network of every stacking (spin ice) and on the sphere packing of every close-packed stacking. The closed-walk part was known (Nagle 1966 for ice; Thorpe 1972 for all periodic polytypes); new are the loops, the statement at every single site, aperiodic stackings and the two corollaries. Exact integer counts on 42 stackings, including 30 random ones, Fibonacci approximants and the aperiodic Fibonacci stacking, agree at all 686 sites tested.</p><p>DICTO found the Loop Equality in the loop counts of #74 and conjectured it there for all lengths. Proof, checks and drafting with Claude (Anthropic).</p>",
+ "keywords": [
+  "DICTO",
+  "Loop Equality",
+  "non-backtracking walks",
+  "Ihara zeta function",
+  "closed walks",
+  "diamond",
+  "lonsdaleite",
+  "polytypes",
+  "close-packed stacking",
+  "pyrochlore",
+  "spin ice",
+  "Domb numbers",
+  "Fibonacci stacking"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23730421",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23731359",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23678750",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1063/1.1665973",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1063/1.1705058",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1103/physrevlett.133.256401",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://dictospheres.com",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  }
+ ]
+}
