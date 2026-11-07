@@ -1,6 +1,7 @@
 // <folder>/paper.html -> <folder>/<pdf> (A4), footer with the DICTO mark and the record's DOI. Run on dicto-node (needs playwright):
 //   node papers/print.mjs <folder> <pdf name> "<short title>" <concept DOI> <version>
 // PAGE_W/PAGE_H (e.g. 8.27in / 11.69in, the Amazon KDP A4 trim) override the A4 page size.
+// After any change here: run papers/guard_regress.sh on dicto-big-brother (every translated book must still print).
 import { chromium } from 'playwright';
 import path from 'node:path';
 const here = path.dirname(new URL(import.meta.url).pathname);
@@ -22,8 +23,10 @@ import fs from 'node:fs';
   // JA TEXT GUARD (11-07, reader: "reads like machine translation"): a final ja book may not carry leftover English words outside
   // （…） glosses, nor the known bad variants found in Quanta-ja v1.
   if (!/^en/i.test(lang) && !/^DRAFT/i.test(path.basename(pdf))) {
-    const body = raw.replace(/<style[\s\S]*?<\/style>/g, '').replace(/<(sub|sup|code|a|i|em)\b[^>]*>[\s\S]*?<\/\1>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/（[^（）]*）|\([^()]*\)|「[ -~]*」/g, ' ');
-    const latin = [...new Set((body.match(/(?<![\p{L}\w.\-@\/_])[a-z]{4,}(?![\p{L}\w.\-@\/_(])/gu) || []).filter(w => !/^(zenodo|https?|www|dictospheres|com|org|arccos|arcsin|arctan|netlib|diag|[hc]+)$/.test(w)))];
+    const body = raw.replace(/<style[\s\S]*?<\/style>/g, '').replace(/<(sub|sup|code|a|i|em)\b[^>]*>[\s\S]*?<\/\1>/g, ' ').replace(/<[^>]+>/g, ' ');
+    let body2 = body.replace(/(?<![\p{L}\w])[a-z]{2,}(?=\()/gu, ' '), prevB;   // function notation like polar(P(S)) is not prose
+    do { prevB = body2; body2 = body2.replace(/（[^（）]*）|\([^()]*\)|「[ -~]*」|«[ -~]*»/g, ' '); } while (body2 !== prevB);   // nested brackets (11-07, ar: "(Keyed octahedron (golden-key octet))"); on-screen labels in 「」 or «»
+    const latin = [...new Set((body2.match(/(?<![\p{L}\w.\-@\/_])[a-z]{4,}(?![\p{L}\w.\-@\/_(])/gu) || []).filter(w => !/^(zenodo|https?|www|dictospheres|com|org|arccos|arcsin|arctan|netlib|diag|[hc]+)$/.test(w)))];
     const BADJA = /白い女王|フル章|アリシアの不思議の国|いぶし十二面体|ポアン(?!ソ)|正の四次元|四次元の正多面体/g;
     const bad = [...new Set(body.match(BADJA) || [])];
     if ((latin.length || bad.length) && !process.env.ALLOW_BANNED) { console.error(`GUARD (${lang} text): leftover English ` + '' + latin.slice(0, 30).join(', ') + (bad.length ? '; bad variants ' + bad.join(', ') : '')); process.exit(7); } }
