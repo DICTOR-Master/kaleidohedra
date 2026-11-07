@@ -3858,7 +3858,7 @@
     "goes_to": "open: next session"
    },
    {
-    "result": "Mahler volume product on the cube–octahedron sweep: exact formula; 32/3 at the ends; maximum at 2μ³ − 9μ + 6 = 0 (μ ≈ 1.6316), near but not at Icosaxes",
+    "result": "Mahler volume product on the cube–octahedron sweep: exact formula; 32/3 at the ends; maximum at 2μ³ − 9μ + 6 = 0 (μ ≈ 1.6312), near but not at Icosaxes",
     "study": "2026-11-04-mahler-sweep",
     "goes_to": "#94 v2 or The Golden Ladder (sweep)"
    },
@@ -5740,6 +5740,206 @@
    "what": "V3 OG, V4 Golden Skin, V5 prolate golden rhombohedron",
    "paper": "#96",
    "by": "DICTO 5 Nov 2026"
+  }
+ ],
+ "errata": [
+  {
+   "n": 1,
+   "where": "The DICTOnary of Atoms v1.2 (10.5281/zenodo.23966395), A.37a",
+   "what": "\"cosine (7 − 36√5)/109, about 47.6°\"",
+   "reason": "arccos((7 − 36√5)/109) = 132.40°; 47.6° is its supplement: a sign dropped between the cosine and the angle",
+   "found_by": "Chinese translation check; recomputed",
+   "status": "VERIFIED, fix in v1.3 (which of sign/angle is meant: from the study)",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 2,
+   "where": "The DICTOnary of Atoms v1.2 (10.5281/zenodo.23966395), A.22",
+   "what": "\"(12 + φ⁻³)/φ⁶ = 0.6823 per step (68.19%)\"",
+   "reason": "the value is 0.68189; 0.6823 is a typing slip (the 68.19% beside it is right)",
+   "found_by": "Chinese translation check; recomputed",
+   "status": "VERIFIED, fix in v1.3 (0.6819)",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 3,
+   "where": "The DICTOnary of Atoms v1.2 (10.5281/zenodo.23966395), A.43",
+   "what": "one letter c for two numbers",
+   "reason": "c = √((5+2√5)/15) ≈ 0.7947 in Theorem 2 but c = 10/φ⁴ ≈ 1.4590 in Theorem 3 and the Cleo Towers line (c³ ≈ 3.106): two quantities share a symbol",
+   "found_by": "Chinese translation check; recomputed",
+   "status": "VERIFIED, rename one symbol in v1.3",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 4,
+   "where": "The DICTOnary of Atoms v1.2 (10.5281/zenodo.23966395), D85 Humpty Dumpty",
+   "what": "status \"first found by Alicia Boole Stott (1900)\"",
+   "reason": "text copied from the known shapes Alicia/Unicorn/Bandersnatch (W48/W58/W60); D85 has no W-number: either the status or the list is wrong",
+   "found_by": "Chinese translation check",
+   "status": "TO CHECK against #63 / the Queens book",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 5,
+   "where": "The DICTOnary of Atoms v1.2 (10.5281/zenodo.23966395), About the author",
+   "what": "\"eighty-nine papers\"",
+   "reason": "count not updated: the catalogue cites papers up to #96",
+   "found_by": "Chinese translation check",
+   "status": "TO FIX in v1.3 (count from the site)",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 6,
+   "where": "The DICTOnary of Atoms v1.2 (10.5281/zenodo.23966395), Mono-Strut Vacuus",
+   "what": "\"twelve of DICTO's solids\" includes David, Delilah, Goliath, Icosaxes, Unborn Axes",
+   "reason": "some of these were made first by others (known-shapes section)",
+   "found_by": "Chinese translation check",
+   "status": "TO CHECK wording",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 7,
+   "where": "The DICTOnary of Atoms v1.2 (10.5281/zenodo.23966395), Disc Vacuus / Isofin",
+   "what": "Delilah counted in both the classical Disc Vacuus and the Isofin census of 21",
+   "reason": "possible double count, or two different roles not explained",
+   "found_by": "Chinese translation check",
+   "status": "TO CHECK",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 8,
+   "where": "The DICTOnary of Atoms v1.2 (10.5281/zenodo.23966395), contents and notation",
+   "what": "A.51 before A.50; ATOM-13x13 vs 13×13; phi^2, lambda, tau, deg beside φ, λ, °; hyphen vs en dash; \"Grunbaum\", \"Kovacevic\" without diacritics",
+   "reason": "generated text not normalised",
+   "found_by": "Chinese translation check",
+   "status": "TO FIX in v1.3 (mechanical)",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 9,
+   "where": "The DICTOnary of Atoms v1.2 (10.5281/zenodo.23966395), D107 and \"Told in\"",
+   "what": "D107 cites a study slug instead of a DOI; D2, D3, D106–D109, D133, D134 and some rows lack \"Told in\"",
+   "reason": "catalogue fields not filled for late entries",
+   "found_by": "Chinese translation check",
+   "status": "TO FIX in v1.3",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 10,
+   "where": "The DICTOnary of Atoms v1.2 (10.5281/zenodo.23966395) and Quanta of Space v2.1 (10.5281/zenodo.23754454)",
+   "what": "\"Cleo-Ico\" beside \"Cleo-Icos\"",
+   "reason": "one shape, two spellings (one name per shape)",
+   "found_by": "Japanese and Chinese translation checks",
+   "status": "TO FIX: \"Cleo-Icos\" everywhere",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 11,
+   "where": "Quanta of Space v2.1 (10.5281/zenodo.23754454), #18",
+   "what": "Hexa \"holds as much as six and two-thirds Jewels\" vs \"about eight Jewels in volume\"",
+   "reason": "two volume statements disagree",
+   "found_by": "Chinese translation check",
+   "status": "TO CHECK against #18",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 12,
+   "where": "Quanta of Space v2.1 (10.5281/zenodo.23754454), #20",
+   "what": "\"the icosahedron cut into 20 pyramids from its centre, the Cleo-Icos\"",
+   "reason": "reads as if the Cleo-Icos were the whole cut icosahedron; it is one pyramid",
+   "found_by": "Chinese translation check",
+   "status": "TO FIX wording",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 13,
+   "where": "Quanta of Space v2.1 (10.5281/zenodo.23754454), #31a credit",
+   "what": "credits \"the pyrochlore arrangement\" to DICTO",
+   "reason": "the entry never mentions a pyrochlore arrangement",
+   "found_by": "Chinese translation check",
+   "status": "TO CHECK against #31a",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 14,
+   "where": "Quanta of Space v2.1 (10.5281/zenodo.23754454), #49",
+   "what": "lead: ten diamonds, every edge equal; figure: face-diagonal sweep, ten long faces",
+   "reason": "lead and figure may show different members (slide φ√2 vs 1)",
+   "found_by": "Chinese translation check",
+   "status": "TO CHECK which solid each shows",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 15,
+   "where": "Quanta of Space v2.1 (10.5281/zenodo.23754454), #8",
+   "what": "\"Kepler's stars on every other cell\"",
+   "reason": "ambiguous: stella octangula or great stellated dodecahedron",
+   "found_by": "Chinese translation check",
+   "status": "TO CLARIFY",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 16,
+   "where": "Quanta of Space v2.1 (10.5281/zenodo.23754454), #88",
+   "what": "\"pairs are slices … at 1/φ² and 1/φ\"",
+   "reason": "ambiguous which pair lies at which depth",
+   "found_by": "Chinese translation check",
+   "status": "TO CLARIFY",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 17,
+   "where": "Quanta of Space v2.1 (10.5281/zenodo.23754454), #13",
+   "what": "exhibition piece \"twelve dodecahedra\" vs Dodeca-13 thirteen",
+   "reason": "the centre is not mentioned",
+   "found_by": "Chinese translation check",
+   "status": "TO CLARIFY",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 18,
+   "where": "Quanta of Space v2.1 (10.5281/zenodo.23754454), introduction and #88",
+   "what": "\"132 new shapes\"",
+   "reason": "count not updated: D1–D134",
+   "found_by": "Chinese translation check",
+   "status": "TO FIX in v2.2",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 19,
+   "where": "Quanta of Space v2.1 (10.5281/zenodo.23754454), #52 closing section",
+   "what": "\"Proved in paper #52\" beside \"not yet published in a paper\"",
+   "reason": "sentence left over from before #52 was published",
+   "found_by": "Chinese translation check",
+   "status": "TO FIX in v2.2",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 20,
+   "where": "Quanta of Space v2.1 (10.5281/zenodo.23754454), #17",
+   "what": "\"Four corners give the diamond network\"",
+   "reason": "none of the six hulls listed has four corners",
+   "found_by": "Chinese translation check",
+   "status": "TO CHECK against #17",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 21,
+   "where": "Quanta of Space v2.1 (10.5281/zenodo.23754454), #29 and #36",
+   "what": "two different DICTO quotations (\"hemispherical really, or…\" / \"hemispherical, or…\"); \"adaptor\" and \"adapter\" mixed",
+   "reason": "quotation copied twice from different notes; spelling not normalised",
+   "found_by": "Chinese translation check",
+   "status": "TO FIX (one quotation, \"adaptor\")",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 22,
+   "where": "Concordance waiting item 12, studies/2026-11-04-mahler-sweep README, Concordance paper",
+   "what": "maximum of the volume product at \"μ ≈ 1.6316\"",
+   "reason": "the root of 2μ³ − 9μ + 6 = 0 in (1, 2) is 1.631223 (recomputed); 1.6316 was a rounding slip",
+   "found_by": "#94 v2 drafting; recomputed",
+   "status": "VERIFIED; fixed in the README and waiting item today; Concordance paper at its next version",
+   "date": "2026-11-07"
   }
  ]
 }
