@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>كمّات الفضاء — بيان (المجلد I)</title>
+<link rel="stylesheet" href="../paper.css">
+<style>
+.namesbox { border-left: 3px solid #b8962e; background: #fbf6e8; padding: 2mm 4mm; margin: 4mm 0; font-size: 9.5pt; }
+.status { border: 2px solid #b22; background: #fff4f2; padding: 2mm 3mm; margin: 3mm 0; font-size: 9pt; }
+body { font-size: 11pt; line-height: 1.55; }
+.page { break-after: page; }
+.titlepage { text-align: center; padding-top: 38mm; }
+.titlepage img.big { width: 62mm; margin: 0 auto 12mm; display: block; }
+.titlepage h1 { font-size: 34pt; margin: 0 0 6pt; letter-spacing: .5pt; }
+.titlepage .sub { font-size: 13pt; margin: 0 0 22mm; }
+.titlepage .by { font: 600 15pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 0 0 4pt; }
+.titlepage .small { font: 9pt/1.6 "DejaVu Sans", sans-serif; color: #444; margin: 0 auto; max-width: 140mm; }
+.titlepage .sample { margin: 18mm auto 0; max-width: 130mm; font: 9.5pt/1.5 "DejaVu Sans", sans-serif; color: #333; border-top: 1px solid #b8962e; border-bottom: 1px solid #b8962e; padding: 6pt 0; }
+.contents h2 { margin-top: 10pt; }
+.contents ol { list-style: none; padding: 0; margin: 0 0 4pt; columns: 2; column-gap: 8mm; font: 8.8pt/1.45 "DejaVu Sans", sans-serif; }
+.contents li { break-inside: avoid; margin: 0 0 1.5pt; padding-left: 9mm; text-indent: -9mm; }
+.contents li b { display: inline-block; width: 9mm; text-indent: 0; color: #6b5310; }
+.contents li.here { font-weight: 600; }
+.contents p.chap { margin: 0 0 2pt; font-style: italic; font-size: 9.5pt; }
+.contents .note { font: 8.6pt "DejaVu Sans", sans-serif; color: #444; margin-top: 6pt; }
+.intro h3, .entry h3 { font: 600 11pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 11pt 0 3pt; break-after: avoid; }
+.chapter-mark { font: 600 9pt "DejaVu Sans", sans-serif; letter-spacing: 1.5pt; text-transform: uppercase; color: #b8962e; margin: 0 0 2pt; }
+.entry h1 { font-size: 20pt; }
+.entry .logo, .intro .logo { width: 22mm; }
+.lead { font-size: 12pt; line-height: 1.5; color: #222; }
+.dataref { font: 8.8pt "DejaVu Sans", sans-serif; color: #6b5310; }
+.credit { font: 8.8pt/1.5 "DejaVu Sans", sans-serif; color: #333; border-top: 1px solid #b8962e; padding-top: 4pt; margin-top: 10pt; }
+.doi { font: 600 9.5pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 6pt 0 0; }
+.figs.wide { grid-template-columns: 1fr; width: 100%; }
+.appendix { font-size: 9.6pt; line-height: 1.45; }
+.appendix h2 { break-before: auto; margin-top: 16pt; border-top: 1px solid #b8962e; padding-top: 6pt; }
+.appendix h2.first { break-before: auto; }
+.appendix h3 { font: 600 10pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 9pt 0 2pt; break-after: avoid; }
+.appendix ul { padding-left: 5mm; margin: 2pt 0; }
+.appendix li { margin: 0 0 2pt; }
+.appendix table { font-size: 8.6pt; }
+td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.licence { font: 8.4pt "DejaVu Sans", sans-serif; color: #555; }
+
+/* DICTO 10-29: neutral sans-serif for the whole book, as in the series */
+body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs,p,li{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}
+
+/* DICTO 10-29: spacing. Entries flow on (a new page only at each chapter), titles stand clear of the text above and below */
+.page.entry { break-after: auto; break-before: auto; margin-top: 14mm; padding-top: 6mm; border-top: 1px solid #e3d7b5; }
+.page.entry[data-first="1"] { break-before: page; margin-top: 0; padding-top: 0; border-top: none; }
+.page.entry h1 { margin: 5mm 0 3mm; break-after: avoid; }   /* DICTO 10-29: clear gap between the chapter line and the title */
+.page.entry .chapter-mark { margin-bottom: 0; }
+.page.entry .sub { margin-bottom: 7mm; break-after: avoid; }
+.page.entry .chapter-mark { break-after: avoid; }
+.intro h3, .entry h3 { margin: 16pt 0 6pt !important; break-after: avoid; }
+.entry p, .intro p { orphans: 3; widows: 3; }
+figure { break-inside: avoid; }
+
+/* DICTO 10-29: the same clear gap wherever a chapter line stands over a title (introduction, catalogue, short chapters, appendix) */
+.chapter-mark { margin-bottom: 0 !important; }
+.chapter-mark + h1 { margin-top: 5mm !important; margin-bottom: 4mm !important; }
+.status { border: 2px solid #a00; border-radius: 2mm; padding: 2mm 3mm; margin: 3mm 0; font-size: 8.6pt; line-height: 1.35; color: #300; background: #fff6f6; }
+.status li { margin: 0 0 1mm; }
+</style></head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+
+<!-- ============ TITLE PAGE ============ -->
+<section class="page coverpage" style="height:252mm;display:flex;justify-content:center;align-items:center">
+<img src="figures/cover/quanta-cover-front.png" alt="الغلاف: «كمّات الفضاء — بيان»، DICTO، تحت مربع DICTO للمجسمات الأفلاطونية الخمسة في اسم DICTO، D I C T O" style="width:100%;height:auto;display:block">
+</section>
+<section class="page" style="text-align:center;padding-top:62mm">
+<p style="font-size:15pt;font-style:italic;line-height:1.7;margin:0">أن ترى عالمًا في حبة رمل<br>وسماءً في زهرة برية،<br>أن تُمسك اللانهاية في راحة يدك<br>والأبدية في ساعة.</p>
+<p style="font-size:10pt;color:#555;margin-top:5mm">ويليام بليك، «نبوءات البراءة»</p>
+<p style="font-size:10.5pt;margin:40mm auto 0;max-width:150mm;line-height:1.6">الأوراق والتطبيقات والبيانات في هذا العمل متاحة للاستخدام بحرية؛ وكلها مفتوحة الوصول، بموجب الرخصة <span dir="ltr">CC BY-SA 4.0</span>، يمكن قراءتها ومشاركتها والبناء عليها بحرية.</p>
+</section>
+<section class="page titlepage">
+<img class="big" src="../dicto-logo.png" alt="DICTO">
+<h1>كمّات الفضاء</h1>
+<p class="sub">بيان</p>
+<p class="sub">الأعمال الهندسية لـ <span dir="ltr">DICTO</span></p>
+<p class="by"><span dir="ltr">DICTO</span></p>
+<p class="small">فنان، أوساكا، اليابان · <span dir="ltr">contact@dictospheres.com</span> · <span dir="ltr">https://dictospheres.com</span><br>
+جميع الأعمال والنتائج والأسماء لـ <span dir="ltr">DICTO</span>. الحسابات والتحقق والصياغة بالتعاون مع <span dir="ltr">Claude (Anthropic)</span>. الترجمة بالتعاون مع <span dir="ltr">Claude (Anthropic)</span>.<br>
+الرخصة <span dir="ltr">CC BY-SA 4.0</span></p>
+<p class="small" style="margin-top:8mm">كتاب · المجلد <span dir="ltr">I</span> · الإصدار 2.1 · 7 نوفمبر 2026 · <span dir="ltr">DICTO DOI: 10.5281/zenodo.23754454</span></p>
+<p class="small" style="margin-top:2mm">المجلد <span dir="ltr">II</span>: «معجم ذرات <span dir="ltr">DICTO</span> — كمّات الفضاء <span dir="ltr">II</span>»، فهرس جميع الذرات، والبيانات عملًا عملًا، والأشكال المعروفة والمُعاد اكتشافها <span dir="ltr">(DICTO DOI: 10.5281/zenodo.23966395)</span>.</p>
+</section>
+
+<section class="page" style="text-align:center;padding-top:80mm"><p style="font-size:14pt;font-style:italic">إلى أبي، آلن بيكر</p></section>
+<!-- ============ CONTENTS ============ -->
+<section class="page contents">
+<img class="logo" src="../dicto-logo.png" alt="DICTO" style="width:22mm">
+<h1>المحتويات</h1>
+<p style="font: 9.5pt 'DejaVu Sans', sans-serif;">ما يضمّه هذا العمل<br>مقدمة: كمّات الفضاء<br>73 عملًا: 71 ورقة في ستة فصول، ثم نتائج <span dir="ltr">Kaleidohedra</span> ومجموعة البيانات (الأرقام هي أرقام الأوراق في <span dir="ltr">dictospheres.com</span>)<br>وفي المجلد <span dir="ltr">II</span>، «معجم ذرات <span dir="ltr">DICTO</span> — كمّات الفضاء <span dir="ltr">II</span>»: فهرس جميع الذرات، والبيانات عملًا عملًا، والأشكال المعروفة والمُعاد اكتشافها</p>
+
+<h2>الذرات</h2><p class="chap">مجسمات مفردة، كلٌّ منها قطعة جديدة دقيقة.</p>
+<ol>
+<li><b>#18</b>هكسا <span dir="ltr">DICTO</span></li>
+<li><b>#19</b><span dir="ltr">AXE</span> و <span dir="ltr">CLEO</span> و <span dir="ltr">FUJI</span></li>
+<li><b>#20</b>عائلة <span dir="ltr">FUJI</span></li>
+<li><b>#28</b>ذو المئة والوجهين العشروني المبتور من <span dir="ltr">DICTO</span></li>
+<li><b>#31</b>ثمانيني الوجوه من <span dir="ltr">DICTO</span></li>
+<li><b><span dir="ltr">#31a</span></b>نجميّة <span dir="ltr">OCD</span> من <span dir="ltr">DICTO</span></li>
+<li><b><span dir="ltr">#34a</span></b>ذو المئة والوجهين والثمانين من <span dir="ltr">DICTO</span></li>
+<li><b><span dir="ltr">#35a</span></b>ستيني الوجوه البيني من <span dir="ltr">DICTO</span></li>
+<li><b><span dir="ltr">#35b</span></b>ثلاثيني الوجوه المُعاد من <span dir="ltr">DICTO</span></li>
+<li><b>#41</b>جوهرة <span dir="ltr">DICTO</span></li>
+<li><b>#45</b>مجسمات رولو الأفلاطونية</li>
+<li><b>#49</b>مبرهنة مطّ متعددات الوجوه</li>
+<li><b>#88</b>لكل مجسم أفلاطوني قصّان ذهبيان بالضبط</li>
+<li><b>—</b>جميع الذرات: الفهرس هو المجلد <span dir="ltr">II</span></li>
+</ol>
+
+<h2>الروابط</h2><p class="chap">كيف تملأ القطع الفضاء معًا: عُدد دقيقة وتعبئات وشبيكات.</p>
+<ol>
+<li><b>#8</b>خلية إقليدس–كبلر–باتشولي</li>
+<li><b>#13</b>اثنا عشري الوجوه-13 من <span dir="ltr">DICTO</span></li>
+<li><b>#14</b>نجمة <span dir="ltr">DICTO</span></li>
+<li><b>#17</b>أغلفة كاغومي</li>
+<li><b>#25</b>شبه الكرة-13 <span dir="ltr">RD</span> من <span dir="ltr">DICTO</span></li>
+<li><b>#26</b><span dir="ltr">ATOM-13×13</span> من <span dir="ltr">DICTO</span></li>
+<li><b>#30</b>عمود فقري فيبوناتشي</li>
+<li><b>#36</b>بيروكلور بودي الذهبي</li>
+<li><b>#37</b>ثمانيني الوجوه من <span dir="ltr">DICTO</span> على جملون الأوكتيت</li>
+<li><b><span dir="ltr">#37a</span></b>ثمانيني الوجوه من <span dir="ltr">DICTO</span> على الأوكتيت المبروم</li>
+<li><b>#40</b>عائلة <span dir="ltr">OG</span> من <span dir="ltr">DICTO</span> على كل تراص</li>
+<li><b>#42</b>نجمة الشمس من <span dir="ltr">DICTO</span></li>
+<li><b>#44</b>هرم أرسطو</li>
+<li><b>#47</b>كل مزيج من المجسمات الأفلاطونية يملأ الفضاء</li>
+<li><b>#48</b>الانشطار الذهبي: عشرونيات الوجوه واللامولودات و <span dir="ltr">AXE</span> تصير مالئَين محدّبين للفضاء</li>
+<li><b>#51</b>الرابطة الديلوسية: شمشون ودليلة والأوكتيت بين اثني عشري الوجوه المعينية لكبلر والمكعب</li>
+<li><b>#50</b>حركة واحدة لكلٍّ منها: مالئات الفضاء الكلاسيكية بالقص واللصق، مبنيّةً بدقة</li>
+<li><b>#89</b>القصوص الذهبية في ملءات أندريني</li>
+<li><b>—</b>القسم الختامي: مجسمات وروابط <span dir="ltr">DICTONIC</span></li>
+<li><b>#52</b>نسيج الروابط: كيف تُسلِّم روابط <span dir="ltr">DICTONIC</span> بعضها إلى بعض</li>
+<li><b>#53</b>نسيج الروابط الشامل</li>
+<li><b>#55</b>داود وجالوت</li>
+<li><b>#56</b>شونشم ولهدلي</li><li><b>#77</b>وجهًا لوجه: قانون جديد لأهرام أرسطو</li>
+<li><b>#59</b>هكسا الفأس العشرونية: الزهرة والبرعم والبذرة</li>
+</ol>
+
+<h2>القشرات</h2><p class="chap">قطع تنغلق في قشرات متداخلة حول نواة، وكل طبقة ممتلئة بدقة.</p>
+<ol>
+<li><b>#22</b>سلسلة الكارما</li>
+<li><b>#23</b>كرات الدارما</li>
+<li><b>#24</b>بذرة بودي</li>
+<li><b>#27</b>اقتناص البينيّات</li>
+<li><b>#29</b>ثياتيتوس</li>
+<li><b>#34</b>الأسلاف</li>
+<li><b>#35</b>فاجرايانا</li>
+</ol>
+
+<h2>الدورات</h2><p class="chap">قواعد تحوّل قشرة إلى التي تليها وتعود، بنهاية أو بلا نهاية.</p>
+<ol>
+<li><b>#32</b>القشرات المقلوبة: كرات الدارما وقد قُلب باطنها ظاهرًا</li>
+<li><b>#33</b>الرؤية المزدوجة – الدورتان معًا في فضاء واحد</li>
+<li><b>#38</b><span dir="ltr">PiTet</span> الشامل: قضية <span dir="ltr">PiTet</span> من <span dir="ltr">DICTO</span></li>
+<li><b><span dir="ltr">#38a</span></b>دورة كبلر–بوانسو–<span dir="ltr">UP</span> من <span dir="ltr">DICTO</span></li>
+<li><b>#39</b>عائلة <span dir="ltr">OG</span> من <span dir="ltr">DICTO</span>: أربع خطوات صعودًا وأربع نزولًا</li>
+<li><b>#43</b>نوى كيوشيندو من <span dir="ltr">DICTO</span></li>
+<li><b>#54</b>لفّة واحدة هي نومون</li><li><b>#78</b>نجمة عشروني الوجوه المبتور (نجمة <span dir="ltr">TI</span>)</li>
+</ol>
+
+<h2>التراص</h2><p class="chap">كل تعبئة متراصة من فهرس منتهٍ من القطع، والبلاطتان اللتان تبنيانها (كاملةً في «<span dir="ltr">HexOct</span>: قانون السداسية»).</p>
+<ol>
+<li><b>#57</b>قاعدة الأنصاف</li><li><b>#58</b>من الأوكتيت إلى كل تراص: نسيج الروابط</li><li><b>#60</b>بيروكلور يانوس <span dir="ltr">c/h</span> من <span dir="ltr">DICTO</span></li><li><b>#61</b>قاعدة المبادلة</li><li><b>#64</b>قاعدة المبادلة في البلورات</li><li><b>#66</b>البؤرة</li><li><b>#67</b>التراصات العشوائية وعيوب التراص</li><li><b>#69</b>تراص فيبوناتشي</li><li><b>#68</b>البوليتايبات الحقيقية وقانون السداسية</li><li><b>#70</b>مواد حقيقية <span dir="ltr">II</span>: الإنتروبيا والضغط</li><li><b>#71</b>مواد حقيقية <span dir="ltr">III</span>: السبائك والهيدروجين</li><li><b>#72</b>مواد حقيقية <span dir="ltr">IV</span>: الأكاسيد</li><li><b>#73</b>مواد حقيقية <span dir="ltr">V</span>: الجليد والألماس والأسلاك النانوية</li><li><b>#74</b>الجليد المغزلي ومغانط كاغومي على كل تراص</li><li><b>#75</b>بلاطتان لكل تراص: <span dir="ltr">HexOct</span></li>
+</ol>
+
+<h2>الأبعاد الأربعة</h2><p class="chap">الملكتان البيضاء والحمراء بظلالهما ومقاطعهما (كاملةً في «أليشيا في بلاد العجائب: الملكتان الحمراء والبيضاء»)، والقصوص الذهبية بين المقاطع.</p>
+<ol>
+<li><b>#62</b>ظلال البعد الرابع</li><li><b>#63</b>600-خلية الملكة البيضاء</li><li><b>#76</b>بين الملكتين</li><li><b>#65</b>120-خلية الملكة الحمراء</li><li><b>#89</b>الأزواج الذهبية الخمسة كلها مقاطع لمجسمات رباعية الأبعاد</li>
+</ol>
+
+<h2>النتائج والتطبيقات</h2>
+<ol>
+<li><b>—</b><span dir="ltr">Kaleidohedra</span> من <span dir="ltr">DICTO</span></li>
+<li><b>—</b>«مجسمات <span dir="ltr">DICTO</span>: هندسة دقيقة» (مجموعة بيانات)</li>
+<li><b>—</b>الأشكال المعروفة والمُعاد اكتشافها في هذا العمل: في المجلد <span dir="ltr">II</span></li>
+</ol>
+<p class="note">الترتيب والفصول كما في «<span dir="ltr">DICTO</span>: الأعمال الهندسية المجمّعة» <span dir="ltr">(DICTO DOI: 10.5281/zenodo.23345699)</span>، مع إضافة فصلَي التراص والأبعاد الأربعة. والأعمال من #52 فصاعدًا تُروى باختصار؛ والكتب «<span dir="ltr">HexOct</span>» و«الدورة الذهبية» و«أليشيا في بلاد العجائب» تضمّها كاملة.</p>
+</section>
+
+<!-- ============ INTRODUCTION ============ -->
+<section class="page principles">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>ما يضمّه هذا العمل</h1>
+
+<ol class="principles">
+<li>الفضاء مبني من قطع.</li>
+<li>كل قطعة يجب أن تكون دقيقة: شكلًا يمكنك أن تصنعه وتمسكه، مُتحقَّقًا منه حتى آخر رأس.</li>
+<li>تكفي عُدّة صغيرة: حفنة من الأشكال تبني قشرات وفضاءات بلا نهاية.</li>
+<li>النسبة الذهبية تقرر متى تنغلق القشرات.</li>
+<li>تتصل القطع في روابط، ونسيج الروابط حقيقي كالقطع نفسها.</li>
+<li>النظام المتكرر والنظام غير المتكرر أبدًا يلتقيان في القطع.</li>
+<li>كل شيء مفتوح: التطبيقات والبيانات والأوراق، متاحة للاستخدام والبناء عليها بحرية.</li>
+</ol>
+<p style="text-align:right"><span dir="ltr">DICTO</span></p>
+</section>
