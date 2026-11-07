@@ -6289,7 +6289,8 @@
     "mess_up": "plates 4 mm wider than the text column (HexOct v8)",
     "guard": "figcheck already flags it; plates fitted",
     "where": "papers/figcheck.mjs"
-   }
+   },
+   "release loops: ssh inside tidy.py read the loop's stdin, so a while-read release loop published 2 of 10 records and dropped the rest silently (11-07). Guard: tidy.py ssh -n with stdin closed; zen_new/zen_newversion start every subprocess with stdin closed; release loops print every line, never filtered to \"published\"."
   ],
   "practice": [
    "Read ok = release the exact PDF read, the same session; a new record or chapters into a book: ask first.",

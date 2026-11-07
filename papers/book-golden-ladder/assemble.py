@@ -101,11 +101,7 @@ css = '\n'.join(sorted(styles)) + '''
 table.toc td{border-bottom:1px dotted #ccc;padding:1.2mm 2mm} table.toc a{color:inherit;text-decoration:none}
 figure img, .figs img{max-width:100%}
 body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}'''
-status = '''<div class="status"><b>Draft of Version 6: corrections and additions (delete this box at publication; set status = '' in assemble.py).</b><ul>
-<li>Erratum 24 (Chapter 2): the Pell multiplets are (0, P<sub>n</sub>, Q<sub>n</sub>) with Q = A001333, as the printed dimensions 112, 4 928, 905 520, 411 098 688 and μ = 7/3, 17/7, 41/17, 99/41 are; the printed (0, P<sub>n</sub>, P<sub>n+1</sub>) would give 378, 19 656, … and the limit 2.547, not 1 + √2 (recomputed by the Weyl dimension formula of SO(7)).</li>
-<li>Concordance waiting item 5 (Chapter 7, new Theorem 1A after Theorem 1): the Galois twins of the other golden cuts: the dodecahedron's greater cut is its own twin, its lesser cut's twin is the φ³-cut dodecahedron, which is not a station of the golden cycle; the triangle-faced solids have no twin solid (study 2026-11-04-golden-twins, every number recomputed).</li>
-<li>Concordance waiting item 47 (Chapter 8, prior art of #91): the Golden OGs keep OG's known face pattern (Rossiter, McCooey); their golden metric forms were not found in the sources checked.</li>
-</ul></div>'''   # v5 released 7 November 2026; this box is the v6 draft's
+status = '''<p style="font-size:8.6pt;color:#555;margin-top:2mm">Version 6 writes the Pell multiplets of Chapter 2 as (0, P<sub>n</sub>, Q<sub>n</sub>) (erratum 24 of The DICTO Concordance), adds Theorem 1A on the Galois twins of the golden cuts (Chapter 7), and the prior art of the Golden OGs (Chapter 8).</p>'''   # v5 released 7 November 2026; this box is the v6 draft's
 doc = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>The Golden Ladder</title>
 <link rel="stylesheet" href="../paper.css"><style>{css}</style></head><body>

@@ -34,7 +34,7 @@ def walk(root, pat):
         for f in files:
             if glob.fnmatch.fnmatch(f, pat): yield os.path.join(d, f)
 def remote(cmd):
-    return subprocess.run(['ssh', '-o', 'ConnectTimeout=10', 'dicto-big-brother', cmd], capture_output=True, text=True).stdout
+    return subprocess.run(['ssh', '-n', '-o', 'ConnectTimeout=10', 'dicto-big-brother', cmd], stdin=subprocess.DEVNULL, capture_output=True, text=True).stdout   # -n: never eat the caller's stdin (11-07: a release loop lost 8 of 10 items)
 if '--folder' in sys.argv:
     folder = os.path.abspath(sys.argv[sys.argv.index('--folder') + 1]); name = os.path.basename(folder)
     for p in [q for pat in ('DRAFT*.pdf', '*draft*.pdf') for q in glob.glob(os.path.join(folder, pat))]: rm(p, 'released')
