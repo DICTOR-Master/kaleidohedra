@@ -14,3 +14,8 @@ The English files (quanta/NN-en.html, dictonary/NNN-en.html) are the authority. 
 
 ## Report
 Return the report as text in your final message (subagents cannot write report files): per file, terms added or unsure, problems in the English.
+
+## Lead decisions (after the glossary pass)
+- glossary-fa.tsv (613) and atom-names-fa.tsv (207) are BINDING; the UNSURE picks stand (Through the Looking-Glass «آن‌سوی آینه», as Persian Wikipedia).
+- Volume labels: جلد I / جلد II (rule 8). The Persian Wikipedia extracts are in wikipedia-fa/.
+- The Alice note (Quanta ch. 6, div.namesbox) is translated like any text.
