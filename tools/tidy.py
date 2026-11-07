@@ -10,14 +10,19 @@ Rules:
  1. A DRAFT*.pdf is transitional: deleted once its paper is released (--folder), and anywhere when older than 14 days.
  2. papers-to-read/read-earlier: DRAFT files are deleted at once (the published PDF is the record); everything else after 14 days.
  3. papers-to-read (top) holds only what waits for DICTO; items older than 3 days are reported as stale in the daily report.
- 4. Runjob scratch (*.part, *.FAILED) older than 2 days is deleted; /tmp scratch of ours on dicto-big-brother older than 2 days too.
-Never touches .git, memory folders, published PDFs (dicto-*.pdf), data files or sources."""
+ 4. Runjob scratch (<data>.txt/.json + .part/.FAILED, untracked) older than 2 days is deleted; /tmp scratch of ours on dicto-big-brother older than 2 days too.
+Never touches .git, memory folders, published PDFs (dicto-*.pdf), data files or sources, nor ANY file tracked by git."""
 import os, sys, time, subprocess, glob
 DRY = '--dry' in sys.argv; NOW = time.time(); DAY = 86400
 HOME = os.path.expanduser('~'); READ = os.path.join(HOME, 'Documents', 'papers-to-read'); EARLIER = os.path.join(READ, 'read-earlier')
 ROOTS = [os.path.join(HOME, 'k-research'), os.path.join(HOME, 'kaleidohedra')]
 log = []
+def tracked(p):   # never delete a file git tracks (11-07: "*.part" also matched source files named style.part)
+    d = os.path.dirname(p)
+    r = subprocess.run(['git', '-C', d, 'ls-files', '--error-unmatch', os.path.basename(p)], capture_output=True)
+    return r.returncode == 0
 def rm(p, why):
+    if os.path.isfile(p) and tracked(p): log.append(f'KEEP {p} (tracked by git)'); return
     log.append(f'delete {p} ({why})')
     if not DRY:
         try: os.remove(p)
@@ -41,7 +46,7 @@ else:
     for r in ROOTS:
         for p in walk(r, 'DRAFT*.pdf'):
             if NOW - os.path.getmtime(p) > 14 * DAY: rm(p, 'draft older than 14 days')
-        for pat in ('*.part', '*.FAILED'):
+        for pat in ('*.txt.part', '*.json.part', '*.txt.FAILED', '*.json.FAILED'):   # runjob writes <data file>.part / .FAILED only
             for p in walk(r, pat):
                 if NOW - os.path.getmtime(p) > 2 * DAY: rm(p, 'runjob scratch older than 2 days')
     if os.path.isdir(EARLIER):
