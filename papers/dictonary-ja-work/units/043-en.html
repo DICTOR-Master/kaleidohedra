@@ -1,0 +1,25 @@
+<h2>A.32 Inverted Shells <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23405029)</span></h2>
+<p class="told">Told in Volume I, Chapter 4 · Cycles.</p>
+<p>Reversed chain D ⊂ ID ⊂ Ogdoecontahedron ⊂ PD ⊂ I ⊂ RT ⊂ D·φ³; volume closes at 38 + 17√5 = φ⁹. Poles exact in ℚ(√5).</p>
+<table><tr><th>Skin (flip test, float)</th><th>Pieces</th><th>Midway covered</th><th>Twice</th><th>Deepest overlap</th></tr>
+<tr><td>I → ID</td><td class="n">32</td><td class="n">100%</td><td class="n">35.1%</td><td class="n">0.369</td></tr>
+<tr><td>ID → D</td><td class="n">20</td><td class="n">3.1%</td><td class="n">0</td><td>none</td></tr>
+<tr><td>D → TI</td><td class="n">42</td><td class="n">67.1%</td><td class="n">4.4%</td><td class="n">0.163</td></tr>
+<tr><td>TI → H</td><td class="n">20</td><td class="n">7.7%</td><td class="n">0</td><td>none</td></tr>
+<tr><td>H → RT</td><td class="n">72</td><td class="n">17.8%</td><td class="n">0.1%</td><td class="n">0.070</td></tr>
+<tr><td>RT → I·φ³</td><td class="n">50</td><td class="n">100%</td><td class="n">36.4%</td><td class="n">0.309</td></tr></table>
+<table><tr><th>Layer</th><th>Pieces</th><th>Each piece</th><th>Exact volume</th></tr>
+<tr><td>D → ID</td><td class="n">12</td><td>column on each dodecahedron face</td><td class="n">(−144185 + 64487√5)/243</td></tr>
+<tr><td>ID → O</td><td class="n">12</td><td>cap on each icosidodecahedron pentagon</td><td class="n">(−155 + 101√5)/4617</td></tr>
+<tr><td>O → PD</td><td class="n">20</td><td>low pyramid on each regular hexagon</td><td class="n">(−22 + 10√5)/81</td></tr>
+<tr><td>PD → I</td><td class="n">60</td><td>irregular wedge, 5 corners, 6 triangles</td><td class="n">(−6560 + 2936√5)/513</td></tr>
+<tr><td>I → RT</td><td class="n">20</td><td>triangular pyramid on each icosahedron face</td><td class="n">(−796 + 356√5)/3</td></tr>
+<tr><td>RT → D·φ³</td><td class="n">30</td><td>roof on each rhombus</td><td class="n">200 − 1336√5/15</td></tr></table>
+<ul>
+<li>Loose ends (float): RT could grow ×1.894, inner D ×1.232. Tight nest: inner D × (11/18 + 5√5/18), outer × (5 − 2√5); inradii 0.495, 0.567, 0.623, 0.653, 0.714, 0.764, 0.898; outer layer 25.2 → 1.9; columns (−35/729 + 71√5/2187), wedges (−7352/3 + 1096√5); linear ratio 1.8146 (squared 49815/2 − 22275√5/2).</li>
+<li>Stars as filled bodies: densities 3, 3, 7, 7. Great stellated dodecahedron: volume 3 icosahedra; 60 tetrahedra (188/3 − 28√5) and 60 pentagonal pyramids (112/3 − 248√5/15); point/valley radius² ratio 3φ³/√5.</li>
+<li>Inner gap: disdyakis triacontahedron × (9 − 3√5) = 6/φ², truncated icosidodecahedron × 2/15; play 5/9 + 2√5/9 = √5·φ³/9 ≈ 1.0525; pieces 12, 120 and 50 caps of two kinds. Nearest lock: rhombicosidodecahedron in the deltoidal hexecontahedron, play 62/123 + 137√5/615 ≈ 1.00218.</li>
+<li>Frame: corner radius² 10 + 2√5, midpoint radius² 4; long edge φ³ times the dodecahedron's (1 + 2φ = φ³).</li>
+<li>Hafner 2007: our tetrahedra are exactly φ² times his volume on the same edge.</li>
+</ul>
+<p><b>Checks and sources.</b> geomcheck.py (frame, both orders, known case first, kinds by symmetry, exact gate, labels); all scripts rerun. Firsching 2015; Croft 1980; Takakura et al. 2007; Twarock, Valiunas and Zappa 2015; Dechant et al. 2014; Kepler 1619; Poinsot 1810; Hafner 2007. Scripts: studies/2026-10-16-polar-dharma, -flip-test.</p>

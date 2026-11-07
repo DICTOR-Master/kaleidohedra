@@ -1,0 +1,21 @@
+<h2>A.40 あらゆる積層上の DICTO OG ファミリー <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23490114)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<p>枠組み：正八面体 |x| + |y| + |z| ≤ R、R = 2φ/3；単位胞 (32 + 16√5)/27；層 (2k − 1)R ≤ x + y + z ≤ (2k + 1)R。段 c（並進）と h（共有平面での鏡映）；ヤゴジンスキー記法。</p>
+<p><b>双晶の規則、証明。</b>中心を通る平面での鏡映 M は −H（反転と、n まわりの半回転 H との合成）です。S = −S のとき M(S) = H(S)；H = T⁶⁰∘T¹²⁰ かつ T¹²⁰(S) = S なので、H(S) = T⁶⁰(S) です。<b>適合の規則、証明。</b>層は互いに交わらない板状の領域です。どの層も基準の層を並進または鏡映で動かしたもので、鏡映の場合は 60° 回った立体が得られます。</p>
+<table><tr><th>立体</th><th>その正八面体の中に</th><th>その層の中に</th><th>適合</th><th>空間に占める割合</th></tr>
+<tr><td>OG</td><td>はい</td><td>はい</td><td>あらゆる積層</td><td class="n">1025/114 − 145√5/38 ≈ 45.89%</td></tr>
+<tr><td>OCD ステラ</td><td>はい</td><td>はい</td><td>あらゆる積層</td><td class="n">(1208 − 534√5)/27 ≈ 51.63%</td></tr>
+<tr><td>DICTO OTT</td><td>はい</td><td>はい</td><td>あらゆる積層</td><td class="n">176/3 − 26√5 ≈ 52.89%</td></tr>
+<tr><td>DBT</td><td>いいえ</td><td>はい</td><td>あらゆる積層</td><td class="n">493/6 − 73√5/2 ≈ 55.02%</td></tr>
+<tr><td>黄金の包み</td><td>いいえ</td><td>いいえ</td><td>オクテットのみ</td><td class="n">90 − 40√5 = 10/φ⁶ ≈ 55.73%</td></tr></table>
+<p>すべて中心対称で、(1,1,1) まわりの 120° 回転をもち、層を横切る鏡映はもちません（OCD ステラの対称性は浮動小数点での確認）。h 面での包みの重なりは厳密に (−88 + 40√5)/81 ≈ 0.017811（#37a の浮動小数点値 0.0175 に代わる）で、DBT が取り除く二つの先端にあたります。DBT：cc、ch、hc、hh のいずれでも重なりはありません。</p>
+<table><tr><th>ポリタイプ</th><th>語</th><th>充填</th><th>f</th><th>キャップ</th><th>双晶キャップ</th><th>正四面体</th><th>双角錐</th></tr>
+<tr><td>3C（オクテット）</td><td>c</td><td>ABC</td><td class="n">0</td><td class="n">8</td><td class="n">0</td><td class="n">2</td><td class="n">0</td></tr>
+<tr><td>2H（回転オクテット）</td><td>h</td><td>AB</td><td class="n">1</td><td class="n">6</td><td class="n">1</td><td class="n">0</td><td class="n">1</td></tr>
+<tr><td>4H</td><td>hc</td><td>ABCB</td><td class="n">1/2</td><td class="n">7</td><td class="n">1/2</td><td class="n">1</td><td class="n">1/2</td></tr>
+<tr><td>6H</td><td>hcc</td><td>ABCACB</td><td class="n">1/3</td><td class="n">22/3</td><td class="n">1/3</td><td class="n">4/3</td><td class="n">1/3</td></tr>
+<tr><td>9R</td><td>hhc</td><td>ABACACBCB</td><td class="n">2/3</td><td class="n">20/3</td><td class="n">2/3</td><td class="n">2/3</td><td class="n">2/3</td></tr>
+<tr><td>15R</td><td>hcchc</td><td>ABCACBCABACABCB</td><td class="n">2/5</td><td class="n">36/5</td><td class="n">2/5</td><td class="n">6/5</td><td class="n">2/5</td></tr>
+<tr><td>フィボナッチ</td><td>c → ch, h → c</td><td>決して繰り返さない</td><td class="n">(3 − √5)/2</td><td class="n">5 + √5</td><td class="n">(3 − √5)/2</td><td class="n">√5 − 1</td><td class="n">(3 − √5)/2</td></tr></table>
+<p>単位胞あたり：双晶キャップ f 個、双角錐 f 個、キャップ 8 − 2f 個（左右それぞれ 4 − f 個）、正四面体 2 − 2f 個、OG 1 個。フィボナッチ列：h の割合は 1/φ² に近づきます（最初の 6765 文字のうちちょうど 2584 文字）。双晶面どうしは 2 層または 3 層離れています。</p>
+<p><b>検証と出典。</b>polytype_exact.py（29 件 PASS、厳密；有理 60° 回転 (1,0,0) → (2/3, 2/3, −1/3)）；jewel_symmetry.py（浮動小数点）。既知：これらの積層（コンウェイ、ジャオとトルクァート、ほか）、ヤゴジンスキー、ラムズデル、IUCr の記法、スピネル式双晶則、フィボナッチ列と純粋点回折。調査：ライブラリ資料 80 件とウェブ、2026 年 10 月 20 日。研究コミット b7c6307。</p>

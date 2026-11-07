@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+
+<html lang="ja"><head><meta charset="utf-8"/><title>DICTO 原子辞典 ― 空間の量子 II</title>
+<link href="../paper.css" rel="stylesheet"/>
+<style>
+body { font-size: 11pt; line-height: 1.55; }
+.page { break-after: page; }
+.titlepage { text-align: center; padding-top: 38mm; }
+.titlepage img.big { width: 62mm; margin: 0 auto 12mm; display: block; }
+.titlepage h1 { font-size: 34pt; margin: 0 0 6pt; letter-spacing: .5pt; }
+.titlepage .sub { font-size: 13pt; margin: 0 0 22mm; }
+.titlepage .by { font: 600 15pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 0 0 4pt; }
+.titlepage .small { font: 9pt/1.6 "DejaVu Sans", sans-serif; color: #444; margin: 0 auto; max-width: 140mm; }
+.titlepage .sample { margin: 18mm auto 0; max-width: 130mm; font: 9.5pt/1.5 "DejaVu Sans", sans-serif; color: #333; border-top: 1px solid #b8962e; border-bottom: 1px solid #b8962e; padding: 6pt 0; }
+.contents h2 { margin-top: 10pt; }
+.contents ol { list-style: none; padding: 0; margin: 0 0 4pt; columns: 2; column-gap: 8mm; font: 8.8pt/1.45 "DejaVu Sans", sans-serif; }
+.contents li { break-inside: avoid; margin: 0 0 1.5pt; padding-left: 9mm; text-indent: -9mm; }
+.contents li b { display: inline-block; width: 9mm; text-indent: 0; color: #6b5310; }
+.contents li.here { font-weight: 600; }
+.contents p.chap { margin: 0 0 2pt; font-style: italic; font-size: 9.5pt; }
+.contents .note { font: 8.6pt "DejaVu Sans", sans-serif; color: #444; margin-top: 6pt; }
+.intro h3, .entry h3 { font: 600 11pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 11pt 0 3pt; break-after: avoid; }
+.chapter-mark { font: 600 9pt "DejaVu Sans", sans-serif; letter-spacing: 1.5pt; text-transform: uppercase; color: #b8962e; margin: 0 0 2pt; }
+.entry h1 { font-size: 20pt; }
+.entry .logo, .intro .logo { width: 22mm; }
+.lead { font-size: 12pt; line-height: 1.5; color: #222; }
+.dataref { font: 8.8pt "DejaVu Sans", sans-serif; color: #6b5310; }
+.credit { font: 8.8pt/1.5 "DejaVu Sans", sans-serif; color: #333; border-top: 1px solid #b8962e; padding-top: 4pt; margin-top: 10pt; }
+.doi { font: 600 9.5pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 6pt 0 0; }
+.figs.wide { grid-template-columns: 1fr; width: 100%; }
+.appendix { font-size: 9.6pt; line-height: 1.45; }
+.appendix h2 { break-before: auto; margin-top: 16pt; border-top: 1px solid #b8962e; padding-top: 6pt; }
+.appendix h2.first { break-before: auto; }
+.appendix h3 { font: 600 10pt "DejaVu Sans", sans-serif; color: #6b5310; margin: 9pt 0 2pt; break-after: avoid; }
+.appendix ul { padding-left: 5mm; margin: 2pt 0; }
+.appendix li { margin: 0 0 2pt; }
+.appendix table { font-size: 8.6pt; }
+td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.licence { font: 8.4pt "DejaVu Sans", sans-serif; color: #555; }
+
+/* DICTO 10-29: neutral sans-serif for the whole book, as in the series */
+body,h1,h2,h3,h4,.sub,.meta,figcaption,table,.status,ol.refs,p,li{font-family:"Nimbus Sans","Liberation Sans","DejaVu Sans",sans-serif}
+
+/* DICTO 10-29: spacing. Entries flow on (a new page only at each chapter), titles stand clear of the text above and below */
+.page.entry { break-after: auto; break-before: auto; margin-top: 14mm; padding-top: 6mm; border-top: 1px solid #e3d7b5; }
+.page.entry[data-first="1"] { break-before: page; margin-top: 0; padding-top: 0; border-top: none; }
+.page.entry h1 { margin: 5mm 0 3mm; break-after: avoid; }   /* DICTO 10-29: clear gap between the chapter line and the title */
+.page.entry .chapter-mark { margin-bottom: 0; }
+.page.entry .sub { margin-bottom: 7mm; break-after: avoid; }
+.page.entry .chapter-mark { break-after: avoid; }
+.intro h3, .entry h3 { margin: 16pt 0 6pt !important; break-after: avoid; }
+.entry p, .intro p { orphans: 3; widows: 3; }
+figure { break-inside: avoid; }
+
+/* DICTO 10-29: the same clear gap wherever a chapter line stands over a title (introduction, catalogue, short chapters, appendix) */
+.chapter-mark { margin-bottom: 0 !important; }
+.chapter-mark + h1 { margin-top: 5mm !important; margin-bottom: 4mm !important; }
+.status { border: 2px solid #a00; border-radius: 2mm; padding: 2mm 3mm; margin: 3mm 0; font-size: 8.6pt; line-height: 1.35; color: #300; background: #fff6f6; }
+.status li { margin: 0 0 1mm; }
+.appendix p.told { font: italic 8.8pt "Nimbus Sans", "Liberation Sans", sans-serif; color: #6b5310; margin: -1pt 0 4pt; }
+.howto dt { font-weight: 600; color: #6b5310; margin-top: 6pt; } .howto dd { margin: 1pt 0 0 6mm; }
+.contents ul.app { list-style: none; padding: 0; margin: 0 0 4pt; columns: 2; column-gap: 8mm; font: 8.8pt/1.45 "DejaVu Sans", sans-serif; }
+.contents ul.app li { break-inside: avoid; margin: 0 0 1.5pt; padding-left: 11mm; text-indent: -11mm; } .contents ul.app li b { display: inline-block; width: 11mm; text-indent: 0; color: #6b5310; }
+</style><style>body{font-family:'Noto Serif CJK JP','Noto Sans CJK JP',serif;line-break:strict}</style></head><body>
+<img alt="" class="watermark" src="../dicto-logo.png"/>
+<!-- ============ COVER ============ -->
+<section class="page coverpage" style="height:252mm;display:flex;justify-content:center;align-items:center">
+<img alt="表紙：ディクトナリー・オブ・アトムズ（DICTO 原子辞典 ― 空間の量子 II）、DICTO。DICTO の名の五つのプラトンの立体の大黄金切断立体 D I C T O の正方形の下に" src="figures/cover/dictonary-cover-front-golden-ja.png" style="width:100%;height:auto;display:block"/>
+</section>
+<section class="page titlepage">
+<img alt="DICTO" class="big" src="../dicto-logo.png"/>
+<h1>DICTO 原子辞典</h1><p class="small">ディクトナリー・オブ・アトムズ　英語版（DICTO DOI: 10.5281/zenodo.23966395）からの日本語訳</p>
+<p class="sub">空間の量子 II</p>
+<p class="by">DICTO</p>
+<p class="small">美術作家（大阪） · contact@dictospheres.com · https://dictospheres.com<br/>
+作品・発見・名称はすべて DICTO によるものです。計算、検証、草稿および翻訳は Claude（Anthropic）と共に行いました。<br/>
+ライセンス CC BY-SA 4.0</p>
+<p class="small" style="margin-top:8mm">書籍 · 第 II 巻（日本語訳） · 第 1 版 · 2026年11月7日 · DICTO DOI: 10.5281/zenodo.24028641 · 原著（英語、第 1.2 版）: 10.5281/zenodo.23966395</p>
+<div class="status"><b>Status</b> (draft for DICTO's reading; this box is deleted at publication): the Japanese edition of The DICTOnary of Atoms, checked for accuracy against the English, unit by unit (816 corrections to the earlier draft: the catalogue and about 25 tables were still in English; reversed statements, wrong solids, lost "squared", wrong paper numbers), with D133 and D134 added and the six catalogue notes in full as in the English Version 1.2 draft. Katakana cover ディクトナリー・オブ・アトムズ. Released as its own record (DOI reserved: 10.5281/zenodo.24028641), linked to the English as a translation.</div>
+<p class="small" style="margin-top:2mm">第 I 巻『空間の量子 ― マニフェスト』（DICTO DOI: 10.5281/zenodo.23754454）：マニフェストと、六つの章で語られる作品。この巻には、それらの原子とデータを収めています。</p>
+</section>
+<!-- ============ HOW TO READ AN ENTRY ============ -->
+<section class="page intro howto">
+<img alt="DICTO" class="logo" src="../dicto-logo.png"/>
+<p class="chapter-mark">序論</p>
+<h1>エントリの読み方</h1>
+<p class="lead">これは空間の原子の辞書です：DICTO の幾何学作品の名前のある形のすべてが、それぞれ一つの空間の量子です。第 I 巻『空間の量子 ― マニフェスト』は六つの章で作品を語り、本書にはそれらの形と数値が収められています。名前は DICTO によるもので、DICTOnary（ディクトナリー）です。</p>
+<p>各項目は、辞書の項目のように読みます。</p>
+<dl>
+<dt>見出し：D番号と名称</dt>
+<dd>D1、D2…は、DICTO の新しい単一の立体とピースに彼が与えた恒久的な番号で、初公開の順に付けられ、再利用されることはありません。既知の形は、最初の作り手が与えた番号（ジョンソン、一様多面体、ウェンニンガー、ハート、モッセリ＝サドック）をそのまま保ちます。ピースから組み立てられたクラスター・構造・ネットワークには番号がありません（—）。</dd>
+<dt>定義：図、データ、出典</dt>
+<dd><b>図。</b>データセット『DICTO の立体 ― 厳密な幾何』の厳密なモデルファイルから描かれたもので、すべて同じ姿勢で示されています。DICTO の新しい形は金色、既知の形は銀色です。まだモデルファイルがない形は、「ここに図のないもの」の表に挙げています。<br/>
+<b>データ。</b>その種類（立体、ピース、クラスター、構造、ネットワーク、複合体、または曲面体）と、先行技術調査で見つかった状況。「見つからない」とは、調べた資料にその形が示されていなかったことを意味するだけで、新規性の証明ではありません。各作品の厳密な値、すなわち体積、証明の概略、検証は、「作品ごとのデータ」に作品ごとに一節ずつ収めています。A.18 は論文 #18 のデータです。<br/>
+<b>出典。</b>論文の番号（#41）または Kaleidohedra の発見（F1）で、その DICTO DOI にリンクしています。それを語る第 I 巻の章も記します（第 I 巻 第1章）。</dd>
+</dl>
+<h3>この巻の各部分</h3>
+<p><b>すべての原子：</b>DICTO の新しい形 134 個、次に彼の新しいクラスター・構造・ネットワーク 37 個、そしてまだ図のないもの。<b>作品ごとのデータ：</b>A.8 から A.51 までの節、ディクトニック立体と結合については A.DB、Kaleidohedra の発見については A.K、データセットについては A.D。<b>既知の形と再発見された形：</b>この作品が組み立てに用いる形のうち、他の人々が最初に作った 27 の形。すべての値はデータセットから組み直して検証でき、その検証プログラムはデータファイルだけから値を証明し直します。</p>
+<p class="credit">形、名称、D番号は DICTO によるものです。カタログとデータは Claude（Anthropic）と共に構築・検証しました。ライセンスは CC BY-SA 4.0 です。</p>
+</section>
+<!-- ============ CONTENTS ============ -->
+<section class="page contents">
+<img alt="DICTO" class="logo" src="../dicto-logo.png" style="width:22mm"/>
+<h1>目次</h1>
+<p style="font: 9.5pt 'DejaVu Sans', sans-serif;">エントリの読み方</p>
+<h2>すべての原子</h2><p class="chap">カタログ：作品の名前のある形のすべてを、図、データ、出典とともに。</p>
+<ol>
+<li><b>—</b>DICTO の新しい原子：新しい形 134 個、D1 から D134</li>
+<li><b>—</b>DICTO の新しいクラスター・構造・ネットワーク：37</li>
+<li><b>—</b>ここに図のないもの：まだモデルファイルがない形</li>
+</ol>
+<h2>作品ごとのデータ</h2><p class="chap">作品ごとに一節、その論文に発表されたとおりに。</p>
+<h3 style="margin:6pt 0 2pt;font-size:9.5pt">第 I 巻 第1章 原子で語られたもの</h3>
+<ul class="app">
+<li><b>A.18</b>DICTO ヘクサ</li>
+<li><b>A.19</b>AXE、CLEO、FUJI</li>
+<li><b>A.20</b>FUJI ファミリー</li>
+<li><b>A.28</b>DICTO 切頂二十面体型ヘカトディヘドロン</li>
+<li><b>A.31</b>DICTO オグドエコンタヘドロン</li>
+<li><b>A.31a</b>DICTO OCD ステラ</li>
+<li><b>A.34a</b>DICTO ヘカトグドエコンタヘドロン</li>
+<li><b>A.35a</b>DICTO メタクシヘキセコンタヘドロン</li>
+<li><b>A.35b</b>DICTO パリントリアコンタヘドロン</li>
+<li><b>A.41</b>DICTO ジュエル</li>
+<li><b>A.45</b>ルーローの正多面体</li>
+<li><b>A.49</b>多面体伸長定理</li>
+</ul>
+<h3 style="margin:6pt 0 2pt;font-size:9.5pt">第 I 巻 第2章 結合で語られたもの</h3>
+<ul class="app">
+<li><b>A.8</b>ユークリッド＝ケプラー＝パチョーリ・セル</li>
+<li><b>A.13</b>DICTO ドデカ13</li>
+<li><b>A.14</b>DICTO スター</li>
+<li><b>A.17</b>カゴメ凸包</li>
+<li><b>A.25</b>DICTO スフェロイド13 RD</li>
+<li><b>A.26</b>DICTO ATOM-13×13</li>
+<li><b>A.30</b>フィボナッチの背骨</li>
+<li><b>A.36</b>黄金菩提パイロクロア</li>
+<li><b>A.37</b>オクテット・トラス上の DICTO オグドエコンタヘドロン</li>
+<li><b>A.37a</b>回転オクテット上の DICTO オグドエコンタヘドロン</li>
+<li><b>A.40</b>あらゆる積層上の DICTO OG ファミリー</li>
+<li><b>A.42</b>DICTO サンスター</li>
+<li><b>A.44</b>アリストテレスの角錐</li>
+<li><b>A.47</b>正多面体のどの組み合わせも空間を充填する</li>
+<li><b>A.48</b>黄金の切り分け</li>
+<li><b>A.51</b>デロスの結合</li>
+<li><b>A.50</b>一手ずつ</li>
+<li><b>A.DB</b>ディクトニック立体とディクトニック結合</li>
+</ul>
+<h3 style="margin:6pt 0 2pt;font-size:9.5pt">第 I 巻 第3章 殻で語られたもの</h3>
+<ul class="app">
+<li><b>A.22</b>業の連鎖</li>
+<li><b>A.23</b>法の球</li>
+<li><b>A.24</b>菩提の種</li>
+<li><b>A.27</b>あいだを捉える</li>
+<li><b>A.29</b>テアイテトス</li>
+<li><b>A.34</b>始祖</li>
+<li><b>A.35</b>金剛乗</li>
+</ul>
+<h3 style="margin:6pt 0 2pt;font-size:9.5pt">第 I 巻 第4章 サイクルで語られたもの</h3>
+<ul class="app">
+<li><b>A.32</b>裏返しの殻</li>
+<li><b>A.33</b>ダブル・ヴィジョン</li>
+<li><b>A.38</b>ユニバーサル・パイテト</li>
+<li><b>A.38a</b>DICTO ケプラー・ポアンソ・UP サイクル</li>
+<li><b>A.39</b>DICTO OG ファミリー</li>
+<li><b>A.43</b>DICTO 求心道コア</li>
+</ul>
+<h3 style="margin:6pt 0 2pt;font-size:9.5pt">第 I 巻「発見とアプリ」で語られたもの</h3>
+<ul class="app">
+<li><b>A.K</b>Kaleidohedra（カレイドヘドラ）</li>
+<li><b>A.D</b>DICTO の立体 ― 厳密な幾何</li>
+</ul>
+<h2>本作品の既知の形と再発見された形</h2><p class="chap">他の人々が最初に作った、あるいは DICTO が再発見した 27 の形。</p>
+<h2>著者について</h2>
+</section>
+<!--ATOMS START-->
+<style>
+.atoms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm 4mm; }
+.atom { break-inside: avoid; font: 7.6pt/1.3 "Nimbus Sans", "Liberation Sans", sans-serif; }
+.atom img { width: 100%; display: block; border-radius: 2mm; }
+.atom img.bw { aspect-ratio: 1; object-fit: cover; } .atom .bwn { font-size: 6.4pt; color: #888; }
+.atom .noicon { aspect-ratio: 1; border: 1px dashed #bbb; border-radius: 2mm; color: #999; font-size: 7pt; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2mm; }
+.atl { font: 7.4pt/1.3 "Nimbus Sans", "Liberation Sans", sans-serif; width: 100%; } .atl td, .atl th { padding: 1mm 1.5mm; vertical-align: top; } .tl { font-size: 9pt; margin-top: 4mm; text-align: left; caption-side: top; padding-bottom: 2mm; }
+.atom .an { margin-top: 1mm; font-size: 8.4pt; } .atom .am { color: #6b5310; } .atom .ant { color: #555; font-size: 7pt; }
+.atom .av { color: #6b5310; font-size: 7pt; font-style: italic; }
+</style><section class="page catalogue">
+<p class="chapter-mark">DICTO 原子辞典 · カタログ</p>
+<h1>すべての原子</h1>
+<p>作品の名前のある形のすべてを、それぞれ一つの空間の量子として収めます。まず DICTO の新しい形 134 個、D1 から D134（初出の順に付けられ、再利用されることはありません）。次に、それらから組み立てられた彼の新しいクラスター・構造・ネットワーク 37 個。この作品が組み立てに用いる既知の形と再発見された形 27 個は、本書の巻末に挙げます。データセット『DICTO の立体 ― 厳密な幾何』にモデルファイルがある形は、すべて同じ姿勢で描かれています。DICTO の新しい形は金色、既知の形は銀色です。それぞれの下には、その種類、出典となる論文または発見（DICTO DOI にリンク）、それを語る第 I 巻の章、そして先行技術調査で見つかった状況を記します。</p>
+<h2>DICTO の新しい原子</h2>
+<div class="atoms">
+<div class="atom"><img src="figures/atoms/dicto-skewed-rhombic-dodecahedron.png" alt="DICTO skewed rhombic dodecahedron"><div class="an"><b>D1</b> DICTO 斜交菱形十二面体</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23173809">発見 F1</a></div><div class="av">第 I 巻「発見とアプリ」</div><div class="ant">既知の族の新しい一員（菱形十二面体の平行多面体：Fedorov 1885；Lalvani US 5,623,790, 1997）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-skewed-ed-16.png" alt="DICTO skewed elongated dodecahedron ED F16"><div class="an"><b>D2</b> DICTO 斜交長菱形十二面体 ED F16</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23173809">発見 F7</a></div><div class="ant">既知の族の新しい一員（長菱形十二面体の平行多面体：Fedorov；Lalvani US 5,623,790）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-skewed-ed-18.png" alt="DICTO skewed elongated dodecahedron ED F18"><div class="an"><b>D3</b> DICTO 斜交長菱形十二面体 ED F18</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23173809">発見 F7</a></div><div class="ant">既知の族の新しい一員（長菱形十二面体の平行多面体：Fedorov；Lalvani US 5,623,790）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-jewel.png" alt="DICTO Jewel (EKP windows; first called Dragon Jewel)"><div class="an"><b>D4</b> DICTO ジュエル（EKP の窓；最初の名はドラゴン・ジュエル）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23496353">#41</a></div><div class="av">第 I 巻 第1章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/dicto-dodeca-13-wedge.png" alt="DICTO Dodeca-13 Wedge"><div class="an"><b>D6</b> DICTO ドデカ13 楔</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23284281">#13</a></div><div class="av">第 I 巻 第2章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/dicto-dodeca-13-needle.png" alt="DICTO Dodeca-13 Needle"><div class="an"><b>D7</b> DICTO ドデカ13 針</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23284281">#13</a></div><div class="av">第 I 巻 第2章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-dodeca-13-unit-finned-unit.png" alt="DICTO Dodeca-13 Unit (finned unit)"><div class="an"><b>D8</b> DICTO ドデカ13 ユニット（ひれ付き）</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23284281">#13</a></div><div class="av">第 I 巻 第2章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-hexa-key.png" alt="DICTO Hexa-Key"><div class="an"><b>D10</b> DICTO ヘクサ・キー</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23376320">#18</a></div><div class="av">第 I 巻 第1章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/piece-fuji.png" alt="FUJI"><div class="an"><b>D12</b> FUJI（フジ）</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23351291">#19</a></div><div class="av">第 I 巻 第1章</div><div class="ant">モッセリ＝サドックのタイルではない；その族は #20 に</div></div>
+<div class="atom"><img src="figures/atoms/piece-vajra.png" alt="VAJRA"><div class="an"><b>D13</b> VAJRA（ヴァジュラ）</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23351291">#19</a></div><div class="av">第 I 巻 第1章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/piece-admiral-cap-icosahedron-edge-roof.png" alt="Admiral Cap (icosahedron edge roof)"><div class="an"><b>D16</b> 提督帽（二十面体の辺の屋根）</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23551326">#47</a></div><div class="av">第 I 巻 第2章</div><div class="ant">DICTO による；正二十面体＋帽 6 個＝正八面体</div></div>
+<div class="atom"><img src="figures/atoms/piece-crown-jewel.png" alt="Crown Jewel"><div class="an"><b>D17</b> 冠の宝珠</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23311353">#24</a></div><div class="av">第 I 巻 第3章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/piece-vajra-fine.png" alt="Vajra (fine)"><div class="an"><b>D18</b> ヴァジュラ（細）</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23311353">#24</a></div><div class="av">第 I 巻 第3章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/dicto-hecatodihedron.png" alt="DICTO Truncated-Icosahedral Hecatodihedron"><div class="an"><b>D22</b> DICTO 切頂二十面体型ヘカトディヘドロン</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23360857">#28</a></div><div class="av">第 I 巻 第1章</div><div class="ant">既知の立体から導かれる（jtI の五回の頂点 12 個を平らに切り落としたもの；#28 第 2 版）；名前の付いたものは見つからない</div></div>
+<div class="atom"><img src="figures/atoms/piece-kion.png" alt="Kion"><div class="an"><b>D23</b> キオン</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23378070">#29</a></div><div class="av">第 I 巻 第3章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/piece-atraktos.png" alt="Atraktos"><div class="an"><b>D24</b> アトラクトス</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23378070">#29</a></div><div class="av">第 I 巻 第3章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/piece-aetos.png" alt="Aetos"><div class="an"><b>D25</b> アエトス</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23378070">#29</a></div><div class="av">第 I 巻 第3章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/piece-sphen.png" alt="Sphen"><div class="an"><b>D26</b> スフェン</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23378070">#29</a></div><div class="av">第 I 巻 第3章</div><div class="ant">中空の分割は Klitzing K-4.137 の影</div></div>
+<div class="atom"><img src="figures/atoms/piece-sphenion.png" alt="Sphenion"><div class="an"><b>D27</b> スフェニオン</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23378070">#29</a></div><div class="av">第 I 巻 第3章</div><div class="ant">中空の分割は Klitzing K-4.137 の影</div></div>
+<div class="atom"><img src="figures/atoms/dicto-ogdoecontahedron.png" alt="DICTO Ogdoecontahedron (OG)"><div class="an"><b>D28</b> DICTO オグドエコンタヘドロン（OG）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23404688">#31</a></div><div class="av">第 I 巻 第1章</div><div class="ant">面の配置は既知（L0(D) の双対、Antiprism）；正準形の五方十二面体から導かれる（#31 第 2 版）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-ocd-stella.png" alt="DICTO OCD Stella"><div class="an"><b>D29</b> DICTO OCD ステラ</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23430870">#31a</a></div><div class="av">第 I 巻 第1章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/dicto-metaxyhexecontahedron.png" alt="DICTO Metaxyhexecontahedron"><div class="an"><b>D30</b> DICTO メタクシヘキセコンタヘドロン</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23430864">#35a</a></div><div class="av">第 I 巻 第1章</div><div class="ant">名前をもつ、区別された一員として新しい；正十二面体と正二十面体の凸包の族は既知</div></div>
+<div class="atom"><img src="figures/atoms/dicto-palintriacontahedron.png" alt="DICTO Palintriacontahedron"><div class="an"><b>D31</b> DICTO パリントリアコンタヘドロン</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23430866">#35b</a></div><div class="av">第 I 巻 第1章</div><div class="ant">名前をもつ、区別された一員として新しい；正十二面体と正二十面体の凸包の族は既知</div></div>
+<div class="atom"><img src="figures/atoms/dicto-dbt.png" alt="DICTO Belted Triacontahedron (DBT)"><div class="an"><b>D37</b> DICTO 帯つき三十面体（DBT）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23484012">#37a</a></div><div class="av">第 I 巻 第2章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/dicto-ott.png" alt="DICTO OTT (Octahedrally Truncated Triacontahedron)"><div class="an"><b>D38</b> DICTO OTT（八面体切頂三十面体）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23484012">#37a</a></div><div class="av">第 I 巻 第2章</div><div class="ant">見つからない（最も近いもの：Kabai の 54 面体）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-gti.png" alt="DICTO GTI (golden truncated icosahedron)"><div class="an"><b>D40</b> DICTO GTI（黄金切頂二十面体）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23463305">#38</a></div><div class="av">第 I 巻 第4章</div><div class="ant">サイクルとピースは見つからない；Bergman US 4,719,726 にオクテットに似た殻がある</div></div>
+<div class="atom"><img src="figures/atoms/dicto-fpd.png" alt="DICTO FPD (flat pentakis dodecahedron)"><div class="an"><b>D41</b> DICTO FPD（平たい五方十二面体）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23463305">#38</a></div><div class="av">第 I 巻 第4章</div><div class="ant">同上</div></div>
+<div class="atom"><img src="figures/atoms/dicto-kre.png" alt="DICTO KRE"><div class="an"><b>D45</b> DICTO KRE</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23488944">#39</a></div><div class="av">第 I 巻 第4章</div><div class="ant">組合せ構造は菱形九十面体のもの（既知の型）；この計量をもつ立体は新しい</div></div>
+<div class="atom"><img src="figures/atoms/dicto-phe.png" alt="DICTO PHE"><div class="an"><b>D46</b> DICTO PHE</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23488944">#39</a></div><div class="av">第 I 巻 第4章</div><div class="ant">面の数はゴールドバーグ多面体 GP(3,0) と同じ；この立体は新しい</div></div>
+<div class="atom"><img src="figures/atoms/dicto-tpp.png" alt="DICTO TPP"><div class="an"><b>D47</b> DICTO TPP</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23488944">#39</a></div><div class="av">第 I 巻 第4章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/dicto-dphp.png" alt="DICTO DPHP"><div class="an"><b>D48</b> DICTO DPHP</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23488944">#39</a></div><div class="av">第 I 巻 第4章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/dicto-tph.png" alt="DICTO TPH"><div class="an"><b>D49</b> DICTO TPH</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23488944">#39</a></div><div class="av">第 I 巻 第4章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/dicto-tqh.png" alt="DICTO TQH"><div class="an"><b>D50</b> DICTO TQH</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23488944">#39</a></div><div class="av">第 I 巻 第4章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/dicto-tqp.png" alt="DICTO TQP"><div class="an"><b>D51</b> DICTO TQP</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23488944">#39</a></div><div class="av">第 I 巻 第4章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/dicto-tqhd.png" alt="DICTO TQHD"><div class="an"><b>D52</b> DICTO TQHD</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23488944">#39</a></div><div class="av">第 I 巻 第4章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-hex-aktis.png" alt="DICTO Hex Aktis"><div class="an"><b>D54</b> DICTO ヘクス・アクティス</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23532013">#43</a></div><div class="av">第 I 巻 第4章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-deltoid-aktis.png" alt="DICTO Deltoid Aktis"><div class="an"><b>D55</b> DICTO デルトイド・アクティス</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23532013">#43</a></div><div class="av">第 I 巻 第4章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-triaktis-ott-triangle-ray.png" alt="DICTO Triaktis (OTT triangle ray)"><div class="an"><b>D56</b> DICTO トリアクティス（OTT の三角形の光線）</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23532013">#43</a></div><div class="av">第 I 巻 第4章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-tetraktis-ott-rhombic-ray.png" alt="DICTO Tetraktis (OTT rhombic ray)"><div class="an"><b>D57</b> DICTO テトラクティス（OTT の菱形の光線）</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23532013">#43</a></div><div class="av">第 I 巻 第4章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/piece-antonius.png" alt="Antonius"><div class="an"><b>D65</b> アントニウス</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23529497">#44</a></div><div class="av">第 I 巻 第2章</div><div class="ant">クレオ・イコスとアントニウス：黄金菱面体から得られる、空間を充填する新しい対（#20、#44）</div></div>
+<div class="atom"><img src="figures/atoms/piece-penta-cleo.png" alt="Penta-cleo"><div class="an"><b>D66</b> ペンタ・クレオ</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23357896">#20</a></div><div class="av">第 I 巻 第1章</div><div class="ant">#20 で命名</div></div>
+<div class="atom"><img src="figures/atoms/dicto-lotus-jewel-axes.png" alt="Lotus Jewel Axes"><div class="an"><b>D69</b> ロータス・ジュエル・アックス</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23596362">#48</a></div><div class="av">第 I 巻 第2章</div><div class="ant">見つからない；トリキャップのくぼみを 8 個もつイコサックス（#48 定理 3）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-dodecaxes.png" alt="Dodecaxes"><div class="an"><b>D70</b> ドデカックス</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23596362">#48</a></div><div class="av">第 I 巻 第2章</div><div class="ant">見つからない；トリキャップのキーを 8 個もつアンボーン・アックスで、正十二面体を丸ごと一つ含む（#48 定理 3）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-samson.png" alt="Samson"><div class="an"><b>D71</b> サムソン</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23606828">#51</a></div><div class="av">第 I 巻 第2章</div><div class="ant">新しい比率：一つおきの四つの頂点を切り落とした立方体で、デロスの結合におけるもの；資料には見つからない（#51）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-sonsam.png" alt="Sonsam"><div class="an"><b>D76</b> ソンサム</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23635823">#56</a></div><div class="av">第 I 巻 第2章</div><div class="ant">調べた資料には見つからない（#56）：双晶オクテットの四面体空隙のピースで、等体積点におけるもの（頂点 19、鏡映面上に九角形の面が一つ）；#56：計算が容易なので、名前のない図がどこかにあるかもしれない</div></div>
+<div class="atom"><img src="figures/atoms/dicto-lahdeli.png" alt="Lahdeli"><div class="an"><b>D77</b> ラデリ</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23635823">#56</a></div><div class="av">第 I 巻 第2章</div><div class="ant">調べた資料には見つからない（#56）：双晶オクテットの八面体空隙のピースで、等体積点におけるもの、デリラの双晶形</div></div>
+<div class="atom"><img src="figures/atoms/dicto-ian-dury.png" alt="Ian Dury"><div class="an"><b>D78</b> イアン・デューリー</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23635823">#56</a></div><div class="av">第 I 巻 第2章</div><div class="ant">調べた資料には見つからない（#56）：双晶オクテットの四面体空隙のピースで、停止点 5/24 におけるもの、古典的な 60° の菱面体と並ぶ</div></div>
+<div class="atom"><img src="figures/atoms/dicto-blockhead.png" alt="Blockhead"><div class="an"><b>D79</b> ブロックヘッド</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23635823">#56</a></div><div class="av">第 I 巻 第2章</div><div class="ant">調べた資料には見つからない（#56）：双晶オクテットの四面体空隙のピースで、3/8 におけるもの、立方体の双晶形</div></div>
+<div class="atom"><img src="figures/atoms/dicto-chucky.png" alt="Chucky"><div class="an"><b>D80</b> チャッキー</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23647898">#57</a></div><div class="av">第 I 巻 第5章</div><div class="ant">調べた資料には見つからない（#57）：ABAC の -3/8 におけるヤヌス c/h ピース（上半分が六方、下半分が立方）；その体積は二つの親の体積の平均</div></div>
+<div class="atom"><img src="figures/atoms/dicto-fang.png" alt="Fang"><div class="an"><b>D81</b> ファング</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23647898">#57</a></div><div class="av">第 I 巻 第5章</div><div class="ant">調べた資料には見つからない（#57）：ABAC の 5/24 におけるヤヌス c/h ピース（上半分が六方、下半分が立方）；その体積は二つの親の体積の平均</div></div>
+<div class="atom"><img src="figures/atoms/dicto-triskelion-tetrahedron.png" alt="Triskelion Tetrahedron"><div class="an"><b>D82</b> トリスケリオン四面体</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23647898">#57</a></div><div class="av">第 I 巻 第5章</div><div class="ant">立方オクテットの 5/24 における四面体のピースで、サムソンの滑る族の一員（#51）；ABAC で現れ、#57 で命名（名はその一員を示す）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-keyaxes.png" alt="Keyaxes"><div class="an"><b>D83</b> キーアックス</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23677485">#59</a></div><div class="av">第 I 巻 第2章</div><div class="ant">キー付きイコサックス・カゴメ・ネットワークのピース（トリキャップのくぼみ 2 個と、鏡像のトリキャップのキー 6 個をもつイコサックス、体積 φ^2）；このネットワークは検索した資料には見つからない（#59）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-ganesha.png" alt="Ganesha"><div class="an"><b>D84</b> ガネーシャ</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23682596">#61</a></div><div class="av">第 I 巻 第5章</div><div class="ant">調べた資料には見つからない（#61）：押しつぶした積層のヤヌス c/h の四面体ピース（下が立方、上が六方）；データセットには #61 図 1 のパラメータで収録（ACBC、層間隔^2 = (3/4)(2/3)、λ = 1/10）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-humpty-dumpty.png" alt="Humpty Dumpty"><div class="an"><b>D85</b> ハンプティ・ダンプティ</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 巻 第6章</div><div class="ant">この形を最初に見いだしたのはアリシア・ブール・ストット（1900）で、作図によって見いだし、平面図に描き、厚紙の模型に組み立てました。その厳密な幾何（座標、体積、対称性、検証済み）は DICTO が #63 で計算しました。</div></div>
+<div class="atom"><img src="figures/atoms/dicto-shadow-17.png" alt="Kagemusha"><div class="an"><b>D86</b> 影武者（Kagemusha）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23687223">#62</a></div><div class="av">第 I 巻 第6章</div><div class="ant">DICTO の命名（2026-10-30）、「影の武者」の意（以前の名は二次元の見え方からの Shadow-17；ファイル名 dicto-shadow-17 はそのまま）；既知のピース（J11、ジョンソンの立体の正五角錐反柱、Johnson 1966）からの新しい構成：二つの J11 を五角形の面で貼り合わせたもの；#62 はこれを 600胞体（正六百胞体）の外側の辺先行断面の等辺形と同定；状況は DICTO が 2026-10-28 に決定、最初の命名は #62</div></div>
+<div class="atom"><img src="figures/atoms/dicto-lion.png" alt="Lion"><div class="an"><b>D87</b> ライオン</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 巻 第6章</div><div class="ant">W1：600胞体の頂点先行の中心断面（頂点 42、三角形 80、Ih）；立体としては調べた資料には見つからない（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-jabberwock.png" alt="Jabberwock"><div class="an"><b>D88</b> ジャバウォック</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 巻 第6章</div><div class="ant">W3：頂点先行、600胞体の、すべて三角形からなる断面のうち最大のもの（頂点 72、三角形 140）；立体としては調べた資料には見つからない（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-tweedledum.png" alt="Tweedledum"><div class="an"><b>D89</b> トゥイードルダム</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 巻 第6章</div><div class="ant">W5：頂点先行の断面（頂点 32、三角形 60、Ih）；立体としては調べた資料には見つからない（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-tweedledee.png" alt="Tweedledee"><div class="an"><b>D90</b> トゥイードルディー</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 巻 第6章</div><div class="ant">W22：辺先行の断面（頂点 32、三角形 60、D5h）、トゥイードルダムと同じ数をもつ別の形；立体としては調べた資料には見つからない（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-mad-hatter.png" alt="Mad Hatter"><div class="an"><b>D91</b> 帽子屋</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 巻 第6章</div><div class="ant">W28：面先行、隙間の中（その中点で切る）、頂点 144 の四つの断面の一つで、四つはすべて異なる；調べた資料には見つからない（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-march-hare.png" alt="March Hare"><div class="an"><b>D92</b> 三月ウサギ</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 巻 第6章</div><div class="ant">W30：面先行、隙間の中（その中点で切る）、頂点 144；調べた資料には見つからない（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-jubjub.png" alt="Jubjub"><div class="an"><b>D93</b> ジャブジャブ</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 巻 第6章</div><div class="ant">W43：面先行の、すべて三角形からなる断面（頂点 30、三角形 56）；立体としては調べた資料には見つからない（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-alice.png" alt="Alice"><div class="an"><b>D94</b> アリス</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 巻 第6章</div><div class="ant">W49：胞先行、隙間の中（その中点で切る）、頂点 144；隙間の断面で、ブール・ストットの系列にはない；調べた資料には見つからない（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-white-rabbit.png" alt="White Rabbit"><div class="an"><b>D95</b> 白ウサギ</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 巻 第6章</div><div class="ant">W51：胞先行、隙間の中（その中点で切る）、頂点 144；調べた資料には見つからない（#63）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-haigha.png" alt="Haigha"><div class="an"><b>D96</b> ヘイヤ</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23716140">#65</a></div><div class="av">第 I 巻 第6章</div><div class="ant">R33：120胞体（正百二十胞体）の辺先行断面、九角形の面をもつ唯一のもの；調べた資料には見つからない（#65）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-hatta.png" alt="Hatta"><div class="an"><b>D97</b> ハッタ</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23716140">#65</a></div><div class="av">第 I 巻 第6章</div><div class="ant">R35：120胞体の辺先行断面、頂点 114 のもう一つの断面；調べた資料には見つからない（#65）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-red-king.png" alt="Red King"><div class="an"><b>D98</b> 赤の王</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23716140">#65</a></div><div class="av">第 I 巻 第6章</div><div class="ant">R77：120胞体の五角形先行の中心断面、二つの正十角形；600胞体の辺先行の影の極双対；調べた資料には見つからない（#65）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-walrus.png" alt="Walrus"><div class="an"><b>D99</b> セイウチ</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23716140">#65</a></div><div class="av">第 I 巻 第6章</div><div class="ant">R80：120胞体の五角形先行の断面、頂点 120；調べた資料には見つからない（#65）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-red-knight.png" alt="Red Knight"><div class="an"><b>D100</b> 赤の騎士</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23716140">#65</a></div><div class="av">第 I 巻 第6章</div><div class="ant">R113：120胞体の胞先行の、隙間の中の断面（その中点で切る）、頂点 120；隙間の断面で、ブール・ストットの系列にはない；調べた資料には見つからない（#65）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-white-knight.png" alt="White Knight"><div class="an"><b>D101</b> 白の騎士</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23716140">#65</a></div><div class="av">第 I 巻 第6章</div><div class="ant">R115：120胞体の胞先行の、隙間の中の断面（その中点で切る）：斜方切頂二十・十二面体の面と対称性（正方形 30、六角形 20、十角形 12、Ih）をもち、辺の長さは二通り；調べた資料には見つからない（#65）；族：DICTO-GTT 立体（#88）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-fallen-humpty.png" alt="Fallen Humpty"><div class="an"><b>D102</b> 落ちたハンプティ</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23687223">#62</a></div><div class="av">第 I 巻 第6章</div><div class="ant">ハンプティ・ダンプティの模様の等辺形：頂点 48、正三角形 92、等しい辺 138、Td、非凸（二面角 81.75°–243.20°）；#62 では断面 48（Slice-48）、#63 で落ちたハンプティと命名；調べた資料には見つからない（#62）；番号は 2026-10-29 に付与（第 4–5 版では漏れていた。D番号は再利用しない）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-golden-ti-star.png" alt="Golden TI Star"><div class="an"><b>D103</b> 黄金 TI スター</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23782577">#78</a></div><div class="av">第 I 巻 第4章</div><div class="ant">すべての面に角錐を載せた切頂二十面体で、先端は垂線の足の φ 倍の位置（頂点 92、三角形 180、体積 φ × TI、Ih）；二倍の形（2×）も同じ構成；調べた資料には見つからない（#78）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-star-halo.png" alt="Star Halo"><div class="an"><b>D104</b> スター・ハロー</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23782577">#78</a></div><div class="av">第 I 巻 第4章</div><div class="ant">DICTO の命名：TI スターの 32 個の先端の凸包で、カタランの立体ではない五方十二面体（五回の頂点が六回の頂点より 1.0265 倍遠い）；調べた資料には見つからない（#78）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-ti-star-core.png" alt="TI Star core"><div class="an"><b>D105</b> TI スター・コア</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23782577">#78</a></div><div class="av">第 I 巻 第4章</div><div class="ant">各辺の (10 − √5)/19 で切頂した正二十面体（五角形 12、六角形 20、六角形の辺の比は √5）、TI スターのサイクルのすべての巡りのコアであり、スター・ハローの双対（#78）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-cube-pearl.png" alt="Cube Pearl"><div class="an"><b>D106</b> 立方体の真珠（Cube Pearl）</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23822907">#80</a></div><div class="ant">平面 (±1, ±1, 0)·x ≤ 6/5 で辺を削った立方体（深さ s = 3/5）：32 個の頂点がすべて一つの球面上にあり、正方形 6、六角形 12、Oh；面取り立方体の族は古典的だが、この深さは調べた資料には見つからない；その T の連鎖は周期 4 で閉じる（#80）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-golden-clasp.png" alt="Golden Clasp"><div class="an"><b>D107</b> 黄金の留め金（Golden Clasp）</div><div class="am">立体 · スター・コアの研究（2026-10-31-star-cores-names）</div><div class="ant">斜方切頂立方八面体の面を、四回・三回・二回軸の上で深さ 1 : 1/φ : 3/4 に置いたもの（頂点 48、面 26、Oh）；その T の連鎖は周期 4 で閉じるが、アルキメデスの立体の斜方切頂立方八面体の連鎖は閉じない（スター・コア研究 3）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-hamlet.png" alt="Hamlet"><div class="an"><b>D108</b> ハムレット</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23822907">#80</a></div><div class="ant">オグドエコンタヘドロンから始まる DICTO の成長規則 T の連鎖の第 5 段階で、KRE、PHE、TPP、DPHP に続くもの：頂点 452、面 270、Ih（#80、第 6 節）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-ophelia.png" alt="Ophelia"><div class="an"><b>D109</b> オフィーリア</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23822907">#80</a></div><div class="ant">同じ連鎖の第 6 段階で、ハムレットに続くもの：頂点 642、面 440、Ih（#80、第 6 節）；この連鎖は閉じない</div></div>
+<div class="atom"><img src="figures/atoms/piece-greater-golden-cut-dodecahedron.png" alt="Greater Golden Cut Dodecahedron"><div class="an"><b>D119</b> 大黄金切断十二面体</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23896439">#88</a></div><div class="av">第 I 巻 第1章</div><div class="ant">DICTO-ケプラー黄金切頂：すべての頂点を辺の x = 1/3 で切り、五角形は黄金十角形になる（切り口の辺が長い）；十角形 12、三角形 20、頂点 60、Ih；#88 の検証の範囲で新しい</div></div>
+<div class="atom"><img src="figures/atoms/piece-lesser-golden-cut-dodecahedron.png" alt="Lesser Golden Cut Dodecahedron"><div class="an"><b>D120</b> 小黄金切断十二面体</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23896439">#88</a></div><div class="av">第 I 巻 第1章</div><div class="ant">DICTO-ケプラー黄金切頂：すべての頂点を x = (7 − √5)/22 ≈ 0.2165 で切り、五角形は黄金十角形になる（元の辺が長い）；十角形 12、三角形 20、頂点 60、Ih；#88 の検証の範囲で新しい</div></div>
+<div class="atom"><img src="figures/atoms/piece-greater-golden-cut-icosahedron.png" alt="Greater Golden Cut Icosahedron"><div class="an"><b>D121</b> 大黄金切断二十面体</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23896439">#88</a></div><div class="av">第 I 巻 第1章</div><div class="ant">DICTO-ケプラー黄金切頂：すべての頂点を x = 1/φ² ≈ 0.3820 で切り、三角形は黄金切頂三角形になる（切り口の辺が長い）；切頂三角形 20、五角形 12、頂点 60、Ih；#88 の検証の範囲で新しい</div></div>
+<div class="atom"><img src="figures/atoms/piece-lesser-golden-cut-icosahedron.png" alt="Lesser Golden Cut Icosahedron"><div class="an"><b>D122</b> 小黄金切断二十面体</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23896439">#88</a></div><div class="av">第 I 巻 第1章</div><div class="ant">DICTO-ケプラー黄金切頂：すべての頂点を x = 1/(φ√5) ≈ 0.2764 で切り、三角形は黄金切頂三角形になる（元の辺が長い）；切頂三角形 20、五角形 12、頂点 60、Ih；#88 の検証の範囲で新しい</div></div>
+<div class="atom"><img src="figures/atoms/piece-greater-golden-cut-cube.png" alt="Greater Golden Cut Cube"><div class="an"><b>D123</b> 大黄金切断立方体</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23896439">#88</a></div><div class="av">第 I 巻 第1章</div><div class="ant">DICTO-ケプラー黄金切頂：すべての頂点を x ≈ 0.3479 で切り、正方形は黄金八角形になる（切り口の辺が長い）；八角形 6、三角形 8、頂点 24、Oh；#88 の検証の範囲で新しい</div></div>
+<div class="atom"><img src="figures/atoms/piece-lesser-golden-cut-cube.png" alt="Lesser Golden Cut Cube"><div class="an"><b>D124</b> 小黄金切断立方体</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23896439">#88</a></div><div class="av">第 I 巻 第1章</div><div class="ant">DICTO-ケプラー黄金切頂：すべての頂点を x ≈ 0.2332 で切り、正方形は黄金八角形になる（元の辺が長い）；八角形 6、三角形 8、頂点 24、Oh；#88 の検証の範囲で新しい</div></div>
+<div class="atom"><img src="figures/atoms/piece-greater-golden-cut-tetrahedron.png" alt="Greater Golden Cut Tetrahedron"><div class="an"><b>D125</b> 大黄金切断四面体</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23896439">#88</a></div><div class="av">第 I 巻 第1章</div><div class="ant">DICTO-ケプラー黄金切頂：すべての頂点を x = 1/φ² ≈ 0.3820 で切り、三角形は黄金切頂三角形になる（切り口の辺が長い）；切頂三角形 4、三角形 4、頂点 12、Td；#88 の検証の範囲で新しい</div></div>
+<div class="atom"><img src="figures/atoms/piece-lesser-golden-cut-tetrahedron.png" alt="Lesser Golden Cut Tetrahedron"><div class="an"><b>D126</b> 小黄金切断四面体</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23896439">#88</a></div><div class="av">第 I 巻 第1章</div><div class="ant">DICTO-ケプラー黄金切頂：すべての頂点を x = 1/(φ√5) ≈ 0.2764 で切り、三角形は黄金切頂三角形になる（元の辺が長い）；切頂三角形 4、三角形 4、頂点 12、Td；#88 の検証の範囲で新しい</div></div>
+<div class="atom"><img src="figures/atoms/piece-greater-golden-cut-rhombic-dodecahedron.png" alt="Greater Golden Cut Rhombic Dodecahedron"><div class="an"><b>D127</b> 大黄金切断菱形十二面体</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23917931">#89</a></div><div class="av">第 I 巻 第2章・第6章</div><div class="ant">DICTO-ケプラー黄金切頂：ケプラーの菱形十二面体（辺 1）を、すべての菱形が黄金八角形になるように切ったもの、切り口の辺 a = 0.477001、元の辺 b = 0.294803（a/b = φ）；八角形 12、正方形 6、三角形 8、頂点 48、Oh；#89 の検証の範囲で新しい</div></div>
+<div class="atom"><img src="figures/atoms/piece-lesser-golden-cut-rhombic-dodecahedron.png" alt="Lesser Golden Cut Rhombic Dodecahedron"><div class="an"><b>D128</b> 小黄金切断菱形十二面体</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23917931">#89</a></div><div class="av">第 I 巻 第2章・第6章</div><div class="ant">DICTO-ケプラー黄金切頂：菱形十二面体（辺 1）を、すべての菱形が黄金八角形になるように切ったもの、切り口の辺 a = 0.322952、元の辺 b = 0.522548（a/b = 1/φ）；八角形 12、正方形 6、三角形 8、頂点 48、Oh；#89 の検証の範囲で新しい</div></div>
+<div class="atom"><img src="figures/atoms/piece-greater-golden-cut-rhombic-triacontahedron.png" alt="Greater Golden Cut Rhombic Triacontahedron"><div class="an"><b>D129</b> 大黄金切断菱形三十面体</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23917931">#89</a></div><div class="av">第 I 巻 第2章・第6章</div><div class="ant">DICTO-ケプラー黄金切頂：菱形三十面体（辺 1）を、すべての菱形が黄金八角形になるように切ったもの、a = 0.463634、b = 0.286541（a/b = φ）；八角形 30、五角形 12、三角形 20、頂点 120、Ih；#89 の検証の範囲で新しい</div></div>
+<div class="atom"><img src="figures/atoms/piece-lesser-golden-cut-rhombic-triacontahedron.png" alt="Lesser Golden Cut Rhombic Triacontahedron"><div class="an"><b>D130</b> 小黄金切断菱形三十面体</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23917931">#89</a></div><div class="av">第 I 巻 第2章・第6章</div><div class="ant">DICTO-ケプラー黄金切頂：菱形三十面体（辺 1）を、すべての菱形が黄金八角形になるように切ったもの、a = 0.316769、b = 0.512543（a/b = 1/φ）；八角形 30、五角形 12、三角形 20、頂点 120、Ih；#89 の検証の範囲で新しい</div></div>
+<div class="atom"><img src="figures/atoms/piece-greater-golden-cut-snub-dodecahedron-l-r.png" alt="Greater Golden Cut Snub Dodecahedron L/R"><div class="an"><b>D131</b> 大黄金切断変形十二面体 L/R</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23917931">#89</a></div><div class="av">第 I 巻 第2章・第6章</div><div class="ant">DICTO 黄金正則切断、左手系と右手系：変形十二面体のすべての頂点を x = 1/3 で切り、五角形は黄金十角形（切り口の辺が長い）、三角形は正六角形になる；十角形 12、六角形 80、頂点の五角形 60、頂点 300、I；#89 の検証の範囲で新しい</div></div>
+<div class="atom"><img src="figures/atoms/piece-lesser-golden-cut-snub-dodecahedron-l-r.png" alt="Lesser Golden Cut Snub Dodecahedron L/R"><div class="an"><b>D132</b> 小黄金切断変形十二面体 L/R</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23917931">#89</a></div><div class="av">第 I 巻 第2章・第6章</div><div class="ant">DICTO 黄金正則切断、左手系と右手系：変形十二面体のすべての頂点を x = 1/(φ√5) で切り、三角形は黄金切頂三角形（元の辺が長い）、五角形は正十角形になる；切頂三角形 80、十角形 12、頂点の五角形 60、頂点 300、I；DICTO-GTT 立体でもある（#89）；#89 の検証の範囲で新しい</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-void-keeper.png" alt="DICTO Void Keeper"><div class="an"><b>D133</b> DICTO 空隙の番人（DICTO Void Keeper）</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23968272">#96</a></div><div class="ant">切った OG の最密な格子充填における部屋のアダプター：隙間の部屋の中心のボロノイ領域から、切った OG を除いたもの；一つの立体、種数 0、体積 0.326555；切った OG と空隙の番人は平行移動で空間を充填する（DICTO 空隙セット 1）；#96 の検証の範囲で新しい</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-golden-skin.png" alt="DICTO Golden Skin, a section through the OG and its skin"><div class="an"><b>D134</b> DICTO 黄金の皮膜（DICTO Golden Skin）</div><div class="am">ピース（族をなし、レンガの大きさごとに一つ） · <a href="https://doi.org/10.5281/zenodo.23968272">#96</a></div><div class="ant">OG 自身の五回軸の格子の上で OG に触れる黄金菱面体から、OG を除いたもの；OG＋黄金の皮膜＋扁長の黄金菱面体で空間を充填する（DICTO 空隙セット 2）；レンガの辺が t/96 のとき皮膜は空間の 2.9%、決してゼロにはならない；断面として描く（青緑が OG、橙が皮膜、金が丸ごとのレンガ）；#96 の検証の範囲で新しい</div></div>
+</div>
+<p class="tl">D番号は単一の立体とピースに与えられます。それらから組み立てられた DICTO の新しいクラスター・構造・ネットワークは、番号なしで続きます。</p>
+<h2>DICTO の新しいクラスター・構造・ネットワーク</h2>
+<div class="atoms">
+<div class="atom"><img src="figures/atoms/piece-dicto-dodeca-13.png" alt="DICTO Dodeca-13"><div class="an"><b>—</b> DICTO ドデカ13</div><div class="am">クラスター · <a href="https://doi.org/10.5281/zenodo.23284281">#13</a></div><div class="av">第 I 巻 第2章</div><div class="ant">見つからない（10.3° の隙間はよく知られている）</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-hexa.png" alt="DICTO Hexa"><div class="an"><b>—</b> DICTO ヘクサ</div><div class="am">クラスター · <a href="https://doi.org/10.5281/zenodo.23376320">#18</a></div><div class="av">第 I 巻 第1章</div><div class="ant">見つからない</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-jewel-tetra.png" alt="DICTO Jewel-Tetra"><div class="an"><b>—</b> DICTO ジュエル・テトラ</div><div class="am">クラスター · <a href="https://doi.org/10.5281/zenodo.23496353">#41</a></div><div class="av">第 I 巻 第1章</div><div class="ant">見つからない；最初の名は DICTO ジュエルの四面体クラスター（F15）で、同じ立体（頂点を照合、尺度 φ/2）；DICTO は #41 の簡潔な名を採った</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-jewel-octa.png" alt="DICTO Jewel-Octa"><div class="an"><b>—</b> DICTO ジュエル・オクタ</div><div class="am">クラスター · <a href="https://doi.org/10.5281/zenodo.23496353">#41</a></div><div class="av">第 I 巻 第1章</div><div class="ant">見つからない；最初の名は DICTO ジュエルの八面体クラスター（F15）で、同じ立体（頂点を照合、尺度 φ/2）；DICTO は #41 の簡潔な名を採った</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-sunstar-tetra.png" alt="DICTO Sunstar-Tetra"><div class="an"><b>—</b> DICTO サンスター・テトラ</div><div class="am">クラスター · <a href="https://doi.org/10.5281/zenodo.23497702">#42</a></div><div class="av">第 I 巻 第2章</div><div class="ant">見つからない；最初の名はサンスターの四面体クラスター（正十二面体 4 個）（F16）で、同じ立体（頂点を照合、尺度 φ/2）；DICTO は #42 の簡潔な名を採った</div></div>
+<div class="atom"><img src="figures/atoms/piece-dicto-sunstar-octa.png" alt="DICTO Sunstar-Octa"><div class="an"><b>—</b> DICTO サンスター・オクタ</div><div class="am">クラスター · <a href="https://doi.org/10.5281/zenodo.23497702">#42</a></div><div class="av">第 I 巻 第2章</div><div class="ant">見つからない；最初の名はサンスターの八面体クラスター（ドッグスターを囲む正十二面体 6 個）（F16）で、同じ立体（頂点を照合、尺度 φ/2）；DICTO は #42 の簡潔な名を採った</div></div>
+<div class="atom"><img src="figures/atoms/dicto-icosaxes-hexa.png" alt="Icosaxes Hexa"><div class="an"><b>—</b> イコサックス・ヘクサ</div><div class="am">クラスター · <a href="https://doi.org/10.5281/zenodo.23677485">#59</a></div><div class="av">第 I 巻 第2章</div><div class="ant">アンボーン・アックスを囲む 8 個のイコサックスを一つの立体としたもの（＝互いに貫き合う 9 個のイコサックス）、イコサックス・カゴメ・ネットワークの節点；このネットワークは検索した資料には見つからない（#59）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-lotus-hexa.png" alt="Lotus Hexa"><div class="an"><b>—</b> ロータス・ヘクサ</div><div class="am">クラスター · <a href="https://doi.org/10.5281/zenodo.23677485">#59</a></div><div class="av">第 I 巻 第2章</div><div class="ant">キー付きのイコサックス・ヘクサ：8 個の角のピースが、ドデカックスに向かう側にくぼみをもち、残りの 7 つの六角形では外向きにキー（鏡像のトリキャップ）をもつ（#59）</div></div>
+</div>
+<h2>ここに図のないもの</h2>
+<p class="tl">これらはそれぞれ、その論文または発見のなかで厳密に計算されています。まだデータセットにモデルファイルがなく、それ単独の図もないため、ここでは図なしで挙げます。</p>
+<table class="atl"><caption class="tl">DICTO の新しい原子</caption><thead><tr><th>番号</th><th>形</th><th>種類</th><th>出典</th><th>第 I 巻</th><th>状況</th></tr></thead>
+<tr><td>D5</td><td>伸長十二面体</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23173809">発見 F11</a></td><td>第 I 巻「発見とアプリ」</td><td>候補；構成が単純なので、ほかにも現れうる（結晶の晶癖）</td></tr>
+<tr><td>D9</td><td>DICTO ドデカ13 星</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23284281">#13</a></td><td>第 I 巻 第2章</td><td>見つからない</td></tr>
+<tr><td>D11</td><td>DICTO ヘクサ・ジュエル</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23376320">#18</a></td><td>第 I 巻 第1章</td><td>見つからない</td></tr>
+<tr><td>D14</td><td>ペンタクルのキング</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23351291">#19</a></td><td>第 I 巻 第1章</td><td>見つからない</td></tr>
+<tr><td>D15</td><td>ロータス・ジュエル（鉤爪の二十面体）</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23173809">発見 F21</a></td><td></td><td>見つからない</td></tr>
+<tr><td>D19</td><td>仏塔</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23345502">#27</a></td><td>第 I 巻 第3章</td><td>法のピースの名</td></tr>
+<tr><td>D20</td><td>モンキー・スタッフ</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23345502">#27</a></td><td>第 I 巻 第3章</td><td>法のピースの名</td></tr>
+<tr><td>D21</td><td>盾</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23360857">#28</a></td><td>第 I 巻 第1章</td><td>切頂二十面体の六角形の面に、ヘカトディヘドロンの高さで載せた角錐</td></tr>
+<tr><td>D32</td><td>GBPC（黄金菩提パイロクロアの角）</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23451210">#36</a></td><td>第 I 巻 第2章</td><td>見つからない</td></tr>
+<tr><td>D33</td><td>ブルホーン OG アダプター</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23451210">#36</a></td><td>第 I 巻 第2章</td><td>見つからない</td></tr>
+<tr><td>D34</td><td>キー付き八面体（黄金キー・オクテット）</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23457016">#37</a></td><td>第 I 巻 第2章</td><td>見つからない</td></tr>
+<tr><td>D35</td><td>W（一体の接着ピース）</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23457016">#37</a></td><td>第 I 巻 第2章</td><td>見つからない</td></tr>
+<tr><td>D36</td><td>テタルトイドのコア（黄金の包みのネットワーク）</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23457016">#37</a></td><td>第 I 巻 第2章</td><td>見つからない</td></tr>
+<tr><td>D39</td><td>鏡の中間ピース Mg</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23484012">#37a</a></td><td>第 I 巻 第2章</td><td>見つからない</td></tr>
+<tr><td>D42</td><td>五面のヴァジュラ</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23463305">#38</a></td><td>第 I 巻 第4章</td><td>見つからない</td></tr>
+<tr><td>D43</td><td>六角クレオ</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23463305">#38</a></td><td>第 I 巻 第4章</td><td>見つからない</td></tr>
+<tr><td>D44</td><td>モンキー・スタッフ B</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23463305">#38</a></td><td>第 I 巻 第4章</td><td>見つからない</td></tr>
+<tr><td>D53</td><td>DICTO サンスター・ヘクサ・キー</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23497702">#42</a></td><td>第 I 巻 第2章</td><td>見つからない</td></tr>
+<tr><td>D58</td><td>DICTO TQP-252</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 巻 第4章</td><td>見つからない</td></tr>
+<tr><td>D59</td><td>DICTO TQ-320</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 巻 第4章</td><td>見つからない</td></tr>
+<tr><td>D60</td><td>DICTO TQP-402</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 巻 第4章</td><td>見つからない</td></tr>
+<tr><td>D61</td><td>DICTO TQ-500</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 巻 第4章</td><td>見つからない</td></tr>
+<tr><td>D62</td><td>DICTO TQD-732</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 巻 第4章</td><td>見つからない</td></tr>
+<tr><td>D63</td><td>DICTO TQHD-662</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 巻 第4章</td><td>見つからない</td></tr>
+<tr><td>D64</td><td>DICTO TQP-672</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 巻 第4章</td><td>見つからない</td></tr>
+<tr><td>D67</td><td>X（辺 φ の立方体からユークリッドの屋根を一つ除いたもの）（#47）</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23551326">#47</a></td><td>第 I 巻 第2章</td><td>#47 の名前付きの連結ピース</td></tr>
+<tr><td>D68</td><td>Y（辺 φ の立方体にユークリッドの屋根を一つ加えたもの）（#47）</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23551326">#47</a></td><td>第 I 巻 第2章</td><td>#47 の名前付きの連結ピース</td></tr>
+<tr><td>D72</td><td>くぼみ付き四面体 L/R（黄金キー・オクテット）</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23457016">#37</a></td><td>第 I 巻 第2章</td><td>見つからない</td></tr>
+<tr><td>D73</td><td>DICTO 充填セット 1 / 2 のピース（成長した双角錐、成長した四面体 L/R）</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23484012">#37a</a></td><td>第 I 巻 第2章</td><td>見つからない</td></tr>
+<tr><td>D74</td><td>クレオ・タワー（塔のピース 8 個）</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 巻 第4章</td><td>見つからない</td></tr>
+<tr><td>D75</td><td>極クレオ・タワー（塔のピース 7 個＋コアの光線）</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23532013">#43</a></td><td>第 I 巻 第4章</td><td>見つからない</td></tr>
+<tr><td>D110</td><td>HexOct c タイル（λ = 1/10）</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23737639">#75</a></td><td>第 I 巻 第5章</td><td>#75 の λ = 1/10 における c タイル、論文の図の重み（タイルは重みの道 −11/24 ≤ λ ≤ 3/8 に沿って変わる）：c 層における一つの球の取り分、半分の規則のピース 4 個、層の球で接する二つの塔；体積 1/√2；この種のタイルについての先行する記述は見つからない（#75）</td></tr>
+<tr><td>D111</td><td>HexOct h タイル（λ = 1/10）</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23737639">#75</a></td><td>第 I 巻 第5章</td><td>#75 の λ = 1/10 における h タイル、論文の図の重み：h 層における一つの球の取り分、半分の規則のピース 4 個からなる一つの立体；体積 1/√2；#86 の成員 E の h タイルでもある（頂点を照合）；この種のタイルについての先行する記述は見つからない（#75）</td></tr>
+<tr><td>D112</td><td>A · HexOct 3/8 h タイル、ねじれ立方体</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>凸、面 12（辺 1/√2 の正方形 6、二等辺三角形 6）、頂点 11、辺 21；空間を充填するが平行多面体ではない；調べた資料には見つからない；空間を充填する十二面体についてのゴールドバーグの一覧はまだ読んでいない（#86）</td></tr>
+<tr><td>D113</td><td>B · HexOct −1/8（丸ごとの正八面体）c タイル</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>正八面体一つと正四面体二つ、面 8、凸包比 6/7；成員 B の c タイル（#86）</td></tr>
+<tr><td>D114</td><td>B · HexOct −1/8（丸ごとの正八面体）h タイル</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>正八面体一つと正四面体二つを逆の向きに結合したもの、面 10、凸包比 6/7；成員 B の h タイル（#86）</td></tr>
+<tr><td>D115</td><td>C · HexOct −1/8 c タイル</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>環の組み立ての重み；二つの塔を二つの台形に沿って結合；面 10、凸包比 0.800（#86）</td></tr>
+<tr><td>D116</td><td>C · HexOct −1/8 h タイル</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>面 14、凸包比 0.735（#86）</td></tr>
+<tr><td>D117</td><td>D · HexOct −11/24 c タイル</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>面 18、凸包比 0.783（#86）</td></tr>
+<tr><td>D118</td><td>E · HexOct 1/10 c タイル</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>#75 の λ = 1/10 における c タイルを一体にしたもの：一つの塔を格子の一歩だけ動かし、塔どうしを一つの面で結合；面 24、凸包比 0.745（#86）；D110 とは合同でない（頂点を照合）</td></tr>
+</table>
+<table class="atl"><caption class="tl">DICTO の新しいクラスター・構造・ネットワーク</caption><thead><tr><th>番号</th><th>形</th><th>種類</th><th>出典</th><th>第 I 巻</th><th>状況</th></tr></thead>
+<tr><td>—</td><td>ユークリッド＝ケプラー＝パチョーリ・セル（EKP セル）</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23284106">#8</a></td><td>第 I 巻 第2章</td><td>周期的な近似結晶型の構造；見つからない</td></tr>
+<tr><td>—</td><td>ユークリッド＝ケプラー＝パチョーリ・ネットワーク</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23284106">#8</a></td><td>第 I 巻 第2章</td><td>見つからない</td></tr>
+<tr><td>—</td><td>スター連鎖反応</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23497702">#42</a></td><td>第 I 巻 第2章</td><td>見つからない（ウェブ上の検索の水準）</td></tr>
+<tr><td>—</td><td>ジュエルの連鎖</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23173809">発見 F12a</a></td><td></td><td>F12 の研究</td></tr>
+<tr><td>—</td><td>DICTO スター</td><td>クラスター</td><td><a href="https://doi.org/10.5281/zenodo.23284213">#14</a></td><td>第 I 巻 第2章</td><td>見つからない（丸ごとの正二十面体が重なり合う版は Austin 2014）</td></tr>
+<tr><td>—</td><td>カゴメ凸包（六つの凸包ネットワーク）</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23376317">#17</a></td><td>第 I 巻 第2章</td><td>頂点を共有する正八面体／正四面体は既知（ペロブスカイト、パイロクロア）</td></tr>
+<tr><td>—</td><td>DICTO イコサ13</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23351291">#19</a></td><td>第 I 巻 第1章</td><td>分割／充填としては見つからない</td></tr>
+<tr><td>—</td><td>UNITY（ユニティ）（二十・十二面体＋12 個の J11）</td><td>クラスター</td><td><a href="https://doi.org/10.5281/zenodo.23351291">#19</a></td><td>第 I 巻 第1章</td><td>見つからない</td></tr>
+<tr><td>—</td><td>DICTO ステラ・コロナ</td><td>クラスター</td><td><a href="https://doi.org/10.5281/zenodo.23351291">#19</a></td><td>第 I 巻 第1章</td><td>20 個の正二十面体の殻は Wolfram Demonstration にある</td></tr>
+<tr><td>—</td><td>二十面体オクテット</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23173809">発見 F21</a></td><td></td><td>黄金切断の位置で正八面体に入る正二十面体は古典的（Pacioli；Fuller）</td></tr>
+<tr><td>—</td><td>業の連鎖</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23310541">#22</a></td><td>第 I 巻 第3章</td><td>入れ子の黄金の正二十面体：Gray 2002；点の殻：ツァイ型クラスター</td></tr>
+<tr><td>—</td><td>法の球</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23310833">#23</a></td><td>第 I 巻 第3章</td><td>ツァイ型クラスターの族の殻（Takakura et al. 2007）</td></tr>
+<tr><td>—</td><td>DICTO スフェロイド13 RD</td><td>クラスター</td><td><a href="https://doi.org/10.5281/zenodo.23332821">#25</a></td><td>第 I 巻 第2章</td><td>タイル張りは既知（A3 完全符号：Kovacevic-Tan 2018；Singer 1938）；このブロックは見つからない</td></tr>
+<tr><td>—</td><td>DICTO ATOM-13×13</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23333183">#26</a></td><td>第 I 巻 第2章</td><td>タイル張りは既知；このセットと一式は見つからない</td></tr>
+<tr><td>—</td><td>DICTO ヘカトグドエコンタヘドロン</td><td>複合体</td><td><a href="https://doi.org/10.5281/zenodo.23430868">#34a</a></td><td>第 I 巻 第1章</td><td>コアと凸包は古典的な TI と PD の複合体と同じ；構成要素はこのデータセットにある</td></tr>
+<tr><td>—</td><td>DICTO インターロック・セット 1 とセット 2（ピースのセット）</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23407106">#33</a></td><td>第 I 巻 第4章</td><td>共通細分は標準的</td></tr>
+<tr><td>—</td><td>クレオ・スター</td><td>クラスター</td><td><a href="https://doi.org/10.5281/zenodo.23429911">#35</a></td><td>第 I 巻 第3章</td><td>見つからない</td></tr>
+<tr><td>—</td><td>黄金菩提パイロクロア</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23451210">#36</a></td><td>第 I 巻 第2章</td><td>見つからない</td></tr>
+<tr><td>—</td><td>DICTO ケプラー・ポアンソ・UP サイクル</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23464021">#38a</a></td><td>第 I 巻 第4章</td><td>見つからない</td></tr>
+<tr><td>—</td><td>DICTO ジュエル・ロンビ</td><td>クラスター</td><td><a href="https://doi.org/10.5281/zenodo.23496353">#41</a></td><td>第 I 巻 第1章</td><td>見つからない</td></tr>
+<tr><td>—</td><td>DICTO サンスター・ロンビ</td><td>クラスター</td><td><a href="https://doi.org/10.5281/zenodo.23497702">#42</a></td><td>第 I 巻 第2章</td><td>見つからない</td></tr>
+<tr><td>—</td><td>DICTO サンスター・ヘクサ</td><td>クラスター</td><td><a href="https://doi.org/10.5281/zenodo.23497702">#42</a></td><td>第 I 巻 第2章</td><td>見つからない</td></tr>
+<tr><td>—</td><td>ルーローの八面体、ルーローの立方体、ルーローの二十面体、ルーローの十二面体（立方体、正八面体、正十二面体、正二十面体の頂点に置いた球；見た目による名）</td><td>曲面体</td><td><a href="https://doi.org/10.5281/zenodo.23529499">#45</a></td><td>第 I 巻 第1章</td><td>四つの立体；厳密な意味でのルーロー多面体ではない（#45）</td></tr>
+<tr><td>—</td><td>DICTO ヴァクウス立体（DICTO Vacuus Solids）（すべての立体をそのひれまで空にしたもの：SHEETS（面板）と STRUTS（支柱））</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23896016">#87</a></td><td></td><td>面の扇は古典的；レオナルドがパチョーリのために描いたヴァクウスの立体（1509）は中心のない辺の枠組み；中心から辺へのひれや中心の支柱を立体として組む資料はない（#87）</td></tr>
+<tr><td>—</td><td>等支柱ヴァクウス（Mono-Strut Vacuus）（ブロックヘッド、立方体の真珠、DICTO GTI、ダビデ、デリラ、ドデカックス、黄金の留め金、ゴリアテ、イコサックス、TI スター・コア、アンボーン・アックス、白の騎士）</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23896016">#87</a></td><td></td><td>下位の族：中心からの支柱がすべて同じ長さで、頂点は中心のまわりの一つの球面上にある；DICTO の立体のうち 12 個（#87）</td></tr>
+<tr><td>—</td><td>等長ヴァクウス（Mono-Length Vacuus）（立方八面体）</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23896016">#87</a></td><td></td><td>下位の族：支柱と辺がすべて同じ長さ；全数調査の中では立方八面体、すなわちフラーのベクトル平衡体だけ（#87）</td></tr>
+<tr><td>—</td><td>円盤ヴァクウス（Disc Vacuus）：影武者の五角形円盤</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23896016">#87</a></td><td></td><td>下位の族：平らな中心の円盤；影武者（D86）は一つもち、それは 72° のひれ 5 枚からなる正五角形（#87）</td></tr>
+<tr><td>—</td><td>円盤ヴァクウス：ライオンの円盤ヴァクウス</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23896016">#87</a></td><td></td><td>下位の族：ライオン（D87）は、それぞれ 36° のひれ 10 枚からなる中心の十角形を六つもつ（#87）；古典的な円盤ヴァクウスは正八面体、立方八面体、二十・十二面体と五つのカタランの立体、そしてデリラ</td></tr>
+<tr><td>—</td><td>等ひれヴァクウス（Isofin Vacuus）（プラトンの立体 5、アルキメデスの立体 13、菱形十二面体、菱形三十面体、デリラ）</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23896016">#87</a></td><td></td><td>下位の族：すべてのひれが合同；全数調査でちょうど 21 個、その中に DICTO の新しい立体はない（#87）</td></tr>
+</table>
+</section>
+<!--ATOMS END-->
+<!-- ============ APPENDIX ============ -->
+<section class="appendix">
+<img alt="DICTO" class="logo" src="../dicto-logo.png" style="width:22mm"/>
+<p class="chapter-mark">DICTOnary · データ</p>
+<h1>作品ごとのデータ</h1>
+<p>作品ごとに1節を設け、その論文で発表されたとおりの厳密値、体積、証明の概略、検証を、第 I 巻の章の順に記します。各タイトルの下には、その作品を語る第 I 巻の章を記します。厳密値は論文が示す形のまま記し、小数（≈）は論文に印刷されたとおりです。ライセンス CC BY-SA 4.0。</p>
+<h2 class="first">A.18 DICTO ヘクサ <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23376320)</span></h2>
+<p class="told">第 I 巻 第1章 原子で語られています。</p>
+<h3>DICTO ジュエル（スケール：1セルあたり立方体の辺 2）</h3>
+<p>ユークリッド＝ケプラー＝パチョーリ・セル（辺 2 の立方体にユークリッドの屋根を乗せたもの）の正十二面体を、面で隣り合う 6 つのセルの星型八面体（ステラ・オクタングラ）で削ったものです。立方体全体と、6 つの屋根それぞれの 2/3 を残し、体積はちょうど 12 です。表面には、ペンローズの太い 72°/108° の菱形が 12 枚、立方体の各辺に 1 枚ずつあり（窓）、その周りを星型八面体の平面にある 48 枚の三角形が壁として囲みます。偶数セルのジュエルと奇数セルの星型八面体（体積 4）が空間を充填します。これがステラ＝ジュエル格子で、体積比は 3 : 1 です。</p>
+<h3>ヘクサとヘクサ・キー</h3>
+<ul>
+<li>ヘクサ：2 × 2 × 2 のブロックに置いた 8 個の DICTO ヘクサ・ジュエルで、内部の重なりは合計 16（8 × 12 = 96）。一つの立体で、辺 4 の立方体に外向きの屋根 24 枚を付けたもの、体積 64 + 24 × 2/3 = 80（ジュエル 6⅔ 個分）です。内部では、二つの四面体状のジュエル・クラスターが互いに貫入しています。</li>
+<li>8 個の厳密なジュエルを面と面で立方体状に合わせるせん断は存在しません。格子のせん断は対称であり、立方体の辺をジュエルの接触方向へ写す対称な写像はありません（三つのうち二つでさえ失敗します）。</li>
+<li>ヘクサ同士は窓と窓でのみ結合し、隣り合う一つにつき完全な窓を 2 枚共有します。間隔 4 の面心立方（FCC）の配置では、隣接 12 個、共有される完全な窓は 24 枚です。</li>
+<li>ヘクサ・キー：星型八面体 8 個と二重の屋根 12 個、体積 48（ジュエル 4 個分）。ヘクサとヘクサ・キーは市松模様に空間を充填し、体積比は 5 : 3 です（ジュエルと星型八面体では 3 : 1）。</li>
+<li>分割 A：立方体 8 個 ＋ 屋根 24 枚（屋根 2/3）。分割 B：完全なジュエル 4 個 ＋ 削ったジュエル 4 個（屋根 3 枚を除去、体積ちょうど 8）。ヘクサ・キー：星型八面体 8 個 ＋ 屋根 24 枚。</li>
+</ul>
+<h3>クラスター、ネットワーク、回転</h3>
+<ul>
+<li>8 個のヘクサの菱面体クラスター：窓と窓で結合し、完全な窓 36 枚を共有、内部にヘクサ・キーが封じ込められ、体積 688 ＝ ジュエル 57⅓ 個分。</li>
+<li>ダイヤモンド・クラスター：角のジュエル 7 個を共有するヘクサ、体積 556。</li>
+<li>すべてのジュエルがちょうど二つのヘクサに属することは不可能です。最良はダイヤモンド・ネットワークで、各ヘクサは角にある 8 個のヘクサ・ジュエルのうち 4 個を 4 つの隣と共有し、その間のすべてのセルを星型八面体が埋めます。</li>
+<li>これらの充填のどの接合も、その面の対称性で回したうえで合うことはありません。回転が存在するのは、一つの隣にだけ掛かっているピースの場合に限られます（窓の上で：180° と裏返し 1 通り）。</li>
+</ul>
+<h3>検証</h3>
+<p>data/checks-hexa.txt：krp-core v0.16.0 による 16 項目の検証、2026 年 10 月 15 日に再実行、すべて合格。閉じた外向きの表面；厳密な体積（ヘクサ 80、ヘクサ・キー 48、クラスター 688 と 556、削ったジュエル 8、屋根 2/3）；ヘクサ上の完全なジュエルの窓 24 枚と星型八面体に一致する壁；すべての部品表示の合計の一致。ネットワーク、充填、回転の結果は設計研究によるもの（サンプリングによる重なり、厳密な接触面積、結合の走査、回転表）。</p>
+<h3>出典</h3>
+<p>既知のもの：星型八面体と正八面体による空間充填；菱形十二面体に内接する立方体、正八面体、星型八面体；対角線方向に押しつぶした立方体としての面心立方の基本単位胞。Lalvani, US 4,723,382 (1988)：窓の菱形はその十個のピースの一つ；ジュエルの 48 枚の壁は、二十面体のどの 2 回軸からも 22.24° ずれています。Pearce, US 3,974,600 (1976)：パネル付きの支柱であり、立体のピースではありません。調べた資料には見つからないもの（ウェブ検索 2026 年 10 月 9 日；参考文献ライブラリー 2026 年 10 月 15 日）：削った正十二面体で作る立方体、またはこの 8 個のブロック。新規性の証明ではなく、優先権も主張しません。ほかに：ユークリッド『原論』XIII.17；Coxeter, Regular Polytopes。</p>
+<h2>A.19 AXE、CLEO、FUJI <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23351291)</span></h2>
+<p class="told">第 I 巻 第1章 原子で語られています。</p>
+<p>単位：辺 1 の正二十面体；φ = τ = (1 + √5)/2。すべての体積、角度、個数は研究データ（CHECKS.json）から再計算しています。</p>
+<h3>ピース</h3>
+<table><tr><th>ピース</th><th>形</th><th>辺</th><th>体積</th><th>出典</th></tr>
+<tr><td><b>AXE</b>（アックス）</td><td>四面体</td><td>長さ 1 が五本、1/φ が一本</td><td class="n">1/12</td><td>スケール 1/τ のモッセリ＝サドック t6</td></tr>
+<tr><td><b>CLEO</b>（クレオ）</td><td>三角錐</td><td>底面は辺 1/φ の正三角形、側辺 1</td><td class="n">(√5 − 1)/24</td><td>スケール 1/τ のモッセリ＝サドック t4</td></tr>
+<tr><td><b>FUJI</b>（フジ）</td><td>六角錐</td><td>底辺は 1 と 1/φ が交互、側辺 6 本はすべて 1</td><td class="n">(1 + 3√5)/24</td><td>新規</td></tr></table>
+<ul>
+<li>AXE：41.81°（cos = √5/3）で蝶番のようにつながった 2 枚の正三角形。辺を共有する 2 個の正二十面体のあいだには 360° − 2 × 138.19° = 83.62° が残り、41.81° の隙間が二つできます。</li>
+<li>CLEO：長い辺に沿って面が 63.43° で交わります。</li>
+<li>FUJI：底面の角はすべて 120°；底面の頂点は半径 √(2/3) の円周上；頂点の高さ 1/√3。</li>
+<li>すべての二面角は α = arccos(√5/3) = 41.81° と δ = 37.38° から得られます：41.81° = α；37.38° = δ；63.43° = π − α − 2δ；79.19° = α + δ；116.57° = α + 2δ（正十二面体の二面角）；142.62° = π − δ（FUJI の側辺）。これらの関係は 120 桁まで成り立ちます（整数関係探索）。</li>
+</ul>
+<h3>蓮の実</h3>
+<ul>
+<li>I(φ²) = 12 I(1) + I(1/φ) + 60 AXE + 20 FUJI + 20 CLEO：113 個のピース、重なりなし、体積 (235 + 105√5)/12 = φ⁶ V(I)。20 枚の大きな面はそれぞれ、正二十面体の面 3 枚と FUJI の底面 1 枚からなります。</li>
+<li>I(φ²) = 正十二面体 + 12 J11 + 30 AXE + 20 FUJI：63 個のピース。</li>
+<li>12 個の正二十面体は 30 本の辺を丸ごと共有し、その内側の輪は辺 1 の正十二面体の 12 枚の面になります（DESHI のかご；Gray 2002）。</li>
+<li>トリスケリオン（CLEO + 3 AXE）の体積は、キャップ J2 と同じ (5 + √5)/24 です。内なる目 ＝ I(1/φ) + 30 AXE + 20 CLEO、体積 5φ/2。</li>
+<li>D(1) = I(1/φ) + 12 J2 + 30 AXE + 20 CLEO（大星型十二面体とくり抜き十二面体を通る十二面体の連鎖）。</li>
+<li>業の連鎖の段階 1–3：113、1,569、20,497 個のピース。ステラ・コロナの体積 (120 + 47√5)/3。</li>
+</ul>
+<h3>FUJI はモッセリ＝サドックのタイルからはできていない</h3>
+<ul>
+<li>FUJI の体積は、スケール 1/τ の 3 AXE + CLEO + t1 とちょうど同じですが、デーン不変量が異なります。(α, δ) で表すと：FUJI は 1 の部分 (3, −15/2)、√5 の部分 (0, 3/2)；3 AXE + CLEO + t1′ は 1 の部分 (27/2, 15/2)、√5 の部分 (−1/2, 1/2)。√5 の部分の差は (α + 2δ)/2 = (π − arctan 2)/2 であり、cos²(arctan 2) = 1/5 なので、arctan 2 は π の有理数倍ではありません。</li>
+<li>FUJI と同じ体積とデーン不変量をもつほかの組み合わせ（6 種のタイルすべて、4 つのスケール）は、底面によって排除されます。120° の角はどれも 60° + 60° でなければならないので、底面には長い辺に辺 1 の三角形、短い辺に辺 1/τ の三角形が載る必要があり、その合計面積 1.795 は六角形の面積 1.669 を超えます。</li>
+<li>より小さいタイルの組み合わせ：未解決。CLEO は FUJI の内部に収まり、そこで 1.023 倍の大きさまで拡大できます。</li>
+</ul>
+<h3>展開図と出典</h3>
+<p>展開図は A4 に 1 単位 45 mm で印刷されます（蓮の実の辺は約 118 mm）。それぞれ検証済みです（面は合同、すべての辺が折り目か番号付きの貼り合わせの対、重なりなし）。参考文献：Frank 1952; Mosseri &amp; Sadoc 1982; Sadoc &amp; Mosseri 1999; Kramer 1982; Koca et al. 2020; Gray 2002; Coxeter et al. 1938; Wenninger 1971; Dehn 1901; Kepler 1619。スクリプト：studies/2026-10-10-icosa-13 と studies/2026-10-14-axe-cleo-fuji。</p>
+<h2>A.20 FUJI ファミリー <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23357896)</span></h2>
+<p class="told">第 I 巻 第1章 原子で語られています。</p>
+<h3>族 FUJI(r)</h3>
+<ul>
+<li>底面：辺 1 と r の切頂三角形（辺 1 + 2r の正三角形から辺 r の角を切り落としたもの；等角六角形、すなわち切頂三角形 t{3}）。頂点は半径² (1 + r + r²)/3 の円周上にあります。</li>
+<li>側辺が 1 になるのは h² = (2 − r − r²)/3 のとき。体積 (√3/12)(1 + 4r + r²)h。側面：正三角形 3 枚、辺 1, 1, r の二等辺三角形 3 枚。</li>
+<li>底面との角：cos L = (1 + 2r)/3（長い辺）；cos² S = (2 + r)/(3(2 − r))（短い辺）。証明：長い辺までの距離 s/(2√3)（s = 1 + 2r）、斜面の高さ √3/2；切断線までの距離 (2 + r)/(2√3)、斜面の高さ √(1 − r²/4)。</li>
+</ul>
+<table><tr><th>r</th><th>族の一員</th><th>高さ</th><th>L</th><th>S</th></tr>
+<tr><td class="n">0</td><td>正四面体</td><td class="n">√(2/3)</td><td class="n">70.53°</td><td>–（極限 54.74°、面なし）</td></tr>
+<tr><td class="n">1/4</td><td></td><td class="n">3/4</td><td class="n">60°</td><td class="n">49.11°</td></tr>
+<tr><td class="n">1/2</td><td></td><td class="n">0.6455</td><td class="n">48.19°</td><td class="n">41.81°</td></tr>
+<tr><td class="n">1/φ</td><td><b>FUJI</b></td><td class="n">1/√3</td><td class="n">41.81°</td><td class="n">37.38°</td></tr>
+<tr><td class="n">1</td><td>平坦</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr></table>
+<p>r = 1/φ でちょうど cos² L = 5/9、r = 1/2 でちょうど cos² S = 5/9 となります。これは蓮の実の隙間の角 41.81° です。</p>
+<h3>オドム、そして反角柱の規則</h3>
+<ul>
+<li>正三角形の各辺を両端で e ずつ延ばすと、辺 e と 1 + e の切頂三角形が得られ、r = e/(1 + e) です。e = φ で FUJI の底面になり（Kabai 2008、Odom による）、e = 1 で r = 1/2 になります。これはパラメータの取り替えであって、新しい結果ではありません。</li>
+<li>面の同一平面条件 L + D<sub>X</sub> = 180°：r = (−3 cos D<sub>X</sub> − 1)/2。正二十面体 (138.19°)：1/φ；立方八面体、三角形–正方形 (125.26°)：(√3 − 1)/2；正四角反角柱 (127.55°)：√2 − 1；斜方立方八面体 (144.74°)：(√6 − 1)/2；正八面体 (109.47°)：0。</li>
+<li>命題 1：n 角反角柱について r = 2 cos(π/n) − 1、したがって 1 + r は正 n 角形の短い対角線です。証明：頂点 T<sub>k</sub>、B<sub>k</sub>、θ = π/n、R = 1/(2 sin θ)；(T₁ − M)·(B₋₁ − M) = −(4 cos θ − 1)/4、よって cos D<sub>n</sub> = (1 − 4 cos(π/n))/3（反角柱の標準的な二面角、OEIS に収録）。n = 3 から 12 まで 10⁻¹² の精度で数値検証。</li>
+<li>n = 3：正四面体；n = 4：√2 − 1（白銀比の逆数）；n = 5：1/φ、FUJI；n = 6：√3 − 1。切頂 k 角形が族を与えるのは k = 3、4、5 のときだけです（r = 2 sin(π/k − π/6) で平坦）。正方形の族の斜方立方八面体の一員は r = 1 − 1/√2 です。八回対称準結晶との関係は未解決のまま残しています。</li>
+</ul>
+<h3>族の一員が現れる場所</h3>
+<ul>
+<li>Damasceno、Engel、Glotzer（2012）：t = 1/2 の切頂四面体は空間を充填します。その六角形の辺は 2 : 1 で、r = 1/2 の底面です。</li>
+<li>ブリージング・パイロクロア（辺 1 と r）：カゴメの六角形はどれも辺 1 と r をもち、2 種類の切頂四面体とともに、どの r でも空間を充填します（Ã₃ におけるウィトフ構成）。r = 0.2、0.382、0.5、0.618、0.8、1 で数値検証済み。r = 1/φ：黄金のブリージング・パイロクロア。</li>
+<li>等しい深さの立方体・正八面体の立体（|x|, |y|, |z| ≤ 1, |x| + |y| + |z| ≤ √3）：正方形 6 枚、r = (√3 − 1)/2 = 0.366 の切頂三角形 8 枚、14 枚の面すべてが一つの内接球に接します。その立方体の角は、√2(√3 − 1) ≈ 1.035 倍した FUJI((√3 − 1)/2) の頂点です。証明：長い面が正三角形になるのは 2(S − 1)² = (2 − S)² + 1、すなわち S² = 3 のときに限ります。</li>
+</ul>
+<h3>車輪、CLEO 球、クレオ・イコス、アントニウス</h3>
+<ul>
+<li>車輪の上限：スポーク 2m 本の車輪 n 個には n − 1 ≤ m が必要です。すなわち最大で 3 個（正方形）、4 個（六角形）、6 個（十角形）。八角形の車輪 5 個：単純な配置（辺 45°）の三角形の角は 65.53° となり、五角形の角は 114.47° に決まりますが、辺 45° の等辺等角の球面五角形の角は 122.25° です。</li>
+<li>CLEO 球：辺 1/φ（外接球半径 1）の二十・十二面体 ＝ 20 CLEO ＋ 五角錐 12 個（体積各 √5/12）；合計 (11√5 − 5)/6。各五角錐 ＝ 体積 √5/60 の直角錐 5 個。</li>
+<li>クレオ・イコス：側辺 0.851、底辺 2/√5 = 0.894；マッカイの単位四面体（辺の比 1/sin 72° = 1.0515）；ヒュプシクレスの角錐（内接球半径 ÷ 外接球半径 0.79465）。二面角は 72°（側辺）と 69.09°（底辺）。</li>
+<li>扁長の黄金菱面体（辺 0.851、二面角 72° と 108°）、0 ≤ x, y, z ≤ 1 を x + y + z = 1 と 2 で切ると：クレオ・イコス ＋ アントニウス ＋ クレオ・イコス。アントニウス：三角反角柱で、正三角形の面 2 枚（辺 2/√5）、側面 6 枚（0.851, 0.851, 0.894）；体積はクレオ・イコスの 4 倍、菱面体は 6 倍。アントニウスの二面角 110.91° + 69.09° = 180°。2,187 個のピースのパッチを検証済み。アントニウスのデーン不変量はクレオ・イコスのちょうど −2 倍です。</li>
+<li>正八面体 ＝ 20 クレオ・イコス ＋ 半分の提督帽 12 個（正二十面体の辺 1 で体積 φ²/24、φ/24、φ⁶/6）＝ 8 クレオ・イコス ＋ 凧形の角錐 12 個。クレオ・イコスと半分の帽子は（アントニウスの有無にかかわらず）空間を充填できません（π、arccos(−√5/3)、arccos(1/√3) は有理数上一次独立）。</li>
+</ul>
+<h3>出典</h3>
+<p>2026 年 10 月 14 日に検索：参考文献ライブラリー、ウェブ、OEIS。既知でありクレジットしたもの：等角六角形、反角柱の角度（OEIS A394077）、Odom と van de Craats 1983、Kabai 2008 と 2014、Damasceno et al. 2012、Okamoto et al. 2013、Coxeter 1973、Mackay 1962、Ino 1969、Marks 1984、Hypsicles、Hafner と Žitko、Hafner と Komatar 2008、Prodan et al. 2017、Fang et al.。スクリプト：studies/2026-10-14-fuji-family、-icosa-cleo-pair、-half-cap。</p>
+<h2>A.28 DICTO 切頂二十面体型ヘカトディヘドロン <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23360857)</span></h2>
+<p class="told">第 I 巻 第1章 原子で語られています。</p>
+<p>スケール：辺 1/φ の切頂二十面体（法の球の組み立てのスケール）。</p>
+<table><tr><th>面</th><th>数</th><th>形</th><th>中心からの距離</th></tr>
+<tr><td>正五角形</td><td class="n">12</td><td>辺 1/φ = 0.61803</td><td class="n">1.4384</td></tr>
+<tr><td>菱形</td><td class="n">30</td><td>辺 0.65097、角 56.68° と 123.32°</td><td class="n">1.5</td></tr>
+<tr><td>二等辺三角形</td><td class="n">60</td><td>辺 0.61803、0.65097、0.65097</td><td class="n">1.5</td></tr></table>
+<ul>
+<li>頂点 80：切頂二十面体の 60 個（距離 1.5315）と、盾の 20 個の頂点（1.6057）で、後者は辺 3/φ² = 1.14590 の正十二面体をなします。辺 180 本；辺の二面角は 2 種類、159.45° と 163.53°。80 − 180 + 102 = 2。体積 14.4042。</li>
+<li>90 枚の面（菱形と三角形）は距離 1.5、すなわち切頂二十面体の中球に接し、12 枚の五角形は 1.4384 にあります。内接球はありません。（『あいだを捉える』第 3 版が以前の記述を訂正しています。）</li>
+<li>ℚ(√5) における厳密計算（data/tih_v2_check.py）：標準形の五方十二面体（切頂二十面体の、それ自身の中球（半径 3/2）に関する極双対）は、5 回の頂点 12 個と 3 回の頂点 20 個をもち、盾の 20 個の頂点はその 3 回の頂点 20 個です。ヘカトディヘドロンは、切頂二十面体とこの 20 点の凸包です。その面の平面は、ジョイン切頂二十面体 jtI（位相的には菱形九十面体）の 90 枚の面の平面と、12 枚の五角形の平面で、102 = 90 + 12。すなわち、jtI の 5 回の頂点 12 個を五角形の平面で切り落としたものです。</li>
+<li>組合せ的には：コンウェイの k6tI（頂点 80、面 132）で、同一平面にある三角形の対 30 組を菱形 30 枚にまとめたもの（第 2 版で「60 組」を 30 組に訂正）。</li>
+<li>DICTO ヘカトグドエコンタヘドロン：同じ球に関するその極双対である DICTO オグドエコンタヘドロンとの、面 182・頂点 182 の自己双対な複合多面体。凸包は jtI、共通のコアは中点切頂した切頂二十面体（rectified truncated icosahedron）です（A.34a 参照）。</li>
+</ul>
+<h3>出典とスクリプト</h3>
+<p>2026 年 10 月 13〜14 日に検索（第 2 版での追加は 2026 年 10 月 16 日）：コンウェイ記法（Conway et al. 2008; Hart）：k6tI は頂点 80／面 132、k5tI は 72/132、ktI は 92/180；ジョンソンの立体とそのニアミス（Johnson 1966; Zalgaller 1969; Kaplan の中点切頂した切頂二十面体、面 92）；MathWorld と PolyhedronData；Polytope Wiki；菱形九十面体（jtI）；切頂二十面体と五方十二面体の複合多面体；McCooey の Visual Polyhedra。名前の付いたものは見つかりませんでした。これは調べた場所の報告であって、この立体が未知だという主張ではありません。スクリプト：data/tih_v2_check.py、tih-v2-check.txt、tih_check.py、tih-checks.json（Polyhedraverse の形 TRANS_DHARMA_80 から）、tih_fig.py。</p>
+<h2>A.31 DICTO オグドエコンタヘドロン <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23404688)</span></h2>
+<p class="told">第 I 巻 第1章 原子で語られています。</p>
+<h3>スケールと厳密さ</h3>
+<p>座標は逆サイクル（単位球に関する極変換）のスケールによります。浮動小数点と記したもの以外は、すべて ℚ(√5) で厳密です。</p>
+<h3>逆サイクル</h3>
+<p>法の球（律動サイクル）：正二十面体 ⊂ 二十・十二面体 ⊂ 正十二面体 ⊂ 切頂二十面体 ⊂ 菱形三十面体 ⊂ φ³ 倍の正二十面体。ヘカトディヘドロンを第七の段階として加え、ℚ(√5) で厳密に極変換すると：</p>
+<p style="text-align:center">正十二面体 ⊂ 二十・十二面体 ⊂ オグドエコンタヘドロン ⊂ 五方十二面体 ⊂ 正二十面体 ⊂ 菱形三十面体 ⊂ φ³ 倍の正十二面体。</p>
+<p>サイクルの六つの立体だけを極変換しても、古典的な立体しか得られません。（論文 #30 では、内側の正十二面体を段階 0 と数えて、OG を第二の段階と呼んでいます。）</p>
+<h3>立体</h3>
+<ul>
+<li>面 80、頂点 102、辺 180（102 − 180 + 80 = 2）。正六角形 20 枚（ヘカトディヘドロンの盾の 20 個の頂点から）と凧形 60 枚（切頂二十面体の 60 個の頂点から）。頂点：5 枚の面が集まるもの 12、4 枚が集まるもの 30、3 枚が集まるもの 60。</li>
+<li>辺：六角形の辺の 2 乗は 2/9 − 2√5/27（辺 0.237881）；各凧形は六角形に接する側にこの長さの辺を 2 本、2 乗が 86/3249 + 2√5/361 の辺（辺 0.197124）を 2 本もちます。前者の長さの辺が 120 本、後者が 60 本。</li>
+<li>角：六角形は正六角形（すべて 120°）；凧形の角は 117.85°（2 つ）、68.62°、55.69°。</li>
+<li>球：90 個の頂点がちょうど半径 2/3 の球面上にあり、残りの 12 個は半径の 2 乗が (170 + 2√5)/361 の位置にあります。（ヘカトディヘドロンでは、90 枚の面が一つの球に接し、12 枚の五角形はそのわずかに内側にあります。）</li>
+<li>面の距離、内接球なし：六角形は距離の 2 乗 2/9 + 2√5/27（0.6228）、凧形は (42 + 2√5)/109（0.6529）。</li>
+<li>中球なし：120 本の六角形の辺は半径の 2 乗が 7/18 + √5/54（0.65597）の球に接し、60 本の短い凧形の辺は、半径 2/3 の球上にある内側の端より近くには来ません。</li>
+<li>二面角（浮動小数点）：凧形–六角形の辺 120 本で 156.20°、凧形–凧形の辺 60 本で 156.72°。</li>
+<li>体積 (−1000 + 1240√5)/1539。凸で中心対称（厳密に検証）；完全な正二十面体対称性。</li>
+<li>関係（第 2 版）：標準形の五方十二面体（切頂二十面体の中球に関する極双対、大きさを合わせたもの）の 3 回の頂点 20 個を、切頂二十面体の六角形の平面で切り落としたもの。既知の立体から導かれる、名前のない立体です（#28、第 2 版）。</li>
+</ul>
+<h3>逆サイクルの中で</h3>
+<ul>
+<li>球上の 90 個の頂点はちょうど二十・十二面体の外接球（半径 2/3）上にあり、そのうち 2 回の頂点 30 個は二十・十二面体自身の頂点です。</li>
+<li>20 枚の六角形は二十・十二面体の 20 枚の三角形の平面にあり、各六角形が三角形を一つずつ含みます。60 枚の凧形は、外側を囲む五方十二面体の面の中にあります。</li>
+</ul>
+<h3>面の配置</h3>
+<p>組合せ的には、五方十二面体の 6 価の頂点 20 個を辺の中点まで切り落としたもの。Antiprism 記法（Rossiter）では、正十二面体に L0 を施したものの双対です（#30 §2 で初出）。面の接続図に対する厳密な同型探索（鏡像を許す）で検証し、対照実験も行いました：頂点をランダムに付け替えても一致し、一つの六角形の頂点を 2 つ入れ替えると一致しなくなります。L0 は Antiprism の文書による定義から組み立て、プログラム自体は実行していません。McCooey の Visual Polyhedra（553 の立体、全件を走査）には、この立体またはその双対と同じ数をもつ立体はありません。目録で最も近い仲間は、6 価の頂点を切頂した五方十二面体（6-truncated pentakis dodecahedron、六角形 20 枚、五角形 60 枚）です。印刷された目録（Wenninger、Holden、Pugh）は範囲の点で除外し、読んではいません。</p>
+<h3>充填</h3>
+<ul>
+<li>t = 2dn/|n|²（n は六角形の法線、d はその距離）だけずらした複製は、その反対側の六角形を共有する六角形にちょうど重ね、回転は要りません（中心対称）。</li>
+<li>ダイヤモンド・ネットワーク：四面体状に並ぶ 4 枚の六角形（互いの余弦 −1/3）を通した接合、|t|² = 8/9 + 8√5/27。60 サイト（1,770 組）にわたって、どの 2 つの複製も重なりません（厳密な判定：K − K = 2K なので、2 つの複製が重なるのは、ずれの半分が立体の内部にあるとき、かつそのときに限る）。接触は六角形全面の接合だけです。接合する六角形の中心は正四面体の頂点にあり、接合はダイヤモンドの結合の中点、すなわちパイロクロア格子の上にあります。</li>
+<li>体心立方格子充填（二つのネットワーク）：密度はちょうど (9225 − 3915√5)/608 ≈ 77.43%；等しい球の最密充填は 74.05%（Hales 1998）。</li>
+<li>局所的な格子探索（Betke–Henk 方式、初期値 200、浮動小数点）：密度 0.789260、各複製は 12 個の隣と接します（六角形で 10、凧形で 2）。200 の初期値すべてがこれに収束しました。格子係数 4 までで充填であることを確認（浮動小数点）；最密とは証明されていません。</li>
+</ul>
+<h3>準結晶の検定（標準的な正二十面体準結晶：単純六次元格子、三十面体の窓（受容領域））</h3>
+<ul>
+<li>まず既知の場合：6 本の単位ベクトルが張る三十面体は窓に収まり、すべての辺が 5 回軸に沿います。</li>
+<li>持ち上げ：頂点が六次元で整数になるのは 171 倍に拡大した後だけです。垂直空間の像は、窓の 1.9 に対して半径 116 に達します。初めて収まるのは黄金拡大を 9 回行った後です（立体の半径はタイル張りの辺の約 4,750 本分）。有限の黄金点集合は、いずれは必ず収まります。</li>
+<li>辺：180 本のうち対称軸に沿うものは一本もありません（タイル張りの辺はすべて 5 回軸に沿います）。</li>
+<li>殻：2 回の頂点 30 個は二十・十二面体の頂点で、ツァイ型クラスターとマッカイ・クラスターの 30 原子の殻です（Takakura et al. 2007）。球上の残り 60 個の頂点は、最も近い 5 回軸から 16.47° 離れています（バーグマンの 60 原子殻 20.08°、ツァイの 60 原子殻 17.78°）。</li>
+<li>面：面のどの頂点角も、一つの頂点に 6 枚までのタイルを使って、黄金菱形の角（63.43°、116.57°）やペンローズの角（36° の倍数）から作ることはできません。</li>
+<li>未検定：ほかの六次元格子（面心や体心）、ほかの窓、装飾されたタイル張り。20 の六角形の方向はちょうど 5 個の内接立方体を含み、したがって体心立方充填が 5 つあります（#30）。</li>
+</ul>
+<h3>出典とスクリプト</h3>
+<p>DICTO の参考文献ライブラリー、McCooey の目録、ウェブ検索（2026 年 10 月 16 日；印刷された目録は範囲の点で除外し、読んではいない）では、次のものは見つかりませんでした：寸法の定まったオグドエコンタヘドロン；その六角形で接合した厳密な充填。スクリプト（github.com/DICTOR-Master/kaleidohedra のブランチ research）：studies/2026-10-16-polar-dharma (<code>polar.py</code>, <code>hstar_render.py</code>, <code>render_hstar.html</code>)；studies/2026-10-16-flip-test (<code>flip.py</code>)；studies/2026-10-16-ocd-pyrochlore (<code>ocd_dl0d.py</code>, <code>ocd_catalogue_scan.py</code>, <code>network.py</code>, <code>densest.py</code>)；studies/2026-10-16-ogdoecontahedron-bridge (<code>bridge.py</code>, <code>bridge.txt</code>；コミット 3fd407f)。論文の参考文献：Firsching 2015; Betke &amp; Henk 2000; Hales 1998; Rossiter, Antiprism; McCooey, Visual Polyhedra; Takakura et al. 2007。</p>
+<h2>A.31a DICTO OCD ステラ <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23430870)</span></h2>
+<p class="told">第 I 巻 第1章 原子で語られています。</p>
+<p>浮動小数点と記したもの以外は ℚ(√5) で厳密です。OCD ＝ DICTO オグドエコンタヘドロン、その体心立方充填におけるもの（セルの体積 512/729 + 256√5/729）。</p>
+<h3>伴侶 C と OCD ステラ S</h3>
+<ul>
+<li>C：一つの OCD の周りの 60 個の黄金アダプター・ピース（セルあたり 24 個の軌道全体）の凸包：頂点 72、OCD の包みの黄金平面にある六角形 30 枚、アダプターの外側の頂点を通る 3 回の平面にある三角形 20 枚（距離の 2 乗 14/27 − 10√5/243）；体積 (−18880 + 9760√5)/2187。組合せ型はコンウェイの t3jD（Antiprism による）。</li>
+<li>S ＝ C を充填のボロノイ領域で（8 つの接合に沿って）切ったもの：頂点 48；面 50（黄金六角形 6、黄金四角形 24、C の三角形 12、接合の六角形の平面にある三角形 8）；体積 (−4064 + 2240√5)/729 ≈ 1.296011；黄鉄鉱型（対称操作 24）。充填率 151/2 − 267√5/8 ≈ 87.12%、8 つの接合を挟んで面と面で接します。</li>
+</ul>
+<h3>種</h3>
+<p>外側に φ² 倍の S、その 5 回軸上に 12 個の複製、中心に 1/φ 倍のもの 1 個。66 組の対のうち 30 組はゲージがちょうど 1（正二十面体の辺に沿って接する）、36 組はちょうど φ です。種はちょうど φ² で閉じます（ミンコフスキーの議論）。隙間 −69 + 31√5 ≈ 31.8%。</p>
+<h3>結晶</h3>
+<table><tr><th>結晶</th><th>充填率（厳密）</th><th>空間群（浮動小数点）</th></tr>
+<tr><td>OCD ステラのみ（二つのネットワーク）</td><td class="n">151/2 − 267√5/8 ≈ 87.12%</td><td>Im-3 (No. 204)</td></tr>
+<tr><td>＋ 正二十面体（パイロクロア）</td><td class="n">1523/32 − 669√5/32 ≈ 84.60%</td><td>Fd-3 (No. 203)</td></tr>
+<tr><td>＋ 正八面体（パイロクロア）</td><td class="n">1423/32 − 3113√5/160 ≈ 96.33%</td><td>Fd-3 (No. 203)</td></tr>
+<tr><td>＋ 正八面体（岩塩型、サイトの 4 分の 1）</td><td class="n">3839/64 − 8453√5/320 ≈ 91.72%</td><td>Fm-3 (No. 202)</td></tr></table>
+<ul>
+<li>OCD の 20 枚の六角形の平面がなす正二十面体：体積 (−80 + 80√5)/81。隙間のピース（各中心から空いた面への錐）：正二十面体ごとに楔 12 個、(308 − 116√5)/2187（頂点 6、面 5）；OCD ステラごとにキャップ 12 個、(346204 − 143140√5)/2381643（頂点 9、面 7）、板 6 枚、(39896 − 17240√5)/216513（頂点 16、面 12）、薄い楔 24 個、(12596 − 5596√5)/88209（頂点 6、面 5）。隙間のうち正二十面体が占める割合 (961 + 209√5)/2454 ≈ 58.2%。</li>
+<li>8 つの接合の平面がなす正八面体、|x| + |y| + |z| ≤ R、R = 2φ/3（立方体の軸）：セルの 9/8；6 つの先端はそれぞれ正方形の壁の外へ (32 + 16√5)/2187 ＝ セルの 1/48 はみ出します。切り欠き 392/2187 − 88√5/1215 ≈ 0.017287（切り欠き 6 つでステラの 8.00%）；切り欠いた OCD ステラ −1616/243 + 12784√5/3645 ≈ 1.192289。二つの正八面体が正方形の面で隣り合うことはできません。</li>
+<li>アトム13（浮動小数点）：中心から距離 1.56743 に 12 個のステラ、そのあいだの隙間 0.31、外形の 49.82% を充填；20 個の正二十面体は結晶の正二十面体の 0.4878 倍まで収まり、33 個の立体が外形の 58.20% を充填します。</li>
+</ul>
+<h3>出典とスクリプト</h3>
+<p>既知のもの：C の型（t3jD、面取り二十面体）；Kabai の 54 面の空間充填多面体（黄金菱形 6 枚、三角形 48 枚、体心立方、空間を充填）；Cadotte et al. 2016；Torquato and Jiao 2009。確認したもの：Wikipedia（Chamfer）、クリッツィング、McCooey、SageMath、netlib（142 件）、Antiprism 0.29、充填率と名前のウェブ検索（2026 年 10 月 17 日）；DICTO の参考文献ライブラリーの全文 64 件（全 234 件；画像のみ 12 件とリンクのみ 158 件は全文検索の対象外）。実行していないもの：Wolfram PolyhedronData、Stella / Great Stella。スクリプト：studies/2026-10-16-ocd-pyrochlore（stella_cut_exact.py、stella_seed_exact.py、pyro_icosahedra.py、crystal_gap_exact.py、stella_octa_pyro.py、crystal_symmetry.py、stella_atom13.py）と studies/2026-10-20-stella-octahedra（stella_octa_exact.py）。</p>
+<h2>A.34a DICTO ヘカトグドエコンタヘドロン <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23430868)</span></h2>
+<p class="told">第 I 巻 第1章 原子で語られています。</p>
+<p>浮動小数点と記したもの以外は ℚ(√5) で厳密です。H ＝ DICTO 切頂二十面体型ヘカトディヘドロン、O ＝ DICTO オグドエコンタヘドロン。極変換は半径の 2 乗が 9/4 の球、すなわち法の球の切頂二十面体の中球（H の 90 枚の菱形と三角形に接する）に関して行います。H の極双対は、複合多面体での大きさの O です。厳密に：O の球上の 90 個の頂点は切頂二十面体の 90 本の辺の中点であり、H の頂点で O の内部にあるものも、O の頂点で H の内部にあるものもありません。</p>
+<table><tr><th>部分</th><th>頂点</th><th>面</th></tr>
+<tr><td>H、DICTO 切頂二十面体型ヘカトディヘドロン</td><td class="n">80</td><td>102：五角形 12、菱形 30、三角形 60</td></tr>
+<tr><td>O、DICTO オグドエコンタヘドロン</td><td class="n">102</td><td>80：正六角形 20、凧形 60</td></tr>
+<tr><td>複合多面体</td><td class="n">182</td><td>182；自己双対</td></tr>
+<tr><td>共通のコア H ∩ O</td><td class="n">90</td><td>92：中点切頂した切頂二十面体（rectified truncated icosahedron；正五角形 12、正六角形 20、三角形 60）、すべての頂点が中球上</td></tr>
+<tr><td>凸包</td><td class="n">92</td><td>菱形 90：ジョイン切頂二十面体（菱形九十面体）、コアの極双対</td></tr></table>
+<p>頂点と面の数は厳密、体積は浮動小数点（oh_compound.py）。『始祖』では、黄金サイクル I ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ I·φ³。</p>
+<h3>出典とスクリプト</h3>
+<p>2026 年 10 月 17 日に確認：MathWorld（切頂二十面体と五方十二面体の複合多面体）；Wikipedia（rectified truncated icosahedron；truncated icosahedron）；McCooey；Hart の Virtual Polyhedra；名前のウェブ検索（結果なし）；SageMath；netlib；Antiprism 0.29；『始祖』§4 と SEARCH-LOG.md；DICTO の参考文献ライブラリー。実行していないもの：Wolfram PolyhedronData、Stella / Great Stella。スクリプト：studies/2026-10-16-progenitors（oh_compound.py → oh-compound.txt、core_hull_in_cycle.py）。</p>
+<h2>A.35a DICTO メタクシヘキセコンタヘドロン <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23430864)</span></h2>
+<p class="told">第 I 巻 第1章 原子で語られています。</p>
+<p>ℚ(√5) で厳密です。正二十面体は (0, ±1, ±φ) とその巡回置換（辺 2）；正十二面体は (±1, ±1, ±1) と (0, ±φ, ±1/φ) の巡回置換（頂点は正二十面体の面の中心の上、辺 2/φ）を k 倍したもの；凸包の辺の比（正二十面体 : 正十二面体）は φ/k。M：k = φ⁵/9 = 11/18 + 5√5/18、比 9/φ⁴ ≈ 1.31308（2 乗 81/φ⁸）。閉じた形：(0, ±1, ±φ) と (φ⁵/9)·{(±1, ±1, ±1), (0, ±φ, ±1/φ)}（巡回）の凸包。</p>
+<table><tr><th>性質</th><th>値（厳密）</th></tr>
+<tr><td>頂点</td><td>32：5 回 12 個（正二十面体の頂点）、3 回 20 個（正十二面体の頂点）</td></tr>
+<tr><td>面、辺</td><td>合同な二等辺三角形 60 枚、辺 90 本；五方十二面体の組合せ構造</td></tr>
+<tr><td>辺の長さの 2 乗</td><td>94/81 + 14√5/27（60 本、5 回から 3 回へ）；14/9 + 2√5/27（30 本、3 回から 3 回へ）</td></tr>
+<tr><td>頂点の半径の 2 乗</td><td>5/2 + √5/2（5 回）；41/18 + 55√5/54（3 回）</td></tr>
+<tr><td>内接球</td><td>60 枚の面すべてが距離の 2 乗 7249/4162 + 16209√5/20810</td></tr>
+<tr><td>中球</td><td>なし：辺は距離の 2 乗 2 + 20√5/27 と 161/81 + 8√5/9</td></tr>
+<tr><td>体積</td><td>410/27 + 550√5/81 ≈ 30.3684</td></tr></table>
+<h3>サイクルの中で</h3>
+<ul>
+<li>菱形三十面体は段 RT → I·φ³ の 0.812 までしか届きません。両隣の両方に接する凸な正二十面体対称の立体はありません（『金剛乗』表 3、浮動小数点）。</li>
+<li>サイクルの単位で：RT の 5 回の頂点 12 個と I·φ³ の面の中心 20 個の凸包（半径の 2 乗 45/8 − 9√5/8 と 47/24 + 7√5/8）；同じ立体であることを厳密に検証。</li>
+<li>RT → M：一種類のピース 30 個；M → I·φ³：一種類のピース 60 個（双三角錐の形）；M はその段の体積の 0.356 を占めます。</li>
+<li>極双対：正五角形 12 枚と、辺が比 (14 + 9√5)/11 で交互に並ぶ六角形 20 枚。</li>
+<li>族：辺の比 (5 + 3√5)/10 から φ まで完全な対称性をもちます。カタランの立体の五方十二面体 3(7 + 5√5)/38 ≈ 1.435；パリントリアコンタヘドロン 3/√5 ≈ 1.342；メタクシヘキセコンタヘドロン 9/φ⁴ ≈ 1.313。9/φ⁴ は、最も詰まった始祖サイクルの一巡りあたりの厳密な増大率でもあります（説明なしに記しておきます）。</li>
+</ul>
+<h3>出典とスクリプト</h3>
+<p>2026 年 10 月 17 日に確認：Polytope Wiki、Wikipedia と MathWorld（Pentakis Dodecahedron；Dodecahedron–Small Triambic Icosahedron Compound）、McCooey、OEIS（9/φ⁴ に一致する数列なし）、Bridges 2017、Wassell and Benito 2012、arXiv（最も近いもの arXiv:2008.00862）、名前のウェブ検索、SageMath、netlib、Antiprism 0.29、DICTO の参考文献ライブラリー。実行していないもの：Wolfram PolyhedronData、Stella / Great Stella。スクリプト：scripts/hull_family_exact.py → data-hull-family-exact.txt（すべての面の平面と頂点を厳密に検定）；studies/2026-10-16-progenitors（gap_member.py、gap_pieces_exact.py、metaxy_dual.py）。</p>
+<h2>A.35b DICTO パリントリアコンタヘドロン <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23430866)</span></h2>
+<p class="told">第 I 巻 第1章 原子で語られています。</p>
+<p>浮動小数点と記したもの以外は ℚ(√5) で厳密です。設定は A.35a と同じ；X：k = φ√5/3 = 5/6 + √5/6、辺の比 3/√5（2 乗 9/5）。閉じた形：(0, ±1, ±φ) と ((5 + √5)/6)·{(±1, ±1, ±1), (0, ±φ, ±1/φ)}（巡回）の凸包。</p>
+<table><tr><th>性質</th><th>値（厳密）</th></tr>
+<tr><td>頂点</td><td>32：5 回 12 個、3 回 20 個、すべて完全な高さの二十・十二面体の星の先端</td></tr>
+<tr><td>面、辺</td><td>三角形 60 枚、それぞれ菱形十二面体の菱形の半分（面の角の cos² は 1/9、1/3、1/3）；辺 90 本</td></tr>
+<tr><td>辺の長さの 2 乗</td><td>20/9（60 本）と 5/3（30 本）</td></tr>
+<tr><td>頂点の半径の 2 乗</td><td>5/2 + √5/2（5 回）；5/2 + 5√5/6（3 回）</td></tr>
+<tr><td>内接球</td><td>60 枚の面すべてが距離の 2 乗 7/4 + 3√5/4</td></tr>
+<tr><td>中球</td><td>なし（辺は距離の 2 乗 25/12 + 2√5/3 と 35/18 + 5√5/6）</td></tr>
+<tr><td>体積</td><td>50/3 + 50√5/9 ≈ 29.0893</td></tr></table>
+<ul>
+<li>浮動小数点（『金剛乗』での表示のとおり）：X は次の巡りの D′ の内部にあり、その体積の 99.46%（サンプル点 20,000）が次の正二十面体のクレオ・スターの内部にあります。正二十面体の最初の星型化は、その先端を面の距離の 3/√5 倍の位置に置きます。</li>
+<li>族：カタランの立体の五方十二面体 3(7 + 5√5)/38 ≈ 1.435；X 3/√5 ≈ 1.342；メタクシヘキセコンタヘドロン 9/φ⁴ ≈ 1.313。</li>
+</ul>
+<h3>出典とスクリプト</h3>
+<p>既知のもの：凸包の族とその完全対称の範囲（Polytope Wiki）、菱形三十面体、二十・十二面体の中心角錐。A.35a と同様に確認（『金剛乗』§5、SEARCH-LOG.md；ウェブとライブラリー、2026 年 10 月 17 日）。スクリプト：scripts/hull_family_exact.py（厳密）。</p>
+<h2>A.41 DICTO ジュエル <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23496353)</span></h2>
+<p class="told">第 I 巻 第1章 原子で語られています。</p>
+<p>浮動小数点と記した箇所以外は ℚ(√5) で厳密です。スケール：ヘクサの立方体の辺を 1 とし、したがってセルの辺は 1/2、体積は 1/8（スクリプトでは辺 2 のセルを使い、すべての体積が 64 倍になります）。セルは添字の和の偶奇で偶セルと奇セルに分かれ、偶セルは面心立方格子をなします。</p>
+<h3>ジュエル</h3>
+<ul>
+<li>ユークリッドの屋根：棟の長さはセルの辺の 1/φ 倍、高さはセルの辺の (φ − 1)/2 倍；屋根 (1 + √5)/192；正十二面体 (5 + √5)/32。隣のステラ（体積 1/16）が (√5 − 1)/192 を取り、削られた屋根はちょうど 1/96 残ります。ジュエル ＝ 1/8 + 6/96 = 3/16。</li>
+<li>削られた屋根はそれぞれ四面体 4 個（立方体の面の 4 分の 1 ごとに 1 個）。頂点 38（立方体の 8、棟の点 12、面の中心 6、窓を完成させる点 12）；面 60（窓 12、ステラの平面にある三角形 48）；38 − 96 + 60 = 2。</li>
+<li>窓：ペンローズの太い菱形、辺 (√5 − 1)/4 = 1/(2φ)、長い対角線 1/2、棟の頂点で 108°（cos 108° = (1 − √5)/4）、立方体の頂点で 72°。</li>
+<li>対称性：位数 24、黄鉄鉱型（中心対称、3 回回転、座標面の鏡映 3 つ；対角面の鏡映なし、4 回回転なし、(111) 面の鏡映なし）。</li>
+</ul>
+<h3>ステラ＝ジュエル格子</h3>
+<p>奇セル ＝ ステラ ＋ 削られた屋根 6 個：1/16 + 6/96 = 1/8（削る前の屋根どうしの重なりの体積はちょうど 0）。ジュエルとステラが空間をタイル張りし、3/16 : 1/16 = 3 : 1。</p>
+<h3>クラスター</h3>
+<table><tr><th>ピース</th><th>面</th><th>体積</th><th>ジュエル</th><th>内部のステラ</th><th>ピースあたりの離れたステラ</th><th>格子</th><th>対称性を除いて</th></tr>
+<tr><td>ジュエル・テトラ</td><td class="n">228（三角形 192、窓 36）</td><td class="n">3/4</td><td class="n">4</td><td class="n">0</td><td class="n">4</td><td class="n">4（指数 8）</td><td class="n">2</td></tr>
+<tr><td>ジュエル・オクタ</td><td class="n">288（240、48）</td><td class="n">19/16</td><td class="n">6</td><td class="n">1</td><td class="n">5</td><td class="n">12（指数 12）</td><td class="n">1</td></tr>
+<tr><td>ジュエル・ロンビ</td><td class="n">396（336、60）</td><td class="n">25/16</td><td class="n">8</td><td class="n">1</td><td class="n">7</td><td class="n">25（指数 16）</td><td class="n">9</td></tr></table>
+<ul>
+<li>隣り合うジュエル（面の対角線 1 歩分）はちょうど 1 枚の窓を共有し、軸に沿って 2 セル離れると共有しません。ジュエル・ロンビ：窓 18 枚（辺 12、面の短い対角線 6）；ジュエル 8⅓ 個分。</li>
+<li>ジュエル・オクタの格子の例：セル単位のエルミート基底 (1,0,3)、(0,1,5)、(0,0,12)。オクテットの配置：各ジュエルは 8 個のジュエル・テトラと 6 個のジュエル・オクタに属します。重なりなしでは、ジュエル・オクタの内部に入るステラは多くても 6 個に 1 個で、12 の格子がそれを達成します。</li>
+<li>一つのジュエルを角と角で共有するジュエル・テトラは、パイロクロア・ネットワーク（DICTO のカゴメ・ネットワーク）をなします。</li>
+</ul>
+<h3>ヘクサとヘクサ・キー</h3>
+<p>ヘクサ ＝ ブロック（辺 1）＋ 削られた屋根 24 個 ＝ 1 + 24/96 = 5/4（ジュエル 6⅔ 個分）。ヘクサ・キー ＝ 1 − 24/96 = 3/4 = 8/16 + 12 × 2/96（ステラ 8 個、二重の屋根 12 個）。ヘクサを一つおきのブロックに置き（岩塩型）、5 : 3。各ヘクサは 12 個の隣のそれぞれと、ちょうど 2 枚の完全な窓で接し（合計 24 枚）、どの二つのヘクサの屋根も重なりません。</p>
+<h3>双晶</h3>
+<p>双晶の規則：3 回軸をもつ中心対称な立体の鏡像は、同じ立体を 60° 回したものです。充填：(111) 双晶では、点の約 4% が覆われずに残り、約 4% が二重に覆われました（浮動小数点、#37a）。(111) 面の鏡映はセルの一歩 (1, 0, 0) を (1/3, −2/3, −2/3) に写し、立方格子から外れます。</p>
+<h3>検証と出典</h3>
+<p>jewel_exact.py（21 PASS）と cluster_exact.py（24 PASS）、厳密；lalvani_edges.py（浮動小数点）：窓の 48 本の辺はすべて二十面体の 2 回軸の上にあり、ほかの 48 本はどれも乗りません。面の数は、厳密に求めた共有の窓とステラから数えました。検索：ライブラリー資料 80 件の全文とウェブ、2026 年 10 月 20 日。参考文献：Euclid XIII.17 (Heath 1908); Kepler 1619; Penrose 1979; Bragg 1913; Lalvani US 4,723,382 (1988); DICTO #8、#17、#18、#37、#37a、#40、Kaleidohedra の発見 #10、#10b、#15、#16。研究：studies/2026-10-20-dicto-jewel、コミット d475b59。</p>
+<h2>A.45 ルーローの正多面体 <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23529499)</span></h2>
+<p class="told">第 I 巻 第1章 原子で語られています。</p>
+<p>頂点の集合 X、直径 D の正多面体 S に対し、B = ∩<sub>v∈X</sub> B(v, D)、球多面体です。正四面体：D は辺（ルーローの四面体）。正十二面体、正二十面体、立方体、正八面体：D = 2R。長さは D = 1 で表します。</p>
+<h3>主定理</h3>
+<p>(i) B の幅はどれも 1 以上であり、距離 1 の任意の 2 頂点を通る直線に沿った幅はちょうど 1 です。(ii) 正十二面体、正二十面体、立方体、正八面体について、外接半径 ½、内接半径 r のとき、面の中心を通る軸に沿った幅はちょうど 2√(3/4 + r²) − 2r です。</p>
+<p><b>証明の概略。</b> (i) パールの定理により、X は定幅 1 の立体 K に含まれ、K ⊂ B。距離 1 の頂点 v、w と u = v − w について、B 上の u·x の両極値は u·v と u·w です。(ii) 軸のまわりの回転は u を固定するので、u·x の最大は軸上の点 zu で達成されます。|zu − v|² = ¼ + z² − 2z h<sub>v</sub> は h<sub>v</sub> = −r（反対側の面）で最大；zu ∈ B となるのは z ≤ √(3/4 + r²) − r のとき、かつそのときに限ります。中心対称性によりこれが 2 倍になります。</p>
+<h3>系</h3>
+<ul>
+<li>双対の対：(r/R)² = 1/3（立方体、正八面体）と (5 + 2√5)/15（正十二面体、正二十面体）。立方体と正八面体：r² = 1/12、w = (√30 − √3)/3 ≈ 1.248392。正十二面体と正二十面体：r² = (5 + 2√5)/60、w = (√(50 + 2√5) − √(5 + 2√5))/√15 ≈ 1.110989。</li>
+<li>正四面体：(ii) は当てはまりません。辺の中点を通る軸に沿った幅は 2√(3/4) − 1/√2 = √3 − √2/2 ≈ 1.024944（厳密）。</li>
+<li>ルーロー多面体（Reuleaux polyhedra）ではありません：直径対は 4、3、10、6 で、ヴァージョニの上限 14、10、38、22 に届きません。各頂点はちょうど一つのほかの球の上にあるので、B の頂点ではありません。</li>
+<li>予想 1：面の軸に沿った幅（正四面体では √3 − √2/2）が最大である。数値計算：ランダムな 3000 方向と局所的な精密化で 1.248391589161、1.110988655456、1.024944026382 が得られます。</li>
+</ul>
+<table><tr><th>立体（DICTO の名）</th><th>球の中心</th><th>面</th><th>弧</th><th>直径対 (2m − 2)</th><th>最少の色数</th><th>幅の範囲</th><th>体積 ≈</th></tr>
+<tr><td>ルーローの四面体</td><td>正四面体</td><td class="n">4</td><td class="n">6</td><td class="n">6 (6)</td><td class="n">4</td><td class="n">1 .. 1.024944</td><td class="n">0.42216</td></tr>
+<tr><td>ルーローの八面体</td><td>立方体</td><td class="n">8</td><td class="n">12</td><td class="n">4 (14)</td><td class="n">2</td><td class="n">1 .. 1.248392</td><td class="n">0.64940</td></tr>
+<tr><td>ルーローの立方体</td><td>正八面体</td><td class="n">6</td><td class="n">12</td><td class="n">3 (10)</td><td class="n">3</td><td class="n">1 .. 1.248392</td><td class="n">0.68764</td></tr>
+<tr><td>ルーローの二十面体</td><td>正十二面体</td><td class="n">20</td><td class="n">30</td><td class="n">10 (38)</td><td class="n">3</td><td class="n">1 .. 1.110989</td><td class="n">0.57188</td></tr>
+<tr><td>ルーローの十二面体</td><td>正二十面体</td><td class="n">12</td><td class="n">30</td><td class="n">6 (22)</td><td class="n">4</td><td class="n">1 .. 1.110989</td><td class="n">0.59679</td></tr></table>
+<p>直径 1。弧の数は数値計算；直径対は厳密；幅の最小値は証明済み、最大値は数値的に見つけ、それが達成されることを証明し、最大であると予想；体積は動径方向の求積による。ルーローの四面体：Harbourne の 8π/3 + √2/4 − (27/4) arccos(1/3)（Hynd の引用による）と、私たちの 0.4221577 は 1.1 × 10⁻⁸ まで一致します。</p>
+<h3>検証と出典</h3>
+<p>reuleaux_checks.py（45 PASS）：A 部は ℚ(√5) で厳密（直径、直径対、頂点がほかの一つの球の上にあること、頂点の高さ、(r/R)²、閉じた形、正四面体の軸）；B 部は float64（幅、ガウス・ルジャンドル法による体積、N = 1000 と 2000 で 6 × 10⁻⁷ 以内；円ごとに 7200 点での弧；バックトラッキングによる色数）。widths.py；reuleaux_platonic.py。既知のもの：Bezdek, Lángi, Naszódi and Papez 2007; Montejano and Roldán-Pensado 2017; Hynd 2023; Sallee 1970（未読）。検索：テキスト層のあるライブラリー資料 81 件、2026 年 10 月 21 日（リンクのみの 175 件は検索せず）。研究のコミット f193a56。</p>
+<h2>A.49 多面体伸長定理 <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23566671)</span></h2>
+<p class="told">第 I 巻 第1章 原子で語られています。</p>
+<h3>定理</h3>
+<p>P をすべての辺の長さが 1 の凸多面体とし、方向 u に沿って距離 1 だけスライドさせます。掃いてできる形（P と P + u の凸包）は、u が P の辺に平行でない限り、すべての辺の長さが 1 です。面：u に平行でない P の各面は、丸ごと保たれます（それが向いている側の端に）；u に平行な n 角形の各面は (n + 2) 角形に引き伸ばされ、そのうち u に平行な辺 1 本ごとに辺が 1 つ減ります；u の方向から見た P の輪郭の辺 1 本ごとに平行四辺形が 1 枚（スライド 1 では菱形）。正十二面体では、スライド方向に沿う五角形は、u がその辺の一つに沿うなら六角形に、そうでなければ七角形になります。スライド方向に沿う五角形がなければ、帯は 10 枚または 12 枚の菱形です（ランダムな 2 000 方向で；枚数は観察、辺の等しさは証明）。</p>
+<p><b>証明の概略。</b> 掃いてできる形はミンコフスキー和 P ⊕ S で、S は 0 から u への線分です。ミンコフスキー和の各面は、共通の外向きの方向 n における各被加数の面の和です：S が寄与するのは u（n·u &gt; 0）、0（n·u &lt; 0）、または S 自身（n·u = 0）。辺は P の辺（長さ 1）または S（長さ 1）の平行移動です。ただし P の辺 e が u に平行なところは例外で、そこでは e ⊕ S は長さ 2 の一本の線分になります。系（キャップ）：S を辺 1 の三角形または四面体に替えても同様です。</p>
+<table><tr><th>スライドの方向</th><th>面</th><th>すべての辺が 1？</th></tr>
+<tr><td>立方体の軸（DICTO の F11）</td><td>五角形 8、六角形 4、長方形 2（スライド 1 では正方形）</td><td>いいえ：スライドが 2 本の辺に沿う</td></tr>
+<tr><td>ユークリッドの立方体の面の対角線</td><td>五角形 12、菱形 10</td><td>はい</td></tr>
+<tr><td>体対角線（3 回軸）</td><td>五角形 12、菱形 12（うち 6 枚は正方形）</td><td>はい</td></tr>
+<tr><td>5 回軸</td><td>五角形 12、菱形 10、すべて同じ形（角 58° と 122°）</td><td>はい</td></tr>
+<tr><td>2 枚の五角形に沿って（例）</td><td>五角形 10、菱形 6、七角形 2</td><td>はい</td></tr></table>
+<ul>
+<li>面の対角線方向に長さ 1 のスライド：3 種類の菱形（45°/135° が 2 枚、55°/125° が 4 枚、69°/111° が 4 枚）；φ√2 ≈ 2.288 まで伸ばすと次の正十二面体に届きます。</li>
+<li>キャップ 3 つ：五角形 12、菱形 15、正三角形 2（面 29）；キャップ 4 つ：五角形 12、菱形 18、正三角形 4（面 34）。</li>
+<li>ねじったキャップ：三角形の帯はできません。最も悪い辺のずれは、最良の場合でも 0.336。</li>
+<li>ほかの正多面体（それぞれランダムな伸長 1 000 回）：キャップ 4 つ（向きが逆の正四面体）を付けた正四面体 ＝ 立方八面体；キャップ 4 つを付けた正八面体 ＝ 切頂四面体；頂点の方向に伸ばした正四面体 ＝ 正三角錐柱（J7）；底面に対してねじった三角形にキャップ 3 つ ＝ 正三角台塔（J3）；頂点の方向に伸ばした正八面体 ＝ 正四角双錐柱（J15）；伸ばした立方体は直方体、六角柱、またはゾーン多面体。</li>
+</ul>
+<table><tr><th>正二十面体</th><th>面</th></tr>
+<tr><td>5 回軸</td><td>三角形 20、菱形 10</td></tr>
+<tr><td>面の対角線</td><td>三角形 16、菱形 2、五角形 4</td></tr>
+<tr><td>体対角線</td><td>三角形 20、菱形 6</td></tr>
+<tr><td>立方体の軸</td><td>三角形 16、台形 4、正方形 2；等辺ではない（2 本の辺が長さ 2 になる）</td></tr>
+<tr><td>キャップ 3 つ</td><td>三角形 15、菱形 3、五角形 3、六角形 2</td></tr>
+<tr><td>キャップ 4 つ</td><td>三角形 16、菱形 6、六角形 4</td></tr></table>
+<h3>検証と出典</h3>
+<p>void_volume.py（辺を共有する立方体の上の二つの正十二面体のあいだの空隙：体積 φ³ + ½、重なりなし）；sweep_theorem.py；caps34.py；gyro_caps.py；ring1.py と identify.py；icosa_family.py；nets.py と telescope.py（展開図は平らで重なりがないことを確認）。伸縮モデルは辺の約 2.7 倍まで伸びます。既知のもの：ミンコフスキー和（Deza and Pournin 2018; Erdahl and Grishukhin 2015）；Hart and Picciotto；Arseneva, Langerman and Zolotov 2020；Baumann のニアミス；Grünbaum 2010（Fedorov による）。検索：参考文献ライブラリー（論文の付録 C）とウェブ、2026 年 10 月 22 日。研究のコミット 014b5ee。</p>
+<h2>A.8 ユークリッド＝ケプラー＝パチョーリ・セル <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23284106)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<p>立方体 (±1, ±1, ±1)、φ = (1 + √5)/2。棟の頂点 (0, ±1/φ, ±φ) とその巡回置換：立方体の 8 個の頂点と合わせて、辺 2/φ の正十二面体。(0, ±1/φ, ±φ) → (0, ±1/φ, ±(2 − φ)) = (0, ±1/φ, ±1/φ²) と折ると：辺 2/φ² の正二十面体。立方体は 2 の平行移動で繰り返されます。</p>
+<ul>
+<li>辺：立方体 2、正十二面体 2/φ、正二十面体 2/φ²（φ² : φ : 1）；どの辺も正二十面体の 15 本の 2 回軸のいずれかに沿います。</li>
+<li>セルあたり 13 個の節点；空間群 Pm-3（No. 200）、共型；ワイコフ位置 1b と 12j (0, y, z)、y = 1/(2φ) ≈ 0.3090、z = 1/(2φ²) ≈ 0.1910。</li>
+<li>各セルの立体は正二十面体の 31 本の回転軸をもち、それはすべてのセルで平行です；そのうち 7 本が結晶の軸（2 回軸 3 本、3 回軸 4 本）です。</li>
+<li>スパイク：正二十面体の各面の上、距離 2/φ に節点が一つ（黄金三角形、頂角 36°）；大星型十二面体の体積 ≈ 2.918、その凸包は正十二面体。</li>
+<li>正十二面体による被覆：1 重（19.1%）または 2 重（80.9%）、平均 (5 + √5)/4 ≈ 1.809。面で隣り合うセルの正十二面体はちょうど屋根 2 つ分重なり、辺で隣り合うものは接し、頂点で隣り合うものは頂点を一つ共有します。</li>
+<li>塗り分け：x+y+z の偶奇 → Fm-3（No. 202）；x+y → Cmmm（No. 65）；z → Pmmm（No. 47）。</li>
+<li>正二十面体の頂点は正八面体の 12 本の辺を黄金比に分け、正二十面体の 8 枚の面は正八面体の面の平面にあります。</li>
+<li>偶セル上の正十二面体：密度はちょうど (5 + √5)/8 ≈ 0.9045（Betke &amp; Henk 2000; Torquato &amp; Jiao 2009）。EKP ネットワーク：294 組のピースの対について厳密な分離軸判定、重なりなし。</li>
+<li>ツァイ型 1/1 近似結晶：AuGeYb (0, 0.187, 0.305)、ZnAuYb (0, 0.188, 0.301)、対する EKP の点 (0, 0.309, 0.191) は y と z が入れ替わっています；比 0.613 と 0.626、対する 1/φ = 0.618。</li>
+</ul>
+<p><b>検証と出典。</b> data/checks.txt：scripts/verify-roof-fold.mjs による 48 項目の検定（krp-core v0.16.0、2026 年 10 月 15 日に再実行）、すべて合格。既知のもの：Euclid XIII.17; Pacioli 1509; Kepler；α-AlMnSi、スクッテルダイト、I 型クラスレート；Deguchi et al. 2015; Ishimasa 2019; de Graaf, van Roij &amp; Dijkstra 2011; Koca et al. 2016（全文を読んだ）。検索：ウェブ 2026 年 10 月 6 日；参考文献ライブラリー 2026 年 10 月 15 日。未確認：Bilbao、ICSD。</p>
+<h2>A.13 DICTO ドデカ13 <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23284281)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<p>辺 1。一本の辺のまわりの 3 個の正十二面体の隙間：360° − 3 × 116.565° = 10.3048°。</p>
+<table><tr><th>ピース</th><th>数</th><th>形</th><th>体積</th></tr>
+<tr><td>楔</td><td class="n">30</td><td>10.3048° で蝶番のようにつながった正五角形 2 枚、端の三角形 2 枚、外側の台形 2 枚（辺 1、1/(φ²√5)、1、1/(φ√5)）</td><td class="n">φ³/20</td></tr>
+<tr><td>針</td><td class="n">20</td><td>四面体、長い辺 3 本は 1、底面は辺 1/(φ²√5) の正三角形</td><td class="n">(45 − 19√5)/600</td></tr></table>
+<ul>
+<li>合計：13(15 + 7√5)/4 + 30·φ³/20 + 20·(45 − 19√5)/600 ≈ 106.058472；外側は五角形 72、台形 60、三角形 20。</li>
+<li>ユニット（ひれ付き）：外側の正十二面体 1 個に、半分の楔 5 個と 3 分の 1 の針 5 個。</li>
+<li>凸包：切頂二十面体の位相、正五角形 12 枚（辺 1）と、辺が 1 と √((27 + 7√5)/10) ≈ 2.065248 で交互に並ぶ六角形 20 枚；体積 142.955；中を埋めたクラスターはその 74.19%。</li>
+<li>最密の平行移動充填（格子 54 406 個）：体心立方、密度 0.7154。</li>
+<li>DICTO スターとの関係：外側の各正十二面体を 36° 回し、0.262866 外へ動かします。</li>
+<li>頂点を共有する隣は最大 3 個で、格子はできません。面と面では 5 回軸に沿った柱だけです。第二殻（研究したが主張はしない）：最大約 68%；1/1 近似結晶はセルあたり 162 個の正十二面体で飽和（67.35%）。</li>
+</ul>
+<p><b>検証と出典。</b> checks-dodeca13.txt（10 項目）と checks-dodeca-cluster.txt（11 項目：合同、厳密な体積、63 個の立体のあいだに重なりなし（分離軸による）、すべての隙間の面の所在）、krp-core v0.16.0、2026 年 10 月 15 日に再実行。既知のもの：Sadoc and Mosseri; Fang, Irwin et al. 2018; Jenczyk 2024; Vorthmann 2014; Koca et al. 2020; Al Raisi et al. 2026（そのタイルの面は最小でも 10.81° で交わる）。検索：ウェブ 2026 年 10 月 9 日；参考文献ライブラリー 2026 年 10 月 15 日。</p>
+<h2>A.14 DICTO スター <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23284213)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<table><tr><th>ピース</th><th>数</th><th>付ける場所</th><th>中心の辺での二面角</th></tr>
+<tr><td>二十・十二面体</td><td class="n">1</td><td>—</td><td class="n">142.6226°</td></tr>
+<tr><td>正十二面体</td><td class="n">12</td><td>各五角形</td><td class="n">116.5651°</td></tr>
+<tr><td>三重欠損正二十面体（J63）</td><td class="n">20</td><td>各三角形に、五角形だけに接する三角形の面で</td><td class="n">100.8123°</td></tr></table>
+<ul>
+<li>60 本の辺のそれぞれで 142.6226° + 116.5651° + 100.8123° = 360°。</li>
+<li>体積：二十・十二面体 (45 + 17√5)/6；正十二面体 各 (15 + 7√5)/4；J63 各 5(3 + √5)/12 − (5 + √5)/8；合計ちょうど (195 + 89√5)/3 ≈ 131.3367。</li>
+<li>充填：隙間はつながって一つの迷路になります（約 26%）；5 回軸に沿って正十二面体を一つ共有する二つの星は、中心が 4.97980 離れています。10 月 4 日の殻（245 個のピース）の厳密な再構築：隠れた隙間は辺の 0.0067 から 0.263、凸包の 76.2%。</li>
+</ul>
+<p><b>検証と出典。</b> checks-id-star.txt：7 項目（scripts/verify-id-star.mjs、krp-core v0.16.0、2026 年 10 月 15 日に再実行）：33 個の立体のあいだに重なりなし、60 本の辺すべてが閉じる、すべての頂点が埋まる、厳密な体積、完全な正二十面体なら実際に重なること。既知のもの：Austin 2014 (Stella 4D)；正十二面体・正二十面体の空間充填形（ハニカム）；Koca, Al-Ajmi and Koca 2009；クリッツィングのセグメントコラ（segmentochora）；種数 11 のスチュワートのトロイド；エルサー＝スローンの断面。検索：ウェブとライブラリー 2026 年 10 月 9 日；ライブラリー 2026 年 10 月 15 日。</p>
+<h2>A.17 カゴメ凸包 <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23376317)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<p>EKP セル：立方体の辺 2、セルは整数点に置き、x + y + z の偶奇で偶セルと奇セルに分けます；偶セルは面心立方格子をなします。ステラ＝ジュエル格子：ジュエル（体積 12）と星型八面体（ステラ・オクタングラ、体積 4）、3 : 1。サンスター格子：正十二面体とドッグスター（Hart の正十二面体の星型化 8、1996；Polyhedra-World 2004；Walser）。</p>
+<table><tr><th>凸包</th><th>ピース</th><th>中心の格子</th><th>隣の数</th><th>注</th></tr>
+<tr><td>菱面体</td><td>8、面心立方の基本単位胞の頂点に置き、その奇セルを内部に</td><td>体心立方</td><td class="n">8</td><td>完全なカゴメ；奇セルの 4 分の 1 が内部に封じ込められる；ジュエル 8⅓ 個分</td></tr>
+<tr><td>立方八面体、中空</td><td>偶セルのまわりに 12</td><td>面心立方</td><td class="n">12</td><td>中央に穴のあるかご</td></tr>
+<tr><td>立方八面体、中実</td><td>13</td><td>面心立方</td><td class="n">12</td><td>正十二面体 13 個のクラスターの周期的な双子；ジュエルで作ると DICTO ジュエル13</td></tr>
+<tr><td>立方体</td><td>14、奇セルのまわりの面心立方の慣用単位胞</td><td>体心立方</td><td class="n">8</td><td>最もカゴメらしくない</td></tr>
+<tr><td>菱形十二面体</td><td>偶 19 ＋ 奇 14</td><td>第二近接を含む体心立方</td><td class="n">14</td><td>単独のピースなし</td></tr>
+<tr><td>正八面体</td><td>奇セルのまわりに 6、内部にそのステラ（またはドッグスター）</td><td>単純立方</td><td class="n">6</td><td>ペロブスカイトの網</td></tr></table>
+<ul>
+<li>例外（ドデカ13）：外側の正十二面体を共有するクラスターは、5 回軸に沿って内接球半径の 4 倍ずらしたとき、向かい合う面どうしでのみ接します。隣り合う軸（63.43°）では必ず重なり、116.57° 離れた軸では決して重なりません。隣は最大 3 個（そのような組は 20 通り）；三つの 5 回軸方向のずらしでできる格子はどれも重なります。面と面の柱の間隔は内接球半径の 6 倍。最密の積み重ねは体心立方、密度 0.71537。</li>
+</ul>
+<p><b>検証と出典。</b> checks-kagome-hulls.txt（18 項目）と checks-dicto-jewel-cluster.txt（25 項目）、krp-core v0.16.0、2026 年 10 月 15 日に再実行、すべて合格；設計研究では 13³ の範囲で重なり、巻き数、オイラー標数を検証。既知のもの：ReO₃ とペロブスカイト；パイロクロア；Molecules 24(7) (2019) 1221；Hart 1996；Walser。検索：ウェブ 2026 年 10 月 9 日；ライブラリー 2026 年 10 月 15 日。</p>
+<h2>A.25 DICTO スフェロイド13 RD <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23332821)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<p>面心立方（FCC）格子：座標の和が偶数の整数点；隣どうしの距離 √2；ボロノイ領域（菱形十二面体）の体積 2。指数 13 の部分格子 183 個のうち、ちょうど 8 個が 13 個の点を完全代表系としてもち、いずれも一つの配置を回したものです。基底の一つ (−3, 0, 1), (0, −1, 3), (1, −3, 0)；グラム行列 [[10, 3, −3], [3, 10, 3], [−3, 3, 10]]；共体積 26；最短ベクトルは長さ √10 が 6 本、√12 が 2 本、√14 が 6 本。点群の位数 6。符号 {x : x₁ + 3x₂ + 9x₃ ≡ 0 (mod 13)}；0, 1, 3, 9 は 13 を法とするシンガーの差集合です。</p>
+<p>丸め：頂点のクラス 39；中心のセルは大きさ s と中央で固定；面は平ら、セルは凸で最小の厚さをもつ；外表面積を最小化（体積 26 で固定）；丸さ 36πV²/S³；5 つの初期値からの逐次二次計画法。</p>
+<table><tr><th>最小の厚さ</th><th>外表面積</th><th>丸さ</th><th>中心</th><th>中心の体積</th><th>外側の体積（A / B）</th><th>凸包に対する割合</th></tr>
+<tr><td>丸めなし</td><td class="n">59.3970</td><td class="n">0.365</td><td>× 1</td><td class="n">2</td><td class="n">2 / 2</td><td class="n">0.672</td></tr>
+<tr><td class="n">0.08</td><td class="n">47.0285</td><td class="n">0.735</td><td>× 1.589</td><td class="n">8.03</td><td class="n">1.72 / 1.28</td><td>—</td></tr>
+<tr><td class="n">0.15</td><td class="n">47.6397</td><td class="n">0.707</td><td>× 1.525</td><td class="n">7.10</td><td class="n">1.78 / 1.37</td><td class="n">0.886</td></tr>
+<tr><td class="n">0.25</td><td class="n">48.8894</td><td class="n">0.654</td><td>× 1.433</td><td class="n">5.89</td><td class="n">1.85 / 1.51</td><td>—</td></tr>
+<tr><td class="n">0.35</td><td class="n">50.5260</td><td class="n">0.593</td><td>× 1.342</td><td class="n">4.84</td><td class="n">1.90 / 1.63</td><td class="n">0.793</td></tr></table>
+<ul>
+<li>ブロック格子のボロノイ領域：面 14、表面積 46.7464、丸さ 0.748。菱形十二面体 1 個では 0.741。</li>
+<li>0.15 でのピース：中心 7.0959（表面積 19.7387、丸さ 0.740、辺 1.321、二面角 120°）；外側 A 1.7801（8.5047、0.583、辺 0.411–1.321、88.7°–163.4°）；外側 B 1.3706（7.5322、0.497、0.497–1.321、78.1°–162.3°）。0.35 では：中心 4.8351；外側 A 1.8952；外側 B 1.6323。</li>
+<li>中心を自由にした変種：丸さ 0.739、0.715、0.664、0.600（対して 0.735、0.707、0.654、0.593）；0.15 では中心 7.18、面は平行四辺形から辺の約 1.5% ずれます。</li>
+<li>面：内部 36；外側 84（√10 にある最も近い 6 個のブロックに向く 54、√12 にある 2 個に向く 12、√14 にある 6 個に向く 18）：隣は 14 個。</li>
+<li>展開図：0.15 は 1 単位 28.5 mm（ブロック約 12.5 cm）；0.35 は 32.4 mm（約 14.4 cm）；中心自由の 0.15 は 24.0 mm（約 10.4 cm）；15 枚。</li>
+</ul>
+<p><b>検証と出典。</b> 面の平らさは 10⁻¹³ まで；13 個の体積の合計はちょうど 26；外側の 84 面が対応；さらに 40 の初期値（うち 27 が収束）から同じブロックが得られました。スクリプトは studies/2026-10-13-rd13-block。既知のもの：Kovačević and Tan 2018; Kovačević 2026; Singer 1938; Golomb and Welch 1970; Etzion 2011; Campello et al. 2015; Gravier, Mollard and Payan 1998; Dejter, Fuentes and Araujo 2025; Schütte and van der Waerden 1952; Fedorov 1885; Grünbaum 2010。</p>
+<h2>A.26 DICTO ATOM-13×13 <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23333183)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<table><tr><th>クラスター</th><th>中心と 12 個の距離</th><th>中心と 12 個</th><th>12 個どうし</th></tr>
+<tr><td>イコサ13（蓮の実）、DESHI</td><td class="n">1.5388</td><td>頂点で 12</td><td>辺に沿って 30</td></tr>
+<tr><td>ドデカ13</td><td class="n">2.2270</td><td>面全体で 12</td><td>辺に沿って 30</td></tr>
+<tr><td>UNITY / VENUS</td><td class="n">1.8882</td><td>面全体で 12</td><td>頂点で 30</td></tr>
+<tr><td>DICTO スター</td><td class="n">2.4899</td><td>面全体で 12</td><td>辺に沿って 30</td></tr>
+<tr><td>菩提の種</td><td class="n">φ² = 2.6180</td><td>頂点で 12</td><td>面全体で 30</td></tr>
+<tr><td>菱形十二面体 13</td><td class="n">√2</td><td>12</td><td>面で 24、頂点で 12</td></tr>
+<tr><td>DICTO 斜交菱形十二面体 13</td><td class="n">1.1756–1.7321</td><td>12</td><td>面で 24、頂点で 12</td></tr>
+<tr><td>ベインの菱形十二面体 13</td><td class="n">1.4142–1.7321</td><td>12</td><td>面で 24、頂点で 12</td></tr>
+<tr><td>ビリンスキーの十二面体 13</td><td class="n">1.0515–1.7013</td><td>12</td><td>面で 24、頂点で 12</td></tr>
+<tr><td>正六角形の長菱形十二面体 13</td><td class="n">1.7321–2.4495</td><td>12（うち 4 は六角形を挟んで）</td><td>面で 24、辺に沿って 8</td></tr>
+<tr><td>切頂八面体 13</td><td class="n">2.4495–2.8284</td><td>12（六角形 8、正方形 4）</td><td>面で 28</td></tr>
+<tr><td>DICTO ジュエル13</td><td class="n">2.2882</td><td>12、窓と窓で</td><td>面で 24</td></tr></table>
+<table><tr><th>一式</th><th>ピース</th><th>体積</th><th>凸包に対する割合</th></tr>
+<tr><td>イコサ13 のピース / 63 ピースの組み立て / ユニット</td><td class="n">113 / 63 / 13</td><td class="n">39.148929</td><td>ちょうど 1</td></tr>
+<tr><td>ドデカ13 のピース / ユニット / 星</td><td class="n">63 / 13 / 33</td><td class="n">106.0585 / 106.0585 / 112.4126</td><td class="n">0.742 / 0.742 / 0.786</td></tr>
+<tr><td>UNITY / VENUS</td><td class="n">13 / 33</td><td class="n">36.3978 / 46.9352</td><td class="n">0.643 / 0.829</td></tr>
+<tr><td>DICTO スター</td><td class="n">33</td><td class="n">131.3367</td><td class="n">0.724</td></tr>
+<tr><td>DESHI</td><td class="n">13</td><td class="n">26.6954</td><td class="n">0.682</td></tr>
+<tr><td>菩提の種 / 一式 A / 一式 B</td><td class="n">13 / 193 / 213</td><td class="n">150.6347 / 220.9069 / 220.9070</td><td>0.703 / 1 / 1</td></tr>
+<tr><td>菱形十二面体 13 丸めなし；スフェロイド 0.15、0.35；中心自由</td><td class="n">各 13</td><td class="n">各 26</td><td class="n">0.672；0.886、0.793；0.897</td></tr>
+<tr><td>ほかの周期的なもの 5 種</td><td class="n">各 13</td><td>セル 13 個</td><td class="n">0.672（菱形十二面体の形）、0.690（ED）、0.719（TO）</td></tr>
+<tr><td>DICTO ジュエル13 単独 / ステラ付き</td><td class="n">13 / 19</td><td class="n">82.6033 / 95.3115</td><td class="n">0.557 / 0.642</td></tr></table>
+<p><b>検証と出典。</b> すべてのピースが閉じ、面の向き（巻き方向）がそろい、平らです（最悪で菩提の一式の 1.5 × 10⁻⁵、座標は小数 5 桁；ほかは 10⁻¹³）；配置は 10⁻⁴ 以内；周期的な各メンバー：13 点が 183 の部分格子のうち 8 個を法として互いに異なる、どの点も二つのセルに属さないブロック 7 個（サンプル 20,000）、面心立方の近傍との線形同値を明示的な整数行列で確認。既知のもの：Schütte and van der Waerden 1952; Frank 1952; Mackay 1962; Gray 2002; Kabai; Fedorov 1885; Grünbaum 2010；A₃ の完全符号（A.25 と同様）。</p>
+<h2>A.30 フィボナッチの背骨 <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23396361)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<p>「厳密（exact）」とは ℚ(√5) で有理数演算により検証したこと、「浮動小数点（float）」とは浮動小数点で計算し証明はしていないことを意味します。</p>
+<ul>
+<li>六角形の結合ベクトル 2d·n/|n|²；20 の六角形の方向は、立方体をなす 8 方向の組（互いの余弦 ±1/3 と −1）をちょうど 5 つ含みます：体心立方の五つの声部です。72° の楔（始めの角 59°）；隣り合う声部は、共有する 3 回軸のまわりに 44.4775° の関係にあります。</li>
+<li>重なりの判定：K − K = 2K；X と Y の複製が交わらないのは、ある面の平面 n·x = d について n·(X − Y) ≥ 2d となるとき、かつそのときに限ります。</li>
+</ul>
+<table><tr><th>半径</th><th>サイト</th><th>除去</th><th>近い対</th><th>重なり</th><th>接触</th></tr>
+<tr><td class="n">5</td><td class="n">336</td><td class="n">80</td><td class="n">620</td><td class="n">0</td><td class="n">620</td></tr>
+<tr><td class="n">8</td><td class="n">1471</td><td class="n">240</td><td class="n">3630</td><td class="n">0</td><td class="n">3605</td></tr>
+<tr><td class="n">10</td><td class="n">2756</td><td class="n">385</td><td class="n">7465</td><td class="n">0</td><td class="n">7390</td></tr></table>
+<ul>
+<li>半径 5 で、5 回対称を保つ最小の除去は 16 個の輪（80 個の複製）で、貪欲法と同じです；対称性なしでは 72。</li>
+<li>黄金の高さ：どの結合も高さ (m + nφ)u をもち、u² = 8/81 − 8√5/405（u ≈ 0.233658）、(m, n) = (±1, 0)、±(1, 2)。</li>
+<li>コアの平面：除去した複製 11 個（ほかに平面外の 1.0042 の輪と、1.084、1.136 の複製）；サイト 73；軸の傾き −φ。</li>
+<li>隙間 S = 1.22345、L = 1.97958、T = 3.20304；L/S = φ、T = L + S。標準の窓 [0, W)、W² = 64/81 + 128√5/405（W = 1.223451 = S）。高さ ±45 まで：点 54 個、長い隙間 33、短い隙間 20。</li>
+<li>輪の衝突距離 tc² = 8/9 + 8√5/45、tc = 1.134201；除去された t の最大 1.113132；辺の複製の面関数 28/81 − 4√5/27 &gt; 0。|h| &lt; 12.812 では、tc ≤ t &lt; W となる平面上の点はありません；そのような最初の高さは 12.812、−22.71、34.77、−44.66。</li>
+<li>分岐（1135 サイト、厳密）：h = 12.8121（t = 1.1553）のコアの複製は、h = 13.8019 の対抗の複製（距離 1.1690）と重なり、面関数 232/81 − 104√5/81 &lt; 0；重なりの薄片 0.71%（浮動小数点）。整数計画：輪 43 対 44、46 対 47、45 対 46、42 対 43。フィボナッチを保つ貪欲法は 385 ではなく 555 を除去します。</li>
+<li>継ぎ目（浮動小数点）：半径 3 から 9 で除去 5、20、60、95、145、205、275；一つの継ぎ目の空孔 66 個：最も強いピーク I/N = 46.6（完全なら 66、ランダムなら 11.8 ± 2.0）。</li>
+</ul>
+<p><b>出典とスクリプト。</b> Sutton 1988–1992; Rivier &amp; Lawrence 1988; Gratias &amp; Thalal 1988; Xiong et al. 2026; Ranganathan, Srivastava &amp; Lord 2006; Pauling 1985; Prodan et al. 2017; Baake &amp; Grimm 2013; Katz &amp; Gratias 1993（未読）; Hubbard 1978; van Enter, Koivusalo &amp; Miękisz 2019; Hofmeister 1998; Lee &amp; Glotzer 2022。スクリプト：studies/2026-10-16-ocd-pyrochlore（chorus_exact_big.py, chorus_heights_exact.py, chorus_modelset.py, chorus_canonical.py, chorus_window_why.py, chorus_fork_*.py, chorus_boundary.py）。</p>
+<h2>A.36 黄金菩提パイロクロア <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23451210)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<p>浮動小数点と記したもの以外は ℚ(√5) で厳密です。充填率 (9225 − 3915√5)/608 ≈ 77.43%。</p>
+<ul>
+<li>ボロノイ領域：切頂八面体、512/729 + 256√5/729。複製あたりの隙間 V − OCD = 18728/13851 − 6296√5/13851 ≈ 0.335695（22.57%）。錐による充填：凧形の上に 48 個（頂点 6；0.001891）、凧形の上に 12 個（頂点 11；0.004409）、空いた六角形の上に 12 個（頂点 13；0.016001）；残り 0。</li>
+<li>浮動小数点：対のピース（サイトあたり隙間の 3 分の 1、凸包はその体積の 2 倍）；双晶の接合は 15.52° 回転、接触 94.4%；正八面体の橋 0.021229、複製あたり 3 個で隙間の 19.0%。肢の長さ 0.522476（六角形の辺 2.196 本分）、傾き 79.19°；複製あたり肢 3 本で 12.9%、6 本すべてで 23.8% を充填。交差領域（厳密）：頂点 12、四角形 10、ちょうど 2 枚の黄金菱形。</li>
+<li>黄金の接合角：六角形の上で 20.905°（cos² = φ²/3）、凧形の上で 11.6407°（浮動小数点）。12 枚の空いた六角形の上のクレオ・イコス：隙間の 27.3%。包み（菱形三十面体）1.398921。配分：OCD 77.4%、殻 11.8%、黄金領域 10.7%。</li>
+<li>合唱の中での標準の切断：サイト 41、平面 100、セル 16,204 個で合計 2440/2187 + 1288√5/2187；黄金領域はピース 8,027 個、(22420 − 8972√5)/2187 ≈ 1.078188；561 種類、菩提のピース 5 種。</li>
+<li>セルあたりの G (5984 − 2624√5)/729（10.75%）；星の先端 24 個（各接合三角形の 3 分の 1）。GBPC：底辺と側辺の長さの 2 乗 8/27 − 8√5/81 と 20/81 − 8√5/81、体積 (−44 + 20√5)/2187；底辺/側辺の 2 乗 2 + 2√5/5；側辺/底辺の 2 乗 (5 − √5)/8（クレオ・イコスでは (5 + √5)/8）；近くの対 254 組、重なりなし。</li>
+<li>G′ ＝ セルあたり 704/81 − 928√5/243（10.22%）；36° の凸な辺 48 本（浮動小数点）。包みの重なり (−704 + 320√5)/729。λ = φ/9 での個数：セルあたり扁長 66、扁平 −30；どの大きさの黄金菱面体でも面と面のタイル張りはできません。貪欲な厳密組み立て 46.5%；ランダムの最良 63.1%、菩提のピースを使うと 66.9%（セルあたり印相 390 個）；パズル作者の探索 72 個のピース、(−59 + 29√5)/243、15.83%；板の厚さ 0.104919、面の辺 3φe、e = 0.099780。</li>
+<li>ブルホーン OG アダプター：穴 (a/2)(i, j, k)、a = 8φ/9；穴のボロノイ領域（頂点 10）から複製 6 個（近い対が 0.7191、遠い 4 個が 1.0170）を除いたもの；球形度 0.515；体積 (18728 − 6296√5)/41553 ≈ 0.111898；セルあたり複製 77.4332%、アダプター 3 個 (−8617 + 3915√5)/608 = 22.5668%（各 7.5223%）、残り 0；黄金の壁は表面の 22.7%（浮動小数点）。</li>
+<li>体心立方ではペンローズとのつながりはありません（厳密なずれは先端半径の 2/3 と 4/3）。最密格子充填 0.789260 は、連結した迷路を一つ残します（浮動小数点）。</li>
+</ul>
+<p><b>出典とスクリプト。</b> 既知のもの：ダイヤモンド格子、パイロクロア格子、体心立方格子；黄金菱面体と三十面体（Kepler 1619; Messer 1995; Hart 1999; Levine and Steinhardt; Socolar and Steinhardt; Henley 1991）；Ranganathan et al. 2006; Betke and Henk 2000; Torquato and Jiao 2009, 2012; Lin and Corbett 2006; Kabai 2007, 2015; Hafner and Zitko 2002; Koca et al. 2015; Lalvani 1995, 1997; Koskinen 2011; Conway and Torquato 2006。検索：ライブラリーとウェブ、2026 年 10 月 16 日と 18 日。スクリプト：studies/2026-10-16-ocd-pyrochlore、-18-slab-cover、-18-bcc-golden-kit、-18-bcc-hole-pieces。</p>
+<h2>A.37 オクテット・トラス上の DICTO オグドエコンタヘドロン <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23457016)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<p>浮動小数点と記したもの以外は ℚ(√5) で厳密です。</p>
+<ul>
+<li>正八面体 |x| + |y| + |z| = R、R = 2φ/3（辺 2√2φ/3 ≈ 1.5255）；その上に OG の頂点 48 個。OG (−1000 + 1240√5)/1539 ≈ 1.151868、その正八面体の 68.83%；キャップ 6 個、各 (1108 − 316√5)/4617 ≈ 0.086940。</li>
+<li>セル：(64 + 32√5)/81 + 2 · (16 + 8√5)/81 = (32 + 16√5)/27 ≈ 2.510263；OG のみで (1025 − 435√5)/114 ≈ 45.886%。</li>
+<li>一式 1：キー（内接球半径 2/3 の菱形三十面体の 3 回の頂点、|x| + |y| + |z| = 2/φ の位置）(−44 + 20√5)/81 ≈ 0.008906；側面は黄金菱形の半分（31.72°、31.72°、116.57°）。キー付き OG (−7688 + 4280√5)/1539 ≈ 1.223113；くぼみ付き四面体 64/27 − 8√5/9 ≈ 0.382754（15.25%、ψ 0.620、キラル）；キー付き八面体 −32/9 + 64√5/27 ≈ 1.744754（69.50%、ψ 0.852）。</li>
+<li>一式 2：星の先端の半径 0.350487；半回転 36°；c2 は軸に沿って 0.0943 近い。ペンローズの菱形の辺は先端の半径 ÷ φ ≈ 0.2166、小さいものは ≈ 0.1339。凸包 H 4√5/81；中間ピース M0 (310 + 26√5)/4617 ≈ 0.079735；中央のコア (−36734 + 16658√5)/50787 ≈ 0.010129；両脇のコア 各 4114/1539 − 9182√5/7695 ≈ 0.004993（鏡像の対）；残り −231380/50787 + 524152√5/253935 ≈ 0.059620。切り欠いた正八面体 8/57 + 104√5/171 ≈ 1.500299（59.77%）；切り欠いた正四面体 26/81 − 2√5/81 ≈ 0.265776。セルあたり 1.151868 + 6 × 0.058072 + 6 × 0.079735 + 2 × 0.265776 ＝ セル。</li>
+<li>一式 3：包み (−320 + 160√5)/27 ≈ 1.398921；最接近 2/(3φ³√(φ√5)) ≈ 0.0827；充填率 90 − 40√5 = 10/φ⁶ ≈ 55.728%。頂点の立方八面体（φ⁻² 倍）(−320 + 160√5)/81、18.576%。成長したピース G ＝ 立方体 − RT/2 = (176 − 72√5)/27 ≈ 0.555671：頂点 44、辺 72、面 30、二面角 90°、108°、216°、ψ = 0.6025、対称性 T。テタルトイド (−146 + 66√5)/27 ≈ 0.058537、辺 ≈ 0.157（= R/φ⁴）、0.242、0.299。</li>
+<li>一式 4：W (352 − 144√5)/27 = 2G、m3̄、ψ 0.574、最も鋭い辺 77.4°。WOG ＝ セル − OG = (2824 − 328√5)/1539 ≈ 1.358395（54.11%）、面 132（刻印 120 ＝ OG の表面まるごと一つ分）、最も鋭い辺 86.9°、受け口の間隔 √(70/81 − 10√5/27) ≈ 0.18980、ψ 0.648。キー付き W（浮動小数点）：凧形のキーの辺 0.2379 と 0.1971；サンプル点 6 000 000；600 方向、自由に動ける方向はなし（キーなしでは 41）。</li>
+<li>室（計画外）：半径 2.4 から 5.4 のあいだのセル 230 個（R ≈ 1.0787）；幾何のみ。</li>
+</ul>
+<table><tr><th>一式</th><th>形（鏡像の対は一度だけ数える）</th><th>割合</th><th>状態</th></tr>
+<tr><td>黄金キー・オクテット</td><td>キー付き八面体、くぼみ付き四面体 L/R (2)</td><td class="n">69.50% / 30.50%</td><td>厳密、証明済み</td></tr>
+<tr><td>ペンローズ・コアのオクテット</td><td>切り欠いた正八面体、中間ピース、切り欠いた正四面体 L/R (3)</td><td class="n">59.77% / 19.06% / 21.18%</td><td>厳密、証明済み</td></tr>
+<tr><td>キーなしの一式、コア 3 種</td><td>OG、キャップ、中央のコア、脇のコア L/R、残り、四面体 L/R (5)</td><td class="n">OG 45.89%</td><td>厳密、証明済み</td></tr>
+<tr><td>黄金の包みのオクテット</td><td>包み、成長したピース G L/R (2)</td><td class="n">55.73% / 44.27%</td><td>厳密、証明済み</td></tr>
+<tr><td>二形の黄金オクテット</td><td>包み、アダプターの半分 (2)</td><td class="n">55.73% / 44.27%</td><td>厳密</td></tr>
+<tr><td>包み ＋ W</td><td>包み、W (2)</td><td class="n">55.73% / 44.27%</td><td>厳密、証明済み</td></tr>
+<tr><td>OG ＋ WOG</td><td>OG、WOG (2)</td><td class="n">45.89% / 54.11%</td><td>厳密、証明済み</td></tr>
+<tr><td>OG ＋ Wstar</td><td>OG、Wstar (2)</td><td class="n">45.89% / 54.11%</td><td>厳密、証明済み</td></tr>
+<tr><td>OG ＋ キー付き Wstar</td><td>OG、キー付き W (2)</td><td class="n">45.89% / 54.11%</td><td>設計；メッシュとサンプリング</td></tr></table>
+<p><b>出典。</b> Fuller 1961; Conway, Jiao and Torquato 2011; Lalvani 1990, 1995, 1997; Penrose 1974; Torquato and Jiao 2012; Betke and Henk 2000; Akpanya, Goertzen and Niemeyer 2024; Krishnamurthy, Akleman et al. 2022; Kabai 2007, 2008; Koskinen 2011。検索：ライブラリーとウェブ、2026 年 10 月 18〜19 日。主要な一式は独立したエンジンで厳密に証明し、数百万のサンプル点で確認しました。</p>
+<h2>A.37a 回転オクテット上の DICTO オグドエコンタヘドロン <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23484012)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<p>浮動小数点と記した箇所を除き、ℚ(√5) で厳密です。枠組みは A.37 と同じです：正八面体 |x| + |y| + |z| ≤ R、R = 2φ/3、体積 (64 + 32√5)/81；正四面体 (16 + 8√5)/81；単位胞 (32 + 16√5)/27；双晶層 x + y + z = R。</p>
+<ul>
+<li>接合六角形の辺² は 2/9 − 2√5/27 で、面の (7 − 3√5)/2 ≈ 14.59% です。双晶 = OG を 60° 回したもの（有理回転 (1,0,0) → (2/3, 2/3, −1/3)）。六角形まわりの楔：余弦 (7 − 36√5)/109、約 47.6°。</li>
+<li>キャップ（正八面体 − OG）/8 = (277 − 79√5)/1539 ≈ 0.065205；OG はその正八面体の (1025 − 435√5)/76 ≈ 68.83%；キャップは左右二つの手で 4 + 4 個。双晶キャップ (554 − 158√5)/1539 ≈ 0.130410（面の (3√5 − 5)/2 ≈ 85.41% の上に立つ）；双角錐 (32 + 16√5)/81 ≈ 0.836754。</li>
+<li>浮動小数点：双晶層でのオクテットの中間ピースは、0.0797 のうち 0.0399 が層の外に出て、0.0198 が双晶の OG の内側に入ります。双晶の五回対称の頂点は 0.1407 離れ、軸は 105.25° 回っています。</li>
+<li>鏡の中間ピース：凸包 (2 + 2√5)/81、各 OG はこれと (−155 + 101√5)/4617 で交わり、Mg = (424 − 88√5)/4617 ≈ 0.049215。境界キャップ 23/162 − 47√5/1215 ≈ 0.055477（オクテットのキャップ (32 − 8√5)/243 ≈ 0.058072）；境界四面体 41/162 + 4√5/135 ≈ 0.319340（オクテットでは (26 − 2√5)/81 ≈ 0.265776）。ペンローズ・コア：回転オクテットでは単位胞あたり 3 個、オクテットでは 6 個。</li>
+<li>OCD ステラ：正八面体の (604 − 267√5)/9 ≈ 77.44%；接合三角形の辺² は 8/3 − 8√5/9 で、面の (7 − 3√5) ≈ 29.18%。黄金の包み（浮動小数点）：頂点が面の外へ 0.0909 突き出し、共有される面ごとに約 0.0175 重なります。</li>
+<li>ジュエル充填の双晶（浮動小数点）：ジュエル層を通して 4.0% が覆われず、4.2% が二重に覆われます；ステラ層では 5.1% と 5.9%；層と層のあいだでは 18–19%。</li>
+<li>DBT：頂点 30、辺 60、面 32（黄金菱形 24、半菱形 6、辺² 8/3 − 8√5/9・辺 ≈ 0.824045 の極の三角形 2）；体積 (−872 + 440√5)/81 ≈ 1.381110；取り除いた頂点部 (−44 + 20√5)/81 ≈ 0.008906 = 扁平菱面体 (−88 + 40√5)/27 の 1/6；D3d；球形度 0.959（浮動小数点）；表面に OG の頂点が 36 個；隣接 56 個を確認；充填率 (493 − 219√5)/6 ≈ 55.02%（各正八面体の 82.53%）。</li>
+<li>OTT：頂点 24、辺 60、面 38（黄金菱形 6、半菱形 24、三角形 8）；体積 (−608 + 320√5)/81 ≈ 1.327676；Th；充填率 176/3 − 26√5 ≈ 52.89%（その正八面体の (−608 + 320√5)/(64 + 32√5) ≈ 79.33%）。大きさ（浮動小数点）：s = φ²/3 ≈ 0.873 で接し、1 &lt; s &lt; φ²/√5 ≈ 1.171 で新しい頂点が 48 個（62.44%）；s = φ で正八面体になります。</li>
+</ul>
+<table><tr><th>組（DICTO の命名）</th><th>格子</th><th>ピース</th><th>体積</th><th>手</th><th>球形度（浮動小数点）</th></tr>
+<tr><td>DICTO 充填セット 1（DBT）</td><td>回転オクテット</td><td>F1、成長した双角錐</td><td class="n">(968 − 392√5)/81 ≈ 1.129153</td><td>一つ</td><td class="n">0.586</td></tr>
+<tr><td>DICTO 充填セット 2（OTT）</td><td>回転オクテット</td><td>F1、成長した双角錐</td><td class="n">(704 − 272√5)/81 ≈ 1.182587</td><td>一つ</td><td class="n">0.612</td></tr>
+<tr><td>DICTO 充填セット 2（OTT）</td><td>オクテット</td><td>F2、F3、成長した四面体</td><td class="n">(352 − 136√5)/81 ≈ 0.591293</td><td>左、右</td><td class="n">0.638</td></tr></table>
+<p><b>出典。</b>フラー；回転した空間充填形（ハニカム）とその積層（古典的）；正四面体と正八面体の二種充填；スピネル式双晶則；カバイ（黄金オクテット・トラス；54 面の空間充填体）；切頂菱形三十面体（五回対称の頂点、42 面）。調査：ライブラリ資料 80 件とウェブ、2026 年 10 月 20 日。未解決：境界ピースと充填ピースがそれぞれ一つの立体であることの厳密な証明。研究コミット 56fc236。</p>
+<h2>A.40 あらゆる積層上の DICTO OG ファミリー <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23490114)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<p>枠組み：正八面体 |x| + |y| + |z| ≤ R、R = 2φ/3；単位胞 (32 + 16√5)/27；層 (2k − 1)R ≤ x + y + z ≤ (2k + 1)R。段 c（並進）と h（共有平面での鏡映）；ヤゴジンスキー記法。</p>
+<p><b>双晶の規則、証明。</b>中心を通る平面での鏡映 M は −H（反転と、n まわりの半回転 H との合成）です。S = −S のとき M(S) = H(S)；H = T⁶⁰∘T¹²⁰ かつ T¹²⁰(S) = S なので、H(S) = T⁶⁰(S) です。<b>適合の規則、証明。</b>層は互いに交わらない板状の領域です。どの層も基準の層を並進または鏡映で動かしたもので、鏡映の場合は 60° 回った立体が得られます。</p>
+<table><tr><th>立体</th><th>その正八面体の中に</th><th>その層の中に</th><th>適合</th><th>空間に占める割合</th></tr>
+<tr><td>OG</td><td>はい</td><td>はい</td><td>あらゆる積層</td><td class="n">1025/114 − 145√5/38 ≈ 45.89%</td></tr>
+<tr><td>OCD ステラ</td><td>はい</td><td>はい</td><td>あらゆる積層</td><td class="n">(1208 − 534√5)/27 ≈ 51.63%</td></tr>
+<tr><td>DICTO OTT</td><td>はい</td><td>はい</td><td>あらゆる積層</td><td class="n">176/3 − 26√5 ≈ 52.89%</td></tr>
+<tr><td>DBT</td><td>いいえ</td><td>はい</td><td>あらゆる積層</td><td class="n">493/6 − 73√5/2 ≈ 55.02%</td></tr>
+<tr><td>黄金の包み</td><td>いいえ</td><td>いいえ</td><td>オクテットのみ</td><td class="n">90 − 40√5 = 10/φ⁶ ≈ 55.73%</td></tr></table>
+<p>すべて中心対称で、(1,1,1) まわりの 120° 回転をもち、層を横切る鏡映はもちません（OCD ステラの対称性は浮動小数点での確認）。h 面での包みの重なりは厳密に (−88 + 40√5)/81 ≈ 0.017811（#37a の浮動小数点値 0.0175 に代わる）で、DBT が取り除く二つの先端にあたります。DBT：cc、ch、hc、hh のいずれでも重なりはありません。</p>
+<table><tr><th>ポリタイプ</th><th>語</th><th>充填</th><th>f</th><th>キャップ</th><th>双晶キャップ</th><th>正四面体</th><th>双角錐</th></tr>
+<tr><td>3C（オクテット）</td><td>c</td><td>ABC</td><td class="n">0</td><td class="n">8</td><td class="n">0</td><td class="n">2</td><td class="n">0</td></tr>
+<tr><td>2H（回転オクテット）</td><td>h</td><td>AB</td><td class="n">1</td><td class="n">6</td><td class="n">1</td><td class="n">0</td><td class="n">1</td></tr>
+<tr><td>4H</td><td>hc</td><td>ABCB</td><td class="n">1/2</td><td class="n">7</td><td class="n">1/2</td><td class="n">1</td><td class="n">1/2</td></tr>
+<tr><td>6H</td><td>hcc</td><td>ABCACB</td><td class="n">1/3</td><td class="n">22/3</td><td class="n">1/3</td><td class="n">4/3</td><td class="n">1/3</td></tr>
+<tr><td>9R</td><td>hhc</td><td>ABACACBCB</td><td class="n">2/3</td><td class="n">20/3</td><td class="n">2/3</td><td class="n">2/3</td><td class="n">2/3</td></tr>
+<tr><td>15R</td><td>hcchc</td><td>ABCACBCABACABCB</td><td class="n">2/5</td><td class="n">36/5</td><td class="n">2/5</td><td class="n">6/5</td><td class="n">2/5</td></tr>
+<tr><td>フィボナッチ</td><td>c → ch, h → c</td><td>決して繰り返さない</td><td class="n">(3 − √5)/2</td><td class="n">5 + √5</td><td class="n">(3 − √5)/2</td><td class="n">√5 − 1</td><td class="n">(3 − √5)/2</td></tr></table>
+<p>単位胞あたり：双晶キャップ f 個、双角錐 f 個、キャップ 8 − 2f 個（左右それぞれ 4 − f 個）、正四面体 2 − 2f 個、OG 1 個。フィボナッチ列：h の割合は 1/φ² に近づきます（最初の 6765 文字のうちちょうど 2584 文字）。双晶面どうしは 2 層または 3 層離れています。</p>
+<p><b>検証と出典。</b>polytype_exact.py（29 件 PASS、厳密；有理 60° 回転 (1,0,0) → (2/3, 2/3, −1/3)）；jewel_symmetry.py（浮動小数点）。既知：これらの積層（コンウェイ、ジャオとトルクァート、ほか）、ヤゴジンスキー、ラムズデル、IUCr の記法、スピネル式双晶則、フィボナッチ列と純粋点回折。調査：ライブラリ資料 80 件とウェブ、2026 年 10 月 20 日。研究コミット b7c6307。</p>
+<h2>A.42 DICTO サンスター <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23497702)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<p>ℚ(√5) で厳密です。尺度は A.41 と同じ：2 × 2 × 2 のブロックの辺が 1、単位胞の辺が 1/2 です（スクリプトでは辺 2 の単位胞を使い、体積は 64 倍になります）。屋根 (1 + √5)/192；正十二面体 (5 + √5)/32。</p>
+<ul>
+<li>ドッグスター = 1/8 − 6 × (1 + √5)/192 = (3 − √5)/32 で、正十二面体の辺が 1 のときちょうど φ/2 です。6 つの屋根は二つずつ体積 0 で交わります。正十二面体は空間の (5 + √5)/8 を占めます（ベトケとヘンク）。</li>
+<li>コア：格子の正十二面体の 1/φ³ 倍の正十二面体；その 12 の面の平面が有界な領域 63 個（コア、角錐 12、楔 30、スパイク 20）を作ります；ドッグスター = コア + 角錐 12 + 楔 24 + スパイク 8。ドッグスターは自身の立方体の星型八面体（ステラ・オクタングラ）の内側に収まります。</li>
+<li>サンスター (23 − 5√5)/32。スター連鎖反応：正十二面体 ⊃ 大星型十二面体 ⊃ サンスター(1/φ³) ⊃ 大星型十二面体(1/φ³) ⊃ …；大星型十二面体の表面にスパイクの先端が 24 個（ぴったり収まる）；比 φ³。</li>
+<li>接触：太いペンローズ菱形 1 枚、稜の点で 108°。サンスター・テトラ (5 + √5)/8（菱形 6 枚）；サンスター・オクタ (33 + 5√5)/32（菱形 12 枚）；サンスター・ロンビ (43 + 7√5)/32（菱形 18 枚）。遊離したドッグスターを伴うタイル張り：格子 4、12、25 通り（対称性を除いて 2、1、9 通り）、ピース 1 個あたり遊離ドッグスター 4、5、7 個。</li>
+<li>サンスター・ヘクサ 1 + 24 × (1 + √5)/192 = (9 + √5)/8；サンスター・ヘクサ・キー (7 − √5)/8；比 (17 + 4√5)/11 ≈ 2.358；隣り合うピースごとに菱形 2 枚（全部で 24 枚）。</li>
+<li>対応：屋根の先端 (√5 − 1)/192。サンスター：正十二面体 (5 + √5)/32、ドッグスター (3 − √5)/32；ステラ＝ジュエル：ジュエル 3/16、ステラ 1/16；ヘクサの比 (17 + 4√5)/11 と 5 : 3。</li>
+</ul>
+<p><b>検証と出典。</b>sunstar_exact.py（12 PASS）と sunstar_clusters.py（16 PASS）、厳密。既知：ハート 1996；ヴァルザー；Polyhedra-World；ベトケとヘンク；ユークリッド；ケプラー；フラー；P 型の正二十面体対称タイル張りの φ³ 膨張。調査：ライブラリとウェブ、2026 年 10 月 8–9 日と 20 日。研究コミット dc78106。</p>
+<h2>A.44 アリストテレスの角錐 <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23529497)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<table><tr><th>面の角錐</th><th>底辺の数</th><th>二面角（底辺）</th><th>側辺の数</th><th>二面角（側辺）</th></tr>
+<tr><td>立方体（C）</td><td class="n">4</td><td class="n">45° = π/4</td><td class="n">4</td><td class="n">120°</td></tr>
+<tr><td>正四面体（T）</td><td class="n">3</td><td class="n">α/2 ≈ 35.26°</td><td class="n">3</td><td class="n">120°</td></tr>
+<tr><td>正八面体（O）</td><td class="n">3</td><td class="n">(π − α)/2 ≈ 54.74°</td><td class="n">3</td><td class="n">90°</td></tr>
+<tr><td>正十二面体（D）</td><td class="n">5</td><td class="n">θ<sub>D</sub>/2 ≈ 58.28°</td><td class="n">5</td><td class="n">120°</td></tr>
+<tr><td>正二十面体（I、クレオ・イコス）</td><td class="n">3</td><td class="n">θ<sub>I</sub>/2 ≈ 69.09°</td><td class="n">3</td><td class="n">72°</td></tr></table>
+<p>α = arccos(1/3) ≈ 70.53°, θ<sub>D</sub> = arccos(−1/√5), θ<sub>I</sub> = arccos(−√5/3)。</p>
+<p><b>主定理。</b>五つの面の角錐の空でない集合 U が空間を充填するのは、U が {C}、{T, O}、{C, T, O} のいずれかであるとき、かつそのときに限ります。面の角錐によるどのタイル張りでも、(a) D や I のタイルは一つもなく、(b) T が現れるのは O が現れるとき、かつそのときに限ります。</p>
+<p><b>証明の概略。</b>補題 1：辺上の有限個を除くすべての点で、楔の角の和は 2π（面上では π）です。補題 2：π、α、θ<sub>D</sub>、θ<sub>I</sub> は ℚ 上で線形独立です（cos² は 1/9、1/5、5/9；正接 2√2、−2、−2/√5 は三つの異なる平方類に属し；(2 cos θ)² = 4/9、4/5、20/9 は整数でない；コンウェイ、ラディン、サダンの分解定理）。h(π) = 0 となる加法的な h を選びます：h(θ<sub>D</sub>) = 1 で D が除かれ（底辺はそれぞれ ½ を担う）、h(θ<sub>I</sub>) = 1 で I が除かれ、h(α) = 1 で T が +½、O が −½ を担います。構成：C 六つで立方体ができます；オクテットの単位胞（格子ベクトル (1, 1, 0), (1, 0, 1), (0, 1, 1)；正八面体 4/3、正四面体 1/3、単位胞 2）は O 8 個と T 8 個に切り分けられます；オクテットの各辺のまわりで 4 × α/2 + 4 × (π − α)/2 = 2π；{C, T, O} は板 k ≤ z ≤ k + 1 によって得られます。</p>
+<ul>
+<li>系 2：|a N<sub>T</sub>(R) − b N<sub>O</sub>(R)| ≤ C R²。</li>
+<li>系 3：アントニウスの三角形の辺は π − θ<sub>I</sub>/2 ≈ 110.91°、ジグザグの辺は 108°；クレオ・イコスは 3 × ½、アントニウスは 6 × (−½) を担います；アントニウスはクレオ・イコスの 4 倍、菱面体は 6 倍；菱面体の面の角 arccos(1/√5) ≈ 63.43°。</li>
+</ul>
+<table><tr><th>立体</th><th>空間を充填する相手</th><th>出典</th></tr>
+<tr><td>立方体</td><td>単独で</td><td>古典</td></tr>
+<tr><td>正四面体、正八面体</td><td>互いに、正八面体 1 個に正四面体 2 個</td><td>マウロリコ（1529）；フラーのオクテット・トラス</td></tr>
+<tr><td>正十二面体</td><td>ドッグスター；正十二面体が (5 + √5)/8 ≈ 90.45% を占める</td><td>ハート（1996）；#42 で厳密</td></tr>
+<tr><td>正二十面体</td><td>DICTO の二十面体オクテット：正二十面体 + 提督帽 6 個 = 正八面体；辺 1/2 の正二十面体と、正四面体の中の頂点キャップと辺キャップ；正二十面体が (175 − 75√5)/12 ≈ 60.79% を占める</td><td>厳密（発見 F21）；パチョーリ；フラーのジッターバグ</td></tr></table>
+<p>1 本の辺のまわりに正四面体を 5 個並べると 7.36° が残ります。PSLQ（angle_relations.py、80 桁）は π、α、θ<sub>D</sub>、θ<sub>I</sub> のあいだに整数関係を見つけません（これは裏づけにすぎず、証明は補題 2 です）。</p>
+<p><b>検証と出典。</b>pyramid_checks.py（47 PASS）：すべての角を厳密な算術で、空でない 31 の集合すべてについての判定、オクテットの単位胞、O 112 個と T 32 個のパッチ上の板。ラガリアスとゾン（歴史）。出典：アリストテレス『天体論』III.8；マウロリコ（オクテット）；コンウェイ、ラディン、サダン；デブルンナー；ラガリアスとモーズ；DICTO #19、#20。研究コミット f193a56。</p>
+<h2>A.47 正多面体のどの組み合わせも空間を充填する <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23551326)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<p>立体はすべて正多面体で辺 1；φ = (1 + √5)/2；組み合わせは 31 通り。タイルは面と面で接する必要はありません。</p>
+<table><tr><th>連結ピース</th><th>内容</th><th>体積</th></tr>
+<tr><td>P</td><td>辺 1 の正八面体の半分</td><td class="n">√2/6 ≈ 0.23570</td></tr>
+<tr><td>Q</td><td>辺 1 の正四面体の面の角錐（#44）</td><td class="n">√2/48 ≈ 0.02946</td></tr>
+<tr><td>Q′</td><td>大きさ L = φ²/√2 ≈ 1.8512 の Q</td><td class="n">φ⁶/96 ≈ 0.18692</td></tr>
+<tr><td>A</td><td>DICTO の六つの提督帽の一つ（辺 L の正八面体からパチョーリの位置にある正二十面体を除いたもの、頂点ごとに一つの部分）</td><td class="n">φ/12 ≈ 0.13484</td></tr>
+<tr><td>S</td><td>ドッグスター（辺 φ の立方体から屋根を六つ除いたもの）</td><td class="n">φ/2 ≈ 0.80902</td></tr>
+<tr><td>X</td><td>辺 φ の立方体から屋根を一つ除いたもの</td><td class="n">φ³ − (1 + 3φ/2)/6 ≈ 3.66489</td></tr>
+<tr><td>Y</td><td>辺 φ の立方体に屋根を一つ加えたもの</td><td class="n">φ³ + (1 + 3φ/2)/6 ≈ 4.80724</td></tr></table>
+<p>屋根 (1 + 3φ/2)/6 ≈ 0.57118。P、Q、Q′、Y は凸で、A、S、X は凸ではありません。提督帽 6 個 = ドッグスター 1 個 = φ/2。</p>
+<ul>
+<li>補題 1（積層）：板を任意の順に積み重ねて繰り返すと、空間をタイル張りします。</li>
+<li>補題 2（立方体の板）：厚さは整数。</li>
+<li>補題 3（オクテットの板）：s = 1/√2；頂点は s(x, y, z)、x + y + z は偶数；和が奇数の位置に正八面体；平面 z = ks は正八面体の正方形の赤道でタイル張りされます；板の面には正八面体の半分 P が載ります；O がなければ P 2 個、T がなければ Q 4 個。</li>
+<li>補題 4（正二十面体の板）：正二十面体 ½(0, ±1, ±φ) は |x| + |y| + |z| ≤ φ²/2（辺 L）の中にあり、その頂点はこの正八面体の辺を黄金比に分けます；辺 L のオクテットで、正八面体 = 正二十面体 + A 6 個、正四面体 = Q′ 4 個。</li>
+<li>補題 5（正十二面体の板）：辺 φ の立方格子、3 層、厚さ 3φ；屋根の高さ ½ &lt; φ。</li>
+<li>系 1 は #44 の数え上げ写像による（h(θ<sub>D</sub>) = 1、h(θ<sub>I</sub>) = 1、h(α) = 1）。系 2：P、Q′、A、S、X、Y を用いて五つすべて。</li>
+</ul>
+<p>系 3：辺 L の正八面体 φ⁶/6 = (8φ + 5)/6；正二十面体 5φ²/6 = (5φ + 5)/6；キャップ 6 個 = φ/2；ドッグスター = 2φ³ − (2 + 7φ/2) = φ/2（立方体の 2 倍から正十二面体を引いたもの）；理由はわかっていません。未解決：連結ピースなしの C + T + O；最小の一式；面と面で接すること；三方向の周期性（1、φ、φ²/√2 に基づく板の周期は一致するとは限らない）。橋渡し（§5）：正四面体 + 切頂四面体、正八面体 + 立方八面体（一様な空間充填形（ハニカム））。</p>
+<p><b>検証と出典。</b>mixes3.py：31 の積み重ねすべてで、それぞれ 40 000 個のランダムな点、どの点も被覆の合計がちょうど 1（数値による抜き取り検査）；volumes.py。既知：ガブリエッリ、ジャオとトルクァート（一つまたは二つの立体）；ハート（ドッグスターのタイル張り）；パチョーリ；ユークリッド。研究コミット cea1e4a。</p>
+<h2>A.48 黄金の切り分け <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23596362)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<p>φ = τ = (1 + √5)/2 です。辺 1 の正二十面体が φℤ³ にあり、頂点は (0, ±½, ±φ/2) とその巡回置換です。単位胞 φ³ = 2 + √5。</p>
+<ul>
+<li>正二十面体 (15 + 5√5)/12。アンボーンは c = (φ/2, φ/2, φ/2) にあり、頂点は c + (±φ/2, ±1/(2φ), 0) とその巡回置換：辺は長さ 1 が 24 本、1/φ が 6 本；面は正三角形 8 枚と二等辺三角形 (1, 1, 1/φ) 12 枚；体積 (3 + 7√5)/12（コジャほか、x = 1/τ）。AXE：モッセリ＝サドックの t6 を 1/τ 倍したもの、辺は長さ 1 が 5 本、1/φ が 1 本、体積 1/12、単位胞あたり 6 個。</li>
+<li>トリキャップ（t3 を 1/τ 倍）(3 − √5)/24；ロータス・ジュエル J (1 + 3√5)/4；正十二面体 D（辺 1/φ）(15 + 3√5)/12。単位胞あたり I + U + 6 AXE = J + D + 6 AXE = φ³。</li>
+<li>p(t) = m1 + t(m2 − m1) で切り分けます；黄金の切り分けは t = 1/φ。</li>
+<li>イコサックス：切頂八面体、頂点は (±½, ±φ/2, 0) のすべての置換；体積 1 + 2√5/3。アンボーン・アックス：頂点は c + (±1/(2φ), ±φ/2, 0) のすべての置換；体積 1 + √5/3。合わせて φ³。六角形は等角で、辺は 1/√2 と 1/(φ√2) が交互；正方形は辺 1/√2 のものと 1/(φ√2) のもの。錐の頂は、コアを x = y で鏡映した像の頂点です。</li>
+<li>一意性：頂点 (∓½, φ/2, 0)、(0, φ/2 ± 1/(2φ), φ/2) の AXE について、平面 x + y + z = φ²/2、−x + y + z = φ²/2、x − y + z = −1/(2φ)、−x − y + z = −1/(2φ) は (0, φ/2, ½) = p(1/φ) の一点でのみ交わります；錐の頂と面の組は 24 組で、距離がゼロになるのはちょうど t = 1/φ のときです。</li>
+<li>凸包に対する充填率（浮動小数点）：I(t) は t ≤ 1/φ で 100%、93.6%（0.7）、86.9%（0.8）、76.0%（1）；U(t) は 58.2%（0）、67.6%（0.2）、79.8%（0.4）、97.9%（0.6）、t ≥ 1/φ で 100%。AXE を丸ごと正二十面体に付けると、充填率 68.2% の星になります。</li>
+<li>キー付きの組：ロータス・ジュエル・アックス 1 + 2√5/3 − 8(3 − √5)/24 = √5；ドデカックス 1 + √5/3 + 8(3 − √5)/24 = 2。</li>
+<li>定理 4：T(x) = (±(1 + x), ±x, 0) のすべての置換の凸包で、正方形の面は距離 L/2 にあります；Lℤ³ に置いた T(x) と (L/2)(1, 1, 1) + Lℤ³ に置いた T(1/x) は面と面を合わせて空間を充填し、体積の和は L³ です。T(x) = 立方体 |p<sub>i</sub>| ≤ L/2 ∩ 正八面体 |p1| + |p2| + |p3| ≤ k(x)、k(x) = L(1 + 2x)/(2(1 + x))；k(x) + k(1/x) = 3L/2；小さな立方体 [0, L/2]³ の中では切断面は p1 + p2 + p3 = k(x)。x = 0.3、0.5、1/τ、0.8、1、1.25、τ、2、3 で 300,000 点のテスト。x → 0：正八面体と立方八面体（立方体の空間充填形を中点切頂したもの（rectified cubic honeycomb））；x = 1：ケルビン；x = τ：黄金の組。</li>
+<li>既知：コジャ、コジャ、アル＝ムハイニ、アル＝カノビ（式 39、49：擬二十面体とその鏡像 = 切頂八面体；x = τ と 1/τ）；Polytope Wiki（半一様な切頂八面体；交互化で黄鉄鉱型の二十面体が得られ、辺の比 (√5 − 1)/2 で正二十面体になる）；重み付きボロノイ領域；α-(AlMnSi)（Pm3̄）；この充填の対称性は Pm3̄m。</li>
+</ul>
+<p><b>検証と出典。</b>すべて ℚ(√5) で厳密、浮動小数点は使っていません（研究 [8a]）；凸性は和集合と凸包の体積が等しいことで確認。既知：コジャほか（擬二十面体、切頂八面体）；モッセリ＝サドックのタイル；ケルビン；DICTO #19、#47、Kaleidohedra F21。研究コミット 066a46a。</p>
+<h2>A.51 デロスの結合 <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23606828)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<h3>設定</h3>
+<p>辺 1 のオクテット：正四面体（体積 V<sub>T</sub> = √2/12）と正八面体（V<sub>O</sub> = √2/3 = 4V<sub>T</sub>）で、正八面体 1 個につき正四面体 2 個です。各正四面体はその中心 c<sub>T</sub> からの錐 4 個、各正八面体はその中心 c<sub>O</sub> からの錐 8 個からなります（面の角錐で、これらは合わせて空間を充填します、#44）。共有面 F について、二重錐 B<sub>F</sub> は c<sub>T</sub> から F を通って c<sub>O</sub> まで伸びます；c<sub>T</sub>c<sub>O</sub> は F に垂直で、F の中心で F と交わります；F は c<sub>T</sub> から c<sub>O</sub> までの 3 分の 1 の位置にあります（内接球の半径 1/(2√6) と 1/√6）。</p>
+<p>用いる古典的な事実：菱形十二面体は、正八面体にその面の上の正四面体の錐 8 個を加えたものであり（その三回対称の頂点 8 個は隣の正四面体の中心にある；体積 V<sub>O</sub> + 8·V<sub>T</sub>/4 = 6V<sub>T</sub>）、同様に立方体に正四角錐 6 個を加えたものでもあります；辺 1/√2 の立方体は、正四面体にその面の上の正八面体の錐 4 個を加えたものです（残りの頂点 4 個は隣の正八面体の中心にある；体積 V<sub>T</sub> + 4·V<sub>O</sub>/8 = 3V<sub>T</sub>）。</p>
+<h3>主定理</h3>
+<p>0 ≤ t ≤ 1 について、すべての B<sub>F</sub> を、c<sub>T</sub> + t(c<sub>O</sub> − c<sub>T</sub>) を通り F に平行な平面で切ります；T(t) = 正四面体の中心に接する 4 つの部分、O(t) = 正八面体の中心に接する 8 つの部分。これらは面と面を合わせて空間を充填し、どちらも凸です。</p>
+<ul>
+<li>(a) 0 &lt; t ≤ 1/3：T(t) は辺 3t の正四面体、体積 27t³·V<sub>T</sub>；O(t) は三回対称の頂点 8 個を正八面体の面に平行な平面で切り落とした菱形十二面体（t &lt; 1/3 では三角形 8 枚と六角形 12 枚）、体積 (6 − 54t³)·V<sub>T</sub>。</li>
+<li>(b) 1/3 ≤ t &lt; 1、a = 3(1 − t)/2：O(t) は辺 a の正八面体、体積 4a³·V<sub>T</sub>；T(t) は正八面体の中心にある頂点 4 個を切り落とした立方体（t &gt; 1/3 では三角形 4 枚と六角形 6 枚）、体積 (3 − 2a³)·V<sub>T</sub>。</li>
+<li>(c) t = 0：菱形十二面体のみ；t = 1/3：オクテット；t = 1：立方体のみ。</li>
+</ul>
+<p><b>証明の概略。</b>二重錐は空間を充填し、それぞれが一枚の平面で分けられるので、ピースは空間を充填します。t ≤ 1/3 では、平面は正四面体の錐の中、c<sub>T</sub> から F までの割合 3t の位置にあります：c<sub>T</sub> 側の部分は 3t 倍した正四面体をなし；c<sub>O</sub> 側の部分は 8 枚の平面で切った菱形十二面体で（c<sub>T</sub> は F の平面の向こう側にある唯一の頂点）、凸集合の共通部分として凸です；各平面は三回対称の頂点に集まる 3 本の辺を割合 3t で切ります。t ≥ 1/3 では、平面は c<sub>O</sub> から F までの割合 (3/2)(1 − t) = a の位置にあり、役割が入れ替わります（正八面体を a 倍；立方体を 4 枚の平面で切る）。体積：(a) 27t³V<sub>T</sub> と 6V<sub>T</sub> − 8·(V<sub>T</sub>/4)·27t³；(b) a³V<sub>O</sub> = 4a³V<sub>T</sub> と 3V<sub>T</sub> − 4·(V<sub>O</sub>/8)·a³。面と面：各三角形は、もう一方の種類の隣のピースの切断面です；六角形は同じ種類の隣どうしで共有され、同じ平面で切られています。</p>
+<p><b>検証。</b>有理数の算術で厳密、t = 1/10、1/5、1/3、1/2、4/5、9/10 で（octet/octet_exact.py → octet-exact.txt）。</p>
+<h3>定理 2（特別な一員）</h3>
+<ul>
+<li>(a) t = (2√6 − 3)/15：すべての辺（正四面体と、切った菱形十二面体）の長さが (2√6 − 3)/5。菱形十二面体の辺を √6/4 として、3t = (√6/4)(1 − 3t) から。</li>
+<li>(b) t = 5/3 − (2/3)√2：すべての辺（切った立方体と正八面体）の長さが √2 − 1。立方体の辺を 1/√2 として、a = (1 − a)/√2 から。</li>
+<li>(c) t = 1 − ∛6/3：正四面体側のピースと正八面体側のピースがそれぞれ空間のちょうど半分を占めます。2(3 − 2a³) = 4a³、a³ = 3/4 から（t ≤ 1/3 では正四面体側のピースが占めるのは高々 3 分の 1）。</li>
+<li>(d) どの t でも六角形は正六角形になりません：切った立方体の六角形の角は 90°、135°、135°、90°、135°、135°；切った菱形十二面体の六角形は約 70.5° の鋭角を保ちます（切り落とした頂点で 144.7°）。</li>
+</ul>
+<p><b>検証。</b>(a)–(c) を ℚ(√6)、ℚ(√2)、ℚ(∛6) で厳密に、どの等式にも浮動小数点を使わずに（octet/octet_special_exact.py → octet-special-exact.txt）。</p>
+<h3>定理 3（デロスの結合）</h3>
+<p>T(t) と O(t) の体積が等しくなる位置はちょうど一つ、t<sub>D</sub> = 1 − (2/3)·2<sup>−1/3</sup> です。そこでサムソン（切った立方体 T(t<sub>D</sub>)）とデリラ（正八面体 O(t<sub>D</sub>)）はどちらも体積 √2/6 = 2V<sub>T</sub> = V<sub>O</sub>/2 です。デリラはオクテットの正八面体を 2<sup>−1/3</sup> 倍に縮めたもので、辺 1/∛2。サムソンの辺：1/∛2（彼の三角形、すなわちデリラの面）と (1 − 2<sup>−1/3</sup>)/√2。</p>
+<p><b>証明の概略。</b>t ≤ 1/3 では T(t) の体積 ≤ V<sub>T</sub>、O(t) の体積 ≥ 4V<sub>T</sub> で、等しくなることはありません。t ≥ 1/3 では (3 − 2a³)V<sub>T</sub> は a とともに減少し 4a³V<sub>T</sub> は増加するので、解は高々一つ：3 − 2a³ = 4a³、a³ = 1/2、a = 2<sup>−1/3</sup>、t<sub>D</sub> = 1 − 2a/3。<b>検証：</b>ℚ(∛2) で厳密：体積が等しいこと、デリラの辺、サムソンの二つの辺の長さ。</p>
+<h3>表：スライダー（オクテットの辺 1、V<sub>T</sub> = √2/12）</h3>
+<table><tr><th>位置</th><th>t</th><th>正四面体側のピース</th><th>正八面体側のピース</th></tr>
+<tr><td>菱形十二面体</td><td class="n">0</td><td>—</td><td>菱形十二面体、6V<sub>T</sub></td></tr>
+<tr><td>等辺 (a)</td><td class="n">(2√6 − 3)/15 ≈ 0.1266</td><td>正四面体、辺 (2√6 − 3)/5</td><td>切った菱形十二面体、同じ辺</td></tr>
+<tr><td>オクテット</td><td class="n">1/3</td><td>正四面体、辺 1、V<sub>T</sub></td><td>正八面体、辺 1、4V<sub>T</sub></td></tr>
+<tr><td>半分ずつ</td><td class="n">1 − ∛6/3 ≈ 0.3943</td><td>切った立方体、3V<sub>T</sub>/2</td><td>正八面体、a = ∛6/2、3V<sub>T</sub></td></tr>
+<tr><td><b>デロスの結合</b></td><td class="n">1 − (2/3)·2<sup>−1/3</sup> ≈ 0.4709</td><td><b>サムソン</b>、2V<sub>T</sub></td><td><b>デリラ</b>、辺 2<sup>−1/3</sup>、2V<sub>T</sub></td></tr>
+<tr><td>等辺 (b)</td><td class="n">5/3 − (2/3)√2 ≈ 0.7239</td><td>切った立方体、辺 √2 − 1</td><td>正八面体、辺 √2 − 1</td></tr>
+<tr><td>立方体</td><td class="n">1</td><td>立方体、辺 1/√2、3V<sub>T</sub></td><td>—</td></tr></table>
+<h3>三つのディクトニック結合（名称は DICTO）</h3>
+<table><tr><th>結合</th><th>立体</th><th>由来</th><th>体積</th></tr>
+<tr><td><b>黄金</b></td><td>イコサックス + アンボーン・アックス</td><td>正二十面体、アンボーン、AXE を黄金点で切ったもの（#48）</td><td class="n">1 + 2√5/3 と 1 + √5/3</td></tr>
+<tr><td><b>キー付き</b></td><td>ロータス・ジュエル・アックス + ドデカックス</td><td>ロータス・ジュエルのネットワークを同じように切ったもの（#48）</td><td class="n">√5 と 2</td></tr>
+<tr><td><b>デロス</b></td><td>サムソン + デリラ</td><td>オクテットを体積が等しくなる位置で切ったもの（#51）</td><td class="n">それぞれ √2/6</td></tr></table>
+<p>黄金とキー付きの体積は正二十面体の辺 1、デロスはオクテットの辺 1 での値です。イコサックスとアンボーン・アックスはコジャほかの切頂八面体（x = τ と x = 1/τ）で、新しい道筋でそこに到達しています；ロータス・ジュエル・アックスとドデカックスは新しいものです（#48）。</p>
+<h3>注記：立方体</h3>
+<p>立方体の格子とその立方体の中心とのあいだで、重み w をつけた同じ切断（パワー図）：w = 1/4 − 1/√2 で（アルキメデスの）切頂六面体と正八面体（立方体の辺 1 ですべての辺が √2 − 1）；w = −1/4 で立方八面体と正八面体（#48 の x → 0）；w = 0 でケルビンの切頂八面体（x = 1）；そのあいだでは、w = (x − 1)/(4(x + 1)) で #48 の T(x) と T(1/x)。辺がすべて等しい一員は、一様な空間充填形（ハニカム）である切頂立方体充填（truncated cubic honeycomb）と中点切頂立方体充填（rectified cubic honeycomb）です；体積が等しくなるのはケルビンのセルだけです。比 2 : 1 は x ≈ 0.3747 で起こり、これは 16u³ − 36u² + 18u − 1 = 0 の根で、この式は既約で実根を三つもつので、実数の冪根による表示はありません。新しい結合はありません；厳密に確認（changeover/changeover_exact.py → changeover-exact.txt）。</p>
+<h3>注記：黄金の結合の極双対</h3>
+<p>DICTO の着想：立体を裏返すこと（中心に関する極変換）。#48 の T(x)（正方形は距離 (1 + x)s、六角形は (1 + 2x)s/√3、尺度 s）の極双対は、各面に低い角錐を載せた立方体（頂点 14、三角形 24、四方六面体の型）で、角錐の高さは自身の立方体の辺の半分を単位として x/(1 + x)：イコサックス（x = τ）では 1/φ、アンボーン・アックス（x = 1/τ）では 1/φ²、ケルビンのセルでは 1/2；x と 1/x の組ごとに高さの和は 1 で、これは立方体を菱形十二面体にする角錐の高さです。これは比率についての主張です（二つの極双対の立方体は大きさが異なる）。デリラの極双対：立方体；サムソンの極双対：一つおきの四つの面に低い角錐を載せた正八面体；キー付きの立体は凸でなく、極双対の立体をもちません。極双対の立体が空間を充填するとは主張していません。</p>
+<h3>出典とスクリプト</h3>
+<p>既知：オクテット（正四面体・正八面体の空間充填）；角錐 6 個を加えた立方体として、また四分の一の正四面体 8 個を加えた正八面体としての菱形十二面体；四つの角（錐）を加えた正四面体としての立方体；ノールとモーガン 2003（立方体の充填、オクテットと菱形十二面体の充填を別々の段階として関連づける）；パワー図（ラゲール図）（アウレンハマー 1987）：その正四面体の中心と正八面体の中心のパワー二等分面が、ここでの切断面です；コンウェイ、ジャオ、トルクァート 2011；ガブリエッリ、ジャオ、トルクァート 2012；ケルビン 1887；一様な切頂立方体充填と中点切頂立方体充填。調べたもの：DICTO の参考文献ライブラリ（この族についての記述なし；ガブリエッリ–ジャオ–トルクァート 2012 をこの確認のために読んだ）；ノールとモーガン 2003 を全文読んだ；ウェブ検索、2026 年 10 月 23 日（一つおきの四つの頂点を切り落とした立方体と正八面体；三回対称の頂点で切り落とした菱形十二面体と正四面体；面心立方格子の四面体空隙と八面体空隙のパワー図；体積の等しい正四面体と正八面体、2 の立方根）、見つかったのは古典的なオクテットとその類縁だけでした。調べていないもの：Wolfram PolyhedronData、Stella / Great Stella のライブラリ。これらの資料に見つからなかったもの：族そのもの、その二つの等辺の一員、半分ずつの一員、デロスの結合、そして黄金の結合の極双対による菱形十二面体の角錐の黄金比での分割。スクリプト：研究 2026-10-23-shadow-forms、コミット 4e98aa8、github.com/DICTOR-Master/kaleidohedra（research ブランチ）。立方体倍積問題：ヒース 1921；定規とコンパスによる作図の不可能性：ヴァンツェル 1837。</p>
+<h2>A.50 一手ずつ <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23606894)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<p>RD 型：Z(h1, …, h4) = {Σ t<sub>i</sub>h<sub>i</sub> : |t<sub>i</sub>| ≤ ½}、依存関係 Σ μ<sub>i</sub>h<sub>i</sub> = 0。FCC：h<sub>i</sub> = ½(±1, ±1, ±1)、依存関係 (1, 1, 1, 1)。補題 1：中心対称な凸体 P は、その体積が |det L| に等しく、2P の内部に L のゼロでないベクトルがないならば、L によって空間をタイル張りします。</p>
+<table><tr><th>立体</th><th>動き</th><th>面；対称性</th><th>体積（辺 1）</th><th>古典的な構成</th></tr>
+<tr><td>ベインの菱形十二面体</td><td>せん断 diag(1, 1, √2)；単位胞 = 1</td><td>正方形 4、60° の菱形 8；D4h</td><td class="n">2√2 ≈ 2.8284</td><td>立方八面体 + 正四角錐 2；直交する二つの帯を縮めた切頂八面体</td></tr>
+<tr><td>正六角形の長菱形十二面体（F5）</td><td>ベインの動き、伸長 (1, 0, 0)、s = 1</td><td>正六角形 4、正方形 4、60° の菱形 4；D2h</td><td class="n">4√2 ≈ 5.6569</td><td>一つの帯を縮めた切頂八面体</td></tr>
+<tr><td>古典的な長菱形十二面体</td><td>FCC、単位胞 = 1、(1, 0, 0) 方向に辺の長さだけ伸長</td><td>70.53° の菱形 8、六角形 4（125.26°、125.26°、109.47°）；D4h</td><td class="n">8/3 + 16√3/9 ≈ 5.7459</td><td>正四角柱に菱形十二面体の半分ずつをかぶせたもの</td></tr>
+<tr><td>ビリンスキーの十二面体</td><td>γ を 60° から 36° へ（cos γ = φ/2）；単位胞 = 1</td><td>黄金菱形 12；D2h</td><td class="n">(4/5)√(5 + 2√5) ≈ 2.4621</td><td>二つの帯を除いた菱形三十面体；黄金菱面体</td></tr>
+<tr><td>60° の菱面体</td><td>α = β = γ = 60°</td><td>60° の菱形 6；D3d</td><td class="n">1/√2 ≈ 0.7071</td><td>正四面体 + 正八面体 + 正四面体（マウロリコ）</td></tr></table>
+<ul>
+<li>頂点は ℚ(√2)（ベインの場合、60° の菱面体）、ℚ(√3)（古典的な長菱形十二面体）、ℚ(√5)（ビリンスキー）にあります。貼り合わせの検証：立方八面体 5√2/3 と角錐 √2/6；正四面体 √2/12 と正八面体 √2/3。</li>
+<li>定理 2：Z + [0, s·u] が平行多面体であるのは、u ∥ u<sub>ij|kl</sub> = μ<sub>i</sub>h<sub>i</sub> + μ<sub>j</sub>h<sub>j</sub> のとき、かつそのときに限ります；このとき頂点 18、辺 28、面 12（ミンコフスキー＝ヴェンコフの条件）。ベイン格子の第三の直線 (0, 0, 1)：60° の菱形 8、六角形 4（135°、135°、90°）、体積 2 + 2√2。</li>
+<li>F1：60° の菱形 6、72° の菱形 6、体積 φ²、依存関係 (φ, φ, 1, 1)。自由な直線：60°、60°、36°、36°（12|34）；36°、36°、72°、72°（14|23）；37.76°、37.76°、82.24°、82.24°（13|24）。F7（s = 1、C2h）：12|34 は体積 φ² + 2；14|23 は体積 φ³ + ½。</li>
+</ul>
+<p>命題 3：ビリンスキー格子のグラム行列 ∝ [[1, φ/2, ½], [φ/2, 1, ½], [½, ½, 1]]；B = 六つの五回対称軸のベクトル (0, ±1, φ)、(±1, φ, 0)、(φ, 0, ±1) のうち四つによるゾーン多面体（辺 √(φ + 2)、体積 8 + 4√5 = 4φ³）；六つの帯のうち任意の二つを除いた菱形三十面体と合同（15 通りの組すべて）；鋭角の黄金菱面体 2 個（2φ²）と鈍角の黄金菱面体 2 個（2φ）から二通りに貼り合わせられ、2·2φ² + 2·2φ = 4φ³；依存関係はケプラーの (1, 1, 1, 1) に対して (φ, φ, 1, 1) で、これはアフィン不変量です。アプリの角度スライダーは 20°–150° を 0.1° 刻みで動きます。60° の菱面体：頂点は ½√2·(0, 0, 0) から ½√2·(1, 1, 1) まで、(0, 1, 1)/√2、(1, 0, 1)/√2、(1, 1, 0)/√2 に沿って；√2/12 + √2/3 + √2/12 = √2/2。検証：build.py 93 件中 93 件；check.py 223 件中 223 件、わざと壊したデータ 54 件中 54 件を検出；アプリとの照合 12 件中 12 件。読んでいないもの：ビリンスキーの論文；ベインの菱形十二面体の最初の記述。</p>
+<p><b>出典。</b>フョードロフ 1885（§ 83、234 頁；239 頁；ページ画像を確認）；グリュンバウム 2010；デローネ（自由な方向）；ミンコフスキー、ヴェンコフ、マクマレン；マウロリコ；ビリンスキー；ウィキペディア（長菱形十二面体）。研究コミット bdc063d。</p>
+<h2>A.DB ディクトニック立体とディクトニック結合 <span style="font-weight:400">（論文 #52、DICTO DOI: 10.5281/zenodo.23629252）</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<p>立体と体積：A.48、A.51。黄金：T(x) = (±(1 + x), ±x, 0) のすべての置換の凸包、正方形は L/2 に、L = φ；大きい T(x) は φZ³ 上、小さい T(1/x) は立方体の中心に；s = x/(1 + x)。デロス：正四面体側のピースは (Z + ½)³ 上、正八面体側のピースは奇数の整数点上、a = 3(1 − t)/2；アプリの尺度 1/√2、オクテットの辺 1。</p>
+<h3>二つのループはどちらも固定されたサイトのパワー図</h3>
+<table><tr><th>ループ</th><th>サイト（アプリ単位）</th><th>重みの差</th><th>範囲</th></tr>
+<tr><td>黄金</td><td>B = φZ³（大）、S = φZ³ + (φ/2)(1,1,1)（小）：体心立方の点</td><td class="n">w<sub>B</sub> − w<sub>S</sub> = (φ²/4)·(x − 1)/(x + 1) = (L/2)²(2s − 1)</td><td>−φ²/4（x = 0）… 0（ケルビン）… +φ²/4（x = ∞）；τ で 1/(4φ)</td></tr>
+<tr><td>デロス</td><td>Q = ((Z + ½)³)/√2（四面体サイト）、O = {n ∈ Z³ : Σn が奇数}/√2（八面体サイト）</td><td class="n">w<sub>Q</sub> − w<sub>O</sub> = (3/8)(2t − 1)</td><td>−3/8（RD）… −1/8（オクテット）… +3/8（立方体）；デロスの結合で 3/8 − 2<sup>2/3</sup>/4</td></tr></table>
+<p>パワー領域：|p − c<sub>i</sub>|² − w<sub>i</sub> ≤ |p − c<sub>j</sub>|² − w<sub>j</sub>。結合の網は、双対の正則（重み付きドロネー）分割の 1-骨格です。</p>
+<h3>結合の面と面積（アプリ単位：黄金 L = φ、デロス オクテットの辺 1）</h3>
+<table><tr><th>結合</th><th>面</th><th>面積</th><th>生まれる／消える</th><th>単調か</th></tr>
+<tr><td>黄金 大–小</td><td>六角形（x = 0、∞ で三角形）</td><td class="n">(√3/8)φ²·(x² + 4x + 1)/(1 + x)²</td><td>どちらも起こらない：両端で ≥ (√3/8)φ² ≈ 0.5668</td><td>いいえ：ケルビンで最大 (3√3/16)φ² ≈ 0.8502</td></tr>
+<tr><td>黄金 大–大</td><td>正方形、対角線 sL</td><td class="n">φ²x²/(2(1 + x)²)</td><td>x = 0⁺ で生まれ、x → ∞ で → φ²/2</td><td>狭義単調増加</td></tr>
+<tr><td>黄金 小–小</td><td>正方形、対角線 (1 − s)L</td><td class="n">φ²/(2(1 + x)²)</td><td>x = 0 で φ²/2 から、x → ∞ で消える</td><td>狭義単調減少</td></tr>
+<tr><td>デロス 八面体–四面体</td><td>三角形</td><td class="n">(9√3/4)t²（t ≤ 1/3）；(9√3/16)(1 − t)²（t ≥ 1/3）</td><td>ちょうど (0, 1) で存在</td><td>いいえ：1/3 で √3/4 まで増え（角；傾き 3√3/2 と −3√3/4）、その後減る</td></tr>
+<tr><td>デロス 八面体–八面体</td><td>六角形（t = 0 で菱形）</td><td class="n">(√2/4)(1 − 9t²)</td><td>t = 0 で √2/4 から、ちょうど t = 1/3 で消える</td><td>狭義単調減少</td></tr>
+<tr><td>デロス 四面体–四面体</td><td>六角形（t = 1 で正方形）</td><td class="n">(3t − 1)(5 − 3t)/8 = (1 − a²)/2</td><td>ちょうど t = 1/3 で生まれ、t = 1 で → 1/2</td><td>狭義単調増加</td></tr></table>
+<p>ケルビン、x = 1：大–大 = 小–小 = φ²/8 ≈ 0.32725。x = τ：大–大 = 1/2、小–小 = 1/(2φ²) ≈ 0.19098、大–小 = (√3 + 3√15)/16 ≈ 0.8344。デロスの結合：八面体–四面体 = 2<sup>1/3</sup>√3/8 ≈ 0.2728、四面体–四面体 = 1/2 − 2<sup>1/3</sup>/4 ≈ 0.1850。黄金の体積は (L/2)³ を単位として (4/3)(1 + u)³ − 4u³、u = s（大）または 1 − s（小）。x ↔ 1/x の入れ替え：(φ/2)(1,1,1) だけの並進。大–大/小–小 = x²。</p>
+<h3>ピースあたりの結合</h3>
+<table><tr><th></th><th>x = 0</th><th>0 &lt; x &lt; ∞</th><th>x = ∞</th></tr>
+<tr><td>黄金 大</td><td>8（大–小 8；正八面体）</td><td>14 = 大–小 8 + 大–大 6</td><td>14 = 8 + 6（立方八面体）</td></tr>
+<tr><td>黄金 小</td><td>14 = 8 + 小–小 6（立方八面体）</td><td>14 = 大–小 8 + 小–小 6</td><td>8（正八面体）</td></tr></table>
+<table><tr><th></th><th>t = 0</th><th>0 &lt; t &lt; 1/3</th><th>t = 1/3</th><th>1/3 &lt; t &lt; 1</th><th>t = 1</th></tr>
+<tr><td>デロス 八面体側</td><td>八面体–八面体 12（RD）</td><td>20 = 八面体–八面体 12 + 八面体–四面体 8</td><td>八面体–四面体 8</td><td>八面体–四面体 8</td><td>なし（点）</td></tr>
+<tr><td>デロス 四面体側</td><td>なし（点）</td><td>八面体–四面体 4</td><td>八面体–四面体 4</td><td>10 = 八面体–四面体 4 + 四面体–四面体 6</td><td>四面体–四面体 6（立方体）</td></tr></table>
+<h3>双対の重み付きドロネー分割の胞</h3>
+<ul>
+<li>黄金、0 &lt; x &lt; ∞：体心立方の等面四面体（大 2 + 小 2、体積 2/3）、フリップなし；x = 0 と ∞：四角双角錐（サイト 2 + 4、体積 8/3）。</li>
+<li>デロス、t &lt; 1/3：正八面体（O 6、体積 4/3）と四面体（O 3 + Q 1、体積 1/12）；t = 1/3：菱形十二面体（O 6 + Q 8、体積 2）；t &gt; 1/3：立方体（Q 8、体積 1）と四角錐（O 1 + Q 4、体積 1/6）。t = 1/3 で、RD の各菱形は長い対角線（八面体–八面体）を短い対角線（四面体–四面体）に取り替えます：一回だけのフリップです。</li>
+<li>デロスの結合の重み 3/8 − 2<sup>2/3</sup>/4 ≈ −0.0218；八面体–四面体/四面体–四面体 = 2<sup>1/3</sup>√3/(4 − 2·2<sup>1/3</sup>)。</li>
+</ul>
+<h3>物理的な拠り所：重み = 半径²、接触写像</h3>
+<table><tr><th>ループ</th><th>接触写像</th><th>逆写像</th><th>d（アプリ単位）</th></tr>
+<tr><td>黄金</td><td class="n">ρ = r<sub>small</sub>/r<sub>big</sub> = (x + 2)/(2x + 1) = (2 − s)/(1 + s)</td><td class="n">x = (2 − ρ)/(2ρ − 1)</td><td>(√3/2)φ、立方体の辺 a = φ</td></tr>
+<tr><td>デロス</td><td class="n">ρ = r<sub>tet-site</sub>/r<sub>oct-site</sub> = t/(1 − t)</td><td class="n">t = ρ/(1 + ρ) = r<sub>tet</sub>/d</td><td>√6/4、オクテットの辺 1</td></tr></table>
+<p>r<sub>big</sub>/d = (1 + s)/3、r<sub>small</sub>/d = (2 − s)/3；x ↔ 1/x は ρ ↔ 1/ρ に移り；dρ/dx = −3/(2x + 1)²。</p>
+<table><tr><th></th><th>黄金</th><th>デロス</th></tr>
+<tr><td>接触の窓</td><td>x ∈ [(√3 − 1)/2, √3 + 1] ≈ [0.366, 2.732]、ρ ∈ [√3 − 1, (√3 + 1)/2] ≈ [0.732, 1.366]</td><td>t ∈ [1 − √(2/3), 1/√3] ≈ [0.1835, 0.5774]、ρ ∈ [√(3/2) − 1, (√3 + 1)/2] ≈ [0.2247, 1.366]</td></tr>
+<tr><td>窓の両端</td><td>同種の球どうしが接する；ρ = √3 − 1 はポーリングの 8 配位の限界 0.732</td><td>t = 1 − √(2/3)：√(3/2) − 1、ポーリングの 4 配位の限界 0.225；t = 1/√3：再び 0.732 の限界</td></tr>
+<tr><td>重なりのない充填が一つでもある範囲</td><td>すべての x ∈ [0, ∞]</td><td>t ∈ [1/6, 2/3] のみ</td></tr></table>
+<p>停止位置：黄金 x = τ：ρ = √5/φ² = (3√5 − 5)/2 ≈ 0.8541（窓の中）；ケルビン ρ = 1；デロスのオクテット ρ = 1/2；デロスの結合 ρ = (3/2)·2<sup>1/3</sup> − 1 ≈ 0.8899；t = 1/2：ρ = 1。構造：黄金 = 塩化セシウム型（B2、Pm-3m；1a と 1b；アプリ単位で a = φ）；デロス = 蛍石型（C1、Fm-3m；4a と 8c；アプリ単位で a = √2；イオンを入れ替えると逆蛍石型）。八面体–四面体の面積の恒等式：t ≥ 1/3 で (3√3/2)·r<sub>oct</sub>²、t ≤ 1/3 で 6√3·r<sub>tet</sub>²。</p>
+<table><tr><th>塩化セシウム型</th><th>r（陽イオン）CN</th><th>r（陰イオン）CN</th><th>ρ</th><th>x（厳密）</th><th>大–小</th><th>大–大</th><th>小–小</th><th>窓</th></tr>
+<tr><td>CsCl</td><td>Cs⁺ 1.74 VIII</td><td>Cl⁻ 1.81 VI（代用；キー P）</td><td class="n">0.9613</td><td class="n">188/167 ≈ 1.126</td><td class="n">0.8492</td><td class="n">0.3671</td><td class="n">0.2897</td><td>内</td></tr>
+<tr><td>CsBr</td><td>Cs⁺ 1.74 VIII</td><td>Br⁻ 1.96 VI（代用；キー P）</td><td class="n">0.8878</td><td class="n">109/76 ≈ 1.434</td><td class="n">0.8412</td><td class="n">0.4544</td><td class="n">0.2209</td><td>内</td></tr>
+<tr><td>CsI</td><td>Cs⁺ 1.74 VIII</td><td>I⁻ 2.20 VI（代用；キー A）</td><td class="n">0.7909</td><td class="n">133/64 ≈ 2.078</td><td class="n">0.8155</td><td class="n">0.5966</td><td class="n">0.1382</td><td>内</td></tr>
+<tr><td>TlCl</td><td>Tl⁺ 1.59 VIII（キー R）</td><td>Cl⁻ 1.81 VI（代用）</td><td class="n">0.8785</td><td class="n">203/137 ≈ 1.482</td><td class="n">0.8396</td><td class="n">0.4666</td><td class="n">0.2125</td><td>内</td></tr>
+<tr><td>TlBr</td><td>Tl⁺ 1.59 VIII（キー R）</td><td>Br⁻ 1.96 VI（代用）</td><td class="n">0.8112</td><td class="n">233/122 ≈ 1.910</td><td class="n">0.8225</td><td class="n">0.5639</td><td class="n">0.1546</td><td>内</td></tr></table>
+<table><tr><th>蛍石型</th><th>八面体サイト（CN 8）</th><th>四面体サイト（CN 4）</th><th>ρ</th><th>t</th><th>オクテットのどちら側か</th><th>八面体–四面体</th><th>同種の結合</th><th>窓</th></tr>
+<tr><td>CaF₂</td><td>Ca²⁺ 1.12（キー *）</td><td>F⁻ 1.31</td><td class="n">1.1696</td><td class="n">0.5391</td><td>&gt; 1/3</td><td class="n">0.2070</td><td>四面体–四面体 0.2610</td><td>内</td></tr>
+<tr><td>SrF₂</td><td>Sr²⁺ 1.26</td><td>F⁻ 1.31</td><td class="n">1.0397</td><td class="n">0.5097</td><td>&gt; 1/3</td><td class="n">0.2342</td><td>四面体–四面体 0.2296</td><td>内</td></tr>
+<tr><td>BaF₂</td><td>Ba²⁺ 1.42</td><td>F⁻ 1.31</td><td class="n">0.9225</td><td class="n">0.4799</td><td>&gt; 1/3</td><td class="n">0.2636</td><td>四面体–四面体 0.1956</td><td>内</td></tr>
+<tr><td>CdF₂</td><td>Cd²⁺ 1.10（キー C）</td><td>F⁻ 1.31</td><td class="n">1.1909</td><td class="n">0.5436</td><td>&gt; 1/3</td><td class="n">0.2030</td><td>四面体–四面体 0.2656</td><td>内</td></tr>
+<tr><td>PbF₂（β）</td><td>Pb²⁺ 1.29（キー C）</td><td>F⁻ 1.31</td><td class="n">1.0155</td><td class="n">0.5038</td><td>&gt; 1/3</td><td class="n">0.2398</td><td>四面体–四面体 0.2231</td><td>内</td></tr>
+<tr><td>UO₂</td><td>U⁴⁺ 1.00（キー R*）</td><td>O²⁻ 1.38</td><td class="n">1.3800</td><td class="n">0.5798</td><td>&gt; 1/3</td><td class="n">0.1720</td><td>四面体–四面体 0.3014</td><td>外（四面体–四面体が重なる）</td></tr>
+<tr><td>ThO₂</td><td>Th⁴⁺ 1.05（キー RC）</td><td>O²⁻ 1.38</td><td class="n">1.3143</td><td class="n">0.5679</td><td>&gt; 1/3</td><td class="n">0.1819</td><td>四面体–四面体 0.2900</td><td>内</td></tr>
+<tr><td>CeO₂</td><td>Ce⁴⁺ 0.97（キー R）</td><td>O²⁻ 1.38</td><td class="n">1.4227</td><td class="n">0.5872</td><td>&gt; 1/3</td><td class="n">0.1660</td><td>四面体–四面体 0.3083</td><td>外</td></tr>
+<tr><td>ZrO₂（立方晶）</td><td>Zr⁴⁺ 0.84（キー *）</td><td>O²⁻ 1.38</td><td class="n">1.6429</td><td class="n">0.6216</td><td>&gt; 1/3</td><td class="n">0.1395</td><td>四面体–四面体 0.3389</td><td>外（充填はまだ存在する：t &lt; 2/3）</td></tr>
+<tr><td>Li₂O（逆）</td><td>O²⁻ 1.42</td><td>Li⁺ 0.59（キー *）</td><td class="n">0.4155</td><td class="n">0.2935</td><td>&lt; 1/3</td><td class="n">0.3358</td><td>八面体–八面体 0.0794</td><td>内</td></tr>
+<tr><td>Na₂O（逆）</td><td>O²⁻ 1.42</td><td>Na⁺ 0.99</td><td class="n">0.6972</td><td class="n">0.4108</td><td>&gt; 1/3</td><td class="n">0.3382</td><td>四面体–四面体 0.1094</td><td>内</td></tr>
+<tr><td>K₂O（逆）</td><td>O²⁻ 1.42</td><td>K⁺ 1.37</td><td class="n">0.9648</td><td class="n">0.4910</td><td>&gt; 1/3</td><td class="n">0.2524</td><td>四面体–四面体 0.2086</td><td>内</td></tr></table>
+<p>半径は Å 単位：シャノン（1976）の有効イオン半径を インペリアル・カレッジのイオン半径データベースが転記したもの（印刷された表とは照合していません）；Cl⁻、Br⁻、I⁻ は CN VI の値しかないので、CN VIII の代用として用いています。面積はアプリ単位。結晶半径（CR = IR ± 0.14）では UO₂、CeO₂、ZrO₂ が窓の中に入ります（t = 0.521、0.528、0.559）；Li₂O は t = 0.363 に移ってオクテットを越えるので、オクテットのどちら側かは結論になりません。除いたもの：NH₄Cl、CuZn、NiAl、FeAl、CoAl、Rb₂O。</p>
+<p><b>検証。</b>結合の研究：371 PASS、0 FAIL（記号計算 55、厳密なサンプル 211、アプリとの照合 105）。物理的な拠り所：61 PASS、0 FAIL。<b>出典。</b>Aurenhammer 1987; Gelfand–Kapranov–Zelevinsky 1994; De Loera–Rambau–Santos 2010; Gellatly and Finney 1982; Imai, Iri and Murota 1985; Shannon 1976; Pauling 1929; Blatov 2004; O'Keeffe 1979; Leunissen et al. 2005; Hynninen et al. 2006; Shevchenko et al. 2006; Nykypanchuk et al. 2008; Park et al. 2008; Macfarlane et al. 2011; Knoll and Morgan 2003; Koca et al. 2015（DOI は Crossref で確認；これらの論文は研究のためには読んでいません）。DICTO のライブラリに見つからなかったもの：結合の面積の閉じた式、穏やかな受け渡しと急な受け渡し、比 x² と対角線の和 φ、双対の胞の系列、一種類だけからなる唯一の一員としてのオクテット、接触写像、ポーリングの窓、範囲 t ∈ [1/6, 2/3]；新しさを主張する前にウェブ検索が必要です。研究：~/k-research/studies/2026-10-25-web-of-bonds、2026-10-25-physical-anchors。</p>
+<h2>A.22 業の連鎖 <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23310541)</span></h2>
+<p class="told">第 I 巻 第3章 殻で語られています。</p>
+<p>φ = (1 + √5)/2 です。辺は D(1) を基準としています。D(1) = I(1/φ) + 12 J2 + 30 AXE + 20 CLEO；I(φ²) = D(1) + 12 J11 + 30 AXE + 20 FUJI。入れ子 I(1/φ) ⊂ D(1) ⊂ I(φ²) ⊂ D(φ³) ⊂ …、1 サイクルあたり φ³ 倍です。</p>
+<ul>
+<li>J2 の頂点は I(1/φ) の上に来ます：内接球の半径 1.113516 − 高さ 0.525731 = 0.587785。</li>
+<li>体積：0.515028 + 12 × 0.301503 + 30 × 0.083333 + 20 × 0.051503 = 7.663119 = D(1)；7.663119 + 12 × 1.880192 + 30 × 0.083333 + 20 × 0.321175 = 39.148928 = I(φ²) = φ⁶ I(1)。</li>
+<li>ピース：AXE は辺 1 が 5 本と 1/φ が 1 本；CLEO は底辺 1/φ、側辺 1；FUJI は高さ 1/√3、底面の辺 1 と 1/φ、側辺 1、頂は立方体の頂点；J2 はすべての辺が 1。角 α = arccos(√5/3) = 41.810°、δ = arctan(3 − √5) = 37.377°；正二十面体 180° − α = 138.19°。</li>
+<li>連鎖：n 段の後に正二十面体 13ⁿ 個と隙間ピース 100(13ⁿ − 1)/12 個、AXE : FUJI : CLEO = 3 : 1 : 1；段 1–3 では 113、1,569、20,497 ピース、体積の誤差は 3 × 10⁻⁹ 以内。正二十面体の割合は 1 段ごとに (12 + φ⁻³)/φ⁶ = 0.6823 倍になります（68.19%、46.50%、31.71%）。フラクタル次元 D は 12 φ⁻²ᴰ + φ⁻³ᴰ = 1 を満たし、D ≈ 2.6063（シェルピンスキー二十面体は log 12 / log φ² ≈ 2.5819）。</li>
+<li>デーン不変量によるふるい分け：φ²·AXE は 9 AXE + 2 FUJI + 2 CLEO と同じ体積をもちますが、そのデーン不変量に一致する整数の組み合わせはありません（PSLQ、座標は ℚ(√5)）。</li>
+<li>FUJI = 立方体の頂点部（1/6）+ CLEO と同じ体積のピース 3 個：1/6 + 3 × 0.051503 = 0.321175；また、41.81° と 37.38° で傾く直角のピース 12 個にも分けられます。</li>
+<li>十二面体の連鎖：D(1)、D(φ²)、D(φ⁴) で 63、175、1,631 ピース。</li>
+<li>600胞体（正六百胞体；外接球の半径 1、辺 1/φ）：殻 1、12、20、12、30、…；最初の殻の半径 0.587785；蓮の実の正二十面体の中心の半径 1.538842、間隔 φ（cell600_match.py）。</li>
+<li>表面：三角形 60 枚と切頂三角形 20 枚（fullerene_surface.py）；段 2：小さい切頂三角形 60 枚と大きい切頂三角形 20 枚（辺 φ、φ²）；C180 の六角形 80 枚；ゴールドバーグ多面体ではありません。</li>
+</ul>
+<p><b>出典。</b>パチョーリ；ケプラー；Gray 2002；Al Raisi, Koca, Koca and Koc 2026；Mosseri and Sadoc 1982；Kramer 1982；Papadopolos and Ogievetsky 1999；Koca et al. 2020；Mackay 1962；Frank 1952；Takakura et al. 2007；Deguchi et al. 2015；Ishimasa 2019；Caspar and Klug 1962；Keef and Twarock 2009；Twarock, Valiunas and Zappa 2015；Dechant et al. 2014；Kroto et al. 1985；Goldberg 1937；Ugarte 1992。</p>
+<h2>A.23 法の球 <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23310833)</span></h2>
+<p class="told">第 I 巻 第3章 殻で語られています。</p>
+<table><tr><th>殻</th><th>辺</th><th>内側の殻からの充填に使うもの</th></tr>
+<tr><td>正二十面体</td><td class="n">1/φ</td><td>（中心）</td></tr>
+<tr><td>二十・十二面体</td><td class="n">φ/2</td><td>五角錐 12（0.197336）+ ねじれた三角錐台 20（側辺 √3/2；0.222148）</td></tr>
+<tr><td>正十二面体</td><td class="n">1</td><td>三角錐 20</td></tr>
+<tr><td>切頂二十面体</td><td class="n">1/φ</td><td>ねじれた五角錐台 12（36° 回転；0.399864）+ 尺度 1/φ の t1 30（0.019672）；隙間 5.388544</td></tr>
+<tr><td>菱形三十面体</td><td class="n">½√(45 − 18√5) = 1.089814</td><td>五角形のキャップ 12 + 六角形のキャップ 20 + 楔 60</td></tr>
+<tr><td>正二十面体</td><td class="n">φ²</td><td>辺のピース 30（0.527864）+ 面のピース 20（0.368921）</td></tr></table>
+<ul>
+<li>共通のコア：正二十面体（辺 1）= 二十・十二面体（辺 ½）1.729441 + 角錐 12 個 0.452254 = 2.181695；正十二面体（辺 1）= 二十・十二面体（辺 φ/2）7.326029 + 角錐 20 個 0.337090 = 7.663119。</li>
+<li>菱形三十面体（辺 1）の中の籠：籠の辺 0.567101；10.083445 + 1.704813 + 60 × 0.008708 = 12.310734。</li>
+<li>外側の正二十面体は内側の φ³ 倍；1 サイクルあたり 237 ピース。</li>
+<li>正十二面体の五つの立方体は継ぎ目にあり、五つの正八面体はパチョーリの位置に辺 1 の正二十面体を一つ収めています。</li>
+</ul>
+<p><b>検証と出典。</b>sod_overlap.py：237 ピースすべてが互いに重なりなく（分離軸）、すべて外側の正二十面体の中にあり、総体積 = I(φ²)（10⁻¹² まで）。既知：双対の複合体、五つの正八面体の複合体、パチョーリ；Takakura et al. 2007；Keef and Twarock 2009。</p>
+<h2>A.24 菩提の種 <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23311353)</span></h2>
+<p class="told">第 I 巻 第3章 殻で語られています。</p>
+<ul>
+<li>12 個の RT(1) の中心が中央から φ² の距離にあり、辺 2.752764（RT(1) の内接球の半径 1.376382 の 2 倍）の正二十面体の上に並びます；接触 30 か所。体積：RT(φ²) 220.907161；12 個の RT(1) 147.728810；RT(1/φ) 2.906170；隙間 70.272181（31.8%）。</li>
+<li>中空部：RH(1) = 扁長菱面体 20 個；RH(1) − RT(1/φ) = 20φO − 10O/φ = 10φ²O = RT(1)；扁平 O = 0.470228、扁長 φO。隙間 = 80P + 20O；外側のくぼみ 70P + 10O；内側のくぼみ 10P + 10O。</li>
+</ul>
+<table><tr><th>ピース</th><th>一式</th><th>個数</th><th>体積</th><th>形</th></tr>
+<tr><td>ヴァジュラ</td><td>A、B</td><td class="n">60</td><td class="n">φ²O/6 = 0.205179</td><td>双三角錐；辺 1、1/φ、1.0515、1.4734、1.7013；二面角 72°、90°、108°、120°</td></tr>
+<tr><td>冠の宝珠</td><td>B</td><td class="n">20</td><td class="n">(7φ − 3)O/2 = 1.957616</td><td>頂点 14、面 9；二面角 36°、90°、120°、144°</td></tr>
+<tr><td>宝冠 L、R</td><td>B</td><td class="n">60 + 60</td><td class="n">O/3 = 0.156743</td><td>頂点 6、面 5；キラル；二面角 36°、60°、90°、108°</td></tr>
+<tr><td>B2</td><td>A</td><td class="n">60</td><td class="n">(3 + 5φ)O/6 = 0.869152</td><td>頂点 7</td></tr>
+<tr><td>B3</td><td>A</td><td class="n">60</td><td class="n">O/(3φ) = 0.096872</td><td>黄金菱形の上の角錐；二面角 36°、120°、144°</td></tr></table>
+<p>成長：n 段の後に菱形三十面体 13ⁿ 個；次元 D は 12φ⁻²ᴰ + φ⁻³ᴰ = 1 を満たし、D ≈ 2.6063 です。</p>
+<p><b>検証と出典。</b>両方の一式：重なりなし（分離軸）；体積は 6 × 10⁻¹⁴ まで；ランダムな点 236,269 個がそれぞれちょうど一度覆われる；合同性；120 の対称操作で不変。一式 B を独立に：235,529 点。seeding.py（形と軸、k = 1 … 4）。既知：カバイ（Wolfram Demonstrations）；カバイ、ベールツィ、シラッシ。</p>
+<h2>A.27 あいだを捉える <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23345502)</span></h2>
+<p class="told">第 I 巻 第3章 殻で語られています。</p>
+<table><tr><th>構造</th><th>主経路の段数</th><th>輪を丸ごと加える段階（凸）</th><th>輪の一部を加える段階</th></tr>
+<tr><td>法の球（1 サイクル）</td><td class="n">11</td><td class="n">107 (8)</td><td class="n">5,569</td></tr>
+<tr><td>業の連鎖、蓮の実</td><td class="n">6</td><td class="n">7 (2)</td><td class="n">124</td></tr>
+<tr><td>菩提の種、一式 B</td><td class="n">6</td><td class="n">10 (2)</td><td class="n">363</td></tr></table>
+<table><tr><th>ピース</th><th>場所、個数</th><th>種類</th><th>内部の二面角</th><th>体積</th></tr>
+<tr><td>AXE</td><td>蓮の実 60</td><td>四面体、辺 1 が 5 本と 1/φ が 1 本</td><td>41.81°, 63.43°, 79.19°</td><td class="n">1/12</td></tr>
+<tr><td>CLEO</td><td>蓮の実 20</td><td>三角錐、底辺 1/φ、側辺 1</td><td>63.43°, 79.19°</td><td class="n">(√5 − 1)/24</td></tr>
+<tr><td>FUJI</td><td>蓮の実 20</td><td>六角錐</td><td>37.38°, 41.81°, 142.62°</td><td class="n">(1 + 3√5)/24</td></tr>
+<tr><td>仏塔</td><td>法の球 12</td><td>五角錐、底辺 φ/2、側辺 √3/2、頂は内向き</td><td>43.36°, 132.40°</td><td class="n">0.19734</td></tr>
+<tr><td>ヴァジュラ（ねじれ）</td><td>法の球 20</td><td>ねじれた三角錐台</td><td>99.26°, 110.91°, 113.80°</td><td class="n">0.22215</td></tr>
+<tr><td>クレオ・ロー</td><td>法の球 20</td><td>三角錐、底辺 φ/2、側辺 1/2</td><td>37.38°, 116.57°</td><td class="n">0.016855</td></tr>
+<tr><td>モンキー・スタッフ</td><td>法の球 12</td><td>ねじれた五角錐台</td><td>63.43°, 142.62°</td><td class="n">(11√5 − 15)/24</td></tr>
+<tr><td>t1</td><td>法の球 30</td><td>四面体、辺 1/φ が 5 本と 1 が 1 本</td><td>37.38°, 116.57°, 138.19°</td><td class="n">(√5 − 2)/12</td></tr>
+<tr><td>盾</td><td>法の球 20</td><td>ごく低い正六角錐</td><td>20.91°, 159.45°</td><td class="n">0.06763</td></tr>
+<tr><td>ヴァジュラの刃</td><td>法の球 60</td><td>鏡映面を一つもつ四面体</td><td>20.55°, 20.91°, 144°, 159.10°</td><td class="n">0.011271</td></tr>
+<tr><td>七重の刃</td><td>法の球 30</td><td>三角形 6 + 四角形 1</td><td>72°, 85.66°, 108°, 112.53°</td><td class="n">5 − 2√5</td></tr>
+<tr><td>クレオ・ロー 2</td><td>法の球 20</td><td>外側の正二十面体の面の上の三角錐</td><td>26.26°, 134.93°</td><td class="n">0.36892</td></tr>
+<tr><td>J11</td><td>法の球の蝶番 12</td><td>正五角錐反柱</td><td>100.81°, 138.19°</td><td class="n">(25 + 9√5)/24</td></tr>
+<tr><td>ヴァジュラ（細）</td><td>菩提の種 60</td><td>不規則な双三角錐</td><td>72°, 90°, 108°, 120°</td><td class="n">0.20518</td></tr>
+<tr><td>傘蓋</td><td>一式 A 60</td><td>三角形 3、四角形 2、五角形 1</td><td>60°, 72°, 90°, 108°, 120°</td><td class="n">0.86915</td></tr>
+<tr><td>印相</td><td>一式 A 60</td><td>四角錐</td><td>36°, 120°, 144°</td><td class="n">0.09687</td></tr>
+<tr><td>冠の宝珠</td><td>一式 B 20</td><td>三角形 3、五角形 3、六角形 3</td><td>36°, 90°, 120°, 144°</td><td class="n">1.95764</td></tr>
+<tr><td>宝冠 L / R</td><td>一式 B 60 + 60</td><td>三角形 2、四角形 3；キラル</td><td>36°, 60°, 90°, 108°</td><td class="n">0.15674</td></tr></table>
+<p>ほかに、正二十面体（138.19°）、五角形のキャップ J2（37.38°、138.19°）、菱形三十面体（144°）。クレオ・ローは、モッセリ＝サドックの t3 を半分の大きさにした形です。</p>
+<ul>
+<li>蓮の実の段階 2 = 大星型十二面体（面 60、辺 90、頂点 32；黄金三角形、頂角 36°）；段階 3 = くり抜き十二面体（Ef1g1；ウェニンガーのモデル 28）、同じ 32 の頂点、体積 = 正十二面体 − 12 J2。</li>
+<li>菩提の種 一式 B の段階 2 = 菱形六十面体（頂点 62、30 の平面上に黄金菱形 60 枚）。</li>
+<li>法の球の段階 7：菱形の辺 0.65097、角 56.68° と 123.32°；半径 1.5 に面 90 枚、五角形は 1.4384（第 3 版で訂正）。</li>
+<li>凸な部分段階 45、面のパターン 36、面の数 17〜86。</li>
+</ul>
+<p><b>検証。</b>identify.py：25 件のチェック、許容誤差 10⁻⁴；融合した立体の体積は、どの場合もピースの体積の和に等しい；nets.py（A4 で 12 ページ、四つの殻、重なりなし）。出典：ケプラー 1619；コクセターほか 1938；ウェニンガー 1971；ウンケルバッハ 1940；メッサー 1995；モッセリとサドック 1982；コジャほか 2020。</p>
+<h2>A.29 テアイテトス <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23378070)</span></h2>
+<p class="told">第 I 巻 第3章 殻で語られています。</p>
+<ul>
+<li>DICTO イコサ・スター：角錐 152 個（五角錐 72、四面体 80）、計 185 ピース。中空形：コアの辺 2/√5；内向きの四面体は φ²/√3 − √(2/3) − φ²/√15 = 0.019053 だけ手前で止まります；コアが最初に接触するのは 13.7°、14.3°、13.45°、13.5°（五回、三回、二回対称軸、任意の軸）；496 組、重なりなし。</li>
+<li>クレオ・イコス（辺 1）：側辺 √(10 + 2√5)/4 = 0.951057；高さ φ²/(2√3) = 0.755761。殻の三角形は φ²/√3 にあり、錐の頂は 10⁻¹⁶ まで面の中心に一致します。固定（ロック）：303 の方向で、0.5°、1°、2° の回転と 0.001 のずらしがすべて衝突（0.5° で食い込み 2.9 × 10⁻⁵）；クレオ・イコス 40 個で、各種類 1 200 回のテストで自由な動きは 0；二つの正二十面体のあいだに 5 + 2√5 の空きが残ります。</li>
+<li>アエトス：コアの頂点は 0.951057、窓は √((5 + 2√5)/5) = 1.376382（隙間 0.425325）；側辺 0.951057。</li>
+<li>反角柱の距離 φ²/(2√3)；側面の三角形の辺 1、0.951057、0.951057。クリッツィング K-4.137（ikaid）、高さ 1/(2φ)；側辺 √(1 − 1/(4φ²)) = √((5 + √5)/8) = 0.951057（投影上）。スフェン：辺 1、0.951057 が 4 本、1/√3；スフェニオン：1、0.951057 が 3 本、1/√3 が 2 本。</li>
+<li>融合の探索：凸な和集合が三つ（アトラクトス；クレオ・イコス + スフェン、60 通り；t1 + 錐台、24 通り）。法の球では最初の段の比が φ²/2 = 1.309、ここでは 1。法の球の層は 2/φ 倍。</li>
+<li>正十二面体の頂点の錐 = クレオ・イコス + キオン = 1/2 + √5/10、10 + 2√5 の 20 分の 1。キオン：頂点 10、面 7。</li>
+</ul>
+<table><tr><th>ピース</th><th>個数（段階ごとの版 / 102）</th><th>体積（厳密）</th><th>体積</th></tr>
+<tr><td>コアの正二十面体（辺 1）</td><td>1 / —</td><td class="n">5/4 + 5√5/12</td><td class="n">2.181695</td></tr>
+<tr><td>クレオ・イコス</td><td>（アトラクトスの中）/ 20</td><td class="n">1/16 + √5/48</td><td class="n">0.109085</td></tr>
+<tr><td>アエトス</td><td>12 / —</td><td class="n">5/48 + √5/16</td><td class="n">0.243921</td></tr>
+<tr><td>スフェン</td><td>60 / —</td><td class="n">1/24 + √5/72</td><td class="n">0.072723</td></tr>
+<tr><td>スフェニオン</td><td>60 / —</td><td class="n">1/48 + √5/144</td><td class="n">0.036362</td></tr>
+<tr><td>アトラクトス</td><td>20 / —</td><td class="n">3/16 − √5/48</td><td class="n">0.140915</td></tr>
+<tr><td>キオン</td><td>— / 20</td><td class="n">7/16 + 19√5/240</td><td class="n">0.614522</td></tr>
+<tr><td>ねじれた五角錐台</td><td>12 / 12</td><td class="n">85/3 − 37√5/3</td><td class="n">0.755162</td></tr>
+<tr><td>t1</td><td>30 / 30</td><td class="n">6 − 8√5/3</td><td class="n">0.037152</td></tr>
+<tr><td>キャップ</td><td>20 / 20</td><td class="n">141 − 63√5</td><td class="n">0.127717</td></tr>
+<tr><td>ヘカトディヘドロン</td><td>215 / 102</td><td class="n">3350 − 1486√5</td><td class="n">27.202985</td></tr></table>
+<p>中空形のピースの和は二十・十二面体 15/2 + 17√5/6；二通りの道筋はどちらも和がヘカトディヘドロンになり、余りはちょうどゼロです。<b>出典。</b>Klitzing 2000; Kepler 1596; Euclid XIII; Hypsicles; Mackay 1962; Ino 1969; Marks 1984; Takakura et al. 2007; Deguchi et al. 2015; Hart; Levin 2024; Koca et al. 2020; Al Raisi et al. 2026。スクリプト：studies/2026-10-15-icosa-star-hollow。</p>
+<h2>A.34 始祖 <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23413184)</span></h2>
+<p class="told">第 I 巻 第3章 殻で語られています。</p>
+<p>ℚ(√5) で厳密；すべての入れ子と体積を余り 0 で確認しています。法の球の大きさ（正二十面体の辺 1/φ）。</p>
+<ul>
+<li>組：H ⊂ s·O、s = 81/8 − 27√5/8（頂点 20 個が接する）；O ⊂ t·H、t = (170 + 2√5)/361（12 個が接する）；s·t = (3375 − 1107√5)/722 ≈ 1.246 で、φ の冪ではありません。</li>
+<li>四つ組 TI、H、O、PD：巡回順は 6 通りで、どれも黄金ではありません；最もきつい TI ⊂ H ⊂ O ⊂ PD ⊂ TI は 1 周ごとに (63 − 27√5)/2 = 9/φ⁴ = (3/φ²)² 倍になります。</li>
+<li>探索：TI、H、O、PD に I、ID、D、RT のいずれかを加えて通るサイクル 8,742 個；どれも φ の冪で閉じません。</li>
+<li>黄金サイクル、O の大きさ 3φ²/4：I ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ I·φ³；体積で I·φ³/I = 38 + 17√5 = φ⁹。</li>
+</ul>
+<table><tr><th>段</th><th>接触（厳密）</th></tr>
+<tr><td>I ⊂ ID</td><td>ゆるい（ID の面上の頂点は 12 個中 0）</td></tr>
+<tr><td>ID ⊂ O</td><td>ぴったり：ID の 30 頂点すべてが O の面上</td></tr>
+<tr><td>O ⊂ rTI</td><td>ゆるい</td></tr>
+<tr><td>rTI ⊂ TI</td><td>ぴったり：rTI の 90 頂点すべてが TI の辺上</td></tr>
+<tr><td>TI ⊂ H</td><td>ぴったり：TI の 60 頂点すべてが H の面上</td></tr>
+<tr><td>H ⊂ jtI</td><td>ぴったり：H の 80 頂点すべてが jtI の面上</td></tr>
+<tr><td>jtI ⊂ RT</td><td>ぴったり：jtI の頂点 80 個が RT の面上</td></tr>
+<tr><td>RT ⊂ I·φ³</td><td>ゆるい（32 頂点中 0）</td></tr></table>
+<p>12 段階のサイクル（金剛乗）：I ⊂ クレオ・スター ⊂ D′ ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ M ⊂ I·φ³。</p>
+<p><b>出典とスクリプト。</b>ケプラー 1596；Dechant et al. 2014；MathWorld；ウィキペディア；マクーイ；ハート；Polytope Wiki；クリッツィング；OEIS；ウェニンガーのリスト；arXiv；DICTO のライブラリ（2026 年 10 月 16 日）。Antiprism 0.29：I と D に演算子を高々二つ施した 840 のコンウェイ形は、どれも H にも O にも一致しません；コアと凸包はそれぞれ atI と jtI の構造をもちます。読んでいないもの：ウェニンガー、コクセター、クロムウェル、ホールデンの印刷版；Stella は実行していません。スクリプト：studies/2026-10-16-progenitors（pair_chain.py、quartet.py、golden_search.py、o_dharma.py、oh_compound.py、core_hull_in_cycle.py）。</p>
+<h2>A.35 金剛乗 <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23429911)</span></h2>
+<p class="told">第 I 巻 第3章 殻で語られています。</p>
+<p>浮動小数点と記した箇所を除き、ℚ(√5) で厳密、余り 0。12 の段階：I ⊂ クレオ・スター ⊂ D′ ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ M ⊂ I·φ³（9 段階での接触は A.34 のとおり）。</p>
+<table><tr><th>ピース（D′ = (2/3)·D のクレオ・スターによる組み立て）</th><th>個数</th><th>総体積（厳密）</th></tr>
+<tr><td>クレオ・イコス、コア（正二十面体）</td><td class="n">20</td><td class="n">−5/12 + 5√5/12</td></tr>
+<tr><td>クレオ・イコス、スパイク</td><td class="n">20</td><td class="n">−5/12 + 5√5/12</td></tr>
+<tr><td>内向きの五角錐</td><td class="n">12</td><td class="n">5/9 − √5/27</td></tr>
+<tr><td>谷の四面体</td><td class="n">30</td><td class="n">25/18 − 5√5/18</td></tr>
+<tr><td>D′</td><td class="n">82</td><td class="n">10/9 + 14√5/27</td></tr></table>
+<p>クレオ・スターの体積は 2·I；これはある一つの高さの三方二十面体で、星型化ではありません；隙間は一つの連結な領域です（浮動小数点）。</p>
+<table><tr><th>RT をちょうど収める大きさの立体</th><th>I·φ³ の面への到達度（浮動小数点）</th></tr>
+<tr><td>ヘカトディヘドロン</td><td class="n">0.9948</td></tr>
+<tr><td>二十・十二面体；パリントリアコンタヘドロン</td><td class="n">0.9787</td></tr>
+<tr><td>凧形六十面体</td><td class="n">0.9443</td></tr>
+<tr><td>切頂十二面体</td><td class="n">0.9325</td></tr>
+<tr><td>五方十二面体</td><td class="n">0.9149</td></tr>
+<tr><td>斜方二十・十二面体</td><td class="n">0.8754</td></tr>
+<tr><td>切頂二十面体</td><td class="n">0.8682</td></tr>
+<tr><td>正十二面体；三方二十面体</td><td>大きすぎる</td></tr>
+<tr><td>DICTO メタクシヘキセコンタヘドロン</td><td class="n">1（厳密）</td></tr></table>
+<ul>
+<li>RT は道のりの 0.812 まで届きます。M：比 9/φ⁴ ≈ 1.31308（2 乗 81(47 − 21√5)/2 = 81/φ⁸）；頂点の半径の 2 乗 45/8 − 9√5/8 と 47/24 + 7√5/8；M の体積 145/12 + 65√5/12（段の 0.356）。RT → M：ピース 30 個、各 353/72 − 149√5/72；M → I·φ³：ピース 60 個、各 1/8 + √5/18。</li>
+<li>M の極双対：正五角形 12 枚と、辺の比が (14 + 9√5)/11 ≈ 3.102 の六角形 20 枚；ダブル・ヴィジョンの端の球（ρ² = φ²/4）では、逆向きの段を閉じます。</li>
+<li>パリントリアコンタヘドロン X：比 3/√5（2 乗 9/5）；面の角の cos² は 1/9、1/3、1/3；浮動小数点：次の D′ の内側にあり、次のクレオ・スターの内側に 99.46%（20,000 点）。</li>
+</ul>
+<p><b>出典とスクリプト。</b>A.34 と同じものに加え、Wassell and Benito 2012、Bridges 2017、グリュンバウム（クレートープ）、ヒュプシクレス。Antiprism 0.29：M、X、M の双対は記述どおりの構造をもちます。スクリプト：cleo_star_station.py、inward_pyramids.py、progenitors_exact.py、gap_member.py、gap_chain.py、gap_pieces_exact.py、metaxy_dual.py、id_star.py。</p>
+<h2>A.32 裏返しの殻 <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23405029)</span></h2>
+<p class="told">第 I 巻 第4章 サイクルで語られています。</p>
+<p>逆向きの連鎖 D ⊂ ID ⊂ オグドエコンタヘドロン ⊂ PD ⊂ I ⊂ RT ⊂ D·φ³；体積は 38 + 17√5 = φ⁹ で閉じます。極は ℚ(√5) で厳密です。</p>
+<table><tr><th>皮（反転テスト、浮動小数点）</th><th>ピース</th><th>中間で覆われる割合</th><th>二重</th><th>最も深い重なり</th></tr>
+<tr><td>I → ID</td><td class="n">32</td><td class="n">100%</td><td class="n">35.1%</td><td class="n">0.369</td></tr>
+<tr><td>ID → D</td><td class="n">20</td><td class="n">3.1%</td><td class="n">0</td><td>なし</td></tr>
+<tr><td>D → TI</td><td class="n">42</td><td class="n">67.1%</td><td class="n">4.4%</td><td class="n">0.163</td></tr>
+<tr><td>TI → H</td><td class="n">20</td><td class="n">7.7%</td><td class="n">0</td><td>なし</td></tr>
+<tr><td>H → RT</td><td class="n">72</td><td class="n">17.8%</td><td class="n">0.1%</td><td class="n">0.070</td></tr>
+<tr><td>RT → I·φ³</td><td class="n">50</td><td class="n">100%</td><td class="n">36.4%</td><td class="n">0.309</td></tr></table>
+<table><tr><th>層</th><th>ピース</th><th>各ピース</th><th>厳密な体積</th></tr>
+<tr><td>D → ID</td><td class="n">12</td><td>正十二面体の各面の上の柱</td><td class="n">(−144185 + 64487√5)/243</td></tr>
+<tr><td>ID → O</td><td class="n">12</td><td>二十・十二面体の各五角形の上のキャップ</td><td class="n">(−155 + 101√5)/4617</td></tr>
+<tr><td>O → PD</td><td class="n">20</td><td>各正六角形の上の低い角錐</td><td class="n">(−22 + 10√5)/81</td></tr>
+<tr><td>PD → I</td><td class="n">60</td><td>不規則な楔、頂点 5、三角形 6</td><td class="n">(−6560 + 2936√5)/513</td></tr>
+<tr><td>I → RT</td><td class="n">20</td><td>正二十面体の各面の上の三角錐</td><td class="n">(−796 + 356√5)/3</td></tr>
+<tr><td>RT → D·φ³</td><td class="n">30</td><td>各菱形の上の屋根</td><td class="n">200 − 1336√5/15</td></tr></table>
+<ul>
+<li>ゆるみ（浮動小数点）：RT はあと 1.894 倍、内側の D は 1.232 倍まで大きくできます。ぴったりの入れ子：内側の D を (11/18 + 5√5/18) 倍、外側を (5 − 2√5) 倍；内接球の半径 0.495、0.567、0.623、0.653、0.714、0.764、0.898；外側の層 25.2 → 1.9；柱 (−35/729 + 71√5/2187)、楔 (−7352/3 + 1096√5)；長さの比 1.8146（2 乗 49815/2 − 22275√5/2）。</li>
+<li>中身の詰まった立体としての星：密度 3、3、7、7。大星型十二面体：体積は正二十面体 3 個分；四面体 60 個（188/3 − 28√5）と五角錐 60 個（112/3 − 248√5/15）；先端と谷の半径² の比 3φ³/√5。</li>
+<li>内側の隙間：六方二十面体 × (9 − 3√5) = 6/φ²、斜方切頂二十・十二面体 × 2/15；遊び 5/9 + 2√5/9 = √5·φ³/9 ≈ 1.0525；ピース 12、120、および 2 種類のキャップ 50。最も近い固定：凧形六十面体の中の斜方二十・十二面体、遊び 62/123 + 137√5/615 ≈ 1.00218。</li>
+<li>枠：頂点の半径² 10 + 2√5、中点の半径² 4；長い辺は正十二面体の辺の φ³ 倍（1 + 2φ = φ³）。</li>
+<li>ハフナー 2007：私たちの四面体は、同じ辺での彼の体積のちょうど φ² 倍です。</li>
+</ul>
+<p><b>検証と出典。</b>geomcheck.py（枠、入れ子の両方の順序、既知の場合を先に、対称性による種類分け、厳密判定のゲート、ラベル）；すべてのスクリプトを再実行。Firsching 2015; Croft 1980; Takakura et al. 2007; Twarock, Valiunas and Zappa 2015; Dechant et al. 2014; Kepler 1619; Poinsot 1810; Hafner 2007。スクリプト：studies/2026-10-16-polar-dharma, -flip-test。</p>
+<h2>A.33 ダブル・ヴィジョン <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23407107)</span></h2>
+<p class="told">第 I 巻 第4章 サイクルで語られています。</p>
+<ul>
+<li>極変換は r を ρ²/r に移します；φ³ の繰り返しと合わせると、鏡の球は半径で φ<sup>3/2</sup> ごとに現れます。端の設定 ρ² = φ²/4 = (3 + √5)/8（半径 φ/2）：I と D が共有され、逆向きの巡りの最後の層はその体積の約 93% を占めます（浮動小数点）。中間の設定 ρ² = 3φ²/4（半径 √3·φ/2）：ID と RT が共有され、逆向きの正二十面体はちょうど 3·I です。</li>
+<li>両立はしない：φ<sup>k</sup> = (L<sub>k</sub> + F<sub>k</sub>√5)/2 は k ≠ 0 で無理数です。正二十面体の曲げの範囲は [(45√5 − 99)/2, 1 + 2√5/5] ≈ [0.8115, 1.8944]；両方の組には 3/φ³ ≈ 0.708 または 3 が必要です。</li>
+<li>錐による切断：一巡りあたり逆向きのピース 154 個と元のピース 174 個；どの共通部分も凸；ピースごと・層ごとに余り 0；厳密な体積による種類分けと対称軌道による種類分けは一致します。</li>
+</ul>
+<table><tr><th>組 1（端）</th><th>個数</th><th>元の層</th><th>逆向きの層</th><th>体積（厳密）</th></tr>
+<tr><td>I1·1 12f</td><td class="n">12</td><td>D → TI</td><td>D → ID</td><td class="n">−25/24 + 2√5/3</td></tr>
+<tr><td>I1·2 TBP</td><td class="n">60</td><td>RT → I·φ³</td><td>PD → I</td><td class="n">145/1368 + 97√5/2052</td></tr>
+<tr><td>I1·3 7f</td><td class="n">60</td><td>I → ID</td><td>RT → D·φ³</td><td class="n">83/576 − 41√5/2880</td></tr>
+<tr><td>I1·4 7f</td><td class="n">60</td><td>RT → I·φ³</td><td>D → ID</td><td class="n">−11221/5184 + 15629√5/15552</td></tr>
+<tr><td>I1·5 12f</td><td class="n">12</td><td>H → RT</td><td>D → ID</td><td class="n">550235/24624 − 245243√5/24624</td></tr>
+<tr><td>I1·6 7f</td><td class="n">60</td><td>RT → I·φ³</td><td>ID → O</td><td class="n">151655/32832 − 602341√5/295488</td></tr>
+<tr><td>I1·7 QPy</td><td class="n">60</td><td>RT → I·φ³</td><td>O → PD</td><td class="n">41/2592 + 55√5/7776</td></tr>
+<tr><td>I1·8 PPy</td><td class="n">60</td><td>TI → H</td><td>D → ID</td><td class="n">−11/8 + 5√5/8</td></tr>
+<tr><td>I1·9 PPy</td><td class="n">12</td><td>H → RT</td><td>ID → O</td><td class="n">−3715/162 + 1663√5/162</td></tr>
+<tr><td>I1·10 Tet</td><td class="n">60</td><td>H → RT</td><td>D → ID</td><td class="n">−93/152 + 21√5/76</td></tr>
+<tr><td>I1·11 QPy</td><td class="n">60</td><td>ID → D</td><td>RT → D·φ³</td><td class="n">1/576 + √5/576</td></tr>
+<tr><td>I1·12 Tet</td><td class="n">20</td><td>I → ID</td><td>I → RT</td><td class="n">−11/48 + 5√5/48</td></tr></table>
+<table><tr><th>組 2（中間）</th><th>個数</th><th>元の層</th><th>逆向きの層</th><th>体積（厳密）</th></tr>
+<tr><td>I2·1 7f</td><td class="n">30</td><td>RT → I·φ³</td><td>RT → D·φ³</td><td class="n">371/72 − 47√5/24</td></tr>
+<tr><td>I2·2 11f</td><td class="n">12</td><td>D → TI</td><td>ID → O</td><td class="n">625/10944 + 289√5/10944</td></tr>
+<tr><td>I2·3 7f</td><td class="n">60</td><td>I → ID</td><td>D → ID</td><td class="n">−1585/576 + 3643√5/2880</td></tr>
+<tr><td>I2·4 HPy</td><td class="n">20</td><td>TI → H</td><td>I → RT</td><td class="n">−33/8 + 15√5/8</td></tr>
+<tr><td>I2·5 7f</td><td class="n">60</td><td>D → TI</td><td>PD → I</td><td class="n">−101/456 + 12√5/95</td></tr>
+<tr><td>I2·6 6f</td><td class="n">60</td><td>I → ID</td><td>RT → D·φ³</td><td class="n">203/72 − 56√5/45</td></tr>
+<tr><td>I2·7 Tet</td><td class="n">20</td><td>ID → D</td><td>O → PD</td><td class="n">1/192 + √5/192</td></tr>
+<tr><td>I2·8 QPy</td><td class="n">60</td><td>H → RT</td><td>PD → I</td><td class="n">−1/24 + √5/40</td></tr>
+<tr><td>I2·9 Tet</td><td class="n">60</td><td>H → RT</td><td>I → RT</td><td class="n">−93/152 + 21√5/76</td></tr>
+<tr><td>I2·10 Tet</td><td class="n">60</td><td>D → TI</td><td>O → PD</td><td class="n">1/576 + √5/576</td></tr>
+<tr><td>I2·11 Tet</td><td class="n">60</td><td>H → RT</td><td>I → RT</td><td class="n">−23/304 + 11√5/304</td></tr></table>
+<table><tr><th>元の層</th><th>前</th><th>端</th><th>中間</th></tr>
+<tr><td>I → ID</td><td class="n">20</td><td class="n">80</td><td class="n">120</td></tr>
+<tr><td>ID → D</td><td class="n">20</td><td class="n">60</td><td class="n">20（丸ごと）</td></tr>
+<tr><td>D → TI</td><td class="n">12</td><td class="n">12（丸ごと）</td><td class="n">132</td></tr>
+<tr><td>TI → H</td><td class="n">20</td><td class="n">60</td><td class="n">20（丸ごと）</td></tr>
+<tr><td>H → RT</td><td class="n">72</td><td class="n">84</td><td class="n">180</td></tr>
+<tr><td>RT → I·φ³</td><td class="n">30</td><td class="n">240</td><td class="n">30（丸ごと）</td></tr>
+<tr><td>一巡り</td><td class="n">174</td><td class="n">536</td><td class="n">502</td></tr></table>
+<p>I1·10 = I2·9 はどちらの設定でも丸ごと通ります。I1·11 と I2·10 は体積が等しく (1 + √5)/576 ですが、頂点は 5 個と 4 個です。<b>出典。</b>Kepler 1596; Firsching 2015; Takakura et al. 2007; Dechant et al. 2014; Twarock et al. 2015。スクリプト：studies/2026-10-16-interlock。</p>
+<h2>A.38 ユニバーサル・パイテト <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23463305)</span></h2>
+<p class="told">第 I 巻 第4章 サイクルで語られています。</p>
+<p>規則：T(S) = {x : S のすべての頂点 v について v·x ≤ v·v}。ℚ(√5) で厳密。</p>
+<p><b>命題。</b>外接球の半径 φ の ID：T(ID) = RT、T(RT) = GTI、T(GTI) = FPD、T(FPD) = (10/φ⁴)·ID = (35 − 15√5)·ID；T<sup>4n</sup>(ID) = (10/φ⁴)<sup>n</sup>·ID。それぞれが次のものの内側にあり；各殻は内側の面ごとにピース 1 個で、合同類は一つか二つ；半径² 15 − 5√5 = 10/φ² の球に関して自己極双対（GTI ↔ FPD、RT ↔ ID·10/φ⁴、ID ↔ RT·10/φ⁴）。証明の方法：厳密な頂点、面、V − E + F = 2、60 の回転による合同、余り 0。</p>
+<table><tr><th>段階</th><th>面</th><th>頂点（半径）</th></tr>
+<tr><td>ID</td><td>三角形 20、五角形 12</td><td>30 (φ)</td></tr>
+<tr><td>RT</td><td>菱形 30</td><td>12 (2R<sub>I</sub> ≈ 1.902), 20 (√3)</td></tr>
+<tr><td>DICTO GTI</td><td>正五角形 12、六角形 20、辺 1 : φ（正二十面体を各辺の 1/(2 + φ) の位置で切ったもの）</td><td>60 (√10/φ ≈ 1.954)</td></tr>
+<tr><td>DICTO FPD</td><td>二等辺三角形 60</td><td>12 (≈ 2.008), 20 (≈ 2.205)</td></tr></table>
+<table><tr><th>殻</th><th>ピース</th><th>各ピースの厳密な体積</th><th>隙間（厳密）</th></tr>
+<tr><td>ID → RT</td><td>五角形の上に 12、三角形の上に 20</td><td class="n">5/12; 3/8 − 17√5/120</td><td class="n">25/2 − 17√5/6</td></tr>
+<tr><td>RT → GTI</td><td>菱形の上に 30</td><td class="n">(3 − √5)/4 = 1/(2φ²)</td><td class="n">45/2 − 15√5/2</td></tr>
+<tr><td>GTI → FPD</td><td>五角形の上に 12、六角形の上に 20</td><td class="n">(67475 − 30175√5)/72 ≈ 0.0229; (5681 − 2534√5)/36 ≈ 0.4112</td><td class="n">(259235 − 115865√5)/18</td></tr>
+<tr><td>FPD → ID·10/φ⁴</td><td>三角形の上に 60</td><td class="n">(77875 − 34825√5)/27 ≈ 0.1457</td><td class="n">(1557500 − 696500√5)/9</td></tr></table>
+<ul>
+<li>段階 1：ピース 82 個が外接球の半径 φ²/√3 の D′ を埋めます。段階 2：モンキー・スタッフ B、合同なねじれた錐台 12 個、各 (145 + 37√5)/648。段階 3：五面の角錐 12 個、三面の角錐 20 個、谷の四面体 60 個（計 92 ピース）；三面の角錐は CLEO ではありません（高さは底面の半径の約 2.17 倍、対して φ² ≈ 2.618；第 1 版から訂正）。五面のヴァジュラ 55/108 + 5√5/36。</li>
+<li>ID と RT のあいだの OG：頂点は ID の 30 個、点 2c − v の 60 個、錐の頂 12 個；ID → OG は合同なピース 12 個；OG → RT は六角クレオ 20 個（1/4 − √5/12）、凧形の角錐 60 個（1/76 + √5/684）、四面体 120 個（1/24 − √5/72）。</li>
+</ul>
+<p><b>出典とスクリプト。</b>ケプラー；パチョーリとレオナルド；バーグマン（連続球面トラス）；ラルヴァーニ；クラマー；モッセリとサドック；ハート（正準多面体）；スマランダケ 2010（面の垂足多面体）；反復した垂足三角形；マッカイ；600胞体（正六百胞体）。調査：ライブラリ資料 87 件とウェブ、2026 年 10 月 19 日。スクリプト：exact_cycle.py、exact_shells.py、exact_inner.py、exact_polar.py（studies/2026-10-19-five-fold-octet）。</p>
+<h2>A.38a DICTO ケプラー・ポアンソ・UP サイクル <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23464021)</span></h2>
+<p class="told">第 I 巻 第4章 サイクルで語られています。</p>
+<table><tr><th></th><th>辺</th><th>尖塔の高さ ÷ 面の半径</th><th>星 ÷ コア（体積）</th></tr>
+<tr><td>I（コア）</td><td class="n">1</td><td></td><td></td></tr>
+<tr><td>I の上の大星型の星</td><td></td><td class="n">φ²</td><td class="n">3（スパイク 1 本 = I/10）</td></tr>
+<tr><td>D1（その凸包）</td><td class="n">φ</td><td></td><td></td></tr>
+<tr><td>D1 の上の小星型の星</td><td></td><td class="n">φ</td><td class="n">√5（尖塔 12 本 = (√5 − 1)·D1）</td></tr>
+<tr><td>I·φ³（その凸包）</td><td class="n">φ³</td><td></td><td>一巡り：×φ⁹</td></tr></table>
+<p>スパイクは面までの距離の 3 倍まで、尖塔は √5 倍まで伸びます。長さでは一巡りあたり φ³ ≈ 4.24 倍です。</p>
+<table><tr><th>殻</th><th>ピース</th><th>各ピースの厳密な体積</th><th>正体</th></tr>
+<tr><td>I → 大星型の星 → D1</td><td>スパイク 20</td><td class="n">1/8 + √5/24</td><td>CLEO</td></tr>
+<tr><td></td><td>内向きの角錐 12</td><td class="n">5/8 + 7√5/24</td><td>キャップ</td></tr>
+<tr><td></td><td>谷の四面体 30</td><td class="n">1/6 + √5/12</td><td>AXE</td></tr>
+<tr><td>D1 → 小星型の星 → I·φ³</td><td>尖塔 12</td><td class="n">5/3 + 3√5/4</td><td>新</td></tr>
+<tr><td></td><td>内向きの角錐 20</td><td class="n">29/24 + 13√5/24</td><td>新：CLEO の逆数形</td></tr>
+<tr><td></td><td>谷の四面体 30</td><td class="n">3/4 + √5/3</td><td>新</td></tr></table>
+<table><tr><th>先端</th><th>(高さ ÷ 底面の半径)²</th><th>その逆数形</th><th>(高さ ÷ 底面の半径)²</th></tr>
+<tr><td>大星型の星のスパイク（CLEO）</td><td class="n">7/2 + 3√5/2 = φ⁴</td><td>小さい殻の内向きの角錐</td><td class="n">7/2 − 3√5/2 = φ⁻⁴</td></tr>
+<tr><td>小星型の星の尖塔</td><td class="n">3/2 + √5/2 = φ²</td><td>大きい殻の内向きの角錐（キャップ）</td><td class="n">3/2 − √5/2 = φ⁻²</td></tr></table>
+<p>透視モデル（浮動小数点）：外側からは補正 ×0.94 と ×1.03；内側からは 2.9 倍（大）と 2.1 倍（小）ずんぐりして見えます。各殻で余りはちょうど 0；近接するすべての組に厳密な分離平面があります。<b>出典。</b>ケプラー；ポアンソ；コクセター；メッサー；モッセリとサドック；パパドポロスとオギヴェツキー；クラマー；コジャほか；アル＝ライシほか。調査：ライブラリ資料 87 件とウェブ、2026 年 10 月 19 日。スクリプト：exact_kp.py、exact_reciprocal.py、perspective.py。</p>
+<h2>A.39 DICTO OG ファミリー <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23488944)</span></h2>
+<p class="told">第 I 巻 第4章 サイクルで語られています。</p>
+<p>枠組み：外接球の半径 φ の ID ⊂ OG ⊂ RT。T(S) = {x : v·x ≤ v·v}；P(S) = 垂線の足 (d/n·n) n の凸包。下向きの 4 段すべてで T(P(S)) = S（厳密）；P(KRE) は OG の残りの 90 頂点の凸包です。</p>
+<table><tr><th>立体</th><th>頂点</th><th>面</th><th>辺</th><th>体積</th><th>頂点の半径</th></tr>
+<tr><td>OG</td><td class="n">102</td><td>凧形 60 + 正六角形 20</td><td class="n">180</td><td class="n">(525 + 185√5)/57 ≈ 16.4679</td><td class="n">1.6180–1.6873</td></tr>
+<tr><td>KRE</td><td class="n">92</td><td>菱形 30 + 凧形 60</td><td class="n">180</td><td class="n">(920 + 60√5)/57 ≈ 18.4941</td><td class="n">1.6520–1.7321</td></tr>
+<tr><td>PHE</td><td class="n">180</td><td>正五角形 12 + 正六角形 20 + 六角形 60</td><td class="n">270</td><td class="n">(95875 − 1560√5)/4617 ≈ 20.0101</td><td class="n">1.7046–1.7427</td></tr>
+<tr><td>TPP</td><td class="n">212</td><td>三角形 60 + 五角形 120（2 種類）</td><td class="n">390</td><td class="n">≈ 22.3366</td><td class="n">1.7220–1.8104</td></tr>
+<tr><td>DPHP</td><td class="n">270</td><td>等辺の十角形 12 + 正六角形 20 + 五角形 120</td><td class="n">420</td><td class="n">≈ 23.5434</td><td class="n">1.7995–1.8095</td></tr>
+<tr><td>TPH</td><td class="n">80</td><td>二等辺三角形 120 + 正五角形 12</td><td class="n">210</td><td class="n">(10437930 + 3959694√5)/109³ ≈ 14.8970</td><td class="n">1.5115–1.5848</td></tr>
+<tr><td>TQH</td><td class="n">132</td><td>三角形 60 + 四角形 60 + 正六角形 20</td><td class="n">270</td><td class="n">(770805045 + 337172409√5)/(2⁴·41³·109) ≈ 12.6853</td><td class="n">1.4885–1.5023</td></tr>
+<tr><td>TQP</td><td class="n">140</td><td>三角形 60 + 菱形 30 + 四角形 60 + 正五角形 12</td><td class="n">300</td><td class="n">≈ 11.6524</td><td class="n">1.4172–1.4931</td></tr>
+<tr><td>TQHD</td><td class="n">162</td><td>三角形 120（2 種類）+ 四角形 60 + 正六角形 20</td><td class="n">360</td><td class="n">≈ 10.4208</td><td class="n">1.3493–1.3948</td></tr></table>
+<ul>
+<li>KRE の菱形の辺² 29/18 − √5/2（≈ 0.7022）；凧形の短い辺² (1505 + 315√5)/6498（≈ 0.5831）。PHE の五角形の辺² 35/18 − 5√5/6；正六角形の辺² 1/27（√3/9）。TPH の五角形の辺² (4014 + 378√5)/109²。三角形はすべて二等辺三角形です。</li>
+<li>殻（余り 0）：OG ⊂ KRE（凧形の上に 60 個 (230 + 15√5)/37278 ≈ 0.00707、六角形の上に 20 個 (429 − 145√5)/1308 ≈ 0.08010；隙間 ≈ 2.02617）；KRE ⊂ PHE（菱形の上に 30 個 235/2916 − √5/36 ≈ 0.01848、凧形の上に 60 個 ≈ 0.01603；≈ 1.51602）；PHE ⊂ TPP（≈ 0.00218、≈ 0.03805、409/476766 ≈ 0.000858；≈ 2.32644）；TPH ⊂ OG（≈ 0.006748、≈ 0.06343；≈ 1.57092）；TQH ⊂ TPH（≈ 0.02937、≈ 0.007311、≈ 0.000550；≈ 2.21176）；TQHD ⊂ TQP（≈ 0.000016、0.003318、0.000090、0.05131；≈ 1.23162）。</li>
+<li>破れ：TPP の頂点 60 個が DPHP の外側に最大 0.0185 はみ出します（DPHP の面は 212 − 60 = 152）；TQP の頂点 60 個が TQH の外側に最大 0.0058 はみ出します。丸さのばらつき：DPHP 0.56%、OG 4.28%、TPP 5.13%。</li>
+</ul>
+<p><b>出典とスクリプト。</b>反垂足と垂足の構成；スマランダケ 2010；ゴールドバーグ GP(3,0)；菱形九十面体。調査：ライブラリ資料 80 件とウェブ、2026 年 10 月 20 日。スクリプト：exact_upward.py、exact_downward.py、family_facts.py（コミット 058c2fb）。</p>
+<h2>A.43 DICTO 求心道コア <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23532013)</span></h2>
+<p class="told">第 I 巻 第4章 サイクルで語られています。</p>
+<p><b>定理 1（一般）。</b>O を内部に含む凸多面体 S について：max<sub>v</sub> |v|²/h<sub>P</sub>(v) ≤ t<sub>min</sub>(S) ≤ R(S)/r(P(S)) ≤ (R(S)/r(S))²。正多面体では等号（9；3, 3；15 − 6√5, 15 − 6√5）。細い四角双角錐：t<sub>min</sub> → ∞。</p>
+<p><b>定理 2（主定理）。</b>正二十面体の回転対称性をもつすべての凸多面体は S ⊂ (15 − 6√5)·P(S) ⊂ φ·P(S) を満たします；15 − 6√5 ≈ 1.583592 &lt; φ（841 &lt; 845）；この評価は最良です。証明：r(S) ≥ cR(S)、c = √((5 + 2√5)/15) ≈ 0.794654；被覆半径 θ* = arccos c ≈ 37.377°；(2, 3, 5) のメビウスの三角形の辺は 20.905°、31.717°、37.377°；凧形の対角線は θ* と 36°（sin 20.905° sin 31.717°/sin 37.377° = sin 18°）。</p>
+<ul>
+<li>系 1：S<sub>k</sub> = φ<sup>k</sup>·D<sub>k</sub> はどの k でも入れ子；k ≤ 9 のうち D<sub>k</sub> ⊂ D<sub>k−1</sub> となるのは k = 1、2、4 のみ。余裕 t<sub>min</sub>(D<sub>k</sub>)、k = 0 … 8：1.134、1.117、1.103、1.146、1.042、1.087、1.026、1.060、1.138（すべて ≤ 3/φ² ≈ 1.1459；予想 1）。</li>
+<li>定理 3：半径² 15 − 5√5 = cφ²（c = 10/φ⁴）の球に関する極変換は、拍 k を拍 5 − k に移します。補題 3：polar(P(S)) = T(polar S)。</li>
+<li>クレオ・タワー：境界は拍 0 | 1 | 2 | 4 | 7 | 12；塔 32、30、32、32、60（計 186）；外側の ID はコアの c³ ≈ 3.11 倍。極クレオ・タワー：5 | 4 | 3 | 1 | −2 | −7；コアは RT/c²（光線 30 本）；塔 30、32、30、60、32（計 184）。</li>
+<li>OG（#37 の枠組み）：体積 (−1000 + 1240√5)/1539。ヘクス・アクティス (−2 + 2√5)/81 ≈ 0.030520、高さ √((6 + 2√5)/27) ≈ 0.622782、20 個で ≈ 52.99%；デルトイド・アクティス (−4 + 8√5)/1539 ≈ 0.009024、高さ √((42 + 2√5)/109) ≈ 0.652955、60 個で ≈ 47.01%。</li>
+<li>OTT：光線 38 本；オクタクティスはクレオ・イコスと相似（高さ²/辺² = φ⁴/12、側辺²/辺² = (φ² + 1)/4）；OG の六角形の外接円の半径² = 三角形の内接円の半径² = (6 − 2√5)/27。</li>
+<li>外へ裏返した OG：塔 80、132、140、形は 2、3、3 種類；外側の半径は 1 拍ごとに 1.52、1.53、1.61、1.51 倍；完全な裏返し（浮動小数点）では 1 拍ごとに約 1.9 倍。殻 4：塔 200（≈ 570.644662、889.860165、147.140716、5699.759901）、殻 ≈ 210453.9306。極双対：塔 80、132、162、形は 2、3、4 種類。</li>
+<li>TQH のリボン：台形の平行な辺² (38367 + 17019√5)/13448 と (6615 + 2925√5)/3362（≈ 2.3839 と 1.9781）、脚 ≈ 0.4343、角 ≈ 62.15° と 117.85°、高さ ≈ 0.3840、折れ ≈ 23.28°（浮動小数点）。リボンは下 8 と下 9 で戻ってきます。下 5 から下 11：TQP-252、TQ-320、TQP-402、TQ-500、TQD-732、TQHD-662、TQP-672。</li>
+</ul>
+<p><b>出典。</b>Smarandache; Kepler; Mackay; Takakura et al.; Bergman; Kramer; Hypsicles; Caspar and Klug; Kroto et al.（C60）; Iijima（ナノチューブ）; 阿部謙四郎。調査：テキスト層のあるライブラリ資料 77 件、2026 年 10 月 21 日。スクリプト：研究フォルダ 2026-10-20-cleo-towers、-og-spires、-ott-rays、2026-10-21-og-turned-out、2026-10-21-nesting-proof（コミット c3c8ff7）。</p>
+<h2>A.K DICTO の Kaleidohedra（カレイドヘドラ） <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23173809)</span></h2>
+<p class="told">第 I 巻「発見とアプリ」で語られています。</p>
+<ul>
+<li>F1：辺の方向は 60° で 3 回、72° で 3 回交わります；体積 2·φ/2 + 2·½ = φ²；せん断した FCC 格子（DICTO FCC）で空間をタイル張りします。この族は既知（フョードロフ；ラルヴァーニ US 5,623,790 と US 4,723,382；グリュンバウム 2010 は菱形の単面体だけを分類）；この一員は見つかっていません。</li>
+<li>F5：既知（グリュンバウム 2010、図 2(b)）；DICTO の道筋であるベイン伸長は新しい（2026-10-01）。</li>
+<li>F10（EKP セル、立方体の辺 2）：辺 2/φ の菱形 12 枚、長い対角線 2、角 72° と 108°；壁 48 枚（24 枚は辺 √2/φ、2/φ、√2；24 枚は √2/φ²、2/φ、√2）；体積はちょうど 12（各屋根はその 1/φ が残る）；壁は正二十面体のどの二回対称軸からも 22.24° ずれています（165 本の辺を確認）。</li>
+<li>F11：すべての s &gt; 0 について、正五角形 8 枚、六角形 4 枚（108°、108°、108°、108°、144°、144°）、長方形 2 枚；s = 2/φ で正方形；体積 = 正十二面体 + s × 7.236068。</li>
+<li>F12：ドッグスターの辺 2/φ⁴、2/φ³、2/φ²、2/φ；体積 1.527864（立方体の辺 2）、正十二面体の辺 1 で φ/2。</li>
+<li>F15：四面体クラスターは面 228（三角形 192、菱形 36）、体積はジュエル 4 個分；八面体クラスターは封じられたステラのまわりに。F16：正十二面体とドッグスターについて同じもの。</li>
+</ul>
+<p>検証：verify-kaleido.mjs と verify-roof-fold.mjs（krp-core）、verify-zome-parallelohedra（Polyhedraverse）、verify-dicto-fcc（Rhombiverse）を、プッシュのたびに実行。</p>
+<h2>A.D DICTO の立体 ― 厳密な幾何 <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23606967)</span></h2>
+<p class="told">第 I 巻「発見とアプリ」で語られています。</p>
+<ul>
+<li>第 2 版（2026 年 10 月 24 日）：立体 29；座標は ℚ(√5)（サムソンとデリラは ℚ(∛2)）で厳密、および小数 15 桁；面の向きは一貫して揃えてある；f ベクトル、厳密な体積、辺の長さの 2 乗、対称群、記載値；JSON と OFF；体積 1 に縮尺した写し。</li>
+<li>充填：空間を充填するもの 6 つ（DICTO の斜交立体の格子充填 3 つ；黄金の結合、キー付きの結合、デロスの結合）と充填しないもの 4 つ、厳密な格子ベクトルと配置つき。</li>
+<li>目録 index.csv：122 行；確立したカタログ番号（ジョンソン、一様多面体、ウェニンガー、ハート、モッセリ＝サドック）と DICTO の D1–D75。</li>
+<li>check.py（Python 3 + sympy）：712 件のチェックがすべて合格。キー付きの立体を、その凸包からトリキャップ 8 個を引いたもの、または加えたものとして確かめる検査も含みます。</li>
+</ul>
+</section>
+<!--KNOWN START-->
+<section class="page catalogue">
+<p class="chapter-mark">DICTO 原子辞典 · 既知の形</p>
+<h1>本作品の既知の形と再発見された形</h1>
+<p>この作品が組み立てに用いる 27 の形で、他の人々が最初に作ったもの、または DICTO が再発見し、調べた資料に見つかったものです。それぞれ、最初の作り手が与えた番号を保ちます。その厳密な幾何がデータセットにあるものは、銀色で描いています。</p>
+<div class="atoms">
+<div class="atom"><img src="figures/atoms/piece-dogstar.png" alt="Dogstar"><div class="an"><b>Hart 1996、正十二面体の四面体対称の星型化、第 8 番</b> ドッグスター</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23497702">#42</a></div><div class="av">第 I 巻 第2章</div><div class="ant">G. W. Hart 1996、正十二面体の星型化 8</div></div>
+<div class="atom"><img src="figures/atoms/piece-axe.png" alt="AXE"><div class="an"><b>モッセリ＝サドック t6（1/τ 倍）</b> AXE（アックス）</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23351291">#19</a></div><div class="av">第 I 巻 第1章</div><div class="ant">モッセリ＝サドックのタイル</div></div>
+<div class="atom"><img src="figures/atoms/piece-cleo.png" alt="CLEO"><div class="an"><b>モッセリ＝サドック t4（1/τ 倍）</b> CLEO（クレオ）</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23351291">#19</a></div><div class="av">第 I 巻 第1章</div><div class="ant">モッセリ＝サドックのタイル</div></div>
+<div class="atom"><img src="figures/atoms/piece-cleo-icos.png" alt="Cleo-Icos"><div class="an"><b>—</b> クレオ・イコス</div><div class="am">ピース · <a href="https://doi.org/10.5281/zenodo.23378070">#29</a></div><div class="av">第 I 巻 第3章</div><div class="ant">正二十面体の中心角錐（古典的な形；名は DICTO による）；#43 では OTT の八面体の光線として現れ、そこではオクタクティスと呼ばれる（DICTO DOI: 10.5281/zenodo.23532013）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-icosaxes.png" alt="Icosaxes"><div class="an"><b>—</b> イコサックス</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23596362">#48</a></div><div class="av">第 I 巻 第2章</div><div class="ant">既知の形：Koca et al. 2015 の非正則な切頂八面体 x = τ（半一様な切頂八面体）；新しい道筋（二十面体格子における AXE の黄金の切り分け、#48）；名は DICTO による；族（#88）：DICTO-ケプラー黄金切頂（正八面体の大黄金切断、x = 1/φ²）と DICTO-GTT 立体</div></div>
+<div class="atom"><img src="figures/atoms/dicto-unborn-axes.png" alt="Unborn Axes"><div class="an"><b>—</b> アンボーン・アックス</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23596362">#48</a></div><div class="av">第 I 巻 第2章</div><div class="ant">既知の形：Koca et al. 2015 の非正則な切頂八面体 x = 1/τ；新しい道筋（#48）；名は DICTO による；族（#88）：DICTO-ケプラー黄金切頂（正八面体の小黄金切断、x = 1/(φ√5)）と DICTO-GTT 立体</div></div>
+<div class="atom"><img src="figures/atoms/dicto-delilah.png" alt="Delilah"><div class="an"><b>U5；W2</b> デリラ</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23606828">#51</a></div><div class="av">第 I 巻 第2章</div><div class="ant">既知の形（正八面体）、オクテットの辺が 1 のとき辺 2^(-1/3)；デロスの結合におけるこの形への DICTO の命名（#51）</div></div>
+<div class="atom"><img src="figures/atoms/dicto-goliath.png" alt="Goliath"><div class="an"><b>—</b> ゴリアテ</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23632358">#55</a></div><div class="av">第 I 巻 第2章</div><div class="ant">既知の形：A15 の古典的な Z12 配位二十面体（Frank and Kasper 1958）、イェッセンの直交二十面体（Jessen 1967）の凸包を 1/2 倍したもの；ここでは重みの差 3/4 における A15 のパワー図の胞（#55：このタイル張りは、A15 の古典的な描像を体対角線の半分だけずらしたもの）；名は DICTO による</div></div>
+<div class="atom"><img src="figures/atoms/dicto-david.png" alt="David"><div class="an"><b>—</b> ダビデ</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23632358">#55</a></div><div class="av">第 I 巻 第2章</div><div class="ant">既知の形：正方等面四面体、A15 の空の Cr4 四面体を体対角線の半分だけ動かしたもの（#55 系 1）；名は DICTO による</div></div>
+<div class="atom"><img src="figures/atoms/dicto-alicia.png" alt="Alicia"><div class="an"><b>—</b> アリシア</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 巻 第6章</div><div class="ant">W48。この形を最初に見いだしたのはアリシア・ブール・ストット（1900）で、作図によって見いだし、平面図に描き、厚紙の模型に組み立てました。その厳密な幾何（座標、体積、対称性、検証済み）は DICTO が #63 で計算しました。DICTO が彼女にちなんで命名しました。</div></div>
+<div class="atom"><img src="figures/atoms/dicto-unicorn.png" alt="Unicorn"><div class="an"><b>—</b> 一角獣</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 巻 第6章</div><div class="ant">W58。この形を最初に見いだしたのはアリシア・ブール・ストット（1900）で、作図によって見いだし、平面図に描き、厚紙の模型に組み立てました。その厳密な幾何（座標、体積、対称性、検証済み）は DICTO が #63 で計算しました。</div></div>
+<div class="atom"><img src="figures/atoms/dicto-bandersnatch.png" alt="Bandersnatch"><div class="an"><b>—</b> バンダースナッチ</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23690856">#63</a></div><div class="av">第 I 巻 第6章</div><div class="ant">W60。この形を最初に見いだしたのはアリシア・ブール・ストット（1900）で、作図によって見いだし、平面図に描き、厚紙の模型に組み立てました。その厳密な幾何（座標、体積、対称性、検証済み）は DICTO が #63 で計算しました。</div></div>
+<div class="atom"><img src="figures/atoms/piece-greater-golden-cut-icosidodecahedron.png" alt="Greater Golden Cut Icosidodecahedron"><div class="an"><b>—</b> 大黄金切断二十・十二面体</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23917931">#89</a></div><div class="av">第 I 巻 第2章・第6章</div><div class="ant">DICTO 黄金正則切断、DICTO が独立に発見：Zefiro 2011 による二十・十二面体の正六角形の段階、x = 1/3 で切る；#89 で黄金のものとして読んだ（五角形は黄金十角形、三角形は正六角形；長方形 30、頂点 120、Ih）；名は DICTO による</div></div>
+<div class="atom"><img src="figures/atoms/piece-lesser-golden-cut-icosidodecahedron.png" alt="Lesser Golden Cut Icosidodecahedron"><div class="an"><b>—</b> 小黄金切断二十・十二面体</div><div class="am">立体 · <a href="https://doi.org/10.5281/zenodo.23917931">#89</a></div><div class="av">第 I 巻 第2章・第6章</div><div class="ant">DICTO 黄金正則切断、DICTO が独立に発見：Zefiro 2011 による二十・十二面体の正十角形の段階、x = 1/(φ√5) で切る；#89 で黄金のものとして読んだ（三角形は黄金切頂三角形、五角形は正十角形；長方形 30、頂点 120、Ih）；名は DICTO による；DICTO-GTT 立体でもある（#89）；白の騎士ではない（面は同じで、長い辺と短い辺が入れ替わっている）</div></div>
+</div>
+<table class="atl"><caption class="tl">ここに図のないもの：資料の中で計算済みだが、データセットにはまだモデルファイルがないもの</caption><thead><tr><th>番号</th><th>形</th><th>種類</th><th>出典</th><th>第 I 巻</th><th>状況</th></tr></thead>
+<tr><td>—</td><td>DICTO 全菱形ブロック</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23173809">発見 F1</a></td><td>第 I 巻「発見とアプリ」</td><td>平行六面体（F1 の一部）；単独では評価していない</td></tr>
+<tr><td>—</td><td>DICTO 平たい菱面体</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23173809">発見 F1</a></td><td>第 I 巻「発見とアプリ」</td><td>菱面体（F1 の一部）；単独では評価していない</td></tr>
+<tr><td>—</td><td>ベインの等面四面体</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23173809">発見 F3</a></td><td></td><td>Bain 1924（アプリで示している既知の結果で、DICTO のものではない）</td></tr>
+<tr><td>—</td><td>ベインの菱形十二面体</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23173809">発見 F4</a></td><td></td><td>既知（正方形＋60° の菱形）；DICTO のものではない</td></tr>
+<tr><td>—</td><td>正六角形の長菱形十二面体</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23173809">発見 F5</a></td><td>第 I 巻「発見とアプリ」</td><td>DICTO が独立に発見；Grunbaum 2010 図 2(b)（Fedorov の長菱形十二面体）</td></tr>
+<tr><td>—</td><td>サンスター格子（正十二面体とドッグスター）</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23497702">#42</a></td><td>第 I 巻 第2章</td><td>この空間充填形（ハニカム）はハートによる（1996）</td></tr>
+<tr><td>—</td><td>DESHI の配置</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23351291">#19</a></td><td>第 I 巻 第1章</td><td>Gray 2002</td></tr>
+<tr><td>—</td><td>菩提の種</td><td>構造</td><td><a href="https://doi.org/10.5281/zenodo.23311353">#24</a></td><td>第 I 巻 第3章</td><td>一部は既知：カバイの菱形三十面体のクラスターの層；閉じ方、中心、一式は見つからない</td></tr>
+<tr><td>—</td><td>ルーローの四面体</td><td>曲面体</td><td><a href="https://doi.org/10.5281/zenodo.23529499">#45</a></td><td>第 I 巻 第1章</td><td>ルーローの四面体（古典的）</td></tr>
+<tr><td>J1</td><td>半八面体 P（#47 の連結ピース）</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23551326">#47</a></td><td>第 I 巻 第2章</td><td>四角錐、正八面体の半分</td></tr>
+<tr><td>—</td><td>正四面体の中心角錐 Q と Q'（#44、#47 の連結ピース）</td><td>ピース</td><td><a href="https://doi.org/10.5281/zenodo.23551326">#47</a></td><td>第 I 巻 第2章</td><td>正四面体の中心角錐</td></tr>
+<tr><td>—</td><td>A · HexOct 3/8 c タイル、二つの立方体からなるレンガ</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>古典的：辺 1/√2 の立方体二つからなる 1 × 1 × 2 のレンガ（#86）</td></tr>
+<tr><td>—</td><td>D · HexOct −11/24 h タイル、正六角柱</td><td>立体</td><td><a href="https://doi.org/10.5281/zenodo.23896077">#86</a></td><td></td><td>古典的：正六角柱、フョードロフの五つの平行多面体の一つ（1885）（#86）</td></tr>
+</table>
+</section>
+<!--KNOWN END-->
+<!--ABOUT START-->
+<section class="page about" style="break-before:page">
+<h1 class="chapter">著者について</h1>
+<p>DICTO は（アラン・）J・ベイカーの作家名で、日本の大阪の美術作家です。その背景は建築彫刻、石彫、仏像彫刻にあります。シティ・アンド・ギルズ・オブ・ロンドン・アート・スクール（1998–2001）で建築石彫師としての訓練を受け、セント・ジェームズ宮殿で働き、ロンドンのサマセット・ハウスにある公務員ライフル連隊戦争記念碑のローマ字の銘文を、2002年の再奉献のために彫り直しました。2009年からは日本で仏像の彫刻と修復に携わっており、その中には弘法大師空海の作と伝えられる京都・高雄山神護寺の像もあります。</p>
+<p>彼は、接着剤を使わずに組み合わせる独自の二つのモジュール方式、B1NR と DICTOspheres を用いて、リサイクルした PET ボトルから幾何学的な彫刻をつくっています。意匠登録6件をもち、そのうち5件は、彼の名前の背後にある五つの形、正十二面体、正二十面体、立方体、正四面体、正八面体というプラトンの立体の球面への射影にもとづいています。彫刻は京都で、京都市美術館（京都市京セラ美術館、「縁起 III」、2025年）、京都府立堂本印象美術館、京都府立植物園、カンショウ展、京都高瀬川アートフェスティバルで展示されてきました。</p>
+<p>彫刻の背後にある幾何は 89 本の論文となって『DICTO 幾何学作品集』にまとめられ、さらに 7 冊の本となりました。『空間の量子 ― マニフェスト』とその第二巻『DICTO 原子辞典 ― 空間の量子 II』（本書）、『HexOct ― 六方性の法則』、『不思議の国のアリシア ― 赤の女王と白の女王』、『黄金サイクル』、『スター・コア ― 棘、光輪、サイクル』、『ディクトニック結合 ― オクテットから半分の規則へ』（いずれも2026年）です。すべての論文と本は、それぞれ固有の DICTO DOI をもって Zenodo でオープンに公開されています。詳しくは https://dictospheres.com をご覧ください。</p>
+</section>
+
+<!--ABOUT END-->
+</body></html>

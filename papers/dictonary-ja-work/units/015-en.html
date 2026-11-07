@@ -1,0 +1,28 @@
+<h2>A.41 The DICTO Jewel <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23496353)</span></h2>
+<p class="told">Told in Volume I, Chapter 1 · Atoms.</p>
+<p>Exact in ℚ(√5) except where marked float. Scale: the Hexa's cube has edge 1, so a cell has edge 1/2 and volume 1/8 (the scripts use cells of edge 2, every volume 64 times larger). Cells even or odd by index-sum parity; even cells form a face-centred cubic lattice.</p>
+<h3>The Jewel</h3>
+<ul>
+<li>Euclid's roof: ridge 1/φ times the cell edge, height (φ − 1)/2 times the cell edge; roof (1 + √5)/192; dodecahedron (5 + √5)/32. The neighbouring stella (volume 1/16) takes (√5 − 1)/192, leaving a carved roof of exactly 1/96. Jewel = 1/8 + 6/96 = 3/16.</li>
+<li>Each carved roof is four tetrahedra (one per quarter of the cube face). 38 corners (cube 8, ridge points 12, face centres 6, window-completing points 12); 60 faces (12 windows, 48 triangles in the stellas' planes); 38 − 96 + 60 = 2.</li>
+<li>Window: thick Penrose rhombus, side (√5 − 1)/4 = 1/(2φ), long diagonal 1/2, 108° at the ridge corners (cos 108° = (1 − √5)/4) and 72° at the cube corners.</li>
+<li>Symmetry: order 24, pyritohedral (centrosymmetric, three-fold turns, three coordinate mirrors; no diagonal mirror, no four-fold turn, no (111) mirror).</li>
+</ul>
+<h3>The Stella–Jewel Lattice</h3>
+<p>Odd cell = stella + six carved roofs: 1/16 + 6/96 = 1/8 (the uncarved roofs meet in volume exactly 0). Jewels and stellas tile space, 3/16 : 1/16 = 3 : 1.</p>
+<h3>Clusters</h3>
+<table><tr><th>piece</th><th>faces</th><th>volume</th><th>Jewels</th><th>stella inside</th><th>loose stellas per piece</th><th>lattices</th><th>up to symmetry</th></tr>
+<tr><td>Jewel-Tetra</td><td class="n">228 (192 triangles, 36 windows)</td><td class="n">3/4</td><td class="n">4</td><td class="n">0</td><td class="n">4</td><td class="n">4 (index 8)</td><td class="n">2</td></tr>
+<tr><td>Jewel-Octa</td><td class="n">288 (240, 48)</td><td class="n">19/16</td><td class="n">6</td><td class="n">1</td><td class="n">5</td><td class="n">12 (index 12)</td><td class="n">1</td></tr>
+<tr><td>Jewel-Rhombi</td><td class="n">396 (336, 60)</td><td class="n">25/16</td><td class="n">8</td><td class="n">1</td><td class="n">7</td><td class="n">25 (index 16)</td><td class="n">9</td></tr></table>
+<ul>
+<li>Neighbouring Jewels (one face-diagonal step) share exactly one window; two cells apart along an axis, none. Jewel-Rhombi: 18 windows (12 edges, 6 short face diagonals); 8⅓ Jewels.</li>
+<li>Jewel-Octa example lattice: Hermite basis (1,0,3), (0,1,5), (0,0,12) in cell units. Octet pattern: each Jewel in 8 Jewel-Tetras and 6 Jewel-Octas; without overlap at most one stella in six inside a Jewel-Octa, reached by the 12 lattices.</li>
+<li>Jewel-Tetras sharing single Jewels corner to corner form a pyrochlore network (DICTO's Kagome network).</li>
+</ul>
+<h3>Hexa and Hexa-Key</h3>
+<p>Hexa = block (edge 1) + 24 carved roofs = 1 + 24/96 = 5/4 (6⅔ Jewels). Hexa-Key = 1 − 24/96 = 3/4 = 8/16 + 12 × 2/96 (eight stellas, twelve double roofs). Hexas on alternate blocks (rock salt); 5 : 3. Each Hexa meets each of 12 neighbours on exactly two whole windows (24 in all); no two Hexas' roofs overlap.</p>
+<h3>Twin</h3>
+<p>Twin rule: a centrosymmetric solid with a three-fold axis has as mirror image the same solid turned 60°. The packing: a (111) twin left about 4% of points uncovered and 4% covered twice (float, #37a); the (111) mirror takes the cell step (1, 0, 0) to (1/3, −2/3, −2/3), off the cubic lattice.</p>
+<h3>Checks and sources</h3>
+<p>jewel_exact.py (21 PASS) and cluster_exact.py (24 PASS), exact; lalvani_edges.py (float): all 48 window edges lie on the icosahedral two-fold axes, none of the other 48. Face counts counted from exact shared windows and stellas. Searched: full text of 80 library sources and web, 20 October 2026. References: Euclid XIII.17 (Heath 1908); Kepler 1619; Penrose 1979; Bragg 1913; Lalvani US 4,723,382 (1988); DICTO #8, #17, #18, #37, #37a, #40, Kaleidohedra findings #10, #10b, #15, #16. Study: studies/2026-10-20-dicto-jewel, commit d475b59.</p>

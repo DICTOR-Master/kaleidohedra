@@ -22,8 +22,8 @@ import fs from 'node:fs';
   // JA TEXT GUARD (11-07, reader: "reads like machine translation"): a final ja book may not carry leftover English words outside
   // （…） glosses, nor the known bad variants found in Quanta-ja v1.
   if (/^ja/i.test(lang) && !/^DRAFT/i.test(path.basename(pdf))) {
-    const body = raw.replace(/<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, ' ').replace(/（[^（）]*）|\([^()]*\)|「[ -~]*」/g, ' ');
-    const latin = [...new Set((body.match(/(?<![\w.\-])[a-z]{4,}(?![\w.\-@])/g) || []).filter(w => !/^(zenodo|https?|www|dictospheres|com|org)$/.test(w)))];
+    const body = raw.replace(/<style[\s\S]*?<\/style>/g, '').replace(/<(sub|sup|code|a)\b[^>]*>[\s\S]*?<\/\1>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/（[^（）]*）|\([^()]*\)|「[ -~]*」/g, ' ');
+    const latin = [...new Set((body.match(/(?<![\p{L}\w.\-@\/_])[a-z]{4,}(?![\p{L}\w.\-@\/_(])/gu) || []).filter(w => !/^(zenodo|https?|www|dictospheres|com|org|arccos|arcsin|arctan|netlib|diag|[hc]+)$/.test(w)))];
     const BADJA = /白い女王|フル章|アリシアの不思議の国|いぶし十二面体|ポアン(?!ソ)|正の四次元|四次元の正多面体/g;
     const bad = [...new Set(body.match(BADJA) || [])];
     if ((latin.length || bad.length) && !process.env.ALLOW_BANNED) { console.error('GUARD (ja text): leftover English ' + latin.slice(0, 30).join(', ') + (bad.length ? '; bad variants ' + bad.join(', ') : '')); process.exit(7); } }

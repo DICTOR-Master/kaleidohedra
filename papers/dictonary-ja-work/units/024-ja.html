@@ -1,0 +1,21 @@
+<h2>A.30 フィボナッチの背骨 <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23396361)</span></h2>
+<p class="told">第 I 巻 第2章 結合で語られています。</p>
+<p>「厳密（exact）」とは ℚ(√5) で有理数演算により検証したこと、「浮動小数点（float）」とは浮動小数点で計算し証明はしていないことを意味します。</p>
+<ul>
+<li>六角形の結合ベクトル 2d·n/|n|²；20 の六角形の方向は、立方体をなす 8 方向の組（互いの余弦 ±1/3 と −1）をちょうど 5 つ含みます：体心立方の五つの声部です。72° の楔（始めの角 59°）；隣り合う声部は、共有する 3 回軸のまわりに 44.4775° の関係にあります。</li>
+<li>重なりの判定：K − K = 2K；X と Y の複製が交わらないのは、ある面の平面 n·x = d について n·(X − Y) ≥ 2d となるとき、かつそのときに限ります。</li>
+</ul>
+<table><tr><th>半径</th><th>サイト</th><th>除去</th><th>近い対</th><th>重なり</th><th>接触</th></tr>
+<tr><td class="n">5</td><td class="n">336</td><td class="n">80</td><td class="n">620</td><td class="n">0</td><td class="n">620</td></tr>
+<tr><td class="n">8</td><td class="n">1471</td><td class="n">240</td><td class="n">3630</td><td class="n">0</td><td class="n">3605</td></tr>
+<tr><td class="n">10</td><td class="n">2756</td><td class="n">385</td><td class="n">7465</td><td class="n">0</td><td class="n">7390</td></tr></table>
+<ul>
+<li>半径 5 で、5 回対称を保つ最小の除去は 16 個の輪（80 個の複製）で、貪欲法と同じです；対称性なしでは 72。</li>
+<li>黄金の高さ：どの結合も高さ (m + nφ)u をもち、u² = 8/81 − 8√5/405（u ≈ 0.233658）、(m, n) = (±1, 0)、±(1, 2)。</li>
+<li>コアの平面：除去した複製 11 個（ほかに平面外の 1.0042 の輪と、1.084、1.136 の複製）；サイト 73；軸の傾き −φ。</li>
+<li>隙間 S = 1.22345、L = 1.97958、T = 3.20304；L/S = φ、T = L + S。標準の窓 [0, W)、W² = 64/81 + 128√5/405（W = 1.223451 = S）。高さ ±45 まで：点 54 個、長い隙間 33、短い隙間 20。</li>
+<li>輪の衝突距離 tc² = 8/9 + 8√5/45、tc = 1.134201；除去された t の最大 1.113132；辺の複製の面関数 28/81 − 4√5/27 &gt; 0。|h| &lt; 12.812 では、tc ≤ t &lt; W となる平面上の点はありません；そのような最初の高さは 12.812、−22.71、34.77、−44.66。</li>
+<li>分岐（1135 サイト、厳密）：h = 12.8121（t = 1.1553）のコアの複製は、h = 13.8019 の対抗の複製（距離 1.1690）と重なり、面関数 232/81 − 104√5/81 &lt; 0；重なりの薄片 0.71%（浮動小数点）。整数計画：輪 43 対 44、46 対 47、45 対 46、42 対 43。フィボナッチを保つ貪欲法は 385 ではなく 555 を除去します。</li>
+<li>継ぎ目（浮動小数点）：半径 3 から 9 で除去 5、20、60、95、145、205、275；一つの継ぎ目の空孔 66 個：最も強いピーク I/N = 46.6（完全なら 66、ランダムなら 11.8 ± 2.0）。</li>
+</ul>
+<p><b>出典とスクリプト。</b> Sutton 1988–1992; Rivier &amp; Lawrence 1988; Gratias &amp; Thalal 1988; Xiong et al. 2026; Ranganathan, Srivastava &amp; Lord 2006; Pauling 1985; Prodan et al. 2017; Baake &amp; Grimm 2013; Katz &amp; Gratias 1993（未読）; Hubbard 1978; van Enter, Koivusalo &amp; Miękisz 2019; Hofmeister 1998; Lee &amp; Glotzer 2022。スクリプト：studies/2026-10-16-ocd-pyrochlore（chorus_exact_big.py, chorus_heights_exact.py, chorus_modelset.py, chorus_canonical.py, chorus_window_why.py, chorus_fork_*.py, chorus_boundary.py）。</p>

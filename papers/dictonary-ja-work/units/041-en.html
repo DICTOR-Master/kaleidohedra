@@ -1,0 +1,20 @@
+<h2>A.34 Progenitors <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23413184)</span></h2>
+<p class="told">Told in Volume I, Chapter 3 · Shells.</p>
+<p>Exact in ℚ(√5); every nesting and volume checked with remainder 0. Dharma sizes (icosahedron edge 1/φ).</p>
+<ul>
+<li>Pair: H ⊂ s·O, s = 81/8 − 27√5/8 (20 corners touch); O ⊂ t·H, t = (170 + 2√5)/361 (12 touch); s·t = (3375 − 1107√5)/722 ≈ 1.246, not a power of φ.</li>
+<li>Quartet TI, H, O, PD: six cyclic orders, none golden; tightest TI ⊂ H ⊂ O ⊂ PD ⊂ TI gains (63 − 27√5)/2 = 9/φ⁴ = (3/φ²)² per round.</li>
+<li>Search: 8,742 cycles through TI, H, O, PD with any of I, ID, D, RT; none closes on a power of φ.</li>
+<li>Golden cycle, O at 3φ²/4: I ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ I·φ³; I·φ³/I = 38 + 17√5 = φ⁹ in volume.</li>
+</ul>
+<table><tr><th>Step</th><th>Contact (exact)</th></tr>
+<tr><td>I ⊂ ID</td><td>loose (0 of 12 corners on ID's faces)</td></tr>
+<tr><td>ID ⊂ O</td><td>tight: all 30 corners of ID on faces of O</td></tr>
+<tr><td>O ⊂ rTI</td><td>loose</td></tr>
+<tr><td>rTI ⊂ TI</td><td>tight: all 90 corners of rTI on TI's edges</td></tr>
+<tr><td>TI ⊂ H</td><td>tight: all 60 corners of TI on faces of H</td></tr>
+<tr><td>H ⊂ jtI</td><td>tight: all 80 corners of H on faces of jtI</td></tr>
+<tr><td>jtI ⊂ RT</td><td>tight: 80 corners of jtI on faces of RT</td></tr>
+<tr><td>RT ⊂ I·φ³</td><td>loose (0 of 32 corners)</td></tr></table>
+<p>Twelve-station cycle (Vajrayana): I ⊂ Cleo star ⊂ D′ ⊂ ID ⊂ O ⊂ rTI ⊂ TI ⊂ H ⊂ jtI ⊂ RT ⊂ M ⊂ I·φ³.</p>
+<p><b>Sources and scripts.</b> Kepler 1596; Dechant et al. 2014; MathWorld; Wikipedia; McCooey; Hart; Polytope Wiki; Klitzing; OEIS; Wenninger's lists; arXiv; DICTO's library (16 October 2026). Antiprism 0.29: 840 Conway forms with up to two operators on I and D match neither H nor O; core and hull have the structures of atI and jtI. Not read: Wenninger, Coxeter, Cromwell, Holden in print; Stella not run. Scripts: studies/2026-10-16-progenitors (pair_chain.py, quartet.py, golden_search.py, o_dharma.py, oh_compound.py, core_hull_in_cycle.py).</p>

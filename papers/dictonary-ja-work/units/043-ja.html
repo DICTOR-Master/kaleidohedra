@@ -1,0 +1,25 @@
+<h2>A.32 裏返しの殻 <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23405029)</span></h2>
+<p class="told">第 I 巻 第4章 サイクルで語られています。</p>
+<p>逆向きの連鎖 D ⊂ ID ⊂ オグドエコンタヘドロン ⊂ PD ⊂ I ⊂ RT ⊂ D·φ³；体積は 38 + 17√5 = φ⁹ で閉じます。極は ℚ(√5) で厳密です。</p>
+<table><tr><th>皮（反転テスト、浮動小数点）</th><th>ピース</th><th>中間で覆われる割合</th><th>二重</th><th>最も深い重なり</th></tr>
+<tr><td>I → ID</td><td class="n">32</td><td class="n">100%</td><td class="n">35.1%</td><td class="n">0.369</td></tr>
+<tr><td>ID → D</td><td class="n">20</td><td class="n">3.1%</td><td class="n">0</td><td>なし</td></tr>
+<tr><td>D → TI</td><td class="n">42</td><td class="n">67.1%</td><td class="n">4.4%</td><td class="n">0.163</td></tr>
+<tr><td>TI → H</td><td class="n">20</td><td class="n">7.7%</td><td class="n">0</td><td>なし</td></tr>
+<tr><td>H → RT</td><td class="n">72</td><td class="n">17.8%</td><td class="n">0.1%</td><td class="n">0.070</td></tr>
+<tr><td>RT → I·φ³</td><td class="n">50</td><td class="n">100%</td><td class="n">36.4%</td><td class="n">0.309</td></tr></table>
+<table><tr><th>層</th><th>ピース</th><th>各ピース</th><th>厳密な体積</th></tr>
+<tr><td>D → ID</td><td class="n">12</td><td>正十二面体の各面の上の柱</td><td class="n">(−144185 + 64487√5)/243</td></tr>
+<tr><td>ID → O</td><td class="n">12</td><td>二十・十二面体の各五角形の上のキャップ</td><td class="n">(−155 + 101√5)/4617</td></tr>
+<tr><td>O → PD</td><td class="n">20</td><td>各正六角形の上の低い角錐</td><td class="n">(−22 + 10√5)/81</td></tr>
+<tr><td>PD → I</td><td class="n">60</td><td>不規則な楔、頂点 5、三角形 6</td><td class="n">(−6560 + 2936√5)/513</td></tr>
+<tr><td>I → RT</td><td class="n">20</td><td>正二十面体の各面の上の三角錐</td><td class="n">(−796 + 356√5)/3</td></tr>
+<tr><td>RT → D·φ³</td><td class="n">30</td><td>各菱形の上の屋根</td><td class="n">200 − 1336√5/15</td></tr></table>
+<ul>
+<li>ゆるみ（浮動小数点）：RT はあと 1.894 倍、内側の D は 1.232 倍まで大きくできます。ぴったりの入れ子：内側の D を (11/18 + 5√5/18) 倍、外側を (5 − 2√5) 倍；内接球の半径 0.495、0.567、0.623、0.653、0.714、0.764、0.898；外側の層 25.2 → 1.9；柱 (−35/729 + 71√5/2187)、楔 (−7352/3 + 1096√5)；長さの比 1.8146（2 乗 49815/2 − 22275√5/2）。</li>
+<li>中身の詰まった立体としての星：密度 3、3、7、7。大星型十二面体：体積は正二十面体 3 個分；四面体 60 個（188/3 − 28√5）と五角錐 60 個（112/3 − 248√5/15）；先端と谷の半径² の比 3φ³/√5。</li>
+<li>内側の隙間：六方二十面体 × (9 − 3√5) = 6/φ²、斜方切頂二十・十二面体 × 2/15；遊び 5/9 + 2√5/9 = √5·φ³/9 ≈ 1.0525；ピース 12、120、および 2 種類のキャップ 50。最も近い固定：凧形六十面体の中の斜方二十・十二面体、遊び 62/123 + 137√5/615 ≈ 1.00218。</li>
+<li>枠：頂点の半径² 10 + 2√5、中点の半径² 4；長い辺は正十二面体の辺の φ³ 倍（1 + 2φ = φ³）。</li>
+<li>ハフナー 2007：私たちの四面体は、同じ辺での彼の体積のちょうど φ² 倍です。</li>
+</ul>
+<p><b>検証と出典。</b>geomcheck.py（枠、入れ子の両方の順序、既知の場合を先に、対称性による種類分け、厳密判定のゲート、ラベル）；すべてのスクリプトを再実行。Firsching 2015; Croft 1980; Takakura et al. 2007; Twarock, Valiunas and Zappa 2015; Dechant et al. 2014; Kepler 1619; Poinsot 1810; Hafner 2007。スクリプト：studies/2026-10-16-polar-dharma, -flip-test。</p>
