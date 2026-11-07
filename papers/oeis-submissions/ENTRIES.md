@@ -1,4 +1,6 @@
-# OEIS submissions prepared for DICTO (7 November 2026)
+# OEIS submissions prepared for DICTO (7 November 2026; updated 8 November)
+
+Update 8 November: DICTO's OEIS account is approved, and #102 is released (DICTO DOI 10.5281/zenodo.24037664), so its DOI is now in entries 1 and 7 and in the A002895/A002899 comments. All entries are ready to submit, entry 1 first.
 
 Nothing has been submitted. DICTO submits these himself from his own OEIS account.
 
@@ -10,12 +12,12 @@ Nothing has been submitted. DICTO submits these himself from his own OEIS accoun
 4. Answer the editors on the draft page ("Discussion"), and edit the draft there; do not resubmit a changed copy.
 5. When entry 1 is approved, submit the next one, replacing the placeholder A?????? numbers in %Y and %C by the real A-numbers.
 6. The comments on existing entries (section C) are added with "edit" on that entry's page; each also goes through the editors.
-7. New contributors are asked to keep only a few drafts open at a time; one at a time is safest.
+7. New contributors should keep only a few drafts open at a time; one at a time is safest.
 8. Links (%H) must be stable: use the Zenodo DOIs; entry 1 and the comments on A002895/A002899 should wait until #102 is released and has its DOI.
 9. The editors may shorten names, ask for a PARI/Mathematica program, or move text between fields; that is normal.
 10. Each program below runs in python3 in under one second and prints exactly the data shown.
 
-Order suggested: 1 (after #102 is out), 2, 3, 4, 5, 6, then the comments, then 7 (optional).
+Order suggested: 1, 2, 3, 4, 5, 6, then the comments, then 7 (optional).
 
 All terms below were recomputed on 7 November 2026: `studies/2026-11-07-oeis-candidates/oeis_checks.py` rerun (output identical to `data-oeis-terms.txt`, FINAL ok); the coordination sequences extended to n = 100 by breadth-first search on all atoms of one period; and every program printed in this file was run as written and compared term by term with the data lines.
 
@@ -35,13 +37,13 @@ All terms below were recomputed on 7 November 2026: `studies/2026-11-07-oeis-can
 %C A?????? a(1) = a(2) = 0 because the shortest cycles of diamond are its six-rings.
 %C A?????? The same numbers hold at every atom of lonsdaleite (hexagonal diamond, 2H) and of the tetrahedral network of every close-packed stacking (polytypes 4H, 6H, 9R, ..., periodic or not), although their coordination sequences differ (A008253, A008264, A??????): this is DICTO's Loop Equality, found in #74 for lengths 6 to 34 on five stackings and proved for all lengths in #102 (Theorem 1). The corresponding statement for all closed walks (A002895) is due to Nagle (1966, ice) and Thorpe (1972, periodic polytypes).
 %D A?????? DICTO, Spin Ice and Kagome Magnets on Every Stacking (#74), Zenodo, 2026, DICTO DOI 10.5281/zenodo.23730421, Section 3.
-%D A?????? DICTO, Every Site Hears the Same: the Loop Equality Is a Theorem (#102), Zenodo, 2026 (DOI at release).
+%D A?????? DICTO, Every Site Hears the Same: the Loop Equality Is a Theorem (#102), Zenodo, 2026, DICTO DOI 10.5281/zenodo.24037664.
 %D A?????? DICTO, HexOct: The Hexagonality Law, with the Window Law, the Rule of Halves & the Swap Rule (book), Zenodo, 2026, DICTO DOI 10.5281/zenodo.23731359, Chapter 13.
 %D A?????? J. F. Nagle, Lattice statistics of hydrogen bonded crystals. I. The residual entropy of ice, J. Math. Phys. 7 (1966), 1484-1491.
 %D A?????? M. F. Thorpe, Random walks in polytype structures, J. Math. Phys. 13 (1972), 294-299.
 %D A?????? H. Bass, The Ihara-Selberg zeta function of a tree lattice, Internat. J. Math. 3 (1992), 717-797.
 %H A?????? DICTO, <a href="https://doi.org/10.5281/zenodo.23730421">Spin Ice and Kagome Magnets on Every Stacking</a>, Zenodo (2026).
-%H A?????? DICTO, <a href="https://doi.org/10.5281/zenodo.XXXXXXXX">Every Site Hears the Same: the Loop Equality Is a Theorem</a>, Zenodo (2026).
+%H A?????? DICTO, <a href="https://doi.org/10.5281/zenodo.24037664">Every Site Hears the Same: the Loop Equality Is a Theorem</a>, Zenodo (2026).
 %H A?????? DICTO, <a href="https://doi.org/10.5281/zenodo.23731359">HexOct: The Hexagonality Law</a>, Zenodo (2026).
 %H A?????? M. F. Thorpe, <a href="https://doi.org/10.1063/1.1665973">Random walks in polytype structures</a>, J. Math. Phys. 13 (1972), 294-299.
 %F A?????? Sum_{n>=1} a(n)*x^n/n = -2*log((1-x)*(1+3*x)) + Sum_{k>=1} A002895(k)*(x/(1+3*x)^2)^k/k (Ihara-Bass formula for a 4-regular net).
@@ -247,9 +249,9 @@ Extension; not yet the subject of a DICTO paper beyond #102 Corollary 3 (lengths
 %N A?????? Number of closed non-backtracking walks of length n (cyclically non-backtracking, i.e., tailless) starting and ending at a fixed vertex of the face-centered cubic lattice (12 nearest neighbours).
 %C A?????? The same numbers hold at every sphere of the hexagonal close packing and of every close-packed stacking (dhcp, ..., periodic or not), DICTO #102 Corollary 3; the corresponding statement for all closed walks (A002899) is Thorpe (1972) for periodic stackings.
 %C A?????? a(3) = 48: each vertex lies on 24 triangles (the 24 edges of its cuboctahedron of neighbours), walked in 2 directions.
-%D A?????? DICTO, Every Site Hears the Same: the Loop Equality Is a Theorem (#102), Zenodo, 2026 (DOI at release), Corollary 3.
+%D A?????? DICTO, Every Site Hears the Same: the Loop Equality Is a Theorem (#102), Zenodo, 2026, DICTO DOI 10.5281/zenodo.24037664, Corollary 3.
 %D A?????? M. F. Thorpe, Random walks in polytype structures, J. Math. Phys. 13 (1972), 294-299.
-%H A?????? DICTO, <a href="https://doi.org/10.5281/zenodo.XXXXXXXX">Every Site Hears the Same: the Loop Equality Is a Theorem</a>, Zenodo (2026).
+%H A?????? DICTO, <a href="https://doi.org/10.5281/zenodo.24037664">Every Site Hears the Same: the Loop Equality Is a Theorem</a>, Zenodo (2026).
 %F A?????? G.f.: 10*x^2/(1-x^2) - 22*x^2/(1+11*x^2) + ((1-11*x^2)/(1+11*x^2))*(F(x/(1+11*x^2)) - 1), where F(x) = Sum_{k>=0} A002899(k)*x^k (Ihara-Bass formula for a 12-regular net).
 %e A?????? a(3) = 48, a(4) = 264.
 %o A?????? (Python)
@@ -285,7 +287,7 @@ Add with "edit" on each entry. Signature at the end: "- _DICTO_, Nov 07 2026" (o
 ```
 %C A002895 Also the number of closed 2n-step walks from any atom of lonsdaleite (A008264) and of the tetrahedral network of every close-packed stacking (polytypes 4H, 6H, 9R, ..., periodic or not), although the coordination sequences of these atoms differ. For periodic polytypes this is Thorpe (1972); for every atom of every stacking, including aperiodic ones, see DICTO (2026, #102, Lemma 2). Via the Ihara-Bass formula the same holds for the closed non-backtracking walks A??????.
 %D A002895 M. F. Thorpe, Random walks in polytype structures, J. Math. Phys. 13 (1972), 294-299.
-%H A002895 DICTO, <a href="https://doi.org/10.5281/zenodo.XXXXXXXX">Every Site Hears the Same: the Loop Equality Is a Theorem</a>, Zenodo (2026).
+%H A002895 DICTO, <a href="https://doi.org/10.5281/zenodo.24037664">Every Site Hears the Same: the Loop Equality Is a Theorem</a>, Zenodo (2026).
 %Y A002895 Cf. A008264, A??????(entry 1).
 ```
 
@@ -293,7 +295,7 @@ Add with "edit" on each entry. Signature at the end: "- _DICTO_, Nov 07 2026" (o
 ```
 %C A002899 Also the number of closed n-step walks from any sphere of the hexagonal close packing and of every close-packed stacking of equal spheres (dhcp, ..., periodic or not). For periodic stackings this is Thorpe (1972); every sphere of every stacking: DICTO (2026, #102, Corollary 3). Compare A293237 (equal escape probabilities of fcc and hcp).
 %D A002899 M. F. Thorpe, Random walks in polytype structures, J. Math. Phys. 13 (1972), 294-299.
-%H A002899 DICTO, <a href="https://doi.org/10.5281/zenodo.XXXXXXXX">Every Site Hears the Same: the Loop Equality Is a Theorem</a>, Zenodo (2026).
+%H A002899 DICTO, <a href="https://doi.org/10.5281/zenodo.24037664">Every Site Hears the Same: the Loop Equality Is a Theorem</a>, Zenodo (2026).
 %Y A002899 Cf. A293237, A??????(entry 7, if submitted).
 ```
 
@@ -319,4 +321,4 @@ Add with "edit" on each entry. Signature at the end: "- _DICTO_, Nov 07 2026" (o
 2. **O'Keeffe 1991** (Chem. Mater. 3, 332-335) characterized the sites of SiC polytypes topologically and is cited on A008264 for a formula; it very probably lists the first coordination-sequence terms of the 4H and 6H sites. It was not read (paywalled; Crossref has no abstract). Entries 2-5 credit it in %D; if the paper prints these sequences, the %N/%C should say "computed independently, extending O'Keeffe (1991)". The OEIS has no hits for any of the four sequences (searched 7 November 2026).
 3. **The 4H "c" atoms equal lonsdaleite** (A008264) to n = 100 with the same g.f.: computed, not proved; therefore "Empirically" in the A008264 comment. The g.f.s of entries 2-5 are fitted (Berlekamp-Massey, order <= 14 from 100 terms) and verified to n = 100; rationality is known in general for periodic nets, the exact forms are marked "Empirical".
 4. **Site names.** The script output labelled the sites "4H B" and "6H A, B atom 0, B atom 1". The entries name them by structure instead (hexagonal bilayers of 4H, which include both B and C; hexagonal A bilayers of 6H; the two halves of the cubic bilayers of 6H by the direction of their three interlayer bonds), since the letter alone does not fix the site.
-5. **#102 DOI.** Replace zenodo.XXXXXXXX in entries 1, 7 and the A002895/A002899 comments once #102 is released.
+5. **#102 DOI.** Replace zenodo.24037664 in entries 1, 7 and the A002895/A002899 comments once #102 is released.
