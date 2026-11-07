@@ -5978,6 +5978,33 @@
    "found_by": "OEIS candidate search; recomputed",
    "status": "VERIFIED by the search script; fix at Golden Ladder v6",
    "date": "2026-11-07"
+  },
+  {
+   "n": 25,
+   "where": "Quanta of Space v2.1 (10.5281/zenodo.23754454), #35a and #35b entries",
+   "what": "\"20 places/corners where three triangles meet\"",
+   "reason": "a solid of 60 triangles, 32 corners, 90 edges has corner degrees summing to 180 = 12×5 + 20×6: the 20 are three-FOLD corners where SIX triangles meet (as #35a itself says later)",
+   "found_by": "Farsi translation check",
+   "status": "VERIFIED (Euler count); fix wording in v2.2",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 26,
+   "where": "Quanta of Space v2.1 (10.5281/zenodo.23754454), #13 entry",
+   "what": "\"With the 13 dodecahedra, these 63 pieces…\" reads as 13 + 63",
+   "reason": "63 = 13 + 30 + 20 already includes the dodecahedra",
+   "found_by": "Farsi translation check",
+   "status": "TO FIX wording in v2.2",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 27,
+   "where": "Quanta of Space v2.1 (10.5281/zenodo.23754454), #28 entry",
+   "what": "\"the tips of the Shields are the corners of … the pentakis dodecahedron\"",
+   "reason": "only 20 tips: they are the 20 six-fold corners of its 32",
+   "found_by": "Farsi translation check",
+   "status": "TO FIX wording in v2.2",
+   "date": "2026-11-07"
   }
  ],
  "modus_operandi": {
