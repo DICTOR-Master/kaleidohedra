@@ -5122,7 +5122,7 @@
  },
  "house_rules": {
   "note": "DICTO 5 Nov 2026: 'get all these notes into concordance'. Every standing rule for papers, publishing, naming, wording and work, in one place. Where a tool enforces a rule it is named; the rest must be checked by hand before each PDF/publish. Add new rules HERE and in the memory at once.",
-  "count": 117,
+  "count": 121,
   "rules": [
    {
     "rule": "Sort, don't pile",
@@ -5711,6 +5711,26 @@
     "rule": "Site papers + news",
     "what": "FIRM 11-05: dictospheres papers grid in number order (newest first) with ONE feature; news never repeats papers or books shown elsewhere on the page",
     "source": "memory/feedback-site-papers-news.md"
+   },
+   {
+    "rule": "Only happens once",
+    "what": "FIRM 11-07: every mess-up — fix, sweep, mechanical guard the same session (see modus_operandi)",
+    "source": "memory/feedback-only-happens-once.md"
+   },
+   {
+    "rule": "Version line",
+    "what": "STANDING 11-07: at publication the status box becomes a permanent 'Version N adds …' line; Zenodo notes too",
+    "source": "memory/feedback-version-line.md"
+   },
+   {
+    "rule": "Japanese editions",
+    "what": "FIRM 11-07: every Japanese edition: katakana cover + accurate Japanese (accuracy, not style)",
+    "source": "memory/feedback-japanese-editions.md"
+   },
+   {
+    "rule": "Hygiene",
+    "what": "FIRM 11-07: keep unread drafts clear; delete transitional files; tidy.py daily and at release",
+    "source": "tools/tidy.py"
    }
   ]
  },
@@ -5959,5 +5979,91 @@
    "status": "VERIFIED by the search script; fix at Golden Ladder v6",
    "date": "2026-11-07"
   }
- ]
+ ],
+ "modus_operandi": {
+  "note": "DICTO 7 Nov 2026: 'as with all such mess-ups from now on ... only happens once law!' and 'maybe add to concordance under rules of operation — modus operandi'. How the work is run.",
+  "law": "ONLY HAPPENS ONCE: every mess-up is (1) fixed, (2) swept for the same mistake everywhere else, and (3) given a mechanical guard (a script check, hook, runner or test) in the same session, so it cannot recur. A note alone is not a guard. Each guard is listed below with the mess-up that caused it.",
+  "guards": [
+   {
+    "date": "2026-11-05",
+    "mess_up": "papers printed with banned phrases or a title missing",
+    "guard": "print.mjs refuses: banned phrases (exit 2), DRAFT without status box (3), missing short title (4)",
+    "where": "papers/print.mjs"
+   },
+   {
+    "date": "2026-11-07",
+    "mess_up": "a study run from the wrong folder overwrote committed data files with a crash (3 files)",
+    "guard": "tools/runjob.py: runs a study from its own folder, replaces a data file only on exit 0 + a final 'FINAL ok'; failures go to <file>.FAILED",
+    "where": "tools/runjob.py"
+   },
+   {
+    "date": "2026-11-07",
+    "mess_up": "data files holding a crash could be committed",
+    "guard": "pre-commit hook blocks data*.txt with a Traceback / FINAL FAIL / TIMEOUT / 'No such file', and runjob scratch files",
+    "where": "tools/pre-commit"
+   },
+   {
+    "date": "2026-11-07",
+    "mess_up": "a diverged solver printed 'FINAL ok' anyway",
+    "guard": "pre-commit blocks study scripts that print FINAL ok unconditionally",
+    "where": "tools/pre-commit"
+   },
+   {
+    "date": "2026-11-07",
+    "mess_up": "the Japanese Quanta read like machine translation (glossary never applied)",
+    "guard": "print.mjs refuses a final Japanese book with leftover English or known bad wordings (exit 7) or without its katakana cover (exit 6)",
+    "where": "papers/print.mjs"
+   },
+   {
+    "date": "2026-11-07",
+    "mess_up": "six DICTOnary catalogue notes printed cut off mid-word (a script cut text at 140 characters)",
+    "guard": "pre-commit blocks generators that slice text written into HTML with [:N]",
+    "where": "tools/pre-commit"
+   },
+   {
+    "date": "2026-11-07",
+    "mess_up": "a mistyped deploy option was taken as a folder name",
+    "guard": "ship.py refuses unknown options",
+    "where": "~/dicto-deploy/ship.py"
+   },
+   {
+    "date": "2026-11-07",
+    "mess_up": "the PDF preview was not set on two releases",
+    "guard": "zen_new.py / zen_newversion.py set the preview themselves after publishing",
+    "where": "papers/zen_new.py, papers/zen_newversion.py"
+   },
+   {
+    "date": "2026-11-07",
+    "mess_up": "drafts and transitional files piling up (repo and machines)",
+    "guard": "tools/tidy.py daily + at every release: drafts deleted at release or after 14 days, read-earlier after 14 days, runjob scratch, old scratch on dicto-big-brother; never touches git-tracked files; pre-commit blocks draft PDFs",
+    "where": "tools/tidy.py, tools/pre-commit"
+   },
+   {
+    "date": "2026-11-07",
+    "mess_up": "tidy's first run deleted four tracked source files (style.part); restored from git",
+    "guard": "tidy.py never deletes a git-tracked file; runjob scratch matched exactly",
+    "where": "tools/tidy.py"
+   },
+   {
+    "date": "2026-11-07",
+    "mess_up": "the HexOct v9 title page overflowed and split the logo onto the cover page",
+    "guard": "figcheck flags any cover/title page whose contents overflow it; all books' title pages use min-height and top alignment",
+    "where": "papers/figcheck.mjs, book-*/assemble.py"
+   },
+   {
+    "date": "2026-11-07",
+    "mess_up": "plates 4 mm wider than the text column (HexOct v8)",
+    "guard": "figcheck already flags it; plates fitted",
+    "where": "papers/figcheck.mjs"
+   }
+  ],
+  "practice": [
+   "Read ok = release the exact PDF read, the same session; a new record or chapters into a book: ask first.",
+   "At release the red status box becomes one permanent line 'Version N adds …' under the version line, and the Zenodo notes say the same.",
+   "Errata: every error found goes into the Concordance errata with where, what, the REASON, who/what found it, and its status; fixes cite the entry.",
+   "Hygiene: the reading folder holds only what waits for DICTO; drafts disappear at release; transitional files are deleted, not kept.",
+   "Japanese and other editions: accuracy first (checked against the English, glossary binding), a title cover in the language's own script, and each edition its own record.",
+   "Every heavy job: pilot first, run through runjob, one heartbeat and a final OK/FAIL/TIMEOUT line; never two multi-GB jobs at once on dicto-big-brother."
+  ]
+ }
 }
