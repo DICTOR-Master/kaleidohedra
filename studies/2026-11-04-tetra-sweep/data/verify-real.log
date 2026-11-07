@@ -1,0 +1,4 @@
+cal (2,1,0,0)/3 w=0 | vol True | overlaps 0 of 45008 | coverage {1: 4000}
+cal (1,1,1,0)/3 w=b1/3 | vol True | overlaps 0 of 31138 | coverage {1: 4000}
+cal WRONG (1,1,1,0)/3 w=0 | vol True | overlaps 213 of 31586 | coverage {0: 658, 1: 2591, 2: 751}
+golden (φ^-1, φ^-2, 0, 0) w=0 | vol True | overlaps 436 of 41412 | coverage {0: 388, 1: 3232, 2: 380}
