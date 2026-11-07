@@ -15,7 +15,7 @@ top=sorted(rows,key=lambda r:-(r['formula']*2+len(r['jargon'])))[:10]
 FULL={'truncat':'truncated','rhombohedr':'rhombohedron','rhombic dodecahedr':'rhombic dodecahedron','polyhedr':'polyhedron','zonohedr':'zonohedron','cuboctahedr':'cuboctahedron','crystallograph':'crystallography','tessellat':'tessellation','parallelohedr':'parallelohedron','deltahedr':'deltahedron','stellation':'stellation'}
 for r in rows: r['jargon']=sorted({FULL.get(j,j) for j in r['jargon']})
 cj=Counter(j for r in rows for j in r['jargon'] if j not in ('Proved','proved')).most_common(20)
-alts=re.findall(r'alt="([^"]*)"',body); FA=re.compile(r'[√φπ⊗ℤ²³]|\d+/\d+|cos|sin')
+alts=re.findall(r'alt="([^"]*)"',body); FA=re.compile(r'[√φπ⊗ℤ²³μ]|\d+/\d+|\bcos\b|\bsin\b')
 na=len(alts); naf=sum(bool(FA.search(a)) for a in alts); nae=sum(a=='' for a in alts)
 li=lambda xs:''.join(f'<li>{x}</li>' for x in xs)
 toprows=''.join(f'<tr><td>{html.escape(r["title"])}</td><td>{r["formula"]}</td><td>{html.escape(", ".join(r["jargon"]))}</td></tr>' for r in top)
@@ -38,12 +38,12 @@ H=f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><title>dictosph
 <h2>5. Discoveries</h2>
 <p>Sixteen findings in technical names (Sunstar clusters, Dogstar, octet network, tridiminished icosahedra), text only, no pictures.</p>
 <h2>6. Pictures and screen readers</h2>
-<p>{na} image descriptions: {naf} contain formulas, which a screen reader reads out symbol by symbol (for example "2 cos(180°/p) = 1, √2, φ"); {nae} are empty.</p>
+<p>{na} image descriptions: {naf} contain formulas, which a screen reader reads out symbol by symbol (for example "2 cos(180°/p) = 1, √2, φ"); {nae} are empty (the decorative DICTO marks on the book backs are empty on purpose).</p>
 <h2>7. Things to make and hold</h2>
 <p>No printable nets or paper-craft downloads are offered on the site; one book card mentions origami nets. The apps hold nets, but nothing on the page leads to them.</p>
 <h2>8. Already working for newcomers</h2>
 <ul>{li(["\"New here? Try RHOMBIS\", the 3D puzzle: a low floor that already exists.","The tetrapod visitor book on the Misaki coast: playful and personal.","Book covers that turn over; seven languages for the books.","Paper images on every card."])}</ul>
 <h2>9. What follows from it</h2>
-<ul>{li(["Open with the physical work: one picture or film of a piece DICTO made, and one sentence on what the work is about (needs DICTO's footage).","Put a \"Start Here\" path first, before Apps: three visual rules, then the Before the Ladder lessons.","Give each paper card a first line in everyday words (from the glossary), with the technical text kept below it.","Rewrite the image descriptions in words; fill the empty ones.","Offer printable nets as their own section."])}</ul>
+<ul>{li(["Open with the physical work: one picture or film of a piece DICTO made, and one sentence on what the work is about (needs DICTO's footage).","Put a \"Start Here\" path first, before Apps: three visual rules, then the Before the Ladder lessons.","Give each paper card a first line in everyday words (from the glossary), with the technical text kept below it.","Rewrite the formula image descriptions in words.","Offer printable nets as their own section."])}</ul>
 </body></html>'''
 open('paper.html','w').write(H); print('ok',N,nf,nj,proved,na,naf,nae)
