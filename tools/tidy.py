@@ -37,14 +37,14 @@ def remote(cmd):
     return subprocess.run(['ssh', '-o', 'ConnectTimeout=10', 'dicto-big-brother', cmd], capture_output=True, text=True).stdout
 if '--folder' in sys.argv:
     folder = os.path.abspath(sys.argv[sys.argv.index('--folder') + 1]); name = os.path.basename(folder)
-    for p in glob.glob(os.path.join(folder, 'DRAFT*.pdf')): rm(p, 'released')
-    out = remote(f'find ~/kaleidohedra-check/papers/{name} -maxdepth 1 -name "DRAFT*.pdf" {"-print" if DRY else "-print -delete"}')
+    for p in [q for pat in ('DRAFT*.pdf', '*draft*.pdf') for q in glob.glob(os.path.join(folder, pat))]: rm(p, 'released')
+    out = remote(f'find ~/kaleidohedra-check/papers/{name} -maxdepth 1 -iname "*draft*.pdf" {"-print" if DRY else "-print -delete"}')
     log += [f'delete dicto-big-brother:{l} (released)' for l in out.split()]
     for p in glob.glob(os.path.join(READ, f'DRAFT*')):
         pass   # drafts in the reading folder are moved by the release step itself (read ok = read)
 else:
     for r in ROOTS:
-        for p in walk(r, 'DRAFT*.pdf'):
+        for p in [q for pat in ('DRAFT*.pdf', '*draft*.pdf', '*Draft*.pdf') for q in walk(r, pat)]:
             if NOW - os.path.getmtime(p) > 14 * DAY: rm(p, 'draft older than 14 days')
         for pat in ('*.txt.part', '*.json.part', '*.txt.FAILED', '*.json.FAILED'):   # runjob writes <data file>.part / .FAILED only
             for p in walk(r, pat):
@@ -54,7 +54,7 @@ else:
             p = os.path.join(EARLIER, f)
             if f.startswith('DRAFT'): rm(p, 'read draft (published PDF is the record)')
             elif NOW - os.path.getmtime(p) > 14 * DAY: rm(p, 'read-earlier item older than 14 days')
-    out = remote(f'find ~/kaleidohedra-check/papers -name "DRAFT*.pdf" -mtime +14 {"-print" if DRY else "-print -delete"}; '
+    out = remote(f'find ~/kaleidohedra-check/papers -iname "*draft*.pdf" -mtime +14 {"-print" if DRY else "-print -delete"}; '
                  f'find /tmp -maxdepth 1 -user $USER \\( -name "*.png" -o -name "*.pdf" -o -name "*.json" -o -name "zz-*" \\) -mtime +2 {"-print" if DRY else "-print -delete"} 2>/dev/null')
     log += [f'delete dicto-big-brother:{l}' for l in out.split()]
     if os.path.isdir(READ):

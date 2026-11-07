@@ -20,5 +20,5 @@ for f in $(git diff --cached --name-only --diff-filter=AM | grep -E '^(studies|p
     echo "BLOCKED: $f cuts a value written into HTML with [:N] - write the full text (or end a deliberate cut with an ellipsis and say so)"; bad=1; fi
 done
 # DICTO hygiene (7 Nov 2026): draft PDFs are transitional and never committed (the published PDF is the record).
-for f in $(git diff --cached --name-only --diff-filter=A | grep -iE '(^|/)DRAFT[^/]*\.pdf$'); do echo "BLOCKED: $f is a draft PDF - drafts live in papers-to-read until released, never in git"; bad=1; done
+for f in $(git diff --cached --name-only --diff-filter=A | grep -iE 'draft[^/]*\.pdf$'); do echo "BLOCKED: $f is a draft PDF - drafts live in papers-to-read until released, never in git"; bad=1; done
 exit $bad

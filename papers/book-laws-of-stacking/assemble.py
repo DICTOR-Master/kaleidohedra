@@ -11,6 +11,9 @@
 # v9 (2026-11-07): Part VI, Further results: Chapter 17 The Turned Twin, from the study note papers/study-note-trd (read by DICTO 4 Nov, taken in as a
 # chapter, headings and cross-references adapted only), and Chapter 18 from further-results.html (written for the book from three studies). Chapters
 # without a paper of their own are listed in NOTE; their own styles and draft boxes are not carried in.
+# v10 (2026-11-07, DICTO approved 7 Nov): Part V, Chapter 17 Narcissus Keyed, from paper #97 (papers/2026-11-05-keyed-narcissus, DICTO DOI
+# 10.5281/zenodo.24005567), after Chapter 16 Narcissus and Covenant; headings, numbering and cross-references adapted only (PRE); its
+# "Sources checked" paragraph moves to the appendix. The Turned Twin and Further results move to Chapters 18 and 19 (Part VI).
 # KDP=1: Amazon paperback interior (DICTO 10-29): no cover page (it goes on the printed cover), one blank page at the end
 # so the count passes 79 (KDP allows spine text only above 79 pages).
 import re, os, shutil, html
@@ -23,9 +26,10 @@ CH=[('Prologue','series-web-of-bonds',58),
     ('14','two-tiles',75),
     ('15','window-law',84),
     ('16','2026-11-04-hexoct-narcissus',98),   # v8 (DICTO 2026-11-06 'both separate paper and chapter'): #98 Narcissus and Covenant, Part V
-    ('17','study-note-trd',None),              # v9 (2026-11-07): the study note The Turned Twin, read by DICTO 4 Nov as a chapter of this book (Concordance waiting 7)
-    ('18','./further-results',None)]           # v9: written for the book (further-results.html) from three studies (Concordance waiting 32, 21, 58)
-PART={'1':'Part I. The laws','8':'Part II. Real materials','14':'Part III. HexOct','15':'Part IV. The Window Law','16':'Part V. The end of the walk','17':'Part VI. Further results'}
+    ('17','2026-11-05-keyed-narcissus',97),    # v10 (DICTO approved 7 Nov): #97 Narcissus Keyed, Part V after Chapter 16
+    ('18','study-note-trd',None),              # v9 (Chapter 17 in v9) (2026-11-07): the study note The Turned Twin, read by DICTO 4 Nov as a chapter of this book (Concordance waiting 7)
+    ('19','./further-results',None)]           # v9 (Chapter 18 in v9): written for the book (further-results.html) from three studies (Concordance waiting 32, 21, 58)
+PART={'1':'Part I. The laws','8':'Part II. Real materials','14':'Part III. HexOct','15':'Part IV. The Window Law','16':'Part V. The end of the walk','18':'Part VI. Further results'}
 # v9: chapters with no paper of their own: (contents label, line under the chapter title, appendix note)
 NOTE={'study-note-trd':('study note',"From DICTO's study note The Turned Twin (4 November 2026), which DICTO read and took into this book as a chapter; it has no separate DICTO DOI.",
         "<p>Study note, 4 November 2026: study 2026-11-04-trd (trd_checks.py, 11 PASS) and 2026-11-04-cuboctahedron-pyramids (12 PASS). Everything is checked numerically to 10<sup>−9</sup> (float, scipy) on the stackings ABC, AB, ABCB and ABCACB, and the node's ties from DICTO's own script turned_node_network.py. The TRD DICTOnode and its turned layout are DICTO's work; the note explains the geometry under it. Computation and drafting with Claude (Anthropic).</p>"),
@@ -90,6 +94,13 @@ EDITS={
  ('The c/h words of the Hexagonality Law papers are therefore also words in RD and TRD.','The c/h words of this book are therefore also words in RD and TRD.'),
  ('after the turn the lower part of one meets the upper part of the next in a single plane, making a trapezoid.</p>','after the turn the lower part of one meets the upper part of the next in a single plane, making a trapezoid (the same half and turn as in Chapter 16, §4).</p>'),
  ('<li>Outside (Concordance 5.5): the Burgers','<li>Outside the book: the Burgers')]}
+# v10: edits to a source before anything is extracted (so they reach the References that move to the appendix); headings, cross-references
+# and two wordings only (the banned verb 'asked', and Wang's 'question', which he stated as a conjecture)
+PRE={'2026-11-05-keyed-narcissus':[
+ ('(Narcissus and Covenant, HexOct chapter, draft)','(Narcissus and Covenant, Chapter 16)'),
+ ('Narcissus and Covenant (HexOct chapter, draft).</p>','Narcissus and Covenant (#98, Chapter 16 of this book).</p>'),
+ ('and asked a SAT solver (CaDiCaL [Bi20] through PySAT [IMM18]) whether','and used a SAT solver (CaDiCaL [Bi20] through PySAT [IMM18]) to decide whether'),
+ ("Wang's tiles and his question [Wa61]","Wang's tiles and his conjecture [Wa61]")]}
 def cut_sections(body,folder):
     for t in CUTSEC.get(folder,[]):
         body=re.sub(r'<h2>'+re.escape(t)+r'</h2>.*?(?=<h2>|$)','',body,flags=re.S)
@@ -101,6 +112,9 @@ def cut_sections(body,folder):
     return body
 for label,folder,num in CH:
     s=open(os.path.join(HERE,folder[2:]+'.html') if folder.startswith('./') else os.path.join(P,folder,'paper.html'),encoding='utf8').read()
+    for a,b in PRE.get(folder,[]):
+        if a not in s: print('PRE MISS',folder,a[:50])
+        s=s.replace(a,b)
     if folder not in NOTE:   # v9: the study note's own style (gold .status, boxed tables) would restyle the whole book
         for st in re.findall(r'<style>(.*?)</style>',s,re.S): styles.add(st.strip())
     s=re.sub(r'<div class="status">.*?</ul></div>\s*','',s,flags=re.S)   # v9: a source's draft box never enters the book
@@ -114,6 +128,8 @@ for label,folder,num in CH:
         if folder=='series-web-of-bonds' and 'Precisely' in m.group(0)[:60]: continue
         out.append(m.group(0))
     body=re.sub(r'<p class="prec">.*?</p>','',body,flags=re.S)
+    for m in re.finditer(r'<p class="small">Sources checked:.*?</p>',body,re.S): out.append(m.group(0))   # v10: #97 keeps its sources in p.small
+    body=re.sub(r'<p class="small">Sources checked:.*?</p>','',body,flags=re.S)
     m=re.search(r'<h2>References</h2>(.*?)(?=<h2|$)',body,re.S)
     if m: out.append(m.group(1)); body=body.replace(m.group(0),'')
     # figures: copy and renumber
