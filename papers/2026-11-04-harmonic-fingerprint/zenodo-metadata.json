@@ -8,13 +8,13 @@
    "orcid": "0009-0001-2620-2036"
   }
  ],
- "version": "1",
+ "version": "2",
  "language": "eng",
  "license": "cc-by-sa-4.0",
- "publication_date": "2026-11-04",
+ "publication_date": "2026-11-07",
  "access_right": "open",
  "title": "The Silent Golden Station: The Harmonic Fingerprint of the Cube–Octahedron Sweep Finds Icosaxes, and Only Icosaxes",
- "description": "<p><i>A solid can be listened to: its corners, seen from the centre, are notes on a sphere, and each degree of spherical harmonic is a tone. Cubic solids ring in the fourth tone, icosahedral ones never do. Sliding from the octahedron to the cube, the fourth tone falls silent once, at exactly the golden station, Icosaxes, because its corners are two icosahedra. The sound finds the golden point with no geometry put in.</i></p><p><b>Abstract.</b> Give every corner of a solid seen from its centre a unit weight on the sphere and expand in spherical harmonics: the strength Q<sub>l</sub> of each degree l is the solid's harmonic fingerprint, the bond-orientational order of Steinhardt, Nelson and Ronchetti [1], which physicists use to tell the cubic, hexagonal and icosahedral order of atoms apart. We apply it to #90's sweep P<sub>μ</sub> = C ∩ μC* of the cube and its polar octahedron, from the octahedron (μ = 1) to the cube (μ = 3). <b>Main theorem.</b> (A) Q<sub>4</sub> vanishes at exactly one point of the sweep, μ = φ, Icosaxes; there the corner condition is a⁴ − 3a² + 1 = (a² + a − 1)(a² − a − 1) = 0 with a = μ − 1. (B) At Icosaxes Q<sub>l</sub> vanishes exactly for l = 2, 4, 8, 14, the even degrees with no icosahedral harmonic: its 24 corners are the two icosahedra of the pyritohedral pair (#90), so the one cubic solid on the sweep sounds icosahedral. (C) Q<sub>8</sub> vanishes at exactly two points, μ = φ and μ = (√13 − 1)/2, the reciprocals of the golden and the bronze ratio. (D) On the second dual sweep, the cuboctahedron cut by the rhombic dodecahedron, Q<sub>4</sub> vanishes once, at a point with no golden number, 1 + √((6√30 − 31)/17). The proofs are short polynomial identities; every value is checked numerically against the classical fingerprints of the cubic, hexagonal and body-centred packings and the icosahedron.</p>",
+ "description": "<p><i>A solid can be listened to: its corners, seen from the centre, are notes on a sphere, and each degree of spherical harmonic is a tone. Cubic solids ring in the fourth tone, icosahedral ones never do. Sliding from the octahedron to the cube, the fourth tone falls silent once, at exactly the golden station, Icosaxes, because its corners are two icosahedra. The sound finds the golden point with no geometry put in.</i></p><p><b>Abstract.</b> Give every corner of a solid seen from its centre a unit weight on the sphere and expand in spherical harmonics: the strength Q<sub>l</sub> of each degree l is the solid's harmonic fingerprint, the bond-orientational order of Steinhardt, Nelson and Ronchetti [1], which physicists use to tell the cubic, hexagonal and icosahedral order of atoms apart. We apply it to #90's sweep P<sub>μ</sub> = C ∩ μC* of the cube and its polar octahedron, from the octahedron (μ = 1) to the cube (μ = 3). <b>Main theorem.</b> (A) Q<sub>4</sub> vanishes at exactly one point of the sweep, μ = φ, Icosaxes; there the corner condition is a⁴ − 3a² + 1 = (a² + a − 1)(a² − a − 1) = 0 with a = μ − 1. (B) At Icosaxes Q<sub>l</sub> vanishes exactly for l = 2, 4, 8, 14, the even degrees with no icosahedral harmonic: its 24 corners are the two icosahedra of the pyritohedral pair (#90), so the one cubic solid on the sweep sounds icosahedral. (C) Q<sub>8</sub> vanishes at exactly two points, μ = φ and μ = (√13 − 1)/2, the reciprocals of the golden and the bronze ratio. (D) On the second dual sweep, the cuboctahedron cut by the rhombic dodecahedron, Q<sub>4</sub> vanishes once, at a point with no golden number, 1 + √((6√30 − 31)/17). Version 2 adds two outside tests on the same sweep and two more walks: Mahler's volume product is 32/3 at both ends and largest at a cubic irrational μ* ≈ 1.6312, just past Icosaxes but not golden; the roundest member is μ = √3, and in n dimensions μ = √n, by Lindelöf's theorem on polytopes circumscribed about a ball; on the Delian walk the cubic tone falls silent once, at t = 1/9, never with degree 8; on #91's four-dimensional sweep Q<sub>4</sub> vanishes only at the 24-cell and Q<sub>6</sub> exactly at μ = √2 and 1 + √3. The proofs are short polynomial identities; every value is checked numerically against the classical fingerprints of the cubic, hexagonal and body-centred packings and the icosahedron.</p>",
  "keywords": [
   "spherical harmonics",
   "bond-orientational order",
@@ -26,7 +26,11 @@
   "bronze ratio",
   "icosahedral symmetry",
   "truncation",
-  "harmonic fingerprint"
+  "harmonic fingerprint",
+  "Mahler volume product",
+  "isoperimetric quotient",
+  "Lindelöf's theorem",
+  "24-cell"
  ],
  "related_identifiers": [
   {
@@ -38,6 +42,27 @@
    "identifier": "10.5281/zenodo.23596362",
    "relation": "references",
    "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23606828",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23931389",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23846772",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23933666",
+   "relation": "references",
+   "scheme": "doi"
   }
- ]
+ ],
+ "notes": "Version 2 (7 November 2026) adds §5 Three outside tests on one sweep (Proposition 1: Mahler's volume product along the cube–octahedron sweep, 32/3 at both ends, maximum at the root μ* ≈ 1.6312 of 2μ³ − 9μ + 6 = 0; Proposition 2: the roundest member is μ = √n in n dimensions, by Lindelöf's theorem (1869), which replaces an earlier working note that called √3 a coincidence; a table of special points; Proposition 3: the cuboctahedron–rhombic dodecahedron sweep has no station for roundness or the volume product), §6 The Delian walk (Proposition 4: O(t) is silent in degree 4 exactly at t = 1/9, never with degree 8), §7 Four dimensions (Proposition 5: on #91's sweep Q4 = 0 only at the 24-cell, Q6 = 0 exactly at √2 and 1 + √3), prior art and sources checked for the new parts, and references [16]–[25]."
 }

@@ -8,13 +8,16 @@ import re, os, shutil, html
 HERE=os.path.dirname(os.path.abspath(__file__)); P=os.path.dirname(HERE)
 CH=[('1','../studies/2026-10-14-axe-cleo-fuji/paper',19,'paper-house.html'),('2','2026-10-21-aristotles-pyramid',44,'paper.html'),
     ('3','book-queens/five-pyramids',0,'paper.html'),('4','face-to-face',77,'paper.html'),('5','4d-shadows',62,'paper.html'),
-    ('6','white-queen-600',63,'paper.html'),('7','queen-stages',76,'paper.html'),('8','red-queen-120',65,'paper.html')]   # v2 (DICTO 10-30): #77 after ch. 3, #76 between the Queens
+    ('6','white-queen-600',63,'paper.html'),('7','queen-stages',76,'paper.html'),('8','red-queen-120',65,'paper.html'),
+    ('9','book-queens/queens-tones',0,'paper.html')]   # v2 (DICTO 10-30): #77 after ch. 3, #76 between the Queens; v4 (7 Nov): ch. 9 first published here
 PART={'1':'Part I. The lead-up','5':'Part II. Shadows','6':'Part III. The Queens'}
 styles=set(); chapters=[]; sources=[]; toc=[]
 cw=open(os.path.join(P,'collected','paper.html'),encoding='utf8').read()
 PAPERS={int(m.group(1)):(html.unescape(re.sub('<[^>]+>','',m.group(2))),m.group(3)) for m in re.finditer(r'<tr><td class="n">#(\d+)</td><td><b>(.*?)</b>.*?DICTO DOI: (10\.5281/zenodo\.\d+)',cw,re.S)}
 INBOOK={num:lab for lab,_,num,_ in CH}
 REFERRED=set()
+FIRST={'book-queens/five-pyramids':"First published in this book, from DICTO's study of 27 October 2026 (studies/2026-10-27-five-pyramids).",
+       'book-queens/queens-tones':"First published in this book, from DICTO's studies of 4 November 2026 (studies/2026-11-04-harmonic-4d, 2026-11-04-hopf-interlock and 2026-11-04-pds-modes)."}   # v4: chapters first published here (num 0); contents show 'new', not '#0'
 def link_text(t):
     def r(mo):
         n=int(mo.group(1))
@@ -32,7 +35,7 @@ def link_html(h):
         else: out.append(p if inA else link_text(p))
     return ''.join(out)
 CORR=[('Chapter 3 of the book <i>Alicia in Wonderland</i>','Chapter 3'),('Chapter 3 of <i>Alicia in Wonderland</i>','Chapter 3'),('and the book <i>Alicia in Wonderland</i>, Chapter 3','and Chapter 3 of this book')]   # inside this book, #77's references to its Chapter 3 (v2)
-INDEX_TERMS=['600-cell','120-cell','5-cell','16-cell','24-cell','tesseract','Cleo-Icos','CLEO','AXE','FUJI','Lotus seed','Mosseri','Sadoc','Aristotle','Antonius','face pyramid','octet','deltahedron','deltahedra','Dehn','Schlegel','Coxeter','Cleo shell','White Queen','Red Queen','Humpty Dumpty','Kagemusha','Slice-48','TBP-5','OCT-16','icosahedron','dodecahedron','octahedron','tetrahedron','Admiral Cap','Hound Tooth','Tricap','Weirdstone','Tadpole','radial cell projection']
+INDEX_TERMS=['600-cell','120-cell','5-cell','16-cell','24-cell','tesseract','Cleo-Icos','CLEO','AXE','FUJI','Lotus seed','Mosseri','Sadoc','Aristotle','Antonius','face pyramid','octet','deltahedron','deltahedra','Dehn','Schlegel','Coxeter','Cleo shell','White Queen','Red Queen','Humpty Dumpty','Kagemusha','Slice-48','TBP-5','OCT-16','icosahedron','dodecahedron','octahedron','tetrahedron','Admiral Cap','Hound Tooth','Tricap','Weirdstone','Tadpole','radial cell projection','spherical design','Hopf','icosian','Poincaré dodecahedral space','harmonic fingerprint']   # v4: last five for Chapter 9
 INDEX={}
 # pass 2 (DICTO 10-28 'remove unrelated content'): cut sections and clauses about other lines of work (4D solids, named
 # pairs, lists of other papers); theorems and proofs untouched. Sections renumbered after cuts.
@@ -95,17 +98,17 @@ for label,folder,num,fname in CH:
         if re.search(r'\b'+re.escape(term)+('' if term in ('XXXX') or term.endswith('</sub>Sn') or term.endswith('</sub>Ir') else r'(s|es)?\b'),re.sub('<[^>]+>',' ',body) if '<' not in term else body): INDEX.setdefault(term,[]).append(tag)
     head=('Prologue. ' if label=='Prologue' else f'Chapter {label}. ')
     body=re.sub(r'<h1[^>]*>.*?</h1>',f'<h1 class="chapter" id="ch{tag}">{head}{title}</h1>',body,count=1,flags=re.S)
-    body=body.replace('</h1>',(f'</h1>\n<p class="from">From paper #{num}, DICTO DOI {doi}</p>' if num else '</h1>\n<p class="from">First published in this book, from DICTO\'s study of 27 October 2026 (studies/2026-10-27-five-pyramids).</p>'),1)
+    body=body.replace('</h1>',(f'</h1>\n<p class="from">From paper #{num}, DICTO DOI {doi}</p>' if num else '</h1>\n<p class="from">'+FIRST[folder]+'</p>'),1)
     if label in PART: chapters.append(f'<div class="part"><h1 class="partt">{PART[label]}</h1></div>')
     chapters.append(f'<section class="ch">{body}</section>'); toc.append((head+title,tag,num,doi))
-    sources.append(kage(f'<h3>{head}{html.escape(title)} (#{num}, DICTO DOI {doi})</h3>'+''.join(out)))
+    sources.append(kage(f'<h3>{head}{html.escape(title)} '+(f'(#{num}, DICTO DOI {doi})' if num else '(first published in this book)')+'</h3>'+''.join(out)))
 front=open(os.path.join(HERE,'front.html'),encoding='utf8').read()
 from plates_section import plates_html, PLATES_CSS   # v3 (DICTO 2026-10-31): full-page plates, before the epilogue
 epi=open(os.path.join(HERE,'epilogue.html'),encoding='utf8').read()
 refhtml='<section class="app"><h1 class="chapter">Papers referred to, not in this book</h1><table>'+''.join(f'<tr><td>{('#'+str(n)) if n else 'new'}</td><td>{html.escape(PAPERS[n][0])}</td><td><a href="https://doi.org/{PAPERS[n][1]}">{PAPERS[n][1]}</a></td></tr>' for n in sorted(REFERRED))+'</table></section>'
 def nice(t): return re.sub('<[^>]+>','',t)
 idxhtml='<section class="app"><h1 class="chapter">Index</h1><p style="font-size:9pt">Chapters in which each term appears.</p><table>'+''.join(f'<tr><td>{nice(t)}</td><td>{", ".join(v)}</td></tr>' for t,v in sorted(INDEX.items(),key=lambda kv:nice(kv[0]).lower()))+'</table></section>'
-tochtml='<h2>Contents</h2><table class="toc">'+''.join(f'<tr><td>{html.escape(t)}</td><td>#{n}</td></tr>' for t,tag,n,d in toc)+'<tr><td>Plates</td><td></td></tr><tr><td>Epilogue. What has been shown</td><td></td></tr><tr><td>Appendix. Sources by chapter</td><td></td></tr><tr><td>Papers referred to, not in this book</td><td></td></tr><tr><td>Index</td><td></td></tr></table>'
+tochtml='<h2>Contents</h2><table class="toc">'+''.join(f'<tr><td>{html.escape(t)}</td><td>{("#"+str(n)) if n else "new"}</td></tr>' for t,tag,n,d in toc)+'<tr><td>Plates</td><td></td></tr><tr><td>Epilogue. What has been shown</td><td></td></tr><tr><td>Appendix. Sources by chapter</td><td></td></tr><tr><td>Papers referred to, not in this book</td><td></td></tr><tr><td>Index</td><td></td></tr></table>'
 css='\n'.join(sorted(styles))+'''
 h1.chapter{break-before:page;font-size:19pt;margin-top:0} p.from{font-size:8.5pt;color:#777;margin:-2mm 0 4mm}
 .part{break-before:page;height:200mm;display:flex;align-items:center;justify-content:center} h1.partt{font-size:26pt;color:#b8962e}

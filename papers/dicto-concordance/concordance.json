@@ -5940,6 +5940,24 @@
    "found_by": "#94 v2 drafting; recomputed",
    "status": "VERIFIED; fixed in the README and waiting item today; Concordance paper at its next version",
    "date": "2026-11-07"
+  },
+  {
+   "n": 23,
+   "where": "#44 v4 (hook line), Dharma Inside Out, The Golden Cycle (book, two places), Progenitors",
+   "what": "\"DICTO's question\"",
+   "reason": "voice rule (DICTO proposes or answers, never \"asked\"/\"question\"); these predate the print guard of 5 November",
+   "found_by": "print guard on the Queens v4 draft",
+   "status": "#44 source fixed (\"DICTO's proposal\"); the others at their next versions",
+   "date": "2026-11-07"
+  },
+  {
+   "n": 24,
+   "where": "The Golden Ladder (book, ch. 2) and golden-ladder-ch2",
+   "what": "Pell multiplets written \"(0, P_n, P_{n+1})\"",
+   "reason": "notation slip: the printed dimensions 112, 4928, 905520, … are (0, P_n, Q_n) with Q = A001333 (as the study README has); the printed notation would give 378, 19656, … and limit 2.547, not 1 + √2",
+   "found_by": "OEIS candidate search; recomputed",
+   "status": "VERIFIED by the search script; fix at Golden Ladder v6",
+   "date": "2026-11-07"
   }
  ]
 }
