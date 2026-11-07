@@ -20,6 +20,11 @@ import fs from 'node:fs';
   if (!/^en/i.test(lang) && !/^DRAFT/i.test(path.basename(pdf))) { const cv = raw.match(/class="page coverpage"[\s\S]*?<img[^>]*>/);
     const img = cv ? cv[0].match(/<img[^>]*>/)[0] : '';
     if (!new RegExp('src="[^"]*-' + lang.slice(0, 2) + '[^"]*"').test(img) || !/alt="[^"]*[\u0600-\u06FF\u3040-\u30FF\u4E00-\u9FFF]{3,}/.test(img)) { console.error(`GUARD: ${lang} edition without its own-script title cover (cover img src must contain -${lang.slice(0, 2)} and alt the title in its script)`); process.exit(6); } }
+  // VERSION LINE GUARD (11-07: HexOct v10 and #39 v2 went out with their "Version N adds" sentence twice): a final PDF names its version's changes once.
+  if (!/^DRAFT/i.test(path.basename(pdf)) && process.argv[6]) {
+    const ver = process.argv[6].replace(/[.]/g, '\\.'), txt = raw.replace(/<[^>]+>/g, '');
+    const n = (txt.match(new RegExp('Version ' + ver + ' (adds|corrects|writes|brings)', 'g')) || []).length;
+    if (n > 1 && !process.env.ALLOW_BANNED) { console.error(`GUARD: "Version ${process.argv[6]} adds/corrects" appears ${n} times; keep one`); process.exit(8); } }
   // JA TEXT GUARD (11-07, reader: "reads like machine translation"): a final ja book may not carry leftover English words outside
   // （…） glosses, nor the known bad variants found in Quanta-ja v1.
   if (!/^en/i.test(lang) && !/^DRAFT/i.test(path.basename(pdf))) {

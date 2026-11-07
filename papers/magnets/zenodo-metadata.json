@@ -8,7 +8,7 @@
    "orcid": "0009-0001-2620-2036"
   }
  ],
- "version": "1",
+ "version": "2",
  "language": "eng",
  "license": "cc-by-sa-4.0",
  "publication_date": "2026-10-28",
@@ -69,6 +69,11 @@
    "identifier": "https://dictospheres.com",
    "relation": "isDocumentedBy",
    "scheme": "url"
+  },
+  {
+   "identifier": "10.5281/zenodo.24037664",
+   "relation": "isReferencedBy",
+   "scheme": "doi"
   }
  ],
  "subjects": [
@@ -82,5 +87,6 @@
    "identifier": "https://zbmath.org/classification/?q=cc:82D40",
    "scheme": "url"
   }
- ]
+ ],
+ "notes": "Version 2 (7 November 2026): the Loop Equality, computed here through length 34, is now a theorem (#102, DICTO DOI 10.5281/zenodo.24037664); by #102's Corollary 2 the pyrochlore network's loops do not depend on the stacking either; the closed-walk equality is credited to Nagle (1966) and Thorpe (1972)."
 }

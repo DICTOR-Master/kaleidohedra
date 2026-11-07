@@ -6212,6 +6212,15 @@
    "found_by": "Arabic translation check",
    "status": "TO CHECK against #37",
    "date": "2026-11-07"
+  },
+  {
+   "n": 51,
+   "where": "HexOct v10 (10.5281/zenodo.24037712) and #39 OG Family v2 (10.5281/zenodo.24037758), title pages",
+   "what": "the \"Version N adds\" sentence printed twice: once in the existing credit lines, once as the line that replaced the status box",
+   "reason": "the status box was turned into a version line without checking that the source already had one",
+   "found_by": "Claude, during the #102 follow-ups",
+   "status": "FIXED in the sources; goes out with HexOct v11 and the next #39 version; print.mjs guard (exit 8)",
+   "date": "2026-11-07"
   }
  ],
  "modus_operandi": {
