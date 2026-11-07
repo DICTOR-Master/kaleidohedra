@@ -20,6 +20,10 @@ const r = await page.evaluate(() => {
     if (el.tagName === 'IMG' && !el.complete) out.push(`img not loaded: ${el.getAttribute('src')}`);
     if (el.tagName === 'IMG' && el.naturalWidth === 0) out.push(`img broken: ${el.getAttribute('src')}`);
   }
+  // 11-07 (HexOct v9 draft): a fixed-height cover/title page whose contents are taller than it pushes its top (the logo) above the page
+  for (const el of document.querySelectorAll('.titlepage, .coverpage')) {
+    if (el.scrollHeight > el.clientHeight + 2) out.push(`${el.className} overflows its own height: ${el.scrollHeight}px of ${el.clientHeight}px (use min-height and top alignment)`);
+  }
   return out;
 });
 await b.close();
