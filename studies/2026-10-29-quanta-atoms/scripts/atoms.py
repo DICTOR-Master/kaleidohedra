@@ -76,7 +76,8 @@ def card(r):
     note = e(r['prior_art_or_note'] or r['status'])
     # DICTO 10-29: say clearly what "known" means for Alicia Boole Stott's sections: the shape is hers, the exact geometry DICTO's
     w = re.match(r'(W\d+|R\d+):', r['prior_art_or_note'] or '')
-    if r['status'].startswith('known') and 'Boole Stott' in (r['prior_art_or_note'] or ''):
+    # 11-07 (erratum 4, D85): a D-numbered shape keeps its own note — the generic Boole Stott wording is only for the W/R known shapes
+    if r['status'].startswith('known') and 'Boole Stott' in (r['prior_art_or_note'] or '') and not (r['universal_number'] or '').startswith('D'):
         note = ((w.group(1) + '. ') if w else '') + ('Shape first found by Alicia Boole Stott (1900), by construction, drawn as a plan and built as a card model; '
                 'its exact geometry (coordinates, volume, symmetry, checked) computed by DICTO in #63.' + (' Named after her by DICTO.' if r['name'] == 'Alicia' else ''))
     bw = None if ic else borrowed(r)
