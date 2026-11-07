@@ -122,7 +122,8 @@ def glyph_masks(ch, size=320):
     yy, xx = np.mgrid[-e:e + 1, -e:e + 1]; o = ndimage.binary_dilation(a, structure=xx ** 2 + yy ** 2 <= e * e) & ~a
     return ndimage.gaussian_filter(a.astype(np.float32), 1.0), ndimage.gaussian_filter(o.astype(np.float32), 1.0)
 GLYPHS = {}
-INK, OUTLINE = np.array([248, 243, 230.]), np.array([14, 10, 7.])   # light LED glyph with a thin dark outline (reads on blue and gold)
+INK = {'C': np.array([255, 205, 70.]), 'H': np.array([110, 160, 255.])}   # reciprocal colours (DICTO 11-03 rule): C in bright gold, H in bright blue
+OUTLINE = np.array([0, 0, 0.])   # black rim round the glyph
 def paint_letters(rgb, zb, ib, rec, pid, PC, M, SS, letters):
     """The layer's letter on every visible face of every lettered piece: upright along the stacking axis, as large as fits the face."""
     ax = M @ np.array([0, 0, 1.0]); n_done = 0
@@ -156,9 +157,9 @@ def paint_letters(rgb, zb, ib, rec, pid, PC, M, SS, letters):
         yy, xx = np.nonzero(sub); P = np.c_[xx + x0 + 0.5, -(yy + y0 + 0.5), zb[y0:y1, x0:x1][sub]] - c
         u, v = P @ rt, P @ up; gx = (u / (t * w) + 0.5) * (gw - 1); gy = (0.5 - v / t) * (gh - 1)
         ai = ndimage.map_coordinates(ink, [gy, gx], order=1, cval=0); ao = ndimage.map_coordinates(out, [gy, gx], order=1, cval=0)
-        px = rgb[y0:y1, x0:x1][sub]; px = px * (1 - 0.92 * ao[:, None]) + OUTLINE * 0.92 * ao[:, None]
+        px = rgb[y0:y1, x0:x1][sub]; px = px * (1 - 0.95 * ao[:, None]) + OUTLINE * 0.95 * ao[:, None]
         shade = 0.42 + 0.58 * max(0.0, (nn / np.linalg.norm(nn)) @ l)   # the glyph is lit like its face (darker on faces turned away)
-        px = px * (1 - 0.95 * ai[:, None]) + INK * shade * 0.95 * ai[:, None]; rgb[y0:y1, x0:x1][sub] = px; n_done += 1
+        px = px * (1 - 0.95 * ai[:, None]) + INK[ch] * shade * 0.95 * ai[:, None]; rgb[y0:y1, x0:x1][sub] = px; n_done += 1
     print('letters painted on', n_done, 'faces', flush=True)
 def put(canvas, rgb, al, x, y):
     h_, w_ = al.shape; c = canvas[y:y + h_, x:x + w_]; canvas[y:y + h_, x:x + w_] = c * (1 - al[..., None]) + rgb * al[..., None]
