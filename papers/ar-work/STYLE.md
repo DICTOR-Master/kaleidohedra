@@ -15,3 +15,9 @@ The English files (quanta/NN-en.html, dictonary/NNN-en.html) are the authority. 
 ## Report
 Return the report as text in your final message (subagents cannot write report files): per file, terms added or unsure, problems in the English.
 
+
+## Lead decisions (after the glossary pass)
+- glossary-ar.tsv (613) and atom-names-ar.tsv (207) are BINDING; the UNSURE picks stand (Hypsicles in the classical form إبسقلاوس; Through the Looking-Glass «عبر المرآة»).
+- Volume labels: المجلد I / المجلد II. The Arabic Wikipedia extracts are in wikipedia-ar/.
+- The Alice note (Quanta ch. 6, div.namesbox) is translated like any text.
+- Book titles in «» without <i> (rule 6 wins over keeping <i>).
