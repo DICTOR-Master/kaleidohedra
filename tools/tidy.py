@@ -9,7 +9,7 @@
 Rules:
  1. A DRAFT*.pdf is transitional: deleted once its paper is released (--folder), and anywhere when older than 14 days.
  2. papers-to-read/read-earlier: DRAFT files are deleted at once (the published PDF is the record); everything else after 14 days.
- 3. papers-to-read (top) holds only what waits for DICTO; items older than 3 days are reported as stale in the daily report.
+ 3. papers-to-read (top) holds only what waits for DICTO; items older than 1 day are reported as stale (DICTO 11-07: stale content).
  4. Runjob scratch (<data>.txt/.json + .part/.FAILED, untracked) older than 2 days is deleted; /tmp scratch of ours on dicto-big-brother older than 2 days too.
 Never touches .git, memory folders, published PDFs (dicto-*.pdf), data files or sources, nor ANY file tracked by git."""
 import os, sys, time, subprocess, glob
@@ -58,8 +58,8 @@ else:
                  f'find /tmp -maxdepth 1 -user $USER \\( -name "*.png" -o -name "*.pdf" -o -name "*.json" -o -name "zz-*" \\) -mtime +2 {"-print" if DRY else "-print -delete"} 2>/dev/null')
     log += [f'delete dicto-big-brother:{l}' for l in out.split()]
     if os.path.isdir(READ):
-        stale = [f for f in os.listdir(READ) if f != 'read-earlier' and NOW - os.path.getmtime(os.path.join(READ, f)) > 3 * DAY]
+        stale = [f for f in os.listdir(READ) if f != 'read-earlier' and NOW - os.path.getmtime(os.path.join(READ, f)) > 1 * DAY]
         waiting = [f for f in os.listdir(READ) if f != 'read-earlier']
-        log.append(f'reading folder: {len(waiting)} waiting' + (f'; STALE (> 3 days, decide or move): {", ".join(stale)}' if stale else ''))
+        log.append(f'reading folder: {len(waiting)} waiting' + (f'; STALE (> 1 day: answered → move to read-earlier; waiting → ask DICTO): {", ".join(stale)}' if stale else ''))
 print('\n'.join(log) or 'nothing to tidy')
 print(f"FINAL ok ({'dry run' if DRY else 'tidied'}: {sum(1 for l in log if l.startswith('delete'))} deletions)")
