@@ -6,7 +6,7 @@ Nothing has been submitted. DICTO submits these himself from his own OEIS accoun
 
 ## How to submit
 
-1. Register: oeis.org → "Register" (an OEIS wiki account). The OEIS asks contributors to register under their real full name; the %A line then carries that name ("_First Last_"). Decide how DICTO appears before registering (see "Open points").
+1. Register: done. DICTO registered as James Baker (approved 8 November); the %A lines carry "_James Baker_".
 2. Log in, then open oeis.org/Submit.html ("Contribute a new sequence"). The form has one box per field below (%N name, data, %O offset, %C comments, %D references, %H links, %F formulas, %e example, %p/%o programs, %Y cross-references, %K keywords). Paste the text after the tag, without the "%X A??????" prefix.
 3. Submit ONE entry first (recommended: entry 1). The draft gets its A-number at once; the editors then comment on the draft's page.
 4. Answer the editors on the draft page ("Discussion"), and edit the draft there; do not resubmit a changed copy.
@@ -66,7 +66,7 @@ All terms below were recomputed on 7 November 2026: `studies/2026-11-07-oeis-can
 %Y A?????? Cf. A002895 (all closed walks), A008253, A008264, A002899, A??????(entry 7, fcc analog), A??????(entries 2-5).
 %K A?????? nonn,walk
 %O A?????? 1,3
-%A A?????? DICTO, Nov 07 2026
+%A A?????? _James Baker_, Nov 08 2026
 ```
 
 Checked: the formula terms equal DICTO's direct count (loops2.py, five stackings) for lengths 6..34 (oeis_checks.py C1), and the g.f. form was expanded and compared for n = 1..30. #102 checked the loops at 686 sites of 42 stackings to length 24.
@@ -111,7 +111,7 @@ Checked: the formula terms equal DICTO's direct count (loops2.py, five stackings
 %Y A?????? Cf. A008253 (diamond, 3C), A008264 (lonsdaleite, 2H; also the A-bilayer atoms of 4H), A??????, A??????, A?????? (6H sites), A002895.
 %K A?????? nonn,easy
 %O A?????? 0,2
-%A A?????? DICTO, Nov 07 2026
+%A A?????? _James Baker_, Nov 08 2026
 ```
 
 The same program checks itself: `coordseq('ABC',0,0,n)` gives A008253 and `coordseq('AB',0,0,n)` gives A008264 (all 48 listed terms), as does `coordseq('ABAC',0,1,n)`.
@@ -140,7 +140,7 @@ The same program checks itself: `coordseq('ABC',0,0,n)` gives A008253 and `coord
 %Y A?????? Cf. A008253, A008264, A??????(entry 2), A??????(entry 4), A??????(entry 5), A002895.
 %K A?????? nonn,easy
 %O A?????? 0,2
-%A A?????? DICTO, Nov 07 2026
+%A A?????? _James Baker_, Nov 08 2026
 ```
 
 (When submitting, paste the full coordseq() function from entry 2 into %o; the editors prefer self-contained programs.)
@@ -169,7 +169,7 @@ The same program checks itself: `coordseq('ABC',0,0,n)` gives A008253 and `coord
 %Y A?????? Cf. A008253, A008264, A??????(entry 2), A??????(entry 3), A??????(entry 5), A002895.
 %K A?????? nonn,easy
 %O A?????? 0,2
-%A A?????? DICTO, Nov 07 2026
+%A A?????? _James Baker_, Nov 08 2026
 ```
 
 ---
@@ -196,7 +196,7 @@ The same program checks itself: `coordseq('ABC',0,0,n)` gives A008253 and `coord
 %Y A?????? Cf. A008253, A008264, A??????(entry 2), A??????(entry 3), A??????(entry 4), A002895.
 %K A?????? nonn,easy
 %O A?????? 0,2
-%A A?????? DICTO, Nov 07 2026
+%A A?????? _James Baker_, Nov 08 2026
 ```
 
 ---
@@ -230,7 +230,7 @@ The same program checks itself: `coordseq('ABC',0,0,n)` gives A008253 and `coord
 %Y A?????? Cf. A003849 (Fibonacci word, the layer types), A085002 (the steps), A005614, A000201.
 %K A?????? nonn,easy
 %O A?????? 0,4
-%A A?????? DICTO, Nov 07 2026
+%A A?????? _James Baker_, Nov 08 2026
 ```
 
 Checked: the Jagodzinski types recovered from the letters for 390 layers (oeis_checks.py C5); the A085002 formula checked for n < 2000 (assert in the test copy of the program); "layer n is h iff A003849(n) = 1" is the same rule as w[n] = 'h'.
@@ -272,7 +272,7 @@ Extension; not yet the subject of a DICTO paper beyond #102 Corollary 3 (lengths
 %Y A?????? Cf. A002899, A002895, A??????(entry 1, diamond analog), A293237.
 %K A?????? nonn,walk
 %O A?????? 1,3
-%A A?????? DICTO, Nov 07 2026
+%A A?????? _James Baker_, Nov 08 2026
 ```
 
 Checked: lengths 3..24 equal oeis_checks.py C1b (fcc closed walks by direct propagation, then Ihara-Bass); the A002899 sum formula used in the program is David Broadhurst's PARI program on A002899; the g.f. form expanded and compared for lengths 1..40.
@@ -317,7 +317,7 @@ Add with "edit" on each entry. Signature at the end: "- _DICTO_, Nov 07 2026" (o
 
 ## C. Open points before submitting
 
-1. **Name.** The OEIS asks for real names on accounts and in %A lines; "DICTO" as the author name may be questioned by the editors. DICTO decides how to register.
+1. **Name.** Settled 8 November: DICTO registered as James Baker, so every %A line reads "_James Baker_"; the %D and %H lines keep the author name DICTO as printed on the Zenodo records.
 2. **O'Keeffe 1991** (Chem. Mater. 3, 332-335) characterized the sites of SiC polytypes topologically and is cited on A008264 for a formula; it very probably lists the first coordination-sequence terms of the 4H and 6H sites. It was not read (paywalled; Crossref has no abstract). Entries 2-5 credit it in %D; if the paper prints these sequences, the %N/%C should say "computed independently, extending O'Keeffe (1991)". The OEIS has no hits for any of the four sequences (searched 7 November 2026).
 3. **The 4H "c" atoms equal lonsdaleite** (A008264) to n = 100 with the same g.f.: computed, not proved; therefore "Empirically" in the A008264 comment. The g.f.s of entries 2-5 are fitted (Berlekamp-Massey, order <= 14 from 100 terms) and verified to n = 100; rationality is known in general for periodic nets, the exact forms are marked "Empirical".
 4. **Site names.** The script output labelled the sites "4H B" and "6H A, B atom 0, B atom 1". The entries name them by structure instead (hexagonal bilayers of 4H, which include both B and C; hexagonal A bilayers of 6H; the two halves of the cubic bilayers of 6H by the direction of their three interlayer bonds), since the letter alone does not fix the site.

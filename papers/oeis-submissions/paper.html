@@ -3,7 +3,7 @@
 <img class="watermark" src="../dicto-logo.png" alt=""><img class="logo" src="../dicto-logo.png" alt="DICTO">
 <h1>OEIS entries for DICTO<br><span style="font-size:0.72em;font-weight:normal">Seven new sequences and four comments, ready to paste</span></h1>
 <div class="meta"><b>DICTO</b> · dictospheres.com · prepared 7 November 2026, updated 8 November 2026 · terms verified by script; prepared by Claude (Anthropic).</div>
-<div class="status">Paste sheet for DICTO, not for publication. Nothing has been submitted. 8 November: account approved and the #102 DOI (10.5281/zenodo.24037664) filled in, so everything below is ready, entry 1 first.</div>
+<div class="status">Paste sheet for DICTO, not for publication. Nothing has been submitted. 8 November: account approved (registered as James Baker), the #102 DOI (10.5281/zenodo.24037664) filled in, so everything below is ready, entry 1 first.</div>
 
 <p>Update 8 November: DICTO's OEIS account is approved, and #102 is
 released (DICTO DOI 10.5281/zenodo.24037664), so its DOI is now in
@@ -13,10 +13,8 @@ ready to submit, entry 1 first.</p>
 OEIS account.</p>
 <h2 id="how-to-submit">How to submit</h2>
 <ol type="1">
-<li>Register: oeis.org → "Register" (an OEIS wiki account). The OEIS
-asks contributors to register under their real full name; the %A line
-then carries that name ("<em>First Last</em>"). Decide how DICTO appears
-before registering (see "Open points").</li>
+<li>Register: done. DICTO registered as James Baker (approved 8
+November); the %A lines carry "<em>James Baker</em>".</li>
 <li>Log in, then open oeis.org/Submit.html ("Contribute a new
 sequence"). The form has one box per field below (%N name, data, %O
 offset, %C comments, %D references, %H links, %F formulas, %e example,
@@ -30,8 +28,8 @@ draft there; do not resubmit a changed copy.</li>
 placeholder A?????? numbers in %Y and %C by the real A-numbers.</li>
 <li>The comments on existing entries (section C) are added with "edit"
 on that entry's page; each also goes through the editors.</li>
-<li>New contributors should keep only a few drafts open at a time;
-one at a time is safest.</li>
+<li>New contributors should keep only a few drafts open at a time; one
+at a time is safest.</li>
 <li>Links (%H) must be stable: use the Zenodo DOIs; entry 1 and the
 comments on A002895/A002899 should wait until #102 is released and has
 its DOI.</li>
@@ -90,7 +88,7 @@ as written and compared term by term with the data lines.</p>
 %Y A?????? Cf. A002895 (all closed walks), A008253, A008264, A002899, A??????(entry 7, fcc analog), A??????(entries 2-5).
 %K A?????? nonn,walk
 %O A?????? 1,3
-%A A?????? DICTO, Nov 07 2026</code></pre>
+%A A?????? _James Baker_, Nov 08 2026</code></pre>
 <p>Checked: the formula terms equal DICTO's direct count (loops2.py,
 five stackings) for lengths 6..34 (oeis_checks.py C1), and the g.f. form
 was expanded and compared for n = 1..30. #102 checked the loops at 686
@@ -135,7 +133,7 @@ polytype</h3>
 %Y A?????? Cf. A008253 (diamond, 3C), A008264 (lonsdaleite, 2H; also the A-bilayer atoms of 4H), A??????, A??????, A?????? (6H sites), A002895.
 %K A?????? nonn,easy
 %O A?????? 0,2
-%A A?????? DICTO, Nov 07 2026</code></pre>
+%A A?????? _James Baker_, Nov 08 2026</code></pre>
 <p>The same program checks itself: <code>coordseq('ABC',0,0,n)</code>
 gives A008253 and <code>coordseq('AB',0,0,n)</code> gives A008264 (all
 48 listed terms), as does <code>coordseq('ABAC',0,1,n)</code>.</p>
@@ -163,7 +161,7 @@ polytype</h3>
 %Y A?????? Cf. A008253, A008264, A??????(entry 2), A??????(entry 4), A??????(entry 5), A002895.
 %K A?????? nonn,easy
 %O A?????? 0,2
-%A A?????? DICTO, Nov 07 2026</code></pre>
+%A A?????? _James Baker_, Nov 08 2026</code></pre>
 <p>(When submitting, paste the full coordseq() function from entry 2
 into %o; the editors prefer self-contained programs.)</p>
 <hr />
@@ -189,7 +187,7 @@ id="entry-4-6h-polytype-cubic-layer-atoms-bonded-to-the-hexagonal-layer">Entry
 %Y A?????? Cf. A008253, A008264, A??????(entry 2), A??????(entry 3), A??????(entry 5), A002895.
 %K A?????? nonn,easy
 %O A?????? 0,2
-%A A?????? DICTO, Nov 07 2026</code></pre>
+%A A?????? _James Baker_, Nov 08 2026</code></pre>
 <hr />
 <h3
 id="entry-5-6h-polytype-cubic-layer-atoms-bonded-to-the-other-cubic-layer">Entry
@@ -213,7 +211,7 @@ id="entry-5-6h-polytype-cubic-layer-atoms-bonded-to-the-other-cubic-layer">Entry
 %Y A?????? Cf. A008253, A008264, A??????(entry 2), A??????(entry 3), A??????(entry 4), A002895.
 %K A?????? nonn,easy
 %O A?????? 0,2
-%A A?????? DICTO, Nov 07 2026</code></pre>
+%A A?????? _James Baker_, Nov 08 2026</code></pre>
 <hr />
 <h3
 id="entry-6-the-fibonacci-stacking-of-close-packed-layers-as-letters-a-b-c--0-1-2">Entry
@@ -245,7 +243,7 @@ id="entry-6-the-fibonacci-stacking-of-close-packed-layers-as-letters-a-b-c--0-1-
 %Y A?????? Cf. A003849 (Fibonacci word, the layer types), A085002 (the steps), A005614, A000201.
 %K A?????? nonn,easy
 %O A?????? 0,4
-%A A?????? DICTO, Nov 07 2026</code></pre>
+%A A?????? _James Baker_, Nov 08 2026</code></pre>
 <p>Checked: the Jagodzinski types recovered from the letters for 390
 layers (oeis_checks.py C5); the A085002 formula checked for n &lt; 2000
 (assert in the test copy of the program); "layer n is h iff A003849(n) =
@@ -286,7 +284,7 @@ id="entry-7-optional-closed-non-backtracking-walks-per-sphere-of-fcc">Entry
 %Y A?????? Cf. A002899, A002895, A??????(entry 1, diamond analog), A293237.
 %K A?????? nonn,walk
 %O A?????? 1,3
-%A A?????? DICTO, Nov 07 2026</code></pre>
+%A A?????? _James Baker_, Nov 08 2026</code></pre>
 <p>Checked: lengths 3..24 equal oeis_checks.py C1b (fcc closed walks by
 direct propagation, then Ihara-Bass); the A002899 sum formula used in
 the program is David Broadhurst's PARI program on A002899; the g.f. form
@@ -318,9 +316,9 @@ entries</h2>
 <h2 id="c-open-points-before-submitting">C. Open points before
 submitting</h2>
 <ol type="1">
-<li><strong>Name.</strong> The OEIS asks for real names on accounts and
-in %A lines; "DICTO" as the author name may be questioned by the
-editors. DICTO decides how to register.</li>
+<li><strong>Name.</strong> Settled 8 November: DICTO registered as James
+Baker, so every %A line reads "<em>James Baker</em>"; the %D and %H
+lines keep the author name DICTO as printed on the Zenodo records.</li>
 <li><strong>O'Keeffe 1991</strong> (Chem. Mater. 3, 332-335)
 characterized the sites of SiC polytypes topologically and is cited on
 A008264 for a formula; it very probably lists the first
