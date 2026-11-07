@@ -1,0 +1,38 @@
+<h2>A.20 The FUJI Family <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23357896)</span></h2>
+<p class="told">Told in Volume I, Chapter 1 · Atoms.</p>
+<h3>The family FUJI(r)</h3>
+<ul>
+<li>Base: a truncated triangle with sides 1 and r (an equilateral triangle of side 1 + 2r with corners of side r cut off; the isogonal hexagon or truncated triangle t{3}); corners on a circle of radius² (1 + r + r²)/3.</li>
+<li>Side edges 1 when h² = (2 − r − r²)/3. Volume (√3/12)(1 + 4r + r²)h. Side faces: three equilateral, three isosceles 1, 1, r.</li>
+<li>Base angles: cos L = (1 + 2r)/3 (long sides); cos² S = (2 + r)/(3(2 − r)) (short sides). Proof: long-side distance s/(2√3) with s = 1 + 2r and slant √3/2; cut-line distance (2 + r)/(2√3) and slant √(1 − r²/4).</li>
+</ul>
+<table><tr><th>r</th><th>member</th><th>height</th><th>L</th><th>S</th></tr>
+<tr><td class="n">0</td><td>regular tetrahedron</td><td class="n">√(2/3)</td><td class="n">70.53°</td><td>– (limit 54.74°, no face)</td></tr>
+<tr><td class="n">1/4</td><td></td><td class="n">3/4</td><td class="n">60°</td><td class="n">49.11°</td></tr>
+<tr><td class="n">1/2</td><td></td><td class="n">0.6455</td><td class="n">48.19°</td><td class="n">41.81°</td></tr>
+<tr><td class="n">1/φ</td><td><b>FUJI</b></td><td class="n">1/√3</td><td class="n">41.81°</td><td class="n">37.38°</td></tr>
+<tr><td class="n">1</td><td>flat</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr></table>
+<p>cos² L = 5/9 exactly at r = 1/φ, and cos² S = 5/9 exactly at r = 1/2: the 41.81° gap angle of the Lotus seed.</p>
+<h3>Odom, and the antiprism rule</h3>
+<ul>
+<li>Extending each side of an equilateral triangle by e at both ends gives a truncated triangle with sides e and 1 + e, r = e/(1 + e); e = φ gives FUJI's base (Kabai 2008, after Odom); e = 1 gives r = 1/2. A change of parameter, not a new result.</li>
+<li>Face-plane condition L + D<sub>X</sub> = 180°: r = (−3 cos D<sub>X</sub> − 1)/2. Icosahedron (138.19°): 1/φ; cuboctahedron, triangle–square (125.26°): (√3 − 1)/2; square antiprism (127.55°): √2 − 1; rhombicuboctahedron (144.74°): (√6 − 1)/2; octahedron (109.47°): 0.</li>
+<li>Proposition 1: for the n-gonal antiprism, r = 2 cos(π/n) − 1, so 1 + r is the short diagonal of the regular n-gon. Proof: corners T<sub>k</sub>, B<sub>k</sub> with θ = π/n, R = 1/(2 sin θ); (T₁ − M)·(B₋₁ − M) = −(4 cos θ − 1)/4, so cos D<sub>n</sub> = (1 − 4 cos(π/n))/3 (the standard antiprism dihedral, in the OEIS). Numerical check n = 3 to 12 to 10⁻¹².</li>
+<li>n = 3: tetrahedron; n = 4: √2 − 1 (inverse silver ratio); n = 5: 1/φ, FUJI; n = 6: √3 − 1. Truncated k-gons give families only for k = 3, 4 and 5 (flat at r = 2 sin(π/k − π/6)); the square family's rhombicuboctahedron member is r = 1 − 1/√2. Link to octagonal quasicrystals left open.</li>
+</ul>
+<h3>Where the members live</h3>
+<ul>
+<li>Damasceno, Engel and Glotzer (2012): the truncated tetrahedron at t = 1/2 fills space; its hexagons have sides 2 : 1, the r = 1/2 base.</li>
+<li>Breathing pyrochlore (edges 1 and r): every kagome hexagon has sides 1 and r; with two kinds of truncated tetrahedra it fills space for every r (Wythoff construction in Ã₃); checked numerically at r = 0.2, 0.382, 0.5, 0.618, 0.8, 1. r = 1/φ: the golden breathing pyrochlore.</li>
+<li>Equal-depth cube–octahedron solid (|x|, |y|, |z| ≤ 1, |x| + |y| + |z| ≤ √3): 6 squares, 8 truncated triangles r = (√3 − 1)/2 = 0.366, all 14 faces on one insphere; its cube corners are the apexes of FUJI((√3 − 1)/2) scaled by √2(√3 − 1) ≈ 1.035. Proof: equilateral long faces exactly when 2(S − 1)² = (2 − S)² + 1, i.e. S² = 3.</li>
+</ul>
+<h3>Wheels, CLEO sphere, Cleo-Icos and Antonius</h3>
+<ul>
+<li>Wheel bound: n wheels with 2m spokes need n − 1 ≤ m: at most 3 (square), 4 (hexagonal), 6 (decagonal). Five octagonal: the triangles of the simple arrangement (sides 45°) have angles 65.53°, forcing pentagon angles 114.47°, against 122.25° for the equilateral equiangular spherical pentagon of side 45°.</li>
+<li>CLEO sphere: icosidodecahedron of edge 1/φ (circumradius 1) = 20 CLEO + 12 pentagonal pyramids (volume √5/12 each); total (11√5 − 5)/6. Each pentagonal pyramid = 5 right pyramids of volume √5/60.</li>
+<li>Cleo-Icos: side edges 0.851, base edge 2/√5 = 0.894; Mackay's unit tetrahedron (edge ratio 1/sin 72° = 1.0515); Hypsicles' pyramids (inradius ÷ circumradius 0.79465). Dihedral angles 72° (side edges) and 69.09° (base edges).</li>
+<li>Prolate golden rhombohedron (edge 0.851, dihedral angles 72° and 108°), 0 ≤ x, y, z ≤ 1 cut by x + y + z = 1 and 2: Cleo-Icos + Antonius + Cleo-Icos. Antonius: trigonal antiprism, two equilateral faces (edge 2/√5), six side faces (0.851, 0.851, 0.894); 4 × Cleo-Icos volume; rhombohedron 6 ×. Antonius's dihedral 110.91° + 69.09° = 180°. Patch of 2,187 pieces checked. Dehn invariant of Antonius exactly −2 times the Cleo-Icos's.</li>
+<li>Octahedron = 20 Cleo-Icos + 12 half Admiral Caps (volumes φ²/24, φ/24, φ⁶/6 at icosahedron edge 1) = 8 Cleo-Icos + 12 kite pyramids; Cleo-Icos and half caps (with or without Antonius) cannot fill space (π, arccos(−√5/3), arccos(1/√3) rationally independent).</li>
+</ul>
+<h3>Sources</h3>
+<p>Searched 14 October 2026: reference library, web, OEIS. Known and credited: the isogonal hexagon, antiprism angles (OEIS A394077), Odom and van de Craats 1983, Kabai 2008 and 2014, Damasceno et al. 2012, Okamoto et al. 2013, Coxeter 1973, Mackay 1962, Ino 1969, Marks 1984, Hypsicles, Hafner and Žitko, Hafner and Komatar 2008, Prodan et al. 2017, Fang et al. Scripts: studies/2026-10-14-fuji-family, -icosa-cleo-pair, -half-cap.</p>

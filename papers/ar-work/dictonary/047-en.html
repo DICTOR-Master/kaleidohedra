@@ -1,0 +1,19 @@
+<h2>A.39 The DICTO OG Family <span style="font-weight:400">(DICTO DOI: 10.5281/zenodo.23488944)</span></h2>
+<p class="told">Told in Volume I, Chapter 4 · Cycles.</p>
+<p>Frame: ID of circumradius φ ⊂ OG ⊂ RT. T(S) = {x : v·x ≤ v·v}; P(S) = hull of the foot points (d/n·n) n. T(P(S)) = S for all four downward steps (exact); P(KRE) is the hull of the OG's other 90 corners.</p>
+<table><tr><th>Solid</th><th>Corners</th><th>Faces</th><th>Edges</th><th>Volume</th><th>Corner radii</th></tr>
+<tr><td>OG</td><td class="n">102</td><td>60 kites + 20 regular hexagons</td><td class="n">180</td><td class="n">(525 + 185√5)/57 ≈ 16.4679</td><td class="n">1.6180–1.6873</td></tr>
+<tr><td>KRE</td><td class="n">92</td><td>30 rhombi + 60 kites</td><td class="n">180</td><td class="n">(920 + 60√5)/57 ≈ 18.4941</td><td class="n">1.6520–1.7321</td></tr>
+<tr><td>PHE</td><td class="n">180</td><td>12 regular pentagons + 20 regular hexagons + 60 hexagons</td><td class="n">270</td><td class="n">(95875 − 1560√5)/4617 ≈ 20.0101</td><td class="n">1.7046–1.7427</td></tr>
+<tr><td>TPP</td><td class="n">212</td><td>60 triangles + 120 pentagons (two kinds)</td><td class="n">390</td><td class="n">≈ 22.3366</td><td class="n">1.7220–1.8104</td></tr>
+<tr><td>DPHP</td><td class="n">270</td><td>12 equal-sided decagons + 20 regular hexagons + 120 pentagons</td><td class="n">420</td><td class="n">≈ 23.5434</td><td class="n">1.7995–1.8095</td></tr>
+<tr><td>TPH</td><td class="n">80</td><td>120 isosceles triangles + 12 regular pentagons</td><td class="n">210</td><td class="n">(10437930 + 3959694√5)/109³ ≈ 14.8970</td><td class="n">1.5115–1.5848</td></tr>
+<tr><td>TQH</td><td class="n">132</td><td>60 triangles + 60 quadrilaterals + 20 regular hexagons</td><td class="n">270</td><td class="n">(770805045 + 337172409√5)/(2⁴·41³·109) ≈ 12.6853</td><td class="n">1.4885–1.5023</td></tr>
+<tr><td>TQP</td><td class="n">140</td><td>60 triangles + 30 rhombi + 60 quadrilaterals + 12 regular pentagons</td><td class="n">300</td><td class="n">≈ 11.6524</td><td class="n">1.4172–1.4931</td></tr>
+<tr><td>TQHD</td><td class="n">162</td><td>120 triangles (two kinds) + 60 quadrilaterals + 20 regular hexagons</td><td class="n">360</td><td class="n">≈ 10.4208</td><td class="n">1.3493–1.3948</td></tr></table>
+<ul>
+<li>KRE rhombus side² 29/18 − √5/2 (≈ 0.7022); kite short side² (1505 + 315√5)/6498 (≈ 0.5831). PHE pentagon side² 35/18 − 5√5/6; regular hexagons side² 1/27 (√3/9). TPH pentagon side² (4014 + 378√5)/109². Every triangle isosceles.</li>
+<li>Shells (remainder 0): OG ⊂ KRE (60 on kites (230 + 15√5)/37278 ≈ 0.00707, 20 on hexagons (429 − 145√5)/1308 ≈ 0.08010; gap ≈ 2.02617); KRE ⊂ PHE (30 on rhombi 235/2916 − √5/36 ≈ 0.01848, 60 on kites ≈ 0.01603; ≈ 1.51602); PHE ⊂ TPP (≈ 0.00218, ≈ 0.03805, 409/476766 ≈ 0.000858; ≈ 2.32644); TPH ⊂ OG (≈ 0.006748, ≈ 0.06343; ≈ 1.57092); TQH ⊂ TPH (≈ 0.02937, ≈ 0.007311, ≈ 0.000550; ≈ 2.21176); TQHD ⊂ TQP (≈ 0.000016, 0.003318, 0.000090, 0.05131; ≈ 1.23162).</li>
+<li>Breaks: 60 TPP corners outside the DPHP by up to 0.0185 (DPHP has 212 − 60 = 152 faces); 60 TQP corners outside the TQH by up to 0.0058. Roundness spread: DPHP 0.56%, OG 4.28%, TPP 5.13%.</li>
+</ul>
+<p><b>Sources and scripts.</b> Antipedal and pedal constructions; Smarandache 2010; Goldberg GP(3,0); the rhombic enneacontahedron. Searched: 80 library sources and web, 20 October 2026. Scripts: exact_upward.py, exact_downward.py, family_facts.py (commit 058c2fb).</p>
