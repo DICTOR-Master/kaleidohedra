@@ -11,7 +11,7 @@ sys.path.insert(0, '.')
 # float machinery for feature identification (first: the exact block below reuses the names P1, P2)
 os.environ['STACK'] = 'tight'; sys.argv = [sys.argv[0]]
 exec(open('move_vertex.py').read().split('# ---- the moves seen in cell_track')[0].replace('print(', '(lambda *a, **k: None)('))
-DPS = 400
+DPS = int(os.environ.get("DPS", "400"))
 src = open('stack_solve.py').read().replace('mp.mp.dps = 60', f'mp.mp.dps = {DPS}')
 exec(src.split("for nm, x in (('h', h)")[0].replace('print(', '(lambda *a, **k: None)('))
 hM, aM, bM = h, aa, bb

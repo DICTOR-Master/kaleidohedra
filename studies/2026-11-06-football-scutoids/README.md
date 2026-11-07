@@ -79,3 +79,11 @@ the figure redrawn at the closest stacking with the four corners marked.
 - Figure: `football-slices-tight.png` (closest stacking; the corner slice rings the four-cell points).
 
 LEADS: cells as solids at the tight stacking (volumes, face counts); exact degree of the field of h (build the 3×3 system with symbols h5, h6, √3, √5 and take resultants).
+
+### Step 3d (2026-11-07): exact algebraic numbers (PARI/GP via cypari2)
+`scripts/football_algdep.py` → `data-algdep.txt` (4000 digits; polynomials accepted only if irreducible, vanishing to 10^-3900 and with coefficients using < half the digits).
+- The closest stacking: h and b each have a minimal polynomial of DEGREE 8 (coefficients ~10^15; earlier searches stopped at 10^7). Both generate the same field, x^8 − 7x^6 + 14x^4 − 8x^2 + 1 (discriminant 2^8·3^4·5^6), whose root 1.98904… = 2 cos 6°: the field is Q(cos π/30), the real subfield of the 60th roots of unity (checked: it lies in Q(ζ60)). It contains √3, √5 and √15 — the football's own numbers.
+- The scutoid corner: distance d and height z each have degree 16; their field is a quadratic extension of Q(cos π/30) (checked: it contains it) — the one square root of the corner's quadratic (3 faces + 1 edge, step 3c).
+- h = 3.43700237509909317669058644566430344928616630658…: 3094140625x⁸ − 27395312500x⁷ − 282210812500x⁶ + 3989449812500x⁵ − 6100148510000x⁴ − 111025499990000x³ + 682622636847800x² − 1562801171644400x + 1313318470512016.
+
+LEADS: write h and b as explicit expressions in cos 6° (PARI nfroots of the minimal polynomials over the field); same for the corner over its quadratic extension.
