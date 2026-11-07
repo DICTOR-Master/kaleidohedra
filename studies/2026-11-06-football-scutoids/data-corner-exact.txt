@@ -1,0 +1,30 @@
+stacking tight: h 3.437002, shift (0.500000, 0.561074)
+swap check 2.220446049250313e-16 2.607230109677541e-16
+gap 0.6: link length D = 5.1947; links checked 50, not pentagon-hexagon 0
+stacking at 400 digits: h = 3.4370023750990931766905864456643034492861663065838, a = 0.5, b = 0.56107350871014989597369051168900062028549034565266 (contact residual 0.0)
+corner of X(-1,+1,+0), X(+0,+0,+0), X(+0,+1,-1), Y(-1,+1,+0): faces ['X(+0,+0,+0) pentagon', 'X(+0,+1,-1) hexagon', 'Y(-1,+1,+0) hexagon'], edge of X(-1,+1,+0) between faces of [6, 6] sides (at 0.0998715 along it)
+  quadratic 3.0450078563471286766 d^2 + -12.159984812230016488 d + 9.2697256833549439342 = 0; other root 2.96758774472
+  d = 1.0258288196652896012436611208197240743457426177876
+  height w = -0.09925264880305105652734701278104346859306 of a period = -0.3411315896709626487956003970187185141145 from the middle plane
+  float corner: d 1.0258287743, w -0.0992526709; face feet inside [True, True, True]; residuals 2.13e-401, 2.13e-401: OK
+corner of Y(-1,+0,+0), Y(+0,-1,+0), X(+0,+0,+0), Y(+0,+0,-1): faces ['Y(-1,+0,+0) pentagon', 'X(+0,+0,+0) hexagon', 'Y(+0,+0,-1) hexagon'], edge of Y(+0,-1,+0) between faces of [6, 6] sides (at 0.0998715 along it)
+  quadratic 3.0450078563471286766 d^2 + -12.159984812230016488 d + 9.2697256833549439342 = 0; other root 2.96758774472
+  d = 1.0258288196652896012436611208197240743457426177876
+  height w = -0.09925264880305105652734701278104346859306 of a period = -0.3411315896709626487956003970187185141145 from the middle plane
+  float corner: d 1.0258287756, w -0.0992526690; face feet inside [True, True, True]; residuals 2.13e-401, 4.27e-401: OK
+corner of X(+0,-1,+1), Y(+0,-1,+0), X(+0,+0,+0), X(+1,-1,+0): faces ['X(+0,-1,+1) hexagon', 'Y(+0,-1,+0) hexagon', 'X(+0,+0,+0) pentagon'], edge of X(+1,-1,+0) between faces of [6, 6] sides (at 0.900128 along it)
+  quadratic 3.0450078563471286766 d^2 + -12.159984812230016488 d + 9.2697256833549439342 = 0; other root 2.96758774472
+  d = 1.0258288196652896012436611208197240743457426177876
+  height w = 0.09925264880305105652734701278104346859306 of a period = 0.3411315896709626487956003970187185141145 from the middle plane
+  float corner: d 1.0258287742, w +0.0992526709; face feet inside [True, True, True]; residuals 2.13e-401, 0.0: OK
+corner of X(+0,+0,+0), Y(-1,+0,+1), Y(-1,+1,+0), Y(+0,+0,+0): faces ['X(+0,+0,+0) hexagon', 'Y(-1,+0,+1) hexagon', 'Y(+0,+0,+0) pentagon'], edge of Y(-1,+1,+0) between faces of [6, 6] sides (at 0.0998715 along it)
+  quadratic 3.0450078563471286766 d^2 + -12.159984812230016488 d + 9.2697256833549439342 = 0; other root 2.96758774472
+  d = 1.0258288196652896012436611208197240743457426177876
+  height w = 0.09925264880305105652734701278104346859306 of a period = 0.3411315896709626487956003970187185141145 from the middle plane
+  float corner: d 1.0258287758, w +0.0992526690; face feet inside [True, True, True]; residuals 4.27e-401, 6.4e-401: OK
+all 4 corners: same distance and same height off the middle plane to 380 digits: True
+minimal polynomial of h: none up to degree 16, coefficients < 1e18
+minimal polynomial of b: none up to degree 16, coefficients < 1e18
+minimal polynomial of d (corner distance): none up to degree 16, coefficients < 1e18
+minimal polynomial of z (corner height): none up to degree 16, coefficients < 1e18
+FINAL ok
