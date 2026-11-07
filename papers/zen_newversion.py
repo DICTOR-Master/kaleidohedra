@@ -17,4 +17,5 @@ req(f"{draft['links']['bucket']}/{os.path.basename(pdf)}", 'PUT', raw=open(pdf, 
 req(f"{API}/{draft['id']}", 'PUT', {'metadata': meta})
 p = req(f"{API}/{draft['id']}/actions/publish", 'POST'); print('published', p['id'], p['doi'], p['links']['html'])
 __import__('subprocess').run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'zen_preview.py'), str(p['id'])])   # PDF preview (DICTO rule 10-17), automatic since 11-07 (it had been skipped twice)
+__import__('subprocess').run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'tools', 'tidy.py'), '--folder', os.path.dirname(os.path.abspath(pdf))])   # hygiene: drafts of this paper deleted at release (DICTO 11-07)
 __import__('subprocess').run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'zen_community.py'), str(p['id'])])   # join communities/dicto

@@ -25,3 +25,4 @@ elif cmd == 'publish':
     s.update(published=True, doi=p['doi']); json.dump(s, open(state, 'w')); print('published', p['doi'], 'concept', p['conceptdoi'], p['links']['html'])
     __import__('subprocess').run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'zen_community.py'), str(p['id'])])   # join communities/dicto
     __import__('subprocess').run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'zen_preview.py'), str(p['id'])])   # PDF preview (DICTO rule 10-17), automatic since 11-07
+    __import__('subprocess').run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'tools', 'tidy.py'), '--folder', folder])   # hygiene: drafts of this paper deleted at release (DICTO 11-07)
