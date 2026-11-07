@@ -18,6 +18,11 @@ import fs from 'node:fs';
   if (!/^en/i.test(lang) && !/^DRAFT/i.test(path.basename(pdf))) { const f = path.join(here, dir, 'native-review.json');
     let ok = false; try { const j = JSON.parse(fs.readFileSync(f, 'utf8')); ok = j.verdict === 'ok' && !!j.reviewer; } catch (e) {}
     if (!ok) { console.error(`GUARD: lang ${lang} needs ${f} with a native reader's verdict ok - print it as DRAFT-… instead`); process.exit(5); } }
+  // KATAKANA-COVER GUARD (DICTO 11-07: "any japanese language version gets a katakana cover"): a final ja book needs its own cover
+  // image (file name with -ja) whose alt text carries the katakana title.
+  if (/^ja/i.test(lang) && !/^DRAFT/i.test(path.basename(pdf))) { const cv = raw.match(/class="page coverpage"[\s\S]*?<img[^>]*>/);
+    const img = cv ? cv[0].match(/<img[^>]*>/)[0] : '';
+    if (!/src="[^"]*-ja[^"]*"/.test(img) || !/alt="[^"]*[\u30A0-\u30FF]{3,}/.test(img)) { console.error('GUARD: Japanese book without its katakana cover (cover img src must contain -ja and alt the katakana title)'); process.exit(6); } }
   if (hits.length && !process.env.ALLOW_BANNED) { console.error('BANNED PHRASE — not printed:\n  ' + hits.join('\n  ')); process.exit(2); } }
 const b = await chromium.launch();
 const page = await b.newPage();
