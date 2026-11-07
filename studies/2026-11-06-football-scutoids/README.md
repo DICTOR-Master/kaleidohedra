@@ -87,3 +87,10 @@ LEADS: cells as solids at the tight stacking (volumes, face counts); exact degre
 - h = 3.43700237509909317669058644566430344928616630658…: 3094140625x⁸ − 27395312500x⁷ − 282210812500x⁶ + 3989449812500x⁵ − 6100148510000x⁴ − 111025499990000x³ + 682622636847800x² − 1562801171644400x + 1313318470512016.
 
 LEADS: write h and b as explicit expressions in cos 6° (PARI nfroots of the minimal polynomials over the field); same for the corner over its quadratic extension.
+
+### Step 3e (2026-11-07): closed forms in cos 6°
+`scripts/football_closed_form.py` → `data-closed-form.txt` (exact field algebra in PARI: the minimal polynomials factored over K = Q(c), c = 2 cos 6°).
+- h = (63c⁷ + 1227c⁶ − 510c⁵ − 6233c⁴ + 1110c³ + 5624c² − 372c + 981) / 445, with c = 2 cos 6°.
+- In square roots (w = √(10 + 2√5) = 4 cos 18°): h = 197/178 − (69/445)√3 + (134/89)√5 + (63/890)√15 − (81/712)w − (587/712)√3·w + (63/3560)√5·w + (1129/3560)√15·w.
+- b has the same form with larger rationals (denominator 104 323 664 = 2⁴·6 520 229); see the data file. a = 1/2 exactly.
+- Both agree with the 60-digit values; exactness is by construction (each is the root, in K, of the exact minimal polynomial).
