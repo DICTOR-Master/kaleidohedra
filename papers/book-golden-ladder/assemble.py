@@ -97,7 +97,8 @@ doc = f'''<!doctype html>
 <img class="logo" src="../dicto-logo.png" alt="DICTO">
 <h1>The Golden Ladder<br><span style="font-size:0.72em;font-weight:normal">Golden Cuts from Plato to the Eighth Dimension</span></h1>
 <div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>
-Book · Version 4 · 6 November 2026 · DICTO DOI: 10.5281/zenodo.23966554 · Licence CC BY-SA 4.0 · Part of DICTO: Collected Geometric Works (DICTO DOI: 10.5281/zenodo.23345699)<br>Cover by DICTO: a ladder of golden rails whose rungs climb the dimensions: the truncated triangle with sides in the golden ratio (2D); Icosaxes and Unborn Axes (3D); the 120-cell (4D); and E8 as two 600-cells, one φ times the other, in the Coxeter plane (8D).</div>
+Book · Version 5 · 7 November 2026 · DICTO DOI: 10.5281/zenodo.23966554 · Licence CC BY-SA 4.0 · Part of DICTO: Collected Geometric Works (DICTO DOI: 10.5281/zenodo.23345699)<br>Cover by DICTO: a ladder of golden rails whose rungs climb the dimensions: the truncated triangle with sides in the golden ratio (2D); Icosaxes and Unborn Axes (3D); the 120-cell (4D); and E8 as two 600-cells, one φ times the other, in the Coxeter plane (8D).</div>
+<div class="status"><b>Status</b> (draft for DICTO's reading; this box is deleted at publication): Version 5 changes only the cover: the ladder now closes with a rung above the eighth-dimensional shape (the top of the ladder was open and looked cropped). Text and figures are as in Version 4.</div>
 {status}
 {tochtml}
 <div class="chapter">{mapbody}</div>

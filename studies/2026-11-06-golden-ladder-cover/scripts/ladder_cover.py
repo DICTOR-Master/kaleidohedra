@@ -104,7 +104,7 @@ def make(version):
     glow_layer(img, rail, GOLD, 22 * SS)
     d = ImageDraw.Draw(img)
     for x in (xl, xr): d.line([(x, 160 * SS), (x, (LADH - 20) * SS)], fill=GOLD + (255,), width=22 * SS)
-    for y in rungs:
+    for y in rungs + [200]:   # DICTO 11-07: a closing rung above the 8D shape (the top of the ladder was open, read as cropped)
         d.line([(xl, y * SS), (xr, y * SS)], fill=(150, 112, 22, 255), width=18 * SS)
     # 2D: truncated triangle, long/short = phi (Chapter 3, #88), lying on its rung, seen slightly from above
     a, b = phi, 1.0; Lt = a + 2 * b; T = [np.array([np.cos(t), np.sin(t)]) * Lt / 3 ** 0.5 for t in np.radians([90, 210, 330])]
@@ -144,5 +144,7 @@ def make(version):
     out = Image.new('RGB', (W, Hc), GROUND); out.paste(lad, (0, 0)); out.paste(Image.fromarray(np.clip(panel, 0, 255).astype(np.uint8)), (0, LADH))
     out.save(f'../golden-ladder-cover-{version}.png'); print('saved', version, flush=True)
 if __name__ == '__main__':
-    for v in sys.argv[1:] or ['A', 'B']: make(v)
-    print('FINAL OK')
+    vs = sys.argv[1:] or ['A', 'B']
+    for v in vs: make(v)
+    import os
+    print('FINAL ok' if all(os.path.getsize(f'../golden-ladder-cover-{v}.png') > 100000 for v in vs) else 'FINAL FAIL (cover missing)')
