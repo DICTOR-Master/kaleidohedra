@@ -13,4 +13,10 @@ for f in $(git diff --cached --name-only --diff-filter=AM | grep -E '^studies/.*
   if git show ":$f" | grep -qE "^[[:space:]]*print\((\"FINAL ok\"|'FINAL ok')\)[[:space:]]*(#.*)?$"; then
     echo "BLOCKED: $f prints FINAL ok unconditionally - make it print(\"FINAL ok\" if <check> else \"FINAL FAIL ...\")"; bad=1; fi
 done
+# DICTO only-happens-once (7 Nov 2026): published text is never cut short. A generator line that writes HTML (<td, <div, <p, <li)
+# and slices a value with [:N] silently truncated six DICTOnary catalogue notes mid-word.
+for f in $(git diff --cached --name-only --diff-filter=AM | grep -E '^(studies|papers)/.*\.py$'); do
+  if git show ":$f" | grep -E '<(td|div|p|li)[ >]' | grep -qE '(\)|\]|\"|'"'"')\[:[0-9]+\]'; then
+    echo "BLOCKED: $f cuts a value written into HTML with [:N] - write the full text (or end a deliberate cut with an ellipsis and say so)"; bad=1; fi
+done
 exit $bad

@@ -107,7 +107,8 @@ with open(out, 'w', encoding='utf8') as f:
     f.write('<section class="page catalogue">\n<p class="chapter-mark">The DICTOnary · the catalogue</p>\n<h1>All the atoms</h1>\n')
     f.write(f'<p>Every named shape of the work, one quantum of space each: first DICTO\'s new shapes, {len(new)} of them, {('D1 to D' + str(max(map(dnum, filter(dnum, new))))) if not any(map(pend, new)) else 'each with its D-number'} (given in order of first publication, never reused); then his {len(newc)} new clusters, structures and networks built from them; the {len(other)} known or rediscovered shapes the work builds with are listed at the end of this volume. A shape whose model file is in the dataset <i>DICTO Solids: Exact Geometry</i> is drawn, all in one pose: gold for DICTO\'s new shapes, silver for known ones. Under each: its kind, the paper or finding it comes from (linked to its DICTO DOI), the chapter of Volume I that tells it, and the status found by the prior-art search.</p>\n')
     # DICTO 10-29: all the pictures first, then the shapes not yet drawn, in tables at the end of the catalogue
-    def row(r): return f'<tr><td>{e(r["universal_number"] or "—")}</td><td>{e(r["name"])}</td><td>{e(r["kind"])}</td><td>{where(r)}</td><td>{e(told(r))}</td><td>{e((r["prior_art_or_note"] or r["status"])[:140])}</td></tr>'
+    # 11-07: the note column was cut at 140 characters with no mark (six catalogue rows ended mid-word in DICTOnary v1.1); never cut published text.
+    def row(r): return f'<tr><td>{e(r["universal_number"] or "—")}</td><td>{e(r["name"])}</td><td>{e(r["kind"])}</td><td>{where(r)}</td><td>{e(told(r))}</td><td>{e((r["prior_art_or_note"] or r["status"]))}</td></tr>'
     def shown(r): return bool(icon(r) or borrowed(r))
     def pics(title, rs): f.write(f'<h2>{title}</h2>\n<div class="atoms">\n' + '\n'.join(card(r) for r in rs if shown(r)) + '\n</div>\n')
     pics("DICTO's new atoms", new)
@@ -127,6 +128,6 @@ with open(out.replace('.html', '-known.html'), 'w', encoding='utf8') as f:
     f.write('<div class="atoms">\n' + '\n'.join(card(r) for r in pics) + '\n</div>\n')
     if rest:
         f.write('<table class="atl"><caption class="tl">Not drawn here: computed in the sources, not yet a model file in the data set</caption><thead><tr><th>No.</th><th>Shape</th><th>Kind</th><th>From</th><th>Told in</th><th>Status</th></tr></thead>\n')
-        f.write('\n'.join(f'<tr><td>{e(r["universal_number"] or "—")}</td><td>{e(r["name"])}</td><td>{e(r["kind"])}</td><td>{where(r)}</td><td>{e(told(r))}</td><td>{e((r["prior_art_or_note"] or r["status"])[:140])}</td></tr>' for r in rest) + '\n</table>\n')
+        f.write('\n'.join(f'<tr><td>{e(r["universal_number"] or "—")}</td><td>{e(r["name"])}</td><td>{e(r["kind"])}</td><td>{where(r)}</td><td>{e(told(r))}</td><td>{e((r["prior_art_or_note"] or r["status"]))}</td></tr>' for r in rest) + '\n</table>\n')
     f.write('</section>\n')
 print('new', len(new), 'new clusters', len(newc), 'other', len(other), 'with icons', sum(1 for r in rows if icon(r)))
