@@ -104,7 +104,7 @@ tochtml='<h2>Contents</h2><table class="toc">'+''.join(f'<tr><td>{html.escape(t)
 css='\n'.join(sorted(styles))+'''
 h1.chapter{break-before:page;font-size:19pt;margin-top:0} p.from{font-size:8.5pt;color:#777;margin:-2mm 0 4mm}
 .part{break-before:page;height:200mm;display:flex;align-items:center;justify-content:center} h1.partt{font-size:26pt;color:#b8962e}
-table.toc td{border-bottom:1px dotted #ccc;padding:1.2mm 2mm} .titlepage{height:240mm;display:flex;flex-direction:column;justify-content:center}
+table.toc td{border-bottom:1px dotted #ccc;padding:1.2mm 2mm} .titlepage{min-height:240mm;display:flex;flex-direction:column;justify-content:flex-start}
 .titlepage h1{font-size:30pt} section.epi,section.app{break-before:page} section.app h3{font-size:10pt;margin-top:5mm} section.app p,section.app li{font-size:8.6pt}
 figure img{width:100%;display:block}
 /* DICTO 10-29: neutral sans-serif for the whole book, as in HexOct */

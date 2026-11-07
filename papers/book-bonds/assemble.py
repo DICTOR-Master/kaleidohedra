@@ -139,7 +139,7 @@ css = '\n'.join(sorted(styles)) + '''
 h1.chapter{break-before:page;font-size:19pt;margin-top:0} p.from{font-size:8.5pt;color:#777;margin:-2mm 0 4mm}
 .part{break-before:page;height:200mm;display:flex;flex-direction:column;align-items:center;justify-content:center} h1.partt{font-size:26pt;color:#b8962e;text-align:center} p.partsub{font-size:11pt;color:#555}
 table.toc{width:100%} table.toc td{border-bottom:1px dotted #ccc;padding:1.1mm 2mm} table.toc td.pg{text-align:right;width:12mm} table.toc tr.tp td{font-weight:600;color:#8a6d1f;padding-top:3mm} table.toc a, table.idx a{color:inherit;text-decoration:none}
-.titlepage{height:235mm;display:flex;flex-direction:column;justify-content:center} .titlepage h1{font-size:30pt}
+.titlepage{min-height:235mm;display:flex;flex-direction:column;justify-content:flex-start} .titlepage h1{font-size:30pt}
 .statusbox{border:1.5px solid #b8962e;background:#fbf7ec;padding:3mm 5mm;margin:8mm 0 0;font-size:9pt;line-height:1.4} .statusbox p{margin:0 0 1.5mm}
 section.epi,section.app{break-before:page} section.app h3{font-size:10pt;margin-top:5mm} section.app p,section.app li{font-size:8.6pt}
 figure img{width:100%;display:block} h2,h3,h4{break-after:avoid}
