@@ -25,7 +25,7 @@ All terms below were recomputed on 7 November 2026: `studies/2026-11-07-oeis-can
 
 ## A. New entries
 
-### Entry 1. Closed non-backtracking walks per atom of diamond
+### Entry 1. Closed non-backtracking walks per atom of diamond: SUBMITTED 8 November as A400949 (proposed)
 
 ```
 %I A??????
@@ -83,7 +83,7 @@ Checked: the formula terms equal DICTO's direct count (loops2.py, five stackings
 %N A?????? Coordination sequence of an atom of a hexagonal (h) bilayer of the 4H polytype of diamond (4H-SiC network, stacking ABAC).
 %C A?????? The network: close-packed bilayers stacked ABAC repeated (= ABCB, Jagodzinski symbol hc); each atom is bonded to the atom directly above or below it in its bilayer and to three atoms of the neighbouring bilayer, as in 4H silicon carbide with all atoms alike. The B and C bilayers are hexagonal (their two neighbours sit in the same position A); all their atoms have this sequence. The atoms of the cubic A bilayers have the sequence A008264 of lonsdaleite instead (checked for n <= 100).
 %C A?????? The sequence first differs from diamond (A008253) at n = 5 and from lonsdaleite (A008264) at n = 3.
-%C A?????? Although the shells differ, the numbers of closed walks (A002895) and of closed non-backtracking walks (A??????, entry 1) of every length at this atom are those of diamond (DICTO, #102, Theorem 1).
+%C A?????? Although the shells differ, the numbers of closed walks (A002895) and of closed non-backtracking walks (A400949) of every length at this atom are those of diamond (DICTO, #102, Theorem 1).
 %D A?????? DICTO, Spin Ice and Kagome Magnets on Every Stacking (#74), Zenodo, 2026, DICTO DOI 10.5281/zenodo.23730421, Figure 1a.
 %D A?????? DICTO, HexOct: The Hexagonality Law, with the Window Law, the Rule of Halves & the Swap Rule (book), Zenodo, 2026, DICTO DOI 10.5281/zenodo.23731359.
 %D A?????? M. O'Keeffe, Topological and geometrical characterization of sites in silicon carbide polytypes, Chemistry of Materials 3 (1991), 332-335.
@@ -127,7 +127,7 @@ The same program checks itself: `coordseq('ABC',0,0,n)` gives A008253 and `coord
 %U A?????? 4200,4411,4628,4852,5082,5316,5556,5800,6050,6304,6564,6828,7098,7372,7652,7939,8232,8529
 %N A?????? Coordination sequence of an atom of a hexagonal (h) bilayer of the 6H polytype of diamond (6H-SiC network, stacking ABCACB).
 %C A?????? The network: close-packed bilayers stacked ABCACB repeated (Jagodzinski symbol hcc), bonded as in 6H silicon carbide with all atoms alike. The two A bilayers of the period are hexagonal (both neighbours in position B, resp. C); all their atoms have this sequence. The four cubic bilayers carry two other sequences, A?????? (entry 4) and A?????? (entry 5), each at half of their atoms.
-%C A?????? Although the shells differ, the numbers of closed walks (A002895) and of closed non-backtracking walks (A??????, entry 1) of every length at this atom are those of diamond (DICTO, #102, Theorem 1).
+%C A?????? Although the shells differ, the numbers of closed walks (A002895) and of closed non-backtracking walks (A400949) of every length at this atom are those of diamond (DICTO, #102, Theorem 1).
 %D A?????? DICTO, Spin Ice and Kagome Magnets on Every Stacking (#74), Zenodo, 2026, DICTO DOI 10.5281/zenodo.23730421.
 %D A?????? DICTO, HexOct: The Hexagonality Law, with the Window Law, the Rule of Halves & the Swap Rule (book), Zenodo, 2026, DICTO DOI 10.5281/zenodo.23731359.
 %D A?????? M. O'Keeffe, Topological and geometrical characterization of sites in silicon carbide polytypes, Chemistry of Materials 3 (1991), 332-335.
@@ -156,7 +156,7 @@ The same program checks itself: `coordseq('ABC',0,0,n)` gives A008253 and `coord
 %U A?????? 4201,4413,4632,4854,5083,5317,5556,5800,6050,6304,6564,6829,7099,7374,7656,7941,8233,8530
 %N A?????? Coordination sequence of an atom of a cubic (c) bilayer of the 6H polytype of diamond (6H-SiC network, stacking ABCACB) whose three interlayer bonds go to the neighbouring hexagonal bilayer.
 %C A?????? In the period ABCACB the bilayers B, C, C, B (positions 1, 2, 4, 5) are cubic and each lies next to one hexagonal A bilayer. Each atom of a cubic bilayer has its three interlayer bonds either towards that A bilayer (this sequence: the lower atoms of bilayers 1 and 4, the upper atoms of bilayers 2 and 5) or towards the other cubic bilayer (A??????, entry 5).
-%C A?????? Although the shells differ, the numbers of closed walks (A002895) and of closed non-backtracking walks (A??????, entry 1) of every length at this atom are those of diamond (DICTO, #102, Theorem 1).
+%C A?????? Although the shells differ, the numbers of closed walks (A002895) and of closed non-backtracking walks (A400949) of every length at this atom are those of diamond (DICTO, #102, Theorem 1).
 %D A?????? DICTO, Spin Ice and Kagome Magnets on Every Stacking (#74), Zenodo, 2026, DICTO DOI 10.5281/zenodo.23730421.
 %D A?????? DICTO, HexOct: The Hexagonality Law, with the Window Law, the Rule of Halves & the Swap Rule (book), Zenodo, 2026, DICTO DOI 10.5281/zenodo.23731359.
 %D A?????? M. O'Keeffe, Topological and geometrical characterization of sites in silicon carbide polytypes, Chemistry of Materials 3 (1991), 332-335.
@@ -183,7 +183,7 @@ The same program checks itself: `coordseq('ABC',0,0,n)` gives A008253 and `coord
 %U A?????? 4201,4414,4632,4855,5083,5316,5556,5800,6050,6304,6564,6828,7099,7375,7656,7942,8233,8529
 %N A?????? Coordination sequence of an atom of a cubic (c) bilayer of the 6H polytype of diamond (6H-SiC network, stacking ABCACB) whose three interlayer bonds go to the neighbouring cubic bilayer.
 %C A?????? These are the upper atoms of bilayers 1 and 4 and the lower atoms of bilayers 2 and 5 of the period ABCACB (positions 0..5); the other atoms of these cubic bilayers have A?????? (entry 4), the atoms of the hexagonal A bilayers A?????? (entry 3).
-%C A?????? Although the shells differ, the numbers of closed walks (A002895) and of closed non-backtracking walks (A??????, entry 1) of every length at this atom are those of diamond (DICTO, #102, Theorem 1).
+%C A?????? Although the shells differ, the numbers of closed walks (A002895) and of closed non-backtracking walks (A400949) of every length at this atom are those of diamond (DICTO, #102, Theorem 1).
 %D A?????? DICTO, Spin Ice and Kagome Magnets on Every Stacking (#74), Zenodo, 2026, DICTO DOI 10.5281/zenodo.23730421.
 %D A?????? DICTO, HexOct: The Hexagonality Law, with the Window Law, the Rule of Halves & the Swap Rule (book), Zenodo, 2026, DICTO DOI 10.5281/zenodo.23731359.
 %D A?????? M. O'Keeffe, Topological and geometrical characterization of sites in silicon carbide polytypes, Chemistry of Materials 3 (1991), 332-335.
@@ -269,7 +269,7 @@ Extension; not yet the subject of a DICTO paper beyond #102 Corollary 3 (lengths
 %o A??????             if 2*j-i <= M: c[2*j-i] += Fraction(comb(j,i)*W[i]*(-q)**(j-i), j)
 %o A??????     return [int(m*c[m]) for m in range(1, M+1)]   # lengths 1..M
 %o A?????? print(loops([fcc(i) for i in range(23)], 11))
-%Y A?????? Cf. A002899, A002895, A??????(entry 1, diamond analog), A293237.
+%Y A?????? Cf. A002899, A002895, A400949 (diamond analog), A293237.
 %K A?????? nonn,walk
 %O A?????? 1,3
 %A A?????? _James Baker_, Nov 08 2026
@@ -288,7 +288,7 @@ Add with "edit" on each entry. Signature at the end: "- _DICTO_, Nov 07 2026" (o
 %C A002895 Also the number of closed 2n-step walks from any atom of lonsdaleite (A008264) and of the tetrahedral network of every close-packed stacking (polytypes 4H, 6H, 9R, ..., periodic or not), although the coordination sequences of these atoms differ. For periodic polytypes this is Thorpe (1972); for every atom of every stacking, including aperiodic ones, see DICTO (2026, #102, Lemma 2). Via the Ihara-Bass formula the same holds for the closed non-backtracking walks A??????.
 %D A002895 M. F. Thorpe, Random walks in polytype structures, J. Math. Phys. 13 (1972), 294-299.
 %H A002895 DICTO, <a href="https://doi.org/10.5281/zenodo.24037664">Every Site Hears the Same: the Loop Equality Is a Theorem</a>, Zenodo (2026).
-%Y A002895 Cf. A008264, A??????(entry 1).
+%Y A002895 Cf. A008264, A400949.
 ```
 
 **A002899** (fcc polygons; wait for #102's DOI):
