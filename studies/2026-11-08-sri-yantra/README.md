@@ -217,3 +217,13 @@ marmas become 9 circles where two cones and one level disc meet), then the Cleo-
   (sympy, 66 min; the first try was killed at the next step, exit 137, memory), norm over Q(√5), only the factors through GF1 kept
   (degrees (40, 40) and (40, 56) in (t, u)), resultant in t in PARI (degree 2240 in u, 40 s), PARI factorisation (1^1600, 160, 160,
   320). Compare Kulaichev's yantra: degree bound 12544, no polynomial found up to degree 96.
+- KULAICHEV'S YANTRA EXACTLY (scripts/kulaichev_exact.py, rerun 9 Nov 2026 02:50–03:28 under the crash alarm, steps saved; data
+  figures/kulaichev-minpoly-u.txt): the slope u = v of the Kulaichev–Rao–Pustynski yantra is a root of an irreducible integer polynomial
+  of degree 348, even in u (so u² has degree 174), largest coefficient 33 digits, 34 real roots; its root agrees with the 60-digit
+  numeric u (0.75043851602221402440608465705123451034089100363979…) to 81 digits. Route: Singular resultants with only the factor
+  through the numeric point kept at each step: core×Eb, core×Ed (degrees (56,10,12), (54,11,12) in (u,Q,S)), then Q (degree 192 in u,
+  38 in S, 37 min), then S (degree 348). The first attempt (8 Nov) had stopped at its 20-minute limit, not at a mathematical obstacle.
+  Consistent with Kulaichev's bound 12544 and with algdep finding nothing up to degree 96. Pustynski (2014) thought a purely
+  analytical solution "probably impossible"; not found in the sources checked. Comparison (both exact now): Kulaichev's yantra
+  (equal great triangles) has degree 348 and 45 pieces / 28 sandhis; the DICTO Yantra (Cleo-Antonius) degree 160 (40 over Q(√5) for
+  u²) and the traditional 43 / 24.
