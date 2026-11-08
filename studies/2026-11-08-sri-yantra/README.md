@@ -232,3 +232,8 @@ marmas become 9 circles where two cones and one level disc meet), then the Cleo-
   no polynomial used); each polynomial vanishes there to a relative 1.6·10⁻²⁶² (DICTO Yantra, degree 160) and 4.9·10⁻²⁶⁴ (Kulaichev,
   degree 348); both irreducible again in a second system (Singular via sage, besides PARI). FINAL ok. Still wanted: a check by people
   outside the project (Chiodo or Pustynski), only with DICTO's approval of the note.
+- BACKWARDS CHECK (scripts/backwards.py, figures/backwards-log.txt; DICTO 9 Nov: "can't it be run backwards differently"): from each
+  POLYNOMIAL alone (its real root near the yantra, PARI, 265 digits, no geometry), u is fixed, Q and S solved from the two corner
+  conditions only, and the third condition (bindu centred, not imposed) then holds to 1.1·10⁻²⁵⁵ (DICTO Yantra) and 5.1·10⁻²⁶²
+  (Kulaichev); every Huet condition (18 marmas, tips on bases, corners) to 5·10⁻²⁶². Pieces of the rebuilt yantras (figure.py):
+  DICTO Yantra 14, 10, 10, 8, 1 = 43 (traditional); Kulaichev 14, 10, 12, 8, 1 = 45 (the two extra pieces in the third ring). FINAL ok.
