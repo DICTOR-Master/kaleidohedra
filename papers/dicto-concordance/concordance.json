@@ -6237,6 +6237,14 @@
    "reason": "a volume read as a fraction",
    "found_by": "Space-Fillers check (b), 2026-11-08",
    "status": "TO FIX at #18's next version; the book states the carved roof exactly (1/96)"
+  },
+  {
+   "n": 54,
+   "where": "#89 All Five Golden Pairs Are Slices of Four-Dimensional Solids, Section 9; same sentence in The Golden Ladder (book)",
+   "what": "\"their depths share the minimal polynomial z⁴ − 8z³ + 4z − 1\": that polynomial's roots 0.304114 and 0.533609 are the remaining original sides 1 − 2x of the Greater and Lesser Golden Cut Cubes; the depths x ≈ 0.347943 and 0.233196 have minimal polynomial 4z⁴ + 8z³ − 18z² + 8z − 1 (the two cuts are conjugate under √2 → −√2, √5 → −√5 together)",
+   "reason": "the polynomial of the side read as the polynomial of the depth",
+   "found_by": "dataset v8 build (D123, D124), checked numerically 2026-11-08",
+   "status": "TO FIX at #89's next version and the Golden Ladder's next version"
   }
  ],
  "modus_operandi": {
