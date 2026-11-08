@@ -159,3 +159,8 @@ marmas become 9 circles where two cones and one level disc meet), then the Cleo-
   Golden Cut Cubes). K2 stella above / Cleo below: valid, 43. K3, K4 with the golden slope phi/2 above: valid but 45 pieces, so the
   count depends on the slopes, not on kite vs rhombus alone. Huet's classical slopes from his depths: u = 0.813 (near phi/2 = 0.809),
   v = 0.705 (near 1/sqrt2): a hint only (his figures have three digits).
+- Gnomon yantra (scripts/gnomon_yantra.py, render_gnomon.py; DICTO 11-08, "a gnomon like Julias", option A): if the bindu
+  triangle's incircle is centred (Kulaichev's (d)), a copy of the whole yantra scaled to that incircle fits exactly, so the yantra
+  minus that disc is a gnomon and the yantras nest without end. On the Cleo-Octangula with (b) and (d): G1, valid, 43 triangles,
+  18 marmas, 24 sandhis; nesting ratio k = 0.0630741873 (1/k = 15.8543); t9 corners miss the circle by 0.066 (inside). With (c)
+  and (d): no valid yantra. Figure: figures/gnomon-yantra.png. G1 is a placeholder name.
