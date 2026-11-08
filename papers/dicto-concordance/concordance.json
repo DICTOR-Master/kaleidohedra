@@ -6383,6 +6383,18 @@
     "mess_up": "I kept telling DICTO changes would be live 'at 12:00' after 12:00 had passed; they ship at 21:00",
     "guard": "ship.py --queue prints the actual next window ('NEXT SHIP 21:00 today' / '12:00 tomorrow'); I quote that line, never a remembered time",
     "where": "~/dicto-deploy/ship.py"
+   },
+   {
+    "date": "2026-11-08",
+    "mess_up": "I told DICTO 'equal great triangles always bring the two extra pieces (45)' after seeing it in a few cases; the stella rhombus has 43 (found while drafting #103)",
+    "guard": "pattern claims state the cases tested ('in K3, K4, PF1 and the Cleo rhombus'), never 'every/always' without a proof or an exhaustive check; drafts recount from data before printing a count",
+    "where": "memory, paper drafting"
+   },
+   {
+    "date": "2026-11-08",
+    "mess_up": "Rung 0 figures clipped: shapes drawn outside their svg frame; figcheck only checked page width",
+    "guard": "svgclip.mjs (each shape's box inside its svg frame, exit 9); generators fit the frame to what is drawn (make_rung0.py _bbox); to be wired into print.mjs",
+    "where": "papers/svgclip.mjs on dbb"
    }
   ],
   "practice": [
