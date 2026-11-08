@@ -1,0 +1,49 @@
+PASS RD: 14 corners, 12 faces
+PASS RD: exactly 6 faces vertical (normal perpendicular to the stacking axis)
+PASS RD: horizontal radii of corners = {0, sqrt6/3} -> projection is the regular hexagon
+PASS RD: corner [sqrt(6)/3, 0, sqrt(3)/3] lies over a hexagon vertex
+PASS RD: corner [-sqrt(6)/3, 0, -sqrt(3)/3] lies over a hexagon vertex
+PASS RD: corner [-sqrt(6)/6, sqrt(2)/2, sqrt(3)/3] lies over a hexagon vertex
+PASS RD: corner [sqrt(6)/6, sqrt(2)/2, -sqrt(3)/3] lies over a hexagon vertex
+PASS RD: corner [sqrt(6)/6, -sqrt(2)/2, -sqrt(3)/3] lies over a hexagon vertex
+PASS RD: corner [-sqrt(6)/6, -sqrt(2)/2, sqrt(3)/3] lies over a hexagon vertex
+PASS RD: corner [sqrt(6)/6, sqrt(2)/2, sqrt(3)/6] lies over a hexagon vertex
+PASS RD: corner [sqrt(6)/6, -sqrt(2)/2, sqrt(3)/6] lies over a hexagon vertex
+PASS RD: corner [sqrt(6)/3, 0, -sqrt(3)/6] lies over a hexagon vertex
+PASS RD: corner [-sqrt(6)/3, 0, sqrt(3)/6] lies over a hexagon vertex
+PASS RD: corner [-sqrt(6)/6, sqrt(2)/2, -sqrt(3)/6] lies over a hexagon vertex
+PASS RD: corner [-sqrt(6)/6, -sqrt(2)/2, -sqrt(3)/6] lies over a hexagon vertex
+PASS RD: mid-section h=0 is the full hexagon (T>0>B at all 6 vertices)
+  RD relief  C: [-sqrt(3)/2, sqrt(3)/2]   M: [-sqrt(3)/4,sqrt(3)/4], [-sqrt(3)/4,sqrt(3)/4], [-sqrt(3)/4,sqrt(3)/4], [-sqrt(3)/4,sqrt(3)/4], [-sqrt(3)/4,sqrt(3)/4], [-sqrt(3)/4,sqrt(3)/4]
+  RD relief  V: k0:[-sqrt(3)/6,sqrt(3)/3], k1:[-sqrt(3)/3,sqrt(3)/6], k2:[-sqrt(3)/6,sqrt(3)/3], k3:[-sqrt(3)/3,sqrt(3)/6], k4:[-sqrt(3)/6,sqrt(3)/3], k5:[-sqrt(3)/3,sqrt(3)/6]
+PASS RD: relief linear on the two triangles of every kite (crease only along C-V)
+PASS RD: 6 sector volumes sum to the cell volume 2
+  RD sector volumes k0..k5: [1/3, 1/3, 1/3, 1/3, 1/3, 1/3]  (fractions of the cell: [1/6, 1/6, 1/6, 1/6, 1/6, 1/6])
+PASS TRD: 14 corners, 12 faces
+PASS TRD: exactly 6 faces vertical (normal perpendicular to the stacking axis)
+PASS TRD: horizontal radii of corners = {0, sqrt6/3} -> projection is the regular hexagon
+PASS TRD: corner [-sqrt(6)/3, 0, sqrt(3)/6] lies over a hexagon vertex
+PASS TRD: corner [sqrt(6)/6, -sqrt(2)/2, -sqrt(3)/6] lies over a hexagon vertex
+PASS TRD: corner [sqrt(6)/6, sqrt(2)/2, sqrt(3)/6] lies over a hexagon vertex
+PASS TRD: corner [-sqrt(6)/6, sqrt(2)/2, sqrt(3)/3] lies over a hexagon vertex
+PASS TRD: corner [sqrt(6)/3, 0, -sqrt(3)/3] lies over a hexagon vertex
+PASS TRD: corner [sqrt(6)/3, 0, sqrt(3)/3] lies over a hexagon vertex
+PASS TRD: corner [sqrt(6)/6, -sqrt(2)/2, sqrt(3)/6] lies over a hexagon vertex
+PASS TRD: corner [-sqrt(6)/3, 0, -sqrt(3)/6] lies over a hexagon vertex
+PASS TRD: corner [-sqrt(6)/6, sqrt(2)/2, -sqrt(3)/3] lies over a hexagon vertex
+PASS TRD: corner [-sqrt(6)/6, -sqrt(2)/2, sqrt(3)/3] lies over a hexagon vertex
+PASS TRD: corner [sqrt(6)/6, sqrt(2)/2, -sqrt(3)/6] lies over a hexagon vertex
+PASS TRD: corner [-sqrt(6)/6, -sqrt(2)/2, -sqrt(3)/3] lies over a hexagon vertex
+PASS TRD: mid-section h=0 is the full hexagon (T>0>B at all 6 vertices)
+  TRD relief  C: [-sqrt(3)/2, sqrt(3)/2]   M: [-sqrt(3)/4,sqrt(3)/4], [-sqrt(3)/4,sqrt(3)/4], [-sqrt(3)/4,sqrt(3)/4], [-sqrt(3)/4,sqrt(3)/4], [-sqrt(3)/4,sqrt(3)/4], [-sqrt(3)/4,sqrt(3)/4]
+  TRD relief  V: k0:[-sqrt(3)/3,sqrt(3)/3], k1:[-sqrt(3)/6,sqrt(3)/6], k2:[-sqrt(3)/3,sqrt(3)/3], k3:[-sqrt(3)/6,sqrt(3)/6], k4:[-sqrt(3)/3,sqrt(3)/3], k5:[-sqrt(3)/6,sqrt(3)/6]
+PASS TRD: relief linear on the two triangles of every kite (crease only along C-V)
+PASS TRD: 6 sector volumes sum to the cell volume 2
+  TRD sector volumes k0..k5: [13/36, 11/36, 13/36, 11/36, 13/36, 11/36]  (fractions of the cell: [13/72, 11/72, 13/72, 11/72, 13/72, 11/72])
+PASS RD: walls at every M run from -sqrt3/4 to sqrt3/4; at C from -sqrt3/2 to sqrt3/2
+PASS RD: sector V-relief alternates (top 1/sqrt3, bottom -1/(2sqrt3)) and (top 1/(2sqrt3), bottom -1/sqrt3)
+PASS RD: alternate sectors are each other turned upside down (h -> -h swaps the two reliefs); all 6 volumes 1/3
+PASS TRD: sector V-relief alternates fat [-1/sqrt3, 1/sqrt3] and thin [-1/(2sqrt3), 1/(2sqrt3)] (each sector is its own mirror in h=0)
+PASS TRD: the two sector kinds are NOT congruent (volumes 13/36 and 11/36)
+PASS RD and TRD: upper halves identical relief (the shared half-cell)
+FINAL ok

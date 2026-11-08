@@ -5049,6 +5049,15 @@
     "retry": "",
     "study": "studies/2026-11-08-sri-yantra",
     "date": "2026-11-09"
+   },
+   {
+    "question": "Claude 8/9 Nov (DICTO: 'good call'): hat monotile as in-plane engine; hat-shaped piece of 8 RD/TRD kite sectors, mirror hat by turning over, one piece",
+    "method": "exact sympy relief of RD/TRD about [111] (01_sectors_exact.py, 17 PASS); all 4^8 sector patterns x 4 layer contexts (03); SAT exact cover of kite-grid discs per orientation set (02, pysat Cadical)",
+    "status": "SETTLED (closed for the aim)",
+    "result": "RD/TRD equatorial faces vertical: sectors are kite prisms with slanted top/bottom; RD 6 sectors congruent (1/6 each); TRD 2 kinds 13/36, 11/36 (claim 'related by horizontal mirror' wrong). Turning over reaches only {0,120,240 deg + centre-midpoint mirrors}; hat needs more: UNSAT at disc R=1 (RD set) and R=2 (TRD set), controls ok. With mirrors allowed the RD piece tiles c-layers only -> forces periodic fcc stacking, layers independent (weakly aperiodic); TRD piece tiles no layer; no piece fits both c and h",
+    "retry": "never as layer pieces; only straddling pieces (half-cells of two layers) or a 3-fold-only 2D aperiodic monotile would reopen it",
+    "study": "2026-11-09-hat-sectors",
+    "date": "2026-11-09"
    }
   ]
  },
