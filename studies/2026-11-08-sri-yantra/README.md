@@ -192,3 +192,7 @@ marmas become 9 circles where two cones and one level disc meet), then the Cleo-
   circle (depth 1.167 equilateral, 1.126 Cleo grid), and the pieces are 12, 9, 6, 9, 1 (37), not 43. The slope only stretches the
   yantra sideways, so the equilateral and Cleo grids are the same yantra up to that stretch. A grid yantra is exact in its meetings
   but is not the traditional figure; painted grid yantras (e.g. H. J. T. Matos 2023, CC BY-SA 4.0, DICTO's reference) relax exactness.
+- Most even exact yantra (scripts/even_yantra.py; DICTO 11-08 "that sounds like an answer"): among exact yantras (18 marmas, great
+  triangles inscribed) with the traditional 43, minimise spread/mean of the 43 areas. E1: u = 0.7777407207, v = 0.7434588452,
+  Q = 0.5415589952, S = 0.8719616408; spread/mean 0.614 (Huet classical 0.677, DICTO Yantra 0.866); t1 and t9 corners 0.037 and 0.047
+  inside the circle (as in the Matos painting); smallest/largest piece 0.020 (pieces must shrink ring by ring toward the bindu).
