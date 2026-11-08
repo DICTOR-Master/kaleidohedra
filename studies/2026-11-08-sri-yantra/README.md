@@ -227,3 +227,8 @@ marmas become 9 circles where two cones and one level disc meet), then the Cleo-
   analytical solution "probably impossible"; not found in the sources checked. Comparison (both exact now): Kulaichev's yantra
   (equal great triangles) has degree 348 and 45 pieces / 28 sandhis; the DICTO Yantra (Cleo-Antonius) degree 160 (40 over Q(√5) for
   u²) and the traditional 43 / 24.
+- INDEPENDENT CHECK of both exact forms (scripts/verify_exact.py, figures/verify-exact-log.txt; DICTO 9 Nov: "do we need independent
+  verification"): each yantra solved again straight from its geometric conditions by Newton's method at 260 digits (no elimination,
+  no polynomial used); each polynomial vanishes there to a relative 1.6·10⁻²⁶² (DICTO Yantra, degree 160) and 4.9·10⁻²⁶⁴ (Kulaichev,
+  degree 348); both irreducible again in a second system (Singular via sage, besides PARI). FINAL ok. Still wanted: a check by people
+  outside the project (Chiodo or Pustynski), only with DICTO's approval of the note.
