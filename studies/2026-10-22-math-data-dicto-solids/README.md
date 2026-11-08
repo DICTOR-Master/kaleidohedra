@@ -1,13 +1,44 @@
 # DICTO solids: exact coordinates (math-data dataset)
 
-Created by DICTO · [dictospheres.com](https://dictospheres.com) · Licence CC BY-SA 4.0 · 2026-10-22 · Version 2: 2026-10-24 · Version 3: 2026-10-27 · Version 4: 2026-10-28 · Version 5: 2026-10-28 · Version 6: 2026-10-30 · **Version 7: 2026-11-01**
+Created by DICTO · [dictospheres.com](https://dictospheres.com) · Licence CC BY-SA 4.0 · 2026-10-22 · Version 2: 2026-10-24 · Version 3: 2026-10-27 · Version 4: 2026-10-28 · Version 5: 2026-10-28 · Version 6: 2026-10-30 · Version 7: 2026-11-01 · **Version 8: 2026-11-08**
 
 Exact geometry of named convex and non-convex polyhedra found or named by DICTO (artist, Osaka), taken from his published papers
 and the Kaleidohedra findings archive, with lattice packings where a published result says the solid tiles space, and the published
 packings that do not fill space. Every number is exact in a real number field stated in each file (ℚ(√5) for the solids of versions 1
 and 2 except two, ℚ(∛2) for Samson and Delilah, version 2; version 3 adds ℚ and ℚ(t), t the root of an irreducible cubic, for Sonsam and
-Lahdeli; version 4 adds ℚ(√3) for Ganesha) and is re-proved by `check.py` from the data files alone; the only exception is the unit-volume copy of each solid, whose scale
+Lahdeli; version 4 adds ℚ(√3) for Ganesha; version 8 adds four more fields ℚ(t), of degrees 4, 4, 6 and 8, for golden cuts that need √2, √3 or the snub dodecahedron's cubic) and is re-proved by `check.py` from the data files alone; the only exception is the unit-volume copy of each solid, whose scale
 is a cube root (stored exactly as a symbolic expression, with decimal corners).
+
+## What is new in version 8 (2026-11-08)
+
+Twenty-two solids with D-numbers D111–D132 from four of DICTO's papers, names and numbers exactly as in the DICTO Concordance, each
+with a unit-volume copy:
+
+- #75 *HexOct: Two Tiles for Every Stacking* (DICTO DOI: 10.5281/zenodo.23737639): the **HexOct h-tile** (D111) at λ = 1/10, one solid
+  of four pieces (30 faces, volume one layer cell); it is also member E's h-tile in #86.
+- #86 *The HexOct Family* (DICTO DOI: 10.5281/zenodo.23896076): the **Twisted cube** (D112, member A's h-tile at λ = 3/8: convex,
+  6 squares and 6 triangles, 11 corners, D3h), **B · HexOct −1/8 c-tile** and **h-tile** (D113, D114, whole octahedra), **C · HexOct −1/8
+  c-tile** and **h-tile** (D115, D116), **D · HexOct −11/24 c-tile** (D117) and **E · HexOct 1/10 c-tile** (D118). Exact in ℚ, in the
+  frame of Chucky and Fang; each tile is the census-engine pieces of #75 with #86's lattice shifts, joined exactly. Face counts, hull
+  ratios (6/7, 4/5, 36/49, 18/23 exactly; 0.745 and 0.778 to the printed places) and the volume of one layer cell agree with #86.
+- #88 *Every Platonic Solid Has Exactly Two Golden Cuts* (DICTO DOI: 10.5281/zenodo.23896439): the **Greater** and **Lesser Golden Cut
+  Dodecahedron**, **Icosahedron**, **Cube** and **Tetrahedron** (D119–D126), every corner cut at x = φ/(k + 2φ) or 1/(φk + 2) of its
+  edges; in ℚ(√5), the cube pair in ℚ(t), t = √2 + √5 (t⁴ − 14t² + 9). Cuts, side lengths and volumes agree exactly with the paper's
+  exact table (`golden-cuts-exact.md`).
+- #89 *All Five Golden Pairs Are Slices of Four-Dimensional Solids* (DICTO DOI: 10.5281/zenodo.23917931): the **Greater** and **Lesser
+  Golden Cut Rhombic Dodecahedron** (D127, D128; ℚ(t), t = √2 + √3 + √5, degree 8), **Rhombic Triacontahedron** (D129, D130; ℚ(w),
+  w = √(2 + φ), w⁴ − 5w² + 5) and **Snub Dodecahedron L/R** (D131, D132; ℚ(ξ), ξ³ − 2ξ = φ, degree 6). One number covers both hands of
+  each snub solid, so each file holds one hand; the other is its mirror image. The a, b, cut depths and volumes of #89 Table 2 agree to
+  the printed six figures; every corner face is regular and every octagon alternates a and b, a/b = φ or 1/φ, exactly.
+
+Not in version 8 (rows in `index.csv`, no model file): D110 **HexOct c-tile**, whose two towers touch at one point (#86 Section 1), so
+it is no closed surface; D133 **DICTO Void Keeper** and D134 **DICTO Golden Skin** (#96, DICTO DOI: 10.5281/zenodo.23968272), whose exact
+forms the paper leaves open (Section 6).
+
+Built by `build/build_v8.py` (227 build checks; log `build/build_v8.log.json`); credit: DICTO (idea, names); exact computation with
+Claude (Anthropic); sources: studies 2026-11-02-hexoct-connected and 2026-11-03-golden-cuts-beyond-plato, papers/golden-truncated-triangles.
+No new kind of check: the four new fields are of the ℚ(t) kind of version 3, read and proved by `check.py` as before, and every earlier
+file and check is unchanged. All checks pass (check.py: 2054 checks, 91 solids; final line "TOTAL: 2054 checks, 2054 passed, 0 failed; 91 solids, 6 packings (fills), 4 packings (not fills)").
 
 ## What is new in version 7 (2026-11-01)
 
@@ -182,6 +213,14 @@ pentagon's centre (its corner centroid) at the origin. Humpty Dumpty from the 60
 ℝ³ by the quaternion product conj(d)·p with the cell-centre direction d, which also scales it by |d| = √((7 + 3√5)/4) ≈ 1.8512: at
 that scale it is exact in ℚ(√5) (unscaled, an orthonormal frame needs √(7 + 3√5) as well); its centre is at the origin.
 
+Version 8 frames: the HexOct tiles at ball spacing √2 like the other hole pieces (layers perpendicular to (1, 1, 1), one layer =
+(2/3)(1, 1, 1); #75 and #86 use ball spacing 1: divide lengths by √2 and volumes by 2√2, so the volume 2 here is one layer cell, 1/√2),
+the layer's ball at the origin, unit-volume copies about the corner centroid; where a corner of one face lies inside a side of the next,
+it is a corner of both, so a face may list straight corners. The Golden Cut Dodecahedra, Icosahedra and Cubes at edge 1 before the cut,
+the tetrahedra from the tetrahedron of edge 2√2 (corners (1, 1, 1), (1, −1, −1), (−1, 1, −1), (−1, −1, 1)), the golden rhombic solids from
+the polar of the cuboctahedron (±1, ±1, 0) or of the icosidodecahedron of edge 1 in the unit sphere, and the snub dodecahedron as the orbit
+of (1, 1 − 2ξ − 3ξ² + 2ξ³ + 2ξ⁴ − ξ⁵, ξ² − 1) under the rotations of the icosahedron (0, ±1/2, ±φ/2); all centred at the origin.
+
 ## How to verify
 
 ```
@@ -320,10 +359,10 @@ numbers are separated by "; ". Only numbers we are sure of are given.
 
 **D-numbers (DICTO 2026-10-24):** DICTO's permanent catalogue number, one per new solid or piece of his (status "new"), in the order of
 first publication, never reused: D1–D71 for single shapes, D72–D75 for the four rows that group several pieces (one number per group,
-DICTO 2026-10-24), and (version 3) D76–D83 for the eight new single solids of #56, #57 and #59, and (version 4) D84–D86 for Ganesha (#61), Humpty Dumpty (#63) and Shadow-17 (#62), and (version 5) D87–D101 for the fifteen new named slices of #63 and #65, and (version 6) D103–D105 for the three solids of #78, and (version 7) D106–D109 for the four Star Cores solids. Known and rediscovered shapes get no D-number. A shape with an outside number that
+DICTO 2026-10-24), and (version 3) D76–D83 for the eight new single solids of #56, #57 and #59, and (version 4) D84–D86 for Ganesha (#61), Humpty Dumpty (#63) and Shadow-17 (#62), and (version 5) D87–D101 for the fifteen new named slices of #63 and #65, and (version 6) D103–D105 for the three solids of #78, and (version 7) D106–D109 for the four Star Cores solids, and (version 8) D110–D134 for the numbered shapes of #75, #86, #88, #89 and #96 (three of them without a model file). Known and rediscovered shapes get no D-number. A shape with an outside number that
 is also DICTO's new shape would show both, outside number first ("J1; D9"); none does today. Not to be confused with T1, T2, … (a piece's
-label within one piece set), #n (papers), Fn (findings) and t1–t6 (Mosseri–Sadoc tiles); see `d-numbers.md`. 91 of 137 rows have a
-number (5 outside, 86 D); the cell is empty for the other known or rediscovered shapes and for clusters, structures, compounds and
+label within one piece set), #n (papers), Fn (findings) and t1–t6 (Mosseri–Sadoc tiles); see `d-numbers.md`. 139 of 188 rows have a
+number (5 outside, 134 D); the cell is empty for the other known or rediscovered shapes and for clusters, structures, compounds and
 curved bodies.
 
 ## How to cite
@@ -358,6 +397,12 @@ Cite this dataset and the source papers, each by its DICTO DOI (concept DOI, alw
   and 600-cell* (#62; Shadow-17): DICTO DOI: 10.5281/zenodo.23687223
 - DICTO, *The White Queen 600-cell: an Exact Atlas of the Slices and Shadows of the 600-cell, and its Fifteen Cleo Shells* (#63; Humpty
   Dumpty): DICTO DOI: 10.5281/zenodo.23690856
+- DICTO, *HexOct: Two Tiles for Every Stacking* (#75; HexOct h-tile): DICTO DOI: 10.5281/zenodo.23737639
+- DICTO, *The HexOct Family* (#86; Twisted cube and the B–E tiles): DICTO DOI: 10.5281/zenodo.23896076
+- DICTO, *Every Platonic Solid Has Exactly Two Golden Cuts* (#88; the Golden Cut Dodecahedra, Icosahedra, Cubes and Tetrahedra): DICTO
+  DOI: 10.5281/zenodo.23896439
+- DICTO, *All Five Golden Pairs Are Slices of Four-Dimensional Solids* (#89; the Golden Cut Rhombic Dodecahedra, Rhombic Triacontahedra
+  and Snub Dodecahedra): DICTO DOI: 10.5281/zenodo.23917931
 
 Shapes, names and ideas are DICTO's; the exact computations were made with Claude (Anthropic).
 Created by DICTO · dictospheres.com · CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/).

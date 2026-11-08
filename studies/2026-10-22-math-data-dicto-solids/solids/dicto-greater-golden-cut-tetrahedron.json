@@ -1,0 +1,361 @@
+{
+ "credit_note": "Credit: DICTO (idea, names); exact computation with Claude (Anthropic).",
+ "version_added": 8,
+ "paper": "#88 Every Platonic Solid Has Exactly Two Golden Cuts",
+ "dicto_doi": "10.5281/zenodo.23896439",
+ "finding": "",
+ "convex": true,
+ "source": {
+  "app": "study",
+  "path": "research:papers/golden-truncated-triangles (golden_cuts_exact.py, golden-cuts-exact.md)",
+  "id": null
+ },
+ "name": "Greater Golden Cut Tetrahedron",
+ "status": "new: one of the ten DICTO-Kepler golden truncations, the eight of them other than the octahedral pair (Icosaxes, Unborn Axes) being new within #88's checks (#88 Section 9: truncation at any depth is classical, Kepler 1619; non-uniform truncations, Zefiro 2011; Lalvani's \"φ-truncated icosahedron\", US 4,723,382, defines no depth)",
+ "scale_note": "the tetrahedron of edge 2 sqrt2 (corners (1, 1, 1), (1, -1, -1), (-1, 1, -1), (-1, -1, 1)); #88 values are at edge 1: divide lengths by 2 sqrt2 and volumes by 16 sqrt2; every corner cut off by the plane through the points at x = phi/(k + 2 phi) of its edges, k = 1 (#88 Theorem 2): x = 3/2 - sqrt(5)/2 (deeper cut, corner sides long)",
+ "published_values": {
+  "f_vector": [
+   12,
+   18,
+   8
+  ],
+  "faces_by_sides": {
+   "3": 4,
+   "6": 4
+  },
+  "volume": "-280/3 + (128/3)*sqrt(5)",
+  "squared_edge_lengths": [
+   "28 + (-12)*sqrt(5)",
+   "72 + (-32)*sqrt(5)"
+  ],
+  "cut_x": "3/2 - sqrt(5)/2",
+  "faces_as_published": "4 triangles, 4 truncated triangles (#88 Table 2)",
+  "volume_edge_1": "(-35*sqrt(2) + 16*sqrt(10))/12 (golden-cuts-exact.md, #88 study)"
+ },
+ "field": "Q(sqrt(5))",
+ "vertices": [
+  {
+   "exact": [
+    "-1",
+    "2 - sqrt(5)",
+    "-2 + sqrt(5)"
+   ],
+   "decimal": [
+    "-1.000000000000000",
+    "-0.236067977499790",
+    "0.236067977499790"
+   ]
+  },
+  {
+   "exact": [
+    "-1",
+    "-2 + sqrt(5)",
+    "2 - sqrt(5)"
+   ],
+   "decimal": [
+    "-1.000000000000000",
+    "0.236067977499790",
+    "-0.236067977499790"
+   ]
+  },
+  {
+   "exact": [
+    "2 - sqrt(5)",
+    "-1",
+    "-2 + sqrt(5)"
+   ],
+   "decimal": [
+    "-0.236067977499790",
+    "-1.000000000000000",
+    "0.236067977499790"
+   ]
+  },
+  {
+   "exact": [
+    "2 - sqrt(5)",
+    "2 - sqrt(5)",
+    "1"
+   ],
+   "decimal": [
+    "-0.236067977499790",
+    "-0.236067977499790",
+    "1.000000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "2 - sqrt(5)",
+    "-2 + sqrt(5)",
+    "-1"
+   ],
+   "decimal": [
+    "-0.236067977499790",
+    "0.236067977499790",
+    "-1.000000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "2 - sqrt(5)",
+    "1",
+    "2 - sqrt(5)"
+   ],
+   "decimal": [
+    "-0.236067977499790",
+    "1.000000000000000",
+    "-0.236067977499790"
+   ]
+  },
+  {
+   "exact": [
+    "-2 + sqrt(5)",
+    "-1",
+    "2 - sqrt(5)"
+   ],
+   "decimal": [
+    "0.236067977499790",
+    "-1.000000000000000",
+    "-0.236067977499790"
+   ]
+  },
+  {
+   "exact": [
+    "-2 + sqrt(5)",
+    "2 - sqrt(5)",
+    "-1"
+   ],
+   "decimal": [
+    "0.236067977499790",
+    "-0.236067977499790",
+    "-1.000000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "-2 + sqrt(5)",
+    "-2 + sqrt(5)",
+    "1"
+   ],
+   "decimal": [
+    "0.236067977499790",
+    "0.236067977499790",
+    "1.000000000000000"
+   ]
+  },
+  {
+   "exact": [
+    "-2 + sqrt(5)",
+    "1",
+    "-2 + sqrt(5)"
+   ],
+   "decimal": [
+    "0.236067977499790",
+    "1.000000000000000",
+    "0.236067977499790"
+   ]
+  },
+  {
+   "exact": [
+    "1",
+    "2 - sqrt(5)",
+    "2 - sqrt(5)"
+   ],
+   "decimal": [
+    "1.000000000000000",
+    "-0.236067977499790",
+    "-0.236067977499790"
+   ]
+  },
+  {
+   "exact": [
+    "1",
+    "-2 + sqrt(5)",
+    "-2 + sqrt(5)"
+   ],
+   "decimal": [
+    "1.000000000000000",
+    "0.236067977499790",
+    "0.236067977499790"
+   ]
+  }
+ ],
+ "faces": [
+  [
+   0,
+   1,
+   4,
+   7,
+   6,
+   2
+  ],
+  [
+   0,
+   2,
+   3
+  ],
+  [
+   0,
+   3,
+   8,
+   9,
+   5,
+   1
+  ],
+  [
+   1,
+   5,
+   4
+  ],
+  [
+   2,
+   6,
+   10,
+   11,
+   8,
+   3
+  ],
+  [
+   4,
+   5,
+   9,
+   11,
+   10,
+   7
+  ],
+  [
+   6,
+   7,
+   10
+  ],
+  [
+   8,
+   11,
+   9
+  ]
+ ],
+ "f_vector": {
+  "vertices": 12,
+  "edges": 18,
+  "faces": 8
+ },
+ "faces_by_sides": {
+  "3": 4,
+  "6": 4
+ },
+ "volume": {
+  "exact": "-280/3 + (128/3)*sqrt(5)",
+  "decimal": "2.072233706657694"
+ },
+ "unit_volume": {
+  "scale_exact": "(-280/3 + (128/3)*sqrt(5))**(-1/3)",
+  "scale_decimal": "0.784369001949376",
+  "centre": {
+   "exact": [
+    "0",
+    "0",
+    "0"
+   ],
+   "decimal": [
+    "0.000000000000000",
+    "0.000000000000000",
+    "0.000000000000000"
+   ],
+   "kind": "origin of the frame (= the corner centroid)"
+  },
+  "note": "x -> centre + s (x - centre), s = V^(-1/3) with V the exact volume above; s is symbolic and the corners are decimals (15 places, as elsewhere). Same corner order and faces as above; volume 1.",
+  "vertices_decimal": [
+   [
+    "-0.784369001949376",
+    "-0.185164403903718",
+    "0.185164403903718"
+   ],
+   [
+    "-0.784369001949376",
+    "0.185164403903718",
+    "-0.185164403903718"
+   ],
+   [
+    "-0.185164403903718",
+    "-0.784369001949376",
+    "0.185164403903718"
+   ],
+   [
+    "-0.185164403903718",
+    "-0.185164403903718",
+    "0.784369001949376"
+   ],
+   [
+    "-0.185164403903718",
+    "0.185164403903718",
+    "-0.784369001949376"
+   ],
+   [
+    "-0.185164403903718",
+    "0.784369001949376",
+    "-0.185164403903718"
+   ],
+   [
+    "0.185164403903718",
+    "-0.784369001949376",
+    "-0.185164403903718"
+   ],
+   [
+    "0.185164403903718",
+    "-0.185164403903718",
+    "-0.784369001949376"
+   ],
+   [
+    "0.185164403903718",
+    "0.185164403903718",
+    "0.784369001949376"
+   ],
+   [
+    "0.185164403903718",
+    "0.784369001949376",
+    "0.185164403903718"
+   ],
+   [
+    "0.784369001949376",
+    "-0.185164403903718",
+    "-0.185164403903718"
+   ],
+   [
+    "0.784369001949376",
+    "0.185164403903718",
+    "0.185164403903718"
+   ]
+  ]
+ },
+ "squared_edge_lengths": [
+  {
+   "exact": "72 + (-32)*sqrt(5)",
+   "decimal": "0.445824720006730",
+   "count": 6
+  },
+  {
+   "exact": "28 + (-12)*sqrt(5)",
+   "decimal": "1.167184270002524",
+   "count": 12
+  }
+ ],
+ "symmetry": {
+  "schoenflies": "Td",
+  "order": 24,
+  "rotations": 12,
+  "contains_inversion": false
+ },
+ "credit": "DICTO",
+ "creator_mark": "Created by DICTO · dictospheres.com",
+ "licence": "CC BY-SA 4.0",
+ "checks": {
+  "closed_2_manifold": true,
+  "outward_ccw_winding": true,
+  "faces_planar_exact": true,
+  "euler_characteristic": 2,
+  "volume_positive_exact": true,
+  "convex": true,
+  "symmetry_order_exact": 24,
+  "verified_by": "check.py (python3 + sympy), re-run from this file alone",
+  "unit_volume": "decimal unit-volume copy has volume 1 (1e-12) and is the solid scaled by s (check.py)"
+ }
+}

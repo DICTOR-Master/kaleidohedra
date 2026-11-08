@@ -1,6 +1,6 @@
 # DICTO D-numbers
 
-Created by DICTO · dictospheres.com · CC BY-SA 4.0 · math-data dataset version 2, 2026-10-24; version 3, 2026-10-27; version 4, 2026-10-28; version 6, 2026-10-30; version 7, 2026-11-01.
+Created by DICTO · dictospheres.com · CC BY-SA 4.0 · math-data dataset version 2, 2026-10-24; version 3, 2026-10-27; version 4, 2026-10-28; version 6, 2026-10-30; version 7, 2026-11-01; version 8, 2026-11-08.
 
 **The scheme (DICTO 2026-10-24).** A D-number is DICTO's permanent catalogue number: one per new solid or piece of DICTO's, given in the
 order of first publication, used once and never reused (even if a shape is retired or renamed). Numbers given by earlier creators come
@@ -210,6 +210,41 @@ appendix rows (W1–W62, then R1–R124). D1–D86 are unchanged.
 | D107 | Golden Clasp (the truncated cuboctahedron's faces at depths 1 : 1/φ : 3/4) | solid | – | Star Cores (studies 2026-10-31-star-cores-names) |
 | D108 | Hamlet (step 5 of the chain of T from the Ogdoecontahedron) | solid | – | #80 |
 | D109 | Ophelia (step 6 of the same chain) | solid | – | #80 |
+
+## D110–D134: version 8 (2026-11-08), papers #75, #86, #88, #89 and #96 (names and numbers as in the DICTO Concordance)
+
+| D | Name | Kind | Code | Paper |
+|---|---|---|---|---|
+| D110 | HexOct c-tile (λ = 1/10; two towers touching at one point, so no model file) | solid | – | #75 |
+| D111 | HexOct h-tile (λ = 1/10; also member E's h-tile in #86) | solid | – | #75 |
+| D112 | Twisted cube (A · HexOct 3/8 h-tile) | solid | A | #86 |
+| D113 | B · HexOct −1/8 c-tile (whole octahedra) | solid | B | #86 |
+| D114 | B · HexOct −1/8 h-tile (whole octahedra) | solid | B | #86 |
+| D115 | C · HexOct −1/8 c-tile | solid | C | #86 |
+| D116 | C · HexOct −1/8 h-tile | solid | C | #86 |
+| D117 | D · HexOct −11/24 c-tile | solid | D | #86 |
+| D118 | E · HexOct 1/10 c-tile | solid | E | #86 |
+| D119 | Greater Golden Cut Dodecahedron | solid | – | #88 |
+| D120 | Lesser Golden Cut Dodecahedron | solid | – | #88 |
+| D121 | Greater Golden Cut Icosahedron | solid | – | #88 |
+| D122 | Lesser Golden Cut Icosahedron | solid | – | #88 |
+| D123 | Greater Golden Cut Cube | solid | – | #88 |
+| D124 | Lesser Golden Cut Cube | solid | – | #88 |
+| D125 | Greater Golden Cut Tetrahedron | solid | – | #88 |
+| D126 | Lesser Golden Cut Tetrahedron | solid | – | #88 |
+| D127 | Greater Golden Cut Rhombic Dodecahedron | solid | – | #89 |
+| D128 | Lesser Golden Cut Rhombic Dodecahedron | solid | – | #89 |
+| D129 | Greater Golden Cut Rhombic Triacontahedron | solid | – | #89 |
+| D130 | Lesser Golden Cut Rhombic Triacontahedron | solid | – | #89 |
+| D131 | Greater Golden Cut Snub Dodecahedron L/R (one number for both hands) | solid | – | #89 |
+| D132 | Lesser Golden Cut Snub Dodecahedron L/R (one number for both hands) | solid | – | #89 |
+| D133 | DICTO Void Keeper (exact form still open, #96; no model file) | solid | V2 | #96 |
+| D134 | DICTO Golden Skin (one per brick size; exact form still open, #96; no model file) | solid | V4 | #96 |
+
+No D-number: the HexOct family's brick of two cubes (A · HexOct 3/8 c-tile) and regular hexagonal prism (D · HexOct −11/24 h-tile) are
+classical shapes (#86 Section 8); the Greater and Lesser Golden Cut Icosidodecahedra are Zefiro's two stages (2011), named by DICTO and
+kept in his family with Zefiro credited (#89 Section 4); Icosaxes and Unborn Axes, the octahedron's two golden cuts, are known shapes
+(Koca et al. 2015; see below).
 
 No D-number: Alicia (W48), the Unicorn (W58) and the Bandersnatch (W60) are cell-first sections through corner layers, which are in
 Alicia Boole Stott's 1900 series (read for #63 version 3), so they are known shapes; they are in the dataset with DICTO's names.

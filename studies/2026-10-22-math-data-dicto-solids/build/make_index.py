@@ -18,7 +18,9 @@ P = {'8': '10.5281/zenodo.23284106', '13': '10.5281/zenodo.23284281', '14': '10.
      '45': '10.5281/zenodo.23529499', '47': '10.5281/zenodo.23551326',
      '48': '10.5281/zenodo.23596362', '51': '10.5281/zenodo.23606828',
      '55': '10.5281/zenodo.23632358', '56': '10.5281/zenodo.23635823', '57': '10.5281/zenodo.23647898', '59': '10.5281/zenodo.23677485',
-     '61': '10.5281/zenodo.23682596', '62': '10.5281/zenodo.23687223', '63': '10.5281/zenodo.23690856', '65': '10.5281/zenodo.23716140', '78': '10.5281/zenodo.23782577', '80': '10.5281/zenodo.23822907'}
+     '61': '10.5281/zenodo.23682596', '62': '10.5281/zenodo.23687223', '63': '10.5281/zenodo.23690856', '65': '10.5281/zenodo.23716140', '78': '10.5281/zenodo.23782577', '80': '10.5281/zenodo.23822907',
+     '75': '10.5281/zenodo.23737639', '86': '10.5281/zenodo.23896076', '88': '10.5281/zenodo.23896439', '89': '10.5281/zenodo.23917931',
+     '96': '10.5281/zenodo.23968272'}
 NEW, RED, KN = 'new', 'rediscovered', 'known'
 # name, kind, finding, paper (#), status, prior-art / note, dataset slug, Polyhedraverse id
 R = [
@@ -208,6 +210,38 @@ R += [
  ('Hamlet', 'solid', '', '80', NEW, "step 5 of the chain of DICTO's growth rule T from the Ogdoecontahedron, after KRE, PHE, TPP and DPHP: 452 corners, 270 faces, Ih (#80, Section 6)", 'dicto-hamlet', ''),
  ('Ophelia', 'solid', '', '80', NEW, "step 6 of the same chain, after Hamlet: 642 corners, 440 faces, Ih (#80, Section 6); the chain does not close", 'dicto-ophelia', ''),
 ]
+N_V7 = len(R)
+# version 8 (2026-11-08): the numbered solids of #75, #86, #88, #89 and #96 (names and D-numbers as in the DICTO Concordance); D110 (not a
+# closed surface), D133 and D134 (exact forms open, #96) have no model file
+G86 = "not found in the sources checked (#86 Section 8); #86 claims nothing as new until Goldberg's lists of space-filling polyhedra are read"
+KEP = "the eight Golden Cut solids other than the octahedral pair are new within #88's checks (#88 Section 9: truncation at any depth is classical, Kepler 1619; non-uniform truncations, Zefiro 2011; Lalvani's \"φ-truncated icosahedron\", US 4,723,382, defines no depth)"
+R += [
+ ('HexOct c-tile', 'solid', '', '75', NEW, "the c-tile of #75 at λ = 1/10: four pieces, two towers that touch only at the layer's ball (#86 Section 1), so no closed surface and no model file; made one solid in #86 as E · HexOct 1/10 c-tile (D118)", '', ''),
+ ('HexOct h-tile', 'solid', '', '75', NEW, "the h-tile of #75 at λ = 1/10: one solid of four pieces, 30 faces, hull ratio 0.778, volume one layer cell; no earlier statement of such layer tiles found in the sources checked (#75 Section 6); member E's h-tile in #86", 'dicto-hexoct-h-tile', ''),
+ ('Twisted cube', 'solid', '', '86', NEW, "A · HexOct 3/8 h-tile: convex, 6 squares and 6 triangles, 11 corners, 21 edges, D3h; tiles space (hcp) but is no parallelohedron; " + G86 + "; its c-tile partner, the brick of two cubes, is classical", 'dicto-twisted-cube', ''),
+ ('B · HexOct −1/8 c-tile', 'solid', '', '86', NEW, "member B (λ = −1/8, whole octahedra): two regular tetrahedra and a regular octahedron as one solid, 8 faces, hull ratio 6/7; " + G86, 'dicto-hexoct-b-c-tile', ''),
+ ('B · HexOct −1/8 h-tile', 'solid', '', '86', NEW, "member B's h-tile: 10 faces, hull ratio 6/7; " + G86, 'dicto-hexoct-b-h-tile', ''),
+ ('C · HexOct −1/8 c-tile', 'solid', '', '86', NEW, "member C (λ = −1/8, the ring-build weight, Rule of Halves): towers joined along two trapezoids, 10 faces, hull ratio 0.800; " + G86, 'dicto-hexoct-c-c-tile', ''),
+ ('C · HexOct −1/8 h-tile', 'solid', '', '86', NEW, "member C's h-tile: 14 faces, hull ratio 0.735; " + G86, 'dicto-hexoct-c-h-tile', ''),
+ ('D · HexOct −11/24 c-tile', 'solid', '', '86', NEW, "member D (λ = −11/24): 18 faces, hull ratio 0.783; its h-tile is the classical regular hexagonal prism; " + G86, 'dicto-hexoct-d-c-tile', ''),
+ ('E · HexOct 1/10 c-tile', 'solid', '', '86', NEW, "member E (λ = 1/10): the c-tile of #75 made one solid by one lattice step of one tower, 24 faces, hull ratio 0.745; " + G86, 'dicto-hexoct-e-c-tile', ''),
+ ('Greater Golden Cut Dodecahedron', 'solid', '', '88', NEW, "the dodecahedron cut at x = 1/3 (corner sides long): 20 triangles, 12 golden truncated pentagons; " + KEP, 'dicto-greater-golden-cut-dodecahedron', ''),
+ ('Lesser Golden Cut Dodecahedron', 'solid', '', '88', NEW, "the dodecahedron cut at x = (7 − √5)/22 (original sides long); " + KEP, 'dicto-lesser-golden-cut-dodecahedron', ''),
+ ('Greater Golden Cut Icosahedron', 'solid', '', '88', NEW, "the icosahedron cut at x = 1/φ²: 12 pentagons, 20 truncated triangles of ratio φ; the 120-cell's section at 1/φ² of the way to a cell (#88 Theorem 3); " + KEP, 'dicto-greater-golden-cut-icosahedron', ''),
+ ('Lesser Golden Cut Icosahedron', 'solid', '', '88', NEW, "the icosahedron cut at x = 1/(φ√5); the 120-cell's section at 1/φ (#88 Theorem 3); " + KEP, 'dicto-lesser-golden-cut-icosahedron', ''),
+ ('Greater Golden Cut Cube', 'solid', '', '88', NEW, "the cube cut at x = φ/(√2 + 2φ) ≈ 0.3479, exact in ℚ(√2, √5); no section of a regular four-dimensional solid, a section of the rectified tesseract (#89 Theorems A, B); Galois twin of the lesser one; " + KEP, 'dicto-greater-golden-cut-cube', ''),
+ ('Lesser Golden Cut Cube', 'solid', '', '88', NEW, "the cube cut at x = 1/(φ√2 + 2) ≈ 0.2332, exact in ℚ(√2, √5); Galois twin of the greater one; " + KEP, 'dicto-lesser-golden-cut-cube', ''),
+ ('Greater Golden Cut Tetrahedron', 'solid', '', '88', NEW, "the tetrahedron cut at x = 1/φ²: 4 triangles, 4 truncated triangles of ratio φ; the tesseract's section at h = 1/φ² (#89 Main Theorem); " + KEP, 'dicto-greater-golden-cut-tetrahedron', ''),
+ ('Lesser Golden Cut Tetrahedron', 'solid', '', '88', NEW, "the tetrahedron cut at x = 1/(φ√5); the tesseract's section at h = 1/φ (#89 Main Theorem); " + KEP, 'dicto-lesser-golden-cut-tetrahedron', ''),
+ ('Greater Golden Cut Rhombic Dodecahedron', 'solid', '', '89', NEW, "the rhombic dodecahedron cut per corner orbit with a = φb (12 golden octagons, 6 squares, 8 triangles of side a); joins the DICTO-Kepler golden truncations; new within #89's checks (Section 8: no golden-ratio truncation of Catalan solids found; Zefiro 2011, regular faces only)", 'dicto-greater-golden-cut-rhombic-dodecahedron', ''),
+ ('Lesser Golden Cut Rhombic Dodecahedron', 'solid', '', '89', NEW, "the same with b = φa; new within #89's checks", 'dicto-lesser-golden-cut-rhombic-dodecahedron', ''),
+ ('Greater Golden Cut Rhombic Triacontahedron', 'solid', '', '89', NEW, "the rhombic triacontahedron cut per corner orbit with a = φb (30 golden octagons, 12 pentagons, 20 triangles of side a); new within #89's checks", 'dicto-greater-golden-cut-rhombic-triacontahedron', ''),
+ ('Lesser Golden Cut Rhombic Triacontahedron', 'solid', '', '89', NEW, "the same with b = φa, b = 2/(2 + √(2 + φ)); new within #89's checks", 'dicto-lesser-golden-cut-rhombic-triacontahedron', ''),
+ ('Greater Golden Cut Snub Dodecahedron L/R', 'solid', '', '89', NEW, "the snub dodecahedron cut at x = 1/3: 80 regular hexagons, 12 golden truncated pentagons, 60 corner pentagons; one of the DICTO Golden-Regular Cuts (#89 Theorem 2); chiral, both hands one number (one hand in the dataset); not found in the sources checked (#89 Section 8)", 'dicto-greater-golden-cut-snub-dodecahedron', ''),
+ ('Lesser Golden Cut Snub Dodecahedron L/R', 'solid', '', '89', NEW, "the snub dodecahedron cut at x = 1/(φ√5): 80 truncated triangles of ratio φ, 12 regular decagons; a DICTO Golden-Regular Cut and a DICTO-GTT-Solid (#89); chiral, one number for both hands", 'dicto-lesser-golden-cut-snub-dodecahedron', ''),
+ ('DICTO Void Keeper', 'solid', '', '96', NEW, "the room adaptor of the densest lattice packing of the cut OG (Voronoi cell of the room centres minus the cut OGs); with the cut OG it fills space by translation (#96); found in floating point, exact form still open (#96 Section 6), so no model file", '', ''),
+ ('DICTO Golden Skin', 'solid', '', '96', NEW, "the golden rhombohedra touching an OG on a lattice of its five-fold axes, minus the OG, one for each brick size; OG + skin + golden rhombohedron fill space (#96); exact form still open (#96 Section 6), so no model file", '', ''),
+]
 # universal_number (version 2, DICTO 2026-10-23): established catalogue numbers of earlier creators first (Johnson J, uniform U,
 # Wenninger W, Hart's stellation lists, Mosseri-Sadoc tiles); DICTO D-numbers (below) for DICTO's new shapes; see d-numbers.md. Empty = no number. Only numbers we are sure of.
 UNUM = {
@@ -245,9 +279,13 @@ _v6 = [r[0] for r in R[N_V5:N_V6] if r[1] in ('solid', 'piece') and r[4] == NEW]
 assert _v6 == ['Fallen Humpty', 'Golden TI Star', 'Star Halo', 'TI Star core']
 DNUM.update({n: f'D{102 + i}' for i, n in enumerate(_v6)})
 # version 7 (2026-11-01): D106 Cube Pearl, D107 Golden Clasp, D108 Hamlet, D109 Ophelia (DICTO's names and order)
-_v7 = [r[0] for r in R[N_V6:] if r[1] in ('solid', 'piece') and r[4] == NEW]
+_v7 = [r[0] for r in R[N_V6:N_V7] if r[1] in ('solid', 'piece') and r[4] == NEW]
 assert _v7 == ['Cube Pearl', 'Golden Clasp', 'Hamlet', 'Ophelia']
 DNUM.update({n: f'D{106 + i}' for i, n in enumerate(_v7)})
+# version 8 (2026-11-08): D110-D134 as in the DICTO Concordance (names field "d"), in the order of the rows above
+_v8 = [r[0] for r in R[N_V7:] if r[1] in ('solid', 'piece') and r[4] == NEW]
+assert len(_v8) == 25 and _v8[0] == 'HexOct c-tile' and _v8[-1] == 'DICTO Golden Skin'
+DNUM.update({n: f'D{110 + i}' for i, n in enumerate(_v8)})
 for n, d in DNUM.items(): UNUM[n] = UNUM[n] + '; ' + d if n in UNUM else d
 rows = []
 for name, kind, fnum, paper, status, note, slug, pv in R:
@@ -258,7 +296,7 @@ for name, kind, fnum, paper, status, note, slug, pv in R:
     assert set(UNUM) <= {r[0] for r in R}
     if slug: assert os.path.exists(os.path.join(ROOT, 'solids', slug + '.json')), slug
 with open(os.path.join(ROOT, 'index.csv'), 'w', newline='') as fh:
-    fh.write('# DICTO named-shape inventory · Created by DICTO · dictospheres.com · CC BY-SA 4.0 · 2026-10-22 (version 2: 2026-10-24; version 3: 2026-10-27; version 4: 2026-10-28; version 5: 2026-10-28; version 6: 2026-10-30; version 7: 2026-11-01)\n')
+    fh.write('# DICTO named-shape inventory · Created by DICTO · dictospheres.com · CC BY-SA 4.0 · 2026-10-22 (version 2: 2026-10-24; version 3: 2026-10-27; version 4: 2026-10-28; version 5: 2026-10-28; version 6: 2026-10-30; version 7: 2026-11-01; version 8: 2026-11-08)\n')
     w = csv.DictWriter(fh, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
 from collections import Counter
 print(len(rows), Counter(r['status'] for r in rows), Counter((r['kind'], r['status']) for r in rows), sum(r['in_dataset'] == 'y' for r in rows))

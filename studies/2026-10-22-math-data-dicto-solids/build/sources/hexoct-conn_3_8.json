@@ -1,0 +1,110 @@
+{
+ "c": {
+  "lam": "3/8",
+  "tile": "c",
+  "pieces": [
+   "tet",
+   "tet"
+  ],
+  "n_pieces": 2,
+  "connected_choices": 3,
+  "total_choices": 25,
+  "classes": [
+   {
+    "faces": 6,
+    "sizes": [
+     4,
+     4,
+     4,
+     4,
+     4,
+     4
+    ],
+    "holes": 0,
+    "manifold": true,
+    "vol_ok": true,
+    "volume": 0.7071067811865475,
+    "hull_ratio": 1.0,
+    "convex": true,
+    "neck": 1.1547005383792515,
+    "extent": [
+     1.5,
+     1.4433756729740643,
+     1.632993161855452
+    ],
+    "sym": 4,
+    "translates": [
+     [
+      0,
+      0
+     ],
+     [
+      -1,
+      -1
+     ]
+    ],
+    "choices": 3,
+    "contacts": {
+     "0-1": 1.154701
+    }
+   }
+  ]
+ },
+ "h": {
+  "lam": "3/8",
+  "tile": "h",
+  "pieces": [
+   "tet",
+   "tet"
+  ],
+  "n_pieces": 2,
+  "connected_choices": 1,
+  "total_choices": 25,
+  "classes": [
+   {
+    "faces": 12,
+    "sizes": [
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4
+    ],
+    "holes": 0,
+    "manifold": true,
+    "vol_ok": true,
+    "volume": 0.7071067811865475,
+    "hull_ratio": 0.9999999999999997,
+    "convex": true,
+    "neck": 2.0,
+    "extent": [
+     1.0,
+     1.1547005383792515,
+     1.632993161855452
+    ],
+    "sym": 12,
+    "translates": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "choices": 1,
+    "contacts": {
+     "0-1": 2.0
+    }
+   }
+  ]
+ }
+}
