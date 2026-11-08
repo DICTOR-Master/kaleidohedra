@@ -36,7 +36,7 @@ def rot(p, ax, ay):
     y, z = y * math.cos(ax) - z * math.sin(ax), y * math.sin(ax) + z * math.cos(ax)
     x, z = x * math.cos(ay) + z * math.sin(ay), -x * math.sin(ay) + z * math.cos(ay)
     return x, y, z
-def solid_svg(V, size=110):
+def solid_svg(V, size=110, col='var(--gold)'):
     E = edges(V); R = max(math.sqrt(sum(c * c for c in v)) for v in V)
     P = [rot(v, 0.42, 0.63) for v in V]
     s = size * 0.42 / R; c = size / 2
@@ -45,11 +45,22 @@ def solid_svg(V, size=110):
         z = (P[i][2] + P[j][2]) / 2
         back = z < -1e-6
         out.append(f'<line x1="{c+P[i][0]*s:.1f}" y1="{c-P[i][1]*s:.1f}" x2="{c+P[j][0]*s:.1f}" y2="{c-P[j][1]*s:.1f}" '
-                   f'stroke="var(--gold)" stroke-width="{1.1 if back else 2}" opacity="{0.35 if back else 1}"{" stroke-dasharray=\"3 3\"" if back else ""}/>')
+                   f'stroke="{col}" stroke-width="{1.1 if back else 2.2}" opacity="{0.45 if back else 1}"{" stroke-dasharray=\"3 3\"" if back else ""}/>')
+    pts = sorted((c + p[0] * s, c - p[1] * s) for p in P)
+    def half(ps):
+        h = []
+        for q in ps:
+            while len(h) >= 2 and (h[-1][0]-h[-2][0])*(q[1]-h[-2][1]) - (h[-1][1]-h[-2][1])*(q[0]-h[-2][0]) <= 0: h.pop()
+            h.append(q)
+        return h
+    hull = half(pts)[:-1] + half(pts[::-1])[:-1]
+    fill = f'<polygon points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in hull)}" fill="{col}" fill-opacity="0.22" stroke="none"/>'
+    out.insert(0, fill)
     return f'<svg viewBox="0 0 {size} {size}" width="{size}" height="{size}" role="img">{"".join(out)}</svg>'
 assert [len(edges(s[1])) for s in SOLIDS] == [30, 30, 12, 6, 12]
 
-five = ''.join(f'<figure>{solid_svg(V)}<figcaption><b>{n}</b><br>{f}</figcaption></figure>' for n, V, f in SOLIDS)
+ELEM = {'Dodecahedron': ('#8a5cc4', 'the whole'), 'Icosahedron': ('#3a70cd', 'water'), 'Cube': ('#488e48', 'earth'), 'Tetrahedron': ('#cd3e28', 'fire'), 'Octahedron': ('#e8c852', 'air')}
+five = ''.join(f'<figure>{solid_svg(V, col=ELEM[n][0])}<figcaption><b>{n}</b><br>{f}<br><span style="color:{ELEM[n][0]}">{ELEM[n][1]}</span></figcaption></figure>' for n, V, f in SOLIDS)
 
 # ---------- rule 2: squares close, pentagons leave a gap ----------
 def poly(cx, cy, r, n, a0):
@@ -131,7 +142,7 @@ main{{max-width:760px;margin:0 auto;padding:24px 16px 64px}}
 <h2 id="rule-1"><span class="n">1</span>There are five perfect shapes</h2>
 <p>Take one flat shape, the same every time, and build a closed solid where every corner looks the same. It can be done in exactly five ways, and no more. They are the five dice in a role-playing set. DICTO's name carries them, one letter each: <b>D</b>odecahedron, <b>I</b>cosahedron, <b>C</b>ube, <b>T</b>etrahedron, <b>O</b>ctahedron.</p>
 <div class="five">{five}</div>
-<p class="word">The word: <i>Platonic solids</i>. Plato wrote about them around 360 BC; the proof that there are only five is in Euclid.</p>
+<p class="word">The word: <i>Platonic solids</i>. Plato wrote about them around 360 BC and matched them to the elements, the colours above: fire the tetrahedron, air the octahedron, water the icosahedron, earth the cube, and the dodecahedron for the whole. The proof that there are only five is in Euclid.</p>
 <div class="try">✋ Pick up a die. Count its corners, its edges and its faces: 8, 12 and 6. Now 8 − 12 + 6 = 2. Try the same sum on any of the five, and it always comes to 2.</div>
 </section>
 
