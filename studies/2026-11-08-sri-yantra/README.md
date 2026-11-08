@@ -181,3 +181,6 @@ marmas become 9 circles where two cones and one level disc meet), then the Cleo-
   product p = u v matters: Cleo-Icos 2/phi^2 x Antonius side 1/phi = 2/phi^3 (in Q(sqrt5) alone). Perfect member (both small
   triangles on the circle, bindu centred): u = 0.679318588707, v = 0.695014037373, 43/18/24 (GF1). Cross-check: the same solver for
   the Cleo-Octangula product gives u = 0.733560546791, v = 0.736382996384, exactly the viewpoint yantra V1 found by a Klein translation.
+- NAMES (DICTO 11-08, "yes"): the **DICTO Yantra** is now the perfect Cleo-Antonius yantra (GF1). The Cleo-Octangula (Cleo-Icos +
+  stella tetrahedron; yantras K1 and V1) is the near-traditional variant. The great pair Cleo-Icos + Antonius side is the
+  **Cleo-Antonius**.
