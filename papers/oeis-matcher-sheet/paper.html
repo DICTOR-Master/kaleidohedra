@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Your Numbers in the OEIS</title><link rel="stylesheet" href="../paper.css">
+<style>table.t{border-collapse:collapse;font-size:8.8pt;width:100%;margin:2mm 0} table.t td,table.t th{border-bottom:1px solid #ccc;padding:1mm 1.5mm;text-align:left;vertical-align:top} li{margin:1mm 0} code{font-size:8.5pt}</style></head><body>
+<img class="watermark" src="../dicto-logo.png" alt=""><img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>Your Numbers in the OEIS<br><span style="font-size:0.72em;font-weight:normal">What the matcher found, and which sequences fit which open gaps</span></h1>
+<div class="meta"><b>DICTO</b> · dictospheres.com · 8 November 2026 · Matcher run on dicto-big-brother over every study's data files; searches in the OEIS one every 3 seconds. Prepared by Claude (Anthropic) for DICTO.</div>
+<div class="status">Working sheet for DICTO, not for publication. New OEIS entries follow one at a time after A400949 is approved. Study: studies/2026-11-08-oeis-matcher (extract.py, match.py, candidates.json, matches.json) and studies/2026-11-08-sequences.</div>
+<h2>1. The run</h2>
+<p>1984 data files scanned; every list of six or more whole numbers stored as a count (shells, terms, loops, census, layers and the like) was kept, and lists of corner or face labels, of one repeated value, or of steady steps were left out: 96 lists. All 96 searched, no errors: <b>24 found, 72 not found</b>.</p>
+<h2>2. Found: your work meets known sequences</h2>
+<table class="t"><tr><th>Your list</th><th>OEIS</th><th>What it shows</th></tr>
+<tr><td>3C (diamond) and 2H (lonsdaleite) coordination shells, #74 and the Loop Equality study</td><td>A008253, A008264</td><td>the controls: your counts agree with the known ones</td></tr>
+<tr><td>120-cell vertex shells (White Queen study)</td><td>A108997</td><td>coordination sequence of the 120-cell</td></tr>
+<tr><td>closed walks per sphere on fcc (Loop Equality)</td><td>A002899</td><td>polygons on the fcc lattice</td></tr>
+<tr><td>stackings by period, with and without reversal</td><td>A011768, A011957</td><td>Barlow packings and ZnS polytypes: your count is right</td></tr>
+<tr><td>simplicial polyhedra by corners (4D shadows prior art)</td><td>A000109</td><td>the known census you cited</td></tr>
+<tr><td>CSL twins about [111] (OCD pyrochlore report)</td><td>A061646</td><td>a known recurrence, worth a line where the twins are written up</td></tr></table>
+<p>The other 12 "found" lists were accidental: short runs of one or two repeated numbers.</p>
+<h2>3. Not found: what is new and what is noise</h2>
+<ul>
+<li><b>New, ready for checking as entries:</b> closed walks per site on the pyrochlore network of spin ice (1, 0, 6, 12, 78, 300, 1512, 7056, 35214, 176124, …) and its tailless non-backtracking walks (0, 0, 12, 12, 0, 276, 756, 2988, 16104, 64800, …), from #74 and the Loop Equality study; and the stackings split by hexagonality (today), whose row sums are A011957 and A011768.</li>
+<li><b>Already prepared or assessed on 7 November:</b> the 4H and 6H coordination sequences and the fcc loop counts (OEIS entries 2–7 waiting behind A400949), and the SU(4), SO(7), SO(9) Fibonacci multiplet dimensions and the 4F(3n+1), 4F(3n+2) counts (assessed, not chosen).</li>
+<li><b>Variants, no entry needed:</b> about 40 per-site shell lists of particular stackings (the same family as entries 2–5).</li>
+<li><b>Noise:</b> paper and reference numbers caught in a sentence, a continued fraction, a list of primes, and face-to-face gluing counts that belong to one chosen library of pieces, not to a natural question.</li></ul>
+<h2>4. Your open gaps and the sequence families that fit them</h2>
+<table class="t"><tr><th>Open gap (Concordance)</th><th>Family that fits</th></tr>
+<tr><td>#43 Conjecture 2, the octahedral constant 3</td><td>the corner and face counts along the chain of DICTO's growth rule T (… Hamlet 452, Ophelia 642): test for a linear recurrence, then search</td></tr>
+<tr><td>Hexagonality Law for the Laves big atom; every c/h question</td><td>necklaces and Lyndon words (A000031, A001037), the polytype counts above, the new hexagonality triangle</td></tr>
+<tr><td>Star and Star Halo of the classical solids</td><td>census tallies by family, searched like the run above</td></tr>
+<tr><td>golden results (cuts, cycles, Golden Ladder)</td><td>Fibonacci and Lucas: 8 of 78 exact volumes are a rational times φⁿ (φ² … φ¹⁰)</td></tr>
+<tr><td>HexOct-K (computing tiles)</td><td>Busy Beaver (A060843): one sentence for the next version</td></tr>
+<tr><td>dissections, Goldberg-style space-fillers</td><td>Catalan numbers (A000108), for counting cuttings</td></tr>
+<tr><td>the remaining gaps (pyramids, sweeps, Vacuus, twins, 4D lifts)</td><td>geometric constructions; no counting sequence fits, and none is forced on them</td></tr></table>
+<h2>5. Next</h2>
+<ol><li>Recheck the two pyrochlore walk sequences to 30 terms from first principles, as for A400949.</li>
+<li>Test the growth-rule chain counts for a recurrence (gap #43).</li>
+<li>Run the matcher again after each new study (token-free, about 5 minutes).</li></ol>
+</body></html>
