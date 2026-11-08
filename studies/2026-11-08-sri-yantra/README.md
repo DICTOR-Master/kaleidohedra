@@ -116,7 +116,8 @@ The third ring holds 12 faces, two of them non-triangles. This independently con
 (2014, §2.5) about "two additional tiny triangles". The non-rhombus examples R1, Q1 and Q2 have exactly 43.
 
 **Kulaichev's yantra exactly:** not reached. scripts/kulaichev_exact.py (resultants with u free) did not finish
-within its 20-minute limit. Its 60-digit numeric values are in data/kulaichev-numeric-data.txt, with
+within its 20-minute limit. It reached Res_t(core, Eb) and Res_t(core, Ed), of degrees (56, 10, 12) and (54, 11, 12)
+in (u, Q, S), and stopped in the Res_Q step. Its 60-digit numeric values are in data/kulaichev-numeric-data.txt, with
 u = 0.750438516022214024406084657051234510340891003639790315415314.
 
 **DICTO's reference image** (gold embossed yantra, Screenshot 2026-11-08 14-40-18, 338 px, tilted). The layout
