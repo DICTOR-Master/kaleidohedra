@@ -1,4 +1,4 @@
-// The Mandala World's geometry (mandala-geometry.js), checked against the DICTO Yantra study's own counts and conditions
+// Mandalaspheres's geometry (mandala-geometry.js), checked against the DICTO Yantra study's own counts and conditions
 // (k-research studies/2026-11-08-tetra-yantra: render3d.py, cleo_sphere.py, sphere81.py).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';

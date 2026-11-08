@@ -1,4 +1,4 @@
-// The Mandala World (DICTO 2026-11-08; placeholder name): the DICTO Yantra in three dimensions and on the sphere. DICTO proposed the
+// Mandalaspheres (DICTO 2026-11-08; named by DICTO 2026-11-09): the DICTO Yantra in three dimensions and on the sphere. DICTO proposed the
 // triangles as tetrahedra, spinning them, the Cleo-Icos sphere and the 81 sphere; the geometry is the DICTO Yantra study's
 // (k-research studies/2026-11-08-sri-yantra, 2026-11-08-tetra-yantra), ported in mandala-geometry.js from the exact data
 // (mandala-data.js, generated from golden_family.json GF1).
@@ -114,9 +114,9 @@ export function createMandalaWorld({ scene, fitView = () => {} }) {
   }
 
   // ---- the spheres: yantras on the crystal shell, the far side dimmed through it ----
-  function shell(parent) {
+  function shell(parent, o = 0.8) {
     if (skeleton) return;
-    const m = new THREE.MeshStandardMaterial({ color: SHELL, transparent: true, opacity: 0.8 * opacity, depthWrite: false, roughness: 0.35, metalness: 0.1 });
+    const m = new THREE.MeshStandardMaterial({ color: SHELL, transparent: true, opacity: o * opacity, depthWrite: false, roughness: 0.35, metalness: 0.1 });
     m.userData.hollow = true;
     mesh(new THREE.SphereGeometry(0.985, 64, 48), m, 10, parent);
   }
@@ -130,8 +130,21 @@ export function createMandalaWorld({ scene, fitView = () => {} }) {
     const { caps, rho } = cleoSphere();
     yantraLines(caps.flatMap(({ cen, point }) => sphereYantra(cen, point, rho, 20)), spin, 1.5);
     lines(caps.flatMap(({ cen, point }) => polySegs(capRim(cen, point, rho))), RIM, 1.2, 2, 1, spin);
-    shell(spin);
-    counts = { yantras: caps.length, capDegrees: (rho * 180) / Math.PI };
+    // inside the shell, the solid the yantras sit on (DICTO 2026-11-09, choice 5): the icosahedron as its twenty Cleo-Icos, the face
+    // pyramids from the centre, each yantra's cap above its own Cleo-Icos (see-through shell, solid inside)
+    const { V, F } = cleoSphere(), R = 0.96, P = V.map((v) => v.map((x) => x * R));
+    if (!skeleton) {
+      const g = new THREE.BufferGeometry();
+      g.setAttribute('position', new THREE.Float32BufferAttribute(F.flatMap((t) => t.flatMap((k) => P[k])), 3));
+      g.computeVertexNormals();
+      mesh(g, glass(GOLD, 0.3 * opacity), 5, spin);
+    }
+    const ek = new Set(), edges = [];
+    for (const t of F) for (const [i, j] of [[t[0], t[1]], [t[1], t[2]], [t[2], t[0]]]) { const k = i < j ? `${i},${j}` : `${j},${i}`; if (!ek.has(k)) { ek.add(k); edges.push([P[i], P[j]]); } }
+    lines(edges, GOLD, 1.1, 3, 0.85, spin);
+    lines(P.map((p) => [[0, 0, 0], p]), GOLD, 0.9, 3, 0.55, spin);
+    shell(spin, 0.35); // see-through shell, the solid inside visible (DICTO's standard)
+    counts = { yantras: caps.length, capDegrees: (rho * 180) / Math.PI, cleoIcos: F.length, icoEdges: edges.length };
   }
   function drawSphere81(spin) {
     const s = sphere81();

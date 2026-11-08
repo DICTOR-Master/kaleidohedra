@@ -1,5 +1,5 @@
-// The Mandala World (DICTO 2026-11-08) through the real UI on an iPad (1024 × 1366, touch):
-// - Kaleidohedra door, DICTO → 3D+: the Mandala World card right after DICTONIC opens the world; the title, a minimise chevron, no
+// Mandalaspheres (DICTO 2026-11-08) through the real UI on an iPad (1024 × 1366, touch):
+// - Kaleidohedra door, DICTO → 3D+: Mandalaspheres card right after DICTONIC opens the world; the title, a minimise chevron, no
 //   ◀ ▶ buttons, no paint, shear or lattice-view controls;
 // - Yantra: 9 tetrahedra in 9 cones with 9 marma circles, opening between still positions; tapping along the one big slider reaches
 //   the three still positions (the narrowed yantra, 18 meetings) and the turns between them;
@@ -50,13 +50,13 @@ if (!(await page.locator('[data-action="tool:mandalaWorld"]').count())) await pa
 await page.waitForTimeout(500);
 const worlds = await page.evaluate(() => [...document.querySelectorAll('[data-action]')].map((e) => e.dataset.action).filter((x) => /World$/.test(x)));
 assert.equal(worlds[0], 'tool:dictonicWorld', 'DICTONIC still first');
-assert.equal(worlds[1], 'tool:mandalaWorld', 'the Mandala World right after DICTONIC'); checks += 2;
+assert.equal(worlds[1], 'tool:mandalaWorld', 'Mandalaspheres right after DICTONIC'); checks += 2;
 const card = page.locator('[data-action="tool:mandalaWorld"]').first(); await card.scrollIntoViewIfNeeded();
 const cb = await card.boundingBox(); assert.ok(cb.width >= 44 && cb.height >= 44, 'touchable card'); checks++;
 await shot('ipad-wizard');
 await card.tap(); await page.waitForTimeout(400); await keep();
 await page.waitForSelector(`${P}.visible`, { timeout: 30000 }); await page.waitForTimeout(1500);
-assert.equal((await page.textContent('#hud-world-title')).trim(), 'Mandala World', 'title');
+assert.equal((await page.textContent('#hud-world-title')).trim(), 'Mandalaspheres', 'title');
 assert.equal(await page.evaluate(async () => (await import('./src/app/site.js')).activeSite()), 'kaleidohedra', 'in Kaleidohedra');
 for (const sel of ['#hud-quick-lattice-view', '#shear-panel']) assert.ok(!(await page.locator(sel).isVisible().catch(() => false)), `${sel} hidden`);
 assert.ok(await page.locator(`${P} .panel-min`).isVisible(), 'minimise chevron');
