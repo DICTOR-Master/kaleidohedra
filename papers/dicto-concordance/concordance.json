@@ -5020,6 +5020,15 @@
     "retry": "never",
     "study": "2026-11-08-switch-theorem",
     "date": "2026-11-08"
+   },
+   {
+    "question": "DICTO Yantra (GF1) exact minimal polynomial of u",
+    "method": "sympy resultants G,H,D in S then in t (dicto_exact.py)",
+    "status": "METHOD-FAILED",
+    "result": "reached RH (deg t 20, u 38) and RD (deg t 64, u 112) in 66 min; the resultant in t was killed (exit 137, memory). Retry only with the named fix: norm over Q(sqrt5), keep factors through GF1, last resultant in PARI (dicto_exact2.py, pilot passed, running 11-08 night)",
+    "retry": "dicto_exact2.py",
+    "study": "studies/2026-11-08-sri-yantra",
+    "date": "2026-11-08"
    }
   ]
  },
