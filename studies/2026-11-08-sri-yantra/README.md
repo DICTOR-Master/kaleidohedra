@@ -169,3 +169,10 @@ marmas become 9 circles where two cones and one level disc meet), then the Cleo-
   0.762114, all of (b)(c)(d) exact, k = 0.0561783, but 45 pieces / 28 sandhis (near-rhombus). PF2 (stella below exact): upper
   slope 0.695886, all of (b)(c)(d) exact, k = 0.0563429, and the traditional 43 triangles, 18 marmas, 24 sandhis: perfect in every
   condition, but its upper great triangle is no longer the Cleo-Icos (steeper: the kite turned the other way from Huet's).
+- Viewpoint (scripts/viewpoint.py; DICTO 11-08: "perspective tilt or position ... viewpoint?!"): the projective maps that keep the
+  circle a circle and keep the axis are the Klein-model translations along the axis (in older words, a tilted circle seen from the
+  right point still looks round). They keep every line, every concurrency, every level base, every corner on the circle, and the
+  counts (43, 18, 24); they change the slopes u -> u/lambda, v -> v*lambda (u v invariant) and move the bindu's centre. The DICTO
+  Yantra (Cleo-Octangula) seen at beta = -0.0405464286 (lambda = 0.9602432222) has the bindu centred and both small triangles on the
+  circle: every condition at once, 43 triangles, 18 marmas, 24 sandhis. Its slopes are 0.7335605 above and 0.7363830 below (product
+  0.5401815 = (2/phi^2)(1/sqrt2) kept): the Cleo-Octangula in perspective. Figure: figures/viewpoint-V1.png.
