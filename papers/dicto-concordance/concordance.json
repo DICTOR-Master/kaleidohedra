@@ -3545,7 +3545,7 @@
    ],
    [
     "#43 Conjecture 2 (octahedral constant 3)",
-    "#80's gain 3 and #81's involution μ ↦ 3/μ give the same constant",
+    "#80's gain 3 and #81's involution μ ↦ 3/μ give the same constant — PROVED 8 Nov 2026 (studies/2026-11-08-octahedral-constant; placement in #43 v2 awaits DICTO)",
     "an octahedral twin of #43 Theorem 2",
     []
    ],
@@ -4992,6 +4992,17 @@
     "retry": "tiling search for the two hybrids; rerun the (μ,ν) twist map with the angle count",
     "study": "2026-11-04-halves",
     "date": "2026-11-04"
+   },
+   {
+    "question": "",
+    "method": "spherical-design moments: octahedral orbits are 3-designs (mean 0, mean square 1/3, mean cube 0); cubic (t-m)(t+1/(3m))^2 gives max cos >= 1/sqrt3, so r >= R/sqrt3 and S in 3 P(S) by #43 Thm 1; second proof: three mirrors repairing #43's kite",
+    "status": "SETTLED",
+    "result": "PROVED exactly, sharp for cube and octahedron. Also T_h gives 3; T and T_d give 9 (sharp, tetrahedron); #81's core turn keeps t_min; t_min(P_mu) max 5-2sqrt3 at mu=sqrt3",
+    "retry": "",
+    "study": "studies/2026-11-08-octahedral-constant",
+    "date": "2026-11-08",
+    "target": "#43 Conjecture 2 (octahedral constant 3)",
+    "checked": "moment step re-derived independently by the main session"
    }
   ]
  },
