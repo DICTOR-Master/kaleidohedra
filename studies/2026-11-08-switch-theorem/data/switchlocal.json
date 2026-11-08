@@ -1,0 +1,50 @@
+{
+ "square": {
+  "lam": "0",
+  "cells": [
+   "4 sites (2 corner + 2 centre), 4 edges, 4 sides"
+  ],
+  "quad_diagonal": 8,
+  "not_quad": 0
+ },
+ "honeycomb": {
+  "lam": "-1/2",
+  "cells": [
+   "4 sites (2 honeycomb + 2 centre), 4 edges, 4 sides"
+  ],
+  "quad_diagonal": 12,
+  "not_quad": 0
+ },
+ "nacl": {
+  "lam": "0",
+  "cells": [
+   "8 sites (4 Na + 4 Cl), 12 edges, 6 faces"
+  ],
+  "quad_diagonal": 96,
+  "not_quad": 0
+ },
+ "delian": {
+  "lam": "-1/8",
+  "cells": [
+   "14 sites (8 tet + 6 oct), 24 edges, 12 faces"
+  ],
+  "quad_diagonal": 96,
+  "not_quad": 0
+ },
+ "hbn": {
+  "lam": "0",
+  "cells": [
+   "6 sites (3 B + 3 N), 6 edges, 6 sides"
+  ],
+  "quad_diagonal": 0,
+  "not_quad": 12
+ },
+ "sodalite": {
+  "lam": "0",
+  "cells": [
+   "24 sites (12 Si + 12 Al), 36 edges, 14 faces"
+  ],
+  "quad_diagonal": 24,
+  "not_quad": 96
+ }
+}

@@ -1,0 +1,1270 @@
+{
+ "square": {
+  "sites": [
+   {
+    "i": 0,
+    "kind": "corner",
+    "d2": "2",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-2",
+    "argmin": [
+     "0",
+     "0"
+    ]
+   },
+   {
+    "i": 1,
+    "kind": "centre",
+    "d2": "2",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-2",
+    "argmin": [
+     "1",
+     "1"
+    ]
+   }
+  ],
+  "range": [
+   "-2",
+   "2"
+  ]
+ },
+ "honeycomb": {
+  "sites": [
+   {
+    "i": 0,
+    "kind": "honeycomb",
+    "d2": "1",
+    "n_nearest": 3,
+    "in_hull": true,
+    "m": "-1",
+    "argmin": [
+     "0",
+     "0"
+    ]
+   },
+   {
+    "i": 1,
+    "kind": "honeycomb",
+    "d2": "1",
+    "n_nearest": 3,
+    "in_hull": true,
+    "m": "-1",
+    "argmin": [
+     "1",
+     "0"
+    ]
+   },
+   {
+    "i": 2,
+    "kind": "centre",
+    "d2": "1",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-1",
+    "argmin": [
+     "0",
+     "1"
+    ]
+   }
+  ],
+  "range": [
+   "-1",
+   "1"
+  ]
+ },
+ "kagome": {
+  "sites": [
+   {
+    "i": 0,
+    "kind": "kagome",
+    "d2": "1",
+    "n_nearest": 2,
+    "in_hull": true,
+    "m": "-1",
+    "argmin": [
+     "4/3",
+     "-2/3"
+    ]
+   },
+   {
+    "i": 1,
+    "kind": "kagome",
+    "d2": "1",
+    "n_nearest": 2,
+    "in_hull": true,
+    "m": "-1",
+    "argmin": [
+     "2/3",
+     "2/3"
+    ]
+   },
+   {
+    "i": 2,
+    "kind": "kagome",
+    "d2": "1",
+    "n_nearest": 2,
+    "in_hull": true,
+    "m": "-1",
+    "argmin": [
+     "2/3",
+     "2/3"
+    ]
+   },
+   {
+    "i": 3,
+    "kind": "centre",
+    "d2": "1",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-1",
+    "argmin": [
+     "0",
+     "0"
+    ]
+   }
+  ],
+  "range": [
+   "-1",
+   "1"
+  ]
+ },
+ "bcc": {
+  "sites": [
+   {
+    "i": 0,
+    "kind": "big",
+    "d2": "3",
+    "n_nearest": 8,
+    "in_hull": true,
+    "m": "-3",
+    "argmin": [
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   {
+    "i": 1,
+    "kind": "small",
+    "d2": "3",
+    "n_nearest": 8,
+    "in_hull": true,
+    "m": "-3",
+    "argmin": [
+     "1",
+     "1",
+     "1"
+    ]
+   }
+  ],
+  "range": [
+   "-3",
+   "3"
+  ]
+ },
+ "delian": {
+  "sites": [
+   {
+    "i": 0,
+    "kind": "oct",
+    "d2": "3/8",
+    "n_nearest": 8,
+    "in_hull": true,
+    "m": "-3/8",
+    "argmin": [
+     "1",
+     "0",
+     "0"
+    ]
+   },
+   {
+    "i": 1,
+    "kind": "oct",
+    "d2": "3/8",
+    "n_nearest": 8,
+    "in_hull": true,
+    "m": "-3/8",
+    "argmin": [
+     "0",
+     "1",
+     "0"
+    ]
+   },
+   {
+    "i": 2,
+    "kind": "oct",
+    "d2": "3/8",
+    "n_nearest": 8,
+    "in_hull": true,
+    "m": "-3/8",
+    "argmin": [
+     "0",
+     "0",
+     "1"
+    ]
+   },
+   {
+    "i": 3,
+    "kind": "oct",
+    "d2": "3/8",
+    "n_nearest": 8,
+    "in_hull": true,
+    "m": "-3/8",
+    "argmin": [
+     "1",
+     "1",
+     "1"
+    ]
+   },
+   {
+    "i": 4,
+    "kind": "tet",
+    "d2": "3/8",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-3/8",
+    "argmin": [
+     "1/2",
+     "1/2",
+     "1/2"
+    ]
+   },
+   {
+    "i": 5,
+    "kind": "tet",
+    "d2": "3/8",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-3/8",
+    "argmin": [
+     "1/2",
+     "1/2",
+     "3/2"
+    ]
+   },
+   {
+    "i": 6,
+    "kind": "tet",
+    "d2": "3/8",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-3/8",
+    "argmin": [
+     "1/2",
+     "3/2",
+     "1/2"
+    ]
+   },
+   {
+    "i": 7,
+    "kind": "tet",
+    "d2": "3/8",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-3/8",
+    "argmin": [
+     "1/2",
+     "3/2",
+     "3/2"
+    ]
+   },
+   {
+    "i": 8,
+    "kind": "tet",
+    "d2": "3/8",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-3/8",
+    "argmin": [
+     "3/2",
+     "1/2",
+     "1/2"
+    ]
+   },
+   {
+    "i": 9,
+    "kind": "tet",
+    "d2": "3/8",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-3/8",
+    "argmin": [
+     "3/2",
+     "1/2",
+     "3/2"
+    ]
+   },
+   {
+    "i": 10,
+    "kind": "tet",
+    "d2": "3/8",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-3/8",
+    "argmin": [
+     "3/2",
+     "3/2",
+     "1/2"
+    ]
+   },
+   {
+    "i": 11,
+    "kind": "tet",
+    "d2": "3/8",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-3/8",
+    "argmin": [
+     "3/2",
+     "3/2",
+     "3/2"
+    ]
+   }
+  ],
+  "range": [
+   "-3/8",
+   "3/8"
+  ]
+ },
+ "nacl": {
+  "sites": [
+   {
+    "i": 0,
+    "kind": "Na",
+    "d2": "1",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-1",
+    "argmin": [
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   {
+    "i": 1,
+    "kind": "Na",
+    "d2": "1",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-1",
+    "argmin": [
+     "1",
+     "1",
+     "0"
+    ]
+   },
+   {
+    "i": 2,
+    "kind": "Na",
+    "d2": "1",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-1",
+    "argmin": [
+     "1",
+     "0",
+     "1"
+    ]
+   },
+   {
+    "i": 3,
+    "kind": "Na",
+    "d2": "1",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-1",
+    "argmin": [
+     "0",
+     "1",
+     "1"
+    ]
+   },
+   {
+    "i": 4,
+    "kind": "Cl",
+    "d2": "1",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-1",
+    "argmin": [
+     "1",
+     "0",
+     "0"
+    ]
+   },
+   {
+    "i": 5,
+    "kind": "Cl",
+    "d2": "1",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-1",
+    "argmin": [
+     "0",
+     "1",
+     "0"
+    ]
+   },
+   {
+    "i": 6,
+    "kind": "Cl",
+    "d2": "1",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-1",
+    "argmin": [
+     "0",
+     "0",
+     "1"
+    ]
+   },
+   {
+    "i": 7,
+    "kind": "Cl",
+    "d2": "1",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-1",
+    "argmin": [
+     "1",
+     "1",
+     "1"
+    ]
+   }
+  ],
+  "range": [
+   "-1",
+   "1"
+  ]
+ },
+ "zincblende": {
+  "sites": [
+   {
+    "i": 0,
+    "kind": "Zn",
+    "d2": "3",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-3",
+    "argmin": [
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   {
+    "i": 1,
+    "kind": "Zn",
+    "d2": "3",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-3",
+    "argmin": [
+     "2",
+     "2",
+     "0"
+    ]
+   },
+   {
+    "i": 2,
+    "kind": "Zn",
+    "d2": "3",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-3",
+    "argmin": [
+     "2",
+     "0",
+     "2"
+    ]
+   },
+   {
+    "i": 3,
+    "kind": "Zn",
+    "d2": "3",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-3",
+    "argmin": [
+     "0",
+     "2",
+     "2"
+    ]
+   },
+   {
+    "i": 4,
+    "kind": "S",
+    "d2": "3",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-3",
+    "argmin": [
+     "1",
+     "1",
+     "1"
+    ]
+   },
+   {
+    "i": 5,
+    "kind": "S",
+    "d2": "3",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-3",
+    "argmin": [
+     "3",
+     "3",
+     "1"
+    ]
+   },
+   {
+    "i": 6,
+    "kind": "S",
+    "d2": "3",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-3",
+    "argmin": [
+     "3",
+     "1",
+     "3"
+    ]
+   },
+   {
+    "i": 7,
+    "kind": "S",
+    "d2": "3",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-3",
+    "argmin": [
+     "1",
+     "3",
+     "3"
+    ]
+   }
+  ],
+  "range": [
+   "-3",
+   "3"
+  ]
+ },
+ "hcpholes": {
+  "sites": [
+   {
+    "i": 0,
+    "kind": "oct",
+    "d2": "3/8",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-3/8",
+    "argmin": [
+     "2/3",
+     "2/3",
+     "1/4"
+    ]
+   },
+   {
+    "i": 1,
+    "kind": "oct",
+    "d2": "3/8",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-3/8",
+    "argmin": [
+     "2/3",
+     "2/3",
+     "3/4"
+    ]
+   },
+   {
+    "i": 2,
+    "kind": "tet",
+    "d2": "3/8",
+    "n_nearest": 3,
+    "in_hull": false,
+    "m": "-11/24",
+    "argmin": [
+     "0",
+     "0",
+     "1/2"
+    ]
+   },
+   {
+    "i": 3,
+    "kind": "tet",
+    "d2": "3/8",
+    "n_nearest": 3,
+    "in_hull": false,
+    "m": "-11/24",
+    "argmin": [
+     "0",
+     "0",
+     "1/2"
+    ]
+   },
+   {
+    "i": 4,
+    "kind": "tet",
+    "d2": "3/8",
+    "n_nearest": 3,
+    "in_hull": false,
+    "m": "-11/24",
+    "argmin": [
+     "1/3",
+     "1/3",
+     "0"
+    ]
+   },
+   {
+    "i": 5,
+    "kind": "tet",
+    "d2": "3/8",
+    "n_nearest": 3,
+    "in_hull": false,
+    "m": "-11/24",
+    "argmin": [
+     "1/3",
+     "1/3",
+     "1"
+    ]
+   }
+  ],
+  "range": [
+   "-11/24",
+   "3/8"
+  ]
+ },
+ "a15": {
+  "sites": [
+   {
+    "i": 0,
+    "kind": "Si",
+    "d2": "5/4",
+    "n_nearest": 12,
+    "in_hull": true,
+    "m": "-5/4",
+    "argmin": [
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   {
+    "i": 1,
+    "kind": "Si",
+    "d2": "5/4",
+    "n_nearest": 12,
+    "in_hull": true,
+    "m": "-5/4",
+    "argmin": [
+     "1",
+     "1",
+     "1"
+    ]
+   },
+   {
+    "i": 2,
+    "kind": "Cr",
+    "d2": "5/4",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-5/4",
+    "argmin": [
+     "1/2",
+     "0",
+     "1"
+    ]
+   },
+   {
+    "i": 3,
+    "kind": "Cr",
+    "d2": "5/4",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-5/4",
+    "argmin": [
+     "3/2",
+     "0",
+     "1"
+    ]
+   },
+   {
+    "i": 4,
+    "kind": "Cr",
+    "d2": "5/4",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-5/4",
+    "argmin": [
+     "1",
+     "1/2",
+     "0"
+    ]
+   },
+   {
+    "i": 5,
+    "kind": "Cr",
+    "d2": "5/4",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-5/4",
+    "argmin": [
+     "1",
+     "3/2",
+     "0"
+    ]
+   },
+   {
+    "i": 6,
+    "kind": "Cr",
+    "d2": "5/4",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-5/4",
+    "argmin": [
+     "0",
+     "1",
+     "1/2"
+    ]
+   },
+   {
+    "i": 7,
+    "kind": "Cr",
+    "d2": "5/4",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-5/4",
+    "argmin": [
+     "0",
+     "1",
+     "3/2"
+    ]
+   }
+  ],
+  "range": [
+   "-5/4",
+   "5/4"
+  ]
+ },
+ "c15": {
+  "sites": [
+   {
+    "i": 0,
+    "kind": "Mg",
+    "d2": "11",
+    "n_nearest": 12,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   {
+    "i": 1,
+    "kind": "Mg",
+    "d2": "11",
+    "n_nearest": 12,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "4",
+     "4",
+     "0"
+    ]
+   },
+   {
+    "i": 2,
+    "kind": "Mg",
+    "d2": "11",
+    "n_nearest": 12,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "4",
+     "0",
+     "4"
+    ]
+   },
+   {
+    "i": 3,
+    "kind": "Mg",
+    "d2": "11",
+    "n_nearest": 12,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "0",
+     "4",
+     "4"
+    ]
+   },
+   {
+    "i": 4,
+    "kind": "Mg",
+    "d2": "11",
+    "n_nearest": 12,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "6",
+     "2",
+     "6"
+    ]
+   },
+   {
+    "i": 5,
+    "kind": "Mg",
+    "d2": "11",
+    "n_nearest": 12,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "2",
+     "6",
+     "6"
+    ]
+   },
+   {
+    "i": 6,
+    "kind": "Mg",
+    "d2": "11",
+    "n_nearest": 12,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "2",
+     "2",
+     "2"
+    ]
+   },
+   {
+    "i": 7,
+    "kind": "Mg",
+    "d2": "11",
+    "n_nearest": 12,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "6",
+     "6",
+     "2"
+    ]
+   },
+   {
+    "i": 8,
+    "kind": "Cu",
+    "d2": "11",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "5",
+     "5",
+     "5"
+    ]
+   },
+   {
+    "i": 9,
+    "kind": "Cu",
+    "d2": "11",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "1",
+     "1",
+     "5"
+    ]
+   },
+   {
+    "i": 10,
+    "kind": "Cu",
+    "d2": "11",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "1",
+     "5",
+     "1"
+    ]
+   },
+   {
+    "i": 11,
+    "kind": "Cu",
+    "d2": "11",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "5",
+     "1",
+     "1"
+    ]
+   },
+   {
+    "i": 12,
+    "kind": "Cu",
+    "d2": "11",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "3",
+     "7",
+     "1"
+    ]
+   },
+   {
+    "i": 13,
+    "kind": "Cu",
+    "d2": "11",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "7",
+     "3",
+     "1"
+    ]
+   },
+   {
+    "i": 14,
+    "kind": "Cu",
+    "d2": "11",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "7",
+     "7",
+     "5"
+    ]
+   },
+   {
+    "i": 15,
+    "kind": "Cu",
+    "d2": "11",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "3",
+     "3",
+     "5"
+    ]
+   },
+   {
+    "i": 16,
+    "kind": "Cu",
+    "d2": "11",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "7",
+     "1",
+     "3"
+    ]
+   },
+   {
+    "i": 17,
+    "kind": "Cu",
+    "d2": "11",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "3",
+     "5",
+     "3"
+    ]
+   },
+   {
+    "i": 18,
+    "kind": "Cu",
+    "d2": "11",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "3",
+     "1",
+     "7"
+    ]
+   },
+   {
+    "i": 19,
+    "kind": "Cu",
+    "d2": "11",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "7",
+     "5",
+     "7"
+    ]
+   },
+   {
+    "i": 20,
+    "kind": "Cu",
+    "d2": "11",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "1",
+     "3",
+     "7"
+    ]
+   },
+   {
+    "i": 21,
+    "kind": "Cu",
+    "d2": "11",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "5",
+     "7",
+     "7"
+    ]
+   },
+   {
+    "i": 22,
+    "kind": "Cu",
+    "d2": "11",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "5",
+     "3",
+     "3"
+    ]
+   },
+   {
+    "i": 23,
+    "kind": "Cu",
+    "d2": "11",
+    "n_nearest": 6,
+    "in_hull": true,
+    "m": "-11",
+    "argmin": [
+     "1",
+     "7",
+     "3"
+    ]
+   }
+  ],
+  "range": [
+   "-11",
+   "11"
+  ]
+ },
+ "hbn": {
+  "sites": [
+   {
+    "i": 0,
+    "kind": "B",
+    "d2": "1",
+    "n_nearest": 3,
+    "in_hull": true,
+    "m": "-1",
+    "argmin": [
+     "0",
+     "0"
+    ]
+   },
+   {
+    "i": 1,
+    "kind": "N",
+    "d2": "1",
+    "n_nearest": 3,
+    "in_hull": true,
+    "m": "-1",
+    "argmin": [
+     "1",
+     "0"
+    ]
+   }
+  ],
+  "range": [
+   "-1",
+   "1"
+  ]
+ },
+ "sodalite": {
+  "sites": [
+   {
+    "i": 0,
+    "kind": "Si",
+    "d2": "2",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-2",
+    "argmin": [
+     "0",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "i": 1,
+    "kind": "Al",
+    "d2": "2",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-2",
+    "argmin": [
+     "0",
+     "2",
+     "1"
+    ]
+   },
+   {
+    "i": 2,
+    "kind": "Al",
+    "d2": "2",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-2",
+    "argmin": [
+     "0",
+     "2",
+     "3"
+    ]
+   },
+   {
+    "i": 3,
+    "kind": "Si",
+    "d2": "2",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-2",
+    "argmin": [
+     "0",
+     "3",
+     "2"
+    ]
+   },
+   {
+    "i": 4,
+    "kind": "Al",
+    "d2": "2",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-2",
+    "argmin": [
+     "1",
+     "0",
+     "2"
+    ]
+   },
+   {
+    "i": 5,
+    "kind": "Si",
+    "d2": "2",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-2",
+    "argmin": [
+     "1",
+     "2",
+     "0"
+    ]
+   },
+   {
+    "i": 6,
+    "kind": "Si",
+    "d2": "2",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-2",
+    "argmin": [
+     "2",
+     "0",
+     "1"
+    ]
+   },
+   {
+    "i": 7,
+    "kind": "Si",
+    "d2": "2",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-2",
+    "argmin": [
+     "2",
+     "0",
+     "3"
+    ]
+   },
+   {
+    "i": 8,
+    "kind": "Al",
+    "d2": "2",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-2",
+    "argmin": [
+     "2",
+     "1",
+     "0"
+    ]
+   },
+   {
+    "i": 9,
+    "kind": "Al",
+    "d2": "2",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-2",
+    "argmin": [
+     "2",
+     "3",
+     "0"
+    ]
+   },
+   {
+    "i": 10,
+    "kind": "Al",
+    "d2": "2",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-2",
+    "argmin": [
+     "3",
+     "0",
+     "2"
+    ]
+   },
+   {
+    "i": 11,
+    "kind": "Si",
+    "d2": "2",
+    "n_nearest": 4,
+    "in_hull": true,
+    "m": "-2",
+    "argmin": [
+     "3",
+     "2",
+     "0"
+    ]
+   }
+  ],
+  "range": [
+   "-2",
+   "2"
+  ]
+ }
+}

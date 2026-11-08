@@ -1,0 +1,30 @@
+PASS square at 0: every site of every dual cell is a vertex of it 
+PASS square at 0: no dual cell is a simplex 
+PASS square at 0: every edge of every dual cell joins unlike sites (bipartite) 
+PASS square at 0: dual cells, one per translation class, fill the lattice cell 4 vs 4; cells: ['4 sites (2 corner + 2 centre), 4 edges, 4 sides']
+PASS square at 0: like bonds on each side = edges of conv(A-sites) above, conv(B-sites) below; unlike bonds = cell edges like bonds counted at motif sites: 8 are diagonals of a quadrilateral face, 0 are not
+PASS honeycomb at -1/2: every site of every dual cell is a vertex of it 
+PASS honeycomb at -1/2: no dual cell is a simplex 
+PASS honeycomb at -1/2: every edge of every dual cell joins unlike sites (bipartite) 
+PASS honeycomb at -1/2: dual cells, one per translation class, fill the lattice cell 3 vs 3; cells: ['4 sites (2 honeycomb + 2 centre), 4 edges, 4 sides']
+PASS honeycomb at -1/2: like bonds on each side = edges of conv(A-sites) above, conv(B-sites) below; unlike bonds = cell edges like bonds counted at motif sites: 12 are diagonals of a quadrilateral face, 0 are not
+PASS nacl at 0: every site of every dual cell is a vertex of it 
+PASS nacl at 0: no dual cell is a simplex 
+PASS nacl at 0: every edge of every dual cell joins unlike sites (bipartite) 
+PASS nacl at 0: dual cells, one per translation class, fill the lattice cell 8 vs 8; cells: ['8 sites (4 Na + 4 Cl), 12 edges, 6 faces']
+PASS nacl at 0: like bonds on each side = edges of conv(A-sites) above, conv(B-sites) below; unlike bonds = cell edges like bonds counted at motif sites: 96 are diagonals of a quadrilateral face, 0 are not
+PASS delian at -1/8: every site of every dual cell is a vertex of it 
+PASS delian at -1/8: no dual cell is a simplex 
+PASS delian at -1/8: every edge of every dual cell joins unlike sites (bipartite) 
+PASS delian at -1/8: dual cells, one per translation class, fill the lattice cell 8 vs 8; cells: ['14 sites (8 tet + 6 oct), 24 edges, 12 faces']
+PASS delian at -1/8: like bonds on each side = edges of conv(A-sites) above, conv(B-sites) below; unlike bonds = cell edges like bonds counted at motif sites: 96 are diagonals of a quadrilateral face, 0 are not
+PASS hbn at 0: every site of every dual cell is a vertex of it 
+PASS hbn at 0: no dual cell is a simplex 
+PASS hbn at 0: every edge of every dual cell joins unlike sites (bipartite) 
+PASS hbn at 0: dual cells, one per translation class, fill the lattice cell 3 vs 3; cells: ['6 sites (3 B + 3 N), 6 edges, 6 sides']
+PASS hbn at 0: like bonds on each side = edges of conv(A-sites) above, conv(B-sites) below; unlike bonds = cell edges like bonds counted at motif sites: 0 are diagonals of a quadrilateral face, 12 are not
+PASS sodalite at 0: every site of every dual cell is a vertex of it 
+PASS sodalite at 0: no dual cell is a simplex 
+PASS sodalite at 0: every edge of every dual cell joins unlike sites (bipartite) 
+PASS sodalite at 0: dual cells, one per translation class, fill the lattice cell 64 vs 64; cells: ['24 sites (12 Si + 12 Al), 36 edges, 14 faces']
+PASS sodalite at 0: like bonds on each side = edges of conv(A-sites) above, conv(B-sites) below; unlike bonds = cell edges like bonds counted at motif sites: 24 are diagonals of a quadrilateral face, 96 are not

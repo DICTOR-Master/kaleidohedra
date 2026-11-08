@@ -1,0 +1,43 @@
+square: 12 (d+2)-sets, 10 float candidates with empty power sphere, exact roots ['0']; #53 flips ['0']; 0.0 s
+   lam* = 0: circuit [('corner', ['0', '0']), ('centre', ['1', '-1']), ('centre', ['1', '1']), ('corner', ['2', '0'])] alpha ['-2', '2', '2', '-2'] S0 = 0 SA = -4; dual cell 4 sites {'centre': 2, 'corner': 2}
+PASS square: the empty-sphere circuit roots in (-2, 2) are exactly the flips of the exact walk roots ['0'] flips ['0']
+honeycomb: 114 (d+2)-sets, 25 float candidates with empty power sphere, exact roots ['-1/2']; #53 flips ['-1/2']; 0.0 s
+   lam* = -1/2: circuit [('honeycomb', ['0', '0']), ('centre', ['1', '-1']), ('honeycomb', ['1', '0']), ('centre', ['0', '1'])] alpha ['1', '-1', '1', '-1'] S0 = -1 SA = 2; dual cell 4 sites {'centre': 2, 'honeycomb': 2}
+PASS honeycomb: the empty-sphere circuit roots in (-1, 1) are exactly the flips of the exact walk roots ['-1/2'] flips ['-1/2']
+kagome: 152 (d+2)-sets, 44 float candidates with empty power sphere, exact roots []; #53 flips []; 0.0 s
+PASS kagome: the empty-sphere circuit roots in (-1, 1) are exactly the flips of the exact walk roots [] flips []
+bcc: 5552 (d+2)-sets, 140 float candidates with empty power sphere, exact roots ['-1', '1']; #53 flips ['-1', '1']; 0.5 s
+   lam* = -1: circuit [('big', ['0', '0', '0']), ('small', ['1', '-1', '-1']), ('small', ['1', '-1', '1']), ('small', ['1', '1', '-1']), ('big', ['2', '0', '0'])] alpha ['4', '0', '-4', '-4', '4'] S0 = -8 SA = 8; dual cell 6 sites {'big': 2, 'small': 4}
+   lam* = 1: circuit [('big', ['0', '0', '0']), ('small', ['1', '-1', '-1']), ('small', ['1', '-1', '1']), ('big', ['2', '-2', '0']), ('big', ['2', '0', '0'])] alpha ['-4', '4', '4', '-4', '0'] S0 = -8 SA = -8; dual cell 6 sites {'big': 4, 'small': 2}
+PASS bcc: the empty-sphere circuit roots in (-3, 3) are exactly the flips of the exact walk roots ['-1', '1'] flips ['-1', '1']
+delian: 14408 (d+2)-sets, 5792 float candidates with empty power sphere, exact roots ['-1/8']; #53 flips ['-1/8']; 4.1 s
+   lam* = -1/8: circuit [('oct', ['1', '0', '0']), ('tet', ['3/2', '-3/2', '-1/2']), ('tet', ['3/2', '-1/2', '-1/2']), ('tet', ['3/2', '-3/2', '1/2']), ('oct', ['2', '-1', '0'])] alpha ['-1/2', '-1/2', '1', '1/2', '-1/2'] S0 = -1/8 SA = 1; dual cell 14 sites {'oct': 6, 'tet': 8}
+PASS delian: the empty-sphere circuit roots in (-3/8, 3/8) are exactly the flips of the exact walk roots ['-1/8'] flips ['-1/8']
+nacl: 1000 (d+2)-sets, 352 float candidates with empty power sphere, exact roots ['0']; #53 flips ['0']; 1.7 s
+   lam* = 0: circuit [('Na', ['0', '0', '0']), ('Cl', ['1', '-1', '-1']), ('Na', ['1', '-1', '0']), ('Na', ['1', '0', '-1']), ('Cl', ['1', '0', '0'])] alpha ['0', '1', '-1', '-1', '1'] S0 = 0 SA = -2; dual cell 8 sites {'Cl': 4, 'Na': 4}
+PASS nacl: the empty-sphere circuit roots in (-1, 1) are exactly the flips of the exact walk roots ['0'] flips ['0']
+zincblende: 1928 (d+2)-sets, 1304 float candidates with empty power sphere, exact roots ['-1', '1']; #53 flips ['-1', '1']; 1.3 s
+   lam* = -1: circuit [('Zn', ['0', '0', '0']), ('S', ['1', '-1', '-1']), ('Zn', ['2', '-2', '0']), ('S', ['1', '-3', '1']), ('S', ['3', '-1', '1'])] alpha ['4', '-8', '12', '-4', '-4'] S0 = -16 SA = 16; dual cell 10 sites {'S': 6, 'Zn': 4}
+   lam* = 1: circuit [('Zn', ['0', '0', '0']), ('S', ['1', '-1', '-1']), ('Zn', ['2', '-2', '0']), ('S', ['3', '-1', '1']), ('Zn', ['2', '0', '-2'])] alpha ['4', '-12', '8', '-4', '4'] S0 = 16 SA = 16; dual cell 10 sites {'S': 4, 'Zn': 6}
+PASS zincblende: the empty-sphere circuit roots in (-3, 3) are exactly the flips of the exact walk roots ['-1', '1'] flips ['-1', '1']
+hcpholes: 8050 (d+2)-sets, 3336 float candidates with empty power sphere, exact roots ['-1/8', '5/24']; #53 flips ['-1/8', '5/24']; 2.9 s
+   lam* = -1/8: circuit [('oct', ['2/3', '2/3', '1/4']), ('oct', ['2/3', '2/3', '3/4']), ('oct', ['5/3', '-1/3', '1/4']), ('oct', ['5/3', '2/3', '1/4']), ('tet', ['1', '0', '3/8'])] alpha ['5/24', '1/8', '1/3', '-1/6', '-1/2'] S0 = 1/16 SA = -1/2; dual cell 14 sites {'oct': 6, 'tet': 8}
+   lam* = 5/24: circuit [('tet', ['0', '0', '3/8']), ('oct', ['2/3', '-1/3', '1/4']), ('oct', ['2/3', '-1/3', '3/4']), ('tet', ['1', '-1', '3/8']), ('tet', ['1', '0', '3/8'])] alpha ['-1/6', '3/8', '1/8', '-1/6', '-1/6'] S0 = -5/48 SA = -1/2; dual cell 8 sites {'oct': 2, 'tet': 6}
+PASS hcpholes: the empty-sphere circuit roots in (-11/24, 3/8) are exactly the flips of the exact walk roots ['-1/8', '5/24'] flips ['-1/8', '5/24']
+a15: 6312 (d+2)-sets, 1238 float candidates with empty power sphere, exact roots ['1/4', '3/4']; #53 flips ['1/4', '3/4']; 2.1 s
+   lam* = 1/4: circuit [('Si', ['0', '0', '0']), ('Si', ['1', '1', '-1']), ('Cr', ['1/2', '0', '-1']), ('Cr', ['0', '1', '-1/2']), ('Cr', ['1', '1/2', '0'])] alpha ['9/8', '9/8', '-3/4', '-3/4', '-3/4'] S0 = 9/16 SA = 9/4; dual cell 5 sites {'Cr': 3, 'Si': 2}
+   lam* = 3/4: circuit [('Si', ['0', '0', '0']), ('Si', ['1', '-1', '-1']), ('Si', ['1', '-1', '1']), ('Cr', ['1', '-3/2', '0']), ('Cr', ['1', '-1/2', '0'])] alpha ['0', '1', '1', '-1', '-1'] S0 = 3/2 SA = 2; dual cell 8 sites {'Cr': 4, 'Si': 4}
+PASS a15: the empty-sphere circuit roots in (-5/4, 5/4) are exactly the flips of the exact walk roots ['1/4', '3/4'] flips ['1/4', '3/4']
+c15: 103200 (d+2)-sets, 4152 float candidates with empty power sphere, exact roots ['-5', '7', '9']; #53 flips ['-5', '7', '9']; 10.0 s
+   lam* = -5: circuit [('Mg', ['0', '0', '0']), ('Mg', ['2', '-2', '-2']), ('Cu', ['1', '-3', '1']), ('Cu', ['3', '-1', '1']), ('Cu', ['1', '1', '-3'])] alpha ['-24', '-24', '24', '0', '24'] S0 = 240 SA = -48; dual cell 8 sites {'Cu': 6, 'Mg': 2}
+   lam* = 7: circuit [('Mg', ['0', '0', '0']), ('Mg', ['2', '-2', '-2']), ('Mg', ['4', '-4', '0']), ('Cu', ['1', '-3', '1']), ('Cu', ['3', '-1', '1'])] alpha ['24', '-16', '24', '-16', '-16'] S0 = 224 SA = 32; dual cell 5 sites {'Cu': 2, 'Mg': 3}
+   lam* = 9: circuit [('Mg', ['0', '0', '0']), ('Mg', ['4', '-4', '0']), ('Cu', ['1', '-3', '1']), ('Cu', ['3', '-1', '1']), ('Cu', ['3', '-3', '3'])] alpha ['20', '12', '-24', '-24', '16'] S0 = 288 SA = 32; dual cell 8 sites {'Cu': 4, 'Mg': 4}
+PASS c15: the empty-sphere circuit roots in (-11, 11) are exactly the flips of the exact walk roots ['-5', '7', '9'] flips ['-5', '7', '9']
+hbn: 17 (d+2)-sets, 14 float candidates with empty power sphere, exact roots ['0']; #53 flips ['0']; 0.0 s
+   lam* = 0: circuit [('B', ['0', '0']), ('B', ['1', '-2']), ('N', ['2', '-2']), ('B', ['2', '-1'])] alpha ['1', '-2', '3', '-2'] S0 = 0 SA = -3; dual cell 6 sites {'B': 3, 'N': 3}
+PASS hbn: the empty-sphere circuit roots in (-1, 1) are exactly the flips of the exact walk roots ['0'] flips ['0']
+sodalite: 120636 (d+2)-sets, 75276 float candidates with empty power sphere, exact roots ['0']; #53 flips ['0']; 5.5 s
+   lam* = 0: circuit [('Si', ['0', '1', '2']), ('Si', ['1', '-2', '0']), ('Al', ['2', '-1', '0']), ('Al', ['0', '2', '-1']), ('Al', ['1', '0', '-2'])] alpha ['8', '-6', '-4', '-12', '14'] S0 = 0 SA = 2; dual cell 24 sites {'Al': 12, 'Si': 12}
+PASS sodalite: the empty-sphere circuit roots in (-2, 2) are exactly the flips of the exact walk roots ['0'] flips ['0']
+12/12 PASS
+FINAL ok

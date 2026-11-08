@@ -1,0 +1,2594 @@
+{
+ "name": "sodalite T sites (vertices of the bitruncated cubic honeycomb), Si/Al alternating",
+ "key": "sodalite",
+ "units": "cubic cell edge 4 (truncated octahedron edge sqrt2)",
+ "kinds": [
+  "Al",
+  "Si"
+ ],
+ "lam": "w_Si - w_Al",
+ "intervals": [
+  {
+   "lo": "-2",
+   "hi": "0",
+   "sample": "-1/8",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "Al": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "volume": "2*(lam + 2)**3/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@2": 4
+     },
+     "orbit_area2": {
+      "Al@2": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "3*(lam + 2)**2",
+      "4*(lam + 2)**2"
+     ]
+    },
+    {
+     "i": 1,
+     "kind": "Al",
+     "bonds": {
+      "Al": 10,
+      "Si": 4
+     },
+     "faces": 14,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      6,
+      6
+     ],
+     "area2": {
+      "Al": [
+       "3*lam**2*(lam + 4)**2/8",
+       "lam**2*(lam + 4)**2"
+      ],
+      "Si": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "volume": "-2*(lam**3 + 6*lam**2 + 12*lam - 8)/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@4": 2,
+      "Al@6": 8,
+      "Si@2": 4
+     },
+     "orbit_area2": {
+      "Al@6": [
+       "3*lam**2*(lam + 4)**2/8"
+      ],
+      "Si@2": [
+       "2*(lam + 2)**4"
+      ],
+      "Al@4": [
+       "lam**2*(lam + 4)**2"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "edge_len2": [
+      "12",
+      "3*(lam + 2)**2",
+      "4*(lam + 2)**2",
+      "5*lam**2/4"
+     ]
+    },
+    {
+     "i": 2,
+     "kind": "Al",
+     "bonds": {
+      "Al": 10,
+      "Si": 4
+     },
+     "faces": 14,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      6,
+      6
+     ],
+     "area2": {
+      "Al": [
+       "3*lam**2*(lam + 4)**2/8",
+       "lam**2*(lam + 4)**2"
+      ],
+      "Si": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "volume": "-2*(lam**3 + 6*lam**2 + 12*lam - 8)/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@4": 2,
+      "Al@6": 8,
+      "Si@2": 4
+     },
+     "orbit_area2": {
+      "Al@6": [
+       "3*lam**2*(lam + 4)**2/8"
+      ],
+      "Si@2": [
+       "2*(lam + 2)**4"
+      ],
+      "Al@4": [
+       "lam**2*(lam + 4)**2"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "edge_len2": [
+      "12",
+      "3*(lam + 2)**2",
+      "4*(lam + 2)**2",
+      "5*lam**2/4"
+     ]
+    },
+    {
+     "i": 3,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "Al": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "volume": "2*(lam + 2)**3/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@2": 4
+     },
+     "orbit_area2": {
+      "Al@2": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "3*(lam + 2)**2",
+      "4*(lam + 2)**2"
+     ]
+    },
+    {
+     "i": 4,
+     "kind": "Al",
+     "bonds": {
+      "Al": 10,
+      "Si": 4
+     },
+     "faces": 14,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      6,
+      6
+     ],
+     "area2": {
+      "Al": [
+       "3*lam**2*(lam + 4)**2/8",
+       "lam**2*(lam + 4)**2"
+      ],
+      "Si": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "volume": "-2*(lam**3 + 6*lam**2 + 12*lam - 8)/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@4": 2,
+      "Al@6": 8,
+      "Si@2": 4
+     },
+     "orbit_area2": {
+      "Al@4": [
+       "lam**2*(lam + 4)**2"
+      ],
+      "Al@6": [
+       "3*lam**2*(lam + 4)**2/8"
+      ],
+      "Si@2": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "edge_len2": [
+      "12",
+      "3*(lam + 2)**2",
+      "4*(lam + 2)**2",
+      "5*lam**2/4"
+     ]
+    },
+    {
+     "i": 5,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "Al": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "volume": "2*(lam + 2)**3/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@2": 4
+     },
+     "orbit_area2": {
+      "Al@2": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "3*(lam + 2)**2",
+      "4*(lam + 2)**2"
+     ]
+    },
+    {
+     "i": 6,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "Al": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "volume": "2*(lam + 2)**3/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@2": 4
+     },
+     "orbit_area2": {
+      "Al@2": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "3*(lam + 2)**2",
+      "4*(lam + 2)**2"
+     ]
+    },
+    {
+     "i": 7,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "Al": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "volume": "2*(lam + 2)**3/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@2": 4
+     },
+     "orbit_area2": {
+      "Al@2": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "3*(lam + 2)**2",
+      "4*(lam + 2)**2"
+     ]
+    },
+    {
+     "i": 8,
+     "kind": "Al",
+     "bonds": {
+      "Al": 10,
+      "Si": 4
+     },
+     "faces": 14,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      6,
+      6
+     ],
+     "area2": {
+      "Al": [
+       "3*lam**2*(lam + 4)**2/8",
+       "lam**2*(lam + 4)**2"
+      ],
+      "Si": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "volume": "-2*(lam**3 + 6*lam**2 + 12*lam - 8)/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@4": 2,
+      "Al@6": 8,
+      "Si@2": 4
+     },
+     "orbit_area2": {
+      "Al@4": [
+       "lam**2*(lam + 4)**2"
+      ],
+      "Al@6": [
+       "3*lam**2*(lam + 4)**2/8"
+      ],
+      "Si@2": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "edge_len2": [
+      "12",
+      "3*(lam + 2)**2",
+      "4*(lam + 2)**2",
+      "5*lam**2/4"
+     ]
+    },
+    {
+     "i": 9,
+     "kind": "Al",
+     "bonds": {
+      "Al": 10,
+      "Si": 4
+     },
+     "faces": 14,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      6,
+      6
+     ],
+     "area2": {
+      "Al": [
+       "3*lam**2*(lam + 4)**2/8",
+       "lam**2*(lam + 4)**2"
+      ],
+      "Si": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "volume": "-2*(lam**3 + 6*lam**2 + 12*lam - 8)/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@4": 2,
+      "Al@6": 8,
+      "Si@2": 4
+     },
+     "orbit_area2": {
+      "Al@6": [
+       "3*lam**2*(lam + 4)**2/8"
+      ],
+      "Si@2": [
+       "2*(lam + 2)**4"
+      ],
+      "Al@4": [
+       "lam**2*(lam + 4)**2"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "edge_len2": [
+      "12",
+      "3*(lam + 2)**2",
+      "4*(lam + 2)**2",
+      "5*lam**2/4"
+     ]
+    },
+    {
+     "i": 10,
+     "kind": "Al",
+     "bonds": {
+      "Al": 10,
+      "Si": 4
+     },
+     "faces": 14,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      6,
+      6
+     ],
+     "area2": {
+      "Al": [
+       "3*lam**2*(lam + 4)**2/8",
+       "lam**2*(lam + 4)**2"
+      ],
+      "Si": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "volume": "-2*(lam**3 + 6*lam**2 + 12*lam - 8)/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@4": 2,
+      "Al@6": 8,
+      "Si@2": 4
+     },
+     "orbit_area2": {
+      "Al@6": [
+       "3*lam**2*(lam + 4)**2/8"
+      ],
+      "Al@4": [
+       "lam**2*(lam + 4)**2"
+      ],
+      "Si@2": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "edge_len2": [
+      "12",
+      "3*(lam + 2)**2",
+      "4*(lam + 2)**2",
+      "5*lam**2/4"
+     ]
+    },
+    {
+     "i": 11,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "Al": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "volume": "2*(lam + 2)**3/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@2": 4
+     },
+     "orbit_area2": {
+      "Al@2": [
+       "2*(lam + 2)**4"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "3*(lam + 2)**2",
+      "4*(lam + 2)**2"
+     ]
+    }
+   ],
+   "dual": {
+    "3Al+1Si": 96,
+    "12Al": 24
+   },
+   "bond_types": [
+    "Al-Al",
+    "Al-Si"
+   ],
+   "bond_orbits": [
+    "Al-Al@4",
+    "Al-Al@6",
+    "Al-Si@2"
+   ],
+   "Vpoly": {
+    "Si": "2*(lam + 2)**3/3",
+    "Al": "-2*(lam**3 + 6*lam**2 + 12*lam - 8)/3"
+   }
+  },
+  {
+   "lo": "0",
+   "hi": "2",
+   "sample": "1/8",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4,
+      "Si": 10
+     },
+     "faces": 14,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      6,
+      6
+     ],
+     "area2": {
+      "Si": [
+       "3*lam**2*(lam - 4)**2/8",
+       "lam**2*(lam - 4)**2"
+      ],
+      "Al": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "volume": "2*(lam**3 - 6*lam**2 + 12*lam + 8)/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@2": 4,
+      "Si@4": 2,
+      "Si@6": 8
+     },
+     "orbit_area2": {
+      "Si@6": [
+       "3*lam**2*(lam - 4)**2/8"
+      ],
+      "Al@2": [
+       "2*(lam - 2)**4"
+      ],
+      "Si@4": [
+       "lam**2*(lam - 4)**2"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "edge_len2": [
+      "12",
+      "3*(lam - 2)**2",
+      "4*(lam - 2)**2",
+      "5*lam**2/4"
+     ]
+    },
+    {
+     "i": 1,
+     "kind": "Al",
+     "bonds": {
+      "Si": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "Si": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "volume": "-2*(lam - 2)**3/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Si@2": 4
+     },
+     "orbit_area2": {
+      "Si@2": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "3*(lam - 2)**2",
+      "4*(lam - 2)**2"
+     ]
+    },
+    {
+     "i": 2,
+     "kind": "Al",
+     "bonds": {
+      "Si": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "Si": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "volume": "-2*(lam - 2)**3/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Si@2": 4
+     },
+     "orbit_area2": {
+      "Si@2": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "3*(lam - 2)**2",
+      "4*(lam - 2)**2"
+     ]
+    },
+    {
+     "i": 3,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4,
+      "Si": 10
+     },
+     "faces": 14,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      6,
+      6
+     ],
+     "area2": {
+      "Si": [
+       "3*lam**2*(lam - 4)**2/8",
+       "lam**2*(lam - 4)**2"
+      ],
+      "Al": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "volume": "2*(lam**3 - 6*lam**2 + 12*lam + 8)/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@2": 4,
+      "Si@4": 2,
+      "Si@6": 8
+     },
+     "orbit_area2": {
+      "Si@6": [
+       "3*lam**2*(lam - 4)**2/8"
+      ],
+      "Al@2": [
+       "2*(lam - 2)**4"
+      ],
+      "Si@4": [
+       "lam**2*(lam - 4)**2"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "edge_len2": [
+      "12",
+      "3*(lam - 2)**2",
+      "4*(lam - 2)**2",
+      "5*lam**2/4"
+     ]
+    },
+    {
+     "i": 4,
+     "kind": "Al",
+     "bonds": {
+      "Si": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "Si": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "volume": "-2*(lam - 2)**3/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Si@2": 4
+     },
+     "orbit_area2": {
+      "Si@2": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "3*(lam - 2)**2",
+      "4*(lam - 2)**2"
+     ]
+    },
+    {
+     "i": 5,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4,
+      "Si": 10
+     },
+     "faces": 14,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      6,
+      6
+     ],
+     "area2": {
+      "Si": [
+       "3*lam**2*(lam - 4)**2/8",
+       "lam**2*(lam - 4)**2"
+      ],
+      "Al": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "volume": "2*(lam**3 - 6*lam**2 + 12*lam + 8)/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@2": 4,
+      "Si@4": 2,
+      "Si@6": 8
+     },
+     "orbit_area2": {
+      "Si@4": [
+       "lam**2*(lam - 4)**2"
+      ],
+      "Si@6": [
+       "3*lam**2*(lam - 4)**2/8"
+      ],
+      "Al@2": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "edge_len2": [
+      "12",
+      "3*(lam - 2)**2",
+      "4*(lam - 2)**2",
+      "5*lam**2/4"
+     ]
+    },
+    {
+     "i": 6,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4,
+      "Si": 10
+     },
+     "faces": 14,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      6,
+      6
+     ],
+     "area2": {
+      "Si": [
+       "3*lam**2*(lam - 4)**2/8",
+       "lam**2*(lam - 4)**2"
+      ],
+      "Al": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "volume": "2*(lam**3 - 6*lam**2 + 12*lam + 8)/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@2": 4,
+      "Si@4": 2,
+      "Si@6": 8
+     },
+     "orbit_area2": {
+      "Si@6": [
+       "3*lam**2*(lam - 4)**2/8"
+      ],
+      "Al@2": [
+       "2*(lam - 2)**4"
+      ],
+      "Si@4": [
+       "lam**2*(lam - 4)**2"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "edge_len2": [
+      "12",
+      "3*(lam - 2)**2",
+      "4*(lam - 2)**2",
+      "5*lam**2/4"
+     ]
+    },
+    {
+     "i": 7,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4,
+      "Si": 10
+     },
+     "faces": 14,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      6,
+      6
+     ],
+     "area2": {
+      "Si": [
+       "3*lam**2*(lam - 4)**2/8",
+       "lam**2*(lam - 4)**2"
+      ],
+      "Al": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "volume": "2*(lam**3 - 6*lam**2 + 12*lam + 8)/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@2": 4,
+      "Si@4": 2,
+      "Si@6": 8
+     },
+     "orbit_area2": {
+      "Si@6": [
+       "3*lam**2*(lam - 4)**2/8"
+      ],
+      "Al@2": [
+       "2*(lam - 2)**4"
+      ],
+      "Si@4": [
+       "lam**2*(lam - 4)**2"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "edge_len2": [
+      "12",
+      "3*(lam - 2)**2",
+      "4*(lam - 2)**2",
+      "5*lam**2/4"
+     ]
+    },
+    {
+     "i": 8,
+     "kind": "Al",
+     "bonds": {
+      "Si": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "Si": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "volume": "-2*(lam - 2)**3/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Si@2": 4
+     },
+     "orbit_area2": {
+      "Si@2": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "3*(lam - 2)**2",
+      "4*(lam - 2)**2"
+     ]
+    },
+    {
+     "i": 9,
+     "kind": "Al",
+     "bonds": {
+      "Si": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "Si": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "volume": "-2*(lam - 2)**3/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Si@2": 4
+     },
+     "orbit_area2": {
+      "Si@2": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "3*(lam - 2)**2",
+      "4*(lam - 2)**2"
+     ]
+    },
+    {
+     "i": 10,
+     "kind": "Al",
+     "bonds": {
+      "Si": 4
+     },
+     "faces": 4,
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "area2": {
+      "Si": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "volume": "-2*(lam - 2)**3/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Si@2": 4
+     },
+     "orbit_area2": {
+      "Si@2": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edge_len2": [
+      "3*(lam - 2)**2",
+      "4*(lam - 2)**2"
+     ]
+    },
+    {
+     "i": 11,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4,
+      "Si": 10
+     },
+     "faces": 14,
+     "corners": 16,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      6,
+      6
+     ],
+     "area2": {
+      "Si": [
+       "3*lam**2*(lam - 4)**2/8",
+       "lam**2*(lam - 4)**2"
+      ],
+      "Al": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "volume": "2*(lam**3 - 6*lam**2 + 12*lam + 8)/3",
+     "rho": 2.2361,
+     "orbits": {
+      "Al@2": 4,
+      "Si@4": 2,
+      "Si@6": 8
+     },
+     "orbit_area2": {
+      "Si@6": [
+       "3*lam**2*(lam - 4)**2/8"
+      ],
+      "Si@4": [
+       "lam**2*(lam - 4)**2"
+      ],
+      "Al@2": [
+       "2*(lam - 2)**4"
+      ]
+     },
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "edge_len2": [
+      "12",
+      "3*(lam - 2)**2",
+      "4*(lam - 2)**2",
+      "5*lam**2/4"
+     ]
+    }
+   ],
+   "dual": {
+    "12Si": 24,
+    "1Al+3Si": 96
+   },
+   "bond_types": [
+    "Al-Si",
+    "Si-Si"
+   ],
+   "bond_orbits": [
+    "Al-Si@2",
+    "Si-Si@4",
+    "Si-Si@6"
+   ],
+   "Vpoly": {
+    "Si": "2*(lam**3 - 6*lam**2 + 12*lam + 8)/3",
+    "Al": "-2*(lam - 2)**3/3"
+   }
+  }
+ ],
+ "stops": [
+  {
+   "lam": "-2",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "Si",
+     "vanished": true
+    },
+    {
+     "i": 1,
+     "kind": "Al",
+     "bonds": {
+      "Al": 10
+     },
+     "faces": 10,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "corners": 8,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4
+     ],
+     "orbits": {
+      "Al@4": 2,
+      "Al@6": 8
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 2,
+     "kind": "Al",
+     "bonds": {
+      "Al": 10
+     },
+     "faces": 10,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "corners": 8,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4
+     ],
+     "orbits": {
+      "Al@4": 2,
+      "Al@6": 8
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 3,
+     "kind": "Si",
+     "vanished": true
+    },
+    {
+     "i": 4,
+     "kind": "Al",
+     "bonds": {
+      "Al": 10
+     },
+     "faces": 10,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "corners": 8,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4
+     ],
+     "orbits": {
+      "Al@4": 2,
+      "Al@6": 8
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 5,
+     "kind": "Si",
+     "vanished": true
+    },
+    {
+     "i": 6,
+     "kind": "Si",
+     "vanished": true
+    },
+    {
+     "i": 7,
+     "kind": "Si",
+     "vanished": true
+    },
+    {
+     "i": 8,
+     "kind": "Al",
+     "bonds": {
+      "Al": 10
+     },
+     "faces": 10,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "corners": 8,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4
+     ],
+     "orbits": {
+      "Al@4": 2,
+      "Al@6": 8
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 9,
+     "kind": "Al",
+     "bonds": {
+      "Al": 10
+     },
+     "faces": 10,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "corners": 8,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4
+     ],
+     "orbits": {
+      "Al@4": 2,
+      "Al@6": 8
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 10,
+     "kind": "Al",
+     "bonds": {
+      "Al": 10
+     },
+     "faces": 10,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "corners": 8,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4
+     ],
+     "orbits": {
+      "Al@4": 2,
+      "Al@6": 8
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 11,
+     "kind": "Si",
+     "vanished": true
+    }
+   ],
+   "vanish": [
+    "Si",
+    "Si",
+    "Si",
+    "Si",
+    "Si",
+    "Si"
+   ],
+   "dual": {
+    "12Al": 24,
+    "4Al+1Si": 24
+   },
+   "bond_types": [
+    "Al-Al"
+   ],
+   "bond_orbits": [
+    "Al-Al@4",
+    "Al-Al@6"
+   ]
+  },
+  {
+   "lam": "0",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "Al@2": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 1,
+     "kind": "Al",
+     "bonds": {
+      "Si": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "Si@2": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 2,
+     "kind": "Al",
+     "bonds": {
+      "Si": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "Si@2": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 3,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "Al@2": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 4,
+     "kind": "Al",
+     "bonds": {
+      "Si": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "Si@2": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 5,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "Al@2": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 6,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "Al@2": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 7,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "Al@2": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 8,
+     "kind": "Al",
+     "bonds": {
+      "Si": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "Si@2": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 9,
+     "kind": "Al",
+     "bonds": {
+      "Si": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "Si@2": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 10,
+     "kind": "Al",
+     "bonds": {
+      "Si": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "Si@2": 4
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 11,
+     "kind": "Si",
+     "bonds": {
+      "Al": 4
+     },
+     "faces": 4,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "corners": 4,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "orbits": {
+      "Al@2": 4
+     },
+     "ghost_planes": 0
+    }
+   ],
+   "vanish": [],
+   "dual": {
+    "12Al+12Si": 48
+   },
+   "bond_types": [
+    "Al-Si"
+   ],
+   "bond_orbits": [
+    "Al-Si@2"
+   ]
+  },
+  {
+   "lam": "2",
+   "sites": [
+    {
+     "i": 0,
+     "kind": "Si",
+     "bonds": {
+      "Si": 10
+     },
+     "faces": 10,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "corners": 8,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4
+     ],
+     "orbits": {
+      "Si@4": 2,
+      "Si@6": 8
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 1,
+     "kind": "Al",
+     "vanished": true
+    },
+    {
+     "i": 2,
+     "kind": "Al",
+     "vanished": true
+    },
+    {
+     "i": 3,
+     "kind": "Si",
+     "bonds": {
+      "Si": 10
+     },
+     "faces": 10,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "corners": 8,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4
+     ],
+     "orbits": {
+      "Si@4": 2,
+      "Si@6": 8
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 4,
+     "kind": "Al",
+     "vanished": true
+    },
+    {
+     "i": 5,
+     "kind": "Si",
+     "bonds": {
+      "Si": 10
+     },
+     "faces": 10,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "corners": 8,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4
+     ],
+     "orbits": {
+      "Si@4": 2,
+      "Si@6": 8
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 6,
+     "kind": "Si",
+     "bonds": {
+      "Si": 10
+     },
+     "faces": 10,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "corners": 8,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4
+     ],
+     "orbits": {
+      "Si@4": 2,
+      "Si@6": 8
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 7,
+     "kind": "Si",
+     "bonds": {
+      "Si": 10
+     },
+     "faces": 10,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "corners": 8,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4
+     ],
+     "orbits": {
+      "Si@4": 2,
+      "Si@6": 8
+     },
+     "ghost_planes": 0
+    },
+    {
+     "i": 8,
+     "kind": "Al",
+     "vanished": true
+    },
+    {
+     "i": 9,
+     "kind": "Al",
+     "vanished": true
+    },
+    {
+     "i": 10,
+     "kind": "Al",
+     "vanished": true
+    },
+    {
+     "i": 11,
+     "kind": "Si",
+     "bonds": {
+      "Si": 10
+     },
+     "faces": 10,
+     "corner_degrees": [
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5
+     ],
+     "corners": 8,
+     "face_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4
+     ],
+     "orbits": {
+      "Si@4": 2,
+      "Si@6": 8
+     },
+     "ghost_planes": 0
+    }
+   ],
+   "vanish": [
+    "Al",
+    "Al",
+    "Al",
+    "Al",
+    "Al",
+    "Al"
+   ],
+   "dual": {
+    "12Si": 24,
+    "1Al+4Si": 24
+   },
+   "bond_types": [
+    "Si-Si"
+   ],
+   "bond_orbits": [
+    "Si-Si@4",
+    "Si-Si@6"
+   ]
+  }
+ ],
+ "seconds": 7.8,
+ "checks": [
+  [
+   "PASS",
+   "sodalite stop 0 site 0: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop 0 site 1: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop 0 site 2: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop 0 site 3: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop 0 site 4: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop 0 site 5: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop 0 site 6: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop 0 site 7: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop 0 site 8: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop 0 site 9: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop 0 site 10: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop 0 site 11: limit of the interval = power cell from scratch",
+   "4 corners, 4 faces"
+  ],
+  [
+   "PASS",
+   "sodalite (0, 2) site 0 (Si): Euler V - E + F = 2",
+   "16-28+14"
+  ],
+  [
+   "PASS",
+   "sodalite (0, 2) site 1 (Al): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "sodalite (0, 2) site 2 (Al): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "sodalite (0, 2) site 3 (Si): Euler V - E + F = 2",
+   "16-28+14"
+  ],
+  [
+   "PASS",
+   "sodalite (0, 2) site 4 (Al): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "sodalite (0, 2) site 5 (Si): Euler V - E + F = 2",
+   "16-28+14"
+  ],
+  [
+   "PASS",
+   "sodalite (0, 2) site 6 (Si): Euler V - E + F = 2",
+   "16-28+14"
+  ],
+  [
+   "PASS",
+   "sodalite (0, 2) site 7 (Si): Euler V - E + F = 2",
+   "16-28+14"
+  ],
+  [
+   "PASS",
+   "sodalite (0, 2) site 8 (Al): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "sodalite (0, 2) site 9 (Al): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "sodalite (0, 2) site 10 (Al): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "sodalite (0, 2) site 11 (Si): Euler V - E + F = 2",
+   "16-28+14"
+  ],
+  [
+   "PASS",
+   "sodalite (0, 2): distance bound (finite site list enough on the closed interval)",
+   "D2=24"
+  ],
+  [
+   "PASS",
+   "sodalite (0, 2): cell volumes add up to the lattice cell identically in lam",
+   "sum = 64, cell = 64"
+  ],
+  [
+   "PASS",
+   "sodalite (0, 2): every face shared face to face (same measure from both cells)",
+   "108 faces"
+  ],
+  [
+   "PASS",
+   "sodalite (-2, 0) site 0 (Si): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "sodalite (-2, 0) site 1 (Al): Euler V - E + F = 2",
+   "16-28+14"
+  ],
+  [
+   "PASS",
+   "sodalite (-2, 0) site 2 (Al): Euler V - E + F = 2",
+   "16-28+14"
+  ],
+  [
+   "PASS",
+   "sodalite (-2, 0) site 3 (Si): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "sodalite (-2, 0) site 4 (Al): Euler V - E + F = 2",
+   "16-28+14"
+  ],
+  [
+   "PASS",
+   "sodalite (-2, 0) site 5 (Si): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "sodalite (-2, 0) site 6 (Si): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "sodalite (-2, 0) site 7 (Si): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "sodalite (-2, 0) site 8 (Al): Euler V - E + F = 2",
+   "16-28+14"
+  ],
+  [
+   "PASS",
+   "sodalite (-2, 0) site 9 (Al): Euler V - E + F = 2",
+   "16-28+14"
+  ],
+  [
+   "PASS",
+   "sodalite (-2, 0) site 10 (Al): Euler V - E + F = 2",
+   "16-28+14"
+  ],
+  [
+   "PASS",
+   "sodalite (-2, 0) site 11 (Si): Euler V - E + F = 2",
+   "4-6+4"
+  ],
+  [
+   "PASS",
+   "sodalite (-2, 0): distance bound (finite site list enough on the closed interval)",
+   "D2=24"
+  ],
+  [
+   "PASS",
+   "sodalite (-2, 0): cell volumes add up to the lattice cell identically in lam",
+   "sum = 64, cell = 64"
+  ],
+  [
+   "PASS",
+   "sodalite (-2, 0): every face shared face to face (same measure from both cells)",
+   "108 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop 2 site 0: limit of the interval = power cell from scratch",
+   "8 corners, 10 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop 2 site 3: limit of the interval = power cell from scratch",
+   "8 corners, 10 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop 2 site 5: limit of the interval = power cell from scratch",
+   "8 corners, 10 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop 2 site 6: limit of the interval = power cell from scratch",
+   "8 corners, 10 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop 2 site 7: limit of the interval = power cell from scratch",
+   "8 corners, 10 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop 2 site 11: limit of the interval = power cell from scratch",
+   "8 corners, 10 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop -2 site 1: limit of the interval = power cell from scratch",
+   "8 corners, 10 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop -2 site 2: limit of the interval = power cell from scratch",
+   "8 corners, 10 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop -2 site 4: limit of the interval = power cell from scratch",
+   "8 corners, 10 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop -2 site 8: limit of the interval = power cell from scratch",
+   "8 corners, 10 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop -2 site 9: limit of the interval = power cell from scratch",
+   "8 corners, 10 faces"
+  ],
+  [
+   "PASS",
+   "sodalite stop -2 site 10: limit of the interval = power cell from scratch",
+   "8 corners, 10 faces"
+  ]
+ ]
+}

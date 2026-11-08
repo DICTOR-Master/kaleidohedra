@@ -1,0 +1,13 @@
+PASS hbn stop 0 site 0: limit of the interval = power cell from scratch 3 corners, 3 faces
+PASS hbn stop 0 site 1: limit of the interval = power cell from scratch 3 corners, 3 faces
+PASS hbn (0, 1): distance bound (finite site list enough on the closed interval) D2=20
+PASS hbn (0, 1): cell volumes add up to the lattice cell identically in lam sum = 3, cell = 3
+PASS hbn (0, 1): every face shared face to face (same measure from both cells) 12 faces
+PASS hbn (-1, 0): distance bound (finite site list enough on the closed interval) D2=20
+PASS hbn (-1, 0): cell volumes add up to the lattice cell identically in lam sum = 3, cell = 3
+PASS hbn (-1, 0): every face shared face to face (same measure from both cells) 12 faces
+PASS hbn stop 1 site 0: limit of the interval = power cell from scratch 6 corners, 6 faces
+PASS hbn stop -1 site 1: limit of the interval = power cell from scratch 6 corners, 6 faces
+PASS hbn: at lam = 0 every B cell is the known triangle (Voronoi cell of the honeycomb points) [3, 3, {"N": 3}]
+PASS hbn: at lam = 0 every N cell is the known triangle (Voronoi cell of the honeycomb points) [3, 3, {"B": 3}]
+PASS hbn: at lam = 1 every B cell is the known hexagon (Voronoi cell of the triangular lattice of B sites) [6, 6, {"B": 6}]
