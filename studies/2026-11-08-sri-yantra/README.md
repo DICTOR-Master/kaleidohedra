@@ -202,3 +202,8 @@ marmas become 9 circles where two cones and one level disc meet), then the Cleo-
   v = 0.6480975804, Q = 0.4948781144, S = 0.9206010173 (corners on to 1e-10 and 6e-7, from a penalty search), spread/mean 0.800.
   Ladder: E1 0.614 (corners inside) < E2 0.800 (corners on) < DICTO Yantra 0.866 (corners on AND bindu centred). The circle costs
   most of the evenness; centring the bindu costs a little more.
+- Hidden triangles (scripts/hidden_triangles.py; DICTO 11-08: the DICTO Yantra seems best for "more hidden triangles from overlaps"):
+  every triangle the 27 sides make, composites included (three sides meeting pairwise at three distinct points). DICTO Yantra 122;
+  middle way E2 122; Cleo-Octangula K1 122; perfect stella PF2 122; Huet classical 122; most even E1 131; Cleo rhombus (45 pieces)
+  137. Every yantra with the traditional crossing pattern (43 pieces, 24 sandhis) has the same 122: the count depends only on which
+  lines cross, not on the exact sizes. The extra hidden triangles come with extra crossings (28 sandhis): E1 +9, Cleo rhombus +15.
