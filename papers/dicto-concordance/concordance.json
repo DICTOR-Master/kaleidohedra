@@ -6359,6 +6359,12 @@
     "mess_up": "Start Here said DICTO 'carried out most of the restoration' of the statue attributed to Kōbō Daishi, from private background he gave; the master carver Hōju Hase led the whole project and DICTO worked under him with his deshi",
     "guard": "background facts are not claims: shared work names the lead first and DICTO's exact role, never shares or percentages (memory feedback-credit-the-master); fixed and queued the same minute",
     "where": "memory, start-here/make.py"
+   },
+   {
+    "date": "2026-11-08",
+    "mess_up": "I kept telling DICTO changes would be live 'at 12:00' after 12:00 had passed; they ship at 21:00",
+    "guard": "ship.py --queue prints the actual next window ('NEXT SHIP 21:00 today' / '12:00 tomorrow'); I quote that line, never a remembered time",
+    "where": "~/dicto-deploy/ship.py"
    }
   ],
   "practice": [
