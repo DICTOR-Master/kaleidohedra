@@ -176,3 +176,8 @@ marmas become 9 circles where two cones and one level disc meet), then the Cleo-
   Yantra (Cleo-Octangula) seen at beta = -0.0405464286 (lambda = 0.9602432222) has the bindu centred and both small triangles on the
   circle: every condition at once, 43 triangles, 18 marmas, 24 sandhis. Its slopes are 0.7335605 above and 0.7363830 below (product
   0.5401815 = (2/phi^2)(1/sqrt2) kept): the Cleo-Octangula in perspective. Figure: figures/viewpoint-V1.png.
+- Cleo-Antonius (scripts/golden_family.py; DICTO 11-08 "a side of Antonius instead of stella"): Antonius (D65, golden antiprism,
+  Cleo + Antonius + Cleo = golden rhombohedron) has side faces of slope exactly 1/phi (apex 63.43 deg). With the viewpoint only the
+  product p = u v matters: Cleo-Icos 2/phi^2 x Antonius side 1/phi = 2/phi^3 (in Q(sqrt5) alone). Perfect member (both small
+  triangles on the circle, bindu centred): u = 0.679318588707, v = 0.695014037373, 43/18/24 (GF1). Cross-check: the same solver for
+  the Cleo-Octangula product gives u = 0.733560546791, v = 0.736382996384, exactly the viewpoint yantra V1 found by a Klein translation.
