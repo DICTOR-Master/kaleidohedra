@@ -5058,6 +5058,15 @@
     "retry": "never as layer pieces; only straddling pieces (half-cells of two layers) or a 3-fold-only 2D aperiodic monotile would reopen it",
     "study": "2026-11-09-hat-sectors",
     "date": "2026-11-09"
+   },
+   {
+    "question": "one-piece aim: hat monotile on RD/TRD sectors (Claude's proposal 9 Nov)",
+    "method": "exact sector geometry + SAT exact cover on kite-grid discs + exhaustive 4^8 sector patterns",
+    "status": "SETTLED",
+    "result": "closed for the aim: RD hat piece needs its 3D mirror and then forces periodic c stacking (ABC); TRD hat piece tiles no layer; layers independent (at best weakly aperiodic). Lead: only pieces straddling two layers let an in-plane pattern see the c/h lean",
+    "retry": "",
+    "study": "studies/2026-11-09-hat-sectors",
+    "date": "2026-11-09"
    }
   ]
  },
