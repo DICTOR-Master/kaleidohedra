@@ -3590,7 +3590,7 @@
    ],
    [
     "#53 Observation 1 (diagonal swap)",
-    "switch points of power diagrams are flips of regular triangulations (Edelsbrunner–Shah, below)",
+    "switch points are walls between regular subdivisions, located by Edelsbrunner–Shah's lifted determinant — PROVED 8 Nov 2026 (studies/2026-11-08-switch-theorem: Theorems A–C; Obs 1 and 4 proved, quadrilateral version disproved, Obs 3 partial, Obs 2 open; placement awaits DICTO)",
     "a general switch theorem for the bonds",
     [
      25
@@ -5003,6 +5003,15 @@
     "date": "2026-11-08",
     "target": "#43 Conjecture 2 (octahedral constant 3)",
     "checked": "moment step re-derived independently by the main session"
+   },
+   {
+    "question": "#53 Obs 1/4: general switch theorem via lifted determinant",
+    "method": "circuits.py brute force (S0/SA, exact empty sphere) + switchlocal.py exact hulls + rangeends.py exact LP",
+    "status": "SETTLED",
+    "result": "flips = empty-sphere roots S0/SA (12/12 nets); switch ⇒ hull(A)/hull(B) swap per bipartite cell, single switch; quadrilateral version false (h-BN, sodalite); range ends = LP, −d² iff site in hull of nearest unlike",
+    "retry": "never",
+    "study": "2026-11-08-switch-theorem",
+    "date": "2026-11-08"
    }
   ]
  },
