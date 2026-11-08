@@ -70,3 +70,13 @@ test('the 81 sphere: 80 triangles, 42 corners, 120 sides (Euler 2), plus the bin
 });
 
 test('the wizard preview: 9 tetrahedra × 6 edges', () => assert.equal(mandalaPreviewEdges().length, 54));
+
+// Every world card in the DICTO list has its one-line description (HexOct and Star Cores showed their raw keys until 2026-11-08).
+test('every K_WORLDS entry has its wiz.3d description in all seven languages', async () => {
+  const { readFileSync } = await import('node:fs');
+  const { __I18N_FOR_VERIFY_ONLY__: I, LANG_ORDER } = await import('../../src/app/i18n.js');
+  const src = readFileSync(new URL('../../src/app/dimension-wizard.js', import.meta.url), 'utf8');
+  const a = src.indexOf('const K_WORLDS = ['), keys = [...src.slice(a, src.indexOf('\n];', a)).matchAll(/\{ key: '(\w+)'/g)].map((m) => m[1]);
+  assert.ok(keys.includes('mandala'));
+  for (const L of LANG_ORDER) assert.deepEqual(keys.filter((k) => !I[L][`wiz.3d.${k}`]), [], `${L}: wiz.3d.* missing`);
+});
